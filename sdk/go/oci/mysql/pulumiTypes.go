@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 var _ = internal.GetEnvOrDefault
@@ -75,12 +74,6 @@ func (i ChannelSourceArgs) ToChannelSourceOutputWithContext(ctx context.Context)
 	return pulumi.ToOutputWithContext(ctx, i).(ChannelSourceOutput)
 }
 
-func (i ChannelSourceArgs) ToOutput(ctx context.Context) pulumix.Output[ChannelSource] {
-	return pulumix.Output[ChannelSource]{
-		OutputState: i.ToChannelSourceOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i ChannelSourceArgs) ToChannelSourcePtrOutput() ChannelSourcePtrOutput {
 	return i.ToChannelSourcePtrOutputWithContext(context.Background())
 }
@@ -122,12 +115,6 @@ func (i *channelSourcePtrType) ToChannelSourcePtrOutputWithContext(ctx context.C
 	return pulumi.ToOutputWithContext(ctx, i).(ChannelSourcePtrOutput)
 }
 
-func (i *channelSourcePtrType) ToOutput(ctx context.Context) pulumix.Output[*ChannelSource] {
-	return pulumix.Output[*ChannelSource]{
-		OutputState: i.ToChannelSourcePtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ChannelSourceOutput struct{ *pulumi.OutputState }
 
 func (ChannelSourceOutput) ElementType() reflect.Type {
@@ -150,12 +137,6 @@ func (o ChannelSourceOutput) ToChannelSourcePtrOutputWithContext(ctx context.Con
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v ChannelSource) *ChannelSource {
 		return &v
 	}).(ChannelSourcePtrOutput)
-}
-
-func (o ChannelSourceOutput) ToOutput(ctx context.Context) pulumix.Output[ChannelSource] {
-	return pulumix.Output[ChannelSource]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Specifies how the replication channel handles replicated transactions without an identifier, enabling replication from a source that does not use transaction-id-based replication to a replica that does.
@@ -212,12 +193,6 @@ func (o ChannelSourcePtrOutput) ToChannelSourcePtrOutput() ChannelSourcePtrOutpu
 
 func (o ChannelSourcePtrOutput) ToChannelSourcePtrOutputWithContext(ctx context.Context) ChannelSourcePtrOutput {
 	return o
-}
-
-func (o ChannelSourcePtrOutput) ToOutput(ctx context.Context) pulumix.Output[*ChannelSource] {
-	return pulumix.Output[*ChannelSource]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ChannelSourcePtrOutput) Elem() ChannelSourceOutput {
@@ -355,12 +330,6 @@ func (i ChannelSourceAnonymousTransactionsHandlingArgs) ToChannelSourceAnonymous
 	return pulumi.ToOutputWithContext(ctx, i).(ChannelSourceAnonymousTransactionsHandlingOutput)
 }
 
-func (i ChannelSourceAnonymousTransactionsHandlingArgs) ToOutput(ctx context.Context) pulumix.Output[ChannelSourceAnonymousTransactionsHandling] {
-	return pulumix.Output[ChannelSourceAnonymousTransactionsHandling]{
-		OutputState: i.ToChannelSourceAnonymousTransactionsHandlingOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i ChannelSourceAnonymousTransactionsHandlingArgs) ToChannelSourceAnonymousTransactionsHandlingPtrOutput() ChannelSourceAnonymousTransactionsHandlingPtrOutput {
 	return i.ToChannelSourceAnonymousTransactionsHandlingPtrOutputWithContext(context.Background())
 }
@@ -402,12 +371,6 @@ func (i *channelSourceAnonymousTransactionsHandlingPtrType) ToChannelSourceAnony
 	return pulumi.ToOutputWithContext(ctx, i).(ChannelSourceAnonymousTransactionsHandlingPtrOutput)
 }
 
-func (i *channelSourceAnonymousTransactionsHandlingPtrType) ToOutput(ctx context.Context) pulumix.Output[*ChannelSourceAnonymousTransactionsHandling] {
-	return pulumix.Output[*ChannelSourceAnonymousTransactionsHandling]{
-		OutputState: i.ToChannelSourceAnonymousTransactionsHandlingPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ChannelSourceAnonymousTransactionsHandlingOutput struct{ *pulumi.OutputState }
 
 func (ChannelSourceAnonymousTransactionsHandlingOutput) ElementType() reflect.Type {
@@ -430,12 +393,6 @@ func (o ChannelSourceAnonymousTransactionsHandlingOutput) ToChannelSourceAnonymo
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v ChannelSourceAnonymousTransactionsHandling) *ChannelSourceAnonymousTransactionsHandling {
 		return &v
 	}).(ChannelSourceAnonymousTransactionsHandlingPtrOutput)
-}
-
-func (o ChannelSourceAnonymousTransactionsHandlingOutput) ToOutput(ctx context.Context) pulumix.Output[ChannelSourceAnonymousTransactionsHandling] {
-	return pulumix.Output[ChannelSourceAnonymousTransactionsHandling]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Specifies one of the coordinates (file) at which the replica should begin reading the source's log. As this value specifies the point where replication starts from, it is only used once, when it starts. It is never used again, unless a new UpdateChannel operation modifies it.
@@ -470,12 +427,6 @@ func (o ChannelSourceAnonymousTransactionsHandlingPtrOutput) ToChannelSourceAnon
 
 func (o ChannelSourceAnonymousTransactionsHandlingPtrOutput) ToChannelSourceAnonymousTransactionsHandlingPtrOutputWithContext(ctx context.Context) ChannelSourceAnonymousTransactionsHandlingPtrOutput {
 	return o
-}
-
-func (o ChannelSourceAnonymousTransactionsHandlingPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*ChannelSourceAnonymousTransactionsHandling] {
-	return pulumix.Output[*ChannelSourceAnonymousTransactionsHandling]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ChannelSourceAnonymousTransactionsHandlingPtrOutput) Elem() ChannelSourceAnonymousTransactionsHandlingOutput {
@@ -565,12 +516,6 @@ func (i ChannelSourceSslCaCertificateArgs) ToChannelSourceSslCaCertificateOutput
 	return pulumi.ToOutputWithContext(ctx, i).(ChannelSourceSslCaCertificateOutput)
 }
 
-func (i ChannelSourceSslCaCertificateArgs) ToOutput(ctx context.Context) pulumix.Output[ChannelSourceSslCaCertificate] {
-	return pulumix.Output[ChannelSourceSslCaCertificate]{
-		OutputState: i.ToChannelSourceSslCaCertificateOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i ChannelSourceSslCaCertificateArgs) ToChannelSourceSslCaCertificatePtrOutput() ChannelSourceSslCaCertificatePtrOutput {
 	return i.ToChannelSourceSslCaCertificatePtrOutputWithContext(context.Background())
 }
@@ -612,12 +557,6 @@ func (i *channelSourceSslCaCertificatePtrType) ToChannelSourceSslCaCertificatePt
 	return pulumi.ToOutputWithContext(ctx, i).(ChannelSourceSslCaCertificatePtrOutput)
 }
 
-func (i *channelSourceSslCaCertificatePtrType) ToOutput(ctx context.Context) pulumix.Output[*ChannelSourceSslCaCertificate] {
-	return pulumix.Output[*ChannelSourceSslCaCertificate]{
-		OutputState: i.ToChannelSourceSslCaCertificatePtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ChannelSourceSslCaCertificateOutput struct{ *pulumi.OutputState }
 
 func (ChannelSourceSslCaCertificateOutput) ElementType() reflect.Type {
@@ -642,12 +581,6 @@ func (o ChannelSourceSslCaCertificateOutput) ToChannelSourceSslCaCertificatePtrO
 	}).(ChannelSourceSslCaCertificatePtrOutput)
 }
 
-func (o ChannelSourceSslCaCertificateOutput) ToOutput(ctx context.Context) pulumix.Output[ChannelSourceSslCaCertificate] {
-	return pulumix.Output[ChannelSourceSslCaCertificate]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) The type of CA certificate.
 func (o ChannelSourceSslCaCertificateOutput) CertificateType() pulumi.StringOutput {
 	return o.ApplyT(func(v ChannelSourceSslCaCertificate) string { return v.CertificateType }).(pulumi.StringOutput)
@@ -670,12 +603,6 @@ func (o ChannelSourceSslCaCertificatePtrOutput) ToChannelSourceSslCaCertificateP
 
 func (o ChannelSourceSslCaCertificatePtrOutput) ToChannelSourceSslCaCertificatePtrOutputWithContext(ctx context.Context) ChannelSourceSslCaCertificatePtrOutput {
 	return o
-}
-
-func (o ChannelSourceSslCaCertificatePtrOutput) ToOutput(ctx context.Context) pulumix.Output[*ChannelSourceSslCaCertificate] {
-	return pulumix.Output[*ChannelSourceSslCaCertificate]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ChannelSourceSslCaCertificatePtrOutput) Elem() ChannelSourceSslCaCertificateOutput {
@@ -771,12 +698,6 @@ func (i ChannelTargetArgs) ToChannelTargetOutputWithContext(ctx context.Context)
 	return pulumi.ToOutputWithContext(ctx, i).(ChannelTargetOutput)
 }
 
-func (i ChannelTargetArgs) ToOutput(ctx context.Context) pulumix.Output[ChannelTarget] {
-	return pulumix.Output[ChannelTarget]{
-		OutputState: i.ToChannelTargetOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i ChannelTargetArgs) ToChannelTargetPtrOutput() ChannelTargetPtrOutput {
 	return i.ToChannelTargetPtrOutputWithContext(context.Background())
 }
@@ -818,12 +739,6 @@ func (i *channelTargetPtrType) ToChannelTargetPtrOutputWithContext(ctx context.C
 	return pulumi.ToOutputWithContext(ctx, i).(ChannelTargetPtrOutput)
 }
 
-func (i *channelTargetPtrType) ToOutput(ctx context.Context) pulumix.Output[*ChannelTarget] {
-	return pulumix.Output[*ChannelTarget]{
-		OutputState: i.ToChannelTargetPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ChannelTargetOutput struct{ *pulumi.OutputState }
 
 func (ChannelTargetOutput) ElementType() reflect.Type {
@@ -846,12 +761,6 @@ func (o ChannelTargetOutput) ToChannelTargetPtrOutputWithContext(ctx context.Con
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v ChannelTarget) *ChannelTarget {
 		return &v
 	}).(ChannelTargetPtrOutput)
-}
-
-func (o ChannelTargetOutput) ToOutput(ctx context.Context) pulumix.Output[ChannelTarget] {
-	return pulumix.Output[ChannelTarget]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The username for the replication applier of the target MySQL DB System.
@@ -904,12 +813,6 @@ func (o ChannelTargetPtrOutput) ToChannelTargetPtrOutput() ChannelTargetPtrOutpu
 
 func (o ChannelTargetPtrOutput) ToChannelTargetPtrOutputWithContext(ctx context.Context) ChannelTargetPtrOutput {
 	return o
-}
-
-func (o ChannelTargetPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*ChannelTarget] {
-	return pulumix.Output[*ChannelTarget]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ChannelTargetPtrOutput) Elem() ChannelTargetOutput {
@@ -1036,12 +939,6 @@ func (i ChannelTargetFilterArgs) ToChannelTargetFilterOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(ChannelTargetFilterOutput)
 }
 
-func (i ChannelTargetFilterArgs) ToOutput(ctx context.Context) pulumix.Output[ChannelTargetFilter] {
-	return pulumix.Output[ChannelTargetFilter]{
-		OutputState: i.ToChannelTargetFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ChannelTargetFilterArrayInput is an input type that accepts ChannelTargetFilterArray and ChannelTargetFilterArrayOutput values.
 // You can construct a concrete instance of `ChannelTargetFilterArrayInput` via:
 //
@@ -1067,12 +964,6 @@ func (i ChannelTargetFilterArray) ToChannelTargetFilterArrayOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(ChannelTargetFilterArrayOutput)
 }
 
-func (i ChannelTargetFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]ChannelTargetFilter] {
-	return pulumix.Output[[]ChannelTargetFilter]{
-		OutputState: i.ToChannelTargetFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ChannelTargetFilterOutput struct{ *pulumi.OutputState }
 
 func (ChannelTargetFilterOutput) ElementType() reflect.Type {
@@ -1085,12 +976,6 @@ func (o ChannelTargetFilterOutput) ToChannelTargetFilterOutput() ChannelTargetFi
 
 func (o ChannelTargetFilterOutput) ToChannelTargetFilterOutputWithContext(ctx context.Context) ChannelTargetFilterOutput {
 	return o
-}
-
-func (o ChannelTargetFilterOutput) ToOutput(ctx context.Context) pulumix.Output[ChannelTargetFilter] {
-	return pulumix.Output[ChannelTargetFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The type of the filter rule.
@@ -1117,12 +1002,6 @@ func (o ChannelTargetFilterArrayOutput) ToChannelTargetFilterArrayOutput() Chann
 
 func (o ChannelTargetFilterArrayOutput) ToChannelTargetFilterArrayOutputWithContext(ctx context.Context) ChannelTargetFilterArrayOutput {
 	return o
-}
-
-func (o ChannelTargetFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]ChannelTargetFilter] {
-	return pulumix.Output[[]ChannelTargetFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ChannelTargetFilterArrayOutput) Index(i pulumi.IntInput) ChannelTargetFilterOutput {
@@ -1182,12 +1061,6 @@ func (i HeatWaveClusterClusterNodeArgs) ToHeatWaveClusterClusterNodeOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(HeatWaveClusterClusterNodeOutput)
 }
 
-func (i HeatWaveClusterClusterNodeArgs) ToOutput(ctx context.Context) pulumix.Output[HeatWaveClusterClusterNode] {
-	return pulumix.Output[HeatWaveClusterClusterNode]{
-		OutputState: i.ToHeatWaveClusterClusterNodeOutputWithContext(ctx).OutputState,
-	}
-}
-
 // HeatWaveClusterClusterNodeArrayInput is an input type that accepts HeatWaveClusterClusterNodeArray and HeatWaveClusterClusterNodeArrayOutput values.
 // You can construct a concrete instance of `HeatWaveClusterClusterNodeArrayInput` via:
 //
@@ -1213,12 +1086,6 @@ func (i HeatWaveClusterClusterNodeArray) ToHeatWaveClusterClusterNodeArrayOutput
 	return pulumi.ToOutputWithContext(ctx, i).(HeatWaveClusterClusterNodeArrayOutput)
 }
 
-func (i HeatWaveClusterClusterNodeArray) ToOutput(ctx context.Context) pulumix.Output[[]HeatWaveClusterClusterNode] {
-	return pulumix.Output[[]HeatWaveClusterClusterNode]{
-		OutputState: i.ToHeatWaveClusterClusterNodeArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type HeatWaveClusterClusterNodeOutput struct{ *pulumi.OutputState }
 
 func (HeatWaveClusterClusterNodeOutput) ElementType() reflect.Type {
@@ -1231,12 +1098,6 @@ func (o HeatWaveClusterClusterNodeOutput) ToHeatWaveClusterClusterNodeOutput() H
 
 func (o HeatWaveClusterClusterNodeOutput) ToHeatWaveClusterClusterNodeOutputWithContext(ctx context.Context) HeatWaveClusterClusterNodeOutput {
 	return o
-}
-
-func (o HeatWaveClusterClusterNodeOutput) ToOutput(ctx context.Context) pulumix.Output[HeatWaveClusterClusterNode] {
-	return pulumix.Output[HeatWaveClusterClusterNode]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The ID of the node within MySQL HeatWave cluster.
@@ -1274,12 +1135,6 @@ func (o HeatWaveClusterClusterNodeArrayOutput) ToHeatWaveClusterClusterNodeArray
 
 func (o HeatWaveClusterClusterNodeArrayOutput) ToHeatWaveClusterClusterNodeArrayOutputWithContext(ctx context.Context) HeatWaveClusterClusterNodeArrayOutput {
 	return o
-}
-
-func (o HeatWaveClusterClusterNodeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]HeatWaveClusterClusterNode] {
-	return pulumix.Output[[]HeatWaveClusterClusterNode]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o HeatWaveClusterClusterNodeArrayOutput) Index(i pulumi.IntInput) HeatWaveClusterClusterNodeOutput {
@@ -1417,12 +1272,6 @@ func (i MysqlBackupDbSystemSnapshotArgs) ToMysqlBackupDbSystemSnapshotOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(MysqlBackupDbSystemSnapshotOutput)
 }
 
-func (i MysqlBackupDbSystemSnapshotArgs) ToOutput(ctx context.Context) pulumix.Output[MysqlBackupDbSystemSnapshot] {
-	return pulumix.Output[MysqlBackupDbSystemSnapshot]{
-		OutputState: i.ToMysqlBackupDbSystemSnapshotOutputWithContext(ctx).OutputState,
-	}
-}
-
 // MysqlBackupDbSystemSnapshotArrayInput is an input type that accepts MysqlBackupDbSystemSnapshotArray and MysqlBackupDbSystemSnapshotArrayOutput values.
 // You can construct a concrete instance of `MysqlBackupDbSystemSnapshotArrayInput` via:
 //
@@ -1448,12 +1297,6 @@ func (i MysqlBackupDbSystemSnapshotArray) ToMysqlBackupDbSystemSnapshotArrayOutp
 	return pulumi.ToOutputWithContext(ctx, i).(MysqlBackupDbSystemSnapshotArrayOutput)
 }
 
-func (i MysqlBackupDbSystemSnapshotArray) ToOutput(ctx context.Context) pulumix.Output[[]MysqlBackupDbSystemSnapshot] {
-	return pulumix.Output[[]MysqlBackupDbSystemSnapshot]{
-		OutputState: i.ToMysqlBackupDbSystemSnapshotArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type MysqlBackupDbSystemSnapshotOutput struct{ *pulumi.OutputState }
 
 func (MysqlBackupDbSystemSnapshotOutput) ElementType() reflect.Type {
@@ -1466,12 +1309,6 @@ func (o MysqlBackupDbSystemSnapshotOutput) ToMysqlBackupDbSystemSnapshotOutput()
 
 func (o MysqlBackupDbSystemSnapshotOutput) ToMysqlBackupDbSystemSnapshotOutputWithContext(ctx context.Context) MysqlBackupDbSystemSnapshotOutput {
 	return o
-}
-
-func (o MysqlBackupDbSystemSnapshotOutput) ToOutput(ctx context.Context) pulumix.Output[MysqlBackupDbSystemSnapshot] {
-	return pulumix.Output[MysqlBackupDbSystemSnapshot]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The username for the administrative user.
@@ -1615,12 +1452,6 @@ func (o MysqlBackupDbSystemSnapshotArrayOutput) ToMysqlBackupDbSystemSnapshotArr
 	return o
 }
 
-func (o MysqlBackupDbSystemSnapshotArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]MysqlBackupDbSystemSnapshot] {
-	return pulumix.Output[[]MysqlBackupDbSystemSnapshot]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o MysqlBackupDbSystemSnapshotArrayOutput) Index(i pulumi.IntInput) MysqlBackupDbSystemSnapshotOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) MysqlBackupDbSystemSnapshot {
 		return vs[0].([]MysqlBackupDbSystemSnapshot)[vs[1].(int)]
@@ -1686,12 +1517,6 @@ func (i MysqlBackupDbSystemSnapshotBackupPolicyArgs) ToMysqlBackupDbSystemSnapsh
 	return pulumi.ToOutputWithContext(ctx, i).(MysqlBackupDbSystemSnapshotBackupPolicyOutput)
 }
 
-func (i MysqlBackupDbSystemSnapshotBackupPolicyArgs) ToOutput(ctx context.Context) pulumix.Output[MysqlBackupDbSystemSnapshotBackupPolicy] {
-	return pulumix.Output[MysqlBackupDbSystemSnapshotBackupPolicy]{
-		OutputState: i.ToMysqlBackupDbSystemSnapshotBackupPolicyOutputWithContext(ctx).OutputState,
-	}
-}
-
 // MysqlBackupDbSystemSnapshotBackupPolicyArrayInput is an input type that accepts MysqlBackupDbSystemSnapshotBackupPolicyArray and MysqlBackupDbSystemSnapshotBackupPolicyArrayOutput values.
 // You can construct a concrete instance of `MysqlBackupDbSystemSnapshotBackupPolicyArrayInput` via:
 //
@@ -1717,12 +1542,6 @@ func (i MysqlBackupDbSystemSnapshotBackupPolicyArray) ToMysqlBackupDbSystemSnaps
 	return pulumi.ToOutputWithContext(ctx, i).(MysqlBackupDbSystemSnapshotBackupPolicyArrayOutput)
 }
 
-func (i MysqlBackupDbSystemSnapshotBackupPolicyArray) ToOutput(ctx context.Context) pulumix.Output[[]MysqlBackupDbSystemSnapshotBackupPolicy] {
-	return pulumix.Output[[]MysqlBackupDbSystemSnapshotBackupPolicy]{
-		OutputState: i.ToMysqlBackupDbSystemSnapshotBackupPolicyArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type MysqlBackupDbSystemSnapshotBackupPolicyOutput struct{ *pulumi.OutputState }
 
 func (MysqlBackupDbSystemSnapshotBackupPolicyOutput) ElementType() reflect.Type {
@@ -1735,12 +1554,6 @@ func (o MysqlBackupDbSystemSnapshotBackupPolicyOutput) ToMysqlBackupDbSystemSnap
 
 func (o MysqlBackupDbSystemSnapshotBackupPolicyOutput) ToMysqlBackupDbSystemSnapshotBackupPolicyOutputWithContext(ctx context.Context) MysqlBackupDbSystemSnapshotBackupPolicyOutput {
 	return o
-}
-
-func (o MysqlBackupDbSystemSnapshotBackupPolicyOutput) ToOutput(ctx context.Context) pulumix.Output[MysqlBackupDbSystemSnapshotBackupPolicy] {
-	return pulumix.Output[MysqlBackupDbSystemSnapshotBackupPolicy]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -1792,12 +1605,6 @@ func (o MysqlBackupDbSystemSnapshotBackupPolicyArrayOutput) ToMysqlBackupDbSyste
 	return o
 }
 
-func (o MysqlBackupDbSystemSnapshotBackupPolicyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]MysqlBackupDbSystemSnapshotBackupPolicy] {
-	return pulumix.Output[[]MysqlBackupDbSystemSnapshotBackupPolicy]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o MysqlBackupDbSystemSnapshotBackupPolicyArrayOutput) Index(i pulumi.IntInput) MysqlBackupDbSystemSnapshotBackupPolicyOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) MysqlBackupDbSystemSnapshotBackupPolicy {
 		return vs[0].([]MysqlBackupDbSystemSnapshotBackupPolicy)[vs[1].(int)]
@@ -1837,12 +1644,6 @@ func (i MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArgs) ToMysqlBackupDbSy
 	return pulumi.ToOutputWithContext(ctx, i).(MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyOutput)
 }
 
-func (i MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArgs) ToOutput(ctx context.Context) pulumix.Output[MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicy] {
-	return pulumix.Output[MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicy]{
-		OutputState: i.ToMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyOutputWithContext(ctx).OutputState,
-	}
-}
-
 // MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayInput is an input type that accepts MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArray and MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayOutput values.
 // You can construct a concrete instance of `MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayInput` via:
 //
@@ -1868,12 +1669,6 @@ func (i MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArray) ToMysqlBackupDbS
 	return pulumi.ToOutputWithContext(ctx, i).(MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayOutput)
 }
 
-func (i MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArray) ToOutput(ctx context.Context) pulumix.Output[[]MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicy] {
-	return pulumix.Output[[]MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicy]{
-		OutputState: i.ToMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyOutput struct{ *pulumi.OutputState }
 
 func (MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyOutput) ElementType() reflect.Type {
@@ -1886,12 +1681,6 @@ func (o MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyOutput) ToMysqlBackupDb
 
 func (o MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyOutput) ToMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyOutputWithContext(ctx context.Context) MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyOutput {
 	return o
-}
-
-func (o MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyOutput) ToOutput(ctx context.Context) pulumix.Output[MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicy] {
-	return pulumix.Output[MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicy]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Specifies if PITR is enabled or disabled.
@@ -1911,12 +1700,6 @@ func (o MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayOutput) ToMysqlBac
 
 func (o MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayOutput) ToMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayOutputWithContext(ctx context.Context) MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayOutput {
 	return o
-}
-
-func (o MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicy] {
-	return pulumix.Output[[]MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicy]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayOutput) Index(i pulumi.IntInput) MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyOutput {
@@ -1966,12 +1749,6 @@ func (i MysqlBackupDbSystemSnapshotDeletionPolicyArgs) ToMysqlBackupDbSystemSnap
 	return pulumi.ToOutputWithContext(ctx, i).(MysqlBackupDbSystemSnapshotDeletionPolicyOutput)
 }
 
-func (i MysqlBackupDbSystemSnapshotDeletionPolicyArgs) ToOutput(ctx context.Context) pulumix.Output[MysqlBackupDbSystemSnapshotDeletionPolicy] {
-	return pulumix.Output[MysqlBackupDbSystemSnapshotDeletionPolicy]{
-		OutputState: i.ToMysqlBackupDbSystemSnapshotDeletionPolicyOutputWithContext(ctx).OutputState,
-	}
-}
-
 // MysqlBackupDbSystemSnapshotDeletionPolicyArrayInput is an input type that accepts MysqlBackupDbSystemSnapshotDeletionPolicyArray and MysqlBackupDbSystemSnapshotDeletionPolicyArrayOutput values.
 // You can construct a concrete instance of `MysqlBackupDbSystemSnapshotDeletionPolicyArrayInput` via:
 //
@@ -1997,12 +1774,6 @@ func (i MysqlBackupDbSystemSnapshotDeletionPolicyArray) ToMysqlBackupDbSystemSna
 	return pulumi.ToOutputWithContext(ctx, i).(MysqlBackupDbSystemSnapshotDeletionPolicyArrayOutput)
 }
 
-func (i MysqlBackupDbSystemSnapshotDeletionPolicyArray) ToOutput(ctx context.Context) pulumix.Output[[]MysqlBackupDbSystemSnapshotDeletionPolicy] {
-	return pulumix.Output[[]MysqlBackupDbSystemSnapshotDeletionPolicy]{
-		OutputState: i.ToMysqlBackupDbSystemSnapshotDeletionPolicyArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type MysqlBackupDbSystemSnapshotDeletionPolicyOutput struct{ *pulumi.OutputState }
 
 func (MysqlBackupDbSystemSnapshotDeletionPolicyOutput) ElementType() reflect.Type {
@@ -2015,12 +1786,6 @@ func (o MysqlBackupDbSystemSnapshotDeletionPolicyOutput) ToMysqlBackupDbSystemSn
 
 func (o MysqlBackupDbSystemSnapshotDeletionPolicyOutput) ToMysqlBackupDbSystemSnapshotDeletionPolicyOutputWithContext(ctx context.Context) MysqlBackupDbSystemSnapshotDeletionPolicyOutput {
 	return o
-}
-
-func (o MysqlBackupDbSystemSnapshotDeletionPolicyOutput) ToOutput(ctx context.Context) pulumix.Output[MysqlBackupDbSystemSnapshotDeletionPolicy] {
-	return pulumix.Output[MysqlBackupDbSystemSnapshotDeletionPolicy]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Specifies if any automatic backups created for a DB System should be retained or deleted when the DB System is deleted.
@@ -2050,12 +1815,6 @@ func (o MysqlBackupDbSystemSnapshotDeletionPolicyArrayOutput) ToMysqlBackupDbSys
 
 func (o MysqlBackupDbSystemSnapshotDeletionPolicyArrayOutput) ToMysqlBackupDbSystemSnapshotDeletionPolicyArrayOutputWithContext(ctx context.Context) MysqlBackupDbSystemSnapshotDeletionPolicyArrayOutput {
 	return o
-}
-
-func (o MysqlBackupDbSystemSnapshotDeletionPolicyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]MysqlBackupDbSystemSnapshotDeletionPolicy] {
-	return pulumix.Output[[]MysqlBackupDbSystemSnapshotDeletionPolicy]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o MysqlBackupDbSystemSnapshotDeletionPolicyArrayOutput) Index(i pulumi.IntInput) MysqlBackupDbSystemSnapshotDeletionPolicyOutput {
@@ -2129,12 +1888,6 @@ func (i MysqlBackupDbSystemSnapshotEndpointArgs) ToMysqlBackupDbSystemSnapshotEn
 	return pulumi.ToOutputWithContext(ctx, i).(MysqlBackupDbSystemSnapshotEndpointOutput)
 }
 
-func (i MysqlBackupDbSystemSnapshotEndpointArgs) ToOutput(ctx context.Context) pulumix.Output[MysqlBackupDbSystemSnapshotEndpoint] {
-	return pulumix.Output[MysqlBackupDbSystemSnapshotEndpoint]{
-		OutputState: i.ToMysqlBackupDbSystemSnapshotEndpointOutputWithContext(ctx).OutputState,
-	}
-}
-
 // MysqlBackupDbSystemSnapshotEndpointArrayInput is an input type that accepts MysqlBackupDbSystemSnapshotEndpointArray and MysqlBackupDbSystemSnapshotEndpointArrayOutput values.
 // You can construct a concrete instance of `MysqlBackupDbSystemSnapshotEndpointArrayInput` via:
 //
@@ -2160,12 +1913,6 @@ func (i MysqlBackupDbSystemSnapshotEndpointArray) ToMysqlBackupDbSystemSnapshotE
 	return pulumi.ToOutputWithContext(ctx, i).(MysqlBackupDbSystemSnapshotEndpointArrayOutput)
 }
 
-func (i MysqlBackupDbSystemSnapshotEndpointArray) ToOutput(ctx context.Context) pulumix.Output[[]MysqlBackupDbSystemSnapshotEndpoint] {
-	return pulumix.Output[[]MysqlBackupDbSystemSnapshotEndpoint]{
-		OutputState: i.ToMysqlBackupDbSystemSnapshotEndpointArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type MysqlBackupDbSystemSnapshotEndpointOutput struct{ *pulumi.OutputState }
 
 func (MysqlBackupDbSystemSnapshotEndpointOutput) ElementType() reflect.Type {
@@ -2178,12 +1925,6 @@ func (o MysqlBackupDbSystemSnapshotEndpointOutput) ToMysqlBackupDbSystemSnapshot
 
 func (o MysqlBackupDbSystemSnapshotEndpointOutput) ToMysqlBackupDbSystemSnapshotEndpointOutputWithContext(ctx context.Context) MysqlBackupDbSystemSnapshotEndpointOutput {
 	return o
-}
-
-func (o MysqlBackupDbSystemSnapshotEndpointOutput) ToOutput(ctx context.Context) pulumix.Output[MysqlBackupDbSystemSnapshotEndpoint] {
-	return pulumix.Output[MysqlBackupDbSystemSnapshotEndpoint]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The network address of the DB System.
@@ -2245,12 +1986,6 @@ func (o MysqlBackupDbSystemSnapshotEndpointArrayOutput) ToMysqlBackupDbSystemSna
 	return o
 }
 
-func (o MysqlBackupDbSystemSnapshotEndpointArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]MysqlBackupDbSystemSnapshotEndpoint] {
-	return pulumix.Output[[]MysqlBackupDbSystemSnapshotEndpoint]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o MysqlBackupDbSystemSnapshotEndpointArrayOutput) Index(i pulumi.IntInput) MysqlBackupDbSystemSnapshotEndpointOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) MysqlBackupDbSystemSnapshotEndpoint {
 		return vs[0].([]MysqlBackupDbSystemSnapshotEndpoint)[vs[1].(int)]
@@ -2290,12 +2025,6 @@ func (i MysqlBackupDbSystemSnapshotMaintenanceArgs) ToMysqlBackupDbSystemSnapsho
 	return pulumi.ToOutputWithContext(ctx, i).(MysqlBackupDbSystemSnapshotMaintenanceOutput)
 }
 
-func (i MysqlBackupDbSystemSnapshotMaintenanceArgs) ToOutput(ctx context.Context) pulumix.Output[MysqlBackupDbSystemSnapshotMaintenance] {
-	return pulumix.Output[MysqlBackupDbSystemSnapshotMaintenance]{
-		OutputState: i.ToMysqlBackupDbSystemSnapshotMaintenanceOutputWithContext(ctx).OutputState,
-	}
-}
-
 // MysqlBackupDbSystemSnapshotMaintenanceArrayInput is an input type that accepts MysqlBackupDbSystemSnapshotMaintenanceArray and MysqlBackupDbSystemSnapshotMaintenanceArrayOutput values.
 // You can construct a concrete instance of `MysqlBackupDbSystemSnapshotMaintenanceArrayInput` via:
 //
@@ -2321,12 +2050,6 @@ func (i MysqlBackupDbSystemSnapshotMaintenanceArray) ToMysqlBackupDbSystemSnapsh
 	return pulumi.ToOutputWithContext(ctx, i).(MysqlBackupDbSystemSnapshotMaintenanceArrayOutput)
 }
 
-func (i MysqlBackupDbSystemSnapshotMaintenanceArray) ToOutput(ctx context.Context) pulumix.Output[[]MysqlBackupDbSystemSnapshotMaintenance] {
-	return pulumix.Output[[]MysqlBackupDbSystemSnapshotMaintenance]{
-		OutputState: i.ToMysqlBackupDbSystemSnapshotMaintenanceArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type MysqlBackupDbSystemSnapshotMaintenanceOutput struct{ *pulumi.OutputState }
 
 func (MysqlBackupDbSystemSnapshotMaintenanceOutput) ElementType() reflect.Type {
@@ -2339,12 +2062,6 @@ func (o MysqlBackupDbSystemSnapshotMaintenanceOutput) ToMysqlBackupDbSystemSnaps
 
 func (o MysqlBackupDbSystemSnapshotMaintenanceOutput) ToMysqlBackupDbSystemSnapshotMaintenanceOutputWithContext(ctx context.Context) MysqlBackupDbSystemSnapshotMaintenanceOutput {
 	return o
-}
-
-func (o MysqlBackupDbSystemSnapshotMaintenanceOutput) ToOutput(ctx context.Context) pulumix.Output[MysqlBackupDbSystemSnapshotMaintenance] {
-	return pulumix.Output[MysqlBackupDbSystemSnapshotMaintenance]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The start time of the maintenance window.
@@ -2364,12 +2081,6 @@ func (o MysqlBackupDbSystemSnapshotMaintenanceArrayOutput) ToMysqlBackupDbSystem
 
 func (o MysqlBackupDbSystemSnapshotMaintenanceArrayOutput) ToMysqlBackupDbSystemSnapshotMaintenanceArrayOutputWithContext(ctx context.Context) MysqlBackupDbSystemSnapshotMaintenanceArrayOutput {
 	return o
-}
-
-func (o MysqlBackupDbSystemSnapshotMaintenanceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]MysqlBackupDbSystemSnapshotMaintenance] {
-	return pulumix.Output[[]MysqlBackupDbSystemSnapshotMaintenance]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o MysqlBackupDbSystemSnapshotMaintenanceArrayOutput) Index(i pulumi.IntInput) MysqlBackupDbSystemSnapshotMaintenanceOutput {
@@ -2423,12 +2134,6 @@ func (i MysqlConfigurationInitVariablesArgs) ToMysqlConfigurationInitVariablesOu
 	return pulumi.ToOutputWithContext(ctx, i).(MysqlConfigurationInitVariablesOutput)
 }
 
-func (i MysqlConfigurationInitVariablesArgs) ToOutput(ctx context.Context) pulumix.Output[MysqlConfigurationInitVariables] {
-	return pulumix.Output[MysqlConfigurationInitVariables]{
-		OutputState: i.ToMysqlConfigurationInitVariablesOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i MysqlConfigurationInitVariablesArgs) ToMysqlConfigurationInitVariablesPtrOutput() MysqlConfigurationInitVariablesPtrOutput {
 	return i.ToMysqlConfigurationInitVariablesPtrOutputWithContext(context.Background())
 }
@@ -2470,12 +2175,6 @@ func (i *mysqlConfigurationInitVariablesPtrType) ToMysqlConfigurationInitVariabl
 	return pulumi.ToOutputWithContext(ctx, i).(MysqlConfigurationInitVariablesPtrOutput)
 }
 
-func (i *mysqlConfigurationInitVariablesPtrType) ToOutput(ctx context.Context) pulumix.Output[*MysqlConfigurationInitVariables] {
-	return pulumix.Output[*MysqlConfigurationInitVariables]{
-		OutputState: i.ToMysqlConfigurationInitVariablesPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type MysqlConfigurationInitVariablesOutput struct{ *pulumi.OutputState }
 
 func (MysqlConfigurationInitVariablesOutput) ElementType() reflect.Type {
@@ -2498,12 +2197,6 @@ func (o MysqlConfigurationInitVariablesOutput) ToMysqlConfigurationInitVariables
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v MysqlConfigurationInitVariables) *MysqlConfigurationInitVariables {
 		return &v
 	}).(MysqlConfigurationInitVariablesPtrOutput)
-}
-
-func (o MysqlConfigurationInitVariablesOutput) ToOutput(ctx context.Context) pulumix.Output[MysqlConfigurationInitVariables] {
-	return pulumix.Output[MysqlConfigurationInitVariables]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Represents the MySQL server system variable lowerCaseTableNames (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_lower_case_table_names).
@@ -2529,12 +2222,6 @@ func (o MysqlConfigurationInitVariablesPtrOutput) ToMysqlConfigurationInitVariab
 
 func (o MysqlConfigurationInitVariablesPtrOutput) ToMysqlConfigurationInitVariablesPtrOutputWithContext(ctx context.Context) MysqlConfigurationInitVariablesPtrOutput {
 	return o
-}
-
-func (o MysqlConfigurationInitVariablesPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*MysqlConfigurationInitVariables] {
-	return pulumix.Output[*MysqlConfigurationInitVariables]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o MysqlConfigurationInitVariablesPtrOutput) Elem() MysqlConfigurationInitVariablesOutput {
@@ -3118,12 +2805,6 @@ func (i MysqlConfigurationVariablesArgs) ToMysqlConfigurationVariablesOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(MysqlConfigurationVariablesOutput)
 }
 
-func (i MysqlConfigurationVariablesArgs) ToOutput(ctx context.Context) pulumix.Output[MysqlConfigurationVariables] {
-	return pulumix.Output[MysqlConfigurationVariables]{
-		OutputState: i.ToMysqlConfigurationVariablesOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i MysqlConfigurationVariablesArgs) ToMysqlConfigurationVariablesPtrOutput() MysqlConfigurationVariablesPtrOutput {
 	return i.ToMysqlConfigurationVariablesPtrOutputWithContext(context.Background())
 }
@@ -3165,12 +2846,6 @@ func (i *mysqlConfigurationVariablesPtrType) ToMysqlConfigurationVariablesPtrOut
 	return pulumi.ToOutputWithContext(ctx, i).(MysqlConfigurationVariablesPtrOutput)
 }
 
-func (i *mysqlConfigurationVariablesPtrType) ToOutput(ctx context.Context) pulumix.Output[*MysqlConfigurationVariables] {
-	return pulumix.Output[*MysqlConfigurationVariables]{
-		OutputState: i.ToMysqlConfigurationVariablesPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type MysqlConfigurationVariablesOutput struct{ *pulumi.OutputState }
 
 func (MysqlConfigurationVariablesOutput) ElementType() reflect.Type {
@@ -3193,12 +2868,6 @@ func (o MysqlConfigurationVariablesOutput) ToMysqlConfigurationVariablesPtrOutpu
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v MysqlConfigurationVariables) *MysqlConfigurationVariables {
 		return &v
 	}).(MysqlConfigurationVariablesPtrOutput)
-}
-
-func (o MysqlConfigurationVariablesOutput) ToOutput(ctx context.Context) pulumix.Output[MysqlConfigurationVariables] {
-	return pulumix.Output[MysqlConfigurationVariables]{
-		OutputState: o.OutputState,
-	}
 }
 
 // ("autocommit")
@@ -3713,12 +3382,6 @@ func (o MysqlConfigurationVariablesPtrOutput) ToMysqlConfigurationVariablesPtrOu
 
 func (o MysqlConfigurationVariablesPtrOutput) ToMysqlConfigurationVariablesPtrOutputWithContext(ctx context.Context) MysqlConfigurationVariablesPtrOutput {
 	return o
-}
-
-func (o MysqlConfigurationVariablesPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*MysqlConfigurationVariables] {
-	return pulumix.Output[*MysqlConfigurationVariables]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o MysqlConfigurationVariablesPtrOutput) Elem() MysqlConfigurationVariablesOutput {
@@ -4695,12 +4358,6 @@ func (i MysqlDbSystemBackupPolicyArgs) ToMysqlDbSystemBackupPolicyOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(MysqlDbSystemBackupPolicyOutput)
 }
 
-func (i MysqlDbSystemBackupPolicyArgs) ToOutput(ctx context.Context) pulumix.Output[MysqlDbSystemBackupPolicy] {
-	return pulumix.Output[MysqlDbSystemBackupPolicy]{
-		OutputState: i.ToMysqlDbSystemBackupPolicyOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i MysqlDbSystemBackupPolicyArgs) ToMysqlDbSystemBackupPolicyPtrOutput() MysqlDbSystemBackupPolicyPtrOutput {
 	return i.ToMysqlDbSystemBackupPolicyPtrOutputWithContext(context.Background())
 }
@@ -4742,12 +4399,6 @@ func (i *mysqlDbSystemBackupPolicyPtrType) ToMysqlDbSystemBackupPolicyPtrOutputW
 	return pulumi.ToOutputWithContext(ctx, i).(MysqlDbSystemBackupPolicyPtrOutput)
 }
 
-func (i *mysqlDbSystemBackupPolicyPtrType) ToOutput(ctx context.Context) pulumix.Output[*MysqlDbSystemBackupPolicy] {
-	return pulumix.Output[*MysqlDbSystemBackupPolicy]{
-		OutputState: i.ToMysqlDbSystemBackupPolicyPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type MysqlDbSystemBackupPolicyOutput struct{ *pulumi.OutputState }
 
 func (MysqlDbSystemBackupPolicyOutput) ElementType() reflect.Type {
@@ -4770,12 +4421,6 @@ func (o MysqlDbSystemBackupPolicyOutput) ToMysqlDbSystemBackupPolicyPtrOutputWit
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v MysqlDbSystemBackupPolicy) *MysqlDbSystemBackupPolicy {
 		return &v
 	}).(MysqlDbSystemBackupPolicyPtrOutput)
-}
-
-func (o MysqlDbSystemBackupPolicyOutput) ToOutput(ctx context.Context) pulumix.Output[MysqlDbSystemBackupPolicy] {
-	return pulumix.Output[MysqlDbSystemBackupPolicy]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
@@ -4828,12 +4473,6 @@ func (o MysqlDbSystemBackupPolicyPtrOutput) ToMysqlDbSystemBackupPolicyPtrOutput
 
 func (o MysqlDbSystemBackupPolicyPtrOutput) ToMysqlDbSystemBackupPolicyPtrOutputWithContext(ctx context.Context) MysqlDbSystemBackupPolicyPtrOutput {
 	return o
-}
-
-func (o MysqlDbSystemBackupPolicyPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*MysqlDbSystemBackupPolicy] {
-	return pulumix.Output[*MysqlDbSystemBackupPolicy]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o MysqlDbSystemBackupPolicyPtrOutput) Elem() MysqlDbSystemBackupPolicyOutput {
@@ -4947,12 +4586,6 @@ func (i MysqlDbSystemBackupPolicyPitrPolicyArgs) ToMysqlDbSystemBackupPolicyPitr
 	return pulumi.ToOutputWithContext(ctx, i).(MysqlDbSystemBackupPolicyPitrPolicyOutput)
 }
 
-func (i MysqlDbSystemBackupPolicyPitrPolicyArgs) ToOutput(ctx context.Context) pulumix.Output[MysqlDbSystemBackupPolicyPitrPolicy] {
-	return pulumix.Output[MysqlDbSystemBackupPolicyPitrPolicy]{
-		OutputState: i.ToMysqlDbSystemBackupPolicyPitrPolicyOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i MysqlDbSystemBackupPolicyPitrPolicyArgs) ToMysqlDbSystemBackupPolicyPitrPolicyPtrOutput() MysqlDbSystemBackupPolicyPitrPolicyPtrOutput {
 	return i.ToMysqlDbSystemBackupPolicyPitrPolicyPtrOutputWithContext(context.Background())
 }
@@ -4994,12 +4627,6 @@ func (i *mysqlDbSystemBackupPolicyPitrPolicyPtrType) ToMysqlDbSystemBackupPolicy
 	return pulumi.ToOutputWithContext(ctx, i).(MysqlDbSystemBackupPolicyPitrPolicyPtrOutput)
 }
 
-func (i *mysqlDbSystemBackupPolicyPitrPolicyPtrType) ToOutput(ctx context.Context) pulumix.Output[*MysqlDbSystemBackupPolicyPitrPolicy] {
-	return pulumix.Output[*MysqlDbSystemBackupPolicyPitrPolicy]{
-		OutputState: i.ToMysqlDbSystemBackupPolicyPitrPolicyPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type MysqlDbSystemBackupPolicyPitrPolicyOutput struct{ *pulumi.OutputState }
 
 func (MysqlDbSystemBackupPolicyPitrPolicyOutput) ElementType() reflect.Type {
@@ -5024,12 +4651,6 @@ func (o MysqlDbSystemBackupPolicyPitrPolicyOutput) ToMysqlDbSystemBackupPolicyPi
 	}).(MysqlDbSystemBackupPolicyPitrPolicyPtrOutput)
 }
 
-func (o MysqlDbSystemBackupPolicyPitrPolicyOutput) ToOutput(ctx context.Context) pulumix.Output[MysqlDbSystemBackupPolicyPitrPolicy] {
-	return pulumix.Output[MysqlDbSystemBackupPolicyPitrPolicy]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) Specifies if PITR is enabled or disabled.
 func (o MysqlDbSystemBackupPolicyPitrPolicyOutput) IsEnabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v MysqlDbSystemBackupPolicyPitrPolicy) *bool { return v.IsEnabled }).(pulumi.BoolPtrOutput)
@@ -5047,12 +4668,6 @@ func (o MysqlDbSystemBackupPolicyPitrPolicyPtrOutput) ToMysqlDbSystemBackupPolic
 
 func (o MysqlDbSystemBackupPolicyPitrPolicyPtrOutput) ToMysqlDbSystemBackupPolicyPitrPolicyPtrOutputWithContext(ctx context.Context) MysqlDbSystemBackupPolicyPitrPolicyPtrOutput {
 	return o
-}
-
-func (o MysqlDbSystemBackupPolicyPitrPolicyPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*MysqlDbSystemBackupPolicyPitrPolicy] {
-	return pulumix.Output[*MysqlDbSystemBackupPolicyPitrPolicy]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o MysqlDbSystemBackupPolicyPitrPolicyPtrOutput) Elem() MysqlDbSystemBackupPolicyPitrPolicyOutput {
@@ -5152,12 +4767,6 @@ func (i MysqlDbSystemChannelArgs) ToMysqlDbSystemChannelOutputWithContext(ctx co
 	return pulumi.ToOutputWithContext(ctx, i).(MysqlDbSystemChannelOutput)
 }
 
-func (i MysqlDbSystemChannelArgs) ToOutput(ctx context.Context) pulumix.Output[MysqlDbSystemChannel] {
-	return pulumix.Output[MysqlDbSystemChannel]{
-		OutputState: i.ToMysqlDbSystemChannelOutputWithContext(ctx).OutputState,
-	}
-}
-
 // MysqlDbSystemChannelArrayInput is an input type that accepts MysqlDbSystemChannelArray and MysqlDbSystemChannelArrayOutput values.
 // You can construct a concrete instance of `MysqlDbSystemChannelArrayInput` via:
 //
@@ -5183,12 +4792,6 @@ func (i MysqlDbSystemChannelArray) ToMysqlDbSystemChannelArrayOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(MysqlDbSystemChannelArrayOutput)
 }
 
-func (i MysqlDbSystemChannelArray) ToOutput(ctx context.Context) pulumix.Output[[]MysqlDbSystemChannel] {
-	return pulumix.Output[[]MysqlDbSystemChannel]{
-		OutputState: i.ToMysqlDbSystemChannelArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type MysqlDbSystemChannelOutput struct{ *pulumi.OutputState }
 
 func (MysqlDbSystemChannelOutput) ElementType() reflect.Type {
@@ -5201,12 +4804,6 @@ func (o MysqlDbSystemChannelOutput) ToMysqlDbSystemChannelOutput() MysqlDbSystem
 
 func (o MysqlDbSystemChannelOutput) ToMysqlDbSystemChannelOutputWithContext(ctx context.Context) MysqlDbSystemChannelOutput {
 	return o
-}
-
-func (o MysqlDbSystemChannelOutput) ToOutput(ctx context.Context) pulumix.Output[MysqlDbSystemChannel] {
-	return pulumix.Output[MysqlDbSystemChannel]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The OCID of the compartment.
@@ -5283,12 +4880,6 @@ func (o MysqlDbSystemChannelArrayOutput) ToMysqlDbSystemChannelArrayOutputWithCo
 	return o
 }
 
-func (o MysqlDbSystemChannelArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]MysqlDbSystemChannel] {
-	return pulumix.Output[[]MysqlDbSystemChannel]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o MysqlDbSystemChannelArrayOutput) Index(i pulumi.IntInput) MysqlDbSystemChannelOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) MysqlDbSystemChannel {
 		return vs[0].([]MysqlDbSystemChannel)[vs[1].(int)]
@@ -5352,12 +4943,6 @@ func (i MysqlDbSystemChannelSourceArgs) ToMysqlDbSystemChannelSourceOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(MysqlDbSystemChannelSourceOutput)
 }
 
-func (i MysqlDbSystemChannelSourceArgs) ToOutput(ctx context.Context) pulumix.Output[MysqlDbSystemChannelSource] {
-	return pulumix.Output[MysqlDbSystemChannelSource]{
-		OutputState: i.ToMysqlDbSystemChannelSourceOutputWithContext(ctx).OutputState,
-	}
-}
-
 // MysqlDbSystemChannelSourceArrayInput is an input type that accepts MysqlDbSystemChannelSourceArray and MysqlDbSystemChannelSourceArrayOutput values.
 // You can construct a concrete instance of `MysqlDbSystemChannelSourceArrayInput` via:
 //
@@ -5383,12 +4968,6 @@ func (i MysqlDbSystemChannelSourceArray) ToMysqlDbSystemChannelSourceArrayOutput
 	return pulumi.ToOutputWithContext(ctx, i).(MysqlDbSystemChannelSourceArrayOutput)
 }
 
-func (i MysqlDbSystemChannelSourceArray) ToOutput(ctx context.Context) pulumix.Output[[]MysqlDbSystemChannelSource] {
-	return pulumix.Output[[]MysqlDbSystemChannelSource]{
-		OutputState: i.ToMysqlDbSystemChannelSourceArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type MysqlDbSystemChannelSourceOutput struct{ *pulumi.OutputState }
 
 func (MysqlDbSystemChannelSourceOutput) ElementType() reflect.Type {
@@ -5401,12 +4980,6 @@ func (o MysqlDbSystemChannelSourceOutput) ToMysqlDbSystemChannelSourceOutput() M
 
 func (o MysqlDbSystemChannelSourceOutput) ToMysqlDbSystemChannelSourceOutputWithContext(ctx context.Context) MysqlDbSystemChannelSourceOutput {
 	return o
-}
-
-func (o MysqlDbSystemChannelSourceOutput) ToOutput(ctx context.Context) pulumix.Output[MysqlDbSystemChannelSource] {
-	return pulumix.Output[MysqlDbSystemChannelSource]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Specifies how the replication channel handles replicated transactions without an identifier, enabling replication from a source that does not use transaction-id-based replication to a replica that does.
@@ -5462,12 +5035,6 @@ func (o MysqlDbSystemChannelSourceArrayOutput) ToMysqlDbSystemChannelSourceArray
 	return o
 }
 
-func (o MysqlDbSystemChannelSourceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]MysqlDbSystemChannelSource] {
-	return pulumix.Output[[]MysqlDbSystemChannelSource]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o MysqlDbSystemChannelSourceArrayOutput) Index(i pulumi.IntInput) MysqlDbSystemChannelSourceOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) MysqlDbSystemChannelSource {
 		return vs[0].([]MysqlDbSystemChannelSource)[vs[1].(int)]
@@ -5519,12 +5086,6 @@ func (i MysqlDbSystemChannelSourceAnonymousTransactionsHandlingArgs) ToMysqlDbSy
 	return pulumi.ToOutputWithContext(ctx, i).(MysqlDbSystemChannelSourceAnonymousTransactionsHandlingOutput)
 }
 
-func (i MysqlDbSystemChannelSourceAnonymousTransactionsHandlingArgs) ToOutput(ctx context.Context) pulumix.Output[MysqlDbSystemChannelSourceAnonymousTransactionsHandling] {
-	return pulumix.Output[MysqlDbSystemChannelSourceAnonymousTransactionsHandling]{
-		OutputState: i.ToMysqlDbSystemChannelSourceAnonymousTransactionsHandlingOutputWithContext(ctx).OutputState,
-	}
-}
-
 // MysqlDbSystemChannelSourceAnonymousTransactionsHandlingArrayInput is an input type that accepts MysqlDbSystemChannelSourceAnonymousTransactionsHandlingArray and MysqlDbSystemChannelSourceAnonymousTransactionsHandlingArrayOutput values.
 // You can construct a concrete instance of `MysqlDbSystemChannelSourceAnonymousTransactionsHandlingArrayInput` via:
 //
@@ -5550,12 +5111,6 @@ func (i MysqlDbSystemChannelSourceAnonymousTransactionsHandlingArray) ToMysqlDbS
 	return pulumi.ToOutputWithContext(ctx, i).(MysqlDbSystemChannelSourceAnonymousTransactionsHandlingArrayOutput)
 }
 
-func (i MysqlDbSystemChannelSourceAnonymousTransactionsHandlingArray) ToOutput(ctx context.Context) pulumix.Output[[]MysqlDbSystemChannelSourceAnonymousTransactionsHandling] {
-	return pulumix.Output[[]MysqlDbSystemChannelSourceAnonymousTransactionsHandling]{
-		OutputState: i.ToMysqlDbSystemChannelSourceAnonymousTransactionsHandlingArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type MysqlDbSystemChannelSourceAnonymousTransactionsHandlingOutput struct{ *pulumi.OutputState }
 
 func (MysqlDbSystemChannelSourceAnonymousTransactionsHandlingOutput) ElementType() reflect.Type {
@@ -5568,12 +5123,6 @@ func (o MysqlDbSystemChannelSourceAnonymousTransactionsHandlingOutput) ToMysqlDb
 
 func (o MysqlDbSystemChannelSourceAnonymousTransactionsHandlingOutput) ToMysqlDbSystemChannelSourceAnonymousTransactionsHandlingOutputWithContext(ctx context.Context) MysqlDbSystemChannelSourceAnonymousTransactionsHandlingOutput {
 	return o
-}
-
-func (o MysqlDbSystemChannelSourceAnonymousTransactionsHandlingOutput) ToOutput(ctx context.Context) pulumix.Output[MysqlDbSystemChannelSourceAnonymousTransactionsHandling] {
-	return pulumix.Output[MysqlDbSystemChannelSourceAnonymousTransactionsHandling]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Specifies one of the coordinates (file) at which the replica should begin reading the source's log. As this value specifies the point where replication starts from, it is only used once, when it starts. It is never used again, unless a new UpdateChannel operation modifies it.
@@ -5612,12 +5161,6 @@ func (o MysqlDbSystemChannelSourceAnonymousTransactionsHandlingArrayOutput) ToMy
 
 func (o MysqlDbSystemChannelSourceAnonymousTransactionsHandlingArrayOutput) ToMysqlDbSystemChannelSourceAnonymousTransactionsHandlingArrayOutputWithContext(ctx context.Context) MysqlDbSystemChannelSourceAnonymousTransactionsHandlingArrayOutput {
 	return o
-}
-
-func (o MysqlDbSystemChannelSourceAnonymousTransactionsHandlingArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]MysqlDbSystemChannelSourceAnonymousTransactionsHandling] {
-	return pulumix.Output[[]MysqlDbSystemChannelSourceAnonymousTransactionsHandling]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o MysqlDbSystemChannelSourceAnonymousTransactionsHandlingArrayOutput) Index(i pulumi.IntInput) MysqlDbSystemChannelSourceAnonymousTransactionsHandlingOutput {
@@ -5663,12 +5206,6 @@ func (i MysqlDbSystemChannelSourceSslCaCertificateArgs) ToMysqlDbSystemChannelSo
 	return pulumi.ToOutputWithContext(ctx, i).(MysqlDbSystemChannelSourceSslCaCertificateOutput)
 }
 
-func (i MysqlDbSystemChannelSourceSslCaCertificateArgs) ToOutput(ctx context.Context) pulumix.Output[MysqlDbSystemChannelSourceSslCaCertificate] {
-	return pulumix.Output[MysqlDbSystemChannelSourceSslCaCertificate]{
-		OutputState: i.ToMysqlDbSystemChannelSourceSslCaCertificateOutputWithContext(ctx).OutputState,
-	}
-}
-
 // MysqlDbSystemChannelSourceSslCaCertificateArrayInput is an input type that accepts MysqlDbSystemChannelSourceSslCaCertificateArray and MysqlDbSystemChannelSourceSslCaCertificateArrayOutput values.
 // You can construct a concrete instance of `MysqlDbSystemChannelSourceSslCaCertificateArrayInput` via:
 //
@@ -5694,12 +5231,6 @@ func (i MysqlDbSystemChannelSourceSslCaCertificateArray) ToMysqlDbSystemChannelS
 	return pulumi.ToOutputWithContext(ctx, i).(MysqlDbSystemChannelSourceSslCaCertificateArrayOutput)
 }
 
-func (i MysqlDbSystemChannelSourceSslCaCertificateArray) ToOutput(ctx context.Context) pulumix.Output[[]MysqlDbSystemChannelSourceSslCaCertificate] {
-	return pulumix.Output[[]MysqlDbSystemChannelSourceSslCaCertificate]{
-		OutputState: i.ToMysqlDbSystemChannelSourceSslCaCertificateArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type MysqlDbSystemChannelSourceSslCaCertificateOutput struct{ *pulumi.OutputState }
 
 func (MysqlDbSystemChannelSourceSslCaCertificateOutput) ElementType() reflect.Type {
@@ -5712,12 +5243,6 @@ func (o MysqlDbSystemChannelSourceSslCaCertificateOutput) ToMysqlDbSystemChannel
 
 func (o MysqlDbSystemChannelSourceSslCaCertificateOutput) ToMysqlDbSystemChannelSourceSslCaCertificateOutputWithContext(ctx context.Context) MysqlDbSystemChannelSourceSslCaCertificateOutput {
 	return o
-}
-
-func (o MysqlDbSystemChannelSourceSslCaCertificateOutput) ToOutput(ctx context.Context) pulumix.Output[MysqlDbSystemChannelSourceSslCaCertificate] {
-	return pulumix.Output[MysqlDbSystemChannelSourceSslCaCertificate]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The type of CA certificate.
@@ -5742,12 +5267,6 @@ func (o MysqlDbSystemChannelSourceSslCaCertificateArrayOutput) ToMysqlDbSystemCh
 
 func (o MysqlDbSystemChannelSourceSslCaCertificateArrayOutput) ToMysqlDbSystemChannelSourceSslCaCertificateArrayOutputWithContext(ctx context.Context) MysqlDbSystemChannelSourceSslCaCertificateArrayOutput {
 	return o
-}
-
-func (o MysqlDbSystemChannelSourceSslCaCertificateArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]MysqlDbSystemChannelSourceSslCaCertificate] {
-	return pulumix.Output[[]MysqlDbSystemChannelSourceSslCaCertificate]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o MysqlDbSystemChannelSourceSslCaCertificateArrayOutput) Index(i pulumi.IntInput) MysqlDbSystemChannelSourceSslCaCertificateOutput {
@@ -5813,12 +5332,6 @@ func (i MysqlDbSystemChannelTargetArgs) ToMysqlDbSystemChannelTargetOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(MysqlDbSystemChannelTargetOutput)
 }
 
-func (i MysqlDbSystemChannelTargetArgs) ToOutput(ctx context.Context) pulumix.Output[MysqlDbSystemChannelTarget] {
-	return pulumix.Output[MysqlDbSystemChannelTarget]{
-		OutputState: i.ToMysqlDbSystemChannelTargetOutputWithContext(ctx).OutputState,
-	}
-}
-
 // MysqlDbSystemChannelTargetArrayInput is an input type that accepts MysqlDbSystemChannelTargetArray and MysqlDbSystemChannelTargetArrayOutput values.
 // You can construct a concrete instance of `MysqlDbSystemChannelTargetArrayInput` via:
 //
@@ -5844,12 +5357,6 @@ func (i MysqlDbSystemChannelTargetArray) ToMysqlDbSystemChannelTargetArrayOutput
 	return pulumi.ToOutputWithContext(ctx, i).(MysqlDbSystemChannelTargetArrayOutput)
 }
 
-func (i MysqlDbSystemChannelTargetArray) ToOutput(ctx context.Context) pulumix.Output[[]MysqlDbSystemChannelTarget] {
-	return pulumix.Output[[]MysqlDbSystemChannelTarget]{
-		OutputState: i.ToMysqlDbSystemChannelTargetArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type MysqlDbSystemChannelTargetOutput struct{ *pulumi.OutputState }
 
 func (MysqlDbSystemChannelTargetOutput) ElementType() reflect.Type {
@@ -5862,12 +5369,6 @@ func (o MysqlDbSystemChannelTargetOutput) ToMysqlDbSystemChannelTargetOutput() M
 
 func (o MysqlDbSystemChannelTargetOutput) ToMysqlDbSystemChannelTargetOutputWithContext(ctx context.Context) MysqlDbSystemChannelTargetOutput {
 	return o
-}
-
-func (o MysqlDbSystemChannelTargetOutput) ToOutput(ctx context.Context) pulumix.Output[MysqlDbSystemChannelTarget] {
-	return pulumix.Output[MysqlDbSystemChannelTarget]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The username for the replication applier of the target MySQL DB System.
@@ -5919,12 +5420,6 @@ func (o MysqlDbSystemChannelTargetArrayOutput) ToMysqlDbSystemChannelTargetArray
 	return o
 }
 
-func (o MysqlDbSystemChannelTargetArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]MysqlDbSystemChannelTarget] {
-	return pulumix.Output[[]MysqlDbSystemChannelTarget]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o MysqlDbSystemChannelTargetArrayOutput) Index(i pulumi.IntInput) MysqlDbSystemChannelTargetOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) MysqlDbSystemChannelTarget {
 		return vs[0].([]MysqlDbSystemChannelTarget)[vs[1].(int)]
@@ -5968,12 +5463,6 @@ func (i MysqlDbSystemChannelTargetFilterArgs) ToMysqlDbSystemChannelTargetFilter
 	return pulumi.ToOutputWithContext(ctx, i).(MysqlDbSystemChannelTargetFilterOutput)
 }
 
-func (i MysqlDbSystemChannelTargetFilterArgs) ToOutput(ctx context.Context) pulumix.Output[MysqlDbSystemChannelTargetFilter] {
-	return pulumix.Output[MysqlDbSystemChannelTargetFilter]{
-		OutputState: i.ToMysqlDbSystemChannelTargetFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // MysqlDbSystemChannelTargetFilterArrayInput is an input type that accepts MysqlDbSystemChannelTargetFilterArray and MysqlDbSystemChannelTargetFilterArrayOutput values.
 // You can construct a concrete instance of `MysqlDbSystemChannelTargetFilterArrayInput` via:
 //
@@ -5999,12 +5488,6 @@ func (i MysqlDbSystemChannelTargetFilterArray) ToMysqlDbSystemChannelTargetFilte
 	return pulumi.ToOutputWithContext(ctx, i).(MysqlDbSystemChannelTargetFilterArrayOutput)
 }
 
-func (i MysqlDbSystemChannelTargetFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]MysqlDbSystemChannelTargetFilter] {
-	return pulumix.Output[[]MysqlDbSystemChannelTargetFilter]{
-		OutputState: i.ToMysqlDbSystemChannelTargetFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type MysqlDbSystemChannelTargetFilterOutput struct{ *pulumi.OutputState }
 
 func (MysqlDbSystemChannelTargetFilterOutput) ElementType() reflect.Type {
@@ -6017,12 +5500,6 @@ func (o MysqlDbSystemChannelTargetFilterOutput) ToMysqlDbSystemChannelTargetFilt
 
 func (o MysqlDbSystemChannelTargetFilterOutput) ToMysqlDbSystemChannelTargetFilterOutputWithContext(ctx context.Context) MysqlDbSystemChannelTargetFilterOutput {
 	return o
-}
-
-func (o MysqlDbSystemChannelTargetFilterOutput) ToOutput(ctx context.Context) pulumix.Output[MysqlDbSystemChannelTargetFilter] {
-	return pulumix.Output[MysqlDbSystemChannelTargetFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The type of the filter rule.
@@ -6047,12 +5524,6 @@ func (o MysqlDbSystemChannelTargetFilterArrayOutput) ToMysqlDbSystemChannelTarge
 
 func (o MysqlDbSystemChannelTargetFilterArrayOutput) ToMysqlDbSystemChannelTargetFilterArrayOutputWithContext(ctx context.Context) MysqlDbSystemChannelTargetFilterArrayOutput {
 	return o
-}
-
-func (o MysqlDbSystemChannelTargetFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]MysqlDbSystemChannelTargetFilter] {
-	return pulumix.Output[[]MysqlDbSystemChannelTargetFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o MysqlDbSystemChannelTargetFilterArrayOutput) Index(i pulumi.IntInput) MysqlDbSystemChannelTargetFilterOutput {
@@ -6114,12 +5585,6 @@ func (i MysqlDbSystemCurrentPlacementArgs) ToMysqlDbSystemCurrentPlacementOutput
 	return pulumi.ToOutputWithContext(ctx, i).(MysqlDbSystemCurrentPlacementOutput)
 }
 
-func (i MysqlDbSystemCurrentPlacementArgs) ToOutput(ctx context.Context) pulumix.Output[MysqlDbSystemCurrentPlacement] {
-	return pulumix.Output[MysqlDbSystemCurrentPlacement]{
-		OutputState: i.ToMysqlDbSystemCurrentPlacementOutputWithContext(ctx).OutputState,
-	}
-}
-
 // MysqlDbSystemCurrentPlacementArrayInput is an input type that accepts MysqlDbSystemCurrentPlacementArray and MysqlDbSystemCurrentPlacementArrayOutput values.
 // You can construct a concrete instance of `MysqlDbSystemCurrentPlacementArrayInput` via:
 //
@@ -6145,12 +5610,6 @@ func (i MysqlDbSystemCurrentPlacementArray) ToMysqlDbSystemCurrentPlacementArray
 	return pulumi.ToOutputWithContext(ctx, i).(MysqlDbSystemCurrentPlacementArrayOutput)
 }
 
-func (i MysqlDbSystemCurrentPlacementArray) ToOutput(ctx context.Context) pulumix.Output[[]MysqlDbSystemCurrentPlacement] {
-	return pulumix.Output[[]MysqlDbSystemCurrentPlacement]{
-		OutputState: i.ToMysqlDbSystemCurrentPlacementArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type MysqlDbSystemCurrentPlacementOutput struct{ *pulumi.OutputState }
 
 func (MysqlDbSystemCurrentPlacementOutput) ElementType() reflect.Type {
@@ -6163,12 +5622,6 @@ func (o MysqlDbSystemCurrentPlacementOutput) ToMysqlDbSystemCurrentPlacementOutp
 
 func (o MysqlDbSystemCurrentPlacementOutput) ToMysqlDbSystemCurrentPlacementOutputWithContext(ctx context.Context) MysqlDbSystemCurrentPlacementOutput {
 	return o
-}
-
-func (o MysqlDbSystemCurrentPlacementOutput) ToOutput(ctx context.Context) pulumix.Output[MysqlDbSystemCurrentPlacement] {
-	return pulumix.Output[MysqlDbSystemCurrentPlacement]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The availability domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
@@ -6201,12 +5654,6 @@ func (o MysqlDbSystemCurrentPlacementArrayOutput) ToMysqlDbSystemCurrentPlacemen
 
 func (o MysqlDbSystemCurrentPlacementArrayOutput) ToMysqlDbSystemCurrentPlacementArrayOutputWithContext(ctx context.Context) MysqlDbSystemCurrentPlacementArrayOutput {
 	return o
-}
-
-func (o MysqlDbSystemCurrentPlacementArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]MysqlDbSystemCurrentPlacement] {
-	return pulumix.Output[[]MysqlDbSystemCurrentPlacement]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o MysqlDbSystemCurrentPlacementArrayOutput) Index(i pulumi.IntInput) MysqlDbSystemCurrentPlacementOutput {
@@ -6256,12 +5703,6 @@ func (i MysqlDbSystemDeletionPolicyArgs) ToMysqlDbSystemDeletionPolicyOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(MysqlDbSystemDeletionPolicyOutput)
 }
 
-func (i MysqlDbSystemDeletionPolicyArgs) ToOutput(ctx context.Context) pulumix.Output[MysqlDbSystemDeletionPolicy] {
-	return pulumix.Output[MysqlDbSystemDeletionPolicy]{
-		OutputState: i.ToMysqlDbSystemDeletionPolicyOutputWithContext(ctx).OutputState,
-	}
-}
-
 // MysqlDbSystemDeletionPolicyArrayInput is an input type that accepts MysqlDbSystemDeletionPolicyArray and MysqlDbSystemDeletionPolicyArrayOutput values.
 // You can construct a concrete instance of `MysqlDbSystemDeletionPolicyArrayInput` via:
 //
@@ -6287,12 +5728,6 @@ func (i MysqlDbSystemDeletionPolicyArray) ToMysqlDbSystemDeletionPolicyArrayOutp
 	return pulumi.ToOutputWithContext(ctx, i).(MysqlDbSystemDeletionPolicyArrayOutput)
 }
 
-func (i MysqlDbSystemDeletionPolicyArray) ToOutput(ctx context.Context) pulumix.Output[[]MysqlDbSystemDeletionPolicy] {
-	return pulumix.Output[[]MysqlDbSystemDeletionPolicy]{
-		OutputState: i.ToMysqlDbSystemDeletionPolicyArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type MysqlDbSystemDeletionPolicyOutput struct{ *pulumi.OutputState }
 
 func (MysqlDbSystemDeletionPolicyOutput) ElementType() reflect.Type {
@@ -6305,12 +5740,6 @@ func (o MysqlDbSystemDeletionPolicyOutput) ToMysqlDbSystemDeletionPolicyOutput()
 
 func (o MysqlDbSystemDeletionPolicyOutput) ToMysqlDbSystemDeletionPolicyOutputWithContext(ctx context.Context) MysqlDbSystemDeletionPolicyOutput {
 	return o
-}
-
-func (o MysqlDbSystemDeletionPolicyOutput) ToOutput(ctx context.Context) pulumix.Output[MysqlDbSystemDeletionPolicy] {
-	return pulumix.Output[MysqlDbSystemDeletionPolicy]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Specifies if any automatic backups created for a DB System should be retained or deleted when the DB System is deleted.
@@ -6340,12 +5769,6 @@ func (o MysqlDbSystemDeletionPolicyArrayOutput) ToMysqlDbSystemDeletionPolicyArr
 
 func (o MysqlDbSystemDeletionPolicyArrayOutput) ToMysqlDbSystemDeletionPolicyArrayOutputWithContext(ctx context.Context) MysqlDbSystemDeletionPolicyArrayOutput {
 	return o
-}
-
-func (o MysqlDbSystemDeletionPolicyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]MysqlDbSystemDeletionPolicy] {
-	return pulumix.Output[[]MysqlDbSystemDeletionPolicy]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o MysqlDbSystemDeletionPolicyArrayOutput) Index(i pulumi.IntInput) MysqlDbSystemDeletionPolicyOutput {
@@ -6419,12 +5842,6 @@ func (i MysqlDbSystemEndpointArgs) ToMysqlDbSystemEndpointOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(MysqlDbSystemEndpointOutput)
 }
 
-func (i MysqlDbSystemEndpointArgs) ToOutput(ctx context.Context) pulumix.Output[MysqlDbSystemEndpoint] {
-	return pulumix.Output[MysqlDbSystemEndpoint]{
-		OutputState: i.ToMysqlDbSystemEndpointOutputWithContext(ctx).OutputState,
-	}
-}
-
 // MysqlDbSystemEndpointArrayInput is an input type that accepts MysqlDbSystemEndpointArray and MysqlDbSystemEndpointArrayOutput values.
 // You can construct a concrete instance of `MysqlDbSystemEndpointArrayInput` via:
 //
@@ -6450,12 +5867,6 @@ func (i MysqlDbSystemEndpointArray) ToMysqlDbSystemEndpointArrayOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(MysqlDbSystemEndpointArrayOutput)
 }
 
-func (i MysqlDbSystemEndpointArray) ToOutput(ctx context.Context) pulumix.Output[[]MysqlDbSystemEndpoint] {
-	return pulumix.Output[[]MysqlDbSystemEndpoint]{
-		OutputState: i.ToMysqlDbSystemEndpointArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type MysqlDbSystemEndpointOutput struct{ *pulumi.OutputState }
 
 func (MysqlDbSystemEndpointOutput) ElementType() reflect.Type {
@@ -6468,12 +5879,6 @@ func (o MysqlDbSystemEndpointOutput) ToMysqlDbSystemEndpointOutput() MysqlDbSyst
 
 func (o MysqlDbSystemEndpointOutput) ToMysqlDbSystemEndpointOutputWithContext(ctx context.Context) MysqlDbSystemEndpointOutput {
 	return o
-}
-
-func (o MysqlDbSystemEndpointOutput) ToOutput(ctx context.Context) pulumix.Output[MysqlDbSystemEndpoint] {
-	return pulumix.Output[MysqlDbSystemEndpoint]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The network address of the DB System.
@@ -6533,12 +5938,6 @@ func (o MysqlDbSystemEndpointArrayOutput) ToMysqlDbSystemEndpointArrayOutput() M
 
 func (o MysqlDbSystemEndpointArrayOutput) ToMysqlDbSystemEndpointArrayOutputWithContext(ctx context.Context) MysqlDbSystemEndpointArrayOutput {
 	return o
-}
-
-func (o MysqlDbSystemEndpointArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]MysqlDbSystemEndpoint] {
-	return pulumix.Output[[]MysqlDbSystemEndpoint]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o MysqlDbSystemEndpointArrayOutput) Index(i pulumi.IntInput) MysqlDbSystemEndpointOutput {
@@ -6602,12 +6001,6 @@ func (i MysqlDbSystemHeatWaveClusterArgs) ToMysqlDbSystemHeatWaveClusterOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(MysqlDbSystemHeatWaveClusterOutput)
 }
 
-func (i MysqlDbSystemHeatWaveClusterArgs) ToOutput(ctx context.Context) pulumix.Output[MysqlDbSystemHeatWaveCluster] {
-	return pulumix.Output[MysqlDbSystemHeatWaveCluster]{
-		OutputState: i.ToMysqlDbSystemHeatWaveClusterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // MysqlDbSystemHeatWaveClusterArrayInput is an input type that accepts MysqlDbSystemHeatWaveClusterArray and MysqlDbSystemHeatWaveClusterArrayOutput values.
 // You can construct a concrete instance of `MysqlDbSystemHeatWaveClusterArrayInput` via:
 //
@@ -6633,12 +6026,6 @@ func (i MysqlDbSystemHeatWaveClusterArray) ToMysqlDbSystemHeatWaveClusterArrayOu
 	return pulumi.ToOutputWithContext(ctx, i).(MysqlDbSystemHeatWaveClusterArrayOutput)
 }
 
-func (i MysqlDbSystemHeatWaveClusterArray) ToOutput(ctx context.Context) pulumix.Output[[]MysqlDbSystemHeatWaveCluster] {
-	return pulumix.Output[[]MysqlDbSystemHeatWaveCluster]{
-		OutputState: i.ToMysqlDbSystemHeatWaveClusterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type MysqlDbSystemHeatWaveClusterOutput struct{ *pulumi.OutputState }
 
 func (MysqlDbSystemHeatWaveClusterOutput) ElementType() reflect.Type {
@@ -6651,12 +6038,6 @@ func (o MysqlDbSystemHeatWaveClusterOutput) ToMysqlDbSystemHeatWaveClusterOutput
 
 func (o MysqlDbSystemHeatWaveClusterOutput) ToMysqlDbSystemHeatWaveClusterOutputWithContext(ctx context.Context) MysqlDbSystemHeatWaveClusterOutput {
 	return o
-}
-
-func (o MysqlDbSystemHeatWaveClusterOutput) ToOutput(ctx context.Context) pulumix.Output[MysqlDbSystemHeatWaveCluster] {
-	return pulumix.Output[MysqlDbSystemHeatWaveCluster]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The number of analytics-processing compute instances, of the specified shape, in the HeatWave cluster.
@@ -6702,12 +6083,6 @@ func (o MysqlDbSystemHeatWaveClusterArrayOutput) ToMysqlDbSystemHeatWaveClusterA
 
 func (o MysqlDbSystemHeatWaveClusterArrayOutput) ToMysqlDbSystemHeatWaveClusterArrayOutputWithContext(ctx context.Context) MysqlDbSystemHeatWaveClusterArrayOutput {
 	return o
-}
-
-func (o MysqlDbSystemHeatWaveClusterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]MysqlDbSystemHeatWaveCluster] {
-	return pulumix.Output[[]MysqlDbSystemHeatWaveCluster]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o MysqlDbSystemHeatWaveClusterArrayOutput) Index(i pulumi.IntInput) MysqlDbSystemHeatWaveClusterOutput {
@@ -6765,12 +6140,6 @@ func (i MysqlDbSystemMaintenanceArgs) ToMysqlDbSystemMaintenanceOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(MysqlDbSystemMaintenanceOutput)
 }
 
-func (i MysqlDbSystemMaintenanceArgs) ToOutput(ctx context.Context) pulumix.Output[MysqlDbSystemMaintenance] {
-	return pulumix.Output[MysqlDbSystemMaintenance]{
-		OutputState: i.ToMysqlDbSystemMaintenanceOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i MysqlDbSystemMaintenanceArgs) ToMysqlDbSystemMaintenancePtrOutput() MysqlDbSystemMaintenancePtrOutput {
 	return i.ToMysqlDbSystemMaintenancePtrOutputWithContext(context.Background())
 }
@@ -6812,12 +6181,6 @@ func (i *mysqlDbSystemMaintenancePtrType) ToMysqlDbSystemMaintenancePtrOutputWit
 	return pulumi.ToOutputWithContext(ctx, i).(MysqlDbSystemMaintenancePtrOutput)
 }
 
-func (i *mysqlDbSystemMaintenancePtrType) ToOutput(ctx context.Context) pulumix.Output[*MysqlDbSystemMaintenance] {
-	return pulumix.Output[*MysqlDbSystemMaintenance]{
-		OutputState: i.ToMysqlDbSystemMaintenancePtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type MysqlDbSystemMaintenanceOutput struct{ *pulumi.OutputState }
 
 func (MysqlDbSystemMaintenanceOutput) ElementType() reflect.Type {
@@ -6840,12 +6203,6 @@ func (o MysqlDbSystemMaintenanceOutput) ToMysqlDbSystemMaintenancePtrOutputWithC
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v MysqlDbSystemMaintenance) *MysqlDbSystemMaintenance {
 		return &v
 	}).(MysqlDbSystemMaintenancePtrOutput)
-}
-
-func (o MysqlDbSystemMaintenanceOutput) ToOutput(ctx context.Context) pulumix.Output[MysqlDbSystemMaintenance] {
-	return pulumix.Output[MysqlDbSystemMaintenance]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The start of the 2 hour maintenance window.
@@ -6873,12 +6230,6 @@ func (o MysqlDbSystemMaintenancePtrOutput) ToMysqlDbSystemMaintenancePtrOutput()
 
 func (o MysqlDbSystemMaintenancePtrOutput) ToMysqlDbSystemMaintenancePtrOutputWithContext(ctx context.Context) MysqlDbSystemMaintenancePtrOutput {
 	return o
-}
-
-func (o MysqlDbSystemMaintenancePtrOutput) ToOutput(ctx context.Context) pulumix.Output[*MysqlDbSystemMaintenance] {
-	return pulumix.Output[*MysqlDbSystemMaintenance]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o MysqlDbSystemMaintenancePtrOutput) Elem() MysqlDbSystemMaintenanceOutput {
@@ -6946,12 +6297,6 @@ func (i MysqlDbSystemPointInTimeRecoveryDetailArgs) ToMysqlDbSystemPointInTimeRe
 	return pulumi.ToOutputWithContext(ctx, i).(MysqlDbSystemPointInTimeRecoveryDetailOutput)
 }
 
-func (i MysqlDbSystemPointInTimeRecoveryDetailArgs) ToOutput(ctx context.Context) pulumix.Output[MysqlDbSystemPointInTimeRecoveryDetail] {
-	return pulumix.Output[MysqlDbSystemPointInTimeRecoveryDetail]{
-		OutputState: i.ToMysqlDbSystemPointInTimeRecoveryDetailOutputWithContext(ctx).OutputState,
-	}
-}
-
 // MysqlDbSystemPointInTimeRecoveryDetailArrayInput is an input type that accepts MysqlDbSystemPointInTimeRecoveryDetailArray and MysqlDbSystemPointInTimeRecoveryDetailArrayOutput values.
 // You can construct a concrete instance of `MysqlDbSystemPointInTimeRecoveryDetailArrayInput` via:
 //
@@ -6977,12 +6322,6 @@ func (i MysqlDbSystemPointInTimeRecoveryDetailArray) ToMysqlDbSystemPointInTimeR
 	return pulumi.ToOutputWithContext(ctx, i).(MysqlDbSystemPointInTimeRecoveryDetailArrayOutput)
 }
 
-func (i MysqlDbSystemPointInTimeRecoveryDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]MysqlDbSystemPointInTimeRecoveryDetail] {
-	return pulumix.Output[[]MysqlDbSystemPointInTimeRecoveryDetail]{
-		OutputState: i.ToMysqlDbSystemPointInTimeRecoveryDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type MysqlDbSystemPointInTimeRecoveryDetailOutput struct{ *pulumi.OutputState }
 
 func (MysqlDbSystemPointInTimeRecoveryDetailOutput) ElementType() reflect.Type {
@@ -6995,12 +6334,6 @@ func (o MysqlDbSystemPointInTimeRecoveryDetailOutput) ToMysqlDbSystemPointInTime
 
 func (o MysqlDbSystemPointInTimeRecoveryDetailOutput) ToMysqlDbSystemPointInTimeRecoveryDetailOutputWithContext(ctx context.Context) MysqlDbSystemPointInTimeRecoveryDetailOutput {
 	return o
-}
-
-func (o MysqlDbSystemPointInTimeRecoveryDetailOutput) ToOutput(ctx context.Context) pulumix.Output[MysqlDbSystemPointInTimeRecoveryDetail] {
-	return pulumix.Output[MysqlDbSystemPointInTimeRecoveryDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Earliest recovery time point for the DB System, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
@@ -7025,12 +6358,6 @@ func (o MysqlDbSystemPointInTimeRecoveryDetailArrayOutput) ToMysqlDbSystemPointI
 
 func (o MysqlDbSystemPointInTimeRecoveryDetailArrayOutput) ToMysqlDbSystemPointInTimeRecoveryDetailArrayOutputWithContext(ctx context.Context) MysqlDbSystemPointInTimeRecoveryDetailArrayOutput {
 	return o
-}
-
-func (o MysqlDbSystemPointInTimeRecoveryDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]MysqlDbSystemPointInTimeRecoveryDetail] {
-	return pulumix.Output[[]MysqlDbSystemPointInTimeRecoveryDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o MysqlDbSystemPointInTimeRecoveryDetailArrayOutput) Index(i pulumi.IntInput) MysqlDbSystemPointInTimeRecoveryDetailOutput {
@@ -7088,12 +6415,6 @@ func (i MysqlDbSystemSourceArgs) ToMysqlDbSystemSourceOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(MysqlDbSystemSourceOutput)
 }
 
-func (i MysqlDbSystemSourceArgs) ToOutput(ctx context.Context) pulumix.Output[MysqlDbSystemSource] {
-	return pulumix.Output[MysqlDbSystemSource]{
-		OutputState: i.ToMysqlDbSystemSourceOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i MysqlDbSystemSourceArgs) ToMysqlDbSystemSourcePtrOutput() MysqlDbSystemSourcePtrOutput {
 	return i.ToMysqlDbSystemSourcePtrOutputWithContext(context.Background())
 }
@@ -7135,12 +6456,6 @@ func (i *mysqlDbSystemSourcePtrType) ToMysqlDbSystemSourcePtrOutputWithContext(c
 	return pulumi.ToOutputWithContext(ctx, i).(MysqlDbSystemSourcePtrOutput)
 }
 
-func (i *mysqlDbSystemSourcePtrType) ToOutput(ctx context.Context) pulumix.Output[*MysqlDbSystemSource] {
-	return pulumix.Output[*MysqlDbSystemSource]{
-		OutputState: i.ToMysqlDbSystemSourcePtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type MysqlDbSystemSourceOutput struct{ *pulumi.OutputState }
 
 func (MysqlDbSystemSourceOutput) ElementType() reflect.Type {
@@ -7163,12 +6478,6 @@ func (o MysqlDbSystemSourceOutput) ToMysqlDbSystemSourcePtrOutputWithContext(ctx
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v MysqlDbSystemSource) *MysqlDbSystemSource {
 		return &v
 	}).(MysqlDbSystemSourcePtrOutput)
-}
-
-func (o MysqlDbSystemSourceOutput) ToOutput(ctx context.Context) pulumix.Output[MysqlDbSystemSource] {
-	return pulumix.Output[MysqlDbSystemSource]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The OCID of the backup to be used as the source for the new DB System.
@@ -7208,12 +6517,6 @@ func (o MysqlDbSystemSourcePtrOutput) ToMysqlDbSystemSourcePtrOutput() MysqlDbSy
 
 func (o MysqlDbSystemSourcePtrOutput) ToMysqlDbSystemSourcePtrOutputWithContext(ctx context.Context) MysqlDbSystemSourcePtrOutput {
 	return o
-}
-
-func (o MysqlDbSystemSourcePtrOutput) ToOutput(ctx context.Context) pulumix.Output[*MysqlDbSystemSource] {
-	return pulumix.Output[*MysqlDbSystemSource]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o MysqlDbSystemSourcePtrOutput) Elem() MysqlDbSystemSourceOutput {
@@ -7323,12 +6626,6 @@ func (i ReplicaReplicaOverridesArgs) ToReplicaReplicaOverridesOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(ReplicaReplicaOverridesOutput)
 }
 
-func (i ReplicaReplicaOverridesArgs) ToOutput(ctx context.Context) pulumix.Output[ReplicaReplicaOverrides] {
-	return pulumix.Output[ReplicaReplicaOverrides]{
-		OutputState: i.ToReplicaReplicaOverridesOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i ReplicaReplicaOverridesArgs) ToReplicaReplicaOverridesPtrOutput() ReplicaReplicaOverridesPtrOutput {
 	return i.ToReplicaReplicaOverridesPtrOutputWithContext(context.Background())
 }
@@ -7370,12 +6667,6 @@ func (i *replicaReplicaOverridesPtrType) ToReplicaReplicaOverridesPtrOutputWithC
 	return pulumi.ToOutputWithContext(ctx, i).(ReplicaReplicaOverridesPtrOutput)
 }
 
-func (i *replicaReplicaOverridesPtrType) ToOutput(ctx context.Context) pulumix.Output[*ReplicaReplicaOverrides] {
-	return pulumix.Output[*ReplicaReplicaOverrides]{
-		OutputState: i.ToReplicaReplicaOverridesPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ReplicaReplicaOverridesOutput struct{ *pulumi.OutputState }
 
 func (ReplicaReplicaOverridesOutput) ElementType() reflect.Type {
@@ -7398,12 +6689,6 @@ func (o ReplicaReplicaOverridesOutput) ToReplicaReplicaOverridesPtrOutputWithCon
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v ReplicaReplicaOverrides) *ReplicaReplicaOverrides {
 		return &v
 	}).(ReplicaReplicaOverridesPtrOutput)
-}
-
-func (o ReplicaReplicaOverridesOutput) ToOutput(ctx context.Context) pulumix.Output[ReplicaReplicaOverrides] {
-	return pulumix.Output[ReplicaReplicaOverrides]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The OCID of the Configuration to be used by the read replica.
@@ -7436,12 +6721,6 @@ func (o ReplicaReplicaOverridesPtrOutput) ToReplicaReplicaOverridesPtrOutput() R
 
 func (o ReplicaReplicaOverridesPtrOutput) ToReplicaReplicaOverridesPtrOutputWithContext(ctx context.Context) ReplicaReplicaOverridesPtrOutput {
 	return o
-}
-
-func (o ReplicaReplicaOverridesPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*ReplicaReplicaOverrides] {
-	return pulumix.Output[*ReplicaReplicaOverrides]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ReplicaReplicaOverridesPtrOutput) Elem() ReplicaReplicaOverridesOutput {
@@ -7491,18 +6770,18 @@ type GetChannelSource struct {
 	// Specifies how the replication channel handles replicated transactions without an identifier, enabling replication from a source that does not use transaction-id-based replication to a replica that does.
 	AnonymousTransactionsHandlings []GetChannelSourceAnonymousTransactionsHandling `pulumi:"anonymousTransactionsHandlings"`
 	// The network address of the MySQL instance.
-	Hostname string `pulumi:"hostname"`
-	Password string `pulumi:"password"`
+	Hostname *string `pulumi:"hostname"`
+	Password *string `pulumi:"password"`
 	// The port the source MySQL instance listens on.
-	Port int `pulumi:"port"`
+	Port *int `pulumi:"port"`
 	// The specific source identifier.
-	SourceType string `pulumi:"sourceType"`
+	SourceType *string `pulumi:"sourceType"`
 	// The CA certificate of the server used for VERIFY_IDENTITY and VERIFY_CA ssl modes.
 	SslCaCertificates []GetChannelSourceSslCaCertificate `pulumi:"sslCaCertificates"`
 	// The SSL mode of the Channel.
-	SslMode string `pulumi:"sslMode"`
+	SslMode *string `pulumi:"sslMode"`
 	// The name of the replication user on the source MySQL instance. The username has a maximum length of 96 characters. For more information, please see the [MySQL documentation](https://dev.mysql.com/doc/refman/8.0/en/change-master-to.html)
-	Username string `pulumi:"username"`
+	Username *string `pulumi:"username"`
 }
 
 // GetChannelSourceInput is an input type that accepts GetChannelSourceArgs and GetChannelSourceOutput values.
@@ -7520,18 +6799,18 @@ type GetChannelSourceArgs struct {
 	// Specifies how the replication channel handles replicated transactions without an identifier, enabling replication from a source that does not use transaction-id-based replication to a replica that does.
 	AnonymousTransactionsHandlings GetChannelSourceAnonymousTransactionsHandlingArrayInput `pulumi:"anonymousTransactionsHandlings"`
 	// The network address of the MySQL instance.
-	Hostname pulumi.StringInput `pulumi:"hostname"`
-	Password pulumi.StringInput `pulumi:"password"`
+	Hostname pulumi.StringPtrInput `pulumi:"hostname"`
+	Password pulumi.StringPtrInput `pulumi:"password"`
 	// The port the source MySQL instance listens on.
-	Port pulumi.IntInput `pulumi:"port"`
+	Port pulumi.IntPtrInput `pulumi:"port"`
 	// The specific source identifier.
-	SourceType pulumi.StringInput `pulumi:"sourceType"`
+	SourceType pulumi.StringPtrInput `pulumi:"sourceType"`
 	// The CA certificate of the server used for VERIFY_IDENTITY and VERIFY_CA ssl modes.
 	SslCaCertificates GetChannelSourceSslCaCertificateArrayInput `pulumi:"sslCaCertificates"`
 	// The SSL mode of the Channel.
-	SslMode pulumi.StringInput `pulumi:"sslMode"`
+	SslMode pulumi.StringPtrInput `pulumi:"sslMode"`
 	// The name of the replication user on the source MySQL instance. The username has a maximum length of 96 characters. For more information, please see the [MySQL documentation](https://dev.mysql.com/doc/refman/8.0/en/change-master-to.html)
-	Username pulumi.StringInput `pulumi:"username"`
+	Username pulumi.StringPtrInput `pulumi:"username"`
 }
 
 func (GetChannelSourceArgs) ElementType() reflect.Type {
@@ -7544,12 +6823,6 @@ func (i GetChannelSourceArgs) ToGetChannelSourceOutput() GetChannelSourceOutput 
 
 func (i GetChannelSourceArgs) ToGetChannelSourceOutputWithContext(ctx context.Context) GetChannelSourceOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetChannelSourceOutput)
-}
-
-func (i GetChannelSourceArgs) ToOutput(ctx context.Context) pulumix.Output[GetChannelSource] {
-	return pulumix.Output[GetChannelSource]{
-		OutputState: i.ToGetChannelSourceOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetChannelSourceArrayInput is an input type that accepts GetChannelSourceArray and GetChannelSourceArrayOutput values.
@@ -7577,12 +6850,6 @@ func (i GetChannelSourceArray) ToGetChannelSourceArrayOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(GetChannelSourceArrayOutput)
 }
 
-func (i GetChannelSourceArray) ToOutput(ctx context.Context) pulumix.Output[[]GetChannelSource] {
-	return pulumix.Output[[]GetChannelSource]{
-		OutputState: i.ToGetChannelSourceArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetChannelSourceOutput struct{ *pulumi.OutputState }
 
 func (GetChannelSourceOutput) ElementType() reflect.Type {
@@ -7597,12 +6864,6 @@ func (o GetChannelSourceOutput) ToGetChannelSourceOutputWithContext(ctx context.
 	return o
 }
 
-func (o GetChannelSourceOutput) ToOutput(ctx context.Context) pulumix.Output[GetChannelSource] {
-	return pulumix.Output[GetChannelSource]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Specifies how the replication channel handles replicated transactions without an identifier, enabling replication from a source that does not use transaction-id-based replication to a replica that does.
 func (o GetChannelSourceOutput) AnonymousTransactionsHandlings() GetChannelSourceAnonymousTransactionsHandlingArrayOutput {
 	return o.ApplyT(func(v GetChannelSource) []GetChannelSourceAnonymousTransactionsHandling {
@@ -7611,22 +6872,22 @@ func (o GetChannelSourceOutput) AnonymousTransactionsHandlings() GetChannelSourc
 }
 
 // The network address of the MySQL instance.
-func (o GetChannelSourceOutput) Hostname() pulumi.StringOutput {
-	return o.ApplyT(func(v GetChannelSource) string { return v.Hostname }).(pulumi.StringOutput)
+func (o GetChannelSourceOutput) Hostname() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetChannelSource) *string { return v.Hostname }).(pulumi.StringPtrOutput)
 }
 
-func (o GetChannelSourceOutput) Password() pulumi.StringOutput {
-	return o.ApplyT(func(v GetChannelSource) string { return v.Password }).(pulumi.StringOutput)
+func (o GetChannelSourceOutput) Password() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetChannelSource) *string { return v.Password }).(pulumi.StringPtrOutput)
 }
 
 // The port the source MySQL instance listens on.
-func (o GetChannelSourceOutput) Port() pulumi.IntOutput {
-	return o.ApplyT(func(v GetChannelSource) int { return v.Port }).(pulumi.IntOutput)
+func (o GetChannelSourceOutput) Port() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetChannelSource) *int { return v.Port }).(pulumi.IntPtrOutput)
 }
 
 // The specific source identifier.
-func (o GetChannelSourceOutput) SourceType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetChannelSource) string { return v.SourceType }).(pulumi.StringOutput)
+func (o GetChannelSourceOutput) SourceType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetChannelSource) *string { return v.SourceType }).(pulumi.StringPtrOutput)
 }
 
 // The CA certificate of the server used for VERIFY_IDENTITY and VERIFY_CA ssl modes.
@@ -7635,13 +6896,13 @@ func (o GetChannelSourceOutput) SslCaCertificates() GetChannelSourceSslCaCertifi
 }
 
 // The SSL mode of the Channel.
-func (o GetChannelSourceOutput) SslMode() pulumi.StringOutput {
-	return o.ApplyT(func(v GetChannelSource) string { return v.SslMode }).(pulumi.StringOutput)
+func (o GetChannelSourceOutput) SslMode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetChannelSource) *string { return v.SslMode }).(pulumi.StringPtrOutput)
 }
 
 // The name of the replication user on the source MySQL instance. The username has a maximum length of 96 characters. For more information, please see the [MySQL documentation](https://dev.mysql.com/doc/refman/8.0/en/change-master-to.html)
-func (o GetChannelSourceOutput) Username() pulumi.StringOutput {
-	return o.ApplyT(func(v GetChannelSource) string { return v.Username }).(pulumi.StringOutput)
+func (o GetChannelSourceOutput) Username() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetChannelSource) *string { return v.Username }).(pulumi.StringPtrOutput)
 }
 
 type GetChannelSourceArrayOutput struct{ *pulumi.OutputState }
@@ -7658,12 +6919,6 @@ func (o GetChannelSourceArrayOutput) ToGetChannelSourceArrayOutputWithContext(ct
 	return o
 }
 
-func (o GetChannelSourceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetChannelSource] {
-	return pulumix.Output[[]GetChannelSource]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetChannelSourceArrayOutput) Index(i pulumi.IntInput) GetChannelSourceOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetChannelSource {
 		return vs[0].([]GetChannelSource)[vs[1].(int)]
@@ -7672,13 +6927,13 @@ func (o GetChannelSourceArrayOutput) Index(i pulumi.IntInput) GetChannelSourceOu
 
 type GetChannelSourceAnonymousTransactionsHandling struct {
 	// Specifies one of the coordinates (file) at which the replica should begin reading the source's log. As this value specifies the point where replication starts from, it is only used once, when it starts. It is never used again, unless a new UpdateChannel operation modifies it.
-	LastConfiguredLogFilename string `pulumi:"lastConfiguredLogFilename"`
+	LastConfiguredLogFilename *string `pulumi:"lastConfiguredLogFilename"`
 	// Specifies one of the coordinates (offset) at which the replica should begin reading the source's log. As this value specifies the point where replication starts from, it is only used once, when it starts. It is never used again, unless a new UpdateChannel operation modifies it.
-	LastConfiguredLogOffset string `pulumi:"lastConfiguredLogOffset"`
+	LastConfiguredLogOffset *string `pulumi:"lastConfiguredLogOffset"`
 	// Specifies how the replication channel handles anonymous transactions.
-	Policy string `pulumi:"policy"`
+	Policy *string `pulumi:"policy"`
 	// The UUID that is used as a prefix when generating transaction identifiers for anonymous transactions coming from the source. You can change the UUID later.
-	Uuid string `pulumi:"uuid"`
+	Uuid *string `pulumi:"uuid"`
 }
 
 // GetChannelSourceAnonymousTransactionsHandlingInput is an input type that accepts GetChannelSourceAnonymousTransactionsHandlingArgs and GetChannelSourceAnonymousTransactionsHandlingOutput values.
@@ -7694,13 +6949,13 @@ type GetChannelSourceAnonymousTransactionsHandlingInput interface {
 
 type GetChannelSourceAnonymousTransactionsHandlingArgs struct {
 	// Specifies one of the coordinates (file) at which the replica should begin reading the source's log. As this value specifies the point where replication starts from, it is only used once, when it starts. It is never used again, unless a new UpdateChannel operation modifies it.
-	LastConfiguredLogFilename pulumi.StringInput `pulumi:"lastConfiguredLogFilename"`
+	LastConfiguredLogFilename pulumi.StringPtrInput `pulumi:"lastConfiguredLogFilename"`
 	// Specifies one of the coordinates (offset) at which the replica should begin reading the source's log. As this value specifies the point where replication starts from, it is only used once, when it starts. It is never used again, unless a new UpdateChannel operation modifies it.
-	LastConfiguredLogOffset pulumi.StringInput `pulumi:"lastConfiguredLogOffset"`
+	LastConfiguredLogOffset pulumi.StringPtrInput `pulumi:"lastConfiguredLogOffset"`
 	// Specifies how the replication channel handles anonymous transactions.
-	Policy pulumi.StringInput `pulumi:"policy"`
+	Policy pulumi.StringPtrInput `pulumi:"policy"`
 	// The UUID that is used as a prefix when generating transaction identifiers for anonymous transactions coming from the source. You can change the UUID later.
-	Uuid pulumi.StringInput `pulumi:"uuid"`
+	Uuid pulumi.StringPtrInput `pulumi:"uuid"`
 }
 
 func (GetChannelSourceAnonymousTransactionsHandlingArgs) ElementType() reflect.Type {
@@ -7713,12 +6968,6 @@ func (i GetChannelSourceAnonymousTransactionsHandlingArgs) ToGetChannelSourceAno
 
 func (i GetChannelSourceAnonymousTransactionsHandlingArgs) ToGetChannelSourceAnonymousTransactionsHandlingOutputWithContext(ctx context.Context) GetChannelSourceAnonymousTransactionsHandlingOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetChannelSourceAnonymousTransactionsHandlingOutput)
-}
-
-func (i GetChannelSourceAnonymousTransactionsHandlingArgs) ToOutput(ctx context.Context) pulumix.Output[GetChannelSourceAnonymousTransactionsHandling] {
-	return pulumix.Output[GetChannelSourceAnonymousTransactionsHandling]{
-		OutputState: i.ToGetChannelSourceAnonymousTransactionsHandlingOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetChannelSourceAnonymousTransactionsHandlingArrayInput is an input type that accepts GetChannelSourceAnonymousTransactionsHandlingArray and GetChannelSourceAnonymousTransactionsHandlingArrayOutput values.
@@ -7746,12 +6995,6 @@ func (i GetChannelSourceAnonymousTransactionsHandlingArray) ToGetChannelSourceAn
 	return pulumi.ToOutputWithContext(ctx, i).(GetChannelSourceAnonymousTransactionsHandlingArrayOutput)
 }
 
-func (i GetChannelSourceAnonymousTransactionsHandlingArray) ToOutput(ctx context.Context) pulumix.Output[[]GetChannelSourceAnonymousTransactionsHandling] {
-	return pulumix.Output[[]GetChannelSourceAnonymousTransactionsHandling]{
-		OutputState: i.ToGetChannelSourceAnonymousTransactionsHandlingArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetChannelSourceAnonymousTransactionsHandlingOutput struct{ *pulumi.OutputState }
 
 func (GetChannelSourceAnonymousTransactionsHandlingOutput) ElementType() reflect.Type {
@@ -7766,30 +7009,24 @@ func (o GetChannelSourceAnonymousTransactionsHandlingOutput) ToGetChannelSourceA
 	return o
 }
 
-func (o GetChannelSourceAnonymousTransactionsHandlingOutput) ToOutput(ctx context.Context) pulumix.Output[GetChannelSourceAnonymousTransactionsHandling] {
-	return pulumix.Output[GetChannelSourceAnonymousTransactionsHandling]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Specifies one of the coordinates (file) at which the replica should begin reading the source's log. As this value specifies the point where replication starts from, it is only used once, when it starts. It is never used again, unless a new UpdateChannel operation modifies it.
-func (o GetChannelSourceAnonymousTransactionsHandlingOutput) LastConfiguredLogFilename() pulumi.StringOutput {
-	return o.ApplyT(func(v GetChannelSourceAnonymousTransactionsHandling) string { return v.LastConfiguredLogFilename }).(pulumi.StringOutput)
+func (o GetChannelSourceAnonymousTransactionsHandlingOutput) LastConfiguredLogFilename() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetChannelSourceAnonymousTransactionsHandling) *string { return v.LastConfiguredLogFilename }).(pulumi.StringPtrOutput)
 }
 
 // Specifies one of the coordinates (offset) at which the replica should begin reading the source's log. As this value specifies the point where replication starts from, it is only used once, when it starts. It is never used again, unless a new UpdateChannel operation modifies it.
-func (o GetChannelSourceAnonymousTransactionsHandlingOutput) LastConfiguredLogOffset() pulumi.StringOutput {
-	return o.ApplyT(func(v GetChannelSourceAnonymousTransactionsHandling) string { return v.LastConfiguredLogOffset }).(pulumi.StringOutput)
+func (o GetChannelSourceAnonymousTransactionsHandlingOutput) LastConfiguredLogOffset() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetChannelSourceAnonymousTransactionsHandling) *string { return v.LastConfiguredLogOffset }).(pulumi.StringPtrOutput)
 }
 
 // Specifies how the replication channel handles anonymous transactions.
-func (o GetChannelSourceAnonymousTransactionsHandlingOutput) Policy() pulumi.StringOutput {
-	return o.ApplyT(func(v GetChannelSourceAnonymousTransactionsHandling) string { return v.Policy }).(pulumi.StringOutput)
+func (o GetChannelSourceAnonymousTransactionsHandlingOutput) Policy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetChannelSourceAnonymousTransactionsHandling) *string { return v.Policy }).(pulumi.StringPtrOutput)
 }
 
 // The UUID that is used as a prefix when generating transaction identifiers for anonymous transactions coming from the source. You can change the UUID later.
-func (o GetChannelSourceAnonymousTransactionsHandlingOutput) Uuid() pulumi.StringOutput {
-	return o.ApplyT(func(v GetChannelSourceAnonymousTransactionsHandling) string { return v.Uuid }).(pulumi.StringOutput)
+func (o GetChannelSourceAnonymousTransactionsHandlingOutput) Uuid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetChannelSourceAnonymousTransactionsHandling) *string { return v.Uuid }).(pulumi.StringPtrOutput)
 }
 
 type GetChannelSourceAnonymousTransactionsHandlingArrayOutput struct{ *pulumi.OutputState }
@@ -7806,12 +7043,6 @@ func (o GetChannelSourceAnonymousTransactionsHandlingArrayOutput) ToGetChannelSo
 	return o
 }
 
-func (o GetChannelSourceAnonymousTransactionsHandlingArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetChannelSourceAnonymousTransactionsHandling] {
-	return pulumix.Output[[]GetChannelSourceAnonymousTransactionsHandling]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetChannelSourceAnonymousTransactionsHandlingArrayOutput) Index(i pulumi.IntInput) GetChannelSourceAnonymousTransactionsHandlingOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetChannelSourceAnonymousTransactionsHandling {
 		return vs[0].([]GetChannelSourceAnonymousTransactionsHandling)[vs[1].(int)]
@@ -7820,9 +7051,9 @@ func (o GetChannelSourceAnonymousTransactionsHandlingArrayOutput) Index(i pulumi
 
 type GetChannelSourceSslCaCertificate struct {
 	// The type of CA certificate.
-	CertificateType string `pulumi:"certificateType"`
+	CertificateType *string `pulumi:"certificateType"`
 	// The string containing the CA certificate in PEM format.
-	Contents string `pulumi:"contents"`
+	Contents *string `pulumi:"contents"`
 }
 
 // GetChannelSourceSslCaCertificateInput is an input type that accepts GetChannelSourceSslCaCertificateArgs and GetChannelSourceSslCaCertificateOutput values.
@@ -7838,9 +7069,9 @@ type GetChannelSourceSslCaCertificateInput interface {
 
 type GetChannelSourceSslCaCertificateArgs struct {
 	// The type of CA certificate.
-	CertificateType pulumi.StringInput `pulumi:"certificateType"`
+	CertificateType pulumi.StringPtrInput `pulumi:"certificateType"`
 	// The string containing the CA certificate in PEM format.
-	Contents pulumi.StringInput `pulumi:"contents"`
+	Contents pulumi.StringPtrInput `pulumi:"contents"`
 }
 
 func (GetChannelSourceSslCaCertificateArgs) ElementType() reflect.Type {
@@ -7853,12 +7084,6 @@ func (i GetChannelSourceSslCaCertificateArgs) ToGetChannelSourceSslCaCertificate
 
 func (i GetChannelSourceSslCaCertificateArgs) ToGetChannelSourceSslCaCertificateOutputWithContext(ctx context.Context) GetChannelSourceSslCaCertificateOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetChannelSourceSslCaCertificateOutput)
-}
-
-func (i GetChannelSourceSslCaCertificateArgs) ToOutput(ctx context.Context) pulumix.Output[GetChannelSourceSslCaCertificate] {
-	return pulumix.Output[GetChannelSourceSslCaCertificate]{
-		OutputState: i.ToGetChannelSourceSslCaCertificateOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetChannelSourceSslCaCertificateArrayInput is an input type that accepts GetChannelSourceSslCaCertificateArray and GetChannelSourceSslCaCertificateArrayOutput values.
@@ -7886,12 +7111,6 @@ func (i GetChannelSourceSslCaCertificateArray) ToGetChannelSourceSslCaCertificat
 	return pulumi.ToOutputWithContext(ctx, i).(GetChannelSourceSslCaCertificateArrayOutput)
 }
 
-func (i GetChannelSourceSslCaCertificateArray) ToOutput(ctx context.Context) pulumix.Output[[]GetChannelSourceSslCaCertificate] {
-	return pulumix.Output[[]GetChannelSourceSslCaCertificate]{
-		OutputState: i.ToGetChannelSourceSslCaCertificateArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetChannelSourceSslCaCertificateOutput struct{ *pulumi.OutputState }
 
 func (GetChannelSourceSslCaCertificateOutput) ElementType() reflect.Type {
@@ -7906,20 +7125,14 @@ func (o GetChannelSourceSslCaCertificateOutput) ToGetChannelSourceSslCaCertifica
 	return o
 }
 
-func (o GetChannelSourceSslCaCertificateOutput) ToOutput(ctx context.Context) pulumix.Output[GetChannelSourceSslCaCertificate] {
-	return pulumix.Output[GetChannelSourceSslCaCertificate]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The type of CA certificate.
-func (o GetChannelSourceSslCaCertificateOutput) CertificateType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetChannelSourceSslCaCertificate) string { return v.CertificateType }).(pulumi.StringOutput)
+func (o GetChannelSourceSslCaCertificateOutput) CertificateType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetChannelSourceSslCaCertificate) *string { return v.CertificateType }).(pulumi.StringPtrOutput)
 }
 
 // The string containing the CA certificate in PEM format.
-func (o GetChannelSourceSslCaCertificateOutput) Contents() pulumi.StringOutput {
-	return o.ApplyT(func(v GetChannelSourceSslCaCertificate) string { return v.Contents }).(pulumi.StringOutput)
+func (o GetChannelSourceSslCaCertificateOutput) Contents() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetChannelSourceSslCaCertificate) *string { return v.Contents }).(pulumi.StringPtrOutput)
 }
 
 type GetChannelSourceSslCaCertificateArrayOutput struct{ *pulumi.OutputState }
@@ -7936,12 +7149,6 @@ func (o GetChannelSourceSslCaCertificateArrayOutput) ToGetChannelSourceSslCaCert
 	return o
 }
 
-func (o GetChannelSourceSslCaCertificateArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetChannelSourceSslCaCertificate] {
-	return pulumix.Output[[]GetChannelSourceSslCaCertificate]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetChannelSourceSslCaCertificateArrayOutput) Index(i pulumi.IntInput) GetChannelSourceSslCaCertificateOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetChannelSourceSslCaCertificate {
 		return vs[0].([]GetChannelSourceSslCaCertificate)[vs[1].(int)]
@@ -7950,19 +7157,19 @@ func (o GetChannelSourceSslCaCertificateArrayOutput) Index(i pulumi.IntInput) Ge
 
 type GetChannelTarget struct {
 	// The username for the replication applier of the target MySQL DB System.
-	ApplierUsername string `pulumi:"applierUsername"`
+	ApplierUsername *string `pulumi:"applierUsername"`
 	// The case-insensitive name that identifies the replication channel. Channel names must follow the rules defined for [MySQL identifiers](https://dev.mysql.com/doc/refman/8.0/en/identifiers.html). The names of non-Deleted Channels must be unique for each DB System.
-	ChannelName string `pulumi:"channelName"`
+	ChannelName *string `pulumi:"channelName"`
 	// The OCID of the source DB System.
-	DbSystemId string `pulumi:"dbSystemId"`
+	DbSystemId *string `pulumi:"dbSystemId"`
 	// Specifies the amount of time, in seconds, that the channel waits before  applying a transaction received from the source.
-	DelayInSeconds int `pulumi:"delayInSeconds"`
+	DelayInSeconds *int `pulumi:"delayInSeconds"`
 	// Replication filter rules to be applied at the DB System Channel target.
 	Filters []GetChannelTargetFilter `pulumi:"filters"`
 	// Specifies how a replication channel handles the creation and alteration of tables  that do not have a primary key.
-	TablesWithoutPrimaryKeyHandling string `pulumi:"tablesWithoutPrimaryKeyHandling"`
+	TablesWithoutPrimaryKeyHandling *string `pulumi:"tablesWithoutPrimaryKeyHandling"`
 	// The specific target identifier.
-	TargetType string `pulumi:"targetType"`
+	TargetType *string `pulumi:"targetType"`
 }
 
 // GetChannelTargetInput is an input type that accepts GetChannelTargetArgs and GetChannelTargetOutput values.
@@ -7978,19 +7185,19 @@ type GetChannelTargetInput interface {
 
 type GetChannelTargetArgs struct {
 	// The username for the replication applier of the target MySQL DB System.
-	ApplierUsername pulumi.StringInput `pulumi:"applierUsername"`
+	ApplierUsername pulumi.StringPtrInput `pulumi:"applierUsername"`
 	// The case-insensitive name that identifies the replication channel. Channel names must follow the rules defined for [MySQL identifiers](https://dev.mysql.com/doc/refman/8.0/en/identifiers.html). The names of non-Deleted Channels must be unique for each DB System.
-	ChannelName pulumi.StringInput `pulumi:"channelName"`
+	ChannelName pulumi.StringPtrInput `pulumi:"channelName"`
 	// The OCID of the source DB System.
-	DbSystemId pulumi.StringInput `pulumi:"dbSystemId"`
+	DbSystemId pulumi.StringPtrInput `pulumi:"dbSystemId"`
 	// Specifies the amount of time, in seconds, that the channel waits before  applying a transaction received from the source.
-	DelayInSeconds pulumi.IntInput `pulumi:"delayInSeconds"`
+	DelayInSeconds pulumi.IntPtrInput `pulumi:"delayInSeconds"`
 	// Replication filter rules to be applied at the DB System Channel target.
 	Filters GetChannelTargetFilterArrayInput `pulumi:"filters"`
 	// Specifies how a replication channel handles the creation and alteration of tables  that do not have a primary key.
-	TablesWithoutPrimaryKeyHandling pulumi.StringInput `pulumi:"tablesWithoutPrimaryKeyHandling"`
+	TablesWithoutPrimaryKeyHandling pulumi.StringPtrInput `pulumi:"tablesWithoutPrimaryKeyHandling"`
 	// The specific target identifier.
-	TargetType pulumi.StringInput `pulumi:"targetType"`
+	TargetType pulumi.StringPtrInput `pulumi:"targetType"`
 }
 
 func (GetChannelTargetArgs) ElementType() reflect.Type {
@@ -8003,12 +7210,6 @@ func (i GetChannelTargetArgs) ToGetChannelTargetOutput() GetChannelTargetOutput 
 
 func (i GetChannelTargetArgs) ToGetChannelTargetOutputWithContext(ctx context.Context) GetChannelTargetOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetChannelTargetOutput)
-}
-
-func (i GetChannelTargetArgs) ToOutput(ctx context.Context) pulumix.Output[GetChannelTarget] {
-	return pulumix.Output[GetChannelTarget]{
-		OutputState: i.ToGetChannelTargetOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetChannelTargetArrayInput is an input type that accepts GetChannelTargetArray and GetChannelTargetArrayOutput values.
@@ -8036,12 +7237,6 @@ func (i GetChannelTargetArray) ToGetChannelTargetArrayOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(GetChannelTargetArrayOutput)
 }
 
-func (i GetChannelTargetArray) ToOutput(ctx context.Context) pulumix.Output[[]GetChannelTarget] {
-	return pulumix.Output[[]GetChannelTarget]{
-		OutputState: i.ToGetChannelTargetArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetChannelTargetOutput struct{ *pulumi.OutputState }
 
 func (GetChannelTargetOutput) ElementType() reflect.Type {
@@ -8056,30 +7251,24 @@ func (o GetChannelTargetOutput) ToGetChannelTargetOutputWithContext(ctx context.
 	return o
 }
 
-func (o GetChannelTargetOutput) ToOutput(ctx context.Context) pulumix.Output[GetChannelTarget] {
-	return pulumix.Output[GetChannelTarget]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The username for the replication applier of the target MySQL DB System.
-func (o GetChannelTargetOutput) ApplierUsername() pulumi.StringOutput {
-	return o.ApplyT(func(v GetChannelTarget) string { return v.ApplierUsername }).(pulumi.StringOutput)
+func (o GetChannelTargetOutput) ApplierUsername() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetChannelTarget) *string { return v.ApplierUsername }).(pulumi.StringPtrOutput)
 }
 
 // The case-insensitive name that identifies the replication channel. Channel names must follow the rules defined for [MySQL identifiers](https://dev.mysql.com/doc/refman/8.0/en/identifiers.html). The names of non-Deleted Channels must be unique for each DB System.
-func (o GetChannelTargetOutput) ChannelName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetChannelTarget) string { return v.ChannelName }).(pulumi.StringOutput)
+func (o GetChannelTargetOutput) ChannelName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetChannelTarget) *string { return v.ChannelName }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the source DB System.
-func (o GetChannelTargetOutput) DbSystemId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetChannelTarget) string { return v.DbSystemId }).(pulumi.StringOutput)
+func (o GetChannelTargetOutput) DbSystemId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetChannelTarget) *string { return v.DbSystemId }).(pulumi.StringPtrOutput)
 }
 
 // Specifies the amount of time, in seconds, that the channel waits before  applying a transaction received from the source.
-func (o GetChannelTargetOutput) DelayInSeconds() pulumi.IntOutput {
-	return o.ApplyT(func(v GetChannelTarget) int { return v.DelayInSeconds }).(pulumi.IntOutput)
+func (o GetChannelTargetOutput) DelayInSeconds() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetChannelTarget) *int { return v.DelayInSeconds }).(pulumi.IntPtrOutput)
 }
 
 // Replication filter rules to be applied at the DB System Channel target.
@@ -8088,13 +7277,13 @@ func (o GetChannelTargetOutput) Filters() GetChannelTargetFilterArrayOutput {
 }
 
 // Specifies how a replication channel handles the creation and alteration of tables  that do not have a primary key.
-func (o GetChannelTargetOutput) TablesWithoutPrimaryKeyHandling() pulumi.StringOutput {
-	return o.ApplyT(func(v GetChannelTarget) string { return v.TablesWithoutPrimaryKeyHandling }).(pulumi.StringOutput)
+func (o GetChannelTargetOutput) TablesWithoutPrimaryKeyHandling() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetChannelTarget) *string { return v.TablesWithoutPrimaryKeyHandling }).(pulumi.StringPtrOutput)
 }
 
 // The specific target identifier.
-func (o GetChannelTargetOutput) TargetType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetChannelTarget) string { return v.TargetType }).(pulumi.StringOutput)
+func (o GetChannelTargetOutput) TargetType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetChannelTarget) *string { return v.TargetType }).(pulumi.StringPtrOutput)
 }
 
 type GetChannelTargetArrayOutput struct{ *pulumi.OutputState }
@@ -8111,12 +7300,6 @@ func (o GetChannelTargetArrayOutput) ToGetChannelTargetArrayOutputWithContext(ct
 	return o
 }
 
-func (o GetChannelTargetArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetChannelTarget] {
-	return pulumix.Output[[]GetChannelTarget]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetChannelTargetArrayOutput) Index(i pulumi.IntInput) GetChannelTargetOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetChannelTarget {
 		return vs[0].([]GetChannelTarget)[vs[1].(int)]
@@ -8125,9 +7308,9 @@ func (o GetChannelTargetArrayOutput) Index(i pulumi.IntInput) GetChannelTargetOu
 
 type GetChannelTargetFilter struct {
 	// The type of the filter rule.
-	Type string `pulumi:"type"`
+	Type *string `pulumi:"type"`
 	// The body of the filter rule. This can represent a database, a table, or a database pair (represented as "db1->db2"). For more information, see [Replication Filtering Rules](https://dev.mysql.com/doc/refman/8.0/en/replication-rules.html).
-	Value string `pulumi:"value"`
+	Value *string `pulumi:"value"`
 }
 
 // GetChannelTargetFilterInput is an input type that accepts GetChannelTargetFilterArgs and GetChannelTargetFilterOutput values.
@@ -8143,9 +7326,9 @@ type GetChannelTargetFilterInput interface {
 
 type GetChannelTargetFilterArgs struct {
 	// The type of the filter rule.
-	Type pulumi.StringInput `pulumi:"type"`
+	Type pulumi.StringPtrInput `pulumi:"type"`
 	// The body of the filter rule. This can represent a database, a table, or a database pair (represented as "db1->db2"). For more information, see [Replication Filtering Rules](https://dev.mysql.com/doc/refman/8.0/en/replication-rules.html).
-	Value pulumi.StringInput `pulumi:"value"`
+	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
 func (GetChannelTargetFilterArgs) ElementType() reflect.Type {
@@ -8158,12 +7341,6 @@ func (i GetChannelTargetFilterArgs) ToGetChannelTargetFilterOutput() GetChannelT
 
 func (i GetChannelTargetFilterArgs) ToGetChannelTargetFilterOutputWithContext(ctx context.Context) GetChannelTargetFilterOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetChannelTargetFilterOutput)
-}
-
-func (i GetChannelTargetFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetChannelTargetFilter] {
-	return pulumix.Output[GetChannelTargetFilter]{
-		OutputState: i.ToGetChannelTargetFilterOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetChannelTargetFilterArrayInput is an input type that accepts GetChannelTargetFilterArray and GetChannelTargetFilterArrayOutput values.
@@ -8191,12 +7368,6 @@ func (i GetChannelTargetFilterArray) ToGetChannelTargetFilterArrayOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetChannelTargetFilterArrayOutput)
 }
 
-func (i GetChannelTargetFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetChannelTargetFilter] {
-	return pulumix.Output[[]GetChannelTargetFilter]{
-		OutputState: i.ToGetChannelTargetFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetChannelTargetFilterOutput struct{ *pulumi.OutputState }
 
 func (GetChannelTargetFilterOutput) ElementType() reflect.Type {
@@ -8211,20 +7382,14 @@ func (o GetChannelTargetFilterOutput) ToGetChannelTargetFilterOutputWithContext(
 	return o
 }
 
-func (o GetChannelTargetFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetChannelTargetFilter] {
-	return pulumix.Output[GetChannelTargetFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The type of the filter rule.
-func (o GetChannelTargetFilterOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v GetChannelTargetFilter) string { return v.Type }).(pulumi.StringOutput)
+func (o GetChannelTargetFilterOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetChannelTargetFilter) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
 
 // The body of the filter rule. This can represent a database, a table, or a database pair (represented as "db1->db2"). For more information, see [Replication Filtering Rules](https://dev.mysql.com/doc/refman/8.0/en/replication-rules.html).
-func (o GetChannelTargetFilterOutput) Value() pulumi.StringOutput {
-	return o.ApplyT(func(v GetChannelTargetFilter) string { return v.Value }).(pulumi.StringOutput)
+func (o GetChannelTargetFilterOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetChannelTargetFilter) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
 
 type GetChannelTargetFilterArrayOutput struct{ *pulumi.OutputState }
@@ -8241,12 +7406,6 @@ func (o GetChannelTargetFilterArrayOutput) ToGetChannelTargetFilterArrayOutputWi
 	return o
 }
 
-func (o GetChannelTargetFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetChannelTargetFilter] {
-	return pulumix.Output[[]GetChannelTargetFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetChannelTargetFilterArrayOutput) Index(i pulumi.IntInput) GetChannelTargetFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetChannelTargetFilter {
 		return vs[0].([]GetChannelTargetFilter)[vs[1].(int)]
@@ -8255,31 +7414,31 @@ func (o GetChannelTargetFilterArrayOutput) Index(i pulumi.IntInput) GetChannelTa
 
 type GetChannelsChannel struct {
 	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// User provided description of the Channel.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// A filter to return only the resource matching the given display name exactly.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Simple key-value pair applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The OCID of the Channel.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// If true, returns only Channels that are enabled. If false, returns only Channels that are disabled.
-	IsEnabled bool `pulumi:"isEnabled"`
+	IsEnabled *bool `pulumi:"isEnabled"`
 	// A message describing the state of the Channel.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// Parameters detailing how to provision the source for the given Channel.
 	Sources []GetChannelsChannelSource `pulumi:"sources"`
 	// The LifecycleState of the Channel.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// Details about the Channel target.
 	Targets []GetChannelsChannelTarget `pulumi:"targets"`
 	// The date and time the Channel was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time the Channel was last updated, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 // GetChannelsChannelInput is an input type that accepts GetChannelsChannelArgs and GetChannelsChannelOutput values.
@@ -8295,31 +7454,31 @@ type GetChannelsChannelInput interface {
 
 type GetChannelsChannelArgs struct {
 	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// User provided description of the Channel.
-	Description pulumi.StringInput `pulumi:"description"`
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// A filter to return only the resource matching the given display name exactly.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// Simple key-value pair applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// The OCID of the Channel.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// If true, returns only Channels that are enabled. If false, returns only Channels that are disabled.
-	IsEnabled pulumi.BoolInput `pulumi:"isEnabled"`
+	IsEnabled pulumi.BoolPtrInput `pulumi:"isEnabled"`
 	// A message describing the state of the Channel.
-	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrInput `pulumi:"lifecycleDetails"`
 	// Parameters detailing how to provision the source for the given Channel.
 	Sources GetChannelsChannelSourceArrayInput `pulumi:"sources"`
 	// The LifecycleState of the Channel.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// Details about the Channel target.
 	Targets GetChannelsChannelTargetArrayInput `pulumi:"targets"`
 	// The date and time the Channel was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// The time the Channel was last updated, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
 }
 
 func (GetChannelsChannelArgs) ElementType() reflect.Type {
@@ -8332,12 +7491,6 @@ func (i GetChannelsChannelArgs) ToGetChannelsChannelOutput() GetChannelsChannelO
 
 func (i GetChannelsChannelArgs) ToGetChannelsChannelOutputWithContext(ctx context.Context) GetChannelsChannelOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetChannelsChannelOutput)
-}
-
-func (i GetChannelsChannelArgs) ToOutput(ctx context.Context) pulumix.Output[GetChannelsChannel] {
-	return pulumix.Output[GetChannelsChannel]{
-		OutputState: i.ToGetChannelsChannelOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetChannelsChannelArrayInput is an input type that accepts GetChannelsChannelArray and GetChannelsChannelArrayOutput values.
@@ -8365,12 +7518,6 @@ func (i GetChannelsChannelArray) ToGetChannelsChannelArrayOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(GetChannelsChannelArrayOutput)
 }
 
-func (i GetChannelsChannelArray) ToOutput(ctx context.Context) pulumix.Output[[]GetChannelsChannel] {
-	return pulumix.Output[[]GetChannelsChannel]{
-		OutputState: i.ToGetChannelsChannelArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetChannelsChannelOutput struct{ *pulumi.OutputState }
 
 func (GetChannelsChannelOutput) ElementType() reflect.Type {
@@ -8385,15 +7532,9 @@ func (o GetChannelsChannelOutput) ToGetChannelsChannelOutputWithContext(ctx cont
 	return o
 }
 
-func (o GetChannelsChannelOutput) ToOutput(ctx context.Context) pulumix.Output[GetChannelsChannel] {
-	return pulumix.Output[GetChannelsChannel]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-func (o GetChannelsChannelOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetChannelsChannel) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetChannelsChannelOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetChannelsChannel) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
@@ -8402,13 +7543,13 @@ func (o GetChannelsChannelOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // User provided description of the Channel.
-func (o GetChannelsChannelOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetChannelsChannel) string { return v.Description }).(pulumi.StringOutput)
+func (o GetChannelsChannelOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetChannelsChannel) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // A filter to return only the resource matching the given display name exactly.
-func (o GetChannelsChannelOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetChannelsChannel) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetChannelsChannelOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetChannelsChannel) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -8417,18 +7558,18 @@ func (o GetChannelsChannelOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The OCID of the Channel.
-func (o GetChannelsChannelOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetChannelsChannel) string { return v.Id }).(pulumi.StringOutput)
+func (o GetChannelsChannelOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetChannelsChannel) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // If true, returns only Channels that are enabled. If false, returns only Channels that are disabled.
-func (o GetChannelsChannelOutput) IsEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetChannelsChannel) bool { return v.IsEnabled }).(pulumi.BoolOutput)
+func (o GetChannelsChannelOutput) IsEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetChannelsChannel) *bool { return v.IsEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // A message describing the state of the Channel.
-func (o GetChannelsChannelOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetChannelsChannel) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o GetChannelsChannelOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetChannelsChannel) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // Parameters detailing how to provision the source for the given Channel.
@@ -8437,8 +7578,8 @@ func (o GetChannelsChannelOutput) Sources() GetChannelsChannelSourceArrayOutput 
 }
 
 // The LifecycleState of the Channel.
-func (o GetChannelsChannelOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetChannelsChannel) string { return v.State }).(pulumi.StringOutput)
+func (o GetChannelsChannelOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetChannelsChannel) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Details about the Channel target.
@@ -8447,13 +7588,13 @@ func (o GetChannelsChannelOutput) Targets() GetChannelsChannelTargetArrayOutput 
 }
 
 // The date and time the Channel was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-func (o GetChannelsChannelOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetChannelsChannel) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetChannelsChannelOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetChannelsChannel) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time the Channel was last updated, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-func (o GetChannelsChannelOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetChannelsChannel) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o GetChannelsChannelOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetChannelsChannel) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type GetChannelsChannelArrayOutput struct{ *pulumi.OutputState }
@@ -8470,12 +7611,6 @@ func (o GetChannelsChannelArrayOutput) ToGetChannelsChannelArrayOutputWithContex
 	return o
 }
 
-func (o GetChannelsChannelArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetChannelsChannel] {
-	return pulumix.Output[[]GetChannelsChannel]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetChannelsChannelArrayOutput) Index(i pulumi.IntInput) GetChannelsChannelOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetChannelsChannel {
 		return vs[0].([]GetChannelsChannel)[vs[1].(int)]
@@ -8486,18 +7621,18 @@ type GetChannelsChannelSource struct {
 	// Specifies how the replication channel handles replicated transactions without an identifier, enabling replication from a source that does not use transaction-id-based replication to a replica that does.
 	AnonymousTransactionsHandlings []GetChannelsChannelSourceAnonymousTransactionsHandling `pulumi:"anonymousTransactionsHandlings"`
 	// The network address of the MySQL instance.
-	Hostname string `pulumi:"hostname"`
-	Password string `pulumi:"password"`
+	Hostname *string `pulumi:"hostname"`
+	Password *string `pulumi:"password"`
 	// The port the source MySQL instance listens on.
-	Port int `pulumi:"port"`
+	Port *int `pulumi:"port"`
 	// The specific source identifier.
-	SourceType string `pulumi:"sourceType"`
+	SourceType *string `pulumi:"sourceType"`
 	// The CA certificate of the server used for VERIFY_IDENTITY and VERIFY_CA ssl modes.
 	SslCaCertificates []GetChannelsChannelSourceSslCaCertificate `pulumi:"sslCaCertificates"`
 	// The SSL mode of the Channel.
-	SslMode string `pulumi:"sslMode"`
+	SslMode *string `pulumi:"sslMode"`
 	// The name of the replication user on the source MySQL instance. The username has a maximum length of 96 characters. For more information, please see the [MySQL documentation](https://dev.mysql.com/doc/refman/8.0/en/change-master-to.html)
-	Username string `pulumi:"username"`
+	Username *string `pulumi:"username"`
 }
 
 // GetChannelsChannelSourceInput is an input type that accepts GetChannelsChannelSourceArgs and GetChannelsChannelSourceOutput values.
@@ -8515,18 +7650,18 @@ type GetChannelsChannelSourceArgs struct {
 	// Specifies how the replication channel handles replicated transactions without an identifier, enabling replication from a source that does not use transaction-id-based replication to a replica that does.
 	AnonymousTransactionsHandlings GetChannelsChannelSourceAnonymousTransactionsHandlingArrayInput `pulumi:"anonymousTransactionsHandlings"`
 	// The network address of the MySQL instance.
-	Hostname pulumi.StringInput `pulumi:"hostname"`
-	Password pulumi.StringInput `pulumi:"password"`
+	Hostname pulumi.StringPtrInput `pulumi:"hostname"`
+	Password pulumi.StringPtrInput `pulumi:"password"`
 	// The port the source MySQL instance listens on.
-	Port pulumi.IntInput `pulumi:"port"`
+	Port pulumi.IntPtrInput `pulumi:"port"`
 	// The specific source identifier.
-	SourceType pulumi.StringInput `pulumi:"sourceType"`
+	SourceType pulumi.StringPtrInput `pulumi:"sourceType"`
 	// The CA certificate of the server used for VERIFY_IDENTITY and VERIFY_CA ssl modes.
 	SslCaCertificates GetChannelsChannelSourceSslCaCertificateArrayInput `pulumi:"sslCaCertificates"`
 	// The SSL mode of the Channel.
-	SslMode pulumi.StringInput `pulumi:"sslMode"`
+	SslMode pulumi.StringPtrInput `pulumi:"sslMode"`
 	// The name of the replication user on the source MySQL instance. The username has a maximum length of 96 characters. For more information, please see the [MySQL documentation](https://dev.mysql.com/doc/refman/8.0/en/change-master-to.html)
-	Username pulumi.StringInput `pulumi:"username"`
+	Username pulumi.StringPtrInput `pulumi:"username"`
 }
 
 func (GetChannelsChannelSourceArgs) ElementType() reflect.Type {
@@ -8539,12 +7674,6 @@ func (i GetChannelsChannelSourceArgs) ToGetChannelsChannelSourceOutput() GetChan
 
 func (i GetChannelsChannelSourceArgs) ToGetChannelsChannelSourceOutputWithContext(ctx context.Context) GetChannelsChannelSourceOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetChannelsChannelSourceOutput)
-}
-
-func (i GetChannelsChannelSourceArgs) ToOutput(ctx context.Context) pulumix.Output[GetChannelsChannelSource] {
-	return pulumix.Output[GetChannelsChannelSource]{
-		OutputState: i.ToGetChannelsChannelSourceOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetChannelsChannelSourceArrayInput is an input type that accepts GetChannelsChannelSourceArray and GetChannelsChannelSourceArrayOutput values.
@@ -8572,12 +7701,6 @@ func (i GetChannelsChannelSourceArray) ToGetChannelsChannelSourceArrayOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetChannelsChannelSourceArrayOutput)
 }
 
-func (i GetChannelsChannelSourceArray) ToOutput(ctx context.Context) pulumix.Output[[]GetChannelsChannelSource] {
-	return pulumix.Output[[]GetChannelsChannelSource]{
-		OutputState: i.ToGetChannelsChannelSourceArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetChannelsChannelSourceOutput struct{ *pulumi.OutputState }
 
 func (GetChannelsChannelSourceOutput) ElementType() reflect.Type {
@@ -8592,12 +7715,6 @@ func (o GetChannelsChannelSourceOutput) ToGetChannelsChannelSourceOutputWithCont
 	return o
 }
 
-func (o GetChannelsChannelSourceOutput) ToOutput(ctx context.Context) pulumix.Output[GetChannelsChannelSource] {
-	return pulumix.Output[GetChannelsChannelSource]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Specifies how the replication channel handles replicated transactions without an identifier, enabling replication from a source that does not use transaction-id-based replication to a replica that does.
 func (o GetChannelsChannelSourceOutput) AnonymousTransactionsHandlings() GetChannelsChannelSourceAnonymousTransactionsHandlingArrayOutput {
 	return o.ApplyT(func(v GetChannelsChannelSource) []GetChannelsChannelSourceAnonymousTransactionsHandling {
@@ -8606,22 +7723,22 @@ func (o GetChannelsChannelSourceOutput) AnonymousTransactionsHandlings() GetChan
 }
 
 // The network address of the MySQL instance.
-func (o GetChannelsChannelSourceOutput) Hostname() pulumi.StringOutput {
-	return o.ApplyT(func(v GetChannelsChannelSource) string { return v.Hostname }).(pulumi.StringOutput)
+func (o GetChannelsChannelSourceOutput) Hostname() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetChannelsChannelSource) *string { return v.Hostname }).(pulumi.StringPtrOutput)
 }
 
-func (o GetChannelsChannelSourceOutput) Password() pulumi.StringOutput {
-	return o.ApplyT(func(v GetChannelsChannelSource) string { return v.Password }).(pulumi.StringOutput)
+func (o GetChannelsChannelSourceOutput) Password() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetChannelsChannelSource) *string { return v.Password }).(pulumi.StringPtrOutput)
 }
 
 // The port the source MySQL instance listens on.
-func (o GetChannelsChannelSourceOutput) Port() pulumi.IntOutput {
-	return o.ApplyT(func(v GetChannelsChannelSource) int { return v.Port }).(pulumi.IntOutput)
+func (o GetChannelsChannelSourceOutput) Port() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetChannelsChannelSource) *int { return v.Port }).(pulumi.IntPtrOutput)
 }
 
 // The specific source identifier.
-func (o GetChannelsChannelSourceOutput) SourceType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetChannelsChannelSource) string { return v.SourceType }).(pulumi.StringOutput)
+func (o GetChannelsChannelSourceOutput) SourceType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetChannelsChannelSource) *string { return v.SourceType }).(pulumi.StringPtrOutput)
 }
 
 // The CA certificate of the server used for VERIFY_IDENTITY and VERIFY_CA ssl modes.
@@ -8632,13 +7749,13 @@ func (o GetChannelsChannelSourceOutput) SslCaCertificates() GetChannelsChannelSo
 }
 
 // The SSL mode of the Channel.
-func (o GetChannelsChannelSourceOutput) SslMode() pulumi.StringOutput {
-	return o.ApplyT(func(v GetChannelsChannelSource) string { return v.SslMode }).(pulumi.StringOutput)
+func (o GetChannelsChannelSourceOutput) SslMode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetChannelsChannelSource) *string { return v.SslMode }).(pulumi.StringPtrOutput)
 }
 
 // The name of the replication user on the source MySQL instance. The username has a maximum length of 96 characters. For more information, please see the [MySQL documentation](https://dev.mysql.com/doc/refman/8.0/en/change-master-to.html)
-func (o GetChannelsChannelSourceOutput) Username() pulumi.StringOutput {
-	return o.ApplyT(func(v GetChannelsChannelSource) string { return v.Username }).(pulumi.StringOutput)
+func (o GetChannelsChannelSourceOutput) Username() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetChannelsChannelSource) *string { return v.Username }).(pulumi.StringPtrOutput)
 }
 
 type GetChannelsChannelSourceArrayOutput struct{ *pulumi.OutputState }
@@ -8655,12 +7772,6 @@ func (o GetChannelsChannelSourceArrayOutput) ToGetChannelsChannelSourceArrayOutp
 	return o
 }
 
-func (o GetChannelsChannelSourceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetChannelsChannelSource] {
-	return pulumix.Output[[]GetChannelsChannelSource]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetChannelsChannelSourceArrayOutput) Index(i pulumi.IntInput) GetChannelsChannelSourceOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetChannelsChannelSource {
 		return vs[0].([]GetChannelsChannelSource)[vs[1].(int)]
@@ -8669,13 +7780,13 @@ func (o GetChannelsChannelSourceArrayOutput) Index(i pulumi.IntInput) GetChannel
 
 type GetChannelsChannelSourceAnonymousTransactionsHandling struct {
 	// Specifies one of the coordinates (file) at which the replica should begin reading the source's log. As this value specifies the point where replication starts from, it is only used once, when it starts. It is never used again, unless a new UpdateChannel operation modifies it.
-	LastConfiguredLogFilename string `pulumi:"lastConfiguredLogFilename"`
+	LastConfiguredLogFilename *string `pulumi:"lastConfiguredLogFilename"`
 	// Specifies one of the coordinates (offset) at which the replica should begin reading the source's log. As this value specifies the point where replication starts from, it is only used once, when it starts. It is never used again, unless a new UpdateChannel operation modifies it.
-	LastConfiguredLogOffset string `pulumi:"lastConfiguredLogOffset"`
+	LastConfiguredLogOffset *string `pulumi:"lastConfiguredLogOffset"`
 	// Specifies how the replication channel handles anonymous transactions.
-	Policy string `pulumi:"policy"`
+	Policy *string `pulumi:"policy"`
 	// The UUID that is used as a prefix when generating transaction identifiers for anonymous transactions coming from the source. You can change the UUID later.
-	Uuid string `pulumi:"uuid"`
+	Uuid *string `pulumi:"uuid"`
 }
 
 // GetChannelsChannelSourceAnonymousTransactionsHandlingInput is an input type that accepts GetChannelsChannelSourceAnonymousTransactionsHandlingArgs and GetChannelsChannelSourceAnonymousTransactionsHandlingOutput values.
@@ -8691,13 +7802,13 @@ type GetChannelsChannelSourceAnonymousTransactionsHandlingInput interface {
 
 type GetChannelsChannelSourceAnonymousTransactionsHandlingArgs struct {
 	// Specifies one of the coordinates (file) at which the replica should begin reading the source's log. As this value specifies the point where replication starts from, it is only used once, when it starts. It is never used again, unless a new UpdateChannel operation modifies it.
-	LastConfiguredLogFilename pulumi.StringInput `pulumi:"lastConfiguredLogFilename"`
+	LastConfiguredLogFilename pulumi.StringPtrInput `pulumi:"lastConfiguredLogFilename"`
 	// Specifies one of the coordinates (offset) at which the replica should begin reading the source's log. As this value specifies the point where replication starts from, it is only used once, when it starts. It is never used again, unless a new UpdateChannel operation modifies it.
-	LastConfiguredLogOffset pulumi.StringInput `pulumi:"lastConfiguredLogOffset"`
+	LastConfiguredLogOffset pulumi.StringPtrInput `pulumi:"lastConfiguredLogOffset"`
 	// Specifies how the replication channel handles anonymous transactions.
-	Policy pulumi.StringInput `pulumi:"policy"`
+	Policy pulumi.StringPtrInput `pulumi:"policy"`
 	// The UUID that is used as a prefix when generating transaction identifiers for anonymous transactions coming from the source. You can change the UUID later.
-	Uuid pulumi.StringInput `pulumi:"uuid"`
+	Uuid pulumi.StringPtrInput `pulumi:"uuid"`
 }
 
 func (GetChannelsChannelSourceAnonymousTransactionsHandlingArgs) ElementType() reflect.Type {
@@ -8710,12 +7821,6 @@ func (i GetChannelsChannelSourceAnonymousTransactionsHandlingArgs) ToGetChannels
 
 func (i GetChannelsChannelSourceAnonymousTransactionsHandlingArgs) ToGetChannelsChannelSourceAnonymousTransactionsHandlingOutputWithContext(ctx context.Context) GetChannelsChannelSourceAnonymousTransactionsHandlingOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetChannelsChannelSourceAnonymousTransactionsHandlingOutput)
-}
-
-func (i GetChannelsChannelSourceAnonymousTransactionsHandlingArgs) ToOutput(ctx context.Context) pulumix.Output[GetChannelsChannelSourceAnonymousTransactionsHandling] {
-	return pulumix.Output[GetChannelsChannelSourceAnonymousTransactionsHandling]{
-		OutputState: i.ToGetChannelsChannelSourceAnonymousTransactionsHandlingOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetChannelsChannelSourceAnonymousTransactionsHandlingArrayInput is an input type that accepts GetChannelsChannelSourceAnonymousTransactionsHandlingArray and GetChannelsChannelSourceAnonymousTransactionsHandlingArrayOutput values.
@@ -8743,12 +7848,6 @@ func (i GetChannelsChannelSourceAnonymousTransactionsHandlingArray) ToGetChannel
 	return pulumi.ToOutputWithContext(ctx, i).(GetChannelsChannelSourceAnonymousTransactionsHandlingArrayOutput)
 }
 
-func (i GetChannelsChannelSourceAnonymousTransactionsHandlingArray) ToOutput(ctx context.Context) pulumix.Output[[]GetChannelsChannelSourceAnonymousTransactionsHandling] {
-	return pulumix.Output[[]GetChannelsChannelSourceAnonymousTransactionsHandling]{
-		OutputState: i.ToGetChannelsChannelSourceAnonymousTransactionsHandlingArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetChannelsChannelSourceAnonymousTransactionsHandlingOutput struct{ *pulumi.OutputState }
 
 func (GetChannelsChannelSourceAnonymousTransactionsHandlingOutput) ElementType() reflect.Type {
@@ -8763,32 +7862,28 @@ func (o GetChannelsChannelSourceAnonymousTransactionsHandlingOutput) ToGetChanne
 	return o
 }
 
-func (o GetChannelsChannelSourceAnonymousTransactionsHandlingOutput) ToOutput(ctx context.Context) pulumix.Output[GetChannelsChannelSourceAnonymousTransactionsHandling] {
-	return pulumix.Output[GetChannelsChannelSourceAnonymousTransactionsHandling]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Specifies one of the coordinates (file) at which the replica should begin reading the source's log. As this value specifies the point where replication starts from, it is only used once, when it starts. It is never used again, unless a new UpdateChannel operation modifies it.
-func (o GetChannelsChannelSourceAnonymousTransactionsHandlingOutput) LastConfiguredLogFilename() pulumi.StringOutput {
-	return o.ApplyT(func(v GetChannelsChannelSourceAnonymousTransactionsHandling) string {
+func (o GetChannelsChannelSourceAnonymousTransactionsHandlingOutput) LastConfiguredLogFilename() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetChannelsChannelSourceAnonymousTransactionsHandling) *string {
 		return v.LastConfiguredLogFilename
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Specifies one of the coordinates (offset) at which the replica should begin reading the source's log. As this value specifies the point where replication starts from, it is only used once, when it starts. It is never used again, unless a new UpdateChannel operation modifies it.
-func (o GetChannelsChannelSourceAnonymousTransactionsHandlingOutput) LastConfiguredLogOffset() pulumi.StringOutput {
-	return o.ApplyT(func(v GetChannelsChannelSourceAnonymousTransactionsHandling) string { return v.LastConfiguredLogOffset }).(pulumi.StringOutput)
+func (o GetChannelsChannelSourceAnonymousTransactionsHandlingOutput) LastConfiguredLogOffset() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetChannelsChannelSourceAnonymousTransactionsHandling) *string {
+		return v.LastConfiguredLogOffset
+	}).(pulumi.StringPtrOutput)
 }
 
 // Specifies how the replication channel handles anonymous transactions.
-func (o GetChannelsChannelSourceAnonymousTransactionsHandlingOutput) Policy() pulumi.StringOutput {
-	return o.ApplyT(func(v GetChannelsChannelSourceAnonymousTransactionsHandling) string { return v.Policy }).(pulumi.StringOutput)
+func (o GetChannelsChannelSourceAnonymousTransactionsHandlingOutput) Policy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetChannelsChannelSourceAnonymousTransactionsHandling) *string { return v.Policy }).(pulumi.StringPtrOutput)
 }
 
 // The UUID that is used as a prefix when generating transaction identifiers for anonymous transactions coming from the source. You can change the UUID later.
-func (o GetChannelsChannelSourceAnonymousTransactionsHandlingOutput) Uuid() pulumi.StringOutput {
-	return o.ApplyT(func(v GetChannelsChannelSourceAnonymousTransactionsHandling) string { return v.Uuid }).(pulumi.StringOutput)
+func (o GetChannelsChannelSourceAnonymousTransactionsHandlingOutput) Uuid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetChannelsChannelSourceAnonymousTransactionsHandling) *string { return v.Uuid }).(pulumi.StringPtrOutput)
 }
 
 type GetChannelsChannelSourceAnonymousTransactionsHandlingArrayOutput struct{ *pulumi.OutputState }
@@ -8805,12 +7900,6 @@ func (o GetChannelsChannelSourceAnonymousTransactionsHandlingArrayOutput) ToGetC
 	return o
 }
 
-func (o GetChannelsChannelSourceAnonymousTransactionsHandlingArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetChannelsChannelSourceAnonymousTransactionsHandling] {
-	return pulumix.Output[[]GetChannelsChannelSourceAnonymousTransactionsHandling]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetChannelsChannelSourceAnonymousTransactionsHandlingArrayOutput) Index(i pulumi.IntInput) GetChannelsChannelSourceAnonymousTransactionsHandlingOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetChannelsChannelSourceAnonymousTransactionsHandling {
 		return vs[0].([]GetChannelsChannelSourceAnonymousTransactionsHandling)[vs[1].(int)]
@@ -8819,9 +7908,9 @@ func (o GetChannelsChannelSourceAnonymousTransactionsHandlingArrayOutput) Index(
 
 type GetChannelsChannelSourceSslCaCertificate struct {
 	// The type of CA certificate.
-	CertificateType string `pulumi:"certificateType"`
+	CertificateType *string `pulumi:"certificateType"`
 	// The string containing the CA certificate in PEM format.
-	Contents string `pulumi:"contents"`
+	Contents *string `pulumi:"contents"`
 }
 
 // GetChannelsChannelSourceSslCaCertificateInput is an input type that accepts GetChannelsChannelSourceSslCaCertificateArgs and GetChannelsChannelSourceSslCaCertificateOutput values.
@@ -8837,9 +7926,9 @@ type GetChannelsChannelSourceSslCaCertificateInput interface {
 
 type GetChannelsChannelSourceSslCaCertificateArgs struct {
 	// The type of CA certificate.
-	CertificateType pulumi.StringInput `pulumi:"certificateType"`
+	CertificateType pulumi.StringPtrInput `pulumi:"certificateType"`
 	// The string containing the CA certificate in PEM format.
-	Contents pulumi.StringInput `pulumi:"contents"`
+	Contents pulumi.StringPtrInput `pulumi:"contents"`
 }
 
 func (GetChannelsChannelSourceSslCaCertificateArgs) ElementType() reflect.Type {
@@ -8852,12 +7941,6 @@ func (i GetChannelsChannelSourceSslCaCertificateArgs) ToGetChannelsChannelSource
 
 func (i GetChannelsChannelSourceSslCaCertificateArgs) ToGetChannelsChannelSourceSslCaCertificateOutputWithContext(ctx context.Context) GetChannelsChannelSourceSslCaCertificateOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetChannelsChannelSourceSslCaCertificateOutput)
-}
-
-func (i GetChannelsChannelSourceSslCaCertificateArgs) ToOutput(ctx context.Context) pulumix.Output[GetChannelsChannelSourceSslCaCertificate] {
-	return pulumix.Output[GetChannelsChannelSourceSslCaCertificate]{
-		OutputState: i.ToGetChannelsChannelSourceSslCaCertificateOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetChannelsChannelSourceSslCaCertificateArrayInput is an input type that accepts GetChannelsChannelSourceSslCaCertificateArray and GetChannelsChannelSourceSslCaCertificateArrayOutput values.
@@ -8885,12 +7968,6 @@ func (i GetChannelsChannelSourceSslCaCertificateArray) ToGetChannelsChannelSourc
 	return pulumi.ToOutputWithContext(ctx, i).(GetChannelsChannelSourceSslCaCertificateArrayOutput)
 }
 
-func (i GetChannelsChannelSourceSslCaCertificateArray) ToOutput(ctx context.Context) pulumix.Output[[]GetChannelsChannelSourceSslCaCertificate] {
-	return pulumix.Output[[]GetChannelsChannelSourceSslCaCertificate]{
-		OutputState: i.ToGetChannelsChannelSourceSslCaCertificateArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetChannelsChannelSourceSslCaCertificateOutput struct{ *pulumi.OutputState }
 
 func (GetChannelsChannelSourceSslCaCertificateOutput) ElementType() reflect.Type {
@@ -8905,20 +7982,14 @@ func (o GetChannelsChannelSourceSslCaCertificateOutput) ToGetChannelsChannelSour
 	return o
 }
 
-func (o GetChannelsChannelSourceSslCaCertificateOutput) ToOutput(ctx context.Context) pulumix.Output[GetChannelsChannelSourceSslCaCertificate] {
-	return pulumix.Output[GetChannelsChannelSourceSslCaCertificate]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The type of CA certificate.
-func (o GetChannelsChannelSourceSslCaCertificateOutput) CertificateType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetChannelsChannelSourceSslCaCertificate) string { return v.CertificateType }).(pulumi.StringOutput)
+func (o GetChannelsChannelSourceSslCaCertificateOutput) CertificateType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetChannelsChannelSourceSslCaCertificate) *string { return v.CertificateType }).(pulumi.StringPtrOutput)
 }
 
 // The string containing the CA certificate in PEM format.
-func (o GetChannelsChannelSourceSslCaCertificateOutput) Contents() pulumi.StringOutput {
-	return o.ApplyT(func(v GetChannelsChannelSourceSslCaCertificate) string { return v.Contents }).(pulumi.StringOutput)
+func (o GetChannelsChannelSourceSslCaCertificateOutput) Contents() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetChannelsChannelSourceSslCaCertificate) *string { return v.Contents }).(pulumi.StringPtrOutput)
 }
 
 type GetChannelsChannelSourceSslCaCertificateArrayOutput struct{ *pulumi.OutputState }
@@ -8935,12 +8006,6 @@ func (o GetChannelsChannelSourceSslCaCertificateArrayOutput) ToGetChannelsChanne
 	return o
 }
 
-func (o GetChannelsChannelSourceSslCaCertificateArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetChannelsChannelSourceSslCaCertificate] {
-	return pulumix.Output[[]GetChannelsChannelSourceSslCaCertificate]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetChannelsChannelSourceSslCaCertificateArrayOutput) Index(i pulumi.IntInput) GetChannelsChannelSourceSslCaCertificateOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetChannelsChannelSourceSslCaCertificate {
 		return vs[0].([]GetChannelsChannelSourceSslCaCertificate)[vs[1].(int)]
@@ -8949,19 +8014,19 @@ func (o GetChannelsChannelSourceSslCaCertificateArrayOutput) Index(i pulumi.IntI
 
 type GetChannelsChannelTarget struct {
 	// The username for the replication applier of the target MySQL DB System.
-	ApplierUsername string `pulumi:"applierUsername"`
+	ApplierUsername *string `pulumi:"applierUsername"`
 	// The case-insensitive name that identifies the replication channel. Channel names must follow the rules defined for [MySQL identifiers](https://dev.mysql.com/doc/refman/8.0/en/identifiers.html). The names of non-Deleted Channels must be unique for each DB System.
-	ChannelName string `pulumi:"channelName"`
+	ChannelName *string `pulumi:"channelName"`
 	// The DB System [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-	DbSystemId string `pulumi:"dbSystemId"`
+	DbSystemId *string `pulumi:"dbSystemId"`
 	// Specifies the amount of time, in seconds, that the channel waits before  applying a transaction received from the source.
-	DelayInSeconds int `pulumi:"delayInSeconds"`
+	DelayInSeconds *int `pulumi:"delayInSeconds"`
 	// Replication filter rules to be applied at the DB System Channel target.
 	Filters []GetChannelsChannelTargetFilter `pulumi:"filters"`
 	// Specifies how a replication channel handles the creation and alteration of tables  that do not have a primary key.
-	TablesWithoutPrimaryKeyHandling string `pulumi:"tablesWithoutPrimaryKeyHandling"`
+	TablesWithoutPrimaryKeyHandling *string `pulumi:"tablesWithoutPrimaryKeyHandling"`
 	// The specific target identifier.
-	TargetType string `pulumi:"targetType"`
+	TargetType *string `pulumi:"targetType"`
 }
 
 // GetChannelsChannelTargetInput is an input type that accepts GetChannelsChannelTargetArgs and GetChannelsChannelTargetOutput values.
@@ -8977,19 +8042,19 @@ type GetChannelsChannelTargetInput interface {
 
 type GetChannelsChannelTargetArgs struct {
 	// The username for the replication applier of the target MySQL DB System.
-	ApplierUsername pulumi.StringInput `pulumi:"applierUsername"`
+	ApplierUsername pulumi.StringPtrInput `pulumi:"applierUsername"`
 	// The case-insensitive name that identifies the replication channel. Channel names must follow the rules defined for [MySQL identifiers](https://dev.mysql.com/doc/refman/8.0/en/identifiers.html). The names of non-Deleted Channels must be unique for each DB System.
-	ChannelName pulumi.StringInput `pulumi:"channelName"`
+	ChannelName pulumi.StringPtrInput `pulumi:"channelName"`
 	// The DB System [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-	DbSystemId pulumi.StringInput `pulumi:"dbSystemId"`
+	DbSystemId pulumi.StringPtrInput `pulumi:"dbSystemId"`
 	// Specifies the amount of time, in seconds, that the channel waits before  applying a transaction received from the source.
-	DelayInSeconds pulumi.IntInput `pulumi:"delayInSeconds"`
+	DelayInSeconds pulumi.IntPtrInput `pulumi:"delayInSeconds"`
 	// Replication filter rules to be applied at the DB System Channel target.
 	Filters GetChannelsChannelTargetFilterArrayInput `pulumi:"filters"`
 	// Specifies how a replication channel handles the creation and alteration of tables  that do not have a primary key.
-	TablesWithoutPrimaryKeyHandling pulumi.StringInput `pulumi:"tablesWithoutPrimaryKeyHandling"`
+	TablesWithoutPrimaryKeyHandling pulumi.StringPtrInput `pulumi:"tablesWithoutPrimaryKeyHandling"`
 	// The specific target identifier.
-	TargetType pulumi.StringInput `pulumi:"targetType"`
+	TargetType pulumi.StringPtrInput `pulumi:"targetType"`
 }
 
 func (GetChannelsChannelTargetArgs) ElementType() reflect.Type {
@@ -9002,12 +8067,6 @@ func (i GetChannelsChannelTargetArgs) ToGetChannelsChannelTargetOutput() GetChan
 
 func (i GetChannelsChannelTargetArgs) ToGetChannelsChannelTargetOutputWithContext(ctx context.Context) GetChannelsChannelTargetOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetChannelsChannelTargetOutput)
-}
-
-func (i GetChannelsChannelTargetArgs) ToOutput(ctx context.Context) pulumix.Output[GetChannelsChannelTarget] {
-	return pulumix.Output[GetChannelsChannelTarget]{
-		OutputState: i.ToGetChannelsChannelTargetOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetChannelsChannelTargetArrayInput is an input type that accepts GetChannelsChannelTargetArray and GetChannelsChannelTargetArrayOutput values.
@@ -9035,12 +8094,6 @@ func (i GetChannelsChannelTargetArray) ToGetChannelsChannelTargetArrayOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetChannelsChannelTargetArrayOutput)
 }
 
-func (i GetChannelsChannelTargetArray) ToOutput(ctx context.Context) pulumix.Output[[]GetChannelsChannelTarget] {
-	return pulumix.Output[[]GetChannelsChannelTarget]{
-		OutputState: i.ToGetChannelsChannelTargetArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetChannelsChannelTargetOutput struct{ *pulumi.OutputState }
 
 func (GetChannelsChannelTargetOutput) ElementType() reflect.Type {
@@ -9055,30 +8108,24 @@ func (o GetChannelsChannelTargetOutput) ToGetChannelsChannelTargetOutputWithCont
 	return o
 }
 
-func (o GetChannelsChannelTargetOutput) ToOutput(ctx context.Context) pulumix.Output[GetChannelsChannelTarget] {
-	return pulumix.Output[GetChannelsChannelTarget]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The username for the replication applier of the target MySQL DB System.
-func (o GetChannelsChannelTargetOutput) ApplierUsername() pulumi.StringOutput {
-	return o.ApplyT(func(v GetChannelsChannelTarget) string { return v.ApplierUsername }).(pulumi.StringOutput)
+func (o GetChannelsChannelTargetOutput) ApplierUsername() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetChannelsChannelTarget) *string { return v.ApplierUsername }).(pulumi.StringPtrOutput)
 }
 
 // The case-insensitive name that identifies the replication channel. Channel names must follow the rules defined for [MySQL identifiers](https://dev.mysql.com/doc/refman/8.0/en/identifiers.html). The names of non-Deleted Channels must be unique for each DB System.
-func (o GetChannelsChannelTargetOutput) ChannelName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetChannelsChannelTarget) string { return v.ChannelName }).(pulumi.StringOutput)
+func (o GetChannelsChannelTargetOutput) ChannelName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetChannelsChannelTarget) *string { return v.ChannelName }).(pulumi.StringPtrOutput)
 }
 
 // The DB System [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-func (o GetChannelsChannelTargetOutput) DbSystemId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetChannelsChannelTarget) string { return v.DbSystemId }).(pulumi.StringOutput)
+func (o GetChannelsChannelTargetOutput) DbSystemId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetChannelsChannelTarget) *string { return v.DbSystemId }).(pulumi.StringPtrOutput)
 }
 
 // Specifies the amount of time, in seconds, that the channel waits before  applying a transaction received from the source.
-func (o GetChannelsChannelTargetOutput) DelayInSeconds() pulumi.IntOutput {
-	return o.ApplyT(func(v GetChannelsChannelTarget) int { return v.DelayInSeconds }).(pulumi.IntOutput)
+func (o GetChannelsChannelTargetOutput) DelayInSeconds() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetChannelsChannelTarget) *int { return v.DelayInSeconds }).(pulumi.IntPtrOutput)
 }
 
 // Replication filter rules to be applied at the DB System Channel target.
@@ -9087,13 +8134,13 @@ func (o GetChannelsChannelTargetOutput) Filters() GetChannelsChannelTargetFilter
 }
 
 // Specifies how a replication channel handles the creation and alteration of tables  that do not have a primary key.
-func (o GetChannelsChannelTargetOutput) TablesWithoutPrimaryKeyHandling() pulumi.StringOutput {
-	return o.ApplyT(func(v GetChannelsChannelTarget) string { return v.TablesWithoutPrimaryKeyHandling }).(pulumi.StringOutput)
+func (o GetChannelsChannelTargetOutput) TablesWithoutPrimaryKeyHandling() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetChannelsChannelTarget) *string { return v.TablesWithoutPrimaryKeyHandling }).(pulumi.StringPtrOutput)
 }
 
 // The specific target identifier.
-func (o GetChannelsChannelTargetOutput) TargetType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetChannelsChannelTarget) string { return v.TargetType }).(pulumi.StringOutput)
+func (o GetChannelsChannelTargetOutput) TargetType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetChannelsChannelTarget) *string { return v.TargetType }).(pulumi.StringPtrOutput)
 }
 
 type GetChannelsChannelTargetArrayOutput struct{ *pulumi.OutputState }
@@ -9110,12 +8157,6 @@ func (o GetChannelsChannelTargetArrayOutput) ToGetChannelsChannelTargetArrayOutp
 	return o
 }
 
-func (o GetChannelsChannelTargetArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetChannelsChannelTarget] {
-	return pulumix.Output[[]GetChannelsChannelTarget]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetChannelsChannelTargetArrayOutput) Index(i pulumi.IntInput) GetChannelsChannelTargetOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetChannelsChannelTarget {
 		return vs[0].([]GetChannelsChannelTarget)[vs[1].(int)]
@@ -9124,9 +8165,9 @@ func (o GetChannelsChannelTargetArrayOutput) Index(i pulumi.IntInput) GetChannel
 
 type GetChannelsChannelTargetFilter struct {
 	// The type of the filter rule.
-	Type string `pulumi:"type"`
+	Type *string `pulumi:"type"`
 	// The body of the filter rule. This can represent a database, a table, or a database pair (represented as "db1->db2"). For more information, see [Replication Filtering Rules](https://dev.mysql.com/doc/refman/8.0/en/replication-rules.html).
-	Value string `pulumi:"value"`
+	Value *string `pulumi:"value"`
 }
 
 // GetChannelsChannelTargetFilterInput is an input type that accepts GetChannelsChannelTargetFilterArgs and GetChannelsChannelTargetFilterOutput values.
@@ -9142,9 +8183,9 @@ type GetChannelsChannelTargetFilterInput interface {
 
 type GetChannelsChannelTargetFilterArgs struct {
 	// The type of the filter rule.
-	Type pulumi.StringInput `pulumi:"type"`
+	Type pulumi.StringPtrInput `pulumi:"type"`
 	// The body of the filter rule. This can represent a database, a table, or a database pair (represented as "db1->db2"). For more information, see [Replication Filtering Rules](https://dev.mysql.com/doc/refman/8.0/en/replication-rules.html).
-	Value pulumi.StringInput `pulumi:"value"`
+	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
 func (GetChannelsChannelTargetFilterArgs) ElementType() reflect.Type {
@@ -9157,12 +8198,6 @@ func (i GetChannelsChannelTargetFilterArgs) ToGetChannelsChannelTargetFilterOutp
 
 func (i GetChannelsChannelTargetFilterArgs) ToGetChannelsChannelTargetFilterOutputWithContext(ctx context.Context) GetChannelsChannelTargetFilterOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetChannelsChannelTargetFilterOutput)
-}
-
-func (i GetChannelsChannelTargetFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetChannelsChannelTargetFilter] {
-	return pulumix.Output[GetChannelsChannelTargetFilter]{
-		OutputState: i.ToGetChannelsChannelTargetFilterOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetChannelsChannelTargetFilterArrayInput is an input type that accepts GetChannelsChannelTargetFilterArray and GetChannelsChannelTargetFilterArrayOutput values.
@@ -9190,12 +8225,6 @@ func (i GetChannelsChannelTargetFilterArray) ToGetChannelsChannelTargetFilterArr
 	return pulumi.ToOutputWithContext(ctx, i).(GetChannelsChannelTargetFilterArrayOutput)
 }
 
-func (i GetChannelsChannelTargetFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetChannelsChannelTargetFilter] {
-	return pulumix.Output[[]GetChannelsChannelTargetFilter]{
-		OutputState: i.ToGetChannelsChannelTargetFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetChannelsChannelTargetFilterOutput struct{ *pulumi.OutputState }
 
 func (GetChannelsChannelTargetFilterOutput) ElementType() reflect.Type {
@@ -9210,20 +8239,14 @@ func (o GetChannelsChannelTargetFilterOutput) ToGetChannelsChannelTargetFilterOu
 	return o
 }
 
-func (o GetChannelsChannelTargetFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetChannelsChannelTargetFilter] {
-	return pulumix.Output[GetChannelsChannelTargetFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The type of the filter rule.
-func (o GetChannelsChannelTargetFilterOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v GetChannelsChannelTargetFilter) string { return v.Type }).(pulumi.StringOutput)
+func (o GetChannelsChannelTargetFilterOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetChannelsChannelTargetFilter) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
 
 // The body of the filter rule. This can represent a database, a table, or a database pair (represented as "db1->db2"). For more information, see [Replication Filtering Rules](https://dev.mysql.com/doc/refman/8.0/en/replication-rules.html).
-func (o GetChannelsChannelTargetFilterOutput) Value() pulumi.StringOutput {
-	return o.ApplyT(func(v GetChannelsChannelTargetFilter) string { return v.Value }).(pulumi.StringOutput)
+func (o GetChannelsChannelTargetFilterOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetChannelsChannelTargetFilter) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
 
 type GetChannelsChannelTargetFilterArrayOutput struct{ *pulumi.OutputState }
@@ -9238,12 +8261,6 @@ func (o GetChannelsChannelTargetFilterArrayOutput) ToGetChannelsChannelTargetFil
 
 func (o GetChannelsChannelTargetFilterArrayOutput) ToGetChannelsChannelTargetFilterArrayOutputWithContext(ctx context.Context) GetChannelsChannelTargetFilterArrayOutput {
 	return o
-}
-
-func (o GetChannelsChannelTargetFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetChannelsChannelTargetFilter] {
-	return pulumix.Output[[]GetChannelsChannelTargetFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetChannelsChannelTargetFilterArrayOutput) Index(i pulumi.IntInput) GetChannelsChannelTargetFilterOutput {
@@ -9287,12 +8304,6 @@ func (i GetChannelsFilterArgs) ToGetChannelsFilterOutputWithContext(ctx context.
 	return pulumi.ToOutputWithContext(ctx, i).(GetChannelsFilterOutput)
 }
 
-func (i GetChannelsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetChannelsFilter] {
-	return pulumix.Output[GetChannelsFilter]{
-		OutputState: i.ToGetChannelsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetChannelsFilterArrayInput is an input type that accepts GetChannelsFilterArray and GetChannelsFilterArrayOutput values.
 // You can construct a concrete instance of `GetChannelsFilterArrayInput` via:
 //
@@ -9318,12 +8329,6 @@ func (i GetChannelsFilterArray) ToGetChannelsFilterArrayOutputWithContext(ctx co
 	return pulumi.ToOutputWithContext(ctx, i).(GetChannelsFilterArrayOutput)
 }
 
-func (i GetChannelsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetChannelsFilter] {
-	return pulumix.Output[[]GetChannelsFilter]{
-		OutputState: i.ToGetChannelsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetChannelsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetChannelsFilterOutput) ElementType() reflect.Type {
@@ -9336,12 +8341,6 @@ func (o GetChannelsFilterOutput) ToGetChannelsFilterOutput() GetChannelsFilterOu
 
 func (o GetChannelsFilterOutput) ToGetChannelsFilterOutputWithContext(ctx context.Context) GetChannelsFilterOutput {
 	return o
-}
-
-func (o GetChannelsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetChannelsFilter] {
-	return pulumix.Output[GetChannelsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetChannelsFilterOutput) Name() pulumi.StringOutput {
@@ -9370,12 +8369,6 @@ func (o GetChannelsFilterArrayOutput) ToGetChannelsFilterArrayOutputWithContext(
 	return o
 }
 
-func (o GetChannelsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetChannelsFilter] {
-	return pulumix.Output[[]GetChannelsFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetChannelsFilterArrayOutput) Index(i pulumi.IntInput) GetChannelsFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetChannelsFilter {
 		return vs[0].([]GetChannelsFilter)[vs[1].(int)]
@@ -9384,13 +8377,13 @@ func (o GetChannelsFilterArrayOutput) Index(i pulumi.IntInput) GetChannelsFilter
 
 type GetHeatWaveClusterClusterNode struct {
 	// The ID of the node within MySQL HeatWave cluster.
-	NodeId string `pulumi:"nodeId"`
+	NodeId *string `pulumi:"nodeId"`
 	// The current state of the HeatWave cluster.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The date and time the HeatWave cluster was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time the HeatWave cluster was last updated, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 // GetHeatWaveClusterClusterNodeInput is an input type that accepts GetHeatWaveClusterClusterNodeArgs and GetHeatWaveClusterClusterNodeOutput values.
@@ -9406,13 +8399,13 @@ type GetHeatWaveClusterClusterNodeInput interface {
 
 type GetHeatWaveClusterClusterNodeArgs struct {
 	// The ID of the node within MySQL HeatWave cluster.
-	NodeId pulumi.StringInput `pulumi:"nodeId"`
+	NodeId pulumi.StringPtrInput `pulumi:"nodeId"`
 	// The current state of the HeatWave cluster.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// The date and time the HeatWave cluster was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// The time the HeatWave cluster was last updated, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
 }
 
 func (GetHeatWaveClusterClusterNodeArgs) ElementType() reflect.Type {
@@ -9425,12 +8418,6 @@ func (i GetHeatWaveClusterClusterNodeArgs) ToGetHeatWaveClusterClusterNodeOutput
 
 func (i GetHeatWaveClusterClusterNodeArgs) ToGetHeatWaveClusterClusterNodeOutputWithContext(ctx context.Context) GetHeatWaveClusterClusterNodeOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetHeatWaveClusterClusterNodeOutput)
-}
-
-func (i GetHeatWaveClusterClusterNodeArgs) ToOutput(ctx context.Context) pulumix.Output[GetHeatWaveClusterClusterNode] {
-	return pulumix.Output[GetHeatWaveClusterClusterNode]{
-		OutputState: i.ToGetHeatWaveClusterClusterNodeOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetHeatWaveClusterClusterNodeArrayInput is an input type that accepts GetHeatWaveClusterClusterNodeArray and GetHeatWaveClusterClusterNodeArrayOutput values.
@@ -9458,12 +8445,6 @@ func (i GetHeatWaveClusterClusterNodeArray) ToGetHeatWaveClusterClusterNodeArray
 	return pulumi.ToOutputWithContext(ctx, i).(GetHeatWaveClusterClusterNodeArrayOutput)
 }
 
-func (i GetHeatWaveClusterClusterNodeArray) ToOutput(ctx context.Context) pulumix.Output[[]GetHeatWaveClusterClusterNode] {
-	return pulumix.Output[[]GetHeatWaveClusterClusterNode]{
-		OutputState: i.ToGetHeatWaveClusterClusterNodeArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetHeatWaveClusterClusterNodeOutput struct{ *pulumi.OutputState }
 
 func (GetHeatWaveClusterClusterNodeOutput) ElementType() reflect.Type {
@@ -9478,30 +8459,24 @@ func (o GetHeatWaveClusterClusterNodeOutput) ToGetHeatWaveClusterClusterNodeOutp
 	return o
 }
 
-func (o GetHeatWaveClusterClusterNodeOutput) ToOutput(ctx context.Context) pulumix.Output[GetHeatWaveClusterClusterNode] {
-	return pulumix.Output[GetHeatWaveClusterClusterNode]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The ID of the node within MySQL HeatWave cluster.
-func (o GetHeatWaveClusterClusterNodeOutput) NodeId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetHeatWaveClusterClusterNode) string { return v.NodeId }).(pulumi.StringOutput)
+func (o GetHeatWaveClusterClusterNodeOutput) NodeId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetHeatWaveClusterClusterNode) *string { return v.NodeId }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the HeatWave cluster.
-func (o GetHeatWaveClusterClusterNodeOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetHeatWaveClusterClusterNode) string { return v.State }).(pulumi.StringOutput)
+func (o GetHeatWaveClusterClusterNodeOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetHeatWaveClusterClusterNode) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the HeatWave cluster was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-func (o GetHeatWaveClusterClusterNodeOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetHeatWaveClusterClusterNode) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetHeatWaveClusterClusterNodeOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetHeatWaveClusterClusterNode) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time the HeatWave cluster was last updated, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-func (o GetHeatWaveClusterClusterNodeOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetHeatWaveClusterClusterNode) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o GetHeatWaveClusterClusterNodeOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetHeatWaveClusterClusterNode) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type GetHeatWaveClusterClusterNodeArrayOutput struct{ *pulumi.OutputState }
@@ -9518,12 +8493,6 @@ func (o GetHeatWaveClusterClusterNodeArrayOutput) ToGetHeatWaveClusterClusterNod
 	return o
 }
 
-func (o GetHeatWaveClusterClusterNodeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetHeatWaveClusterClusterNode] {
-	return pulumix.Output[[]GetHeatWaveClusterClusterNode]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetHeatWaveClusterClusterNodeArrayOutput) Index(i pulumi.IntInput) GetHeatWaveClusterClusterNodeOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetHeatWaveClusterClusterNode {
 		return vs[0].([]GetHeatWaveClusterClusterNode)[vs[1].(int)]
@@ -9532,55 +8501,55 @@ func (o GetHeatWaveClusterClusterNodeArrayOutput) Index(i pulumi.IntInput) GetHe
 
 type GetMysqlBackupDbSystemSnapshot struct {
 	// The username for the administrative user.
-	AdminUsername string `pulumi:"adminUsername"`
+	AdminUsername *string `pulumi:"adminUsername"`
 	// The Availability Domain where the primary DB System should be located.
-	AvailabilityDomain string `pulumi:"availabilityDomain"`
+	AvailabilityDomain *string `pulumi:"availabilityDomain"`
 	// The Backup policy for the DB System.
 	BackupPolicies []GetMysqlBackupDbSystemSnapshotBackupPolicy `pulumi:"backupPolicies"`
 	// The OCID of the compartment the DB System belongs in.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// The OCID of the Configuration to be used for Instances in this DB System.
-	ConfigurationId string `pulumi:"configurationId"`
+	ConfigurationId *string `pulumi:"configurationId"`
 	// Whether to run the DB System with InnoDB Redo Logs and the Double Write Buffer enabled or disabled, and whether to enable or disable syncing of the Binary Logs.
-	CrashRecovery string `pulumi:"crashRecovery"`
+	CrashRecovery *string `pulumi:"crashRecovery"`
 	// Initial size of the data volume in GiBs that will be created and attached.
-	DataStorageSizeInGb int `pulumi:"dataStorageSizeInGb"`
+	DataStorageSizeInGb *int `pulumi:"dataStorageSizeInGb"`
 	// Whether to enable monitoring via the Database Management service.
-	DatabaseManagement string `pulumi:"databaseManagement"`
+	DatabaseManagement *string `pulumi:"databaseManagement"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The Deletion policy for the DB System.
 	DeletionPolicies []GetMysqlBackupDbSystemSnapshotDeletionPolicy `pulumi:"deletionPolicies"`
 	// A user-supplied description for the backup.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// A user-supplied display name for the backup.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// The network endpoints available for this DB System.
 	Endpoints []GetMysqlBackupDbSystemSnapshotEndpoint `pulumi:"endpoints"`
 	// The name of the Fault Domain the DB System is located in.
-	FaultDomain string `pulumi:"faultDomain"`
+	FaultDomain *string `pulumi:"faultDomain"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The hostname for the primary endpoint of the DB System. Used for DNS. The value is the hostname portion of the primary private IP's fully qualified domain name (FQDN) (for example, "dbsystem-1" in FQDN "dbsystem-1.subnet123.vcn1.oraclevcn.com"). Must be unique across all VNICs in the subnet and comply with RFC 952 and RFC 1123.
-	HostnameLabel string `pulumi:"hostnameLabel"`
+	HostnameLabel *string `pulumi:"hostnameLabel"`
 	// OCID of the backup itself
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The IP address the DB System is configured to listen on. A private IP address of the primary endpoint of the DB System. Must be an available IP address within the subnet's CIDR. This will be a "dotted-quad" style IPv4 address.
-	IpAddress string `pulumi:"ipAddress"`
+	IpAddress *string `pulumi:"ipAddress"`
 	// Specifies if the DB System is highly available.
-	IsHighlyAvailable bool `pulumi:"isHighlyAvailable"`
+	IsHighlyAvailable *bool `pulumi:"isHighlyAvailable"`
 	// The Maintenance Policy for the DB System or Read Replica that this model is included in.
 	Maintenances []GetMysqlBackupDbSystemSnapshotMaintenance `pulumi:"maintenances"`
 	// The MySQL server version of the DB System used for backup.
-	MysqlVersion string `pulumi:"mysqlVersion"`
+	MysqlVersion *string `pulumi:"mysqlVersion"`
 	// The port for primary endpoint of the DB System to listen on.
-	Port int `pulumi:"port"`
+	Port *int `pulumi:"port"`
 	// The network port on which X Plugin listens for TCP/IP connections. This is the X Plugin equivalent of port.
-	PortX int `pulumi:"portX"`
+	PortX *int `pulumi:"portX"`
 	// The shape of the DB System instance used for backup.
-	ShapeName string `pulumi:"shapeName"`
+	ShapeName *string `pulumi:"shapeName"`
 	// The OCID of the subnet the DB System is associated with.
-	SubnetId string `pulumi:"subnetId"`
+	SubnetId *string `pulumi:"subnetId"`
 }
 
 // GetMysqlBackupDbSystemSnapshotInput is an input type that accepts GetMysqlBackupDbSystemSnapshotArgs and GetMysqlBackupDbSystemSnapshotOutput values.
@@ -9596,55 +8565,55 @@ type GetMysqlBackupDbSystemSnapshotInput interface {
 
 type GetMysqlBackupDbSystemSnapshotArgs struct {
 	// The username for the administrative user.
-	AdminUsername pulumi.StringInput `pulumi:"adminUsername"`
+	AdminUsername pulumi.StringPtrInput `pulumi:"adminUsername"`
 	// The Availability Domain where the primary DB System should be located.
-	AvailabilityDomain pulumi.StringInput `pulumi:"availabilityDomain"`
+	AvailabilityDomain pulumi.StringPtrInput `pulumi:"availabilityDomain"`
 	// The Backup policy for the DB System.
 	BackupPolicies GetMysqlBackupDbSystemSnapshotBackupPolicyArrayInput `pulumi:"backupPolicies"`
 	// The OCID of the compartment the DB System belongs in.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// The OCID of the Configuration to be used for Instances in this DB System.
-	ConfigurationId pulumi.StringInput `pulumi:"configurationId"`
+	ConfigurationId pulumi.StringPtrInput `pulumi:"configurationId"`
 	// Whether to run the DB System with InnoDB Redo Logs and the Double Write Buffer enabled or disabled, and whether to enable or disable syncing of the Binary Logs.
-	CrashRecovery pulumi.StringInput `pulumi:"crashRecovery"`
+	CrashRecovery pulumi.StringPtrInput `pulumi:"crashRecovery"`
 	// Initial size of the data volume in GiBs that will be created and attached.
-	DataStorageSizeInGb pulumi.IntInput `pulumi:"dataStorageSizeInGb"`
+	DataStorageSizeInGb pulumi.IntPtrInput `pulumi:"dataStorageSizeInGb"`
 	// Whether to enable monitoring via the Database Management service.
-	DatabaseManagement pulumi.StringInput `pulumi:"databaseManagement"`
+	DatabaseManagement pulumi.StringPtrInput `pulumi:"databaseManagement"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// The Deletion policy for the DB System.
 	DeletionPolicies GetMysqlBackupDbSystemSnapshotDeletionPolicyArrayInput `pulumi:"deletionPolicies"`
 	// A user-supplied description for the backup.
-	Description pulumi.StringInput `pulumi:"description"`
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// A user-supplied display name for the backup.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// The network endpoints available for this DB System.
 	Endpoints GetMysqlBackupDbSystemSnapshotEndpointArrayInput `pulumi:"endpoints"`
 	// The name of the Fault Domain the DB System is located in.
-	FaultDomain pulumi.StringInput `pulumi:"faultDomain"`
+	FaultDomain pulumi.StringPtrInput `pulumi:"faultDomain"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// The hostname for the primary endpoint of the DB System. Used for DNS. The value is the hostname portion of the primary private IP's fully qualified domain name (FQDN) (for example, "dbsystem-1" in FQDN "dbsystem-1.subnet123.vcn1.oraclevcn.com"). Must be unique across all VNICs in the subnet and comply with RFC 952 and RFC 1123.
-	HostnameLabel pulumi.StringInput `pulumi:"hostnameLabel"`
+	HostnameLabel pulumi.StringPtrInput `pulumi:"hostnameLabel"`
 	// OCID of the backup itself
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// The IP address the DB System is configured to listen on. A private IP address of the primary endpoint of the DB System. Must be an available IP address within the subnet's CIDR. This will be a "dotted-quad" style IPv4 address.
-	IpAddress pulumi.StringInput `pulumi:"ipAddress"`
+	IpAddress pulumi.StringPtrInput `pulumi:"ipAddress"`
 	// Specifies if the DB System is highly available.
-	IsHighlyAvailable pulumi.BoolInput `pulumi:"isHighlyAvailable"`
+	IsHighlyAvailable pulumi.BoolPtrInput `pulumi:"isHighlyAvailable"`
 	// The Maintenance Policy for the DB System or Read Replica that this model is included in.
 	Maintenances GetMysqlBackupDbSystemSnapshotMaintenanceArrayInput `pulumi:"maintenances"`
 	// The MySQL server version of the DB System used for backup.
-	MysqlVersion pulumi.StringInput `pulumi:"mysqlVersion"`
+	MysqlVersion pulumi.StringPtrInput `pulumi:"mysqlVersion"`
 	// The port for primary endpoint of the DB System to listen on.
-	Port pulumi.IntInput `pulumi:"port"`
+	Port pulumi.IntPtrInput `pulumi:"port"`
 	// The network port on which X Plugin listens for TCP/IP connections. This is the X Plugin equivalent of port.
-	PortX pulumi.IntInput `pulumi:"portX"`
+	PortX pulumi.IntPtrInput `pulumi:"portX"`
 	// The shape of the DB System instance used for backup.
-	ShapeName pulumi.StringInput `pulumi:"shapeName"`
+	ShapeName pulumi.StringPtrInput `pulumi:"shapeName"`
 	// The OCID of the subnet the DB System is associated with.
-	SubnetId pulumi.StringInput `pulumi:"subnetId"`
+	SubnetId pulumi.StringPtrInput `pulumi:"subnetId"`
 }
 
 func (GetMysqlBackupDbSystemSnapshotArgs) ElementType() reflect.Type {
@@ -9657,12 +8626,6 @@ func (i GetMysqlBackupDbSystemSnapshotArgs) ToGetMysqlBackupDbSystemSnapshotOutp
 
 func (i GetMysqlBackupDbSystemSnapshotArgs) ToGetMysqlBackupDbSystemSnapshotOutputWithContext(ctx context.Context) GetMysqlBackupDbSystemSnapshotOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlBackupDbSystemSnapshotOutput)
-}
-
-func (i GetMysqlBackupDbSystemSnapshotArgs) ToOutput(ctx context.Context) pulumix.Output[GetMysqlBackupDbSystemSnapshot] {
-	return pulumix.Output[GetMysqlBackupDbSystemSnapshot]{
-		OutputState: i.ToGetMysqlBackupDbSystemSnapshotOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetMysqlBackupDbSystemSnapshotArrayInput is an input type that accepts GetMysqlBackupDbSystemSnapshotArray and GetMysqlBackupDbSystemSnapshotArrayOutput values.
@@ -9690,12 +8653,6 @@ func (i GetMysqlBackupDbSystemSnapshotArray) ToGetMysqlBackupDbSystemSnapshotArr
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlBackupDbSystemSnapshotArrayOutput)
 }
 
-func (i GetMysqlBackupDbSystemSnapshotArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlBackupDbSystemSnapshot] {
-	return pulumix.Output[[]GetMysqlBackupDbSystemSnapshot]{
-		OutputState: i.ToGetMysqlBackupDbSystemSnapshotArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMysqlBackupDbSystemSnapshotOutput struct{ *pulumi.OutputState }
 
 func (GetMysqlBackupDbSystemSnapshotOutput) ElementType() reflect.Type {
@@ -9710,20 +8667,14 @@ func (o GetMysqlBackupDbSystemSnapshotOutput) ToGetMysqlBackupDbSystemSnapshotOu
 	return o
 }
 
-func (o GetMysqlBackupDbSystemSnapshotOutput) ToOutput(ctx context.Context) pulumix.Output[GetMysqlBackupDbSystemSnapshot] {
-	return pulumix.Output[GetMysqlBackupDbSystemSnapshot]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The username for the administrative user.
-func (o GetMysqlBackupDbSystemSnapshotOutput) AdminUsername() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlBackupDbSystemSnapshot) string { return v.AdminUsername }).(pulumi.StringOutput)
+func (o GetMysqlBackupDbSystemSnapshotOutput) AdminUsername() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlBackupDbSystemSnapshot) *string { return v.AdminUsername }).(pulumi.StringPtrOutput)
 }
 
 // The Availability Domain where the primary DB System should be located.
-func (o GetMysqlBackupDbSystemSnapshotOutput) AvailabilityDomain() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlBackupDbSystemSnapshot) string { return v.AvailabilityDomain }).(pulumi.StringOutput)
+func (o GetMysqlBackupDbSystemSnapshotOutput) AvailabilityDomain() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlBackupDbSystemSnapshot) *string { return v.AvailabilityDomain }).(pulumi.StringPtrOutput)
 }
 
 // The Backup policy for the DB System.
@@ -9734,28 +8685,28 @@ func (o GetMysqlBackupDbSystemSnapshotOutput) BackupPolicies() GetMysqlBackupDbS
 }
 
 // The OCID of the compartment the DB System belongs in.
-func (o GetMysqlBackupDbSystemSnapshotOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlBackupDbSystemSnapshot) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetMysqlBackupDbSystemSnapshotOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlBackupDbSystemSnapshot) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the Configuration to be used for Instances in this DB System.
-func (o GetMysqlBackupDbSystemSnapshotOutput) ConfigurationId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlBackupDbSystemSnapshot) string { return v.ConfigurationId }).(pulumi.StringOutput)
+func (o GetMysqlBackupDbSystemSnapshotOutput) ConfigurationId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlBackupDbSystemSnapshot) *string { return v.ConfigurationId }).(pulumi.StringPtrOutput)
 }
 
 // Whether to run the DB System with InnoDB Redo Logs and the Double Write Buffer enabled or disabled, and whether to enable or disable syncing of the Binary Logs.
-func (o GetMysqlBackupDbSystemSnapshotOutput) CrashRecovery() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlBackupDbSystemSnapshot) string { return v.CrashRecovery }).(pulumi.StringOutput)
+func (o GetMysqlBackupDbSystemSnapshotOutput) CrashRecovery() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlBackupDbSystemSnapshot) *string { return v.CrashRecovery }).(pulumi.StringPtrOutput)
 }
 
 // Initial size of the data volume in GiBs that will be created and attached.
-func (o GetMysqlBackupDbSystemSnapshotOutput) DataStorageSizeInGb() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMysqlBackupDbSystemSnapshot) int { return v.DataStorageSizeInGb }).(pulumi.IntOutput)
+func (o GetMysqlBackupDbSystemSnapshotOutput) DataStorageSizeInGb() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetMysqlBackupDbSystemSnapshot) *int { return v.DataStorageSizeInGb }).(pulumi.IntPtrOutput)
 }
 
 // Whether to enable monitoring via the Database Management service.
-func (o GetMysqlBackupDbSystemSnapshotOutput) DatabaseManagement() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlBackupDbSystemSnapshot) string { return v.DatabaseManagement }).(pulumi.StringOutput)
+func (o GetMysqlBackupDbSystemSnapshotOutput) DatabaseManagement() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlBackupDbSystemSnapshot) *string { return v.DatabaseManagement }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -9771,13 +8722,13 @@ func (o GetMysqlBackupDbSystemSnapshotOutput) DeletionPolicies() GetMysqlBackupD
 }
 
 // A user-supplied description for the backup.
-func (o GetMysqlBackupDbSystemSnapshotOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlBackupDbSystemSnapshot) string { return v.Description }).(pulumi.StringOutput)
+func (o GetMysqlBackupDbSystemSnapshotOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlBackupDbSystemSnapshot) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // A user-supplied display name for the backup.
-func (o GetMysqlBackupDbSystemSnapshotOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlBackupDbSystemSnapshot) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetMysqlBackupDbSystemSnapshotOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlBackupDbSystemSnapshot) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // The network endpoints available for this DB System.
@@ -9786,8 +8737,8 @@ func (o GetMysqlBackupDbSystemSnapshotOutput) Endpoints() GetMysqlBackupDbSystem
 }
 
 // The name of the Fault Domain the DB System is located in.
-func (o GetMysqlBackupDbSystemSnapshotOutput) FaultDomain() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlBackupDbSystemSnapshot) string { return v.FaultDomain }).(pulumi.StringOutput)
+func (o GetMysqlBackupDbSystemSnapshotOutput) FaultDomain() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlBackupDbSystemSnapshot) *string { return v.FaultDomain }).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -9796,23 +8747,23 @@ func (o GetMysqlBackupDbSystemSnapshotOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The hostname for the primary endpoint of the DB System. Used for DNS. The value is the hostname portion of the primary private IP's fully qualified domain name (FQDN) (for example, "dbsystem-1" in FQDN "dbsystem-1.subnet123.vcn1.oraclevcn.com"). Must be unique across all VNICs in the subnet and comply with RFC 952 and RFC 1123.
-func (o GetMysqlBackupDbSystemSnapshotOutput) HostnameLabel() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlBackupDbSystemSnapshot) string { return v.HostnameLabel }).(pulumi.StringOutput)
+func (o GetMysqlBackupDbSystemSnapshotOutput) HostnameLabel() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlBackupDbSystemSnapshot) *string { return v.HostnameLabel }).(pulumi.StringPtrOutput)
 }
 
 // OCID of the backup itself
-func (o GetMysqlBackupDbSystemSnapshotOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlBackupDbSystemSnapshot) string { return v.Id }).(pulumi.StringOutput)
+func (o GetMysqlBackupDbSystemSnapshotOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlBackupDbSystemSnapshot) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The IP address the DB System is configured to listen on. A private IP address of the primary endpoint of the DB System. Must be an available IP address within the subnet's CIDR. This will be a "dotted-quad" style IPv4 address.
-func (o GetMysqlBackupDbSystemSnapshotOutput) IpAddress() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlBackupDbSystemSnapshot) string { return v.IpAddress }).(pulumi.StringOutput)
+func (o GetMysqlBackupDbSystemSnapshotOutput) IpAddress() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlBackupDbSystemSnapshot) *string { return v.IpAddress }).(pulumi.StringPtrOutput)
 }
 
 // Specifies if the DB System is highly available.
-func (o GetMysqlBackupDbSystemSnapshotOutput) IsHighlyAvailable() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetMysqlBackupDbSystemSnapshot) bool { return v.IsHighlyAvailable }).(pulumi.BoolOutput)
+func (o GetMysqlBackupDbSystemSnapshotOutput) IsHighlyAvailable() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetMysqlBackupDbSystemSnapshot) *bool { return v.IsHighlyAvailable }).(pulumi.BoolPtrOutput)
 }
 
 // The Maintenance Policy for the DB System or Read Replica that this model is included in.
@@ -9823,28 +8774,28 @@ func (o GetMysqlBackupDbSystemSnapshotOutput) Maintenances() GetMysqlBackupDbSys
 }
 
 // The MySQL server version of the DB System used for backup.
-func (o GetMysqlBackupDbSystemSnapshotOutput) MysqlVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlBackupDbSystemSnapshot) string { return v.MysqlVersion }).(pulumi.StringOutput)
+func (o GetMysqlBackupDbSystemSnapshotOutput) MysqlVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlBackupDbSystemSnapshot) *string { return v.MysqlVersion }).(pulumi.StringPtrOutput)
 }
 
 // The port for primary endpoint of the DB System to listen on.
-func (o GetMysqlBackupDbSystemSnapshotOutput) Port() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMysqlBackupDbSystemSnapshot) int { return v.Port }).(pulumi.IntOutput)
+func (o GetMysqlBackupDbSystemSnapshotOutput) Port() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetMysqlBackupDbSystemSnapshot) *int { return v.Port }).(pulumi.IntPtrOutput)
 }
 
 // The network port on which X Plugin listens for TCP/IP connections. This is the X Plugin equivalent of port.
-func (o GetMysqlBackupDbSystemSnapshotOutput) PortX() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMysqlBackupDbSystemSnapshot) int { return v.PortX }).(pulumi.IntOutput)
+func (o GetMysqlBackupDbSystemSnapshotOutput) PortX() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetMysqlBackupDbSystemSnapshot) *int { return v.PortX }).(pulumi.IntPtrOutput)
 }
 
 // The shape of the DB System instance used for backup.
-func (o GetMysqlBackupDbSystemSnapshotOutput) ShapeName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlBackupDbSystemSnapshot) string { return v.ShapeName }).(pulumi.StringOutput)
+func (o GetMysqlBackupDbSystemSnapshotOutput) ShapeName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlBackupDbSystemSnapshot) *string { return v.ShapeName }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the subnet the DB System is associated with.
-func (o GetMysqlBackupDbSystemSnapshotOutput) SubnetId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlBackupDbSystemSnapshot) string { return v.SubnetId }).(pulumi.StringOutput)
+func (o GetMysqlBackupDbSystemSnapshotOutput) SubnetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlBackupDbSystemSnapshot) *string { return v.SubnetId }).(pulumi.StringPtrOutput)
 }
 
 type GetMysqlBackupDbSystemSnapshotArrayOutput struct{ *pulumi.OutputState }
@@ -9861,12 +8812,6 @@ func (o GetMysqlBackupDbSystemSnapshotArrayOutput) ToGetMysqlBackupDbSystemSnaps
 	return o
 }
 
-func (o GetMysqlBackupDbSystemSnapshotArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlBackupDbSystemSnapshot] {
-	return pulumix.Output[[]GetMysqlBackupDbSystemSnapshot]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetMysqlBackupDbSystemSnapshotArrayOutput) Index(i pulumi.IntInput) GetMysqlBackupDbSystemSnapshotOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlBackupDbSystemSnapshot {
 		return vs[0].([]GetMysqlBackupDbSystemSnapshot)[vs[1].(int)]
@@ -9879,13 +8824,13 @@ type GetMysqlBackupDbSystemSnapshotBackupPolicy struct {
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// Specifies if PITR is enabled or disabled.
-	IsEnabled bool `pulumi:"isEnabled"`
+	IsEnabled *bool `pulumi:"isEnabled"`
 	// The PITR policy for the DB System.
 	PitrPolicies []GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicy `pulumi:"pitrPolicies"`
 	// Number of days to retain this backup.
-	RetentionInDays int `pulumi:"retentionInDays"`
+	RetentionInDays *int `pulumi:"retentionInDays"`
 	// The start time of the maintenance window.
-	WindowStartTime string `pulumi:"windowStartTime"`
+	WindowStartTime *string `pulumi:"windowStartTime"`
 }
 
 // GetMysqlBackupDbSystemSnapshotBackupPolicyInput is an input type that accepts GetMysqlBackupDbSystemSnapshotBackupPolicyArgs and GetMysqlBackupDbSystemSnapshotBackupPolicyOutput values.
@@ -9905,13 +8850,13 @@ type GetMysqlBackupDbSystemSnapshotBackupPolicyArgs struct {
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// Specifies if PITR is enabled or disabled.
-	IsEnabled pulumi.BoolInput `pulumi:"isEnabled"`
+	IsEnabled pulumi.BoolPtrInput `pulumi:"isEnabled"`
 	// The PITR policy for the DB System.
 	PitrPolicies GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayInput `pulumi:"pitrPolicies"`
 	// Number of days to retain this backup.
-	RetentionInDays pulumi.IntInput `pulumi:"retentionInDays"`
+	RetentionInDays pulumi.IntPtrInput `pulumi:"retentionInDays"`
 	// The start time of the maintenance window.
-	WindowStartTime pulumi.StringInput `pulumi:"windowStartTime"`
+	WindowStartTime pulumi.StringPtrInput `pulumi:"windowStartTime"`
 }
 
 func (GetMysqlBackupDbSystemSnapshotBackupPolicyArgs) ElementType() reflect.Type {
@@ -9924,12 +8869,6 @@ func (i GetMysqlBackupDbSystemSnapshotBackupPolicyArgs) ToGetMysqlBackupDbSystem
 
 func (i GetMysqlBackupDbSystemSnapshotBackupPolicyArgs) ToGetMysqlBackupDbSystemSnapshotBackupPolicyOutputWithContext(ctx context.Context) GetMysqlBackupDbSystemSnapshotBackupPolicyOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlBackupDbSystemSnapshotBackupPolicyOutput)
-}
-
-func (i GetMysqlBackupDbSystemSnapshotBackupPolicyArgs) ToOutput(ctx context.Context) pulumix.Output[GetMysqlBackupDbSystemSnapshotBackupPolicy] {
-	return pulumix.Output[GetMysqlBackupDbSystemSnapshotBackupPolicy]{
-		OutputState: i.ToGetMysqlBackupDbSystemSnapshotBackupPolicyOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetMysqlBackupDbSystemSnapshotBackupPolicyArrayInput is an input type that accepts GetMysqlBackupDbSystemSnapshotBackupPolicyArray and GetMysqlBackupDbSystemSnapshotBackupPolicyArrayOutput values.
@@ -9957,12 +8896,6 @@ func (i GetMysqlBackupDbSystemSnapshotBackupPolicyArray) ToGetMysqlBackupDbSyste
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlBackupDbSystemSnapshotBackupPolicyArrayOutput)
 }
 
-func (i GetMysqlBackupDbSystemSnapshotBackupPolicyArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlBackupDbSystemSnapshotBackupPolicy] {
-	return pulumix.Output[[]GetMysqlBackupDbSystemSnapshotBackupPolicy]{
-		OutputState: i.ToGetMysqlBackupDbSystemSnapshotBackupPolicyArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMysqlBackupDbSystemSnapshotBackupPolicyOutput struct{ *pulumi.OutputState }
 
 func (GetMysqlBackupDbSystemSnapshotBackupPolicyOutput) ElementType() reflect.Type {
@@ -9977,12 +8910,6 @@ func (o GetMysqlBackupDbSystemSnapshotBackupPolicyOutput) ToGetMysqlBackupDbSyst
 	return o
 }
 
-func (o GetMysqlBackupDbSystemSnapshotBackupPolicyOutput) ToOutput(ctx context.Context) pulumix.Output[GetMysqlBackupDbSystemSnapshotBackupPolicy] {
-	return pulumix.Output[GetMysqlBackupDbSystemSnapshotBackupPolicy]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 func (o GetMysqlBackupDbSystemSnapshotBackupPolicyOutput) DefinedTags() pulumi.MapOutput {
 	return o.ApplyT(func(v GetMysqlBackupDbSystemSnapshotBackupPolicy) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
@@ -9994,8 +8921,8 @@ func (o GetMysqlBackupDbSystemSnapshotBackupPolicyOutput) FreeformTags() pulumi.
 }
 
 // Specifies if PITR is enabled or disabled.
-func (o GetMysqlBackupDbSystemSnapshotBackupPolicyOutput) IsEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetMysqlBackupDbSystemSnapshotBackupPolicy) bool { return v.IsEnabled }).(pulumi.BoolOutput)
+func (o GetMysqlBackupDbSystemSnapshotBackupPolicyOutput) IsEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetMysqlBackupDbSystemSnapshotBackupPolicy) *bool { return v.IsEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // The PITR policy for the DB System.
@@ -10006,13 +8933,13 @@ func (o GetMysqlBackupDbSystemSnapshotBackupPolicyOutput) PitrPolicies() GetMysq
 }
 
 // Number of days to retain this backup.
-func (o GetMysqlBackupDbSystemSnapshotBackupPolicyOutput) RetentionInDays() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMysqlBackupDbSystemSnapshotBackupPolicy) int { return v.RetentionInDays }).(pulumi.IntOutput)
+func (o GetMysqlBackupDbSystemSnapshotBackupPolicyOutput) RetentionInDays() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetMysqlBackupDbSystemSnapshotBackupPolicy) *int { return v.RetentionInDays }).(pulumi.IntPtrOutput)
 }
 
 // The start time of the maintenance window.
-func (o GetMysqlBackupDbSystemSnapshotBackupPolicyOutput) WindowStartTime() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlBackupDbSystemSnapshotBackupPolicy) string { return v.WindowStartTime }).(pulumi.StringOutput)
+func (o GetMysqlBackupDbSystemSnapshotBackupPolicyOutput) WindowStartTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlBackupDbSystemSnapshotBackupPolicy) *string { return v.WindowStartTime }).(pulumi.StringPtrOutput)
 }
 
 type GetMysqlBackupDbSystemSnapshotBackupPolicyArrayOutput struct{ *pulumi.OutputState }
@@ -10029,12 +8956,6 @@ func (o GetMysqlBackupDbSystemSnapshotBackupPolicyArrayOutput) ToGetMysqlBackupD
 	return o
 }
 
-func (o GetMysqlBackupDbSystemSnapshotBackupPolicyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlBackupDbSystemSnapshotBackupPolicy] {
-	return pulumix.Output[[]GetMysqlBackupDbSystemSnapshotBackupPolicy]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetMysqlBackupDbSystemSnapshotBackupPolicyArrayOutput) Index(i pulumi.IntInput) GetMysqlBackupDbSystemSnapshotBackupPolicyOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlBackupDbSystemSnapshotBackupPolicy {
 		return vs[0].([]GetMysqlBackupDbSystemSnapshotBackupPolicy)[vs[1].(int)]
@@ -10043,7 +8964,7 @@ func (o GetMysqlBackupDbSystemSnapshotBackupPolicyArrayOutput) Index(i pulumi.In
 
 type GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicy struct {
 	// Specifies if PITR is enabled or disabled.
-	IsEnabled bool `pulumi:"isEnabled"`
+	IsEnabled *bool `pulumi:"isEnabled"`
 }
 
 // GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyInput is an input type that accepts GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArgs and GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyOutput values.
@@ -10059,7 +8980,7 @@ type GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyInput interface {
 
 type GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArgs struct {
 	// Specifies if PITR is enabled or disabled.
-	IsEnabled pulumi.BoolInput `pulumi:"isEnabled"`
+	IsEnabled pulumi.BoolPtrInput `pulumi:"isEnabled"`
 }
 
 func (GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArgs) ElementType() reflect.Type {
@@ -10072,12 +8993,6 @@ func (i GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArgs) ToGetMysqlBack
 
 func (i GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArgs) ToGetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyOutputWithContext(ctx context.Context) GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyOutput)
-}
-
-func (i GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArgs) ToOutput(ctx context.Context) pulumix.Output[GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicy] {
-	return pulumix.Output[GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicy]{
-		OutputState: i.ToGetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayInput is an input type that accepts GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArray and GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayOutput values.
@@ -10105,12 +9020,6 @@ func (i GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArray) ToGetMysqlBac
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayOutput)
 }
 
-func (i GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicy] {
-	return pulumix.Output[[]GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicy]{
-		OutputState: i.ToGetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyOutput struct{ *pulumi.OutputState }
 
 func (GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyOutput) ElementType() reflect.Type {
@@ -10125,15 +9034,9 @@ func (o GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyOutput) ToGetMysqlBa
 	return o
 }
 
-func (o GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyOutput) ToOutput(ctx context.Context) pulumix.Output[GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicy] {
-	return pulumix.Output[GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicy]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Specifies if PITR is enabled or disabled.
-func (o GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyOutput) IsEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicy) bool { return v.IsEnabled }).(pulumi.BoolOutput)
+func (o GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyOutput) IsEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicy) *bool { return v.IsEnabled }).(pulumi.BoolPtrOutput)
 }
 
 type GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayOutput struct{ *pulumi.OutputState }
@@ -10150,12 +9053,6 @@ func (o GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayOutput) ToGetMy
 	return o
 }
 
-func (o GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicy] {
-	return pulumix.Output[[]GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicy]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayOutput) Index(i pulumi.IntInput) GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicy {
 		return vs[0].([]GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicy)[vs[1].(int)]
@@ -10164,11 +9061,11 @@ func (o GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayOutput) Index(i
 
 type GetMysqlBackupDbSystemSnapshotDeletionPolicy struct {
 	// Specifies if any automatic backups created for a DB System should be retained or deleted when the DB System is deleted.
-	AutomaticBackupRetention string `pulumi:"automaticBackupRetention"`
+	AutomaticBackupRetention *string `pulumi:"automaticBackupRetention"`
 	// Specifies whether or not a backup is taken when the DB System is deleted. REQUIRE_FINAL_BACKUP: a backup is taken if the DB System is deleted. SKIP_FINAL_BACKUP: a backup is not taken if the DB System is deleted.
-	FinalBackup string `pulumi:"finalBackup"`
+	FinalBackup *string `pulumi:"finalBackup"`
 	// Specifies whether the DB System can be deleted. Set to true to prevent deletion, false (default) to allow.
-	IsDeleteProtected bool `pulumi:"isDeleteProtected"`
+	IsDeleteProtected *bool `pulumi:"isDeleteProtected"`
 }
 
 // GetMysqlBackupDbSystemSnapshotDeletionPolicyInput is an input type that accepts GetMysqlBackupDbSystemSnapshotDeletionPolicyArgs and GetMysqlBackupDbSystemSnapshotDeletionPolicyOutput values.
@@ -10184,11 +9081,11 @@ type GetMysqlBackupDbSystemSnapshotDeletionPolicyInput interface {
 
 type GetMysqlBackupDbSystemSnapshotDeletionPolicyArgs struct {
 	// Specifies if any automatic backups created for a DB System should be retained or deleted when the DB System is deleted.
-	AutomaticBackupRetention pulumi.StringInput `pulumi:"automaticBackupRetention"`
+	AutomaticBackupRetention pulumi.StringPtrInput `pulumi:"automaticBackupRetention"`
 	// Specifies whether or not a backup is taken when the DB System is deleted. REQUIRE_FINAL_BACKUP: a backup is taken if the DB System is deleted. SKIP_FINAL_BACKUP: a backup is not taken if the DB System is deleted.
-	FinalBackup pulumi.StringInput `pulumi:"finalBackup"`
+	FinalBackup pulumi.StringPtrInput `pulumi:"finalBackup"`
 	// Specifies whether the DB System can be deleted. Set to true to prevent deletion, false (default) to allow.
-	IsDeleteProtected pulumi.BoolInput `pulumi:"isDeleteProtected"`
+	IsDeleteProtected pulumi.BoolPtrInput `pulumi:"isDeleteProtected"`
 }
 
 func (GetMysqlBackupDbSystemSnapshotDeletionPolicyArgs) ElementType() reflect.Type {
@@ -10201,12 +9098,6 @@ func (i GetMysqlBackupDbSystemSnapshotDeletionPolicyArgs) ToGetMysqlBackupDbSyst
 
 func (i GetMysqlBackupDbSystemSnapshotDeletionPolicyArgs) ToGetMysqlBackupDbSystemSnapshotDeletionPolicyOutputWithContext(ctx context.Context) GetMysqlBackupDbSystemSnapshotDeletionPolicyOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlBackupDbSystemSnapshotDeletionPolicyOutput)
-}
-
-func (i GetMysqlBackupDbSystemSnapshotDeletionPolicyArgs) ToOutput(ctx context.Context) pulumix.Output[GetMysqlBackupDbSystemSnapshotDeletionPolicy] {
-	return pulumix.Output[GetMysqlBackupDbSystemSnapshotDeletionPolicy]{
-		OutputState: i.ToGetMysqlBackupDbSystemSnapshotDeletionPolicyOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetMysqlBackupDbSystemSnapshotDeletionPolicyArrayInput is an input type that accepts GetMysqlBackupDbSystemSnapshotDeletionPolicyArray and GetMysqlBackupDbSystemSnapshotDeletionPolicyArrayOutput values.
@@ -10234,12 +9125,6 @@ func (i GetMysqlBackupDbSystemSnapshotDeletionPolicyArray) ToGetMysqlBackupDbSys
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlBackupDbSystemSnapshotDeletionPolicyArrayOutput)
 }
 
-func (i GetMysqlBackupDbSystemSnapshotDeletionPolicyArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlBackupDbSystemSnapshotDeletionPolicy] {
-	return pulumix.Output[[]GetMysqlBackupDbSystemSnapshotDeletionPolicy]{
-		OutputState: i.ToGetMysqlBackupDbSystemSnapshotDeletionPolicyArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMysqlBackupDbSystemSnapshotDeletionPolicyOutput struct{ *pulumi.OutputState }
 
 func (GetMysqlBackupDbSystemSnapshotDeletionPolicyOutput) ElementType() reflect.Type {
@@ -10254,25 +9139,19 @@ func (o GetMysqlBackupDbSystemSnapshotDeletionPolicyOutput) ToGetMysqlBackupDbSy
 	return o
 }
 
-func (o GetMysqlBackupDbSystemSnapshotDeletionPolicyOutput) ToOutput(ctx context.Context) pulumix.Output[GetMysqlBackupDbSystemSnapshotDeletionPolicy] {
-	return pulumix.Output[GetMysqlBackupDbSystemSnapshotDeletionPolicy]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Specifies if any automatic backups created for a DB System should be retained or deleted when the DB System is deleted.
-func (o GetMysqlBackupDbSystemSnapshotDeletionPolicyOutput) AutomaticBackupRetention() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlBackupDbSystemSnapshotDeletionPolicy) string { return v.AutomaticBackupRetention }).(pulumi.StringOutput)
+func (o GetMysqlBackupDbSystemSnapshotDeletionPolicyOutput) AutomaticBackupRetention() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlBackupDbSystemSnapshotDeletionPolicy) *string { return v.AutomaticBackupRetention }).(pulumi.StringPtrOutput)
 }
 
 // Specifies whether or not a backup is taken when the DB System is deleted. REQUIRE_FINAL_BACKUP: a backup is taken if the DB System is deleted. SKIP_FINAL_BACKUP: a backup is not taken if the DB System is deleted.
-func (o GetMysqlBackupDbSystemSnapshotDeletionPolicyOutput) FinalBackup() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlBackupDbSystemSnapshotDeletionPolicy) string { return v.FinalBackup }).(pulumi.StringOutput)
+func (o GetMysqlBackupDbSystemSnapshotDeletionPolicyOutput) FinalBackup() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlBackupDbSystemSnapshotDeletionPolicy) *string { return v.FinalBackup }).(pulumi.StringPtrOutput)
 }
 
 // Specifies whether the DB System can be deleted. Set to true to prevent deletion, false (default) to allow.
-func (o GetMysqlBackupDbSystemSnapshotDeletionPolicyOutput) IsDeleteProtected() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetMysqlBackupDbSystemSnapshotDeletionPolicy) bool { return v.IsDeleteProtected }).(pulumi.BoolOutput)
+func (o GetMysqlBackupDbSystemSnapshotDeletionPolicyOutput) IsDeleteProtected() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetMysqlBackupDbSystemSnapshotDeletionPolicy) *bool { return v.IsDeleteProtected }).(pulumi.BoolPtrOutput)
 }
 
 type GetMysqlBackupDbSystemSnapshotDeletionPolicyArrayOutput struct{ *pulumi.OutputState }
@@ -10289,12 +9168,6 @@ func (o GetMysqlBackupDbSystemSnapshotDeletionPolicyArrayOutput) ToGetMysqlBacku
 	return o
 }
 
-func (o GetMysqlBackupDbSystemSnapshotDeletionPolicyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlBackupDbSystemSnapshotDeletionPolicy] {
-	return pulumix.Output[[]GetMysqlBackupDbSystemSnapshotDeletionPolicy]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetMysqlBackupDbSystemSnapshotDeletionPolicyArrayOutput) Index(i pulumi.IntInput) GetMysqlBackupDbSystemSnapshotDeletionPolicyOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlBackupDbSystemSnapshotDeletionPolicy {
 		return vs[0].([]GetMysqlBackupDbSystemSnapshotDeletionPolicy)[vs[1].(int)]
@@ -10303,23 +9176,23 @@ func (o GetMysqlBackupDbSystemSnapshotDeletionPolicyArrayOutput) Index(i pulumi.
 
 type GetMysqlBackupDbSystemSnapshotEndpoint struct {
 	// The network address of the DB System.
-	Hostname string `pulumi:"hostname"`
+	Hostname *string `pulumi:"hostname"`
 	// The IP address the DB System is configured to listen on. A private IP address of the primary endpoint of the DB System. Must be an available IP address within the subnet's CIDR. This will be a "dotted-quad" style IPv4 address.
-	IpAddress string `pulumi:"ipAddress"`
+	IpAddress *string `pulumi:"ipAddress"`
 	// The access modes from the client that this endpoint supports.
 	Modes []string `pulumi:"modes"`
 	// The port for primary endpoint of the DB System to listen on.
-	Port int `pulumi:"port"`
+	Port *int `pulumi:"port"`
 	// The network port on which X Plugin listens for TCP/IP connections. This is the X Plugin equivalent of port.
-	PortX int `pulumi:"portX"`
+	PortX *int `pulumi:"portX"`
 	// The OCID of the resource that this endpoint is attached to.
-	ResourceId string `pulumi:"resourceId"`
+	ResourceId *string `pulumi:"resourceId"`
 	// The type of endpoint that clients and connectors can connect to.
-	ResourceType string `pulumi:"resourceType"`
+	ResourceType *string `pulumi:"resourceType"`
 	// The state of the endpoints, as far as it can seen from the DB System. There may be some inconsistency with the actual state of the MySQL service.
-	Status string `pulumi:"status"`
+	Status *string `pulumi:"status"`
 	// Additional information about the current endpoint status.
-	StatusDetails string `pulumi:"statusDetails"`
+	StatusDetails *string `pulumi:"statusDetails"`
 }
 
 // GetMysqlBackupDbSystemSnapshotEndpointInput is an input type that accepts GetMysqlBackupDbSystemSnapshotEndpointArgs and GetMysqlBackupDbSystemSnapshotEndpointOutput values.
@@ -10335,23 +9208,23 @@ type GetMysqlBackupDbSystemSnapshotEndpointInput interface {
 
 type GetMysqlBackupDbSystemSnapshotEndpointArgs struct {
 	// The network address of the DB System.
-	Hostname pulumi.StringInput `pulumi:"hostname"`
+	Hostname pulumi.StringPtrInput `pulumi:"hostname"`
 	// The IP address the DB System is configured to listen on. A private IP address of the primary endpoint of the DB System. Must be an available IP address within the subnet's CIDR. This will be a "dotted-quad" style IPv4 address.
-	IpAddress pulumi.StringInput `pulumi:"ipAddress"`
+	IpAddress pulumi.StringPtrInput `pulumi:"ipAddress"`
 	// The access modes from the client that this endpoint supports.
 	Modes pulumi.StringArrayInput `pulumi:"modes"`
 	// The port for primary endpoint of the DB System to listen on.
-	Port pulumi.IntInput `pulumi:"port"`
+	Port pulumi.IntPtrInput `pulumi:"port"`
 	// The network port on which X Plugin listens for TCP/IP connections. This is the X Plugin equivalent of port.
-	PortX pulumi.IntInput `pulumi:"portX"`
+	PortX pulumi.IntPtrInput `pulumi:"portX"`
 	// The OCID of the resource that this endpoint is attached to.
-	ResourceId pulumi.StringInput `pulumi:"resourceId"`
+	ResourceId pulumi.StringPtrInput `pulumi:"resourceId"`
 	// The type of endpoint that clients and connectors can connect to.
-	ResourceType pulumi.StringInput `pulumi:"resourceType"`
+	ResourceType pulumi.StringPtrInput `pulumi:"resourceType"`
 	// The state of the endpoints, as far as it can seen from the DB System. There may be some inconsistency with the actual state of the MySQL service.
-	Status pulumi.StringInput `pulumi:"status"`
+	Status pulumi.StringPtrInput `pulumi:"status"`
 	// Additional information about the current endpoint status.
-	StatusDetails pulumi.StringInput `pulumi:"statusDetails"`
+	StatusDetails pulumi.StringPtrInput `pulumi:"statusDetails"`
 }
 
 func (GetMysqlBackupDbSystemSnapshotEndpointArgs) ElementType() reflect.Type {
@@ -10364,12 +9237,6 @@ func (i GetMysqlBackupDbSystemSnapshotEndpointArgs) ToGetMysqlBackupDbSystemSnap
 
 func (i GetMysqlBackupDbSystemSnapshotEndpointArgs) ToGetMysqlBackupDbSystemSnapshotEndpointOutputWithContext(ctx context.Context) GetMysqlBackupDbSystemSnapshotEndpointOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlBackupDbSystemSnapshotEndpointOutput)
-}
-
-func (i GetMysqlBackupDbSystemSnapshotEndpointArgs) ToOutput(ctx context.Context) pulumix.Output[GetMysqlBackupDbSystemSnapshotEndpoint] {
-	return pulumix.Output[GetMysqlBackupDbSystemSnapshotEndpoint]{
-		OutputState: i.ToGetMysqlBackupDbSystemSnapshotEndpointOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetMysqlBackupDbSystemSnapshotEndpointArrayInput is an input type that accepts GetMysqlBackupDbSystemSnapshotEndpointArray and GetMysqlBackupDbSystemSnapshotEndpointArrayOutput values.
@@ -10397,12 +9264,6 @@ func (i GetMysqlBackupDbSystemSnapshotEndpointArray) ToGetMysqlBackupDbSystemSna
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlBackupDbSystemSnapshotEndpointArrayOutput)
 }
 
-func (i GetMysqlBackupDbSystemSnapshotEndpointArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlBackupDbSystemSnapshotEndpoint] {
-	return pulumix.Output[[]GetMysqlBackupDbSystemSnapshotEndpoint]{
-		OutputState: i.ToGetMysqlBackupDbSystemSnapshotEndpointArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMysqlBackupDbSystemSnapshotEndpointOutput struct{ *pulumi.OutputState }
 
 func (GetMysqlBackupDbSystemSnapshotEndpointOutput) ElementType() reflect.Type {
@@ -10417,20 +9278,14 @@ func (o GetMysqlBackupDbSystemSnapshotEndpointOutput) ToGetMysqlBackupDbSystemSn
 	return o
 }
 
-func (o GetMysqlBackupDbSystemSnapshotEndpointOutput) ToOutput(ctx context.Context) pulumix.Output[GetMysqlBackupDbSystemSnapshotEndpoint] {
-	return pulumix.Output[GetMysqlBackupDbSystemSnapshotEndpoint]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The network address of the DB System.
-func (o GetMysqlBackupDbSystemSnapshotEndpointOutput) Hostname() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlBackupDbSystemSnapshotEndpoint) string { return v.Hostname }).(pulumi.StringOutput)
+func (o GetMysqlBackupDbSystemSnapshotEndpointOutput) Hostname() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlBackupDbSystemSnapshotEndpoint) *string { return v.Hostname }).(pulumi.StringPtrOutput)
 }
 
 // The IP address the DB System is configured to listen on. A private IP address of the primary endpoint of the DB System. Must be an available IP address within the subnet's CIDR. This will be a "dotted-quad" style IPv4 address.
-func (o GetMysqlBackupDbSystemSnapshotEndpointOutput) IpAddress() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlBackupDbSystemSnapshotEndpoint) string { return v.IpAddress }).(pulumi.StringOutput)
+func (o GetMysqlBackupDbSystemSnapshotEndpointOutput) IpAddress() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlBackupDbSystemSnapshotEndpoint) *string { return v.IpAddress }).(pulumi.StringPtrOutput)
 }
 
 // The access modes from the client that this endpoint supports.
@@ -10439,33 +9294,33 @@ func (o GetMysqlBackupDbSystemSnapshotEndpointOutput) Modes() pulumi.StringArray
 }
 
 // The port for primary endpoint of the DB System to listen on.
-func (o GetMysqlBackupDbSystemSnapshotEndpointOutput) Port() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMysqlBackupDbSystemSnapshotEndpoint) int { return v.Port }).(pulumi.IntOutput)
+func (o GetMysqlBackupDbSystemSnapshotEndpointOutput) Port() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetMysqlBackupDbSystemSnapshotEndpoint) *int { return v.Port }).(pulumi.IntPtrOutput)
 }
 
 // The network port on which X Plugin listens for TCP/IP connections. This is the X Plugin equivalent of port.
-func (o GetMysqlBackupDbSystemSnapshotEndpointOutput) PortX() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMysqlBackupDbSystemSnapshotEndpoint) int { return v.PortX }).(pulumi.IntOutput)
+func (o GetMysqlBackupDbSystemSnapshotEndpointOutput) PortX() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetMysqlBackupDbSystemSnapshotEndpoint) *int { return v.PortX }).(pulumi.IntPtrOutput)
 }
 
 // The OCID of the resource that this endpoint is attached to.
-func (o GetMysqlBackupDbSystemSnapshotEndpointOutput) ResourceId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlBackupDbSystemSnapshotEndpoint) string { return v.ResourceId }).(pulumi.StringOutput)
+func (o GetMysqlBackupDbSystemSnapshotEndpointOutput) ResourceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlBackupDbSystemSnapshotEndpoint) *string { return v.ResourceId }).(pulumi.StringPtrOutput)
 }
 
 // The type of endpoint that clients and connectors can connect to.
-func (o GetMysqlBackupDbSystemSnapshotEndpointOutput) ResourceType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlBackupDbSystemSnapshotEndpoint) string { return v.ResourceType }).(pulumi.StringOutput)
+func (o GetMysqlBackupDbSystemSnapshotEndpointOutput) ResourceType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlBackupDbSystemSnapshotEndpoint) *string { return v.ResourceType }).(pulumi.StringPtrOutput)
 }
 
 // The state of the endpoints, as far as it can seen from the DB System. There may be some inconsistency with the actual state of the MySQL service.
-func (o GetMysqlBackupDbSystemSnapshotEndpointOutput) Status() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlBackupDbSystemSnapshotEndpoint) string { return v.Status }).(pulumi.StringOutput)
+func (o GetMysqlBackupDbSystemSnapshotEndpointOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlBackupDbSystemSnapshotEndpoint) *string { return v.Status }).(pulumi.StringPtrOutput)
 }
 
 // Additional information about the current endpoint status.
-func (o GetMysqlBackupDbSystemSnapshotEndpointOutput) StatusDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlBackupDbSystemSnapshotEndpoint) string { return v.StatusDetails }).(pulumi.StringOutput)
+func (o GetMysqlBackupDbSystemSnapshotEndpointOutput) StatusDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlBackupDbSystemSnapshotEndpoint) *string { return v.StatusDetails }).(pulumi.StringPtrOutput)
 }
 
 type GetMysqlBackupDbSystemSnapshotEndpointArrayOutput struct{ *pulumi.OutputState }
@@ -10482,12 +9337,6 @@ func (o GetMysqlBackupDbSystemSnapshotEndpointArrayOutput) ToGetMysqlBackupDbSys
 	return o
 }
 
-func (o GetMysqlBackupDbSystemSnapshotEndpointArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlBackupDbSystemSnapshotEndpoint] {
-	return pulumix.Output[[]GetMysqlBackupDbSystemSnapshotEndpoint]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetMysqlBackupDbSystemSnapshotEndpointArrayOutput) Index(i pulumi.IntInput) GetMysqlBackupDbSystemSnapshotEndpointOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlBackupDbSystemSnapshotEndpoint {
 		return vs[0].([]GetMysqlBackupDbSystemSnapshotEndpoint)[vs[1].(int)]
@@ -10496,7 +9345,7 @@ func (o GetMysqlBackupDbSystemSnapshotEndpointArrayOutput) Index(i pulumi.IntInp
 
 type GetMysqlBackupDbSystemSnapshotMaintenance struct {
 	// The start time of the maintenance window.
-	WindowStartTime string `pulumi:"windowStartTime"`
+	WindowStartTime *string `pulumi:"windowStartTime"`
 }
 
 // GetMysqlBackupDbSystemSnapshotMaintenanceInput is an input type that accepts GetMysqlBackupDbSystemSnapshotMaintenanceArgs and GetMysqlBackupDbSystemSnapshotMaintenanceOutput values.
@@ -10512,7 +9361,7 @@ type GetMysqlBackupDbSystemSnapshotMaintenanceInput interface {
 
 type GetMysqlBackupDbSystemSnapshotMaintenanceArgs struct {
 	// The start time of the maintenance window.
-	WindowStartTime pulumi.StringInput `pulumi:"windowStartTime"`
+	WindowStartTime pulumi.StringPtrInput `pulumi:"windowStartTime"`
 }
 
 func (GetMysqlBackupDbSystemSnapshotMaintenanceArgs) ElementType() reflect.Type {
@@ -10525,12 +9374,6 @@ func (i GetMysqlBackupDbSystemSnapshotMaintenanceArgs) ToGetMysqlBackupDbSystemS
 
 func (i GetMysqlBackupDbSystemSnapshotMaintenanceArgs) ToGetMysqlBackupDbSystemSnapshotMaintenanceOutputWithContext(ctx context.Context) GetMysqlBackupDbSystemSnapshotMaintenanceOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlBackupDbSystemSnapshotMaintenanceOutput)
-}
-
-func (i GetMysqlBackupDbSystemSnapshotMaintenanceArgs) ToOutput(ctx context.Context) pulumix.Output[GetMysqlBackupDbSystemSnapshotMaintenance] {
-	return pulumix.Output[GetMysqlBackupDbSystemSnapshotMaintenance]{
-		OutputState: i.ToGetMysqlBackupDbSystemSnapshotMaintenanceOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetMysqlBackupDbSystemSnapshotMaintenanceArrayInput is an input type that accepts GetMysqlBackupDbSystemSnapshotMaintenanceArray and GetMysqlBackupDbSystemSnapshotMaintenanceArrayOutput values.
@@ -10558,12 +9401,6 @@ func (i GetMysqlBackupDbSystemSnapshotMaintenanceArray) ToGetMysqlBackupDbSystem
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlBackupDbSystemSnapshotMaintenanceArrayOutput)
 }
 
-func (i GetMysqlBackupDbSystemSnapshotMaintenanceArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlBackupDbSystemSnapshotMaintenance] {
-	return pulumix.Output[[]GetMysqlBackupDbSystemSnapshotMaintenance]{
-		OutputState: i.ToGetMysqlBackupDbSystemSnapshotMaintenanceArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMysqlBackupDbSystemSnapshotMaintenanceOutput struct{ *pulumi.OutputState }
 
 func (GetMysqlBackupDbSystemSnapshotMaintenanceOutput) ElementType() reflect.Type {
@@ -10578,15 +9415,9 @@ func (o GetMysqlBackupDbSystemSnapshotMaintenanceOutput) ToGetMysqlBackupDbSyste
 	return o
 }
 
-func (o GetMysqlBackupDbSystemSnapshotMaintenanceOutput) ToOutput(ctx context.Context) pulumix.Output[GetMysqlBackupDbSystemSnapshotMaintenance] {
-	return pulumix.Output[GetMysqlBackupDbSystemSnapshotMaintenance]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The start time of the maintenance window.
-func (o GetMysqlBackupDbSystemSnapshotMaintenanceOutput) WindowStartTime() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlBackupDbSystemSnapshotMaintenance) string { return v.WindowStartTime }).(pulumi.StringOutput)
+func (o GetMysqlBackupDbSystemSnapshotMaintenanceOutput) WindowStartTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlBackupDbSystemSnapshotMaintenance) *string { return v.WindowStartTime }).(pulumi.StringPtrOutput)
 }
 
 type GetMysqlBackupDbSystemSnapshotMaintenanceArrayOutput struct{ *pulumi.OutputState }
@@ -10603,12 +9434,6 @@ func (o GetMysqlBackupDbSystemSnapshotMaintenanceArrayOutput) ToGetMysqlBackupDb
 	return o
 }
 
-func (o GetMysqlBackupDbSystemSnapshotMaintenanceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlBackupDbSystemSnapshotMaintenance] {
-	return pulumix.Output[[]GetMysqlBackupDbSystemSnapshotMaintenance]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetMysqlBackupDbSystemSnapshotMaintenanceArrayOutput) Index(i pulumi.IntInput) GetMysqlBackupDbSystemSnapshotMaintenanceOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlBackupDbSystemSnapshotMaintenance {
 		return vs[0].([]GetMysqlBackupDbSystemSnapshotMaintenance)[vs[1].(int)]
@@ -10617,43 +9442,43 @@ func (o GetMysqlBackupDbSystemSnapshotMaintenanceArrayOutput) Index(i pulumi.Int
 
 type GetMysqlBackupsBackup struct {
 	// The size of the backup in base-2 (IEC) gibibytes. (GiB).
-	BackupSizeInGbs int `pulumi:"backupSizeInGbs"`
+	BackupSizeInGbs *int `pulumi:"backupSizeInGbs"`
 	// The type of backup.
-	BackupType string `pulumi:"backupType"`
+	BackupType *string `pulumi:"backupType"`
 	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Backup creationType
-	CreationType string `pulumi:"creationType"`
+	CreationType *string `pulumi:"creationType"`
 	// Initial size of the data volume in GiBs that will be created and attached.
-	DataStorageSizeInGb int `pulumi:"dataStorageSizeInGb"`
+	DataStorageSizeInGb *int `pulumi:"dataStorageSizeInGb"`
 	// The DB System [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-	DbSystemId string `pulumi:"dbSystemId"`
+	DbSystemId *string `pulumi:"dbSystemId"`
 	// Snapshot of the DbSystem details at the time of the backup
 	DbSystemSnapshots []GetMysqlBackupsBackupDbSystemSnapshot `pulumi:"dbSystemSnapshots"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A user-supplied description for the backup.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// A filter to return only the resource matching the given display name exactly.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// OCID of the backup itself
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Additional information about the current lifecycleState.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// The MySQL server version of the DB System used for backup.
-	MysqlVersion string `pulumi:"mysqlVersion"`
+	MysqlVersion *string `pulumi:"mysqlVersion"`
 	// Number of days to retain this backup.
-	RetentionInDays int `pulumi:"retentionInDays"`
+	RetentionInDays *int `pulumi:"retentionInDays"`
 	// The shape of the DB System instance used for backup.
-	ShapeName string `pulumi:"shapeName"`
+	ShapeName *string `pulumi:"shapeName"`
 	// Backup Lifecycle State
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The time the backup record was created.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time at which the backup was updated.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 // GetMysqlBackupsBackupInput is an input type that accepts GetMysqlBackupsBackupArgs and GetMysqlBackupsBackupOutput values.
@@ -10669,43 +9494,43 @@ type GetMysqlBackupsBackupInput interface {
 
 type GetMysqlBackupsBackupArgs struct {
 	// The size of the backup in base-2 (IEC) gibibytes. (GiB).
-	BackupSizeInGbs pulumi.IntInput `pulumi:"backupSizeInGbs"`
+	BackupSizeInGbs pulumi.IntPtrInput `pulumi:"backupSizeInGbs"`
 	// The type of backup.
-	BackupType pulumi.StringInput `pulumi:"backupType"`
+	BackupType pulumi.StringPtrInput `pulumi:"backupType"`
 	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// Backup creationType
-	CreationType pulumi.StringInput `pulumi:"creationType"`
+	CreationType pulumi.StringPtrInput `pulumi:"creationType"`
 	// Initial size of the data volume in GiBs that will be created and attached.
-	DataStorageSizeInGb pulumi.IntInput `pulumi:"dataStorageSizeInGb"`
+	DataStorageSizeInGb pulumi.IntPtrInput `pulumi:"dataStorageSizeInGb"`
 	// The DB System [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-	DbSystemId pulumi.StringInput `pulumi:"dbSystemId"`
+	DbSystemId pulumi.StringPtrInput `pulumi:"dbSystemId"`
 	// Snapshot of the DbSystem details at the time of the backup
 	DbSystemSnapshots GetMysqlBackupsBackupDbSystemSnapshotArrayInput `pulumi:"dbSystemSnapshots"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// A user-supplied description for the backup.
-	Description pulumi.StringInput `pulumi:"description"`
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// A filter to return only the resource matching the given display name exactly.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// OCID of the backup itself
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// Additional information about the current lifecycleState.
-	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrInput `pulumi:"lifecycleDetails"`
 	// The MySQL server version of the DB System used for backup.
-	MysqlVersion pulumi.StringInput `pulumi:"mysqlVersion"`
+	MysqlVersion pulumi.StringPtrInput `pulumi:"mysqlVersion"`
 	// Number of days to retain this backup.
-	RetentionInDays pulumi.IntInput `pulumi:"retentionInDays"`
+	RetentionInDays pulumi.IntPtrInput `pulumi:"retentionInDays"`
 	// The shape of the DB System instance used for backup.
-	ShapeName pulumi.StringInput `pulumi:"shapeName"`
+	ShapeName pulumi.StringPtrInput `pulumi:"shapeName"`
 	// Backup Lifecycle State
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// The time the backup record was created.
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// The time at which the backup was updated.
-	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
 }
 
 func (GetMysqlBackupsBackupArgs) ElementType() reflect.Type {
@@ -10718,12 +9543,6 @@ func (i GetMysqlBackupsBackupArgs) ToGetMysqlBackupsBackupOutput() GetMysqlBacku
 
 func (i GetMysqlBackupsBackupArgs) ToGetMysqlBackupsBackupOutputWithContext(ctx context.Context) GetMysqlBackupsBackupOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlBackupsBackupOutput)
-}
-
-func (i GetMysqlBackupsBackupArgs) ToOutput(ctx context.Context) pulumix.Output[GetMysqlBackupsBackup] {
-	return pulumix.Output[GetMysqlBackupsBackup]{
-		OutputState: i.ToGetMysqlBackupsBackupOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetMysqlBackupsBackupArrayInput is an input type that accepts GetMysqlBackupsBackupArray and GetMysqlBackupsBackupArrayOutput values.
@@ -10751,12 +9570,6 @@ func (i GetMysqlBackupsBackupArray) ToGetMysqlBackupsBackupArrayOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlBackupsBackupArrayOutput)
 }
 
-func (i GetMysqlBackupsBackupArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlBackupsBackup] {
-	return pulumix.Output[[]GetMysqlBackupsBackup]{
-		OutputState: i.ToGetMysqlBackupsBackupArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMysqlBackupsBackupOutput struct{ *pulumi.OutputState }
 
 func (GetMysqlBackupsBackupOutput) ElementType() reflect.Type {
@@ -10771,40 +9584,34 @@ func (o GetMysqlBackupsBackupOutput) ToGetMysqlBackupsBackupOutputWithContext(ct
 	return o
 }
 
-func (o GetMysqlBackupsBackupOutput) ToOutput(ctx context.Context) pulumix.Output[GetMysqlBackupsBackup] {
-	return pulumix.Output[GetMysqlBackupsBackup]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The size of the backup in base-2 (IEC) gibibytes. (GiB).
-func (o GetMysqlBackupsBackupOutput) BackupSizeInGbs() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMysqlBackupsBackup) int { return v.BackupSizeInGbs }).(pulumi.IntOutput)
+func (o GetMysqlBackupsBackupOutput) BackupSizeInGbs() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetMysqlBackupsBackup) *int { return v.BackupSizeInGbs }).(pulumi.IntPtrOutput)
 }
 
 // The type of backup.
-func (o GetMysqlBackupsBackupOutput) BackupType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlBackupsBackup) string { return v.BackupType }).(pulumi.StringOutput)
+func (o GetMysqlBackupsBackupOutput) BackupType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlBackupsBackup) *string { return v.BackupType }).(pulumi.StringPtrOutput)
 }
 
 // The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-func (o GetMysqlBackupsBackupOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlBackupsBackup) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetMysqlBackupsBackupOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlBackupsBackup) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Backup creationType
-func (o GetMysqlBackupsBackupOutput) CreationType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlBackupsBackup) string { return v.CreationType }).(pulumi.StringOutput)
+func (o GetMysqlBackupsBackupOutput) CreationType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlBackupsBackup) *string { return v.CreationType }).(pulumi.StringPtrOutput)
 }
 
 // Initial size of the data volume in GiBs that will be created and attached.
-func (o GetMysqlBackupsBackupOutput) DataStorageSizeInGb() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMysqlBackupsBackup) int { return v.DataStorageSizeInGb }).(pulumi.IntOutput)
+func (o GetMysqlBackupsBackupOutput) DataStorageSizeInGb() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetMysqlBackupsBackup) *int { return v.DataStorageSizeInGb }).(pulumi.IntPtrOutput)
 }
 
 // The DB System [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-func (o GetMysqlBackupsBackupOutput) DbSystemId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlBackupsBackup) string { return v.DbSystemId }).(pulumi.StringOutput)
+func (o GetMysqlBackupsBackupOutput) DbSystemId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlBackupsBackup) *string { return v.DbSystemId }).(pulumi.StringPtrOutput)
 }
 
 // Snapshot of the DbSystem details at the time of the backup
@@ -10818,13 +9625,13 @@ func (o GetMysqlBackupsBackupOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // A user-supplied description for the backup.
-func (o GetMysqlBackupsBackupOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlBackupsBackup) string { return v.Description }).(pulumi.StringOutput)
+func (o GetMysqlBackupsBackupOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlBackupsBackup) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // A filter to return only the resource matching the given display name exactly.
-func (o GetMysqlBackupsBackupOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlBackupsBackup) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetMysqlBackupsBackupOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlBackupsBackup) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -10833,43 +9640,43 @@ func (o GetMysqlBackupsBackupOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // OCID of the backup itself
-func (o GetMysqlBackupsBackupOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlBackupsBackup) string { return v.Id }).(pulumi.StringOutput)
+func (o GetMysqlBackupsBackupOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlBackupsBackup) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Additional information about the current lifecycleState.
-func (o GetMysqlBackupsBackupOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlBackupsBackup) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o GetMysqlBackupsBackupOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlBackupsBackup) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // The MySQL server version of the DB System used for backup.
-func (o GetMysqlBackupsBackupOutput) MysqlVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlBackupsBackup) string { return v.MysqlVersion }).(pulumi.StringOutput)
+func (o GetMysqlBackupsBackupOutput) MysqlVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlBackupsBackup) *string { return v.MysqlVersion }).(pulumi.StringPtrOutput)
 }
 
 // Number of days to retain this backup.
-func (o GetMysqlBackupsBackupOutput) RetentionInDays() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMysqlBackupsBackup) int { return v.RetentionInDays }).(pulumi.IntOutput)
+func (o GetMysqlBackupsBackupOutput) RetentionInDays() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetMysqlBackupsBackup) *int { return v.RetentionInDays }).(pulumi.IntPtrOutput)
 }
 
 // The shape of the DB System instance used for backup.
-func (o GetMysqlBackupsBackupOutput) ShapeName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlBackupsBackup) string { return v.ShapeName }).(pulumi.StringOutput)
+func (o GetMysqlBackupsBackupOutput) ShapeName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlBackupsBackup) *string { return v.ShapeName }).(pulumi.StringPtrOutput)
 }
 
 // Backup Lifecycle State
-func (o GetMysqlBackupsBackupOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlBackupsBackup) string { return v.State }).(pulumi.StringOutput)
+func (o GetMysqlBackupsBackupOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlBackupsBackup) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The time the backup record was created.
-func (o GetMysqlBackupsBackupOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlBackupsBackup) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetMysqlBackupsBackupOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlBackupsBackup) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time at which the backup was updated.
-func (o GetMysqlBackupsBackupOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlBackupsBackup) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o GetMysqlBackupsBackupOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlBackupsBackup) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type GetMysqlBackupsBackupArrayOutput struct{ *pulumi.OutputState }
@@ -10886,12 +9693,6 @@ func (o GetMysqlBackupsBackupArrayOutput) ToGetMysqlBackupsBackupArrayOutputWith
 	return o
 }
 
-func (o GetMysqlBackupsBackupArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlBackupsBackup] {
-	return pulumix.Output[[]GetMysqlBackupsBackup]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetMysqlBackupsBackupArrayOutput) Index(i pulumi.IntInput) GetMysqlBackupsBackupOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlBackupsBackup {
 		return vs[0].([]GetMysqlBackupsBackup)[vs[1].(int)]
@@ -10900,55 +9701,55 @@ func (o GetMysqlBackupsBackupArrayOutput) Index(i pulumi.IntInput) GetMysqlBacku
 
 type GetMysqlBackupsBackupDbSystemSnapshot struct {
 	// The username for the administrative user.
-	AdminUsername string `pulumi:"adminUsername"`
+	AdminUsername *string `pulumi:"adminUsername"`
 	// The Availability Domain where the primary DB System should be located.
-	AvailabilityDomain string `pulumi:"availabilityDomain"`
+	AvailabilityDomain *string `pulumi:"availabilityDomain"`
 	// The Backup policy for the DB System.
 	BackupPolicies []GetMysqlBackupsBackupDbSystemSnapshotBackupPolicy `pulumi:"backupPolicies"`
 	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// The OCID of the Configuration to be used for Instances in this DB System.
-	ConfigurationId string `pulumi:"configurationId"`
+	ConfigurationId *string `pulumi:"configurationId"`
 	// Whether to run the DB System with InnoDB Redo Logs and the Double Write Buffer enabled or disabled, and whether to enable or disable syncing of the Binary Logs.
-	CrashRecovery string `pulumi:"crashRecovery"`
+	CrashRecovery *string `pulumi:"crashRecovery"`
 	// Initial size of the data volume in GiBs that will be created and attached.
-	DataStorageSizeInGb int `pulumi:"dataStorageSizeInGb"`
+	DataStorageSizeInGb *int `pulumi:"dataStorageSizeInGb"`
 	// Whether to enable monitoring via the Database Management service.
-	DatabaseManagement string `pulumi:"databaseManagement"`
+	DatabaseManagement *string `pulumi:"databaseManagement"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The Deletion policy for the DB System.
 	DeletionPolicies []GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicy `pulumi:"deletionPolicies"`
 	// A user-supplied description for the backup.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// A filter to return only the resource matching the given display name exactly.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// The network endpoints available for this DB System.
 	Endpoints []GetMysqlBackupsBackupDbSystemSnapshotEndpoint `pulumi:"endpoints"`
 	// The name of the Fault Domain the DB System is located in.
-	FaultDomain string `pulumi:"faultDomain"`
+	FaultDomain *string `pulumi:"faultDomain"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The hostname for the primary endpoint of the DB System. Used for DNS. The value is the hostname portion of the primary private IP's fully qualified domain name (FQDN) (for example, "dbsystem-1" in FQDN "dbsystem-1.subnet123.vcn1.oraclevcn.com"). Must be unique across all VNICs in the subnet and comply with RFC 952 and RFC 1123.
-	HostnameLabel string `pulumi:"hostnameLabel"`
+	HostnameLabel *string `pulumi:"hostnameLabel"`
 	// OCID of the backup itself
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The IP address the DB System is configured to listen on. A private IP address of the primary endpoint of the DB System. Must be an available IP address within the subnet's CIDR. This will be a "dotted-quad" style IPv4 address.
-	IpAddress string `pulumi:"ipAddress"`
+	IpAddress *string `pulumi:"ipAddress"`
 	// Specifies if the DB System is highly available.
-	IsHighlyAvailable bool `pulumi:"isHighlyAvailable"`
+	IsHighlyAvailable *bool `pulumi:"isHighlyAvailable"`
 	// The Maintenance Policy for the DB System or Read Replica that this model is included in.
 	Maintenances []GetMysqlBackupsBackupDbSystemSnapshotMaintenance `pulumi:"maintenances"`
 	// The MySQL server version of the DB System used for backup.
-	MysqlVersion string `pulumi:"mysqlVersion"`
+	MysqlVersion *string `pulumi:"mysqlVersion"`
 	// The port for primary endpoint of the DB System to listen on.
-	Port int `pulumi:"port"`
+	Port *int `pulumi:"port"`
 	// The network port on which X Plugin listens for TCP/IP connections. This is the X Plugin equivalent of port.
-	PortX int `pulumi:"portX"`
+	PortX *int `pulumi:"portX"`
 	// The shape of the DB System instance used for backup.
-	ShapeName string `pulumi:"shapeName"`
+	ShapeName *string `pulumi:"shapeName"`
 	// The OCID of the subnet the DB System is associated with.
-	SubnetId string `pulumi:"subnetId"`
+	SubnetId *string `pulumi:"subnetId"`
 }
 
 // GetMysqlBackupsBackupDbSystemSnapshotInput is an input type that accepts GetMysqlBackupsBackupDbSystemSnapshotArgs and GetMysqlBackupsBackupDbSystemSnapshotOutput values.
@@ -10964,55 +9765,55 @@ type GetMysqlBackupsBackupDbSystemSnapshotInput interface {
 
 type GetMysqlBackupsBackupDbSystemSnapshotArgs struct {
 	// The username for the administrative user.
-	AdminUsername pulumi.StringInput `pulumi:"adminUsername"`
+	AdminUsername pulumi.StringPtrInput `pulumi:"adminUsername"`
 	// The Availability Domain where the primary DB System should be located.
-	AvailabilityDomain pulumi.StringInput `pulumi:"availabilityDomain"`
+	AvailabilityDomain pulumi.StringPtrInput `pulumi:"availabilityDomain"`
 	// The Backup policy for the DB System.
 	BackupPolicies GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyArrayInput `pulumi:"backupPolicies"`
 	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// The OCID of the Configuration to be used for Instances in this DB System.
-	ConfigurationId pulumi.StringInput `pulumi:"configurationId"`
+	ConfigurationId pulumi.StringPtrInput `pulumi:"configurationId"`
 	// Whether to run the DB System with InnoDB Redo Logs and the Double Write Buffer enabled or disabled, and whether to enable or disable syncing of the Binary Logs.
-	CrashRecovery pulumi.StringInput `pulumi:"crashRecovery"`
+	CrashRecovery pulumi.StringPtrInput `pulumi:"crashRecovery"`
 	// Initial size of the data volume in GiBs that will be created and attached.
-	DataStorageSizeInGb pulumi.IntInput `pulumi:"dataStorageSizeInGb"`
+	DataStorageSizeInGb pulumi.IntPtrInput `pulumi:"dataStorageSizeInGb"`
 	// Whether to enable monitoring via the Database Management service.
-	DatabaseManagement pulumi.StringInput `pulumi:"databaseManagement"`
+	DatabaseManagement pulumi.StringPtrInput `pulumi:"databaseManagement"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// The Deletion policy for the DB System.
 	DeletionPolicies GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyArrayInput `pulumi:"deletionPolicies"`
 	// A user-supplied description for the backup.
-	Description pulumi.StringInput `pulumi:"description"`
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// A filter to return only the resource matching the given display name exactly.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// The network endpoints available for this DB System.
 	Endpoints GetMysqlBackupsBackupDbSystemSnapshotEndpointArrayInput `pulumi:"endpoints"`
 	// The name of the Fault Domain the DB System is located in.
-	FaultDomain pulumi.StringInput `pulumi:"faultDomain"`
+	FaultDomain pulumi.StringPtrInput `pulumi:"faultDomain"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// The hostname for the primary endpoint of the DB System. Used for DNS. The value is the hostname portion of the primary private IP's fully qualified domain name (FQDN) (for example, "dbsystem-1" in FQDN "dbsystem-1.subnet123.vcn1.oraclevcn.com"). Must be unique across all VNICs in the subnet and comply with RFC 952 and RFC 1123.
-	HostnameLabel pulumi.StringInput `pulumi:"hostnameLabel"`
+	HostnameLabel pulumi.StringPtrInput `pulumi:"hostnameLabel"`
 	// OCID of the backup itself
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// The IP address the DB System is configured to listen on. A private IP address of the primary endpoint of the DB System. Must be an available IP address within the subnet's CIDR. This will be a "dotted-quad" style IPv4 address.
-	IpAddress pulumi.StringInput `pulumi:"ipAddress"`
+	IpAddress pulumi.StringPtrInput `pulumi:"ipAddress"`
 	// Specifies if the DB System is highly available.
-	IsHighlyAvailable pulumi.BoolInput `pulumi:"isHighlyAvailable"`
+	IsHighlyAvailable pulumi.BoolPtrInput `pulumi:"isHighlyAvailable"`
 	// The Maintenance Policy for the DB System or Read Replica that this model is included in.
 	Maintenances GetMysqlBackupsBackupDbSystemSnapshotMaintenanceArrayInput `pulumi:"maintenances"`
 	// The MySQL server version of the DB System used for backup.
-	MysqlVersion pulumi.StringInput `pulumi:"mysqlVersion"`
+	MysqlVersion pulumi.StringPtrInput `pulumi:"mysqlVersion"`
 	// The port for primary endpoint of the DB System to listen on.
-	Port pulumi.IntInput `pulumi:"port"`
+	Port pulumi.IntPtrInput `pulumi:"port"`
 	// The network port on which X Plugin listens for TCP/IP connections. This is the X Plugin equivalent of port.
-	PortX pulumi.IntInput `pulumi:"portX"`
+	PortX pulumi.IntPtrInput `pulumi:"portX"`
 	// The shape of the DB System instance used for backup.
-	ShapeName pulumi.StringInput `pulumi:"shapeName"`
+	ShapeName pulumi.StringPtrInput `pulumi:"shapeName"`
 	// The OCID of the subnet the DB System is associated with.
-	SubnetId pulumi.StringInput `pulumi:"subnetId"`
+	SubnetId pulumi.StringPtrInput `pulumi:"subnetId"`
 }
 
 func (GetMysqlBackupsBackupDbSystemSnapshotArgs) ElementType() reflect.Type {
@@ -11025,12 +9826,6 @@ func (i GetMysqlBackupsBackupDbSystemSnapshotArgs) ToGetMysqlBackupsBackupDbSyst
 
 func (i GetMysqlBackupsBackupDbSystemSnapshotArgs) ToGetMysqlBackupsBackupDbSystemSnapshotOutputWithContext(ctx context.Context) GetMysqlBackupsBackupDbSystemSnapshotOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlBackupsBackupDbSystemSnapshotOutput)
-}
-
-func (i GetMysqlBackupsBackupDbSystemSnapshotArgs) ToOutput(ctx context.Context) pulumix.Output[GetMysqlBackupsBackupDbSystemSnapshot] {
-	return pulumix.Output[GetMysqlBackupsBackupDbSystemSnapshot]{
-		OutputState: i.ToGetMysqlBackupsBackupDbSystemSnapshotOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetMysqlBackupsBackupDbSystemSnapshotArrayInput is an input type that accepts GetMysqlBackupsBackupDbSystemSnapshotArray and GetMysqlBackupsBackupDbSystemSnapshotArrayOutput values.
@@ -11058,12 +9853,6 @@ func (i GetMysqlBackupsBackupDbSystemSnapshotArray) ToGetMysqlBackupsBackupDbSys
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlBackupsBackupDbSystemSnapshotArrayOutput)
 }
 
-func (i GetMysqlBackupsBackupDbSystemSnapshotArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlBackupsBackupDbSystemSnapshot] {
-	return pulumix.Output[[]GetMysqlBackupsBackupDbSystemSnapshot]{
-		OutputState: i.ToGetMysqlBackupsBackupDbSystemSnapshotArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMysqlBackupsBackupDbSystemSnapshotOutput struct{ *pulumi.OutputState }
 
 func (GetMysqlBackupsBackupDbSystemSnapshotOutput) ElementType() reflect.Type {
@@ -11078,20 +9867,14 @@ func (o GetMysqlBackupsBackupDbSystemSnapshotOutput) ToGetMysqlBackupsBackupDbSy
 	return o
 }
 
-func (o GetMysqlBackupsBackupDbSystemSnapshotOutput) ToOutput(ctx context.Context) pulumix.Output[GetMysqlBackupsBackupDbSystemSnapshot] {
-	return pulumix.Output[GetMysqlBackupsBackupDbSystemSnapshot]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The username for the administrative user.
-func (o GetMysqlBackupsBackupDbSystemSnapshotOutput) AdminUsername() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshot) string { return v.AdminUsername }).(pulumi.StringOutput)
+func (o GetMysqlBackupsBackupDbSystemSnapshotOutput) AdminUsername() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshot) *string { return v.AdminUsername }).(pulumi.StringPtrOutput)
 }
 
 // The Availability Domain where the primary DB System should be located.
-func (o GetMysqlBackupsBackupDbSystemSnapshotOutput) AvailabilityDomain() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshot) string { return v.AvailabilityDomain }).(pulumi.StringOutput)
+func (o GetMysqlBackupsBackupDbSystemSnapshotOutput) AvailabilityDomain() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshot) *string { return v.AvailabilityDomain }).(pulumi.StringPtrOutput)
 }
 
 // The Backup policy for the DB System.
@@ -11102,28 +9885,28 @@ func (o GetMysqlBackupsBackupDbSystemSnapshotOutput) BackupPolicies() GetMysqlBa
 }
 
 // The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-func (o GetMysqlBackupsBackupDbSystemSnapshotOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshot) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetMysqlBackupsBackupDbSystemSnapshotOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshot) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the Configuration to be used for Instances in this DB System.
-func (o GetMysqlBackupsBackupDbSystemSnapshotOutput) ConfigurationId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshot) string { return v.ConfigurationId }).(pulumi.StringOutput)
+func (o GetMysqlBackupsBackupDbSystemSnapshotOutput) ConfigurationId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshot) *string { return v.ConfigurationId }).(pulumi.StringPtrOutput)
 }
 
 // Whether to run the DB System with InnoDB Redo Logs and the Double Write Buffer enabled or disabled, and whether to enable or disable syncing of the Binary Logs.
-func (o GetMysqlBackupsBackupDbSystemSnapshotOutput) CrashRecovery() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshot) string { return v.CrashRecovery }).(pulumi.StringOutput)
+func (o GetMysqlBackupsBackupDbSystemSnapshotOutput) CrashRecovery() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshot) *string { return v.CrashRecovery }).(pulumi.StringPtrOutput)
 }
 
 // Initial size of the data volume in GiBs that will be created and attached.
-func (o GetMysqlBackupsBackupDbSystemSnapshotOutput) DataStorageSizeInGb() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshot) int { return v.DataStorageSizeInGb }).(pulumi.IntOutput)
+func (o GetMysqlBackupsBackupDbSystemSnapshotOutput) DataStorageSizeInGb() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshot) *int { return v.DataStorageSizeInGb }).(pulumi.IntPtrOutput)
 }
 
 // Whether to enable monitoring via the Database Management service.
-func (o GetMysqlBackupsBackupDbSystemSnapshotOutput) DatabaseManagement() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshot) string { return v.DatabaseManagement }).(pulumi.StringOutput)
+func (o GetMysqlBackupsBackupDbSystemSnapshotOutput) DatabaseManagement() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshot) *string { return v.DatabaseManagement }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -11139,13 +9922,13 @@ func (o GetMysqlBackupsBackupDbSystemSnapshotOutput) DeletionPolicies() GetMysql
 }
 
 // A user-supplied description for the backup.
-func (o GetMysqlBackupsBackupDbSystemSnapshotOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshot) string { return v.Description }).(pulumi.StringOutput)
+func (o GetMysqlBackupsBackupDbSystemSnapshotOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshot) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // A filter to return only the resource matching the given display name exactly.
-func (o GetMysqlBackupsBackupDbSystemSnapshotOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshot) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetMysqlBackupsBackupDbSystemSnapshotOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshot) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // The network endpoints available for this DB System.
@@ -11156,8 +9939,8 @@ func (o GetMysqlBackupsBackupDbSystemSnapshotOutput) Endpoints() GetMysqlBackups
 }
 
 // The name of the Fault Domain the DB System is located in.
-func (o GetMysqlBackupsBackupDbSystemSnapshotOutput) FaultDomain() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshot) string { return v.FaultDomain }).(pulumi.StringOutput)
+func (o GetMysqlBackupsBackupDbSystemSnapshotOutput) FaultDomain() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshot) *string { return v.FaultDomain }).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -11166,23 +9949,23 @@ func (o GetMysqlBackupsBackupDbSystemSnapshotOutput) FreeformTags() pulumi.MapOu
 }
 
 // The hostname for the primary endpoint of the DB System. Used for DNS. The value is the hostname portion of the primary private IP's fully qualified domain name (FQDN) (for example, "dbsystem-1" in FQDN "dbsystem-1.subnet123.vcn1.oraclevcn.com"). Must be unique across all VNICs in the subnet and comply with RFC 952 and RFC 1123.
-func (o GetMysqlBackupsBackupDbSystemSnapshotOutput) HostnameLabel() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshot) string { return v.HostnameLabel }).(pulumi.StringOutput)
+func (o GetMysqlBackupsBackupDbSystemSnapshotOutput) HostnameLabel() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshot) *string { return v.HostnameLabel }).(pulumi.StringPtrOutput)
 }
 
 // OCID of the backup itself
-func (o GetMysqlBackupsBackupDbSystemSnapshotOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshot) string { return v.Id }).(pulumi.StringOutput)
+func (o GetMysqlBackupsBackupDbSystemSnapshotOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshot) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The IP address the DB System is configured to listen on. A private IP address of the primary endpoint of the DB System. Must be an available IP address within the subnet's CIDR. This will be a "dotted-quad" style IPv4 address.
-func (o GetMysqlBackupsBackupDbSystemSnapshotOutput) IpAddress() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshot) string { return v.IpAddress }).(pulumi.StringOutput)
+func (o GetMysqlBackupsBackupDbSystemSnapshotOutput) IpAddress() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshot) *string { return v.IpAddress }).(pulumi.StringPtrOutput)
 }
 
 // Specifies if the DB System is highly available.
-func (o GetMysqlBackupsBackupDbSystemSnapshotOutput) IsHighlyAvailable() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshot) bool { return v.IsHighlyAvailable }).(pulumi.BoolOutput)
+func (o GetMysqlBackupsBackupDbSystemSnapshotOutput) IsHighlyAvailable() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshot) *bool { return v.IsHighlyAvailable }).(pulumi.BoolPtrOutput)
 }
 
 // The Maintenance Policy for the DB System or Read Replica that this model is included in.
@@ -11193,28 +9976,28 @@ func (o GetMysqlBackupsBackupDbSystemSnapshotOutput) Maintenances() GetMysqlBack
 }
 
 // The MySQL server version of the DB System used for backup.
-func (o GetMysqlBackupsBackupDbSystemSnapshotOutput) MysqlVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshot) string { return v.MysqlVersion }).(pulumi.StringOutput)
+func (o GetMysqlBackupsBackupDbSystemSnapshotOutput) MysqlVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshot) *string { return v.MysqlVersion }).(pulumi.StringPtrOutput)
 }
 
 // The port for primary endpoint of the DB System to listen on.
-func (o GetMysqlBackupsBackupDbSystemSnapshotOutput) Port() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshot) int { return v.Port }).(pulumi.IntOutput)
+func (o GetMysqlBackupsBackupDbSystemSnapshotOutput) Port() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshot) *int { return v.Port }).(pulumi.IntPtrOutput)
 }
 
 // The network port on which X Plugin listens for TCP/IP connections. This is the X Plugin equivalent of port.
-func (o GetMysqlBackupsBackupDbSystemSnapshotOutput) PortX() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshot) int { return v.PortX }).(pulumi.IntOutput)
+func (o GetMysqlBackupsBackupDbSystemSnapshotOutput) PortX() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshot) *int { return v.PortX }).(pulumi.IntPtrOutput)
 }
 
 // The shape of the DB System instance used for backup.
-func (o GetMysqlBackupsBackupDbSystemSnapshotOutput) ShapeName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshot) string { return v.ShapeName }).(pulumi.StringOutput)
+func (o GetMysqlBackupsBackupDbSystemSnapshotOutput) ShapeName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshot) *string { return v.ShapeName }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the subnet the DB System is associated with.
-func (o GetMysqlBackupsBackupDbSystemSnapshotOutput) SubnetId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshot) string { return v.SubnetId }).(pulumi.StringOutput)
+func (o GetMysqlBackupsBackupDbSystemSnapshotOutput) SubnetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshot) *string { return v.SubnetId }).(pulumi.StringPtrOutput)
 }
 
 type GetMysqlBackupsBackupDbSystemSnapshotArrayOutput struct{ *pulumi.OutputState }
@@ -11231,12 +10014,6 @@ func (o GetMysqlBackupsBackupDbSystemSnapshotArrayOutput) ToGetMysqlBackupsBacku
 	return o
 }
 
-func (o GetMysqlBackupsBackupDbSystemSnapshotArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlBackupsBackupDbSystemSnapshot] {
-	return pulumix.Output[[]GetMysqlBackupsBackupDbSystemSnapshot]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetMysqlBackupsBackupDbSystemSnapshotArrayOutput) Index(i pulumi.IntInput) GetMysqlBackupsBackupDbSystemSnapshotOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlBackupsBackupDbSystemSnapshot {
 		return vs[0].([]GetMysqlBackupsBackupDbSystemSnapshot)[vs[1].(int)]
@@ -11249,13 +10026,13 @@ type GetMysqlBackupsBackupDbSystemSnapshotBackupPolicy struct {
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// Specifies if PITR is enabled or disabled.
-	IsEnabled bool `pulumi:"isEnabled"`
+	IsEnabled *bool `pulumi:"isEnabled"`
 	// The PITR policy for the DB System.
 	PitrPolicies []GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicy `pulumi:"pitrPolicies"`
 	// Number of days to retain this backup.
-	RetentionInDays int `pulumi:"retentionInDays"`
+	RetentionInDays *int `pulumi:"retentionInDays"`
 	// The start time of the maintenance window.
-	WindowStartTime string `pulumi:"windowStartTime"`
+	WindowStartTime *string `pulumi:"windowStartTime"`
 }
 
 // GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyInput is an input type that accepts GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyArgs and GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyOutput values.
@@ -11275,13 +10052,13 @@ type GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyArgs struct {
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// Specifies if PITR is enabled or disabled.
-	IsEnabled pulumi.BoolInput `pulumi:"isEnabled"`
+	IsEnabled pulumi.BoolPtrInput `pulumi:"isEnabled"`
 	// The PITR policy for the DB System.
 	PitrPolicies GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayInput `pulumi:"pitrPolicies"`
 	// Number of days to retain this backup.
-	RetentionInDays pulumi.IntInput `pulumi:"retentionInDays"`
+	RetentionInDays pulumi.IntPtrInput `pulumi:"retentionInDays"`
 	// The start time of the maintenance window.
-	WindowStartTime pulumi.StringInput `pulumi:"windowStartTime"`
+	WindowStartTime pulumi.StringPtrInput `pulumi:"windowStartTime"`
 }
 
 func (GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyArgs) ElementType() reflect.Type {
@@ -11294,12 +10071,6 @@ func (i GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyArgs) ToGetMysqlBackups
 
 func (i GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyArgs) ToGetMysqlBackupsBackupDbSystemSnapshotBackupPolicyOutputWithContext(ctx context.Context) GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyOutput)
-}
-
-func (i GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyArgs) ToOutput(ctx context.Context) pulumix.Output[GetMysqlBackupsBackupDbSystemSnapshotBackupPolicy] {
-	return pulumix.Output[GetMysqlBackupsBackupDbSystemSnapshotBackupPolicy]{
-		OutputState: i.ToGetMysqlBackupsBackupDbSystemSnapshotBackupPolicyOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyArrayInput is an input type that accepts GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyArray and GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyArrayOutput values.
@@ -11327,12 +10098,6 @@ func (i GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyArray) ToGetMysqlBackup
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyArrayOutput)
 }
 
-func (i GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlBackupsBackupDbSystemSnapshotBackupPolicy] {
-	return pulumix.Output[[]GetMysqlBackupsBackupDbSystemSnapshotBackupPolicy]{
-		OutputState: i.ToGetMysqlBackupsBackupDbSystemSnapshotBackupPolicyArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyOutput struct{ *pulumi.OutputState }
 
 func (GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyOutput) ElementType() reflect.Type {
@@ -11345,12 +10110,6 @@ func (o GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyOutput) ToGetMysqlBacku
 
 func (o GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyOutput) ToGetMysqlBackupsBackupDbSystemSnapshotBackupPolicyOutputWithContext(ctx context.Context) GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyOutput {
 	return o
-}
-
-func (o GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyOutput) ToOutput(ctx context.Context) pulumix.Output[GetMysqlBackupsBackupDbSystemSnapshotBackupPolicy] {
-	return pulumix.Output[GetMysqlBackupsBackupDbSystemSnapshotBackupPolicy]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -11366,8 +10125,8 @@ func (o GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyOutput) FreeformTags() 
 }
 
 // Specifies if PITR is enabled or disabled.
-func (o GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyOutput) IsEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshotBackupPolicy) bool { return v.IsEnabled }).(pulumi.BoolOutput)
+func (o GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyOutput) IsEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshotBackupPolicy) *bool { return v.IsEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // The PITR policy for the DB System.
@@ -11378,13 +10137,13 @@ func (o GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyOutput) PitrPolicies() 
 }
 
 // Number of days to retain this backup.
-func (o GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyOutput) RetentionInDays() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshotBackupPolicy) int { return v.RetentionInDays }).(pulumi.IntOutput)
+func (o GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyOutput) RetentionInDays() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshotBackupPolicy) *int { return v.RetentionInDays }).(pulumi.IntPtrOutput)
 }
 
 // The start time of the maintenance window.
-func (o GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyOutput) WindowStartTime() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshotBackupPolicy) string { return v.WindowStartTime }).(pulumi.StringOutput)
+func (o GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyOutput) WindowStartTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshotBackupPolicy) *string { return v.WindowStartTime }).(pulumi.StringPtrOutput)
 }
 
 type GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyArrayOutput struct{ *pulumi.OutputState }
@@ -11401,12 +10160,6 @@ func (o GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyArrayOutput) ToGetMysql
 	return o
 }
 
-func (o GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlBackupsBackupDbSystemSnapshotBackupPolicy] {
-	return pulumix.Output[[]GetMysqlBackupsBackupDbSystemSnapshotBackupPolicy]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyArrayOutput) Index(i pulumi.IntInput) GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlBackupsBackupDbSystemSnapshotBackupPolicy {
 		return vs[0].([]GetMysqlBackupsBackupDbSystemSnapshotBackupPolicy)[vs[1].(int)]
@@ -11415,7 +10168,7 @@ func (o GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyArrayOutput) Index(i pu
 
 type GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicy struct {
 	// Specifies if PITR is enabled or disabled.
-	IsEnabled bool `pulumi:"isEnabled"`
+	IsEnabled *bool `pulumi:"isEnabled"`
 }
 
 // GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyInput is an input type that accepts GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyArgs and GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyOutput values.
@@ -11431,7 +10184,7 @@ type GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyInput interface 
 
 type GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyArgs struct {
 	// Specifies if PITR is enabled or disabled.
-	IsEnabled pulumi.BoolInput `pulumi:"isEnabled"`
+	IsEnabled pulumi.BoolPtrInput `pulumi:"isEnabled"`
 }
 
 func (GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyArgs) ElementType() reflect.Type {
@@ -11444,12 +10197,6 @@ func (i GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyArgs) ToGetMy
 
 func (i GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyArgs) ToGetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyOutputWithContext(ctx context.Context) GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyOutput)
-}
-
-func (i GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyArgs) ToOutput(ctx context.Context) pulumix.Output[GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicy] {
-	return pulumix.Output[GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicy]{
-		OutputState: i.ToGetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayInput is an input type that accepts GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyArray and GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayOutput values.
@@ -11477,12 +10224,6 @@ func (i GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyArray) ToGetM
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayOutput)
 }
 
-func (i GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicy] {
-	return pulumix.Output[[]GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicy]{
-		OutputState: i.ToGetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyOutput struct{ *pulumi.OutputState }
 
 func (GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyOutput) ElementType() reflect.Type {
@@ -11497,15 +10238,9 @@ func (o GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyOutput) ToGet
 	return o
 }
 
-func (o GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyOutput) ToOutput(ctx context.Context) pulumix.Output[GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicy] {
-	return pulumix.Output[GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicy]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Specifies if PITR is enabled or disabled.
-func (o GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyOutput) IsEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicy) bool { return v.IsEnabled }).(pulumi.BoolOutput)
+func (o GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyOutput) IsEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicy) *bool { return v.IsEnabled }).(pulumi.BoolPtrOutput)
 }
 
 type GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayOutput struct{ *pulumi.OutputState }
@@ -11522,12 +10257,6 @@ func (o GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayOutput) 
 	return o
 }
 
-func (o GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicy] {
-	return pulumix.Output[[]GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicy]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayOutput) Index(i pulumi.IntInput) GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicy {
 		return vs[0].([]GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicy)[vs[1].(int)]
@@ -11536,11 +10265,11 @@ func (o GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayOutput) 
 
 type GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicy struct {
 	// Specifies if any automatic backups created for a DB System should be retained or deleted when the DB System is deleted.
-	AutomaticBackupRetention string `pulumi:"automaticBackupRetention"`
+	AutomaticBackupRetention *string `pulumi:"automaticBackupRetention"`
 	// Specifies whether or not a backup is taken when the DB System is deleted. REQUIRE_FINAL_BACKUP: a backup is taken if the DB System is deleted. SKIP_FINAL_BACKUP: a backup is not taken if the DB System is deleted.
-	FinalBackup string `pulumi:"finalBackup"`
+	FinalBackup *string `pulumi:"finalBackup"`
 	// Specifies whether the DB System can be deleted. Set to true to prevent deletion, false (default) to allow.
-	IsDeleteProtected bool `pulumi:"isDeleteProtected"`
+	IsDeleteProtected *bool `pulumi:"isDeleteProtected"`
 }
 
 // GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyInput is an input type that accepts GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyArgs and GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyOutput values.
@@ -11556,11 +10285,11 @@ type GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyInput interface {
 
 type GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyArgs struct {
 	// Specifies if any automatic backups created for a DB System should be retained or deleted when the DB System is deleted.
-	AutomaticBackupRetention pulumi.StringInput `pulumi:"automaticBackupRetention"`
+	AutomaticBackupRetention pulumi.StringPtrInput `pulumi:"automaticBackupRetention"`
 	// Specifies whether or not a backup is taken when the DB System is deleted. REQUIRE_FINAL_BACKUP: a backup is taken if the DB System is deleted. SKIP_FINAL_BACKUP: a backup is not taken if the DB System is deleted.
-	FinalBackup pulumi.StringInput `pulumi:"finalBackup"`
+	FinalBackup pulumi.StringPtrInput `pulumi:"finalBackup"`
 	// Specifies whether the DB System can be deleted. Set to true to prevent deletion, false (default) to allow.
-	IsDeleteProtected pulumi.BoolInput `pulumi:"isDeleteProtected"`
+	IsDeleteProtected pulumi.BoolPtrInput `pulumi:"isDeleteProtected"`
 }
 
 func (GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyArgs) ElementType() reflect.Type {
@@ -11573,12 +10302,6 @@ func (i GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyArgs) ToGetMysqlBacku
 
 func (i GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyArgs) ToGetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyOutputWithContext(ctx context.Context) GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyOutput)
-}
-
-func (i GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyArgs) ToOutput(ctx context.Context) pulumix.Output[GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicy] {
-	return pulumix.Output[GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicy]{
-		OutputState: i.ToGetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyArrayInput is an input type that accepts GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyArray and GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyArrayOutput values.
@@ -11606,12 +10329,6 @@ func (i GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyArray) ToGetMysqlBack
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyArrayOutput)
 }
 
-func (i GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicy] {
-	return pulumix.Output[[]GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicy]{
-		OutputState: i.ToGetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyOutput struct{ *pulumi.OutputState }
 
 func (GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyOutput) ElementType() reflect.Type {
@@ -11626,25 +10343,19 @@ func (o GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyOutput) ToGetMysqlBac
 	return o
 }
 
-func (o GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyOutput) ToOutput(ctx context.Context) pulumix.Output[GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicy] {
-	return pulumix.Output[GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicy]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Specifies if any automatic backups created for a DB System should be retained or deleted when the DB System is deleted.
-func (o GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyOutput) AutomaticBackupRetention() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicy) string { return v.AutomaticBackupRetention }).(pulumi.StringOutput)
+func (o GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyOutput) AutomaticBackupRetention() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicy) *string { return v.AutomaticBackupRetention }).(pulumi.StringPtrOutput)
 }
 
 // Specifies whether or not a backup is taken when the DB System is deleted. REQUIRE_FINAL_BACKUP: a backup is taken if the DB System is deleted. SKIP_FINAL_BACKUP: a backup is not taken if the DB System is deleted.
-func (o GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyOutput) FinalBackup() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicy) string { return v.FinalBackup }).(pulumi.StringOutput)
+func (o GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyOutput) FinalBackup() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicy) *string { return v.FinalBackup }).(pulumi.StringPtrOutput)
 }
 
 // Specifies whether the DB System can be deleted. Set to true to prevent deletion, false (default) to allow.
-func (o GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyOutput) IsDeleteProtected() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicy) bool { return v.IsDeleteProtected }).(pulumi.BoolOutput)
+func (o GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyOutput) IsDeleteProtected() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicy) *bool { return v.IsDeleteProtected }).(pulumi.BoolPtrOutput)
 }
 
 type GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyArrayOutput struct{ *pulumi.OutputState }
@@ -11661,12 +10372,6 @@ func (o GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyArrayOutput) ToGetMys
 	return o
 }
 
-func (o GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicy] {
-	return pulumix.Output[[]GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicy]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyArrayOutput) Index(i pulumi.IntInput) GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicy {
 		return vs[0].([]GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicy)[vs[1].(int)]
@@ -11675,23 +10380,23 @@ func (o GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyArrayOutput) Index(i 
 
 type GetMysqlBackupsBackupDbSystemSnapshotEndpoint struct {
 	// The network address of the DB System.
-	Hostname string `pulumi:"hostname"`
+	Hostname *string `pulumi:"hostname"`
 	// The IP address the DB System is configured to listen on. A private IP address of the primary endpoint of the DB System. Must be an available IP address within the subnet's CIDR. This will be a "dotted-quad" style IPv4 address.
-	IpAddress string `pulumi:"ipAddress"`
+	IpAddress *string `pulumi:"ipAddress"`
 	// The access modes from the client that this endpoint supports.
 	Modes []string `pulumi:"modes"`
 	// The port for primary endpoint of the DB System to listen on.
-	Port int `pulumi:"port"`
+	Port *int `pulumi:"port"`
 	// The network port on which X Plugin listens for TCP/IP connections. This is the X Plugin equivalent of port.
-	PortX int `pulumi:"portX"`
+	PortX *int `pulumi:"portX"`
 	// The OCID of the resource that this endpoint is attached to.
-	ResourceId string `pulumi:"resourceId"`
+	ResourceId *string `pulumi:"resourceId"`
 	// The type of endpoint that clients and connectors can connect to.
-	ResourceType string `pulumi:"resourceType"`
+	ResourceType *string `pulumi:"resourceType"`
 	// The state of the endpoints, as far as it can seen from the DB System. There may be some inconsistency with the actual state of the MySQL service.
-	Status string `pulumi:"status"`
+	Status *string `pulumi:"status"`
 	// Additional information about the current endpoint status.
-	StatusDetails string `pulumi:"statusDetails"`
+	StatusDetails *string `pulumi:"statusDetails"`
 }
 
 // GetMysqlBackupsBackupDbSystemSnapshotEndpointInput is an input type that accepts GetMysqlBackupsBackupDbSystemSnapshotEndpointArgs and GetMysqlBackupsBackupDbSystemSnapshotEndpointOutput values.
@@ -11707,23 +10412,23 @@ type GetMysqlBackupsBackupDbSystemSnapshotEndpointInput interface {
 
 type GetMysqlBackupsBackupDbSystemSnapshotEndpointArgs struct {
 	// The network address of the DB System.
-	Hostname pulumi.StringInput `pulumi:"hostname"`
+	Hostname pulumi.StringPtrInput `pulumi:"hostname"`
 	// The IP address the DB System is configured to listen on. A private IP address of the primary endpoint of the DB System. Must be an available IP address within the subnet's CIDR. This will be a "dotted-quad" style IPv4 address.
-	IpAddress pulumi.StringInput `pulumi:"ipAddress"`
+	IpAddress pulumi.StringPtrInput `pulumi:"ipAddress"`
 	// The access modes from the client that this endpoint supports.
 	Modes pulumi.StringArrayInput `pulumi:"modes"`
 	// The port for primary endpoint of the DB System to listen on.
-	Port pulumi.IntInput `pulumi:"port"`
+	Port pulumi.IntPtrInput `pulumi:"port"`
 	// The network port on which X Plugin listens for TCP/IP connections. This is the X Plugin equivalent of port.
-	PortX pulumi.IntInput `pulumi:"portX"`
+	PortX pulumi.IntPtrInput `pulumi:"portX"`
 	// The OCID of the resource that this endpoint is attached to.
-	ResourceId pulumi.StringInput `pulumi:"resourceId"`
+	ResourceId pulumi.StringPtrInput `pulumi:"resourceId"`
 	// The type of endpoint that clients and connectors can connect to.
-	ResourceType pulumi.StringInput `pulumi:"resourceType"`
+	ResourceType pulumi.StringPtrInput `pulumi:"resourceType"`
 	// The state of the endpoints, as far as it can seen from the DB System. There may be some inconsistency with the actual state of the MySQL service.
-	Status pulumi.StringInput `pulumi:"status"`
+	Status pulumi.StringPtrInput `pulumi:"status"`
 	// Additional information about the current endpoint status.
-	StatusDetails pulumi.StringInput `pulumi:"statusDetails"`
+	StatusDetails pulumi.StringPtrInput `pulumi:"statusDetails"`
 }
 
 func (GetMysqlBackupsBackupDbSystemSnapshotEndpointArgs) ElementType() reflect.Type {
@@ -11736,12 +10441,6 @@ func (i GetMysqlBackupsBackupDbSystemSnapshotEndpointArgs) ToGetMysqlBackupsBack
 
 func (i GetMysqlBackupsBackupDbSystemSnapshotEndpointArgs) ToGetMysqlBackupsBackupDbSystemSnapshotEndpointOutputWithContext(ctx context.Context) GetMysqlBackupsBackupDbSystemSnapshotEndpointOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlBackupsBackupDbSystemSnapshotEndpointOutput)
-}
-
-func (i GetMysqlBackupsBackupDbSystemSnapshotEndpointArgs) ToOutput(ctx context.Context) pulumix.Output[GetMysqlBackupsBackupDbSystemSnapshotEndpoint] {
-	return pulumix.Output[GetMysqlBackupsBackupDbSystemSnapshotEndpoint]{
-		OutputState: i.ToGetMysqlBackupsBackupDbSystemSnapshotEndpointOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetMysqlBackupsBackupDbSystemSnapshotEndpointArrayInput is an input type that accepts GetMysqlBackupsBackupDbSystemSnapshotEndpointArray and GetMysqlBackupsBackupDbSystemSnapshotEndpointArrayOutput values.
@@ -11769,12 +10468,6 @@ func (i GetMysqlBackupsBackupDbSystemSnapshotEndpointArray) ToGetMysqlBackupsBac
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlBackupsBackupDbSystemSnapshotEndpointArrayOutput)
 }
 
-func (i GetMysqlBackupsBackupDbSystemSnapshotEndpointArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlBackupsBackupDbSystemSnapshotEndpoint] {
-	return pulumix.Output[[]GetMysqlBackupsBackupDbSystemSnapshotEndpoint]{
-		OutputState: i.ToGetMysqlBackupsBackupDbSystemSnapshotEndpointArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMysqlBackupsBackupDbSystemSnapshotEndpointOutput struct{ *pulumi.OutputState }
 
 func (GetMysqlBackupsBackupDbSystemSnapshotEndpointOutput) ElementType() reflect.Type {
@@ -11789,20 +10482,14 @@ func (o GetMysqlBackupsBackupDbSystemSnapshotEndpointOutput) ToGetMysqlBackupsBa
 	return o
 }
 
-func (o GetMysqlBackupsBackupDbSystemSnapshotEndpointOutput) ToOutput(ctx context.Context) pulumix.Output[GetMysqlBackupsBackupDbSystemSnapshotEndpoint] {
-	return pulumix.Output[GetMysqlBackupsBackupDbSystemSnapshotEndpoint]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The network address of the DB System.
-func (o GetMysqlBackupsBackupDbSystemSnapshotEndpointOutput) Hostname() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshotEndpoint) string { return v.Hostname }).(pulumi.StringOutput)
+func (o GetMysqlBackupsBackupDbSystemSnapshotEndpointOutput) Hostname() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshotEndpoint) *string { return v.Hostname }).(pulumi.StringPtrOutput)
 }
 
 // The IP address the DB System is configured to listen on. A private IP address of the primary endpoint of the DB System. Must be an available IP address within the subnet's CIDR. This will be a "dotted-quad" style IPv4 address.
-func (o GetMysqlBackupsBackupDbSystemSnapshotEndpointOutput) IpAddress() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshotEndpoint) string { return v.IpAddress }).(pulumi.StringOutput)
+func (o GetMysqlBackupsBackupDbSystemSnapshotEndpointOutput) IpAddress() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshotEndpoint) *string { return v.IpAddress }).(pulumi.StringPtrOutput)
 }
 
 // The access modes from the client that this endpoint supports.
@@ -11811,33 +10498,33 @@ func (o GetMysqlBackupsBackupDbSystemSnapshotEndpointOutput) Modes() pulumi.Stri
 }
 
 // The port for primary endpoint of the DB System to listen on.
-func (o GetMysqlBackupsBackupDbSystemSnapshotEndpointOutput) Port() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshotEndpoint) int { return v.Port }).(pulumi.IntOutput)
+func (o GetMysqlBackupsBackupDbSystemSnapshotEndpointOutput) Port() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshotEndpoint) *int { return v.Port }).(pulumi.IntPtrOutput)
 }
 
 // The network port on which X Plugin listens for TCP/IP connections. This is the X Plugin equivalent of port.
-func (o GetMysqlBackupsBackupDbSystemSnapshotEndpointOutput) PortX() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshotEndpoint) int { return v.PortX }).(pulumi.IntOutput)
+func (o GetMysqlBackupsBackupDbSystemSnapshotEndpointOutput) PortX() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshotEndpoint) *int { return v.PortX }).(pulumi.IntPtrOutput)
 }
 
 // The OCID of the resource that this endpoint is attached to.
-func (o GetMysqlBackupsBackupDbSystemSnapshotEndpointOutput) ResourceId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshotEndpoint) string { return v.ResourceId }).(pulumi.StringOutput)
+func (o GetMysqlBackupsBackupDbSystemSnapshotEndpointOutput) ResourceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshotEndpoint) *string { return v.ResourceId }).(pulumi.StringPtrOutput)
 }
 
 // The type of endpoint that clients and connectors can connect to.
-func (o GetMysqlBackupsBackupDbSystemSnapshotEndpointOutput) ResourceType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshotEndpoint) string { return v.ResourceType }).(pulumi.StringOutput)
+func (o GetMysqlBackupsBackupDbSystemSnapshotEndpointOutput) ResourceType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshotEndpoint) *string { return v.ResourceType }).(pulumi.StringPtrOutput)
 }
 
 // The state of the endpoints, as far as it can seen from the DB System. There may be some inconsistency with the actual state of the MySQL service.
-func (o GetMysqlBackupsBackupDbSystemSnapshotEndpointOutput) Status() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshotEndpoint) string { return v.Status }).(pulumi.StringOutput)
+func (o GetMysqlBackupsBackupDbSystemSnapshotEndpointOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshotEndpoint) *string { return v.Status }).(pulumi.StringPtrOutput)
 }
 
 // Additional information about the current endpoint status.
-func (o GetMysqlBackupsBackupDbSystemSnapshotEndpointOutput) StatusDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshotEndpoint) string { return v.StatusDetails }).(pulumi.StringOutput)
+func (o GetMysqlBackupsBackupDbSystemSnapshotEndpointOutput) StatusDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshotEndpoint) *string { return v.StatusDetails }).(pulumi.StringPtrOutput)
 }
 
 type GetMysqlBackupsBackupDbSystemSnapshotEndpointArrayOutput struct{ *pulumi.OutputState }
@@ -11854,12 +10541,6 @@ func (o GetMysqlBackupsBackupDbSystemSnapshotEndpointArrayOutput) ToGetMysqlBack
 	return o
 }
 
-func (o GetMysqlBackupsBackupDbSystemSnapshotEndpointArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlBackupsBackupDbSystemSnapshotEndpoint] {
-	return pulumix.Output[[]GetMysqlBackupsBackupDbSystemSnapshotEndpoint]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetMysqlBackupsBackupDbSystemSnapshotEndpointArrayOutput) Index(i pulumi.IntInput) GetMysqlBackupsBackupDbSystemSnapshotEndpointOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlBackupsBackupDbSystemSnapshotEndpoint {
 		return vs[0].([]GetMysqlBackupsBackupDbSystemSnapshotEndpoint)[vs[1].(int)]
@@ -11868,7 +10549,7 @@ func (o GetMysqlBackupsBackupDbSystemSnapshotEndpointArrayOutput) Index(i pulumi
 
 type GetMysqlBackupsBackupDbSystemSnapshotMaintenance struct {
 	// The start time of the maintenance window.
-	WindowStartTime string `pulumi:"windowStartTime"`
+	WindowStartTime *string `pulumi:"windowStartTime"`
 }
 
 // GetMysqlBackupsBackupDbSystemSnapshotMaintenanceInput is an input type that accepts GetMysqlBackupsBackupDbSystemSnapshotMaintenanceArgs and GetMysqlBackupsBackupDbSystemSnapshotMaintenanceOutput values.
@@ -11884,7 +10565,7 @@ type GetMysqlBackupsBackupDbSystemSnapshotMaintenanceInput interface {
 
 type GetMysqlBackupsBackupDbSystemSnapshotMaintenanceArgs struct {
 	// The start time of the maintenance window.
-	WindowStartTime pulumi.StringInput `pulumi:"windowStartTime"`
+	WindowStartTime pulumi.StringPtrInput `pulumi:"windowStartTime"`
 }
 
 func (GetMysqlBackupsBackupDbSystemSnapshotMaintenanceArgs) ElementType() reflect.Type {
@@ -11897,12 +10578,6 @@ func (i GetMysqlBackupsBackupDbSystemSnapshotMaintenanceArgs) ToGetMysqlBackupsB
 
 func (i GetMysqlBackupsBackupDbSystemSnapshotMaintenanceArgs) ToGetMysqlBackupsBackupDbSystemSnapshotMaintenanceOutputWithContext(ctx context.Context) GetMysqlBackupsBackupDbSystemSnapshotMaintenanceOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlBackupsBackupDbSystemSnapshotMaintenanceOutput)
-}
-
-func (i GetMysqlBackupsBackupDbSystemSnapshotMaintenanceArgs) ToOutput(ctx context.Context) pulumix.Output[GetMysqlBackupsBackupDbSystemSnapshotMaintenance] {
-	return pulumix.Output[GetMysqlBackupsBackupDbSystemSnapshotMaintenance]{
-		OutputState: i.ToGetMysqlBackupsBackupDbSystemSnapshotMaintenanceOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetMysqlBackupsBackupDbSystemSnapshotMaintenanceArrayInput is an input type that accepts GetMysqlBackupsBackupDbSystemSnapshotMaintenanceArray and GetMysqlBackupsBackupDbSystemSnapshotMaintenanceArrayOutput values.
@@ -11930,12 +10605,6 @@ func (i GetMysqlBackupsBackupDbSystemSnapshotMaintenanceArray) ToGetMysqlBackups
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlBackupsBackupDbSystemSnapshotMaintenanceArrayOutput)
 }
 
-func (i GetMysqlBackupsBackupDbSystemSnapshotMaintenanceArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlBackupsBackupDbSystemSnapshotMaintenance] {
-	return pulumix.Output[[]GetMysqlBackupsBackupDbSystemSnapshotMaintenance]{
-		OutputState: i.ToGetMysqlBackupsBackupDbSystemSnapshotMaintenanceArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMysqlBackupsBackupDbSystemSnapshotMaintenanceOutput struct{ *pulumi.OutputState }
 
 func (GetMysqlBackupsBackupDbSystemSnapshotMaintenanceOutput) ElementType() reflect.Type {
@@ -11950,15 +10619,9 @@ func (o GetMysqlBackupsBackupDbSystemSnapshotMaintenanceOutput) ToGetMysqlBackup
 	return o
 }
 
-func (o GetMysqlBackupsBackupDbSystemSnapshotMaintenanceOutput) ToOutput(ctx context.Context) pulumix.Output[GetMysqlBackupsBackupDbSystemSnapshotMaintenance] {
-	return pulumix.Output[GetMysqlBackupsBackupDbSystemSnapshotMaintenance]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The start time of the maintenance window.
-func (o GetMysqlBackupsBackupDbSystemSnapshotMaintenanceOutput) WindowStartTime() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshotMaintenance) string { return v.WindowStartTime }).(pulumi.StringOutput)
+func (o GetMysqlBackupsBackupDbSystemSnapshotMaintenanceOutput) WindowStartTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshotMaintenance) *string { return v.WindowStartTime }).(pulumi.StringPtrOutput)
 }
 
 type GetMysqlBackupsBackupDbSystemSnapshotMaintenanceArrayOutput struct{ *pulumi.OutputState }
@@ -11973,12 +10636,6 @@ func (o GetMysqlBackupsBackupDbSystemSnapshotMaintenanceArrayOutput) ToGetMysqlB
 
 func (o GetMysqlBackupsBackupDbSystemSnapshotMaintenanceArrayOutput) ToGetMysqlBackupsBackupDbSystemSnapshotMaintenanceArrayOutputWithContext(ctx context.Context) GetMysqlBackupsBackupDbSystemSnapshotMaintenanceArrayOutput {
 	return o
-}
-
-func (o GetMysqlBackupsBackupDbSystemSnapshotMaintenanceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlBackupsBackupDbSystemSnapshotMaintenance] {
-	return pulumix.Output[[]GetMysqlBackupsBackupDbSystemSnapshotMaintenance]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetMysqlBackupsBackupDbSystemSnapshotMaintenanceArrayOutput) Index(i pulumi.IntInput) GetMysqlBackupsBackupDbSystemSnapshotMaintenanceOutput {
@@ -12022,12 +10679,6 @@ func (i GetMysqlBackupsFilterArgs) ToGetMysqlBackupsFilterOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlBackupsFilterOutput)
 }
 
-func (i GetMysqlBackupsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetMysqlBackupsFilter] {
-	return pulumix.Output[GetMysqlBackupsFilter]{
-		OutputState: i.ToGetMysqlBackupsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetMysqlBackupsFilterArrayInput is an input type that accepts GetMysqlBackupsFilterArray and GetMysqlBackupsFilterArrayOutput values.
 // You can construct a concrete instance of `GetMysqlBackupsFilterArrayInput` via:
 //
@@ -12053,12 +10704,6 @@ func (i GetMysqlBackupsFilterArray) ToGetMysqlBackupsFilterArrayOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlBackupsFilterArrayOutput)
 }
 
-func (i GetMysqlBackupsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlBackupsFilter] {
-	return pulumix.Output[[]GetMysqlBackupsFilter]{
-		OutputState: i.ToGetMysqlBackupsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMysqlBackupsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetMysqlBackupsFilterOutput) ElementType() reflect.Type {
@@ -12071,12 +10716,6 @@ func (o GetMysqlBackupsFilterOutput) ToGetMysqlBackupsFilterOutput() GetMysqlBac
 
 func (o GetMysqlBackupsFilterOutput) ToGetMysqlBackupsFilterOutputWithContext(ctx context.Context) GetMysqlBackupsFilterOutput {
 	return o
-}
-
-func (o GetMysqlBackupsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetMysqlBackupsFilter] {
-	return pulumix.Output[GetMysqlBackupsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetMysqlBackupsFilterOutput) Name() pulumi.StringOutput {
@@ -12105,12 +10744,6 @@ func (o GetMysqlBackupsFilterArrayOutput) ToGetMysqlBackupsFilterArrayOutputWith
 	return o
 }
 
-func (o GetMysqlBackupsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlBackupsFilter] {
-	return pulumix.Output[[]GetMysqlBackupsFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetMysqlBackupsFilterArrayOutput) Index(i pulumi.IntInput) GetMysqlBackupsFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlBackupsFilter {
 		return vs[0].([]GetMysqlBackupsFilter)[vs[1].(int)]
@@ -12119,7 +10752,7 @@ func (o GetMysqlBackupsFilterArrayOutput) Index(i pulumi.IntInput) GetMysqlBacku
 
 type GetMysqlConfigurationInitVariable struct {
 	// Represents the MySQL server system variable lowerCaseTableNames (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_lower_case_table_names).
-	LowerCaseTableNames string `pulumi:"lowerCaseTableNames"`
+	LowerCaseTableNames *string `pulumi:"lowerCaseTableNames"`
 }
 
 // GetMysqlConfigurationInitVariableInput is an input type that accepts GetMysqlConfigurationInitVariableArgs and GetMysqlConfigurationInitVariableOutput values.
@@ -12135,7 +10768,7 @@ type GetMysqlConfigurationInitVariableInput interface {
 
 type GetMysqlConfigurationInitVariableArgs struct {
 	// Represents the MySQL server system variable lowerCaseTableNames (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_lower_case_table_names).
-	LowerCaseTableNames pulumi.StringInput `pulumi:"lowerCaseTableNames"`
+	LowerCaseTableNames pulumi.StringPtrInput `pulumi:"lowerCaseTableNames"`
 }
 
 func (GetMysqlConfigurationInitVariableArgs) ElementType() reflect.Type {
@@ -12148,12 +10781,6 @@ func (i GetMysqlConfigurationInitVariableArgs) ToGetMysqlConfigurationInitVariab
 
 func (i GetMysqlConfigurationInitVariableArgs) ToGetMysqlConfigurationInitVariableOutputWithContext(ctx context.Context) GetMysqlConfigurationInitVariableOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlConfigurationInitVariableOutput)
-}
-
-func (i GetMysqlConfigurationInitVariableArgs) ToOutput(ctx context.Context) pulumix.Output[GetMysqlConfigurationInitVariable] {
-	return pulumix.Output[GetMysqlConfigurationInitVariable]{
-		OutputState: i.ToGetMysqlConfigurationInitVariableOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetMysqlConfigurationInitVariableArrayInput is an input type that accepts GetMysqlConfigurationInitVariableArray and GetMysqlConfigurationInitVariableArrayOutput values.
@@ -12181,12 +10808,6 @@ func (i GetMysqlConfigurationInitVariableArray) ToGetMysqlConfigurationInitVaria
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlConfigurationInitVariableArrayOutput)
 }
 
-func (i GetMysqlConfigurationInitVariableArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlConfigurationInitVariable] {
-	return pulumix.Output[[]GetMysqlConfigurationInitVariable]{
-		OutputState: i.ToGetMysqlConfigurationInitVariableArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMysqlConfigurationInitVariableOutput struct{ *pulumi.OutputState }
 
 func (GetMysqlConfigurationInitVariableOutput) ElementType() reflect.Type {
@@ -12201,15 +10822,9 @@ func (o GetMysqlConfigurationInitVariableOutput) ToGetMysqlConfigurationInitVari
 	return o
 }
 
-func (o GetMysqlConfigurationInitVariableOutput) ToOutput(ctx context.Context) pulumix.Output[GetMysqlConfigurationInitVariable] {
-	return pulumix.Output[GetMysqlConfigurationInitVariable]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Represents the MySQL server system variable lowerCaseTableNames (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_lower_case_table_names).
-func (o GetMysqlConfigurationInitVariableOutput) LowerCaseTableNames() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationInitVariable) string { return v.LowerCaseTableNames }).(pulumi.StringOutput)
+func (o GetMysqlConfigurationInitVariableOutput) LowerCaseTableNames() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationInitVariable) *string { return v.LowerCaseTableNames }).(pulumi.StringPtrOutput)
 }
 
 type GetMysqlConfigurationInitVariableArrayOutput struct{ *pulumi.OutputState }
@@ -12226,12 +10841,6 @@ func (o GetMysqlConfigurationInitVariableArrayOutput) ToGetMysqlConfigurationIni
 	return o
 }
 
-func (o GetMysqlConfigurationInitVariableArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlConfigurationInitVariable] {
-	return pulumix.Output[[]GetMysqlConfigurationInitVariable]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetMysqlConfigurationInitVariableArrayOutput) Index(i pulumi.IntInput) GetMysqlConfigurationInitVariableOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlConfigurationInitVariable {
 		return vs[0].([]GetMysqlConfigurationInitVariable)[vs[1].(int)]
@@ -12240,181 +10849,181 @@ func (o GetMysqlConfigurationInitVariableArrayOutput) Index(i pulumi.IntInput) G
 
 type GetMysqlConfigurationVariable struct {
 	// ("autocommit")
-	Autocommit bool `pulumi:"autocommit"`
+	Autocommit *bool `pulumi:"autocommit"`
 	// If enabled, the server stores all temporary tables on disk rather than in memory.
-	BigTables bool `pulumi:"bigTables"`
+	BigTables *bool `pulumi:"bigTables"`
 	// Sets the binary log expiration period in seconds. binlogExpireLogsSeconds corresponds to the MySQL binary logging system variable [binlogExpireLogsSeconds](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_expire_logs_seconds).
-	BinlogExpireLogsSeconds int `pulumi:"binlogExpireLogsSeconds"`
+	BinlogExpireLogsSeconds *int `pulumi:"binlogExpireLogsSeconds"`
 	// Configures the amount of table metadata added to the binary log when using row-based logging. binlogRowMetadata corresponds to the MySQL binary logging system variable [binlogRowMetadata](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_row_metadata).
-	BinlogRowMetadata string `pulumi:"binlogRowMetadata"`
+	BinlogRowMetadata *string `pulumi:"binlogRowMetadata"`
 	// When set to PARTIAL_JSON, this enables use of a space-efficient binary log format for updates that modify only a small portion of a JSON document. binlogRowValueOptions corresponds to the MySQL binary logging system variable [binlogRowValueOptions](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_row_value_options).
-	BinlogRowValueOptions string `pulumi:"binlogRowValueOptions"`
+	BinlogRowValueOptions *string `pulumi:"binlogRowValueOptions"`
 	// Enables compression for transactions that are written to binary log files on this server. binlogTransactionCompression corresponds to the MySQL binary logging system variable [binlogTransactionCompression](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_transaction_compression).
-	BinlogTransactionCompression bool `pulumi:"binlogTransactionCompression"`
+	BinlogTransactionCompression *bool `pulumi:"binlogTransactionCompression"`
 	// ("completionType")
-	CompletionType string `pulumi:"completionType"`
+	CompletionType *string `pulumi:"completionType"`
 	// The number of seconds that the mysqld server waits for a connect packet before responding with Bad handshake.
-	ConnectTimeout int `pulumi:"connectTimeout"`
+	ConnectTimeout *int `pulumi:"connectTimeout"`
 	// Set the chunking size for updates to the global memory usage counter Global_connection_memory.
-	ConnectionMemoryChunkSize int `pulumi:"connectionMemoryChunkSize"`
+	ConnectionMemoryChunkSize *int `pulumi:"connectionMemoryChunkSize"`
 	// Set the maximum amount of memory that can be used by a single user connection.
-	ConnectionMemoryLimit string `pulumi:"connectionMemoryLimit"`
+	ConnectionMemoryLimit *string `pulumi:"connectionMemoryLimit"`
 	// ("cteMaxRecursionDepth")
-	CteMaxRecursionDepth string `pulumi:"cteMaxRecursionDepth"`
+	CteMaxRecursionDepth *string `pulumi:"cteMaxRecursionDepth"`
 	// ("defaultAuthenticationPlugin")
-	DefaultAuthenticationPlugin string `pulumi:"defaultAuthenticationPlugin"`
+	DefaultAuthenticationPlugin *string `pulumi:"defaultAuthenticationPlugin"`
 	// ("foreignKeyChecks")
-	ForeignKeyChecks bool `pulumi:"foreignKeyChecks"`
+	ForeignKeyChecks *bool `pulumi:"foreignKeyChecks"`
 	// ("generatedRandomPasswordLength") DEPRECATED -- variable should not be settable and will be ignored
 	//
 	// Deprecated: The 'generated_random_password_length' field has been deprecated and may be removed in a future version. Do not use this field.
-	GeneratedRandomPasswordLength int `pulumi:"generatedRandomPasswordLength"`
+	GeneratedRandomPasswordLength *int `pulumi:"generatedRandomPasswordLength"`
 	// Set the total amount of memory that can be used by all user connections.
-	GlobalConnectionMemoryLimit string `pulumi:"globalConnectionMemoryLimit"`
+	GlobalConnectionMemoryLimit *string `pulumi:"globalConnectionMemoryLimit"`
 	// Determines whether the MySQL server calculates Global_connection_memory.
-	GlobalConnectionMemoryTracking bool `pulumi:"globalConnectionMemoryTracking"`
+	GlobalConnectionMemoryTracking *bool `pulumi:"globalConnectionMemoryTracking"`
 	// * EVENTUAL: Both RO and RW transactions do not wait for preceding transactions to be applied before executing. A RW transaction does not wait for other members to apply a transaction. This means that a transaction could be externalized on one member before the others. This also means that in the event of a primary failover, the new primary can accept new RO and RW transactions before the previous primary transactions are all applied. RO transactions could result in outdated values, RW transactions could result in a rollback due to conflicts.
 	// * BEFORE_ON_PRIMARY_FAILOVER: New RO or RW transactions with a newly elected primary that is applying backlog from the old primary are held (not applied) until any backlog has been applied. This ensures that when a primary failover happens, intentionally or not, clients always see the latest value on the primary. This guarantees consistency, but means that clients must be able to handle the delay in the event that a backlog is being applied. Usually this delay should be minimal, but does depend on the size of the backlog.
 	// * BEFORE: A RW transaction waits for all preceding transactions to complete before being applied. A RO transaction waits for all preceding transactions to complete before being executed. This ensures that this transaction reads the latest value by only affecting the latency of the transaction. This reduces the overhead of synchronization on every RW transaction, by ensuring synchronization is used only on RO transactions. This consistency level also includes the consistency guarantees provided by BEFORE_ON_PRIMARY_FAILOVER.
 	// * AFTER: A RW transaction waits until its changes have been applied to all of the other members. This value has no effect on RO transactions. This mode ensures that when a transaction is committed on the local member, any subsequent transaction reads the written value or a more recent value on any group member. Use this mode with a group that is used for predominantly RO operations to ensure that applied RW transactions are applied everywhere once they commit. This could be used by your application to ensure that subsequent reads fetch the latest data which includes the latest writes. This reduces the overhead of synchronization on every RO transaction, by ensuring synchronization is used only on RW transactions. This consistency level also includes the consistency guarantees provided by BEFORE_ON_PRIMARY_FAILOVER.
 	// * BEFORE_AND_AFTER: A RW transaction waits for 1) all preceding transactions to complete before being applied and 2) until its changes have been applied on other members. A RO transaction waits for all preceding transactions to complete before execution takes place. This consistency level also includes the consistency guarantees provided by BEFORE_ON_PRIMARY_FAILOVER.
-	GroupReplicationConsistency string `pulumi:"groupReplicationConsistency"`
+	GroupReplicationConsistency *string `pulumi:"groupReplicationConsistency"`
 	// ("informationSchemaStatsExpiry")
-	InformationSchemaStatsExpiry int `pulumi:"informationSchemaStatsExpiry"`
+	InformationSchemaStatsExpiry *int `pulumi:"informationSchemaStatsExpiry"`
 	// Specifies the percentage of the most recently used pages for each buffer pool to read out and dump.
-	InnodbBufferPoolDumpPct int `pulumi:"innodbBufferPoolDumpPct"`
+	InnodbBufferPoolDumpPct *int `pulumi:"innodbBufferPoolDumpPct"`
 	// ("innodbBufferPoolInstances")
-	InnodbBufferPoolInstances int `pulumi:"innodbBufferPoolInstances"`
+	InnodbBufferPoolInstances *int `pulumi:"innodbBufferPoolInstances"`
 	// The size (in bytes) of the buffer pool, that is, the memory area where InnoDB caches table and index data.
-	InnodbBufferPoolSize string `pulumi:"innodbBufferPoolSize"`
+	InnodbBufferPoolSize *string `pulumi:"innodbBufferPoolSize"`
 	// innodbDdlBufferSize corresponds to the MySQL system variable [innodbDdlBufferSize] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_buffer_size)
-	InnodbDdlBufferSize string `pulumi:"innodbDdlBufferSize"`
+	InnodbDdlBufferSize *string `pulumi:"innodbDdlBufferSize"`
 	// innodbDdlThreads corresponds to the MySQL system variable [innodbDdlThreads] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_threads)
-	InnodbDdlThreads int `pulumi:"innodbDdlThreads"`
+	InnodbDdlThreads *int `pulumi:"innodbDdlThreads"`
 	// ("innodbFtEnableStopword")
-	InnodbFtEnableStopword bool `pulumi:"innodbFtEnableStopword"`
+	InnodbFtEnableStopword *bool `pulumi:"innodbFtEnableStopword"`
 	// ("innodbFtMaxTokenSize")
-	InnodbFtMaxTokenSize int `pulumi:"innodbFtMaxTokenSize"`
+	InnodbFtMaxTokenSize *int `pulumi:"innodbFtMaxTokenSize"`
 	// ("innodbFtMinTokenSize")
-	InnodbFtMinTokenSize int `pulumi:"innodbFtMinTokenSize"`
+	InnodbFtMinTokenSize *int `pulumi:"innodbFtMinTokenSize"`
 	// ("innodbFtNumWordOptimize")
-	InnodbFtNumWordOptimize int `pulumi:"innodbFtNumWordOptimize"`
+	InnodbFtNumWordOptimize *int `pulumi:"innodbFtNumWordOptimize"`
 	// ("innodbFtResultCacheLimit")
-	InnodbFtResultCacheLimit string `pulumi:"innodbFtResultCacheLimit"`
+	InnodbFtResultCacheLimit *string `pulumi:"innodbFtResultCacheLimit"`
 	// ("innodbFtServerStopwordTable")
-	InnodbFtServerStopwordTable string `pulumi:"innodbFtServerStopwordTable"`
+	InnodbFtServerStopwordTable *string `pulumi:"innodbFtServerStopwordTable"`
 	// ("innodbLockWaitTimeout")
-	InnodbLockWaitTimeout int `pulumi:"innodbLockWaitTimeout"`
+	InnodbLockWaitTimeout *int `pulumi:"innodbLockWaitTimeout"`
 	// Enables dedicated log writer threads for writing redo log records from the log buffer to the system buffers and flushing the system buffers to the redo log files.
-	InnodbLogWriterThreads bool `pulumi:"innodbLogWriterThreads"`
+	InnodbLogWriterThreads *bool `pulumi:"innodbLogWriterThreads"`
 	// The desired maximum purge lag in terms of transactions.
-	InnodbMaxPurgeLag string `pulumi:"innodbMaxPurgeLag"`
+	InnodbMaxPurgeLag *string `pulumi:"innodbMaxPurgeLag"`
 	// The maximum delay in microseconds for the delay imposed when the innodbMaxPurgeLag threshold is exceeded.
-	InnodbMaxPurgeLagDelay int `pulumi:"innodbMaxPurgeLagDelay"`
+	InnodbMaxPurgeLagDelay *int `pulumi:"innodbMaxPurgeLagDelay"`
 	// The number of index pages to sample when estimating cardinality and other statistics for an indexed column, such as those calculated by ANALYZE TABLE.
-	InnodbStatsPersistentSamplePages string `pulumi:"innodbStatsPersistentSamplePages"`
+	InnodbStatsPersistentSamplePages *string `pulumi:"innodbStatsPersistentSamplePages"`
 	// The number of index pages to sample when estimating cardinality and other statistics for an indexed column, such as those calculated by [ANALYZE TABLE](https://dev.mysql.com/doc/refman/8.0/en/analyze-table.html).
-	InnodbStatsTransientSamplePages string `pulumi:"innodbStatsTransientSamplePages"`
+	InnodbStatsTransientSamplePages *string `pulumi:"innodbStatsTransientSamplePages"`
 	// The number of seconds the server waits for activity on an interactive connection before closing it.
-	InteractiveTimeout int `pulumi:"interactiveTimeout"`
+	InteractiveTimeout *int `pulumi:"interactiveTimeout"`
 	// ("localInfile")
-	LocalInfile bool `pulumi:"localInfile"`
+	LocalInfile *bool `pulumi:"localInfile"`
 	// ("mandatoryRoles")
-	MandatoryRoles string `pulumi:"mandatoryRoles"`
+	MandatoryRoles *string `pulumi:"mandatoryRoles"`
 	// The maximum size of one packet or any generated/intermediate string.
-	MaxAllowedPacket int `pulumi:"maxAllowedPacket"`
+	MaxAllowedPacket *int `pulumi:"maxAllowedPacket"`
 	// Sets the size of the transaction cache.
-	MaxBinlogCacheSize string `pulumi:"maxBinlogCacheSize"`
+	MaxBinlogCacheSize *string `pulumi:"maxBinlogCacheSize"`
 	// ("maxConnectErrors")
-	MaxConnectErrors string `pulumi:"maxConnectErrors"`
+	MaxConnectErrors *string `pulumi:"maxConnectErrors"`
 	// ("maxConnections")
-	MaxConnections int `pulumi:"maxConnections"`
+	MaxConnections *int `pulumi:"maxConnections"`
 	// ("maxExecutionTime")
-	MaxExecutionTime string `pulumi:"maxExecutionTime"`
+	MaxExecutionTime *string `pulumi:"maxExecutionTime"`
 	// This variable sets the maximum size to which user-created MEMORY tables are permitted to grow.
-	MaxHeapTableSize string `pulumi:"maxHeapTableSize"`
+	MaxHeapTableSize *string `pulumi:"maxHeapTableSize"`
 	// ("maxPreparedStmtCount")
-	MaxPreparedStmtCount int `pulumi:"maxPreparedStmtCount"`
+	MaxPreparedStmtCount *int `pulumi:"maxPreparedStmtCount"`
 	// ("mysqlFirewallMode")
-	MysqlFirewallMode bool `pulumi:"mysqlFirewallMode"`
+	MysqlFirewallMode *bool `pulumi:"mysqlFirewallMode"`
 	// DEPRECATED -- typo of mysqlx_zstd_default_compression_level. variable will be ignored.
 	//
 	// Deprecated: The 'mysql_zstd_default_compression_level' field has been deprecated and may be removed in a future version. Do not use this field.
-	MysqlZstdDefaultCompressionLevel int `pulumi:"mysqlZstdDefaultCompressionLevel"`
+	MysqlZstdDefaultCompressionLevel *int `pulumi:"mysqlZstdDefaultCompressionLevel"`
 	// The number of seconds X Plugin waits for the first packet to be received from newly connected clients.
-	MysqlxConnectTimeout int `pulumi:"mysqlxConnectTimeout"`
+	MysqlxConnectTimeout *int `pulumi:"mysqlxConnectTimeout"`
 	// Set the default compression level for the deflate algorithm. ("mysqlxDeflateDefaultCompressionLevel")
-	MysqlxDeflateDefaultCompressionLevel int `pulumi:"mysqlxDeflateDefaultCompressionLevel"`
+	MysqlxDeflateDefaultCompressionLevel *int `pulumi:"mysqlxDeflateDefaultCompressionLevel"`
 	// Limit the upper bound of accepted compression levels for the deflate algorithm. ("mysqlxDeflateMaxClientCompressionLevel")
-	MysqlxDeflateMaxClientCompressionLevel int `pulumi:"mysqlxDeflateMaxClientCompressionLevel"`
+	MysqlxDeflateMaxClientCompressionLevel *int `pulumi:"mysqlxDeflateMaxClientCompressionLevel"`
 	// ("mysqlxDocumentIdUniquePrefix") DEPRECATED -- variable should not be settable and will be ignored
 	//
 	// Deprecated: The 'mysqlx_document_id_unique_prefix' field has been deprecated and may be removed in a future version. Do not use this field.
-	MysqlxDocumentIdUniquePrefix int `pulumi:"mysqlxDocumentIdUniquePrefix"`
+	MysqlxDocumentIdUniquePrefix *int `pulumi:"mysqlxDocumentIdUniquePrefix"`
 	// ("mysqlxEnableHelloNotice") DEPRECATED -- variable should not be settable and will be ignored
-	MysqlxEnableHelloNotice bool `pulumi:"mysqlxEnableHelloNotice"`
+	MysqlxEnableHelloNotice *bool `pulumi:"mysqlxEnableHelloNotice"`
 	// ("mysqlxIdleWorkerThreadTimeout") DEPRECATED -- variable should not be settable and will be ignored
 	//
 	// Deprecated: The 'mysqlx_idle_worker_thread_timeout' field has been deprecated and may be removed in a future version. Do not use this field.
-	MysqlxIdleWorkerThreadTimeout int `pulumi:"mysqlxIdleWorkerThreadTimeout"`
+	MysqlxIdleWorkerThreadTimeout *int `pulumi:"mysqlxIdleWorkerThreadTimeout"`
 	// The number of seconds to wait for interactive clients to timeout.
-	MysqlxInteractiveTimeout int `pulumi:"mysqlxInteractiveTimeout"`
+	MysqlxInteractiveTimeout *int `pulumi:"mysqlxInteractiveTimeout"`
 	// Set the default compression level for the lz4 algorithm. ("mysqlxLz4DefaultCompressionLevel")
-	MysqlxLz4defaultCompressionLevel int `pulumi:"mysqlxLz4defaultCompressionLevel"`
+	MysqlxLz4defaultCompressionLevel *int `pulumi:"mysqlxLz4defaultCompressionLevel"`
 	// Limit the upper bound of accepted compression levels for the lz4 algorithm. ("mysqlxLz4MaxClientCompressionLevel")
-	MysqlxLz4maxClientCompressionLevel int `pulumi:"mysqlxLz4maxClientCompressionLevel"`
+	MysqlxLz4maxClientCompressionLevel *int `pulumi:"mysqlxLz4maxClientCompressionLevel"`
 	// The maximum size of network packets that can be received by X Plugin.
-	MysqlxMaxAllowedPacket int `pulumi:"mysqlxMaxAllowedPacket"`
+	MysqlxMaxAllowedPacket *int `pulumi:"mysqlxMaxAllowedPacket"`
 	// ("mysqlxMinWorkerThreads") DEPRECATED -- variable should not be settable and will be ignored
 	//
 	// Deprecated: The 'mysqlx_min_worker_threads' field has been deprecated and may be removed in a future version. Do not use this field.
-	MysqlxMinWorkerThreads int `pulumi:"mysqlxMinWorkerThreads"`
+	MysqlxMinWorkerThreads *int `pulumi:"mysqlxMinWorkerThreads"`
 	// The number of seconds that X Plugin waits for blocking read operations to complete. After this time, if the read operation is not successful, X Plugin closes the connection and returns a warning notice with the error code ER_IO_READ_ERROR to the client application.
-	MysqlxReadTimeout int `pulumi:"mysqlxReadTimeout"`
+	MysqlxReadTimeout *int `pulumi:"mysqlxReadTimeout"`
 	// The number of seconds that X Plugin waits for activity on a connection.
-	MysqlxWaitTimeout int `pulumi:"mysqlxWaitTimeout"`
+	MysqlxWaitTimeout *int `pulumi:"mysqlxWaitTimeout"`
 	// The number of seconds that X Plugin waits for blocking write operations to complete. After this time, if the write operation is not successful, X Plugin closes the connection.
-	MysqlxWriteTimeout int `pulumi:"mysqlxWriteTimeout"`
+	MysqlxWriteTimeout *int `pulumi:"mysqlxWriteTimeout"`
 	// Set the default compression level for the zstd algorithm. ("mysqlxZstdDefaultCompressionLevel")
-	MysqlxZstdDefaultCompressionLevel int `pulumi:"mysqlxZstdDefaultCompressionLevel"`
+	MysqlxZstdDefaultCompressionLevel *int `pulumi:"mysqlxZstdDefaultCompressionLevel"`
 	// Limit the upper bound of accepted compression levels for the zstd algorithm. ("mysqlxZstdMaxClientCompressionLevel")
-	MysqlxZstdMaxClientCompressionLevel int `pulumi:"mysqlxZstdMaxClientCompressionLevel"`
+	MysqlxZstdMaxClientCompressionLevel *int `pulumi:"mysqlxZstdMaxClientCompressionLevel"`
 	// The number of seconds to wait for more data from a connection before aborting the read.
-	NetReadTimeout int `pulumi:"netReadTimeout"`
+	NetReadTimeout *int `pulumi:"netReadTimeout"`
 	// The number of seconds to wait for a block to be written to a connection before aborting the write.
-	NetWriteTimeout int `pulumi:"netWriteTimeout"`
+	NetWriteTimeout *int `pulumi:"netWriteTimeout"`
 	// ("parserMaxMemSize")
-	ParserMaxMemSize string `pulumi:"parserMaxMemSize"`
+	ParserMaxMemSize *string `pulumi:"parserMaxMemSize"`
 	// ("queryAllocBlockSize") DEPRECATED -- variable should not be settable and will be ignored
 	//
 	// Deprecated: The 'query_alloc_block_size' field has been deprecated and may be removed in a future version. Do not use this field.
-	QueryAllocBlockSize string `pulumi:"queryAllocBlockSize"`
+	QueryAllocBlockSize *string `pulumi:"queryAllocBlockSize"`
 	// ("queryPreallocSize") DEPRECATED -- variable should not be settable and will be ignored
 	//
 	// Deprecated: The 'query_prealloc_size' field has been deprecated and may be removed in a future version. Do not use this field.
-	QueryPreallocSize string `pulumi:"queryPreallocSize"`
+	QueryPreallocSize *string `pulumi:"queryPreallocSize"`
 	// regexpTimeLimit corresponds to the MySQL system variable [regexpTimeLimit] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_regexp_time_limit)
-	RegexpTimeLimit int `pulumi:"regexpTimeLimit"`
+	RegexpTimeLimit *int `pulumi:"regexpTimeLimit"`
 	// Each session that must perform a sort allocates a buffer of this size.
-	SortBufferSize string `pulumi:"sortBufferSize"`
+	SortBufferSize *string `pulumi:"sortBufferSize"`
 	// ("sqlMode")
-	SqlMode string `pulumi:"sqlMode"`
+	SqlMode *string `pulumi:"sqlMode"`
 	// ("sqlRequirePrimaryKey")
-	SqlRequirePrimaryKey bool `pulumi:"sqlRequirePrimaryKey"`
+	SqlRequirePrimaryKey *bool `pulumi:"sqlRequirePrimaryKey"`
 	// ("sqlWarnings")
-	SqlWarnings bool `pulumi:"sqlWarnings"`
+	SqlWarnings *bool `pulumi:"sqlWarnings"`
 	// Controls whether the thread pool uses dedicated listener threads. If enabled, a listener thread in each thread group is dedicated to the task of listening for network events from clients, ensuring that the maximum number of query worker threads is no more than the value specified by threadPoolMaxTransactionsLimit. threadPoolDedicatedListeners corresponds to the MySQL Database Service-specific system variable thread_pool_dedicated_listeners.
-	ThreadPoolDedicatedListeners bool `pulumi:"threadPoolDedicatedListeners"`
+	ThreadPoolDedicatedListeners *bool `pulumi:"threadPoolDedicatedListeners"`
 	// Limits the maximum number of open transactions to the defined value. The default value is 0, which enforces no limit. threadPoolMaxTransactionsLimit corresponds to the MySQL Database Service-specific system variable thread_pool_max_transactions_limit.
-	ThreadPoolMaxTransactionsLimit int `pulumi:"threadPoolMaxTransactionsLimit"`
+	ThreadPoolMaxTransactionsLimit *int `pulumi:"threadPoolMaxTransactionsLimit"`
 	// Initializes the time zone for each client that connects.
-	TimeZone string `pulumi:"timeZone"`
+	TimeZone *string `pulumi:"timeZone"`
 	// The maximum size of internal in-memory temporary tables. This variable does not apply to user-created MEMORY tables.
-	TmpTableSize string `pulumi:"tmpTableSize"`
+	TmpTableSize *string `pulumi:"tmpTableSize"`
 	// ("transactionIsolation")
-	TransactionIsolation string `pulumi:"transactionIsolation"`
+	TransactionIsolation *string `pulumi:"transactionIsolation"`
 	// The number of seconds the server waits for activity on a noninteractive connection before closing it.
-	WaitTimeout int `pulumi:"waitTimeout"`
+	WaitTimeout *int `pulumi:"waitTimeout"`
 }
 
 // GetMysqlConfigurationVariableInput is an input type that accepts GetMysqlConfigurationVariableArgs and GetMysqlConfigurationVariableOutput values.
@@ -12430,181 +11039,181 @@ type GetMysqlConfigurationVariableInput interface {
 
 type GetMysqlConfigurationVariableArgs struct {
 	// ("autocommit")
-	Autocommit pulumi.BoolInput `pulumi:"autocommit"`
+	Autocommit pulumi.BoolPtrInput `pulumi:"autocommit"`
 	// If enabled, the server stores all temporary tables on disk rather than in memory.
-	BigTables pulumi.BoolInput `pulumi:"bigTables"`
+	BigTables pulumi.BoolPtrInput `pulumi:"bigTables"`
 	// Sets the binary log expiration period in seconds. binlogExpireLogsSeconds corresponds to the MySQL binary logging system variable [binlogExpireLogsSeconds](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_expire_logs_seconds).
-	BinlogExpireLogsSeconds pulumi.IntInput `pulumi:"binlogExpireLogsSeconds"`
+	BinlogExpireLogsSeconds pulumi.IntPtrInput `pulumi:"binlogExpireLogsSeconds"`
 	// Configures the amount of table metadata added to the binary log when using row-based logging. binlogRowMetadata corresponds to the MySQL binary logging system variable [binlogRowMetadata](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_row_metadata).
-	BinlogRowMetadata pulumi.StringInput `pulumi:"binlogRowMetadata"`
+	BinlogRowMetadata pulumi.StringPtrInput `pulumi:"binlogRowMetadata"`
 	// When set to PARTIAL_JSON, this enables use of a space-efficient binary log format for updates that modify only a small portion of a JSON document. binlogRowValueOptions corresponds to the MySQL binary logging system variable [binlogRowValueOptions](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_row_value_options).
-	BinlogRowValueOptions pulumi.StringInput `pulumi:"binlogRowValueOptions"`
+	BinlogRowValueOptions pulumi.StringPtrInput `pulumi:"binlogRowValueOptions"`
 	// Enables compression for transactions that are written to binary log files on this server. binlogTransactionCompression corresponds to the MySQL binary logging system variable [binlogTransactionCompression](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_transaction_compression).
-	BinlogTransactionCompression pulumi.BoolInput `pulumi:"binlogTransactionCompression"`
+	BinlogTransactionCompression pulumi.BoolPtrInput `pulumi:"binlogTransactionCompression"`
 	// ("completionType")
-	CompletionType pulumi.StringInput `pulumi:"completionType"`
+	CompletionType pulumi.StringPtrInput `pulumi:"completionType"`
 	// The number of seconds that the mysqld server waits for a connect packet before responding with Bad handshake.
-	ConnectTimeout pulumi.IntInput `pulumi:"connectTimeout"`
+	ConnectTimeout pulumi.IntPtrInput `pulumi:"connectTimeout"`
 	// Set the chunking size for updates to the global memory usage counter Global_connection_memory.
-	ConnectionMemoryChunkSize pulumi.IntInput `pulumi:"connectionMemoryChunkSize"`
+	ConnectionMemoryChunkSize pulumi.IntPtrInput `pulumi:"connectionMemoryChunkSize"`
 	// Set the maximum amount of memory that can be used by a single user connection.
-	ConnectionMemoryLimit pulumi.StringInput `pulumi:"connectionMemoryLimit"`
+	ConnectionMemoryLimit pulumi.StringPtrInput `pulumi:"connectionMemoryLimit"`
 	// ("cteMaxRecursionDepth")
-	CteMaxRecursionDepth pulumi.StringInput `pulumi:"cteMaxRecursionDepth"`
+	CteMaxRecursionDepth pulumi.StringPtrInput `pulumi:"cteMaxRecursionDepth"`
 	// ("defaultAuthenticationPlugin")
-	DefaultAuthenticationPlugin pulumi.StringInput `pulumi:"defaultAuthenticationPlugin"`
+	DefaultAuthenticationPlugin pulumi.StringPtrInput `pulumi:"defaultAuthenticationPlugin"`
 	// ("foreignKeyChecks")
-	ForeignKeyChecks pulumi.BoolInput `pulumi:"foreignKeyChecks"`
+	ForeignKeyChecks pulumi.BoolPtrInput `pulumi:"foreignKeyChecks"`
 	// ("generatedRandomPasswordLength") DEPRECATED -- variable should not be settable and will be ignored
 	//
 	// Deprecated: The 'generated_random_password_length' field has been deprecated and may be removed in a future version. Do not use this field.
-	GeneratedRandomPasswordLength pulumi.IntInput `pulumi:"generatedRandomPasswordLength"`
+	GeneratedRandomPasswordLength pulumi.IntPtrInput `pulumi:"generatedRandomPasswordLength"`
 	// Set the total amount of memory that can be used by all user connections.
-	GlobalConnectionMemoryLimit pulumi.StringInput `pulumi:"globalConnectionMemoryLimit"`
+	GlobalConnectionMemoryLimit pulumi.StringPtrInput `pulumi:"globalConnectionMemoryLimit"`
 	// Determines whether the MySQL server calculates Global_connection_memory.
-	GlobalConnectionMemoryTracking pulumi.BoolInput `pulumi:"globalConnectionMemoryTracking"`
+	GlobalConnectionMemoryTracking pulumi.BoolPtrInput `pulumi:"globalConnectionMemoryTracking"`
 	// * EVENTUAL: Both RO and RW transactions do not wait for preceding transactions to be applied before executing. A RW transaction does not wait for other members to apply a transaction. This means that a transaction could be externalized on one member before the others. This also means that in the event of a primary failover, the new primary can accept new RO and RW transactions before the previous primary transactions are all applied. RO transactions could result in outdated values, RW transactions could result in a rollback due to conflicts.
 	// * BEFORE_ON_PRIMARY_FAILOVER: New RO or RW transactions with a newly elected primary that is applying backlog from the old primary are held (not applied) until any backlog has been applied. This ensures that when a primary failover happens, intentionally or not, clients always see the latest value on the primary. This guarantees consistency, but means that clients must be able to handle the delay in the event that a backlog is being applied. Usually this delay should be minimal, but does depend on the size of the backlog.
 	// * BEFORE: A RW transaction waits for all preceding transactions to complete before being applied. A RO transaction waits for all preceding transactions to complete before being executed. This ensures that this transaction reads the latest value by only affecting the latency of the transaction. This reduces the overhead of synchronization on every RW transaction, by ensuring synchronization is used only on RO transactions. This consistency level also includes the consistency guarantees provided by BEFORE_ON_PRIMARY_FAILOVER.
 	// * AFTER: A RW transaction waits until its changes have been applied to all of the other members. This value has no effect on RO transactions. This mode ensures that when a transaction is committed on the local member, any subsequent transaction reads the written value or a more recent value on any group member. Use this mode with a group that is used for predominantly RO operations to ensure that applied RW transactions are applied everywhere once they commit. This could be used by your application to ensure that subsequent reads fetch the latest data which includes the latest writes. This reduces the overhead of synchronization on every RO transaction, by ensuring synchronization is used only on RW transactions. This consistency level also includes the consistency guarantees provided by BEFORE_ON_PRIMARY_FAILOVER.
 	// * BEFORE_AND_AFTER: A RW transaction waits for 1) all preceding transactions to complete before being applied and 2) until its changes have been applied on other members. A RO transaction waits for all preceding transactions to complete before execution takes place. This consistency level also includes the consistency guarantees provided by BEFORE_ON_PRIMARY_FAILOVER.
-	GroupReplicationConsistency pulumi.StringInput `pulumi:"groupReplicationConsistency"`
+	GroupReplicationConsistency pulumi.StringPtrInput `pulumi:"groupReplicationConsistency"`
 	// ("informationSchemaStatsExpiry")
-	InformationSchemaStatsExpiry pulumi.IntInput `pulumi:"informationSchemaStatsExpiry"`
+	InformationSchemaStatsExpiry pulumi.IntPtrInput `pulumi:"informationSchemaStatsExpiry"`
 	// Specifies the percentage of the most recently used pages for each buffer pool to read out and dump.
-	InnodbBufferPoolDumpPct pulumi.IntInput `pulumi:"innodbBufferPoolDumpPct"`
+	InnodbBufferPoolDumpPct pulumi.IntPtrInput `pulumi:"innodbBufferPoolDumpPct"`
 	// ("innodbBufferPoolInstances")
-	InnodbBufferPoolInstances pulumi.IntInput `pulumi:"innodbBufferPoolInstances"`
+	InnodbBufferPoolInstances pulumi.IntPtrInput `pulumi:"innodbBufferPoolInstances"`
 	// The size (in bytes) of the buffer pool, that is, the memory area where InnoDB caches table and index data.
-	InnodbBufferPoolSize pulumi.StringInput `pulumi:"innodbBufferPoolSize"`
+	InnodbBufferPoolSize pulumi.StringPtrInput `pulumi:"innodbBufferPoolSize"`
 	// innodbDdlBufferSize corresponds to the MySQL system variable [innodbDdlBufferSize] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_buffer_size)
-	InnodbDdlBufferSize pulumi.StringInput `pulumi:"innodbDdlBufferSize"`
+	InnodbDdlBufferSize pulumi.StringPtrInput `pulumi:"innodbDdlBufferSize"`
 	// innodbDdlThreads corresponds to the MySQL system variable [innodbDdlThreads] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_threads)
-	InnodbDdlThreads pulumi.IntInput `pulumi:"innodbDdlThreads"`
+	InnodbDdlThreads pulumi.IntPtrInput `pulumi:"innodbDdlThreads"`
 	// ("innodbFtEnableStopword")
-	InnodbFtEnableStopword pulumi.BoolInput `pulumi:"innodbFtEnableStopword"`
+	InnodbFtEnableStopword pulumi.BoolPtrInput `pulumi:"innodbFtEnableStopword"`
 	// ("innodbFtMaxTokenSize")
-	InnodbFtMaxTokenSize pulumi.IntInput `pulumi:"innodbFtMaxTokenSize"`
+	InnodbFtMaxTokenSize pulumi.IntPtrInput `pulumi:"innodbFtMaxTokenSize"`
 	// ("innodbFtMinTokenSize")
-	InnodbFtMinTokenSize pulumi.IntInput `pulumi:"innodbFtMinTokenSize"`
+	InnodbFtMinTokenSize pulumi.IntPtrInput `pulumi:"innodbFtMinTokenSize"`
 	// ("innodbFtNumWordOptimize")
-	InnodbFtNumWordOptimize pulumi.IntInput `pulumi:"innodbFtNumWordOptimize"`
+	InnodbFtNumWordOptimize pulumi.IntPtrInput `pulumi:"innodbFtNumWordOptimize"`
 	// ("innodbFtResultCacheLimit")
-	InnodbFtResultCacheLimit pulumi.StringInput `pulumi:"innodbFtResultCacheLimit"`
+	InnodbFtResultCacheLimit pulumi.StringPtrInput `pulumi:"innodbFtResultCacheLimit"`
 	// ("innodbFtServerStopwordTable")
-	InnodbFtServerStopwordTable pulumi.StringInput `pulumi:"innodbFtServerStopwordTable"`
+	InnodbFtServerStopwordTable pulumi.StringPtrInput `pulumi:"innodbFtServerStopwordTable"`
 	// ("innodbLockWaitTimeout")
-	InnodbLockWaitTimeout pulumi.IntInput `pulumi:"innodbLockWaitTimeout"`
+	InnodbLockWaitTimeout pulumi.IntPtrInput `pulumi:"innodbLockWaitTimeout"`
 	// Enables dedicated log writer threads for writing redo log records from the log buffer to the system buffers and flushing the system buffers to the redo log files.
-	InnodbLogWriterThreads pulumi.BoolInput `pulumi:"innodbLogWriterThreads"`
+	InnodbLogWriterThreads pulumi.BoolPtrInput `pulumi:"innodbLogWriterThreads"`
 	// The desired maximum purge lag in terms of transactions.
-	InnodbMaxPurgeLag pulumi.StringInput `pulumi:"innodbMaxPurgeLag"`
+	InnodbMaxPurgeLag pulumi.StringPtrInput `pulumi:"innodbMaxPurgeLag"`
 	// The maximum delay in microseconds for the delay imposed when the innodbMaxPurgeLag threshold is exceeded.
-	InnodbMaxPurgeLagDelay pulumi.IntInput `pulumi:"innodbMaxPurgeLagDelay"`
+	InnodbMaxPurgeLagDelay pulumi.IntPtrInput `pulumi:"innodbMaxPurgeLagDelay"`
 	// The number of index pages to sample when estimating cardinality and other statistics for an indexed column, such as those calculated by ANALYZE TABLE.
-	InnodbStatsPersistentSamplePages pulumi.StringInput `pulumi:"innodbStatsPersistentSamplePages"`
+	InnodbStatsPersistentSamplePages pulumi.StringPtrInput `pulumi:"innodbStatsPersistentSamplePages"`
 	// The number of index pages to sample when estimating cardinality and other statistics for an indexed column, such as those calculated by [ANALYZE TABLE](https://dev.mysql.com/doc/refman/8.0/en/analyze-table.html).
-	InnodbStatsTransientSamplePages pulumi.StringInput `pulumi:"innodbStatsTransientSamplePages"`
+	InnodbStatsTransientSamplePages pulumi.StringPtrInput `pulumi:"innodbStatsTransientSamplePages"`
 	// The number of seconds the server waits for activity on an interactive connection before closing it.
-	InteractiveTimeout pulumi.IntInput `pulumi:"interactiveTimeout"`
+	InteractiveTimeout pulumi.IntPtrInput `pulumi:"interactiveTimeout"`
 	// ("localInfile")
-	LocalInfile pulumi.BoolInput `pulumi:"localInfile"`
+	LocalInfile pulumi.BoolPtrInput `pulumi:"localInfile"`
 	// ("mandatoryRoles")
-	MandatoryRoles pulumi.StringInput `pulumi:"mandatoryRoles"`
+	MandatoryRoles pulumi.StringPtrInput `pulumi:"mandatoryRoles"`
 	// The maximum size of one packet or any generated/intermediate string.
-	MaxAllowedPacket pulumi.IntInput `pulumi:"maxAllowedPacket"`
+	MaxAllowedPacket pulumi.IntPtrInput `pulumi:"maxAllowedPacket"`
 	// Sets the size of the transaction cache.
-	MaxBinlogCacheSize pulumi.StringInput `pulumi:"maxBinlogCacheSize"`
+	MaxBinlogCacheSize pulumi.StringPtrInput `pulumi:"maxBinlogCacheSize"`
 	// ("maxConnectErrors")
-	MaxConnectErrors pulumi.StringInput `pulumi:"maxConnectErrors"`
+	MaxConnectErrors pulumi.StringPtrInput `pulumi:"maxConnectErrors"`
 	// ("maxConnections")
-	MaxConnections pulumi.IntInput `pulumi:"maxConnections"`
+	MaxConnections pulumi.IntPtrInput `pulumi:"maxConnections"`
 	// ("maxExecutionTime")
-	MaxExecutionTime pulumi.StringInput `pulumi:"maxExecutionTime"`
+	MaxExecutionTime pulumi.StringPtrInput `pulumi:"maxExecutionTime"`
 	// This variable sets the maximum size to which user-created MEMORY tables are permitted to grow.
-	MaxHeapTableSize pulumi.StringInput `pulumi:"maxHeapTableSize"`
+	MaxHeapTableSize pulumi.StringPtrInput `pulumi:"maxHeapTableSize"`
 	// ("maxPreparedStmtCount")
-	MaxPreparedStmtCount pulumi.IntInput `pulumi:"maxPreparedStmtCount"`
+	MaxPreparedStmtCount pulumi.IntPtrInput `pulumi:"maxPreparedStmtCount"`
 	// ("mysqlFirewallMode")
-	MysqlFirewallMode pulumi.BoolInput `pulumi:"mysqlFirewallMode"`
+	MysqlFirewallMode pulumi.BoolPtrInput `pulumi:"mysqlFirewallMode"`
 	// DEPRECATED -- typo of mysqlx_zstd_default_compression_level. variable will be ignored.
 	//
 	// Deprecated: The 'mysql_zstd_default_compression_level' field has been deprecated and may be removed in a future version. Do not use this field.
-	MysqlZstdDefaultCompressionLevel pulumi.IntInput `pulumi:"mysqlZstdDefaultCompressionLevel"`
+	MysqlZstdDefaultCompressionLevel pulumi.IntPtrInput `pulumi:"mysqlZstdDefaultCompressionLevel"`
 	// The number of seconds X Plugin waits for the first packet to be received from newly connected clients.
-	MysqlxConnectTimeout pulumi.IntInput `pulumi:"mysqlxConnectTimeout"`
+	MysqlxConnectTimeout pulumi.IntPtrInput `pulumi:"mysqlxConnectTimeout"`
 	// Set the default compression level for the deflate algorithm. ("mysqlxDeflateDefaultCompressionLevel")
-	MysqlxDeflateDefaultCompressionLevel pulumi.IntInput `pulumi:"mysqlxDeflateDefaultCompressionLevel"`
+	MysqlxDeflateDefaultCompressionLevel pulumi.IntPtrInput `pulumi:"mysqlxDeflateDefaultCompressionLevel"`
 	// Limit the upper bound of accepted compression levels for the deflate algorithm. ("mysqlxDeflateMaxClientCompressionLevel")
-	MysqlxDeflateMaxClientCompressionLevel pulumi.IntInput `pulumi:"mysqlxDeflateMaxClientCompressionLevel"`
+	MysqlxDeflateMaxClientCompressionLevel pulumi.IntPtrInput `pulumi:"mysqlxDeflateMaxClientCompressionLevel"`
 	// ("mysqlxDocumentIdUniquePrefix") DEPRECATED -- variable should not be settable and will be ignored
 	//
 	// Deprecated: The 'mysqlx_document_id_unique_prefix' field has been deprecated and may be removed in a future version. Do not use this field.
-	MysqlxDocumentIdUniquePrefix pulumi.IntInput `pulumi:"mysqlxDocumentIdUniquePrefix"`
+	MysqlxDocumentIdUniquePrefix pulumi.IntPtrInput `pulumi:"mysqlxDocumentIdUniquePrefix"`
 	// ("mysqlxEnableHelloNotice") DEPRECATED -- variable should not be settable and will be ignored
-	MysqlxEnableHelloNotice pulumi.BoolInput `pulumi:"mysqlxEnableHelloNotice"`
+	MysqlxEnableHelloNotice pulumi.BoolPtrInput `pulumi:"mysqlxEnableHelloNotice"`
 	// ("mysqlxIdleWorkerThreadTimeout") DEPRECATED -- variable should not be settable and will be ignored
 	//
 	// Deprecated: The 'mysqlx_idle_worker_thread_timeout' field has been deprecated and may be removed in a future version. Do not use this field.
-	MysqlxIdleWorkerThreadTimeout pulumi.IntInput `pulumi:"mysqlxIdleWorkerThreadTimeout"`
+	MysqlxIdleWorkerThreadTimeout pulumi.IntPtrInput `pulumi:"mysqlxIdleWorkerThreadTimeout"`
 	// The number of seconds to wait for interactive clients to timeout.
-	MysqlxInteractiveTimeout pulumi.IntInput `pulumi:"mysqlxInteractiveTimeout"`
+	MysqlxInteractiveTimeout pulumi.IntPtrInput `pulumi:"mysqlxInteractiveTimeout"`
 	// Set the default compression level for the lz4 algorithm. ("mysqlxLz4DefaultCompressionLevel")
-	MysqlxLz4defaultCompressionLevel pulumi.IntInput `pulumi:"mysqlxLz4defaultCompressionLevel"`
+	MysqlxLz4defaultCompressionLevel pulumi.IntPtrInput `pulumi:"mysqlxLz4defaultCompressionLevel"`
 	// Limit the upper bound of accepted compression levels for the lz4 algorithm. ("mysqlxLz4MaxClientCompressionLevel")
-	MysqlxLz4maxClientCompressionLevel pulumi.IntInput `pulumi:"mysqlxLz4maxClientCompressionLevel"`
+	MysqlxLz4maxClientCompressionLevel pulumi.IntPtrInput `pulumi:"mysqlxLz4maxClientCompressionLevel"`
 	// The maximum size of network packets that can be received by X Plugin.
-	MysqlxMaxAllowedPacket pulumi.IntInput `pulumi:"mysqlxMaxAllowedPacket"`
+	MysqlxMaxAllowedPacket pulumi.IntPtrInput `pulumi:"mysqlxMaxAllowedPacket"`
 	// ("mysqlxMinWorkerThreads") DEPRECATED -- variable should not be settable and will be ignored
 	//
 	// Deprecated: The 'mysqlx_min_worker_threads' field has been deprecated and may be removed in a future version. Do not use this field.
-	MysqlxMinWorkerThreads pulumi.IntInput `pulumi:"mysqlxMinWorkerThreads"`
+	MysqlxMinWorkerThreads pulumi.IntPtrInput `pulumi:"mysqlxMinWorkerThreads"`
 	// The number of seconds that X Plugin waits for blocking read operations to complete. After this time, if the read operation is not successful, X Plugin closes the connection and returns a warning notice with the error code ER_IO_READ_ERROR to the client application.
-	MysqlxReadTimeout pulumi.IntInput `pulumi:"mysqlxReadTimeout"`
+	MysqlxReadTimeout pulumi.IntPtrInput `pulumi:"mysqlxReadTimeout"`
 	// The number of seconds that X Plugin waits for activity on a connection.
-	MysqlxWaitTimeout pulumi.IntInput `pulumi:"mysqlxWaitTimeout"`
+	MysqlxWaitTimeout pulumi.IntPtrInput `pulumi:"mysqlxWaitTimeout"`
 	// The number of seconds that X Plugin waits for blocking write operations to complete. After this time, if the write operation is not successful, X Plugin closes the connection.
-	MysqlxWriteTimeout pulumi.IntInput `pulumi:"mysqlxWriteTimeout"`
+	MysqlxWriteTimeout pulumi.IntPtrInput `pulumi:"mysqlxWriteTimeout"`
 	// Set the default compression level for the zstd algorithm. ("mysqlxZstdDefaultCompressionLevel")
-	MysqlxZstdDefaultCompressionLevel pulumi.IntInput `pulumi:"mysqlxZstdDefaultCompressionLevel"`
+	MysqlxZstdDefaultCompressionLevel pulumi.IntPtrInput `pulumi:"mysqlxZstdDefaultCompressionLevel"`
 	// Limit the upper bound of accepted compression levels for the zstd algorithm. ("mysqlxZstdMaxClientCompressionLevel")
-	MysqlxZstdMaxClientCompressionLevel pulumi.IntInput `pulumi:"mysqlxZstdMaxClientCompressionLevel"`
+	MysqlxZstdMaxClientCompressionLevel pulumi.IntPtrInput `pulumi:"mysqlxZstdMaxClientCompressionLevel"`
 	// The number of seconds to wait for more data from a connection before aborting the read.
-	NetReadTimeout pulumi.IntInput `pulumi:"netReadTimeout"`
+	NetReadTimeout pulumi.IntPtrInput `pulumi:"netReadTimeout"`
 	// The number of seconds to wait for a block to be written to a connection before aborting the write.
-	NetWriteTimeout pulumi.IntInput `pulumi:"netWriteTimeout"`
+	NetWriteTimeout pulumi.IntPtrInput `pulumi:"netWriteTimeout"`
 	// ("parserMaxMemSize")
-	ParserMaxMemSize pulumi.StringInput `pulumi:"parserMaxMemSize"`
+	ParserMaxMemSize pulumi.StringPtrInput `pulumi:"parserMaxMemSize"`
 	// ("queryAllocBlockSize") DEPRECATED -- variable should not be settable and will be ignored
 	//
 	// Deprecated: The 'query_alloc_block_size' field has been deprecated and may be removed in a future version. Do not use this field.
-	QueryAllocBlockSize pulumi.StringInput `pulumi:"queryAllocBlockSize"`
+	QueryAllocBlockSize pulumi.StringPtrInput `pulumi:"queryAllocBlockSize"`
 	// ("queryPreallocSize") DEPRECATED -- variable should not be settable and will be ignored
 	//
 	// Deprecated: The 'query_prealloc_size' field has been deprecated and may be removed in a future version. Do not use this field.
-	QueryPreallocSize pulumi.StringInput `pulumi:"queryPreallocSize"`
+	QueryPreallocSize pulumi.StringPtrInput `pulumi:"queryPreallocSize"`
 	// regexpTimeLimit corresponds to the MySQL system variable [regexpTimeLimit] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_regexp_time_limit)
-	RegexpTimeLimit pulumi.IntInput `pulumi:"regexpTimeLimit"`
+	RegexpTimeLimit pulumi.IntPtrInput `pulumi:"regexpTimeLimit"`
 	// Each session that must perform a sort allocates a buffer of this size.
-	SortBufferSize pulumi.StringInput `pulumi:"sortBufferSize"`
+	SortBufferSize pulumi.StringPtrInput `pulumi:"sortBufferSize"`
 	// ("sqlMode")
-	SqlMode pulumi.StringInput `pulumi:"sqlMode"`
+	SqlMode pulumi.StringPtrInput `pulumi:"sqlMode"`
 	// ("sqlRequirePrimaryKey")
-	SqlRequirePrimaryKey pulumi.BoolInput `pulumi:"sqlRequirePrimaryKey"`
+	SqlRequirePrimaryKey pulumi.BoolPtrInput `pulumi:"sqlRequirePrimaryKey"`
 	// ("sqlWarnings")
-	SqlWarnings pulumi.BoolInput `pulumi:"sqlWarnings"`
+	SqlWarnings pulumi.BoolPtrInput `pulumi:"sqlWarnings"`
 	// Controls whether the thread pool uses dedicated listener threads. If enabled, a listener thread in each thread group is dedicated to the task of listening for network events from clients, ensuring that the maximum number of query worker threads is no more than the value specified by threadPoolMaxTransactionsLimit. threadPoolDedicatedListeners corresponds to the MySQL Database Service-specific system variable thread_pool_dedicated_listeners.
-	ThreadPoolDedicatedListeners pulumi.BoolInput `pulumi:"threadPoolDedicatedListeners"`
+	ThreadPoolDedicatedListeners pulumi.BoolPtrInput `pulumi:"threadPoolDedicatedListeners"`
 	// Limits the maximum number of open transactions to the defined value. The default value is 0, which enforces no limit. threadPoolMaxTransactionsLimit corresponds to the MySQL Database Service-specific system variable thread_pool_max_transactions_limit.
-	ThreadPoolMaxTransactionsLimit pulumi.IntInput `pulumi:"threadPoolMaxTransactionsLimit"`
+	ThreadPoolMaxTransactionsLimit pulumi.IntPtrInput `pulumi:"threadPoolMaxTransactionsLimit"`
 	// Initializes the time zone for each client that connects.
-	TimeZone pulumi.StringInput `pulumi:"timeZone"`
+	TimeZone pulumi.StringPtrInput `pulumi:"timeZone"`
 	// The maximum size of internal in-memory temporary tables. This variable does not apply to user-created MEMORY tables.
-	TmpTableSize pulumi.StringInput `pulumi:"tmpTableSize"`
+	TmpTableSize pulumi.StringPtrInput `pulumi:"tmpTableSize"`
 	// ("transactionIsolation")
-	TransactionIsolation pulumi.StringInput `pulumi:"transactionIsolation"`
+	TransactionIsolation pulumi.StringPtrInput `pulumi:"transactionIsolation"`
 	// The number of seconds the server waits for activity on a noninteractive connection before closing it.
-	WaitTimeout pulumi.IntInput `pulumi:"waitTimeout"`
+	WaitTimeout pulumi.IntPtrInput `pulumi:"waitTimeout"`
 }
 
 func (GetMysqlConfigurationVariableArgs) ElementType() reflect.Type {
@@ -12617,12 +11226,6 @@ func (i GetMysqlConfigurationVariableArgs) ToGetMysqlConfigurationVariableOutput
 
 func (i GetMysqlConfigurationVariableArgs) ToGetMysqlConfigurationVariableOutputWithContext(ctx context.Context) GetMysqlConfigurationVariableOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlConfigurationVariableOutput)
-}
-
-func (i GetMysqlConfigurationVariableArgs) ToOutput(ctx context.Context) pulumix.Output[GetMysqlConfigurationVariable] {
-	return pulumix.Output[GetMysqlConfigurationVariable]{
-		OutputState: i.ToGetMysqlConfigurationVariableOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetMysqlConfigurationVariableArrayInput is an input type that accepts GetMysqlConfigurationVariableArray and GetMysqlConfigurationVariableArrayOutput values.
@@ -12650,12 +11253,6 @@ func (i GetMysqlConfigurationVariableArray) ToGetMysqlConfigurationVariableArray
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlConfigurationVariableArrayOutput)
 }
 
-func (i GetMysqlConfigurationVariableArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlConfigurationVariable] {
-	return pulumix.Output[[]GetMysqlConfigurationVariable]{
-		OutputState: i.ToGetMysqlConfigurationVariableArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMysqlConfigurationVariableOutput struct{ *pulumi.OutputState }
 
 func (GetMysqlConfigurationVariableOutput) ElementType() reflect.Type {
@@ -12670,92 +11267,86 @@ func (o GetMysqlConfigurationVariableOutput) ToGetMysqlConfigurationVariableOutp
 	return o
 }
 
-func (o GetMysqlConfigurationVariableOutput) ToOutput(ctx context.Context) pulumix.Output[GetMysqlConfigurationVariable] {
-	return pulumix.Output[GetMysqlConfigurationVariable]{
-		OutputState: o.OutputState,
-	}
-}
-
 // ("autocommit")
-func (o GetMysqlConfigurationVariableOutput) Autocommit() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationVariable) bool { return v.Autocommit }).(pulumi.BoolOutput)
+func (o GetMysqlConfigurationVariableOutput) Autocommit() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationVariable) *bool { return v.Autocommit }).(pulumi.BoolPtrOutput)
 }
 
 // If enabled, the server stores all temporary tables on disk rather than in memory.
-func (o GetMysqlConfigurationVariableOutput) BigTables() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationVariable) bool { return v.BigTables }).(pulumi.BoolOutput)
+func (o GetMysqlConfigurationVariableOutput) BigTables() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationVariable) *bool { return v.BigTables }).(pulumi.BoolPtrOutput)
 }
 
 // Sets the binary log expiration period in seconds. binlogExpireLogsSeconds corresponds to the MySQL binary logging system variable [binlogExpireLogsSeconds](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_expire_logs_seconds).
-func (o GetMysqlConfigurationVariableOutput) BinlogExpireLogsSeconds() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationVariable) int { return v.BinlogExpireLogsSeconds }).(pulumi.IntOutput)
+func (o GetMysqlConfigurationVariableOutput) BinlogExpireLogsSeconds() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationVariable) *int { return v.BinlogExpireLogsSeconds }).(pulumi.IntPtrOutput)
 }
 
 // Configures the amount of table metadata added to the binary log when using row-based logging. binlogRowMetadata corresponds to the MySQL binary logging system variable [binlogRowMetadata](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_row_metadata).
-func (o GetMysqlConfigurationVariableOutput) BinlogRowMetadata() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationVariable) string { return v.BinlogRowMetadata }).(pulumi.StringOutput)
+func (o GetMysqlConfigurationVariableOutput) BinlogRowMetadata() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationVariable) *string { return v.BinlogRowMetadata }).(pulumi.StringPtrOutput)
 }
 
 // When set to PARTIAL_JSON, this enables use of a space-efficient binary log format for updates that modify only a small portion of a JSON document. binlogRowValueOptions corresponds to the MySQL binary logging system variable [binlogRowValueOptions](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_row_value_options).
-func (o GetMysqlConfigurationVariableOutput) BinlogRowValueOptions() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationVariable) string { return v.BinlogRowValueOptions }).(pulumi.StringOutput)
+func (o GetMysqlConfigurationVariableOutput) BinlogRowValueOptions() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationVariable) *string { return v.BinlogRowValueOptions }).(pulumi.StringPtrOutput)
 }
 
 // Enables compression for transactions that are written to binary log files on this server. binlogTransactionCompression corresponds to the MySQL binary logging system variable [binlogTransactionCompression](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_transaction_compression).
-func (o GetMysqlConfigurationVariableOutput) BinlogTransactionCompression() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationVariable) bool { return v.BinlogTransactionCompression }).(pulumi.BoolOutput)
+func (o GetMysqlConfigurationVariableOutput) BinlogTransactionCompression() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationVariable) *bool { return v.BinlogTransactionCompression }).(pulumi.BoolPtrOutput)
 }
 
 // ("completionType")
-func (o GetMysqlConfigurationVariableOutput) CompletionType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationVariable) string { return v.CompletionType }).(pulumi.StringOutput)
+func (o GetMysqlConfigurationVariableOutput) CompletionType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationVariable) *string { return v.CompletionType }).(pulumi.StringPtrOutput)
 }
 
 // The number of seconds that the mysqld server waits for a connect packet before responding with Bad handshake.
-func (o GetMysqlConfigurationVariableOutput) ConnectTimeout() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationVariable) int { return v.ConnectTimeout }).(pulumi.IntOutput)
+func (o GetMysqlConfigurationVariableOutput) ConnectTimeout() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationVariable) *int { return v.ConnectTimeout }).(pulumi.IntPtrOutput)
 }
 
 // Set the chunking size for updates to the global memory usage counter Global_connection_memory.
-func (o GetMysqlConfigurationVariableOutput) ConnectionMemoryChunkSize() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationVariable) int { return v.ConnectionMemoryChunkSize }).(pulumi.IntOutput)
+func (o GetMysqlConfigurationVariableOutput) ConnectionMemoryChunkSize() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationVariable) *int { return v.ConnectionMemoryChunkSize }).(pulumi.IntPtrOutput)
 }
 
 // Set the maximum amount of memory that can be used by a single user connection.
-func (o GetMysqlConfigurationVariableOutput) ConnectionMemoryLimit() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationVariable) string { return v.ConnectionMemoryLimit }).(pulumi.StringOutput)
+func (o GetMysqlConfigurationVariableOutput) ConnectionMemoryLimit() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationVariable) *string { return v.ConnectionMemoryLimit }).(pulumi.StringPtrOutput)
 }
 
 // ("cteMaxRecursionDepth")
-func (o GetMysqlConfigurationVariableOutput) CteMaxRecursionDepth() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationVariable) string { return v.CteMaxRecursionDepth }).(pulumi.StringOutput)
+func (o GetMysqlConfigurationVariableOutput) CteMaxRecursionDepth() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationVariable) *string { return v.CteMaxRecursionDepth }).(pulumi.StringPtrOutput)
 }
 
 // ("defaultAuthenticationPlugin")
-func (o GetMysqlConfigurationVariableOutput) DefaultAuthenticationPlugin() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationVariable) string { return v.DefaultAuthenticationPlugin }).(pulumi.StringOutput)
+func (o GetMysqlConfigurationVariableOutput) DefaultAuthenticationPlugin() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationVariable) *string { return v.DefaultAuthenticationPlugin }).(pulumi.StringPtrOutput)
 }
 
 // ("foreignKeyChecks")
-func (o GetMysqlConfigurationVariableOutput) ForeignKeyChecks() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationVariable) bool { return v.ForeignKeyChecks }).(pulumi.BoolOutput)
+func (o GetMysqlConfigurationVariableOutput) ForeignKeyChecks() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationVariable) *bool { return v.ForeignKeyChecks }).(pulumi.BoolPtrOutput)
 }
 
 // ("generatedRandomPasswordLength") DEPRECATED -- variable should not be settable and will be ignored
 //
 // Deprecated: The 'generated_random_password_length' field has been deprecated and may be removed in a future version. Do not use this field.
-func (o GetMysqlConfigurationVariableOutput) GeneratedRandomPasswordLength() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationVariable) int { return v.GeneratedRandomPasswordLength }).(pulumi.IntOutput)
+func (o GetMysqlConfigurationVariableOutput) GeneratedRandomPasswordLength() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationVariable) *int { return v.GeneratedRandomPasswordLength }).(pulumi.IntPtrOutput)
 }
 
 // Set the total amount of memory that can be used by all user connections.
-func (o GetMysqlConfigurationVariableOutput) GlobalConnectionMemoryLimit() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationVariable) string { return v.GlobalConnectionMemoryLimit }).(pulumi.StringOutput)
+func (o GetMysqlConfigurationVariableOutput) GlobalConnectionMemoryLimit() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationVariable) *string { return v.GlobalConnectionMemoryLimit }).(pulumi.StringPtrOutput)
 }
 
 // Determines whether the MySQL server calculates Global_connection_memory.
-func (o GetMysqlConfigurationVariableOutput) GlobalConnectionMemoryTracking() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationVariable) bool { return v.GlobalConnectionMemoryTracking }).(pulumi.BoolOutput)
+func (o GetMysqlConfigurationVariableOutput) GlobalConnectionMemoryTracking() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationVariable) *bool { return v.GlobalConnectionMemoryTracking }).(pulumi.BoolPtrOutput)
 }
 
 // * EVENTUAL: Both RO and RW transactions do not wait for preceding transactions to be applied before executing. A RW transaction does not wait for other members to apply a transaction. This means that a transaction could be externalized on one member before the others. This also means that in the event of a primary failover, the new primary can accept new RO and RW transactions before the previous primary transactions are all applied. RO transactions could result in outdated values, RW transactions could result in a rollback due to conflicts.
@@ -12763,330 +11354,330 @@ func (o GetMysqlConfigurationVariableOutput) GlobalConnectionMemoryTracking() pu
 // * BEFORE: A RW transaction waits for all preceding transactions to complete before being applied. A RO transaction waits for all preceding transactions to complete before being executed. This ensures that this transaction reads the latest value by only affecting the latency of the transaction. This reduces the overhead of synchronization on every RW transaction, by ensuring synchronization is used only on RO transactions. This consistency level also includes the consistency guarantees provided by BEFORE_ON_PRIMARY_FAILOVER.
 // * AFTER: A RW transaction waits until its changes have been applied to all of the other members. This value has no effect on RO transactions. This mode ensures that when a transaction is committed on the local member, any subsequent transaction reads the written value or a more recent value on any group member. Use this mode with a group that is used for predominantly RO operations to ensure that applied RW transactions are applied everywhere once they commit. This could be used by your application to ensure that subsequent reads fetch the latest data which includes the latest writes. This reduces the overhead of synchronization on every RO transaction, by ensuring synchronization is used only on RW transactions. This consistency level also includes the consistency guarantees provided by BEFORE_ON_PRIMARY_FAILOVER.
 // * BEFORE_AND_AFTER: A RW transaction waits for 1) all preceding transactions to complete before being applied and 2) until its changes have been applied on other members. A RO transaction waits for all preceding transactions to complete before execution takes place. This consistency level also includes the consistency guarantees provided by BEFORE_ON_PRIMARY_FAILOVER.
-func (o GetMysqlConfigurationVariableOutput) GroupReplicationConsistency() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationVariable) string { return v.GroupReplicationConsistency }).(pulumi.StringOutput)
+func (o GetMysqlConfigurationVariableOutput) GroupReplicationConsistency() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationVariable) *string { return v.GroupReplicationConsistency }).(pulumi.StringPtrOutput)
 }
 
 // ("informationSchemaStatsExpiry")
-func (o GetMysqlConfigurationVariableOutput) InformationSchemaStatsExpiry() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationVariable) int { return v.InformationSchemaStatsExpiry }).(pulumi.IntOutput)
+func (o GetMysqlConfigurationVariableOutput) InformationSchemaStatsExpiry() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationVariable) *int { return v.InformationSchemaStatsExpiry }).(pulumi.IntPtrOutput)
 }
 
 // Specifies the percentage of the most recently used pages for each buffer pool to read out and dump.
-func (o GetMysqlConfigurationVariableOutput) InnodbBufferPoolDumpPct() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationVariable) int { return v.InnodbBufferPoolDumpPct }).(pulumi.IntOutput)
+func (o GetMysqlConfigurationVariableOutput) InnodbBufferPoolDumpPct() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationVariable) *int { return v.InnodbBufferPoolDumpPct }).(pulumi.IntPtrOutput)
 }
 
 // ("innodbBufferPoolInstances")
-func (o GetMysqlConfigurationVariableOutput) InnodbBufferPoolInstances() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationVariable) int { return v.InnodbBufferPoolInstances }).(pulumi.IntOutput)
+func (o GetMysqlConfigurationVariableOutput) InnodbBufferPoolInstances() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationVariable) *int { return v.InnodbBufferPoolInstances }).(pulumi.IntPtrOutput)
 }
 
 // The size (in bytes) of the buffer pool, that is, the memory area where InnoDB caches table and index data.
-func (o GetMysqlConfigurationVariableOutput) InnodbBufferPoolSize() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationVariable) string { return v.InnodbBufferPoolSize }).(pulumi.StringOutput)
+func (o GetMysqlConfigurationVariableOutput) InnodbBufferPoolSize() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationVariable) *string { return v.InnodbBufferPoolSize }).(pulumi.StringPtrOutput)
 }
 
 // innodbDdlBufferSize corresponds to the MySQL system variable [innodbDdlBufferSize] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_buffer_size)
-func (o GetMysqlConfigurationVariableOutput) InnodbDdlBufferSize() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationVariable) string { return v.InnodbDdlBufferSize }).(pulumi.StringOutput)
+func (o GetMysqlConfigurationVariableOutput) InnodbDdlBufferSize() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationVariable) *string { return v.InnodbDdlBufferSize }).(pulumi.StringPtrOutput)
 }
 
 // innodbDdlThreads corresponds to the MySQL system variable [innodbDdlThreads] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_threads)
-func (o GetMysqlConfigurationVariableOutput) InnodbDdlThreads() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationVariable) int { return v.InnodbDdlThreads }).(pulumi.IntOutput)
+func (o GetMysqlConfigurationVariableOutput) InnodbDdlThreads() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationVariable) *int { return v.InnodbDdlThreads }).(pulumi.IntPtrOutput)
 }
 
 // ("innodbFtEnableStopword")
-func (o GetMysqlConfigurationVariableOutput) InnodbFtEnableStopword() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationVariable) bool { return v.InnodbFtEnableStopword }).(pulumi.BoolOutput)
+func (o GetMysqlConfigurationVariableOutput) InnodbFtEnableStopword() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationVariable) *bool { return v.InnodbFtEnableStopword }).(pulumi.BoolPtrOutput)
 }
 
 // ("innodbFtMaxTokenSize")
-func (o GetMysqlConfigurationVariableOutput) InnodbFtMaxTokenSize() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationVariable) int { return v.InnodbFtMaxTokenSize }).(pulumi.IntOutput)
+func (o GetMysqlConfigurationVariableOutput) InnodbFtMaxTokenSize() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationVariable) *int { return v.InnodbFtMaxTokenSize }).(pulumi.IntPtrOutput)
 }
 
 // ("innodbFtMinTokenSize")
-func (o GetMysqlConfigurationVariableOutput) InnodbFtMinTokenSize() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationVariable) int { return v.InnodbFtMinTokenSize }).(pulumi.IntOutput)
+func (o GetMysqlConfigurationVariableOutput) InnodbFtMinTokenSize() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationVariable) *int { return v.InnodbFtMinTokenSize }).(pulumi.IntPtrOutput)
 }
 
 // ("innodbFtNumWordOptimize")
-func (o GetMysqlConfigurationVariableOutput) InnodbFtNumWordOptimize() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationVariable) int { return v.InnodbFtNumWordOptimize }).(pulumi.IntOutput)
+func (o GetMysqlConfigurationVariableOutput) InnodbFtNumWordOptimize() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationVariable) *int { return v.InnodbFtNumWordOptimize }).(pulumi.IntPtrOutput)
 }
 
 // ("innodbFtResultCacheLimit")
-func (o GetMysqlConfigurationVariableOutput) InnodbFtResultCacheLimit() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationVariable) string { return v.InnodbFtResultCacheLimit }).(pulumi.StringOutput)
+func (o GetMysqlConfigurationVariableOutput) InnodbFtResultCacheLimit() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationVariable) *string { return v.InnodbFtResultCacheLimit }).(pulumi.StringPtrOutput)
 }
 
 // ("innodbFtServerStopwordTable")
-func (o GetMysqlConfigurationVariableOutput) InnodbFtServerStopwordTable() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationVariable) string { return v.InnodbFtServerStopwordTable }).(pulumi.StringOutput)
+func (o GetMysqlConfigurationVariableOutput) InnodbFtServerStopwordTable() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationVariable) *string { return v.InnodbFtServerStopwordTable }).(pulumi.StringPtrOutput)
 }
 
 // ("innodbLockWaitTimeout")
-func (o GetMysqlConfigurationVariableOutput) InnodbLockWaitTimeout() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationVariable) int { return v.InnodbLockWaitTimeout }).(pulumi.IntOutput)
+func (o GetMysqlConfigurationVariableOutput) InnodbLockWaitTimeout() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationVariable) *int { return v.InnodbLockWaitTimeout }).(pulumi.IntPtrOutput)
 }
 
 // Enables dedicated log writer threads for writing redo log records from the log buffer to the system buffers and flushing the system buffers to the redo log files.
-func (o GetMysqlConfigurationVariableOutput) InnodbLogWriterThreads() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationVariable) bool { return v.InnodbLogWriterThreads }).(pulumi.BoolOutput)
+func (o GetMysqlConfigurationVariableOutput) InnodbLogWriterThreads() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationVariable) *bool { return v.InnodbLogWriterThreads }).(pulumi.BoolPtrOutput)
 }
 
 // The desired maximum purge lag in terms of transactions.
-func (o GetMysqlConfigurationVariableOutput) InnodbMaxPurgeLag() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationVariable) string { return v.InnodbMaxPurgeLag }).(pulumi.StringOutput)
+func (o GetMysqlConfigurationVariableOutput) InnodbMaxPurgeLag() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationVariable) *string { return v.InnodbMaxPurgeLag }).(pulumi.StringPtrOutput)
 }
 
 // The maximum delay in microseconds for the delay imposed when the innodbMaxPurgeLag threshold is exceeded.
-func (o GetMysqlConfigurationVariableOutput) InnodbMaxPurgeLagDelay() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationVariable) int { return v.InnodbMaxPurgeLagDelay }).(pulumi.IntOutput)
+func (o GetMysqlConfigurationVariableOutput) InnodbMaxPurgeLagDelay() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationVariable) *int { return v.InnodbMaxPurgeLagDelay }).(pulumi.IntPtrOutput)
 }
 
 // The number of index pages to sample when estimating cardinality and other statistics for an indexed column, such as those calculated by ANALYZE TABLE.
-func (o GetMysqlConfigurationVariableOutput) InnodbStatsPersistentSamplePages() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationVariable) string { return v.InnodbStatsPersistentSamplePages }).(pulumi.StringOutput)
+func (o GetMysqlConfigurationVariableOutput) InnodbStatsPersistentSamplePages() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationVariable) *string { return v.InnodbStatsPersistentSamplePages }).(pulumi.StringPtrOutput)
 }
 
 // The number of index pages to sample when estimating cardinality and other statistics for an indexed column, such as those calculated by [ANALYZE TABLE](https://dev.mysql.com/doc/refman/8.0/en/analyze-table.html).
-func (o GetMysqlConfigurationVariableOutput) InnodbStatsTransientSamplePages() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationVariable) string { return v.InnodbStatsTransientSamplePages }).(pulumi.StringOutput)
+func (o GetMysqlConfigurationVariableOutput) InnodbStatsTransientSamplePages() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationVariable) *string { return v.InnodbStatsTransientSamplePages }).(pulumi.StringPtrOutput)
 }
 
 // The number of seconds the server waits for activity on an interactive connection before closing it.
-func (o GetMysqlConfigurationVariableOutput) InteractiveTimeout() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationVariable) int { return v.InteractiveTimeout }).(pulumi.IntOutput)
+func (o GetMysqlConfigurationVariableOutput) InteractiveTimeout() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationVariable) *int { return v.InteractiveTimeout }).(pulumi.IntPtrOutput)
 }
 
 // ("localInfile")
-func (o GetMysqlConfigurationVariableOutput) LocalInfile() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationVariable) bool { return v.LocalInfile }).(pulumi.BoolOutput)
+func (o GetMysqlConfigurationVariableOutput) LocalInfile() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationVariable) *bool { return v.LocalInfile }).(pulumi.BoolPtrOutput)
 }
 
 // ("mandatoryRoles")
-func (o GetMysqlConfigurationVariableOutput) MandatoryRoles() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationVariable) string { return v.MandatoryRoles }).(pulumi.StringOutput)
+func (o GetMysqlConfigurationVariableOutput) MandatoryRoles() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationVariable) *string { return v.MandatoryRoles }).(pulumi.StringPtrOutput)
 }
 
 // The maximum size of one packet or any generated/intermediate string.
-func (o GetMysqlConfigurationVariableOutput) MaxAllowedPacket() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationVariable) int { return v.MaxAllowedPacket }).(pulumi.IntOutput)
+func (o GetMysqlConfigurationVariableOutput) MaxAllowedPacket() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationVariable) *int { return v.MaxAllowedPacket }).(pulumi.IntPtrOutput)
 }
 
 // Sets the size of the transaction cache.
-func (o GetMysqlConfigurationVariableOutput) MaxBinlogCacheSize() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationVariable) string { return v.MaxBinlogCacheSize }).(pulumi.StringOutput)
+func (o GetMysqlConfigurationVariableOutput) MaxBinlogCacheSize() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationVariable) *string { return v.MaxBinlogCacheSize }).(pulumi.StringPtrOutput)
 }
 
 // ("maxConnectErrors")
-func (o GetMysqlConfigurationVariableOutput) MaxConnectErrors() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationVariable) string { return v.MaxConnectErrors }).(pulumi.StringOutput)
+func (o GetMysqlConfigurationVariableOutput) MaxConnectErrors() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationVariable) *string { return v.MaxConnectErrors }).(pulumi.StringPtrOutput)
 }
 
 // ("maxConnections")
-func (o GetMysqlConfigurationVariableOutput) MaxConnections() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationVariable) int { return v.MaxConnections }).(pulumi.IntOutput)
+func (o GetMysqlConfigurationVariableOutput) MaxConnections() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationVariable) *int { return v.MaxConnections }).(pulumi.IntPtrOutput)
 }
 
 // ("maxExecutionTime")
-func (o GetMysqlConfigurationVariableOutput) MaxExecutionTime() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationVariable) string { return v.MaxExecutionTime }).(pulumi.StringOutput)
+func (o GetMysqlConfigurationVariableOutput) MaxExecutionTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationVariable) *string { return v.MaxExecutionTime }).(pulumi.StringPtrOutput)
 }
 
 // This variable sets the maximum size to which user-created MEMORY tables are permitted to grow.
-func (o GetMysqlConfigurationVariableOutput) MaxHeapTableSize() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationVariable) string { return v.MaxHeapTableSize }).(pulumi.StringOutput)
+func (o GetMysqlConfigurationVariableOutput) MaxHeapTableSize() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationVariable) *string { return v.MaxHeapTableSize }).(pulumi.StringPtrOutput)
 }
 
 // ("maxPreparedStmtCount")
-func (o GetMysqlConfigurationVariableOutput) MaxPreparedStmtCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationVariable) int { return v.MaxPreparedStmtCount }).(pulumi.IntOutput)
+func (o GetMysqlConfigurationVariableOutput) MaxPreparedStmtCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationVariable) *int { return v.MaxPreparedStmtCount }).(pulumi.IntPtrOutput)
 }
 
 // ("mysqlFirewallMode")
-func (o GetMysqlConfigurationVariableOutput) MysqlFirewallMode() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationVariable) bool { return v.MysqlFirewallMode }).(pulumi.BoolOutput)
+func (o GetMysqlConfigurationVariableOutput) MysqlFirewallMode() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationVariable) *bool { return v.MysqlFirewallMode }).(pulumi.BoolPtrOutput)
 }
 
 // DEPRECATED -- typo of mysqlx_zstd_default_compression_level. variable will be ignored.
 //
 // Deprecated: The 'mysql_zstd_default_compression_level' field has been deprecated and may be removed in a future version. Do not use this field.
-func (o GetMysqlConfigurationVariableOutput) MysqlZstdDefaultCompressionLevel() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationVariable) int { return v.MysqlZstdDefaultCompressionLevel }).(pulumi.IntOutput)
+func (o GetMysqlConfigurationVariableOutput) MysqlZstdDefaultCompressionLevel() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationVariable) *int { return v.MysqlZstdDefaultCompressionLevel }).(pulumi.IntPtrOutput)
 }
 
 // The number of seconds X Plugin waits for the first packet to be received from newly connected clients.
-func (o GetMysqlConfigurationVariableOutput) MysqlxConnectTimeout() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationVariable) int { return v.MysqlxConnectTimeout }).(pulumi.IntOutput)
+func (o GetMysqlConfigurationVariableOutput) MysqlxConnectTimeout() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationVariable) *int { return v.MysqlxConnectTimeout }).(pulumi.IntPtrOutput)
 }
 
 // Set the default compression level for the deflate algorithm. ("mysqlxDeflateDefaultCompressionLevel")
-func (o GetMysqlConfigurationVariableOutput) MysqlxDeflateDefaultCompressionLevel() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationVariable) int { return v.MysqlxDeflateDefaultCompressionLevel }).(pulumi.IntOutput)
+func (o GetMysqlConfigurationVariableOutput) MysqlxDeflateDefaultCompressionLevel() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationVariable) *int { return v.MysqlxDeflateDefaultCompressionLevel }).(pulumi.IntPtrOutput)
 }
 
 // Limit the upper bound of accepted compression levels for the deflate algorithm. ("mysqlxDeflateMaxClientCompressionLevel")
-func (o GetMysqlConfigurationVariableOutput) MysqlxDeflateMaxClientCompressionLevel() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationVariable) int { return v.MysqlxDeflateMaxClientCompressionLevel }).(pulumi.IntOutput)
+func (o GetMysqlConfigurationVariableOutput) MysqlxDeflateMaxClientCompressionLevel() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationVariable) *int { return v.MysqlxDeflateMaxClientCompressionLevel }).(pulumi.IntPtrOutput)
 }
 
 // ("mysqlxDocumentIdUniquePrefix") DEPRECATED -- variable should not be settable and will be ignored
 //
 // Deprecated: The 'mysqlx_document_id_unique_prefix' field has been deprecated and may be removed in a future version. Do not use this field.
-func (o GetMysqlConfigurationVariableOutput) MysqlxDocumentIdUniquePrefix() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationVariable) int { return v.MysqlxDocumentIdUniquePrefix }).(pulumi.IntOutput)
+func (o GetMysqlConfigurationVariableOutput) MysqlxDocumentIdUniquePrefix() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationVariable) *int { return v.MysqlxDocumentIdUniquePrefix }).(pulumi.IntPtrOutput)
 }
 
 // ("mysqlxEnableHelloNotice") DEPRECATED -- variable should not be settable and will be ignored
-func (o GetMysqlConfigurationVariableOutput) MysqlxEnableHelloNotice() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationVariable) bool { return v.MysqlxEnableHelloNotice }).(pulumi.BoolOutput)
+func (o GetMysqlConfigurationVariableOutput) MysqlxEnableHelloNotice() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationVariable) *bool { return v.MysqlxEnableHelloNotice }).(pulumi.BoolPtrOutput)
 }
 
 // ("mysqlxIdleWorkerThreadTimeout") DEPRECATED -- variable should not be settable and will be ignored
 //
 // Deprecated: The 'mysqlx_idle_worker_thread_timeout' field has been deprecated and may be removed in a future version. Do not use this field.
-func (o GetMysqlConfigurationVariableOutput) MysqlxIdleWorkerThreadTimeout() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationVariable) int { return v.MysqlxIdleWorkerThreadTimeout }).(pulumi.IntOutput)
+func (o GetMysqlConfigurationVariableOutput) MysqlxIdleWorkerThreadTimeout() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationVariable) *int { return v.MysqlxIdleWorkerThreadTimeout }).(pulumi.IntPtrOutput)
 }
 
 // The number of seconds to wait for interactive clients to timeout.
-func (o GetMysqlConfigurationVariableOutput) MysqlxInteractiveTimeout() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationVariable) int { return v.MysqlxInteractiveTimeout }).(pulumi.IntOutput)
+func (o GetMysqlConfigurationVariableOutput) MysqlxInteractiveTimeout() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationVariable) *int { return v.MysqlxInteractiveTimeout }).(pulumi.IntPtrOutput)
 }
 
 // Set the default compression level for the lz4 algorithm. ("mysqlxLz4DefaultCompressionLevel")
-func (o GetMysqlConfigurationVariableOutput) MysqlxLz4defaultCompressionLevel() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationVariable) int { return v.MysqlxLz4defaultCompressionLevel }).(pulumi.IntOutput)
+func (o GetMysqlConfigurationVariableOutput) MysqlxLz4defaultCompressionLevel() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationVariable) *int { return v.MysqlxLz4defaultCompressionLevel }).(pulumi.IntPtrOutput)
 }
 
 // Limit the upper bound of accepted compression levels for the lz4 algorithm. ("mysqlxLz4MaxClientCompressionLevel")
-func (o GetMysqlConfigurationVariableOutput) MysqlxLz4maxClientCompressionLevel() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationVariable) int { return v.MysqlxLz4maxClientCompressionLevel }).(pulumi.IntOutput)
+func (o GetMysqlConfigurationVariableOutput) MysqlxLz4maxClientCompressionLevel() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationVariable) *int { return v.MysqlxLz4maxClientCompressionLevel }).(pulumi.IntPtrOutput)
 }
 
 // The maximum size of network packets that can be received by X Plugin.
-func (o GetMysqlConfigurationVariableOutput) MysqlxMaxAllowedPacket() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationVariable) int { return v.MysqlxMaxAllowedPacket }).(pulumi.IntOutput)
+func (o GetMysqlConfigurationVariableOutput) MysqlxMaxAllowedPacket() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationVariable) *int { return v.MysqlxMaxAllowedPacket }).(pulumi.IntPtrOutput)
 }
 
 // ("mysqlxMinWorkerThreads") DEPRECATED -- variable should not be settable and will be ignored
 //
 // Deprecated: The 'mysqlx_min_worker_threads' field has been deprecated and may be removed in a future version. Do not use this field.
-func (o GetMysqlConfigurationVariableOutput) MysqlxMinWorkerThreads() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationVariable) int { return v.MysqlxMinWorkerThreads }).(pulumi.IntOutput)
+func (o GetMysqlConfigurationVariableOutput) MysqlxMinWorkerThreads() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationVariable) *int { return v.MysqlxMinWorkerThreads }).(pulumi.IntPtrOutput)
 }
 
 // The number of seconds that X Plugin waits for blocking read operations to complete. After this time, if the read operation is not successful, X Plugin closes the connection and returns a warning notice with the error code ER_IO_READ_ERROR to the client application.
-func (o GetMysqlConfigurationVariableOutput) MysqlxReadTimeout() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationVariable) int { return v.MysqlxReadTimeout }).(pulumi.IntOutput)
+func (o GetMysqlConfigurationVariableOutput) MysqlxReadTimeout() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationVariable) *int { return v.MysqlxReadTimeout }).(pulumi.IntPtrOutput)
 }
 
 // The number of seconds that X Plugin waits for activity on a connection.
-func (o GetMysqlConfigurationVariableOutput) MysqlxWaitTimeout() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationVariable) int { return v.MysqlxWaitTimeout }).(pulumi.IntOutput)
+func (o GetMysqlConfigurationVariableOutput) MysqlxWaitTimeout() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationVariable) *int { return v.MysqlxWaitTimeout }).(pulumi.IntPtrOutput)
 }
 
 // The number of seconds that X Plugin waits for blocking write operations to complete. After this time, if the write operation is not successful, X Plugin closes the connection.
-func (o GetMysqlConfigurationVariableOutput) MysqlxWriteTimeout() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationVariable) int { return v.MysqlxWriteTimeout }).(pulumi.IntOutput)
+func (o GetMysqlConfigurationVariableOutput) MysqlxWriteTimeout() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationVariable) *int { return v.MysqlxWriteTimeout }).(pulumi.IntPtrOutput)
 }
 
 // Set the default compression level for the zstd algorithm. ("mysqlxZstdDefaultCompressionLevel")
-func (o GetMysqlConfigurationVariableOutput) MysqlxZstdDefaultCompressionLevel() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationVariable) int { return v.MysqlxZstdDefaultCompressionLevel }).(pulumi.IntOutput)
+func (o GetMysqlConfigurationVariableOutput) MysqlxZstdDefaultCompressionLevel() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationVariable) *int { return v.MysqlxZstdDefaultCompressionLevel }).(pulumi.IntPtrOutput)
 }
 
 // Limit the upper bound of accepted compression levels for the zstd algorithm. ("mysqlxZstdMaxClientCompressionLevel")
-func (o GetMysqlConfigurationVariableOutput) MysqlxZstdMaxClientCompressionLevel() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationVariable) int { return v.MysqlxZstdMaxClientCompressionLevel }).(pulumi.IntOutput)
+func (o GetMysqlConfigurationVariableOutput) MysqlxZstdMaxClientCompressionLevel() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationVariable) *int { return v.MysqlxZstdMaxClientCompressionLevel }).(pulumi.IntPtrOutput)
 }
 
 // The number of seconds to wait for more data from a connection before aborting the read.
-func (o GetMysqlConfigurationVariableOutput) NetReadTimeout() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationVariable) int { return v.NetReadTimeout }).(pulumi.IntOutput)
+func (o GetMysqlConfigurationVariableOutput) NetReadTimeout() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationVariable) *int { return v.NetReadTimeout }).(pulumi.IntPtrOutput)
 }
 
 // The number of seconds to wait for a block to be written to a connection before aborting the write.
-func (o GetMysqlConfigurationVariableOutput) NetWriteTimeout() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationVariable) int { return v.NetWriteTimeout }).(pulumi.IntOutput)
+func (o GetMysqlConfigurationVariableOutput) NetWriteTimeout() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationVariable) *int { return v.NetWriteTimeout }).(pulumi.IntPtrOutput)
 }
 
 // ("parserMaxMemSize")
-func (o GetMysqlConfigurationVariableOutput) ParserMaxMemSize() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationVariable) string { return v.ParserMaxMemSize }).(pulumi.StringOutput)
+func (o GetMysqlConfigurationVariableOutput) ParserMaxMemSize() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationVariable) *string { return v.ParserMaxMemSize }).(pulumi.StringPtrOutput)
 }
 
 // ("queryAllocBlockSize") DEPRECATED -- variable should not be settable and will be ignored
 //
 // Deprecated: The 'query_alloc_block_size' field has been deprecated and may be removed in a future version. Do not use this field.
-func (o GetMysqlConfigurationVariableOutput) QueryAllocBlockSize() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationVariable) string { return v.QueryAllocBlockSize }).(pulumi.StringOutput)
+func (o GetMysqlConfigurationVariableOutput) QueryAllocBlockSize() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationVariable) *string { return v.QueryAllocBlockSize }).(pulumi.StringPtrOutput)
 }
 
 // ("queryPreallocSize") DEPRECATED -- variable should not be settable and will be ignored
 //
 // Deprecated: The 'query_prealloc_size' field has been deprecated and may be removed in a future version. Do not use this field.
-func (o GetMysqlConfigurationVariableOutput) QueryPreallocSize() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationVariable) string { return v.QueryPreallocSize }).(pulumi.StringOutput)
+func (o GetMysqlConfigurationVariableOutput) QueryPreallocSize() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationVariable) *string { return v.QueryPreallocSize }).(pulumi.StringPtrOutput)
 }
 
 // regexpTimeLimit corresponds to the MySQL system variable [regexpTimeLimit] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_regexp_time_limit)
-func (o GetMysqlConfigurationVariableOutput) RegexpTimeLimit() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationVariable) int { return v.RegexpTimeLimit }).(pulumi.IntOutput)
+func (o GetMysqlConfigurationVariableOutput) RegexpTimeLimit() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationVariable) *int { return v.RegexpTimeLimit }).(pulumi.IntPtrOutput)
 }
 
 // Each session that must perform a sort allocates a buffer of this size.
-func (o GetMysqlConfigurationVariableOutput) SortBufferSize() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationVariable) string { return v.SortBufferSize }).(pulumi.StringOutput)
+func (o GetMysqlConfigurationVariableOutput) SortBufferSize() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationVariable) *string { return v.SortBufferSize }).(pulumi.StringPtrOutput)
 }
 
 // ("sqlMode")
-func (o GetMysqlConfigurationVariableOutput) SqlMode() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationVariable) string { return v.SqlMode }).(pulumi.StringOutput)
+func (o GetMysqlConfigurationVariableOutput) SqlMode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationVariable) *string { return v.SqlMode }).(pulumi.StringPtrOutput)
 }
 
 // ("sqlRequirePrimaryKey")
-func (o GetMysqlConfigurationVariableOutput) SqlRequirePrimaryKey() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationVariable) bool { return v.SqlRequirePrimaryKey }).(pulumi.BoolOutput)
+func (o GetMysqlConfigurationVariableOutput) SqlRequirePrimaryKey() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationVariable) *bool { return v.SqlRequirePrimaryKey }).(pulumi.BoolPtrOutput)
 }
 
 // ("sqlWarnings")
-func (o GetMysqlConfigurationVariableOutput) SqlWarnings() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationVariable) bool { return v.SqlWarnings }).(pulumi.BoolOutput)
+func (o GetMysqlConfigurationVariableOutput) SqlWarnings() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationVariable) *bool { return v.SqlWarnings }).(pulumi.BoolPtrOutput)
 }
 
 // Controls whether the thread pool uses dedicated listener threads. If enabled, a listener thread in each thread group is dedicated to the task of listening for network events from clients, ensuring that the maximum number of query worker threads is no more than the value specified by threadPoolMaxTransactionsLimit. threadPoolDedicatedListeners corresponds to the MySQL Database Service-specific system variable thread_pool_dedicated_listeners.
-func (o GetMysqlConfigurationVariableOutput) ThreadPoolDedicatedListeners() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationVariable) bool { return v.ThreadPoolDedicatedListeners }).(pulumi.BoolOutput)
+func (o GetMysqlConfigurationVariableOutput) ThreadPoolDedicatedListeners() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationVariable) *bool { return v.ThreadPoolDedicatedListeners }).(pulumi.BoolPtrOutput)
 }
 
 // Limits the maximum number of open transactions to the defined value. The default value is 0, which enforces no limit. threadPoolMaxTransactionsLimit corresponds to the MySQL Database Service-specific system variable thread_pool_max_transactions_limit.
-func (o GetMysqlConfigurationVariableOutput) ThreadPoolMaxTransactionsLimit() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationVariable) int { return v.ThreadPoolMaxTransactionsLimit }).(pulumi.IntOutput)
+func (o GetMysqlConfigurationVariableOutput) ThreadPoolMaxTransactionsLimit() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationVariable) *int { return v.ThreadPoolMaxTransactionsLimit }).(pulumi.IntPtrOutput)
 }
 
 // Initializes the time zone for each client that connects.
-func (o GetMysqlConfigurationVariableOutput) TimeZone() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationVariable) string { return v.TimeZone }).(pulumi.StringOutput)
+func (o GetMysqlConfigurationVariableOutput) TimeZone() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationVariable) *string { return v.TimeZone }).(pulumi.StringPtrOutput)
 }
 
 // The maximum size of internal in-memory temporary tables. This variable does not apply to user-created MEMORY tables.
-func (o GetMysqlConfigurationVariableOutput) TmpTableSize() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationVariable) string { return v.TmpTableSize }).(pulumi.StringOutput)
+func (o GetMysqlConfigurationVariableOutput) TmpTableSize() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationVariable) *string { return v.TmpTableSize }).(pulumi.StringPtrOutput)
 }
 
 // ("transactionIsolation")
-func (o GetMysqlConfigurationVariableOutput) TransactionIsolation() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationVariable) string { return v.TransactionIsolation }).(pulumi.StringOutput)
+func (o GetMysqlConfigurationVariableOutput) TransactionIsolation() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationVariable) *string { return v.TransactionIsolation }).(pulumi.StringPtrOutput)
 }
 
 // The number of seconds the server waits for activity on a noninteractive connection before closing it.
-func (o GetMysqlConfigurationVariableOutput) WaitTimeout() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationVariable) int { return v.WaitTimeout }).(pulumi.IntOutput)
+func (o GetMysqlConfigurationVariableOutput) WaitTimeout() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationVariable) *int { return v.WaitTimeout }).(pulumi.IntPtrOutput)
 }
 
 type GetMysqlConfigurationVariableArrayOutput struct{ *pulumi.OutputState }
@@ -13103,12 +11694,6 @@ func (o GetMysqlConfigurationVariableArrayOutput) ToGetMysqlConfigurationVariabl
 	return o
 }
 
-func (o GetMysqlConfigurationVariableArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlConfigurationVariable] {
-	return pulumix.Output[[]GetMysqlConfigurationVariable]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetMysqlConfigurationVariableArrayOutput) Index(i pulumi.IntInput) GetMysqlConfigurationVariableOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlConfigurationVariable {
 		return vs[0].([]GetMysqlConfigurationVariable)[vs[1].(int)]
@@ -13117,31 +11702,31 @@ func (o GetMysqlConfigurationVariableArrayOutput) Index(i pulumi.IntInput) GetMy
 
 type GetMysqlConfigurationsConfiguration struct {
 	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// User-provided data about the Configuration.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// A filter to return only the resource matching the given display name exactly.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The OCID of the Configuration.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// User-defined service variables set only at DB system initialization. These variables cannot be changed later at runtime.
 	InitVariables []GetMysqlConfigurationsConfigurationInitVariable `pulumi:"initVariables"`
 	// The OCID of the Configuration from which this Configuration is "derived". This is entirely a metadata relationship. There is no relation between the values in this Configuration and its parent.
-	ParentConfigurationId string `pulumi:"parentConfigurationId"`
+	ParentConfigurationId *string `pulumi:"parentConfigurationId"`
 	// The requested Shape name.
-	ShapeName string `pulumi:"shapeName"`
+	ShapeName *string `pulumi:"shapeName"`
 	// Configuration Lifecycle State
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The date and time the Configuration was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The date and time the Configuration was last updated, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 	// The requested Configuration types.
-	Type string `pulumi:"type"`
+	Type *string `pulumi:"type"`
 	// User-defined service variables.
 	Variables []GetMysqlConfigurationsConfigurationVariable `pulumi:"variables"`
 }
@@ -13159,31 +11744,31 @@ type GetMysqlConfigurationsConfigurationInput interface {
 
 type GetMysqlConfigurationsConfigurationArgs struct {
 	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// User-provided data about the Configuration.
-	Description pulumi.StringInput `pulumi:"description"`
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// A filter to return only the resource matching the given display name exactly.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// The OCID of the Configuration.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// User-defined service variables set only at DB system initialization. These variables cannot be changed later at runtime.
 	InitVariables GetMysqlConfigurationsConfigurationInitVariableArrayInput `pulumi:"initVariables"`
 	// The OCID of the Configuration from which this Configuration is "derived". This is entirely a metadata relationship. There is no relation between the values in this Configuration and its parent.
-	ParentConfigurationId pulumi.StringInput `pulumi:"parentConfigurationId"`
+	ParentConfigurationId pulumi.StringPtrInput `pulumi:"parentConfigurationId"`
 	// The requested Shape name.
-	ShapeName pulumi.StringInput `pulumi:"shapeName"`
+	ShapeName pulumi.StringPtrInput `pulumi:"shapeName"`
 	// Configuration Lifecycle State
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// The date and time the Configuration was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// The date and time the Configuration was last updated, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
 	// The requested Configuration types.
-	Type pulumi.StringInput `pulumi:"type"`
+	Type pulumi.StringPtrInput `pulumi:"type"`
 	// User-defined service variables.
 	Variables GetMysqlConfigurationsConfigurationVariableArrayInput `pulumi:"variables"`
 }
@@ -13198,12 +11783,6 @@ func (i GetMysqlConfigurationsConfigurationArgs) ToGetMysqlConfigurationsConfigu
 
 func (i GetMysqlConfigurationsConfigurationArgs) ToGetMysqlConfigurationsConfigurationOutputWithContext(ctx context.Context) GetMysqlConfigurationsConfigurationOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlConfigurationsConfigurationOutput)
-}
-
-func (i GetMysqlConfigurationsConfigurationArgs) ToOutput(ctx context.Context) pulumix.Output[GetMysqlConfigurationsConfiguration] {
-	return pulumix.Output[GetMysqlConfigurationsConfiguration]{
-		OutputState: i.ToGetMysqlConfigurationsConfigurationOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetMysqlConfigurationsConfigurationArrayInput is an input type that accepts GetMysqlConfigurationsConfigurationArray and GetMysqlConfigurationsConfigurationArrayOutput values.
@@ -13231,12 +11810,6 @@ func (i GetMysqlConfigurationsConfigurationArray) ToGetMysqlConfigurationsConfig
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlConfigurationsConfigurationArrayOutput)
 }
 
-func (i GetMysqlConfigurationsConfigurationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlConfigurationsConfiguration] {
-	return pulumix.Output[[]GetMysqlConfigurationsConfiguration]{
-		OutputState: i.ToGetMysqlConfigurationsConfigurationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMysqlConfigurationsConfigurationOutput struct{ *pulumi.OutputState }
 
 func (GetMysqlConfigurationsConfigurationOutput) ElementType() reflect.Type {
@@ -13251,15 +11824,9 @@ func (o GetMysqlConfigurationsConfigurationOutput) ToGetMysqlConfigurationsConfi
 	return o
 }
 
-func (o GetMysqlConfigurationsConfigurationOutput) ToOutput(ctx context.Context) pulumix.Output[GetMysqlConfigurationsConfiguration] {
-	return pulumix.Output[GetMysqlConfigurationsConfiguration]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-func (o GetMysqlConfigurationsConfigurationOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationsConfiguration) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetMysqlConfigurationsConfigurationOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfiguration) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -13268,13 +11835,13 @@ func (o GetMysqlConfigurationsConfigurationOutput) DefinedTags() pulumi.MapOutpu
 }
 
 // User-provided data about the Configuration.
-func (o GetMysqlConfigurationsConfigurationOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationsConfiguration) string { return v.Description }).(pulumi.StringOutput)
+func (o GetMysqlConfigurationsConfigurationOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfiguration) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // A filter to return only the resource matching the given display name exactly.
-func (o GetMysqlConfigurationsConfigurationOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationsConfiguration) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetMysqlConfigurationsConfigurationOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfiguration) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -13283,8 +11850,8 @@ func (o GetMysqlConfigurationsConfigurationOutput) FreeformTags() pulumi.MapOutp
 }
 
 // The OCID of the Configuration.
-func (o GetMysqlConfigurationsConfigurationOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationsConfiguration) string { return v.Id }).(pulumi.StringOutput)
+func (o GetMysqlConfigurationsConfigurationOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfiguration) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // User-defined service variables set only at DB system initialization. These variables cannot be changed later at runtime.
@@ -13295,33 +11862,33 @@ func (o GetMysqlConfigurationsConfigurationOutput) InitVariables() GetMysqlConfi
 }
 
 // The OCID of the Configuration from which this Configuration is "derived". This is entirely a metadata relationship. There is no relation between the values in this Configuration and its parent.
-func (o GetMysqlConfigurationsConfigurationOutput) ParentConfigurationId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationsConfiguration) string { return v.ParentConfigurationId }).(pulumi.StringOutput)
+func (o GetMysqlConfigurationsConfigurationOutput) ParentConfigurationId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfiguration) *string { return v.ParentConfigurationId }).(pulumi.StringPtrOutput)
 }
 
 // The requested Shape name.
-func (o GetMysqlConfigurationsConfigurationOutput) ShapeName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationsConfiguration) string { return v.ShapeName }).(pulumi.StringOutput)
+func (o GetMysqlConfigurationsConfigurationOutput) ShapeName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfiguration) *string { return v.ShapeName }).(pulumi.StringPtrOutput)
 }
 
 // Configuration Lifecycle State
-func (o GetMysqlConfigurationsConfigurationOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationsConfiguration) string { return v.State }).(pulumi.StringOutput)
+func (o GetMysqlConfigurationsConfigurationOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfiguration) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the Configuration was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-func (o GetMysqlConfigurationsConfigurationOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationsConfiguration) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetMysqlConfigurationsConfigurationOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfiguration) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the Configuration was last updated, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-func (o GetMysqlConfigurationsConfigurationOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationsConfiguration) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o GetMysqlConfigurationsConfigurationOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfiguration) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 // The requested Configuration types.
-func (o GetMysqlConfigurationsConfigurationOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationsConfiguration) string { return v.Type }).(pulumi.StringOutput)
+func (o GetMysqlConfigurationsConfigurationOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfiguration) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
 
 // User-defined service variables.
@@ -13345,12 +11912,6 @@ func (o GetMysqlConfigurationsConfigurationArrayOutput) ToGetMysqlConfigurations
 	return o
 }
 
-func (o GetMysqlConfigurationsConfigurationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlConfigurationsConfiguration] {
-	return pulumix.Output[[]GetMysqlConfigurationsConfiguration]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetMysqlConfigurationsConfigurationArrayOutput) Index(i pulumi.IntInput) GetMysqlConfigurationsConfigurationOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlConfigurationsConfiguration {
 		return vs[0].([]GetMysqlConfigurationsConfiguration)[vs[1].(int)]
@@ -13359,7 +11920,7 @@ func (o GetMysqlConfigurationsConfigurationArrayOutput) Index(i pulumi.IntInput)
 
 type GetMysqlConfigurationsConfigurationInitVariable struct {
 	// Represents the MySQL server system variable lowerCaseTableNames (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_lower_case_table_names).
-	LowerCaseTableNames string `pulumi:"lowerCaseTableNames"`
+	LowerCaseTableNames *string `pulumi:"lowerCaseTableNames"`
 }
 
 // GetMysqlConfigurationsConfigurationInitVariableInput is an input type that accepts GetMysqlConfigurationsConfigurationInitVariableArgs and GetMysqlConfigurationsConfigurationInitVariableOutput values.
@@ -13375,7 +11936,7 @@ type GetMysqlConfigurationsConfigurationInitVariableInput interface {
 
 type GetMysqlConfigurationsConfigurationInitVariableArgs struct {
 	// Represents the MySQL server system variable lowerCaseTableNames (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_lower_case_table_names).
-	LowerCaseTableNames pulumi.StringInput `pulumi:"lowerCaseTableNames"`
+	LowerCaseTableNames pulumi.StringPtrInput `pulumi:"lowerCaseTableNames"`
 }
 
 func (GetMysqlConfigurationsConfigurationInitVariableArgs) ElementType() reflect.Type {
@@ -13388,12 +11949,6 @@ func (i GetMysqlConfigurationsConfigurationInitVariableArgs) ToGetMysqlConfigura
 
 func (i GetMysqlConfigurationsConfigurationInitVariableArgs) ToGetMysqlConfigurationsConfigurationInitVariableOutputWithContext(ctx context.Context) GetMysqlConfigurationsConfigurationInitVariableOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlConfigurationsConfigurationInitVariableOutput)
-}
-
-func (i GetMysqlConfigurationsConfigurationInitVariableArgs) ToOutput(ctx context.Context) pulumix.Output[GetMysqlConfigurationsConfigurationInitVariable] {
-	return pulumix.Output[GetMysqlConfigurationsConfigurationInitVariable]{
-		OutputState: i.ToGetMysqlConfigurationsConfigurationInitVariableOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetMysqlConfigurationsConfigurationInitVariableArrayInput is an input type that accepts GetMysqlConfigurationsConfigurationInitVariableArray and GetMysqlConfigurationsConfigurationInitVariableArrayOutput values.
@@ -13421,12 +11976,6 @@ func (i GetMysqlConfigurationsConfigurationInitVariableArray) ToGetMysqlConfigur
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlConfigurationsConfigurationInitVariableArrayOutput)
 }
 
-func (i GetMysqlConfigurationsConfigurationInitVariableArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlConfigurationsConfigurationInitVariable] {
-	return pulumix.Output[[]GetMysqlConfigurationsConfigurationInitVariable]{
-		OutputState: i.ToGetMysqlConfigurationsConfigurationInitVariableArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMysqlConfigurationsConfigurationInitVariableOutput struct{ *pulumi.OutputState }
 
 func (GetMysqlConfigurationsConfigurationInitVariableOutput) ElementType() reflect.Type {
@@ -13441,15 +11990,9 @@ func (o GetMysqlConfigurationsConfigurationInitVariableOutput) ToGetMysqlConfigu
 	return o
 }
 
-func (o GetMysqlConfigurationsConfigurationInitVariableOutput) ToOutput(ctx context.Context) pulumix.Output[GetMysqlConfigurationsConfigurationInitVariable] {
-	return pulumix.Output[GetMysqlConfigurationsConfigurationInitVariable]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Represents the MySQL server system variable lowerCaseTableNames (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_lower_case_table_names).
-func (o GetMysqlConfigurationsConfigurationInitVariableOutput) LowerCaseTableNames() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationInitVariable) string { return v.LowerCaseTableNames }).(pulumi.StringOutput)
+func (o GetMysqlConfigurationsConfigurationInitVariableOutput) LowerCaseTableNames() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationInitVariable) *string { return v.LowerCaseTableNames }).(pulumi.StringPtrOutput)
 }
 
 type GetMysqlConfigurationsConfigurationInitVariableArrayOutput struct{ *pulumi.OutputState }
@@ -13466,12 +12009,6 @@ func (o GetMysqlConfigurationsConfigurationInitVariableArrayOutput) ToGetMysqlCo
 	return o
 }
 
-func (o GetMysqlConfigurationsConfigurationInitVariableArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlConfigurationsConfigurationInitVariable] {
-	return pulumix.Output[[]GetMysqlConfigurationsConfigurationInitVariable]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetMysqlConfigurationsConfigurationInitVariableArrayOutput) Index(i pulumi.IntInput) GetMysqlConfigurationsConfigurationInitVariableOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlConfigurationsConfigurationInitVariable {
 		return vs[0].([]GetMysqlConfigurationsConfigurationInitVariable)[vs[1].(int)]
@@ -13480,181 +12017,181 @@ func (o GetMysqlConfigurationsConfigurationInitVariableArrayOutput) Index(i pulu
 
 type GetMysqlConfigurationsConfigurationVariable struct {
 	// ("autocommit")
-	Autocommit bool `pulumi:"autocommit"`
+	Autocommit *bool `pulumi:"autocommit"`
 	// If enabled, the server stores all temporary tables on disk rather than in memory.
-	BigTables bool `pulumi:"bigTables"`
+	BigTables *bool `pulumi:"bigTables"`
 	// Sets the binary log expiration period in seconds. binlogExpireLogsSeconds corresponds to the MySQL binary logging system variable [binlogExpireLogsSeconds](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_expire_logs_seconds).
-	BinlogExpireLogsSeconds int `pulumi:"binlogExpireLogsSeconds"`
+	BinlogExpireLogsSeconds *int `pulumi:"binlogExpireLogsSeconds"`
 	// Configures the amount of table metadata added to the binary log when using row-based logging. binlogRowMetadata corresponds to the MySQL binary logging system variable [binlogRowMetadata](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_row_metadata).
-	BinlogRowMetadata string `pulumi:"binlogRowMetadata"`
+	BinlogRowMetadata *string `pulumi:"binlogRowMetadata"`
 	// When set to PARTIAL_JSON, this enables use of a space-efficient binary log format for updates that modify only a small portion of a JSON document. binlogRowValueOptions corresponds to the MySQL binary logging system variable [binlogRowValueOptions](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_row_value_options).
-	BinlogRowValueOptions string `pulumi:"binlogRowValueOptions"`
+	BinlogRowValueOptions *string `pulumi:"binlogRowValueOptions"`
 	// Enables compression for transactions that are written to binary log files on this server. binlogTransactionCompression corresponds to the MySQL binary logging system variable [binlogTransactionCompression](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_transaction_compression).
-	BinlogTransactionCompression bool `pulumi:"binlogTransactionCompression"`
+	BinlogTransactionCompression *bool `pulumi:"binlogTransactionCompression"`
 	// ("completionType")
-	CompletionType string `pulumi:"completionType"`
+	CompletionType *string `pulumi:"completionType"`
 	// The number of seconds that the mysqld server waits for a connect packet before responding with Bad handshake.
-	ConnectTimeout int `pulumi:"connectTimeout"`
+	ConnectTimeout *int `pulumi:"connectTimeout"`
 	// Set the chunking size for updates to the global memory usage counter Global_connection_memory.
-	ConnectionMemoryChunkSize int `pulumi:"connectionMemoryChunkSize"`
+	ConnectionMemoryChunkSize *int `pulumi:"connectionMemoryChunkSize"`
 	// Set the maximum amount of memory that can be used by a single user connection.
-	ConnectionMemoryLimit string `pulumi:"connectionMemoryLimit"`
+	ConnectionMemoryLimit *string `pulumi:"connectionMemoryLimit"`
 	// ("cteMaxRecursionDepth")
-	CteMaxRecursionDepth string `pulumi:"cteMaxRecursionDepth"`
+	CteMaxRecursionDepth *string `pulumi:"cteMaxRecursionDepth"`
 	// ("defaultAuthenticationPlugin")
-	DefaultAuthenticationPlugin string `pulumi:"defaultAuthenticationPlugin"`
+	DefaultAuthenticationPlugin *string `pulumi:"defaultAuthenticationPlugin"`
 	// ("foreignKeyChecks")
-	ForeignKeyChecks bool `pulumi:"foreignKeyChecks"`
+	ForeignKeyChecks *bool `pulumi:"foreignKeyChecks"`
 	// ("generatedRandomPasswordLength") DEPRECATED -- variable should not be settable and will be ignored
 	//
 	// Deprecated: The 'generated_random_password_length' field has been deprecated and may be removed in a future version. Do not use this field.
-	GeneratedRandomPasswordLength int `pulumi:"generatedRandomPasswordLength"`
+	GeneratedRandomPasswordLength *int `pulumi:"generatedRandomPasswordLength"`
 	// Set the total amount of memory that can be used by all user connections.
-	GlobalConnectionMemoryLimit string `pulumi:"globalConnectionMemoryLimit"`
+	GlobalConnectionMemoryLimit *string `pulumi:"globalConnectionMemoryLimit"`
 	// Determines whether the MySQL server calculates Global_connection_memory.
-	GlobalConnectionMemoryTracking bool `pulumi:"globalConnectionMemoryTracking"`
+	GlobalConnectionMemoryTracking *bool `pulumi:"globalConnectionMemoryTracking"`
 	// * EVENTUAL: Both RO and RW transactions do not wait for preceding transactions to be applied before executing. A RW transaction does not wait for other members to apply a transaction. This means that a transaction could be externalized on one member before the others. This also means that in the event of a primary failover, the new primary can accept new RO and RW transactions before the previous primary transactions are all applied. RO transactions could result in outdated values, RW transactions could result in a rollback due to conflicts.
 	// * BEFORE_ON_PRIMARY_FAILOVER: New RO or RW transactions with a newly elected primary that is applying backlog from the old primary are held (not applied) until any backlog has been applied. This ensures that when a primary failover happens, intentionally or not, clients always see the latest value on the primary. This guarantees consistency, but means that clients must be able to handle the delay in the event that a backlog is being applied. Usually this delay should be minimal, but does depend on the size of the backlog.
 	// * BEFORE: A RW transaction waits for all preceding transactions to complete before being applied. A RO transaction waits for all preceding transactions to complete before being executed. This ensures that this transaction reads the latest value by only affecting the latency of the transaction. This reduces the overhead of synchronization on every RW transaction, by ensuring synchronization is used only on RO transactions. This consistency level also includes the consistency guarantees provided by BEFORE_ON_PRIMARY_FAILOVER.
 	// * AFTER: A RW transaction waits until its changes have been applied to all of the other members. This value has no effect on RO transactions. This mode ensures that when a transaction is committed on the local member, any subsequent transaction reads the written value or a more recent value on any group member. Use this mode with a group that is used for predominantly RO operations to ensure that applied RW transactions are applied everywhere once they commit. This could be used by your application to ensure that subsequent reads fetch the latest data which includes the latest writes. This reduces the overhead of synchronization on every RO transaction, by ensuring synchronization is used only on RW transactions. This consistency level also includes the consistency guarantees provided by BEFORE_ON_PRIMARY_FAILOVER.
 	// * BEFORE_AND_AFTER: A RW transaction waits for 1) all preceding transactions to complete before being applied and 2) until its changes have been applied on other members. A RO transaction waits for all preceding transactions to complete before execution takes place. This consistency level also includes the consistency guarantees provided by BEFORE_ON_PRIMARY_FAILOVER.
-	GroupReplicationConsistency string `pulumi:"groupReplicationConsistency"`
+	GroupReplicationConsistency *string `pulumi:"groupReplicationConsistency"`
 	// ("informationSchemaStatsExpiry")
-	InformationSchemaStatsExpiry int `pulumi:"informationSchemaStatsExpiry"`
+	InformationSchemaStatsExpiry *int `pulumi:"informationSchemaStatsExpiry"`
 	// Specifies the percentage of the most recently used pages for each buffer pool to read out and dump.
-	InnodbBufferPoolDumpPct int `pulumi:"innodbBufferPoolDumpPct"`
+	InnodbBufferPoolDumpPct *int `pulumi:"innodbBufferPoolDumpPct"`
 	// ("innodbBufferPoolInstances")
-	InnodbBufferPoolInstances int `pulumi:"innodbBufferPoolInstances"`
+	InnodbBufferPoolInstances *int `pulumi:"innodbBufferPoolInstances"`
 	// The size (in bytes) of the buffer pool, that is, the memory area where InnoDB caches table and index data.
-	InnodbBufferPoolSize string `pulumi:"innodbBufferPoolSize"`
+	InnodbBufferPoolSize *string `pulumi:"innodbBufferPoolSize"`
 	// innodbDdlBufferSize corresponds to the MySQL system variable [innodbDdlBufferSize] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_buffer_size)
-	InnodbDdlBufferSize string `pulumi:"innodbDdlBufferSize"`
+	InnodbDdlBufferSize *string `pulumi:"innodbDdlBufferSize"`
 	// innodbDdlThreads corresponds to the MySQL system variable [innodbDdlThreads] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_threads)
-	InnodbDdlThreads int `pulumi:"innodbDdlThreads"`
+	InnodbDdlThreads *int `pulumi:"innodbDdlThreads"`
 	// ("innodbFtEnableStopword")
-	InnodbFtEnableStopword bool `pulumi:"innodbFtEnableStopword"`
+	InnodbFtEnableStopword *bool `pulumi:"innodbFtEnableStopword"`
 	// ("innodbFtMaxTokenSize")
-	InnodbFtMaxTokenSize int `pulumi:"innodbFtMaxTokenSize"`
+	InnodbFtMaxTokenSize *int `pulumi:"innodbFtMaxTokenSize"`
 	// ("innodbFtMinTokenSize")
-	InnodbFtMinTokenSize int `pulumi:"innodbFtMinTokenSize"`
+	InnodbFtMinTokenSize *int `pulumi:"innodbFtMinTokenSize"`
 	// ("innodbFtNumWordOptimize")
-	InnodbFtNumWordOptimize int `pulumi:"innodbFtNumWordOptimize"`
+	InnodbFtNumWordOptimize *int `pulumi:"innodbFtNumWordOptimize"`
 	// ("innodbFtResultCacheLimit")
-	InnodbFtResultCacheLimit string `pulumi:"innodbFtResultCacheLimit"`
+	InnodbFtResultCacheLimit *string `pulumi:"innodbFtResultCacheLimit"`
 	// ("innodbFtServerStopwordTable")
-	InnodbFtServerStopwordTable string `pulumi:"innodbFtServerStopwordTable"`
+	InnodbFtServerStopwordTable *string `pulumi:"innodbFtServerStopwordTable"`
 	// ("innodbLockWaitTimeout")
-	InnodbLockWaitTimeout int `pulumi:"innodbLockWaitTimeout"`
+	InnodbLockWaitTimeout *int `pulumi:"innodbLockWaitTimeout"`
 	// Enables dedicated log writer threads for writing redo log records from the log buffer to the system buffers and flushing the system buffers to the redo log files.
-	InnodbLogWriterThreads bool `pulumi:"innodbLogWriterThreads"`
+	InnodbLogWriterThreads *bool `pulumi:"innodbLogWriterThreads"`
 	// The desired maximum purge lag in terms of transactions.
-	InnodbMaxPurgeLag string `pulumi:"innodbMaxPurgeLag"`
+	InnodbMaxPurgeLag *string `pulumi:"innodbMaxPurgeLag"`
 	// The maximum delay in microseconds for the delay imposed when the innodbMaxPurgeLag threshold is exceeded.
-	InnodbMaxPurgeLagDelay int `pulumi:"innodbMaxPurgeLagDelay"`
+	InnodbMaxPurgeLagDelay *int `pulumi:"innodbMaxPurgeLagDelay"`
 	// The number of index pages to sample when estimating cardinality and other statistics for an indexed column, such as those calculated by ANALYZE TABLE.
-	InnodbStatsPersistentSamplePages string `pulumi:"innodbStatsPersistentSamplePages"`
+	InnodbStatsPersistentSamplePages *string `pulumi:"innodbStatsPersistentSamplePages"`
 	// The number of index pages to sample when estimating cardinality and other statistics for an indexed column, such as those calculated by [ANALYZE TABLE](https://dev.mysql.com/doc/refman/8.0/en/analyze-table.html).
-	InnodbStatsTransientSamplePages string `pulumi:"innodbStatsTransientSamplePages"`
+	InnodbStatsTransientSamplePages *string `pulumi:"innodbStatsTransientSamplePages"`
 	// The number of seconds the server waits for activity on an interactive connection before closing it.
-	InteractiveTimeout int `pulumi:"interactiveTimeout"`
+	InteractiveTimeout *int `pulumi:"interactiveTimeout"`
 	// ("localInfile")
-	LocalInfile bool `pulumi:"localInfile"`
+	LocalInfile *bool `pulumi:"localInfile"`
 	// ("mandatoryRoles")
-	MandatoryRoles string `pulumi:"mandatoryRoles"`
+	MandatoryRoles *string `pulumi:"mandatoryRoles"`
 	// The maximum size of one packet or any generated/intermediate string.
-	MaxAllowedPacket int `pulumi:"maxAllowedPacket"`
+	MaxAllowedPacket *int `pulumi:"maxAllowedPacket"`
 	// Sets the size of the transaction cache.
-	MaxBinlogCacheSize string `pulumi:"maxBinlogCacheSize"`
+	MaxBinlogCacheSize *string `pulumi:"maxBinlogCacheSize"`
 	// ("maxConnectErrors")
-	MaxConnectErrors string `pulumi:"maxConnectErrors"`
+	MaxConnectErrors *string `pulumi:"maxConnectErrors"`
 	// ("maxConnections")
-	MaxConnections int `pulumi:"maxConnections"`
+	MaxConnections *int `pulumi:"maxConnections"`
 	// ("maxExecutionTime")
-	MaxExecutionTime string `pulumi:"maxExecutionTime"`
+	MaxExecutionTime *string `pulumi:"maxExecutionTime"`
 	// This variable sets the maximum size to which user-created MEMORY tables are permitted to grow.
-	MaxHeapTableSize string `pulumi:"maxHeapTableSize"`
+	MaxHeapTableSize *string `pulumi:"maxHeapTableSize"`
 	// ("maxPreparedStmtCount")
-	MaxPreparedStmtCount int `pulumi:"maxPreparedStmtCount"`
+	MaxPreparedStmtCount *int `pulumi:"maxPreparedStmtCount"`
 	// ("mysqlFirewallMode")
-	MysqlFirewallMode bool `pulumi:"mysqlFirewallMode"`
+	MysqlFirewallMode *bool `pulumi:"mysqlFirewallMode"`
 	// DEPRECATED -- typo of mysqlx_zstd_default_compression_level. variable will be ignored.
 	//
 	// Deprecated: The 'mysql_zstd_default_compression_level' field has been deprecated and may be removed in a future version. Do not use this field.
-	MysqlZstdDefaultCompressionLevel int `pulumi:"mysqlZstdDefaultCompressionLevel"`
+	MysqlZstdDefaultCompressionLevel *int `pulumi:"mysqlZstdDefaultCompressionLevel"`
 	// The number of seconds X Plugin waits for the first packet to be received from newly connected clients.
-	MysqlxConnectTimeout int `pulumi:"mysqlxConnectTimeout"`
+	MysqlxConnectTimeout *int `pulumi:"mysqlxConnectTimeout"`
 	// Set the default compression level for the deflate algorithm. ("mysqlxDeflateDefaultCompressionLevel")
-	MysqlxDeflateDefaultCompressionLevel int `pulumi:"mysqlxDeflateDefaultCompressionLevel"`
+	MysqlxDeflateDefaultCompressionLevel *int `pulumi:"mysqlxDeflateDefaultCompressionLevel"`
 	// Limit the upper bound of accepted compression levels for the deflate algorithm. ("mysqlxDeflateMaxClientCompressionLevel")
-	MysqlxDeflateMaxClientCompressionLevel int `pulumi:"mysqlxDeflateMaxClientCompressionLevel"`
+	MysqlxDeflateMaxClientCompressionLevel *int `pulumi:"mysqlxDeflateMaxClientCompressionLevel"`
 	// ("mysqlxDocumentIdUniquePrefix") DEPRECATED -- variable should not be settable and will be ignored
 	//
 	// Deprecated: The 'mysqlx_document_id_unique_prefix' field has been deprecated and may be removed in a future version. Do not use this field.
-	MysqlxDocumentIdUniquePrefix int `pulumi:"mysqlxDocumentIdUniquePrefix"`
+	MysqlxDocumentIdUniquePrefix *int `pulumi:"mysqlxDocumentIdUniquePrefix"`
 	// ("mysqlxEnableHelloNotice") DEPRECATED -- variable should not be settable and will be ignored
-	MysqlxEnableHelloNotice bool `pulumi:"mysqlxEnableHelloNotice"`
+	MysqlxEnableHelloNotice *bool `pulumi:"mysqlxEnableHelloNotice"`
 	// ("mysqlxIdleWorkerThreadTimeout") DEPRECATED -- variable should not be settable and will be ignored
 	//
 	// Deprecated: The 'mysqlx_idle_worker_thread_timeout' field has been deprecated and may be removed in a future version. Do not use this field.
-	MysqlxIdleWorkerThreadTimeout int `pulumi:"mysqlxIdleWorkerThreadTimeout"`
+	MysqlxIdleWorkerThreadTimeout *int `pulumi:"mysqlxIdleWorkerThreadTimeout"`
 	// The number of seconds to wait for interactive clients to timeout.
-	MysqlxInteractiveTimeout int `pulumi:"mysqlxInteractiveTimeout"`
+	MysqlxInteractiveTimeout *int `pulumi:"mysqlxInteractiveTimeout"`
 	// Set the default compression level for the lz4 algorithm. ("mysqlxLz4DefaultCompressionLevel")
-	MysqlxLz4defaultCompressionLevel int `pulumi:"mysqlxLz4defaultCompressionLevel"`
+	MysqlxLz4defaultCompressionLevel *int `pulumi:"mysqlxLz4defaultCompressionLevel"`
 	// Limit the upper bound of accepted compression levels for the lz4 algorithm. ("mysqlxLz4MaxClientCompressionLevel")
-	MysqlxLz4maxClientCompressionLevel int `pulumi:"mysqlxLz4maxClientCompressionLevel"`
+	MysqlxLz4maxClientCompressionLevel *int `pulumi:"mysqlxLz4maxClientCompressionLevel"`
 	// The maximum size of network packets that can be received by X Plugin.
-	MysqlxMaxAllowedPacket int `pulumi:"mysqlxMaxAllowedPacket"`
+	MysqlxMaxAllowedPacket *int `pulumi:"mysqlxMaxAllowedPacket"`
 	// ("mysqlxMinWorkerThreads") DEPRECATED -- variable should not be settable and will be ignored
 	//
 	// Deprecated: The 'mysqlx_min_worker_threads' field has been deprecated and may be removed in a future version. Do not use this field.
-	MysqlxMinWorkerThreads int `pulumi:"mysqlxMinWorkerThreads"`
+	MysqlxMinWorkerThreads *int `pulumi:"mysqlxMinWorkerThreads"`
 	// The number of seconds that X Plugin waits for blocking read operations to complete. After this time, if the read operation is not successful, X Plugin closes the connection and returns a warning notice with the error code ER_IO_READ_ERROR to the client application.
-	MysqlxReadTimeout int `pulumi:"mysqlxReadTimeout"`
+	MysqlxReadTimeout *int `pulumi:"mysqlxReadTimeout"`
 	// The number of seconds that X Plugin waits for activity on a connection.
-	MysqlxWaitTimeout int `pulumi:"mysqlxWaitTimeout"`
+	MysqlxWaitTimeout *int `pulumi:"mysqlxWaitTimeout"`
 	// The number of seconds that X Plugin waits for blocking write operations to complete. After this time, if the write operation is not successful, X Plugin closes the connection.
-	MysqlxWriteTimeout int `pulumi:"mysqlxWriteTimeout"`
+	MysqlxWriteTimeout *int `pulumi:"mysqlxWriteTimeout"`
 	// Set the default compression level for the zstd algorithm. ("mysqlxZstdDefaultCompressionLevel")
-	MysqlxZstdDefaultCompressionLevel int `pulumi:"mysqlxZstdDefaultCompressionLevel"`
+	MysqlxZstdDefaultCompressionLevel *int `pulumi:"mysqlxZstdDefaultCompressionLevel"`
 	// Limit the upper bound of accepted compression levels for the zstd algorithm. ("mysqlxZstdMaxClientCompressionLevel")
-	MysqlxZstdMaxClientCompressionLevel int `pulumi:"mysqlxZstdMaxClientCompressionLevel"`
+	MysqlxZstdMaxClientCompressionLevel *int `pulumi:"mysqlxZstdMaxClientCompressionLevel"`
 	// The number of seconds to wait for more data from a connection before aborting the read.
-	NetReadTimeout int `pulumi:"netReadTimeout"`
+	NetReadTimeout *int `pulumi:"netReadTimeout"`
 	// The number of seconds to wait for a block to be written to a connection before aborting the write.
-	NetWriteTimeout int `pulumi:"netWriteTimeout"`
+	NetWriteTimeout *int `pulumi:"netWriteTimeout"`
 	// ("parserMaxMemSize")
-	ParserMaxMemSize string `pulumi:"parserMaxMemSize"`
+	ParserMaxMemSize *string `pulumi:"parserMaxMemSize"`
 	// ("queryAllocBlockSize") DEPRECATED -- variable should not be settable and will be ignored
 	//
 	// Deprecated: The 'query_alloc_block_size' field has been deprecated and may be removed in a future version. Do not use this field.
-	QueryAllocBlockSize string `pulumi:"queryAllocBlockSize"`
+	QueryAllocBlockSize *string `pulumi:"queryAllocBlockSize"`
 	// ("queryPreallocSize") DEPRECATED -- variable should not be settable and will be ignored
 	//
 	// Deprecated: The 'query_prealloc_size' field has been deprecated and may be removed in a future version. Do not use this field.
-	QueryPreallocSize string `pulumi:"queryPreallocSize"`
+	QueryPreallocSize *string `pulumi:"queryPreallocSize"`
 	// regexpTimeLimit corresponds to the MySQL system variable [regexpTimeLimit] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_regexp_time_limit)
-	RegexpTimeLimit int `pulumi:"regexpTimeLimit"`
+	RegexpTimeLimit *int `pulumi:"regexpTimeLimit"`
 	// Each session that must perform a sort allocates a buffer of this size.
-	SortBufferSize string `pulumi:"sortBufferSize"`
+	SortBufferSize *string `pulumi:"sortBufferSize"`
 	// ("sqlMode")
-	SqlMode string `pulumi:"sqlMode"`
+	SqlMode *string `pulumi:"sqlMode"`
 	// ("sqlRequirePrimaryKey")
-	SqlRequirePrimaryKey bool `pulumi:"sqlRequirePrimaryKey"`
+	SqlRequirePrimaryKey *bool `pulumi:"sqlRequirePrimaryKey"`
 	// ("sqlWarnings")
-	SqlWarnings bool `pulumi:"sqlWarnings"`
+	SqlWarnings *bool `pulumi:"sqlWarnings"`
 	// Controls whether the thread pool uses dedicated listener threads. If enabled, a listener thread in each thread group is dedicated to the task of listening for network events from clients, ensuring that the maximum number of query worker threads is no more than the value specified by threadPoolMaxTransactionsLimit. threadPoolDedicatedListeners corresponds to the MySQL Database Service-specific system variable thread_pool_dedicated_listeners.
-	ThreadPoolDedicatedListeners bool `pulumi:"threadPoolDedicatedListeners"`
+	ThreadPoolDedicatedListeners *bool `pulumi:"threadPoolDedicatedListeners"`
 	// Limits the maximum number of open transactions to the defined value. The default value is 0, which enforces no limit. threadPoolMaxTransactionsLimit corresponds to the MySQL Database Service-specific system variable thread_pool_max_transactions_limit.
-	ThreadPoolMaxTransactionsLimit int `pulumi:"threadPoolMaxTransactionsLimit"`
+	ThreadPoolMaxTransactionsLimit *int `pulumi:"threadPoolMaxTransactionsLimit"`
 	// Initializes the time zone for each client that connects.
-	TimeZone string `pulumi:"timeZone"`
+	TimeZone *string `pulumi:"timeZone"`
 	// The maximum size of internal in-memory temporary tables. This variable does not apply to user-created MEMORY tables.
-	TmpTableSize string `pulumi:"tmpTableSize"`
+	TmpTableSize *string `pulumi:"tmpTableSize"`
 	// ("transactionIsolation")
-	TransactionIsolation string `pulumi:"transactionIsolation"`
+	TransactionIsolation *string `pulumi:"transactionIsolation"`
 	// The number of seconds the server waits for activity on a noninteractive connection before closing it.
-	WaitTimeout int `pulumi:"waitTimeout"`
+	WaitTimeout *int `pulumi:"waitTimeout"`
 }
 
 // GetMysqlConfigurationsConfigurationVariableInput is an input type that accepts GetMysqlConfigurationsConfigurationVariableArgs and GetMysqlConfigurationsConfigurationVariableOutput values.
@@ -13670,181 +12207,181 @@ type GetMysqlConfigurationsConfigurationVariableInput interface {
 
 type GetMysqlConfigurationsConfigurationVariableArgs struct {
 	// ("autocommit")
-	Autocommit pulumi.BoolInput `pulumi:"autocommit"`
+	Autocommit pulumi.BoolPtrInput `pulumi:"autocommit"`
 	// If enabled, the server stores all temporary tables on disk rather than in memory.
-	BigTables pulumi.BoolInput `pulumi:"bigTables"`
+	BigTables pulumi.BoolPtrInput `pulumi:"bigTables"`
 	// Sets the binary log expiration period in seconds. binlogExpireLogsSeconds corresponds to the MySQL binary logging system variable [binlogExpireLogsSeconds](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_expire_logs_seconds).
-	BinlogExpireLogsSeconds pulumi.IntInput `pulumi:"binlogExpireLogsSeconds"`
+	BinlogExpireLogsSeconds pulumi.IntPtrInput `pulumi:"binlogExpireLogsSeconds"`
 	// Configures the amount of table metadata added to the binary log when using row-based logging. binlogRowMetadata corresponds to the MySQL binary logging system variable [binlogRowMetadata](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_row_metadata).
-	BinlogRowMetadata pulumi.StringInput `pulumi:"binlogRowMetadata"`
+	BinlogRowMetadata pulumi.StringPtrInput `pulumi:"binlogRowMetadata"`
 	// When set to PARTIAL_JSON, this enables use of a space-efficient binary log format for updates that modify only a small portion of a JSON document. binlogRowValueOptions corresponds to the MySQL binary logging system variable [binlogRowValueOptions](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_row_value_options).
-	BinlogRowValueOptions pulumi.StringInput `pulumi:"binlogRowValueOptions"`
+	BinlogRowValueOptions pulumi.StringPtrInput `pulumi:"binlogRowValueOptions"`
 	// Enables compression for transactions that are written to binary log files on this server. binlogTransactionCompression corresponds to the MySQL binary logging system variable [binlogTransactionCompression](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_transaction_compression).
-	BinlogTransactionCompression pulumi.BoolInput `pulumi:"binlogTransactionCompression"`
+	BinlogTransactionCompression pulumi.BoolPtrInput `pulumi:"binlogTransactionCompression"`
 	// ("completionType")
-	CompletionType pulumi.StringInput `pulumi:"completionType"`
+	CompletionType pulumi.StringPtrInput `pulumi:"completionType"`
 	// The number of seconds that the mysqld server waits for a connect packet before responding with Bad handshake.
-	ConnectTimeout pulumi.IntInput `pulumi:"connectTimeout"`
+	ConnectTimeout pulumi.IntPtrInput `pulumi:"connectTimeout"`
 	// Set the chunking size for updates to the global memory usage counter Global_connection_memory.
-	ConnectionMemoryChunkSize pulumi.IntInput `pulumi:"connectionMemoryChunkSize"`
+	ConnectionMemoryChunkSize pulumi.IntPtrInput `pulumi:"connectionMemoryChunkSize"`
 	// Set the maximum amount of memory that can be used by a single user connection.
-	ConnectionMemoryLimit pulumi.StringInput `pulumi:"connectionMemoryLimit"`
+	ConnectionMemoryLimit pulumi.StringPtrInput `pulumi:"connectionMemoryLimit"`
 	// ("cteMaxRecursionDepth")
-	CteMaxRecursionDepth pulumi.StringInput `pulumi:"cteMaxRecursionDepth"`
+	CteMaxRecursionDepth pulumi.StringPtrInput `pulumi:"cteMaxRecursionDepth"`
 	// ("defaultAuthenticationPlugin")
-	DefaultAuthenticationPlugin pulumi.StringInput `pulumi:"defaultAuthenticationPlugin"`
+	DefaultAuthenticationPlugin pulumi.StringPtrInput `pulumi:"defaultAuthenticationPlugin"`
 	// ("foreignKeyChecks")
-	ForeignKeyChecks pulumi.BoolInput `pulumi:"foreignKeyChecks"`
+	ForeignKeyChecks pulumi.BoolPtrInput `pulumi:"foreignKeyChecks"`
 	// ("generatedRandomPasswordLength") DEPRECATED -- variable should not be settable and will be ignored
 	//
 	// Deprecated: The 'generated_random_password_length' field has been deprecated and may be removed in a future version. Do not use this field.
-	GeneratedRandomPasswordLength pulumi.IntInput `pulumi:"generatedRandomPasswordLength"`
+	GeneratedRandomPasswordLength pulumi.IntPtrInput `pulumi:"generatedRandomPasswordLength"`
 	// Set the total amount of memory that can be used by all user connections.
-	GlobalConnectionMemoryLimit pulumi.StringInput `pulumi:"globalConnectionMemoryLimit"`
+	GlobalConnectionMemoryLimit pulumi.StringPtrInput `pulumi:"globalConnectionMemoryLimit"`
 	// Determines whether the MySQL server calculates Global_connection_memory.
-	GlobalConnectionMemoryTracking pulumi.BoolInput `pulumi:"globalConnectionMemoryTracking"`
+	GlobalConnectionMemoryTracking pulumi.BoolPtrInput `pulumi:"globalConnectionMemoryTracking"`
 	// * EVENTUAL: Both RO and RW transactions do not wait for preceding transactions to be applied before executing. A RW transaction does not wait for other members to apply a transaction. This means that a transaction could be externalized on one member before the others. This also means that in the event of a primary failover, the new primary can accept new RO and RW transactions before the previous primary transactions are all applied. RO transactions could result in outdated values, RW transactions could result in a rollback due to conflicts.
 	// * BEFORE_ON_PRIMARY_FAILOVER: New RO or RW transactions with a newly elected primary that is applying backlog from the old primary are held (not applied) until any backlog has been applied. This ensures that when a primary failover happens, intentionally or not, clients always see the latest value on the primary. This guarantees consistency, but means that clients must be able to handle the delay in the event that a backlog is being applied. Usually this delay should be minimal, but does depend on the size of the backlog.
 	// * BEFORE: A RW transaction waits for all preceding transactions to complete before being applied. A RO transaction waits for all preceding transactions to complete before being executed. This ensures that this transaction reads the latest value by only affecting the latency of the transaction. This reduces the overhead of synchronization on every RW transaction, by ensuring synchronization is used only on RO transactions. This consistency level also includes the consistency guarantees provided by BEFORE_ON_PRIMARY_FAILOVER.
 	// * AFTER: A RW transaction waits until its changes have been applied to all of the other members. This value has no effect on RO transactions. This mode ensures that when a transaction is committed on the local member, any subsequent transaction reads the written value or a more recent value on any group member. Use this mode with a group that is used for predominantly RO operations to ensure that applied RW transactions are applied everywhere once they commit. This could be used by your application to ensure that subsequent reads fetch the latest data which includes the latest writes. This reduces the overhead of synchronization on every RO transaction, by ensuring synchronization is used only on RW transactions. This consistency level also includes the consistency guarantees provided by BEFORE_ON_PRIMARY_FAILOVER.
 	// * BEFORE_AND_AFTER: A RW transaction waits for 1) all preceding transactions to complete before being applied and 2) until its changes have been applied on other members. A RO transaction waits for all preceding transactions to complete before execution takes place. This consistency level also includes the consistency guarantees provided by BEFORE_ON_PRIMARY_FAILOVER.
-	GroupReplicationConsistency pulumi.StringInput `pulumi:"groupReplicationConsistency"`
+	GroupReplicationConsistency pulumi.StringPtrInput `pulumi:"groupReplicationConsistency"`
 	// ("informationSchemaStatsExpiry")
-	InformationSchemaStatsExpiry pulumi.IntInput `pulumi:"informationSchemaStatsExpiry"`
+	InformationSchemaStatsExpiry pulumi.IntPtrInput `pulumi:"informationSchemaStatsExpiry"`
 	// Specifies the percentage of the most recently used pages for each buffer pool to read out and dump.
-	InnodbBufferPoolDumpPct pulumi.IntInput `pulumi:"innodbBufferPoolDumpPct"`
+	InnodbBufferPoolDumpPct pulumi.IntPtrInput `pulumi:"innodbBufferPoolDumpPct"`
 	// ("innodbBufferPoolInstances")
-	InnodbBufferPoolInstances pulumi.IntInput `pulumi:"innodbBufferPoolInstances"`
+	InnodbBufferPoolInstances pulumi.IntPtrInput `pulumi:"innodbBufferPoolInstances"`
 	// The size (in bytes) of the buffer pool, that is, the memory area where InnoDB caches table and index data.
-	InnodbBufferPoolSize pulumi.StringInput `pulumi:"innodbBufferPoolSize"`
+	InnodbBufferPoolSize pulumi.StringPtrInput `pulumi:"innodbBufferPoolSize"`
 	// innodbDdlBufferSize corresponds to the MySQL system variable [innodbDdlBufferSize] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_buffer_size)
-	InnodbDdlBufferSize pulumi.StringInput `pulumi:"innodbDdlBufferSize"`
+	InnodbDdlBufferSize pulumi.StringPtrInput `pulumi:"innodbDdlBufferSize"`
 	// innodbDdlThreads corresponds to the MySQL system variable [innodbDdlThreads] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_threads)
-	InnodbDdlThreads pulumi.IntInput `pulumi:"innodbDdlThreads"`
+	InnodbDdlThreads pulumi.IntPtrInput `pulumi:"innodbDdlThreads"`
 	// ("innodbFtEnableStopword")
-	InnodbFtEnableStopword pulumi.BoolInput `pulumi:"innodbFtEnableStopword"`
+	InnodbFtEnableStopword pulumi.BoolPtrInput `pulumi:"innodbFtEnableStopword"`
 	// ("innodbFtMaxTokenSize")
-	InnodbFtMaxTokenSize pulumi.IntInput `pulumi:"innodbFtMaxTokenSize"`
+	InnodbFtMaxTokenSize pulumi.IntPtrInput `pulumi:"innodbFtMaxTokenSize"`
 	// ("innodbFtMinTokenSize")
-	InnodbFtMinTokenSize pulumi.IntInput `pulumi:"innodbFtMinTokenSize"`
+	InnodbFtMinTokenSize pulumi.IntPtrInput `pulumi:"innodbFtMinTokenSize"`
 	// ("innodbFtNumWordOptimize")
-	InnodbFtNumWordOptimize pulumi.IntInput `pulumi:"innodbFtNumWordOptimize"`
+	InnodbFtNumWordOptimize pulumi.IntPtrInput `pulumi:"innodbFtNumWordOptimize"`
 	// ("innodbFtResultCacheLimit")
-	InnodbFtResultCacheLimit pulumi.StringInput `pulumi:"innodbFtResultCacheLimit"`
+	InnodbFtResultCacheLimit pulumi.StringPtrInput `pulumi:"innodbFtResultCacheLimit"`
 	// ("innodbFtServerStopwordTable")
-	InnodbFtServerStopwordTable pulumi.StringInput `pulumi:"innodbFtServerStopwordTable"`
+	InnodbFtServerStopwordTable pulumi.StringPtrInput `pulumi:"innodbFtServerStopwordTable"`
 	// ("innodbLockWaitTimeout")
-	InnodbLockWaitTimeout pulumi.IntInput `pulumi:"innodbLockWaitTimeout"`
+	InnodbLockWaitTimeout pulumi.IntPtrInput `pulumi:"innodbLockWaitTimeout"`
 	// Enables dedicated log writer threads for writing redo log records from the log buffer to the system buffers and flushing the system buffers to the redo log files.
-	InnodbLogWriterThreads pulumi.BoolInput `pulumi:"innodbLogWriterThreads"`
+	InnodbLogWriterThreads pulumi.BoolPtrInput `pulumi:"innodbLogWriterThreads"`
 	// The desired maximum purge lag in terms of transactions.
-	InnodbMaxPurgeLag pulumi.StringInput `pulumi:"innodbMaxPurgeLag"`
+	InnodbMaxPurgeLag pulumi.StringPtrInput `pulumi:"innodbMaxPurgeLag"`
 	// The maximum delay in microseconds for the delay imposed when the innodbMaxPurgeLag threshold is exceeded.
-	InnodbMaxPurgeLagDelay pulumi.IntInput `pulumi:"innodbMaxPurgeLagDelay"`
+	InnodbMaxPurgeLagDelay pulumi.IntPtrInput `pulumi:"innodbMaxPurgeLagDelay"`
 	// The number of index pages to sample when estimating cardinality and other statistics for an indexed column, such as those calculated by ANALYZE TABLE.
-	InnodbStatsPersistentSamplePages pulumi.StringInput `pulumi:"innodbStatsPersistentSamplePages"`
+	InnodbStatsPersistentSamplePages pulumi.StringPtrInput `pulumi:"innodbStatsPersistentSamplePages"`
 	// The number of index pages to sample when estimating cardinality and other statistics for an indexed column, such as those calculated by [ANALYZE TABLE](https://dev.mysql.com/doc/refman/8.0/en/analyze-table.html).
-	InnodbStatsTransientSamplePages pulumi.StringInput `pulumi:"innodbStatsTransientSamplePages"`
+	InnodbStatsTransientSamplePages pulumi.StringPtrInput `pulumi:"innodbStatsTransientSamplePages"`
 	// The number of seconds the server waits for activity on an interactive connection before closing it.
-	InteractiveTimeout pulumi.IntInput `pulumi:"interactiveTimeout"`
+	InteractiveTimeout pulumi.IntPtrInput `pulumi:"interactiveTimeout"`
 	// ("localInfile")
-	LocalInfile pulumi.BoolInput `pulumi:"localInfile"`
+	LocalInfile pulumi.BoolPtrInput `pulumi:"localInfile"`
 	// ("mandatoryRoles")
-	MandatoryRoles pulumi.StringInput `pulumi:"mandatoryRoles"`
+	MandatoryRoles pulumi.StringPtrInput `pulumi:"mandatoryRoles"`
 	// The maximum size of one packet or any generated/intermediate string.
-	MaxAllowedPacket pulumi.IntInput `pulumi:"maxAllowedPacket"`
+	MaxAllowedPacket pulumi.IntPtrInput `pulumi:"maxAllowedPacket"`
 	// Sets the size of the transaction cache.
-	MaxBinlogCacheSize pulumi.StringInput `pulumi:"maxBinlogCacheSize"`
+	MaxBinlogCacheSize pulumi.StringPtrInput `pulumi:"maxBinlogCacheSize"`
 	// ("maxConnectErrors")
-	MaxConnectErrors pulumi.StringInput `pulumi:"maxConnectErrors"`
+	MaxConnectErrors pulumi.StringPtrInput `pulumi:"maxConnectErrors"`
 	// ("maxConnections")
-	MaxConnections pulumi.IntInput `pulumi:"maxConnections"`
+	MaxConnections pulumi.IntPtrInput `pulumi:"maxConnections"`
 	// ("maxExecutionTime")
-	MaxExecutionTime pulumi.StringInput `pulumi:"maxExecutionTime"`
+	MaxExecutionTime pulumi.StringPtrInput `pulumi:"maxExecutionTime"`
 	// This variable sets the maximum size to which user-created MEMORY tables are permitted to grow.
-	MaxHeapTableSize pulumi.StringInput `pulumi:"maxHeapTableSize"`
+	MaxHeapTableSize pulumi.StringPtrInput `pulumi:"maxHeapTableSize"`
 	// ("maxPreparedStmtCount")
-	MaxPreparedStmtCount pulumi.IntInput `pulumi:"maxPreparedStmtCount"`
+	MaxPreparedStmtCount pulumi.IntPtrInput `pulumi:"maxPreparedStmtCount"`
 	// ("mysqlFirewallMode")
-	MysqlFirewallMode pulumi.BoolInput `pulumi:"mysqlFirewallMode"`
+	MysqlFirewallMode pulumi.BoolPtrInput `pulumi:"mysqlFirewallMode"`
 	// DEPRECATED -- typo of mysqlx_zstd_default_compression_level. variable will be ignored.
 	//
 	// Deprecated: The 'mysql_zstd_default_compression_level' field has been deprecated and may be removed in a future version. Do not use this field.
-	MysqlZstdDefaultCompressionLevel pulumi.IntInput `pulumi:"mysqlZstdDefaultCompressionLevel"`
+	MysqlZstdDefaultCompressionLevel pulumi.IntPtrInput `pulumi:"mysqlZstdDefaultCompressionLevel"`
 	// The number of seconds X Plugin waits for the first packet to be received from newly connected clients.
-	MysqlxConnectTimeout pulumi.IntInput `pulumi:"mysqlxConnectTimeout"`
+	MysqlxConnectTimeout pulumi.IntPtrInput `pulumi:"mysqlxConnectTimeout"`
 	// Set the default compression level for the deflate algorithm. ("mysqlxDeflateDefaultCompressionLevel")
-	MysqlxDeflateDefaultCompressionLevel pulumi.IntInput `pulumi:"mysqlxDeflateDefaultCompressionLevel"`
+	MysqlxDeflateDefaultCompressionLevel pulumi.IntPtrInput `pulumi:"mysqlxDeflateDefaultCompressionLevel"`
 	// Limit the upper bound of accepted compression levels for the deflate algorithm. ("mysqlxDeflateMaxClientCompressionLevel")
-	MysqlxDeflateMaxClientCompressionLevel pulumi.IntInput `pulumi:"mysqlxDeflateMaxClientCompressionLevel"`
+	MysqlxDeflateMaxClientCompressionLevel pulumi.IntPtrInput `pulumi:"mysqlxDeflateMaxClientCompressionLevel"`
 	// ("mysqlxDocumentIdUniquePrefix") DEPRECATED -- variable should not be settable and will be ignored
 	//
 	// Deprecated: The 'mysqlx_document_id_unique_prefix' field has been deprecated and may be removed in a future version. Do not use this field.
-	MysqlxDocumentIdUniquePrefix pulumi.IntInput `pulumi:"mysqlxDocumentIdUniquePrefix"`
+	MysqlxDocumentIdUniquePrefix pulumi.IntPtrInput `pulumi:"mysqlxDocumentIdUniquePrefix"`
 	// ("mysqlxEnableHelloNotice") DEPRECATED -- variable should not be settable and will be ignored
-	MysqlxEnableHelloNotice pulumi.BoolInput `pulumi:"mysqlxEnableHelloNotice"`
+	MysqlxEnableHelloNotice pulumi.BoolPtrInput `pulumi:"mysqlxEnableHelloNotice"`
 	// ("mysqlxIdleWorkerThreadTimeout") DEPRECATED -- variable should not be settable and will be ignored
 	//
 	// Deprecated: The 'mysqlx_idle_worker_thread_timeout' field has been deprecated and may be removed in a future version. Do not use this field.
-	MysqlxIdleWorkerThreadTimeout pulumi.IntInput `pulumi:"mysqlxIdleWorkerThreadTimeout"`
+	MysqlxIdleWorkerThreadTimeout pulumi.IntPtrInput `pulumi:"mysqlxIdleWorkerThreadTimeout"`
 	// The number of seconds to wait for interactive clients to timeout.
-	MysqlxInteractiveTimeout pulumi.IntInput `pulumi:"mysqlxInteractiveTimeout"`
+	MysqlxInteractiveTimeout pulumi.IntPtrInput `pulumi:"mysqlxInteractiveTimeout"`
 	// Set the default compression level for the lz4 algorithm. ("mysqlxLz4DefaultCompressionLevel")
-	MysqlxLz4defaultCompressionLevel pulumi.IntInput `pulumi:"mysqlxLz4defaultCompressionLevel"`
+	MysqlxLz4defaultCompressionLevel pulumi.IntPtrInput `pulumi:"mysqlxLz4defaultCompressionLevel"`
 	// Limit the upper bound of accepted compression levels for the lz4 algorithm. ("mysqlxLz4MaxClientCompressionLevel")
-	MysqlxLz4maxClientCompressionLevel pulumi.IntInput `pulumi:"mysqlxLz4maxClientCompressionLevel"`
+	MysqlxLz4maxClientCompressionLevel pulumi.IntPtrInput `pulumi:"mysqlxLz4maxClientCompressionLevel"`
 	// The maximum size of network packets that can be received by X Plugin.
-	MysqlxMaxAllowedPacket pulumi.IntInput `pulumi:"mysqlxMaxAllowedPacket"`
+	MysqlxMaxAllowedPacket pulumi.IntPtrInput `pulumi:"mysqlxMaxAllowedPacket"`
 	// ("mysqlxMinWorkerThreads") DEPRECATED -- variable should not be settable and will be ignored
 	//
 	// Deprecated: The 'mysqlx_min_worker_threads' field has been deprecated and may be removed in a future version. Do not use this field.
-	MysqlxMinWorkerThreads pulumi.IntInput `pulumi:"mysqlxMinWorkerThreads"`
+	MysqlxMinWorkerThreads pulumi.IntPtrInput `pulumi:"mysqlxMinWorkerThreads"`
 	// The number of seconds that X Plugin waits for blocking read operations to complete. After this time, if the read operation is not successful, X Plugin closes the connection and returns a warning notice with the error code ER_IO_READ_ERROR to the client application.
-	MysqlxReadTimeout pulumi.IntInput `pulumi:"mysqlxReadTimeout"`
+	MysqlxReadTimeout pulumi.IntPtrInput `pulumi:"mysqlxReadTimeout"`
 	// The number of seconds that X Plugin waits for activity on a connection.
-	MysqlxWaitTimeout pulumi.IntInput `pulumi:"mysqlxWaitTimeout"`
+	MysqlxWaitTimeout pulumi.IntPtrInput `pulumi:"mysqlxWaitTimeout"`
 	// The number of seconds that X Plugin waits for blocking write operations to complete. After this time, if the write operation is not successful, X Plugin closes the connection.
-	MysqlxWriteTimeout pulumi.IntInput `pulumi:"mysqlxWriteTimeout"`
+	MysqlxWriteTimeout pulumi.IntPtrInput `pulumi:"mysqlxWriteTimeout"`
 	// Set the default compression level for the zstd algorithm. ("mysqlxZstdDefaultCompressionLevel")
-	MysqlxZstdDefaultCompressionLevel pulumi.IntInput `pulumi:"mysqlxZstdDefaultCompressionLevel"`
+	MysqlxZstdDefaultCompressionLevel pulumi.IntPtrInput `pulumi:"mysqlxZstdDefaultCompressionLevel"`
 	// Limit the upper bound of accepted compression levels for the zstd algorithm. ("mysqlxZstdMaxClientCompressionLevel")
-	MysqlxZstdMaxClientCompressionLevel pulumi.IntInput `pulumi:"mysqlxZstdMaxClientCompressionLevel"`
+	MysqlxZstdMaxClientCompressionLevel pulumi.IntPtrInput `pulumi:"mysqlxZstdMaxClientCompressionLevel"`
 	// The number of seconds to wait for more data from a connection before aborting the read.
-	NetReadTimeout pulumi.IntInput `pulumi:"netReadTimeout"`
+	NetReadTimeout pulumi.IntPtrInput `pulumi:"netReadTimeout"`
 	// The number of seconds to wait for a block to be written to a connection before aborting the write.
-	NetWriteTimeout pulumi.IntInput `pulumi:"netWriteTimeout"`
+	NetWriteTimeout pulumi.IntPtrInput `pulumi:"netWriteTimeout"`
 	// ("parserMaxMemSize")
-	ParserMaxMemSize pulumi.StringInput `pulumi:"parserMaxMemSize"`
+	ParserMaxMemSize pulumi.StringPtrInput `pulumi:"parserMaxMemSize"`
 	// ("queryAllocBlockSize") DEPRECATED -- variable should not be settable and will be ignored
 	//
 	// Deprecated: The 'query_alloc_block_size' field has been deprecated and may be removed in a future version. Do not use this field.
-	QueryAllocBlockSize pulumi.StringInput `pulumi:"queryAllocBlockSize"`
+	QueryAllocBlockSize pulumi.StringPtrInput `pulumi:"queryAllocBlockSize"`
 	// ("queryPreallocSize") DEPRECATED -- variable should not be settable and will be ignored
 	//
 	// Deprecated: The 'query_prealloc_size' field has been deprecated and may be removed in a future version. Do not use this field.
-	QueryPreallocSize pulumi.StringInput `pulumi:"queryPreallocSize"`
+	QueryPreallocSize pulumi.StringPtrInput `pulumi:"queryPreallocSize"`
 	// regexpTimeLimit corresponds to the MySQL system variable [regexpTimeLimit] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_regexp_time_limit)
-	RegexpTimeLimit pulumi.IntInput `pulumi:"regexpTimeLimit"`
+	RegexpTimeLimit pulumi.IntPtrInput `pulumi:"regexpTimeLimit"`
 	// Each session that must perform a sort allocates a buffer of this size.
-	SortBufferSize pulumi.StringInput `pulumi:"sortBufferSize"`
+	SortBufferSize pulumi.StringPtrInput `pulumi:"sortBufferSize"`
 	// ("sqlMode")
-	SqlMode pulumi.StringInput `pulumi:"sqlMode"`
+	SqlMode pulumi.StringPtrInput `pulumi:"sqlMode"`
 	// ("sqlRequirePrimaryKey")
-	SqlRequirePrimaryKey pulumi.BoolInput `pulumi:"sqlRequirePrimaryKey"`
+	SqlRequirePrimaryKey pulumi.BoolPtrInput `pulumi:"sqlRequirePrimaryKey"`
 	// ("sqlWarnings")
-	SqlWarnings pulumi.BoolInput `pulumi:"sqlWarnings"`
+	SqlWarnings pulumi.BoolPtrInput `pulumi:"sqlWarnings"`
 	// Controls whether the thread pool uses dedicated listener threads. If enabled, a listener thread in each thread group is dedicated to the task of listening for network events from clients, ensuring that the maximum number of query worker threads is no more than the value specified by threadPoolMaxTransactionsLimit. threadPoolDedicatedListeners corresponds to the MySQL Database Service-specific system variable thread_pool_dedicated_listeners.
-	ThreadPoolDedicatedListeners pulumi.BoolInput `pulumi:"threadPoolDedicatedListeners"`
+	ThreadPoolDedicatedListeners pulumi.BoolPtrInput `pulumi:"threadPoolDedicatedListeners"`
 	// Limits the maximum number of open transactions to the defined value. The default value is 0, which enforces no limit. threadPoolMaxTransactionsLimit corresponds to the MySQL Database Service-specific system variable thread_pool_max_transactions_limit.
-	ThreadPoolMaxTransactionsLimit pulumi.IntInput `pulumi:"threadPoolMaxTransactionsLimit"`
+	ThreadPoolMaxTransactionsLimit pulumi.IntPtrInput `pulumi:"threadPoolMaxTransactionsLimit"`
 	// Initializes the time zone for each client that connects.
-	TimeZone pulumi.StringInput `pulumi:"timeZone"`
+	TimeZone pulumi.StringPtrInput `pulumi:"timeZone"`
 	// The maximum size of internal in-memory temporary tables. This variable does not apply to user-created MEMORY tables.
-	TmpTableSize pulumi.StringInput `pulumi:"tmpTableSize"`
+	TmpTableSize pulumi.StringPtrInput `pulumi:"tmpTableSize"`
 	// ("transactionIsolation")
-	TransactionIsolation pulumi.StringInput `pulumi:"transactionIsolation"`
+	TransactionIsolation pulumi.StringPtrInput `pulumi:"transactionIsolation"`
 	// The number of seconds the server waits for activity on a noninteractive connection before closing it.
-	WaitTimeout pulumi.IntInput `pulumi:"waitTimeout"`
+	WaitTimeout pulumi.IntPtrInput `pulumi:"waitTimeout"`
 }
 
 func (GetMysqlConfigurationsConfigurationVariableArgs) ElementType() reflect.Type {
@@ -13857,12 +12394,6 @@ func (i GetMysqlConfigurationsConfigurationVariableArgs) ToGetMysqlConfiguration
 
 func (i GetMysqlConfigurationsConfigurationVariableArgs) ToGetMysqlConfigurationsConfigurationVariableOutputWithContext(ctx context.Context) GetMysqlConfigurationsConfigurationVariableOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlConfigurationsConfigurationVariableOutput)
-}
-
-func (i GetMysqlConfigurationsConfigurationVariableArgs) ToOutput(ctx context.Context) pulumix.Output[GetMysqlConfigurationsConfigurationVariable] {
-	return pulumix.Output[GetMysqlConfigurationsConfigurationVariable]{
-		OutputState: i.ToGetMysqlConfigurationsConfigurationVariableOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetMysqlConfigurationsConfigurationVariableArrayInput is an input type that accepts GetMysqlConfigurationsConfigurationVariableArray and GetMysqlConfigurationsConfigurationVariableArrayOutput values.
@@ -13890,12 +12421,6 @@ func (i GetMysqlConfigurationsConfigurationVariableArray) ToGetMysqlConfiguratio
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlConfigurationsConfigurationVariableArrayOutput)
 }
 
-func (i GetMysqlConfigurationsConfigurationVariableArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlConfigurationsConfigurationVariable] {
-	return pulumix.Output[[]GetMysqlConfigurationsConfigurationVariable]{
-		OutputState: i.ToGetMysqlConfigurationsConfigurationVariableArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMysqlConfigurationsConfigurationVariableOutput struct{ *pulumi.OutputState }
 
 func (GetMysqlConfigurationsConfigurationVariableOutput) ElementType() reflect.Type {
@@ -13910,92 +12435,86 @@ func (o GetMysqlConfigurationsConfigurationVariableOutput) ToGetMysqlConfigurati
 	return o
 }
 
-func (o GetMysqlConfigurationsConfigurationVariableOutput) ToOutput(ctx context.Context) pulumix.Output[GetMysqlConfigurationsConfigurationVariable] {
-	return pulumix.Output[GetMysqlConfigurationsConfigurationVariable]{
-		OutputState: o.OutputState,
-	}
-}
-
 // ("autocommit")
-func (o GetMysqlConfigurationsConfigurationVariableOutput) Autocommit() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) bool { return v.Autocommit }).(pulumi.BoolOutput)
+func (o GetMysqlConfigurationsConfigurationVariableOutput) Autocommit() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) *bool { return v.Autocommit }).(pulumi.BoolPtrOutput)
 }
 
 // If enabled, the server stores all temporary tables on disk rather than in memory.
-func (o GetMysqlConfigurationsConfigurationVariableOutput) BigTables() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) bool { return v.BigTables }).(pulumi.BoolOutput)
+func (o GetMysqlConfigurationsConfigurationVariableOutput) BigTables() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) *bool { return v.BigTables }).(pulumi.BoolPtrOutput)
 }
 
 // Sets the binary log expiration period in seconds. binlogExpireLogsSeconds corresponds to the MySQL binary logging system variable [binlogExpireLogsSeconds](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_expire_logs_seconds).
-func (o GetMysqlConfigurationsConfigurationVariableOutput) BinlogExpireLogsSeconds() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) int { return v.BinlogExpireLogsSeconds }).(pulumi.IntOutput)
+func (o GetMysqlConfigurationsConfigurationVariableOutput) BinlogExpireLogsSeconds() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) *int { return v.BinlogExpireLogsSeconds }).(pulumi.IntPtrOutput)
 }
 
 // Configures the amount of table metadata added to the binary log when using row-based logging. binlogRowMetadata corresponds to the MySQL binary logging system variable [binlogRowMetadata](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_row_metadata).
-func (o GetMysqlConfigurationsConfigurationVariableOutput) BinlogRowMetadata() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) string { return v.BinlogRowMetadata }).(pulumi.StringOutput)
+func (o GetMysqlConfigurationsConfigurationVariableOutput) BinlogRowMetadata() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) *string { return v.BinlogRowMetadata }).(pulumi.StringPtrOutput)
 }
 
 // When set to PARTIAL_JSON, this enables use of a space-efficient binary log format for updates that modify only a small portion of a JSON document. binlogRowValueOptions corresponds to the MySQL binary logging system variable [binlogRowValueOptions](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_row_value_options).
-func (o GetMysqlConfigurationsConfigurationVariableOutput) BinlogRowValueOptions() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) string { return v.BinlogRowValueOptions }).(pulumi.StringOutput)
+func (o GetMysqlConfigurationsConfigurationVariableOutput) BinlogRowValueOptions() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) *string { return v.BinlogRowValueOptions }).(pulumi.StringPtrOutput)
 }
 
 // Enables compression for transactions that are written to binary log files on this server. binlogTransactionCompression corresponds to the MySQL binary logging system variable [binlogTransactionCompression](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_transaction_compression).
-func (o GetMysqlConfigurationsConfigurationVariableOutput) BinlogTransactionCompression() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) bool { return v.BinlogTransactionCompression }).(pulumi.BoolOutput)
+func (o GetMysqlConfigurationsConfigurationVariableOutput) BinlogTransactionCompression() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) *bool { return v.BinlogTransactionCompression }).(pulumi.BoolPtrOutput)
 }
 
 // ("completionType")
-func (o GetMysqlConfigurationsConfigurationVariableOutput) CompletionType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) string { return v.CompletionType }).(pulumi.StringOutput)
+func (o GetMysqlConfigurationsConfigurationVariableOutput) CompletionType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) *string { return v.CompletionType }).(pulumi.StringPtrOutput)
 }
 
 // The number of seconds that the mysqld server waits for a connect packet before responding with Bad handshake.
-func (o GetMysqlConfigurationsConfigurationVariableOutput) ConnectTimeout() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) int { return v.ConnectTimeout }).(pulumi.IntOutput)
+func (o GetMysqlConfigurationsConfigurationVariableOutput) ConnectTimeout() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) *int { return v.ConnectTimeout }).(pulumi.IntPtrOutput)
 }
 
 // Set the chunking size for updates to the global memory usage counter Global_connection_memory.
-func (o GetMysqlConfigurationsConfigurationVariableOutput) ConnectionMemoryChunkSize() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) int { return v.ConnectionMemoryChunkSize }).(pulumi.IntOutput)
+func (o GetMysqlConfigurationsConfigurationVariableOutput) ConnectionMemoryChunkSize() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) *int { return v.ConnectionMemoryChunkSize }).(pulumi.IntPtrOutput)
 }
 
 // Set the maximum amount of memory that can be used by a single user connection.
-func (o GetMysqlConfigurationsConfigurationVariableOutput) ConnectionMemoryLimit() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) string { return v.ConnectionMemoryLimit }).(pulumi.StringOutput)
+func (o GetMysqlConfigurationsConfigurationVariableOutput) ConnectionMemoryLimit() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) *string { return v.ConnectionMemoryLimit }).(pulumi.StringPtrOutput)
 }
 
 // ("cteMaxRecursionDepth")
-func (o GetMysqlConfigurationsConfigurationVariableOutput) CteMaxRecursionDepth() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) string { return v.CteMaxRecursionDepth }).(pulumi.StringOutput)
+func (o GetMysqlConfigurationsConfigurationVariableOutput) CteMaxRecursionDepth() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) *string { return v.CteMaxRecursionDepth }).(pulumi.StringPtrOutput)
 }
 
 // ("defaultAuthenticationPlugin")
-func (o GetMysqlConfigurationsConfigurationVariableOutput) DefaultAuthenticationPlugin() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) string { return v.DefaultAuthenticationPlugin }).(pulumi.StringOutput)
+func (o GetMysqlConfigurationsConfigurationVariableOutput) DefaultAuthenticationPlugin() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) *string { return v.DefaultAuthenticationPlugin }).(pulumi.StringPtrOutput)
 }
 
 // ("foreignKeyChecks")
-func (o GetMysqlConfigurationsConfigurationVariableOutput) ForeignKeyChecks() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) bool { return v.ForeignKeyChecks }).(pulumi.BoolOutput)
+func (o GetMysqlConfigurationsConfigurationVariableOutput) ForeignKeyChecks() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) *bool { return v.ForeignKeyChecks }).(pulumi.BoolPtrOutput)
 }
 
 // ("generatedRandomPasswordLength") DEPRECATED -- variable should not be settable and will be ignored
 //
 // Deprecated: The 'generated_random_password_length' field has been deprecated and may be removed in a future version. Do not use this field.
-func (o GetMysqlConfigurationsConfigurationVariableOutput) GeneratedRandomPasswordLength() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) int { return v.GeneratedRandomPasswordLength }).(pulumi.IntOutput)
+func (o GetMysqlConfigurationsConfigurationVariableOutput) GeneratedRandomPasswordLength() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) *int { return v.GeneratedRandomPasswordLength }).(pulumi.IntPtrOutput)
 }
 
 // Set the total amount of memory that can be used by all user connections.
-func (o GetMysqlConfigurationsConfigurationVariableOutput) GlobalConnectionMemoryLimit() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) string { return v.GlobalConnectionMemoryLimit }).(pulumi.StringOutput)
+func (o GetMysqlConfigurationsConfigurationVariableOutput) GlobalConnectionMemoryLimit() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) *string { return v.GlobalConnectionMemoryLimit }).(pulumi.StringPtrOutput)
 }
 
 // Determines whether the MySQL server calculates Global_connection_memory.
-func (o GetMysqlConfigurationsConfigurationVariableOutput) GlobalConnectionMemoryTracking() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) bool { return v.GlobalConnectionMemoryTracking }).(pulumi.BoolOutput)
+func (o GetMysqlConfigurationsConfigurationVariableOutput) GlobalConnectionMemoryTracking() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) *bool { return v.GlobalConnectionMemoryTracking }).(pulumi.BoolPtrOutput)
 }
 
 // * EVENTUAL: Both RO and RW transactions do not wait for preceding transactions to be applied before executing. A RW transaction does not wait for other members to apply a transaction. This means that a transaction could be externalized on one member before the others. This also means that in the event of a primary failover, the new primary can accept new RO and RW transactions before the previous primary transactions are all applied. RO transactions could result in outdated values, RW transactions could result in a rollback due to conflicts.
@@ -14003,332 +12522,334 @@ func (o GetMysqlConfigurationsConfigurationVariableOutput) GlobalConnectionMemor
 // * BEFORE: A RW transaction waits for all preceding transactions to complete before being applied. A RO transaction waits for all preceding transactions to complete before being executed. This ensures that this transaction reads the latest value by only affecting the latency of the transaction. This reduces the overhead of synchronization on every RW transaction, by ensuring synchronization is used only on RO transactions. This consistency level also includes the consistency guarantees provided by BEFORE_ON_PRIMARY_FAILOVER.
 // * AFTER: A RW transaction waits until its changes have been applied to all of the other members. This value has no effect on RO transactions. This mode ensures that when a transaction is committed on the local member, any subsequent transaction reads the written value or a more recent value on any group member. Use this mode with a group that is used for predominantly RO operations to ensure that applied RW transactions are applied everywhere once they commit. This could be used by your application to ensure that subsequent reads fetch the latest data which includes the latest writes. This reduces the overhead of synchronization on every RO transaction, by ensuring synchronization is used only on RW transactions. This consistency level also includes the consistency guarantees provided by BEFORE_ON_PRIMARY_FAILOVER.
 // * BEFORE_AND_AFTER: A RW transaction waits for 1) all preceding transactions to complete before being applied and 2) until its changes have been applied on other members. A RO transaction waits for all preceding transactions to complete before execution takes place. This consistency level also includes the consistency guarantees provided by BEFORE_ON_PRIMARY_FAILOVER.
-func (o GetMysqlConfigurationsConfigurationVariableOutput) GroupReplicationConsistency() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) string { return v.GroupReplicationConsistency }).(pulumi.StringOutput)
+func (o GetMysqlConfigurationsConfigurationVariableOutput) GroupReplicationConsistency() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) *string { return v.GroupReplicationConsistency }).(pulumi.StringPtrOutput)
 }
 
 // ("informationSchemaStatsExpiry")
-func (o GetMysqlConfigurationsConfigurationVariableOutput) InformationSchemaStatsExpiry() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) int { return v.InformationSchemaStatsExpiry }).(pulumi.IntOutput)
+func (o GetMysqlConfigurationsConfigurationVariableOutput) InformationSchemaStatsExpiry() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) *int { return v.InformationSchemaStatsExpiry }).(pulumi.IntPtrOutput)
 }
 
 // Specifies the percentage of the most recently used pages for each buffer pool to read out and dump.
-func (o GetMysqlConfigurationsConfigurationVariableOutput) InnodbBufferPoolDumpPct() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) int { return v.InnodbBufferPoolDumpPct }).(pulumi.IntOutput)
+func (o GetMysqlConfigurationsConfigurationVariableOutput) InnodbBufferPoolDumpPct() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) *int { return v.InnodbBufferPoolDumpPct }).(pulumi.IntPtrOutput)
 }
 
 // ("innodbBufferPoolInstances")
-func (o GetMysqlConfigurationsConfigurationVariableOutput) InnodbBufferPoolInstances() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) int { return v.InnodbBufferPoolInstances }).(pulumi.IntOutput)
+func (o GetMysqlConfigurationsConfigurationVariableOutput) InnodbBufferPoolInstances() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) *int { return v.InnodbBufferPoolInstances }).(pulumi.IntPtrOutput)
 }
 
 // The size (in bytes) of the buffer pool, that is, the memory area where InnoDB caches table and index data.
-func (o GetMysqlConfigurationsConfigurationVariableOutput) InnodbBufferPoolSize() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) string { return v.InnodbBufferPoolSize }).(pulumi.StringOutput)
+func (o GetMysqlConfigurationsConfigurationVariableOutput) InnodbBufferPoolSize() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) *string { return v.InnodbBufferPoolSize }).(pulumi.StringPtrOutput)
 }
 
 // innodbDdlBufferSize corresponds to the MySQL system variable [innodbDdlBufferSize] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_buffer_size)
-func (o GetMysqlConfigurationsConfigurationVariableOutput) InnodbDdlBufferSize() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) string { return v.InnodbDdlBufferSize }).(pulumi.StringOutput)
+func (o GetMysqlConfigurationsConfigurationVariableOutput) InnodbDdlBufferSize() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) *string { return v.InnodbDdlBufferSize }).(pulumi.StringPtrOutput)
 }
 
 // innodbDdlThreads corresponds to the MySQL system variable [innodbDdlThreads] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_threads)
-func (o GetMysqlConfigurationsConfigurationVariableOutput) InnodbDdlThreads() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) int { return v.InnodbDdlThreads }).(pulumi.IntOutput)
+func (o GetMysqlConfigurationsConfigurationVariableOutput) InnodbDdlThreads() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) *int { return v.InnodbDdlThreads }).(pulumi.IntPtrOutput)
 }
 
 // ("innodbFtEnableStopword")
-func (o GetMysqlConfigurationsConfigurationVariableOutput) InnodbFtEnableStopword() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) bool { return v.InnodbFtEnableStopword }).(pulumi.BoolOutput)
+func (o GetMysqlConfigurationsConfigurationVariableOutput) InnodbFtEnableStopword() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) *bool { return v.InnodbFtEnableStopword }).(pulumi.BoolPtrOutput)
 }
 
 // ("innodbFtMaxTokenSize")
-func (o GetMysqlConfigurationsConfigurationVariableOutput) InnodbFtMaxTokenSize() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) int { return v.InnodbFtMaxTokenSize }).(pulumi.IntOutput)
+func (o GetMysqlConfigurationsConfigurationVariableOutput) InnodbFtMaxTokenSize() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) *int { return v.InnodbFtMaxTokenSize }).(pulumi.IntPtrOutput)
 }
 
 // ("innodbFtMinTokenSize")
-func (o GetMysqlConfigurationsConfigurationVariableOutput) InnodbFtMinTokenSize() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) int { return v.InnodbFtMinTokenSize }).(pulumi.IntOutput)
+func (o GetMysqlConfigurationsConfigurationVariableOutput) InnodbFtMinTokenSize() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) *int { return v.InnodbFtMinTokenSize }).(pulumi.IntPtrOutput)
 }
 
 // ("innodbFtNumWordOptimize")
-func (o GetMysqlConfigurationsConfigurationVariableOutput) InnodbFtNumWordOptimize() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) int { return v.InnodbFtNumWordOptimize }).(pulumi.IntOutput)
+func (o GetMysqlConfigurationsConfigurationVariableOutput) InnodbFtNumWordOptimize() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) *int { return v.InnodbFtNumWordOptimize }).(pulumi.IntPtrOutput)
 }
 
 // ("innodbFtResultCacheLimit")
-func (o GetMysqlConfigurationsConfigurationVariableOutput) InnodbFtResultCacheLimit() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) string { return v.InnodbFtResultCacheLimit }).(pulumi.StringOutput)
+func (o GetMysqlConfigurationsConfigurationVariableOutput) InnodbFtResultCacheLimit() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) *string { return v.InnodbFtResultCacheLimit }).(pulumi.StringPtrOutput)
 }
 
 // ("innodbFtServerStopwordTable")
-func (o GetMysqlConfigurationsConfigurationVariableOutput) InnodbFtServerStopwordTable() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) string { return v.InnodbFtServerStopwordTable }).(pulumi.StringOutput)
+func (o GetMysqlConfigurationsConfigurationVariableOutput) InnodbFtServerStopwordTable() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) *string { return v.InnodbFtServerStopwordTable }).(pulumi.StringPtrOutput)
 }
 
 // ("innodbLockWaitTimeout")
-func (o GetMysqlConfigurationsConfigurationVariableOutput) InnodbLockWaitTimeout() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) int { return v.InnodbLockWaitTimeout }).(pulumi.IntOutput)
+func (o GetMysqlConfigurationsConfigurationVariableOutput) InnodbLockWaitTimeout() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) *int { return v.InnodbLockWaitTimeout }).(pulumi.IntPtrOutput)
 }
 
 // Enables dedicated log writer threads for writing redo log records from the log buffer to the system buffers and flushing the system buffers to the redo log files.
-func (o GetMysqlConfigurationsConfigurationVariableOutput) InnodbLogWriterThreads() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) bool { return v.InnodbLogWriterThreads }).(pulumi.BoolOutput)
+func (o GetMysqlConfigurationsConfigurationVariableOutput) InnodbLogWriterThreads() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) *bool { return v.InnodbLogWriterThreads }).(pulumi.BoolPtrOutput)
 }
 
 // The desired maximum purge lag in terms of transactions.
-func (o GetMysqlConfigurationsConfigurationVariableOutput) InnodbMaxPurgeLag() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) string { return v.InnodbMaxPurgeLag }).(pulumi.StringOutput)
+func (o GetMysqlConfigurationsConfigurationVariableOutput) InnodbMaxPurgeLag() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) *string { return v.InnodbMaxPurgeLag }).(pulumi.StringPtrOutput)
 }
 
 // The maximum delay in microseconds for the delay imposed when the innodbMaxPurgeLag threshold is exceeded.
-func (o GetMysqlConfigurationsConfigurationVariableOutput) InnodbMaxPurgeLagDelay() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) int { return v.InnodbMaxPurgeLagDelay }).(pulumi.IntOutput)
+func (o GetMysqlConfigurationsConfigurationVariableOutput) InnodbMaxPurgeLagDelay() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) *int { return v.InnodbMaxPurgeLagDelay }).(pulumi.IntPtrOutput)
 }
 
 // The number of index pages to sample when estimating cardinality and other statistics for an indexed column, such as those calculated by ANALYZE TABLE.
-func (o GetMysqlConfigurationsConfigurationVariableOutput) InnodbStatsPersistentSamplePages() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) string { return v.InnodbStatsPersistentSamplePages }).(pulumi.StringOutput)
+func (o GetMysqlConfigurationsConfigurationVariableOutput) InnodbStatsPersistentSamplePages() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) *string { return v.InnodbStatsPersistentSamplePages }).(pulumi.StringPtrOutput)
 }
 
 // The number of index pages to sample when estimating cardinality and other statistics for an indexed column, such as those calculated by [ANALYZE TABLE](https://dev.mysql.com/doc/refman/8.0/en/analyze-table.html).
-func (o GetMysqlConfigurationsConfigurationVariableOutput) InnodbStatsTransientSamplePages() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) string { return v.InnodbStatsTransientSamplePages }).(pulumi.StringOutput)
+func (o GetMysqlConfigurationsConfigurationVariableOutput) InnodbStatsTransientSamplePages() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) *string { return v.InnodbStatsTransientSamplePages }).(pulumi.StringPtrOutput)
 }
 
 // The number of seconds the server waits for activity on an interactive connection before closing it.
-func (o GetMysqlConfigurationsConfigurationVariableOutput) InteractiveTimeout() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) int { return v.InteractiveTimeout }).(pulumi.IntOutput)
+func (o GetMysqlConfigurationsConfigurationVariableOutput) InteractiveTimeout() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) *int { return v.InteractiveTimeout }).(pulumi.IntPtrOutput)
 }
 
 // ("localInfile")
-func (o GetMysqlConfigurationsConfigurationVariableOutput) LocalInfile() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) bool { return v.LocalInfile }).(pulumi.BoolOutput)
+func (o GetMysqlConfigurationsConfigurationVariableOutput) LocalInfile() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) *bool { return v.LocalInfile }).(pulumi.BoolPtrOutput)
 }
 
 // ("mandatoryRoles")
-func (o GetMysqlConfigurationsConfigurationVariableOutput) MandatoryRoles() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) string { return v.MandatoryRoles }).(pulumi.StringOutput)
+func (o GetMysqlConfigurationsConfigurationVariableOutput) MandatoryRoles() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) *string { return v.MandatoryRoles }).(pulumi.StringPtrOutput)
 }
 
 // The maximum size of one packet or any generated/intermediate string.
-func (o GetMysqlConfigurationsConfigurationVariableOutput) MaxAllowedPacket() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) int { return v.MaxAllowedPacket }).(pulumi.IntOutput)
+func (o GetMysqlConfigurationsConfigurationVariableOutput) MaxAllowedPacket() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) *int { return v.MaxAllowedPacket }).(pulumi.IntPtrOutput)
 }
 
 // Sets the size of the transaction cache.
-func (o GetMysqlConfigurationsConfigurationVariableOutput) MaxBinlogCacheSize() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) string { return v.MaxBinlogCacheSize }).(pulumi.StringOutput)
+func (o GetMysqlConfigurationsConfigurationVariableOutput) MaxBinlogCacheSize() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) *string { return v.MaxBinlogCacheSize }).(pulumi.StringPtrOutput)
 }
 
 // ("maxConnectErrors")
-func (o GetMysqlConfigurationsConfigurationVariableOutput) MaxConnectErrors() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) string { return v.MaxConnectErrors }).(pulumi.StringOutput)
+func (o GetMysqlConfigurationsConfigurationVariableOutput) MaxConnectErrors() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) *string { return v.MaxConnectErrors }).(pulumi.StringPtrOutput)
 }
 
 // ("maxConnections")
-func (o GetMysqlConfigurationsConfigurationVariableOutput) MaxConnections() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) int { return v.MaxConnections }).(pulumi.IntOutput)
+func (o GetMysqlConfigurationsConfigurationVariableOutput) MaxConnections() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) *int { return v.MaxConnections }).(pulumi.IntPtrOutput)
 }
 
 // ("maxExecutionTime")
-func (o GetMysqlConfigurationsConfigurationVariableOutput) MaxExecutionTime() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) string { return v.MaxExecutionTime }).(pulumi.StringOutput)
+func (o GetMysqlConfigurationsConfigurationVariableOutput) MaxExecutionTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) *string { return v.MaxExecutionTime }).(pulumi.StringPtrOutput)
 }
 
 // This variable sets the maximum size to which user-created MEMORY tables are permitted to grow.
-func (o GetMysqlConfigurationsConfigurationVariableOutput) MaxHeapTableSize() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) string { return v.MaxHeapTableSize }).(pulumi.StringOutput)
+func (o GetMysqlConfigurationsConfigurationVariableOutput) MaxHeapTableSize() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) *string { return v.MaxHeapTableSize }).(pulumi.StringPtrOutput)
 }
 
 // ("maxPreparedStmtCount")
-func (o GetMysqlConfigurationsConfigurationVariableOutput) MaxPreparedStmtCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) int { return v.MaxPreparedStmtCount }).(pulumi.IntOutput)
+func (o GetMysqlConfigurationsConfigurationVariableOutput) MaxPreparedStmtCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) *int { return v.MaxPreparedStmtCount }).(pulumi.IntPtrOutput)
 }
 
 // ("mysqlFirewallMode")
-func (o GetMysqlConfigurationsConfigurationVariableOutput) MysqlFirewallMode() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) bool { return v.MysqlFirewallMode }).(pulumi.BoolOutput)
+func (o GetMysqlConfigurationsConfigurationVariableOutput) MysqlFirewallMode() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) *bool { return v.MysqlFirewallMode }).(pulumi.BoolPtrOutput)
 }
 
 // DEPRECATED -- typo of mysqlx_zstd_default_compression_level. variable will be ignored.
 //
 // Deprecated: The 'mysql_zstd_default_compression_level' field has been deprecated and may be removed in a future version. Do not use this field.
-func (o GetMysqlConfigurationsConfigurationVariableOutput) MysqlZstdDefaultCompressionLevel() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) int { return v.MysqlZstdDefaultCompressionLevel }).(pulumi.IntOutput)
+func (o GetMysqlConfigurationsConfigurationVariableOutput) MysqlZstdDefaultCompressionLevel() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) *int { return v.MysqlZstdDefaultCompressionLevel }).(pulumi.IntPtrOutput)
 }
 
 // The number of seconds X Plugin waits for the first packet to be received from newly connected clients.
-func (o GetMysqlConfigurationsConfigurationVariableOutput) MysqlxConnectTimeout() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) int { return v.MysqlxConnectTimeout }).(pulumi.IntOutput)
+func (o GetMysqlConfigurationsConfigurationVariableOutput) MysqlxConnectTimeout() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) *int { return v.MysqlxConnectTimeout }).(pulumi.IntPtrOutput)
 }
 
 // Set the default compression level for the deflate algorithm. ("mysqlxDeflateDefaultCompressionLevel")
-func (o GetMysqlConfigurationsConfigurationVariableOutput) MysqlxDeflateDefaultCompressionLevel() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) int { return v.MysqlxDeflateDefaultCompressionLevel }).(pulumi.IntOutput)
+func (o GetMysqlConfigurationsConfigurationVariableOutput) MysqlxDeflateDefaultCompressionLevel() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) *int {
+		return v.MysqlxDeflateDefaultCompressionLevel
+	}).(pulumi.IntPtrOutput)
 }
 
 // Limit the upper bound of accepted compression levels for the deflate algorithm. ("mysqlxDeflateMaxClientCompressionLevel")
-func (o GetMysqlConfigurationsConfigurationVariableOutput) MysqlxDeflateMaxClientCompressionLevel() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) int {
+func (o GetMysqlConfigurationsConfigurationVariableOutput) MysqlxDeflateMaxClientCompressionLevel() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) *int {
 		return v.MysqlxDeflateMaxClientCompressionLevel
-	}).(pulumi.IntOutput)
+	}).(pulumi.IntPtrOutput)
 }
 
 // ("mysqlxDocumentIdUniquePrefix") DEPRECATED -- variable should not be settable and will be ignored
 //
 // Deprecated: The 'mysqlx_document_id_unique_prefix' field has been deprecated and may be removed in a future version. Do not use this field.
-func (o GetMysqlConfigurationsConfigurationVariableOutput) MysqlxDocumentIdUniquePrefix() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) int { return v.MysqlxDocumentIdUniquePrefix }).(pulumi.IntOutput)
+func (o GetMysqlConfigurationsConfigurationVariableOutput) MysqlxDocumentIdUniquePrefix() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) *int { return v.MysqlxDocumentIdUniquePrefix }).(pulumi.IntPtrOutput)
 }
 
 // ("mysqlxEnableHelloNotice") DEPRECATED -- variable should not be settable and will be ignored
-func (o GetMysqlConfigurationsConfigurationVariableOutput) MysqlxEnableHelloNotice() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) bool { return v.MysqlxEnableHelloNotice }).(pulumi.BoolOutput)
+func (o GetMysqlConfigurationsConfigurationVariableOutput) MysqlxEnableHelloNotice() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) *bool { return v.MysqlxEnableHelloNotice }).(pulumi.BoolPtrOutput)
 }
 
 // ("mysqlxIdleWorkerThreadTimeout") DEPRECATED -- variable should not be settable and will be ignored
 //
 // Deprecated: The 'mysqlx_idle_worker_thread_timeout' field has been deprecated and may be removed in a future version. Do not use this field.
-func (o GetMysqlConfigurationsConfigurationVariableOutput) MysqlxIdleWorkerThreadTimeout() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) int { return v.MysqlxIdleWorkerThreadTimeout }).(pulumi.IntOutput)
+func (o GetMysqlConfigurationsConfigurationVariableOutput) MysqlxIdleWorkerThreadTimeout() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) *int { return v.MysqlxIdleWorkerThreadTimeout }).(pulumi.IntPtrOutput)
 }
 
 // The number of seconds to wait for interactive clients to timeout.
-func (o GetMysqlConfigurationsConfigurationVariableOutput) MysqlxInteractiveTimeout() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) int { return v.MysqlxInteractiveTimeout }).(pulumi.IntOutput)
+func (o GetMysqlConfigurationsConfigurationVariableOutput) MysqlxInteractiveTimeout() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) *int { return v.MysqlxInteractiveTimeout }).(pulumi.IntPtrOutput)
 }
 
 // Set the default compression level for the lz4 algorithm. ("mysqlxLz4DefaultCompressionLevel")
-func (o GetMysqlConfigurationsConfigurationVariableOutput) MysqlxLz4defaultCompressionLevel() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) int { return v.MysqlxLz4defaultCompressionLevel }).(pulumi.IntOutput)
+func (o GetMysqlConfigurationsConfigurationVariableOutput) MysqlxLz4defaultCompressionLevel() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) *int { return v.MysqlxLz4defaultCompressionLevel }).(pulumi.IntPtrOutput)
 }
 
 // Limit the upper bound of accepted compression levels for the lz4 algorithm. ("mysqlxLz4MaxClientCompressionLevel")
-func (o GetMysqlConfigurationsConfigurationVariableOutput) MysqlxLz4maxClientCompressionLevel() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) int { return v.MysqlxLz4maxClientCompressionLevel }).(pulumi.IntOutput)
+func (o GetMysqlConfigurationsConfigurationVariableOutput) MysqlxLz4maxClientCompressionLevel() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) *int { return v.MysqlxLz4maxClientCompressionLevel }).(pulumi.IntPtrOutput)
 }
 
 // The maximum size of network packets that can be received by X Plugin.
-func (o GetMysqlConfigurationsConfigurationVariableOutput) MysqlxMaxAllowedPacket() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) int { return v.MysqlxMaxAllowedPacket }).(pulumi.IntOutput)
+func (o GetMysqlConfigurationsConfigurationVariableOutput) MysqlxMaxAllowedPacket() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) *int { return v.MysqlxMaxAllowedPacket }).(pulumi.IntPtrOutput)
 }
 
 // ("mysqlxMinWorkerThreads") DEPRECATED -- variable should not be settable and will be ignored
 //
 // Deprecated: The 'mysqlx_min_worker_threads' field has been deprecated and may be removed in a future version. Do not use this field.
-func (o GetMysqlConfigurationsConfigurationVariableOutput) MysqlxMinWorkerThreads() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) int { return v.MysqlxMinWorkerThreads }).(pulumi.IntOutput)
+func (o GetMysqlConfigurationsConfigurationVariableOutput) MysqlxMinWorkerThreads() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) *int { return v.MysqlxMinWorkerThreads }).(pulumi.IntPtrOutput)
 }
 
 // The number of seconds that X Plugin waits for blocking read operations to complete. After this time, if the read operation is not successful, X Plugin closes the connection and returns a warning notice with the error code ER_IO_READ_ERROR to the client application.
-func (o GetMysqlConfigurationsConfigurationVariableOutput) MysqlxReadTimeout() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) int { return v.MysqlxReadTimeout }).(pulumi.IntOutput)
+func (o GetMysqlConfigurationsConfigurationVariableOutput) MysqlxReadTimeout() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) *int { return v.MysqlxReadTimeout }).(pulumi.IntPtrOutput)
 }
 
 // The number of seconds that X Plugin waits for activity on a connection.
-func (o GetMysqlConfigurationsConfigurationVariableOutput) MysqlxWaitTimeout() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) int { return v.MysqlxWaitTimeout }).(pulumi.IntOutput)
+func (o GetMysqlConfigurationsConfigurationVariableOutput) MysqlxWaitTimeout() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) *int { return v.MysqlxWaitTimeout }).(pulumi.IntPtrOutput)
 }
 
 // The number of seconds that X Plugin waits for blocking write operations to complete. After this time, if the write operation is not successful, X Plugin closes the connection.
-func (o GetMysqlConfigurationsConfigurationVariableOutput) MysqlxWriteTimeout() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) int { return v.MysqlxWriteTimeout }).(pulumi.IntOutput)
+func (o GetMysqlConfigurationsConfigurationVariableOutput) MysqlxWriteTimeout() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) *int { return v.MysqlxWriteTimeout }).(pulumi.IntPtrOutput)
 }
 
 // Set the default compression level for the zstd algorithm. ("mysqlxZstdDefaultCompressionLevel")
-func (o GetMysqlConfigurationsConfigurationVariableOutput) MysqlxZstdDefaultCompressionLevel() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) int { return v.MysqlxZstdDefaultCompressionLevel }).(pulumi.IntOutput)
+func (o GetMysqlConfigurationsConfigurationVariableOutput) MysqlxZstdDefaultCompressionLevel() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) *int { return v.MysqlxZstdDefaultCompressionLevel }).(pulumi.IntPtrOutput)
 }
 
 // Limit the upper bound of accepted compression levels for the zstd algorithm. ("mysqlxZstdMaxClientCompressionLevel")
-func (o GetMysqlConfigurationsConfigurationVariableOutput) MysqlxZstdMaxClientCompressionLevel() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) int { return v.MysqlxZstdMaxClientCompressionLevel }).(pulumi.IntOutput)
+func (o GetMysqlConfigurationsConfigurationVariableOutput) MysqlxZstdMaxClientCompressionLevel() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) *int { return v.MysqlxZstdMaxClientCompressionLevel }).(pulumi.IntPtrOutput)
 }
 
 // The number of seconds to wait for more data from a connection before aborting the read.
-func (o GetMysqlConfigurationsConfigurationVariableOutput) NetReadTimeout() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) int { return v.NetReadTimeout }).(pulumi.IntOutput)
+func (o GetMysqlConfigurationsConfigurationVariableOutput) NetReadTimeout() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) *int { return v.NetReadTimeout }).(pulumi.IntPtrOutput)
 }
 
 // The number of seconds to wait for a block to be written to a connection before aborting the write.
-func (o GetMysqlConfigurationsConfigurationVariableOutput) NetWriteTimeout() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) int { return v.NetWriteTimeout }).(pulumi.IntOutput)
+func (o GetMysqlConfigurationsConfigurationVariableOutput) NetWriteTimeout() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) *int { return v.NetWriteTimeout }).(pulumi.IntPtrOutput)
 }
 
 // ("parserMaxMemSize")
-func (o GetMysqlConfigurationsConfigurationVariableOutput) ParserMaxMemSize() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) string { return v.ParserMaxMemSize }).(pulumi.StringOutput)
+func (o GetMysqlConfigurationsConfigurationVariableOutput) ParserMaxMemSize() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) *string { return v.ParserMaxMemSize }).(pulumi.StringPtrOutput)
 }
 
 // ("queryAllocBlockSize") DEPRECATED -- variable should not be settable and will be ignored
 //
 // Deprecated: The 'query_alloc_block_size' field has been deprecated and may be removed in a future version. Do not use this field.
-func (o GetMysqlConfigurationsConfigurationVariableOutput) QueryAllocBlockSize() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) string { return v.QueryAllocBlockSize }).(pulumi.StringOutput)
+func (o GetMysqlConfigurationsConfigurationVariableOutput) QueryAllocBlockSize() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) *string { return v.QueryAllocBlockSize }).(pulumi.StringPtrOutput)
 }
 
 // ("queryPreallocSize") DEPRECATED -- variable should not be settable and will be ignored
 //
 // Deprecated: The 'query_prealloc_size' field has been deprecated and may be removed in a future version. Do not use this field.
-func (o GetMysqlConfigurationsConfigurationVariableOutput) QueryPreallocSize() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) string { return v.QueryPreallocSize }).(pulumi.StringOutput)
+func (o GetMysqlConfigurationsConfigurationVariableOutput) QueryPreallocSize() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) *string { return v.QueryPreallocSize }).(pulumi.StringPtrOutput)
 }
 
 // regexpTimeLimit corresponds to the MySQL system variable [regexpTimeLimit] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_regexp_time_limit)
-func (o GetMysqlConfigurationsConfigurationVariableOutput) RegexpTimeLimit() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) int { return v.RegexpTimeLimit }).(pulumi.IntOutput)
+func (o GetMysqlConfigurationsConfigurationVariableOutput) RegexpTimeLimit() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) *int { return v.RegexpTimeLimit }).(pulumi.IntPtrOutput)
 }
 
 // Each session that must perform a sort allocates a buffer of this size.
-func (o GetMysqlConfigurationsConfigurationVariableOutput) SortBufferSize() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) string { return v.SortBufferSize }).(pulumi.StringOutput)
+func (o GetMysqlConfigurationsConfigurationVariableOutput) SortBufferSize() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) *string { return v.SortBufferSize }).(pulumi.StringPtrOutput)
 }
 
 // ("sqlMode")
-func (o GetMysqlConfigurationsConfigurationVariableOutput) SqlMode() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) string { return v.SqlMode }).(pulumi.StringOutput)
+func (o GetMysqlConfigurationsConfigurationVariableOutput) SqlMode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) *string { return v.SqlMode }).(pulumi.StringPtrOutput)
 }
 
 // ("sqlRequirePrimaryKey")
-func (o GetMysqlConfigurationsConfigurationVariableOutput) SqlRequirePrimaryKey() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) bool { return v.SqlRequirePrimaryKey }).(pulumi.BoolOutput)
+func (o GetMysqlConfigurationsConfigurationVariableOutput) SqlRequirePrimaryKey() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) *bool { return v.SqlRequirePrimaryKey }).(pulumi.BoolPtrOutput)
 }
 
 // ("sqlWarnings")
-func (o GetMysqlConfigurationsConfigurationVariableOutput) SqlWarnings() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) bool { return v.SqlWarnings }).(pulumi.BoolOutput)
+func (o GetMysqlConfigurationsConfigurationVariableOutput) SqlWarnings() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) *bool { return v.SqlWarnings }).(pulumi.BoolPtrOutput)
 }
 
 // Controls whether the thread pool uses dedicated listener threads. If enabled, a listener thread in each thread group is dedicated to the task of listening for network events from clients, ensuring that the maximum number of query worker threads is no more than the value specified by threadPoolMaxTransactionsLimit. threadPoolDedicatedListeners corresponds to the MySQL Database Service-specific system variable thread_pool_dedicated_listeners.
-func (o GetMysqlConfigurationsConfigurationVariableOutput) ThreadPoolDedicatedListeners() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) bool { return v.ThreadPoolDedicatedListeners }).(pulumi.BoolOutput)
+func (o GetMysqlConfigurationsConfigurationVariableOutput) ThreadPoolDedicatedListeners() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) *bool { return v.ThreadPoolDedicatedListeners }).(pulumi.BoolPtrOutput)
 }
 
 // Limits the maximum number of open transactions to the defined value. The default value is 0, which enforces no limit. threadPoolMaxTransactionsLimit corresponds to the MySQL Database Service-specific system variable thread_pool_max_transactions_limit.
-func (o GetMysqlConfigurationsConfigurationVariableOutput) ThreadPoolMaxTransactionsLimit() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) int { return v.ThreadPoolMaxTransactionsLimit }).(pulumi.IntOutput)
+func (o GetMysqlConfigurationsConfigurationVariableOutput) ThreadPoolMaxTransactionsLimit() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) *int { return v.ThreadPoolMaxTransactionsLimit }).(pulumi.IntPtrOutput)
 }
 
 // Initializes the time zone for each client that connects.
-func (o GetMysqlConfigurationsConfigurationVariableOutput) TimeZone() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) string { return v.TimeZone }).(pulumi.StringOutput)
+func (o GetMysqlConfigurationsConfigurationVariableOutput) TimeZone() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) *string { return v.TimeZone }).(pulumi.StringPtrOutput)
 }
 
 // The maximum size of internal in-memory temporary tables. This variable does not apply to user-created MEMORY tables.
-func (o GetMysqlConfigurationsConfigurationVariableOutput) TmpTableSize() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) string { return v.TmpTableSize }).(pulumi.StringOutput)
+func (o GetMysqlConfigurationsConfigurationVariableOutput) TmpTableSize() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) *string { return v.TmpTableSize }).(pulumi.StringPtrOutput)
 }
 
 // ("transactionIsolation")
-func (o GetMysqlConfigurationsConfigurationVariableOutput) TransactionIsolation() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) string { return v.TransactionIsolation }).(pulumi.StringOutput)
+func (o GetMysqlConfigurationsConfigurationVariableOutput) TransactionIsolation() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) *string { return v.TransactionIsolation }).(pulumi.StringPtrOutput)
 }
 
 // The number of seconds the server waits for activity on a noninteractive connection before closing it.
-func (o GetMysqlConfigurationsConfigurationVariableOutput) WaitTimeout() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) int { return v.WaitTimeout }).(pulumi.IntOutput)
+func (o GetMysqlConfigurationsConfigurationVariableOutput) WaitTimeout() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) *int { return v.WaitTimeout }).(pulumi.IntPtrOutput)
 }
 
 type GetMysqlConfigurationsConfigurationVariableArrayOutput struct{ *pulumi.OutputState }
@@ -14343,12 +12864,6 @@ func (o GetMysqlConfigurationsConfigurationVariableArrayOutput) ToGetMysqlConfig
 
 func (o GetMysqlConfigurationsConfigurationVariableArrayOutput) ToGetMysqlConfigurationsConfigurationVariableArrayOutputWithContext(ctx context.Context) GetMysqlConfigurationsConfigurationVariableArrayOutput {
 	return o
-}
-
-func (o GetMysqlConfigurationsConfigurationVariableArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlConfigurationsConfigurationVariable] {
-	return pulumix.Output[[]GetMysqlConfigurationsConfigurationVariable]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetMysqlConfigurationsConfigurationVariableArrayOutput) Index(i pulumi.IntInput) GetMysqlConfigurationsConfigurationVariableOutput {
@@ -14392,12 +12907,6 @@ func (i GetMysqlConfigurationsFilterArgs) ToGetMysqlConfigurationsFilterOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlConfigurationsFilterOutput)
 }
 
-func (i GetMysqlConfigurationsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetMysqlConfigurationsFilter] {
-	return pulumix.Output[GetMysqlConfigurationsFilter]{
-		OutputState: i.ToGetMysqlConfigurationsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetMysqlConfigurationsFilterArrayInput is an input type that accepts GetMysqlConfigurationsFilterArray and GetMysqlConfigurationsFilterArrayOutput values.
 // You can construct a concrete instance of `GetMysqlConfigurationsFilterArrayInput` via:
 //
@@ -14423,12 +12932,6 @@ func (i GetMysqlConfigurationsFilterArray) ToGetMysqlConfigurationsFilterArrayOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlConfigurationsFilterArrayOutput)
 }
 
-func (i GetMysqlConfigurationsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlConfigurationsFilter] {
-	return pulumix.Output[[]GetMysqlConfigurationsFilter]{
-		OutputState: i.ToGetMysqlConfigurationsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMysqlConfigurationsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetMysqlConfigurationsFilterOutput) ElementType() reflect.Type {
@@ -14441,12 +12944,6 @@ func (o GetMysqlConfigurationsFilterOutput) ToGetMysqlConfigurationsFilterOutput
 
 func (o GetMysqlConfigurationsFilterOutput) ToGetMysqlConfigurationsFilterOutputWithContext(ctx context.Context) GetMysqlConfigurationsFilterOutput {
 	return o
-}
-
-func (o GetMysqlConfigurationsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetMysqlConfigurationsFilter] {
-	return pulumix.Output[GetMysqlConfigurationsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetMysqlConfigurationsFilterOutput) Name() pulumi.StringOutput {
@@ -14475,12 +12972,6 @@ func (o GetMysqlConfigurationsFilterArrayOutput) ToGetMysqlConfigurationsFilterA
 	return o
 }
 
-func (o GetMysqlConfigurationsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlConfigurationsFilter] {
-	return pulumix.Output[[]GetMysqlConfigurationsFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetMysqlConfigurationsFilterArrayOutput) Index(i pulumi.IntInput) GetMysqlConfigurationsFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlConfigurationsFilter {
 		return vs[0].([]GetMysqlConfigurationsFilter)[vs[1].(int)]
@@ -14493,13 +12984,13 @@ type GetMysqlDbSystemBackupPolicy struct {
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// Whether the Channel has been enabled by the user.
-	IsEnabled bool `pulumi:"isEnabled"`
+	IsEnabled *bool `pulumi:"isEnabled"`
 	// The PITR policy for the DB System.
 	PitrPolicies []GetMysqlDbSystemBackupPolicyPitrPolicy `pulumi:"pitrPolicies"`
 	// The number of days automated backups are retained.
-	RetentionInDays int `pulumi:"retentionInDays"`
+	RetentionInDays *int `pulumi:"retentionInDays"`
 	// The start time of the maintenance window.
-	WindowStartTime string `pulumi:"windowStartTime"`
+	WindowStartTime *string `pulumi:"windowStartTime"`
 }
 
 // GetMysqlDbSystemBackupPolicyInput is an input type that accepts GetMysqlDbSystemBackupPolicyArgs and GetMysqlDbSystemBackupPolicyOutput values.
@@ -14519,13 +13010,13 @@ type GetMysqlDbSystemBackupPolicyArgs struct {
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// Whether the Channel has been enabled by the user.
-	IsEnabled pulumi.BoolInput `pulumi:"isEnabled"`
+	IsEnabled pulumi.BoolPtrInput `pulumi:"isEnabled"`
 	// The PITR policy for the DB System.
 	PitrPolicies GetMysqlDbSystemBackupPolicyPitrPolicyArrayInput `pulumi:"pitrPolicies"`
 	// The number of days automated backups are retained.
-	RetentionInDays pulumi.IntInput `pulumi:"retentionInDays"`
+	RetentionInDays pulumi.IntPtrInput `pulumi:"retentionInDays"`
 	// The start time of the maintenance window.
-	WindowStartTime pulumi.StringInput `pulumi:"windowStartTime"`
+	WindowStartTime pulumi.StringPtrInput `pulumi:"windowStartTime"`
 }
 
 func (GetMysqlDbSystemBackupPolicyArgs) ElementType() reflect.Type {
@@ -14538,12 +13029,6 @@ func (i GetMysqlDbSystemBackupPolicyArgs) ToGetMysqlDbSystemBackupPolicyOutput()
 
 func (i GetMysqlDbSystemBackupPolicyArgs) ToGetMysqlDbSystemBackupPolicyOutputWithContext(ctx context.Context) GetMysqlDbSystemBackupPolicyOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemBackupPolicyOutput)
-}
-
-func (i GetMysqlDbSystemBackupPolicyArgs) ToOutput(ctx context.Context) pulumix.Output[GetMysqlDbSystemBackupPolicy] {
-	return pulumix.Output[GetMysqlDbSystemBackupPolicy]{
-		OutputState: i.ToGetMysqlDbSystemBackupPolicyOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetMysqlDbSystemBackupPolicyArrayInput is an input type that accepts GetMysqlDbSystemBackupPolicyArray and GetMysqlDbSystemBackupPolicyArrayOutput values.
@@ -14571,12 +13056,6 @@ func (i GetMysqlDbSystemBackupPolicyArray) ToGetMysqlDbSystemBackupPolicyArrayOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemBackupPolicyArrayOutput)
 }
 
-func (i GetMysqlDbSystemBackupPolicyArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlDbSystemBackupPolicy] {
-	return pulumix.Output[[]GetMysqlDbSystemBackupPolicy]{
-		OutputState: i.ToGetMysqlDbSystemBackupPolicyArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMysqlDbSystemBackupPolicyOutput struct{ *pulumi.OutputState }
 
 func (GetMysqlDbSystemBackupPolicyOutput) ElementType() reflect.Type {
@@ -14591,12 +13070,6 @@ func (o GetMysqlDbSystemBackupPolicyOutput) ToGetMysqlDbSystemBackupPolicyOutput
 	return o
 }
 
-func (o GetMysqlDbSystemBackupPolicyOutput) ToOutput(ctx context.Context) pulumix.Output[GetMysqlDbSystemBackupPolicy] {
-	return pulumix.Output[GetMysqlDbSystemBackupPolicy]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 func (o GetMysqlDbSystemBackupPolicyOutput) DefinedTags() pulumi.MapOutput {
 	return o.ApplyT(func(v GetMysqlDbSystemBackupPolicy) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
@@ -14608,8 +13081,8 @@ func (o GetMysqlDbSystemBackupPolicyOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // Whether the Channel has been enabled by the user.
-func (o GetMysqlDbSystemBackupPolicyOutput) IsEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetMysqlDbSystemBackupPolicy) bool { return v.IsEnabled }).(pulumi.BoolOutput)
+func (o GetMysqlDbSystemBackupPolicyOutput) IsEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemBackupPolicy) *bool { return v.IsEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // The PITR policy for the DB System.
@@ -14618,13 +13091,13 @@ func (o GetMysqlDbSystemBackupPolicyOutput) PitrPolicies() GetMysqlDbSystemBacku
 }
 
 // The number of days automated backups are retained.
-func (o GetMysqlDbSystemBackupPolicyOutput) RetentionInDays() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMysqlDbSystemBackupPolicy) int { return v.RetentionInDays }).(pulumi.IntOutput)
+func (o GetMysqlDbSystemBackupPolicyOutput) RetentionInDays() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemBackupPolicy) *int { return v.RetentionInDays }).(pulumi.IntPtrOutput)
 }
 
 // The start time of the maintenance window.
-func (o GetMysqlDbSystemBackupPolicyOutput) WindowStartTime() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlDbSystemBackupPolicy) string { return v.WindowStartTime }).(pulumi.StringOutput)
+func (o GetMysqlDbSystemBackupPolicyOutput) WindowStartTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemBackupPolicy) *string { return v.WindowStartTime }).(pulumi.StringPtrOutput)
 }
 
 type GetMysqlDbSystemBackupPolicyArrayOutput struct{ *pulumi.OutputState }
@@ -14641,12 +13114,6 @@ func (o GetMysqlDbSystemBackupPolicyArrayOutput) ToGetMysqlDbSystemBackupPolicyA
 	return o
 }
 
-func (o GetMysqlDbSystemBackupPolicyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlDbSystemBackupPolicy] {
-	return pulumix.Output[[]GetMysqlDbSystemBackupPolicy]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetMysqlDbSystemBackupPolicyArrayOutput) Index(i pulumi.IntInput) GetMysqlDbSystemBackupPolicyOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlDbSystemBackupPolicy {
 		return vs[0].([]GetMysqlDbSystemBackupPolicy)[vs[1].(int)]
@@ -14655,7 +13122,7 @@ func (o GetMysqlDbSystemBackupPolicyArrayOutput) Index(i pulumi.IntInput) GetMys
 
 type GetMysqlDbSystemBackupPolicyPitrPolicy struct {
 	// Whether the Channel has been enabled by the user.
-	IsEnabled bool `pulumi:"isEnabled"`
+	IsEnabled *bool `pulumi:"isEnabled"`
 }
 
 // GetMysqlDbSystemBackupPolicyPitrPolicyInput is an input type that accepts GetMysqlDbSystemBackupPolicyPitrPolicyArgs and GetMysqlDbSystemBackupPolicyPitrPolicyOutput values.
@@ -14671,7 +13138,7 @@ type GetMysqlDbSystemBackupPolicyPitrPolicyInput interface {
 
 type GetMysqlDbSystemBackupPolicyPitrPolicyArgs struct {
 	// Whether the Channel has been enabled by the user.
-	IsEnabled pulumi.BoolInput `pulumi:"isEnabled"`
+	IsEnabled pulumi.BoolPtrInput `pulumi:"isEnabled"`
 }
 
 func (GetMysqlDbSystemBackupPolicyPitrPolicyArgs) ElementType() reflect.Type {
@@ -14684,12 +13151,6 @@ func (i GetMysqlDbSystemBackupPolicyPitrPolicyArgs) ToGetMysqlDbSystemBackupPoli
 
 func (i GetMysqlDbSystemBackupPolicyPitrPolicyArgs) ToGetMysqlDbSystemBackupPolicyPitrPolicyOutputWithContext(ctx context.Context) GetMysqlDbSystemBackupPolicyPitrPolicyOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemBackupPolicyPitrPolicyOutput)
-}
-
-func (i GetMysqlDbSystemBackupPolicyPitrPolicyArgs) ToOutput(ctx context.Context) pulumix.Output[GetMysqlDbSystemBackupPolicyPitrPolicy] {
-	return pulumix.Output[GetMysqlDbSystemBackupPolicyPitrPolicy]{
-		OutputState: i.ToGetMysqlDbSystemBackupPolicyPitrPolicyOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetMysqlDbSystemBackupPolicyPitrPolicyArrayInput is an input type that accepts GetMysqlDbSystemBackupPolicyPitrPolicyArray and GetMysqlDbSystemBackupPolicyPitrPolicyArrayOutput values.
@@ -14717,12 +13178,6 @@ func (i GetMysqlDbSystemBackupPolicyPitrPolicyArray) ToGetMysqlDbSystemBackupPol
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemBackupPolicyPitrPolicyArrayOutput)
 }
 
-func (i GetMysqlDbSystemBackupPolicyPitrPolicyArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlDbSystemBackupPolicyPitrPolicy] {
-	return pulumix.Output[[]GetMysqlDbSystemBackupPolicyPitrPolicy]{
-		OutputState: i.ToGetMysqlDbSystemBackupPolicyPitrPolicyArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMysqlDbSystemBackupPolicyPitrPolicyOutput struct{ *pulumi.OutputState }
 
 func (GetMysqlDbSystemBackupPolicyPitrPolicyOutput) ElementType() reflect.Type {
@@ -14737,15 +13192,9 @@ func (o GetMysqlDbSystemBackupPolicyPitrPolicyOutput) ToGetMysqlDbSystemBackupPo
 	return o
 }
 
-func (o GetMysqlDbSystemBackupPolicyPitrPolicyOutput) ToOutput(ctx context.Context) pulumix.Output[GetMysqlDbSystemBackupPolicyPitrPolicy] {
-	return pulumix.Output[GetMysqlDbSystemBackupPolicyPitrPolicy]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Whether the Channel has been enabled by the user.
-func (o GetMysqlDbSystemBackupPolicyPitrPolicyOutput) IsEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetMysqlDbSystemBackupPolicyPitrPolicy) bool { return v.IsEnabled }).(pulumi.BoolOutput)
+func (o GetMysqlDbSystemBackupPolicyPitrPolicyOutput) IsEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemBackupPolicyPitrPolicy) *bool { return v.IsEnabled }).(pulumi.BoolPtrOutput)
 }
 
 type GetMysqlDbSystemBackupPolicyPitrPolicyArrayOutput struct{ *pulumi.OutputState }
@@ -14762,12 +13211,6 @@ func (o GetMysqlDbSystemBackupPolicyPitrPolicyArrayOutput) ToGetMysqlDbSystemBac
 	return o
 }
 
-func (o GetMysqlDbSystemBackupPolicyPitrPolicyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlDbSystemBackupPolicyPitrPolicy] {
-	return pulumix.Output[[]GetMysqlDbSystemBackupPolicyPitrPolicy]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetMysqlDbSystemBackupPolicyPitrPolicyArrayOutput) Index(i pulumi.IntInput) GetMysqlDbSystemBackupPolicyPitrPolicyOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlDbSystemBackupPolicyPitrPolicy {
 		return vs[0].([]GetMysqlDbSystemBackupPolicyPitrPolicy)[vs[1].(int)]
@@ -14776,29 +13219,29 @@ func (o GetMysqlDbSystemBackupPolicyPitrPolicyArrayOutput) Index(i pulumi.IntInp
 
 type GetMysqlDbSystemChannel struct {
 	// The OCID of the compartment the DB System belongs in.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The user-friendly name for the DB System. It does not have to be unique.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The OCID of the DB System.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Whether the Channel has been enabled by the user.
-	IsEnabled bool `pulumi:"isEnabled"`
+	IsEnabled *bool `pulumi:"isEnabled"`
 	// Additional information about the current lifecycleState.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// Parameters detailing how to provision the initial data of the DB System.
 	Sources []GetMysqlDbSystemChannelSource `pulumi:"sources"`
 	// The current state of the DB System.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// Details about the Channel target.
 	Targets []GetMysqlDbSystemChannelTarget `pulumi:"targets"`
 	// The date and time the DB System was created.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time the DB System was last updated.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 // GetMysqlDbSystemChannelInput is an input type that accepts GetMysqlDbSystemChannelArgs and GetMysqlDbSystemChannelOutput values.
@@ -14814,29 +13257,29 @@ type GetMysqlDbSystemChannelInput interface {
 
 type GetMysqlDbSystemChannelArgs struct {
 	// The OCID of the compartment the DB System belongs in.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// The user-friendly name for the DB System. It does not have to be unique.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// The OCID of the DB System.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// Whether the Channel has been enabled by the user.
-	IsEnabled pulumi.BoolInput `pulumi:"isEnabled"`
+	IsEnabled pulumi.BoolPtrInput `pulumi:"isEnabled"`
 	// Additional information about the current lifecycleState.
-	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrInput `pulumi:"lifecycleDetails"`
 	// Parameters detailing how to provision the initial data of the DB System.
 	Sources GetMysqlDbSystemChannelSourceArrayInput `pulumi:"sources"`
 	// The current state of the DB System.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// Details about the Channel target.
 	Targets GetMysqlDbSystemChannelTargetArrayInput `pulumi:"targets"`
 	// The date and time the DB System was created.
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// The time the DB System was last updated.
-	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
 }
 
 func (GetMysqlDbSystemChannelArgs) ElementType() reflect.Type {
@@ -14849,12 +13292,6 @@ func (i GetMysqlDbSystemChannelArgs) ToGetMysqlDbSystemChannelOutput() GetMysqlD
 
 func (i GetMysqlDbSystemChannelArgs) ToGetMysqlDbSystemChannelOutputWithContext(ctx context.Context) GetMysqlDbSystemChannelOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemChannelOutput)
-}
-
-func (i GetMysqlDbSystemChannelArgs) ToOutput(ctx context.Context) pulumix.Output[GetMysqlDbSystemChannel] {
-	return pulumix.Output[GetMysqlDbSystemChannel]{
-		OutputState: i.ToGetMysqlDbSystemChannelOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetMysqlDbSystemChannelArrayInput is an input type that accepts GetMysqlDbSystemChannelArray and GetMysqlDbSystemChannelArrayOutput values.
@@ -14882,12 +13319,6 @@ func (i GetMysqlDbSystemChannelArray) ToGetMysqlDbSystemChannelArrayOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemChannelArrayOutput)
 }
 
-func (i GetMysqlDbSystemChannelArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlDbSystemChannel] {
-	return pulumix.Output[[]GetMysqlDbSystemChannel]{
-		OutputState: i.ToGetMysqlDbSystemChannelArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMysqlDbSystemChannelOutput struct{ *pulumi.OutputState }
 
 func (GetMysqlDbSystemChannelOutput) ElementType() reflect.Type {
@@ -14902,15 +13333,9 @@ func (o GetMysqlDbSystemChannelOutput) ToGetMysqlDbSystemChannelOutputWithContex
 	return o
 }
 
-func (o GetMysqlDbSystemChannelOutput) ToOutput(ctx context.Context) pulumix.Output[GetMysqlDbSystemChannel] {
-	return pulumix.Output[GetMysqlDbSystemChannel]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the compartment the DB System belongs in.
-func (o GetMysqlDbSystemChannelOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlDbSystemChannel) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetMysqlDbSystemChannelOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemChannel) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -14919,8 +13344,8 @@ func (o GetMysqlDbSystemChannelOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // The user-friendly name for the DB System. It does not have to be unique.
-func (o GetMysqlDbSystemChannelOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlDbSystemChannel) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetMysqlDbSystemChannelOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemChannel) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -14929,18 +13354,18 @@ func (o GetMysqlDbSystemChannelOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The OCID of the DB System.
-func (o GetMysqlDbSystemChannelOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlDbSystemChannel) string { return v.Id }).(pulumi.StringOutput)
+func (o GetMysqlDbSystemChannelOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemChannel) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Whether the Channel has been enabled by the user.
-func (o GetMysqlDbSystemChannelOutput) IsEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetMysqlDbSystemChannel) bool { return v.IsEnabled }).(pulumi.BoolOutput)
+func (o GetMysqlDbSystemChannelOutput) IsEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemChannel) *bool { return v.IsEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // Additional information about the current lifecycleState.
-func (o GetMysqlDbSystemChannelOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlDbSystemChannel) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o GetMysqlDbSystemChannelOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemChannel) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // Parameters detailing how to provision the initial data of the DB System.
@@ -14949,8 +13374,8 @@ func (o GetMysqlDbSystemChannelOutput) Sources() GetMysqlDbSystemChannelSourceAr
 }
 
 // The current state of the DB System.
-func (o GetMysqlDbSystemChannelOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlDbSystemChannel) string { return v.State }).(pulumi.StringOutput)
+func (o GetMysqlDbSystemChannelOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemChannel) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Details about the Channel target.
@@ -14959,13 +13384,13 @@ func (o GetMysqlDbSystemChannelOutput) Targets() GetMysqlDbSystemChannelTargetAr
 }
 
 // The date and time the DB System was created.
-func (o GetMysqlDbSystemChannelOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlDbSystemChannel) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetMysqlDbSystemChannelOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemChannel) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time the DB System was last updated.
-func (o GetMysqlDbSystemChannelOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlDbSystemChannel) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o GetMysqlDbSystemChannelOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemChannel) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type GetMysqlDbSystemChannelArrayOutput struct{ *pulumi.OutputState }
@@ -14982,12 +13407,6 @@ func (o GetMysqlDbSystemChannelArrayOutput) ToGetMysqlDbSystemChannelArrayOutput
 	return o
 }
 
-func (o GetMysqlDbSystemChannelArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlDbSystemChannel] {
-	return pulumix.Output[[]GetMysqlDbSystemChannel]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetMysqlDbSystemChannelArrayOutput) Index(i pulumi.IntInput) GetMysqlDbSystemChannelOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlDbSystemChannel {
 		return vs[0].([]GetMysqlDbSystemChannel)[vs[1].(int)]
@@ -14998,17 +13417,17 @@ type GetMysqlDbSystemChannelSource struct {
 	// Specifies how the replication channel handles replicated transactions without an identifier, enabling replication from a source that does not use transaction-id-based replication to a replica that does.
 	AnonymousTransactionsHandlings []GetMysqlDbSystemChannelSourceAnonymousTransactionsHandling `pulumi:"anonymousTransactionsHandlings"`
 	// The network address of the DB System.
-	Hostname string `pulumi:"hostname"`
+	Hostname *string `pulumi:"hostname"`
 	// The port for primary endpoint of the DB System to listen on.
-	Port int `pulumi:"port"`
+	Port *int `pulumi:"port"`
 	// The specific source identifier.
-	SourceType string `pulumi:"sourceType"`
+	SourceType *string `pulumi:"sourceType"`
 	// The CA certificate of the server used for VERIFY_IDENTITY and VERIFY_CA ssl modes.
 	SslCaCertificates []GetMysqlDbSystemChannelSourceSslCaCertificate `pulumi:"sslCaCertificates"`
 	// The SSL mode of the Channel.
-	SslMode string `pulumi:"sslMode"`
+	SslMode *string `pulumi:"sslMode"`
 	// The name of the replication user on the source MySQL instance. The username has a maximum length of 96 characters. For more information, please see the [MySQL documentation](https://dev.mysql.com/doc/refman/8.0/en/change-master-to.html)
-	Username string `pulumi:"username"`
+	Username *string `pulumi:"username"`
 }
 
 // GetMysqlDbSystemChannelSourceInput is an input type that accepts GetMysqlDbSystemChannelSourceArgs and GetMysqlDbSystemChannelSourceOutput values.
@@ -15026,17 +13445,17 @@ type GetMysqlDbSystemChannelSourceArgs struct {
 	// Specifies how the replication channel handles replicated transactions without an identifier, enabling replication from a source that does not use transaction-id-based replication to a replica that does.
 	AnonymousTransactionsHandlings GetMysqlDbSystemChannelSourceAnonymousTransactionsHandlingArrayInput `pulumi:"anonymousTransactionsHandlings"`
 	// The network address of the DB System.
-	Hostname pulumi.StringInput `pulumi:"hostname"`
+	Hostname pulumi.StringPtrInput `pulumi:"hostname"`
 	// The port for primary endpoint of the DB System to listen on.
-	Port pulumi.IntInput `pulumi:"port"`
+	Port pulumi.IntPtrInput `pulumi:"port"`
 	// The specific source identifier.
-	SourceType pulumi.StringInput `pulumi:"sourceType"`
+	SourceType pulumi.StringPtrInput `pulumi:"sourceType"`
 	// The CA certificate of the server used for VERIFY_IDENTITY and VERIFY_CA ssl modes.
 	SslCaCertificates GetMysqlDbSystemChannelSourceSslCaCertificateArrayInput `pulumi:"sslCaCertificates"`
 	// The SSL mode of the Channel.
-	SslMode pulumi.StringInput `pulumi:"sslMode"`
+	SslMode pulumi.StringPtrInput `pulumi:"sslMode"`
 	// The name of the replication user on the source MySQL instance. The username has a maximum length of 96 characters. For more information, please see the [MySQL documentation](https://dev.mysql.com/doc/refman/8.0/en/change-master-to.html)
-	Username pulumi.StringInput `pulumi:"username"`
+	Username pulumi.StringPtrInput `pulumi:"username"`
 }
 
 func (GetMysqlDbSystemChannelSourceArgs) ElementType() reflect.Type {
@@ -15049,12 +13468,6 @@ func (i GetMysqlDbSystemChannelSourceArgs) ToGetMysqlDbSystemChannelSourceOutput
 
 func (i GetMysqlDbSystemChannelSourceArgs) ToGetMysqlDbSystemChannelSourceOutputWithContext(ctx context.Context) GetMysqlDbSystemChannelSourceOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemChannelSourceOutput)
-}
-
-func (i GetMysqlDbSystemChannelSourceArgs) ToOutput(ctx context.Context) pulumix.Output[GetMysqlDbSystemChannelSource] {
-	return pulumix.Output[GetMysqlDbSystemChannelSource]{
-		OutputState: i.ToGetMysqlDbSystemChannelSourceOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetMysqlDbSystemChannelSourceArrayInput is an input type that accepts GetMysqlDbSystemChannelSourceArray and GetMysqlDbSystemChannelSourceArrayOutput values.
@@ -15082,12 +13495,6 @@ func (i GetMysqlDbSystemChannelSourceArray) ToGetMysqlDbSystemChannelSourceArray
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemChannelSourceArrayOutput)
 }
 
-func (i GetMysqlDbSystemChannelSourceArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlDbSystemChannelSource] {
-	return pulumix.Output[[]GetMysqlDbSystemChannelSource]{
-		OutputState: i.ToGetMysqlDbSystemChannelSourceArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMysqlDbSystemChannelSourceOutput struct{ *pulumi.OutputState }
 
 func (GetMysqlDbSystemChannelSourceOutput) ElementType() reflect.Type {
@@ -15102,12 +13509,6 @@ func (o GetMysqlDbSystemChannelSourceOutput) ToGetMysqlDbSystemChannelSourceOutp
 	return o
 }
 
-func (o GetMysqlDbSystemChannelSourceOutput) ToOutput(ctx context.Context) pulumix.Output[GetMysqlDbSystemChannelSource] {
-	return pulumix.Output[GetMysqlDbSystemChannelSource]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Specifies how the replication channel handles replicated transactions without an identifier, enabling replication from a source that does not use transaction-id-based replication to a replica that does.
 func (o GetMysqlDbSystemChannelSourceOutput) AnonymousTransactionsHandlings() GetMysqlDbSystemChannelSourceAnonymousTransactionsHandlingArrayOutput {
 	return o.ApplyT(func(v GetMysqlDbSystemChannelSource) []GetMysqlDbSystemChannelSourceAnonymousTransactionsHandling {
@@ -15116,18 +13517,18 @@ func (o GetMysqlDbSystemChannelSourceOutput) AnonymousTransactionsHandlings() Ge
 }
 
 // The network address of the DB System.
-func (o GetMysqlDbSystemChannelSourceOutput) Hostname() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlDbSystemChannelSource) string { return v.Hostname }).(pulumi.StringOutput)
+func (o GetMysqlDbSystemChannelSourceOutput) Hostname() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemChannelSource) *string { return v.Hostname }).(pulumi.StringPtrOutput)
 }
 
 // The port for primary endpoint of the DB System to listen on.
-func (o GetMysqlDbSystemChannelSourceOutput) Port() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMysqlDbSystemChannelSource) int { return v.Port }).(pulumi.IntOutput)
+func (o GetMysqlDbSystemChannelSourceOutput) Port() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemChannelSource) *int { return v.Port }).(pulumi.IntPtrOutput)
 }
 
 // The specific source identifier.
-func (o GetMysqlDbSystemChannelSourceOutput) SourceType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlDbSystemChannelSource) string { return v.SourceType }).(pulumi.StringOutput)
+func (o GetMysqlDbSystemChannelSourceOutput) SourceType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemChannelSource) *string { return v.SourceType }).(pulumi.StringPtrOutput)
 }
 
 // The CA certificate of the server used for VERIFY_IDENTITY and VERIFY_CA ssl modes.
@@ -15138,13 +13539,13 @@ func (o GetMysqlDbSystemChannelSourceOutput) SslCaCertificates() GetMysqlDbSyste
 }
 
 // The SSL mode of the Channel.
-func (o GetMysqlDbSystemChannelSourceOutput) SslMode() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlDbSystemChannelSource) string { return v.SslMode }).(pulumi.StringOutput)
+func (o GetMysqlDbSystemChannelSourceOutput) SslMode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemChannelSource) *string { return v.SslMode }).(pulumi.StringPtrOutput)
 }
 
 // The name of the replication user on the source MySQL instance. The username has a maximum length of 96 characters. For more information, please see the [MySQL documentation](https://dev.mysql.com/doc/refman/8.0/en/change-master-to.html)
-func (o GetMysqlDbSystemChannelSourceOutput) Username() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlDbSystemChannelSource) string { return v.Username }).(pulumi.StringOutput)
+func (o GetMysqlDbSystemChannelSourceOutput) Username() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemChannelSource) *string { return v.Username }).(pulumi.StringPtrOutput)
 }
 
 type GetMysqlDbSystemChannelSourceArrayOutput struct{ *pulumi.OutputState }
@@ -15161,12 +13562,6 @@ func (o GetMysqlDbSystemChannelSourceArrayOutput) ToGetMysqlDbSystemChannelSourc
 	return o
 }
 
-func (o GetMysqlDbSystemChannelSourceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlDbSystemChannelSource] {
-	return pulumix.Output[[]GetMysqlDbSystemChannelSource]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetMysqlDbSystemChannelSourceArrayOutput) Index(i pulumi.IntInput) GetMysqlDbSystemChannelSourceOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlDbSystemChannelSource {
 		return vs[0].([]GetMysqlDbSystemChannelSource)[vs[1].(int)]
@@ -15175,13 +13570,13 @@ func (o GetMysqlDbSystemChannelSourceArrayOutput) Index(i pulumi.IntInput) GetMy
 
 type GetMysqlDbSystemChannelSourceAnonymousTransactionsHandling struct {
 	// Specifies one of the coordinates (file) at which the replica should begin reading the source's log. As this value specifies the point where replication starts from, it is only used once, when it starts. It is never used again, unless a new UpdateChannel operation modifies it.
-	LastConfiguredLogFilename string `pulumi:"lastConfiguredLogFilename"`
+	LastConfiguredLogFilename *string `pulumi:"lastConfiguredLogFilename"`
 	// Specifies one of the coordinates (offset) at which the replica should begin reading the source's log. As this value specifies the point where replication starts from, it is only used once, when it starts. It is never used again, unless a new UpdateChannel operation modifies it.
-	LastConfiguredLogOffset string `pulumi:"lastConfiguredLogOffset"`
+	LastConfiguredLogOffset *string `pulumi:"lastConfiguredLogOffset"`
 	// Specifies how the replication channel handles anonymous transactions.
-	Policy string `pulumi:"policy"`
+	Policy *string `pulumi:"policy"`
 	// The UUID that is used as a prefix when generating transaction identifiers for anonymous transactions coming from the source. You can change the UUID later.
-	Uuid string `pulumi:"uuid"`
+	Uuid *string `pulumi:"uuid"`
 }
 
 // GetMysqlDbSystemChannelSourceAnonymousTransactionsHandlingInput is an input type that accepts GetMysqlDbSystemChannelSourceAnonymousTransactionsHandlingArgs and GetMysqlDbSystemChannelSourceAnonymousTransactionsHandlingOutput values.
@@ -15197,13 +13592,13 @@ type GetMysqlDbSystemChannelSourceAnonymousTransactionsHandlingInput interface {
 
 type GetMysqlDbSystemChannelSourceAnonymousTransactionsHandlingArgs struct {
 	// Specifies one of the coordinates (file) at which the replica should begin reading the source's log. As this value specifies the point where replication starts from, it is only used once, when it starts. It is never used again, unless a new UpdateChannel operation modifies it.
-	LastConfiguredLogFilename pulumi.StringInput `pulumi:"lastConfiguredLogFilename"`
+	LastConfiguredLogFilename pulumi.StringPtrInput `pulumi:"lastConfiguredLogFilename"`
 	// Specifies one of the coordinates (offset) at which the replica should begin reading the source's log. As this value specifies the point where replication starts from, it is only used once, when it starts. It is never used again, unless a new UpdateChannel operation modifies it.
-	LastConfiguredLogOffset pulumi.StringInput `pulumi:"lastConfiguredLogOffset"`
+	LastConfiguredLogOffset pulumi.StringPtrInput `pulumi:"lastConfiguredLogOffset"`
 	// Specifies how the replication channel handles anonymous transactions.
-	Policy pulumi.StringInput `pulumi:"policy"`
+	Policy pulumi.StringPtrInput `pulumi:"policy"`
 	// The UUID that is used as a prefix when generating transaction identifiers for anonymous transactions coming from the source. You can change the UUID later.
-	Uuid pulumi.StringInput `pulumi:"uuid"`
+	Uuid pulumi.StringPtrInput `pulumi:"uuid"`
 }
 
 func (GetMysqlDbSystemChannelSourceAnonymousTransactionsHandlingArgs) ElementType() reflect.Type {
@@ -15216,12 +13611,6 @@ func (i GetMysqlDbSystemChannelSourceAnonymousTransactionsHandlingArgs) ToGetMys
 
 func (i GetMysqlDbSystemChannelSourceAnonymousTransactionsHandlingArgs) ToGetMysqlDbSystemChannelSourceAnonymousTransactionsHandlingOutputWithContext(ctx context.Context) GetMysqlDbSystemChannelSourceAnonymousTransactionsHandlingOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemChannelSourceAnonymousTransactionsHandlingOutput)
-}
-
-func (i GetMysqlDbSystemChannelSourceAnonymousTransactionsHandlingArgs) ToOutput(ctx context.Context) pulumix.Output[GetMysqlDbSystemChannelSourceAnonymousTransactionsHandling] {
-	return pulumix.Output[GetMysqlDbSystemChannelSourceAnonymousTransactionsHandling]{
-		OutputState: i.ToGetMysqlDbSystemChannelSourceAnonymousTransactionsHandlingOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetMysqlDbSystemChannelSourceAnonymousTransactionsHandlingArrayInput is an input type that accepts GetMysqlDbSystemChannelSourceAnonymousTransactionsHandlingArray and GetMysqlDbSystemChannelSourceAnonymousTransactionsHandlingArrayOutput values.
@@ -15249,12 +13638,6 @@ func (i GetMysqlDbSystemChannelSourceAnonymousTransactionsHandlingArray) ToGetMy
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemChannelSourceAnonymousTransactionsHandlingArrayOutput)
 }
 
-func (i GetMysqlDbSystemChannelSourceAnonymousTransactionsHandlingArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlDbSystemChannelSourceAnonymousTransactionsHandling] {
-	return pulumix.Output[[]GetMysqlDbSystemChannelSourceAnonymousTransactionsHandling]{
-		OutputState: i.ToGetMysqlDbSystemChannelSourceAnonymousTransactionsHandlingArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMysqlDbSystemChannelSourceAnonymousTransactionsHandlingOutput struct{ *pulumi.OutputState }
 
 func (GetMysqlDbSystemChannelSourceAnonymousTransactionsHandlingOutput) ElementType() reflect.Type {
@@ -15269,34 +13652,28 @@ func (o GetMysqlDbSystemChannelSourceAnonymousTransactionsHandlingOutput) ToGetM
 	return o
 }
 
-func (o GetMysqlDbSystemChannelSourceAnonymousTransactionsHandlingOutput) ToOutput(ctx context.Context) pulumix.Output[GetMysqlDbSystemChannelSourceAnonymousTransactionsHandling] {
-	return pulumix.Output[GetMysqlDbSystemChannelSourceAnonymousTransactionsHandling]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Specifies one of the coordinates (file) at which the replica should begin reading the source's log. As this value specifies the point where replication starts from, it is only used once, when it starts. It is never used again, unless a new UpdateChannel operation modifies it.
-func (o GetMysqlDbSystemChannelSourceAnonymousTransactionsHandlingOutput) LastConfiguredLogFilename() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlDbSystemChannelSourceAnonymousTransactionsHandling) string {
+func (o GetMysqlDbSystemChannelSourceAnonymousTransactionsHandlingOutput) LastConfiguredLogFilename() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemChannelSourceAnonymousTransactionsHandling) *string {
 		return v.LastConfiguredLogFilename
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Specifies one of the coordinates (offset) at which the replica should begin reading the source's log. As this value specifies the point where replication starts from, it is only used once, when it starts. It is never used again, unless a new UpdateChannel operation modifies it.
-func (o GetMysqlDbSystemChannelSourceAnonymousTransactionsHandlingOutput) LastConfiguredLogOffset() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlDbSystemChannelSourceAnonymousTransactionsHandling) string {
+func (o GetMysqlDbSystemChannelSourceAnonymousTransactionsHandlingOutput) LastConfiguredLogOffset() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemChannelSourceAnonymousTransactionsHandling) *string {
 		return v.LastConfiguredLogOffset
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Specifies how the replication channel handles anonymous transactions.
-func (o GetMysqlDbSystemChannelSourceAnonymousTransactionsHandlingOutput) Policy() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlDbSystemChannelSourceAnonymousTransactionsHandling) string { return v.Policy }).(pulumi.StringOutput)
+func (o GetMysqlDbSystemChannelSourceAnonymousTransactionsHandlingOutput) Policy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemChannelSourceAnonymousTransactionsHandling) *string { return v.Policy }).(pulumi.StringPtrOutput)
 }
 
 // The UUID that is used as a prefix when generating transaction identifiers for anonymous transactions coming from the source. You can change the UUID later.
-func (o GetMysqlDbSystemChannelSourceAnonymousTransactionsHandlingOutput) Uuid() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlDbSystemChannelSourceAnonymousTransactionsHandling) string { return v.Uuid }).(pulumi.StringOutput)
+func (o GetMysqlDbSystemChannelSourceAnonymousTransactionsHandlingOutput) Uuid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemChannelSourceAnonymousTransactionsHandling) *string { return v.Uuid }).(pulumi.StringPtrOutput)
 }
 
 type GetMysqlDbSystemChannelSourceAnonymousTransactionsHandlingArrayOutput struct{ *pulumi.OutputState }
@@ -15313,12 +13690,6 @@ func (o GetMysqlDbSystemChannelSourceAnonymousTransactionsHandlingArrayOutput) T
 	return o
 }
 
-func (o GetMysqlDbSystemChannelSourceAnonymousTransactionsHandlingArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlDbSystemChannelSourceAnonymousTransactionsHandling] {
-	return pulumix.Output[[]GetMysqlDbSystemChannelSourceAnonymousTransactionsHandling]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetMysqlDbSystemChannelSourceAnonymousTransactionsHandlingArrayOutput) Index(i pulumi.IntInput) GetMysqlDbSystemChannelSourceAnonymousTransactionsHandlingOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlDbSystemChannelSourceAnonymousTransactionsHandling {
 		return vs[0].([]GetMysqlDbSystemChannelSourceAnonymousTransactionsHandling)[vs[1].(int)]
@@ -15327,9 +13698,9 @@ func (o GetMysqlDbSystemChannelSourceAnonymousTransactionsHandlingArrayOutput) I
 
 type GetMysqlDbSystemChannelSourceSslCaCertificate struct {
 	// The type of CA certificate.
-	CertificateType string `pulumi:"certificateType"`
+	CertificateType *string `pulumi:"certificateType"`
 	// The string containing the CA certificate in PEM format.
-	Contents string `pulumi:"contents"`
+	Contents *string `pulumi:"contents"`
 }
 
 // GetMysqlDbSystemChannelSourceSslCaCertificateInput is an input type that accepts GetMysqlDbSystemChannelSourceSslCaCertificateArgs and GetMysqlDbSystemChannelSourceSslCaCertificateOutput values.
@@ -15345,9 +13716,9 @@ type GetMysqlDbSystemChannelSourceSslCaCertificateInput interface {
 
 type GetMysqlDbSystemChannelSourceSslCaCertificateArgs struct {
 	// The type of CA certificate.
-	CertificateType pulumi.StringInput `pulumi:"certificateType"`
+	CertificateType pulumi.StringPtrInput `pulumi:"certificateType"`
 	// The string containing the CA certificate in PEM format.
-	Contents pulumi.StringInput `pulumi:"contents"`
+	Contents pulumi.StringPtrInput `pulumi:"contents"`
 }
 
 func (GetMysqlDbSystemChannelSourceSslCaCertificateArgs) ElementType() reflect.Type {
@@ -15360,12 +13731,6 @@ func (i GetMysqlDbSystemChannelSourceSslCaCertificateArgs) ToGetMysqlDbSystemCha
 
 func (i GetMysqlDbSystemChannelSourceSslCaCertificateArgs) ToGetMysqlDbSystemChannelSourceSslCaCertificateOutputWithContext(ctx context.Context) GetMysqlDbSystemChannelSourceSslCaCertificateOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemChannelSourceSslCaCertificateOutput)
-}
-
-func (i GetMysqlDbSystemChannelSourceSslCaCertificateArgs) ToOutput(ctx context.Context) pulumix.Output[GetMysqlDbSystemChannelSourceSslCaCertificate] {
-	return pulumix.Output[GetMysqlDbSystemChannelSourceSslCaCertificate]{
-		OutputState: i.ToGetMysqlDbSystemChannelSourceSslCaCertificateOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetMysqlDbSystemChannelSourceSslCaCertificateArrayInput is an input type that accepts GetMysqlDbSystemChannelSourceSslCaCertificateArray and GetMysqlDbSystemChannelSourceSslCaCertificateArrayOutput values.
@@ -15393,12 +13758,6 @@ func (i GetMysqlDbSystemChannelSourceSslCaCertificateArray) ToGetMysqlDbSystemCh
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemChannelSourceSslCaCertificateArrayOutput)
 }
 
-func (i GetMysqlDbSystemChannelSourceSslCaCertificateArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlDbSystemChannelSourceSslCaCertificate] {
-	return pulumix.Output[[]GetMysqlDbSystemChannelSourceSslCaCertificate]{
-		OutputState: i.ToGetMysqlDbSystemChannelSourceSslCaCertificateArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMysqlDbSystemChannelSourceSslCaCertificateOutput struct{ *pulumi.OutputState }
 
 func (GetMysqlDbSystemChannelSourceSslCaCertificateOutput) ElementType() reflect.Type {
@@ -15413,20 +13772,14 @@ func (o GetMysqlDbSystemChannelSourceSslCaCertificateOutput) ToGetMysqlDbSystemC
 	return o
 }
 
-func (o GetMysqlDbSystemChannelSourceSslCaCertificateOutput) ToOutput(ctx context.Context) pulumix.Output[GetMysqlDbSystemChannelSourceSslCaCertificate] {
-	return pulumix.Output[GetMysqlDbSystemChannelSourceSslCaCertificate]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The type of CA certificate.
-func (o GetMysqlDbSystemChannelSourceSslCaCertificateOutput) CertificateType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlDbSystemChannelSourceSslCaCertificate) string { return v.CertificateType }).(pulumi.StringOutput)
+func (o GetMysqlDbSystemChannelSourceSslCaCertificateOutput) CertificateType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemChannelSourceSslCaCertificate) *string { return v.CertificateType }).(pulumi.StringPtrOutput)
 }
 
 // The string containing the CA certificate in PEM format.
-func (o GetMysqlDbSystemChannelSourceSslCaCertificateOutput) Contents() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlDbSystemChannelSourceSslCaCertificate) string { return v.Contents }).(pulumi.StringOutput)
+func (o GetMysqlDbSystemChannelSourceSslCaCertificateOutput) Contents() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemChannelSourceSslCaCertificate) *string { return v.Contents }).(pulumi.StringPtrOutput)
 }
 
 type GetMysqlDbSystemChannelSourceSslCaCertificateArrayOutput struct{ *pulumi.OutputState }
@@ -15443,12 +13796,6 @@ func (o GetMysqlDbSystemChannelSourceSslCaCertificateArrayOutput) ToGetMysqlDbSy
 	return o
 }
 
-func (o GetMysqlDbSystemChannelSourceSslCaCertificateArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlDbSystemChannelSourceSslCaCertificate] {
-	return pulumix.Output[[]GetMysqlDbSystemChannelSourceSslCaCertificate]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetMysqlDbSystemChannelSourceSslCaCertificateArrayOutput) Index(i pulumi.IntInput) GetMysqlDbSystemChannelSourceSslCaCertificateOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlDbSystemChannelSourceSslCaCertificate {
 		return vs[0].([]GetMysqlDbSystemChannelSourceSslCaCertificate)[vs[1].(int)]
@@ -15457,19 +13804,19 @@ func (o GetMysqlDbSystemChannelSourceSslCaCertificateArrayOutput) Index(i pulumi
 
 type GetMysqlDbSystemChannelTarget struct {
 	// The username for the replication applier of the target MySQL DB System.
-	ApplierUsername string `pulumi:"applierUsername"`
+	ApplierUsername *string `pulumi:"applierUsername"`
 	// The case-insensitive name that identifies the replication channel. Channel names must follow the rules defined for [MySQL identifiers](https://dev.mysql.com/doc/refman/8.0/en/identifiers.html). The names of non-Deleted Channels must be unique for each DB System.
-	ChannelName string `pulumi:"channelName"`
+	ChannelName *string `pulumi:"channelName"`
 	// The DB System [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-	DbSystemId string `pulumi:"dbSystemId"`
+	DbSystemId *string `pulumi:"dbSystemId"`
 	// Specifies the amount of time, in seconds, that the channel waits before  applying a transaction received from the source.
-	DelayInSeconds int `pulumi:"delayInSeconds"`
+	DelayInSeconds *int `pulumi:"delayInSeconds"`
 	// Replication filter rules to be applied at the DB System Channel target.
 	Filters []GetMysqlDbSystemChannelTargetFilter `pulumi:"filters"`
 	// Specifies how a replication channel handles the creation and alteration of tables  that do not have a primary key.
-	TablesWithoutPrimaryKeyHandling string `pulumi:"tablesWithoutPrimaryKeyHandling"`
+	TablesWithoutPrimaryKeyHandling *string `pulumi:"tablesWithoutPrimaryKeyHandling"`
 	// The specific target identifier.
-	TargetType string `pulumi:"targetType"`
+	TargetType *string `pulumi:"targetType"`
 }
 
 // GetMysqlDbSystemChannelTargetInput is an input type that accepts GetMysqlDbSystemChannelTargetArgs and GetMysqlDbSystemChannelTargetOutput values.
@@ -15485,19 +13832,19 @@ type GetMysqlDbSystemChannelTargetInput interface {
 
 type GetMysqlDbSystemChannelTargetArgs struct {
 	// The username for the replication applier of the target MySQL DB System.
-	ApplierUsername pulumi.StringInput `pulumi:"applierUsername"`
+	ApplierUsername pulumi.StringPtrInput `pulumi:"applierUsername"`
 	// The case-insensitive name that identifies the replication channel. Channel names must follow the rules defined for [MySQL identifiers](https://dev.mysql.com/doc/refman/8.0/en/identifiers.html). The names of non-Deleted Channels must be unique for each DB System.
-	ChannelName pulumi.StringInput `pulumi:"channelName"`
+	ChannelName pulumi.StringPtrInput `pulumi:"channelName"`
 	// The DB System [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-	DbSystemId pulumi.StringInput `pulumi:"dbSystemId"`
+	DbSystemId pulumi.StringPtrInput `pulumi:"dbSystemId"`
 	// Specifies the amount of time, in seconds, that the channel waits before  applying a transaction received from the source.
-	DelayInSeconds pulumi.IntInput `pulumi:"delayInSeconds"`
+	DelayInSeconds pulumi.IntPtrInput `pulumi:"delayInSeconds"`
 	// Replication filter rules to be applied at the DB System Channel target.
 	Filters GetMysqlDbSystemChannelTargetFilterArrayInput `pulumi:"filters"`
 	// Specifies how a replication channel handles the creation and alteration of tables  that do not have a primary key.
-	TablesWithoutPrimaryKeyHandling pulumi.StringInput `pulumi:"tablesWithoutPrimaryKeyHandling"`
+	TablesWithoutPrimaryKeyHandling pulumi.StringPtrInput `pulumi:"tablesWithoutPrimaryKeyHandling"`
 	// The specific target identifier.
-	TargetType pulumi.StringInput `pulumi:"targetType"`
+	TargetType pulumi.StringPtrInput `pulumi:"targetType"`
 }
 
 func (GetMysqlDbSystemChannelTargetArgs) ElementType() reflect.Type {
@@ -15510,12 +13857,6 @@ func (i GetMysqlDbSystemChannelTargetArgs) ToGetMysqlDbSystemChannelTargetOutput
 
 func (i GetMysqlDbSystemChannelTargetArgs) ToGetMysqlDbSystemChannelTargetOutputWithContext(ctx context.Context) GetMysqlDbSystemChannelTargetOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemChannelTargetOutput)
-}
-
-func (i GetMysqlDbSystemChannelTargetArgs) ToOutput(ctx context.Context) pulumix.Output[GetMysqlDbSystemChannelTarget] {
-	return pulumix.Output[GetMysqlDbSystemChannelTarget]{
-		OutputState: i.ToGetMysqlDbSystemChannelTargetOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetMysqlDbSystemChannelTargetArrayInput is an input type that accepts GetMysqlDbSystemChannelTargetArray and GetMysqlDbSystemChannelTargetArrayOutput values.
@@ -15543,12 +13884,6 @@ func (i GetMysqlDbSystemChannelTargetArray) ToGetMysqlDbSystemChannelTargetArray
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemChannelTargetArrayOutput)
 }
 
-func (i GetMysqlDbSystemChannelTargetArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlDbSystemChannelTarget] {
-	return pulumix.Output[[]GetMysqlDbSystemChannelTarget]{
-		OutputState: i.ToGetMysqlDbSystemChannelTargetArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMysqlDbSystemChannelTargetOutput struct{ *pulumi.OutputState }
 
 func (GetMysqlDbSystemChannelTargetOutput) ElementType() reflect.Type {
@@ -15563,30 +13898,24 @@ func (o GetMysqlDbSystemChannelTargetOutput) ToGetMysqlDbSystemChannelTargetOutp
 	return o
 }
 
-func (o GetMysqlDbSystemChannelTargetOutput) ToOutput(ctx context.Context) pulumix.Output[GetMysqlDbSystemChannelTarget] {
-	return pulumix.Output[GetMysqlDbSystemChannelTarget]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The username for the replication applier of the target MySQL DB System.
-func (o GetMysqlDbSystemChannelTargetOutput) ApplierUsername() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlDbSystemChannelTarget) string { return v.ApplierUsername }).(pulumi.StringOutput)
+func (o GetMysqlDbSystemChannelTargetOutput) ApplierUsername() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemChannelTarget) *string { return v.ApplierUsername }).(pulumi.StringPtrOutput)
 }
 
 // The case-insensitive name that identifies the replication channel. Channel names must follow the rules defined for [MySQL identifiers](https://dev.mysql.com/doc/refman/8.0/en/identifiers.html). The names of non-Deleted Channels must be unique for each DB System.
-func (o GetMysqlDbSystemChannelTargetOutput) ChannelName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlDbSystemChannelTarget) string { return v.ChannelName }).(pulumi.StringOutput)
+func (o GetMysqlDbSystemChannelTargetOutput) ChannelName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemChannelTarget) *string { return v.ChannelName }).(pulumi.StringPtrOutput)
 }
 
 // The DB System [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-func (o GetMysqlDbSystemChannelTargetOutput) DbSystemId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlDbSystemChannelTarget) string { return v.DbSystemId }).(pulumi.StringOutput)
+func (o GetMysqlDbSystemChannelTargetOutput) DbSystemId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemChannelTarget) *string { return v.DbSystemId }).(pulumi.StringPtrOutput)
 }
 
 // Specifies the amount of time, in seconds, that the channel waits before  applying a transaction received from the source.
-func (o GetMysqlDbSystemChannelTargetOutput) DelayInSeconds() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMysqlDbSystemChannelTarget) int { return v.DelayInSeconds }).(pulumi.IntOutput)
+func (o GetMysqlDbSystemChannelTargetOutput) DelayInSeconds() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemChannelTarget) *int { return v.DelayInSeconds }).(pulumi.IntPtrOutput)
 }
 
 // Replication filter rules to be applied at the DB System Channel target.
@@ -15595,13 +13924,13 @@ func (o GetMysqlDbSystemChannelTargetOutput) Filters() GetMysqlDbSystemChannelTa
 }
 
 // Specifies how a replication channel handles the creation and alteration of tables  that do not have a primary key.
-func (o GetMysqlDbSystemChannelTargetOutput) TablesWithoutPrimaryKeyHandling() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlDbSystemChannelTarget) string { return v.TablesWithoutPrimaryKeyHandling }).(pulumi.StringOutput)
+func (o GetMysqlDbSystemChannelTargetOutput) TablesWithoutPrimaryKeyHandling() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemChannelTarget) *string { return v.TablesWithoutPrimaryKeyHandling }).(pulumi.StringPtrOutput)
 }
 
 // The specific target identifier.
-func (o GetMysqlDbSystemChannelTargetOutput) TargetType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlDbSystemChannelTarget) string { return v.TargetType }).(pulumi.StringOutput)
+func (o GetMysqlDbSystemChannelTargetOutput) TargetType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemChannelTarget) *string { return v.TargetType }).(pulumi.StringPtrOutput)
 }
 
 type GetMysqlDbSystemChannelTargetArrayOutput struct{ *pulumi.OutputState }
@@ -15618,12 +13947,6 @@ func (o GetMysqlDbSystemChannelTargetArrayOutput) ToGetMysqlDbSystemChannelTarge
 	return o
 }
 
-func (o GetMysqlDbSystemChannelTargetArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlDbSystemChannelTarget] {
-	return pulumix.Output[[]GetMysqlDbSystemChannelTarget]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetMysqlDbSystemChannelTargetArrayOutput) Index(i pulumi.IntInput) GetMysqlDbSystemChannelTargetOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlDbSystemChannelTarget {
 		return vs[0].([]GetMysqlDbSystemChannelTarget)[vs[1].(int)]
@@ -15632,9 +13955,9 @@ func (o GetMysqlDbSystemChannelTargetArrayOutput) Index(i pulumi.IntInput) GetMy
 
 type GetMysqlDbSystemChannelTargetFilter struct {
 	// The type of the filter rule.
-	Type string `pulumi:"type"`
+	Type *string `pulumi:"type"`
 	// The body of the filter rule. This can represent a database, a table, or a database pair (represented as "db1->db2"). For more information, see [Replication Filtering Rules](https://dev.mysql.com/doc/refman/8.0/en/replication-rules.html).
-	Value string `pulumi:"value"`
+	Value *string `pulumi:"value"`
 }
 
 // GetMysqlDbSystemChannelTargetFilterInput is an input type that accepts GetMysqlDbSystemChannelTargetFilterArgs and GetMysqlDbSystemChannelTargetFilterOutput values.
@@ -15650,9 +13973,9 @@ type GetMysqlDbSystemChannelTargetFilterInput interface {
 
 type GetMysqlDbSystemChannelTargetFilterArgs struct {
 	// The type of the filter rule.
-	Type pulumi.StringInput `pulumi:"type"`
+	Type pulumi.StringPtrInput `pulumi:"type"`
 	// The body of the filter rule. This can represent a database, a table, or a database pair (represented as "db1->db2"). For more information, see [Replication Filtering Rules](https://dev.mysql.com/doc/refman/8.0/en/replication-rules.html).
-	Value pulumi.StringInput `pulumi:"value"`
+	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
 func (GetMysqlDbSystemChannelTargetFilterArgs) ElementType() reflect.Type {
@@ -15665,12 +13988,6 @@ func (i GetMysqlDbSystemChannelTargetFilterArgs) ToGetMysqlDbSystemChannelTarget
 
 func (i GetMysqlDbSystemChannelTargetFilterArgs) ToGetMysqlDbSystemChannelTargetFilterOutputWithContext(ctx context.Context) GetMysqlDbSystemChannelTargetFilterOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemChannelTargetFilterOutput)
-}
-
-func (i GetMysqlDbSystemChannelTargetFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetMysqlDbSystemChannelTargetFilter] {
-	return pulumix.Output[GetMysqlDbSystemChannelTargetFilter]{
-		OutputState: i.ToGetMysqlDbSystemChannelTargetFilterOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetMysqlDbSystemChannelTargetFilterArrayInput is an input type that accepts GetMysqlDbSystemChannelTargetFilterArray and GetMysqlDbSystemChannelTargetFilterArrayOutput values.
@@ -15698,12 +14015,6 @@ func (i GetMysqlDbSystemChannelTargetFilterArray) ToGetMysqlDbSystemChannelTarge
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemChannelTargetFilterArrayOutput)
 }
 
-func (i GetMysqlDbSystemChannelTargetFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlDbSystemChannelTargetFilter] {
-	return pulumix.Output[[]GetMysqlDbSystemChannelTargetFilter]{
-		OutputState: i.ToGetMysqlDbSystemChannelTargetFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMysqlDbSystemChannelTargetFilterOutput struct{ *pulumi.OutputState }
 
 func (GetMysqlDbSystemChannelTargetFilterOutput) ElementType() reflect.Type {
@@ -15718,20 +14029,14 @@ func (o GetMysqlDbSystemChannelTargetFilterOutput) ToGetMysqlDbSystemChannelTarg
 	return o
 }
 
-func (o GetMysqlDbSystemChannelTargetFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetMysqlDbSystemChannelTargetFilter] {
-	return pulumix.Output[GetMysqlDbSystemChannelTargetFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The type of the filter rule.
-func (o GetMysqlDbSystemChannelTargetFilterOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlDbSystemChannelTargetFilter) string { return v.Type }).(pulumi.StringOutput)
+func (o GetMysqlDbSystemChannelTargetFilterOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemChannelTargetFilter) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
 
 // The body of the filter rule. This can represent a database, a table, or a database pair (represented as "db1->db2"). For more information, see [Replication Filtering Rules](https://dev.mysql.com/doc/refman/8.0/en/replication-rules.html).
-func (o GetMysqlDbSystemChannelTargetFilterOutput) Value() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlDbSystemChannelTargetFilter) string { return v.Value }).(pulumi.StringOutput)
+func (o GetMysqlDbSystemChannelTargetFilterOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemChannelTargetFilter) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
 
 type GetMysqlDbSystemChannelTargetFilterArrayOutput struct{ *pulumi.OutputState }
@@ -15748,12 +14053,6 @@ func (o GetMysqlDbSystemChannelTargetFilterArrayOutput) ToGetMysqlDbSystemChanne
 	return o
 }
 
-func (o GetMysqlDbSystemChannelTargetFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlDbSystemChannelTargetFilter] {
-	return pulumix.Output[[]GetMysqlDbSystemChannelTargetFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetMysqlDbSystemChannelTargetFilterArrayOutput) Index(i pulumi.IntInput) GetMysqlDbSystemChannelTargetFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlDbSystemChannelTargetFilter {
 		return vs[0].([]GetMysqlDbSystemChannelTargetFilter)[vs[1].(int)]
@@ -15762,9 +14061,9 @@ func (o GetMysqlDbSystemChannelTargetFilterArrayOutput) Index(i pulumi.IntInput)
 
 type GetMysqlDbSystemCurrentPlacement struct {
 	// The availability domain in which the DB System is placed.
-	AvailabilityDomain string `pulumi:"availabilityDomain"`
+	AvailabilityDomain *string `pulumi:"availabilityDomain"`
 	// The fault domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
-	FaultDomain string `pulumi:"faultDomain"`
+	FaultDomain *string `pulumi:"faultDomain"`
 }
 
 // GetMysqlDbSystemCurrentPlacementInput is an input type that accepts GetMysqlDbSystemCurrentPlacementArgs and GetMysqlDbSystemCurrentPlacementOutput values.
@@ -15780,9 +14079,9 @@ type GetMysqlDbSystemCurrentPlacementInput interface {
 
 type GetMysqlDbSystemCurrentPlacementArgs struct {
 	// The availability domain in which the DB System is placed.
-	AvailabilityDomain pulumi.StringInput `pulumi:"availabilityDomain"`
+	AvailabilityDomain pulumi.StringPtrInput `pulumi:"availabilityDomain"`
 	// The fault domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
-	FaultDomain pulumi.StringInput `pulumi:"faultDomain"`
+	FaultDomain pulumi.StringPtrInput `pulumi:"faultDomain"`
 }
 
 func (GetMysqlDbSystemCurrentPlacementArgs) ElementType() reflect.Type {
@@ -15795,12 +14094,6 @@ func (i GetMysqlDbSystemCurrentPlacementArgs) ToGetMysqlDbSystemCurrentPlacement
 
 func (i GetMysqlDbSystemCurrentPlacementArgs) ToGetMysqlDbSystemCurrentPlacementOutputWithContext(ctx context.Context) GetMysqlDbSystemCurrentPlacementOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemCurrentPlacementOutput)
-}
-
-func (i GetMysqlDbSystemCurrentPlacementArgs) ToOutput(ctx context.Context) pulumix.Output[GetMysqlDbSystemCurrentPlacement] {
-	return pulumix.Output[GetMysqlDbSystemCurrentPlacement]{
-		OutputState: i.ToGetMysqlDbSystemCurrentPlacementOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetMysqlDbSystemCurrentPlacementArrayInput is an input type that accepts GetMysqlDbSystemCurrentPlacementArray and GetMysqlDbSystemCurrentPlacementArrayOutput values.
@@ -15828,12 +14121,6 @@ func (i GetMysqlDbSystemCurrentPlacementArray) ToGetMysqlDbSystemCurrentPlacemen
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemCurrentPlacementArrayOutput)
 }
 
-func (i GetMysqlDbSystemCurrentPlacementArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlDbSystemCurrentPlacement] {
-	return pulumix.Output[[]GetMysqlDbSystemCurrentPlacement]{
-		OutputState: i.ToGetMysqlDbSystemCurrentPlacementArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMysqlDbSystemCurrentPlacementOutput struct{ *pulumi.OutputState }
 
 func (GetMysqlDbSystemCurrentPlacementOutput) ElementType() reflect.Type {
@@ -15848,20 +14135,14 @@ func (o GetMysqlDbSystemCurrentPlacementOutput) ToGetMysqlDbSystemCurrentPlaceme
 	return o
 }
 
-func (o GetMysqlDbSystemCurrentPlacementOutput) ToOutput(ctx context.Context) pulumix.Output[GetMysqlDbSystemCurrentPlacement] {
-	return pulumix.Output[GetMysqlDbSystemCurrentPlacement]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The availability domain in which the DB System is placed.
-func (o GetMysqlDbSystemCurrentPlacementOutput) AvailabilityDomain() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlDbSystemCurrentPlacement) string { return v.AvailabilityDomain }).(pulumi.StringOutput)
+func (o GetMysqlDbSystemCurrentPlacementOutput) AvailabilityDomain() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemCurrentPlacement) *string { return v.AvailabilityDomain }).(pulumi.StringPtrOutput)
 }
 
 // The fault domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
-func (o GetMysqlDbSystemCurrentPlacementOutput) FaultDomain() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlDbSystemCurrentPlacement) string { return v.FaultDomain }).(pulumi.StringOutput)
+func (o GetMysqlDbSystemCurrentPlacementOutput) FaultDomain() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemCurrentPlacement) *string { return v.FaultDomain }).(pulumi.StringPtrOutput)
 }
 
 type GetMysqlDbSystemCurrentPlacementArrayOutput struct{ *pulumi.OutputState }
@@ -15878,12 +14159,6 @@ func (o GetMysqlDbSystemCurrentPlacementArrayOutput) ToGetMysqlDbSystemCurrentPl
 	return o
 }
 
-func (o GetMysqlDbSystemCurrentPlacementArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlDbSystemCurrentPlacement] {
-	return pulumix.Output[[]GetMysqlDbSystemCurrentPlacement]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetMysqlDbSystemCurrentPlacementArrayOutput) Index(i pulumi.IntInput) GetMysqlDbSystemCurrentPlacementOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlDbSystemCurrentPlacement {
 		return vs[0].([]GetMysqlDbSystemCurrentPlacement)[vs[1].(int)]
@@ -15892,11 +14167,11 @@ func (o GetMysqlDbSystemCurrentPlacementArrayOutput) Index(i pulumi.IntInput) Ge
 
 type GetMysqlDbSystemDeletionPolicy struct {
 	// Specifies if any automatic backups created for a DB System should be retained or deleted when the DB System is deleted.
-	AutomaticBackupRetention string `pulumi:"automaticBackupRetention"`
+	AutomaticBackupRetention *string `pulumi:"automaticBackupRetention"`
 	// Specifies whether or not a backup is taken when the DB System is deleted. REQUIRE_FINAL_BACKUP: a backup is taken if the DB System is deleted. SKIP_FINAL_BACKUP: a backup is not taken if the DB System is deleted.
-	FinalBackup string `pulumi:"finalBackup"`
+	FinalBackup *string `pulumi:"finalBackup"`
 	// Specifies whether the DB System can be deleted. Set to true to prevent deletion, false (default) to allow.
-	IsDeleteProtected bool `pulumi:"isDeleteProtected"`
+	IsDeleteProtected *bool `pulumi:"isDeleteProtected"`
 }
 
 // GetMysqlDbSystemDeletionPolicyInput is an input type that accepts GetMysqlDbSystemDeletionPolicyArgs and GetMysqlDbSystemDeletionPolicyOutput values.
@@ -15912,11 +14187,11 @@ type GetMysqlDbSystemDeletionPolicyInput interface {
 
 type GetMysqlDbSystemDeletionPolicyArgs struct {
 	// Specifies if any automatic backups created for a DB System should be retained or deleted when the DB System is deleted.
-	AutomaticBackupRetention pulumi.StringInput `pulumi:"automaticBackupRetention"`
+	AutomaticBackupRetention pulumi.StringPtrInput `pulumi:"automaticBackupRetention"`
 	// Specifies whether or not a backup is taken when the DB System is deleted. REQUIRE_FINAL_BACKUP: a backup is taken if the DB System is deleted. SKIP_FINAL_BACKUP: a backup is not taken if the DB System is deleted.
-	FinalBackup pulumi.StringInput `pulumi:"finalBackup"`
+	FinalBackup pulumi.StringPtrInput `pulumi:"finalBackup"`
 	// Specifies whether the DB System can be deleted. Set to true to prevent deletion, false (default) to allow.
-	IsDeleteProtected pulumi.BoolInput `pulumi:"isDeleteProtected"`
+	IsDeleteProtected pulumi.BoolPtrInput `pulumi:"isDeleteProtected"`
 }
 
 func (GetMysqlDbSystemDeletionPolicyArgs) ElementType() reflect.Type {
@@ -15929,12 +14204,6 @@ func (i GetMysqlDbSystemDeletionPolicyArgs) ToGetMysqlDbSystemDeletionPolicyOutp
 
 func (i GetMysqlDbSystemDeletionPolicyArgs) ToGetMysqlDbSystemDeletionPolicyOutputWithContext(ctx context.Context) GetMysqlDbSystemDeletionPolicyOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemDeletionPolicyOutput)
-}
-
-func (i GetMysqlDbSystemDeletionPolicyArgs) ToOutput(ctx context.Context) pulumix.Output[GetMysqlDbSystemDeletionPolicy] {
-	return pulumix.Output[GetMysqlDbSystemDeletionPolicy]{
-		OutputState: i.ToGetMysqlDbSystemDeletionPolicyOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetMysqlDbSystemDeletionPolicyArrayInput is an input type that accepts GetMysqlDbSystemDeletionPolicyArray and GetMysqlDbSystemDeletionPolicyArrayOutput values.
@@ -15962,12 +14231,6 @@ func (i GetMysqlDbSystemDeletionPolicyArray) ToGetMysqlDbSystemDeletionPolicyArr
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemDeletionPolicyArrayOutput)
 }
 
-func (i GetMysqlDbSystemDeletionPolicyArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlDbSystemDeletionPolicy] {
-	return pulumix.Output[[]GetMysqlDbSystemDeletionPolicy]{
-		OutputState: i.ToGetMysqlDbSystemDeletionPolicyArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMysqlDbSystemDeletionPolicyOutput struct{ *pulumi.OutputState }
 
 func (GetMysqlDbSystemDeletionPolicyOutput) ElementType() reflect.Type {
@@ -15982,25 +14245,19 @@ func (o GetMysqlDbSystemDeletionPolicyOutput) ToGetMysqlDbSystemDeletionPolicyOu
 	return o
 }
 
-func (o GetMysqlDbSystemDeletionPolicyOutput) ToOutput(ctx context.Context) pulumix.Output[GetMysqlDbSystemDeletionPolicy] {
-	return pulumix.Output[GetMysqlDbSystemDeletionPolicy]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Specifies if any automatic backups created for a DB System should be retained or deleted when the DB System is deleted.
-func (o GetMysqlDbSystemDeletionPolicyOutput) AutomaticBackupRetention() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlDbSystemDeletionPolicy) string { return v.AutomaticBackupRetention }).(pulumi.StringOutput)
+func (o GetMysqlDbSystemDeletionPolicyOutput) AutomaticBackupRetention() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemDeletionPolicy) *string { return v.AutomaticBackupRetention }).(pulumi.StringPtrOutput)
 }
 
 // Specifies whether or not a backup is taken when the DB System is deleted. REQUIRE_FINAL_BACKUP: a backup is taken if the DB System is deleted. SKIP_FINAL_BACKUP: a backup is not taken if the DB System is deleted.
-func (o GetMysqlDbSystemDeletionPolicyOutput) FinalBackup() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlDbSystemDeletionPolicy) string { return v.FinalBackup }).(pulumi.StringOutput)
+func (o GetMysqlDbSystemDeletionPolicyOutput) FinalBackup() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemDeletionPolicy) *string { return v.FinalBackup }).(pulumi.StringPtrOutput)
 }
 
 // Specifies whether the DB System can be deleted. Set to true to prevent deletion, false (default) to allow.
-func (o GetMysqlDbSystemDeletionPolicyOutput) IsDeleteProtected() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetMysqlDbSystemDeletionPolicy) bool { return v.IsDeleteProtected }).(pulumi.BoolOutput)
+func (o GetMysqlDbSystemDeletionPolicyOutput) IsDeleteProtected() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemDeletionPolicy) *bool { return v.IsDeleteProtected }).(pulumi.BoolPtrOutput)
 }
 
 type GetMysqlDbSystemDeletionPolicyArrayOutput struct{ *pulumi.OutputState }
@@ -16017,12 +14274,6 @@ func (o GetMysqlDbSystemDeletionPolicyArrayOutput) ToGetMysqlDbSystemDeletionPol
 	return o
 }
 
-func (o GetMysqlDbSystemDeletionPolicyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlDbSystemDeletionPolicy] {
-	return pulumix.Output[[]GetMysqlDbSystemDeletionPolicy]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetMysqlDbSystemDeletionPolicyArrayOutput) Index(i pulumi.IntInput) GetMysqlDbSystemDeletionPolicyOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlDbSystemDeletionPolicy {
 		return vs[0].([]GetMysqlDbSystemDeletionPolicy)[vs[1].(int)]
@@ -16031,23 +14282,23 @@ func (o GetMysqlDbSystemDeletionPolicyArrayOutput) Index(i pulumi.IntInput) GetM
 
 type GetMysqlDbSystemEndpoint struct {
 	// The network address of the DB System.
-	Hostname string `pulumi:"hostname"`
+	Hostname *string `pulumi:"hostname"`
 	// The IP address the DB System is configured to listen on. A private IP address of the primary endpoint of the DB System. Must be an available IP address within the subnet's CIDR. This will be a "dotted-quad" style IPv4 address.
-	IpAddress string `pulumi:"ipAddress"`
+	IpAddress *string `pulumi:"ipAddress"`
 	// The access modes from the client that this endpoint supports.
 	Modes []string `pulumi:"modes"`
 	// The port for primary endpoint of the DB System to listen on.
-	Port int `pulumi:"port"`
+	Port *int `pulumi:"port"`
 	// The network port on which X Plugin listens for TCP/IP connections. This is the X Plugin equivalent of port.
-	PortX int `pulumi:"portX"`
+	PortX *int `pulumi:"portX"`
 	// The OCID of the resource that this endpoint is attached to.
-	ResourceId string `pulumi:"resourceId"`
+	ResourceId *string `pulumi:"resourceId"`
 	// The type of endpoint that clients and connectors can connect to.
-	ResourceType string `pulumi:"resourceType"`
+	ResourceType *string `pulumi:"resourceType"`
 	// The state of the endpoints, as far as it can seen from the DB System. There may be some inconsistency with the actual state of the MySQL service.
-	Status string `pulumi:"status"`
+	Status *string `pulumi:"status"`
 	// Additional information about the current endpoint status.
-	StatusDetails string `pulumi:"statusDetails"`
+	StatusDetails *string `pulumi:"statusDetails"`
 }
 
 // GetMysqlDbSystemEndpointInput is an input type that accepts GetMysqlDbSystemEndpointArgs and GetMysqlDbSystemEndpointOutput values.
@@ -16063,23 +14314,23 @@ type GetMysqlDbSystemEndpointInput interface {
 
 type GetMysqlDbSystemEndpointArgs struct {
 	// The network address of the DB System.
-	Hostname pulumi.StringInput `pulumi:"hostname"`
+	Hostname pulumi.StringPtrInput `pulumi:"hostname"`
 	// The IP address the DB System is configured to listen on. A private IP address of the primary endpoint of the DB System. Must be an available IP address within the subnet's CIDR. This will be a "dotted-quad" style IPv4 address.
-	IpAddress pulumi.StringInput `pulumi:"ipAddress"`
+	IpAddress pulumi.StringPtrInput `pulumi:"ipAddress"`
 	// The access modes from the client that this endpoint supports.
 	Modes pulumi.StringArrayInput `pulumi:"modes"`
 	// The port for primary endpoint of the DB System to listen on.
-	Port pulumi.IntInput `pulumi:"port"`
+	Port pulumi.IntPtrInput `pulumi:"port"`
 	// The network port on which X Plugin listens for TCP/IP connections. This is the X Plugin equivalent of port.
-	PortX pulumi.IntInput `pulumi:"portX"`
+	PortX pulumi.IntPtrInput `pulumi:"portX"`
 	// The OCID of the resource that this endpoint is attached to.
-	ResourceId pulumi.StringInput `pulumi:"resourceId"`
+	ResourceId pulumi.StringPtrInput `pulumi:"resourceId"`
 	// The type of endpoint that clients and connectors can connect to.
-	ResourceType pulumi.StringInput `pulumi:"resourceType"`
+	ResourceType pulumi.StringPtrInput `pulumi:"resourceType"`
 	// The state of the endpoints, as far as it can seen from the DB System. There may be some inconsistency with the actual state of the MySQL service.
-	Status pulumi.StringInput `pulumi:"status"`
+	Status pulumi.StringPtrInput `pulumi:"status"`
 	// Additional information about the current endpoint status.
-	StatusDetails pulumi.StringInput `pulumi:"statusDetails"`
+	StatusDetails pulumi.StringPtrInput `pulumi:"statusDetails"`
 }
 
 func (GetMysqlDbSystemEndpointArgs) ElementType() reflect.Type {
@@ -16092,12 +14343,6 @@ func (i GetMysqlDbSystemEndpointArgs) ToGetMysqlDbSystemEndpointOutput() GetMysq
 
 func (i GetMysqlDbSystemEndpointArgs) ToGetMysqlDbSystemEndpointOutputWithContext(ctx context.Context) GetMysqlDbSystemEndpointOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemEndpointOutput)
-}
-
-func (i GetMysqlDbSystemEndpointArgs) ToOutput(ctx context.Context) pulumix.Output[GetMysqlDbSystemEndpoint] {
-	return pulumix.Output[GetMysqlDbSystemEndpoint]{
-		OutputState: i.ToGetMysqlDbSystemEndpointOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetMysqlDbSystemEndpointArrayInput is an input type that accepts GetMysqlDbSystemEndpointArray and GetMysqlDbSystemEndpointArrayOutput values.
@@ -16125,12 +14370,6 @@ func (i GetMysqlDbSystemEndpointArray) ToGetMysqlDbSystemEndpointArrayOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemEndpointArrayOutput)
 }
 
-func (i GetMysqlDbSystemEndpointArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlDbSystemEndpoint] {
-	return pulumix.Output[[]GetMysqlDbSystemEndpoint]{
-		OutputState: i.ToGetMysqlDbSystemEndpointArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMysqlDbSystemEndpointOutput struct{ *pulumi.OutputState }
 
 func (GetMysqlDbSystemEndpointOutput) ElementType() reflect.Type {
@@ -16145,20 +14384,14 @@ func (o GetMysqlDbSystemEndpointOutput) ToGetMysqlDbSystemEndpointOutputWithCont
 	return o
 }
 
-func (o GetMysqlDbSystemEndpointOutput) ToOutput(ctx context.Context) pulumix.Output[GetMysqlDbSystemEndpoint] {
-	return pulumix.Output[GetMysqlDbSystemEndpoint]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The network address of the DB System.
-func (o GetMysqlDbSystemEndpointOutput) Hostname() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlDbSystemEndpoint) string { return v.Hostname }).(pulumi.StringOutput)
+func (o GetMysqlDbSystemEndpointOutput) Hostname() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemEndpoint) *string { return v.Hostname }).(pulumi.StringPtrOutput)
 }
 
 // The IP address the DB System is configured to listen on. A private IP address of the primary endpoint of the DB System. Must be an available IP address within the subnet's CIDR. This will be a "dotted-quad" style IPv4 address.
-func (o GetMysqlDbSystemEndpointOutput) IpAddress() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlDbSystemEndpoint) string { return v.IpAddress }).(pulumi.StringOutput)
+func (o GetMysqlDbSystemEndpointOutput) IpAddress() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemEndpoint) *string { return v.IpAddress }).(pulumi.StringPtrOutput)
 }
 
 // The access modes from the client that this endpoint supports.
@@ -16167,33 +14400,33 @@ func (o GetMysqlDbSystemEndpointOutput) Modes() pulumi.StringArrayOutput {
 }
 
 // The port for primary endpoint of the DB System to listen on.
-func (o GetMysqlDbSystemEndpointOutput) Port() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMysqlDbSystemEndpoint) int { return v.Port }).(pulumi.IntOutput)
+func (o GetMysqlDbSystemEndpointOutput) Port() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemEndpoint) *int { return v.Port }).(pulumi.IntPtrOutput)
 }
 
 // The network port on which X Plugin listens for TCP/IP connections. This is the X Plugin equivalent of port.
-func (o GetMysqlDbSystemEndpointOutput) PortX() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMysqlDbSystemEndpoint) int { return v.PortX }).(pulumi.IntOutput)
+func (o GetMysqlDbSystemEndpointOutput) PortX() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemEndpoint) *int { return v.PortX }).(pulumi.IntPtrOutput)
 }
 
 // The OCID of the resource that this endpoint is attached to.
-func (o GetMysqlDbSystemEndpointOutput) ResourceId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlDbSystemEndpoint) string { return v.ResourceId }).(pulumi.StringOutput)
+func (o GetMysqlDbSystemEndpointOutput) ResourceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemEndpoint) *string { return v.ResourceId }).(pulumi.StringPtrOutput)
 }
 
 // The type of endpoint that clients and connectors can connect to.
-func (o GetMysqlDbSystemEndpointOutput) ResourceType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlDbSystemEndpoint) string { return v.ResourceType }).(pulumi.StringOutput)
+func (o GetMysqlDbSystemEndpointOutput) ResourceType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemEndpoint) *string { return v.ResourceType }).(pulumi.StringPtrOutput)
 }
 
 // The state of the endpoints, as far as it can seen from the DB System. There may be some inconsistency with the actual state of the MySQL service.
-func (o GetMysqlDbSystemEndpointOutput) Status() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlDbSystemEndpoint) string { return v.Status }).(pulumi.StringOutput)
+func (o GetMysqlDbSystemEndpointOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemEndpoint) *string { return v.Status }).(pulumi.StringPtrOutput)
 }
 
 // Additional information about the current endpoint status.
-func (o GetMysqlDbSystemEndpointOutput) StatusDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlDbSystemEndpoint) string { return v.StatusDetails }).(pulumi.StringOutput)
+func (o GetMysqlDbSystemEndpointOutput) StatusDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemEndpoint) *string { return v.StatusDetails }).(pulumi.StringPtrOutput)
 }
 
 type GetMysqlDbSystemEndpointArrayOutput struct{ *pulumi.OutputState }
@@ -16210,12 +14443,6 @@ func (o GetMysqlDbSystemEndpointArrayOutput) ToGetMysqlDbSystemEndpointArrayOutp
 	return o
 }
 
-func (o GetMysqlDbSystemEndpointArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlDbSystemEndpoint] {
-	return pulumix.Output[[]GetMysqlDbSystemEndpoint]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetMysqlDbSystemEndpointArrayOutput) Index(i pulumi.IntInput) GetMysqlDbSystemEndpointOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlDbSystemEndpoint {
 		return vs[0].([]GetMysqlDbSystemEndpoint)[vs[1].(int)]
@@ -16224,17 +14451,17 @@ func (o GetMysqlDbSystemEndpointArrayOutput) Index(i pulumi.IntInput) GetMysqlDb
 
 type GetMysqlDbSystemHeatWaveCluster struct {
 	// The number of analytics-processing compute instances, of the specified shape, in the HeatWave cluster.
-	ClusterSize int `pulumi:"clusterSize"`
+	ClusterSize *int `pulumi:"clusterSize"`
 	// Lakehouse enabled status for the HeatWave cluster.
-	IsLakehouseEnabled bool `pulumi:"isLakehouseEnabled"`
+	IsLakehouseEnabled *bool `pulumi:"isLakehouseEnabled"`
 	// The shape of the primary instances of the DB System. The shape determines resources allocated to a DB System - CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use (the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20181021/ShapeSummary/ListShapes) operation.
-	ShapeName string `pulumi:"shapeName"`
+	ShapeName *string `pulumi:"shapeName"`
 	// The current state of the DB System.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The date and time the DB System was created.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time the DB System was last updated.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 // GetMysqlDbSystemHeatWaveClusterInput is an input type that accepts GetMysqlDbSystemHeatWaveClusterArgs and GetMysqlDbSystemHeatWaveClusterOutput values.
@@ -16250,17 +14477,17 @@ type GetMysqlDbSystemHeatWaveClusterInput interface {
 
 type GetMysqlDbSystemHeatWaveClusterArgs struct {
 	// The number of analytics-processing compute instances, of the specified shape, in the HeatWave cluster.
-	ClusterSize pulumi.IntInput `pulumi:"clusterSize"`
+	ClusterSize pulumi.IntPtrInput `pulumi:"clusterSize"`
 	// Lakehouse enabled status for the HeatWave cluster.
-	IsLakehouseEnabled pulumi.BoolInput `pulumi:"isLakehouseEnabled"`
+	IsLakehouseEnabled pulumi.BoolPtrInput `pulumi:"isLakehouseEnabled"`
 	// The shape of the primary instances of the DB System. The shape determines resources allocated to a DB System - CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use (the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20181021/ShapeSummary/ListShapes) operation.
-	ShapeName pulumi.StringInput `pulumi:"shapeName"`
+	ShapeName pulumi.StringPtrInput `pulumi:"shapeName"`
 	// The current state of the DB System.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// The date and time the DB System was created.
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// The time the DB System was last updated.
-	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
 }
 
 func (GetMysqlDbSystemHeatWaveClusterArgs) ElementType() reflect.Type {
@@ -16273,12 +14500,6 @@ func (i GetMysqlDbSystemHeatWaveClusterArgs) ToGetMysqlDbSystemHeatWaveClusterOu
 
 func (i GetMysqlDbSystemHeatWaveClusterArgs) ToGetMysqlDbSystemHeatWaveClusterOutputWithContext(ctx context.Context) GetMysqlDbSystemHeatWaveClusterOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemHeatWaveClusterOutput)
-}
-
-func (i GetMysqlDbSystemHeatWaveClusterArgs) ToOutput(ctx context.Context) pulumix.Output[GetMysqlDbSystemHeatWaveCluster] {
-	return pulumix.Output[GetMysqlDbSystemHeatWaveCluster]{
-		OutputState: i.ToGetMysqlDbSystemHeatWaveClusterOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetMysqlDbSystemHeatWaveClusterArrayInput is an input type that accepts GetMysqlDbSystemHeatWaveClusterArray and GetMysqlDbSystemHeatWaveClusterArrayOutput values.
@@ -16306,12 +14527,6 @@ func (i GetMysqlDbSystemHeatWaveClusterArray) ToGetMysqlDbSystemHeatWaveClusterA
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemHeatWaveClusterArrayOutput)
 }
 
-func (i GetMysqlDbSystemHeatWaveClusterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlDbSystemHeatWaveCluster] {
-	return pulumix.Output[[]GetMysqlDbSystemHeatWaveCluster]{
-		OutputState: i.ToGetMysqlDbSystemHeatWaveClusterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMysqlDbSystemHeatWaveClusterOutput struct{ *pulumi.OutputState }
 
 func (GetMysqlDbSystemHeatWaveClusterOutput) ElementType() reflect.Type {
@@ -16326,40 +14541,34 @@ func (o GetMysqlDbSystemHeatWaveClusterOutput) ToGetMysqlDbSystemHeatWaveCluster
 	return o
 }
 
-func (o GetMysqlDbSystemHeatWaveClusterOutput) ToOutput(ctx context.Context) pulumix.Output[GetMysqlDbSystemHeatWaveCluster] {
-	return pulumix.Output[GetMysqlDbSystemHeatWaveCluster]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The number of analytics-processing compute instances, of the specified shape, in the HeatWave cluster.
-func (o GetMysqlDbSystemHeatWaveClusterOutput) ClusterSize() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMysqlDbSystemHeatWaveCluster) int { return v.ClusterSize }).(pulumi.IntOutput)
+func (o GetMysqlDbSystemHeatWaveClusterOutput) ClusterSize() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemHeatWaveCluster) *int { return v.ClusterSize }).(pulumi.IntPtrOutput)
 }
 
 // Lakehouse enabled status for the HeatWave cluster.
-func (o GetMysqlDbSystemHeatWaveClusterOutput) IsLakehouseEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetMysqlDbSystemHeatWaveCluster) bool { return v.IsLakehouseEnabled }).(pulumi.BoolOutput)
+func (o GetMysqlDbSystemHeatWaveClusterOutput) IsLakehouseEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemHeatWaveCluster) *bool { return v.IsLakehouseEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // The shape of the primary instances of the DB System. The shape determines resources allocated to a DB System - CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use (the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20181021/ShapeSummary/ListShapes) operation.
-func (o GetMysqlDbSystemHeatWaveClusterOutput) ShapeName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlDbSystemHeatWaveCluster) string { return v.ShapeName }).(pulumi.StringOutput)
+func (o GetMysqlDbSystemHeatWaveClusterOutput) ShapeName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemHeatWaveCluster) *string { return v.ShapeName }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the DB System.
-func (o GetMysqlDbSystemHeatWaveClusterOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlDbSystemHeatWaveCluster) string { return v.State }).(pulumi.StringOutput)
+func (o GetMysqlDbSystemHeatWaveClusterOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemHeatWaveCluster) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the DB System was created.
-func (o GetMysqlDbSystemHeatWaveClusterOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlDbSystemHeatWaveCluster) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetMysqlDbSystemHeatWaveClusterOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemHeatWaveCluster) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time the DB System was last updated.
-func (o GetMysqlDbSystemHeatWaveClusterOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlDbSystemHeatWaveCluster) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o GetMysqlDbSystemHeatWaveClusterOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemHeatWaveCluster) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type GetMysqlDbSystemHeatWaveClusterArrayOutput struct{ *pulumi.OutputState }
@@ -16376,12 +14585,6 @@ func (o GetMysqlDbSystemHeatWaveClusterArrayOutput) ToGetMysqlDbSystemHeatWaveCl
 	return o
 }
 
-func (o GetMysqlDbSystemHeatWaveClusterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlDbSystemHeatWaveCluster] {
-	return pulumix.Output[[]GetMysqlDbSystemHeatWaveCluster]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetMysqlDbSystemHeatWaveClusterArrayOutput) Index(i pulumi.IntInput) GetMysqlDbSystemHeatWaveClusterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlDbSystemHeatWaveCluster {
 		return vs[0].([]GetMysqlDbSystemHeatWaveCluster)[vs[1].(int)]
@@ -16390,7 +14593,7 @@ func (o GetMysqlDbSystemHeatWaveClusterArrayOutput) Index(i pulumi.IntInput) Get
 
 type GetMysqlDbSystemMaintenance struct {
 	// The start time of the maintenance window.
-	WindowStartTime string `pulumi:"windowStartTime"`
+	WindowStartTime *string `pulumi:"windowStartTime"`
 }
 
 // GetMysqlDbSystemMaintenanceInput is an input type that accepts GetMysqlDbSystemMaintenanceArgs and GetMysqlDbSystemMaintenanceOutput values.
@@ -16406,7 +14609,7 @@ type GetMysqlDbSystemMaintenanceInput interface {
 
 type GetMysqlDbSystemMaintenanceArgs struct {
 	// The start time of the maintenance window.
-	WindowStartTime pulumi.StringInput `pulumi:"windowStartTime"`
+	WindowStartTime pulumi.StringPtrInput `pulumi:"windowStartTime"`
 }
 
 func (GetMysqlDbSystemMaintenanceArgs) ElementType() reflect.Type {
@@ -16419,12 +14622,6 @@ func (i GetMysqlDbSystemMaintenanceArgs) ToGetMysqlDbSystemMaintenanceOutput() G
 
 func (i GetMysqlDbSystemMaintenanceArgs) ToGetMysqlDbSystemMaintenanceOutputWithContext(ctx context.Context) GetMysqlDbSystemMaintenanceOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemMaintenanceOutput)
-}
-
-func (i GetMysqlDbSystemMaintenanceArgs) ToOutput(ctx context.Context) pulumix.Output[GetMysqlDbSystemMaintenance] {
-	return pulumix.Output[GetMysqlDbSystemMaintenance]{
-		OutputState: i.ToGetMysqlDbSystemMaintenanceOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetMysqlDbSystemMaintenanceArrayInput is an input type that accepts GetMysqlDbSystemMaintenanceArray and GetMysqlDbSystemMaintenanceArrayOutput values.
@@ -16452,12 +14649,6 @@ func (i GetMysqlDbSystemMaintenanceArray) ToGetMysqlDbSystemMaintenanceArrayOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemMaintenanceArrayOutput)
 }
 
-func (i GetMysqlDbSystemMaintenanceArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlDbSystemMaintenance] {
-	return pulumix.Output[[]GetMysqlDbSystemMaintenance]{
-		OutputState: i.ToGetMysqlDbSystemMaintenanceArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMysqlDbSystemMaintenanceOutput struct{ *pulumi.OutputState }
 
 func (GetMysqlDbSystemMaintenanceOutput) ElementType() reflect.Type {
@@ -16472,15 +14663,9 @@ func (o GetMysqlDbSystemMaintenanceOutput) ToGetMysqlDbSystemMaintenanceOutputWi
 	return o
 }
 
-func (o GetMysqlDbSystemMaintenanceOutput) ToOutput(ctx context.Context) pulumix.Output[GetMysqlDbSystemMaintenance] {
-	return pulumix.Output[GetMysqlDbSystemMaintenance]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The start time of the maintenance window.
-func (o GetMysqlDbSystemMaintenanceOutput) WindowStartTime() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlDbSystemMaintenance) string { return v.WindowStartTime }).(pulumi.StringOutput)
+func (o GetMysqlDbSystemMaintenanceOutput) WindowStartTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemMaintenance) *string { return v.WindowStartTime }).(pulumi.StringPtrOutput)
 }
 
 type GetMysqlDbSystemMaintenanceArrayOutput struct{ *pulumi.OutputState }
@@ -16497,12 +14682,6 @@ func (o GetMysqlDbSystemMaintenanceArrayOutput) ToGetMysqlDbSystemMaintenanceArr
 	return o
 }
 
-func (o GetMysqlDbSystemMaintenanceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlDbSystemMaintenance] {
-	return pulumix.Output[[]GetMysqlDbSystemMaintenance]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetMysqlDbSystemMaintenanceArrayOutput) Index(i pulumi.IntInput) GetMysqlDbSystemMaintenanceOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlDbSystemMaintenance {
 		return vs[0].([]GetMysqlDbSystemMaintenance)[vs[1].(int)]
@@ -16511,9 +14690,9 @@ func (o GetMysqlDbSystemMaintenanceArrayOutput) Index(i pulumi.IntInput) GetMysq
 
 type GetMysqlDbSystemPointInTimeRecoveryDetail struct {
 	// Earliest recovery time point for the DB System, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-	TimeEarliestRecoveryPoint string `pulumi:"timeEarliestRecoveryPoint"`
+	TimeEarliestRecoveryPoint *string `pulumi:"timeEarliestRecoveryPoint"`
 	// Latest recovery time point for the DB System, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-	TimeLatestRecoveryPoint string `pulumi:"timeLatestRecoveryPoint"`
+	TimeLatestRecoveryPoint *string `pulumi:"timeLatestRecoveryPoint"`
 }
 
 // GetMysqlDbSystemPointInTimeRecoveryDetailInput is an input type that accepts GetMysqlDbSystemPointInTimeRecoveryDetailArgs and GetMysqlDbSystemPointInTimeRecoveryDetailOutput values.
@@ -16529,9 +14708,9 @@ type GetMysqlDbSystemPointInTimeRecoveryDetailInput interface {
 
 type GetMysqlDbSystemPointInTimeRecoveryDetailArgs struct {
 	// Earliest recovery time point for the DB System, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-	TimeEarliestRecoveryPoint pulumi.StringInput `pulumi:"timeEarliestRecoveryPoint"`
+	TimeEarliestRecoveryPoint pulumi.StringPtrInput `pulumi:"timeEarliestRecoveryPoint"`
 	// Latest recovery time point for the DB System, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-	TimeLatestRecoveryPoint pulumi.StringInput `pulumi:"timeLatestRecoveryPoint"`
+	TimeLatestRecoveryPoint pulumi.StringPtrInput `pulumi:"timeLatestRecoveryPoint"`
 }
 
 func (GetMysqlDbSystemPointInTimeRecoveryDetailArgs) ElementType() reflect.Type {
@@ -16544,12 +14723,6 @@ func (i GetMysqlDbSystemPointInTimeRecoveryDetailArgs) ToGetMysqlDbSystemPointIn
 
 func (i GetMysqlDbSystemPointInTimeRecoveryDetailArgs) ToGetMysqlDbSystemPointInTimeRecoveryDetailOutputWithContext(ctx context.Context) GetMysqlDbSystemPointInTimeRecoveryDetailOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemPointInTimeRecoveryDetailOutput)
-}
-
-func (i GetMysqlDbSystemPointInTimeRecoveryDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetMysqlDbSystemPointInTimeRecoveryDetail] {
-	return pulumix.Output[GetMysqlDbSystemPointInTimeRecoveryDetail]{
-		OutputState: i.ToGetMysqlDbSystemPointInTimeRecoveryDetailOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetMysqlDbSystemPointInTimeRecoveryDetailArrayInput is an input type that accepts GetMysqlDbSystemPointInTimeRecoveryDetailArray and GetMysqlDbSystemPointInTimeRecoveryDetailArrayOutput values.
@@ -16577,12 +14750,6 @@ func (i GetMysqlDbSystemPointInTimeRecoveryDetailArray) ToGetMysqlDbSystemPointI
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemPointInTimeRecoveryDetailArrayOutput)
 }
 
-func (i GetMysqlDbSystemPointInTimeRecoveryDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlDbSystemPointInTimeRecoveryDetail] {
-	return pulumix.Output[[]GetMysqlDbSystemPointInTimeRecoveryDetail]{
-		OutputState: i.ToGetMysqlDbSystemPointInTimeRecoveryDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMysqlDbSystemPointInTimeRecoveryDetailOutput struct{ *pulumi.OutputState }
 
 func (GetMysqlDbSystemPointInTimeRecoveryDetailOutput) ElementType() reflect.Type {
@@ -16597,20 +14764,14 @@ func (o GetMysqlDbSystemPointInTimeRecoveryDetailOutput) ToGetMysqlDbSystemPoint
 	return o
 }
 
-func (o GetMysqlDbSystemPointInTimeRecoveryDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetMysqlDbSystemPointInTimeRecoveryDetail] {
-	return pulumix.Output[GetMysqlDbSystemPointInTimeRecoveryDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Earliest recovery time point for the DB System, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-func (o GetMysqlDbSystemPointInTimeRecoveryDetailOutput) TimeEarliestRecoveryPoint() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlDbSystemPointInTimeRecoveryDetail) string { return v.TimeEarliestRecoveryPoint }).(pulumi.StringOutput)
+func (o GetMysqlDbSystemPointInTimeRecoveryDetailOutput) TimeEarliestRecoveryPoint() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemPointInTimeRecoveryDetail) *string { return v.TimeEarliestRecoveryPoint }).(pulumi.StringPtrOutput)
 }
 
 // Latest recovery time point for the DB System, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-func (o GetMysqlDbSystemPointInTimeRecoveryDetailOutput) TimeLatestRecoveryPoint() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlDbSystemPointInTimeRecoveryDetail) string { return v.TimeLatestRecoveryPoint }).(pulumi.StringOutput)
+func (o GetMysqlDbSystemPointInTimeRecoveryDetailOutput) TimeLatestRecoveryPoint() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemPointInTimeRecoveryDetail) *string { return v.TimeLatestRecoveryPoint }).(pulumi.StringPtrOutput)
 }
 
 type GetMysqlDbSystemPointInTimeRecoveryDetailArrayOutput struct{ *pulumi.OutputState }
@@ -16627,12 +14788,6 @@ func (o GetMysqlDbSystemPointInTimeRecoveryDetailArrayOutput) ToGetMysqlDbSystem
 	return o
 }
 
-func (o GetMysqlDbSystemPointInTimeRecoveryDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlDbSystemPointInTimeRecoveryDetail] {
-	return pulumix.Output[[]GetMysqlDbSystemPointInTimeRecoveryDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetMysqlDbSystemPointInTimeRecoveryDetailArrayOutput) Index(i pulumi.IntInput) GetMysqlDbSystemPointInTimeRecoveryDetailOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlDbSystemPointInTimeRecoveryDetail {
 		return vs[0].([]GetMysqlDbSystemPointInTimeRecoveryDetail)[vs[1].(int)]
@@ -16641,14 +14796,14 @@ func (o GetMysqlDbSystemPointInTimeRecoveryDetailArrayOutput) Index(i pulumi.Int
 
 type GetMysqlDbSystemSource struct {
 	// The OCID of the backup to be used as the source for the new DB System.
-	BackupId string `pulumi:"backupId"`
+	BackupId *string `pulumi:"backupId"`
 	// The DB System [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-	DbSystemId string `pulumi:"dbSystemId"`
+	DbSystemId *string `pulumi:"dbSystemId"`
 	// The date and time, as per RFC 3339, of the change up to which the new DB System shall be restored to, using a backup and logs from the original DB System. In case no point in time is specified, then this new DB System shall be restored up to the latest change recorded for the original DB System.
-	RecoveryPoint string `pulumi:"recoveryPoint"`
+	RecoveryPoint *string `pulumi:"recoveryPoint"`
 	// The specific source identifier.
-	SourceType string `pulumi:"sourceType"`
-	SourceUrl  string `pulumi:"sourceUrl"`
+	SourceType *string `pulumi:"sourceType"`
+	SourceUrl  *string `pulumi:"sourceUrl"`
 }
 
 // GetMysqlDbSystemSourceInput is an input type that accepts GetMysqlDbSystemSourceArgs and GetMysqlDbSystemSourceOutput values.
@@ -16664,14 +14819,14 @@ type GetMysqlDbSystemSourceInput interface {
 
 type GetMysqlDbSystemSourceArgs struct {
 	// The OCID of the backup to be used as the source for the new DB System.
-	BackupId pulumi.StringInput `pulumi:"backupId"`
+	BackupId pulumi.StringPtrInput `pulumi:"backupId"`
 	// The DB System [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-	DbSystemId pulumi.StringInput `pulumi:"dbSystemId"`
+	DbSystemId pulumi.StringPtrInput `pulumi:"dbSystemId"`
 	// The date and time, as per RFC 3339, of the change up to which the new DB System shall be restored to, using a backup and logs from the original DB System. In case no point in time is specified, then this new DB System shall be restored up to the latest change recorded for the original DB System.
-	RecoveryPoint pulumi.StringInput `pulumi:"recoveryPoint"`
+	RecoveryPoint pulumi.StringPtrInput `pulumi:"recoveryPoint"`
 	// The specific source identifier.
-	SourceType pulumi.StringInput `pulumi:"sourceType"`
-	SourceUrl  pulumi.StringInput `pulumi:"sourceUrl"`
+	SourceType pulumi.StringPtrInput `pulumi:"sourceType"`
+	SourceUrl  pulumi.StringPtrInput `pulumi:"sourceUrl"`
 }
 
 func (GetMysqlDbSystemSourceArgs) ElementType() reflect.Type {
@@ -16684,12 +14839,6 @@ func (i GetMysqlDbSystemSourceArgs) ToGetMysqlDbSystemSourceOutput() GetMysqlDbS
 
 func (i GetMysqlDbSystemSourceArgs) ToGetMysqlDbSystemSourceOutputWithContext(ctx context.Context) GetMysqlDbSystemSourceOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemSourceOutput)
-}
-
-func (i GetMysqlDbSystemSourceArgs) ToOutput(ctx context.Context) pulumix.Output[GetMysqlDbSystemSource] {
-	return pulumix.Output[GetMysqlDbSystemSource]{
-		OutputState: i.ToGetMysqlDbSystemSourceOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetMysqlDbSystemSourceArrayInput is an input type that accepts GetMysqlDbSystemSourceArray and GetMysqlDbSystemSourceArrayOutput values.
@@ -16717,12 +14866,6 @@ func (i GetMysqlDbSystemSourceArray) ToGetMysqlDbSystemSourceArrayOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemSourceArrayOutput)
 }
 
-func (i GetMysqlDbSystemSourceArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlDbSystemSource] {
-	return pulumix.Output[[]GetMysqlDbSystemSource]{
-		OutputState: i.ToGetMysqlDbSystemSourceArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMysqlDbSystemSourceOutput struct{ *pulumi.OutputState }
 
 func (GetMysqlDbSystemSourceOutput) ElementType() reflect.Type {
@@ -16737,34 +14880,28 @@ func (o GetMysqlDbSystemSourceOutput) ToGetMysqlDbSystemSourceOutputWithContext(
 	return o
 }
 
-func (o GetMysqlDbSystemSourceOutput) ToOutput(ctx context.Context) pulumix.Output[GetMysqlDbSystemSource] {
-	return pulumix.Output[GetMysqlDbSystemSource]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the backup to be used as the source for the new DB System.
-func (o GetMysqlDbSystemSourceOutput) BackupId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlDbSystemSource) string { return v.BackupId }).(pulumi.StringOutput)
+func (o GetMysqlDbSystemSourceOutput) BackupId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemSource) *string { return v.BackupId }).(pulumi.StringPtrOutput)
 }
 
 // The DB System [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-func (o GetMysqlDbSystemSourceOutput) DbSystemId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlDbSystemSource) string { return v.DbSystemId }).(pulumi.StringOutput)
+func (o GetMysqlDbSystemSourceOutput) DbSystemId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemSource) *string { return v.DbSystemId }).(pulumi.StringPtrOutput)
 }
 
 // The date and time, as per RFC 3339, of the change up to which the new DB System shall be restored to, using a backup and logs from the original DB System. In case no point in time is specified, then this new DB System shall be restored up to the latest change recorded for the original DB System.
-func (o GetMysqlDbSystemSourceOutput) RecoveryPoint() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlDbSystemSource) string { return v.RecoveryPoint }).(pulumi.StringOutput)
+func (o GetMysqlDbSystemSourceOutput) RecoveryPoint() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemSource) *string { return v.RecoveryPoint }).(pulumi.StringPtrOutput)
 }
 
 // The specific source identifier.
-func (o GetMysqlDbSystemSourceOutput) SourceType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlDbSystemSource) string { return v.SourceType }).(pulumi.StringOutput)
+func (o GetMysqlDbSystemSourceOutput) SourceType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemSource) *string { return v.SourceType }).(pulumi.StringPtrOutput)
 }
 
-func (o GetMysqlDbSystemSourceOutput) SourceUrl() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlDbSystemSource) string { return v.SourceUrl }).(pulumi.StringOutput)
+func (o GetMysqlDbSystemSourceOutput) SourceUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemSource) *string { return v.SourceUrl }).(pulumi.StringPtrOutput)
 }
 
 type GetMysqlDbSystemSourceArrayOutput struct{ *pulumi.OutputState }
@@ -16781,12 +14918,6 @@ func (o GetMysqlDbSystemSourceArrayOutput) ToGetMysqlDbSystemSourceArrayOutputWi
 	return o
 }
 
-func (o GetMysqlDbSystemSourceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlDbSystemSource] {
-	return pulumix.Output[[]GetMysqlDbSystemSource]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetMysqlDbSystemSourceArrayOutput) Index(i pulumi.IntInput) GetMysqlDbSystemSourceOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlDbSystemSource {
 		return vs[0].([]GetMysqlDbSystemSource)[vs[1].(int)]
@@ -16794,77 +14925,77 @@ func (o GetMysqlDbSystemSourceArrayOutput) Index(i pulumi.IntInput) GetMysqlDbSy
 }
 
 type GetMysqlDbSystemsDbSystem struct {
-	AdminPassword string `pulumi:"adminPassword"`
-	AdminUsername string `pulumi:"adminUsername"`
+	AdminPassword *string `pulumi:"adminPassword"`
+	AdminUsername *string `pulumi:"adminUsername"`
 	// The availability domain in which the DB System is placed.
-	AvailabilityDomain string `pulumi:"availabilityDomain"`
+	AvailabilityDomain *string `pulumi:"availabilityDomain"`
 	// The Backup policy for the DB System.
 	BackupPolicies []GetMysqlDbSystemsDbSystemBackupPolicy `pulumi:"backupPolicies"`
 	// A list with a summary of all the Channels attached to the DB System.
 	Channels []GetMysqlDbSystemsDbSystemChannel `pulumi:"channels"`
 	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// The requested Configuration instance.
-	ConfigurationId string `pulumi:"configurationId"`
+	ConfigurationId *string `pulumi:"configurationId"`
 	// Whether to run the DB System with InnoDB Redo Logs and the Double Write Buffer enabled or disabled, and whether to enable or disable syncing of the Binary Logs.
-	CrashRecovery string `pulumi:"crashRecovery"`
+	CrashRecovery *string `pulumi:"crashRecovery"`
 	// The availability domain and fault domain a DB System is placed in.
 	CurrentPlacements []GetMysqlDbSystemsDbSystemCurrentPlacement `pulumi:"currentPlacements"`
 	// Initial size of the data volume in GiBs that will be created and attached.
-	DataStorageSizeInGb int `pulumi:"dataStorageSizeInGb"`
+	DataStorageSizeInGb *int `pulumi:"dataStorageSizeInGb"`
 	// Filter DB Systems by their Database Management configuration.
-	DatabaseManagement string `pulumi:"databaseManagement"`
+	DatabaseManagement *string `pulumi:"databaseManagement"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The Deletion policy for the DB System.
 	DeletionPolicies []GetMysqlDbSystemsDbSystemDeletionPolicy `pulumi:"deletionPolicies"`
 	// User-provided data about the DB System.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// A filter to return only the resource matching the given display name exactly.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// The network endpoints available for this DB System.
 	Endpoints []GetMysqlDbSystemsDbSystemEndpoint `pulumi:"endpoints"`
 	// The fault domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
-	FaultDomain string `pulumi:"faultDomain"`
+	FaultDomain *string `pulumi:"faultDomain"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// A summary of a HeatWave cluster.
 	HeatWaveClusters []GetMysqlDbSystemsDbSystemHeatWaveCluster `pulumi:"heatWaveClusters"`
 	// The hostname for the primary endpoint of the DB System. Used for DNS. The value is the hostname portion of the primary private IP's fully qualified domain name (FQDN) (for example, "dbsystem-1" in FQDN "dbsystem-1.subnet123.vcn1.oraclevcn.com"). Must be unique across all VNICs in the subnet and comply with RFC 952 and RFC 1123.
-	HostnameLabel string `pulumi:"hostnameLabel"`
+	HostnameLabel *string `pulumi:"hostnameLabel"`
 	// The OCID of the DB System.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The IP address the DB System is configured to listen on. A private IP address of the primary endpoint of the DB System. Must be an available IP address within the subnet's CIDR. This will be a "dotted-quad" style IPv4 address.
-	IpAddress string `pulumi:"ipAddress"`
+	IpAddress *string `pulumi:"ipAddress"`
 	// If true, return only DB Systems with a HeatWave cluster attached, if false return only DB Systems with no HeatWave cluster attached. If not present, return all DB Systems.
-	IsHeatWaveClusterAttached bool `pulumi:"isHeatWaveClusterAttached"`
+	IsHeatWaveClusterAttached *bool `pulumi:"isHeatWaveClusterAttached"`
 	// Specifies if the DB System is highly available.
-	IsHighlyAvailable bool `pulumi:"isHighlyAvailable"`
+	IsHighlyAvailable *bool `pulumi:"isHighlyAvailable"`
 	// Additional information about the current lifecycleState.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// The Maintenance Policy for the DB System or Read Replica that this model is included in.
 	Maintenances []GetMysqlDbSystemsDbSystemMaintenance `pulumi:"maintenances"`
 	// Name of the MySQL Version in use for the DB System.
-	MysqlVersion string `pulumi:"mysqlVersion"`
+	MysqlVersion *string `pulumi:"mysqlVersion"`
 	// Point-in-time Recovery details like earliest and latest recovery time point for the DB System.
 	PointInTimeRecoveryDetails []GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetail `pulumi:"pointInTimeRecoveryDetails"`
 	// The port for primary endpoint of the DB System to listen on.
-	Port int `pulumi:"port"`
+	Port *int `pulumi:"port"`
 	// The network port on which X Plugin listens for TCP/IP connections. This is the X Plugin equivalent of port.
-	PortX int `pulumi:"portX"`
+	PortX *int `pulumi:"portX"`
 	// The shape of the primary instances of the DB System. The shape determines resources allocated to a DB System - CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use (the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20181021/ShapeSummary/ListShapes) operation.
-	ShapeName    string `pulumi:"shapeName"`
-	ShutdownType string `pulumi:"shutdownType"`
+	ShapeName    *string `pulumi:"shapeName"`
+	ShutdownType *string `pulumi:"shutdownType"`
 	// Parameters detailing how to provision the initial data of the DB System.
 	Sources []GetMysqlDbSystemsDbSystemSource `pulumi:"sources"`
 	// DbSystem Lifecycle State
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The OCID of the subnet the DB System is associated with.
-	SubnetId string `pulumi:"subnetId"`
+	SubnetId *string `pulumi:"subnetId"`
 	// The date and time the DB System was created.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time the DB System was last updated.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 // GetMysqlDbSystemsDbSystemInput is an input type that accepts GetMysqlDbSystemsDbSystemArgs and GetMysqlDbSystemsDbSystemOutput values.
@@ -16879,77 +15010,77 @@ type GetMysqlDbSystemsDbSystemInput interface {
 }
 
 type GetMysqlDbSystemsDbSystemArgs struct {
-	AdminPassword pulumi.StringInput `pulumi:"adminPassword"`
-	AdminUsername pulumi.StringInput `pulumi:"adminUsername"`
+	AdminPassword pulumi.StringPtrInput `pulumi:"adminPassword"`
+	AdminUsername pulumi.StringPtrInput `pulumi:"adminUsername"`
 	// The availability domain in which the DB System is placed.
-	AvailabilityDomain pulumi.StringInput `pulumi:"availabilityDomain"`
+	AvailabilityDomain pulumi.StringPtrInput `pulumi:"availabilityDomain"`
 	// The Backup policy for the DB System.
 	BackupPolicies GetMysqlDbSystemsDbSystemBackupPolicyArrayInput `pulumi:"backupPolicies"`
 	// A list with a summary of all the Channels attached to the DB System.
 	Channels GetMysqlDbSystemsDbSystemChannelArrayInput `pulumi:"channels"`
 	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// The requested Configuration instance.
-	ConfigurationId pulumi.StringInput `pulumi:"configurationId"`
+	ConfigurationId pulumi.StringPtrInput `pulumi:"configurationId"`
 	// Whether to run the DB System with InnoDB Redo Logs and the Double Write Buffer enabled or disabled, and whether to enable or disable syncing of the Binary Logs.
-	CrashRecovery pulumi.StringInput `pulumi:"crashRecovery"`
+	CrashRecovery pulumi.StringPtrInput `pulumi:"crashRecovery"`
 	// The availability domain and fault domain a DB System is placed in.
 	CurrentPlacements GetMysqlDbSystemsDbSystemCurrentPlacementArrayInput `pulumi:"currentPlacements"`
 	// Initial size of the data volume in GiBs that will be created and attached.
-	DataStorageSizeInGb pulumi.IntInput `pulumi:"dataStorageSizeInGb"`
+	DataStorageSizeInGb pulumi.IntPtrInput `pulumi:"dataStorageSizeInGb"`
 	// Filter DB Systems by their Database Management configuration.
-	DatabaseManagement pulumi.StringInput `pulumi:"databaseManagement"`
+	DatabaseManagement pulumi.StringPtrInput `pulumi:"databaseManagement"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// The Deletion policy for the DB System.
 	DeletionPolicies GetMysqlDbSystemsDbSystemDeletionPolicyArrayInput `pulumi:"deletionPolicies"`
 	// User-provided data about the DB System.
-	Description pulumi.StringInput `pulumi:"description"`
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// A filter to return only the resource matching the given display name exactly.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// The network endpoints available for this DB System.
 	Endpoints GetMysqlDbSystemsDbSystemEndpointArrayInput `pulumi:"endpoints"`
 	// The fault domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
-	FaultDomain pulumi.StringInput `pulumi:"faultDomain"`
+	FaultDomain pulumi.StringPtrInput `pulumi:"faultDomain"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// A summary of a HeatWave cluster.
 	HeatWaveClusters GetMysqlDbSystemsDbSystemHeatWaveClusterArrayInput `pulumi:"heatWaveClusters"`
 	// The hostname for the primary endpoint of the DB System. Used for DNS. The value is the hostname portion of the primary private IP's fully qualified domain name (FQDN) (for example, "dbsystem-1" in FQDN "dbsystem-1.subnet123.vcn1.oraclevcn.com"). Must be unique across all VNICs in the subnet and comply with RFC 952 and RFC 1123.
-	HostnameLabel pulumi.StringInput `pulumi:"hostnameLabel"`
+	HostnameLabel pulumi.StringPtrInput `pulumi:"hostnameLabel"`
 	// The OCID of the DB System.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// The IP address the DB System is configured to listen on. A private IP address of the primary endpoint of the DB System. Must be an available IP address within the subnet's CIDR. This will be a "dotted-quad" style IPv4 address.
-	IpAddress pulumi.StringInput `pulumi:"ipAddress"`
+	IpAddress pulumi.StringPtrInput `pulumi:"ipAddress"`
 	// If true, return only DB Systems with a HeatWave cluster attached, if false return only DB Systems with no HeatWave cluster attached. If not present, return all DB Systems.
-	IsHeatWaveClusterAttached pulumi.BoolInput `pulumi:"isHeatWaveClusterAttached"`
+	IsHeatWaveClusterAttached pulumi.BoolPtrInput `pulumi:"isHeatWaveClusterAttached"`
 	// Specifies if the DB System is highly available.
-	IsHighlyAvailable pulumi.BoolInput `pulumi:"isHighlyAvailable"`
+	IsHighlyAvailable pulumi.BoolPtrInput `pulumi:"isHighlyAvailable"`
 	// Additional information about the current lifecycleState.
-	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrInput `pulumi:"lifecycleDetails"`
 	// The Maintenance Policy for the DB System or Read Replica that this model is included in.
 	Maintenances GetMysqlDbSystemsDbSystemMaintenanceArrayInput `pulumi:"maintenances"`
 	// Name of the MySQL Version in use for the DB System.
-	MysqlVersion pulumi.StringInput `pulumi:"mysqlVersion"`
+	MysqlVersion pulumi.StringPtrInput `pulumi:"mysqlVersion"`
 	// Point-in-time Recovery details like earliest and latest recovery time point for the DB System.
 	PointInTimeRecoveryDetails GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailArrayInput `pulumi:"pointInTimeRecoveryDetails"`
 	// The port for primary endpoint of the DB System to listen on.
-	Port pulumi.IntInput `pulumi:"port"`
+	Port pulumi.IntPtrInput `pulumi:"port"`
 	// The network port on which X Plugin listens for TCP/IP connections. This is the X Plugin equivalent of port.
-	PortX pulumi.IntInput `pulumi:"portX"`
+	PortX pulumi.IntPtrInput `pulumi:"portX"`
 	// The shape of the primary instances of the DB System. The shape determines resources allocated to a DB System - CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use (the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20181021/ShapeSummary/ListShapes) operation.
-	ShapeName    pulumi.StringInput `pulumi:"shapeName"`
-	ShutdownType pulumi.StringInput `pulumi:"shutdownType"`
+	ShapeName    pulumi.StringPtrInput `pulumi:"shapeName"`
+	ShutdownType pulumi.StringPtrInput `pulumi:"shutdownType"`
 	// Parameters detailing how to provision the initial data of the DB System.
 	Sources GetMysqlDbSystemsDbSystemSourceArrayInput `pulumi:"sources"`
 	// DbSystem Lifecycle State
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// The OCID of the subnet the DB System is associated with.
-	SubnetId pulumi.StringInput `pulumi:"subnetId"`
+	SubnetId pulumi.StringPtrInput `pulumi:"subnetId"`
 	// The date and time the DB System was created.
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// The time the DB System was last updated.
-	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
 }
 
 func (GetMysqlDbSystemsDbSystemArgs) ElementType() reflect.Type {
@@ -16962,12 +15093,6 @@ func (i GetMysqlDbSystemsDbSystemArgs) ToGetMysqlDbSystemsDbSystemOutput() GetMy
 
 func (i GetMysqlDbSystemsDbSystemArgs) ToGetMysqlDbSystemsDbSystemOutputWithContext(ctx context.Context) GetMysqlDbSystemsDbSystemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemsDbSystemOutput)
-}
-
-func (i GetMysqlDbSystemsDbSystemArgs) ToOutput(ctx context.Context) pulumix.Output[GetMysqlDbSystemsDbSystem] {
-	return pulumix.Output[GetMysqlDbSystemsDbSystem]{
-		OutputState: i.ToGetMysqlDbSystemsDbSystemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetMysqlDbSystemsDbSystemArrayInput is an input type that accepts GetMysqlDbSystemsDbSystemArray and GetMysqlDbSystemsDbSystemArrayOutput values.
@@ -16995,12 +15120,6 @@ func (i GetMysqlDbSystemsDbSystemArray) ToGetMysqlDbSystemsDbSystemArrayOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemsDbSystemArrayOutput)
 }
 
-func (i GetMysqlDbSystemsDbSystemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlDbSystemsDbSystem] {
-	return pulumix.Output[[]GetMysqlDbSystemsDbSystem]{
-		OutputState: i.ToGetMysqlDbSystemsDbSystemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMysqlDbSystemsDbSystemOutput struct{ *pulumi.OutputState }
 
 func (GetMysqlDbSystemsDbSystemOutput) ElementType() reflect.Type {
@@ -17015,23 +15134,17 @@ func (o GetMysqlDbSystemsDbSystemOutput) ToGetMysqlDbSystemsDbSystemOutputWithCo
 	return o
 }
 
-func (o GetMysqlDbSystemsDbSystemOutput) ToOutput(ctx context.Context) pulumix.Output[GetMysqlDbSystemsDbSystem] {
-	return pulumix.Output[GetMysqlDbSystemsDbSystem]{
-		OutputState: o.OutputState,
-	}
+func (o GetMysqlDbSystemsDbSystemOutput) AdminPassword() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystem) *string { return v.AdminPassword }).(pulumi.StringPtrOutput)
 }
 
-func (o GetMysqlDbSystemsDbSystemOutput) AdminPassword() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlDbSystemsDbSystem) string { return v.AdminPassword }).(pulumi.StringOutput)
-}
-
-func (o GetMysqlDbSystemsDbSystemOutput) AdminUsername() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlDbSystemsDbSystem) string { return v.AdminUsername }).(pulumi.StringOutput)
+func (o GetMysqlDbSystemsDbSystemOutput) AdminUsername() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystem) *string { return v.AdminUsername }).(pulumi.StringPtrOutput)
 }
 
 // The availability domain in which the DB System is placed.
-func (o GetMysqlDbSystemsDbSystemOutput) AvailabilityDomain() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlDbSystemsDbSystem) string { return v.AvailabilityDomain }).(pulumi.StringOutput)
+func (o GetMysqlDbSystemsDbSystemOutput) AvailabilityDomain() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystem) *string { return v.AvailabilityDomain }).(pulumi.StringPtrOutput)
 }
 
 // The Backup policy for the DB System.
@@ -17045,18 +15158,18 @@ func (o GetMysqlDbSystemsDbSystemOutput) Channels() GetMysqlDbSystemsDbSystemCha
 }
 
 // The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-func (o GetMysqlDbSystemsDbSystemOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlDbSystemsDbSystem) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetMysqlDbSystemsDbSystemOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystem) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // The requested Configuration instance.
-func (o GetMysqlDbSystemsDbSystemOutput) ConfigurationId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlDbSystemsDbSystem) string { return v.ConfigurationId }).(pulumi.StringOutput)
+func (o GetMysqlDbSystemsDbSystemOutput) ConfigurationId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystem) *string { return v.ConfigurationId }).(pulumi.StringPtrOutput)
 }
 
 // Whether to run the DB System with InnoDB Redo Logs and the Double Write Buffer enabled or disabled, and whether to enable or disable syncing of the Binary Logs.
-func (o GetMysqlDbSystemsDbSystemOutput) CrashRecovery() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlDbSystemsDbSystem) string { return v.CrashRecovery }).(pulumi.StringOutput)
+func (o GetMysqlDbSystemsDbSystemOutput) CrashRecovery() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystem) *string { return v.CrashRecovery }).(pulumi.StringPtrOutput)
 }
 
 // The availability domain and fault domain a DB System is placed in.
@@ -17067,13 +15180,13 @@ func (o GetMysqlDbSystemsDbSystemOutput) CurrentPlacements() GetMysqlDbSystemsDb
 }
 
 // Initial size of the data volume in GiBs that will be created and attached.
-func (o GetMysqlDbSystemsDbSystemOutput) DataStorageSizeInGb() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMysqlDbSystemsDbSystem) int { return v.DataStorageSizeInGb }).(pulumi.IntOutput)
+func (o GetMysqlDbSystemsDbSystemOutput) DataStorageSizeInGb() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystem) *int { return v.DataStorageSizeInGb }).(pulumi.IntPtrOutput)
 }
 
 // Filter DB Systems by their Database Management configuration.
-func (o GetMysqlDbSystemsDbSystemOutput) DatabaseManagement() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlDbSystemsDbSystem) string { return v.DatabaseManagement }).(pulumi.StringOutput)
+func (o GetMysqlDbSystemsDbSystemOutput) DatabaseManagement() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystem) *string { return v.DatabaseManagement }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -17087,13 +15200,13 @@ func (o GetMysqlDbSystemsDbSystemOutput) DeletionPolicies() GetMysqlDbSystemsDbS
 }
 
 // User-provided data about the DB System.
-func (o GetMysqlDbSystemsDbSystemOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlDbSystemsDbSystem) string { return v.Description }).(pulumi.StringOutput)
+func (o GetMysqlDbSystemsDbSystemOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystem) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // A filter to return only the resource matching the given display name exactly.
-func (o GetMysqlDbSystemsDbSystemOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlDbSystemsDbSystem) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetMysqlDbSystemsDbSystemOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystem) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // The network endpoints available for this DB System.
@@ -17102,8 +15215,8 @@ func (o GetMysqlDbSystemsDbSystemOutput) Endpoints() GetMysqlDbSystemsDbSystemEn
 }
 
 // The fault domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
-func (o GetMysqlDbSystemsDbSystemOutput) FaultDomain() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlDbSystemsDbSystem) string { return v.FaultDomain }).(pulumi.StringOutput)
+func (o GetMysqlDbSystemsDbSystemOutput) FaultDomain() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystem) *string { return v.FaultDomain }).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -17119,33 +15232,33 @@ func (o GetMysqlDbSystemsDbSystemOutput) HeatWaveClusters() GetMysqlDbSystemsDbS
 }
 
 // The hostname for the primary endpoint of the DB System. Used for DNS. The value is the hostname portion of the primary private IP's fully qualified domain name (FQDN) (for example, "dbsystem-1" in FQDN "dbsystem-1.subnet123.vcn1.oraclevcn.com"). Must be unique across all VNICs in the subnet and comply with RFC 952 and RFC 1123.
-func (o GetMysqlDbSystemsDbSystemOutput) HostnameLabel() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlDbSystemsDbSystem) string { return v.HostnameLabel }).(pulumi.StringOutput)
+func (o GetMysqlDbSystemsDbSystemOutput) HostnameLabel() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystem) *string { return v.HostnameLabel }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the DB System.
-func (o GetMysqlDbSystemsDbSystemOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlDbSystemsDbSystem) string { return v.Id }).(pulumi.StringOutput)
+func (o GetMysqlDbSystemsDbSystemOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystem) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The IP address the DB System is configured to listen on. A private IP address of the primary endpoint of the DB System. Must be an available IP address within the subnet's CIDR. This will be a "dotted-quad" style IPv4 address.
-func (o GetMysqlDbSystemsDbSystemOutput) IpAddress() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlDbSystemsDbSystem) string { return v.IpAddress }).(pulumi.StringOutput)
+func (o GetMysqlDbSystemsDbSystemOutput) IpAddress() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystem) *string { return v.IpAddress }).(pulumi.StringPtrOutput)
 }
 
 // If true, return only DB Systems with a HeatWave cluster attached, if false return only DB Systems with no HeatWave cluster attached. If not present, return all DB Systems.
-func (o GetMysqlDbSystemsDbSystemOutput) IsHeatWaveClusterAttached() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetMysqlDbSystemsDbSystem) bool { return v.IsHeatWaveClusterAttached }).(pulumi.BoolOutput)
+func (o GetMysqlDbSystemsDbSystemOutput) IsHeatWaveClusterAttached() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystem) *bool { return v.IsHeatWaveClusterAttached }).(pulumi.BoolPtrOutput)
 }
 
 // Specifies if the DB System is highly available.
-func (o GetMysqlDbSystemsDbSystemOutput) IsHighlyAvailable() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetMysqlDbSystemsDbSystem) bool { return v.IsHighlyAvailable }).(pulumi.BoolOutput)
+func (o GetMysqlDbSystemsDbSystemOutput) IsHighlyAvailable() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystem) *bool { return v.IsHighlyAvailable }).(pulumi.BoolPtrOutput)
 }
 
 // Additional information about the current lifecycleState.
-func (o GetMysqlDbSystemsDbSystemOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlDbSystemsDbSystem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o GetMysqlDbSystemsDbSystemOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystem) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // The Maintenance Policy for the DB System or Read Replica that this model is included in.
@@ -17154,8 +15267,8 @@ func (o GetMysqlDbSystemsDbSystemOutput) Maintenances() GetMysqlDbSystemsDbSyste
 }
 
 // Name of the MySQL Version in use for the DB System.
-func (o GetMysqlDbSystemsDbSystemOutput) MysqlVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlDbSystemsDbSystem) string { return v.MysqlVersion }).(pulumi.StringOutput)
+func (o GetMysqlDbSystemsDbSystemOutput) MysqlVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystem) *string { return v.MysqlVersion }).(pulumi.StringPtrOutput)
 }
 
 // Point-in-time Recovery details like earliest and latest recovery time point for the DB System.
@@ -17166,22 +15279,22 @@ func (o GetMysqlDbSystemsDbSystemOutput) PointInTimeRecoveryDetails() GetMysqlDb
 }
 
 // The port for primary endpoint of the DB System to listen on.
-func (o GetMysqlDbSystemsDbSystemOutput) Port() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMysqlDbSystemsDbSystem) int { return v.Port }).(pulumi.IntOutput)
+func (o GetMysqlDbSystemsDbSystemOutput) Port() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystem) *int { return v.Port }).(pulumi.IntPtrOutput)
 }
 
 // The network port on which X Plugin listens for TCP/IP connections. This is the X Plugin equivalent of port.
-func (o GetMysqlDbSystemsDbSystemOutput) PortX() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMysqlDbSystemsDbSystem) int { return v.PortX }).(pulumi.IntOutput)
+func (o GetMysqlDbSystemsDbSystemOutput) PortX() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystem) *int { return v.PortX }).(pulumi.IntPtrOutput)
 }
 
 // The shape of the primary instances of the DB System. The shape determines resources allocated to a DB System - CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use (the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20181021/ShapeSummary/ListShapes) operation.
-func (o GetMysqlDbSystemsDbSystemOutput) ShapeName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlDbSystemsDbSystem) string { return v.ShapeName }).(pulumi.StringOutput)
+func (o GetMysqlDbSystemsDbSystemOutput) ShapeName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystem) *string { return v.ShapeName }).(pulumi.StringPtrOutput)
 }
 
-func (o GetMysqlDbSystemsDbSystemOutput) ShutdownType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlDbSystemsDbSystem) string { return v.ShutdownType }).(pulumi.StringOutput)
+func (o GetMysqlDbSystemsDbSystemOutput) ShutdownType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystem) *string { return v.ShutdownType }).(pulumi.StringPtrOutput)
 }
 
 // Parameters detailing how to provision the initial data of the DB System.
@@ -17190,23 +15303,23 @@ func (o GetMysqlDbSystemsDbSystemOutput) Sources() GetMysqlDbSystemsDbSystemSour
 }
 
 // DbSystem Lifecycle State
-func (o GetMysqlDbSystemsDbSystemOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlDbSystemsDbSystem) string { return v.State }).(pulumi.StringOutput)
+func (o GetMysqlDbSystemsDbSystemOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystem) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the subnet the DB System is associated with.
-func (o GetMysqlDbSystemsDbSystemOutput) SubnetId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlDbSystemsDbSystem) string { return v.SubnetId }).(pulumi.StringOutput)
+func (o GetMysqlDbSystemsDbSystemOutput) SubnetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystem) *string { return v.SubnetId }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the DB System was created.
-func (o GetMysqlDbSystemsDbSystemOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlDbSystemsDbSystem) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetMysqlDbSystemsDbSystemOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystem) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time the DB System was last updated.
-func (o GetMysqlDbSystemsDbSystemOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlDbSystemsDbSystem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o GetMysqlDbSystemsDbSystemOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystem) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type GetMysqlDbSystemsDbSystemArrayOutput struct{ *pulumi.OutputState }
@@ -17223,12 +15336,6 @@ func (o GetMysqlDbSystemsDbSystemArrayOutput) ToGetMysqlDbSystemsDbSystemArrayOu
 	return o
 }
 
-func (o GetMysqlDbSystemsDbSystemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlDbSystemsDbSystem] {
-	return pulumix.Output[[]GetMysqlDbSystemsDbSystem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetMysqlDbSystemsDbSystemArrayOutput) Index(i pulumi.IntInput) GetMysqlDbSystemsDbSystemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlDbSystemsDbSystem {
 		return vs[0].([]GetMysqlDbSystemsDbSystem)[vs[1].(int)]
@@ -17241,13 +15348,13 @@ type GetMysqlDbSystemsDbSystemBackupPolicy struct {
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// Whether the Channel has been enabled by the user.
-	IsEnabled bool `pulumi:"isEnabled"`
+	IsEnabled *bool `pulumi:"isEnabled"`
 	// The PITR policy for the DB System.
 	PitrPolicies []GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicy `pulumi:"pitrPolicies"`
 	// The number of days automated backups are retained.
-	RetentionInDays int `pulumi:"retentionInDays"`
+	RetentionInDays *int `pulumi:"retentionInDays"`
 	// The start time of the maintenance window.
-	WindowStartTime string `pulumi:"windowStartTime"`
+	WindowStartTime *string `pulumi:"windowStartTime"`
 }
 
 // GetMysqlDbSystemsDbSystemBackupPolicyInput is an input type that accepts GetMysqlDbSystemsDbSystemBackupPolicyArgs and GetMysqlDbSystemsDbSystemBackupPolicyOutput values.
@@ -17267,13 +15374,13 @@ type GetMysqlDbSystemsDbSystemBackupPolicyArgs struct {
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// Whether the Channel has been enabled by the user.
-	IsEnabled pulumi.BoolInput `pulumi:"isEnabled"`
+	IsEnabled pulumi.BoolPtrInput `pulumi:"isEnabled"`
 	// The PITR policy for the DB System.
 	PitrPolicies GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicyArrayInput `pulumi:"pitrPolicies"`
 	// The number of days automated backups are retained.
-	RetentionInDays pulumi.IntInput `pulumi:"retentionInDays"`
+	RetentionInDays pulumi.IntPtrInput `pulumi:"retentionInDays"`
 	// The start time of the maintenance window.
-	WindowStartTime pulumi.StringInput `pulumi:"windowStartTime"`
+	WindowStartTime pulumi.StringPtrInput `pulumi:"windowStartTime"`
 }
 
 func (GetMysqlDbSystemsDbSystemBackupPolicyArgs) ElementType() reflect.Type {
@@ -17286,12 +15393,6 @@ func (i GetMysqlDbSystemsDbSystemBackupPolicyArgs) ToGetMysqlDbSystemsDbSystemBa
 
 func (i GetMysqlDbSystemsDbSystemBackupPolicyArgs) ToGetMysqlDbSystemsDbSystemBackupPolicyOutputWithContext(ctx context.Context) GetMysqlDbSystemsDbSystemBackupPolicyOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemsDbSystemBackupPolicyOutput)
-}
-
-func (i GetMysqlDbSystemsDbSystemBackupPolicyArgs) ToOutput(ctx context.Context) pulumix.Output[GetMysqlDbSystemsDbSystemBackupPolicy] {
-	return pulumix.Output[GetMysqlDbSystemsDbSystemBackupPolicy]{
-		OutputState: i.ToGetMysqlDbSystemsDbSystemBackupPolicyOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetMysqlDbSystemsDbSystemBackupPolicyArrayInput is an input type that accepts GetMysqlDbSystemsDbSystemBackupPolicyArray and GetMysqlDbSystemsDbSystemBackupPolicyArrayOutput values.
@@ -17319,12 +15420,6 @@ func (i GetMysqlDbSystemsDbSystemBackupPolicyArray) ToGetMysqlDbSystemsDbSystemB
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemsDbSystemBackupPolicyArrayOutput)
 }
 
-func (i GetMysqlDbSystemsDbSystemBackupPolicyArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlDbSystemsDbSystemBackupPolicy] {
-	return pulumix.Output[[]GetMysqlDbSystemsDbSystemBackupPolicy]{
-		OutputState: i.ToGetMysqlDbSystemsDbSystemBackupPolicyArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMysqlDbSystemsDbSystemBackupPolicyOutput struct{ *pulumi.OutputState }
 
 func (GetMysqlDbSystemsDbSystemBackupPolicyOutput) ElementType() reflect.Type {
@@ -17339,12 +15434,6 @@ func (o GetMysqlDbSystemsDbSystemBackupPolicyOutput) ToGetMysqlDbSystemsDbSystem
 	return o
 }
 
-func (o GetMysqlDbSystemsDbSystemBackupPolicyOutput) ToOutput(ctx context.Context) pulumix.Output[GetMysqlDbSystemsDbSystemBackupPolicy] {
-	return pulumix.Output[GetMysqlDbSystemsDbSystemBackupPolicy]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 func (o GetMysqlDbSystemsDbSystemBackupPolicyOutput) DefinedTags() pulumi.MapOutput {
 	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemBackupPolicy) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
@@ -17356,8 +15445,8 @@ func (o GetMysqlDbSystemsDbSystemBackupPolicyOutput) FreeformTags() pulumi.MapOu
 }
 
 // Whether the Channel has been enabled by the user.
-func (o GetMysqlDbSystemsDbSystemBackupPolicyOutput) IsEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemBackupPolicy) bool { return v.IsEnabled }).(pulumi.BoolOutput)
+func (o GetMysqlDbSystemsDbSystemBackupPolicyOutput) IsEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemBackupPolicy) *bool { return v.IsEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // The PITR policy for the DB System.
@@ -17368,13 +15457,13 @@ func (o GetMysqlDbSystemsDbSystemBackupPolicyOutput) PitrPolicies() GetMysqlDbSy
 }
 
 // The number of days automated backups are retained.
-func (o GetMysqlDbSystemsDbSystemBackupPolicyOutput) RetentionInDays() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemBackupPolicy) int { return v.RetentionInDays }).(pulumi.IntOutput)
+func (o GetMysqlDbSystemsDbSystemBackupPolicyOutput) RetentionInDays() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemBackupPolicy) *int { return v.RetentionInDays }).(pulumi.IntPtrOutput)
 }
 
 // The start time of the maintenance window.
-func (o GetMysqlDbSystemsDbSystemBackupPolicyOutput) WindowStartTime() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemBackupPolicy) string { return v.WindowStartTime }).(pulumi.StringOutput)
+func (o GetMysqlDbSystemsDbSystemBackupPolicyOutput) WindowStartTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemBackupPolicy) *string { return v.WindowStartTime }).(pulumi.StringPtrOutput)
 }
 
 type GetMysqlDbSystemsDbSystemBackupPolicyArrayOutput struct{ *pulumi.OutputState }
@@ -17391,12 +15480,6 @@ func (o GetMysqlDbSystemsDbSystemBackupPolicyArrayOutput) ToGetMysqlDbSystemsDbS
 	return o
 }
 
-func (o GetMysqlDbSystemsDbSystemBackupPolicyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlDbSystemsDbSystemBackupPolicy] {
-	return pulumix.Output[[]GetMysqlDbSystemsDbSystemBackupPolicy]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetMysqlDbSystemsDbSystemBackupPolicyArrayOutput) Index(i pulumi.IntInput) GetMysqlDbSystemsDbSystemBackupPolicyOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlDbSystemsDbSystemBackupPolicy {
 		return vs[0].([]GetMysqlDbSystemsDbSystemBackupPolicy)[vs[1].(int)]
@@ -17405,7 +15488,7 @@ func (o GetMysqlDbSystemsDbSystemBackupPolicyArrayOutput) Index(i pulumi.IntInpu
 
 type GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicy struct {
 	// Whether the Channel has been enabled by the user.
-	IsEnabled bool `pulumi:"isEnabled"`
+	IsEnabled *bool `pulumi:"isEnabled"`
 }
 
 // GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicyInput is an input type that accepts GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicyArgs and GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicyOutput values.
@@ -17421,7 +15504,7 @@ type GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicyInput interface {
 
 type GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicyArgs struct {
 	// Whether the Channel has been enabled by the user.
-	IsEnabled pulumi.BoolInput `pulumi:"isEnabled"`
+	IsEnabled pulumi.BoolPtrInput `pulumi:"isEnabled"`
 }
 
 func (GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicyArgs) ElementType() reflect.Type {
@@ -17434,12 +15517,6 @@ func (i GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicyArgs) ToGetMysqlDbSystems
 
 func (i GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicyArgs) ToGetMysqlDbSystemsDbSystemBackupPolicyPitrPolicyOutputWithContext(ctx context.Context) GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicyOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicyOutput)
-}
-
-func (i GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicyArgs) ToOutput(ctx context.Context) pulumix.Output[GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicy] {
-	return pulumix.Output[GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicy]{
-		OutputState: i.ToGetMysqlDbSystemsDbSystemBackupPolicyPitrPolicyOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicyArrayInput is an input type that accepts GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicyArray and GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicyArrayOutput values.
@@ -17467,12 +15544,6 @@ func (i GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicyArray) ToGetMysqlDbSystem
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicyArrayOutput)
 }
 
-func (i GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicyArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicy] {
-	return pulumix.Output[[]GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicy]{
-		OutputState: i.ToGetMysqlDbSystemsDbSystemBackupPolicyPitrPolicyArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicyOutput struct{ *pulumi.OutputState }
 
 func (GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicyOutput) ElementType() reflect.Type {
@@ -17487,15 +15558,9 @@ func (o GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicyOutput) ToGetMysqlDbSyste
 	return o
 }
 
-func (o GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicyOutput) ToOutput(ctx context.Context) pulumix.Output[GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicy] {
-	return pulumix.Output[GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicy]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Whether the Channel has been enabled by the user.
-func (o GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicyOutput) IsEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicy) bool { return v.IsEnabled }).(pulumi.BoolOutput)
+func (o GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicyOutput) IsEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicy) *bool { return v.IsEnabled }).(pulumi.BoolPtrOutput)
 }
 
 type GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicyArrayOutput struct{ *pulumi.OutputState }
@@ -17512,12 +15577,6 @@ func (o GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicyArrayOutput) ToGetMysqlDb
 	return o
 }
 
-func (o GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicy] {
-	return pulumix.Output[[]GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicy]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicyArrayOutput) Index(i pulumi.IntInput) GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicyOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicy {
 		return vs[0].([]GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicy)[vs[1].(int)]
@@ -17526,29 +15585,29 @@ func (o GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicyArrayOutput) Index(i pulu
 
 type GetMysqlDbSystemsDbSystemChannel struct {
 	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A filter to return only the resource matching the given display name exactly.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The OCID of the DB System.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Whether the Channel has been enabled by the user.
-	IsEnabled bool `pulumi:"isEnabled"`
+	IsEnabled *bool `pulumi:"isEnabled"`
 	// Additional information about the current lifecycleState.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// Parameters detailing how to provision the initial data of the DB System.
 	Sources []GetMysqlDbSystemsDbSystemChannelSource `pulumi:"sources"`
 	// DbSystem Lifecycle State
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// Details about the Channel target.
 	Targets []GetMysqlDbSystemsDbSystemChannelTarget `pulumi:"targets"`
 	// The date and time the DB System was created.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time the DB System was last updated.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 // GetMysqlDbSystemsDbSystemChannelInput is an input type that accepts GetMysqlDbSystemsDbSystemChannelArgs and GetMysqlDbSystemsDbSystemChannelOutput values.
@@ -17564,29 +15623,29 @@ type GetMysqlDbSystemsDbSystemChannelInput interface {
 
 type GetMysqlDbSystemsDbSystemChannelArgs struct {
 	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// A filter to return only the resource matching the given display name exactly.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// The OCID of the DB System.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// Whether the Channel has been enabled by the user.
-	IsEnabled pulumi.BoolInput `pulumi:"isEnabled"`
+	IsEnabled pulumi.BoolPtrInput `pulumi:"isEnabled"`
 	// Additional information about the current lifecycleState.
-	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrInput `pulumi:"lifecycleDetails"`
 	// Parameters detailing how to provision the initial data of the DB System.
 	Sources GetMysqlDbSystemsDbSystemChannelSourceArrayInput `pulumi:"sources"`
 	// DbSystem Lifecycle State
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// Details about the Channel target.
 	Targets GetMysqlDbSystemsDbSystemChannelTargetArrayInput `pulumi:"targets"`
 	// The date and time the DB System was created.
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// The time the DB System was last updated.
-	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
 }
 
 func (GetMysqlDbSystemsDbSystemChannelArgs) ElementType() reflect.Type {
@@ -17599,12 +15658,6 @@ func (i GetMysqlDbSystemsDbSystemChannelArgs) ToGetMysqlDbSystemsDbSystemChannel
 
 func (i GetMysqlDbSystemsDbSystemChannelArgs) ToGetMysqlDbSystemsDbSystemChannelOutputWithContext(ctx context.Context) GetMysqlDbSystemsDbSystemChannelOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemsDbSystemChannelOutput)
-}
-
-func (i GetMysqlDbSystemsDbSystemChannelArgs) ToOutput(ctx context.Context) pulumix.Output[GetMysqlDbSystemsDbSystemChannel] {
-	return pulumix.Output[GetMysqlDbSystemsDbSystemChannel]{
-		OutputState: i.ToGetMysqlDbSystemsDbSystemChannelOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetMysqlDbSystemsDbSystemChannelArrayInput is an input type that accepts GetMysqlDbSystemsDbSystemChannelArray and GetMysqlDbSystemsDbSystemChannelArrayOutput values.
@@ -17632,12 +15685,6 @@ func (i GetMysqlDbSystemsDbSystemChannelArray) ToGetMysqlDbSystemsDbSystemChanne
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemsDbSystemChannelArrayOutput)
 }
 
-func (i GetMysqlDbSystemsDbSystemChannelArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlDbSystemsDbSystemChannel] {
-	return pulumix.Output[[]GetMysqlDbSystemsDbSystemChannel]{
-		OutputState: i.ToGetMysqlDbSystemsDbSystemChannelArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMysqlDbSystemsDbSystemChannelOutput struct{ *pulumi.OutputState }
 
 func (GetMysqlDbSystemsDbSystemChannelOutput) ElementType() reflect.Type {
@@ -17652,15 +15699,9 @@ func (o GetMysqlDbSystemsDbSystemChannelOutput) ToGetMysqlDbSystemsDbSystemChann
 	return o
 }
 
-func (o GetMysqlDbSystemsDbSystemChannelOutput) ToOutput(ctx context.Context) pulumix.Output[GetMysqlDbSystemsDbSystemChannel] {
-	return pulumix.Output[GetMysqlDbSystemsDbSystemChannel]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-func (o GetMysqlDbSystemsDbSystemChannelOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemChannel) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetMysqlDbSystemsDbSystemChannelOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemChannel) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -17669,8 +15710,8 @@ func (o GetMysqlDbSystemsDbSystemChannelOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // A filter to return only the resource matching the given display name exactly.
-func (o GetMysqlDbSystemsDbSystemChannelOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemChannel) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetMysqlDbSystemsDbSystemChannelOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemChannel) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -17679,18 +15720,18 @@ func (o GetMysqlDbSystemsDbSystemChannelOutput) FreeformTags() pulumi.MapOutput 
 }
 
 // The OCID of the DB System.
-func (o GetMysqlDbSystemsDbSystemChannelOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemChannel) string { return v.Id }).(pulumi.StringOutput)
+func (o GetMysqlDbSystemsDbSystemChannelOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemChannel) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Whether the Channel has been enabled by the user.
-func (o GetMysqlDbSystemsDbSystemChannelOutput) IsEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemChannel) bool { return v.IsEnabled }).(pulumi.BoolOutput)
+func (o GetMysqlDbSystemsDbSystemChannelOutput) IsEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemChannel) *bool { return v.IsEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // Additional information about the current lifecycleState.
-func (o GetMysqlDbSystemsDbSystemChannelOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemChannel) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o GetMysqlDbSystemsDbSystemChannelOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemChannel) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // Parameters detailing how to provision the initial data of the DB System.
@@ -17699,8 +15740,8 @@ func (o GetMysqlDbSystemsDbSystemChannelOutput) Sources() GetMysqlDbSystemsDbSys
 }
 
 // DbSystem Lifecycle State
-func (o GetMysqlDbSystemsDbSystemChannelOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemChannel) string { return v.State }).(pulumi.StringOutput)
+func (o GetMysqlDbSystemsDbSystemChannelOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemChannel) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Details about the Channel target.
@@ -17709,13 +15750,13 @@ func (o GetMysqlDbSystemsDbSystemChannelOutput) Targets() GetMysqlDbSystemsDbSys
 }
 
 // The date and time the DB System was created.
-func (o GetMysqlDbSystemsDbSystemChannelOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemChannel) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetMysqlDbSystemsDbSystemChannelOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemChannel) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time the DB System was last updated.
-func (o GetMysqlDbSystemsDbSystemChannelOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemChannel) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o GetMysqlDbSystemsDbSystemChannelOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemChannel) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type GetMysqlDbSystemsDbSystemChannelArrayOutput struct{ *pulumi.OutputState }
@@ -17732,12 +15773,6 @@ func (o GetMysqlDbSystemsDbSystemChannelArrayOutput) ToGetMysqlDbSystemsDbSystem
 	return o
 }
 
-func (o GetMysqlDbSystemsDbSystemChannelArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlDbSystemsDbSystemChannel] {
-	return pulumix.Output[[]GetMysqlDbSystemsDbSystemChannel]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetMysqlDbSystemsDbSystemChannelArrayOutput) Index(i pulumi.IntInput) GetMysqlDbSystemsDbSystemChannelOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlDbSystemsDbSystemChannel {
 		return vs[0].([]GetMysqlDbSystemsDbSystemChannel)[vs[1].(int)]
@@ -17748,17 +15783,17 @@ type GetMysqlDbSystemsDbSystemChannelSource struct {
 	// Specifies how the replication channel handles replicated transactions without an identifier, enabling replication from a source that does not use transaction-id-based replication to a replica that does.
 	AnonymousTransactionsHandlings []GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandling `pulumi:"anonymousTransactionsHandlings"`
 	// The network address of the DB System.
-	Hostname string `pulumi:"hostname"`
+	Hostname *string `pulumi:"hostname"`
 	// The port for primary endpoint of the DB System to listen on.
-	Port int `pulumi:"port"`
+	Port *int `pulumi:"port"`
 	// The specific source identifier.
-	SourceType string `pulumi:"sourceType"`
+	SourceType *string `pulumi:"sourceType"`
 	// The CA certificate of the server used for VERIFY_IDENTITY and VERIFY_CA ssl modes.
 	SslCaCertificates []GetMysqlDbSystemsDbSystemChannelSourceSslCaCertificate `pulumi:"sslCaCertificates"`
 	// The SSL mode of the Channel.
-	SslMode string `pulumi:"sslMode"`
+	SslMode *string `pulumi:"sslMode"`
 	// The name of the replication user on the source MySQL instance. The username has a maximum length of 96 characters. For more information, please see the [MySQL documentation](https://dev.mysql.com/doc/refman/8.0/en/change-master-to.html)
-	Username string `pulumi:"username"`
+	Username *string `pulumi:"username"`
 }
 
 // GetMysqlDbSystemsDbSystemChannelSourceInput is an input type that accepts GetMysqlDbSystemsDbSystemChannelSourceArgs and GetMysqlDbSystemsDbSystemChannelSourceOutput values.
@@ -17776,17 +15811,17 @@ type GetMysqlDbSystemsDbSystemChannelSourceArgs struct {
 	// Specifies how the replication channel handles replicated transactions without an identifier, enabling replication from a source that does not use transaction-id-based replication to a replica that does.
 	AnonymousTransactionsHandlings GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandlingArrayInput `pulumi:"anonymousTransactionsHandlings"`
 	// The network address of the DB System.
-	Hostname pulumi.StringInput `pulumi:"hostname"`
+	Hostname pulumi.StringPtrInput `pulumi:"hostname"`
 	// The port for primary endpoint of the DB System to listen on.
-	Port pulumi.IntInput `pulumi:"port"`
+	Port pulumi.IntPtrInput `pulumi:"port"`
 	// The specific source identifier.
-	SourceType pulumi.StringInput `pulumi:"sourceType"`
+	SourceType pulumi.StringPtrInput `pulumi:"sourceType"`
 	// The CA certificate of the server used for VERIFY_IDENTITY and VERIFY_CA ssl modes.
 	SslCaCertificates GetMysqlDbSystemsDbSystemChannelSourceSslCaCertificateArrayInput `pulumi:"sslCaCertificates"`
 	// The SSL mode of the Channel.
-	SslMode pulumi.StringInput `pulumi:"sslMode"`
+	SslMode pulumi.StringPtrInput `pulumi:"sslMode"`
 	// The name of the replication user on the source MySQL instance. The username has a maximum length of 96 characters. For more information, please see the [MySQL documentation](https://dev.mysql.com/doc/refman/8.0/en/change-master-to.html)
-	Username pulumi.StringInput `pulumi:"username"`
+	Username pulumi.StringPtrInput `pulumi:"username"`
 }
 
 func (GetMysqlDbSystemsDbSystemChannelSourceArgs) ElementType() reflect.Type {
@@ -17799,12 +15834,6 @@ func (i GetMysqlDbSystemsDbSystemChannelSourceArgs) ToGetMysqlDbSystemsDbSystemC
 
 func (i GetMysqlDbSystemsDbSystemChannelSourceArgs) ToGetMysqlDbSystemsDbSystemChannelSourceOutputWithContext(ctx context.Context) GetMysqlDbSystemsDbSystemChannelSourceOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemsDbSystemChannelSourceOutput)
-}
-
-func (i GetMysqlDbSystemsDbSystemChannelSourceArgs) ToOutput(ctx context.Context) pulumix.Output[GetMysqlDbSystemsDbSystemChannelSource] {
-	return pulumix.Output[GetMysqlDbSystemsDbSystemChannelSource]{
-		OutputState: i.ToGetMysqlDbSystemsDbSystemChannelSourceOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetMysqlDbSystemsDbSystemChannelSourceArrayInput is an input type that accepts GetMysqlDbSystemsDbSystemChannelSourceArray and GetMysqlDbSystemsDbSystemChannelSourceArrayOutput values.
@@ -17832,12 +15861,6 @@ func (i GetMysqlDbSystemsDbSystemChannelSourceArray) ToGetMysqlDbSystemsDbSystem
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemsDbSystemChannelSourceArrayOutput)
 }
 
-func (i GetMysqlDbSystemsDbSystemChannelSourceArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlDbSystemsDbSystemChannelSource] {
-	return pulumix.Output[[]GetMysqlDbSystemsDbSystemChannelSource]{
-		OutputState: i.ToGetMysqlDbSystemsDbSystemChannelSourceArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMysqlDbSystemsDbSystemChannelSourceOutput struct{ *pulumi.OutputState }
 
 func (GetMysqlDbSystemsDbSystemChannelSourceOutput) ElementType() reflect.Type {
@@ -17852,12 +15875,6 @@ func (o GetMysqlDbSystemsDbSystemChannelSourceOutput) ToGetMysqlDbSystemsDbSyste
 	return o
 }
 
-func (o GetMysqlDbSystemsDbSystemChannelSourceOutput) ToOutput(ctx context.Context) pulumix.Output[GetMysqlDbSystemsDbSystemChannelSource] {
-	return pulumix.Output[GetMysqlDbSystemsDbSystemChannelSource]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Specifies how the replication channel handles replicated transactions without an identifier, enabling replication from a source that does not use transaction-id-based replication to a replica that does.
 func (o GetMysqlDbSystemsDbSystemChannelSourceOutput) AnonymousTransactionsHandlings() GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandlingArrayOutput {
 	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemChannelSource) []GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandling {
@@ -17866,18 +15883,18 @@ func (o GetMysqlDbSystemsDbSystemChannelSourceOutput) AnonymousTransactionsHandl
 }
 
 // The network address of the DB System.
-func (o GetMysqlDbSystemsDbSystemChannelSourceOutput) Hostname() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemChannelSource) string { return v.Hostname }).(pulumi.StringOutput)
+func (o GetMysqlDbSystemsDbSystemChannelSourceOutput) Hostname() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemChannelSource) *string { return v.Hostname }).(pulumi.StringPtrOutput)
 }
 
 // The port for primary endpoint of the DB System to listen on.
-func (o GetMysqlDbSystemsDbSystemChannelSourceOutput) Port() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemChannelSource) int { return v.Port }).(pulumi.IntOutput)
+func (o GetMysqlDbSystemsDbSystemChannelSourceOutput) Port() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemChannelSource) *int { return v.Port }).(pulumi.IntPtrOutput)
 }
 
 // The specific source identifier.
-func (o GetMysqlDbSystemsDbSystemChannelSourceOutput) SourceType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemChannelSource) string { return v.SourceType }).(pulumi.StringOutput)
+func (o GetMysqlDbSystemsDbSystemChannelSourceOutput) SourceType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemChannelSource) *string { return v.SourceType }).(pulumi.StringPtrOutput)
 }
 
 // The CA certificate of the server used for VERIFY_IDENTITY and VERIFY_CA ssl modes.
@@ -17888,13 +15905,13 @@ func (o GetMysqlDbSystemsDbSystemChannelSourceOutput) SslCaCertificates() GetMys
 }
 
 // The SSL mode of the Channel.
-func (o GetMysqlDbSystemsDbSystemChannelSourceOutput) SslMode() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemChannelSource) string { return v.SslMode }).(pulumi.StringOutput)
+func (o GetMysqlDbSystemsDbSystemChannelSourceOutput) SslMode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemChannelSource) *string { return v.SslMode }).(pulumi.StringPtrOutput)
 }
 
 // The name of the replication user on the source MySQL instance. The username has a maximum length of 96 characters. For more information, please see the [MySQL documentation](https://dev.mysql.com/doc/refman/8.0/en/change-master-to.html)
-func (o GetMysqlDbSystemsDbSystemChannelSourceOutput) Username() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemChannelSource) string { return v.Username }).(pulumi.StringOutput)
+func (o GetMysqlDbSystemsDbSystemChannelSourceOutput) Username() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemChannelSource) *string { return v.Username }).(pulumi.StringPtrOutput)
 }
 
 type GetMysqlDbSystemsDbSystemChannelSourceArrayOutput struct{ *pulumi.OutputState }
@@ -17911,12 +15928,6 @@ func (o GetMysqlDbSystemsDbSystemChannelSourceArrayOutput) ToGetMysqlDbSystemsDb
 	return o
 }
 
-func (o GetMysqlDbSystemsDbSystemChannelSourceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlDbSystemsDbSystemChannelSource] {
-	return pulumix.Output[[]GetMysqlDbSystemsDbSystemChannelSource]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetMysqlDbSystemsDbSystemChannelSourceArrayOutput) Index(i pulumi.IntInput) GetMysqlDbSystemsDbSystemChannelSourceOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlDbSystemsDbSystemChannelSource {
 		return vs[0].([]GetMysqlDbSystemsDbSystemChannelSource)[vs[1].(int)]
@@ -17925,13 +15936,13 @@ func (o GetMysqlDbSystemsDbSystemChannelSourceArrayOutput) Index(i pulumi.IntInp
 
 type GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandling struct {
 	// Specifies one of the coordinates (file) at which the replica should begin reading the source's log. As this value specifies the point where replication starts from, it is only used once, when it starts. It is never used again, unless a new UpdateChannel operation modifies it.
-	LastConfiguredLogFilename string `pulumi:"lastConfiguredLogFilename"`
+	LastConfiguredLogFilename *string `pulumi:"lastConfiguredLogFilename"`
 	// Specifies one of the coordinates (offset) at which the replica should begin reading the source's log. As this value specifies the point where replication starts from, it is only used once, when it starts. It is never used again, unless a new UpdateChannel operation modifies it.
-	LastConfiguredLogOffset string `pulumi:"lastConfiguredLogOffset"`
+	LastConfiguredLogOffset *string `pulumi:"lastConfiguredLogOffset"`
 	// Specifies how the replication channel handles anonymous transactions.
-	Policy string `pulumi:"policy"`
+	Policy *string `pulumi:"policy"`
 	// The UUID that is used as a prefix when generating transaction identifiers for anonymous transactions coming from the source. You can change the UUID later.
-	Uuid string `pulumi:"uuid"`
+	Uuid *string `pulumi:"uuid"`
 }
 
 // GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandlingInput is an input type that accepts GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandlingArgs and GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandlingOutput values.
@@ -17947,13 +15958,13 @@ type GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandlingInput in
 
 type GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandlingArgs struct {
 	// Specifies one of the coordinates (file) at which the replica should begin reading the source's log. As this value specifies the point where replication starts from, it is only used once, when it starts. It is never used again, unless a new UpdateChannel operation modifies it.
-	LastConfiguredLogFilename pulumi.StringInput `pulumi:"lastConfiguredLogFilename"`
+	LastConfiguredLogFilename pulumi.StringPtrInput `pulumi:"lastConfiguredLogFilename"`
 	// Specifies one of the coordinates (offset) at which the replica should begin reading the source's log. As this value specifies the point where replication starts from, it is only used once, when it starts. It is never used again, unless a new UpdateChannel operation modifies it.
-	LastConfiguredLogOffset pulumi.StringInput `pulumi:"lastConfiguredLogOffset"`
+	LastConfiguredLogOffset pulumi.StringPtrInput `pulumi:"lastConfiguredLogOffset"`
 	// Specifies how the replication channel handles anonymous transactions.
-	Policy pulumi.StringInput `pulumi:"policy"`
+	Policy pulumi.StringPtrInput `pulumi:"policy"`
 	// The UUID that is used as a prefix when generating transaction identifiers for anonymous transactions coming from the source. You can change the UUID later.
-	Uuid pulumi.StringInput `pulumi:"uuid"`
+	Uuid pulumi.StringPtrInput `pulumi:"uuid"`
 }
 
 func (GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandlingArgs) ElementType() reflect.Type {
@@ -17966,12 +15977,6 @@ func (i GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandlingArgs)
 
 func (i GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandlingArgs) ToGetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandlingOutputWithContext(ctx context.Context) GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandlingOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandlingOutput)
-}
-
-func (i GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandlingArgs) ToOutput(ctx context.Context) pulumix.Output[GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandling] {
-	return pulumix.Output[GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandling]{
-		OutputState: i.ToGetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandlingOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandlingArrayInput is an input type that accepts GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandlingArray and GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandlingArrayOutput values.
@@ -17999,12 +16004,6 @@ func (i GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandlingArray
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandlingArrayOutput)
 }
 
-func (i GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandlingArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandling] {
-	return pulumix.Output[[]GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandling]{
-		OutputState: i.ToGetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandlingArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandlingOutput struct{ *pulumi.OutputState }
 
 func (GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandlingOutput) ElementType() reflect.Type {
@@ -18019,34 +16018,28 @@ func (o GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandlingOutpu
 	return o
 }
 
-func (o GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandlingOutput) ToOutput(ctx context.Context) pulumix.Output[GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandling] {
-	return pulumix.Output[GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandling]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Specifies one of the coordinates (file) at which the replica should begin reading the source's log. As this value specifies the point where replication starts from, it is only used once, when it starts. It is never used again, unless a new UpdateChannel operation modifies it.
-func (o GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandlingOutput) LastConfiguredLogFilename() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandling) string {
+func (o GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandlingOutput) LastConfiguredLogFilename() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandling) *string {
 		return v.LastConfiguredLogFilename
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Specifies one of the coordinates (offset) at which the replica should begin reading the source's log. As this value specifies the point where replication starts from, it is only used once, when it starts. It is never used again, unless a new UpdateChannel operation modifies it.
-func (o GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandlingOutput) LastConfiguredLogOffset() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandling) string {
+func (o GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandlingOutput) LastConfiguredLogOffset() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandling) *string {
 		return v.LastConfiguredLogOffset
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Specifies how the replication channel handles anonymous transactions.
-func (o GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandlingOutput) Policy() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandling) string { return v.Policy }).(pulumi.StringOutput)
+func (o GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandlingOutput) Policy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandling) *string { return v.Policy }).(pulumi.StringPtrOutput)
 }
 
 // The UUID that is used as a prefix when generating transaction identifiers for anonymous transactions coming from the source. You can change the UUID later.
-func (o GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandlingOutput) Uuid() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandling) string { return v.Uuid }).(pulumi.StringOutput)
+func (o GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandlingOutput) Uuid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandling) *string { return v.Uuid }).(pulumi.StringPtrOutput)
 }
 
 type GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandlingArrayOutput struct{ *pulumi.OutputState }
@@ -18063,12 +16056,6 @@ func (o GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandlingArray
 	return o
 }
 
-func (o GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandlingArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandling] {
-	return pulumix.Output[[]GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandling]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandlingArrayOutput) Index(i pulumi.IntInput) GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandlingOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandling {
 		return vs[0].([]GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandling)[vs[1].(int)]
@@ -18077,9 +16064,9 @@ func (o GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandlingArray
 
 type GetMysqlDbSystemsDbSystemChannelSourceSslCaCertificate struct {
 	// The type of CA certificate.
-	CertificateType string `pulumi:"certificateType"`
+	CertificateType *string `pulumi:"certificateType"`
 	// The string containing the CA certificate in PEM format.
-	Contents string `pulumi:"contents"`
+	Contents *string `pulumi:"contents"`
 }
 
 // GetMysqlDbSystemsDbSystemChannelSourceSslCaCertificateInput is an input type that accepts GetMysqlDbSystemsDbSystemChannelSourceSslCaCertificateArgs and GetMysqlDbSystemsDbSystemChannelSourceSslCaCertificateOutput values.
@@ -18095,9 +16082,9 @@ type GetMysqlDbSystemsDbSystemChannelSourceSslCaCertificateInput interface {
 
 type GetMysqlDbSystemsDbSystemChannelSourceSslCaCertificateArgs struct {
 	// The type of CA certificate.
-	CertificateType pulumi.StringInput `pulumi:"certificateType"`
+	CertificateType pulumi.StringPtrInput `pulumi:"certificateType"`
 	// The string containing the CA certificate in PEM format.
-	Contents pulumi.StringInput `pulumi:"contents"`
+	Contents pulumi.StringPtrInput `pulumi:"contents"`
 }
 
 func (GetMysqlDbSystemsDbSystemChannelSourceSslCaCertificateArgs) ElementType() reflect.Type {
@@ -18110,12 +16097,6 @@ func (i GetMysqlDbSystemsDbSystemChannelSourceSslCaCertificateArgs) ToGetMysqlDb
 
 func (i GetMysqlDbSystemsDbSystemChannelSourceSslCaCertificateArgs) ToGetMysqlDbSystemsDbSystemChannelSourceSslCaCertificateOutputWithContext(ctx context.Context) GetMysqlDbSystemsDbSystemChannelSourceSslCaCertificateOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemsDbSystemChannelSourceSslCaCertificateOutput)
-}
-
-func (i GetMysqlDbSystemsDbSystemChannelSourceSslCaCertificateArgs) ToOutput(ctx context.Context) pulumix.Output[GetMysqlDbSystemsDbSystemChannelSourceSslCaCertificate] {
-	return pulumix.Output[GetMysqlDbSystemsDbSystemChannelSourceSslCaCertificate]{
-		OutputState: i.ToGetMysqlDbSystemsDbSystemChannelSourceSslCaCertificateOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetMysqlDbSystemsDbSystemChannelSourceSslCaCertificateArrayInput is an input type that accepts GetMysqlDbSystemsDbSystemChannelSourceSslCaCertificateArray and GetMysqlDbSystemsDbSystemChannelSourceSslCaCertificateArrayOutput values.
@@ -18143,12 +16124,6 @@ func (i GetMysqlDbSystemsDbSystemChannelSourceSslCaCertificateArray) ToGetMysqlD
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemsDbSystemChannelSourceSslCaCertificateArrayOutput)
 }
 
-func (i GetMysqlDbSystemsDbSystemChannelSourceSslCaCertificateArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlDbSystemsDbSystemChannelSourceSslCaCertificate] {
-	return pulumix.Output[[]GetMysqlDbSystemsDbSystemChannelSourceSslCaCertificate]{
-		OutputState: i.ToGetMysqlDbSystemsDbSystemChannelSourceSslCaCertificateArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMysqlDbSystemsDbSystemChannelSourceSslCaCertificateOutput struct{ *pulumi.OutputState }
 
 func (GetMysqlDbSystemsDbSystemChannelSourceSslCaCertificateOutput) ElementType() reflect.Type {
@@ -18163,20 +16138,14 @@ func (o GetMysqlDbSystemsDbSystemChannelSourceSslCaCertificateOutput) ToGetMysql
 	return o
 }
 
-func (o GetMysqlDbSystemsDbSystemChannelSourceSslCaCertificateOutput) ToOutput(ctx context.Context) pulumix.Output[GetMysqlDbSystemsDbSystemChannelSourceSslCaCertificate] {
-	return pulumix.Output[GetMysqlDbSystemsDbSystemChannelSourceSslCaCertificate]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The type of CA certificate.
-func (o GetMysqlDbSystemsDbSystemChannelSourceSslCaCertificateOutput) CertificateType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemChannelSourceSslCaCertificate) string { return v.CertificateType }).(pulumi.StringOutput)
+func (o GetMysqlDbSystemsDbSystemChannelSourceSslCaCertificateOutput) CertificateType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemChannelSourceSslCaCertificate) *string { return v.CertificateType }).(pulumi.StringPtrOutput)
 }
 
 // The string containing the CA certificate in PEM format.
-func (o GetMysqlDbSystemsDbSystemChannelSourceSslCaCertificateOutput) Contents() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemChannelSourceSslCaCertificate) string { return v.Contents }).(pulumi.StringOutput)
+func (o GetMysqlDbSystemsDbSystemChannelSourceSslCaCertificateOutput) Contents() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemChannelSourceSslCaCertificate) *string { return v.Contents }).(pulumi.StringPtrOutput)
 }
 
 type GetMysqlDbSystemsDbSystemChannelSourceSslCaCertificateArrayOutput struct{ *pulumi.OutputState }
@@ -18193,12 +16162,6 @@ func (o GetMysqlDbSystemsDbSystemChannelSourceSslCaCertificateArrayOutput) ToGet
 	return o
 }
 
-func (o GetMysqlDbSystemsDbSystemChannelSourceSslCaCertificateArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlDbSystemsDbSystemChannelSourceSslCaCertificate] {
-	return pulumix.Output[[]GetMysqlDbSystemsDbSystemChannelSourceSslCaCertificate]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetMysqlDbSystemsDbSystemChannelSourceSslCaCertificateArrayOutput) Index(i pulumi.IntInput) GetMysqlDbSystemsDbSystemChannelSourceSslCaCertificateOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlDbSystemsDbSystemChannelSourceSslCaCertificate {
 		return vs[0].([]GetMysqlDbSystemsDbSystemChannelSourceSslCaCertificate)[vs[1].(int)]
@@ -18207,19 +16170,19 @@ func (o GetMysqlDbSystemsDbSystemChannelSourceSslCaCertificateArrayOutput) Index
 
 type GetMysqlDbSystemsDbSystemChannelTarget struct {
 	// The username for the replication applier of the target MySQL DB System.
-	ApplierUsername string `pulumi:"applierUsername"`
+	ApplierUsername *string `pulumi:"applierUsername"`
 	// The case-insensitive name that identifies the replication channel. Channel names must follow the rules defined for [MySQL identifiers](https://dev.mysql.com/doc/refman/8.0/en/identifiers.html). The names of non-Deleted Channels must be unique for each DB System.
-	ChannelName string `pulumi:"channelName"`
+	ChannelName *string `pulumi:"channelName"`
 	// The DB System [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-	DbSystemId string `pulumi:"dbSystemId"`
+	DbSystemId *string `pulumi:"dbSystemId"`
 	// Specifies the amount of time, in seconds, that the channel waits before  applying a transaction received from the source.
-	DelayInSeconds int `pulumi:"delayInSeconds"`
+	DelayInSeconds *int `pulumi:"delayInSeconds"`
 	// Replication filter rules to be applied at the DB System Channel target.
 	Filters []GetMysqlDbSystemsDbSystemChannelTargetFilter `pulumi:"filters"`
 	// Specifies how a replication channel handles the creation and alteration of tables  that do not have a primary key.
-	TablesWithoutPrimaryKeyHandling string `pulumi:"tablesWithoutPrimaryKeyHandling"`
+	TablesWithoutPrimaryKeyHandling *string `pulumi:"tablesWithoutPrimaryKeyHandling"`
 	// The specific target identifier.
-	TargetType string `pulumi:"targetType"`
+	TargetType *string `pulumi:"targetType"`
 }
 
 // GetMysqlDbSystemsDbSystemChannelTargetInput is an input type that accepts GetMysqlDbSystemsDbSystemChannelTargetArgs and GetMysqlDbSystemsDbSystemChannelTargetOutput values.
@@ -18235,19 +16198,19 @@ type GetMysqlDbSystemsDbSystemChannelTargetInput interface {
 
 type GetMysqlDbSystemsDbSystemChannelTargetArgs struct {
 	// The username for the replication applier of the target MySQL DB System.
-	ApplierUsername pulumi.StringInput `pulumi:"applierUsername"`
+	ApplierUsername pulumi.StringPtrInput `pulumi:"applierUsername"`
 	// The case-insensitive name that identifies the replication channel. Channel names must follow the rules defined for [MySQL identifiers](https://dev.mysql.com/doc/refman/8.0/en/identifiers.html). The names of non-Deleted Channels must be unique for each DB System.
-	ChannelName pulumi.StringInput `pulumi:"channelName"`
+	ChannelName pulumi.StringPtrInput `pulumi:"channelName"`
 	// The DB System [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-	DbSystemId pulumi.StringInput `pulumi:"dbSystemId"`
+	DbSystemId pulumi.StringPtrInput `pulumi:"dbSystemId"`
 	// Specifies the amount of time, in seconds, that the channel waits before  applying a transaction received from the source.
-	DelayInSeconds pulumi.IntInput `pulumi:"delayInSeconds"`
+	DelayInSeconds pulumi.IntPtrInput `pulumi:"delayInSeconds"`
 	// Replication filter rules to be applied at the DB System Channel target.
 	Filters GetMysqlDbSystemsDbSystemChannelTargetFilterArrayInput `pulumi:"filters"`
 	// Specifies how a replication channel handles the creation and alteration of tables  that do not have a primary key.
-	TablesWithoutPrimaryKeyHandling pulumi.StringInput `pulumi:"tablesWithoutPrimaryKeyHandling"`
+	TablesWithoutPrimaryKeyHandling pulumi.StringPtrInput `pulumi:"tablesWithoutPrimaryKeyHandling"`
 	// The specific target identifier.
-	TargetType pulumi.StringInput `pulumi:"targetType"`
+	TargetType pulumi.StringPtrInput `pulumi:"targetType"`
 }
 
 func (GetMysqlDbSystemsDbSystemChannelTargetArgs) ElementType() reflect.Type {
@@ -18260,12 +16223,6 @@ func (i GetMysqlDbSystemsDbSystemChannelTargetArgs) ToGetMysqlDbSystemsDbSystemC
 
 func (i GetMysqlDbSystemsDbSystemChannelTargetArgs) ToGetMysqlDbSystemsDbSystemChannelTargetOutputWithContext(ctx context.Context) GetMysqlDbSystemsDbSystemChannelTargetOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemsDbSystemChannelTargetOutput)
-}
-
-func (i GetMysqlDbSystemsDbSystemChannelTargetArgs) ToOutput(ctx context.Context) pulumix.Output[GetMysqlDbSystemsDbSystemChannelTarget] {
-	return pulumix.Output[GetMysqlDbSystemsDbSystemChannelTarget]{
-		OutputState: i.ToGetMysqlDbSystemsDbSystemChannelTargetOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetMysqlDbSystemsDbSystemChannelTargetArrayInput is an input type that accepts GetMysqlDbSystemsDbSystemChannelTargetArray and GetMysqlDbSystemsDbSystemChannelTargetArrayOutput values.
@@ -18293,12 +16250,6 @@ func (i GetMysqlDbSystemsDbSystemChannelTargetArray) ToGetMysqlDbSystemsDbSystem
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemsDbSystemChannelTargetArrayOutput)
 }
 
-func (i GetMysqlDbSystemsDbSystemChannelTargetArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlDbSystemsDbSystemChannelTarget] {
-	return pulumix.Output[[]GetMysqlDbSystemsDbSystemChannelTarget]{
-		OutputState: i.ToGetMysqlDbSystemsDbSystemChannelTargetArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMysqlDbSystemsDbSystemChannelTargetOutput struct{ *pulumi.OutputState }
 
 func (GetMysqlDbSystemsDbSystemChannelTargetOutput) ElementType() reflect.Type {
@@ -18313,30 +16264,24 @@ func (o GetMysqlDbSystemsDbSystemChannelTargetOutput) ToGetMysqlDbSystemsDbSyste
 	return o
 }
 
-func (o GetMysqlDbSystemsDbSystemChannelTargetOutput) ToOutput(ctx context.Context) pulumix.Output[GetMysqlDbSystemsDbSystemChannelTarget] {
-	return pulumix.Output[GetMysqlDbSystemsDbSystemChannelTarget]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The username for the replication applier of the target MySQL DB System.
-func (o GetMysqlDbSystemsDbSystemChannelTargetOutput) ApplierUsername() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemChannelTarget) string { return v.ApplierUsername }).(pulumi.StringOutput)
+func (o GetMysqlDbSystemsDbSystemChannelTargetOutput) ApplierUsername() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemChannelTarget) *string { return v.ApplierUsername }).(pulumi.StringPtrOutput)
 }
 
 // The case-insensitive name that identifies the replication channel. Channel names must follow the rules defined for [MySQL identifiers](https://dev.mysql.com/doc/refman/8.0/en/identifiers.html). The names of non-Deleted Channels must be unique for each DB System.
-func (o GetMysqlDbSystemsDbSystemChannelTargetOutput) ChannelName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemChannelTarget) string { return v.ChannelName }).(pulumi.StringOutput)
+func (o GetMysqlDbSystemsDbSystemChannelTargetOutput) ChannelName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemChannelTarget) *string { return v.ChannelName }).(pulumi.StringPtrOutput)
 }
 
 // The DB System [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-func (o GetMysqlDbSystemsDbSystemChannelTargetOutput) DbSystemId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemChannelTarget) string { return v.DbSystemId }).(pulumi.StringOutput)
+func (o GetMysqlDbSystemsDbSystemChannelTargetOutput) DbSystemId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemChannelTarget) *string { return v.DbSystemId }).(pulumi.StringPtrOutput)
 }
 
 // Specifies the amount of time, in seconds, that the channel waits before  applying a transaction received from the source.
-func (o GetMysqlDbSystemsDbSystemChannelTargetOutput) DelayInSeconds() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemChannelTarget) int { return v.DelayInSeconds }).(pulumi.IntOutput)
+func (o GetMysqlDbSystemsDbSystemChannelTargetOutput) DelayInSeconds() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemChannelTarget) *int { return v.DelayInSeconds }).(pulumi.IntPtrOutput)
 }
 
 // Replication filter rules to be applied at the DB System Channel target.
@@ -18347,13 +16292,13 @@ func (o GetMysqlDbSystemsDbSystemChannelTargetOutput) Filters() GetMysqlDbSystem
 }
 
 // Specifies how a replication channel handles the creation and alteration of tables  that do not have a primary key.
-func (o GetMysqlDbSystemsDbSystemChannelTargetOutput) TablesWithoutPrimaryKeyHandling() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemChannelTarget) string { return v.TablesWithoutPrimaryKeyHandling }).(pulumi.StringOutput)
+func (o GetMysqlDbSystemsDbSystemChannelTargetOutput) TablesWithoutPrimaryKeyHandling() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemChannelTarget) *string { return v.TablesWithoutPrimaryKeyHandling }).(pulumi.StringPtrOutput)
 }
 
 // The specific target identifier.
-func (o GetMysqlDbSystemsDbSystemChannelTargetOutput) TargetType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemChannelTarget) string { return v.TargetType }).(pulumi.StringOutput)
+func (o GetMysqlDbSystemsDbSystemChannelTargetOutput) TargetType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemChannelTarget) *string { return v.TargetType }).(pulumi.StringPtrOutput)
 }
 
 type GetMysqlDbSystemsDbSystemChannelTargetArrayOutput struct{ *pulumi.OutputState }
@@ -18370,12 +16315,6 @@ func (o GetMysqlDbSystemsDbSystemChannelTargetArrayOutput) ToGetMysqlDbSystemsDb
 	return o
 }
 
-func (o GetMysqlDbSystemsDbSystemChannelTargetArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlDbSystemsDbSystemChannelTarget] {
-	return pulumix.Output[[]GetMysqlDbSystemsDbSystemChannelTarget]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetMysqlDbSystemsDbSystemChannelTargetArrayOutput) Index(i pulumi.IntInput) GetMysqlDbSystemsDbSystemChannelTargetOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlDbSystemsDbSystemChannelTarget {
 		return vs[0].([]GetMysqlDbSystemsDbSystemChannelTarget)[vs[1].(int)]
@@ -18384,9 +16323,9 @@ func (o GetMysqlDbSystemsDbSystemChannelTargetArrayOutput) Index(i pulumi.IntInp
 
 type GetMysqlDbSystemsDbSystemChannelTargetFilter struct {
 	// The type of the filter rule.
-	Type string `pulumi:"type"`
+	Type *string `pulumi:"type"`
 	// The body of the filter rule. This can represent a database, a table, or a database pair (represented as "db1->db2"). For more information, see [Replication Filtering Rules](https://dev.mysql.com/doc/refman/8.0/en/replication-rules.html).
-	Value string `pulumi:"value"`
+	Value *string `pulumi:"value"`
 }
 
 // GetMysqlDbSystemsDbSystemChannelTargetFilterInput is an input type that accepts GetMysqlDbSystemsDbSystemChannelTargetFilterArgs and GetMysqlDbSystemsDbSystemChannelTargetFilterOutput values.
@@ -18402,9 +16341,9 @@ type GetMysqlDbSystemsDbSystemChannelTargetFilterInput interface {
 
 type GetMysqlDbSystemsDbSystemChannelTargetFilterArgs struct {
 	// The type of the filter rule.
-	Type pulumi.StringInput `pulumi:"type"`
+	Type pulumi.StringPtrInput `pulumi:"type"`
 	// The body of the filter rule. This can represent a database, a table, or a database pair (represented as "db1->db2"). For more information, see [Replication Filtering Rules](https://dev.mysql.com/doc/refman/8.0/en/replication-rules.html).
-	Value pulumi.StringInput `pulumi:"value"`
+	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
 func (GetMysqlDbSystemsDbSystemChannelTargetFilterArgs) ElementType() reflect.Type {
@@ -18417,12 +16356,6 @@ func (i GetMysqlDbSystemsDbSystemChannelTargetFilterArgs) ToGetMysqlDbSystemsDbS
 
 func (i GetMysqlDbSystemsDbSystemChannelTargetFilterArgs) ToGetMysqlDbSystemsDbSystemChannelTargetFilterOutputWithContext(ctx context.Context) GetMysqlDbSystemsDbSystemChannelTargetFilterOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemsDbSystemChannelTargetFilterOutput)
-}
-
-func (i GetMysqlDbSystemsDbSystemChannelTargetFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetMysqlDbSystemsDbSystemChannelTargetFilter] {
-	return pulumix.Output[GetMysqlDbSystemsDbSystemChannelTargetFilter]{
-		OutputState: i.ToGetMysqlDbSystemsDbSystemChannelTargetFilterOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetMysqlDbSystemsDbSystemChannelTargetFilterArrayInput is an input type that accepts GetMysqlDbSystemsDbSystemChannelTargetFilterArray and GetMysqlDbSystemsDbSystemChannelTargetFilterArrayOutput values.
@@ -18450,12 +16383,6 @@ func (i GetMysqlDbSystemsDbSystemChannelTargetFilterArray) ToGetMysqlDbSystemsDb
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemsDbSystemChannelTargetFilterArrayOutput)
 }
 
-func (i GetMysqlDbSystemsDbSystemChannelTargetFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlDbSystemsDbSystemChannelTargetFilter] {
-	return pulumix.Output[[]GetMysqlDbSystemsDbSystemChannelTargetFilter]{
-		OutputState: i.ToGetMysqlDbSystemsDbSystemChannelTargetFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMysqlDbSystemsDbSystemChannelTargetFilterOutput struct{ *pulumi.OutputState }
 
 func (GetMysqlDbSystemsDbSystemChannelTargetFilterOutput) ElementType() reflect.Type {
@@ -18470,20 +16397,14 @@ func (o GetMysqlDbSystemsDbSystemChannelTargetFilterOutput) ToGetMysqlDbSystemsD
 	return o
 }
 
-func (o GetMysqlDbSystemsDbSystemChannelTargetFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetMysqlDbSystemsDbSystemChannelTargetFilter] {
-	return pulumix.Output[GetMysqlDbSystemsDbSystemChannelTargetFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The type of the filter rule.
-func (o GetMysqlDbSystemsDbSystemChannelTargetFilterOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemChannelTargetFilter) string { return v.Type }).(pulumi.StringOutput)
+func (o GetMysqlDbSystemsDbSystemChannelTargetFilterOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemChannelTargetFilter) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
 
 // The body of the filter rule. This can represent a database, a table, or a database pair (represented as "db1->db2"). For more information, see [Replication Filtering Rules](https://dev.mysql.com/doc/refman/8.0/en/replication-rules.html).
-func (o GetMysqlDbSystemsDbSystemChannelTargetFilterOutput) Value() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemChannelTargetFilter) string { return v.Value }).(pulumi.StringOutput)
+func (o GetMysqlDbSystemsDbSystemChannelTargetFilterOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemChannelTargetFilter) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
 
 type GetMysqlDbSystemsDbSystemChannelTargetFilterArrayOutput struct{ *pulumi.OutputState }
@@ -18500,12 +16421,6 @@ func (o GetMysqlDbSystemsDbSystemChannelTargetFilterArrayOutput) ToGetMysqlDbSys
 	return o
 }
 
-func (o GetMysqlDbSystemsDbSystemChannelTargetFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlDbSystemsDbSystemChannelTargetFilter] {
-	return pulumix.Output[[]GetMysqlDbSystemsDbSystemChannelTargetFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetMysqlDbSystemsDbSystemChannelTargetFilterArrayOutput) Index(i pulumi.IntInput) GetMysqlDbSystemsDbSystemChannelTargetFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlDbSystemsDbSystemChannelTargetFilter {
 		return vs[0].([]GetMysqlDbSystemsDbSystemChannelTargetFilter)[vs[1].(int)]
@@ -18514,9 +16429,9 @@ func (o GetMysqlDbSystemsDbSystemChannelTargetFilterArrayOutput) Index(i pulumi.
 
 type GetMysqlDbSystemsDbSystemCurrentPlacement struct {
 	// The availability domain in which the DB System is placed.
-	AvailabilityDomain string `pulumi:"availabilityDomain"`
+	AvailabilityDomain *string `pulumi:"availabilityDomain"`
 	// The fault domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
-	FaultDomain string `pulumi:"faultDomain"`
+	FaultDomain *string `pulumi:"faultDomain"`
 }
 
 // GetMysqlDbSystemsDbSystemCurrentPlacementInput is an input type that accepts GetMysqlDbSystemsDbSystemCurrentPlacementArgs and GetMysqlDbSystemsDbSystemCurrentPlacementOutput values.
@@ -18532,9 +16447,9 @@ type GetMysqlDbSystemsDbSystemCurrentPlacementInput interface {
 
 type GetMysqlDbSystemsDbSystemCurrentPlacementArgs struct {
 	// The availability domain in which the DB System is placed.
-	AvailabilityDomain pulumi.StringInput `pulumi:"availabilityDomain"`
+	AvailabilityDomain pulumi.StringPtrInput `pulumi:"availabilityDomain"`
 	// The fault domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
-	FaultDomain pulumi.StringInput `pulumi:"faultDomain"`
+	FaultDomain pulumi.StringPtrInput `pulumi:"faultDomain"`
 }
 
 func (GetMysqlDbSystemsDbSystemCurrentPlacementArgs) ElementType() reflect.Type {
@@ -18547,12 +16462,6 @@ func (i GetMysqlDbSystemsDbSystemCurrentPlacementArgs) ToGetMysqlDbSystemsDbSyst
 
 func (i GetMysqlDbSystemsDbSystemCurrentPlacementArgs) ToGetMysqlDbSystemsDbSystemCurrentPlacementOutputWithContext(ctx context.Context) GetMysqlDbSystemsDbSystemCurrentPlacementOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemsDbSystemCurrentPlacementOutput)
-}
-
-func (i GetMysqlDbSystemsDbSystemCurrentPlacementArgs) ToOutput(ctx context.Context) pulumix.Output[GetMysqlDbSystemsDbSystemCurrentPlacement] {
-	return pulumix.Output[GetMysqlDbSystemsDbSystemCurrentPlacement]{
-		OutputState: i.ToGetMysqlDbSystemsDbSystemCurrentPlacementOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetMysqlDbSystemsDbSystemCurrentPlacementArrayInput is an input type that accepts GetMysqlDbSystemsDbSystemCurrentPlacementArray and GetMysqlDbSystemsDbSystemCurrentPlacementArrayOutput values.
@@ -18580,12 +16489,6 @@ func (i GetMysqlDbSystemsDbSystemCurrentPlacementArray) ToGetMysqlDbSystemsDbSys
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemsDbSystemCurrentPlacementArrayOutput)
 }
 
-func (i GetMysqlDbSystemsDbSystemCurrentPlacementArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlDbSystemsDbSystemCurrentPlacement] {
-	return pulumix.Output[[]GetMysqlDbSystemsDbSystemCurrentPlacement]{
-		OutputState: i.ToGetMysqlDbSystemsDbSystemCurrentPlacementArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMysqlDbSystemsDbSystemCurrentPlacementOutput struct{ *pulumi.OutputState }
 
 func (GetMysqlDbSystemsDbSystemCurrentPlacementOutput) ElementType() reflect.Type {
@@ -18600,20 +16503,14 @@ func (o GetMysqlDbSystemsDbSystemCurrentPlacementOutput) ToGetMysqlDbSystemsDbSy
 	return o
 }
 
-func (o GetMysqlDbSystemsDbSystemCurrentPlacementOutput) ToOutput(ctx context.Context) pulumix.Output[GetMysqlDbSystemsDbSystemCurrentPlacement] {
-	return pulumix.Output[GetMysqlDbSystemsDbSystemCurrentPlacement]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The availability domain in which the DB System is placed.
-func (o GetMysqlDbSystemsDbSystemCurrentPlacementOutput) AvailabilityDomain() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemCurrentPlacement) string { return v.AvailabilityDomain }).(pulumi.StringOutput)
+func (o GetMysqlDbSystemsDbSystemCurrentPlacementOutput) AvailabilityDomain() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemCurrentPlacement) *string { return v.AvailabilityDomain }).(pulumi.StringPtrOutput)
 }
 
 // The fault domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
-func (o GetMysqlDbSystemsDbSystemCurrentPlacementOutput) FaultDomain() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemCurrentPlacement) string { return v.FaultDomain }).(pulumi.StringOutput)
+func (o GetMysqlDbSystemsDbSystemCurrentPlacementOutput) FaultDomain() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemCurrentPlacement) *string { return v.FaultDomain }).(pulumi.StringPtrOutput)
 }
 
 type GetMysqlDbSystemsDbSystemCurrentPlacementArrayOutput struct{ *pulumi.OutputState }
@@ -18630,12 +16527,6 @@ func (o GetMysqlDbSystemsDbSystemCurrentPlacementArrayOutput) ToGetMysqlDbSystem
 	return o
 }
 
-func (o GetMysqlDbSystemsDbSystemCurrentPlacementArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlDbSystemsDbSystemCurrentPlacement] {
-	return pulumix.Output[[]GetMysqlDbSystemsDbSystemCurrentPlacement]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetMysqlDbSystemsDbSystemCurrentPlacementArrayOutput) Index(i pulumi.IntInput) GetMysqlDbSystemsDbSystemCurrentPlacementOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlDbSystemsDbSystemCurrentPlacement {
 		return vs[0].([]GetMysqlDbSystemsDbSystemCurrentPlacement)[vs[1].(int)]
@@ -18644,11 +16535,11 @@ func (o GetMysqlDbSystemsDbSystemCurrentPlacementArrayOutput) Index(i pulumi.Int
 
 type GetMysqlDbSystemsDbSystemDeletionPolicy struct {
 	// Specifies if any automatic backups created for a DB System should be retained or deleted when the DB System is deleted.
-	AutomaticBackupRetention string `pulumi:"automaticBackupRetention"`
+	AutomaticBackupRetention *string `pulumi:"automaticBackupRetention"`
 	// Specifies whether or not a backup is taken when the DB System is deleted. REQUIRE_FINAL_BACKUP: a backup is taken if the DB System is deleted. SKIP_FINAL_BACKUP: a backup is not taken if the DB System is deleted.
-	FinalBackup string `pulumi:"finalBackup"`
+	FinalBackup *string `pulumi:"finalBackup"`
 	// Specifies whether the DB System can be deleted. Set to true to prevent deletion, false (default) to allow.
-	IsDeleteProtected bool `pulumi:"isDeleteProtected"`
+	IsDeleteProtected *bool `pulumi:"isDeleteProtected"`
 }
 
 // GetMysqlDbSystemsDbSystemDeletionPolicyInput is an input type that accepts GetMysqlDbSystemsDbSystemDeletionPolicyArgs and GetMysqlDbSystemsDbSystemDeletionPolicyOutput values.
@@ -18664,11 +16555,11 @@ type GetMysqlDbSystemsDbSystemDeletionPolicyInput interface {
 
 type GetMysqlDbSystemsDbSystemDeletionPolicyArgs struct {
 	// Specifies if any automatic backups created for a DB System should be retained or deleted when the DB System is deleted.
-	AutomaticBackupRetention pulumi.StringInput `pulumi:"automaticBackupRetention"`
+	AutomaticBackupRetention pulumi.StringPtrInput `pulumi:"automaticBackupRetention"`
 	// Specifies whether or not a backup is taken when the DB System is deleted. REQUIRE_FINAL_BACKUP: a backup is taken if the DB System is deleted. SKIP_FINAL_BACKUP: a backup is not taken if the DB System is deleted.
-	FinalBackup pulumi.StringInput `pulumi:"finalBackup"`
+	FinalBackup pulumi.StringPtrInput `pulumi:"finalBackup"`
 	// Specifies whether the DB System can be deleted. Set to true to prevent deletion, false (default) to allow.
-	IsDeleteProtected pulumi.BoolInput `pulumi:"isDeleteProtected"`
+	IsDeleteProtected pulumi.BoolPtrInput `pulumi:"isDeleteProtected"`
 }
 
 func (GetMysqlDbSystemsDbSystemDeletionPolicyArgs) ElementType() reflect.Type {
@@ -18681,12 +16572,6 @@ func (i GetMysqlDbSystemsDbSystemDeletionPolicyArgs) ToGetMysqlDbSystemsDbSystem
 
 func (i GetMysqlDbSystemsDbSystemDeletionPolicyArgs) ToGetMysqlDbSystemsDbSystemDeletionPolicyOutputWithContext(ctx context.Context) GetMysqlDbSystemsDbSystemDeletionPolicyOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemsDbSystemDeletionPolicyOutput)
-}
-
-func (i GetMysqlDbSystemsDbSystemDeletionPolicyArgs) ToOutput(ctx context.Context) pulumix.Output[GetMysqlDbSystemsDbSystemDeletionPolicy] {
-	return pulumix.Output[GetMysqlDbSystemsDbSystemDeletionPolicy]{
-		OutputState: i.ToGetMysqlDbSystemsDbSystemDeletionPolicyOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetMysqlDbSystemsDbSystemDeletionPolicyArrayInput is an input type that accepts GetMysqlDbSystemsDbSystemDeletionPolicyArray and GetMysqlDbSystemsDbSystemDeletionPolicyArrayOutput values.
@@ -18714,12 +16599,6 @@ func (i GetMysqlDbSystemsDbSystemDeletionPolicyArray) ToGetMysqlDbSystemsDbSyste
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemsDbSystemDeletionPolicyArrayOutput)
 }
 
-func (i GetMysqlDbSystemsDbSystemDeletionPolicyArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlDbSystemsDbSystemDeletionPolicy] {
-	return pulumix.Output[[]GetMysqlDbSystemsDbSystemDeletionPolicy]{
-		OutputState: i.ToGetMysqlDbSystemsDbSystemDeletionPolicyArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMysqlDbSystemsDbSystemDeletionPolicyOutput struct{ *pulumi.OutputState }
 
 func (GetMysqlDbSystemsDbSystemDeletionPolicyOutput) ElementType() reflect.Type {
@@ -18734,25 +16613,19 @@ func (o GetMysqlDbSystemsDbSystemDeletionPolicyOutput) ToGetMysqlDbSystemsDbSyst
 	return o
 }
 
-func (o GetMysqlDbSystemsDbSystemDeletionPolicyOutput) ToOutput(ctx context.Context) pulumix.Output[GetMysqlDbSystemsDbSystemDeletionPolicy] {
-	return pulumix.Output[GetMysqlDbSystemsDbSystemDeletionPolicy]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Specifies if any automatic backups created for a DB System should be retained or deleted when the DB System is deleted.
-func (o GetMysqlDbSystemsDbSystemDeletionPolicyOutput) AutomaticBackupRetention() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemDeletionPolicy) string { return v.AutomaticBackupRetention }).(pulumi.StringOutput)
+func (o GetMysqlDbSystemsDbSystemDeletionPolicyOutput) AutomaticBackupRetention() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemDeletionPolicy) *string { return v.AutomaticBackupRetention }).(pulumi.StringPtrOutput)
 }
 
 // Specifies whether or not a backup is taken when the DB System is deleted. REQUIRE_FINAL_BACKUP: a backup is taken if the DB System is deleted. SKIP_FINAL_BACKUP: a backup is not taken if the DB System is deleted.
-func (o GetMysqlDbSystemsDbSystemDeletionPolicyOutput) FinalBackup() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemDeletionPolicy) string { return v.FinalBackup }).(pulumi.StringOutput)
+func (o GetMysqlDbSystemsDbSystemDeletionPolicyOutput) FinalBackup() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemDeletionPolicy) *string { return v.FinalBackup }).(pulumi.StringPtrOutput)
 }
 
 // Specifies whether the DB System can be deleted. Set to true to prevent deletion, false (default) to allow.
-func (o GetMysqlDbSystemsDbSystemDeletionPolicyOutput) IsDeleteProtected() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemDeletionPolicy) bool { return v.IsDeleteProtected }).(pulumi.BoolOutput)
+func (o GetMysqlDbSystemsDbSystemDeletionPolicyOutput) IsDeleteProtected() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemDeletionPolicy) *bool { return v.IsDeleteProtected }).(pulumi.BoolPtrOutput)
 }
 
 type GetMysqlDbSystemsDbSystemDeletionPolicyArrayOutput struct{ *pulumi.OutputState }
@@ -18769,12 +16642,6 @@ func (o GetMysqlDbSystemsDbSystemDeletionPolicyArrayOutput) ToGetMysqlDbSystemsD
 	return o
 }
 
-func (o GetMysqlDbSystemsDbSystemDeletionPolicyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlDbSystemsDbSystemDeletionPolicy] {
-	return pulumix.Output[[]GetMysqlDbSystemsDbSystemDeletionPolicy]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetMysqlDbSystemsDbSystemDeletionPolicyArrayOutput) Index(i pulumi.IntInput) GetMysqlDbSystemsDbSystemDeletionPolicyOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlDbSystemsDbSystemDeletionPolicy {
 		return vs[0].([]GetMysqlDbSystemsDbSystemDeletionPolicy)[vs[1].(int)]
@@ -18783,23 +16650,23 @@ func (o GetMysqlDbSystemsDbSystemDeletionPolicyArrayOutput) Index(i pulumi.IntIn
 
 type GetMysqlDbSystemsDbSystemEndpoint struct {
 	// The network address of the DB System.
-	Hostname string `pulumi:"hostname"`
+	Hostname *string `pulumi:"hostname"`
 	// The IP address the DB System is configured to listen on. A private IP address of the primary endpoint of the DB System. Must be an available IP address within the subnet's CIDR. This will be a "dotted-quad" style IPv4 address.
-	IpAddress string `pulumi:"ipAddress"`
+	IpAddress *string `pulumi:"ipAddress"`
 	// The access modes from the client that this endpoint supports.
 	Modes []string `pulumi:"modes"`
 	// The port for primary endpoint of the DB System to listen on.
-	Port int `pulumi:"port"`
+	Port *int `pulumi:"port"`
 	// The network port on which X Plugin listens for TCP/IP connections. This is the X Plugin equivalent of port.
-	PortX int `pulumi:"portX"`
+	PortX *int `pulumi:"portX"`
 	// The OCID of the resource that this endpoint is attached to.
-	ResourceId string `pulumi:"resourceId"`
+	ResourceId *string `pulumi:"resourceId"`
 	// The type of endpoint that clients and connectors can connect to.
-	ResourceType string `pulumi:"resourceType"`
+	ResourceType *string `pulumi:"resourceType"`
 	// The state of the endpoints, as far as it can seen from the DB System. There may be some inconsistency with the actual state of the MySQL service.
-	Status string `pulumi:"status"`
+	Status *string `pulumi:"status"`
 	// Additional information about the current endpoint status.
-	StatusDetails string `pulumi:"statusDetails"`
+	StatusDetails *string `pulumi:"statusDetails"`
 }
 
 // GetMysqlDbSystemsDbSystemEndpointInput is an input type that accepts GetMysqlDbSystemsDbSystemEndpointArgs and GetMysqlDbSystemsDbSystemEndpointOutput values.
@@ -18815,23 +16682,23 @@ type GetMysqlDbSystemsDbSystemEndpointInput interface {
 
 type GetMysqlDbSystemsDbSystemEndpointArgs struct {
 	// The network address of the DB System.
-	Hostname pulumi.StringInput `pulumi:"hostname"`
+	Hostname pulumi.StringPtrInput `pulumi:"hostname"`
 	// The IP address the DB System is configured to listen on. A private IP address of the primary endpoint of the DB System. Must be an available IP address within the subnet's CIDR. This will be a "dotted-quad" style IPv4 address.
-	IpAddress pulumi.StringInput `pulumi:"ipAddress"`
+	IpAddress pulumi.StringPtrInput `pulumi:"ipAddress"`
 	// The access modes from the client that this endpoint supports.
 	Modes pulumi.StringArrayInput `pulumi:"modes"`
 	// The port for primary endpoint of the DB System to listen on.
-	Port pulumi.IntInput `pulumi:"port"`
+	Port pulumi.IntPtrInput `pulumi:"port"`
 	// The network port on which X Plugin listens for TCP/IP connections. This is the X Plugin equivalent of port.
-	PortX pulumi.IntInput `pulumi:"portX"`
+	PortX pulumi.IntPtrInput `pulumi:"portX"`
 	// The OCID of the resource that this endpoint is attached to.
-	ResourceId pulumi.StringInput `pulumi:"resourceId"`
+	ResourceId pulumi.StringPtrInput `pulumi:"resourceId"`
 	// The type of endpoint that clients and connectors can connect to.
-	ResourceType pulumi.StringInput `pulumi:"resourceType"`
+	ResourceType pulumi.StringPtrInput `pulumi:"resourceType"`
 	// The state of the endpoints, as far as it can seen from the DB System. There may be some inconsistency with the actual state of the MySQL service.
-	Status pulumi.StringInput `pulumi:"status"`
+	Status pulumi.StringPtrInput `pulumi:"status"`
 	// Additional information about the current endpoint status.
-	StatusDetails pulumi.StringInput `pulumi:"statusDetails"`
+	StatusDetails pulumi.StringPtrInput `pulumi:"statusDetails"`
 }
 
 func (GetMysqlDbSystemsDbSystemEndpointArgs) ElementType() reflect.Type {
@@ -18844,12 +16711,6 @@ func (i GetMysqlDbSystemsDbSystemEndpointArgs) ToGetMysqlDbSystemsDbSystemEndpoi
 
 func (i GetMysqlDbSystemsDbSystemEndpointArgs) ToGetMysqlDbSystemsDbSystemEndpointOutputWithContext(ctx context.Context) GetMysqlDbSystemsDbSystemEndpointOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemsDbSystemEndpointOutput)
-}
-
-func (i GetMysqlDbSystemsDbSystemEndpointArgs) ToOutput(ctx context.Context) pulumix.Output[GetMysqlDbSystemsDbSystemEndpoint] {
-	return pulumix.Output[GetMysqlDbSystemsDbSystemEndpoint]{
-		OutputState: i.ToGetMysqlDbSystemsDbSystemEndpointOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetMysqlDbSystemsDbSystemEndpointArrayInput is an input type that accepts GetMysqlDbSystemsDbSystemEndpointArray and GetMysqlDbSystemsDbSystemEndpointArrayOutput values.
@@ -18877,12 +16738,6 @@ func (i GetMysqlDbSystemsDbSystemEndpointArray) ToGetMysqlDbSystemsDbSystemEndpo
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemsDbSystemEndpointArrayOutput)
 }
 
-func (i GetMysqlDbSystemsDbSystemEndpointArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlDbSystemsDbSystemEndpoint] {
-	return pulumix.Output[[]GetMysqlDbSystemsDbSystemEndpoint]{
-		OutputState: i.ToGetMysqlDbSystemsDbSystemEndpointArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMysqlDbSystemsDbSystemEndpointOutput struct{ *pulumi.OutputState }
 
 func (GetMysqlDbSystemsDbSystemEndpointOutput) ElementType() reflect.Type {
@@ -18897,20 +16752,14 @@ func (o GetMysqlDbSystemsDbSystemEndpointOutput) ToGetMysqlDbSystemsDbSystemEndp
 	return o
 }
 
-func (o GetMysqlDbSystemsDbSystemEndpointOutput) ToOutput(ctx context.Context) pulumix.Output[GetMysqlDbSystemsDbSystemEndpoint] {
-	return pulumix.Output[GetMysqlDbSystemsDbSystemEndpoint]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The network address of the DB System.
-func (o GetMysqlDbSystemsDbSystemEndpointOutput) Hostname() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemEndpoint) string { return v.Hostname }).(pulumi.StringOutput)
+func (o GetMysqlDbSystemsDbSystemEndpointOutput) Hostname() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemEndpoint) *string { return v.Hostname }).(pulumi.StringPtrOutput)
 }
 
 // The IP address the DB System is configured to listen on. A private IP address of the primary endpoint of the DB System. Must be an available IP address within the subnet's CIDR. This will be a "dotted-quad" style IPv4 address.
-func (o GetMysqlDbSystemsDbSystemEndpointOutput) IpAddress() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemEndpoint) string { return v.IpAddress }).(pulumi.StringOutput)
+func (o GetMysqlDbSystemsDbSystemEndpointOutput) IpAddress() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemEndpoint) *string { return v.IpAddress }).(pulumi.StringPtrOutput)
 }
 
 // The access modes from the client that this endpoint supports.
@@ -18919,33 +16768,33 @@ func (o GetMysqlDbSystemsDbSystemEndpointOutput) Modes() pulumi.StringArrayOutpu
 }
 
 // The port for primary endpoint of the DB System to listen on.
-func (o GetMysqlDbSystemsDbSystemEndpointOutput) Port() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemEndpoint) int { return v.Port }).(pulumi.IntOutput)
+func (o GetMysqlDbSystemsDbSystemEndpointOutput) Port() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemEndpoint) *int { return v.Port }).(pulumi.IntPtrOutput)
 }
 
 // The network port on which X Plugin listens for TCP/IP connections. This is the X Plugin equivalent of port.
-func (o GetMysqlDbSystemsDbSystemEndpointOutput) PortX() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemEndpoint) int { return v.PortX }).(pulumi.IntOutput)
+func (o GetMysqlDbSystemsDbSystemEndpointOutput) PortX() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemEndpoint) *int { return v.PortX }).(pulumi.IntPtrOutput)
 }
 
 // The OCID of the resource that this endpoint is attached to.
-func (o GetMysqlDbSystemsDbSystemEndpointOutput) ResourceId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemEndpoint) string { return v.ResourceId }).(pulumi.StringOutput)
+func (o GetMysqlDbSystemsDbSystemEndpointOutput) ResourceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemEndpoint) *string { return v.ResourceId }).(pulumi.StringPtrOutput)
 }
 
 // The type of endpoint that clients and connectors can connect to.
-func (o GetMysqlDbSystemsDbSystemEndpointOutput) ResourceType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemEndpoint) string { return v.ResourceType }).(pulumi.StringOutput)
+func (o GetMysqlDbSystemsDbSystemEndpointOutput) ResourceType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemEndpoint) *string { return v.ResourceType }).(pulumi.StringPtrOutput)
 }
 
 // The state of the endpoints, as far as it can seen from the DB System. There may be some inconsistency with the actual state of the MySQL service.
-func (o GetMysqlDbSystemsDbSystemEndpointOutput) Status() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemEndpoint) string { return v.Status }).(pulumi.StringOutput)
+func (o GetMysqlDbSystemsDbSystemEndpointOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemEndpoint) *string { return v.Status }).(pulumi.StringPtrOutput)
 }
 
 // Additional information about the current endpoint status.
-func (o GetMysqlDbSystemsDbSystemEndpointOutput) StatusDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemEndpoint) string { return v.StatusDetails }).(pulumi.StringOutput)
+func (o GetMysqlDbSystemsDbSystemEndpointOutput) StatusDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemEndpoint) *string { return v.StatusDetails }).(pulumi.StringPtrOutput)
 }
 
 type GetMysqlDbSystemsDbSystemEndpointArrayOutput struct{ *pulumi.OutputState }
@@ -18962,12 +16811,6 @@ func (o GetMysqlDbSystemsDbSystemEndpointArrayOutput) ToGetMysqlDbSystemsDbSyste
 	return o
 }
 
-func (o GetMysqlDbSystemsDbSystemEndpointArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlDbSystemsDbSystemEndpoint] {
-	return pulumix.Output[[]GetMysqlDbSystemsDbSystemEndpoint]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetMysqlDbSystemsDbSystemEndpointArrayOutput) Index(i pulumi.IntInput) GetMysqlDbSystemsDbSystemEndpointOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlDbSystemsDbSystemEndpoint {
 		return vs[0].([]GetMysqlDbSystemsDbSystemEndpoint)[vs[1].(int)]
@@ -18976,17 +16819,17 @@ func (o GetMysqlDbSystemsDbSystemEndpointArrayOutput) Index(i pulumi.IntInput) G
 
 type GetMysqlDbSystemsDbSystemHeatWaveCluster struct {
 	// The number of analytics-processing compute instances, of the specified shape, in the HeatWave cluster.
-	ClusterSize int `pulumi:"clusterSize"`
+	ClusterSize *int `pulumi:"clusterSize"`
 	// Lakehouse enabled status for the HeatWave cluster.
-	IsLakehouseEnabled bool `pulumi:"isLakehouseEnabled"`
+	IsLakehouseEnabled *bool `pulumi:"isLakehouseEnabled"`
 	// The shape of the primary instances of the DB System. The shape determines resources allocated to a DB System - CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use (the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20181021/ShapeSummary/ListShapes) operation.
-	ShapeName string `pulumi:"shapeName"`
+	ShapeName *string `pulumi:"shapeName"`
 	// DbSystem Lifecycle State
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The date and time the DB System was created.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time the DB System was last updated.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 // GetMysqlDbSystemsDbSystemHeatWaveClusterInput is an input type that accepts GetMysqlDbSystemsDbSystemHeatWaveClusterArgs and GetMysqlDbSystemsDbSystemHeatWaveClusterOutput values.
@@ -19002,17 +16845,17 @@ type GetMysqlDbSystemsDbSystemHeatWaveClusterInput interface {
 
 type GetMysqlDbSystemsDbSystemHeatWaveClusterArgs struct {
 	// The number of analytics-processing compute instances, of the specified shape, in the HeatWave cluster.
-	ClusterSize pulumi.IntInput `pulumi:"clusterSize"`
+	ClusterSize pulumi.IntPtrInput `pulumi:"clusterSize"`
 	// Lakehouse enabled status for the HeatWave cluster.
-	IsLakehouseEnabled pulumi.BoolInput `pulumi:"isLakehouseEnabled"`
+	IsLakehouseEnabled pulumi.BoolPtrInput `pulumi:"isLakehouseEnabled"`
 	// The shape of the primary instances of the DB System. The shape determines resources allocated to a DB System - CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use (the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20181021/ShapeSummary/ListShapes) operation.
-	ShapeName pulumi.StringInput `pulumi:"shapeName"`
+	ShapeName pulumi.StringPtrInput `pulumi:"shapeName"`
 	// DbSystem Lifecycle State
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// The date and time the DB System was created.
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// The time the DB System was last updated.
-	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
 }
 
 func (GetMysqlDbSystemsDbSystemHeatWaveClusterArgs) ElementType() reflect.Type {
@@ -19025,12 +16868,6 @@ func (i GetMysqlDbSystemsDbSystemHeatWaveClusterArgs) ToGetMysqlDbSystemsDbSyste
 
 func (i GetMysqlDbSystemsDbSystemHeatWaveClusterArgs) ToGetMysqlDbSystemsDbSystemHeatWaveClusterOutputWithContext(ctx context.Context) GetMysqlDbSystemsDbSystemHeatWaveClusterOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemsDbSystemHeatWaveClusterOutput)
-}
-
-func (i GetMysqlDbSystemsDbSystemHeatWaveClusterArgs) ToOutput(ctx context.Context) pulumix.Output[GetMysqlDbSystemsDbSystemHeatWaveCluster] {
-	return pulumix.Output[GetMysqlDbSystemsDbSystemHeatWaveCluster]{
-		OutputState: i.ToGetMysqlDbSystemsDbSystemHeatWaveClusterOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetMysqlDbSystemsDbSystemHeatWaveClusterArrayInput is an input type that accepts GetMysqlDbSystemsDbSystemHeatWaveClusterArray and GetMysqlDbSystemsDbSystemHeatWaveClusterArrayOutput values.
@@ -19058,12 +16895,6 @@ func (i GetMysqlDbSystemsDbSystemHeatWaveClusterArray) ToGetMysqlDbSystemsDbSyst
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemsDbSystemHeatWaveClusterArrayOutput)
 }
 
-func (i GetMysqlDbSystemsDbSystemHeatWaveClusterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlDbSystemsDbSystemHeatWaveCluster] {
-	return pulumix.Output[[]GetMysqlDbSystemsDbSystemHeatWaveCluster]{
-		OutputState: i.ToGetMysqlDbSystemsDbSystemHeatWaveClusterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMysqlDbSystemsDbSystemHeatWaveClusterOutput struct{ *pulumi.OutputState }
 
 func (GetMysqlDbSystemsDbSystemHeatWaveClusterOutput) ElementType() reflect.Type {
@@ -19078,40 +16909,34 @@ func (o GetMysqlDbSystemsDbSystemHeatWaveClusterOutput) ToGetMysqlDbSystemsDbSys
 	return o
 }
 
-func (o GetMysqlDbSystemsDbSystemHeatWaveClusterOutput) ToOutput(ctx context.Context) pulumix.Output[GetMysqlDbSystemsDbSystemHeatWaveCluster] {
-	return pulumix.Output[GetMysqlDbSystemsDbSystemHeatWaveCluster]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The number of analytics-processing compute instances, of the specified shape, in the HeatWave cluster.
-func (o GetMysqlDbSystemsDbSystemHeatWaveClusterOutput) ClusterSize() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemHeatWaveCluster) int { return v.ClusterSize }).(pulumi.IntOutput)
+func (o GetMysqlDbSystemsDbSystemHeatWaveClusterOutput) ClusterSize() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemHeatWaveCluster) *int { return v.ClusterSize }).(pulumi.IntPtrOutput)
 }
 
 // Lakehouse enabled status for the HeatWave cluster.
-func (o GetMysqlDbSystemsDbSystemHeatWaveClusterOutput) IsLakehouseEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemHeatWaveCluster) bool { return v.IsLakehouseEnabled }).(pulumi.BoolOutput)
+func (o GetMysqlDbSystemsDbSystemHeatWaveClusterOutput) IsLakehouseEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemHeatWaveCluster) *bool { return v.IsLakehouseEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // The shape of the primary instances of the DB System. The shape determines resources allocated to a DB System - CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use (the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20181021/ShapeSummary/ListShapes) operation.
-func (o GetMysqlDbSystemsDbSystemHeatWaveClusterOutput) ShapeName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemHeatWaveCluster) string { return v.ShapeName }).(pulumi.StringOutput)
+func (o GetMysqlDbSystemsDbSystemHeatWaveClusterOutput) ShapeName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemHeatWaveCluster) *string { return v.ShapeName }).(pulumi.StringPtrOutput)
 }
 
 // DbSystem Lifecycle State
-func (o GetMysqlDbSystemsDbSystemHeatWaveClusterOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemHeatWaveCluster) string { return v.State }).(pulumi.StringOutput)
+func (o GetMysqlDbSystemsDbSystemHeatWaveClusterOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemHeatWaveCluster) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the DB System was created.
-func (o GetMysqlDbSystemsDbSystemHeatWaveClusterOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemHeatWaveCluster) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetMysqlDbSystemsDbSystemHeatWaveClusterOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemHeatWaveCluster) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time the DB System was last updated.
-func (o GetMysqlDbSystemsDbSystemHeatWaveClusterOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemHeatWaveCluster) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o GetMysqlDbSystemsDbSystemHeatWaveClusterOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemHeatWaveCluster) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type GetMysqlDbSystemsDbSystemHeatWaveClusterArrayOutput struct{ *pulumi.OutputState }
@@ -19128,12 +16953,6 @@ func (o GetMysqlDbSystemsDbSystemHeatWaveClusterArrayOutput) ToGetMysqlDbSystems
 	return o
 }
 
-func (o GetMysqlDbSystemsDbSystemHeatWaveClusterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlDbSystemsDbSystemHeatWaveCluster] {
-	return pulumix.Output[[]GetMysqlDbSystemsDbSystemHeatWaveCluster]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetMysqlDbSystemsDbSystemHeatWaveClusterArrayOutput) Index(i pulumi.IntInput) GetMysqlDbSystemsDbSystemHeatWaveClusterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlDbSystemsDbSystemHeatWaveCluster {
 		return vs[0].([]GetMysqlDbSystemsDbSystemHeatWaveCluster)[vs[1].(int)]
@@ -19142,7 +16961,7 @@ func (o GetMysqlDbSystemsDbSystemHeatWaveClusterArrayOutput) Index(i pulumi.IntI
 
 type GetMysqlDbSystemsDbSystemMaintenance struct {
 	// The start time of the maintenance window.
-	WindowStartTime string `pulumi:"windowStartTime"`
+	WindowStartTime *string `pulumi:"windowStartTime"`
 }
 
 // GetMysqlDbSystemsDbSystemMaintenanceInput is an input type that accepts GetMysqlDbSystemsDbSystemMaintenanceArgs and GetMysqlDbSystemsDbSystemMaintenanceOutput values.
@@ -19158,7 +16977,7 @@ type GetMysqlDbSystemsDbSystemMaintenanceInput interface {
 
 type GetMysqlDbSystemsDbSystemMaintenanceArgs struct {
 	// The start time of the maintenance window.
-	WindowStartTime pulumi.StringInput `pulumi:"windowStartTime"`
+	WindowStartTime pulumi.StringPtrInput `pulumi:"windowStartTime"`
 }
 
 func (GetMysqlDbSystemsDbSystemMaintenanceArgs) ElementType() reflect.Type {
@@ -19171,12 +16990,6 @@ func (i GetMysqlDbSystemsDbSystemMaintenanceArgs) ToGetMysqlDbSystemsDbSystemMai
 
 func (i GetMysqlDbSystemsDbSystemMaintenanceArgs) ToGetMysqlDbSystemsDbSystemMaintenanceOutputWithContext(ctx context.Context) GetMysqlDbSystemsDbSystemMaintenanceOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemsDbSystemMaintenanceOutput)
-}
-
-func (i GetMysqlDbSystemsDbSystemMaintenanceArgs) ToOutput(ctx context.Context) pulumix.Output[GetMysqlDbSystemsDbSystemMaintenance] {
-	return pulumix.Output[GetMysqlDbSystemsDbSystemMaintenance]{
-		OutputState: i.ToGetMysqlDbSystemsDbSystemMaintenanceOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetMysqlDbSystemsDbSystemMaintenanceArrayInput is an input type that accepts GetMysqlDbSystemsDbSystemMaintenanceArray and GetMysqlDbSystemsDbSystemMaintenanceArrayOutput values.
@@ -19204,12 +17017,6 @@ func (i GetMysqlDbSystemsDbSystemMaintenanceArray) ToGetMysqlDbSystemsDbSystemMa
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemsDbSystemMaintenanceArrayOutput)
 }
 
-func (i GetMysqlDbSystemsDbSystemMaintenanceArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlDbSystemsDbSystemMaintenance] {
-	return pulumix.Output[[]GetMysqlDbSystemsDbSystemMaintenance]{
-		OutputState: i.ToGetMysqlDbSystemsDbSystemMaintenanceArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMysqlDbSystemsDbSystemMaintenanceOutput struct{ *pulumi.OutputState }
 
 func (GetMysqlDbSystemsDbSystemMaintenanceOutput) ElementType() reflect.Type {
@@ -19224,15 +17031,9 @@ func (o GetMysqlDbSystemsDbSystemMaintenanceOutput) ToGetMysqlDbSystemsDbSystemM
 	return o
 }
 
-func (o GetMysqlDbSystemsDbSystemMaintenanceOutput) ToOutput(ctx context.Context) pulumix.Output[GetMysqlDbSystemsDbSystemMaintenance] {
-	return pulumix.Output[GetMysqlDbSystemsDbSystemMaintenance]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The start time of the maintenance window.
-func (o GetMysqlDbSystemsDbSystemMaintenanceOutput) WindowStartTime() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemMaintenance) string { return v.WindowStartTime }).(pulumi.StringOutput)
+func (o GetMysqlDbSystemsDbSystemMaintenanceOutput) WindowStartTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemMaintenance) *string { return v.WindowStartTime }).(pulumi.StringPtrOutput)
 }
 
 type GetMysqlDbSystemsDbSystemMaintenanceArrayOutput struct{ *pulumi.OutputState }
@@ -19249,12 +17050,6 @@ func (o GetMysqlDbSystemsDbSystemMaintenanceArrayOutput) ToGetMysqlDbSystemsDbSy
 	return o
 }
 
-func (o GetMysqlDbSystemsDbSystemMaintenanceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlDbSystemsDbSystemMaintenance] {
-	return pulumix.Output[[]GetMysqlDbSystemsDbSystemMaintenance]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetMysqlDbSystemsDbSystemMaintenanceArrayOutput) Index(i pulumi.IntInput) GetMysqlDbSystemsDbSystemMaintenanceOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlDbSystemsDbSystemMaintenance {
 		return vs[0].([]GetMysqlDbSystemsDbSystemMaintenance)[vs[1].(int)]
@@ -19263,9 +17058,9 @@ func (o GetMysqlDbSystemsDbSystemMaintenanceArrayOutput) Index(i pulumi.IntInput
 
 type GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetail struct {
 	// Earliest recovery time point for the DB System, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-	TimeEarliestRecoveryPoint string `pulumi:"timeEarliestRecoveryPoint"`
+	TimeEarliestRecoveryPoint *string `pulumi:"timeEarliestRecoveryPoint"`
 	// Latest recovery time point for the DB System, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-	TimeLatestRecoveryPoint string `pulumi:"timeLatestRecoveryPoint"`
+	TimeLatestRecoveryPoint *string `pulumi:"timeLatestRecoveryPoint"`
 }
 
 // GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailInput is an input type that accepts GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailArgs and GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailOutput values.
@@ -19281,9 +17076,9 @@ type GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailInput interface {
 
 type GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailArgs struct {
 	// Earliest recovery time point for the DB System, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-	TimeEarliestRecoveryPoint pulumi.StringInput `pulumi:"timeEarliestRecoveryPoint"`
+	TimeEarliestRecoveryPoint pulumi.StringPtrInput `pulumi:"timeEarliestRecoveryPoint"`
 	// Latest recovery time point for the DB System, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-	TimeLatestRecoveryPoint pulumi.StringInput `pulumi:"timeLatestRecoveryPoint"`
+	TimeLatestRecoveryPoint pulumi.StringPtrInput `pulumi:"timeLatestRecoveryPoint"`
 }
 
 func (GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailArgs) ElementType() reflect.Type {
@@ -19296,12 +17091,6 @@ func (i GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailArgs) ToGetMysqlDbSyst
 
 func (i GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailArgs) ToGetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailOutputWithContext(ctx context.Context) GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailOutput)
-}
-
-func (i GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetail] {
-	return pulumix.Output[GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetail]{
-		OutputState: i.ToGetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailArrayInput is an input type that accepts GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailArray and GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailArrayOutput values.
@@ -19329,12 +17118,6 @@ func (i GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailArray) ToGetMysqlDbSys
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailArrayOutput)
 }
 
-func (i GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetail] {
-	return pulumix.Output[[]GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetail]{
-		OutputState: i.ToGetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailOutput struct{ *pulumi.OutputState }
 
 func (GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailOutput) ElementType() reflect.Type {
@@ -19349,20 +17132,14 @@ func (o GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailOutput) ToGetMysqlDbSy
 	return o
 }
 
-func (o GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetail] {
-	return pulumix.Output[GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Earliest recovery time point for the DB System, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-func (o GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailOutput) TimeEarliestRecoveryPoint() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetail) string { return v.TimeEarliestRecoveryPoint }).(pulumi.StringOutput)
+func (o GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailOutput) TimeEarliestRecoveryPoint() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetail) *string { return v.TimeEarliestRecoveryPoint }).(pulumi.StringPtrOutput)
 }
 
 // Latest recovery time point for the DB System, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-func (o GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailOutput) TimeLatestRecoveryPoint() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetail) string { return v.TimeLatestRecoveryPoint }).(pulumi.StringOutput)
+func (o GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailOutput) TimeLatestRecoveryPoint() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetail) *string { return v.TimeLatestRecoveryPoint }).(pulumi.StringPtrOutput)
 }
 
 type GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailArrayOutput struct{ *pulumi.OutputState }
@@ -19379,12 +17156,6 @@ func (o GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailArrayOutput) ToGetMysq
 	return o
 }
 
-func (o GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetail] {
-	return pulumix.Output[[]GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailArrayOutput) Index(i pulumi.IntInput) GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetail {
 		return vs[0].([]GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetail)[vs[1].(int)]
@@ -19393,14 +17164,14 @@ func (o GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailArrayOutput) Index(i p
 
 type GetMysqlDbSystemsDbSystemSource struct {
 	// The OCID of the backup to be used as the source for the new DB System.
-	BackupId string `pulumi:"backupId"`
+	BackupId *string `pulumi:"backupId"`
 	// The DB System [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-	DbSystemId string `pulumi:"dbSystemId"`
+	DbSystemId *string `pulumi:"dbSystemId"`
 	// The date and time, as per RFC 3339, of the change up to which the new DB System shall be restored to, using a backup and logs from the original DB System. In case no point in time is specified, then this new DB System shall be restored up to the latest change recorded for the original DB System.
-	RecoveryPoint string `pulumi:"recoveryPoint"`
+	RecoveryPoint *string `pulumi:"recoveryPoint"`
 	// The specific source identifier.
-	SourceType string `pulumi:"sourceType"`
-	SourceUrl  string `pulumi:"sourceUrl"`
+	SourceType *string `pulumi:"sourceType"`
+	SourceUrl  *string `pulumi:"sourceUrl"`
 }
 
 // GetMysqlDbSystemsDbSystemSourceInput is an input type that accepts GetMysqlDbSystemsDbSystemSourceArgs and GetMysqlDbSystemsDbSystemSourceOutput values.
@@ -19416,14 +17187,14 @@ type GetMysqlDbSystemsDbSystemSourceInput interface {
 
 type GetMysqlDbSystemsDbSystemSourceArgs struct {
 	// The OCID of the backup to be used as the source for the new DB System.
-	BackupId pulumi.StringInput `pulumi:"backupId"`
+	BackupId pulumi.StringPtrInput `pulumi:"backupId"`
 	// The DB System [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-	DbSystemId pulumi.StringInput `pulumi:"dbSystemId"`
+	DbSystemId pulumi.StringPtrInput `pulumi:"dbSystemId"`
 	// The date and time, as per RFC 3339, of the change up to which the new DB System shall be restored to, using a backup and logs from the original DB System. In case no point in time is specified, then this new DB System shall be restored up to the latest change recorded for the original DB System.
-	RecoveryPoint pulumi.StringInput `pulumi:"recoveryPoint"`
+	RecoveryPoint pulumi.StringPtrInput `pulumi:"recoveryPoint"`
 	// The specific source identifier.
-	SourceType pulumi.StringInput `pulumi:"sourceType"`
-	SourceUrl  pulumi.StringInput `pulumi:"sourceUrl"`
+	SourceType pulumi.StringPtrInput `pulumi:"sourceType"`
+	SourceUrl  pulumi.StringPtrInput `pulumi:"sourceUrl"`
 }
 
 func (GetMysqlDbSystemsDbSystemSourceArgs) ElementType() reflect.Type {
@@ -19436,12 +17207,6 @@ func (i GetMysqlDbSystemsDbSystemSourceArgs) ToGetMysqlDbSystemsDbSystemSourceOu
 
 func (i GetMysqlDbSystemsDbSystemSourceArgs) ToGetMysqlDbSystemsDbSystemSourceOutputWithContext(ctx context.Context) GetMysqlDbSystemsDbSystemSourceOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemsDbSystemSourceOutput)
-}
-
-func (i GetMysqlDbSystemsDbSystemSourceArgs) ToOutput(ctx context.Context) pulumix.Output[GetMysqlDbSystemsDbSystemSource] {
-	return pulumix.Output[GetMysqlDbSystemsDbSystemSource]{
-		OutputState: i.ToGetMysqlDbSystemsDbSystemSourceOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetMysqlDbSystemsDbSystemSourceArrayInput is an input type that accepts GetMysqlDbSystemsDbSystemSourceArray and GetMysqlDbSystemsDbSystemSourceArrayOutput values.
@@ -19469,12 +17234,6 @@ func (i GetMysqlDbSystemsDbSystemSourceArray) ToGetMysqlDbSystemsDbSystemSourceA
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemsDbSystemSourceArrayOutput)
 }
 
-func (i GetMysqlDbSystemsDbSystemSourceArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlDbSystemsDbSystemSource] {
-	return pulumix.Output[[]GetMysqlDbSystemsDbSystemSource]{
-		OutputState: i.ToGetMysqlDbSystemsDbSystemSourceArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMysqlDbSystemsDbSystemSourceOutput struct{ *pulumi.OutputState }
 
 func (GetMysqlDbSystemsDbSystemSourceOutput) ElementType() reflect.Type {
@@ -19489,34 +17248,28 @@ func (o GetMysqlDbSystemsDbSystemSourceOutput) ToGetMysqlDbSystemsDbSystemSource
 	return o
 }
 
-func (o GetMysqlDbSystemsDbSystemSourceOutput) ToOutput(ctx context.Context) pulumix.Output[GetMysqlDbSystemsDbSystemSource] {
-	return pulumix.Output[GetMysqlDbSystemsDbSystemSource]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the backup to be used as the source for the new DB System.
-func (o GetMysqlDbSystemsDbSystemSourceOutput) BackupId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemSource) string { return v.BackupId }).(pulumi.StringOutput)
+func (o GetMysqlDbSystemsDbSystemSourceOutput) BackupId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemSource) *string { return v.BackupId }).(pulumi.StringPtrOutput)
 }
 
 // The DB System [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-func (o GetMysqlDbSystemsDbSystemSourceOutput) DbSystemId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemSource) string { return v.DbSystemId }).(pulumi.StringOutput)
+func (o GetMysqlDbSystemsDbSystemSourceOutput) DbSystemId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemSource) *string { return v.DbSystemId }).(pulumi.StringPtrOutput)
 }
 
 // The date and time, as per RFC 3339, of the change up to which the new DB System shall be restored to, using a backup and logs from the original DB System. In case no point in time is specified, then this new DB System shall be restored up to the latest change recorded for the original DB System.
-func (o GetMysqlDbSystemsDbSystemSourceOutput) RecoveryPoint() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemSource) string { return v.RecoveryPoint }).(pulumi.StringOutput)
+func (o GetMysqlDbSystemsDbSystemSourceOutput) RecoveryPoint() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemSource) *string { return v.RecoveryPoint }).(pulumi.StringPtrOutput)
 }
 
 // The specific source identifier.
-func (o GetMysqlDbSystemsDbSystemSourceOutput) SourceType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemSource) string { return v.SourceType }).(pulumi.StringOutput)
+func (o GetMysqlDbSystemsDbSystemSourceOutput) SourceType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemSource) *string { return v.SourceType }).(pulumi.StringPtrOutput)
 }
 
-func (o GetMysqlDbSystemsDbSystemSourceOutput) SourceUrl() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemSource) string { return v.SourceUrl }).(pulumi.StringOutput)
+func (o GetMysqlDbSystemsDbSystemSourceOutput) SourceUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemSource) *string { return v.SourceUrl }).(pulumi.StringPtrOutput)
 }
 
 type GetMysqlDbSystemsDbSystemSourceArrayOutput struct{ *pulumi.OutputState }
@@ -19531,12 +17284,6 @@ func (o GetMysqlDbSystemsDbSystemSourceArrayOutput) ToGetMysqlDbSystemsDbSystemS
 
 func (o GetMysqlDbSystemsDbSystemSourceArrayOutput) ToGetMysqlDbSystemsDbSystemSourceArrayOutputWithContext(ctx context.Context) GetMysqlDbSystemsDbSystemSourceArrayOutput {
 	return o
-}
-
-func (o GetMysqlDbSystemsDbSystemSourceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlDbSystemsDbSystemSource] {
-	return pulumix.Output[[]GetMysqlDbSystemsDbSystemSource]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetMysqlDbSystemsDbSystemSourceArrayOutput) Index(i pulumi.IntInput) GetMysqlDbSystemsDbSystemSourceOutput {
@@ -19580,12 +17327,6 @@ func (i GetMysqlDbSystemsFilterArgs) ToGetMysqlDbSystemsFilterOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemsFilterOutput)
 }
 
-func (i GetMysqlDbSystemsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetMysqlDbSystemsFilter] {
-	return pulumix.Output[GetMysqlDbSystemsFilter]{
-		OutputState: i.ToGetMysqlDbSystemsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetMysqlDbSystemsFilterArrayInput is an input type that accepts GetMysqlDbSystemsFilterArray and GetMysqlDbSystemsFilterArrayOutput values.
 // You can construct a concrete instance of `GetMysqlDbSystemsFilterArrayInput` via:
 //
@@ -19611,12 +17352,6 @@ func (i GetMysqlDbSystemsFilterArray) ToGetMysqlDbSystemsFilterArrayOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemsFilterArrayOutput)
 }
 
-func (i GetMysqlDbSystemsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlDbSystemsFilter] {
-	return pulumix.Output[[]GetMysqlDbSystemsFilter]{
-		OutputState: i.ToGetMysqlDbSystemsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMysqlDbSystemsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetMysqlDbSystemsFilterOutput) ElementType() reflect.Type {
@@ -19629,12 +17364,6 @@ func (o GetMysqlDbSystemsFilterOutput) ToGetMysqlDbSystemsFilterOutput() GetMysq
 
 func (o GetMysqlDbSystemsFilterOutput) ToGetMysqlDbSystemsFilterOutputWithContext(ctx context.Context) GetMysqlDbSystemsFilterOutput {
 	return o
-}
-
-func (o GetMysqlDbSystemsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetMysqlDbSystemsFilter] {
-	return pulumix.Output[GetMysqlDbSystemsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetMysqlDbSystemsFilterOutput) Name() pulumi.StringOutput {
@@ -19661,12 +17390,6 @@ func (o GetMysqlDbSystemsFilterArrayOutput) ToGetMysqlDbSystemsFilterArrayOutput
 
 func (o GetMysqlDbSystemsFilterArrayOutput) ToGetMysqlDbSystemsFilterArrayOutputWithContext(ctx context.Context) GetMysqlDbSystemsFilterArrayOutput {
 	return o
-}
-
-func (o GetMysqlDbSystemsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlDbSystemsFilter] {
-	return pulumix.Output[[]GetMysqlDbSystemsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetMysqlDbSystemsFilterArrayOutput) Index(i pulumi.IntInput) GetMysqlDbSystemsFilterOutput {
@@ -19710,12 +17433,6 @@ func (i GetMysqlVersionFilterArgs) ToGetMysqlVersionFilterOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlVersionFilterOutput)
 }
 
-func (i GetMysqlVersionFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetMysqlVersionFilter] {
-	return pulumix.Output[GetMysqlVersionFilter]{
-		OutputState: i.ToGetMysqlVersionFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetMysqlVersionFilterArrayInput is an input type that accepts GetMysqlVersionFilterArray and GetMysqlVersionFilterArrayOutput values.
 // You can construct a concrete instance of `GetMysqlVersionFilterArrayInput` via:
 //
@@ -19741,12 +17458,6 @@ func (i GetMysqlVersionFilterArray) ToGetMysqlVersionFilterArrayOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlVersionFilterArrayOutput)
 }
 
-func (i GetMysqlVersionFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlVersionFilter] {
-	return pulumix.Output[[]GetMysqlVersionFilter]{
-		OutputState: i.ToGetMysqlVersionFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMysqlVersionFilterOutput struct{ *pulumi.OutputState }
 
 func (GetMysqlVersionFilterOutput) ElementType() reflect.Type {
@@ -19759,12 +17470,6 @@ func (o GetMysqlVersionFilterOutput) ToGetMysqlVersionFilterOutput() GetMysqlVer
 
 func (o GetMysqlVersionFilterOutput) ToGetMysqlVersionFilterOutputWithContext(ctx context.Context) GetMysqlVersionFilterOutput {
 	return o
-}
-
-func (o GetMysqlVersionFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetMysqlVersionFilter] {
-	return pulumix.Output[GetMysqlVersionFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetMysqlVersionFilterOutput) Name() pulumi.StringOutput {
@@ -19793,12 +17498,6 @@ func (o GetMysqlVersionFilterArrayOutput) ToGetMysqlVersionFilterArrayOutputWith
 	return o
 }
 
-func (o GetMysqlVersionFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlVersionFilter] {
-	return pulumix.Output[[]GetMysqlVersionFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetMysqlVersionFilterArrayOutput) Index(i pulumi.IntInput) GetMysqlVersionFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlVersionFilter {
 		return vs[0].([]GetMysqlVersionFilter)[vs[1].(int)]
@@ -19807,7 +17506,7 @@ func (o GetMysqlVersionFilterArrayOutput) Index(i pulumi.IntInput) GetMysqlVersi
 
 type GetMysqlVersionVersion struct {
 	// A descriptive summary of a group of versions.
-	VersionFamily string `pulumi:"versionFamily"`
+	VersionFamily *string `pulumi:"versionFamily"`
 	// The list of supported MySQL Versions.
 	Versions []GetMysqlVersionVersionVersion `pulumi:"versions"`
 }
@@ -19825,7 +17524,7 @@ type GetMysqlVersionVersionInput interface {
 
 type GetMysqlVersionVersionArgs struct {
 	// A descriptive summary of a group of versions.
-	VersionFamily pulumi.StringInput `pulumi:"versionFamily"`
+	VersionFamily pulumi.StringPtrInput `pulumi:"versionFamily"`
 	// The list of supported MySQL Versions.
 	Versions GetMysqlVersionVersionVersionArrayInput `pulumi:"versions"`
 }
@@ -19840,12 +17539,6 @@ func (i GetMysqlVersionVersionArgs) ToGetMysqlVersionVersionOutput() GetMysqlVer
 
 func (i GetMysqlVersionVersionArgs) ToGetMysqlVersionVersionOutputWithContext(ctx context.Context) GetMysqlVersionVersionOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlVersionVersionOutput)
-}
-
-func (i GetMysqlVersionVersionArgs) ToOutput(ctx context.Context) pulumix.Output[GetMysqlVersionVersion] {
-	return pulumix.Output[GetMysqlVersionVersion]{
-		OutputState: i.ToGetMysqlVersionVersionOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetMysqlVersionVersionArrayInput is an input type that accepts GetMysqlVersionVersionArray and GetMysqlVersionVersionArrayOutput values.
@@ -19873,12 +17566,6 @@ func (i GetMysqlVersionVersionArray) ToGetMysqlVersionVersionArrayOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlVersionVersionArrayOutput)
 }
 
-func (i GetMysqlVersionVersionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlVersionVersion] {
-	return pulumix.Output[[]GetMysqlVersionVersion]{
-		OutputState: i.ToGetMysqlVersionVersionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMysqlVersionVersionOutput struct{ *pulumi.OutputState }
 
 func (GetMysqlVersionVersionOutput) ElementType() reflect.Type {
@@ -19893,15 +17580,9 @@ func (o GetMysqlVersionVersionOutput) ToGetMysqlVersionVersionOutputWithContext(
 	return o
 }
 
-func (o GetMysqlVersionVersionOutput) ToOutput(ctx context.Context) pulumix.Output[GetMysqlVersionVersion] {
-	return pulumix.Output[GetMysqlVersionVersion]{
-		OutputState: o.OutputState,
-	}
-}
-
 // A descriptive summary of a group of versions.
-func (o GetMysqlVersionVersionOutput) VersionFamily() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlVersionVersion) string { return v.VersionFamily }).(pulumi.StringOutput)
+func (o GetMysqlVersionVersionOutput) VersionFamily() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlVersionVersion) *string { return v.VersionFamily }).(pulumi.StringPtrOutput)
 }
 
 // The list of supported MySQL Versions.
@@ -19923,12 +17604,6 @@ func (o GetMysqlVersionVersionArrayOutput) ToGetMysqlVersionVersionArrayOutputWi
 	return o
 }
 
-func (o GetMysqlVersionVersionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlVersionVersion] {
-	return pulumix.Output[[]GetMysqlVersionVersion]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetMysqlVersionVersionArrayOutput) Index(i pulumi.IntInput) GetMysqlVersionVersionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlVersionVersion {
 		return vs[0].([]GetMysqlVersionVersion)[vs[1].(int)]
@@ -19937,9 +17612,9 @@ func (o GetMysqlVersionVersionArrayOutput) Index(i pulumi.IntInput) GetMysqlVers
 
 type GetMysqlVersionVersionVersion struct {
 	// A link to a page describing the version.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// The specific version identifier
-	Version string `pulumi:"version"`
+	Version *string `pulumi:"version"`
 }
 
 // GetMysqlVersionVersionVersionInput is an input type that accepts GetMysqlVersionVersionVersionArgs and GetMysqlVersionVersionVersionOutput values.
@@ -19955,9 +17630,9 @@ type GetMysqlVersionVersionVersionInput interface {
 
 type GetMysqlVersionVersionVersionArgs struct {
 	// A link to a page describing the version.
-	Description pulumi.StringInput `pulumi:"description"`
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// The specific version identifier
-	Version pulumi.StringInput `pulumi:"version"`
+	Version pulumi.StringPtrInput `pulumi:"version"`
 }
 
 func (GetMysqlVersionVersionVersionArgs) ElementType() reflect.Type {
@@ -19970,12 +17645,6 @@ func (i GetMysqlVersionVersionVersionArgs) ToGetMysqlVersionVersionVersionOutput
 
 func (i GetMysqlVersionVersionVersionArgs) ToGetMysqlVersionVersionVersionOutputWithContext(ctx context.Context) GetMysqlVersionVersionVersionOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlVersionVersionVersionOutput)
-}
-
-func (i GetMysqlVersionVersionVersionArgs) ToOutput(ctx context.Context) pulumix.Output[GetMysqlVersionVersionVersion] {
-	return pulumix.Output[GetMysqlVersionVersionVersion]{
-		OutputState: i.ToGetMysqlVersionVersionVersionOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetMysqlVersionVersionVersionArrayInput is an input type that accepts GetMysqlVersionVersionVersionArray and GetMysqlVersionVersionVersionArrayOutput values.
@@ -20003,12 +17672,6 @@ func (i GetMysqlVersionVersionVersionArray) ToGetMysqlVersionVersionVersionArray
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlVersionVersionVersionArrayOutput)
 }
 
-func (i GetMysqlVersionVersionVersionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlVersionVersionVersion] {
-	return pulumix.Output[[]GetMysqlVersionVersionVersion]{
-		OutputState: i.ToGetMysqlVersionVersionVersionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMysqlVersionVersionVersionOutput struct{ *pulumi.OutputState }
 
 func (GetMysqlVersionVersionVersionOutput) ElementType() reflect.Type {
@@ -20023,20 +17686,14 @@ func (o GetMysqlVersionVersionVersionOutput) ToGetMysqlVersionVersionVersionOutp
 	return o
 }
 
-func (o GetMysqlVersionVersionVersionOutput) ToOutput(ctx context.Context) pulumix.Output[GetMysqlVersionVersionVersion] {
-	return pulumix.Output[GetMysqlVersionVersionVersion]{
-		OutputState: o.OutputState,
-	}
-}
-
 // A link to a page describing the version.
-func (o GetMysqlVersionVersionVersionOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlVersionVersionVersion) string { return v.Description }).(pulumi.StringOutput)
+func (o GetMysqlVersionVersionVersionOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlVersionVersionVersion) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // The specific version identifier
-func (o GetMysqlVersionVersionVersionOutput) Version() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlVersionVersionVersion) string { return v.Version }).(pulumi.StringOutput)
+func (o GetMysqlVersionVersionVersionOutput) Version() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlVersionVersionVersion) *string { return v.Version }).(pulumi.StringPtrOutput)
 }
 
 type GetMysqlVersionVersionVersionArrayOutput struct{ *pulumi.OutputState }
@@ -20053,12 +17710,6 @@ func (o GetMysqlVersionVersionVersionArrayOutput) ToGetMysqlVersionVersionVersio
 	return o
 }
 
-func (o GetMysqlVersionVersionVersionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlVersionVersionVersion] {
-	return pulumix.Output[[]GetMysqlVersionVersionVersion]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetMysqlVersionVersionVersionArrayOutput) Index(i pulumi.IntInput) GetMysqlVersionVersionVersionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlVersionVersionVersion {
 		return vs[0].([]GetMysqlVersionVersionVersion)[vs[1].(int)]
@@ -20067,11 +17718,11 @@ func (o GetMysqlVersionVersionVersionArrayOutput) Index(i pulumi.IntInput) GetMy
 
 type GetReplicaReplicaOverride struct {
 	// The OCID of the Configuration to be used by the read replica.
-	ConfigurationId string `pulumi:"configurationId"`
+	ConfigurationId *string `pulumi:"configurationId"`
 	// The MySQL version to be used by the read replica.
-	MysqlVersion string `pulumi:"mysqlVersion"`
+	MysqlVersion *string `pulumi:"mysqlVersion"`
 	// The shape currently in use by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
-	ShapeName string `pulumi:"shapeName"`
+	ShapeName *string `pulumi:"shapeName"`
 }
 
 // GetReplicaReplicaOverrideInput is an input type that accepts GetReplicaReplicaOverrideArgs and GetReplicaReplicaOverrideOutput values.
@@ -20087,11 +17738,11 @@ type GetReplicaReplicaOverrideInput interface {
 
 type GetReplicaReplicaOverrideArgs struct {
 	// The OCID of the Configuration to be used by the read replica.
-	ConfigurationId pulumi.StringInput `pulumi:"configurationId"`
+	ConfigurationId pulumi.StringPtrInput `pulumi:"configurationId"`
 	// The MySQL version to be used by the read replica.
-	MysqlVersion pulumi.StringInput `pulumi:"mysqlVersion"`
+	MysqlVersion pulumi.StringPtrInput `pulumi:"mysqlVersion"`
 	// The shape currently in use by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
-	ShapeName pulumi.StringInput `pulumi:"shapeName"`
+	ShapeName pulumi.StringPtrInput `pulumi:"shapeName"`
 }
 
 func (GetReplicaReplicaOverrideArgs) ElementType() reflect.Type {
@@ -20104,12 +17755,6 @@ func (i GetReplicaReplicaOverrideArgs) ToGetReplicaReplicaOverrideOutput() GetRe
 
 func (i GetReplicaReplicaOverrideArgs) ToGetReplicaReplicaOverrideOutputWithContext(ctx context.Context) GetReplicaReplicaOverrideOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetReplicaReplicaOverrideOutput)
-}
-
-func (i GetReplicaReplicaOverrideArgs) ToOutput(ctx context.Context) pulumix.Output[GetReplicaReplicaOverride] {
-	return pulumix.Output[GetReplicaReplicaOverride]{
-		OutputState: i.ToGetReplicaReplicaOverrideOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetReplicaReplicaOverrideArrayInput is an input type that accepts GetReplicaReplicaOverrideArray and GetReplicaReplicaOverrideArrayOutput values.
@@ -20137,12 +17782,6 @@ func (i GetReplicaReplicaOverrideArray) ToGetReplicaReplicaOverrideArrayOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetReplicaReplicaOverrideArrayOutput)
 }
 
-func (i GetReplicaReplicaOverrideArray) ToOutput(ctx context.Context) pulumix.Output[[]GetReplicaReplicaOverride] {
-	return pulumix.Output[[]GetReplicaReplicaOverride]{
-		OutputState: i.ToGetReplicaReplicaOverrideArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetReplicaReplicaOverrideOutput struct{ *pulumi.OutputState }
 
 func (GetReplicaReplicaOverrideOutput) ElementType() reflect.Type {
@@ -20157,25 +17796,19 @@ func (o GetReplicaReplicaOverrideOutput) ToGetReplicaReplicaOverrideOutputWithCo
 	return o
 }
 
-func (o GetReplicaReplicaOverrideOutput) ToOutput(ctx context.Context) pulumix.Output[GetReplicaReplicaOverride] {
-	return pulumix.Output[GetReplicaReplicaOverride]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the Configuration to be used by the read replica.
-func (o GetReplicaReplicaOverrideOutput) ConfigurationId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetReplicaReplicaOverride) string { return v.ConfigurationId }).(pulumi.StringOutput)
+func (o GetReplicaReplicaOverrideOutput) ConfigurationId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetReplicaReplicaOverride) *string { return v.ConfigurationId }).(pulumi.StringPtrOutput)
 }
 
 // The MySQL version to be used by the read replica.
-func (o GetReplicaReplicaOverrideOutput) MysqlVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetReplicaReplicaOverride) string { return v.MysqlVersion }).(pulumi.StringOutput)
+func (o GetReplicaReplicaOverrideOutput) MysqlVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetReplicaReplicaOverride) *string { return v.MysqlVersion }).(pulumi.StringPtrOutput)
 }
 
 // The shape currently in use by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
-func (o GetReplicaReplicaOverrideOutput) ShapeName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetReplicaReplicaOverride) string { return v.ShapeName }).(pulumi.StringOutput)
+func (o GetReplicaReplicaOverrideOutput) ShapeName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetReplicaReplicaOverride) *string { return v.ShapeName }).(pulumi.StringPtrOutput)
 }
 
 type GetReplicaReplicaOverrideArrayOutput struct{ *pulumi.OutputState }
@@ -20190,12 +17823,6 @@ func (o GetReplicaReplicaOverrideArrayOutput) ToGetReplicaReplicaOverrideArrayOu
 
 func (o GetReplicaReplicaOverrideArrayOutput) ToGetReplicaReplicaOverrideArrayOutputWithContext(ctx context.Context) GetReplicaReplicaOverrideArrayOutput {
 	return o
-}
-
-func (o GetReplicaReplicaOverrideArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetReplicaReplicaOverride] {
-	return pulumix.Output[[]GetReplicaReplicaOverride]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetReplicaReplicaOverrideArrayOutput) Index(i pulumi.IntInput) GetReplicaReplicaOverrideOutput {
@@ -20239,12 +17866,6 @@ func (i GetReplicasFilterArgs) ToGetReplicasFilterOutputWithContext(ctx context.
 	return pulumi.ToOutputWithContext(ctx, i).(GetReplicasFilterOutput)
 }
 
-func (i GetReplicasFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetReplicasFilter] {
-	return pulumix.Output[GetReplicasFilter]{
-		OutputState: i.ToGetReplicasFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetReplicasFilterArrayInput is an input type that accepts GetReplicasFilterArray and GetReplicasFilterArrayOutput values.
 // You can construct a concrete instance of `GetReplicasFilterArrayInput` via:
 //
@@ -20270,12 +17891,6 @@ func (i GetReplicasFilterArray) ToGetReplicasFilterArrayOutputWithContext(ctx co
 	return pulumi.ToOutputWithContext(ctx, i).(GetReplicasFilterArrayOutput)
 }
 
-func (i GetReplicasFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetReplicasFilter] {
-	return pulumix.Output[[]GetReplicasFilter]{
-		OutputState: i.ToGetReplicasFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetReplicasFilterOutput struct{ *pulumi.OutputState }
 
 func (GetReplicasFilterOutput) ElementType() reflect.Type {
@@ -20288,12 +17903,6 @@ func (o GetReplicasFilterOutput) ToGetReplicasFilterOutput() GetReplicasFilterOu
 
 func (o GetReplicasFilterOutput) ToGetReplicasFilterOutputWithContext(ctx context.Context) GetReplicasFilterOutput {
 	return o
-}
-
-func (o GetReplicasFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetReplicasFilter] {
-	return pulumix.Output[GetReplicasFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetReplicasFilterOutput) Name() pulumi.StringOutput {
@@ -20322,12 +17931,6 @@ func (o GetReplicasFilterArrayOutput) ToGetReplicasFilterArrayOutputWithContext(
 	return o
 }
 
-func (o GetReplicasFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetReplicasFilter] {
-	return pulumix.Output[[]GetReplicasFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetReplicasFilterArrayOutput) Index(i pulumi.IntInput) GetReplicasFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetReplicasFilter {
 		return vs[0].([]GetReplicasFilter)[vs[1].(int)]
@@ -20336,47 +17939,47 @@ func (o GetReplicasFilterArrayOutput) Index(i pulumi.IntInput) GetReplicasFilter
 
 type GetReplicasReplica struct {
 	// The name of the Availability Domain the read replica is located in.
-	AvailabilityDomain string `pulumi:"availabilityDomain"`
+	AvailabilityDomain *string `pulumi:"availabilityDomain"`
 	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// The requested Configuration instance.
-	ConfigurationId string `pulumi:"configurationId"`
+	ConfigurationId *string `pulumi:"configurationId"`
 	// The DB System [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-	DbSystemId string `pulumi:"dbSystemId"`
+	DbSystemId *string `pulumi:"dbSystemId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// User provided description of the read replica.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// A filter to return only the resource matching the given display name exactly.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// The name of the Fault Domain the read replica is located in.
-	FaultDomain string `pulumi:"faultDomain"`
+	FaultDomain *string `pulumi:"faultDomain"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The OCID of the read replica.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The IP address the read replica is configured to listen on.
-	IpAddress string `pulumi:"ipAddress"`
+	IpAddress *string `pulumi:"ipAddress"`
 	// Specifies whether the read replica can be deleted. Set to true to prevent deletion, false (default) to allow. Note that if a read replica is delete protected it also prevents the entire DB System from being deleted. If the DB System is delete protected, read replicas can still be deleted individually if they are not delete  protected themselves.
-	IsDeleteProtected bool `pulumi:"isDeleteProtected"`
+	IsDeleteProtected *bool `pulumi:"isDeleteProtected"`
 	// A message describing the state of the read replica.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// The MySQL version to be used by the read replica.
-	MysqlVersion string `pulumi:"mysqlVersion"`
+	MysqlVersion *string `pulumi:"mysqlVersion"`
 	// The port the read replica is configured to listen on.
-	Port int `pulumi:"port"`
+	Port *int `pulumi:"port"`
 	// The TCP network port on which X Plugin listens for connections. This is the X Plugin equivalent of port.
-	PortX int `pulumi:"portX"`
+	PortX *int `pulumi:"portX"`
 	// By default a read replica inherits the MySQL version, shape, and configuration of the source DB system.  If you want to override any of these, provide values in the properties, mysqlVersion, shapeName,  and configurationId. If you set a property value to "", then the value is inherited from its  source DB system.
 	ReplicaOverrides []GetReplicasReplicaReplicaOverride `pulumi:"replicaOverrides"`
 	// The shape currently in use by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
-	ShapeName string `pulumi:"shapeName"`
+	ShapeName *string `pulumi:"shapeName"`
 	// The LifecycleState of the read replica.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The date and time the read replica was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time the read replica was last updated, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 // GetReplicasReplicaInput is an input type that accepts GetReplicasReplicaArgs and GetReplicasReplicaOutput values.
@@ -20392,47 +17995,47 @@ type GetReplicasReplicaInput interface {
 
 type GetReplicasReplicaArgs struct {
 	// The name of the Availability Domain the read replica is located in.
-	AvailabilityDomain pulumi.StringInput `pulumi:"availabilityDomain"`
+	AvailabilityDomain pulumi.StringPtrInput `pulumi:"availabilityDomain"`
 	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// The requested Configuration instance.
-	ConfigurationId pulumi.StringInput `pulumi:"configurationId"`
+	ConfigurationId pulumi.StringPtrInput `pulumi:"configurationId"`
 	// The DB System [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-	DbSystemId pulumi.StringInput `pulumi:"dbSystemId"`
+	DbSystemId pulumi.StringPtrInput `pulumi:"dbSystemId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// User provided description of the read replica.
-	Description pulumi.StringInput `pulumi:"description"`
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// A filter to return only the resource matching the given display name exactly.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// The name of the Fault Domain the read replica is located in.
-	FaultDomain pulumi.StringInput `pulumi:"faultDomain"`
+	FaultDomain pulumi.StringPtrInput `pulumi:"faultDomain"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// The OCID of the read replica.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// The IP address the read replica is configured to listen on.
-	IpAddress pulumi.StringInput `pulumi:"ipAddress"`
+	IpAddress pulumi.StringPtrInput `pulumi:"ipAddress"`
 	// Specifies whether the read replica can be deleted. Set to true to prevent deletion, false (default) to allow. Note that if a read replica is delete protected it also prevents the entire DB System from being deleted. If the DB System is delete protected, read replicas can still be deleted individually if they are not delete  protected themselves.
-	IsDeleteProtected pulumi.BoolInput `pulumi:"isDeleteProtected"`
+	IsDeleteProtected pulumi.BoolPtrInput `pulumi:"isDeleteProtected"`
 	// A message describing the state of the read replica.
-	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrInput `pulumi:"lifecycleDetails"`
 	// The MySQL version to be used by the read replica.
-	MysqlVersion pulumi.StringInput `pulumi:"mysqlVersion"`
+	MysqlVersion pulumi.StringPtrInput `pulumi:"mysqlVersion"`
 	// The port the read replica is configured to listen on.
-	Port pulumi.IntInput `pulumi:"port"`
+	Port pulumi.IntPtrInput `pulumi:"port"`
 	// The TCP network port on which X Plugin listens for connections. This is the X Plugin equivalent of port.
-	PortX pulumi.IntInput `pulumi:"portX"`
+	PortX pulumi.IntPtrInput `pulumi:"portX"`
 	// By default a read replica inherits the MySQL version, shape, and configuration of the source DB system.  If you want to override any of these, provide values in the properties, mysqlVersion, shapeName,  and configurationId. If you set a property value to "", then the value is inherited from its  source DB system.
 	ReplicaOverrides GetReplicasReplicaReplicaOverrideArrayInput `pulumi:"replicaOverrides"`
 	// The shape currently in use by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
-	ShapeName pulumi.StringInput `pulumi:"shapeName"`
+	ShapeName pulumi.StringPtrInput `pulumi:"shapeName"`
 	// The LifecycleState of the read replica.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// The date and time the read replica was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// The time the read replica was last updated, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
 }
 
 func (GetReplicasReplicaArgs) ElementType() reflect.Type {
@@ -20445,12 +18048,6 @@ func (i GetReplicasReplicaArgs) ToGetReplicasReplicaOutput() GetReplicasReplicaO
 
 func (i GetReplicasReplicaArgs) ToGetReplicasReplicaOutputWithContext(ctx context.Context) GetReplicasReplicaOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetReplicasReplicaOutput)
-}
-
-func (i GetReplicasReplicaArgs) ToOutput(ctx context.Context) pulumix.Output[GetReplicasReplica] {
-	return pulumix.Output[GetReplicasReplica]{
-		OutputState: i.ToGetReplicasReplicaOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetReplicasReplicaArrayInput is an input type that accepts GetReplicasReplicaArray and GetReplicasReplicaArrayOutput values.
@@ -20478,12 +18075,6 @@ func (i GetReplicasReplicaArray) ToGetReplicasReplicaArrayOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(GetReplicasReplicaArrayOutput)
 }
 
-func (i GetReplicasReplicaArray) ToOutput(ctx context.Context) pulumix.Output[[]GetReplicasReplica] {
-	return pulumix.Output[[]GetReplicasReplica]{
-		OutputState: i.ToGetReplicasReplicaArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetReplicasReplicaOutput struct{ *pulumi.OutputState }
 
 func (GetReplicasReplicaOutput) ElementType() reflect.Type {
@@ -20498,30 +18089,24 @@ func (o GetReplicasReplicaOutput) ToGetReplicasReplicaOutputWithContext(ctx cont
 	return o
 }
 
-func (o GetReplicasReplicaOutput) ToOutput(ctx context.Context) pulumix.Output[GetReplicasReplica] {
-	return pulumix.Output[GetReplicasReplica]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The name of the Availability Domain the read replica is located in.
-func (o GetReplicasReplicaOutput) AvailabilityDomain() pulumi.StringOutput {
-	return o.ApplyT(func(v GetReplicasReplica) string { return v.AvailabilityDomain }).(pulumi.StringOutput)
+func (o GetReplicasReplicaOutput) AvailabilityDomain() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetReplicasReplica) *string { return v.AvailabilityDomain }).(pulumi.StringPtrOutput)
 }
 
 // The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-func (o GetReplicasReplicaOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetReplicasReplica) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetReplicasReplicaOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetReplicasReplica) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // The requested Configuration instance.
-func (o GetReplicasReplicaOutput) ConfigurationId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetReplicasReplica) string { return v.ConfigurationId }).(pulumi.StringOutput)
+func (o GetReplicasReplicaOutput) ConfigurationId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetReplicasReplica) *string { return v.ConfigurationId }).(pulumi.StringPtrOutput)
 }
 
 // The DB System [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-func (o GetReplicasReplicaOutput) DbSystemId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetReplicasReplica) string { return v.DbSystemId }).(pulumi.StringOutput)
+func (o GetReplicasReplicaOutput) DbSystemId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetReplicasReplica) *string { return v.DbSystemId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -20530,18 +18115,18 @@ func (o GetReplicasReplicaOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // User provided description of the read replica.
-func (o GetReplicasReplicaOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetReplicasReplica) string { return v.Description }).(pulumi.StringOutput)
+func (o GetReplicasReplicaOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetReplicasReplica) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // A filter to return only the resource matching the given display name exactly.
-func (o GetReplicasReplicaOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetReplicasReplica) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetReplicasReplicaOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetReplicasReplica) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // The name of the Fault Domain the read replica is located in.
-func (o GetReplicasReplicaOutput) FaultDomain() pulumi.StringOutput {
-	return o.ApplyT(func(v GetReplicasReplica) string { return v.FaultDomain }).(pulumi.StringOutput)
+func (o GetReplicasReplicaOutput) FaultDomain() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetReplicasReplica) *string { return v.FaultDomain }).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -20550,38 +18135,38 @@ func (o GetReplicasReplicaOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The OCID of the read replica.
-func (o GetReplicasReplicaOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetReplicasReplica) string { return v.Id }).(pulumi.StringOutput)
+func (o GetReplicasReplicaOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetReplicasReplica) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The IP address the read replica is configured to listen on.
-func (o GetReplicasReplicaOutput) IpAddress() pulumi.StringOutput {
-	return o.ApplyT(func(v GetReplicasReplica) string { return v.IpAddress }).(pulumi.StringOutput)
+func (o GetReplicasReplicaOutput) IpAddress() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetReplicasReplica) *string { return v.IpAddress }).(pulumi.StringPtrOutput)
 }
 
 // Specifies whether the read replica can be deleted. Set to true to prevent deletion, false (default) to allow. Note that if a read replica is delete protected it also prevents the entire DB System from being deleted. If the DB System is delete protected, read replicas can still be deleted individually if they are not delete  protected themselves.
-func (o GetReplicasReplicaOutput) IsDeleteProtected() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetReplicasReplica) bool { return v.IsDeleteProtected }).(pulumi.BoolOutput)
+func (o GetReplicasReplicaOutput) IsDeleteProtected() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetReplicasReplica) *bool { return v.IsDeleteProtected }).(pulumi.BoolPtrOutput)
 }
 
 // A message describing the state of the read replica.
-func (o GetReplicasReplicaOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetReplicasReplica) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o GetReplicasReplicaOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetReplicasReplica) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // The MySQL version to be used by the read replica.
-func (o GetReplicasReplicaOutput) MysqlVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetReplicasReplica) string { return v.MysqlVersion }).(pulumi.StringOutput)
+func (o GetReplicasReplicaOutput) MysqlVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetReplicasReplica) *string { return v.MysqlVersion }).(pulumi.StringPtrOutput)
 }
 
 // The port the read replica is configured to listen on.
-func (o GetReplicasReplicaOutput) Port() pulumi.IntOutput {
-	return o.ApplyT(func(v GetReplicasReplica) int { return v.Port }).(pulumi.IntOutput)
+func (o GetReplicasReplicaOutput) Port() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetReplicasReplica) *int { return v.Port }).(pulumi.IntPtrOutput)
 }
 
 // The TCP network port on which X Plugin listens for connections. This is the X Plugin equivalent of port.
-func (o GetReplicasReplicaOutput) PortX() pulumi.IntOutput {
-	return o.ApplyT(func(v GetReplicasReplica) int { return v.PortX }).(pulumi.IntOutput)
+func (o GetReplicasReplicaOutput) PortX() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetReplicasReplica) *int { return v.PortX }).(pulumi.IntPtrOutput)
 }
 
 // By default a read replica inherits the MySQL version, shape, and configuration of the source DB system.  If you want to override any of these, provide values in the properties, mysqlVersion, shapeName,  and configurationId. If you set a property value to "", then the value is inherited from its  source DB system.
@@ -20590,23 +18175,23 @@ func (o GetReplicasReplicaOutput) ReplicaOverrides() GetReplicasReplicaReplicaOv
 }
 
 // The shape currently in use by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
-func (o GetReplicasReplicaOutput) ShapeName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetReplicasReplica) string { return v.ShapeName }).(pulumi.StringOutput)
+func (o GetReplicasReplicaOutput) ShapeName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetReplicasReplica) *string { return v.ShapeName }).(pulumi.StringPtrOutput)
 }
 
 // The LifecycleState of the read replica.
-func (o GetReplicasReplicaOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetReplicasReplica) string { return v.State }).(pulumi.StringOutput)
+func (o GetReplicasReplicaOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetReplicasReplica) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the read replica was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-func (o GetReplicasReplicaOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetReplicasReplica) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetReplicasReplicaOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetReplicasReplica) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time the read replica was last updated, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-func (o GetReplicasReplicaOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetReplicasReplica) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o GetReplicasReplicaOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetReplicasReplica) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type GetReplicasReplicaArrayOutput struct{ *pulumi.OutputState }
@@ -20623,12 +18208,6 @@ func (o GetReplicasReplicaArrayOutput) ToGetReplicasReplicaArrayOutputWithContex
 	return o
 }
 
-func (o GetReplicasReplicaArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetReplicasReplica] {
-	return pulumix.Output[[]GetReplicasReplica]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetReplicasReplicaArrayOutput) Index(i pulumi.IntInput) GetReplicasReplicaOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetReplicasReplica {
 		return vs[0].([]GetReplicasReplica)[vs[1].(int)]
@@ -20637,11 +18216,11 @@ func (o GetReplicasReplicaArrayOutput) Index(i pulumi.IntInput) GetReplicasRepli
 
 type GetReplicasReplicaReplicaOverride struct {
 	// The requested Configuration instance.
-	ConfigurationId string `pulumi:"configurationId"`
+	ConfigurationId *string `pulumi:"configurationId"`
 	// The MySQL version to be used by the read replica.
-	MysqlVersion string `pulumi:"mysqlVersion"`
+	MysqlVersion *string `pulumi:"mysqlVersion"`
 	// The shape currently in use by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
-	ShapeName string `pulumi:"shapeName"`
+	ShapeName *string `pulumi:"shapeName"`
 }
 
 // GetReplicasReplicaReplicaOverrideInput is an input type that accepts GetReplicasReplicaReplicaOverrideArgs and GetReplicasReplicaReplicaOverrideOutput values.
@@ -20657,11 +18236,11 @@ type GetReplicasReplicaReplicaOverrideInput interface {
 
 type GetReplicasReplicaReplicaOverrideArgs struct {
 	// The requested Configuration instance.
-	ConfigurationId pulumi.StringInput `pulumi:"configurationId"`
+	ConfigurationId pulumi.StringPtrInput `pulumi:"configurationId"`
 	// The MySQL version to be used by the read replica.
-	MysqlVersion pulumi.StringInput `pulumi:"mysqlVersion"`
+	MysqlVersion pulumi.StringPtrInput `pulumi:"mysqlVersion"`
 	// The shape currently in use by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
-	ShapeName pulumi.StringInput `pulumi:"shapeName"`
+	ShapeName pulumi.StringPtrInput `pulumi:"shapeName"`
 }
 
 func (GetReplicasReplicaReplicaOverrideArgs) ElementType() reflect.Type {
@@ -20674,12 +18253,6 @@ func (i GetReplicasReplicaReplicaOverrideArgs) ToGetReplicasReplicaReplicaOverri
 
 func (i GetReplicasReplicaReplicaOverrideArgs) ToGetReplicasReplicaReplicaOverrideOutputWithContext(ctx context.Context) GetReplicasReplicaReplicaOverrideOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetReplicasReplicaReplicaOverrideOutput)
-}
-
-func (i GetReplicasReplicaReplicaOverrideArgs) ToOutput(ctx context.Context) pulumix.Output[GetReplicasReplicaReplicaOverride] {
-	return pulumix.Output[GetReplicasReplicaReplicaOverride]{
-		OutputState: i.ToGetReplicasReplicaReplicaOverrideOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetReplicasReplicaReplicaOverrideArrayInput is an input type that accepts GetReplicasReplicaReplicaOverrideArray and GetReplicasReplicaReplicaOverrideArrayOutput values.
@@ -20707,12 +18280,6 @@ func (i GetReplicasReplicaReplicaOverrideArray) ToGetReplicasReplicaReplicaOverr
 	return pulumi.ToOutputWithContext(ctx, i).(GetReplicasReplicaReplicaOverrideArrayOutput)
 }
 
-func (i GetReplicasReplicaReplicaOverrideArray) ToOutput(ctx context.Context) pulumix.Output[[]GetReplicasReplicaReplicaOverride] {
-	return pulumix.Output[[]GetReplicasReplicaReplicaOverride]{
-		OutputState: i.ToGetReplicasReplicaReplicaOverrideArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetReplicasReplicaReplicaOverrideOutput struct{ *pulumi.OutputState }
 
 func (GetReplicasReplicaReplicaOverrideOutput) ElementType() reflect.Type {
@@ -20727,25 +18294,19 @@ func (o GetReplicasReplicaReplicaOverrideOutput) ToGetReplicasReplicaReplicaOver
 	return o
 }
 
-func (o GetReplicasReplicaReplicaOverrideOutput) ToOutput(ctx context.Context) pulumix.Output[GetReplicasReplicaReplicaOverride] {
-	return pulumix.Output[GetReplicasReplicaReplicaOverride]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The requested Configuration instance.
-func (o GetReplicasReplicaReplicaOverrideOutput) ConfigurationId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetReplicasReplicaReplicaOverride) string { return v.ConfigurationId }).(pulumi.StringOutput)
+func (o GetReplicasReplicaReplicaOverrideOutput) ConfigurationId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetReplicasReplicaReplicaOverride) *string { return v.ConfigurationId }).(pulumi.StringPtrOutput)
 }
 
 // The MySQL version to be used by the read replica.
-func (o GetReplicasReplicaReplicaOverrideOutput) MysqlVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetReplicasReplicaReplicaOverride) string { return v.MysqlVersion }).(pulumi.StringOutput)
+func (o GetReplicasReplicaReplicaOverrideOutput) MysqlVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetReplicasReplicaReplicaOverride) *string { return v.MysqlVersion }).(pulumi.StringPtrOutput)
 }
 
 // The shape currently in use by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
-func (o GetReplicasReplicaReplicaOverrideOutput) ShapeName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetReplicasReplicaReplicaOverride) string { return v.ShapeName }).(pulumi.StringOutput)
+func (o GetReplicasReplicaReplicaOverrideOutput) ShapeName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetReplicasReplicaReplicaOverride) *string { return v.ShapeName }).(pulumi.StringPtrOutput)
 }
 
 type GetReplicasReplicaReplicaOverrideArrayOutput struct{ *pulumi.OutputState }
@@ -20760,12 +18321,6 @@ func (o GetReplicasReplicaReplicaOverrideArrayOutput) ToGetReplicasReplicaReplic
 
 func (o GetReplicasReplicaReplicaOverrideArrayOutput) ToGetReplicasReplicaReplicaOverrideArrayOutputWithContext(ctx context.Context) GetReplicasReplicaReplicaOverrideArrayOutput {
 	return o
-}
-
-func (o GetReplicasReplicaReplicaOverrideArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetReplicasReplicaReplicaOverride] {
-	return pulumix.Output[[]GetReplicasReplicaReplicaOverride]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetReplicasReplicaReplicaOverrideArrayOutput) Index(i pulumi.IntInput) GetReplicasReplicaReplicaOverrideOutput {
@@ -20811,12 +18366,6 @@ func (i GetShapesFilterArgs) ToGetShapesFilterOutputWithContext(ctx context.Cont
 	return pulumi.ToOutputWithContext(ctx, i).(GetShapesFilterOutput)
 }
 
-func (i GetShapesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetShapesFilter] {
-	return pulumix.Output[GetShapesFilter]{
-		OutputState: i.ToGetShapesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetShapesFilterArrayInput is an input type that accepts GetShapesFilterArray and GetShapesFilterArrayOutput values.
 // You can construct a concrete instance of `GetShapesFilterArrayInput` via:
 //
@@ -20842,12 +18391,6 @@ func (i GetShapesFilterArray) ToGetShapesFilterArrayOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(GetShapesFilterArrayOutput)
 }
 
-func (i GetShapesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetShapesFilter] {
-	return pulumix.Output[[]GetShapesFilter]{
-		OutputState: i.ToGetShapesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetShapesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetShapesFilterOutput) ElementType() reflect.Type {
@@ -20860,12 +18403,6 @@ func (o GetShapesFilterOutput) ToGetShapesFilterOutput() GetShapesFilterOutput {
 
 func (o GetShapesFilterOutput) ToGetShapesFilterOutputWithContext(ctx context.Context) GetShapesFilterOutput {
 	return o
-}
-
-func (o GetShapesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetShapesFilter] {
-	return pulumix.Output[GetShapesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Name
@@ -20895,12 +18432,6 @@ func (o GetShapesFilterArrayOutput) ToGetShapesFilterArrayOutputWithContext(ctx 
 	return o
 }
 
-func (o GetShapesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetShapesFilter] {
-	return pulumix.Output[[]GetShapesFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetShapesFilterArrayOutput) Index(i pulumi.IntInput) GetShapesFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetShapesFilter {
 		return vs[0].([]GetShapesFilter)[vs[1].(int)]
@@ -20909,13 +18440,13 @@ func (o GetShapesFilterArrayOutput) Index(i pulumi.IntInput) GetShapesFilterOutp
 
 type GetShapesShape struct {
 	// The number of CPU Cores the Instance provides. These are "OCPU"s.
-	CpuCoreCount int `pulumi:"cpuCoreCount"`
+	CpuCoreCount *int `pulumi:"cpuCoreCount"`
 	// Return shapes that are supported by the service feature.
 	IsSupportedFors []string `pulumi:"isSupportedFors"`
 	// The amount of RAM the Instance provides. This is an IEC base-2 number.
-	MemorySizeInGbs int `pulumi:"memorySizeInGbs"`
+	MemorySizeInGbs *int `pulumi:"memorySizeInGbs"`
 	// Name
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 }
 
 // GetShapesShapeInput is an input type that accepts GetShapesShapeArgs and GetShapesShapeOutput values.
@@ -20931,13 +18462,13 @@ type GetShapesShapeInput interface {
 
 type GetShapesShapeArgs struct {
 	// The number of CPU Cores the Instance provides. These are "OCPU"s.
-	CpuCoreCount pulumi.IntInput `pulumi:"cpuCoreCount"`
+	CpuCoreCount pulumi.IntPtrInput `pulumi:"cpuCoreCount"`
 	// Return shapes that are supported by the service feature.
 	IsSupportedFors pulumi.StringArrayInput `pulumi:"isSupportedFors"`
 	// The amount of RAM the Instance provides. This is an IEC base-2 number.
-	MemorySizeInGbs pulumi.IntInput `pulumi:"memorySizeInGbs"`
+	MemorySizeInGbs pulumi.IntPtrInput `pulumi:"memorySizeInGbs"`
 	// Name
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 }
 
 func (GetShapesShapeArgs) ElementType() reflect.Type {
@@ -20950,12 +18481,6 @@ func (i GetShapesShapeArgs) ToGetShapesShapeOutput() GetShapesShapeOutput {
 
 func (i GetShapesShapeArgs) ToGetShapesShapeOutputWithContext(ctx context.Context) GetShapesShapeOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetShapesShapeOutput)
-}
-
-func (i GetShapesShapeArgs) ToOutput(ctx context.Context) pulumix.Output[GetShapesShape] {
-	return pulumix.Output[GetShapesShape]{
-		OutputState: i.ToGetShapesShapeOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetShapesShapeArrayInput is an input type that accepts GetShapesShapeArray and GetShapesShapeArrayOutput values.
@@ -20983,12 +18508,6 @@ func (i GetShapesShapeArray) ToGetShapesShapeArrayOutputWithContext(ctx context.
 	return pulumi.ToOutputWithContext(ctx, i).(GetShapesShapeArrayOutput)
 }
 
-func (i GetShapesShapeArray) ToOutput(ctx context.Context) pulumix.Output[[]GetShapesShape] {
-	return pulumix.Output[[]GetShapesShape]{
-		OutputState: i.ToGetShapesShapeArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetShapesShapeOutput struct{ *pulumi.OutputState }
 
 func (GetShapesShapeOutput) ElementType() reflect.Type {
@@ -21003,15 +18522,9 @@ func (o GetShapesShapeOutput) ToGetShapesShapeOutputWithContext(ctx context.Cont
 	return o
 }
 
-func (o GetShapesShapeOutput) ToOutput(ctx context.Context) pulumix.Output[GetShapesShape] {
-	return pulumix.Output[GetShapesShape]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The number of CPU Cores the Instance provides. These are "OCPU"s.
-func (o GetShapesShapeOutput) CpuCoreCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetShapesShape) int { return v.CpuCoreCount }).(pulumi.IntOutput)
+func (o GetShapesShapeOutput) CpuCoreCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetShapesShape) *int { return v.CpuCoreCount }).(pulumi.IntPtrOutput)
 }
 
 // Return shapes that are supported by the service feature.
@@ -21020,13 +18533,13 @@ func (o GetShapesShapeOutput) IsSupportedFors() pulumi.StringArrayOutput {
 }
 
 // The amount of RAM the Instance provides. This is an IEC base-2 number.
-func (o GetShapesShapeOutput) MemorySizeInGbs() pulumi.IntOutput {
-	return o.ApplyT(func(v GetShapesShape) int { return v.MemorySizeInGbs }).(pulumi.IntOutput)
+func (o GetShapesShapeOutput) MemorySizeInGbs() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetShapesShape) *int { return v.MemorySizeInGbs }).(pulumi.IntPtrOutput)
 }
 
 // Name
-func (o GetShapesShapeOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetShapesShape) string { return v.Name }).(pulumi.StringOutput)
+func (o GetShapesShapeOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetShapesShape) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 type GetShapesShapeArrayOutput struct{ *pulumi.OutputState }
@@ -21041,12 +18554,6 @@ func (o GetShapesShapeArrayOutput) ToGetShapesShapeArrayOutput() GetShapesShapeA
 
 func (o GetShapesShapeArrayOutput) ToGetShapesShapeArrayOutputWithContext(ctx context.Context) GetShapesShapeArrayOutput {
 	return o
-}
-
-func (o GetShapesShapeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetShapesShape] {
-	return pulumix.Output[[]GetShapesShape]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetShapesShapeArrayOutput) Index(i pulumi.IntInput) GetShapesShapeOutput {

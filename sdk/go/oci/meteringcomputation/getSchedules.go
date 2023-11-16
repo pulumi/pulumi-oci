@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Schedules in Oracle Cloud Infrastructure Metering Computation service.
@@ -69,7 +68,7 @@ type GetSchedulesResult struct {
 	// The filter object for query usage.
 	Filters []GetSchedulesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The unique name of the schedule created by the user.
 	Name *string `pulumi:"name"`
 	// The list of schedule_collection.
@@ -118,12 +117,6 @@ func (o GetSchedulesResultOutput) ToGetSchedulesResultOutputWithContext(ctx cont
 	return o
 }
 
-func (o GetSchedulesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetSchedulesResult] {
-	return pulumix.Output[GetSchedulesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The customer tenancy.
 func (o GetSchedulesResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSchedulesResult) string { return v.CompartmentId }).(pulumi.StringOutput)
@@ -135,8 +128,8 @@ func (o GetSchedulesResultOutput) Filters() GetSchedulesFilterArrayOutput {
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetSchedulesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSchedulesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetSchedulesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSchedulesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The unique name of the schedule created by the user.

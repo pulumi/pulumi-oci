@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetNamespacesNamespaceCollectionItem {
@@ -14,39 +16,39 @@ public final class GetNamespacesNamespaceCollectionItem {
      * @return The ID of the compartment in which to list resources.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return This indicates if the tenancy is onboarded to Logging Analytics
      * 
      */
-    private Boolean isOnboarded;
+    private @Nullable Boolean isOnboarded;
     /**
      * @return This is the namespace name of a tenancy
      * 
      */
-    private String namespace;
+    private @Nullable String namespace;
 
     private GetNamespacesNamespaceCollectionItem() {}
     /**
      * @return The ID of the compartment in which to list resources.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return This indicates if the tenancy is onboarded to Logging Analytics
      * 
      */
-    public Boolean isOnboarded() {
-        return this.isOnboarded;
+    public Optional<Boolean> isOnboarded() {
+        return Optional.ofNullable(this.isOnboarded);
     }
     /**
      * @return This is the namespace name of a tenancy
      * 
      */
-    public String namespace() {
-        return this.namespace;
+    public Optional<String> namespace() {
+        return Optional.ofNullable(this.namespace);
     }
 
     public static Builder builder() {
@@ -58,9 +60,9 @@ public final class GetNamespacesNamespaceCollectionItem {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String compartmentId;
-        private Boolean isOnboarded;
-        private String namespace;
+        private @Nullable String compartmentId;
+        private @Nullable Boolean isOnboarded;
+        private @Nullable String namespace;
         public Builder() {}
         public Builder(GetNamespacesNamespaceCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -70,18 +72,18 @@ public final class GetNamespacesNamespaceCollectionItem {
         }
 
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder isOnboarded(Boolean isOnboarded) {
-            this.isOnboarded = Objects.requireNonNull(isOnboarded);
+        public Builder isOnboarded(@Nullable Boolean isOnboarded) {
+            this.isOnboarded = isOnboarded;
             return this;
         }
         @CustomType.Setter
-        public Builder namespace(String namespace) {
-            this.namespace = Objects.requireNonNull(namespace);
+        public Builder namespace(@Nullable String namespace) {
+            this.namespace = namespace;
             return this;
         }
         public GetNamespacesNamespaceCollectionItem build() {

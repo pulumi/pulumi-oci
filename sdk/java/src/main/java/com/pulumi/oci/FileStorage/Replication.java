@@ -13,6 +13,7 @@ import com.pulumi.oci.Utilities;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -98,14 +99,14 @@ public class Replication extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="availabilityDomain", refs={String.class}, tree="[0]")
-    private Output<String> availabilityDomain;
+    private Output</* @Nullable */ String> availabilityDomain;
 
     /**
      * @return The availability domain the replication is in. The replication must be in the same availability domain as the source file system. Example: `Uocm:PHX-AD-1`
      * 
      */
-    public Output<String> availabilityDomain() {
-        return this.availabilityDomain;
+    public Output<Optional<String>> availabilityDomain() {
+        return Codegen.optional(this.availabilityDomain);
     }
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the replication.
@@ -126,140 +127,140 @@ public class Replication extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * Percentage progress of the current replication cycle.
      * 
      */
     @Export(name="deltaProgress", refs={String.class}, tree="[0]")
-    private Output<String> deltaProgress;
+    private Output</* @Nullable */ String> deltaProgress;
 
     /**
      * @return Percentage progress of the current replication cycle.
      * 
      */
-    public Output<String> deltaProgress() {
-        return this.deltaProgress;
+    public Output<Optional<String>> deltaProgress() {
+        return Codegen.optional(this.deltaProgress);
     }
     /**
      * The current state of the snapshot during replication operations.
      * 
      */
     @Export(name="deltaStatus", refs={String.class}, tree="[0]")
-    private Output<String> deltaStatus;
+    private Output</* @Nullable */ String> deltaStatus;
 
     /**
      * @return The current state of the snapshot during replication operations.
      * 
      */
-    public Output<String> deltaStatus() {
-        return this.deltaStatus;
+    public Output<Optional<String>> deltaStatus() {
+        return Codegen.optional(this.deltaStatus);
     }
     /**
      * (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information. An associated replication target will also created with the same `displayName`. Example: `My replication`
      * 
      */
     @Export(name="displayName", refs={String.class}, tree="[0]")
-    private Output<String> displayName;
+    private Output</* @Nullable */ String> displayName;
 
     /**
      * @return (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information. An associated replication target will also created with the same `displayName`. Example: `My replication`
      * 
      */
-    public Output<String> displayName() {
-        return this.displayName;
+    public Output<Optional<String>> displayName() {
+        return Codegen.optional(this.displayName);
     }
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last snapshot that has been replicated completely. Empty if the copy of the initial snapshot is not complete.
      * 
      */
     @Export(name="lastSnapshotId", refs={String.class}, tree="[0]")
-    private Output<String> lastSnapshotId;
+    private Output</* @Nullable */ String> lastSnapshotId;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last snapshot that has been replicated completely. Empty if the copy of the initial snapshot is not complete.
      * 
      */
-    public Output<String> lastSnapshotId() {
-        return this.lastSnapshotId;
+    public Output<Optional<String>> lastSnapshotId() {
+        return Codegen.optional(this.lastSnapshotId);
     }
     /**
      * Additional information about the current &#39;lifecycleState&#39;.
      * 
      */
     @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
-    private Output<String> lifecycleDetails;
+    private Output</* @Nullable */ String> lifecycleDetails;
 
     /**
      * @return Additional information about the current &#39;lifecycleState&#39;.
      * 
      */
-    public Output<String> lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Output<Optional<String>> lifecycleDetails() {
+        return Codegen.optional(this.lifecycleDetails);
     }
     /**
      * The [`snapshotTime`](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Snapshot/snapshotTime) of the most recent recoverable replication snapshot in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. Example: `2021-04-04T20:01:29.100Z`
      * 
      */
     @Export(name="recoveryPointTime", refs={String.class}, tree="[0]")
-    private Output<String> recoveryPointTime;
+    private Output</* @Nullable */ String> recoveryPointTime;
 
     /**
      * @return The [`snapshotTime`](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Snapshot/snapshotTime) of the most recent recoverable replication snapshot in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. Example: `2021-04-04T20:01:29.100Z`
      * 
      */
-    public Output<String> recoveryPointTime() {
-        return this.recoveryPointTime;
+    public Output<Optional<String>> recoveryPointTime() {
+        return Codegen.optional(this.recoveryPointTime);
     }
     /**
      * (Updatable) Duration in minutes between replication snapshots.
      * 
      */
     @Export(name="replicationInterval", refs={String.class}, tree="[0]")
-    private Output<String> replicationInterval;
+    private Output</* @Nullable */ String> replicationInterval;
 
     /**
      * @return (Updatable) Duration in minutes between replication snapshots.
      * 
      */
-    public Output<String> replicationInterval() {
-        return this.replicationInterval;
+    public Output<Optional<String>> replicationInterval() {
+        return Codegen.optional(this.replicationInterval);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [`ReplicationTarget`](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/ReplicationTarget).
      * 
      */
     @Export(name="replicationTargetId", refs={String.class}, tree="[0]")
-    private Output<String> replicationTargetId;
+    private Output</* @Nullable */ String> replicationTargetId;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [`ReplicationTarget`](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/ReplicationTarget).
      * 
      */
-    public Output<String> replicationTargetId() {
-        return this.replicationTargetId;
+    public Output<Optional<String>> replicationTargetId() {
+        return Codegen.optional(this.replicationTargetId);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source file system.
@@ -280,14 +281,14 @@ public class Replication extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The current state of this replication. This resource can be in a `FAILED` state if replication target is deleted instead of the replication resource.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target file system.
@@ -314,14 +315,14 @@ public class Replication extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The date and time the replication was created in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2021-01-04T20:01:29.100Z`
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
 
     /**

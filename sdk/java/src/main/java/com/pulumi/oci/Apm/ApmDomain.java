@@ -14,6 +14,7 @@ import java.lang.Boolean;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -86,42 +87,42 @@ public class ApmDomain extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="dataUploadEndpoint", refs={String.class}, tree="[0]")
-    private Output<String> dataUploadEndpoint;
+    private Output</* @Nullable */ String> dataUploadEndpoint;
 
     /**
      * @return The endpoint where the APM agents upload their observations and metrics.
      * 
      */
-    public Output<String> dataUploadEndpoint() {
-        return this.dataUploadEndpoint;
+    public Output<Optional<String>> dataUploadEndpoint() {
+        return Codegen.optional(this.dataUploadEndpoint);
     }
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * (Updatable) Description of the APM domain.
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
-    private Output<String> description;
+    private Output</* @Nullable */ String> description;
 
     /**
      * @return (Updatable) Description of the APM domain.
      * 
      */
-    public Output<String> description() {
-        return this.description;
+    public Output<Optional<String>> description() {
+        return Codegen.optional(this.description);
     }
     /**
      * (Updatable) Display name of the APM domain.
@@ -142,14 +143,14 @@ public class ApmDomain extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * Indicates whether this is an &#34;Always Free&#34; resource. The default value is false.
@@ -159,7 +160,7 @@ public class ApmDomain extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="isFreeTier", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isFreeTier;
+    private Output</* @Nullable */ Boolean> isFreeTier;
 
     /**
      * @return Indicates whether this is an &#34;Always Free&#34; resource. The default value is false.
@@ -168,50 +169,50 @@ public class ApmDomain extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Output<Boolean> isFreeTier() {
-        return this.isFreeTier;
+    public Output<Optional<Boolean>> isFreeTier() {
+        return Codegen.optional(this.isFreeTier);
     }
     /**
      * The current lifecycle state of the APM domain.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The current lifecycle state of the APM domain.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * The time the APM domain was created, expressed in RFC 3339 timestamp format.
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The time the APM domain was created, expressed in RFC 3339 timestamp format.
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * The time the APM domain was updated, expressed in RFC 3339 timestamp format.
      * 
      */
     @Export(name="timeUpdated", refs={String.class}, tree="[0]")
-    private Output<String> timeUpdated;
+    private Output</* @Nullable */ String> timeUpdated;
 
     /**
      * @return The time the APM domain was updated, expressed in RFC 3339 timestamp format.
      * 
      */
-    public Output<String> timeUpdated() {
-        return this.timeUpdated;
+    public Output<Optional<String>> timeUpdated() {
+        return Codegen.optional(this.timeUpdated);
     }
 
     /**

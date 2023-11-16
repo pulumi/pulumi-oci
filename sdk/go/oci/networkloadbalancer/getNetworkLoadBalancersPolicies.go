@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Network Load Balancers Policies in Oracle Cloud Infrastructure Network Load Balancer service.
@@ -58,7 +57,7 @@ type GetNetworkLoadBalancersPoliciesArgs struct {
 type GetNetworkLoadBalancersPoliciesResult struct {
 	Filters []GetNetworkLoadBalancersPoliciesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The list of network_load_balancers_policy_collection.
 	NetworkLoadBalancersPolicyCollections []GetNetworkLoadBalancersPoliciesNetworkLoadBalancersPolicyCollection `pulumi:"networkLoadBalancersPolicyCollections"`
 }
@@ -100,12 +99,6 @@ func (o GetNetworkLoadBalancersPoliciesResultOutput) ToGetNetworkLoadBalancersPo
 	return o
 }
 
-func (o GetNetworkLoadBalancersPoliciesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetNetworkLoadBalancersPoliciesResult] {
-	return pulumix.Output[GetNetworkLoadBalancersPoliciesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetNetworkLoadBalancersPoliciesResultOutput) Filters() GetNetworkLoadBalancersPoliciesFilterArrayOutput {
 	return o.ApplyT(func(v GetNetworkLoadBalancersPoliciesResult) []GetNetworkLoadBalancersPoliciesFilter {
 		return v.Filters
@@ -113,8 +106,8 @@ func (o GetNetworkLoadBalancersPoliciesResultOutput) Filters() GetNetworkLoadBal
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetNetworkLoadBalancersPoliciesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNetworkLoadBalancersPoliciesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetNetworkLoadBalancersPoliciesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNetworkLoadBalancersPoliciesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The list of network_load_balancers_policy_collection.

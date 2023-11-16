@@ -110,10 +110,7 @@ class GetInvoiceResult:
 
     @property
     @pulumi.getter(name="billToAddresses")
-    def bill_to_addresses(self) -> Sequence['outputs.GetInvoiceBillToAddressResult']:
-        """
-        Address details model
-        """
+    def bill_to_addresses(self) -> Optional[Sequence['outputs.GetInvoiceBillToAddressResult']]:
         return pulumi.get(self, "bill_to_addresses")
 
     @property
@@ -123,15 +120,12 @@ class GetInvoiceResult:
 
     @property
     @pulumi.getter
-    def currencies(self) -> Sequence['outputs.GetInvoiceCurrencyResult']:
-        """
-        Currency details model
-        """
+    def currencies(self) -> Optional[Sequence['outputs.GetInvoiceCurrencyResult']]:
         return pulumi.get(self, "currencies")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -140,137 +134,86 @@ class GetInvoiceResult:
     @property
     @pulumi.getter(name="internalInvoiceId")
     def internal_invoice_id(self) -> str:
-        """
-        Transaction identifier
-        """
         return pulumi.get(self, "internal_invoice_id")
 
     @property
     @pulumi.getter(name="invoiceAmount")
-    def invoice_amount(self) -> float:
-        """
-        Total amount of invoice
-        """
+    def invoice_amount(self) -> Optional[float]:
         return pulumi.get(self, "invoice_amount")
 
     @property
     @pulumi.getter(name="invoiceAmountAdjusted")
-    def invoice_amount_adjusted(self) -> float:
-        """
-        Invoice amount adjust
-        """
+    def invoice_amount_adjusted(self) -> Optional[float]:
         return pulumi.get(self, "invoice_amount_adjusted")
 
     @property
     @pulumi.getter(name="invoiceAmountApplied")
-    def invoice_amount_applied(self) -> float:
-        """
-        Invoice amount applied
-        """
+    def invoice_amount_applied(self) -> Optional[float]:
         return pulumi.get(self, "invoice_amount_applied")
 
     @property
     @pulumi.getter(name="invoiceAmountCredited")
-    def invoice_amount_credited(self) -> float:
-        """
-        Invoice amount credit
-        """
+    def invoice_amount_credited(self) -> Optional[float]:
         return pulumi.get(self, "invoice_amount_credited")
 
     @property
     @pulumi.getter(name="invoiceAmountDue")
-    def invoice_amount_due(self) -> float:
-        """
-        Balance of invoice
-        """
+    def invoice_amount_due(self) -> Optional[float]:
         return pulumi.get(self, "invoice_amount_due")
 
     @property
     @pulumi.getter(name="invoiceId")
-    def invoice_id(self) -> str:
-        """
-        Invoice identifier which is generated on the on-premise sie. Pls note this is not an OCID
-        """
+    def invoice_id(self) -> Optional[str]:
         return pulumi.get(self, "invoice_id")
 
     @property
     @pulumi.getter(name="invoiceNumber")
-    def invoice_number(self) -> str:
-        """
-        Invoice external reference
-        """
+    def invoice_number(self) -> Optional[str]:
         return pulumi.get(self, "invoice_number")
 
     @property
     @pulumi.getter(name="invoicePoNumber")
-    def invoice_po_number(self) -> str:
-        """
-        Invoice PO number
-        """
+    def invoice_po_number(self) -> Optional[str]:
         return pulumi.get(self, "invoice_po_number")
 
     @property
     @pulumi.getter(name="invoiceRefNumber")
-    def invoice_ref_number(self) -> str:
-        """
-        Invoice reference number
-        """
+    def invoice_ref_number(self) -> Optional[str]:
         return pulumi.get(self, "invoice_ref_number")
 
     @property
     @pulumi.getter(name="invoiceStatus")
-    def invoice_status(self) -> str:
-        """
-        Invoice status
-        """
+    def invoice_status(self) -> Optional[str]:
         return pulumi.get(self, "invoice_status")
 
     @property
     @pulumi.getter(name="invoiceType")
-    def invoice_type(self) -> str:
-        """
-        Type of invoice
-        """
+    def invoice_type(self) -> Optional[str]:
         return pulumi.get(self, "invoice_type")
 
     @property
     @pulumi.getter(name="isCreditCardPayable")
-    def is_credit_card_payable(self) -> bool:
-        """
-        Is credit card payment eligible
-        """
+    def is_credit_card_payable(self) -> Optional[bool]:
         return pulumi.get(self, "is_credit_card_payable")
 
     @property
     @pulumi.getter(name="isDisplayDownloadPdf")
-    def is_display_download_pdf(self) -> bool:
-        """
-        Is pdf download access allowed
-        """
+    def is_display_download_pdf(self) -> Optional[bool]:
         return pulumi.get(self, "is_display_download_pdf")
 
     @property
     @pulumi.getter(name="isPayable")
-    def is_payable(self) -> bool:
-        """
-        Whether invoice can be payed
-        """
+    def is_payable(self) -> Optional[bool]:
         return pulumi.get(self, "is_payable")
 
     @property
     @pulumi.getter(name="isPdfEmailAvailable")
-    def is_pdf_email_available(self) -> bool:
-        """
-        Is emailing pdf allowed
-        """
+    def is_pdf_email_available(self) -> Optional[bool]:
         return pulumi.get(self, "is_pdf_email_available")
 
     @property
     @pulumi.getter(name="lastPaymentDetails")
-    def last_payment_details(self) -> Sequence['outputs.GetInvoiceLastPaymentDetailResult']:
-        """
-        Payment related details
-        """
+    def last_payment_details(self) -> Optional[Sequence['outputs.GetInvoiceLastPaymentDetailResult']]:
         return pulumi.get(self, "last_payment_details")
 
     @property
@@ -280,50 +223,32 @@ class GetInvoiceResult:
 
     @property
     @pulumi.getter(name="paymentTerms")
-    def payment_terms(self) -> str:
-        """
-        Payment terms
-        """
+    def payment_terms(self) -> Optional[str]:
         return pulumi.get(self, "payment_terms")
 
     @property
     @pulumi.getter(name="preferredEmail")
-    def preferred_email(self) -> str:
-        """
-        Preferred Email on the invoice
-        """
+    def preferred_email(self) -> Optional[str]:
         return pulumi.get(self, "preferred_email")
 
     @property
     @pulumi.getter(name="subscriptionIds")
-    def subscription_ids(self) -> Sequence[str]:
-        """
-        List of subscription identifiers
-        """
+    def subscription_ids(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "subscription_ids")
 
     @property
     @pulumi.getter
-    def tax(self) -> float:
-        """
-        Tax of invoice amount
-        """
+    def tax(self) -> Optional[float]:
         return pulumi.get(self, "tax")
 
     @property
     @pulumi.getter(name="timeInvoice")
-    def time_invoice(self) -> str:
-        """
-        Date of invoice
-        """
+    def time_invoice(self) -> Optional[str]:
         return pulumi.get(self, "time_invoice")
 
     @property
     @pulumi.getter(name="timeInvoiceDue")
-    def time_invoice_due(self) -> str:
-        """
-        Due date of invoice
-        """
+    def time_invoice_due(self) -> Optional[str]:
         return pulumi.get(self, "time_invoice_due")
 
 
@@ -368,25 +293,7 @@ def get_invoice(compartment_id: Optional[str] = None,
                 osp_home_region: Optional[str] = None,
                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetInvoiceResult:
     """
-    This data source provides details about a specific Invoice resource in Oracle Cloud Infrastructure Osp Gateway service.
-
-    Returns an invoice by invoice id
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_invoice = oci.OspGateway.get_invoice(compartment_id=var["compartment_id"],
-        internal_invoice_id=oci_osp_gateway_invoice["test_invoice"]["id"],
-        osp_home_region=var["invoice_osp_home_region"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param str internal_invoice_id: The identifier of the invoice.
-    :param str osp_home_region: The home region's public name of the logged in user.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -432,24 +339,6 @@ def get_invoice_output(compartment_id: Optional[pulumi.Input[str]] = None,
                        osp_home_region: Optional[pulumi.Input[str]] = None,
                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetInvoiceResult]:
     """
-    This data source provides details about a specific Invoice resource in Oracle Cloud Infrastructure Osp Gateway service.
-
-    Returns an invoice by invoice id
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_invoice = oci.OspGateway.get_invoice(compartment_id=var["compartment_id"],
-        internal_invoice_id=oci_osp_gateway_invoice["test_invoice"]["id"],
-        osp_home_region=var["invoice_osp_home_region"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param str internal_invoice_id: The identifier of the invoice.
-    :param str osp_home_region: The home region's public name of the logged in user.
+    Use this data source to access information about an existing resource.
     """
     ...

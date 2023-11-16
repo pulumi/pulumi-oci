@@ -20,43 +20,43 @@ namespace Pulumi.Oci.Core.Outputs
         /// <summary>
         /// How instances that use this shape are charged.
         /// </summary>
-        public readonly string BillingType;
+        public readonly string? BillingType;
         /// <summary>
         /// A short description of the graphics processing unit (GPU) available for this shape.
         /// </summary>
-        public readonly string GpuDescription;
+        public readonly string? GpuDescription;
         /// <summary>
         /// The number of GPUs available for this shape.
         /// </summary>
-        public readonly int Gpus;
+        public readonly int? Gpus;
         /// <summary>
         /// Whether billing continues when the instances that use this shape are in the stopped state.
         /// </summary>
-        public readonly bool IsBilledForStoppedInstance;
+        public readonly bool? IsBilledForStoppedInstance;
         /// <summary>
         /// Whether the shape supports creating flexible instances. A [flexible shape](https://docs.cloud.oracle.com/iaas/Content/Compute/References/computeshapes.htm#flexible) is a shape that lets you customize the number of OCPUs and the amount of memory when launching or resizing your instance.
         /// </summary>
-        public readonly bool IsFlexible;
+        public readonly bool? IsFlexible;
         /// <summary>
         /// Whether live migration is supported for this shape.
         /// </summary>
-        public readonly bool IsLiveMigrationSupported;
+        public readonly bool? IsLiveMigrationSupported;
         /// <summary>
         /// Whether the shape supports creating subcore or burstable instances. A [burstable instance](https://docs.cloud.oracle.com/iaas/Content/Compute/References/burstable-instances.htm) is a virtual machine (VM) instance that provides a baseline level of CPU performance with the ability to burst to a higher level to support occasional spikes in usage.
         /// </summary>
-        public readonly bool IsSubcore;
+        public readonly bool? IsSubcore;
         /// <summary>
         /// A short description of the local disks available for this shape.
         /// </summary>
-        public readonly string LocalDiskDescription;
+        public readonly string? LocalDiskDescription;
         /// <summary>
         /// The number of local disks available for this shape.
         /// </summary>
-        public readonly int LocalDisks;
+        public readonly int? LocalDisks;
         /// <summary>
         /// The aggregate size of the local disks available for this shape, in gigabytes.
         /// </summary>
-        public readonly double LocalDisksTotalSizeInGbs;
+        public readonly double? LocalDisksTotalSizeInGbs;
         /// <summary>
         /// For a flexible shape, the number of VNIC attachments that are available for instances that use this shape.
         /// </summary>
@@ -64,11 +64,11 @@ namespace Pulumi.Oci.Core.Outputs
         /// <summary>
         /// The maximum number of VNIC attachments available for this shape.
         /// </summary>
-        public readonly int MaxVnicAttachments;
+        public readonly int? MaxVnicAttachments;
         /// <summary>
         /// The default amount of memory available for this shape, in gigabytes.
         /// </summary>
-        public readonly double MemoryInGbs;
+        public readonly double? MemoryInGbs;
         /// <summary>
         /// For a flexible shape, the amount of memory available for instances that use this shape.
         /// </summary>
@@ -76,19 +76,19 @@ namespace Pulumi.Oci.Core.Outputs
         /// <summary>
         /// For a subcore burstable VM, the minimum total baseline OCPUs required. The total baseline OCPUs is equal to baselineOcpuUtilization chosen multiplied by the number of OCPUs chosen.
         /// </summary>
-        public readonly double MinTotalBaselineOcpusRequired;
+        public readonly double? MinTotalBaselineOcpusRequired;
         /// <summary>
         /// The name of the shape. You can enumerate all available shapes by calling [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Shape/ListShapes).
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// The number of physical network interface card (NIC) ports available for this shape.
         /// </summary>
-        public readonly int NetworkPorts;
+        public readonly int? NetworkPorts;
         /// <summary>
         /// The networking bandwidth available for this shape, in gigabits per second.
         /// </summary>
-        public readonly double NetworkingBandwidthInGbps;
+        public readonly double? NetworkingBandwidthInGbps;
         /// <summary>
         /// For a flexible shape, the amount of networking bandwidth available for instances that use this shape.
         /// </summary>
@@ -100,7 +100,7 @@ namespace Pulumi.Oci.Core.Outputs
         /// <summary>
         /// The default number of OCPUs available for this shape.
         /// </summary>
-        public readonly double Ocpus;
+        public readonly double? Ocpus;
         /// <summary>
         /// The list of supported platform configuration options for this shape.
         /// </summary>
@@ -108,7 +108,7 @@ namespace Pulumi.Oci.Core.Outputs
         /// <summary>
         /// A short description of the shape's processor (CPU).
         /// </summary>
-        public readonly string ProcessorDescription;
+        public readonly string? ProcessorDescription;
         /// <summary>
         /// The list of of compartment quotas for the shape.
         /// </summary>
@@ -116,11 +116,11 @@ namespace Pulumi.Oci.Core.Outputs
         /// <summary>
         /// The networking bandwidth available for the remote direct memory access (RDMA) network for this shape, in gigabits per second.
         /// </summary>
-        public readonly int RdmaBandwidthInGbps;
+        public readonly int? RdmaBandwidthInGbps;
         /// <summary>
         /// The number of networking ports available for the remote direct memory access (RDMA) network between nodes in a high performance computing (HPC) cluster network. If the shape does not support cluster networks, this value is `0`.
         /// </summary>
-        public readonly int RdmaPorts;
+        public readonly int? RdmaPorts;
         /// <summary>
         /// The list of shapes and shape details (if applicable) that Oracle recommends that you use as an alternative to the current shape.
         /// </summary>
@@ -134,57 +134,57 @@ namespace Pulumi.Oci.Core.Outputs
         private GetShapesShapeResult(
             ImmutableArray<string> baselineOcpuUtilizations,
 
-            string billingType,
+            string? billingType,
 
-            string gpuDescription,
+            string? gpuDescription,
 
-            int gpus,
+            int? gpus,
 
-            bool isBilledForStoppedInstance,
+            bool? isBilledForStoppedInstance,
 
-            bool isFlexible,
+            bool? isFlexible,
 
-            bool isLiveMigrationSupported,
+            bool? isLiveMigrationSupported,
 
-            bool isSubcore,
+            bool? isSubcore,
 
-            string localDiskDescription,
+            string? localDiskDescription,
 
-            int localDisks,
+            int? localDisks,
 
-            double localDisksTotalSizeInGbs,
+            double? localDisksTotalSizeInGbs,
 
             ImmutableArray<Outputs.GetShapesShapeMaxVnicAttachmentOptionResult> maxVnicAttachmentOptions,
 
-            int maxVnicAttachments,
+            int? maxVnicAttachments,
 
-            double memoryInGbs,
+            double? memoryInGbs,
 
             ImmutableArray<Outputs.GetShapesShapeMemoryOptionResult> memoryOptions,
 
-            double minTotalBaselineOcpusRequired,
+            double? minTotalBaselineOcpusRequired,
 
-            string name,
+            string? name,
 
-            int networkPorts,
+            int? networkPorts,
 
-            double networkingBandwidthInGbps,
+            double? networkingBandwidthInGbps,
 
             ImmutableArray<Outputs.GetShapesShapeNetworkingBandwidthOptionResult> networkingBandwidthOptions,
 
             ImmutableArray<Outputs.GetShapesShapeOcpuOptionResult> ocpuOptions,
 
-            double ocpus,
+            double? ocpus,
 
             ImmutableArray<Outputs.GetShapesShapePlatformConfigOptionResult> platformConfigOptions,
 
-            string processorDescription,
+            string? processorDescription,
 
             ImmutableArray<string> quotaNames,
 
-            int rdmaBandwidthInGbps,
+            int? rdmaBandwidthInGbps,
 
-            int rdmaPorts,
+            int? rdmaPorts,
 
             ImmutableArray<Outputs.GetShapesShapeRecommendedAlternativeResult> recommendedAlternatives,
 

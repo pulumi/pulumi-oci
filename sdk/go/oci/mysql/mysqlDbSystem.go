@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Mysql Db System resource in Oracle Cloud Infrastructure MySQL Database service.
@@ -107,9 +106,9 @@ type MysqlDbSystem struct {
 	pulumi.CustomResourceState
 
 	// The password for the administrative user. The password must be between 8 and 32 characters long, and must contain at least 1 numeric character, 1 lowercase character, 1 uppercase character, and 1 special (nonalphanumeric) character.
-	AdminPassword pulumi.StringOutput `pulumi:"adminPassword"`
+	AdminPassword pulumi.StringPtrOutput `pulumi:"adminPassword"`
 	// The username for the administrative user.
-	AdminUsername pulumi.StringOutput `pulumi:"adminUsername"`
+	AdminUsername pulumi.StringPtrOutput `pulumi:"adminUsername"`
 	// The availability domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
 	//
 	// In a failover scenario, the Read/Write endpoint is redirected to one of the other availability domains and the MySQL instance in that domain is promoted to the primary instance. This redirection does not affect the IP address of the DB System in any way.
@@ -117,29 +116,29 @@ type MysqlDbSystem struct {
 	// For a standalone DB System, this defines the availability domain in which the DB System is placed.
 	AvailabilityDomain pulumi.StringOutput `pulumi:"availabilityDomain"`
 	// (Updatable) Backup policy as optionally used for DB System Creation.
-	BackupPolicy MysqlDbSystemBackupPolicyOutput `pulumi:"backupPolicy"`
+	BackupPolicy MysqlDbSystemBackupPolicyPtrOutput `pulumi:"backupPolicy"`
 	// A list with a summary of all the Channels attached to the DB System.
 	Channels MysqlDbSystemChannelArrayOutput `pulumi:"channels"`
 	// The OCID of the compartment.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) The OCID of the Configuration to be used for this DB System.
-	ConfigurationId pulumi.StringOutput `pulumi:"configurationId"`
+	ConfigurationId pulumi.StringPtrOutput `pulumi:"configurationId"`
 	// (Updatable) Whether to run the DB System with InnoDB Redo Logs and the Double Write Buffer enabled or disabled, and whether to enable or disable syncing of the Binary Logs.
-	CrashRecovery pulumi.StringOutput `pulumi:"crashRecovery"`
+	CrashRecovery pulumi.StringPtrOutput `pulumi:"crashRecovery"`
 	// The availability domain and fault domain a DB System is placed in.
 	CurrentPlacements MysqlDbSystemCurrentPlacementArrayOutput `pulumi:"currentPlacements"`
 	// (Updatable) Initial size of the data volume in GBs that will be created and attached. Keep in mind that this only specifies the size of the database data volume, the log volume for the database will be scaled appropriately with its shape. It is required if you are creating a new database. It cannot be set if you are creating a database from a backup.
-	DataStorageSizeInGb pulumi.IntOutput `pulumi:"dataStorageSizeInGb"`
+	DataStorageSizeInGb pulumi.IntPtrOutput `pulumi:"dataStorageSizeInGb"`
 	// (Updatable) Whether to enable monitoring via the Database Management service.
-	DatabaseManagement pulumi.StringOutput `pulumi:"databaseManagement"`
+	DatabaseManagement pulumi.StringPtrOutput `pulumi:"databaseManagement"`
 	// (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) Policy for how the DB System and related resources should be handled at the time of its deletion.
 	DeletionPolicies MysqlDbSystemDeletionPolicyArrayOutput `pulumi:"deletionPolicies"`
 	// (Updatable) User-provided data about the DB System.
-	Description pulumi.StringOutput `pulumi:"description"`
+	Description pulumi.StringPtrOutput `pulumi:"description"`
 	// (Updatable) The user-friendly name for the DB System. It does not have to be unique.
-	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrOutput `pulumi:"displayName"`
 	// The network endpoints available for this DB System.
 	Endpoints MysqlDbSystemEndpointArrayOutput `pulumi:"endpoints"`
 	// The fault domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
@@ -147,7 +146,7 @@ type MysqlDbSystem struct {
 	// In a failover scenario, the Read/Write endpoint is redirected to one of the other fault domains and the MySQL instance in that domain is promoted to the primary instance. This redirection does not affect the IP address of the DB System in any way.
 	//
 	// For a standalone DB System, this defines the fault domain in which the DB System is placed.
-	FaultDomain pulumi.StringOutput `pulumi:"faultDomain"`
+	FaultDomain pulumi.StringPtrOutput `pulumi:"faultDomain"`
 	// (Updatable) Simple key-value pair applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// A summary of a HeatWave cluster.
@@ -157,27 +156,27 @@ type MysqlDbSystem struct {
 	// The value is the hostname portion of the primary private IP's fully qualified domain name (FQDN) (for example, "dbsystem-1" in FQDN "dbsystem-1.subnet123.vcn1.oraclevcn.com").
 	//
 	// Must be unique across all VNICs in the subnet and comply with RFC 952 and RFC 1123.
-	HostnameLabel pulumi.StringOutput `pulumi:"hostnameLabel"`
+	HostnameLabel pulumi.StringPtrOutput `pulumi:"hostnameLabel"`
 	// The IP address the DB System is configured to listen on. A private IP address of your choice to assign to the primary endpoint of the DB System. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. This should be a "dotted-quad" style IPv4 address.
-	IpAddress pulumi.StringOutput `pulumi:"ipAddress"`
+	IpAddress pulumi.StringPtrOutput `pulumi:"ipAddress"`
 	// If the DB System has a HeatWave Cluster attached.
-	IsHeatWaveClusterAttached pulumi.BoolOutput `pulumi:"isHeatWaveClusterAttached"`
+	IsHeatWaveClusterAttached pulumi.BoolPtrOutput `pulumi:"isHeatWaveClusterAttached"`
 	// (Updatable) Specifies if the DB System is highly available.
 	//
 	// When creating a DB System with High Availability, three instances are created and placed according to your region- and subnet-type. The secondaries are placed automatically in the other two availability or fault domains.  You can choose the preferred location of your primary instance, only.
-	IsHighlyAvailable pulumi.BoolOutput `pulumi:"isHighlyAvailable"`
+	IsHighlyAvailable pulumi.BoolPtrOutput `pulumi:"isHighlyAvailable"`
 	// Additional information about the current lifecycleState.
-	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrOutput `pulumi:"lifecycleDetails"`
 	// (Updatable) The Maintenance Policy for the DB System or Read Replica that this model is included in. `maintenance` and `backupPolicy` cannot be updated in the same request.
-	Maintenance MysqlDbSystemMaintenanceOutput `pulumi:"maintenance"`
+	Maintenance MysqlDbSystemMaintenancePtrOutput `pulumi:"maintenance"`
 	// The specific MySQL version identifier.
-	MysqlVersion pulumi.StringOutput `pulumi:"mysqlVersion"`
+	MysqlVersion pulumi.StringPtrOutput `pulumi:"mysqlVersion"`
 	// Point-in-time Recovery details like earliest and latest recovery time point for the DB System.
 	PointInTimeRecoveryDetails MysqlDbSystemPointInTimeRecoveryDetailArrayOutput `pulumi:"pointInTimeRecoveryDetails"`
 	// The port for primary endpoint of the DB System to listen on.
-	Port pulumi.IntOutput `pulumi:"port"`
+	Port pulumi.IntPtrOutput `pulumi:"port"`
 	// The TCP network port on which X Plugin listens for connections. This is the X Plugin equivalent of port.
-	PortX pulumi.IntOutput `pulumi:"portX"`
+	PortX pulumi.IntPtrOutput `pulumi:"portX"`
 	// (Updatable) The name of the shape. The shape determines the resources allocated
 	// * CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
 	ShapeName pulumi.StringOutput `pulumi:"shapeName"`
@@ -187,15 +186,15 @@ type MysqlDbSystem struct {
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ShutdownType pulumi.StringPtrOutput `pulumi:"shutdownType"`
 	// Parameters detailing how to provision the initial data of the system.
-	Source MysqlDbSystemSourceOutput `pulumi:"source"`
+	Source MysqlDbSystemSourcePtrOutput `pulumi:"source"`
 	// (Updatable) The target state for the DB System. Could be set to `ACTIVE` or `INACTIVE`.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// The OCID of the subnet the DB System is associated with.
 	SubnetId pulumi.StringOutput `pulumi:"subnetId"`
 	// The date and time the DB System was created.
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The time the DB System was last updated.
-	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 }
 
 // NewMysqlDbSystem registers a new resource with the given unique name, arguments, and options.
@@ -610,12 +609,6 @@ func (i *MysqlDbSystem) ToMysqlDbSystemOutputWithContext(ctx context.Context) My
 	return pulumi.ToOutputWithContext(ctx, i).(MysqlDbSystemOutput)
 }
 
-func (i *MysqlDbSystem) ToOutput(ctx context.Context) pulumix.Output[*MysqlDbSystem] {
-	return pulumix.Output[*MysqlDbSystem]{
-		OutputState: i.ToMysqlDbSystemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // MysqlDbSystemArrayInput is an input type that accepts MysqlDbSystemArray and MysqlDbSystemArrayOutput values.
 // You can construct a concrete instance of `MysqlDbSystemArrayInput` via:
 //
@@ -639,12 +632,6 @@ func (i MysqlDbSystemArray) ToMysqlDbSystemArrayOutput() MysqlDbSystemArrayOutpu
 
 func (i MysqlDbSystemArray) ToMysqlDbSystemArrayOutputWithContext(ctx context.Context) MysqlDbSystemArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(MysqlDbSystemArrayOutput)
-}
-
-func (i MysqlDbSystemArray) ToOutput(ctx context.Context) pulumix.Output[[]*MysqlDbSystem] {
-	return pulumix.Output[[]*MysqlDbSystem]{
-		OutputState: i.ToMysqlDbSystemArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // MysqlDbSystemMapInput is an input type that accepts MysqlDbSystemMap and MysqlDbSystemMapOutput values.
@@ -672,12 +659,6 @@ func (i MysqlDbSystemMap) ToMysqlDbSystemMapOutputWithContext(ctx context.Contex
 	return pulumi.ToOutputWithContext(ctx, i).(MysqlDbSystemMapOutput)
 }
 
-func (i MysqlDbSystemMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*MysqlDbSystem] {
-	return pulumix.Output[map[string]*MysqlDbSystem]{
-		OutputState: i.ToMysqlDbSystemMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type MysqlDbSystemOutput struct{ *pulumi.OutputState }
 
 func (MysqlDbSystemOutput) ElementType() reflect.Type {
@@ -692,20 +673,14 @@ func (o MysqlDbSystemOutput) ToMysqlDbSystemOutputWithContext(ctx context.Contex
 	return o
 }
 
-func (o MysqlDbSystemOutput) ToOutput(ctx context.Context) pulumix.Output[*MysqlDbSystem] {
-	return pulumix.Output[*MysqlDbSystem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The password for the administrative user. The password must be between 8 and 32 characters long, and must contain at least 1 numeric character, 1 lowercase character, 1 uppercase character, and 1 special (nonalphanumeric) character.
-func (o MysqlDbSystemOutput) AdminPassword() pulumi.StringOutput {
-	return o.ApplyT(func(v *MysqlDbSystem) pulumi.StringOutput { return v.AdminPassword }).(pulumi.StringOutput)
+func (o MysqlDbSystemOutput) AdminPassword() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MysqlDbSystem) pulumi.StringPtrOutput { return v.AdminPassword }).(pulumi.StringPtrOutput)
 }
 
 // The username for the administrative user.
-func (o MysqlDbSystemOutput) AdminUsername() pulumi.StringOutput {
-	return o.ApplyT(func(v *MysqlDbSystem) pulumi.StringOutput { return v.AdminUsername }).(pulumi.StringOutput)
+func (o MysqlDbSystemOutput) AdminUsername() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MysqlDbSystem) pulumi.StringPtrOutput { return v.AdminUsername }).(pulumi.StringPtrOutput)
 }
 
 // The availability domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
@@ -718,8 +693,8 @@ func (o MysqlDbSystemOutput) AvailabilityDomain() pulumi.StringOutput {
 }
 
 // (Updatable) Backup policy as optionally used for DB System Creation.
-func (o MysqlDbSystemOutput) BackupPolicy() MysqlDbSystemBackupPolicyOutput {
-	return o.ApplyT(func(v *MysqlDbSystem) MysqlDbSystemBackupPolicyOutput { return v.BackupPolicy }).(MysqlDbSystemBackupPolicyOutput)
+func (o MysqlDbSystemOutput) BackupPolicy() MysqlDbSystemBackupPolicyPtrOutput {
+	return o.ApplyT(func(v *MysqlDbSystem) MysqlDbSystemBackupPolicyPtrOutput { return v.BackupPolicy }).(MysqlDbSystemBackupPolicyPtrOutput)
 }
 
 // A list with a summary of all the Channels attached to the DB System.
@@ -733,13 +708,13 @@ func (o MysqlDbSystemOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // (Updatable) The OCID of the Configuration to be used for this DB System.
-func (o MysqlDbSystemOutput) ConfigurationId() pulumi.StringOutput {
-	return o.ApplyT(func(v *MysqlDbSystem) pulumi.StringOutput { return v.ConfigurationId }).(pulumi.StringOutput)
+func (o MysqlDbSystemOutput) ConfigurationId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MysqlDbSystem) pulumi.StringPtrOutput { return v.ConfigurationId }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Whether to run the DB System with InnoDB Redo Logs and the Double Write Buffer enabled or disabled, and whether to enable or disable syncing of the Binary Logs.
-func (o MysqlDbSystemOutput) CrashRecovery() pulumi.StringOutput {
-	return o.ApplyT(func(v *MysqlDbSystem) pulumi.StringOutput { return v.CrashRecovery }).(pulumi.StringOutput)
+func (o MysqlDbSystemOutput) CrashRecovery() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MysqlDbSystem) pulumi.StringPtrOutput { return v.CrashRecovery }).(pulumi.StringPtrOutput)
 }
 
 // The availability domain and fault domain a DB System is placed in.
@@ -748,13 +723,13 @@ func (o MysqlDbSystemOutput) CurrentPlacements() MysqlDbSystemCurrentPlacementAr
 }
 
 // (Updatable) Initial size of the data volume in GBs that will be created and attached. Keep in mind that this only specifies the size of the database data volume, the log volume for the database will be scaled appropriately with its shape. It is required if you are creating a new database. It cannot be set if you are creating a database from a backup.
-func (o MysqlDbSystemOutput) DataStorageSizeInGb() pulumi.IntOutput {
-	return o.ApplyT(func(v *MysqlDbSystem) pulumi.IntOutput { return v.DataStorageSizeInGb }).(pulumi.IntOutput)
+func (o MysqlDbSystemOutput) DataStorageSizeInGb() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *MysqlDbSystem) pulumi.IntPtrOutput { return v.DataStorageSizeInGb }).(pulumi.IntPtrOutput)
 }
 
 // (Updatable) Whether to enable monitoring via the Database Management service.
-func (o MysqlDbSystemOutput) DatabaseManagement() pulumi.StringOutput {
-	return o.ApplyT(func(v *MysqlDbSystem) pulumi.StringOutput { return v.DatabaseManagement }).(pulumi.StringOutput)
+func (o MysqlDbSystemOutput) DatabaseManagement() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MysqlDbSystem) pulumi.StringPtrOutput { return v.DatabaseManagement }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
@@ -768,13 +743,13 @@ func (o MysqlDbSystemOutput) DeletionPolicies() MysqlDbSystemDeletionPolicyArray
 }
 
 // (Updatable) User-provided data about the DB System.
-func (o MysqlDbSystemOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v *MysqlDbSystem) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
+func (o MysqlDbSystemOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MysqlDbSystem) pulumi.StringPtrOutput { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The user-friendly name for the DB System. It does not have to be unique.
-func (o MysqlDbSystemOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v *MysqlDbSystem) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+func (o MysqlDbSystemOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MysqlDbSystem) pulumi.StringPtrOutput { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // The network endpoints available for this DB System.
@@ -787,8 +762,8 @@ func (o MysqlDbSystemOutput) Endpoints() MysqlDbSystemEndpointArrayOutput {
 // In a failover scenario, the Read/Write endpoint is redirected to one of the other fault domains and the MySQL instance in that domain is promoted to the primary instance. This redirection does not affect the IP address of the DB System in any way.
 //
 // For a standalone DB System, this defines the fault domain in which the DB System is placed.
-func (o MysqlDbSystemOutput) FaultDomain() pulumi.StringOutput {
-	return o.ApplyT(func(v *MysqlDbSystem) pulumi.StringOutput { return v.FaultDomain }).(pulumi.StringOutput)
+func (o MysqlDbSystemOutput) FaultDomain() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MysqlDbSystem) pulumi.StringPtrOutput { return v.FaultDomain }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Simple key-value pair applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -806,40 +781,40 @@ func (o MysqlDbSystemOutput) HeatWaveClusters() MysqlDbSystemHeatWaveClusterArra
 // The value is the hostname portion of the primary private IP's fully qualified domain name (FQDN) (for example, "dbsystem-1" in FQDN "dbsystem-1.subnet123.vcn1.oraclevcn.com").
 //
 // Must be unique across all VNICs in the subnet and comply with RFC 952 and RFC 1123.
-func (o MysqlDbSystemOutput) HostnameLabel() pulumi.StringOutput {
-	return o.ApplyT(func(v *MysqlDbSystem) pulumi.StringOutput { return v.HostnameLabel }).(pulumi.StringOutput)
+func (o MysqlDbSystemOutput) HostnameLabel() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MysqlDbSystem) pulumi.StringPtrOutput { return v.HostnameLabel }).(pulumi.StringPtrOutput)
 }
 
 // The IP address the DB System is configured to listen on. A private IP address of your choice to assign to the primary endpoint of the DB System. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. This should be a "dotted-quad" style IPv4 address.
-func (o MysqlDbSystemOutput) IpAddress() pulumi.StringOutput {
-	return o.ApplyT(func(v *MysqlDbSystem) pulumi.StringOutput { return v.IpAddress }).(pulumi.StringOutput)
+func (o MysqlDbSystemOutput) IpAddress() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MysqlDbSystem) pulumi.StringPtrOutput { return v.IpAddress }).(pulumi.StringPtrOutput)
 }
 
 // If the DB System has a HeatWave Cluster attached.
-func (o MysqlDbSystemOutput) IsHeatWaveClusterAttached() pulumi.BoolOutput {
-	return o.ApplyT(func(v *MysqlDbSystem) pulumi.BoolOutput { return v.IsHeatWaveClusterAttached }).(pulumi.BoolOutput)
+func (o MysqlDbSystemOutput) IsHeatWaveClusterAttached() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *MysqlDbSystem) pulumi.BoolPtrOutput { return v.IsHeatWaveClusterAttached }).(pulumi.BoolPtrOutput)
 }
 
 // (Updatable) Specifies if the DB System is highly available.
 //
 // When creating a DB System with High Availability, three instances are created and placed according to your region- and subnet-type. The secondaries are placed automatically in the other two availability or fault domains.  You can choose the preferred location of your primary instance, only.
-func (o MysqlDbSystemOutput) IsHighlyAvailable() pulumi.BoolOutput {
-	return o.ApplyT(func(v *MysqlDbSystem) pulumi.BoolOutput { return v.IsHighlyAvailable }).(pulumi.BoolOutput)
+func (o MysqlDbSystemOutput) IsHighlyAvailable() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *MysqlDbSystem) pulumi.BoolPtrOutput { return v.IsHighlyAvailable }).(pulumi.BoolPtrOutput)
 }
 
 // Additional information about the current lifecycleState.
-func (o MysqlDbSystemOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v *MysqlDbSystem) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o MysqlDbSystemOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MysqlDbSystem) pulumi.StringPtrOutput { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The Maintenance Policy for the DB System or Read Replica that this model is included in. `maintenance` and `backupPolicy` cannot be updated in the same request.
-func (o MysqlDbSystemOutput) Maintenance() MysqlDbSystemMaintenanceOutput {
-	return o.ApplyT(func(v *MysqlDbSystem) MysqlDbSystemMaintenanceOutput { return v.Maintenance }).(MysqlDbSystemMaintenanceOutput)
+func (o MysqlDbSystemOutput) Maintenance() MysqlDbSystemMaintenancePtrOutput {
+	return o.ApplyT(func(v *MysqlDbSystem) MysqlDbSystemMaintenancePtrOutput { return v.Maintenance }).(MysqlDbSystemMaintenancePtrOutput)
 }
 
 // The specific MySQL version identifier.
-func (o MysqlDbSystemOutput) MysqlVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v *MysqlDbSystem) pulumi.StringOutput { return v.MysqlVersion }).(pulumi.StringOutput)
+func (o MysqlDbSystemOutput) MysqlVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MysqlDbSystem) pulumi.StringPtrOutput { return v.MysqlVersion }).(pulumi.StringPtrOutput)
 }
 
 // Point-in-time Recovery details like earliest and latest recovery time point for the DB System.
@@ -850,13 +825,13 @@ func (o MysqlDbSystemOutput) PointInTimeRecoveryDetails() MysqlDbSystemPointInTi
 }
 
 // The port for primary endpoint of the DB System to listen on.
-func (o MysqlDbSystemOutput) Port() pulumi.IntOutput {
-	return o.ApplyT(func(v *MysqlDbSystem) pulumi.IntOutput { return v.Port }).(pulumi.IntOutput)
+func (o MysqlDbSystemOutput) Port() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *MysqlDbSystem) pulumi.IntPtrOutput { return v.Port }).(pulumi.IntPtrOutput)
 }
 
 // The TCP network port on which X Plugin listens for connections. This is the X Plugin equivalent of port.
-func (o MysqlDbSystemOutput) PortX() pulumi.IntOutput {
-	return o.ApplyT(func(v *MysqlDbSystem) pulumi.IntOutput { return v.PortX }).(pulumi.IntOutput)
+func (o MysqlDbSystemOutput) PortX() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *MysqlDbSystem) pulumi.IntPtrOutput { return v.PortX }).(pulumi.IntPtrOutput)
 }
 
 // (Updatable) The name of the shape. The shape determines the resources allocated
@@ -874,13 +849,13 @@ func (o MysqlDbSystemOutput) ShutdownType() pulumi.StringPtrOutput {
 }
 
 // Parameters detailing how to provision the initial data of the system.
-func (o MysqlDbSystemOutput) Source() MysqlDbSystemSourceOutput {
-	return o.ApplyT(func(v *MysqlDbSystem) MysqlDbSystemSourceOutput { return v.Source }).(MysqlDbSystemSourceOutput)
+func (o MysqlDbSystemOutput) Source() MysqlDbSystemSourcePtrOutput {
+	return o.ApplyT(func(v *MysqlDbSystem) MysqlDbSystemSourcePtrOutput { return v.Source }).(MysqlDbSystemSourcePtrOutput)
 }
 
 // (Updatable) The target state for the DB System. Could be set to `ACTIVE` or `INACTIVE`.
-func (o MysqlDbSystemOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *MysqlDbSystem) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o MysqlDbSystemOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MysqlDbSystem) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the subnet the DB System is associated with.
@@ -889,13 +864,13 @@ func (o MysqlDbSystemOutput) SubnetId() pulumi.StringOutput {
 }
 
 // The date and time the DB System was created.
-func (o MysqlDbSystemOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *MysqlDbSystem) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o MysqlDbSystemOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MysqlDbSystem) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time the DB System was last updated.
-func (o MysqlDbSystemOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *MysqlDbSystem) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o MysqlDbSystemOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MysqlDbSystem) pulumi.StringPtrOutput { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type MysqlDbSystemArrayOutput struct{ *pulumi.OutputState }
@@ -910,12 +885,6 @@ func (o MysqlDbSystemArrayOutput) ToMysqlDbSystemArrayOutput() MysqlDbSystemArra
 
 func (o MysqlDbSystemArrayOutput) ToMysqlDbSystemArrayOutputWithContext(ctx context.Context) MysqlDbSystemArrayOutput {
 	return o
-}
-
-func (o MysqlDbSystemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*MysqlDbSystem] {
-	return pulumix.Output[[]*MysqlDbSystem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o MysqlDbSystemArrayOutput) Index(i pulumi.IntInput) MysqlDbSystemOutput {
@@ -936,12 +905,6 @@ func (o MysqlDbSystemMapOutput) ToMysqlDbSystemMapOutput() MysqlDbSystemMapOutpu
 
 func (o MysqlDbSystemMapOutput) ToMysqlDbSystemMapOutputWithContext(ctx context.Context) MysqlDbSystemMapOutput {
 	return o
-}
-
-func (o MysqlDbSystemMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*MysqlDbSystem] {
-	return pulumix.Output[map[string]*MysqlDbSystem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o MysqlDbSystemMapOutput) MapIndex(k pulumi.StringInput) MysqlDbSystemOutput {

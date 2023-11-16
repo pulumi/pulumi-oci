@@ -16,17 +16,17 @@ namespace Pulumi.Oci.Database.Outputs
         /// <summary>
         /// Indicates if the resource pool should be deleted for the Autonomous Database.
         /// </summary>
-        public readonly bool IsDisabled;
+        public readonly bool? IsDisabled;
         /// <summary>
         /// Resource pool size.
         /// </summary>
-        public readonly int PoolSize;
+        public readonly int? PoolSize;
 
         [OutputConstructor]
         private GetAutonomousDatabaseResourcePoolSummaryResult(
-            bool isDisabled,
+            bool? isDisabled,
 
-            int poolSize)
+            int? poolSize)
         {
             IsDisabled = isDisabled;
             PoolSize = poolSize;

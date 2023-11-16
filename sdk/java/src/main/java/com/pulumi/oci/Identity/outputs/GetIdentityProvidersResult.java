@@ -24,12 +24,12 @@ public final class GetIdentityProvidersResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The list of identity_providers.
      * 
      */
-    private List<GetIdentityProvidersIdentityProvider> identityProviders;
+    private @Nullable List<GetIdentityProvidersIdentityProvider> identityProviders;
     /**
      * @return The name you assign to the `IdentityProvider` during creation. The name must be unique across all `IdentityProvider` objects in the tenancy and cannot be changed. This is the name federated users see when choosing which identity provider to use when signing in to the Oracle Cloud Infrastructure Console.
      * 
@@ -61,15 +61,15 @@ public final class GetIdentityProvidersResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The list of identity_providers.
      * 
      */
     public List<GetIdentityProvidersIdentityProvider> identityProviders() {
-        return this.identityProviders;
+        return this.identityProviders == null ? List.of() : this.identityProviders;
     }
     /**
      * @return The name you assign to the `IdentityProvider` during creation. The name must be unique across all `IdentityProvider` objects in the tenancy and cannot be changed. This is the name federated users see when choosing which identity provider to use when signing in to the Oracle Cloud Infrastructure Console.
@@ -104,8 +104,8 @@ public final class GetIdentityProvidersResult {
     public static final class Builder {
         private String compartmentId;
         private @Nullable List<GetIdentityProvidersFilter> filters;
-        private String id;
-        private List<GetIdentityProvidersIdentityProvider> identityProviders;
+        private @Nullable String id;
+        private @Nullable List<GetIdentityProvidersIdentityProvider> identityProviders;
         private @Nullable String name;
         private String protocol;
         private @Nullable String state;
@@ -135,13 +135,13 @@ public final class GetIdentityProvidersResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder identityProviders(List<GetIdentityProvidersIdentityProvider> identityProviders) {
-            this.identityProviders = Objects.requireNonNull(identityProviders);
+        public Builder identityProviders(@Nullable List<GetIdentityProvidersIdentityProvider> identityProviders) {
+            this.identityProviders = identityProviders;
             return this;
         }
         public Builder identityProviders(GetIdentityProvidersIdentityProvider... identityProviders) {

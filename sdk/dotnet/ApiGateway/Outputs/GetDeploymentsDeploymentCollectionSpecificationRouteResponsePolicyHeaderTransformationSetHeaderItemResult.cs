@@ -16,11 +16,11 @@ namespace Pulumi.Oci.ApiGateway.Outputs
         /// <summary>
         /// If a header with the same name already exists in the request, OVERWRITE will overwrite the value, APPEND will append to the existing value, or SKIP will keep the existing value.
         /// </summary>
-        public readonly string IfExists;
+        public readonly string? IfExists;
         /// <summary>
         /// The case-insensitive name of the header.  This name must be unique across transformation policies.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// A list of new values.  Each value can be a constant or may include one or more expressions enclosed within ${} delimiters.
         /// </summary>
@@ -28,9 +28,9 @@ namespace Pulumi.Oci.ApiGateway.Outputs
 
         [OutputConstructor]
         private GetDeploymentsDeploymentCollectionSpecificationRouteResponsePolicyHeaderTransformationSetHeaderItemResult(
-            string ifExists,
+            string? ifExists,
 
-            string name,
+            string? name,
 
             ImmutableArray<string> values)
         {

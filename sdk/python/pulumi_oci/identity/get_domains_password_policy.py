@@ -197,10 +197,7 @@ class GetDomainsPasswordPolicyResult:
 
     @property
     @pulumi.getter(name="allowedChars")
-    def allowed_chars(self) -> str:
-        """
-        A String value whose contents indicate a set of characters that can appear, in any sequence, in a password value
-        """
+    def allowed_chars(self) -> Optional[str]:
         return pulumi.get(self, "allowed_chars")
 
     @property
@@ -220,146 +217,92 @@ class GetDomainsPasswordPolicyResult:
 
     @property
     @pulumi.getter(name="compartmentOcid")
-    def compartment_ocid(self) -> str:
-        """
-        Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
-        """
+    def compartment_ocid(self) -> Optional[str]:
         return pulumi.get(self, "compartment_ocid")
 
     @property
     @pulumi.getter(name="configuredPasswordPolicyRules")
-    def configured_password_policy_rules(self) -> Sequence['outputs.GetDomainsPasswordPolicyConfiguredPasswordPolicyRuleResult']:
-        """
-        List of password policy rules that have values set. This map of stringKey:stringValue pairs can be used to aid users while setting/resetting password
-        """
+    def configured_password_policy_rules(self) -> Optional[Sequence['outputs.GetDomainsPasswordPolicyConfiguredPasswordPolicyRuleResult']]:
         return pulumi.get(self, "configured_password_policy_rules")
 
     @property
     @pulumi.getter(name="deleteInProgress")
-    def delete_in_progress(self) -> bool:
-        """
-        A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
-        """
+    def delete_in_progress(self) -> Optional[bool]:
         return pulumi.get(self, "delete_in_progress")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        A String that describes the password policy
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="dictionaryDelimiter")
-    def dictionary_delimiter(self) -> str:
-        """
-        A delimiter used to separate characters in the dictionary file
-        """
+    def dictionary_delimiter(self) -> Optional[str]:
         return pulumi.get(self, "dictionary_delimiter")
 
     @property
     @pulumi.getter(name="dictionaryLocation")
-    def dictionary_location(self) -> str:
-        """
-        A Reference value that contains the URI of a dictionary of words not allowed to appear within a password value
-        """
+    def dictionary_location(self) -> Optional[str]:
         return pulumi.get(self, "dictionary_location")
 
     @property
     @pulumi.getter(name="dictionaryWordDisallowed")
-    def dictionary_word_disallowed(self) -> bool:
-        """
-        Indicates whether the password can match a dictionary word
-        """
+    def dictionary_word_disallowed(self) -> Optional[bool]:
         return pulumi.get(self, "dictionary_word_disallowed")
 
     @property
     @pulumi.getter(name="disallowedChars")
-    def disallowed_chars(self) -> str:
-        """
-        A String value whose contents indicate a set of characters that cannot appear, in any sequence, in a password value
-        """
+    def disallowed_chars(self) -> Optional[str]:
         return pulumi.get(self, "disallowed_chars")
 
     @property
     @pulumi.getter(name="disallowedSubstrings")
-    def disallowed_substrings(self) -> Sequence[str]:
-        """
-        A String value whose contents indicate a set of substrings that cannot appear, in any sequence, in a password value
-        """
+    def disallowed_substrings(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "disallowed_substrings")
 
     @property
     @pulumi.getter(name="disallowedUserAttributeValues")
-    def disallowed_user_attribute_values(self) -> Sequence[str]:
-        """
-        List of User attributes whose values are not allowed in the password.
-        """
+    def disallowed_user_attribute_values(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "disallowed_user_attribute_values")
 
     @property
     @pulumi.getter(name="distinctCharacters")
-    def distinct_characters(self) -> int:
-        """
-        The number of distinct characters between old password and new password
-        """
+    def distinct_characters(self) -> Optional[int]:
         return pulumi.get(self, "distinct_characters")
 
     @property
     @pulumi.getter(name="domainOcid")
-    def domain_ocid(self) -> str:
-        """
-        Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
-        """
+    def domain_ocid(self) -> Optional[str]:
         return pulumi.get(self, "domain_ocid")
 
     @property
     @pulumi.getter(name="externalId")
-    def external_id(self) -> str:
-        """
-        An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer's tenant.
-        """
+    def external_id(self) -> Optional[str]:
         return pulumi.get(self, "external_id")
 
     @property
     @pulumi.getter(name="firstNameDisallowed")
-    def first_name_disallowed(self) -> bool:
-        """
-        Indicates a sequence of characters that match the user's first name of given name cannot be the password. Password validation against policy will be ignored if length of first name is less than or equal to 3 characters.
-        """
+    def first_name_disallowed(self) -> Optional[bool]:
         return pulumi.get(self, "first_name_disallowed")
 
     @property
     @pulumi.getter(name="forcePasswordReset")
-    def force_password_reset(self) -> bool:
-        """
-        Indicates whether all of the users should be forced to reset their password on the next login (to comply with new password policy changes)
-        """
+    def force_password_reset(self) -> Optional[bool]:
         return pulumi.get(self, "force_password_reset")
 
     @property
     @pulumi.getter
-    def groups(self) -> Sequence['outputs.GetDomainsPasswordPolicyGroupResult']:
-        """
-        A list of groups that the password policy belongs to.
-        """
+    def groups(self) -> Optional[Sequence['outputs.GetDomainsPasswordPolicyGroupResult']]:
         return pulumi.get(self, "groups")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        Unique identifier for the SCIM Resource as defined by the Service Provider. Each representation of the Resource MUST include a non-empty id value. This identifier MUST be unique across the Service Provider's entire set of Resources. It MUST be a stable, non-reassignable identifier that does not change when the same Resource is returned in subsequent requests. The value of the id attribute is always issued by the Service Provider and MUST never be specified by the Service Consumer. bulkId: is a reserved keyword and MUST NOT be used in the unique identifier.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="idcsCreatedBies")
-    def idcs_created_bies(self) -> Sequence['outputs.GetDomainsPasswordPolicyIdcsCreatedByResult']:
-        """
-        The User or App who created the Resource
-        """
+    def idcs_created_bies(self) -> Optional[Sequence['outputs.GetDomainsPasswordPolicyIdcsCreatedByResult']]:
         return pulumi.get(self, "idcs_created_bies")
 
     @property
@@ -369,194 +312,122 @@ class GetDomainsPasswordPolicyResult:
 
     @property
     @pulumi.getter(name="idcsLastModifiedBies")
-    def idcs_last_modified_bies(self) -> Sequence['outputs.GetDomainsPasswordPolicyIdcsLastModifiedByResult']:
-        """
-        The User or App who modified the Resource
-        """
+    def idcs_last_modified_bies(self) -> Optional[Sequence['outputs.GetDomainsPasswordPolicyIdcsLastModifiedByResult']]:
         return pulumi.get(self, "idcs_last_modified_bies")
 
     @property
     @pulumi.getter(name="idcsLastUpgradedInRelease")
-    def idcs_last_upgraded_in_release(self) -> str:
-        """
-        The release number when the resource was upgraded.
-        """
+    def idcs_last_upgraded_in_release(self) -> Optional[str]:
         return pulumi.get(self, "idcs_last_upgraded_in_release")
 
     @property
     @pulumi.getter(name="idcsPreventedOperations")
-    def idcs_prevented_operations(self) -> Sequence[str]:
-        """
-        Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
-        """
+    def idcs_prevented_operations(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "idcs_prevented_operations")
 
     @property
     @pulumi.getter(name="lastNameDisallowed")
-    def last_name_disallowed(self) -> bool:
-        """
-        Indicates a sequence of characters that match the user's last name of given name cannot be the password. Password validation against policy will be ignored if length of last name is less than or equal to 3 characters.
-        """
+    def last_name_disallowed(self) -> Optional[bool]:
         return pulumi.get(self, "last_name_disallowed")
 
     @property
     @pulumi.getter(name="lockoutDuration")
-    def lockout_duration(self) -> int:
-        """
-        The time period in minutes to lock out a user account when the threshold of invalid login attempts is reached. The available range is from 5 through 1440 minutes (24 hours).
-        """
+    def lockout_duration(self) -> Optional[int]:
         return pulumi.get(self, "lockout_duration")
 
     @property
     @pulumi.getter(name="maxIncorrectAttempts")
-    def max_incorrect_attempts(self) -> int:
-        """
-        An integer that represents the maximum number of failed logins before an account is locked
-        """
+    def max_incorrect_attempts(self) -> Optional[int]:
         return pulumi.get(self, "max_incorrect_attempts")
 
     @property
     @pulumi.getter(name="maxLength")
-    def max_length(self) -> int:
-        """
-        The maximum password length (in characters). A value of 0 or no value indicates no maximum length restriction.
-        """
+    def max_length(self) -> Optional[int]:
         return pulumi.get(self, "max_length")
 
     @property
     @pulumi.getter(name="maxRepeatedChars")
-    def max_repeated_chars(self) -> int:
-        """
-        The maximum number of repeated characters allowed in a password.  A value of 0 or no value indicates no such restriction.
-        """
+    def max_repeated_chars(self) -> Optional[int]:
         return pulumi.get(self, "max_repeated_chars")
 
     @property
     @pulumi.getter(name="maxSpecialChars")
-    def max_special_chars(self) -> int:
-        """
-        The maximum number of special characters in a password.  A value of 0 or no value indicates no maximum special characters restriction.
-        """
+    def max_special_chars(self) -> Optional[int]:
         return pulumi.get(self, "max_special_chars")
 
     @property
     @pulumi.getter
-    def metas(self) -> Sequence['outputs.GetDomainsPasswordPolicyMetaResult']:
-        """
-        A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
-        """
+    def metas(self) -> Optional[Sequence['outputs.GetDomainsPasswordPolicyMetaResult']]:
         return pulumi.get(self, "metas")
 
     @property
     @pulumi.getter(name="minAlphaNumerals")
-    def min_alpha_numerals(self) -> int:
-        """
-        The minimum number of a combination of alphabetic and numeric characters in a password.  A value of 0 or no value indicates no minimum alphanumeric character restriction.
-        """
+    def min_alpha_numerals(self) -> Optional[int]:
         return pulumi.get(self, "min_alpha_numerals")
 
     @property
     @pulumi.getter(name="minAlphas")
-    def min_alphas(self) -> int:
-        """
-        The minimum number of alphabetic characters in a password.  A value of 0 or no value indicates no minimum alphas restriction.
-        """
+    def min_alphas(self) -> Optional[int]:
         return pulumi.get(self, "min_alphas")
 
     @property
     @pulumi.getter(name="minLength")
-    def min_length(self) -> int:
-        """
-        The minimum password length (in characters). A value of 0 or no value indicates no minimum length restriction.
-        """
+    def min_length(self) -> Optional[int]:
         return pulumi.get(self, "min_length")
 
     @property
     @pulumi.getter(name="minLowerCase")
-    def min_lower_case(self) -> int:
-        """
-        The minimum number of lowercase alphabetic characters in a password.  A value of 0 or no value indicates no minimum lowercase restriction.
-        """
+    def min_lower_case(self) -> Optional[int]:
         return pulumi.get(self, "min_lower_case")
 
     @property
     @pulumi.getter(name="minNumerals")
-    def min_numerals(self) -> int:
-        """
-        The minimum number of numeric characters in a password.  A value of 0 or no value indicates no minimum numeric character restriction.
-        """
+    def min_numerals(self) -> Optional[int]:
         return pulumi.get(self, "min_numerals")
 
     @property
     @pulumi.getter(name="minPasswordAge")
-    def min_password_age(self) -> int:
-        """
-        Minimum time after which the user can resubmit the reset password request
-        """
+    def min_password_age(self) -> Optional[int]:
         return pulumi.get(self, "min_password_age")
 
     @property
     @pulumi.getter(name="minSpecialChars")
-    def min_special_chars(self) -> int:
-        """
-        The minimum number of special characters in a password. A value of 0 or no value indicates no minimum special characters restriction.
-        """
+    def min_special_chars(self) -> Optional[int]:
         return pulumi.get(self, "min_special_chars")
 
     @property
     @pulumi.getter(name="minUniqueChars")
-    def min_unique_chars(self) -> int:
-        """
-        The minimum number of unique characters in a password.  A value of 0 or no value indicates no minimum unique characters restriction.
-        """
+    def min_unique_chars(self) -> Optional[int]:
         return pulumi.get(self, "min_unique_chars")
 
     @property
     @pulumi.getter(name="minUpperCase")
-    def min_upper_case(self) -> int:
-        """
-        The minimum number of uppercase alphabetic characters in a password. A value of 0 or no value indicates no minimum uppercase restriction.
-        """
+    def min_upper_case(self) -> Optional[int]:
         return pulumi.get(self, "min_upper_case")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        A String that is the name of the policy to display to the user. This is the only mandatory attribute for a password policy.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="numPasswordsInHistory")
-    def num_passwords_in_history(self) -> int:
-        """
-        The number of passwords that will be kept in history that may not be used as a password
-        """
+    def num_passwords_in_history(self) -> Optional[int]:
         return pulumi.get(self, "num_passwords_in_history")
 
     @property
     @pulumi.getter
-    def ocid(self) -> str:
-        """
-        Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
-        """
+    def ocid(self) -> Optional[str]:
         return pulumi.get(self, "ocid")
 
     @property
     @pulumi.getter(name="passwordExpireWarning")
-    def password_expire_warning(self) -> int:
-        """
-        An integer indicating the number of days before which the user should be warned about password expiry.
-        """
+    def password_expire_warning(self) -> Optional[int]:
         return pulumi.get(self, "password_expire_warning")
 
     @property
     @pulumi.getter(name="passwordExpiresAfter")
-    def password_expires_after(self) -> int:
-        """
-        The number of days after which the password expires automatically
-        """
+    def password_expires_after(self) -> Optional[int]:
         return pulumi.get(self, "password_expires_after")
 
     @property
@@ -566,26 +437,17 @@ class GetDomainsPasswordPolicyResult:
 
     @property
     @pulumi.getter(name="passwordStrength")
-    def password_strength(self) -> str:
-        """
-        Indicates whether the password policy is configured as Simple, Standard, or Custom.
-        """
+    def password_strength(self) -> Optional[str]:
         return pulumi.get(self, "password_strength")
 
     @property
     @pulumi.getter
-    def priority(self) -> int:
-        """
-        Password policy priority
-        """
+    def priority(self) -> Optional[int]:
         return pulumi.get(self, "priority")
 
     @property
     @pulumi.getter(name="requiredChars")
-    def required_chars(self) -> str:
-        """
-        A String value whose contents indicate a set of characters that must appear, in any sequence, in a password value
-        """
+    def required_chars(self) -> Optional[str]:
         return pulumi.get(self, "required_chars")
 
     @property
@@ -595,42 +457,27 @@ class GetDomainsPasswordPolicyResult:
 
     @property
     @pulumi.getter
-    def schemas(self) -> Sequence[str]:
-        """
-        REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \\"enterprise\\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
-        """
+    def schemas(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "schemas")
 
     @property
     @pulumi.getter(name="startsWithAlphabet")
-    def starts_with_alphabet(self) -> bool:
-        """
-        Indicates that the password must begin with an alphabetic character
-        """
+    def starts_with_alphabet(self) -> Optional[bool]:
         return pulumi.get(self, "starts_with_alphabet")
 
     @property
     @pulumi.getter
-    def tags(self) -> Sequence['outputs.GetDomainsPasswordPolicyTagResult']:
-        """
-        A list of tags on this resource.
-        """
+    def tags(self) -> Optional[Sequence['outputs.GetDomainsPasswordPolicyTagResult']]:
         return pulumi.get(self, "tags")
 
     @property
     @pulumi.getter(name="tenancyOcid")
-    def tenancy_ocid(self) -> str:
-        """
-        Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
-        """
+    def tenancy_ocid(self) -> Optional[str]:
         return pulumi.get(self, "tenancy_ocid")
 
     @property
     @pulumi.getter(name="userNameDisallowed")
-    def user_name_disallowed(self) -> bool:
-        """
-        Indicates a sequence of characters that match the username cannot be the password. Password validation against policy will be ignored if length of user name is less than or equal to 3 characters.
-        """
+    def user_name_disallowed(self) -> Optional[bool]:
         return pulumi.get(self, "user_name_disallowed")
 
 
@@ -707,31 +554,7 @@ def get_domains_password_policy(attribute_sets: Optional[Sequence[str]] = None,
                                 resource_type_schema_version: Optional[str] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDomainsPasswordPolicyResult:
     """
-    This data source provides details about a specific Password Policy resource in Oracle Cloud Infrastructure Identity Domains service.
-
-    Get a password policy.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_password_policy = oci.Identity.get_domains_password_policy(idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
-        password_policy_id=oci_identity_policy["test_policy"]["id"],
-        attribute_sets=[],
-        attributes="",
-        authorization=var["password_policy_authorization"],
-        resource_type_schema_version=var["password_policy_resource_type_schema_version"])
-    ```
-
-
-    :param Sequence[str] attribute_sets: A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
-    :param str attributes: A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
-    :param str authorization: The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
-    :param str idcs_endpoint: The basic endpoint for the identity domain
-    :param str password_policy_id: ID of the resource
-    :param str resource_type_schema_version: An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['attributeSets'] = attribute_sets
@@ -812,30 +635,6 @@ def get_domains_password_policy_output(attribute_sets: Optional[pulumi.Input[Opt
                                        resource_type_schema_version: Optional[pulumi.Input[Optional[str]]] = None,
                                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDomainsPasswordPolicyResult]:
     """
-    This data source provides details about a specific Password Policy resource in Oracle Cloud Infrastructure Identity Domains service.
-
-    Get a password policy.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_password_policy = oci.Identity.get_domains_password_policy(idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
-        password_policy_id=oci_identity_policy["test_policy"]["id"],
-        attribute_sets=[],
-        attributes="",
-        authorization=var["password_policy_authorization"],
-        resource_type_schema_version=var["password_policy_resource_type_schema_version"])
-    ```
-
-
-    :param Sequence[str] attribute_sets: A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
-    :param str attributes: A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
-    :param str authorization: The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
-    :param str idcs_endpoint: The basic endpoint for the identity domain
-    :param str password_policy_id: ID of the resource
-    :param str resource_type_schema_version: An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
+    Use this data source to access information about an existing resource.
     """
     ...

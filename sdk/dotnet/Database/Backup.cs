@@ -48,19 +48,19 @@ namespace Pulumi.Oci.Database
         /// The name of the availability domain where the database backup is stored.
         /// </summary>
         [Output("availabilityDomain")]
-        public Output<string> AvailabilityDomain { get; private set; } = null!;
+        public Output<string?> AvailabilityDomain { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         /// </summary>
         [Output("compartmentId")]
-        public Output<string> CompartmentId { get; private set; } = null!;
+        public Output<string?> CompartmentId { get; private set; } = null!;
 
         /// <summary>
         /// The Oracle Database edition of the DB system from which the database backup was taken.
         /// </summary>
         [Output("databaseEdition")]
-        public Output<string> DatabaseEdition { get; private set; } = null!;
+        public Output<string?> DatabaseEdition { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
@@ -72,7 +72,7 @@ namespace Pulumi.Oci.Database
         /// The size of the database in gigabytes at the time the backup was taken.
         /// </summary>
         [Output("databaseSizeInGbs")]
-        public Output<double> DatabaseSizeInGbs { get; private set; } = null!;
+        public Output<double?> DatabaseSizeInGbs { get; private set; } = null!;
 
         /// <summary>
         /// The user-friendly name for the backup. The name does not have to be unique.
@@ -88,73 +88,73 @@ namespace Pulumi.Oci.Database
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
         /// </summary>
         [Output("keyStoreId")]
-        public Output<string> KeyStoreId { get; private set; } = null!;
+        public Output<string?> KeyStoreId { get; private set; } = null!;
 
         /// <summary>
         /// The wallet name for Oracle Key Vault.
         /// </summary>
         [Output("keyStoreWalletName")]
-        public Output<string> KeyStoreWalletName { get; private set; } = null!;
+        public Output<string?> KeyStoreWalletName { get; private set; } = null!;
 
         /// <summary>
         /// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
         /// </summary>
         [Output("kmsKeyId")]
-        public Output<string> KmsKeyId { get; private set; } = null!;
+        public Output<string?> KmsKeyId { get; private set; } = null!;
 
         /// <summary>
         /// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
         /// </summary>
         [Output("kmsKeyVersionId")]
-        public Output<string> KmsKeyVersionId { get; private set; } = null!;
+        public Output<string?> KmsKeyVersionId { get; private set; } = null!;
 
         /// <summary>
         /// Additional information about the current lifecycle state.
         /// </summary>
         [Output("lifecycleDetails")]
-        public Output<string> LifecycleDetails { get; private set; } = null!;
+        public Output<string?> LifecycleDetails { get; private set; } = null!;
 
         /// <summary>
         /// Shape of the backup's source database.
         /// </summary>
         [Output("shape")]
-        public Output<string> Shape { get; private set; } = null!;
+        public Output<string?> Shape { get; private set; } = null!;
 
         /// <summary>
         /// The current state of the backup.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the backup was completed.
         /// </summary>
         [Output("timeEnded")]
-        public Output<string> TimeEnded { get; private set; } = null!;
+        public Output<string?> TimeEnded { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the backup started.
         /// </summary>
         [Output("timeStarted")]
-        public Output<string> TimeStarted { get; private set; } = null!;
+        public Output<string?> TimeStarted { get; private set; } = null!;
 
         /// <summary>
         /// The type of backup.
         /// </summary>
         [Output("type")]
-        public Output<string> Type { get; private set; } = null!;
+        public Output<string?> Type { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
         /// </summary>
         [Output("vaultId")]
-        public Output<string> VaultId { get; private set; } = null!;
+        public Output<string?> VaultId { get; private set; } = null!;
 
         /// <summary>
         /// Version of the backup's source database
         /// </summary>
         [Output("version")]
-        public Output<string> Version { get; private set; } = null!;
+        public Output<string?> Version { get; private set; } = null!;
 
 
         /// <summary>

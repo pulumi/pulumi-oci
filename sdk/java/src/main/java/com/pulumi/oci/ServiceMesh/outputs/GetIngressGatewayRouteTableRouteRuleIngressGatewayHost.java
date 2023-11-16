@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetIngressGatewayRouteTableRouteRuleIngressGatewayHost {
@@ -14,27 +16,27 @@ public final class GetIngressGatewayRouteTableRouteRuleIngressGatewayHost {
      * @return Name of the ingress gateway host that this route should apply to.
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return The port of the ingress gateway host listener. Leave empty to match all ports for the host.
      * 
      */
-    private Integer port;
+    private @Nullable Integer port;
 
     private GetIngressGatewayRouteTableRouteRuleIngressGatewayHost() {}
     /**
      * @return Name of the ingress gateway host that this route should apply to.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return The port of the ingress gateway host listener. Leave empty to match all ports for the host.
      * 
      */
-    public Integer port() {
-        return this.port;
+    public Optional<Integer> port() {
+        return Optional.ofNullable(this.port);
     }
 
     public static Builder builder() {
@@ -46,8 +48,8 @@ public final class GetIngressGatewayRouteTableRouteRuleIngressGatewayHost {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String name;
-        private Integer port;
+        private @Nullable String name;
+        private @Nullable Integer port;
         public Builder() {}
         public Builder(GetIngressGatewayRouteTableRouteRuleIngressGatewayHost defaults) {
     	      Objects.requireNonNull(defaults);
@@ -56,13 +58,13 @@ public final class GetIngressGatewayRouteTableRouteRuleIngressGatewayHost {
         }
 
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder port(Integer port) {
-            this.port = Objects.requireNonNull(port);
+        public Builder port(@Nullable Integer port) {
+            this.port = port;
             return this;
         }
         public GetIngressGatewayRouteTableRouteRuleIngressGatewayHost build() {

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Deployment resource in Oracle Cloud Infrastructure API Gateway service.
@@ -60,32 +59,32 @@ type LookupDeploymentArgs struct {
 // A collection of values returned by getDeployment.
 type LookupDeploymentResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the resource is created.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags  map[string]interface{} `pulumi:"definedTags"`
 	DeploymentId string                 `pulumi:"deploymentId"`
 	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// The endpoint to access this deployment on the gateway.
-	Endpoint string `pulumi:"endpoint"`
+	Endpoint *string `pulumi:"endpoint"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
-	GatewayId string `pulumi:"gatewayId"`
+	GatewayId *string `pulumi:"gatewayId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// A path on which to deploy all routes contained in the API deployment specification. For more information, see [Deploying an API on an API Gateway by Creating an API Deployment](https://docs.cloud.oracle.com/iaas/Content/APIGateway/Tasks/apigatewaycreatingdeployment.htm).
-	PathPrefix string `pulumi:"pathPrefix"`
+	PathPrefix *string `pulumi:"pathPrefix"`
 	// The logical configuration of the API exposed by a deployment.
 	Specifications []GetDeploymentSpecification `pulumi:"specifications"`
 	// The current state of the deployment.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The time this resource was created. An RFC3339 formatted datetime string.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time this resource was last updated. An RFC3339 formatted datetime string.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 func LookupDeploymentOutput(ctx *pulumi.Context, args LookupDeploymentOutputArgs, opts ...pulumi.InvokeOption) LookupDeploymentResultOutput {
@@ -126,15 +125,9 @@ func (o LookupDeploymentResultOutput) ToLookupDeploymentResultOutputWithContext(
 	return o
 }
 
-func (o LookupDeploymentResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupDeploymentResult] {
-	return pulumix.Output[LookupDeploymentResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the resource is created.
-func (o LookupDeploymentResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDeploymentResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupDeploymentResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDeploymentResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -147,13 +140,13 @@ func (o LookupDeploymentResultOutput) DeploymentId() pulumi.StringOutput {
 }
 
 // A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
-func (o LookupDeploymentResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDeploymentResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupDeploymentResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDeploymentResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // The endpoint to access this deployment on the gateway.
-func (o LookupDeploymentResultOutput) Endpoint() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDeploymentResult) string { return v.Endpoint }).(pulumi.StringOutput)
+func (o LookupDeploymentResultOutput) Endpoint() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDeploymentResult) *string { return v.Endpoint }).(pulumi.StringPtrOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -162,23 +155,23 @@ func (o LookupDeploymentResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
-func (o LookupDeploymentResultOutput) GatewayId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDeploymentResult) string { return v.GatewayId }).(pulumi.StringOutput)
+func (o LookupDeploymentResultOutput) GatewayId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDeploymentResult) *string { return v.GatewayId }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
-func (o LookupDeploymentResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDeploymentResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupDeploymentResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDeploymentResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
-func (o LookupDeploymentResultOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDeploymentResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o LookupDeploymentResultOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDeploymentResult) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // A path on which to deploy all routes contained in the API deployment specification. For more information, see [Deploying an API on an API Gateway by Creating an API Deployment](https://docs.cloud.oracle.com/iaas/Content/APIGateway/Tasks/apigatewaycreatingdeployment.htm).
-func (o LookupDeploymentResultOutput) PathPrefix() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDeploymentResult) string { return v.PathPrefix }).(pulumi.StringOutput)
+func (o LookupDeploymentResultOutput) PathPrefix() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDeploymentResult) *string { return v.PathPrefix }).(pulumi.StringPtrOutput)
 }
 
 // The logical configuration of the API exposed by a deployment.
@@ -187,18 +180,18 @@ func (o LookupDeploymentResultOutput) Specifications() GetDeploymentSpecificatio
 }
 
 // The current state of the deployment.
-func (o LookupDeploymentResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDeploymentResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupDeploymentResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDeploymentResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The time this resource was created. An RFC3339 formatted datetime string.
-func (o LookupDeploymentResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDeploymentResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupDeploymentResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDeploymentResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time this resource was last updated. An RFC3339 formatted datetime string.
-func (o LookupDeploymentResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDeploymentResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o LookupDeploymentResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDeploymentResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 func init() {

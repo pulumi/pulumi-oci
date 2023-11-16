@@ -18,12 +18,6 @@ class OdaPrivateEndpointAttachmentArgs:
                  oda_private_endpoint_id: pulumi.Input[str]):
         """
         The set of arguments for constructing a OdaPrivateEndpointAttachment resource.
-        :param pulumi.Input[str] oda_instance_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the attached ODA Instance.
-        :param pulumi.Input[str] oda_private_endpoint_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ODA Private Endpoint.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "oda_instance_id", oda_instance_id)
         pulumi.set(__self__, "oda_private_endpoint_id", oda_private_endpoint_id)
@@ -31,9 +25,6 @@ class OdaPrivateEndpointAttachmentArgs:
     @property
     @pulumi.getter(name="odaInstanceId")
     def oda_instance_id(self) -> pulumi.Input[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the attached ODA Instance.
-        """
         return pulumi.get(self, "oda_instance_id")
 
     @oda_instance_id.setter
@@ -43,13 +34,6 @@ class OdaPrivateEndpointAttachmentArgs:
     @property
     @pulumi.getter(name="odaPrivateEndpointId")
     def oda_private_endpoint_id(self) -> pulumi.Input[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ODA Private Endpoint.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "oda_private_endpoint_id")
 
     @oda_private_endpoint_id.setter
@@ -68,16 +52,6 @@ class _OdaPrivateEndpointAttachmentState:
                  time_updated: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering OdaPrivateEndpointAttachment resources.
-        :param pulumi.Input[str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that the ODA private endpoint attachment belongs to.
-        :param pulumi.Input[str] oda_instance_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the attached ODA Instance.
-        :param pulumi.Input[str] oda_private_endpoint_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ODA Private Endpoint.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] state: The current state of the ODA Private Endpoint attachment.
-        :param pulumi.Input[str] time_created: When the resource was created. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
-        :param pulumi.Input[str] time_updated: When the resource was last updated. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
         """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
@@ -95,9 +69,6 @@ class _OdaPrivateEndpointAttachmentState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that the ODA private endpoint attachment belongs to.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -107,9 +78,6 @@ class _OdaPrivateEndpointAttachmentState:
     @property
     @pulumi.getter(name="odaInstanceId")
     def oda_instance_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the attached ODA Instance.
-        """
         return pulumi.get(self, "oda_instance_id")
 
     @oda_instance_id.setter
@@ -119,13 +87,6 @@ class _OdaPrivateEndpointAttachmentState:
     @property
     @pulumi.getter(name="odaPrivateEndpointId")
     def oda_private_endpoint_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ODA Private Endpoint.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "oda_private_endpoint_id")
 
     @oda_private_endpoint_id.setter
@@ -135,9 +96,6 @@ class _OdaPrivateEndpointAttachmentState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The current state of the ODA Private Endpoint attachment.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -147,9 +105,6 @@ class _OdaPrivateEndpointAttachmentState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        When the resource was created. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -159,9 +114,6 @@ class _OdaPrivateEndpointAttachmentState:
     @property
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> Optional[pulumi.Input[str]]:
-        """
-        When the resource was last updated. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
-        """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
@@ -178,40 +130,9 @@ class OdaPrivateEndpointAttachment(pulumi.CustomResource):
                  oda_private_endpoint_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Oda Private Endpoint Attachment resource in Oracle Cloud Infrastructure Digital Assistant service.
-
-        Starts an asynchronous job to create an ODA Private Endpoint Attachment.
-
-        To monitor the status of the job, take the `opc-work-request-id` response
-        header value and use it to call `GET /workRequests/{workRequestID}`.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_oda_private_endpoint_attachment = oci.oda.OdaPrivateEndpointAttachment("testOdaPrivateEndpointAttachment",
-            oda_instance_id=oci_oda_oda_instance["test_oda_instance"]["id"],
-            oda_private_endpoint_id=oci_oda_oda_private_endpoint["test_oda_private_endpoint"]["id"])
-        ```
-
-        ## Import
-
-        OdaPrivateEndpointAttachments can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Oda/odaPrivateEndpointAttachment:OdaPrivateEndpointAttachment test_oda_private_endpoint_attachment "id"
-        ```
-
+        Create a OdaPrivateEndpointAttachment resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] oda_instance_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the attached ODA Instance.
-        :param pulumi.Input[str] oda_private_endpoint_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ODA Private Endpoint.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -220,32 +141,7 @@ class OdaPrivateEndpointAttachment(pulumi.CustomResource):
                  args: OdaPrivateEndpointAttachmentArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Oda Private Endpoint Attachment resource in Oracle Cloud Infrastructure Digital Assistant service.
-
-        Starts an asynchronous job to create an ODA Private Endpoint Attachment.
-
-        To monitor the status of the job, take the `opc-work-request-id` response
-        header value and use it to call `GET /workRequests/{workRequestID}`.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_oda_private_endpoint_attachment = oci.oda.OdaPrivateEndpointAttachment("testOdaPrivateEndpointAttachment",
-            oda_instance_id=oci_oda_oda_instance["test_oda_instance"]["id"],
-            oda_private_endpoint_id=oci_oda_oda_private_endpoint["test_oda_private_endpoint"]["id"])
-        ```
-
-        ## Import
-
-        OdaPrivateEndpointAttachments can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Oda/odaPrivateEndpointAttachment:OdaPrivateEndpointAttachment test_oda_private_endpoint_attachment "id"
-        ```
-
+        Create a OdaPrivateEndpointAttachment resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param OdaPrivateEndpointAttachmentArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -305,16 +201,6 @@ class OdaPrivateEndpointAttachment(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that the ODA private endpoint attachment belongs to.
-        :param pulumi.Input[str] oda_instance_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the attached ODA Instance.
-        :param pulumi.Input[str] oda_private_endpoint_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ODA Private Endpoint.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] state: The current state of the ODA Private Endpoint attachment.
-        :param pulumi.Input[str] time_created: When the resource was created. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
-        :param pulumi.Input[str] time_updated: When the resource was last updated. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -330,53 +216,31 @@ class OdaPrivateEndpointAttachment(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> pulumi.Output[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that the ODA private endpoint attachment belongs to.
-        """
+    def compartment_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="odaInstanceId")
     def oda_instance_id(self) -> pulumi.Output[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the attached ODA Instance.
-        """
         return pulumi.get(self, "oda_instance_id")
 
     @property
     @pulumi.getter(name="odaPrivateEndpointId")
     def oda_private_endpoint_id(self) -> pulumi.Output[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ODA Private Endpoint.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "oda_private_endpoint_id")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        The current state of the ODA Private Endpoint attachment.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        When the resource was created. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> pulumi.Output[str]:
-        """
-        When the resource was last updated. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
-        """
+    def time_updated(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_updated")
 

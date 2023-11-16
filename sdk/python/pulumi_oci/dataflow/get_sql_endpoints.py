@@ -49,17 +49,11 @@ class GetSqlEndpointsResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[str]:
-        """
-        The OCID of a compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        The SQL Endpoint name, which can be changed.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -69,7 +63,7 @@ class GetSqlEndpointsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -77,10 +71,7 @@ class GetSqlEndpointsResult:
 
     @property
     @pulumi.getter(name="sqlEndpointCollections")
-    def sql_endpoint_collections(self) -> Sequence['outputs.GetSqlEndpointsSqlEndpointCollectionResult']:
-        """
-        The list of sql_endpoint_collection.
-        """
+    def sql_endpoint_collections(self) -> Optional[Sequence['outputs.GetSqlEndpointsSqlEndpointCollectionResult']]:
         return pulumi.get(self, "sql_endpoint_collections")
 
     @property
@@ -91,9 +82,6 @@ class GetSqlEndpointsResult:
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the Sql Endpoint.
-        """
         return pulumi.get(self, "state")
 
 
@@ -119,29 +107,7 @@ def get_sql_endpoints(compartment_id: Optional[str] = None,
                       state: Optional[str] = None,
                       opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetSqlEndpointsResult:
     """
-    This data source provides the list of Sql Endpoints in Oracle Cloud Infrastructure Data Flow service.
-
-    Lists all Sql Endpoints in the specified compartment.
-    The query must include compartmentId or sqlEndpointId.
-    If the query does not include either compartmentId or sqlEndpointId, an error is returned.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_sql_endpoints = oci.DataFlow.get_sql_endpoints(compartment_id=var["compartment_id"],
-        display_name=var["sql_endpoint_display_name"],
-        sql_endpoint_id=oci_dataflow_sql_endpoint["test_sql_endpoint"]["id"],
-        state=var["sql_endpoint_state"])
-    ```
-
-
-    :param str compartment_id: The OCID of the compartment in which to query resources.
-    :param str display_name: The query parameter for the Spark application name.
-    :param str sql_endpoint_id: The unique id of the SQL Endpoint.
-    :param str state: A filter to return only those resources whose sqlEndpointLifecycleState matches the given sqlEndpointLifecycleState.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -170,28 +136,6 @@ def get_sql_endpoints_output(compartment_id: Optional[pulumi.Input[Optional[str]
                              state: Optional[pulumi.Input[Optional[str]]] = None,
                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSqlEndpointsResult]:
     """
-    This data source provides the list of Sql Endpoints in Oracle Cloud Infrastructure Data Flow service.
-
-    Lists all Sql Endpoints in the specified compartment.
-    The query must include compartmentId or sqlEndpointId.
-    If the query does not include either compartmentId or sqlEndpointId, an error is returned.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_sql_endpoints = oci.DataFlow.get_sql_endpoints(compartment_id=var["compartment_id"],
-        display_name=var["sql_endpoint_display_name"],
-        sql_endpoint_id=oci_dataflow_sql_endpoint["test_sql_endpoint"]["id"],
-        state=var["sql_endpoint_state"])
-    ```
-
-
-    :param str compartment_id: The OCID of the compartment in which to query resources.
-    :param str display_name: The query parameter for the Spark application name.
-    :param str sql_endpoint_id: The unique id of the SQL Endpoint.
-    :param str state: A filter to return only those resources whose sqlEndpointLifecycleState matches the given sqlEndpointLifecycleState.
+    Use this data source to access information about an existing resource.
     """
     ...

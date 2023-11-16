@@ -47,7 +47,7 @@ class GetVirtualCircuitPublicPrefixesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -56,9 +56,6 @@ class GetVirtualCircuitPublicPrefixesResult:
     @property
     @pulumi.getter(name="verificationState")
     def verification_state(self) -> Optional[str]:
-        """
-        Oracle must verify that the customer owns the public IP prefix before traffic for that prefix can flow across the virtual circuit. Verification can take a few business days. `IN_PROGRESS` means Oracle is verifying the prefix. `COMPLETED` means verification succeeded. `FAILED` means verification failed and traffic for this prefix will not flow across the connection.
-        """
         return pulumi.get(self, "verification_state")
 
     @property
@@ -68,10 +65,7 @@ class GetVirtualCircuitPublicPrefixesResult:
 
     @property
     @pulumi.getter(name="virtualCircuitPublicPrefixes")
-    def virtual_circuit_public_prefixes(self) -> Sequence['outputs.GetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefixResult']:
-        """
-        The list of virtual_circuit_public_prefixes.
-        """
+    def virtual_circuit_public_prefixes(self) -> Optional[Sequence['outputs.GetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefixResult']]:
         return pulumi.get(self, "virtual_circuit_public_prefixes")
 
 
@@ -93,26 +87,7 @@ def get_virtual_circuit_public_prefixes(filters: Optional[Sequence[pulumi.InputT
                                         virtual_circuit_id: Optional[str] = None,
                                         opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetVirtualCircuitPublicPrefixesResult:
     """
-    This data source provides the list of Virtual Circuit Public Prefixes in Oracle Cloud Infrastructure Core service.
-
-    Lists the public IP prefixes and their details for the specified
-    public virtual circuit.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_virtual_circuit_public_prefixes = oci.Core.get_virtual_circuit_public_prefixes(virtual_circuit_id=oci_core_virtual_circuit["test_virtual_circuit"]["id"],
-        verification_state=var["virtual_circuit_public_prefix_verification_state"])
-    ```
-
-
-    :param str verification_state: A filter to only return resources that match the given verification state.
-           
-           The state value is case-insensitive.
-    :param str virtual_circuit_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual circuit.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['filters'] = filters
@@ -135,25 +110,6 @@ def get_virtual_circuit_public_prefixes_output(filters: Optional[pulumi.Input[Op
                                                virtual_circuit_id: Optional[pulumi.Input[str]] = None,
                                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetVirtualCircuitPublicPrefixesResult]:
     """
-    This data source provides the list of Virtual Circuit Public Prefixes in Oracle Cloud Infrastructure Core service.
-
-    Lists the public IP prefixes and their details for the specified
-    public virtual circuit.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_virtual_circuit_public_prefixes = oci.Core.get_virtual_circuit_public_prefixes(virtual_circuit_id=oci_core_virtual_circuit["test_virtual_circuit"]["id"],
-        verification_state=var["virtual_circuit_public_prefix_verification_state"])
-    ```
-
-
-    :param str verification_state: A filter to only return resources that match the given verification state.
-           
-           The state value is case-insensitive.
-    :param str virtual_circuit_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual circuit.
+    Use this data source to access information about an existing resource.
     """
     ...

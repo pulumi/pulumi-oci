@@ -16,35 +16,35 @@ namespace Pulumi.Oci.ComputeCloud.Outputs
         /// <summary>
         /// A description of the Compute Cloud@Customer upgrade schedule time block.
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// Generated name associated with the event.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// The duration of this block of time. The duration must be specified and be of the ISO-8601 format for durations.
         /// </summary>
-        public readonly string ScheduleEventDuration;
+        public readonly string? ScheduleEventDuration;
         /// <summary>
         /// Frequency of recurrence of schedule block. When this field is not included, the event is assumed to be a one time occurrence. The frequency field is strictly parsed and must conform to RFC-5545 formatting for recurrences.
         /// </summary>
-        public readonly string ScheduleEventRecurrences;
+        public readonly string? ScheduleEventRecurrences;
         /// <summary>
         /// The date and time when the Compute Cloud@Customer upgrade schedule event starts, inclusive. An RFC3339 formatted UTC datetime string. For an event with recurrences, this is the date that a recurrence can start being applied.
         /// </summary>
-        public readonly string TimeStart;
+        public readonly string? TimeStart;
 
         [OutputConstructor]
         private GetAtCustomerCccUpgradeScheduleEventResult(
-            string description,
+            string? description,
 
-            string name,
+            string? name,
 
-            string scheduleEventDuration,
+            string? scheduleEventDuration,
 
-            string scheduleEventRecurrences,
+            string? scheduleEventRecurrences,
 
-            string timeStart)
+            string? timeStart)
         {
             Description = description;
             Name = name;

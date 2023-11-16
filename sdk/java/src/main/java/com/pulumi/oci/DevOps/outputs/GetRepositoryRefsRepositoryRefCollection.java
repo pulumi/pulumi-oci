@@ -7,14 +7,15 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.DevOps.outputs.GetRepositoryRefsRepositoryRefCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetRepositoryRefsRepositoryRefCollection {
-    private List<GetRepositoryRefsRepositoryRefCollectionItem> items;
+    private @Nullable List<GetRepositoryRefsRepositoryRefCollectionItem> items;
 
     private GetRepositoryRefsRepositoryRefCollection() {}
     public List<GetRepositoryRefsRepositoryRefCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -26,7 +27,7 @@ public final class GetRepositoryRefsRepositoryRefCollection {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetRepositoryRefsRepositoryRefCollectionItem> items;
+        private @Nullable List<GetRepositoryRefsRepositoryRefCollectionItem> items;
         public Builder() {}
         public Builder(GetRepositoryRefsRepositoryRefCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -34,8 +35,8 @@ public final class GetRepositoryRefsRepositoryRefCollection {
         }
 
         @CustomType.Setter
-        public Builder items(List<GetRepositoryRefsRepositoryRefCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetRepositoryRefsRepositoryRefCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetRepositoryRefsRepositoryRefCollectionItem... items) {

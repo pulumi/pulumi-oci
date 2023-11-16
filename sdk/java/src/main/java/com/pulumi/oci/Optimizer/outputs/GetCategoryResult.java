@@ -12,6 +12,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetCategoryResult {
@@ -20,62 +22,62 @@ public final class GetCategoryResult {
      * @return The OCID of the tenancy. The tenancy is the root compartment.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return The name associated with the compartment.
      * 
      */
-    private String compartmentName;
+    private @Nullable String compartmentName;
     /**
      * @return Text describing the category.
      * 
      */
-    private String description;
+    private @Nullable String description;
     /**
      * @return The estimated cost savings, in dollars, for the category.
      * 
      */
-    private Double estimatedCostSaving;
+    private @Nullable Double estimatedCostSaving;
     /**
      * @return Additional metadata key/value pairs for the category.
      * 
      */
-    private Map<String,Object> extendedMetadata;
+    private @Nullable Map<String,Object> extendedMetadata;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The name assigned to the category.
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return An array of `RecommendationCount` objects grouped by the level of importance assigned to the recommendation.
      * 
      */
-    private List<GetCategoryRecommendationCount> recommendationCounts;
+    private @Nullable List<GetCategoryRecommendationCount> recommendationCounts;
     /**
      * @return An array of `ResourceCount` objects grouped by the status of the recommendation.
      * 
      */
-    private List<GetCategoryResourceCount> resourceCounts;
+    private @Nullable List<GetCategoryResourceCount> resourceCounts;
     /**
      * @return The category&#39;s current state.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return The date and time the category details were created, in the format defined by RFC3339.
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The date and time the category details were last updated, in the format defined by RFC3339.
      * 
      */
-    private String timeUpdated;
+    private @Nullable String timeUpdated;
 
     private GetCategoryResult() {}
     public String categoryId() {
@@ -85,85 +87,85 @@ public final class GetCategoryResult {
      * @return The OCID of the tenancy. The tenancy is the root compartment.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return The name associated with the compartment.
      * 
      */
-    public String compartmentName() {
-        return this.compartmentName;
+    public Optional<String> compartmentName() {
+        return Optional.ofNullable(this.compartmentName);
     }
     /**
      * @return Text describing the category.
      * 
      */
-    public String description() {
-        return this.description;
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
     /**
      * @return The estimated cost savings, in dollars, for the category.
      * 
      */
-    public Double estimatedCostSaving() {
-        return this.estimatedCostSaving;
+    public Optional<Double> estimatedCostSaving() {
+        return Optional.ofNullable(this.estimatedCostSaving);
     }
     /**
      * @return Additional metadata key/value pairs for the category.
      * 
      */
     public Map<String,Object> extendedMetadata() {
-        return this.extendedMetadata;
+        return this.extendedMetadata == null ? Map.of() : this.extendedMetadata;
     }
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The name assigned to the category.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return An array of `RecommendationCount` objects grouped by the level of importance assigned to the recommendation.
      * 
      */
     public List<GetCategoryRecommendationCount> recommendationCounts() {
-        return this.recommendationCounts;
+        return this.recommendationCounts == null ? List.of() : this.recommendationCounts;
     }
     /**
      * @return An array of `ResourceCount` objects grouped by the status of the recommendation.
      * 
      */
     public List<GetCategoryResourceCount> resourceCounts() {
-        return this.resourceCounts;
+        return this.resourceCounts == null ? List.of() : this.resourceCounts;
     }
     /**
      * @return The category&#39;s current state.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return The date and time the category details were created, in the format defined by RFC3339.
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return The date and time the category details were last updated, in the format defined by RFC3339.
      * 
      */
-    public String timeUpdated() {
-        return this.timeUpdated;
+    public Optional<String> timeUpdated() {
+        return Optional.ofNullable(this.timeUpdated);
     }
 
     public static Builder builder() {
@@ -176,18 +178,18 @@ public final class GetCategoryResult {
     @CustomType.Builder
     public static final class Builder {
         private String categoryId;
-        private String compartmentId;
-        private String compartmentName;
-        private String description;
-        private Double estimatedCostSaving;
-        private Map<String,Object> extendedMetadata;
-        private String id;
-        private String name;
-        private List<GetCategoryRecommendationCount> recommendationCounts;
-        private List<GetCategoryResourceCount> resourceCounts;
-        private String state;
-        private String timeCreated;
-        private String timeUpdated;
+        private @Nullable String compartmentId;
+        private @Nullable String compartmentName;
+        private @Nullable String description;
+        private @Nullable Double estimatedCostSaving;
+        private @Nullable Map<String,Object> extendedMetadata;
+        private @Nullable String id;
+        private @Nullable String name;
+        private @Nullable List<GetCategoryRecommendationCount> recommendationCounts;
+        private @Nullable List<GetCategoryResourceCount> resourceCounts;
+        private @Nullable String state;
+        private @Nullable String timeCreated;
+        private @Nullable String timeUpdated;
         public Builder() {}
         public Builder(GetCategoryResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -212,69 +214,69 @@ public final class GetCategoryResult {
             return this;
         }
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder compartmentName(String compartmentName) {
-            this.compartmentName = Objects.requireNonNull(compartmentName);
+        public Builder compartmentName(@Nullable String compartmentName) {
+            this.compartmentName = compartmentName;
             return this;
         }
         @CustomType.Setter
-        public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+        public Builder description(@Nullable String description) {
+            this.description = description;
             return this;
         }
         @CustomType.Setter
-        public Builder estimatedCostSaving(Double estimatedCostSaving) {
-            this.estimatedCostSaving = Objects.requireNonNull(estimatedCostSaving);
+        public Builder estimatedCostSaving(@Nullable Double estimatedCostSaving) {
+            this.estimatedCostSaving = estimatedCostSaving;
             return this;
         }
         @CustomType.Setter
-        public Builder extendedMetadata(Map<String,Object> extendedMetadata) {
-            this.extendedMetadata = Objects.requireNonNull(extendedMetadata);
+        public Builder extendedMetadata(@Nullable Map<String,Object> extendedMetadata) {
+            this.extendedMetadata = extendedMetadata;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder recommendationCounts(List<GetCategoryRecommendationCount> recommendationCounts) {
-            this.recommendationCounts = Objects.requireNonNull(recommendationCounts);
+        public Builder recommendationCounts(@Nullable List<GetCategoryRecommendationCount> recommendationCounts) {
+            this.recommendationCounts = recommendationCounts;
             return this;
         }
         public Builder recommendationCounts(GetCategoryRecommendationCount... recommendationCounts) {
             return recommendationCounts(List.of(recommendationCounts));
         }
         @CustomType.Setter
-        public Builder resourceCounts(List<GetCategoryResourceCount> resourceCounts) {
-            this.resourceCounts = Objects.requireNonNull(resourceCounts);
+        public Builder resourceCounts(@Nullable List<GetCategoryResourceCount> resourceCounts) {
+            this.resourceCounts = resourceCounts;
             return this;
         }
         public Builder resourceCounts(GetCategoryResourceCount... resourceCounts) {
             return resourceCounts(List.of(resourceCounts));
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+        public Builder timeUpdated(@Nullable String timeUpdated) {
+            this.timeUpdated = timeUpdated;
             return this;
         }
         public GetCategoryResult build() {

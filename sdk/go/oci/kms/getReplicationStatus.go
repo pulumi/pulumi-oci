@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Replication Status resource in Oracle Cloud Infrastructure Kms service.
@@ -66,8 +65,8 @@ type GetReplicationStatusArgs struct {
 // A collection of values returned by getReplicationStatus.
 type GetReplicationStatusResult struct {
 	// The provider-assigned unique ID for this managed resource.
-	Id                 string `pulumi:"id"`
-	ManagementEndpoint string `pulumi:"managementEndpoint"`
+	Id                 *string `pulumi:"id"`
+	ManagementEndpoint string  `pulumi:"managementEndpoint"`
 	// Replica Details.
 	ReplicaDetails []GetReplicationStatusReplicaDetail `pulumi:"replicaDetails"`
 	ReplicationId  string                              `pulumi:"replicationId"`
@@ -113,15 +112,9 @@ func (o GetReplicationStatusResultOutput) ToGetReplicationStatusResultOutputWith
 	return o
 }
 
-func (o GetReplicationStatusResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetReplicationStatusResult] {
-	return pulumix.Output[GetReplicationStatusResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The provider-assigned unique ID for this managed resource.
-func (o GetReplicationStatusResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetReplicationStatusResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetReplicationStatusResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetReplicationStatusResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetReplicationStatusResultOutput) ManagementEndpoint() pulumi.StringOutput {

@@ -85,7 +85,7 @@ export interface GetExportSetsResult {
     /**
      * The list of export_sets.
      */
-    readonly exportSets: outputs.FileStorage.GetExportSetsExportSet[];
+    readonly exportSets?: outputs.FileStorage.GetExportSetsExportSet[];
     readonly filters?: outputs.FileStorage.GetExportSetsFilter[];
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the export set.

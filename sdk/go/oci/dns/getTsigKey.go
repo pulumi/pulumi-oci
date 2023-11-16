@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Tsig Key resource in Oracle Cloud Infrastructure DNS service.
@@ -60,28 +59,28 @@ type LookupTsigKeyArgs struct {
 // A collection of values returned by getTsigKey.
 type LookupTsigKeyResult struct {
 	// TSIG key algorithms are encoded as domain names, but most consist of only one non-empty label, which is not required to be explicitly absolute. Applicable algorithms include: hmac-sha1, hmac-sha224, hmac-sha256, hmac-sha512. For more information on these algorithms, see [RFC 4635](https://tools.ietf.org/html/rfc4635#section-2).
-	Algorithm string `pulumi:"algorithm"`
+	Algorithm *string `pulumi:"algorithm"`
 	// The OCID of the compartment containing the TSIG key.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The OCID of the resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// A globally unique domain name identifying the key for a given pair of hosts.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// A base64 string encoding the binary shared secret.
-	Secret string `pulumi:"secret"`
+	Secret *string `pulumi:"secret"`
 	// The canonical absolute URL of the resource.
-	Self string `pulumi:"self"`
+	Self *string `pulumi:"self"`
 	// The current state of the resource.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The date and time the resource was created, expressed in RFC 3339 timestamp format.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The date and time the resource was last updated, expressed in RFC 3339 timestamp format.
-	TimeUpdated string `pulumi:"timeUpdated"`
-	TsigKeyId   string `pulumi:"tsigKeyId"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
+	TsigKeyId   string  `pulumi:"tsigKeyId"`
 }
 
 func LookupTsigKeyOutput(ctx *pulumi.Context, args LookupTsigKeyOutputArgs, opts ...pulumi.InvokeOption) LookupTsigKeyResultOutput {
@@ -122,20 +121,14 @@ func (o LookupTsigKeyResultOutput) ToLookupTsigKeyResultOutputWithContext(ctx co
 	return o
 }
 
-func (o LookupTsigKeyResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupTsigKeyResult] {
-	return pulumix.Output[LookupTsigKeyResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // TSIG key algorithms are encoded as domain names, but most consist of only one non-empty label, which is not required to be explicitly absolute. Applicable algorithms include: hmac-sha1, hmac-sha224, hmac-sha256, hmac-sha512. For more information on these algorithms, see [RFC 4635](https://tools.ietf.org/html/rfc4635#section-2).
-func (o LookupTsigKeyResultOutput) Algorithm() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupTsigKeyResult) string { return v.Algorithm }).(pulumi.StringOutput)
+func (o LookupTsigKeyResultOutput) Algorithm() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupTsigKeyResult) *string { return v.Algorithm }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the compartment containing the TSIG key.
-func (o LookupTsigKeyResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupTsigKeyResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupTsigKeyResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupTsigKeyResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -149,38 +142,38 @@ func (o LookupTsigKeyResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The OCID of the resource.
-func (o LookupTsigKeyResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupTsigKeyResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupTsigKeyResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupTsigKeyResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // A globally unique domain name identifying the key for a given pair of hosts.
-func (o LookupTsigKeyResultOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupTsigKeyResult) string { return v.Name }).(pulumi.StringOutput)
+func (o LookupTsigKeyResultOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupTsigKeyResult) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // A base64 string encoding the binary shared secret.
-func (o LookupTsigKeyResultOutput) Secret() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupTsigKeyResult) string { return v.Secret }).(pulumi.StringOutput)
+func (o LookupTsigKeyResultOutput) Secret() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupTsigKeyResult) *string { return v.Secret }).(pulumi.StringPtrOutput)
 }
 
 // The canonical absolute URL of the resource.
-func (o LookupTsigKeyResultOutput) Self() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupTsigKeyResult) string { return v.Self }).(pulumi.StringOutput)
+func (o LookupTsigKeyResultOutput) Self() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupTsigKeyResult) *string { return v.Self }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the resource.
-func (o LookupTsigKeyResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupTsigKeyResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupTsigKeyResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupTsigKeyResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the resource was created, expressed in RFC 3339 timestamp format.
-func (o LookupTsigKeyResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupTsigKeyResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupTsigKeyResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupTsigKeyResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the resource was last updated, expressed in RFC 3339 timestamp format.
-func (o LookupTsigKeyResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupTsigKeyResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o LookupTsigKeyResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupTsigKeyResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupTsigKeyResultOutput) TsigKeyId() pulumi.StringOutput {

@@ -70,11 +70,11 @@ export interface GetOdaPrivateEndpointAttachmentsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The list of oda_private_endpoint_attachment_collection.
      */
-    readonly odaPrivateEndpointAttachmentCollections: outputs.Oda.GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollection[];
+    readonly odaPrivateEndpointAttachmentCollections?: outputs.Oda.GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollection[];
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ODA Private Endpoint.
      */

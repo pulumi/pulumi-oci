@@ -30,7 +30,7 @@ public final class GetDatabaseInsightsResult {
      * @return The list of database_insights_collection.
      * 
      */
-    private List<GetDatabaseInsightsDatabaseInsightsCollection> databaseInsightsCollections;
+    private @Nullable List<GetDatabaseInsightsDatabaseInsightsCollection> databaseInsightsCollections;
     /**
      * @return Operations Insights internal representation of the database type.
      * 
@@ -92,7 +92,7 @@ public final class GetDatabaseInsightsResult {
      * 
      */
     public List<GetDatabaseInsightsDatabaseInsightsCollection> databaseInsightsCollections() {
-        return this.databaseInsightsCollections;
+        return this.databaseInsightsCollections == null ? List.of() : this.databaseInsightsCollections;
     }
     /**
      * @return Operations Insights internal representation of the database type.
@@ -162,7 +162,7 @@ public final class GetDatabaseInsightsResult {
         private @Nullable String compartmentId;
         private @Nullable Boolean compartmentIdInSubtree;
         private @Nullable List<String> databaseIds;
-        private List<GetDatabaseInsightsDatabaseInsightsCollection> databaseInsightsCollections;
+        private @Nullable List<GetDatabaseInsightsDatabaseInsightsCollection> databaseInsightsCollections;
         private @Nullable List<String> databaseTypes;
         private @Nullable String enterpriseManagerBridgeId;
         private @Nullable String exadataInsightId;
@@ -209,8 +209,8 @@ public final class GetDatabaseInsightsResult {
             return databaseIds(List.of(databaseIds));
         }
         @CustomType.Setter
-        public Builder databaseInsightsCollections(List<GetDatabaseInsightsDatabaseInsightsCollection> databaseInsightsCollections) {
-            this.databaseInsightsCollections = Objects.requireNonNull(databaseInsightsCollections);
+        public Builder databaseInsightsCollections(@Nullable List<GetDatabaseInsightsDatabaseInsightsCollection> databaseInsightsCollections) {
+            this.databaseInsightsCollections = databaseInsightsCollections;
             return this;
         }
         public Builder databaseInsightsCollections(GetDatabaseInsightsDatabaseInsightsCollection... databaseInsightsCollections) {

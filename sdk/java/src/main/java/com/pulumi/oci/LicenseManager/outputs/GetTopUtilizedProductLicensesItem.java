@@ -9,6 +9,8 @@ import java.lang.Double;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetTopUtilizedProductLicensesItem {
@@ -16,87 +18,87 @@ public final class GetTopUtilizedProductLicensesItem {
      * @return Specifies if the license unit count is unlimited.
      * 
      */
-    private Boolean isUnlimited;
+    private @Nullable Boolean isUnlimited;
     /**
      * @return The product license [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
-    private String productLicenseId;
+    private @Nullable String productLicenseId;
     /**
      * @return The product type.
      * 
      */
-    private String productType;
+    private @Nullable String productType;
     /**
      * @return The current product license status.
      * 
      */
-    private String status;
+    private @Nullable String status;
     /**
      * @return Total number of license units in the product license provided by the user.
      * 
      */
-    private Integer totalLicenseUnitCount;
+    private @Nullable Integer totalLicenseUnitCount;
     /**
      * @return Number of license units consumed.
      * 
      */
-    private Double totalUnitsConsumed;
+    private @Nullable Double totalUnitsConsumed;
     /**
      * @return The product license unit.
      * 
      */
-    private String unitType;
+    private @Nullable String unitType;
 
     private GetTopUtilizedProductLicensesItem() {}
     /**
      * @return Specifies if the license unit count is unlimited.
      * 
      */
-    public Boolean isUnlimited() {
-        return this.isUnlimited;
+    public Optional<Boolean> isUnlimited() {
+        return Optional.ofNullable(this.isUnlimited);
     }
     /**
      * @return The product license [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
-    public String productLicenseId() {
-        return this.productLicenseId;
+    public Optional<String> productLicenseId() {
+        return Optional.ofNullable(this.productLicenseId);
     }
     /**
      * @return The product type.
      * 
      */
-    public String productType() {
-        return this.productType;
+    public Optional<String> productType() {
+        return Optional.ofNullable(this.productType);
     }
     /**
      * @return The current product license status.
      * 
      */
-    public String status() {
-        return this.status;
+    public Optional<String> status() {
+        return Optional.ofNullable(this.status);
     }
     /**
      * @return Total number of license units in the product license provided by the user.
      * 
      */
-    public Integer totalLicenseUnitCount() {
-        return this.totalLicenseUnitCount;
+    public Optional<Integer> totalLicenseUnitCount() {
+        return Optional.ofNullable(this.totalLicenseUnitCount);
     }
     /**
      * @return Number of license units consumed.
      * 
      */
-    public Double totalUnitsConsumed() {
-        return this.totalUnitsConsumed;
+    public Optional<Double> totalUnitsConsumed() {
+        return Optional.ofNullable(this.totalUnitsConsumed);
     }
     /**
      * @return The product license unit.
      * 
      */
-    public String unitType() {
-        return this.unitType;
+    public Optional<String> unitType() {
+        return Optional.ofNullable(this.unitType);
     }
 
     public static Builder builder() {
@@ -108,13 +110,13 @@ public final class GetTopUtilizedProductLicensesItem {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Boolean isUnlimited;
-        private String productLicenseId;
-        private String productType;
-        private String status;
-        private Integer totalLicenseUnitCount;
-        private Double totalUnitsConsumed;
-        private String unitType;
+        private @Nullable Boolean isUnlimited;
+        private @Nullable String productLicenseId;
+        private @Nullable String productType;
+        private @Nullable String status;
+        private @Nullable Integer totalLicenseUnitCount;
+        private @Nullable Double totalUnitsConsumed;
+        private @Nullable String unitType;
         public Builder() {}
         public Builder(GetTopUtilizedProductLicensesItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -128,38 +130,38 @@ public final class GetTopUtilizedProductLicensesItem {
         }
 
         @CustomType.Setter
-        public Builder isUnlimited(Boolean isUnlimited) {
-            this.isUnlimited = Objects.requireNonNull(isUnlimited);
+        public Builder isUnlimited(@Nullable Boolean isUnlimited) {
+            this.isUnlimited = isUnlimited;
             return this;
         }
         @CustomType.Setter
-        public Builder productLicenseId(String productLicenseId) {
-            this.productLicenseId = Objects.requireNonNull(productLicenseId);
+        public Builder productLicenseId(@Nullable String productLicenseId) {
+            this.productLicenseId = productLicenseId;
             return this;
         }
         @CustomType.Setter
-        public Builder productType(String productType) {
-            this.productType = Objects.requireNonNull(productType);
+        public Builder productType(@Nullable String productType) {
+            this.productType = productType;
             return this;
         }
         @CustomType.Setter
-        public Builder status(String status) {
-            this.status = Objects.requireNonNull(status);
+        public Builder status(@Nullable String status) {
+            this.status = status;
             return this;
         }
         @CustomType.Setter
-        public Builder totalLicenseUnitCount(Integer totalLicenseUnitCount) {
-            this.totalLicenseUnitCount = Objects.requireNonNull(totalLicenseUnitCount);
+        public Builder totalLicenseUnitCount(@Nullable Integer totalLicenseUnitCount) {
+            this.totalLicenseUnitCount = totalLicenseUnitCount;
             return this;
         }
         @CustomType.Setter
-        public Builder totalUnitsConsumed(Double totalUnitsConsumed) {
-            this.totalUnitsConsumed = Objects.requireNonNull(totalUnitsConsumed);
+        public Builder totalUnitsConsumed(@Nullable Double totalUnitsConsumed) {
+            this.totalUnitsConsumed = totalUnitsConsumed;
             return this;
         }
         @CustomType.Setter
-        public Builder unitType(String unitType) {
-            this.unitType = Objects.requireNonNull(unitType);
+        public Builder unitType(@Nullable String unitType) {
+            this.unitType = unitType;
             return this;
         }
         public GetTopUtilizedProductLicensesItem build() {

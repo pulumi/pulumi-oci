@@ -16,23 +16,23 @@ namespace Pulumi.Oci.Functions.Outputs
         /// <summary>
         /// The source environment id for the last refresh
         /// </summary>
-        public readonly string SourceFusionEnvironmentId;
+        public readonly string? SourceFusionEnvironmentId;
         /// <summary>
         /// The time of when the last refresh finish
         /// </summary>
-        public readonly string TimeFinished;
+        public readonly string? TimeFinished;
         /// <summary>
         /// The point of time of the latest DB backup for the last refresh
         /// </summary>
-        public readonly string TimeOfRestorationPoint;
+        public readonly string? TimeOfRestorationPoint;
 
         [OutputConstructor]
         private GetFusionEnvironmentsFusionEnvironmentCollectionItemRefreshResult(
-            string sourceFusionEnvironmentId,
+            string? sourceFusionEnvironmentId,
 
-            string timeFinished,
+            string? timeFinished,
 
-            string timeOfRestorationPoint)
+            string? timeOfRestorationPoint)
         {
             SourceFusionEnvironmentId = sourceFusionEnvironmentId;
             TimeFinished = timeFinished;

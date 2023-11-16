@@ -16,17 +16,17 @@ namespace Pulumi.Oci.ManagementAgent.Outputs
         /// <summary>
         /// Management Agent Plugin Display Name
         /// </summary>
-        public readonly string PluginDisplayName;
+        public readonly string? PluginDisplayName;
         /// <summary>
         /// Management Agent Plugin Name
         /// </summary>
-        public readonly string PluginName;
+        public readonly string? PluginName;
 
         [OutputConstructor]
         private GetManagementAgentPluginCountItemDimensionResult(
-            string pluginDisplayName,
+            string? pluginDisplayName,
 
-            string pluginName)
+            string? pluginName)
         {
             PluginDisplayName = pluginDisplayName;
             PluginName = pluginName;

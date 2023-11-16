@@ -25,13 +25,6 @@ class HttpRedirectArgs:
                  response_code: Optional[pulumi.Input[int]] = None):
         """
         The set of arguments for constructing a HttpRedirect resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HTTP Redirects compartment.
-        :param pulumi.Input[str] domain: The domain from which traffic will be redirected.
-        :param pulumi.Input['HttpRedirectTargetArgs'] target: (Updatable) The redirect target object including all the redirect data.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] display_name: (Updatable) The user-friendly name of the HTTP Redirect. The name can be changed and does not need to be unique.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[int] response_code: (Updatable) The response code returned for the redirect to the client. For more information, see [RFC 7231](https://tools.ietf.org/html/rfc7231#section-6.4).
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "domain", domain)
@@ -48,9 +41,6 @@ class HttpRedirectArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HTTP Redirects compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -60,9 +50,6 @@ class HttpRedirectArgs:
     @property
     @pulumi.getter
     def domain(self) -> pulumi.Input[str]:
-        """
-        The domain from which traffic will be redirected.
-        """
         return pulumi.get(self, "domain")
 
     @domain.setter
@@ -72,9 +59,6 @@ class HttpRedirectArgs:
     @property
     @pulumi.getter
     def target(self) -> pulumi.Input['HttpRedirectTargetArgs']:
-        """
-        (Updatable) The redirect target object including all the redirect data.
-        """
         return pulumi.get(self, "target")
 
     @target.setter
@@ -84,9 +68,6 @@ class HttpRedirectArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -96,9 +77,6 @@ class HttpRedirectArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The user-friendly name of the HTTP Redirect. The name can be changed and does not need to be unique.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -108,9 +86,6 @@ class HttpRedirectArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -120,9 +95,6 @@ class HttpRedirectArgs:
     @property
     @pulumi.getter(name="responseCode")
     def response_code(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) The response code returned for the redirect to the client. For more information, see [RFC 7231](https://tools.ietf.org/html/rfc7231#section-6.4).
-        """
         return pulumi.get(self, "response_code")
 
     @response_code.setter
@@ -144,15 +116,6 @@ class _HttpRedirectState:
                  time_created: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering HttpRedirect resources.
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HTTP Redirects compartment.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] display_name: (Updatable) The user-friendly name of the HTTP Redirect. The name can be changed and does not need to be unique.
-        :param pulumi.Input[str] domain: The domain from which traffic will be redirected.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[int] response_code: (Updatable) The response code returned for the redirect to the client. For more information, see [RFC 7231](https://tools.ietf.org/html/rfc7231#section-6.4).
-        :param pulumi.Input[str] state: The current lifecycle state of the HTTP Redirect.
-        :param pulumi.Input['HttpRedirectTargetArgs'] target: (Updatable) The redirect target object including all the redirect data.
-        :param pulumi.Input[str] time_created: The date and time the policy was created, expressed in RFC 3339 timestamp format.
         """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
@@ -176,9 +139,6 @@ class _HttpRedirectState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HTTP Redirects compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -188,9 +148,6 @@ class _HttpRedirectState:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -200,9 +157,6 @@ class _HttpRedirectState:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The user-friendly name of the HTTP Redirect. The name can be changed and does not need to be unique.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -212,9 +166,6 @@ class _HttpRedirectState:
     @property
     @pulumi.getter
     def domain(self) -> Optional[pulumi.Input[str]]:
-        """
-        The domain from which traffic will be redirected.
-        """
         return pulumi.get(self, "domain")
 
     @domain.setter
@@ -224,9 +175,6 @@ class _HttpRedirectState:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -236,9 +184,6 @@ class _HttpRedirectState:
     @property
     @pulumi.getter(name="responseCode")
     def response_code(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) The response code returned for the redirect to the client. For more information, see [RFC 7231](https://tools.ietf.org/html/rfc7231#section-6.4).
-        """
         return pulumi.get(self, "response_code")
 
     @response_code.setter
@@ -248,9 +193,6 @@ class _HttpRedirectState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The current lifecycle state of the HTTP Redirect.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -260,9 +202,6 @@ class _HttpRedirectState:
     @property
     @pulumi.getter
     def target(self) -> Optional[pulumi.Input['HttpRedirectTargetArgs']]:
-        """
-        (Updatable) The redirect target object including all the redirect data.
-        """
         return pulumi.get(self, "target")
 
     @target.setter
@@ -272,9 +211,6 @@ class _HttpRedirectState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time the policy was created, expressed in RFC 3339 timestamp format.
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -296,53 +232,9 @@ class HttpRedirect(pulumi.CustomResource):
                  target: Optional[pulumi.Input[pulumi.InputType['HttpRedirectTargetArgs']]] = None,
                  __props__=None):
         """
-        This resource provides the Http Redirect resource in Oracle Cloud Infrastructure Web Application Acceleration and Security service.
-
-        Creates a new HTTP Redirect on the WAF edge.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_http_redirect = oci.waas.HttpRedirect("testHttpRedirect",
-            compartment_id=var["compartment_id"],
-            domain=var["http_redirect_domain"],
-            target=oci.waas.HttpRedirectTargetArgs(
-                host=var["http_redirect_target_host"],
-                path=var["http_redirect_target_path"],
-                protocol=var["http_redirect_target_protocol"],
-                query=var["http_redirect_target_query"],
-                port=var["http_redirect_target_port"],
-            ),
-            defined_tags={
-                "Operations.CostCenter": "42",
-            },
-            display_name=var["http_redirect_display_name"],
-            freeform_tags={
-                "Department": "Finance",
-            },
-            response_code=var["http_redirect_response_code"])
-        ```
-
-        ## Import
-
-        HttpRedirects can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Waas/httpRedirect:HttpRedirect test_http_redirect "id"
-        ```
-
+        Create a HttpRedirect resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HTTP Redirects compartment.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] display_name: (Updatable) The user-friendly name of the HTTP Redirect. The name can be changed and does not need to be unique.
-        :param pulumi.Input[str] domain: The domain from which traffic will be redirected.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[int] response_code: (Updatable) The response code returned for the redirect to the client. For more information, see [RFC 7231](https://tools.ietf.org/html/rfc7231#section-6.4).
-        :param pulumi.Input[pulumi.InputType['HttpRedirectTargetArgs']] target: (Updatable) The redirect target object including all the redirect data.
         """
         ...
     @overload
@@ -351,44 +243,7 @@ class HttpRedirect(pulumi.CustomResource):
                  args: HttpRedirectArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Http Redirect resource in Oracle Cloud Infrastructure Web Application Acceleration and Security service.
-
-        Creates a new HTTP Redirect on the WAF edge.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_http_redirect = oci.waas.HttpRedirect("testHttpRedirect",
-            compartment_id=var["compartment_id"],
-            domain=var["http_redirect_domain"],
-            target=oci.waas.HttpRedirectTargetArgs(
-                host=var["http_redirect_target_host"],
-                path=var["http_redirect_target_path"],
-                protocol=var["http_redirect_target_protocol"],
-                query=var["http_redirect_target_query"],
-                port=var["http_redirect_target_port"],
-            ),
-            defined_tags={
-                "Operations.CostCenter": "42",
-            },
-            display_name=var["http_redirect_display_name"],
-            freeform_tags={
-                "Department": "Finance",
-            },
-            response_code=var["http_redirect_response_code"])
-        ```
-
-        ## Import
-
-        HttpRedirects can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Waas/httpRedirect:HttpRedirect test_http_redirect "id"
-        ```
-
+        Create a HttpRedirect resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param HttpRedirectArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -461,15 +316,6 @@ class HttpRedirect(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HTTP Redirects compartment.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] display_name: (Updatable) The user-friendly name of the HTTP Redirect. The name can be changed and does not need to be unique.
-        :param pulumi.Input[str] domain: The domain from which traffic will be redirected.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[int] response_code: (Updatable) The response code returned for the redirect to the client. For more information, see [RFC 7231](https://tools.ietf.org/html/rfc7231#section-6.4).
-        :param pulumi.Input[str] state: The current lifecycle state of the HTTP Redirect.
-        :param pulumi.Input[pulumi.InputType['HttpRedirectTargetArgs']] target: (Updatable) The redirect target object including all the redirect data.
-        :param pulumi.Input[str] time_created: The date and time the policy was created, expressed in RFC 3339 timestamp format.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -489,72 +335,45 @@ class HttpRedirect(pulumi.CustomResource):
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HTTP Redirects compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The user-friendly name of the HTTP Redirect. The name can be changed and does not need to be unique.
-        """
+    def display_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter
     def domain(self) -> pulumi.Output[str]:
-        """
-        The domain from which traffic will be redirected.
-        """
         return pulumi.get(self, "domain")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="responseCode")
-    def response_code(self) -> pulumi.Output[int]:
-        """
-        (Updatable) The response code returned for the redirect to the client. For more information, see [RFC 7231](https://tools.ietf.org/html/rfc7231#section-6.4).
-        """
+    def response_code(self) -> pulumi.Output[Optional[int]]:
         return pulumi.get(self, "response_code")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        The current lifecycle state of the HTTP Redirect.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter
     def target(self) -> pulumi.Output['outputs.HttpRedirectTarget']:
-        """
-        (Updatable) The redirect target object including all the redirect data.
-        """
         return pulumi.get(self, "target")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        The date and time the policy was created, expressed in RFC 3339 timestamp format.
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 

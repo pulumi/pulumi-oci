@@ -20,11 +20,11 @@ namespace Pulumi.Oci.DataCatalog.Outputs
         /// <summary>
         /// OCID of the user who created the resource.
         /// </summary>
-        public readonly string CreatedById;
+        public readonly string? CreatedById;
         /// <summary>
         /// Detailed description of the data asset.
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// A filter to return only resources that match the entire display name given. The match is not case sensitive.
         /// </summary>
@@ -32,35 +32,35 @@ namespace Pulumi.Oci.DataCatalog.Outputs
         /// <summary>
         /// Unique external identifier of this resource in the external source system.
         /// </summary>
-        public readonly string ExternalKey;
+        public readonly string? ExternalKey;
         /// <summary>
         /// Unique data asset key that is immutable.
         /// </summary>
-        public readonly string Key;
+        public readonly string? Key;
         /// <summary>
         /// A message describing the current state in more detail. An object not in ACTIVE state may have functional limitations, see service documentation for details.
         /// </summary>
-        public readonly string LifecycleDetails;
+        public readonly string? LifecycleDetails;
         /// <summary>
         /// A map of maps that contains the properties which are specific to the asset type. Each data asset type definition defines it's set of required and optional properties. The map keys are category names and the values are maps of property name to property value. Every property is contained inside of a category. Most data assets have required properties within the "default" category. Example: `{"properties": { "default": { "host": "host1", "port": "1521", "database": "orcl"}}}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> Properties;
+        public readonly ImmutableDictionary<string, object>? Properties;
         /// <summary>
         /// A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// Time that the resource was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The last time that a harvest was performed on the data asset. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
         /// </summary>
-        public readonly string TimeHarvested;
+        public readonly string? TimeHarvested;
         /// <summary>
         /// Time that the resource was updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
         /// </summary>
-        public readonly string TimeUpdated;
+        public readonly string? TimeUpdated;
         /// <summary>
         /// The key of the object type.
         /// </summary>
@@ -68,43 +68,43 @@ namespace Pulumi.Oci.DataCatalog.Outputs
         /// <summary>
         /// OCID of the user who updated the resource.
         /// </summary>
-        public readonly string UpdatedById;
+        public readonly string? UpdatedById;
         /// <summary>
         /// URI to the data asset instance in the API.
         /// </summary>
-        public readonly string Uri;
+        public readonly string? Uri;
 
         [OutputConstructor]
         private GetDataAssetsDataAssetCollectionItemResult(
             string catalogId,
 
-            string createdById,
+            string? createdById,
 
-            string description,
+            string? description,
 
             string displayName,
 
-            string externalKey,
+            string? externalKey,
 
-            string key,
+            string? key,
 
-            string lifecycleDetails,
+            string? lifecycleDetails,
 
-            ImmutableDictionary<string, object> properties,
+            ImmutableDictionary<string, object>? properties,
 
-            string state,
+            string? state,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeHarvested,
+            string? timeHarvested,
 
-            string timeUpdated,
+            string? timeUpdated,
 
             string typeKey,
 
-            string updatedById,
+            string? updatedById,
 
-            string uri)
+            string? uri)
         {
             CatalogId = catalogId;
             CreatedById = createdById;

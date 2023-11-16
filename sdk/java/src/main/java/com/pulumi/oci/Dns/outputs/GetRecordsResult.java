@@ -26,12 +26,12 @@ public final class GetRecordsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The list of records.
      * 
      */
-    private List<GetRecordsRecord> records;
+    private @Nullable List<GetRecordsRecord> records;
     /**
      * @return The canonical name for the record&#39;s type, such as A or CNAME. For more information, see [Resource Record (RR) TYPEs](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).
      * 
@@ -71,15 +71,15 @@ public final class GetRecordsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The list of records.
      * 
      */
     public List<GetRecordsRecord> records() {
-        return this.records;
+        return this.records == null ? List.of() : this.records;
     }
     /**
      * @return The canonical name for the record&#39;s type, such as A or CNAME. For more information, see [Resource Record (RR) TYPEs](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).
@@ -122,8 +122,8 @@ public final class GetRecordsResult {
         private @Nullable String domain;
         private @Nullable String domainContains;
         private @Nullable List<GetRecordsFilter> filters;
-        private String id;
-        private List<GetRecordsRecord> records;
+        private @Nullable String id;
+        private @Nullable List<GetRecordsRecord> records;
         private @Nullable String rtype;
         private @Nullable String sortBy;
         private @Nullable String sortOrder;
@@ -169,13 +169,13 @@ public final class GetRecordsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder records(List<GetRecordsRecord> records) {
-            this.records = Objects.requireNonNull(records);
+        public Builder records(@Nullable List<GetRecordsRecord> records) {
+            this.records = records;
             return this;
         }
         public Builder records(GetRecordsRecord... records) {

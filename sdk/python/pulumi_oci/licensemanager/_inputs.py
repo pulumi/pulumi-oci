@@ -23,13 +23,6 @@ class ProductLicenseImageArgs:
                  id: Optional[pulumi.Input[str]] = None,
                  listing_name: Optional[pulumi.Input[str]] = None,
                  publisher: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] listing_id: (Updatable) Marketplace image listing ID.
-        :param pulumi.Input[str] package_version: (Updatable) Image package version.
-        :param pulumi.Input[str] id: The image ID associated with the product license.
-        :param pulumi.Input[str] listing_name: The listing name associated with the product license.
-        :param pulumi.Input[str] publisher: The image publisher.
-        """
         pulumi.set(__self__, "listing_id", listing_id)
         pulumi.set(__self__, "package_version", package_version)
         if id is not None:
@@ -42,9 +35,6 @@ class ProductLicenseImageArgs:
     @property
     @pulumi.getter(name="listingId")
     def listing_id(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Marketplace image listing ID.
-        """
         return pulumi.get(self, "listing_id")
 
     @listing_id.setter
@@ -54,9 +44,6 @@ class ProductLicenseImageArgs:
     @property
     @pulumi.getter(name="packageVersion")
     def package_version(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Image package version.
-        """
         return pulumi.get(self, "package_version")
 
     @package_version.setter
@@ -66,9 +53,6 @@ class ProductLicenseImageArgs:
     @property
     @pulumi.getter
     def id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The image ID associated with the product license.
-        """
         return pulumi.get(self, "id")
 
     @id.setter
@@ -78,9 +62,6 @@ class ProductLicenseImageArgs:
     @property
     @pulumi.getter(name="listingName")
     def listing_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The listing name associated with the product license.
-        """
         return pulumi.get(self, "listing_name")
 
     @listing_name.setter
@@ -90,9 +71,6 @@ class ProductLicenseImageArgs:
     @property
     @pulumi.getter
     def publisher(self) -> Optional[pulumi.Input[str]]:
-        """
-        The image publisher.
-        """
         return pulumi.get(self, "publisher")
 
     @publisher.setter

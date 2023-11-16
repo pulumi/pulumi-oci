@@ -24,12 +24,12 @@ public final class GetJavaReleasesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The list of java_release_collection.
      * 
      */
-    private List<GetJavaReleasesJavaReleaseCollection> javaReleaseCollections;
+    private @Nullable List<GetJavaReleasesJavaReleaseCollection> javaReleaseCollections;
     private @Nullable String jreSecurityStatus;
     /**
      * @return License type for the Java version.
@@ -62,15 +62,15 @@ public final class GetJavaReleasesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The list of java_release_collection.
      * 
      */
     public List<GetJavaReleasesJavaReleaseCollection> javaReleaseCollections() {
-        return this.javaReleaseCollections;
+        return this.javaReleaseCollections == null ? List.of() : this.javaReleaseCollections;
     }
     public Optional<String> jreSecurityStatus() {
         return Optional.ofNullable(this.jreSecurityStatus);
@@ -108,8 +108,8 @@ public final class GetJavaReleasesResult {
     public static final class Builder {
         private @Nullable String familyVersion;
         private @Nullable List<GetJavaReleasesFilter> filters;
-        private String id;
-        private List<GetJavaReleasesJavaReleaseCollection> javaReleaseCollections;
+        private @Nullable String id;
+        private @Nullable List<GetJavaReleasesJavaReleaseCollection> javaReleaseCollections;
         private @Nullable String jreSecurityStatus;
         private @Nullable String licenseType;
         private @Nullable String releaseType;
@@ -141,13 +141,13 @@ public final class GetJavaReleasesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder javaReleaseCollections(List<GetJavaReleasesJavaReleaseCollection> javaReleaseCollections) {
-            this.javaReleaseCollections = Objects.requireNonNull(javaReleaseCollections);
+        public Builder javaReleaseCollections(@Nullable List<GetJavaReleasesJavaReleaseCollection> javaReleaseCollections) {
+            this.javaReleaseCollections = javaReleaseCollections;
             return this;
         }
         public Builder javaReleaseCollections(GetJavaReleasesJavaReleaseCollection... javaReleaseCollections) {

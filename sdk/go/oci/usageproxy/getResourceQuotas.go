@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Resource Quotas in Oracle Cloud Infrastructure Usage Proxy service.
@@ -70,7 +69,7 @@ type GetResourceQuotasResult struct {
 	CompartmentId string                    `pulumi:"compartmentId"`
 	Filters       []GetResourceQuotasFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The list of resource_quotum_collection.
 	ResourceQuotumCollections []GetResourceQuotasResourceQuotumCollection `pulumi:"resourceQuotumCollections"`
 	ServiceEntitlement        *string                                     `pulumi:"serviceEntitlement"`
@@ -120,12 +119,6 @@ func (o GetResourceQuotasResultOutput) ToGetResourceQuotasResultOutputWithContex
 	return o
 }
 
-func (o GetResourceQuotasResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetResourceQuotasResult] {
-	return pulumix.Output[GetResourceQuotasResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetResourceQuotasResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetResourceQuotasResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
@@ -135,8 +128,8 @@ func (o GetResourceQuotasResultOutput) Filters() GetResourceQuotasFilterArrayOut
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetResourceQuotasResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetResourceQuotasResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetResourceQuotasResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetResourceQuotasResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The list of resource_quotum_collection.

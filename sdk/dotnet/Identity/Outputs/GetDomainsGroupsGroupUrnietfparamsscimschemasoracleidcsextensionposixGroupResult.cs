@@ -16,10 +16,10 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// Integer uniquely identifying a group in a POSIX administrative domain
         /// </summary>
-        public readonly int GidNumber;
+        public readonly int? GidNumber;
 
         [OutputConstructor]
-        private GetDomainsGroupsGroupUrnietfparamsscimschemasoracleidcsextensionposixGroupResult(int gidNumber)
+        private GetDomainsGroupsGroupUrnietfparamsscimschemasoracleidcsextensionposixGroupResult(int? gidNumber)
         {
             GidNumber = gidNumber;
         }

@@ -16,29 +16,29 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
         /// <summary>
         /// The non-native networking Kubernetes API server endpoint.
         /// </summary>
-        public readonly string Kubernetes;
+        public readonly string? Kubernetes;
         /// <summary>
         /// The private native networking Kubernetes API server endpoint.
         /// </summary>
-        public readonly string PrivateEndpoint;
+        public readonly string? PrivateEndpoint;
         /// <summary>
         /// The public native networking Kubernetes API server endpoint, if one was requested.
         /// </summary>
-        public readonly string PublicEndpoint;
+        public readonly string? PublicEndpoint;
         /// <summary>
         /// The FQDN assigned to the Kubernetes API private endpoint. Example: 'https://yourVcnHostnameEndpoint'
         /// </summary>
-        public readonly string VcnHostnameEndpoint;
+        public readonly string? VcnHostnameEndpoint;
 
         [OutputConstructor]
         private GetClustersClusterEndpointResult(
-            string kubernetes,
+            string? kubernetes,
 
-            string privateEndpoint,
+            string? privateEndpoint,
 
-            string publicEndpoint,
+            string? publicEndpoint,
 
-            string vcnHostnameEndpoint)
+            string? vcnHostnameEndpoint)
         {
             Kubernetes = kubernetes;
             PrivateEndpoint = privateEndpoint;

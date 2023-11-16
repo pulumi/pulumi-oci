@@ -82,7 +82,7 @@ namespace Pulumi.Oci.Dns
         /// **Example:** `{"Operations": {"CostCenter": "42"}}`
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) External secondary servers for the zone. This field is currently not supported when `zoneType` is `SECONDARY` or `scope` is `PRIVATE`.
@@ -102,13 +102,13 @@ namespace Pulumi.Oci.Dns
         /// **Example:** `{"Department": "Finance"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// A Boolean flag indicating whether or not parts of the resource are unable to be explicitly managed.
         /// </summary>
         [Output("isProtected")]
-        public Output<bool> IsProtected { get; private set; } = null!;
+        public Output<bool?> IsProtected { get; private set; } = null!;
 
         /// <summary>
         /// The name of the zone.
@@ -127,37 +127,37 @@ namespace Pulumi.Oci.Dns
         /// This value will be null for zones in the global DNS and `PRIVATE` when creating a private zone.
         /// </summary>
         [Output("scope")]
-        public Output<string> Scope { get; private set; } = null!;
+        public Output<string?> Scope { get; private set; } = null!;
 
         /// <summary>
         /// The canonical absolute URL of the resource.
         /// </summary>
         [Output("self")]
-        public Output<string> Self { get; private set; } = null!;
+        public Output<string?> Self { get; private set; } = null!;
 
         /// <summary>
         /// The current serial of the zone. As seen in the zone's SOA record.
         /// </summary>
         [Output("serial")]
-        public Output<int> Serial { get; private set; } = null!;
+        public Output<int?> Serial { get; private set; } = null!;
 
         /// <summary>
         /// The current state of the zone resource.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// Version is the never-repeating, totally-orderable, version of the zone, from which the serial field of the zone's SOA record is derived.
         /// </summary>
         [Output("version")]
-        public Output<string> Version { get; private set; } = null!;
+        public Output<string?> Version { get; private set; } = null!;
 
         /// <summary>
         /// The OCID of the private view containing the zone. This value will be null for zones in the global DNS, which are publicly resolvable and not part of a private view.

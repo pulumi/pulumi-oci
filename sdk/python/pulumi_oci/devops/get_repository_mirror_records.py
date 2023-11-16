@@ -44,7 +44,7 @@ class GetRepositoryMirrorRecordsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -57,10 +57,7 @@ class GetRepositoryMirrorRecordsResult:
 
     @property
     @pulumi.getter(name="repositoryMirrorRecordCollections")
-    def repository_mirror_record_collections(self) -> Sequence['outputs.GetRepositoryMirrorRecordsRepositoryMirrorRecordCollectionResult']:
-        """
-        The list of repository_mirror_record_collection.
-        """
+    def repository_mirror_record_collections(self) -> Optional[Sequence['outputs.GetRepositoryMirrorRecordsRepositoryMirrorRecordCollectionResult']]:
         return pulumi.get(self, "repository_mirror_record_collections")
 
 
@@ -80,21 +77,7 @@ def get_repository_mirror_records(filters: Optional[Sequence[pulumi.InputType['G
                                   repository_id: Optional[str] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetRepositoryMirrorRecordsResult:
     """
-    This data source provides the list of Repository Mirror Records in Oracle Cloud Infrastructure Devops service.
-
-    Returns a list of mirror entry in history within 30 days.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_repository_mirror_records = oci.DevOps.get_repository_mirror_records(repository_id=oci_devops_repository["test_repository"]["id"])
-    ```
-
-
-    :param str repository_id: Unique repository identifier.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['filters'] = filters
@@ -114,20 +97,6 @@ def get_repository_mirror_records_output(filters: Optional[pulumi.Input[Optional
                                          repository_id: Optional[pulumi.Input[str]] = None,
                                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetRepositoryMirrorRecordsResult]:
     """
-    This data source provides the list of Repository Mirror Records in Oracle Cloud Infrastructure Devops service.
-
-    Returns a list of mirror entry in history within 30 days.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_repository_mirror_records = oci.DevOps.get_repository_mirror_records(repository_id=oci_devops_repository["test_repository"]["id"])
-    ```
-
-
-    :param str repository_id: Unique repository identifier.
+    Use this data source to access information about an existing resource.
     """
     ...

@@ -81,7 +81,7 @@ export interface GetManagedInstanceGroupAvailablePackagesResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Flag to return only latest package versions.
      */
@@ -89,7 +89,7 @@ export interface GetManagedInstanceGroupAvailablePackagesResult {
     /**
      * The list of managed_instance_group_available_package_collection.
      */
-    readonly managedInstanceGroupAvailablePackageCollections: outputs.OsManagementHub.GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollection[];
+    readonly managedInstanceGroupAvailablePackageCollections?: outputs.OsManagementHub.GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollection[];
     readonly managedInstanceGroupId: string;
 }
 /**

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Ca Bundle resource in Oracle Cloud Infrastructure Certificates Management service.
@@ -59,26 +58,26 @@ type LookupCaBundleArgs struct {
 
 // A collection of values returned by getCaBundle.
 type LookupCaBundleResult struct {
-	CaBundleId  string `pulumi:"caBundleId"`
-	CaBundlePem string `pulumi:"caBundlePem"`
+	CaBundleId  string  `pulumi:"caBundleId"`
+	CaBundlePem *string `pulumi:"caBundlePem"`
 	// The OCID of the compartment for the CA bundle.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A brief description of the CA bundle.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The OCID of the CA bundle.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Additional information about the current lifecycle state of the CA bundle.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// A user-friendly name for the CA bundle. Names are unique within a compartment. Avoid entering confidential information. Valid characters include uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// The current lifecycle state of the CA bundle.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// A property indicating when the CA bundle was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 }
 
 func LookupCaBundleOutput(ctx *pulumi.Context, args LookupCaBundleOutputArgs, opts ...pulumi.InvokeOption) LookupCaBundleResultOutput {
@@ -119,23 +118,17 @@ func (o LookupCaBundleResultOutput) ToLookupCaBundleResultOutputWithContext(ctx 
 	return o
 }
 
-func (o LookupCaBundleResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupCaBundleResult] {
-	return pulumix.Output[LookupCaBundleResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o LookupCaBundleResultOutput) CaBundleId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupCaBundleResult) string { return v.CaBundleId }).(pulumi.StringOutput)
 }
 
-func (o LookupCaBundleResultOutput) CaBundlePem() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupCaBundleResult) string { return v.CaBundlePem }).(pulumi.StringOutput)
+func (o LookupCaBundleResultOutput) CaBundlePem() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupCaBundleResult) *string { return v.CaBundlePem }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the compartment for the CA bundle.
-func (o LookupCaBundleResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupCaBundleResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupCaBundleResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupCaBundleResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -144,8 +137,8 @@ func (o LookupCaBundleResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // A brief description of the CA bundle.
-func (o LookupCaBundleResultOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupCaBundleResult) string { return v.Description }).(pulumi.StringOutput)
+func (o LookupCaBundleResultOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupCaBundleResult) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -154,28 +147,28 @@ func (o LookupCaBundleResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The OCID of the CA bundle.
-func (o LookupCaBundleResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupCaBundleResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupCaBundleResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupCaBundleResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Additional information about the current lifecycle state of the CA bundle.
-func (o LookupCaBundleResultOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupCaBundleResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o LookupCaBundleResultOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupCaBundleResult) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // A user-friendly name for the CA bundle. Names are unique within a compartment. Avoid entering confidential information. Valid characters include uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
-func (o LookupCaBundleResultOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupCaBundleResult) string { return v.Name }).(pulumi.StringOutput)
+func (o LookupCaBundleResultOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupCaBundleResult) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // The current lifecycle state of the CA bundle.
-func (o LookupCaBundleResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupCaBundleResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupCaBundleResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupCaBundleResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // A property indicating when the CA bundle was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-func (o LookupCaBundleResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupCaBundleResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupCaBundleResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupCaBundleResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 func init() {

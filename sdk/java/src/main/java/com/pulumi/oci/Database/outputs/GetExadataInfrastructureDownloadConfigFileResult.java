@@ -17,13 +17,13 @@ public final class GetExadataInfrastructureDownloadConfigFileResult {
      * @return content of the downloaded config file for exadata infrastructure. If `base64_encode_content` is set to `true`, then this content will be base64 encoded.
      * 
      */
-    private String content;
+    private @Nullable String content;
     private String exadataInfrastructureId;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
 
     private GetExadataInfrastructureDownloadConfigFileResult() {}
     public Optional<Boolean> base64EncodeContent() {
@@ -33,8 +33,8 @@ public final class GetExadataInfrastructureDownloadConfigFileResult {
      * @return content of the downloaded config file for exadata infrastructure. If `base64_encode_content` is set to `true`, then this content will be base64 encoded.
      * 
      */
-    public String content() {
-        return this.content;
+    public Optional<String> content() {
+        return Optional.ofNullable(this.content);
     }
     public String exadataInfrastructureId() {
         return this.exadataInfrastructureId;
@@ -43,8 +43,8 @@ public final class GetExadataInfrastructureDownloadConfigFileResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
 
     public static Builder builder() {
@@ -57,9 +57,9 @@ public final class GetExadataInfrastructureDownloadConfigFileResult {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable Boolean base64EncodeContent;
-        private String content;
+        private @Nullable String content;
         private String exadataInfrastructureId;
-        private String id;
+        private @Nullable String id;
         public Builder() {}
         public Builder(GetExadataInfrastructureDownloadConfigFileResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -75,8 +75,8 @@ public final class GetExadataInfrastructureDownloadConfigFileResult {
             return this;
         }
         @CustomType.Setter
-        public Builder content(String content) {
-            this.content = Objects.requireNonNull(content);
+        public Builder content(@Nullable String content) {
+            this.content = content;
             return this;
         }
         @CustomType.Setter
@@ -85,8 +85,8 @@ public final class GetExadataInfrastructureDownloadConfigFileResult {
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         public GetExadataInfrastructureDownloadConfigFileResult build() {

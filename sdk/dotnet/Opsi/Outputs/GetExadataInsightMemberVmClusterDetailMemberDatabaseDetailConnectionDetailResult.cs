@@ -14,16 +14,16 @@ namespace Pulumi.Oci.Opsi.Outputs
     public sealed class GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailResult
     {
         public readonly ImmutableArray<Outputs.GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailHostResult> Hosts;
-        public readonly string Protocol;
-        public readonly string ServiceName;
+        public readonly string? Protocol;
+        public readonly string? ServiceName;
 
         [OutputConstructor]
         private GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailResult(
             ImmutableArray<Outputs.GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailHostResult> hosts,
 
-            string protocol,
+            string? protocol,
 
-            string serviceName)
+            string? serviceName)
         {
             Hosts = hosts;
             Protocol = protocol;

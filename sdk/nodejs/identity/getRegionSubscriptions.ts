@@ -50,11 +50,11 @@ export interface GetRegionSubscriptionsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The list of region_subscriptions.
      */
-    readonly regionSubscriptions: outputs.Identity.GetRegionSubscriptionsRegionSubscription[];
+    readonly regionSubscriptions?: outputs.Identity.GetRegionSubscriptionsRegionSubscription[];
     readonly tenancyId: string;
 }
 /**

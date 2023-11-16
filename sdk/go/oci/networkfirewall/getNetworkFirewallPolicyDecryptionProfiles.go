@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Network Firewall Policy Decryption Profiles in Oracle Cloud Infrastructure Network Firewall service.
@@ -68,8 +67,8 @@ type GetNetworkFirewallPolicyDecryptionProfilesResult struct {
 	DisplayName                         *string                                                                        `pulumi:"displayName"`
 	Filters                             []GetNetworkFirewallPolicyDecryptionProfilesFilter                             `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id                      string `pulumi:"id"`
-	NetworkFirewallPolicyId string `pulumi:"networkFirewallPolicyId"`
+	Id                      *string `pulumi:"id"`
+	NetworkFirewallPolicyId string  `pulumi:"networkFirewallPolicyId"`
 }
 
 func GetNetworkFirewallPolicyDecryptionProfilesOutput(ctx *pulumi.Context, args GetNetworkFirewallPolicyDecryptionProfilesOutputArgs, opts ...pulumi.InvokeOption) GetNetworkFirewallPolicyDecryptionProfilesResultOutput {
@@ -113,12 +112,6 @@ func (o GetNetworkFirewallPolicyDecryptionProfilesResultOutput) ToGetNetworkFire
 	return o
 }
 
-func (o GetNetworkFirewallPolicyDecryptionProfilesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetNetworkFirewallPolicyDecryptionProfilesResult] {
-	return pulumix.Output[GetNetworkFirewallPolicyDecryptionProfilesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The list of decryption_profile_summary_collection.
 func (o GetNetworkFirewallPolicyDecryptionProfilesResultOutput) DecryptionProfileSummaryCollections() GetNetworkFirewallPolicyDecryptionProfilesDecryptionProfileSummaryCollectionArrayOutput {
 	return o.ApplyT(func(v GetNetworkFirewallPolicyDecryptionProfilesResult) []GetNetworkFirewallPolicyDecryptionProfilesDecryptionProfileSummaryCollection {
@@ -137,8 +130,8 @@ func (o GetNetworkFirewallPolicyDecryptionProfilesResultOutput) Filters() GetNet
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetNetworkFirewallPolicyDecryptionProfilesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNetworkFirewallPolicyDecryptionProfilesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetNetworkFirewallPolicyDecryptionProfilesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNetworkFirewallPolicyDecryptionProfilesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetNetworkFirewallPolicyDecryptionProfilesResultOutput) NetworkFirewallPolicyId() pulumi.StringOutput {

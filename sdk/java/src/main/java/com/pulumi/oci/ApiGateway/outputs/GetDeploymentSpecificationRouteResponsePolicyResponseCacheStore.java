@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDeploymentSpecificationRouteResponsePolicyResponseCacheStore {
@@ -14,27 +16,27 @@ public final class GetDeploymentSpecificationRouteResponsePolicyResponseCacheSto
      * @return Sets the number of seconds for a response from a backend being stored in the Response Cache before it expires.
      * 
      */
-    private Integer timeToLiveInSeconds;
+    private @Nullable Integer timeToLiveInSeconds;
     /**
      * @return Type of the Response Cache Store Policy.
      * 
      */
-    private String type;
+    private @Nullable String type;
 
     private GetDeploymentSpecificationRouteResponsePolicyResponseCacheStore() {}
     /**
      * @return Sets the number of seconds for a response from a backend being stored in the Response Cache before it expires.
      * 
      */
-    public Integer timeToLiveInSeconds() {
-        return this.timeToLiveInSeconds;
+    public Optional<Integer> timeToLiveInSeconds() {
+        return Optional.ofNullable(this.timeToLiveInSeconds);
     }
     /**
      * @return Type of the Response Cache Store Policy.
      * 
      */
-    public String type() {
-        return this.type;
+    public Optional<String> type() {
+        return Optional.ofNullable(this.type);
     }
 
     public static Builder builder() {
@@ -46,8 +48,8 @@ public final class GetDeploymentSpecificationRouteResponsePolicyResponseCacheSto
     }
     @CustomType.Builder
     public static final class Builder {
-        private Integer timeToLiveInSeconds;
-        private String type;
+        private @Nullable Integer timeToLiveInSeconds;
+        private @Nullable String type;
         public Builder() {}
         public Builder(GetDeploymentSpecificationRouteResponsePolicyResponseCacheStore defaults) {
     	      Objects.requireNonNull(defaults);
@@ -56,13 +58,13 @@ public final class GetDeploymentSpecificationRouteResponsePolicyResponseCacheSto
         }
 
         @CustomType.Setter
-        public Builder timeToLiveInSeconds(Integer timeToLiveInSeconds) {
-            this.timeToLiveInSeconds = Objects.requireNonNull(timeToLiveInSeconds);
+        public Builder timeToLiveInSeconds(@Nullable Integer timeToLiveInSeconds) {
+            this.timeToLiveInSeconds = timeToLiveInSeconds;
             return this;
         }
         @CustomType.Setter
-        public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+        public Builder type(@Nullable String type) {
+            this.type = type;
             return this;
         }
         public GetDeploymentSpecificationRouteResponsePolicyResponseCacheStore build() {

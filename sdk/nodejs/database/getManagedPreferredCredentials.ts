@@ -50,12 +50,12 @@ export interface GetManagedPreferredCredentialsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly managedDatabaseId: string;
     /**
      * The list of preferred_credential_collection.
      */
-    readonly preferredCredentialCollections: outputs.Database.GetManagedPreferredCredentialsPreferredCredentialCollection[];
+    readonly preferredCredentialCollections?: outputs.Database.GetManagedPreferredCredentialsPreferredCredentialCollection[];
 }
 /**
  * This data source provides the list of Managed Database Preferred Credentials in Oracle Cloud Infrastructure Database Management service.

@@ -26,18 +26,6 @@ class LogArgs:
                  retention_duration: Optional[pulumi.Input[int]] = None):
         """
         The set of arguments for constructing a Log resource.
-        :param pulumi.Input[str] display_name: (Updatable) The user-friendly display name. This must be unique within the enclosing resource, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[str] log_group_id: (Updatable) OCID of a log group to work with.
-        :param pulumi.Input[str] log_type: The logType that the log object is for, whether custom or service.
-        :param pulumi.Input['LogConfigurationArgs'] configuration: Log object configuration.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[bool] is_enabled: (Updatable) Whether or not this resource is currently enabled.
-        :param pulumi.Input[int] retention_duration: (Updatable) Log retention duration in 30-day increments (30, 60, 90 and so on until 180).
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "log_group_id", log_group_id)
@@ -56,9 +44,6 @@ class LogArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The user-friendly display name. This must be unique within the enclosing resource, and it's changeable. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -68,9 +53,6 @@ class LogArgs:
     @property
     @pulumi.getter(name="logGroupId")
     def log_group_id(self) -> pulumi.Input[str]:
-        """
-        (Updatable) OCID of a log group to work with.
-        """
         return pulumi.get(self, "log_group_id")
 
     @log_group_id.setter
@@ -80,9 +62,6 @@ class LogArgs:
     @property
     @pulumi.getter(name="logType")
     def log_type(self) -> pulumi.Input[str]:
-        """
-        The logType that the log object is for, whether custom or service.
-        """
         return pulumi.get(self, "log_type")
 
     @log_type.setter
@@ -92,9 +71,6 @@ class LogArgs:
     @property
     @pulumi.getter
     def configuration(self) -> Optional[pulumi.Input['LogConfigurationArgs']]:
-        """
-        Log object configuration.
-        """
         return pulumi.get(self, "configuration")
 
     @configuration.setter
@@ -104,9 +80,6 @@ class LogArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -116,9 +89,6 @@ class LogArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -128,9 +98,6 @@ class LogArgs:
     @property
     @pulumi.getter(name="isEnabled")
     def is_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Whether or not this resource is currently enabled.
-        """
         return pulumi.get(self, "is_enabled")
 
     @is_enabled.setter
@@ -140,13 +107,6 @@ class LogArgs:
     @property
     @pulumi.getter(name="retentionDuration")
     def retention_duration(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) Log retention duration in 30-day increments (30, 60, 90 and so on until 180).
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "retention_duration")
 
     @retention_duration.setter
@@ -172,23 +132,6 @@ class _LogState:
                  time_last_modified: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering Log resources.
-        :param pulumi.Input[str] compartment_id: The OCID of the compartment that the resource belongs to.
-        :param pulumi.Input['LogConfigurationArgs'] configuration: Log object configuration.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] display_name: (Updatable) The user-friendly display name. This must be unique within the enclosing resource, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[bool] is_enabled: (Updatable) Whether or not this resource is currently enabled.
-        :param pulumi.Input[str] log_group_id: (Updatable) OCID of a log group to work with.
-        :param pulumi.Input[str] log_type: The logType that the log object is for, whether custom or service.
-        :param pulumi.Input[int] retention_duration: (Updatable) Log retention duration in 30-day increments (30, 60, 90 and so on until 180).
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] state: The pipeline state.
-        :param pulumi.Input[str] tenancy_id: The OCID of the tenancy.
-        :param pulumi.Input[str] time_created: Time the resource was created.
-        :param pulumi.Input[str] time_last_modified: Time the resource was last modified.
         """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
@@ -220,9 +163,6 @@ class _LogState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the compartment that the resource belongs to.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -232,9 +172,6 @@ class _LogState:
     @property
     @pulumi.getter
     def configuration(self) -> Optional[pulumi.Input['LogConfigurationArgs']]:
-        """
-        Log object configuration.
-        """
         return pulumi.get(self, "configuration")
 
     @configuration.setter
@@ -244,9 +181,6 @@ class _LogState:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -256,9 +190,6 @@ class _LogState:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The user-friendly display name. This must be unique within the enclosing resource, and it's changeable. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -268,9 +199,6 @@ class _LogState:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -280,9 +208,6 @@ class _LogState:
     @property
     @pulumi.getter(name="isEnabled")
     def is_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Whether or not this resource is currently enabled.
-        """
         return pulumi.get(self, "is_enabled")
 
     @is_enabled.setter
@@ -292,9 +217,6 @@ class _LogState:
     @property
     @pulumi.getter(name="logGroupId")
     def log_group_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) OCID of a log group to work with.
-        """
         return pulumi.get(self, "log_group_id")
 
     @log_group_id.setter
@@ -304,9 +226,6 @@ class _LogState:
     @property
     @pulumi.getter(name="logType")
     def log_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        The logType that the log object is for, whether custom or service.
-        """
         return pulumi.get(self, "log_type")
 
     @log_type.setter
@@ -316,13 +235,6 @@ class _LogState:
     @property
     @pulumi.getter(name="retentionDuration")
     def retention_duration(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) Log retention duration in 30-day increments (30, 60, 90 and so on until 180).
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "retention_duration")
 
     @retention_duration.setter
@@ -332,9 +244,6 @@ class _LogState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The pipeline state.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -344,9 +253,6 @@ class _LogState:
     @property
     @pulumi.getter(name="tenancyId")
     def tenancy_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the tenancy.
-        """
         return pulumi.get(self, "tenancy_id")
 
     @tenancy_id.setter
@@ -356,9 +262,6 @@ class _LogState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        Time the resource was created.
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -368,9 +271,6 @@ class _LogState:
     @property
     @pulumi.getter(name="timeLastModified")
     def time_last_modified(self) -> Optional[pulumi.Input[str]]:
-        """
-        Time the resource was last modified.
-        """
         return pulumi.get(self, "time_last_modified")
 
     @time_last_modified.setter
@@ -393,62 +293,9 @@ class Log(pulumi.CustomResource):
                  retention_duration: Optional[pulumi.Input[int]] = None,
                  __props__=None):
         """
-        This resource provides the Log resource in Oracle Cloud Infrastructure Logging service.
-
-        Creates a log within the specified log group. This call fails if a log group has already been created
-        with the same displayName or (service, resource, category) triplet.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_log = oci.logging.Log("testLog",
-            display_name=var["log_display_name"],
-            log_group_id=oci_logging_log_group["test_log_group"]["id"],
-            log_type=var["log_log_type"],
-            configuration=oci.logging.LogConfigurationArgs(
-                source=oci.logging.LogConfigurationSourceArgs(
-                    category=var["log_configuration_source_category"],
-                    resource=var["log_configuration_source_resource"],
-                    service=var["log_configuration_source_service"],
-                    source_type=var["log_configuration_source_source_type"],
-                ),
-                compartment_id=var["compartment_id"],
-            ),
-            defined_tags={
-                "Operations.CostCenter": "42",
-            },
-            freeform_tags={
-                "Department": "Finance",
-            },
-            is_enabled=var["log_is_enabled"],
-            retention_duration=var["log_retention_duration"])
-        ```
-
-        ## Import
-
-        Logs can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Logging/log:Log test_log "logGroupId/{logGroupId}/logId/{logId}"
-        ```
-
+        Create a Log resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[pulumi.InputType['LogConfigurationArgs']] configuration: Log object configuration.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] display_name: (Updatable) The user-friendly display name. This must be unique within the enclosing resource, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[bool] is_enabled: (Updatable) Whether or not this resource is currently enabled.
-        :param pulumi.Input[str] log_group_id: (Updatable) OCID of a log group to work with.
-        :param pulumi.Input[str] log_type: The logType that the log object is for, whether custom or service.
-        :param pulumi.Input[int] retention_duration: (Updatable) Log retention duration in 30-day increments (30, 60, 90 and so on until 180).
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -457,48 +304,7 @@ class Log(pulumi.CustomResource):
                  args: LogArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Log resource in Oracle Cloud Infrastructure Logging service.
-
-        Creates a log within the specified log group. This call fails if a log group has already been created
-        with the same displayName or (service, resource, category) triplet.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_log = oci.logging.Log("testLog",
-            display_name=var["log_display_name"],
-            log_group_id=oci_logging_log_group["test_log_group"]["id"],
-            log_type=var["log_log_type"],
-            configuration=oci.logging.LogConfigurationArgs(
-                source=oci.logging.LogConfigurationSourceArgs(
-                    category=var["log_configuration_source_category"],
-                    resource=var["log_configuration_source_resource"],
-                    service=var["log_configuration_source_service"],
-                    source_type=var["log_configuration_source_source_type"],
-                ),
-                compartment_id=var["compartment_id"],
-            ),
-            defined_tags={
-                "Operations.CostCenter": "42",
-            },
-            freeform_tags={
-                "Department": "Finance",
-            },
-            is_enabled=var["log_is_enabled"],
-            retention_duration=var["log_retention_duration"])
-        ```
-
-        ## Import
-
-        Logs can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Logging/log:Log test_log "logGroupId/{logGroupId}/logId/{logId}"
-        ```
-
+        Create a Log resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param LogArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -580,23 +386,6 @@ class Log(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: The OCID of the compartment that the resource belongs to.
-        :param pulumi.Input[pulumi.InputType['LogConfigurationArgs']] configuration: Log object configuration.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] display_name: (Updatable) The user-friendly display name. This must be unique within the enclosing resource, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[bool] is_enabled: (Updatable) Whether or not this resource is currently enabled.
-        :param pulumi.Input[str] log_group_id: (Updatable) OCID of a log group to work with.
-        :param pulumi.Input[str] log_type: The logType that the log object is for, whether custom or service.
-        :param pulumi.Input[int] retention_duration: (Updatable) Log retention duration in 30-day increments (30, 60, 90 and so on until 180).
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] state: The pipeline state.
-        :param pulumi.Input[str] tenancy_id: The OCID of the tenancy.
-        :param pulumi.Input[str] time_created: Time the resource was created.
-        :param pulumi.Input[str] time_last_modified: Time the resource was last modified.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -619,109 +408,66 @@ class Log(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> pulumi.Output[str]:
-        """
-        The OCID of the compartment that the resource belongs to.
-        """
+    def compartment_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter
-    def configuration(self) -> pulumi.Output['outputs.LogConfiguration']:
-        """
-        Log object configuration.
-        """
+    def configuration(self) -> pulumi.Output[Optional['outputs.LogConfiguration']]:
         return pulumi.get(self, "configuration")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The user-friendly display name. This must be unique within the enclosing resource, and it's changeable. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="isEnabled")
-    def is_enabled(self) -> pulumi.Output[bool]:
-        """
-        (Updatable) Whether or not this resource is currently enabled.
-        """
+    def is_enabled(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "is_enabled")
 
     @property
     @pulumi.getter(name="logGroupId")
     def log_group_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) OCID of a log group to work with.
-        """
         return pulumi.get(self, "log_group_id")
 
     @property
     @pulumi.getter(name="logType")
     def log_type(self) -> pulumi.Output[str]:
-        """
-        The logType that the log object is for, whether custom or service.
-        """
         return pulumi.get(self, "log_type")
 
     @property
     @pulumi.getter(name="retentionDuration")
-    def retention_duration(self) -> pulumi.Output[int]:
-        """
-        (Updatable) Log retention duration in 30-day increments (30, 60, 90 and so on until 180).
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
+    def retention_duration(self) -> pulumi.Output[Optional[int]]:
         return pulumi.get(self, "retention_duration")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        The pipeline state.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="tenancyId")
-    def tenancy_id(self) -> pulumi.Output[str]:
-        """
-        The OCID of the tenancy.
-        """
+    def tenancy_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "tenancy_id")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        Time the resource was created.
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeLastModified")
-    def time_last_modified(self) -> pulumi.Output[str]:
-        """
-        Time the resource was last modified.
-        """
+    def time_last_modified(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_last_modified")
 

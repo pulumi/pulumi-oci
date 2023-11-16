@@ -55,42 +55,27 @@ class GetDrgRouteDistributionResult:
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the route distribution.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="distributionType")
-    def distribution_type(self) -> str:
-        """
-        Whether this distribution defines how routes get imported into route tables or exported through DRG attachments.
-        """
+    def distribution_type(self) -> Optional[str]:
         return pulumi.get(self, "distribution_type")
 
     @property
     @pulumi.getter(name="drgId")
-    def drg_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG that contains this route distribution.
-        """
+    def drg_id(self) -> Optional[str]:
         return pulumi.get(self, "drg_id")
 
     @property
@@ -100,34 +85,22 @@ class GetDrgRouteDistributionResult:
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The route distribution's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The route distribution's current state.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the route distribution was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
 
@@ -152,21 +125,7 @@ class AwaitableGetDrgRouteDistributionResult(GetDrgRouteDistributionResult):
 def get_drg_route_distribution(drg_route_distribution_id: Optional[str] = None,
                                opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDrgRouteDistributionResult:
     """
-    This data source provides details about a specific Drg Route Distribution resource in Oracle Cloud Infrastructure Core service.
-
-    Gets the specified route distribution's information.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_drg_route_distribution = oci.Core.get_drg_route_distribution(drg_route_distribution_id=oci_core_drg_route_distribution["test_drg_route_distribution"]["id"])
-    ```
-
-
-    :param str drg_route_distribution_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route distribution.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['drgRouteDistributionId'] = drg_route_distribution_id
@@ -190,20 +149,6 @@ def get_drg_route_distribution(drg_route_distribution_id: Optional[str] = None,
 def get_drg_route_distribution_output(drg_route_distribution_id: Optional[pulumi.Input[str]] = None,
                                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDrgRouteDistributionResult]:
     """
-    This data source provides details about a specific Drg Route Distribution resource in Oracle Cloud Infrastructure Core service.
-
-    Gets the specified route distribution's information.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_drg_route_distribution = oci.Core.get_drg_route_distribution(drg_route_distribution_id=oci_core_drg_route_distribution["test_drg_route_distribution"]["id"])
-    ```
-
-
-    :param str drg_route_distribution_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route distribution.
+    Use this data source to access information about an existing resource.
     """
     ...

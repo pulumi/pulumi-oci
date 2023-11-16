@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // ## Import
@@ -26,28 +25,28 @@ type NetworkFirewallPolicy struct {
 	pulumi.CustomResourceState
 
 	// Count of number of Network Firewall attached to the Policy.
-	AttachedNetworkFirewallCount pulumi.IntOutput `pulumi:"attachedNetworkFirewallCount"`
+	AttachedNetworkFirewallCount pulumi.IntPtrOutput `pulumi:"attachedNetworkFirewallCount"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the NetworkFirewall Policy.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) A user-friendly optional name for the firewall policy. Avoid entering confidential information.
-	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrOutput `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrOutput `pulumi:"lifecycleDetails"`
 	// The current state of the Network Firewall Policy.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
 	// The time instant at which the Network Firewall Policy was created in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The time instant at which the Network Firewall Policy was updated in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
-	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 }
 
 // NewNetworkFirewallPolicy registers a new resource with the given unique name, arguments, and options.
@@ -190,12 +189,6 @@ func (i *NetworkFirewallPolicy) ToNetworkFirewallPolicyOutputWithContext(ctx con
 	return pulumi.ToOutputWithContext(ctx, i).(NetworkFirewallPolicyOutput)
 }
 
-func (i *NetworkFirewallPolicy) ToOutput(ctx context.Context) pulumix.Output[*NetworkFirewallPolicy] {
-	return pulumix.Output[*NetworkFirewallPolicy]{
-		OutputState: i.ToNetworkFirewallPolicyOutputWithContext(ctx).OutputState,
-	}
-}
-
 // NetworkFirewallPolicyArrayInput is an input type that accepts NetworkFirewallPolicyArray and NetworkFirewallPolicyArrayOutput values.
 // You can construct a concrete instance of `NetworkFirewallPolicyArrayInput` via:
 //
@@ -219,12 +212,6 @@ func (i NetworkFirewallPolicyArray) ToNetworkFirewallPolicyArrayOutput() Network
 
 func (i NetworkFirewallPolicyArray) ToNetworkFirewallPolicyArrayOutputWithContext(ctx context.Context) NetworkFirewallPolicyArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(NetworkFirewallPolicyArrayOutput)
-}
-
-func (i NetworkFirewallPolicyArray) ToOutput(ctx context.Context) pulumix.Output[[]*NetworkFirewallPolicy] {
-	return pulumix.Output[[]*NetworkFirewallPolicy]{
-		OutputState: i.ToNetworkFirewallPolicyArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // NetworkFirewallPolicyMapInput is an input type that accepts NetworkFirewallPolicyMap and NetworkFirewallPolicyMapOutput values.
@@ -252,12 +239,6 @@ func (i NetworkFirewallPolicyMap) ToNetworkFirewallPolicyMapOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(NetworkFirewallPolicyMapOutput)
 }
 
-func (i NetworkFirewallPolicyMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*NetworkFirewallPolicy] {
-	return pulumix.Output[map[string]*NetworkFirewallPolicy]{
-		OutputState: i.ToNetworkFirewallPolicyMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type NetworkFirewallPolicyOutput struct{ *pulumi.OutputState }
 
 func (NetworkFirewallPolicyOutput) ElementType() reflect.Type {
@@ -272,15 +253,9 @@ func (o NetworkFirewallPolicyOutput) ToNetworkFirewallPolicyOutputWithContext(ct
 	return o
 }
 
-func (o NetworkFirewallPolicyOutput) ToOutput(ctx context.Context) pulumix.Output[*NetworkFirewallPolicy] {
-	return pulumix.Output[*NetworkFirewallPolicy]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Count of number of Network Firewall attached to the Policy.
-func (o NetworkFirewallPolicyOutput) AttachedNetworkFirewallCount() pulumi.IntOutput {
-	return o.ApplyT(func(v *NetworkFirewallPolicy) pulumi.IntOutput { return v.AttachedNetworkFirewallCount }).(pulumi.IntOutput)
+func (o NetworkFirewallPolicyOutput) AttachedNetworkFirewallCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *NetworkFirewallPolicy) pulumi.IntPtrOutput { return v.AttachedNetworkFirewallCount }).(pulumi.IntPtrOutput)
 }
 
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the NetworkFirewall Policy.
@@ -294,8 +269,8 @@ func (o NetworkFirewallPolicyOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // (Updatable) A user-friendly optional name for the firewall policy. Avoid entering confidential information.
-func (o NetworkFirewallPolicyOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v *NetworkFirewallPolicy) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+func (o NetworkFirewallPolicyOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *NetworkFirewallPolicy) pulumi.StringPtrOutput { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -307,13 +282,13 @@ func (o NetworkFirewallPolicyOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-func (o NetworkFirewallPolicyOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v *NetworkFirewallPolicy) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o NetworkFirewallPolicyOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *NetworkFirewallPolicy) pulumi.StringPtrOutput { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the Network Firewall Policy.
-func (o NetworkFirewallPolicyOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *NetworkFirewallPolicy) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o NetworkFirewallPolicyOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *NetworkFirewallPolicy) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -322,13 +297,13 @@ func (o NetworkFirewallPolicyOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The time instant at which the Network Firewall Policy was created in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
-func (o NetworkFirewallPolicyOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *NetworkFirewallPolicy) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o NetworkFirewallPolicyOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *NetworkFirewallPolicy) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time instant at which the Network Firewall Policy was updated in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
-func (o NetworkFirewallPolicyOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *NetworkFirewallPolicy) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o NetworkFirewallPolicyOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *NetworkFirewallPolicy) pulumi.StringPtrOutput { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type NetworkFirewallPolicyArrayOutput struct{ *pulumi.OutputState }
@@ -343,12 +318,6 @@ func (o NetworkFirewallPolicyArrayOutput) ToNetworkFirewallPolicyArrayOutput() N
 
 func (o NetworkFirewallPolicyArrayOutput) ToNetworkFirewallPolicyArrayOutputWithContext(ctx context.Context) NetworkFirewallPolicyArrayOutput {
 	return o
-}
-
-func (o NetworkFirewallPolicyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*NetworkFirewallPolicy] {
-	return pulumix.Output[[]*NetworkFirewallPolicy]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o NetworkFirewallPolicyArrayOutput) Index(i pulumi.IntInput) NetworkFirewallPolicyOutput {
@@ -369,12 +338,6 @@ func (o NetworkFirewallPolicyMapOutput) ToNetworkFirewallPolicyMapOutput() Netwo
 
 func (o NetworkFirewallPolicyMapOutput) ToNetworkFirewallPolicyMapOutputWithContext(ctx context.Context) NetworkFirewallPolicyMapOutput {
 	return o
-}
-
-func (o NetworkFirewallPolicyMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*NetworkFirewallPolicy] {
-	return pulumix.Output[map[string]*NetworkFirewallPolicy]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o NetworkFirewallPolicyMapOutput) MapIndex(k pulumi.StringInput) NetworkFirewallPolicyOutput {

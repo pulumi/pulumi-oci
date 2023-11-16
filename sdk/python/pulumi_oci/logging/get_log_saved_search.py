@@ -58,42 +58,27 @@ class GetLogSavedSearchResult:
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The OCID of the compartment that the resource belongs to.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        Description for this resource.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The OCID of the resource.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
@@ -103,42 +88,27 @@ class GetLogSavedSearchResult:
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        The user-friendly display name. This must be unique within the enclosing resource, and it's changeable. Avoid entering confidential information.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
-    def query(self) -> str:
-        """
-        The search query that is saved.
-        """
+    def query(self) -> Optional[str]:
         return pulumi.get(self, "query")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The state of the LogSavedSearch
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        Time the resource was created.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeLastModified")
-    def time_last_modified(self) -> str:
-        """
-        Time the resource was last modified.
-        """
+    def time_last_modified(self) -> Optional[str]:
         return pulumi.get(self, "time_last_modified")
 
 
@@ -164,21 +134,7 @@ class AwaitableGetLogSavedSearchResult(GetLogSavedSearchResult):
 def get_log_saved_search(log_saved_search_id: Optional[str] = None,
                          opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetLogSavedSearchResult:
     """
-    This data source provides details about a specific Log Saved Search resource in Oracle Cloud Infrastructure Logging service.
-
-    Retrieves a LogSavedSearch.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_log_saved_search = oci.Logging.get_log_saved_search(log_saved_search_id=oci_logging_log_saved_search["test_log_saved_search"]["id"])
-    ```
-
-
-    :param str log_saved_search_id: OCID of the logSavedSearch.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['logSavedSearchId'] = log_saved_search_id
@@ -203,20 +159,6 @@ def get_log_saved_search(log_saved_search_id: Optional[str] = None,
 def get_log_saved_search_output(log_saved_search_id: Optional[pulumi.Input[str]] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetLogSavedSearchResult]:
     """
-    This data source provides details about a specific Log Saved Search resource in Oracle Cloud Infrastructure Logging service.
-
-    Retrieves a LogSavedSearch.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_log_saved_search = oci.Logging.get_log_saved_search(log_saved_search_id=oci_logging_log_saved_search["test_log_saved_search"]["id"])
-    ```
-
-
-    :param str log_saved_search_id: OCID of the logSavedSearch.
+    Use this data source to access information about an existing resource.
     """
     ...

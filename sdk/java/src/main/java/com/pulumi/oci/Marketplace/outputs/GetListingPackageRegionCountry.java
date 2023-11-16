@@ -6,6 +6,8 @@ package com.pulumi.oci.Marketplace.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetListingPackageRegionCountry {
@@ -13,27 +15,27 @@ public final class GetListingPackageRegionCountry {
      * @return A code assigned to the item.
      * 
      */
-    private String code;
+    private @Nullable String code;
     /**
      * @return The name of the variable.
      * 
      */
-    private String name;
+    private @Nullable String name;
 
     private GetListingPackageRegionCountry() {}
     /**
      * @return A code assigned to the item.
      * 
      */
-    public String code() {
-        return this.code;
+    public Optional<String> code() {
+        return Optional.ofNullable(this.code);
     }
     /**
      * @return The name of the variable.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
 
     public static Builder builder() {
@@ -45,8 +47,8 @@ public final class GetListingPackageRegionCountry {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String code;
-        private String name;
+        private @Nullable String code;
+        private @Nullable String name;
         public Builder() {}
         public Builder(GetListingPackageRegionCountry defaults) {
     	      Objects.requireNonNull(defaults);
@@ -55,13 +57,13 @@ public final class GetListingPackageRegionCountry {
         }
 
         @CustomType.Setter
-        public Builder code(String code) {
-            this.code = Objects.requireNonNull(code);
+        public Builder code(@Nullable String code) {
+            this.code = code;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         public GetListingPackageRegionCountry build() {

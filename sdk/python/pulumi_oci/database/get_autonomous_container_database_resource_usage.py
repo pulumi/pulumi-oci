@@ -70,47 +70,32 @@ class GetAutonomousContainerDatabaseResourceUsageResult:
 
     @property
     @pulumi.getter(name="autonomousContainerDatabaseVmUsages")
-    def autonomous_container_database_vm_usages(self) -> Sequence['outputs.GetAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageResult']:
-        """
-        List of autonomous container database resource usage per autonomous virtual machine.
-        """
+    def autonomous_container_database_vm_usages(self) -> Optional[Sequence['outputs.GetAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageResult']]:
         return pulumi.get(self, "autonomous_container_database_vm_usages")
 
     @property
     @pulumi.getter(name="availableCpus")
-    def available_cpus(self) -> float:
-        """
-        CPUs / cores available for ADB provisioning or scaling in the Autonomous Container Database.
-        """
+    def available_cpus(self) -> Optional[float]:
         return pulumi.get(self, "available_cpus")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        The user-friendly name for the Autonomous Container Database. The name does not need to be unique.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -118,50 +103,32 @@ class GetAutonomousContainerDatabaseResourceUsageResult:
 
     @property
     @pulumi.getter(name="largestProvisionableAutonomousDatabaseInCpus")
-    def largest_provisionable_autonomous_database_in_cpus(self) -> float:
-        """
-        Largest provisionable ADB in the Autonomous Container Database.
-        """
+    def largest_provisionable_autonomous_database_in_cpus(self) -> Optional[float]:
         return pulumi.get(self, "largest_provisionable_autonomous_database_in_cpus")
 
     @property
     @pulumi.getter(name="provisionableCpuses")
-    def provisionable_cpuses(self) -> Sequence[float]:
-        """
-        Valid list of provisionable CPUs / cores for ADB creation.
-        """
+    def provisionable_cpuses(self) -> Optional[Sequence[float]]:
         return pulumi.get(self, "provisionable_cpuses")
 
     @property
     @pulumi.getter(name="provisionedCpus")
-    def provisioned_cpus(self) -> float:
-        """
-        CPUs / cores assigned to ADBs in the Autonomous Container Database.
-        """
+    def provisioned_cpus(self) -> Optional[float]:
         return pulumi.get(self, "provisioned_cpus")
 
     @property
     @pulumi.getter(name="reclaimableCpus")
-    def reclaimable_cpus(self) -> float:
-        """
-        CPUs / cores reclaimable or released to cluster on Autonomous Container Database restart.
-        """
+    def reclaimable_cpus(self) -> Optional[float]:
         return pulumi.get(self, "reclaimable_cpus")
 
     @property
     @pulumi.getter(name="reservedCpus")
-    def reserved_cpus(self) -> float:
-        """
-        CPUs / cores reserved for scalability, resilliency and other overheads. This includes failover, autoscaling and idle instance overhead.
-        """
+    def reserved_cpus(self) -> Optional[float]:
         return pulumi.get(self, "reserved_cpus")
 
     @property
     @pulumi.getter(name="usedCpus")
-    def used_cpus(self) -> float:
-        """
-        CPUs / cores assigned to the Autonomous Container Database. Sum of provisioned, reserved and reclaimable CPUs/ cores.
-        """
+    def used_cpus(self) -> Optional[float]:
         return pulumi.get(self, "used_cpus")
 
 
@@ -189,21 +156,7 @@ class AwaitableGetAutonomousContainerDatabaseResourceUsageResult(GetAutonomousCo
 def get_autonomous_container_database_resource_usage(autonomous_container_database_id: Optional[str] = None,
                                                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAutonomousContainerDatabaseResourceUsageResult:
     """
-    This data source provides details about a specific Autonomous Container Database Resource Usage resource in Oracle Cloud Infrastructure Database service.
-
-    Get resource usage details for the specified Autonomous Container Database.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_autonomous_container_database_resource_usage = oci.Database.get_autonomous_container_database_resource_usage(autonomous_container_database_id=oci_database_autonomous_container_database["test_autonomous_container_database"]["id"])
-    ```
-
-
-    :param str autonomous_container_database_id: The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['autonomousContainerDatabaseId'] = autonomous_container_database_id
@@ -230,20 +183,6 @@ def get_autonomous_container_database_resource_usage(autonomous_container_databa
 def get_autonomous_container_database_resource_usage_output(autonomous_container_database_id: Optional[pulumi.Input[str]] = None,
                                                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAutonomousContainerDatabaseResourceUsageResult]:
     """
-    This data source provides details about a specific Autonomous Container Database Resource Usage resource in Oracle Cloud Infrastructure Database service.
-
-    Get resource usage details for the specified Autonomous Container Database.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_autonomous_container_database_resource_usage = oci.Database.get_autonomous_container_database_resource_usage(autonomous_container_database_id=oci_database_autonomous_container_database["test_autonomous_container_database"]["id"])
-    ```
-
-
-    :param str autonomous_container_database_id: The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+    Use this data source to access information about an existing resource.
     """
     ...

@@ -58,23 +58,17 @@ class GetMonitoredInstanceResult:
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A user-friendly name of the monitored instance. It is binded to [Compute Instance](https://docs.cloud.oracle.com/iaas/Content/Compute/Concepts/computeoverview.htm). DisplayName is fetched from [Core Service API](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/Instance/).
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -82,26 +76,17 @@ class GetMonitoredInstanceResult:
 
     @property
     @pulumi.getter(name="instanceId")
-    def instance_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of monitored instance.
-        """
+    def instance_id(self) -> Optional[str]:
         return pulumi.get(self, "instance_id")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="managementAgentId")
-    def management_agent_id(self) -> str:
-        """
-        Management Agent Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Used to invoke manage operations on Management Agent Cloud Service.
-        """
+    def management_agent_id(self) -> Optional[str]:
         return pulumi.get(self, "management_agent_id")
 
     @property
@@ -111,34 +96,22 @@ class GetMonitoredInstanceResult:
 
     @property
     @pulumi.getter(name="monitoringState")
-    def monitoring_state(self) -> str:
-        """
-        Monitoring status. Can be either enabled or disabled.
-        """
+    def monitoring_state(self) -> Optional[str]:
         return pulumi.get(self, "monitoring_state")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the monitored instance.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The time the MonitoredInstance was created. An RFC3339 formatted datetime string
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The time the MonitoredInstance was updated. An RFC3339 formatted datetime string
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
 
@@ -164,21 +137,7 @@ class AwaitableGetMonitoredInstanceResult(GetMonitoredInstanceResult):
 def get_monitored_instance(monitored_instance_id: Optional[str] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetMonitoredInstanceResult:
     """
-    This data source provides details about a specific Monitored Instance resource in Oracle Cloud Infrastructure Appmgmt Control service.
-
-    Gets a monitored instance by identifier
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_monitored_instance = oci.AppMgmtControl.get_monitored_instance(monitored_instance_id=oci_appmgmt_control_monitored_instance["test_monitored_instance"]["id"])
-    ```
-
-
-    :param str monitored_instance_id: OCID of monitored instance.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['monitoredInstanceId'] = monitored_instance_id
@@ -203,20 +162,6 @@ def get_monitored_instance(monitored_instance_id: Optional[str] = None,
 def get_monitored_instance_output(monitored_instance_id: Optional[pulumi.Input[str]] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetMonitoredInstanceResult]:
     """
-    This data source provides details about a specific Monitored Instance resource in Oracle Cloud Infrastructure Appmgmt Control service.
-
-    Gets a monitored instance by identifier
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_monitored_instance = oci.AppMgmtControl.get_monitored_instance(monitored_instance_id=oci_appmgmt_control_monitored_instance["test_monitored_instance"]["id"])
-    ```
-
-
-    :param str monitored_instance_id: OCID of monitored instance.
+    Use this data source to access information about an existing resource.
     """
     ...

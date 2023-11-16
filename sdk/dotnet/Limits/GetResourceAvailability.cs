@@ -159,52 +159,52 @@ namespace Pulumi.Oci.Limits
         /// <summary>
         /// The count of available resources. To support resources with fractional counts, the field rounds down to the nearest integer.
         /// </summary>
-        public readonly string Available;
+        public readonly string? Available;
         public readonly string CompartmentId;
         /// <summary>
         /// The effective quota value for the given compartment. This field is only present if there is a current quota policy affecting the current resource in the target region or availability domain.
         /// </summary>
-        public readonly double EffectiveQuotaValue;
+        public readonly double? EffectiveQuotaValue;
         /// <summary>
         /// The most accurate count of available resources.
         /// </summary>
-        public readonly double FractionalAvailability;
+        public readonly double? FractionalAvailability;
         /// <summary>
         /// The current most accurate usage in the given compartment.
         /// </summary>
-        public readonly double FractionalUsage;
+        public readonly double? FractionalUsage;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         public readonly string LimitName;
         public readonly string ServiceName;
         /// <summary>
         /// The current usage in the given compartment. To support resources with fractional counts, the field rounds up to the nearest integer.
         /// </summary>
-        public readonly string Used;
+        public readonly string? Used;
 
         [OutputConstructor]
         private GetResourceAvailabilityResult(
             string? availabilityDomain,
 
-            string available,
+            string? available,
 
             string compartmentId,
 
-            double effectiveQuotaValue,
+            double? effectiveQuotaValue,
 
-            double fractionalAvailability,
+            double? fractionalAvailability,
 
-            double fractionalUsage,
+            double? fractionalUsage,
 
-            string id,
+            string? id,
 
             string limitName,
 
             string serviceName,
 
-            string used)
+            string? used)
         {
             AvailabilityDomain = availabilityDomain;
             Available = available;

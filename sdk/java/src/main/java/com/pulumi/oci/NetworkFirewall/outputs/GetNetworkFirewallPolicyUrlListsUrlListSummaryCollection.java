@@ -7,14 +7,15 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.NetworkFirewall.outputs.GetNetworkFirewallPolicyUrlListsUrlListSummaryCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetNetworkFirewallPolicyUrlListsUrlListSummaryCollection {
-    private List<GetNetworkFirewallPolicyUrlListsUrlListSummaryCollectionItem> items;
+    private @Nullable List<GetNetworkFirewallPolicyUrlListsUrlListSummaryCollectionItem> items;
 
     private GetNetworkFirewallPolicyUrlListsUrlListSummaryCollection() {}
     public List<GetNetworkFirewallPolicyUrlListsUrlListSummaryCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -26,7 +27,7 @@ public final class GetNetworkFirewallPolicyUrlListsUrlListSummaryCollection {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetNetworkFirewallPolicyUrlListsUrlListSummaryCollectionItem> items;
+        private @Nullable List<GetNetworkFirewallPolicyUrlListsUrlListSummaryCollectionItem> items;
         public Builder() {}
         public Builder(GetNetworkFirewallPolicyUrlListsUrlListSummaryCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -34,8 +35,8 @@ public final class GetNetworkFirewallPolicyUrlListsUrlListSummaryCollection {
         }
 
         @CustomType.Setter
-        public Builder items(List<GetNetworkFirewallPolicyUrlListsUrlListSummaryCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetNetworkFirewallPolicyUrlListsUrlListSummaryCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetNetworkFirewallPolicyUrlListsUrlListSummaryCollectionItem... items) {

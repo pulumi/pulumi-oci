@@ -81,7 +81,7 @@ export interface GetOpaInstancesResult {
     /**
      * The list of opa_instance_collection.
      */
-    readonly opaInstanceCollections: outputs.Opa.GetOpaInstancesOpaInstanceCollection[];
+    readonly opaInstanceCollections?: outputs.Opa.GetOpaInstancesOpaInstanceCollection[];
     /**
      * The current state of the OpaInstance.
      */

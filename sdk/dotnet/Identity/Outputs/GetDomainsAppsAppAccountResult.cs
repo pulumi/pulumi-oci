@@ -16,35 +16,35 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// If true, this App is able to participate in runtime services, such as automatic-login, OAuth, and SAML. If false, all runtime services are disabled for this App, and only administrative operations can be performed.
         /// </summary>
-        public readonly bool Active;
+        public readonly bool? Active;
         /// <summary>
         /// The attribute represents the name of the attribute that will be used in the Security Assertion Markup Language (SAML) assertion
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// Owner identifier
         /// </summary>
-        public readonly string OwnerId;
+        public readonly string? OwnerId;
         /// <summary>
         /// URI of the AppRole.
         /// </summary>
-        public readonly string Ref;
+        public readonly string? Ref;
         /// <summary>
         /// ID of the AppRole.
         /// </summary>
-        public readonly string Value;
+        public readonly string? Value;
 
         [OutputConstructor]
         private GetDomainsAppsAppAccountResult(
-            bool active,
+            bool? active,
 
-            string name,
+            string? name,
 
-            string ownerId,
+            string? ownerId,
 
-            string @ref,
+            string? @ref,
 
-            string value)
+            string? value)
         {
             Active = active;
             Name = name;

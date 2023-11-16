@@ -16,17 +16,17 @@ namespace Pulumi.Oci.ServiceCatalog.Outputs
         /// <summary>
         /// Type of packages within this private application.
         /// </summary>
-        public readonly string PackageType;
-        public readonly string Version;
-        public readonly string ZipFileBase64encoded;
+        public readonly string? PackageType;
+        public readonly string? Version;
+        public readonly string? ZipFileBase64encoded;
 
         [OutputConstructor]
         private GetPrivateApplicationPackageDetailResult(
-            string packageType,
+            string? packageType,
 
-            string version,
+            string? version,
 
-            string zipFileBase64encoded)
+            string? zipFileBase64encoded)
         {
             PackageType = packageType;
             Version = version;

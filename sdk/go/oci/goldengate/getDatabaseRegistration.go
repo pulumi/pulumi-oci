@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Database Registration resource in Oracle Cloud Infrastructure Golden Gate service.
@@ -61,56 +60,56 @@ type LookupDatabaseRegistrationArgs struct {
 // A collection of values returned by getDatabaseRegistration.
 type LookupDatabaseRegistrationResult struct {
 	// Credential store alias.
-	AliasName string `pulumi:"aliasName"`
+	AliasName *string `pulumi:"aliasName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Connect descriptor or Easy Connect Naming method used to connect to a database.
-	ConnectionString string `pulumi:"connectionString"`
+	ConnectionString *string `pulumi:"connectionString"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database being referenced.
-	DatabaseId             string `pulumi:"databaseId"`
-	DatabaseRegistrationId string `pulumi:"databaseRegistrationId"`
+	DatabaseId             *string `pulumi:"databaseId"`
+	DatabaseRegistrationId string  `pulumi:"databaseRegistrationId"`
 	// Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// Metadata about this specific object.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// An object's Display Name.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// A three-label Fully Qualified Domain Name (FQDN) for a resource.
-	Fqdn string `pulumi:"fqdn"`
+	Fqdn *string `pulumi:"fqdn"`
 	// A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the databaseRegistration being referenced.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The private IP address in the customer's VCN of the customer's endpoint, typically a database.
-	IpAddress string `pulumi:"ipAddress"`
+	IpAddress *string `pulumi:"ipAddress"`
 	// Refers to the customer's master key OCID.  If provided, it references a key to manage secrets. Customers must add policies to permit GoldenGate to use this key.
-	KeyId string `pulumi:"keyId"`
+	KeyId *string `pulumi:"keyId"`
 	// Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
-	Password         string `pulumi:"password"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
+	Password         *string `pulumi:"password"`
 	// A Private Endpoint IP address created in the customer's subnet.  A customer database can expect network traffic initiated by GoldenGate Service from this IP address.  It can also send network traffic to this IP address, typically in response to requests from GoldenGate Service.  The customer may use this IP address in Security Lists or Network Security Groups (NSG) as needed.
-	RcePrivateIp string `pulumi:"rcePrivateIp"`
+	RcePrivateIp *string `pulumi:"rcePrivateIp"`
 	// The OCID of the compartment where the GoldenGate Secret will be created.  If provided, it references a key to manage secrets. Customers must add policies to permit GoldenGate to use this key.
-	SecretCompartmentId string `pulumi:"secretCompartmentId"`
+	SecretCompartmentId *string `pulumi:"secretCompartmentId"`
 	// The OCID of the customer's GoldenGate Service Secret.  If provided, it references a key that customers will be required to ensure the policies are established  to permit GoldenGate to use this Secret.
-	SecretId string `pulumi:"secretId"`
+	SecretId *string `pulumi:"secretId"`
 	// The mode of the database connection session to be established by the data client. 'REDIRECT' - for a RAC database, 'DIRECT' - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
-	SessionMode string `pulumi:"sessionMode"`
+	SessionMode *string `pulumi:"sessionMode"`
 	// Possible lifecycle states.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet being referenced.
-	SubnetId string `pulumi:"subnetId"`
+	SubnetId *string `pulumi:"subnetId"`
 	// The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 	// The username Oracle GoldenGate uses to connect the associated system of the given technology. This username must already exist and be available by the system/application to be connected to and must conform to the case sensitivty requirments defined in it.
-	Username string `pulumi:"username"`
+	Username *string `pulumi:"username"`
 	// Refers to the customer's vault OCID.  If provided, it references a vault where GoldenGate can manage secrets. Customers must add policies to permit GoldenGate to manage secrets contained within this vault.
-	VaultId string `pulumi:"vaultId"`
-	Wallet  string `pulumi:"wallet"`
+	VaultId *string `pulumi:"vaultId"`
+	Wallet  *string `pulumi:"wallet"`
 }
 
 func LookupDatabaseRegistrationOutput(ctx *pulumi.Context, args LookupDatabaseRegistrationOutputArgs, opts ...pulumi.InvokeOption) LookupDatabaseRegistrationResultOutput {
@@ -151,30 +150,24 @@ func (o LookupDatabaseRegistrationResultOutput) ToLookupDatabaseRegistrationResu
 	return o
 }
 
-func (o LookupDatabaseRegistrationResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupDatabaseRegistrationResult] {
-	return pulumix.Output[LookupDatabaseRegistrationResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Credential store alias.
-func (o LookupDatabaseRegistrationResultOutput) AliasName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDatabaseRegistrationResult) string { return v.AliasName }).(pulumi.StringOutput)
+func (o LookupDatabaseRegistrationResultOutput) AliasName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDatabaseRegistrationResult) *string { return v.AliasName }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
-func (o LookupDatabaseRegistrationResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDatabaseRegistrationResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupDatabaseRegistrationResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDatabaseRegistrationResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Connect descriptor or Easy Connect Naming method used to connect to a database.
-func (o LookupDatabaseRegistrationResultOutput) ConnectionString() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDatabaseRegistrationResult) string { return v.ConnectionString }).(pulumi.StringOutput)
+func (o LookupDatabaseRegistrationResultOutput) ConnectionString() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDatabaseRegistrationResult) *string { return v.ConnectionString }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database being referenced.
-func (o LookupDatabaseRegistrationResultOutput) DatabaseId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDatabaseRegistrationResult) string { return v.DatabaseId }).(pulumi.StringOutput)
+func (o LookupDatabaseRegistrationResultOutput) DatabaseId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDatabaseRegistrationResult) *string { return v.DatabaseId }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupDatabaseRegistrationResultOutput) DatabaseRegistrationId() pulumi.StringOutput {
@@ -187,18 +180,18 @@ func (o LookupDatabaseRegistrationResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // Metadata about this specific object.
-func (o LookupDatabaseRegistrationResultOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDatabaseRegistrationResult) string { return v.Description }).(pulumi.StringOutput)
+func (o LookupDatabaseRegistrationResultOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDatabaseRegistrationResult) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // An object's Display Name.
-func (o LookupDatabaseRegistrationResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDatabaseRegistrationResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupDatabaseRegistrationResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDatabaseRegistrationResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // A three-label Fully Qualified Domain Name (FQDN) for a resource.
-func (o LookupDatabaseRegistrationResultOutput) Fqdn() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDatabaseRegistrationResult) string { return v.Fqdn }).(pulumi.StringOutput)
+func (o LookupDatabaseRegistrationResultOutput) Fqdn() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDatabaseRegistrationResult) *string { return v.Fqdn }).(pulumi.StringPtrOutput)
 }
 
 // A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
@@ -207,57 +200,57 @@ func (o LookupDatabaseRegistrationResultOutput) FreeformTags() pulumi.MapOutput 
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the databaseRegistration being referenced.
-func (o LookupDatabaseRegistrationResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDatabaseRegistrationResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupDatabaseRegistrationResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDatabaseRegistrationResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The private IP address in the customer's VCN of the customer's endpoint, typically a database.
-func (o LookupDatabaseRegistrationResultOutput) IpAddress() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDatabaseRegistrationResult) string { return v.IpAddress }).(pulumi.StringOutput)
+func (o LookupDatabaseRegistrationResultOutput) IpAddress() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDatabaseRegistrationResult) *string { return v.IpAddress }).(pulumi.StringPtrOutput)
 }
 
 // Refers to the customer's master key OCID.  If provided, it references a key to manage secrets. Customers must add policies to permit GoldenGate to use this key.
-func (o LookupDatabaseRegistrationResultOutput) KeyId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDatabaseRegistrationResult) string { return v.KeyId }).(pulumi.StringOutput)
+func (o LookupDatabaseRegistrationResultOutput) KeyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDatabaseRegistrationResult) *string { return v.KeyId }).(pulumi.StringPtrOutput)
 }
 
 // Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
-func (o LookupDatabaseRegistrationResultOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDatabaseRegistrationResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o LookupDatabaseRegistrationResultOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDatabaseRegistrationResult) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
-func (o LookupDatabaseRegistrationResultOutput) Password() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDatabaseRegistrationResult) string { return v.Password }).(pulumi.StringOutput)
+func (o LookupDatabaseRegistrationResultOutput) Password() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDatabaseRegistrationResult) *string { return v.Password }).(pulumi.StringPtrOutput)
 }
 
 // A Private Endpoint IP address created in the customer's subnet.  A customer database can expect network traffic initiated by GoldenGate Service from this IP address.  It can also send network traffic to this IP address, typically in response to requests from GoldenGate Service.  The customer may use this IP address in Security Lists or Network Security Groups (NSG) as needed.
-func (o LookupDatabaseRegistrationResultOutput) RcePrivateIp() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDatabaseRegistrationResult) string { return v.RcePrivateIp }).(pulumi.StringOutput)
+func (o LookupDatabaseRegistrationResultOutput) RcePrivateIp() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDatabaseRegistrationResult) *string { return v.RcePrivateIp }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the compartment where the GoldenGate Secret will be created.  If provided, it references a key to manage secrets. Customers must add policies to permit GoldenGate to use this key.
-func (o LookupDatabaseRegistrationResultOutput) SecretCompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDatabaseRegistrationResult) string { return v.SecretCompartmentId }).(pulumi.StringOutput)
+func (o LookupDatabaseRegistrationResultOutput) SecretCompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDatabaseRegistrationResult) *string { return v.SecretCompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the customer's GoldenGate Service Secret.  If provided, it references a key that customers will be required to ensure the policies are established  to permit GoldenGate to use this Secret.
-func (o LookupDatabaseRegistrationResultOutput) SecretId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDatabaseRegistrationResult) string { return v.SecretId }).(pulumi.StringOutput)
+func (o LookupDatabaseRegistrationResultOutput) SecretId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDatabaseRegistrationResult) *string { return v.SecretId }).(pulumi.StringPtrOutput)
 }
 
 // The mode of the database connection session to be established by the data client. 'REDIRECT' - for a RAC database, 'DIRECT' - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
-func (o LookupDatabaseRegistrationResultOutput) SessionMode() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDatabaseRegistrationResult) string { return v.SessionMode }).(pulumi.StringOutput)
+func (o LookupDatabaseRegistrationResultOutput) SessionMode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDatabaseRegistrationResult) *string { return v.SessionMode }).(pulumi.StringPtrOutput)
 }
 
 // Possible lifecycle states.
-func (o LookupDatabaseRegistrationResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDatabaseRegistrationResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupDatabaseRegistrationResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDatabaseRegistrationResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet being referenced.
-func (o LookupDatabaseRegistrationResultOutput) SubnetId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDatabaseRegistrationResult) string { return v.SubnetId }).(pulumi.StringOutput)
+func (o LookupDatabaseRegistrationResultOutput) SubnetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDatabaseRegistrationResult) *string { return v.SubnetId }).(pulumi.StringPtrOutput)
 }
 
 // The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
@@ -266,27 +259,27 @@ func (o LookupDatabaseRegistrationResultOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-func (o LookupDatabaseRegistrationResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDatabaseRegistrationResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupDatabaseRegistrationResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDatabaseRegistrationResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-func (o LookupDatabaseRegistrationResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDatabaseRegistrationResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o LookupDatabaseRegistrationResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDatabaseRegistrationResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 // The username Oracle GoldenGate uses to connect the associated system of the given technology. This username must already exist and be available by the system/application to be connected to and must conform to the case sensitivty requirments defined in it.
-func (o LookupDatabaseRegistrationResultOutput) Username() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDatabaseRegistrationResult) string { return v.Username }).(pulumi.StringOutput)
+func (o LookupDatabaseRegistrationResultOutput) Username() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDatabaseRegistrationResult) *string { return v.Username }).(pulumi.StringPtrOutput)
 }
 
 // Refers to the customer's vault OCID.  If provided, it references a vault where GoldenGate can manage secrets. Customers must add policies to permit GoldenGate to manage secrets contained within this vault.
-func (o LookupDatabaseRegistrationResultOutput) VaultId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDatabaseRegistrationResult) string { return v.VaultId }).(pulumi.StringOutput)
+func (o LookupDatabaseRegistrationResultOutput) VaultId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDatabaseRegistrationResult) *string { return v.VaultId }).(pulumi.StringPtrOutput)
 }
 
-func (o LookupDatabaseRegistrationResultOutput) Wallet() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDatabaseRegistrationResult) string { return v.Wallet }).(pulumi.StringOutput)
+func (o LookupDatabaseRegistrationResultOutput) Wallet() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDatabaseRegistrationResult) *string { return v.Wallet }).(pulumi.StringPtrOutput)
 }
 
 func init() {

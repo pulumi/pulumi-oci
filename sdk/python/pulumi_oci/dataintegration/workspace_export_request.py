@@ -27,19 +27,6 @@ class WorkspaceExportRequestArgs:
                  object_storage_tenancy_id: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a WorkspaceExportRequest resource.
-        :param pulumi.Input[str] bucket: Name of the Object Storage bucket where the object will be exported.
-        :param pulumi.Input[str] workspace_id: The workspace ID.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[bool] are_references_included: This field controls if the references will be exported along with the objects
-        :param pulumi.Input[str] file_name: Name of the exported zip file.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] filters: Filters for exported objects
-        :param pulumi.Input[bool] is_object_overwrite_enabled: Flag to control whether to overwrite the object if it is already present at the provided object storage location.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] object_keys: Field is used to specify which object keys to export
-        :param pulumi.Input[str] object_storage_region: Region of the object storage (if using object storage of different region)
-        :param pulumi.Input[str] object_storage_tenancy_id: Optional parameter to point to object storage tenancy (if using Object Storage of different tenancy)
         """
         pulumi.set(__self__, "bucket", bucket)
         pulumi.set(__self__, "workspace_id", workspace_id)
@@ -61,9 +48,6 @@ class WorkspaceExportRequestArgs:
     @property
     @pulumi.getter
     def bucket(self) -> pulumi.Input[str]:
-        """
-        Name of the Object Storage bucket where the object will be exported.
-        """
         return pulumi.get(self, "bucket")
 
     @bucket.setter
@@ -73,13 +57,6 @@ class WorkspaceExportRequestArgs:
     @property
     @pulumi.getter(name="workspaceId")
     def workspace_id(self) -> pulumi.Input[str]:
-        """
-        The workspace ID.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "workspace_id")
 
     @workspace_id.setter
@@ -89,9 +66,6 @@ class WorkspaceExportRequestArgs:
     @property
     @pulumi.getter(name="areReferencesIncluded")
     def are_references_included(self) -> Optional[pulumi.Input[bool]]:
-        """
-        This field controls if the references will be exported along with the objects
-        """
         return pulumi.get(self, "are_references_included")
 
     @are_references_included.setter
@@ -101,9 +75,6 @@ class WorkspaceExportRequestArgs:
     @property
     @pulumi.getter(name="fileName")
     def file_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        Name of the exported zip file.
-        """
         return pulumi.get(self, "file_name")
 
     @file_name.setter
@@ -113,9 +84,6 @@ class WorkspaceExportRequestArgs:
     @property
     @pulumi.getter
     def filters(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        Filters for exported objects
-        """
         return pulumi.get(self, "filters")
 
     @filters.setter
@@ -125,9 +93,6 @@ class WorkspaceExportRequestArgs:
     @property
     @pulumi.getter(name="isObjectOverwriteEnabled")
     def is_object_overwrite_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Flag to control whether to overwrite the object if it is already present at the provided object storage location.
-        """
         return pulumi.get(self, "is_object_overwrite_enabled")
 
     @is_object_overwrite_enabled.setter
@@ -137,9 +102,6 @@ class WorkspaceExportRequestArgs:
     @property
     @pulumi.getter(name="objectKeys")
     def object_keys(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        Field is used to specify which object keys to export
-        """
         return pulumi.get(self, "object_keys")
 
     @object_keys.setter
@@ -149,9 +111,6 @@ class WorkspaceExportRequestArgs:
     @property
     @pulumi.getter(name="objectStorageRegion")
     def object_storage_region(self) -> Optional[pulumi.Input[str]]:
-        """
-        Region of the object storage (if using object storage of different region)
-        """
         return pulumi.get(self, "object_storage_region")
 
     @object_storage_region.setter
@@ -161,9 +120,6 @@ class WorkspaceExportRequestArgs:
     @property
     @pulumi.getter(name="objectStorageTenancyId")
     def object_storage_tenancy_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        Optional parameter to point to object storage tenancy (if using Object Storage of different tenancy)
-        """
         return pulumi.get(self, "object_storage_tenancy_id")
 
     @object_storage_tenancy_id.setter
@@ -195,29 +151,6 @@ class _WorkspaceExportRequestState:
                  workspace_id: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering WorkspaceExportRequest resources.
-        :param pulumi.Input[bool] are_references_included: This field controls if the references will be exported along with the objects
-        :param pulumi.Input[str] bucket: Name of the Object Storage bucket where the object will be exported.
-        :param pulumi.Input[str] created_by: Name of the user who initiated export request.
-        :param pulumi.Input[Mapping[str, Any]] error_messages: Contains key of the error
-        :param pulumi.Input[Sequence[pulumi.Input['WorkspaceExportRequestExportedItemArgs']]] exported_items: The array of exported object details.
-        :param pulumi.Input[str] file_name: Name of the exported zip file.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] filters: Filters for exported objects
-        :param pulumi.Input[bool] is_object_overwrite_enabled: Flag to control whether to overwrite the object if it is already present at the provided object storage location.
-        :param pulumi.Input[str] key: Export object request key
-        :param pulumi.Input[str] name: Name of the export request.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] object_keys: Field is used to specify which object keys to export
-        :param pulumi.Input[str] object_storage_region: Region of the object storage (if using object storage of different region)
-        :param pulumi.Input[str] object_storage_tenancy_id: Optional parameter to point to object storage tenancy (if using Object Storage of different tenancy)
-        :param pulumi.Input[str] referenced_items: The array of exported referenced objects.
-        :param pulumi.Input[str] status: Export Objects request status.
-        :param pulumi.Input[str] time_ended_in_millis: Time at which the request was completely processed.
-        :param pulumi.Input[str] time_started_in_millis: Time at which the request started getting processed.
-        :param pulumi.Input[int] total_exported_object_count: Number of objects that are exported.
-        :param pulumi.Input[str] workspace_id: The workspace ID.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if are_references_included is not None:
             pulumi.set(__self__, "are_references_included", are_references_included)
@@ -261,9 +194,6 @@ class _WorkspaceExportRequestState:
     @property
     @pulumi.getter(name="areReferencesIncluded")
     def are_references_included(self) -> Optional[pulumi.Input[bool]]:
-        """
-        This field controls if the references will be exported along with the objects
-        """
         return pulumi.get(self, "are_references_included")
 
     @are_references_included.setter
@@ -273,9 +203,6 @@ class _WorkspaceExportRequestState:
     @property
     @pulumi.getter
     def bucket(self) -> Optional[pulumi.Input[str]]:
-        """
-        Name of the Object Storage bucket where the object will be exported.
-        """
         return pulumi.get(self, "bucket")
 
     @bucket.setter
@@ -285,9 +212,6 @@ class _WorkspaceExportRequestState:
     @property
     @pulumi.getter(name="createdBy")
     def created_by(self) -> Optional[pulumi.Input[str]]:
-        """
-        Name of the user who initiated export request.
-        """
         return pulumi.get(self, "created_by")
 
     @created_by.setter
@@ -297,9 +221,6 @@ class _WorkspaceExportRequestState:
     @property
     @pulumi.getter(name="errorMessages")
     def error_messages(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        Contains key of the error
-        """
         return pulumi.get(self, "error_messages")
 
     @error_messages.setter
@@ -309,9 +230,6 @@ class _WorkspaceExportRequestState:
     @property
     @pulumi.getter(name="exportedItems")
     def exported_items(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['WorkspaceExportRequestExportedItemArgs']]]]:
-        """
-        The array of exported object details.
-        """
         return pulumi.get(self, "exported_items")
 
     @exported_items.setter
@@ -321,9 +239,6 @@ class _WorkspaceExportRequestState:
     @property
     @pulumi.getter(name="fileName")
     def file_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        Name of the exported zip file.
-        """
         return pulumi.get(self, "file_name")
 
     @file_name.setter
@@ -333,9 +248,6 @@ class _WorkspaceExportRequestState:
     @property
     @pulumi.getter
     def filters(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        Filters for exported objects
-        """
         return pulumi.get(self, "filters")
 
     @filters.setter
@@ -345,9 +257,6 @@ class _WorkspaceExportRequestState:
     @property
     @pulumi.getter(name="isObjectOverwriteEnabled")
     def is_object_overwrite_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Flag to control whether to overwrite the object if it is already present at the provided object storage location.
-        """
         return pulumi.get(self, "is_object_overwrite_enabled")
 
     @is_object_overwrite_enabled.setter
@@ -357,9 +266,6 @@ class _WorkspaceExportRequestState:
     @property
     @pulumi.getter
     def key(self) -> Optional[pulumi.Input[str]]:
-        """
-        Export object request key
-        """
         return pulumi.get(self, "key")
 
     @key.setter
@@ -369,9 +275,6 @@ class _WorkspaceExportRequestState:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        Name of the export request.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -381,9 +284,6 @@ class _WorkspaceExportRequestState:
     @property
     @pulumi.getter(name="objectKeys")
     def object_keys(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        Field is used to specify which object keys to export
-        """
         return pulumi.get(self, "object_keys")
 
     @object_keys.setter
@@ -393,9 +293,6 @@ class _WorkspaceExportRequestState:
     @property
     @pulumi.getter(name="objectStorageRegion")
     def object_storage_region(self) -> Optional[pulumi.Input[str]]:
-        """
-        Region of the object storage (if using object storage of different region)
-        """
         return pulumi.get(self, "object_storage_region")
 
     @object_storage_region.setter
@@ -405,9 +302,6 @@ class _WorkspaceExportRequestState:
     @property
     @pulumi.getter(name="objectStorageTenancyId")
     def object_storage_tenancy_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        Optional parameter to point to object storage tenancy (if using Object Storage of different tenancy)
-        """
         return pulumi.get(self, "object_storage_tenancy_id")
 
     @object_storage_tenancy_id.setter
@@ -417,9 +311,6 @@ class _WorkspaceExportRequestState:
     @property
     @pulumi.getter(name="referencedItems")
     def referenced_items(self) -> Optional[pulumi.Input[str]]:
-        """
-        The array of exported referenced objects.
-        """
         return pulumi.get(self, "referenced_items")
 
     @referenced_items.setter
@@ -429,9 +320,6 @@ class _WorkspaceExportRequestState:
     @property
     @pulumi.getter
     def status(self) -> Optional[pulumi.Input[str]]:
-        """
-        Export Objects request status.
-        """
         return pulumi.get(self, "status")
 
     @status.setter
@@ -441,9 +329,6 @@ class _WorkspaceExportRequestState:
     @property
     @pulumi.getter(name="timeEndedInMillis")
     def time_ended_in_millis(self) -> Optional[pulumi.Input[str]]:
-        """
-        Time at which the request was completely processed.
-        """
         return pulumi.get(self, "time_ended_in_millis")
 
     @time_ended_in_millis.setter
@@ -453,9 +338,6 @@ class _WorkspaceExportRequestState:
     @property
     @pulumi.getter(name="timeStartedInMillis")
     def time_started_in_millis(self) -> Optional[pulumi.Input[str]]:
-        """
-        Time at which the request started getting processed.
-        """
         return pulumi.get(self, "time_started_in_millis")
 
     @time_started_in_millis.setter
@@ -465,9 +347,6 @@ class _WorkspaceExportRequestState:
     @property
     @pulumi.getter(name="totalExportedObjectCount")
     def total_exported_object_count(self) -> Optional[pulumi.Input[int]]:
-        """
-        Number of objects that are exported.
-        """
         return pulumi.get(self, "total_exported_object_count")
 
     @total_exported_object_count.setter
@@ -477,13 +356,6 @@ class _WorkspaceExportRequestState:
     @property
     @pulumi.getter(name="workspaceId")
     def workspace_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The workspace ID.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "workspace_id")
 
     @workspace_id.setter
@@ -507,51 +379,9 @@ class WorkspaceExportRequest(pulumi.CustomResource):
                  workspace_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Workspace Export Request resource in Oracle Cloud Infrastructure Data Integration service.
-
-        Export Metadata Object
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_workspace_export_request = oci.data_integration.WorkspaceExportRequest("testWorkspaceExportRequest",
-            bucket=var["workspace_export_request_bucket"],
-            workspace_id=oci_dataintegration_workspace["test_workspace"]["id"],
-            are_references_included=var["workspace_export_request_are_references_included"],
-            file_name=var["workspace_export_request_file_name"],
-            filters=var["workspace_export_request_filters"],
-            is_object_overwrite_enabled=var["workspace_export_request_is_object_overwrite_enabled"],
-            object_keys=var["workspace_export_request_object_keys"],
-            object_storage_region=var["workspace_export_request_object_storage_region"],
-            object_storage_tenancy_id=oci_identity_tenancy["test_tenancy"]["id"])
-        ```
-
-        ## Import
-
-        WorkspaceExportRequests can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:DataIntegration/workspaceExportRequest:WorkspaceExportRequest test_workspace_export_request "workspaces/{workspaceId}/exportRequests/{exportRequestKey}"
-        ```
-
+        Create a WorkspaceExportRequest resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[bool] are_references_included: This field controls if the references will be exported along with the objects
-        :param pulumi.Input[str] bucket: Name of the Object Storage bucket where the object will be exported.
-        :param pulumi.Input[str] file_name: Name of the exported zip file.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] filters: Filters for exported objects
-        :param pulumi.Input[bool] is_object_overwrite_enabled: Flag to control whether to overwrite the object if it is already present at the provided object storage location.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] object_keys: Field is used to specify which object keys to export
-        :param pulumi.Input[str] object_storage_region: Region of the object storage (if using object storage of different region)
-        :param pulumi.Input[str] object_storage_tenancy_id: Optional parameter to point to object storage tenancy (if using Object Storage of different tenancy)
-        :param pulumi.Input[str] workspace_id: The workspace ID.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -560,36 +390,7 @@ class WorkspaceExportRequest(pulumi.CustomResource):
                  args: WorkspaceExportRequestArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Workspace Export Request resource in Oracle Cloud Infrastructure Data Integration service.
-
-        Export Metadata Object
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_workspace_export_request = oci.data_integration.WorkspaceExportRequest("testWorkspaceExportRequest",
-            bucket=var["workspace_export_request_bucket"],
-            workspace_id=oci_dataintegration_workspace["test_workspace"]["id"],
-            are_references_included=var["workspace_export_request_are_references_included"],
-            file_name=var["workspace_export_request_file_name"],
-            filters=var["workspace_export_request_filters"],
-            is_object_overwrite_enabled=var["workspace_export_request_is_object_overwrite_enabled"],
-            object_keys=var["workspace_export_request_object_keys"],
-            object_storage_region=var["workspace_export_request_object_storage_region"],
-            object_storage_tenancy_id=oci_identity_tenancy["test_tenancy"]["id"])
-        ```
-
-        ## Import
-
-        WorkspaceExportRequests can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:DataIntegration/workspaceExportRequest:WorkspaceExportRequest test_workspace_export_request "workspaces/{workspaceId}/exportRequests/{exportRequestKey}"
-        ```
-
+        Create a WorkspaceExportRequest resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param WorkspaceExportRequestArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -682,29 +483,6 @@ class WorkspaceExportRequest(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[bool] are_references_included: This field controls if the references will be exported along with the objects
-        :param pulumi.Input[str] bucket: Name of the Object Storage bucket where the object will be exported.
-        :param pulumi.Input[str] created_by: Name of the user who initiated export request.
-        :param pulumi.Input[Mapping[str, Any]] error_messages: Contains key of the error
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['WorkspaceExportRequestExportedItemArgs']]]] exported_items: The array of exported object details.
-        :param pulumi.Input[str] file_name: Name of the exported zip file.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] filters: Filters for exported objects
-        :param pulumi.Input[bool] is_object_overwrite_enabled: Flag to control whether to overwrite the object if it is already present at the provided object storage location.
-        :param pulumi.Input[str] key: Export object request key
-        :param pulumi.Input[str] name: Name of the export request.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] object_keys: Field is used to specify which object keys to export
-        :param pulumi.Input[str] object_storage_region: Region of the object storage (if using object storage of different region)
-        :param pulumi.Input[str] object_storage_tenancy_id: Optional parameter to point to object storage tenancy (if using Object Storage of different tenancy)
-        :param pulumi.Input[str] referenced_items: The array of exported referenced objects.
-        :param pulumi.Input[str] status: Export Objects request status.
-        :param pulumi.Input[str] time_ended_in_millis: Time at which the request was completely processed.
-        :param pulumi.Input[str] time_started_in_millis: Time at which the request started getting processed.
-        :param pulumi.Input[int] total_exported_object_count: Number of objects that are exported.
-        :param pulumi.Input[str] workspace_id: The workspace ID.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -733,157 +511,96 @@ class WorkspaceExportRequest(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="areReferencesIncluded")
-    def are_references_included(self) -> pulumi.Output[bool]:
-        """
-        This field controls if the references will be exported along with the objects
-        """
+    def are_references_included(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "are_references_included")
 
     @property
     @pulumi.getter
     def bucket(self) -> pulumi.Output[str]:
-        """
-        Name of the Object Storage bucket where the object will be exported.
-        """
         return pulumi.get(self, "bucket")
 
     @property
     @pulumi.getter(name="createdBy")
-    def created_by(self) -> pulumi.Output[str]:
-        """
-        Name of the user who initiated export request.
-        """
+    def created_by(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "created_by")
 
     @property
     @pulumi.getter(name="errorMessages")
-    def error_messages(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        Contains key of the error
-        """
+    def error_messages(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "error_messages")
 
     @property
     @pulumi.getter(name="exportedItems")
-    def exported_items(self) -> pulumi.Output[Sequence['outputs.WorkspaceExportRequestExportedItem']]:
-        """
-        The array of exported object details.
-        """
+    def exported_items(self) -> pulumi.Output[Optional[Sequence['outputs.WorkspaceExportRequestExportedItem']]]:
         return pulumi.get(self, "exported_items")
 
     @property
     @pulumi.getter(name="fileName")
-    def file_name(self) -> pulumi.Output[str]:
-        """
-        Name of the exported zip file.
-        """
+    def file_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "file_name")
 
     @property
     @pulumi.getter
-    def filters(self) -> pulumi.Output[Sequence[str]]:
-        """
-        Filters for exported objects
-        """
+    def filters(self) -> pulumi.Output[Optional[Sequence[str]]]:
         return pulumi.get(self, "filters")
 
     @property
     @pulumi.getter(name="isObjectOverwriteEnabled")
-    def is_object_overwrite_enabled(self) -> pulumi.Output[bool]:
-        """
-        Flag to control whether to overwrite the object if it is already present at the provided object storage location.
-        """
+    def is_object_overwrite_enabled(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "is_object_overwrite_enabled")
 
     @property
     @pulumi.getter
-    def key(self) -> pulumi.Output[str]:
-        """
-        Export object request key
-        """
+    def key(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "key")
 
     @property
     @pulumi.getter
-    def name(self) -> pulumi.Output[str]:
-        """
-        Name of the export request.
-        """
+    def name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="objectKeys")
-    def object_keys(self) -> pulumi.Output[Sequence[str]]:
-        """
-        Field is used to specify which object keys to export
-        """
+    def object_keys(self) -> pulumi.Output[Optional[Sequence[str]]]:
         return pulumi.get(self, "object_keys")
 
     @property
     @pulumi.getter(name="objectStorageRegion")
-    def object_storage_region(self) -> pulumi.Output[str]:
-        """
-        Region of the object storage (if using object storage of different region)
-        """
+    def object_storage_region(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "object_storage_region")
 
     @property
     @pulumi.getter(name="objectStorageTenancyId")
-    def object_storage_tenancy_id(self) -> pulumi.Output[str]:
-        """
-        Optional parameter to point to object storage tenancy (if using Object Storage of different tenancy)
-        """
+    def object_storage_tenancy_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "object_storage_tenancy_id")
 
     @property
     @pulumi.getter(name="referencedItems")
-    def referenced_items(self) -> pulumi.Output[str]:
-        """
-        The array of exported referenced objects.
-        """
+    def referenced_items(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "referenced_items")
 
     @property
     @pulumi.getter
-    def status(self) -> pulumi.Output[str]:
-        """
-        Export Objects request status.
-        """
+    def status(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "status")
 
     @property
     @pulumi.getter(name="timeEndedInMillis")
-    def time_ended_in_millis(self) -> pulumi.Output[str]:
-        """
-        Time at which the request was completely processed.
-        """
+    def time_ended_in_millis(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_ended_in_millis")
 
     @property
     @pulumi.getter(name="timeStartedInMillis")
-    def time_started_in_millis(self) -> pulumi.Output[str]:
-        """
-        Time at which the request started getting processed.
-        """
+    def time_started_in_millis(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_started_in_millis")
 
     @property
     @pulumi.getter(name="totalExportedObjectCount")
-    def total_exported_object_count(self) -> pulumi.Output[int]:
-        """
-        Number of objects that are exported.
-        """
+    def total_exported_object_count(self) -> pulumi.Output[Optional[int]]:
         return pulumi.get(self, "total_exported_object_count")
 
     @property
     @pulumi.getter(name="workspaceId")
     def workspace_id(self) -> pulumi.Output[str]:
-        """
-        The workspace ID.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "workspace_id")
 

@@ -16,10 +16,10 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
         /// <summary>
         /// The OCID of the KMS key to be used as the master encryption key for Kubernetes secret encryption.
         /// </summary>
-        public readonly string KmsKeyId;
+        public readonly string? KmsKeyId;
 
         [OutputConstructor]
-        private GetClustersClusterImagePolicyConfigKeyDetailResult(string kmsKeyId)
+        private GetClustersClusterImagePolicyConfigKeyDetailResult(string? kmsKeyId)
         {
             KmsKeyId = kmsKeyId;
         }

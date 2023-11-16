@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Autonomous Database Character Sets in Oracle Cloud Infrastructure Database service.
@@ -70,9 +69,9 @@ type GetAutonomousCharacterSetsResult struct {
 	CharacterSetType                *string                                                    `pulumi:"characterSetType"`
 	Filters                         []GetAutonomousCharacterSetsFilter                         `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id          string `pulumi:"id"`
-	IsDedicated *bool  `pulumi:"isDedicated"`
-	IsShared    *bool  `pulumi:"isShared"`
+	Id          *string `pulumi:"id"`
+	IsDedicated *bool   `pulumi:"isDedicated"`
+	IsShared    *bool   `pulumi:"isShared"`
 }
 
 func GetAutonomousCharacterSetsOutput(ctx *pulumi.Context, args GetAutonomousCharacterSetsOutputArgs, opts ...pulumi.InvokeOption) GetAutonomousCharacterSetsResultOutput {
@@ -118,12 +117,6 @@ func (o GetAutonomousCharacterSetsResultOutput) ToGetAutonomousCharacterSetsResu
 	return o
 }
 
-func (o GetAutonomousCharacterSetsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetAutonomousCharacterSetsResult] {
-	return pulumix.Output[GetAutonomousCharacterSetsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The list of autonomous_database_character_sets.
 func (o GetAutonomousCharacterSetsResultOutput) AutonomousDatabaseCharacterSets() GetAutonomousCharacterSetsAutonomousDatabaseCharacterSetArrayOutput {
 	return o.ApplyT(func(v GetAutonomousCharacterSetsResult) []GetAutonomousCharacterSetsAutonomousDatabaseCharacterSet {
@@ -140,8 +133,8 @@ func (o GetAutonomousCharacterSetsResultOutput) Filters() GetAutonomousCharacter
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetAutonomousCharacterSetsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAutonomousCharacterSetsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetAutonomousCharacterSetsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAutonomousCharacterSetsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetAutonomousCharacterSetsResultOutput) IsDedicated() pulumi.BoolPtrOutput {

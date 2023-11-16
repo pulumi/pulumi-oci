@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the App Catalog Subscription resource in Oracle Cloud Infrastructure Core service.
@@ -64,25 +63,25 @@ type AppCatalogSubscription struct {
 	// The compartmentID for the subscription.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrOutput `pulumi:"displayName"`
 	// EULA link
 	EulaLink pulumi.StringPtrOutput `pulumi:"eulaLink"`
 	// The OCID of the listing.
 	ListingId pulumi.StringOutput `pulumi:"listingId"`
 	// Listing resource id.
-	ListingResourceId pulumi.StringOutput `pulumi:"listingResourceId"`
+	ListingResourceId pulumi.StringPtrOutput `pulumi:"listingResourceId"`
 	// Listing resource version.
 	ListingResourceVersion pulumi.StringOutput `pulumi:"listingResourceVersion"`
 	// Oracle TOU link
 	OracleTermsOfUseLink pulumi.StringOutput `pulumi:"oracleTermsOfUseLink"`
 	// Name of the publisher who published this listing.
-	PublisherName pulumi.StringOutput `pulumi:"publisherName"`
+	PublisherName pulumi.StringPtrOutput `pulumi:"publisherName"`
 	// A generated signature for this listing resource version retrieved the agreements API.
 	Signature pulumi.StringOutput `pulumi:"signature"`
 	// The short summary to the listing.
-	Summary pulumi.StringOutput `pulumi:"summary"`
+	Summary pulumi.StringPtrOutput `pulumi:"summary"`
 	// Date and time at which the subscription was created, in [RFC3339](https://tools.ietf.org/html/rfc3339) format. Example: `2018-03-20T12:32:53.532Z`
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// Date and time the agreements were retrieved, in [RFC3339](https://tools.ietf.org/html/rfc3339) format. Example: `2018-03-20T12:32:53.532Z`
 	//
 	// ** IMPORTANT **
@@ -265,12 +264,6 @@ func (i *AppCatalogSubscription) ToAppCatalogSubscriptionOutputWithContext(ctx c
 	return pulumi.ToOutputWithContext(ctx, i).(AppCatalogSubscriptionOutput)
 }
 
-func (i *AppCatalogSubscription) ToOutput(ctx context.Context) pulumix.Output[*AppCatalogSubscription] {
-	return pulumix.Output[*AppCatalogSubscription]{
-		OutputState: i.ToAppCatalogSubscriptionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // AppCatalogSubscriptionArrayInput is an input type that accepts AppCatalogSubscriptionArray and AppCatalogSubscriptionArrayOutput values.
 // You can construct a concrete instance of `AppCatalogSubscriptionArrayInput` via:
 //
@@ -294,12 +287,6 @@ func (i AppCatalogSubscriptionArray) ToAppCatalogSubscriptionArrayOutput() AppCa
 
 func (i AppCatalogSubscriptionArray) ToAppCatalogSubscriptionArrayOutputWithContext(ctx context.Context) AppCatalogSubscriptionArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(AppCatalogSubscriptionArrayOutput)
-}
-
-func (i AppCatalogSubscriptionArray) ToOutput(ctx context.Context) pulumix.Output[[]*AppCatalogSubscription] {
-	return pulumix.Output[[]*AppCatalogSubscription]{
-		OutputState: i.ToAppCatalogSubscriptionArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // AppCatalogSubscriptionMapInput is an input type that accepts AppCatalogSubscriptionMap and AppCatalogSubscriptionMapOutput values.
@@ -327,12 +314,6 @@ func (i AppCatalogSubscriptionMap) ToAppCatalogSubscriptionMapOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(AppCatalogSubscriptionMapOutput)
 }
 
-func (i AppCatalogSubscriptionMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*AppCatalogSubscription] {
-	return pulumix.Output[map[string]*AppCatalogSubscription]{
-		OutputState: i.ToAppCatalogSubscriptionMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type AppCatalogSubscriptionOutput struct{ *pulumi.OutputState }
 
 func (AppCatalogSubscriptionOutput) ElementType() reflect.Type {
@@ -347,20 +328,14 @@ func (o AppCatalogSubscriptionOutput) ToAppCatalogSubscriptionOutputWithContext(
 	return o
 }
 
-func (o AppCatalogSubscriptionOutput) ToOutput(ctx context.Context) pulumix.Output[*AppCatalogSubscription] {
-	return pulumix.Output[*AppCatalogSubscription]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The compartmentID for the subscription.
 func (o AppCatalogSubscriptionOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *AppCatalogSubscription) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
 // A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-func (o AppCatalogSubscriptionOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v *AppCatalogSubscription) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+func (o AppCatalogSubscriptionOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AppCatalogSubscription) pulumi.StringPtrOutput { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // EULA link
@@ -374,8 +349,8 @@ func (o AppCatalogSubscriptionOutput) ListingId() pulumi.StringOutput {
 }
 
 // Listing resource id.
-func (o AppCatalogSubscriptionOutput) ListingResourceId() pulumi.StringOutput {
-	return o.ApplyT(func(v *AppCatalogSubscription) pulumi.StringOutput { return v.ListingResourceId }).(pulumi.StringOutput)
+func (o AppCatalogSubscriptionOutput) ListingResourceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AppCatalogSubscription) pulumi.StringPtrOutput { return v.ListingResourceId }).(pulumi.StringPtrOutput)
 }
 
 // Listing resource version.
@@ -389,8 +364,8 @@ func (o AppCatalogSubscriptionOutput) OracleTermsOfUseLink() pulumi.StringOutput
 }
 
 // Name of the publisher who published this listing.
-func (o AppCatalogSubscriptionOutput) PublisherName() pulumi.StringOutput {
-	return o.ApplyT(func(v *AppCatalogSubscription) pulumi.StringOutput { return v.PublisherName }).(pulumi.StringOutput)
+func (o AppCatalogSubscriptionOutput) PublisherName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AppCatalogSubscription) pulumi.StringPtrOutput { return v.PublisherName }).(pulumi.StringPtrOutput)
 }
 
 // A generated signature for this listing resource version retrieved the agreements API.
@@ -399,13 +374,13 @@ func (o AppCatalogSubscriptionOutput) Signature() pulumi.StringOutput {
 }
 
 // The short summary to the listing.
-func (o AppCatalogSubscriptionOutput) Summary() pulumi.StringOutput {
-	return o.ApplyT(func(v *AppCatalogSubscription) pulumi.StringOutput { return v.Summary }).(pulumi.StringOutput)
+func (o AppCatalogSubscriptionOutput) Summary() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AppCatalogSubscription) pulumi.StringPtrOutput { return v.Summary }).(pulumi.StringPtrOutput)
 }
 
 // Date and time at which the subscription was created, in [RFC3339](https://tools.ietf.org/html/rfc3339) format. Example: `2018-03-20T12:32:53.532Z`
-func (o AppCatalogSubscriptionOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *AppCatalogSubscription) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o AppCatalogSubscriptionOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AppCatalogSubscription) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // Date and time the agreements were retrieved, in [RFC3339](https://tools.ietf.org/html/rfc3339) format. Example: `2018-03-20T12:32:53.532Z`
@@ -430,12 +405,6 @@ func (o AppCatalogSubscriptionArrayOutput) ToAppCatalogSubscriptionArrayOutputWi
 	return o
 }
 
-func (o AppCatalogSubscriptionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*AppCatalogSubscription] {
-	return pulumix.Output[[]*AppCatalogSubscription]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o AppCatalogSubscriptionArrayOutput) Index(i pulumi.IntInput) AppCatalogSubscriptionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *AppCatalogSubscription {
 		return vs[0].([]*AppCatalogSubscription)[vs[1].(int)]
@@ -454,12 +423,6 @@ func (o AppCatalogSubscriptionMapOutput) ToAppCatalogSubscriptionMapOutput() App
 
 func (o AppCatalogSubscriptionMapOutput) ToAppCatalogSubscriptionMapOutputWithContext(ctx context.Context) AppCatalogSubscriptionMapOutput {
 	return o
-}
-
-func (o AppCatalogSubscriptionMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*AppCatalogSubscription] {
-	return pulumix.Output[map[string]*AppCatalogSubscription]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o AppCatalogSubscriptionMapOutput) MapIndex(k pulumi.StringInput) AppCatalogSubscriptionOutput {

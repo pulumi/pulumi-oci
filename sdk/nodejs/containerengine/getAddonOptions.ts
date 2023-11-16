@@ -56,12 +56,12 @@ export interface GetAddonOptionsResult {
     /**
      * The list of addon_options.
      */
-    readonly addonOptions: outputs.ContainerEngine.GetAddonOptionsAddonOption[];
+    readonly addonOptions?: outputs.ContainerEngine.GetAddonOptionsAddonOption[];
     readonly filters?: outputs.ContainerEngine.GetAddonOptionsFilter[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly kubernetesVersion: string;
 }
 /**

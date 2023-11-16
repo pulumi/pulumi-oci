@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Operations Insights Private Endpoint resource in Oracle Cloud Infrastructure Opsi service.
@@ -60,38 +59,38 @@ type LookupOperationsInsightsPrivateEndpointArgs struct {
 // A collection of values returned by getOperationsInsightsPrivateEndpoint.
 type LookupOperationsInsightsPrivateEndpointResult struct {
 	// The compartment OCID of the Private service accessed database.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The description of the private endpoint.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// The display name of the private endpoint.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The OCID of the Private service accessed database.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The flag is to identify if private endpoint is used for rac database or not
-	IsUsedForRacDbs bool `pulumi:"isUsedForRacDbs"`
+	IsUsedForRacDbs *bool `pulumi:"isUsedForRacDbs"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// The OCIDs of the network security groups that the private endpoint belongs to.
 	NsgIds                              []string `pulumi:"nsgIds"`
 	OperationsInsightsPrivateEndpointId string   `pulumi:"operationsInsightsPrivateEndpointId"`
 	// A message describing the status of the private endpoint connection of this resource. For example, it can be used to provide actionable information about the validity of the private endpoint connection.
-	PrivateEndpointStatusDetails string `pulumi:"privateEndpointStatusDetails"`
+	PrivateEndpointStatusDetails *string `pulumi:"privateEndpointStatusDetails"`
 	// The private IP addresses assigned to the private endpoint. All IP addresses will be concatenated if it is RAC DBs.
-	PrivateIp string `pulumi:"privateIp"`
+	PrivateIp *string `pulumi:"privateIp"`
 	// The current state of the private endpoint.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The OCID of the subnet.
-	SubnetId string `pulumi:"subnetId"`
+	SubnetId *string `pulumi:"subnetId"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The date and time the private endpoint was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The OCID of the VCN.
-	VcnId string `pulumi:"vcnId"`
+	VcnId *string `pulumi:"vcnId"`
 }
 
 func LookupOperationsInsightsPrivateEndpointOutput(ctx *pulumi.Context, args LookupOperationsInsightsPrivateEndpointOutputArgs, opts ...pulumi.InvokeOption) LookupOperationsInsightsPrivateEndpointResultOutput {
@@ -132,15 +131,9 @@ func (o LookupOperationsInsightsPrivateEndpointResultOutput) ToLookupOperationsI
 	return o
 }
 
-func (o LookupOperationsInsightsPrivateEndpointResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupOperationsInsightsPrivateEndpointResult] {
-	return pulumix.Output[LookupOperationsInsightsPrivateEndpointResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The compartment OCID of the Private service accessed database.
-func (o LookupOperationsInsightsPrivateEndpointResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupOperationsInsightsPrivateEndpointResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupOperationsInsightsPrivateEndpointResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupOperationsInsightsPrivateEndpointResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -149,13 +142,13 @@ func (o LookupOperationsInsightsPrivateEndpointResultOutput) DefinedTags() pulum
 }
 
 // The description of the private endpoint.
-func (o LookupOperationsInsightsPrivateEndpointResultOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupOperationsInsightsPrivateEndpointResult) string { return v.Description }).(pulumi.StringOutput)
+func (o LookupOperationsInsightsPrivateEndpointResultOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupOperationsInsightsPrivateEndpointResult) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // The display name of the private endpoint.
-func (o LookupOperationsInsightsPrivateEndpointResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupOperationsInsightsPrivateEndpointResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupOperationsInsightsPrivateEndpointResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupOperationsInsightsPrivateEndpointResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -164,18 +157,18 @@ func (o LookupOperationsInsightsPrivateEndpointResultOutput) FreeformTags() pulu
 }
 
 // The OCID of the Private service accessed database.
-func (o LookupOperationsInsightsPrivateEndpointResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupOperationsInsightsPrivateEndpointResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupOperationsInsightsPrivateEndpointResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupOperationsInsightsPrivateEndpointResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The flag is to identify if private endpoint is used for rac database or not
-func (o LookupOperationsInsightsPrivateEndpointResultOutput) IsUsedForRacDbs() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupOperationsInsightsPrivateEndpointResult) bool { return v.IsUsedForRacDbs }).(pulumi.BoolOutput)
+func (o LookupOperationsInsightsPrivateEndpointResultOutput) IsUsedForRacDbs() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupOperationsInsightsPrivateEndpointResult) *bool { return v.IsUsedForRacDbs }).(pulumi.BoolPtrOutput)
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-func (o LookupOperationsInsightsPrivateEndpointResultOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupOperationsInsightsPrivateEndpointResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o LookupOperationsInsightsPrivateEndpointResultOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupOperationsInsightsPrivateEndpointResult) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // The OCIDs of the network security groups that the private endpoint belongs to.
@@ -190,23 +183,23 @@ func (o LookupOperationsInsightsPrivateEndpointResultOutput) OperationsInsightsP
 }
 
 // A message describing the status of the private endpoint connection of this resource. For example, it can be used to provide actionable information about the validity of the private endpoint connection.
-func (o LookupOperationsInsightsPrivateEndpointResultOutput) PrivateEndpointStatusDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupOperationsInsightsPrivateEndpointResult) string { return v.PrivateEndpointStatusDetails }).(pulumi.StringOutput)
+func (o LookupOperationsInsightsPrivateEndpointResultOutput) PrivateEndpointStatusDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupOperationsInsightsPrivateEndpointResult) *string { return v.PrivateEndpointStatusDetails }).(pulumi.StringPtrOutput)
 }
 
 // The private IP addresses assigned to the private endpoint. All IP addresses will be concatenated if it is RAC DBs.
-func (o LookupOperationsInsightsPrivateEndpointResultOutput) PrivateIp() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupOperationsInsightsPrivateEndpointResult) string { return v.PrivateIp }).(pulumi.StringOutput)
+func (o LookupOperationsInsightsPrivateEndpointResultOutput) PrivateIp() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupOperationsInsightsPrivateEndpointResult) *string { return v.PrivateIp }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the private endpoint.
-func (o LookupOperationsInsightsPrivateEndpointResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupOperationsInsightsPrivateEndpointResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupOperationsInsightsPrivateEndpointResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupOperationsInsightsPrivateEndpointResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the subnet.
-func (o LookupOperationsInsightsPrivateEndpointResultOutput) SubnetId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupOperationsInsightsPrivateEndpointResult) string { return v.SubnetId }).(pulumi.StringOutput)
+func (o LookupOperationsInsightsPrivateEndpointResultOutput) SubnetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupOperationsInsightsPrivateEndpointResult) *string { return v.SubnetId }).(pulumi.StringPtrOutput)
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -215,13 +208,13 @@ func (o LookupOperationsInsightsPrivateEndpointResultOutput) SystemTags() pulumi
 }
 
 // The date and time the private endpoint was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-func (o LookupOperationsInsightsPrivateEndpointResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupOperationsInsightsPrivateEndpointResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupOperationsInsightsPrivateEndpointResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupOperationsInsightsPrivateEndpointResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the VCN.
-func (o LookupOperationsInsightsPrivateEndpointResultOutput) VcnId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupOperationsInsightsPrivateEndpointResult) string { return v.VcnId }).(pulumi.StringOutput)
+func (o LookupOperationsInsightsPrivateEndpointResultOutput) VcnId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupOperationsInsightsPrivateEndpointResult) *string { return v.VcnId }).(pulumi.StringPtrOutput)
 }
 
 func init() {

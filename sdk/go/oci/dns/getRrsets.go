@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of RRsets in Oracle Cloud Infrastructure DNS service.
@@ -83,7 +82,7 @@ type GetRrsetsResult struct {
 	DomainContains *string           `pulumi:"domainContains"`
 	Filters        []GetRrsetsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The list of rrsets.
 	Rrsets []GetRrsetsRrset `pulumi:"rrsets"`
 	// The type of DNS record, such as A or CNAME. For more information, see [Resource Record (RR) TYPEs](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).
@@ -142,12 +141,6 @@ func (o GetRrsetsResultOutput) ToGetRrsetsResultOutputWithContext(ctx context.Co
 	return o
 }
 
-func (o GetRrsetsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetRrsetsResult] {
-	return pulumix.Output[GetRrsetsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The fully qualified domain name where the record can be located.
 func (o GetRrsetsResultOutput) Domain() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetRrsetsResult) *string { return v.Domain }).(pulumi.StringPtrOutput)
@@ -162,8 +155,8 @@ func (o GetRrsetsResultOutput) Filters() GetRrsetsFilterArrayOutput {
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetRrsetsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRrsetsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetRrsetsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRrsetsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The list of rrsets.

@@ -49,15 +49,12 @@ class GetTagStandardTagNamespaceTemplateResult:
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        The default description of the tag namespace that users can use to create the tag definition
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -66,25 +63,16 @@ class GetTagStandardTagNamespaceTemplateResult:
     @property
     @pulumi.getter(name="standardTagNamespaceName")
     def standard_tag_namespace_name(self) -> str:
-        """
-        The reserved name of this standard tag namespace
-        """
         return pulumi.get(self, "standard_tag_namespace_name")
 
     @property
     @pulumi.getter
-    def status(self) -> str:
-        """
-        The status of the standard tag namespace
-        """
+    def status(self) -> Optional[str]:
         return pulumi.get(self, "status")
 
     @property
     @pulumi.getter(name="tagDefinitionTemplates")
-    def tag_definition_templates(self) -> Sequence['outputs.GetTagStandardTagNamespaceTemplateTagDefinitionTemplateResult']:
-        """
-        The template of the tag definition. This object includes necessary details to create the provided standard tag definition.
-        """
+    def tag_definition_templates(self) -> Optional[Sequence['outputs.GetTagStandardTagNamespaceTemplateTagDefinitionTemplateResult']]:
         return pulumi.get(self, "tag_definition_templates")
 
 
@@ -106,23 +94,7 @@ def get_tag_standard_tag_namespace_template(compartment_id: Optional[str] = None
                                             standard_tag_namespace_name: Optional[str] = None,
                                             opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetTagStandardTagNamespaceTemplateResult:
     """
-    This data source provides details about a specific Tag Standard Tag Namespace Template resource in Oracle Cloud Infrastructure Identity service.
-
-    Retrieve the standard tag namespace template given the standard tag namespace name.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_tag_standard_tag_namespace_template = oci.Identity.get_tag_standard_tag_namespace_template(compartment_id=var["compartment_id"],
-        standard_tag_namespace_name=oci_identity_tag_namespace["test_tag_namespace"]["name"])
-    ```
-
-
-    :param str compartment_id: The OCID of the compartment (remember that the tenancy is simply the root compartment).
-    :param str standard_tag_namespace_name: The name of the standard tag namespace tempate that is requested
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -144,22 +116,6 @@ def get_tag_standard_tag_namespace_template_output(compartment_id: Optional[pulu
                                                    standard_tag_namespace_name: Optional[pulumi.Input[str]] = None,
                                                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetTagStandardTagNamespaceTemplateResult]:
     """
-    This data source provides details about a specific Tag Standard Tag Namespace Template resource in Oracle Cloud Infrastructure Identity service.
-
-    Retrieve the standard tag namespace template given the standard tag namespace name.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_tag_standard_tag_namespace_template = oci.Identity.get_tag_standard_tag_namespace_template(compartment_id=var["compartment_id"],
-        standard_tag_namespace_name=oci_identity_tag_namespace["test_tag_namespace"]["name"])
-    ```
-
-
-    :param str compartment_id: The OCID of the compartment (remember that the tenancy is simply the root compartment).
-    :param str standard_tag_namespace_name: The name of the standard tag namespace tempate that is requested
+    Use this data source to access information about an existing resource.
     """
     ...

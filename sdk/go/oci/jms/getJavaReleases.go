@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Java Releases in Oracle Cloud Infrastructure Jms service.
@@ -76,7 +75,7 @@ type GetJavaReleasesResult struct {
 	FamilyVersion *string                 `pulumi:"familyVersion"`
 	Filters       []GetJavaReleasesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The list of java_release_collection.
 	JavaReleaseCollections []GetJavaReleasesJavaReleaseCollection `pulumi:"javaReleaseCollections"`
 	JreSecurityStatus      *string                                `pulumi:"jreSecurityStatus"`
@@ -135,12 +134,6 @@ func (o GetJavaReleasesResultOutput) ToGetJavaReleasesResultOutputWithContext(ct
 	return o
 }
 
-func (o GetJavaReleasesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetJavaReleasesResult] {
-	return pulumix.Output[GetJavaReleasesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Java release family identifier.
 func (o GetJavaReleasesResultOutput) FamilyVersion() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetJavaReleasesResult) *string { return v.FamilyVersion }).(pulumi.StringPtrOutput)
@@ -151,8 +144,8 @@ func (o GetJavaReleasesResultOutput) Filters() GetJavaReleasesFilterArrayOutput 
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetJavaReleasesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetJavaReleasesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetJavaReleasesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetJavaReleasesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The list of java_release_collection.

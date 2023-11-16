@@ -24,16 +24,6 @@ class ExternalExadataInfrastructureArgs:
                  storage_server_names: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
         """
         The set of arguments for constructing a ExternalExadataInfrastructure resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] db_system_ids: (Updatable) The list of DB systems in the Exadata infrastructure.
-        :param pulumi.Input[str] display_name: (Updatable) The name of the Exadata infrastructure.
-        :param pulumi.Input[str] discovery_key: (Updatable) The unique key of the discovery request.
-        :param pulumi.Input[str] license_model: (Updatable) The Oracle license model that applies to the database management resources.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] storage_server_names: (Updatable) The list of all the Exadata storage server names to be included for monitoring purposes. If not specified, all the Exadata storage servers associated with the DB systems are included.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "db_system_ids", db_system_ids)
@@ -48,9 +38,6 @@ class ExternalExadataInfrastructureArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -60,9 +47,6 @@ class ExternalExadataInfrastructureArgs:
     @property
     @pulumi.getter(name="dbSystemIds")
     def db_system_ids(self) -> pulumi.Input[Sequence[pulumi.Input[str]]]:
-        """
-        (Updatable) The list of DB systems in the Exadata infrastructure.
-        """
         return pulumi.get(self, "db_system_ids")
 
     @db_system_ids.setter
@@ -72,9 +56,6 @@ class ExternalExadataInfrastructureArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The name of the Exadata infrastructure.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -84,9 +65,6 @@ class ExternalExadataInfrastructureArgs:
     @property
     @pulumi.getter(name="discoveryKey")
     def discovery_key(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The unique key of the discovery request.
-        """
         return pulumi.get(self, "discovery_key")
 
     @discovery_key.setter
@@ -96,9 +74,6 @@ class ExternalExadataInfrastructureArgs:
     @property
     @pulumi.getter(name="licenseModel")
     def license_model(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The Oracle license model that applies to the database management resources.
-        """
         return pulumi.get(self, "license_model")
 
     @license_model.setter
@@ -108,13 +83,6 @@ class ExternalExadataInfrastructureArgs:
     @property
     @pulumi.getter(name="storageServerNames")
     def storage_server_names(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) The list of all the Exadata storage server names to be included for monitoring purposes. If not specified, all the Exadata storage servers associated with the DB systems are included.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "storage_server_names")
 
     @storage_server_names.setter
@@ -145,28 +113,6 @@ class _ExternalExadataInfrastructureState:
                  version: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering ExternalExadataInfrastructure resources.
-        :param pulumi.Input[Mapping[str, Any]] additional_details: The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] database_compartments: The list of [OCIDs] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartments.
-        :param pulumi.Input[Sequence[pulumi.Input['ExternalExadataInfrastructureDatabaseSystemArgs']]] database_systems: A list of DB systems.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] db_system_ids: (Updatable) The list of DB systems in the Exadata infrastructure.
-        :param pulumi.Input[str] discovery_key: (Updatable) The unique key of the discovery request.
-        :param pulumi.Input[str] display_name: (Updatable) The name of the Exadata infrastructure.
-        :param pulumi.Input[str] internal_id: The internal ID of the Exadata resource.
-        :param pulumi.Input[str] license_model: (Updatable) The Oracle license model that applies to the database management resources.
-        :param pulumi.Input[str] lifecycle_details: The details of the lifecycle state of the Exadata resource.
-        :param pulumi.Input[str] rack_size: The rack size of the Exadata infrastructure.
-        :param pulumi.Input[str] state: The current lifecycle state of the database resource.
-        :param pulumi.Input[str] status: The status of the Exadata resource.
-        :param pulumi.Input[Sequence[pulumi.Input['ExternalExadataInfrastructureStorageGridArgs']]] storage_grids: The Exadata storage server grid of the Exadata infrastructure.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] storage_server_names: (Updatable) The list of all the Exadata storage server names to be included for monitoring purposes. If not specified, all the Exadata storage servers associated with the DB systems are included.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] time_created: The timestamp of the creation of the Exadata resource.
-        :param pulumi.Input[str] time_updated: The timestamp of the last update of the Exadata resource.
-        :param pulumi.Input[str] version: The version of the Exadata resource.
         """
         if additional_details is not None:
             pulumi.set(__self__, "additional_details", additional_details)
@@ -208,9 +154,6 @@ class _ExternalExadataInfrastructureState:
     @property
     @pulumi.getter(name="additionalDetails")
     def additional_details(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
-        """
         return pulumi.get(self, "additional_details")
 
     @additional_details.setter
@@ -220,9 +163,6 @@ class _ExternalExadataInfrastructureState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -232,9 +172,6 @@ class _ExternalExadataInfrastructureState:
     @property
     @pulumi.getter(name="databaseCompartments")
     def database_compartments(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        The list of [OCIDs] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartments.
-        """
         return pulumi.get(self, "database_compartments")
 
     @database_compartments.setter
@@ -244,9 +181,6 @@ class _ExternalExadataInfrastructureState:
     @property
     @pulumi.getter(name="databaseSystems")
     def database_systems(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ExternalExadataInfrastructureDatabaseSystemArgs']]]]:
-        """
-        A list of DB systems.
-        """
         return pulumi.get(self, "database_systems")
 
     @database_systems.setter
@@ -256,9 +190,6 @@ class _ExternalExadataInfrastructureState:
     @property
     @pulumi.getter(name="dbSystemIds")
     def db_system_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) The list of DB systems in the Exadata infrastructure.
-        """
         return pulumi.get(self, "db_system_ids")
 
     @db_system_ids.setter
@@ -268,9 +199,6 @@ class _ExternalExadataInfrastructureState:
     @property
     @pulumi.getter(name="discoveryKey")
     def discovery_key(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The unique key of the discovery request.
-        """
         return pulumi.get(self, "discovery_key")
 
     @discovery_key.setter
@@ -280,9 +208,6 @@ class _ExternalExadataInfrastructureState:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The name of the Exadata infrastructure.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -292,9 +217,6 @@ class _ExternalExadataInfrastructureState:
     @property
     @pulumi.getter(name="internalId")
     def internal_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The internal ID of the Exadata resource.
-        """
         return pulumi.get(self, "internal_id")
 
     @internal_id.setter
@@ -304,9 +226,6 @@ class _ExternalExadataInfrastructureState:
     @property
     @pulumi.getter(name="licenseModel")
     def license_model(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The Oracle license model that applies to the database management resources.
-        """
         return pulumi.get(self, "license_model")
 
     @license_model.setter
@@ -316,9 +235,6 @@ class _ExternalExadataInfrastructureState:
     @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> Optional[pulumi.Input[str]]:
-        """
-        The details of the lifecycle state of the Exadata resource.
-        """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
@@ -328,9 +244,6 @@ class _ExternalExadataInfrastructureState:
     @property
     @pulumi.getter(name="rackSize")
     def rack_size(self) -> Optional[pulumi.Input[str]]:
-        """
-        The rack size of the Exadata infrastructure.
-        """
         return pulumi.get(self, "rack_size")
 
     @rack_size.setter
@@ -340,9 +253,6 @@ class _ExternalExadataInfrastructureState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The current lifecycle state of the database resource.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -352,9 +262,6 @@ class _ExternalExadataInfrastructureState:
     @property
     @pulumi.getter
     def status(self) -> Optional[pulumi.Input[str]]:
-        """
-        The status of the Exadata resource.
-        """
         return pulumi.get(self, "status")
 
     @status.setter
@@ -364,9 +271,6 @@ class _ExternalExadataInfrastructureState:
     @property
     @pulumi.getter(name="storageGrids")
     def storage_grids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ExternalExadataInfrastructureStorageGridArgs']]]]:
-        """
-        The Exadata storage server grid of the Exadata infrastructure.
-        """
         return pulumi.get(self, "storage_grids")
 
     @storage_grids.setter
@@ -376,13 +280,6 @@ class _ExternalExadataInfrastructureState:
     @property
     @pulumi.getter(name="storageServerNames")
     def storage_server_names(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) The list of all the Exadata storage server names to be included for monitoring purposes. If not specified, all the Exadata storage servers associated with the DB systems are included.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "storage_server_names")
 
     @storage_server_names.setter
@@ -392,9 +289,6 @@ class _ExternalExadataInfrastructureState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The timestamp of the creation of the Exadata resource.
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -404,9 +298,6 @@ class _ExternalExadataInfrastructureState:
     @property
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> Optional[pulumi.Input[str]]:
-        """
-        The timestamp of the last update of the Exadata resource.
-        """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
@@ -416,9 +307,6 @@ class _ExternalExadataInfrastructureState:
     @property
     @pulumi.getter
     def version(self) -> Optional[pulumi.Input[str]]:
-        """
-        The version of the Exadata resource.
-        """
         return pulumi.get(self, "version")
 
     @version.setter
@@ -439,50 +327,9 @@ class ExternalExadataInfrastructure(pulumi.CustomResource):
                  storage_server_names: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  __props__=None):
         """
-        This resource provides the External Exadata Infrastructure resource in Oracle Cloud Infrastructure Database Management service.
-
-        Creates an Oracle Cloud Infrastructure resource for the Exadata infrastructure and enables the Monitoring service for the Exadata infrastructure.
-        The following resource/subresources are created:
-          Infrastructure
-          Storage server connectors
-          Storage servers
-          Storage grids
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_external_exadata_infrastructure = oci.database_management.ExternalExadataInfrastructure("testExternalExadataInfrastructure",
-            compartment_id=var["compartment_id"],
-            db_system_ids=var["external_exadata_infrastructure_db_system_ids"],
-            display_name=var["external_exadata_infrastructure_display_name"],
-            discovery_key=var["external_exadata_infrastructure_discovery_key"],
-            license_model=var["external_exadata_infrastructure_license_model"],
-            storage_server_names=var["external_exadata_infrastructure_storage_server_names"])
-        ```
-
-        ## Import
-
-        ExternalExadataInfrastructures can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:DatabaseManagement/externalExadataInfrastructure:ExternalExadataInfrastructure test_external_exadata_infrastructure "id"
-        ```
-
+        Create a ExternalExadataInfrastructure resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] db_system_ids: (Updatable) The list of DB systems in the Exadata infrastructure.
-        :param pulumi.Input[str] discovery_key: (Updatable) The unique key of the discovery request.
-        :param pulumi.Input[str] display_name: (Updatable) The name of the Exadata infrastructure.
-        :param pulumi.Input[str] license_model: (Updatable) The Oracle license model that applies to the database management resources.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] storage_server_names: (Updatable) The list of all the Exadata storage server names to be included for monitoring purposes. If not specified, all the Exadata storage servers associated with the DB systems are included.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -491,38 +338,7 @@ class ExternalExadataInfrastructure(pulumi.CustomResource):
                  args: ExternalExadataInfrastructureArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the External Exadata Infrastructure resource in Oracle Cloud Infrastructure Database Management service.
-
-        Creates an Oracle Cloud Infrastructure resource for the Exadata infrastructure and enables the Monitoring service for the Exadata infrastructure.
-        The following resource/subresources are created:
-          Infrastructure
-          Storage server connectors
-          Storage servers
-          Storage grids
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_external_exadata_infrastructure = oci.database_management.ExternalExadataInfrastructure("testExternalExadataInfrastructure",
-            compartment_id=var["compartment_id"],
-            db_system_ids=var["external_exadata_infrastructure_db_system_ids"],
-            display_name=var["external_exadata_infrastructure_display_name"],
-            discovery_key=var["external_exadata_infrastructure_discovery_key"],
-            license_model=var["external_exadata_infrastructure_license_model"],
-            storage_server_names=var["external_exadata_infrastructure_storage_server_names"])
-        ```
-
-        ## Import
-
-        ExternalExadataInfrastructures can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:DatabaseManagement/externalExadataInfrastructure:ExternalExadataInfrastructure test_external_exadata_infrastructure "id"
-        ```
-
+        Create a ExternalExadataInfrastructure resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param ExternalExadataInfrastructureArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -612,28 +428,6 @@ class ExternalExadataInfrastructure(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Mapping[str, Any]] additional_details: The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] database_compartments: The list of [OCIDs] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartments.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ExternalExadataInfrastructureDatabaseSystemArgs']]]] database_systems: A list of DB systems.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] db_system_ids: (Updatable) The list of DB systems in the Exadata infrastructure.
-        :param pulumi.Input[str] discovery_key: (Updatable) The unique key of the discovery request.
-        :param pulumi.Input[str] display_name: (Updatable) The name of the Exadata infrastructure.
-        :param pulumi.Input[str] internal_id: The internal ID of the Exadata resource.
-        :param pulumi.Input[str] license_model: (Updatable) The Oracle license model that applies to the database management resources.
-        :param pulumi.Input[str] lifecycle_details: The details of the lifecycle state of the Exadata resource.
-        :param pulumi.Input[str] rack_size: The rack size of the Exadata infrastructure.
-        :param pulumi.Input[str] state: The current lifecycle state of the database resource.
-        :param pulumi.Input[str] status: The status of the Exadata resource.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ExternalExadataInfrastructureStorageGridArgs']]]] storage_grids: The Exadata storage server grid of the Exadata infrastructure.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] storage_server_names: (Updatable) The list of all the Exadata storage server names to be included for monitoring purposes. If not specified, all the Exadata storage servers associated with the DB systems are included.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] time_created: The timestamp of the creation of the Exadata resource.
-        :param pulumi.Input[str] time_updated: The timestamp of the last update of the Exadata resource.
-        :param pulumi.Input[str] version: The version of the Exadata resource.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -661,149 +455,91 @@ class ExternalExadataInfrastructure(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="additionalDetails")
-    def additional_details(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
-        """
+    def additional_details(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "additional_details")
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="databaseCompartments")
-    def database_compartments(self) -> pulumi.Output[Sequence[str]]:
-        """
-        The list of [OCIDs] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartments.
-        """
+    def database_compartments(self) -> pulumi.Output[Optional[Sequence[str]]]:
         return pulumi.get(self, "database_compartments")
 
     @property
     @pulumi.getter(name="databaseSystems")
-    def database_systems(self) -> pulumi.Output[Sequence['outputs.ExternalExadataInfrastructureDatabaseSystem']]:
-        """
-        A list of DB systems.
-        """
+    def database_systems(self) -> pulumi.Output[Optional[Sequence['outputs.ExternalExadataInfrastructureDatabaseSystem']]]:
         return pulumi.get(self, "database_systems")
 
     @property
     @pulumi.getter(name="dbSystemIds")
     def db_system_ids(self) -> pulumi.Output[Sequence[str]]:
-        """
-        (Updatable) The list of DB systems in the Exadata infrastructure.
-        """
         return pulumi.get(self, "db_system_ids")
 
     @property
     @pulumi.getter(name="discoveryKey")
-    def discovery_key(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The unique key of the discovery request.
-        """
+    def discovery_key(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "discovery_key")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The name of the Exadata infrastructure.
-        """
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="internalId")
-    def internal_id(self) -> pulumi.Output[str]:
-        """
-        The internal ID of the Exadata resource.
-        """
+    def internal_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "internal_id")
 
     @property
     @pulumi.getter(name="licenseModel")
-    def license_model(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The Oracle license model that applies to the database management resources.
-        """
+    def license_model(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "license_model")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> pulumi.Output[str]:
-        """
-        The details of the lifecycle state of the Exadata resource.
-        """
+    def lifecycle_details(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="rackSize")
-    def rack_size(self) -> pulumi.Output[str]:
-        """
-        The rack size of the Exadata infrastructure.
-        """
+    def rack_size(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "rack_size")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        The current lifecycle state of the database resource.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter
-    def status(self) -> pulumi.Output[str]:
-        """
-        The status of the Exadata resource.
-        """
+    def status(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "status")
 
     @property
     @pulumi.getter(name="storageGrids")
-    def storage_grids(self) -> pulumi.Output[Sequence['outputs.ExternalExadataInfrastructureStorageGrid']]:
-        """
-        The Exadata storage server grid of the Exadata infrastructure.
-        """
+    def storage_grids(self) -> pulumi.Output[Optional[Sequence['outputs.ExternalExadataInfrastructureStorageGrid']]]:
         return pulumi.get(self, "storage_grids")
 
     @property
     @pulumi.getter(name="storageServerNames")
     def storage_server_names(self) -> pulumi.Output[Optional[Sequence[str]]]:
-        """
-        (Updatable) The list of all the Exadata storage server names to be included for monitoring purposes. If not specified, all the Exadata storage servers associated with the DB systems are included.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "storage_server_names")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        The timestamp of the creation of the Exadata resource.
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> pulumi.Output[str]:
-        """
-        The timestamp of the last update of the Exadata resource.
-        """
+    def time_updated(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_updated")
 
     @property
     @pulumi.getter
-    def version(self) -> pulumi.Output[str]:
-        """
-        The version of the Exadata resource.
-        """
+    def version(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "version")
 

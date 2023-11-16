@@ -25,7 +25,7 @@ public final class GetContainerRepositoriesResult {
      * @return The list of container_repository_collection.
      * 
      */
-    private List<GetContainerRepositoriesContainerRepositoryCollection> containerRepositoryCollections;
+    private @Nullable List<GetContainerRepositoriesContainerRepositoryCollection> containerRepositoryCollections;
     /**
      * @return The container repository name.
      * 
@@ -36,7 +36,7 @@ public final class GetContainerRepositoriesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Whether the repository is public. A public repository allows unauthenticated access.
      * 
@@ -65,7 +65,7 @@ public final class GetContainerRepositoriesResult {
      * 
      */
     public List<GetContainerRepositoriesContainerRepositoryCollection> containerRepositoryCollections() {
-        return this.containerRepositoryCollections;
+        return this.containerRepositoryCollections == null ? List.of() : this.containerRepositoryCollections;
     }
     /**
      * @return The container repository name.
@@ -81,8 +81,8 @@ public final class GetContainerRepositoriesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Whether the repository is public. A public repository allows unauthenticated access.
@@ -113,10 +113,10 @@ public final class GetContainerRepositoriesResult {
     public static final class Builder {
         private String compartmentId;
         private @Nullable Boolean compartmentIdInSubtree;
-        private List<GetContainerRepositoriesContainerRepositoryCollection> containerRepositoryCollections;
+        private @Nullable List<GetContainerRepositoriesContainerRepositoryCollection> containerRepositoryCollections;
         private @Nullable String displayName;
         private @Nullable List<GetContainerRepositoriesFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable Boolean isPublic;
         private @Nullable String repositoryId;
         private @Nullable String state;
@@ -145,8 +145,8 @@ public final class GetContainerRepositoriesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder containerRepositoryCollections(List<GetContainerRepositoriesContainerRepositoryCollection> containerRepositoryCollections) {
-            this.containerRepositoryCollections = Objects.requireNonNull(containerRepositoryCollections);
+        public Builder containerRepositoryCollections(@Nullable List<GetContainerRepositoriesContainerRepositoryCollection> containerRepositoryCollections) {
+            this.containerRepositoryCollections = containerRepositoryCollections;
             return this;
         }
         public Builder containerRepositoryCollections(GetContainerRepositoriesContainerRepositoryCollection... containerRepositoryCollections) {
@@ -166,8 +166,8 @@ public final class GetContainerRepositoriesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

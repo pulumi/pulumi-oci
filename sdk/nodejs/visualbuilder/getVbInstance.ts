@@ -47,92 +47,92 @@ export interface GetVbInstanceResult {
     /**
      * A list of alternate custom endpoints used for the vb instance URL.
      */
-    readonly alternateCustomEndpoints: outputs.VisualBuilder.GetVbInstanceAlternateCustomEndpoint[];
+    readonly alternateCustomEndpoints?: outputs.VisualBuilder.GetVbInstanceAlternateCustomEndpoint[];
     /**
      * A list of associated attachments to other services
      */
-    readonly attachments: outputs.VisualBuilder.GetVbInstanceAttachment[];
+    readonly attachments?: outputs.VisualBuilder.GetVbInstanceAttachment[];
     /**
      * Compartment Identifier.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * The entitlement used for billing purposes.
      */
-    readonly consumptionModel: string;
+    readonly consumptionModel?: string;
     /**
      * Details for a custom endpoint for the vb instance.
      */
-    readonly customEndpoints: outputs.VisualBuilder.GetVbInstanceCustomEndpoint[];
+    readonly customEndpoints?: outputs.VisualBuilder.GetVbInstanceCustomEndpoint[];
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * Vb Instance Identifier, can be renamed.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * Unique identifier that is immutable on creation.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Information for IDCS access
      */
-    readonly idcsInfos: outputs.VisualBuilder.GetVbInstanceIdcsInfo[];
-    readonly idcsOpenId: string;
+    readonly idcsInfos?: outputs.VisualBuilder.GetVbInstanceIdcsInfo[];
+    readonly idcsOpenId?: string;
     /**
      * The Vb Instance URL.
      */
-    readonly instanceUrl: string;
+    readonly instanceUrl?: string;
     /**
      * Visual Builder is enabled or not.
      */
-    readonly isVisualBuilderEnabled: boolean;
+    readonly isVisualBuilderEnabled?: boolean;
     /**
      * The NAT gateway IP address for the VB management VCN
      */
-    readonly managementNatGatewayIp: string;
+    readonly managementNatGatewayIp?: string;
     /**
      * The Oracle Cloud ID (OCID) of the Visual Builder management VCN
      */
-    readonly managementVcnId: string;
+    readonly managementVcnId?: string;
     /**
      * The number of Nodes
      */
-    readonly nodeCount: number;
+    readonly nodeCount?: number;
     /**
      * The NAT gateway IP address for the VB service VCN
      */
-    readonly serviceNatGatewayIp: string;
+    readonly serviceNatGatewayIp?: string;
     /**
      * The Oracle Cloud ID (OCID) of the Visual Builder service VCN
      */
-    readonly serviceVcnId: string;
+    readonly serviceVcnId?: string;
     /**
      * The current state of the vb instance.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * An message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
-    readonly stateMessage: string;
+    readonly stateMessage?: string;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    readonly systemTags: {[key: string]: any};
+    readonly systemTags?: {[key: string]: any};
     /**
      * The time the the VbInstance was created. An RFC3339 formatted datetime string.
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The time the VbInstance was updated. An RFC3339 formatted datetime string.
      */
-    readonly timeUpdated: string;
+    readonly timeUpdated?: string;
     readonly vbInstanceId: string;
 }
 /**

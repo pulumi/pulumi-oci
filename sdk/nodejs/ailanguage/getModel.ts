@@ -36,27 +36,27 @@ export interface GetModelResult {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)  for the model's compartment.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * A short description of the Model.
      */
-    readonly description: string;
+    readonly description?: string;
     /**
      * A user-friendly display name for the resource. It does not have to be unique and can be modified. Avoid entering confidential information.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * model training results of different models
      */
-    readonly evaluationResults: outputs.AiLanguage.GetModelEvaluationResult[];
+    readonly evaluationResults?: outputs.AiLanguage.GetModelEvaluationResult[];
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * Unique identifier model OCID of a model that is immutable on creation
      */
@@ -64,43 +64,43 @@ export interface GetModelResult {
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in failed state.
      */
-    readonly lifecycleDetails: string;
+    readonly lifecycleDetails?: string;
     /**
      * Possible model types
      */
-    readonly modelDetails: outputs.AiLanguage.GetModelModelDetail[];
+    readonly modelDetails?: outputs.AiLanguage.GetModelModelDetail[];
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model.
      */
-    readonly projectId: string;
+    readonly projectId?: string;
     /**
      * The state of the model.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    readonly systemTags: {[key: string]: any};
+    readonly systemTags?: {[key: string]: any};
     /**
      * Possible strategy as testing and validation(optional) dataset.
      */
-    readonly testStrategies: outputs.AiLanguage.GetModelTestStrategy[];
+    readonly testStrategies?: outputs.AiLanguage.GetModelTestStrategy[];
     /**
      * The time the the model was created. An RFC3339 formatted datetime string.
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The time the model was updated. An RFC3339 formatted datetime string.
      */
-    readonly timeUpdated: string;
+    readonly timeUpdated?: string;
     /**
      * Possible data set type
      */
-    readonly trainingDatasets: outputs.AiLanguage.GetModelTrainingDataset[];
+    readonly trainingDatasets?: outputs.AiLanguage.GetModelTrainingDataset[];
     /**
      * For pre trained models this will identify model type version used for model creation For custom identifying the model by model id is difficult. This param provides ease of use for end customer. <<service>>::<<service-name>>_<<model-type-version>>::<<custom model on which this training has to be done>> ex: ai-lang::NER_V1::CUSTOM-V0
      */
-    readonly version: string;
+    readonly version?: string;
 }
 /**
  * This data source provides details about a specific Model resource in Oracle Cloud Infrastructure Ai Language service.

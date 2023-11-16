@@ -71,7 +71,7 @@ export class ExternalExadataStorageConnector extends pulumi.CustomResource {
     /**
      * The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
      */
-    public /*out*/ readonly additionalDetails!: pulumi.Output<{[key: string]: any}>;
+    public /*out*/ readonly additionalDetails!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the agent for the Exadata storage server.
      */
@@ -91,27 +91,27 @@ export class ExternalExadataStorageConnector extends pulumi.CustomResource {
     /**
      * The name of the Exadata resource. English letters, numbers, "-", "_" and "." only.
      */
-    public /*out*/ readonly displayName!: pulumi.Output<string>;
+    public /*out*/ readonly displayName!: pulumi.Output<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
      */
-    public /*out*/ readonly exadataInfrastructureId!: pulumi.Output<string>;
+    public /*out*/ readonly exadataInfrastructureId!: pulumi.Output<string | undefined>;
     /**
      * The internal ID of the Exadata resource.
      */
-    public /*out*/ readonly internalId!: pulumi.Output<string>;
+    public /*out*/ readonly internalId!: pulumi.Output<string | undefined>;
     /**
      * The details of the lifecycle state of the Exadata resource.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string | undefined>;
     /**
      * The current lifecycle state of the database resource.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * The status of the Exadata resource.
      */
-    public /*out*/ readonly status!: pulumi.Output<string>;
+    public /*out*/ readonly status!: pulumi.Output<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata storage server.
      *
@@ -123,15 +123,15 @@ export class ExternalExadataStorageConnector extends pulumi.CustomResource {
     /**
      * The timestamp of the creation of the Exadata resource.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * The timestamp of the last update of the Exadata resource.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    public /*out*/ readonly timeUpdated!: pulumi.Output<string | undefined>;
     /**
      * The version of the Exadata resource.
      */
-    public /*out*/ readonly version!: pulumi.Output<string>;
+    public /*out*/ readonly version!: pulumi.Output<string | undefined>;
 
     /**
      * Create a ExternalExadataStorageConnector resource with the given unique name, arguments, and options.

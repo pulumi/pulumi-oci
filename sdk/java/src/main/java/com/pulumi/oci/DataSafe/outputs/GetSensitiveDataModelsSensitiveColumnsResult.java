@@ -31,7 +31,7 @@ public final class GetSensitiveDataModelsSensitiveColumnsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private @Nullable Boolean isCaseInSensitive;
     /**
      * @return The type of the database object that contains the sensitive column.
@@ -58,7 +58,7 @@ public final class GetSensitiveDataModelsSensitiveColumnsResult {
      * @return The list of sensitive_column_collection.
      * 
      */
-    private List<GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollection> sensitiveColumnCollections;
+    private @Nullable List<GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollection> sensitiveColumnCollections;
     private @Nullable String sensitiveColumnLifecycleState;
     /**
      * @return The OCID of the sensitive data model that contains the sensitive column.
@@ -105,8 +105,8 @@ public final class GetSensitiveDataModelsSensitiveColumnsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public Optional<Boolean> isCaseInSensitive() {
         return Optional.ofNullable(this.isCaseInSensitive);
@@ -147,7 +147,7 @@ public final class GetSensitiveDataModelsSensitiveColumnsResult {
      * 
      */
     public List<GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollection> sensitiveColumnCollections() {
-        return this.sensitiveColumnCollections;
+        return this.sensitiveColumnCollections == null ? List.of() : this.sensitiveColumnCollections;
     }
     public Optional<String> sensitiveColumnLifecycleState() {
         return Optional.ofNullable(this.sensitiveColumnLifecycleState);
@@ -199,14 +199,14 @@ public final class GetSensitiveDataModelsSensitiveColumnsResult {
         private @Nullable List<String> columnNames;
         private @Nullable List<String> dataTypes;
         private @Nullable List<GetSensitiveDataModelsSensitiveColumnsFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable Boolean isCaseInSensitive;
         private @Nullable List<String> objectTypes;
         private @Nullable List<String> objects;
         private @Nullable List<String> parentColumnKeys;
         private @Nullable List<String> relationTypes;
         private @Nullable List<String> schemaNames;
-        private List<GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollection> sensitiveColumnCollections;
+        private @Nullable List<GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollection> sensitiveColumnCollections;
         private @Nullable String sensitiveColumnLifecycleState;
         private String sensitiveDataModelId;
         private @Nullable List<String> sensitiveTypeIds;
@@ -270,8 +270,8 @@ public final class GetSensitiveDataModelsSensitiveColumnsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -320,8 +320,8 @@ public final class GetSensitiveDataModelsSensitiveColumnsResult {
             return schemaNames(List.of(schemaNames));
         }
         @CustomType.Setter
-        public Builder sensitiveColumnCollections(List<GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollection> sensitiveColumnCollections) {
-            this.sensitiveColumnCollections = Objects.requireNonNull(sensitiveColumnCollections);
+        public Builder sensitiveColumnCollections(@Nullable List<GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollection> sensitiveColumnCollections) {
+            this.sensitiveColumnCollections = sensitiveColumnCollections;
             return this;
         }
         public Builder sensitiveColumnCollections(GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollection... sensitiveColumnCollections) {

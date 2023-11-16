@@ -16,23 +16,23 @@ namespace Pulumi.Oci.UsageProxy.Outputs
         /// <summary>
         /// The email ID of the user that can redeem rewards.
         /// </summary>
-        public readonly string EmailId;
+        public readonly string? EmailId;
         /// <summary>
         /// The first name of the user that can redeem rewards.
         /// </summary>
-        public readonly string FirstName;
+        public readonly string? FirstName;
         /// <summary>
         /// The last name of the user that can redeem rewards.
         /// </summary>
-        public readonly string LastName;
+        public readonly string? LastName;
 
         [OutputConstructor]
         private GetSubscriptionRedeemableUserItemResult(
-            string emailId,
+            string? emailId,
 
-            string firstName,
+            string? firstName,
 
-            string lastName)
+            string? lastName)
         {
             EmailId = emailId;
             FirstName = firstName;

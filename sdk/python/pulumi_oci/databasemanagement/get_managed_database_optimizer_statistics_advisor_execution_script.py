@@ -45,7 +45,7 @@ class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -58,10 +58,7 @@ class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptResult:
 
     @property
     @pulumi.getter
-    def script(self) -> str:
-        """
-        The Optimizer Statistics Advisor execution script.
-        """
+    def script(self) -> Optional[str]:
         return pulumi.get(self, "script")
 
     @property
@@ -88,25 +85,7 @@ def get_managed_database_optimizer_statistics_advisor_execution_script(execution
                                                                        task_name: Optional[str] = None,
                                                                        opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptResult:
     """
-    This data source provides details about a specific Managed Database Optimizer Statistics Advisor Execution Script resource in Oracle Cloud Infrastructure Database Management service.
-
-    Gets the Oracle system-generated script for the specified Optimizer Statistics Advisor execution.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_managed_database_optimizer_statistics_advisor_execution_script = oci.DatabaseManagement.get_managed_database_optimizer_statistics_advisor_execution_script(execution_name=var["managed_database_optimizer_statistics_advisor_execution_script_execution_name"],
-        managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"],
-        task_name=var["managed_database_optimizer_statistics_advisor_execution_script_task_name"])
-    ```
-
-
-    :param str execution_name: The name of the Optimizer Statistics Advisor execution.
-    :param str managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
-    :param str task_name: The name of the optimizer statistics collection execution task.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['executionName'] = execution_name
@@ -129,24 +108,6 @@ def get_managed_database_optimizer_statistics_advisor_execution_script_output(ex
                                                                               task_name: Optional[pulumi.Input[str]] = None,
                                                                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptResult]:
     """
-    This data source provides details about a specific Managed Database Optimizer Statistics Advisor Execution Script resource in Oracle Cloud Infrastructure Database Management service.
-
-    Gets the Oracle system-generated script for the specified Optimizer Statistics Advisor execution.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_managed_database_optimizer_statistics_advisor_execution_script = oci.DatabaseManagement.get_managed_database_optimizer_statistics_advisor_execution_script(execution_name=var["managed_database_optimizer_statistics_advisor_execution_script_execution_name"],
-        managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"],
-        task_name=var["managed_database_optimizer_statistics_advisor_execution_script_task_name"])
-    ```
-
-
-    :param str execution_name: The name of the Optimizer Statistics Advisor execution.
-    :param str managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
-    :param str task_name: The name of the optimizer statistics collection execution task.
+    Use this data source to access information about an existing resource.
     """
     ...

@@ -10,6 +10,8 @@ import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapability {
@@ -17,75 +19,75 @@ public final class GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabil
      * @return Override action to take if capability was triggered, defined in Protection Rule for this capability. Only actions of type CHECK are allowed.
      * 
      */
-    private String actionName;
+    private @Nullable String actionName;
     /**
      * @return The minimum sum of weights of associated collaborative protection capabilities that have triggered which must be reached in order for _this_ capability to trigger. This field is ignored for non-collaborative capabilities.
      * 
      */
-    private Integer collaborativeActionThreshold;
+    private @Nullable Integer collaborativeActionThreshold;
     /**
      * @return Explicit weight values to use for associated collaborative protection capabilities.
      * 
      */
-    private List<GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeight> collaborativeWeights;
+    private @Nullable List<GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeight> collaborativeWeights;
     /**
      * @return Identifies specific HTTP message parameters to exclude from inspection by a protection capability.
      * 
      */
-    private List<GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusion> exclusions;
+    private @Nullable List<GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusion> exclusions;
     /**
      * @return Unique key of referenced protection capability.
      * 
      */
-    private String key;
+    private @Nullable String key;
     /**
      * @return Version of referenced protection capability.
      * 
      */
-    private Integer version;
+    private @Nullable Integer version;
 
     private GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapability() {}
     /**
      * @return Override action to take if capability was triggered, defined in Protection Rule for this capability. Only actions of type CHECK are allowed.
      * 
      */
-    public String actionName() {
-        return this.actionName;
+    public Optional<String> actionName() {
+        return Optional.ofNullable(this.actionName);
     }
     /**
      * @return The minimum sum of weights of associated collaborative protection capabilities that have triggered which must be reached in order for _this_ capability to trigger. This field is ignored for non-collaborative capabilities.
      * 
      */
-    public Integer collaborativeActionThreshold() {
-        return this.collaborativeActionThreshold;
+    public Optional<Integer> collaborativeActionThreshold() {
+        return Optional.ofNullable(this.collaborativeActionThreshold);
     }
     /**
      * @return Explicit weight values to use for associated collaborative protection capabilities.
      * 
      */
     public List<GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeight> collaborativeWeights() {
-        return this.collaborativeWeights;
+        return this.collaborativeWeights == null ? List.of() : this.collaborativeWeights;
     }
     /**
      * @return Identifies specific HTTP message parameters to exclude from inspection by a protection capability.
      * 
      */
     public List<GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusion> exclusions() {
-        return this.exclusions;
+        return this.exclusions == null ? List.of() : this.exclusions;
     }
     /**
      * @return Unique key of referenced protection capability.
      * 
      */
-    public String key() {
-        return this.key;
+    public Optional<String> key() {
+        return Optional.ofNullable(this.key);
     }
     /**
      * @return Version of referenced protection capability.
      * 
      */
-    public Integer version() {
-        return this.version;
+    public Optional<Integer> version() {
+        return Optional.ofNullable(this.version);
     }
 
     public static Builder builder() {
@@ -97,12 +99,12 @@ public final class GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabil
     }
     @CustomType.Builder
     public static final class Builder {
-        private String actionName;
-        private Integer collaborativeActionThreshold;
-        private List<GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeight> collaborativeWeights;
-        private List<GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusion> exclusions;
-        private String key;
-        private Integer version;
+        private @Nullable String actionName;
+        private @Nullable Integer collaborativeActionThreshold;
+        private @Nullable List<GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeight> collaborativeWeights;
+        private @Nullable List<GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusion> exclusions;
+        private @Nullable String key;
+        private @Nullable Integer version;
         public Builder() {}
         public Builder(GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapability defaults) {
     	      Objects.requireNonNull(defaults);
@@ -115,39 +117,39 @@ public final class GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabil
         }
 
         @CustomType.Setter
-        public Builder actionName(String actionName) {
-            this.actionName = Objects.requireNonNull(actionName);
+        public Builder actionName(@Nullable String actionName) {
+            this.actionName = actionName;
             return this;
         }
         @CustomType.Setter
-        public Builder collaborativeActionThreshold(Integer collaborativeActionThreshold) {
-            this.collaborativeActionThreshold = Objects.requireNonNull(collaborativeActionThreshold);
+        public Builder collaborativeActionThreshold(@Nullable Integer collaborativeActionThreshold) {
+            this.collaborativeActionThreshold = collaborativeActionThreshold;
             return this;
         }
         @CustomType.Setter
-        public Builder collaborativeWeights(List<GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeight> collaborativeWeights) {
-            this.collaborativeWeights = Objects.requireNonNull(collaborativeWeights);
+        public Builder collaborativeWeights(@Nullable List<GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeight> collaborativeWeights) {
+            this.collaborativeWeights = collaborativeWeights;
             return this;
         }
         public Builder collaborativeWeights(GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeight... collaborativeWeights) {
             return collaborativeWeights(List.of(collaborativeWeights));
         }
         @CustomType.Setter
-        public Builder exclusions(List<GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusion> exclusions) {
-            this.exclusions = Objects.requireNonNull(exclusions);
+        public Builder exclusions(@Nullable List<GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusion> exclusions) {
+            this.exclusions = exclusions;
             return this;
         }
         public Builder exclusions(GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusion... exclusions) {
             return exclusions(List.of(exclusions));
         }
         @CustomType.Setter
-        public Builder key(String key) {
-            this.key = Objects.requireNonNull(key);
+        public Builder key(@Nullable String key) {
+            this.key = key;
             return this;
         }
         @CustomType.Setter
-        public Builder version(Integer version) {
-            this.version = Objects.requireNonNull(version);
+        public Builder version(@Nullable Integer version) {
+            this.version = version;
             return this;
         }
         public GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapability build() {

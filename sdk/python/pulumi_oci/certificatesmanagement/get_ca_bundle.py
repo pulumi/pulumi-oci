@@ -63,79 +63,52 @@ class GetCaBundleResult:
 
     @property
     @pulumi.getter(name="caBundlePem")
-    def ca_bundle_pem(self) -> str:
+    def ca_bundle_pem(self) -> Optional[str]:
         return pulumi.get(self, "ca_bundle_pem")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The OCID of the compartment for the CA bundle.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        A brief description of the CA bundle.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The OCID of the CA bundle.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        Additional information about the current lifecycle state of the CA bundle.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        A user-friendly name for the CA bundle. Names are unique within a compartment. Avoid entering confidential information. Valid characters include uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current lifecycle state of the CA bundle.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        A property indicating when the CA bundle was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
 
@@ -161,21 +134,7 @@ class AwaitableGetCaBundleResult(GetCaBundleResult):
 def get_ca_bundle(ca_bundle_id: Optional[str] = None,
                   opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetCaBundleResult:
     """
-    This data source provides details about a specific Ca Bundle resource in Oracle Cloud Infrastructure Certificates Management service.
-
-    Gets details about the specified CA bundle.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_ca_bundle = oci.CertificatesManagement.get_ca_bundle(ca_bundle_id=oci_certificates_management_ca_bundle["test_ca_bundle"]["id"])
-    ```
-
-
-    :param str ca_bundle_id: The OCID of the CA bundle.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['caBundleId'] = ca_bundle_id
@@ -200,20 +159,6 @@ def get_ca_bundle(ca_bundle_id: Optional[str] = None,
 def get_ca_bundle_output(ca_bundle_id: Optional[pulumi.Input[str]] = None,
                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCaBundleResult]:
     """
-    This data source provides details about a specific Ca Bundle resource in Oracle Cloud Infrastructure Certificates Management service.
-
-    Gets details about the specified CA bundle.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_ca_bundle = oci.CertificatesManagement.get_ca_bundle(ca_bundle_id=oci_certificates_management_ca_bundle["test_ca_bundle"]["id"])
-    ```
-
-
-    :param str ca_bundle_id: The OCID of the CA bundle.
+    Use this data source to access information about an existing resource.
     """
     ...

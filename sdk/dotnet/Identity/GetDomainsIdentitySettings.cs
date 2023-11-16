@@ -192,20 +192,20 @@ namespace Pulumi.Oci.Identity
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         public readonly string IdcsEndpoint;
         /// <summary>
         /// The list of identity_settings.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDomainsIdentitySettingsIdentitySettingResult> IdentitySettings;
-        public readonly int ItemsPerPage;
+        public readonly int? ItemsPerPage;
         public readonly string? ResourceTypeSchemaVersion;
         /// <summary>
         /// REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
         /// </summary>
         public readonly ImmutableArray<string> Schemas;
-        public readonly int StartIndex;
-        public readonly int TotalResults;
+        public readonly int? StartIndex;
+        public readonly int? TotalResults;
 
         [OutputConstructor]
         private GetDomainsIdentitySettingsResult(
@@ -217,21 +217,21 @@ namespace Pulumi.Oci.Identity
 
             string? compartmentId,
 
-            string id,
+            string? id,
 
             string idcsEndpoint,
 
             ImmutableArray<Outputs.GetDomainsIdentitySettingsIdentitySettingResult> identitySettings,
 
-            int itemsPerPage,
+            int? itemsPerPage,
 
             string? resourceTypeSchemaVersion,
 
             ImmutableArray<string> schemas,
 
-            int startIndex,
+            int? startIndex,
 
-            int totalResults)
+            int? totalResults)
         {
             AttributeSets = attributeSets;
             Attributes = attributes;

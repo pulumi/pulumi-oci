@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Double;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetTopUtilizedResourcesItem {
@@ -14,75 +16,75 @@ public final class GetTopUtilizedResourcesItem {
      * @return The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that contains the resource.
      * 
      */
-    private String resourceCompartmentId;
+    private @Nullable String resourceCompartmentId;
     /**
      * @return The display name of the compartment that contains the resource.
      * 
      */
-    private String resourceCompartmentName;
+    private @Nullable String resourceCompartmentName;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
      * 
      */
-    private String resourceId;
+    private @Nullable String resourceId;
     /**
      * @return Resource canonical name.
      * 
      */
-    private String resourceName;
+    private @Nullable String resourceName;
     /**
      * @return Number of license units consumed by the resource.
      * 
      */
-    private Double totalUnits;
+    private @Nullable Double totalUnits;
     /**
      * @return The resource unit.
      * 
      */
-    private String unitType;
+    private @Nullable String unitType;
 
     private GetTopUtilizedResourcesItem() {}
     /**
      * @return The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that contains the resource.
      * 
      */
-    public String resourceCompartmentId() {
-        return this.resourceCompartmentId;
+    public Optional<String> resourceCompartmentId() {
+        return Optional.ofNullable(this.resourceCompartmentId);
     }
     /**
      * @return The display name of the compartment that contains the resource.
      * 
      */
-    public String resourceCompartmentName() {
-        return this.resourceCompartmentName;
+    public Optional<String> resourceCompartmentName() {
+        return Optional.ofNullable(this.resourceCompartmentName);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
      * 
      */
-    public String resourceId() {
-        return this.resourceId;
+    public Optional<String> resourceId() {
+        return Optional.ofNullable(this.resourceId);
     }
     /**
      * @return Resource canonical name.
      * 
      */
-    public String resourceName() {
-        return this.resourceName;
+    public Optional<String> resourceName() {
+        return Optional.ofNullable(this.resourceName);
     }
     /**
      * @return Number of license units consumed by the resource.
      * 
      */
-    public Double totalUnits() {
-        return this.totalUnits;
+    public Optional<Double> totalUnits() {
+        return Optional.ofNullable(this.totalUnits);
     }
     /**
      * @return The resource unit.
      * 
      */
-    public String unitType() {
-        return this.unitType;
+    public Optional<String> unitType() {
+        return Optional.ofNullable(this.unitType);
     }
 
     public static Builder builder() {
@@ -94,12 +96,12 @@ public final class GetTopUtilizedResourcesItem {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String resourceCompartmentId;
-        private String resourceCompartmentName;
-        private String resourceId;
-        private String resourceName;
-        private Double totalUnits;
-        private String unitType;
+        private @Nullable String resourceCompartmentId;
+        private @Nullable String resourceCompartmentName;
+        private @Nullable String resourceId;
+        private @Nullable String resourceName;
+        private @Nullable Double totalUnits;
+        private @Nullable String unitType;
         public Builder() {}
         public Builder(GetTopUtilizedResourcesItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -112,33 +114,33 @@ public final class GetTopUtilizedResourcesItem {
         }
 
         @CustomType.Setter
-        public Builder resourceCompartmentId(String resourceCompartmentId) {
-            this.resourceCompartmentId = Objects.requireNonNull(resourceCompartmentId);
+        public Builder resourceCompartmentId(@Nullable String resourceCompartmentId) {
+            this.resourceCompartmentId = resourceCompartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder resourceCompartmentName(String resourceCompartmentName) {
-            this.resourceCompartmentName = Objects.requireNonNull(resourceCompartmentName);
+        public Builder resourceCompartmentName(@Nullable String resourceCompartmentName) {
+            this.resourceCompartmentName = resourceCompartmentName;
             return this;
         }
         @CustomType.Setter
-        public Builder resourceId(String resourceId) {
-            this.resourceId = Objects.requireNonNull(resourceId);
+        public Builder resourceId(@Nullable String resourceId) {
+            this.resourceId = resourceId;
             return this;
         }
         @CustomType.Setter
-        public Builder resourceName(String resourceName) {
-            this.resourceName = Objects.requireNonNull(resourceName);
+        public Builder resourceName(@Nullable String resourceName) {
+            this.resourceName = resourceName;
             return this;
         }
         @CustomType.Setter
-        public Builder totalUnits(Double totalUnits) {
-            this.totalUnits = Objects.requireNonNull(totalUnits);
+        public Builder totalUnits(@Nullable Double totalUnits) {
+            this.totalUnits = totalUnits;
             return this;
         }
         @CustomType.Setter
-        public Builder unitType(String unitType) {
-            this.unitType = Objects.requireNonNull(unitType);
+        public Builder unitType(@Nullable String unitType) {
+            this.unitType = unitType;
             return this;
         }
         public GetTopUtilizedResourcesItem build() {

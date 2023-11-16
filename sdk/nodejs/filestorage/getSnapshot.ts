@@ -45,43 +45,43 @@ export interface GetSnapshotResult {
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * The time when this snapshot will be deleted.
      */
-    readonly expirationTime: string;
+    readonly expirationTime?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system from which the snapshot was created.
      */
-    readonly fileSystemId: string;
+    readonly fileSystemId?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system snapshot policy that created this snapshot.
      */
-    readonly filesystemSnapshotPolicyId: string;
+    readonly filesystemSnapshotPolicyId?: string;
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Specifies whether the snapshot has been cloned. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
      */
-    readonly isCloneSource: boolean;
+    readonly isCloneSource?: boolean;
     /**
      * Additional information about the current `lifecycleState`.
      */
-    readonly lifecycleDetails: string;
+    readonly lifecycleDetails?: string;
     /**
      * Name of the snapshot. This value is immutable.
      */
-    readonly name: string;
+    readonly name?: string;
     /**
      * An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) identifying the parent from which this snapshot was cloned. If this snapshot was not cloned, then the `provenanceId` is the same as the snapshot `id` value. If this snapshot was cloned, then the `provenanceId` value is the parent's `provenanceId`. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
      */
-    readonly provenanceId: string;
+    readonly provenanceId?: string;
     readonly snapshotId: string;
     /**
      * The date and time the snapshot was taken, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. This value might be the same or different from `timeCreated` depending on the following factors:
@@ -89,19 +89,19 @@ export interface GetSnapshotResult {
      * * If the snapshot is cloned from a file system.
      * * If the snapshot is replicated from a file system.
      */
-    readonly snapshotTime: string;
+    readonly snapshotTime?: string;
     /**
      * Specifies the generation type of the snapshot.
      */
-    readonly snapshotType: string;
+    readonly snapshotType?: string;
     /**
      * The current state of the snapshot.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * The date and time the snapshot was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
 }
 /**
  * This data source provides details about a specific Snapshot resource in Oracle Cloud Infrastructure File Storage service.

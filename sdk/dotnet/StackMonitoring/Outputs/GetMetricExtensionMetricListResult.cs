@@ -16,53 +16,53 @@ namespace Pulumi.Oci.StackMonitoring.Outputs
         /// <summary>
         /// Compute Expression to calculate the value of this metric
         /// </summary>
-        public readonly string ComputeExpression;
+        public readonly string? ComputeExpression;
         /// <summary>
         /// Data type of value of this metric
         /// </summary>
-        public readonly string DataType;
+        public readonly string? DataType;
         /// <summary>
         /// Display name of the metric.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// Current metric need to be included as dimension or not
         /// </summary>
-        public readonly bool IsDimension;
+        public readonly bool? IsDimension;
         /// <summary>
         /// Flag to marks whether a metric has to be uploaded or not. When isHidden = false &gt; Metric is uploaded, isHidden = true &gt; Metric is NOT uploaded
         /// </summary>
-        public readonly bool IsHidden;
+        public readonly bool? IsHidden;
         /// <summary>
         /// Metric category
         /// </summary>
-        public readonly string MetricCategory;
+        public readonly string? MetricCategory;
         /// <summary>
         /// Name of the script file
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// Unit of metric value
         /// </summary>
-        public readonly string Unit;
+        public readonly string? Unit;
 
         [OutputConstructor]
         private GetMetricExtensionMetricListResult(
-            string computeExpression,
+            string? computeExpression,
 
-            string dataType,
+            string? dataType,
 
-            string displayName,
+            string? displayName,
 
-            bool isDimension,
+            bool? isDimension,
 
-            bool isHidden,
+            bool? isHidden,
 
-            string metricCategory,
+            string? metricCategory,
 
-            string name,
+            string? name,
 
-            string unit)
+            string? unit)
         {
             ComputeExpression = computeExpression;
             DataType = dataType;

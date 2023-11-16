@@ -12,7 +12,7 @@ namespace Pulumi.Oci.StackMonitoring.Inputs
 
     public sealed class GetBaselineableMetricsEvaluateItemArgs : global::Pulumi.InvokeArgs
     {
-        [Input("dataPoints", required: true)]
+        [Input("dataPoints")]
         private List<Inputs.GetBaselineableMetricsEvaluateItemDataPointArgs>? _dataPoints;
 
         /// <summary>
@@ -24,7 +24,7 @@ namespace Pulumi.Oci.StackMonitoring.Inputs
             set => _dataPoints = value;
         }
 
-        [Input("dimensions", required: true)]
+        [Input("dimensions")]
         private Dictionary<string, object>? _dimensions;
 
         /// <summary>

@@ -16,19 +16,19 @@ namespace Pulumi.Oci.CloudBridge.Outputs
         /// <summary>
         /// Number of connected networks.
         /// </summary>
-        public readonly int ConnectedNetworks;
+        public readonly int? ConnectedNetworks;
         /// <summary>
         /// Number of GPU cores.
         /// </summary>
-        public readonly int CoresCount;
+        public readonly int? CoresCount;
         /// <summary>
         /// CPU model name.
         /// </summary>
-        public readonly string CpuModel;
+        public readonly string? CpuModel;
         /// <summary>
         /// The tag description.
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// Lists the set of disks belonging to the virtual machine. This list is unordered.
         /// </summary>
@@ -36,15 +36,15 @@ namespace Pulumi.Oci.CloudBridge.Outputs
         /// <summary>
         /// Number of disks.
         /// </summary>
-        public readonly int DisksCount;
+        public readonly int? DisksCount;
         /// <summary>
         /// Fully Qualified DNS Name.
         /// </summary>
-        public readonly string DnsName;
+        public readonly string? DnsName;
         /// <summary>
         /// Information about firmware type for this virtual machine.
         /// </summary>
-        public readonly string Firmware;
+        public readonly string? Firmware;
         /// <summary>
         /// List of GPU devices attached to a virtual machine.
         /// </summary>
@@ -52,35 +52,35 @@ namespace Pulumi.Oci.CloudBridge.Outputs
         /// <summary>
         /// Number of GPU devices.
         /// </summary>
-        public readonly int GpuDevicesCount;
+        public readonly int? GpuDevicesCount;
         /// <summary>
         /// Guest state.
         /// </summary>
-        public readonly string GuestState;
+        public readonly string? GuestState;
         /// <summary>
         /// Hardware version.
         /// </summary>
-        public readonly string HardwareVersion;
+        public readonly string? HardwareVersion;
         /// <summary>
         /// Host name of the VM.
         /// </summary>
-        public readonly string HostName;
+        public readonly string? HostName;
         /// <summary>
         /// Whether Pmem is enabled. Decides if NVDIMMs are used as a permanent memory.
         /// </summary>
-        public readonly bool IsPmemEnabled;
+        public readonly bool? IsPmemEnabled;
         /// <summary>
         /// Whether Trusted Platform Module (TPM) is enabled.
         /// </summary>
-        public readonly bool IsTpmEnabled;
+        public readonly bool? IsTpmEnabled;
         /// <summary>
         /// Latency sensitivity.
         /// </summary>
-        public readonly string LatencySensitivity;
+        public readonly string? LatencySensitivity;
         /// <summary>
         /// Memory size in MBs.
         /// </summary>
-        public readonly string MemoryInMbs;
+        public readonly string? MemoryInMbs;
         /// <summary>
         /// List of network ethernet cards attached to a virtual machine.
         /// </summary>
@@ -88,7 +88,7 @@ namespace Pulumi.Oci.CloudBridge.Outputs
         /// <summary>
         /// Number of network ethernet cards.
         /// </summary>
-        public readonly int NicsCount;
+        public readonly int? NicsCount;
         /// <summary>
         /// The asset's NVDIMM configuration.
         /// </summary>
@@ -100,23 +100,23 @@ namespace Pulumi.Oci.CloudBridge.Outputs
         /// <summary>
         /// Operating system.
         /// </summary>
-        public readonly string OperatingSystem;
+        public readonly string? OperatingSystem;
         /// <summary>
         /// Operating system version.
         /// </summary>
-        public readonly string OperatingSystemVersion;
+        public readonly string? OperatingSystemVersion;
         /// <summary>
         /// Pmem size in MBs.
         /// </summary>
-        public readonly string PmemInMbs;
+        public readonly string? PmemInMbs;
         /// <summary>
         /// The current power state of the virtual machine.
         /// </summary>
-        public readonly string PowerState;
+        public readonly string? PowerState;
         /// <summary>
         /// Primary IP address of the compute instance.
         /// </summary>
-        public readonly string PrimaryIp;
+        public readonly string? PrimaryIp;
         /// <summary>
         /// The assets SCSI controller.
         /// </summary>
@@ -124,71 +124,71 @@ namespace Pulumi.Oci.CloudBridge.Outputs
         /// <summary>
         /// Provision storage size in MBs.
         /// </summary>
-        public readonly string StorageProvisionedInMbs;
+        public readonly string? StorageProvisionedInMbs;
         /// <summary>
         /// Number of threads per core.
         /// </summary>
-        public readonly int ThreadsPerCoreCount;
+        public readonly int? ThreadsPerCoreCount;
 
         [OutputConstructor]
         private GetAssetComputeResult(
-            int connectedNetworks,
+            int? connectedNetworks,
 
-            int coresCount,
+            int? coresCount,
 
-            string cpuModel,
+            string? cpuModel,
 
-            string description,
+            string? description,
 
             ImmutableArray<Outputs.GetAssetComputeDiskResult> disks,
 
-            int disksCount,
+            int? disksCount,
 
-            string dnsName,
+            string? dnsName,
 
-            string firmware,
+            string? firmware,
 
             ImmutableArray<Outputs.GetAssetComputeGpuDeviceResult> gpuDevices,
 
-            int gpuDevicesCount,
+            int? gpuDevicesCount,
 
-            string guestState,
+            string? guestState,
 
-            string hardwareVersion,
+            string? hardwareVersion,
 
-            string hostName,
+            string? hostName,
 
-            bool isPmemEnabled,
+            bool? isPmemEnabled,
 
-            bool isTpmEnabled,
+            bool? isTpmEnabled,
 
-            string latencySensitivity,
+            string? latencySensitivity,
 
-            string memoryInMbs,
+            string? memoryInMbs,
 
             ImmutableArray<Outputs.GetAssetComputeNicResult> nics,
 
-            int nicsCount,
+            int? nicsCount,
 
             ImmutableArray<Outputs.GetAssetComputeNvdimmControllerResult> nvdimmControllers,
 
             ImmutableArray<Outputs.GetAssetComputeNvdimmResult> nvdimms,
 
-            string operatingSystem,
+            string? operatingSystem,
 
-            string operatingSystemVersion,
+            string? operatingSystemVersion,
 
-            string pmemInMbs,
+            string? pmemInMbs,
 
-            string powerState,
+            string? powerState,
 
-            string primaryIp,
+            string? primaryIp,
 
             ImmutableArray<Outputs.GetAssetComputeScsiControllerResult> scsiControllers,
 
-            string storageProvisionedInMbs,
+            string? storageProvisionedInMbs,
 
-            int threadsPerCoreCount)
+            int? threadsPerCoreCount)
         {
             ConnectedNetworks = connectedNetworks;
             CoresCount = coresCount;

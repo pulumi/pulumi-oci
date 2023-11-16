@@ -125,7 +125,7 @@ namespace Pulumi.Oci.LoadBalancer
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         public readonly string LoadBalancerId;
         /// <summary>
         /// The list of ssl_cipher_suites.
@@ -136,7 +136,7 @@ namespace Pulumi.Oci.LoadBalancer
         private GetSslCipherSuitesResult(
             ImmutableArray<Outputs.GetSslCipherSuitesFilterResult> filters,
 
-            string id,
+            string? id,
 
             string loadBalancerId,
 

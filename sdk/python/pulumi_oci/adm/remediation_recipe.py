@@ -29,21 +29,6 @@ class RemediationRecipeArgs:
                  state: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a RemediationRecipe resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The compartment Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the remediation recipe.
-        :param pulumi.Input['RemediationRecipeDetectConfigurationArgs'] detect_configuration: (Updatable) A configuration to define the constraints when detecting vulnerable dependencies.
-        :param pulumi.Input[bool] is_run_triggered_on_kb_change: (Updatable) Boolean indicating if a run should be automatically triggered once the knowledge base is updated.
-        :param pulumi.Input[str] knowledge_base_id: (Updatable) The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the knowledge base.
-        :param pulumi.Input['RemediationRecipeNetworkConfigurationArgs'] network_configuration: (Updatable) A network configuration defines the required network characteristics for an ADM remediation recipe. A network configuration is required if the build service is one of: GitHub Actions, GitLab Pipeline, or Jenkins Pipeline.
-        :param pulumi.Input['RemediationRecipeScmConfigurationArgs'] scm_configuration: (Updatable) A configuration for the Source Code Management tool/platform used by a remediation recipe.
-        :param pulumi.Input['RemediationRecipeVerifyConfigurationArgs'] verify_configuration: (Updatable) The Verify stage configuration specifies a build service to run a pipeline for the recommended code changes. The build pipeline will be initiated to ensure that there is no breaking change after the dependency versions have been updated in source to avoid vulnerabilities.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] display_name: (Updatable) The name of the remediation recipe.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] state: (Updatable) The target state for the Remediation Recipe. Could be set to `ACTIVE` or `INACTIVE`. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "detect_configuration", detect_configuration)
@@ -64,9 +49,6 @@ class RemediationRecipeArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The compartment Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the remediation recipe.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -76,9 +58,6 @@ class RemediationRecipeArgs:
     @property
     @pulumi.getter(name="detectConfiguration")
     def detect_configuration(self) -> pulumi.Input['RemediationRecipeDetectConfigurationArgs']:
-        """
-        (Updatable) A configuration to define the constraints when detecting vulnerable dependencies.
-        """
         return pulumi.get(self, "detect_configuration")
 
     @detect_configuration.setter
@@ -88,9 +67,6 @@ class RemediationRecipeArgs:
     @property
     @pulumi.getter(name="isRunTriggeredOnKbChange")
     def is_run_triggered_on_kb_change(self) -> pulumi.Input[bool]:
-        """
-        (Updatable) Boolean indicating if a run should be automatically triggered once the knowledge base is updated.
-        """
         return pulumi.get(self, "is_run_triggered_on_kb_change")
 
     @is_run_triggered_on_kb_change.setter
@@ -100,9 +76,6 @@ class RemediationRecipeArgs:
     @property
     @pulumi.getter(name="knowledgeBaseId")
     def knowledge_base_id(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the knowledge base.
-        """
         return pulumi.get(self, "knowledge_base_id")
 
     @knowledge_base_id.setter
@@ -112,9 +85,6 @@ class RemediationRecipeArgs:
     @property
     @pulumi.getter(name="networkConfiguration")
     def network_configuration(self) -> pulumi.Input['RemediationRecipeNetworkConfigurationArgs']:
-        """
-        (Updatable) A network configuration defines the required network characteristics for an ADM remediation recipe. A network configuration is required if the build service is one of: GitHub Actions, GitLab Pipeline, or Jenkins Pipeline.
-        """
         return pulumi.get(self, "network_configuration")
 
     @network_configuration.setter
@@ -124,9 +94,6 @@ class RemediationRecipeArgs:
     @property
     @pulumi.getter(name="scmConfiguration")
     def scm_configuration(self) -> pulumi.Input['RemediationRecipeScmConfigurationArgs']:
-        """
-        (Updatable) A configuration for the Source Code Management tool/platform used by a remediation recipe.
-        """
         return pulumi.get(self, "scm_configuration")
 
     @scm_configuration.setter
@@ -136,9 +103,6 @@ class RemediationRecipeArgs:
     @property
     @pulumi.getter(name="verifyConfiguration")
     def verify_configuration(self) -> pulumi.Input['RemediationRecipeVerifyConfigurationArgs']:
-        """
-        (Updatable) The Verify stage configuration specifies a build service to run a pipeline for the recommended code changes. The build pipeline will be initiated to ensure that there is no breaking change after the dependency versions have been updated in source to avoid vulnerabilities.
-        """
         return pulumi.get(self, "verify_configuration")
 
     @verify_configuration.setter
@@ -148,9 +112,6 @@ class RemediationRecipeArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -160,9 +121,6 @@ class RemediationRecipeArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The name of the remediation recipe.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -172,9 +130,6 @@ class RemediationRecipeArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -184,13 +139,6 @@ class RemediationRecipeArgs:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The target state for the Remediation Recipe. Could be set to `ACTIVE` or `INACTIVE`. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -217,24 +165,6 @@ class _RemediationRecipeState:
                  verify_configuration: Optional[pulumi.Input['RemediationRecipeVerifyConfigurationArgs']] = None):
         """
         Input properties used for looking up and filtering RemediationRecipe resources.
-        :param pulumi.Input[str] compartment_id: (Updatable) The compartment Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the remediation recipe.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input['RemediationRecipeDetectConfigurationArgs'] detect_configuration: (Updatable) A configuration to define the constraints when detecting vulnerable dependencies.
-        :param pulumi.Input[str] display_name: (Updatable) The name of the remediation recipe.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[bool] is_run_triggered_on_kb_change: (Updatable) Boolean indicating if a run should be automatically triggered once the knowledge base is updated.
-        :param pulumi.Input[str] knowledge_base_id: (Updatable) The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the knowledge base.
-        :param pulumi.Input['RemediationRecipeNetworkConfigurationArgs'] network_configuration: (Updatable) A network configuration defines the required network characteristics for an ADM remediation recipe. A network configuration is required if the build service is one of: GitHub Actions, GitLab Pipeline, or Jenkins Pipeline.
-        :param pulumi.Input['RemediationRecipeScmConfigurationArgs'] scm_configuration: (Updatable) A configuration for the Source Code Management tool/platform used by a remediation recipe.
-        :param pulumi.Input[str] state: (Updatable) The target state for the Remediation Recipe. Could be set to `ACTIVE` or `INACTIVE`. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[str] time_created: The creation date and time of the Remediation Recipe (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-        :param pulumi.Input[str] time_updated: The date and time the Remediation Recipe was last updated (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-        :param pulumi.Input['RemediationRecipeVerifyConfigurationArgs'] verify_configuration: (Updatable) The Verify stage configuration specifies a build service to run a pipeline for the recommended code changes. The build pipeline will be initiated to ensure that there is no breaking change after the dependency versions have been updated in source to avoid vulnerabilities.
         """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
@@ -268,9 +198,6 @@ class _RemediationRecipeState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The compartment Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the remediation recipe.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -280,9 +207,6 @@ class _RemediationRecipeState:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -292,9 +216,6 @@ class _RemediationRecipeState:
     @property
     @pulumi.getter(name="detectConfiguration")
     def detect_configuration(self) -> Optional[pulumi.Input['RemediationRecipeDetectConfigurationArgs']]:
-        """
-        (Updatable) A configuration to define the constraints when detecting vulnerable dependencies.
-        """
         return pulumi.get(self, "detect_configuration")
 
     @detect_configuration.setter
@@ -304,9 +225,6 @@ class _RemediationRecipeState:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The name of the remediation recipe.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -316,9 +234,6 @@ class _RemediationRecipeState:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -328,9 +243,6 @@ class _RemediationRecipeState:
     @property
     @pulumi.getter(name="isRunTriggeredOnKbChange")
     def is_run_triggered_on_kb_change(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Boolean indicating if a run should be automatically triggered once the knowledge base is updated.
-        """
         return pulumi.get(self, "is_run_triggered_on_kb_change")
 
     @is_run_triggered_on_kb_change.setter
@@ -340,9 +252,6 @@ class _RemediationRecipeState:
     @property
     @pulumi.getter(name="knowledgeBaseId")
     def knowledge_base_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the knowledge base.
-        """
         return pulumi.get(self, "knowledge_base_id")
 
     @knowledge_base_id.setter
@@ -352,9 +261,6 @@ class _RemediationRecipeState:
     @property
     @pulumi.getter(name="networkConfiguration")
     def network_configuration(self) -> Optional[pulumi.Input['RemediationRecipeNetworkConfigurationArgs']]:
-        """
-        (Updatable) A network configuration defines the required network characteristics for an ADM remediation recipe. A network configuration is required if the build service is one of: GitHub Actions, GitLab Pipeline, or Jenkins Pipeline.
-        """
         return pulumi.get(self, "network_configuration")
 
     @network_configuration.setter
@@ -364,9 +270,6 @@ class _RemediationRecipeState:
     @property
     @pulumi.getter(name="scmConfiguration")
     def scm_configuration(self) -> Optional[pulumi.Input['RemediationRecipeScmConfigurationArgs']]:
-        """
-        (Updatable) A configuration for the Source Code Management tool/platform used by a remediation recipe.
-        """
         return pulumi.get(self, "scm_configuration")
 
     @scm_configuration.setter
@@ -376,13 +279,6 @@ class _RemediationRecipeState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The target state for the Remediation Recipe. Could be set to `ACTIVE` or `INACTIVE`. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -392,9 +288,6 @@ class _RemediationRecipeState:
     @property
     @pulumi.getter(name="systemTags")
     def system_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
@@ -404,9 +297,6 @@ class _RemediationRecipeState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The creation date and time of the Remediation Recipe (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -416,9 +306,6 @@ class _RemediationRecipeState:
     @property
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time the Remediation Recipe was last updated (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-        """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
@@ -428,9 +315,6 @@ class _RemediationRecipeState:
     @property
     @pulumi.getter(name="verifyConfiguration")
     def verify_configuration(self) -> Optional[pulumi.Input['RemediationRecipeVerifyConfigurationArgs']]:
-        """
-        (Updatable) The Verify stage configuration specifies a build service to run a pipeline for the recommended code changes. The build pipeline will be initiated to ensure that there is no breaking change after the dependency versions have been updated in source to avoid vulnerabilities.
-        """
         return pulumi.get(self, "verify_configuration")
 
     @verify_configuration.setter
@@ -456,87 +340,9 @@ class RemediationRecipe(pulumi.CustomResource):
                  verify_configuration: Optional[pulumi.Input[pulumi.InputType['RemediationRecipeVerifyConfigurationArgs']]] = None,
                  __props__=None):
         """
-        This resource provides the Remediation Recipe resource in Oracle Cloud Infrastructure Adm service.
-
-        Creates a new Remediation Recipe.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_remediation_recipe = oci.adm.RemediationRecipe("testRemediationRecipe",
-            compartment_id=var["compartment_id"],
-            detect_configuration=oci.adm.RemediationRecipeDetectConfigurationArgs(
-                exclusions=var["remediation_recipe_detect_configuration_exclusions"],
-                max_permissible_cvss_v2score=var["remediation_recipe_detect_configuration_max_permissible_cvss_v2score"],
-                max_permissible_cvss_v3score=var["remediation_recipe_detect_configuration_max_permissible_cvss_v3score"],
-                upgrade_policy=var["remediation_recipe_detect_configuration_upgrade_policy"],
-            ),
-            is_run_triggered_on_kb_change=var["remediation_recipe_is_run_triggered_on_kb_change"],
-            knowledge_base_id=oci_adm_knowledge_base["test_knowledge_base"]["id"],
-            network_configuration=oci.adm.RemediationRecipeNetworkConfigurationArgs(
-                subnet_id=oci_core_subnet["test_subnet"]["id"],
-                nsg_ids=var["remediation_recipe_network_configuration_nsg_ids"],
-            ),
-            scm_configuration=oci.adm.RemediationRecipeScmConfigurationArgs(
-                branch=var["remediation_recipe_scm_configuration_branch"],
-                is_automerge_enabled=var["remediation_recipe_scm_configuration_is_automerge_enabled"],
-                scm_type=var["remediation_recipe_scm_configuration_scm_type"],
-                build_file_location=var["remediation_recipe_scm_configuration_build_file_location"],
-                external_scm_type=var["remediation_recipe_scm_configuration_external_scm_type"],
-                oci_code_repository_id=oci_artifacts_repository["test_repository"]["id"],
-                pat_secret_id=oci_vault_secret["test_secret"]["id"],
-                repository_url=var["remediation_recipe_scm_configuration_repository_url"],
-                username=var["remediation_recipe_scm_configuration_username"],
-            ),
-            verify_configuration=oci.adm.RemediationRecipeVerifyConfigurationArgs(
-                build_service_type=var["remediation_recipe_verify_configuration_build_service_type"],
-                additional_parameters=var["remediation_recipe_verify_configuration_additional_parameters"],
-                jenkins_url=var["remediation_recipe_verify_configuration_jenkins_url"],
-                job_name=oci_database_migration_job["test_job"]["name"],
-                pat_secret_id=oci_vault_secret["test_secret"]["id"],
-                pipeline_id=oci_datascience_pipeline["test_pipeline"]["id"],
-                repository_url=var["remediation_recipe_verify_configuration_repository_url"],
-                trigger_secret_id=oci_vault_secret["test_secret"]["id"],
-                username=var["remediation_recipe_verify_configuration_username"],
-                workflow_name=var["remediation_recipe_verify_configuration_workflow_name"],
-            ),
-            defined_tags={
-                "foo-namespace.bar-key": "value",
-            },
-            display_name=var["remediation_recipe_display_name"],
-            freeform_tags={
-                "bar-key": "value",
-            })
-        ```
-
-        ## Import
-
-        RemediationRecipes can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Adm/remediationRecipe:RemediationRecipe test_remediation_recipe "id"
-        ```
-
+        Create a RemediationRecipe resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The compartment Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the remediation recipe.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[pulumi.InputType['RemediationRecipeDetectConfigurationArgs']] detect_configuration: (Updatable) A configuration to define the constraints when detecting vulnerable dependencies.
-        :param pulumi.Input[str] display_name: (Updatable) The name of the remediation recipe.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[bool] is_run_triggered_on_kb_change: (Updatable) Boolean indicating if a run should be automatically triggered once the knowledge base is updated.
-        :param pulumi.Input[str] knowledge_base_id: (Updatable) The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the knowledge base.
-        :param pulumi.Input[pulumi.InputType['RemediationRecipeNetworkConfigurationArgs']] network_configuration: (Updatable) A network configuration defines the required network characteristics for an ADM remediation recipe. A network configuration is required if the build service is one of: GitHub Actions, GitLab Pipeline, or Jenkins Pipeline.
-        :param pulumi.Input[pulumi.InputType['RemediationRecipeScmConfigurationArgs']] scm_configuration: (Updatable) A configuration for the Source Code Management tool/platform used by a remediation recipe.
-        :param pulumi.Input[str] state: (Updatable) The target state for the Remediation Recipe. Could be set to `ACTIVE` or `INACTIVE`. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[pulumi.InputType['RemediationRecipeVerifyConfigurationArgs']] verify_configuration: (Updatable) The Verify stage configuration specifies a build service to run a pipeline for the recommended code changes. The build pipeline will be initiated to ensure that there is no breaking change after the dependency versions have been updated in source to avoid vulnerabilities.
         """
         ...
     @overload
@@ -545,70 +351,7 @@ class RemediationRecipe(pulumi.CustomResource):
                  args: RemediationRecipeArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Remediation Recipe resource in Oracle Cloud Infrastructure Adm service.
-
-        Creates a new Remediation Recipe.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_remediation_recipe = oci.adm.RemediationRecipe("testRemediationRecipe",
-            compartment_id=var["compartment_id"],
-            detect_configuration=oci.adm.RemediationRecipeDetectConfigurationArgs(
-                exclusions=var["remediation_recipe_detect_configuration_exclusions"],
-                max_permissible_cvss_v2score=var["remediation_recipe_detect_configuration_max_permissible_cvss_v2score"],
-                max_permissible_cvss_v3score=var["remediation_recipe_detect_configuration_max_permissible_cvss_v3score"],
-                upgrade_policy=var["remediation_recipe_detect_configuration_upgrade_policy"],
-            ),
-            is_run_triggered_on_kb_change=var["remediation_recipe_is_run_triggered_on_kb_change"],
-            knowledge_base_id=oci_adm_knowledge_base["test_knowledge_base"]["id"],
-            network_configuration=oci.adm.RemediationRecipeNetworkConfigurationArgs(
-                subnet_id=oci_core_subnet["test_subnet"]["id"],
-                nsg_ids=var["remediation_recipe_network_configuration_nsg_ids"],
-            ),
-            scm_configuration=oci.adm.RemediationRecipeScmConfigurationArgs(
-                branch=var["remediation_recipe_scm_configuration_branch"],
-                is_automerge_enabled=var["remediation_recipe_scm_configuration_is_automerge_enabled"],
-                scm_type=var["remediation_recipe_scm_configuration_scm_type"],
-                build_file_location=var["remediation_recipe_scm_configuration_build_file_location"],
-                external_scm_type=var["remediation_recipe_scm_configuration_external_scm_type"],
-                oci_code_repository_id=oci_artifacts_repository["test_repository"]["id"],
-                pat_secret_id=oci_vault_secret["test_secret"]["id"],
-                repository_url=var["remediation_recipe_scm_configuration_repository_url"],
-                username=var["remediation_recipe_scm_configuration_username"],
-            ),
-            verify_configuration=oci.adm.RemediationRecipeVerifyConfigurationArgs(
-                build_service_type=var["remediation_recipe_verify_configuration_build_service_type"],
-                additional_parameters=var["remediation_recipe_verify_configuration_additional_parameters"],
-                jenkins_url=var["remediation_recipe_verify_configuration_jenkins_url"],
-                job_name=oci_database_migration_job["test_job"]["name"],
-                pat_secret_id=oci_vault_secret["test_secret"]["id"],
-                pipeline_id=oci_datascience_pipeline["test_pipeline"]["id"],
-                repository_url=var["remediation_recipe_verify_configuration_repository_url"],
-                trigger_secret_id=oci_vault_secret["test_secret"]["id"],
-                username=var["remediation_recipe_verify_configuration_username"],
-                workflow_name=var["remediation_recipe_verify_configuration_workflow_name"],
-            ),
-            defined_tags={
-                "foo-namespace.bar-key": "value",
-            },
-            display_name=var["remediation_recipe_display_name"],
-            freeform_tags={
-                "bar-key": "value",
-            })
-        ```
-
-        ## Import
-
-        RemediationRecipes can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Adm/remediationRecipe:RemediationRecipe test_remediation_recipe "id"
-        ```
-
+        Create a RemediationRecipe resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param RemediationRecipeArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -703,24 +446,6 @@ class RemediationRecipe(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The compartment Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the remediation recipe.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[pulumi.InputType['RemediationRecipeDetectConfigurationArgs']] detect_configuration: (Updatable) A configuration to define the constraints when detecting vulnerable dependencies.
-        :param pulumi.Input[str] display_name: (Updatable) The name of the remediation recipe.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[bool] is_run_triggered_on_kb_change: (Updatable) Boolean indicating if a run should be automatically triggered once the knowledge base is updated.
-        :param pulumi.Input[str] knowledge_base_id: (Updatable) The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the knowledge base.
-        :param pulumi.Input[pulumi.InputType['RemediationRecipeNetworkConfigurationArgs']] network_configuration: (Updatable) A network configuration defines the required network characteristics for an ADM remediation recipe. A network configuration is required if the build service is one of: GitHub Actions, GitLab Pipeline, or Jenkins Pipeline.
-        :param pulumi.Input[pulumi.InputType['RemediationRecipeScmConfigurationArgs']] scm_configuration: (Updatable) A configuration for the Source Code Management tool/platform used by a remediation recipe.
-        :param pulumi.Input[str] state: (Updatable) The target state for the Remediation Recipe. Could be set to `ACTIVE` or `INACTIVE`. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[str] time_created: The creation date and time of the Remediation Recipe (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-        :param pulumi.Input[str] time_updated: The date and time the Remediation Recipe was last updated (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-        :param pulumi.Input[pulumi.InputType['RemediationRecipeVerifyConfigurationArgs']] verify_configuration: (Updatable) The Verify stage configuration specifies a build service to run a pipeline for the recommended code changes. The build pipeline will be initiated to ensure that there is no breaking change after the dependency versions have been updated in source to avoid vulnerabilities.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -745,116 +470,70 @@ class RemediationRecipe(pulumi.CustomResource):
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The compartment Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the remediation recipe.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="detectConfiguration")
     def detect_configuration(self) -> pulumi.Output['outputs.RemediationRecipeDetectConfiguration']:
-        """
-        (Updatable) A configuration to define the constraints when detecting vulnerable dependencies.
-        """
         return pulumi.get(self, "detect_configuration")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The name of the remediation recipe.
-        """
+    def display_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="isRunTriggeredOnKbChange")
     def is_run_triggered_on_kb_change(self) -> pulumi.Output[bool]:
-        """
-        (Updatable) Boolean indicating if a run should be automatically triggered once the knowledge base is updated.
-        """
         return pulumi.get(self, "is_run_triggered_on_kb_change")
 
     @property
     @pulumi.getter(name="knowledgeBaseId")
     def knowledge_base_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the knowledge base.
-        """
         return pulumi.get(self, "knowledge_base_id")
 
     @property
     @pulumi.getter(name="networkConfiguration")
     def network_configuration(self) -> pulumi.Output['outputs.RemediationRecipeNetworkConfiguration']:
-        """
-        (Updatable) A network configuration defines the required network characteristics for an ADM remediation recipe. A network configuration is required if the build service is one of: GitHub Actions, GitLab Pipeline, or Jenkins Pipeline.
-        """
         return pulumi.get(self, "network_configuration")
 
     @property
     @pulumi.getter(name="scmConfiguration")
     def scm_configuration(self) -> pulumi.Output['outputs.RemediationRecipeScmConfiguration']:
-        """
-        (Updatable) A configuration for the Source Code Management tool/platform used by a remediation recipe.
-        """
         return pulumi.get(self, "scm_configuration")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The target state for the Remediation Recipe. Could be set to `ACTIVE` or `INACTIVE`. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        The creation date and time of the Remediation Recipe (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> pulumi.Output[str]:
-        """
-        The date and time the Remediation Recipe was last updated (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-        """
+    def time_updated(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_updated")
 
     @property
     @pulumi.getter(name="verifyConfiguration")
     def verify_configuration(self) -> pulumi.Output['outputs.RemediationRecipeVerifyConfiguration']:
-        """
-        (Updatable) The Verify stage configuration specifies a build service to run a pipeline for the recommended code changes. The build pipeline will be initiated to ensure that there is no breaking change after the dependency versions have been updated in source to avoid vulnerabilities.
-        """
         return pulumi.get(self, "verify_configuration")
 

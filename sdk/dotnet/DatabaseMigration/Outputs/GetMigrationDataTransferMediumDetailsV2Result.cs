@@ -13,32 +13,32 @@ namespace Pulumi.Oci.DatabaseMigration.Outputs
     [OutputType]
     public sealed class GetMigrationDataTransferMediumDetailsV2Result
     {
-        public readonly string AccessKeyId;
+        public readonly string? AccessKeyId;
         /// <summary>
         /// Name of directory object in database
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         public readonly ImmutableArray<Outputs.GetMigrationDataTransferMediumDetailsV2ObjectStorageBucketResult> ObjectStorageBuckets;
-        public readonly string Region;
-        public readonly string SecretAccessKey;
+        public readonly string? Region;
+        public readonly string? SecretAccessKey;
         /// <summary>
         /// Migration type.
         /// </summary>
-        public readonly string Type;
+        public readonly string? Type;
 
         [OutputConstructor]
         private GetMigrationDataTransferMediumDetailsV2Result(
-            string accessKeyId,
+            string? accessKeyId,
 
-            string name,
+            string? name,
 
             ImmutableArray<Outputs.GetMigrationDataTransferMediumDetailsV2ObjectStorageBucketResult> objectStorageBuckets,
 
-            string region,
+            string? region,
 
-            string secretAccessKey,
+            string? secretAccessKey,
 
-            string type)
+            string? type)
         {
             AccessKeyId = accessKeyId;
             Name = name;

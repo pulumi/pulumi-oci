@@ -53,7 +53,7 @@ namespace Pulumi.Oci.Database
         /// The name of the availability domain that the DB system is located in.
         /// </summary>
         [Output("availabilityDomain")]
-        public Output<string> AvailabilityDomain { get; private set; } = null!;
+        public Output<string?> AvailabilityDomain { get; private set; } = null!;
 
         /// <summary>
         /// A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
@@ -65,43 +65,43 @@ namespace Pulumi.Oci.Database
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup network subnet the DB system is associated with. Applicable only to Exadata DB systems.
         /// </summary>
         [Output("backupSubnetId")]
-        public Output<string> BackupSubnetId { get; private set; } = null!;
+        public Output<string?> BackupSubnetId { get; private set; } = null!;
 
         /// <summary>
         /// The cluster name for Exadata and 2-node RAC virtual machine DB systems. The cluster name must begin with an alphabetic character, and may contain hyphens (-). Underscores (_) are not permitted. The cluster name can be no longer than 11 characters and is not case sensitive.
         /// </summary>
         [Output("clusterName")]
-        public Output<string> ClusterName { get; private set; } = null!;
+        public Output<string?> ClusterName { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         /// </summary>
         [Output("compartmentId")]
-        public Output<string> CompartmentId { get; private set; } = null!;
+        public Output<string?> CompartmentId { get; private set; } = null!;
 
         /// <summary>
         /// The number of CPU cores enabled on the DB system.
         /// </summary>
         [Output("cpuCoreCount")]
-        public Output<int> CpuCoreCount { get; private set; } = null!;
+        public Output<int?> CpuCoreCount { get; private set; } = null!;
 
         /// <summary>
         /// The percentage assigned to DATA storage (user data and database files). The remaining percentage is assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). Accepted values are 40 and 80. The default is 80 percent assigned to DATA storage. Not applicable for virtual machine DB systems.
         /// </summary>
         [Output("dataStoragePercentage")]
-        public Output<int> DataStoragePercentage { get; private set; } = null!;
+        public Output<int?> DataStoragePercentage { get; private set; } = null!;
 
         /// <summary>
         /// The data storage size, in gigabytes, that is currently available to the DB system. Applies only for virtual machine DB systems.
         /// </summary>
         [Output("dataStorageSizeInGb")]
-        public Output<int> DataStorageSizeInGb { get; private set; } = null!;
+        public Output<int?> DataStorageSizeInGb { get; private set; } = null!;
 
         /// <summary>
         /// The Oracle Database edition that applies to all the databases on the DB system.
         /// </summary>
         [Output("databaseEdition")]
-        public Output<string> DatabaseEdition { get; private set; } = null!;
+        public Output<string?> DatabaseEdition { get; private set; } = null!;
 
         /// <summary>
         /// The DB system [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -119,25 +119,25 @@ namespace Pulumi.Oci.Database
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// The type of redundancy configured for the DB system. NORMAL is 2-way redundancy. HIGH is 3-way redundancy.
         /// </summary>
         [Output("diskRedundancy")]
-        public Output<string> DiskRedundancy { get; private set; } = null!;
+        public Output<string?> DiskRedundancy { get; private set; } = null!;
 
         /// <summary>
         /// The user-friendly name for the DB system. The name does not have to be unique.
         /// </summary>
         [Output("displayName")]
-        public Output<string> DisplayName { get; private set; } = null!;
+        public Output<string?> DisplayName { get; private set; } = null!;
 
         /// <summary>
         /// The domain name for the DB system.
         /// </summary>
         [Output("domain")]
-        public Output<string> Domain { get; private set; } = null!;
+        public Output<string?> Domain { get; private set; } = null!;
 
         /// <summary>
         /// List of the Fault Domains in which this DB system is provisioned.
@@ -149,13 +149,13 @@ namespace Pulumi.Oci.Database
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// The hostname for the DB system.
         /// </summary>
         [Output("hostname")]
-        public Output<string> Hostname { get; private set; } = null!;
+        public Output<string?> Hostname { get; private set; } = null!;
 
         /// <summary>
         /// The IORM settings of the Exadata DB system.
@@ -167,43 +167,43 @@ namespace Pulumi.Oci.Database
         /// If true, rollback time is updated even if operating system upgrade history contains errors.
         /// </summary>
         [Output("isSnapshotRetentionDaysForceUpdated")]
-        public Output<bool> IsSnapshotRetentionDaysForceUpdated { get; private set; } = null!;
+        public Output<bool?> IsSnapshotRetentionDaysForceUpdated { get; private set; } = null!;
 
         /// <summary>
         /// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
         /// </summary>
         [Output("kmsKeyId")]
-        public Output<string> KmsKeyId { get; private set; } = null!;
+        public Output<string?> KmsKeyId { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
         /// </summary>
         [Output("lastMaintenanceRunId")]
-        public Output<string> LastMaintenanceRunId { get; private set; } = null!;
+        public Output<string?> LastMaintenanceRunId { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last patch history. This value is updated as soon as a patch operation starts.
         /// </summary>
         [Output("lastPatchHistoryEntryId")]
-        public Output<string> LastPatchHistoryEntryId { get; private set; } = null!;
+        public Output<string?> LastPatchHistoryEntryId { get; private set; } = null!;
 
         /// <summary>
         /// The Oracle license model that applies to all the databases on the DB system. The default is LICENSE_INCLUDED.
         /// </summary>
         [Output("licenseModel")]
-        public Output<string> LicenseModel { get; private set; } = null!;
+        public Output<string?> LicenseModel { get; private set; } = null!;
 
         /// <summary>
         /// Additional information about the current lifecycle state.
         /// </summary>
         [Output("lifecycleDetails")]
-        public Output<string> LifecycleDetails { get; private set; } = null!;
+        public Output<string?> LifecycleDetails { get; private set; } = null!;
 
         /// <summary>
         /// The port number configured for the listener on the DB system.
         /// </summary>
         [Output("listenerPort")]
-        public Output<int> ListenerPort { get; private set; } = null!;
+        public Output<int?> ListenerPort { get; private set; } = null!;
 
         /// <summary>
         /// The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
@@ -215,19 +215,19 @@ namespace Pulumi.Oci.Database
         /// A valid Oracle Grid Infrastructure (GI) software version.
         /// </summary>
         [Output("newGiVersion")]
-        public Output<string> NewGiVersion { get; private set; } = null!;
+        public Output<string?> NewGiVersion { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
         /// </summary>
         [Output("nextMaintenanceRunId")]
-        public Output<string> NextMaintenanceRunId { get; private set; } = null!;
+        public Output<string?> NextMaintenanceRunId { get; private set; } = null!;
 
         /// <summary>
         /// The number of nodes in the DB system. For RAC DB systems, the value is greater than 1.
         /// </summary>
         [Output("nodeCount")]
-        public Output<int> NodeCount { get; private set; } = null!;
+        public Output<int?> NodeCount { get; private set; } = null!;
 
         /// <summary>
         /// A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that this resource belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
@@ -240,25 +240,25 @@ namespace Pulumi.Oci.Database
         /// The point in time for a cloned database system when the data disks were cloned from the source database system, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         /// </summary>
         [Output("pointInTimeDataDiskCloneTimestamp")]
-        public Output<string> PointInTimeDataDiskCloneTimestamp { get; private set; } = null!;
+        public Output<string?> PointInTimeDataDiskCloneTimestamp { get; private set; } = null!;
 
         /// <summary>
         /// The RECO/REDO storage size, in gigabytes, that is currently allocated to the DB system. Applies only for virtual machine DB systems.
         /// </summary>
         [Output("recoStorageSizeInGb")]
-        public Output<int> RecoStorageSizeInGb { get; private set; } = null!;
+        public Output<int?> RecoStorageSizeInGb { get; private set; } = null!;
 
         /// <summary>
         /// The FQDN of the DNS record for the SCAN IP addresses that are associated with the DB system.
         /// </summary>
         [Output("scanDnsName")]
-        public Output<string> ScanDnsName { get; private set; } = null!;
+        public Output<string?> ScanDnsName { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DNS record for the SCAN IP addresses that are associated with the DB system.
         /// </summary>
         [Output("scanDnsRecordId")]
-        public Output<string> ScanDnsRecordId { get; private set; } = null!;
+        public Output<string?> ScanDnsRecordId { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IP addresses associated with the DB system. SCAN IP addresses are typically used for load balancing and are not assigned to any interface. Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
@@ -272,7 +272,7 @@ namespace Pulumi.Oci.Database
         /// * For bare metal and Exadata shapes, the number of CPU cores, storage, and memory
         /// </summary>
         [Output("shape")]
-        public Output<string> Shape { get; private set; } = null!;
+        public Output<string?> Shape { get; private set; } = null!;
 
         /// <summary>
         /// The retention period, in days, for the snapshot that allows you to perform a rollback of the upgrade operation. After this number of days passes, you cannot roll back the upgrade.
@@ -282,19 +282,19 @@ namespace Pulumi.Oci.Database
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("snapshotRetentionPeriodInDays")]
-        public Output<int> SnapshotRetentionPeriodInDays { get; private set; } = null!;
+        public Output<int?> SnapshotRetentionPeriodInDays { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
         /// </summary>
         [Output("sourceDbSystemId")]
-        public Output<string> SourceDbSystemId { get; private set; } = null!;
+        public Output<string?> SourceDbSystemId { get; private set; } = null!;
 
         /// <summary>
         /// True, if Sparse Diskgroup is configured for Exadata dbsystem, False, if Sparse diskgroup was not configured.
         /// </summary>
         [Output("sparseDiskgroup")]
-        public Output<bool> SparseDiskgroup { get; private set; } = null!;
+        public Output<bool?> SparseDiskgroup { get; private set; } = null!;
 
         /// <summary>
         /// The public key portion of one or more key pairs used for SSH access to the DB system.
@@ -306,31 +306,31 @@ namespace Pulumi.Oci.Database
         /// The current state of the DB system.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the DB system is associated with.
         /// </summary>
         [Output("subnetId")]
-        public Output<string> SubnetId { get; private set; } = null!;
+        public Output<string?> SubnetId { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the DB system was created.
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// The time zone of the DB system. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
         /// </summary>
         [Output("timeZone")]
-        public Output<string> TimeZone { get; private set; } = null!;
+        public Output<string?> TimeZone { get; private set; } = null!;
 
         /// <summary>
         /// The Oracle Database version of the DB system.
         /// </summary>
         [Output("version")]
-        public Output<string> Version { get; private set; } = null!;
+        public Output<string?> Version { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) addresses associated with the DB system. The Cluster Ready Services (CRS) creates and maintains one VIP address for each node in the DB system to enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
@@ -342,7 +342,7 @@ namespace Pulumi.Oci.Database
         /// The OCID of the zone the DB system is associated with.
         /// </summary>
         [Output("zoneId")]
-        public Output<string> ZoneId { get; private set; } = null!;
+        public Output<string?> ZoneId { get; private set; } = null!;
 
 
         /// <summary>

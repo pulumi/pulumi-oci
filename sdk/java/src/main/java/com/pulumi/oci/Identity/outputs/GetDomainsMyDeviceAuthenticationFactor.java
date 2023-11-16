@@ -6,6 +6,8 @@ package com.pulumi.oci.Identity.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDomainsMyDeviceAuthenticationFactor {
@@ -13,39 +15,39 @@ public final class GetDomainsMyDeviceAuthenticationFactor {
      * @return Authentication Factor public key issued by client
      * 
      */
-    private String publicKey;
+    private @Nullable String publicKey;
     /**
      * @return Device Status
      * 
      */
-    private String status;
+    private @Nullable String status;
     /**
      * @return The type of resource, User or App, that modified this Resource
      * 
      */
-    private String type;
+    private @Nullable String type;
 
     private GetDomainsMyDeviceAuthenticationFactor() {}
     /**
      * @return Authentication Factor public key issued by client
      * 
      */
-    public String publicKey() {
-        return this.publicKey;
+    public Optional<String> publicKey() {
+        return Optional.ofNullable(this.publicKey);
     }
     /**
      * @return Device Status
      * 
      */
-    public String status() {
-        return this.status;
+    public Optional<String> status() {
+        return Optional.ofNullable(this.status);
     }
     /**
      * @return The type of resource, User or App, that modified this Resource
      * 
      */
-    public String type() {
-        return this.type;
+    public Optional<String> type() {
+        return Optional.ofNullable(this.type);
     }
 
     public static Builder builder() {
@@ -57,9 +59,9 @@ public final class GetDomainsMyDeviceAuthenticationFactor {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String publicKey;
-        private String status;
-        private String type;
+        private @Nullable String publicKey;
+        private @Nullable String status;
+        private @Nullable String type;
         public Builder() {}
         public Builder(GetDomainsMyDeviceAuthenticationFactor defaults) {
     	      Objects.requireNonNull(defaults);
@@ -69,18 +71,18 @@ public final class GetDomainsMyDeviceAuthenticationFactor {
         }
 
         @CustomType.Setter
-        public Builder publicKey(String publicKey) {
-            this.publicKey = Objects.requireNonNull(publicKey);
+        public Builder publicKey(@Nullable String publicKey) {
+            this.publicKey = publicKey;
             return this;
         }
         @CustomType.Setter
-        public Builder status(String status) {
-            this.status = Objects.requireNonNull(status);
+        public Builder status(@Nullable String status) {
+            this.status = status;
             return this;
         }
         @CustomType.Setter
-        public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+        public Builder type(@Nullable String type) {
+            this.type = type;
             return this;
         }
         public GetDomainsMyDeviceAuthenticationFactor build() {

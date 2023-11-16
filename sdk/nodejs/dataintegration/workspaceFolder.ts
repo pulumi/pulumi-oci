@@ -75,12 +75,12 @@ export class WorkspaceFolder extends pulumi.CustomResource {
     /**
      * (Updatable) The category name.
      */
-    public readonly categoryName!: pulumi.Output<string>;
+    public readonly categoryName!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) A user defined description for the folder.
      */
-    public readonly description!: pulumi.Output<string>;
-    public readonly folderKey!: pulumi.Output<string>;
+    public readonly description!: pulumi.Output<string | undefined>;
+    public readonly folderKey!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
      */
@@ -88,23 +88,23 @@ export class WorkspaceFolder extends pulumi.CustomResource {
     /**
      * (Updatable) The identifying key for the object.
      */
-    public readonly key!: pulumi.Output<string>;
+    public readonly key!: pulumi.Output<string | undefined>;
     /**
      * A key map. If provided, the key is replaced with generated key. This structure provides mapping between user provided key and generated key.
      */
-    public /*out*/ readonly keyMap!: pulumi.Output<{[key: string]: any}>;
+    public /*out*/ readonly keyMap!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * A summary type containing information about the object including its key, name and when/who created/updated it.
      */
-    public /*out*/ readonly metadatas!: pulumi.Output<outputs.DataIntegration.WorkspaceFolderMetadata[]>;
+    public /*out*/ readonly metadatas!: pulumi.Output<outputs.DataIntegration.WorkspaceFolderMetadata[] | undefined>;
     /**
      * The type of the object.
      */
-    public /*out*/ readonly modelType!: pulumi.Output<string>;
+    public /*out*/ readonly modelType!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The model version of an object.
      */
-    public readonly modelVersion!: pulumi.Output<string>;
+    public readonly modelVersion!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      */
@@ -112,15 +112,15 @@ export class WorkspaceFolder extends pulumi.CustomResource {
     /**
      * (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
      */
-    public readonly objectStatus!: pulumi.Output<number>;
+    public readonly objectStatus!: pulumi.Output<number | undefined>;
     /**
      * The version of the object that is used to track changes in the object instance.
      */
-    public /*out*/ readonly objectVersion!: pulumi.Output<number>;
+    public /*out*/ readonly objectVersion!: pulumi.Output<number | undefined>;
     /**
      * A reference to the object's parent.
      */
-    public /*out*/ readonly parentReves!: pulumi.Output<outputs.DataIntegration.WorkspaceFolderParentRef[]>;
+    public /*out*/ readonly parentReves!: pulumi.Output<outputs.DataIntegration.WorkspaceFolderParentRef[] | undefined>;
     /**
      * (Updatable) Information about the object and its parent.
      */

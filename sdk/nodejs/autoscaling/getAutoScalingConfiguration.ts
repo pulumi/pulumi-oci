@@ -48,51 +48,51 @@ export interface GetAutoScalingConfigurationResult {
     /**
      * A resource that is managed by an autoscaling configuration. The only supported type is `instancePool`.
      */
-    readonly autoScalingResources: outputs.Autoscaling.GetAutoScalingConfigurationAutoScalingResource[];
+    readonly autoScalingResources?: outputs.Autoscaling.GetAutoScalingConfigurationAutoScalingResource[];
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the autoscaling configuration.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * For threshold-based autoscaling policies, this value is the minimum period of time to wait between scaling actions. The cooldown period gives the system time to stabilize before rescaling. The minimum value is 300 seconds, which is also the default. The cooldown period starts when the instance pool reaches the running state.
      */
-    readonly coolDownInSeconds: number;
+    readonly coolDownInSeconds?: number;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * ID of the condition that is assigned after creation.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Whether the autoscaling policy is enabled.
      */
-    readonly isEnabled: boolean;
+    readonly isEnabled?: boolean;
     /**
      * The maximum number of resources to scale out to.
      */
-    readonly maxResourceCount: number;
+    readonly maxResourceCount?: number;
     /**
      * The minimum number of resources to scale in to.
      */
-    readonly minResourceCount: number;
+    readonly minResourceCount?: number;
     /**
      * Autoscaling policy definitions for the autoscaling configuration. An autoscaling policy defines the criteria that trigger autoscaling actions and the actions to take.
      */
-    readonly policies: outputs.Autoscaling.GetAutoScalingConfigurationPolicy[];
+    readonly policies?: outputs.Autoscaling.GetAutoScalingConfigurationPolicy[];
     /**
      * The date and time the autoscaling configuration was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
 }
 /**
  * This data source provides details about a specific Auto Scaling Configuration resource in Oracle Cloud Infrastructure Auto Scaling service.

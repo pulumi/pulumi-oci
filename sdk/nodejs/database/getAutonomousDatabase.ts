@@ -47,107 +47,107 @@ export interface GetAutonomousDatabaseResult {
     /**
      * The current amount of storage in use for user and system data, in terabytes (TB).
      */
-    readonly actualUsedDataStorageSizeInTbs: number;
-    readonly adminPassword: string;
+    readonly actualUsedDataStorageSizeInTbs?: number;
+    readonly adminPassword?: string;
     /**
      * The amount of storage currently allocated for the database tables and billed for, rounded up. When auto-scaling is not enabled, this value is equal to the `dataStorageSizeInTBs` value. You can compare this value to the `actualUsedDataStorageSizeInTBs` value to determine if a manual shrink operation is appropriate for your allocated storage.
      */
-    readonly allocatedStorageSizeInTbs: number;
+    readonly allocatedStorageSizeInTbs?: number;
     /**
      * Information about Oracle APEX Application Development.
      */
-    readonly apexDetails: outputs.Database.GetAutonomousDatabaseApexDetail[];
+    readonly apexDetails?: outputs.Database.GetAutonomousDatabaseApexDetail[];
     /**
      * This field will be null if the Autonomous Database is not Data Guard enabled or Access Control is disabled. It's value would be `TRUE` if Autonomous Database is Data Guard enabled and Access Control is enabled and if the Autonomous Database uses primary IP access control list (ACL) for standby. It's value would be `FALSE` if Autonomous Database is Data Guard enabled and Access Control is enabled and if the Autonomous Database uses different IP access control list (ACL) for standby compared to primary.
      */
-    readonly arePrimaryWhitelistedIpsUsed: boolean;
+    readonly arePrimaryWhitelistedIpsUsed?: boolean;
     /**
      * The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
-    readonly autonomousContainerDatabaseId: string;
-    readonly autonomousDatabaseBackupId: string;
+    readonly autonomousContainerDatabaseId?: string;
+    readonly autonomousDatabaseBackupId?: string;
     readonly autonomousDatabaseId: string;
     /**
      * The maintenance schedule type of the Autonomous Database on shared Exadata infrastructure. The EARLY maintenance schedule of this Autonomous Database follows a schedule that applies patches prior to the REGULAR schedule.The REGULAR maintenance schedule of this Autonomous Database follows the normal cycle.
      */
-    readonly autonomousMaintenanceScheduleType: string;
+    readonly autonomousMaintenanceScheduleType?: string;
     /**
      * List of Oracle Database versions available for a database upgrade. If there are no version upgrades available, this list is empty.
      */
-    readonly availableUpgradeVersions: string[];
+    readonly availableUpgradeVersions?: string[];
     /**
      * Autonomous Database configuration details for storing [manual backups](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/backup-restore.html#GUID-9035DFB8-4702-4CEB-8281-C2A303820809) in the [Object Storage](https://docs.cloud.oracle.com/iaas/Content/Object/Concepts/objectstorageoverview.htm) service.
      */
-    readonly backupConfigs: outputs.Database.GetAutonomousDatabaseBackupConfig[];
+    readonly backupConfigs?: outputs.Database.GetAutonomousDatabaseBackupConfig[];
     /**
      * Retention period, in days, for backups.
      */
-    readonly backupRetentionPeriodInDays: number;
+    readonly backupRetentionPeriodInDays?: number;
     /**
      * The character set for the autonomous database.  The default is AL32UTF8. Allowed values are:
      */
-    readonly characterSet: string;
-    readonly cloneType: string;
+    readonly characterSet?: string;
+    readonly cloneType?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * The compute amount available to the database. Minimum and maximum values depend on the compute model and whether the database is on Shared or Dedicated infrastructure. For an Autonomous Database on Shared infrastructure, the 'ECPU' compute model requires values in multiples of two. Required when using the `computeModel` parameter. When using `cpuCoreCount` parameter, it is an error to specify computeCount to a non-null value.
      */
-    readonly computeCount: number;
+    readonly computeCount?: number;
     /**
      * The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value.
      */
-    readonly computeModel: string;
+    readonly computeModel?: string;
     /**
      * The connection string used to connect to the Autonomous Database. The username for the Service Console is ADMIN. Use the password you entered when creating the Autonomous Database for the password value.
      */
-    readonly connectionStrings: outputs.Database.GetAutonomousDatabaseConnectionString[];
+    readonly connectionStrings?: outputs.Database.GetAutonomousDatabaseConnectionString[];
     /**
      * The URLs for accessing Oracle Application Express (APEX) and SQL Developer Web with a browser from a Compute instance within your VCN or that has a direct connection to your VCN. Note that these URLs are provided by the console only for databases on [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html).  Example: `{"sqlDevWebUrl": "https://<hostname>/ords...", "apexUrl", "https://<hostname>/ords..."}`
      */
-    readonly connectionUrls: outputs.Database.GetAutonomousDatabaseConnectionUrl[];
+    readonly connectionUrls?: outputs.Database.GetAutonomousDatabaseConnectionUrl[];
     /**
      * The number of OCPU cores to be made available to the database. When the ECPU is selected, the value for cpuCoreCount is 0. For Autonomous Databases on dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
      */
-    readonly cpuCoreCount: number;
+    readonly cpuCoreCount?: number;
     /**
      * Customer Contacts.
      */
-    readonly customerContacts: outputs.Database.GetAutonomousDatabaseCustomerContact[];
+    readonly customerContacts?: outputs.Database.GetAutonomousDatabaseCustomerContact[];
     /**
      * Status of the Data Safe registration for this Autonomous Database. Could be REGISTERED or NOT_REGISTERED.
      */
-    readonly dataSafeStatus: string;
+    readonly dataSafeStatus?: string;
     /**
      * The quantity of data in the database, in gigabytes.
      */
-    readonly dataStorageSizeInGb: number;
+    readonly dataStorageSizeInGb?: number;
     /**
      * The quantity of data in the database, in terabytes.
      */
-    readonly dataStorageSizeInTbs: number;
+    readonly dataStorageSizeInTbs?: number;
     /**
      * The Oracle Database Edition that applies to the Autonomous databases.
      */
-    readonly databaseEdition: string;
+    readonly databaseEdition?: string;
     /**
      * Status of Database Management for this Autonomous Database.
      */
-    readonly databaseManagementStatus: string;
+    readonly databaseManagementStatus?: string;
     /**
      * The Autonomous Data Guard region type of the Autonomous Database. For Autonomous Databases on shared Exadata infrastructure, Data Guard associations have designated primary and standby regions, and these region types do not change when the database changes roles. The standby regions in Data Guard associations can be the same region designated as the primary region, or they can be remote regions. Certain database administrative operations may be available only in the primary region of the Data Guard association, and cannot be performed when the database using the "primary" role is operating in a remote Data Guard standby region.
      */
-    readonly dataguardRegionType: string;
+    readonly dataguardRegionType?: string;
     /**
      * The database name.
      */
-    readonly dbName: string;
+    readonly dbName?: string;
     /**
      * A valid Oracle Database version for Autonomous Database.
      */
-    readonly dbVersion: string;
+    readonly dbVersion?: string;
     /**
      * The Autonomous Database workload type. The following values are valid:
      * * OLTP - indicates an Autonomous Transaction Processing database
@@ -155,347 +155,347 @@ export interface GetAutonomousDatabaseResult {
      * * AJD - indicates an Autonomous JSON Database
      * * APEX - indicates an Autonomous Database with the Oracle APEX Application Development workload type.
      */
-    readonly dbWorkload: string;
+    readonly dbWorkload?: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * The disaster recovery (DR) region type of the Autonomous Database. For Shared Autonomous Databases, DR associations have designated primary and standby regions. These region types do not change when the database changes roles. The standby region in DR associations can be the same region as the primary region, or they can be in a remote regions. Some database administration operations may be available only in the primary region of the DR association, and cannot be performed when the database using the primary role is operating in a remote region.
      */
-    readonly disasterRecoveryRegionType: string;
+    readonly disasterRecoveryRegionType?: string;
     /**
      * The user-friendly name for the Autonomous Database. The name does not have to be unique.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * Indicates the number of seconds of data loss for a Data Guard failover.
      */
-    readonly failedDataRecoveryInSeconds: number;
+    readonly failedDataRecoveryInSeconds?: number;
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * The id of the Autonomous Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The area assigned to In-Memory tables in Autonomous Database.
      */
-    readonly inMemoryAreaInGbs: number;
+    readonly inMemoryAreaInGbs?: number;
     /**
      * The percentage of the System Global Area(SGA) assigned to In-Memory tables in Autonomous Database.
      */
-    readonly inMemoryPercentage: number;
+    readonly inMemoryPercentage?: number;
     /**
      * The infrastructure type this resource belongs to.
      */
-    readonly infrastructureType: string;
+    readonly infrastructureType?: string;
     /**
      * Indicates if the database-level access control is enabled. If disabled, database access is defined by the network security rules. If enabled, database access is restricted to the IP addresses defined by the rules specified with the `whitelistedIps` property. While specifying `whitelistedIps` rules is optional, if database-level access control is enabled and no rules are specified, the database will become inaccessible. The rules can be added later using the `UpdateAutonomousDatabase` API operation or edit option in console. When creating a database clone, the desired access control setting should be specified. By default, database-level access control will be disabled for the clone.
      */
-    readonly isAccessControlEnabled: boolean;
+    readonly isAccessControlEnabled?: boolean;
     /**
      * Indicates if auto scaling is enabled for the Autonomous Database CPU core count.
      */
-    readonly isAutoScalingEnabled: boolean;
+    readonly isAutoScalingEnabled?: boolean;
     /**
      * Indicates if auto scaling is enabled for the Autonomous Database storage. The default value is `FALSE`.
      */
-    readonly isAutoScalingForStorageEnabled: boolean;
+    readonly isAutoScalingForStorageEnabled?: boolean;
     /**
      * **Deprecated.** Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
      */
-    readonly isDataGuardEnabled: boolean;
+    readonly isDataGuardEnabled?: boolean;
     /**
      * True if the database uses [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html).
      */
-    readonly isDedicated: boolean;
+    readonly isDedicated?: boolean;
     /**
      * Indicates if this is an Always Free resource. The default value is false. Note that Always Free Autonomous Databases have 1 CPU and 20GB of memory. For Always Free databases, memory and CPU cannot be scaled.
      */
-    readonly isFreeTier: boolean;
+    readonly isFreeTier?: boolean;
     /**
      * Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
      */
-    readonly isLocalDataGuardEnabled: boolean;
+    readonly isLocalDataGuardEnabled?: boolean;
     /**
      * Specifies if the Autonomous Database requires mTLS connections.
      */
-    readonly isMtlsConnectionRequired: boolean;
+    readonly isMtlsConnectionRequired?: boolean;
     /**
      * Indicates if the Autonomous Database version is a preview version.
      */
-    readonly isPreview: boolean;
-    readonly isPreviewVersionWithServiceTermsAccepted: boolean;
+    readonly isPreview?: boolean;
+    readonly isPreviewVersionWithServiceTermsAccepted?: boolean;
     /**
      * Indicates if the refreshable clone can be reconnected to its source database.
      */
-    readonly isReconnectCloneEnabled: boolean;
+    readonly isReconnectCloneEnabled?: boolean;
     /**
      * Indicates if the Autonomous Database is a refreshable clone.
      */
-    readonly isRefreshableClone: boolean;
+    readonly isRefreshableClone?: boolean;
     /**
      * Indicates whether the Autonomous Database has Cross Region Data Guard enabled. Not applicable to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
      */
-    readonly isRemoteDataGuardEnabled: boolean;
-    readonly isShrinkOnly: boolean;
+    readonly isRemoteDataGuardEnabled?: boolean;
+    readonly isShrinkOnly?: boolean;
     /**
      * Key History Entry.
      */
-    readonly keyHistoryEntries: outputs.Database.GetAutonomousDatabaseKeyHistoryEntry[];
+    readonly keyHistoryEntries?: outputs.Database.GetAutonomousDatabaseKeyHistoryEntry[];
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
      */
-    readonly keyStoreId: string;
+    readonly keyStoreId?: string;
     /**
      * The wallet name for Oracle Key Vault.
      */
-    readonly keyStoreWalletName: string;
+    readonly keyStoreWalletName?: string;
     /**
      * The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
      */
-    readonly kmsKeyId: string;
+    readonly kmsKeyId?: string;
     /**
      * KMS key lifecycle details.
      */
-    readonly kmsKeyLifecycleDetails: string;
+    readonly kmsKeyLifecycleDetails?: string;
     /**
      * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
      */
-    readonly kmsKeyVersionId: string;
+    readonly kmsKeyVersionId?: string;
     /**
      * The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle PaaS and IaaS services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Database service. Note that when provisioning an Autonomous Database on [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null because the attribute is already set at the Autonomous Exadata Infrastructure level. When using [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), if a value is not specified, the system will supply the value of `BRING_YOUR_OWN_LICENSE`.
      */
-    readonly licenseModel: string;
+    readonly licenseModel?: string;
     /**
      * Additional information about the current lifecycle state.
      */
-    readonly lifecycleDetails: string;
+    readonly lifecycleDetails?: string;
     /**
      * Parameter that allows users to select an acceptable maximum data loss limit in seconds, up to which Automatic Failover will be triggered when necessary for a Local Autonomous Data Guard
      */
-    readonly localAdgAutoFailoverMaxDataLossLimit: number;
+    readonly localAdgAutoFailoverMaxDataLossLimit?: number;
     /**
      * Indicates the local disaster recovery (DR) type of the Shared Autonomous Database. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
      */
-    readonly localDisasterRecoveryType: string;
+    readonly localDisasterRecoveryType?: string;
     /**
      * Autonomous Data Guard standby database details.
      */
-    readonly localStandbyDbs: outputs.Database.GetAutonomousDatabaseLocalStandbyDb[];
+    readonly localStandbyDbs?: outputs.Database.GetAutonomousDatabaseLocalStandbyDb[];
     /**
      * Details for the long-term backup schedule.
      */
-    readonly longTermBackupSchedules: outputs.Database.GetAutonomousDatabaseLongTermBackupSchedule[];
+    readonly longTermBackupSchedules?: outputs.Database.GetAutonomousDatabaseLongTermBackupSchedule[];
     /**
      * The number of Max OCPU cores to be made available to the autonomous database with auto scaling of cpu enabled.
      */
-    readonly maxCpuCoreCount: number;
+    readonly maxCpuCoreCount?: number;
     /**
      * The amount of memory (in GBs) enabled per each CPU in the Autonomous VM Cluster.
      */
-    readonly memoryPerOracleComputeUnitInGbs: number;
+    readonly memoryPerOracleComputeUnitInGbs?: number;
     /**
      * The national character set for the autonomous database.  The default is AL16UTF16. Allowed values are: AL16UTF16 or UTF8.
      */
-    readonly ncharacterSet: string;
+    readonly ncharacterSet?: string;
     /**
      * The date and time when the next long-term backup would be created.
      */
-    readonly nextLongTermBackupTimeStamp: string;
+    readonly nextLongTermBackupTimeStamp?: string;
     /**
      * The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
      * * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
      */
-    readonly nsgIds: string[];
+    readonly nsgIds?: string[];
     /**
      * The number of OCPU cores to be made available to the database.
      */
-    readonly ocpuCount: number;
+    readonly ocpuCount?: number;
     /**
      * Indicates the Autonomous Database mode. The database can be opened in `READ_ONLY` or `READ_WRITE` mode.
      */
-    readonly openMode: string;
+    readonly openMode?: string;
     /**
      * Status of Operations Insights for this Autonomous Database.
      */
-    readonly operationsInsightsStatus: string;
+    readonly operationsInsightsStatus?: string;
     /**
      * The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of standby databases located in Autonomous Data Guard remote regions that are associated with the source database. Note that for shared Exadata infrastructure, standby databases located in the same region as the source primary database do not have OCIDs.
      */
-    readonly peerDbIds: string[];
+    readonly peerDbIds?: string[];
     /**
      * The Autonomous Database permission level. Restricted mode allows access only by admin users.
      */
-    readonly permissionLevel: string;
+    readonly permissionLevel?: string;
     /**
      * The private endpoint for the resource.
      */
-    readonly privateEndpoint: string;
+    readonly privateEndpoint?: string;
     /**
      * The private endpoint Ip address for the resource.
      */
-    readonly privateEndpointIp: string;
+    readonly privateEndpointIp?: string;
     /**
      * The private endpoint label for the resource.
      */
-    readonly privateEndpointLabel: string;
+    readonly privateEndpointLabel?: string;
     /**
      * An array of CPU values that an Autonomous Database can be scaled to.
      */
-    readonly provisionableCpuses: number[];
+    readonly provisionableCpuses?: number[];
     /**
      * The refresh mode of the clone. AUTOMATIC indicates that the clone is automatically being refreshed with data from the source Autonomous Database.
      */
-    readonly refreshableMode: string;
+    readonly refreshableMode?: string;
     /**
      * The refresh status of the clone. REFRESHING indicates that the clone is currently being refreshed with data from the source Autonomous Database.
      */
-    readonly refreshableStatus: string;
+    readonly refreshableStatus?: string;
     /**
      * Configurations of a Disaster Recovery.
      */
-    readonly remoteDisasterRecoveryConfigurations: outputs.Database.GetAutonomousDatabaseRemoteDisasterRecoveryConfiguration[];
-    readonly remoteDisasterRecoveryType: string;
+    readonly remoteDisasterRecoveryConfigurations?: outputs.Database.GetAutonomousDatabaseRemoteDisasterRecoveryConfiguration[];
+    readonly remoteDisasterRecoveryType?: string;
     /**
      * The unique identifier for leader autonomous database OCID [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
-    readonly resourcePoolLeaderId: string;
+    readonly resourcePoolLeaderId?: string;
     /**
      * The configuration details for resource pool
      */
-    readonly resourcePoolSummaries: outputs.Database.GetAutonomousDatabaseResourcePoolSummary[];
+    readonly resourcePoolSummaries?: outputs.Database.GetAutonomousDatabaseResourcePoolSummary[];
     /**
      * The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
      */
-    readonly role: string;
-    readonly rotateKeyTrigger: boolean;
+    readonly role?: string;
+    readonly rotateKeyTrigger?: boolean;
     /**
      * The list of scheduled operations.
      */
-    readonly scheduledOperations: outputs.Database.GetAutonomousDatabaseScheduledOperation[];
-    readonly secretId: string;
-    readonly secretVersionNumber: number;
+    readonly scheduledOperations?: outputs.Database.GetAutonomousDatabaseScheduledOperation[];
+    readonly secretId?: string;
+    readonly secretVersionNumber?: number;
     /**
      * The URL of the Service Console for the Autonomous Database.
      */
-    readonly serviceConsoleUrl: string;
-    readonly source: string;
+    readonly serviceConsoleUrl?: string;
+    readonly source?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source Autonomous Database that was cloned to create the current Autonomous Database.
      */
-    readonly sourceId: string;
+    readonly sourceId?: string;
     /**
      * **Deprecated** Autonomous Data Guard standby database details.
      */
-    readonly standbyDbs: outputs.Database.GetAutonomousDatabaseStandbyDb[];
+    readonly standbyDbs?: outputs.Database.GetAutonomousDatabaseStandbyDb[];
     /**
      * The client IP access control list (ACL). This feature is available for autonomous databases on [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance.
      */
-    readonly standbyWhitelistedIps: string[];
+    readonly standbyWhitelistedIps?: string[];
     /**
      * The current state of the Autonomous Database.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the resource is associated with.
      */
-    readonly subnetId: string;
+    readonly subnetId?: string;
     /**
      * The list of regions that support the creation of an Autonomous Database clone or an Autonomous Data Guard standby database.
      */
-    readonly supportedRegionsToCloneTos: string[];
-    readonly switchoverTo: string;
-    readonly switchoverToRemotePeerId: string;
+    readonly supportedRegionsToCloneTos?: string[];
+    readonly switchoverTo?: string;
+    readonly switchoverToRemotePeerId?: string;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    readonly systemTags: {[key: string]: any};
+    readonly systemTags?: {[key: string]: any};
     /**
      * The date and time the Autonomous Database was created.
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The date and time the Autonomous Data Guard role was switched for the Autonomous Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the "primary" role in the primary Data Guard region, or database located in the remote Data Guard standby region.
      */
-    readonly timeDataGuardRoleChanged: string;
+    readonly timeDataGuardRoleChanged?: string;
     /**
      * The date and time the Always Free database will be automatically deleted because of inactivity. If the database is in the STOPPED state and without activity until this time, it will be deleted.
      */
-    readonly timeDeletionOfFreeAutonomousDatabase: string;
+    readonly timeDeletionOfFreeAutonomousDatabase?: string;
     /**
      * The date and time the Disaster Recovery role was switched for the standby Autonomous Database.
      */
-    readonly timeDisasterRecoveryRoleChanged: string;
+    readonly timeDisasterRecoveryRoleChanged?: string;
     /**
      * The date and time that Autonomous Data Guard was enabled for an Autonomous Database where the standby was provisioned in the same region as the primary database.
      */
-    readonly timeLocalDataGuardEnabled: string;
+    readonly timeLocalDataGuardEnabled?: string;
     /**
      * The date and time when maintenance will begin.
      */
-    readonly timeMaintenanceBegin: string;
+    readonly timeMaintenanceBegin?: string;
     /**
      * The date and time when maintenance will end.
      */
-    readonly timeMaintenanceEnd: string;
+    readonly timeMaintenanceEnd?: string;
     /**
      * The time the member joined the resource pool.
      */
-    readonly timeOfJoiningResourcePool: string;
+    readonly timeOfJoiningResourcePool?: string;
     /**
      * The timestamp of the last failover operation.
      */
-    readonly timeOfLastFailover: string;
+    readonly timeOfLastFailover?: string;
     /**
      * The date and time when last refresh happened.
      */
-    readonly timeOfLastRefresh: string;
+    readonly timeOfLastRefresh?: string;
     /**
      * The refresh point timestamp (UTC). The refresh point is the time to which the database was most recently refreshed. Data created after the refresh point is not included in the refresh.
      */
-    readonly timeOfLastRefreshPoint: string;
+    readonly timeOfLastRefreshPoint?: string;
     /**
      * The timestamp of the last switchover operation for the Autonomous Database.
      */
-    readonly timeOfLastSwitchover: string;
+    readonly timeOfLastSwitchover?: string;
     /**
      * The date and time of next refresh.
      */
-    readonly timeOfNextRefresh: string;
+    readonly timeOfNextRefresh?: string;
     /**
      * The date and time the Always Free database will be stopped because of inactivity. If this time is reached without any database activity, the database will automatically be put into the STOPPED state.
      */
-    readonly timeReclamationOfFreeAutonomousDatabase: string;
+    readonly timeReclamationOfFreeAutonomousDatabase?: string;
     /**
      * The time and date as an RFC3339 formatted string, e.g., 2022-01-01T12:00:00.000Z, to set the limit for a refreshable clone to be reconnected to its source database.
      */
-    readonly timeUntilReconnectCloneEnabled: string;
-    readonly timestamp: string;
+    readonly timeUntilReconnectCloneEnabled?: string;
+    readonly timestamp?: string;
     /**
      * The backup storage to the database.
      */
-    readonly totalBackupStorageSizeInGbs: number;
-    readonly useLatestAvailableBackupTimeStamp: boolean;
+    readonly totalBackupStorageSizeInGbs?: number;
+    readonly useLatestAvailableBackupTimeStamp?: boolean;
     /**
      * The storage space consumed by Autonomous Database in GBs.
      */
-    readonly usedDataStorageSizeInGbs: number;
+    readonly usedDataStorageSizeInGbs?: number;
     /**
      * The amount of storage that has been used, in terabytes.
      */
-    readonly usedDataStorageSizeInTbs: number;
+    readonly usedDataStorageSizeInTbs?: number;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
      */
-    readonly vaultId: string;
+    readonly vaultId?: string;
     /**
      * The client IP access control list (ACL). This feature is available for autonomous databases on [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance.
      */
-    readonly whitelistedIps: string[];
+    readonly whitelistedIps?: string[];
 }
 /**
  * This data source provides details about a specific Autonomous Database resource in Oracle Cloud Infrastructure Database service.

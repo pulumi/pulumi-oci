@@ -16,92 +16,92 @@ namespace Pulumi.Oci.Vbs.Outputs
         /// <summary>
         /// The ID of the compartment in which to list resources.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// Service instance display name
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// unique VbsInstance identifier
         /// </summary>
-        public readonly string Id;
-        public readonly string IdcsAccessToken;
+        public readonly string? Id;
+        public readonly string? IdcsAccessToken;
         /// <summary>
         /// Whether the VBS service instance owner explicitly approved VBS to create and use resources in the customer tenancy
         /// </summary>
-        public readonly bool IsResourceUsageAgreementGranted;
+        public readonly bool? IsResourceUsageAgreementGranted;
         /// <summary>
         /// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         /// </summary>
-        public readonly string LifecyleDetails;
+        public readonly string? LifecyleDetails;
         /// <summary>
         /// A filter to return only resources that match the entire name given.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// Compartment where VBS may create additional resources for the service instance
         /// </summary>
-        public readonly string ResourceCompartmentId;
+        public readonly string? ResourceCompartmentId;
         /// <summary>
         /// A filter to return only resources their lifecycleState matches the given lifecycleState.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> SystemTags;
+        public readonly ImmutableDictionary<string, object>? SystemTags;
         /// <summary>
         /// The time the the VbsInstance was created. An RFC3339 formatted datetime string
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The time the VbsInstance was updated. An RFC3339 formatted datetime string
         /// </summary>
-        public readonly string TimeUpdated;
+        public readonly string? TimeUpdated;
         /// <summary>
         /// Public web URL for accessing the VBS service instance
         /// </summary>
-        public readonly string VbsAccessUrl;
+        public readonly string? VbsAccessUrl;
 
         [OutputConstructor]
         private GetInstVbsInstancesVbsInstanceSummaryCollectionItemResult(
-            string compartmentId,
+            string? compartmentId,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string displayName,
+            string? displayName,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string id,
+            string? id,
 
-            string idcsAccessToken,
+            string? idcsAccessToken,
 
-            bool isResourceUsageAgreementGranted,
+            bool? isResourceUsageAgreementGranted,
 
-            string lifecyleDetails,
+            string? lifecyleDetails,
 
-            string name,
+            string? name,
 
-            string resourceCompartmentId,
+            string? resourceCompartmentId,
 
-            string state,
+            string? state,
 
-            ImmutableDictionary<string, object> systemTags,
+            ImmutableDictionary<string, object>? systemTags,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeUpdated,
+            string? timeUpdated,
 
-            string vbsAccessUrl)
+            string? vbsAccessUrl)
         {
             CompartmentId = compartmentId;
             DefinedTags = definedTags;

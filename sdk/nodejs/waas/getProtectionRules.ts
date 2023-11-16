@@ -67,12 +67,12 @@ export interface GetProtectionRulesResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly modSecurityRuleIds?: string[];
     /**
      * The list of protection_rules.
      */
-    readonly protectionRules: outputs.Waas.GetProtectionRulesProtectionRule[];
+    readonly protectionRules?: outputs.Waas.GetProtectionRulesProtectionRule[];
     readonly waasPolicyId: string;
 }
 /**

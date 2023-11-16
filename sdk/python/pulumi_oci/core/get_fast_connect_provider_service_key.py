@@ -43,15 +43,12 @@ class GetFastConnectProviderServiceKeyResult:
 
     @property
     @pulumi.getter(name="bandwidthShapeName")
-    def bandwidth_shape_name(self) -> str:
-        """
-        The provisioned data rate of the connection. To get a list of the available bandwidth levels (that is, shapes), see [ListFastConnectProviderServiceVirtualCircuitBandwidthShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/FastConnectProviderService/ListFastConnectProviderVirtualCircuitBandwidthShapes).  Example: `10 Gbps`
-        """
+    def bandwidth_shape_name(self) -> Optional[str]:
         return pulumi.get(self, "bandwidth_shape_name")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -59,18 +56,12 @@ class GetFastConnectProviderServiceKeyResult:
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        The service key that the provider gives you when you set up a virtual circuit connection from the provider to Oracle Cloud Infrastructure. Use this value as the `providerServiceKeyName` query parameter for [GetFastConnectProviderServiceKey](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/FastConnectProviderServiceKey/GetFastConnectProviderServiceKey).
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="peeringLocation")
-    def peering_location(self) -> str:
-        """
-        The provider's peering location.
-        """
+    def peering_location(self) -> Optional[str]:
         return pulumi.get(self, "peering_location")
 
     @property
@@ -102,24 +93,7 @@ def get_fast_connect_provider_service_key(provider_service_id: Optional[str] = N
                                           provider_service_key_name: Optional[str] = None,
                                           opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetFastConnectProviderServiceKeyResult:
     """
-    This data source provides details about a specific Fast Connect Provider Service Key resource in Oracle Cloud Infrastructure Core service.
-
-    Gets the specified provider service key's information. Use this operation to validate a
-    provider service key. An invalid key returns a 404 error.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_fast_connect_provider_service_key = oci.Core.get_fast_connect_provider_service_key(provider_service_id=data["oci_core_fast_connect_provider_services"]["test_fast_connect_provider_services"]["fast_connect_provider_services"][0]["id"],
-        provider_service_key_name=var["fast_connect_provider_service_key_provider_service_key_name"])
-    ```
-
-
-    :param str provider_service_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the provider service.
-    :param str provider_service_key_name: The provider service key that the provider gives you when you set up a virtual circuit connection from the provider to Oracle Cloud Infrastructure. You can set up that connection and get your provider service key at the provider's website or portal. For the portal location, see the `description` attribute of the [FastConnectProviderService](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/FastConnectProviderService/).
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['providerServiceId'] = provider_service_id
@@ -141,23 +115,6 @@ def get_fast_connect_provider_service_key_output(provider_service_id: Optional[p
                                                  provider_service_key_name: Optional[pulumi.Input[str]] = None,
                                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetFastConnectProviderServiceKeyResult]:
     """
-    This data source provides details about a specific Fast Connect Provider Service Key resource in Oracle Cloud Infrastructure Core service.
-
-    Gets the specified provider service key's information. Use this operation to validate a
-    provider service key. An invalid key returns a 404 error.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_fast_connect_provider_service_key = oci.Core.get_fast_connect_provider_service_key(provider_service_id=data["oci_core_fast_connect_provider_services"]["test_fast_connect_provider_services"]["fast_connect_provider_services"][0]["id"],
-        provider_service_key_name=var["fast_connect_provider_service_key_provider_service_key_name"])
-    ```
-
-
-    :param str provider_service_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the provider service.
-    :param str provider_service_key_name: The provider service key that the provider gives you when you set up a virtual circuit connection from the provider to Oracle Cloud Infrastructure. You can set up that connection and get your provider service key at the provider's website or portal. For the portal location, see the `description` attribute of the [FastConnectProviderService](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/FastConnectProviderService/).
+    Use this data source to access information about an existing resource.
     """
     ...

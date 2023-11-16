@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Build Pipeline Stage resource in Oracle Cloud Infrastructure Devops service.
@@ -118,49 +117,49 @@ type BuildPipelineStage struct {
 	// (Updatable) Defines the stage type, which is one of the following: BUILD, DELIVER_ARTIFACT, WAIT, and TRIGGER_DEPLOYMENT_PIPELINE.
 	BuildPipelineStageType pulumi.StringOutput `pulumi:"buildPipelineStageType"`
 	// (Updatable) The information about build runner.
-	BuildRunnerShapeConfig BuildPipelineStageBuildRunnerShapeConfigOutput `pulumi:"buildRunnerShapeConfig"`
+	BuildRunnerShapeConfig BuildPipelineStageBuildRunnerShapeConfigPtrOutput `pulumi:"buildRunnerShapeConfig"`
 	// (Updatable) Collection of build sources.
-	BuildSourceCollection BuildPipelineStageBuildSourceCollectionOutput `pulumi:"buildSourceCollection"`
+	BuildSourceCollection BuildPipelineStageBuildSourceCollectionPtrOutput `pulumi:"buildSourceCollection"`
 	// (Updatable) The path to the build specification file for this environment. The default location of the file if not specified is build_spec.yaml.
-	BuildSpecFile pulumi.StringOutput `pulumi:"buildSpecFile"`
+	BuildSpecFile pulumi.StringPtrOutput `pulumi:"buildSpecFile"`
 	// The OCID of the compartment where the pipeline is created.
-	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) Specifies an array of artifacts that need to be pushed to the artifactory stores.
-	DeliverArtifactCollection BuildPipelineStageDeliverArtifactCollectionOutput `pulumi:"deliverArtifactCollection"`
+	DeliverArtifactCollection BuildPipelineStageDeliverArtifactCollectionPtrOutput `pulumi:"deliverArtifactCollection"`
 	// (Updatable) A target deployment pipeline OCID that will run in this stage.
-	DeployPipelineId pulumi.StringOutput `pulumi:"deployPipelineId"`
+	DeployPipelineId pulumi.StringPtrOutput `pulumi:"deployPipelineId"`
 	// (Updatable) Optional description about the stage.
-	Description pulumi.StringOutput `pulumi:"description"`
+	Description pulumi.StringPtrOutput `pulumi:"description"`
 	// (Updatable) Stage display name, which can be renamed and is not necessarily unique. Avoid entering confidential information.
-	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrOutput `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// (Updatable) Image name for the build environment
-	Image pulumi.StringOutput `pulumi:"image"`
+	Image pulumi.StringPtrOutput `pulumi:"image"`
 	// (Updatable) A boolean flag that specifies whether all the parameters must be passed when the deployment is triggered.
-	IsPassAllParametersEnabled pulumi.BoolOutput `pulumi:"isPassAllParametersEnabled"`
+	IsPassAllParametersEnabled pulumi.BoolPtrOutput `pulumi:"isPassAllParametersEnabled"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrOutput `pulumi:"lifecycleDetails"`
 	// (Updatable) Name of the build source where the build_spec.yml file is located. If not specified, the first entry in the build source collection is chosen as primary build source.
-	PrimaryBuildSource pulumi.StringOutput `pulumi:"primaryBuildSource"`
+	PrimaryBuildSource pulumi.StringPtrOutput `pulumi:"primaryBuildSource"`
 	// (Updatable) Specifies the configuration needed when the target Oracle Cloud Infrastructure resource, i.e., OKE cluster, resides in customer's private network.
-	PrivateAccessConfig BuildPipelineStagePrivateAccessConfigOutput `pulumi:"privateAccessConfig"`
+	PrivateAccessConfig BuildPipelineStagePrivateAccessConfigPtrOutput `pulumi:"privateAccessConfig"`
 	// The OCID of the DevOps project.
-	ProjectId pulumi.StringOutput `pulumi:"projectId"`
+	ProjectId pulumi.StringPtrOutput `pulumi:"projectId"`
 	// (Updatable) Timeout for the build stage execution. Specify value in seconds.
-	StageExecutionTimeoutInSeconds pulumi.IntOutput `pulumi:"stageExecutionTimeoutInSeconds"`
+	StageExecutionTimeoutInSeconds pulumi.IntPtrOutput `pulumi:"stageExecutionTimeoutInSeconds"`
 	// The current state of the stage.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
 	// The time the stage was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The time the stage was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
-	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 	// (Updatable) Specifies wait criteria for the Wait stage.
-	WaitCriteria BuildPipelineStageWaitCriteriaOutput `pulumi:"waitCriteria"`
+	WaitCriteria BuildPipelineStageWaitCriteriaPtrOutput `pulumi:"waitCriteria"`
 }
 
 // NewBuildPipelineStage registers a new resource with the given unique name, arguments, and options.
@@ -413,12 +412,6 @@ func (i *BuildPipelineStage) ToBuildPipelineStageOutputWithContext(ctx context.C
 	return pulumi.ToOutputWithContext(ctx, i).(BuildPipelineStageOutput)
 }
 
-func (i *BuildPipelineStage) ToOutput(ctx context.Context) pulumix.Output[*BuildPipelineStage] {
-	return pulumix.Output[*BuildPipelineStage]{
-		OutputState: i.ToBuildPipelineStageOutputWithContext(ctx).OutputState,
-	}
-}
-
 // BuildPipelineStageArrayInput is an input type that accepts BuildPipelineStageArray and BuildPipelineStageArrayOutput values.
 // You can construct a concrete instance of `BuildPipelineStageArrayInput` via:
 //
@@ -442,12 +435,6 @@ func (i BuildPipelineStageArray) ToBuildPipelineStageArrayOutput() BuildPipeline
 
 func (i BuildPipelineStageArray) ToBuildPipelineStageArrayOutputWithContext(ctx context.Context) BuildPipelineStageArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(BuildPipelineStageArrayOutput)
-}
-
-func (i BuildPipelineStageArray) ToOutput(ctx context.Context) pulumix.Output[[]*BuildPipelineStage] {
-	return pulumix.Output[[]*BuildPipelineStage]{
-		OutputState: i.ToBuildPipelineStageArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // BuildPipelineStageMapInput is an input type that accepts BuildPipelineStageMap and BuildPipelineStageMapOutput values.
@@ -475,12 +462,6 @@ func (i BuildPipelineStageMap) ToBuildPipelineStageMapOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(BuildPipelineStageMapOutput)
 }
 
-func (i BuildPipelineStageMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*BuildPipelineStage] {
-	return pulumix.Output[map[string]*BuildPipelineStage]{
-		OutputState: i.ToBuildPipelineStageMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type BuildPipelineStageOutput struct{ *pulumi.OutputState }
 
 func (BuildPipelineStageOutput) ElementType() reflect.Type {
@@ -493,12 +474,6 @@ func (o BuildPipelineStageOutput) ToBuildPipelineStageOutput() BuildPipelineStag
 
 func (o BuildPipelineStageOutput) ToBuildPipelineStageOutputWithContext(ctx context.Context) BuildPipelineStageOutput {
 	return o
-}
-
-func (o BuildPipelineStageOutput) ToOutput(ctx context.Context) pulumix.Output[*BuildPipelineStage] {
-	return pulumix.Output[*BuildPipelineStage]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The OCID of the build pipeline.
@@ -519,27 +494,27 @@ func (o BuildPipelineStageOutput) BuildPipelineStageType() pulumi.StringOutput {
 }
 
 // (Updatable) The information about build runner.
-func (o BuildPipelineStageOutput) BuildRunnerShapeConfig() BuildPipelineStageBuildRunnerShapeConfigOutput {
-	return o.ApplyT(func(v *BuildPipelineStage) BuildPipelineStageBuildRunnerShapeConfigOutput {
+func (o BuildPipelineStageOutput) BuildRunnerShapeConfig() BuildPipelineStageBuildRunnerShapeConfigPtrOutput {
+	return o.ApplyT(func(v *BuildPipelineStage) BuildPipelineStageBuildRunnerShapeConfigPtrOutput {
 		return v.BuildRunnerShapeConfig
-	}).(BuildPipelineStageBuildRunnerShapeConfigOutput)
+	}).(BuildPipelineStageBuildRunnerShapeConfigPtrOutput)
 }
 
 // (Updatable) Collection of build sources.
-func (o BuildPipelineStageOutput) BuildSourceCollection() BuildPipelineStageBuildSourceCollectionOutput {
-	return o.ApplyT(func(v *BuildPipelineStage) BuildPipelineStageBuildSourceCollectionOutput {
+func (o BuildPipelineStageOutput) BuildSourceCollection() BuildPipelineStageBuildSourceCollectionPtrOutput {
+	return o.ApplyT(func(v *BuildPipelineStage) BuildPipelineStageBuildSourceCollectionPtrOutput {
 		return v.BuildSourceCollection
-	}).(BuildPipelineStageBuildSourceCollectionOutput)
+	}).(BuildPipelineStageBuildSourceCollectionPtrOutput)
 }
 
 // (Updatable) The path to the build specification file for this environment. The default location of the file if not specified is build_spec.yaml.
-func (o BuildPipelineStageOutput) BuildSpecFile() pulumi.StringOutput {
-	return o.ApplyT(func(v *BuildPipelineStage) pulumi.StringOutput { return v.BuildSpecFile }).(pulumi.StringOutput)
+func (o BuildPipelineStageOutput) BuildSpecFile() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *BuildPipelineStage) pulumi.StringPtrOutput { return v.BuildSpecFile }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the compartment where the pipeline is created.
-func (o BuildPipelineStageOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v *BuildPipelineStage) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
+func (o BuildPipelineStageOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *BuildPipelineStage) pulumi.StringPtrOutput { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
@@ -548,25 +523,25 @@ func (o BuildPipelineStageOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // (Updatable) Specifies an array of artifacts that need to be pushed to the artifactory stores.
-func (o BuildPipelineStageOutput) DeliverArtifactCollection() BuildPipelineStageDeliverArtifactCollectionOutput {
-	return o.ApplyT(func(v *BuildPipelineStage) BuildPipelineStageDeliverArtifactCollectionOutput {
+func (o BuildPipelineStageOutput) DeliverArtifactCollection() BuildPipelineStageDeliverArtifactCollectionPtrOutput {
+	return o.ApplyT(func(v *BuildPipelineStage) BuildPipelineStageDeliverArtifactCollectionPtrOutput {
 		return v.DeliverArtifactCollection
-	}).(BuildPipelineStageDeliverArtifactCollectionOutput)
+	}).(BuildPipelineStageDeliverArtifactCollectionPtrOutput)
 }
 
 // (Updatable) A target deployment pipeline OCID that will run in this stage.
-func (o BuildPipelineStageOutput) DeployPipelineId() pulumi.StringOutput {
-	return o.ApplyT(func(v *BuildPipelineStage) pulumi.StringOutput { return v.DeployPipelineId }).(pulumi.StringOutput)
+func (o BuildPipelineStageOutput) DeployPipelineId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *BuildPipelineStage) pulumi.StringPtrOutput { return v.DeployPipelineId }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Optional description about the stage.
-func (o BuildPipelineStageOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v *BuildPipelineStage) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
+func (o BuildPipelineStageOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *BuildPipelineStage) pulumi.StringPtrOutput { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Stage display name, which can be renamed and is not necessarily unique. Avoid entering confidential information.
-func (o BuildPipelineStageOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v *BuildPipelineStage) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+func (o BuildPipelineStageOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *BuildPipelineStage) pulumi.StringPtrOutput { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
@@ -575,43 +550,45 @@ func (o BuildPipelineStageOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // (Updatable) Image name for the build environment
-func (o BuildPipelineStageOutput) Image() pulumi.StringOutput {
-	return o.ApplyT(func(v *BuildPipelineStage) pulumi.StringOutput { return v.Image }).(pulumi.StringOutput)
+func (o BuildPipelineStageOutput) Image() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *BuildPipelineStage) pulumi.StringPtrOutput { return v.Image }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) A boolean flag that specifies whether all the parameters must be passed when the deployment is triggered.
-func (o BuildPipelineStageOutput) IsPassAllParametersEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v *BuildPipelineStage) pulumi.BoolOutput { return v.IsPassAllParametersEnabled }).(pulumi.BoolOutput)
+func (o BuildPipelineStageOutput) IsPassAllParametersEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *BuildPipelineStage) pulumi.BoolPtrOutput { return v.IsPassAllParametersEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-func (o BuildPipelineStageOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v *BuildPipelineStage) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o BuildPipelineStageOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *BuildPipelineStage) pulumi.StringPtrOutput { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Name of the build source where the build_spec.yml file is located. If not specified, the first entry in the build source collection is chosen as primary build source.
-func (o BuildPipelineStageOutput) PrimaryBuildSource() pulumi.StringOutput {
-	return o.ApplyT(func(v *BuildPipelineStage) pulumi.StringOutput { return v.PrimaryBuildSource }).(pulumi.StringOutput)
+func (o BuildPipelineStageOutput) PrimaryBuildSource() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *BuildPipelineStage) pulumi.StringPtrOutput { return v.PrimaryBuildSource }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Specifies the configuration needed when the target Oracle Cloud Infrastructure resource, i.e., OKE cluster, resides in customer's private network.
-func (o BuildPipelineStageOutput) PrivateAccessConfig() BuildPipelineStagePrivateAccessConfigOutput {
-	return o.ApplyT(func(v *BuildPipelineStage) BuildPipelineStagePrivateAccessConfigOutput { return v.PrivateAccessConfig }).(BuildPipelineStagePrivateAccessConfigOutput)
+func (o BuildPipelineStageOutput) PrivateAccessConfig() BuildPipelineStagePrivateAccessConfigPtrOutput {
+	return o.ApplyT(func(v *BuildPipelineStage) BuildPipelineStagePrivateAccessConfigPtrOutput {
+		return v.PrivateAccessConfig
+	}).(BuildPipelineStagePrivateAccessConfigPtrOutput)
 }
 
 // The OCID of the DevOps project.
-func (o BuildPipelineStageOutput) ProjectId() pulumi.StringOutput {
-	return o.ApplyT(func(v *BuildPipelineStage) pulumi.StringOutput { return v.ProjectId }).(pulumi.StringOutput)
+func (o BuildPipelineStageOutput) ProjectId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *BuildPipelineStage) pulumi.StringPtrOutput { return v.ProjectId }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Timeout for the build stage execution. Specify value in seconds.
-func (o BuildPipelineStageOutput) StageExecutionTimeoutInSeconds() pulumi.IntOutput {
-	return o.ApplyT(func(v *BuildPipelineStage) pulumi.IntOutput { return v.StageExecutionTimeoutInSeconds }).(pulumi.IntOutput)
+func (o BuildPipelineStageOutput) StageExecutionTimeoutInSeconds() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *BuildPipelineStage) pulumi.IntPtrOutput { return v.StageExecutionTimeoutInSeconds }).(pulumi.IntPtrOutput)
 }
 
 // The current state of the stage.
-func (o BuildPipelineStageOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *BuildPipelineStage) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o BuildPipelineStageOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *BuildPipelineStage) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -620,18 +597,18 @@ func (o BuildPipelineStageOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The time the stage was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
-func (o BuildPipelineStageOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *BuildPipelineStage) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o BuildPipelineStageOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *BuildPipelineStage) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time the stage was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
-func (o BuildPipelineStageOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *BuildPipelineStage) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o BuildPipelineStageOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *BuildPipelineStage) pulumi.StringPtrOutput { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Specifies wait criteria for the Wait stage.
-func (o BuildPipelineStageOutput) WaitCriteria() BuildPipelineStageWaitCriteriaOutput {
-	return o.ApplyT(func(v *BuildPipelineStage) BuildPipelineStageWaitCriteriaOutput { return v.WaitCriteria }).(BuildPipelineStageWaitCriteriaOutput)
+func (o BuildPipelineStageOutput) WaitCriteria() BuildPipelineStageWaitCriteriaPtrOutput {
+	return o.ApplyT(func(v *BuildPipelineStage) BuildPipelineStageWaitCriteriaPtrOutput { return v.WaitCriteria }).(BuildPipelineStageWaitCriteriaPtrOutput)
 }
 
 type BuildPipelineStageArrayOutput struct{ *pulumi.OutputState }
@@ -646,12 +623,6 @@ func (o BuildPipelineStageArrayOutput) ToBuildPipelineStageArrayOutput() BuildPi
 
 func (o BuildPipelineStageArrayOutput) ToBuildPipelineStageArrayOutputWithContext(ctx context.Context) BuildPipelineStageArrayOutput {
 	return o
-}
-
-func (o BuildPipelineStageArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*BuildPipelineStage] {
-	return pulumix.Output[[]*BuildPipelineStage]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o BuildPipelineStageArrayOutput) Index(i pulumi.IntInput) BuildPipelineStageOutput {
@@ -672,12 +643,6 @@ func (o BuildPipelineStageMapOutput) ToBuildPipelineStageMapOutput() BuildPipeli
 
 func (o BuildPipelineStageMapOutput) ToBuildPipelineStageMapOutputWithContext(ctx context.Context) BuildPipelineStageMapOutput {
 	return o
-}
-
-func (o BuildPipelineStageMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*BuildPipelineStage] {
-	return pulumix.Output[map[string]*BuildPipelineStage]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o BuildPipelineStageMapOutput) MapIndex(k pulumi.StringInput) BuildPipelineStageOutput {

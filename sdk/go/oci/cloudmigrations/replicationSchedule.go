@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Replication Schedule resource in Oracle Cloud Infrastructure Cloud Migrations service.
@@ -77,15 +76,15 @@ type ReplicationSchedule struct {
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// The detailed state of the replication schedule.
-	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrOutput `pulumi:"lifecycleDetails"`
 	// Current state of the replication schedule.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
 	// The time when the replication schedule was created in RFC3339 format.
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The time when the replication schedule was last updated in RFC3339 format.
-	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 }
 
 // NewReplicationSchedule registers a new resource with the given unique name, arguments, and options.
@@ -238,12 +237,6 @@ func (i *ReplicationSchedule) ToReplicationScheduleOutputWithContext(ctx context
 	return pulumi.ToOutputWithContext(ctx, i).(ReplicationScheduleOutput)
 }
 
-func (i *ReplicationSchedule) ToOutput(ctx context.Context) pulumix.Output[*ReplicationSchedule] {
-	return pulumix.Output[*ReplicationSchedule]{
-		OutputState: i.ToReplicationScheduleOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ReplicationScheduleArrayInput is an input type that accepts ReplicationScheduleArray and ReplicationScheduleArrayOutput values.
 // You can construct a concrete instance of `ReplicationScheduleArrayInput` via:
 //
@@ -267,12 +260,6 @@ func (i ReplicationScheduleArray) ToReplicationScheduleArrayOutput() Replication
 
 func (i ReplicationScheduleArray) ToReplicationScheduleArrayOutputWithContext(ctx context.Context) ReplicationScheduleArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ReplicationScheduleArrayOutput)
-}
-
-func (i ReplicationScheduleArray) ToOutput(ctx context.Context) pulumix.Output[[]*ReplicationSchedule] {
-	return pulumix.Output[[]*ReplicationSchedule]{
-		OutputState: i.ToReplicationScheduleArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // ReplicationScheduleMapInput is an input type that accepts ReplicationScheduleMap and ReplicationScheduleMapOutput values.
@@ -300,12 +287,6 @@ func (i ReplicationScheduleMap) ToReplicationScheduleMapOutputWithContext(ctx co
 	return pulumi.ToOutputWithContext(ctx, i).(ReplicationScheduleMapOutput)
 }
 
-func (i ReplicationScheduleMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*ReplicationSchedule] {
-	return pulumix.Output[map[string]*ReplicationSchedule]{
-		OutputState: i.ToReplicationScheduleMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ReplicationScheduleOutput struct{ *pulumi.OutputState }
 
 func (ReplicationScheduleOutput) ElementType() reflect.Type {
@@ -318,12 +299,6 @@ func (o ReplicationScheduleOutput) ToReplicationScheduleOutput() ReplicationSche
 
 func (o ReplicationScheduleOutput) ToReplicationScheduleOutputWithContext(ctx context.Context) ReplicationScheduleOutput {
 	return o
-}
-
-func (o ReplicationScheduleOutput) ToOutput(ctx context.Context) pulumix.Output[*ReplicationSchedule] {
-	return pulumix.Output[*ReplicationSchedule]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the replication schedule should be created.
@@ -355,13 +330,13 @@ func (o ReplicationScheduleOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The detailed state of the replication schedule.
-func (o ReplicationScheduleOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v *ReplicationSchedule) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o ReplicationScheduleOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ReplicationSchedule) pulumi.StringPtrOutput { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // Current state of the replication schedule.
-func (o ReplicationScheduleOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *ReplicationSchedule) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o ReplicationScheduleOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ReplicationSchedule) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -370,13 +345,13 @@ func (o ReplicationScheduleOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The time when the replication schedule was created in RFC3339 format.
-func (o ReplicationScheduleOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *ReplicationSchedule) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o ReplicationScheduleOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ReplicationSchedule) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time when the replication schedule was last updated in RFC3339 format.
-func (o ReplicationScheduleOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *ReplicationSchedule) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o ReplicationScheduleOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ReplicationSchedule) pulumi.StringPtrOutput { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type ReplicationScheduleArrayOutput struct{ *pulumi.OutputState }
@@ -391,12 +366,6 @@ func (o ReplicationScheduleArrayOutput) ToReplicationScheduleArrayOutput() Repli
 
 func (o ReplicationScheduleArrayOutput) ToReplicationScheduleArrayOutputWithContext(ctx context.Context) ReplicationScheduleArrayOutput {
 	return o
-}
-
-func (o ReplicationScheduleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*ReplicationSchedule] {
-	return pulumix.Output[[]*ReplicationSchedule]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ReplicationScheduleArrayOutput) Index(i pulumi.IntInput) ReplicationScheduleOutput {
@@ -417,12 +386,6 @@ func (o ReplicationScheduleMapOutput) ToReplicationScheduleMapOutput() Replicati
 
 func (o ReplicationScheduleMapOutput) ToReplicationScheduleMapOutputWithContext(ctx context.Context) ReplicationScheduleMapOutput {
 	return o
-}
-
-func (o ReplicationScheduleMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*ReplicationSchedule] {
-	return pulumix.Output[map[string]*ReplicationSchedule]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ReplicationScheduleMapOutput) MapIndex(k pulumi.StringInput) ReplicationScheduleOutput {

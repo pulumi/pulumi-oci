@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Catalog Private Endpoint resource in Oracle Cloud Infrastructure Data Catalog service.
@@ -63,27 +62,27 @@ type LookupCatalogPrivateEndpointResult struct {
 	AttachedCatalogs         []string `pulumi:"attachedCatalogs"`
 	CatalogPrivateEndpointId string   `pulumi:"catalogPrivateEndpointId"`
 	// Identifier of the compartment this private endpoint belongs to
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// Mutable name of the Private Reverse Connection Endpoint
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// List of DNS zones to be used by the data assets to be harvested. Example: custpvtsubnet.oraclevcn.com for data asset: db.custpvtsubnet.oraclevcn.com
 	DnsZones []string `pulumi:"dnsZones"`
 	// Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// Unique identifier that is immutable
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'Failed' state.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// The current state of the private endpoint resource.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// Subnet Identifier
-	SubnetId string `pulumi:"subnetId"`
+	SubnetId *string `pulumi:"subnetId"`
 	// The time the private endpoint was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time the private endpoint was updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 func LookupCatalogPrivateEndpointOutput(ctx *pulumi.Context, args LookupCatalogPrivateEndpointOutputArgs, opts ...pulumi.InvokeOption) LookupCatalogPrivateEndpointResultOutput {
@@ -124,12 +123,6 @@ func (o LookupCatalogPrivateEndpointResultOutput) ToLookupCatalogPrivateEndpoint
 	return o
 }
 
-func (o LookupCatalogPrivateEndpointResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupCatalogPrivateEndpointResult] {
-	return pulumix.Output[LookupCatalogPrivateEndpointResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The list of catalogs using the private reverse connection endpoint
 func (o LookupCatalogPrivateEndpointResultOutput) AttachedCatalogs() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v LookupCatalogPrivateEndpointResult) []string { return v.AttachedCatalogs }).(pulumi.StringArrayOutput)
@@ -140,8 +133,8 @@ func (o LookupCatalogPrivateEndpointResultOutput) CatalogPrivateEndpointId() pul
 }
 
 // Identifier of the compartment this private endpoint belongs to
-func (o LookupCatalogPrivateEndpointResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupCatalogPrivateEndpointResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupCatalogPrivateEndpointResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupCatalogPrivateEndpointResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
@@ -150,8 +143,8 @@ func (o LookupCatalogPrivateEndpointResultOutput) DefinedTags() pulumi.MapOutput
 }
 
 // Mutable name of the Private Reverse Connection Endpoint
-func (o LookupCatalogPrivateEndpointResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupCatalogPrivateEndpointResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupCatalogPrivateEndpointResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupCatalogPrivateEndpointResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // List of DNS zones to be used by the data assets to be harvested. Example: custpvtsubnet.oraclevcn.com for data asset: db.custpvtsubnet.oraclevcn.com
@@ -165,33 +158,33 @@ func (o LookupCatalogPrivateEndpointResultOutput) FreeformTags() pulumi.MapOutpu
 }
 
 // Unique identifier that is immutable
-func (o LookupCatalogPrivateEndpointResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupCatalogPrivateEndpointResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupCatalogPrivateEndpointResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupCatalogPrivateEndpointResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'Failed' state.
-func (o LookupCatalogPrivateEndpointResultOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupCatalogPrivateEndpointResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o LookupCatalogPrivateEndpointResultOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupCatalogPrivateEndpointResult) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the private endpoint resource.
-func (o LookupCatalogPrivateEndpointResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupCatalogPrivateEndpointResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupCatalogPrivateEndpointResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupCatalogPrivateEndpointResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Subnet Identifier
-func (o LookupCatalogPrivateEndpointResultOutput) SubnetId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupCatalogPrivateEndpointResult) string { return v.SubnetId }).(pulumi.StringOutput)
+func (o LookupCatalogPrivateEndpointResultOutput) SubnetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupCatalogPrivateEndpointResult) *string { return v.SubnetId }).(pulumi.StringPtrOutput)
 }
 
 // The time the private endpoint was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-func (o LookupCatalogPrivateEndpointResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupCatalogPrivateEndpointResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupCatalogPrivateEndpointResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupCatalogPrivateEndpointResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time the private endpoint was updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-func (o LookupCatalogPrivateEndpointResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupCatalogPrivateEndpointResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o LookupCatalogPrivateEndpointResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupCatalogPrivateEndpointResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 func init() {

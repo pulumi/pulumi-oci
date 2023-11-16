@@ -22,30 +22,30 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The list of object findings related to indexes.
      * 
      */
-    private List<GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportIndexFinding> indexFindings;
+    private @Nullable List<GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportIndexFinding> indexFindings;
     private String managedDatabaseId;
     /**
      * @return The list of object findings related to statistics.
      * 
      */
-    private List<GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportObjectStatFinding> objectStatFindings;
+    private @Nullable List<GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportObjectStatFinding> objectStatFindings;
     private @Nullable String searchPeriod;
     private String sqlTuningAdvisorTaskId;
     /**
      * @return The number of distinct SQL statements with stale or missing optimizer statistics recommendations.
      * 
      */
-    private List<GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatistic> statistics;
+    private @Nullable List<GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatistic> statistics;
     /**
      * @return The general information regarding the SQL Tuning Advisor task.
      * 
      */
-    private List<GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportTaskInfo> taskInfos;
+    private @Nullable List<GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportTaskInfo> taskInfos;
     private @Nullable String timeGreaterThanOrEqualTo;
     private @Nullable String timeLessThanOrEqualTo;
 
@@ -60,15 +60,15 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The list of object findings related to indexes.
      * 
      */
     public List<GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportIndexFinding> indexFindings() {
-        return this.indexFindings;
+        return this.indexFindings == null ? List.of() : this.indexFindings;
     }
     public String managedDatabaseId() {
         return this.managedDatabaseId;
@@ -78,7 +78,7 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportResult {
      * 
      */
     public List<GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportObjectStatFinding> objectStatFindings() {
-        return this.objectStatFindings;
+        return this.objectStatFindings == null ? List.of() : this.objectStatFindings;
     }
     public Optional<String> searchPeriod() {
         return Optional.ofNullable(this.searchPeriod);
@@ -91,14 +91,14 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportResult {
      * 
      */
     public List<GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatistic> statistics() {
-        return this.statistics;
+        return this.statistics == null ? List.of() : this.statistics;
     }
     /**
      * @return The general information regarding the SQL Tuning Advisor task.
      * 
      */
     public List<GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportTaskInfo> taskInfos() {
-        return this.taskInfos;
+        return this.taskInfos == null ? List.of() : this.taskInfos;
     }
     public Optional<String> timeGreaterThanOrEqualTo() {
         return Optional.ofNullable(this.timeGreaterThanOrEqualTo);
@@ -118,14 +118,14 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportResult {
     public static final class Builder {
         private @Nullable String beginExecIdGreaterThanOrEqualTo;
         private @Nullable String endExecIdLessThanOrEqualTo;
-        private String id;
-        private List<GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportIndexFinding> indexFindings;
+        private @Nullable String id;
+        private @Nullable List<GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportIndexFinding> indexFindings;
         private String managedDatabaseId;
-        private List<GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportObjectStatFinding> objectStatFindings;
+        private @Nullable List<GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportObjectStatFinding> objectStatFindings;
         private @Nullable String searchPeriod;
         private String sqlTuningAdvisorTaskId;
-        private List<GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatistic> statistics;
-        private List<GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportTaskInfo> taskInfos;
+        private @Nullable List<GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatistic> statistics;
+        private @Nullable List<GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportTaskInfo> taskInfos;
         private @Nullable String timeGreaterThanOrEqualTo;
         private @Nullable String timeLessThanOrEqualTo;
         public Builder() {}
@@ -156,13 +156,13 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportResult {
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder indexFindings(List<GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportIndexFinding> indexFindings) {
-            this.indexFindings = Objects.requireNonNull(indexFindings);
+        public Builder indexFindings(@Nullable List<GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportIndexFinding> indexFindings) {
+            this.indexFindings = indexFindings;
             return this;
         }
         public Builder indexFindings(GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportIndexFinding... indexFindings) {
@@ -174,8 +174,8 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportResult {
             return this;
         }
         @CustomType.Setter
-        public Builder objectStatFindings(List<GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportObjectStatFinding> objectStatFindings) {
-            this.objectStatFindings = Objects.requireNonNull(objectStatFindings);
+        public Builder objectStatFindings(@Nullable List<GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportObjectStatFinding> objectStatFindings) {
+            this.objectStatFindings = objectStatFindings;
             return this;
         }
         public Builder objectStatFindings(GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportObjectStatFinding... objectStatFindings) {
@@ -192,16 +192,16 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportResult {
             return this;
         }
         @CustomType.Setter
-        public Builder statistics(List<GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatistic> statistics) {
-            this.statistics = Objects.requireNonNull(statistics);
+        public Builder statistics(@Nullable List<GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatistic> statistics) {
+            this.statistics = statistics;
             return this;
         }
         public Builder statistics(GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatistic... statistics) {
             return statistics(List.of(statistics));
         }
         @CustomType.Setter
-        public Builder taskInfos(List<GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportTaskInfo> taskInfos) {
-            this.taskInfos = Objects.requireNonNull(taskInfos);
+        public Builder taskInfos(@Nullable List<GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportTaskInfo> taskInfos) {
+            this.taskInfos = taskInfos;
             return this;
         }
         public Builder taskInfos(GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportTaskInfo... taskInfos) {

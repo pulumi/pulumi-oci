@@ -16,15 +16,15 @@ namespace Pulumi.Oci.OneSubsription.Outputs
         /// <summary>
         /// Bill to site use Id.
         /// </summary>
-        public readonly string BillSiteUseId;
+        public readonly string? BillSiteUseId;
         /// <summary>
         /// Identify as the customer shipping address.
         /// </summary>
-        public readonly bool IsBillTo;
+        public readonly bool? IsBillTo;
         /// <summary>
         /// Identify as the customer invoicing address.
         /// </summary>
-        public readonly bool IsShipTo;
+        public readonly bool? IsShipTo;
         /// <summary>
         /// Address location.
         /// </summary>
@@ -32,43 +32,43 @@ namespace Pulumi.Oci.OneSubsription.Outputs
         /// <summary>
         /// Commercial name also called customer name.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// Phone.
         /// </summary>
-        public readonly string Phone;
+        public readonly string? Phone;
         /// <summary>
         /// Service to site use Id.
         /// </summary>
-        public readonly string Service2siteUseId;
+        public readonly string? Service2siteUseId;
         /// <summary>
         /// TCA customer account site Id.
         /// </summary>
-        public readonly string TcaCustAcctSiteId;
+        public readonly string? TcaCustAcctSiteId;
         /// <summary>
         /// Party site number.
         /// </summary>
-        public readonly string TcaPartySiteNumber;
+        public readonly string? TcaPartySiteNumber;
 
         [OutputConstructor]
         private GetSubscribedServicesSubscribedServiceResellerAddressResult(
-            string billSiteUseId,
+            string? billSiteUseId,
 
-            bool isBillTo,
+            bool? isBillTo,
 
-            bool isShipTo,
+            bool? isShipTo,
 
             ImmutableArray<Outputs.GetSubscribedServicesSubscribedServiceResellerAddressLocationResult> locations,
 
-            string name,
+            string? name,
 
-            string phone,
+            string? phone,
 
-            string service2siteUseId,
+            string? service2siteUseId,
 
-            string tcaCustAcctSiteId,
+            string? tcaCustAcctSiteId,
 
-            string tcaPartySiteNumber)
+            string? tcaPartySiteNumber)
         {
             BillSiteUseId = billSiteUseId;
             IsBillTo = isBillTo;

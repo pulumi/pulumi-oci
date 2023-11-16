@@ -16,23 +16,23 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// <summary>
         /// The paid usage option chosen by the customer admin.
         /// </summary>
-        public readonly bool IsPaidUsage;
+        public readonly bool? IsPaidUsage;
         /// <summary>
         /// The offline retention period in months.
         /// </summary>
-        public readonly int OfflineRetentionPeriod;
+        public readonly int? OfflineRetentionPeriod;
         /// <summary>
         /// The online retention period in months.
         /// </summary>
-        public readonly int OnlineRetentionPeriod;
+        public readonly int? OnlineRetentionPeriod;
 
         [OutputConstructor]
         private GetDataSafeConfigurationGlobalSettingResult(
-            bool isPaidUsage,
+            bool? isPaidUsage,
 
-            int offlineRetentionPeriod,
+            int? offlineRetentionPeriod,
 
-            int onlineRetentionPeriod)
+            int? onlineRetentionPeriod)
         {
             IsPaidUsage = isPaidUsage;
             OfflineRetentionPeriod = offlineRetentionPeriod;

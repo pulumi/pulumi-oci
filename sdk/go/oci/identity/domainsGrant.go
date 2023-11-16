@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Grant resource in Oracle Cloud Infrastructure Identity Domains service.
@@ -40,7 +39,7 @@ type DomainsGrant struct {
 	// * returned: default
 	// * type: complex
 	// * uniqueness: none
-	App DomainsGrantAppOutput `pulumi:"app"`
+	App DomainsGrantAppPtrOutput `pulumi:"app"`
 	// Application-Entitlement-Collection that is being granted. Each Grant must grant either an App or an App-Entitlement-Collection.
 	//
 	// **Added In:** 18.2.4
@@ -53,7 +52,7 @@ type DomainsGrant struct {
 	// * returned: default
 	// * type: complex
 	// * uniqueness: none
-	AppEntitlementCollection DomainsGrantAppEntitlementCollectionOutput `pulumi:"appEntitlementCollection"`
+	AppEntitlementCollection DomainsGrantAppEntitlementCollectionPtrOutput `pulumi:"appEntitlementCollection"`
 	// A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
 	AttributeSets pulumi.StringArrayOutput `pulumi:"attributeSets"`
 	// A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
@@ -71,7 +70,7 @@ type DomainsGrant struct {
 	// * returned: default
 	// * type: string
 	// * uniqueness: none
-	CompartmentOcid pulumi.StringOutput `pulumi:"compartmentOcid"`
+	CompartmentOcid pulumi.StringPtrOutput `pulumi:"compartmentOcid"`
 	// (Updatable) Unique key of grant, composed by combining a subset of app, entitlement, grantee, grantor and grantMechanism.  Used to prevent duplicate Grants.
 	//
 	// **Added In:** 18.1.2
@@ -85,7 +84,7 @@ type DomainsGrant struct {
 	// * returned: request
 	// * type: string
 	// * uniqueness: server
-	CompositeKey pulumi.StringOutput `pulumi:"compositeKey"`
+	CompositeKey pulumi.StringPtrOutput `pulumi:"compositeKey"`
 	// (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
 	//
 	// **SCIM++ Properties:**
@@ -97,7 +96,7 @@ type DomainsGrant struct {
 	// * returned: default
 	// * type: boolean
 	// * uniqueness: none
-	DeleteInProgress pulumi.BoolOutput `pulumi:"deleteInProgress"`
+	DeleteInProgress pulumi.BoolPtrOutput `pulumi:"deleteInProgress"`
 	// (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
 	//
 	// **SCIM++ Properties:**
@@ -109,7 +108,7 @@ type DomainsGrant struct {
 	// * returned: default
 	// * type: string
 	// * uniqueness: none
-	DomainOcid pulumi.StringOutput `pulumi:"domainOcid"`
+	DomainOcid pulumi.StringPtrOutput `pulumi:"domainOcid"`
 	// The entitlement or privilege that is being granted
 	//
 	// **SCIM++ Properties:**
@@ -120,7 +119,7 @@ type DomainsGrant struct {
 	// * required: false
 	// * returned: default
 	// * type: complex
-	Entitlement DomainsGrantEntitlementOutput `pulumi:"entitlement"`
+	Entitlement DomainsGrantEntitlementPtrOutput `pulumi:"entitlement"`
 	// Each value of grantMechanism indicates how (or by what component) some App (or App-Entitlement) was granted. A customer or the UI should use only grantMechanism values that start with 'ADMINISTRATOR':
 	// * 'ADMINISTRATOR_TO_USER' is for a direct grant to a specific User.
 	// * 'ADMINISTRATOR_TO_GROUP' is for a grant to a specific Group, which results in indirect grants to Users who are members of that Group.
@@ -149,7 +148,7 @@ type DomainsGrant struct {
 	// * returned: default
 	// * type: string
 	// * uniqueness: none
-	GrantedAttributeValuesJson pulumi.StringOutput `pulumi:"grantedAttributeValuesJson"`
+	GrantedAttributeValuesJson pulumi.StringPtrOutput `pulumi:"grantedAttributeValuesJson"`
 	// Grantee beneficiary. The grantee may be a User, Group, App or DynamicResourceGroup.
 	//
 	// **SCIM++ Properties:**
@@ -206,7 +205,7 @@ type DomainsGrant struct {
 	// * returned: request
 	// * type: string
 	// * uniqueness: none
-	IdcsLastUpgradedInRelease pulumi.StringOutput `pulumi:"idcsLastUpgradedInRelease"`
+	IdcsLastUpgradedInRelease pulumi.StringPtrOutput `pulumi:"idcsLastUpgradedInRelease"`
 	// (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
 	//
 	// **SCIM++ Properties:**
@@ -228,7 +227,7 @@ type DomainsGrant struct {
 	// * returned: default
 	// * type: boolean
 	// * uniqueness: none
-	IsFulfilled pulumi.BoolOutput `pulumi:"isFulfilled"`
+	IsFulfilled pulumi.BoolPtrOutput `pulumi:"isFulfilled"`
 	// (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
 	//
 	// **SCIM++ Properties:**
@@ -252,9 +251,9 @@ type DomainsGrant struct {
 	// * returned: default
 	// * type: string
 	// * uniqueness: global
-	Ocid pulumi.StringOutput `pulumi:"ocid"`
+	Ocid pulumi.StringPtrOutput `pulumi:"ocid"`
 	// An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
-	ResourceTypeSchemaVersion pulumi.StringOutput `pulumi:"resourceTypeSchemaVersion"`
+	ResourceTypeSchemaVersion pulumi.StringPtrOutput `pulumi:"resourceTypeSchemaVersion"`
 	// REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
 	//
 	// **SCIM++ Properties:**
@@ -293,7 +292,7 @@ type DomainsGrant struct {
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	TenancyOcid pulumi.StringOutput `pulumi:"tenancyOcid"`
+	TenancyOcid pulumi.StringPtrOutput `pulumi:"tenancyOcid"`
 }
 
 // NewDomainsGrant registers a new resource with the given unique name, arguments, and options.
@@ -1153,12 +1152,6 @@ func (i *DomainsGrant) ToDomainsGrantOutputWithContext(ctx context.Context) Doma
 	return pulumi.ToOutputWithContext(ctx, i).(DomainsGrantOutput)
 }
 
-func (i *DomainsGrant) ToOutput(ctx context.Context) pulumix.Output[*DomainsGrant] {
-	return pulumix.Output[*DomainsGrant]{
-		OutputState: i.ToDomainsGrantOutputWithContext(ctx).OutputState,
-	}
-}
-
 // DomainsGrantArrayInput is an input type that accepts DomainsGrantArray and DomainsGrantArrayOutput values.
 // You can construct a concrete instance of `DomainsGrantArrayInput` via:
 //
@@ -1182,12 +1175,6 @@ func (i DomainsGrantArray) ToDomainsGrantArrayOutput() DomainsGrantArrayOutput {
 
 func (i DomainsGrantArray) ToDomainsGrantArrayOutputWithContext(ctx context.Context) DomainsGrantArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(DomainsGrantArrayOutput)
-}
-
-func (i DomainsGrantArray) ToOutput(ctx context.Context) pulumix.Output[[]*DomainsGrant] {
-	return pulumix.Output[[]*DomainsGrant]{
-		OutputState: i.ToDomainsGrantArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // DomainsGrantMapInput is an input type that accepts DomainsGrantMap and DomainsGrantMapOutput values.
@@ -1215,12 +1202,6 @@ func (i DomainsGrantMap) ToDomainsGrantMapOutputWithContext(ctx context.Context)
 	return pulumi.ToOutputWithContext(ctx, i).(DomainsGrantMapOutput)
 }
 
-func (i DomainsGrantMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*DomainsGrant] {
-	return pulumix.Output[map[string]*DomainsGrant]{
-		OutputState: i.ToDomainsGrantMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DomainsGrantOutput struct{ *pulumi.OutputState }
 
 func (DomainsGrantOutput) ElementType() reflect.Type {
@@ -1235,12 +1216,6 @@ func (o DomainsGrantOutput) ToDomainsGrantOutputWithContext(ctx context.Context)
 	return o
 }
 
-func (o DomainsGrantOutput) ToOutput(ctx context.Context) pulumix.Output[*DomainsGrant] {
-	return pulumix.Output[*DomainsGrant]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Application that is being granted. Each Grant must grant either an App or an App-Entitlement-Collection.
 //
 // **SCIM++ Properties:**
@@ -1252,8 +1227,8 @@ func (o DomainsGrantOutput) ToOutput(ctx context.Context) pulumix.Output[*Domain
 // * returned: default
 // * type: complex
 // * uniqueness: none
-func (o DomainsGrantOutput) App() DomainsGrantAppOutput {
-	return o.ApplyT(func(v *DomainsGrant) DomainsGrantAppOutput { return v.App }).(DomainsGrantAppOutput)
+func (o DomainsGrantOutput) App() DomainsGrantAppPtrOutput {
+	return o.ApplyT(func(v *DomainsGrant) DomainsGrantAppPtrOutput { return v.App }).(DomainsGrantAppPtrOutput)
 }
 
 // Application-Entitlement-Collection that is being granted. Each Grant must grant either an App or an App-Entitlement-Collection.
@@ -1268,8 +1243,8 @@ func (o DomainsGrantOutput) App() DomainsGrantAppOutput {
 // * returned: default
 // * type: complex
 // * uniqueness: none
-func (o DomainsGrantOutput) AppEntitlementCollection() DomainsGrantAppEntitlementCollectionOutput {
-	return o.ApplyT(func(v *DomainsGrant) DomainsGrantAppEntitlementCollectionOutput { return v.AppEntitlementCollection }).(DomainsGrantAppEntitlementCollectionOutput)
+func (o DomainsGrantOutput) AppEntitlementCollection() DomainsGrantAppEntitlementCollectionPtrOutput {
+	return o.ApplyT(func(v *DomainsGrant) DomainsGrantAppEntitlementCollectionPtrOutput { return v.AppEntitlementCollection }).(DomainsGrantAppEntitlementCollectionPtrOutput)
 }
 
 // A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
@@ -1298,8 +1273,8 @@ func (o DomainsGrantOutput) Authorization() pulumi.StringPtrOutput {
 // * returned: default
 // * type: string
 // * uniqueness: none
-func (o DomainsGrantOutput) CompartmentOcid() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsGrant) pulumi.StringOutput { return v.CompartmentOcid }).(pulumi.StringOutput)
+func (o DomainsGrantOutput) CompartmentOcid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsGrant) pulumi.StringPtrOutput { return v.CompartmentOcid }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Unique key of grant, composed by combining a subset of app, entitlement, grantee, grantor and grantMechanism.  Used to prevent duplicate Grants.
@@ -1315,8 +1290,8 @@ func (o DomainsGrantOutput) CompartmentOcid() pulumi.StringOutput {
 // * returned: request
 // * type: string
 // * uniqueness: server
-func (o DomainsGrantOutput) CompositeKey() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsGrant) pulumi.StringOutput { return v.CompositeKey }).(pulumi.StringOutput)
+func (o DomainsGrantOutput) CompositeKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsGrant) pulumi.StringPtrOutput { return v.CompositeKey }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
@@ -1330,8 +1305,8 @@ func (o DomainsGrantOutput) CompositeKey() pulumi.StringOutput {
 // * returned: default
 // * type: boolean
 // * uniqueness: none
-func (o DomainsGrantOutput) DeleteInProgress() pulumi.BoolOutput {
-	return o.ApplyT(func(v *DomainsGrant) pulumi.BoolOutput { return v.DeleteInProgress }).(pulumi.BoolOutput)
+func (o DomainsGrantOutput) DeleteInProgress() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DomainsGrant) pulumi.BoolPtrOutput { return v.DeleteInProgress }).(pulumi.BoolPtrOutput)
 }
 
 // (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
@@ -1345,8 +1320,8 @@ func (o DomainsGrantOutput) DeleteInProgress() pulumi.BoolOutput {
 // * returned: default
 // * type: string
 // * uniqueness: none
-func (o DomainsGrantOutput) DomainOcid() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsGrant) pulumi.StringOutput { return v.DomainOcid }).(pulumi.StringOutput)
+func (o DomainsGrantOutput) DomainOcid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsGrant) pulumi.StringPtrOutput { return v.DomainOcid }).(pulumi.StringPtrOutput)
 }
 
 // The entitlement or privilege that is being granted
@@ -1359,8 +1334,8 @@ func (o DomainsGrantOutput) DomainOcid() pulumi.StringOutput {
 // * required: false
 // * returned: default
 // * type: complex
-func (o DomainsGrantOutput) Entitlement() DomainsGrantEntitlementOutput {
-	return o.ApplyT(func(v *DomainsGrant) DomainsGrantEntitlementOutput { return v.Entitlement }).(DomainsGrantEntitlementOutput)
+func (o DomainsGrantOutput) Entitlement() DomainsGrantEntitlementPtrOutput {
+	return o.ApplyT(func(v *DomainsGrant) DomainsGrantEntitlementPtrOutput { return v.Entitlement }).(DomainsGrantEntitlementPtrOutput)
 }
 
 // Each value of grantMechanism indicates how (or by what component) some App (or App-Entitlement) was granted. A customer or the UI should use only grantMechanism values that start with 'ADMINISTRATOR':
@@ -1394,8 +1369,8 @@ func (o DomainsGrantOutput) GrantMechanism() pulumi.StringOutput {
 // * returned: default
 // * type: string
 // * uniqueness: none
-func (o DomainsGrantOutput) GrantedAttributeValuesJson() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsGrant) pulumi.StringOutput { return v.GrantedAttributeValuesJson }).(pulumi.StringOutput)
+func (o DomainsGrantOutput) GrantedAttributeValuesJson() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsGrant) pulumi.StringPtrOutput { return v.GrantedAttributeValuesJson }).(pulumi.StringPtrOutput)
 }
 
 // Grantee beneficiary. The grantee may be a User, Group, App or DynamicResourceGroup.
@@ -1469,8 +1444,8 @@ func (o DomainsGrantOutput) IdcsLastModifiedBies() DomainsGrantIdcsLastModifiedB
 // * returned: request
 // * type: string
 // * uniqueness: none
-func (o DomainsGrantOutput) IdcsLastUpgradedInRelease() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsGrant) pulumi.StringOutput { return v.IdcsLastUpgradedInRelease }).(pulumi.StringOutput)
+func (o DomainsGrantOutput) IdcsLastUpgradedInRelease() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsGrant) pulumi.StringPtrOutput { return v.IdcsLastUpgradedInRelease }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
@@ -1497,8 +1472,8 @@ func (o DomainsGrantOutput) IdcsPreventedOperations() pulumi.StringArrayOutput {
 // * returned: default
 // * type: boolean
 // * uniqueness: none
-func (o DomainsGrantOutput) IsFulfilled() pulumi.BoolOutput {
-	return o.ApplyT(func(v *DomainsGrant) pulumi.BoolOutput { return v.IsFulfilled }).(pulumi.BoolOutput)
+func (o DomainsGrantOutput) IsFulfilled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DomainsGrant) pulumi.BoolPtrOutput { return v.IsFulfilled }).(pulumi.BoolPtrOutput)
 }
 
 // (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
@@ -1527,13 +1502,13 @@ func (o DomainsGrantOutput) Metas() DomainsGrantMetaArrayOutput {
 // * returned: default
 // * type: string
 // * uniqueness: global
-func (o DomainsGrantOutput) Ocid() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsGrant) pulumi.StringOutput { return v.Ocid }).(pulumi.StringOutput)
+func (o DomainsGrantOutput) Ocid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsGrant) pulumi.StringPtrOutput { return v.Ocid }).(pulumi.StringPtrOutput)
 }
 
 // An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
-func (o DomainsGrantOutput) ResourceTypeSchemaVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsGrant) pulumi.StringOutput { return v.ResourceTypeSchemaVersion }).(pulumi.StringOutput)
+func (o DomainsGrantOutput) ResourceTypeSchemaVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsGrant) pulumi.StringPtrOutput { return v.ResourceTypeSchemaVersion }).(pulumi.StringPtrOutput)
 }
 
 // REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
@@ -1580,8 +1555,8 @@ func (o DomainsGrantOutput) Tags() DomainsGrantTagArrayOutput {
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-func (o DomainsGrantOutput) TenancyOcid() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsGrant) pulumi.StringOutput { return v.TenancyOcid }).(pulumi.StringOutput)
+func (o DomainsGrantOutput) TenancyOcid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsGrant) pulumi.StringPtrOutput { return v.TenancyOcid }).(pulumi.StringPtrOutput)
 }
 
 type DomainsGrantArrayOutput struct{ *pulumi.OutputState }
@@ -1596,12 +1571,6 @@ func (o DomainsGrantArrayOutput) ToDomainsGrantArrayOutput() DomainsGrantArrayOu
 
 func (o DomainsGrantArrayOutput) ToDomainsGrantArrayOutputWithContext(ctx context.Context) DomainsGrantArrayOutput {
 	return o
-}
-
-func (o DomainsGrantArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*DomainsGrant] {
-	return pulumix.Output[[]*DomainsGrant]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DomainsGrantArrayOutput) Index(i pulumi.IntInput) DomainsGrantOutput {
@@ -1622,12 +1591,6 @@ func (o DomainsGrantMapOutput) ToDomainsGrantMapOutput() DomainsGrantMapOutput {
 
 func (o DomainsGrantMapOutput) ToDomainsGrantMapOutputWithContext(ctx context.Context) DomainsGrantMapOutput {
 	return o
-}
-
-func (o DomainsGrantMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*DomainsGrant] {
-	return pulumix.Output[map[string]*DomainsGrant]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DomainsGrantMapOutput) MapIndex(k pulumi.StringInput) DomainsGrantOutput {

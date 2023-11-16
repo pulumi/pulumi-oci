@@ -9,6 +9,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetRepositoryCommitsRepositoryCommitCollectionItem {
@@ -16,119 +18,119 @@ public final class GetRepositoryCommitsRepositoryCommitCollectionItem {
      * @return Email of the author of the repository.
      * 
      */
-    private String authorEmail;
+    private @Nullable String authorEmail;
     /**
      * @return A filter to return any commits that are pushed by the requested author.
      * 
      */
-    private String authorName;
+    private @Nullable String authorName;
     /**
      * @return Commit hash pointed to by reference name.
      * 
      */
-    private String commitId;
+    private @Nullable String commitId;
     /**
      * @return A filter to return any commits that contains the given message.
      * 
      */
-    private String commitMessage;
+    private @Nullable String commitMessage;
     /**
      * @return Email of who creates the commit.
      * 
      */
-    private String committerEmail;
+    private @Nullable String committerEmail;
     /**
      * @return Name of who creates the commit.
      * 
      */
-    private String committerName;
-    private Map<String,Object> definedTags;
-    private Map<String,Object> freeformTags;
+    private @Nullable String committerName;
+    private @Nullable Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return An array of parent commit IDs of created commit.
      * 
      */
-    private List<String> parentCommitIds;
+    private @Nullable List<String> parentCommitIds;
     /**
      * @return The time at which commit was created.
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return Tree information for the specified commit.
      * 
      */
-    private String treeId;
+    private @Nullable String treeId;
 
     private GetRepositoryCommitsRepositoryCommitCollectionItem() {}
     /**
      * @return Email of the author of the repository.
      * 
      */
-    public String authorEmail() {
-        return this.authorEmail;
+    public Optional<String> authorEmail() {
+        return Optional.ofNullable(this.authorEmail);
     }
     /**
      * @return A filter to return any commits that are pushed by the requested author.
      * 
      */
-    public String authorName() {
-        return this.authorName;
+    public Optional<String> authorName() {
+        return Optional.ofNullable(this.authorName);
     }
     /**
      * @return Commit hash pointed to by reference name.
      * 
      */
-    public String commitId() {
-        return this.commitId;
+    public Optional<String> commitId() {
+        return Optional.ofNullable(this.commitId);
     }
     /**
      * @return A filter to return any commits that contains the given message.
      * 
      */
-    public String commitMessage() {
-        return this.commitMessage;
+    public Optional<String> commitMessage() {
+        return Optional.ofNullable(this.commitMessage);
     }
     /**
      * @return Email of who creates the commit.
      * 
      */
-    public String committerEmail() {
-        return this.committerEmail;
+    public Optional<String> committerEmail() {
+        return Optional.ofNullable(this.committerEmail);
     }
     /**
      * @return Name of who creates the commit.
      * 
      */
-    public String committerName() {
-        return this.committerName;
+    public Optional<String> committerName() {
+        return Optional.ofNullable(this.committerName);
     }
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return An array of parent commit IDs of created commit.
      * 
      */
     public List<String> parentCommitIds() {
-        return this.parentCommitIds;
+        return this.parentCommitIds == null ? List.of() : this.parentCommitIds;
     }
     /**
      * @return The time at which commit was created.
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return Tree information for the specified commit.
      * 
      */
-    public String treeId() {
-        return this.treeId;
+    public Optional<String> treeId() {
+        return Optional.ofNullable(this.treeId);
     }
 
     public static Builder builder() {
@@ -140,17 +142,17 @@ public final class GetRepositoryCommitsRepositoryCommitCollectionItem {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String authorEmail;
-        private String authorName;
-        private String commitId;
-        private String commitMessage;
-        private String committerEmail;
-        private String committerName;
-        private Map<String,Object> definedTags;
-        private Map<String,Object> freeformTags;
-        private List<String> parentCommitIds;
-        private String timeCreated;
-        private String treeId;
+        private @Nullable String authorEmail;
+        private @Nullable String authorName;
+        private @Nullable String commitId;
+        private @Nullable String commitMessage;
+        private @Nullable String committerEmail;
+        private @Nullable String committerName;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable List<String> parentCommitIds;
+        private @Nullable String timeCreated;
+        private @Nullable String treeId;
         public Builder() {}
         public Builder(GetRepositoryCommitsRepositoryCommitCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -168,61 +170,61 @@ public final class GetRepositoryCommitsRepositoryCommitCollectionItem {
         }
 
         @CustomType.Setter
-        public Builder authorEmail(String authorEmail) {
-            this.authorEmail = Objects.requireNonNull(authorEmail);
+        public Builder authorEmail(@Nullable String authorEmail) {
+            this.authorEmail = authorEmail;
             return this;
         }
         @CustomType.Setter
-        public Builder authorName(String authorName) {
-            this.authorName = Objects.requireNonNull(authorName);
+        public Builder authorName(@Nullable String authorName) {
+            this.authorName = authorName;
             return this;
         }
         @CustomType.Setter
-        public Builder commitId(String commitId) {
-            this.commitId = Objects.requireNonNull(commitId);
+        public Builder commitId(@Nullable String commitId) {
+            this.commitId = commitId;
             return this;
         }
         @CustomType.Setter
-        public Builder commitMessage(String commitMessage) {
-            this.commitMessage = Objects.requireNonNull(commitMessage);
+        public Builder commitMessage(@Nullable String commitMessage) {
+            this.commitMessage = commitMessage;
             return this;
         }
         @CustomType.Setter
-        public Builder committerEmail(String committerEmail) {
-            this.committerEmail = Objects.requireNonNull(committerEmail);
+        public Builder committerEmail(@Nullable String committerEmail) {
+            this.committerEmail = committerEmail;
             return this;
         }
         @CustomType.Setter
-        public Builder committerName(String committerName) {
-            this.committerName = Objects.requireNonNull(committerName);
+        public Builder committerName(@Nullable String committerName) {
+            this.committerName = committerName;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder parentCommitIds(List<String> parentCommitIds) {
-            this.parentCommitIds = Objects.requireNonNull(parentCommitIds);
+        public Builder parentCommitIds(@Nullable List<String> parentCommitIds) {
+            this.parentCommitIds = parentCommitIds;
             return this;
         }
         public Builder parentCommitIds(String... parentCommitIds) {
             return parentCommitIds(List.of(parentCommitIds));
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder treeId(String treeId) {
-            this.treeId = Objects.requireNonNull(treeId);
+        public Builder treeId(@Nullable String treeId) {
+            this.treeId = treeId;
             return this;
         }
         public GetRepositoryCommitsRepositoryCommitCollectionItem build() {

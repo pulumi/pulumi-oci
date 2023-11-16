@@ -74,7 +74,7 @@ export interface GetAutonomousDatabasesClonesResult {
     /**
      * The list of autonomous_databases.
      */
-    readonly autonomousDatabases: outputs.Database.GetAutonomousDatabasesClonesAutonomousDatabase[];
+    readonly autonomousDatabases?: outputs.Database.GetAutonomousDatabasesClonesAutonomousDatabase[];
     readonly cloneType?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -88,7 +88,7 @@ export interface GetAutonomousDatabasesClonesResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The current state of the Autonomous Database.
      */

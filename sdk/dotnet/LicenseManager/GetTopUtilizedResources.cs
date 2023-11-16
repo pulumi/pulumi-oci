@@ -137,7 +137,7 @@ namespace Pulumi.Oci.LicenseManager
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         public readonly bool? IsCompartmentIdInSubtree;
         /// <summary>
         /// The top utilized resource summary collection.
@@ -149,7 +149,7 @@ namespace Pulumi.Oci.LicenseManager
         private GetTopUtilizedResourcesResult(
             string compartmentId,
 
-            string id,
+            string? id,
 
             bool? isCompartmentIdInSubtree,
 

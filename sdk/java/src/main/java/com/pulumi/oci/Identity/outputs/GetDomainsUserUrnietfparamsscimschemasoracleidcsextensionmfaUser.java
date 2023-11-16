@@ -12,6 +12,8 @@ import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser {
@@ -19,57 +21,57 @@ public final class GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaU
      * @return A list of bypass codes that belongs to the user.
      * 
      */
-    private List<GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCode> bypassCodes;
+    private @Nullable List<GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCode> bypassCodes;
     /**
      * @return A list of devices enrolled by the user.
      * 
      */
-    private List<GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDevice> devices;
+    private @Nullable List<GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDevice> devices;
     /**
      * @return The number of failed login attempts. The value is reset to 0 after a successful login.
      * 
      */
-    private Integer loginAttempts;
+    private @Nullable Integer loginAttempts;
     /**
      * @return The date when the user enrolled in multi factor authentication. This will be set to null, when the user resets their factors.
      * 
      */
-    private String mfaEnabledOn;
+    private @Nullable String mfaEnabledOn;
     /**
      * @return User MFA Ignored Apps Identifiers
      * 
      */
-    private List<String> mfaIgnoredApps;
+    private @Nullable List<String> mfaIgnoredApps;
     /**
      * @return The user opted for MFA.
      * 
      */
-    private String mfaStatus;
+    private @Nullable String mfaStatus;
     /**
      * @return The preferred authentication factor type.
      * 
      */
-    private String preferredAuthenticationFactor;
+    private @Nullable String preferredAuthenticationFactor;
     /**
      * @return The preferred authentication method.
      * 
      */
-    private String preferredAuthenticationMethod;
+    private @Nullable String preferredAuthenticationMethod;
     /**
      * @return The user&#39;s preferred device.
      * 
      */
-    private List<GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDevice> preferredDevices;
+    private @Nullable List<GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDevice> preferredDevices;
     /**
      * @return The preferred third-party vendor name.
      * 
      */
-    private String preferredThirdPartyVendor;
+    private @Nullable String preferredThirdPartyVendor;
     /**
      * @return A list of trusted User Agents owned by this user. Multi-Factored Authentication uses Trusted User Agents to authenticate users.  A User Agent is software application that a user uses to issue requests. For example, a User Agent could be a particular browser (possibly one of several executing on a desktop or laptop) or a particular mobile application (again, oneof several executing on a particular mobile device). A User Agent is trusted once the Multi-Factor Authentication has verified it in some way.
      * 
      */
-    private List<GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserTrustedUserAgent> trustedUserAgents;
+    private @Nullable List<GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserTrustedUserAgent> trustedUserAgents;
 
     private GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser() {}
     /**
@@ -77,77 +79,77 @@ public final class GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaU
      * 
      */
     public List<GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCode> bypassCodes() {
-        return this.bypassCodes;
+        return this.bypassCodes == null ? List.of() : this.bypassCodes;
     }
     /**
      * @return A list of devices enrolled by the user.
      * 
      */
     public List<GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDevice> devices() {
-        return this.devices;
+        return this.devices == null ? List.of() : this.devices;
     }
     /**
      * @return The number of failed login attempts. The value is reset to 0 after a successful login.
      * 
      */
-    public Integer loginAttempts() {
-        return this.loginAttempts;
+    public Optional<Integer> loginAttempts() {
+        return Optional.ofNullable(this.loginAttempts);
     }
     /**
      * @return The date when the user enrolled in multi factor authentication. This will be set to null, when the user resets their factors.
      * 
      */
-    public String mfaEnabledOn() {
-        return this.mfaEnabledOn;
+    public Optional<String> mfaEnabledOn() {
+        return Optional.ofNullable(this.mfaEnabledOn);
     }
     /**
      * @return User MFA Ignored Apps Identifiers
      * 
      */
     public List<String> mfaIgnoredApps() {
-        return this.mfaIgnoredApps;
+        return this.mfaIgnoredApps == null ? List.of() : this.mfaIgnoredApps;
     }
     /**
      * @return The user opted for MFA.
      * 
      */
-    public String mfaStatus() {
-        return this.mfaStatus;
+    public Optional<String> mfaStatus() {
+        return Optional.ofNullable(this.mfaStatus);
     }
     /**
      * @return The preferred authentication factor type.
      * 
      */
-    public String preferredAuthenticationFactor() {
-        return this.preferredAuthenticationFactor;
+    public Optional<String> preferredAuthenticationFactor() {
+        return Optional.ofNullable(this.preferredAuthenticationFactor);
     }
     /**
      * @return The preferred authentication method.
      * 
      */
-    public String preferredAuthenticationMethod() {
-        return this.preferredAuthenticationMethod;
+    public Optional<String> preferredAuthenticationMethod() {
+        return Optional.ofNullable(this.preferredAuthenticationMethod);
     }
     /**
      * @return The user&#39;s preferred device.
      * 
      */
     public List<GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDevice> preferredDevices() {
-        return this.preferredDevices;
+        return this.preferredDevices == null ? List.of() : this.preferredDevices;
     }
     /**
      * @return The preferred third-party vendor name.
      * 
      */
-    public String preferredThirdPartyVendor() {
-        return this.preferredThirdPartyVendor;
+    public Optional<String> preferredThirdPartyVendor() {
+        return Optional.ofNullable(this.preferredThirdPartyVendor);
     }
     /**
      * @return A list of trusted User Agents owned by this user. Multi-Factored Authentication uses Trusted User Agents to authenticate users.  A User Agent is software application that a user uses to issue requests. For example, a User Agent could be a particular browser (possibly one of several executing on a desktop or laptop) or a particular mobile application (again, oneof several executing on a particular mobile device). A User Agent is trusted once the Multi-Factor Authentication has verified it in some way.
      * 
      */
     public List<GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserTrustedUserAgent> trustedUserAgents() {
-        return this.trustedUserAgents;
+        return this.trustedUserAgents == null ? List.of() : this.trustedUserAgents;
     }
 
     public static Builder builder() {
@@ -159,17 +161,17 @@ public final class GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaU
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCode> bypassCodes;
-        private List<GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDevice> devices;
-        private Integer loginAttempts;
-        private String mfaEnabledOn;
-        private List<String> mfaIgnoredApps;
-        private String mfaStatus;
-        private String preferredAuthenticationFactor;
-        private String preferredAuthenticationMethod;
-        private List<GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDevice> preferredDevices;
-        private String preferredThirdPartyVendor;
-        private List<GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserTrustedUserAgent> trustedUserAgents;
+        private @Nullable List<GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCode> bypassCodes;
+        private @Nullable List<GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDevice> devices;
+        private @Nullable Integer loginAttempts;
+        private @Nullable String mfaEnabledOn;
+        private @Nullable List<String> mfaIgnoredApps;
+        private @Nullable String mfaStatus;
+        private @Nullable String preferredAuthenticationFactor;
+        private @Nullable String preferredAuthenticationMethod;
+        private @Nullable List<GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDevice> preferredDevices;
+        private @Nullable String preferredThirdPartyVendor;
+        private @Nullable List<GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserTrustedUserAgent> trustedUserAgents;
         public Builder() {}
         public Builder(GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser defaults) {
     	      Objects.requireNonNull(defaults);
@@ -187,70 +189,70 @@ public final class GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaU
         }
 
         @CustomType.Setter
-        public Builder bypassCodes(List<GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCode> bypassCodes) {
-            this.bypassCodes = Objects.requireNonNull(bypassCodes);
+        public Builder bypassCodes(@Nullable List<GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCode> bypassCodes) {
+            this.bypassCodes = bypassCodes;
             return this;
         }
         public Builder bypassCodes(GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCode... bypassCodes) {
             return bypassCodes(List.of(bypassCodes));
         }
         @CustomType.Setter
-        public Builder devices(List<GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDevice> devices) {
-            this.devices = Objects.requireNonNull(devices);
+        public Builder devices(@Nullable List<GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDevice> devices) {
+            this.devices = devices;
             return this;
         }
         public Builder devices(GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDevice... devices) {
             return devices(List.of(devices));
         }
         @CustomType.Setter
-        public Builder loginAttempts(Integer loginAttempts) {
-            this.loginAttempts = Objects.requireNonNull(loginAttempts);
+        public Builder loginAttempts(@Nullable Integer loginAttempts) {
+            this.loginAttempts = loginAttempts;
             return this;
         }
         @CustomType.Setter
-        public Builder mfaEnabledOn(String mfaEnabledOn) {
-            this.mfaEnabledOn = Objects.requireNonNull(mfaEnabledOn);
+        public Builder mfaEnabledOn(@Nullable String mfaEnabledOn) {
+            this.mfaEnabledOn = mfaEnabledOn;
             return this;
         }
         @CustomType.Setter
-        public Builder mfaIgnoredApps(List<String> mfaIgnoredApps) {
-            this.mfaIgnoredApps = Objects.requireNonNull(mfaIgnoredApps);
+        public Builder mfaIgnoredApps(@Nullable List<String> mfaIgnoredApps) {
+            this.mfaIgnoredApps = mfaIgnoredApps;
             return this;
         }
         public Builder mfaIgnoredApps(String... mfaIgnoredApps) {
             return mfaIgnoredApps(List.of(mfaIgnoredApps));
         }
         @CustomType.Setter
-        public Builder mfaStatus(String mfaStatus) {
-            this.mfaStatus = Objects.requireNonNull(mfaStatus);
+        public Builder mfaStatus(@Nullable String mfaStatus) {
+            this.mfaStatus = mfaStatus;
             return this;
         }
         @CustomType.Setter
-        public Builder preferredAuthenticationFactor(String preferredAuthenticationFactor) {
-            this.preferredAuthenticationFactor = Objects.requireNonNull(preferredAuthenticationFactor);
+        public Builder preferredAuthenticationFactor(@Nullable String preferredAuthenticationFactor) {
+            this.preferredAuthenticationFactor = preferredAuthenticationFactor;
             return this;
         }
         @CustomType.Setter
-        public Builder preferredAuthenticationMethod(String preferredAuthenticationMethod) {
-            this.preferredAuthenticationMethod = Objects.requireNonNull(preferredAuthenticationMethod);
+        public Builder preferredAuthenticationMethod(@Nullable String preferredAuthenticationMethod) {
+            this.preferredAuthenticationMethod = preferredAuthenticationMethod;
             return this;
         }
         @CustomType.Setter
-        public Builder preferredDevices(List<GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDevice> preferredDevices) {
-            this.preferredDevices = Objects.requireNonNull(preferredDevices);
+        public Builder preferredDevices(@Nullable List<GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDevice> preferredDevices) {
+            this.preferredDevices = preferredDevices;
             return this;
         }
         public Builder preferredDevices(GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDevice... preferredDevices) {
             return preferredDevices(List.of(preferredDevices));
         }
         @CustomType.Setter
-        public Builder preferredThirdPartyVendor(String preferredThirdPartyVendor) {
-            this.preferredThirdPartyVendor = Objects.requireNonNull(preferredThirdPartyVendor);
+        public Builder preferredThirdPartyVendor(@Nullable String preferredThirdPartyVendor) {
+            this.preferredThirdPartyVendor = preferredThirdPartyVendor;
             return this;
         }
         @CustomType.Setter
-        public Builder trustedUserAgents(List<GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserTrustedUserAgent> trustedUserAgents) {
-            this.trustedUserAgents = Objects.requireNonNull(trustedUserAgents);
+        public Builder trustedUserAgents(@Nullable List<GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserTrustedUserAgent> trustedUserAgents) {
+            this.trustedUserAgents = trustedUserAgents;
             return this;
         }
         public Builder trustedUserAgents(GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserTrustedUserAgent... trustedUserAgents) {

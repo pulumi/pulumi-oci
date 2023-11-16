@@ -49,7 +49,7 @@ export interface GetDbNodeConsoleConnectionsResult {
     /**
      * The list of console_connections.
      */
-    readonly consoleConnections: outputs.Database.GetDbNodeConsoleConnectionsConsoleConnection[];
+    readonly consoleConnections?: outputs.Database.GetDbNodeConsoleConnectionsConsoleConnection[];
     /**
      * The OCID of the database node.
      */
@@ -58,7 +58,7 @@ export interface GetDbNodeConsoleConnectionsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
 }
 /**
  * This data source provides the list of Db Node Console Connections in Oracle Cloud Infrastructure Database service.

@@ -34,7 +34,7 @@ public final class GetStacksResult {
      * @return The list of stacks.
      * 
      */
-    private List<GetStacksStack> stacks;
+    private @Nullable List<GetStacksStack> stacks;
     /**
      * @return The current lifecycle state of the stack.
      * 
@@ -71,7 +71,7 @@ public final class GetStacksResult {
      * 
      */
     public List<GetStacksStack> stacks() {
-        return this.stacks;
+        return this.stacks == null ? List.of() : this.stacks;
     }
     /**
      * @return The current lifecycle state of the stack.
@@ -94,7 +94,7 @@ public final class GetStacksResult {
         private @Nullable String displayName;
         private @Nullable List<GetStacksFilter> filters;
         private @Nullable String id;
-        private List<GetStacksStack> stacks;
+        private @Nullable List<GetStacksStack> stacks;
         private @Nullable String state;
         public Builder() {}
         public Builder(GetStacksResult defaults) {
@@ -131,8 +131,8 @@ public final class GetStacksResult {
             return this;
         }
         @CustomType.Setter
-        public Builder stacks(List<GetStacksStack> stacks) {
-            this.stacks = Objects.requireNonNull(stacks);
+        public Builder stacks(@Nullable List<GetStacksStack> stacks) {
+            this.stacks = stacks;
             return this;
         }
         public Builder stacks(GetStacksStack... stacks) {

@@ -128,7 +128,7 @@ namespace Pulumi.Oci.ManagementAgent
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// List in which each item describes an aggregation of Managment Agent Plugins
         /// </summary>
@@ -140,7 +140,7 @@ namespace Pulumi.Oci.ManagementAgent
 
             string groupBy,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetManagementAgentPluginCountItemResult> items)
         {

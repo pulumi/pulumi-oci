@@ -58,9 +58,6 @@ class GetOperationsInsightsPrivateEndpointsResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[str]:
-        """
-        The compartment OCID of the Private service accessed database.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
@@ -71,9 +68,6 @@ class GetOperationsInsightsPrivateEndpointsResult:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        The display name of the private endpoint.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -83,7 +77,7 @@ class GetOperationsInsightsPrivateEndpointsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -92,17 +86,11 @@ class GetOperationsInsightsPrivateEndpointsResult:
     @property
     @pulumi.getter(name="isUsedForRacDbs")
     def is_used_for_rac_dbs(self) -> Optional[bool]:
-        """
-        The flag is to identify if private endpoint is used for rac database or not
-        """
         return pulumi.get(self, "is_used_for_rac_dbs")
 
     @property
     @pulumi.getter(name="operationsInsightsPrivateEndpointCollections")
-    def operations_insights_private_endpoint_collections(self) -> Sequence['outputs.GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionResult']:
-        """
-        The list of operations_insights_private_endpoint_collection.
-        """
+    def operations_insights_private_endpoint_collections(self) -> Optional[Sequence['outputs.GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionResult']]:
         return pulumi.get(self, "operations_insights_private_endpoint_collections")
 
     @property
@@ -113,17 +101,11 @@ class GetOperationsInsightsPrivateEndpointsResult:
     @property
     @pulumi.getter
     def states(self) -> Optional[Sequence[str]]:
-        """
-        The current state of the private endpoint.
-        """
         return pulumi.get(self, "states")
 
     @property
     @pulumi.getter(name="vcnId")
     def vcn_id(self) -> Optional[str]:
-        """
-        The OCID of the VCN.
-        """
         return pulumi.get(self, "vcn_id")
 
 
@@ -155,33 +137,7 @@ def get_operations_insights_private_endpoints(compartment_id: Optional[str] = No
                                               vcn_id: Optional[str] = None,
                                               opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetOperationsInsightsPrivateEndpointsResult:
     """
-    This data source provides the list of Operations Insights Private Endpoints in Oracle Cloud Infrastructure Opsi service.
-
-    Gets a list of Operation Insights private endpoints.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_operations_insights_private_endpoints = oci.Opsi.get_operations_insights_private_endpoints(compartment_id=var["compartment_id"],
-        compartment_id_in_subtree=var["operations_insights_private_endpoint_compartment_id_in_subtree"],
-        display_name=var["operations_insights_private_endpoint_display_name"],
-        is_used_for_rac_dbs=var["operations_insights_private_endpoint_is_used_for_rac_dbs"],
-        opsi_private_endpoint_id=oci_dataflow_private_endpoint["test_private_endpoint"]["id"],
-        states=var["operations_insights_private_endpoint_state"],
-        vcn_id=oci_core_vcn["test_vcn"]["id"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param bool compartment_id_in_subtree: A flag to search all resources within a given compartment and all sub-compartments.
-    :param str display_name: A filter to return only resources that match the entire display name.
-    :param bool is_used_for_rac_dbs: The option to filter OPSI private endpoints that can used for RAC. Should be used along with vcnId query parameter.
-    :param str opsi_private_endpoint_id: Unique Operations Insights PrivateEndpoint identifier
-    :param Sequence[str] states: Lifecycle states
-    :param str vcn_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -219,32 +175,6 @@ def get_operations_insights_private_endpoints_output(compartment_id: Optional[pu
                                                      vcn_id: Optional[pulumi.Input[Optional[str]]] = None,
                                                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetOperationsInsightsPrivateEndpointsResult]:
     """
-    This data source provides the list of Operations Insights Private Endpoints in Oracle Cloud Infrastructure Opsi service.
-
-    Gets a list of Operation Insights private endpoints.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_operations_insights_private_endpoints = oci.Opsi.get_operations_insights_private_endpoints(compartment_id=var["compartment_id"],
-        compartment_id_in_subtree=var["operations_insights_private_endpoint_compartment_id_in_subtree"],
-        display_name=var["operations_insights_private_endpoint_display_name"],
-        is_used_for_rac_dbs=var["operations_insights_private_endpoint_is_used_for_rac_dbs"],
-        opsi_private_endpoint_id=oci_dataflow_private_endpoint["test_private_endpoint"]["id"],
-        states=var["operations_insights_private_endpoint_state"],
-        vcn_id=oci_core_vcn["test_vcn"]["id"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param bool compartment_id_in_subtree: A flag to search all resources within a given compartment and all sub-compartments.
-    :param str display_name: A filter to return only resources that match the entire display name.
-    :param bool is_used_for_rac_dbs: The option to filter OPSI private endpoints that can used for RAC. Should be used along with vcnId query parameter.
-    :param str opsi_private_endpoint_id: Unique Operations Insights PrivateEndpoint identifier
-    :param Sequence[str] states: Lifecycle states
-    :param str vcn_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
+    Use this data source to access information about an existing resource.
     """
     ...

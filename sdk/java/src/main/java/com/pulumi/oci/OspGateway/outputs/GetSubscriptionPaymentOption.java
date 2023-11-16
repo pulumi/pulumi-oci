@@ -6,6 +6,8 @@ package com.pulumi.oci.OspGateway.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetSubscriptionPaymentOption {
@@ -13,135 +15,135 @@ public final class GetSubscriptionPaymentOption {
      * @return Credit card type.
      * 
      */
-    private String creditCardType;
+    private @Nullable String creditCardType;
     /**
      * @return The email address of the paypal user.
      * 
      */
-    private String emailAddress;
+    private @Nullable String emailAddress;
     /**
      * @return Agreement id for the paypal account.
      * 
      */
-    private String extBillingAgreementId;
+    private @Nullable String extBillingAgreementId;
     /**
      * @return First name of the paypal user.
      * 
      */
-    private String firstName;
+    private @Nullable String firstName;
     /**
      * @return Last four digits of the card.
      * 
      */
-    private String lastDigits;
+    private @Nullable String lastDigits;
     /**
      * @return Last name of the paypal user.
      * 
      */
-    private String lastName;
+    private @Nullable String lastName;
     /**
      * @return Name on the credit card.
      * 
      */
-    private String nameOnCard;
+    private @Nullable String nameOnCard;
     /**
      * @return Payment method
      * 
      */
-    private String paymentMethod;
+    private @Nullable String paymentMethod;
     /**
      * @return Expired date of the credit card.
      * 
      */
-    private String timeExpiration;
+    private @Nullable String timeExpiration;
     /**
      * @return Wallet instrument internal id.
      * 
      */
-    private String walletInstrumentId;
+    private @Nullable String walletInstrumentId;
     /**
      * @return Wallet transaction id.
      * 
      */
-    private String walletTransactionId;
+    private @Nullable String walletTransactionId;
 
     private GetSubscriptionPaymentOption() {}
     /**
      * @return Credit card type.
      * 
      */
-    public String creditCardType() {
-        return this.creditCardType;
+    public Optional<String> creditCardType() {
+        return Optional.ofNullable(this.creditCardType);
     }
     /**
      * @return The email address of the paypal user.
      * 
      */
-    public String emailAddress() {
-        return this.emailAddress;
+    public Optional<String> emailAddress() {
+        return Optional.ofNullable(this.emailAddress);
     }
     /**
      * @return Agreement id for the paypal account.
      * 
      */
-    public String extBillingAgreementId() {
-        return this.extBillingAgreementId;
+    public Optional<String> extBillingAgreementId() {
+        return Optional.ofNullable(this.extBillingAgreementId);
     }
     /**
      * @return First name of the paypal user.
      * 
      */
-    public String firstName() {
-        return this.firstName;
+    public Optional<String> firstName() {
+        return Optional.ofNullable(this.firstName);
     }
     /**
      * @return Last four digits of the card.
      * 
      */
-    public String lastDigits() {
-        return this.lastDigits;
+    public Optional<String> lastDigits() {
+        return Optional.ofNullable(this.lastDigits);
     }
     /**
      * @return Last name of the paypal user.
      * 
      */
-    public String lastName() {
-        return this.lastName;
+    public Optional<String> lastName() {
+        return Optional.ofNullable(this.lastName);
     }
     /**
      * @return Name on the credit card.
      * 
      */
-    public String nameOnCard() {
-        return this.nameOnCard;
+    public Optional<String> nameOnCard() {
+        return Optional.ofNullable(this.nameOnCard);
     }
     /**
      * @return Payment method
      * 
      */
-    public String paymentMethod() {
-        return this.paymentMethod;
+    public Optional<String> paymentMethod() {
+        return Optional.ofNullable(this.paymentMethod);
     }
     /**
      * @return Expired date of the credit card.
      * 
      */
-    public String timeExpiration() {
-        return this.timeExpiration;
+    public Optional<String> timeExpiration() {
+        return Optional.ofNullable(this.timeExpiration);
     }
     /**
      * @return Wallet instrument internal id.
      * 
      */
-    public String walletInstrumentId() {
-        return this.walletInstrumentId;
+    public Optional<String> walletInstrumentId() {
+        return Optional.ofNullable(this.walletInstrumentId);
     }
     /**
      * @return Wallet transaction id.
      * 
      */
-    public String walletTransactionId() {
-        return this.walletTransactionId;
+    public Optional<String> walletTransactionId() {
+        return Optional.ofNullable(this.walletTransactionId);
     }
 
     public static Builder builder() {
@@ -153,17 +155,17 @@ public final class GetSubscriptionPaymentOption {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String creditCardType;
-        private String emailAddress;
-        private String extBillingAgreementId;
-        private String firstName;
-        private String lastDigits;
-        private String lastName;
-        private String nameOnCard;
-        private String paymentMethod;
-        private String timeExpiration;
-        private String walletInstrumentId;
-        private String walletTransactionId;
+        private @Nullable String creditCardType;
+        private @Nullable String emailAddress;
+        private @Nullable String extBillingAgreementId;
+        private @Nullable String firstName;
+        private @Nullable String lastDigits;
+        private @Nullable String lastName;
+        private @Nullable String nameOnCard;
+        private @Nullable String paymentMethod;
+        private @Nullable String timeExpiration;
+        private @Nullable String walletInstrumentId;
+        private @Nullable String walletTransactionId;
         public Builder() {}
         public Builder(GetSubscriptionPaymentOption defaults) {
     	      Objects.requireNonNull(defaults);
@@ -181,58 +183,58 @@ public final class GetSubscriptionPaymentOption {
         }
 
         @CustomType.Setter
-        public Builder creditCardType(String creditCardType) {
-            this.creditCardType = Objects.requireNonNull(creditCardType);
+        public Builder creditCardType(@Nullable String creditCardType) {
+            this.creditCardType = creditCardType;
             return this;
         }
         @CustomType.Setter
-        public Builder emailAddress(String emailAddress) {
-            this.emailAddress = Objects.requireNonNull(emailAddress);
+        public Builder emailAddress(@Nullable String emailAddress) {
+            this.emailAddress = emailAddress;
             return this;
         }
         @CustomType.Setter
-        public Builder extBillingAgreementId(String extBillingAgreementId) {
-            this.extBillingAgreementId = Objects.requireNonNull(extBillingAgreementId);
+        public Builder extBillingAgreementId(@Nullable String extBillingAgreementId) {
+            this.extBillingAgreementId = extBillingAgreementId;
             return this;
         }
         @CustomType.Setter
-        public Builder firstName(String firstName) {
-            this.firstName = Objects.requireNonNull(firstName);
+        public Builder firstName(@Nullable String firstName) {
+            this.firstName = firstName;
             return this;
         }
         @CustomType.Setter
-        public Builder lastDigits(String lastDigits) {
-            this.lastDigits = Objects.requireNonNull(lastDigits);
+        public Builder lastDigits(@Nullable String lastDigits) {
+            this.lastDigits = lastDigits;
             return this;
         }
         @CustomType.Setter
-        public Builder lastName(String lastName) {
-            this.lastName = Objects.requireNonNull(lastName);
+        public Builder lastName(@Nullable String lastName) {
+            this.lastName = lastName;
             return this;
         }
         @CustomType.Setter
-        public Builder nameOnCard(String nameOnCard) {
-            this.nameOnCard = Objects.requireNonNull(nameOnCard);
+        public Builder nameOnCard(@Nullable String nameOnCard) {
+            this.nameOnCard = nameOnCard;
             return this;
         }
         @CustomType.Setter
-        public Builder paymentMethod(String paymentMethod) {
-            this.paymentMethod = Objects.requireNonNull(paymentMethod);
+        public Builder paymentMethod(@Nullable String paymentMethod) {
+            this.paymentMethod = paymentMethod;
             return this;
         }
         @CustomType.Setter
-        public Builder timeExpiration(String timeExpiration) {
-            this.timeExpiration = Objects.requireNonNull(timeExpiration);
+        public Builder timeExpiration(@Nullable String timeExpiration) {
+            this.timeExpiration = timeExpiration;
             return this;
         }
         @CustomType.Setter
-        public Builder walletInstrumentId(String walletInstrumentId) {
-            this.walletInstrumentId = Objects.requireNonNull(walletInstrumentId);
+        public Builder walletInstrumentId(@Nullable String walletInstrumentId) {
+            this.walletInstrumentId = walletInstrumentId;
             return this;
         }
         @CustomType.Setter
-        public Builder walletTransactionId(String walletTransactionId) {
-            this.walletTransactionId = Objects.requireNonNull(walletTransactionId);
+        public Builder walletTransactionId(@Nullable String walletTransactionId) {
+            this.walletTransactionId = walletTransactionId;
             return this;
         }
         public GetSubscriptionPaymentOption build() {

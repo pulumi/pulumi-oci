@@ -27,16 +27,6 @@ class IpsecConnectionTunnelManagementArgs:
                  shared_secret: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a IpsecConnectionTunnelManagement resource.
-        :param pulumi.Input[str] ipsec_id: The OCID of the IPSec connection.
-        :param pulumi.Input[str] routing: The type of routing to use for this tunnel (either BGP dynamic routing, STATIC routing or POLICY routing).
-        :param pulumi.Input[str] tunnel_id: The OCID of the IPSec connection's tunnel.
-        :param pulumi.Input[Sequence[pulumi.Input['IpsecConnectionTunnelManagementBgpSessionInfoArgs']]] bgp_session_infos: Information for establishing a BGP session for the IPSec tunnel. Required if the tunnel uses BGP dynamic routing.
-               
-               If the tunnel instead uses static routing, you may optionally provide this object and set an IP address for one or both ends of the IPSec tunnel for the purposes of troubleshooting or monitoring the tunnel.
-        :param pulumi.Input[str] display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input['IpsecConnectionTunnelManagementEncryptionDomainConfigArgs'] encryption_domain_config: Configuration information used by the encryption domain policy. Required if the tunnel uses POLICY routing.
-        :param pulumi.Input[str] ike_version: Internet Key Exchange protocol version.
-        :param pulumi.Input[str] shared_secret: The shared secret (pre-shared key) to use for the IPSec tunnel. If you don't provide a value, Oracle generates a value for you. You can specify your own shared secret later if you like with [UpdateIPSecConnectionTunnelSharedSecret](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnectionTunnelSharedSecret/UpdateIPSecConnectionTunnelSharedSecret).  Example: `EXAMPLEToUis6j1c.p8G.dVQxcmdfMO0yXMLi.lZTbYCMDGu4V8o`
         """
         pulumi.set(__self__, "ipsec_id", ipsec_id)
         pulumi.set(__self__, "routing", routing)
@@ -57,9 +47,6 @@ class IpsecConnectionTunnelManagementArgs:
     @property
     @pulumi.getter(name="ipsecId")
     def ipsec_id(self) -> pulumi.Input[str]:
-        """
-        The OCID of the IPSec connection.
-        """
         return pulumi.get(self, "ipsec_id")
 
     @ipsec_id.setter
@@ -69,9 +56,6 @@ class IpsecConnectionTunnelManagementArgs:
     @property
     @pulumi.getter
     def routing(self) -> pulumi.Input[str]:
-        """
-        The type of routing to use for this tunnel (either BGP dynamic routing, STATIC routing or POLICY routing).
-        """
         return pulumi.get(self, "routing")
 
     @routing.setter
@@ -81,9 +65,6 @@ class IpsecConnectionTunnelManagementArgs:
     @property
     @pulumi.getter(name="tunnelId")
     def tunnel_id(self) -> pulumi.Input[str]:
-        """
-        The OCID of the IPSec connection's tunnel.
-        """
         return pulumi.get(self, "tunnel_id")
 
     @tunnel_id.setter
@@ -93,11 +74,6 @@ class IpsecConnectionTunnelManagementArgs:
     @property
     @pulumi.getter(name="bgpSessionInfos")
     def bgp_session_infos(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IpsecConnectionTunnelManagementBgpSessionInfoArgs']]]]:
-        """
-        Information for establishing a BGP session for the IPSec tunnel. Required if the tunnel uses BGP dynamic routing.
-
-        If the tunnel instead uses static routing, you may optionally provide this object and set an IP address for one or both ends of the IPSec tunnel for the purposes of troubleshooting or monitoring the tunnel.
-        """
         return pulumi.get(self, "bgp_session_infos")
 
     @bgp_session_infos.setter
@@ -107,9 +83,6 @@ class IpsecConnectionTunnelManagementArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -128,9 +101,6 @@ class IpsecConnectionTunnelManagementArgs:
     @property
     @pulumi.getter(name="encryptionDomainConfig")
     def encryption_domain_config(self) -> Optional[pulumi.Input['IpsecConnectionTunnelManagementEncryptionDomainConfigArgs']]:
-        """
-        Configuration information used by the encryption domain policy. Required if the tunnel uses POLICY routing.
-        """
         return pulumi.get(self, "encryption_domain_config")
 
     @encryption_domain_config.setter
@@ -140,9 +110,6 @@ class IpsecConnectionTunnelManagementArgs:
     @property
     @pulumi.getter(name="ikeVersion")
     def ike_version(self) -> Optional[pulumi.Input[str]]:
-        """
-        Internet Key Exchange protocol version.
-        """
         return pulumi.get(self, "ike_version")
 
     @ike_version.setter
@@ -152,9 +119,6 @@ class IpsecConnectionTunnelManagementArgs:
     @property
     @pulumi.getter(name="sharedSecret")
     def shared_secret(self) -> Optional[pulumi.Input[str]]:
-        """
-        The shared secret (pre-shared key) to use for the IPSec tunnel. If you don't provide a value, Oracle generates a value for you. You can specify your own shared secret later if you like with [UpdateIPSecConnectionTunnelSharedSecret](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnectionTunnelSharedSecret/UpdateIPSecConnectionTunnelSharedSecret).  Example: `EXAMPLEToUis6j1c.p8G.dVQxcmdfMO0yXMLi.lZTbYCMDGu4V8o`
-        """
         return pulumi.get(self, "shared_secret")
 
     @shared_secret.setter
@@ -190,24 +154,6 @@ class _IpsecConnectionTunnelManagementState:
                  vpn_ip: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering IpsecConnectionTunnelManagement resources.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] associated_virtual_circuits: The list of virtual circuit [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s over which your network can reach this tunnel.
-        :param pulumi.Input[Sequence[pulumi.Input['IpsecConnectionTunnelManagementBgpSessionInfoArgs']]] bgp_session_infos: Information for establishing a BGP session for the IPSec tunnel. Required if the tunnel uses BGP dynamic routing.
-               
-               If the tunnel instead uses static routing, you may optionally provide this object and set an IP address for one or both ends of the IPSec tunnel for the purposes of troubleshooting or monitoring the tunnel.
-        :param pulumi.Input[str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the tunnel.
-        :param pulumi.Input[str] cpe_ip: The IP address of the CPE device's VPN headend.  Example: `203.0.113.22`
-        :param pulumi.Input[str] display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input['IpsecConnectionTunnelManagementEncryptionDomainConfigArgs'] encryption_domain_config: Configuration information used by the encryption domain policy. Required if the tunnel uses POLICY routing.
-        :param pulumi.Input[str] ike_version: Internet Key Exchange protocol version.
-        :param pulumi.Input[str] ipsec_id: The OCID of the IPSec connection.
-        :param pulumi.Input[str] routing: The type of routing to use for this tunnel (either BGP dynamic routing, STATIC routing or POLICY routing).
-        :param pulumi.Input[str] shared_secret: The shared secret (pre-shared key) to use for the IPSec tunnel. If you don't provide a value, Oracle generates a value for you. You can specify your own shared secret later if you like with [UpdateIPSecConnectionTunnelSharedSecret](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnectionTunnelSharedSecret/UpdateIPSecConnectionTunnelSharedSecret).  Example: `EXAMPLEToUis6j1c.p8G.dVQxcmdfMO0yXMLi.lZTbYCMDGu4V8o`
-        :param pulumi.Input[str] state: The IPSec connection's tunnel's lifecycle state.
-        :param pulumi.Input[str] status: The tunnel's current state.
-        :param pulumi.Input[str] time_created: The date and time the IPSec connection tunnel was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
-        :param pulumi.Input[str] time_status_updated: When the status of the tunnel last changed, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
-        :param pulumi.Input[str] tunnel_id: The OCID of the IPSec connection's tunnel.
-        :param pulumi.Input[str] vpn_ip: The IP address of Oracle's VPN headend.  Example: `129.146.17.50`
         """
         if associated_virtual_circuits is not None:
             pulumi.set(__self__, "associated_virtual_circuits", associated_virtual_circuits)
@@ -259,9 +205,6 @@ class _IpsecConnectionTunnelManagementState:
     @property
     @pulumi.getter(name="associatedVirtualCircuits")
     def associated_virtual_circuits(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        The list of virtual circuit [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s over which your network can reach this tunnel.
-        """
         return pulumi.get(self, "associated_virtual_circuits")
 
     @associated_virtual_circuits.setter
@@ -271,11 +214,6 @@ class _IpsecConnectionTunnelManagementState:
     @property
     @pulumi.getter(name="bgpSessionInfos")
     def bgp_session_infos(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IpsecConnectionTunnelManagementBgpSessionInfoArgs']]]]:
-        """
-        Information for establishing a BGP session for the IPSec tunnel. Required if the tunnel uses BGP dynamic routing.
-
-        If the tunnel instead uses static routing, you may optionally provide this object and set an IP address for one or both ends of the IPSec tunnel for the purposes of troubleshooting or monitoring the tunnel.
-        """
         return pulumi.get(self, "bgp_session_infos")
 
     @bgp_session_infos.setter
@@ -285,9 +223,6 @@ class _IpsecConnectionTunnelManagementState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the tunnel.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -297,9 +232,6 @@ class _IpsecConnectionTunnelManagementState:
     @property
     @pulumi.getter(name="cpeIp")
     def cpe_ip(self) -> Optional[pulumi.Input[str]]:
-        """
-        The IP address of the CPE device's VPN headend.  Example: `203.0.113.22`
-        """
         return pulumi.get(self, "cpe_ip")
 
     @cpe_ip.setter
@@ -309,9 +241,6 @@ class _IpsecConnectionTunnelManagementState:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -348,9 +277,6 @@ class _IpsecConnectionTunnelManagementState:
     @property
     @pulumi.getter(name="encryptionDomainConfig")
     def encryption_domain_config(self) -> Optional[pulumi.Input['IpsecConnectionTunnelManagementEncryptionDomainConfigArgs']]:
-        """
-        Configuration information used by the encryption domain policy. Required if the tunnel uses POLICY routing.
-        """
         return pulumi.get(self, "encryption_domain_config")
 
     @encryption_domain_config.setter
@@ -360,9 +286,6 @@ class _IpsecConnectionTunnelManagementState:
     @property
     @pulumi.getter(name="ikeVersion")
     def ike_version(self) -> Optional[pulumi.Input[str]]:
-        """
-        Internet Key Exchange protocol version.
-        """
         return pulumi.get(self, "ike_version")
 
     @ike_version.setter
@@ -372,9 +295,6 @@ class _IpsecConnectionTunnelManagementState:
     @property
     @pulumi.getter(name="ipsecId")
     def ipsec_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the IPSec connection.
-        """
         return pulumi.get(self, "ipsec_id")
 
     @ipsec_id.setter
@@ -420,9 +340,6 @@ class _IpsecConnectionTunnelManagementState:
     @property
     @pulumi.getter
     def routing(self) -> Optional[pulumi.Input[str]]:
-        """
-        The type of routing to use for this tunnel (either BGP dynamic routing, STATIC routing or POLICY routing).
-        """
         return pulumi.get(self, "routing")
 
     @routing.setter
@@ -432,9 +349,6 @@ class _IpsecConnectionTunnelManagementState:
     @property
     @pulumi.getter(name="sharedSecret")
     def shared_secret(self) -> Optional[pulumi.Input[str]]:
-        """
-        The shared secret (pre-shared key) to use for the IPSec tunnel. If you don't provide a value, Oracle generates a value for you. You can specify your own shared secret later if you like with [UpdateIPSecConnectionTunnelSharedSecret](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnectionTunnelSharedSecret/UpdateIPSecConnectionTunnelSharedSecret).  Example: `EXAMPLEToUis6j1c.p8G.dVQxcmdfMO0yXMLi.lZTbYCMDGu4V8o`
-        """
         return pulumi.get(self, "shared_secret")
 
     @shared_secret.setter
@@ -444,9 +358,6 @@ class _IpsecConnectionTunnelManagementState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The IPSec connection's tunnel's lifecycle state.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -456,9 +367,6 @@ class _IpsecConnectionTunnelManagementState:
     @property
     @pulumi.getter
     def status(self) -> Optional[pulumi.Input[str]]:
-        """
-        The tunnel's current state.
-        """
         return pulumi.get(self, "status")
 
     @status.setter
@@ -468,9 +376,6 @@ class _IpsecConnectionTunnelManagementState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time the IPSec connection tunnel was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -480,9 +385,6 @@ class _IpsecConnectionTunnelManagementState:
     @property
     @pulumi.getter(name="timeStatusUpdated")
     def time_status_updated(self) -> Optional[pulumi.Input[str]]:
-        """
-        When the status of the tunnel last changed, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
-        """
         return pulumi.get(self, "time_status_updated")
 
     @time_status_updated.setter
@@ -492,9 +394,6 @@ class _IpsecConnectionTunnelManagementState:
     @property
     @pulumi.getter(name="tunnelId")
     def tunnel_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the IPSec connection's tunnel.
-        """
         return pulumi.get(self, "tunnel_id")
 
     @tunnel_id.setter
@@ -504,9 +403,6 @@ class _IpsecConnectionTunnelManagementState:
     @property
     @pulumi.getter(name="vpnIp")
     def vpn_ip(self) -> Optional[pulumi.Input[str]]:
-        """
-        The IP address of Oracle's VPN headend.  Example: `129.146.17.50`
-        """
         return pulumi.get(self, "vpn_ip")
 
     @vpn_ip.setter
@@ -530,60 +426,9 @@ class IpsecConnectionTunnelManagement(pulumi.CustomResource):
                  tunnel_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Ip Sec Connection Tunnel Management resource in Oracle Cloud Infrastructure Core service.
-
-        Updates the specified tunnel. This operation lets you change tunnel attributes such as the
-        routing type (BGP dynamic routing or static routing). Here are some important notes:
-
-            * If you change the tunnel's routing type or BGP session configuration, the tunnel will go
-            down while it's reprovisioned.
-            
-            * If you want to switch the tunnel's `routing` from `STATIC` to `BGP`, make sure the tunnel's
-            BGP session configuration attributes have been set (bgpSessionConfig).
-            
-            * If you want to switch the tunnel's `routing` from `BGP` to `STATIC`, make sure the
-            IPSecConnection already has at least one valid CIDR
-            static route.
-
-        ** IMPORTANT **
-        Destroying `the Core.IpsecConnectionTunnelManagement` leaves the resource in its existing state. It will not destroy the tunnel and it will not return the tunnel to its default values.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_ip_sec_connection_tunnel = oci.core.IpsecConnectionTunnelManagement("testIpSecConnectionTunnel",
-            ipsec_id=oci_core_ipsec["test_ipsec"]["id"],
-            tunnel_id=data["oci_core_ipsec_connection_tunnels"]["test_ip_sec_connection_tunnels"]["ip_sec_connection_tunnels"][0]["id"],
-            routing=var["ip_sec_connection_tunnel_management_routing"],
-            bgp_session_infos=[oci.core.IpsecConnectionTunnelManagementBgpSessionInfoArgs(
-                customer_bgp_asn=var["ip_sec_connection_tunnel_management_bgp_session_info_customer_bgp_asn"],
-                customer_interface_ip=var["ip_sec_connection_tunnel_management_bgp_session_info_customer_interface_ip"],
-                oracle_interface_ip=var["ip_sec_connection_tunnel_management_bgp_session_info_oracle_interface_ip"],
-            )],
-            display_name=var["ip_sec_connection_tunnel_management_display_name"],
-            encryption_domain_config=oci.core.IpsecConnectionTunnelManagementEncryptionDomainConfigArgs(
-                cpe_traffic_selectors=var["ip_sec_connection_tunnel_management_encryption_domain_config_cpe_traffic_selector"],
-                oracle_traffic_selectors=var["ip_sec_connection_tunnel_management_encryption_domain_config_oracle_traffic_selector"],
-            ),
-            shared_secret=var["ip_sec_connection_tunnel_management_shared_secret"],
-            ike_version="V1")
-        ```
-
+        Create a IpsecConnectionTunnelManagement resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['IpsecConnectionTunnelManagementBgpSessionInfoArgs']]]] bgp_session_infos: Information for establishing a BGP session for the IPSec tunnel. Required if the tunnel uses BGP dynamic routing.
-               
-               If the tunnel instead uses static routing, you may optionally provide this object and set an IP address for one or both ends of the IPSec tunnel for the purposes of troubleshooting or monitoring the tunnel.
-        :param pulumi.Input[str] display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[pulumi.InputType['IpsecConnectionTunnelManagementEncryptionDomainConfigArgs']] encryption_domain_config: Configuration information used by the encryption domain policy. Required if the tunnel uses POLICY routing.
-        :param pulumi.Input[str] ike_version: Internet Key Exchange protocol version.
-        :param pulumi.Input[str] ipsec_id: The OCID of the IPSec connection.
-        :param pulumi.Input[str] routing: The type of routing to use for this tunnel (either BGP dynamic routing, STATIC routing or POLICY routing).
-        :param pulumi.Input[str] shared_secret: The shared secret (pre-shared key) to use for the IPSec tunnel. If you don't provide a value, Oracle generates a value for you. You can specify your own shared secret later if you like with [UpdateIPSecConnectionTunnelSharedSecret](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnectionTunnelSharedSecret/UpdateIPSecConnectionTunnelSharedSecret).  Example: `EXAMPLEToUis6j1c.p8G.dVQxcmdfMO0yXMLi.lZTbYCMDGu4V8o`
-        :param pulumi.Input[str] tunnel_id: The OCID of the IPSec connection's tunnel.
         """
         ...
     @overload
@@ -592,48 +437,7 @@ class IpsecConnectionTunnelManagement(pulumi.CustomResource):
                  args: IpsecConnectionTunnelManagementArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Ip Sec Connection Tunnel Management resource in Oracle Cloud Infrastructure Core service.
-
-        Updates the specified tunnel. This operation lets you change tunnel attributes such as the
-        routing type (BGP dynamic routing or static routing). Here are some important notes:
-
-            * If you change the tunnel's routing type or BGP session configuration, the tunnel will go
-            down while it's reprovisioned.
-            
-            * If you want to switch the tunnel's `routing` from `STATIC` to `BGP`, make sure the tunnel's
-            BGP session configuration attributes have been set (bgpSessionConfig).
-            
-            * If you want to switch the tunnel's `routing` from `BGP` to `STATIC`, make sure the
-            IPSecConnection already has at least one valid CIDR
-            static route.
-
-        ** IMPORTANT **
-        Destroying `the Core.IpsecConnectionTunnelManagement` leaves the resource in its existing state. It will not destroy the tunnel and it will not return the tunnel to its default values.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_ip_sec_connection_tunnel = oci.core.IpsecConnectionTunnelManagement("testIpSecConnectionTunnel",
-            ipsec_id=oci_core_ipsec["test_ipsec"]["id"],
-            tunnel_id=data["oci_core_ipsec_connection_tunnels"]["test_ip_sec_connection_tunnels"]["ip_sec_connection_tunnels"][0]["id"],
-            routing=var["ip_sec_connection_tunnel_management_routing"],
-            bgp_session_infos=[oci.core.IpsecConnectionTunnelManagementBgpSessionInfoArgs(
-                customer_bgp_asn=var["ip_sec_connection_tunnel_management_bgp_session_info_customer_bgp_asn"],
-                customer_interface_ip=var["ip_sec_connection_tunnel_management_bgp_session_info_customer_interface_ip"],
-                oracle_interface_ip=var["ip_sec_connection_tunnel_management_bgp_session_info_oracle_interface_ip"],
-            )],
-            display_name=var["ip_sec_connection_tunnel_management_display_name"],
-            encryption_domain_config=oci.core.IpsecConnectionTunnelManagementEncryptionDomainConfigArgs(
-                cpe_traffic_selectors=var["ip_sec_connection_tunnel_management_encryption_domain_config_cpe_traffic_selector"],
-                oracle_traffic_selectors=var["ip_sec_connection_tunnel_management_encryption_domain_config_oracle_traffic_selector"],
-            ),
-            shared_secret=var["ip_sec_connection_tunnel_management_shared_secret"],
-            ike_version="V1")
-        ```
-
+        Create a IpsecConnectionTunnelManagement resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param IpsecConnectionTunnelManagementArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -736,24 +540,6 @@ class IpsecConnectionTunnelManagement(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] associated_virtual_circuits: The list of virtual circuit [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s over which your network can reach this tunnel.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['IpsecConnectionTunnelManagementBgpSessionInfoArgs']]]] bgp_session_infos: Information for establishing a BGP session for the IPSec tunnel. Required if the tunnel uses BGP dynamic routing.
-               
-               If the tunnel instead uses static routing, you may optionally provide this object and set an IP address for one or both ends of the IPSec tunnel for the purposes of troubleshooting or monitoring the tunnel.
-        :param pulumi.Input[str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the tunnel.
-        :param pulumi.Input[str] cpe_ip: The IP address of the CPE device's VPN headend.  Example: `203.0.113.22`
-        :param pulumi.Input[str] display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[pulumi.InputType['IpsecConnectionTunnelManagementEncryptionDomainConfigArgs']] encryption_domain_config: Configuration information used by the encryption domain policy. Required if the tunnel uses POLICY routing.
-        :param pulumi.Input[str] ike_version: Internet Key Exchange protocol version.
-        :param pulumi.Input[str] ipsec_id: The OCID of the IPSec connection.
-        :param pulumi.Input[str] routing: The type of routing to use for this tunnel (either BGP dynamic routing, STATIC routing or POLICY routing).
-        :param pulumi.Input[str] shared_secret: The shared secret (pre-shared key) to use for the IPSec tunnel. If you don't provide a value, Oracle generates a value for you. You can specify your own shared secret later if you like with [UpdateIPSecConnectionTunnelSharedSecret](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnectionTunnelSharedSecret/UpdateIPSecConnectionTunnelSharedSecret).  Example: `EXAMPLEToUis6j1c.p8G.dVQxcmdfMO0yXMLi.lZTbYCMDGu4V8o`
-        :param pulumi.Input[str] state: The IPSec connection's tunnel's lifecycle state.
-        :param pulumi.Input[str] status: The tunnel's current state.
-        :param pulumi.Input[str] time_created: The date and time the IPSec connection tunnel was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
-        :param pulumi.Input[str] time_status_updated: When the status of the tunnel last changed, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
-        :param pulumi.Input[str] tunnel_id: The OCID of the IPSec connection's tunnel.
-        :param pulumi.Input[str] vpn_ip: The IP address of Oracle's VPN headend.  Example: `129.146.17.50`
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -786,44 +572,27 @@ class IpsecConnectionTunnelManagement(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="associatedVirtualCircuits")
-    def associated_virtual_circuits(self) -> pulumi.Output[Sequence[str]]:
-        """
-        The list of virtual circuit [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s over which your network can reach this tunnel.
-        """
+    def associated_virtual_circuits(self) -> pulumi.Output[Optional[Sequence[str]]]:
         return pulumi.get(self, "associated_virtual_circuits")
 
     @property
     @pulumi.getter(name="bgpSessionInfos")
-    def bgp_session_infos(self) -> pulumi.Output[Sequence['outputs.IpsecConnectionTunnelManagementBgpSessionInfo']]:
-        """
-        Information for establishing a BGP session for the IPSec tunnel. Required if the tunnel uses BGP dynamic routing.
-
-        If the tunnel instead uses static routing, you may optionally provide this object and set an IP address for one or both ends of the IPSec tunnel for the purposes of troubleshooting or monitoring the tunnel.
-        """
+    def bgp_session_infos(self) -> pulumi.Output[Optional[Sequence['outputs.IpsecConnectionTunnelManagementBgpSessionInfo']]]:
         return pulumi.get(self, "bgp_session_infos")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> pulumi.Output[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the tunnel.
-        """
+    def compartment_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="cpeIp")
-    def cpe_ip(self) -> pulumi.Output[str]:
-        """
-        The IP address of the CPE device's VPN headend.  Example: `203.0.113.22`
-        """
+    def cpe_ip(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "cpe_ip")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> pulumi.Output[str]:
-        """
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
+    def display_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "display_name")
 
     @property
@@ -833,119 +602,86 @@ class IpsecConnectionTunnelManagement(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="dpdMode")
-    def dpd_mode(self) -> pulumi.Output[str]:
+    def dpd_mode(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "dpd_mode")
 
     @property
     @pulumi.getter(name="dpdTimeoutInSec")
-    def dpd_timeout_in_sec(self) -> pulumi.Output[int]:
+    def dpd_timeout_in_sec(self) -> pulumi.Output[Optional[int]]:
         return pulumi.get(self, "dpd_timeout_in_sec")
 
     @property
     @pulumi.getter(name="encryptionDomainConfig")
-    def encryption_domain_config(self) -> pulumi.Output['outputs.IpsecConnectionTunnelManagementEncryptionDomainConfig']:
-        """
-        Configuration information used by the encryption domain policy. Required if the tunnel uses POLICY routing.
-        """
+    def encryption_domain_config(self) -> pulumi.Output[Optional['outputs.IpsecConnectionTunnelManagementEncryptionDomainConfig']]:
         return pulumi.get(self, "encryption_domain_config")
 
     @property
     @pulumi.getter(name="ikeVersion")
-    def ike_version(self) -> pulumi.Output[str]:
-        """
-        Internet Key Exchange protocol version.
-        """
+    def ike_version(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "ike_version")
 
     @property
     @pulumi.getter(name="ipsecId")
     def ipsec_id(self) -> pulumi.Output[str]:
-        """
-        The OCID of the IPSec connection.
-        """
         return pulumi.get(self, "ipsec_id")
 
     @property
     @pulumi.getter(name="natTranslationEnabled")
-    def nat_translation_enabled(self) -> pulumi.Output[str]:
+    def nat_translation_enabled(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "nat_translation_enabled")
 
     @property
     @pulumi.getter(name="oracleCanInitiate")
-    def oracle_can_initiate(self) -> pulumi.Output[str]:
+    def oracle_can_initiate(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "oracle_can_initiate")
 
     @property
     @pulumi.getter(name="phaseOneDetails")
-    def phase_one_details(self) -> pulumi.Output[Sequence['outputs.IpsecConnectionTunnelManagementPhaseOneDetail']]:
+    def phase_one_details(self) -> pulumi.Output[Optional[Sequence['outputs.IpsecConnectionTunnelManagementPhaseOneDetail']]]:
         return pulumi.get(self, "phase_one_details")
 
     @property
     @pulumi.getter(name="phaseTwoDetails")
-    def phase_two_details(self) -> pulumi.Output[Sequence['outputs.IpsecConnectionTunnelManagementPhaseTwoDetail']]:
+    def phase_two_details(self) -> pulumi.Output[Optional[Sequence['outputs.IpsecConnectionTunnelManagementPhaseTwoDetail']]]:
         return pulumi.get(self, "phase_two_details")
 
     @property
     @pulumi.getter
     def routing(self) -> pulumi.Output[str]:
-        """
-        The type of routing to use for this tunnel (either BGP dynamic routing, STATIC routing or POLICY routing).
-        """
         return pulumi.get(self, "routing")
 
     @property
     @pulumi.getter(name="sharedSecret")
-    def shared_secret(self) -> pulumi.Output[str]:
-        """
-        The shared secret (pre-shared key) to use for the IPSec tunnel. If you don't provide a value, Oracle generates a value for you. You can specify your own shared secret later if you like with [UpdateIPSecConnectionTunnelSharedSecret](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnectionTunnelSharedSecret/UpdateIPSecConnectionTunnelSharedSecret).  Example: `EXAMPLEToUis6j1c.p8G.dVQxcmdfMO0yXMLi.lZTbYCMDGu4V8o`
-        """
+    def shared_secret(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "shared_secret")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        The IPSec connection's tunnel's lifecycle state.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter
-    def status(self) -> pulumi.Output[str]:
-        """
-        The tunnel's current state.
-        """
+    def status(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "status")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        The date and time the IPSec connection tunnel was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeStatusUpdated")
-    def time_status_updated(self) -> pulumi.Output[str]:
-        """
-        When the status of the tunnel last changed, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
-        """
+    def time_status_updated(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_status_updated")
 
     @property
     @pulumi.getter(name="tunnelId")
     def tunnel_id(self) -> pulumi.Output[str]:
-        """
-        The OCID of the IPSec connection's tunnel.
-        """
         return pulumi.get(self, "tunnel_id")
 
     @property
     @pulumi.getter(name="vpnIp")
-    def vpn_ip(self) -> pulumi.Output[str]:
-        """
-        The IP address of Oracle's VPN headend.  Example: `129.146.17.50`
-        """
+    def vpn_ip(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "vpn_ip")
 

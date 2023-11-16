@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Host Insight resource in Oracle Cloud Infrastructure Opsi service.
@@ -72,58 +71,58 @@ type HostInsight struct {
 	// (Updatable) Compartment Identifier of host
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compute Instance
-	ComputeId pulumi.StringOutput `pulumi:"computeId"`
+	ComputeId pulumi.StringPtrOutput `pulumi:"computeId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// OPSI Enterprise Manager Bridge OCID
-	EnterpriseManagerBridgeId pulumi.StringOutput `pulumi:"enterpriseManagerBridgeId"`
+	EnterpriseManagerBridgeId pulumi.StringPtrOutput `pulumi:"enterpriseManagerBridgeId"`
 	// Enterprise Manager Entity Display Name
-	EnterpriseManagerEntityDisplayName pulumi.StringOutput `pulumi:"enterpriseManagerEntityDisplayName"`
+	EnterpriseManagerEntityDisplayName pulumi.StringPtrOutput `pulumi:"enterpriseManagerEntityDisplayName"`
 	// Enterprise Manager Entity Unique Identifier
-	EnterpriseManagerEntityIdentifier pulumi.StringOutput `pulumi:"enterpriseManagerEntityIdentifier"`
+	EnterpriseManagerEntityIdentifier pulumi.StringPtrOutput `pulumi:"enterpriseManagerEntityIdentifier"`
 	// Enterprise Manager Entity Name
-	EnterpriseManagerEntityName pulumi.StringOutput `pulumi:"enterpriseManagerEntityName"`
+	EnterpriseManagerEntityName pulumi.StringPtrOutput `pulumi:"enterpriseManagerEntityName"`
 	// Enterprise Manager Entity Type
-	EnterpriseManagerEntityType pulumi.StringOutput `pulumi:"enterpriseManagerEntityType"`
+	EnterpriseManagerEntityType pulumi.StringPtrOutput `pulumi:"enterpriseManagerEntityType"`
 	// Enterprise Manager Unique Identifier
-	EnterpriseManagerIdentifier pulumi.StringOutput `pulumi:"enterpriseManagerIdentifier"`
+	EnterpriseManagerIdentifier pulumi.StringPtrOutput `pulumi:"enterpriseManagerIdentifier"`
 	// (Updatable) Source of the host entity.
 	EntitySource pulumi.StringOutput `pulumi:"entitySource"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata insight.
-	ExadataInsightId pulumi.StringOutput `pulumi:"exadataInsightId"`
+	ExadataInsightId pulumi.StringPtrOutput `pulumi:"exadataInsightId"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// The user-friendly name for the host. The name does not have to be unique.
-	HostDisplayName pulumi.StringOutput `pulumi:"hostDisplayName"`
+	HostDisplayName pulumi.StringPtrOutput `pulumi:"hostDisplayName"`
 	// The host name. The host name is unique amongst the hosts managed by the same management agent.
-	HostName pulumi.StringOutput `pulumi:"hostName"`
+	HostName pulumi.StringPtrOutput `pulumi:"hostName"`
 	// Operations Insights internal representation of the host type. Possible value is EXTERNAL-HOST.
-	HostType pulumi.StringOutput `pulumi:"hostType"`
+	HostType pulumi.StringPtrOutput `pulumi:"hostType"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrOutput `pulumi:"lifecycleDetails"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values. The resource destruction here is basically a soft delete. User cannot create resource using the same Management agent OCID. If resource is in enabled state during destruction, the resource will be disabled automatically before performing delete operation.
-	ManagementAgentId pulumi.StringOutput `pulumi:"managementAgentId"`
+	ManagementAgentId pulumi.StringPtrOutput `pulumi:"managementAgentId"`
 	// Platform name.
-	PlatformName pulumi.StringOutput `pulumi:"platformName"`
+	PlatformName pulumi.StringPtrOutput `pulumi:"platformName"`
 	// Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX, SOLARIS, WINDOWS]. Supported platformType(s) for MACS-managed cloud host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX, WINDOWS, AIX].
-	PlatformType pulumi.StringOutput `pulumi:"platformType"`
+	PlatformType pulumi.StringPtrOutput `pulumi:"platformType"`
 	// Platform version.
-	PlatformVersion pulumi.StringOutput `pulumi:"platformVersion"`
+	PlatformVersion pulumi.StringPtrOutput `pulumi:"platformVersion"`
 	// Processor count.
-	ProcessorCount pulumi.IntOutput `pulumi:"processorCount"`
+	ProcessorCount pulumi.IntPtrOutput `pulumi:"processorCount"`
 	// The current state of the host.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// (Updatable) Status of the resource. Example: "ENABLED", "DISABLED". Resource can be either enabled or disabled by updating the value of status field to either "ENABLED" or "DISABLED"
-	Status pulumi.StringOutput `pulumi:"status"`
+	Status pulumi.StringPtrOutput `pulumi:"status"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
 	// The time the the host insight was first enabled. An RFC3339 formatted datetime string
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The time the host insight was updated. An RFC3339 formatted datetime string
-	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 }
 
 // NewHostInsight registers a new resource with the given unique name, arguments, and options.
@@ -361,12 +360,6 @@ func (i *HostInsight) ToHostInsightOutputWithContext(ctx context.Context) HostIn
 	return pulumi.ToOutputWithContext(ctx, i).(HostInsightOutput)
 }
 
-func (i *HostInsight) ToOutput(ctx context.Context) pulumix.Output[*HostInsight] {
-	return pulumix.Output[*HostInsight]{
-		OutputState: i.ToHostInsightOutputWithContext(ctx).OutputState,
-	}
-}
-
 // HostInsightArrayInput is an input type that accepts HostInsightArray and HostInsightArrayOutput values.
 // You can construct a concrete instance of `HostInsightArrayInput` via:
 //
@@ -390,12 +383,6 @@ func (i HostInsightArray) ToHostInsightArrayOutput() HostInsightArrayOutput {
 
 func (i HostInsightArray) ToHostInsightArrayOutputWithContext(ctx context.Context) HostInsightArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(HostInsightArrayOutput)
-}
-
-func (i HostInsightArray) ToOutput(ctx context.Context) pulumix.Output[[]*HostInsight] {
-	return pulumix.Output[[]*HostInsight]{
-		OutputState: i.ToHostInsightArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // HostInsightMapInput is an input type that accepts HostInsightMap and HostInsightMapOutput values.
@@ -423,12 +410,6 @@ func (i HostInsightMap) ToHostInsightMapOutputWithContext(ctx context.Context) H
 	return pulumi.ToOutputWithContext(ctx, i).(HostInsightMapOutput)
 }
 
-func (i HostInsightMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*HostInsight] {
-	return pulumix.Output[map[string]*HostInsight]{
-		OutputState: i.ToHostInsightMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type HostInsightOutput struct{ *pulumi.OutputState }
 
 func (HostInsightOutput) ElementType() reflect.Type {
@@ -443,20 +424,14 @@ func (o HostInsightOutput) ToHostInsightOutputWithContext(ctx context.Context) H
 	return o
 }
 
-func (o HostInsightOutput) ToOutput(ctx context.Context) pulumix.Output[*HostInsight] {
-	return pulumix.Output[*HostInsight]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) Compartment Identifier of host
 func (o HostInsightOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *HostInsight) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compute Instance
-func (o HostInsightOutput) ComputeId() pulumi.StringOutput {
-	return o.ApplyT(func(v *HostInsight) pulumi.StringOutput { return v.ComputeId }).(pulumi.StringOutput)
+func (o HostInsightOutput) ComputeId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *HostInsight) pulumi.StringPtrOutput { return v.ComputeId }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -465,33 +440,33 @@ func (o HostInsightOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // OPSI Enterprise Manager Bridge OCID
-func (o HostInsightOutput) EnterpriseManagerBridgeId() pulumi.StringOutput {
-	return o.ApplyT(func(v *HostInsight) pulumi.StringOutput { return v.EnterpriseManagerBridgeId }).(pulumi.StringOutput)
+func (o HostInsightOutput) EnterpriseManagerBridgeId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *HostInsight) pulumi.StringPtrOutput { return v.EnterpriseManagerBridgeId }).(pulumi.StringPtrOutput)
 }
 
 // Enterprise Manager Entity Display Name
-func (o HostInsightOutput) EnterpriseManagerEntityDisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v *HostInsight) pulumi.StringOutput { return v.EnterpriseManagerEntityDisplayName }).(pulumi.StringOutput)
+func (o HostInsightOutput) EnterpriseManagerEntityDisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *HostInsight) pulumi.StringPtrOutput { return v.EnterpriseManagerEntityDisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Enterprise Manager Entity Unique Identifier
-func (o HostInsightOutput) EnterpriseManagerEntityIdentifier() pulumi.StringOutput {
-	return o.ApplyT(func(v *HostInsight) pulumi.StringOutput { return v.EnterpriseManagerEntityIdentifier }).(pulumi.StringOutput)
+func (o HostInsightOutput) EnterpriseManagerEntityIdentifier() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *HostInsight) pulumi.StringPtrOutput { return v.EnterpriseManagerEntityIdentifier }).(pulumi.StringPtrOutput)
 }
 
 // Enterprise Manager Entity Name
-func (o HostInsightOutput) EnterpriseManagerEntityName() pulumi.StringOutput {
-	return o.ApplyT(func(v *HostInsight) pulumi.StringOutput { return v.EnterpriseManagerEntityName }).(pulumi.StringOutput)
+func (o HostInsightOutput) EnterpriseManagerEntityName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *HostInsight) pulumi.StringPtrOutput { return v.EnterpriseManagerEntityName }).(pulumi.StringPtrOutput)
 }
 
 // Enterprise Manager Entity Type
-func (o HostInsightOutput) EnterpriseManagerEntityType() pulumi.StringOutput {
-	return o.ApplyT(func(v *HostInsight) pulumi.StringOutput { return v.EnterpriseManagerEntityType }).(pulumi.StringOutput)
+func (o HostInsightOutput) EnterpriseManagerEntityType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *HostInsight) pulumi.StringPtrOutput { return v.EnterpriseManagerEntityType }).(pulumi.StringPtrOutput)
 }
 
 // Enterprise Manager Unique Identifier
-func (o HostInsightOutput) EnterpriseManagerIdentifier() pulumi.StringOutput {
-	return o.ApplyT(func(v *HostInsight) pulumi.StringOutput { return v.EnterpriseManagerIdentifier }).(pulumi.StringOutput)
+func (o HostInsightOutput) EnterpriseManagerIdentifier() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *HostInsight) pulumi.StringPtrOutput { return v.EnterpriseManagerIdentifier }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Source of the host entity.
@@ -500,8 +475,8 @@ func (o HostInsightOutput) EntitySource() pulumi.StringOutput {
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata insight.
-func (o HostInsightOutput) ExadataInsightId() pulumi.StringOutput {
-	return o.ApplyT(func(v *HostInsight) pulumi.StringOutput { return v.ExadataInsightId }).(pulumi.StringOutput)
+func (o HostInsightOutput) ExadataInsightId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *HostInsight) pulumi.StringPtrOutput { return v.ExadataInsightId }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -510,61 +485,61 @@ func (o HostInsightOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The user-friendly name for the host. The name does not have to be unique.
-func (o HostInsightOutput) HostDisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v *HostInsight) pulumi.StringOutput { return v.HostDisplayName }).(pulumi.StringOutput)
+func (o HostInsightOutput) HostDisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *HostInsight) pulumi.StringPtrOutput { return v.HostDisplayName }).(pulumi.StringPtrOutput)
 }
 
 // The host name. The host name is unique amongst the hosts managed by the same management agent.
-func (o HostInsightOutput) HostName() pulumi.StringOutput {
-	return o.ApplyT(func(v *HostInsight) pulumi.StringOutput { return v.HostName }).(pulumi.StringOutput)
+func (o HostInsightOutput) HostName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *HostInsight) pulumi.StringPtrOutput { return v.HostName }).(pulumi.StringPtrOutput)
 }
 
 // Operations Insights internal representation of the host type. Possible value is EXTERNAL-HOST.
-func (o HostInsightOutput) HostType() pulumi.StringOutput {
-	return o.ApplyT(func(v *HostInsight) pulumi.StringOutput { return v.HostType }).(pulumi.StringOutput)
+func (o HostInsightOutput) HostType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *HostInsight) pulumi.StringPtrOutput { return v.HostType }).(pulumi.StringPtrOutput)
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-func (o HostInsightOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v *HostInsight) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o HostInsightOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *HostInsight) pulumi.StringPtrOutput { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values. The resource destruction here is basically a soft delete. User cannot create resource using the same Management agent OCID. If resource is in enabled state during destruction, the resource will be disabled automatically before performing delete operation.
-func (o HostInsightOutput) ManagementAgentId() pulumi.StringOutput {
-	return o.ApplyT(func(v *HostInsight) pulumi.StringOutput { return v.ManagementAgentId }).(pulumi.StringOutput)
+func (o HostInsightOutput) ManagementAgentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *HostInsight) pulumi.StringPtrOutput { return v.ManagementAgentId }).(pulumi.StringPtrOutput)
 }
 
 // Platform name.
-func (o HostInsightOutput) PlatformName() pulumi.StringOutput {
-	return o.ApplyT(func(v *HostInsight) pulumi.StringOutput { return v.PlatformName }).(pulumi.StringOutput)
+func (o HostInsightOutput) PlatformName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *HostInsight) pulumi.StringPtrOutput { return v.PlatformName }).(pulumi.StringPtrOutput)
 }
 
 // Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX, SOLARIS, WINDOWS]. Supported platformType(s) for MACS-managed cloud host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX, WINDOWS, AIX].
-func (o HostInsightOutput) PlatformType() pulumi.StringOutput {
-	return o.ApplyT(func(v *HostInsight) pulumi.StringOutput { return v.PlatformType }).(pulumi.StringOutput)
+func (o HostInsightOutput) PlatformType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *HostInsight) pulumi.StringPtrOutput { return v.PlatformType }).(pulumi.StringPtrOutput)
 }
 
 // Platform version.
-func (o HostInsightOutput) PlatformVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v *HostInsight) pulumi.StringOutput { return v.PlatformVersion }).(pulumi.StringOutput)
+func (o HostInsightOutput) PlatformVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *HostInsight) pulumi.StringPtrOutput { return v.PlatformVersion }).(pulumi.StringPtrOutput)
 }
 
 // Processor count.
-func (o HostInsightOutput) ProcessorCount() pulumi.IntOutput {
-	return o.ApplyT(func(v *HostInsight) pulumi.IntOutput { return v.ProcessorCount }).(pulumi.IntOutput)
+func (o HostInsightOutput) ProcessorCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *HostInsight) pulumi.IntPtrOutput { return v.ProcessorCount }).(pulumi.IntPtrOutput)
 }
 
 // The current state of the host.
-func (o HostInsightOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *HostInsight) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o HostInsightOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *HostInsight) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Status of the resource. Example: "ENABLED", "DISABLED". Resource can be either enabled or disabled by updating the value of status field to either "ENABLED" or "DISABLED"
-func (o HostInsightOutput) Status() pulumi.StringOutput {
-	return o.ApplyT(func(v *HostInsight) pulumi.StringOutput { return v.Status }).(pulumi.StringOutput)
+func (o HostInsightOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *HostInsight) pulumi.StringPtrOutput { return v.Status }).(pulumi.StringPtrOutput)
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -573,13 +548,13 @@ func (o HostInsightOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The time the the host insight was first enabled. An RFC3339 formatted datetime string
-func (o HostInsightOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *HostInsight) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o HostInsightOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *HostInsight) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time the host insight was updated. An RFC3339 formatted datetime string
-func (o HostInsightOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *HostInsight) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o HostInsightOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *HostInsight) pulumi.StringPtrOutput { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type HostInsightArrayOutput struct{ *pulumi.OutputState }
@@ -594,12 +569,6 @@ func (o HostInsightArrayOutput) ToHostInsightArrayOutput() HostInsightArrayOutpu
 
 func (o HostInsightArrayOutput) ToHostInsightArrayOutputWithContext(ctx context.Context) HostInsightArrayOutput {
 	return o
-}
-
-func (o HostInsightArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*HostInsight] {
-	return pulumix.Output[[]*HostInsight]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o HostInsightArrayOutput) Index(i pulumi.IntInput) HostInsightOutput {
@@ -620,12 +589,6 @@ func (o HostInsightMapOutput) ToHostInsightMapOutput() HostInsightMapOutput {
 
 func (o HostInsightMapOutput) ToHostInsightMapOutputWithContext(ctx context.Context) HostInsightMapOutput {
 	return o
-}
-
-func (o HostInsightMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*HostInsight] {
-	return pulumix.Output[map[string]*HostInsight]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o HostInsightMapOutput) MapIndex(k pulumi.StringInput) HostInsightOutput {

@@ -119,7 +119,7 @@ export interface GetAuditProfilesResult {
     /**
      * The list of audit_profile_collection.
      */
-    readonly auditProfileCollections: outputs.DataSafe.GetAuditProfilesAuditProfileCollection[];
+    readonly auditProfileCollections?: outputs.DataSafe.GetAuditProfilesAuditProfileCollection[];
     /**
      * The OCID of the  parent audit.
      */
@@ -137,7 +137,7 @@ export interface GetAuditProfilesResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Indicates whether audit retention settings like online and offline months is set at the target level overriding the global audit retention settings.
      */

@@ -94,81 +94,57 @@ class GetSqlCollectionResult:
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The OCID of the compartment containing the SQL collection.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="dbUserName")
-    def db_user_name(self) -> str:
-        """
-        The database user name.
-        """
+    def db_user_name(self) -> Optional[str]:
         return pulumi.get(self, "db_user_name")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        The description of the SQL collection.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        The display name of the SQL collection.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="generateSqlFirewallPolicyTrigger")
-    def generate_sql_firewall_policy_trigger(self) -> bool:
+    def generate_sql_firewall_policy_trigger(self) -> Optional[bool]:
         return pulumi.get(self, "generate_sql_firewall_policy_trigger")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The OCID of the SQL collection.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        Details about the current state of the SQL collection in Data Safe.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="purgeLogsTrigger")
-    def purge_logs_trigger(self) -> bool:
+    def purge_logs_trigger(self) -> Optional[bool]:
         return pulumi.get(self, "purge_logs_trigger")
 
     @property
     @pulumi.getter(name="refreshLogInsightsTrigger")
-    def refresh_log_insights_trigger(self) -> bool:
+    def refresh_log_insights_trigger(self) -> Optional[bool]:
         return pulumi.get(self, "refresh_log_insights_trigger")
 
     @property
@@ -178,84 +154,57 @@ class GetSqlCollectionResult:
 
     @property
     @pulumi.getter(name="sqlLevel")
-    def sql_level(self) -> str:
-        """
-        Specifies the level of SQL that will be collected. USER_ISSUED_SQL - User issued SQL statements only. ALL_SQL - Includes all SQL statements including SQL statement issued inside PL/SQL units.
-        """
+    def sql_level(self) -> Optional[str]:
         return pulumi.get(self, "sql_level")
 
     @property
     @pulumi.getter(name="startTrigger")
-    def start_trigger(self) -> bool:
+    def start_trigger(self) -> Optional[bool]:
         return pulumi.get(self, "start_trigger")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the SQL collection.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter
-    def status(self) -> str:
-        """
-        Specifies if the status of the SqlCollection. Enabled indicates that the collecting is in progress.
-        """
+    def status(self) -> Optional[str]:
         return pulumi.get(self, "status")
 
     @property
     @pulumi.getter(name="stopTrigger")
-    def stop_trigger(self) -> bool:
+    def stop_trigger(self) -> Optional[bool]:
         return pulumi.get(self, "stop_trigger")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="targetId")
-    def target_id(self) -> str:
-        """
-        The OCID of the target corresponding to the security policy deployment.
-        """
+    def target_id(self) -> Optional[str]:
         return pulumi.get(self, "target_id")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The time that the SQL collection was created, in the format defined by RFC3339.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeLastStarted")
-    def time_last_started(self) -> str:
-        """
-        The timestamp of the most recent SqlCollection start operation, in the format defined by RFC3339.
-        """
+    def time_last_started(self) -> Optional[str]:
         return pulumi.get(self, "time_last_started")
 
     @property
     @pulumi.getter(name="timeLastStopped")
-    def time_last_stopped(self) -> str:
-        """
-        The timestamp of the most recent SqlCollection stop operation, in the format defined by RFC3339.
-        """
+    def time_last_stopped(self) -> Optional[str]:
         return pulumi.get(self, "time_last_stopped")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The last date and time the SQL collection was updated, in the format defined by RFC3339.
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
 
@@ -293,21 +242,7 @@ class AwaitableGetSqlCollectionResult(GetSqlCollectionResult):
 def get_sql_collection(sql_collection_id: Optional[str] = None,
                        opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetSqlCollectionResult:
     """
-    This data source provides details about a specific Sql Collection resource in Oracle Cloud Infrastructure Data Safe service.
-
-    Gets a SQL collection by identifier.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_sql_collection = oci.DataSafe.get_sql_collection(sql_collection_id=oci_data_safe_sql_collection["test_sql_collection"]["id"])
-    ```
-
-
-    :param str sql_collection_id: The OCID of the SQL collection resource.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['sqlCollectionId'] = sql_collection_id
@@ -344,20 +279,6 @@ def get_sql_collection(sql_collection_id: Optional[str] = None,
 def get_sql_collection_output(sql_collection_id: Optional[pulumi.Input[str]] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSqlCollectionResult]:
     """
-    This data source provides details about a specific Sql Collection resource in Oracle Cloud Infrastructure Data Safe service.
-
-    Gets a SQL collection by identifier.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_sql_collection = oci.DataSafe.get_sql_collection(sql_collection_id=oci_data_safe_sql_collection["test_sql_collection"]["id"])
-    ```
-
-
-    :param str sql_collection_id: The OCID of the SQL collection resource.
+    Use this data source to access information about an existing resource.
     """
     ...

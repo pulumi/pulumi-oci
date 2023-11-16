@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of List User Grants in Oracle Cloud Infrastructure Data Safe service.
@@ -98,7 +97,7 @@ type GetListUserGrantsResult struct {
 	// The list of grants.
 	Grants []GetListUserGrantsGrant `pulumi:"grants"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The privilege category.
 	PrivilegeCategory *string `pulumi:"privilegeCategory"`
 	// The type of a user grant.
@@ -162,12 +161,6 @@ func (o GetListUserGrantsResultOutput) ToGetListUserGrantsResultOutputWithContex
 	return o
 }
 
-func (o GetListUserGrantsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetListUserGrantsResult] {
-	return pulumix.Output[GetListUserGrantsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The grant depth level of the indirect grant. An indirectly granted role/privilege is granted to the user through another role. The depth level indicates how deep a privilege is within the grant hierarchy.
 func (o GetListUserGrantsResultOutput) DepthLevel() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v GetListUserGrantsResult) *int { return v.DepthLevel }).(pulumi.IntPtrOutput)
@@ -200,8 +193,8 @@ func (o GetListUserGrantsResultOutput) Grants() GetListUserGrantsGrantArrayOutpu
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetListUserGrantsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetListUserGrantsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetListUserGrantsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetListUserGrantsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The privilege category.

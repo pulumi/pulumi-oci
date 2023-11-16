@@ -59,34 +59,22 @@ class GetChannelsResult:
 
     @property
     @pulumi.getter
-    def channels(self) -> Sequence['outputs.GetChannelsChannelResult']:
-        """
-        The list of channels.
-        """
+    def channels(self) -> Optional[Sequence['outputs.GetChannelsChannelResult']]:
         return pulumi.get(self, "channels")
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The OCID of the compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="dbSystemId")
     def db_system_id(self) -> Optional[str]:
-        """
-        The OCID of the source DB System.
-        """
         return pulumi.get(self, "db_system_id")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        The user-friendly name for the Channel. It does not have to be unique.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -96,7 +84,7 @@ class GetChannelsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -105,17 +93,11 @@ class GetChannelsResult:
     @property
     @pulumi.getter(name="isEnabled")
     def is_enabled(self) -> Optional[bool]:
-        """
-        Whether the Channel has been enabled by the user.
-        """
         return pulumi.get(self, "is_enabled")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The state of the Channel.
-        """
         return pulumi.get(self, "state")
 
 
@@ -145,31 +127,7 @@ def get_channels(channel_id: Optional[str] = None,
                  state: Optional[str] = None,
                  opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetChannelsResult:
     """
-    This data source provides the list of Channels in Oracle Cloud Infrastructure MySQL Database service.
-
-    Lists all the Channels that match the specified filters.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_channels = oci.Mysql.get_channels(compartment_id=var["compartment_id"],
-        channel_id=oci_mysql_channel["test_channel"]["id"],
-        db_system_id=oci_database_db_system["test_db_system"]["id"],
-        display_name=var["channel_display_name"],
-        is_enabled=var["channel_is_enabled"],
-        state=var["channel_state"])
-    ```
-
-
-    :param str channel_id: The OCID of the Channel.
-    :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param str db_system_id: The DB System [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param str display_name: A filter to return only the resource matching the given display name exactly.
-    :param bool is_enabled: If true, returns only Channels that are enabled. If false, returns only Channels that are disabled.
-    :param str state: The LifecycleState of the Channel.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['channelId'] = channel_id
@@ -204,30 +162,6 @@ def get_channels_output(channel_id: Optional[pulumi.Input[Optional[str]]] = None
                         state: Optional[pulumi.Input[Optional[str]]] = None,
                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetChannelsResult]:
     """
-    This data source provides the list of Channels in Oracle Cloud Infrastructure MySQL Database service.
-
-    Lists all the Channels that match the specified filters.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_channels = oci.Mysql.get_channels(compartment_id=var["compartment_id"],
-        channel_id=oci_mysql_channel["test_channel"]["id"],
-        db_system_id=oci_database_db_system["test_db_system"]["id"],
-        display_name=var["channel_display_name"],
-        is_enabled=var["channel_is_enabled"],
-        state=var["channel_state"])
-    ```
-
-
-    :param str channel_id: The OCID of the Channel.
-    :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param str db_system_id: The DB System [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param str display_name: A filter to return only the resource matching the given display name exactly.
-    :param bool is_enabled: If true, returns only Channels that are enabled. If false, returns only Channels that are disabled.
-    :param str state: The LifecycleState of the Channel.
+    Use this data source to access information about an existing resource.
     """
     ...

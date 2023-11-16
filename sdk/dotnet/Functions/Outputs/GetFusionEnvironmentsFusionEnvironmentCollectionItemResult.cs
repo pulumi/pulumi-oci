@@ -24,52 +24,52 @@ namespace Pulumi.Oci.Functions.Outputs
         /// <summary>
         /// The ID of the compartment in which to list resources.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         public readonly ImmutableArray<Outputs.GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetailResult> CreateFusionEnvironmentAdminUserDetails;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// A filter to return only resources that match the entire display name given.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// DNS prefix
         /// </summary>
-        public readonly string DnsPrefix;
+        public readonly string? DnsPrefix;
         /// <summary>
         /// The IDCS domain created for the fusion instance
         /// </summary>
-        public readonly string DomainId;
+        public readonly string? DomainId;
         /// <summary>
         /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// The ID of the fusion environment family in which to list resources.
         /// </summary>
-        public readonly string FusionEnvironmentFamilyId;
+        public readonly string? FusionEnvironmentFamilyId;
         /// <summary>
         /// Type of the FusionEnvironment.
         /// </summary>
-        public readonly string FusionEnvironmentType;
+        public readonly string? FusionEnvironmentType;
         /// <summary>
         /// Unique identifier that is immutable on creation
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The IDCS Domain URL
         /// </summary>
-        public readonly string IdcsDomainUrl;
+        public readonly string? IdcsDomainUrl;
         /// <summary>
         /// If it's true, then the Break Glass feature is enabled
         /// </summary>
-        public readonly bool IsBreakGlassEnabled;
+        public readonly bool? IsBreakGlassEnabled;
         /// <summary>
         /// BYOK key id
         /// </summary>
-        public readonly string KmsKeyId;
+        public readonly string? KmsKeyId;
         /// <summary>
         /// BYOK key info
         /// </summary>
@@ -77,11 +77,11 @@ namespace Pulumi.Oci.Functions.Outputs
         /// <summary>
         /// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         /// </summary>
-        public readonly string LifecycleDetails;
+        public readonly string? LifecycleDetails;
         /// <summary>
         /// The lockbox Id of this fusion environment. If there's no lockbox id, this field will be null
         /// </summary>
-        public readonly string LockboxId;
+        public readonly string? LockboxId;
         /// <summary>
         /// The policy that specifies the maintenance and upgrade preferences for an environment. For more information about the options, see [Understanding Environment Maintenance](https://docs.cloud.oracle.com/iaas/Content/fusion-applications/plan-environment-family.htm#about-env-maintenance).
         /// </summary>
@@ -89,7 +89,7 @@ namespace Pulumi.Oci.Functions.Outputs
         /// <summary>
         /// Public URL
         /// </summary>
-        public readonly string PublicUrl;
+        public readonly string? PublicUrl;
         /// <summary>
         /// Describes a refresh of a fusion environment
         /// </summary>
@@ -101,7 +101,7 @@ namespace Pulumi.Oci.Functions.Outputs
         /// <summary>
         /// A filter that returns all resources that match the specified lifecycle state.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// List of subscription IDs.
         /// </summary>
@@ -109,23 +109,23 @@ namespace Pulumi.Oci.Functions.Outputs
         /// <summary>
         /// Environment Specific Guid/ System Name
         /// </summary>
-        public readonly string SystemName;
+        public readonly string? SystemName;
         /// <summary>
         /// The time the the FusionEnvironment was created. An RFC3339 formatted datetime string
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The next maintenance for this environment
         /// </summary>
-        public readonly string TimeUpcomingMaintenance;
+        public readonly string? TimeUpcomingMaintenance;
         /// <summary>
         /// The time the FusionEnvironment was updated. An RFC3339 formatted datetime string
         /// </summary>
-        public readonly string TimeUpdated;
+        public readonly string? TimeUpdated;
         /// <summary>
         /// Version of Fusion Apps used by this environment
         /// </summary>
-        public readonly string Version;
+        public readonly string? Version;
 
         [OutputConstructor]
         private GetFusionEnvironmentsFusionEnvironmentCollectionItemResult(
@@ -133,59 +133,59 @@ namespace Pulumi.Oci.Functions.Outputs
 
             ImmutableArray<string> appliedPatchBundles,
 
-            string compartmentId,
+            string? compartmentId,
 
             ImmutableArray<Outputs.GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetailResult> createFusionEnvironmentAdminUserDetails,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string displayName,
+            string? displayName,
 
-            string dnsPrefix,
+            string? dnsPrefix,
 
-            string domainId,
+            string? domainId,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string fusionEnvironmentFamilyId,
+            string? fusionEnvironmentFamilyId,
 
-            string fusionEnvironmentType,
+            string? fusionEnvironmentType,
 
-            string id,
+            string? id,
 
-            string idcsDomainUrl,
+            string? idcsDomainUrl,
 
-            bool isBreakGlassEnabled,
+            bool? isBreakGlassEnabled,
 
-            string kmsKeyId,
+            string? kmsKeyId,
 
             ImmutableArray<Outputs.GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfoResult> kmsKeyInfos,
 
-            string lifecycleDetails,
+            string? lifecycleDetails,
 
-            string lockboxId,
+            string? lockboxId,
 
             ImmutableArray<Outputs.GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyResult> maintenancePolicies,
 
-            string publicUrl,
+            string? publicUrl,
 
             ImmutableArray<Outputs.GetFusionEnvironmentsFusionEnvironmentCollectionItemRefreshResult> refreshes,
 
             ImmutableArray<Outputs.GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleResult> rules,
 
-            string state,
+            string? state,
 
             ImmutableArray<string> subscriptionIds,
 
-            string systemName,
+            string? systemName,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeUpcomingMaintenance,
+            string? timeUpcomingMaintenance,
 
-            string timeUpdated,
+            string? timeUpdated,
 
-            string version)
+            string? version)
         {
             AdditionalLanguagePacks = additionalLanguagePacks;
             AppliedPatchBundles = appliedPatchBundles;

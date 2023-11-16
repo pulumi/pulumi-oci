@@ -53,109 +53,109 @@ export interface GetLogAnalyticsObjectCollectionRuleResult {
     /**
      * An optional character encoding to aid in detecting the character encoding of the contents of the objects while processing. It is recommended to set this value as ISO_8589_1 when configuring content of the objects having more numeric characters, and very few alphabets. For e.g. this applies when configuring VCN Flow Logs.
      */
-    readonly charEncoding: string;
+    readonly charEncoding?: string;
     /**
      * The type of collection. Supported collection types: LIVE, HISTORIC, HISTORIC_LIVE
      */
-    readonly collectionType: string;
+    readonly collectionType?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to which this rule belongs.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * A string that describes the details of the rule. It does not have to be unique, and can be changed. Avoid entering confidential information.
      */
-    readonly description: string;
+    readonly description?: string;
     /**
      * Logging Analytics entity OCID to associate the processed logs with.
      */
-    readonly entityId: string;
+    readonly entityId?: string;
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this rule.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Whether or not this rule is currently enabled.
      */
-    readonly isEnabled: boolean;
+    readonly isEnabled?: boolean;
     /**
      * A detailed status of the life cycle state.
      */
-    readonly lifecycleDetails: string;
+    readonly lifecycleDetails?: string;
     readonly logAnalyticsObjectCollectionRuleId: string;
     /**
      * Logging Analytics Log group OCID to associate the processed logs with.
      */
-    readonly logGroupId: string;
+    readonly logGroupId?: string;
     /**
      * The logSet to be associated with the processed logs. The logSet feature can be used by customers with high volume of data  and this feature has to be enabled for a given tenancy prior to its usage. When logSetExtRegex value is provided, it will take precedence over this logSet value and logSet will be computed dynamically  using logSetKey and logSetExtRegex.
      */
-    readonly logSet: string;
+    readonly logSet?: string;
     /**
      * The regex to be applied against given logSetKey. Regex has to be in string escaped format.
      */
-    readonly logSetExtRegex: string;
+    readonly logSetExtRegex?: string;
     /**
      * An optional parameter to indicate from where the logSet to be extracted using logSetExtRegex. Default value is OBJECT_PATH (e.g. /n/<namespace>/b/<bucketname>/o/<objectname>).
      */
-    readonly logSetKey: string;
+    readonly logSetKey?: string;
     /**
      * Name of the Logging Analytics Source to use for the processing.
      */
-    readonly logSourceName: string;
+    readonly logSourceName?: string;
     /**
      * A unique name to the rule. The name must be unique, within the tenancy, and cannot be changed.
      */
-    readonly name: string;
+    readonly name?: string;
     readonly namespace: string;
     /**
      * When the filters are provided, only the objects matching the filters are picked up for processing. The matchType supported is exact match and accommodates wildcard "*". For more information on filters, see [Event Filters](https://docs.oracle.com/en-us/iaas/Content/Events/Concepts/filterevents.htm).
      */
-    readonly objectNameFilters: string[];
+    readonly objectNameFilters?: string[];
     /**
      * Name of the Object Storage bucket.
      */
-    readonly osBucketName: string;
+    readonly osBucketName?: string;
     /**
      * Object Storage namespace.
      */
-    readonly osNamespace: string;
+    readonly osNamespace?: string;
     /**
      * Use this to override some property values which are defined at bucket level to the scope of object. Supported propeties for override are, logSourceName, charEncoding. Supported matchType for override are "contains".
      */
-    readonly overrides: outputs.LogAnalytics.GetLogAnalyticsObjectCollectionRuleOverride[];
+    readonly overrides?: outputs.LogAnalytics.GetLogAnalyticsObjectCollectionRuleOverride[];
     /**
      * The oldest time of the file in the bucket to consider for collection. Accepted values are: BEGINNING or CURRENT_TIME or RFC3339 formatted datetime string. When collectionType is LIVE, specifying pollSince value other than CURRENT_TIME will result in error.
      */
-    readonly pollSince: string;
+    readonly pollSince?: string;
     /**
      * The oldest time of the file in the bucket to consider for collection. Accepted values are: CURRENT_TIME or RFC3339 formatted datetime string. When collectionType is LIVE, specifying pollTill will result in error.
      */
-    readonly pollTill: string;
+    readonly pollTill?: string;
     /**
      * The current state of the rule.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * The time when this rule was created. An RFC3339 formatted datetime string.
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The time when this rule was last updated. An RFC3339 formatted datetime string.
      */
-    readonly timeUpdated: string;
+    readonly timeUpdated?: string;
     /**
      * Timezone to be used when processing log entries whose timestamps do not include an explicit timezone.  When this property is not specified, the timezone of the entity specified is used.  If the entity is also not specified or do not have a valid timezone then UTC is used.
      */
-    readonly timezone: string;
+    readonly timezone?: string;
 }
 /**
  * This data source provides details about a specific Log Analytics Object Collection Rule resource in Oracle Cloud Infrastructure Log Analytics service.

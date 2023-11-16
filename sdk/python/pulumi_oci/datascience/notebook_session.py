@@ -28,20 +28,6 @@ class NotebookSessionArgs:
                  state: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a NotebookSession resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the notebook session.
-        :param pulumi.Input[str] project_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the notebook session.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly display name for the resource. It does not have to be unique and can be modified. Avoid entering confidential information. Example: `My NotebookSession`
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input['NotebookSessionNotebookSessionConfigDetailsArgs'] notebook_session_config_details: Details for the notebook session configuration.
-        :param pulumi.Input['NotebookSessionNotebookSessionConfigurationDetailsArgs'] notebook_session_configuration_details: (Updatable) Details for the notebook session configuration.
-        :param pulumi.Input['NotebookSessionNotebookSessionRuntimeConfigDetailsArgs'] notebook_session_runtime_config_details: (Updatable) Notebook Session runtime configuration details.
-        :param pulumi.Input[Sequence[pulumi.Input['NotebookSessionNotebookSessionStorageMountConfigurationDetailsListArgs']]] notebook_session_storage_mount_configuration_details_lists: (Updatable) Collection of NotebookSessionStorageMountConfigurationDetails.
-        :param pulumi.Input[str] state: The state of the notebook session.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "project_id", project_id)
@@ -65,9 +51,6 @@ class NotebookSessionArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the notebook session.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -77,13 +60,6 @@ class NotebookSessionArgs:
     @property
     @pulumi.getter(name="projectId")
     def project_id(self) -> pulumi.Input[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the notebook session.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "project_id")
 
     @project_id.setter
@@ -93,9 +69,6 @@ class NotebookSessionArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -105,9 +78,6 @@ class NotebookSessionArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A user-friendly display name for the resource. It does not have to be unique and can be modified. Avoid entering confidential information. Example: `My NotebookSession`
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -117,9 +87,6 @@ class NotebookSessionArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -129,9 +96,6 @@ class NotebookSessionArgs:
     @property
     @pulumi.getter(name="notebookSessionConfigDetails")
     def notebook_session_config_details(self) -> Optional[pulumi.Input['NotebookSessionNotebookSessionConfigDetailsArgs']]:
-        """
-        Details for the notebook session configuration.
-        """
         return pulumi.get(self, "notebook_session_config_details")
 
     @notebook_session_config_details.setter
@@ -141,9 +105,6 @@ class NotebookSessionArgs:
     @property
     @pulumi.getter(name="notebookSessionConfigurationDetails")
     def notebook_session_configuration_details(self) -> Optional[pulumi.Input['NotebookSessionNotebookSessionConfigurationDetailsArgs']]:
-        """
-        (Updatable) Details for the notebook session configuration.
-        """
         return pulumi.get(self, "notebook_session_configuration_details")
 
     @notebook_session_configuration_details.setter
@@ -153,9 +114,6 @@ class NotebookSessionArgs:
     @property
     @pulumi.getter(name="notebookSessionRuntimeConfigDetails")
     def notebook_session_runtime_config_details(self) -> Optional[pulumi.Input['NotebookSessionNotebookSessionRuntimeConfigDetailsArgs']]:
-        """
-        (Updatable) Notebook Session runtime configuration details.
-        """
         return pulumi.get(self, "notebook_session_runtime_config_details")
 
     @notebook_session_runtime_config_details.setter
@@ -165,9 +123,6 @@ class NotebookSessionArgs:
     @property
     @pulumi.getter(name="notebookSessionStorageMountConfigurationDetailsLists")
     def notebook_session_storage_mount_configuration_details_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NotebookSessionNotebookSessionStorageMountConfigurationDetailsListArgs']]]]:
-        """
-        (Updatable) Collection of NotebookSessionStorageMountConfigurationDetails.
-        """
         return pulumi.get(self, "notebook_session_storage_mount_configuration_details_lists")
 
     @notebook_session_storage_mount_configuration_details_lists.setter
@@ -177,9 +132,6 @@ class NotebookSessionArgs:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The state of the notebook session.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -206,24 +158,6 @@ class _NotebookSessionState:
                  time_created: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering NotebookSession resources.
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the notebook session.
-        :param pulumi.Input[str] created_by: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the notebook session.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly display name for the resource. It does not have to be unique and can be modified. Avoid entering confidential information. Example: `My NotebookSession`
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] lifecycle_details: Details about the state of the notebook session.
-        :param pulumi.Input['NotebookSessionNotebookSessionConfigDetailsArgs'] notebook_session_config_details: Details for the notebook session configuration.
-        :param pulumi.Input['NotebookSessionNotebookSessionConfigurationDetailsArgs'] notebook_session_configuration_details: (Updatable) Details for the notebook session configuration.
-        :param pulumi.Input['NotebookSessionNotebookSessionRuntimeConfigDetailsArgs'] notebook_session_runtime_config_details: (Updatable) Notebook Session runtime configuration details.
-        :param pulumi.Input[Sequence[pulumi.Input['NotebookSessionNotebookSessionStorageMountConfigurationDetailsListArgs']]] notebook_session_storage_mount_configuration_details_lists: (Updatable) Collection of NotebookSessionStorageMountConfigurationDetails.
-        :param pulumi.Input[str] notebook_session_url: The URL to interact with the notebook session.
-        :param pulumi.Input[str] project_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the notebook session.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] state: The state of the notebook session.
-        :param pulumi.Input[str] time_created: The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
         """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
@@ -257,9 +191,6 @@ class _NotebookSessionState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the notebook session.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -269,9 +200,6 @@ class _NotebookSessionState:
     @property
     @pulumi.getter(name="createdBy")
     def created_by(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the notebook session.
-        """
         return pulumi.get(self, "created_by")
 
     @created_by.setter
@@ -281,9 +209,6 @@ class _NotebookSessionState:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -293,9 +218,6 @@ class _NotebookSessionState:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A user-friendly display name for the resource. It does not have to be unique and can be modified. Avoid entering confidential information. Example: `My NotebookSession`
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -305,9 +227,6 @@ class _NotebookSessionState:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -317,9 +236,6 @@ class _NotebookSessionState:
     @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> Optional[pulumi.Input[str]]:
-        """
-        Details about the state of the notebook session.
-        """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
@@ -329,9 +245,6 @@ class _NotebookSessionState:
     @property
     @pulumi.getter(name="notebookSessionConfigDetails")
     def notebook_session_config_details(self) -> Optional[pulumi.Input['NotebookSessionNotebookSessionConfigDetailsArgs']]:
-        """
-        Details for the notebook session configuration.
-        """
         return pulumi.get(self, "notebook_session_config_details")
 
     @notebook_session_config_details.setter
@@ -341,9 +254,6 @@ class _NotebookSessionState:
     @property
     @pulumi.getter(name="notebookSessionConfigurationDetails")
     def notebook_session_configuration_details(self) -> Optional[pulumi.Input['NotebookSessionNotebookSessionConfigurationDetailsArgs']]:
-        """
-        (Updatable) Details for the notebook session configuration.
-        """
         return pulumi.get(self, "notebook_session_configuration_details")
 
     @notebook_session_configuration_details.setter
@@ -353,9 +263,6 @@ class _NotebookSessionState:
     @property
     @pulumi.getter(name="notebookSessionRuntimeConfigDetails")
     def notebook_session_runtime_config_details(self) -> Optional[pulumi.Input['NotebookSessionNotebookSessionRuntimeConfigDetailsArgs']]:
-        """
-        (Updatable) Notebook Session runtime configuration details.
-        """
         return pulumi.get(self, "notebook_session_runtime_config_details")
 
     @notebook_session_runtime_config_details.setter
@@ -365,9 +272,6 @@ class _NotebookSessionState:
     @property
     @pulumi.getter(name="notebookSessionStorageMountConfigurationDetailsLists")
     def notebook_session_storage_mount_configuration_details_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NotebookSessionNotebookSessionStorageMountConfigurationDetailsListArgs']]]]:
-        """
-        (Updatable) Collection of NotebookSessionStorageMountConfigurationDetails.
-        """
         return pulumi.get(self, "notebook_session_storage_mount_configuration_details_lists")
 
     @notebook_session_storage_mount_configuration_details_lists.setter
@@ -377,9 +281,6 @@ class _NotebookSessionState:
     @property
     @pulumi.getter(name="notebookSessionUrl")
     def notebook_session_url(self) -> Optional[pulumi.Input[str]]:
-        """
-        The URL to interact with the notebook session.
-        """
         return pulumi.get(self, "notebook_session_url")
 
     @notebook_session_url.setter
@@ -389,13 +290,6 @@ class _NotebookSessionState:
     @property
     @pulumi.getter(name="projectId")
     def project_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the notebook session.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "project_id")
 
     @project_id.setter
@@ -405,9 +299,6 @@ class _NotebookSessionState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The state of the notebook session.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -417,9 +308,6 @@ class _NotebookSessionState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -444,90 +332,9 @@ class NotebookSession(pulumi.CustomResource):
                  state: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Notebook Session resource in Oracle Cloud Infrastructure Data Science service.
-
-        Creates a new notebook session.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_notebook_session = oci.data_science.NotebookSession("testNotebookSession",
-            compartment_id=var["compartment_id"],
-            project_id=oci_datascience_project["test_project"]["id"],
-            defined_tags={
-                "Operations.CostCenter": "42",
-            },
-            display_name=var["notebook_session_display_name"],
-            freeform_tags={
-                "Department": "Finance",
-            },
-            notebook_session_config_details=oci.data_science.NotebookSessionNotebookSessionConfigDetailsArgs(
-                shape=var["notebook_session_notebook_session_config_details_shape"],
-                block_storage_size_in_gbs=var["notebook_session_notebook_session_config_details_block_storage_size_in_gbs"],
-                notebook_session_shape_config_details=oci.data_science.NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetailsArgs(
-                    memory_in_gbs=var["notebook_session_notebook_session_config_details_notebook_session_shape_config_details_memory_in_gbs"],
-                    ocpus=var["notebook_session_notebook_session_config_details_notebook_session_shape_config_details_ocpus"],
-                ),
-                private_endpoint_id=oci_dataflow_private_endpoint["test_private_endpoint"]["id"],
-                subnet_id=oci_core_subnet["test_subnet"]["id"],
-            ),
-            notebook_session_configuration_details=oci.data_science.NotebookSessionNotebookSessionConfigurationDetailsArgs(
-                shape=var["notebook_session_notebook_session_configuration_details_shape"],
-                subnet_id=oci_core_subnet["test_subnet"]["id"],
-                block_storage_size_in_gbs=var["notebook_session_notebook_session_configuration_details_block_storage_size_in_gbs"],
-                notebook_session_shape_config_details=oci.data_science.NotebookSessionNotebookSessionConfigurationDetailsNotebookSessionShapeConfigDetailsArgs(
-                    memory_in_gbs=var["notebook_session_notebook_session_configuration_details_notebook_session_shape_config_details_memory_in_gbs"],
-                    ocpus=var["notebook_session_notebook_session_configuration_details_notebook_session_shape_config_details_ocpus"],
-                ),
-                private_endpoint_id=oci_dataflow_private_endpoint["test_private_endpoint"]["id"],
-            ),
-            notebook_session_runtime_config_details=oci.data_science.NotebookSessionNotebookSessionRuntimeConfigDetailsArgs(
-                custom_environment_variables=var["notebook_session_notebook_session_runtime_config_details_custom_environment_variables"],
-                notebook_session_git_config_details=oci.data_science.NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsArgs(
-                    notebook_session_git_repo_config_collections=[oci.data_science.NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollectionArgs(
-                        url=var["notebook_session_notebook_session_runtime_config_details_notebook_session_git_config_details_notebook_session_git_repo_config_collection_url"],
-                    )],
-                ),
-            ),
-            notebook_session_storage_mount_configuration_details_lists=[oci.data_science.NotebookSessionNotebookSessionStorageMountConfigurationDetailsListArgs(
-                destination_directory_name=var["notebook_session_notebook_session_storage_mount_configuration_details_list_destination_directory_name"],
-                storage_type=var["notebook_session_notebook_session_storage_mount_configuration_details_list_storage_type"],
-                bucket=var["notebook_session_notebook_session_storage_mount_configuration_details_list_bucket"],
-                destination_path=var["notebook_session_notebook_session_storage_mount_configuration_details_list_destination_path"],
-                export_id=oci_file_storage_export["test_export"]["id"],
-                mount_target_id=oci_file_storage_mount_target["test_mount_target"]["id"],
-                namespace=var["notebook_session_notebook_session_storage_mount_configuration_details_list_namespace"],
-                prefix=var["notebook_session_notebook_session_storage_mount_configuration_details_list_prefix"],
-            )])
-        ```
-
-        ## Import
-
-        NotebookSessions can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:DataScience/notebookSession:NotebookSession test_notebook_session "id"
-        ```
-
+        Create a NotebookSession resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the notebook session.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly display name for the resource. It does not have to be unique and can be modified. Avoid entering confidential information. Example: `My NotebookSession`
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[pulumi.InputType['NotebookSessionNotebookSessionConfigDetailsArgs']] notebook_session_config_details: Details for the notebook session configuration.
-        :param pulumi.Input[pulumi.InputType['NotebookSessionNotebookSessionConfigurationDetailsArgs']] notebook_session_configuration_details: (Updatable) Details for the notebook session configuration.
-        :param pulumi.Input[pulumi.InputType['NotebookSessionNotebookSessionRuntimeConfigDetailsArgs']] notebook_session_runtime_config_details: (Updatable) Notebook Session runtime configuration details.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NotebookSessionNotebookSessionStorageMountConfigurationDetailsListArgs']]]] notebook_session_storage_mount_configuration_details_lists: (Updatable) Collection of NotebookSessionStorageMountConfigurationDetails.
-        :param pulumi.Input[str] project_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the notebook session.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] state: The state of the notebook session.
         """
         ...
     @overload
@@ -536,74 +343,7 @@ class NotebookSession(pulumi.CustomResource):
                  args: NotebookSessionArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Notebook Session resource in Oracle Cloud Infrastructure Data Science service.
-
-        Creates a new notebook session.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_notebook_session = oci.data_science.NotebookSession("testNotebookSession",
-            compartment_id=var["compartment_id"],
-            project_id=oci_datascience_project["test_project"]["id"],
-            defined_tags={
-                "Operations.CostCenter": "42",
-            },
-            display_name=var["notebook_session_display_name"],
-            freeform_tags={
-                "Department": "Finance",
-            },
-            notebook_session_config_details=oci.data_science.NotebookSessionNotebookSessionConfigDetailsArgs(
-                shape=var["notebook_session_notebook_session_config_details_shape"],
-                block_storage_size_in_gbs=var["notebook_session_notebook_session_config_details_block_storage_size_in_gbs"],
-                notebook_session_shape_config_details=oci.data_science.NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetailsArgs(
-                    memory_in_gbs=var["notebook_session_notebook_session_config_details_notebook_session_shape_config_details_memory_in_gbs"],
-                    ocpus=var["notebook_session_notebook_session_config_details_notebook_session_shape_config_details_ocpus"],
-                ),
-                private_endpoint_id=oci_dataflow_private_endpoint["test_private_endpoint"]["id"],
-                subnet_id=oci_core_subnet["test_subnet"]["id"],
-            ),
-            notebook_session_configuration_details=oci.data_science.NotebookSessionNotebookSessionConfigurationDetailsArgs(
-                shape=var["notebook_session_notebook_session_configuration_details_shape"],
-                subnet_id=oci_core_subnet["test_subnet"]["id"],
-                block_storage_size_in_gbs=var["notebook_session_notebook_session_configuration_details_block_storage_size_in_gbs"],
-                notebook_session_shape_config_details=oci.data_science.NotebookSessionNotebookSessionConfigurationDetailsNotebookSessionShapeConfigDetailsArgs(
-                    memory_in_gbs=var["notebook_session_notebook_session_configuration_details_notebook_session_shape_config_details_memory_in_gbs"],
-                    ocpus=var["notebook_session_notebook_session_configuration_details_notebook_session_shape_config_details_ocpus"],
-                ),
-                private_endpoint_id=oci_dataflow_private_endpoint["test_private_endpoint"]["id"],
-            ),
-            notebook_session_runtime_config_details=oci.data_science.NotebookSessionNotebookSessionRuntimeConfigDetailsArgs(
-                custom_environment_variables=var["notebook_session_notebook_session_runtime_config_details_custom_environment_variables"],
-                notebook_session_git_config_details=oci.data_science.NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsArgs(
-                    notebook_session_git_repo_config_collections=[oci.data_science.NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollectionArgs(
-                        url=var["notebook_session_notebook_session_runtime_config_details_notebook_session_git_config_details_notebook_session_git_repo_config_collection_url"],
-                    )],
-                ),
-            ),
-            notebook_session_storage_mount_configuration_details_lists=[oci.data_science.NotebookSessionNotebookSessionStorageMountConfigurationDetailsListArgs(
-                destination_directory_name=var["notebook_session_notebook_session_storage_mount_configuration_details_list_destination_directory_name"],
-                storage_type=var["notebook_session_notebook_session_storage_mount_configuration_details_list_storage_type"],
-                bucket=var["notebook_session_notebook_session_storage_mount_configuration_details_list_bucket"],
-                destination_path=var["notebook_session_notebook_session_storage_mount_configuration_details_list_destination_path"],
-                export_id=oci_file_storage_export["test_export"]["id"],
-                mount_target_id=oci_file_storage_mount_target["test_mount_target"]["id"],
-                namespace=var["notebook_session_notebook_session_storage_mount_configuration_details_list_namespace"],
-                prefix=var["notebook_session_notebook_session_storage_mount_configuration_details_list_prefix"],
-            )])
-        ```
-
-        ## Import
-
-        NotebookSessions can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:DataScience/notebookSession:NotebookSession test_notebook_session "id"
-        ```
-
+        Create a NotebookSession resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param NotebookSessionArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -687,24 +427,6 @@ class NotebookSession(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the notebook session.
-        :param pulumi.Input[str] created_by: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the notebook session.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly display name for the resource. It does not have to be unique and can be modified. Avoid entering confidential information. Example: `My NotebookSession`
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] lifecycle_details: Details about the state of the notebook session.
-        :param pulumi.Input[pulumi.InputType['NotebookSessionNotebookSessionConfigDetailsArgs']] notebook_session_config_details: Details for the notebook session configuration.
-        :param pulumi.Input[pulumi.InputType['NotebookSessionNotebookSessionConfigurationDetailsArgs']] notebook_session_configuration_details: (Updatable) Details for the notebook session configuration.
-        :param pulumi.Input[pulumi.InputType['NotebookSessionNotebookSessionRuntimeConfigDetailsArgs']] notebook_session_runtime_config_details: (Updatable) Notebook Session runtime configuration details.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NotebookSessionNotebookSessionStorageMountConfigurationDetailsListArgs']]]] notebook_session_storage_mount_configuration_details_lists: (Updatable) Collection of NotebookSessionStorageMountConfigurationDetails.
-        :param pulumi.Input[str] notebook_session_url: The URL to interact with the notebook session.
-        :param pulumi.Input[str] project_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the notebook session.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] state: The state of the notebook session.
-        :param pulumi.Input[str] time_created: The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -729,116 +451,70 @@ class NotebookSession(pulumi.CustomResource):
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the notebook session.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="createdBy")
-    def created_by(self) -> pulumi.Output[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the notebook session.
-        """
+    def created_by(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "created_by")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> pulumi.Output[str]:
-        """
-        (Updatable) A user-friendly display name for the resource. It does not have to be unique and can be modified. Avoid entering confidential information. Example: `My NotebookSession`
-        """
+    def display_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> pulumi.Output[str]:
-        """
-        Details about the state of the notebook session.
-        """
+    def lifecycle_details(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="notebookSessionConfigDetails")
-    def notebook_session_config_details(self) -> pulumi.Output['outputs.NotebookSessionNotebookSessionConfigDetails']:
-        """
-        Details for the notebook session configuration.
-        """
+    def notebook_session_config_details(self) -> pulumi.Output[Optional['outputs.NotebookSessionNotebookSessionConfigDetails']]:
         return pulumi.get(self, "notebook_session_config_details")
 
     @property
     @pulumi.getter(name="notebookSessionConfigurationDetails")
-    def notebook_session_configuration_details(self) -> pulumi.Output['outputs.NotebookSessionNotebookSessionConfigurationDetails']:
-        """
-        (Updatable) Details for the notebook session configuration.
-        """
+    def notebook_session_configuration_details(self) -> pulumi.Output[Optional['outputs.NotebookSessionNotebookSessionConfigurationDetails']]:
         return pulumi.get(self, "notebook_session_configuration_details")
 
     @property
     @pulumi.getter(name="notebookSessionRuntimeConfigDetails")
-    def notebook_session_runtime_config_details(self) -> pulumi.Output['outputs.NotebookSessionNotebookSessionRuntimeConfigDetails']:
-        """
-        (Updatable) Notebook Session runtime configuration details.
-        """
+    def notebook_session_runtime_config_details(self) -> pulumi.Output[Optional['outputs.NotebookSessionNotebookSessionRuntimeConfigDetails']]:
         return pulumi.get(self, "notebook_session_runtime_config_details")
 
     @property
     @pulumi.getter(name="notebookSessionStorageMountConfigurationDetailsLists")
-    def notebook_session_storage_mount_configuration_details_lists(self) -> pulumi.Output[Sequence['outputs.NotebookSessionNotebookSessionStorageMountConfigurationDetailsList']]:
-        """
-        (Updatable) Collection of NotebookSessionStorageMountConfigurationDetails.
-        """
+    def notebook_session_storage_mount_configuration_details_lists(self) -> pulumi.Output[Optional[Sequence['outputs.NotebookSessionNotebookSessionStorageMountConfigurationDetailsList']]]:
         return pulumi.get(self, "notebook_session_storage_mount_configuration_details_lists")
 
     @property
     @pulumi.getter(name="notebookSessionUrl")
-    def notebook_session_url(self) -> pulumi.Output[str]:
-        """
-        The URL to interact with the notebook session.
-        """
+    def notebook_session_url(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "notebook_session_url")
 
     @property
     @pulumi.getter(name="projectId")
     def project_id(self) -> pulumi.Output[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the notebook session.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "project_id")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        The state of the notebook session.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 

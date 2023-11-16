@@ -20,26 +20,26 @@ public final class GetDomainsMyOauth2clientCredentialsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private String idcsEndpoint;
-    private Integer itemsPerPage;
+    private @Nullable Integer itemsPerPage;
     private @Nullable Integer myOauth2clientCredentialCount;
     private @Nullable String myOauth2clientCredentialFilter;
     /**
      * @return The list of my_oauth2client_credentials.
      * 
      */
-    private List<GetDomainsMyOauth2clientCredentialsMyOauth2clientCredential> myOauth2clientCredentials;
+    private @Nullable List<GetDomainsMyOauth2clientCredentialsMyOauth2clientCredential> myOauth2clientCredentials;
     private @Nullable String resourceTypeSchemaVersion;
     /**
      * @return REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \&#34;enterprise\&#34; extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
      * 
      */
-    private List<String> schemas;
+    private @Nullable List<String> schemas;
     private @Nullable String sortBy;
     private @Nullable String sortOrder;
     private @Nullable Integer startIndex;
-    private Integer totalResults;
+    private @Nullable Integer totalResults;
 
     private GetDomainsMyOauth2clientCredentialsResult() {}
     public Optional<String> authorization() {
@@ -52,14 +52,14 @@ public final class GetDomainsMyOauth2clientCredentialsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public String idcsEndpoint() {
         return this.idcsEndpoint;
     }
-    public Integer itemsPerPage() {
-        return this.itemsPerPage;
+    public Optional<Integer> itemsPerPage() {
+        return Optional.ofNullable(this.itemsPerPage);
     }
     public Optional<Integer> myOauth2clientCredentialCount() {
         return Optional.ofNullable(this.myOauth2clientCredentialCount);
@@ -72,7 +72,7 @@ public final class GetDomainsMyOauth2clientCredentialsResult {
      * 
      */
     public List<GetDomainsMyOauth2clientCredentialsMyOauth2clientCredential> myOauth2clientCredentials() {
-        return this.myOauth2clientCredentials;
+        return this.myOauth2clientCredentials == null ? List.of() : this.myOauth2clientCredentials;
     }
     public Optional<String> resourceTypeSchemaVersion() {
         return Optional.ofNullable(this.resourceTypeSchemaVersion);
@@ -82,7 +82,7 @@ public final class GetDomainsMyOauth2clientCredentialsResult {
      * 
      */
     public List<String> schemas() {
-        return this.schemas;
+        return this.schemas == null ? List.of() : this.schemas;
     }
     public Optional<String> sortBy() {
         return Optional.ofNullable(this.sortBy);
@@ -93,8 +93,8 @@ public final class GetDomainsMyOauth2clientCredentialsResult {
     public Optional<Integer> startIndex() {
         return Optional.ofNullable(this.startIndex);
     }
-    public Integer totalResults() {
-        return this.totalResults;
+    public Optional<Integer> totalResults() {
+        return Optional.ofNullable(this.totalResults);
     }
 
     public static Builder builder() {
@@ -108,18 +108,18 @@ public final class GetDomainsMyOauth2clientCredentialsResult {
     public static final class Builder {
         private @Nullable String authorization;
         private @Nullable String compartmentId;
-        private String id;
+        private @Nullable String id;
         private String idcsEndpoint;
-        private Integer itemsPerPage;
+        private @Nullable Integer itemsPerPage;
         private @Nullable Integer myOauth2clientCredentialCount;
         private @Nullable String myOauth2clientCredentialFilter;
-        private List<GetDomainsMyOauth2clientCredentialsMyOauth2clientCredential> myOauth2clientCredentials;
+        private @Nullable List<GetDomainsMyOauth2clientCredentialsMyOauth2clientCredential> myOauth2clientCredentials;
         private @Nullable String resourceTypeSchemaVersion;
-        private List<String> schemas;
+        private @Nullable List<String> schemas;
         private @Nullable String sortBy;
         private @Nullable String sortOrder;
         private @Nullable Integer startIndex;
-        private Integer totalResults;
+        private @Nullable Integer totalResults;
         public Builder() {}
         public Builder(GetDomainsMyOauth2clientCredentialsResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -150,8 +150,8 @@ public final class GetDomainsMyOauth2clientCredentialsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -160,8 +160,8 @@ public final class GetDomainsMyOauth2clientCredentialsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder itemsPerPage(Integer itemsPerPage) {
-            this.itemsPerPage = Objects.requireNonNull(itemsPerPage);
+        public Builder itemsPerPage(@Nullable Integer itemsPerPage) {
+            this.itemsPerPage = itemsPerPage;
             return this;
         }
         @CustomType.Setter
@@ -175,8 +175,8 @@ public final class GetDomainsMyOauth2clientCredentialsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder myOauth2clientCredentials(List<GetDomainsMyOauth2clientCredentialsMyOauth2clientCredential> myOauth2clientCredentials) {
-            this.myOauth2clientCredentials = Objects.requireNonNull(myOauth2clientCredentials);
+        public Builder myOauth2clientCredentials(@Nullable List<GetDomainsMyOauth2clientCredentialsMyOauth2clientCredential> myOauth2clientCredentials) {
+            this.myOauth2clientCredentials = myOauth2clientCredentials;
             return this;
         }
         public Builder myOauth2clientCredentials(GetDomainsMyOauth2clientCredentialsMyOauth2clientCredential... myOauth2clientCredentials) {
@@ -188,8 +188,8 @@ public final class GetDomainsMyOauth2clientCredentialsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder schemas(List<String> schemas) {
-            this.schemas = Objects.requireNonNull(schemas);
+        public Builder schemas(@Nullable List<String> schemas) {
+            this.schemas = schemas;
             return this;
         }
         public Builder schemas(String... schemas) {
@@ -211,8 +211,8 @@ public final class GetDomainsMyOauth2clientCredentialsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder totalResults(Integer totalResults) {
-            this.totalResults = Objects.requireNonNull(totalResults);
+        public Builder totalResults(@Nullable Integer totalResults) {
+            this.totalResults = totalResults;
             return this;
         }
         public GetDomainsMyOauth2clientCredentialsResult build() {

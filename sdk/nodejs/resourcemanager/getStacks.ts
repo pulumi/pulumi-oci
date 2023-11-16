@@ -88,7 +88,7 @@ export interface GetStacksResult {
     /**
      * The list of stacks.
      */
-    readonly stacks: outputs.ResourceManager.GetStacksStack[];
+    readonly stacks?: outputs.ResourceManager.GetStacksStack[];
     /**
      * The current lifecycle state of the stack.
      */

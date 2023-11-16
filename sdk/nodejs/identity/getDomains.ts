@@ -106,7 +106,7 @@ export interface GetDomainsResult {
     /**
      * The list of domains.
      */
-    readonly domains: outputs.Identity.GetDomainsDomain[];
+    readonly domains?: outputs.Identity.GetDomainsDomain[];
     readonly filters?: outputs.Identity.GetDomainsFilter[];
     /**
      * Region specific domain URL.
@@ -115,7 +115,7 @@ export interface GetDomainsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Indicates whether domain is hidden on login screen or not.
      */

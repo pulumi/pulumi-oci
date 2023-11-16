@@ -9,6 +9,8 @@ import com.pulumi.oci.HealthChecks.outputs.GetVantagePointsHealthChecksVantagePo
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetVantagePointsHealthChecksVantagePoint {
@@ -16,63 +18,63 @@ public final class GetVantagePointsHealthChecksVantagePoint {
      * @return Filters results that exactly match the `displayName` field.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return Geographic information about a vantage point.
      * 
      */
-    private List<GetVantagePointsHealthChecksVantagePointGeo> geos;
+    private @Nullable List<GetVantagePointsHealthChecksVantagePointGeo> geos;
     /**
      * @return Filters results that exactly match the `name` field.
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return The organization on whose infrastructure this vantage point resides. Provider names are not unique, as Oracle Cloud Infrastructure maintains many vantage points in each major provider.
      * 
      */
-    private String providerName;
+    private @Nullable String providerName;
     /**
      * @return An array of objects that describe how traffic to this vantage point is routed, including which prefixes and ASNs connect it to the internet.
      * 
      */
-    private List<GetVantagePointsHealthChecksVantagePointRouting> routings;
+    private @Nullable List<GetVantagePointsHealthChecksVantagePointRouting> routings;
 
     private GetVantagePointsHealthChecksVantagePoint() {}
     /**
      * @return Filters results that exactly match the `displayName` field.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return Geographic information about a vantage point.
      * 
      */
     public List<GetVantagePointsHealthChecksVantagePointGeo> geos() {
-        return this.geos;
+        return this.geos == null ? List.of() : this.geos;
     }
     /**
      * @return Filters results that exactly match the `name` field.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return The organization on whose infrastructure this vantage point resides. Provider names are not unique, as Oracle Cloud Infrastructure maintains many vantage points in each major provider.
      * 
      */
-    public String providerName() {
-        return this.providerName;
+    public Optional<String> providerName() {
+        return Optional.ofNullable(this.providerName);
     }
     /**
      * @return An array of objects that describe how traffic to this vantage point is routed, including which prefixes and ASNs connect it to the internet.
      * 
      */
     public List<GetVantagePointsHealthChecksVantagePointRouting> routings() {
-        return this.routings;
+        return this.routings == null ? List.of() : this.routings;
     }
 
     public static Builder builder() {
@@ -84,11 +86,11 @@ public final class GetVantagePointsHealthChecksVantagePoint {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String displayName;
-        private List<GetVantagePointsHealthChecksVantagePointGeo> geos;
-        private String name;
-        private String providerName;
-        private List<GetVantagePointsHealthChecksVantagePointRouting> routings;
+        private @Nullable String displayName;
+        private @Nullable List<GetVantagePointsHealthChecksVantagePointGeo> geos;
+        private @Nullable String name;
+        private @Nullable String providerName;
+        private @Nullable List<GetVantagePointsHealthChecksVantagePointRouting> routings;
         public Builder() {}
         public Builder(GetVantagePointsHealthChecksVantagePoint defaults) {
     	      Objects.requireNonNull(defaults);
@@ -100,31 +102,31 @@ public final class GetVantagePointsHealthChecksVantagePoint {
         }
 
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder geos(List<GetVantagePointsHealthChecksVantagePointGeo> geos) {
-            this.geos = Objects.requireNonNull(geos);
+        public Builder geos(@Nullable List<GetVantagePointsHealthChecksVantagePointGeo> geos) {
+            this.geos = geos;
             return this;
         }
         public Builder geos(GetVantagePointsHealthChecksVantagePointGeo... geos) {
             return geos(List.of(geos));
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder providerName(String providerName) {
-            this.providerName = Objects.requireNonNull(providerName);
+        public Builder providerName(@Nullable String providerName) {
+            this.providerName = providerName;
             return this;
         }
         @CustomType.Setter
-        public Builder routings(List<GetVantagePointsHealthChecksVantagePointRouting> routings) {
-            this.routings = Objects.requireNonNull(routings);
+        public Builder routings(@Nullable List<GetVantagePointsHealthChecksVantagePointRouting> routings) {
+            this.routings = routings;
             return this;
         }
         public Builder routings(GetVantagePointsHealthChecksVantagePointRouting... routings) {

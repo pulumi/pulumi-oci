@@ -15,6 +15,7 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -52,14 +53,14 @@ public class ManagedList extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * (Updatable) Managed list description.
@@ -68,7 +69,7 @@ public class ManagedList extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
-    private Output<String> description;
+    private Output</* @Nullable */ String> description;
 
     /**
      * @return (Updatable) Managed list description.
@@ -76,8 +77,8 @@ public class ManagedList extends com.pulumi.resources.CustomResource {
      * Avoid entering confidential information.
      * 
      */
-    public Output<String> description() {
-        return this.description;
+    public Output<Optional<String>> description() {
+        return Codegen.optional(this.description);
     }
     /**
      * (Updatable) Managed list display name.
@@ -102,14 +103,14 @@ public class ManagedList extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="feedProvider", refs={String.class}, tree="[0]")
-    private Output<String> feedProvider;
+    private Output</* @Nullable */ String> feedProvider;
 
     /**
      * @return provider of the feed
      * 
      */
-    public Output<String> feedProvider() {
-        return this.feedProvider;
+    public Output<Optional<String>> feedProvider() {
+        return Codegen.optional(this.feedProvider);
     }
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
@@ -118,7 +119,7 @@ public class ManagedList extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
@@ -126,64 +127,64 @@ public class ManagedList extends com.pulumi.resources.CustomResource {
      * Avoid entering confidential information.
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * If this list is editable or not
      * 
      */
     @Export(name="isEditable", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isEditable;
+    private Output</* @Nullable */ Boolean> isEditable;
 
     /**
      * @return If this list is editable or not
      * 
      */
-    public Output<Boolean> isEditable() {
-        return this.isEditable;
+    public Output<Optional<Boolean>> isEditable() {
+        return Codegen.optional(this.isEditable);
     }
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
     @Export(name="lifecyleDetails", refs={String.class}, tree="[0]")
-    private Output<String> lifecyleDetails;
+    private Output</* @Nullable */ String> lifecyleDetails;
 
     /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
-    public Output<String> lifecyleDetails() {
-        return this.lifecyleDetails;
+    public Output<Optional<String>> lifecyleDetails() {
+        return Codegen.optional(this.lifecyleDetails);
     }
     /**
      * (Updatable) List of ManagedListItem
      * 
      */
     @Export(name="listItems", refs={List.class,String.class}, tree="[0,1]")
-    private Output<List<String>> listItems;
+    private Output</* @Nullable */ List<String>> listItems;
 
     /**
      * @return (Updatable) List of ManagedListItem
      * 
      */
-    public Output<List<String>> listItems() {
-        return this.listItems;
+    public Output<Optional<List<String>>> listItems() {
+        return Codegen.optional(this.listItems);
     }
     /**
      * type of the list
      * 
      */
     @Export(name="listType", refs={String.class}, tree="[0]")
-    private Output<String> listType;
+    private Output</* @Nullable */ String> listType;
 
     /**
      * @return type of the list
      * 
      */
-    public Output<String> listType() {
-        return this.listType;
+    public Output<Optional<String>> listType() {
+        return Codegen.optional(this.listType);
     }
     /**
      * OCID of the Source ManagedList
@@ -193,7 +194,7 @@ public class ManagedList extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="sourceManagedListId", refs={String.class}, tree="[0]")
-    private Output<String> sourceManagedListId;
+    private Output</* @Nullable */ String> sourceManagedListId;
 
     /**
      * @return OCID of the Source ManagedList
@@ -202,64 +203,64 @@ public class ManagedList extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Output<String> sourceManagedListId() {
-        return this.sourceManagedListId;
+    public Output<Optional<String>> sourceManagedListId() {
+        return Codegen.optional(this.sourceManagedListId);
     }
     /**
      * The current state of the resource.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The current state of the resource.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
     @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> systemTags;
+    private Output</* @Nullable */ Map<String,Object>> systemTags;
 
     /**
      * @return System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    public Output<Map<String,Object>> systemTags() {
-        return this.systemTags;
+    public Output<Optional<Map<String,Object>>> systemTags() {
+        return Codegen.optional(this.systemTags);
     }
     /**
      * The date and time the managed list was created. Format defined by RFC3339.
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The date and time the managed list was created. Format defined by RFC3339.
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * The date and time the managed list was updated. Format defined by RFC3339.
      * 
      */
     @Export(name="timeUpdated", refs={String.class}, tree="[0]")
-    private Output<String> timeUpdated;
+    private Output</* @Nullable */ String> timeUpdated;
 
     /**
      * @return The date and time the managed list was updated. Format defined by RFC3339.
      * 
      */
-    public Output<String> timeUpdated() {
-        return this.timeUpdated;
+    public Output<Optional<String>> timeUpdated() {
+        return Codegen.optional(this.timeUpdated);
     }
 
     /**

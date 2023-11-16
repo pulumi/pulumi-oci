@@ -23,14 +23,6 @@ class InvokeFunctionArgs:
                  invoke_function_body_base64_encoded: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a InvokeFunction resource.
-        :param pulumi.Input[str] function_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this function.
-        :param pulumi.Input[str] fn_intent: An optional intent header that indicates to the FDK the way the event should be interpreted. E.g. 'httprequest', 'cloudevent'.
-        :param pulumi.Input[str] fn_invoke_type: Indicates whether Oracle Functions should execute the request and return the result ('sync') of the execution,  or whether Oracle Functions should return as soon as processing has begun ('detached') and leave result handling to the function.
-        :param pulumi.Input[str] input_body_source_path: An absolute path to a file on the local system that contains the input to be provided to the function. Cannot be defined if `invoke_function_body` or `invoke_function_body_base64_encoded` is defined. Note: The maximum size of the request is limited. This limit is currently 6MB and the endpoint will not accept requests that are bigger than this limit.
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] invoke_function_body: The body of the function invocation. Note: The maximum size of the request is limited. This limit is currently 6MB and the endpoint will not accept requests that are bigger than this limit. Cannot be defined if `input_body_source_path` or `invoke_function_body_base64_encoded` is defined.
         """
         pulumi.set(__self__, "function_id", function_id)
         if base64_encode_content is not None:
@@ -49,9 +41,6 @@ class InvokeFunctionArgs:
     @property
     @pulumi.getter(name="functionId")
     def function_id(self) -> pulumi.Input[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this function.
-        """
         return pulumi.get(self, "function_id")
 
     @function_id.setter
@@ -70,9 +59,6 @@ class InvokeFunctionArgs:
     @property
     @pulumi.getter(name="fnIntent")
     def fn_intent(self) -> Optional[pulumi.Input[str]]:
-        """
-        An optional intent header that indicates to the FDK the way the event should be interpreted. E.g. 'httprequest', 'cloudevent'.
-        """
         return pulumi.get(self, "fn_intent")
 
     @fn_intent.setter
@@ -82,9 +68,6 @@ class InvokeFunctionArgs:
     @property
     @pulumi.getter(name="fnInvokeType")
     def fn_invoke_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        Indicates whether Oracle Functions should execute the request and return the result ('sync') of the execution,  or whether Oracle Functions should return as soon as processing has begun ('detached') and leave result handling to the function.
-        """
         return pulumi.get(self, "fn_invoke_type")
 
     @fn_invoke_type.setter
@@ -94,12 +77,6 @@ class InvokeFunctionArgs:
     @property
     @pulumi.getter(name="inputBodySourcePath")
     def input_body_source_path(self) -> Optional[pulumi.Input[str]]:
-        """
-        An absolute path to a file on the local system that contains the input to be provided to the function. Cannot be defined if `invoke_function_body` or `invoke_function_body_base64_encoded` is defined. Note: The maximum size of the request is limited. This limit is currently 6MB and the endpoint will not accept requests that are bigger than this limit.
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "input_body_source_path")
 
     @input_body_source_path.setter
@@ -109,9 +86,6 @@ class InvokeFunctionArgs:
     @property
     @pulumi.getter(name="invokeFunctionBody")
     def invoke_function_body(self) -> Optional[pulumi.Input[str]]:
-        """
-        The body of the function invocation. Note: The maximum size of the request is limited. This limit is currently 6MB and the endpoint will not accept requests that are bigger than this limit. Cannot be defined if `input_body_source_path` or `invoke_function_body_base64_encoded` is defined.
-        """
         return pulumi.get(self, "invoke_function_body")
 
     @invoke_function_body.setter
@@ -142,15 +116,6 @@ class _InvokeFunctionState:
                  invoke_function_body_base64_encoded: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering InvokeFunction resources.
-        :param pulumi.Input[str] content: Content of the response string, if any. If `base64_encode_content` is set to `true`, then this content will be base64 encoded.
-        :param pulumi.Input[str] fn_intent: An optional intent header that indicates to the FDK the way the event should be interpreted. E.g. 'httprequest', 'cloudevent'.
-        :param pulumi.Input[str] fn_invoke_type: Indicates whether Oracle Functions should execute the request and return the result ('sync') of the execution,  or whether Oracle Functions should return as soon as processing has begun ('detached') and leave result handling to the function.
-        :param pulumi.Input[str] function_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this function.
-        :param pulumi.Input[str] input_body_source_path: An absolute path to a file on the local system that contains the input to be provided to the function. Cannot be defined if `invoke_function_body` or `invoke_function_body_base64_encoded` is defined. Note: The maximum size of the request is limited. This limit is currently 6MB and the endpoint will not accept requests that are bigger than this limit.
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] invoke_function_body: The body of the function invocation. Note: The maximum size of the request is limited. This limit is currently 6MB and the endpoint will not accept requests that are bigger than this limit. Cannot be defined if `input_body_source_path` or `invoke_function_body_base64_encoded` is defined.
         """
         if base64_encode_content is not None:
             pulumi.set(__self__, "base64_encode_content", base64_encode_content)
@@ -183,9 +148,6 @@ class _InvokeFunctionState:
     @property
     @pulumi.getter
     def content(self) -> Optional[pulumi.Input[str]]:
-        """
-        Content of the response string, if any. If `base64_encode_content` is set to `true`, then this content will be base64 encoded.
-        """
         return pulumi.get(self, "content")
 
     @content.setter
@@ -195,9 +157,6 @@ class _InvokeFunctionState:
     @property
     @pulumi.getter(name="fnIntent")
     def fn_intent(self) -> Optional[pulumi.Input[str]]:
-        """
-        An optional intent header that indicates to the FDK the way the event should be interpreted. E.g. 'httprequest', 'cloudevent'.
-        """
         return pulumi.get(self, "fn_intent")
 
     @fn_intent.setter
@@ -207,9 +166,6 @@ class _InvokeFunctionState:
     @property
     @pulumi.getter(name="fnInvokeType")
     def fn_invoke_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        Indicates whether Oracle Functions should execute the request and return the result ('sync') of the execution,  or whether Oracle Functions should return as soon as processing has begun ('detached') and leave result handling to the function.
-        """
         return pulumi.get(self, "fn_invoke_type")
 
     @fn_invoke_type.setter
@@ -219,9 +175,6 @@ class _InvokeFunctionState:
     @property
     @pulumi.getter(name="functionId")
     def function_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this function.
-        """
         return pulumi.get(self, "function_id")
 
     @function_id.setter
@@ -231,12 +184,6 @@ class _InvokeFunctionState:
     @property
     @pulumi.getter(name="inputBodySourcePath")
     def input_body_source_path(self) -> Optional[pulumi.Input[str]]:
-        """
-        An absolute path to a file on the local system that contains the input to be provided to the function. Cannot be defined if `invoke_function_body` or `invoke_function_body_base64_encoded` is defined. Note: The maximum size of the request is limited. This limit is currently 6MB and the endpoint will not accept requests that are bigger than this limit.
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "input_body_source_path")
 
     @input_body_source_path.setter
@@ -255,9 +202,6 @@ class _InvokeFunctionState:
     @property
     @pulumi.getter(name="invokeFunctionBody")
     def invoke_function_body(self) -> Optional[pulumi.Input[str]]:
-        """
-        The body of the function invocation. Note: The maximum size of the request is limited. This limit is currently 6MB and the endpoint will not accept requests that are bigger than this limit. Cannot be defined if `input_body_source_path` or `invoke_function_body_base64_encoded` is defined.
-        """
         return pulumi.get(self, "invoke_function_body")
 
     @invoke_function_body.setter
@@ -288,38 +232,9 @@ class InvokeFunction(pulumi.CustomResource):
                  invoke_function_body_base64_encoded: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Invoke Function resource in Oracle Cloud Infrastructure Functions service.
-
-        Invokes a function
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_invoke_function = oci.functions.InvokeFunction("testInvokeFunction",
-            function_id=oci_functions_function["test_function"]["id"],
-            invoke_function_body=var["invoke_function_invoke_function_body"],
-            fn_intent=var["invoke_function_fn_intent"],
-            fn_invoke_type=var["invoke_function_fn_invoke_type"],
-            base64_encode_content=False)
-        ```
-
-        ## Import
-
-        Import is not supported for this resource.
-
+        Create a InvokeFunction resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] fn_intent: An optional intent header that indicates to the FDK the way the event should be interpreted. E.g. 'httprequest', 'cloudevent'.
-        :param pulumi.Input[str] fn_invoke_type: Indicates whether Oracle Functions should execute the request and return the result ('sync') of the execution,  or whether Oracle Functions should return as soon as processing has begun ('detached') and leave result handling to the function.
-        :param pulumi.Input[str] function_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this function.
-        :param pulumi.Input[str] input_body_source_path: An absolute path to a file on the local system that contains the input to be provided to the function. Cannot be defined if `invoke_function_body` or `invoke_function_body_base64_encoded` is defined. Note: The maximum size of the request is limited. This limit is currently 6MB and the endpoint will not accept requests that are bigger than this limit.
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] invoke_function_body: The body of the function invocation. Note: The maximum size of the request is limited. This limit is currently 6MB and the endpoint will not accept requests that are bigger than this limit. Cannot be defined if `input_body_source_path` or `invoke_function_body_base64_encoded` is defined.
         """
         ...
     @overload
@@ -328,28 +243,7 @@ class InvokeFunction(pulumi.CustomResource):
                  args: InvokeFunctionArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Invoke Function resource in Oracle Cloud Infrastructure Functions service.
-
-        Invokes a function
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_invoke_function = oci.functions.InvokeFunction("testInvokeFunction",
-            function_id=oci_functions_function["test_function"]["id"],
-            invoke_function_body=var["invoke_function_invoke_function_body"],
-            fn_intent=var["invoke_function_fn_intent"],
-            fn_invoke_type=var["invoke_function_fn_invoke_type"],
-            base64_encode_content=False)
-        ```
-
-        ## Import
-
-        Import is not supported for this resource.
-
+        Create a InvokeFunction resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param InvokeFunctionArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -418,15 +312,6 @@ class InvokeFunction(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] content: Content of the response string, if any. If `base64_encode_content` is set to `true`, then this content will be base64 encoded.
-        :param pulumi.Input[str] fn_intent: An optional intent header that indicates to the FDK the way the event should be interpreted. E.g. 'httprequest', 'cloudevent'.
-        :param pulumi.Input[str] fn_invoke_type: Indicates whether Oracle Functions should execute the request and return the result ('sync') of the execution,  or whether Oracle Functions should return as soon as processing has begun ('detached') and leave result handling to the function.
-        :param pulumi.Input[str] function_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this function.
-        :param pulumi.Input[str] input_body_source_path: An absolute path to a file on the local system that contains the input to be provided to the function. Cannot be defined if `invoke_function_body` or `invoke_function_body_base64_encoded` is defined. Note: The maximum size of the request is limited. This limit is currently 6MB and the endpoint will not accept requests that are bigger than this limit.
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] invoke_function_body: The body of the function invocation. Note: The maximum size of the request is limited. This limit is currently 6MB and the endpoint will not accept requests that are bigger than this limit. Cannot be defined if `input_body_source_path` or `invoke_function_body_base64_encoded` is defined.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -450,62 +335,41 @@ class InvokeFunction(pulumi.CustomResource):
 
     @property
     @pulumi.getter
-    def content(self) -> pulumi.Output[str]:
-        """
-        Content of the response string, if any. If `base64_encode_content` is set to `true`, then this content will be base64 encoded.
-        """
+    def content(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "content")
 
     @property
     @pulumi.getter(name="fnIntent")
-    def fn_intent(self) -> pulumi.Output[str]:
-        """
-        An optional intent header that indicates to the FDK the way the event should be interpreted. E.g. 'httprequest', 'cloudevent'.
-        """
+    def fn_intent(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "fn_intent")
 
     @property
     @pulumi.getter(name="fnInvokeType")
-    def fn_invoke_type(self) -> pulumi.Output[str]:
-        """
-        Indicates whether Oracle Functions should execute the request and return the result ('sync') of the execution,  or whether Oracle Functions should return as soon as processing has begun ('detached') and leave result handling to the function.
-        """
+    def fn_invoke_type(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "fn_invoke_type")
 
     @property
     @pulumi.getter(name="functionId")
     def function_id(self) -> pulumi.Output[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this function.
-        """
         return pulumi.get(self, "function_id")
 
     @property
     @pulumi.getter(name="inputBodySourcePath")
     def input_body_source_path(self) -> pulumi.Output[Optional[str]]:
-        """
-        An absolute path to a file on the local system that contains the input to be provided to the function. Cannot be defined if `invoke_function_body` or `invoke_function_body_base64_encoded` is defined. Note: The maximum size of the request is limited. This limit is currently 6MB and the endpoint will not accept requests that are bigger than this limit.
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "input_body_source_path")
 
     @property
     @pulumi.getter(name="invokeEndpoint")
-    def invoke_endpoint(self) -> pulumi.Output[str]:
+    def invoke_endpoint(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "invoke_endpoint")
 
     @property
     @pulumi.getter(name="invokeFunctionBody")
-    def invoke_function_body(self) -> pulumi.Output[str]:
-        """
-        The body of the function invocation. Note: The maximum size of the request is limited. This limit is currently 6MB and the endpoint will not accept requests that are bigger than this limit. Cannot be defined if `input_body_source_path` or `invoke_function_body_base64_encoded` is defined.
-        """
+    def invoke_function_body(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "invoke_function_body")
 
     @property
     @pulumi.getter(name="invokeFunctionBodyBase64Encoded")
-    def invoke_function_body_base64_encoded(self) -> pulumi.Output[str]:
+    def invoke_function_body_base64_encoded(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "invoke_function_body_base64_encoded")
 

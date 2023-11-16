@@ -67,13 +67,13 @@ namespace Pulumi.Oci.NetworkFirewall
         /// OCID of the Network Firewall Policy this Address List belongs to.
         /// </summary>
         [Output("parentResourceId")]
-        public Output<string> ParentResourceId { get; private set; } = null!;
+        public Output<string?> ParentResourceId { get; private set; } = null!;
 
         /// <summary>
         /// Count of total addresses in the AddressList
         /// </summary>
         [Output("totalAddresses")]
-        public Output<int> TotalAddresses { get; private set; } = null!;
+        public Output<int?> TotalAddresses { get; private set; } = null!;
 
         /// <summary>
         /// Type of address List. The accepted values are - * FQDN * IP

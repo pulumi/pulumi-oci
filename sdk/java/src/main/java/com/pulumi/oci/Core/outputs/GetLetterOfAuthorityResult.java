@@ -6,6 +6,8 @@ package com.pulumi.oci.Core.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetLetterOfAuthorityResult {
@@ -13,12 +15,12 @@ public final class GetLetterOfAuthorityResult {
      * @return The name of the entity authorized by this Letter of Authority.
      * 
      */
-    private String authorizedEntityName;
+    private @Nullable String authorizedEntityName;
     /**
      * @return The type of cross-connect fiber, termination, and optical specification.
      * 
      */
-    private String circuitType;
+    private @Nullable String circuitType;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cross-connect.
      * 
@@ -28,42 +30,42 @@ public final class GetLetterOfAuthorityResult {
      * @return The address of the FastConnect location.
      * 
      */
-    private String facilityLocation;
+    private @Nullable String facilityLocation;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The meet-me room port for this cross-connect.
      * 
      */
-    private String portName;
+    private @Nullable String portName;
     /**
      * @return The date and time when the Letter of Authority expires, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    private String timeExpires;
+    private @Nullable String timeExpires;
     /**
      * @return The date and time the Letter of Authority was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    private String timeIssued;
+    private @Nullable String timeIssued;
 
     private GetLetterOfAuthorityResult() {}
     /**
      * @return The name of the entity authorized by this Letter of Authority.
      * 
      */
-    public String authorizedEntityName() {
-        return this.authorizedEntityName;
+    public Optional<String> authorizedEntityName() {
+        return Optional.ofNullable(this.authorizedEntityName);
     }
     /**
      * @return The type of cross-connect fiber, termination, and optical specification.
      * 
      */
-    public String circuitType() {
-        return this.circuitType;
+    public Optional<String> circuitType() {
+        return Optional.ofNullable(this.circuitType);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cross-connect.
@@ -76,36 +78,36 @@ public final class GetLetterOfAuthorityResult {
      * @return The address of the FastConnect location.
      * 
      */
-    public String facilityLocation() {
-        return this.facilityLocation;
+    public Optional<String> facilityLocation() {
+        return Optional.ofNullable(this.facilityLocation);
     }
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The meet-me room port for this cross-connect.
      * 
      */
-    public String portName() {
-        return this.portName;
+    public Optional<String> portName() {
+        return Optional.ofNullable(this.portName);
     }
     /**
      * @return The date and time when the Letter of Authority expires, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    public String timeExpires() {
-        return this.timeExpires;
+    public Optional<String> timeExpires() {
+        return Optional.ofNullable(this.timeExpires);
     }
     /**
      * @return The date and time the Letter of Authority was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    public String timeIssued() {
-        return this.timeIssued;
+    public Optional<String> timeIssued() {
+        return Optional.ofNullable(this.timeIssued);
     }
 
     public static Builder builder() {
@@ -117,14 +119,14 @@ public final class GetLetterOfAuthorityResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String authorizedEntityName;
-        private String circuitType;
+        private @Nullable String authorizedEntityName;
+        private @Nullable String circuitType;
         private String crossConnectId;
-        private String facilityLocation;
-        private String id;
-        private String portName;
-        private String timeExpires;
-        private String timeIssued;
+        private @Nullable String facilityLocation;
+        private @Nullable String id;
+        private @Nullable String portName;
+        private @Nullable String timeExpires;
+        private @Nullable String timeIssued;
         public Builder() {}
         public Builder(GetLetterOfAuthorityResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -139,13 +141,13 @@ public final class GetLetterOfAuthorityResult {
         }
 
         @CustomType.Setter
-        public Builder authorizedEntityName(String authorizedEntityName) {
-            this.authorizedEntityName = Objects.requireNonNull(authorizedEntityName);
+        public Builder authorizedEntityName(@Nullable String authorizedEntityName) {
+            this.authorizedEntityName = authorizedEntityName;
             return this;
         }
         @CustomType.Setter
-        public Builder circuitType(String circuitType) {
-            this.circuitType = Objects.requireNonNull(circuitType);
+        public Builder circuitType(@Nullable String circuitType) {
+            this.circuitType = circuitType;
             return this;
         }
         @CustomType.Setter
@@ -154,28 +156,28 @@ public final class GetLetterOfAuthorityResult {
             return this;
         }
         @CustomType.Setter
-        public Builder facilityLocation(String facilityLocation) {
-            this.facilityLocation = Objects.requireNonNull(facilityLocation);
+        public Builder facilityLocation(@Nullable String facilityLocation) {
+            this.facilityLocation = facilityLocation;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder portName(String portName) {
-            this.portName = Objects.requireNonNull(portName);
+        public Builder portName(@Nullable String portName) {
+            this.portName = portName;
             return this;
         }
         @CustomType.Setter
-        public Builder timeExpires(String timeExpires) {
-            this.timeExpires = Objects.requireNonNull(timeExpires);
+        public Builder timeExpires(@Nullable String timeExpires) {
+            this.timeExpires = timeExpires;
             return this;
         }
         @CustomType.Setter
-        public Builder timeIssued(String timeIssued) {
-            this.timeIssued = Objects.requireNonNull(timeIssued);
+        public Builder timeIssued(@Nullable String timeIssued) {
+            this.timeIssued = timeIssued;
             return this;
         }
         public GetLetterOfAuthorityResult build() {

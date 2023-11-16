@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Workspaces in Oracle Cloud Infrastructure Data Integration service.
@@ -70,7 +69,7 @@ type GetWorkspacesResult struct {
 	CompartmentId string                `pulumi:"compartmentId"`
 	Filters       []GetWorkspacesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id   string  `pulumi:"id"`
+	Id   *string `pulumi:"id"`
 	Name *string `pulumi:"name"`
 	// Lifecycle states for workspaces in Data Integration Service CREATING - The resource is being created and may not be usable until the entire metadata is defined UPDATING - The resource is being updated and may not be usable until all changes are commited DELETING - The resource is being deleted and might require deep cleanup of children. ACTIVE   - The resource is valid and available for access INACTIVE - The resource might be incomplete in its definition or might have been made unavailable for administrative reasons DELETED  - The resource has been deleted and isn't available FAILED   - The resource is in a failed state due to validation or other errors STARTING - The resource is being started and may not be usable until becomes ACTIVE again STOPPING - The resource is in the process of Stopping and may not be usable until it Stops or fails STOPPED  - The resource is in Stopped state due to stop operation.
 	State *string `pulumi:"state"`
@@ -121,12 +120,6 @@ func (o GetWorkspacesResultOutput) ToGetWorkspacesResultOutputWithContext(ctx co
 	return o
 }
 
-func (o GetWorkspacesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetWorkspacesResult] {
-	return pulumix.Output[GetWorkspacesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the compartment that contains the workspace.
 func (o GetWorkspacesResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetWorkspacesResult) string { return v.CompartmentId }).(pulumi.StringOutput)
@@ -137,8 +130,8 @@ func (o GetWorkspacesResultOutput) Filters() GetWorkspacesFilterArrayOutput {
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetWorkspacesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspacesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetWorkspacesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspacesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetWorkspacesResultOutput) Name() pulumi.StringPtrOutput {

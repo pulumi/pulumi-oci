@@ -16,7 +16,7 @@ namespace Pulumi.Oci.Jms.Outputs
         /// <summary>
         /// PerformanceTuningAnalysis flag to store enabled or disabled status.
         /// </summary>
-        public readonly bool IsEnabled;
+        public readonly bool? IsEnabled;
         /// <summary>
         /// Summarized events log for advanced feature.
         /// </summary>
@@ -24,7 +24,7 @@ namespace Pulumi.Oci.Jms.Outputs
 
         [OutputConstructor]
         private GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisResult(
-            bool isEnabled,
+            bool? isEnabled,
 
             ImmutableArray<Outputs.GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogResult> summarizedEventsLogs)
         {

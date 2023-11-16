@@ -69,12 +69,12 @@ export interface GetExternalContainerDatabasesResult {
     /**
      * The list of external_container_databases.
      */
-    readonly externalContainerDatabases: outputs.Database.GetExternalContainerDatabasesExternalContainerDatabase[];
+    readonly externalContainerDatabases?: outputs.Database.GetExternalContainerDatabasesExternalContainerDatabase[];
     readonly filters?: outputs.Database.GetExternalContainerDatabasesFilter[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The current state of the Oracle Cloud Infrastructure external database resource.
      */

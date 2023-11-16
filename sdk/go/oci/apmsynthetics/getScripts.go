@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Scripts in Oracle Cloud Infrastructure Apm Synthetics service.
@@ -73,7 +72,7 @@ type GetScriptsResult struct {
 	DisplayName *string            `pulumi:"displayName"`
 	Filters     []GetScriptsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The list of script_collection.
 	ScriptCollections []GetScriptsScriptCollection `pulumi:"scriptCollections"`
 }
@@ -121,12 +120,6 @@ func (o GetScriptsResultOutput) ToGetScriptsResultOutputWithContext(ctx context.
 	return o
 }
 
-func (o GetScriptsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetScriptsResult] {
-	return pulumix.Output[GetScriptsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetScriptsResultOutput) ApmDomainId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetScriptsResult) string { return v.ApmDomainId }).(pulumi.StringOutput)
 }
@@ -146,8 +139,8 @@ func (o GetScriptsResultOutput) Filters() GetScriptsFilterArrayOutput {
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetScriptsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetScriptsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetScriptsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetScriptsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The list of script_collection.

@@ -28,16 +28,6 @@ class PolicyArgs:
                  waf_config: Optional[pulumi.Input['PolicyWafConfigArgs']] = None):
         """
         The set of arguments for constructing a Policy resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to create the WAAS policy.
-        :param pulumi.Input[str] domain: (Updatable) The domain for which the cookie is set, defaults to WAAS policy domain.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] additional_domains: (Updatable) An array of additional domains for the specified web application.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name for the WAAS policy. The name can be changed and does not need to be unique.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[Sequence[pulumi.Input['PolicyOriginGroupArgs']]] origin_groups: (Updatable) The map of origin groups and their keys used to associate origins to the `wafConfig`. Origin groups allow you to apply weights to groups of origins for load balancing purposes. Origins with higher weights will receive larger proportions of client requests. To add additional origins to your WAAS policy, update the `origins` field of a `UpdateWaasPolicy` request.
-        :param pulumi.Input[Sequence[pulumi.Input['PolicyOriginArgs']]] origins: (Updatable) A map of host to origin for the web application. The key should be a customer friendly name for the host, ex. primary, secondary, etc.
-        :param pulumi.Input['PolicyPolicyConfigArgs'] policy_config: (Updatable) The configuration details for the WAAS policy.
-        :param pulumi.Input['PolicyWafConfigArgs'] waf_config: (Updatable) The Web Application Firewall configuration for the WAAS policy creation.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "domain", domain)
@@ -61,9 +51,6 @@ class PolicyArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to create the WAAS policy.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -73,9 +60,6 @@ class PolicyArgs:
     @property
     @pulumi.getter
     def domain(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The domain for which the cookie is set, defaults to WAAS policy domain.
-        """
         return pulumi.get(self, "domain")
 
     @domain.setter
@@ -85,9 +69,6 @@ class PolicyArgs:
     @property
     @pulumi.getter(name="additionalDomains")
     def additional_domains(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) An array of additional domains for the specified web application.
-        """
         return pulumi.get(self, "additional_domains")
 
     @additional_domains.setter
@@ -97,9 +78,6 @@ class PolicyArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -109,9 +87,6 @@ class PolicyArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A user-friendly name for the WAAS policy. The name can be changed and does not need to be unique.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -121,9 +96,6 @@ class PolicyArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -133,9 +105,6 @@ class PolicyArgs:
     @property
     @pulumi.getter(name="originGroups")
     def origin_groups(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PolicyOriginGroupArgs']]]]:
-        """
-        (Updatable) The map of origin groups and their keys used to associate origins to the `wafConfig`. Origin groups allow you to apply weights to groups of origins for load balancing purposes. Origins with higher weights will receive larger proportions of client requests. To add additional origins to your WAAS policy, update the `origins` field of a `UpdateWaasPolicy` request.
-        """
         return pulumi.get(self, "origin_groups")
 
     @origin_groups.setter
@@ -145,9 +114,6 @@ class PolicyArgs:
     @property
     @pulumi.getter
     def origins(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PolicyOriginArgs']]]]:
-        """
-        (Updatable) A map of host to origin for the web application. The key should be a customer friendly name for the host, ex. primary, secondary, etc.
-        """
         return pulumi.get(self, "origins")
 
     @origins.setter
@@ -157,9 +123,6 @@ class PolicyArgs:
     @property
     @pulumi.getter(name="policyConfig")
     def policy_config(self) -> Optional[pulumi.Input['PolicyPolicyConfigArgs']]:
-        """
-        (Updatable) The configuration details for the WAAS policy.
-        """
         return pulumi.get(self, "policy_config")
 
     @policy_config.setter
@@ -169,9 +132,6 @@ class PolicyArgs:
     @property
     @pulumi.getter(name="wafConfig")
     def waf_config(self) -> Optional[pulumi.Input['PolicyWafConfigArgs']]:
-        """
-        (Updatable) The Web Application Firewall configuration for the WAAS policy creation.
-        """
         return pulumi.get(self, "waf_config")
 
     @waf_config.setter
@@ -197,19 +157,6 @@ class _PolicyState:
                  waf_config: Optional[pulumi.Input['PolicyWafConfigArgs']] = None):
         """
         Input properties used for looking up and filtering Policy resources.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] additional_domains: (Updatable) An array of additional domains for the specified web application.
-        :param pulumi.Input[str] cname: The CNAME record to add to your DNS configuration to route traffic for the domain, and all additional domains, through the WAF.
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to create the WAAS policy.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name for the WAAS policy. The name can be changed and does not need to be unique.
-        :param pulumi.Input[str] domain: (Updatable) The domain for which the cookie is set, defaults to WAAS policy domain.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[Sequence[pulumi.Input['PolicyOriginGroupArgs']]] origin_groups: (Updatable) The map of origin groups and their keys used to associate origins to the `wafConfig`. Origin groups allow you to apply weights to groups of origins for load balancing purposes. Origins with higher weights will receive larger proportions of client requests. To add additional origins to your WAAS policy, update the `origins` field of a `UpdateWaasPolicy` request.
-        :param pulumi.Input[Sequence[pulumi.Input['PolicyOriginArgs']]] origins: (Updatable) A map of host to origin for the web application. The key should be a customer friendly name for the host, ex. primary, secondary, etc.
-        :param pulumi.Input['PolicyPolicyConfigArgs'] policy_config: (Updatable) The configuration details for the WAAS policy.
-        :param pulumi.Input[str] state: The current lifecycle state of the WAAS policy.
-        :param pulumi.Input[str] time_created: The date and time the policy was created, expressed in RFC 3339 timestamp format.
-        :param pulumi.Input['PolicyWafConfigArgs'] waf_config: (Updatable) The Web Application Firewall configuration for the WAAS policy creation.
         """
         if additional_domains is not None:
             pulumi.set(__self__, "additional_domains", additional_domains)
@@ -241,9 +188,6 @@ class _PolicyState:
     @property
     @pulumi.getter(name="additionalDomains")
     def additional_domains(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) An array of additional domains for the specified web application.
-        """
         return pulumi.get(self, "additional_domains")
 
     @additional_domains.setter
@@ -253,9 +197,6 @@ class _PolicyState:
     @property
     @pulumi.getter
     def cname(self) -> Optional[pulumi.Input[str]]:
-        """
-        The CNAME record to add to your DNS configuration to route traffic for the domain, and all additional domains, through the WAF.
-        """
         return pulumi.get(self, "cname")
 
     @cname.setter
@@ -265,9 +206,6 @@ class _PolicyState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to create the WAAS policy.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -277,9 +215,6 @@ class _PolicyState:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -289,9 +224,6 @@ class _PolicyState:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A user-friendly name for the WAAS policy. The name can be changed and does not need to be unique.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -301,9 +233,6 @@ class _PolicyState:
     @property
     @pulumi.getter
     def domain(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The domain for which the cookie is set, defaults to WAAS policy domain.
-        """
         return pulumi.get(self, "domain")
 
     @domain.setter
@@ -313,9 +242,6 @@ class _PolicyState:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -325,9 +251,6 @@ class _PolicyState:
     @property
     @pulumi.getter(name="originGroups")
     def origin_groups(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PolicyOriginGroupArgs']]]]:
-        """
-        (Updatable) The map of origin groups and their keys used to associate origins to the `wafConfig`. Origin groups allow you to apply weights to groups of origins for load balancing purposes. Origins with higher weights will receive larger proportions of client requests. To add additional origins to your WAAS policy, update the `origins` field of a `UpdateWaasPolicy` request.
-        """
         return pulumi.get(self, "origin_groups")
 
     @origin_groups.setter
@@ -337,9 +260,6 @@ class _PolicyState:
     @property
     @pulumi.getter
     def origins(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PolicyOriginArgs']]]]:
-        """
-        (Updatable) A map of host to origin for the web application. The key should be a customer friendly name for the host, ex. primary, secondary, etc.
-        """
         return pulumi.get(self, "origins")
 
     @origins.setter
@@ -349,9 +269,6 @@ class _PolicyState:
     @property
     @pulumi.getter(name="policyConfig")
     def policy_config(self) -> Optional[pulumi.Input['PolicyPolicyConfigArgs']]:
-        """
-        (Updatable) The configuration details for the WAAS policy.
-        """
         return pulumi.get(self, "policy_config")
 
     @policy_config.setter
@@ -361,9 +278,6 @@ class _PolicyState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The current lifecycle state of the WAAS policy.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -373,9 +287,6 @@ class _PolicyState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time the policy was created, expressed in RFC 3339 timestamp format.
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -385,9 +296,6 @@ class _PolicyState:
     @property
     @pulumi.getter(name="wafConfig")
     def waf_config(self) -> Optional[pulumi.Input['PolicyWafConfigArgs']]:
-        """
-        (Updatable) The Web Application Firewall configuration for the WAAS policy creation.
-        """
         return pulumi.get(self, "waf_config")
 
     @waf_config.setter
@@ -412,42 +320,9 @@ class Policy(pulumi.CustomResource):
                  waf_config: Optional[pulumi.Input[pulumi.InputType['PolicyWafConfigArgs']]] = None,
                  __props__=None):
         """
-        This resource provides the Waas Policy resource in Oracle Cloud Infrastructure Web Application Acceleration and Security service.
-
-        Creates a new Web Application Acceleration and Security (WAAS) policy in the specified compartment. A WAAS policy must be established before creating Web Application Firewall (WAF) rules. To use WAF rules, your web application's origin servers must defined in the `WaasPolicy` schema.
-
-        A domain name must be specified when creating a WAAS policy. The domain name should be different from the origins specified in your `WaasPolicy`. Once domain name is entered and stored, it is unchangeable.
-
-        Use the record data returned in the `cname` field of the `WaasPolicy` object to create a CNAME record in your DNS configuration that will direct your domain's traffic through the WAF.
-
-        For the purposes of access control, you must provide the OCID of the compartment where you want the service to reside. For information about access control and compartments, see [Overview of the IAM Service](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm).
-
-        You must specify a display name and domain for the WAAS policy. The display name does not have to be unique and can be changed. The domain name should be different from every origin specified in `WaasPolicy`.
-
-        All Oracle Cloud Infrastructure resources, including WAAS policies, receive a unique, Oracle-assigned ID called an Oracle Cloud Identifier (OCID). When a resource is created, you can find its OCID in the response. You can also retrieve a resource's OCID by using a list API operation for that resource type, or by viewing the resource in the Console. Fore more information, see [Resource Identifiers](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-
-        **Note:** After sending the POST request, the new object's state will temporarily be `CREATING`. Ensure that the resource's state has changed to `ACTIVE` before use.
-
-        ## Import
-
-        WaasPolicies can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Waas/policy:Policy test_waas_policy "id"
-        ```
-
+        Create a Policy resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] additional_domains: (Updatable) An array of additional domains for the specified web application.
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to create the WAAS policy.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name for the WAAS policy. The name can be changed and does not need to be unique.
-        :param pulumi.Input[str] domain: (Updatable) The domain for which the cookie is set, defaults to WAAS policy domain.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PolicyOriginGroupArgs']]]] origin_groups: (Updatable) The map of origin groups and their keys used to associate origins to the `wafConfig`. Origin groups allow you to apply weights to groups of origins for load balancing purposes. Origins with higher weights will receive larger proportions of client requests. To add additional origins to your WAAS policy, update the `origins` field of a `UpdateWaasPolicy` request.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PolicyOriginArgs']]]] origins: (Updatable) A map of host to origin for the web application. The key should be a customer friendly name for the host, ex. primary, secondary, etc.
-        :param pulumi.Input[pulumi.InputType['PolicyPolicyConfigArgs']] policy_config: (Updatable) The configuration details for the WAAS policy.
-        :param pulumi.Input[pulumi.InputType['PolicyWafConfigArgs']] waf_config: (Updatable) The Web Application Firewall configuration for the WAAS policy creation.
         """
         ...
     @overload
@@ -456,30 +331,7 @@ class Policy(pulumi.CustomResource):
                  args: PolicyArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Waas Policy resource in Oracle Cloud Infrastructure Web Application Acceleration and Security service.
-
-        Creates a new Web Application Acceleration and Security (WAAS) policy in the specified compartment. A WAAS policy must be established before creating Web Application Firewall (WAF) rules. To use WAF rules, your web application's origin servers must defined in the `WaasPolicy` schema.
-
-        A domain name must be specified when creating a WAAS policy. The domain name should be different from the origins specified in your `WaasPolicy`. Once domain name is entered and stored, it is unchangeable.
-
-        Use the record data returned in the `cname` field of the `WaasPolicy` object to create a CNAME record in your DNS configuration that will direct your domain's traffic through the WAF.
-
-        For the purposes of access control, you must provide the OCID of the compartment where you want the service to reside. For information about access control and compartments, see [Overview of the IAM Service](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm).
-
-        You must specify a display name and domain for the WAAS policy. The display name does not have to be unique and can be changed. The domain name should be different from every origin specified in `WaasPolicy`.
-
-        All Oracle Cloud Infrastructure resources, including WAAS policies, receive a unique, Oracle-assigned ID called an Oracle Cloud Identifier (OCID). When a resource is created, you can find its OCID in the response. You can also retrieve a resource's OCID by using a list API operation for that resource type, or by viewing the resource in the Console. Fore more information, see [Resource Identifiers](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-
-        **Note:** After sending the POST request, the new object's state will temporarily be `CREATING`. Ensure that the resource's state has changed to `ACTIVE` before use.
-
-        ## Import
-
-        WaasPolicies can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Waas/policy:Policy test_waas_policy "id"
-        ```
-
+        Create a Policy resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param PolicyArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -561,19 +413,6 @@ class Policy(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] additional_domains: (Updatable) An array of additional domains for the specified web application.
-        :param pulumi.Input[str] cname: The CNAME record to add to your DNS configuration to route traffic for the domain, and all additional domains, through the WAF.
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to create the WAAS policy.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name for the WAAS policy. The name can be changed and does not need to be unique.
-        :param pulumi.Input[str] domain: (Updatable) The domain for which the cookie is set, defaults to WAAS policy domain.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PolicyOriginGroupArgs']]]] origin_groups: (Updatable) The map of origin groups and their keys used to associate origins to the `wafConfig`. Origin groups allow you to apply weights to groups of origins for load balancing purposes. Origins with higher weights will receive larger proportions of client requests. To add additional origins to your WAAS policy, update the `origins` field of a `UpdateWaasPolicy` request.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PolicyOriginArgs']]]] origins: (Updatable) A map of host to origin for the web application. The key should be a customer friendly name for the host, ex. primary, secondary, etc.
-        :param pulumi.Input[pulumi.InputType['PolicyPolicyConfigArgs']] policy_config: (Updatable) The configuration details for the WAAS policy.
-        :param pulumi.Input[str] state: The current lifecycle state of the WAAS policy.
-        :param pulumi.Input[str] time_created: The date and time the policy was created, expressed in RFC 3339 timestamp format.
-        :param pulumi.Input[pulumi.InputType['PolicyWafConfigArgs']] waf_config: (Updatable) The Web Application Firewall configuration for the WAAS policy creation.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -596,105 +435,66 @@ class Policy(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="additionalDomains")
-    def additional_domains(self) -> pulumi.Output[Sequence[str]]:
-        """
-        (Updatable) An array of additional domains for the specified web application.
-        """
+    def additional_domains(self) -> pulumi.Output[Optional[Sequence[str]]]:
         return pulumi.get(self, "additional_domains")
 
     @property
     @pulumi.getter
-    def cname(self) -> pulumi.Output[str]:
-        """
-        The CNAME record to add to your DNS configuration to route traffic for the domain, and all additional domains, through the WAF.
-        """
+    def cname(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "cname")
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to create the WAAS policy.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> pulumi.Output[str]:
-        """
-        (Updatable) A user-friendly name for the WAAS policy. The name can be changed and does not need to be unique.
-        """
+    def display_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter
     def domain(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The domain for which the cookie is set, defaults to WAAS policy domain.
-        """
         return pulumi.get(self, "domain")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="originGroups")
-    def origin_groups(self) -> pulumi.Output[Sequence['outputs.PolicyOriginGroup']]:
-        """
-        (Updatable) The map of origin groups and their keys used to associate origins to the `wafConfig`. Origin groups allow you to apply weights to groups of origins for load balancing purposes. Origins with higher weights will receive larger proportions of client requests. To add additional origins to your WAAS policy, update the `origins` field of a `UpdateWaasPolicy` request.
-        """
+    def origin_groups(self) -> pulumi.Output[Optional[Sequence['outputs.PolicyOriginGroup']]]:
         return pulumi.get(self, "origin_groups")
 
     @property
     @pulumi.getter
-    def origins(self) -> pulumi.Output[Sequence['outputs.PolicyOrigin']]:
-        """
-        (Updatable) A map of host to origin for the web application. The key should be a customer friendly name for the host, ex. primary, secondary, etc.
-        """
+    def origins(self) -> pulumi.Output[Optional[Sequence['outputs.PolicyOrigin']]]:
         return pulumi.get(self, "origins")
 
     @property
     @pulumi.getter(name="policyConfig")
-    def policy_config(self) -> pulumi.Output['outputs.PolicyPolicyConfig']:
-        """
-        (Updatable) The configuration details for the WAAS policy.
-        """
+    def policy_config(self) -> pulumi.Output[Optional['outputs.PolicyPolicyConfig']]:
         return pulumi.get(self, "policy_config")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        The current lifecycle state of the WAAS policy.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        The date and time the policy was created, expressed in RFC 3339 timestamp format.
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="wafConfig")
-    def waf_config(self) -> pulumi.Output['outputs.PolicyWafConfig']:
-        """
-        (Updatable) The Web Application Firewall configuration for the WAAS policy creation.
-        """
+    def waf_config(self) -> pulumi.Output[Optional['outputs.PolicyWafConfig']]:
         return pulumi.get(self, "waf_config")
 

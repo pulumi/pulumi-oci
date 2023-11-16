@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Double;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetModelsModelCollectionItemEvaluationResultEntityMetric {
@@ -14,51 +16,51 @@ public final class GetModelsModelCollectionItemEvaluationResultEntityMetric {
      * @return F1-score, is a measure of a model’s accuracy on a dataset
      * 
      */
-    private Double f1;
+    private @Nullable Double f1;
     /**
      * @return Entity label
      * 
      */
-    private String label;
+    private @Nullable String label;
     /**
      * @return Precision refers to the number of true positives divided by the total number of positive predictions (i.e., the number of true positives plus the number of false positives)
      * 
      */
-    private Double precision;
+    private @Nullable Double precision;
     /**
      * @return Measures the model&#39;s ability to predict actual positive classes. It is the ratio between the predicted true positives and what was actually tagged. The recall metric reveals how many of the predicted classes are correct.
      * 
      */
-    private Double recall;
+    private @Nullable Double recall;
 
     private GetModelsModelCollectionItemEvaluationResultEntityMetric() {}
     /**
      * @return F1-score, is a measure of a model’s accuracy on a dataset
      * 
      */
-    public Double f1() {
-        return this.f1;
+    public Optional<Double> f1() {
+        return Optional.ofNullable(this.f1);
     }
     /**
      * @return Entity label
      * 
      */
-    public String label() {
-        return this.label;
+    public Optional<String> label() {
+        return Optional.ofNullable(this.label);
     }
     /**
      * @return Precision refers to the number of true positives divided by the total number of positive predictions (i.e., the number of true positives plus the number of false positives)
      * 
      */
-    public Double precision() {
-        return this.precision;
+    public Optional<Double> precision() {
+        return Optional.ofNullable(this.precision);
     }
     /**
      * @return Measures the model&#39;s ability to predict actual positive classes. It is the ratio between the predicted true positives and what was actually tagged. The recall metric reveals how many of the predicted classes are correct.
      * 
      */
-    public Double recall() {
-        return this.recall;
+    public Optional<Double> recall() {
+        return Optional.ofNullable(this.recall);
     }
 
     public static Builder builder() {
@@ -70,10 +72,10 @@ public final class GetModelsModelCollectionItemEvaluationResultEntityMetric {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Double f1;
-        private String label;
-        private Double precision;
-        private Double recall;
+        private @Nullable Double f1;
+        private @Nullable String label;
+        private @Nullable Double precision;
+        private @Nullable Double recall;
         public Builder() {}
         public Builder(GetModelsModelCollectionItemEvaluationResultEntityMetric defaults) {
     	      Objects.requireNonNull(defaults);
@@ -84,23 +86,23 @@ public final class GetModelsModelCollectionItemEvaluationResultEntityMetric {
         }
 
         @CustomType.Setter
-        public Builder f1(Double f1) {
-            this.f1 = Objects.requireNonNull(f1);
+        public Builder f1(@Nullable Double f1) {
+            this.f1 = f1;
             return this;
         }
         @CustomType.Setter
-        public Builder label(String label) {
-            this.label = Objects.requireNonNull(label);
+        public Builder label(@Nullable String label) {
+            this.label = label;
             return this;
         }
         @CustomType.Setter
-        public Builder precision(Double precision) {
-            this.precision = Objects.requireNonNull(precision);
+        public Builder precision(@Nullable Double precision) {
+            this.precision = precision;
             return this;
         }
         @CustomType.Setter
-        public Builder recall(Double recall) {
-            this.recall = Objects.requireNonNull(recall);
+        public Builder recall(@Nullable Double recall) {
+            this.recall = recall;
             return this;
         }
         public GetModelsModelCollectionItemEvaluationResultEntityMetric build() {

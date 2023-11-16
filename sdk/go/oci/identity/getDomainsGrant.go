@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Grant resource in Oracle Cloud Infrastructure Identity Domains service.
@@ -84,13 +83,13 @@ type LookupDomainsGrantResult struct {
 	Attributes    *string              `pulumi:"attributes"`
 	Authorization *string              `pulumi:"authorization"`
 	// Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
-	CompartmentOcid string `pulumi:"compartmentOcid"`
+	CompartmentOcid *string `pulumi:"compartmentOcid"`
 	// Unique key of grant, composed by combining a subset of app, entitlement, grantee, grantor and grantMechanism.  Used to prevent duplicate Grants.
-	CompositeKey string `pulumi:"compositeKey"`
+	CompositeKey *string `pulumi:"compositeKey"`
 	// A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
-	DeleteInProgress bool `pulumi:"deleteInProgress"`
+	DeleteInProgress *bool `pulumi:"deleteInProgress"`
 	// Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
-	DomainOcid string `pulumi:"domainOcid"`
+	DomainOcid *string `pulumi:"domainOcid"`
 	// The entitlement or privilege that is being granted
 	Entitlements []GetDomainsGrantEntitlement `pulumi:"entitlements"`
 	GrantId      string                       `pulumi:"grantId"`
@@ -98,37 +97,37 @@ type LookupDomainsGrantResult struct {
 	// * 'ADMINISTRATOR_TO_USER' is for a direct grant to a specific User.
 	// * 'ADMINISTRATOR_TO_GROUP' is for a grant to a specific Group, which results in indirect grants to Users who are members of that Group.
 	// * 'ADMINISTRATOR_TO_APP' is for a grant to a specific App.  The grantee (client) App gains access to the granted (server) App.
-	GrantMechanism string `pulumi:"grantMechanism"`
+	GrantMechanism *string `pulumi:"grantMechanism"`
 	// Store granted attribute-values as a string in Javascript Object Notation (JSON) format.
-	GrantedAttributeValuesJson string `pulumi:"grantedAttributeValuesJson"`
+	GrantedAttributeValuesJson *string `pulumi:"grantedAttributeValuesJson"`
 	// Grantee beneficiary. The grantee may be a User, Group, App or DynamicResourceGroup.
 	Grantees []GetDomainsGrantGrantee `pulumi:"grantees"`
 	// User conferring the grant to the beneficiary
 	Grantors []GetDomainsGrantGrantor `pulumi:"grantors"`
 	// Unique identifier for the SCIM Resource as defined by the Service Provider. Each representation of the Resource MUST include a non-empty id value. This identifier MUST be unique across the Service Provider's entire set of Resources. It MUST be a stable, non-reassignable identifier that does not change when the same Resource is returned in subsequent requests. The value of the id attribute is always issued by the Service Provider and MUST never be specified by the Service Consumer. bulkId: is a reserved keyword and MUST NOT be used in the unique identifier.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The User or App who created the Resource
 	IdcsCreatedBies []GetDomainsGrantIdcsCreatedBy `pulumi:"idcsCreatedBies"`
 	IdcsEndpoint    string                         `pulumi:"idcsEndpoint"`
 	// The User or App who modified the Resource
 	IdcsLastModifiedBies []GetDomainsGrantIdcsLastModifiedBy `pulumi:"idcsLastModifiedBies"`
 	// The release number when the resource was upgraded.
-	IdcsLastUpgradedInRelease string `pulumi:"idcsLastUpgradedInRelease"`
+	IdcsLastUpgradedInRelease *string `pulumi:"idcsLastUpgradedInRelease"`
 	// Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
 	IdcsPreventedOperations []string `pulumi:"idcsPreventedOperations"`
 	// If true, this Grant has been fulfilled successfully.
-	IsFulfilled bool `pulumi:"isFulfilled"`
+	IsFulfilled *bool `pulumi:"isFulfilled"`
 	// A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
 	Metas []GetDomainsGrantMeta `pulumi:"metas"`
 	// Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
-	Ocid                      string  `pulumi:"ocid"`
+	Ocid                      *string `pulumi:"ocid"`
 	ResourceTypeSchemaVersion *string `pulumi:"resourceTypeSchemaVersion"`
 	// REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
 	Schemas []string `pulumi:"schemas"`
 	// A list of tags on this resource.
 	Tags []GetDomainsGrantTag `pulumi:"tags"`
 	// Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
-	TenancyOcid string `pulumi:"tenancyOcid"`
+	TenancyOcid *string `pulumi:"tenancyOcid"`
 }
 
 func LookupDomainsGrantOutput(ctx *pulumi.Context, args LookupDomainsGrantOutputArgs, opts ...pulumi.InvokeOption) LookupDomainsGrantResultOutput {
@@ -179,12 +178,6 @@ func (o LookupDomainsGrantResultOutput) ToLookupDomainsGrantResultOutputWithCont
 	return o
 }
 
-func (o LookupDomainsGrantResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupDomainsGrantResult] {
-	return pulumix.Output[LookupDomainsGrantResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Application-Entitlement-Collection that is being granted. Each Grant must grant either an App or an App-Entitlement-Collection.
 func (o LookupDomainsGrantResultOutput) AppEntitlementCollections() GetDomainsGrantAppEntitlementCollectionArrayOutput {
 	return o.ApplyT(func(v LookupDomainsGrantResult) []GetDomainsGrantAppEntitlementCollection {
@@ -210,23 +203,23 @@ func (o LookupDomainsGrantResultOutput) Authorization() pulumi.StringPtrOutput {
 }
 
 // Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
-func (o LookupDomainsGrantResultOutput) CompartmentOcid() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsGrantResult) string { return v.CompartmentOcid }).(pulumi.StringOutput)
+func (o LookupDomainsGrantResultOutput) CompartmentOcid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsGrantResult) *string { return v.CompartmentOcid }).(pulumi.StringPtrOutput)
 }
 
 // Unique key of grant, composed by combining a subset of app, entitlement, grantee, grantor and grantMechanism.  Used to prevent duplicate Grants.
-func (o LookupDomainsGrantResultOutput) CompositeKey() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsGrantResult) string { return v.CompositeKey }).(pulumi.StringOutput)
+func (o LookupDomainsGrantResultOutput) CompositeKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsGrantResult) *string { return v.CompositeKey }).(pulumi.StringPtrOutput)
 }
 
 // A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
-func (o LookupDomainsGrantResultOutput) DeleteInProgress() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupDomainsGrantResult) bool { return v.DeleteInProgress }).(pulumi.BoolOutput)
+func (o LookupDomainsGrantResultOutput) DeleteInProgress() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupDomainsGrantResult) *bool { return v.DeleteInProgress }).(pulumi.BoolPtrOutput)
 }
 
 // Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
-func (o LookupDomainsGrantResultOutput) DomainOcid() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsGrantResult) string { return v.DomainOcid }).(pulumi.StringOutput)
+func (o LookupDomainsGrantResultOutput) DomainOcid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsGrantResult) *string { return v.DomainOcid }).(pulumi.StringPtrOutput)
 }
 
 // The entitlement or privilege that is being granted
@@ -242,13 +235,13 @@ func (o LookupDomainsGrantResultOutput) GrantId() pulumi.StringOutput {
 // * 'ADMINISTRATOR_TO_USER' is for a direct grant to a specific User.
 // * 'ADMINISTRATOR_TO_GROUP' is for a grant to a specific Group, which results in indirect grants to Users who are members of that Group.
 // * 'ADMINISTRATOR_TO_APP' is for a grant to a specific App.  The grantee (client) App gains access to the granted (server) App.
-func (o LookupDomainsGrantResultOutput) GrantMechanism() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsGrantResult) string { return v.GrantMechanism }).(pulumi.StringOutput)
+func (o LookupDomainsGrantResultOutput) GrantMechanism() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsGrantResult) *string { return v.GrantMechanism }).(pulumi.StringPtrOutput)
 }
 
 // Store granted attribute-values as a string in Javascript Object Notation (JSON) format.
-func (o LookupDomainsGrantResultOutput) GrantedAttributeValuesJson() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsGrantResult) string { return v.GrantedAttributeValuesJson }).(pulumi.StringOutput)
+func (o LookupDomainsGrantResultOutput) GrantedAttributeValuesJson() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsGrantResult) *string { return v.GrantedAttributeValuesJson }).(pulumi.StringPtrOutput)
 }
 
 // Grantee beneficiary. The grantee may be a User, Group, App or DynamicResourceGroup.
@@ -262,8 +255,8 @@ func (o LookupDomainsGrantResultOutput) Grantors() GetDomainsGrantGrantorArrayOu
 }
 
 // Unique identifier for the SCIM Resource as defined by the Service Provider. Each representation of the Resource MUST include a non-empty id value. This identifier MUST be unique across the Service Provider's entire set of Resources. It MUST be a stable, non-reassignable identifier that does not change when the same Resource is returned in subsequent requests. The value of the id attribute is always issued by the Service Provider and MUST never be specified by the Service Consumer. bulkId: is a reserved keyword and MUST NOT be used in the unique identifier.
-func (o LookupDomainsGrantResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsGrantResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupDomainsGrantResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsGrantResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The User or App who created the Resource
@@ -281,8 +274,8 @@ func (o LookupDomainsGrantResultOutput) IdcsLastModifiedBies() GetDomainsGrantId
 }
 
 // The release number when the resource was upgraded.
-func (o LookupDomainsGrantResultOutput) IdcsLastUpgradedInRelease() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsGrantResult) string { return v.IdcsLastUpgradedInRelease }).(pulumi.StringOutput)
+func (o LookupDomainsGrantResultOutput) IdcsLastUpgradedInRelease() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsGrantResult) *string { return v.IdcsLastUpgradedInRelease }).(pulumi.StringPtrOutput)
 }
 
 // Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
@@ -291,8 +284,8 @@ func (o LookupDomainsGrantResultOutput) IdcsPreventedOperations() pulumi.StringA
 }
 
 // If true, this Grant has been fulfilled successfully.
-func (o LookupDomainsGrantResultOutput) IsFulfilled() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupDomainsGrantResult) bool { return v.IsFulfilled }).(pulumi.BoolOutput)
+func (o LookupDomainsGrantResultOutput) IsFulfilled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupDomainsGrantResult) *bool { return v.IsFulfilled }).(pulumi.BoolPtrOutput)
 }
 
 // A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
@@ -301,8 +294,8 @@ func (o LookupDomainsGrantResultOutput) Metas() GetDomainsGrantMetaArrayOutput {
 }
 
 // Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
-func (o LookupDomainsGrantResultOutput) Ocid() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsGrantResult) string { return v.Ocid }).(pulumi.StringOutput)
+func (o LookupDomainsGrantResultOutput) Ocid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsGrantResult) *string { return v.Ocid }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupDomainsGrantResultOutput) ResourceTypeSchemaVersion() pulumi.StringPtrOutput {
@@ -320,8 +313,8 @@ func (o LookupDomainsGrantResultOutput) Tags() GetDomainsGrantTagArrayOutput {
 }
 
 // Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
-func (o LookupDomainsGrantResultOutput) TenancyOcid() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsGrantResult) string { return v.TenancyOcid }).(pulumi.StringOutput)
+func (o LookupDomainsGrantResultOutput) TenancyOcid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsGrantResult) *string { return v.TenancyOcid }).(pulumi.StringPtrOutput)
 }
 
 func init() {

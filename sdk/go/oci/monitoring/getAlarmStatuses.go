@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Alarm Statuses in Oracle Cloud Infrastructure Monitoring service.
@@ -97,7 +96,7 @@ type GetAlarmStatusesResult struct {
 	EntityId    *string                  `pulumi:"entityId"`
 	Filters     []GetAlarmStatusesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id          string  `pulumi:"id"`
+	Id          *string `pulumi:"id"`
 	ResourceId  *string `pulumi:"resourceId"`
 	ServiceName *string `pulumi:"serviceName"`
 	// The status of this alarm. Status is collective, across all metric streams in the alarm. To list alarm status for each metric stream, use [RetrieveDimensionStates](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/AlarmDimensionStatesCollection/RetrieveDimensionStates). Example: `FIRING`
@@ -155,12 +154,6 @@ func (o GetAlarmStatusesResultOutput) ToGetAlarmStatusesResultOutputWithContext(
 	return o
 }
 
-func (o GetAlarmStatusesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetAlarmStatusesResult] {
-	return pulumix.Output[GetAlarmStatusesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The list of alarm_statuses.
 func (o GetAlarmStatusesResultOutput) AlarmStatuses() GetAlarmStatusesAlarmStatusArrayOutput {
 	return o.ApplyT(func(v GetAlarmStatusesResult) []GetAlarmStatusesAlarmStatus { return v.AlarmStatuses }).(GetAlarmStatusesAlarmStatusArrayOutput)
@@ -188,8 +181,8 @@ func (o GetAlarmStatusesResultOutput) Filters() GetAlarmStatusesFilterArrayOutpu
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetAlarmStatusesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAlarmStatusesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetAlarmStatusesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAlarmStatusesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetAlarmStatusesResultOutput) ResourceId() pulumi.StringPtrOutput {

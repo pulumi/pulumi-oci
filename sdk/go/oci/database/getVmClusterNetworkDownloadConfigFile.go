@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Vm Cluster Network Download Config File resource in Oracle Cloud Infrastructure Database service.
@@ -66,11 +65,11 @@ type GetVmClusterNetworkDownloadConfigFileArgs struct {
 type GetVmClusterNetworkDownloadConfigFileResult struct {
 	Base64EncodeContent *bool `pulumi:"base64EncodeContent"`
 	// content of the downloaded config file for exadata infrastructure. If `base64EncodeContent` is set to `true`, then this content will be base64 encoded.
-	Content                 string `pulumi:"content"`
-	ExadataInfrastructureId string `pulumi:"exadataInfrastructureId"`
+	Content                 *string `pulumi:"content"`
+	ExadataInfrastructureId string  `pulumi:"exadataInfrastructureId"`
 	// The provider-assigned unique ID for this managed resource.
-	Id                 string `pulumi:"id"`
-	VmClusterNetworkId string `pulumi:"vmClusterNetworkId"`
+	Id                 *string `pulumi:"id"`
+	VmClusterNetworkId string  `pulumi:"vmClusterNetworkId"`
 }
 
 func GetVmClusterNetworkDownloadConfigFileOutput(ctx *pulumi.Context, args GetVmClusterNetworkDownloadConfigFileOutputArgs, opts ...pulumi.InvokeOption) GetVmClusterNetworkDownloadConfigFileResultOutput {
@@ -114,19 +113,13 @@ func (o GetVmClusterNetworkDownloadConfigFileResultOutput) ToGetVmClusterNetwork
 	return o
 }
 
-func (o GetVmClusterNetworkDownloadConfigFileResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetVmClusterNetworkDownloadConfigFileResult] {
-	return pulumix.Output[GetVmClusterNetworkDownloadConfigFileResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetVmClusterNetworkDownloadConfigFileResultOutput) Base64EncodeContent() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v GetVmClusterNetworkDownloadConfigFileResult) *bool { return v.Base64EncodeContent }).(pulumi.BoolPtrOutput)
 }
 
 // content of the downloaded config file for exadata infrastructure. If `base64EncodeContent` is set to `true`, then this content will be base64 encoded.
-func (o GetVmClusterNetworkDownloadConfigFileResultOutput) Content() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVmClusterNetworkDownloadConfigFileResult) string { return v.Content }).(pulumi.StringOutput)
+func (o GetVmClusterNetworkDownloadConfigFileResultOutput) Content() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVmClusterNetworkDownloadConfigFileResult) *string { return v.Content }).(pulumi.StringPtrOutput)
 }
 
 func (o GetVmClusterNetworkDownloadConfigFileResultOutput) ExadataInfrastructureId() pulumi.StringOutput {
@@ -134,8 +127,8 @@ func (o GetVmClusterNetworkDownloadConfigFileResultOutput) ExadataInfrastructure
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetVmClusterNetworkDownloadConfigFileResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVmClusterNetworkDownloadConfigFileResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetVmClusterNetworkDownloadConfigFileResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVmClusterNetworkDownloadConfigFileResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetVmClusterNetworkDownloadConfigFileResultOutput) VmClusterNetworkId() pulumi.StringOutput {

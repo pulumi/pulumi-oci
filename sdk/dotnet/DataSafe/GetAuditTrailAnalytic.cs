@@ -206,7 +206,7 @@ namespace Pulumi.Oci.DataSafe
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Array of audit trail aggregration data.
         /// </summary>
@@ -226,7 +226,7 @@ namespace Pulumi.Oci.DataSafe
 
             ImmutableArray<string> groupBies,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetAuditTrailAnalyticItemResult> items,
 

@@ -63,12 +63,12 @@ export interface GetOrganizationSubscriptionsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly subscriptionIds: string;
     /**
      * The list of subscriptions.
      */
-    readonly subscriptions: outputs.OsubOrganizationSubscription.GetOrganizationSubscriptionsSubscription[];
+    readonly subscriptions?: outputs.OsubOrganizationSubscription.GetOrganizationSubscriptionsSubscription[];
     readonly xOneOriginRegion?: string;
 }
 /**

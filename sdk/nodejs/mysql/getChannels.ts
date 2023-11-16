@@ -80,7 +80,7 @@ export interface GetChannelsResult {
     /**
      * The list of channels.
      */
-    readonly channels: outputs.Mysql.GetChannelsChannel[];
+    readonly channels?: outputs.Mysql.GetChannelsChannel[];
     /**
      * The OCID of the compartment.
      */
@@ -97,7 +97,7 @@ export interface GetChannelsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Whether the Channel has been enabled by the user.
      */

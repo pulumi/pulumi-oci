@@ -16,29 +16,29 @@ namespace Pulumi.Oci.OneSubsription.Outputs
         /// <summary>
         /// Product name
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// Product part numner
         /// </summary>
-        public readonly string PartNumber;
+        public readonly string? PartNumber;
         /// <summary>
         /// Product provisioning group
         /// </summary>
-        public readonly string ProvisioningGroup;
+        public readonly string? ProvisioningGroup;
         /// <summary>
         /// Unit of measure
         /// </summary>
-        public readonly string UnitOfMeasure;
+        public readonly string? UnitOfMeasure;
 
         [OutputConstructor]
         private GetSubscriptionsSubscriptionSubscribedServiceProductResult(
-            string name,
+            string? name,
 
-            string partNumber,
+            string? partNumber,
 
-            string provisioningGroup,
+            string? provisioningGroup,
 
-            string unitOfMeasure)
+            string? unitOfMeasure)
         {
             Name = name;
             PartNumber = partNumber;

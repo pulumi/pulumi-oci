@@ -57,7 +57,7 @@ class GetSupportedSkusResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -65,10 +65,7 @@ class GetSupportedSkusResult:
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetSupportedSkusItemResult']:
-        """
-        The list of the supported SKUs.
-        """
+    def items(self) -> Optional[Sequence['outputs.GetSupportedSkusItemResult']]:
         return pulumi.get(self, "items")
 
 
@@ -90,24 +87,7 @@ def get_supported_skus(compartment_id: Optional[str] = None,
                        host_shape_name: Optional[str] = None,
                        opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetSupportedSkusResult:
     """
-    This data source provides the list of Supported Skus in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.\\
-    !> **WARNING:** This data source is deprecated and will be removed, please use "oci_ocvp_supported_commitments" instead.
-
-    Lists supported SKUs.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_supported_skus = oci.Ocvp.get_supported_skus(compartment_id=var["compartment_id"],
-        host_shape_name=oci_core_shape["test_shape"]["name"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param str host_shape_name: A filter to return only resources that match or support the given ESXi host shape.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -130,23 +110,6 @@ def get_supported_skus_output(compartment_id: Optional[pulumi.Input[str]] = None
                               host_shape_name: Optional[pulumi.Input[Optional[str]]] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSupportedSkusResult]:
     """
-    This data source provides the list of Supported Skus in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.\\
-    !> **WARNING:** This data source is deprecated and will be removed, please use "oci_ocvp_supported_commitments" instead.
-
-    Lists supported SKUs.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_supported_skus = oci.Ocvp.get_supported_skus(compartment_id=var["compartment_id"],
-        host_shape_name=oci_core_shape["test_shape"]["name"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param str host_shape_name: A filter to return only resources that match or support the given ESXi host shape.
+    Use this data source to access information about an existing resource.
     """
     ...

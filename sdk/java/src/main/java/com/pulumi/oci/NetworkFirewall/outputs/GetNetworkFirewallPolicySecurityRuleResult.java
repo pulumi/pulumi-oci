@@ -9,6 +9,8 @@ import com.pulumi.oci.NetworkFirewall.outputs.GetNetworkFirewallPolicySecurityRu
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetNetworkFirewallPolicySecurityRuleResult {
@@ -20,20 +22,20 @@ public final class GetNetworkFirewallPolicySecurityRuleResult {
      * * INSPECT - Inspects traffic for vulnerability as specified in `inspection`, which may result in rejection.
      * 
      */
-    private String action;
+    private @Nullable String action;
     /**
      * @return Criteria to evaluate against network traffic. A match occurs when at least one item in the array associated with each specified property corresponds with the relevant aspect of the traffic.
      * 
      */
-    private List<GetNetworkFirewallPolicySecurityRuleCondition> conditions;
-    private String id;
+    private @Nullable List<GetNetworkFirewallPolicySecurityRuleCondition> conditions;
+    private @Nullable String id;
     /**
      * @return Type of inspection to affect the Traffic flow. This is only applicable if action is INSPECT.
      * * INTRUSION_DETECTION - Intrusion Detection.
      * * INTRUSION_PREVENTION - Intrusion Detection and Prevention. Traffic classified as potentially malicious will be rejected as described in `type`.
      * 
      */
-    private String inspection;
+    private @Nullable String inspection;
     /**
      * @return Name for the Security rule, must be unique within the policy.
      * 
@@ -44,13 +46,13 @@ public final class GetNetworkFirewallPolicySecurityRuleResult {
      * @return OCID of the Network Firewall Policy this security rule belongs to.
      * 
      */
-    private String parentResourceId;
+    private @Nullable String parentResourceId;
     /**
      * @return An object which defines the position of the rule.
      * 
      */
-    private List<GetNetworkFirewallPolicySecurityRulePosition> positions;
-    private String priorityOrder;
+    private @Nullable List<GetNetworkFirewallPolicySecurityRulePosition> positions;
+    private @Nullable String priorityOrder;
 
     private GetNetworkFirewallPolicySecurityRuleResult() {}
     /**
@@ -61,18 +63,18 @@ public final class GetNetworkFirewallPolicySecurityRuleResult {
      * * INSPECT - Inspects traffic for vulnerability as specified in `inspection`, which may result in rejection.
      * 
      */
-    public String action() {
-        return this.action;
+    public Optional<String> action() {
+        return Optional.ofNullable(this.action);
     }
     /**
      * @return Criteria to evaluate against network traffic. A match occurs when at least one item in the array associated with each specified property corresponds with the relevant aspect of the traffic.
      * 
      */
     public List<GetNetworkFirewallPolicySecurityRuleCondition> conditions() {
-        return this.conditions;
+        return this.conditions == null ? List.of() : this.conditions;
     }
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Type of inspection to affect the Traffic flow. This is only applicable if action is INSPECT.
@@ -80,8 +82,8 @@ public final class GetNetworkFirewallPolicySecurityRuleResult {
      * * INTRUSION_PREVENTION - Intrusion Detection and Prevention. Traffic classified as potentially malicious will be rejected as described in `type`.
      * 
      */
-    public String inspection() {
-        return this.inspection;
+    public Optional<String> inspection() {
+        return Optional.ofNullable(this.inspection);
     }
     /**
      * @return Name for the Security rule, must be unique within the policy.
@@ -97,18 +99,18 @@ public final class GetNetworkFirewallPolicySecurityRuleResult {
      * @return OCID of the Network Firewall Policy this security rule belongs to.
      * 
      */
-    public String parentResourceId() {
-        return this.parentResourceId;
+    public Optional<String> parentResourceId() {
+        return Optional.ofNullable(this.parentResourceId);
     }
     /**
      * @return An object which defines the position of the rule.
      * 
      */
     public List<GetNetworkFirewallPolicySecurityRulePosition> positions() {
-        return this.positions;
+        return this.positions == null ? List.of() : this.positions;
     }
-    public String priorityOrder() {
-        return this.priorityOrder;
+    public Optional<String> priorityOrder() {
+        return Optional.ofNullable(this.priorityOrder);
     }
 
     public static Builder builder() {
@@ -120,15 +122,15 @@ public final class GetNetworkFirewallPolicySecurityRuleResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String action;
-        private List<GetNetworkFirewallPolicySecurityRuleCondition> conditions;
-        private String id;
-        private String inspection;
+        private @Nullable String action;
+        private @Nullable List<GetNetworkFirewallPolicySecurityRuleCondition> conditions;
+        private @Nullable String id;
+        private @Nullable String inspection;
         private String name;
         private String networkFirewallPolicyId;
-        private String parentResourceId;
-        private List<GetNetworkFirewallPolicySecurityRulePosition> positions;
-        private String priorityOrder;
+        private @Nullable String parentResourceId;
+        private @Nullable List<GetNetworkFirewallPolicySecurityRulePosition> positions;
+        private @Nullable String priorityOrder;
         public Builder() {}
         public Builder(GetNetworkFirewallPolicySecurityRuleResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -144,26 +146,26 @@ public final class GetNetworkFirewallPolicySecurityRuleResult {
         }
 
         @CustomType.Setter
-        public Builder action(String action) {
-            this.action = Objects.requireNonNull(action);
+        public Builder action(@Nullable String action) {
+            this.action = action;
             return this;
         }
         @CustomType.Setter
-        public Builder conditions(List<GetNetworkFirewallPolicySecurityRuleCondition> conditions) {
-            this.conditions = Objects.requireNonNull(conditions);
+        public Builder conditions(@Nullable List<GetNetworkFirewallPolicySecurityRuleCondition> conditions) {
+            this.conditions = conditions;
             return this;
         }
         public Builder conditions(GetNetworkFirewallPolicySecurityRuleCondition... conditions) {
             return conditions(List.of(conditions));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder inspection(String inspection) {
-            this.inspection = Objects.requireNonNull(inspection);
+        public Builder inspection(@Nullable String inspection) {
+            this.inspection = inspection;
             return this;
         }
         @CustomType.Setter
@@ -177,21 +179,21 @@ public final class GetNetworkFirewallPolicySecurityRuleResult {
             return this;
         }
         @CustomType.Setter
-        public Builder parentResourceId(String parentResourceId) {
-            this.parentResourceId = Objects.requireNonNull(parentResourceId);
+        public Builder parentResourceId(@Nullable String parentResourceId) {
+            this.parentResourceId = parentResourceId;
             return this;
         }
         @CustomType.Setter
-        public Builder positions(List<GetNetworkFirewallPolicySecurityRulePosition> positions) {
-            this.positions = Objects.requireNonNull(positions);
+        public Builder positions(@Nullable List<GetNetworkFirewallPolicySecurityRulePosition> positions) {
+            this.positions = positions;
             return this;
         }
         public Builder positions(GetNetworkFirewallPolicySecurityRulePosition... positions) {
             return positions(List.of(positions));
         }
         @CustomType.Setter
-        public Builder priorityOrder(String priorityOrder) {
-            this.priorityOrder = Objects.requireNonNull(priorityOrder);
+        public Builder priorityOrder(@Nullable String priorityOrder) {
+            this.priorityOrder = priorityOrder;
             return this;
         }
         public GetNetworkFirewallPolicySecurityRuleResult build() {

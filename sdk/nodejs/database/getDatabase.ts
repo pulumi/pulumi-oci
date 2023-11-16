@@ -47,133 +47,133 @@ export interface GetDatabaseResult {
     /**
      * The character set for the database.
      */
-    readonly characterSet: string;
+    readonly characterSet?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * The Connection strings used to connect to the Oracle Database.
      */
-    readonly connectionStrings: outputs.Database.GetDatabaseConnectionString[];
+    readonly connectionStrings?: outputs.Database.GetDatabaseConnectionString[];
     readonly databaseId: string;
     /**
      * The configuration of the Database Management service.
      */
-    readonly databaseManagementConfigs: outputs.Database.GetDatabaseDatabaseManagementConfig[];
+    readonly databaseManagementConfigs?: outputs.Database.GetDatabaseDatabaseManagementConfig[];
     /**
      * The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
      */
-    readonly databaseSoftwareImageId: string;
-    readonly databases: outputs.Database.GetDatabaseDatabase[];
+    readonly databaseSoftwareImageId?: string;
+    readonly databases?: outputs.Database.GetDatabaseDatabase[];
     /**
      * Backup Options To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized, talk to an administrator. If you're an administrator who needs to write policies to give users access, see [Getting Started with Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
      */
-    readonly dbBackupConfigs: outputs.Database.GetDatabaseDbBackupConfig[];
+    readonly dbBackupConfigs?: outputs.Database.GetDatabaseDbBackupConfig[];
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
      */
-    readonly dbHomeId: string;
+    readonly dbHomeId?: string;
     /**
      * The database name.
      */
-    readonly dbName: string;
+    readonly dbName?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
      */
-    readonly dbSystemId: string;
+    readonly dbSystemId?: string;
     /**
      * A system-generated name for the database to ensure uniqueness within an Oracle Data Guard group (a primary database and its standby databases). The unique name cannot be changed.
      */
-    readonly dbUniqueName: string;
-    readonly dbVersion: string;
+    readonly dbUniqueName?: string;
+    readonly dbVersion?: string;
     /**
      * **Deprecated.** The dbWorkload field has been deprecated for Exadata Database Service on Dedicated Infrastructure, Exadata Database Service on Cloud@Customer, and Base Database Service. Support for this attribute will end in November 2023. You may choose to update your custom scripts to exclude the dbWorkload attribute. After November 2023 if you pass a value to the dbWorkload attribute, it will be ignored.
      */
-    readonly dbWorkload: string;
+    readonly dbWorkload?: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * True if the database is a container database.
      */
-    readonly isCdb: boolean;
+    readonly isCdb?: boolean;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
      */
-    readonly keyStoreId: string;
+    readonly keyStoreId?: string;
     /**
      * The wallet name for Oracle Key Vault.
      */
-    readonly keyStoreWalletName: string;
+    readonly keyStoreWalletName?: string;
     /**
      * The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
      */
-    readonly kmsKeyId: string;
-    readonly kmsKeyMigration: boolean;
-    readonly kmsKeyRotation: number;
+    readonly kmsKeyId?: string;
+    readonly kmsKeyMigration?: boolean;
+    readonly kmsKeyRotation?: number;
     /**
      * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
      */
-    readonly kmsKeyVersionId: string;
+    readonly kmsKeyVersionId?: string;
     /**
      * The duration when the latest database backup created.
      */
-    readonly lastBackupDurationInSeconds: number;
+    readonly lastBackupDurationInSeconds?: number;
     /**
      * The date and time when the latest database backup was created.
      */
-    readonly lastBackupTimestamp: string;
+    readonly lastBackupTimestamp?: string;
     /**
      * The date and time when the latest database backup failed.
      */
-    readonly lastFailedBackupTimestamp: string;
+    readonly lastFailedBackupTimestamp?: string;
     /**
      * Additional information about the current lifecycle state.
      */
-    readonly lifecycleDetails: string;
+    readonly lifecycleDetails?: string;
     /**
      * The national character set for the database.
      */
-    readonly ncharacterSet: string;
+    readonly ncharacterSet?: string;
     /**
      * The name of the pluggable database. The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. Pluggable database should not be same as database name.
      */
-    readonly pdbName: string;
+    readonly pdbName?: string;
     /**
      * Specifies a prefix for the `Oracle SID` of the database to be created.
      */
-    readonly sidPrefix: string;
-    readonly source: string;
+    readonly sidPrefix?: string;
+    readonly source?: string;
     /**
      * Point in time recovery timeStamp of the source database at which cloned database system is cloned from the source database system, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339)
      */
-    readonly sourceDatabasePointInTimeRecoveryTimestamp: string;
+    readonly sourceDatabasePointInTimeRecoveryTimestamp?: string;
     /**
      * The current state of the database.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * The date and time the database was created.
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
      */
-    readonly vaultId: string;
+    readonly vaultId?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
      */
-    readonly vmClusterId: string;
+    readonly vmClusterId?: string;
 }
 /**
  * This data source provides details about a specific Database resource in Oracle Cloud Infrastructure Database service.

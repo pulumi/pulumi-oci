@@ -54,15 +54,12 @@ class GetBackendHealthResult:
 
     @property
     @pulumi.getter(name="healthCheckResults")
-    def health_check_results(self) -> Sequence['outputs.GetBackendHealthHealthCheckResultResult']:
-        """
-        A list of the most recent health check results returned for the specified backend server.
-        """
+    def health_check_results(self) -> Optional[Sequence['outputs.GetBackendHealthHealthCheckResultResult']]:
         return pulumi.get(self, "health_check_results")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -75,14 +72,7 @@ class GetBackendHealthResult:
 
     @property
     @pulumi.getter
-    def status(self) -> str:
-        """
-        The general health status of the specified backend server as reported by the primary and standby load balancers.
-        *   **OK:** Both health checks returned `OK`.
-        *   **WARNING:** One health check returned `OK` and one did not.
-        *   **CRITICAL:** Neither health check returned `OK`.
-        *   **UNKNOWN:** One or both health checks returned `UNKNOWN`, or the system was unable to retrieve metrics at this time.
-        """
+    def status(self) -> Optional[str]:
         return pulumi.get(self, "status")
 
 
@@ -105,25 +95,7 @@ def get_backend_health(backend_name: Optional[str] = None,
                        load_balancer_id: Optional[str] = None,
                        opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetBackendHealthResult:
     """
-    This data source provides details about a specific Backend Health resource in Oracle Cloud Infrastructure Load Balancer service.
-
-    Gets the current health status of the specified backend server.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_backend_health = oci.LoadBalancer.get_backend_health(backend_name=oci_load_balancer_backend["test_backend"]["name"],
-        backend_set_name=oci_load_balancer_backend_set["test_backend_set"]["name"],
-        load_balancer_id=oci_load_balancer_load_balancer["test_load_balancer"]["id"])
-    ```
-
-
-    :param str backend_name: The IP address and port of the backend server to retrieve the health status for.  Example: `10.0.0.3:8080`
-    :param str backend_set_name: The name of the backend set associated with the backend server to retrieve the health status for.  Example: `example_backend_set`
-    :param str load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer associated with the backend server health status to be retrieved.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['backendName'] = backend_name
@@ -147,24 +119,6 @@ def get_backend_health_output(backend_name: Optional[pulumi.Input[str]] = None,
                               load_balancer_id: Optional[pulumi.Input[str]] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetBackendHealthResult]:
     """
-    This data source provides details about a specific Backend Health resource in Oracle Cloud Infrastructure Load Balancer service.
-
-    Gets the current health status of the specified backend server.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_backend_health = oci.LoadBalancer.get_backend_health(backend_name=oci_load_balancer_backend["test_backend"]["name"],
-        backend_set_name=oci_load_balancer_backend_set["test_backend_set"]["name"],
-        load_balancer_id=oci_load_balancer_load_balancer["test_load_balancer"]["id"])
-    ```
-
-
-    :param str backend_name: The IP address and port of the backend server to retrieve the health status for.  Example: `10.0.0.3:8080`
-    :param str backend_set_name: The name of the backend set associated with the backend server to retrieve the health status for.  Example: `example_backend_set`
-    :param str load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer associated with the backend server health status to be retrieved.
+    Use this data source to access information about an existing resource.
     """
     ...

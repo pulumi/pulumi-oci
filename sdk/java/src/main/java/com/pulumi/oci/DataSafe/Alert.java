@@ -14,6 +14,7 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -51,210 +52,210 @@ public class Alert extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="alertType", refs={String.class}, tree="[0]")
-    private Output<String> alertType;
+    private Output</* @Nullable */ String> alertType;
 
     /**
      * @return Type of the alert. Indicates the Data Safe feature triggering the alert.
      * 
      */
-    public Output<String> alertType() {
-        return this.alertType;
+    public Output<Optional<String>> alertType() {
+        return Codegen.optional(this.alertType);
     }
     /**
      * (Updatable) A comment can be entered to track the alert changes done by the user.
      * 
      */
     @Export(name="comment", refs={String.class}, tree="[0]")
-    private Output<String> comment;
+    private Output</* @Nullable */ String> comment;
 
     /**
      * @return (Updatable) A comment can be entered to track the alert changes done by the user.
      * 
      */
-    public Output<String> comment() {
-        return this.comment;
+    public Output<Optional<String>> comment() {
+        return Codegen.optional(this.comment);
     }
     /**
      * (Updatable) The OCID of the compartment that contains the alert.
      * 
      */
     @Export(name="compartmentId", refs={String.class}, tree="[0]")
-    private Output<String> compartmentId;
+    private Output</* @Nullable */ String> compartmentId;
 
     /**
      * @return (Updatable) The OCID of the compartment that contains the alert.
      * 
      */
-    public Output<String> compartmentId() {
-        return this.compartmentId;
+    public Output<Optional<String>> compartmentId() {
+        return Codegen.optional(this.compartmentId);
     }
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * The description of the alert.
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
-    private Output<String> description;
+    private Output</* @Nullable */ String> description;
 
     /**
      * @return The description of the alert.
      * 
      */
-    public Output<String> description() {
-        return this.description;
+    public Output<Optional<String>> description() {
+        return Codegen.optional(this.description);
     }
     /**
      * The display name of the alert.
      * 
      */
     @Export(name="displayName", refs={String.class}, tree="[0]")
-    private Output<String> displayName;
+    private Output</* @Nullable */ String> displayName;
 
     /**
      * @return The display name of the alert.
      * 
      */
-    public Output<String> displayName() {
-        return this.displayName;
+    public Output<Optional<String>> displayName() {
+        return Codegen.optional(this.displayName);
     }
     /**
      * Map that contains maps of values. Example: `{&#34;Operations&#34;: {&#34;CostCenter&#34;: &#34;42&#34;}}`
      * 
      */
     @Export(name="featureDetails", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> featureDetails;
+    private Output</* @Nullable */ Map<String,Object>> featureDetails;
 
     /**
      * @return Map that contains maps of values. Example: `{&#34;Operations&#34;: {&#34;CostCenter&#34;: &#34;42&#34;}}`
      * 
      */
-    public Output<Map<String,Object>> featureDetails() {
-        return this.featureDetails;
+    public Output<Optional<Map<String,Object>>> featureDetails() {
+        return Codegen.optional(this.featureDetails);
     }
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * The operation (event) that triggered alert.
      * 
      */
     @Export(name="operation", refs={String.class}, tree="[0]")
-    private Output<String> operation;
+    private Output</* @Nullable */ String> operation;
 
     /**
      * @return The operation (event) that triggered alert.
      * 
      */
-    public Output<String> operation() {
-        return this.operation;
+    public Output<Optional<String>> operation() {
+        return Codegen.optional(this.operation);
     }
     /**
      * The result of the operation (event) that triggered alert.
      * 
      */
     @Export(name="operationStatus", refs={String.class}, tree="[0]")
-    private Output<String> operationStatus;
+    private Output</* @Nullable */ String> operationStatus;
 
     /**
      * @return The result of the operation (event) that triggered alert.
      * 
      */
-    public Output<String> operationStatus() {
-        return this.operationStatus;
+    public Output<Optional<String>> operationStatus() {
+        return Codegen.optional(this.operationStatus);
     }
     /**
      * Creation date and time of the operation that triggered alert, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
     @Export(name="operationTime", refs={String.class}, tree="[0]")
-    private Output<String> operationTime;
+    private Output</* @Nullable */ String> operationTime;
 
     /**
      * @return Creation date and time of the operation that triggered alert, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    public Output<String> operationTime() {
-        return this.operationTime;
+    public Output<Optional<String>> operationTime() {
+        return Codegen.optional(this.operationTime);
     }
     /**
      * The OCID of the policy that triggered alert.
      * 
      */
     @Export(name="policyId", refs={String.class}, tree="[0]")
-    private Output<String> policyId;
+    private Output</* @Nullable */ String> policyId;
 
     /**
      * @return The OCID of the policy that triggered alert.
      * 
      */
-    public Output<String> policyId() {
-        return this.policyId;
+    public Output<Optional<String>> policyId() {
+        return Codegen.optional(this.policyId);
     }
     /**
      * The resource endpoint that triggered the alert.
      * 
      */
     @Export(name="resourceName", refs={String.class}, tree="[0]")
-    private Output<String> resourceName;
+    private Output</* @Nullable */ String> resourceName;
 
     /**
      * @return The resource endpoint that triggered the alert.
      * 
      */
-    public Output<String> resourceName() {
-        return this.resourceName;
+    public Output<Optional<String>> resourceName() {
+        return Codegen.optional(this.resourceName);
     }
     /**
      * Severity level of the alert.
      * 
      */
     @Export(name="severity", refs={String.class}, tree="[0]")
-    private Output<String> severity;
+    private Output</* @Nullable */ String> severity;
 
     /**
      * @return Severity level of the alert.
      * 
      */
-    public Output<String> severity() {
-        return this.severity;
+    public Output<Optional<String>> severity() {
+        return Codegen.optional(this.severity);
     }
     /**
      * The current state of the alert.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The current state of the alert.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * (Updatable) The status of the alert.
@@ -264,7 +265,7 @@ public class Alert extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="status", refs={String.class}, tree="[0]")
-    private Output<String> status;
+    private Output</* @Nullable */ String> status;
 
     /**
      * @return (Updatable) The status of the alert.
@@ -273,78 +274,78 @@ public class Alert extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Output<String> status() {
-        return this.status;
+    public Output<Optional<String>> status() {
+        return Codegen.optional(this.status);
     }
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
     @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> systemTags;
+    private Output</* @Nullable */ Map<String,Object>> systemTags;
 
     /**
      * @return System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    public Output<Map<String,Object>> systemTags() {
-        return this.systemTags;
+    public Output<Optional<Map<String,Object>>> systemTags() {
+        return Codegen.optional(this.systemTags);
     }
     /**
      * Array of OCIDs of the target database which are associated with the alert.
      * 
      */
     @Export(name="targetIds", refs={List.class,String.class}, tree="[0,1]")
-    private Output<List<String>> targetIds;
+    private Output</* @Nullable */ List<String>> targetIds;
 
     /**
      * @return Array of OCIDs of the target database which are associated with the alert.
      * 
      */
-    public Output<List<String>> targetIds() {
-        return this.targetIds;
+    public Output<Optional<List<String>>> targetIds() {
+        return Codegen.optional(this.targetIds);
     }
     /**
      * Array of names of the target database.
      * 
      */
     @Export(name="targetNames", refs={List.class,String.class}, tree="[0,1]")
-    private Output<List<String>> targetNames;
+    private Output</* @Nullable */ List<String>> targetNames;
 
     /**
      * @return Array of names of the target database.
      * 
      */
-    public Output<List<String>> targetNames() {
-        return this.targetNames;
+    public Output<Optional<List<String>>> targetNames() {
+        return Codegen.optional(this.targetNames);
     }
     /**
      * Creation date and time of the alert, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return Creation date and time of the alert, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * Last date and time the alert was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
     @Export(name="timeUpdated", refs={String.class}, tree="[0]")
-    private Output<String> timeUpdated;
+    private Output</* @Nullable */ String> timeUpdated;
 
     /**
      * @return Last date and time the alert was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    public Output<String> timeUpdated() {
-        return this.timeUpdated;
+    public Output<Optional<String>> timeUpdated() {
+        return Codegen.optional(this.timeUpdated);
     }
 
     /**

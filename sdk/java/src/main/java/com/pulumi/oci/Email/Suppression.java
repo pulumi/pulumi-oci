@@ -11,6 +11,7 @@ import com.pulumi.oci.Email.SuppressionArgs;
 import com.pulumi.oci.Email.inputs.SuppressionState;
 import com.pulumi.oci.Utilities;
 import java.lang.String;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -102,84 +103,84 @@ public class Suppression extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="errorDetail", refs={String.class}, tree="[0]")
-    private Output<String> errorDetail;
+    private Output</* @Nullable */ String> errorDetail;
 
     /**
      * @return The specific error message returned by a system that resulted in the suppression. This message is usually an SMTP error code with additional descriptive text. Not provided for all types of suppressions.
      * 
      */
-    public Output<String> errorDetail() {
-        return this.errorDetail;
+    public Output<Optional<String>> errorDetail() {
+        return Codegen.optional(this.errorDetail);
     }
     /**
      * DNS name of the source of the error that caused the suppression. Will be set to either the remote-mta or reporting-mta field from a delivery status notification (RFC 3464) when available. Not provided for all types of suppressions, and not always known.
      * 
      */
     @Export(name="errorSource", refs={String.class}, tree="[0]")
-    private Output<String> errorSource;
+    private Output</* @Nullable */ String> errorSource;
 
     /**
      * @return DNS name of the source of the error that caused the suppression. Will be set to either the remote-mta or reporting-mta field from a delivery status notification (RFC 3464) when available. Not provided for all types of suppressions, and not always known.
      * 
      */
-    public Output<String> errorSource() {
-        return this.errorSource;
+    public Output<Optional<String>> errorSource() {
+        return Codegen.optional(this.errorSource);
     }
     /**
      * The value of the Message-ID header from the email that triggered a suppression. This value is as defined in RFC 5322 section 3.6.4, excluding angle-brackets. Not provided for all types of suppressions.
      * 
      */
     @Export(name="messageId", refs={String.class}, tree="[0]")
-    private Output<String> messageId;
+    private Output</* @Nullable */ String> messageId;
 
     /**
      * @return The value of the Message-ID header from the email that triggered a suppression. This value is as defined in RFC 5322 section 3.6.4, excluding angle-brackets. Not provided for all types of suppressions.
      * 
      */
-    public Output<String> messageId() {
-        return this.messageId;
+    public Output<Optional<String>> messageId() {
+        return Codegen.optional(this.messageId);
     }
     /**
      * The reason that the email address was suppressed. For more information on the types of bounces, see [Suppression List](https://docs.cloud.oracle.com/iaas/Content/Email/Concepts/overview.htm#components).
      * 
      */
     @Export(name="reason", refs={String.class}, tree="[0]")
-    private Output<String> reason;
+    private Output</* @Nullable */ String> reason;
 
     /**
      * @return The reason that the email address was suppressed. For more information on the types of bounces, see [Suppression List](https://docs.cloud.oracle.com/iaas/Content/Email/Concepts/overview.htm#components).
      * 
      */
-    public Output<String> reason() {
-        return this.reason;
+    public Output<Optional<String>> reason() {
+        return Codegen.optional(this.reason);
     }
     /**
      * The date and time a recipient&#39;s email address was added to the suppression list, in &#34;YYYY-MM-ddThh:mmZ&#34; format with a Z offset, as defined by RFC 3339.
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The date and time a recipient&#39;s email address was added to the suppression list, in &#34;YYYY-MM-ddThh:mmZ&#34; format with a Z offset, as defined by RFC 3339.
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * The last date and time the suppression prevented submission in &#34;YYYY-MM-ddThh:mmZ&#34; format with a Z offset, as defined by RFC 3339.
      * 
      */
     @Export(name="timeLastSuppressed", refs={String.class}, tree="[0]")
-    private Output<String> timeLastSuppressed;
+    private Output</* @Nullable */ String> timeLastSuppressed;
 
     /**
      * @return The last date and time the suppression prevented submission in &#34;YYYY-MM-ddThh:mmZ&#34; format with a Z offset, as defined by RFC 3339.
      * 
      */
-    public Output<String> timeLastSuppressed() {
-        return this.timeLastSuppressed;
+    public Output<Optional<String>> timeLastSuppressed() {
+        return Codegen.optional(this.timeLastSuppressed);
     }
 
     /**

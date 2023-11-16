@@ -8,6 +8,7 @@ import com.pulumi.oci.ApiGateway.outputs.GetDeploymentsDeploymentCollectionSpeci
 import com.pulumi.oci.ApiGateway.outputs.GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthenticationSelectionSource;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthentication {
@@ -15,12 +16,12 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyD
      * @return List of authentication servers to choose from during dynamic authentication.
      * 
      */
-    private List<GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthenticationAuthenticationServer> authenticationServers;
+    private @Nullable List<GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthenticationAuthenticationServer> authenticationServers;
     /**
      * @return Information around selector used for branching among routes/ authentication servers while dynamic routing/ authentication.
      * 
      */
-    private List<GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthenticationSelectionSource> selectionSources;
+    private @Nullable List<GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthenticationSelectionSource> selectionSources;
 
     private GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthentication() {}
     /**
@@ -28,14 +29,14 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyD
      * 
      */
     public List<GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthenticationAuthenticationServer> authenticationServers() {
-        return this.authenticationServers;
+        return this.authenticationServers == null ? List.of() : this.authenticationServers;
     }
     /**
      * @return Information around selector used for branching among routes/ authentication servers while dynamic routing/ authentication.
      * 
      */
     public List<GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthenticationSelectionSource> selectionSources() {
-        return this.selectionSources;
+        return this.selectionSources == null ? List.of() : this.selectionSources;
     }
 
     public static Builder builder() {
@@ -47,8 +48,8 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyD
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthenticationAuthenticationServer> authenticationServers;
-        private List<GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthenticationSelectionSource> selectionSources;
+        private @Nullable List<GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthenticationAuthenticationServer> authenticationServers;
+        private @Nullable List<GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthenticationSelectionSource> selectionSources;
         public Builder() {}
         public Builder(GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthentication defaults) {
     	      Objects.requireNonNull(defaults);
@@ -57,16 +58,16 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyD
         }
 
         @CustomType.Setter
-        public Builder authenticationServers(List<GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthenticationAuthenticationServer> authenticationServers) {
-            this.authenticationServers = Objects.requireNonNull(authenticationServers);
+        public Builder authenticationServers(@Nullable List<GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthenticationAuthenticationServer> authenticationServers) {
+            this.authenticationServers = authenticationServers;
             return this;
         }
         public Builder authenticationServers(GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthenticationAuthenticationServer... authenticationServers) {
             return authenticationServers(List.of(authenticationServers));
         }
         @CustomType.Setter
-        public Builder selectionSources(List<GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthenticationSelectionSource> selectionSources) {
-            this.selectionSources = Objects.requireNonNull(selectionSources);
+        public Builder selectionSources(@Nullable List<GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthenticationSelectionSource> selectionSources) {
+            this.selectionSources = selectionSources;
             return this;
         }
         public Builder selectionSources(GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthenticationSelectionSource... selectionSources) {

@@ -45,28 +45,28 @@ export interface GetNamespaceStorageRecallCountResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly namespace: string;
     /**
      * This is the total number of recalls made so far
      */
-    readonly recallCount: number;
+    readonly recallCount?: number;
     /**
      * This is the number of recalls that failed
      */
-    readonly recallFailed: number;
+    readonly recallFailed?: number;
     /**
      * This is the maximum number of recalls (including successful and pending recalls) allowed
      */
-    readonly recallLimit: number;
+    readonly recallLimit?: number;
     /**
      * This is the number of recalls in pending state
      */
-    readonly recallPending: number;
+    readonly recallPending?: number;
     /**
      * This is the number of recalls that succeeded
      */
-    readonly recallSucceeded: number;
+    readonly recallSucceeded?: number;
 }
 /**
  * This data source provides details about a specific Namespace Storage Recall Count resource in Oracle Cloud Infrastructure Log Analytics service.

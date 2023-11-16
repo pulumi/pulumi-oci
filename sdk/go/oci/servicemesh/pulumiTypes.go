@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 var _ = internal.GetEnvOrDefault
@@ -55,12 +54,6 @@ func (i AccessPolicyRuleArgs) ToAccessPolicyRuleOutputWithContext(ctx context.Co
 	return pulumi.ToOutputWithContext(ctx, i).(AccessPolicyRuleOutput)
 }
 
-func (i AccessPolicyRuleArgs) ToOutput(ctx context.Context) pulumix.Output[AccessPolicyRule] {
-	return pulumix.Output[AccessPolicyRule]{
-		OutputState: i.ToAccessPolicyRuleOutputWithContext(ctx).OutputState,
-	}
-}
-
 // AccessPolicyRuleArrayInput is an input type that accepts AccessPolicyRuleArray and AccessPolicyRuleArrayOutput values.
 // You can construct a concrete instance of `AccessPolicyRuleArrayInput` via:
 //
@@ -86,12 +79,6 @@ func (i AccessPolicyRuleArray) ToAccessPolicyRuleArrayOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(AccessPolicyRuleArrayOutput)
 }
 
-func (i AccessPolicyRuleArray) ToOutput(ctx context.Context) pulumix.Output[[]AccessPolicyRule] {
-	return pulumix.Output[[]AccessPolicyRule]{
-		OutputState: i.ToAccessPolicyRuleArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type AccessPolicyRuleOutput struct{ *pulumi.OutputState }
 
 func (AccessPolicyRuleOutput) ElementType() reflect.Type {
@@ -104,12 +91,6 @@ func (o AccessPolicyRuleOutput) ToAccessPolicyRuleOutput() AccessPolicyRuleOutpu
 
 func (o AccessPolicyRuleOutput) ToAccessPolicyRuleOutputWithContext(ctx context.Context) AccessPolicyRuleOutput {
 	return o
-}
-
-func (o AccessPolicyRuleOutput) ToOutput(ctx context.Context) pulumix.Output[AccessPolicyRule] {
-	return pulumix.Output[AccessPolicyRule]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Action for the traffic between the source and the destination.
@@ -139,12 +120,6 @@ func (o AccessPolicyRuleArrayOutput) ToAccessPolicyRuleArrayOutput() AccessPolic
 
 func (o AccessPolicyRuleArrayOutput) ToAccessPolicyRuleArrayOutputWithContext(ctx context.Context) AccessPolicyRuleArrayOutput {
 	return o
-}
-
-func (o AccessPolicyRuleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]AccessPolicyRule] {
-	return pulumix.Output[[]AccessPolicyRule]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o AccessPolicyRuleArrayOutput) Index(i pulumi.IntInput) AccessPolicyRuleOutput {
@@ -216,12 +191,6 @@ func (i AccessPolicyRuleDestinationArgs) ToAccessPolicyRuleDestinationOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(AccessPolicyRuleDestinationOutput)
 }
 
-func (i AccessPolicyRuleDestinationArgs) ToOutput(ctx context.Context) pulumix.Output[AccessPolicyRuleDestination] {
-	return pulumix.Output[AccessPolicyRuleDestination]{
-		OutputState: i.ToAccessPolicyRuleDestinationOutputWithContext(ctx).OutputState,
-	}
-}
-
 type AccessPolicyRuleDestinationOutput struct{ *pulumi.OutputState }
 
 func (AccessPolicyRuleDestinationOutput) ElementType() reflect.Type {
@@ -234,12 +203,6 @@ func (o AccessPolicyRuleDestinationOutput) ToAccessPolicyRuleDestinationOutput()
 
 func (o AccessPolicyRuleDestinationOutput) ToAccessPolicyRuleDestinationOutputWithContext(ctx context.Context) AccessPolicyRuleDestinationOutput {
 	return o
-}
-
-func (o AccessPolicyRuleDestinationOutput) ToOutput(ctx context.Context) pulumix.Output[AccessPolicyRuleDestination] {
-	return pulumix.Output[AccessPolicyRuleDestination]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The hostnames of the external service. Only applicable for HTTP and HTTPS protocols. Wildcard hostnames are supported in the prefix form. Examples of valid hostnames are "www.example.com", "*.example.com", "*.com", "*". Hostname "*" can be used to allow all hosts.
@@ -343,12 +306,6 @@ func (i AccessPolicyRuleSourceArgs) ToAccessPolicyRuleSourceOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(AccessPolicyRuleSourceOutput)
 }
 
-func (i AccessPolicyRuleSourceArgs) ToOutput(ctx context.Context) pulumix.Output[AccessPolicyRuleSource] {
-	return pulumix.Output[AccessPolicyRuleSource]{
-		OutputState: i.ToAccessPolicyRuleSourceOutputWithContext(ctx).OutputState,
-	}
-}
-
 type AccessPolicyRuleSourceOutput struct{ *pulumi.OutputState }
 
 func (AccessPolicyRuleSourceOutput) ElementType() reflect.Type {
@@ -361,12 +318,6 @@ func (o AccessPolicyRuleSourceOutput) ToAccessPolicyRuleSourceOutput() AccessPol
 
 func (o AccessPolicyRuleSourceOutput) ToAccessPolicyRuleSourceOutputWithContext(ctx context.Context) AccessPolicyRuleSourceOutput {
 	return o
-}
-
-func (o AccessPolicyRuleSourceOutput) ToOutput(ctx context.Context) pulumix.Output[AccessPolicyRuleSource] {
-	return pulumix.Output[AccessPolicyRuleSource]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The hostnames of the external service. Only applicable for HTTP and HTTPS protocols. Wildcard hostnames are supported in the prefix form. Examples of valid hostnames are "www.example.com", "*.example.com", "*.com", "*". Hostname "*" can be used to allow all hosts.
@@ -440,12 +391,6 @@ func (i IngressGatewayAccessLoggingArgs) ToIngressGatewayAccessLoggingOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(IngressGatewayAccessLoggingOutput)
 }
 
-func (i IngressGatewayAccessLoggingArgs) ToOutput(ctx context.Context) pulumix.Output[IngressGatewayAccessLogging] {
-	return pulumix.Output[IngressGatewayAccessLogging]{
-		OutputState: i.ToIngressGatewayAccessLoggingOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i IngressGatewayAccessLoggingArgs) ToIngressGatewayAccessLoggingPtrOutput() IngressGatewayAccessLoggingPtrOutput {
 	return i.ToIngressGatewayAccessLoggingPtrOutputWithContext(context.Background())
 }
@@ -487,12 +432,6 @@ func (i *ingressGatewayAccessLoggingPtrType) ToIngressGatewayAccessLoggingPtrOut
 	return pulumi.ToOutputWithContext(ctx, i).(IngressGatewayAccessLoggingPtrOutput)
 }
 
-func (i *ingressGatewayAccessLoggingPtrType) ToOutput(ctx context.Context) pulumix.Output[*IngressGatewayAccessLogging] {
-	return pulumix.Output[*IngressGatewayAccessLogging]{
-		OutputState: i.ToIngressGatewayAccessLoggingPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type IngressGatewayAccessLoggingOutput struct{ *pulumi.OutputState }
 
 func (IngressGatewayAccessLoggingOutput) ElementType() reflect.Type {
@@ -517,12 +456,6 @@ func (o IngressGatewayAccessLoggingOutput) ToIngressGatewayAccessLoggingPtrOutpu
 	}).(IngressGatewayAccessLoggingPtrOutput)
 }
 
-func (o IngressGatewayAccessLoggingOutput) ToOutput(ctx context.Context) pulumix.Output[IngressGatewayAccessLogging] {
-	return pulumix.Output[IngressGatewayAccessLogging]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) Determines if the logging configuration is enabled.
 func (o IngressGatewayAccessLoggingOutput) IsEnabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v IngressGatewayAccessLogging) *bool { return v.IsEnabled }).(pulumi.BoolPtrOutput)
@@ -540,12 +473,6 @@ func (o IngressGatewayAccessLoggingPtrOutput) ToIngressGatewayAccessLoggingPtrOu
 
 func (o IngressGatewayAccessLoggingPtrOutput) ToIngressGatewayAccessLoggingPtrOutputWithContext(ctx context.Context) IngressGatewayAccessLoggingPtrOutput {
 	return o
-}
-
-func (o IngressGatewayAccessLoggingPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*IngressGatewayAccessLogging] {
-	return pulumix.Output[*IngressGatewayAccessLogging]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o IngressGatewayAccessLoggingPtrOutput) Elem() IngressGatewayAccessLoggingOutput {
@@ -615,12 +542,6 @@ func (i IngressGatewayHostArgs) ToIngressGatewayHostOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(IngressGatewayHostOutput)
 }
 
-func (i IngressGatewayHostArgs) ToOutput(ctx context.Context) pulumix.Output[IngressGatewayHost] {
-	return pulumix.Output[IngressGatewayHost]{
-		OutputState: i.ToIngressGatewayHostOutputWithContext(ctx).OutputState,
-	}
-}
-
 // IngressGatewayHostArrayInput is an input type that accepts IngressGatewayHostArray and IngressGatewayHostArrayOutput values.
 // You can construct a concrete instance of `IngressGatewayHostArrayInput` via:
 //
@@ -646,12 +567,6 @@ func (i IngressGatewayHostArray) ToIngressGatewayHostArrayOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(IngressGatewayHostArrayOutput)
 }
 
-func (i IngressGatewayHostArray) ToOutput(ctx context.Context) pulumix.Output[[]IngressGatewayHost] {
-	return pulumix.Output[[]IngressGatewayHost]{
-		OutputState: i.ToIngressGatewayHostArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type IngressGatewayHostOutput struct{ *pulumi.OutputState }
 
 func (IngressGatewayHostOutput) ElementType() reflect.Type {
@@ -664,12 +579,6 @@ func (o IngressGatewayHostOutput) ToIngressGatewayHostOutput() IngressGatewayHos
 
 func (o IngressGatewayHostOutput) ToIngressGatewayHostOutputWithContext(ctx context.Context) IngressGatewayHostOutput {
 	return o
-}
-
-func (o IngressGatewayHostOutput) ToOutput(ctx context.Context) pulumix.Output[IngressGatewayHost] {
-	return pulumix.Output[IngressGatewayHost]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Hostnames of the host. Applicable only for HTTP and TLS_PASSTHROUGH listeners. Wildcard hostnames are supported in the prefix form. Examples of valid hostnames are "www.example.com", "*.example.com", "*.com".
@@ -702,12 +611,6 @@ func (o IngressGatewayHostArrayOutput) ToIngressGatewayHostArrayOutput() Ingress
 
 func (o IngressGatewayHostArrayOutput) ToIngressGatewayHostArrayOutputWithContext(ctx context.Context) IngressGatewayHostArrayOutput {
 	return o
-}
-
-func (o IngressGatewayHostArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]IngressGatewayHost] {
-	return pulumix.Output[[]IngressGatewayHost]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o IngressGatewayHostArrayOutput) Index(i pulumi.IntInput) IngressGatewayHostOutput {
@@ -757,12 +660,6 @@ func (i IngressGatewayHostListenerArgs) ToIngressGatewayHostListenerOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(IngressGatewayHostListenerOutput)
 }
 
-func (i IngressGatewayHostListenerArgs) ToOutput(ctx context.Context) pulumix.Output[IngressGatewayHostListener] {
-	return pulumix.Output[IngressGatewayHostListener]{
-		OutputState: i.ToIngressGatewayHostListenerOutputWithContext(ctx).OutputState,
-	}
-}
-
 // IngressGatewayHostListenerArrayInput is an input type that accepts IngressGatewayHostListenerArray and IngressGatewayHostListenerArrayOutput values.
 // You can construct a concrete instance of `IngressGatewayHostListenerArrayInput` via:
 //
@@ -788,12 +685,6 @@ func (i IngressGatewayHostListenerArray) ToIngressGatewayHostListenerArrayOutput
 	return pulumi.ToOutputWithContext(ctx, i).(IngressGatewayHostListenerArrayOutput)
 }
 
-func (i IngressGatewayHostListenerArray) ToOutput(ctx context.Context) pulumix.Output[[]IngressGatewayHostListener] {
-	return pulumix.Output[[]IngressGatewayHostListener]{
-		OutputState: i.ToIngressGatewayHostListenerArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type IngressGatewayHostListenerOutput struct{ *pulumi.OutputState }
 
 func (IngressGatewayHostListenerOutput) ElementType() reflect.Type {
@@ -806,12 +697,6 @@ func (o IngressGatewayHostListenerOutput) ToIngressGatewayHostListenerOutput() I
 
 func (o IngressGatewayHostListenerOutput) ToIngressGatewayHostListenerOutputWithContext(ctx context.Context) IngressGatewayHostListenerOutput {
 	return o
-}
-
-func (o IngressGatewayHostListenerOutput) ToOutput(ctx context.Context) pulumix.Output[IngressGatewayHostListener] {
-	return pulumix.Output[IngressGatewayHostListener]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Port on which ingress gateway is listening.
@@ -841,12 +726,6 @@ func (o IngressGatewayHostListenerArrayOutput) ToIngressGatewayHostListenerArray
 
 func (o IngressGatewayHostListenerArrayOutput) ToIngressGatewayHostListenerArrayOutputWithContext(ctx context.Context) IngressGatewayHostListenerArrayOutput {
 	return o
-}
-
-func (o IngressGatewayHostListenerArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]IngressGatewayHostListener] {
-	return pulumix.Output[[]IngressGatewayHostListener]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o IngressGatewayHostListenerArrayOutput) Index(i pulumi.IntInput) IngressGatewayHostListenerOutput {
@@ -896,12 +775,6 @@ func (i IngressGatewayHostListenerTlsArgs) ToIngressGatewayHostListenerTlsOutput
 	return pulumi.ToOutputWithContext(ctx, i).(IngressGatewayHostListenerTlsOutput)
 }
 
-func (i IngressGatewayHostListenerTlsArgs) ToOutput(ctx context.Context) pulumix.Output[IngressGatewayHostListenerTls] {
-	return pulumix.Output[IngressGatewayHostListenerTls]{
-		OutputState: i.ToIngressGatewayHostListenerTlsOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i IngressGatewayHostListenerTlsArgs) ToIngressGatewayHostListenerTlsPtrOutput() IngressGatewayHostListenerTlsPtrOutput {
 	return i.ToIngressGatewayHostListenerTlsPtrOutputWithContext(context.Background())
 }
@@ -943,12 +816,6 @@ func (i *ingressGatewayHostListenerTlsPtrType) ToIngressGatewayHostListenerTlsPt
 	return pulumi.ToOutputWithContext(ctx, i).(IngressGatewayHostListenerTlsPtrOutput)
 }
 
-func (i *ingressGatewayHostListenerTlsPtrType) ToOutput(ctx context.Context) pulumix.Output[*IngressGatewayHostListenerTls] {
-	return pulumix.Output[*IngressGatewayHostListenerTls]{
-		OutputState: i.ToIngressGatewayHostListenerTlsPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type IngressGatewayHostListenerTlsOutput struct{ *pulumi.OutputState }
 
 func (IngressGatewayHostListenerTlsOutput) ElementType() reflect.Type {
@@ -971,12 +838,6 @@ func (o IngressGatewayHostListenerTlsOutput) ToIngressGatewayHostListenerTlsPtrO
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v IngressGatewayHostListenerTls) *IngressGatewayHostListenerTls {
 		return &v
 	}).(IngressGatewayHostListenerTlsPtrOutput)
-}
-
-func (o IngressGatewayHostListenerTlsOutput) ToOutput(ctx context.Context) pulumix.Output[IngressGatewayHostListenerTls] {
-	return pulumix.Output[IngressGatewayHostListenerTls]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Resource representing the TLS configuration used for validating client certificates.
@@ -1010,12 +871,6 @@ func (o IngressGatewayHostListenerTlsPtrOutput) ToIngressGatewayHostListenerTlsP
 
 func (o IngressGatewayHostListenerTlsPtrOutput) ToIngressGatewayHostListenerTlsPtrOutputWithContext(ctx context.Context) IngressGatewayHostListenerTlsPtrOutput {
 	return o
-}
-
-func (o IngressGatewayHostListenerTlsPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*IngressGatewayHostListenerTls] {
-	return pulumix.Output[*IngressGatewayHostListenerTls]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o IngressGatewayHostListenerTlsPtrOutput) Elem() IngressGatewayHostListenerTlsOutput {
@@ -1095,12 +950,6 @@ func (i IngressGatewayHostListenerTlsClientValidationArgs) ToIngressGatewayHostL
 	return pulumi.ToOutputWithContext(ctx, i).(IngressGatewayHostListenerTlsClientValidationOutput)
 }
 
-func (i IngressGatewayHostListenerTlsClientValidationArgs) ToOutput(ctx context.Context) pulumix.Output[IngressGatewayHostListenerTlsClientValidation] {
-	return pulumix.Output[IngressGatewayHostListenerTlsClientValidation]{
-		OutputState: i.ToIngressGatewayHostListenerTlsClientValidationOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i IngressGatewayHostListenerTlsClientValidationArgs) ToIngressGatewayHostListenerTlsClientValidationPtrOutput() IngressGatewayHostListenerTlsClientValidationPtrOutput {
 	return i.ToIngressGatewayHostListenerTlsClientValidationPtrOutputWithContext(context.Background())
 }
@@ -1142,12 +991,6 @@ func (i *ingressGatewayHostListenerTlsClientValidationPtrType) ToIngressGatewayH
 	return pulumi.ToOutputWithContext(ctx, i).(IngressGatewayHostListenerTlsClientValidationPtrOutput)
 }
 
-func (i *ingressGatewayHostListenerTlsClientValidationPtrType) ToOutput(ctx context.Context) pulumix.Output[*IngressGatewayHostListenerTlsClientValidation] {
-	return pulumix.Output[*IngressGatewayHostListenerTlsClientValidation]{
-		OutputState: i.ToIngressGatewayHostListenerTlsClientValidationPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type IngressGatewayHostListenerTlsClientValidationOutput struct{ *pulumi.OutputState }
 
 func (IngressGatewayHostListenerTlsClientValidationOutput) ElementType() reflect.Type {
@@ -1170,12 +1013,6 @@ func (o IngressGatewayHostListenerTlsClientValidationOutput) ToIngressGatewayHos
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v IngressGatewayHostListenerTlsClientValidation) *IngressGatewayHostListenerTlsClientValidation {
 		return &v
 	}).(IngressGatewayHostListenerTlsClientValidationPtrOutput)
-}
-
-func (o IngressGatewayHostListenerTlsClientValidationOutput) ToOutput(ctx context.Context) pulumix.Output[IngressGatewayHostListenerTlsClientValidation] {
-	return pulumix.Output[IngressGatewayHostListenerTlsClientValidation]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) A list of alternate names to verify the subject identity in the certificate presented by the client.
@@ -1202,12 +1039,6 @@ func (o IngressGatewayHostListenerTlsClientValidationPtrOutput) ToIngressGateway
 
 func (o IngressGatewayHostListenerTlsClientValidationPtrOutput) ToIngressGatewayHostListenerTlsClientValidationPtrOutputWithContext(ctx context.Context) IngressGatewayHostListenerTlsClientValidationPtrOutput {
 	return o
-}
-
-func (o IngressGatewayHostListenerTlsClientValidationPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*IngressGatewayHostListenerTlsClientValidation] {
-	return pulumix.Output[*IngressGatewayHostListenerTlsClientValidation]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o IngressGatewayHostListenerTlsClientValidationPtrOutput) Elem() IngressGatewayHostListenerTlsClientValidationOutput {
@@ -1281,12 +1112,6 @@ func (i IngressGatewayHostListenerTlsClientValidationTrustedCaBundleArgs) ToIngr
 	return pulumi.ToOutputWithContext(ctx, i).(IngressGatewayHostListenerTlsClientValidationTrustedCaBundleOutput)
 }
 
-func (i IngressGatewayHostListenerTlsClientValidationTrustedCaBundleArgs) ToOutput(ctx context.Context) pulumix.Output[IngressGatewayHostListenerTlsClientValidationTrustedCaBundle] {
-	return pulumix.Output[IngressGatewayHostListenerTlsClientValidationTrustedCaBundle]{
-		OutputState: i.ToIngressGatewayHostListenerTlsClientValidationTrustedCaBundleOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i IngressGatewayHostListenerTlsClientValidationTrustedCaBundleArgs) ToIngressGatewayHostListenerTlsClientValidationTrustedCaBundlePtrOutput() IngressGatewayHostListenerTlsClientValidationTrustedCaBundlePtrOutput {
 	return i.ToIngressGatewayHostListenerTlsClientValidationTrustedCaBundlePtrOutputWithContext(context.Background())
 }
@@ -1328,12 +1153,6 @@ func (i *ingressGatewayHostListenerTlsClientValidationTrustedCaBundlePtrType) To
 	return pulumi.ToOutputWithContext(ctx, i).(IngressGatewayHostListenerTlsClientValidationTrustedCaBundlePtrOutput)
 }
 
-func (i *ingressGatewayHostListenerTlsClientValidationTrustedCaBundlePtrType) ToOutput(ctx context.Context) pulumix.Output[*IngressGatewayHostListenerTlsClientValidationTrustedCaBundle] {
-	return pulumix.Output[*IngressGatewayHostListenerTlsClientValidationTrustedCaBundle]{
-		OutputState: i.ToIngressGatewayHostListenerTlsClientValidationTrustedCaBundlePtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type IngressGatewayHostListenerTlsClientValidationTrustedCaBundleOutput struct{ *pulumi.OutputState }
 
 func (IngressGatewayHostListenerTlsClientValidationTrustedCaBundleOutput) ElementType() reflect.Type {
@@ -1356,12 +1175,6 @@ func (o IngressGatewayHostListenerTlsClientValidationTrustedCaBundleOutput) ToIn
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v IngressGatewayHostListenerTlsClientValidationTrustedCaBundle) *IngressGatewayHostListenerTlsClientValidationTrustedCaBundle {
 		return &v
 	}).(IngressGatewayHostListenerTlsClientValidationTrustedCaBundlePtrOutput)
-}
-
-func (o IngressGatewayHostListenerTlsClientValidationTrustedCaBundleOutput) ToOutput(ctx context.Context) pulumix.Output[IngressGatewayHostListenerTlsClientValidationTrustedCaBundle] {
-	return pulumix.Output[IngressGatewayHostListenerTlsClientValidationTrustedCaBundle]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The OCID of the CA Bundle resource.
@@ -1391,12 +1204,6 @@ func (o IngressGatewayHostListenerTlsClientValidationTrustedCaBundlePtrOutput) T
 
 func (o IngressGatewayHostListenerTlsClientValidationTrustedCaBundlePtrOutput) ToIngressGatewayHostListenerTlsClientValidationTrustedCaBundlePtrOutputWithContext(ctx context.Context) IngressGatewayHostListenerTlsClientValidationTrustedCaBundlePtrOutput {
 	return o
-}
-
-func (o IngressGatewayHostListenerTlsClientValidationTrustedCaBundlePtrOutput) ToOutput(ctx context.Context) pulumix.Output[*IngressGatewayHostListenerTlsClientValidationTrustedCaBundle] {
-	return pulumix.Output[*IngressGatewayHostListenerTlsClientValidationTrustedCaBundle]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o IngressGatewayHostListenerTlsClientValidationTrustedCaBundlePtrOutput) Elem() IngressGatewayHostListenerTlsClientValidationTrustedCaBundleOutput {
@@ -1480,12 +1287,6 @@ func (i IngressGatewayHostListenerTlsServerCertificateArgs) ToIngressGatewayHost
 	return pulumi.ToOutputWithContext(ctx, i).(IngressGatewayHostListenerTlsServerCertificateOutput)
 }
 
-func (i IngressGatewayHostListenerTlsServerCertificateArgs) ToOutput(ctx context.Context) pulumix.Output[IngressGatewayHostListenerTlsServerCertificate] {
-	return pulumix.Output[IngressGatewayHostListenerTlsServerCertificate]{
-		OutputState: i.ToIngressGatewayHostListenerTlsServerCertificateOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i IngressGatewayHostListenerTlsServerCertificateArgs) ToIngressGatewayHostListenerTlsServerCertificatePtrOutput() IngressGatewayHostListenerTlsServerCertificatePtrOutput {
 	return i.ToIngressGatewayHostListenerTlsServerCertificatePtrOutputWithContext(context.Background())
 }
@@ -1527,12 +1328,6 @@ func (i *ingressGatewayHostListenerTlsServerCertificatePtrType) ToIngressGateway
 	return pulumi.ToOutputWithContext(ctx, i).(IngressGatewayHostListenerTlsServerCertificatePtrOutput)
 }
 
-func (i *ingressGatewayHostListenerTlsServerCertificatePtrType) ToOutput(ctx context.Context) pulumix.Output[*IngressGatewayHostListenerTlsServerCertificate] {
-	return pulumix.Output[*IngressGatewayHostListenerTlsServerCertificate]{
-		OutputState: i.ToIngressGatewayHostListenerTlsServerCertificatePtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type IngressGatewayHostListenerTlsServerCertificateOutput struct{ *pulumi.OutputState }
 
 func (IngressGatewayHostListenerTlsServerCertificateOutput) ElementType() reflect.Type {
@@ -1555,12 +1350,6 @@ func (o IngressGatewayHostListenerTlsServerCertificateOutput) ToIngressGatewayHo
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v IngressGatewayHostListenerTlsServerCertificate) *IngressGatewayHostListenerTlsServerCertificate {
 		return &v
 	}).(IngressGatewayHostListenerTlsServerCertificatePtrOutput)
-}
-
-func (o IngressGatewayHostListenerTlsServerCertificateOutput) ToOutput(ctx context.Context) pulumix.Output[IngressGatewayHostListenerTlsServerCertificate] {
-	return pulumix.Output[IngressGatewayHostListenerTlsServerCertificate]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The OCID of the leaf certificate resource.
@@ -1590,12 +1379,6 @@ func (o IngressGatewayHostListenerTlsServerCertificatePtrOutput) ToIngressGatewa
 
 func (o IngressGatewayHostListenerTlsServerCertificatePtrOutput) ToIngressGatewayHostListenerTlsServerCertificatePtrOutputWithContext(ctx context.Context) IngressGatewayHostListenerTlsServerCertificatePtrOutput {
 	return o
-}
-
-func (o IngressGatewayHostListenerTlsServerCertificatePtrOutput) ToOutput(ctx context.Context) pulumix.Output[*IngressGatewayHostListenerTlsServerCertificate] {
-	return pulumix.Output[*IngressGatewayHostListenerTlsServerCertificate]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o IngressGatewayHostListenerTlsServerCertificatePtrOutput) Elem() IngressGatewayHostListenerTlsServerCertificateOutput {
@@ -1675,12 +1458,6 @@ func (i IngressGatewayMtlsArgs) ToIngressGatewayMtlsOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(IngressGatewayMtlsOutput)
 }
 
-func (i IngressGatewayMtlsArgs) ToOutput(ctx context.Context) pulumix.Output[IngressGatewayMtls] {
-	return pulumix.Output[IngressGatewayMtls]{
-		OutputState: i.ToIngressGatewayMtlsOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i IngressGatewayMtlsArgs) ToIngressGatewayMtlsPtrOutput() IngressGatewayMtlsPtrOutput {
 	return i.ToIngressGatewayMtlsPtrOutputWithContext(context.Background())
 }
@@ -1722,12 +1499,6 @@ func (i *ingressGatewayMtlsPtrType) ToIngressGatewayMtlsPtrOutputWithContext(ctx
 	return pulumi.ToOutputWithContext(ctx, i).(IngressGatewayMtlsPtrOutput)
 }
 
-func (i *ingressGatewayMtlsPtrType) ToOutput(ctx context.Context) pulumix.Output[*IngressGatewayMtls] {
-	return pulumix.Output[*IngressGatewayMtls]{
-		OutputState: i.ToIngressGatewayMtlsPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type IngressGatewayMtlsOutput struct{ *pulumi.OutputState }
 
 func (IngressGatewayMtlsOutput) ElementType() reflect.Type {
@@ -1752,12 +1523,6 @@ func (o IngressGatewayMtlsOutput) ToIngressGatewayMtlsPtrOutputWithContext(ctx c
 	}).(IngressGatewayMtlsPtrOutput)
 }
 
-func (o IngressGatewayMtlsOutput) ToOutput(ctx context.Context) pulumix.Output[IngressGatewayMtls] {
-	return pulumix.Output[IngressGatewayMtls]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) The OCID of the leaf certificate resource.
 func (o IngressGatewayMtlsOutput) CertificateId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v IngressGatewayMtls) *string { return v.CertificateId }).(pulumi.StringPtrOutput)
@@ -1780,12 +1545,6 @@ func (o IngressGatewayMtlsPtrOutput) ToIngressGatewayMtlsPtrOutput() IngressGate
 
 func (o IngressGatewayMtlsPtrOutput) ToIngressGatewayMtlsPtrOutputWithContext(ctx context.Context) IngressGatewayMtlsPtrOutput {
 	return o
-}
-
-func (o IngressGatewayMtlsPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*IngressGatewayMtls] {
-	return pulumix.Output[*IngressGatewayMtls]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o IngressGatewayMtlsPtrOutput) Elem() IngressGatewayMtlsOutput {
@@ -1889,12 +1648,6 @@ func (i IngressGatewayRouteTableRouteRuleArgs) ToIngressGatewayRouteTableRouteRu
 	return pulumi.ToOutputWithContext(ctx, i).(IngressGatewayRouteTableRouteRuleOutput)
 }
 
-func (i IngressGatewayRouteTableRouteRuleArgs) ToOutput(ctx context.Context) pulumix.Output[IngressGatewayRouteTableRouteRule] {
-	return pulumix.Output[IngressGatewayRouteTableRouteRule]{
-		OutputState: i.ToIngressGatewayRouteTableRouteRuleOutputWithContext(ctx).OutputState,
-	}
-}
-
 // IngressGatewayRouteTableRouteRuleArrayInput is an input type that accepts IngressGatewayRouteTableRouteRuleArray and IngressGatewayRouteTableRouteRuleArrayOutput values.
 // You can construct a concrete instance of `IngressGatewayRouteTableRouteRuleArrayInput` via:
 //
@@ -1920,12 +1673,6 @@ func (i IngressGatewayRouteTableRouteRuleArray) ToIngressGatewayRouteTableRouteR
 	return pulumi.ToOutputWithContext(ctx, i).(IngressGatewayRouteTableRouteRuleArrayOutput)
 }
 
-func (i IngressGatewayRouteTableRouteRuleArray) ToOutput(ctx context.Context) pulumix.Output[[]IngressGatewayRouteTableRouteRule] {
-	return pulumix.Output[[]IngressGatewayRouteTableRouteRule]{
-		OutputState: i.ToIngressGatewayRouteTableRouteRuleArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type IngressGatewayRouteTableRouteRuleOutput struct{ *pulumi.OutputState }
 
 func (IngressGatewayRouteTableRouteRuleOutput) ElementType() reflect.Type {
@@ -1938,12 +1685,6 @@ func (o IngressGatewayRouteTableRouteRuleOutput) ToIngressGatewayRouteTableRoute
 
 func (o IngressGatewayRouteTableRouteRuleOutput) ToIngressGatewayRouteTableRouteRuleOutputWithContext(ctx context.Context) IngressGatewayRouteTableRouteRuleOutput {
 	return o
-}
-
-func (o IngressGatewayRouteTableRouteRuleOutput) ToOutput(ctx context.Context) pulumix.Output[IngressGatewayRouteTableRouteRule] {
-	return pulumix.Output[IngressGatewayRouteTableRouteRule]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The destination of the request.
@@ -2012,12 +1753,6 @@ func (o IngressGatewayRouteTableRouteRuleArrayOutput) ToIngressGatewayRouteTable
 	return o
 }
 
-func (o IngressGatewayRouteTableRouteRuleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]IngressGatewayRouteTableRouteRule] {
-	return pulumix.Output[[]IngressGatewayRouteTableRouteRule]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o IngressGatewayRouteTableRouteRuleArrayOutput) Index(i pulumi.IntInput) IngressGatewayRouteTableRouteRuleOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) IngressGatewayRouteTableRouteRule {
 		return vs[0].([]IngressGatewayRouteTableRouteRule)[vs[1].(int)]
@@ -2065,12 +1800,6 @@ func (i IngressGatewayRouteTableRouteRuleDestinationArgs) ToIngressGatewayRouteT
 	return pulumi.ToOutputWithContext(ctx, i).(IngressGatewayRouteTableRouteRuleDestinationOutput)
 }
 
-func (i IngressGatewayRouteTableRouteRuleDestinationArgs) ToOutput(ctx context.Context) pulumix.Output[IngressGatewayRouteTableRouteRuleDestination] {
-	return pulumix.Output[IngressGatewayRouteTableRouteRuleDestination]{
-		OutputState: i.ToIngressGatewayRouteTableRouteRuleDestinationOutputWithContext(ctx).OutputState,
-	}
-}
-
 // IngressGatewayRouteTableRouteRuleDestinationArrayInput is an input type that accepts IngressGatewayRouteTableRouteRuleDestinationArray and IngressGatewayRouteTableRouteRuleDestinationArrayOutput values.
 // You can construct a concrete instance of `IngressGatewayRouteTableRouteRuleDestinationArrayInput` via:
 //
@@ -2096,12 +1825,6 @@ func (i IngressGatewayRouteTableRouteRuleDestinationArray) ToIngressGatewayRoute
 	return pulumi.ToOutputWithContext(ctx, i).(IngressGatewayRouteTableRouteRuleDestinationArrayOutput)
 }
 
-func (i IngressGatewayRouteTableRouteRuleDestinationArray) ToOutput(ctx context.Context) pulumix.Output[[]IngressGatewayRouteTableRouteRuleDestination] {
-	return pulumix.Output[[]IngressGatewayRouteTableRouteRuleDestination]{
-		OutputState: i.ToIngressGatewayRouteTableRouteRuleDestinationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type IngressGatewayRouteTableRouteRuleDestinationOutput struct{ *pulumi.OutputState }
 
 func (IngressGatewayRouteTableRouteRuleDestinationOutput) ElementType() reflect.Type {
@@ -2114,12 +1837,6 @@ func (o IngressGatewayRouteTableRouteRuleDestinationOutput) ToIngressGatewayRout
 
 func (o IngressGatewayRouteTableRouteRuleDestinationOutput) ToIngressGatewayRouteTableRouteRuleDestinationOutputWithContext(ctx context.Context) IngressGatewayRouteTableRouteRuleDestinationOutput {
 	return o
-}
-
-func (o IngressGatewayRouteTableRouteRuleDestinationOutput) ToOutput(ctx context.Context) pulumix.Output[IngressGatewayRouteTableRouteRuleDestination] {
-	return pulumix.Output[IngressGatewayRouteTableRouteRuleDestination]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The port of the ingress gateway host listener. Leave empty to match all ports for the host.
@@ -2149,12 +1866,6 @@ func (o IngressGatewayRouteTableRouteRuleDestinationArrayOutput) ToIngressGatewa
 
 func (o IngressGatewayRouteTableRouteRuleDestinationArrayOutput) ToIngressGatewayRouteTableRouteRuleDestinationArrayOutputWithContext(ctx context.Context) IngressGatewayRouteTableRouteRuleDestinationArrayOutput {
 	return o
-}
-
-func (o IngressGatewayRouteTableRouteRuleDestinationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]IngressGatewayRouteTableRouteRuleDestination] {
-	return pulumix.Output[[]IngressGatewayRouteTableRouteRuleDestination]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o IngressGatewayRouteTableRouteRuleDestinationArrayOutput) Index(i pulumi.IntInput) IngressGatewayRouteTableRouteRuleDestinationOutput {
@@ -2200,12 +1911,6 @@ func (i IngressGatewayRouteTableRouteRuleIngressGatewayHostArgs) ToIngressGatewa
 	return pulumi.ToOutputWithContext(ctx, i).(IngressGatewayRouteTableRouteRuleIngressGatewayHostOutput)
 }
 
-func (i IngressGatewayRouteTableRouteRuleIngressGatewayHostArgs) ToOutput(ctx context.Context) pulumix.Output[IngressGatewayRouteTableRouteRuleIngressGatewayHost] {
-	return pulumix.Output[IngressGatewayRouteTableRouteRuleIngressGatewayHost]{
-		OutputState: i.ToIngressGatewayRouteTableRouteRuleIngressGatewayHostOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i IngressGatewayRouteTableRouteRuleIngressGatewayHostArgs) ToIngressGatewayRouteTableRouteRuleIngressGatewayHostPtrOutput() IngressGatewayRouteTableRouteRuleIngressGatewayHostPtrOutput {
 	return i.ToIngressGatewayRouteTableRouteRuleIngressGatewayHostPtrOutputWithContext(context.Background())
 }
@@ -2247,12 +1952,6 @@ func (i *ingressGatewayRouteTableRouteRuleIngressGatewayHostPtrType) ToIngressGa
 	return pulumi.ToOutputWithContext(ctx, i).(IngressGatewayRouteTableRouteRuleIngressGatewayHostPtrOutput)
 }
 
-func (i *ingressGatewayRouteTableRouteRuleIngressGatewayHostPtrType) ToOutput(ctx context.Context) pulumix.Output[*IngressGatewayRouteTableRouteRuleIngressGatewayHost] {
-	return pulumix.Output[*IngressGatewayRouteTableRouteRuleIngressGatewayHost]{
-		OutputState: i.ToIngressGatewayRouteTableRouteRuleIngressGatewayHostPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type IngressGatewayRouteTableRouteRuleIngressGatewayHostOutput struct{ *pulumi.OutputState }
 
 func (IngressGatewayRouteTableRouteRuleIngressGatewayHostOutput) ElementType() reflect.Type {
@@ -2277,12 +1976,6 @@ func (o IngressGatewayRouteTableRouteRuleIngressGatewayHostOutput) ToIngressGate
 	}).(IngressGatewayRouteTableRouteRuleIngressGatewayHostPtrOutput)
 }
 
-func (o IngressGatewayRouteTableRouteRuleIngressGatewayHostOutput) ToOutput(ctx context.Context) pulumix.Output[IngressGatewayRouteTableRouteRuleIngressGatewayHost] {
-	return pulumix.Output[IngressGatewayRouteTableRouteRuleIngressGatewayHost]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) Name of the ingress gateway host that this route should apply to.
 func (o IngressGatewayRouteTableRouteRuleIngressGatewayHostOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v IngressGatewayRouteTableRouteRuleIngressGatewayHost) string { return v.Name }).(pulumi.StringOutput)
@@ -2305,12 +1998,6 @@ func (o IngressGatewayRouteTableRouteRuleIngressGatewayHostPtrOutput) ToIngressG
 
 func (o IngressGatewayRouteTableRouteRuleIngressGatewayHostPtrOutput) ToIngressGatewayRouteTableRouteRuleIngressGatewayHostPtrOutputWithContext(ctx context.Context) IngressGatewayRouteTableRouteRuleIngressGatewayHostPtrOutput {
 	return o
-}
-
-func (o IngressGatewayRouteTableRouteRuleIngressGatewayHostPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*IngressGatewayRouteTableRouteRuleIngressGatewayHost] {
-	return pulumix.Output[*IngressGatewayRouteTableRouteRuleIngressGatewayHost]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o IngressGatewayRouteTableRouteRuleIngressGatewayHostPtrOutput) Elem() IngressGatewayRouteTableRouteRuleIngressGatewayHostOutput {
@@ -2376,12 +2063,6 @@ func (i MeshCertificateAuthorityArgs) ToMeshCertificateAuthorityOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(MeshCertificateAuthorityOutput)
 }
 
-func (i MeshCertificateAuthorityArgs) ToOutput(ctx context.Context) pulumix.Output[MeshCertificateAuthority] {
-	return pulumix.Output[MeshCertificateAuthority]{
-		OutputState: i.ToMeshCertificateAuthorityOutputWithContext(ctx).OutputState,
-	}
-}
-
 // MeshCertificateAuthorityArrayInput is an input type that accepts MeshCertificateAuthorityArray and MeshCertificateAuthorityArrayOutput values.
 // You can construct a concrete instance of `MeshCertificateAuthorityArrayInput` via:
 //
@@ -2407,12 +2088,6 @@ func (i MeshCertificateAuthorityArray) ToMeshCertificateAuthorityArrayOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(MeshCertificateAuthorityArrayOutput)
 }
 
-func (i MeshCertificateAuthorityArray) ToOutput(ctx context.Context) pulumix.Output[[]MeshCertificateAuthority] {
-	return pulumix.Output[[]MeshCertificateAuthority]{
-		OutputState: i.ToMeshCertificateAuthorityArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type MeshCertificateAuthorityOutput struct{ *pulumi.OutputState }
 
 func (MeshCertificateAuthorityOutput) ElementType() reflect.Type {
@@ -2425,12 +2100,6 @@ func (o MeshCertificateAuthorityOutput) ToMeshCertificateAuthorityOutput() MeshC
 
 func (o MeshCertificateAuthorityOutput) ToMeshCertificateAuthorityOutputWithContext(ctx context.Context) MeshCertificateAuthorityOutput {
 	return o
-}
-
-func (o MeshCertificateAuthorityOutput) ToOutput(ctx context.Context) pulumix.Output[MeshCertificateAuthority] {
-	return pulumix.Output[MeshCertificateAuthority]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The OCID of the certificate authority resource.
@@ -2450,12 +2119,6 @@ func (o MeshCertificateAuthorityArrayOutput) ToMeshCertificateAuthorityArrayOutp
 
 func (o MeshCertificateAuthorityArrayOutput) ToMeshCertificateAuthorityArrayOutputWithContext(ctx context.Context) MeshCertificateAuthorityArrayOutput {
 	return o
-}
-
-func (o MeshCertificateAuthorityArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]MeshCertificateAuthority] {
-	return pulumix.Output[[]MeshCertificateAuthority]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o MeshCertificateAuthorityArrayOutput) Index(i pulumi.IntInput) MeshCertificateAuthorityOutput {
@@ -2503,12 +2166,6 @@ func (i MeshMtlsArgs) ToMeshMtlsOutputWithContext(ctx context.Context) MeshMtlsO
 	return pulumi.ToOutputWithContext(ctx, i).(MeshMtlsOutput)
 }
 
-func (i MeshMtlsArgs) ToOutput(ctx context.Context) pulumix.Output[MeshMtls] {
-	return pulumix.Output[MeshMtls]{
-		OutputState: i.ToMeshMtlsOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i MeshMtlsArgs) ToMeshMtlsPtrOutput() MeshMtlsPtrOutput {
 	return i.ToMeshMtlsPtrOutputWithContext(context.Background())
 }
@@ -2550,12 +2207,6 @@ func (i *meshMtlsPtrType) ToMeshMtlsPtrOutputWithContext(ctx context.Context) Me
 	return pulumi.ToOutputWithContext(ctx, i).(MeshMtlsPtrOutput)
 }
 
-func (i *meshMtlsPtrType) ToOutput(ctx context.Context) pulumix.Output[*MeshMtls] {
-	return pulumix.Output[*MeshMtls]{
-		OutputState: i.ToMeshMtlsPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type MeshMtlsOutput struct{ *pulumi.OutputState }
 
 func (MeshMtlsOutput) ElementType() reflect.Type {
@@ -2580,12 +2231,6 @@ func (o MeshMtlsOutput) ToMeshMtlsPtrOutputWithContext(ctx context.Context) Mesh
 	}).(MeshMtlsPtrOutput)
 }
 
-func (o MeshMtlsOutput) ToOutput(ctx context.Context) pulumix.Output[MeshMtls] {
-	return pulumix.Output[MeshMtls]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) DISABLED: No minimum virtual services within this mesh can use any mTLS authentication mode. PERMISSIVE: Virtual services within this mesh can use either PERMISSIVE or STRICT modes. STRICT: All virtual services within this mesh must use STRICT mode.
 //
 // ** IMPORTANT **
@@ -2606,12 +2251,6 @@ func (o MeshMtlsPtrOutput) ToMeshMtlsPtrOutput() MeshMtlsPtrOutput {
 
 func (o MeshMtlsPtrOutput) ToMeshMtlsPtrOutputWithContext(ctx context.Context) MeshMtlsPtrOutput {
 	return o
-}
-
-func (o MeshMtlsPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*MeshMtls] {
-	return pulumix.Output[*MeshMtls]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o MeshMtlsPtrOutput) Elem() MeshMtlsOutput {
@@ -2670,12 +2309,6 @@ func (i VirtualDeploymentAccessLoggingArgs) ToVirtualDeploymentAccessLoggingOutp
 	return pulumi.ToOutputWithContext(ctx, i).(VirtualDeploymentAccessLoggingOutput)
 }
 
-func (i VirtualDeploymentAccessLoggingArgs) ToOutput(ctx context.Context) pulumix.Output[VirtualDeploymentAccessLogging] {
-	return pulumix.Output[VirtualDeploymentAccessLogging]{
-		OutputState: i.ToVirtualDeploymentAccessLoggingOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i VirtualDeploymentAccessLoggingArgs) ToVirtualDeploymentAccessLoggingPtrOutput() VirtualDeploymentAccessLoggingPtrOutput {
 	return i.ToVirtualDeploymentAccessLoggingPtrOutputWithContext(context.Background())
 }
@@ -2717,12 +2350,6 @@ func (i *virtualDeploymentAccessLoggingPtrType) ToVirtualDeploymentAccessLogging
 	return pulumi.ToOutputWithContext(ctx, i).(VirtualDeploymentAccessLoggingPtrOutput)
 }
 
-func (i *virtualDeploymentAccessLoggingPtrType) ToOutput(ctx context.Context) pulumix.Output[*VirtualDeploymentAccessLogging] {
-	return pulumix.Output[*VirtualDeploymentAccessLogging]{
-		OutputState: i.ToVirtualDeploymentAccessLoggingPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type VirtualDeploymentAccessLoggingOutput struct{ *pulumi.OutputState }
 
 func (VirtualDeploymentAccessLoggingOutput) ElementType() reflect.Type {
@@ -2747,12 +2374,6 @@ func (o VirtualDeploymentAccessLoggingOutput) ToVirtualDeploymentAccessLoggingPt
 	}).(VirtualDeploymentAccessLoggingPtrOutput)
 }
 
-func (o VirtualDeploymentAccessLoggingOutput) ToOutput(ctx context.Context) pulumix.Output[VirtualDeploymentAccessLogging] {
-	return pulumix.Output[VirtualDeploymentAccessLogging]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) Determines if the logging configuration is enabled.
 func (o VirtualDeploymentAccessLoggingOutput) IsEnabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v VirtualDeploymentAccessLogging) *bool { return v.IsEnabled }).(pulumi.BoolPtrOutput)
@@ -2770,12 +2391,6 @@ func (o VirtualDeploymentAccessLoggingPtrOutput) ToVirtualDeploymentAccessLoggin
 
 func (o VirtualDeploymentAccessLoggingPtrOutput) ToVirtualDeploymentAccessLoggingPtrOutputWithContext(ctx context.Context) VirtualDeploymentAccessLoggingPtrOutput {
 	return o
-}
-
-func (o VirtualDeploymentAccessLoggingPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*VirtualDeploymentAccessLogging] {
-	return pulumix.Output[*VirtualDeploymentAccessLogging]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o VirtualDeploymentAccessLoggingPtrOutput) Elem() VirtualDeploymentAccessLoggingOutput {
@@ -2843,12 +2458,6 @@ func (i VirtualDeploymentListenerArgs) ToVirtualDeploymentListenerOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(VirtualDeploymentListenerOutput)
 }
 
-func (i VirtualDeploymentListenerArgs) ToOutput(ctx context.Context) pulumix.Output[VirtualDeploymentListener] {
-	return pulumix.Output[VirtualDeploymentListener]{
-		OutputState: i.ToVirtualDeploymentListenerOutputWithContext(ctx).OutputState,
-	}
-}
-
 // VirtualDeploymentListenerArrayInput is an input type that accepts VirtualDeploymentListenerArray and VirtualDeploymentListenerArrayOutput values.
 // You can construct a concrete instance of `VirtualDeploymentListenerArrayInput` via:
 //
@@ -2874,12 +2483,6 @@ func (i VirtualDeploymentListenerArray) ToVirtualDeploymentListenerArrayOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(VirtualDeploymentListenerArrayOutput)
 }
 
-func (i VirtualDeploymentListenerArray) ToOutput(ctx context.Context) pulumix.Output[[]VirtualDeploymentListener] {
-	return pulumix.Output[[]VirtualDeploymentListener]{
-		OutputState: i.ToVirtualDeploymentListenerArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type VirtualDeploymentListenerOutput struct{ *pulumi.OutputState }
 
 func (VirtualDeploymentListenerOutput) ElementType() reflect.Type {
@@ -2892,12 +2495,6 @@ func (o VirtualDeploymentListenerOutput) ToVirtualDeploymentListenerOutput() Vir
 
 func (o VirtualDeploymentListenerOutput) ToVirtualDeploymentListenerOutputWithContext(ctx context.Context) VirtualDeploymentListenerOutput {
 	return o
-}
-
-func (o VirtualDeploymentListenerOutput) ToOutput(ctx context.Context) pulumix.Output[VirtualDeploymentListener] {
-	return pulumix.Output[VirtualDeploymentListener]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The maximum duration in milliseconds for which the request's stream may be idle. The value 0 (zero) indicates that the timeout is disabled.
@@ -2932,12 +2529,6 @@ func (o VirtualDeploymentListenerArrayOutput) ToVirtualDeploymentListenerArrayOu
 
 func (o VirtualDeploymentListenerArrayOutput) ToVirtualDeploymentListenerArrayOutputWithContext(ctx context.Context) VirtualDeploymentListenerArrayOutput {
 	return o
-}
-
-func (o VirtualDeploymentListenerArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]VirtualDeploymentListener] {
-	return pulumix.Output[[]VirtualDeploymentListener]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o VirtualDeploymentListenerArrayOutput) Index(i pulumi.IntInput) VirtualDeploymentListenerOutput {
@@ -2983,12 +2574,6 @@ func (i VirtualDeploymentServiceDiscoveryArgs) ToVirtualDeploymentServiceDiscove
 	return pulumi.ToOutputWithContext(ctx, i).(VirtualDeploymentServiceDiscoveryOutput)
 }
 
-func (i VirtualDeploymentServiceDiscoveryArgs) ToOutput(ctx context.Context) pulumix.Output[VirtualDeploymentServiceDiscovery] {
-	return pulumix.Output[VirtualDeploymentServiceDiscovery]{
-		OutputState: i.ToVirtualDeploymentServiceDiscoveryOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i VirtualDeploymentServiceDiscoveryArgs) ToVirtualDeploymentServiceDiscoveryPtrOutput() VirtualDeploymentServiceDiscoveryPtrOutput {
 	return i.ToVirtualDeploymentServiceDiscoveryPtrOutputWithContext(context.Background())
 }
@@ -3030,12 +2615,6 @@ func (i *virtualDeploymentServiceDiscoveryPtrType) ToVirtualDeploymentServiceDis
 	return pulumi.ToOutputWithContext(ctx, i).(VirtualDeploymentServiceDiscoveryPtrOutput)
 }
 
-func (i *virtualDeploymentServiceDiscoveryPtrType) ToOutput(ctx context.Context) pulumix.Output[*VirtualDeploymentServiceDiscovery] {
-	return pulumix.Output[*VirtualDeploymentServiceDiscovery]{
-		OutputState: i.ToVirtualDeploymentServiceDiscoveryPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type VirtualDeploymentServiceDiscoveryOutput struct{ *pulumi.OutputState }
 
 func (VirtualDeploymentServiceDiscoveryOutput) ElementType() reflect.Type {
@@ -3060,12 +2639,6 @@ func (o VirtualDeploymentServiceDiscoveryOutput) ToVirtualDeploymentServiceDisco
 	}).(VirtualDeploymentServiceDiscoveryPtrOutput)
 }
 
-func (o VirtualDeploymentServiceDiscoveryOutput) ToOutput(ctx context.Context) pulumix.Output[VirtualDeploymentServiceDiscovery] {
-	return pulumix.Output[VirtualDeploymentServiceDiscovery]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) The hostname of the virtual deployments.
 func (o VirtualDeploymentServiceDiscoveryOutput) Hostname() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v VirtualDeploymentServiceDiscovery) *string { return v.Hostname }).(pulumi.StringPtrOutput)
@@ -3088,12 +2661,6 @@ func (o VirtualDeploymentServiceDiscoveryPtrOutput) ToVirtualDeploymentServiceDi
 
 func (o VirtualDeploymentServiceDiscoveryPtrOutput) ToVirtualDeploymentServiceDiscoveryPtrOutputWithContext(ctx context.Context) VirtualDeploymentServiceDiscoveryPtrOutput {
 	return o
-}
-
-func (o VirtualDeploymentServiceDiscoveryPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*VirtualDeploymentServiceDiscovery] {
-	return pulumix.Output[*VirtualDeploymentServiceDiscovery]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o VirtualDeploymentServiceDiscoveryPtrOutput) Elem() VirtualDeploymentServiceDiscoveryOutput {
@@ -3159,12 +2726,6 @@ func (i VirtualServiceDefaultRoutingPolicyArgs) ToVirtualServiceDefaultRoutingPo
 	return pulumi.ToOutputWithContext(ctx, i).(VirtualServiceDefaultRoutingPolicyOutput)
 }
 
-func (i VirtualServiceDefaultRoutingPolicyArgs) ToOutput(ctx context.Context) pulumix.Output[VirtualServiceDefaultRoutingPolicy] {
-	return pulumix.Output[VirtualServiceDefaultRoutingPolicy]{
-		OutputState: i.ToVirtualServiceDefaultRoutingPolicyOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i VirtualServiceDefaultRoutingPolicyArgs) ToVirtualServiceDefaultRoutingPolicyPtrOutput() VirtualServiceDefaultRoutingPolicyPtrOutput {
 	return i.ToVirtualServiceDefaultRoutingPolicyPtrOutputWithContext(context.Background())
 }
@@ -3206,12 +2767,6 @@ func (i *virtualServiceDefaultRoutingPolicyPtrType) ToVirtualServiceDefaultRouti
 	return pulumi.ToOutputWithContext(ctx, i).(VirtualServiceDefaultRoutingPolicyPtrOutput)
 }
 
-func (i *virtualServiceDefaultRoutingPolicyPtrType) ToOutput(ctx context.Context) pulumix.Output[*VirtualServiceDefaultRoutingPolicy] {
-	return pulumix.Output[*VirtualServiceDefaultRoutingPolicy]{
-		OutputState: i.ToVirtualServiceDefaultRoutingPolicyPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type VirtualServiceDefaultRoutingPolicyOutput struct{ *pulumi.OutputState }
 
 func (VirtualServiceDefaultRoutingPolicyOutput) ElementType() reflect.Type {
@@ -3236,12 +2791,6 @@ func (o VirtualServiceDefaultRoutingPolicyOutput) ToVirtualServiceDefaultRouting
 	}).(VirtualServiceDefaultRoutingPolicyPtrOutput)
 }
 
-func (o VirtualServiceDefaultRoutingPolicyOutput) ToOutput(ctx context.Context) pulumix.Output[VirtualServiceDefaultRoutingPolicy] {
-	return pulumix.Output[VirtualServiceDefaultRoutingPolicy]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) Type of the virtual service routing policy.
 func (o VirtualServiceDefaultRoutingPolicyOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v VirtualServiceDefaultRoutingPolicy) string { return v.Type }).(pulumi.StringOutput)
@@ -3259,12 +2808,6 @@ func (o VirtualServiceDefaultRoutingPolicyPtrOutput) ToVirtualServiceDefaultRout
 
 func (o VirtualServiceDefaultRoutingPolicyPtrOutput) ToVirtualServiceDefaultRoutingPolicyPtrOutputWithContext(ctx context.Context) VirtualServiceDefaultRoutingPolicyPtrOutput {
 	return o
-}
-
-func (o VirtualServiceDefaultRoutingPolicyPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*VirtualServiceDefaultRoutingPolicy] {
-	return pulumix.Output[*VirtualServiceDefaultRoutingPolicy]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o VirtualServiceDefaultRoutingPolicyPtrOutput) Elem() VirtualServiceDefaultRoutingPolicyOutput {
@@ -3328,12 +2871,6 @@ func (i VirtualServiceMtlsArgs) ToVirtualServiceMtlsOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(VirtualServiceMtlsOutput)
 }
 
-func (i VirtualServiceMtlsArgs) ToOutput(ctx context.Context) pulumix.Output[VirtualServiceMtls] {
-	return pulumix.Output[VirtualServiceMtls]{
-		OutputState: i.ToVirtualServiceMtlsOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i VirtualServiceMtlsArgs) ToVirtualServiceMtlsPtrOutput() VirtualServiceMtlsPtrOutput {
 	return i.ToVirtualServiceMtlsPtrOutputWithContext(context.Background())
 }
@@ -3375,12 +2912,6 @@ func (i *virtualServiceMtlsPtrType) ToVirtualServiceMtlsPtrOutputWithContext(ctx
 	return pulumi.ToOutputWithContext(ctx, i).(VirtualServiceMtlsPtrOutput)
 }
 
-func (i *virtualServiceMtlsPtrType) ToOutput(ctx context.Context) pulumix.Output[*VirtualServiceMtls] {
-	return pulumix.Output[*VirtualServiceMtls]{
-		OutputState: i.ToVirtualServiceMtlsPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type VirtualServiceMtlsOutput struct{ *pulumi.OutputState }
 
 func (VirtualServiceMtlsOutput) ElementType() reflect.Type {
@@ -3403,12 +2934,6 @@ func (o VirtualServiceMtlsOutput) ToVirtualServiceMtlsPtrOutputWithContext(ctx c
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v VirtualServiceMtls) *VirtualServiceMtls {
 		return &v
 	}).(VirtualServiceMtlsPtrOutput)
-}
-
-func (o VirtualServiceMtlsOutput) ToOutput(ctx context.Context) pulumix.Output[VirtualServiceMtls] {
-	return pulumix.Output[VirtualServiceMtls]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The OCID of the certificate resource that will be used for mTLS authentication with other virtual services in the mesh.
@@ -3438,12 +2963,6 @@ func (o VirtualServiceMtlsPtrOutput) ToVirtualServiceMtlsPtrOutput() VirtualServ
 
 func (o VirtualServiceMtlsPtrOutput) ToVirtualServiceMtlsPtrOutputWithContext(ctx context.Context) VirtualServiceMtlsPtrOutput {
 	return o
-}
-
-func (o VirtualServiceMtlsPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*VirtualServiceMtls] {
-	return pulumix.Output[*VirtualServiceMtls]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o VirtualServiceMtlsPtrOutput) Elem() VirtualServiceMtlsOutput {
@@ -3539,12 +3058,6 @@ func (i VirtualServiceRouteTableRouteRuleArgs) ToVirtualServiceRouteTableRouteRu
 	return pulumi.ToOutputWithContext(ctx, i).(VirtualServiceRouteTableRouteRuleOutput)
 }
 
-func (i VirtualServiceRouteTableRouteRuleArgs) ToOutput(ctx context.Context) pulumix.Output[VirtualServiceRouteTableRouteRule] {
-	return pulumix.Output[VirtualServiceRouteTableRouteRule]{
-		OutputState: i.ToVirtualServiceRouteTableRouteRuleOutputWithContext(ctx).OutputState,
-	}
-}
-
 // VirtualServiceRouteTableRouteRuleArrayInput is an input type that accepts VirtualServiceRouteTableRouteRuleArray and VirtualServiceRouteTableRouteRuleArrayOutput values.
 // You can construct a concrete instance of `VirtualServiceRouteTableRouteRuleArrayInput` via:
 //
@@ -3570,12 +3083,6 @@ func (i VirtualServiceRouteTableRouteRuleArray) ToVirtualServiceRouteTableRouteR
 	return pulumi.ToOutputWithContext(ctx, i).(VirtualServiceRouteTableRouteRuleArrayOutput)
 }
 
-func (i VirtualServiceRouteTableRouteRuleArray) ToOutput(ctx context.Context) pulumix.Output[[]VirtualServiceRouteTableRouteRule] {
-	return pulumix.Output[[]VirtualServiceRouteTableRouteRule]{
-		OutputState: i.ToVirtualServiceRouteTableRouteRuleArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type VirtualServiceRouteTableRouteRuleOutput struct{ *pulumi.OutputState }
 
 func (VirtualServiceRouteTableRouteRuleOutput) ElementType() reflect.Type {
@@ -3588,12 +3095,6 @@ func (o VirtualServiceRouteTableRouteRuleOutput) ToVirtualServiceRouteTableRoute
 
 func (o VirtualServiceRouteTableRouteRuleOutput) ToVirtualServiceRouteTableRouteRuleOutputWithContext(ctx context.Context) VirtualServiceRouteTableRouteRuleOutput {
 	return o
-}
-
-func (o VirtualServiceRouteTableRouteRuleOutput) ToOutput(ctx context.Context) pulumix.Output[VirtualServiceRouteTableRouteRule] {
-	return pulumix.Output[VirtualServiceRouteTableRouteRule]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The destination of the request.
@@ -3640,12 +3141,6 @@ func (o VirtualServiceRouteTableRouteRuleArrayOutput) ToVirtualServiceRouteTable
 
 func (o VirtualServiceRouteTableRouteRuleArrayOutput) ToVirtualServiceRouteTableRouteRuleArrayOutputWithContext(ctx context.Context) VirtualServiceRouteTableRouteRuleArrayOutput {
 	return o
-}
-
-func (o VirtualServiceRouteTableRouteRuleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]VirtualServiceRouteTableRouteRule] {
-	return pulumix.Output[[]VirtualServiceRouteTableRouteRule]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o VirtualServiceRouteTableRouteRuleArrayOutput) Index(i pulumi.IntInput) VirtualServiceRouteTableRouteRuleOutput {
@@ -3695,12 +3190,6 @@ func (i VirtualServiceRouteTableRouteRuleDestinationArgs) ToVirtualServiceRouteT
 	return pulumi.ToOutputWithContext(ctx, i).(VirtualServiceRouteTableRouteRuleDestinationOutput)
 }
 
-func (i VirtualServiceRouteTableRouteRuleDestinationArgs) ToOutput(ctx context.Context) pulumix.Output[VirtualServiceRouteTableRouteRuleDestination] {
-	return pulumix.Output[VirtualServiceRouteTableRouteRuleDestination]{
-		OutputState: i.ToVirtualServiceRouteTableRouteRuleDestinationOutputWithContext(ctx).OutputState,
-	}
-}
-
 // VirtualServiceRouteTableRouteRuleDestinationArrayInput is an input type that accepts VirtualServiceRouteTableRouteRuleDestinationArray and VirtualServiceRouteTableRouteRuleDestinationArrayOutput values.
 // You can construct a concrete instance of `VirtualServiceRouteTableRouteRuleDestinationArrayInput` via:
 //
@@ -3726,12 +3215,6 @@ func (i VirtualServiceRouteTableRouteRuleDestinationArray) ToVirtualServiceRoute
 	return pulumi.ToOutputWithContext(ctx, i).(VirtualServiceRouteTableRouteRuleDestinationArrayOutput)
 }
 
-func (i VirtualServiceRouteTableRouteRuleDestinationArray) ToOutput(ctx context.Context) pulumix.Output[[]VirtualServiceRouteTableRouteRuleDestination] {
-	return pulumix.Output[[]VirtualServiceRouteTableRouteRuleDestination]{
-		OutputState: i.ToVirtualServiceRouteTableRouteRuleDestinationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type VirtualServiceRouteTableRouteRuleDestinationOutput struct{ *pulumi.OutputState }
 
 func (VirtualServiceRouteTableRouteRuleDestinationOutput) ElementType() reflect.Type {
@@ -3744,12 +3227,6 @@ func (o VirtualServiceRouteTableRouteRuleDestinationOutput) ToVirtualServiceRout
 
 func (o VirtualServiceRouteTableRouteRuleDestinationOutput) ToVirtualServiceRouteTableRouteRuleDestinationOutputWithContext(ctx context.Context) VirtualServiceRouteTableRouteRuleDestinationOutput {
 	return o
-}
-
-func (o VirtualServiceRouteTableRouteRuleDestinationOutput) ToOutput(ctx context.Context) pulumix.Output[VirtualServiceRouteTableRouteRuleDestination] {
-	return pulumix.Output[VirtualServiceRouteTableRouteRuleDestination]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Port on virtual deployment to target. If port is missing, the rule will target all ports on the virtual deployment.
@@ -3779,12 +3256,6 @@ func (o VirtualServiceRouteTableRouteRuleDestinationArrayOutput) ToVirtualServic
 
 func (o VirtualServiceRouteTableRouteRuleDestinationArrayOutput) ToVirtualServiceRouteTableRouteRuleDestinationArrayOutputWithContext(ctx context.Context) VirtualServiceRouteTableRouteRuleDestinationArrayOutput {
 	return o
-}
-
-func (o VirtualServiceRouteTableRouteRuleDestinationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]VirtualServiceRouteTableRouteRuleDestination] {
-	return pulumix.Output[[]VirtualServiceRouteTableRouteRuleDestination]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o VirtualServiceRouteTableRouteRuleDestinationArrayOutput) Index(i pulumi.IntInput) VirtualServiceRouteTableRouteRuleDestinationOutput {
@@ -3824,12 +3295,6 @@ func (i GetAccessPoliciesAccessPolicyCollectionArgs) ToGetAccessPoliciesAccessPo
 	return pulumi.ToOutputWithContext(ctx, i).(GetAccessPoliciesAccessPolicyCollectionOutput)
 }
 
-func (i GetAccessPoliciesAccessPolicyCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetAccessPoliciesAccessPolicyCollection] {
-	return pulumix.Output[GetAccessPoliciesAccessPolicyCollection]{
-		OutputState: i.ToGetAccessPoliciesAccessPolicyCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetAccessPoliciesAccessPolicyCollectionArrayInput is an input type that accepts GetAccessPoliciesAccessPolicyCollectionArray and GetAccessPoliciesAccessPolicyCollectionArrayOutput values.
 // You can construct a concrete instance of `GetAccessPoliciesAccessPolicyCollectionArrayInput` via:
 //
@@ -3855,12 +3320,6 @@ func (i GetAccessPoliciesAccessPolicyCollectionArray) ToGetAccessPoliciesAccessP
 	return pulumi.ToOutputWithContext(ctx, i).(GetAccessPoliciesAccessPolicyCollectionArrayOutput)
 }
 
-func (i GetAccessPoliciesAccessPolicyCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAccessPoliciesAccessPolicyCollection] {
-	return pulumix.Output[[]GetAccessPoliciesAccessPolicyCollection]{
-		OutputState: i.ToGetAccessPoliciesAccessPolicyCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAccessPoliciesAccessPolicyCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetAccessPoliciesAccessPolicyCollectionOutput) ElementType() reflect.Type {
@@ -3873,12 +3332,6 @@ func (o GetAccessPoliciesAccessPolicyCollectionOutput) ToGetAccessPoliciesAccess
 
 func (o GetAccessPoliciesAccessPolicyCollectionOutput) ToGetAccessPoliciesAccessPolicyCollectionOutputWithContext(ctx context.Context) GetAccessPoliciesAccessPolicyCollectionOutput {
 	return o
-}
-
-func (o GetAccessPoliciesAccessPolicyCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetAccessPoliciesAccessPolicyCollection] {
-	return pulumix.Output[GetAccessPoliciesAccessPolicyCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAccessPoliciesAccessPolicyCollectionOutput) Items() GetAccessPoliciesAccessPolicyCollectionItemArrayOutput {
@@ -3901,12 +3354,6 @@ func (o GetAccessPoliciesAccessPolicyCollectionArrayOutput) ToGetAccessPoliciesA
 	return o
 }
 
-func (o GetAccessPoliciesAccessPolicyCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAccessPoliciesAccessPolicyCollection] {
-	return pulumix.Output[[]GetAccessPoliciesAccessPolicyCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetAccessPoliciesAccessPolicyCollectionArrayOutput) Index(i pulumi.IntInput) GetAccessPoliciesAccessPolicyCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAccessPoliciesAccessPolicyCollection {
 		return vs[0].([]GetAccessPoliciesAccessPolicyCollection)[vs[1].(int)]
@@ -3915,31 +3362,31 @@ func (o GetAccessPoliciesAccessPolicyCollectionArrayOutput) Index(i pulumi.IntIn
 
 type GetAccessPoliciesAccessPolicyCollectionItem struct {
 	// The ID of the compartment in which to list resources.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// Description of the resource. It can be changed after creation. Avoid entering confidential information.  Example: `This is my new resource`
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// Unique AccessPolicy identifier.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// Unique Mesh identifier.
-	MeshId string `pulumi:"meshId"`
+	MeshId *string `pulumi:"meshId"`
 	// A filter to return only resources that match the entire name given.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// List of applicable rules.
 	Rules []GetAccessPoliciesAccessPolicyCollectionItemRule `pulumi:"rules"`
 	// A filter to return only resources that match the life cycle state given.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The time when this resource was created in an RFC3339 formatted datetime string.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time when this resource was updated in an RFC3339 formatted datetime string.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 // GetAccessPoliciesAccessPolicyCollectionItemInput is an input type that accepts GetAccessPoliciesAccessPolicyCollectionItemArgs and GetAccessPoliciesAccessPolicyCollectionItemOutput values.
@@ -3955,31 +3402,31 @@ type GetAccessPoliciesAccessPolicyCollectionItemInput interface {
 
 type GetAccessPoliciesAccessPolicyCollectionItemArgs struct {
 	// The ID of the compartment in which to list resources.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// Description of the resource. It can be changed after creation. Avoid entering confidential information.  Example: `This is my new resource`
-	Description pulumi.StringInput `pulumi:"description"`
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// Unique AccessPolicy identifier.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
-	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrInput `pulumi:"lifecycleDetails"`
 	// Unique Mesh identifier.
-	MeshId pulumi.StringInput `pulumi:"meshId"`
+	MeshId pulumi.StringPtrInput `pulumi:"meshId"`
 	// A filter to return only resources that match the entire name given.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// List of applicable rules.
 	Rules GetAccessPoliciesAccessPolicyCollectionItemRuleArrayInput `pulumi:"rules"`
 	// A filter to return only resources that match the life cycle state given.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapInput `pulumi:"systemTags"`
 	// The time when this resource was created in an RFC3339 formatted datetime string.
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// The time when this resource was updated in an RFC3339 formatted datetime string.
-	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
 }
 
 func (GetAccessPoliciesAccessPolicyCollectionItemArgs) ElementType() reflect.Type {
@@ -3992,12 +3439,6 @@ func (i GetAccessPoliciesAccessPolicyCollectionItemArgs) ToGetAccessPoliciesAcce
 
 func (i GetAccessPoliciesAccessPolicyCollectionItemArgs) ToGetAccessPoliciesAccessPolicyCollectionItemOutputWithContext(ctx context.Context) GetAccessPoliciesAccessPolicyCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetAccessPoliciesAccessPolicyCollectionItemOutput)
-}
-
-func (i GetAccessPoliciesAccessPolicyCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetAccessPoliciesAccessPolicyCollectionItem] {
-	return pulumix.Output[GetAccessPoliciesAccessPolicyCollectionItem]{
-		OutputState: i.ToGetAccessPoliciesAccessPolicyCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetAccessPoliciesAccessPolicyCollectionItemArrayInput is an input type that accepts GetAccessPoliciesAccessPolicyCollectionItemArray and GetAccessPoliciesAccessPolicyCollectionItemArrayOutput values.
@@ -4025,12 +3466,6 @@ func (i GetAccessPoliciesAccessPolicyCollectionItemArray) ToGetAccessPoliciesAcc
 	return pulumi.ToOutputWithContext(ctx, i).(GetAccessPoliciesAccessPolicyCollectionItemArrayOutput)
 }
 
-func (i GetAccessPoliciesAccessPolicyCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAccessPoliciesAccessPolicyCollectionItem] {
-	return pulumix.Output[[]GetAccessPoliciesAccessPolicyCollectionItem]{
-		OutputState: i.ToGetAccessPoliciesAccessPolicyCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAccessPoliciesAccessPolicyCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetAccessPoliciesAccessPolicyCollectionItemOutput) ElementType() reflect.Type {
@@ -4045,15 +3480,9 @@ func (o GetAccessPoliciesAccessPolicyCollectionItemOutput) ToGetAccessPoliciesAc
 	return o
 }
 
-func (o GetAccessPoliciesAccessPolicyCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetAccessPoliciesAccessPolicyCollectionItem] {
-	return pulumix.Output[GetAccessPoliciesAccessPolicyCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The ID of the compartment in which to list resources.
-func (o GetAccessPoliciesAccessPolicyCollectionItemOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAccessPoliciesAccessPolicyCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetAccessPoliciesAccessPolicyCollectionItemOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAccessPoliciesAccessPolicyCollectionItem) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -4062,8 +3491,8 @@ func (o GetAccessPoliciesAccessPolicyCollectionItemOutput) DefinedTags() pulumi.
 }
 
 // Description of the resource. It can be changed after creation. Avoid entering confidential information.  Example: `This is my new resource`
-func (o GetAccessPoliciesAccessPolicyCollectionItemOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAccessPoliciesAccessPolicyCollectionItem) string { return v.Description }).(pulumi.StringOutput)
+func (o GetAccessPoliciesAccessPolicyCollectionItemOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAccessPoliciesAccessPolicyCollectionItem) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -4072,23 +3501,23 @@ func (o GetAccessPoliciesAccessPolicyCollectionItemOutput) FreeformTags() pulumi
 }
 
 // Unique AccessPolicy identifier.
-func (o GetAccessPoliciesAccessPolicyCollectionItemOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAccessPoliciesAccessPolicyCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+func (o GetAccessPoliciesAccessPolicyCollectionItemOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAccessPoliciesAccessPolicyCollectionItem) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
-func (o GetAccessPoliciesAccessPolicyCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAccessPoliciesAccessPolicyCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o GetAccessPoliciesAccessPolicyCollectionItemOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAccessPoliciesAccessPolicyCollectionItem) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // Unique Mesh identifier.
-func (o GetAccessPoliciesAccessPolicyCollectionItemOutput) MeshId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAccessPoliciesAccessPolicyCollectionItem) string { return v.MeshId }).(pulumi.StringOutput)
+func (o GetAccessPoliciesAccessPolicyCollectionItemOutput) MeshId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAccessPoliciesAccessPolicyCollectionItem) *string { return v.MeshId }).(pulumi.StringPtrOutput)
 }
 
 // A filter to return only resources that match the entire name given.
-func (o GetAccessPoliciesAccessPolicyCollectionItemOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAccessPoliciesAccessPolicyCollectionItem) string { return v.Name }).(pulumi.StringOutput)
+func (o GetAccessPoliciesAccessPolicyCollectionItemOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAccessPoliciesAccessPolicyCollectionItem) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // List of applicable rules.
@@ -4099,8 +3528,8 @@ func (o GetAccessPoliciesAccessPolicyCollectionItemOutput) Rules() GetAccessPoli
 }
 
 // A filter to return only resources that match the life cycle state given.
-func (o GetAccessPoliciesAccessPolicyCollectionItemOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAccessPoliciesAccessPolicyCollectionItem) string { return v.State }).(pulumi.StringOutput)
+func (o GetAccessPoliciesAccessPolicyCollectionItemOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAccessPoliciesAccessPolicyCollectionItem) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -4109,13 +3538,13 @@ func (o GetAccessPoliciesAccessPolicyCollectionItemOutput) SystemTags() pulumi.M
 }
 
 // The time when this resource was created in an RFC3339 formatted datetime string.
-func (o GetAccessPoliciesAccessPolicyCollectionItemOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAccessPoliciesAccessPolicyCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetAccessPoliciesAccessPolicyCollectionItemOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAccessPoliciesAccessPolicyCollectionItem) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time when this resource was updated in an RFC3339 formatted datetime string.
-func (o GetAccessPoliciesAccessPolicyCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAccessPoliciesAccessPolicyCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o GetAccessPoliciesAccessPolicyCollectionItemOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAccessPoliciesAccessPolicyCollectionItem) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type GetAccessPoliciesAccessPolicyCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -4132,12 +3561,6 @@ func (o GetAccessPoliciesAccessPolicyCollectionItemArrayOutput) ToGetAccessPolic
 	return o
 }
 
-func (o GetAccessPoliciesAccessPolicyCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAccessPoliciesAccessPolicyCollectionItem] {
-	return pulumix.Output[[]GetAccessPoliciesAccessPolicyCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetAccessPoliciesAccessPolicyCollectionItemArrayOutput) Index(i pulumi.IntInput) GetAccessPoliciesAccessPolicyCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAccessPoliciesAccessPolicyCollectionItem {
 		return vs[0].([]GetAccessPoliciesAccessPolicyCollectionItem)[vs[1].(int)]
@@ -4146,7 +3569,7 @@ func (o GetAccessPoliciesAccessPolicyCollectionItemArrayOutput) Index(i pulumi.I
 
 type GetAccessPoliciesAccessPolicyCollectionItemRule struct {
 	// Action for the traffic between the source and the destination.
-	Action string `pulumi:"action"`
+	Action *string `pulumi:"action"`
 	// Target of the access policy. This can either be the source or the destination of the traffic.
 	Destinations []GetAccessPoliciesAccessPolicyCollectionItemRuleDestination `pulumi:"destinations"`
 	// Target of the access policy. This can either be the source or the destination of the traffic.
@@ -4166,7 +3589,7 @@ type GetAccessPoliciesAccessPolicyCollectionItemRuleInput interface {
 
 type GetAccessPoliciesAccessPolicyCollectionItemRuleArgs struct {
 	// Action for the traffic between the source and the destination.
-	Action pulumi.StringInput `pulumi:"action"`
+	Action pulumi.StringPtrInput `pulumi:"action"`
 	// Target of the access policy. This can either be the source or the destination of the traffic.
 	Destinations GetAccessPoliciesAccessPolicyCollectionItemRuleDestinationArrayInput `pulumi:"destinations"`
 	// Target of the access policy. This can either be the source or the destination of the traffic.
@@ -4183,12 +3606,6 @@ func (i GetAccessPoliciesAccessPolicyCollectionItemRuleArgs) ToGetAccessPolicies
 
 func (i GetAccessPoliciesAccessPolicyCollectionItemRuleArgs) ToGetAccessPoliciesAccessPolicyCollectionItemRuleOutputWithContext(ctx context.Context) GetAccessPoliciesAccessPolicyCollectionItemRuleOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetAccessPoliciesAccessPolicyCollectionItemRuleOutput)
-}
-
-func (i GetAccessPoliciesAccessPolicyCollectionItemRuleArgs) ToOutput(ctx context.Context) pulumix.Output[GetAccessPoliciesAccessPolicyCollectionItemRule] {
-	return pulumix.Output[GetAccessPoliciesAccessPolicyCollectionItemRule]{
-		OutputState: i.ToGetAccessPoliciesAccessPolicyCollectionItemRuleOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetAccessPoliciesAccessPolicyCollectionItemRuleArrayInput is an input type that accepts GetAccessPoliciesAccessPolicyCollectionItemRuleArray and GetAccessPoliciesAccessPolicyCollectionItemRuleArrayOutput values.
@@ -4216,12 +3633,6 @@ func (i GetAccessPoliciesAccessPolicyCollectionItemRuleArray) ToGetAccessPolicie
 	return pulumi.ToOutputWithContext(ctx, i).(GetAccessPoliciesAccessPolicyCollectionItemRuleArrayOutput)
 }
 
-func (i GetAccessPoliciesAccessPolicyCollectionItemRuleArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAccessPoliciesAccessPolicyCollectionItemRule] {
-	return pulumix.Output[[]GetAccessPoliciesAccessPolicyCollectionItemRule]{
-		OutputState: i.ToGetAccessPoliciesAccessPolicyCollectionItemRuleArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAccessPoliciesAccessPolicyCollectionItemRuleOutput struct{ *pulumi.OutputState }
 
 func (GetAccessPoliciesAccessPolicyCollectionItemRuleOutput) ElementType() reflect.Type {
@@ -4236,15 +3647,9 @@ func (o GetAccessPoliciesAccessPolicyCollectionItemRuleOutput) ToGetAccessPolici
 	return o
 }
 
-func (o GetAccessPoliciesAccessPolicyCollectionItemRuleOutput) ToOutput(ctx context.Context) pulumix.Output[GetAccessPoliciesAccessPolicyCollectionItemRule] {
-	return pulumix.Output[GetAccessPoliciesAccessPolicyCollectionItemRule]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Action for the traffic between the source and the destination.
-func (o GetAccessPoliciesAccessPolicyCollectionItemRuleOutput) Action() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAccessPoliciesAccessPolicyCollectionItemRule) string { return v.Action }).(pulumi.StringOutput)
+func (o GetAccessPoliciesAccessPolicyCollectionItemRuleOutput) Action() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAccessPoliciesAccessPolicyCollectionItemRule) *string { return v.Action }).(pulumi.StringPtrOutput)
 }
 
 // Target of the access policy. This can either be the source or the destination of the traffic.
@@ -4275,12 +3680,6 @@ func (o GetAccessPoliciesAccessPolicyCollectionItemRuleArrayOutput) ToGetAccessP
 	return o
 }
 
-func (o GetAccessPoliciesAccessPolicyCollectionItemRuleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAccessPoliciesAccessPolicyCollectionItemRule] {
-	return pulumix.Output[[]GetAccessPoliciesAccessPolicyCollectionItemRule]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetAccessPoliciesAccessPolicyCollectionItemRuleArrayOutput) Index(i pulumi.IntInput) GetAccessPoliciesAccessPolicyCollectionItemRuleOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAccessPoliciesAccessPolicyCollectionItemRule {
 		return vs[0].([]GetAccessPoliciesAccessPolicyCollectionItemRule)[vs[1].(int)]
@@ -4291,17 +3690,17 @@ type GetAccessPoliciesAccessPolicyCollectionItemRuleDestination struct {
 	// The hostnames of the external service. Only applicable for HTTP and HTTPS protocols. Wildcard hostnames are supported in the prefix form. Examples of valid hostnames are "www.example.com", "*.example.com", "*.com", "*". Hostname "*" can be used to allow all hosts.
 	Hostnames []string `pulumi:"hostnames"`
 	// The OCID of the ingress gateway resource.
-	IngressGatewayId string `pulumi:"ingressGatewayId"`
+	IngressGatewayId *string `pulumi:"ingressGatewayId"`
 	// The ipAddresses of the external service in CIDR notation. Only applicable for TCP protocol. All requests matching the given CIDR notation will pass through. In case a wildcard CIDR "0.0.0.0/0" is provided, the same port cannot be used for a virtual service communication.
 	IpAddresses []string `pulumi:"ipAddresses"`
 	// Ports exposed by an external service. If left empty all ports will be allowed.
 	Ports []int `pulumi:"ports"`
 	// Protocol of the external service
-	Protocol string `pulumi:"protocol"`
+	Protocol *string `pulumi:"protocol"`
 	// Traffic type of the target.
-	Type string `pulumi:"type"`
+	Type *string `pulumi:"type"`
 	// The OCID of the virtual service resource.
-	VirtualServiceId string `pulumi:"virtualServiceId"`
+	VirtualServiceId *string `pulumi:"virtualServiceId"`
 }
 
 // GetAccessPoliciesAccessPolicyCollectionItemRuleDestinationInput is an input type that accepts GetAccessPoliciesAccessPolicyCollectionItemRuleDestinationArgs and GetAccessPoliciesAccessPolicyCollectionItemRuleDestinationOutput values.
@@ -4319,17 +3718,17 @@ type GetAccessPoliciesAccessPolicyCollectionItemRuleDestinationArgs struct {
 	// The hostnames of the external service. Only applicable for HTTP and HTTPS protocols. Wildcard hostnames are supported in the prefix form. Examples of valid hostnames are "www.example.com", "*.example.com", "*.com", "*". Hostname "*" can be used to allow all hosts.
 	Hostnames pulumi.StringArrayInput `pulumi:"hostnames"`
 	// The OCID of the ingress gateway resource.
-	IngressGatewayId pulumi.StringInput `pulumi:"ingressGatewayId"`
+	IngressGatewayId pulumi.StringPtrInput `pulumi:"ingressGatewayId"`
 	// The ipAddresses of the external service in CIDR notation. Only applicable for TCP protocol. All requests matching the given CIDR notation will pass through. In case a wildcard CIDR "0.0.0.0/0" is provided, the same port cannot be used for a virtual service communication.
 	IpAddresses pulumi.StringArrayInput `pulumi:"ipAddresses"`
 	// Ports exposed by an external service. If left empty all ports will be allowed.
 	Ports pulumi.IntArrayInput `pulumi:"ports"`
 	// Protocol of the external service
-	Protocol pulumi.StringInput `pulumi:"protocol"`
+	Protocol pulumi.StringPtrInput `pulumi:"protocol"`
 	// Traffic type of the target.
-	Type pulumi.StringInput `pulumi:"type"`
+	Type pulumi.StringPtrInput `pulumi:"type"`
 	// The OCID of the virtual service resource.
-	VirtualServiceId pulumi.StringInput `pulumi:"virtualServiceId"`
+	VirtualServiceId pulumi.StringPtrInput `pulumi:"virtualServiceId"`
 }
 
 func (GetAccessPoliciesAccessPolicyCollectionItemRuleDestinationArgs) ElementType() reflect.Type {
@@ -4342,12 +3741,6 @@ func (i GetAccessPoliciesAccessPolicyCollectionItemRuleDestinationArgs) ToGetAcc
 
 func (i GetAccessPoliciesAccessPolicyCollectionItemRuleDestinationArgs) ToGetAccessPoliciesAccessPolicyCollectionItemRuleDestinationOutputWithContext(ctx context.Context) GetAccessPoliciesAccessPolicyCollectionItemRuleDestinationOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetAccessPoliciesAccessPolicyCollectionItemRuleDestinationOutput)
-}
-
-func (i GetAccessPoliciesAccessPolicyCollectionItemRuleDestinationArgs) ToOutput(ctx context.Context) pulumix.Output[GetAccessPoliciesAccessPolicyCollectionItemRuleDestination] {
-	return pulumix.Output[GetAccessPoliciesAccessPolicyCollectionItemRuleDestination]{
-		OutputState: i.ToGetAccessPoliciesAccessPolicyCollectionItemRuleDestinationOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetAccessPoliciesAccessPolicyCollectionItemRuleDestinationArrayInput is an input type that accepts GetAccessPoliciesAccessPolicyCollectionItemRuleDestinationArray and GetAccessPoliciesAccessPolicyCollectionItemRuleDestinationArrayOutput values.
@@ -4375,12 +3768,6 @@ func (i GetAccessPoliciesAccessPolicyCollectionItemRuleDestinationArray) ToGetAc
 	return pulumi.ToOutputWithContext(ctx, i).(GetAccessPoliciesAccessPolicyCollectionItemRuleDestinationArrayOutput)
 }
 
-func (i GetAccessPoliciesAccessPolicyCollectionItemRuleDestinationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAccessPoliciesAccessPolicyCollectionItemRuleDestination] {
-	return pulumix.Output[[]GetAccessPoliciesAccessPolicyCollectionItemRuleDestination]{
-		OutputState: i.ToGetAccessPoliciesAccessPolicyCollectionItemRuleDestinationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAccessPoliciesAccessPolicyCollectionItemRuleDestinationOutput struct{ *pulumi.OutputState }
 
 func (GetAccessPoliciesAccessPolicyCollectionItemRuleDestinationOutput) ElementType() reflect.Type {
@@ -4395,20 +3782,14 @@ func (o GetAccessPoliciesAccessPolicyCollectionItemRuleDestinationOutput) ToGetA
 	return o
 }
 
-func (o GetAccessPoliciesAccessPolicyCollectionItemRuleDestinationOutput) ToOutput(ctx context.Context) pulumix.Output[GetAccessPoliciesAccessPolicyCollectionItemRuleDestination] {
-	return pulumix.Output[GetAccessPoliciesAccessPolicyCollectionItemRuleDestination]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The hostnames of the external service. Only applicable for HTTP and HTTPS protocols. Wildcard hostnames are supported in the prefix form. Examples of valid hostnames are "www.example.com", "*.example.com", "*.com", "*". Hostname "*" can be used to allow all hosts.
 func (o GetAccessPoliciesAccessPolicyCollectionItemRuleDestinationOutput) Hostnames() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetAccessPoliciesAccessPolicyCollectionItemRuleDestination) []string { return v.Hostnames }).(pulumi.StringArrayOutput)
 }
 
 // The OCID of the ingress gateway resource.
-func (o GetAccessPoliciesAccessPolicyCollectionItemRuleDestinationOutput) IngressGatewayId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAccessPoliciesAccessPolicyCollectionItemRuleDestination) string { return v.IngressGatewayId }).(pulumi.StringOutput)
+func (o GetAccessPoliciesAccessPolicyCollectionItemRuleDestinationOutput) IngressGatewayId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAccessPoliciesAccessPolicyCollectionItemRuleDestination) *string { return v.IngressGatewayId }).(pulumi.StringPtrOutput)
 }
 
 // The ipAddresses of the external service in CIDR notation. Only applicable for TCP protocol. All requests matching the given CIDR notation will pass through. In case a wildcard CIDR "0.0.0.0/0" is provided, the same port cannot be used for a virtual service communication.
@@ -4422,18 +3803,18 @@ func (o GetAccessPoliciesAccessPolicyCollectionItemRuleDestinationOutput) Ports(
 }
 
 // Protocol of the external service
-func (o GetAccessPoliciesAccessPolicyCollectionItemRuleDestinationOutput) Protocol() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAccessPoliciesAccessPolicyCollectionItemRuleDestination) string { return v.Protocol }).(pulumi.StringOutput)
+func (o GetAccessPoliciesAccessPolicyCollectionItemRuleDestinationOutput) Protocol() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAccessPoliciesAccessPolicyCollectionItemRuleDestination) *string { return v.Protocol }).(pulumi.StringPtrOutput)
 }
 
 // Traffic type of the target.
-func (o GetAccessPoliciesAccessPolicyCollectionItemRuleDestinationOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAccessPoliciesAccessPolicyCollectionItemRuleDestination) string { return v.Type }).(pulumi.StringOutput)
+func (o GetAccessPoliciesAccessPolicyCollectionItemRuleDestinationOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAccessPoliciesAccessPolicyCollectionItemRuleDestination) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the virtual service resource.
-func (o GetAccessPoliciesAccessPolicyCollectionItemRuleDestinationOutput) VirtualServiceId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAccessPoliciesAccessPolicyCollectionItemRuleDestination) string { return v.VirtualServiceId }).(pulumi.StringOutput)
+func (o GetAccessPoliciesAccessPolicyCollectionItemRuleDestinationOutput) VirtualServiceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAccessPoliciesAccessPolicyCollectionItemRuleDestination) *string { return v.VirtualServiceId }).(pulumi.StringPtrOutput)
 }
 
 type GetAccessPoliciesAccessPolicyCollectionItemRuleDestinationArrayOutput struct{ *pulumi.OutputState }
@@ -4450,12 +3831,6 @@ func (o GetAccessPoliciesAccessPolicyCollectionItemRuleDestinationArrayOutput) T
 	return o
 }
 
-func (o GetAccessPoliciesAccessPolicyCollectionItemRuleDestinationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAccessPoliciesAccessPolicyCollectionItemRuleDestination] {
-	return pulumix.Output[[]GetAccessPoliciesAccessPolicyCollectionItemRuleDestination]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetAccessPoliciesAccessPolicyCollectionItemRuleDestinationArrayOutput) Index(i pulumi.IntInput) GetAccessPoliciesAccessPolicyCollectionItemRuleDestinationOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAccessPoliciesAccessPolicyCollectionItemRuleDestination {
 		return vs[0].([]GetAccessPoliciesAccessPolicyCollectionItemRuleDestination)[vs[1].(int)]
@@ -4466,17 +3841,17 @@ type GetAccessPoliciesAccessPolicyCollectionItemRuleSource struct {
 	// The hostnames of the external service. Only applicable for HTTP and HTTPS protocols. Wildcard hostnames are supported in the prefix form. Examples of valid hostnames are "www.example.com", "*.example.com", "*.com", "*". Hostname "*" can be used to allow all hosts.
 	Hostnames []string `pulumi:"hostnames"`
 	// The OCID of the ingress gateway resource.
-	IngressGatewayId string `pulumi:"ingressGatewayId"`
+	IngressGatewayId *string `pulumi:"ingressGatewayId"`
 	// The ipAddresses of the external service in CIDR notation. Only applicable for TCP protocol. All requests matching the given CIDR notation will pass through. In case a wildcard CIDR "0.0.0.0/0" is provided, the same port cannot be used for a virtual service communication.
 	IpAddresses []string `pulumi:"ipAddresses"`
 	// Ports exposed by an external service. If left empty all ports will be allowed.
 	Ports []int `pulumi:"ports"`
 	// Protocol of the external service
-	Protocol string `pulumi:"protocol"`
+	Protocol *string `pulumi:"protocol"`
 	// Traffic type of the target.
-	Type string `pulumi:"type"`
+	Type *string `pulumi:"type"`
 	// The OCID of the virtual service resource.
-	VirtualServiceId string `pulumi:"virtualServiceId"`
+	VirtualServiceId *string `pulumi:"virtualServiceId"`
 }
 
 // GetAccessPoliciesAccessPolicyCollectionItemRuleSourceInput is an input type that accepts GetAccessPoliciesAccessPolicyCollectionItemRuleSourceArgs and GetAccessPoliciesAccessPolicyCollectionItemRuleSourceOutput values.
@@ -4494,17 +3869,17 @@ type GetAccessPoliciesAccessPolicyCollectionItemRuleSourceArgs struct {
 	// The hostnames of the external service. Only applicable for HTTP and HTTPS protocols. Wildcard hostnames are supported in the prefix form. Examples of valid hostnames are "www.example.com", "*.example.com", "*.com", "*". Hostname "*" can be used to allow all hosts.
 	Hostnames pulumi.StringArrayInput `pulumi:"hostnames"`
 	// The OCID of the ingress gateway resource.
-	IngressGatewayId pulumi.StringInput `pulumi:"ingressGatewayId"`
+	IngressGatewayId pulumi.StringPtrInput `pulumi:"ingressGatewayId"`
 	// The ipAddresses of the external service in CIDR notation. Only applicable for TCP protocol. All requests matching the given CIDR notation will pass through. In case a wildcard CIDR "0.0.0.0/0" is provided, the same port cannot be used for a virtual service communication.
 	IpAddresses pulumi.StringArrayInput `pulumi:"ipAddresses"`
 	// Ports exposed by an external service. If left empty all ports will be allowed.
 	Ports pulumi.IntArrayInput `pulumi:"ports"`
 	// Protocol of the external service
-	Protocol pulumi.StringInput `pulumi:"protocol"`
+	Protocol pulumi.StringPtrInput `pulumi:"protocol"`
 	// Traffic type of the target.
-	Type pulumi.StringInput `pulumi:"type"`
+	Type pulumi.StringPtrInput `pulumi:"type"`
 	// The OCID of the virtual service resource.
-	VirtualServiceId pulumi.StringInput `pulumi:"virtualServiceId"`
+	VirtualServiceId pulumi.StringPtrInput `pulumi:"virtualServiceId"`
 }
 
 func (GetAccessPoliciesAccessPolicyCollectionItemRuleSourceArgs) ElementType() reflect.Type {
@@ -4517,12 +3892,6 @@ func (i GetAccessPoliciesAccessPolicyCollectionItemRuleSourceArgs) ToGetAccessPo
 
 func (i GetAccessPoliciesAccessPolicyCollectionItemRuleSourceArgs) ToGetAccessPoliciesAccessPolicyCollectionItemRuleSourceOutputWithContext(ctx context.Context) GetAccessPoliciesAccessPolicyCollectionItemRuleSourceOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetAccessPoliciesAccessPolicyCollectionItemRuleSourceOutput)
-}
-
-func (i GetAccessPoliciesAccessPolicyCollectionItemRuleSourceArgs) ToOutput(ctx context.Context) pulumix.Output[GetAccessPoliciesAccessPolicyCollectionItemRuleSource] {
-	return pulumix.Output[GetAccessPoliciesAccessPolicyCollectionItemRuleSource]{
-		OutputState: i.ToGetAccessPoliciesAccessPolicyCollectionItemRuleSourceOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetAccessPoliciesAccessPolicyCollectionItemRuleSourceArrayInput is an input type that accepts GetAccessPoliciesAccessPolicyCollectionItemRuleSourceArray and GetAccessPoliciesAccessPolicyCollectionItemRuleSourceArrayOutput values.
@@ -4550,12 +3919,6 @@ func (i GetAccessPoliciesAccessPolicyCollectionItemRuleSourceArray) ToGetAccessP
 	return pulumi.ToOutputWithContext(ctx, i).(GetAccessPoliciesAccessPolicyCollectionItemRuleSourceArrayOutput)
 }
 
-func (i GetAccessPoliciesAccessPolicyCollectionItemRuleSourceArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAccessPoliciesAccessPolicyCollectionItemRuleSource] {
-	return pulumix.Output[[]GetAccessPoliciesAccessPolicyCollectionItemRuleSource]{
-		OutputState: i.ToGetAccessPoliciesAccessPolicyCollectionItemRuleSourceArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAccessPoliciesAccessPolicyCollectionItemRuleSourceOutput struct{ *pulumi.OutputState }
 
 func (GetAccessPoliciesAccessPolicyCollectionItemRuleSourceOutput) ElementType() reflect.Type {
@@ -4570,20 +3933,14 @@ func (o GetAccessPoliciesAccessPolicyCollectionItemRuleSourceOutput) ToGetAccess
 	return o
 }
 
-func (o GetAccessPoliciesAccessPolicyCollectionItemRuleSourceOutput) ToOutput(ctx context.Context) pulumix.Output[GetAccessPoliciesAccessPolicyCollectionItemRuleSource] {
-	return pulumix.Output[GetAccessPoliciesAccessPolicyCollectionItemRuleSource]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The hostnames of the external service. Only applicable for HTTP and HTTPS protocols. Wildcard hostnames are supported in the prefix form. Examples of valid hostnames are "www.example.com", "*.example.com", "*.com", "*". Hostname "*" can be used to allow all hosts.
 func (o GetAccessPoliciesAccessPolicyCollectionItemRuleSourceOutput) Hostnames() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetAccessPoliciesAccessPolicyCollectionItemRuleSource) []string { return v.Hostnames }).(pulumi.StringArrayOutput)
 }
 
 // The OCID of the ingress gateway resource.
-func (o GetAccessPoliciesAccessPolicyCollectionItemRuleSourceOutput) IngressGatewayId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAccessPoliciesAccessPolicyCollectionItemRuleSource) string { return v.IngressGatewayId }).(pulumi.StringOutput)
+func (o GetAccessPoliciesAccessPolicyCollectionItemRuleSourceOutput) IngressGatewayId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAccessPoliciesAccessPolicyCollectionItemRuleSource) *string { return v.IngressGatewayId }).(pulumi.StringPtrOutput)
 }
 
 // The ipAddresses of the external service in CIDR notation. Only applicable for TCP protocol. All requests matching the given CIDR notation will pass through. In case a wildcard CIDR "0.0.0.0/0" is provided, the same port cannot be used for a virtual service communication.
@@ -4597,18 +3954,18 @@ func (o GetAccessPoliciesAccessPolicyCollectionItemRuleSourceOutput) Ports() pul
 }
 
 // Protocol of the external service
-func (o GetAccessPoliciesAccessPolicyCollectionItemRuleSourceOutput) Protocol() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAccessPoliciesAccessPolicyCollectionItemRuleSource) string { return v.Protocol }).(pulumi.StringOutput)
+func (o GetAccessPoliciesAccessPolicyCollectionItemRuleSourceOutput) Protocol() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAccessPoliciesAccessPolicyCollectionItemRuleSource) *string { return v.Protocol }).(pulumi.StringPtrOutput)
 }
 
 // Traffic type of the target.
-func (o GetAccessPoliciesAccessPolicyCollectionItemRuleSourceOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAccessPoliciesAccessPolicyCollectionItemRuleSource) string { return v.Type }).(pulumi.StringOutput)
+func (o GetAccessPoliciesAccessPolicyCollectionItemRuleSourceOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAccessPoliciesAccessPolicyCollectionItemRuleSource) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the virtual service resource.
-func (o GetAccessPoliciesAccessPolicyCollectionItemRuleSourceOutput) VirtualServiceId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAccessPoliciesAccessPolicyCollectionItemRuleSource) string { return v.VirtualServiceId }).(pulumi.StringOutput)
+func (o GetAccessPoliciesAccessPolicyCollectionItemRuleSourceOutput) VirtualServiceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAccessPoliciesAccessPolicyCollectionItemRuleSource) *string { return v.VirtualServiceId }).(pulumi.StringPtrOutput)
 }
 
 type GetAccessPoliciesAccessPolicyCollectionItemRuleSourceArrayOutput struct{ *pulumi.OutputState }
@@ -4623,12 +3980,6 @@ func (o GetAccessPoliciesAccessPolicyCollectionItemRuleSourceArrayOutput) ToGetA
 
 func (o GetAccessPoliciesAccessPolicyCollectionItemRuleSourceArrayOutput) ToGetAccessPoliciesAccessPolicyCollectionItemRuleSourceArrayOutputWithContext(ctx context.Context) GetAccessPoliciesAccessPolicyCollectionItemRuleSourceArrayOutput {
 	return o
-}
-
-func (o GetAccessPoliciesAccessPolicyCollectionItemRuleSourceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAccessPoliciesAccessPolicyCollectionItemRuleSource] {
-	return pulumix.Output[[]GetAccessPoliciesAccessPolicyCollectionItemRuleSource]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAccessPoliciesAccessPolicyCollectionItemRuleSourceArrayOutput) Index(i pulumi.IntInput) GetAccessPoliciesAccessPolicyCollectionItemRuleSourceOutput {
@@ -4674,12 +4025,6 @@ func (i GetAccessPoliciesFilterArgs) ToGetAccessPoliciesFilterOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(GetAccessPoliciesFilterOutput)
 }
 
-func (i GetAccessPoliciesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetAccessPoliciesFilter] {
-	return pulumix.Output[GetAccessPoliciesFilter]{
-		OutputState: i.ToGetAccessPoliciesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetAccessPoliciesFilterArrayInput is an input type that accepts GetAccessPoliciesFilterArray and GetAccessPoliciesFilterArrayOutput values.
 // You can construct a concrete instance of `GetAccessPoliciesFilterArrayInput` via:
 //
@@ -4705,12 +4050,6 @@ func (i GetAccessPoliciesFilterArray) ToGetAccessPoliciesFilterArrayOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetAccessPoliciesFilterArrayOutput)
 }
 
-func (i GetAccessPoliciesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAccessPoliciesFilter] {
-	return pulumix.Output[[]GetAccessPoliciesFilter]{
-		OutputState: i.ToGetAccessPoliciesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAccessPoliciesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetAccessPoliciesFilterOutput) ElementType() reflect.Type {
@@ -4723,12 +4062,6 @@ func (o GetAccessPoliciesFilterOutput) ToGetAccessPoliciesFilterOutput() GetAcce
 
 func (o GetAccessPoliciesFilterOutput) ToGetAccessPoliciesFilterOutputWithContext(ctx context.Context) GetAccessPoliciesFilterOutput {
 	return o
-}
-
-func (o GetAccessPoliciesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetAccessPoliciesFilter] {
-	return pulumix.Output[GetAccessPoliciesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A filter to return only resources that match the entire name given.
@@ -4758,12 +4091,6 @@ func (o GetAccessPoliciesFilterArrayOutput) ToGetAccessPoliciesFilterArrayOutput
 	return o
 }
 
-func (o GetAccessPoliciesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAccessPoliciesFilter] {
-	return pulumix.Output[[]GetAccessPoliciesFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetAccessPoliciesFilterArrayOutput) Index(i pulumi.IntInput) GetAccessPoliciesFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAccessPoliciesFilter {
 		return vs[0].([]GetAccessPoliciesFilter)[vs[1].(int)]
@@ -4772,7 +4099,7 @@ func (o GetAccessPoliciesFilterArrayOutput) Index(i pulumi.IntInput) GetAccessPo
 
 type GetAccessPolicyRule struct {
 	// Action for the traffic between the source and the destination.
-	Action string `pulumi:"action"`
+	Action *string `pulumi:"action"`
 	// Target of the access policy. This can either be the source or the destination of the traffic.
 	Destinations []GetAccessPolicyRuleDestination `pulumi:"destinations"`
 	// Target of the access policy. This can either be the source or the destination of the traffic.
@@ -4792,7 +4119,7 @@ type GetAccessPolicyRuleInput interface {
 
 type GetAccessPolicyRuleArgs struct {
 	// Action for the traffic between the source and the destination.
-	Action pulumi.StringInput `pulumi:"action"`
+	Action pulumi.StringPtrInput `pulumi:"action"`
 	// Target of the access policy. This can either be the source or the destination of the traffic.
 	Destinations GetAccessPolicyRuleDestinationArrayInput `pulumi:"destinations"`
 	// Target of the access policy. This can either be the source or the destination of the traffic.
@@ -4809,12 +4136,6 @@ func (i GetAccessPolicyRuleArgs) ToGetAccessPolicyRuleOutput() GetAccessPolicyRu
 
 func (i GetAccessPolicyRuleArgs) ToGetAccessPolicyRuleOutputWithContext(ctx context.Context) GetAccessPolicyRuleOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetAccessPolicyRuleOutput)
-}
-
-func (i GetAccessPolicyRuleArgs) ToOutput(ctx context.Context) pulumix.Output[GetAccessPolicyRule] {
-	return pulumix.Output[GetAccessPolicyRule]{
-		OutputState: i.ToGetAccessPolicyRuleOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetAccessPolicyRuleArrayInput is an input type that accepts GetAccessPolicyRuleArray and GetAccessPolicyRuleArrayOutput values.
@@ -4842,12 +4163,6 @@ func (i GetAccessPolicyRuleArray) ToGetAccessPolicyRuleArrayOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(GetAccessPolicyRuleArrayOutput)
 }
 
-func (i GetAccessPolicyRuleArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAccessPolicyRule] {
-	return pulumix.Output[[]GetAccessPolicyRule]{
-		OutputState: i.ToGetAccessPolicyRuleArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAccessPolicyRuleOutput struct{ *pulumi.OutputState }
 
 func (GetAccessPolicyRuleOutput) ElementType() reflect.Type {
@@ -4862,15 +4177,9 @@ func (o GetAccessPolicyRuleOutput) ToGetAccessPolicyRuleOutputWithContext(ctx co
 	return o
 }
 
-func (o GetAccessPolicyRuleOutput) ToOutput(ctx context.Context) pulumix.Output[GetAccessPolicyRule] {
-	return pulumix.Output[GetAccessPolicyRule]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Action for the traffic between the source and the destination.
-func (o GetAccessPolicyRuleOutput) Action() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAccessPolicyRule) string { return v.Action }).(pulumi.StringOutput)
+func (o GetAccessPolicyRuleOutput) Action() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAccessPolicyRule) *string { return v.Action }).(pulumi.StringPtrOutput)
 }
 
 // Target of the access policy. This can either be the source or the destination of the traffic.
@@ -4897,12 +4206,6 @@ func (o GetAccessPolicyRuleArrayOutput) ToGetAccessPolicyRuleArrayOutputWithCont
 	return o
 }
 
-func (o GetAccessPolicyRuleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAccessPolicyRule] {
-	return pulumix.Output[[]GetAccessPolicyRule]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetAccessPolicyRuleArrayOutput) Index(i pulumi.IntInput) GetAccessPolicyRuleOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAccessPolicyRule {
 		return vs[0].([]GetAccessPolicyRule)[vs[1].(int)]
@@ -4913,17 +4216,17 @@ type GetAccessPolicyRuleDestination struct {
 	// The hostnames of the external service. Only applicable for HTTP and HTTPS protocols. Wildcard hostnames are supported in the prefix form. Examples of valid hostnames are "www.example.com", "*.example.com", "*.com", "*". Hostname "*" can be used to allow all hosts.
 	Hostnames []string `pulumi:"hostnames"`
 	// The OCID of the ingress gateway resource.
-	IngressGatewayId string `pulumi:"ingressGatewayId"`
+	IngressGatewayId *string `pulumi:"ingressGatewayId"`
 	// The ipAddresses of the external service in CIDR notation. Only applicable for TCP protocol. All requests matching the given CIDR notation will pass through. In case a wildcard CIDR "0.0.0.0/0" is provided, the same port cannot be used for a virtual service communication.
 	IpAddresses []string `pulumi:"ipAddresses"`
 	// Ports exposed by an external service. If left empty all ports will be allowed.
 	Ports []int `pulumi:"ports"`
 	// Protocol of the external service
-	Protocol string `pulumi:"protocol"`
+	Protocol *string `pulumi:"protocol"`
 	// Traffic type of the target.
-	Type string `pulumi:"type"`
+	Type *string `pulumi:"type"`
 	// The OCID of the virtual service resource.
-	VirtualServiceId string `pulumi:"virtualServiceId"`
+	VirtualServiceId *string `pulumi:"virtualServiceId"`
 }
 
 // GetAccessPolicyRuleDestinationInput is an input type that accepts GetAccessPolicyRuleDestinationArgs and GetAccessPolicyRuleDestinationOutput values.
@@ -4941,17 +4244,17 @@ type GetAccessPolicyRuleDestinationArgs struct {
 	// The hostnames of the external service. Only applicable for HTTP and HTTPS protocols. Wildcard hostnames are supported in the prefix form. Examples of valid hostnames are "www.example.com", "*.example.com", "*.com", "*". Hostname "*" can be used to allow all hosts.
 	Hostnames pulumi.StringArrayInput `pulumi:"hostnames"`
 	// The OCID of the ingress gateway resource.
-	IngressGatewayId pulumi.StringInput `pulumi:"ingressGatewayId"`
+	IngressGatewayId pulumi.StringPtrInput `pulumi:"ingressGatewayId"`
 	// The ipAddresses of the external service in CIDR notation. Only applicable for TCP protocol. All requests matching the given CIDR notation will pass through. In case a wildcard CIDR "0.0.0.0/0" is provided, the same port cannot be used for a virtual service communication.
 	IpAddresses pulumi.StringArrayInput `pulumi:"ipAddresses"`
 	// Ports exposed by an external service. If left empty all ports will be allowed.
 	Ports pulumi.IntArrayInput `pulumi:"ports"`
 	// Protocol of the external service
-	Protocol pulumi.StringInput `pulumi:"protocol"`
+	Protocol pulumi.StringPtrInput `pulumi:"protocol"`
 	// Traffic type of the target.
-	Type pulumi.StringInput `pulumi:"type"`
+	Type pulumi.StringPtrInput `pulumi:"type"`
 	// The OCID of the virtual service resource.
-	VirtualServiceId pulumi.StringInput `pulumi:"virtualServiceId"`
+	VirtualServiceId pulumi.StringPtrInput `pulumi:"virtualServiceId"`
 }
 
 func (GetAccessPolicyRuleDestinationArgs) ElementType() reflect.Type {
@@ -4964,12 +4267,6 @@ func (i GetAccessPolicyRuleDestinationArgs) ToGetAccessPolicyRuleDestinationOutp
 
 func (i GetAccessPolicyRuleDestinationArgs) ToGetAccessPolicyRuleDestinationOutputWithContext(ctx context.Context) GetAccessPolicyRuleDestinationOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetAccessPolicyRuleDestinationOutput)
-}
-
-func (i GetAccessPolicyRuleDestinationArgs) ToOutput(ctx context.Context) pulumix.Output[GetAccessPolicyRuleDestination] {
-	return pulumix.Output[GetAccessPolicyRuleDestination]{
-		OutputState: i.ToGetAccessPolicyRuleDestinationOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetAccessPolicyRuleDestinationArrayInput is an input type that accepts GetAccessPolicyRuleDestinationArray and GetAccessPolicyRuleDestinationArrayOutput values.
@@ -4997,12 +4294,6 @@ func (i GetAccessPolicyRuleDestinationArray) ToGetAccessPolicyRuleDestinationArr
 	return pulumi.ToOutputWithContext(ctx, i).(GetAccessPolicyRuleDestinationArrayOutput)
 }
 
-func (i GetAccessPolicyRuleDestinationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAccessPolicyRuleDestination] {
-	return pulumix.Output[[]GetAccessPolicyRuleDestination]{
-		OutputState: i.ToGetAccessPolicyRuleDestinationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAccessPolicyRuleDestinationOutput struct{ *pulumi.OutputState }
 
 func (GetAccessPolicyRuleDestinationOutput) ElementType() reflect.Type {
@@ -5017,20 +4308,14 @@ func (o GetAccessPolicyRuleDestinationOutput) ToGetAccessPolicyRuleDestinationOu
 	return o
 }
 
-func (o GetAccessPolicyRuleDestinationOutput) ToOutput(ctx context.Context) pulumix.Output[GetAccessPolicyRuleDestination] {
-	return pulumix.Output[GetAccessPolicyRuleDestination]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The hostnames of the external service. Only applicable for HTTP and HTTPS protocols. Wildcard hostnames are supported in the prefix form. Examples of valid hostnames are "www.example.com", "*.example.com", "*.com", "*". Hostname "*" can be used to allow all hosts.
 func (o GetAccessPolicyRuleDestinationOutput) Hostnames() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetAccessPolicyRuleDestination) []string { return v.Hostnames }).(pulumi.StringArrayOutput)
 }
 
 // The OCID of the ingress gateway resource.
-func (o GetAccessPolicyRuleDestinationOutput) IngressGatewayId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAccessPolicyRuleDestination) string { return v.IngressGatewayId }).(pulumi.StringOutput)
+func (o GetAccessPolicyRuleDestinationOutput) IngressGatewayId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAccessPolicyRuleDestination) *string { return v.IngressGatewayId }).(pulumi.StringPtrOutput)
 }
 
 // The ipAddresses of the external service in CIDR notation. Only applicable for TCP protocol. All requests matching the given CIDR notation will pass through. In case a wildcard CIDR "0.0.0.0/0" is provided, the same port cannot be used for a virtual service communication.
@@ -5044,18 +4329,18 @@ func (o GetAccessPolicyRuleDestinationOutput) Ports() pulumi.IntArrayOutput {
 }
 
 // Protocol of the external service
-func (o GetAccessPolicyRuleDestinationOutput) Protocol() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAccessPolicyRuleDestination) string { return v.Protocol }).(pulumi.StringOutput)
+func (o GetAccessPolicyRuleDestinationOutput) Protocol() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAccessPolicyRuleDestination) *string { return v.Protocol }).(pulumi.StringPtrOutput)
 }
 
 // Traffic type of the target.
-func (o GetAccessPolicyRuleDestinationOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAccessPolicyRuleDestination) string { return v.Type }).(pulumi.StringOutput)
+func (o GetAccessPolicyRuleDestinationOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAccessPolicyRuleDestination) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the virtual service resource.
-func (o GetAccessPolicyRuleDestinationOutput) VirtualServiceId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAccessPolicyRuleDestination) string { return v.VirtualServiceId }).(pulumi.StringOutput)
+func (o GetAccessPolicyRuleDestinationOutput) VirtualServiceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAccessPolicyRuleDestination) *string { return v.VirtualServiceId }).(pulumi.StringPtrOutput)
 }
 
 type GetAccessPolicyRuleDestinationArrayOutput struct{ *pulumi.OutputState }
@@ -5072,12 +4357,6 @@ func (o GetAccessPolicyRuleDestinationArrayOutput) ToGetAccessPolicyRuleDestinat
 	return o
 }
 
-func (o GetAccessPolicyRuleDestinationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAccessPolicyRuleDestination] {
-	return pulumix.Output[[]GetAccessPolicyRuleDestination]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetAccessPolicyRuleDestinationArrayOutput) Index(i pulumi.IntInput) GetAccessPolicyRuleDestinationOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAccessPolicyRuleDestination {
 		return vs[0].([]GetAccessPolicyRuleDestination)[vs[1].(int)]
@@ -5088,17 +4367,17 @@ type GetAccessPolicyRuleSource struct {
 	// The hostnames of the external service. Only applicable for HTTP and HTTPS protocols. Wildcard hostnames are supported in the prefix form. Examples of valid hostnames are "www.example.com", "*.example.com", "*.com", "*". Hostname "*" can be used to allow all hosts.
 	Hostnames []string `pulumi:"hostnames"`
 	// The OCID of the ingress gateway resource.
-	IngressGatewayId string `pulumi:"ingressGatewayId"`
+	IngressGatewayId *string `pulumi:"ingressGatewayId"`
 	// The ipAddresses of the external service in CIDR notation. Only applicable for TCP protocol. All requests matching the given CIDR notation will pass through. In case a wildcard CIDR "0.0.0.0/0" is provided, the same port cannot be used for a virtual service communication.
 	IpAddresses []string `pulumi:"ipAddresses"`
 	// Ports exposed by an external service. If left empty all ports will be allowed.
 	Ports []int `pulumi:"ports"`
 	// Protocol of the external service
-	Protocol string `pulumi:"protocol"`
+	Protocol *string `pulumi:"protocol"`
 	// Traffic type of the target.
-	Type string `pulumi:"type"`
+	Type *string `pulumi:"type"`
 	// The OCID of the virtual service resource.
-	VirtualServiceId string `pulumi:"virtualServiceId"`
+	VirtualServiceId *string `pulumi:"virtualServiceId"`
 }
 
 // GetAccessPolicyRuleSourceInput is an input type that accepts GetAccessPolicyRuleSourceArgs and GetAccessPolicyRuleSourceOutput values.
@@ -5116,17 +4395,17 @@ type GetAccessPolicyRuleSourceArgs struct {
 	// The hostnames of the external service. Only applicable for HTTP and HTTPS protocols. Wildcard hostnames are supported in the prefix form. Examples of valid hostnames are "www.example.com", "*.example.com", "*.com", "*". Hostname "*" can be used to allow all hosts.
 	Hostnames pulumi.StringArrayInput `pulumi:"hostnames"`
 	// The OCID of the ingress gateway resource.
-	IngressGatewayId pulumi.StringInput `pulumi:"ingressGatewayId"`
+	IngressGatewayId pulumi.StringPtrInput `pulumi:"ingressGatewayId"`
 	// The ipAddresses of the external service in CIDR notation. Only applicable for TCP protocol. All requests matching the given CIDR notation will pass through. In case a wildcard CIDR "0.0.0.0/0" is provided, the same port cannot be used for a virtual service communication.
 	IpAddresses pulumi.StringArrayInput `pulumi:"ipAddresses"`
 	// Ports exposed by an external service. If left empty all ports will be allowed.
 	Ports pulumi.IntArrayInput `pulumi:"ports"`
 	// Protocol of the external service
-	Protocol pulumi.StringInput `pulumi:"protocol"`
+	Protocol pulumi.StringPtrInput `pulumi:"protocol"`
 	// Traffic type of the target.
-	Type pulumi.StringInput `pulumi:"type"`
+	Type pulumi.StringPtrInput `pulumi:"type"`
 	// The OCID of the virtual service resource.
-	VirtualServiceId pulumi.StringInput `pulumi:"virtualServiceId"`
+	VirtualServiceId pulumi.StringPtrInput `pulumi:"virtualServiceId"`
 }
 
 func (GetAccessPolicyRuleSourceArgs) ElementType() reflect.Type {
@@ -5139,12 +4418,6 @@ func (i GetAccessPolicyRuleSourceArgs) ToGetAccessPolicyRuleSourceOutput() GetAc
 
 func (i GetAccessPolicyRuleSourceArgs) ToGetAccessPolicyRuleSourceOutputWithContext(ctx context.Context) GetAccessPolicyRuleSourceOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetAccessPolicyRuleSourceOutput)
-}
-
-func (i GetAccessPolicyRuleSourceArgs) ToOutput(ctx context.Context) pulumix.Output[GetAccessPolicyRuleSource] {
-	return pulumix.Output[GetAccessPolicyRuleSource]{
-		OutputState: i.ToGetAccessPolicyRuleSourceOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetAccessPolicyRuleSourceArrayInput is an input type that accepts GetAccessPolicyRuleSourceArray and GetAccessPolicyRuleSourceArrayOutput values.
@@ -5172,12 +4445,6 @@ func (i GetAccessPolicyRuleSourceArray) ToGetAccessPolicyRuleSourceArrayOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetAccessPolicyRuleSourceArrayOutput)
 }
 
-func (i GetAccessPolicyRuleSourceArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAccessPolicyRuleSource] {
-	return pulumix.Output[[]GetAccessPolicyRuleSource]{
-		OutputState: i.ToGetAccessPolicyRuleSourceArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAccessPolicyRuleSourceOutput struct{ *pulumi.OutputState }
 
 func (GetAccessPolicyRuleSourceOutput) ElementType() reflect.Type {
@@ -5192,20 +4459,14 @@ func (o GetAccessPolicyRuleSourceOutput) ToGetAccessPolicyRuleSourceOutputWithCo
 	return o
 }
 
-func (o GetAccessPolicyRuleSourceOutput) ToOutput(ctx context.Context) pulumix.Output[GetAccessPolicyRuleSource] {
-	return pulumix.Output[GetAccessPolicyRuleSource]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The hostnames of the external service. Only applicable for HTTP and HTTPS protocols. Wildcard hostnames are supported in the prefix form. Examples of valid hostnames are "www.example.com", "*.example.com", "*.com", "*". Hostname "*" can be used to allow all hosts.
 func (o GetAccessPolicyRuleSourceOutput) Hostnames() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetAccessPolicyRuleSource) []string { return v.Hostnames }).(pulumi.StringArrayOutput)
 }
 
 // The OCID of the ingress gateway resource.
-func (o GetAccessPolicyRuleSourceOutput) IngressGatewayId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAccessPolicyRuleSource) string { return v.IngressGatewayId }).(pulumi.StringOutput)
+func (o GetAccessPolicyRuleSourceOutput) IngressGatewayId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAccessPolicyRuleSource) *string { return v.IngressGatewayId }).(pulumi.StringPtrOutput)
 }
 
 // The ipAddresses of the external service in CIDR notation. Only applicable for TCP protocol. All requests matching the given CIDR notation will pass through. In case a wildcard CIDR "0.0.0.0/0" is provided, the same port cannot be used for a virtual service communication.
@@ -5219,18 +4480,18 @@ func (o GetAccessPolicyRuleSourceOutput) Ports() pulumi.IntArrayOutput {
 }
 
 // Protocol of the external service
-func (o GetAccessPolicyRuleSourceOutput) Protocol() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAccessPolicyRuleSource) string { return v.Protocol }).(pulumi.StringOutput)
+func (o GetAccessPolicyRuleSourceOutput) Protocol() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAccessPolicyRuleSource) *string { return v.Protocol }).(pulumi.StringPtrOutput)
 }
 
 // Traffic type of the target.
-func (o GetAccessPolicyRuleSourceOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAccessPolicyRuleSource) string { return v.Type }).(pulumi.StringOutput)
+func (o GetAccessPolicyRuleSourceOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAccessPolicyRuleSource) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the virtual service resource.
-func (o GetAccessPolicyRuleSourceOutput) VirtualServiceId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAccessPolicyRuleSource) string { return v.VirtualServiceId }).(pulumi.StringOutput)
+func (o GetAccessPolicyRuleSourceOutput) VirtualServiceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAccessPolicyRuleSource) *string { return v.VirtualServiceId }).(pulumi.StringPtrOutput)
 }
 
 type GetAccessPolicyRuleSourceArrayOutput struct{ *pulumi.OutputState }
@@ -5247,12 +4508,6 @@ func (o GetAccessPolicyRuleSourceArrayOutput) ToGetAccessPolicyRuleSourceArrayOu
 	return o
 }
 
-func (o GetAccessPolicyRuleSourceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAccessPolicyRuleSource] {
-	return pulumix.Output[[]GetAccessPolicyRuleSource]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetAccessPolicyRuleSourceArrayOutput) Index(i pulumi.IntInput) GetAccessPolicyRuleSourceOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAccessPolicyRuleSource {
 		return vs[0].([]GetAccessPolicyRuleSource)[vs[1].(int)]
@@ -5261,7 +4516,7 @@ func (o GetAccessPolicyRuleSourceArrayOutput) Index(i pulumi.IntInput) GetAccess
 
 type GetIngressGatewayAccessLogging struct {
 	// Determines if the logging configuration is enabled.
-	IsEnabled bool `pulumi:"isEnabled"`
+	IsEnabled *bool `pulumi:"isEnabled"`
 }
 
 // GetIngressGatewayAccessLoggingInput is an input type that accepts GetIngressGatewayAccessLoggingArgs and GetIngressGatewayAccessLoggingOutput values.
@@ -5277,7 +4532,7 @@ type GetIngressGatewayAccessLoggingInput interface {
 
 type GetIngressGatewayAccessLoggingArgs struct {
 	// Determines if the logging configuration is enabled.
-	IsEnabled pulumi.BoolInput `pulumi:"isEnabled"`
+	IsEnabled pulumi.BoolPtrInput `pulumi:"isEnabled"`
 }
 
 func (GetIngressGatewayAccessLoggingArgs) ElementType() reflect.Type {
@@ -5290,12 +4545,6 @@ func (i GetIngressGatewayAccessLoggingArgs) ToGetIngressGatewayAccessLoggingOutp
 
 func (i GetIngressGatewayAccessLoggingArgs) ToGetIngressGatewayAccessLoggingOutputWithContext(ctx context.Context) GetIngressGatewayAccessLoggingOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetIngressGatewayAccessLoggingOutput)
-}
-
-func (i GetIngressGatewayAccessLoggingArgs) ToOutput(ctx context.Context) pulumix.Output[GetIngressGatewayAccessLogging] {
-	return pulumix.Output[GetIngressGatewayAccessLogging]{
-		OutputState: i.ToGetIngressGatewayAccessLoggingOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetIngressGatewayAccessLoggingArrayInput is an input type that accepts GetIngressGatewayAccessLoggingArray and GetIngressGatewayAccessLoggingArrayOutput values.
@@ -5323,12 +4572,6 @@ func (i GetIngressGatewayAccessLoggingArray) ToGetIngressGatewayAccessLoggingArr
 	return pulumi.ToOutputWithContext(ctx, i).(GetIngressGatewayAccessLoggingArrayOutput)
 }
 
-func (i GetIngressGatewayAccessLoggingArray) ToOutput(ctx context.Context) pulumix.Output[[]GetIngressGatewayAccessLogging] {
-	return pulumix.Output[[]GetIngressGatewayAccessLogging]{
-		OutputState: i.ToGetIngressGatewayAccessLoggingArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetIngressGatewayAccessLoggingOutput struct{ *pulumi.OutputState }
 
 func (GetIngressGatewayAccessLoggingOutput) ElementType() reflect.Type {
@@ -5343,15 +4586,9 @@ func (o GetIngressGatewayAccessLoggingOutput) ToGetIngressGatewayAccessLoggingOu
 	return o
 }
 
-func (o GetIngressGatewayAccessLoggingOutput) ToOutput(ctx context.Context) pulumix.Output[GetIngressGatewayAccessLogging] {
-	return pulumix.Output[GetIngressGatewayAccessLogging]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Determines if the logging configuration is enabled.
-func (o GetIngressGatewayAccessLoggingOutput) IsEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetIngressGatewayAccessLogging) bool { return v.IsEnabled }).(pulumi.BoolOutput)
+func (o GetIngressGatewayAccessLoggingOutput) IsEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetIngressGatewayAccessLogging) *bool { return v.IsEnabled }).(pulumi.BoolPtrOutput)
 }
 
 type GetIngressGatewayAccessLoggingArrayOutput struct{ *pulumi.OutputState }
@@ -5368,12 +4605,6 @@ func (o GetIngressGatewayAccessLoggingArrayOutput) ToGetIngressGatewayAccessLogg
 	return o
 }
 
-func (o GetIngressGatewayAccessLoggingArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetIngressGatewayAccessLogging] {
-	return pulumix.Output[[]GetIngressGatewayAccessLogging]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetIngressGatewayAccessLoggingArrayOutput) Index(i pulumi.IntInput) GetIngressGatewayAccessLoggingOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIngressGatewayAccessLogging {
 		return vs[0].([]GetIngressGatewayAccessLogging)[vs[1].(int)]
@@ -5386,7 +4617,7 @@ type GetIngressGatewayHost struct {
 	// The listeners for the ingress gateway.
 	Listeners []GetIngressGatewayHostListener `pulumi:"listeners"`
 	// A user-friendly name. The name has to be unique within the same service mesh and cannot be changed after creation. Avoid entering confidential information.  Example: `My unique resource name`
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 }
 
 // GetIngressGatewayHostInput is an input type that accepts GetIngressGatewayHostArgs and GetIngressGatewayHostOutput values.
@@ -5406,7 +4637,7 @@ type GetIngressGatewayHostArgs struct {
 	// The listeners for the ingress gateway.
 	Listeners GetIngressGatewayHostListenerArrayInput `pulumi:"listeners"`
 	// A user-friendly name. The name has to be unique within the same service mesh and cannot be changed after creation. Avoid entering confidential information.  Example: `My unique resource name`
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 }
 
 func (GetIngressGatewayHostArgs) ElementType() reflect.Type {
@@ -5419,12 +4650,6 @@ func (i GetIngressGatewayHostArgs) ToGetIngressGatewayHostOutput() GetIngressGat
 
 func (i GetIngressGatewayHostArgs) ToGetIngressGatewayHostOutputWithContext(ctx context.Context) GetIngressGatewayHostOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetIngressGatewayHostOutput)
-}
-
-func (i GetIngressGatewayHostArgs) ToOutput(ctx context.Context) pulumix.Output[GetIngressGatewayHost] {
-	return pulumix.Output[GetIngressGatewayHost]{
-		OutputState: i.ToGetIngressGatewayHostOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetIngressGatewayHostArrayInput is an input type that accepts GetIngressGatewayHostArray and GetIngressGatewayHostArrayOutput values.
@@ -5452,12 +4677,6 @@ func (i GetIngressGatewayHostArray) ToGetIngressGatewayHostArrayOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetIngressGatewayHostArrayOutput)
 }
 
-func (i GetIngressGatewayHostArray) ToOutput(ctx context.Context) pulumix.Output[[]GetIngressGatewayHost] {
-	return pulumix.Output[[]GetIngressGatewayHost]{
-		OutputState: i.ToGetIngressGatewayHostArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetIngressGatewayHostOutput struct{ *pulumi.OutputState }
 
 func (GetIngressGatewayHostOutput) ElementType() reflect.Type {
@@ -5472,12 +4691,6 @@ func (o GetIngressGatewayHostOutput) ToGetIngressGatewayHostOutputWithContext(ct
 	return o
 }
 
-func (o GetIngressGatewayHostOutput) ToOutput(ctx context.Context) pulumix.Output[GetIngressGatewayHost] {
-	return pulumix.Output[GetIngressGatewayHost]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Hostnames of the host. Applicable only for HTTP and TLS_PASSTHROUGH listeners. Wildcard hostnames are supported in the prefix form. Examples of valid hostnames are "www.example.com", "*.example.com", "*.com".
 func (o GetIngressGatewayHostOutput) Hostnames() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetIngressGatewayHost) []string { return v.Hostnames }).(pulumi.StringArrayOutput)
@@ -5489,8 +4702,8 @@ func (o GetIngressGatewayHostOutput) Listeners() GetIngressGatewayHostListenerAr
 }
 
 // A user-friendly name. The name has to be unique within the same service mesh and cannot be changed after creation. Avoid entering confidential information.  Example: `My unique resource name`
-func (o GetIngressGatewayHostOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIngressGatewayHost) string { return v.Name }).(pulumi.StringOutput)
+func (o GetIngressGatewayHostOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetIngressGatewayHost) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 type GetIngressGatewayHostArrayOutput struct{ *pulumi.OutputState }
@@ -5507,12 +4720,6 @@ func (o GetIngressGatewayHostArrayOutput) ToGetIngressGatewayHostArrayOutputWith
 	return o
 }
 
-func (o GetIngressGatewayHostArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetIngressGatewayHost] {
-	return pulumix.Output[[]GetIngressGatewayHost]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetIngressGatewayHostArrayOutput) Index(i pulumi.IntInput) GetIngressGatewayHostOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIngressGatewayHost {
 		return vs[0].([]GetIngressGatewayHost)[vs[1].(int)]
@@ -5521,9 +4728,9 @@ func (o GetIngressGatewayHostArrayOutput) Index(i pulumi.IntInput) GetIngressGat
 
 type GetIngressGatewayHostListener struct {
 	// Port on which ingress gateway is listening.
-	Port int `pulumi:"port"`
+	Port *int `pulumi:"port"`
 	// Type of protocol used.
-	Protocol string `pulumi:"protocol"`
+	Protocol *string `pulumi:"protocol"`
 	// TLS enforcement config for the ingress listener.
 	Tls []GetIngressGatewayHostListenerTl `pulumi:"tls"`
 }
@@ -5541,9 +4748,9 @@ type GetIngressGatewayHostListenerInput interface {
 
 type GetIngressGatewayHostListenerArgs struct {
 	// Port on which ingress gateway is listening.
-	Port pulumi.IntInput `pulumi:"port"`
+	Port pulumi.IntPtrInput `pulumi:"port"`
 	// Type of protocol used.
-	Protocol pulumi.StringInput `pulumi:"protocol"`
+	Protocol pulumi.StringPtrInput `pulumi:"protocol"`
 	// TLS enforcement config for the ingress listener.
 	Tls GetIngressGatewayHostListenerTlArrayInput `pulumi:"tls"`
 }
@@ -5558,12 +4765,6 @@ func (i GetIngressGatewayHostListenerArgs) ToGetIngressGatewayHostListenerOutput
 
 func (i GetIngressGatewayHostListenerArgs) ToGetIngressGatewayHostListenerOutputWithContext(ctx context.Context) GetIngressGatewayHostListenerOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetIngressGatewayHostListenerOutput)
-}
-
-func (i GetIngressGatewayHostListenerArgs) ToOutput(ctx context.Context) pulumix.Output[GetIngressGatewayHostListener] {
-	return pulumix.Output[GetIngressGatewayHostListener]{
-		OutputState: i.ToGetIngressGatewayHostListenerOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetIngressGatewayHostListenerArrayInput is an input type that accepts GetIngressGatewayHostListenerArray and GetIngressGatewayHostListenerArrayOutput values.
@@ -5591,12 +4792,6 @@ func (i GetIngressGatewayHostListenerArray) ToGetIngressGatewayHostListenerArray
 	return pulumi.ToOutputWithContext(ctx, i).(GetIngressGatewayHostListenerArrayOutput)
 }
 
-func (i GetIngressGatewayHostListenerArray) ToOutput(ctx context.Context) pulumix.Output[[]GetIngressGatewayHostListener] {
-	return pulumix.Output[[]GetIngressGatewayHostListener]{
-		OutputState: i.ToGetIngressGatewayHostListenerArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetIngressGatewayHostListenerOutput struct{ *pulumi.OutputState }
 
 func (GetIngressGatewayHostListenerOutput) ElementType() reflect.Type {
@@ -5611,20 +4806,14 @@ func (o GetIngressGatewayHostListenerOutput) ToGetIngressGatewayHostListenerOutp
 	return o
 }
 
-func (o GetIngressGatewayHostListenerOutput) ToOutput(ctx context.Context) pulumix.Output[GetIngressGatewayHostListener] {
-	return pulumix.Output[GetIngressGatewayHostListener]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Port on which ingress gateway is listening.
-func (o GetIngressGatewayHostListenerOutput) Port() pulumi.IntOutput {
-	return o.ApplyT(func(v GetIngressGatewayHostListener) int { return v.Port }).(pulumi.IntOutput)
+func (o GetIngressGatewayHostListenerOutput) Port() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetIngressGatewayHostListener) *int { return v.Port }).(pulumi.IntPtrOutput)
 }
 
 // Type of protocol used.
-func (o GetIngressGatewayHostListenerOutput) Protocol() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIngressGatewayHostListener) string { return v.Protocol }).(pulumi.StringOutput)
+func (o GetIngressGatewayHostListenerOutput) Protocol() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetIngressGatewayHostListener) *string { return v.Protocol }).(pulumi.StringPtrOutput)
 }
 
 // TLS enforcement config for the ingress listener.
@@ -5646,12 +4835,6 @@ func (o GetIngressGatewayHostListenerArrayOutput) ToGetIngressGatewayHostListene
 	return o
 }
 
-func (o GetIngressGatewayHostListenerArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetIngressGatewayHostListener] {
-	return pulumix.Output[[]GetIngressGatewayHostListener]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetIngressGatewayHostListenerArrayOutput) Index(i pulumi.IntInput) GetIngressGatewayHostListenerOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIngressGatewayHostListener {
 		return vs[0].([]GetIngressGatewayHostListener)[vs[1].(int)]
@@ -5662,7 +4845,7 @@ type GetIngressGatewayHostListenerTl struct {
 	// Resource representing the TLS configuration used for validating client certificates.
 	ClientValidations []GetIngressGatewayHostListenerTlClientValidation `pulumi:"clientValidations"`
 	// DISABLED: Connection can only be plaintext. PERMISSIVE: Connection can be either plaintext or TLS/mTLS. If the clientValidation.trustedCaBundle property is configured for the listener, mTLS is performed and the client's certificates are validated by the gateway. TLS: Connection can only be TLS.  MUTUAL_TLS: Connection can only be MTLS.
-	Mode string `pulumi:"mode"`
+	Mode *string `pulumi:"mode"`
 	// Resource representing the location of the TLS certificate.
 	ServerCertificates []GetIngressGatewayHostListenerTlServerCertificate `pulumi:"serverCertificates"`
 }
@@ -5682,7 +4865,7 @@ type GetIngressGatewayHostListenerTlArgs struct {
 	// Resource representing the TLS configuration used for validating client certificates.
 	ClientValidations GetIngressGatewayHostListenerTlClientValidationArrayInput `pulumi:"clientValidations"`
 	// DISABLED: Connection can only be plaintext. PERMISSIVE: Connection can be either plaintext or TLS/mTLS. If the clientValidation.trustedCaBundle property is configured for the listener, mTLS is performed and the client's certificates are validated by the gateway. TLS: Connection can only be TLS.  MUTUAL_TLS: Connection can only be MTLS.
-	Mode pulumi.StringInput `pulumi:"mode"`
+	Mode pulumi.StringPtrInput `pulumi:"mode"`
 	// Resource representing the location of the TLS certificate.
 	ServerCertificates GetIngressGatewayHostListenerTlServerCertificateArrayInput `pulumi:"serverCertificates"`
 }
@@ -5697,12 +4880,6 @@ func (i GetIngressGatewayHostListenerTlArgs) ToGetIngressGatewayHostListenerTlOu
 
 func (i GetIngressGatewayHostListenerTlArgs) ToGetIngressGatewayHostListenerTlOutputWithContext(ctx context.Context) GetIngressGatewayHostListenerTlOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetIngressGatewayHostListenerTlOutput)
-}
-
-func (i GetIngressGatewayHostListenerTlArgs) ToOutput(ctx context.Context) pulumix.Output[GetIngressGatewayHostListenerTl] {
-	return pulumix.Output[GetIngressGatewayHostListenerTl]{
-		OutputState: i.ToGetIngressGatewayHostListenerTlOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetIngressGatewayHostListenerTlArrayInput is an input type that accepts GetIngressGatewayHostListenerTlArray and GetIngressGatewayHostListenerTlArrayOutput values.
@@ -5730,12 +4907,6 @@ func (i GetIngressGatewayHostListenerTlArray) ToGetIngressGatewayHostListenerTlA
 	return pulumi.ToOutputWithContext(ctx, i).(GetIngressGatewayHostListenerTlArrayOutput)
 }
 
-func (i GetIngressGatewayHostListenerTlArray) ToOutput(ctx context.Context) pulumix.Output[[]GetIngressGatewayHostListenerTl] {
-	return pulumix.Output[[]GetIngressGatewayHostListenerTl]{
-		OutputState: i.ToGetIngressGatewayHostListenerTlArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetIngressGatewayHostListenerTlOutput struct{ *pulumi.OutputState }
 
 func (GetIngressGatewayHostListenerTlOutput) ElementType() reflect.Type {
@@ -5750,12 +4921,6 @@ func (o GetIngressGatewayHostListenerTlOutput) ToGetIngressGatewayHostListenerTl
 	return o
 }
 
-func (o GetIngressGatewayHostListenerTlOutput) ToOutput(ctx context.Context) pulumix.Output[GetIngressGatewayHostListenerTl] {
-	return pulumix.Output[GetIngressGatewayHostListenerTl]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Resource representing the TLS configuration used for validating client certificates.
 func (o GetIngressGatewayHostListenerTlOutput) ClientValidations() GetIngressGatewayHostListenerTlClientValidationArrayOutput {
 	return o.ApplyT(func(v GetIngressGatewayHostListenerTl) []GetIngressGatewayHostListenerTlClientValidation {
@@ -5764,8 +4929,8 @@ func (o GetIngressGatewayHostListenerTlOutput) ClientValidations() GetIngressGat
 }
 
 // DISABLED: Connection can only be plaintext. PERMISSIVE: Connection can be either plaintext or TLS/mTLS. If the clientValidation.trustedCaBundle property is configured for the listener, mTLS is performed and the client's certificates are validated by the gateway. TLS: Connection can only be TLS.  MUTUAL_TLS: Connection can only be MTLS.
-func (o GetIngressGatewayHostListenerTlOutput) Mode() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIngressGatewayHostListenerTl) string { return v.Mode }).(pulumi.StringOutput)
+func (o GetIngressGatewayHostListenerTlOutput) Mode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetIngressGatewayHostListenerTl) *string { return v.Mode }).(pulumi.StringPtrOutput)
 }
 
 // Resource representing the location of the TLS certificate.
@@ -5787,12 +4952,6 @@ func (o GetIngressGatewayHostListenerTlArrayOutput) ToGetIngressGatewayHostListe
 
 func (o GetIngressGatewayHostListenerTlArrayOutput) ToGetIngressGatewayHostListenerTlArrayOutputWithContext(ctx context.Context) GetIngressGatewayHostListenerTlArrayOutput {
 	return o
-}
-
-func (o GetIngressGatewayHostListenerTlArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetIngressGatewayHostListenerTl] {
-	return pulumix.Output[[]GetIngressGatewayHostListenerTl]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetIngressGatewayHostListenerTlArrayOutput) Index(i pulumi.IntInput) GetIngressGatewayHostListenerTlOutput {
@@ -5838,12 +4997,6 @@ func (i GetIngressGatewayHostListenerTlClientValidationArgs) ToGetIngressGateway
 	return pulumi.ToOutputWithContext(ctx, i).(GetIngressGatewayHostListenerTlClientValidationOutput)
 }
 
-func (i GetIngressGatewayHostListenerTlClientValidationArgs) ToOutput(ctx context.Context) pulumix.Output[GetIngressGatewayHostListenerTlClientValidation] {
-	return pulumix.Output[GetIngressGatewayHostListenerTlClientValidation]{
-		OutputState: i.ToGetIngressGatewayHostListenerTlClientValidationOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetIngressGatewayHostListenerTlClientValidationArrayInput is an input type that accepts GetIngressGatewayHostListenerTlClientValidationArray and GetIngressGatewayHostListenerTlClientValidationArrayOutput values.
 // You can construct a concrete instance of `GetIngressGatewayHostListenerTlClientValidationArrayInput` via:
 //
@@ -5869,12 +5022,6 @@ func (i GetIngressGatewayHostListenerTlClientValidationArray) ToGetIngressGatewa
 	return pulumi.ToOutputWithContext(ctx, i).(GetIngressGatewayHostListenerTlClientValidationArrayOutput)
 }
 
-func (i GetIngressGatewayHostListenerTlClientValidationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetIngressGatewayHostListenerTlClientValidation] {
-	return pulumix.Output[[]GetIngressGatewayHostListenerTlClientValidation]{
-		OutputState: i.ToGetIngressGatewayHostListenerTlClientValidationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetIngressGatewayHostListenerTlClientValidationOutput struct{ *pulumi.OutputState }
 
 func (GetIngressGatewayHostListenerTlClientValidationOutput) ElementType() reflect.Type {
@@ -5887,12 +5034,6 @@ func (o GetIngressGatewayHostListenerTlClientValidationOutput) ToGetIngressGatew
 
 func (o GetIngressGatewayHostListenerTlClientValidationOutput) ToGetIngressGatewayHostListenerTlClientValidationOutputWithContext(ctx context.Context) GetIngressGatewayHostListenerTlClientValidationOutput {
 	return o
-}
-
-func (o GetIngressGatewayHostListenerTlClientValidationOutput) ToOutput(ctx context.Context) pulumix.Output[GetIngressGatewayHostListenerTlClientValidation] {
-	return pulumix.Output[GetIngressGatewayHostListenerTlClientValidation]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A list of alternate names to verify the subject identity in the certificate presented by the client.
@@ -5921,12 +5062,6 @@ func (o GetIngressGatewayHostListenerTlClientValidationArrayOutput) ToGetIngress
 	return o
 }
 
-func (o GetIngressGatewayHostListenerTlClientValidationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetIngressGatewayHostListenerTlClientValidation] {
-	return pulumix.Output[[]GetIngressGatewayHostListenerTlClientValidation]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetIngressGatewayHostListenerTlClientValidationArrayOutput) Index(i pulumi.IntInput) GetIngressGatewayHostListenerTlClientValidationOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIngressGatewayHostListenerTlClientValidation {
 		return vs[0].([]GetIngressGatewayHostListenerTlClientValidation)[vs[1].(int)]
@@ -5935,11 +5070,11 @@ func (o GetIngressGatewayHostListenerTlClientValidationArrayOutput) Index(i pulu
 
 type GetIngressGatewayHostListenerTlClientValidationTrustedCaBundle struct {
 	// The OCID of the CA Bundle resource.
-	CaBundleId string `pulumi:"caBundleId"`
+	CaBundleId *string `pulumi:"caBundleId"`
 	// Name of the secret. For Kubernetes this is the name of the Kubernetes secret of type tls. For other platforms the secrets must be mounted at: /etc/oci/secrets/${secretName}/tls.{key,crt}
-	SecretName string `pulumi:"secretName"`
+	SecretName *string `pulumi:"secretName"`
 	// Type of certificate.
-	Type string `pulumi:"type"`
+	Type *string `pulumi:"type"`
 }
 
 // GetIngressGatewayHostListenerTlClientValidationTrustedCaBundleInput is an input type that accepts GetIngressGatewayHostListenerTlClientValidationTrustedCaBundleArgs and GetIngressGatewayHostListenerTlClientValidationTrustedCaBundleOutput values.
@@ -5955,11 +5090,11 @@ type GetIngressGatewayHostListenerTlClientValidationTrustedCaBundleInput interfa
 
 type GetIngressGatewayHostListenerTlClientValidationTrustedCaBundleArgs struct {
 	// The OCID of the CA Bundle resource.
-	CaBundleId pulumi.StringInput `pulumi:"caBundleId"`
+	CaBundleId pulumi.StringPtrInput `pulumi:"caBundleId"`
 	// Name of the secret. For Kubernetes this is the name of the Kubernetes secret of type tls. For other platforms the secrets must be mounted at: /etc/oci/secrets/${secretName}/tls.{key,crt}
-	SecretName pulumi.StringInput `pulumi:"secretName"`
+	SecretName pulumi.StringPtrInput `pulumi:"secretName"`
 	// Type of certificate.
-	Type pulumi.StringInput `pulumi:"type"`
+	Type pulumi.StringPtrInput `pulumi:"type"`
 }
 
 func (GetIngressGatewayHostListenerTlClientValidationTrustedCaBundleArgs) ElementType() reflect.Type {
@@ -5972,12 +5107,6 @@ func (i GetIngressGatewayHostListenerTlClientValidationTrustedCaBundleArgs) ToGe
 
 func (i GetIngressGatewayHostListenerTlClientValidationTrustedCaBundleArgs) ToGetIngressGatewayHostListenerTlClientValidationTrustedCaBundleOutputWithContext(ctx context.Context) GetIngressGatewayHostListenerTlClientValidationTrustedCaBundleOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetIngressGatewayHostListenerTlClientValidationTrustedCaBundleOutput)
-}
-
-func (i GetIngressGatewayHostListenerTlClientValidationTrustedCaBundleArgs) ToOutput(ctx context.Context) pulumix.Output[GetIngressGatewayHostListenerTlClientValidationTrustedCaBundle] {
-	return pulumix.Output[GetIngressGatewayHostListenerTlClientValidationTrustedCaBundle]{
-		OutputState: i.ToGetIngressGatewayHostListenerTlClientValidationTrustedCaBundleOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetIngressGatewayHostListenerTlClientValidationTrustedCaBundleArrayInput is an input type that accepts GetIngressGatewayHostListenerTlClientValidationTrustedCaBundleArray and GetIngressGatewayHostListenerTlClientValidationTrustedCaBundleArrayOutput values.
@@ -6005,12 +5134,6 @@ func (i GetIngressGatewayHostListenerTlClientValidationTrustedCaBundleArray) ToG
 	return pulumi.ToOutputWithContext(ctx, i).(GetIngressGatewayHostListenerTlClientValidationTrustedCaBundleArrayOutput)
 }
 
-func (i GetIngressGatewayHostListenerTlClientValidationTrustedCaBundleArray) ToOutput(ctx context.Context) pulumix.Output[[]GetIngressGatewayHostListenerTlClientValidationTrustedCaBundle] {
-	return pulumix.Output[[]GetIngressGatewayHostListenerTlClientValidationTrustedCaBundle]{
-		OutputState: i.ToGetIngressGatewayHostListenerTlClientValidationTrustedCaBundleArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetIngressGatewayHostListenerTlClientValidationTrustedCaBundleOutput struct{ *pulumi.OutputState }
 
 func (GetIngressGatewayHostListenerTlClientValidationTrustedCaBundleOutput) ElementType() reflect.Type {
@@ -6025,25 +5148,19 @@ func (o GetIngressGatewayHostListenerTlClientValidationTrustedCaBundleOutput) To
 	return o
 }
 
-func (o GetIngressGatewayHostListenerTlClientValidationTrustedCaBundleOutput) ToOutput(ctx context.Context) pulumix.Output[GetIngressGatewayHostListenerTlClientValidationTrustedCaBundle] {
-	return pulumix.Output[GetIngressGatewayHostListenerTlClientValidationTrustedCaBundle]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the CA Bundle resource.
-func (o GetIngressGatewayHostListenerTlClientValidationTrustedCaBundleOutput) CaBundleId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIngressGatewayHostListenerTlClientValidationTrustedCaBundle) string { return v.CaBundleId }).(pulumi.StringOutput)
+func (o GetIngressGatewayHostListenerTlClientValidationTrustedCaBundleOutput) CaBundleId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetIngressGatewayHostListenerTlClientValidationTrustedCaBundle) *string { return v.CaBundleId }).(pulumi.StringPtrOutput)
 }
 
 // Name of the secret. For Kubernetes this is the name of the Kubernetes secret of type tls. For other platforms the secrets must be mounted at: /etc/oci/secrets/${secretName}/tls.{key,crt}
-func (o GetIngressGatewayHostListenerTlClientValidationTrustedCaBundleOutput) SecretName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIngressGatewayHostListenerTlClientValidationTrustedCaBundle) string { return v.SecretName }).(pulumi.StringOutput)
+func (o GetIngressGatewayHostListenerTlClientValidationTrustedCaBundleOutput) SecretName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetIngressGatewayHostListenerTlClientValidationTrustedCaBundle) *string { return v.SecretName }).(pulumi.StringPtrOutput)
 }
 
 // Type of certificate.
-func (o GetIngressGatewayHostListenerTlClientValidationTrustedCaBundleOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIngressGatewayHostListenerTlClientValidationTrustedCaBundle) string { return v.Type }).(pulumi.StringOutput)
+func (o GetIngressGatewayHostListenerTlClientValidationTrustedCaBundleOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetIngressGatewayHostListenerTlClientValidationTrustedCaBundle) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
 
 type GetIngressGatewayHostListenerTlClientValidationTrustedCaBundleArrayOutput struct{ *pulumi.OutputState }
@@ -6060,12 +5177,6 @@ func (o GetIngressGatewayHostListenerTlClientValidationTrustedCaBundleArrayOutpu
 	return o
 }
 
-func (o GetIngressGatewayHostListenerTlClientValidationTrustedCaBundleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetIngressGatewayHostListenerTlClientValidationTrustedCaBundle] {
-	return pulumix.Output[[]GetIngressGatewayHostListenerTlClientValidationTrustedCaBundle]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetIngressGatewayHostListenerTlClientValidationTrustedCaBundleArrayOutput) Index(i pulumi.IntInput) GetIngressGatewayHostListenerTlClientValidationTrustedCaBundleOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIngressGatewayHostListenerTlClientValidationTrustedCaBundle {
 		return vs[0].([]GetIngressGatewayHostListenerTlClientValidationTrustedCaBundle)[vs[1].(int)]
@@ -6074,11 +5185,11 @@ func (o GetIngressGatewayHostListenerTlClientValidationTrustedCaBundleArrayOutpu
 
 type GetIngressGatewayHostListenerTlServerCertificate struct {
 	// The OCID of the certificate resource that will be used for mTLS authentication with other virtual services in the mesh.
-	CertificateId string `pulumi:"certificateId"`
+	CertificateId *string `pulumi:"certificateId"`
 	// Name of the secret. For Kubernetes this is the name of the Kubernetes secret of type tls. For other platforms the secrets must be mounted at: /etc/oci/secrets/${secretName}/tls.{key,crt}
-	SecretName string `pulumi:"secretName"`
+	SecretName *string `pulumi:"secretName"`
 	// Type of certificate.
-	Type string `pulumi:"type"`
+	Type *string `pulumi:"type"`
 }
 
 // GetIngressGatewayHostListenerTlServerCertificateInput is an input type that accepts GetIngressGatewayHostListenerTlServerCertificateArgs and GetIngressGatewayHostListenerTlServerCertificateOutput values.
@@ -6094,11 +5205,11 @@ type GetIngressGatewayHostListenerTlServerCertificateInput interface {
 
 type GetIngressGatewayHostListenerTlServerCertificateArgs struct {
 	// The OCID of the certificate resource that will be used for mTLS authentication with other virtual services in the mesh.
-	CertificateId pulumi.StringInput `pulumi:"certificateId"`
+	CertificateId pulumi.StringPtrInput `pulumi:"certificateId"`
 	// Name of the secret. For Kubernetes this is the name of the Kubernetes secret of type tls. For other platforms the secrets must be mounted at: /etc/oci/secrets/${secretName}/tls.{key,crt}
-	SecretName pulumi.StringInput `pulumi:"secretName"`
+	SecretName pulumi.StringPtrInput `pulumi:"secretName"`
 	// Type of certificate.
-	Type pulumi.StringInput `pulumi:"type"`
+	Type pulumi.StringPtrInput `pulumi:"type"`
 }
 
 func (GetIngressGatewayHostListenerTlServerCertificateArgs) ElementType() reflect.Type {
@@ -6111,12 +5222,6 @@ func (i GetIngressGatewayHostListenerTlServerCertificateArgs) ToGetIngressGatewa
 
 func (i GetIngressGatewayHostListenerTlServerCertificateArgs) ToGetIngressGatewayHostListenerTlServerCertificateOutputWithContext(ctx context.Context) GetIngressGatewayHostListenerTlServerCertificateOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetIngressGatewayHostListenerTlServerCertificateOutput)
-}
-
-func (i GetIngressGatewayHostListenerTlServerCertificateArgs) ToOutput(ctx context.Context) pulumix.Output[GetIngressGatewayHostListenerTlServerCertificate] {
-	return pulumix.Output[GetIngressGatewayHostListenerTlServerCertificate]{
-		OutputState: i.ToGetIngressGatewayHostListenerTlServerCertificateOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetIngressGatewayHostListenerTlServerCertificateArrayInput is an input type that accepts GetIngressGatewayHostListenerTlServerCertificateArray and GetIngressGatewayHostListenerTlServerCertificateArrayOutput values.
@@ -6144,12 +5249,6 @@ func (i GetIngressGatewayHostListenerTlServerCertificateArray) ToGetIngressGatew
 	return pulumi.ToOutputWithContext(ctx, i).(GetIngressGatewayHostListenerTlServerCertificateArrayOutput)
 }
 
-func (i GetIngressGatewayHostListenerTlServerCertificateArray) ToOutput(ctx context.Context) pulumix.Output[[]GetIngressGatewayHostListenerTlServerCertificate] {
-	return pulumix.Output[[]GetIngressGatewayHostListenerTlServerCertificate]{
-		OutputState: i.ToGetIngressGatewayHostListenerTlServerCertificateArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetIngressGatewayHostListenerTlServerCertificateOutput struct{ *pulumi.OutputState }
 
 func (GetIngressGatewayHostListenerTlServerCertificateOutput) ElementType() reflect.Type {
@@ -6164,25 +5263,19 @@ func (o GetIngressGatewayHostListenerTlServerCertificateOutput) ToGetIngressGate
 	return o
 }
 
-func (o GetIngressGatewayHostListenerTlServerCertificateOutput) ToOutput(ctx context.Context) pulumix.Output[GetIngressGatewayHostListenerTlServerCertificate] {
-	return pulumix.Output[GetIngressGatewayHostListenerTlServerCertificate]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the certificate resource that will be used for mTLS authentication with other virtual services in the mesh.
-func (o GetIngressGatewayHostListenerTlServerCertificateOutput) CertificateId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIngressGatewayHostListenerTlServerCertificate) string { return v.CertificateId }).(pulumi.StringOutput)
+func (o GetIngressGatewayHostListenerTlServerCertificateOutput) CertificateId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetIngressGatewayHostListenerTlServerCertificate) *string { return v.CertificateId }).(pulumi.StringPtrOutput)
 }
 
 // Name of the secret. For Kubernetes this is the name of the Kubernetes secret of type tls. For other platforms the secrets must be mounted at: /etc/oci/secrets/${secretName}/tls.{key,crt}
-func (o GetIngressGatewayHostListenerTlServerCertificateOutput) SecretName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIngressGatewayHostListenerTlServerCertificate) string { return v.SecretName }).(pulumi.StringOutput)
+func (o GetIngressGatewayHostListenerTlServerCertificateOutput) SecretName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetIngressGatewayHostListenerTlServerCertificate) *string { return v.SecretName }).(pulumi.StringPtrOutput)
 }
 
 // Type of certificate.
-func (o GetIngressGatewayHostListenerTlServerCertificateOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIngressGatewayHostListenerTlServerCertificate) string { return v.Type }).(pulumi.StringOutput)
+func (o GetIngressGatewayHostListenerTlServerCertificateOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetIngressGatewayHostListenerTlServerCertificate) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
 
 type GetIngressGatewayHostListenerTlServerCertificateArrayOutput struct{ *pulumi.OutputState }
@@ -6199,12 +5292,6 @@ func (o GetIngressGatewayHostListenerTlServerCertificateArrayOutput) ToGetIngres
 	return o
 }
 
-func (o GetIngressGatewayHostListenerTlServerCertificateArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetIngressGatewayHostListenerTlServerCertificate] {
-	return pulumix.Output[[]GetIngressGatewayHostListenerTlServerCertificate]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetIngressGatewayHostListenerTlServerCertificateArrayOutput) Index(i pulumi.IntInput) GetIngressGatewayHostListenerTlServerCertificateOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIngressGatewayHostListenerTlServerCertificate {
 		return vs[0].([]GetIngressGatewayHostListenerTlServerCertificate)[vs[1].(int)]
@@ -6213,9 +5300,9 @@ func (o GetIngressGatewayHostListenerTlServerCertificateArrayOutput) Index(i pul
 
 type GetIngressGatewayMtl struct {
 	// The OCID of the certificate resource that will be used for mTLS authentication with other virtual services in the mesh.
-	CertificateId string `pulumi:"certificateId"`
+	CertificateId *string `pulumi:"certificateId"`
 	// The number of days the mTLS certificate is valid.  This value should be less than the Maximum Validity Duration  for Certificates (Days) setting on the Certificate Authority associated with this Mesh.  The certificate will be automatically renewed after 2/3 of the validity period, so a certificate with a maximum validity of 45 days will be renewed every 30 days.
-	MaximumValidity int `pulumi:"maximumValidity"`
+	MaximumValidity *int `pulumi:"maximumValidity"`
 }
 
 // GetIngressGatewayMtlInput is an input type that accepts GetIngressGatewayMtlArgs and GetIngressGatewayMtlOutput values.
@@ -6231,9 +5318,9 @@ type GetIngressGatewayMtlInput interface {
 
 type GetIngressGatewayMtlArgs struct {
 	// The OCID of the certificate resource that will be used for mTLS authentication with other virtual services in the mesh.
-	CertificateId pulumi.StringInput `pulumi:"certificateId"`
+	CertificateId pulumi.StringPtrInput `pulumi:"certificateId"`
 	// The number of days the mTLS certificate is valid.  This value should be less than the Maximum Validity Duration  for Certificates (Days) setting on the Certificate Authority associated with this Mesh.  The certificate will be automatically renewed after 2/3 of the validity period, so a certificate with a maximum validity of 45 days will be renewed every 30 days.
-	MaximumValidity pulumi.IntInput `pulumi:"maximumValidity"`
+	MaximumValidity pulumi.IntPtrInput `pulumi:"maximumValidity"`
 }
 
 func (GetIngressGatewayMtlArgs) ElementType() reflect.Type {
@@ -6246,12 +5333,6 @@ func (i GetIngressGatewayMtlArgs) ToGetIngressGatewayMtlOutput() GetIngressGatew
 
 func (i GetIngressGatewayMtlArgs) ToGetIngressGatewayMtlOutputWithContext(ctx context.Context) GetIngressGatewayMtlOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetIngressGatewayMtlOutput)
-}
-
-func (i GetIngressGatewayMtlArgs) ToOutput(ctx context.Context) pulumix.Output[GetIngressGatewayMtl] {
-	return pulumix.Output[GetIngressGatewayMtl]{
-		OutputState: i.ToGetIngressGatewayMtlOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetIngressGatewayMtlArrayInput is an input type that accepts GetIngressGatewayMtlArray and GetIngressGatewayMtlArrayOutput values.
@@ -6279,12 +5360,6 @@ func (i GetIngressGatewayMtlArray) ToGetIngressGatewayMtlArrayOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(GetIngressGatewayMtlArrayOutput)
 }
 
-func (i GetIngressGatewayMtlArray) ToOutput(ctx context.Context) pulumix.Output[[]GetIngressGatewayMtl] {
-	return pulumix.Output[[]GetIngressGatewayMtl]{
-		OutputState: i.ToGetIngressGatewayMtlArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetIngressGatewayMtlOutput struct{ *pulumi.OutputState }
 
 func (GetIngressGatewayMtlOutput) ElementType() reflect.Type {
@@ -6299,20 +5374,14 @@ func (o GetIngressGatewayMtlOutput) ToGetIngressGatewayMtlOutputWithContext(ctx 
 	return o
 }
 
-func (o GetIngressGatewayMtlOutput) ToOutput(ctx context.Context) pulumix.Output[GetIngressGatewayMtl] {
-	return pulumix.Output[GetIngressGatewayMtl]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the certificate resource that will be used for mTLS authentication with other virtual services in the mesh.
-func (o GetIngressGatewayMtlOutput) CertificateId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIngressGatewayMtl) string { return v.CertificateId }).(pulumi.StringOutput)
+func (o GetIngressGatewayMtlOutput) CertificateId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetIngressGatewayMtl) *string { return v.CertificateId }).(pulumi.StringPtrOutput)
 }
 
 // The number of days the mTLS certificate is valid.  This value should be less than the Maximum Validity Duration  for Certificates (Days) setting on the Certificate Authority associated with this Mesh.  The certificate will be automatically renewed after 2/3 of the validity period, so a certificate with a maximum validity of 45 days will be renewed every 30 days.
-func (o GetIngressGatewayMtlOutput) MaximumValidity() pulumi.IntOutput {
-	return o.ApplyT(func(v GetIngressGatewayMtl) int { return v.MaximumValidity }).(pulumi.IntOutput)
+func (o GetIngressGatewayMtlOutput) MaximumValidity() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetIngressGatewayMtl) *int { return v.MaximumValidity }).(pulumi.IntPtrOutput)
 }
 
 type GetIngressGatewayMtlArrayOutput struct{ *pulumi.OutputState }
@@ -6329,12 +5398,6 @@ func (o GetIngressGatewayMtlArrayOutput) ToGetIngressGatewayMtlArrayOutputWithCo
 	return o
 }
 
-func (o GetIngressGatewayMtlArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetIngressGatewayMtl] {
-	return pulumix.Output[[]GetIngressGatewayMtl]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetIngressGatewayMtlArrayOutput) Index(i pulumi.IntInput) GetIngressGatewayMtlOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIngressGatewayMtl {
 		return vs[0].([]GetIngressGatewayMtl)[vs[1].(int)]
@@ -6347,19 +5410,19 @@ type GetIngressGatewayRouteTableRouteRule struct {
 	// The ingress gateway host to which the route rule attaches. If not specified, the route rule gets attached to all hosts on the ingress gateway.
 	IngressGatewayHosts []GetIngressGatewayRouteTableRouteRuleIngressGatewayHost `pulumi:"ingressGatewayHosts"`
 	// If true, the rule will check that the content-type header has a application/grpc or one of the various application/grpc+ values.
-	IsGrpc bool `pulumi:"isGrpc"`
+	IsGrpc *bool `pulumi:"isGrpc"`
 	// If true, the hostname will be rewritten to the target virtual deployment's DNS hostname.
-	IsHostRewriteEnabled bool `pulumi:"isHostRewriteEnabled"`
+	IsHostRewriteEnabled *bool `pulumi:"isHostRewriteEnabled"`
 	// If true, the matched path prefix will be rewritten to '/' before being directed to the target virtual deployment.
-	IsPathRewriteEnabled bool `pulumi:"isPathRewriteEnabled"`
+	IsPathRewriteEnabled *bool `pulumi:"isPathRewriteEnabled"`
 	// Route to match
-	Path string `pulumi:"path"`
+	Path *string `pulumi:"path"`
 	// Match type for the route
-	PathType string `pulumi:"pathType"`
+	PathType *string `pulumi:"pathType"`
 	// The maximum duration in milliseconds for the upstream service to respond to a request.  If provided, the timeout value overrides the default timeout of 15 seconds for the HTTP based route rules, and disabled (no timeout) when 'isGrpc' is true.  The value 0 (zero) indicates that the timeout is disabled.  For streaming responses from the upstream service, consider either keeping the timeout disabled or set a sufficiently high value.
-	RequestTimeoutInMs string `pulumi:"requestTimeoutInMs"`
+	RequestTimeoutInMs *string `pulumi:"requestTimeoutInMs"`
 	// Type of protocol.
-	Type string `pulumi:"type"`
+	Type *string `pulumi:"type"`
 }
 
 // GetIngressGatewayRouteTableRouteRuleInput is an input type that accepts GetIngressGatewayRouteTableRouteRuleArgs and GetIngressGatewayRouteTableRouteRuleOutput values.
@@ -6379,19 +5442,19 @@ type GetIngressGatewayRouteTableRouteRuleArgs struct {
 	// The ingress gateway host to which the route rule attaches. If not specified, the route rule gets attached to all hosts on the ingress gateway.
 	IngressGatewayHosts GetIngressGatewayRouteTableRouteRuleIngressGatewayHostArrayInput `pulumi:"ingressGatewayHosts"`
 	// If true, the rule will check that the content-type header has a application/grpc or one of the various application/grpc+ values.
-	IsGrpc pulumi.BoolInput `pulumi:"isGrpc"`
+	IsGrpc pulumi.BoolPtrInput `pulumi:"isGrpc"`
 	// If true, the hostname will be rewritten to the target virtual deployment's DNS hostname.
-	IsHostRewriteEnabled pulumi.BoolInput `pulumi:"isHostRewriteEnabled"`
+	IsHostRewriteEnabled pulumi.BoolPtrInput `pulumi:"isHostRewriteEnabled"`
 	// If true, the matched path prefix will be rewritten to '/' before being directed to the target virtual deployment.
-	IsPathRewriteEnabled pulumi.BoolInput `pulumi:"isPathRewriteEnabled"`
+	IsPathRewriteEnabled pulumi.BoolPtrInput `pulumi:"isPathRewriteEnabled"`
 	// Route to match
-	Path pulumi.StringInput `pulumi:"path"`
+	Path pulumi.StringPtrInput `pulumi:"path"`
 	// Match type for the route
-	PathType pulumi.StringInput `pulumi:"pathType"`
+	PathType pulumi.StringPtrInput `pulumi:"pathType"`
 	// The maximum duration in milliseconds for the upstream service to respond to a request.  If provided, the timeout value overrides the default timeout of 15 seconds for the HTTP based route rules, and disabled (no timeout) when 'isGrpc' is true.  The value 0 (zero) indicates that the timeout is disabled.  For streaming responses from the upstream service, consider either keeping the timeout disabled or set a sufficiently high value.
-	RequestTimeoutInMs pulumi.StringInput `pulumi:"requestTimeoutInMs"`
+	RequestTimeoutInMs pulumi.StringPtrInput `pulumi:"requestTimeoutInMs"`
 	// Type of protocol.
-	Type pulumi.StringInput `pulumi:"type"`
+	Type pulumi.StringPtrInput `pulumi:"type"`
 }
 
 func (GetIngressGatewayRouteTableRouteRuleArgs) ElementType() reflect.Type {
@@ -6404,12 +5467,6 @@ func (i GetIngressGatewayRouteTableRouteRuleArgs) ToGetIngressGatewayRouteTableR
 
 func (i GetIngressGatewayRouteTableRouteRuleArgs) ToGetIngressGatewayRouteTableRouteRuleOutputWithContext(ctx context.Context) GetIngressGatewayRouteTableRouteRuleOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetIngressGatewayRouteTableRouteRuleOutput)
-}
-
-func (i GetIngressGatewayRouteTableRouteRuleArgs) ToOutput(ctx context.Context) pulumix.Output[GetIngressGatewayRouteTableRouteRule] {
-	return pulumix.Output[GetIngressGatewayRouteTableRouteRule]{
-		OutputState: i.ToGetIngressGatewayRouteTableRouteRuleOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetIngressGatewayRouteTableRouteRuleArrayInput is an input type that accepts GetIngressGatewayRouteTableRouteRuleArray and GetIngressGatewayRouteTableRouteRuleArrayOutput values.
@@ -6437,12 +5494,6 @@ func (i GetIngressGatewayRouteTableRouteRuleArray) ToGetIngressGatewayRouteTable
 	return pulumi.ToOutputWithContext(ctx, i).(GetIngressGatewayRouteTableRouteRuleArrayOutput)
 }
 
-func (i GetIngressGatewayRouteTableRouteRuleArray) ToOutput(ctx context.Context) pulumix.Output[[]GetIngressGatewayRouteTableRouteRule] {
-	return pulumix.Output[[]GetIngressGatewayRouteTableRouteRule]{
-		OutputState: i.ToGetIngressGatewayRouteTableRouteRuleArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetIngressGatewayRouteTableRouteRuleOutput struct{ *pulumi.OutputState }
 
 func (GetIngressGatewayRouteTableRouteRuleOutput) ElementType() reflect.Type {
@@ -6455,12 +5506,6 @@ func (o GetIngressGatewayRouteTableRouteRuleOutput) ToGetIngressGatewayRouteTabl
 
 func (o GetIngressGatewayRouteTableRouteRuleOutput) ToGetIngressGatewayRouteTableRouteRuleOutputWithContext(ctx context.Context) GetIngressGatewayRouteTableRouteRuleOutput {
 	return o
-}
-
-func (o GetIngressGatewayRouteTableRouteRuleOutput) ToOutput(ctx context.Context) pulumix.Output[GetIngressGatewayRouteTableRouteRule] {
-	return pulumix.Output[GetIngressGatewayRouteTableRouteRule]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The destination of the request.
@@ -6478,38 +5523,38 @@ func (o GetIngressGatewayRouteTableRouteRuleOutput) IngressGatewayHosts() GetIng
 }
 
 // If true, the rule will check that the content-type header has a application/grpc or one of the various application/grpc+ values.
-func (o GetIngressGatewayRouteTableRouteRuleOutput) IsGrpc() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetIngressGatewayRouteTableRouteRule) bool { return v.IsGrpc }).(pulumi.BoolOutput)
+func (o GetIngressGatewayRouteTableRouteRuleOutput) IsGrpc() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetIngressGatewayRouteTableRouteRule) *bool { return v.IsGrpc }).(pulumi.BoolPtrOutput)
 }
 
 // If true, the hostname will be rewritten to the target virtual deployment's DNS hostname.
-func (o GetIngressGatewayRouteTableRouteRuleOutput) IsHostRewriteEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetIngressGatewayRouteTableRouteRule) bool { return v.IsHostRewriteEnabled }).(pulumi.BoolOutput)
+func (o GetIngressGatewayRouteTableRouteRuleOutput) IsHostRewriteEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetIngressGatewayRouteTableRouteRule) *bool { return v.IsHostRewriteEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // If true, the matched path prefix will be rewritten to '/' before being directed to the target virtual deployment.
-func (o GetIngressGatewayRouteTableRouteRuleOutput) IsPathRewriteEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetIngressGatewayRouteTableRouteRule) bool { return v.IsPathRewriteEnabled }).(pulumi.BoolOutput)
+func (o GetIngressGatewayRouteTableRouteRuleOutput) IsPathRewriteEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetIngressGatewayRouteTableRouteRule) *bool { return v.IsPathRewriteEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // Route to match
-func (o GetIngressGatewayRouteTableRouteRuleOutput) Path() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIngressGatewayRouteTableRouteRule) string { return v.Path }).(pulumi.StringOutput)
+func (o GetIngressGatewayRouteTableRouteRuleOutput) Path() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetIngressGatewayRouteTableRouteRule) *string { return v.Path }).(pulumi.StringPtrOutput)
 }
 
 // Match type for the route
-func (o GetIngressGatewayRouteTableRouteRuleOutput) PathType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIngressGatewayRouteTableRouteRule) string { return v.PathType }).(pulumi.StringOutput)
+func (o GetIngressGatewayRouteTableRouteRuleOutput) PathType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetIngressGatewayRouteTableRouteRule) *string { return v.PathType }).(pulumi.StringPtrOutput)
 }
 
 // The maximum duration in milliseconds for the upstream service to respond to a request.  If provided, the timeout value overrides the default timeout of 15 seconds for the HTTP based route rules, and disabled (no timeout) when 'isGrpc' is true.  The value 0 (zero) indicates that the timeout is disabled.  For streaming responses from the upstream service, consider either keeping the timeout disabled or set a sufficiently high value.
-func (o GetIngressGatewayRouteTableRouteRuleOutput) RequestTimeoutInMs() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIngressGatewayRouteTableRouteRule) string { return v.RequestTimeoutInMs }).(pulumi.StringOutput)
+func (o GetIngressGatewayRouteTableRouteRuleOutput) RequestTimeoutInMs() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetIngressGatewayRouteTableRouteRule) *string { return v.RequestTimeoutInMs }).(pulumi.StringPtrOutput)
 }
 
 // Type of protocol.
-func (o GetIngressGatewayRouteTableRouteRuleOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIngressGatewayRouteTableRouteRule) string { return v.Type }).(pulumi.StringOutput)
+func (o GetIngressGatewayRouteTableRouteRuleOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetIngressGatewayRouteTableRouteRule) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
 
 type GetIngressGatewayRouteTableRouteRuleArrayOutput struct{ *pulumi.OutputState }
@@ -6526,12 +5571,6 @@ func (o GetIngressGatewayRouteTableRouteRuleArrayOutput) ToGetIngressGatewayRout
 	return o
 }
 
-func (o GetIngressGatewayRouteTableRouteRuleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetIngressGatewayRouteTableRouteRule] {
-	return pulumix.Output[[]GetIngressGatewayRouteTableRouteRule]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetIngressGatewayRouteTableRouteRuleArrayOutput) Index(i pulumi.IntInput) GetIngressGatewayRouteTableRouteRuleOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIngressGatewayRouteTableRouteRule {
 		return vs[0].([]GetIngressGatewayRouteTableRouteRule)[vs[1].(int)]
@@ -6540,11 +5579,11 @@ func (o GetIngressGatewayRouteTableRouteRuleArrayOutput) Index(i pulumi.IntInput
 
 type GetIngressGatewayRouteTableRouteRuleDestination struct {
 	// The port of the ingress gateway host listener. Leave empty to match all ports for the host.
-	Port int `pulumi:"port"`
+	Port *int `pulumi:"port"`
 	// The OCID of the virtual service where the request will be routed.
-	VirtualServiceId string `pulumi:"virtualServiceId"`
+	VirtualServiceId *string `pulumi:"virtualServiceId"`
 	// Weight of traffic target.
-	Weight int `pulumi:"weight"`
+	Weight *int `pulumi:"weight"`
 }
 
 // GetIngressGatewayRouteTableRouteRuleDestinationInput is an input type that accepts GetIngressGatewayRouteTableRouteRuleDestinationArgs and GetIngressGatewayRouteTableRouteRuleDestinationOutput values.
@@ -6560,11 +5599,11 @@ type GetIngressGatewayRouteTableRouteRuleDestinationInput interface {
 
 type GetIngressGatewayRouteTableRouteRuleDestinationArgs struct {
 	// The port of the ingress gateway host listener. Leave empty to match all ports for the host.
-	Port pulumi.IntInput `pulumi:"port"`
+	Port pulumi.IntPtrInput `pulumi:"port"`
 	// The OCID of the virtual service where the request will be routed.
-	VirtualServiceId pulumi.StringInput `pulumi:"virtualServiceId"`
+	VirtualServiceId pulumi.StringPtrInput `pulumi:"virtualServiceId"`
 	// Weight of traffic target.
-	Weight pulumi.IntInput `pulumi:"weight"`
+	Weight pulumi.IntPtrInput `pulumi:"weight"`
 }
 
 func (GetIngressGatewayRouteTableRouteRuleDestinationArgs) ElementType() reflect.Type {
@@ -6577,12 +5616,6 @@ func (i GetIngressGatewayRouteTableRouteRuleDestinationArgs) ToGetIngressGateway
 
 func (i GetIngressGatewayRouteTableRouteRuleDestinationArgs) ToGetIngressGatewayRouteTableRouteRuleDestinationOutputWithContext(ctx context.Context) GetIngressGatewayRouteTableRouteRuleDestinationOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetIngressGatewayRouteTableRouteRuleDestinationOutput)
-}
-
-func (i GetIngressGatewayRouteTableRouteRuleDestinationArgs) ToOutput(ctx context.Context) pulumix.Output[GetIngressGatewayRouteTableRouteRuleDestination] {
-	return pulumix.Output[GetIngressGatewayRouteTableRouteRuleDestination]{
-		OutputState: i.ToGetIngressGatewayRouteTableRouteRuleDestinationOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetIngressGatewayRouteTableRouteRuleDestinationArrayInput is an input type that accepts GetIngressGatewayRouteTableRouteRuleDestinationArray and GetIngressGatewayRouteTableRouteRuleDestinationArrayOutput values.
@@ -6610,12 +5643,6 @@ func (i GetIngressGatewayRouteTableRouteRuleDestinationArray) ToGetIngressGatewa
 	return pulumi.ToOutputWithContext(ctx, i).(GetIngressGatewayRouteTableRouteRuleDestinationArrayOutput)
 }
 
-func (i GetIngressGatewayRouteTableRouteRuleDestinationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetIngressGatewayRouteTableRouteRuleDestination] {
-	return pulumix.Output[[]GetIngressGatewayRouteTableRouteRuleDestination]{
-		OutputState: i.ToGetIngressGatewayRouteTableRouteRuleDestinationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetIngressGatewayRouteTableRouteRuleDestinationOutput struct{ *pulumi.OutputState }
 
 func (GetIngressGatewayRouteTableRouteRuleDestinationOutput) ElementType() reflect.Type {
@@ -6630,25 +5657,19 @@ func (o GetIngressGatewayRouteTableRouteRuleDestinationOutput) ToGetIngressGatew
 	return o
 }
 
-func (o GetIngressGatewayRouteTableRouteRuleDestinationOutput) ToOutput(ctx context.Context) pulumix.Output[GetIngressGatewayRouteTableRouteRuleDestination] {
-	return pulumix.Output[GetIngressGatewayRouteTableRouteRuleDestination]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The port of the ingress gateway host listener. Leave empty to match all ports for the host.
-func (o GetIngressGatewayRouteTableRouteRuleDestinationOutput) Port() pulumi.IntOutput {
-	return o.ApplyT(func(v GetIngressGatewayRouteTableRouteRuleDestination) int { return v.Port }).(pulumi.IntOutput)
+func (o GetIngressGatewayRouteTableRouteRuleDestinationOutput) Port() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetIngressGatewayRouteTableRouteRuleDestination) *int { return v.Port }).(pulumi.IntPtrOutput)
 }
 
 // The OCID of the virtual service where the request will be routed.
-func (o GetIngressGatewayRouteTableRouteRuleDestinationOutput) VirtualServiceId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIngressGatewayRouteTableRouteRuleDestination) string { return v.VirtualServiceId }).(pulumi.StringOutput)
+func (o GetIngressGatewayRouteTableRouteRuleDestinationOutput) VirtualServiceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetIngressGatewayRouteTableRouteRuleDestination) *string { return v.VirtualServiceId }).(pulumi.StringPtrOutput)
 }
 
 // Weight of traffic target.
-func (o GetIngressGatewayRouteTableRouteRuleDestinationOutput) Weight() pulumi.IntOutput {
-	return o.ApplyT(func(v GetIngressGatewayRouteTableRouteRuleDestination) int { return v.Weight }).(pulumi.IntOutput)
+func (o GetIngressGatewayRouteTableRouteRuleDestinationOutput) Weight() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetIngressGatewayRouteTableRouteRuleDestination) *int { return v.Weight }).(pulumi.IntPtrOutput)
 }
 
 type GetIngressGatewayRouteTableRouteRuleDestinationArrayOutput struct{ *pulumi.OutputState }
@@ -6665,12 +5686,6 @@ func (o GetIngressGatewayRouteTableRouteRuleDestinationArrayOutput) ToGetIngress
 	return o
 }
 
-func (o GetIngressGatewayRouteTableRouteRuleDestinationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetIngressGatewayRouteTableRouteRuleDestination] {
-	return pulumix.Output[[]GetIngressGatewayRouteTableRouteRuleDestination]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetIngressGatewayRouteTableRouteRuleDestinationArrayOutput) Index(i pulumi.IntInput) GetIngressGatewayRouteTableRouteRuleDestinationOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIngressGatewayRouteTableRouteRuleDestination {
 		return vs[0].([]GetIngressGatewayRouteTableRouteRuleDestination)[vs[1].(int)]
@@ -6679,9 +5694,9 @@ func (o GetIngressGatewayRouteTableRouteRuleDestinationArrayOutput) Index(i pulu
 
 type GetIngressGatewayRouteTableRouteRuleIngressGatewayHost struct {
 	// Name of the ingress gateway host that this route should apply to.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// The port of the ingress gateway host listener. Leave empty to match all ports for the host.
-	Port int `pulumi:"port"`
+	Port *int `pulumi:"port"`
 }
 
 // GetIngressGatewayRouteTableRouteRuleIngressGatewayHostInput is an input type that accepts GetIngressGatewayRouteTableRouteRuleIngressGatewayHostArgs and GetIngressGatewayRouteTableRouteRuleIngressGatewayHostOutput values.
@@ -6697,9 +5712,9 @@ type GetIngressGatewayRouteTableRouteRuleIngressGatewayHostInput interface {
 
 type GetIngressGatewayRouteTableRouteRuleIngressGatewayHostArgs struct {
 	// Name of the ingress gateway host that this route should apply to.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// The port of the ingress gateway host listener. Leave empty to match all ports for the host.
-	Port pulumi.IntInput `pulumi:"port"`
+	Port pulumi.IntPtrInput `pulumi:"port"`
 }
 
 func (GetIngressGatewayRouteTableRouteRuleIngressGatewayHostArgs) ElementType() reflect.Type {
@@ -6712,12 +5727,6 @@ func (i GetIngressGatewayRouteTableRouteRuleIngressGatewayHostArgs) ToGetIngress
 
 func (i GetIngressGatewayRouteTableRouteRuleIngressGatewayHostArgs) ToGetIngressGatewayRouteTableRouteRuleIngressGatewayHostOutputWithContext(ctx context.Context) GetIngressGatewayRouteTableRouteRuleIngressGatewayHostOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetIngressGatewayRouteTableRouteRuleIngressGatewayHostOutput)
-}
-
-func (i GetIngressGatewayRouteTableRouteRuleIngressGatewayHostArgs) ToOutput(ctx context.Context) pulumix.Output[GetIngressGatewayRouteTableRouteRuleIngressGatewayHost] {
-	return pulumix.Output[GetIngressGatewayRouteTableRouteRuleIngressGatewayHost]{
-		OutputState: i.ToGetIngressGatewayRouteTableRouteRuleIngressGatewayHostOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetIngressGatewayRouteTableRouteRuleIngressGatewayHostArrayInput is an input type that accepts GetIngressGatewayRouteTableRouteRuleIngressGatewayHostArray and GetIngressGatewayRouteTableRouteRuleIngressGatewayHostArrayOutput values.
@@ -6745,12 +5754,6 @@ func (i GetIngressGatewayRouteTableRouteRuleIngressGatewayHostArray) ToGetIngres
 	return pulumi.ToOutputWithContext(ctx, i).(GetIngressGatewayRouteTableRouteRuleIngressGatewayHostArrayOutput)
 }
 
-func (i GetIngressGatewayRouteTableRouteRuleIngressGatewayHostArray) ToOutput(ctx context.Context) pulumix.Output[[]GetIngressGatewayRouteTableRouteRuleIngressGatewayHost] {
-	return pulumix.Output[[]GetIngressGatewayRouteTableRouteRuleIngressGatewayHost]{
-		OutputState: i.ToGetIngressGatewayRouteTableRouteRuleIngressGatewayHostArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetIngressGatewayRouteTableRouteRuleIngressGatewayHostOutput struct{ *pulumi.OutputState }
 
 func (GetIngressGatewayRouteTableRouteRuleIngressGatewayHostOutput) ElementType() reflect.Type {
@@ -6765,20 +5768,14 @@ func (o GetIngressGatewayRouteTableRouteRuleIngressGatewayHostOutput) ToGetIngre
 	return o
 }
 
-func (o GetIngressGatewayRouteTableRouteRuleIngressGatewayHostOutput) ToOutput(ctx context.Context) pulumix.Output[GetIngressGatewayRouteTableRouteRuleIngressGatewayHost] {
-	return pulumix.Output[GetIngressGatewayRouteTableRouteRuleIngressGatewayHost]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Name of the ingress gateway host that this route should apply to.
-func (o GetIngressGatewayRouteTableRouteRuleIngressGatewayHostOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIngressGatewayRouteTableRouteRuleIngressGatewayHost) string { return v.Name }).(pulumi.StringOutput)
+func (o GetIngressGatewayRouteTableRouteRuleIngressGatewayHostOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetIngressGatewayRouteTableRouteRuleIngressGatewayHost) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // The port of the ingress gateway host listener. Leave empty to match all ports for the host.
-func (o GetIngressGatewayRouteTableRouteRuleIngressGatewayHostOutput) Port() pulumi.IntOutput {
-	return o.ApplyT(func(v GetIngressGatewayRouteTableRouteRuleIngressGatewayHost) int { return v.Port }).(pulumi.IntOutput)
+func (o GetIngressGatewayRouteTableRouteRuleIngressGatewayHostOutput) Port() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetIngressGatewayRouteTableRouteRuleIngressGatewayHost) *int { return v.Port }).(pulumi.IntPtrOutput)
 }
 
 type GetIngressGatewayRouteTableRouteRuleIngressGatewayHostArrayOutput struct{ *pulumi.OutputState }
@@ -6793,12 +5790,6 @@ func (o GetIngressGatewayRouteTableRouteRuleIngressGatewayHostArrayOutput) ToGet
 
 func (o GetIngressGatewayRouteTableRouteRuleIngressGatewayHostArrayOutput) ToGetIngressGatewayRouteTableRouteRuleIngressGatewayHostArrayOutputWithContext(ctx context.Context) GetIngressGatewayRouteTableRouteRuleIngressGatewayHostArrayOutput {
 	return o
-}
-
-func (o GetIngressGatewayRouteTableRouteRuleIngressGatewayHostArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetIngressGatewayRouteTableRouteRuleIngressGatewayHost] {
-	return pulumix.Output[[]GetIngressGatewayRouteTableRouteRuleIngressGatewayHost]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetIngressGatewayRouteTableRouteRuleIngressGatewayHostArrayOutput) Index(i pulumi.IntInput) GetIngressGatewayRouteTableRouteRuleIngressGatewayHostOutput {
@@ -6844,12 +5835,6 @@ func (i GetIngressGatewayRouteTablesFilterArgs) ToGetIngressGatewayRouteTablesFi
 	return pulumi.ToOutputWithContext(ctx, i).(GetIngressGatewayRouteTablesFilterOutput)
 }
 
-func (i GetIngressGatewayRouteTablesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetIngressGatewayRouteTablesFilter] {
-	return pulumix.Output[GetIngressGatewayRouteTablesFilter]{
-		OutputState: i.ToGetIngressGatewayRouteTablesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetIngressGatewayRouteTablesFilterArrayInput is an input type that accepts GetIngressGatewayRouteTablesFilterArray and GetIngressGatewayRouteTablesFilterArrayOutput values.
 // You can construct a concrete instance of `GetIngressGatewayRouteTablesFilterArrayInput` via:
 //
@@ -6875,12 +5860,6 @@ func (i GetIngressGatewayRouteTablesFilterArray) ToGetIngressGatewayRouteTablesF
 	return pulumi.ToOutputWithContext(ctx, i).(GetIngressGatewayRouteTablesFilterArrayOutput)
 }
 
-func (i GetIngressGatewayRouteTablesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetIngressGatewayRouteTablesFilter] {
-	return pulumix.Output[[]GetIngressGatewayRouteTablesFilter]{
-		OutputState: i.ToGetIngressGatewayRouteTablesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetIngressGatewayRouteTablesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetIngressGatewayRouteTablesFilterOutput) ElementType() reflect.Type {
@@ -6893,12 +5872,6 @@ func (o GetIngressGatewayRouteTablesFilterOutput) ToGetIngressGatewayRouteTables
 
 func (o GetIngressGatewayRouteTablesFilterOutput) ToGetIngressGatewayRouteTablesFilterOutputWithContext(ctx context.Context) GetIngressGatewayRouteTablesFilterOutput {
 	return o
-}
-
-func (o GetIngressGatewayRouteTablesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetIngressGatewayRouteTablesFilter] {
-	return pulumix.Output[GetIngressGatewayRouteTablesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A filter to return only resources that match the entire name given.
@@ -6926,12 +5899,6 @@ func (o GetIngressGatewayRouteTablesFilterArrayOutput) ToGetIngressGatewayRouteT
 
 func (o GetIngressGatewayRouteTablesFilterArrayOutput) ToGetIngressGatewayRouteTablesFilterArrayOutputWithContext(ctx context.Context) GetIngressGatewayRouteTablesFilterArrayOutput {
 	return o
-}
-
-func (o GetIngressGatewayRouteTablesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetIngressGatewayRouteTablesFilter] {
-	return pulumix.Output[[]GetIngressGatewayRouteTablesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetIngressGatewayRouteTablesFilterArrayOutput) Index(i pulumi.IntInput) GetIngressGatewayRouteTablesFilterOutput {
@@ -6971,12 +5938,6 @@ func (i GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionArgs) ToGe
 	return pulumi.ToOutputWithContext(ctx, i).(GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionOutput)
 }
 
-func (i GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetIngressGatewayRouteTablesIngressGatewayRouteTableCollection] {
-	return pulumix.Output[GetIngressGatewayRouteTablesIngressGatewayRouteTableCollection]{
-		OutputState: i.ToGetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionArrayInput is an input type that accepts GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionArray and GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionArrayOutput values.
 // You can construct a concrete instance of `GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionArrayInput` via:
 //
@@ -7002,12 +5963,6 @@ func (i GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionArray) ToG
 	return pulumi.ToOutputWithContext(ctx, i).(GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionArrayOutput)
 }
 
-func (i GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetIngressGatewayRouteTablesIngressGatewayRouteTableCollection] {
-	return pulumix.Output[[]GetIngressGatewayRouteTablesIngressGatewayRouteTableCollection]{
-		OutputState: i.ToGetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionOutput) ElementType() reflect.Type {
@@ -7020,12 +5975,6 @@ func (o GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionOutput) To
 
 func (o GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionOutput) ToGetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionOutputWithContext(ctx context.Context) GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionOutput {
 	return o
-}
-
-func (o GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetIngressGatewayRouteTablesIngressGatewayRouteTableCollection] {
-	return pulumix.Output[GetIngressGatewayRouteTablesIngressGatewayRouteTableCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionOutput) Items() GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemArrayOutput {
@@ -7048,12 +5997,6 @@ func (o GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionArrayOutpu
 	return o
 }
 
-func (o GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetIngressGatewayRouteTablesIngressGatewayRouteTableCollection] {
-	return pulumix.Output[[]GetIngressGatewayRouteTablesIngressGatewayRouteTableCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionArrayOutput) Index(i pulumi.IntInput) GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIngressGatewayRouteTablesIngressGatewayRouteTableCollection {
 		return vs[0].([]GetIngressGatewayRouteTablesIngressGatewayRouteTableCollection)[vs[1].(int)]
@@ -7062,33 +6005,33 @@ func (o GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionArrayOutpu
 
 type GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItem struct {
 	// The ID of the compartment in which to list resources.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// Description of the resource. It can be changed after creation. Avoid entering confidential information.  Example: `This is my new resource`
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// Unique IngressGatewayRouteTable identifier.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Unique IngressGateway identifier.
-	IngressGatewayId string `pulumi:"ingressGatewayId"`
+	IngressGatewayId *string `pulumi:"ingressGatewayId"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// A filter to return only resources that match the entire name given.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// The priority of the route table. A lower value means a higher priority. The routes are declared based on the priority.
-	Priority int `pulumi:"priority"`
+	Priority *int `pulumi:"priority"`
 	// The route rules for the ingress gateway.
 	RouteRules []GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRule `pulumi:"routeRules"`
 	// A filter to return only resources that match the life cycle state given.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The time when this resource was created in an RFC3339 formatted datetime string.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time when this resource was updated in an RFC3339 formatted datetime string.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 // GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemInput is an input type that accepts GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemArgs and GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemOutput values.
@@ -7104,33 +6047,33 @@ type GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemInput int
 
 type GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemArgs struct {
 	// The ID of the compartment in which to list resources.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// Description of the resource. It can be changed after creation. Avoid entering confidential information.  Example: `This is my new resource`
-	Description pulumi.StringInput `pulumi:"description"`
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// Unique IngressGatewayRouteTable identifier.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// Unique IngressGateway identifier.
-	IngressGatewayId pulumi.StringInput `pulumi:"ingressGatewayId"`
+	IngressGatewayId pulumi.StringPtrInput `pulumi:"ingressGatewayId"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
-	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrInput `pulumi:"lifecycleDetails"`
 	// A filter to return only resources that match the entire name given.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// The priority of the route table. A lower value means a higher priority. The routes are declared based on the priority.
-	Priority pulumi.IntInput `pulumi:"priority"`
+	Priority pulumi.IntPtrInput `pulumi:"priority"`
 	// The route rules for the ingress gateway.
 	RouteRules GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleArrayInput `pulumi:"routeRules"`
 	// A filter to return only resources that match the life cycle state given.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapInput `pulumi:"systemTags"`
 	// The time when this resource was created in an RFC3339 formatted datetime string.
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// The time when this resource was updated in an RFC3339 formatted datetime string.
-	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
 }
 
 func (GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemArgs) ElementType() reflect.Type {
@@ -7143,12 +6086,6 @@ func (i GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemArgs) 
 
 func (i GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemArgs) ToGetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemOutputWithContext(ctx context.Context) GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemOutput)
-}
-
-func (i GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItem] {
-	return pulumix.Output[GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItem]{
-		OutputState: i.ToGetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemArrayInput is an input type that accepts GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemArray and GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemArrayOutput values.
@@ -7176,12 +6113,6 @@ func (i GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemArray)
 	return pulumi.ToOutputWithContext(ctx, i).(GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemArrayOutput)
 }
 
-func (i GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItem] {
-	return pulumix.Output[[]GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItem]{
-		OutputState: i.ToGetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemOutput) ElementType() reflect.Type {
@@ -7196,17 +6127,11 @@ func (o GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemOutput
 	return o
 }
 
-func (o GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItem] {
-	return pulumix.Output[GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The ID of the compartment in which to list resources.
-func (o GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItem) string {
+func (o GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItem) *string {
 		return v.CompartmentId
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -7217,10 +6142,10 @@ func (o GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemOutput
 }
 
 // Description of the resource. It can be changed after creation. Avoid entering confidential information.  Example: `This is my new resource`
-func (o GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItem) string {
+func (o GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItem) *string {
 		return v.Description
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -7231,32 +6156,32 @@ func (o GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemOutput
 }
 
 // Unique IngressGatewayRouteTable identifier.
-func (o GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+func (o GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItem) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Unique IngressGateway identifier.
-func (o GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemOutput) IngressGatewayId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItem) string {
+func (o GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemOutput) IngressGatewayId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItem) *string {
 		return v.IngressGatewayId
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
-func (o GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItem) string {
+func (o GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItem) *string {
 		return v.LifecycleDetails
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // A filter to return only resources that match the entire name given.
-func (o GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItem) string { return v.Name }).(pulumi.StringOutput)
+func (o GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItem) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // The priority of the route table. A lower value means a higher priority. The routes are declared based on the priority.
-func (o GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemOutput) Priority() pulumi.IntOutput {
-	return o.ApplyT(func(v GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItem) int { return v.Priority }).(pulumi.IntOutput)
+func (o GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemOutput) Priority() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItem) *int { return v.Priority }).(pulumi.IntPtrOutput)
 }
 
 // The route rules for the ingress gateway.
@@ -7267,8 +6192,8 @@ func (o GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemOutput
 }
 
 // A filter to return only resources that match the life cycle state given.
-func (o GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItem) string { return v.State }).(pulumi.StringOutput)
+func (o GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItem) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -7279,17 +6204,17 @@ func (o GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemOutput
 }
 
 // The time when this resource was created in an RFC3339 formatted datetime string.
-func (o GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItem) string {
+func (o GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItem) *string {
 		return v.TimeCreated
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The time when this resource was updated in an RFC3339 formatted datetime string.
-func (o GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItem) string {
+func (o GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItem) *string {
 		return v.TimeUpdated
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -7306,12 +6231,6 @@ func (o GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemArrayO
 	return o
 }
 
-func (o GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItem] {
-	return pulumix.Output[[]GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemArrayOutput) Index(i pulumi.IntInput) GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItem {
 		return vs[0].([]GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItem)[vs[1].(int)]
@@ -7324,19 +6243,19 @@ type GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRule
 	// The ingress gateway host to which the route rule attaches. If not specified, the route rule gets attached to all hosts on the ingress gateway.
 	IngressGatewayHosts []GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleIngressGatewayHost `pulumi:"ingressGatewayHosts"`
 	// If true, the rule will check that the content-type header has a application/grpc or one of the various application/grpc+ values.
-	IsGrpc bool `pulumi:"isGrpc"`
+	IsGrpc *bool `pulumi:"isGrpc"`
 	// If true, the hostname will be rewritten to the target virtual deployment's DNS hostname.
-	IsHostRewriteEnabled bool `pulumi:"isHostRewriteEnabled"`
+	IsHostRewriteEnabled *bool `pulumi:"isHostRewriteEnabled"`
 	// If true, the matched path prefix will be rewritten to '/' before being directed to the target virtual deployment.
-	IsPathRewriteEnabled bool `pulumi:"isPathRewriteEnabled"`
+	IsPathRewriteEnabled *bool `pulumi:"isPathRewriteEnabled"`
 	// Route to match
-	Path string `pulumi:"path"`
+	Path *string `pulumi:"path"`
 	// Match type for the route
-	PathType string `pulumi:"pathType"`
+	PathType *string `pulumi:"pathType"`
 	// The maximum duration in milliseconds for the upstream service to respond to a request.  If provided, the timeout value overrides the default timeout of 15 seconds for the HTTP based route rules, and disabled (no timeout) when 'isGrpc' is true.  The value 0 (zero) indicates that the timeout is disabled.  For streaming responses from the upstream service, consider either keeping the timeout disabled or set a sufficiently high value.
-	RequestTimeoutInMs string `pulumi:"requestTimeoutInMs"`
+	RequestTimeoutInMs *string `pulumi:"requestTimeoutInMs"`
 	// Type of protocol.
-	Type string `pulumi:"type"`
+	Type *string `pulumi:"type"`
 }
 
 // GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleInput is an input type that accepts GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleArgs and GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleOutput values.
@@ -7356,19 +6275,19 @@ type GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRule
 	// The ingress gateway host to which the route rule attaches. If not specified, the route rule gets attached to all hosts on the ingress gateway.
 	IngressGatewayHosts GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleIngressGatewayHostArrayInput `pulumi:"ingressGatewayHosts"`
 	// If true, the rule will check that the content-type header has a application/grpc or one of the various application/grpc+ values.
-	IsGrpc pulumi.BoolInput `pulumi:"isGrpc"`
+	IsGrpc pulumi.BoolPtrInput `pulumi:"isGrpc"`
 	// If true, the hostname will be rewritten to the target virtual deployment's DNS hostname.
-	IsHostRewriteEnabled pulumi.BoolInput `pulumi:"isHostRewriteEnabled"`
+	IsHostRewriteEnabled pulumi.BoolPtrInput `pulumi:"isHostRewriteEnabled"`
 	// If true, the matched path prefix will be rewritten to '/' before being directed to the target virtual deployment.
-	IsPathRewriteEnabled pulumi.BoolInput `pulumi:"isPathRewriteEnabled"`
+	IsPathRewriteEnabled pulumi.BoolPtrInput `pulumi:"isPathRewriteEnabled"`
 	// Route to match
-	Path pulumi.StringInput `pulumi:"path"`
+	Path pulumi.StringPtrInput `pulumi:"path"`
 	// Match type for the route
-	PathType pulumi.StringInput `pulumi:"pathType"`
+	PathType pulumi.StringPtrInput `pulumi:"pathType"`
 	// The maximum duration in milliseconds for the upstream service to respond to a request.  If provided, the timeout value overrides the default timeout of 15 seconds for the HTTP based route rules, and disabled (no timeout) when 'isGrpc' is true.  The value 0 (zero) indicates that the timeout is disabled.  For streaming responses from the upstream service, consider either keeping the timeout disabled or set a sufficiently high value.
-	RequestTimeoutInMs pulumi.StringInput `pulumi:"requestTimeoutInMs"`
+	RequestTimeoutInMs pulumi.StringPtrInput `pulumi:"requestTimeoutInMs"`
 	// Type of protocol.
-	Type pulumi.StringInput `pulumi:"type"`
+	Type pulumi.StringPtrInput `pulumi:"type"`
 }
 
 func (GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleArgs) ElementType() reflect.Type {
@@ -7381,12 +6300,6 @@ func (i GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteR
 
 func (i GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleArgs) ToGetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleOutputWithContext(ctx context.Context) GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleOutput)
-}
-
-func (i GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleArgs) ToOutput(ctx context.Context) pulumix.Output[GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRule] {
-	return pulumix.Output[GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRule]{
-		OutputState: i.ToGetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleArrayInput is an input type that accepts GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleArray and GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleArrayOutput values.
@@ -7414,12 +6327,6 @@ func (i GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteR
 	return pulumi.ToOutputWithContext(ctx, i).(GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleArrayOutput)
 }
 
-func (i GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleArray) ToOutput(ctx context.Context) pulumix.Output[[]GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRule] {
-	return pulumix.Output[[]GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRule]{
-		OutputState: i.ToGetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleOutput struct{ *pulumi.OutputState }
 
 func (GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleOutput) ElementType() reflect.Type {
@@ -7432,12 +6339,6 @@ func (o GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteR
 
 func (o GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleOutput) ToGetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleOutputWithContext(ctx context.Context) GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleOutput {
 	return o
-}
-
-func (o GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleOutput) ToOutput(ctx context.Context) pulumix.Output[GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRule] {
-	return pulumix.Output[GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRule]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The destination of the request.
@@ -7455,52 +6356,52 @@ func (o GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteR
 }
 
 // If true, the rule will check that the content-type header has a application/grpc or one of the various application/grpc+ values.
-func (o GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleOutput) IsGrpc() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRule) bool {
+func (o GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleOutput) IsGrpc() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRule) *bool {
 		return v.IsGrpc
-	}).(pulumi.BoolOutput)
+	}).(pulumi.BoolPtrOutput)
 }
 
 // If true, the hostname will be rewritten to the target virtual deployment's DNS hostname.
-func (o GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleOutput) IsHostRewriteEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRule) bool {
+func (o GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleOutput) IsHostRewriteEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRule) *bool {
 		return v.IsHostRewriteEnabled
-	}).(pulumi.BoolOutput)
+	}).(pulumi.BoolPtrOutput)
 }
 
 // If true, the matched path prefix will be rewritten to '/' before being directed to the target virtual deployment.
-func (o GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleOutput) IsPathRewriteEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRule) bool {
+func (o GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleOutput) IsPathRewriteEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRule) *bool {
 		return v.IsPathRewriteEnabled
-	}).(pulumi.BoolOutput)
+	}).(pulumi.BoolPtrOutput)
 }
 
 // Route to match
-func (o GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleOutput) Path() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRule) string {
+func (o GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleOutput) Path() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRule) *string {
 		return v.Path
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Match type for the route
-func (o GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleOutput) PathType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRule) string {
+func (o GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleOutput) PathType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRule) *string {
 		return v.PathType
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The maximum duration in milliseconds for the upstream service to respond to a request.  If provided, the timeout value overrides the default timeout of 15 seconds for the HTTP based route rules, and disabled (no timeout) when 'isGrpc' is true.  The value 0 (zero) indicates that the timeout is disabled.  For streaming responses from the upstream service, consider either keeping the timeout disabled or set a sufficiently high value.
-func (o GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleOutput) RequestTimeoutInMs() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRule) string {
+func (o GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleOutput) RequestTimeoutInMs() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRule) *string {
 		return v.RequestTimeoutInMs
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Type of protocol.
-func (o GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRule) string {
+func (o GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRule) *string {
 		return v.Type
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleArrayOutput struct{ *pulumi.OutputState }
@@ -7517,12 +6418,6 @@ func (o GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteR
 	return o
 }
 
-func (o GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRule] {
-	return pulumix.Output[[]GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRule]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleArrayOutput) Index(i pulumi.IntInput) GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRule {
 		return vs[0].([]GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRule)[vs[1].(int)]
@@ -7531,11 +6426,11 @@ func (o GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteR
 
 type GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleDestination struct {
 	// The port of the ingress gateway host listener. Leave empty to match all ports for the host.
-	Port int `pulumi:"port"`
+	Port *int `pulumi:"port"`
 	// The OCID of the virtual service where the request will be routed.
-	VirtualServiceId string `pulumi:"virtualServiceId"`
+	VirtualServiceId *string `pulumi:"virtualServiceId"`
 	// Weight of traffic target.
-	Weight int `pulumi:"weight"`
+	Weight *int `pulumi:"weight"`
 }
 
 // GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleDestinationInput is an input type that accepts GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleDestinationArgs and GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleDestinationOutput values.
@@ -7551,11 +6446,11 @@ type GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRule
 
 type GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleDestinationArgs struct {
 	// The port of the ingress gateway host listener. Leave empty to match all ports for the host.
-	Port pulumi.IntInput `pulumi:"port"`
+	Port pulumi.IntPtrInput `pulumi:"port"`
 	// The OCID of the virtual service where the request will be routed.
-	VirtualServiceId pulumi.StringInput `pulumi:"virtualServiceId"`
+	VirtualServiceId pulumi.StringPtrInput `pulumi:"virtualServiceId"`
 	// Weight of traffic target.
-	Weight pulumi.IntInput `pulumi:"weight"`
+	Weight pulumi.IntPtrInput `pulumi:"weight"`
 }
 
 func (GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleDestinationArgs) ElementType() reflect.Type {
@@ -7568,12 +6463,6 @@ func (i GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteR
 
 func (i GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleDestinationArgs) ToGetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleDestinationOutputWithContext(ctx context.Context) GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleDestinationOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleDestinationOutput)
-}
-
-func (i GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleDestinationArgs) ToOutput(ctx context.Context) pulumix.Output[GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleDestination] {
-	return pulumix.Output[GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleDestination]{
-		OutputState: i.ToGetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleDestinationOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleDestinationArrayInput is an input type that accepts GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleDestinationArray and GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleDestinationArrayOutput values.
@@ -7601,12 +6490,6 @@ func (i GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteR
 	return pulumi.ToOutputWithContext(ctx, i).(GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleDestinationArrayOutput)
 }
 
-func (i GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleDestinationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleDestination] {
-	return pulumix.Output[[]GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleDestination]{
-		OutputState: i.ToGetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleDestinationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleDestinationOutput struct{ *pulumi.OutputState }
 
 func (GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleDestinationOutput) ElementType() reflect.Type {
@@ -7621,31 +6504,25 @@ func (o GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteR
 	return o
 }
 
-func (o GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleDestinationOutput) ToOutput(ctx context.Context) pulumix.Output[GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleDestination] {
-	return pulumix.Output[GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleDestination]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The port of the ingress gateway host listener. Leave empty to match all ports for the host.
-func (o GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleDestinationOutput) Port() pulumi.IntOutput {
-	return o.ApplyT(func(v GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleDestination) int {
+func (o GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleDestinationOutput) Port() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleDestination) *int {
 		return v.Port
-	}).(pulumi.IntOutput)
+	}).(pulumi.IntPtrOutput)
 }
 
 // The OCID of the virtual service where the request will be routed.
-func (o GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleDestinationOutput) VirtualServiceId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleDestination) string {
+func (o GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleDestinationOutput) VirtualServiceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleDestination) *string {
 		return v.VirtualServiceId
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Weight of traffic target.
-func (o GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleDestinationOutput) Weight() pulumi.IntOutput {
-	return o.ApplyT(func(v GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleDestination) int {
+func (o GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleDestinationOutput) Weight() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleDestination) *int {
 		return v.Weight
-	}).(pulumi.IntOutput)
+	}).(pulumi.IntPtrOutput)
 }
 
 type GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleDestinationArrayOutput struct{ *pulumi.OutputState }
@@ -7662,12 +6539,6 @@ func (o GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteR
 	return o
 }
 
-func (o GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleDestinationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleDestination] {
-	return pulumix.Output[[]GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleDestination]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleDestinationArrayOutput) Index(i pulumi.IntInput) GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleDestinationOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleDestination {
 		return vs[0].([]GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleDestination)[vs[1].(int)]
@@ -7676,9 +6547,9 @@ func (o GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteR
 
 type GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleIngressGatewayHost struct {
 	// A filter to return only resources that match the entire name given.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// The port of the ingress gateway host listener. Leave empty to match all ports for the host.
-	Port int `pulumi:"port"`
+	Port *int `pulumi:"port"`
 }
 
 // GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleIngressGatewayHostInput is an input type that accepts GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleIngressGatewayHostArgs and GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleIngressGatewayHostOutput values.
@@ -7694,9 +6565,9 @@ type GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRule
 
 type GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleIngressGatewayHostArgs struct {
 	// A filter to return only resources that match the entire name given.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// The port of the ingress gateway host listener. Leave empty to match all ports for the host.
-	Port pulumi.IntInput `pulumi:"port"`
+	Port pulumi.IntPtrInput `pulumi:"port"`
 }
 
 func (GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleIngressGatewayHostArgs) ElementType() reflect.Type {
@@ -7709,12 +6580,6 @@ func (i GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteR
 
 func (i GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleIngressGatewayHostArgs) ToGetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleIngressGatewayHostOutputWithContext(ctx context.Context) GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleIngressGatewayHostOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleIngressGatewayHostOutput)
-}
-
-func (i GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleIngressGatewayHostArgs) ToOutput(ctx context.Context) pulumix.Output[GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleIngressGatewayHost] {
-	return pulumix.Output[GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleIngressGatewayHost]{
-		OutputState: i.ToGetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleIngressGatewayHostOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleIngressGatewayHostArrayInput is an input type that accepts GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleIngressGatewayHostArray and GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleIngressGatewayHostArrayOutput values.
@@ -7742,12 +6607,6 @@ func (i GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteR
 	return pulumi.ToOutputWithContext(ctx, i).(GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleIngressGatewayHostArrayOutput)
 }
 
-func (i GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleIngressGatewayHostArray) ToOutput(ctx context.Context) pulumix.Output[[]GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleIngressGatewayHost] {
-	return pulumix.Output[[]GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleIngressGatewayHost]{
-		OutputState: i.ToGetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleIngressGatewayHostArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleIngressGatewayHostOutput struct{ *pulumi.OutputState }
 
 func (GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleIngressGatewayHostOutput) ElementType() reflect.Type {
@@ -7762,24 +6621,18 @@ func (o GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteR
 	return o
 }
 
-func (o GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleIngressGatewayHostOutput) ToOutput(ctx context.Context) pulumix.Output[GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleIngressGatewayHost] {
-	return pulumix.Output[GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleIngressGatewayHost]{
-		OutputState: o.OutputState,
-	}
-}
-
 // A filter to return only resources that match the entire name given.
-func (o GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleIngressGatewayHostOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleIngressGatewayHost) string {
+func (o GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleIngressGatewayHostOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleIngressGatewayHost) *string {
 		return v.Name
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The port of the ingress gateway host listener. Leave empty to match all ports for the host.
-func (o GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleIngressGatewayHostOutput) Port() pulumi.IntOutput {
-	return o.ApplyT(func(v GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleIngressGatewayHost) int {
+func (o GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleIngressGatewayHostOutput) Port() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleIngressGatewayHost) *int {
 		return v.Port
-	}).(pulumi.IntOutput)
+	}).(pulumi.IntPtrOutput)
 }
 
 type GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleIngressGatewayHostArrayOutput struct{ *pulumi.OutputState }
@@ -7794,12 +6647,6 @@ func (o GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteR
 
 func (o GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleIngressGatewayHostArrayOutput) ToGetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleIngressGatewayHostArrayOutputWithContext(ctx context.Context) GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleIngressGatewayHostArrayOutput {
 	return o
-}
-
-func (o GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleIngressGatewayHostArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleIngressGatewayHost] {
-	return pulumix.Output[[]GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleIngressGatewayHost]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleIngressGatewayHostArrayOutput) Index(i pulumi.IntInput) GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleIngressGatewayHostOutput {
@@ -7845,12 +6692,6 @@ func (i GetIngressGatewaysFilterArgs) ToGetIngressGatewaysFilterOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetIngressGatewaysFilterOutput)
 }
 
-func (i GetIngressGatewaysFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetIngressGatewaysFilter] {
-	return pulumix.Output[GetIngressGatewaysFilter]{
-		OutputState: i.ToGetIngressGatewaysFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetIngressGatewaysFilterArrayInput is an input type that accepts GetIngressGatewaysFilterArray and GetIngressGatewaysFilterArrayOutput values.
 // You can construct a concrete instance of `GetIngressGatewaysFilterArrayInput` via:
 //
@@ -7876,12 +6717,6 @@ func (i GetIngressGatewaysFilterArray) ToGetIngressGatewaysFilterArrayOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetIngressGatewaysFilterArrayOutput)
 }
 
-func (i GetIngressGatewaysFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetIngressGatewaysFilter] {
-	return pulumix.Output[[]GetIngressGatewaysFilter]{
-		OutputState: i.ToGetIngressGatewaysFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetIngressGatewaysFilterOutput struct{ *pulumi.OutputState }
 
 func (GetIngressGatewaysFilterOutput) ElementType() reflect.Type {
@@ -7894,12 +6729,6 @@ func (o GetIngressGatewaysFilterOutput) ToGetIngressGatewaysFilterOutput() GetIn
 
 func (o GetIngressGatewaysFilterOutput) ToGetIngressGatewaysFilterOutputWithContext(ctx context.Context) GetIngressGatewaysFilterOutput {
 	return o
-}
-
-func (o GetIngressGatewaysFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetIngressGatewaysFilter] {
-	return pulumix.Output[GetIngressGatewaysFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A filter to return only resources that match the entire name given.
@@ -7927,12 +6756,6 @@ func (o GetIngressGatewaysFilterArrayOutput) ToGetIngressGatewaysFilterArrayOutp
 
 func (o GetIngressGatewaysFilterArrayOutput) ToGetIngressGatewaysFilterArrayOutputWithContext(ctx context.Context) GetIngressGatewaysFilterArrayOutput {
 	return o
-}
-
-func (o GetIngressGatewaysFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetIngressGatewaysFilter] {
-	return pulumix.Output[[]GetIngressGatewaysFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetIngressGatewaysFilterArrayOutput) Index(i pulumi.IntInput) GetIngressGatewaysFilterOutput {
@@ -7972,12 +6795,6 @@ func (i GetIngressGatewaysIngressGatewayCollectionArgs) ToGetIngressGatewaysIngr
 	return pulumi.ToOutputWithContext(ctx, i).(GetIngressGatewaysIngressGatewayCollectionOutput)
 }
 
-func (i GetIngressGatewaysIngressGatewayCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetIngressGatewaysIngressGatewayCollection] {
-	return pulumix.Output[GetIngressGatewaysIngressGatewayCollection]{
-		OutputState: i.ToGetIngressGatewaysIngressGatewayCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetIngressGatewaysIngressGatewayCollectionArrayInput is an input type that accepts GetIngressGatewaysIngressGatewayCollectionArray and GetIngressGatewaysIngressGatewayCollectionArrayOutput values.
 // You can construct a concrete instance of `GetIngressGatewaysIngressGatewayCollectionArrayInput` via:
 //
@@ -8003,12 +6820,6 @@ func (i GetIngressGatewaysIngressGatewayCollectionArray) ToGetIngressGatewaysIng
 	return pulumi.ToOutputWithContext(ctx, i).(GetIngressGatewaysIngressGatewayCollectionArrayOutput)
 }
 
-func (i GetIngressGatewaysIngressGatewayCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetIngressGatewaysIngressGatewayCollection] {
-	return pulumix.Output[[]GetIngressGatewaysIngressGatewayCollection]{
-		OutputState: i.ToGetIngressGatewaysIngressGatewayCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetIngressGatewaysIngressGatewayCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetIngressGatewaysIngressGatewayCollectionOutput) ElementType() reflect.Type {
@@ -8021,12 +6832,6 @@ func (o GetIngressGatewaysIngressGatewayCollectionOutput) ToGetIngressGatewaysIn
 
 func (o GetIngressGatewaysIngressGatewayCollectionOutput) ToGetIngressGatewaysIngressGatewayCollectionOutputWithContext(ctx context.Context) GetIngressGatewaysIngressGatewayCollectionOutput {
 	return o
-}
-
-func (o GetIngressGatewaysIngressGatewayCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetIngressGatewaysIngressGatewayCollection] {
-	return pulumix.Output[GetIngressGatewaysIngressGatewayCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetIngressGatewaysIngressGatewayCollectionOutput) Items() GetIngressGatewaysIngressGatewayCollectionItemArrayOutput {
@@ -8049,12 +6854,6 @@ func (o GetIngressGatewaysIngressGatewayCollectionArrayOutput) ToGetIngressGatew
 	return o
 }
 
-func (o GetIngressGatewaysIngressGatewayCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetIngressGatewaysIngressGatewayCollection] {
-	return pulumix.Output[[]GetIngressGatewaysIngressGatewayCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetIngressGatewaysIngressGatewayCollectionArrayOutput) Index(i pulumi.IntInput) GetIngressGatewaysIngressGatewayCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIngressGatewaysIngressGatewayCollection {
 		return vs[0].([]GetIngressGatewaysIngressGatewayCollection)[vs[1].(int)]
@@ -8065,33 +6864,33 @@ type GetIngressGatewaysIngressGatewayCollectionItem struct {
 	// This configuration determines if logging is enabled and where the logs will be output.
 	AccessLoggings []GetIngressGatewaysIngressGatewayCollectionItemAccessLogging `pulumi:"accessLoggings"`
 	// The ID of the compartment in which to list resources.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// Description of the resource. It can be changed after creation. Avoid entering confidential information.  Example: `This is my new resource`
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// Array of hostnames and their listener configuration that this gateway will bind to.
 	Hosts []GetIngressGatewaysIngressGatewayCollectionItemHost `pulumi:"hosts"`
 	// Unique IngressGateway identifier.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// Unique Mesh identifier.
-	MeshId string `pulumi:"meshId"`
+	MeshId *string `pulumi:"meshId"`
 	// Mutual TLS settings used when sending requests to virtual services within the mesh.
 	Mtls []GetIngressGatewaysIngressGatewayCollectionItemMtl `pulumi:"mtls"`
 	// A filter to return only resources that match the entire name given.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// A filter to return only resources that match the life cycle state given.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The time when this resource was created in an RFC3339 formatted datetime string.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time when this resource was updated in an RFC3339 formatted datetime string.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 // GetIngressGatewaysIngressGatewayCollectionItemInput is an input type that accepts GetIngressGatewaysIngressGatewayCollectionItemArgs and GetIngressGatewaysIngressGatewayCollectionItemOutput values.
@@ -8109,33 +6908,33 @@ type GetIngressGatewaysIngressGatewayCollectionItemArgs struct {
 	// This configuration determines if logging is enabled and where the logs will be output.
 	AccessLoggings GetIngressGatewaysIngressGatewayCollectionItemAccessLoggingArrayInput `pulumi:"accessLoggings"`
 	// The ID of the compartment in which to list resources.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// Description of the resource. It can be changed after creation. Avoid entering confidential information.  Example: `This is my new resource`
-	Description pulumi.StringInput `pulumi:"description"`
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// Array of hostnames and their listener configuration that this gateway will bind to.
 	Hosts GetIngressGatewaysIngressGatewayCollectionItemHostArrayInput `pulumi:"hosts"`
 	// Unique IngressGateway identifier.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
-	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrInput `pulumi:"lifecycleDetails"`
 	// Unique Mesh identifier.
-	MeshId pulumi.StringInput `pulumi:"meshId"`
+	MeshId pulumi.StringPtrInput `pulumi:"meshId"`
 	// Mutual TLS settings used when sending requests to virtual services within the mesh.
 	Mtls GetIngressGatewaysIngressGatewayCollectionItemMtlArrayInput `pulumi:"mtls"`
 	// A filter to return only resources that match the entire name given.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// A filter to return only resources that match the life cycle state given.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapInput `pulumi:"systemTags"`
 	// The time when this resource was created in an RFC3339 formatted datetime string.
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// The time when this resource was updated in an RFC3339 formatted datetime string.
-	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
 }
 
 func (GetIngressGatewaysIngressGatewayCollectionItemArgs) ElementType() reflect.Type {
@@ -8148,12 +6947,6 @@ func (i GetIngressGatewaysIngressGatewayCollectionItemArgs) ToGetIngressGateways
 
 func (i GetIngressGatewaysIngressGatewayCollectionItemArgs) ToGetIngressGatewaysIngressGatewayCollectionItemOutputWithContext(ctx context.Context) GetIngressGatewaysIngressGatewayCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetIngressGatewaysIngressGatewayCollectionItemOutput)
-}
-
-func (i GetIngressGatewaysIngressGatewayCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetIngressGatewaysIngressGatewayCollectionItem] {
-	return pulumix.Output[GetIngressGatewaysIngressGatewayCollectionItem]{
-		OutputState: i.ToGetIngressGatewaysIngressGatewayCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetIngressGatewaysIngressGatewayCollectionItemArrayInput is an input type that accepts GetIngressGatewaysIngressGatewayCollectionItemArray and GetIngressGatewaysIngressGatewayCollectionItemArrayOutput values.
@@ -8181,12 +6974,6 @@ func (i GetIngressGatewaysIngressGatewayCollectionItemArray) ToGetIngressGateway
 	return pulumi.ToOutputWithContext(ctx, i).(GetIngressGatewaysIngressGatewayCollectionItemArrayOutput)
 }
 
-func (i GetIngressGatewaysIngressGatewayCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetIngressGatewaysIngressGatewayCollectionItem] {
-	return pulumix.Output[[]GetIngressGatewaysIngressGatewayCollectionItem]{
-		OutputState: i.ToGetIngressGatewaysIngressGatewayCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetIngressGatewaysIngressGatewayCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetIngressGatewaysIngressGatewayCollectionItemOutput) ElementType() reflect.Type {
@@ -8201,12 +6988,6 @@ func (o GetIngressGatewaysIngressGatewayCollectionItemOutput) ToGetIngressGatewa
 	return o
 }
 
-func (o GetIngressGatewaysIngressGatewayCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetIngressGatewaysIngressGatewayCollectionItem] {
-	return pulumix.Output[GetIngressGatewaysIngressGatewayCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // This configuration determines if logging is enabled and where the logs will be output.
 func (o GetIngressGatewaysIngressGatewayCollectionItemOutput) AccessLoggings() GetIngressGatewaysIngressGatewayCollectionItemAccessLoggingArrayOutput {
 	return o.ApplyT(func(v GetIngressGatewaysIngressGatewayCollectionItem) []GetIngressGatewaysIngressGatewayCollectionItemAccessLogging {
@@ -8215,8 +6996,8 @@ func (o GetIngressGatewaysIngressGatewayCollectionItemOutput) AccessLoggings() G
 }
 
 // The ID of the compartment in which to list resources.
-func (o GetIngressGatewaysIngressGatewayCollectionItemOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIngressGatewaysIngressGatewayCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetIngressGatewaysIngressGatewayCollectionItemOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetIngressGatewaysIngressGatewayCollectionItem) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -8225,8 +7006,8 @@ func (o GetIngressGatewaysIngressGatewayCollectionItemOutput) DefinedTags() pulu
 }
 
 // Description of the resource. It can be changed after creation. Avoid entering confidential information.  Example: `This is my new resource`
-func (o GetIngressGatewaysIngressGatewayCollectionItemOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIngressGatewaysIngressGatewayCollectionItem) string { return v.Description }).(pulumi.StringOutput)
+func (o GetIngressGatewaysIngressGatewayCollectionItemOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetIngressGatewaysIngressGatewayCollectionItem) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -8242,18 +7023,18 @@ func (o GetIngressGatewaysIngressGatewayCollectionItemOutput) Hosts() GetIngress
 }
 
 // Unique IngressGateway identifier.
-func (o GetIngressGatewaysIngressGatewayCollectionItemOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIngressGatewaysIngressGatewayCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+func (o GetIngressGatewaysIngressGatewayCollectionItemOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetIngressGatewaysIngressGatewayCollectionItem) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
-func (o GetIngressGatewaysIngressGatewayCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIngressGatewaysIngressGatewayCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o GetIngressGatewaysIngressGatewayCollectionItemOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetIngressGatewaysIngressGatewayCollectionItem) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // Unique Mesh identifier.
-func (o GetIngressGatewaysIngressGatewayCollectionItemOutput) MeshId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIngressGatewaysIngressGatewayCollectionItem) string { return v.MeshId }).(pulumi.StringOutput)
+func (o GetIngressGatewaysIngressGatewayCollectionItemOutput) MeshId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetIngressGatewaysIngressGatewayCollectionItem) *string { return v.MeshId }).(pulumi.StringPtrOutput)
 }
 
 // Mutual TLS settings used when sending requests to virtual services within the mesh.
@@ -8264,13 +7045,13 @@ func (o GetIngressGatewaysIngressGatewayCollectionItemOutput) Mtls() GetIngressG
 }
 
 // A filter to return only resources that match the entire name given.
-func (o GetIngressGatewaysIngressGatewayCollectionItemOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIngressGatewaysIngressGatewayCollectionItem) string { return v.Name }).(pulumi.StringOutput)
+func (o GetIngressGatewaysIngressGatewayCollectionItemOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetIngressGatewaysIngressGatewayCollectionItem) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // A filter to return only resources that match the life cycle state given.
-func (o GetIngressGatewaysIngressGatewayCollectionItemOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIngressGatewaysIngressGatewayCollectionItem) string { return v.State }).(pulumi.StringOutput)
+func (o GetIngressGatewaysIngressGatewayCollectionItemOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetIngressGatewaysIngressGatewayCollectionItem) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -8279,13 +7060,13 @@ func (o GetIngressGatewaysIngressGatewayCollectionItemOutput) SystemTags() pulum
 }
 
 // The time when this resource was created in an RFC3339 formatted datetime string.
-func (o GetIngressGatewaysIngressGatewayCollectionItemOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIngressGatewaysIngressGatewayCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetIngressGatewaysIngressGatewayCollectionItemOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetIngressGatewaysIngressGatewayCollectionItem) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time when this resource was updated in an RFC3339 formatted datetime string.
-func (o GetIngressGatewaysIngressGatewayCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIngressGatewaysIngressGatewayCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o GetIngressGatewaysIngressGatewayCollectionItemOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetIngressGatewaysIngressGatewayCollectionItem) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type GetIngressGatewaysIngressGatewayCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -8302,12 +7083,6 @@ func (o GetIngressGatewaysIngressGatewayCollectionItemArrayOutput) ToGetIngressG
 	return o
 }
 
-func (o GetIngressGatewaysIngressGatewayCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetIngressGatewaysIngressGatewayCollectionItem] {
-	return pulumix.Output[[]GetIngressGatewaysIngressGatewayCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetIngressGatewaysIngressGatewayCollectionItemArrayOutput) Index(i pulumi.IntInput) GetIngressGatewaysIngressGatewayCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIngressGatewaysIngressGatewayCollectionItem {
 		return vs[0].([]GetIngressGatewaysIngressGatewayCollectionItem)[vs[1].(int)]
@@ -8316,7 +7091,7 @@ func (o GetIngressGatewaysIngressGatewayCollectionItemArrayOutput) Index(i pulum
 
 type GetIngressGatewaysIngressGatewayCollectionItemAccessLogging struct {
 	// Determines if the logging configuration is enabled.
-	IsEnabled bool `pulumi:"isEnabled"`
+	IsEnabled *bool `pulumi:"isEnabled"`
 }
 
 // GetIngressGatewaysIngressGatewayCollectionItemAccessLoggingInput is an input type that accepts GetIngressGatewaysIngressGatewayCollectionItemAccessLoggingArgs and GetIngressGatewaysIngressGatewayCollectionItemAccessLoggingOutput values.
@@ -8332,7 +7107,7 @@ type GetIngressGatewaysIngressGatewayCollectionItemAccessLoggingInput interface 
 
 type GetIngressGatewaysIngressGatewayCollectionItemAccessLoggingArgs struct {
 	// Determines if the logging configuration is enabled.
-	IsEnabled pulumi.BoolInput `pulumi:"isEnabled"`
+	IsEnabled pulumi.BoolPtrInput `pulumi:"isEnabled"`
 }
 
 func (GetIngressGatewaysIngressGatewayCollectionItemAccessLoggingArgs) ElementType() reflect.Type {
@@ -8345,12 +7120,6 @@ func (i GetIngressGatewaysIngressGatewayCollectionItemAccessLoggingArgs) ToGetIn
 
 func (i GetIngressGatewaysIngressGatewayCollectionItemAccessLoggingArgs) ToGetIngressGatewaysIngressGatewayCollectionItemAccessLoggingOutputWithContext(ctx context.Context) GetIngressGatewaysIngressGatewayCollectionItemAccessLoggingOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetIngressGatewaysIngressGatewayCollectionItemAccessLoggingOutput)
-}
-
-func (i GetIngressGatewaysIngressGatewayCollectionItemAccessLoggingArgs) ToOutput(ctx context.Context) pulumix.Output[GetIngressGatewaysIngressGatewayCollectionItemAccessLogging] {
-	return pulumix.Output[GetIngressGatewaysIngressGatewayCollectionItemAccessLogging]{
-		OutputState: i.ToGetIngressGatewaysIngressGatewayCollectionItemAccessLoggingOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetIngressGatewaysIngressGatewayCollectionItemAccessLoggingArrayInput is an input type that accepts GetIngressGatewaysIngressGatewayCollectionItemAccessLoggingArray and GetIngressGatewaysIngressGatewayCollectionItemAccessLoggingArrayOutput values.
@@ -8378,12 +7147,6 @@ func (i GetIngressGatewaysIngressGatewayCollectionItemAccessLoggingArray) ToGetI
 	return pulumi.ToOutputWithContext(ctx, i).(GetIngressGatewaysIngressGatewayCollectionItemAccessLoggingArrayOutput)
 }
 
-func (i GetIngressGatewaysIngressGatewayCollectionItemAccessLoggingArray) ToOutput(ctx context.Context) pulumix.Output[[]GetIngressGatewaysIngressGatewayCollectionItemAccessLogging] {
-	return pulumix.Output[[]GetIngressGatewaysIngressGatewayCollectionItemAccessLogging]{
-		OutputState: i.ToGetIngressGatewaysIngressGatewayCollectionItemAccessLoggingArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetIngressGatewaysIngressGatewayCollectionItemAccessLoggingOutput struct{ *pulumi.OutputState }
 
 func (GetIngressGatewaysIngressGatewayCollectionItemAccessLoggingOutput) ElementType() reflect.Type {
@@ -8398,15 +7161,9 @@ func (o GetIngressGatewaysIngressGatewayCollectionItemAccessLoggingOutput) ToGet
 	return o
 }
 
-func (o GetIngressGatewaysIngressGatewayCollectionItemAccessLoggingOutput) ToOutput(ctx context.Context) pulumix.Output[GetIngressGatewaysIngressGatewayCollectionItemAccessLogging] {
-	return pulumix.Output[GetIngressGatewaysIngressGatewayCollectionItemAccessLogging]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Determines if the logging configuration is enabled.
-func (o GetIngressGatewaysIngressGatewayCollectionItemAccessLoggingOutput) IsEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetIngressGatewaysIngressGatewayCollectionItemAccessLogging) bool { return v.IsEnabled }).(pulumi.BoolOutput)
+func (o GetIngressGatewaysIngressGatewayCollectionItemAccessLoggingOutput) IsEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetIngressGatewaysIngressGatewayCollectionItemAccessLogging) *bool { return v.IsEnabled }).(pulumi.BoolPtrOutput)
 }
 
 type GetIngressGatewaysIngressGatewayCollectionItemAccessLoggingArrayOutput struct{ *pulumi.OutputState }
@@ -8423,12 +7180,6 @@ func (o GetIngressGatewaysIngressGatewayCollectionItemAccessLoggingArrayOutput) 
 	return o
 }
 
-func (o GetIngressGatewaysIngressGatewayCollectionItemAccessLoggingArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetIngressGatewaysIngressGatewayCollectionItemAccessLogging] {
-	return pulumix.Output[[]GetIngressGatewaysIngressGatewayCollectionItemAccessLogging]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetIngressGatewaysIngressGatewayCollectionItemAccessLoggingArrayOutput) Index(i pulumi.IntInput) GetIngressGatewaysIngressGatewayCollectionItemAccessLoggingOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIngressGatewaysIngressGatewayCollectionItemAccessLogging {
 		return vs[0].([]GetIngressGatewaysIngressGatewayCollectionItemAccessLogging)[vs[1].(int)]
@@ -8441,7 +7192,7 @@ type GetIngressGatewaysIngressGatewayCollectionItemHost struct {
 	// The listeners for the ingress gateway.
 	Listeners []GetIngressGatewaysIngressGatewayCollectionItemHostListener `pulumi:"listeners"`
 	// A filter to return only resources that match the entire name given.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 }
 
 // GetIngressGatewaysIngressGatewayCollectionItemHostInput is an input type that accepts GetIngressGatewaysIngressGatewayCollectionItemHostArgs and GetIngressGatewaysIngressGatewayCollectionItemHostOutput values.
@@ -8461,7 +7212,7 @@ type GetIngressGatewaysIngressGatewayCollectionItemHostArgs struct {
 	// The listeners for the ingress gateway.
 	Listeners GetIngressGatewaysIngressGatewayCollectionItemHostListenerArrayInput `pulumi:"listeners"`
 	// A filter to return only resources that match the entire name given.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 }
 
 func (GetIngressGatewaysIngressGatewayCollectionItemHostArgs) ElementType() reflect.Type {
@@ -8474,12 +7225,6 @@ func (i GetIngressGatewaysIngressGatewayCollectionItemHostArgs) ToGetIngressGate
 
 func (i GetIngressGatewaysIngressGatewayCollectionItemHostArgs) ToGetIngressGatewaysIngressGatewayCollectionItemHostOutputWithContext(ctx context.Context) GetIngressGatewaysIngressGatewayCollectionItemHostOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetIngressGatewaysIngressGatewayCollectionItemHostOutput)
-}
-
-func (i GetIngressGatewaysIngressGatewayCollectionItemHostArgs) ToOutput(ctx context.Context) pulumix.Output[GetIngressGatewaysIngressGatewayCollectionItemHost] {
-	return pulumix.Output[GetIngressGatewaysIngressGatewayCollectionItemHost]{
-		OutputState: i.ToGetIngressGatewaysIngressGatewayCollectionItemHostOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetIngressGatewaysIngressGatewayCollectionItemHostArrayInput is an input type that accepts GetIngressGatewaysIngressGatewayCollectionItemHostArray and GetIngressGatewaysIngressGatewayCollectionItemHostArrayOutput values.
@@ -8507,12 +7252,6 @@ func (i GetIngressGatewaysIngressGatewayCollectionItemHostArray) ToGetIngressGat
 	return pulumi.ToOutputWithContext(ctx, i).(GetIngressGatewaysIngressGatewayCollectionItemHostArrayOutput)
 }
 
-func (i GetIngressGatewaysIngressGatewayCollectionItemHostArray) ToOutput(ctx context.Context) pulumix.Output[[]GetIngressGatewaysIngressGatewayCollectionItemHost] {
-	return pulumix.Output[[]GetIngressGatewaysIngressGatewayCollectionItemHost]{
-		OutputState: i.ToGetIngressGatewaysIngressGatewayCollectionItemHostArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetIngressGatewaysIngressGatewayCollectionItemHostOutput struct{ *pulumi.OutputState }
 
 func (GetIngressGatewaysIngressGatewayCollectionItemHostOutput) ElementType() reflect.Type {
@@ -8525,12 +7264,6 @@ func (o GetIngressGatewaysIngressGatewayCollectionItemHostOutput) ToGetIngressGa
 
 func (o GetIngressGatewaysIngressGatewayCollectionItemHostOutput) ToGetIngressGatewaysIngressGatewayCollectionItemHostOutputWithContext(ctx context.Context) GetIngressGatewaysIngressGatewayCollectionItemHostOutput {
 	return o
-}
-
-func (o GetIngressGatewaysIngressGatewayCollectionItemHostOutput) ToOutput(ctx context.Context) pulumix.Output[GetIngressGatewaysIngressGatewayCollectionItemHost] {
-	return pulumix.Output[GetIngressGatewaysIngressGatewayCollectionItemHost]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Hostnames of the host. Applicable only for HTTP and TLS_PASSTHROUGH listeners. Wildcard hostnames are supported in the prefix form. Examples of valid hostnames are "www.example.com", "*.example.com", "*.com".
@@ -8546,8 +7279,8 @@ func (o GetIngressGatewaysIngressGatewayCollectionItemHostOutput) Listeners() Ge
 }
 
 // A filter to return only resources that match the entire name given.
-func (o GetIngressGatewaysIngressGatewayCollectionItemHostOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIngressGatewaysIngressGatewayCollectionItemHost) string { return v.Name }).(pulumi.StringOutput)
+func (o GetIngressGatewaysIngressGatewayCollectionItemHostOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetIngressGatewaysIngressGatewayCollectionItemHost) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 type GetIngressGatewaysIngressGatewayCollectionItemHostArrayOutput struct{ *pulumi.OutputState }
@@ -8564,12 +7297,6 @@ func (o GetIngressGatewaysIngressGatewayCollectionItemHostArrayOutput) ToGetIngr
 	return o
 }
 
-func (o GetIngressGatewaysIngressGatewayCollectionItemHostArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetIngressGatewaysIngressGatewayCollectionItemHost] {
-	return pulumix.Output[[]GetIngressGatewaysIngressGatewayCollectionItemHost]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetIngressGatewaysIngressGatewayCollectionItemHostArrayOutput) Index(i pulumi.IntInput) GetIngressGatewaysIngressGatewayCollectionItemHostOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIngressGatewaysIngressGatewayCollectionItemHost {
 		return vs[0].([]GetIngressGatewaysIngressGatewayCollectionItemHost)[vs[1].(int)]
@@ -8578,9 +7305,9 @@ func (o GetIngressGatewaysIngressGatewayCollectionItemHostArrayOutput) Index(i p
 
 type GetIngressGatewaysIngressGatewayCollectionItemHostListener struct {
 	// Port on which ingress gateway is listening.
-	Port int `pulumi:"port"`
+	Port *int `pulumi:"port"`
 	// Type of protocol used.
-	Protocol string `pulumi:"protocol"`
+	Protocol *string `pulumi:"protocol"`
 	// TLS enforcement config for the ingress listener.
 	Tls []GetIngressGatewaysIngressGatewayCollectionItemHostListenerTl `pulumi:"tls"`
 }
@@ -8598,9 +7325,9 @@ type GetIngressGatewaysIngressGatewayCollectionItemHostListenerInput interface {
 
 type GetIngressGatewaysIngressGatewayCollectionItemHostListenerArgs struct {
 	// Port on which ingress gateway is listening.
-	Port pulumi.IntInput `pulumi:"port"`
+	Port pulumi.IntPtrInput `pulumi:"port"`
 	// Type of protocol used.
-	Protocol pulumi.StringInput `pulumi:"protocol"`
+	Protocol pulumi.StringPtrInput `pulumi:"protocol"`
 	// TLS enforcement config for the ingress listener.
 	Tls GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlArrayInput `pulumi:"tls"`
 }
@@ -8615,12 +7342,6 @@ func (i GetIngressGatewaysIngressGatewayCollectionItemHostListenerArgs) ToGetIng
 
 func (i GetIngressGatewaysIngressGatewayCollectionItemHostListenerArgs) ToGetIngressGatewaysIngressGatewayCollectionItemHostListenerOutputWithContext(ctx context.Context) GetIngressGatewaysIngressGatewayCollectionItemHostListenerOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetIngressGatewaysIngressGatewayCollectionItemHostListenerOutput)
-}
-
-func (i GetIngressGatewaysIngressGatewayCollectionItemHostListenerArgs) ToOutput(ctx context.Context) pulumix.Output[GetIngressGatewaysIngressGatewayCollectionItemHostListener] {
-	return pulumix.Output[GetIngressGatewaysIngressGatewayCollectionItemHostListener]{
-		OutputState: i.ToGetIngressGatewaysIngressGatewayCollectionItemHostListenerOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetIngressGatewaysIngressGatewayCollectionItemHostListenerArrayInput is an input type that accepts GetIngressGatewaysIngressGatewayCollectionItemHostListenerArray and GetIngressGatewaysIngressGatewayCollectionItemHostListenerArrayOutput values.
@@ -8648,12 +7369,6 @@ func (i GetIngressGatewaysIngressGatewayCollectionItemHostListenerArray) ToGetIn
 	return pulumi.ToOutputWithContext(ctx, i).(GetIngressGatewaysIngressGatewayCollectionItemHostListenerArrayOutput)
 }
 
-func (i GetIngressGatewaysIngressGatewayCollectionItemHostListenerArray) ToOutput(ctx context.Context) pulumix.Output[[]GetIngressGatewaysIngressGatewayCollectionItemHostListener] {
-	return pulumix.Output[[]GetIngressGatewaysIngressGatewayCollectionItemHostListener]{
-		OutputState: i.ToGetIngressGatewaysIngressGatewayCollectionItemHostListenerArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetIngressGatewaysIngressGatewayCollectionItemHostListenerOutput struct{ *pulumi.OutputState }
 
 func (GetIngressGatewaysIngressGatewayCollectionItemHostListenerOutput) ElementType() reflect.Type {
@@ -8668,20 +7383,14 @@ func (o GetIngressGatewaysIngressGatewayCollectionItemHostListenerOutput) ToGetI
 	return o
 }
 
-func (o GetIngressGatewaysIngressGatewayCollectionItemHostListenerOutput) ToOutput(ctx context.Context) pulumix.Output[GetIngressGatewaysIngressGatewayCollectionItemHostListener] {
-	return pulumix.Output[GetIngressGatewaysIngressGatewayCollectionItemHostListener]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Port on which ingress gateway is listening.
-func (o GetIngressGatewaysIngressGatewayCollectionItemHostListenerOutput) Port() pulumi.IntOutput {
-	return o.ApplyT(func(v GetIngressGatewaysIngressGatewayCollectionItemHostListener) int { return v.Port }).(pulumi.IntOutput)
+func (o GetIngressGatewaysIngressGatewayCollectionItemHostListenerOutput) Port() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetIngressGatewaysIngressGatewayCollectionItemHostListener) *int { return v.Port }).(pulumi.IntPtrOutput)
 }
 
 // Type of protocol used.
-func (o GetIngressGatewaysIngressGatewayCollectionItemHostListenerOutput) Protocol() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIngressGatewaysIngressGatewayCollectionItemHostListener) string { return v.Protocol }).(pulumi.StringOutput)
+func (o GetIngressGatewaysIngressGatewayCollectionItemHostListenerOutput) Protocol() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetIngressGatewaysIngressGatewayCollectionItemHostListener) *string { return v.Protocol }).(pulumi.StringPtrOutput)
 }
 
 // TLS enforcement config for the ingress listener.
@@ -8705,12 +7414,6 @@ func (o GetIngressGatewaysIngressGatewayCollectionItemHostListenerArrayOutput) T
 	return o
 }
 
-func (o GetIngressGatewaysIngressGatewayCollectionItemHostListenerArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetIngressGatewaysIngressGatewayCollectionItemHostListener] {
-	return pulumix.Output[[]GetIngressGatewaysIngressGatewayCollectionItemHostListener]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetIngressGatewaysIngressGatewayCollectionItemHostListenerArrayOutput) Index(i pulumi.IntInput) GetIngressGatewaysIngressGatewayCollectionItemHostListenerOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIngressGatewaysIngressGatewayCollectionItemHostListener {
 		return vs[0].([]GetIngressGatewaysIngressGatewayCollectionItemHostListener)[vs[1].(int)]
@@ -8721,7 +7424,7 @@ type GetIngressGatewaysIngressGatewayCollectionItemHostListenerTl struct {
 	// Resource representing the TLS configuration used for validating client certificates.
 	ClientValidations []GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidation `pulumi:"clientValidations"`
 	// DISABLED: Connection can only be plaintext. PERMISSIVE: Connection can be either plaintext or TLS/mTLS. If the clientValidation.trustedCaBundle property is configured for the listener, mTLS is performed and the client's certificates are validated by the gateway. TLS: Connection can only be TLS.  MUTUAL_TLS: Connection can only be MTLS.
-	Mode string `pulumi:"mode"`
+	Mode *string `pulumi:"mode"`
 	// Resource representing the location of the TLS certificate.
 	ServerCertificates []GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlServerCertificate `pulumi:"serverCertificates"`
 }
@@ -8741,7 +7444,7 @@ type GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlArgs struct {
 	// Resource representing the TLS configuration used for validating client certificates.
 	ClientValidations GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidationArrayInput `pulumi:"clientValidations"`
 	// DISABLED: Connection can only be plaintext. PERMISSIVE: Connection can be either plaintext or TLS/mTLS. If the clientValidation.trustedCaBundle property is configured for the listener, mTLS is performed and the client's certificates are validated by the gateway. TLS: Connection can only be TLS.  MUTUAL_TLS: Connection can only be MTLS.
-	Mode pulumi.StringInput `pulumi:"mode"`
+	Mode pulumi.StringPtrInput `pulumi:"mode"`
 	// Resource representing the location of the TLS certificate.
 	ServerCertificates GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlServerCertificateArrayInput `pulumi:"serverCertificates"`
 }
@@ -8756,12 +7459,6 @@ func (i GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlArgs) ToGetI
 
 func (i GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlArgs) ToGetIngressGatewaysIngressGatewayCollectionItemHostListenerTlOutputWithContext(ctx context.Context) GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlOutput)
-}
-
-func (i GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlArgs) ToOutput(ctx context.Context) pulumix.Output[GetIngressGatewaysIngressGatewayCollectionItemHostListenerTl] {
-	return pulumix.Output[GetIngressGatewaysIngressGatewayCollectionItemHostListenerTl]{
-		OutputState: i.ToGetIngressGatewaysIngressGatewayCollectionItemHostListenerTlOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlArrayInput is an input type that accepts GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlArray and GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlArrayOutput values.
@@ -8789,12 +7486,6 @@ func (i GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlArray) ToGet
 	return pulumi.ToOutputWithContext(ctx, i).(GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlArrayOutput)
 }
 
-func (i GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlArray) ToOutput(ctx context.Context) pulumix.Output[[]GetIngressGatewaysIngressGatewayCollectionItemHostListenerTl] {
-	return pulumix.Output[[]GetIngressGatewaysIngressGatewayCollectionItemHostListenerTl]{
-		OutputState: i.ToGetIngressGatewaysIngressGatewayCollectionItemHostListenerTlArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlOutput struct{ *pulumi.OutputState }
 
 func (GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlOutput) ElementType() reflect.Type {
@@ -8809,12 +7500,6 @@ func (o GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlOutput) ToGe
 	return o
 }
 
-func (o GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlOutput) ToOutput(ctx context.Context) pulumix.Output[GetIngressGatewaysIngressGatewayCollectionItemHostListenerTl] {
-	return pulumix.Output[GetIngressGatewaysIngressGatewayCollectionItemHostListenerTl]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Resource representing the TLS configuration used for validating client certificates.
 func (o GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlOutput) ClientValidations() GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidationArrayOutput {
 	return o.ApplyT(func(v GetIngressGatewaysIngressGatewayCollectionItemHostListenerTl) []GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidation {
@@ -8823,8 +7508,8 @@ func (o GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlOutput) Clie
 }
 
 // DISABLED: Connection can only be plaintext. PERMISSIVE: Connection can be either plaintext or TLS/mTLS. If the clientValidation.trustedCaBundle property is configured for the listener, mTLS is performed and the client's certificates are validated by the gateway. TLS: Connection can only be TLS.  MUTUAL_TLS: Connection can only be MTLS.
-func (o GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlOutput) Mode() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIngressGatewaysIngressGatewayCollectionItemHostListenerTl) string { return v.Mode }).(pulumi.StringOutput)
+func (o GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlOutput) Mode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetIngressGatewaysIngressGatewayCollectionItemHostListenerTl) *string { return v.Mode }).(pulumi.StringPtrOutput)
 }
 
 // Resource representing the location of the TLS certificate.
@@ -8846,12 +7531,6 @@ func (o GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlArrayOutput)
 
 func (o GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlArrayOutput) ToGetIngressGatewaysIngressGatewayCollectionItemHostListenerTlArrayOutputWithContext(ctx context.Context) GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlArrayOutput {
 	return o
-}
-
-func (o GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetIngressGatewaysIngressGatewayCollectionItemHostListenerTl] {
-	return pulumix.Output[[]GetIngressGatewaysIngressGatewayCollectionItemHostListenerTl]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlArrayOutput) Index(i pulumi.IntInput) GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlOutput {
@@ -8897,12 +7576,6 @@ func (i GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValida
 	return pulumi.ToOutputWithContext(ctx, i).(GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidationOutput)
 }
 
-func (i GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidationArgs) ToOutput(ctx context.Context) pulumix.Output[GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidation] {
-	return pulumix.Output[GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidation]{
-		OutputState: i.ToGetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidationOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidationArrayInput is an input type that accepts GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidationArray and GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidationArrayOutput values.
 // You can construct a concrete instance of `GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidationArrayInput` via:
 //
@@ -8928,12 +7601,6 @@ func (i GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValida
 	return pulumi.ToOutputWithContext(ctx, i).(GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidationArrayOutput)
 }
 
-func (i GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidation] {
-	return pulumix.Output[[]GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidation]{
-		OutputState: i.ToGetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidationOutput struct{ *pulumi.OutputState }
 
 func (GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidationOutput) ElementType() reflect.Type {
@@ -8946,12 +7613,6 @@ func (o GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValida
 
 func (o GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidationOutput) ToGetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidationOutputWithContext(ctx context.Context) GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidationOutput {
 	return o
-}
-
-func (o GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidationOutput) ToOutput(ctx context.Context) pulumix.Output[GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidation] {
-	return pulumix.Output[GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidation]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A list of alternate names to verify the subject identity in the certificate presented by the client.
@@ -8982,12 +7643,6 @@ func (o GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValida
 	return o
 }
 
-func (o GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidation] {
-	return pulumix.Output[[]GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidation]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidationArrayOutput) Index(i pulumi.IntInput) GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidationOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidation {
 		return vs[0].([]GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidation)[vs[1].(int)]
@@ -8996,11 +7651,11 @@ func (o GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValida
 
 type GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidationTrustedCaBundle struct {
 	// The OCID of the CA Bundle resource.
-	CaBundleId string `pulumi:"caBundleId"`
+	CaBundleId *string `pulumi:"caBundleId"`
 	// Name of the secret. For Kubernetes this is the name of the Kubernetes secret of type tls. For other platforms the secrets must be mounted at: /etc/oci/secrets/${secretName}/tls.{key,crt}
-	SecretName string `pulumi:"secretName"`
+	SecretName *string `pulumi:"secretName"`
 	// Type of certificate.
-	Type string `pulumi:"type"`
+	Type *string `pulumi:"type"`
 }
 
 // GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidationTrustedCaBundleInput is an input type that accepts GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidationTrustedCaBundleArgs and GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidationTrustedCaBundleOutput values.
@@ -9016,11 +7671,11 @@ type GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidatio
 
 type GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidationTrustedCaBundleArgs struct {
 	// The OCID of the CA Bundle resource.
-	CaBundleId pulumi.StringInput `pulumi:"caBundleId"`
+	CaBundleId pulumi.StringPtrInput `pulumi:"caBundleId"`
 	// Name of the secret. For Kubernetes this is the name of the Kubernetes secret of type tls. For other platforms the secrets must be mounted at: /etc/oci/secrets/${secretName}/tls.{key,crt}
-	SecretName pulumi.StringInput `pulumi:"secretName"`
+	SecretName pulumi.StringPtrInput `pulumi:"secretName"`
 	// Type of certificate.
-	Type pulumi.StringInput `pulumi:"type"`
+	Type pulumi.StringPtrInput `pulumi:"type"`
 }
 
 func (GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidationTrustedCaBundleArgs) ElementType() reflect.Type {
@@ -9033,12 +7688,6 @@ func (i GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValida
 
 func (i GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidationTrustedCaBundleArgs) ToGetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidationTrustedCaBundleOutputWithContext(ctx context.Context) GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidationTrustedCaBundleOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidationTrustedCaBundleOutput)
-}
-
-func (i GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidationTrustedCaBundleArgs) ToOutput(ctx context.Context) pulumix.Output[GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidationTrustedCaBundle] {
-	return pulumix.Output[GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidationTrustedCaBundle]{
-		OutputState: i.ToGetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidationTrustedCaBundleOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidationTrustedCaBundleArrayInput is an input type that accepts GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidationTrustedCaBundleArray and GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidationTrustedCaBundleArrayOutput values.
@@ -9066,12 +7715,6 @@ func (i GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValida
 	return pulumi.ToOutputWithContext(ctx, i).(GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidationTrustedCaBundleArrayOutput)
 }
 
-func (i GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidationTrustedCaBundleArray) ToOutput(ctx context.Context) pulumix.Output[[]GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidationTrustedCaBundle] {
-	return pulumix.Output[[]GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidationTrustedCaBundle]{
-		OutputState: i.ToGetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidationTrustedCaBundleArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidationTrustedCaBundleOutput struct{ *pulumi.OutputState }
 
 func (GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidationTrustedCaBundleOutput) ElementType() reflect.Type {
@@ -9086,31 +7729,25 @@ func (o GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValida
 	return o
 }
 
-func (o GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidationTrustedCaBundleOutput) ToOutput(ctx context.Context) pulumix.Output[GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidationTrustedCaBundle] {
-	return pulumix.Output[GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidationTrustedCaBundle]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the CA Bundle resource.
-func (o GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidationTrustedCaBundleOutput) CaBundleId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidationTrustedCaBundle) string {
+func (o GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidationTrustedCaBundleOutput) CaBundleId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidationTrustedCaBundle) *string {
 		return v.CaBundleId
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Name of the secret. For Kubernetes this is the name of the Kubernetes secret of type tls. For other platforms the secrets must be mounted at: /etc/oci/secrets/${secretName}/tls.{key,crt}
-func (o GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidationTrustedCaBundleOutput) SecretName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidationTrustedCaBundle) string {
+func (o GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidationTrustedCaBundleOutput) SecretName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidationTrustedCaBundle) *string {
 		return v.SecretName
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Type of certificate.
-func (o GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidationTrustedCaBundleOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidationTrustedCaBundle) string {
+func (o GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidationTrustedCaBundleOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidationTrustedCaBundle) *string {
 		return v.Type
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidationTrustedCaBundleArrayOutput struct{ *pulumi.OutputState }
@@ -9127,12 +7764,6 @@ func (o GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValida
 	return o
 }
 
-func (o GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidationTrustedCaBundleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidationTrustedCaBundle] {
-	return pulumix.Output[[]GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidationTrustedCaBundle]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidationTrustedCaBundleArrayOutput) Index(i pulumi.IntInput) GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidationTrustedCaBundleOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidationTrustedCaBundle {
 		return vs[0].([]GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidationTrustedCaBundle)[vs[1].(int)]
@@ -9141,11 +7772,11 @@ func (o GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValida
 
 type GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlServerCertificate struct {
 	// The OCID of the certificate resource that will be used for mTLS authentication with other virtual services in the mesh.
-	CertificateId string `pulumi:"certificateId"`
+	CertificateId *string `pulumi:"certificateId"`
 	// Name of the secret. For Kubernetes this is the name of the Kubernetes secret of type tls. For other platforms the secrets must be mounted at: /etc/oci/secrets/${secretName}/tls.{key,crt}
-	SecretName string `pulumi:"secretName"`
+	SecretName *string `pulumi:"secretName"`
 	// Type of certificate.
-	Type string `pulumi:"type"`
+	Type *string `pulumi:"type"`
 }
 
 // GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlServerCertificateInput is an input type that accepts GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlServerCertificateArgs and GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlServerCertificateOutput values.
@@ -9161,11 +7792,11 @@ type GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlServerCertifica
 
 type GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlServerCertificateArgs struct {
 	// The OCID of the certificate resource that will be used for mTLS authentication with other virtual services in the mesh.
-	CertificateId pulumi.StringInput `pulumi:"certificateId"`
+	CertificateId pulumi.StringPtrInput `pulumi:"certificateId"`
 	// Name of the secret. For Kubernetes this is the name of the Kubernetes secret of type tls. For other platforms the secrets must be mounted at: /etc/oci/secrets/${secretName}/tls.{key,crt}
-	SecretName pulumi.StringInput `pulumi:"secretName"`
+	SecretName pulumi.StringPtrInput `pulumi:"secretName"`
 	// Type of certificate.
-	Type pulumi.StringInput `pulumi:"type"`
+	Type pulumi.StringPtrInput `pulumi:"type"`
 }
 
 func (GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlServerCertificateArgs) ElementType() reflect.Type {
@@ -9178,12 +7809,6 @@ func (i GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlServerCertif
 
 func (i GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlServerCertificateArgs) ToGetIngressGatewaysIngressGatewayCollectionItemHostListenerTlServerCertificateOutputWithContext(ctx context.Context) GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlServerCertificateOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlServerCertificateOutput)
-}
-
-func (i GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlServerCertificateArgs) ToOutput(ctx context.Context) pulumix.Output[GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlServerCertificate] {
-	return pulumix.Output[GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlServerCertificate]{
-		OutputState: i.ToGetIngressGatewaysIngressGatewayCollectionItemHostListenerTlServerCertificateOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlServerCertificateArrayInput is an input type that accepts GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlServerCertificateArray and GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlServerCertificateArrayOutput values.
@@ -9211,12 +7836,6 @@ func (i GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlServerCertif
 	return pulumi.ToOutputWithContext(ctx, i).(GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlServerCertificateArrayOutput)
 }
 
-func (i GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlServerCertificateArray) ToOutput(ctx context.Context) pulumix.Output[[]GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlServerCertificate] {
-	return pulumix.Output[[]GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlServerCertificate]{
-		OutputState: i.ToGetIngressGatewaysIngressGatewayCollectionItemHostListenerTlServerCertificateArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlServerCertificateOutput struct{ *pulumi.OutputState }
 
 func (GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlServerCertificateOutput) ElementType() reflect.Type {
@@ -9231,31 +7850,25 @@ func (o GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlServerCertif
 	return o
 }
 
-func (o GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlServerCertificateOutput) ToOutput(ctx context.Context) pulumix.Output[GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlServerCertificate] {
-	return pulumix.Output[GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlServerCertificate]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the certificate resource that will be used for mTLS authentication with other virtual services in the mesh.
-func (o GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlServerCertificateOutput) CertificateId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlServerCertificate) string {
+func (o GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlServerCertificateOutput) CertificateId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlServerCertificate) *string {
 		return v.CertificateId
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Name of the secret. For Kubernetes this is the name of the Kubernetes secret of type tls. For other platforms the secrets must be mounted at: /etc/oci/secrets/${secretName}/tls.{key,crt}
-func (o GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlServerCertificateOutput) SecretName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlServerCertificate) string {
+func (o GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlServerCertificateOutput) SecretName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlServerCertificate) *string {
 		return v.SecretName
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Type of certificate.
-func (o GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlServerCertificateOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlServerCertificate) string {
+func (o GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlServerCertificateOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlServerCertificate) *string {
 		return v.Type
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlServerCertificateArrayOutput struct{ *pulumi.OutputState }
@@ -9272,12 +7885,6 @@ func (o GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlServerCertif
 	return o
 }
 
-func (o GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlServerCertificateArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlServerCertificate] {
-	return pulumix.Output[[]GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlServerCertificate]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlServerCertificateArrayOutput) Index(i pulumi.IntInput) GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlServerCertificateOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlServerCertificate {
 		return vs[0].([]GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlServerCertificate)[vs[1].(int)]
@@ -9286,9 +7893,9 @@ func (o GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlServerCertif
 
 type GetIngressGatewaysIngressGatewayCollectionItemMtl struct {
 	// The OCID of the certificate resource that will be used for mTLS authentication with other virtual services in the mesh.
-	CertificateId string `pulumi:"certificateId"`
+	CertificateId *string `pulumi:"certificateId"`
 	// The number of days the mTLS certificate is valid.  This value should be less than the Maximum Validity Duration  for Certificates (Days) setting on the Certificate Authority associated with this Mesh.  The certificate will be automatically renewed after 2/3 of the validity period, so a certificate with a maximum validity of 45 days will be renewed every 30 days.
-	MaximumValidity int `pulumi:"maximumValidity"`
+	MaximumValidity *int `pulumi:"maximumValidity"`
 }
 
 // GetIngressGatewaysIngressGatewayCollectionItemMtlInput is an input type that accepts GetIngressGatewaysIngressGatewayCollectionItemMtlArgs and GetIngressGatewaysIngressGatewayCollectionItemMtlOutput values.
@@ -9304,9 +7911,9 @@ type GetIngressGatewaysIngressGatewayCollectionItemMtlInput interface {
 
 type GetIngressGatewaysIngressGatewayCollectionItemMtlArgs struct {
 	// The OCID of the certificate resource that will be used for mTLS authentication with other virtual services in the mesh.
-	CertificateId pulumi.StringInput `pulumi:"certificateId"`
+	CertificateId pulumi.StringPtrInput `pulumi:"certificateId"`
 	// The number of days the mTLS certificate is valid.  This value should be less than the Maximum Validity Duration  for Certificates (Days) setting on the Certificate Authority associated with this Mesh.  The certificate will be automatically renewed after 2/3 of the validity period, so a certificate with a maximum validity of 45 days will be renewed every 30 days.
-	MaximumValidity pulumi.IntInput `pulumi:"maximumValidity"`
+	MaximumValidity pulumi.IntPtrInput `pulumi:"maximumValidity"`
 }
 
 func (GetIngressGatewaysIngressGatewayCollectionItemMtlArgs) ElementType() reflect.Type {
@@ -9319,12 +7926,6 @@ func (i GetIngressGatewaysIngressGatewayCollectionItemMtlArgs) ToGetIngressGatew
 
 func (i GetIngressGatewaysIngressGatewayCollectionItemMtlArgs) ToGetIngressGatewaysIngressGatewayCollectionItemMtlOutputWithContext(ctx context.Context) GetIngressGatewaysIngressGatewayCollectionItemMtlOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetIngressGatewaysIngressGatewayCollectionItemMtlOutput)
-}
-
-func (i GetIngressGatewaysIngressGatewayCollectionItemMtlArgs) ToOutput(ctx context.Context) pulumix.Output[GetIngressGatewaysIngressGatewayCollectionItemMtl] {
-	return pulumix.Output[GetIngressGatewaysIngressGatewayCollectionItemMtl]{
-		OutputState: i.ToGetIngressGatewaysIngressGatewayCollectionItemMtlOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetIngressGatewaysIngressGatewayCollectionItemMtlArrayInput is an input type that accepts GetIngressGatewaysIngressGatewayCollectionItemMtlArray and GetIngressGatewaysIngressGatewayCollectionItemMtlArrayOutput values.
@@ -9352,12 +7953,6 @@ func (i GetIngressGatewaysIngressGatewayCollectionItemMtlArray) ToGetIngressGate
 	return pulumi.ToOutputWithContext(ctx, i).(GetIngressGatewaysIngressGatewayCollectionItemMtlArrayOutput)
 }
 
-func (i GetIngressGatewaysIngressGatewayCollectionItemMtlArray) ToOutput(ctx context.Context) pulumix.Output[[]GetIngressGatewaysIngressGatewayCollectionItemMtl] {
-	return pulumix.Output[[]GetIngressGatewaysIngressGatewayCollectionItemMtl]{
-		OutputState: i.ToGetIngressGatewaysIngressGatewayCollectionItemMtlArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetIngressGatewaysIngressGatewayCollectionItemMtlOutput struct{ *pulumi.OutputState }
 
 func (GetIngressGatewaysIngressGatewayCollectionItemMtlOutput) ElementType() reflect.Type {
@@ -9372,20 +7967,14 @@ func (o GetIngressGatewaysIngressGatewayCollectionItemMtlOutput) ToGetIngressGat
 	return o
 }
 
-func (o GetIngressGatewaysIngressGatewayCollectionItemMtlOutput) ToOutput(ctx context.Context) pulumix.Output[GetIngressGatewaysIngressGatewayCollectionItemMtl] {
-	return pulumix.Output[GetIngressGatewaysIngressGatewayCollectionItemMtl]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the certificate resource that will be used for mTLS authentication with other virtual services in the mesh.
-func (o GetIngressGatewaysIngressGatewayCollectionItemMtlOutput) CertificateId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIngressGatewaysIngressGatewayCollectionItemMtl) string { return v.CertificateId }).(pulumi.StringOutput)
+func (o GetIngressGatewaysIngressGatewayCollectionItemMtlOutput) CertificateId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetIngressGatewaysIngressGatewayCollectionItemMtl) *string { return v.CertificateId }).(pulumi.StringPtrOutput)
 }
 
 // The number of days the mTLS certificate is valid.  This value should be less than the Maximum Validity Duration  for Certificates (Days) setting on the Certificate Authority associated with this Mesh.  The certificate will be automatically renewed after 2/3 of the validity period, so a certificate with a maximum validity of 45 days will be renewed every 30 days.
-func (o GetIngressGatewaysIngressGatewayCollectionItemMtlOutput) MaximumValidity() pulumi.IntOutput {
-	return o.ApplyT(func(v GetIngressGatewaysIngressGatewayCollectionItemMtl) int { return v.MaximumValidity }).(pulumi.IntOutput)
+func (o GetIngressGatewaysIngressGatewayCollectionItemMtlOutput) MaximumValidity() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetIngressGatewaysIngressGatewayCollectionItemMtl) *int { return v.MaximumValidity }).(pulumi.IntPtrOutput)
 }
 
 type GetIngressGatewaysIngressGatewayCollectionItemMtlArrayOutput struct{ *pulumi.OutputState }
@@ -9402,12 +7991,6 @@ func (o GetIngressGatewaysIngressGatewayCollectionItemMtlArrayOutput) ToGetIngre
 	return o
 }
 
-func (o GetIngressGatewaysIngressGatewayCollectionItemMtlArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetIngressGatewaysIngressGatewayCollectionItemMtl] {
-	return pulumix.Output[[]GetIngressGatewaysIngressGatewayCollectionItemMtl]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetIngressGatewaysIngressGatewayCollectionItemMtlArrayOutput) Index(i pulumi.IntInput) GetIngressGatewaysIngressGatewayCollectionItemMtlOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIngressGatewaysIngressGatewayCollectionItemMtl {
 		return vs[0].([]GetIngressGatewaysIngressGatewayCollectionItemMtl)[vs[1].(int)]
@@ -9416,7 +7999,7 @@ func (o GetIngressGatewaysIngressGatewayCollectionItemMtlArrayOutput) Index(i pu
 
 type GetMeshCertificateAuthority struct {
 	// Unique identifier that is immutable on creation.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 }
 
 // GetMeshCertificateAuthorityInput is an input type that accepts GetMeshCertificateAuthorityArgs and GetMeshCertificateAuthorityOutput values.
@@ -9432,7 +8015,7 @@ type GetMeshCertificateAuthorityInput interface {
 
 type GetMeshCertificateAuthorityArgs struct {
 	// Unique identifier that is immutable on creation.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 }
 
 func (GetMeshCertificateAuthorityArgs) ElementType() reflect.Type {
@@ -9445,12 +8028,6 @@ func (i GetMeshCertificateAuthorityArgs) ToGetMeshCertificateAuthorityOutput() G
 
 func (i GetMeshCertificateAuthorityArgs) ToGetMeshCertificateAuthorityOutputWithContext(ctx context.Context) GetMeshCertificateAuthorityOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetMeshCertificateAuthorityOutput)
-}
-
-func (i GetMeshCertificateAuthorityArgs) ToOutput(ctx context.Context) pulumix.Output[GetMeshCertificateAuthority] {
-	return pulumix.Output[GetMeshCertificateAuthority]{
-		OutputState: i.ToGetMeshCertificateAuthorityOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetMeshCertificateAuthorityArrayInput is an input type that accepts GetMeshCertificateAuthorityArray and GetMeshCertificateAuthorityArrayOutput values.
@@ -9478,12 +8055,6 @@ func (i GetMeshCertificateAuthorityArray) ToGetMeshCertificateAuthorityArrayOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetMeshCertificateAuthorityArrayOutput)
 }
 
-func (i GetMeshCertificateAuthorityArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMeshCertificateAuthority] {
-	return pulumix.Output[[]GetMeshCertificateAuthority]{
-		OutputState: i.ToGetMeshCertificateAuthorityArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMeshCertificateAuthorityOutput struct{ *pulumi.OutputState }
 
 func (GetMeshCertificateAuthorityOutput) ElementType() reflect.Type {
@@ -9498,15 +8069,9 @@ func (o GetMeshCertificateAuthorityOutput) ToGetMeshCertificateAuthorityOutputWi
 	return o
 }
 
-func (o GetMeshCertificateAuthorityOutput) ToOutput(ctx context.Context) pulumix.Output[GetMeshCertificateAuthority] {
-	return pulumix.Output[GetMeshCertificateAuthority]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Unique identifier that is immutable on creation.
-func (o GetMeshCertificateAuthorityOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMeshCertificateAuthority) string { return v.Id }).(pulumi.StringOutput)
+func (o GetMeshCertificateAuthorityOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMeshCertificateAuthority) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 type GetMeshCertificateAuthorityArrayOutput struct{ *pulumi.OutputState }
@@ -9523,12 +8088,6 @@ func (o GetMeshCertificateAuthorityArrayOutput) ToGetMeshCertificateAuthorityArr
 	return o
 }
 
-func (o GetMeshCertificateAuthorityArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMeshCertificateAuthority] {
-	return pulumix.Output[[]GetMeshCertificateAuthority]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetMeshCertificateAuthorityArrayOutput) Index(i pulumi.IntInput) GetMeshCertificateAuthorityOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMeshCertificateAuthority {
 		return vs[0].([]GetMeshCertificateAuthority)[vs[1].(int)]
@@ -9537,7 +8096,7 @@ func (o GetMeshCertificateAuthorityArrayOutput) Index(i pulumi.IntInput) GetMesh
 
 type GetMeshMtl struct {
 	// DISABLED: No minimum virtual services within this mesh can use any mTLS authentication mode. PERMISSIVE: Virtual services within this mesh can use either PERMISSIVE or STRICT modes. STRICT: All virtual services within this mesh must use STRICT mode.
-	Minimum string `pulumi:"minimum"`
+	Minimum *string `pulumi:"minimum"`
 }
 
 // GetMeshMtlInput is an input type that accepts GetMeshMtlArgs and GetMeshMtlOutput values.
@@ -9553,7 +8112,7 @@ type GetMeshMtlInput interface {
 
 type GetMeshMtlArgs struct {
 	// DISABLED: No minimum virtual services within this mesh can use any mTLS authentication mode. PERMISSIVE: Virtual services within this mesh can use either PERMISSIVE or STRICT modes. STRICT: All virtual services within this mesh must use STRICT mode.
-	Minimum pulumi.StringInput `pulumi:"minimum"`
+	Minimum pulumi.StringPtrInput `pulumi:"minimum"`
 }
 
 func (GetMeshMtlArgs) ElementType() reflect.Type {
@@ -9566,12 +8125,6 @@ func (i GetMeshMtlArgs) ToGetMeshMtlOutput() GetMeshMtlOutput {
 
 func (i GetMeshMtlArgs) ToGetMeshMtlOutputWithContext(ctx context.Context) GetMeshMtlOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetMeshMtlOutput)
-}
-
-func (i GetMeshMtlArgs) ToOutput(ctx context.Context) pulumix.Output[GetMeshMtl] {
-	return pulumix.Output[GetMeshMtl]{
-		OutputState: i.ToGetMeshMtlOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetMeshMtlArrayInput is an input type that accepts GetMeshMtlArray and GetMeshMtlArrayOutput values.
@@ -9599,12 +8152,6 @@ func (i GetMeshMtlArray) ToGetMeshMtlArrayOutputWithContext(ctx context.Context)
 	return pulumi.ToOutputWithContext(ctx, i).(GetMeshMtlArrayOutput)
 }
 
-func (i GetMeshMtlArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMeshMtl] {
-	return pulumix.Output[[]GetMeshMtl]{
-		OutputState: i.ToGetMeshMtlArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMeshMtlOutput struct{ *pulumi.OutputState }
 
 func (GetMeshMtlOutput) ElementType() reflect.Type {
@@ -9619,15 +8166,9 @@ func (o GetMeshMtlOutput) ToGetMeshMtlOutputWithContext(ctx context.Context) Get
 	return o
 }
 
-func (o GetMeshMtlOutput) ToOutput(ctx context.Context) pulumix.Output[GetMeshMtl] {
-	return pulumix.Output[GetMeshMtl]{
-		OutputState: o.OutputState,
-	}
-}
-
 // DISABLED: No minimum virtual services within this mesh can use any mTLS authentication mode. PERMISSIVE: Virtual services within this mesh can use either PERMISSIVE or STRICT modes. STRICT: All virtual services within this mesh must use STRICT mode.
-func (o GetMeshMtlOutput) Minimum() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMeshMtl) string { return v.Minimum }).(pulumi.StringOutput)
+func (o GetMeshMtlOutput) Minimum() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMeshMtl) *string { return v.Minimum }).(pulumi.StringPtrOutput)
 }
 
 type GetMeshMtlArrayOutput struct{ *pulumi.OutputState }
@@ -9642,12 +8183,6 @@ func (o GetMeshMtlArrayOutput) ToGetMeshMtlArrayOutput() GetMeshMtlArrayOutput {
 
 func (o GetMeshMtlArrayOutput) ToGetMeshMtlArrayOutputWithContext(ctx context.Context) GetMeshMtlArrayOutput {
 	return o
-}
-
-func (o GetMeshMtlArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMeshMtl] {
-	return pulumix.Output[[]GetMeshMtl]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetMeshMtlArrayOutput) Index(i pulumi.IntInput) GetMeshMtlOutput {
@@ -9691,12 +8226,6 @@ func (i GetMeshesFilterArgs) ToGetMeshesFilterOutputWithContext(ctx context.Cont
 	return pulumi.ToOutputWithContext(ctx, i).(GetMeshesFilterOutput)
 }
 
-func (i GetMeshesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetMeshesFilter] {
-	return pulumix.Output[GetMeshesFilter]{
-		OutputState: i.ToGetMeshesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetMeshesFilterArrayInput is an input type that accepts GetMeshesFilterArray and GetMeshesFilterArrayOutput values.
 // You can construct a concrete instance of `GetMeshesFilterArrayInput` via:
 //
@@ -9722,12 +8251,6 @@ func (i GetMeshesFilterArray) ToGetMeshesFilterArrayOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(GetMeshesFilterArrayOutput)
 }
 
-func (i GetMeshesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMeshesFilter] {
-	return pulumix.Output[[]GetMeshesFilter]{
-		OutputState: i.ToGetMeshesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMeshesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetMeshesFilterOutput) ElementType() reflect.Type {
@@ -9740,12 +8263,6 @@ func (o GetMeshesFilterOutput) ToGetMeshesFilterOutput() GetMeshesFilterOutput {
 
 func (o GetMeshesFilterOutput) ToGetMeshesFilterOutputWithContext(ctx context.Context) GetMeshesFilterOutput {
 	return o
-}
-
-func (o GetMeshesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetMeshesFilter] {
-	return pulumix.Output[GetMeshesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetMeshesFilterOutput) Name() pulumi.StringOutput {
@@ -9772,12 +8289,6 @@ func (o GetMeshesFilterArrayOutput) ToGetMeshesFilterArrayOutput() GetMeshesFilt
 
 func (o GetMeshesFilterArrayOutput) ToGetMeshesFilterArrayOutputWithContext(ctx context.Context) GetMeshesFilterArrayOutput {
 	return o
-}
-
-func (o GetMeshesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMeshesFilter] {
-	return pulumix.Output[[]GetMeshesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetMeshesFilterArrayOutput) Index(i pulumi.IntInput) GetMeshesFilterOutput {
@@ -9817,12 +8328,6 @@ func (i GetMeshesMeshCollectionArgs) ToGetMeshesMeshCollectionOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(GetMeshesMeshCollectionOutput)
 }
 
-func (i GetMeshesMeshCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetMeshesMeshCollection] {
-	return pulumix.Output[GetMeshesMeshCollection]{
-		OutputState: i.ToGetMeshesMeshCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetMeshesMeshCollectionArrayInput is an input type that accepts GetMeshesMeshCollectionArray and GetMeshesMeshCollectionArrayOutput values.
 // You can construct a concrete instance of `GetMeshesMeshCollectionArrayInput` via:
 //
@@ -9848,12 +8353,6 @@ func (i GetMeshesMeshCollectionArray) ToGetMeshesMeshCollectionArrayOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetMeshesMeshCollectionArrayOutput)
 }
 
-func (i GetMeshesMeshCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMeshesMeshCollection] {
-	return pulumix.Output[[]GetMeshesMeshCollection]{
-		OutputState: i.ToGetMeshesMeshCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMeshesMeshCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetMeshesMeshCollectionOutput) ElementType() reflect.Type {
@@ -9866,12 +8365,6 @@ func (o GetMeshesMeshCollectionOutput) ToGetMeshesMeshCollectionOutput() GetMesh
 
 func (o GetMeshesMeshCollectionOutput) ToGetMeshesMeshCollectionOutputWithContext(ctx context.Context) GetMeshesMeshCollectionOutput {
 	return o
-}
-
-func (o GetMeshesMeshCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetMeshesMeshCollection] {
-	return pulumix.Output[GetMeshesMeshCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetMeshesMeshCollectionOutput) Items() GetMeshesMeshCollectionItemArrayOutput {
@@ -9892,12 +8385,6 @@ func (o GetMeshesMeshCollectionArrayOutput) ToGetMeshesMeshCollectionArrayOutput
 	return o
 }
 
-func (o GetMeshesMeshCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMeshesMeshCollection] {
-	return pulumix.Output[[]GetMeshesMeshCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetMeshesMeshCollectionArrayOutput) Index(i pulumi.IntInput) GetMeshesMeshCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMeshesMeshCollection {
 		return vs[0].([]GetMeshesMeshCollection)[vs[1].(int)]
@@ -9908,29 +8395,29 @@ type GetMeshesMeshCollectionItem struct {
 	// A list of certificate authority resources to use for creating leaf certificates for mTLS authentication. Currently we only support one certificate authority, but this may expand in future releases. Request with more than one certificate authority will be rejected.
 	CertificateAuthorities []GetMeshesMeshCollectionItemCertificateAuthority `pulumi:"certificateAuthorities"`
 	// The ID of the compartment in which to list resources.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// Description of the resource. It can be changed after creation. Avoid entering confidential information.  Example: `This is my new resource`
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// A filter to return only resources that match the entire displayName given.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// Unique Mesh identifier.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// Sets a minimum level of mTLS authentication for all virtual services within the mesh.
 	Mtls []GetMeshesMeshCollectionItemMtl `pulumi:"mtls"`
 	// A filter to return only resources that match the life cycle state given.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The time when this resource was created in an RFC3339 formatted datetime string.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time when this resource was updated in an RFC3339 formatted datetime string.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 // GetMeshesMeshCollectionItemInput is an input type that accepts GetMeshesMeshCollectionItemArgs and GetMeshesMeshCollectionItemOutput values.
@@ -9948,29 +8435,29 @@ type GetMeshesMeshCollectionItemArgs struct {
 	// A list of certificate authority resources to use for creating leaf certificates for mTLS authentication. Currently we only support one certificate authority, but this may expand in future releases. Request with more than one certificate authority will be rejected.
 	CertificateAuthorities GetMeshesMeshCollectionItemCertificateAuthorityArrayInput `pulumi:"certificateAuthorities"`
 	// The ID of the compartment in which to list resources.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// Description of the resource. It can be changed after creation. Avoid entering confidential information.  Example: `This is my new resource`
-	Description pulumi.StringInput `pulumi:"description"`
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// A filter to return only resources that match the entire displayName given.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// Unique Mesh identifier.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
-	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrInput `pulumi:"lifecycleDetails"`
 	// Sets a minimum level of mTLS authentication for all virtual services within the mesh.
 	Mtls GetMeshesMeshCollectionItemMtlArrayInput `pulumi:"mtls"`
 	// A filter to return only resources that match the life cycle state given.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapInput `pulumi:"systemTags"`
 	// The time when this resource was created in an RFC3339 formatted datetime string.
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// The time when this resource was updated in an RFC3339 formatted datetime string.
-	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
 }
 
 func (GetMeshesMeshCollectionItemArgs) ElementType() reflect.Type {
@@ -9983,12 +8470,6 @@ func (i GetMeshesMeshCollectionItemArgs) ToGetMeshesMeshCollectionItemOutput() G
 
 func (i GetMeshesMeshCollectionItemArgs) ToGetMeshesMeshCollectionItemOutputWithContext(ctx context.Context) GetMeshesMeshCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetMeshesMeshCollectionItemOutput)
-}
-
-func (i GetMeshesMeshCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetMeshesMeshCollectionItem] {
-	return pulumix.Output[GetMeshesMeshCollectionItem]{
-		OutputState: i.ToGetMeshesMeshCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetMeshesMeshCollectionItemArrayInput is an input type that accepts GetMeshesMeshCollectionItemArray and GetMeshesMeshCollectionItemArrayOutput values.
@@ -10016,12 +8497,6 @@ func (i GetMeshesMeshCollectionItemArray) ToGetMeshesMeshCollectionItemArrayOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetMeshesMeshCollectionItemArrayOutput)
 }
 
-func (i GetMeshesMeshCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMeshesMeshCollectionItem] {
-	return pulumix.Output[[]GetMeshesMeshCollectionItem]{
-		OutputState: i.ToGetMeshesMeshCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMeshesMeshCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetMeshesMeshCollectionItemOutput) ElementType() reflect.Type {
@@ -10036,12 +8511,6 @@ func (o GetMeshesMeshCollectionItemOutput) ToGetMeshesMeshCollectionItemOutputWi
 	return o
 }
 
-func (o GetMeshesMeshCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetMeshesMeshCollectionItem] {
-	return pulumix.Output[GetMeshesMeshCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // A list of certificate authority resources to use for creating leaf certificates for mTLS authentication. Currently we only support one certificate authority, but this may expand in future releases. Request with more than one certificate authority will be rejected.
 func (o GetMeshesMeshCollectionItemOutput) CertificateAuthorities() GetMeshesMeshCollectionItemCertificateAuthorityArrayOutput {
 	return o.ApplyT(func(v GetMeshesMeshCollectionItem) []GetMeshesMeshCollectionItemCertificateAuthority {
@@ -10050,8 +8519,8 @@ func (o GetMeshesMeshCollectionItemOutput) CertificateAuthorities() GetMeshesMes
 }
 
 // The ID of the compartment in which to list resources.
-func (o GetMeshesMeshCollectionItemOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMeshesMeshCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetMeshesMeshCollectionItemOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMeshesMeshCollectionItem) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -10060,13 +8529,13 @@ func (o GetMeshesMeshCollectionItemOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // Description of the resource. It can be changed after creation. Avoid entering confidential information.  Example: `This is my new resource`
-func (o GetMeshesMeshCollectionItemOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMeshesMeshCollectionItem) string { return v.Description }).(pulumi.StringOutput)
+func (o GetMeshesMeshCollectionItemOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMeshesMeshCollectionItem) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // A filter to return only resources that match the entire displayName given.
-func (o GetMeshesMeshCollectionItemOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMeshesMeshCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetMeshesMeshCollectionItemOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMeshesMeshCollectionItem) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -10075,13 +8544,13 @@ func (o GetMeshesMeshCollectionItemOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // Unique Mesh identifier.
-func (o GetMeshesMeshCollectionItemOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMeshesMeshCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+func (o GetMeshesMeshCollectionItemOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMeshesMeshCollectionItem) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
-func (o GetMeshesMeshCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMeshesMeshCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o GetMeshesMeshCollectionItemOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMeshesMeshCollectionItem) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // Sets a minimum level of mTLS authentication for all virtual services within the mesh.
@@ -10090,8 +8559,8 @@ func (o GetMeshesMeshCollectionItemOutput) Mtls() GetMeshesMeshCollectionItemMtl
 }
 
 // A filter to return only resources that match the life cycle state given.
-func (o GetMeshesMeshCollectionItemOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMeshesMeshCollectionItem) string { return v.State }).(pulumi.StringOutput)
+func (o GetMeshesMeshCollectionItemOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMeshesMeshCollectionItem) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -10100,13 +8569,13 @@ func (o GetMeshesMeshCollectionItemOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The time when this resource was created in an RFC3339 formatted datetime string.
-func (o GetMeshesMeshCollectionItemOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMeshesMeshCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetMeshesMeshCollectionItemOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMeshesMeshCollectionItem) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time when this resource was updated in an RFC3339 formatted datetime string.
-func (o GetMeshesMeshCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMeshesMeshCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o GetMeshesMeshCollectionItemOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMeshesMeshCollectionItem) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type GetMeshesMeshCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -10123,12 +8592,6 @@ func (o GetMeshesMeshCollectionItemArrayOutput) ToGetMeshesMeshCollectionItemArr
 	return o
 }
 
-func (o GetMeshesMeshCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMeshesMeshCollectionItem] {
-	return pulumix.Output[[]GetMeshesMeshCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetMeshesMeshCollectionItemArrayOutput) Index(i pulumi.IntInput) GetMeshesMeshCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMeshesMeshCollectionItem {
 		return vs[0].([]GetMeshesMeshCollectionItem)[vs[1].(int)]
@@ -10137,7 +8600,7 @@ func (o GetMeshesMeshCollectionItemArrayOutput) Index(i pulumi.IntInput) GetMesh
 
 type GetMeshesMeshCollectionItemCertificateAuthority struct {
 	// Unique Mesh identifier.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 }
 
 // GetMeshesMeshCollectionItemCertificateAuthorityInput is an input type that accepts GetMeshesMeshCollectionItemCertificateAuthorityArgs and GetMeshesMeshCollectionItemCertificateAuthorityOutput values.
@@ -10153,7 +8616,7 @@ type GetMeshesMeshCollectionItemCertificateAuthorityInput interface {
 
 type GetMeshesMeshCollectionItemCertificateAuthorityArgs struct {
 	// Unique Mesh identifier.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 }
 
 func (GetMeshesMeshCollectionItemCertificateAuthorityArgs) ElementType() reflect.Type {
@@ -10166,12 +8629,6 @@ func (i GetMeshesMeshCollectionItemCertificateAuthorityArgs) ToGetMeshesMeshColl
 
 func (i GetMeshesMeshCollectionItemCertificateAuthorityArgs) ToGetMeshesMeshCollectionItemCertificateAuthorityOutputWithContext(ctx context.Context) GetMeshesMeshCollectionItemCertificateAuthorityOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetMeshesMeshCollectionItemCertificateAuthorityOutput)
-}
-
-func (i GetMeshesMeshCollectionItemCertificateAuthorityArgs) ToOutput(ctx context.Context) pulumix.Output[GetMeshesMeshCollectionItemCertificateAuthority] {
-	return pulumix.Output[GetMeshesMeshCollectionItemCertificateAuthority]{
-		OutputState: i.ToGetMeshesMeshCollectionItemCertificateAuthorityOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetMeshesMeshCollectionItemCertificateAuthorityArrayInput is an input type that accepts GetMeshesMeshCollectionItemCertificateAuthorityArray and GetMeshesMeshCollectionItemCertificateAuthorityArrayOutput values.
@@ -10199,12 +8656,6 @@ func (i GetMeshesMeshCollectionItemCertificateAuthorityArray) ToGetMeshesMeshCol
 	return pulumi.ToOutputWithContext(ctx, i).(GetMeshesMeshCollectionItemCertificateAuthorityArrayOutput)
 }
 
-func (i GetMeshesMeshCollectionItemCertificateAuthorityArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMeshesMeshCollectionItemCertificateAuthority] {
-	return pulumix.Output[[]GetMeshesMeshCollectionItemCertificateAuthority]{
-		OutputState: i.ToGetMeshesMeshCollectionItemCertificateAuthorityArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMeshesMeshCollectionItemCertificateAuthorityOutput struct{ *pulumi.OutputState }
 
 func (GetMeshesMeshCollectionItemCertificateAuthorityOutput) ElementType() reflect.Type {
@@ -10219,15 +8670,9 @@ func (o GetMeshesMeshCollectionItemCertificateAuthorityOutput) ToGetMeshesMeshCo
 	return o
 }
 
-func (o GetMeshesMeshCollectionItemCertificateAuthorityOutput) ToOutput(ctx context.Context) pulumix.Output[GetMeshesMeshCollectionItemCertificateAuthority] {
-	return pulumix.Output[GetMeshesMeshCollectionItemCertificateAuthority]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Unique Mesh identifier.
-func (o GetMeshesMeshCollectionItemCertificateAuthorityOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMeshesMeshCollectionItemCertificateAuthority) string { return v.Id }).(pulumi.StringOutput)
+func (o GetMeshesMeshCollectionItemCertificateAuthorityOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMeshesMeshCollectionItemCertificateAuthority) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 type GetMeshesMeshCollectionItemCertificateAuthorityArrayOutput struct{ *pulumi.OutputState }
@@ -10244,12 +8689,6 @@ func (o GetMeshesMeshCollectionItemCertificateAuthorityArrayOutput) ToGetMeshesM
 	return o
 }
 
-func (o GetMeshesMeshCollectionItemCertificateAuthorityArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMeshesMeshCollectionItemCertificateAuthority] {
-	return pulumix.Output[[]GetMeshesMeshCollectionItemCertificateAuthority]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetMeshesMeshCollectionItemCertificateAuthorityArrayOutput) Index(i pulumi.IntInput) GetMeshesMeshCollectionItemCertificateAuthorityOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMeshesMeshCollectionItemCertificateAuthority {
 		return vs[0].([]GetMeshesMeshCollectionItemCertificateAuthority)[vs[1].(int)]
@@ -10258,7 +8697,7 @@ func (o GetMeshesMeshCollectionItemCertificateAuthorityArrayOutput) Index(i pulu
 
 type GetMeshesMeshCollectionItemMtl struct {
 	// DISABLED: No minimum virtual services within this mesh can use any mTLS authentication mode. PERMISSIVE: Virtual services within this mesh can use either PERMISSIVE or STRICT modes. STRICT: All virtual services within this mesh must use STRICT mode.
-	Minimum string `pulumi:"minimum"`
+	Minimum *string `pulumi:"minimum"`
 }
 
 // GetMeshesMeshCollectionItemMtlInput is an input type that accepts GetMeshesMeshCollectionItemMtlArgs and GetMeshesMeshCollectionItemMtlOutput values.
@@ -10274,7 +8713,7 @@ type GetMeshesMeshCollectionItemMtlInput interface {
 
 type GetMeshesMeshCollectionItemMtlArgs struct {
 	// DISABLED: No minimum virtual services within this mesh can use any mTLS authentication mode. PERMISSIVE: Virtual services within this mesh can use either PERMISSIVE or STRICT modes. STRICT: All virtual services within this mesh must use STRICT mode.
-	Minimum pulumi.StringInput `pulumi:"minimum"`
+	Minimum pulumi.StringPtrInput `pulumi:"minimum"`
 }
 
 func (GetMeshesMeshCollectionItemMtlArgs) ElementType() reflect.Type {
@@ -10287,12 +8726,6 @@ func (i GetMeshesMeshCollectionItemMtlArgs) ToGetMeshesMeshCollectionItemMtlOutp
 
 func (i GetMeshesMeshCollectionItemMtlArgs) ToGetMeshesMeshCollectionItemMtlOutputWithContext(ctx context.Context) GetMeshesMeshCollectionItemMtlOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetMeshesMeshCollectionItemMtlOutput)
-}
-
-func (i GetMeshesMeshCollectionItemMtlArgs) ToOutput(ctx context.Context) pulumix.Output[GetMeshesMeshCollectionItemMtl] {
-	return pulumix.Output[GetMeshesMeshCollectionItemMtl]{
-		OutputState: i.ToGetMeshesMeshCollectionItemMtlOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetMeshesMeshCollectionItemMtlArrayInput is an input type that accepts GetMeshesMeshCollectionItemMtlArray and GetMeshesMeshCollectionItemMtlArrayOutput values.
@@ -10320,12 +8753,6 @@ func (i GetMeshesMeshCollectionItemMtlArray) ToGetMeshesMeshCollectionItemMtlArr
 	return pulumi.ToOutputWithContext(ctx, i).(GetMeshesMeshCollectionItemMtlArrayOutput)
 }
 
-func (i GetMeshesMeshCollectionItemMtlArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMeshesMeshCollectionItemMtl] {
-	return pulumix.Output[[]GetMeshesMeshCollectionItemMtl]{
-		OutputState: i.ToGetMeshesMeshCollectionItemMtlArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMeshesMeshCollectionItemMtlOutput struct{ *pulumi.OutputState }
 
 func (GetMeshesMeshCollectionItemMtlOutput) ElementType() reflect.Type {
@@ -10340,15 +8767,9 @@ func (o GetMeshesMeshCollectionItemMtlOutput) ToGetMeshesMeshCollectionItemMtlOu
 	return o
 }
 
-func (o GetMeshesMeshCollectionItemMtlOutput) ToOutput(ctx context.Context) pulumix.Output[GetMeshesMeshCollectionItemMtl] {
-	return pulumix.Output[GetMeshesMeshCollectionItemMtl]{
-		OutputState: o.OutputState,
-	}
-}
-
 // DISABLED: No minimum virtual services within this mesh can use any mTLS authentication mode. PERMISSIVE: Virtual services within this mesh can use either PERMISSIVE or STRICT modes. STRICT: All virtual services within this mesh must use STRICT mode.
-func (o GetMeshesMeshCollectionItemMtlOutput) Minimum() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMeshesMeshCollectionItemMtl) string { return v.Minimum }).(pulumi.StringOutput)
+func (o GetMeshesMeshCollectionItemMtlOutput) Minimum() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMeshesMeshCollectionItemMtl) *string { return v.Minimum }).(pulumi.StringPtrOutput)
 }
 
 type GetMeshesMeshCollectionItemMtlArrayOutput struct{ *pulumi.OutputState }
@@ -10365,12 +8786,6 @@ func (o GetMeshesMeshCollectionItemMtlArrayOutput) ToGetMeshesMeshCollectionItem
 	return o
 }
 
-func (o GetMeshesMeshCollectionItemMtlArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMeshesMeshCollectionItemMtl] {
-	return pulumix.Output[[]GetMeshesMeshCollectionItemMtl]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetMeshesMeshCollectionItemMtlArrayOutput) Index(i pulumi.IntInput) GetMeshesMeshCollectionItemMtlOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMeshesMeshCollectionItemMtl {
 		return vs[0].([]GetMeshesMeshCollectionItemMtl)[vs[1].(int)]
@@ -10379,7 +8794,7 @@ func (o GetMeshesMeshCollectionItemMtlArrayOutput) Index(i pulumi.IntInput) GetM
 
 type GetVirtualDeploymentAccessLogging struct {
 	// Determines if the logging configuration is enabled.
-	IsEnabled bool `pulumi:"isEnabled"`
+	IsEnabled *bool `pulumi:"isEnabled"`
 }
 
 // GetVirtualDeploymentAccessLoggingInput is an input type that accepts GetVirtualDeploymentAccessLoggingArgs and GetVirtualDeploymentAccessLoggingOutput values.
@@ -10395,7 +8810,7 @@ type GetVirtualDeploymentAccessLoggingInput interface {
 
 type GetVirtualDeploymentAccessLoggingArgs struct {
 	// Determines if the logging configuration is enabled.
-	IsEnabled pulumi.BoolInput `pulumi:"isEnabled"`
+	IsEnabled pulumi.BoolPtrInput `pulumi:"isEnabled"`
 }
 
 func (GetVirtualDeploymentAccessLoggingArgs) ElementType() reflect.Type {
@@ -10408,12 +8823,6 @@ func (i GetVirtualDeploymentAccessLoggingArgs) ToGetVirtualDeploymentAccessLoggi
 
 func (i GetVirtualDeploymentAccessLoggingArgs) ToGetVirtualDeploymentAccessLoggingOutputWithContext(ctx context.Context) GetVirtualDeploymentAccessLoggingOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualDeploymentAccessLoggingOutput)
-}
-
-func (i GetVirtualDeploymentAccessLoggingArgs) ToOutput(ctx context.Context) pulumix.Output[GetVirtualDeploymentAccessLogging] {
-	return pulumix.Output[GetVirtualDeploymentAccessLogging]{
-		OutputState: i.ToGetVirtualDeploymentAccessLoggingOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetVirtualDeploymentAccessLoggingArrayInput is an input type that accepts GetVirtualDeploymentAccessLoggingArray and GetVirtualDeploymentAccessLoggingArrayOutput values.
@@ -10441,12 +8850,6 @@ func (i GetVirtualDeploymentAccessLoggingArray) ToGetVirtualDeploymentAccessLogg
 	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualDeploymentAccessLoggingArrayOutput)
 }
 
-func (i GetVirtualDeploymentAccessLoggingArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVirtualDeploymentAccessLogging] {
-	return pulumix.Output[[]GetVirtualDeploymentAccessLogging]{
-		OutputState: i.ToGetVirtualDeploymentAccessLoggingArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetVirtualDeploymentAccessLoggingOutput struct{ *pulumi.OutputState }
 
 func (GetVirtualDeploymentAccessLoggingOutput) ElementType() reflect.Type {
@@ -10461,15 +8864,9 @@ func (o GetVirtualDeploymentAccessLoggingOutput) ToGetVirtualDeploymentAccessLog
 	return o
 }
 
-func (o GetVirtualDeploymentAccessLoggingOutput) ToOutput(ctx context.Context) pulumix.Output[GetVirtualDeploymentAccessLogging] {
-	return pulumix.Output[GetVirtualDeploymentAccessLogging]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Determines if the logging configuration is enabled.
-func (o GetVirtualDeploymentAccessLoggingOutput) IsEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetVirtualDeploymentAccessLogging) bool { return v.IsEnabled }).(pulumi.BoolOutput)
+func (o GetVirtualDeploymentAccessLoggingOutput) IsEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetVirtualDeploymentAccessLogging) *bool { return v.IsEnabled }).(pulumi.BoolPtrOutput)
 }
 
 type GetVirtualDeploymentAccessLoggingArrayOutput struct{ *pulumi.OutputState }
@@ -10486,12 +8883,6 @@ func (o GetVirtualDeploymentAccessLoggingArrayOutput) ToGetVirtualDeploymentAcce
 	return o
 }
 
-func (o GetVirtualDeploymentAccessLoggingArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVirtualDeploymentAccessLogging] {
-	return pulumix.Output[[]GetVirtualDeploymentAccessLogging]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetVirtualDeploymentAccessLoggingArrayOutput) Index(i pulumi.IntInput) GetVirtualDeploymentAccessLoggingOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVirtualDeploymentAccessLogging {
 		return vs[0].([]GetVirtualDeploymentAccessLogging)[vs[1].(int)]
@@ -10500,13 +8891,13 @@ func (o GetVirtualDeploymentAccessLoggingArrayOutput) Index(i pulumi.IntInput) G
 
 type GetVirtualDeploymentListener struct {
 	// The maximum duration in milliseconds for which the request's stream may be idle. The value 0 (zero) indicates that the timeout is disabled.
-	IdleTimeoutInMs string `pulumi:"idleTimeoutInMs"`
+	IdleTimeoutInMs *string `pulumi:"idleTimeoutInMs"`
 	// Port in which virtual deployment is running.
-	Port int `pulumi:"port"`
+	Port *int `pulumi:"port"`
 	// Type of protocol used in virtual deployment.
-	Protocol string `pulumi:"protocol"`
+	Protocol *string `pulumi:"protocol"`
 	// The maximum duration in milliseconds for the deployed service to respond to an incoming request through the listener.  If provided, the timeout value overrides the default timeout of 15 seconds for the HTTP/HTTP2 listeners, and disabled (no timeout) for the GRPC listeners. The value 0 (zero) indicates that the timeout is disabled.  The timeout cannot be configured for the TCP and TLS_PASSTHROUGH listeners.  For streaming responses from the deployed service, consider either keeping the timeout disabled or set a sufficiently high value.
-	RequestTimeoutInMs string `pulumi:"requestTimeoutInMs"`
+	RequestTimeoutInMs *string `pulumi:"requestTimeoutInMs"`
 }
 
 // GetVirtualDeploymentListenerInput is an input type that accepts GetVirtualDeploymentListenerArgs and GetVirtualDeploymentListenerOutput values.
@@ -10522,13 +8913,13 @@ type GetVirtualDeploymentListenerInput interface {
 
 type GetVirtualDeploymentListenerArgs struct {
 	// The maximum duration in milliseconds for which the request's stream may be idle. The value 0 (zero) indicates that the timeout is disabled.
-	IdleTimeoutInMs pulumi.StringInput `pulumi:"idleTimeoutInMs"`
+	IdleTimeoutInMs pulumi.StringPtrInput `pulumi:"idleTimeoutInMs"`
 	// Port in which virtual deployment is running.
-	Port pulumi.IntInput `pulumi:"port"`
+	Port pulumi.IntPtrInput `pulumi:"port"`
 	// Type of protocol used in virtual deployment.
-	Protocol pulumi.StringInput `pulumi:"protocol"`
+	Protocol pulumi.StringPtrInput `pulumi:"protocol"`
 	// The maximum duration in milliseconds for the deployed service to respond to an incoming request through the listener.  If provided, the timeout value overrides the default timeout of 15 seconds for the HTTP/HTTP2 listeners, and disabled (no timeout) for the GRPC listeners. The value 0 (zero) indicates that the timeout is disabled.  The timeout cannot be configured for the TCP and TLS_PASSTHROUGH listeners.  For streaming responses from the deployed service, consider either keeping the timeout disabled or set a sufficiently high value.
-	RequestTimeoutInMs pulumi.StringInput `pulumi:"requestTimeoutInMs"`
+	RequestTimeoutInMs pulumi.StringPtrInput `pulumi:"requestTimeoutInMs"`
 }
 
 func (GetVirtualDeploymentListenerArgs) ElementType() reflect.Type {
@@ -10541,12 +8932,6 @@ func (i GetVirtualDeploymentListenerArgs) ToGetVirtualDeploymentListenerOutput()
 
 func (i GetVirtualDeploymentListenerArgs) ToGetVirtualDeploymentListenerOutputWithContext(ctx context.Context) GetVirtualDeploymentListenerOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualDeploymentListenerOutput)
-}
-
-func (i GetVirtualDeploymentListenerArgs) ToOutput(ctx context.Context) pulumix.Output[GetVirtualDeploymentListener] {
-	return pulumix.Output[GetVirtualDeploymentListener]{
-		OutputState: i.ToGetVirtualDeploymentListenerOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetVirtualDeploymentListenerArrayInput is an input type that accepts GetVirtualDeploymentListenerArray and GetVirtualDeploymentListenerArrayOutput values.
@@ -10574,12 +8959,6 @@ func (i GetVirtualDeploymentListenerArray) ToGetVirtualDeploymentListenerArrayOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualDeploymentListenerArrayOutput)
 }
 
-func (i GetVirtualDeploymentListenerArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVirtualDeploymentListener] {
-	return pulumix.Output[[]GetVirtualDeploymentListener]{
-		OutputState: i.ToGetVirtualDeploymentListenerArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetVirtualDeploymentListenerOutput struct{ *pulumi.OutputState }
 
 func (GetVirtualDeploymentListenerOutput) ElementType() reflect.Type {
@@ -10594,30 +8973,24 @@ func (o GetVirtualDeploymentListenerOutput) ToGetVirtualDeploymentListenerOutput
 	return o
 }
 
-func (o GetVirtualDeploymentListenerOutput) ToOutput(ctx context.Context) pulumix.Output[GetVirtualDeploymentListener] {
-	return pulumix.Output[GetVirtualDeploymentListener]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The maximum duration in milliseconds for which the request's stream may be idle. The value 0 (zero) indicates that the timeout is disabled.
-func (o GetVirtualDeploymentListenerOutput) IdleTimeoutInMs() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVirtualDeploymentListener) string { return v.IdleTimeoutInMs }).(pulumi.StringOutput)
+func (o GetVirtualDeploymentListenerOutput) IdleTimeoutInMs() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVirtualDeploymentListener) *string { return v.IdleTimeoutInMs }).(pulumi.StringPtrOutput)
 }
 
 // Port in which virtual deployment is running.
-func (o GetVirtualDeploymentListenerOutput) Port() pulumi.IntOutput {
-	return o.ApplyT(func(v GetVirtualDeploymentListener) int { return v.Port }).(pulumi.IntOutput)
+func (o GetVirtualDeploymentListenerOutput) Port() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetVirtualDeploymentListener) *int { return v.Port }).(pulumi.IntPtrOutput)
 }
 
 // Type of protocol used in virtual deployment.
-func (o GetVirtualDeploymentListenerOutput) Protocol() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVirtualDeploymentListener) string { return v.Protocol }).(pulumi.StringOutput)
+func (o GetVirtualDeploymentListenerOutput) Protocol() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVirtualDeploymentListener) *string { return v.Protocol }).(pulumi.StringPtrOutput)
 }
 
 // The maximum duration in milliseconds for the deployed service to respond to an incoming request through the listener.  If provided, the timeout value overrides the default timeout of 15 seconds for the HTTP/HTTP2 listeners, and disabled (no timeout) for the GRPC listeners. The value 0 (zero) indicates that the timeout is disabled.  The timeout cannot be configured for the TCP and TLS_PASSTHROUGH listeners.  For streaming responses from the deployed service, consider either keeping the timeout disabled or set a sufficiently high value.
-func (o GetVirtualDeploymentListenerOutput) RequestTimeoutInMs() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVirtualDeploymentListener) string { return v.RequestTimeoutInMs }).(pulumi.StringOutput)
+func (o GetVirtualDeploymentListenerOutput) RequestTimeoutInMs() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVirtualDeploymentListener) *string { return v.RequestTimeoutInMs }).(pulumi.StringPtrOutput)
 }
 
 type GetVirtualDeploymentListenerArrayOutput struct{ *pulumi.OutputState }
@@ -10634,12 +9007,6 @@ func (o GetVirtualDeploymentListenerArrayOutput) ToGetVirtualDeploymentListenerA
 	return o
 }
 
-func (o GetVirtualDeploymentListenerArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVirtualDeploymentListener] {
-	return pulumix.Output[[]GetVirtualDeploymentListener]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetVirtualDeploymentListenerArrayOutput) Index(i pulumi.IntInput) GetVirtualDeploymentListenerOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVirtualDeploymentListener {
 		return vs[0].([]GetVirtualDeploymentListener)[vs[1].(int)]
@@ -10648,9 +9015,9 @@ func (o GetVirtualDeploymentListenerArrayOutput) Index(i pulumi.IntInput) GetVir
 
 type GetVirtualDeploymentServiceDiscovery struct {
 	// The hostname of the virtual deployments.
-	Hostname string `pulumi:"hostname"`
+	Hostname *string `pulumi:"hostname"`
 	// Type of service discovery.
-	Type string `pulumi:"type"`
+	Type *string `pulumi:"type"`
 }
 
 // GetVirtualDeploymentServiceDiscoveryInput is an input type that accepts GetVirtualDeploymentServiceDiscoveryArgs and GetVirtualDeploymentServiceDiscoveryOutput values.
@@ -10666,9 +9033,9 @@ type GetVirtualDeploymentServiceDiscoveryInput interface {
 
 type GetVirtualDeploymentServiceDiscoveryArgs struct {
 	// The hostname of the virtual deployments.
-	Hostname pulumi.StringInput `pulumi:"hostname"`
+	Hostname pulumi.StringPtrInput `pulumi:"hostname"`
 	// Type of service discovery.
-	Type pulumi.StringInput `pulumi:"type"`
+	Type pulumi.StringPtrInput `pulumi:"type"`
 }
 
 func (GetVirtualDeploymentServiceDiscoveryArgs) ElementType() reflect.Type {
@@ -10681,12 +9048,6 @@ func (i GetVirtualDeploymentServiceDiscoveryArgs) ToGetVirtualDeploymentServiceD
 
 func (i GetVirtualDeploymentServiceDiscoveryArgs) ToGetVirtualDeploymentServiceDiscoveryOutputWithContext(ctx context.Context) GetVirtualDeploymentServiceDiscoveryOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualDeploymentServiceDiscoveryOutput)
-}
-
-func (i GetVirtualDeploymentServiceDiscoveryArgs) ToOutput(ctx context.Context) pulumix.Output[GetVirtualDeploymentServiceDiscovery] {
-	return pulumix.Output[GetVirtualDeploymentServiceDiscovery]{
-		OutputState: i.ToGetVirtualDeploymentServiceDiscoveryOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetVirtualDeploymentServiceDiscoveryArrayInput is an input type that accepts GetVirtualDeploymentServiceDiscoveryArray and GetVirtualDeploymentServiceDiscoveryArrayOutput values.
@@ -10714,12 +9075,6 @@ func (i GetVirtualDeploymentServiceDiscoveryArray) ToGetVirtualDeploymentService
 	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualDeploymentServiceDiscoveryArrayOutput)
 }
 
-func (i GetVirtualDeploymentServiceDiscoveryArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVirtualDeploymentServiceDiscovery] {
-	return pulumix.Output[[]GetVirtualDeploymentServiceDiscovery]{
-		OutputState: i.ToGetVirtualDeploymentServiceDiscoveryArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetVirtualDeploymentServiceDiscoveryOutput struct{ *pulumi.OutputState }
 
 func (GetVirtualDeploymentServiceDiscoveryOutput) ElementType() reflect.Type {
@@ -10734,20 +9089,14 @@ func (o GetVirtualDeploymentServiceDiscoveryOutput) ToGetVirtualDeploymentServic
 	return o
 }
 
-func (o GetVirtualDeploymentServiceDiscoveryOutput) ToOutput(ctx context.Context) pulumix.Output[GetVirtualDeploymentServiceDiscovery] {
-	return pulumix.Output[GetVirtualDeploymentServiceDiscovery]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The hostname of the virtual deployments.
-func (o GetVirtualDeploymentServiceDiscoveryOutput) Hostname() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVirtualDeploymentServiceDiscovery) string { return v.Hostname }).(pulumi.StringOutput)
+func (o GetVirtualDeploymentServiceDiscoveryOutput) Hostname() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVirtualDeploymentServiceDiscovery) *string { return v.Hostname }).(pulumi.StringPtrOutput)
 }
 
 // Type of service discovery.
-func (o GetVirtualDeploymentServiceDiscoveryOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVirtualDeploymentServiceDiscovery) string { return v.Type }).(pulumi.StringOutput)
+func (o GetVirtualDeploymentServiceDiscoveryOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVirtualDeploymentServiceDiscovery) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
 
 type GetVirtualDeploymentServiceDiscoveryArrayOutput struct{ *pulumi.OutputState }
@@ -10762,12 +9111,6 @@ func (o GetVirtualDeploymentServiceDiscoveryArrayOutput) ToGetVirtualDeploymentS
 
 func (o GetVirtualDeploymentServiceDiscoveryArrayOutput) ToGetVirtualDeploymentServiceDiscoveryArrayOutputWithContext(ctx context.Context) GetVirtualDeploymentServiceDiscoveryArrayOutput {
 	return o
-}
-
-func (o GetVirtualDeploymentServiceDiscoveryArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVirtualDeploymentServiceDiscovery] {
-	return pulumix.Output[[]GetVirtualDeploymentServiceDiscovery]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetVirtualDeploymentServiceDiscoveryArrayOutput) Index(i pulumi.IntInput) GetVirtualDeploymentServiceDiscoveryOutput {
@@ -10813,12 +9156,6 @@ func (i GetVirtualDeploymentsFilterArgs) ToGetVirtualDeploymentsFilterOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualDeploymentsFilterOutput)
 }
 
-func (i GetVirtualDeploymentsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetVirtualDeploymentsFilter] {
-	return pulumix.Output[GetVirtualDeploymentsFilter]{
-		OutputState: i.ToGetVirtualDeploymentsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetVirtualDeploymentsFilterArrayInput is an input type that accepts GetVirtualDeploymentsFilterArray and GetVirtualDeploymentsFilterArrayOutput values.
 // You can construct a concrete instance of `GetVirtualDeploymentsFilterArrayInput` via:
 //
@@ -10844,12 +9181,6 @@ func (i GetVirtualDeploymentsFilterArray) ToGetVirtualDeploymentsFilterArrayOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualDeploymentsFilterArrayOutput)
 }
 
-func (i GetVirtualDeploymentsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVirtualDeploymentsFilter] {
-	return pulumix.Output[[]GetVirtualDeploymentsFilter]{
-		OutputState: i.ToGetVirtualDeploymentsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetVirtualDeploymentsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetVirtualDeploymentsFilterOutput) ElementType() reflect.Type {
@@ -10862,12 +9193,6 @@ func (o GetVirtualDeploymentsFilterOutput) ToGetVirtualDeploymentsFilterOutput()
 
 func (o GetVirtualDeploymentsFilterOutput) ToGetVirtualDeploymentsFilterOutputWithContext(ctx context.Context) GetVirtualDeploymentsFilterOutput {
 	return o
-}
-
-func (o GetVirtualDeploymentsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetVirtualDeploymentsFilter] {
-	return pulumix.Output[GetVirtualDeploymentsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A filter to return only resources that match the entire name given.
@@ -10895,12 +9220,6 @@ func (o GetVirtualDeploymentsFilterArrayOutput) ToGetVirtualDeploymentsFilterArr
 
 func (o GetVirtualDeploymentsFilterArrayOutput) ToGetVirtualDeploymentsFilterArrayOutputWithContext(ctx context.Context) GetVirtualDeploymentsFilterArrayOutput {
 	return o
-}
-
-func (o GetVirtualDeploymentsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVirtualDeploymentsFilter] {
-	return pulumix.Output[[]GetVirtualDeploymentsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetVirtualDeploymentsFilterArrayOutput) Index(i pulumi.IntInput) GetVirtualDeploymentsFilterOutput {
@@ -10940,12 +9259,6 @@ func (i GetVirtualDeploymentsVirtualDeploymentCollectionArgs) ToGetVirtualDeploy
 	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualDeploymentsVirtualDeploymentCollectionOutput)
 }
 
-func (i GetVirtualDeploymentsVirtualDeploymentCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetVirtualDeploymentsVirtualDeploymentCollection] {
-	return pulumix.Output[GetVirtualDeploymentsVirtualDeploymentCollection]{
-		OutputState: i.ToGetVirtualDeploymentsVirtualDeploymentCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetVirtualDeploymentsVirtualDeploymentCollectionArrayInput is an input type that accepts GetVirtualDeploymentsVirtualDeploymentCollectionArray and GetVirtualDeploymentsVirtualDeploymentCollectionArrayOutput values.
 // You can construct a concrete instance of `GetVirtualDeploymentsVirtualDeploymentCollectionArrayInput` via:
 //
@@ -10971,12 +9284,6 @@ func (i GetVirtualDeploymentsVirtualDeploymentCollectionArray) ToGetVirtualDeplo
 	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualDeploymentsVirtualDeploymentCollectionArrayOutput)
 }
 
-func (i GetVirtualDeploymentsVirtualDeploymentCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVirtualDeploymentsVirtualDeploymentCollection] {
-	return pulumix.Output[[]GetVirtualDeploymentsVirtualDeploymentCollection]{
-		OutputState: i.ToGetVirtualDeploymentsVirtualDeploymentCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetVirtualDeploymentsVirtualDeploymentCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetVirtualDeploymentsVirtualDeploymentCollectionOutput) ElementType() reflect.Type {
@@ -10989,12 +9296,6 @@ func (o GetVirtualDeploymentsVirtualDeploymentCollectionOutput) ToGetVirtualDepl
 
 func (o GetVirtualDeploymentsVirtualDeploymentCollectionOutput) ToGetVirtualDeploymentsVirtualDeploymentCollectionOutputWithContext(ctx context.Context) GetVirtualDeploymentsVirtualDeploymentCollectionOutput {
 	return o
-}
-
-func (o GetVirtualDeploymentsVirtualDeploymentCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetVirtualDeploymentsVirtualDeploymentCollection] {
-	return pulumix.Output[GetVirtualDeploymentsVirtualDeploymentCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetVirtualDeploymentsVirtualDeploymentCollectionOutput) Items() GetVirtualDeploymentsVirtualDeploymentCollectionItemArrayOutput {
@@ -11017,12 +9318,6 @@ func (o GetVirtualDeploymentsVirtualDeploymentCollectionArrayOutput) ToGetVirtua
 	return o
 }
 
-func (o GetVirtualDeploymentsVirtualDeploymentCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVirtualDeploymentsVirtualDeploymentCollection] {
-	return pulumix.Output[[]GetVirtualDeploymentsVirtualDeploymentCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetVirtualDeploymentsVirtualDeploymentCollectionArrayOutput) Index(i pulumi.IntInput) GetVirtualDeploymentsVirtualDeploymentCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVirtualDeploymentsVirtualDeploymentCollection {
 		return vs[0].([]GetVirtualDeploymentsVirtualDeploymentCollection)[vs[1].(int)]
@@ -11033,33 +9328,33 @@ type GetVirtualDeploymentsVirtualDeploymentCollectionItem struct {
 	// This configuration determines if logging is enabled and where the logs will be output.
 	AccessLoggings []GetVirtualDeploymentsVirtualDeploymentCollectionItemAccessLogging `pulumi:"accessLoggings"`
 	// The ID of the compartment in which to list resources.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// Description of the resource. It can be changed after creation. Avoid entering confidential information.  Example: `This is my new resource`
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// Unique VirtualDeployment identifier.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// The listeners for the virtual deployment
 	Listeners []GetVirtualDeploymentsVirtualDeploymentCollectionItemListener `pulumi:"listeners"`
 	// A filter to return only resources that match the entire name given.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// Service Discovery configuration for virtual deployments.
 	ServiceDiscoveries []GetVirtualDeploymentsVirtualDeploymentCollectionItemServiceDiscovery `pulumi:"serviceDiscoveries"`
 	// A filter to return only resources that match the life cycle state given.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The time when this resource was created in an RFC3339 formatted datetime string.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time when this resource was updated in an RFC3339 formatted datetime string.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 	// Unique VirtualService identifier.
-	VirtualServiceId string `pulumi:"virtualServiceId"`
+	VirtualServiceId *string `pulumi:"virtualServiceId"`
 }
 
 // GetVirtualDeploymentsVirtualDeploymentCollectionItemInput is an input type that accepts GetVirtualDeploymentsVirtualDeploymentCollectionItemArgs and GetVirtualDeploymentsVirtualDeploymentCollectionItemOutput values.
@@ -11077,33 +9372,33 @@ type GetVirtualDeploymentsVirtualDeploymentCollectionItemArgs struct {
 	// This configuration determines if logging is enabled and where the logs will be output.
 	AccessLoggings GetVirtualDeploymentsVirtualDeploymentCollectionItemAccessLoggingArrayInput `pulumi:"accessLoggings"`
 	// The ID of the compartment in which to list resources.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// Description of the resource. It can be changed after creation. Avoid entering confidential information.  Example: `This is my new resource`
-	Description pulumi.StringInput `pulumi:"description"`
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// Unique VirtualDeployment identifier.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
-	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrInput `pulumi:"lifecycleDetails"`
 	// The listeners for the virtual deployment
 	Listeners GetVirtualDeploymentsVirtualDeploymentCollectionItemListenerArrayInput `pulumi:"listeners"`
 	// A filter to return only resources that match the entire name given.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// Service Discovery configuration for virtual deployments.
 	ServiceDiscoveries GetVirtualDeploymentsVirtualDeploymentCollectionItemServiceDiscoveryArrayInput `pulumi:"serviceDiscoveries"`
 	// A filter to return only resources that match the life cycle state given.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapInput `pulumi:"systemTags"`
 	// The time when this resource was created in an RFC3339 formatted datetime string.
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// The time when this resource was updated in an RFC3339 formatted datetime string.
-	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
 	// Unique VirtualService identifier.
-	VirtualServiceId pulumi.StringInput `pulumi:"virtualServiceId"`
+	VirtualServiceId pulumi.StringPtrInput `pulumi:"virtualServiceId"`
 }
 
 func (GetVirtualDeploymentsVirtualDeploymentCollectionItemArgs) ElementType() reflect.Type {
@@ -11116,12 +9411,6 @@ func (i GetVirtualDeploymentsVirtualDeploymentCollectionItemArgs) ToGetVirtualDe
 
 func (i GetVirtualDeploymentsVirtualDeploymentCollectionItemArgs) ToGetVirtualDeploymentsVirtualDeploymentCollectionItemOutputWithContext(ctx context.Context) GetVirtualDeploymentsVirtualDeploymentCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualDeploymentsVirtualDeploymentCollectionItemOutput)
-}
-
-func (i GetVirtualDeploymentsVirtualDeploymentCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetVirtualDeploymentsVirtualDeploymentCollectionItem] {
-	return pulumix.Output[GetVirtualDeploymentsVirtualDeploymentCollectionItem]{
-		OutputState: i.ToGetVirtualDeploymentsVirtualDeploymentCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetVirtualDeploymentsVirtualDeploymentCollectionItemArrayInput is an input type that accepts GetVirtualDeploymentsVirtualDeploymentCollectionItemArray and GetVirtualDeploymentsVirtualDeploymentCollectionItemArrayOutput values.
@@ -11149,12 +9438,6 @@ func (i GetVirtualDeploymentsVirtualDeploymentCollectionItemArray) ToGetVirtualD
 	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualDeploymentsVirtualDeploymentCollectionItemArrayOutput)
 }
 
-func (i GetVirtualDeploymentsVirtualDeploymentCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVirtualDeploymentsVirtualDeploymentCollectionItem] {
-	return pulumix.Output[[]GetVirtualDeploymentsVirtualDeploymentCollectionItem]{
-		OutputState: i.ToGetVirtualDeploymentsVirtualDeploymentCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetVirtualDeploymentsVirtualDeploymentCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetVirtualDeploymentsVirtualDeploymentCollectionItemOutput) ElementType() reflect.Type {
@@ -11169,12 +9452,6 @@ func (o GetVirtualDeploymentsVirtualDeploymentCollectionItemOutput) ToGetVirtual
 	return o
 }
 
-func (o GetVirtualDeploymentsVirtualDeploymentCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetVirtualDeploymentsVirtualDeploymentCollectionItem] {
-	return pulumix.Output[GetVirtualDeploymentsVirtualDeploymentCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // This configuration determines if logging is enabled and where the logs will be output.
 func (o GetVirtualDeploymentsVirtualDeploymentCollectionItemOutput) AccessLoggings() GetVirtualDeploymentsVirtualDeploymentCollectionItemAccessLoggingArrayOutput {
 	return o.ApplyT(func(v GetVirtualDeploymentsVirtualDeploymentCollectionItem) []GetVirtualDeploymentsVirtualDeploymentCollectionItemAccessLogging {
@@ -11183,8 +9460,8 @@ func (o GetVirtualDeploymentsVirtualDeploymentCollectionItemOutput) AccessLoggin
 }
 
 // The ID of the compartment in which to list resources.
-func (o GetVirtualDeploymentsVirtualDeploymentCollectionItemOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVirtualDeploymentsVirtualDeploymentCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetVirtualDeploymentsVirtualDeploymentCollectionItemOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVirtualDeploymentsVirtualDeploymentCollectionItem) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -11195,8 +9472,8 @@ func (o GetVirtualDeploymentsVirtualDeploymentCollectionItemOutput) DefinedTags(
 }
 
 // Description of the resource. It can be changed after creation. Avoid entering confidential information.  Example: `This is my new resource`
-func (o GetVirtualDeploymentsVirtualDeploymentCollectionItemOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVirtualDeploymentsVirtualDeploymentCollectionItem) string { return v.Description }).(pulumi.StringOutput)
+func (o GetVirtualDeploymentsVirtualDeploymentCollectionItemOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVirtualDeploymentsVirtualDeploymentCollectionItem) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -11207,13 +9484,13 @@ func (o GetVirtualDeploymentsVirtualDeploymentCollectionItemOutput) FreeformTags
 }
 
 // Unique VirtualDeployment identifier.
-func (o GetVirtualDeploymentsVirtualDeploymentCollectionItemOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVirtualDeploymentsVirtualDeploymentCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+func (o GetVirtualDeploymentsVirtualDeploymentCollectionItemOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVirtualDeploymentsVirtualDeploymentCollectionItem) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
-func (o GetVirtualDeploymentsVirtualDeploymentCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVirtualDeploymentsVirtualDeploymentCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o GetVirtualDeploymentsVirtualDeploymentCollectionItemOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVirtualDeploymentsVirtualDeploymentCollectionItem) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // The listeners for the virtual deployment
@@ -11224,8 +9501,8 @@ func (o GetVirtualDeploymentsVirtualDeploymentCollectionItemOutput) Listeners() 
 }
 
 // A filter to return only resources that match the entire name given.
-func (o GetVirtualDeploymentsVirtualDeploymentCollectionItemOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVirtualDeploymentsVirtualDeploymentCollectionItem) string { return v.Name }).(pulumi.StringOutput)
+func (o GetVirtualDeploymentsVirtualDeploymentCollectionItemOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVirtualDeploymentsVirtualDeploymentCollectionItem) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // Service Discovery configuration for virtual deployments.
@@ -11236,8 +9513,8 @@ func (o GetVirtualDeploymentsVirtualDeploymentCollectionItemOutput) ServiceDisco
 }
 
 // A filter to return only resources that match the life cycle state given.
-func (o GetVirtualDeploymentsVirtualDeploymentCollectionItemOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVirtualDeploymentsVirtualDeploymentCollectionItem) string { return v.State }).(pulumi.StringOutput)
+func (o GetVirtualDeploymentsVirtualDeploymentCollectionItemOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVirtualDeploymentsVirtualDeploymentCollectionItem) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -11248,18 +9525,18 @@ func (o GetVirtualDeploymentsVirtualDeploymentCollectionItemOutput) SystemTags()
 }
 
 // The time when this resource was created in an RFC3339 formatted datetime string.
-func (o GetVirtualDeploymentsVirtualDeploymentCollectionItemOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVirtualDeploymentsVirtualDeploymentCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetVirtualDeploymentsVirtualDeploymentCollectionItemOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVirtualDeploymentsVirtualDeploymentCollectionItem) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time when this resource was updated in an RFC3339 formatted datetime string.
-func (o GetVirtualDeploymentsVirtualDeploymentCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVirtualDeploymentsVirtualDeploymentCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o GetVirtualDeploymentsVirtualDeploymentCollectionItemOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVirtualDeploymentsVirtualDeploymentCollectionItem) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 // Unique VirtualService identifier.
-func (o GetVirtualDeploymentsVirtualDeploymentCollectionItemOutput) VirtualServiceId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVirtualDeploymentsVirtualDeploymentCollectionItem) string { return v.VirtualServiceId }).(pulumi.StringOutput)
+func (o GetVirtualDeploymentsVirtualDeploymentCollectionItemOutput) VirtualServiceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVirtualDeploymentsVirtualDeploymentCollectionItem) *string { return v.VirtualServiceId }).(pulumi.StringPtrOutput)
 }
 
 type GetVirtualDeploymentsVirtualDeploymentCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -11276,12 +9553,6 @@ func (o GetVirtualDeploymentsVirtualDeploymentCollectionItemArrayOutput) ToGetVi
 	return o
 }
 
-func (o GetVirtualDeploymentsVirtualDeploymentCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVirtualDeploymentsVirtualDeploymentCollectionItem] {
-	return pulumix.Output[[]GetVirtualDeploymentsVirtualDeploymentCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetVirtualDeploymentsVirtualDeploymentCollectionItemArrayOutput) Index(i pulumi.IntInput) GetVirtualDeploymentsVirtualDeploymentCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVirtualDeploymentsVirtualDeploymentCollectionItem {
 		return vs[0].([]GetVirtualDeploymentsVirtualDeploymentCollectionItem)[vs[1].(int)]
@@ -11290,7 +9561,7 @@ func (o GetVirtualDeploymentsVirtualDeploymentCollectionItemArrayOutput) Index(i
 
 type GetVirtualDeploymentsVirtualDeploymentCollectionItemAccessLogging struct {
 	// Determines if the logging configuration is enabled.
-	IsEnabled bool `pulumi:"isEnabled"`
+	IsEnabled *bool `pulumi:"isEnabled"`
 }
 
 // GetVirtualDeploymentsVirtualDeploymentCollectionItemAccessLoggingInput is an input type that accepts GetVirtualDeploymentsVirtualDeploymentCollectionItemAccessLoggingArgs and GetVirtualDeploymentsVirtualDeploymentCollectionItemAccessLoggingOutput values.
@@ -11306,7 +9577,7 @@ type GetVirtualDeploymentsVirtualDeploymentCollectionItemAccessLoggingInput inte
 
 type GetVirtualDeploymentsVirtualDeploymentCollectionItemAccessLoggingArgs struct {
 	// Determines if the logging configuration is enabled.
-	IsEnabled pulumi.BoolInput `pulumi:"isEnabled"`
+	IsEnabled pulumi.BoolPtrInput `pulumi:"isEnabled"`
 }
 
 func (GetVirtualDeploymentsVirtualDeploymentCollectionItemAccessLoggingArgs) ElementType() reflect.Type {
@@ -11319,12 +9590,6 @@ func (i GetVirtualDeploymentsVirtualDeploymentCollectionItemAccessLoggingArgs) T
 
 func (i GetVirtualDeploymentsVirtualDeploymentCollectionItemAccessLoggingArgs) ToGetVirtualDeploymentsVirtualDeploymentCollectionItemAccessLoggingOutputWithContext(ctx context.Context) GetVirtualDeploymentsVirtualDeploymentCollectionItemAccessLoggingOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualDeploymentsVirtualDeploymentCollectionItemAccessLoggingOutput)
-}
-
-func (i GetVirtualDeploymentsVirtualDeploymentCollectionItemAccessLoggingArgs) ToOutput(ctx context.Context) pulumix.Output[GetVirtualDeploymentsVirtualDeploymentCollectionItemAccessLogging] {
-	return pulumix.Output[GetVirtualDeploymentsVirtualDeploymentCollectionItemAccessLogging]{
-		OutputState: i.ToGetVirtualDeploymentsVirtualDeploymentCollectionItemAccessLoggingOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetVirtualDeploymentsVirtualDeploymentCollectionItemAccessLoggingArrayInput is an input type that accepts GetVirtualDeploymentsVirtualDeploymentCollectionItemAccessLoggingArray and GetVirtualDeploymentsVirtualDeploymentCollectionItemAccessLoggingArrayOutput values.
@@ -11352,12 +9617,6 @@ func (i GetVirtualDeploymentsVirtualDeploymentCollectionItemAccessLoggingArray) 
 	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualDeploymentsVirtualDeploymentCollectionItemAccessLoggingArrayOutput)
 }
 
-func (i GetVirtualDeploymentsVirtualDeploymentCollectionItemAccessLoggingArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVirtualDeploymentsVirtualDeploymentCollectionItemAccessLogging] {
-	return pulumix.Output[[]GetVirtualDeploymentsVirtualDeploymentCollectionItemAccessLogging]{
-		OutputState: i.ToGetVirtualDeploymentsVirtualDeploymentCollectionItemAccessLoggingArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetVirtualDeploymentsVirtualDeploymentCollectionItemAccessLoggingOutput struct{ *pulumi.OutputState }
 
 func (GetVirtualDeploymentsVirtualDeploymentCollectionItemAccessLoggingOutput) ElementType() reflect.Type {
@@ -11372,15 +9631,9 @@ func (o GetVirtualDeploymentsVirtualDeploymentCollectionItemAccessLoggingOutput)
 	return o
 }
 
-func (o GetVirtualDeploymentsVirtualDeploymentCollectionItemAccessLoggingOutput) ToOutput(ctx context.Context) pulumix.Output[GetVirtualDeploymentsVirtualDeploymentCollectionItemAccessLogging] {
-	return pulumix.Output[GetVirtualDeploymentsVirtualDeploymentCollectionItemAccessLogging]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Determines if the logging configuration is enabled.
-func (o GetVirtualDeploymentsVirtualDeploymentCollectionItemAccessLoggingOutput) IsEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetVirtualDeploymentsVirtualDeploymentCollectionItemAccessLogging) bool { return v.IsEnabled }).(pulumi.BoolOutput)
+func (o GetVirtualDeploymentsVirtualDeploymentCollectionItemAccessLoggingOutput) IsEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetVirtualDeploymentsVirtualDeploymentCollectionItemAccessLogging) *bool { return v.IsEnabled }).(pulumi.BoolPtrOutput)
 }
 
 type GetVirtualDeploymentsVirtualDeploymentCollectionItemAccessLoggingArrayOutput struct{ *pulumi.OutputState }
@@ -11397,12 +9650,6 @@ func (o GetVirtualDeploymentsVirtualDeploymentCollectionItemAccessLoggingArrayOu
 	return o
 }
 
-func (o GetVirtualDeploymentsVirtualDeploymentCollectionItemAccessLoggingArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVirtualDeploymentsVirtualDeploymentCollectionItemAccessLogging] {
-	return pulumix.Output[[]GetVirtualDeploymentsVirtualDeploymentCollectionItemAccessLogging]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetVirtualDeploymentsVirtualDeploymentCollectionItemAccessLoggingArrayOutput) Index(i pulumi.IntInput) GetVirtualDeploymentsVirtualDeploymentCollectionItemAccessLoggingOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVirtualDeploymentsVirtualDeploymentCollectionItemAccessLogging {
 		return vs[0].([]GetVirtualDeploymentsVirtualDeploymentCollectionItemAccessLogging)[vs[1].(int)]
@@ -11411,13 +9658,13 @@ func (o GetVirtualDeploymentsVirtualDeploymentCollectionItemAccessLoggingArrayOu
 
 type GetVirtualDeploymentsVirtualDeploymentCollectionItemListener struct {
 	// The maximum duration in milliseconds for which the request's stream may be idle. The value 0 (zero) indicates that the timeout is disabled.
-	IdleTimeoutInMs string `pulumi:"idleTimeoutInMs"`
+	IdleTimeoutInMs *string `pulumi:"idleTimeoutInMs"`
 	// Port in which virtual deployment is running.
-	Port int `pulumi:"port"`
+	Port *int `pulumi:"port"`
 	// Type of protocol used in virtual deployment.
-	Protocol string `pulumi:"protocol"`
+	Protocol *string `pulumi:"protocol"`
 	// The maximum duration in milliseconds for the deployed service to respond to an incoming request through the listener.  If provided, the timeout value overrides the default timeout of 15 seconds for the HTTP/HTTP2 listeners, and disabled (no timeout) for the GRPC listeners. The value 0 (zero) indicates that the timeout is disabled.  The timeout cannot be configured for the TCP and TLS_PASSTHROUGH listeners.  For streaming responses from the deployed service, consider either keeping the timeout disabled or set a sufficiently high value.
-	RequestTimeoutInMs string `pulumi:"requestTimeoutInMs"`
+	RequestTimeoutInMs *string `pulumi:"requestTimeoutInMs"`
 }
 
 // GetVirtualDeploymentsVirtualDeploymentCollectionItemListenerInput is an input type that accepts GetVirtualDeploymentsVirtualDeploymentCollectionItemListenerArgs and GetVirtualDeploymentsVirtualDeploymentCollectionItemListenerOutput values.
@@ -11433,13 +9680,13 @@ type GetVirtualDeploymentsVirtualDeploymentCollectionItemListenerInput interface
 
 type GetVirtualDeploymentsVirtualDeploymentCollectionItemListenerArgs struct {
 	// The maximum duration in milliseconds for which the request's stream may be idle. The value 0 (zero) indicates that the timeout is disabled.
-	IdleTimeoutInMs pulumi.StringInput `pulumi:"idleTimeoutInMs"`
+	IdleTimeoutInMs pulumi.StringPtrInput `pulumi:"idleTimeoutInMs"`
 	// Port in which virtual deployment is running.
-	Port pulumi.IntInput `pulumi:"port"`
+	Port pulumi.IntPtrInput `pulumi:"port"`
 	// Type of protocol used in virtual deployment.
-	Protocol pulumi.StringInput `pulumi:"protocol"`
+	Protocol pulumi.StringPtrInput `pulumi:"protocol"`
 	// The maximum duration in milliseconds for the deployed service to respond to an incoming request through the listener.  If provided, the timeout value overrides the default timeout of 15 seconds for the HTTP/HTTP2 listeners, and disabled (no timeout) for the GRPC listeners. The value 0 (zero) indicates that the timeout is disabled.  The timeout cannot be configured for the TCP and TLS_PASSTHROUGH listeners.  For streaming responses from the deployed service, consider either keeping the timeout disabled or set a sufficiently high value.
-	RequestTimeoutInMs pulumi.StringInput `pulumi:"requestTimeoutInMs"`
+	RequestTimeoutInMs pulumi.StringPtrInput `pulumi:"requestTimeoutInMs"`
 }
 
 func (GetVirtualDeploymentsVirtualDeploymentCollectionItemListenerArgs) ElementType() reflect.Type {
@@ -11452,12 +9699,6 @@ func (i GetVirtualDeploymentsVirtualDeploymentCollectionItemListenerArgs) ToGetV
 
 func (i GetVirtualDeploymentsVirtualDeploymentCollectionItemListenerArgs) ToGetVirtualDeploymentsVirtualDeploymentCollectionItemListenerOutputWithContext(ctx context.Context) GetVirtualDeploymentsVirtualDeploymentCollectionItemListenerOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualDeploymentsVirtualDeploymentCollectionItemListenerOutput)
-}
-
-func (i GetVirtualDeploymentsVirtualDeploymentCollectionItemListenerArgs) ToOutput(ctx context.Context) pulumix.Output[GetVirtualDeploymentsVirtualDeploymentCollectionItemListener] {
-	return pulumix.Output[GetVirtualDeploymentsVirtualDeploymentCollectionItemListener]{
-		OutputState: i.ToGetVirtualDeploymentsVirtualDeploymentCollectionItemListenerOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetVirtualDeploymentsVirtualDeploymentCollectionItemListenerArrayInput is an input type that accepts GetVirtualDeploymentsVirtualDeploymentCollectionItemListenerArray and GetVirtualDeploymentsVirtualDeploymentCollectionItemListenerArrayOutput values.
@@ -11485,12 +9726,6 @@ func (i GetVirtualDeploymentsVirtualDeploymentCollectionItemListenerArray) ToGet
 	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualDeploymentsVirtualDeploymentCollectionItemListenerArrayOutput)
 }
 
-func (i GetVirtualDeploymentsVirtualDeploymentCollectionItemListenerArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVirtualDeploymentsVirtualDeploymentCollectionItemListener] {
-	return pulumix.Output[[]GetVirtualDeploymentsVirtualDeploymentCollectionItemListener]{
-		OutputState: i.ToGetVirtualDeploymentsVirtualDeploymentCollectionItemListenerArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetVirtualDeploymentsVirtualDeploymentCollectionItemListenerOutput struct{ *pulumi.OutputState }
 
 func (GetVirtualDeploymentsVirtualDeploymentCollectionItemListenerOutput) ElementType() reflect.Type {
@@ -11505,32 +9740,26 @@ func (o GetVirtualDeploymentsVirtualDeploymentCollectionItemListenerOutput) ToGe
 	return o
 }
 
-func (o GetVirtualDeploymentsVirtualDeploymentCollectionItemListenerOutput) ToOutput(ctx context.Context) pulumix.Output[GetVirtualDeploymentsVirtualDeploymentCollectionItemListener] {
-	return pulumix.Output[GetVirtualDeploymentsVirtualDeploymentCollectionItemListener]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The maximum duration in milliseconds for which the request's stream may be idle. The value 0 (zero) indicates that the timeout is disabled.
-func (o GetVirtualDeploymentsVirtualDeploymentCollectionItemListenerOutput) IdleTimeoutInMs() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVirtualDeploymentsVirtualDeploymentCollectionItemListener) string { return v.IdleTimeoutInMs }).(pulumi.StringOutput)
+func (o GetVirtualDeploymentsVirtualDeploymentCollectionItemListenerOutput) IdleTimeoutInMs() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVirtualDeploymentsVirtualDeploymentCollectionItemListener) *string { return v.IdleTimeoutInMs }).(pulumi.StringPtrOutput)
 }
 
 // Port in which virtual deployment is running.
-func (o GetVirtualDeploymentsVirtualDeploymentCollectionItemListenerOutput) Port() pulumi.IntOutput {
-	return o.ApplyT(func(v GetVirtualDeploymentsVirtualDeploymentCollectionItemListener) int { return v.Port }).(pulumi.IntOutput)
+func (o GetVirtualDeploymentsVirtualDeploymentCollectionItemListenerOutput) Port() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetVirtualDeploymentsVirtualDeploymentCollectionItemListener) *int { return v.Port }).(pulumi.IntPtrOutput)
 }
 
 // Type of protocol used in virtual deployment.
-func (o GetVirtualDeploymentsVirtualDeploymentCollectionItemListenerOutput) Protocol() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVirtualDeploymentsVirtualDeploymentCollectionItemListener) string { return v.Protocol }).(pulumi.StringOutput)
+func (o GetVirtualDeploymentsVirtualDeploymentCollectionItemListenerOutput) Protocol() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVirtualDeploymentsVirtualDeploymentCollectionItemListener) *string { return v.Protocol }).(pulumi.StringPtrOutput)
 }
 
 // The maximum duration in milliseconds for the deployed service to respond to an incoming request through the listener.  If provided, the timeout value overrides the default timeout of 15 seconds for the HTTP/HTTP2 listeners, and disabled (no timeout) for the GRPC listeners. The value 0 (zero) indicates that the timeout is disabled.  The timeout cannot be configured for the TCP and TLS_PASSTHROUGH listeners.  For streaming responses from the deployed service, consider either keeping the timeout disabled or set a sufficiently high value.
-func (o GetVirtualDeploymentsVirtualDeploymentCollectionItemListenerOutput) RequestTimeoutInMs() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVirtualDeploymentsVirtualDeploymentCollectionItemListener) string {
+func (o GetVirtualDeploymentsVirtualDeploymentCollectionItemListenerOutput) RequestTimeoutInMs() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVirtualDeploymentsVirtualDeploymentCollectionItemListener) *string {
 		return v.RequestTimeoutInMs
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetVirtualDeploymentsVirtualDeploymentCollectionItemListenerArrayOutput struct{ *pulumi.OutputState }
@@ -11547,12 +9776,6 @@ func (o GetVirtualDeploymentsVirtualDeploymentCollectionItemListenerArrayOutput)
 	return o
 }
 
-func (o GetVirtualDeploymentsVirtualDeploymentCollectionItemListenerArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVirtualDeploymentsVirtualDeploymentCollectionItemListener] {
-	return pulumix.Output[[]GetVirtualDeploymentsVirtualDeploymentCollectionItemListener]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetVirtualDeploymentsVirtualDeploymentCollectionItemListenerArrayOutput) Index(i pulumi.IntInput) GetVirtualDeploymentsVirtualDeploymentCollectionItemListenerOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVirtualDeploymentsVirtualDeploymentCollectionItemListener {
 		return vs[0].([]GetVirtualDeploymentsVirtualDeploymentCollectionItemListener)[vs[1].(int)]
@@ -11561,9 +9784,9 @@ func (o GetVirtualDeploymentsVirtualDeploymentCollectionItemListenerArrayOutput)
 
 type GetVirtualDeploymentsVirtualDeploymentCollectionItemServiceDiscovery struct {
 	// The hostname of the virtual deployments.
-	Hostname string `pulumi:"hostname"`
+	Hostname *string `pulumi:"hostname"`
 	// Type of service discovery.
-	Type string `pulumi:"type"`
+	Type *string `pulumi:"type"`
 }
 
 // GetVirtualDeploymentsVirtualDeploymentCollectionItemServiceDiscoveryInput is an input type that accepts GetVirtualDeploymentsVirtualDeploymentCollectionItemServiceDiscoveryArgs and GetVirtualDeploymentsVirtualDeploymentCollectionItemServiceDiscoveryOutput values.
@@ -11579,9 +9802,9 @@ type GetVirtualDeploymentsVirtualDeploymentCollectionItemServiceDiscoveryInput i
 
 type GetVirtualDeploymentsVirtualDeploymentCollectionItemServiceDiscoveryArgs struct {
 	// The hostname of the virtual deployments.
-	Hostname pulumi.StringInput `pulumi:"hostname"`
+	Hostname pulumi.StringPtrInput `pulumi:"hostname"`
 	// Type of service discovery.
-	Type pulumi.StringInput `pulumi:"type"`
+	Type pulumi.StringPtrInput `pulumi:"type"`
 }
 
 func (GetVirtualDeploymentsVirtualDeploymentCollectionItemServiceDiscoveryArgs) ElementType() reflect.Type {
@@ -11594,12 +9817,6 @@ func (i GetVirtualDeploymentsVirtualDeploymentCollectionItemServiceDiscoveryArgs
 
 func (i GetVirtualDeploymentsVirtualDeploymentCollectionItemServiceDiscoveryArgs) ToGetVirtualDeploymentsVirtualDeploymentCollectionItemServiceDiscoveryOutputWithContext(ctx context.Context) GetVirtualDeploymentsVirtualDeploymentCollectionItemServiceDiscoveryOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualDeploymentsVirtualDeploymentCollectionItemServiceDiscoveryOutput)
-}
-
-func (i GetVirtualDeploymentsVirtualDeploymentCollectionItemServiceDiscoveryArgs) ToOutput(ctx context.Context) pulumix.Output[GetVirtualDeploymentsVirtualDeploymentCollectionItemServiceDiscovery] {
-	return pulumix.Output[GetVirtualDeploymentsVirtualDeploymentCollectionItemServiceDiscovery]{
-		OutputState: i.ToGetVirtualDeploymentsVirtualDeploymentCollectionItemServiceDiscoveryOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetVirtualDeploymentsVirtualDeploymentCollectionItemServiceDiscoveryArrayInput is an input type that accepts GetVirtualDeploymentsVirtualDeploymentCollectionItemServiceDiscoveryArray and GetVirtualDeploymentsVirtualDeploymentCollectionItemServiceDiscoveryArrayOutput values.
@@ -11627,12 +9844,6 @@ func (i GetVirtualDeploymentsVirtualDeploymentCollectionItemServiceDiscoveryArra
 	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualDeploymentsVirtualDeploymentCollectionItemServiceDiscoveryArrayOutput)
 }
 
-func (i GetVirtualDeploymentsVirtualDeploymentCollectionItemServiceDiscoveryArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVirtualDeploymentsVirtualDeploymentCollectionItemServiceDiscovery] {
-	return pulumix.Output[[]GetVirtualDeploymentsVirtualDeploymentCollectionItemServiceDiscovery]{
-		OutputState: i.ToGetVirtualDeploymentsVirtualDeploymentCollectionItemServiceDiscoveryArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetVirtualDeploymentsVirtualDeploymentCollectionItemServiceDiscoveryOutput struct{ *pulumi.OutputState }
 
 func (GetVirtualDeploymentsVirtualDeploymentCollectionItemServiceDiscoveryOutput) ElementType() reflect.Type {
@@ -11647,20 +9858,16 @@ func (o GetVirtualDeploymentsVirtualDeploymentCollectionItemServiceDiscoveryOutp
 	return o
 }
 
-func (o GetVirtualDeploymentsVirtualDeploymentCollectionItemServiceDiscoveryOutput) ToOutput(ctx context.Context) pulumix.Output[GetVirtualDeploymentsVirtualDeploymentCollectionItemServiceDiscovery] {
-	return pulumix.Output[GetVirtualDeploymentsVirtualDeploymentCollectionItemServiceDiscovery]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The hostname of the virtual deployments.
-func (o GetVirtualDeploymentsVirtualDeploymentCollectionItemServiceDiscoveryOutput) Hostname() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVirtualDeploymentsVirtualDeploymentCollectionItemServiceDiscovery) string { return v.Hostname }).(pulumi.StringOutput)
+func (o GetVirtualDeploymentsVirtualDeploymentCollectionItemServiceDiscoveryOutput) Hostname() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVirtualDeploymentsVirtualDeploymentCollectionItemServiceDiscovery) *string {
+		return v.Hostname
+	}).(pulumi.StringPtrOutput)
 }
 
 // Type of service discovery.
-func (o GetVirtualDeploymentsVirtualDeploymentCollectionItemServiceDiscoveryOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVirtualDeploymentsVirtualDeploymentCollectionItemServiceDiscovery) string { return v.Type }).(pulumi.StringOutput)
+func (o GetVirtualDeploymentsVirtualDeploymentCollectionItemServiceDiscoveryOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVirtualDeploymentsVirtualDeploymentCollectionItemServiceDiscovery) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
 
 type GetVirtualDeploymentsVirtualDeploymentCollectionItemServiceDiscoveryArrayOutput struct{ *pulumi.OutputState }
@@ -11677,12 +9884,6 @@ func (o GetVirtualDeploymentsVirtualDeploymentCollectionItemServiceDiscoveryArra
 	return o
 }
 
-func (o GetVirtualDeploymentsVirtualDeploymentCollectionItemServiceDiscoveryArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVirtualDeploymentsVirtualDeploymentCollectionItemServiceDiscovery] {
-	return pulumix.Output[[]GetVirtualDeploymentsVirtualDeploymentCollectionItemServiceDiscovery]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetVirtualDeploymentsVirtualDeploymentCollectionItemServiceDiscoveryArrayOutput) Index(i pulumi.IntInput) GetVirtualDeploymentsVirtualDeploymentCollectionItemServiceDiscoveryOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVirtualDeploymentsVirtualDeploymentCollectionItemServiceDiscovery {
 		return vs[0].([]GetVirtualDeploymentsVirtualDeploymentCollectionItemServiceDiscovery)[vs[1].(int)]
@@ -11691,7 +9892,7 @@ func (o GetVirtualDeploymentsVirtualDeploymentCollectionItemServiceDiscoveryArra
 
 type GetVirtualServiceDefaultRoutingPolicy struct {
 	// Type of the virtual service routing policy.
-	Type string `pulumi:"type"`
+	Type *string `pulumi:"type"`
 }
 
 // GetVirtualServiceDefaultRoutingPolicyInput is an input type that accepts GetVirtualServiceDefaultRoutingPolicyArgs and GetVirtualServiceDefaultRoutingPolicyOutput values.
@@ -11707,7 +9908,7 @@ type GetVirtualServiceDefaultRoutingPolicyInput interface {
 
 type GetVirtualServiceDefaultRoutingPolicyArgs struct {
 	// Type of the virtual service routing policy.
-	Type pulumi.StringInput `pulumi:"type"`
+	Type pulumi.StringPtrInput `pulumi:"type"`
 }
 
 func (GetVirtualServiceDefaultRoutingPolicyArgs) ElementType() reflect.Type {
@@ -11720,12 +9921,6 @@ func (i GetVirtualServiceDefaultRoutingPolicyArgs) ToGetVirtualServiceDefaultRou
 
 func (i GetVirtualServiceDefaultRoutingPolicyArgs) ToGetVirtualServiceDefaultRoutingPolicyOutputWithContext(ctx context.Context) GetVirtualServiceDefaultRoutingPolicyOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualServiceDefaultRoutingPolicyOutput)
-}
-
-func (i GetVirtualServiceDefaultRoutingPolicyArgs) ToOutput(ctx context.Context) pulumix.Output[GetVirtualServiceDefaultRoutingPolicy] {
-	return pulumix.Output[GetVirtualServiceDefaultRoutingPolicy]{
-		OutputState: i.ToGetVirtualServiceDefaultRoutingPolicyOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetVirtualServiceDefaultRoutingPolicyArrayInput is an input type that accepts GetVirtualServiceDefaultRoutingPolicyArray and GetVirtualServiceDefaultRoutingPolicyArrayOutput values.
@@ -11753,12 +9948,6 @@ func (i GetVirtualServiceDefaultRoutingPolicyArray) ToGetVirtualServiceDefaultRo
 	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualServiceDefaultRoutingPolicyArrayOutput)
 }
 
-func (i GetVirtualServiceDefaultRoutingPolicyArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVirtualServiceDefaultRoutingPolicy] {
-	return pulumix.Output[[]GetVirtualServiceDefaultRoutingPolicy]{
-		OutputState: i.ToGetVirtualServiceDefaultRoutingPolicyArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetVirtualServiceDefaultRoutingPolicyOutput struct{ *pulumi.OutputState }
 
 func (GetVirtualServiceDefaultRoutingPolicyOutput) ElementType() reflect.Type {
@@ -11773,15 +9962,9 @@ func (o GetVirtualServiceDefaultRoutingPolicyOutput) ToGetVirtualServiceDefaultR
 	return o
 }
 
-func (o GetVirtualServiceDefaultRoutingPolicyOutput) ToOutput(ctx context.Context) pulumix.Output[GetVirtualServiceDefaultRoutingPolicy] {
-	return pulumix.Output[GetVirtualServiceDefaultRoutingPolicy]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Type of the virtual service routing policy.
-func (o GetVirtualServiceDefaultRoutingPolicyOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVirtualServiceDefaultRoutingPolicy) string { return v.Type }).(pulumi.StringOutput)
+func (o GetVirtualServiceDefaultRoutingPolicyOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVirtualServiceDefaultRoutingPolicy) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
 
 type GetVirtualServiceDefaultRoutingPolicyArrayOutput struct{ *pulumi.OutputState }
@@ -11798,12 +9981,6 @@ func (o GetVirtualServiceDefaultRoutingPolicyArrayOutput) ToGetVirtualServiceDef
 	return o
 }
 
-func (o GetVirtualServiceDefaultRoutingPolicyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVirtualServiceDefaultRoutingPolicy] {
-	return pulumix.Output[[]GetVirtualServiceDefaultRoutingPolicy]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetVirtualServiceDefaultRoutingPolicyArrayOutput) Index(i pulumi.IntInput) GetVirtualServiceDefaultRoutingPolicyOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVirtualServiceDefaultRoutingPolicy {
 		return vs[0].([]GetVirtualServiceDefaultRoutingPolicy)[vs[1].(int)]
@@ -11812,11 +9989,11 @@ func (o GetVirtualServiceDefaultRoutingPolicyArrayOutput) Index(i pulumi.IntInpu
 
 type GetVirtualServiceMtl struct {
 	// The OCID of the certificate resource that will be used for mTLS authentication with other virtual services in the mesh.
-	CertificateId string `pulumi:"certificateId"`
+	CertificateId *string `pulumi:"certificateId"`
 	// The number of days the mTLS certificate is valid.  This value should be less than the Maximum Validity Duration  for Certificates (Days) setting on the Certificate Authority associated with this Mesh.  The certificate will be automatically renewed after 2/3 of the validity period, so a certificate with a maximum validity of 45 days will be renewed every 30 days.
-	MaximumValidity int `pulumi:"maximumValidity"`
+	MaximumValidity *int `pulumi:"maximumValidity"`
 	// DISABLED: Connection is not tunneled. PERMISSIVE: Connection can be either plaintext or an mTLS tunnel. STRICT: Connection is an mTLS tunnel.  Clients without a valid certificate will be rejected.
-	Mode string `pulumi:"mode"`
+	Mode *string `pulumi:"mode"`
 }
 
 // GetVirtualServiceMtlInput is an input type that accepts GetVirtualServiceMtlArgs and GetVirtualServiceMtlOutput values.
@@ -11832,11 +10009,11 @@ type GetVirtualServiceMtlInput interface {
 
 type GetVirtualServiceMtlArgs struct {
 	// The OCID of the certificate resource that will be used for mTLS authentication with other virtual services in the mesh.
-	CertificateId pulumi.StringInput `pulumi:"certificateId"`
+	CertificateId pulumi.StringPtrInput `pulumi:"certificateId"`
 	// The number of days the mTLS certificate is valid.  This value should be less than the Maximum Validity Duration  for Certificates (Days) setting on the Certificate Authority associated with this Mesh.  The certificate will be automatically renewed after 2/3 of the validity period, so a certificate with a maximum validity of 45 days will be renewed every 30 days.
-	MaximumValidity pulumi.IntInput `pulumi:"maximumValidity"`
+	MaximumValidity pulumi.IntPtrInput `pulumi:"maximumValidity"`
 	// DISABLED: Connection is not tunneled. PERMISSIVE: Connection can be either plaintext or an mTLS tunnel. STRICT: Connection is an mTLS tunnel.  Clients without a valid certificate will be rejected.
-	Mode pulumi.StringInput `pulumi:"mode"`
+	Mode pulumi.StringPtrInput `pulumi:"mode"`
 }
 
 func (GetVirtualServiceMtlArgs) ElementType() reflect.Type {
@@ -11849,12 +10026,6 @@ func (i GetVirtualServiceMtlArgs) ToGetVirtualServiceMtlOutput() GetVirtualServi
 
 func (i GetVirtualServiceMtlArgs) ToGetVirtualServiceMtlOutputWithContext(ctx context.Context) GetVirtualServiceMtlOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualServiceMtlOutput)
-}
-
-func (i GetVirtualServiceMtlArgs) ToOutput(ctx context.Context) pulumix.Output[GetVirtualServiceMtl] {
-	return pulumix.Output[GetVirtualServiceMtl]{
-		OutputState: i.ToGetVirtualServiceMtlOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetVirtualServiceMtlArrayInput is an input type that accepts GetVirtualServiceMtlArray and GetVirtualServiceMtlArrayOutput values.
@@ -11882,12 +10053,6 @@ func (i GetVirtualServiceMtlArray) ToGetVirtualServiceMtlArrayOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualServiceMtlArrayOutput)
 }
 
-func (i GetVirtualServiceMtlArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVirtualServiceMtl] {
-	return pulumix.Output[[]GetVirtualServiceMtl]{
-		OutputState: i.ToGetVirtualServiceMtlArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetVirtualServiceMtlOutput struct{ *pulumi.OutputState }
 
 func (GetVirtualServiceMtlOutput) ElementType() reflect.Type {
@@ -11902,25 +10067,19 @@ func (o GetVirtualServiceMtlOutput) ToGetVirtualServiceMtlOutputWithContext(ctx 
 	return o
 }
 
-func (o GetVirtualServiceMtlOutput) ToOutput(ctx context.Context) pulumix.Output[GetVirtualServiceMtl] {
-	return pulumix.Output[GetVirtualServiceMtl]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the certificate resource that will be used for mTLS authentication with other virtual services in the mesh.
-func (o GetVirtualServiceMtlOutput) CertificateId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVirtualServiceMtl) string { return v.CertificateId }).(pulumi.StringOutput)
+func (o GetVirtualServiceMtlOutput) CertificateId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVirtualServiceMtl) *string { return v.CertificateId }).(pulumi.StringPtrOutput)
 }
 
 // The number of days the mTLS certificate is valid.  This value should be less than the Maximum Validity Duration  for Certificates (Days) setting on the Certificate Authority associated with this Mesh.  The certificate will be automatically renewed after 2/3 of the validity period, so a certificate with a maximum validity of 45 days will be renewed every 30 days.
-func (o GetVirtualServiceMtlOutput) MaximumValidity() pulumi.IntOutput {
-	return o.ApplyT(func(v GetVirtualServiceMtl) int { return v.MaximumValidity }).(pulumi.IntOutput)
+func (o GetVirtualServiceMtlOutput) MaximumValidity() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetVirtualServiceMtl) *int { return v.MaximumValidity }).(pulumi.IntPtrOutput)
 }
 
 // DISABLED: Connection is not tunneled. PERMISSIVE: Connection can be either plaintext or an mTLS tunnel. STRICT: Connection is an mTLS tunnel.  Clients without a valid certificate will be rejected.
-func (o GetVirtualServiceMtlOutput) Mode() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVirtualServiceMtl) string { return v.Mode }).(pulumi.StringOutput)
+func (o GetVirtualServiceMtlOutput) Mode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVirtualServiceMtl) *string { return v.Mode }).(pulumi.StringPtrOutput)
 }
 
 type GetVirtualServiceMtlArrayOutput struct{ *pulumi.OutputState }
@@ -11937,12 +10096,6 @@ func (o GetVirtualServiceMtlArrayOutput) ToGetVirtualServiceMtlArrayOutputWithCo
 	return o
 }
 
-func (o GetVirtualServiceMtlArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVirtualServiceMtl] {
-	return pulumix.Output[[]GetVirtualServiceMtl]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetVirtualServiceMtlArrayOutput) Index(i pulumi.IntInput) GetVirtualServiceMtlOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVirtualServiceMtl {
 		return vs[0].([]GetVirtualServiceMtl)[vs[1].(int)]
@@ -11953,15 +10106,15 @@ type GetVirtualServiceRouteTableRouteRule struct {
 	// The destination of the request.
 	Destinations []GetVirtualServiceRouteTableRouteRuleDestination `pulumi:"destinations"`
 	// If true, the rule will check that the content-type header has a application/grpc or one of the various application/grpc+ values.
-	IsGrpc bool `pulumi:"isGrpc"`
+	IsGrpc *bool `pulumi:"isGrpc"`
 	// Route to match
-	Path string `pulumi:"path"`
+	Path *string `pulumi:"path"`
 	// Match type for the route
-	PathType string `pulumi:"pathType"`
+	PathType *string `pulumi:"pathType"`
 	// The maximum duration in milliseconds for the target service to respond to a request.  If provided, the timeout value overrides the default timeout of 15 seconds for the HTTP based route rules, and disabled (no timeout) when 'isGrpc' is true.  The value 0 (zero) indicates that the timeout is disabled.  For streaming responses from the target service, consider either keeping the timeout disabled or set a sufficiently high value.
-	RequestTimeoutInMs string `pulumi:"requestTimeoutInMs"`
+	RequestTimeoutInMs *string `pulumi:"requestTimeoutInMs"`
 	// Type of protocol.
-	Type string `pulumi:"type"`
+	Type *string `pulumi:"type"`
 }
 
 // GetVirtualServiceRouteTableRouteRuleInput is an input type that accepts GetVirtualServiceRouteTableRouteRuleArgs and GetVirtualServiceRouteTableRouteRuleOutput values.
@@ -11979,15 +10132,15 @@ type GetVirtualServiceRouteTableRouteRuleArgs struct {
 	// The destination of the request.
 	Destinations GetVirtualServiceRouteTableRouteRuleDestinationArrayInput `pulumi:"destinations"`
 	// If true, the rule will check that the content-type header has a application/grpc or one of the various application/grpc+ values.
-	IsGrpc pulumi.BoolInput `pulumi:"isGrpc"`
+	IsGrpc pulumi.BoolPtrInput `pulumi:"isGrpc"`
 	// Route to match
-	Path pulumi.StringInput `pulumi:"path"`
+	Path pulumi.StringPtrInput `pulumi:"path"`
 	// Match type for the route
-	PathType pulumi.StringInput `pulumi:"pathType"`
+	PathType pulumi.StringPtrInput `pulumi:"pathType"`
 	// The maximum duration in milliseconds for the target service to respond to a request.  If provided, the timeout value overrides the default timeout of 15 seconds for the HTTP based route rules, and disabled (no timeout) when 'isGrpc' is true.  The value 0 (zero) indicates that the timeout is disabled.  For streaming responses from the target service, consider either keeping the timeout disabled or set a sufficiently high value.
-	RequestTimeoutInMs pulumi.StringInput `pulumi:"requestTimeoutInMs"`
+	RequestTimeoutInMs pulumi.StringPtrInput `pulumi:"requestTimeoutInMs"`
 	// Type of protocol.
-	Type pulumi.StringInput `pulumi:"type"`
+	Type pulumi.StringPtrInput `pulumi:"type"`
 }
 
 func (GetVirtualServiceRouteTableRouteRuleArgs) ElementType() reflect.Type {
@@ -12000,12 +10153,6 @@ func (i GetVirtualServiceRouteTableRouteRuleArgs) ToGetVirtualServiceRouteTableR
 
 func (i GetVirtualServiceRouteTableRouteRuleArgs) ToGetVirtualServiceRouteTableRouteRuleOutputWithContext(ctx context.Context) GetVirtualServiceRouteTableRouteRuleOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualServiceRouteTableRouteRuleOutput)
-}
-
-func (i GetVirtualServiceRouteTableRouteRuleArgs) ToOutput(ctx context.Context) pulumix.Output[GetVirtualServiceRouteTableRouteRule] {
-	return pulumix.Output[GetVirtualServiceRouteTableRouteRule]{
-		OutputState: i.ToGetVirtualServiceRouteTableRouteRuleOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetVirtualServiceRouteTableRouteRuleArrayInput is an input type that accepts GetVirtualServiceRouteTableRouteRuleArray and GetVirtualServiceRouteTableRouteRuleArrayOutput values.
@@ -12033,12 +10180,6 @@ func (i GetVirtualServiceRouteTableRouteRuleArray) ToGetVirtualServiceRouteTable
 	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualServiceRouteTableRouteRuleArrayOutput)
 }
 
-func (i GetVirtualServiceRouteTableRouteRuleArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVirtualServiceRouteTableRouteRule] {
-	return pulumix.Output[[]GetVirtualServiceRouteTableRouteRule]{
-		OutputState: i.ToGetVirtualServiceRouteTableRouteRuleArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetVirtualServiceRouteTableRouteRuleOutput struct{ *pulumi.OutputState }
 
 func (GetVirtualServiceRouteTableRouteRuleOutput) ElementType() reflect.Type {
@@ -12053,12 +10194,6 @@ func (o GetVirtualServiceRouteTableRouteRuleOutput) ToGetVirtualServiceRouteTabl
 	return o
 }
 
-func (o GetVirtualServiceRouteTableRouteRuleOutput) ToOutput(ctx context.Context) pulumix.Output[GetVirtualServiceRouteTableRouteRule] {
-	return pulumix.Output[GetVirtualServiceRouteTableRouteRule]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The destination of the request.
 func (o GetVirtualServiceRouteTableRouteRuleOutput) Destinations() GetVirtualServiceRouteTableRouteRuleDestinationArrayOutput {
 	return o.ApplyT(func(v GetVirtualServiceRouteTableRouteRule) []GetVirtualServiceRouteTableRouteRuleDestination {
@@ -12067,28 +10202,28 @@ func (o GetVirtualServiceRouteTableRouteRuleOutput) Destinations() GetVirtualSer
 }
 
 // If true, the rule will check that the content-type header has a application/grpc or one of the various application/grpc+ values.
-func (o GetVirtualServiceRouteTableRouteRuleOutput) IsGrpc() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetVirtualServiceRouteTableRouteRule) bool { return v.IsGrpc }).(pulumi.BoolOutput)
+func (o GetVirtualServiceRouteTableRouteRuleOutput) IsGrpc() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetVirtualServiceRouteTableRouteRule) *bool { return v.IsGrpc }).(pulumi.BoolPtrOutput)
 }
 
 // Route to match
-func (o GetVirtualServiceRouteTableRouteRuleOutput) Path() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVirtualServiceRouteTableRouteRule) string { return v.Path }).(pulumi.StringOutput)
+func (o GetVirtualServiceRouteTableRouteRuleOutput) Path() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVirtualServiceRouteTableRouteRule) *string { return v.Path }).(pulumi.StringPtrOutput)
 }
 
 // Match type for the route
-func (o GetVirtualServiceRouteTableRouteRuleOutput) PathType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVirtualServiceRouteTableRouteRule) string { return v.PathType }).(pulumi.StringOutput)
+func (o GetVirtualServiceRouteTableRouteRuleOutput) PathType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVirtualServiceRouteTableRouteRule) *string { return v.PathType }).(pulumi.StringPtrOutput)
 }
 
 // The maximum duration in milliseconds for the target service to respond to a request.  If provided, the timeout value overrides the default timeout of 15 seconds for the HTTP based route rules, and disabled (no timeout) when 'isGrpc' is true.  The value 0 (zero) indicates that the timeout is disabled.  For streaming responses from the target service, consider either keeping the timeout disabled or set a sufficiently high value.
-func (o GetVirtualServiceRouteTableRouteRuleOutput) RequestTimeoutInMs() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVirtualServiceRouteTableRouteRule) string { return v.RequestTimeoutInMs }).(pulumi.StringOutput)
+func (o GetVirtualServiceRouteTableRouteRuleOutput) RequestTimeoutInMs() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVirtualServiceRouteTableRouteRule) *string { return v.RequestTimeoutInMs }).(pulumi.StringPtrOutput)
 }
 
 // Type of protocol.
-func (o GetVirtualServiceRouteTableRouteRuleOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVirtualServiceRouteTableRouteRule) string { return v.Type }).(pulumi.StringOutput)
+func (o GetVirtualServiceRouteTableRouteRuleOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVirtualServiceRouteTableRouteRule) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
 
 type GetVirtualServiceRouteTableRouteRuleArrayOutput struct{ *pulumi.OutputState }
@@ -12105,12 +10240,6 @@ func (o GetVirtualServiceRouteTableRouteRuleArrayOutput) ToGetVirtualServiceRout
 	return o
 }
 
-func (o GetVirtualServiceRouteTableRouteRuleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVirtualServiceRouteTableRouteRule] {
-	return pulumix.Output[[]GetVirtualServiceRouteTableRouteRule]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetVirtualServiceRouteTableRouteRuleArrayOutput) Index(i pulumi.IntInput) GetVirtualServiceRouteTableRouteRuleOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVirtualServiceRouteTableRouteRule {
 		return vs[0].([]GetVirtualServiceRouteTableRouteRule)[vs[1].(int)]
@@ -12119,11 +10248,11 @@ func (o GetVirtualServiceRouteTableRouteRuleArrayOutput) Index(i pulumi.IntInput
 
 type GetVirtualServiceRouteTableRouteRuleDestination struct {
 	// Port on virtual deployment to target. If port is missing, the rule will target all ports on the virtual deployment.
-	Port int `pulumi:"port"`
+	Port *int `pulumi:"port"`
 	// The OCID of the virtual deployment where the request will be routed.
-	VirtualDeploymentId string `pulumi:"virtualDeploymentId"`
+	VirtualDeploymentId *string `pulumi:"virtualDeploymentId"`
 	// Weight of traffic target.
-	Weight int `pulumi:"weight"`
+	Weight *int `pulumi:"weight"`
 }
 
 // GetVirtualServiceRouteTableRouteRuleDestinationInput is an input type that accepts GetVirtualServiceRouteTableRouteRuleDestinationArgs and GetVirtualServiceRouteTableRouteRuleDestinationOutput values.
@@ -12139,11 +10268,11 @@ type GetVirtualServiceRouteTableRouteRuleDestinationInput interface {
 
 type GetVirtualServiceRouteTableRouteRuleDestinationArgs struct {
 	// Port on virtual deployment to target. If port is missing, the rule will target all ports on the virtual deployment.
-	Port pulumi.IntInput `pulumi:"port"`
+	Port pulumi.IntPtrInput `pulumi:"port"`
 	// The OCID of the virtual deployment where the request will be routed.
-	VirtualDeploymentId pulumi.StringInput `pulumi:"virtualDeploymentId"`
+	VirtualDeploymentId pulumi.StringPtrInput `pulumi:"virtualDeploymentId"`
 	// Weight of traffic target.
-	Weight pulumi.IntInput `pulumi:"weight"`
+	Weight pulumi.IntPtrInput `pulumi:"weight"`
 }
 
 func (GetVirtualServiceRouteTableRouteRuleDestinationArgs) ElementType() reflect.Type {
@@ -12156,12 +10285,6 @@ func (i GetVirtualServiceRouteTableRouteRuleDestinationArgs) ToGetVirtualService
 
 func (i GetVirtualServiceRouteTableRouteRuleDestinationArgs) ToGetVirtualServiceRouteTableRouteRuleDestinationOutputWithContext(ctx context.Context) GetVirtualServiceRouteTableRouteRuleDestinationOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualServiceRouteTableRouteRuleDestinationOutput)
-}
-
-func (i GetVirtualServiceRouteTableRouteRuleDestinationArgs) ToOutput(ctx context.Context) pulumix.Output[GetVirtualServiceRouteTableRouteRuleDestination] {
-	return pulumix.Output[GetVirtualServiceRouteTableRouteRuleDestination]{
-		OutputState: i.ToGetVirtualServiceRouteTableRouteRuleDestinationOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetVirtualServiceRouteTableRouteRuleDestinationArrayInput is an input type that accepts GetVirtualServiceRouteTableRouteRuleDestinationArray and GetVirtualServiceRouteTableRouteRuleDestinationArrayOutput values.
@@ -12189,12 +10312,6 @@ func (i GetVirtualServiceRouteTableRouteRuleDestinationArray) ToGetVirtualServic
 	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualServiceRouteTableRouteRuleDestinationArrayOutput)
 }
 
-func (i GetVirtualServiceRouteTableRouteRuleDestinationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVirtualServiceRouteTableRouteRuleDestination] {
-	return pulumix.Output[[]GetVirtualServiceRouteTableRouteRuleDestination]{
-		OutputState: i.ToGetVirtualServiceRouteTableRouteRuleDestinationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetVirtualServiceRouteTableRouteRuleDestinationOutput struct{ *pulumi.OutputState }
 
 func (GetVirtualServiceRouteTableRouteRuleDestinationOutput) ElementType() reflect.Type {
@@ -12209,25 +10326,19 @@ func (o GetVirtualServiceRouteTableRouteRuleDestinationOutput) ToGetVirtualServi
 	return o
 }
 
-func (o GetVirtualServiceRouteTableRouteRuleDestinationOutput) ToOutput(ctx context.Context) pulumix.Output[GetVirtualServiceRouteTableRouteRuleDestination] {
-	return pulumix.Output[GetVirtualServiceRouteTableRouteRuleDestination]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Port on virtual deployment to target. If port is missing, the rule will target all ports on the virtual deployment.
-func (o GetVirtualServiceRouteTableRouteRuleDestinationOutput) Port() pulumi.IntOutput {
-	return o.ApplyT(func(v GetVirtualServiceRouteTableRouteRuleDestination) int { return v.Port }).(pulumi.IntOutput)
+func (o GetVirtualServiceRouteTableRouteRuleDestinationOutput) Port() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetVirtualServiceRouteTableRouteRuleDestination) *int { return v.Port }).(pulumi.IntPtrOutput)
 }
 
 // The OCID of the virtual deployment where the request will be routed.
-func (o GetVirtualServiceRouteTableRouteRuleDestinationOutput) VirtualDeploymentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVirtualServiceRouteTableRouteRuleDestination) string { return v.VirtualDeploymentId }).(pulumi.StringOutput)
+func (o GetVirtualServiceRouteTableRouteRuleDestinationOutput) VirtualDeploymentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVirtualServiceRouteTableRouteRuleDestination) *string { return v.VirtualDeploymentId }).(pulumi.StringPtrOutput)
 }
 
 // Weight of traffic target.
-func (o GetVirtualServiceRouteTableRouteRuleDestinationOutput) Weight() pulumi.IntOutput {
-	return o.ApplyT(func(v GetVirtualServiceRouteTableRouteRuleDestination) int { return v.Weight }).(pulumi.IntOutput)
+func (o GetVirtualServiceRouteTableRouteRuleDestinationOutput) Weight() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetVirtualServiceRouteTableRouteRuleDestination) *int { return v.Weight }).(pulumi.IntPtrOutput)
 }
 
 type GetVirtualServiceRouteTableRouteRuleDestinationArrayOutput struct{ *pulumi.OutputState }
@@ -12242,12 +10353,6 @@ func (o GetVirtualServiceRouteTableRouteRuleDestinationArrayOutput) ToGetVirtual
 
 func (o GetVirtualServiceRouteTableRouteRuleDestinationArrayOutput) ToGetVirtualServiceRouteTableRouteRuleDestinationArrayOutputWithContext(ctx context.Context) GetVirtualServiceRouteTableRouteRuleDestinationArrayOutput {
 	return o
-}
-
-func (o GetVirtualServiceRouteTableRouteRuleDestinationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVirtualServiceRouteTableRouteRuleDestination] {
-	return pulumix.Output[[]GetVirtualServiceRouteTableRouteRuleDestination]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetVirtualServiceRouteTableRouteRuleDestinationArrayOutput) Index(i pulumi.IntInput) GetVirtualServiceRouteTableRouteRuleDestinationOutput {
@@ -12293,12 +10398,6 @@ func (i GetVirtualServiceRouteTablesFilterArgs) ToGetVirtualServiceRouteTablesFi
 	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualServiceRouteTablesFilterOutput)
 }
 
-func (i GetVirtualServiceRouteTablesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetVirtualServiceRouteTablesFilter] {
-	return pulumix.Output[GetVirtualServiceRouteTablesFilter]{
-		OutputState: i.ToGetVirtualServiceRouteTablesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetVirtualServiceRouteTablesFilterArrayInput is an input type that accepts GetVirtualServiceRouteTablesFilterArray and GetVirtualServiceRouteTablesFilterArrayOutput values.
 // You can construct a concrete instance of `GetVirtualServiceRouteTablesFilterArrayInput` via:
 //
@@ -12324,12 +10423,6 @@ func (i GetVirtualServiceRouteTablesFilterArray) ToGetVirtualServiceRouteTablesF
 	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualServiceRouteTablesFilterArrayOutput)
 }
 
-func (i GetVirtualServiceRouteTablesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVirtualServiceRouteTablesFilter] {
-	return pulumix.Output[[]GetVirtualServiceRouteTablesFilter]{
-		OutputState: i.ToGetVirtualServiceRouteTablesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetVirtualServiceRouteTablesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetVirtualServiceRouteTablesFilterOutput) ElementType() reflect.Type {
@@ -12342,12 +10435,6 @@ func (o GetVirtualServiceRouteTablesFilterOutput) ToGetVirtualServiceRouteTables
 
 func (o GetVirtualServiceRouteTablesFilterOutput) ToGetVirtualServiceRouteTablesFilterOutputWithContext(ctx context.Context) GetVirtualServiceRouteTablesFilterOutput {
 	return o
-}
-
-func (o GetVirtualServiceRouteTablesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetVirtualServiceRouteTablesFilter] {
-	return pulumix.Output[GetVirtualServiceRouteTablesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A filter to return only resources that match the entire name given.
@@ -12375,12 +10462,6 @@ func (o GetVirtualServiceRouteTablesFilterArrayOutput) ToGetVirtualServiceRouteT
 
 func (o GetVirtualServiceRouteTablesFilterArrayOutput) ToGetVirtualServiceRouteTablesFilterArrayOutputWithContext(ctx context.Context) GetVirtualServiceRouteTablesFilterArrayOutput {
 	return o
-}
-
-func (o GetVirtualServiceRouteTablesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVirtualServiceRouteTablesFilter] {
-	return pulumix.Output[[]GetVirtualServiceRouteTablesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetVirtualServiceRouteTablesFilterArrayOutput) Index(i pulumi.IntInput) GetVirtualServiceRouteTablesFilterOutput {
@@ -12420,12 +10501,6 @@ func (i GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionArgs) ToGe
 	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionOutput)
 }
 
-func (i GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetVirtualServiceRouteTablesVirtualServiceRouteTableCollection] {
-	return pulumix.Output[GetVirtualServiceRouteTablesVirtualServiceRouteTableCollection]{
-		OutputState: i.ToGetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionArrayInput is an input type that accepts GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionArray and GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionArrayOutput values.
 // You can construct a concrete instance of `GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionArrayInput` via:
 //
@@ -12451,12 +10526,6 @@ func (i GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionArray) ToG
 	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionArrayOutput)
 }
 
-func (i GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVirtualServiceRouteTablesVirtualServiceRouteTableCollection] {
-	return pulumix.Output[[]GetVirtualServiceRouteTablesVirtualServiceRouteTableCollection]{
-		OutputState: i.ToGetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionOutput) ElementType() reflect.Type {
@@ -12469,12 +10538,6 @@ func (o GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionOutput) To
 
 func (o GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionOutput) ToGetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionOutputWithContext(ctx context.Context) GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionOutput {
 	return o
-}
-
-func (o GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetVirtualServiceRouteTablesVirtualServiceRouteTableCollection] {
-	return pulumix.Output[GetVirtualServiceRouteTablesVirtualServiceRouteTableCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionOutput) Items() GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemArrayOutput {
@@ -12497,12 +10560,6 @@ func (o GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionArrayOutpu
 	return o
 }
 
-func (o GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVirtualServiceRouteTablesVirtualServiceRouteTableCollection] {
-	return pulumix.Output[[]GetVirtualServiceRouteTablesVirtualServiceRouteTableCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionArrayOutput) Index(i pulumi.IntInput) GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVirtualServiceRouteTablesVirtualServiceRouteTableCollection {
 		return vs[0].([]GetVirtualServiceRouteTablesVirtualServiceRouteTableCollection)[vs[1].(int)]
@@ -12511,33 +10568,33 @@ func (o GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionArrayOutpu
 
 type GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItem struct {
 	// The ID of the compartment in which to list resources.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// Description of the resource. It can be changed after creation. Avoid entering confidential information.  Example: `This is my new resource`
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// Unique VirtualServiceRouteTable identifier.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// A filter to return only resources that match the entire name given.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// The priority of the route table. Lower value means higher priority. The routes are declared based on the priority.
-	Priority int `pulumi:"priority"`
+	Priority *int `pulumi:"priority"`
 	// The route rules for the virtual service.
 	RouteRules []GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRule `pulumi:"routeRules"`
 	// A filter to return only resources that match the life cycle state given.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The time when this resource was created in an RFC3339 formatted datetime string.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time when this resource was updated in an RFC3339 formatted datetime string.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 	// Unique VirtualService identifier.
-	VirtualServiceId string `pulumi:"virtualServiceId"`
+	VirtualServiceId *string `pulumi:"virtualServiceId"`
 }
 
 // GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemInput is an input type that accepts GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemArgs and GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemOutput values.
@@ -12553,33 +10610,33 @@ type GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemInput int
 
 type GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemArgs struct {
 	// The ID of the compartment in which to list resources.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// Description of the resource. It can be changed after creation. Avoid entering confidential information.  Example: `This is my new resource`
-	Description pulumi.StringInput `pulumi:"description"`
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// Unique VirtualServiceRouteTable identifier.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
-	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrInput `pulumi:"lifecycleDetails"`
 	// A filter to return only resources that match the entire name given.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// The priority of the route table. Lower value means higher priority. The routes are declared based on the priority.
-	Priority pulumi.IntInput `pulumi:"priority"`
+	Priority pulumi.IntPtrInput `pulumi:"priority"`
 	// The route rules for the virtual service.
 	RouteRules GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRuleArrayInput `pulumi:"routeRules"`
 	// A filter to return only resources that match the life cycle state given.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapInput `pulumi:"systemTags"`
 	// The time when this resource was created in an RFC3339 formatted datetime string.
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// The time when this resource was updated in an RFC3339 formatted datetime string.
-	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
 	// Unique VirtualService identifier.
-	VirtualServiceId pulumi.StringInput `pulumi:"virtualServiceId"`
+	VirtualServiceId pulumi.StringPtrInput `pulumi:"virtualServiceId"`
 }
 
 func (GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemArgs) ElementType() reflect.Type {
@@ -12592,12 +10649,6 @@ func (i GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemArgs) 
 
 func (i GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemArgs) ToGetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemOutputWithContext(ctx context.Context) GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemOutput)
-}
-
-func (i GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItem] {
-	return pulumix.Output[GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItem]{
-		OutputState: i.ToGetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemArrayInput is an input type that accepts GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemArray and GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemArrayOutput values.
@@ -12625,12 +10676,6 @@ func (i GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemArray)
 	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemArrayOutput)
 }
 
-func (i GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItem] {
-	return pulumix.Output[[]GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItem]{
-		OutputState: i.ToGetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemOutput) ElementType() reflect.Type {
@@ -12645,17 +10690,11 @@ func (o GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemOutput
 	return o
 }
 
-func (o GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItem] {
-	return pulumix.Output[GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The ID of the compartment in which to list resources.
-func (o GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItem) string {
+func (o GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItem) *string {
 		return v.CompartmentId
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -12666,10 +10705,10 @@ func (o GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemOutput
 }
 
 // Description of the resource. It can be changed after creation. Avoid entering confidential information.  Example: `This is my new resource`
-func (o GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItem) string {
+func (o GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItem) *string {
 		return v.Description
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -12680,25 +10719,25 @@ func (o GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemOutput
 }
 
 // Unique VirtualServiceRouteTable identifier.
-func (o GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+func (o GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItem) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
-func (o GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItem) string {
+func (o GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItem) *string {
 		return v.LifecycleDetails
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // A filter to return only resources that match the entire name given.
-func (o GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItem) string { return v.Name }).(pulumi.StringOutput)
+func (o GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItem) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // The priority of the route table. Lower value means higher priority. The routes are declared based on the priority.
-func (o GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemOutput) Priority() pulumi.IntOutput {
-	return o.ApplyT(func(v GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItem) int { return v.Priority }).(pulumi.IntOutput)
+func (o GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemOutput) Priority() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItem) *int { return v.Priority }).(pulumi.IntPtrOutput)
 }
 
 // The route rules for the virtual service.
@@ -12709,8 +10748,8 @@ func (o GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemOutput
 }
 
 // A filter to return only resources that match the life cycle state given.
-func (o GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItem) string { return v.State }).(pulumi.StringOutput)
+func (o GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItem) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -12721,24 +10760,24 @@ func (o GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemOutput
 }
 
 // The time when this resource was created in an RFC3339 formatted datetime string.
-func (o GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItem) string {
+func (o GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItem) *string {
 		return v.TimeCreated
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The time when this resource was updated in an RFC3339 formatted datetime string.
-func (o GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItem) string {
+func (o GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItem) *string {
 		return v.TimeUpdated
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Unique VirtualService identifier.
-func (o GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemOutput) VirtualServiceId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItem) string {
+func (o GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemOutput) VirtualServiceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItem) *string {
 		return v.VirtualServiceId
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -12755,12 +10794,6 @@ func (o GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemArrayO
 	return o
 }
 
-func (o GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItem] {
-	return pulumix.Output[[]GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemArrayOutput) Index(i pulumi.IntInput) GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItem {
 		return vs[0].([]GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItem)[vs[1].(int)]
@@ -12771,15 +10804,15 @@ type GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRule
 	// The destination of the request.
 	Destinations []GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRuleDestination `pulumi:"destinations"`
 	// If true, the rule will check that the content-type header has a application/grpc or one of the various application/grpc+ values.
-	IsGrpc bool `pulumi:"isGrpc"`
+	IsGrpc *bool `pulumi:"isGrpc"`
 	// Route to match
-	Path string `pulumi:"path"`
+	Path *string `pulumi:"path"`
 	// Match type for the route
-	PathType string `pulumi:"pathType"`
+	PathType *string `pulumi:"pathType"`
 	// The maximum duration in milliseconds for the target service to respond to a request.  If provided, the timeout value overrides the default timeout of 15 seconds for the HTTP based route rules, and disabled (no timeout) when 'isGrpc' is true.  The value 0 (zero) indicates that the timeout is disabled.  For streaming responses from the target service, consider either keeping the timeout disabled or set a sufficiently high value.
-	RequestTimeoutInMs string `pulumi:"requestTimeoutInMs"`
+	RequestTimeoutInMs *string `pulumi:"requestTimeoutInMs"`
 	// Type of protocol.
-	Type string `pulumi:"type"`
+	Type *string `pulumi:"type"`
 }
 
 // GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRuleInput is an input type that accepts GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRuleArgs and GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRuleOutput values.
@@ -12797,15 +10830,15 @@ type GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRule
 	// The destination of the request.
 	Destinations GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRuleDestinationArrayInput `pulumi:"destinations"`
 	// If true, the rule will check that the content-type header has a application/grpc or one of the various application/grpc+ values.
-	IsGrpc pulumi.BoolInput `pulumi:"isGrpc"`
+	IsGrpc pulumi.BoolPtrInput `pulumi:"isGrpc"`
 	// Route to match
-	Path pulumi.StringInput `pulumi:"path"`
+	Path pulumi.StringPtrInput `pulumi:"path"`
 	// Match type for the route
-	PathType pulumi.StringInput `pulumi:"pathType"`
+	PathType pulumi.StringPtrInput `pulumi:"pathType"`
 	// The maximum duration in milliseconds for the target service to respond to a request.  If provided, the timeout value overrides the default timeout of 15 seconds for the HTTP based route rules, and disabled (no timeout) when 'isGrpc' is true.  The value 0 (zero) indicates that the timeout is disabled.  For streaming responses from the target service, consider either keeping the timeout disabled or set a sufficiently high value.
-	RequestTimeoutInMs pulumi.StringInput `pulumi:"requestTimeoutInMs"`
+	RequestTimeoutInMs pulumi.StringPtrInput `pulumi:"requestTimeoutInMs"`
 	// Type of protocol.
-	Type pulumi.StringInput `pulumi:"type"`
+	Type pulumi.StringPtrInput `pulumi:"type"`
 }
 
 func (GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRuleArgs) ElementType() reflect.Type {
@@ -12818,12 +10851,6 @@ func (i GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteR
 
 func (i GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRuleArgs) ToGetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRuleOutputWithContext(ctx context.Context) GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRuleOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRuleOutput)
-}
-
-func (i GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRuleArgs) ToOutput(ctx context.Context) pulumix.Output[GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRule] {
-	return pulumix.Output[GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRule]{
-		OutputState: i.ToGetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRuleOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRuleArrayInput is an input type that accepts GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRuleArray and GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRuleArrayOutput values.
@@ -12851,12 +10878,6 @@ func (i GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteR
 	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRuleArrayOutput)
 }
 
-func (i GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRuleArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRule] {
-	return pulumix.Output[[]GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRule]{
-		OutputState: i.ToGetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRuleArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRuleOutput struct{ *pulumi.OutputState }
 
 func (GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRuleOutput) ElementType() reflect.Type {
@@ -12871,12 +10892,6 @@ func (o GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteR
 	return o
 }
 
-func (o GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRuleOutput) ToOutput(ctx context.Context) pulumix.Output[GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRule] {
-	return pulumix.Output[GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRule]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The destination of the request.
 func (o GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRuleOutput) Destinations() GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRuleDestinationArrayOutput {
 	return o.ApplyT(func(v GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRule) []GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRuleDestination {
@@ -12885,38 +10900,38 @@ func (o GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteR
 }
 
 // If true, the rule will check that the content-type header has a application/grpc or one of the various application/grpc+ values.
-func (o GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRuleOutput) IsGrpc() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRule) bool {
+func (o GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRuleOutput) IsGrpc() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRule) *bool {
 		return v.IsGrpc
-	}).(pulumi.BoolOutput)
+	}).(pulumi.BoolPtrOutput)
 }
 
 // Route to match
-func (o GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRuleOutput) Path() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRule) string {
+func (o GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRuleOutput) Path() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRule) *string {
 		return v.Path
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Match type for the route
-func (o GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRuleOutput) PathType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRule) string {
+func (o GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRuleOutput) PathType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRule) *string {
 		return v.PathType
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The maximum duration in milliseconds for the target service to respond to a request.  If provided, the timeout value overrides the default timeout of 15 seconds for the HTTP based route rules, and disabled (no timeout) when 'isGrpc' is true.  The value 0 (zero) indicates that the timeout is disabled.  For streaming responses from the target service, consider either keeping the timeout disabled or set a sufficiently high value.
-func (o GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRuleOutput) RequestTimeoutInMs() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRule) string {
+func (o GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRuleOutput) RequestTimeoutInMs() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRule) *string {
 		return v.RequestTimeoutInMs
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Type of protocol.
-func (o GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRuleOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRule) string {
+func (o GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRuleOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRule) *string {
 		return v.Type
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRuleArrayOutput struct{ *pulumi.OutputState }
@@ -12933,12 +10948,6 @@ func (o GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteR
 	return o
 }
 
-func (o GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRuleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRule] {
-	return pulumix.Output[[]GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRule]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRuleArrayOutput) Index(i pulumi.IntInput) GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRuleOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRule {
 		return vs[0].([]GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRule)[vs[1].(int)]
@@ -12947,11 +10956,11 @@ func (o GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteR
 
 type GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRuleDestination struct {
 	// Port on virtual deployment to target. If port is missing, the rule will target all ports on the virtual deployment.
-	Port int `pulumi:"port"`
+	Port *int `pulumi:"port"`
 	// The OCID of the virtual deployment where the request will be routed.
-	VirtualDeploymentId string `pulumi:"virtualDeploymentId"`
+	VirtualDeploymentId *string `pulumi:"virtualDeploymentId"`
 	// Weight of traffic target.
-	Weight int `pulumi:"weight"`
+	Weight *int `pulumi:"weight"`
 }
 
 // GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRuleDestinationInput is an input type that accepts GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRuleDestinationArgs and GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRuleDestinationOutput values.
@@ -12967,11 +10976,11 @@ type GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRule
 
 type GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRuleDestinationArgs struct {
 	// Port on virtual deployment to target. If port is missing, the rule will target all ports on the virtual deployment.
-	Port pulumi.IntInput `pulumi:"port"`
+	Port pulumi.IntPtrInput `pulumi:"port"`
 	// The OCID of the virtual deployment where the request will be routed.
-	VirtualDeploymentId pulumi.StringInput `pulumi:"virtualDeploymentId"`
+	VirtualDeploymentId pulumi.StringPtrInput `pulumi:"virtualDeploymentId"`
 	// Weight of traffic target.
-	Weight pulumi.IntInput `pulumi:"weight"`
+	Weight pulumi.IntPtrInput `pulumi:"weight"`
 }
 
 func (GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRuleDestinationArgs) ElementType() reflect.Type {
@@ -12984,12 +10993,6 @@ func (i GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteR
 
 func (i GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRuleDestinationArgs) ToGetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRuleDestinationOutputWithContext(ctx context.Context) GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRuleDestinationOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRuleDestinationOutput)
-}
-
-func (i GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRuleDestinationArgs) ToOutput(ctx context.Context) pulumix.Output[GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRuleDestination] {
-	return pulumix.Output[GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRuleDestination]{
-		OutputState: i.ToGetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRuleDestinationOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRuleDestinationArrayInput is an input type that accepts GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRuleDestinationArray and GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRuleDestinationArrayOutput values.
@@ -13017,12 +11020,6 @@ func (i GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteR
 	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRuleDestinationArrayOutput)
 }
 
-func (i GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRuleDestinationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRuleDestination] {
-	return pulumix.Output[[]GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRuleDestination]{
-		OutputState: i.ToGetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRuleDestinationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRuleDestinationOutput struct{ *pulumi.OutputState }
 
 func (GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRuleDestinationOutput) ElementType() reflect.Type {
@@ -13037,31 +11034,25 @@ func (o GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteR
 	return o
 }
 
-func (o GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRuleDestinationOutput) ToOutput(ctx context.Context) pulumix.Output[GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRuleDestination] {
-	return pulumix.Output[GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRuleDestination]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Port on virtual deployment to target. If port is missing, the rule will target all ports on the virtual deployment.
-func (o GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRuleDestinationOutput) Port() pulumi.IntOutput {
-	return o.ApplyT(func(v GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRuleDestination) int {
+func (o GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRuleDestinationOutput) Port() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRuleDestination) *int {
 		return v.Port
-	}).(pulumi.IntOutput)
+	}).(pulumi.IntPtrOutput)
 }
 
 // The OCID of the virtual deployment where the request will be routed.
-func (o GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRuleDestinationOutput) VirtualDeploymentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRuleDestination) string {
+func (o GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRuleDestinationOutput) VirtualDeploymentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRuleDestination) *string {
 		return v.VirtualDeploymentId
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Weight of traffic target.
-func (o GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRuleDestinationOutput) Weight() pulumi.IntOutput {
-	return o.ApplyT(func(v GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRuleDestination) int {
+func (o GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRuleDestinationOutput) Weight() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRuleDestination) *int {
 		return v.Weight
-	}).(pulumi.IntOutput)
+	}).(pulumi.IntPtrOutput)
 }
 
 type GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRuleDestinationArrayOutput struct{ *pulumi.OutputState }
@@ -13076,12 +11067,6 @@ func (o GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteR
 
 func (o GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRuleDestinationArrayOutput) ToGetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRuleDestinationArrayOutputWithContext(ctx context.Context) GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRuleDestinationArrayOutput {
 	return o
-}
-
-func (o GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRuleDestinationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRuleDestination] {
-	return pulumix.Output[[]GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRuleDestination]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRuleDestinationArrayOutput) Index(i pulumi.IntInput) GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRuleDestinationOutput {
@@ -13127,12 +11112,6 @@ func (i GetVirtualServicesFilterArgs) ToGetVirtualServicesFilterOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualServicesFilterOutput)
 }
 
-func (i GetVirtualServicesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetVirtualServicesFilter] {
-	return pulumix.Output[GetVirtualServicesFilter]{
-		OutputState: i.ToGetVirtualServicesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetVirtualServicesFilterArrayInput is an input type that accepts GetVirtualServicesFilterArray and GetVirtualServicesFilterArrayOutput values.
 // You can construct a concrete instance of `GetVirtualServicesFilterArrayInput` via:
 //
@@ -13158,12 +11137,6 @@ func (i GetVirtualServicesFilterArray) ToGetVirtualServicesFilterArrayOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualServicesFilterArrayOutput)
 }
 
-func (i GetVirtualServicesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVirtualServicesFilter] {
-	return pulumix.Output[[]GetVirtualServicesFilter]{
-		OutputState: i.ToGetVirtualServicesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetVirtualServicesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetVirtualServicesFilterOutput) ElementType() reflect.Type {
@@ -13176,12 +11149,6 @@ func (o GetVirtualServicesFilterOutput) ToGetVirtualServicesFilterOutput() GetVi
 
 func (o GetVirtualServicesFilterOutput) ToGetVirtualServicesFilterOutputWithContext(ctx context.Context) GetVirtualServicesFilterOutput {
 	return o
-}
-
-func (o GetVirtualServicesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetVirtualServicesFilter] {
-	return pulumix.Output[GetVirtualServicesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A filter to return only resources that match the entire name given.
@@ -13209,12 +11176,6 @@ func (o GetVirtualServicesFilterArrayOutput) ToGetVirtualServicesFilterArrayOutp
 
 func (o GetVirtualServicesFilterArrayOutput) ToGetVirtualServicesFilterArrayOutputWithContext(ctx context.Context) GetVirtualServicesFilterArrayOutput {
 	return o
-}
-
-func (o GetVirtualServicesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVirtualServicesFilter] {
-	return pulumix.Output[[]GetVirtualServicesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetVirtualServicesFilterArrayOutput) Index(i pulumi.IntInput) GetVirtualServicesFilterOutput {
@@ -13254,12 +11215,6 @@ func (i GetVirtualServicesVirtualServiceCollectionArgs) ToGetVirtualServicesVirt
 	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualServicesVirtualServiceCollectionOutput)
 }
 
-func (i GetVirtualServicesVirtualServiceCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetVirtualServicesVirtualServiceCollection] {
-	return pulumix.Output[GetVirtualServicesVirtualServiceCollection]{
-		OutputState: i.ToGetVirtualServicesVirtualServiceCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetVirtualServicesVirtualServiceCollectionArrayInput is an input type that accepts GetVirtualServicesVirtualServiceCollectionArray and GetVirtualServicesVirtualServiceCollectionArrayOutput values.
 // You can construct a concrete instance of `GetVirtualServicesVirtualServiceCollectionArrayInput` via:
 //
@@ -13285,12 +11240,6 @@ func (i GetVirtualServicesVirtualServiceCollectionArray) ToGetVirtualServicesVir
 	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualServicesVirtualServiceCollectionArrayOutput)
 }
 
-func (i GetVirtualServicesVirtualServiceCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVirtualServicesVirtualServiceCollection] {
-	return pulumix.Output[[]GetVirtualServicesVirtualServiceCollection]{
-		OutputState: i.ToGetVirtualServicesVirtualServiceCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetVirtualServicesVirtualServiceCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetVirtualServicesVirtualServiceCollectionOutput) ElementType() reflect.Type {
@@ -13303,12 +11252,6 @@ func (o GetVirtualServicesVirtualServiceCollectionOutput) ToGetVirtualServicesVi
 
 func (o GetVirtualServicesVirtualServiceCollectionOutput) ToGetVirtualServicesVirtualServiceCollectionOutputWithContext(ctx context.Context) GetVirtualServicesVirtualServiceCollectionOutput {
 	return o
-}
-
-func (o GetVirtualServicesVirtualServiceCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetVirtualServicesVirtualServiceCollection] {
-	return pulumix.Output[GetVirtualServicesVirtualServiceCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetVirtualServicesVirtualServiceCollectionOutput) Items() GetVirtualServicesVirtualServiceCollectionItemArrayOutput {
@@ -13331,12 +11274,6 @@ func (o GetVirtualServicesVirtualServiceCollectionArrayOutput) ToGetVirtualServi
 	return o
 }
 
-func (o GetVirtualServicesVirtualServiceCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVirtualServicesVirtualServiceCollection] {
-	return pulumix.Output[[]GetVirtualServicesVirtualServiceCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetVirtualServicesVirtualServiceCollectionArrayOutput) Index(i pulumi.IntInput) GetVirtualServicesVirtualServiceCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVirtualServicesVirtualServiceCollection {
 		return vs[0].([]GetVirtualServicesVirtualServiceCollection)[vs[1].(int)]
@@ -13345,35 +11282,35 @@ func (o GetVirtualServicesVirtualServiceCollectionArrayOutput) Index(i pulumi.In
 
 type GetVirtualServicesVirtualServiceCollectionItem struct {
 	// The ID of the compartment in which to list resources.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Routing policy for the virtual service.
 	DefaultRoutingPolicies []GetVirtualServicesVirtualServiceCollectionItemDefaultRoutingPolicy `pulumi:"defaultRoutingPolicies"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// Description of the resource. It can be changed after creation. Avoid entering confidential information.  Example: `This is my new resource`
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The DNS hostnames of the virtual service that is used by its callers. Wildcard hostnames are supported in the prefix form. Examples of valid hostnames are "www.example.com", "*.example.com", "*.com". Can be omitted if the virtual service will only have TCP virtual deployments.
 	Hosts []string `pulumi:"hosts"`
 	// Unique VirtualService identifier.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// Unique Mesh identifier.
-	MeshId string `pulumi:"meshId"`
+	MeshId *string `pulumi:"meshId"`
 	// Mutual TLS settings used when communicating with other virtual services or ingress gateways within the mesh.
 	Mtls []GetVirtualServicesVirtualServiceCollectionItemMtl `pulumi:"mtls"`
 	// A filter to return only resources that match the entire name given.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// A filter to return only resources that match the life cycle state given.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The time when this resource was created in an RFC3339 formatted datetime string.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time when this resource was updated in an RFC3339 formatted datetime string.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 // GetVirtualServicesVirtualServiceCollectionItemInput is an input type that accepts GetVirtualServicesVirtualServiceCollectionItemArgs and GetVirtualServicesVirtualServiceCollectionItemOutput values.
@@ -13389,35 +11326,35 @@ type GetVirtualServicesVirtualServiceCollectionItemInput interface {
 
 type GetVirtualServicesVirtualServiceCollectionItemArgs struct {
 	// The ID of the compartment in which to list resources.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// Routing policy for the virtual service.
 	DefaultRoutingPolicies GetVirtualServicesVirtualServiceCollectionItemDefaultRoutingPolicyArrayInput `pulumi:"defaultRoutingPolicies"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// Description of the resource. It can be changed after creation. Avoid entering confidential information.  Example: `This is my new resource`
-	Description pulumi.StringInput `pulumi:"description"`
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// The DNS hostnames of the virtual service that is used by its callers. Wildcard hostnames are supported in the prefix form. Examples of valid hostnames are "www.example.com", "*.example.com", "*.com". Can be omitted if the virtual service will only have TCP virtual deployments.
 	Hosts pulumi.StringArrayInput `pulumi:"hosts"`
 	// Unique VirtualService identifier.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
-	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrInput `pulumi:"lifecycleDetails"`
 	// Unique Mesh identifier.
-	MeshId pulumi.StringInput `pulumi:"meshId"`
+	MeshId pulumi.StringPtrInput `pulumi:"meshId"`
 	// Mutual TLS settings used when communicating with other virtual services or ingress gateways within the mesh.
 	Mtls GetVirtualServicesVirtualServiceCollectionItemMtlArrayInput `pulumi:"mtls"`
 	// A filter to return only resources that match the entire name given.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// A filter to return only resources that match the life cycle state given.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapInput `pulumi:"systemTags"`
 	// The time when this resource was created in an RFC3339 formatted datetime string.
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// The time when this resource was updated in an RFC3339 formatted datetime string.
-	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
 }
 
 func (GetVirtualServicesVirtualServiceCollectionItemArgs) ElementType() reflect.Type {
@@ -13430,12 +11367,6 @@ func (i GetVirtualServicesVirtualServiceCollectionItemArgs) ToGetVirtualServices
 
 func (i GetVirtualServicesVirtualServiceCollectionItemArgs) ToGetVirtualServicesVirtualServiceCollectionItemOutputWithContext(ctx context.Context) GetVirtualServicesVirtualServiceCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualServicesVirtualServiceCollectionItemOutput)
-}
-
-func (i GetVirtualServicesVirtualServiceCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetVirtualServicesVirtualServiceCollectionItem] {
-	return pulumix.Output[GetVirtualServicesVirtualServiceCollectionItem]{
-		OutputState: i.ToGetVirtualServicesVirtualServiceCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetVirtualServicesVirtualServiceCollectionItemArrayInput is an input type that accepts GetVirtualServicesVirtualServiceCollectionItemArray and GetVirtualServicesVirtualServiceCollectionItemArrayOutput values.
@@ -13463,12 +11394,6 @@ func (i GetVirtualServicesVirtualServiceCollectionItemArray) ToGetVirtualService
 	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualServicesVirtualServiceCollectionItemArrayOutput)
 }
 
-func (i GetVirtualServicesVirtualServiceCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVirtualServicesVirtualServiceCollectionItem] {
-	return pulumix.Output[[]GetVirtualServicesVirtualServiceCollectionItem]{
-		OutputState: i.ToGetVirtualServicesVirtualServiceCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetVirtualServicesVirtualServiceCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetVirtualServicesVirtualServiceCollectionItemOutput) ElementType() reflect.Type {
@@ -13483,15 +11408,9 @@ func (o GetVirtualServicesVirtualServiceCollectionItemOutput) ToGetVirtualServic
 	return o
 }
 
-func (o GetVirtualServicesVirtualServiceCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetVirtualServicesVirtualServiceCollectionItem] {
-	return pulumix.Output[GetVirtualServicesVirtualServiceCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The ID of the compartment in which to list resources.
-func (o GetVirtualServicesVirtualServiceCollectionItemOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVirtualServicesVirtualServiceCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetVirtualServicesVirtualServiceCollectionItemOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVirtualServicesVirtualServiceCollectionItem) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Routing policy for the virtual service.
@@ -13507,8 +11426,8 @@ func (o GetVirtualServicesVirtualServiceCollectionItemOutput) DefinedTags() pulu
 }
 
 // Description of the resource. It can be changed after creation. Avoid entering confidential information.  Example: `This is my new resource`
-func (o GetVirtualServicesVirtualServiceCollectionItemOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVirtualServicesVirtualServiceCollectionItem) string { return v.Description }).(pulumi.StringOutput)
+func (o GetVirtualServicesVirtualServiceCollectionItemOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVirtualServicesVirtualServiceCollectionItem) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -13522,18 +11441,18 @@ func (o GetVirtualServicesVirtualServiceCollectionItemOutput) Hosts() pulumi.Str
 }
 
 // Unique VirtualService identifier.
-func (o GetVirtualServicesVirtualServiceCollectionItemOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVirtualServicesVirtualServiceCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+func (o GetVirtualServicesVirtualServiceCollectionItemOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVirtualServicesVirtualServiceCollectionItem) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
-func (o GetVirtualServicesVirtualServiceCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVirtualServicesVirtualServiceCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o GetVirtualServicesVirtualServiceCollectionItemOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVirtualServicesVirtualServiceCollectionItem) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // Unique Mesh identifier.
-func (o GetVirtualServicesVirtualServiceCollectionItemOutput) MeshId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVirtualServicesVirtualServiceCollectionItem) string { return v.MeshId }).(pulumi.StringOutput)
+func (o GetVirtualServicesVirtualServiceCollectionItemOutput) MeshId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVirtualServicesVirtualServiceCollectionItem) *string { return v.MeshId }).(pulumi.StringPtrOutput)
 }
 
 // Mutual TLS settings used when communicating with other virtual services or ingress gateways within the mesh.
@@ -13544,13 +11463,13 @@ func (o GetVirtualServicesVirtualServiceCollectionItemOutput) Mtls() GetVirtualS
 }
 
 // A filter to return only resources that match the entire name given.
-func (o GetVirtualServicesVirtualServiceCollectionItemOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVirtualServicesVirtualServiceCollectionItem) string { return v.Name }).(pulumi.StringOutput)
+func (o GetVirtualServicesVirtualServiceCollectionItemOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVirtualServicesVirtualServiceCollectionItem) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // A filter to return only resources that match the life cycle state given.
-func (o GetVirtualServicesVirtualServiceCollectionItemOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVirtualServicesVirtualServiceCollectionItem) string { return v.State }).(pulumi.StringOutput)
+func (o GetVirtualServicesVirtualServiceCollectionItemOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVirtualServicesVirtualServiceCollectionItem) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -13559,13 +11478,13 @@ func (o GetVirtualServicesVirtualServiceCollectionItemOutput) SystemTags() pulum
 }
 
 // The time when this resource was created in an RFC3339 formatted datetime string.
-func (o GetVirtualServicesVirtualServiceCollectionItemOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVirtualServicesVirtualServiceCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetVirtualServicesVirtualServiceCollectionItemOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVirtualServicesVirtualServiceCollectionItem) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time when this resource was updated in an RFC3339 formatted datetime string.
-func (o GetVirtualServicesVirtualServiceCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVirtualServicesVirtualServiceCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o GetVirtualServicesVirtualServiceCollectionItemOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVirtualServicesVirtualServiceCollectionItem) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type GetVirtualServicesVirtualServiceCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -13582,12 +11501,6 @@ func (o GetVirtualServicesVirtualServiceCollectionItemArrayOutput) ToGetVirtualS
 	return o
 }
 
-func (o GetVirtualServicesVirtualServiceCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVirtualServicesVirtualServiceCollectionItem] {
-	return pulumix.Output[[]GetVirtualServicesVirtualServiceCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetVirtualServicesVirtualServiceCollectionItemArrayOutput) Index(i pulumi.IntInput) GetVirtualServicesVirtualServiceCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVirtualServicesVirtualServiceCollectionItem {
 		return vs[0].([]GetVirtualServicesVirtualServiceCollectionItem)[vs[1].(int)]
@@ -13596,7 +11509,7 @@ func (o GetVirtualServicesVirtualServiceCollectionItemArrayOutput) Index(i pulum
 
 type GetVirtualServicesVirtualServiceCollectionItemDefaultRoutingPolicy struct {
 	// Type of the virtual service routing policy.
-	Type string `pulumi:"type"`
+	Type *string `pulumi:"type"`
 }
 
 // GetVirtualServicesVirtualServiceCollectionItemDefaultRoutingPolicyInput is an input type that accepts GetVirtualServicesVirtualServiceCollectionItemDefaultRoutingPolicyArgs and GetVirtualServicesVirtualServiceCollectionItemDefaultRoutingPolicyOutput values.
@@ -13612,7 +11525,7 @@ type GetVirtualServicesVirtualServiceCollectionItemDefaultRoutingPolicyInput int
 
 type GetVirtualServicesVirtualServiceCollectionItemDefaultRoutingPolicyArgs struct {
 	// Type of the virtual service routing policy.
-	Type pulumi.StringInput `pulumi:"type"`
+	Type pulumi.StringPtrInput `pulumi:"type"`
 }
 
 func (GetVirtualServicesVirtualServiceCollectionItemDefaultRoutingPolicyArgs) ElementType() reflect.Type {
@@ -13625,12 +11538,6 @@ func (i GetVirtualServicesVirtualServiceCollectionItemDefaultRoutingPolicyArgs) 
 
 func (i GetVirtualServicesVirtualServiceCollectionItemDefaultRoutingPolicyArgs) ToGetVirtualServicesVirtualServiceCollectionItemDefaultRoutingPolicyOutputWithContext(ctx context.Context) GetVirtualServicesVirtualServiceCollectionItemDefaultRoutingPolicyOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualServicesVirtualServiceCollectionItemDefaultRoutingPolicyOutput)
-}
-
-func (i GetVirtualServicesVirtualServiceCollectionItemDefaultRoutingPolicyArgs) ToOutput(ctx context.Context) pulumix.Output[GetVirtualServicesVirtualServiceCollectionItemDefaultRoutingPolicy] {
-	return pulumix.Output[GetVirtualServicesVirtualServiceCollectionItemDefaultRoutingPolicy]{
-		OutputState: i.ToGetVirtualServicesVirtualServiceCollectionItemDefaultRoutingPolicyOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetVirtualServicesVirtualServiceCollectionItemDefaultRoutingPolicyArrayInput is an input type that accepts GetVirtualServicesVirtualServiceCollectionItemDefaultRoutingPolicyArray and GetVirtualServicesVirtualServiceCollectionItemDefaultRoutingPolicyArrayOutput values.
@@ -13658,12 +11565,6 @@ func (i GetVirtualServicesVirtualServiceCollectionItemDefaultRoutingPolicyArray)
 	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualServicesVirtualServiceCollectionItemDefaultRoutingPolicyArrayOutput)
 }
 
-func (i GetVirtualServicesVirtualServiceCollectionItemDefaultRoutingPolicyArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVirtualServicesVirtualServiceCollectionItemDefaultRoutingPolicy] {
-	return pulumix.Output[[]GetVirtualServicesVirtualServiceCollectionItemDefaultRoutingPolicy]{
-		OutputState: i.ToGetVirtualServicesVirtualServiceCollectionItemDefaultRoutingPolicyArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetVirtualServicesVirtualServiceCollectionItemDefaultRoutingPolicyOutput struct{ *pulumi.OutputState }
 
 func (GetVirtualServicesVirtualServiceCollectionItemDefaultRoutingPolicyOutput) ElementType() reflect.Type {
@@ -13678,15 +11579,9 @@ func (o GetVirtualServicesVirtualServiceCollectionItemDefaultRoutingPolicyOutput
 	return o
 }
 
-func (o GetVirtualServicesVirtualServiceCollectionItemDefaultRoutingPolicyOutput) ToOutput(ctx context.Context) pulumix.Output[GetVirtualServicesVirtualServiceCollectionItemDefaultRoutingPolicy] {
-	return pulumix.Output[GetVirtualServicesVirtualServiceCollectionItemDefaultRoutingPolicy]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Type of the virtual service routing policy.
-func (o GetVirtualServicesVirtualServiceCollectionItemDefaultRoutingPolicyOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVirtualServicesVirtualServiceCollectionItemDefaultRoutingPolicy) string { return v.Type }).(pulumi.StringOutput)
+func (o GetVirtualServicesVirtualServiceCollectionItemDefaultRoutingPolicyOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVirtualServicesVirtualServiceCollectionItemDefaultRoutingPolicy) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
 
 type GetVirtualServicesVirtualServiceCollectionItemDefaultRoutingPolicyArrayOutput struct{ *pulumi.OutputState }
@@ -13703,12 +11598,6 @@ func (o GetVirtualServicesVirtualServiceCollectionItemDefaultRoutingPolicyArrayO
 	return o
 }
 
-func (o GetVirtualServicesVirtualServiceCollectionItemDefaultRoutingPolicyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVirtualServicesVirtualServiceCollectionItemDefaultRoutingPolicy] {
-	return pulumix.Output[[]GetVirtualServicesVirtualServiceCollectionItemDefaultRoutingPolicy]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetVirtualServicesVirtualServiceCollectionItemDefaultRoutingPolicyArrayOutput) Index(i pulumi.IntInput) GetVirtualServicesVirtualServiceCollectionItemDefaultRoutingPolicyOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVirtualServicesVirtualServiceCollectionItemDefaultRoutingPolicy {
 		return vs[0].([]GetVirtualServicesVirtualServiceCollectionItemDefaultRoutingPolicy)[vs[1].(int)]
@@ -13717,11 +11606,11 @@ func (o GetVirtualServicesVirtualServiceCollectionItemDefaultRoutingPolicyArrayO
 
 type GetVirtualServicesVirtualServiceCollectionItemMtl struct {
 	// The OCID of the certificate resource that will be used for mTLS authentication with other virtual services in the mesh.
-	CertificateId string `pulumi:"certificateId"`
+	CertificateId *string `pulumi:"certificateId"`
 	// The number of days the mTLS certificate is valid.  This value should be less than the Maximum Validity Duration  for Certificates (Days) setting on the Certificate Authority associated with this Mesh.  The certificate will be automatically renewed after 2/3 of the validity period, so a certificate with a maximum validity of 45 days will be renewed every 30 days.
-	MaximumValidity int `pulumi:"maximumValidity"`
+	MaximumValidity *int `pulumi:"maximumValidity"`
 	// DISABLED: Connection is not tunneled. PERMISSIVE: Connection can be either plaintext or an mTLS tunnel. STRICT: Connection is an mTLS tunnel.  Clients without a valid certificate will be rejected.
-	Mode string `pulumi:"mode"`
+	Mode *string `pulumi:"mode"`
 }
 
 // GetVirtualServicesVirtualServiceCollectionItemMtlInput is an input type that accepts GetVirtualServicesVirtualServiceCollectionItemMtlArgs and GetVirtualServicesVirtualServiceCollectionItemMtlOutput values.
@@ -13737,11 +11626,11 @@ type GetVirtualServicesVirtualServiceCollectionItemMtlInput interface {
 
 type GetVirtualServicesVirtualServiceCollectionItemMtlArgs struct {
 	// The OCID of the certificate resource that will be used for mTLS authentication with other virtual services in the mesh.
-	CertificateId pulumi.StringInput `pulumi:"certificateId"`
+	CertificateId pulumi.StringPtrInput `pulumi:"certificateId"`
 	// The number of days the mTLS certificate is valid.  This value should be less than the Maximum Validity Duration  for Certificates (Days) setting on the Certificate Authority associated with this Mesh.  The certificate will be automatically renewed after 2/3 of the validity period, so a certificate with a maximum validity of 45 days will be renewed every 30 days.
-	MaximumValidity pulumi.IntInput `pulumi:"maximumValidity"`
+	MaximumValidity pulumi.IntPtrInput `pulumi:"maximumValidity"`
 	// DISABLED: Connection is not tunneled. PERMISSIVE: Connection can be either plaintext or an mTLS tunnel. STRICT: Connection is an mTLS tunnel.  Clients without a valid certificate will be rejected.
-	Mode pulumi.StringInput `pulumi:"mode"`
+	Mode pulumi.StringPtrInput `pulumi:"mode"`
 }
 
 func (GetVirtualServicesVirtualServiceCollectionItemMtlArgs) ElementType() reflect.Type {
@@ -13754,12 +11643,6 @@ func (i GetVirtualServicesVirtualServiceCollectionItemMtlArgs) ToGetVirtualServi
 
 func (i GetVirtualServicesVirtualServiceCollectionItemMtlArgs) ToGetVirtualServicesVirtualServiceCollectionItemMtlOutputWithContext(ctx context.Context) GetVirtualServicesVirtualServiceCollectionItemMtlOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualServicesVirtualServiceCollectionItemMtlOutput)
-}
-
-func (i GetVirtualServicesVirtualServiceCollectionItemMtlArgs) ToOutput(ctx context.Context) pulumix.Output[GetVirtualServicesVirtualServiceCollectionItemMtl] {
-	return pulumix.Output[GetVirtualServicesVirtualServiceCollectionItemMtl]{
-		OutputState: i.ToGetVirtualServicesVirtualServiceCollectionItemMtlOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetVirtualServicesVirtualServiceCollectionItemMtlArrayInput is an input type that accepts GetVirtualServicesVirtualServiceCollectionItemMtlArray and GetVirtualServicesVirtualServiceCollectionItemMtlArrayOutput values.
@@ -13787,12 +11670,6 @@ func (i GetVirtualServicesVirtualServiceCollectionItemMtlArray) ToGetVirtualServ
 	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualServicesVirtualServiceCollectionItemMtlArrayOutput)
 }
 
-func (i GetVirtualServicesVirtualServiceCollectionItemMtlArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVirtualServicesVirtualServiceCollectionItemMtl] {
-	return pulumix.Output[[]GetVirtualServicesVirtualServiceCollectionItemMtl]{
-		OutputState: i.ToGetVirtualServicesVirtualServiceCollectionItemMtlArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetVirtualServicesVirtualServiceCollectionItemMtlOutput struct{ *pulumi.OutputState }
 
 func (GetVirtualServicesVirtualServiceCollectionItemMtlOutput) ElementType() reflect.Type {
@@ -13807,25 +11684,19 @@ func (o GetVirtualServicesVirtualServiceCollectionItemMtlOutput) ToGetVirtualSer
 	return o
 }
 
-func (o GetVirtualServicesVirtualServiceCollectionItemMtlOutput) ToOutput(ctx context.Context) pulumix.Output[GetVirtualServicesVirtualServiceCollectionItemMtl] {
-	return pulumix.Output[GetVirtualServicesVirtualServiceCollectionItemMtl]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the certificate resource that will be used for mTLS authentication with other virtual services in the mesh.
-func (o GetVirtualServicesVirtualServiceCollectionItemMtlOutput) CertificateId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVirtualServicesVirtualServiceCollectionItemMtl) string { return v.CertificateId }).(pulumi.StringOutput)
+func (o GetVirtualServicesVirtualServiceCollectionItemMtlOutput) CertificateId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVirtualServicesVirtualServiceCollectionItemMtl) *string { return v.CertificateId }).(pulumi.StringPtrOutput)
 }
 
 // The number of days the mTLS certificate is valid.  This value should be less than the Maximum Validity Duration  for Certificates (Days) setting on the Certificate Authority associated with this Mesh.  The certificate will be automatically renewed after 2/3 of the validity period, so a certificate with a maximum validity of 45 days will be renewed every 30 days.
-func (o GetVirtualServicesVirtualServiceCollectionItemMtlOutput) MaximumValidity() pulumi.IntOutput {
-	return o.ApplyT(func(v GetVirtualServicesVirtualServiceCollectionItemMtl) int { return v.MaximumValidity }).(pulumi.IntOutput)
+func (o GetVirtualServicesVirtualServiceCollectionItemMtlOutput) MaximumValidity() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetVirtualServicesVirtualServiceCollectionItemMtl) *int { return v.MaximumValidity }).(pulumi.IntPtrOutput)
 }
 
 // DISABLED: Connection is not tunneled. PERMISSIVE: Connection can be either plaintext or an mTLS tunnel. STRICT: Connection is an mTLS tunnel.  Clients without a valid certificate will be rejected.
-func (o GetVirtualServicesVirtualServiceCollectionItemMtlOutput) Mode() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVirtualServicesVirtualServiceCollectionItemMtl) string { return v.Mode }).(pulumi.StringOutput)
+func (o GetVirtualServicesVirtualServiceCollectionItemMtlOutput) Mode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVirtualServicesVirtualServiceCollectionItemMtl) *string { return v.Mode }).(pulumi.StringPtrOutput)
 }
 
 type GetVirtualServicesVirtualServiceCollectionItemMtlArrayOutput struct{ *pulumi.OutputState }
@@ -13840,12 +11711,6 @@ func (o GetVirtualServicesVirtualServiceCollectionItemMtlArrayOutput) ToGetVirtu
 
 func (o GetVirtualServicesVirtualServiceCollectionItemMtlArrayOutput) ToGetVirtualServicesVirtualServiceCollectionItemMtlArrayOutputWithContext(ctx context.Context) GetVirtualServicesVirtualServiceCollectionItemMtlArrayOutput {
 	return o
-}
-
-func (o GetVirtualServicesVirtualServiceCollectionItemMtlArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVirtualServicesVirtualServiceCollectionItemMtl] {
-	return pulumix.Output[[]GetVirtualServicesVirtualServiceCollectionItemMtl]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetVirtualServicesVirtualServiceCollectionItemMtlArrayOutput) Index(i pulumi.IntInput) GetVirtualServicesVirtualServiceCollectionItemMtlOutput {

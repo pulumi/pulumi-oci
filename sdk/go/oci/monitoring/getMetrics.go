@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Metrics in Oracle Cloud Infrastructure Monitoring service.
@@ -95,7 +94,7 @@ type GetMetricsResult struct {
 	Filters                []GetMetricsFilter     `pulumi:"filters"`
 	GroupBies              []string               `pulumi:"groupBies"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The list of metrics.
 	Metrics []GetMetricsMetric `pulumi:"metrics"`
 	// The name of the metric.  Example: `CpuUtilization`
@@ -159,12 +158,6 @@ func (o GetMetricsResultOutput) ToGetMetricsResultOutputWithContext(ctx context.
 	return o
 }
 
-func (o GetMetricsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetMetricsResult] {
-	return pulumix.Output[GetMetricsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the resources monitored by the metric.
 func (o GetMetricsResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMetricsResult) string { return v.CompartmentId }).(pulumi.StringOutput)
@@ -187,8 +180,8 @@ func (o GetMetricsResultOutput) GroupBies() pulumi.StringArrayOutput {
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetMetricsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMetricsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetMetricsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMetricsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The list of metrics.

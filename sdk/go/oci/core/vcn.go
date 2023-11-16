@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Vcn resource in Oracle Cloud Infrastructure Core service.
@@ -118,7 +117,7 @@ type Vcn struct {
 	// The list of BYOIPv6 OCIDs and BYOIPv6 prefixes required to create a VCN that uses BYOIPv6 address ranges.
 	Byoipv6cidrDetails VcnByoipv6cidrDetailArrayOutput `pulumi:"byoipv6cidrDetails"`
 	// **Deprecated.** Do *not* set this value. Use `cidrBlocks` instead. Example: `10.0.0.0/16`
-	CidrBlock pulumi.StringOutput `pulumi:"cidrBlock"`
+	CidrBlock pulumi.StringPtrOutput `pulumi:"cidrBlock"`
 	// (Updatable) The list of one or more IPv4 CIDR blocks for the VCN that meet the following criteria:
 	// * The CIDR blocks must be valid.
 	// * They must not overlap with each other or with the on-premises network CIDR block.
@@ -128,22 +127,22 @@ type Vcn struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the VCN.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the VCN's default set of DHCP options.
-	DefaultDhcpOptionsId pulumi.StringOutput `pulumi:"defaultDhcpOptionsId"`
+	DefaultDhcpOptionsId pulumi.StringPtrOutput `pulumi:"defaultDhcpOptionsId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the VCN's default route table.
-	DefaultRouteTableId pulumi.StringOutput `pulumi:"defaultRouteTableId"`
+	DefaultRouteTableId pulumi.StringPtrOutput `pulumi:"defaultRouteTableId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the VCN's default security list.
-	DefaultSecurityListId pulumi.StringOutput `pulumi:"defaultSecurityListId"`
+	DefaultSecurityListId pulumi.StringPtrOutput `pulumi:"defaultSecurityListId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrOutput `pulumi:"displayName"`
 	// A DNS label for the VCN, used in conjunction with the VNIC's hostname and subnet's DNS label to form a fully qualified domain name (FQDN) for each VNIC within this subnet (for example, `bminstance1.subnet123.vcn1.oraclevcn.com`). Not required to be unique, but it's a best practice to set unique DNS labels for VCNs in your tenancy. Must be an alphanumeric string that begins with a letter. The value cannot be changed.
 	// You must set this value if you want instances to be able to use hostnames to resolve other instances in the VCN. Otherwise the Internet and VCN Resolver will not work.
 	//
 	// For more information, see [DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
 	//
 	// Example: `vcn1`
-	DnsLabel pulumi.StringOutput `pulumi:"dnsLabel"`
+	DnsLabel pulumi.StringPtrOutput `pulumi:"dnsLabel"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// For an IPv6-enabled VCN, this is the list of IPv6 prefixes for the VCN's IP address space. The prefixes are provided by Oracle and the sizes are always /56.
@@ -156,18 +155,18 @@ type Vcn struct {
 	// **Important:** Do *not* specify a value for `ipv6cidrBlock`. Use this parameter instead.
 	Ipv6privateCidrBlocks pulumi.StringArrayOutput `pulumi:"ipv6privateCidrBlocks"`
 	// Whether IPv6 is enabled for the VCN. Default is `false`. If enabled, Oracle will assign the VCN a IPv6 /56 CIDR block. You may skip having Oracle allocate the VCN a IPv6 /56 CIDR block by setting isOracleGuaAllocationEnabled to `false`. For important details about IPv6 addressing in a VCN, see [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).  Example: `true`
-	IsIpv6enabled pulumi.BoolOutput `pulumi:"isIpv6enabled"`
+	IsIpv6enabled pulumi.BoolPtrOutput `pulumi:"isIpv6enabled"`
 	// Specifies whether to skip Oracle allocated IPv6 GUA. By default, Oracle will allocate one GUA of /56 size for an IPv6 enabled VCN.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	IsOracleGuaAllocationEnabled pulumi.BoolOutput `pulumi:"isOracleGuaAllocationEnabled"`
+	IsOracleGuaAllocationEnabled pulumi.BoolPtrOutput `pulumi:"isOracleGuaAllocationEnabled"`
 	// The VCN's current state.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// The date and time the VCN was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The VCN's domain name, which consists of the VCN's DNS label, and the `oraclevcn.com` domain.
-	VcnDomainName pulumi.StringOutput `pulumi:"vcnDomainName"`
+	VcnDomainName pulumi.StringPtrOutput `pulumi:"vcnDomainName"`
 }
 
 // NewVcn registers a new resource with the given unique name, arguments, and options.
@@ -430,12 +429,6 @@ func (i *Vcn) ToVcnOutputWithContext(ctx context.Context) VcnOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(VcnOutput)
 }
 
-func (i *Vcn) ToOutput(ctx context.Context) pulumix.Output[*Vcn] {
-	return pulumix.Output[*Vcn]{
-		OutputState: i.ToVcnOutputWithContext(ctx).OutputState,
-	}
-}
-
 // VcnArrayInput is an input type that accepts VcnArray and VcnArrayOutput values.
 // You can construct a concrete instance of `VcnArrayInput` via:
 //
@@ -459,12 +452,6 @@ func (i VcnArray) ToVcnArrayOutput() VcnArrayOutput {
 
 func (i VcnArray) ToVcnArrayOutputWithContext(ctx context.Context) VcnArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(VcnArrayOutput)
-}
-
-func (i VcnArray) ToOutput(ctx context.Context) pulumix.Output[[]*Vcn] {
-	return pulumix.Output[[]*Vcn]{
-		OutputState: i.ToVcnArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // VcnMapInput is an input type that accepts VcnMap and VcnMapOutput values.
@@ -492,12 +479,6 @@ func (i VcnMap) ToVcnMapOutputWithContext(ctx context.Context) VcnMapOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(VcnMapOutput)
 }
 
-func (i VcnMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*Vcn] {
-	return pulumix.Output[map[string]*Vcn]{
-		OutputState: i.ToVcnMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type VcnOutput struct{ *pulumi.OutputState }
 
 func (VcnOutput) ElementType() reflect.Type {
@@ -512,12 +493,6 @@ func (o VcnOutput) ToVcnOutputWithContext(ctx context.Context) VcnOutput {
 	return o
 }
 
-func (o VcnOutput) ToOutput(ctx context.Context) pulumix.Output[*Vcn] {
-	return pulumix.Output[*Vcn]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The list of BYOIPv6 prefixes required to create a VCN that uses BYOIPv6 ranges.
 func (o VcnOutput) Byoipv6cidrBlocks() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *Vcn) pulumi.StringArrayOutput { return v.Byoipv6cidrBlocks }).(pulumi.StringArrayOutput)
@@ -529,8 +504,8 @@ func (o VcnOutput) Byoipv6cidrDetails() VcnByoipv6cidrDetailArrayOutput {
 }
 
 // **Deprecated.** Do *not* set this value. Use `cidrBlocks` instead. Example: `10.0.0.0/16`
-func (o VcnOutput) CidrBlock() pulumi.StringOutput {
-	return o.ApplyT(func(v *Vcn) pulumi.StringOutput { return v.CidrBlock }).(pulumi.StringOutput)
+func (o VcnOutput) CidrBlock() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Vcn) pulumi.StringPtrOutput { return v.CidrBlock }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The list of one or more IPv4 CIDR blocks for the VCN that meet the following criteria:
@@ -548,18 +523,18 @@ func (o VcnOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the VCN's default set of DHCP options.
-func (o VcnOutput) DefaultDhcpOptionsId() pulumi.StringOutput {
-	return o.ApplyT(func(v *Vcn) pulumi.StringOutput { return v.DefaultDhcpOptionsId }).(pulumi.StringOutput)
+func (o VcnOutput) DefaultDhcpOptionsId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Vcn) pulumi.StringPtrOutput { return v.DefaultDhcpOptionsId }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the VCN's default route table.
-func (o VcnOutput) DefaultRouteTableId() pulumi.StringOutput {
-	return o.ApplyT(func(v *Vcn) pulumi.StringOutput { return v.DefaultRouteTableId }).(pulumi.StringOutput)
+func (o VcnOutput) DefaultRouteTableId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Vcn) pulumi.StringPtrOutput { return v.DefaultRouteTableId }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the VCN's default security list.
-func (o VcnOutput) DefaultSecurityListId() pulumi.StringOutput {
-	return o.ApplyT(func(v *Vcn) pulumi.StringOutput { return v.DefaultSecurityListId }).(pulumi.StringOutput)
+func (o VcnOutput) DefaultSecurityListId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Vcn) pulumi.StringPtrOutput { return v.DefaultSecurityListId }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -568,8 +543,8 @@ func (o VcnOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-func (o VcnOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v *Vcn) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+func (o VcnOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Vcn) pulumi.StringPtrOutput { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // A DNS label for the VCN, used in conjunction with the VNIC's hostname and subnet's DNS label to form a fully qualified domain name (FQDN) for each VNIC within this subnet (for example, `bminstance1.subnet123.vcn1.oraclevcn.com`). Not required to be unique, but it's a best practice to set unique DNS labels for VCNs in your tenancy. Must be an alphanumeric string that begins with a letter. The value cannot be changed.
@@ -578,8 +553,8 @@ func (o VcnOutput) DisplayName() pulumi.StringOutput {
 // For more information, see [DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
 //
 // Example: `vcn1`
-func (o VcnOutput) DnsLabel() pulumi.StringOutput {
-	return o.ApplyT(func(v *Vcn) pulumi.StringOutput { return v.DnsLabel }).(pulumi.StringOutput)
+func (o VcnOutput) DnsLabel() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Vcn) pulumi.StringPtrOutput { return v.DnsLabel }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -603,31 +578,31 @@ func (o VcnOutput) Ipv6privateCidrBlocks() pulumi.StringArrayOutput {
 }
 
 // Whether IPv6 is enabled for the VCN. Default is `false`. If enabled, Oracle will assign the VCN a IPv6 /56 CIDR block. You may skip having Oracle allocate the VCN a IPv6 /56 CIDR block by setting isOracleGuaAllocationEnabled to `false`. For important details about IPv6 addressing in a VCN, see [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).  Example: `true`
-func (o VcnOutput) IsIpv6enabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v *Vcn) pulumi.BoolOutput { return v.IsIpv6enabled }).(pulumi.BoolOutput)
+func (o VcnOutput) IsIpv6enabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *Vcn) pulumi.BoolPtrOutput { return v.IsIpv6enabled }).(pulumi.BoolPtrOutput)
 }
 
 // Specifies whether to skip Oracle allocated IPv6 GUA. By default, Oracle will allocate one GUA of /56 size for an IPv6 enabled VCN.
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-func (o VcnOutput) IsOracleGuaAllocationEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v *Vcn) pulumi.BoolOutput { return v.IsOracleGuaAllocationEnabled }).(pulumi.BoolOutput)
+func (o VcnOutput) IsOracleGuaAllocationEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *Vcn) pulumi.BoolPtrOutput { return v.IsOracleGuaAllocationEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // The VCN's current state.
-func (o VcnOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *Vcn) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o VcnOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Vcn) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the VCN was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-func (o VcnOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *Vcn) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o VcnOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Vcn) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The VCN's domain name, which consists of the VCN's DNS label, and the `oraclevcn.com` domain.
-func (o VcnOutput) VcnDomainName() pulumi.StringOutput {
-	return o.ApplyT(func(v *Vcn) pulumi.StringOutput { return v.VcnDomainName }).(pulumi.StringOutput)
+func (o VcnOutput) VcnDomainName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Vcn) pulumi.StringPtrOutput { return v.VcnDomainName }).(pulumi.StringPtrOutput)
 }
 
 type VcnArrayOutput struct{ *pulumi.OutputState }
@@ -642,12 +617,6 @@ func (o VcnArrayOutput) ToVcnArrayOutput() VcnArrayOutput {
 
 func (o VcnArrayOutput) ToVcnArrayOutputWithContext(ctx context.Context) VcnArrayOutput {
 	return o
-}
-
-func (o VcnArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*Vcn] {
-	return pulumix.Output[[]*Vcn]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o VcnArrayOutput) Index(i pulumi.IntInput) VcnOutput {
@@ -668,12 +637,6 @@ func (o VcnMapOutput) ToVcnMapOutput() VcnMapOutput {
 
 func (o VcnMapOutput) ToVcnMapOutputWithContext(ctx context.Context) VcnMapOutput {
 	return o
-}
-
-func (o VcnMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*Vcn] {
-	return pulumix.Output[map[string]*Vcn]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o VcnMapOutput) MapIndex(k pulumi.StringInput) VcnOutput {

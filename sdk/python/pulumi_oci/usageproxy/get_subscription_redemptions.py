@@ -53,7 +53,7 @@ class GetSubscriptionRedemptionsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -61,10 +61,7 @@ class GetSubscriptionRedemptionsResult:
 
     @property
     @pulumi.getter(name="redemptionCollections")
-    def redemption_collections(self) -> Sequence['outputs.GetSubscriptionRedemptionsRedemptionCollectionResult']:
-        """
-        The list of redemption_collection.
-        """
+    def redemption_collections(self) -> Optional[Sequence['outputs.GetSubscriptionRedemptionsRedemptionCollectionResult']]:
         return pulumi.get(self, "redemption_collections")
 
     @property
@@ -110,27 +107,7 @@ def get_subscription_redemptions(filters: Optional[Sequence[pulumi.InputType['Ge
                                  time_redeemed_less_than: Optional[str] = None,
                                  opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetSubscriptionRedemptionsResult:
     """
-    This data source provides the list of Subscription Redemptions in Oracle Cloud Infrastructure Usage Proxy service.
-
-    Returns the list of redemption for the subscription ID.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_subscription_redemptions = oci.UsageProxy.get_subscription_redemptions(subscription_id=oci_onesubscription_subscription["test_subscription"]["id"],
-        tenancy_id=oci_identity_tenancy["test_tenancy"]["id"],
-        time_redeemed_greater_than_or_equal_to=var["subscription_redemption_time_redeemed_greater_than_or_equal_to"],
-        time_redeemed_less_than=var["subscription_redemption_time_redeemed_less_than"])
-    ```
-
-
-    :param str subscription_id: The subscription ID for which rewards information is requested for.
-    :param str tenancy_id: The OCID of the tenancy.
-    :param str time_redeemed_greater_than_or_equal_to: The starting redeemed date filter for the redemption history.
-    :param str time_redeemed_less_than: The ending redeemed date filter for the redemption history.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['filters'] = filters
@@ -159,26 +136,6 @@ def get_subscription_redemptions_output(filters: Optional[pulumi.Input[Optional[
                                         time_redeemed_less_than: Optional[pulumi.Input[Optional[str]]] = None,
                                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSubscriptionRedemptionsResult]:
     """
-    This data source provides the list of Subscription Redemptions in Oracle Cloud Infrastructure Usage Proxy service.
-
-    Returns the list of redemption for the subscription ID.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_subscription_redemptions = oci.UsageProxy.get_subscription_redemptions(subscription_id=oci_onesubscription_subscription["test_subscription"]["id"],
-        tenancy_id=oci_identity_tenancy["test_tenancy"]["id"],
-        time_redeemed_greater_than_or_equal_to=var["subscription_redemption_time_redeemed_greater_than_or_equal_to"],
-        time_redeemed_less_than=var["subscription_redemption_time_redeemed_less_than"])
-    ```
-
-
-    :param str subscription_id: The subscription ID for which rewards information is requested for.
-    :param str tenancy_id: The OCID of the tenancy.
-    :param str time_redeemed_greater_than_or_equal_to: The starting redeemed date filter for the redemption history.
-    :param str time_redeemed_less_than: The ending redeemed date filter for the redemption history.
+    Use this data source to access information about an existing resource.
     """
     ...

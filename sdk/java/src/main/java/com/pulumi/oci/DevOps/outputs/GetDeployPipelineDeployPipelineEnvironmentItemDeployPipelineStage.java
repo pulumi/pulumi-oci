@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.DevOps.outputs.GetDeployPipelineDeployPipelineEnvironmentItemDeployPipelineStageItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDeployPipelineDeployPipelineEnvironmentItemDeployPipelineStage {
@@ -14,7 +15,7 @@ public final class GetDeployPipelineDeployPipelineEnvironmentItemDeployPipelineS
      * @return List of parameters defined for a deployment pipeline.
      * 
      */
-    private List<GetDeployPipelineDeployPipelineEnvironmentItemDeployPipelineStageItem> items;
+    private @Nullable List<GetDeployPipelineDeployPipelineEnvironmentItemDeployPipelineStageItem> items;
 
     private GetDeployPipelineDeployPipelineEnvironmentItemDeployPipelineStage() {}
     /**
@@ -22,7 +23,7 @@ public final class GetDeployPipelineDeployPipelineEnvironmentItemDeployPipelineS
      * 
      */
     public List<GetDeployPipelineDeployPipelineEnvironmentItemDeployPipelineStageItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -34,7 +35,7 @@ public final class GetDeployPipelineDeployPipelineEnvironmentItemDeployPipelineS
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetDeployPipelineDeployPipelineEnvironmentItemDeployPipelineStageItem> items;
+        private @Nullable List<GetDeployPipelineDeployPipelineEnvironmentItemDeployPipelineStageItem> items;
         public Builder() {}
         public Builder(GetDeployPipelineDeployPipelineEnvironmentItemDeployPipelineStage defaults) {
     	      Objects.requireNonNull(defaults);
@@ -42,8 +43,8 @@ public final class GetDeployPipelineDeployPipelineEnvironmentItemDeployPipelineS
         }
 
         @CustomType.Setter
-        public Builder items(List<GetDeployPipelineDeployPipelineEnvironmentItemDeployPipelineStageItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetDeployPipelineDeployPipelineEnvironmentItemDeployPipelineStageItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetDeployPipelineDeployPipelineEnvironmentItemDeployPipelineStageItem... items) {

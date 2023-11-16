@@ -9,6 +9,7 @@ import com.pulumi.oci.Core.outputs.GetIpsecConnectionTunnelsIpSecConnectionTunne
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 @CustomType
@@ -18,12 +19,12 @@ public final class GetIpsecConnectionTunnelsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The list of ip_sec_connection_tunnels.
      * 
      */
-    private List<GetIpsecConnectionTunnelsIpSecConnectionTunnel> ipSecConnectionTunnels;
+    private @Nullable List<GetIpsecConnectionTunnelsIpSecConnectionTunnel> ipSecConnectionTunnels;
     private String ipsecId;
 
     private GetIpsecConnectionTunnelsResult() {}
@@ -34,15 +35,15 @@ public final class GetIpsecConnectionTunnelsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The list of ip_sec_connection_tunnels.
      * 
      */
     public List<GetIpsecConnectionTunnelsIpSecConnectionTunnel> ipSecConnectionTunnels() {
-        return this.ipSecConnectionTunnels;
+        return this.ipSecConnectionTunnels == null ? List.of() : this.ipSecConnectionTunnels;
     }
     public String ipsecId() {
         return this.ipsecId;
@@ -58,8 +59,8 @@ public final class GetIpsecConnectionTunnelsResult {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable List<GetIpsecConnectionTunnelsFilter> filters;
-        private String id;
-        private List<GetIpsecConnectionTunnelsIpSecConnectionTunnel> ipSecConnectionTunnels;
+        private @Nullable String id;
+        private @Nullable List<GetIpsecConnectionTunnelsIpSecConnectionTunnel> ipSecConnectionTunnels;
         private String ipsecId;
         public Builder() {}
         public Builder(GetIpsecConnectionTunnelsResult defaults) {
@@ -79,13 +80,13 @@ public final class GetIpsecConnectionTunnelsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder ipSecConnectionTunnels(List<GetIpsecConnectionTunnelsIpSecConnectionTunnel> ipSecConnectionTunnels) {
-            this.ipSecConnectionTunnels = Objects.requireNonNull(ipSecConnectionTunnels);
+        public Builder ipSecConnectionTunnels(@Nullable List<GetIpsecConnectionTunnelsIpSecConnectionTunnel> ipSecConnectionTunnels) {
+            this.ipSecConnectionTunnels = ipSecConnectionTunnels;
             return this;
         }
         public Builder ipSecConnectionTunnels(GetIpsecConnectionTunnelsIpSecConnectionTunnel... ipSecConnectionTunnels) {

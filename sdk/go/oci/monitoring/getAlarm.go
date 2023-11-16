@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Alarm resource in Oracle Cloud Infrastructure Monitoring service.
@@ -69,51 +68,51 @@ type LookupAlarmArgs struct {
 type LookupAlarmResult struct {
 	AlarmId string `pulumi:"alarmId"`
 	// The human-readable content of the delivered alarm notification. Oracle recommends providing guidance to operators for resolving the alarm condition. Consider adding links to standard runbook practices.  Example: `High CPU usage alert. Follow runbook instructions for resolution.`
-	Body string `pulumi:"body"`
+	Body *string `pulumi:"body"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the alarm.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A list of destinations for alarm notifications. Each destination is represented by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a related resource, such as a [topic](https://docs.cloud.oracle.com/iaas/api/#/en/notification/latest/NotificationTopic). Supported destination services: Notifications , Streaming.           Limit: One destination per supported destination service.
 	Destinations []string `pulumi:"destinations"`
 	// A user-friendly name for the alarm. It does not have to be unique, and it's changeable.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the alarm.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Whether the alarm is enabled.  Example: `true`
-	IsEnabled bool `pulumi:"isEnabled"`
+	IsEnabled *bool `pulumi:"isEnabled"`
 	// When set to `true`, splits alarm notifications per metric stream. When set to `false`, groups alarm notifications across metric streams.
-	IsNotificationsPerMetricDimensionEnabled bool `pulumi:"isNotificationsPerMetricDimensionEnabled"`
+	IsNotificationsPerMetricDimensionEnabled *bool `pulumi:"isNotificationsPerMetricDimensionEnabled"`
 	// The format to use for alarm notifications. The formats are:
-	MessageFormat string `pulumi:"messageFormat"`
+	MessageFormat *string `pulumi:"messageFormat"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the metric being evaluated by the alarm.
-	MetricCompartmentId string `pulumi:"metricCompartmentId"`
+	MetricCompartmentId *string `pulumi:"metricCompartmentId"`
 	// When true, the alarm evaluates metrics from all compartments and subcompartments. The parameter can only be set to true when metricCompartmentId is the tenancy OCID (the tenancy is the root compartment). A true value requires the user to have tenancy-level permissions. If this requirement is not met, then the call is rejected. When false, the alarm evaluates metrics from only the compartment specified in metricCompartmentId. Default is false.  Example: `true`
-	MetricCompartmentIdInSubtree bool `pulumi:"metricCompartmentIdInSubtree"`
+	MetricCompartmentIdInSubtree *bool `pulumi:"metricCompartmentIdInSubtree"`
 	// The source service or application emitting the metric that is evaluated by the alarm.  Example: `ociComputeagent`
-	Namespace string `pulumi:"namespace"`
+	Namespace *string `pulumi:"namespace"`
 	// The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING". For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to "FIRING".
-	PendingDuration string `pulumi:"pendingDuration"`
+	PendingDuration *string `pulumi:"pendingDuration"`
 	// The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval depend on the specified time range. More interval values are supported for smaller time ranges. You can optionally specify dimensions and grouping functions. Supported grouping functions: `grouping()`, `groupBy()`. For information about writing MQL expressions, see [Editing the MQL Expression for a Query](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/query-metric-mql.htm). For details about MQL, see [Monitoring Query Language (MQL) Reference](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Reference/mql.htm). For available dimensions, review the metric definition for the supported service. See [Supported Services](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices).
-	Query string `pulumi:"query"`
+	Query *string `pulumi:"query"`
 	// The frequency for re-submitting alarm notifications, if the alarm keeps firing without interruption. Format defined by ISO 8601. For example, `PT4H` indicates four hours. Minimum: PT1M. Maximum: P30D.
-	RepeatNotificationDuration string `pulumi:"repeatNotificationDuration"`
+	RepeatNotificationDuration *string `pulumi:"repeatNotificationDuration"`
 	// The time between calculated aggregation windows for the alarm. Supported value: `1m`
-	Resolution string `pulumi:"resolution"`
+	Resolution *string `pulumi:"resolution"`
 	// Resource group to match for metric data retrieved by the alarm. A resource group is a custom string that you can match when retrieving custom metrics. Only one resource group can be applied per metric. A valid resourceGroup value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).  Example: `frontend-fleet`
-	ResourceGroup string `pulumi:"resourceGroup"`
+	ResourceGroup *string `pulumi:"resourceGroup"`
 	// The perceived type of response required when the alarm is in the "FIRING" state.  Example: `CRITICAL`
-	Severity string `pulumi:"severity"`
+	Severity *string `pulumi:"severity"`
 	// The current lifecycle state of the alarm.  Example: `DELETED`
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The configuration details for suppressing an alarm.
 	Suppressions []GetAlarmSuppression `pulumi:"suppressions"`
 	// The date and time the alarm was created. Format defined by RFC3339.  Example: `2019-02-01T01:02:29.600Z`
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The date and time the alarm was last updated. Format defined by RFC3339.  Example: `2019-02-03T01:02:29.600Z`
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 func LookupAlarmOutput(ctx *pulumi.Context, args LookupAlarmOutputArgs, opts ...pulumi.InvokeOption) LookupAlarmResultOutput {
@@ -154,24 +153,18 @@ func (o LookupAlarmResultOutput) ToLookupAlarmResultOutputWithContext(ctx contex
 	return o
 }
 
-func (o LookupAlarmResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupAlarmResult] {
-	return pulumix.Output[LookupAlarmResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o LookupAlarmResultOutput) AlarmId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAlarmResult) string { return v.AlarmId }).(pulumi.StringOutput)
 }
 
 // The human-readable content of the delivered alarm notification. Oracle recommends providing guidance to operators for resolving the alarm condition. Consider adding links to standard runbook practices.  Example: `High CPU usage alert. Follow runbook instructions for resolution.`
-func (o LookupAlarmResultOutput) Body() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAlarmResult) string { return v.Body }).(pulumi.StringOutput)
+func (o LookupAlarmResultOutput) Body() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAlarmResult) *string { return v.Body }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the alarm.
-func (o LookupAlarmResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAlarmResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupAlarmResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAlarmResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"Operations.CostCenter": "42"}`
@@ -185,8 +178,8 @@ func (o LookupAlarmResultOutput) Destinations() pulumi.StringArrayOutput {
 }
 
 // A user-friendly name for the alarm. It does not have to be unique, and it's changeable.
-func (o LookupAlarmResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAlarmResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupAlarmResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAlarmResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"Department": "Finance"}`
@@ -195,73 +188,73 @@ func (o LookupAlarmResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the alarm.
-func (o LookupAlarmResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAlarmResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupAlarmResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAlarmResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Whether the alarm is enabled.  Example: `true`
-func (o LookupAlarmResultOutput) IsEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupAlarmResult) bool { return v.IsEnabled }).(pulumi.BoolOutput)
+func (o LookupAlarmResultOutput) IsEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupAlarmResult) *bool { return v.IsEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // When set to `true`, splits alarm notifications per metric stream. When set to `false`, groups alarm notifications across metric streams.
-func (o LookupAlarmResultOutput) IsNotificationsPerMetricDimensionEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupAlarmResult) bool { return v.IsNotificationsPerMetricDimensionEnabled }).(pulumi.BoolOutput)
+func (o LookupAlarmResultOutput) IsNotificationsPerMetricDimensionEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupAlarmResult) *bool { return v.IsNotificationsPerMetricDimensionEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // The format to use for alarm notifications. The formats are:
-func (o LookupAlarmResultOutput) MessageFormat() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAlarmResult) string { return v.MessageFormat }).(pulumi.StringOutput)
+func (o LookupAlarmResultOutput) MessageFormat() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAlarmResult) *string { return v.MessageFormat }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the metric being evaluated by the alarm.
-func (o LookupAlarmResultOutput) MetricCompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAlarmResult) string { return v.MetricCompartmentId }).(pulumi.StringOutput)
+func (o LookupAlarmResultOutput) MetricCompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAlarmResult) *string { return v.MetricCompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // When true, the alarm evaluates metrics from all compartments and subcompartments. The parameter can only be set to true when metricCompartmentId is the tenancy OCID (the tenancy is the root compartment). A true value requires the user to have tenancy-level permissions. If this requirement is not met, then the call is rejected. When false, the alarm evaluates metrics from only the compartment specified in metricCompartmentId. Default is false.  Example: `true`
-func (o LookupAlarmResultOutput) MetricCompartmentIdInSubtree() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupAlarmResult) bool { return v.MetricCompartmentIdInSubtree }).(pulumi.BoolOutput)
+func (o LookupAlarmResultOutput) MetricCompartmentIdInSubtree() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupAlarmResult) *bool { return v.MetricCompartmentIdInSubtree }).(pulumi.BoolPtrOutput)
 }
 
 // The source service or application emitting the metric that is evaluated by the alarm.  Example: `ociComputeagent`
-func (o LookupAlarmResultOutput) Namespace() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAlarmResult) string { return v.Namespace }).(pulumi.StringOutput)
+func (o LookupAlarmResultOutput) Namespace() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAlarmResult) *string { return v.Namespace }).(pulumi.StringPtrOutput)
 }
 
 // The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING". For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to "FIRING".
-func (o LookupAlarmResultOutput) PendingDuration() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAlarmResult) string { return v.PendingDuration }).(pulumi.StringOutput)
+func (o LookupAlarmResultOutput) PendingDuration() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAlarmResult) *string { return v.PendingDuration }).(pulumi.StringPtrOutput)
 }
 
 // The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval depend on the specified time range. More interval values are supported for smaller time ranges. You can optionally specify dimensions and grouping functions. Supported grouping functions: `grouping()`, `groupBy()`. For information about writing MQL expressions, see [Editing the MQL Expression for a Query](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/query-metric-mql.htm). For details about MQL, see [Monitoring Query Language (MQL) Reference](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Reference/mql.htm). For available dimensions, review the metric definition for the supported service. See [Supported Services](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices).
-func (o LookupAlarmResultOutput) Query() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAlarmResult) string { return v.Query }).(pulumi.StringOutput)
+func (o LookupAlarmResultOutput) Query() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAlarmResult) *string { return v.Query }).(pulumi.StringPtrOutput)
 }
 
 // The frequency for re-submitting alarm notifications, if the alarm keeps firing without interruption. Format defined by ISO 8601. For example, `PT4H` indicates four hours. Minimum: PT1M. Maximum: P30D.
-func (o LookupAlarmResultOutput) RepeatNotificationDuration() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAlarmResult) string { return v.RepeatNotificationDuration }).(pulumi.StringOutput)
+func (o LookupAlarmResultOutput) RepeatNotificationDuration() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAlarmResult) *string { return v.RepeatNotificationDuration }).(pulumi.StringPtrOutput)
 }
 
 // The time between calculated aggregation windows for the alarm. Supported value: `1m`
-func (o LookupAlarmResultOutput) Resolution() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAlarmResult) string { return v.Resolution }).(pulumi.StringOutput)
+func (o LookupAlarmResultOutput) Resolution() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAlarmResult) *string { return v.Resolution }).(pulumi.StringPtrOutput)
 }
 
 // Resource group to match for metric data retrieved by the alarm. A resource group is a custom string that you can match when retrieving custom metrics. Only one resource group can be applied per metric. A valid resourceGroup value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).  Example: `frontend-fleet`
-func (o LookupAlarmResultOutput) ResourceGroup() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAlarmResult) string { return v.ResourceGroup }).(pulumi.StringOutput)
+func (o LookupAlarmResultOutput) ResourceGroup() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAlarmResult) *string { return v.ResourceGroup }).(pulumi.StringPtrOutput)
 }
 
 // The perceived type of response required when the alarm is in the "FIRING" state.  Example: `CRITICAL`
-func (o LookupAlarmResultOutput) Severity() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAlarmResult) string { return v.Severity }).(pulumi.StringOutput)
+func (o LookupAlarmResultOutput) Severity() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAlarmResult) *string { return v.Severity }).(pulumi.StringPtrOutput)
 }
 
 // The current lifecycle state of the alarm.  Example: `DELETED`
-func (o LookupAlarmResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAlarmResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupAlarmResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAlarmResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The configuration details for suppressing an alarm.
@@ -270,13 +263,13 @@ func (o LookupAlarmResultOutput) Suppressions() GetAlarmSuppressionArrayOutput {
 }
 
 // The date and time the alarm was created. Format defined by RFC3339.  Example: `2019-02-01T01:02:29.600Z`
-func (o LookupAlarmResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAlarmResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupAlarmResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAlarmResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the alarm was last updated. Format defined by RFC3339.  Example: `2019-02-03T01:02:29.600Z`
-func (o LookupAlarmResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAlarmResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o LookupAlarmResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAlarmResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 func init() {

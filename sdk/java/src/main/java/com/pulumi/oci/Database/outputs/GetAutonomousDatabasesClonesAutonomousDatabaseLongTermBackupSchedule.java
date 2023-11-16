@@ -8,6 +8,8 @@ import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAutonomousDatabasesClonesAutonomousDatabaseLongTermBackupSchedule {
@@ -15,51 +17,51 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabaseLongTermBackupS
      * @return Indicates if the resource pool should be deleted for the Autonomous Database.
      * 
      */
-    private Boolean isDisabled;
+    private @Nullable Boolean isDisabled;
     /**
      * @return The frequency of the long-term backup schedule
      * 
      */
-    private String repeatCadence;
+    private @Nullable String repeatCadence;
     /**
      * @return Retention period, in days, for long-term backups
      * 
      */
-    private Integer retentionPeriodInDays;
+    private @Nullable Integer retentionPeriodInDays;
     /**
      * @return The timestamp for the long-term backup schedule. For a MONTHLY cadence, months having fewer days than the provided date will have the backup taken on the last day of that month.
      * 
      */
-    private String timeOfBackup;
+    private @Nullable String timeOfBackup;
 
     private GetAutonomousDatabasesClonesAutonomousDatabaseLongTermBackupSchedule() {}
     /**
      * @return Indicates if the resource pool should be deleted for the Autonomous Database.
      * 
      */
-    public Boolean isDisabled() {
-        return this.isDisabled;
+    public Optional<Boolean> isDisabled() {
+        return Optional.ofNullable(this.isDisabled);
     }
     /**
      * @return The frequency of the long-term backup schedule
      * 
      */
-    public String repeatCadence() {
-        return this.repeatCadence;
+    public Optional<String> repeatCadence() {
+        return Optional.ofNullable(this.repeatCadence);
     }
     /**
      * @return Retention period, in days, for long-term backups
      * 
      */
-    public Integer retentionPeriodInDays() {
-        return this.retentionPeriodInDays;
+    public Optional<Integer> retentionPeriodInDays() {
+        return Optional.ofNullable(this.retentionPeriodInDays);
     }
     /**
      * @return The timestamp for the long-term backup schedule. For a MONTHLY cadence, months having fewer days than the provided date will have the backup taken on the last day of that month.
      * 
      */
-    public String timeOfBackup() {
-        return this.timeOfBackup;
+    public Optional<String> timeOfBackup() {
+        return Optional.ofNullable(this.timeOfBackup);
     }
 
     public static Builder builder() {
@@ -71,10 +73,10 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabaseLongTermBackupS
     }
     @CustomType.Builder
     public static final class Builder {
-        private Boolean isDisabled;
-        private String repeatCadence;
-        private Integer retentionPeriodInDays;
-        private String timeOfBackup;
+        private @Nullable Boolean isDisabled;
+        private @Nullable String repeatCadence;
+        private @Nullable Integer retentionPeriodInDays;
+        private @Nullable String timeOfBackup;
         public Builder() {}
         public Builder(GetAutonomousDatabasesClonesAutonomousDatabaseLongTermBackupSchedule defaults) {
     	      Objects.requireNonNull(defaults);
@@ -85,23 +87,23 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabaseLongTermBackupS
         }
 
         @CustomType.Setter
-        public Builder isDisabled(Boolean isDisabled) {
-            this.isDisabled = Objects.requireNonNull(isDisabled);
+        public Builder isDisabled(@Nullable Boolean isDisabled) {
+            this.isDisabled = isDisabled;
             return this;
         }
         @CustomType.Setter
-        public Builder repeatCadence(String repeatCadence) {
-            this.repeatCadence = Objects.requireNonNull(repeatCadence);
+        public Builder repeatCadence(@Nullable String repeatCadence) {
+            this.repeatCadence = repeatCadence;
             return this;
         }
         @CustomType.Setter
-        public Builder retentionPeriodInDays(Integer retentionPeriodInDays) {
-            this.retentionPeriodInDays = Objects.requireNonNull(retentionPeriodInDays);
+        public Builder retentionPeriodInDays(@Nullable Integer retentionPeriodInDays) {
+            this.retentionPeriodInDays = retentionPeriodInDays;
             return this;
         }
         @CustomType.Setter
-        public Builder timeOfBackup(String timeOfBackup) {
-            this.timeOfBackup = Objects.requireNonNull(timeOfBackup);
+        public Builder timeOfBackup(@Nullable String timeOfBackup) {
+            this.timeOfBackup = timeOfBackup;
             return this;
         }
         public GetAutonomousDatabasesClonesAutonomousDatabaseLongTermBackupSchedule build() {

@@ -81,11 +81,11 @@ export class SoftwareSource extends pulumi.CustomResource {
     /**
      * list of the Managed Instances associated with this Software Sources
      */
-    public /*out*/ readonly associatedManagedInstances!: pulumi.Output<outputs.OsManagement.SoftwareSourceAssociatedManagedInstance[]>;
+    public /*out*/ readonly associatedManagedInstances!: pulumi.Output<outputs.OsManagement.SoftwareSourceAssociatedManagedInstance[] | undefined>;
     /**
      * (Updatable) The yum repository checksum type used by this software source
      */
-    public readonly checksumType!: pulumi.Output<string>;
+    public readonly checksumType!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) OCID for the Compartment
      */
@@ -93,11 +93,11 @@ export class SoftwareSource extends pulumi.CustomResource {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) Information specified by the user about the software source
      */
-    public readonly description!: pulumi.Output<string>;
+    public readonly description!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) User friendly name for the software source
      */
@@ -105,35 +105,35 @@ export class SoftwareSource extends pulumi.CustomResource {
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * Fingerprint of the GPG key for this software source
      */
-    public /*out*/ readonly gpgKeyFingerprint!: pulumi.Output<string>;
+    public /*out*/ readonly gpgKeyFingerprint!: pulumi.Output<string | undefined>;
     /**
      * ID of the GPG key for this software source
      */
-    public /*out*/ readonly gpgKeyId!: pulumi.Output<string>;
+    public /*out*/ readonly gpgKeyId!: pulumi.Output<string | undefined>;
     /**
      * URL of the GPG key for this software source
      */
-    public /*out*/ readonly gpgKeyUrl!: pulumi.Output<string>;
+    public /*out*/ readonly gpgKeyUrl!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Email address of the person maintaining this software source
      */
-    public readonly maintainerEmail!: pulumi.Output<string>;
+    public readonly maintainerEmail!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Name of the person maintaining this software source
      */
-    public readonly maintainerName!: pulumi.Output<string>;
+    public readonly maintainerName!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Phone number of the person maintaining this software source
      */
-    public readonly maintainerPhone!: pulumi.Output<string>;
+    public readonly maintainerPhone!: pulumi.Output<string | undefined>;
     /**
      * Number of packages
      */
-    public /*out*/ readonly packages!: pulumi.Output<number>;
+    public /*out*/ readonly packages!: pulumi.Output<number | undefined>;
     /**
      * OCID for the parent software source, if there is one
      *
@@ -141,27 +141,27 @@ export class SoftwareSource extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly parentId!: pulumi.Output<string>;
+    public readonly parentId!: pulumi.Output<string | undefined>;
     /**
      * Display name the parent software source, if there is one
      */
-    public /*out*/ readonly parentName!: pulumi.Output<string>;
+    public /*out*/ readonly parentName!: pulumi.Output<string | undefined>;
     /**
      * Type of the Software Source
      */
-    public /*out*/ readonly repoType!: pulumi.Output<string>;
+    public /*out*/ readonly repoType!: pulumi.Output<string | undefined>;
     /**
      * The current state of the Software Source.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * status of the software source.
      */
-    public /*out*/ readonly status!: pulumi.Output<string>;
+    public /*out*/ readonly status!: pulumi.Output<string | undefined>;
     /**
      * URL for the repostiory
      */
-    public /*out*/ readonly url!: pulumi.Output<string>;
+    public /*out*/ readonly url!: pulumi.Output<string | undefined>;
 
     /**
      * Create a SoftwareSource resource with the given unique name, arguments, and options.

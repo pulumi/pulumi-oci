@@ -61,11 +61,11 @@ export interface GetManagedInstanceEventReportArgs {
  */
 export interface GetManagedInstanceEventReportResult {
     readonly compartmentId: string;
-    readonly counts: number;
+    readonly counts?: number;
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly latestTimestampGreaterThanOrEqualTo?: string;
     readonly latestTimestampLessThan?: string;
     readonly managedInstanceId: string;

@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Auth Token resource in Oracle Cloud Infrastructure Identity service.
@@ -68,15 +67,15 @@ type AuthToken struct {
 	// (Updatable) The description you assign to the auth token during creation. Does not have to be unique, and it's changeable.
 	Description pulumi.StringOutput `pulumi:"description"`
 	// The detailed status of INACTIVE lifecycleState.
-	InactiveState pulumi.StringOutput `pulumi:"inactiveState"`
+	InactiveState pulumi.StringPtrOutput `pulumi:"inactiveState"`
 	// The token's current state.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// Date and time the `AuthToken` object was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// Date and time when this auth token will expire, in the format defined by RFC3339. Null if it never expires.  Example: `2016-08-25T21:10:29.600Z`
-	TimeExpires pulumi.StringOutput `pulumi:"timeExpires"`
+	TimeExpires pulumi.StringPtrOutput `pulumi:"timeExpires"`
 	// The auth token. The value is available only in the response for `CreateAuthToken`, and not for `ListAuthTokens` or `UpdateAuthToken`.
-	Token pulumi.StringOutput `pulumi:"token"`
+	Token pulumi.StringPtrOutput `pulumi:"token"`
 	// The OCID of the user.
 	//
 	// ** IMPORTANT **
@@ -207,12 +206,6 @@ func (i *AuthToken) ToAuthTokenOutputWithContext(ctx context.Context) AuthTokenO
 	return pulumi.ToOutputWithContext(ctx, i).(AuthTokenOutput)
 }
 
-func (i *AuthToken) ToOutput(ctx context.Context) pulumix.Output[*AuthToken] {
-	return pulumix.Output[*AuthToken]{
-		OutputState: i.ToAuthTokenOutputWithContext(ctx).OutputState,
-	}
-}
-
 // AuthTokenArrayInput is an input type that accepts AuthTokenArray and AuthTokenArrayOutput values.
 // You can construct a concrete instance of `AuthTokenArrayInput` via:
 //
@@ -236,12 +229,6 @@ func (i AuthTokenArray) ToAuthTokenArrayOutput() AuthTokenArrayOutput {
 
 func (i AuthTokenArray) ToAuthTokenArrayOutputWithContext(ctx context.Context) AuthTokenArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(AuthTokenArrayOutput)
-}
-
-func (i AuthTokenArray) ToOutput(ctx context.Context) pulumix.Output[[]*AuthToken] {
-	return pulumix.Output[[]*AuthToken]{
-		OutputState: i.ToAuthTokenArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // AuthTokenMapInput is an input type that accepts AuthTokenMap and AuthTokenMapOutput values.
@@ -269,12 +256,6 @@ func (i AuthTokenMap) ToAuthTokenMapOutputWithContext(ctx context.Context) AuthT
 	return pulumi.ToOutputWithContext(ctx, i).(AuthTokenMapOutput)
 }
 
-func (i AuthTokenMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*AuthToken] {
-	return pulumix.Output[map[string]*AuthToken]{
-		OutputState: i.ToAuthTokenMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type AuthTokenOutput struct{ *pulumi.OutputState }
 
 func (AuthTokenOutput) ElementType() reflect.Type {
@@ -289,40 +270,34 @@ func (o AuthTokenOutput) ToAuthTokenOutputWithContext(ctx context.Context) AuthT
 	return o
 }
 
-func (o AuthTokenOutput) ToOutput(ctx context.Context) pulumix.Output[*AuthToken] {
-	return pulumix.Output[*AuthToken]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) The description you assign to the auth token during creation. Does not have to be unique, and it's changeable.
 func (o AuthTokenOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v *AuthToken) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
 }
 
 // The detailed status of INACTIVE lifecycleState.
-func (o AuthTokenOutput) InactiveState() pulumi.StringOutput {
-	return o.ApplyT(func(v *AuthToken) pulumi.StringOutput { return v.InactiveState }).(pulumi.StringOutput)
+func (o AuthTokenOutput) InactiveState() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AuthToken) pulumi.StringPtrOutput { return v.InactiveState }).(pulumi.StringPtrOutput)
 }
 
 // The token's current state.
-func (o AuthTokenOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *AuthToken) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o AuthTokenOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AuthToken) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Date and time the `AuthToken` object was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
-func (o AuthTokenOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *AuthToken) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o AuthTokenOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AuthToken) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // Date and time when this auth token will expire, in the format defined by RFC3339. Null if it never expires.  Example: `2016-08-25T21:10:29.600Z`
-func (o AuthTokenOutput) TimeExpires() pulumi.StringOutput {
-	return o.ApplyT(func(v *AuthToken) pulumi.StringOutput { return v.TimeExpires }).(pulumi.StringOutput)
+func (o AuthTokenOutput) TimeExpires() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AuthToken) pulumi.StringPtrOutput { return v.TimeExpires }).(pulumi.StringPtrOutput)
 }
 
 // The auth token. The value is available only in the response for `CreateAuthToken`, and not for `ListAuthTokens` or `UpdateAuthToken`.
-func (o AuthTokenOutput) Token() pulumi.StringOutput {
-	return o.ApplyT(func(v *AuthToken) pulumi.StringOutput { return v.Token }).(pulumi.StringOutput)
+func (o AuthTokenOutput) Token() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AuthToken) pulumi.StringPtrOutput { return v.Token }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the user.
@@ -347,12 +322,6 @@ func (o AuthTokenArrayOutput) ToAuthTokenArrayOutputWithContext(ctx context.Cont
 	return o
 }
 
-func (o AuthTokenArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*AuthToken] {
-	return pulumix.Output[[]*AuthToken]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o AuthTokenArrayOutput) Index(i pulumi.IntInput) AuthTokenOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *AuthToken {
 		return vs[0].([]*AuthToken)[vs[1].(int)]
@@ -371,12 +340,6 @@ func (o AuthTokenMapOutput) ToAuthTokenMapOutput() AuthTokenMapOutput {
 
 func (o AuthTokenMapOutput) ToAuthTokenMapOutputWithContext(ctx context.Context) AuthTokenMapOutput {
 	return o
-}
-
-func (o AuthTokenMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*AuthToken] {
-	return pulumix.Output[map[string]*AuthToken]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o AuthTokenMapOutput) MapIndex(k pulumi.StringInput) AuthTokenOutput {

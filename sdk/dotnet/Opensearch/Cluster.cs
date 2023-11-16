@@ -115,7 +115,7 @@ namespace Pulumi.Oci.Opensearch
         /// The bare metal shape for the cluster's data nodes.
         /// </summary>
         [Output("dataNodeHostBareMetalShape")]
-        public Output<string> DataNodeHostBareMetalShape { get; private set; } = null!;
+        public Output<string?> DataNodeHostBareMetalShape { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The amount of memory in GB, to configure per node for the cluster's data nodes.
@@ -145,7 +145,7 @@ namespace Pulumi.Oci.Opensearch
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The name of the cluster. Avoid entering confidential information.
@@ -157,19 +157,19 @@ namespace Pulumi.Oci.Opensearch
         /// The fully qualified domain name (FQDN) for the cluster's API endpoint.
         /// </summary>
         [Output("fqdn")]
-        public Output<string> Fqdn { get; private set; } = null!;
+        public Output<string?> Fqdn { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// Additional information about the current lifecycle state of the cluster.
         /// </summary>
         [Output("lifecycleDetails")]
-        public Output<string> LifecycleDetails { get; private set; } = null!;
+        public Output<string?> LifecycleDetails { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The number of master nodes to configure for the cluster.
@@ -181,7 +181,7 @@ namespace Pulumi.Oci.Opensearch
         /// The bare metal shape for the cluster's master nodes.
         /// </summary>
         [Output("masterNodeHostBareMetalShape")]
-        public Output<string> MasterNodeHostBareMetalShape { get; private set; } = null!;
+        public Output<string?> MasterNodeHostBareMetalShape { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The amount of memory in GB, to configure per node for the cluster's master nodes.
@@ -205,7 +205,7 @@ namespace Pulumi.Oci.Opensearch
         /// The fully qualified domain name (FQDN) for the cluster's OpenSearch Dashboard API endpoint.
         /// </summary>
         [Output("opendashboardFqdn")]
-        public Output<string> OpendashboardFqdn { get; private set; } = null!;
+        public Output<string?> OpendashboardFqdn { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The number of OpenSearch Dashboard nodes to configure for the cluster.
@@ -229,37 +229,37 @@ namespace Pulumi.Oci.Opensearch
         /// The private IP address for the cluster's OpenSearch Dashboard.
         /// </summary>
         [Output("opendashboardPrivateIp")]
-        public Output<string> OpendashboardPrivateIp { get; private set; } = null!;
+        public Output<string?> OpendashboardPrivateIp { get; private set; } = null!;
 
         /// <summary>
         /// The fully qualified domain name (FQDN) for the cluster's API endpoint.
         /// </summary>
         [Output("opensearchFqdn")]
-        public Output<string> OpensearchFqdn { get; private set; } = null!;
+        public Output<string?> OpensearchFqdn { get; private set; } = null!;
 
         /// <summary>
         /// The cluster's private IP address.
         /// </summary>
         [Output("opensearchPrivateIp")]
-        public Output<string> OpensearchPrivateIp { get; private set; } = null!;
+        public Output<string?> OpensearchPrivateIp { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The name of the master user that are used to manage security config
         /// </summary>
         [Output("securityMasterUserName")]
-        public Output<string> SecurityMasterUserName { get; private set; } = null!;
+        public Output<string?> SecurityMasterUserName { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The password hash of the master user that are used to manage security config
         /// </summary>
         [Output("securityMasterUserPasswordHash")]
-        public Output<string> SecurityMasterUserPasswordHash { get; private set; } = null!;
+        public Output<string?> SecurityMasterUserPasswordHash { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The security mode of the cluster.
         /// </summary>
         [Output("securityMode")]
-        public Output<string> SecurityMode { get; private set; } = null!;
+        public Output<string?> SecurityMode { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The version of the software the cluster is running.
@@ -271,7 +271,7 @@ namespace Pulumi.Oci.Opensearch
         /// The current state of the cluster.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// The OCID for the compartment where the cluster's subnet is located.
@@ -289,31 +289,31 @@ namespace Pulumi.Oci.Opensearch
         /// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
         [Output("systemTags")]
-        public Output<ImmutableDictionary<string, object>> SystemTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> SystemTags { get; private set; } = null!;
 
         /// <summary>
         /// The amount of time in milliseconds since the cluster was created.
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// The amount of time in milliseconds since the cluster was updated.
         /// </summary>
         [Output("timeDeleted")]
-        public Output<string> TimeDeleted { get; private set; } = null!;
+        public Output<string?> TimeDeleted { get; private set; } = null!;
 
         /// <summary>
         /// The amount of time in milliseconds since the cluster was updated.
         /// </summary>
         [Output("timeUpdated")]
-        public Output<string> TimeUpdated { get; private set; } = null!;
+        public Output<string?> TimeUpdated { get; private set; } = null!;
 
         /// <summary>
         /// The size in GB of the cluster's total storage.
         /// </summary>
         [Output("totalStorageGb")]
-        public Output<int> TotalStorageGb { get; private set; } = null!;
+        public Output<int?> TotalStorageGb { get; private set; } = null!;
 
         /// <summary>
         /// The OCID for the compartment where the cluster's VCN is located.

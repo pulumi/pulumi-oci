@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAuditPoliciesAuditPolicyCollectionItemAuditConditionEnableCondition {
@@ -14,22 +16,22 @@ public final class GetAuditPoliciesAuditPolicyCollectionItemAuditConditionEnable
      * @return List of users or roles that the policy must be enabled for.
      * 
      */
-    private List<String> entityNames;
+    private @Nullable List<String> entityNames;
     /**
      * @return The entity include or exclude selection.
      * 
      */
-    private String entitySelection;
+    private @Nullable String entitySelection;
     /**
      * @return The entity type that the policy must be enabled for.
      * 
      */
-    private String entityType;
+    private @Nullable String entityType;
     /**
      * @return The operation status that the policy must be enabled for.
      * 
      */
-    private String operationStatus;
+    private @Nullable String operationStatus;
 
     private GetAuditPoliciesAuditPolicyCollectionItemAuditConditionEnableCondition() {}
     /**
@@ -37,28 +39,28 @@ public final class GetAuditPoliciesAuditPolicyCollectionItemAuditConditionEnable
      * 
      */
     public List<String> entityNames() {
-        return this.entityNames;
+        return this.entityNames == null ? List.of() : this.entityNames;
     }
     /**
      * @return The entity include or exclude selection.
      * 
      */
-    public String entitySelection() {
-        return this.entitySelection;
+    public Optional<String> entitySelection() {
+        return Optional.ofNullable(this.entitySelection);
     }
     /**
      * @return The entity type that the policy must be enabled for.
      * 
      */
-    public String entityType() {
-        return this.entityType;
+    public Optional<String> entityType() {
+        return Optional.ofNullable(this.entityType);
     }
     /**
      * @return The operation status that the policy must be enabled for.
      * 
      */
-    public String operationStatus() {
-        return this.operationStatus;
+    public Optional<String> operationStatus() {
+        return Optional.ofNullable(this.operationStatus);
     }
 
     public static Builder builder() {
@@ -70,10 +72,10 @@ public final class GetAuditPoliciesAuditPolicyCollectionItemAuditConditionEnable
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<String> entityNames;
-        private String entitySelection;
-        private String entityType;
-        private String operationStatus;
+        private @Nullable List<String> entityNames;
+        private @Nullable String entitySelection;
+        private @Nullable String entityType;
+        private @Nullable String operationStatus;
         public Builder() {}
         public Builder(GetAuditPoliciesAuditPolicyCollectionItemAuditConditionEnableCondition defaults) {
     	      Objects.requireNonNull(defaults);
@@ -84,26 +86,26 @@ public final class GetAuditPoliciesAuditPolicyCollectionItemAuditConditionEnable
         }
 
         @CustomType.Setter
-        public Builder entityNames(List<String> entityNames) {
-            this.entityNames = Objects.requireNonNull(entityNames);
+        public Builder entityNames(@Nullable List<String> entityNames) {
+            this.entityNames = entityNames;
             return this;
         }
         public Builder entityNames(String... entityNames) {
             return entityNames(List.of(entityNames));
         }
         @CustomType.Setter
-        public Builder entitySelection(String entitySelection) {
-            this.entitySelection = Objects.requireNonNull(entitySelection);
+        public Builder entitySelection(@Nullable String entitySelection) {
+            this.entitySelection = entitySelection;
             return this;
         }
         @CustomType.Setter
-        public Builder entityType(String entityType) {
-            this.entityType = Objects.requireNonNull(entityType);
+        public Builder entityType(@Nullable String entityType) {
+            this.entityType = entityType;
             return this;
         }
         @CustomType.Setter
-        public Builder operationStatus(String operationStatus) {
-            this.operationStatus = Objects.requireNonNull(operationStatus);
+        public Builder operationStatus(@Nullable String operationStatus) {
+            this.operationStatus = operationStatus;
             return this;
         }
         public GetAuditPoliciesAuditPolicyCollectionItemAuditConditionEnableCondition build() {

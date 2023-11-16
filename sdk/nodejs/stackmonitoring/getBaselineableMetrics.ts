@@ -75,7 +75,7 @@ export interface GetBaselineableMetricsResult {
     /**
      * The list of baselineable_metric_summary_collection.
      */
-    readonly baselineableMetricSummaryCollections: outputs.StackMonitoring.GetBaselineableMetricsBaselineableMetricSummaryCollection[];
+    readonly baselineableMetricSummaryCollections?: outputs.StackMonitoring.GetBaselineableMetricsBaselineableMetricSummaryCollection[];
     /**
      * OCID of the compartment
      */
@@ -84,7 +84,7 @@ export interface GetBaselineableMetricsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly metricNamespace?: string;
     /**
      * name of the metric

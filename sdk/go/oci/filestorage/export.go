@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Export resource in Oracle Cloud Infrastructure File Storage service.
@@ -85,7 +84,7 @@ type Export struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this export's file system.
 	FileSystemId pulumi.StringOutput `pulumi:"fileSystemId"`
 	// (Updatable) Whether or not the export should use ID mapping for Unix groups rather than the group list provided within an NFS request's RPC header. When this flag is true the Unix UID from the RPC header is used to retrieve the list of secondary groups from a the ID mapping subsystem. The primary GID is always taken from the RPC header. If ID mapping is not configured, incorrectly configured, unavailable, or cannot be used to determine a list of secondary groups then an empty secondary group list is used for authorization. If the number of groups exceeds the limit of 256 groups, the list retrieved from LDAP is truncated to the first 256 groups read.
-	IsIdmapGroupsForSysAuth pulumi.BoolOutput `pulumi:"isIdmapGroupsForSysAuth"`
+	IsIdmapGroupsForSysAuth pulumi.BoolPtrOutput `pulumi:"isIdmapGroupsForSysAuth"`
 	// Path used to access the associated file system.
 	//
 	// Avoid entering confidential information.
@@ -96,9 +95,9 @@ type Export struct {
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Path pulumi.StringOutput `pulumi:"path"`
 	// The current state of this export.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// The date and time the export was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 }
 
 // NewExport registers a new resource with the given unique name, arguments, and options.
@@ -283,12 +282,6 @@ func (i *Export) ToExportOutputWithContext(ctx context.Context) ExportOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ExportOutput)
 }
 
-func (i *Export) ToOutput(ctx context.Context) pulumix.Output[*Export] {
-	return pulumix.Output[*Export]{
-		OutputState: i.ToExportOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ExportArrayInput is an input type that accepts ExportArray and ExportArrayOutput values.
 // You can construct a concrete instance of `ExportArrayInput` via:
 //
@@ -312,12 +305,6 @@ func (i ExportArray) ToExportArrayOutput() ExportArrayOutput {
 
 func (i ExportArray) ToExportArrayOutputWithContext(ctx context.Context) ExportArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ExportArrayOutput)
-}
-
-func (i ExportArray) ToOutput(ctx context.Context) pulumix.Output[[]*Export] {
-	return pulumix.Output[[]*Export]{
-		OutputState: i.ToExportArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // ExportMapInput is an input type that accepts ExportMap and ExportMapOutput values.
@@ -345,12 +332,6 @@ func (i ExportMap) ToExportMapOutputWithContext(ctx context.Context) ExportMapOu
 	return pulumi.ToOutputWithContext(ctx, i).(ExportMapOutput)
 }
 
-func (i ExportMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*Export] {
-	return pulumix.Output[map[string]*Export]{
-		OutputState: i.ToExportMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ExportOutput struct{ *pulumi.OutputState }
 
 func (ExportOutput) ElementType() reflect.Type {
@@ -363,12 +344,6 @@ func (o ExportOutput) ToExportOutput() ExportOutput {
 
 func (o ExportOutput) ToExportOutputWithContext(ctx context.Context) ExportOutput {
 	return o
-}
-
-func (o ExportOutput) ToOutput(ctx context.Context) pulumix.Output[*Export] {
-	return pulumix.Output[*Export]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Export options for the new export. If left unspecified, defaults to:
@@ -394,8 +369,8 @@ func (o ExportOutput) FileSystemId() pulumi.StringOutput {
 }
 
 // (Updatable) Whether or not the export should use ID mapping for Unix groups rather than the group list provided within an NFS request's RPC header. When this flag is true the Unix UID from the RPC header is used to retrieve the list of secondary groups from a the ID mapping subsystem. The primary GID is always taken from the RPC header. If ID mapping is not configured, incorrectly configured, unavailable, or cannot be used to determine a list of secondary groups then an empty secondary group list is used for authorization. If the number of groups exceeds the limit of 256 groups, the list retrieved from LDAP is truncated to the first 256 groups read.
-func (o ExportOutput) IsIdmapGroupsForSysAuth() pulumi.BoolOutput {
-	return o.ApplyT(func(v *Export) pulumi.BoolOutput { return v.IsIdmapGroupsForSysAuth }).(pulumi.BoolOutput)
+func (o ExportOutput) IsIdmapGroupsForSysAuth() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *Export) pulumi.BoolPtrOutput { return v.IsIdmapGroupsForSysAuth }).(pulumi.BoolPtrOutput)
 }
 
 // Path used to access the associated file system.
@@ -411,13 +386,13 @@ func (o ExportOutput) Path() pulumi.StringOutput {
 }
 
 // The current state of this export.
-func (o ExportOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *Export) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o ExportOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Export) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the export was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
-func (o ExportOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *Export) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o ExportOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Export) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 type ExportArrayOutput struct{ *pulumi.OutputState }
@@ -432,12 +407,6 @@ func (o ExportArrayOutput) ToExportArrayOutput() ExportArrayOutput {
 
 func (o ExportArrayOutput) ToExportArrayOutputWithContext(ctx context.Context) ExportArrayOutput {
 	return o
-}
-
-func (o ExportArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*Export] {
-	return pulumix.Output[[]*Export]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ExportArrayOutput) Index(i pulumi.IntInput) ExportOutput {
@@ -458,12 +427,6 @@ func (o ExportMapOutput) ToExportMapOutput() ExportMapOutput {
 
 func (o ExportMapOutput) ToExportMapOutputWithContext(ctx context.Context) ExportMapOutput {
 	return o
-}
-
-func (o ExportMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*Export] {
-	return pulumix.Output[map[string]*Export]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ExportMapOutput) MapIndex(k pulumi.StringInput) ExportOutput {

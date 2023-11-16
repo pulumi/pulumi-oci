@@ -16,23 +16,23 @@ namespace Pulumi.Oci.CertificatesManagement.Outputs
         /// <summary>
         /// The name of the bucket where the CRL is stored.
         /// </summary>
-        public readonly string ObjectStorageBucketName;
+        public readonly string? ObjectStorageBucketName;
         /// <summary>
         /// The tenancy of the bucket where the CRL is stored.
         /// </summary>
-        public readonly string ObjectStorageNamespace;
+        public readonly string? ObjectStorageNamespace;
         /// <summary>
         /// The object name in the bucket where the CRL is stored, expressed using a format where the version number of the issuing CA is inserted as part of the Object Storage object name wherever you include a pair of curly braces. This versioning scheme helps avoid collisions when new CA versions are created. For example, myCrlFileIssuedFromCAVersion{}.crl becomes myCrlFileIssuedFromCAVersion2.crl for CA version 2.
         /// </summary>
-        public readonly string ObjectStorageObjectNameFormat;
+        public readonly string? ObjectStorageObjectNameFormat;
 
         [OutputConstructor]
         private GetCertificateCertificateRevocationListDetailObjectStorageConfigResult(
-            string objectStorageBucketName,
+            string? objectStorageBucketName,
 
-            string objectStorageNamespace,
+            string? objectStorageNamespace,
 
-            string objectStorageObjectNameFormat)
+            string? objectStorageObjectNameFormat)
         {
             ObjectStorageBucketName = objectStorageBucketName;
             ObjectStorageNamespace = objectStorageNamespace;

@@ -42,10 +42,7 @@ class GetFusionEnvironmentDataMaskingActivitiesResult:
 
     @property
     @pulumi.getter(name="dataMaskingActivityCollections")
-    def data_masking_activity_collections(self) -> Sequence['outputs.GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionResult']:
-        """
-        The list of data_masking_activity_collection.
-        """
+    def data_masking_activity_collections(self) -> Optional[Sequence['outputs.GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionResult']]:
         return pulumi.get(self, "data_masking_activity_collections")
 
     @property
@@ -56,14 +53,11 @@ class GetFusionEnvironmentDataMaskingActivitiesResult:
     @property
     @pulumi.getter(name="fusionEnvironmentId")
     def fusion_environment_id(self) -> str:
-        """
-        Fusion Environment Identifier.
-        """
         return pulumi.get(self, "fusion_environment_id")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -72,9 +66,6 @@ class GetFusionEnvironmentDataMaskingActivitiesResult:
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the DataMaskingActivity.
-        """
         return pulumi.get(self, "state")
 
 
@@ -96,23 +87,7 @@ def get_fusion_environment_data_masking_activities(filters: Optional[Sequence[pu
                                                    state: Optional[str] = None,
                                                    opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetFusionEnvironmentDataMaskingActivitiesResult:
     """
-    This data source provides the list of Fusion Environment Data Masking Activities in Oracle Cloud Infrastructure Fusion Apps service.
-
-    Returns a list of DataMaskingActivities.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_fusion_environment_data_masking_activities = oci.Functions.get_fusion_environment_data_masking_activities(fusion_environment_id=oci_fusion_apps_fusion_environment["test_fusion_environment"]["id"],
-        state=var["fusion_environment_data_masking_activity_state"])
-    ```
-
-
-    :param str fusion_environment_id: unique FusionEnvironment identifier
-    :param str state: A filter that returns all resources that match the specified status
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['filters'] = filters
@@ -135,22 +110,6 @@ def get_fusion_environment_data_masking_activities_output(filters: Optional[pulu
                                                           state: Optional[pulumi.Input[Optional[str]]] = None,
                                                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetFusionEnvironmentDataMaskingActivitiesResult]:
     """
-    This data source provides the list of Fusion Environment Data Masking Activities in Oracle Cloud Infrastructure Fusion Apps service.
-
-    Returns a list of DataMaskingActivities.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_fusion_environment_data_masking_activities = oci.Functions.get_fusion_environment_data_masking_activities(fusion_environment_id=oci_fusion_apps_fusion_environment["test_fusion_environment"]["id"],
-        state=var["fusion_environment_data_masking_activity_state"])
-    ```
-
-
-    :param str fusion_environment_id: unique FusionEnvironment identifier
-    :param str state: A filter that returns all resources that match the specified status
+    Use this data source to access information about an existing resource.
     """
     ...

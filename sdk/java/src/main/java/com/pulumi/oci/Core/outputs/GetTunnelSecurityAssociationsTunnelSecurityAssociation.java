@@ -6,6 +6,8 @@ package com.pulumi.oci.Core.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetTunnelSecurityAssociationsTunnelSecurityAssociation {
@@ -13,63 +15,63 @@ public final class GetTunnelSecurityAssociationsTunnelSecurityAssociation {
      * @return The IP address and mask of the partner subnet used in policy based VPNs or static routes.
      * 
      */
-    private String cpeSubnet;
+    private @Nullable String cpeSubnet;
     /**
      * @return The IP address and mask of the local subnet used in policy based VPNs or static routes.
      * 
      */
-    private String oracleSubnet;
+    private @Nullable String oracleSubnet;
     /**
      * @return Time in the current state, in seconds.
      * 
      */
-    private String time;
+    private @Nullable String time;
     /**
      * @return Current state if the IPSec tunnel status is not `UP`, including phase one and phase two details and a possible reason the tunnel is not `UP`.
      * 
      */
-    private String tunnelSaErrorInfo;
+    private @Nullable String tunnelSaErrorInfo;
     /**
      * @return The IPSec tunnel&#39;s phase one status.
      * 
      */
-    private String tunnelSaStatus;
+    private @Nullable String tunnelSaStatus;
 
     private GetTunnelSecurityAssociationsTunnelSecurityAssociation() {}
     /**
      * @return The IP address and mask of the partner subnet used in policy based VPNs or static routes.
      * 
      */
-    public String cpeSubnet() {
-        return this.cpeSubnet;
+    public Optional<String> cpeSubnet() {
+        return Optional.ofNullable(this.cpeSubnet);
     }
     /**
      * @return The IP address and mask of the local subnet used in policy based VPNs or static routes.
      * 
      */
-    public String oracleSubnet() {
-        return this.oracleSubnet;
+    public Optional<String> oracleSubnet() {
+        return Optional.ofNullable(this.oracleSubnet);
     }
     /**
      * @return Time in the current state, in seconds.
      * 
      */
-    public String time() {
-        return this.time;
+    public Optional<String> time() {
+        return Optional.ofNullable(this.time);
     }
     /**
      * @return Current state if the IPSec tunnel status is not `UP`, including phase one and phase two details and a possible reason the tunnel is not `UP`.
      * 
      */
-    public String tunnelSaErrorInfo() {
-        return this.tunnelSaErrorInfo;
+    public Optional<String> tunnelSaErrorInfo() {
+        return Optional.ofNullable(this.tunnelSaErrorInfo);
     }
     /**
      * @return The IPSec tunnel&#39;s phase one status.
      * 
      */
-    public String tunnelSaStatus() {
-        return this.tunnelSaStatus;
+    public Optional<String> tunnelSaStatus() {
+        return Optional.ofNullable(this.tunnelSaStatus);
     }
 
     public static Builder builder() {
@@ -81,11 +83,11 @@ public final class GetTunnelSecurityAssociationsTunnelSecurityAssociation {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String cpeSubnet;
-        private String oracleSubnet;
-        private String time;
-        private String tunnelSaErrorInfo;
-        private String tunnelSaStatus;
+        private @Nullable String cpeSubnet;
+        private @Nullable String oracleSubnet;
+        private @Nullable String time;
+        private @Nullable String tunnelSaErrorInfo;
+        private @Nullable String tunnelSaStatus;
         public Builder() {}
         public Builder(GetTunnelSecurityAssociationsTunnelSecurityAssociation defaults) {
     	      Objects.requireNonNull(defaults);
@@ -97,28 +99,28 @@ public final class GetTunnelSecurityAssociationsTunnelSecurityAssociation {
         }
 
         @CustomType.Setter
-        public Builder cpeSubnet(String cpeSubnet) {
-            this.cpeSubnet = Objects.requireNonNull(cpeSubnet);
+        public Builder cpeSubnet(@Nullable String cpeSubnet) {
+            this.cpeSubnet = cpeSubnet;
             return this;
         }
         @CustomType.Setter
-        public Builder oracleSubnet(String oracleSubnet) {
-            this.oracleSubnet = Objects.requireNonNull(oracleSubnet);
+        public Builder oracleSubnet(@Nullable String oracleSubnet) {
+            this.oracleSubnet = oracleSubnet;
             return this;
         }
         @CustomType.Setter
-        public Builder time(String time) {
-            this.time = Objects.requireNonNull(time);
+        public Builder time(@Nullable String time) {
+            this.time = time;
             return this;
         }
         @CustomType.Setter
-        public Builder tunnelSaErrorInfo(String tunnelSaErrorInfo) {
-            this.tunnelSaErrorInfo = Objects.requireNonNull(tunnelSaErrorInfo);
+        public Builder tunnelSaErrorInfo(@Nullable String tunnelSaErrorInfo) {
+            this.tunnelSaErrorInfo = tunnelSaErrorInfo;
             return this;
         }
         @CustomType.Setter
-        public Builder tunnelSaStatus(String tunnelSaStatus) {
-            this.tunnelSaStatus = Objects.requireNonNull(tunnelSaStatus);
+        public Builder tunnelSaStatus(@Nullable String tunnelSaStatus) {
+            this.tunnelSaStatus = tunnelSaStatus;
             return this;
         }
         public GetTunnelSecurityAssociationsTunnelSecurityAssociation build() {

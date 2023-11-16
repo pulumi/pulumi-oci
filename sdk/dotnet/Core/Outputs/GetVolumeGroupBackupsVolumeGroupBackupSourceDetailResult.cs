@@ -13,17 +13,17 @@ namespace Pulumi.Oci.Core.Outputs
     [OutputType]
     public sealed class GetVolumeGroupBackupsVolumeGroupBackupSourceDetailResult
     {
-        public readonly string KmsKeyId;
-        public readonly string Region;
-        public readonly string VolumeGroupBackupId;
+        public readonly string? KmsKeyId;
+        public readonly string? Region;
+        public readonly string? VolumeGroupBackupId;
 
         [OutputConstructor]
         private GetVolumeGroupBackupsVolumeGroupBackupSourceDetailResult(
-            string kmsKeyId,
+            string? kmsKeyId,
 
-            string region,
+            string? region,
 
-            string volumeGroupBackupId)
+            string? volumeGroupBackupId)
         {
             KmsKeyId = kmsKeyId;
             Region = region;

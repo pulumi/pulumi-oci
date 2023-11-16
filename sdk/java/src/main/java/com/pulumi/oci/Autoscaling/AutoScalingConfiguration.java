@@ -18,6 +18,7 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -152,7 +153,7 @@ public class AutoScalingConfiguration extends com.pulumi.resources.CustomResourc
      * 
      */
     @Export(name="coolDownInSeconds", refs={Integer.class}, tree="[0]")
-    private Output<Integer> coolDownInSeconds;
+    private Output</* @Nullable */ Integer> coolDownInSeconds;
 
     /**
      * @return (Updatable) For threshold-based autoscaling policies, this value is the minimum period of time to wait between scaling actions. The cooldown period gives the system time to stabilize before rescaling. The minimum value is 300 seconds, which is also the default. The cooldown period starts when the instance pool reaches the running state.
@@ -160,84 +161,84 @@ public class AutoScalingConfiguration extends com.pulumi.resources.CustomResourc
      * For schedule-based autoscaling policies, this value is not used.
      * 
      */
-    public Output<Integer> coolDownInSeconds() {
-        return this.coolDownInSeconds;
+    public Output<Optional<Integer>> coolDownInSeconds() {
+        return Codegen.optional(this.coolDownInSeconds);
     }
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     @Export(name="displayName", refs={String.class}, tree="[0]")
-    private Output<String> displayName;
+    private Output</* @Nullable */ String> displayName;
 
-    public Output<String> displayName() {
-        return this.displayName;
+    public Output<Optional<String>> displayName() {
+        return Codegen.optional(this.displayName);
     }
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * Whether the autoscaling policy is enabled.
      * 
      */
     @Export(name="isEnabled", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isEnabled;
+    private Output</* @Nullable */ Boolean> isEnabled;
 
     /**
      * @return Whether the autoscaling policy is enabled.
      * 
      */
-    public Output<Boolean> isEnabled() {
-        return this.isEnabled;
+    public Output<Optional<Boolean>> isEnabled() {
+        return Codegen.optional(this.isEnabled);
     }
     /**
      * The maximum number of resources to scale out to.
      * 
      */
     @Export(name="maxResourceCount", refs={Integer.class}, tree="[0]")
-    private Output<Integer> maxResourceCount;
+    private Output</* @Nullable */ Integer> maxResourceCount;
 
     /**
      * @return The maximum number of resources to scale out to.
      * 
      */
-    public Output<Integer> maxResourceCount() {
-        return this.maxResourceCount;
+    public Output<Optional<Integer>> maxResourceCount() {
+        return Codegen.optional(this.maxResourceCount);
     }
     /**
      * The minimum number of resources to scale in to.
      * 
      */
     @Export(name="minResourceCount", refs={Integer.class}, tree="[0]")
-    private Output<Integer> minResourceCount;
+    private Output</* @Nullable */ Integer> minResourceCount;
 
     /**
      * @return The minimum number of resources to scale in to.
      * 
      */
-    public Output<Integer> minResourceCount() {
-        return this.minResourceCount;
+    public Output<Optional<Integer>> minResourceCount() {
+        return Codegen.optional(this.minResourceCount);
     }
     /**
      * Autoscaling policy definitions for the autoscaling configuration. An autoscaling policy defines the criteria that trigger autoscaling actions and the actions to take.
@@ -258,14 +259,14 @@ public class AutoScalingConfiguration extends com.pulumi.resources.CustomResourc
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The date and time the autoscaling configuration was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
 
     /**

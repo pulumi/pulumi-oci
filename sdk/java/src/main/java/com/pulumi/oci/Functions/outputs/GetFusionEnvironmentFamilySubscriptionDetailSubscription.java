@@ -8,6 +8,8 @@ import com.pulumi.oci.Functions.outputs.GetFusionEnvironmentFamilySubscriptionDe
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetFusionEnvironmentFamilySubscriptionDetailSubscription {
@@ -15,51 +17,51 @@ public final class GetFusionEnvironmentFamilySubscriptionDetailSubscription {
      * @return Subscription id.
      * 
      */
-    private String classicSubscriptionId;
+    private @Nullable String classicSubscriptionId;
     /**
      * @return OCID of the subscription details for particular root compartment or tenancy.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The type of subscription, such as &#39;CLOUDCM&#39;/&#39;SAAS&#39;/&#39;CRM&#39;, etc.
      * 
      */
-    private String serviceName;
+    private @Nullable String serviceName;
     /**
      * @return Stock keeping unit.
      * 
      */
-    private List<GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkus> skuses;
+    private @Nullable List<GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkus> skuses;
 
     private GetFusionEnvironmentFamilySubscriptionDetailSubscription() {}
     /**
      * @return Subscription id.
      * 
      */
-    public String classicSubscriptionId() {
-        return this.classicSubscriptionId;
+    public Optional<String> classicSubscriptionId() {
+        return Optional.ofNullable(this.classicSubscriptionId);
     }
     /**
      * @return OCID of the subscription details for particular root compartment or tenancy.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The type of subscription, such as &#39;CLOUDCM&#39;/&#39;SAAS&#39;/&#39;CRM&#39;, etc.
      * 
      */
-    public String serviceName() {
-        return this.serviceName;
+    public Optional<String> serviceName() {
+        return Optional.ofNullable(this.serviceName);
     }
     /**
      * @return Stock keeping unit.
      * 
      */
     public List<GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkus> skuses() {
-        return this.skuses;
+        return this.skuses == null ? List.of() : this.skuses;
     }
 
     public static Builder builder() {
@@ -71,10 +73,10 @@ public final class GetFusionEnvironmentFamilySubscriptionDetailSubscription {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String classicSubscriptionId;
-        private String id;
-        private String serviceName;
-        private List<GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkus> skuses;
+        private @Nullable String classicSubscriptionId;
+        private @Nullable String id;
+        private @Nullable String serviceName;
+        private @Nullable List<GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkus> skuses;
         public Builder() {}
         public Builder(GetFusionEnvironmentFamilySubscriptionDetailSubscription defaults) {
     	      Objects.requireNonNull(defaults);
@@ -85,23 +87,23 @@ public final class GetFusionEnvironmentFamilySubscriptionDetailSubscription {
         }
 
         @CustomType.Setter
-        public Builder classicSubscriptionId(String classicSubscriptionId) {
-            this.classicSubscriptionId = Objects.requireNonNull(classicSubscriptionId);
+        public Builder classicSubscriptionId(@Nullable String classicSubscriptionId) {
+            this.classicSubscriptionId = classicSubscriptionId;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder serviceName(String serviceName) {
-            this.serviceName = Objects.requireNonNull(serviceName);
+        public Builder serviceName(@Nullable String serviceName) {
+            this.serviceName = serviceName;
             return this;
         }
         @CustomType.Setter
-        public Builder skuses(List<GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkus> skuses) {
-            this.skuses = Objects.requireNonNull(skuses);
+        public Builder skuses(@Nullable List<GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkus> skuses) {
+            this.skuses = skuses;
             return this;
         }
         public Builder skuses(GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkus... skuses) {

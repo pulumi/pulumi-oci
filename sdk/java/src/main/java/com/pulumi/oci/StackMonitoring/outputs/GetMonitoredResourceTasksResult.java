@@ -24,12 +24,12 @@ public final class GetMonitoredResourceTasksResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The list of monitored_resource_tasks_collection.
      * 
      */
-    private List<GetMonitoredResourceTasksMonitoredResourceTasksCollection> monitoredResourceTasksCollections;
+    private @Nullable List<GetMonitoredResourceTasksMonitoredResourceTasksCollection> monitoredResourceTasksCollections;
     private @Nullable String status;
 
     private GetMonitoredResourceTasksResult() {}
@@ -47,15 +47,15 @@ public final class GetMonitoredResourceTasksResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The list of monitored_resource_tasks_collection.
      * 
      */
     public List<GetMonitoredResourceTasksMonitoredResourceTasksCollection> monitoredResourceTasksCollections() {
-        return this.monitoredResourceTasksCollections;
+        return this.monitoredResourceTasksCollections == null ? List.of() : this.monitoredResourceTasksCollections;
     }
     public Optional<String> status() {
         return Optional.ofNullable(this.status);
@@ -72,8 +72,8 @@ public final class GetMonitoredResourceTasksResult {
     public static final class Builder {
         private String compartmentId;
         private @Nullable List<GetMonitoredResourceTasksFilter> filters;
-        private String id;
-        private List<GetMonitoredResourceTasksMonitoredResourceTasksCollection> monitoredResourceTasksCollections;
+        private @Nullable String id;
+        private @Nullable List<GetMonitoredResourceTasksMonitoredResourceTasksCollection> monitoredResourceTasksCollections;
         private @Nullable String status;
         public Builder() {}
         public Builder(GetMonitoredResourceTasksResult defaults) {
@@ -99,13 +99,13 @@ public final class GetMonitoredResourceTasksResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder monitoredResourceTasksCollections(List<GetMonitoredResourceTasksMonitoredResourceTasksCollection> monitoredResourceTasksCollections) {
-            this.monitoredResourceTasksCollections = Objects.requireNonNull(monitoredResourceTasksCollections);
+        public Builder monitoredResourceTasksCollections(@Nullable List<GetMonitoredResourceTasksMonitoredResourceTasksCollection> monitoredResourceTasksCollections) {
+            this.monitoredResourceTasksCollections = monitoredResourceTasksCollections;
             return this;
         }
         public Builder monitoredResourceTasksCollections(GetMonitoredResourceTasksMonitoredResourceTasksCollection... monitoredResourceTasksCollections) {

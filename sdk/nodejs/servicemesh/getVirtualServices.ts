@@ -94,7 +94,7 @@ export interface GetVirtualServicesResult {
     /**
      * The list of virtual_service_collection.
      */
-    readonly virtualServiceCollections: outputs.ServiceMesh.GetVirtualServicesVirtualServiceCollection[];
+    readonly virtualServiceCollections?: outputs.ServiceMesh.GetVirtualServicesVirtualServiceCollection[];
 }
 /**
  * This data source provides the list of Virtual Services in Oracle Cloud Infrastructure Service Mesh service.

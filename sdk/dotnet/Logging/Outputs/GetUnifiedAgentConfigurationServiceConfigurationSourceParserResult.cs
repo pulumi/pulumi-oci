@@ -16,19 +16,19 @@ namespace Pulumi.Oci.Logging.Outputs
         /// <summary>
         /// CSV delimiter.
         /// </summary>
-        public readonly string Delimiter;
+        public readonly string? Delimiter;
         /// <summary>
         /// Regex pattern.
         /// </summary>
-        public readonly string Expression;
+        public readonly string? Expression;
         /// <summary>
         /// Specify the time field for the event time. If the event doesn't have this field, the current time is used.
         /// </summary>
-        public readonly string FieldTimeKey;
+        public readonly string? FieldTimeKey;
         /// <summary>
         /// First line pattern format.
         /// </summary>
-        public readonly string FormatFirstline;
+        public readonly string? FormatFirstline;
         /// <summary>
         /// Mutiline pattern format.
         /// </summary>
@@ -36,35 +36,35 @@ namespace Pulumi.Oci.Logging.Outputs
         /// <summary>
         /// Grok failure key.
         /// </summary>
-        public readonly string GrokFailureKey;
+        public readonly string? GrokFailureKey;
         /// <summary>
         /// Grok name key.
         /// </summary>
-        public readonly string GrokNameKey;
+        public readonly string? GrokNameKey;
         /// <summary>
         /// If true, use Fluent::EventTime.now(current time) as a timestamp when the time_key is specified.
         /// </summary>
-        public readonly bool IsEstimateCurrentEvent;
+        public readonly bool? IsEstimateCurrentEvent;
         /// <summary>
         /// If true, keep the time field in the record.
         /// </summary>
-        public readonly bool IsKeepTimeKey;
+        public readonly bool? IsKeepTimeKey;
         /// <summary>
         /// If you don't need stream or logtag fields, set this to false.
         /// </summary>
-        public readonly bool IsMergeCriFields;
+        public readonly bool? IsMergeCriFields;
         /// <summary>
         /// If true, an empty string field is replaced with a null value.
         /// </summary>
-        public readonly bool IsNullEmptyString;
+        public readonly bool? IsNullEmptyString;
         /// <summary>
         /// Specifies whether or not to support colonless ident. Corresponds to the Fluentd support_colonless_ident parameter.
         /// </summary>
-        public readonly bool IsSupportColonlessIdent;
+        public readonly bool? IsSupportColonlessIdent;
         /// <summary>
         /// Specifies with priority or not. Corresponds to the Fluentd with_priority parameter.
         /// </summary>
-        public readonly bool IsWithPriority;
+        public readonly bool? IsWithPriority;
         /// <summary>
         /// CSV keys.
         /// </summary>
@@ -72,15 +72,15 @@ namespace Pulumi.Oci.Logging.Outputs
         /// <summary>
         /// Syslog message format.
         /// </summary>
-        public readonly string MessageFormat;
+        public readonly string? MessageFormat;
         /// <summary>
         /// Specifies the field name to contain logs.
         /// </summary>
-        public readonly string MessageKey;
+        public readonly string? MessageKey;
         /// <summary>
         /// Multiline start regexp pattern.
         /// </summary>
-        public readonly string MultiLineStartRegexp;
+        public readonly string? MultiLineStartRegexp;
         /// <summary>
         /// Optional nested JSON Parser for CRI. Supported fields are fieldTimeKey, timeFormat, and isKeepTimeKey.
         /// </summary>
@@ -88,11 +88,11 @@ namespace Pulumi.Oci.Logging.Outputs
         /// <summary>
         /// Specify the null value pattern.
         /// </summary>
-        public readonly string NullValuePattern;
+        public readonly string? NullValuePattern;
         /// <summary>
         /// Type of fluent parser.
         /// </summary>
-        public readonly string ParserType;
+        public readonly string? ParserType;
         /// <summary>
         /// Grok pattern object.
         /// </summary>
@@ -100,83 +100,83 @@ namespace Pulumi.Oci.Logging.Outputs
         /// <summary>
         /// RFC 5424 time format.
         /// </summary>
-        public readonly string Rfc5424timeFormat;
+        public readonly string? Rfc5424timeFormat;
         /// <summary>
         /// Syslog parser type.
         /// </summary>
-        public readonly string SyslogParserType;
+        public readonly string? SyslogParserType;
         /// <summary>
         /// Process time value using the specified format.
         /// </summary>
-        public readonly string TimeFormat;
+        public readonly string? TimeFormat;
         /// <summary>
         /// JSON parser time type.
         /// </summary>
-        public readonly string TimeType;
+        public readonly string? TimeType;
         /// <summary>
         /// Specify the timeout for parse processing. This is mainly for detecting an incorrect regexp pattern.
         /// </summary>
-        public readonly int TimeoutInMilliseconds;
+        public readonly int? TimeoutInMilliseconds;
         /// <summary>
         /// Specify types for converting a field into another type. For example, With this configuration: &lt;parse&gt; @type csv keys time,host,req_id,user time_key time &lt;/parse&gt;
         /// </summary>
-        public readonly ImmutableDictionary<string, object> Types;
+        public readonly ImmutableDictionary<string, object>? Types;
 
         [OutputConstructor]
         private GetUnifiedAgentConfigurationServiceConfigurationSourceParserResult(
-            string delimiter,
+            string? delimiter,
 
-            string expression,
+            string? expression,
 
-            string fieldTimeKey,
+            string? fieldTimeKey,
 
-            string formatFirstline,
+            string? formatFirstline,
 
             ImmutableArray<string> formats,
 
-            string grokFailureKey,
+            string? grokFailureKey,
 
-            string grokNameKey,
+            string? grokNameKey,
 
-            bool isEstimateCurrentEvent,
+            bool? isEstimateCurrentEvent,
 
-            bool isKeepTimeKey,
+            bool? isKeepTimeKey,
 
-            bool isMergeCriFields,
+            bool? isMergeCriFields,
 
-            bool isNullEmptyString,
+            bool? isNullEmptyString,
 
-            bool isSupportColonlessIdent,
+            bool? isSupportColonlessIdent,
 
-            bool isWithPriority,
+            bool? isWithPriority,
 
             ImmutableArray<string> keys,
 
-            string messageFormat,
+            string? messageFormat,
 
-            string messageKey,
+            string? messageKey,
 
-            string multiLineStartRegexp,
+            string? multiLineStartRegexp,
 
             ImmutableArray<Outputs.GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserResult> nestedParsers,
 
-            string nullValuePattern,
+            string? nullValuePattern,
 
-            string parserType,
+            string? parserType,
 
             ImmutableArray<Outputs.GetUnifiedAgentConfigurationServiceConfigurationSourceParserPatternResult> patterns,
 
-            string rfc5424timeFormat,
+            string? rfc5424timeFormat,
 
-            string syslogParserType,
+            string? syslogParserType,
 
-            string timeFormat,
+            string? timeFormat,
 
-            string timeType,
+            string? timeType,
 
-            int timeoutInMilliseconds,
+            int? timeoutInMilliseconds,
 
-            ImmutableDictionary<string, object> types)
+            ImmutableDictionary<string, object>? types)
         {
             Delimiter = delimiter;
             Expression = expression;

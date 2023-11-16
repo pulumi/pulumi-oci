@@ -69,12 +69,12 @@ export interface GetSqlCollectionLogInsightsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly sqlCollectionId: string;
     /**
      * The list of sql_collection_log_insights_collection.
      */
-    readonly sqlCollectionLogInsightsCollections: outputs.DataSafe.GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollection[];
+    readonly sqlCollectionLogInsightsCollections?: outputs.DataSafe.GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollection[];
     /**
      * The time at which the aggregation ended.
      */

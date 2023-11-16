@@ -59,12 +59,12 @@ export interface GetCustomTablesResult {
     /**
      * The list of custom_table_collection.
      */
-    readonly customTableCollections: outputs.MeteringComputation.GetCustomTablesCustomTableCollection[];
+    readonly customTableCollections?: outputs.MeteringComputation.GetCustomTablesCustomTableCollection[];
     readonly filters?: outputs.MeteringComputation.GetCustomTablesFilter[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The custom table associated saved report OCID.
      */

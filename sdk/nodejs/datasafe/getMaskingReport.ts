@@ -45,80 +45,80 @@ export interface GetMaskingReportResult {
     /**
      * The OCID of the compartment that contains the masking report.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Indicates if the temporary tables created during the masking operation were dropped after masking.
      */
-    readonly isDropTempTablesEnabled: boolean;
+    readonly isDropTempTablesEnabled?: boolean;
     /**
      * Indicates if redo logging was enabled during the masking operation.
      */
-    readonly isRedoLoggingEnabled: boolean;
+    readonly isRedoLoggingEnabled?: boolean;
     /**
      * Indicates if statistics gathering was enabled during the masking operation.
      */
-    readonly isRefreshStatsEnabled: boolean;
+    readonly isRefreshStatsEnabled?: boolean;
     /**
      * The OCID of the masking policy used.
      */
-    readonly maskingPolicyId: string;
+    readonly maskingPolicyId?: string;
     readonly maskingReportId: string;
     /**
      * The OCID of the masking work request that resulted in this masking report.
      */
-    readonly maskingWorkRequestId: string;
+    readonly maskingWorkRequestId?: string;
     /**
      * Indicates if parallel execution was enabled during the masking operation.
      */
-    readonly parallelDegree: string;
+    readonly parallelDegree?: string;
     /**
      * Indicates how invalid objects were recompiled post the masking operation.
      */
-    readonly recompile: string;
+    readonly recompile?: string;
     /**
      * The current state of the masking report.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * The OCID of the target database masked.
      */
-    readonly targetId: string;
+    readonly targetId?: string;
     /**
      * The date and time the masking report was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The date and time data masking finished, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)
      */
-    readonly timeMaskingFinished: string;
+    readonly timeMaskingFinished?: string;
     /**
      * The date and time data masking started, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)
      */
-    readonly timeMaskingStarted: string;
+    readonly timeMaskingStarted?: string;
     /**
      * The total number of masked columns.
      */
-    readonly totalMaskedColumns: string;
+    readonly totalMaskedColumns?: string;
     /**
      * The total number of unique objects (tables and editioning views) that contain the masked columns.
      */
-    readonly totalMaskedObjects: string;
+    readonly totalMaskedObjects?: string;
     /**
      * The total number of unique schemas that contain the masked columns.
      */
-    readonly totalMaskedSchemas: string;
+    readonly totalMaskedSchemas?: string;
     /**
      * The total number of unique sensitive types associated with the masked columns.
      */
-    readonly totalMaskedSensitiveTypes: string;
+    readonly totalMaskedSensitiveTypes?: string;
     /**
      * The total number of masked values.
      */
-    readonly totalMaskedValues: string;
+    readonly totalMaskedValues?: string;
 }
 /**
  * This data source provides details about a specific Masking Report resource in Oracle Cloud Infrastructure Data Safe service.

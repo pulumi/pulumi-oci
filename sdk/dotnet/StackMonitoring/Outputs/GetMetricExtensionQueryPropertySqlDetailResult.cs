@@ -16,17 +16,17 @@ namespace Pulumi.Oci.StackMonitoring.Outputs
         /// <summary>
         /// Sql statement or script file content as base64 encoded string
         /// </summary>
-        public readonly string Content;
+        public readonly string? Content;
         /// <summary>
         /// If a script needs to be executed, then provide file name of the script
         /// </summary>
-        public readonly string ScriptFileName;
+        public readonly string? ScriptFileName;
 
         [OutputConstructor]
         private GetMetricExtensionQueryPropertySqlDetailResult(
-            string content,
+            string? content,
 
-            string scriptFileName)
+            string? scriptFileName)
         {
             Content = content;
             ScriptFileName = scriptFileName;

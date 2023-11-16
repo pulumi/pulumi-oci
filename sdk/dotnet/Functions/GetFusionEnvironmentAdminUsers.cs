@@ -130,7 +130,7 @@ namespace Pulumi.Oci.Functions
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
 
         [OutputConstructor]
         private GetFusionEnvironmentAdminUsersResult(
@@ -140,7 +140,7 @@ namespace Pulumi.Oci.Functions
 
             string fusionEnvironmentId,
 
-            string id)
+            string? id)
         {
             AdminUserCollections = adminUserCollections;
             Filters = filters;

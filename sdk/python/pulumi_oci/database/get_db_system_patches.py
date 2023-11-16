@@ -49,7 +49,7 @@ class GetDbSystemPatchesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -57,10 +57,7 @@ class GetDbSystemPatchesResult:
 
     @property
     @pulumi.getter
-    def patches(self) -> Sequence['outputs.GetDbSystemPatchesPatchResult']:
-        """
-        The list of patches.
-        """
+    def patches(self) -> Optional[Sequence['outputs.GetDbSystemPatchesPatchResult']]:
         return pulumi.get(self, "patches")
 
 
@@ -80,21 +77,7 @@ def get_db_system_patches(db_system_id: Optional[str] = None,
                           filters: Optional[Sequence[pulumi.InputType['GetDbSystemPatchesFilterArgs']]] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDbSystemPatchesResult:
     """
-    This data source provides the list of Db System Patches in Oracle Cloud Infrastructure Database service.
-
-    Lists the patches applicable to the specified DB system.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_db_system_patches = oci.Database.get_db_system_patches(db_system_id=oci_database_db_system["test_db_system"]["id"])
-    ```
-
-
-    :param str db_system_id: The DB system [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['dbSystemId'] = db_system_id
@@ -114,20 +97,6 @@ def get_db_system_patches_output(db_system_id: Optional[pulumi.Input[str]] = Non
                                  filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetDbSystemPatchesFilterArgs']]]]] = None,
                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDbSystemPatchesResult]:
     """
-    This data source provides the list of Db System Patches in Oracle Cloud Infrastructure Database service.
-
-    Lists the patches applicable to the specified DB system.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_db_system_patches = oci.Database.get_db_system_patches(db_system_id=oci_database_db_system["test_db_system"]["id"])
-    ```
-
-
-    :param str db_system_id: The DB system [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+    Use this data source to access information about an existing resource.
     """
     ...

@@ -6,6 +6,8 @@ package com.pulumi.oci.CloudBridge.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAssetVmwareVmCustomerTag {
@@ -13,27 +15,27 @@ public final class GetAssetVmwareVmCustomerTag {
      * @return The tag description.
      * 
      */
-    private String description;
+    private @Nullable String description;
     /**
      * @return The tag name.
      * 
      */
-    private String name;
+    private @Nullable String name;
 
     private GetAssetVmwareVmCustomerTag() {}
     /**
      * @return The tag description.
      * 
      */
-    public String description() {
-        return this.description;
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
     /**
      * @return The tag name.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
 
     public static Builder builder() {
@@ -45,8 +47,8 @@ public final class GetAssetVmwareVmCustomerTag {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String description;
-        private String name;
+        private @Nullable String description;
+        private @Nullable String name;
         public Builder() {}
         public Builder(GetAssetVmwareVmCustomerTag defaults) {
     	      Objects.requireNonNull(defaults);
@@ -55,13 +57,13 @@ public final class GetAssetVmwareVmCustomerTag {
         }
 
         @CustomType.Setter
-        public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+        public Builder description(@Nullable String description) {
+            this.description = description;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         public GetAssetVmwareVmCustomerTag build() {

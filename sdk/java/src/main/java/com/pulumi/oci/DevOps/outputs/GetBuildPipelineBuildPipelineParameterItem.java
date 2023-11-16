@@ -6,6 +6,8 @@ package com.pulumi.oci.DevOps.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetBuildPipelineBuildPipelineParameterItem {
@@ -13,39 +15,39 @@ public final class GetBuildPipelineBuildPipelineParameterItem {
      * @return Default value of the parameter.
      * 
      */
-    private String defaultValue;
+    private @Nullable String defaultValue;
     /**
      * @return Optional description about the build pipeline.
      * 
      */
-    private String description;
+    private @Nullable String description;
     /**
      * @return Name of the parameter (case-sensitive). Parameter name must be ^[a-zA-Z][a-zA-Z_0-9]*$. Example: &#39;Build_Pipeline_param&#39; is not same as &#39;build_pipeline_Param&#39;
      * 
      */
-    private String name;
+    private @Nullable String name;
 
     private GetBuildPipelineBuildPipelineParameterItem() {}
     /**
      * @return Default value of the parameter.
      * 
      */
-    public String defaultValue() {
-        return this.defaultValue;
+    public Optional<String> defaultValue() {
+        return Optional.ofNullable(this.defaultValue);
     }
     /**
      * @return Optional description about the build pipeline.
      * 
      */
-    public String description() {
-        return this.description;
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
     /**
      * @return Name of the parameter (case-sensitive). Parameter name must be ^[a-zA-Z][a-zA-Z_0-9]*$. Example: &#39;Build_Pipeline_param&#39; is not same as &#39;build_pipeline_Param&#39;
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
 
     public static Builder builder() {
@@ -57,9 +59,9 @@ public final class GetBuildPipelineBuildPipelineParameterItem {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String defaultValue;
-        private String description;
-        private String name;
+        private @Nullable String defaultValue;
+        private @Nullable String description;
+        private @Nullable String name;
         public Builder() {}
         public Builder(GetBuildPipelineBuildPipelineParameterItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -69,18 +71,18 @@ public final class GetBuildPipelineBuildPipelineParameterItem {
         }
 
         @CustomType.Setter
-        public Builder defaultValue(String defaultValue) {
-            this.defaultValue = Objects.requireNonNull(defaultValue);
+        public Builder defaultValue(@Nullable String defaultValue) {
+            this.defaultValue = defaultValue;
             return this;
         }
         @CustomType.Setter
-        public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+        public Builder description(@Nullable String description) {
+            this.description = description;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         public GetBuildPipelineBuildPipelineParameterItem build() {

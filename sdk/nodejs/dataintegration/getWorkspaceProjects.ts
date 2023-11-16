@@ -75,7 +75,7 @@ export interface GetWorkspaceProjectsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The identifier of the aggregator.
      */
@@ -88,7 +88,7 @@ export interface GetWorkspaceProjectsResult {
     /**
      * The list of project_summary_collection.
      */
-    readonly projectSummaryCollections: outputs.DataIntegration.GetWorkspaceProjectsProjectSummaryCollection[];
+    readonly projectSummaryCollections?: outputs.DataIntegration.GetWorkspaceProjectsProjectSummaryCollection[];
     readonly workspaceId: string;
 }
 /**

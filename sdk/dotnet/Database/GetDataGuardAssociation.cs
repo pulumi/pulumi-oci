@@ -124,185 +124,185 @@ namespace Pulumi.Oci.Database
         /// <summary>
         /// The lag time between updates to the primary database and application of the redo data on the standby database, as computed by the reporting database.  Example: `9 seconds`
         /// </summary>
-        public readonly string ApplyLag;
+        public readonly string? ApplyLag;
         /// <summary>
         /// The rate at which redo logs are synced between the associated databases.  Example: `180 Mb per second`
         /// </summary>
-        public readonly string ApplyRate;
-        public readonly string AvailabilityDomain;
+        public readonly string? ApplyRate;
+        public readonly string? AvailabilityDomain;
         public readonly ImmutableArray<string> BackupNetworkNsgIds;
-        public readonly int CpuCoreCount;
-        public readonly bool CreateAsync;
-        public readonly string CreationType;
+        public readonly int? CpuCoreCount;
+        public readonly bool? CreateAsync;
+        public readonly string? CreationType;
         public readonly ImmutableArray<Outputs.GetDataGuardAssociationDataCollectionOptionResult> DataCollectionOptions;
         public readonly string DataGuardAssociationId;
-        public readonly string DatabaseAdminPassword;
-        public readonly ImmutableDictionary<string, object> DatabaseDefinedTags;
-        public readonly ImmutableDictionary<string, object> DatabaseFreeformTags;
+        public readonly string? DatabaseAdminPassword;
+        public readonly ImmutableDictionary<string, object>? DatabaseDefinedTags;
+        public readonly ImmutableDictionary<string, object>? DatabaseFreeformTags;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the reporting database.
         /// </summary>
         public readonly string DatabaseId;
-        public readonly string DatabaseSoftwareImageId;
-        public readonly ImmutableDictionary<string, object> DbSystemDefinedTags;
-        public readonly ImmutableDictionary<string, object> DbSystemFreeformTags;
-        public readonly string DeleteStandbyDbHomeOnDelete;
-        public readonly string DisplayName;
+        public readonly string? DatabaseSoftwareImageId;
+        public readonly ImmutableDictionary<string, object>? DbSystemDefinedTags;
+        public readonly ImmutableDictionary<string, object>? DbSystemFreeformTags;
+        public readonly string? DeleteStandbyDbHomeOnDelete;
+        public readonly string? DisplayName;
         public readonly ImmutableArray<string> FaultDomains;
-        public readonly string Hostname;
+        public readonly string? Hostname;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Data Guard association.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// True if active Data Guard is enabled.
         /// </summary>
-        public readonly bool IsActiveDataGuardEnabled;
-        public readonly string LicenseModel;
+        public readonly bool? IsActiveDataGuardEnabled;
+        public readonly string? LicenseModel;
         /// <summary>
         /// Additional information about the current lifecycleState, if available.
         /// </summary>
-        public readonly string LifecycleDetails;
-        public readonly int NodeCount;
+        public readonly string? LifecycleDetails;
+        public readonly int? NodeCount;
         public readonly ImmutableArray<string> NsgIds;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer database's Data Guard association.
         /// </summary>
-        public readonly string PeerDataGuardAssociationId;
+        public readonly string? PeerDataGuardAssociationId;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated peer database.
         /// </summary>
-        public readonly string PeerDatabaseId;
+        public readonly string? PeerDatabaseId;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home containing the associated peer database.
         /// </summary>
-        public readonly string PeerDbHomeId;
+        public readonly string? PeerDbHomeId;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system containing the associated peer database.
         /// </summary>
-        public readonly string PeerDbSystemId;
-        public readonly string PeerDbUniqueName;
+        public readonly string? PeerDbSystemId;
+        public readonly string? PeerDbUniqueName;
         /// <summary>
         /// The role of the peer database in this Data Guard association.
         /// </summary>
-        public readonly string PeerRole;
-        public readonly string PeerSidPrefix;
-        public readonly string PeerVmClusterId;
-        public readonly string PrivateIp;
+        public readonly string? PeerRole;
+        public readonly string? PeerSidPrefix;
+        public readonly string? PeerVmClusterId;
+        public readonly string? PrivateIp;
         /// <summary>
         /// The protection mode of this Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
         /// </summary>
-        public readonly string ProtectionMode;
+        public readonly string? ProtectionMode;
         /// <summary>
         /// The role of the reporting database in this Data Guard association.
         /// </summary>
-        public readonly string Role;
-        public readonly string Shape;
+        public readonly string? Role;
+        public readonly string? Shape;
         /// <summary>
         /// The current state of the Data Guard association.
         /// </summary>
-        public readonly string State;
-        public readonly string StorageVolumePerformanceMode;
-        public readonly string SubnetId;
+        public readonly string? State;
+        public readonly string? StorageVolumePerformanceMode;
+        public readonly string? SubnetId;
         /// <summary>
         /// The date and time the Data Guard association was created.
         /// </summary>
-        public readonly string TimeCreated;
-        public readonly string TimeZone;
+        public readonly string? TimeCreated;
+        public readonly string? TimeZone;
         /// <summary>
         /// The redo transport type used by this Data Guard association.  For more information, see [Redo Transport Services](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-redo-transport-services.htm#SBYDB00400) in the Oracle Data Guard documentation.
         /// </summary>
-        public readonly string TransportType;
+        public readonly string? TransportType;
 
         [OutputConstructor]
         private GetDataGuardAssociationResult(
-            string applyLag,
+            string? applyLag,
 
-            string applyRate,
+            string? applyRate,
 
-            string availabilityDomain,
+            string? availabilityDomain,
 
             ImmutableArray<string> backupNetworkNsgIds,
 
-            int cpuCoreCount,
+            int? cpuCoreCount,
 
-            bool createAsync,
+            bool? createAsync,
 
-            string creationType,
+            string? creationType,
 
             ImmutableArray<Outputs.GetDataGuardAssociationDataCollectionOptionResult> dataCollectionOptions,
 
             string dataGuardAssociationId,
 
-            string databaseAdminPassword,
+            string? databaseAdminPassword,
 
-            ImmutableDictionary<string, object> databaseDefinedTags,
+            ImmutableDictionary<string, object>? databaseDefinedTags,
 
-            ImmutableDictionary<string, object> databaseFreeformTags,
+            ImmutableDictionary<string, object>? databaseFreeformTags,
 
             string databaseId,
 
-            string databaseSoftwareImageId,
+            string? databaseSoftwareImageId,
 
-            ImmutableDictionary<string, object> dbSystemDefinedTags,
+            ImmutableDictionary<string, object>? dbSystemDefinedTags,
 
-            ImmutableDictionary<string, object> dbSystemFreeformTags,
+            ImmutableDictionary<string, object>? dbSystemFreeformTags,
 
-            string deleteStandbyDbHomeOnDelete,
+            string? deleteStandbyDbHomeOnDelete,
 
-            string displayName,
+            string? displayName,
 
             ImmutableArray<string> faultDomains,
 
-            string hostname,
+            string? hostname,
 
-            string id,
+            string? id,
 
-            bool isActiveDataGuardEnabled,
+            bool? isActiveDataGuardEnabled,
 
-            string licenseModel,
+            string? licenseModel,
 
-            string lifecycleDetails,
+            string? lifecycleDetails,
 
-            int nodeCount,
+            int? nodeCount,
 
             ImmutableArray<string> nsgIds,
 
-            string peerDataGuardAssociationId,
+            string? peerDataGuardAssociationId,
 
-            string peerDatabaseId,
+            string? peerDatabaseId,
 
-            string peerDbHomeId,
+            string? peerDbHomeId,
 
-            string peerDbSystemId,
+            string? peerDbSystemId,
 
-            string peerDbUniqueName,
+            string? peerDbUniqueName,
 
-            string peerRole,
+            string? peerRole,
 
-            string peerSidPrefix,
+            string? peerSidPrefix,
 
-            string peerVmClusterId,
+            string? peerVmClusterId,
 
-            string privateIp,
+            string? privateIp,
 
-            string protectionMode,
+            string? protectionMode,
 
-            string role,
+            string? role,
 
-            string shape,
+            string? shape,
 
-            string state,
+            string? state,
 
-            string storageVolumePerformanceMode,
+            string? storageVolumePerformanceMode,
 
-            string subnetId,
+            string? subnetId,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeZone,
+            string? timeZone,
 
-            string transportType)
+            string? transportType)
         {
             ApplyLag = applyLag;
             ApplyRate = applyRate;

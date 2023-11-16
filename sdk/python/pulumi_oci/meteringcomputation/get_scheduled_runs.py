@@ -44,7 +44,7 @@ class GetScheduledRunsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -53,17 +53,11 @@ class GetScheduledRunsResult:
     @property
     @pulumi.getter(name="scheduleId")
     def schedule_id(self) -> str:
-        """
-        The ocid representing unique shedule
-        """
         return pulumi.get(self, "schedule_id")
 
     @property
     @pulumi.getter(name="scheduledRunCollections")
-    def scheduled_run_collections(self) -> Sequence['outputs.GetScheduledRunsScheduledRunCollectionResult']:
-        """
-        The list of scheduled_run_collection.
-        """
+    def scheduled_run_collections(self) -> Optional[Sequence['outputs.GetScheduledRunsScheduledRunCollectionResult']]:
         return pulumi.get(self, "scheduled_run_collections")
 
 
@@ -83,21 +77,7 @@ def get_scheduled_runs(filters: Optional[Sequence[pulumi.InputType['GetScheduled
                        schedule_id: Optional[str] = None,
                        opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetScheduledRunsResult:
     """
-    This data source provides the list of Scheduled Runs in Oracle Cloud Infrastructure Metering Computation service.
-
-    Returns schedule history list.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_scheduled_runs = oci.MeteringComputation.get_scheduled_runs(schedule_id=oci_metering_computation_schedule["test_schedule"]["id"])
-    ```
-
-
-    :param str schedule_id: The unique ID of a schedule.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['filters'] = filters
@@ -117,20 +97,6 @@ def get_scheduled_runs_output(filters: Optional[pulumi.Input[Optional[Sequence[p
                               schedule_id: Optional[pulumi.Input[str]] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetScheduledRunsResult]:
     """
-    This data source provides the list of Scheduled Runs in Oracle Cloud Infrastructure Metering Computation service.
-
-    Returns schedule history list.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_scheduled_runs = oci.MeteringComputation.get_scheduled_runs(schedule_id=oci_metering_computation_schedule["test_schedule"]["id"])
-    ```
-
-
-    :param str schedule_id: The unique ID of a schedule.
+    Use this data source to access information about an existing resource.
     """
     ...

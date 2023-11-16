@@ -79,13 +79,13 @@ export interface GetWorkspaceExportRequestsResult {
     /**
      * The list of export_request_summary_collection.
      */
-    readonly exportRequestSummaryCollections: outputs.DataIntegration.GetWorkspaceExportRequestsExportRequestSummaryCollection[];
+    readonly exportRequestSummaryCollections?: outputs.DataIntegration.GetWorkspaceExportRequestsExportRequestSummaryCollection[];
     readonly exportStatus?: string;
     readonly filters?: outputs.DataIntegration.GetWorkspaceExportRequestsFilter[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Name of the export request.
      */

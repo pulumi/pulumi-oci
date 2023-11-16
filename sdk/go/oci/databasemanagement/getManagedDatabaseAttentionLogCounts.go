@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Managed Database Attention Log Counts in Oracle Cloud Infrastructure Database Management service.
@@ -86,7 +85,7 @@ type GetManagedDatabaseAttentionLogCountsResult struct {
 	Filters                       []GetManagedDatabaseAttentionLogCountsFilter                       `pulumi:"filters"`
 	GroupBy                       *string                                                            `pulumi:"groupBy"`
 	// The provider-assigned unique ID for this managed resource.
-	Id                  string  `pulumi:"id"`
+	Id                  *string `pulumi:"id"`
 	IsRegularExpression *bool   `pulumi:"isRegularExpression"`
 	LogSearchText       *string `pulumi:"logSearchText"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
@@ -150,12 +149,6 @@ func (o GetManagedDatabaseAttentionLogCountsResultOutput) ToGetManagedDatabaseAt
 	return o
 }
 
-func (o GetManagedDatabaseAttentionLogCountsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagedDatabaseAttentionLogCountsResult] {
-	return pulumix.Output[GetManagedDatabaseAttentionLogCountsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The list of attention_log_counts_collection.
 func (o GetManagedDatabaseAttentionLogCountsResultOutput) AttentionLogCountsCollections() GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionArrayOutput {
 	return o.ApplyT(func(v GetManagedDatabaseAttentionLogCountsResult) []GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollection {
@@ -174,8 +167,8 @@ func (o GetManagedDatabaseAttentionLogCountsResultOutput) GroupBy() pulumi.Strin
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetManagedDatabaseAttentionLogCountsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedDatabaseAttentionLogCountsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetManagedDatabaseAttentionLogCountsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedDatabaseAttentionLogCountsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetManagedDatabaseAttentionLogCountsResultOutput) IsRegularExpression() pulumi.BoolPtrOutput {

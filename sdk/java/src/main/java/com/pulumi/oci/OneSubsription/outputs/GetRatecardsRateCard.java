@@ -11,6 +11,8 @@ import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetRatecardsRateCard {
@@ -18,52 +20,52 @@ public final class GetRatecardsRateCard {
      * @return Currency details
      * 
      */
-    private List<GetRatecardsRateCardCurrency> currencies;
+    private @Nullable List<GetRatecardsRateCardCurrency> currencies;
     /**
      * @return Rate card discretionary discount percentage
      * 
      */
-    private String discretionaryDiscountPercentage;
+    private @Nullable String discretionaryDiscountPercentage;
     /**
      * @return Rate card price tier flag
      * 
      */
-    private Boolean isTier;
+    private @Nullable Boolean isTier;
     /**
      * @return Rate card tier net unit price
      * 
      */
-    private String netUnitPrice;
+    private @Nullable String netUnitPrice;
     /**
      * @return Rate card tier overage price
      * 
      */
-    private String overagePrice;
+    private @Nullable String overagePrice;
     /**
      * @return Product description
      * 
      */
-    private List<GetRatecardsRateCardProduct> products;
+    private @Nullable List<GetRatecardsRateCardProduct> products;
     /**
      * @return List of tiered rate card prices
      * 
      */
-    private List<GetRatecardsRateCardRateCardTier> rateCardTiers;
+    private @Nullable List<GetRatecardsRateCardRateCardTier> rateCardTiers;
     /**
      * @return SPM internal Subscribed Service ID
      * 
      */
-    private String subscribedServiceId;
+    private @Nullable String subscribedServiceId;
     /**
      * @return Rate card end date
      * 
      */
-    private String timeEnd;
+    private @Nullable String timeEnd;
     /**
      * @return Rate card start date
      * 
      */
-    private String timeStart;
+    private @Nullable String timeStart;
 
     private GetRatecardsRateCard() {}
     /**
@@ -71,70 +73,70 @@ public final class GetRatecardsRateCard {
      * 
      */
     public List<GetRatecardsRateCardCurrency> currencies() {
-        return this.currencies;
+        return this.currencies == null ? List.of() : this.currencies;
     }
     /**
      * @return Rate card discretionary discount percentage
      * 
      */
-    public String discretionaryDiscountPercentage() {
-        return this.discretionaryDiscountPercentage;
+    public Optional<String> discretionaryDiscountPercentage() {
+        return Optional.ofNullable(this.discretionaryDiscountPercentage);
     }
     /**
      * @return Rate card price tier flag
      * 
      */
-    public Boolean isTier() {
-        return this.isTier;
+    public Optional<Boolean> isTier() {
+        return Optional.ofNullable(this.isTier);
     }
     /**
      * @return Rate card tier net unit price
      * 
      */
-    public String netUnitPrice() {
-        return this.netUnitPrice;
+    public Optional<String> netUnitPrice() {
+        return Optional.ofNullable(this.netUnitPrice);
     }
     /**
      * @return Rate card tier overage price
      * 
      */
-    public String overagePrice() {
-        return this.overagePrice;
+    public Optional<String> overagePrice() {
+        return Optional.ofNullable(this.overagePrice);
     }
     /**
      * @return Product description
      * 
      */
     public List<GetRatecardsRateCardProduct> products() {
-        return this.products;
+        return this.products == null ? List.of() : this.products;
     }
     /**
      * @return List of tiered rate card prices
      * 
      */
     public List<GetRatecardsRateCardRateCardTier> rateCardTiers() {
-        return this.rateCardTiers;
+        return this.rateCardTiers == null ? List.of() : this.rateCardTiers;
     }
     /**
      * @return SPM internal Subscribed Service ID
      * 
      */
-    public String subscribedServiceId() {
-        return this.subscribedServiceId;
+    public Optional<String> subscribedServiceId() {
+        return Optional.ofNullable(this.subscribedServiceId);
     }
     /**
      * @return Rate card end date
      * 
      */
-    public String timeEnd() {
-        return this.timeEnd;
+    public Optional<String> timeEnd() {
+        return Optional.ofNullable(this.timeEnd);
     }
     /**
      * @return Rate card start date
      * 
      */
-    public String timeStart() {
-        return this.timeStart;
+    public Optional<String> timeStart() {
+        return Optional.ofNullable(this.timeStart);
     }
 
     public static Builder builder() {
@@ -146,16 +148,16 @@ public final class GetRatecardsRateCard {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetRatecardsRateCardCurrency> currencies;
-        private String discretionaryDiscountPercentage;
-        private Boolean isTier;
-        private String netUnitPrice;
-        private String overagePrice;
-        private List<GetRatecardsRateCardProduct> products;
-        private List<GetRatecardsRateCardRateCardTier> rateCardTiers;
-        private String subscribedServiceId;
-        private String timeEnd;
-        private String timeStart;
+        private @Nullable List<GetRatecardsRateCardCurrency> currencies;
+        private @Nullable String discretionaryDiscountPercentage;
+        private @Nullable Boolean isTier;
+        private @Nullable String netUnitPrice;
+        private @Nullable String overagePrice;
+        private @Nullable List<GetRatecardsRateCardProduct> products;
+        private @Nullable List<GetRatecardsRateCardRateCardTier> rateCardTiers;
+        private @Nullable String subscribedServiceId;
+        private @Nullable String timeEnd;
+        private @Nullable String timeStart;
         public Builder() {}
         public Builder(GetRatecardsRateCard defaults) {
     	      Objects.requireNonNull(defaults);
@@ -172,62 +174,62 @@ public final class GetRatecardsRateCard {
         }
 
         @CustomType.Setter
-        public Builder currencies(List<GetRatecardsRateCardCurrency> currencies) {
-            this.currencies = Objects.requireNonNull(currencies);
+        public Builder currencies(@Nullable List<GetRatecardsRateCardCurrency> currencies) {
+            this.currencies = currencies;
             return this;
         }
         public Builder currencies(GetRatecardsRateCardCurrency... currencies) {
             return currencies(List.of(currencies));
         }
         @CustomType.Setter
-        public Builder discretionaryDiscountPercentage(String discretionaryDiscountPercentage) {
-            this.discretionaryDiscountPercentage = Objects.requireNonNull(discretionaryDiscountPercentage);
+        public Builder discretionaryDiscountPercentage(@Nullable String discretionaryDiscountPercentage) {
+            this.discretionaryDiscountPercentage = discretionaryDiscountPercentage;
             return this;
         }
         @CustomType.Setter
-        public Builder isTier(Boolean isTier) {
-            this.isTier = Objects.requireNonNull(isTier);
+        public Builder isTier(@Nullable Boolean isTier) {
+            this.isTier = isTier;
             return this;
         }
         @CustomType.Setter
-        public Builder netUnitPrice(String netUnitPrice) {
-            this.netUnitPrice = Objects.requireNonNull(netUnitPrice);
+        public Builder netUnitPrice(@Nullable String netUnitPrice) {
+            this.netUnitPrice = netUnitPrice;
             return this;
         }
         @CustomType.Setter
-        public Builder overagePrice(String overagePrice) {
-            this.overagePrice = Objects.requireNonNull(overagePrice);
+        public Builder overagePrice(@Nullable String overagePrice) {
+            this.overagePrice = overagePrice;
             return this;
         }
         @CustomType.Setter
-        public Builder products(List<GetRatecardsRateCardProduct> products) {
-            this.products = Objects.requireNonNull(products);
+        public Builder products(@Nullable List<GetRatecardsRateCardProduct> products) {
+            this.products = products;
             return this;
         }
         public Builder products(GetRatecardsRateCardProduct... products) {
             return products(List.of(products));
         }
         @CustomType.Setter
-        public Builder rateCardTiers(List<GetRatecardsRateCardRateCardTier> rateCardTiers) {
-            this.rateCardTiers = Objects.requireNonNull(rateCardTiers);
+        public Builder rateCardTiers(@Nullable List<GetRatecardsRateCardRateCardTier> rateCardTiers) {
+            this.rateCardTiers = rateCardTiers;
             return this;
         }
         public Builder rateCardTiers(GetRatecardsRateCardRateCardTier... rateCardTiers) {
             return rateCardTiers(List.of(rateCardTiers));
         }
         @CustomType.Setter
-        public Builder subscribedServiceId(String subscribedServiceId) {
-            this.subscribedServiceId = Objects.requireNonNull(subscribedServiceId);
+        public Builder subscribedServiceId(@Nullable String subscribedServiceId) {
+            this.subscribedServiceId = subscribedServiceId;
             return this;
         }
         @CustomType.Setter
-        public Builder timeEnd(String timeEnd) {
-            this.timeEnd = Objects.requireNonNull(timeEnd);
+        public Builder timeEnd(@Nullable String timeEnd) {
+            this.timeEnd = timeEnd;
             return this;
         }
         @CustomType.Setter
-        public Builder timeStart(String timeStart) {
-            this.timeStart = Objects.requireNonNull(timeStart);
+        public Builder timeStart(@Nullable String timeStart) {
+            this.timeStart = timeStart;
             return this;
         }
         public GetRatecardsRateCard build() {

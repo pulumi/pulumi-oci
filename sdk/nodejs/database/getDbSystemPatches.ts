@@ -51,11 +51,11 @@ export interface GetDbSystemPatchesResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The list of patches.
      */
-    readonly patches: outputs.Database.GetDbSystemPatchesPatch[];
+    readonly patches?: outputs.Database.GetDbSystemPatchesPatch[];
 }
 /**
  * This data source provides the list of Db System Patches in Oracle Cloud Infrastructure Database service.

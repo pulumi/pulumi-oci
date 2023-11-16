@@ -40,7 +40,7 @@ public final class GetReplicationsResult {
      * @return The list of replications.
      * 
      */
-    private List<GetReplicationsReplication> replications;
+    private @Nullable List<GetReplicationsReplication> replications;
     /**
      * @return The current state of this replication. This resource can be in a `FAILED` state if replication target is deleted instead of the replication resource.
      * 
@@ -87,7 +87,7 @@ public final class GetReplicationsResult {
      * 
      */
     public List<GetReplicationsReplication> replications() {
-        return this.replications;
+        return this.replications == null ? List.of() : this.replications;
     }
     /**
      * @return The current state of this replication. This resource can be in a `FAILED` state if replication target is deleted instead of the replication resource.
@@ -112,7 +112,7 @@ public final class GetReplicationsResult {
         private @Nullable String fileSystemId;
         private @Nullable List<GetReplicationsFilter> filters;
         private @Nullable String id;
-        private List<GetReplicationsReplication> replications;
+        private @Nullable List<GetReplicationsReplication> replications;
         private @Nullable String state;
         public Builder() {}
         public Builder(GetReplicationsResult defaults) {
@@ -161,8 +161,8 @@ public final class GetReplicationsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder replications(List<GetReplicationsReplication> replications) {
-            this.replications = Objects.requireNonNull(replications);
+        public Builder replications(@Nullable List<GetReplicationsReplication> replications) {
+            this.replications = replications;
             return this;
         }
         public Builder replications(GetReplicationsReplication... replications) {

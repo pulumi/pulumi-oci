@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Email Domain resource in Oracle Cloud Infrastructure Email service.
@@ -60,28 +59,28 @@ type LookupEmailDomainArgs struct {
 // A collection of values returned by getEmailDomain.
 type LookupEmailDomainResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DKIM key that will be used to sign mail sent from this email domain.
-	ActiveDkimId string `pulumi:"activeDkimId"`
+	ActiveDkimId *string `pulumi:"activeDkimId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains this email domain.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The description of a email domain.
-	Description   string `pulumi:"description"`
-	EmailDomainId string `pulumi:"emailDomainId"`
+	Description   *string `pulumi:"description"`
+	EmailDomainId string  `pulumi:"emailDomainId"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the email domain.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Value of the SPF field. For more information about SPF, please see [SPF Authentication](https://docs.cloud.oracle.com/iaas/Content/Email/Concepts/overview.htm#components).
-	IsSpf bool `pulumi:"isSpf"`
+	IsSpf *bool `pulumi:"isSpf"`
 	// The name of the email domain in the Internet Domain Name System (DNS).  Example: `example.net`
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// The current state of the email domain.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The time the email domain was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, "YYYY-MM-ddThh:mmZ".  Example: `2021-02-12T22:47:12.613Z`
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 }
 
 func LookupEmailDomainOutput(ctx *pulumi.Context, args LookupEmailDomainOutputArgs, opts ...pulumi.InvokeOption) LookupEmailDomainResultOutput {
@@ -122,20 +121,14 @@ func (o LookupEmailDomainResultOutput) ToLookupEmailDomainResultOutputWithContex
 	return o
 }
 
-func (o LookupEmailDomainResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupEmailDomainResult] {
-	return pulumix.Output[LookupEmailDomainResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DKIM key that will be used to sign mail sent from this email domain.
-func (o LookupEmailDomainResultOutput) ActiveDkimId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupEmailDomainResult) string { return v.ActiveDkimId }).(pulumi.StringOutput)
+func (o LookupEmailDomainResultOutput) ActiveDkimId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupEmailDomainResult) *string { return v.ActiveDkimId }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains this email domain.
-func (o LookupEmailDomainResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupEmailDomainResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupEmailDomainResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupEmailDomainResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -144,8 +137,8 @@ func (o LookupEmailDomainResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // The description of a email domain.
-func (o LookupEmailDomainResultOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupEmailDomainResult) string { return v.Description }).(pulumi.StringOutput)
+func (o LookupEmailDomainResultOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupEmailDomainResult) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupEmailDomainResultOutput) EmailDomainId() pulumi.StringOutput {
@@ -158,23 +151,23 @@ func (o LookupEmailDomainResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the email domain.
-func (o LookupEmailDomainResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupEmailDomainResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupEmailDomainResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupEmailDomainResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Value of the SPF field. For more information about SPF, please see [SPF Authentication](https://docs.cloud.oracle.com/iaas/Content/Email/Concepts/overview.htm#components).
-func (o LookupEmailDomainResultOutput) IsSpf() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupEmailDomainResult) bool { return v.IsSpf }).(pulumi.BoolOutput)
+func (o LookupEmailDomainResultOutput) IsSpf() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupEmailDomainResult) *bool { return v.IsSpf }).(pulumi.BoolPtrOutput)
 }
 
 // The name of the email domain in the Internet Domain Name System (DNS).  Example: `example.net`
-func (o LookupEmailDomainResultOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupEmailDomainResult) string { return v.Name }).(pulumi.StringOutput)
+func (o LookupEmailDomainResultOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupEmailDomainResult) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the email domain.
-func (o LookupEmailDomainResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupEmailDomainResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupEmailDomainResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupEmailDomainResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -183,8 +176,8 @@ func (o LookupEmailDomainResultOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The time the email domain was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, "YYYY-MM-ddThh:mmZ".  Example: `2021-02-12T22:47:12.613Z`
-func (o LookupEmailDomainResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupEmailDomainResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupEmailDomainResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupEmailDomainResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 func init() {

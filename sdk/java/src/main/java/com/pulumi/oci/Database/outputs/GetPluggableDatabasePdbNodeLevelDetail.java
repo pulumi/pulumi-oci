@@ -6,6 +6,8 @@ package com.pulumi.oci.Database.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetPluggableDatabasePdbNodeLevelDetail {
@@ -13,27 +15,27 @@ public final class GetPluggableDatabasePdbNodeLevelDetail {
      * @return The Node name of the Database Instance.
      * 
      */
-    private String nodeName;
+    private @Nullable String nodeName;
     /**
      * @return The mode that pluggable database is in. Open mode can only be changed to READ_ONLY or MIGRATE directly from the backend (within the Oracle Database software).
      * 
      */
-    private String openMode;
+    private @Nullable String openMode;
 
     private GetPluggableDatabasePdbNodeLevelDetail() {}
     /**
      * @return The Node name of the Database Instance.
      * 
      */
-    public String nodeName() {
-        return this.nodeName;
+    public Optional<String> nodeName() {
+        return Optional.ofNullable(this.nodeName);
     }
     /**
      * @return The mode that pluggable database is in. Open mode can only be changed to READ_ONLY or MIGRATE directly from the backend (within the Oracle Database software).
      * 
      */
-    public String openMode() {
-        return this.openMode;
+    public Optional<String> openMode() {
+        return Optional.ofNullable(this.openMode);
     }
 
     public static Builder builder() {
@@ -45,8 +47,8 @@ public final class GetPluggableDatabasePdbNodeLevelDetail {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String nodeName;
-        private String openMode;
+        private @Nullable String nodeName;
+        private @Nullable String openMode;
         public Builder() {}
         public Builder(GetPluggableDatabasePdbNodeLevelDetail defaults) {
     	      Objects.requireNonNull(defaults);
@@ -55,13 +57,13 @@ public final class GetPluggableDatabasePdbNodeLevelDetail {
         }
 
         @CustomType.Setter
-        public Builder nodeName(String nodeName) {
-            this.nodeName = Objects.requireNonNull(nodeName);
+        public Builder nodeName(@Nullable String nodeName) {
+            this.nodeName = nodeName;
             return this;
         }
         @CustomType.Setter
-        public Builder openMode(String openMode) {
-            this.openMode = Objects.requireNonNull(openMode);
+        public Builder openMode(@Nullable String openMode) {
+            this.openMode = openMode;
             return this;
         }
         public GetPluggableDatabasePdbNodeLevelDetail build() {

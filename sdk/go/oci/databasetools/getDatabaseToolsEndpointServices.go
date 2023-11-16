@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Database Tools Endpoint Services in Oracle Cloud Infrastructure Database Tools service.
@@ -77,7 +76,7 @@ type GetDatabaseToolsEndpointServicesResult struct {
 	DisplayName *string                                  `pulumi:"displayName"`
 	Filters     []GetDatabaseToolsEndpointServicesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// A unique, non-changeable resource name.
 	Name *string `pulumi:"name"`
 	// The current state of the Database Tools Endpoint Service.
@@ -129,12 +128,6 @@ func (o GetDatabaseToolsEndpointServicesResultOutput) ToGetDatabaseToolsEndpoint
 	return o
 }
 
-func (o GetDatabaseToolsEndpointServicesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDatabaseToolsEndpointServicesResult] {
-	return pulumix.Output[GetDatabaseToolsEndpointServicesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Database Tools Endpoint Service.
 func (o GetDatabaseToolsEndpointServicesResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDatabaseToolsEndpointServicesResult) string { return v.CompartmentId }).(pulumi.StringOutput)
@@ -159,8 +152,8 @@ func (o GetDatabaseToolsEndpointServicesResultOutput) Filters() GetDatabaseTools
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetDatabaseToolsEndpointServicesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDatabaseToolsEndpointServicesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetDatabaseToolsEndpointServicesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDatabaseToolsEndpointServicesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // A unique, non-changeable resource name.

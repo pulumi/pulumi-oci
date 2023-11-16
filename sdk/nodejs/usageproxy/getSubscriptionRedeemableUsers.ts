@@ -56,11 +56,11 @@ export interface GetSubscriptionRedeemableUsersResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The list of redeemable_user_collection.
      */
-    readonly redeemableUserCollections: outputs.UsageProxy.GetSubscriptionRedeemableUsersRedeemableUserCollection[];
+    readonly redeemableUserCollections?: outputs.UsageProxy.GetSubscriptionRedeemableUsersRedeemableUserCollection[];
     readonly subscriptionId: string;
     readonly tenancyId: string;
 }

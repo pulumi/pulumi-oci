@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Externalnoncontainerdatabases Stack Monitoring resource in Oracle Cloud Infrastructure Database service.
@@ -176,12 +175,6 @@ func (i *ExternalNonContainerDatabasesStackMonitoring) ToExternalNonContainerDat
 	return pulumi.ToOutputWithContext(ctx, i).(ExternalNonContainerDatabasesStackMonitoringOutput)
 }
 
-func (i *ExternalNonContainerDatabasesStackMonitoring) ToOutput(ctx context.Context) pulumix.Output[*ExternalNonContainerDatabasesStackMonitoring] {
-	return pulumix.Output[*ExternalNonContainerDatabasesStackMonitoring]{
-		OutputState: i.ToExternalNonContainerDatabasesStackMonitoringOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ExternalNonContainerDatabasesStackMonitoringArrayInput is an input type that accepts ExternalNonContainerDatabasesStackMonitoringArray and ExternalNonContainerDatabasesStackMonitoringArrayOutput values.
 // You can construct a concrete instance of `ExternalNonContainerDatabasesStackMonitoringArrayInput` via:
 //
@@ -205,12 +198,6 @@ func (i ExternalNonContainerDatabasesStackMonitoringArray) ToExternalNonContaine
 
 func (i ExternalNonContainerDatabasesStackMonitoringArray) ToExternalNonContainerDatabasesStackMonitoringArrayOutputWithContext(ctx context.Context) ExternalNonContainerDatabasesStackMonitoringArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ExternalNonContainerDatabasesStackMonitoringArrayOutput)
-}
-
-func (i ExternalNonContainerDatabasesStackMonitoringArray) ToOutput(ctx context.Context) pulumix.Output[[]*ExternalNonContainerDatabasesStackMonitoring] {
-	return pulumix.Output[[]*ExternalNonContainerDatabasesStackMonitoring]{
-		OutputState: i.ToExternalNonContainerDatabasesStackMonitoringArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // ExternalNonContainerDatabasesStackMonitoringMapInput is an input type that accepts ExternalNonContainerDatabasesStackMonitoringMap and ExternalNonContainerDatabasesStackMonitoringMapOutput values.
@@ -238,12 +225,6 @@ func (i ExternalNonContainerDatabasesStackMonitoringMap) ToExternalNonContainerD
 	return pulumi.ToOutputWithContext(ctx, i).(ExternalNonContainerDatabasesStackMonitoringMapOutput)
 }
 
-func (i ExternalNonContainerDatabasesStackMonitoringMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*ExternalNonContainerDatabasesStackMonitoring] {
-	return pulumix.Output[map[string]*ExternalNonContainerDatabasesStackMonitoring]{
-		OutputState: i.ToExternalNonContainerDatabasesStackMonitoringMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ExternalNonContainerDatabasesStackMonitoringOutput struct{ *pulumi.OutputState }
 
 func (ExternalNonContainerDatabasesStackMonitoringOutput) ElementType() reflect.Type {
@@ -256,12 +237,6 @@ func (o ExternalNonContainerDatabasesStackMonitoringOutput) ToExternalNonContain
 
 func (o ExternalNonContainerDatabasesStackMonitoringOutput) ToExternalNonContainerDatabasesStackMonitoringOutputWithContext(ctx context.Context) ExternalNonContainerDatabasesStackMonitoringOutput {
 	return o
-}
-
-func (o ExternalNonContainerDatabasesStackMonitoringOutput) ToOutput(ctx context.Context) pulumix.Output[*ExternalNonContainerDatabasesStackMonitoring] {
-	return pulumix.Output[*ExternalNonContainerDatabasesStackMonitoring]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Enabling Stack Monitoring on External Non Container Databases . Requires boolean value "true" or "false".
@@ -302,12 +277,6 @@ func (o ExternalNonContainerDatabasesStackMonitoringArrayOutput) ToExternalNonCo
 	return o
 }
 
-func (o ExternalNonContainerDatabasesStackMonitoringArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*ExternalNonContainerDatabasesStackMonitoring] {
-	return pulumix.Output[[]*ExternalNonContainerDatabasesStackMonitoring]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o ExternalNonContainerDatabasesStackMonitoringArrayOutput) Index(i pulumi.IntInput) ExternalNonContainerDatabasesStackMonitoringOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *ExternalNonContainerDatabasesStackMonitoring {
 		return vs[0].([]*ExternalNonContainerDatabasesStackMonitoring)[vs[1].(int)]
@@ -326,12 +295,6 @@ func (o ExternalNonContainerDatabasesStackMonitoringMapOutput) ToExternalNonCont
 
 func (o ExternalNonContainerDatabasesStackMonitoringMapOutput) ToExternalNonContainerDatabasesStackMonitoringMapOutputWithContext(ctx context.Context) ExternalNonContainerDatabasesStackMonitoringMapOutput {
 	return o
-}
-
-func (o ExternalNonContainerDatabasesStackMonitoringMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*ExternalNonContainerDatabasesStackMonitoring] {
-	return pulumix.Output[map[string]*ExternalNonContainerDatabasesStackMonitoring]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ExternalNonContainerDatabasesStackMonitoringMapOutput) MapIndex(k pulumi.StringInput) ExternalNonContainerDatabasesStackMonitoringOutput {

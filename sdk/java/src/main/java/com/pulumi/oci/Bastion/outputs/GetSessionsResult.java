@@ -29,14 +29,14 @@ public final class GetSessionsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private @Nullable String sessionId;
     private @Nullable String sessionLifecycleState;
     /**
      * @return The list of sessions.
      * 
      */
-    private List<GetSessionsSession> sessions;
+    private @Nullable List<GetSessionsSession> sessions;
 
     private GetSessionsResult() {}
     /**
@@ -60,8 +60,8 @@ public final class GetSessionsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public Optional<String> sessionId() {
         return Optional.ofNullable(this.sessionId);
@@ -74,7 +74,7 @@ public final class GetSessionsResult {
      * 
      */
     public List<GetSessionsSession> sessions() {
-        return this.sessions;
+        return this.sessions == null ? List.of() : this.sessions;
     }
 
     public static Builder builder() {
@@ -89,10 +89,10 @@ public final class GetSessionsResult {
         private String bastionId;
         private @Nullable String displayName;
         private @Nullable List<GetSessionsFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String sessionId;
         private @Nullable String sessionLifecycleState;
-        private List<GetSessionsSession> sessions;
+        private @Nullable List<GetSessionsSession> sessions;
         public Builder() {}
         public Builder(GetSessionsResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -124,8 +124,8 @@ public final class GetSessionsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -139,8 +139,8 @@ public final class GetSessionsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder sessions(List<GetSessionsSession> sessions) {
-            this.sessions = Objects.requireNonNull(sessions);
+        public Builder sessions(@Nullable List<GetSessionsSession> sessions) {
+            this.sessions = sessions;
             return this;
         }
         public Builder sessions(GetSessionsSession... sessions) {

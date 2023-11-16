@@ -62,31 +62,31 @@ namespace Pulumi.Oci.StackMonitoring
         /// Created user id
         /// </summary>
         [Output("createdBy")]
-        public Output<string> CreatedBy { get; private set; } = null!;
+        public Output<string?> CreatedBy { get; private set; } = null!;
 
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// Is the metric created out of box, default false
         /// </summary>
         [Output("isOutOfBox")]
-        public Output<bool> IsOutOfBox { get; private set; } = null!;
+        public Output<bool?> IsOutOfBox { get; private set; } = null!;
 
         /// <summary>
         /// last Updated user id
         /// </summary>
         [Output("lastUpdatedBy")]
-        public Output<string> LastUpdatedBy { get; private set; } = null!;
+        public Output<string?> LastUpdatedBy { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) name of the metric
@@ -114,31 +114,31 @@ namespace Pulumi.Oci.StackMonitoring
         /// The current lifecycle state of the metric extension
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
         [Output("systemTags")]
-        public Output<ImmutableDictionary<string, object>> SystemTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> SystemTags { get; private set; } = null!;
 
         /// <summary>
         /// OCID of the tenancy
         /// </summary>
         [Output("tenancyId")]
-        public Output<string> TenancyId { get; private set; } = null!;
+        public Output<string?> TenancyId { get; private set; } = null!;
 
         /// <summary>
         /// creation date
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// last updated time
         /// </summary>
         [Output("timeLastUpdated")]
-        public Output<string> TimeLastUpdated { get; private set; } = null!;
+        public Output<string?> TimeLastUpdated { get; private set; } = null!;
 
 
         /// <summary>

@@ -133,13 +133,13 @@ export interface GetLogAnalyticsEntitiesResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly isManagementAgentIdNull?: string;
     readonly lifecycleDetailsContains?: string;
     /**
      * The list of log_analytics_entity_collection.
      */
-    readonly logAnalyticsEntityCollections: outputs.LogAnalytics.GetLogAnalyticsEntitiesLogAnalyticsEntityCollection[];
+    readonly logAnalyticsEntityCollections?: outputs.LogAnalytics.GetLogAnalyticsEntitiesLogAnalyticsEntityCollection[];
     /**
      * Log analytics entity name.
      */

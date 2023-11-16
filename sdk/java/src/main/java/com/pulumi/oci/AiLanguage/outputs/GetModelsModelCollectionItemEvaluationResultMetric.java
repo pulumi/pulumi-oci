@@ -6,6 +6,8 @@ package com.pulumi.oci.AiLanguage.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.Double;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetModelsModelCollectionItemEvaluationResultMetric {
@@ -13,123 +15,123 @@ public final class GetModelsModelCollectionItemEvaluationResultMetric {
      * @return The fraction of the labels that were correctly recognised .
      * 
      */
-    private Double accuracy;
+    private @Nullable Double accuracy;
     /**
      * @return F1-score, is a measure of a model’s accuracy on a dataset
      * 
      */
-    private Double macroF1;
+    private @Nullable Double macroF1;
     /**
      * @return Precision refers to the number of true positives divided by the total number of positive predictions (i.e., the number of true positives plus the number of false positives)
      * 
      */
-    private Double macroPrecision;
+    private @Nullable Double macroPrecision;
     /**
      * @return Measures the model&#39;s ability to predict actual positive classes. It is the ratio between the predicted true positives and what was actually tagged. The recall metric reveals how many of the predicted classes are correct.
      * 
      */
-    private Double macroRecall;
+    private @Nullable Double macroRecall;
     /**
      * @return F1-score, is a measure of a model’s accuracy on a dataset
      * 
      */
-    private Double microF1;
+    private @Nullable Double microF1;
     /**
      * @return Precision refers to the number of true positives divided by the total number of positive predictions (i.e., the number of true positives plus the number of false positives)
      * 
      */
-    private Double microPrecision;
+    private @Nullable Double microPrecision;
     /**
      * @return Measures the model&#39;s ability to predict actual positive classes. It is the ratio between the predicted true positives and what was actually tagged. The recall metric reveals how many of the predicted classes are correct.
      * 
      */
-    private Double microRecall;
+    private @Nullable Double microRecall;
     /**
      * @return F1-score, is a measure of a model’s accuracy on a dataset
      * 
      */
-    private Double weightedF1;
+    private @Nullable Double weightedF1;
     /**
      * @return Precision refers to the number of true positives divided by the total number of positive predictions (i.e., the number of true positives plus the number of false positives)
      * 
      */
-    private Double weightedPrecision;
+    private @Nullable Double weightedPrecision;
     /**
      * @return Measures the model&#39;s ability to predict actual positive classes. It is the ratio between the predicted true positives and what was actually tagged. The recall metric reveals how many of the predicted classes are correct.
      * 
      */
-    private Double weightedRecall;
+    private @Nullable Double weightedRecall;
 
     private GetModelsModelCollectionItemEvaluationResultMetric() {}
     /**
      * @return The fraction of the labels that were correctly recognised .
      * 
      */
-    public Double accuracy() {
-        return this.accuracy;
+    public Optional<Double> accuracy() {
+        return Optional.ofNullable(this.accuracy);
     }
     /**
      * @return F1-score, is a measure of a model’s accuracy on a dataset
      * 
      */
-    public Double macroF1() {
-        return this.macroF1;
+    public Optional<Double> macroF1() {
+        return Optional.ofNullable(this.macroF1);
     }
     /**
      * @return Precision refers to the number of true positives divided by the total number of positive predictions (i.e., the number of true positives plus the number of false positives)
      * 
      */
-    public Double macroPrecision() {
-        return this.macroPrecision;
+    public Optional<Double> macroPrecision() {
+        return Optional.ofNullable(this.macroPrecision);
     }
     /**
      * @return Measures the model&#39;s ability to predict actual positive classes. It is the ratio between the predicted true positives and what was actually tagged. The recall metric reveals how many of the predicted classes are correct.
      * 
      */
-    public Double macroRecall() {
-        return this.macroRecall;
+    public Optional<Double> macroRecall() {
+        return Optional.ofNullable(this.macroRecall);
     }
     /**
      * @return F1-score, is a measure of a model’s accuracy on a dataset
      * 
      */
-    public Double microF1() {
-        return this.microF1;
+    public Optional<Double> microF1() {
+        return Optional.ofNullable(this.microF1);
     }
     /**
      * @return Precision refers to the number of true positives divided by the total number of positive predictions (i.e., the number of true positives plus the number of false positives)
      * 
      */
-    public Double microPrecision() {
-        return this.microPrecision;
+    public Optional<Double> microPrecision() {
+        return Optional.ofNullable(this.microPrecision);
     }
     /**
      * @return Measures the model&#39;s ability to predict actual positive classes. It is the ratio between the predicted true positives and what was actually tagged. The recall metric reveals how many of the predicted classes are correct.
      * 
      */
-    public Double microRecall() {
-        return this.microRecall;
+    public Optional<Double> microRecall() {
+        return Optional.ofNullable(this.microRecall);
     }
     /**
      * @return F1-score, is a measure of a model’s accuracy on a dataset
      * 
      */
-    public Double weightedF1() {
-        return this.weightedF1;
+    public Optional<Double> weightedF1() {
+        return Optional.ofNullable(this.weightedF1);
     }
     /**
      * @return Precision refers to the number of true positives divided by the total number of positive predictions (i.e., the number of true positives plus the number of false positives)
      * 
      */
-    public Double weightedPrecision() {
-        return this.weightedPrecision;
+    public Optional<Double> weightedPrecision() {
+        return Optional.ofNullable(this.weightedPrecision);
     }
     /**
      * @return Measures the model&#39;s ability to predict actual positive classes. It is the ratio between the predicted true positives and what was actually tagged. The recall metric reveals how many of the predicted classes are correct.
      * 
      */
-    public Double weightedRecall() {
-        return this.weightedRecall;
+    public Optional<Double> weightedRecall() {
+        return Optional.ofNullable(this.weightedRecall);
     }
 
     public static Builder builder() {
@@ -141,16 +143,16 @@ public final class GetModelsModelCollectionItemEvaluationResultMetric {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Double accuracy;
-        private Double macroF1;
-        private Double macroPrecision;
-        private Double macroRecall;
-        private Double microF1;
-        private Double microPrecision;
-        private Double microRecall;
-        private Double weightedF1;
-        private Double weightedPrecision;
-        private Double weightedRecall;
+        private @Nullable Double accuracy;
+        private @Nullable Double macroF1;
+        private @Nullable Double macroPrecision;
+        private @Nullable Double macroRecall;
+        private @Nullable Double microF1;
+        private @Nullable Double microPrecision;
+        private @Nullable Double microRecall;
+        private @Nullable Double weightedF1;
+        private @Nullable Double weightedPrecision;
+        private @Nullable Double weightedRecall;
         public Builder() {}
         public Builder(GetModelsModelCollectionItemEvaluationResultMetric defaults) {
     	      Objects.requireNonNull(defaults);
@@ -167,53 +169,53 @@ public final class GetModelsModelCollectionItemEvaluationResultMetric {
         }
 
         @CustomType.Setter
-        public Builder accuracy(Double accuracy) {
-            this.accuracy = Objects.requireNonNull(accuracy);
+        public Builder accuracy(@Nullable Double accuracy) {
+            this.accuracy = accuracy;
             return this;
         }
         @CustomType.Setter
-        public Builder macroF1(Double macroF1) {
-            this.macroF1 = Objects.requireNonNull(macroF1);
+        public Builder macroF1(@Nullable Double macroF1) {
+            this.macroF1 = macroF1;
             return this;
         }
         @CustomType.Setter
-        public Builder macroPrecision(Double macroPrecision) {
-            this.macroPrecision = Objects.requireNonNull(macroPrecision);
+        public Builder macroPrecision(@Nullable Double macroPrecision) {
+            this.macroPrecision = macroPrecision;
             return this;
         }
         @CustomType.Setter
-        public Builder macroRecall(Double macroRecall) {
-            this.macroRecall = Objects.requireNonNull(macroRecall);
+        public Builder macroRecall(@Nullable Double macroRecall) {
+            this.macroRecall = macroRecall;
             return this;
         }
         @CustomType.Setter
-        public Builder microF1(Double microF1) {
-            this.microF1 = Objects.requireNonNull(microF1);
+        public Builder microF1(@Nullable Double microF1) {
+            this.microF1 = microF1;
             return this;
         }
         @CustomType.Setter
-        public Builder microPrecision(Double microPrecision) {
-            this.microPrecision = Objects.requireNonNull(microPrecision);
+        public Builder microPrecision(@Nullable Double microPrecision) {
+            this.microPrecision = microPrecision;
             return this;
         }
         @CustomType.Setter
-        public Builder microRecall(Double microRecall) {
-            this.microRecall = Objects.requireNonNull(microRecall);
+        public Builder microRecall(@Nullable Double microRecall) {
+            this.microRecall = microRecall;
             return this;
         }
         @CustomType.Setter
-        public Builder weightedF1(Double weightedF1) {
-            this.weightedF1 = Objects.requireNonNull(weightedF1);
+        public Builder weightedF1(@Nullable Double weightedF1) {
+            this.weightedF1 = weightedF1;
             return this;
         }
         @CustomType.Setter
-        public Builder weightedPrecision(Double weightedPrecision) {
-            this.weightedPrecision = Objects.requireNonNull(weightedPrecision);
+        public Builder weightedPrecision(@Nullable Double weightedPrecision) {
+            this.weightedPrecision = weightedPrecision;
             return this;
         }
         @CustomType.Setter
-        public Builder weightedRecall(Double weightedRecall) {
-            this.weightedRecall = Objects.requireNonNull(weightedRecall);
+        public Builder weightedRecall(@Nullable Double weightedRecall) {
+            this.weightedRecall = weightedRecall;
             return this;
         }
         public GetModelsModelCollectionItemEvaluationResultMetric build() {

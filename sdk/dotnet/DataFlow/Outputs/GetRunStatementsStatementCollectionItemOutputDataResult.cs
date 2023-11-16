@@ -16,17 +16,17 @@ namespace Pulumi.Oci.DataFlow.Outputs
         /// <summary>
         /// The type of the `StatementOutputData` like `TEXT_PLAIN`, `TEXT_HTML` or `IMAGE_PNG`.
         /// </summary>
-        public readonly string Type;
+        public readonly string? Type;
         /// <summary>
         /// The statement code execution output in html format.
         /// </summary>
-        public readonly string Value;
+        public readonly string? Value;
 
         [OutputConstructor]
         private GetRunStatementsStatementCollectionItemOutputDataResult(
-            string type,
+            string? type,
 
-            string value)
+            string? value)
         {
             Type = type;
             Value = value;

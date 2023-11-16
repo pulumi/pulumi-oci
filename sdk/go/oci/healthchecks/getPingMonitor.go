@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Ping Monitor resource in Oracle Cloud Infrastructure Health Checks service.
@@ -60,34 +59,34 @@ type LookupPingMonitorArgs struct {
 // A collection of values returned by getPingMonitor.
 type LookupPingMonitorResult struct {
 	// The OCID of the compartment.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A user-friendly and mutable name suitable for display in a user interface.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The region where updates must be made and where results must be fetched from.
-	HomeRegion string `pulumi:"homeRegion"`
+	HomeRegion *string `pulumi:"homeRegion"`
 	// The OCID of the resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The monitor interval in seconds. Valid values: 10, 30, and 60.
-	IntervalInSeconds int `pulumi:"intervalInSeconds"`
+	IntervalInSeconds *int `pulumi:"intervalInSeconds"`
 	// Enables or disables the monitor. Set to 'true' to launch monitoring.
-	IsEnabled bool   `pulumi:"isEnabled"`
+	IsEnabled *bool  `pulumi:"isEnabled"`
 	MonitorId string `pulumi:"monitorId"`
 	// The port on which to probe endpoints. If unspecified, probes will use the default port of their protocol.
-	Port int `pulumi:"port"`
+	Port *int `pulumi:"port"`
 	// The protocols for ping probes.
-	Protocol string `pulumi:"protocol"`
+	Protocol *string `pulumi:"protocol"`
 	// A URL for fetching the probe results.
-	ResultsUrl string `pulumi:"resultsUrl"`
+	ResultsUrl *string `pulumi:"resultsUrl"`
 	// A list of targets (hostnames or IP addresses) of the probe.
 	Targets []string `pulumi:"targets"`
 	// The RFC 3339-formatted creation date and time of the probe.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The probe timeout in seconds. Valid values: 10, 20, 30, and 60. The probe timeout must be less than or equal to `intervalInSeconds` for monitors.
-	TimeoutInSeconds int `pulumi:"timeoutInSeconds"`
+	TimeoutInSeconds *int `pulumi:"timeoutInSeconds"`
 	// A list of names of vantage points from which to execute the probe.
 	VantagePointNames []string `pulumi:"vantagePointNames"`
 }
@@ -130,15 +129,9 @@ func (o LookupPingMonitorResultOutput) ToLookupPingMonitorResultOutputWithContex
 	return o
 }
 
-func (o LookupPingMonitorResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupPingMonitorResult] {
-	return pulumix.Output[LookupPingMonitorResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the compartment.
-func (o LookupPingMonitorResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupPingMonitorResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupPingMonitorResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupPingMonitorResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -147,8 +140,8 @@ func (o LookupPingMonitorResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // A user-friendly and mutable name suitable for display in a user interface.
-func (o LookupPingMonitorResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupPingMonitorResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupPingMonitorResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupPingMonitorResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -157,23 +150,23 @@ func (o LookupPingMonitorResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The region where updates must be made and where results must be fetched from.
-func (o LookupPingMonitorResultOutput) HomeRegion() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupPingMonitorResult) string { return v.HomeRegion }).(pulumi.StringOutput)
+func (o LookupPingMonitorResultOutput) HomeRegion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupPingMonitorResult) *string { return v.HomeRegion }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the resource.
-func (o LookupPingMonitorResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupPingMonitorResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupPingMonitorResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupPingMonitorResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The monitor interval in seconds. Valid values: 10, 30, and 60.
-func (o LookupPingMonitorResultOutput) IntervalInSeconds() pulumi.IntOutput {
-	return o.ApplyT(func(v LookupPingMonitorResult) int { return v.IntervalInSeconds }).(pulumi.IntOutput)
+func (o LookupPingMonitorResultOutput) IntervalInSeconds() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LookupPingMonitorResult) *int { return v.IntervalInSeconds }).(pulumi.IntPtrOutput)
 }
 
 // Enables or disables the monitor. Set to 'true' to launch monitoring.
-func (o LookupPingMonitorResultOutput) IsEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupPingMonitorResult) bool { return v.IsEnabled }).(pulumi.BoolOutput)
+func (o LookupPingMonitorResultOutput) IsEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupPingMonitorResult) *bool { return v.IsEnabled }).(pulumi.BoolPtrOutput)
 }
 
 func (o LookupPingMonitorResultOutput) MonitorId() pulumi.StringOutput {
@@ -181,18 +174,18 @@ func (o LookupPingMonitorResultOutput) MonitorId() pulumi.StringOutput {
 }
 
 // The port on which to probe endpoints. If unspecified, probes will use the default port of their protocol.
-func (o LookupPingMonitorResultOutput) Port() pulumi.IntOutput {
-	return o.ApplyT(func(v LookupPingMonitorResult) int { return v.Port }).(pulumi.IntOutput)
+func (o LookupPingMonitorResultOutput) Port() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LookupPingMonitorResult) *int { return v.Port }).(pulumi.IntPtrOutput)
 }
 
 // The protocols for ping probes.
-func (o LookupPingMonitorResultOutput) Protocol() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupPingMonitorResult) string { return v.Protocol }).(pulumi.StringOutput)
+func (o LookupPingMonitorResultOutput) Protocol() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupPingMonitorResult) *string { return v.Protocol }).(pulumi.StringPtrOutput)
 }
 
 // A URL for fetching the probe results.
-func (o LookupPingMonitorResultOutput) ResultsUrl() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupPingMonitorResult) string { return v.ResultsUrl }).(pulumi.StringOutput)
+func (o LookupPingMonitorResultOutput) ResultsUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupPingMonitorResult) *string { return v.ResultsUrl }).(pulumi.StringPtrOutput)
 }
 
 // A list of targets (hostnames or IP addresses) of the probe.
@@ -201,13 +194,13 @@ func (o LookupPingMonitorResultOutput) Targets() pulumi.StringArrayOutput {
 }
 
 // The RFC 3339-formatted creation date and time of the probe.
-func (o LookupPingMonitorResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupPingMonitorResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupPingMonitorResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupPingMonitorResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The probe timeout in seconds. Valid values: 10, 20, 30, and 60. The probe timeout must be less than or equal to `intervalInSeconds` for monitors.
-func (o LookupPingMonitorResultOutput) TimeoutInSeconds() pulumi.IntOutput {
-	return o.ApplyT(func(v LookupPingMonitorResult) int { return v.TimeoutInSeconds }).(pulumi.IntOutput)
+func (o LookupPingMonitorResultOutput) TimeoutInSeconds() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LookupPingMonitorResult) *int { return v.TimeoutInSeconds }).(pulumi.IntPtrOutput)
 }
 
 // A list of names of vantage points from which to execute the probe.

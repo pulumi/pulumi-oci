@@ -52,33 +52,21 @@ class GetDatabasesResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter
-    def databases(self) -> Sequence['outputs.GetDatabasesDatabaseResult']:
-        """
-        The list of databases.
-        """
+    def databases(self) -> Optional[Sequence['outputs.GetDatabasesDatabaseResult']]:
         return pulumi.get(self, "databases")
 
     @property
     @pulumi.getter(name="dbHomeId")
     def db_home_id(self) -> Optional[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
-        """
         return pulumi.get(self, "db_home_id")
 
     @property
     @pulumi.getter(name="dbName")
     def db_name(self) -> Optional[str]:
-        """
-        The database name.
-        """
         return pulumi.get(self, "db_name")
 
     @property
@@ -88,7 +76,7 @@ class GetDatabasesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -97,9 +85,6 @@ class GetDatabasesResult:
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the database.
-        """
         return pulumi.get(self, "state")
 
     @property
@@ -132,29 +117,7 @@ def get_databases(compartment_id: Optional[str] = None,
                   system_id: Optional[str] = None,
                   opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDatabasesResult:
     """
-    This data source provides the list of Databases in Oracle Cloud Infrastructure Database service.
-
-    Gets a list of the databases in the specified Database Home.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_databases = oci.Database.get_databases(compartment_id=var["compartment_id"],
-        db_home_id=oci_database_db_home["test_db_home"]["id"],
-        db_name=var["database_db_name"],
-        state=var["database_state"],
-        system_id=oci_database_system["test_system"]["id"])
-    ```
-
-
-    :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param str db_home_id: A Database Home [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). *Note: Either `db_home_id` or `system_id` is required to make the LIST API call.
-    :param str db_name: A filter to return only resources that match the entire database name given. The match is not case sensitive.
-    :param str state: A filter to return only resources that match the given lifecycle state exactly.
-    :param str system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata DB system that you want to filter the database results by. Applies only to Exadata DB systems.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -186,28 +149,6 @@ def get_databases_output(compartment_id: Optional[pulumi.Input[str]] = None,
                          system_id: Optional[pulumi.Input[Optional[str]]] = None,
                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDatabasesResult]:
     """
-    This data source provides the list of Databases in Oracle Cloud Infrastructure Database service.
-
-    Gets a list of the databases in the specified Database Home.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_databases = oci.Database.get_databases(compartment_id=var["compartment_id"],
-        db_home_id=oci_database_db_home["test_db_home"]["id"],
-        db_name=var["database_db_name"],
-        state=var["database_state"],
-        system_id=oci_database_system["test_system"]["id"])
-    ```
-
-
-    :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param str db_home_id: A Database Home [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). *Note: Either `db_home_id` or `system_id` is required to make the LIST API call.
-    :param str db_name: A filter to return only resources that match the entire database name given. The match is not case sensitive.
-    :param str state: A filter to return only resources that match the given lifecycle state exactly.
-    :param str system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata DB system that you want to filter the database results by. Applies only to Exadata DB systems.
+    Use this data source to access information about an existing resource.
     """
     ...

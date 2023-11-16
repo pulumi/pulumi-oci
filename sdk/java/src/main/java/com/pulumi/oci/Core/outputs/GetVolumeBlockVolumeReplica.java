@@ -6,6 +6,8 @@ package com.pulumi.oci.Core.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetVolumeBlockVolumeReplica {
@@ -13,39 +15,39 @@ public final class GetVolumeBlockVolumeReplica {
      * @return The availability domain of the block volume replica.  Example: `Uocm:PHX-AD-1`
      * 
      */
-    private String availabilityDomain;
+    private @Nullable String availabilityDomain;
     /**
      * @return The block volume replica&#39;s Oracle ID (OCID).
      * 
      */
-    private String blockVolumeReplicaId;
+    private @Nullable String blockVolumeReplicaId;
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
 
     private GetVolumeBlockVolumeReplica() {}
     /**
      * @return The availability domain of the block volume replica.  Example: `Uocm:PHX-AD-1`
      * 
      */
-    public String availabilityDomain() {
-        return this.availabilityDomain;
+    public Optional<String> availabilityDomain() {
+        return Optional.ofNullable(this.availabilityDomain);
     }
     /**
      * @return The block volume replica&#39;s Oracle ID (OCID).
      * 
      */
-    public String blockVolumeReplicaId() {
-        return this.blockVolumeReplicaId;
+    public Optional<String> blockVolumeReplicaId() {
+        return Optional.ofNullable(this.blockVolumeReplicaId);
     }
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
 
     public static Builder builder() {
@@ -57,9 +59,9 @@ public final class GetVolumeBlockVolumeReplica {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String availabilityDomain;
-        private String blockVolumeReplicaId;
-        private String displayName;
+        private @Nullable String availabilityDomain;
+        private @Nullable String blockVolumeReplicaId;
+        private @Nullable String displayName;
         public Builder() {}
         public Builder(GetVolumeBlockVolumeReplica defaults) {
     	      Objects.requireNonNull(defaults);
@@ -69,18 +71,18 @@ public final class GetVolumeBlockVolumeReplica {
         }
 
         @CustomType.Setter
-        public Builder availabilityDomain(String availabilityDomain) {
-            this.availabilityDomain = Objects.requireNonNull(availabilityDomain);
+        public Builder availabilityDomain(@Nullable String availabilityDomain) {
+            this.availabilityDomain = availabilityDomain;
             return this;
         }
         @CustomType.Setter
-        public Builder blockVolumeReplicaId(String blockVolumeReplicaId) {
-            this.blockVolumeReplicaId = Objects.requireNonNull(blockVolumeReplicaId);
+        public Builder blockVolumeReplicaId(@Nullable String blockVolumeReplicaId) {
+            this.blockVolumeReplicaId = blockVolumeReplicaId;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         public GetVolumeBlockVolumeReplica build() {

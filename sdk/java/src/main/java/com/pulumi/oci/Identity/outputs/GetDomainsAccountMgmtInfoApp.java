@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDomainsAccountMgmtInfoApp {
@@ -14,231 +16,231 @@ public final class GetDomainsAccountMgmtInfoApp {
      * @return If true, this App is able to participate in runtime services, such as automatic-login, OAuth, and SAML. If false, all runtime services are disabled for this App and only administrative operations can be performed.
      * 
      */
-    private Boolean active;
+    private @Nullable Boolean active;
     /**
      * @return Application icon.
      * 
      */
-    private String appIcon;
+    private @Nullable String appIcon;
     /**
      * @return Application thumbnail.
      * 
      */
-    private String appThumbnail;
+    private @Nullable String appThumbnail;
     /**
      * @return The base URI for all of the scopes defined in this App. The value of &#39;audience&#39; is combined with the &#39;value&#39; of each scope to form an &#39;fqs&#39; or fully qualified scope.
      * 
      */
-    private String audience;
+    private @Nullable String audience;
     /**
      * @return Application description
      * 
      */
-    private String description;
+    private @Nullable String description;
     /**
      * @return Resource Type display name
      * 
      */
-    private String display;
+    private @Nullable String display;
     /**
      * @return If true, this App is an AliasApp and it cannot be granted to an end user directly
      * 
      */
-    private Boolean isAliasApp;
+    private @Nullable Boolean isAliasApp;
     /**
      * @return If true, sync from the managed app will be performed as authoritative sync.
      * 
      */
-    private Boolean isAuthoritative;
+    private @Nullable Boolean isAuthoritative;
     /**
      * @return If true, this App allows runtime services to log end users in to this App automatically
      * 
      */
-    private Boolean isLoginTarget;
+    private @Nullable Boolean isLoginTarget;
     /**
      * @return If true, indicates that access to this App requires an account. That is, in order to log in to the App, a User must use an application-specific identity that is maintained in the remote identity-repository of that App.
      * 
      */
-    private Boolean isManagedApp;
+    private @Nullable Boolean isManagedApp;
     /**
      * @return If true, indicates that this application acts as an OAuth Resource.
      * 
      */
-    private Boolean isOauthResource;
+    private @Nullable Boolean isOauthResource;
     /**
      * @return If true, this application is an Oracle Public Cloud service-instance.
      * 
      */
-    private Boolean isOpcService;
+    private @Nullable Boolean isOpcService;
     /**
      * @return If true, indicates that this application accepts an Oracle Identity Cloud Service user as a login-identity (does not require an account) and relies on authorization of the user&#39;s memberships in AppRoles
      * 
      */
-    private Boolean isUnmanagedApp;
+    private @Nullable Boolean isUnmanagedApp;
     /**
      * @return The protocol that runtime services will use to log end users in to this App automatically. If &#39;OIDC&#39;, then runtime services use the OpenID Connect protocol. If &#39;SAML&#39;, then runtime services use the Security Assertion Markup Language protocol.
      * 
      */
-    private String loginMechanism;
+    private @Nullable String loginMechanism;
     /**
      * @return If true, customer is not billed for runtime operations of the app.
      * 
      */
-    private Boolean meterAsOpcService;
+    private @Nullable Boolean meterAsOpcService;
     /**
      * @return UserWalletArtifact URI
      * 
      */
-    private String ref;
+    private @Nullable String ref;
     /**
      * @return This Uniform Resource Name (URN) value identifies the type of Oracle Public Cloud service of which this app is an instance.
      * 
      */
-    private String serviceTypeUrn;
+    private @Nullable String serviceTypeUrn;
     /**
      * @return If true, this App will be displayed in the MyApps page of each end-user who has access to the App.
      * 
      */
-    private Boolean showInMyApps;
+    private @Nullable Boolean showInMyApps;
     /**
      * @return UserWalletArtifact identifier
      * 
      */
-    private String value;
+    private @Nullable String value;
 
     private GetDomainsAccountMgmtInfoApp() {}
     /**
      * @return If true, this App is able to participate in runtime services, such as automatic-login, OAuth, and SAML. If false, all runtime services are disabled for this App and only administrative operations can be performed.
      * 
      */
-    public Boolean active() {
-        return this.active;
+    public Optional<Boolean> active() {
+        return Optional.ofNullable(this.active);
     }
     /**
      * @return Application icon.
      * 
      */
-    public String appIcon() {
-        return this.appIcon;
+    public Optional<String> appIcon() {
+        return Optional.ofNullable(this.appIcon);
     }
     /**
      * @return Application thumbnail.
      * 
      */
-    public String appThumbnail() {
-        return this.appThumbnail;
+    public Optional<String> appThumbnail() {
+        return Optional.ofNullable(this.appThumbnail);
     }
     /**
      * @return The base URI for all of the scopes defined in this App. The value of &#39;audience&#39; is combined with the &#39;value&#39; of each scope to form an &#39;fqs&#39; or fully qualified scope.
      * 
      */
-    public String audience() {
-        return this.audience;
+    public Optional<String> audience() {
+        return Optional.ofNullable(this.audience);
     }
     /**
      * @return Application description
      * 
      */
-    public String description() {
-        return this.description;
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
     /**
      * @return Resource Type display name
      * 
      */
-    public String display() {
-        return this.display;
+    public Optional<String> display() {
+        return Optional.ofNullable(this.display);
     }
     /**
      * @return If true, this App is an AliasApp and it cannot be granted to an end user directly
      * 
      */
-    public Boolean isAliasApp() {
-        return this.isAliasApp;
+    public Optional<Boolean> isAliasApp() {
+        return Optional.ofNullable(this.isAliasApp);
     }
     /**
      * @return If true, sync from the managed app will be performed as authoritative sync.
      * 
      */
-    public Boolean isAuthoritative() {
-        return this.isAuthoritative;
+    public Optional<Boolean> isAuthoritative() {
+        return Optional.ofNullable(this.isAuthoritative);
     }
     /**
      * @return If true, this App allows runtime services to log end users in to this App automatically
      * 
      */
-    public Boolean isLoginTarget() {
-        return this.isLoginTarget;
+    public Optional<Boolean> isLoginTarget() {
+        return Optional.ofNullable(this.isLoginTarget);
     }
     /**
      * @return If true, indicates that access to this App requires an account. That is, in order to log in to the App, a User must use an application-specific identity that is maintained in the remote identity-repository of that App.
      * 
      */
-    public Boolean isManagedApp() {
-        return this.isManagedApp;
+    public Optional<Boolean> isManagedApp() {
+        return Optional.ofNullable(this.isManagedApp);
     }
     /**
      * @return If true, indicates that this application acts as an OAuth Resource.
      * 
      */
-    public Boolean isOauthResource() {
-        return this.isOauthResource;
+    public Optional<Boolean> isOauthResource() {
+        return Optional.ofNullable(this.isOauthResource);
     }
     /**
      * @return If true, this application is an Oracle Public Cloud service-instance.
      * 
      */
-    public Boolean isOpcService() {
-        return this.isOpcService;
+    public Optional<Boolean> isOpcService() {
+        return Optional.ofNullable(this.isOpcService);
     }
     /**
      * @return If true, indicates that this application accepts an Oracle Identity Cloud Service user as a login-identity (does not require an account) and relies on authorization of the user&#39;s memberships in AppRoles
      * 
      */
-    public Boolean isUnmanagedApp() {
-        return this.isUnmanagedApp;
+    public Optional<Boolean> isUnmanagedApp() {
+        return Optional.ofNullable(this.isUnmanagedApp);
     }
     /**
      * @return The protocol that runtime services will use to log end users in to this App automatically. If &#39;OIDC&#39;, then runtime services use the OpenID Connect protocol. If &#39;SAML&#39;, then runtime services use the Security Assertion Markup Language protocol.
      * 
      */
-    public String loginMechanism() {
-        return this.loginMechanism;
+    public Optional<String> loginMechanism() {
+        return Optional.ofNullable(this.loginMechanism);
     }
     /**
      * @return If true, customer is not billed for runtime operations of the app.
      * 
      */
-    public Boolean meterAsOpcService() {
-        return this.meterAsOpcService;
+    public Optional<Boolean> meterAsOpcService() {
+        return Optional.ofNullable(this.meterAsOpcService);
     }
     /**
      * @return UserWalletArtifact URI
      * 
      */
-    public String ref() {
-        return this.ref;
+    public Optional<String> ref() {
+        return Optional.ofNullable(this.ref);
     }
     /**
      * @return This Uniform Resource Name (URN) value identifies the type of Oracle Public Cloud service of which this app is an instance.
      * 
      */
-    public String serviceTypeUrn() {
-        return this.serviceTypeUrn;
+    public Optional<String> serviceTypeUrn() {
+        return Optional.ofNullable(this.serviceTypeUrn);
     }
     /**
      * @return If true, this App will be displayed in the MyApps page of each end-user who has access to the App.
      * 
      */
-    public Boolean showInMyApps() {
-        return this.showInMyApps;
+    public Optional<Boolean> showInMyApps() {
+        return Optional.ofNullable(this.showInMyApps);
     }
     /**
      * @return UserWalletArtifact identifier
      * 
      */
-    public String value() {
-        return this.value;
+    public Optional<String> value() {
+        return Optional.ofNullable(this.value);
     }
 
     public static Builder builder() {
@@ -250,25 +252,25 @@ public final class GetDomainsAccountMgmtInfoApp {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Boolean active;
-        private String appIcon;
-        private String appThumbnail;
-        private String audience;
-        private String description;
-        private String display;
-        private Boolean isAliasApp;
-        private Boolean isAuthoritative;
-        private Boolean isLoginTarget;
-        private Boolean isManagedApp;
-        private Boolean isOauthResource;
-        private Boolean isOpcService;
-        private Boolean isUnmanagedApp;
-        private String loginMechanism;
-        private Boolean meterAsOpcService;
-        private String ref;
-        private String serviceTypeUrn;
-        private Boolean showInMyApps;
-        private String value;
+        private @Nullable Boolean active;
+        private @Nullable String appIcon;
+        private @Nullable String appThumbnail;
+        private @Nullable String audience;
+        private @Nullable String description;
+        private @Nullable String display;
+        private @Nullable Boolean isAliasApp;
+        private @Nullable Boolean isAuthoritative;
+        private @Nullable Boolean isLoginTarget;
+        private @Nullable Boolean isManagedApp;
+        private @Nullable Boolean isOauthResource;
+        private @Nullable Boolean isOpcService;
+        private @Nullable Boolean isUnmanagedApp;
+        private @Nullable String loginMechanism;
+        private @Nullable Boolean meterAsOpcService;
+        private @Nullable String ref;
+        private @Nullable String serviceTypeUrn;
+        private @Nullable Boolean showInMyApps;
+        private @Nullable String value;
         public Builder() {}
         public Builder(GetDomainsAccountMgmtInfoApp defaults) {
     	      Objects.requireNonNull(defaults);
@@ -294,98 +296,98 @@ public final class GetDomainsAccountMgmtInfoApp {
         }
 
         @CustomType.Setter
-        public Builder active(Boolean active) {
-            this.active = Objects.requireNonNull(active);
+        public Builder active(@Nullable Boolean active) {
+            this.active = active;
             return this;
         }
         @CustomType.Setter
-        public Builder appIcon(String appIcon) {
-            this.appIcon = Objects.requireNonNull(appIcon);
+        public Builder appIcon(@Nullable String appIcon) {
+            this.appIcon = appIcon;
             return this;
         }
         @CustomType.Setter
-        public Builder appThumbnail(String appThumbnail) {
-            this.appThumbnail = Objects.requireNonNull(appThumbnail);
+        public Builder appThumbnail(@Nullable String appThumbnail) {
+            this.appThumbnail = appThumbnail;
             return this;
         }
         @CustomType.Setter
-        public Builder audience(String audience) {
-            this.audience = Objects.requireNonNull(audience);
+        public Builder audience(@Nullable String audience) {
+            this.audience = audience;
             return this;
         }
         @CustomType.Setter
-        public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+        public Builder description(@Nullable String description) {
+            this.description = description;
             return this;
         }
         @CustomType.Setter
-        public Builder display(String display) {
-            this.display = Objects.requireNonNull(display);
+        public Builder display(@Nullable String display) {
+            this.display = display;
             return this;
         }
         @CustomType.Setter
-        public Builder isAliasApp(Boolean isAliasApp) {
-            this.isAliasApp = Objects.requireNonNull(isAliasApp);
+        public Builder isAliasApp(@Nullable Boolean isAliasApp) {
+            this.isAliasApp = isAliasApp;
             return this;
         }
         @CustomType.Setter
-        public Builder isAuthoritative(Boolean isAuthoritative) {
-            this.isAuthoritative = Objects.requireNonNull(isAuthoritative);
+        public Builder isAuthoritative(@Nullable Boolean isAuthoritative) {
+            this.isAuthoritative = isAuthoritative;
             return this;
         }
         @CustomType.Setter
-        public Builder isLoginTarget(Boolean isLoginTarget) {
-            this.isLoginTarget = Objects.requireNonNull(isLoginTarget);
+        public Builder isLoginTarget(@Nullable Boolean isLoginTarget) {
+            this.isLoginTarget = isLoginTarget;
             return this;
         }
         @CustomType.Setter
-        public Builder isManagedApp(Boolean isManagedApp) {
-            this.isManagedApp = Objects.requireNonNull(isManagedApp);
+        public Builder isManagedApp(@Nullable Boolean isManagedApp) {
+            this.isManagedApp = isManagedApp;
             return this;
         }
         @CustomType.Setter
-        public Builder isOauthResource(Boolean isOauthResource) {
-            this.isOauthResource = Objects.requireNonNull(isOauthResource);
+        public Builder isOauthResource(@Nullable Boolean isOauthResource) {
+            this.isOauthResource = isOauthResource;
             return this;
         }
         @CustomType.Setter
-        public Builder isOpcService(Boolean isOpcService) {
-            this.isOpcService = Objects.requireNonNull(isOpcService);
+        public Builder isOpcService(@Nullable Boolean isOpcService) {
+            this.isOpcService = isOpcService;
             return this;
         }
         @CustomType.Setter
-        public Builder isUnmanagedApp(Boolean isUnmanagedApp) {
-            this.isUnmanagedApp = Objects.requireNonNull(isUnmanagedApp);
+        public Builder isUnmanagedApp(@Nullable Boolean isUnmanagedApp) {
+            this.isUnmanagedApp = isUnmanagedApp;
             return this;
         }
         @CustomType.Setter
-        public Builder loginMechanism(String loginMechanism) {
-            this.loginMechanism = Objects.requireNonNull(loginMechanism);
+        public Builder loginMechanism(@Nullable String loginMechanism) {
+            this.loginMechanism = loginMechanism;
             return this;
         }
         @CustomType.Setter
-        public Builder meterAsOpcService(Boolean meterAsOpcService) {
-            this.meterAsOpcService = Objects.requireNonNull(meterAsOpcService);
+        public Builder meterAsOpcService(@Nullable Boolean meterAsOpcService) {
+            this.meterAsOpcService = meterAsOpcService;
             return this;
         }
         @CustomType.Setter
-        public Builder ref(String ref) {
-            this.ref = Objects.requireNonNull(ref);
+        public Builder ref(@Nullable String ref) {
+            this.ref = ref;
             return this;
         }
         @CustomType.Setter
-        public Builder serviceTypeUrn(String serviceTypeUrn) {
-            this.serviceTypeUrn = Objects.requireNonNull(serviceTypeUrn);
+        public Builder serviceTypeUrn(@Nullable String serviceTypeUrn) {
+            this.serviceTypeUrn = serviceTypeUrn;
             return this;
         }
         @CustomType.Setter
-        public Builder showInMyApps(Boolean showInMyApps) {
-            this.showInMyApps = Objects.requireNonNull(showInMyApps);
+        public Builder showInMyApps(@Nullable Boolean showInMyApps) {
+            this.showInMyApps = showInMyApps;
             return this;
         }
         @CustomType.Setter
-        public Builder value(String value) {
-            this.value = Objects.requireNonNull(value);
+        public Builder value(@Nullable String value) {
+            this.value = value;
             return this;
         }
         public GetDomainsAccountMgmtInfoApp build() {

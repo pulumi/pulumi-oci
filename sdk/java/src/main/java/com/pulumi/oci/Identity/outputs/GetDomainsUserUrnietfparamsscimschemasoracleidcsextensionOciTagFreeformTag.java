@@ -6,6 +6,8 @@ package com.pulumi.oci.Identity.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTagFreeformTag {
@@ -13,27 +15,27 @@ public final class GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionOciT
      * @return The user&#39;s API key value.
      * 
      */
-    private String key;
+    private @Nullable String key;
     /**
      * @return The value of a X509 certificate.
      * 
      */
-    private String value;
+    private @Nullable String value;
 
     private GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTagFreeformTag() {}
     /**
      * @return The user&#39;s API key value.
      * 
      */
-    public String key() {
-        return this.key;
+    public Optional<String> key() {
+        return Optional.ofNullable(this.key);
     }
     /**
      * @return The value of a X509 certificate.
      * 
      */
-    public String value() {
-        return this.value;
+    public Optional<String> value() {
+        return Optional.ofNullable(this.value);
     }
 
     public static Builder builder() {
@@ -45,8 +47,8 @@ public final class GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionOciT
     }
     @CustomType.Builder
     public static final class Builder {
-        private String key;
-        private String value;
+        private @Nullable String key;
+        private @Nullable String value;
         public Builder() {}
         public Builder(GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTagFreeformTag defaults) {
     	      Objects.requireNonNull(defaults);
@@ -55,13 +57,13 @@ public final class GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionOciT
         }
 
         @CustomType.Setter
-        public Builder key(String key) {
-            this.key = Objects.requireNonNull(key);
+        public Builder key(@Nullable String key) {
+            this.key = key;
             return this;
         }
         @CustomType.Setter
-        public Builder value(String value) {
-            this.value = Objects.requireNonNull(value);
+        public Builder value(@Nullable String value) {
+            this.value = value;
             return this;
         }
         public GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTagFreeformTag build() {

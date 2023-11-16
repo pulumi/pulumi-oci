@@ -16,17 +16,17 @@ namespace Pulumi.Oci.Jms.Outputs
         /// <summary>
         /// The operation type.
         /// </summary>
-        public readonly string Operation;
+        public readonly string? Operation;
         /// <summary>
         /// The reason why the operation is blocklisted.
         /// </summary>
-        public readonly string Reason;
+        public readonly string? Reason;
 
         [OutputConstructor]
         private GetInstallationSiteItemBlocklistResult(
-            string operation,
+            string? operation,
 
-            string reason)
+            string? reason)
         {
             Operation = operation;
             Reason = reason;

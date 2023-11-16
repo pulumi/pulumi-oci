@@ -203,7 +203,7 @@ namespace Pulumi.Oci.DataScience
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// State of the Data Science private endpoint.
         /// </summary>
@@ -223,7 +223,7 @@ namespace Pulumi.Oci.DataScience
 
             ImmutableArray<Outputs.GetPrivateEndpointsFilterResult> filters,
 
-            string id,
+            string? id,
 
             string? state)
         {

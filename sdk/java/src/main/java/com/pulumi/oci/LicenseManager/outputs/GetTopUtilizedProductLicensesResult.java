@@ -19,13 +19,13 @@ public final class GetTopUtilizedProductLicensesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private @Nullable Boolean isCompartmentIdInSubtree;
     /**
      * @return Collection of top utilized product licenses.
      * 
      */
-    private List<GetTopUtilizedProductLicensesItem> items;
+    private @Nullable List<GetTopUtilizedProductLicensesItem> items;
 
     private GetTopUtilizedProductLicensesResult() {}
     public String compartmentId() {
@@ -35,8 +35,8 @@ public final class GetTopUtilizedProductLicensesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public Optional<Boolean> isCompartmentIdInSubtree() {
         return Optional.ofNullable(this.isCompartmentIdInSubtree);
@@ -46,7 +46,7 @@ public final class GetTopUtilizedProductLicensesResult {
      * 
      */
     public List<GetTopUtilizedProductLicensesItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -59,9 +59,9 @@ public final class GetTopUtilizedProductLicensesResult {
     @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
-        private String id;
+        private @Nullable String id;
         private @Nullable Boolean isCompartmentIdInSubtree;
-        private List<GetTopUtilizedProductLicensesItem> items;
+        private @Nullable List<GetTopUtilizedProductLicensesItem> items;
         public Builder() {}
         public Builder(GetTopUtilizedProductLicensesResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -77,8 +77,8 @@ public final class GetTopUtilizedProductLicensesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -87,8 +87,8 @@ public final class GetTopUtilizedProductLicensesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder items(List<GetTopUtilizedProductLicensesItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetTopUtilizedProductLicensesItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetTopUtilizedProductLicensesItem... items) {

@@ -6,6 +6,8 @@ package com.pulumi.oci.DataSafe.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetSqlFirewallViolationsSqlFirewallViolationsCollectionItem {
@@ -13,207 +15,207 @@ public final class GetSqlFirewallViolationsSqlFirewallViolationsCollectionItem {
      * @return The IP address of the host machine from which the session was generated.
      * 
      */
-    private String clientIp;
+    private @Nullable String clientIp;
     /**
      * @return The name of the operating system user for the database session.
      * 
      */
-    private String clientOsUserName;
+    private @Nullable String clientOsUserName;
     /**
      * @return The application from which the SQL violation was generated. Examples include SQL Plus or SQL Developer.
      * 
      */
-    private String clientProgram;
+    private @Nullable String clientProgram;
     /**
      * @return A filter to return only resources that match the specified compartment OCID.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return The name of the user that SQL was executed as.
      * 
      */
-    private String currentDbUserName;
+    private @Nullable String currentDbUserName;
     /**
      * @return The name of the database user.
      * 
      */
-    private String dbUserName;
+    private @Nullable String dbUserName;
     /**
      * @return The OCID of the SQL violation.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The name of the action executed by the user on the target database. For example, ALTER, CREATE, DROP.
      * 
      */
-    private String operation;
+    private @Nullable String operation;
     /**
      * @return The time of the SQL violation occurrence in the target database.
      * 
      */
-    private String operationTime;
+    private @Nullable String operationTime;
     /**
      * @return The objects accessed by the SQL.
      * 
      */
-    private String sqlAccessedObjects;
+    private @Nullable String sqlAccessedObjects;
     /**
      * @return Specifies the level of SQL for this violation. USER_ISSUED_SQL - User issued SQL statements only. ALL_SQL - Includes all SQL statements including SQL statement issued inside PL/SQL units.
      * 
      */
-    private String sqlLevel;
+    private @Nullable String sqlLevel;
     /**
      * @return The SQL text caught by the firewall.
      * 
      */
-    private String sqlText;
+    private @Nullable String sqlText;
     /**
      * @return The OCID of the target database.
      * 
      */
-    private String targetId;
+    private @Nullable String targetId;
     /**
      * @return The name of the target database.
      * 
      */
-    private String targetName;
+    private @Nullable String targetName;
     /**
      * @return The timestamp when this SQL violation was collected from the target database by Data Safe.
      * 
      */
-    private String timeCollected;
+    private @Nullable String timeCollected;
     /**
      * @return The action taken for this SQL violation.
      * 
      */
-    private String violationAction;
+    private @Nullable String violationAction;
     /**
      * @return Indicates whether SQL or context violation.
      * 
      */
-    private String violationCause;
+    private @Nullable String violationCause;
 
     private GetSqlFirewallViolationsSqlFirewallViolationsCollectionItem() {}
     /**
      * @return The IP address of the host machine from which the session was generated.
      * 
      */
-    public String clientIp() {
-        return this.clientIp;
+    public Optional<String> clientIp() {
+        return Optional.ofNullable(this.clientIp);
     }
     /**
      * @return The name of the operating system user for the database session.
      * 
      */
-    public String clientOsUserName() {
-        return this.clientOsUserName;
+    public Optional<String> clientOsUserName() {
+        return Optional.ofNullable(this.clientOsUserName);
     }
     /**
      * @return The application from which the SQL violation was generated. Examples include SQL Plus or SQL Developer.
      * 
      */
-    public String clientProgram() {
-        return this.clientProgram;
+    public Optional<String> clientProgram() {
+        return Optional.ofNullable(this.clientProgram);
     }
     /**
      * @return A filter to return only resources that match the specified compartment OCID.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return The name of the user that SQL was executed as.
      * 
      */
-    public String currentDbUserName() {
-        return this.currentDbUserName;
+    public Optional<String> currentDbUserName() {
+        return Optional.ofNullable(this.currentDbUserName);
     }
     /**
      * @return The name of the database user.
      * 
      */
-    public String dbUserName() {
-        return this.dbUserName;
+    public Optional<String> dbUserName() {
+        return Optional.ofNullable(this.dbUserName);
     }
     /**
      * @return The OCID of the SQL violation.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The name of the action executed by the user on the target database. For example, ALTER, CREATE, DROP.
      * 
      */
-    public String operation() {
-        return this.operation;
+    public Optional<String> operation() {
+        return Optional.ofNullable(this.operation);
     }
     /**
      * @return The time of the SQL violation occurrence in the target database.
      * 
      */
-    public String operationTime() {
-        return this.operationTime;
+    public Optional<String> operationTime() {
+        return Optional.ofNullable(this.operationTime);
     }
     /**
      * @return The objects accessed by the SQL.
      * 
      */
-    public String sqlAccessedObjects() {
-        return this.sqlAccessedObjects;
+    public Optional<String> sqlAccessedObjects() {
+        return Optional.ofNullable(this.sqlAccessedObjects);
     }
     /**
      * @return Specifies the level of SQL for this violation. USER_ISSUED_SQL - User issued SQL statements only. ALL_SQL - Includes all SQL statements including SQL statement issued inside PL/SQL units.
      * 
      */
-    public String sqlLevel() {
-        return this.sqlLevel;
+    public Optional<String> sqlLevel() {
+        return Optional.ofNullable(this.sqlLevel);
     }
     /**
      * @return The SQL text caught by the firewall.
      * 
      */
-    public String sqlText() {
-        return this.sqlText;
+    public Optional<String> sqlText() {
+        return Optional.ofNullable(this.sqlText);
     }
     /**
      * @return The OCID of the target database.
      * 
      */
-    public String targetId() {
-        return this.targetId;
+    public Optional<String> targetId() {
+        return Optional.ofNullable(this.targetId);
     }
     /**
      * @return The name of the target database.
      * 
      */
-    public String targetName() {
-        return this.targetName;
+    public Optional<String> targetName() {
+        return Optional.ofNullable(this.targetName);
     }
     /**
      * @return The timestamp when this SQL violation was collected from the target database by Data Safe.
      * 
      */
-    public String timeCollected() {
-        return this.timeCollected;
+    public Optional<String> timeCollected() {
+        return Optional.ofNullable(this.timeCollected);
     }
     /**
      * @return The action taken for this SQL violation.
      * 
      */
-    public String violationAction() {
-        return this.violationAction;
+    public Optional<String> violationAction() {
+        return Optional.ofNullable(this.violationAction);
     }
     /**
      * @return Indicates whether SQL or context violation.
      * 
      */
-    public String violationCause() {
-        return this.violationCause;
+    public Optional<String> violationCause() {
+        return Optional.ofNullable(this.violationCause);
     }
 
     public static Builder builder() {
@@ -225,23 +227,23 @@ public final class GetSqlFirewallViolationsSqlFirewallViolationsCollectionItem {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String clientIp;
-        private String clientOsUserName;
-        private String clientProgram;
-        private String compartmentId;
-        private String currentDbUserName;
-        private String dbUserName;
-        private String id;
-        private String operation;
-        private String operationTime;
-        private String sqlAccessedObjects;
-        private String sqlLevel;
-        private String sqlText;
-        private String targetId;
-        private String targetName;
-        private String timeCollected;
-        private String violationAction;
-        private String violationCause;
+        private @Nullable String clientIp;
+        private @Nullable String clientOsUserName;
+        private @Nullable String clientProgram;
+        private @Nullable String compartmentId;
+        private @Nullable String currentDbUserName;
+        private @Nullable String dbUserName;
+        private @Nullable String id;
+        private @Nullable String operation;
+        private @Nullable String operationTime;
+        private @Nullable String sqlAccessedObjects;
+        private @Nullable String sqlLevel;
+        private @Nullable String sqlText;
+        private @Nullable String targetId;
+        private @Nullable String targetName;
+        private @Nullable String timeCollected;
+        private @Nullable String violationAction;
+        private @Nullable String violationCause;
         public Builder() {}
         public Builder(GetSqlFirewallViolationsSqlFirewallViolationsCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -265,88 +267,88 @@ public final class GetSqlFirewallViolationsSqlFirewallViolationsCollectionItem {
         }
 
         @CustomType.Setter
-        public Builder clientIp(String clientIp) {
-            this.clientIp = Objects.requireNonNull(clientIp);
+        public Builder clientIp(@Nullable String clientIp) {
+            this.clientIp = clientIp;
             return this;
         }
         @CustomType.Setter
-        public Builder clientOsUserName(String clientOsUserName) {
-            this.clientOsUserName = Objects.requireNonNull(clientOsUserName);
+        public Builder clientOsUserName(@Nullable String clientOsUserName) {
+            this.clientOsUserName = clientOsUserName;
             return this;
         }
         @CustomType.Setter
-        public Builder clientProgram(String clientProgram) {
-            this.clientProgram = Objects.requireNonNull(clientProgram);
+        public Builder clientProgram(@Nullable String clientProgram) {
+            this.clientProgram = clientProgram;
             return this;
         }
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder currentDbUserName(String currentDbUserName) {
-            this.currentDbUserName = Objects.requireNonNull(currentDbUserName);
+        public Builder currentDbUserName(@Nullable String currentDbUserName) {
+            this.currentDbUserName = currentDbUserName;
             return this;
         }
         @CustomType.Setter
-        public Builder dbUserName(String dbUserName) {
-            this.dbUserName = Objects.requireNonNull(dbUserName);
+        public Builder dbUserName(@Nullable String dbUserName) {
+            this.dbUserName = dbUserName;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder operation(String operation) {
-            this.operation = Objects.requireNonNull(operation);
+        public Builder operation(@Nullable String operation) {
+            this.operation = operation;
             return this;
         }
         @CustomType.Setter
-        public Builder operationTime(String operationTime) {
-            this.operationTime = Objects.requireNonNull(operationTime);
+        public Builder operationTime(@Nullable String operationTime) {
+            this.operationTime = operationTime;
             return this;
         }
         @CustomType.Setter
-        public Builder sqlAccessedObjects(String sqlAccessedObjects) {
-            this.sqlAccessedObjects = Objects.requireNonNull(sqlAccessedObjects);
+        public Builder sqlAccessedObjects(@Nullable String sqlAccessedObjects) {
+            this.sqlAccessedObjects = sqlAccessedObjects;
             return this;
         }
         @CustomType.Setter
-        public Builder sqlLevel(String sqlLevel) {
-            this.sqlLevel = Objects.requireNonNull(sqlLevel);
+        public Builder sqlLevel(@Nullable String sqlLevel) {
+            this.sqlLevel = sqlLevel;
             return this;
         }
         @CustomType.Setter
-        public Builder sqlText(String sqlText) {
-            this.sqlText = Objects.requireNonNull(sqlText);
+        public Builder sqlText(@Nullable String sqlText) {
+            this.sqlText = sqlText;
             return this;
         }
         @CustomType.Setter
-        public Builder targetId(String targetId) {
-            this.targetId = Objects.requireNonNull(targetId);
+        public Builder targetId(@Nullable String targetId) {
+            this.targetId = targetId;
             return this;
         }
         @CustomType.Setter
-        public Builder targetName(String targetName) {
-            this.targetName = Objects.requireNonNull(targetName);
+        public Builder targetName(@Nullable String targetName) {
+            this.targetName = targetName;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCollected(String timeCollected) {
-            this.timeCollected = Objects.requireNonNull(timeCollected);
+        public Builder timeCollected(@Nullable String timeCollected) {
+            this.timeCollected = timeCollected;
             return this;
         }
         @CustomType.Setter
-        public Builder violationAction(String violationAction) {
-            this.violationAction = Objects.requireNonNull(violationAction);
+        public Builder violationAction(@Nullable String violationAction) {
+            this.violationAction = violationAction;
             return this;
         }
         @CustomType.Setter
-        public Builder violationCause(String violationCause) {
-            this.violationCause = Objects.requireNonNull(violationCause);
+        public Builder violationCause(@Nullable String violationCause) {
+            this.violationCause = violationCause;
             return this;
         }
         public GetSqlFirewallViolationsSqlFirewallViolationsCollectionItem build() {

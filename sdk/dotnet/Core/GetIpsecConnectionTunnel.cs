@@ -128,15 +128,15 @@ namespace Pulumi.Oci.Core
         /// <summary>
         /// The OCID of the compartment containing the tunnel.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// The IP address of Cpe headend.  Example: `129.146.17.50`
         /// </summary>
-        public readonly string CpeIp;
+        public readonly string? CpeIp;
         /// <summary>
         /// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// Configuration information used by the encryption domain policy.
         /// </summary>
@@ -144,69 +144,69 @@ namespace Pulumi.Oci.Core
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Internet Key Exchange protocol version.
         /// </summary>
-        public readonly string IkeVersion;
+        public readonly string? IkeVersion;
         public readonly string IpsecId;
         /// <summary>
         /// the routing strategy used for this tunnel, either static route or BGP dynamic routing
         /// </summary>
-        public readonly string Routing;
+        public readonly string? Routing;
         /// <summary>
         /// The IPSec connection's tunnel's lifecycle state.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// The tunnel's current state.
         /// </summary>
-        public readonly string Status;
+        public readonly string? Status;
         /// <summary>
         /// The date and time the IPSec connection tunnel was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// When the status of the tunnel last changed, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
-        public readonly string TimeStatusUpdated;
+        public readonly string? TimeStatusUpdated;
         public readonly string TunnelId;
         /// <summary>
         /// The IP address of Oracle's VPN headend.  Example: `129.146.17.50`
         /// </summary>
-        public readonly string VpnIp;
+        public readonly string? VpnIp;
 
         [OutputConstructor]
         private GetIpsecConnectionTunnelResult(
             ImmutableArray<Outputs.GetIpsecConnectionTunnelBgpSessionInfoResult> bgpSessionInfos,
 
-            string compartmentId,
+            string? compartmentId,
 
-            string cpeIp,
+            string? cpeIp,
 
-            string displayName,
+            string? displayName,
 
             ImmutableArray<Outputs.GetIpsecConnectionTunnelEncryptionDomainConfigResult> encryptionDomainConfigs,
 
-            string id,
+            string? id,
 
-            string ikeVersion,
+            string? ikeVersion,
 
             string ipsecId,
 
-            string routing,
+            string? routing,
 
-            string state,
+            string? state,
 
-            string status,
+            string? status,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeStatusUpdated,
+            string? timeStatusUpdated,
 
             string tunnelId,
 
-            string vpnIp)
+            string? vpnIp)
         {
             BgpSessionInfos = bgpSessionInfos;
             CompartmentId = compartmentId;

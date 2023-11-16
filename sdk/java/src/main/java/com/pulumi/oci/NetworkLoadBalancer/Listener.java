@@ -12,6 +12,7 @@ import com.pulumi.oci.NetworkLoadBalancer.inputs.ListenerState;
 import com.pulumi.oci.Utilities;
 import java.lang.Integer;
 import java.lang.String;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -83,14 +84,14 @@ public class Listener extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="ipVersion", refs={String.class}, tree="[0]")
-    private Output<String> ipVersion;
+    private Output</* @Nullable */ String> ipVersion;
 
     /**
      * @return (Updatable) IP version associated with the listener.
      * 
      */
-    public Output<String> ipVersion() {
-        return this.ipVersion;
+    public Output<Optional<String>> ipVersion() {
+        return Codegen.optional(this.ipVersion);
     }
     /**
      * A friendly name for the listener. It must be unique and it cannot be changed.  Example: `example_listener`

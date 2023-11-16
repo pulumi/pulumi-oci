@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabasesUserProxyUsersProxyUserCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetManagedDatabasesUserProxyUsersProxyUserCollection {
@@ -14,7 +15,7 @@ public final class GetManagedDatabasesUserProxyUsersProxyUserCollection {
      * @return An array of user resources.
      * 
      */
-    private List<GetManagedDatabasesUserProxyUsersProxyUserCollectionItem> items;
+    private @Nullable List<GetManagedDatabasesUserProxyUsersProxyUserCollectionItem> items;
 
     private GetManagedDatabasesUserProxyUsersProxyUserCollection() {}
     /**
@@ -22,7 +23,7 @@ public final class GetManagedDatabasesUserProxyUsersProxyUserCollection {
      * 
      */
     public List<GetManagedDatabasesUserProxyUsersProxyUserCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -34,7 +35,7 @@ public final class GetManagedDatabasesUserProxyUsersProxyUserCollection {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetManagedDatabasesUserProxyUsersProxyUserCollectionItem> items;
+        private @Nullable List<GetManagedDatabasesUserProxyUsersProxyUserCollectionItem> items;
         public Builder() {}
         public Builder(GetManagedDatabasesUserProxyUsersProxyUserCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -42,8 +43,8 @@ public final class GetManagedDatabasesUserProxyUsersProxyUserCollection {
         }
 
         @CustomType.Setter
-        public Builder items(List<GetManagedDatabasesUserProxyUsersProxyUserCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetManagedDatabasesUserProxyUsersProxyUserCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetManagedDatabasesUserProxyUsersProxyUserCollectionItem... items) {

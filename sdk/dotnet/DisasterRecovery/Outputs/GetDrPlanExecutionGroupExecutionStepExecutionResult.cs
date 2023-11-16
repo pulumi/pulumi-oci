@@ -16,15 +16,15 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
         /// <summary>
         /// The display name of the step execution.  Example: `DATABASE_SWITCHOVER`
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// The total duration in seconds taken to complete the step execution.  Example: `35`
         /// </summary>
-        public readonly int ExecutionDurationInSec;
+        public readonly int? ExecutionDurationInSec;
         /// <summary>
         /// The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..uniqueID`
         /// </summary>
-        public readonly string GroupId;
+        public readonly string? GroupId;
         /// <summary>
         /// The details of an object storage log location for a DR protection group.
         /// </summary>
@@ -32,49 +32,49 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
         /// <summary>
         /// The status of the step execution.
         /// </summary>
-        public readonly string Status;
+        public readonly string? Status;
         /// <summary>
         /// Additional details on the step execution status.  Example: `This step failed to complete due to a timeout`
         /// </summary>
-        public readonly string StatusDetails;
+        public readonly string? StatusDetails;
         /// <summary>
         /// The unique id of the step. Must not be modified by user.  Example: `sgid1.step..uniqueID`
         /// </summary>
-        public readonly string StepId;
+        public readonly string? StepId;
         /// <summary>
         /// The date and time at which DR plan execution succeeded, failed, was paused, or was canceled. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
         /// </summary>
-        public readonly string TimeEnded;
+        public readonly string? TimeEnded;
         /// <summary>
         /// The date and time at which DR plan execution began. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
         /// </summary>
-        public readonly string TimeStarted;
+        public readonly string? TimeStarted;
         /// <summary>
         /// The group type.  Example: `BUILT_IN`
         /// </summary>
-        public readonly string Type;
+        public readonly string? Type;
 
         [OutputConstructor]
         private GetDrPlanExecutionGroupExecutionStepExecutionResult(
-            string displayName,
+            string? displayName,
 
-            int executionDurationInSec,
+            int? executionDurationInSec,
 
-            string groupId,
+            string? groupId,
 
             ImmutableArray<Outputs.GetDrPlanExecutionGroupExecutionStepExecutionLogLocationResult> logLocations,
 
-            string status,
+            string? status,
 
-            string statusDetails,
+            string? statusDetails,
 
-            string stepId,
+            string? stepId,
 
-            string timeEnded,
+            string? timeEnded,
 
-            string timeStarted,
+            string? timeStarted,
 
-            string type)
+            string? type)
         {
             DisplayName = displayName;
             ExecutionDurationInSec = executionDurationInSec;

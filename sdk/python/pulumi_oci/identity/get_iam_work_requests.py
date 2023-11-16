@@ -43,9 +43,6 @@ class GetIamWorkRequestsResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The OCID of the compartment containing this IAM work request.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
@@ -55,15 +52,12 @@ class GetIamWorkRequestsResult:
 
     @property
     @pulumi.getter(name="iamWorkRequests")
-    def iam_work_requests(self) -> Sequence['outputs.GetIamWorkRequestsIamWorkRequestResult']:
-        """
-        The list of iam_work_requests.
-        """
+    def iam_work_requests(self) -> Optional[Sequence['outputs.GetIamWorkRequestsIamWorkRequestResult']]:
         return pulumi.get(self, "iam_work_requests")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -93,26 +87,7 @@ def get_iam_work_requests(compartment_id: Optional[str] = None,
                           resource_identifier: Optional[str] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetIamWorkRequestsResult:
     """
-    This data source provides the list of Iam Work Requests in Oracle Cloud Infrastructure Identity service.
-
-    List the IAM work requests in compartment
-
-    - If IAM workrequest  details are retrieved sucessfully, return 202 ACCEPTED.
-    - If any internal error occurs, return 500 INTERNAL SERVER ERROR.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_iam_work_requests = oci.Identity.get_iam_work_requests(compartment_id=var["compartment_id"],
-        resource_identifier=var["iam_work_request_resource_identifier"])
-    ```
-
-
-    :param str compartment_id: The OCID of the compartment (remember that the tenancy is simply the root compartment).
-    :param str resource_identifier: The identifier of the resource the work request affects.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -135,25 +110,6 @@ def get_iam_work_requests_output(compartment_id: Optional[pulumi.Input[str]] = N
                                  resource_identifier: Optional[pulumi.Input[Optional[str]]] = None,
                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetIamWorkRequestsResult]:
     """
-    This data source provides the list of Iam Work Requests in Oracle Cloud Infrastructure Identity service.
-
-    List the IAM work requests in compartment
-
-    - If IAM workrequest  details are retrieved sucessfully, return 202 ACCEPTED.
-    - If any internal error occurs, return 500 INTERNAL SERVER ERROR.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_iam_work_requests = oci.Identity.get_iam_work_requests(compartment_id=var["compartment_id"],
-        resource_identifier=var["iam_work_request_resource_identifier"])
-    ```
-
-
-    :param str compartment_id: The OCID of the compartment (remember that the tenancy is simply the root compartment).
-    :param str resource_identifier: The identifier of the resource the work request affects.
+    Use this data source to access information about an existing resource.
     """
     ...

@@ -30,12 +30,12 @@ public final class GetSendersResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The list of senders.
      * 
      */
-    private List<GetSendersSender> senders;
+    private @Nullable List<GetSendersSender> senders;
     /**
      * @return The current status of the approved sender.
      * 
@@ -67,15 +67,15 @@ public final class GetSendersResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The list of senders.
      * 
      */
     public List<GetSendersSender> senders() {
-        return this.senders;
+        return this.senders == null ? List.of() : this.senders;
     }
     /**
      * @return The current status of the approved sender.
@@ -98,8 +98,8 @@ public final class GetSendersResult {
         private @Nullable String domain;
         private @Nullable String emailAddress;
         private @Nullable List<GetSendersFilter> filters;
-        private String id;
-        private List<GetSendersSender> senders;
+        private @Nullable String id;
+        private @Nullable List<GetSendersSender> senders;
         private @Nullable String state;
         public Builder() {}
         public Builder(GetSendersResult defaults) {
@@ -137,13 +137,13 @@ public final class GetSendersResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder senders(List<GetSendersSender> senders) {
-            this.senders = Objects.requireNonNull(senders);
+        public Builder senders(@Nullable List<GetSendersSender> senders) {
+            this.senders = senders;
             return this;
         }
         public Builder senders(GetSendersSender... senders) {

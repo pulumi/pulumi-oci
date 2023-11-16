@@ -6,6 +6,8 @@ package com.pulumi.oci.DevOps.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildSourceCollectionItem {
@@ -13,75 +15,75 @@ public final class GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildSo
      * @return Branch name.
      * 
      */
-    private String branch;
+    private @Nullable String branch;
     /**
      * @return Connection identifier pertinent to Bitbucket Server source provider
      * 
      */
-    private String connectionId;
+    private @Nullable String connectionId;
     /**
      * @return The type of source provider.
      * 
      */
-    private String connectionType;
+    private @Nullable String connectionType;
     /**
      * @return Name of the build source. This must be unique within a build source collection. The name can be used by customers to locate the working directory pertinent to this repository.
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return The DevOps code repository ID.
      * 
      */
-    private String repositoryId;
+    private @Nullable String repositoryId;
     /**
      * @return URL for the repository.
      * 
      */
-    private String repositoryUrl;
+    private @Nullable String repositoryUrl;
 
     private GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildSourceCollectionItem() {}
     /**
      * @return Branch name.
      * 
      */
-    public String branch() {
-        return this.branch;
+    public Optional<String> branch() {
+        return Optional.ofNullable(this.branch);
     }
     /**
      * @return Connection identifier pertinent to Bitbucket Server source provider
      * 
      */
-    public String connectionId() {
-        return this.connectionId;
+    public Optional<String> connectionId() {
+        return Optional.ofNullable(this.connectionId);
     }
     /**
      * @return The type of source provider.
      * 
      */
-    public String connectionType() {
-        return this.connectionType;
+    public Optional<String> connectionType() {
+        return Optional.ofNullable(this.connectionType);
     }
     /**
      * @return Name of the build source. This must be unique within a build source collection. The name can be used by customers to locate the working directory pertinent to this repository.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return The DevOps code repository ID.
      * 
      */
-    public String repositoryId() {
-        return this.repositoryId;
+    public Optional<String> repositoryId() {
+        return Optional.ofNullable(this.repositoryId);
     }
     /**
      * @return URL for the repository.
      * 
      */
-    public String repositoryUrl() {
-        return this.repositoryUrl;
+    public Optional<String> repositoryUrl() {
+        return Optional.ofNullable(this.repositoryUrl);
     }
 
     public static Builder builder() {
@@ -93,12 +95,12 @@ public final class GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildSo
     }
     @CustomType.Builder
     public static final class Builder {
-        private String branch;
-        private String connectionId;
-        private String connectionType;
-        private String name;
-        private String repositoryId;
-        private String repositoryUrl;
+        private @Nullable String branch;
+        private @Nullable String connectionId;
+        private @Nullable String connectionType;
+        private @Nullable String name;
+        private @Nullable String repositoryId;
+        private @Nullable String repositoryUrl;
         public Builder() {}
         public Builder(GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildSourceCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -111,33 +113,33 @@ public final class GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildSo
         }
 
         @CustomType.Setter
-        public Builder branch(String branch) {
-            this.branch = Objects.requireNonNull(branch);
+        public Builder branch(@Nullable String branch) {
+            this.branch = branch;
             return this;
         }
         @CustomType.Setter
-        public Builder connectionId(String connectionId) {
-            this.connectionId = Objects.requireNonNull(connectionId);
+        public Builder connectionId(@Nullable String connectionId) {
+            this.connectionId = connectionId;
             return this;
         }
         @CustomType.Setter
-        public Builder connectionType(String connectionType) {
-            this.connectionType = Objects.requireNonNull(connectionType);
+        public Builder connectionType(@Nullable String connectionType) {
+            this.connectionType = connectionType;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder repositoryId(String repositoryId) {
-            this.repositoryId = Objects.requireNonNull(repositoryId);
+        public Builder repositoryId(@Nullable String repositoryId) {
+            this.repositoryId = repositoryId;
             return this;
         }
         @CustomType.Setter
-        public Builder repositoryUrl(String repositoryUrl) {
-            this.repositoryUrl = Objects.requireNonNull(repositoryUrl);
+        public Builder repositoryUrl(@Nullable String repositoryUrl) {
+            this.repositoryUrl = repositoryUrl;
             return this;
         }
         public GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildSourceCollectionItem build() {

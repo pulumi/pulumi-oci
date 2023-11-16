@@ -8,6 +8,8 @@ import java.lang.Boolean;
 import java.lang.Double;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetManagedDatabasesDatabaseParameterItemAllowedValue {
@@ -15,39 +17,39 @@ public final class GetManagedDatabasesDatabaseParameterItemAllowedValue {
      * @return Indicates whether the parameter is set to the default value (`TRUE`) or the parameter value was specified in the parameter file (`FALSE`).
      * 
      */
-    private Boolean isDefault;
+    private @Nullable Boolean isDefault;
     /**
      * @return The position (ordinal number) of the parameter value. Useful only for parameters whose values are lists of strings.
      * 
      */
-    private Double ordinal;
+    private @Nullable Double ordinal;
     /**
      * @return The parameter value.
      * 
      */
-    private String value;
+    private @Nullable String value;
 
     private GetManagedDatabasesDatabaseParameterItemAllowedValue() {}
     /**
      * @return Indicates whether the parameter is set to the default value (`TRUE`) or the parameter value was specified in the parameter file (`FALSE`).
      * 
      */
-    public Boolean isDefault() {
-        return this.isDefault;
+    public Optional<Boolean> isDefault() {
+        return Optional.ofNullable(this.isDefault);
     }
     /**
      * @return The position (ordinal number) of the parameter value. Useful only for parameters whose values are lists of strings.
      * 
      */
-    public Double ordinal() {
-        return this.ordinal;
+    public Optional<Double> ordinal() {
+        return Optional.ofNullable(this.ordinal);
     }
     /**
      * @return The parameter value.
      * 
      */
-    public String value() {
-        return this.value;
+    public Optional<String> value() {
+        return Optional.ofNullable(this.value);
     }
 
     public static Builder builder() {
@@ -59,9 +61,9 @@ public final class GetManagedDatabasesDatabaseParameterItemAllowedValue {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Boolean isDefault;
-        private Double ordinal;
-        private String value;
+        private @Nullable Boolean isDefault;
+        private @Nullable Double ordinal;
+        private @Nullable String value;
         public Builder() {}
         public Builder(GetManagedDatabasesDatabaseParameterItemAllowedValue defaults) {
     	      Objects.requireNonNull(defaults);
@@ -71,18 +73,18 @@ public final class GetManagedDatabasesDatabaseParameterItemAllowedValue {
         }
 
         @CustomType.Setter
-        public Builder isDefault(Boolean isDefault) {
-            this.isDefault = Objects.requireNonNull(isDefault);
+        public Builder isDefault(@Nullable Boolean isDefault) {
+            this.isDefault = isDefault;
             return this;
         }
         @CustomType.Setter
-        public Builder ordinal(Double ordinal) {
-            this.ordinal = Objects.requireNonNull(ordinal);
+        public Builder ordinal(@Nullable Double ordinal) {
+            this.ordinal = ordinal;
             return this;
         }
         @CustomType.Setter
-        public Builder value(String value) {
-            this.value = Objects.requireNonNull(value);
+        public Builder value(@Nullable String value) {
+            this.value = value;
             return this;
         }
         public GetManagedDatabasesDatabaseParameterItemAllowedValue build() {

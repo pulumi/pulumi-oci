@@ -44,7 +44,7 @@ class GetVirtualCircuitAssociatedTunnelsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -52,10 +52,7 @@ class GetVirtualCircuitAssociatedTunnelsResult:
 
     @property
     @pulumi.getter(name="virtualCircuitAssociatedTunnelDetails")
-    def virtual_circuit_associated_tunnel_details(self) -> Sequence['outputs.GetVirtualCircuitAssociatedTunnelsVirtualCircuitAssociatedTunnelDetailResult']:
-        """
-        The list of virtual_circuit_associated_tunnel_details.
-        """
+    def virtual_circuit_associated_tunnel_details(self) -> Optional[Sequence['outputs.GetVirtualCircuitAssociatedTunnelsVirtualCircuitAssociatedTunnelDetailResult']]:
         return pulumi.get(self, "virtual_circuit_associated_tunnel_details")
 
     @property
@@ -80,21 +77,7 @@ def get_virtual_circuit_associated_tunnels(filters: Optional[Sequence[pulumi.Inp
                                            virtual_circuit_id: Optional[str] = None,
                                            opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetVirtualCircuitAssociatedTunnelsResult:
     """
-    This data source provides the list of Virtual Circuit Associated Tunnels in Oracle Cloud Infrastructure Core service.
-
-    Gets the specified virtual circuit's associatedTunnelsInfo.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_virtual_circuit_associated_tunnels = oci.Core.get_virtual_circuit_associated_tunnels(virtual_circuit_id=oci_core_virtual_circuit["test_virtual_circuit"]["id"])
-    ```
-
-
-    :param str virtual_circuit_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual circuit.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['filters'] = filters
@@ -114,20 +97,6 @@ def get_virtual_circuit_associated_tunnels_output(filters: Optional[pulumi.Input
                                                   virtual_circuit_id: Optional[pulumi.Input[str]] = None,
                                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetVirtualCircuitAssociatedTunnelsResult]:
     """
-    This data source provides the list of Virtual Circuit Associated Tunnels in Oracle Cloud Infrastructure Core service.
-
-    Gets the specified virtual circuit's associatedTunnelsInfo.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_virtual_circuit_associated_tunnels = oci.Core.get_virtual_circuit_associated_tunnels(virtual_circuit_id=oci_core_virtual_circuit["test_virtual_circuit"]["id"])
-    ```
-
-
-    :param str virtual_circuit_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual circuit.
+    Use this data source to access information about an existing resource.
     """
     ...

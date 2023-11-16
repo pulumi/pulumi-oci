@@ -16,10 +16,10 @@ namespace Pulumi.Oci.ServiceMesh.Outputs
         /// <summary>
         /// Determines if the logging configuration is enabled.
         /// </summary>
-        public readonly bool IsEnabled;
+        public readonly bool? IsEnabled;
 
         [OutputConstructor]
-        private GetVirtualDeploymentsVirtualDeploymentCollectionItemAccessLoggingResult(bool isEnabled)
+        private GetVirtualDeploymentsVirtualDeploymentCollectionItemAccessLoggingResult(bool? isEnabled)
         {
             IsEnabled = isEnabled;
         }

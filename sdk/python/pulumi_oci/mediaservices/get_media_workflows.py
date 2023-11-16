@@ -46,17 +46,11 @@ class GetMediaWorkflowsResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[str]:
-        """
-        Compartment Identifier.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        Name of the Media Workflow. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -67,25 +61,16 @@ class GetMediaWorkflowsResult:
     @property
     @pulumi.getter
     def id(self) -> Optional[str]:
-        """
-        Unique identifier that is immutable on creation.
-        """
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="mediaWorkflowCollections")
-    def media_workflow_collections(self) -> Sequence['outputs.GetMediaWorkflowsMediaWorkflowCollectionResult']:
-        """
-        The list of media_workflow_collection.
-        """
+    def media_workflow_collections(self) -> Optional[Sequence['outputs.GetMediaWorkflowsMediaWorkflowCollectionResult']]:
         return pulumi.get(self, "media_workflow_collections")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the MediaWorkflow.
-        """
         return pulumi.get(self, "state")
 
 
@@ -110,27 +95,7 @@ def get_media_workflows(compartment_id: Optional[str] = None,
                         state: Optional[str] = None,
                         opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetMediaWorkflowsResult:
     """
-    This data source provides the list of Media Workflows in Oracle Cloud Infrastructure Media Services service.
-
-    Lists the MediaWorkflows.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_media_workflows = oci.MediaServices.get_media_workflows(compartment_id=var["compartment_id"],
-        display_name=var["media_workflow_display_name"],
-        id=var["media_workflow_id"],
-        state=var["media_workflow_state"])
-    ```
-
-
-    :param str compartment_id: The ID of the compartment in which to list resources.
-    :param str display_name: A filter to return only the resources that match the entire display name given.
-    :param str id: Unique MediaWorkflow identifier.
-    :param str state: A filter to return only the resources with lifecycleState matching the given lifecycleState.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -158,26 +123,6 @@ def get_media_workflows_output(compartment_id: Optional[pulumi.Input[Optional[st
                                state: Optional[pulumi.Input[Optional[str]]] = None,
                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetMediaWorkflowsResult]:
     """
-    This data source provides the list of Media Workflows in Oracle Cloud Infrastructure Media Services service.
-
-    Lists the MediaWorkflows.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_media_workflows = oci.MediaServices.get_media_workflows(compartment_id=var["compartment_id"],
-        display_name=var["media_workflow_display_name"],
-        id=var["media_workflow_id"],
-        state=var["media_workflow_state"])
-    ```
-
-
-    :param str compartment_id: The ID of the compartment in which to list resources.
-    :param str display_name: A filter to return only the resources that match the entire display name given.
-    :param str id: Unique MediaWorkflow identifier.
-    :param str state: A filter to return only the resources with lifecycleState matching the given lifecycleState.
+    Use this data source to access information about an existing resource.
     """
     ...

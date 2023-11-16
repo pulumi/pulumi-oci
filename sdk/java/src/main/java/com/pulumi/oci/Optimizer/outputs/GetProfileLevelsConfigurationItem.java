@@ -6,6 +6,8 @@ package com.pulumi.oci.Optimizer.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetProfileLevelsConfigurationItem {
@@ -13,27 +15,27 @@ public final class GetProfileLevelsConfigurationItem {
      * @return The pre-defined profile level.
      * 
      */
-    private String level;
+    private @Nullable String level;
     /**
      * @return The unique OCID of the recommendation.
      * 
      */
-    private String recommendationId;
+    private @Nullable String recommendationId;
 
     private GetProfileLevelsConfigurationItem() {}
     /**
      * @return The pre-defined profile level.
      * 
      */
-    public String level() {
-        return this.level;
+    public Optional<String> level() {
+        return Optional.ofNullable(this.level);
     }
     /**
      * @return The unique OCID of the recommendation.
      * 
      */
-    public String recommendationId() {
-        return this.recommendationId;
+    public Optional<String> recommendationId() {
+        return Optional.ofNullable(this.recommendationId);
     }
 
     public static Builder builder() {
@@ -45,8 +47,8 @@ public final class GetProfileLevelsConfigurationItem {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String level;
-        private String recommendationId;
+        private @Nullable String level;
+        private @Nullable String recommendationId;
         public Builder() {}
         public Builder(GetProfileLevelsConfigurationItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -55,13 +57,13 @@ public final class GetProfileLevelsConfigurationItem {
         }
 
         @CustomType.Setter
-        public Builder level(String level) {
-            this.level = Objects.requireNonNull(level);
+        public Builder level(@Nullable String level) {
+            this.level = level;
             return this;
         }
         @CustomType.Setter
-        public Builder recommendationId(String recommendationId) {
-            this.recommendationId = Objects.requireNonNull(recommendationId);
+        public Builder recommendationId(@Nullable String recommendationId) {
+            this.recommendationId = recommendationId;
             return this;
         }
         public GetProfileLevelsConfigurationItem build() {

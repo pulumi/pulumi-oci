@@ -67,13 +67,13 @@ export interface GetDedicatedVmHostInstanceShapesResult {
     /**
      * The list of dedicated_vm_host_instance_shapes.
      */
-    readonly dedicatedVmHostInstanceShapes: outputs.Core.GetDedicatedVmHostInstanceShapesDedicatedVmHostInstanceShape[];
+    readonly dedicatedVmHostInstanceShapes?: outputs.Core.GetDedicatedVmHostInstanceShapesDedicatedVmHostInstanceShape[];
     readonly dedicatedVmHostShape?: string;
     readonly filters?: outputs.Core.GetDedicatedVmHostInstanceShapesFilter[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
 }
 /**
  * This data source provides the list of Dedicated Vm Host Instance Shapes in Oracle Cloud Infrastructure Core service.

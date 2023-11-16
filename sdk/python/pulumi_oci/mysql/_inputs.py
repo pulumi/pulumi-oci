@@ -60,16 +60,6 @@ class ChannelSourceArgs:
                  anonymous_transactions_handling: Optional[pulumi.Input['ChannelSourceAnonymousTransactionsHandlingArgs']] = None,
                  port: Optional[pulumi.Input[int]] = None,
                  ssl_ca_certificate: Optional[pulumi.Input['ChannelSourceSslCaCertificateArgs']] = None):
-        """
-        :param pulumi.Input[str] hostname: (Updatable) The network address of the MySQL instance.
-        :param pulumi.Input[str] password: (Updatable) The password for the replication user. The password must be between 8 and 32 characters long, and must contain at least 1 numeric character, 1 lowercase character, 1 uppercase character, and 1 special (nonalphanumeric) character.
-        :param pulumi.Input[str] source_type: (Updatable) The specific source identifier.
-        :param pulumi.Input[str] ssl_mode: (Updatable) The SSL mode of the Channel.
-        :param pulumi.Input[str] username: (Updatable) The name of the replication user on the source MySQL instance. The username has a maximum length of 96 characters. For more information, please see the [MySQL documentation](https://dev.mysql.com/doc/refman/8.0/en/change-master-to.html)
-        :param pulumi.Input['ChannelSourceAnonymousTransactionsHandlingArgs'] anonymous_transactions_handling: (Updatable) Specifies how the replication channel handles replicated transactions without an identifier, enabling replication from a source that does not use transaction-id-based replication to a replica that does.
-        :param pulumi.Input[int] port: (Updatable) The port the source MySQL instance listens on.
-        :param pulumi.Input['ChannelSourceSslCaCertificateArgs'] ssl_ca_certificate: (Updatable) The CA certificate of the server used for VERIFY_IDENTITY and VERIFY_CA ssl modes.
-        """
         pulumi.set(__self__, "hostname", hostname)
         pulumi.set(__self__, "password", password)
         pulumi.set(__self__, "source_type", source_type)
@@ -85,9 +75,6 @@ class ChannelSourceArgs:
     @property
     @pulumi.getter
     def hostname(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The network address of the MySQL instance.
-        """
         return pulumi.get(self, "hostname")
 
     @hostname.setter
@@ -97,9 +84,6 @@ class ChannelSourceArgs:
     @property
     @pulumi.getter
     def password(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The password for the replication user. The password must be between 8 and 32 characters long, and must contain at least 1 numeric character, 1 lowercase character, 1 uppercase character, and 1 special (nonalphanumeric) character.
-        """
         return pulumi.get(self, "password")
 
     @password.setter
@@ -109,9 +93,6 @@ class ChannelSourceArgs:
     @property
     @pulumi.getter(name="sourceType")
     def source_type(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The specific source identifier.
-        """
         return pulumi.get(self, "source_type")
 
     @source_type.setter
@@ -121,9 +102,6 @@ class ChannelSourceArgs:
     @property
     @pulumi.getter(name="sslMode")
     def ssl_mode(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The SSL mode of the Channel.
-        """
         return pulumi.get(self, "ssl_mode")
 
     @ssl_mode.setter
@@ -133,9 +111,6 @@ class ChannelSourceArgs:
     @property
     @pulumi.getter
     def username(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The name of the replication user on the source MySQL instance. The username has a maximum length of 96 characters. For more information, please see the [MySQL documentation](https://dev.mysql.com/doc/refman/8.0/en/change-master-to.html)
-        """
         return pulumi.get(self, "username")
 
     @username.setter
@@ -145,9 +120,6 @@ class ChannelSourceArgs:
     @property
     @pulumi.getter(name="anonymousTransactionsHandling")
     def anonymous_transactions_handling(self) -> Optional[pulumi.Input['ChannelSourceAnonymousTransactionsHandlingArgs']]:
-        """
-        (Updatable) Specifies how the replication channel handles replicated transactions without an identifier, enabling replication from a source that does not use transaction-id-based replication to a replica that does.
-        """
         return pulumi.get(self, "anonymous_transactions_handling")
 
     @anonymous_transactions_handling.setter
@@ -157,9 +129,6 @@ class ChannelSourceArgs:
     @property
     @pulumi.getter
     def port(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) The port the source MySQL instance listens on.
-        """
         return pulumi.get(self, "port")
 
     @port.setter
@@ -169,9 +138,6 @@ class ChannelSourceArgs:
     @property
     @pulumi.getter(name="sslCaCertificate")
     def ssl_ca_certificate(self) -> Optional[pulumi.Input['ChannelSourceSslCaCertificateArgs']]:
-        """
-        (Updatable) The CA certificate of the server used for VERIFY_IDENTITY and VERIFY_CA ssl modes.
-        """
         return pulumi.get(self, "ssl_ca_certificate")
 
     @ssl_ca_certificate.setter
@@ -186,12 +152,6 @@ class ChannelSourceAnonymousTransactionsHandlingArgs:
                  last_configured_log_filename: Optional[pulumi.Input[str]] = None,
                  last_configured_log_offset: Optional[pulumi.Input[str]] = None,
                  uuid: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] policy: (Updatable) Specifies how the replication channel handles anonymous transactions.
-        :param pulumi.Input[str] last_configured_log_filename: (Updatable) Specifies one of the coordinates (file) at which the replica should begin reading the source's log. As this value specifies the point where replication starts from, it is only used once, when it starts. It is never used again, unless a new UpdateChannel operation modifies it.
-        :param pulumi.Input[str] last_configured_log_offset: (Updatable) Specifies one of the coordinates (offset) at which the replica should begin reading the source's log. As this value specifies the point where replication starts from, it is only used once, when it starts. It is never used again, unless a new UpdateChannel operation modifies it.
-        :param pulumi.Input[str] uuid: (Updatable) The UUID that is used as a prefix when generating transaction identifiers for anonymous transactions coming from the source. You can change the UUID later.
-        """
         pulumi.set(__self__, "policy", policy)
         if last_configured_log_filename is not None:
             pulumi.set(__self__, "last_configured_log_filename", last_configured_log_filename)
@@ -203,9 +163,6 @@ class ChannelSourceAnonymousTransactionsHandlingArgs:
     @property
     @pulumi.getter
     def policy(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Specifies how the replication channel handles anonymous transactions.
-        """
         return pulumi.get(self, "policy")
 
     @policy.setter
@@ -215,9 +172,6 @@ class ChannelSourceAnonymousTransactionsHandlingArgs:
     @property
     @pulumi.getter(name="lastConfiguredLogFilename")
     def last_configured_log_filename(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Specifies one of the coordinates (file) at which the replica should begin reading the source's log. As this value specifies the point where replication starts from, it is only used once, when it starts. It is never used again, unless a new UpdateChannel operation modifies it.
-        """
         return pulumi.get(self, "last_configured_log_filename")
 
     @last_configured_log_filename.setter
@@ -227,9 +181,6 @@ class ChannelSourceAnonymousTransactionsHandlingArgs:
     @property
     @pulumi.getter(name="lastConfiguredLogOffset")
     def last_configured_log_offset(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Specifies one of the coordinates (offset) at which the replica should begin reading the source's log. As this value specifies the point where replication starts from, it is only used once, when it starts. It is never used again, unless a new UpdateChannel operation modifies it.
-        """
         return pulumi.get(self, "last_configured_log_offset")
 
     @last_configured_log_offset.setter
@@ -239,9 +190,6 @@ class ChannelSourceAnonymousTransactionsHandlingArgs:
     @property
     @pulumi.getter
     def uuid(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The UUID that is used as a prefix when generating transaction identifiers for anonymous transactions coming from the source. You can change the UUID later.
-        """
         return pulumi.get(self, "uuid")
 
     @uuid.setter
@@ -254,19 +202,12 @@ class ChannelSourceSslCaCertificateArgs:
     def __init__(__self__, *,
                  certificate_type: pulumi.Input[str],
                  contents: pulumi.Input[str]):
-        """
-        :param pulumi.Input[str] certificate_type: (Updatable) The type of CA certificate.
-        :param pulumi.Input[str] contents: (Updatable) The string containing the CA certificate in PEM format.
-        """
         pulumi.set(__self__, "certificate_type", certificate_type)
         pulumi.set(__self__, "contents", contents)
 
     @property
     @pulumi.getter(name="certificateType")
     def certificate_type(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The type of CA certificate.
-        """
         return pulumi.get(self, "certificate_type")
 
     @certificate_type.setter
@@ -276,9 +217,6 @@ class ChannelSourceSslCaCertificateArgs:
     @property
     @pulumi.getter
     def contents(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The string containing the CA certificate in PEM format.
-        """
         return pulumi.get(self, "contents")
 
     @contents.setter
@@ -296,19 +234,6 @@ class ChannelTargetArgs:
                  delay_in_seconds: Optional[pulumi.Input[int]] = None,
                  filters: Optional[pulumi.Input[Sequence[pulumi.Input['ChannelTargetFilterArgs']]]] = None,
                  tables_without_primary_key_handling: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] db_system_id: The OCID of the target DB System.
-        :param pulumi.Input[str] target_type: (Updatable) The specific target identifier.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] applier_username: (Updatable) The username for the replication applier of the target MySQL DB System.
-        :param pulumi.Input[str] channel_name: (Updatable) The case-insensitive name that identifies the replication channel. Channel names must follow the rules defined for [MySQL identifiers](https://dev.mysql.com/doc/refman/8.0/en/identifiers.html). The names of non-Deleted Channels must be unique for each DB System.
-        :param pulumi.Input[int] delay_in_seconds: (Updatable) Specifies the amount of time, in seconds, that the channel waits before  applying a transaction received from the source.
-        :param pulumi.Input[Sequence[pulumi.Input['ChannelTargetFilterArgs']]] filters: (Updatable) Replication filter rules to be applied at the DB System Channel target.
-        :param pulumi.Input[str] tables_without_primary_key_handling: (Updatable) Specifies how a replication channel handles the creation and alteration of tables  that do not have a primary key. The default value is set to ALLOW.
-        """
         pulumi.set(__self__, "db_system_id", db_system_id)
         pulumi.set(__self__, "target_type", target_type)
         if applier_username is not None:
@@ -325,9 +250,6 @@ class ChannelTargetArgs:
     @property
     @pulumi.getter(name="dbSystemId")
     def db_system_id(self) -> pulumi.Input[str]:
-        """
-        The OCID of the target DB System.
-        """
         return pulumi.get(self, "db_system_id")
 
     @db_system_id.setter
@@ -337,13 +259,6 @@ class ChannelTargetArgs:
     @property
     @pulumi.getter(name="targetType")
     def target_type(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The specific target identifier.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "target_type")
 
     @target_type.setter
@@ -353,9 +268,6 @@ class ChannelTargetArgs:
     @property
     @pulumi.getter(name="applierUsername")
     def applier_username(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The username for the replication applier of the target MySQL DB System.
-        """
         return pulumi.get(self, "applier_username")
 
     @applier_username.setter
@@ -365,9 +277,6 @@ class ChannelTargetArgs:
     @property
     @pulumi.getter(name="channelName")
     def channel_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The case-insensitive name that identifies the replication channel. Channel names must follow the rules defined for [MySQL identifiers](https://dev.mysql.com/doc/refman/8.0/en/identifiers.html). The names of non-Deleted Channels must be unique for each DB System.
-        """
         return pulumi.get(self, "channel_name")
 
     @channel_name.setter
@@ -377,9 +286,6 @@ class ChannelTargetArgs:
     @property
     @pulumi.getter(name="delayInSeconds")
     def delay_in_seconds(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) Specifies the amount of time, in seconds, that the channel waits before  applying a transaction received from the source.
-        """
         return pulumi.get(self, "delay_in_seconds")
 
     @delay_in_seconds.setter
@@ -389,9 +295,6 @@ class ChannelTargetArgs:
     @property
     @pulumi.getter
     def filters(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ChannelTargetFilterArgs']]]]:
-        """
-        (Updatable) Replication filter rules to be applied at the DB System Channel target.
-        """
         return pulumi.get(self, "filters")
 
     @filters.setter
@@ -401,9 +304,6 @@ class ChannelTargetArgs:
     @property
     @pulumi.getter(name="tablesWithoutPrimaryKeyHandling")
     def tables_without_primary_key_handling(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Specifies how a replication channel handles the creation and alteration of tables  that do not have a primary key. The default value is set to ALLOW.
-        """
         return pulumi.get(self, "tables_without_primary_key_handling")
 
     @tables_without_primary_key_handling.setter
@@ -416,23 +316,12 @@ class ChannelTargetFilterArgs:
     def __init__(__self__, *,
                  type: pulumi.Input[str],
                  value: pulumi.Input[str]):
-        """
-        :param pulumi.Input[str] type: (Updatable) The type of the filter rule.
-               
-               For details on each type, see [Replication Filtering Rules](https://dev.mysql.com/doc/refman/8.0/en/replication-rules.html)
-        :param pulumi.Input[str] value: (Updatable) The body of the filter rule. This can represent a database, a table, or a database pair (represented as "db1->db2"). For more information, see [Replication Filtering Rules](https://dev.mysql.com/doc/refman/8.0/en/replication-rules.html).
-        """
         pulumi.set(__self__, "type", type)
         pulumi.set(__self__, "value", value)
 
     @property
     @pulumi.getter
     def type(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The type of the filter rule.
-
-        For details on each type, see [Replication Filtering Rules](https://dev.mysql.com/doc/refman/8.0/en/replication-rules.html)
-        """
         return pulumi.get(self, "type")
 
     @type.setter
@@ -442,9 +331,6 @@ class ChannelTargetFilterArgs:
     @property
     @pulumi.getter
     def value(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The body of the filter rule. This can represent a database, a table, or a database pair (represented as "db1->db2"). For more information, see [Replication Filtering Rules](https://dev.mysql.com/doc/refman/8.0/en/replication-rules.html).
-        """
         return pulumi.get(self, "value")
 
     @value.setter
@@ -459,15 +345,6 @@ class HeatWaveClusterClusterNodeArgs:
                  state: Optional[pulumi.Input[str]] = None,
                  time_created: Optional[pulumi.Input[str]] = None,
                  time_updated: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] node_id: The ID of the node within MySQL HeatWave cluster.
-        :param pulumi.Input[str] state: (Updatable) The target state for the HeatWave cluster. Could be set to `ACTIVE` or `INACTIVE`.
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] time_created: The date and time the HeatWave cluster was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-        :param pulumi.Input[str] time_updated: The time the HeatWave cluster was last updated, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-        """
         if node_id is not None:
             pulumi.set(__self__, "node_id", node_id)
         if state is not None:
@@ -480,9 +357,6 @@ class HeatWaveClusterClusterNodeArgs:
     @property
     @pulumi.getter(name="nodeId")
     def node_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The ID of the node within MySQL HeatWave cluster.
-        """
         return pulumi.get(self, "node_id")
 
     @node_id.setter
@@ -492,12 +366,6 @@ class HeatWaveClusterClusterNodeArgs:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The target state for the HeatWave cluster. Could be set to `ACTIVE` or `INACTIVE`.
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -507,9 +375,6 @@ class HeatWaveClusterClusterNodeArgs:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time the HeatWave cluster was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -519,9 +384,6 @@ class HeatWaveClusterClusterNodeArgs:
     @property
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> Optional[pulumi.Input[str]]:
-        """
-        The time the HeatWave cluster was last updated, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-        """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
@@ -557,33 +419,6 @@ class MysqlBackupDbSystemSnapshotArgs:
                  port_x: Optional[pulumi.Input[int]] = None,
                  shape_name: Optional[pulumi.Input[str]] = None,
                  subnet_id: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] admin_username: The username for the administrative user.
-        :param pulumi.Input[str] availability_domain: The Availability Domain where the primary DB System should be located.
-        :param pulumi.Input[Sequence[pulumi.Input['MysqlBackupDbSystemSnapshotBackupPolicyArgs']]] backup_policies: The Backup policy for the DB System.
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment the backup exists in.
-        :param pulumi.Input[str] configuration_id: The OCID of the Configuration to be used for Instances in this DB System.
-        :param pulumi.Input[str] crash_recovery: Whether to run the DB System with InnoDB Redo Logs and the Double Write Buffer enabled or disabled, and whether to enable or disable syncing of the Binary Logs.
-        :param pulumi.Input[int] data_storage_size_in_gb: Initial size of the data volume in GiBs that will be created and attached.
-        :param pulumi.Input[str] database_management: Whether to enable monitoring via the Database Management service.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[Sequence[pulumi.Input['MysqlBackupDbSystemSnapshotDeletionPolicyArgs']]] deletion_policies: The Deletion policy for the DB System.
-        :param pulumi.Input[str] description: (Updatable) A user-supplied description for the backup.
-        :param pulumi.Input[str] display_name: (Updatable) A user-supplied display name for the backup.
-        :param pulumi.Input[Sequence[pulumi.Input['MysqlBackupDbSystemSnapshotEndpointArgs']]] endpoints: The network endpoints available for this DB System.
-        :param pulumi.Input[str] fault_domain: The name of the Fault Domain the DB System is located in.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] hostname_label: The hostname for the primary endpoint of the DB System. Used for DNS. The value is the hostname portion of the primary private IP's fully qualified domain name (FQDN) (for example, "dbsystem-1" in FQDN "dbsystem-1.subnet123.vcn1.oraclevcn.com"). Must be unique across all VNICs in the subnet and comply with RFC 952 and RFC 1123.
-        :param pulumi.Input[str] id: OCID of the backup itself
-        :param pulumi.Input[str] ip_address: The IP address the DB System is configured to listen on. A private IP address of the primary endpoint of the DB System. Must be an available IP address within the subnet's CIDR. This will be a "dotted-quad" style IPv4 address.
-        :param pulumi.Input[bool] is_highly_available: Specifies if the DB System is highly available.
-        :param pulumi.Input[Sequence[pulumi.Input['MysqlBackupDbSystemSnapshotMaintenanceArgs']]] maintenances: The Maintenance Policy for the DB System or Read Replica that this model is included in.
-        :param pulumi.Input[str] mysql_version: The MySQL server version of the DB System used for backup.
-        :param pulumi.Input[int] port: The port for primary endpoint of the DB System to listen on.
-        :param pulumi.Input[int] port_x: The network port on which X Plugin listens for TCP/IP connections. This is the X Plugin equivalent of port.
-        :param pulumi.Input[str] shape_name: The shape of the DB System instance used for backup.
-        :param pulumi.Input[str] subnet_id: The OCID of the subnet the DB System is associated with.
-        """
         if admin_username is not None:
             pulumi.set(__self__, "admin_username", admin_username)
         if availability_domain is not None:
@@ -638,9 +473,6 @@ class MysqlBackupDbSystemSnapshotArgs:
     @property
     @pulumi.getter(name="adminUsername")
     def admin_username(self) -> Optional[pulumi.Input[str]]:
-        """
-        The username for the administrative user.
-        """
         return pulumi.get(self, "admin_username")
 
     @admin_username.setter
@@ -650,9 +482,6 @@ class MysqlBackupDbSystemSnapshotArgs:
     @property
     @pulumi.getter(name="availabilityDomain")
     def availability_domain(self) -> Optional[pulumi.Input[str]]:
-        """
-        The Availability Domain where the primary DB System should be located.
-        """
         return pulumi.get(self, "availability_domain")
 
     @availability_domain.setter
@@ -662,9 +491,6 @@ class MysqlBackupDbSystemSnapshotArgs:
     @property
     @pulumi.getter(name="backupPolicies")
     def backup_policies(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['MysqlBackupDbSystemSnapshotBackupPolicyArgs']]]]:
-        """
-        The Backup policy for the DB System.
-        """
         return pulumi.get(self, "backup_policies")
 
     @backup_policies.setter
@@ -674,9 +500,6 @@ class MysqlBackupDbSystemSnapshotArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The OCID of the compartment the backup exists in.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -686,9 +509,6 @@ class MysqlBackupDbSystemSnapshotArgs:
     @property
     @pulumi.getter(name="configurationId")
     def configuration_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the Configuration to be used for Instances in this DB System.
-        """
         return pulumi.get(self, "configuration_id")
 
     @configuration_id.setter
@@ -698,9 +518,6 @@ class MysqlBackupDbSystemSnapshotArgs:
     @property
     @pulumi.getter(name="crashRecovery")
     def crash_recovery(self) -> Optional[pulumi.Input[str]]:
-        """
-        Whether to run the DB System with InnoDB Redo Logs and the Double Write Buffer enabled or disabled, and whether to enable or disable syncing of the Binary Logs.
-        """
         return pulumi.get(self, "crash_recovery")
 
     @crash_recovery.setter
@@ -710,9 +527,6 @@ class MysqlBackupDbSystemSnapshotArgs:
     @property
     @pulumi.getter(name="dataStorageSizeInGb")
     def data_storage_size_in_gb(self) -> Optional[pulumi.Input[int]]:
-        """
-        Initial size of the data volume in GiBs that will be created and attached.
-        """
         return pulumi.get(self, "data_storage_size_in_gb")
 
     @data_storage_size_in_gb.setter
@@ -722,9 +536,6 @@ class MysqlBackupDbSystemSnapshotArgs:
     @property
     @pulumi.getter(name="databaseManagement")
     def database_management(self) -> Optional[pulumi.Input[str]]:
-        """
-        Whether to enable monitoring via the Database Management service.
-        """
         return pulumi.get(self, "database_management")
 
     @database_management.setter
@@ -734,9 +545,6 @@ class MysqlBackupDbSystemSnapshotArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -746,9 +554,6 @@ class MysqlBackupDbSystemSnapshotArgs:
     @property
     @pulumi.getter(name="deletionPolicies")
     def deletion_policies(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['MysqlBackupDbSystemSnapshotDeletionPolicyArgs']]]]:
-        """
-        The Deletion policy for the DB System.
-        """
         return pulumi.get(self, "deletion_policies")
 
     @deletion_policies.setter
@@ -758,9 +563,6 @@ class MysqlBackupDbSystemSnapshotArgs:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A user-supplied description for the backup.
-        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -770,9 +572,6 @@ class MysqlBackupDbSystemSnapshotArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A user-supplied display name for the backup.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -782,9 +581,6 @@ class MysqlBackupDbSystemSnapshotArgs:
     @property
     @pulumi.getter
     def endpoints(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['MysqlBackupDbSystemSnapshotEndpointArgs']]]]:
-        """
-        The network endpoints available for this DB System.
-        """
         return pulumi.get(self, "endpoints")
 
     @endpoints.setter
@@ -794,9 +590,6 @@ class MysqlBackupDbSystemSnapshotArgs:
     @property
     @pulumi.getter(name="faultDomain")
     def fault_domain(self) -> Optional[pulumi.Input[str]]:
-        """
-        The name of the Fault Domain the DB System is located in.
-        """
         return pulumi.get(self, "fault_domain")
 
     @fault_domain.setter
@@ -806,9 +599,6 @@ class MysqlBackupDbSystemSnapshotArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -818,9 +608,6 @@ class MysqlBackupDbSystemSnapshotArgs:
     @property
     @pulumi.getter(name="hostnameLabel")
     def hostname_label(self) -> Optional[pulumi.Input[str]]:
-        """
-        The hostname for the primary endpoint of the DB System. Used for DNS. The value is the hostname portion of the primary private IP's fully qualified domain name (FQDN) (for example, "dbsystem-1" in FQDN "dbsystem-1.subnet123.vcn1.oraclevcn.com"). Must be unique across all VNICs in the subnet and comply with RFC 952 and RFC 1123.
-        """
         return pulumi.get(self, "hostname_label")
 
     @hostname_label.setter
@@ -830,9 +617,6 @@ class MysqlBackupDbSystemSnapshotArgs:
     @property
     @pulumi.getter
     def id(self) -> Optional[pulumi.Input[str]]:
-        """
-        OCID of the backup itself
-        """
         return pulumi.get(self, "id")
 
     @id.setter
@@ -842,9 +626,6 @@ class MysqlBackupDbSystemSnapshotArgs:
     @property
     @pulumi.getter(name="ipAddress")
     def ip_address(self) -> Optional[pulumi.Input[str]]:
-        """
-        The IP address the DB System is configured to listen on. A private IP address of the primary endpoint of the DB System. Must be an available IP address within the subnet's CIDR. This will be a "dotted-quad" style IPv4 address.
-        """
         return pulumi.get(self, "ip_address")
 
     @ip_address.setter
@@ -854,9 +635,6 @@ class MysqlBackupDbSystemSnapshotArgs:
     @property
     @pulumi.getter(name="isHighlyAvailable")
     def is_highly_available(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Specifies if the DB System is highly available.
-        """
         return pulumi.get(self, "is_highly_available")
 
     @is_highly_available.setter
@@ -866,9 +644,6 @@ class MysqlBackupDbSystemSnapshotArgs:
     @property
     @pulumi.getter
     def maintenances(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['MysqlBackupDbSystemSnapshotMaintenanceArgs']]]]:
-        """
-        The Maintenance Policy for the DB System or Read Replica that this model is included in.
-        """
         return pulumi.get(self, "maintenances")
 
     @maintenances.setter
@@ -878,9 +653,6 @@ class MysqlBackupDbSystemSnapshotArgs:
     @property
     @pulumi.getter(name="mysqlVersion")
     def mysql_version(self) -> Optional[pulumi.Input[str]]:
-        """
-        The MySQL server version of the DB System used for backup.
-        """
         return pulumi.get(self, "mysql_version")
 
     @mysql_version.setter
@@ -890,9 +662,6 @@ class MysqlBackupDbSystemSnapshotArgs:
     @property
     @pulumi.getter
     def port(self) -> Optional[pulumi.Input[int]]:
-        """
-        The port for primary endpoint of the DB System to listen on.
-        """
         return pulumi.get(self, "port")
 
     @port.setter
@@ -902,9 +671,6 @@ class MysqlBackupDbSystemSnapshotArgs:
     @property
     @pulumi.getter(name="portX")
     def port_x(self) -> Optional[pulumi.Input[int]]:
-        """
-        The network port on which X Plugin listens for TCP/IP connections. This is the X Plugin equivalent of port.
-        """
         return pulumi.get(self, "port_x")
 
     @port_x.setter
@@ -914,9 +680,6 @@ class MysqlBackupDbSystemSnapshotArgs:
     @property
     @pulumi.getter(name="shapeName")
     def shape_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The shape of the DB System instance used for backup.
-        """
         return pulumi.get(self, "shape_name")
 
     @shape_name.setter
@@ -926,9 +689,6 @@ class MysqlBackupDbSystemSnapshotArgs:
     @property
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the subnet the DB System is associated with.
-        """
         return pulumi.get(self, "subnet_id")
 
     @subnet_id.setter
@@ -945,18 +705,6 @@ class MysqlBackupDbSystemSnapshotBackupPolicyArgs:
                  pitr_policies: Optional[pulumi.Input[Sequence[pulumi.Input['MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArgs']]]] = None,
                  retention_in_days: Optional[pulumi.Input[int]] = None,
                  window_start_time: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[bool] is_enabled: Specifies if PITR is enabled or disabled.
-        :param pulumi.Input[Sequence[pulumi.Input['MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArgs']]] pitr_policies: The PITR policy for the DB System.
-        :param pulumi.Input[int] retention_in_days: (Updatable) Number of days to retain this backup.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] window_start_time: The start time of the maintenance window.
-        """
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
         if freeform_tags is not None:
@@ -973,9 +721,6 @@ class MysqlBackupDbSystemSnapshotBackupPolicyArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -985,9 +730,6 @@ class MysqlBackupDbSystemSnapshotBackupPolicyArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -997,9 +739,6 @@ class MysqlBackupDbSystemSnapshotBackupPolicyArgs:
     @property
     @pulumi.getter(name="isEnabled")
     def is_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Specifies if PITR is enabled or disabled.
-        """
         return pulumi.get(self, "is_enabled")
 
     @is_enabled.setter
@@ -1009,9 +748,6 @@ class MysqlBackupDbSystemSnapshotBackupPolicyArgs:
     @property
     @pulumi.getter(name="pitrPolicies")
     def pitr_policies(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArgs']]]]:
-        """
-        The PITR policy for the DB System.
-        """
         return pulumi.get(self, "pitr_policies")
 
     @pitr_policies.setter
@@ -1021,13 +757,6 @@ class MysqlBackupDbSystemSnapshotBackupPolicyArgs:
     @property
     @pulumi.getter(name="retentionInDays")
     def retention_in_days(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) Number of days to retain this backup.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "retention_in_days")
 
     @retention_in_days.setter
@@ -1037,9 +766,6 @@ class MysqlBackupDbSystemSnapshotBackupPolicyArgs:
     @property
     @pulumi.getter(name="windowStartTime")
     def window_start_time(self) -> Optional[pulumi.Input[str]]:
-        """
-        The start time of the maintenance window.
-        """
         return pulumi.get(self, "window_start_time")
 
     @window_start_time.setter
@@ -1051,18 +777,12 @@ class MysqlBackupDbSystemSnapshotBackupPolicyArgs:
 class MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArgs:
     def __init__(__self__, *,
                  is_enabled: Optional[pulumi.Input[bool]] = None):
-        """
-        :param pulumi.Input[bool] is_enabled: Specifies if PITR is enabled or disabled.
-        """
         if is_enabled is not None:
             pulumi.set(__self__, "is_enabled", is_enabled)
 
     @property
     @pulumi.getter(name="isEnabled")
     def is_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Specifies if PITR is enabled or disabled.
-        """
         return pulumi.get(self, "is_enabled")
 
     @is_enabled.setter
@@ -1076,11 +796,6 @@ class MysqlBackupDbSystemSnapshotDeletionPolicyArgs:
                  automatic_backup_retention: Optional[pulumi.Input[str]] = None,
                  final_backup: Optional[pulumi.Input[str]] = None,
                  is_delete_protected: Optional[pulumi.Input[bool]] = None):
-        """
-        :param pulumi.Input[str] automatic_backup_retention: Specifies if any automatic backups created for a DB System should be retained or deleted when the DB System is deleted.
-        :param pulumi.Input[str] final_backup: Specifies whether or not a backup is taken when the DB System is deleted. REQUIRE_FINAL_BACKUP: a backup is taken if the DB System is deleted. SKIP_FINAL_BACKUP: a backup is not taken if the DB System is deleted.
-        :param pulumi.Input[bool] is_delete_protected: Specifies whether the DB System can be deleted. Set to true to prevent deletion, false (default) to allow.
-        """
         if automatic_backup_retention is not None:
             pulumi.set(__self__, "automatic_backup_retention", automatic_backup_retention)
         if final_backup is not None:
@@ -1091,9 +806,6 @@ class MysqlBackupDbSystemSnapshotDeletionPolicyArgs:
     @property
     @pulumi.getter(name="automaticBackupRetention")
     def automatic_backup_retention(self) -> Optional[pulumi.Input[str]]:
-        """
-        Specifies if any automatic backups created for a DB System should be retained or deleted when the DB System is deleted.
-        """
         return pulumi.get(self, "automatic_backup_retention")
 
     @automatic_backup_retention.setter
@@ -1103,9 +815,6 @@ class MysqlBackupDbSystemSnapshotDeletionPolicyArgs:
     @property
     @pulumi.getter(name="finalBackup")
     def final_backup(self) -> Optional[pulumi.Input[str]]:
-        """
-        Specifies whether or not a backup is taken when the DB System is deleted. REQUIRE_FINAL_BACKUP: a backup is taken if the DB System is deleted. SKIP_FINAL_BACKUP: a backup is not taken if the DB System is deleted.
-        """
         return pulumi.get(self, "final_backup")
 
     @final_backup.setter
@@ -1115,9 +824,6 @@ class MysqlBackupDbSystemSnapshotDeletionPolicyArgs:
     @property
     @pulumi.getter(name="isDeleteProtected")
     def is_delete_protected(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Specifies whether the DB System can be deleted. Set to true to prevent deletion, false (default) to allow.
-        """
         return pulumi.get(self, "is_delete_protected")
 
     @is_delete_protected.setter
@@ -1137,17 +843,6 @@ class MysqlBackupDbSystemSnapshotEndpointArgs:
                  resource_type: Optional[pulumi.Input[str]] = None,
                  status: Optional[pulumi.Input[str]] = None,
                  status_details: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] hostname: The network address of the DB System.
-        :param pulumi.Input[str] ip_address: The IP address the DB System is configured to listen on. A private IP address of the primary endpoint of the DB System. Must be an available IP address within the subnet's CIDR. This will be a "dotted-quad" style IPv4 address.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] modes: The access modes from the client that this endpoint supports.
-        :param pulumi.Input[int] port: The port for primary endpoint of the DB System to listen on.
-        :param pulumi.Input[int] port_x: The network port on which X Plugin listens for TCP/IP connections. This is the X Plugin equivalent of port.
-        :param pulumi.Input[str] resource_id: The OCID of the resource that this endpoint is attached to.
-        :param pulumi.Input[str] resource_type: The type of endpoint that clients and connectors can connect to.
-        :param pulumi.Input[str] status: The state of the endpoints, as far as it can seen from the DB System. There may be some inconsistency with the actual state of the MySQL service.
-        :param pulumi.Input[str] status_details: Additional information about the current endpoint status.
-        """
         if hostname is not None:
             pulumi.set(__self__, "hostname", hostname)
         if ip_address is not None:
@@ -1170,9 +865,6 @@ class MysqlBackupDbSystemSnapshotEndpointArgs:
     @property
     @pulumi.getter
     def hostname(self) -> Optional[pulumi.Input[str]]:
-        """
-        The network address of the DB System.
-        """
         return pulumi.get(self, "hostname")
 
     @hostname.setter
@@ -1182,9 +874,6 @@ class MysqlBackupDbSystemSnapshotEndpointArgs:
     @property
     @pulumi.getter(name="ipAddress")
     def ip_address(self) -> Optional[pulumi.Input[str]]:
-        """
-        The IP address the DB System is configured to listen on. A private IP address of the primary endpoint of the DB System. Must be an available IP address within the subnet's CIDR. This will be a "dotted-quad" style IPv4 address.
-        """
         return pulumi.get(self, "ip_address")
 
     @ip_address.setter
@@ -1194,9 +883,6 @@ class MysqlBackupDbSystemSnapshotEndpointArgs:
     @property
     @pulumi.getter
     def modes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        The access modes from the client that this endpoint supports.
-        """
         return pulumi.get(self, "modes")
 
     @modes.setter
@@ -1206,9 +892,6 @@ class MysqlBackupDbSystemSnapshotEndpointArgs:
     @property
     @pulumi.getter
     def port(self) -> Optional[pulumi.Input[int]]:
-        """
-        The port for primary endpoint of the DB System to listen on.
-        """
         return pulumi.get(self, "port")
 
     @port.setter
@@ -1218,9 +901,6 @@ class MysqlBackupDbSystemSnapshotEndpointArgs:
     @property
     @pulumi.getter(name="portX")
     def port_x(self) -> Optional[pulumi.Input[int]]:
-        """
-        The network port on which X Plugin listens for TCP/IP connections. This is the X Plugin equivalent of port.
-        """
         return pulumi.get(self, "port_x")
 
     @port_x.setter
@@ -1230,9 +910,6 @@ class MysqlBackupDbSystemSnapshotEndpointArgs:
     @property
     @pulumi.getter(name="resourceId")
     def resource_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the resource that this endpoint is attached to.
-        """
         return pulumi.get(self, "resource_id")
 
     @resource_id.setter
@@ -1242,9 +919,6 @@ class MysqlBackupDbSystemSnapshotEndpointArgs:
     @property
     @pulumi.getter(name="resourceType")
     def resource_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        The type of endpoint that clients and connectors can connect to.
-        """
         return pulumi.get(self, "resource_type")
 
     @resource_type.setter
@@ -1254,9 +928,6 @@ class MysqlBackupDbSystemSnapshotEndpointArgs:
     @property
     @pulumi.getter
     def status(self) -> Optional[pulumi.Input[str]]:
-        """
-        The state of the endpoints, as far as it can seen from the DB System. There may be some inconsistency with the actual state of the MySQL service.
-        """
         return pulumi.get(self, "status")
 
     @status.setter
@@ -1266,9 +937,6 @@ class MysqlBackupDbSystemSnapshotEndpointArgs:
     @property
     @pulumi.getter(name="statusDetails")
     def status_details(self) -> Optional[pulumi.Input[str]]:
-        """
-        Additional information about the current endpoint status.
-        """
         return pulumi.get(self, "status_details")
 
     @status_details.setter
@@ -1280,18 +948,12 @@ class MysqlBackupDbSystemSnapshotEndpointArgs:
 class MysqlBackupDbSystemSnapshotMaintenanceArgs:
     def __init__(__self__, *,
                  window_start_time: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] window_start_time: The start time of the maintenance window.
-        """
         if window_start_time is not None:
             pulumi.set(__self__, "window_start_time", window_start_time)
 
     @property
     @pulumi.getter(name="windowStartTime")
     def window_start_time(self) -> Optional[pulumi.Input[str]]:
-        """
-        The start time of the maintenance window.
-        """
         return pulumi.get(self, "window_start_time")
 
     @window_start_time.setter
@@ -1303,30 +965,12 @@ class MysqlBackupDbSystemSnapshotMaintenanceArgs:
 class MysqlConfigurationInitVariablesArgs:
     def __init__(__self__, *,
                  lower_case_table_names: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] lower_case_table_names: Represents the MySQL server system variable lower_case_table_names (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_lower_case_table_names).
-               
-               lowerCaseTableNames controls case-sensitivity of tables and schema names and how they are stored in the DB System.
-               
-               Valid values are:
-               * CASE_SENSITIVE - (default) Table and schema name comparisons are case-sensitive and stored as specified. (lower_case_table_names=0)
-               * CASE_INSENSITIVE_LOWERCASE - Table and schema name comparisons are not case-sensitive and stored in lowercase. (lower_case_table_names=1)
-        """
         if lower_case_table_names is not None:
             pulumi.set(__self__, "lower_case_table_names", lower_case_table_names)
 
     @property
     @pulumi.getter(name="lowerCaseTableNames")
     def lower_case_table_names(self) -> Optional[pulumi.Input[str]]:
-        """
-        Represents the MySQL server system variable lower_case_table_names (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_lower_case_table_names).
-
-        lowerCaseTableNames controls case-sensitivity of tables and schema names and how they are stored in the DB System.
-
-        Valid values are:
-        * CASE_SENSITIVE - (default) Table and schema name comparisons are case-sensitive and stored as specified. (lower_case_table_names=0)
-        * CASE_INSENSITIVE_LOWERCASE - Table and schema name comparisons are not case-sensitive and stored in lowercase. (lower_case_table_names=1)
-        """
         return pulumi.get(self, "lower_case_table_names")
 
     @lower_case_table_names.setter
@@ -1416,179 +1060,6 @@ class MysqlConfigurationVariablesArgs:
                  tmp_table_size: Optional[pulumi.Input[str]] = None,
                  transaction_isolation: Optional[pulumi.Input[str]] = None,
                  wait_timeout: Optional[pulumi.Input[int]] = None):
-        """
-        :param pulumi.Input[bool] autocommit: ("autocommit")
-        :param pulumi.Input[bool] big_tables: If enabled, the server stores all temporary tables on disk rather than in memory.
-               
-               bigTables corresponds to the MySQL server variable [big_tables](https://dev.mysql.com/doc/refman/en/server-system-variables.html#sysvar_big_tables).
-        :param pulumi.Input[int] binlog_expire_logs_seconds: Sets the binary log expiration period in seconds. binlogExpireLogsSeconds corresponds to the MySQL binary logging system variable [binlog_expire_logs_seconds](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_expire_logs_seconds).
-        :param pulumi.Input[str] binlog_row_metadata: Configures the amount of table metadata added to the binary log when using row-based logging. binlogRowMetadata corresponds to the MySQL binary logging system variable [binlog_row_metadata](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_row_metadata).
-        :param pulumi.Input[str] binlog_row_value_options: When set to PARTIAL_JSON, this enables use of a space-efficient binary log format for updates that modify only a small portion of a JSON document. binlogRowValueOptions corresponds to the MySQL binary logging system variable [binlog_row_value_options](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_row_value_options).
-        :param pulumi.Input[bool] binlog_transaction_compression: Enables compression for transactions that are written to binary log files on this server. binlogTransactionCompression corresponds to the MySQL binary logging system variable [binlog_transaction_compression](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_transaction_compression).
-        :param pulumi.Input[str] completion_type: ("completion_type")
-        :param pulumi.Input[int] connect_timeout: The number of seconds that the mysqld server waits for a connect packet before responding with Bad handshake.
-               
-               connectTimeout corresponds to the MySQL system variable [connect_timeout](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_connect_timeout)
-               
-               Increasing the connect_timeout value might help if clients frequently encounter errors of the form "Lost connection to MySQL server at 'XXX', system error: errno".
-        :param pulumi.Input[int] connection_memory_chunk_size: Set the chunking size for updates to the global memory usage counter Global_connection_memory.
-               
-               connectionMemoryChunkSize corresponds to the MySQL system variable [connection_memory_chunk_size](https://dev.mysql.com/doc/refman/en/server-system-variables.html#sysvar_connection_memory_chunk_size).
-        :param pulumi.Input[str] connection_memory_limit: Set the maximum amount of memory that can be used by a single user connection.
-               
-               connectionMemoryLimit corresponds to the MySQL system variable [connection_memory_limit](https://dev.mysql.com/doc/refman/en/server-system-variables.html#sysvar_connection_memory_limit).
-        :param pulumi.Input[str] cte_max_recursion_depth: ("cte_max_recursion_depth")
-        :param pulumi.Input[str] default_authentication_plugin: ("default_authentication_plugin")
-        :param pulumi.Input[bool] foreign_key_checks: ("foreign_key_checks")
-        :param pulumi.Input[int] generated_random_password_length: ("generated_random_password_length") DEPRECATED -- variable should not be settable and will be ignored
-        :param pulumi.Input[str] global_connection_memory_limit: Set the total amount of memory that can be used by all user connections.
-               
-               globalConnectionMemoryLimit corresponds to the MySQL system variable [global_connection_memory_limit](https://dev.mysql.com/doc/refman/en/server-system-variables.html#sysvar_global_connection_memory_limit).
-        :param pulumi.Input[bool] global_connection_memory_tracking: Determines whether the MySQL server calculates Global_connection_memory.
-               
-               globalConnectionMemoryTracking corresponds to the MySQL system variable [global_connection_memory_tracking](https://dev.mysql.com/doc/refman/en/server-system-variables.html#sysvar_global_connection_memory_tracking).
-        :param pulumi.Input[str] group_replication_consistency: * EVENTUAL: Both RO and RW transactions do not wait for preceding transactions to be applied before executing. A RW transaction does not wait for other members to apply a transaction. This means that a transaction could be externalized on one member before the others. This also means that in the event of a primary failover, the new primary can accept new RO and RW transactions before the previous primary transactions are all applied. RO transactions could result in outdated values, RW transactions could result in a rollback due to conflicts.
-               * BEFORE_ON_PRIMARY_FAILOVER: New RO or RW transactions with a newly elected primary that is applying backlog from the old primary are held (not applied) until any backlog has been applied. This ensures that when a primary failover happens, intentionally or not, clients always see the latest value on the primary. This guarantees consistency, but means that clients must be able to handle the delay in the event that a backlog is being applied. Usually this delay should be minimal, but does depend on the size of the backlog.
-               * BEFORE: A RW transaction waits for all preceding transactions to complete before being applied. A RO transaction waits for all preceding transactions to complete before being executed. This ensures that this transaction reads the latest value by only affecting the latency of the transaction. This reduces the overhead of synchronization on every RW transaction, by ensuring synchronization is used only on RO transactions. This consistency level also includes the consistency guarantees provided by BEFORE_ON_PRIMARY_FAILOVER.
-               * AFTER: A RW transaction waits until its changes have been applied to all of the other members. This value has no effect on RO transactions. This mode ensures that when a transaction is committed on the local member, any subsequent transaction reads the written value or a more recent value on any group member. Use this mode with a group that is used for predominantly RO operations to ensure that applied RW transactions are applied everywhere once they commit. This could be used by your application to ensure that subsequent reads fetch the latest data which includes the latest writes. This reduces the overhead of synchronization on every RO transaction, by ensuring synchronization is used only on RW transactions. This consistency level also includes the consistency guarantees provided by BEFORE_ON_PRIMARY_FAILOVER.
-               * BEFORE_AND_AFTER: A RW transaction waits for 1) all preceding transactions to complete before being applied and 2) until its changes have been applied on other members. A RO transaction waits for all preceding transactions to complete before execution takes place. This consistency level also includes the consistency guarantees provided by BEFORE_ON_PRIMARY_FAILOVER.
-        :param pulumi.Input[int] information_schema_stats_expiry: ("information_schema_stats_expiry")
-        :param pulumi.Input[int] innodb_buffer_pool_dump_pct: Specifies the percentage of the most recently used pages for each buffer pool to read out and dump.
-               
-               innodbBufferPoolDumpPct corresponds to the MySQL InnoDB system variable [innodb_buffer_pool_dump_pct](https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_buffer_pool_dump_pct).
-               
-               The range is 1 to 100. The default value is 25.
-               
-               For example, if there are 4 buffer pools with 100 pages each, and innodb_buffer_pool_dump_pct is set to 25, the 25 most recently used pages from each buffer pool are dumped.
-        :param pulumi.Input[int] innodb_buffer_pool_instances: ("innodb_buffer_pool_instances")
-        :param pulumi.Input[str] innodb_buffer_pool_size: The size (in bytes) of the buffer pool, that is, the memory area where InnoDB caches table and index data.
-               
-               innodbBufferPoolSize corresponds to the MySQL server system variable [innodb_buffer_pool_size](https://dev.mysql.com/doc/refman/en/innodb-parameters.html#sysvar_innodb_buffer_pool_size).
-               
-               The default and maximum values depend on the amount of RAM provisioned by the shape. See [Default User Variables](https://www.terraform.io/mysql-database/doc/configuring-db-system.html#GUID-B5504C19-F6F4-4DAB-8506-189A4E8F4A6A).
-        :param pulumi.Input[str] innodb_ddl_buffer_size: innodbDdlBufferSize corresponds to the MySQL system variable [innodb_ddl_buffer_size] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_buffer_size)
-        :param pulumi.Input[int] innodb_ddl_threads: innodbDdlThreads corresponds to the MySQL system variable [innodb_ddl_threads] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_threads)
-        :param pulumi.Input[bool] innodb_ft_enable_stopword: ("innodb_ft_enable_stopword")
-        :param pulumi.Input[int] innodb_ft_max_token_size: ("innodb_ft_max_token_size")
-        :param pulumi.Input[int] innodb_ft_min_token_size: ("innodb_ft_min_token_size")
-        :param pulumi.Input[int] innodb_ft_num_word_optimize: ("innodb_ft_num_word_optimize")
-        :param pulumi.Input[str] innodb_ft_result_cache_limit: ("innodb_ft_result_cache_limit")
-        :param pulumi.Input[str] innodb_ft_server_stopword_table: ("innodb_ft_server_stopword_table")
-        :param pulumi.Input[int] innodb_lock_wait_timeout: ("innodb_lock_wait_timeout")
-        :param pulumi.Input[bool] innodb_log_writer_threads: Enables dedicated log writer threads for writing redo log records from the log buffer to the system buffers and flushing the system buffers to the redo log files.
-               
-               This is the MySQL variable "innodb_log_writer_threads". For more information, please see the [MySQL documentation](https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_log_writer_threads)
-        :param pulumi.Input[str] innodb_max_purge_lag: The desired maximum purge lag in terms of transactions.
-               
-               InnoDB maintains a list of transactions that have index records delete-marked by UPDATE or DELETE operations. The length of the list is the purge lag.
-               
-               If this value is exceeded, a delay is imposed on INSERT, UPDATE, and DELETE operations to allow time for purge to catch up.
-               
-               The default value is 0, which means there is no maximum purge lag and no delay.
-               
-               innodbMaxPurgeLag corresponds to the MySQL server system variable [innodb_max_purge_lag](https://dev.mysql.com/doc/refman/en/innodb-parameters.html#sysvar_innodb_max_purge_lag).
-        :param pulumi.Input[int] innodb_max_purge_lag_delay: The maximum delay in microseconds for the delay imposed when the innodb_max_purge_lag threshold is exceeded.
-               
-               The specified innodb_max_purge_lag_delay value is an upper limit on the delay period.
-               
-               innodbMaxPurgeLagDelay corresponds to the MySQL server system variable [innodb_max_purge_lag_delay](https://dev.mysql.com/doc/refman/en/innodb-parameters.html#sysvar_innodb_max_purge_lag_delay).
-        :param pulumi.Input[str] innodb_stats_persistent_sample_pages: The number of index pages to sample when estimating cardinality and other statistics for an indexed column, such as those calculated by ANALYZE TABLE.
-               
-               innodbStatsPersistentSamplePages corresponds to the MySQL InnoDB system variable [innodb_stats_persistent_sample_pages](https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_stats_persistent_sample_pages)
-               
-               innodb_stats_persistent_sample_pages only applies when innodb_stats_persistent is enabled for a table; when innodb_stats_persistent is disabled, innodb_stats_transient_sample_pages applies instead.
-        :param pulumi.Input[str] innodb_stats_transient_sample_pages: The number of index pages to sample when estimating cardinality and other statistics for an indexed column, such as those calculated by [ANALYZE TABLE](https://dev.mysql.com/doc/refman/8.0/en/analyze-table.html).
-               
-               innodbStatsTransientSamplePages corresponds to the MySQL InnoDB system variable [innodb_stats_transient_sample_pages](https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_stats_transient_sample_pages)
-               
-               innodb_stats_transient_sample_pages only applies when innodb_stats_persistent is disabled for a table; when innodb_stats_persistent is enabled, innodb_stats_persistent_sample_pages applies instead.
-               
-               innodb_stats_persistent is ON by default and cannot be changed. It is possible to override it using the STATS_PERSISTENT clause of the [CREATE TABLE](https://dev.mysql.com/doc/refman/8.0/en/create-table.html) and [ALTER TABLE](https://dev.mysql.com/doc/refman/8.0/en/alter-table.html) statements.
-        :param pulumi.Input[int] interactive_timeout: The number of seconds the server waits for activity on an interactive connection before closing it.
-               
-               interactiveTimeout corresponds to the MySQL system variable. [interactive_timeout](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_interactive_timeout)
-        :param pulumi.Input[bool] local_infile: ("local_infile")
-        :param pulumi.Input[str] mandatory_roles: ("mandatory_roles")
-        :param pulumi.Input[int] max_allowed_packet: The maximum size of one packet or any generated/intermediate string.
-               
-               This is the mysql variable "max_allowed_packet".
-        :param pulumi.Input[str] max_binlog_cache_size: Sets the size of the transaction cache.
-               
-               maxBinlogCacheSize corresponds to the MySQL server system variable [max_binlog_cache_size](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_max_binlog_cache_size).
-        :param pulumi.Input[str] max_connect_errors: ("max_connect_errors")
-        :param pulumi.Input[int] max_connections: ("max_connections")
-        :param pulumi.Input[str] max_execution_time: ("max_execution_time")
-        :param pulumi.Input[str] max_heap_table_size: This variable sets the maximum size to which user-created MEMORY tables are permitted to grow.
-               
-               maxHeapTableSize corresponds to the MySQL system variable [max_heap_table_size](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_max_heap_table_size)
-        :param pulumi.Input[int] max_prepared_stmt_count: ("max_prepared_stmt_count")
-        :param pulumi.Input[bool] mysql_firewall_mode: ("mysql_firewall_mode")
-        :param pulumi.Input[int] mysql_zstd_default_compression_level: DEPRECATED -- typo of mysqlx_zstd_default_compression_level. variable will be ignored.
-        :param pulumi.Input[int] mysqlx_connect_timeout: The number of seconds X Plugin waits for the first packet to be received from newly connected clients.
-               
-               mysqlxConnectTimeout corresponds to the MySQL X Plugin system variable [mysqlx_connect_timeout](https://dev.mysql.com/doc/refman/8.0/en/x-plugin-options-system-variables.html#sysvar_mysqlx_connect_timeout)
-        :param pulumi.Input[int] mysqlx_deflate_default_compression_level: Set the default compression level for the deflate algorithm. ("mysqlx_deflate_default_compression_level")
-        :param pulumi.Input[int] mysqlx_deflate_max_client_compression_level: Limit the upper bound of accepted compression levels for the deflate algorithm. ("mysqlx_deflate_max_client_compression_level")
-        :param pulumi.Input[int] mysqlx_document_id_unique_prefix: ("mysqlx_document_id_unique_prefix") DEPRECATED -- variable should not be settable and will be ignored
-        :param pulumi.Input[bool] mysqlx_enable_hello_notice: ("mysqlx_enable_hello_notice") DEPRECATED -- variable should not be settable and will be ignored
-        :param pulumi.Input[int] mysqlx_idle_worker_thread_timeout: ("mysqlx_idle_worker_thread_timeout") DEPRECATED -- variable should not be settable and will be ignored
-        :param pulumi.Input[int] mysqlx_interactive_timeout: The number of seconds to wait for interactive clients to timeout.
-               
-               mysqlxInteractiveTimeout corresponds to the MySQL X Plugin system variable. [mysqlx_interactive_timeout](https://dev.mysql.com/doc/refman/8.0/en/x-plugin-options-system-variables.html#sysvar_mysqlx_interactive_timeout)
-        :param pulumi.Input[int] mysqlx_lz4default_compression_level: Set the default compression level for the lz4 algorithm. ("mysqlx_lz4_default_compression_level")
-        :param pulumi.Input[int] mysqlx_lz4max_client_compression_level: Limit the upper bound of accepted compression levels for the lz4 algorithm. ("mysqlx_lz4_max_client_compression_level")
-        :param pulumi.Input[int] mysqlx_max_allowed_packet: The maximum size of network packets that can be received by X Plugin.
-               
-               This is the mysql variable "mysqlx_max_allowed_packet".
-        :param pulumi.Input[int] mysqlx_min_worker_threads: ("mysqlx_min_worker_threads") DEPRECATED -- variable should not be settable and will be ignored
-        :param pulumi.Input[int] mysqlx_read_timeout: The number of seconds that X Plugin waits for blocking read operations to complete. After this time, if the read operation is not successful, X Plugin closes the connection and returns a warning notice with the error code ER_IO_READ_ERROR to the client application.
-               
-               mysqlxReadTimeout corresponds to the MySQL X Plugin system variable [mysqlx_read_timeout](https://dev.mysql.com/doc/refman/8.0/en/x-plugin-options-system-variables.html#sysvar_mysqlx_read_timeout)
-        :param pulumi.Input[int] mysqlx_wait_timeout: The number of seconds that X Plugin waits for activity on a connection.
-               
-               mysqlxWaitTimeout corresponds to the MySQL X Plugin system variable. [mysqlx_wait_timeout](https://dev.mysql.com/doc/refman/8.0/en/x-plugin-options-system-variables.html#sysvar_mysqlx_wait_timeout)
-        :param pulumi.Input[int] mysqlx_write_timeout: The number of seconds that X Plugin waits for blocking write operations to complete. After this time, if the write operation is not successful, X Plugin closes the connection.
-               
-               mysqlxReadmysqlxWriteTimeoutTimeout corresponds to the MySQL X Plugin system variable [mysqlx_write_timeout](https://dev.mysql.com/doc/refman/8.0/en/x-plugin-options-system-variables.html#sysvar_mysqlx_write_timeout)
-        :param pulumi.Input[int] mysqlx_zstd_default_compression_level: Set the default compression level for the zstd algorithm. ("mysqlx_zstd_default_compression_level")
-        :param pulumi.Input[int] mysqlx_zstd_max_client_compression_level: Limit the upper bound of accepted compression levels for the zstd algorithm. ("mysqlx_zstd_max_client_compression_level")
-        :param pulumi.Input[int] net_read_timeout: The number of seconds to wait for more data from a connection before aborting the read.
-               
-               netReadTimeout corresponds to the MySQL system variable [net_read_timeout](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_net_read_timeout)
-        :param pulumi.Input[int] net_write_timeout: The number of seconds to wait for a block to be written to a connection before aborting the write.
-               
-               netWriteTimeout corresponds to the MySQL system variable [net_write_timeout](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_net_write_timeout)
-        :param pulumi.Input[str] parser_max_mem_size: ("parser_max_mem_size")
-        :param pulumi.Input[str] query_alloc_block_size: ("query_alloc_block_size") DEPRECATED -- variable should not be settable and will be ignored
-        :param pulumi.Input[str] query_prealloc_size: ("query_prealloc_size") DEPRECATED -- variable should not be settable and will be ignored
-        :param pulumi.Input[int] regexp_time_limit: regexpTimeLimit corresponds to the MySQL system variable [regexp_time_limit] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_regexp_time_limit)
-        :param pulumi.Input[str] sort_buffer_size: Each session that must perform a sort allocates a buffer of this size.
-               
-               sortBufferSize corresponds to the MySQL system variable [sort_buffer_size](https://dev.mysql.com/doc/refman/en/server-system-variables.html#sysvar_sort_buffer_size)
-        :param pulumi.Input[str] sql_mode: ("sql_mode")
-        :param pulumi.Input[bool] sql_require_primary_key: ("sql_require_primary_key")
-        :param pulumi.Input[bool] sql_warnings: ("sql_warnings")
-        :param pulumi.Input[bool] thread_pool_dedicated_listeners: Controls whether the thread pool uses dedicated listener threads. If enabled, a listener thread in each thread group is dedicated to the task of listening for network events from clients, ensuring that the maximum number of query worker threads is no more than the value specified by threadPoolMaxTransactionsLimit. threadPoolDedicatedListeners corresponds to the MySQL Database Service-specific system variable thread_pool_dedicated_listeners.
-        :param pulumi.Input[int] thread_pool_max_transactions_limit: Limits the maximum number of open transactions to the defined value. The default value is 0, which enforces no limit. threadPoolMaxTransactionsLimit corresponds to the MySQL Database Service-specific system variable thread_pool_max_transactions_limit.
-        :param pulumi.Input[str] time_zone: Initializes the time zone for each client that connects.
-               
-               This corresponds to the MySQL System Variable "time_zone".
-               
-               The values can be given in one of the following formats, none of which are case-sensitive:
-               * As a string indicating an offset from UTC of the form [H]H:MM, prefixed with a + or -, such as '+10:00', '-6:00', or '+05:30'. The permitted range is '-13:59' to '+14:00', inclusive.
-               * As a named time zone, as defined by the "IANA Time Zone database", such as 'Europe/Helsinki', 'US/Eastern', 'MET', or 'UTC'.
-        :param pulumi.Input[str] tmp_table_size: The maximum size of internal in-memory temporary tables. This variable does not apply to user-created MEMORY tables.
-               
-               tmp_table_size corresponds to the MySQL system variable [tmp_table_size](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_tmp_table_size)
-        :param pulumi.Input[str] transaction_isolation: ("transaction_isolation")
-        :param pulumi.Input[int] wait_timeout: The number of seconds the server waits for activity on a noninteractive connection before closing it.
-               
-               waitTimeout corresponds to the MySQL system variable. [wait_timeout](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_wait_timeout)
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         if autocommit is not None:
             pulumi.set(__self__, "autocommit", autocommit)
         if big_tables is not None:
@@ -1772,9 +1243,6 @@ class MysqlConfigurationVariablesArgs:
     @property
     @pulumi.getter
     def autocommit(self) -> Optional[pulumi.Input[bool]]:
-        """
-        ("autocommit")
-        """
         return pulumi.get(self, "autocommit")
 
     @autocommit.setter
@@ -1784,11 +1252,6 @@ class MysqlConfigurationVariablesArgs:
     @property
     @pulumi.getter(name="bigTables")
     def big_tables(self) -> Optional[pulumi.Input[bool]]:
-        """
-        If enabled, the server stores all temporary tables on disk rather than in memory.
-
-        bigTables corresponds to the MySQL server variable [big_tables](https://dev.mysql.com/doc/refman/en/server-system-variables.html#sysvar_big_tables).
-        """
         return pulumi.get(self, "big_tables")
 
     @big_tables.setter
@@ -1798,9 +1261,6 @@ class MysqlConfigurationVariablesArgs:
     @property
     @pulumi.getter(name="binlogExpireLogsSeconds")
     def binlog_expire_logs_seconds(self) -> Optional[pulumi.Input[int]]:
-        """
-        Sets the binary log expiration period in seconds. binlogExpireLogsSeconds corresponds to the MySQL binary logging system variable [binlog_expire_logs_seconds](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_expire_logs_seconds).
-        """
         return pulumi.get(self, "binlog_expire_logs_seconds")
 
     @binlog_expire_logs_seconds.setter
@@ -1810,9 +1270,6 @@ class MysqlConfigurationVariablesArgs:
     @property
     @pulumi.getter(name="binlogRowMetadata")
     def binlog_row_metadata(self) -> Optional[pulumi.Input[str]]:
-        """
-        Configures the amount of table metadata added to the binary log when using row-based logging. binlogRowMetadata corresponds to the MySQL binary logging system variable [binlog_row_metadata](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_row_metadata).
-        """
         return pulumi.get(self, "binlog_row_metadata")
 
     @binlog_row_metadata.setter
@@ -1822,9 +1279,6 @@ class MysqlConfigurationVariablesArgs:
     @property
     @pulumi.getter(name="binlogRowValueOptions")
     def binlog_row_value_options(self) -> Optional[pulumi.Input[str]]:
-        """
-        When set to PARTIAL_JSON, this enables use of a space-efficient binary log format for updates that modify only a small portion of a JSON document. binlogRowValueOptions corresponds to the MySQL binary logging system variable [binlog_row_value_options](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_row_value_options).
-        """
         return pulumi.get(self, "binlog_row_value_options")
 
     @binlog_row_value_options.setter
@@ -1834,9 +1288,6 @@ class MysqlConfigurationVariablesArgs:
     @property
     @pulumi.getter(name="binlogTransactionCompression")
     def binlog_transaction_compression(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Enables compression for transactions that are written to binary log files on this server. binlogTransactionCompression corresponds to the MySQL binary logging system variable [binlog_transaction_compression](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_transaction_compression).
-        """
         return pulumi.get(self, "binlog_transaction_compression")
 
     @binlog_transaction_compression.setter
@@ -1846,9 +1297,6 @@ class MysqlConfigurationVariablesArgs:
     @property
     @pulumi.getter(name="completionType")
     def completion_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        ("completion_type")
-        """
         return pulumi.get(self, "completion_type")
 
     @completion_type.setter
@@ -1858,13 +1306,6 @@ class MysqlConfigurationVariablesArgs:
     @property
     @pulumi.getter(name="connectTimeout")
     def connect_timeout(self) -> Optional[pulumi.Input[int]]:
-        """
-        The number of seconds that the mysqld server waits for a connect packet before responding with Bad handshake.
-
-        connectTimeout corresponds to the MySQL system variable [connect_timeout](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_connect_timeout)
-
-        Increasing the connect_timeout value might help if clients frequently encounter errors of the form "Lost connection to MySQL server at 'XXX', system error: errno".
-        """
         return pulumi.get(self, "connect_timeout")
 
     @connect_timeout.setter
@@ -1874,11 +1315,6 @@ class MysqlConfigurationVariablesArgs:
     @property
     @pulumi.getter(name="connectionMemoryChunkSize")
     def connection_memory_chunk_size(self) -> Optional[pulumi.Input[int]]:
-        """
-        Set the chunking size for updates to the global memory usage counter Global_connection_memory.
-
-        connectionMemoryChunkSize corresponds to the MySQL system variable [connection_memory_chunk_size](https://dev.mysql.com/doc/refman/en/server-system-variables.html#sysvar_connection_memory_chunk_size).
-        """
         return pulumi.get(self, "connection_memory_chunk_size")
 
     @connection_memory_chunk_size.setter
@@ -1888,11 +1324,6 @@ class MysqlConfigurationVariablesArgs:
     @property
     @pulumi.getter(name="connectionMemoryLimit")
     def connection_memory_limit(self) -> Optional[pulumi.Input[str]]:
-        """
-        Set the maximum amount of memory that can be used by a single user connection.
-
-        connectionMemoryLimit corresponds to the MySQL system variable [connection_memory_limit](https://dev.mysql.com/doc/refman/en/server-system-variables.html#sysvar_connection_memory_limit).
-        """
         return pulumi.get(self, "connection_memory_limit")
 
     @connection_memory_limit.setter
@@ -1902,9 +1333,6 @@ class MysqlConfigurationVariablesArgs:
     @property
     @pulumi.getter(name="cteMaxRecursionDepth")
     def cte_max_recursion_depth(self) -> Optional[pulumi.Input[str]]:
-        """
-        ("cte_max_recursion_depth")
-        """
         return pulumi.get(self, "cte_max_recursion_depth")
 
     @cte_max_recursion_depth.setter
@@ -1914,9 +1342,6 @@ class MysqlConfigurationVariablesArgs:
     @property
     @pulumi.getter(name="defaultAuthenticationPlugin")
     def default_authentication_plugin(self) -> Optional[pulumi.Input[str]]:
-        """
-        ("default_authentication_plugin")
-        """
         return pulumi.get(self, "default_authentication_plugin")
 
     @default_authentication_plugin.setter
@@ -1926,9 +1351,6 @@ class MysqlConfigurationVariablesArgs:
     @property
     @pulumi.getter(name="foreignKeyChecks")
     def foreign_key_checks(self) -> Optional[pulumi.Input[bool]]:
-        """
-        ("foreign_key_checks")
-        """
         return pulumi.get(self, "foreign_key_checks")
 
     @foreign_key_checks.setter
@@ -1938,9 +1360,6 @@ class MysqlConfigurationVariablesArgs:
     @property
     @pulumi.getter(name="generatedRandomPasswordLength")
     def generated_random_password_length(self) -> Optional[pulumi.Input[int]]:
-        """
-        ("generated_random_password_length") DEPRECATED -- variable should not be settable and will be ignored
-        """
         warnings.warn("""The 'generated_random_password_length' field has been deprecated and may be removed in a future version. Do not use this field.""", DeprecationWarning)
         pulumi.log.warn("""generated_random_password_length is deprecated: The 'generated_random_password_length' field has been deprecated and may be removed in a future version. Do not use this field.""")
 
@@ -1953,11 +1372,6 @@ class MysqlConfigurationVariablesArgs:
     @property
     @pulumi.getter(name="globalConnectionMemoryLimit")
     def global_connection_memory_limit(self) -> Optional[pulumi.Input[str]]:
-        """
-        Set the total amount of memory that can be used by all user connections.
-
-        globalConnectionMemoryLimit corresponds to the MySQL system variable [global_connection_memory_limit](https://dev.mysql.com/doc/refman/en/server-system-variables.html#sysvar_global_connection_memory_limit).
-        """
         return pulumi.get(self, "global_connection_memory_limit")
 
     @global_connection_memory_limit.setter
@@ -1967,11 +1381,6 @@ class MysqlConfigurationVariablesArgs:
     @property
     @pulumi.getter(name="globalConnectionMemoryTracking")
     def global_connection_memory_tracking(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Determines whether the MySQL server calculates Global_connection_memory.
-
-        globalConnectionMemoryTracking corresponds to the MySQL system variable [global_connection_memory_tracking](https://dev.mysql.com/doc/refman/en/server-system-variables.html#sysvar_global_connection_memory_tracking).
-        """
         return pulumi.get(self, "global_connection_memory_tracking")
 
     @global_connection_memory_tracking.setter
@@ -1981,13 +1390,6 @@ class MysqlConfigurationVariablesArgs:
     @property
     @pulumi.getter(name="groupReplicationConsistency")
     def group_replication_consistency(self) -> Optional[pulumi.Input[str]]:
-        """
-        * EVENTUAL: Both RO and RW transactions do not wait for preceding transactions to be applied before executing. A RW transaction does not wait for other members to apply a transaction. This means that a transaction could be externalized on one member before the others. This also means that in the event of a primary failover, the new primary can accept new RO and RW transactions before the previous primary transactions are all applied. RO transactions could result in outdated values, RW transactions could result in a rollback due to conflicts.
-        * BEFORE_ON_PRIMARY_FAILOVER: New RO or RW transactions with a newly elected primary that is applying backlog from the old primary are held (not applied) until any backlog has been applied. This ensures that when a primary failover happens, intentionally or not, clients always see the latest value on the primary. This guarantees consistency, but means that clients must be able to handle the delay in the event that a backlog is being applied. Usually this delay should be minimal, but does depend on the size of the backlog.
-        * BEFORE: A RW transaction waits for all preceding transactions to complete before being applied. A RO transaction waits for all preceding transactions to complete before being executed. This ensures that this transaction reads the latest value by only affecting the latency of the transaction. This reduces the overhead of synchronization on every RW transaction, by ensuring synchronization is used only on RO transactions. This consistency level also includes the consistency guarantees provided by BEFORE_ON_PRIMARY_FAILOVER.
-        * AFTER: A RW transaction waits until its changes have been applied to all of the other members. This value has no effect on RO transactions. This mode ensures that when a transaction is committed on the local member, any subsequent transaction reads the written value or a more recent value on any group member. Use this mode with a group that is used for predominantly RO operations to ensure that applied RW transactions are applied everywhere once they commit. This could be used by your application to ensure that subsequent reads fetch the latest data which includes the latest writes. This reduces the overhead of synchronization on every RO transaction, by ensuring synchronization is used only on RW transactions. This consistency level also includes the consistency guarantees provided by BEFORE_ON_PRIMARY_FAILOVER.
-        * BEFORE_AND_AFTER: A RW transaction waits for 1) all preceding transactions to complete before being applied and 2) until its changes have been applied on other members. A RO transaction waits for all preceding transactions to complete before execution takes place. This consistency level also includes the consistency guarantees provided by BEFORE_ON_PRIMARY_FAILOVER.
-        """
         return pulumi.get(self, "group_replication_consistency")
 
     @group_replication_consistency.setter
@@ -1997,9 +1399,6 @@ class MysqlConfigurationVariablesArgs:
     @property
     @pulumi.getter(name="informationSchemaStatsExpiry")
     def information_schema_stats_expiry(self) -> Optional[pulumi.Input[int]]:
-        """
-        ("information_schema_stats_expiry")
-        """
         return pulumi.get(self, "information_schema_stats_expiry")
 
     @information_schema_stats_expiry.setter
@@ -2009,15 +1408,6 @@ class MysqlConfigurationVariablesArgs:
     @property
     @pulumi.getter(name="innodbBufferPoolDumpPct")
     def innodb_buffer_pool_dump_pct(self) -> Optional[pulumi.Input[int]]:
-        """
-        Specifies the percentage of the most recently used pages for each buffer pool to read out and dump.
-
-        innodbBufferPoolDumpPct corresponds to the MySQL InnoDB system variable [innodb_buffer_pool_dump_pct](https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_buffer_pool_dump_pct).
-
-        The range is 1 to 100. The default value is 25.
-
-        For example, if there are 4 buffer pools with 100 pages each, and innodb_buffer_pool_dump_pct is set to 25, the 25 most recently used pages from each buffer pool are dumped.
-        """
         return pulumi.get(self, "innodb_buffer_pool_dump_pct")
 
     @innodb_buffer_pool_dump_pct.setter
@@ -2027,9 +1417,6 @@ class MysqlConfigurationVariablesArgs:
     @property
     @pulumi.getter(name="innodbBufferPoolInstances")
     def innodb_buffer_pool_instances(self) -> Optional[pulumi.Input[int]]:
-        """
-        ("innodb_buffer_pool_instances")
-        """
         return pulumi.get(self, "innodb_buffer_pool_instances")
 
     @innodb_buffer_pool_instances.setter
@@ -2039,13 +1426,6 @@ class MysqlConfigurationVariablesArgs:
     @property
     @pulumi.getter(name="innodbBufferPoolSize")
     def innodb_buffer_pool_size(self) -> Optional[pulumi.Input[str]]:
-        """
-        The size (in bytes) of the buffer pool, that is, the memory area where InnoDB caches table and index data.
-
-        innodbBufferPoolSize corresponds to the MySQL server system variable [innodb_buffer_pool_size](https://dev.mysql.com/doc/refman/en/innodb-parameters.html#sysvar_innodb_buffer_pool_size).
-
-        The default and maximum values depend on the amount of RAM provisioned by the shape. See [Default User Variables](https://www.terraform.io/mysql-database/doc/configuring-db-system.html#GUID-B5504C19-F6F4-4DAB-8506-189A4E8F4A6A).
-        """
         return pulumi.get(self, "innodb_buffer_pool_size")
 
     @innodb_buffer_pool_size.setter
@@ -2055,9 +1435,6 @@ class MysqlConfigurationVariablesArgs:
     @property
     @pulumi.getter(name="innodbDdlBufferSize")
     def innodb_ddl_buffer_size(self) -> Optional[pulumi.Input[str]]:
-        """
-        innodbDdlBufferSize corresponds to the MySQL system variable [innodb_ddl_buffer_size] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_buffer_size)
-        """
         return pulumi.get(self, "innodb_ddl_buffer_size")
 
     @innodb_ddl_buffer_size.setter
@@ -2067,9 +1444,6 @@ class MysqlConfigurationVariablesArgs:
     @property
     @pulumi.getter(name="innodbDdlThreads")
     def innodb_ddl_threads(self) -> Optional[pulumi.Input[int]]:
-        """
-        innodbDdlThreads corresponds to the MySQL system variable [innodb_ddl_threads] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_threads)
-        """
         return pulumi.get(self, "innodb_ddl_threads")
 
     @innodb_ddl_threads.setter
@@ -2079,9 +1453,6 @@ class MysqlConfigurationVariablesArgs:
     @property
     @pulumi.getter(name="innodbFtEnableStopword")
     def innodb_ft_enable_stopword(self) -> Optional[pulumi.Input[bool]]:
-        """
-        ("innodb_ft_enable_stopword")
-        """
         return pulumi.get(self, "innodb_ft_enable_stopword")
 
     @innodb_ft_enable_stopword.setter
@@ -2091,9 +1462,6 @@ class MysqlConfigurationVariablesArgs:
     @property
     @pulumi.getter(name="innodbFtMaxTokenSize")
     def innodb_ft_max_token_size(self) -> Optional[pulumi.Input[int]]:
-        """
-        ("innodb_ft_max_token_size")
-        """
         return pulumi.get(self, "innodb_ft_max_token_size")
 
     @innodb_ft_max_token_size.setter
@@ -2103,9 +1471,6 @@ class MysqlConfigurationVariablesArgs:
     @property
     @pulumi.getter(name="innodbFtMinTokenSize")
     def innodb_ft_min_token_size(self) -> Optional[pulumi.Input[int]]:
-        """
-        ("innodb_ft_min_token_size")
-        """
         return pulumi.get(self, "innodb_ft_min_token_size")
 
     @innodb_ft_min_token_size.setter
@@ -2115,9 +1480,6 @@ class MysqlConfigurationVariablesArgs:
     @property
     @pulumi.getter(name="innodbFtNumWordOptimize")
     def innodb_ft_num_word_optimize(self) -> Optional[pulumi.Input[int]]:
-        """
-        ("innodb_ft_num_word_optimize")
-        """
         return pulumi.get(self, "innodb_ft_num_word_optimize")
 
     @innodb_ft_num_word_optimize.setter
@@ -2127,9 +1489,6 @@ class MysqlConfigurationVariablesArgs:
     @property
     @pulumi.getter(name="innodbFtResultCacheLimit")
     def innodb_ft_result_cache_limit(self) -> Optional[pulumi.Input[str]]:
-        """
-        ("innodb_ft_result_cache_limit")
-        """
         return pulumi.get(self, "innodb_ft_result_cache_limit")
 
     @innodb_ft_result_cache_limit.setter
@@ -2139,9 +1498,6 @@ class MysqlConfigurationVariablesArgs:
     @property
     @pulumi.getter(name="innodbFtServerStopwordTable")
     def innodb_ft_server_stopword_table(self) -> Optional[pulumi.Input[str]]:
-        """
-        ("innodb_ft_server_stopword_table")
-        """
         return pulumi.get(self, "innodb_ft_server_stopword_table")
 
     @innodb_ft_server_stopword_table.setter
@@ -2151,9 +1507,6 @@ class MysqlConfigurationVariablesArgs:
     @property
     @pulumi.getter(name="innodbLockWaitTimeout")
     def innodb_lock_wait_timeout(self) -> Optional[pulumi.Input[int]]:
-        """
-        ("innodb_lock_wait_timeout")
-        """
         return pulumi.get(self, "innodb_lock_wait_timeout")
 
     @innodb_lock_wait_timeout.setter
@@ -2163,11 +1516,6 @@ class MysqlConfigurationVariablesArgs:
     @property
     @pulumi.getter(name="innodbLogWriterThreads")
     def innodb_log_writer_threads(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Enables dedicated log writer threads for writing redo log records from the log buffer to the system buffers and flushing the system buffers to the redo log files.
-
-        This is the MySQL variable "innodb_log_writer_threads". For more information, please see the [MySQL documentation](https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_log_writer_threads)
-        """
         return pulumi.get(self, "innodb_log_writer_threads")
 
     @innodb_log_writer_threads.setter
@@ -2177,17 +1525,6 @@ class MysqlConfigurationVariablesArgs:
     @property
     @pulumi.getter(name="innodbMaxPurgeLag")
     def innodb_max_purge_lag(self) -> Optional[pulumi.Input[str]]:
-        """
-        The desired maximum purge lag in terms of transactions.
-
-        InnoDB maintains a list of transactions that have index records delete-marked by UPDATE or DELETE operations. The length of the list is the purge lag.
-
-        If this value is exceeded, a delay is imposed on INSERT, UPDATE, and DELETE operations to allow time for purge to catch up.
-
-        The default value is 0, which means there is no maximum purge lag and no delay.
-
-        innodbMaxPurgeLag corresponds to the MySQL server system variable [innodb_max_purge_lag](https://dev.mysql.com/doc/refman/en/innodb-parameters.html#sysvar_innodb_max_purge_lag).
-        """
         return pulumi.get(self, "innodb_max_purge_lag")
 
     @innodb_max_purge_lag.setter
@@ -2197,13 +1534,6 @@ class MysqlConfigurationVariablesArgs:
     @property
     @pulumi.getter(name="innodbMaxPurgeLagDelay")
     def innodb_max_purge_lag_delay(self) -> Optional[pulumi.Input[int]]:
-        """
-        The maximum delay in microseconds for the delay imposed when the innodb_max_purge_lag threshold is exceeded.
-
-        The specified innodb_max_purge_lag_delay value is an upper limit on the delay period.
-
-        innodbMaxPurgeLagDelay corresponds to the MySQL server system variable [innodb_max_purge_lag_delay](https://dev.mysql.com/doc/refman/en/innodb-parameters.html#sysvar_innodb_max_purge_lag_delay).
-        """
         return pulumi.get(self, "innodb_max_purge_lag_delay")
 
     @innodb_max_purge_lag_delay.setter
@@ -2213,13 +1543,6 @@ class MysqlConfigurationVariablesArgs:
     @property
     @pulumi.getter(name="innodbStatsPersistentSamplePages")
     def innodb_stats_persistent_sample_pages(self) -> Optional[pulumi.Input[str]]:
-        """
-        The number of index pages to sample when estimating cardinality and other statistics for an indexed column, such as those calculated by ANALYZE TABLE.
-
-        innodbStatsPersistentSamplePages corresponds to the MySQL InnoDB system variable [innodb_stats_persistent_sample_pages](https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_stats_persistent_sample_pages)
-
-        innodb_stats_persistent_sample_pages only applies when innodb_stats_persistent is enabled for a table; when innodb_stats_persistent is disabled, innodb_stats_transient_sample_pages applies instead.
-        """
         return pulumi.get(self, "innodb_stats_persistent_sample_pages")
 
     @innodb_stats_persistent_sample_pages.setter
@@ -2229,15 +1552,6 @@ class MysqlConfigurationVariablesArgs:
     @property
     @pulumi.getter(name="innodbStatsTransientSamplePages")
     def innodb_stats_transient_sample_pages(self) -> Optional[pulumi.Input[str]]:
-        """
-        The number of index pages to sample when estimating cardinality and other statistics for an indexed column, such as those calculated by [ANALYZE TABLE](https://dev.mysql.com/doc/refman/8.0/en/analyze-table.html).
-
-        innodbStatsTransientSamplePages corresponds to the MySQL InnoDB system variable [innodb_stats_transient_sample_pages](https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_stats_transient_sample_pages)
-
-        innodb_stats_transient_sample_pages only applies when innodb_stats_persistent is disabled for a table; when innodb_stats_persistent is enabled, innodb_stats_persistent_sample_pages applies instead.
-
-        innodb_stats_persistent is ON by default and cannot be changed. It is possible to override it using the STATS_PERSISTENT clause of the [CREATE TABLE](https://dev.mysql.com/doc/refman/8.0/en/create-table.html) and [ALTER TABLE](https://dev.mysql.com/doc/refman/8.0/en/alter-table.html) statements.
-        """
         return pulumi.get(self, "innodb_stats_transient_sample_pages")
 
     @innodb_stats_transient_sample_pages.setter
@@ -2247,11 +1561,6 @@ class MysqlConfigurationVariablesArgs:
     @property
     @pulumi.getter(name="interactiveTimeout")
     def interactive_timeout(self) -> Optional[pulumi.Input[int]]:
-        """
-        The number of seconds the server waits for activity on an interactive connection before closing it.
-
-        interactiveTimeout corresponds to the MySQL system variable. [interactive_timeout](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_interactive_timeout)
-        """
         return pulumi.get(self, "interactive_timeout")
 
     @interactive_timeout.setter
@@ -2261,9 +1570,6 @@ class MysqlConfigurationVariablesArgs:
     @property
     @pulumi.getter(name="localInfile")
     def local_infile(self) -> Optional[pulumi.Input[bool]]:
-        """
-        ("local_infile")
-        """
         return pulumi.get(self, "local_infile")
 
     @local_infile.setter
@@ -2273,9 +1579,6 @@ class MysqlConfigurationVariablesArgs:
     @property
     @pulumi.getter(name="mandatoryRoles")
     def mandatory_roles(self) -> Optional[pulumi.Input[str]]:
-        """
-        ("mandatory_roles")
-        """
         return pulumi.get(self, "mandatory_roles")
 
     @mandatory_roles.setter
@@ -2285,11 +1588,6 @@ class MysqlConfigurationVariablesArgs:
     @property
     @pulumi.getter(name="maxAllowedPacket")
     def max_allowed_packet(self) -> Optional[pulumi.Input[int]]:
-        """
-        The maximum size of one packet or any generated/intermediate string.
-
-        This is the mysql variable "max_allowed_packet".
-        """
         return pulumi.get(self, "max_allowed_packet")
 
     @max_allowed_packet.setter
@@ -2299,11 +1597,6 @@ class MysqlConfigurationVariablesArgs:
     @property
     @pulumi.getter(name="maxBinlogCacheSize")
     def max_binlog_cache_size(self) -> Optional[pulumi.Input[str]]:
-        """
-        Sets the size of the transaction cache.
-
-        maxBinlogCacheSize corresponds to the MySQL server system variable [max_binlog_cache_size](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_max_binlog_cache_size).
-        """
         return pulumi.get(self, "max_binlog_cache_size")
 
     @max_binlog_cache_size.setter
@@ -2313,9 +1606,6 @@ class MysqlConfigurationVariablesArgs:
     @property
     @pulumi.getter(name="maxConnectErrors")
     def max_connect_errors(self) -> Optional[pulumi.Input[str]]:
-        """
-        ("max_connect_errors")
-        """
         return pulumi.get(self, "max_connect_errors")
 
     @max_connect_errors.setter
@@ -2325,9 +1615,6 @@ class MysqlConfigurationVariablesArgs:
     @property
     @pulumi.getter(name="maxConnections")
     def max_connections(self) -> Optional[pulumi.Input[int]]:
-        """
-        ("max_connections")
-        """
         return pulumi.get(self, "max_connections")
 
     @max_connections.setter
@@ -2337,9 +1624,6 @@ class MysqlConfigurationVariablesArgs:
     @property
     @pulumi.getter(name="maxExecutionTime")
     def max_execution_time(self) -> Optional[pulumi.Input[str]]:
-        """
-        ("max_execution_time")
-        """
         return pulumi.get(self, "max_execution_time")
 
     @max_execution_time.setter
@@ -2349,11 +1633,6 @@ class MysqlConfigurationVariablesArgs:
     @property
     @pulumi.getter(name="maxHeapTableSize")
     def max_heap_table_size(self) -> Optional[pulumi.Input[str]]:
-        """
-        This variable sets the maximum size to which user-created MEMORY tables are permitted to grow.
-
-        maxHeapTableSize corresponds to the MySQL system variable [max_heap_table_size](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_max_heap_table_size)
-        """
         return pulumi.get(self, "max_heap_table_size")
 
     @max_heap_table_size.setter
@@ -2363,9 +1642,6 @@ class MysqlConfigurationVariablesArgs:
     @property
     @pulumi.getter(name="maxPreparedStmtCount")
     def max_prepared_stmt_count(self) -> Optional[pulumi.Input[int]]:
-        """
-        ("max_prepared_stmt_count")
-        """
         return pulumi.get(self, "max_prepared_stmt_count")
 
     @max_prepared_stmt_count.setter
@@ -2375,9 +1651,6 @@ class MysqlConfigurationVariablesArgs:
     @property
     @pulumi.getter(name="mysqlFirewallMode")
     def mysql_firewall_mode(self) -> Optional[pulumi.Input[bool]]:
-        """
-        ("mysql_firewall_mode")
-        """
         return pulumi.get(self, "mysql_firewall_mode")
 
     @mysql_firewall_mode.setter
@@ -2387,9 +1660,6 @@ class MysqlConfigurationVariablesArgs:
     @property
     @pulumi.getter(name="mysqlZstdDefaultCompressionLevel")
     def mysql_zstd_default_compression_level(self) -> Optional[pulumi.Input[int]]:
-        """
-        DEPRECATED -- typo of mysqlx_zstd_default_compression_level. variable will be ignored.
-        """
         warnings.warn("""The 'mysql_zstd_default_compression_level' field has been deprecated and may be removed in a future version. Do not use this field.""", DeprecationWarning)
         pulumi.log.warn("""mysql_zstd_default_compression_level is deprecated: The 'mysql_zstd_default_compression_level' field has been deprecated and may be removed in a future version. Do not use this field.""")
 
@@ -2402,11 +1672,6 @@ class MysqlConfigurationVariablesArgs:
     @property
     @pulumi.getter(name="mysqlxConnectTimeout")
     def mysqlx_connect_timeout(self) -> Optional[pulumi.Input[int]]:
-        """
-        The number of seconds X Plugin waits for the first packet to be received from newly connected clients.
-
-        mysqlxConnectTimeout corresponds to the MySQL X Plugin system variable [mysqlx_connect_timeout](https://dev.mysql.com/doc/refman/8.0/en/x-plugin-options-system-variables.html#sysvar_mysqlx_connect_timeout)
-        """
         return pulumi.get(self, "mysqlx_connect_timeout")
 
     @mysqlx_connect_timeout.setter
@@ -2416,9 +1681,6 @@ class MysqlConfigurationVariablesArgs:
     @property
     @pulumi.getter(name="mysqlxDeflateDefaultCompressionLevel")
     def mysqlx_deflate_default_compression_level(self) -> Optional[pulumi.Input[int]]:
-        """
-        Set the default compression level for the deflate algorithm. ("mysqlx_deflate_default_compression_level")
-        """
         return pulumi.get(self, "mysqlx_deflate_default_compression_level")
 
     @mysqlx_deflate_default_compression_level.setter
@@ -2428,9 +1690,6 @@ class MysqlConfigurationVariablesArgs:
     @property
     @pulumi.getter(name="mysqlxDeflateMaxClientCompressionLevel")
     def mysqlx_deflate_max_client_compression_level(self) -> Optional[pulumi.Input[int]]:
-        """
-        Limit the upper bound of accepted compression levels for the deflate algorithm. ("mysqlx_deflate_max_client_compression_level")
-        """
         return pulumi.get(self, "mysqlx_deflate_max_client_compression_level")
 
     @mysqlx_deflate_max_client_compression_level.setter
@@ -2440,9 +1699,6 @@ class MysqlConfigurationVariablesArgs:
     @property
     @pulumi.getter(name="mysqlxDocumentIdUniquePrefix")
     def mysqlx_document_id_unique_prefix(self) -> Optional[pulumi.Input[int]]:
-        """
-        ("mysqlx_document_id_unique_prefix") DEPRECATED -- variable should not be settable and will be ignored
-        """
         warnings.warn("""The 'mysqlx_document_id_unique_prefix' field has been deprecated and may be removed in a future version. Do not use this field.""", DeprecationWarning)
         pulumi.log.warn("""mysqlx_document_id_unique_prefix is deprecated: The 'mysqlx_document_id_unique_prefix' field has been deprecated and may be removed in a future version. Do not use this field.""")
 
@@ -2455,9 +1711,6 @@ class MysqlConfigurationVariablesArgs:
     @property
     @pulumi.getter(name="mysqlxEnableHelloNotice")
     def mysqlx_enable_hello_notice(self) -> Optional[pulumi.Input[bool]]:
-        """
-        ("mysqlx_enable_hello_notice") DEPRECATED -- variable should not be settable and will be ignored
-        """
         return pulumi.get(self, "mysqlx_enable_hello_notice")
 
     @mysqlx_enable_hello_notice.setter
@@ -2467,9 +1720,6 @@ class MysqlConfigurationVariablesArgs:
     @property
     @pulumi.getter(name="mysqlxIdleWorkerThreadTimeout")
     def mysqlx_idle_worker_thread_timeout(self) -> Optional[pulumi.Input[int]]:
-        """
-        ("mysqlx_idle_worker_thread_timeout") DEPRECATED -- variable should not be settable and will be ignored
-        """
         warnings.warn("""The 'mysqlx_idle_worker_thread_timeout' field has been deprecated and may be removed in a future version. Do not use this field.""", DeprecationWarning)
         pulumi.log.warn("""mysqlx_idle_worker_thread_timeout is deprecated: The 'mysqlx_idle_worker_thread_timeout' field has been deprecated and may be removed in a future version. Do not use this field.""")
 
@@ -2482,11 +1732,6 @@ class MysqlConfigurationVariablesArgs:
     @property
     @pulumi.getter(name="mysqlxInteractiveTimeout")
     def mysqlx_interactive_timeout(self) -> Optional[pulumi.Input[int]]:
-        """
-        The number of seconds to wait for interactive clients to timeout.
-
-        mysqlxInteractiveTimeout corresponds to the MySQL X Plugin system variable. [mysqlx_interactive_timeout](https://dev.mysql.com/doc/refman/8.0/en/x-plugin-options-system-variables.html#sysvar_mysqlx_interactive_timeout)
-        """
         return pulumi.get(self, "mysqlx_interactive_timeout")
 
     @mysqlx_interactive_timeout.setter
@@ -2496,9 +1741,6 @@ class MysqlConfigurationVariablesArgs:
     @property
     @pulumi.getter(name="mysqlxLz4defaultCompressionLevel")
     def mysqlx_lz4default_compression_level(self) -> Optional[pulumi.Input[int]]:
-        """
-        Set the default compression level for the lz4 algorithm. ("mysqlx_lz4_default_compression_level")
-        """
         return pulumi.get(self, "mysqlx_lz4default_compression_level")
 
     @mysqlx_lz4default_compression_level.setter
@@ -2508,9 +1750,6 @@ class MysqlConfigurationVariablesArgs:
     @property
     @pulumi.getter(name="mysqlxLz4maxClientCompressionLevel")
     def mysqlx_lz4max_client_compression_level(self) -> Optional[pulumi.Input[int]]:
-        """
-        Limit the upper bound of accepted compression levels for the lz4 algorithm. ("mysqlx_lz4_max_client_compression_level")
-        """
         return pulumi.get(self, "mysqlx_lz4max_client_compression_level")
 
     @mysqlx_lz4max_client_compression_level.setter
@@ -2520,11 +1759,6 @@ class MysqlConfigurationVariablesArgs:
     @property
     @pulumi.getter(name="mysqlxMaxAllowedPacket")
     def mysqlx_max_allowed_packet(self) -> Optional[pulumi.Input[int]]:
-        """
-        The maximum size of network packets that can be received by X Plugin.
-
-        This is the mysql variable "mysqlx_max_allowed_packet".
-        """
         return pulumi.get(self, "mysqlx_max_allowed_packet")
 
     @mysqlx_max_allowed_packet.setter
@@ -2534,9 +1768,6 @@ class MysqlConfigurationVariablesArgs:
     @property
     @pulumi.getter(name="mysqlxMinWorkerThreads")
     def mysqlx_min_worker_threads(self) -> Optional[pulumi.Input[int]]:
-        """
-        ("mysqlx_min_worker_threads") DEPRECATED -- variable should not be settable and will be ignored
-        """
         warnings.warn("""The 'mysqlx_min_worker_threads' field has been deprecated and may be removed in a future version. Do not use this field.""", DeprecationWarning)
         pulumi.log.warn("""mysqlx_min_worker_threads is deprecated: The 'mysqlx_min_worker_threads' field has been deprecated and may be removed in a future version. Do not use this field.""")
 
@@ -2549,11 +1780,6 @@ class MysqlConfigurationVariablesArgs:
     @property
     @pulumi.getter(name="mysqlxReadTimeout")
     def mysqlx_read_timeout(self) -> Optional[pulumi.Input[int]]:
-        """
-        The number of seconds that X Plugin waits for blocking read operations to complete. After this time, if the read operation is not successful, X Plugin closes the connection and returns a warning notice with the error code ER_IO_READ_ERROR to the client application.
-
-        mysqlxReadTimeout corresponds to the MySQL X Plugin system variable [mysqlx_read_timeout](https://dev.mysql.com/doc/refman/8.0/en/x-plugin-options-system-variables.html#sysvar_mysqlx_read_timeout)
-        """
         return pulumi.get(self, "mysqlx_read_timeout")
 
     @mysqlx_read_timeout.setter
@@ -2563,11 +1789,6 @@ class MysqlConfigurationVariablesArgs:
     @property
     @pulumi.getter(name="mysqlxWaitTimeout")
     def mysqlx_wait_timeout(self) -> Optional[pulumi.Input[int]]:
-        """
-        The number of seconds that X Plugin waits for activity on a connection.
-
-        mysqlxWaitTimeout corresponds to the MySQL X Plugin system variable. [mysqlx_wait_timeout](https://dev.mysql.com/doc/refman/8.0/en/x-plugin-options-system-variables.html#sysvar_mysqlx_wait_timeout)
-        """
         return pulumi.get(self, "mysqlx_wait_timeout")
 
     @mysqlx_wait_timeout.setter
@@ -2577,11 +1798,6 @@ class MysqlConfigurationVariablesArgs:
     @property
     @pulumi.getter(name="mysqlxWriteTimeout")
     def mysqlx_write_timeout(self) -> Optional[pulumi.Input[int]]:
-        """
-        The number of seconds that X Plugin waits for blocking write operations to complete. After this time, if the write operation is not successful, X Plugin closes the connection.
-
-        mysqlxReadmysqlxWriteTimeoutTimeout corresponds to the MySQL X Plugin system variable [mysqlx_write_timeout](https://dev.mysql.com/doc/refman/8.0/en/x-plugin-options-system-variables.html#sysvar_mysqlx_write_timeout)
-        """
         return pulumi.get(self, "mysqlx_write_timeout")
 
     @mysqlx_write_timeout.setter
@@ -2591,9 +1807,6 @@ class MysqlConfigurationVariablesArgs:
     @property
     @pulumi.getter(name="mysqlxZstdDefaultCompressionLevel")
     def mysqlx_zstd_default_compression_level(self) -> Optional[pulumi.Input[int]]:
-        """
-        Set the default compression level for the zstd algorithm. ("mysqlx_zstd_default_compression_level")
-        """
         return pulumi.get(self, "mysqlx_zstd_default_compression_level")
 
     @mysqlx_zstd_default_compression_level.setter
@@ -2603,9 +1816,6 @@ class MysqlConfigurationVariablesArgs:
     @property
     @pulumi.getter(name="mysqlxZstdMaxClientCompressionLevel")
     def mysqlx_zstd_max_client_compression_level(self) -> Optional[pulumi.Input[int]]:
-        """
-        Limit the upper bound of accepted compression levels for the zstd algorithm. ("mysqlx_zstd_max_client_compression_level")
-        """
         return pulumi.get(self, "mysqlx_zstd_max_client_compression_level")
 
     @mysqlx_zstd_max_client_compression_level.setter
@@ -2615,11 +1825,6 @@ class MysqlConfigurationVariablesArgs:
     @property
     @pulumi.getter(name="netReadTimeout")
     def net_read_timeout(self) -> Optional[pulumi.Input[int]]:
-        """
-        The number of seconds to wait for more data from a connection before aborting the read.
-
-        netReadTimeout corresponds to the MySQL system variable [net_read_timeout](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_net_read_timeout)
-        """
         return pulumi.get(self, "net_read_timeout")
 
     @net_read_timeout.setter
@@ -2629,11 +1834,6 @@ class MysqlConfigurationVariablesArgs:
     @property
     @pulumi.getter(name="netWriteTimeout")
     def net_write_timeout(self) -> Optional[pulumi.Input[int]]:
-        """
-        The number of seconds to wait for a block to be written to a connection before aborting the write.
-
-        netWriteTimeout corresponds to the MySQL system variable [net_write_timeout](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_net_write_timeout)
-        """
         return pulumi.get(self, "net_write_timeout")
 
     @net_write_timeout.setter
@@ -2643,9 +1843,6 @@ class MysqlConfigurationVariablesArgs:
     @property
     @pulumi.getter(name="parserMaxMemSize")
     def parser_max_mem_size(self) -> Optional[pulumi.Input[str]]:
-        """
-        ("parser_max_mem_size")
-        """
         return pulumi.get(self, "parser_max_mem_size")
 
     @parser_max_mem_size.setter
@@ -2655,9 +1852,6 @@ class MysqlConfigurationVariablesArgs:
     @property
     @pulumi.getter(name="queryAllocBlockSize")
     def query_alloc_block_size(self) -> Optional[pulumi.Input[str]]:
-        """
-        ("query_alloc_block_size") DEPRECATED -- variable should not be settable and will be ignored
-        """
         warnings.warn("""The 'query_alloc_block_size' field has been deprecated and may be removed in a future version. Do not use this field.""", DeprecationWarning)
         pulumi.log.warn("""query_alloc_block_size is deprecated: The 'query_alloc_block_size' field has been deprecated and may be removed in a future version. Do not use this field.""")
 
@@ -2670,9 +1864,6 @@ class MysqlConfigurationVariablesArgs:
     @property
     @pulumi.getter(name="queryPreallocSize")
     def query_prealloc_size(self) -> Optional[pulumi.Input[str]]:
-        """
-        ("query_prealloc_size") DEPRECATED -- variable should not be settable and will be ignored
-        """
         warnings.warn("""The 'query_prealloc_size' field has been deprecated and may be removed in a future version. Do not use this field.""", DeprecationWarning)
         pulumi.log.warn("""query_prealloc_size is deprecated: The 'query_prealloc_size' field has been deprecated and may be removed in a future version. Do not use this field.""")
 
@@ -2685,9 +1876,6 @@ class MysqlConfigurationVariablesArgs:
     @property
     @pulumi.getter(name="regexpTimeLimit")
     def regexp_time_limit(self) -> Optional[pulumi.Input[int]]:
-        """
-        regexpTimeLimit corresponds to the MySQL system variable [regexp_time_limit] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_regexp_time_limit)
-        """
         return pulumi.get(self, "regexp_time_limit")
 
     @regexp_time_limit.setter
@@ -2697,11 +1885,6 @@ class MysqlConfigurationVariablesArgs:
     @property
     @pulumi.getter(name="sortBufferSize")
     def sort_buffer_size(self) -> Optional[pulumi.Input[str]]:
-        """
-        Each session that must perform a sort allocates a buffer of this size.
-
-        sortBufferSize corresponds to the MySQL system variable [sort_buffer_size](https://dev.mysql.com/doc/refman/en/server-system-variables.html#sysvar_sort_buffer_size)
-        """
         return pulumi.get(self, "sort_buffer_size")
 
     @sort_buffer_size.setter
@@ -2711,9 +1894,6 @@ class MysqlConfigurationVariablesArgs:
     @property
     @pulumi.getter(name="sqlMode")
     def sql_mode(self) -> Optional[pulumi.Input[str]]:
-        """
-        ("sql_mode")
-        """
         return pulumi.get(self, "sql_mode")
 
     @sql_mode.setter
@@ -2723,9 +1903,6 @@ class MysqlConfigurationVariablesArgs:
     @property
     @pulumi.getter(name="sqlRequirePrimaryKey")
     def sql_require_primary_key(self) -> Optional[pulumi.Input[bool]]:
-        """
-        ("sql_require_primary_key")
-        """
         return pulumi.get(self, "sql_require_primary_key")
 
     @sql_require_primary_key.setter
@@ -2735,9 +1912,6 @@ class MysqlConfigurationVariablesArgs:
     @property
     @pulumi.getter(name="sqlWarnings")
     def sql_warnings(self) -> Optional[pulumi.Input[bool]]:
-        """
-        ("sql_warnings")
-        """
         return pulumi.get(self, "sql_warnings")
 
     @sql_warnings.setter
@@ -2747,9 +1921,6 @@ class MysqlConfigurationVariablesArgs:
     @property
     @pulumi.getter(name="threadPoolDedicatedListeners")
     def thread_pool_dedicated_listeners(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Controls whether the thread pool uses dedicated listener threads. If enabled, a listener thread in each thread group is dedicated to the task of listening for network events from clients, ensuring that the maximum number of query worker threads is no more than the value specified by threadPoolMaxTransactionsLimit. threadPoolDedicatedListeners corresponds to the MySQL Database Service-specific system variable thread_pool_dedicated_listeners.
-        """
         return pulumi.get(self, "thread_pool_dedicated_listeners")
 
     @thread_pool_dedicated_listeners.setter
@@ -2759,9 +1930,6 @@ class MysqlConfigurationVariablesArgs:
     @property
     @pulumi.getter(name="threadPoolMaxTransactionsLimit")
     def thread_pool_max_transactions_limit(self) -> Optional[pulumi.Input[int]]:
-        """
-        Limits the maximum number of open transactions to the defined value. The default value is 0, which enforces no limit. threadPoolMaxTransactionsLimit corresponds to the MySQL Database Service-specific system variable thread_pool_max_transactions_limit.
-        """
         return pulumi.get(self, "thread_pool_max_transactions_limit")
 
     @thread_pool_max_transactions_limit.setter
@@ -2771,15 +1939,6 @@ class MysqlConfigurationVariablesArgs:
     @property
     @pulumi.getter(name="timeZone")
     def time_zone(self) -> Optional[pulumi.Input[str]]:
-        """
-        Initializes the time zone for each client that connects.
-
-        This corresponds to the MySQL System Variable "time_zone".
-
-        The values can be given in one of the following formats, none of which are case-sensitive:
-        * As a string indicating an offset from UTC of the form [H]H:MM, prefixed with a + or -, such as '+10:00', '-6:00', or '+05:30'. The permitted range is '-13:59' to '+14:00', inclusive.
-        * As a named time zone, as defined by the "IANA Time Zone database", such as 'Europe/Helsinki', 'US/Eastern', 'MET', or 'UTC'.
-        """
         return pulumi.get(self, "time_zone")
 
     @time_zone.setter
@@ -2789,11 +1948,6 @@ class MysqlConfigurationVariablesArgs:
     @property
     @pulumi.getter(name="tmpTableSize")
     def tmp_table_size(self) -> Optional[pulumi.Input[str]]:
-        """
-        The maximum size of internal in-memory temporary tables. This variable does not apply to user-created MEMORY tables.
-
-        tmp_table_size corresponds to the MySQL system variable [tmp_table_size](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_tmp_table_size)
-        """
         return pulumi.get(self, "tmp_table_size")
 
     @tmp_table_size.setter
@@ -2803,9 +1957,6 @@ class MysqlConfigurationVariablesArgs:
     @property
     @pulumi.getter(name="transactionIsolation")
     def transaction_isolation(self) -> Optional[pulumi.Input[str]]:
-        """
-        ("transaction_isolation")
-        """
         return pulumi.get(self, "transaction_isolation")
 
     @transaction_isolation.setter
@@ -2815,15 +1966,6 @@ class MysqlConfigurationVariablesArgs:
     @property
     @pulumi.getter(name="waitTimeout")
     def wait_timeout(self) -> Optional[pulumi.Input[int]]:
-        """
-        The number of seconds the server waits for activity on a noninteractive connection before closing it.
-
-        waitTimeout corresponds to the MySQL system variable. [wait_timeout](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_wait_timeout)
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "wait_timeout")
 
     @wait_timeout.setter
@@ -2840,22 +1982,6 @@ class MysqlDbSystemBackupPolicyArgs:
                  pitr_policy: Optional[pulumi.Input['MysqlDbSystemBackupPolicyPitrPolicyArgs']] = None,
                  retention_in_days: Optional[pulumi.Input[int]] = None,
                  window_start_time: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[bool] is_enabled: (Updatable) Specifies if PITR is enabled or disabled.
-        :param pulumi.Input['MysqlDbSystemBackupPolicyPitrPolicyArgs'] pitr_policy: (Updatable) The PITR policy for the DB System.
-        :param pulumi.Input[int] retention_in_days: (Updatable) Number of days to retain an automatic backup.
-        :param pulumi.Input[str] window_start_time: (Updatable) The start of the 2 hour maintenance window.
-               
-               This string is of the format: "{day-of-week} {time-of-day}".
-               
-               "{day-of-week}" is a case-insensitive string like "mon", "tue", &c.
-               
-               "{time-of-day}" is the "Time" portion of an RFC3339-formatted timestamp. Any second or sub-second time data will be truncated to zero.
-               
-               If you set the read replica maintenance window to "" or if not specified, the read replica is set same as the DB system maintenance window.
-        """
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
         if freeform_tags is not None:
@@ -2872,9 +1998,6 @@ class MysqlDbSystemBackupPolicyArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -2884,9 +2007,6 @@ class MysqlDbSystemBackupPolicyArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Simple key-value pair applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -2896,9 +2016,6 @@ class MysqlDbSystemBackupPolicyArgs:
     @property
     @pulumi.getter(name="isEnabled")
     def is_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Specifies if PITR is enabled or disabled.
-        """
         return pulumi.get(self, "is_enabled")
 
     @is_enabled.setter
@@ -2908,9 +2025,6 @@ class MysqlDbSystemBackupPolicyArgs:
     @property
     @pulumi.getter(name="pitrPolicy")
     def pitr_policy(self) -> Optional[pulumi.Input['MysqlDbSystemBackupPolicyPitrPolicyArgs']]:
-        """
-        (Updatable) The PITR policy for the DB System.
-        """
         return pulumi.get(self, "pitr_policy")
 
     @pitr_policy.setter
@@ -2920,9 +2034,6 @@ class MysqlDbSystemBackupPolicyArgs:
     @property
     @pulumi.getter(name="retentionInDays")
     def retention_in_days(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) Number of days to retain an automatic backup.
-        """
         return pulumi.get(self, "retention_in_days")
 
     @retention_in_days.setter
@@ -2932,17 +2043,6 @@ class MysqlDbSystemBackupPolicyArgs:
     @property
     @pulumi.getter(name="windowStartTime")
     def window_start_time(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The start of the 2 hour maintenance window.
-
-        This string is of the format: "{day-of-week} {time-of-day}".
-
-        "{day-of-week}" is a case-insensitive string like "mon", "tue", &c.
-
-        "{time-of-day}" is the "Time" portion of an RFC3339-formatted timestamp. Any second or sub-second time data will be truncated to zero.
-
-        If you set the read replica maintenance window to "" or if not specified, the read replica is set same as the DB system maintenance window.
-        """
         return pulumi.get(self, "window_start_time")
 
     @window_start_time.setter
@@ -2954,18 +2054,12 @@ class MysqlDbSystemBackupPolicyArgs:
 class MysqlDbSystemBackupPolicyPitrPolicyArgs:
     def __init__(__self__, *,
                  is_enabled: Optional[pulumi.Input[bool]] = None):
-        """
-        :param pulumi.Input[bool] is_enabled: (Updatable) Specifies if PITR is enabled or disabled.
-        """
         if is_enabled is not None:
             pulumi.set(__self__, "is_enabled", is_enabled)
 
     @property
     @pulumi.getter(name="isEnabled")
     def is_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Specifies if PITR is enabled or disabled.
-        """
         return pulumi.get(self, "is_enabled")
 
     @is_enabled.setter
@@ -2988,20 +2082,6 @@ class MysqlDbSystemChannelArgs:
                  targets: Optional[pulumi.Input[Sequence[pulumi.Input['MysqlDbSystemChannelTargetArgs']]]] = None,
                  time_created: Optional[pulumi.Input[str]] = None,
                  time_updated: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] compartment_id: The OCID of the compartment.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] display_name: (Updatable) The user-friendly name for the DB System. It does not have to be unique.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] id: The OCID of the DB System.
-        :param pulumi.Input[bool] is_enabled: (Updatable) Specifies if PITR is enabled or disabled.
-        :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycleState.
-        :param pulumi.Input[Sequence[pulumi.Input['MysqlDbSystemChannelSourceArgs']]] sources: Parameters detailing how to provision the initial data of the system.
-        :param pulumi.Input[str] state: (Updatable) The target state for the DB System. Could be set to `ACTIVE` or `INACTIVE`.
-        :param pulumi.Input[Sequence[pulumi.Input['MysqlDbSystemChannelTargetArgs']]] targets: Details about the Channel target.
-        :param pulumi.Input[str] time_created: The date and time the DB System was created.
-        :param pulumi.Input[str] time_updated: The time the DB System was last updated.
-        """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
         if defined_tags is not None:
@@ -3030,9 +2110,6 @@ class MysqlDbSystemChannelArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -3042,9 +2119,6 @@ class MysqlDbSystemChannelArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -3054,9 +2128,6 @@ class MysqlDbSystemChannelArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The user-friendly name for the DB System. It does not have to be unique.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -3066,9 +2137,6 @@ class MysqlDbSystemChannelArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Simple key-value pair applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -3078,9 +2146,6 @@ class MysqlDbSystemChannelArgs:
     @property
     @pulumi.getter
     def id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the DB System.
-        """
         return pulumi.get(self, "id")
 
     @id.setter
@@ -3090,9 +2155,6 @@ class MysqlDbSystemChannelArgs:
     @property
     @pulumi.getter(name="isEnabled")
     def is_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Specifies if PITR is enabled or disabled.
-        """
         return pulumi.get(self, "is_enabled")
 
     @is_enabled.setter
@@ -3102,9 +2164,6 @@ class MysqlDbSystemChannelArgs:
     @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> Optional[pulumi.Input[str]]:
-        """
-        Additional information about the current lifecycleState.
-        """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
@@ -3114,9 +2173,6 @@ class MysqlDbSystemChannelArgs:
     @property
     @pulumi.getter
     def sources(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['MysqlDbSystemChannelSourceArgs']]]]:
-        """
-        Parameters detailing how to provision the initial data of the system.
-        """
         return pulumi.get(self, "sources")
 
     @sources.setter
@@ -3126,9 +2182,6 @@ class MysqlDbSystemChannelArgs:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The target state for the DB System. Could be set to `ACTIVE` or `INACTIVE`.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -3138,9 +2191,6 @@ class MysqlDbSystemChannelArgs:
     @property
     @pulumi.getter
     def targets(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['MysqlDbSystemChannelTargetArgs']]]]:
-        """
-        Details about the Channel target.
-        """
         return pulumi.get(self, "targets")
 
     @targets.setter
@@ -3150,9 +2200,6 @@ class MysqlDbSystemChannelArgs:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time the DB System was created.
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -3162,9 +2209,6 @@ class MysqlDbSystemChannelArgs:
     @property
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> Optional[pulumi.Input[str]]:
-        """
-        The time the DB System was last updated.
-        """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
@@ -3182,15 +2226,6 @@ class MysqlDbSystemChannelSourceArgs:
                  ssl_ca_certificates: Optional[pulumi.Input[Sequence[pulumi.Input['MysqlDbSystemChannelSourceSslCaCertificateArgs']]]] = None,
                  ssl_mode: Optional[pulumi.Input[str]] = None,
                  username: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[Sequence[pulumi.Input['MysqlDbSystemChannelSourceAnonymousTransactionsHandlingArgs']]] anonymous_transactions_handlings: Specifies how the replication channel handles replicated transactions without an identifier, enabling replication from a source that does not use transaction-id-based replication to a replica that does.
-        :param pulumi.Input[str] hostname: The network address of the DB System.
-        :param pulumi.Input[int] port: The port for primary endpoint of the DB System to listen on.
-        :param pulumi.Input[str] source_type: The specific source identifier. Use `BACKUP` for creating a new database by restoring from a backup. Use `IMPORTURL` for creating a new database from a URL Object Storage PAR.
-        :param pulumi.Input[Sequence[pulumi.Input['MysqlDbSystemChannelSourceSslCaCertificateArgs']]] ssl_ca_certificates: The CA certificate of the server used for VERIFY_IDENTITY and VERIFY_CA ssl modes.
-        :param pulumi.Input[str] ssl_mode: The SSL mode of the Channel.
-        :param pulumi.Input[str] username: The name of the replication user on the source MySQL instance. The username has a maximum length of 96 characters. For more information, please see the [MySQL documentation](https://dev.mysql.com/doc/refman/8.0/en/change-master-to.html)
-        """
         if anonymous_transactions_handlings is not None:
             pulumi.set(__self__, "anonymous_transactions_handlings", anonymous_transactions_handlings)
         if hostname is not None:
@@ -3209,9 +2244,6 @@ class MysqlDbSystemChannelSourceArgs:
     @property
     @pulumi.getter(name="anonymousTransactionsHandlings")
     def anonymous_transactions_handlings(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['MysqlDbSystemChannelSourceAnonymousTransactionsHandlingArgs']]]]:
-        """
-        Specifies how the replication channel handles replicated transactions without an identifier, enabling replication from a source that does not use transaction-id-based replication to a replica that does.
-        """
         return pulumi.get(self, "anonymous_transactions_handlings")
 
     @anonymous_transactions_handlings.setter
@@ -3221,9 +2253,6 @@ class MysqlDbSystemChannelSourceArgs:
     @property
     @pulumi.getter
     def hostname(self) -> Optional[pulumi.Input[str]]:
-        """
-        The network address of the DB System.
-        """
         return pulumi.get(self, "hostname")
 
     @hostname.setter
@@ -3233,9 +2262,6 @@ class MysqlDbSystemChannelSourceArgs:
     @property
     @pulumi.getter
     def port(self) -> Optional[pulumi.Input[int]]:
-        """
-        The port for primary endpoint of the DB System to listen on.
-        """
         return pulumi.get(self, "port")
 
     @port.setter
@@ -3245,9 +2271,6 @@ class MysqlDbSystemChannelSourceArgs:
     @property
     @pulumi.getter(name="sourceType")
     def source_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        The specific source identifier. Use `BACKUP` for creating a new database by restoring from a backup. Use `IMPORTURL` for creating a new database from a URL Object Storage PAR.
-        """
         return pulumi.get(self, "source_type")
 
     @source_type.setter
@@ -3257,9 +2280,6 @@ class MysqlDbSystemChannelSourceArgs:
     @property
     @pulumi.getter(name="sslCaCertificates")
     def ssl_ca_certificates(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['MysqlDbSystemChannelSourceSslCaCertificateArgs']]]]:
-        """
-        The CA certificate of the server used for VERIFY_IDENTITY and VERIFY_CA ssl modes.
-        """
         return pulumi.get(self, "ssl_ca_certificates")
 
     @ssl_ca_certificates.setter
@@ -3269,9 +2289,6 @@ class MysqlDbSystemChannelSourceArgs:
     @property
     @pulumi.getter(name="sslMode")
     def ssl_mode(self) -> Optional[pulumi.Input[str]]:
-        """
-        The SSL mode of the Channel.
-        """
         return pulumi.get(self, "ssl_mode")
 
     @ssl_mode.setter
@@ -3281,9 +2298,6 @@ class MysqlDbSystemChannelSourceArgs:
     @property
     @pulumi.getter
     def username(self) -> Optional[pulumi.Input[str]]:
-        """
-        The name of the replication user on the source MySQL instance. The username has a maximum length of 96 characters. For more information, please see the [MySQL documentation](https://dev.mysql.com/doc/refman/8.0/en/change-master-to.html)
-        """
         return pulumi.get(self, "username")
 
     @username.setter
@@ -3298,12 +2312,6 @@ class MysqlDbSystemChannelSourceAnonymousTransactionsHandlingArgs:
                  last_configured_log_offset: Optional[pulumi.Input[str]] = None,
                  policy: Optional[pulumi.Input[str]] = None,
                  uuid: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] last_configured_log_filename: Specifies one of the coordinates (file) at which the replica should begin reading the source's log. As this value specifies the point where replication starts from, it is only used once, when it starts. It is never used again, unless a new UpdateChannel operation modifies it.
-        :param pulumi.Input[str] last_configured_log_offset: Specifies one of the coordinates (offset) at which the replica should begin reading the source's log. As this value specifies the point where replication starts from, it is only used once, when it starts. It is never used again, unless a new UpdateChannel operation modifies it.
-        :param pulumi.Input[str] policy: Specifies how the replication channel handles anonymous transactions.
-        :param pulumi.Input[str] uuid: The UUID that is used as a prefix when generating transaction identifiers for anonymous transactions coming from the source. You can change the UUID later.
-        """
         if last_configured_log_filename is not None:
             pulumi.set(__self__, "last_configured_log_filename", last_configured_log_filename)
         if last_configured_log_offset is not None:
@@ -3316,9 +2324,6 @@ class MysqlDbSystemChannelSourceAnonymousTransactionsHandlingArgs:
     @property
     @pulumi.getter(name="lastConfiguredLogFilename")
     def last_configured_log_filename(self) -> Optional[pulumi.Input[str]]:
-        """
-        Specifies one of the coordinates (file) at which the replica should begin reading the source's log. As this value specifies the point where replication starts from, it is only used once, when it starts. It is never used again, unless a new UpdateChannel operation modifies it.
-        """
         return pulumi.get(self, "last_configured_log_filename")
 
     @last_configured_log_filename.setter
@@ -3328,9 +2333,6 @@ class MysqlDbSystemChannelSourceAnonymousTransactionsHandlingArgs:
     @property
     @pulumi.getter(name="lastConfiguredLogOffset")
     def last_configured_log_offset(self) -> Optional[pulumi.Input[str]]:
-        """
-        Specifies one of the coordinates (offset) at which the replica should begin reading the source's log. As this value specifies the point where replication starts from, it is only used once, when it starts. It is never used again, unless a new UpdateChannel operation modifies it.
-        """
         return pulumi.get(self, "last_configured_log_offset")
 
     @last_configured_log_offset.setter
@@ -3340,9 +2342,6 @@ class MysqlDbSystemChannelSourceAnonymousTransactionsHandlingArgs:
     @property
     @pulumi.getter
     def policy(self) -> Optional[pulumi.Input[str]]:
-        """
-        Specifies how the replication channel handles anonymous transactions.
-        """
         return pulumi.get(self, "policy")
 
     @policy.setter
@@ -3352,9 +2351,6 @@ class MysqlDbSystemChannelSourceAnonymousTransactionsHandlingArgs:
     @property
     @pulumi.getter
     def uuid(self) -> Optional[pulumi.Input[str]]:
-        """
-        The UUID that is used as a prefix when generating transaction identifiers for anonymous transactions coming from the source. You can change the UUID later.
-        """
         return pulumi.get(self, "uuid")
 
     @uuid.setter
@@ -3367,10 +2363,6 @@ class MysqlDbSystemChannelSourceSslCaCertificateArgs:
     def __init__(__self__, *,
                  certificate_type: Optional[pulumi.Input[str]] = None,
                  contents: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] certificate_type: The type of CA certificate.
-        :param pulumi.Input[str] contents: The string containing the CA certificate in PEM format.
-        """
         if certificate_type is not None:
             pulumi.set(__self__, "certificate_type", certificate_type)
         if contents is not None:
@@ -3379,9 +2371,6 @@ class MysqlDbSystemChannelSourceSslCaCertificateArgs:
     @property
     @pulumi.getter(name="certificateType")
     def certificate_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        The type of CA certificate.
-        """
         return pulumi.get(self, "certificate_type")
 
     @certificate_type.setter
@@ -3391,9 +2380,6 @@ class MysqlDbSystemChannelSourceSslCaCertificateArgs:
     @property
     @pulumi.getter
     def contents(self) -> Optional[pulumi.Input[str]]:
-        """
-        The string containing the CA certificate in PEM format.
-        """
         return pulumi.get(self, "contents")
 
     @contents.setter
@@ -3411,15 +2397,6 @@ class MysqlDbSystemChannelTargetArgs:
                  filters: Optional[pulumi.Input[Sequence[pulumi.Input['MysqlDbSystemChannelTargetFilterArgs']]]] = None,
                  tables_without_primary_key_handling: Optional[pulumi.Input[str]] = None,
                  target_type: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] applier_username: The username for the replication applier of the target MySQL DB System.
-        :param pulumi.Input[str] channel_name: The case-insensitive name that identifies the replication channel. Channel names must follow the rules defined for [MySQL identifiers](https://dev.mysql.com/doc/refman/8.0/en/identifiers.html). The names of non-Deleted Channels must be unique for each DB System.
-        :param pulumi.Input[str] db_system_id: The OCID of the DB System from which a backup shall be selected to be restored when creating the new DB System. Use this together with recovery point to perform a point in time recovery operation.
-        :param pulumi.Input[int] delay_in_seconds: Specifies the amount of time, in seconds, that the channel waits before  applying a transaction received from the source.
-        :param pulumi.Input[Sequence[pulumi.Input['MysqlDbSystemChannelTargetFilterArgs']]] filters: Replication filter rules to be applied at the DB System Channel target.
-        :param pulumi.Input[str] tables_without_primary_key_handling: Specifies how a replication channel handles the creation and alteration of tables  that do not have a primary key.
-        :param pulumi.Input[str] target_type: The specific target identifier.
-        """
         if applier_username is not None:
             pulumi.set(__self__, "applier_username", applier_username)
         if channel_name is not None:
@@ -3438,9 +2415,6 @@ class MysqlDbSystemChannelTargetArgs:
     @property
     @pulumi.getter(name="applierUsername")
     def applier_username(self) -> Optional[pulumi.Input[str]]:
-        """
-        The username for the replication applier of the target MySQL DB System.
-        """
         return pulumi.get(self, "applier_username")
 
     @applier_username.setter
@@ -3450,9 +2424,6 @@ class MysqlDbSystemChannelTargetArgs:
     @property
     @pulumi.getter(name="channelName")
     def channel_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The case-insensitive name that identifies the replication channel. Channel names must follow the rules defined for [MySQL identifiers](https://dev.mysql.com/doc/refman/8.0/en/identifiers.html). The names of non-Deleted Channels must be unique for each DB System.
-        """
         return pulumi.get(self, "channel_name")
 
     @channel_name.setter
@@ -3462,9 +2433,6 @@ class MysqlDbSystemChannelTargetArgs:
     @property
     @pulumi.getter(name="dbSystemId")
     def db_system_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the DB System from which a backup shall be selected to be restored when creating the new DB System. Use this together with recovery point to perform a point in time recovery operation.
-        """
         return pulumi.get(self, "db_system_id")
 
     @db_system_id.setter
@@ -3474,9 +2442,6 @@ class MysqlDbSystemChannelTargetArgs:
     @property
     @pulumi.getter(name="delayInSeconds")
     def delay_in_seconds(self) -> Optional[pulumi.Input[int]]:
-        """
-        Specifies the amount of time, in seconds, that the channel waits before  applying a transaction received from the source.
-        """
         return pulumi.get(self, "delay_in_seconds")
 
     @delay_in_seconds.setter
@@ -3486,9 +2451,6 @@ class MysqlDbSystemChannelTargetArgs:
     @property
     @pulumi.getter
     def filters(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['MysqlDbSystemChannelTargetFilterArgs']]]]:
-        """
-        Replication filter rules to be applied at the DB System Channel target.
-        """
         return pulumi.get(self, "filters")
 
     @filters.setter
@@ -3498,9 +2460,6 @@ class MysqlDbSystemChannelTargetArgs:
     @property
     @pulumi.getter(name="tablesWithoutPrimaryKeyHandling")
     def tables_without_primary_key_handling(self) -> Optional[pulumi.Input[str]]:
-        """
-        Specifies how a replication channel handles the creation and alteration of tables  that do not have a primary key.
-        """
         return pulumi.get(self, "tables_without_primary_key_handling")
 
     @tables_without_primary_key_handling.setter
@@ -3510,9 +2469,6 @@ class MysqlDbSystemChannelTargetArgs:
     @property
     @pulumi.getter(name="targetType")
     def target_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        The specific target identifier.
-        """
         return pulumi.get(self, "target_type")
 
     @target_type.setter
@@ -3525,10 +2481,6 @@ class MysqlDbSystemChannelTargetFilterArgs:
     def __init__(__self__, *,
                  type: Optional[pulumi.Input[str]] = None,
                  value: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] type: The type of the filter rule.
-        :param pulumi.Input[str] value: The body of the filter rule. This can represent a database, a table, or a database pair (represented as "db1->db2"). For more information, see [Replication Filtering Rules](https://dev.mysql.com/doc/refman/8.0/en/replication-rules.html).
-        """
         if type is not None:
             pulumi.set(__self__, "type", type)
         if value is not None:
@@ -3537,9 +2489,6 @@ class MysqlDbSystemChannelTargetFilterArgs:
     @property
     @pulumi.getter
     def type(self) -> Optional[pulumi.Input[str]]:
-        """
-        The type of the filter rule.
-        """
         return pulumi.get(self, "type")
 
     @type.setter
@@ -3549,9 +2498,6 @@ class MysqlDbSystemChannelTargetFilterArgs:
     @property
     @pulumi.getter
     def value(self) -> Optional[pulumi.Input[str]]:
-        """
-        The body of the filter rule. This can represent a database, a table, or a database pair (represented as "db1->db2"). For more information, see [Replication Filtering Rules](https://dev.mysql.com/doc/refman/8.0/en/replication-rules.html).
-        """
         return pulumi.get(self, "value")
 
     @value.setter
@@ -3564,18 +2510,6 @@ class MysqlDbSystemCurrentPlacementArgs:
     def __init__(__self__, *,
                  availability_domain: Optional[pulumi.Input[str]] = None,
                  fault_domain: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] availability_domain: The availability domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
-               
-               In a failover scenario, the Read/Write endpoint is redirected to one of the other availability domains and the MySQL instance in that domain is promoted to the primary instance. This redirection does not affect the IP address of the DB System in any way.
-               
-               For a standalone DB System, this defines the availability domain in which the DB System is placed.
-        :param pulumi.Input[str] fault_domain: The fault domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
-               
-               In a failover scenario, the Read/Write endpoint is redirected to one of the other fault domains and the MySQL instance in that domain is promoted to the primary instance. This redirection does not affect the IP address of the DB System in any way.
-               
-               For a standalone DB System, this defines the fault domain in which the DB System is placed.
-        """
         if availability_domain is not None:
             pulumi.set(__self__, "availability_domain", availability_domain)
         if fault_domain is not None:
@@ -3584,13 +2518,6 @@ class MysqlDbSystemCurrentPlacementArgs:
     @property
     @pulumi.getter(name="availabilityDomain")
     def availability_domain(self) -> Optional[pulumi.Input[str]]:
-        """
-        The availability domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
-
-        In a failover scenario, the Read/Write endpoint is redirected to one of the other availability domains and the MySQL instance in that domain is promoted to the primary instance. This redirection does not affect the IP address of the DB System in any way.
-
-        For a standalone DB System, this defines the availability domain in which the DB System is placed.
-        """
         return pulumi.get(self, "availability_domain")
 
     @availability_domain.setter
@@ -3600,13 +2527,6 @@ class MysqlDbSystemCurrentPlacementArgs:
     @property
     @pulumi.getter(name="faultDomain")
     def fault_domain(self) -> Optional[pulumi.Input[str]]:
-        """
-        The fault domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
-
-        In a failover scenario, the Read/Write endpoint is redirected to one of the other fault domains and the MySQL instance in that domain is promoted to the primary instance. This redirection does not affect the IP address of the DB System in any way.
-
-        For a standalone DB System, this defines the fault domain in which the DB System is placed.
-        """
         return pulumi.get(self, "fault_domain")
 
     @fault_domain.setter
@@ -3620,11 +2540,6 @@ class MysqlDbSystemDeletionPolicyArgs:
                  automatic_backup_retention: Optional[pulumi.Input[str]] = None,
                  final_backup: Optional[pulumi.Input[str]] = None,
                  is_delete_protected: Optional[pulumi.Input[bool]] = None):
-        """
-        :param pulumi.Input[str] automatic_backup_retention: (Updatable) Specifies if any automatic backups created for a DB System should be retained or deleted when the DB System is deleted.
-        :param pulumi.Input[str] final_backup: (Updatable) Specifies whether or not a backup is taken when the DB System is deleted. REQUIRE_FINAL_BACKUP: a backup is taken if the DB System is deleted. SKIP_FINAL_BACKUP: a backup is not taken if the DB System is deleted.
-        :param pulumi.Input[bool] is_delete_protected: (Updatable) Specifies whether the DB System can be deleted. Set to true to prevent deletion, false (default) to allow.
-        """
         if automatic_backup_retention is not None:
             pulumi.set(__self__, "automatic_backup_retention", automatic_backup_retention)
         if final_backup is not None:
@@ -3635,9 +2550,6 @@ class MysqlDbSystemDeletionPolicyArgs:
     @property
     @pulumi.getter(name="automaticBackupRetention")
     def automatic_backup_retention(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Specifies if any automatic backups created for a DB System should be retained or deleted when the DB System is deleted.
-        """
         return pulumi.get(self, "automatic_backup_retention")
 
     @automatic_backup_retention.setter
@@ -3647,9 +2559,6 @@ class MysqlDbSystemDeletionPolicyArgs:
     @property
     @pulumi.getter(name="finalBackup")
     def final_backup(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Specifies whether or not a backup is taken when the DB System is deleted. REQUIRE_FINAL_BACKUP: a backup is taken if the DB System is deleted. SKIP_FINAL_BACKUP: a backup is not taken if the DB System is deleted.
-        """
         return pulumi.get(self, "final_backup")
 
     @final_backup.setter
@@ -3659,9 +2568,6 @@ class MysqlDbSystemDeletionPolicyArgs:
     @property
     @pulumi.getter(name="isDeleteProtected")
     def is_delete_protected(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Specifies whether the DB System can be deleted. Set to true to prevent deletion, false (default) to allow.
-        """
         return pulumi.get(self, "is_delete_protected")
 
     @is_delete_protected.setter
@@ -3681,17 +2587,6 @@ class MysqlDbSystemEndpointArgs:
                  resource_type: Optional[pulumi.Input[str]] = None,
                  status: Optional[pulumi.Input[str]] = None,
                  status_details: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] hostname: The network address of the DB System.
-        :param pulumi.Input[str] ip_address: The IP address the DB System is configured to listen on. A private IP address of your choice to assign to the primary endpoint of the DB System. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. This should be a "dotted-quad" style IPv4 address.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] modes: The access modes from the client that this endpoint supports.
-        :param pulumi.Input[int] port: The port for primary endpoint of the DB System to listen on.
-        :param pulumi.Input[int] port_x: The TCP network port on which X Plugin listens for connections. This is the X Plugin equivalent of port.
-        :param pulumi.Input[str] resource_id: The OCID of the resource that this endpoint is attached to.
-        :param pulumi.Input[str] resource_type: The type of endpoint that clients and connectors can connect to.
-        :param pulumi.Input[str] status: The state of the endpoints, as far as it can seen from the DB System. There may be some inconsistency with the actual state of the MySQL service.
-        :param pulumi.Input[str] status_details: Additional information about the current endpoint status.
-        """
         if hostname is not None:
             pulumi.set(__self__, "hostname", hostname)
         if ip_address is not None:
@@ -3714,9 +2609,6 @@ class MysqlDbSystemEndpointArgs:
     @property
     @pulumi.getter
     def hostname(self) -> Optional[pulumi.Input[str]]:
-        """
-        The network address of the DB System.
-        """
         return pulumi.get(self, "hostname")
 
     @hostname.setter
@@ -3726,9 +2618,6 @@ class MysqlDbSystemEndpointArgs:
     @property
     @pulumi.getter(name="ipAddress")
     def ip_address(self) -> Optional[pulumi.Input[str]]:
-        """
-        The IP address the DB System is configured to listen on. A private IP address of your choice to assign to the primary endpoint of the DB System. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. This should be a "dotted-quad" style IPv4 address.
-        """
         return pulumi.get(self, "ip_address")
 
     @ip_address.setter
@@ -3738,9 +2627,6 @@ class MysqlDbSystemEndpointArgs:
     @property
     @pulumi.getter
     def modes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        The access modes from the client that this endpoint supports.
-        """
         return pulumi.get(self, "modes")
 
     @modes.setter
@@ -3750,9 +2636,6 @@ class MysqlDbSystemEndpointArgs:
     @property
     @pulumi.getter
     def port(self) -> Optional[pulumi.Input[int]]:
-        """
-        The port for primary endpoint of the DB System to listen on.
-        """
         return pulumi.get(self, "port")
 
     @port.setter
@@ -3762,9 +2645,6 @@ class MysqlDbSystemEndpointArgs:
     @property
     @pulumi.getter(name="portX")
     def port_x(self) -> Optional[pulumi.Input[int]]:
-        """
-        The TCP network port on which X Plugin listens for connections. This is the X Plugin equivalent of port.
-        """
         return pulumi.get(self, "port_x")
 
     @port_x.setter
@@ -3774,9 +2654,6 @@ class MysqlDbSystemEndpointArgs:
     @property
     @pulumi.getter(name="resourceId")
     def resource_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the resource that this endpoint is attached to.
-        """
         return pulumi.get(self, "resource_id")
 
     @resource_id.setter
@@ -3786,9 +2663,6 @@ class MysqlDbSystemEndpointArgs:
     @property
     @pulumi.getter(name="resourceType")
     def resource_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        The type of endpoint that clients and connectors can connect to.
-        """
         return pulumi.get(self, "resource_type")
 
     @resource_type.setter
@@ -3798,9 +2672,6 @@ class MysqlDbSystemEndpointArgs:
     @property
     @pulumi.getter
     def status(self) -> Optional[pulumi.Input[str]]:
-        """
-        The state of the endpoints, as far as it can seen from the DB System. There may be some inconsistency with the actual state of the MySQL service.
-        """
         return pulumi.get(self, "status")
 
     @status.setter
@@ -3810,9 +2681,6 @@ class MysqlDbSystemEndpointArgs:
     @property
     @pulumi.getter(name="statusDetails")
     def status_details(self) -> Optional[pulumi.Input[str]]:
-        """
-        Additional information about the current endpoint status.
-        """
         return pulumi.get(self, "status_details")
 
     @status_details.setter
@@ -3829,15 +2697,6 @@ class MysqlDbSystemHeatWaveClusterArgs:
                  state: Optional[pulumi.Input[str]] = None,
                  time_created: Optional[pulumi.Input[str]] = None,
                  time_updated: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[int] cluster_size: The number of analytics-processing compute instances, of the specified shape, in the HeatWave cluster.
-        :param pulumi.Input[bool] is_lakehouse_enabled: Lakehouse enabled status for the HeatWave cluster.
-        :param pulumi.Input[str] shape_name: (Updatable) The name of the shape. The shape determines the resources allocated
-               * CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
-        :param pulumi.Input[str] state: (Updatable) The target state for the DB System. Could be set to `ACTIVE` or `INACTIVE`.
-        :param pulumi.Input[str] time_created: The date and time the DB System was created.
-        :param pulumi.Input[str] time_updated: The time the DB System was last updated.
-        """
         if cluster_size is not None:
             pulumi.set(__self__, "cluster_size", cluster_size)
         if is_lakehouse_enabled is not None:
@@ -3854,9 +2713,6 @@ class MysqlDbSystemHeatWaveClusterArgs:
     @property
     @pulumi.getter(name="clusterSize")
     def cluster_size(self) -> Optional[pulumi.Input[int]]:
-        """
-        The number of analytics-processing compute instances, of the specified shape, in the HeatWave cluster.
-        """
         return pulumi.get(self, "cluster_size")
 
     @cluster_size.setter
@@ -3866,9 +2722,6 @@ class MysqlDbSystemHeatWaveClusterArgs:
     @property
     @pulumi.getter(name="isLakehouseEnabled")
     def is_lakehouse_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Lakehouse enabled status for the HeatWave cluster.
-        """
         return pulumi.get(self, "is_lakehouse_enabled")
 
     @is_lakehouse_enabled.setter
@@ -3878,10 +2731,6 @@ class MysqlDbSystemHeatWaveClusterArgs:
     @property
     @pulumi.getter(name="shapeName")
     def shape_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The name of the shape. The shape determines the resources allocated
-        * CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
-        """
         return pulumi.get(self, "shape_name")
 
     @shape_name.setter
@@ -3891,9 +2740,6 @@ class MysqlDbSystemHeatWaveClusterArgs:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The target state for the DB System. Could be set to `ACTIVE` or `INACTIVE`.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -3903,9 +2749,6 @@ class MysqlDbSystemHeatWaveClusterArgs:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time the DB System was created.
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -3915,9 +2758,6 @@ class MysqlDbSystemHeatWaveClusterArgs:
     @property
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> Optional[pulumi.Input[str]]:
-        """
-        The time the DB System was last updated.
-        """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
@@ -3929,33 +2769,11 @@ class MysqlDbSystemHeatWaveClusterArgs:
 class MysqlDbSystemMaintenanceArgs:
     def __init__(__self__, *,
                  window_start_time: pulumi.Input[str]):
-        """
-        :param pulumi.Input[str] window_start_time: (Updatable) The start of the 2 hour maintenance window.
-               
-               This string is of the format: "{day-of-week} {time-of-day}".
-               
-               "{day-of-week}" is a case-insensitive string like "mon", "tue", &c.
-               
-               "{time-of-day}" is the "Time" portion of an RFC3339-formatted timestamp. Any second or sub-second time data will be truncated to zero.
-               
-               If you set the read replica maintenance window to "" or if not specified, the read replica is set same as the DB system maintenance window.
-        """
         pulumi.set(__self__, "window_start_time", window_start_time)
 
     @property
     @pulumi.getter(name="windowStartTime")
     def window_start_time(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The start of the 2 hour maintenance window.
-
-        This string is of the format: "{day-of-week} {time-of-day}".
-
-        "{day-of-week}" is a case-insensitive string like "mon", "tue", &c.
-
-        "{time-of-day}" is the "Time" portion of an RFC3339-formatted timestamp. Any second or sub-second time data will be truncated to zero.
-
-        If you set the read replica maintenance window to "" or if not specified, the read replica is set same as the DB system maintenance window.
-        """
         return pulumi.get(self, "window_start_time")
 
     @window_start_time.setter
@@ -3968,10 +2786,6 @@ class MysqlDbSystemPointInTimeRecoveryDetailArgs:
     def __init__(__self__, *,
                  time_earliest_recovery_point: Optional[pulumi.Input[str]] = None,
                  time_latest_recovery_point: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] time_earliest_recovery_point: Earliest recovery time point for the DB System, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-        :param pulumi.Input[str] time_latest_recovery_point: Latest recovery time point for the DB System, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-        """
         if time_earliest_recovery_point is not None:
             pulumi.set(__self__, "time_earliest_recovery_point", time_earliest_recovery_point)
         if time_latest_recovery_point is not None:
@@ -3980,9 +2794,6 @@ class MysqlDbSystemPointInTimeRecoveryDetailArgs:
     @property
     @pulumi.getter(name="timeEarliestRecoveryPoint")
     def time_earliest_recovery_point(self) -> Optional[pulumi.Input[str]]:
-        """
-        Earliest recovery time point for the DB System, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-        """
         return pulumi.get(self, "time_earliest_recovery_point")
 
     @time_earliest_recovery_point.setter
@@ -3992,9 +2803,6 @@ class MysqlDbSystemPointInTimeRecoveryDetailArgs:
     @property
     @pulumi.getter(name="timeLatestRecoveryPoint")
     def time_latest_recovery_point(self) -> Optional[pulumi.Input[str]]:
-        """
-        Latest recovery time point for the DB System, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-        """
         return pulumi.get(self, "time_latest_recovery_point")
 
     @time_latest_recovery_point.setter
@@ -4010,13 +2818,6 @@ class MysqlDbSystemSourceArgs:
                  db_system_id: Optional[pulumi.Input[str]] = None,
                  recovery_point: Optional[pulumi.Input[str]] = None,
                  source_url: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] source_type: The specific source identifier. Use `BACKUP` for creating a new database by restoring from a backup. Use `IMPORTURL` for creating a new database from a URL Object Storage PAR.
-        :param pulumi.Input[str] backup_id: The OCID of the backup to be used as the source for the new DB System.
-        :param pulumi.Input[str] db_system_id: The OCID of the DB System from which a backup shall be selected to be restored when creating the new DB System. Use this together with recovery point to perform a point in time recovery operation.
-        :param pulumi.Input[str] recovery_point: The date and time, as per RFC 3339, of the change up to which the new DB System shall be restored to, using a backup and logs from the original DB System. In case no point in time is specified, then this new DB System shall be restored up to the latest change recorded for the original DB System.
-        :param pulumi.Input[str] source_url: The Pre-Authenticated Request (PAR) of a bucket/prefix or PAR of a @.manifest.json object from the Object Storage. Check [Using Pre-Authenticated Requests](https://docs.oracle.com/en-us/iaas/Content/Object/Tasks/usingpreauthenticatedrequests.htm) for information related to PAR creation. Please create PAR with "Permit object reads" access type and "Enable Object Listing" permission when using a bucket/prefix PAR. Please create PAR with "Permit object reads" access type when using a @.manifest.json object PAR.
-        """
         pulumi.set(__self__, "source_type", source_type)
         if backup_id is not None:
             pulumi.set(__self__, "backup_id", backup_id)
@@ -4030,9 +2831,6 @@ class MysqlDbSystemSourceArgs:
     @property
     @pulumi.getter(name="sourceType")
     def source_type(self) -> pulumi.Input[str]:
-        """
-        The specific source identifier. Use `BACKUP` for creating a new database by restoring from a backup. Use `IMPORTURL` for creating a new database from a URL Object Storage PAR.
-        """
         return pulumi.get(self, "source_type")
 
     @source_type.setter
@@ -4042,9 +2840,6 @@ class MysqlDbSystemSourceArgs:
     @property
     @pulumi.getter(name="backupId")
     def backup_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the backup to be used as the source for the new DB System.
-        """
         return pulumi.get(self, "backup_id")
 
     @backup_id.setter
@@ -4054,9 +2849,6 @@ class MysqlDbSystemSourceArgs:
     @property
     @pulumi.getter(name="dbSystemId")
     def db_system_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the DB System from which a backup shall be selected to be restored when creating the new DB System. Use this together with recovery point to perform a point in time recovery operation.
-        """
         return pulumi.get(self, "db_system_id")
 
     @db_system_id.setter
@@ -4066,9 +2858,6 @@ class MysqlDbSystemSourceArgs:
     @property
     @pulumi.getter(name="recoveryPoint")
     def recovery_point(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time, as per RFC 3339, of the change up to which the new DB System shall be restored to, using a backup and logs from the original DB System. In case no point in time is specified, then this new DB System shall be restored up to the latest change recorded for the original DB System.
-        """
         return pulumi.get(self, "recovery_point")
 
     @recovery_point.setter
@@ -4078,9 +2867,6 @@ class MysqlDbSystemSourceArgs:
     @property
     @pulumi.getter(name="sourceUrl")
     def source_url(self) -> Optional[pulumi.Input[str]]:
-        """
-        The Pre-Authenticated Request (PAR) of a bucket/prefix or PAR of a @.manifest.json object from the Object Storage. Check [Using Pre-Authenticated Requests](https://docs.oracle.com/en-us/iaas/Content/Object/Tasks/usingpreauthenticatedrequests.htm) for information related to PAR creation. Please create PAR with "Permit object reads" access type and "Enable Object Listing" permission when using a bucket/prefix PAR. Please create PAR with "Permit object reads" access type when using a @.manifest.json object PAR.
-        """
         return pulumi.get(self, "source_url")
 
     @source_url.setter
@@ -4094,15 +2880,6 @@ class ReplicaReplicaOverridesArgs:
                  configuration_id: Optional[pulumi.Input[str]] = None,
                  mysql_version: Optional[pulumi.Input[str]] = None,
                  shape_name: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] configuration_id: (Updatable) The OCID of the Configuration to be used by the read replica.
-        :param pulumi.Input[str] mysql_version: (Updatable) The MySQL version to be used by the read replica.
-        :param pulumi.Input[str] shape_name: (Updatable) The shape to be used by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         if configuration_id is not None:
             pulumi.set(__self__, "configuration_id", configuration_id)
         if mysql_version is not None:
@@ -4113,9 +2890,6 @@ class ReplicaReplicaOverridesArgs:
     @property
     @pulumi.getter(name="configurationId")
     def configuration_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The OCID of the Configuration to be used by the read replica.
-        """
         return pulumi.get(self, "configuration_id")
 
     @configuration_id.setter
@@ -4125,9 +2899,6 @@ class ReplicaReplicaOverridesArgs:
     @property
     @pulumi.getter(name="mysqlVersion")
     def mysql_version(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The MySQL version to be used by the read replica.
-        """
         return pulumi.get(self, "mysql_version")
 
     @mysql_version.setter
@@ -4137,13 +2908,6 @@ class ReplicaReplicaOverridesArgs:
     @property
     @pulumi.getter(name="shapeName")
     def shape_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The shape to be used by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "shape_name")
 
     @shape_name.setter
@@ -4391,9 +3155,6 @@ class GetShapesFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: Name
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -4402,9 +3163,6 @@ class GetShapesFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        Name
-        """
         return pulumi.get(self, "name")
 
     @name.setter

@@ -20,12 +20,12 @@ public final class GetGiVersionsResult {
      * @return The list of gi_versions.
      * 
      */
-    private List<GetGiVersionsGiVersion> giVersions;
+    private @Nullable List<GetGiVersionsGiVersion> giVersions;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private @Nullable String shape;
 
     private GetGiVersionsResult() {}
@@ -40,14 +40,14 @@ public final class GetGiVersionsResult {
      * 
      */
     public List<GetGiVersionsGiVersion> giVersions() {
-        return this.giVersions;
+        return this.giVersions == null ? List.of() : this.giVersions;
     }
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public Optional<String> shape() {
         return Optional.ofNullable(this.shape);
@@ -64,8 +64,8 @@ public final class GetGiVersionsResult {
     public static final class Builder {
         private String compartmentId;
         private @Nullable List<GetGiVersionsFilter> filters;
-        private List<GetGiVersionsGiVersion> giVersions;
-        private String id;
+        private @Nullable List<GetGiVersionsGiVersion> giVersions;
+        private @Nullable String id;
         private @Nullable String shape;
         public Builder() {}
         public Builder(GetGiVersionsResult defaults) {
@@ -91,16 +91,16 @@ public final class GetGiVersionsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder giVersions(List<GetGiVersionsGiVersion> giVersions) {
-            this.giVersions = Objects.requireNonNull(giVersions);
+        public Builder giVersions(@Nullable List<GetGiVersionsGiVersion> giVersions) {
+            this.giVersions = giVersions;
             return this;
         }
         public Builder giVersions(GetGiVersionsGiVersion... giVersions) {
             return giVersions(List.of(giVersions));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

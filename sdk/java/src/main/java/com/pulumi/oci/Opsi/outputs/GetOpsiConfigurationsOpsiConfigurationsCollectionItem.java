@@ -10,6 +10,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetOpsiConfigurationsOpsiConfigurationsCollectionItem {
@@ -17,175 +19,175 @@ public final class GetOpsiConfigurationsOpsiConfigurationsCollectionItem {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    private String compartmentId;
-    private List<String> configItemCustomStatuses;
-    private List<String> configItemFields;
+    private @Nullable String compartmentId;
+    private @Nullable List<String> configItemCustomStatuses;
+    private @Nullable List<String> configItemFields;
     /**
      * @return Array of configuration item summary objects.
      * 
      */
-    private List<GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItem> configItems;
-    private List<String> configItemsApplicableContexts;
+    private @Nullable List<GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItem> configItems;
+    private @Nullable List<String> configItemsApplicableContexts;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return Description of OPSI configuration.
      * 
      */
-    private String description;
+    private @Nullable String description;
     /**
      * @return Filter to return based on resources that match the entire display name.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of OPSI configuration resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
-    private String lifecycleDetails;
-    private List<String> opsiConfigFields;
+    private @Nullable String lifecycleDetails;
+    private @Nullable List<String> opsiConfigFields;
     /**
      * @return Filter to return based on configuration type of OPSI configuration.
      * 
      */
-    private String opsiConfigType;
+    private @Nullable String opsiConfigType;
     /**
      * @return Filter to return based on Lifecycle state of OPSI configuration.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    private Map<String,Object> systemTags;
+    private @Nullable Map<String,Object> systemTags;
     /**
      * @return The time at which the resource was first created. An RFC3339 formatted datetime string
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The time at which the resource was last updated. An RFC3339 formatted datetime string
      * 
      */
-    private String timeUpdated;
+    private @Nullable String timeUpdated;
 
     private GetOpsiConfigurationsOpsiConfigurationsCollectionItem() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     public List<String> configItemCustomStatuses() {
-        return this.configItemCustomStatuses;
+        return this.configItemCustomStatuses == null ? List.of() : this.configItemCustomStatuses;
     }
     public List<String> configItemFields() {
-        return this.configItemFields;
+        return this.configItemFields == null ? List.of() : this.configItemFields;
     }
     /**
      * @return Array of configuration item summary objects.
      * 
      */
     public List<GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItem> configItems() {
-        return this.configItems;
+        return this.configItems == null ? List.of() : this.configItems;
     }
     public List<String> configItemsApplicableContexts() {
-        return this.configItemsApplicableContexts;
+        return this.configItemsApplicableContexts == null ? List.of() : this.configItemsApplicableContexts;
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return Description of OPSI configuration.
      * 
      */
-    public String description() {
-        return this.description;
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
     /**
      * @return Filter to return based on resources that match the entire display name.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of OPSI configuration resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
-    public String lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Optional<String> lifecycleDetails() {
+        return Optional.ofNullable(this.lifecycleDetails);
     }
     public List<String> opsiConfigFields() {
-        return this.opsiConfigFields;
+        return this.opsiConfigFields == null ? List.of() : this.opsiConfigFields;
     }
     /**
      * @return Filter to return based on configuration type of OPSI configuration.
      * 
      */
-    public String opsiConfigType() {
-        return this.opsiConfigType;
+    public Optional<String> opsiConfigType() {
+        return Optional.ofNullable(this.opsiConfigType);
     }
     /**
      * @return Filter to return based on Lifecycle state of OPSI configuration.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
     public Map<String,Object> systemTags() {
-        return this.systemTags;
+        return this.systemTags == null ? Map.of() : this.systemTags;
     }
     /**
      * @return The time at which the resource was first created. An RFC3339 formatted datetime string
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return The time at which the resource was last updated. An RFC3339 formatted datetime string
      * 
      */
-    public String timeUpdated() {
-        return this.timeUpdated;
+    public Optional<String> timeUpdated() {
+        return Optional.ofNullable(this.timeUpdated);
     }
 
     public static Builder builder() {
@@ -197,23 +199,23 @@ public final class GetOpsiConfigurationsOpsiConfigurationsCollectionItem {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String compartmentId;
-        private List<String> configItemCustomStatuses;
-        private List<String> configItemFields;
-        private List<GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItem> configItems;
-        private List<String> configItemsApplicableContexts;
-        private Map<String,Object> definedTags;
-        private String description;
-        private String displayName;
-        private Map<String,Object> freeformTags;
-        private String id;
-        private String lifecycleDetails;
-        private List<String> opsiConfigFields;
-        private String opsiConfigType;
-        private String state;
-        private Map<String,Object> systemTags;
-        private String timeCreated;
-        private String timeUpdated;
+        private @Nullable String compartmentId;
+        private @Nullable List<String> configItemCustomStatuses;
+        private @Nullable List<String> configItemFields;
+        private @Nullable List<GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItem> configItems;
+        private @Nullable List<String> configItemsApplicableContexts;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String description;
+        private @Nullable String displayName;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String id;
+        private @Nullable String lifecycleDetails;
+        private @Nullable List<String> opsiConfigFields;
+        private @Nullable String opsiConfigType;
+        private @Nullable String state;
+        private @Nullable Map<String,Object> systemTags;
+        private @Nullable String timeCreated;
+        private @Nullable String timeUpdated;
         public Builder() {}
         public Builder(GetOpsiConfigurationsOpsiConfigurationsCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -237,103 +239,103 @@ public final class GetOpsiConfigurationsOpsiConfigurationsCollectionItem {
         }
 
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder configItemCustomStatuses(List<String> configItemCustomStatuses) {
-            this.configItemCustomStatuses = Objects.requireNonNull(configItemCustomStatuses);
+        public Builder configItemCustomStatuses(@Nullable List<String> configItemCustomStatuses) {
+            this.configItemCustomStatuses = configItemCustomStatuses;
             return this;
         }
         public Builder configItemCustomStatuses(String... configItemCustomStatuses) {
             return configItemCustomStatuses(List.of(configItemCustomStatuses));
         }
         @CustomType.Setter
-        public Builder configItemFields(List<String> configItemFields) {
-            this.configItemFields = Objects.requireNonNull(configItemFields);
+        public Builder configItemFields(@Nullable List<String> configItemFields) {
+            this.configItemFields = configItemFields;
             return this;
         }
         public Builder configItemFields(String... configItemFields) {
             return configItemFields(List.of(configItemFields));
         }
         @CustomType.Setter
-        public Builder configItems(List<GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItem> configItems) {
-            this.configItems = Objects.requireNonNull(configItems);
+        public Builder configItems(@Nullable List<GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItem> configItems) {
+            this.configItems = configItems;
             return this;
         }
         public Builder configItems(GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItem... configItems) {
             return configItems(List.of(configItems));
         }
         @CustomType.Setter
-        public Builder configItemsApplicableContexts(List<String> configItemsApplicableContexts) {
-            this.configItemsApplicableContexts = Objects.requireNonNull(configItemsApplicableContexts);
+        public Builder configItemsApplicableContexts(@Nullable List<String> configItemsApplicableContexts) {
+            this.configItemsApplicableContexts = configItemsApplicableContexts;
             return this;
         }
         public Builder configItemsApplicableContexts(String... configItemsApplicableContexts) {
             return configItemsApplicableContexts(List.of(configItemsApplicableContexts));
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+        public Builder description(@Nullable String description) {
+            this.description = description;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+        public Builder lifecycleDetails(@Nullable String lifecycleDetails) {
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
-        public Builder opsiConfigFields(List<String> opsiConfigFields) {
-            this.opsiConfigFields = Objects.requireNonNull(opsiConfigFields);
+        public Builder opsiConfigFields(@Nullable List<String> opsiConfigFields) {
+            this.opsiConfigFields = opsiConfigFields;
             return this;
         }
         public Builder opsiConfigFields(String... opsiConfigFields) {
             return opsiConfigFields(List.of(opsiConfigFields));
         }
         @CustomType.Setter
-        public Builder opsiConfigType(String opsiConfigType) {
-            this.opsiConfigType = Objects.requireNonNull(opsiConfigType);
+        public Builder opsiConfigType(@Nullable String opsiConfigType) {
+            this.opsiConfigType = opsiConfigType;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+        public Builder systemTags(@Nullable Map<String,Object> systemTags) {
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+        public Builder timeUpdated(@Nullable String timeUpdated) {
+            this.timeUpdated = timeUpdated;
             return this;
         }
         public GetOpsiConfigurationsOpsiConfigurationsCollectionItem build() {

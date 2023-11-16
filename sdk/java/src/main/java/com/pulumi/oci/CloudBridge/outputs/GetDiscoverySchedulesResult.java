@@ -23,7 +23,7 @@ public final class GetDiscoverySchedulesResult {
      * @return The list of discovery_schedule_collection.
      * 
      */
-    private List<GetDiscoverySchedulesDiscoveryScheduleCollection> discoveryScheduleCollections;
+    private @Nullable List<GetDiscoverySchedulesDiscoveryScheduleCollection> discoveryScheduleCollections;
     private @Nullable String discoveryScheduleId;
     /**
      * @return A user-friendly name for the discovery schedule. Does not have to be unique, and it&#39;s mutable. Avoid entering confidential information.
@@ -35,7 +35,7 @@ public final class GetDiscoverySchedulesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Current state of the discovery schedule.
      * 
@@ -55,7 +55,7 @@ public final class GetDiscoverySchedulesResult {
      * 
      */
     public List<GetDiscoverySchedulesDiscoveryScheduleCollection> discoveryScheduleCollections() {
-        return this.discoveryScheduleCollections;
+        return this.discoveryScheduleCollections == null ? List.of() : this.discoveryScheduleCollections;
     }
     public Optional<String> discoveryScheduleId() {
         return Optional.ofNullable(this.discoveryScheduleId);
@@ -74,8 +74,8 @@ public final class GetDiscoverySchedulesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Current state of the discovery schedule.
@@ -95,11 +95,11 @@ public final class GetDiscoverySchedulesResult {
     @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
-        private List<GetDiscoverySchedulesDiscoveryScheduleCollection> discoveryScheduleCollections;
+        private @Nullable List<GetDiscoverySchedulesDiscoveryScheduleCollection> discoveryScheduleCollections;
         private @Nullable String discoveryScheduleId;
         private @Nullable String displayName;
         private @Nullable List<GetDiscoverySchedulesFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String state;
         public Builder() {}
         public Builder(GetDiscoverySchedulesResult defaults) {
@@ -119,8 +119,8 @@ public final class GetDiscoverySchedulesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder discoveryScheduleCollections(List<GetDiscoverySchedulesDiscoveryScheduleCollection> discoveryScheduleCollections) {
-            this.discoveryScheduleCollections = Objects.requireNonNull(discoveryScheduleCollections);
+        public Builder discoveryScheduleCollections(@Nullable List<GetDiscoverySchedulesDiscoveryScheduleCollection> discoveryScheduleCollections) {
+            this.discoveryScheduleCollections = discoveryScheduleCollections;
             return this;
         }
         public Builder discoveryScheduleCollections(GetDiscoverySchedulesDiscoveryScheduleCollection... discoveryScheduleCollections) {
@@ -145,8 +145,8 @@ public final class GetDiscoverySchedulesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

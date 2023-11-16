@@ -18,7 +18,7 @@ public final class GetAccessRequestsResult {
      * @return The list of access_request_collection.
      * 
      */
-    private List<GetAccessRequestsAccessRequestCollection> accessRequestCollections;
+    private @Nullable List<GetAccessRequestsAccessRequestCollection> accessRequestCollections;
     /**
      * @return The OCID of the compartment that contains the access request.
      * 
@@ -29,7 +29,7 @@ public final class GetAccessRequestsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The name of the target resource.
      * 
@@ -54,7 +54,7 @@ public final class GetAccessRequestsResult {
      * 
      */
     public List<GetAccessRequestsAccessRequestCollection> accessRequestCollections() {
-        return this.accessRequestCollections;
+        return this.accessRequestCollections == null ? List.of() : this.accessRequestCollections;
     }
     /**
      * @return The OCID of the compartment that contains the access request.
@@ -70,8 +70,8 @@ public final class GetAccessRequestsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The name of the target resource.
@@ -110,10 +110,10 @@ public final class GetAccessRequestsResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetAccessRequestsAccessRequestCollection> accessRequestCollections;
+        private @Nullable List<GetAccessRequestsAccessRequestCollection> accessRequestCollections;
         private String compartmentId;
         private @Nullable List<GetAccessRequestsFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String resourceName;
         private @Nullable String resourceType;
         private @Nullable String state;
@@ -134,8 +134,8 @@ public final class GetAccessRequestsResult {
         }
 
         @CustomType.Setter
-        public Builder accessRequestCollections(List<GetAccessRequestsAccessRequestCollection> accessRequestCollections) {
-            this.accessRequestCollections = Objects.requireNonNull(accessRequestCollections);
+        public Builder accessRequestCollections(@Nullable List<GetAccessRequestsAccessRequestCollection> accessRequestCollections) {
+            this.accessRequestCollections = accessRequestCollections;
             return this;
         }
         public Builder accessRequestCollections(GetAccessRequestsAccessRequestCollection... accessRequestCollections) {
@@ -155,8 +155,8 @@ public final class GetAccessRequestsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

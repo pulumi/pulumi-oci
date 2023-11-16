@@ -16,35 +16,35 @@ namespace Pulumi.Oci.LicenseManager.Outputs
         /// <summary>
         /// The image ID associated with the product license.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The image listing ID.
         /// </summary>
-        public readonly string ListingId;
+        public readonly string? ListingId;
         /// <summary>
         /// The listing name associated with the product license.
         /// </summary>
-        public readonly string ListingName;
+        public readonly string? ListingName;
         /// <summary>
         /// The image package version.
         /// </summary>
-        public readonly string PackageVersion;
+        public readonly string? PackageVersion;
         /// <summary>
         /// The image publisher.
         /// </summary>
-        public readonly string Publisher;
+        public readonly string? Publisher;
 
         [OutputConstructor]
         private GetProductLicenseImageResult(
-            string id,
+            string? id,
 
-            string listingId,
+            string? listingId,
 
-            string listingName,
+            string? listingName,
 
-            string packageVersion,
+            string? packageVersion,
 
-            string publisher)
+            string? publisher)
         {
             Id = id;
             ListingId = listingId;

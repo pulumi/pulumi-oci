@@ -16,173 +16,173 @@ namespace Pulumi.Oci.OperatorAccessControl.Outputs
         /// <summary>
         /// The OCID of the user who created this operator control assignment.
         /// </summary>
-        public readonly string AssignerId;
+        public readonly string? AssignerId;
         /// <summary>
         /// Comment about the assignment of the operator control to this target resource.
         /// </summary>
-        public readonly string Comment;
+        public readonly string? Comment;
         /// <summary>
         /// The ID of the compartment in which to list resources.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace.
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// description containing reason for releasing of OperatorControl.
         /// </summary>
-        public readonly string DetachmentDescription;
+        public readonly string? DetachmentDescription;
         /// <summary>
         /// The code identifying the error occurred during Assignment operation.
         /// </summary>
-        public readonly int ErrorCode;
+        public readonly int? ErrorCode;
         /// <summary>
         /// The message describing the error occurred during Assignment operation.
         /// </summary>
-        public readonly string ErrorMessage;
+        public readonly string? ErrorMessage;
         /// <summary>
         /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// The OCID of the operator control assignment.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The boolean if true would autoApprove during maintenance.
         /// </summary>
-        public readonly bool IsAutoApproveDuringMaintenance;
+        public readonly bool? IsAutoApproveDuringMaintenance;
         /// <summary>
         /// Whether the assignment is a default assignment.
         /// </summary>
-        public readonly bool IsDefaultAssignment;
+        public readonly bool? IsDefaultAssignment;
         /// <summary>
         /// If set, then the target resource is always governed by the operator control.
         /// </summary>
-        public readonly bool IsEnforcedAlways;
+        public readonly bool? IsEnforcedAlways;
         /// <summary>
         /// If set indicates that the audit logs are being forwarded to the relevant remote logging server
         /// </summary>
-        public readonly bool IsLogForwarded;
+        public readonly bool? IsLogForwarded;
         /// <summary>
         /// More in detail about the lifeCycleState.
         /// </summary>
-        public readonly string LifecycleDetails;
+        public readonly string? LifecycleDetails;
         /// <summary>
         /// The OCID of the operator control.
         /// </summary>
-        public readonly string OperatorControlId;
+        public readonly string? OperatorControlId;
         /// <summary>
         /// The address of the remote syslog server where the audit logs are being forwarded to. Address in host or IP format.
         /// </summary>
-        public readonly string RemoteSyslogServerAddress;
+        public readonly string? RemoteSyslogServerAddress;
         /// <summary>
         /// The CA certificate of the remote syslog server.
         /// </summary>
-        public readonly string RemoteSyslogServerCaCert;
+        public readonly string? RemoteSyslogServerCaCert;
         /// <summary>
         /// The listening port of the remote syslog server. The port range is 0 - 65535. Only TCP supported.
         /// </summary>
-        public readonly int RemoteSyslogServerPort;
+        public readonly int? RemoteSyslogServerPort;
         /// <summary>
         /// The OCID of the compartment that contains the target resource.
         /// </summary>
-        public readonly string ResourceCompartmentId;
+        public readonly string? ResourceCompartmentId;
         /// <summary>
         /// The OCID of the target resource.
         /// </summary>
-        public readonly string ResourceId;
+        public readonly string? ResourceId;
         /// <summary>
         /// A filter to return only resources that match the given ResourceName.
         /// </summary>
-        public readonly string ResourceName;
+        public readonly string? ResourceName;
         /// <summary>
         /// A filter to return only lists of resources that match the entire given service type.
         /// </summary>
-        public readonly string ResourceType;
+        public readonly string? ResourceType;
         /// <summary>
         /// A filter to return only resources whose lifecycleState matches the given OperatorControlAssignment lifecycleState.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// The time at which the target resource will be brought under the governance of the operator control expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: '2020-05-22T21:10:29.600Z'
         /// </summary>
-        public readonly string TimeAssignmentFrom;
+        public readonly string? TimeAssignmentFrom;
         /// <summary>
         /// The time at which the target resource will leave the governance of the operator control expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: '2020-05-22T21:10:29.600Z'
         /// </summary>
-        public readonly string TimeAssignmentTo;
+        public readonly string? TimeAssignmentTo;
         /// <summary>
         /// Time when the operator control assignment is created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: '2020-05-22T21:10:29.600Z'
         /// </summary>
-        public readonly string TimeOfAssignment;
+        public readonly string? TimeOfAssignment;
         /// <summary>
         /// Time on which the operator control assignment was deleted in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format.Example: '2020-05-22T21:10:29.600Z'
         /// </summary>
-        public readonly string TimeOfDeletion;
+        public readonly string? TimeOfDeletion;
         /// <summary>
         /// User id who released the operatorControl.
         /// </summary>
-        public readonly string UnassignerId;
+        public readonly string? UnassignerId;
 
         [OutputConstructor]
         private GetControlAssignmentsOperatorControlAssignmentCollectionItemResult(
-            string assignerId,
+            string? assignerId,
 
-            string comment,
+            string? comment,
 
-            string compartmentId,
+            string? compartmentId,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string detachmentDescription,
+            string? detachmentDescription,
 
-            int errorCode,
+            int? errorCode,
 
-            string errorMessage,
+            string? errorMessage,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string id,
+            string? id,
 
-            bool isAutoApproveDuringMaintenance,
+            bool? isAutoApproveDuringMaintenance,
 
-            bool isDefaultAssignment,
+            bool? isDefaultAssignment,
 
-            bool isEnforcedAlways,
+            bool? isEnforcedAlways,
 
-            bool isLogForwarded,
+            bool? isLogForwarded,
 
-            string lifecycleDetails,
+            string? lifecycleDetails,
 
-            string operatorControlId,
+            string? operatorControlId,
 
-            string remoteSyslogServerAddress,
+            string? remoteSyslogServerAddress,
 
-            string remoteSyslogServerCaCert,
+            string? remoteSyslogServerCaCert,
 
-            int remoteSyslogServerPort,
+            int? remoteSyslogServerPort,
 
-            string resourceCompartmentId,
+            string? resourceCompartmentId,
 
-            string resourceId,
+            string? resourceId,
 
-            string resourceName,
+            string? resourceName,
 
-            string resourceType,
+            string? resourceType,
 
-            string state,
+            string? state,
 
-            string timeAssignmentFrom,
+            string? timeAssignmentFrom,
 
-            string timeAssignmentTo,
+            string? timeAssignmentTo,
 
-            string timeOfAssignment,
+            string? timeOfAssignment,
 
-            string timeOfDeletion,
+            string? timeOfDeletion,
 
-            string unassignerId)
+            string? unassignerId)
         {
             AssignerId = assignerId;
             Comment = comment;

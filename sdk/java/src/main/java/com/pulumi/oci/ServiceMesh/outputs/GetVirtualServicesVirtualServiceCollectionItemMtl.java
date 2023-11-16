@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetVirtualServicesVirtualServiceCollectionItemMtl {
@@ -14,39 +16,39 @@ public final class GetVirtualServicesVirtualServiceCollectionItemMtl {
      * @return The OCID of the certificate resource that will be used for mTLS authentication with other virtual services in the mesh.
      * 
      */
-    private String certificateId;
+    private @Nullable String certificateId;
     /**
      * @return The number of days the mTLS certificate is valid.  This value should be less than the Maximum Validity Duration  for Certificates (Days) setting on the Certificate Authority associated with this Mesh.  The certificate will be automatically renewed after 2/3 of the validity period, so a certificate with a maximum validity of 45 days will be renewed every 30 days.
      * 
      */
-    private Integer maximumValidity;
+    private @Nullable Integer maximumValidity;
     /**
      * @return DISABLED: Connection is not tunneled. PERMISSIVE: Connection can be either plaintext or an mTLS tunnel. STRICT: Connection is an mTLS tunnel.  Clients without a valid certificate will be rejected.
      * 
      */
-    private String mode;
+    private @Nullable String mode;
 
     private GetVirtualServicesVirtualServiceCollectionItemMtl() {}
     /**
      * @return The OCID of the certificate resource that will be used for mTLS authentication with other virtual services in the mesh.
      * 
      */
-    public String certificateId() {
-        return this.certificateId;
+    public Optional<String> certificateId() {
+        return Optional.ofNullable(this.certificateId);
     }
     /**
      * @return The number of days the mTLS certificate is valid.  This value should be less than the Maximum Validity Duration  for Certificates (Days) setting on the Certificate Authority associated with this Mesh.  The certificate will be automatically renewed after 2/3 of the validity period, so a certificate with a maximum validity of 45 days will be renewed every 30 days.
      * 
      */
-    public Integer maximumValidity() {
-        return this.maximumValidity;
+    public Optional<Integer> maximumValidity() {
+        return Optional.ofNullable(this.maximumValidity);
     }
     /**
      * @return DISABLED: Connection is not tunneled. PERMISSIVE: Connection can be either plaintext or an mTLS tunnel. STRICT: Connection is an mTLS tunnel.  Clients without a valid certificate will be rejected.
      * 
      */
-    public String mode() {
-        return this.mode;
+    public Optional<String> mode() {
+        return Optional.ofNullable(this.mode);
     }
 
     public static Builder builder() {
@@ -58,9 +60,9 @@ public final class GetVirtualServicesVirtualServiceCollectionItemMtl {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String certificateId;
-        private Integer maximumValidity;
-        private String mode;
+        private @Nullable String certificateId;
+        private @Nullable Integer maximumValidity;
+        private @Nullable String mode;
         public Builder() {}
         public Builder(GetVirtualServicesVirtualServiceCollectionItemMtl defaults) {
     	      Objects.requireNonNull(defaults);
@@ -70,18 +72,18 @@ public final class GetVirtualServicesVirtualServiceCollectionItemMtl {
         }
 
         @CustomType.Setter
-        public Builder certificateId(String certificateId) {
-            this.certificateId = Objects.requireNonNull(certificateId);
+        public Builder certificateId(@Nullable String certificateId) {
+            this.certificateId = certificateId;
             return this;
         }
         @CustomType.Setter
-        public Builder maximumValidity(Integer maximumValidity) {
-            this.maximumValidity = Objects.requireNonNull(maximumValidity);
+        public Builder maximumValidity(@Nullable Integer maximumValidity) {
+            this.maximumValidity = maximumValidity;
             return this;
         }
         @CustomType.Setter
-        public Builder mode(String mode) {
-            this.mode = Objects.requireNonNull(mode);
+        public Builder mode(@Nullable String mode) {
+            this.mode = mode;
             return this;
         }
         public GetVirtualServicesVirtualServiceCollectionItemMtl build() {

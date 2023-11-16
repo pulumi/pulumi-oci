@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Announcement Subscription resource in Oracle Cloud Infrastructure Announcements Service service.
@@ -63,35 +62,35 @@ type LookupAnnouncementSubscriptionArgs struct {
 type LookupAnnouncementSubscriptionResult struct {
 	AnnouncementSubscriptionId string `pulumi:"announcementSubscriptionId"`
 	// The OCID of the compartment that contains the announcement subscription.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A description of the announcement subscription. Avoid entering confidential information.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// A user-friendly name for the announcement subscription. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// A list of filter groups for the announcement subscription. A filter group is a combination of multiple filters applied to announcements for matching purposes.
 	FilterGroups []GetAnnouncementSubscriptionFilterGroup `pulumi:"filterGroups"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the announcement subscription.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// A message describing the current lifecycle state in more detail. For example, details might provide required or recommended actions for a resource in a Failed state.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// The OCID of the Notifications service topic that is the target for publishing announcements that match the configured announcement subscription.
-	OnsTopicId string `pulumi:"onsTopicId"`
+	OnsTopicId *string `pulumi:"onsTopicId"`
 	// (For announcement subscriptions with Oracle Fusion Applications configured as the service only) The language in which the user prefers to receive emailed announcements. Specify the preference with a value that uses the language tag format (x-obmcs-human-language). For example fr-FR.
-	PreferredLanguage string `pulumi:"preferredLanguage"`
+	PreferredLanguage *string `pulumi:"preferredLanguage"`
 	// The time zone that the user prefers for announcement time stamps. Specify the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example America/Los_Angeles.
-	PreferredTimeZone string `pulumi:"preferredTimeZone"`
+	PreferredTimeZone *string `pulumi:"preferredTimeZone"`
 	// The current lifecycle state of the announcement subscription.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The date and time that the announcement subscription was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The date and time that the announcement subscription was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 func LookupAnnouncementSubscriptionOutput(ctx *pulumi.Context, args LookupAnnouncementSubscriptionOutputArgs, opts ...pulumi.InvokeOption) LookupAnnouncementSubscriptionResultOutput {
@@ -132,19 +131,13 @@ func (o LookupAnnouncementSubscriptionResultOutput) ToLookupAnnouncementSubscrip
 	return o
 }
 
-func (o LookupAnnouncementSubscriptionResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupAnnouncementSubscriptionResult] {
-	return pulumix.Output[LookupAnnouncementSubscriptionResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o LookupAnnouncementSubscriptionResultOutput) AnnouncementSubscriptionId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAnnouncementSubscriptionResult) string { return v.AnnouncementSubscriptionId }).(pulumi.StringOutput)
 }
 
 // The OCID of the compartment that contains the announcement subscription.
-func (o LookupAnnouncementSubscriptionResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAnnouncementSubscriptionResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupAnnouncementSubscriptionResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAnnouncementSubscriptionResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -153,13 +146,13 @@ func (o LookupAnnouncementSubscriptionResultOutput) DefinedTags() pulumi.MapOutp
 }
 
 // A description of the announcement subscription. Avoid entering confidential information.
-func (o LookupAnnouncementSubscriptionResultOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAnnouncementSubscriptionResult) string { return v.Description }).(pulumi.StringOutput)
+func (o LookupAnnouncementSubscriptionResultOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAnnouncementSubscriptionResult) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // A user-friendly name for the announcement subscription. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-func (o LookupAnnouncementSubscriptionResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAnnouncementSubscriptionResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupAnnouncementSubscriptionResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAnnouncementSubscriptionResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // A list of filter groups for the announcement subscription. A filter group is a combination of multiple filters applied to announcements for matching purposes.
@@ -175,33 +168,33 @@ func (o LookupAnnouncementSubscriptionResultOutput) FreeformTags() pulumi.MapOut
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the announcement subscription.
-func (o LookupAnnouncementSubscriptionResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAnnouncementSubscriptionResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupAnnouncementSubscriptionResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAnnouncementSubscriptionResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // A message describing the current lifecycle state in more detail. For example, details might provide required or recommended actions for a resource in a Failed state.
-func (o LookupAnnouncementSubscriptionResultOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAnnouncementSubscriptionResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o LookupAnnouncementSubscriptionResultOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAnnouncementSubscriptionResult) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the Notifications service topic that is the target for publishing announcements that match the configured announcement subscription.
-func (o LookupAnnouncementSubscriptionResultOutput) OnsTopicId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAnnouncementSubscriptionResult) string { return v.OnsTopicId }).(pulumi.StringOutput)
+func (o LookupAnnouncementSubscriptionResultOutput) OnsTopicId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAnnouncementSubscriptionResult) *string { return v.OnsTopicId }).(pulumi.StringPtrOutput)
 }
 
 // (For announcement subscriptions with Oracle Fusion Applications configured as the service only) The language in which the user prefers to receive emailed announcements. Specify the preference with a value that uses the language tag format (x-obmcs-human-language). For example fr-FR.
-func (o LookupAnnouncementSubscriptionResultOutput) PreferredLanguage() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAnnouncementSubscriptionResult) string { return v.PreferredLanguage }).(pulumi.StringOutput)
+func (o LookupAnnouncementSubscriptionResultOutput) PreferredLanguage() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAnnouncementSubscriptionResult) *string { return v.PreferredLanguage }).(pulumi.StringPtrOutput)
 }
 
 // The time zone that the user prefers for announcement time stamps. Specify the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example America/Los_Angeles.
-func (o LookupAnnouncementSubscriptionResultOutput) PreferredTimeZone() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAnnouncementSubscriptionResult) string { return v.PreferredTimeZone }).(pulumi.StringOutput)
+func (o LookupAnnouncementSubscriptionResultOutput) PreferredTimeZone() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAnnouncementSubscriptionResult) *string { return v.PreferredTimeZone }).(pulumi.StringPtrOutput)
 }
 
 // The current lifecycle state of the announcement subscription.
-func (o LookupAnnouncementSubscriptionResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAnnouncementSubscriptionResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupAnnouncementSubscriptionResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAnnouncementSubscriptionResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -210,13 +203,13 @@ func (o LookupAnnouncementSubscriptionResultOutput) SystemTags() pulumi.MapOutpu
 }
 
 // The date and time that the announcement subscription was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
-func (o LookupAnnouncementSubscriptionResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAnnouncementSubscriptionResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupAnnouncementSubscriptionResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAnnouncementSubscriptionResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time that the announcement subscription was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
-func (o LookupAnnouncementSubscriptionResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAnnouncementSubscriptionResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o LookupAnnouncementSubscriptionResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAnnouncementSubscriptionResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 func init() {

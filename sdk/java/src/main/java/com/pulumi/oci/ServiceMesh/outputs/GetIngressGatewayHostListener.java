@@ -9,6 +9,8 @@ import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetIngressGatewayHostListener {
@@ -16,39 +18,39 @@ public final class GetIngressGatewayHostListener {
      * @return Port on which ingress gateway is listening.
      * 
      */
-    private Integer port;
+    private @Nullable Integer port;
     /**
      * @return Type of protocol used.
      * 
      */
-    private String protocol;
+    private @Nullable String protocol;
     /**
      * @return TLS enforcement config for the ingress listener.
      * 
      */
-    private List<GetIngressGatewayHostListenerTl> tls;
+    private @Nullable List<GetIngressGatewayHostListenerTl> tls;
 
     private GetIngressGatewayHostListener() {}
     /**
      * @return Port on which ingress gateway is listening.
      * 
      */
-    public Integer port() {
-        return this.port;
+    public Optional<Integer> port() {
+        return Optional.ofNullable(this.port);
     }
     /**
      * @return Type of protocol used.
      * 
      */
-    public String protocol() {
-        return this.protocol;
+    public Optional<String> protocol() {
+        return Optional.ofNullable(this.protocol);
     }
     /**
      * @return TLS enforcement config for the ingress listener.
      * 
      */
     public List<GetIngressGatewayHostListenerTl> tls() {
-        return this.tls;
+        return this.tls == null ? List.of() : this.tls;
     }
 
     public static Builder builder() {
@@ -60,9 +62,9 @@ public final class GetIngressGatewayHostListener {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Integer port;
-        private String protocol;
-        private List<GetIngressGatewayHostListenerTl> tls;
+        private @Nullable Integer port;
+        private @Nullable String protocol;
+        private @Nullable List<GetIngressGatewayHostListenerTl> tls;
         public Builder() {}
         public Builder(GetIngressGatewayHostListener defaults) {
     	      Objects.requireNonNull(defaults);
@@ -72,18 +74,18 @@ public final class GetIngressGatewayHostListener {
         }
 
         @CustomType.Setter
-        public Builder port(Integer port) {
-            this.port = Objects.requireNonNull(port);
+        public Builder port(@Nullable Integer port) {
+            this.port = port;
             return this;
         }
         @CustomType.Setter
-        public Builder protocol(String protocol) {
-            this.protocol = Objects.requireNonNull(protocol);
+        public Builder protocol(@Nullable String protocol) {
+            this.protocol = protocol;
             return this;
         }
         @CustomType.Setter
-        public Builder tls(List<GetIngressGatewayHostListenerTl> tls) {
-            this.tls = Objects.requireNonNull(tls);
+        public Builder tls(@Nullable List<GetIngressGatewayHostListenerTl> tls) {
+            this.tls = tls;
             return this;
         }
         public Builder tls(GetIngressGatewayHostListenerTl... tls) {

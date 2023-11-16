@@ -47,15 +47,12 @@ class GetBaselineableMetricsEvaluateResult:
 
     @property
     @pulumi.getter(name="dataPoints")
-    def data_points(self) -> Sequence['outputs.GetBaselineableMetricsEvaluateDataPointResult']:
-        """
-        list of anomaly data points for the metric
-        """
+    def data_points(self) -> Optional[Sequence['outputs.GetBaselineableMetricsEvaluateDataPointResult']]:
         return pulumi.get(self, "data_points")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -64,17 +61,11 @@ class GetBaselineableMetricsEvaluateResult:
     @property
     @pulumi.getter
     def items(self) -> Sequence['outputs.GetBaselineableMetricsEvaluateItemResult']:
-        """
-        List of Metric data
-        """
         return pulumi.get(self, "items")
 
     @property
     @pulumi.getter(name="resourceId")
     def resource_id(self) -> str:
-        """
-        OCID of the resource
-        """
         return pulumi.get(self, "resource_id")
 
 
@@ -96,35 +87,7 @@ def get_baselineable_metrics_evaluate(baselineable_metric_id: Optional[str] = No
                                       resource_id: Optional[str] = None,
                                       opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetBaselineableMetricsEvaluateResult:
     """
-    This data source provides details about a specific Baselineable Metrics Evaluate resource in Oracle Cloud Infrastructure Stack Monitoring service.
-
-    Evaluates metric for anomalies for the given data points
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_baselineable_metrics_evaluate = oci.StackMonitoring.get_baselineable_metrics_evaluate(baselineable_metric_id=oci_stack_monitoring_baselineable_metric["test_baselineable_metric"]["id"],
-        items=[oci.stack_monitoring.GetBaselineableMetricsEvaluateItemArgs(
-            evaluation_data_points=[oci.stack_monitoring.GetBaselineableMetricsEvaluateItemEvaluationDataPointArgs(
-                timestamp=var["baselineable_metrics_evaluate_items_evaluation_data_points_timestamp"],
-                value=var["baselineable_metrics_evaluate_items_evaluation_data_points_value"],
-            )],
-            training_data_points=[oci.stack_monitoring.GetBaselineableMetricsEvaluateItemTrainingDataPointArgs(
-                timestamp=var["baselineable_metrics_evaluate_items_training_data_points_timestamp"],
-                value=var["baselineable_metrics_evaluate_items_training_data_points_value"],
-            )],
-            dimensions=var["baselineable_metrics_evaluate_items_dimensions"],
-        )],
-        resource_id=oci_usage_proxy_resource["test_resource"]["id"])
-    ```
-
-
-    :param str baselineable_metric_id: Identifier for the metric
-    :param Sequence[pulumi.InputType['GetBaselineableMetricsEvaluateItemArgs']] items: List of Metric data
-    :param str resource_id: OCID of the resource
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['baselineableMetricId'] = baselineable_metric_id
@@ -147,34 +110,6 @@ def get_baselineable_metrics_evaluate_output(baselineable_metric_id: Optional[pu
                                              resource_id: Optional[pulumi.Input[str]] = None,
                                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetBaselineableMetricsEvaluateResult]:
     """
-    This data source provides details about a specific Baselineable Metrics Evaluate resource in Oracle Cloud Infrastructure Stack Monitoring service.
-
-    Evaluates metric for anomalies for the given data points
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_baselineable_metrics_evaluate = oci.StackMonitoring.get_baselineable_metrics_evaluate(baselineable_metric_id=oci_stack_monitoring_baselineable_metric["test_baselineable_metric"]["id"],
-        items=[oci.stack_monitoring.GetBaselineableMetricsEvaluateItemArgs(
-            evaluation_data_points=[oci.stack_monitoring.GetBaselineableMetricsEvaluateItemEvaluationDataPointArgs(
-                timestamp=var["baselineable_metrics_evaluate_items_evaluation_data_points_timestamp"],
-                value=var["baselineable_metrics_evaluate_items_evaluation_data_points_value"],
-            )],
-            training_data_points=[oci.stack_monitoring.GetBaselineableMetricsEvaluateItemTrainingDataPointArgs(
-                timestamp=var["baselineable_metrics_evaluate_items_training_data_points_timestamp"],
-                value=var["baselineable_metrics_evaluate_items_training_data_points_value"],
-            )],
-            dimensions=var["baselineable_metrics_evaluate_items_dimensions"],
-        )],
-        resource_id=oci_usage_proxy_resource["test_resource"]["id"])
-    ```
-
-
-    :param str baselineable_metric_id: Identifier for the metric
-    :param Sequence[pulumi.InputType['GetBaselineableMetricsEvaluateItemArgs']] items: List of Metric data
-    :param str resource_id: OCID of the resource
+    Use this data source to access information about an existing resource.
     """
     ...

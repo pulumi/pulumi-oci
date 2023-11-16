@@ -9,6 +9,8 @@ import com.pulumi.oci.Core.outputs.GetImageShapeOcpuConstraint;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetImageShapeResult {
@@ -16,7 +18,7 @@ public final class GetImageShapeResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
@@ -26,17 +28,17 @@ public final class GetImageShapeResult {
      * @return For a flexible image and shape, the amount of memory supported for instances that use this image.
      * 
      */
-    private List<GetImageShapeMemoryConstraint> memoryConstraints;
+    private @Nullable List<GetImageShapeMemoryConstraint> memoryConstraints;
     /**
      * @return OCPU options for an image and shape.
      * 
      */
-    private List<GetImageShapeOcpuConstraint> ocpuConstraints;
+    private @Nullable List<GetImageShapeOcpuConstraint> ocpuConstraints;
     /**
      * @return The shape name.
      * 
      */
-    private String shape;
+    private @Nullable String shape;
     private String shapeName;
 
     private GetImageShapeResult() {}
@@ -44,8 +46,8 @@ public final class GetImageShapeResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -59,21 +61,21 @@ public final class GetImageShapeResult {
      * 
      */
     public List<GetImageShapeMemoryConstraint> memoryConstraints() {
-        return this.memoryConstraints;
+        return this.memoryConstraints == null ? List.of() : this.memoryConstraints;
     }
     /**
      * @return OCPU options for an image and shape.
      * 
      */
     public List<GetImageShapeOcpuConstraint> ocpuConstraints() {
-        return this.ocpuConstraints;
+        return this.ocpuConstraints == null ? List.of() : this.ocpuConstraints;
     }
     /**
      * @return The shape name.
      * 
      */
-    public String shape() {
-        return this.shape;
+    public Optional<String> shape() {
+        return Optional.ofNullable(this.shape);
     }
     public String shapeName() {
         return this.shapeName;
@@ -88,11 +90,11 @@ public final class GetImageShapeResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String id;
+        private @Nullable String id;
         private String imageId;
-        private List<GetImageShapeMemoryConstraint> memoryConstraints;
-        private List<GetImageShapeOcpuConstraint> ocpuConstraints;
-        private String shape;
+        private @Nullable List<GetImageShapeMemoryConstraint> memoryConstraints;
+        private @Nullable List<GetImageShapeOcpuConstraint> ocpuConstraints;
+        private @Nullable String shape;
         private String shapeName;
         public Builder() {}
         public Builder(GetImageShapeResult defaults) {
@@ -106,8 +108,8 @@ public final class GetImageShapeResult {
         }
 
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -116,24 +118,24 @@ public final class GetImageShapeResult {
             return this;
         }
         @CustomType.Setter
-        public Builder memoryConstraints(List<GetImageShapeMemoryConstraint> memoryConstraints) {
-            this.memoryConstraints = Objects.requireNonNull(memoryConstraints);
+        public Builder memoryConstraints(@Nullable List<GetImageShapeMemoryConstraint> memoryConstraints) {
+            this.memoryConstraints = memoryConstraints;
             return this;
         }
         public Builder memoryConstraints(GetImageShapeMemoryConstraint... memoryConstraints) {
             return memoryConstraints(List.of(memoryConstraints));
         }
         @CustomType.Setter
-        public Builder ocpuConstraints(List<GetImageShapeOcpuConstraint> ocpuConstraints) {
-            this.ocpuConstraints = Objects.requireNonNull(ocpuConstraints);
+        public Builder ocpuConstraints(@Nullable List<GetImageShapeOcpuConstraint> ocpuConstraints) {
+            this.ocpuConstraints = ocpuConstraints;
             return this;
         }
         public Builder ocpuConstraints(GetImageShapeOcpuConstraint... ocpuConstraints) {
             return ocpuConstraints(List.of(ocpuConstraints));
         }
         @CustomType.Setter
-        public Builder shape(String shape) {
-            this.shape = Objects.requireNonNull(shape);
+        public Builder shape(@Nullable String shape) {
+            this.shape = shape;
             return this;
         }
         @CustomType.Setter

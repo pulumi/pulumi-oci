@@ -32,24 +32,6 @@ class JobArgs:
                  job_storage_mount_configuration_details_lists: Optional[pulumi.Input[Sequence[pulumi.Input['JobJobStorageMountConfigurationDetailsListArgs']]]] = None):
         """
         The set of arguments for constructing a Job resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the job.
-        :param pulumi.Input['JobJobConfigurationDetailsArgs'] job_configuration_details: The job configuration details
-        :param pulumi.Input['JobJobInfrastructureConfigurationDetailsArgs'] job_infrastructure_configuration_details: (Updatable) The job infrastructure configuration details (shape, block storage, etc.)
-        :param pulumi.Input[str] project_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job with.
-        :param pulumi.Input[str] artifact_content_disposition: This header allows you to specify a filename during upload. This file name is used to dispose of the file contents while downloading the file. Example: `attachment; filename=job-artifact.py`
-        :param pulumi.Input[str] artifact_content_length: The content length of the body.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[bool] delete_related_job_runs: (Updatable) Delete all related JobRuns upon deletion of the Job.
-        :param pulumi.Input[str] description: (Updatable) A short description of the job.
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly display name for the resource.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] job_artifact: The job artifact to upload. This can be done in a separate step or from cli/sdk. The Job will remain in "Creating" state until its artifact is uploaded.
-        :param pulumi.Input['JobJobLogConfigurationDetailsArgs'] job_log_configuration_details: Logging configuration for resource.
-        :param pulumi.Input[Sequence[pulumi.Input['JobJobStorageMountConfigurationDetailsListArgs']]] job_storage_mount_configuration_details_lists: (Updatable) Collection of JobStorageMountConfigurationDetails.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "job_configuration_details", job_configuration_details)
@@ -79,9 +61,6 @@ class JobArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the job.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -91,9 +70,6 @@ class JobArgs:
     @property
     @pulumi.getter(name="jobConfigurationDetails")
     def job_configuration_details(self) -> pulumi.Input['JobJobConfigurationDetailsArgs']:
-        """
-        The job configuration details
-        """
         return pulumi.get(self, "job_configuration_details")
 
     @job_configuration_details.setter
@@ -103,9 +79,6 @@ class JobArgs:
     @property
     @pulumi.getter(name="jobInfrastructureConfigurationDetails")
     def job_infrastructure_configuration_details(self) -> pulumi.Input['JobJobInfrastructureConfigurationDetailsArgs']:
-        """
-        (Updatable) The job infrastructure configuration details (shape, block storage, etc.)
-        """
         return pulumi.get(self, "job_infrastructure_configuration_details")
 
     @job_infrastructure_configuration_details.setter
@@ -115,9 +88,6 @@ class JobArgs:
     @property
     @pulumi.getter(name="projectId")
     def project_id(self) -> pulumi.Input[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job with.
-        """
         return pulumi.get(self, "project_id")
 
     @project_id.setter
@@ -127,9 +97,6 @@ class JobArgs:
     @property
     @pulumi.getter(name="artifactContentDisposition")
     def artifact_content_disposition(self) -> Optional[pulumi.Input[str]]:
-        """
-        This header allows you to specify a filename during upload. This file name is used to dispose of the file contents while downloading the file. Example: `attachment; filename=job-artifact.py`
-        """
         return pulumi.get(self, "artifact_content_disposition")
 
     @artifact_content_disposition.setter
@@ -139,13 +106,6 @@ class JobArgs:
     @property
     @pulumi.getter(name="artifactContentLength")
     def artifact_content_length(self) -> Optional[pulumi.Input[str]]:
-        """
-        The content length of the body.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "artifact_content_length")
 
     @artifact_content_length.setter
@@ -155,9 +115,6 @@ class JobArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -167,9 +124,6 @@ class JobArgs:
     @property
     @pulumi.getter(name="deleteRelatedJobRuns")
     def delete_related_job_runs(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Delete all related JobRuns upon deletion of the Job.
-        """
         return pulumi.get(self, "delete_related_job_runs")
 
     @delete_related_job_runs.setter
@@ -179,9 +133,6 @@ class JobArgs:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A short description of the job.
-        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -191,9 +142,6 @@ class JobArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A user-friendly display name for the resource.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -203,9 +151,6 @@ class JobArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -215,9 +160,6 @@ class JobArgs:
     @property
     @pulumi.getter(name="jobArtifact")
     def job_artifact(self) -> Optional[pulumi.Input[str]]:
-        """
-        The job artifact to upload. This can be done in a separate step or from cli/sdk. The Job will remain in "Creating" state until its artifact is uploaded.
-        """
         return pulumi.get(self, "job_artifact")
 
     @job_artifact.setter
@@ -227,9 +169,6 @@ class JobArgs:
     @property
     @pulumi.getter(name="jobLogConfigurationDetails")
     def job_log_configuration_details(self) -> Optional[pulumi.Input['JobJobLogConfigurationDetailsArgs']]:
-        """
-        Logging configuration for resource.
-        """
         return pulumi.get(self, "job_log_configuration_details")
 
     @job_log_configuration_details.setter
@@ -239,9 +178,6 @@ class JobArgs:
     @property
     @pulumi.getter(name="jobStorageMountConfigurationDetailsLists")
     def job_storage_mount_configuration_details_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['JobJobStorageMountConfigurationDetailsListArgs']]]]:
-        """
-        (Updatable) Collection of JobStorageMountConfigurationDetails.
-        """
         return pulumi.get(self, "job_storage_mount_configuration_details_lists")
 
     @job_storage_mount_configuration_details_lists.setter
@@ -275,28 +211,6 @@ class _JobState:
                  time_created: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering Job resources.
-        :param pulumi.Input[str] artifact_content_disposition: This header allows you to specify a filename during upload. This file name is used to dispose of the file contents while downloading the file. Example: `attachment; filename=job-artifact.py`
-        :param pulumi.Input[str] artifact_content_length: The content length of the body.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the job.
-        :param pulumi.Input[str] created_by: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the project.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[bool] delete_related_job_runs: (Updatable) Delete all related JobRuns upon deletion of the Job.
-        :param pulumi.Input[str] description: (Updatable) A short description of the job.
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly display name for the resource.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] job_artifact: The job artifact to upload. This can be done in a separate step or from cli/sdk. The Job will remain in "Creating" state until its artifact is uploaded.
-        :param pulumi.Input['JobJobConfigurationDetailsArgs'] job_configuration_details: The job configuration details
-        :param pulumi.Input['JobJobInfrastructureConfigurationDetailsArgs'] job_infrastructure_configuration_details: (Updatable) The job infrastructure configuration details (shape, block storage, etc.)
-        :param pulumi.Input['JobJobLogConfigurationDetailsArgs'] job_log_configuration_details: Logging configuration for resource.
-        :param pulumi.Input[Sequence[pulumi.Input['JobJobStorageMountConfigurationDetailsListArgs']]] job_storage_mount_configuration_details_lists: (Updatable) Collection of JobStorageMountConfigurationDetails.
-        :param pulumi.Input[str] lifecycle_details: The state of the job.
-        :param pulumi.Input[str] project_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job with.
-        :param pulumi.Input[str] state: The state of the job.
-        :param pulumi.Input[str] time_created: The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2020-08-06T21:10:29.41Z
         """
         if artifact_content_disposition is not None:
             pulumi.set(__self__, "artifact_content_disposition", artifact_content_disposition)
@@ -344,9 +258,6 @@ class _JobState:
     @property
     @pulumi.getter(name="artifactContentDisposition")
     def artifact_content_disposition(self) -> Optional[pulumi.Input[str]]:
-        """
-        This header allows you to specify a filename during upload. This file name is used to dispose of the file contents while downloading the file. Example: `attachment; filename=job-artifact.py`
-        """
         return pulumi.get(self, "artifact_content_disposition")
 
     @artifact_content_disposition.setter
@@ -356,13 +267,6 @@ class _JobState:
     @property
     @pulumi.getter(name="artifactContentLength")
     def artifact_content_length(self) -> Optional[pulumi.Input[str]]:
-        """
-        The content length of the body.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "artifact_content_length")
 
     @artifact_content_length.setter
@@ -390,9 +294,6 @@ class _JobState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the job.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -402,9 +303,6 @@ class _JobState:
     @property
     @pulumi.getter(name="createdBy")
     def created_by(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the project.
-        """
         return pulumi.get(self, "created_by")
 
     @created_by.setter
@@ -414,9 +312,6 @@ class _JobState:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -426,9 +321,6 @@ class _JobState:
     @property
     @pulumi.getter(name="deleteRelatedJobRuns")
     def delete_related_job_runs(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Delete all related JobRuns upon deletion of the Job.
-        """
         return pulumi.get(self, "delete_related_job_runs")
 
     @delete_related_job_runs.setter
@@ -438,9 +330,6 @@ class _JobState:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A short description of the job.
-        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -450,9 +339,6 @@ class _JobState:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A user-friendly display name for the resource.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -471,9 +357,6 @@ class _JobState:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -483,9 +366,6 @@ class _JobState:
     @property
     @pulumi.getter(name="jobArtifact")
     def job_artifact(self) -> Optional[pulumi.Input[str]]:
-        """
-        The job artifact to upload. This can be done in a separate step or from cli/sdk. The Job will remain in "Creating" state until its artifact is uploaded.
-        """
         return pulumi.get(self, "job_artifact")
 
     @job_artifact.setter
@@ -495,9 +375,6 @@ class _JobState:
     @property
     @pulumi.getter(name="jobConfigurationDetails")
     def job_configuration_details(self) -> Optional[pulumi.Input['JobJobConfigurationDetailsArgs']]:
-        """
-        The job configuration details
-        """
         return pulumi.get(self, "job_configuration_details")
 
     @job_configuration_details.setter
@@ -507,9 +384,6 @@ class _JobState:
     @property
     @pulumi.getter(name="jobInfrastructureConfigurationDetails")
     def job_infrastructure_configuration_details(self) -> Optional[pulumi.Input['JobJobInfrastructureConfigurationDetailsArgs']]:
-        """
-        (Updatable) The job infrastructure configuration details (shape, block storage, etc.)
-        """
         return pulumi.get(self, "job_infrastructure_configuration_details")
 
     @job_infrastructure_configuration_details.setter
@@ -519,9 +393,6 @@ class _JobState:
     @property
     @pulumi.getter(name="jobLogConfigurationDetails")
     def job_log_configuration_details(self) -> Optional[pulumi.Input['JobJobLogConfigurationDetailsArgs']]:
-        """
-        Logging configuration for resource.
-        """
         return pulumi.get(self, "job_log_configuration_details")
 
     @job_log_configuration_details.setter
@@ -531,9 +402,6 @@ class _JobState:
     @property
     @pulumi.getter(name="jobStorageMountConfigurationDetailsLists")
     def job_storage_mount_configuration_details_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['JobJobStorageMountConfigurationDetailsListArgs']]]]:
-        """
-        (Updatable) Collection of JobStorageMountConfigurationDetails.
-        """
         return pulumi.get(self, "job_storage_mount_configuration_details_lists")
 
     @job_storage_mount_configuration_details_lists.setter
@@ -543,9 +411,6 @@ class _JobState:
     @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> Optional[pulumi.Input[str]]:
-        """
-        The state of the job.
-        """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
@@ -555,9 +420,6 @@ class _JobState:
     @property
     @pulumi.getter(name="projectId")
     def project_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job with.
-        """
         return pulumi.get(self, "project_id")
 
     @project_id.setter
@@ -567,9 +429,6 @@ class _JobState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The state of the job.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -579,9 +438,6 @@ class _JobState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2020-08-06T21:10:29.41Z
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -610,89 +466,9 @@ class Job(pulumi.CustomResource):
                  project_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Job resource in Oracle Cloud Infrastructure Data Science service.
-
-        Creates a job.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_job = oci.data_science.Job("testJob",
-            compartment_id=var["compartment_id"],
-            job_configuration_details=oci.data_science.JobJobConfigurationDetailsArgs(
-                job_type=var["job_job_configuration_details_job_type"],
-                command_line_arguments=var["job_job_configuration_details_command_line_arguments"],
-                environment_variables=var["job_job_configuration_details_environment_variables"],
-                maximum_runtime_in_minutes=var["job_job_configuration_details_maximum_runtime_in_minutes"],
-            ),
-            job_infrastructure_configuration_details=oci.data_science.JobJobInfrastructureConfigurationDetailsArgs(
-                block_storage_size_in_gbs=var["job_job_infrastructure_configuration_details_block_storage_size_in_gbs"],
-                job_infrastructure_type=var["job_job_infrastructure_configuration_details_job_infrastructure_type"],
-                shape_name=oci_core_shape["test_shape"]["name"],
-                job_shape_config_details=oci.data_science.JobJobInfrastructureConfigurationDetailsJobShapeConfigDetailsArgs(
-                    memory_in_gbs=var["job_job_infrastructure_configuration_details_job_shape_config_details_memory_in_gbs"],
-                    ocpus=var["job_job_infrastructure_configuration_details_job_shape_config_details_ocpus"],
-                ),
-                subnet_id=oci_core_subnet["test_subnet"]["id"],
-            ),
-            project_id=oci_datascience_project["test_project"]["id"],
-            defined_tags={
-                "Operations.CostCenter": "42",
-            },
-            description=var["job_description"],
-            display_name=var["job_display_name"],
-            freeform_tags={
-                "Department": "Finance",
-            },
-            job_log_configuration_details=oci.data_science.JobJobLogConfigurationDetailsArgs(
-                enable_auto_log_creation=var["job_job_log_configuration_details_enable_auto_log_creation"],
-                enable_logging=var["job_job_log_configuration_details_enable_logging"],
-                log_group_id=oci_logging_log_group["test_log_group"]["id"],
-                log_id=oci_logging_log["test_log"]["id"],
-            ),
-            job_storage_mount_configuration_details_lists=[oci.data_science.JobJobStorageMountConfigurationDetailsListArgs(
-                destination_directory_name=var["job_job_storage_mount_configuration_details_list_destination_directory_name"],
-                storage_type=var["job_job_storage_mount_configuration_details_list_storage_type"],
-                bucket=var["job_job_storage_mount_configuration_details_list_bucket"],
-                destination_path=var["job_job_storage_mount_configuration_details_list_destination_path"],
-                export_id=oci_file_storage_export["test_export"]["id"],
-                mount_target_id=oci_file_storage_mount_target["test_mount_target"]["id"],
-                namespace=var["job_job_storage_mount_configuration_details_list_namespace"],
-                prefix=var["job_job_storage_mount_configuration_details_list_prefix"],
-            )])
-        ```
-
-        ## Import
-
-        Jobs can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:DataScience/job:Job test_job "id"
-        ```
-
+        Create a Job resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] artifact_content_disposition: This header allows you to specify a filename during upload. This file name is used to dispose of the file contents while downloading the file. Example: `attachment; filename=job-artifact.py`
-        :param pulumi.Input[str] artifact_content_length: The content length of the body.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the job.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[bool] delete_related_job_runs: (Updatable) Delete all related JobRuns upon deletion of the Job.
-        :param pulumi.Input[str] description: (Updatable) A short description of the job.
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly display name for the resource.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] job_artifact: The job artifact to upload. This can be done in a separate step or from cli/sdk. The Job will remain in "Creating" state until its artifact is uploaded.
-        :param pulumi.Input[pulumi.InputType['JobJobConfigurationDetailsArgs']] job_configuration_details: The job configuration details
-        :param pulumi.Input[pulumi.InputType['JobJobInfrastructureConfigurationDetailsArgs']] job_infrastructure_configuration_details: (Updatable) The job infrastructure configuration details (shape, block storage, etc.)
-        :param pulumi.Input[pulumi.InputType['JobJobLogConfigurationDetailsArgs']] job_log_configuration_details: Logging configuration for resource.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['JobJobStorageMountConfigurationDetailsListArgs']]]] job_storage_mount_configuration_details_lists: (Updatable) Collection of JobStorageMountConfigurationDetails.
-        :param pulumi.Input[str] project_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job with.
         """
         ...
     @overload
@@ -701,69 +477,7 @@ class Job(pulumi.CustomResource):
                  args: JobArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Job resource in Oracle Cloud Infrastructure Data Science service.
-
-        Creates a job.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_job = oci.data_science.Job("testJob",
-            compartment_id=var["compartment_id"],
-            job_configuration_details=oci.data_science.JobJobConfigurationDetailsArgs(
-                job_type=var["job_job_configuration_details_job_type"],
-                command_line_arguments=var["job_job_configuration_details_command_line_arguments"],
-                environment_variables=var["job_job_configuration_details_environment_variables"],
-                maximum_runtime_in_minutes=var["job_job_configuration_details_maximum_runtime_in_minutes"],
-            ),
-            job_infrastructure_configuration_details=oci.data_science.JobJobInfrastructureConfigurationDetailsArgs(
-                block_storage_size_in_gbs=var["job_job_infrastructure_configuration_details_block_storage_size_in_gbs"],
-                job_infrastructure_type=var["job_job_infrastructure_configuration_details_job_infrastructure_type"],
-                shape_name=oci_core_shape["test_shape"]["name"],
-                job_shape_config_details=oci.data_science.JobJobInfrastructureConfigurationDetailsJobShapeConfigDetailsArgs(
-                    memory_in_gbs=var["job_job_infrastructure_configuration_details_job_shape_config_details_memory_in_gbs"],
-                    ocpus=var["job_job_infrastructure_configuration_details_job_shape_config_details_ocpus"],
-                ),
-                subnet_id=oci_core_subnet["test_subnet"]["id"],
-            ),
-            project_id=oci_datascience_project["test_project"]["id"],
-            defined_tags={
-                "Operations.CostCenter": "42",
-            },
-            description=var["job_description"],
-            display_name=var["job_display_name"],
-            freeform_tags={
-                "Department": "Finance",
-            },
-            job_log_configuration_details=oci.data_science.JobJobLogConfigurationDetailsArgs(
-                enable_auto_log_creation=var["job_job_log_configuration_details_enable_auto_log_creation"],
-                enable_logging=var["job_job_log_configuration_details_enable_logging"],
-                log_group_id=oci_logging_log_group["test_log_group"]["id"],
-                log_id=oci_logging_log["test_log"]["id"],
-            ),
-            job_storage_mount_configuration_details_lists=[oci.data_science.JobJobStorageMountConfigurationDetailsListArgs(
-                destination_directory_name=var["job_job_storage_mount_configuration_details_list_destination_directory_name"],
-                storage_type=var["job_job_storage_mount_configuration_details_list_storage_type"],
-                bucket=var["job_job_storage_mount_configuration_details_list_bucket"],
-                destination_path=var["job_job_storage_mount_configuration_details_list_destination_path"],
-                export_id=oci_file_storage_export["test_export"]["id"],
-                mount_target_id=oci_file_storage_mount_target["test_mount_target"]["id"],
-                namespace=var["job_job_storage_mount_configuration_details_list_namespace"],
-                prefix=var["job_job_storage_mount_configuration_details_list_prefix"],
-            )])
-        ```
-
-        ## Import
-
-        Jobs can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:DataScience/job:Job test_job "id"
-        ```
-
+        Create a Job resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param JobArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -869,28 +583,6 @@ class Job(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] artifact_content_disposition: This header allows you to specify a filename during upload. This file name is used to dispose of the file contents while downloading the file. Example: `attachment; filename=job-artifact.py`
-        :param pulumi.Input[str] artifact_content_length: The content length of the body.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the job.
-        :param pulumi.Input[str] created_by: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the project.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[bool] delete_related_job_runs: (Updatable) Delete all related JobRuns upon deletion of the Job.
-        :param pulumi.Input[str] description: (Updatable) A short description of the job.
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly display name for the resource.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] job_artifact: The job artifact to upload. This can be done in a separate step or from cli/sdk. The Job will remain in "Creating" state until its artifact is uploaded.
-        :param pulumi.Input[pulumi.InputType['JobJobConfigurationDetailsArgs']] job_configuration_details: The job configuration details
-        :param pulumi.Input[pulumi.InputType['JobJobInfrastructureConfigurationDetailsArgs']] job_infrastructure_configuration_details: (Updatable) The job infrastructure configuration details (shape, block storage, etc.)
-        :param pulumi.Input[pulumi.InputType['JobJobLogConfigurationDetailsArgs']] job_log_configuration_details: Logging configuration for resource.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['JobJobStorageMountConfigurationDetailsListArgs']]]] job_storage_mount_configuration_details_lists: (Updatable) Collection of JobStorageMountConfigurationDetails.
-        :param pulumi.Input[str] lifecycle_details: The state of the job.
-        :param pulumi.Input[str] project_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job with.
-        :param pulumi.Input[str] state: The state of the job.
-        :param pulumi.Input[str] time_created: The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2020-08-06T21:10:29.41Z
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -922,163 +614,105 @@ class Job(pulumi.CustomResource):
     @property
     @pulumi.getter(name="artifactContentDisposition")
     def artifact_content_disposition(self) -> pulumi.Output[Optional[str]]:
-        """
-        This header allows you to specify a filename during upload. This file name is used to dispose of the file contents while downloading the file. Example: `attachment; filename=job-artifact.py`
-        """
         return pulumi.get(self, "artifact_content_disposition")
 
     @property
     @pulumi.getter(name="artifactContentLength")
     def artifact_content_length(self) -> pulumi.Output[Optional[str]]:
-        """
-        The content length of the body.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "artifact_content_length")
 
     @property
     @pulumi.getter(name="artifactContentMd5")
-    def artifact_content_md5(self) -> pulumi.Output[str]:
+    def artifact_content_md5(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "artifact_content_md5")
 
     @property
     @pulumi.getter(name="artifactLastModified")
-    def artifact_last_modified(self) -> pulumi.Output[str]:
+    def artifact_last_modified(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "artifact_last_modified")
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the job.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="createdBy")
-    def created_by(self) -> pulumi.Output[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the project.
-        """
+    def created_by(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "created_by")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="deleteRelatedJobRuns")
     def delete_related_job_runs(self) -> pulumi.Output[Optional[bool]]:
-        """
-        (Updatable) Delete all related JobRuns upon deletion of the Job.
-        """
         return pulumi.get(self, "delete_related_job_runs")
 
     @property
     @pulumi.getter
-    def description(self) -> pulumi.Output[str]:
-        """
-        (Updatable) A short description of the job.
-        """
+    def description(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> pulumi.Output[str]:
-        """
-        (Updatable) A user-friendly display name for the resource.
-        """
+    def display_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="emptyArtifact")
-    def empty_artifact(self) -> pulumi.Output[bool]:
+    def empty_artifact(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "empty_artifact")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="jobArtifact")
     def job_artifact(self) -> pulumi.Output[Optional[str]]:
-        """
-        The job artifact to upload. This can be done in a separate step or from cli/sdk. The Job will remain in "Creating" state until its artifact is uploaded.
-        """
         return pulumi.get(self, "job_artifact")
 
     @property
     @pulumi.getter(name="jobConfigurationDetails")
     def job_configuration_details(self) -> pulumi.Output['outputs.JobJobConfigurationDetails']:
-        """
-        The job configuration details
-        """
         return pulumi.get(self, "job_configuration_details")
 
     @property
     @pulumi.getter(name="jobInfrastructureConfigurationDetails")
     def job_infrastructure_configuration_details(self) -> pulumi.Output['outputs.JobJobInfrastructureConfigurationDetails']:
-        """
-        (Updatable) The job infrastructure configuration details (shape, block storage, etc.)
-        """
         return pulumi.get(self, "job_infrastructure_configuration_details")
 
     @property
     @pulumi.getter(name="jobLogConfigurationDetails")
-    def job_log_configuration_details(self) -> pulumi.Output['outputs.JobJobLogConfigurationDetails']:
-        """
-        Logging configuration for resource.
-        """
+    def job_log_configuration_details(self) -> pulumi.Output[Optional['outputs.JobJobLogConfigurationDetails']]:
         return pulumi.get(self, "job_log_configuration_details")
 
     @property
     @pulumi.getter(name="jobStorageMountConfigurationDetailsLists")
-    def job_storage_mount_configuration_details_lists(self) -> pulumi.Output[Sequence['outputs.JobJobStorageMountConfigurationDetailsList']]:
-        """
-        (Updatable) Collection of JobStorageMountConfigurationDetails.
-        """
+    def job_storage_mount_configuration_details_lists(self) -> pulumi.Output[Optional[Sequence['outputs.JobJobStorageMountConfigurationDetailsList']]]:
         return pulumi.get(self, "job_storage_mount_configuration_details_lists")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> pulumi.Output[str]:
-        """
-        The state of the job.
-        """
+    def lifecycle_details(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="projectId")
     def project_id(self) -> pulumi.Output[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job with.
-        """
         return pulumi.get(self, "project_id")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        The state of the job.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2020-08-06T21:10:29.41Z
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 

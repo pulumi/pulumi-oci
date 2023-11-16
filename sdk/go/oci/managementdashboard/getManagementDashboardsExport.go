@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Management Dashboards Export resource in Oracle Cloud Infrastructure Management Dashboard service.
@@ -63,9 +62,9 @@ type GetManagementDashboardsExportArgs struct {
 type GetManagementDashboardsExportResult struct {
 	ExportDashboardId string `pulumi:"exportDashboardId"`
 	// String containing Array of Dashboards exported, check [ManagementDashboardExportDetails](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/managementdashboard/20200901/datatypes/ManagementDashboardExportDetails) for exact contents in the string value. The value of `exportDetails` can be used to pass as `importDetails` (CompartmentIds may have to be changed) in `ManagementDashboard.ManagementDashboardsImport` resource.
-	ExportDetails string `pulumi:"exportDetails"`
+	ExportDetails *string `pulumi:"exportDetails"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 }
 
 func GetManagementDashboardsExportOutput(ctx *pulumi.Context, args GetManagementDashboardsExportOutputArgs, opts ...pulumi.InvokeOption) GetManagementDashboardsExportResultOutput {
@@ -106,24 +105,18 @@ func (o GetManagementDashboardsExportResultOutput) ToGetManagementDashboardsExpo
 	return o
 }
 
-func (o GetManagementDashboardsExportResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagementDashboardsExportResult] {
-	return pulumix.Output[GetManagementDashboardsExportResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetManagementDashboardsExportResultOutput) ExportDashboardId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetManagementDashboardsExportResult) string { return v.ExportDashboardId }).(pulumi.StringOutput)
 }
 
 // String containing Array of Dashboards exported, check [ManagementDashboardExportDetails](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/managementdashboard/20200901/datatypes/ManagementDashboardExportDetails) for exact contents in the string value. The value of `exportDetails` can be used to pass as `importDetails` (CompartmentIds may have to be changed) in `ManagementDashboard.ManagementDashboardsImport` resource.
-func (o GetManagementDashboardsExportResultOutput) ExportDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagementDashboardsExportResult) string { return v.ExportDetails }).(pulumi.StringOutput)
+func (o GetManagementDashboardsExportResultOutput) ExportDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagementDashboardsExportResult) *string { return v.ExportDetails }).(pulumi.StringPtrOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetManagementDashboardsExportResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagementDashboardsExportResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetManagementDashboardsExportResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagementDashboardsExportResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func init() {

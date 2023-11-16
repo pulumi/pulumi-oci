@@ -16,23 +16,23 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// A machine-usable code for the error that occured.
         /// </summary>
-        public readonly string Code;
+        public readonly string? Code;
         /// <summary>
         /// A human-readable error string.
         /// </summary>
-        public readonly string Message;
+        public readonly string? Message;
         /// <summary>
         /// The date and time the error occurred.
         /// </summary>
-        public readonly string Timestamp;
+        public readonly string? Timestamp;
 
         [OutputConstructor]
         private GetIamWorkRequestErrorsIamWorkRequestErrorResult(
-            string code,
+            string? code,
 
-            string message,
+            string? message,
 
-            string timestamp)
+            string? timestamp)
         {
             Code = code;
             Message = message;

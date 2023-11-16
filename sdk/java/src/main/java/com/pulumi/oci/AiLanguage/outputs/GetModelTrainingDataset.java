@@ -8,6 +8,8 @@ import com.pulumi.oci.AiLanguage.outputs.GetModelTrainingDatasetLocationDetail;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetModelTrainingDataset {
@@ -15,39 +17,39 @@ public final class GetModelTrainingDataset {
      * @return Data Science Labelling Service OCID
      * 
      */
-    private String datasetId;
+    private @Nullable String datasetId;
     /**
      * @return Possible data sets
      * 
      */
-    private String datasetType;
+    private @Nullable String datasetType;
     /**
      * @return Possible object storage location types
      * 
      */
-    private List<GetModelTrainingDatasetLocationDetail> locationDetails;
+    private @Nullable List<GetModelTrainingDatasetLocationDetail> locationDetails;
 
     private GetModelTrainingDataset() {}
     /**
      * @return Data Science Labelling Service OCID
      * 
      */
-    public String datasetId() {
-        return this.datasetId;
+    public Optional<String> datasetId() {
+        return Optional.ofNullable(this.datasetId);
     }
     /**
      * @return Possible data sets
      * 
      */
-    public String datasetType() {
-        return this.datasetType;
+    public Optional<String> datasetType() {
+        return Optional.ofNullable(this.datasetType);
     }
     /**
      * @return Possible object storage location types
      * 
      */
     public List<GetModelTrainingDatasetLocationDetail> locationDetails() {
-        return this.locationDetails;
+        return this.locationDetails == null ? List.of() : this.locationDetails;
     }
 
     public static Builder builder() {
@@ -59,9 +61,9 @@ public final class GetModelTrainingDataset {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String datasetId;
-        private String datasetType;
-        private List<GetModelTrainingDatasetLocationDetail> locationDetails;
+        private @Nullable String datasetId;
+        private @Nullable String datasetType;
+        private @Nullable List<GetModelTrainingDatasetLocationDetail> locationDetails;
         public Builder() {}
         public Builder(GetModelTrainingDataset defaults) {
     	      Objects.requireNonNull(defaults);
@@ -71,18 +73,18 @@ public final class GetModelTrainingDataset {
         }
 
         @CustomType.Setter
-        public Builder datasetId(String datasetId) {
-            this.datasetId = Objects.requireNonNull(datasetId);
+        public Builder datasetId(@Nullable String datasetId) {
+            this.datasetId = datasetId;
             return this;
         }
         @CustomType.Setter
-        public Builder datasetType(String datasetType) {
-            this.datasetType = Objects.requireNonNull(datasetType);
+        public Builder datasetType(@Nullable String datasetType) {
+            this.datasetType = datasetType;
             return this;
         }
         @CustomType.Setter
-        public Builder locationDetails(List<GetModelTrainingDatasetLocationDetail> locationDetails) {
-            this.locationDetails = Objects.requireNonNull(locationDetails);
+        public Builder locationDetails(@Nullable List<GetModelTrainingDatasetLocationDetail> locationDetails) {
+            this.locationDetails = locationDetails;
             return this;
         }
         public Builder locationDetails(GetModelTrainingDatasetLocationDetail... locationDetails) {

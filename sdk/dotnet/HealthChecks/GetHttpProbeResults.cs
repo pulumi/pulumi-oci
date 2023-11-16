@@ -177,7 +177,7 @@ namespace Pulumi.Oci.HealthChecks
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The OCID of the monitor or on-demand probe responsible for creating this result.
         /// </summary>
@@ -195,7 +195,7 @@ namespace Pulumi.Oci.HealthChecks
 
             ImmutableArray<Outputs.GetHttpProbeResultsHttpProbeResultResult> httpProbeResults,
 
-            string id,
+            string? id,
 
             string probeConfigurationId,
 

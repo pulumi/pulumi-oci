@@ -18,7 +18,7 @@ public final class GetRemediationRunApplicationDependencyRecommendationsResult {
      * @return The list of application_dependency_recommendation_collection.
      * 
      */
-    private List<GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollection> applicationDependencyRecommendationCollections;
+    private @Nullable List<GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollection> applicationDependencyRecommendationCollections;
     private @Nullable List<GetRemediationRunApplicationDependencyRecommendationsFilter> filters;
     /**
      * @return Unique Group Artifact Version (GAV) identifier in the format _Group:Artifact:Version_, e.g. org.graalvm.nativeimage:svm:21.1.0.
@@ -29,7 +29,7 @@ public final class GetRemediationRunApplicationDependencyRecommendationsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private String remediationRunId;
 
     private GetRemediationRunApplicationDependencyRecommendationsResult() {}
@@ -38,7 +38,7 @@ public final class GetRemediationRunApplicationDependencyRecommendationsResult {
      * 
      */
     public List<GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollection> applicationDependencyRecommendationCollections() {
-        return this.applicationDependencyRecommendationCollections;
+        return this.applicationDependencyRecommendationCollections == null ? List.of() : this.applicationDependencyRecommendationCollections;
     }
     public List<GetRemediationRunApplicationDependencyRecommendationsFilter> filters() {
         return this.filters == null ? List.of() : this.filters;
@@ -54,8 +54,8 @@ public final class GetRemediationRunApplicationDependencyRecommendationsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public String remediationRunId() {
         return this.remediationRunId;
@@ -70,10 +70,10 @@ public final class GetRemediationRunApplicationDependencyRecommendationsResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollection> applicationDependencyRecommendationCollections;
+        private @Nullable List<GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollection> applicationDependencyRecommendationCollections;
         private @Nullable List<GetRemediationRunApplicationDependencyRecommendationsFilter> filters;
         private @Nullable String gav;
-        private String id;
+        private @Nullable String id;
         private String remediationRunId;
         public Builder() {}
         public Builder(GetRemediationRunApplicationDependencyRecommendationsResult defaults) {
@@ -86,8 +86,8 @@ public final class GetRemediationRunApplicationDependencyRecommendationsResult {
         }
 
         @CustomType.Setter
-        public Builder applicationDependencyRecommendationCollections(List<GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollection> applicationDependencyRecommendationCollections) {
-            this.applicationDependencyRecommendationCollections = Objects.requireNonNull(applicationDependencyRecommendationCollections);
+        public Builder applicationDependencyRecommendationCollections(@Nullable List<GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollection> applicationDependencyRecommendationCollections) {
+            this.applicationDependencyRecommendationCollections = applicationDependencyRecommendationCollections;
             return this;
         }
         public Builder applicationDependencyRecommendationCollections(GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollection... applicationDependencyRecommendationCollections) {
@@ -107,8 +107,8 @@ public final class GetRemediationRunApplicationDependencyRecommendationsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

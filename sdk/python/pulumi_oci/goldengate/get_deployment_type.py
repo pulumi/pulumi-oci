@@ -44,14 +44,11 @@ class GetDeploymentTypeResult:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        An object's Display Name.
-        """
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -59,10 +56,7 @@ class GetDeploymentTypeResult:
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetDeploymentTypeItemResult']:
-        """
-        Array of DeploymentTypeSummary
-        """
+    def items(self) -> Optional[Sequence['outputs.GetDeploymentTypeItemResult']]:
         return pulumi.get(self, "items")
 
 
@@ -82,23 +76,7 @@ def get_deployment_type(compartment_id: Optional[str] = None,
                         display_name: Optional[str] = None,
                         opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDeploymentTypeResult:
     """
-    This data source provides details about a specific Deployment Type resource in Oracle Cloud Infrastructure Golden Gate service.
-
-    Returns an array of DeploymentTypeDescriptor
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_deployment_type = oci.GoldenGate.get_deployment_type(compartment_id=var["compartment_id"],
-        display_name=var["deployment_type_display_name"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
-    :param str display_name: A filter to return only the resources that match the entire 'displayName' given.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -118,22 +96,6 @@ def get_deployment_type_output(compartment_id: Optional[pulumi.Input[str]] = Non
                                display_name: Optional[pulumi.Input[Optional[str]]] = None,
                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDeploymentTypeResult]:
     """
-    This data source provides details about a specific Deployment Type resource in Oracle Cloud Infrastructure Golden Gate service.
-
-    Returns an array of DeploymentTypeDescriptor
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_deployment_type = oci.GoldenGate.get_deployment_type(compartment_id=var["compartment_id"],
-        display_name=var["deployment_type_display_name"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
-    :param str display_name: A filter to return only the resources that match the entire 'displayName' given.
+    Use this data source to access information about an existing resource.
     """
     ...

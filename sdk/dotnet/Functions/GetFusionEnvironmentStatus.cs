@@ -109,19 +109,19 @@ namespace Pulumi.Oci.Functions
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The data plane status of FusionEnvironment.
         /// </summary>
-        public readonly string Status;
+        public readonly string? Status;
 
         [OutputConstructor]
         private GetFusionEnvironmentStatusResult(
             string fusionEnvironmentId,
 
-            string id,
+            string? id,
 
-            string status)
+            string? status)
         {
             FusionEnvironmentId = fusionEnvironmentId;
             Id = id;

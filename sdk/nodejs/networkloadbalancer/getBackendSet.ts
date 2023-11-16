@@ -42,29 +42,29 @@ export interface GetBackendSetResult {
     /**
      * Array of backends.
      */
-    readonly backends: outputs.NetworkLoadBalancer.GetBackendSetBackend[];
+    readonly backends?: outputs.NetworkLoadBalancer.GetBackendSetBackend[];
     /**
      * The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/editinghealthcheck.htm).
      */
-    readonly healthCheckers: outputs.NetworkLoadBalancer.GetBackendSetHealthChecker[];
-    readonly id: string;
+    readonly healthCheckers?: outputs.NetworkLoadBalancer.GetBackendSetHealthChecker[];
+    readonly id?: string;
     /**
      * IP version associated with the backend set.
      */
-    readonly ipVersion: string;
+    readonly ipVersion?: string;
     /**
      * If this parameter is enabled, then the network load balancer preserves the source IP of the packet when it is forwarded to backends. Backends see the original source IP. If the isPreserveSourceDestination parameter is enabled for the network load balancer resource, then this parameter cannot be disabled. The value is true by default.
      */
-    readonly isPreserveSource: boolean;
+    readonly isPreserveSource?: boolean;
     /**
      * A user-friendly name for the backend set that must be unique and cannot be changed.
      */
-    readonly name: string;
+    readonly name?: string;
     readonly networkLoadBalancerId: string;
     /**
      * The network load balancer policy for the backend set.  Example: `FIVE_TUPLE`
      */
-    readonly policy: string;
+    readonly policy?: string;
 }
 /**
  * This data source provides details about a specific Backend Set resource in Oracle Cloud Infrastructure Network Load Balancer service.

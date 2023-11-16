@@ -16,7 +16,7 @@ public final class GetRepositoryArchiveContentResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private @Nullable String refName;
     private String repositoryId;
 
@@ -28,8 +28,8 @@ public final class GetRepositoryArchiveContentResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public Optional<String> refName() {
         return Optional.ofNullable(this.refName);
@@ -48,7 +48,7 @@ public final class GetRepositoryArchiveContentResult {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable String format;
-        private String id;
+        private @Nullable String id;
         private @Nullable String refName;
         private String repositoryId;
         public Builder() {}
@@ -66,8 +66,8 @@ public final class GetRepositoryArchiveContentResult {
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

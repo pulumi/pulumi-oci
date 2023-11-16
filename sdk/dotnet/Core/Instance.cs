@@ -71,7 +71,7 @@ namespace Pulumi.Oci.Core
         /// (Updatable) Configuration options for the Oracle Cloud Agent software running on the instance.
         /// </summary>
         [Output("agentConfig")]
-        public Output<Outputs.InstanceAgentConfig> AgentConfig { get; private set; } = null!;
+        public Output<Outputs.InstanceAgentConfig?> AgentConfig { get; private set; } = null!;
 
         [Output("async")]
         public Output<bool?> Async { get; private set; } = null!;
@@ -80,7 +80,7 @@ namespace Pulumi.Oci.Core
         /// (Updatable) Options for VM migration during infrastructure maintenance events and for defining the availability of a VM instance after a maintenance event that impacts the underlying hardware.
         /// </summary>
         [Output("availabilityConfig")]
-        public Output<Outputs.InstanceAvailabilityConfig> AvailabilityConfig { get; private set; } = null!;
+        public Output<Outputs.InstanceAvailabilityConfig?> AvailabilityConfig { get; private set; } = null!;
 
         /// <summary>
         /// The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
@@ -92,13 +92,13 @@ namespace Pulumi.Oci.Core
         /// The OCID of the attached boot volume. If the `source_type` is `bootVolume`, this will be the same OCID as the `source_id`.
         /// </summary>
         [Output("bootVolumeId")]
-        public Output<string> BootVolumeId { get; private set; } = null!;
+        public Output<string?> BootVolumeId { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The OCID of the compute capacity reservation this instance is launched under. You can opt out of all default reservations by specifying an empty string as input for this field. For more information, see [Capacity Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default).
         /// </summary>
         [Output("capacityReservationId")]
-        public Output<string> CapacityReservationId { get; private set; } = null!;
+        public Output<string?> CapacityReservationId { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The OCID of the compartment containing images to search
@@ -110,34 +110,34 @@ namespace Pulumi.Oci.Core
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) that the instance will be created in.
         /// </summary>
         [Output("computeClusterId")]
-        public Output<string> ComputeClusterId { get; private set; } = null!;
+        public Output<string?> ComputeClusterId { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Contains properties for a VNIC. You use this object when creating the primary VNIC during instance launch or when creating a secondary VNIC. For more information about VNICs, see [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
         /// </summary>
         [Output("createVnicDetails")]
-        public Output<Outputs.InstanceCreateVnicDetails> CreateVnicDetails { get; private set; } = null!;
+        public Output<Outputs.InstanceCreateVnicDetails?> CreateVnicDetails { get; private set; } = null!;
 
         /// <summary>
         /// The OCID of the dedicated virtual machine host to place the instance on.
         /// </summary>
         [Output("dedicatedVmHostId")]
-        public Output<string> DedicatedVmHostId { get; private set; } = null!;
+        public Output<string?> DedicatedVmHostId { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         /// </summary>
         [Output("displayName")]
-        public Output<string> DisplayName { get; private set; } = null!;
+        public Output<string?> DisplayName { get; private set; } = null!;
 
         [Output("extendedMetadata")]
-        public Output<ImmutableDictionary<string, object>> ExtendedMetadata { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> ExtendedMetadata { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) A fault domain is a grouping of hardware and infrastructure within an availability domain. Each availability domain contains three fault domains. Fault domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or Compute hardware maintenance that affects one fault domain does not affect instances in other fault domains.
@@ -149,37 +149,37 @@ namespace Pulumi.Oci.Core
         /// Example: `FAULT-DOMAIN-1`
         /// </summary>
         [Output("faultDomain")]
-        public Output<string> FaultDomain { get; private set; } = null!;
+        public Output<string?> FaultDomain { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// Deprecated. Instead use `hostnameLabel` in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/). If you provide both, the values must match.
         /// </summary>
         [Output("hostnameLabel")]
-        public Output<string> HostnameLabel { get; private set; } = null!;
+        public Output<string?> HostnameLabel { get; private set; } = null!;
 
         /// <summary>
         /// Deprecated. Use `sourceDetails` with [InstanceSourceViaImageDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/requests/InstanceSourceViaImageDetails) source type instead. If you specify values for both, the values must match.
         /// </summary>
         [Output("image")]
-        public Output<string> Image { get; private set; } = null!;
+        public Output<string?> Image { get; private set; } = null!;
 
         /// <summary>
         /// The OCID of the Instance Configuration containing instance launch details. Any other fields supplied in this instance launch request will override the details stored in the Instance Configuration for this instance launch.
         /// </summary>
         [Output("instanceConfigurationId")]
-        public Output<string> InstanceConfigurationId { get; private set; } = null!;
+        public Output<string?> InstanceConfigurationId { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Optional mutable instance options
         /// </summary>
         [Output("instanceOptions")]
-        public Output<Outputs.InstanceInstanceOptions> InstanceOptions { get; private set; } = null!;
+        public Output<Outputs.InstanceInstanceOptions?> InstanceOptions { get; private set; } = null!;
 
         /// <summary>
         /// This is an advanced option.
@@ -197,31 +197,31 @@ namespace Pulumi.Oci.Core
         /// For more information about iPXE, see http://ipxe.org.
         /// </summary>
         [Output("ipxeScript")]
-        public Output<string> IpxeScript { get; private set; } = null!;
+        public Output<string?> IpxeScript { get; private set; } = null!;
 
         /// <summary>
         /// Whether the instance’s OCPUs and memory are distributed across multiple NUMA nodes.
         /// </summary>
         [Output("isCrossNumaNode")]
-        public Output<bool> IsCrossNumaNode { get; private set; } = null!;
+        public Output<bool?> IsCrossNumaNode { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Use this for update operation only. This field is  Deprecated during create. For create use `isPvEncryptionInTransitEnabled` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/datatypes/LaunchInstanceDetails).
         /// </summary>
         [Output("isPvEncryptionInTransitEnabled")]
-        public Output<bool> IsPvEncryptionInTransitEnabled { get; private set; } = null!;
+        public Output<bool?> IsPvEncryptionInTransitEnabled { get; private set; } = null!;
 
         /// <summary>
         /// Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
         /// </summary>
         [Output("launchMode")]
-        public Output<string> LaunchMode { get; private set; } = null!;
+        public Output<string?> LaunchMode { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Options for tuning the compatibility and performance of VM shapes. The values that you specify override any default values.
         /// </summary>
         [Output("launchOptions")]
-        public Output<Outputs.InstanceLaunchOptions> LaunchOptions { get; private set; } = null!;
+        public Output<Outputs.InstanceLaunchOptions?> LaunchOptions { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Custom metadata key/value pairs that you provide, such as the SSH public key required to connect to the instance.
@@ -262,7 +262,7 @@ namespace Pulumi.Oci.Core
         /// **Note:** Both the 'user_data' and 'ssh_authorized_keys' fields cannot be changed after an instance has launched. Any request which updates, removes, or adds either of these fields will be rejected. You must provide the same values for 'user_data' and 'ssh_authorized_keys' that already exist on the instance.
         /// </summary>
         [Output("metadata")]
-        public Output<ImmutableDictionary<string, object>> Metadata { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> Metadata { get; private set; } = null!;
 
         /// <summary>
         /// The platform configuration requested for the instance.
@@ -276,13 +276,13 @@ namespace Pulumi.Oci.Core
         /// For more information about BIOS settings for bare metal instances, see [BIOS Settings for Bare Metal Instances](https://docs.cloud.oracle.com/iaas/Content/Compute/References/bios-settings.htm).
         /// </summary>
         [Output("platformConfig")]
-        public Output<Outputs.InstancePlatformConfig> PlatformConfig { get; private set; } = null!;
+        public Output<Outputs.InstancePlatformConfig?> PlatformConfig { get; private set; } = null!;
 
         /// <summary>
         /// Configuration options for preemptible instances.
         /// </summary>
         [Output("preemptibleInstanceConfig")]
-        public Output<Outputs.InstancePreemptibleInstanceConfig> PreemptibleInstanceConfig { get; private set; } = null!;
+        public Output<Outputs.InstancePreemptibleInstanceConfig?> PreemptibleInstanceConfig { get; private set; } = null!;
 
         /// <summary>
         /// Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. Defaults to false if not specified.
@@ -298,19 +298,19 @@ namespace Pulumi.Oci.Core
         /// Example: `10.0.3.3`
         /// </summary>
         [Output("privateIp")]
-        public Output<string> PrivateIp { get; private set; } = null!;
+        public Output<string?> PrivateIp { get; private set; } = null!;
 
         /// <summary>
         /// The public IP address of instance VNIC (if enabled).
         /// </summary>
         [Output("publicIp")]
-        public Output<string> PublicIp { get; private set; } = null!;
+        public Output<string?> PublicIp { get; private set; } = null!;
 
         /// <summary>
         /// The region that contains the availability domain the instance is running in.
         /// </summary>
         [Output("region")]
-        public Output<string> Region { get; private set; } = null!;
+        public Output<string?> Region { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
@@ -318,7 +318,7 @@ namespace Pulumi.Oci.Core
         /// You can enumerate all available shapes by calling [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Shape/ListShapes).
         /// </summary>
         [Output("shape")]
-        public Output<string> Shape { get; private set; } = null!;
+        public Output<string?> Shape { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The shape configuration requested for the instance.
@@ -328,13 +328,13 @@ namespace Pulumi.Oci.Core
         /// Each shape only supports certain configurable values. If the values that you provide are not valid for the specified `shape`, an error is returned.
         /// </summary>
         [Output("shapeConfig")]
-        public Output<Outputs.InstanceShapeConfig> ShapeConfig { get; private set; } = null!;
+        public Output<Outputs.InstanceShapeConfig?> ShapeConfig { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable)
         /// </summary>
         [Output("sourceDetails")]
-        public Output<Outputs.InstanceSourceDetails> SourceDetails { get; private set; } = null!;
+        public Output<Outputs.InstanceSourceDetails?> SourceDetails { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The target state for the instance. Could be set to RUNNING or STOPPED.
@@ -343,31 +343,31 @@ namespace Pulumi.Oci.Core
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// Deprecated. Instead use `subnetId` in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/). At least one of them is required; if you provide both, the values must match.
         /// </summary>
         [Output("subnetId")]
-        public Output<string> SubnetId { get; private set; } = null!;
+        public Output<string?> SubnetId { get; private set; } = null!;
 
         /// <summary>
         /// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
         [Output("systemTags")]
-        public Output<ImmutableDictionary<string, object>> SystemTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> SystemTags { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the instance was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the instance is expected to be stopped / started,  in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). After that time if instance hasn't been rebooted, Oracle will reboot the instance within 24 hours of the due time. Regardless of how the instance was stopped, the flag will be reset to empty as soon as instance reaches Stopped state. Example: `2018-05-25T21:10:29.600Z`
         /// </summary>
         [Output("timeMaintenanceRebootDue")]
-        public Output<string> TimeMaintenanceRebootDue { get; private set; } = null!;
+        public Output<string?> TimeMaintenanceRebootDue { get; private set; } = null!;
 
         [Output("updateOperationConstraint")]
         public Output<string?> UpdateOperationConstraint { get; private set; } = null!;

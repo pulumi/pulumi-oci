@@ -16,41 +16,41 @@ namespace Pulumi.Oci.GoldenGate.Outputs
         /// <summary>
         /// The type of deployment, the value determines the exact 'type' of the service executed in the deployment. Default value is DATABASE_ORACLE.
         /// </summary>
-        public readonly string DeploymentType;
+        public readonly string? DeploymentType;
         /// <summary>
         /// Indicates if OGG release contains security fix.
         /// </summary>
-        public readonly bool IsSecurityFix;
+        public readonly bool? IsSecurityFix;
         /// <summary>
         /// Version of OGG
         /// </summary>
-        public readonly string OggVersion;
+        public readonly string? OggVersion;
         /// <summary>
         /// The type of release.
         /// </summary>
-        public readonly string ReleaseType;
+        public readonly string? ReleaseType;
         /// <summary>
         /// The time the resource was released. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         /// </summary>
-        public readonly string TimeReleased;
+        public readonly string? TimeReleased;
         /// <summary>
         /// The time until OGG version is supported. After this date has passed OGG version will not be available anymore. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         /// </summary>
-        public readonly string TimeSupportedUntil;
+        public readonly string? TimeSupportedUntil;
 
         [OutputConstructor]
         private GetDeploymentVersionsDeploymentVersionCollectionItemResult(
-            string deploymentType,
+            string? deploymentType,
 
-            bool isSecurityFix,
+            bool? isSecurityFix,
 
-            string oggVersion,
+            string? oggVersion,
 
-            string releaseType,
+            string? releaseType,
 
-            string timeReleased,
+            string? timeReleased,
 
-            string timeSupportedUntil)
+            string? timeSupportedUntil)
         {
             DeploymentType = deploymentType;
             IsSecurityFix = isSecurityFix;

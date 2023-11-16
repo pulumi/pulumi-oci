@@ -208,11 +208,11 @@ export class Migration extends pulumi.CustomResource {
     /**
      * (Updatable) Optional Pre-Migration advisor settings.
      */
-    public readonly advisorSettings!: pulumi.Output<outputs.DatabaseMigration.MigrationAdvisorSettings>;
+    public readonly advisorSettings!: pulumi.Output<outputs.DatabaseMigration.MigrationAdvisorSettings | undefined>;
     /**
      * (Updatable) The OCID of the registered ODMS Agent. Only valid for Offline Logical Migrations.
      */
-    public readonly agentId!: pulumi.Output<string>;
+    public readonly agentId!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) OCID of the compartment where the secret containing the credentials will be created.
      */
@@ -220,64 +220,64 @@ export class Migration extends pulumi.CustomResource {
     /**
      * OCID of the Secret in the Oracle Cloud Infrastructure vault containing the Migration credentials. Used to store GoldenGate administrator user credentials.
      */
-    public /*out*/ readonly credentialsSecretId!: pulumi.Output<string>;
+    public /*out*/ readonly credentialsSecretId!: pulumi.Output<string | undefined>;
     /**
      * Database objects to exclude/include from migration in CSV format. The excludeObjects and includeObjects fields will be ignored if this field is not null.
      */
-    public readonly csvText!: pulumi.Output<string>;
+    public readonly csvText!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Data Transfer Medium details for the Migration. If not specified, it will default to Database Link. Only one type of data transfer medium can be specified.
      */
-    public readonly dataTransferMediumDetails!: pulumi.Output<outputs.DatabaseMigration.MigrationDataTransferMediumDetails>;
-    public readonly dataTransferMediumDetailsV2!: pulumi.Output<outputs.DatabaseMigration.MigrationDataTransferMediumDetailsV2>;
+    public readonly dataTransferMediumDetails!: pulumi.Output<outputs.DatabaseMigration.MigrationDataTransferMediumDetails | undefined>;
+    public readonly dataTransferMediumDetailsV2!: pulumi.Output<outputs.DatabaseMigration.MigrationDataTransferMediumDetailsV2 | undefined>;
     /**
      * (Updatable) Optional settings for Data Pump Export and Import jobs
      */
-    public readonly datapumpSettings!: pulumi.Output<outputs.DatabaseMigration.MigrationDatapumpSettings>;
+    public readonly datapumpSettings!: pulumi.Output<outputs.DatabaseMigration.MigrationDatapumpSettings | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) Migration Display Name
      */
-    public readonly displayName!: pulumi.Output<string>;
+    public readonly displayName!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Optional additional properties for dump transfer.
      */
-    public readonly dumpTransferDetails!: pulumi.Output<outputs.DatabaseMigration.MigrationDumpTransferDetails>;
+    public readonly dumpTransferDetails!: pulumi.Output<outputs.DatabaseMigration.MigrationDumpTransferDetails | undefined>;
     /**
      * (Updatable) Database objects to exclude from migration, cannot be specified alongside 'includeObjects'
      */
-    public readonly excludeObjects!: pulumi.Output<outputs.DatabaseMigration.MigrationExcludeObject[]>;
+    public readonly excludeObjects!: pulumi.Output<outputs.DatabaseMigration.MigrationExcludeObject[] | undefined>;
     /**
      * OCID of the current ODMS Job in execution for the Migration, if any.
      */
-    public /*out*/ readonly executingJobId!: pulumi.Output<string>;
+    public /*out*/ readonly executingJobId!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) Details about Oracle GoldenGate Microservices. Required for online logical migration.
      */
-    public readonly goldenGateDetails!: pulumi.Output<outputs.DatabaseMigration.MigrationGoldenGateDetails>;
+    public readonly goldenGateDetails!: pulumi.Output<outputs.DatabaseMigration.MigrationGoldenGateDetails | undefined>;
     /**
      * (Updatable) Details about Oracle GoldenGate GGS Deployment.
      */
-    public readonly goldenGateServiceDetails!: pulumi.Output<outputs.DatabaseMigration.MigrationGoldenGateServiceDetails>;
+    public readonly goldenGateServiceDetails!: pulumi.Output<outputs.DatabaseMigration.MigrationGoldenGateServiceDetails | undefined>;
     /**
      * (Updatable) Database objects to include from migration, cannot be specified alongside 'excludeObjects'
      */
-    public readonly includeObjects!: pulumi.Output<outputs.DatabaseMigration.MigrationIncludeObject[]>;
+    public readonly includeObjects!: pulumi.Output<outputs.DatabaseMigration.MigrationIncludeObject[] | undefined>;
     /**
      * Additional status related to the execution and current state of the Migration.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The OCID of the Source Container Database Connection. Only used for Online migrations. Only Connections of type Non-Autonomous can be used as source container databases.
      */
-    public readonly sourceContainerDatabaseConnectionId!: pulumi.Output<string>;
+    public readonly sourceContainerDatabaseConnectionId!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The OCID of the Source Database Connection.
      */
@@ -285,11 +285,11 @@ export class Migration extends pulumi.CustomResource {
     /**
      * The current state of the Migration resource.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any}>;
+    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) The OCID of the Target Database Connection.
      */
@@ -297,15 +297,15 @@ export class Migration extends pulumi.CustomResource {
     /**
      * The time the Migration was created. An RFC3339 formatted datetime string.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * The time of last Migration. An RFC3339 formatted datetime string.
      */
-    public /*out*/ readonly timeLastMigration!: pulumi.Output<string>;
+    public /*out*/ readonly timeLastMigration!: pulumi.Output<string | undefined>;
     /**
      * The time of the last Migration details update. An RFC3339 formatted datetime string.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    public /*out*/ readonly timeUpdated!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Migration type.
      */
@@ -313,11 +313,11 @@ export class Migration extends pulumi.CustomResource {
     /**
      * (Updatable) Oracle Cloud Infrastructure Vault details to store migration and connection credentials secrets
      */
-    public readonly vaultDetails!: pulumi.Output<outputs.DatabaseMigration.MigrationVaultDetails>;
+    public readonly vaultDetails!: pulumi.Output<outputs.DatabaseMigration.MigrationVaultDetails | undefined>;
     /**
      * Name of a migration phase. The Job will wait after executing this phase until the Resume Job endpoint is called.
      */
-    public /*out*/ readonly waitAfter!: pulumi.Output<string>;
+    public /*out*/ readonly waitAfter!: pulumi.Output<string | undefined>;
 
     /**
      * Create a Migration resource with the given unique name, arguments, and options.

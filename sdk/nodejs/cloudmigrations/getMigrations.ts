@@ -77,11 +77,11 @@ export interface GetMigrationsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The list of migration_collection.
      */
-    readonly migrationCollections: outputs.CloudMigrations.GetMigrationsMigrationCollection[];
+    readonly migrationCollections?: outputs.CloudMigrations.GetMigrationsMigrationCollection[];
     readonly migrationId?: string;
     /**
      * The current state of migration.

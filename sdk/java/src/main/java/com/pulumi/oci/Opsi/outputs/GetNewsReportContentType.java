@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetNewsReportContentType {
@@ -14,7 +15,7 @@ public final class GetNewsReportContentType {
      * @return Supported resources for capacity planning content type.
      * 
      */
-    private List<String> capacityPlanningResources;
+    private @Nullable List<String> capacityPlanningResources;
 
     private GetNewsReportContentType() {}
     /**
@@ -22,7 +23,7 @@ public final class GetNewsReportContentType {
      * 
      */
     public List<String> capacityPlanningResources() {
-        return this.capacityPlanningResources;
+        return this.capacityPlanningResources == null ? List.of() : this.capacityPlanningResources;
     }
 
     public static Builder builder() {
@@ -34,7 +35,7 @@ public final class GetNewsReportContentType {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<String> capacityPlanningResources;
+        private @Nullable List<String> capacityPlanningResources;
         public Builder() {}
         public Builder(GetNewsReportContentType defaults) {
     	      Objects.requireNonNull(defaults);
@@ -42,8 +43,8 @@ public final class GetNewsReportContentType {
         }
 
         @CustomType.Setter
-        public Builder capacityPlanningResources(List<String> capacityPlanningResources) {
-            this.capacityPlanningResources = Objects.requireNonNull(capacityPlanningResources);
+        public Builder capacityPlanningResources(@Nullable List<String> capacityPlanningResources) {
+            this.capacityPlanningResources = capacityPlanningResources;
             return this;
         }
         public Builder capacityPlanningResources(String... capacityPlanningResources) {

@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetManagementAgentPluginList {
@@ -14,87 +16,87 @@ public final class GetManagementAgentPluginList {
      * @return flag indicating whether the plugin is in enabled mode or disabled mode.
      * 
      */
-    private Boolean isEnabled;
+    private @Nullable Boolean isEnabled;
     /**
      * @return Management Agent Plugin Identifier, can be renamed
      * 
      */
-    private String pluginDisplayName;
+    private @Nullable String pluginDisplayName;
     /**
      * @return Plugin Id
      * 
      */
-    private String pluginId;
+    private @Nullable String pluginId;
     /**
      * @return Management Agent Plugin Name
      * 
      */
-    private String pluginName;
+    private @Nullable String pluginName;
     /**
      * @return Plugin Status
      * 
      */
-    private String pluginStatus;
+    private @Nullable String pluginStatus;
     /**
      * @return Status message of the Plugin
      * 
      */
-    private String pluginStatusMessage;
+    private @Nullable String pluginStatusMessage;
     /**
      * @return Plugin Version
      * 
      */
-    private String pluginVersion;
+    private @Nullable String pluginVersion;
 
     private GetManagementAgentPluginList() {}
     /**
      * @return flag indicating whether the plugin is in enabled mode or disabled mode.
      * 
      */
-    public Boolean isEnabled() {
-        return this.isEnabled;
+    public Optional<Boolean> isEnabled() {
+        return Optional.ofNullable(this.isEnabled);
     }
     /**
      * @return Management Agent Plugin Identifier, can be renamed
      * 
      */
-    public String pluginDisplayName() {
-        return this.pluginDisplayName;
+    public Optional<String> pluginDisplayName() {
+        return Optional.ofNullable(this.pluginDisplayName);
     }
     /**
      * @return Plugin Id
      * 
      */
-    public String pluginId() {
-        return this.pluginId;
+    public Optional<String> pluginId() {
+        return Optional.ofNullable(this.pluginId);
     }
     /**
      * @return Management Agent Plugin Name
      * 
      */
-    public String pluginName() {
-        return this.pluginName;
+    public Optional<String> pluginName() {
+        return Optional.ofNullable(this.pluginName);
     }
     /**
      * @return Plugin Status
      * 
      */
-    public String pluginStatus() {
-        return this.pluginStatus;
+    public Optional<String> pluginStatus() {
+        return Optional.ofNullable(this.pluginStatus);
     }
     /**
      * @return Status message of the Plugin
      * 
      */
-    public String pluginStatusMessage() {
-        return this.pluginStatusMessage;
+    public Optional<String> pluginStatusMessage() {
+        return Optional.ofNullable(this.pluginStatusMessage);
     }
     /**
      * @return Plugin Version
      * 
      */
-    public String pluginVersion() {
-        return this.pluginVersion;
+    public Optional<String> pluginVersion() {
+        return Optional.ofNullable(this.pluginVersion);
     }
 
     public static Builder builder() {
@@ -106,13 +108,13 @@ public final class GetManagementAgentPluginList {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Boolean isEnabled;
-        private String pluginDisplayName;
-        private String pluginId;
-        private String pluginName;
-        private String pluginStatus;
-        private String pluginStatusMessage;
-        private String pluginVersion;
+        private @Nullable Boolean isEnabled;
+        private @Nullable String pluginDisplayName;
+        private @Nullable String pluginId;
+        private @Nullable String pluginName;
+        private @Nullable String pluginStatus;
+        private @Nullable String pluginStatusMessage;
+        private @Nullable String pluginVersion;
         public Builder() {}
         public Builder(GetManagementAgentPluginList defaults) {
     	      Objects.requireNonNull(defaults);
@@ -126,38 +128,38 @@ public final class GetManagementAgentPluginList {
         }
 
         @CustomType.Setter
-        public Builder isEnabled(Boolean isEnabled) {
-            this.isEnabled = Objects.requireNonNull(isEnabled);
+        public Builder isEnabled(@Nullable Boolean isEnabled) {
+            this.isEnabled = isEnabled;
             return this;
         }
         @CustomType.Setter
-        public Builder pluginDisplayName(String pluginDisplayName) {
-            this.pluginDisplayName = Objects.requireNonNull(pluginDisplayName);
+        public Builder pluginDisplayName(@Nullable String pluginDisplayName) {
+            this.pluginDisplayName = pluginDisplayName;
             return this;
         }
         @CustomType.Setter
-        public Builder pluginId(String pluginId) {
-            this.pluginId = Objects.requireNonNull(pluginId);
+        public Builder pluginId(@Nullable String pluginId) {
+            this.pluginId = pluginId;
             return this;
         }
         @CustomType.Setter
-        public Builder pluginName(String pluginName) {
-            this.pluginName = Objects.requireNonNull(pluginName);
+        public Builder pluginName(@Nullable String pluginName) {
+            this.pluginName = pluginName;
             return this;
         }
         @CustomType.Setter
-        public Builder pluginStatus(String pluginStatus) {
-            this.pluginStatus = Objects.requireNonNull(pluginStatus);
+        public Builder pluginStatus(@Nullable String pluginStatus) {
+            this.pluginStatus = pluginStatus;
             return this;
         }
         @CustomType.Setter
-        public Builder pluginStatusMessage(String pluginStatusMessage) {
-            this.pluginStatusMessage = Objects.requireNonNull(pluginStatusMessage);
+        public Builder pluginStatusMessage(@Nullable String pluginStatusMessage) {
+            this.pluginStatusMessage = pluginStatusMessage;
             return this;
         }
         @CustomType.Setter
-        public Builder pluginVersion(String pluginVersion) {
-            this.pluginVersion = Objects.requireNonNull(pluginVersion);
+        public Builder pluginVersion(@Nullable String pluginVersion) {
+            this.pluginVersion = pluginVersion;
             return this;
         }
         public GetManagementAgentPluginList build() {

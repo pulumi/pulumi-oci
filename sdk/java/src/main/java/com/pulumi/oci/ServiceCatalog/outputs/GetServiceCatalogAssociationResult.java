@@ -6,6 +6,8 @@ package com.pulumi.oci.ServiceCatalog.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetServiceCatalogAssociationResult {
@@ -13,50 +15,50 @@ public final class GetServiceCatalogAssociationResult {
      * @return Identifier of the entity being associated with service catalog.
      * 
      */
-    private String entityId;
+    private @Nullable String entityId;
     /**
      * @return The type of the entity that is associated with the service catalog.
      * 
      */
-    private String entityType;
+    private @Nullable String entityType;
     /**
      * @return Identifier of the association.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private String serviceCatalogAssociationId;
     /**
      * @return Identifier of the service catalog.
      * 
      */
-    private String serviceCatalogId;
+    private @Nullable String serviceCatalogId;
     /**
      * @return Timestamp of when the resource was associated with service catalog.
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
 
     private GetServiceCatalogAssociationResult() {}
     /**
      * @return Identifier of the entity being associated with service catalog.
      * 
      */
-    public String entityId() {
-        return this.entityId;
+    public Optional<String> entityId() {
+        return Optional.ofNullable(this.entityId);
     }
     /**
      * @return The type of the entity that is associated with the service catalog.
      * 
      */
-    public String entityType() {
-        return this.entityType;
+    public Optional<String> entityType() {
+        return Optional.ofNullable(this.entityType);
     }
     /**
      * @return Identifier of the association.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public String serviceCatalogAssociationId() {
         return this.serviceCatalogAssociationId;
@@ -65,15 +67,15 @@ public final class GetServiceCatalogAssociationResult {
      * @return Identifier of the service catalog.
      * 
      */
-    public String serviceCatalogId() {
-        return this.serviceCatalogId;
+    public Optional<String> serviceCatalogId() {
+        return Optional.ofNullable(this.serviceCatalogId);
     }
     /**
      * @return Timestamp of when the resource was associated with service catalog.
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
 
     public static Builder builder() {
@@ -85,12 +87,12 @@ public final class GetServiceCatalogAssociationResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String entityId;
-        private String entityType;
-        private String id;
+        private @Nullable String entityId;
+        private @Nullable String entityType;
+        private @Nullable String id;
         private String serviceCatalogAssociationId;
-        private String serviceCatalogId;
-        private String timeCreated;
+        private @Nullable String serviceCatalogId;
+        private @Nullable String timeCreated;
         public Builder() {}
         public Builder(GetServiceCatalogAssociationResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -103,18 +105,18 @@ public final class GetServiceCatalogAssociationResult {
         }
 
         @CustomType.Setter
-        public Builder entityId(String entityId) {
-            this.entityId = Objects.requireNonNull(entityId);
+        public Builder entityId(@Nullable String entityId) {
+            this.entityId = entityId;
             return this;
         }
         @CustomType.Setter
-        public Builder entityType(String entityType) {
-            this.entityType = Objects.requireNonNull(entityType);
+        public Builder entityType(@Nullable String entityType) {
+            this.entityType = entityType;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -123,13 +125,13 @@ public final class GetServiceCatalogAssociationResult {
             return this;
         }
         @CustomType.Setter
-        public Builder serviceCatalogId(String serviceCatalogId) {
-            this.serviceCatalogId = Objects.requireNonNull(serviceCatalogId);
+        public Builder serviceCatalogId(@Nullable String serviceCatalogId) {
+            this.serviceCatalogId = serviceCatalogId;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         public GetServiceCatalogAssociationResult build() {

@@ -10,6 +10,8 @@ import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetChannelsChannelSource {
@@ -17,38 +19,38 @@ public final class GetChannelsChannelSource {
      * @return Specifies how the replication channel handles replicated transactions without an identifier, enabling replication from a source that does not use transaction-id-based replication to a replica that does.
      * 
      */
-    private List<GetChannelsChannelSourceAnonymousTransactionsHandling> anonymousTransactionsHandlings;
+    private @Nullable List<GetChannelsChannelSourceAnonymousTransactionsHandling> anonymousTransactionsHandlings;
     /**
      * @return The network address of the MySQL instance.
      * 
      */
-    private String hostname;
-    private String password;
+    private @Nullable String hostname;
+    private @Nullable String password;
     /**
      * @return The port the source MySQL instance listens on.
      * 
      */
-    private Integer port;
+    private @Nullable Integer port;
     /**
      * @return The specific source identifier.
      * 
      */
-    private String sourceType;
+    private @Nullable String sourceType;
     /**
      * @return The CA certificate of the server used for VERIFY_IDENTITY and VERIFY_CA ssl modes.
      * 
      */
-    private List<GetChannelsChannelSourceSslCaCertificate> sslCaCertificates;
+    private @Nullable List<GetChannelsChannelSourceSslCaCertificate> sslCaCertificates;
     /**
      * @return The SSL mode of the Channel.
      * 
      */
-    private String sslMode;
+    private @Nullable String sslMode;
     /**
      * @return The name of the replication user on the source MySQL instance. The username has a maximum length of 96 characters. For more information, please see the [MySQL documentation](https://dev.mysql.com/doc/refman/8.0/en/change-master-to.html)
      * 
      */
-    private String username;
+    private @Nullable String username;
 
     private GetChannelsChannelSource() {}
     /**
@@ -56,52 +58,52 @@ public final class GetChannelsChannelSource {
      * 
      */
     public List<GetChannelsChannelSourceAnonymousTransactionsHandling> anonymousTransactionsHandlings() {
-        return this.anonymousTransactionsHandlings;
+        return this.anonymousTransactionsHandlings == null ? List.of() : this.anonymousTransactionsHandlings;
     }
     /**
      * @return The network address of the MySQL instance.
      * 
      */
-    public String hostname() {
-        return this.hostname;
+    public Optional<String> hostname() {
+        return Optional.ofNullable(this.hostname);
     }
-    public String password() {
-        return this.password;
+    public Optional<String> password() {
+        return Optional.ofNullable(this.password);
     }
     /**
      * @return The port the source MySQL instance listens on.
      * 
      */
-    public Integer port() {
-        return this.port;
+    public Optional<Integer> port() {
+        return Optional.ofNullable(this.port);
     }
     /**
      * @return The specific source identifier.
      * 
      */
-    public String sourceType() {
-        return this.sourceType;
+    public Optional<String> sourceType() {
+        return Optional.ofNullable(this.sourceType);
     }
     /**
      * @return The CA certificate of the server used for VERIFY_IDENTITY and VERIFY_CA ssl modes.
      * 
      */
     public List<GetChannelsChannelSourceSslCaCertificate> sslCaCertificates() {
-        return this.sslCaCertificates;
+        return this.sslCaCertificates == null ? List.of() : this.sslCaCertificates;
     }
     /**
      * @return The SSL mode of the Channel.
      * 
      */
-    public String sslMode() {
-        return this.sslMode;
+    public Optional<String> sslMode() {
+        return Optional.ofNullable(this.sslMode);
     }
     /**
      * @return The name of the replication user on the source MySQL instance. The username has a maximum length of 96 characters. For more information, please see the [MySQL documentation](https://dev.mysql.com/doc/refman/8.0/en/change-master-to.html)
      * 
      */
-    public String username() {
-        return this.username;
+    public Optional<String> username() {
+        return Optional.ofNullable(this.username);
     }
 
     public static Builder builder() {
@@ -113,14 +115,14 @@ public final class GetChannelsChannelSource {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetChannelsChannelSourceAnonymousTransactionsHandling> anonymousTransactionsHandlings;
-        private String hostname;
-        private String password;
-        private Integer port;
-        private String sourceType;
-        private List<GetChannelsChannelSourceSslCaCertificate> sslCaCertificates;
-        private String sslMode;
-        private String username;
+        private @Nullable List<GetChannelsChannelSourceAnonymousTransactionsHandling> anonymousTransactionsHandlings;
+        private @Nullable String hostname;
+        private @Nullable String password;
+        private @Nullable Integer port;
+        private @Nullable String sourceType;
+        private @Nullable List<GetChannelsChannelSourceSslCaCertificate> sslCaCertificates;
+        private @Nullable String sslMode;
+        private @Nullable String username;
         public Builder() {}
         public Builder(GetChannelsChannelSource defaults) {
     	      Objects.requireNonNull(defaults);
@@ -135,49 +137,49 @@ public final class GetChannelsChannelSource {
         }
 
         @CustomType.Setter
-        public Builder anonymousTransactionsHandlings(List<GetChannelsChannelSourceAnonymousTransactionsHandling> anonymousTransactionsHandlings) {
-            this.anonymousTransactionsHandlings = Objects.requireNonNull(anonymousTransactionsHandlings);
+        public Builder anonymousTransactionsHandlings(@Nullable List<GetChannelsChannelSourceAnonymousTransactionsHandling> anonymousTransactionsHandlings) {
+            this.anonymousTransactionsHandlings = anonymousTransactionsHandlings;
             return this;
         }
         public Builder anonymousTransactionsHandlings(GetChannelsChannelSourceAnonymousTransactionsHandling... anonymousTransactionsHandlings) {
             return anonymousTransactionsHandlings(List.of(anonymousTransactionsHandlings));
         }
         @CustomType.Setter
-        public Builder hostname(String hostname) {
-            this.hostname = Objects.requireNonNull(hostname);
+        public Builder hostname(@Nullable String hostname) {
+            this.hostname = hostname;
             return this;
         }
         @CustomType.Setter
-        public Builder password(String password) {
-            this.password = Objects.requireNonNull(password);
+        public Builder password(@Nullable String password) {
+            this.password = password;
             return this;
         }
         @CustomType.Setter
-        public Builder port(Integer port) {
-            this.port = Objects.requireNonNull(port);
+        public Builder port(@Nullable Integer port) {
+            this.port = port;
             return this;
         }
         @CustomType.Setter
-        public Builder sourceType(String sourceType) {
-            this.sourceType = Objects.requireNonNull(sourceType);
+        public Builder sourceType(@Nullable String sourceType) {
+            this.sourceType = sourceType;
             return this;
         }
         @CustomType.Setter
-        public Builder sslCaCertificates(List<GetChannelsChannelSourceSslCaCertificate> sslCaCertificates) {
-            this.sslCaCertificates = Objects.requireNonNull(sslCaCertificates);
+        public Builder sslCaCertificates(@Nullable List<GetChannelsChannelSourceSslCaCertificate> sslCaCertificates) {
+            this.sslCaCertificates = sslCaCertificates;
             return this;
         }
         public Builder sslCaCertificates(GetChannelsChannelSourceSslCaCertificate... sslCaCertificates) {
             return sslCaCertificates(List.of(sslCaCertificates));
         }
         @CustomType.Setter
-        public Builder sslMode(String sslMode) {
-            this.sslMode = Objects.requireNonNull(sslMode);
+        public Builder sslMode(@Nullable String sslMode) {
+            this.sslMode = sslMode;
             return this;
         }
         @CustomType.Setter
-        public Builder username(String username) {
-            this.username = Objects.requireNonNull(username);
+        public Builder username(@Nullable String username) {
+            this.username = username;
             return this;
         }
         public GetChannelsChannelSource build() {

@@ -141,28 +141,28 @@ namespace Pulumi.Oci.Database
         /// <summary>
         /// The user-friendly name for the Exadata Cloud@Customer infrastructure. The name does not need to be unique.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         public readonly string ExadataInfrastructureId;
         /// <summary>
         /// Total unallocated exadata storage in the infrastructure in TBs.
         /// </summary>
-        public readonly double ExadataStorageInTbs;
+        public readonly double? ExadataStorageInTbs;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The minimum amount of un allocated storage that is available across all nodes in the infrastructure.
         /// </summary>
-        public readonly int LocalStorageInGbs;
+        public readonly int? LocalStorageInGbs;
         /// <summary>
         /// The minimum amount of un allocated memory that is available across all nodes in the infrastructure.
         /// </summary>
-        public readonly int MemoryInGbs;
+        public readonly int? MemoryInGbs;
         /// <summary>
         /// The minimum amount of un allocated ocpus that is available across all nodes in the infrastructure.
         /// </summary>
-        public readonly int Ocpus;
+        public readonly int? Ocpus;
 
         [OutputConstructor]
         private GetExadataInfrastructureUnAllocatedResourceResult(
@@ -170,19 +170,19 @@ namespace Pulumi.Oci.Database
 
             ImmutableArray<string> dbServers,
 
-            string displayName,
+            string? displayName,
 
             string exadataInfrastructureId,
 
-            double exadataStorageInTbs,
+            double? exadataStorageInTbs,
 
-            string id,
+            string? id,
 
-            int localStorageInGbs,
+            int? localStorageInGbs,
 
-            int memoryInGbs,
+            int? memoryInGbs,
 
-            int ocpus)
+            int? ocpus)
         {
             AutonomousVmClusters = autonomousVmClusters;
             DbServers = dbServers;

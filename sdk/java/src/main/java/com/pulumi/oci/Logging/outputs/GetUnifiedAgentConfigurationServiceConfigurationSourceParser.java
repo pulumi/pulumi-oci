@@ -13,6 +13,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetUnifiedAgentConfigurationServiceConfigurationSourceParser {
@@ -20,327 +22,327 @@ public final class GetUnifiedAgentConfigurationServiceConfigurationSourceParser 
      * @return CSV delimiter.
      * 
      */
-    private String delimiter;
+    private @Nullable String delimiter;
     /**
      * @return Regex pattern.
      * 
      */
-    private String expression;
+    private @Nullable String expression;
     /**
      * @return Specify the time field for the event time. If the event doesn&#39;t have this field, the current time is used.
      * 
      */
-    private String fieldTimeKey;
+    private @Nullable String fieldTimeKey;
     /**
      * @return First line pattern format.
      * 
      */
-    private String formatFirstline;
+    private @Nullable String formatFirstline;
     /**
      * @return Mutiline pattern format.
      * 
      */
-    private List<String> formats;
+    private @Nullable List<String> formats;
     /**
      * @return Grok failure key.
      * 
      */
-    private String grokFailureKey;
+    private @Nullable String grokFailureKey;
     /**
      * @return Grok name key.
      * 
      */
-    private String grokNameKey;
+    private @Nullable String grokNameKey;
     /**
      * @return If true, use Fluent::EventTime.now(current time) as a timestamp when the time_key is specified.
      * 
      */
-    private Boolean isEstimateCurrentEvent;
+    private @Nullable Boolean isEstimateCurrentEvent;
     /**
      * @return If true, keep the time field in the record.
      * 
      */
-    private Boolean isKeepTimeKey;
+    private @Nullable Boolean isKeepTimeKey;
     /**
      * @return If you don&#39;t need stream or logtag fields, set this to false.
      * 
      */
-    private Boolean isMergeCriFields;
+    private @Nullable Boolean isMergeCriFields;
     /**
      * @return If true, an empty string field is replaced with a null value.
      * 
      */
-    private Boolean isNullEmptyString;
+    private @Nullable Boolean isNullEmptyString;
     /**
      * @return Specifies whether or not to support colonless ident. Corresponds to the Fluentd support_colonless_ident parameter.
      * 
      */
-    private Boolean isSupportColonlessIdent;
+    private @Nullable Boolean isSupportColonlessIdent;
     /**
      * @return Specifies with priority or not. Corresponds to the Fluentd with_priority parameter.
      * 
      */
-    private Boolean isWithPriority;
+    private @Nullable Boolean isWithPriority;
     /**
      * @return CSV keys.
      * 
      */
-    private List<String> keys;
+    private @Nullable List<String> keys;
     /**
      * @return Syslog message format.
      * 
      */
-    private String messageFormat;
+    private @Nullable String messageFormat;
     /**
      * @return Specifies the field name to contain logs.
      * 
      */
-    private String messageKey;
+    private @Nullable String messageKey;
     /**
      * @return Multiline start regexp pattern.
      * 
      */
-    private String multiLineStartRegexp;
+    private @Nullable String multiLineStartRegexp;
     /**
      * @return Optional nested JSON Parser for CRI. Supported fields are fieldTimeKey, timeFormat, and isKeepTimeKey.
      * 
      */
-    private List<GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParser> nestedParsers;
+    private @Nullable List<GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParser> nestedParsers;
     /**
      * @return Specify the null value pattern.
      * 
      */
-    private String nullValuePattern;
+    private @Nullable String nullValuePattern;
     /**
      * @return Type of fluent parser.
      * 
      */
-    private String parserType;
+    private @Nullable String parserType;
     /**
      * @return Grok pattern object.
      * 
      */
-    private List<GetUnifiedAgentConfigurationServiceConfigurationSourceParserPattern> patterns;
+    private @Nullable List<GetUnifiedAgentConfigurationServiceConfigurationSourceParserPattern> patterns;
     /**
      * @return RFC 5424 time format.
      * 
      */
-    private String rfc5424timeFormat;
+    private @Nullable String rfc5424timeFormat;
     /**
      * @return Syslog parser type.
      * 
      */
-    private String syslogParserType;
+    private @Nullable String syslogParserType;
     /**
      * @return Process time value using the specified format.
      * 
      */
-    private String timeFormat;
+    private @Nullable String timeFormat;
     /**
      * @return JSON parser time type.
      * 
      */
-    private String timeType;
+    private @Nullable String timeType;
     /**
      * @return Specify the timeout for parse processing. This is mainly for detecting an incorrect regexp pattern.
      * 
      */
-    private Integer timeoutInMilliseconds;
+    private @Nullable Integer timeoutInMilliseconds;
     /**
      * @return Specify types for converting a field into another type. For example, With this configuration: &lt;parse&gt; @type csv keys time,host,req_id,user time_key time &lt;/parse&gt;
      * 
      */
-    private Map<String,Object> types;
+    private @Nullable Map<String,Object> types;
 
     private GetUnifiedAgentConfigurationServiceConfigurationSourceParser() {}
     /**
      * @return CSV delimiter.
      * 
      */
-    public String delimiter() {
-        return this.delimiter;
+    public Optional<String> delimiter() {
+        return Optional.ofNullable(this.delimiter);
     }
     /**
      * @return Regex pattern.
      * 
      */
-    public String expression() {
-        return this.expression;
+    public Optional<String> expression() {
+        return Optional.ofNullable(this.expression);
     }
     /**
      * @return Specify the time field for the event time. If the event doesn&#39;t have this field, the current time is used.
      * 
      */
-    public String fieldTimeKey() {
-        return this.fieldTimeKey;
+    public Optional<String> fieldTimeKey() {
+        return Optional.ofNullable(this.fieldTimeKey);
     }
     /**
      * @return First line pattern format.
      * 
      */
-    public String formatFirstline() {
-        return this.formatFirstline;
+    public Optional<String> formatFirstline() {
+        return Optional.ofNullable(this.formatFirstline);
     }
     /**
      * @return Mutiline pattern format.
      * 
      */
     public List<String> formats() {
-        return this.formats;
+        return this.formats == null ? List.of() : this.formats;
     }
     /**
      * @return Grok failure key.
      * 
      */
-    public String grokFailureKey() {
-        return this.grokFailureKey;
+    public Optional<String> grokFailureKey() {
+        return Optional.ofNullable(this.grokFailureKey);
     }
     /**
      * @return Grok name key.
      * 
      */
-    public String grokNameKey() {
-        return this.grokNameKey;
+    public Optional<String> grokNameKey() {
+        return Optional.ofNullable(this.grokNameKey);
     }
     /**
      * @return If true, use Fluent::EventTime.now(current time) as a timestamp when the time_key is specified.
      * 
      */
-    public Boolean isEstimateCurrentEvent() {
-        return this.isEstimateCurrentEvent;
+    public Optional<Boolean> isEstimateCurrentEvent() {
+        return Optional.ofNullable(this.isEstimateCurrentEvent);
     }
     /**
      * @return If true, keep the time field in the record.
      * 
      */
-    public Boolean isKeepTimeKey() {
-        return this.isKeepTimeKey;
+    public Optional<Boolean> isKeepTimeKey() {
+        return Optional.ofNullable(this.isKeepTimeKey);
     }
     /**
      * @return If you don&#39;t need stream or logtag fields, set this to false.
      * 
      */
-    public Boolean isMergeCriFields() {
-        return this.isMergeCriFields;
+    public Optional<Boolean> isMergeCriFields() {
+        return Optional.ofNullable(this.isMergeCriFields);
     }
     /**
      * @return If true, an empty string field is replaced with a null value.
      * 
      */
-    public Boolean isNullEmptyString() {
-        return this.isNullEmptyString;
+    public Optional<Boolean> isNullEmptyString() {
+        return Optional.ofNullable(this.isNullEmptyString);
     }
     /**
      * @return Specifies whether or not to support colonless ident. Corresponds to the Fluentd support_colonless_ident parameter.
      * 
      */
-    public Boolean isSupportColonlessIdent() {
-        return this.isSupportColonlessIdent;
+    public Optional<Boolean> isSupportColonlessIdent() {
+        return Optional.ofNullable(this.isSupportColonlessIdent);
     }
     /**
      * @return Specifies with priority or not. Corresponds to the Fluentd with_priority parameter.
      * 
      */
-    public Boolean isWithPriority() {
-        return this.isWithPriority;
+    public Optional<Boolean> isWithPriority() {
+        return Optional.ofNullable(this.isWithPriority);
     }
     /**
      * @return CSV keys.
      * 
      */
     public List<String> keys() {
-        return this.keys;
+        return this.keys == null ? List.of() : this.keys;
     }
     /**
      * @return Syslog message format.
      * 
      */
-    public String messageFormat() {
-        return this.messageFormat;
+    public Optional<String> messageFormat() {
+        return Optional.ofNullable(this.messageFormat);
     }
     /**
      * @return Specifies the field name to contain logs.
      * 
      */
-    public String messageKey() {
-        return this.messageKey;
+    public Optional<String> messageKey() {
+        return Optional.ofNullable(this.messageKey);
     }
     /**
      * @return Multiline start regexp pattern.
      * 
      */
-    public String multiLineStartRegexp() {
-        return this.multiLineStartRegexp;
+    public Optional<String> multiLineStartRegexp() {
+        return Optional.ofNullable(this.multiLineStartRegexp);
     }
     /**
      * @return Optional nested JSON Parser for CRI. Supported fields are fieldTimeKey, timeFormat, and isKeepTimeKey.
      * 
      */
     public List<GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParser> nestedParsers() {
-        return this.nestedParsers;
+        return this.nestedParsers == null ? List.of() : this.nestedParsers;
     }
     /**
      * @return Specify the null value pattern.
      * 
      */
-    public String nullValuePattern() {
-        return this.nullValuePattern;
+    public Optional<String> nullValuePattern() {
+        return Optional.ofNullable(this.nullValuePattern);
     }
     /**
      * @return Type of fluent parser.
      * 
      */
-    public String parserType() {
-        return this.parserType;
+    public Optional<String> parserType() {
+        return Optional.ofNullable(this.parserType);
     }
     /**
      * @return Grok pattern object.
      * 
      */
     public List<GetUnifiedAgentConfigurationServiceConfigurationSourceParserPattern> patterns() {
-        return this.patterns;
+        return this.patterns == null ? List.of() : this.patterns;
     }
     /**
      * @return RFC 5424 time format.
      * 
      */
-    public String rfc5424timeFormat() {
-        return this.rfc5424timeFormat;
+    public Optional<String> rfc5424timeFormat() {
+        return Optional.ofNullable(this.rfc5424timeFormat);
     }
     /**
      * @return Syslog parser type.
      * 
      */
-    public String syslogParserType() {
-        return this.syslogParserType;
+    public Optional<String> syslogParserType() {
+        return Optional.ofNullable(this.syslogParserType);
     }
     /**
      * @return Process time value using the specified format.
      * 
      */
-    public String timeFormat() {
-        return this.timeFormat;
+    public Optional<String> timeFormat() {
+        return Optional.ofNullable(this.timeFormat);
     }
     /**
      * @return JSON parser time type.
      * 
      */
-    public String timeType() {
-        return this.timeType;
+    public Optional<String> timeType() {
+        return Optional.ofNullable(this.timeType);
     }
     /**
      * @return Specify the timeout for parse processing. This is mainly for detecting an incorrect regexp pattern.
      * 
      */
-    public Integer timeoutInMilliseconds() {
-        return this.timeoutInMilliseconds;
+    public Optional<Integer> timeoutInMilliseconds() {
+        return Optional.ofNullable(this.timeoutInMilliseconds);
     }
     /**
      * @return Specify types for converting a field into another type. For example, With this configuration: &lt;parse&gt; @type csv keys time,host,req_id,user time_key time &lt;/parse&gt;
      * 
      */
     public Map<String,Object> types() {
-        return this.types;
+        return this.types == null ? Map.of() : this.types;
     }
 
     public static Builder builder() {
@@ -352,33 +354,33 @@ public final class GetUnifiedAgentConfigurationServiceConfigurationSourceParser 
     }
     @CustomType.Builder
     public static final class Builder {
-        private String delimiter;
-        private String expression;
-        private String fieldTimeKey;
-        private String formatFirstline;
-        private List<String> formats;
-        private String grokFailureKey;
-        private String grokNameKey;
-        private Boolean isEstimateCurrentEvent;
-        private Boolean isKeepTimeKey;
-        private Boolean isMergeCriFields;
-        private Boolean isNullEmptyString;
-        private Boolean isSupportColonlessIdent;
-        private Boolean isWithPriority;
-        private List<String> keys;
-        private String messageFormat;
-        private String messageKey;
-        private String multiLineStartRegexp;
-        private List<GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParser> nestedParsers;
-        private String nullValuePattern;
-        private String parserType;
-        private List<GetUnifiedAgentConfigurationServiceConfigurationSourceParserPattern> patterns;
-        private String rfc5424timeFormat;
-        private String syslogParserType;
-        private String timeFormat;
-        private String timeType;
-        private Integer timeoutInMilliseconds;
-        private Map<String,Object> types;
+        private @Nullable String delimiter;
+        private @Nullable String expression;
+        private @Nullable String fieldTimeKey;
+        private @Nullable String formatFirstline;
+        private @Nullable List<String> formats;
+        private @Nullable String grokFailureKey;
+        private @Nullable String grokNameKey;
+        private @Nullable Boolean isEstimateCurrentEvent;
+        private @Nullable Boolean isKeepTimeKey;
+        private @Nullable Boolean isMergeCriFields;
+        private @Nullable Boolean isNullEmptyString;
+        private @Nullable Boolean isSupportColonlessIdent;
+        private @Nullable Boolean isWithPriority;
+        private @Nullable List<String> keys;
+        private @Nullable String messageFormat;
+        private @Nullable String messageKey;
+        private @Nullable String multiLineStartRegexp;
+        private @Nullable List<GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParser> nestedParsers;
+        private @Nullable String nullValuePattern;
+        private @Nullable String parserType;
+        private @Nullable List<GetUnifiedAgentConfigurationServiceConfigurationSourceParserPattern> patterns;
+        private @Nullable String rfc5424timeFormat;
+        private @Nullable String syslogParserType;
+        private @Nullable String timeFormat;
+        private @Nullable String timeType;
+        private @Nullable Integer timeoutInMilliseconds;
+        private @Nullable Map<String,Object> types;
         public Builder() {}
         public Builder(GetUnifiedAgentConfigurationServiceConfigurationSourceParser defaults) {
     	      Objects.requireNonNull(defaults);
@@ -412,150 +414,150 @@ public final class GetUnifiedAgentConfigurationServiceConfigurationSourceParser 
         }
 
         @CustomType.Setter
-        public Builder delimiter(String delimiter) {
-            this.delimiter = Objects.requireNonNull(delimiter);
+        public Builder delimiter(@Nullable String delimiter) {
+            this.delimiter = delimiter;
             return this;
         }
         @CustomType.Setter
-        public Builder expression(String expression) {
-            this.expression = Objects.requireNonNull(expression);
+        public Builder expression(@Nullable String expression) {
+            this.expression = expression;
             return this;
         }
         @CustomType.Setter
-        public Builder fieldTimeKey(String fieldTimeKey) {
-            this.fieldTimeKey = Objects.requireNonNull(fieldTimeKey);
+        public Builder fieldTimeKey(@Nullable String fieldTimeKey) {
+            this.fieldTimeKey = fieldTimeKey;
             return this;
         }
         @CustomType.Setter
-        public Builder formatFirstline(String formatFirstline) {
-            this.formatFirstline = Objects.requireNonNull(formatFirstline);
+        public Builder formatFirstline(@Nullable String formatFirstline) {
+            this.formatFirstline = formatFirstline;
             return this;
         }
         @CustomType.Setter
-        public Builder formats(List<String> formats) {
-            this.formats = Objects.requireNonNull(formats);
+        public Builder formats(@Nullable List<String> formats) {
+            this.formats = formats;
             return this;
         }
         public Builder formats(String... formats) {
             return formats(List.of(formats));
         }
         @CustomType.Setter
-        public Builder grokFailureKey(String grokFailureKey) {
-            this.grokFailureKey = Objects.requireNonNull(grokFailureKey);
+        public Builder grokFailureKey(@Nullable String grokFailureKey) {
+            this.grokFailureKey = grokFailureKey;
             return this;
         }
         @CustomType.Setter
-        public Builder grokNameKey(String grokNameKey) {
-            this.grokNameKey = Objects.requireNonNull(grokNameKey);
+        public Builder grokNameKey(@Nullable String grokNameKey) {
+            this.grokNameKey = grokNameKey;
             return this;
         }
         @CustomType.Setter
-        public Builder isEstimateCurrentEvent(Boolean isEstimateCurrentEvent) {
-            this.isEstimateCurrentEvent = Objects.requireNonNull(isEstimateCurrentEvent);
+        public Builder isEstimateCurrentEvent(@Nullable Boolean isEstimateCurrentEvent) {
+            this.isEstimateCurrentEvent = isEstimateCurrentEvent;
             return this;
         }
         @CustomType.Setter
-        public Builder isKeepTimeKey(Boolean isKeepTimeKey) {
-            this.isKeepTimeKey = Objects.requireNonNull(isKeepTimeKey);
+        public Builder isKeepTimeKey(@Nullable Boolean isKeepTimeKey) {
+            this.isKeepTimeKey = isKeepTimeKey;
             return this;
         }
         @CustomType.Setter
-        public Builder isMergeCriFields(Boolean isMergeCriFields) {
-            this.isMergeCriFields = Objects.requireNonNull(isMergeCriFields);
+        public Builder isMergeCriFields(@Nullable Boolean isMergeCriFields) {
+            this.isMergeCriFields = isMergeCriFields;
             return this;
         }
         @CustomType.Setter
-        public Builder isNullEmptyString(Boolean isNullEmptyString) {
-            this.isNullEmptyString = Objects.requireNonNull(isNullEmptyString);
+        public Builder isNullEmptyString(@Nullable Boolean isNullEmptyString) {
+            this.isNullEmptyString = isNullEmptyString;
             return this;
         }
         @CustomType.Setter
-        public Builder isSupportColonlessIdent(Boolean isSupportColonlessIdent) {
-            this.isSupportColonlessIdent = Objects.requireNonNull(isSupportColonlessIdent);
+        public Builder isSupportColonlessIdent(@Nullable Boolean isSupportColonlessIdent) {
+            this.isSupportColonlessIdent = isSupportColonlessIdent;
             return this;
         }
         @CustomType.Setter
-        public Builder isWithPriority(Boolean isWithPriority) {
-            this.isWithPriority = Objects.requireNonNull(isWithPriority);
+        public Builder isWithPriority(@Nullable Boolean isWithPriority) {
+            this.isWithPriority = isWithPriority;
             return this;
         }
         @CustomType.Setter
-        public Builder keys(List<String> keys) {
-            this.keys = Objects.requireNonNull(keys);
+        public Builder keys(@Nullable List<String> keys) {
+            this.keys = keys;
             return this;
         }
         public Builder keys(String... keys) {
             return keys(List.of(keys));
         }
         @CustomType.Setter
-        public Builder messageFormat(String messageFormat) {
-            this.messageFormat = Objects.requireNonNull(messageFormat);
+        public Builder messageFormat(@Nullable String messageFormat) {
+            this.messageFormat = messageFormat;
             return this;
         }
         @CustomType.Setter
-        public Builder messageKey(String messageKey) {
-            this.messageKey = Objects.requireNonNull(messageKey);
+        public Builder messageKey(@Nullable String messageKey) {
+            this.messageKey = messageKey;
             return this;
         }
         @CustomType.Setter
-        public Builder multiLineStartRegexp(String multiLineStartRegexp) {
-            this.multiLineStartRegexp = Objects.requireNonNull(multiLineStartRegexp);
+        public Builder multiLineStartRegexp(@Nullable String multiLineStartRegexp) {
+            this.multiLineStartRegexp = multiLineStartRegexp;
             return this;
         }
         @CustomType.Setter
-        public Builder nestedParsers(List<GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParser> nestedParsers) {
-            this.nestedParsers = Objects.requireNonNull(nestedParsers);
+        public Builder nestedParsers(@Nullable List<GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParser> nestedParsers) {
+            this.nestedParsers = nestedParsers;
             return this;
         }
         public Builder nestedParsers(GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParser... nestedParsers) {
             return nestedParsers(List.of(nestedParsers));
         }
         @CustomType.Setter
-        public Builder nullValuePattern(String nullValuePattern) {
-            this.nullValuePattern = Objects.requireNonNull(nullValuePattern);
+        public Builder nullValuePattern(@Nullable String nullValuePattern) {
+            this.nullValuePattern = nullValuePattern;
             return this;
         }
         @CustomType.Setter
-        public Builder parserType(String parserType) {
-            this.parserType = Objects.requireNonNull(parserType);
+        public Builder parserType(@Nullable String parserType) {
+            this.parserType = parserType;
             return this;
         }
         @CustomType.Setter
-        public Builder patterns(List<GetUnifiedAgentConfigurationServiceConfigurationSourceParserPattern> patterns) {
-            this.patterns = Objects.requireNonNull(patterns);
+        public Builder patterns(@Nullable List<GetUnifiedAgentConfigurationServiceConfigurationSourceParserPattern> patterns) {
+            this.patterns = patterns;
             return this;
         }
         public Builder patterns(GetUnifiedAgentConfigurationServiceConfigurationSourceParserPattern... patterns) {
             return patterns(List.of(patterns));
         }
         @CustomType.Setter
-        public Builder rfc5424timeFormat(String rfc5424timeFormat) {
-            this.rfc5424timeFormat = Objects.requireNonNull(rfc5424timeFormat);
+        public Builder rfc5424timeFormat(@Nullable String rfc5424timeFormat) {
+            this.rfc5424timeFormat = rfc5424timeFormat;
             return this;
         }
         @CustomType.Setter
-        public Builder syslogParserType(String syslogParserType) {
-            this.syslogParserType = Objects.requireNonNull(syslogParserType);
+        public Builder syslogParserType(@Nullable String syslogParserType) {
+            this.syslogParserType = syslogParserType;
             return this;
         }
         @CustomType.Setter
-        public Builder timeFormat(String timeFormat) {
-            this.timeFormat = Objects.requireNonNull(timeFormat);
+        public Builder timeFormat(@Nullable String timeFormat) {
+            this.timeFormat = timeFormat;
             return this;
         }
         @CustomType.Setter
-        public Builder timeType(String timeType) {
-            this.timeType = Objects.requireNonNull(timeType);
+        public Builder timeType(@Nullable String timeType) {
+            this.timeType = timeType;
             return this;
         }
         @CustomType.Setter
-        public Builder timeoutInMilliseconds(Integer timeoutInMilliseconds) {
-            this.timeoutInMilliseconds = Objects.requireNonNull(timeoutInMilliseconds);
+        public Builder timeoutInMilliseconds(@Nullable Integer timeoutInMilliseconds) {
+            this.timeoutInMilliseconds = timeoutInMilliseconds;
             return this;
         }
         @CustomType.Setter
-        public Builder types(Map<String,Object> types) {
-            this.types = Objects.requireNonNull(types);
+        public Builder types(@Nullable Map<String,Object> types) {
+            this.types = types;
             return this;
         }
         public GetUnifiedAgentConfigurationServiceConfigurationSourceParser build() {

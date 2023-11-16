@@ -134,58 +134,37 @@ class GetDatabaseInsightResult:
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        Compartment identifier of the database
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="connectionCredentialDetails")
-    def connection_credential_details(self) -> Sequence['outputs.GetDatabaseInsightConnectionCredentialDetailResult']:
-        """
-        User credential details to connect to the database. This is supplied via the External Database Service.
-        """
+    def connection_credential_details(self) -> Optional[Sequence['outputs.GetDatabaseInsightConnectionCredentialDetailResult']]:
         return pulumi.get(self, "connection_credential_details")
 
     @property
     @pulumi.getter(name="connectionDetails")
-    def connection_details(self) -> Sequence['outputs.GetDatabaseInsightConnectionDetailResult']:
-        """
-        Connection details to connect to the database. HostName, protocol, and port should be specified.
-        """
+    def connection_details(self) -> Optional[Sequence['outputs.GetDatabaseInsightConnectionDetailResult']]:
         return pulumi.get(self, "connection_details")
 
     @property
     @pulumi.getter(name="credentialDetails")
-    def credential_details(self) -> Sequence['outputs.GetDatabaseInsightCredentialDetailResult']:
-        """
-        User credential details to connect to the database.
-        """
+    def credential_details(self) -> Optional[Sequence['outputs.GetDatabaseInsightCredentialDetailResult']]:
         return pulumi.get(self, "credential_details")
 
     @property
     @pulumi.getter(name="databaseConnectionStatusDetails")
-    def database_connection_status_details(self) -> str:
-        """
-        A message describing the status of the database connection of this resource. For example, it can be used to provide actionable information about the permission and content validity of the database connection.
-        """
+    def database_connection_status_details(self) -> Optional[str]:
         return pulumi.get(self, "database_connection_status_details")
 
     @property
     @pulumi.getter(name="databaseDisplayName")
-    def database_display_name(self) -> str:
-        """
-        Display name of database
-        """
+    def database_display_name(self) -> Optional[str]:
         return pulumi.get(self, "database_display_name")
 
     @property
     @pulumi.getter(name="databaseId")
-    def database_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
-        """
+    def database_id(self) -> Optional[str]:
         return pulumi.get(self, "database_id")
 
     @property
@@ -195,220 +174,142 @@ class GetDatabaseInsightResult:
 
     @property
     @pulumi.getter(name="databaseName")
-    def database_name(self) -> str:
-        """
-        Name of database
-        """
+    def database_name(self) -> Optional[str]:
         return pulumi.get(self, "database_name")
 
     @property
     @pulumi.getter(name="databaseResourceType")
-    def database_resource_type(self) -> str:
-        """
-        Oracle Cloud Infrastructure database resource type
-        """
+    def database_resource_type(self) -> Optional[str]:
         return pulumi.get(self, "database_resource_type")
 
     @property
     @pulumi.getter(name="databaseType")
-    def database_type(self) -> str:
-        """
-        Operations Insights internal representation of the database type.
-        """
+    def database_type(self) -> Optional[str]:
         return pulumi.get(self, "database_type")
 
     @property
     @pulumi.getter(name="databaseVersion")
-    def database_version(self) -> str:
-        """
-        The version of the database.
-        """
+    def database_version(self) -> Optional[str]:
         return pulumi.get(self, "database_version")
 
     @property
     @pulumi.getter(name="dbmPrivateEndpointId")
-    def dbm_private_endpoint_id(self) -> str:
+    def dbm_private_endpoint_id(self) -> Optional[str]:
         return pulumi.get(self, "dbm_private_endpoint_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="deploymentType")
-    def deployment_type(self) -> str:
+    def deployment_type(self) -> Optional[str]:
         return pulumi.get(self, "deployment_type")
 
     @property
     @pulumi.getter(name="enterpriseManagerBridgeId")
-    def enterprise_manager_bridge_id(self) -> str:
-        """
-        OPSI Enterprise Manager Bridge OCID
-        """
+    def enterprise_manager_bridge_id(self) -> Optional[str]:
         return pulumi.get(self, "enterprise_manager_bridge_id")
 
     @property
     @pulumi.getter(name="enterpriseManagerEntityDisplayName")
-    def enterprise_manager_entity_display_name(self) -> str:
-        """
-        Enterprise Manager Entity Display Name
-        """
+    def enterprise_manager_entity_display_name(self) -> Optional[str]:
         return pulumi.get(self, "enterprise_manager_entity_display_name")
 
     @property
     @pulumi.getter(name="enterpriseManagerEntityIdentifier")
-    def enterprise_manager_entity_identifier(self) -> str:
-        """
-        Enterprise Manager Entity Unique Identifier
-        """
+    def enterprise_manager_entity_identifier(self) -> Optional[str]:
         return pulumi.get(self, "enterprise_manager_entity_identifier")
 
     @property
     @pulumi.getter(name="enterpriseManagerEntityName")
-    def enterprise_manager_entity_name(self) -> str:
-        """
-        Enterprise Manager Entity Name
-        """
+    def enterprise_manager_entity_name(self) -> Optional[str]:
         return pulumi.get(self, "enterprise_manager_entity_name")
 
     @property
     @pulumi.getter(name="enterpriseManagerEntityType")
-    def enterprise_manager_entity_type(self) -> str:
-        """
-        Enterprise Manager Entity Type
-        """
+    def enterprise_manager_entity_type(self) -> Optional[str]:
         return pulumi.get(self, "enterprise_manager_entity_type")
 
     @property
     @pulumi.getter(name="enterpriseManagerIdentifier")
-    def enterprise_manager_identifier(self) -> str:
-        """
-        Enterprise Manager Unqiue Identifier
-        """
+    def enterprise_manager_identifier(self) -> Optional[str]:
         return pulumi.get(self, "enterprise_manager_identifier")
 
     @property
     @pulumi.getter(name="entitySource")
-    def entity_source(self) -> str:
-        """
-        Source of the database entity.
-        """
+    def entity_source(self) -> Optional[str]:
         return pulumi.get(self, "entity_source")
 
     @property
     @pulumi.getter(name="exadataInsightId")
-    def exadata_insight_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata insight.
-        """
+    def exadata_insight_id(self) -> Optional[str]:
         return pulumi.get(self, "exadata_insight_id")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        Database insight identifier
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="opsiPrivateEndpointId")
-    def opsi_private_endpoint_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OPSI private endpoint
-        """
+    def opsi_private_endpoint_id(self) -> Optional[str]:
         return pulumi.get(self, "opsi_private_endpoint_id")
 
     @property
     @pulumi.getter(name="parentId")
-    def parent_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Cluster or DB System ID, depending on which configuration the resource belongs to.
-        """
+    def parent_id(self) -> Optional[str]:
         return pulumi.get(self, "parent_id")
 
     @property
     @pulumi.getter(name="processorCount")
-    def processor_count(self) -> int:
-        """
-        Processor count. This is the OCPU count for Autonomous Database and CPU core count for other database types.
-        """
+    def processor_count(self) -> Optional[int]:
         return pulumi.get(self, "processor_count")
 
     @property
     @pulumi.getter(name="rootId")
-    def root_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Infrastructure.
-        """
+    def root_id(self) -> Optional[str]:
         return pulumi.get(self, "root_id")
 
     @property
     @pulumi.getter(name="serviceName")
-    def service_name(self) -> str:
-        """
-        Database service name used for connection requests.
-        """
+    def service_name(self) -> Optional[str]:
         return pulumi.get(self, "service_name")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the database.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter
-    def status(self) -> str:
-        """
-        Indicates the status of a database insight in Operations Insights
-        """
+    def status(self) -> Optional[str]:
         return pulumi.get(self, "status")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The time the the database insight was first enabled. An RFC3339 formatted datetime string
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The time the database insight was updated. An RFC3339 formatted datetime string
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
 
@@ -459,21 +360,7 @@ class AwaitableGetDatabaseInsightResult(GetDatabaseInsightResult):
 def get_database_insight(database_insight_id: Optional[str] = None,
                          opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDatabaseInsightResult:
     """
-    This data source provides details about a specific Database Insight resource in Oracle Cloud Infrastructure Opsi service.
-
-    Gets details of a database insight.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_database_insight = oci.Opsi.get_database_insight(database_insight_id=oci_opsi_database_insight["test_database_insight"]["id"])
-    ```
-
-
-    :param str database_insight_id: Unique database insight identifier
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['databaseInsightId'] = database_insight_id
@@ -523,20 +410,6 @@ def get_database_insight(database_insight_id: Optional[str] = None,
 def get_database_insight_output(database_insight_id: Optional[pulumi.Input[str]] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDatabaseInsightResult]:
     """
-    This data source provides details about a specific Database Insight resource in Oracle Cloud Infrastructure Opsi service.
-
-    Gets details of a database insight.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_database_insight = oci.Opsi.get_database_insight(database_insight_id=oci_opsi_database_insight["test_database_insight"]["id"])
-    ```
-
-
-    :param str database_insight_id: Unique database insight identifier
+    Use this data source to access information about an existing resource.
     """
     ...

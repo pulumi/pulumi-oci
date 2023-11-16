@@ -64,7 +64,7 @@ export interface GetPodShapesResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The name of the identifying shape.
      */
@@ -72,7 +72,7 @@ export interface GetPodShapesResult {
     /**
      * The list of pod_shapes.
      */
-    readonly podShapes: outputs.ContainerEngine.GetPodShapesPodShape[];
+    readonly podShapes?: outputs.ContainerEngine.GetPodShapesPodShape[];
 }
 /**
  * This data source provides the list of Pod Shapes in Oracle Cloud Infrastructure Container Engine service.

@@ -108,113 +108,113 @@ namespace Pulumi.Oci.Database
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
         /// </summary>
-        public readonly string DatabaseSoftwareImageId;
+        public readonly string? DatabaseSoftwareImageId;
         public readonly ImmutableArray<Outputs.GetDbHomeDatabaseResult> Databases;
         public readonly string DbHomeId;
         /// <summary>
         /// The location of the Oracle Database Home.
         /// </summary>
-        public readonly string DbHomeLocation;
+        public readonly string? DbHomeLocation;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
         /// </summary>
-        public readonly string DbSystemId;
+        public readonly string? DbSystemId;
         /// <summary>
         /// The Oracle Database version.
         /// </summary>
-        public readonly string DbVersion;
+        public readonly string? DbVersion;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// The user-provided name for the Database Home. The name does not need to be unique.
         /// </summary>
-        public readonly string DisplayName;
-        public readonly bool EnableDatabaseDelete;
+        public readonly string? DisplayName;
+        public readonly bool? EnableDatabaseDelete;
         /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
         /// </summary>
-        public readonly string Id;
-        public readonly bool IsDesupportedVersion;
+        public readonly string? Id;
+        public readonly bool? IsDesupportedVersion;
         /// <summary>
         /// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
         /// </summary>
-        public readonly string KmsKeyId;
-        public readonly string KmsKeyVersionId;
+        public readonly string? KmsKeyId;
+        public readonly string? KmsKeyVersionId;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last patch history. This value is updated as soon as a patch operation is started.
         /// </summary>
-        public readonly string LastPatchHistoryEntryId;
+        public readonly string? LastPatchHistoryEntryId;
         /// <summary>
         /// Additional information about the current lifecycle state.
         /// </summary>
-        public readonly string LifecycleDetails;
-        public readonly string Source;
+        public readonly string? LifecycleDetails;
+        public readonly string? Source;
         /// <summary>
         /// The current state of the Database Home.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// The date and time the Database Home was created.
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
         /// </summary>
-        public readonly string VmClusterId;
+        public readonly string? VmClusterId;
 
         [OutputConstructor]
         private GetDbHomeResult(
-            string compartmentId,
+            string? compartmentId,
 
-            string databaseSoftwareImageId,
+            string? databaseSoftwareImageId,
 
             ImmutableArray<Outputs.GetDbHomeDatabaseResult> databases,
 
             string dbHomeId,
 
-            string dbHomeLocation,
+            string? dbHomeLocation,
 
-            string dbSystemId,
+            string? dbSystemId,
 
-            string dbVersion,
+            string? dbVersion,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string displayName,
+            string? displayName,
 
-            bool enableDatabaseDelete,
+            bool? enableDatabaseDelete,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string id,
+            string? id,
 
-            bool isDesupportedVersion,
+            bool? isDesupportedVersion,
 
-            string kmsKeyId,
+            string? kmsKeyId,
 
-            string kmsKeyVersionId,
+            string? kmsKeyVersionId,
 
-            string lastPatchHistoryEntryId,
+            string? lastPatchHistoryEntryId,
 
-            string lifecycleDetails,
+            string? lifecycleDetails,
 
-            string source,
+            string? source,
 
-            string state,
+            string? state,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string vmClusterId)
+            string? vmClusterId)
         {
             CompartmentId = compartmentId;
             DatabaseSoftwareImageId = databaseSoftwareImageId;

@@ -27,7 +27,7 @@ public final class GetManagedInstanceGroupAvailablePackagesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Flag to return only latest package versions.
      * 
@@ -37,7 +37,7 @@ public final class GetManagedInstanceGroupAvailablePackagesResult {
      * @return The list of managed_instance_group_available_package_collection.
      * 
      */
-    private List<GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollection> managedInstanceGroupAvailablePackageCollections;
+    private @Nullable List<GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollection> managedInstanceGroupAvailablePackageCollections;
     private String managedInstanceGroupId;
 
     private GetManagedInstanceGroupAvailablePackagesResult() {}
@@ -61,8 +61,8 @@ public final class GetManagedInstanceGroupAvailablePackagesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Flag to return only latest package versions.
@@ -76,7 +76,7 @@ public final class GetManagedInstanceGroupAvailablePackagesResult {
      * 
      */
     public List<GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollection> managedInstanceGroupAvailablePackageCollections() {
-        return this.managedInstanceGroupAvailablePackageCollections;
+        return this.managedInstanceGroupAvailablePackageCollections == null ? List.of() : this.managedInstanceGroupAvailablePackageCollections;
     }
     public String managedInstanceGroupId() {
         return this.managedInstanceGroupId;
@@ -95,9 +95,9 @@ public final class GetManagedInstanceGroupAvailablePackagesResult {
         private @Nullable String displayNameContains;
         private @Nullable List<String> displayNames;
         private @Nullable List<GetManagedInstanceGroupAvailablePackagesFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable Boolean isLatest;
-        private List<GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollection> managedInstanceGroupAvailablePackageCollections;
+        private @Nullable List<GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollection> managedInstanceGroupAvailablePackageCollections;
         private String managedInstanceGroupId;
         public Builder() {}
         public Builder(GetManagedInstanceGroupAvailablePackagesResult defaults) {
@@ -139,8 +139,8 @@ public final class GetManagedInstanceGroupAvailablePackagesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -149,8 +149,8 @@ public final class GetManagedInstanceGroupAvailablePackagesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder managedInstanceGroupAvailablePackageCollections(List<GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollection> managedInstanceGroupAvailablePackageCollections) {
-            this.managedInstanceGroupAvailablePackageCollections = Objects.requireNonNull(managedInstanceGroupAvailablePackageCollections);
+        public Builder managedInstanceGroupAvailablePackageCollections(@Nullable List<GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollection> managedInstanceGroupAvailablePackageCollections) {
+            this.managedInstanceGroupAvailablePackageCollections = managedInstanceGroupAvailablePackageCollections;
             return this;
         }
         public Builder managedInstanceGroupAvailablePackageCollections(GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollection... managedInstanceGroupAvailablePackageCollections) {

@@ -16,17 +16,17 @@ namespace Pulumi.Oci.Core.Outputs
         /// <summary>
         /// A filter to return only available devices or only used devices.
         /// </summary>
-        public readonly bool IsAvailable;
+        public readonly bool? IsAvailable;
         /// <summary>
         /// A filter to return only devices that match the given name exactly.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
 
         [OutputConstructor]
         private GetInstanceDevicesDeviceResult(
-            bool isAvailable,
+            bool? isAvailable,
 
-            string name)
+            string? name)
         {
             IsAvailable = isAvailable;
             Name = name;

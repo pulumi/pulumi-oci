@@ -110,7 +110,7 @@ namespace Pulumi.Oci.LogAnalytics
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// An array of tenant preferences.
         /// </summary>
@@ -119,7 +119,7 @@ namespace Pulumi.Oci.LogAnalytics
 
         [OutputConstructor]
         private GetLogAnalyticsPreferenceResult(
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetLogAnalyticsPreferenceItemResult> items,
 

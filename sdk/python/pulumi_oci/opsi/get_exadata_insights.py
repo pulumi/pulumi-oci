@@ -55,9 +55,6 @@ class GetExadataInsightsResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[str]:
-        """
-        Compartment identifier of the Exadata insight resource
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
@@ -68,25 +65,16 @@ class GetExadataInsightsResult:
     @property
     @pulumi.getter(name="enterpriseManagerBridgeId")
     def enterprise_manager_bridge_id(self) -> Optional[str]:
-        """
-        OPSI Enterprise Manager Bridge OCID
-        """
         return pulumi.get(self, "enterprise_manager_bridge_id")
 
     @property
     @pulumi.getter(name="exadataInsightSummaryCollections")
-    def exadata_insight_summary_collections(self) -> Sequence['outputs.GetExadataInsightsExadataInsightSummaryCollectionResult']:
-        """
-        The list of exadata_insight_summary_collection.
-        """
+    def exadata_insight_summary_collections(self) -> Optional[Sequence['outputs.GetExadataInsightsExadataInsightSummaryCollectionResult']]:
         return pulumi.get(self, "exadata_insight_summary_collections")
 
     @property
     @pulumi.getter(name="exadataTypes")
     def exadata_types(self) -> Optional[Sequence[str]]:
-        """
-        Operations Insights internal representation of the the Exadata system type.
-        """
         return pulumi.get(self, "exadata_types")
 
     @property
@@ -97,25 +85,16 @@ class GetExadataInsightsResult:
     @property
     @pulumi.getter
     def id(self) -> Optional[str]:
-        """
-        Exadata insight identifier
-        """
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter
     def states(self) -> Optional[Sequence[str]]:
-        """
-        The current state of the Exadata insight.
-        """
         return pulumi.get(self, "states")
 
     @property
     @pulumi.getter
     def statuses(self) -> Optional[Sequence[str]]:
-        """
-        Indicates the status of an Exadata insight in Operations Insights
-        """
         return pulumi.get(self, "statuses")
 
 
@@ -146,34 +125,7 @@ def get_exadata_insights(compartment_id: Optional[str] = None,
                          statuses: Optional[Sequence[str]] = None,
                          opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetExadataInsightsResult:
     """
-    This data source provides the list of Exadata Insights in Oracle Cloud Infrastructure Opsi service.
-
-    Gets a list of Exadata insights based on the query parameters specified. Either compartmentId or id query parameter must be specified.
-    When both compartmentId and compartmentIdInSubtree are specified, a list of Exadata insights in that compartment and in all sub-compartments will be returned.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_exadata_insights = oci.Opsi.get_exadata_insights(compartment_id=var["compartment_id"],
-        compartment_id_in_subtree=var["exadata_insight_compartment_id_in_subtree"],
-        enterprise_manager_bridge_id=oci_opsi_enterprise_manager_bridge["test_enterprise_manager_bridge"]["id"],
-        exadata_types=var["exadata_insight_exadata_type"],
-        id=var["exadata_insight_id"],
-        states=var["exadata_insight_state"],
-        statuses=var["exadata_insight_status"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param bool compartment_id_in_subtree: A flag to search all resources within a given compartment and all sub-compartments.
-    :param str enterprise_manager_bridge_id: Unique Enterprise Manager bridge identifier
-    :param Sequence[str] exadata_types: Filter by one or more Exadata types. Possible value are DBMACHINE, EXACS, and EXACC.
-    :param str id: Optional list of Exadata insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param Sequence[str] states: Lifecycle states
-    :param Sequence[str] statuses: Resource Status
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -210,33 +162,6 @@ def get_exadata_insights_output(compartment_id: Optional[pulumi.Input[Optional[s
                                 statuses: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetExadataInsightsResult]:
     """
-    This data source provides the list of Exadata Insights in Oracle Cloud Infrastructure Opsi service.
-
-    Gets a list of Exadata insights based on the query parameters specified. Either compartmentId or id query parameter must be specified.
-    When both compartmentId and compartmentIdInSubtree are specified, a list of Exadata insights in that compartment and in all sub-compartments will be returned.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_exadata_insights = oci.Opsi.get_exadata_insights(compartment_id=var["compartment_id"],
-        compartment_id_in_subtree=var["exadata_insight_compartment_id_in_subtree"],
-        enterprise_manager_bridge_id=oci_opsi_enterprise_manager_bridge["test_enterprise_manager_bridge"]["id"],
-        exadata_types=var["exadata_insight_exadata_type"],
-        id=var["exadata_insight_id"],
-        states=var["exadata_insight_state"],
-        statuses=var["exadata_insight_status"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param bool compartment_id_in_subtree: A flag to search all resources within a given compartment and all sub-compartments.
-    :param str enterprise_manager_bridge_id: Unique Enterprise Manager bridge identifier
-    :param Sequence[str] exadata_types: Filter by one or more Exadata types. Possible value are DBMACHINE, EXACS, and EXACC.
-    :param str id: Optional list of Exadata insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param Sequence[str] states: Lifecycle states
-    :param Sequence[str] statuses: Resource Status
+    Use this data source to access information about an existing resource.
     """
     ...

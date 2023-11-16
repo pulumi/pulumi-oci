@@ -19,7 +19,7 @@ public final class GetDbNodesResult {
      * @return The list of db_nodes.
      * 
      */
-    private List<GetDbNodesDbNode> dbNodes;
+    private @Nullable List<GetDbNodesDbNode> dbNodes;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exacc Db server associated with the database node.
      * 
@@ -35,7 +35,7 @@ public final class GetDbNodesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The current state of the database node.
      * 
@@ -52,7 +52,7 @@ public final class GetDbNodesResult {
      * 
      */
     public List<GetDbNodesDbNode> dbNodes() {
-        return this.dbNodes;
+        return this.dbNodes == null ? List.of() : this.dbNodes;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exacc Db server associated with the database node.
@@ -75,8 +75,8 @@ public final class GetDbNodesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The current state of the database node.
@@ -99,11 +99,11 @@ public final class GetDbNodesResult {
     @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
-        private List<GetDbNodesDbNode> dbNodes;
+        private @Nullable List<GetDbNodesDbNode> dbNodes;
         private @Nullable String dbServerId;
         private @Nullable String dbSystemId;
         private @Nullable List<GetDbNodesFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String state;
         private @Nullable String vmClusterId;
         public Builder() {}
@@ -125,8 +125,8 @@ public final class GetDbNodesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder dbNodes(List<GetDbNodesDbNode> dbNodes) {
-            this.dbNodes = Objects.requireNonNull(dbNodes);
+        public Builder dbNodes(@Nullable List<GetDbNodesDbNode> dbNodes) {
+            this.dbNodes = dbNodes;
             return this;
         }
         public Builder dbNodes(GetDbNodesDbNode... dbNodes) {
@@ -151,8 +151,8 @@ public final class GetDbNodesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

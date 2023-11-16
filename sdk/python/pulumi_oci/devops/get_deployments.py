@@ -58,33 +58,21 @@ class GetDeploymentsResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[str]:
-        """
-        The OCID of a compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="deployPipelineId")
     def deploy_pipeline_id(self) -> Optional[str]:
-        """
-        The OCID of a pipeline.
-        """
         return pulumi.get(self, "deploy_pipeline_id")
 
     @property
     @pulumi.getter(name="deploymentCollections")
-    def deployment_collections(self) -> Sequence['outputs.GetDeploymentsDeploymentCollectionResult']:
-        """
-        The list of deployment_collection.
-        """
+    def deployment_collections(self) -> Optional[Sequence['outputs.GetDeploymentsDeploymentCollectionResult']]:
         return pulumi.get(self, "deployment_collections")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        Deployment identifier which can be renamed and is not necessarily unique. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -95,25 +83,16 @@ class GetDeploymentsResult:
     @property
     @pulumi.getter
     def id(self) -> Optional[str]:
-        """
-        Unique identifier that is immutable on creation.
-        """
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="projectId")
     def project_id(self) -> Optional[str]:
-        """
-        The OCID of a project.
-        """
         return pulumi.get(self, "project_id")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the deployment.
-        """
         return pulumi.get(self, "state")
 
     @property
@@ -156,35 +135,7 @@ def get_deployments(compartment_id: Optional[str] = None,
                     time_created_less_than: Optional[str] = None,
                     opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDeploymentsResult:
     """
-    This data source provides the list of Deployments in Oracle Cloud Infrastructure Devops service.
-
-    Returns a list of deployments.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_deployments = oci.DevOps.get_deployments(compartment_id=var["compartment_id"],
-        deploy_pipeline_id=oci_devops_deploy_pipeline["test_deploy_pipeline"]["id"],
-        display_name=var["deployment_display_name"],
-        id=var["deployment_id"],
-        project_id=oci_devops_project["test_project"]["id"],
-        state=var["deployment_state"],
-        time_created_greater_than_or_equal_to=var["deployment_time_created_greater_than_or_equal_to"],
-        time_created_less_than=var["deployment_time_created_less_than"])
-    ```
-
-
-    :param str compartment_id: The OCID of the compartment in which to list resources.
-    :param str deploy_pipeline_id: The ID of the parent pipeline.
-    :param str display_name: A filter to return only resources that match the entire display name given.
-    :param str id: Unique identifier or OCID for listing a single resource by ID.
-    :param str project_id: unique project identifier
-    :param str state: A filter to return only Deployments that matches the given lifecycleState.
-    :param str time_created_greater_than_or_equal_to: Search for DevOps resources that were created after a specific date. Specifying this parameter corresponding to `timeCreatedGreaterThanOrEqualTo` parameter will retrieve all security assessments created after the specified created date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
-    :param str time_created_less_than: Search for DevOps resources that were created before a specific date. Specifying this parameter corresponding to `timeCreatedLessThan` parameter will retrieve all assessments created before the specified created date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -224,34 +175,6 @@ def get_deployments_output(compartment_id: Optional[pulumi.Input[Optional[str]]]
                            time_created_less_than: Optional[pulumi.Input[Optional[str]]] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDeploymentsResult]:
     """
-    This data source provides the list of Deployments in Oracle Cloud Infrastructure Devops service.
-
-    Returns a list of deployments.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_deployments = oci.DevOps.get_deployments(compartment_id=var["compartment_id"],
-        deploy_pipeline_id=oci_devops_deploy_pipeline["test_deploy_pipeline"]["id"],
-        display_name=var["deployment_display_name"],
-        id=var["deployment_id"],
-        project_id=oci_devops_project["test_project"]["id"],
-        state=var["deployment_state"],
-        time_created_greater_than_or_equal_to=var["deployment_time_created_greater_than_or_equal_to"],
-        time_created_less_than=var["deployment_time_created_less_than"])
-    ```
-
-
-    :param str compartment_id: The OCID of the compartment in which to list resources.
-    :param str deploy_pipeline_id: The ID of the parent pipeline.
-    :param str display_name: A filter to return only resources that match the entire display name given.
-    :param str id: Unique identifier or OCID for listing a single resource by ID.
-    :param str project_id: unique project identifier
-    :param str state: A filter to return only Deployments that matches the given lifecycleState.
-    :param str time_created_greater_than_or_equal_to: Search for DevOps resources that were created after a specific date. Specifying this parameter corresponding to `timeCreatedGreaterThanOrEqualTo` parameter will retrieve all security assessments created after the specified created date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
-    :param str time_created_less_than: Search for DevOps resources that were created before a specific date. Specifying this parameter corresponding to `timeCreatedLessThan` parameter will retrieve all assessments created before the specified created date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+    Use this data source to access information about an existing resource.
     """
     ...

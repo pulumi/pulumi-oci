@@ -16,35 +16,35 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// A human readable name, primarily used for display purposes. READ-ONLY.
         /// </summary>
-        public readonly string Display;
+        public readonly string? Display;
         /// <summary>
         /// Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
         /// </summary>
-        public readonly string Ocid;
+        public readonly string? Ocid;
         /// <summary>
         /// Group URI
         /// </summary>
-        public readonly string Ref;
+        public readonly string? Ref;
         /// <summary>
         /// Identity Provider Type
         /// </summary>
-        public readonly string Type;
+        public readonly string? Type;
         /// <summary>
         /// Value of the tag.
         /// </summary>
-        public readonly string Value;
+        public readonly string? Value;
 
         [OutputConstructor]
         private GetDomainsIdentityProvidersIdentityProviderIdcsLastModifiedByResult(
-            string display,
+            string? display,
 
-            string ocid,
+            string? ocid,
 
-            string @ref,
+            string? @ref,
 
-            string type,
+            string? type,
 
-            string value)
+            string? value)
         {
             Display = display;
             Ocid = ocid;

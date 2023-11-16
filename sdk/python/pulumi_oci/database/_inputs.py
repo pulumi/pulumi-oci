@@ -225,10 +225,6 @@ class AutonomousContainerDatabaseBackupConfigArgs:
     def __init__(__self__, *,
                  backup_destination_details: Optional[pulumi.Input['AutonomousContainerDatabaseBackupConfigBackupDestinationDetailsArgs']] = None,
                  recovery_window_in_days: Optional[pulumi.Input[int]] = None):
-        """
-        :param pulumi.Input['AutonomousContainerDatabaseBackupConfigBackupDestinationDetailsArgs'] backup_destination_details: Backup destination details.
-        :param pulumi.Input[int] recovery_window_in_days: Number of days between the current and the earliest point of recoverability covered by automatic backups. This value applies to automatic backups. After a new automatic backup has been created, Oracle removes old automatic backups that are created before the window. When the value is updated, it is applied to all existing automatic backups.
-        """
         if backup_destination_details is not None:
             pulumi.set(__self__, "backup_destination_details", backup_destination_details)
         if recovery_window_in_days is not None:
@@ -237,9 +233,6 @@ class AutonomousContainerDatabaseBackupConfigArgs:
     @property
     @pulumi.getter(name="backupDestinationDetails")
     def backup_destination_details(self) -> Optional[pulumi.Input['AutonomousContainerDatabaseBackupConfigBackupDestinationDetailsArgs']]:
-        """
-        Backup destination details.
-        """
         return pulumi.get(self, "backup_destination_details")
 
     @backup_destination_details.setter
@@ -249,9 +242,6 @@ class AutonomousContainerDatabaseBackupConfigArgs:
     @property
     @pulumi.getter(name="recoveryWindowInDays")
     def recovery_window_in_days(self) -> Optional[pulumi.Input[int]]:
-        """
-        Number of days between the current and the earliest point of recoverability covered by automatic backups. This value applies to automatic backups. After a new automatic backup has been created, Oracle removes old automatic backups that are created before the window. When the value is updated, it is applied to all existing automatic backups.
-        """
         return pulumi.get(self, "recovery_window_in_days")
 
     @recovery_window_in_days.setter
@@ -267,13 +257,6 @@ class AutonomousContainerDatabaseBackupConfigBackupDestinationDetailsArgs:
                  internet_proxy: Optional[pulumi.Input[str]] = None,
                  vpc_password: Optional[pulumi.Input[str]] = None,
                  vpc_user: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] type: Type of the database backup destination.
-        :param pulumi.Input[str] id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
-        :param pulumi.Input[str] internet_proxy: Proxy URL to connect to object store.
-        :param pulumi.Input[str] vpc_password: For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
-        :param pulumi.Input[str] vpc_user: For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
-        """
         pulumi.set(__self__, "type", type)
         if id is not None:
             pulumi.set(__self__, "id", id)
@@ -287,9 +270,6 @@ class AutonomousContainerDatabaseBackupConfigBackupDestinationDetailsArgs:
     @property
     @pulumi.getter
     def type(self) -> pulumi.Input[str]:
-        """
-        Type of the database backup destination.
-        """
         return pulumi.get(self, "type")
 
     @type.setter
@@ -299,9 +279,6 @@ class AutonomousContainerDatabaseBackupConfigBackupDestinationDetailsArgs:
     @property
     @pulumi.getter
     def id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
-        """
         return pulumi.get(self, "id")
 
     @id.setter
@@ -311,9 +288,6 @@ class AutonomousContainerDatabaseBackupConfigBackupDestinationDetailsArgs:
     @property
     @pulumi.getter(name="internetProxy")
     def internet_proxy(self) -> Optional[pulumi.Input[str]]:
-        """
-        Proxy URL to connect to object store.
-        """
         return pulumi.get(self, "internet_proxy")
 
     @internet_proxy.setter
@@ -323,9 +297,6 @@ class AutonomousContainerDatabaseBackupConfigBackupDestinationDetailsArgs:
     @property
     @pulumi.getter(name="vpcPassword")
     def vpc_password(self) -> Optional[pulumi.Input[str]]:
-        """
-        For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
-        """
         return pulumi.get(self, "vpc_password")
 
     @vpc_password.setter
@@ -335,9 +306,6 @@ class AutonomousContainerDatabaseBackupConfigBackupDestinationDetailsArgs:
     @property
     @pulumi.getter(name="vpcUser")
     def vpc_user(self) -> Optional[pulumi.Input[str]]:
-        """
-        For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
-        """
         return pulumi.get(self, "vpc_user")
 
     @vpc_user.setter
@@ -352,12 +320,6 @@ class AutonomousContainerDatabaseKeyHistoryEntryArgs:
                  kms_key_version_id: Optional[pulumi.Input[str]] = None,
                  time_activated: Optional[pulumi.Input[str]] = None,
                  vault_id: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
-        :param pulumi.Input[str] kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
-        :param pulumi.Input[str] time_activated: The date and time the kms key activated.
-        :param pulumi.Input[str] vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
-        """
         if id is not None:
             pulumi.set(__self__, "id", id)
         if kms_key_version_id is not None:
@@ -370,9 +332,6 @@ class AutonomousContainerDatabaseKeyHistoryEntryArgs:
     @property
     @pulumi.getter
     def id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
-        """
         return pulumi.get(self, "id")
 
     @id.setter
@@ -382,9 +341,6 @@ class AutonomousContainerDatabaseKeyHistoryEntryArgs:
     @property
     @pulumi.getter(name="kmsKeyVersionId")
     def kms_key_version_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
-        """
         return pulumi.get(self, "kms_key_version_id")
 
     @kms_key_version_id.setter
@@ -394,9 +350,6 @@ class AutonomousContainerDatabaseKeyHistoryEntryArgs:
     @property
     @pulumi.getter(name="timeActivated")
     def time_activated(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time the kms key activated.
-        """
         return pulumi.get(self, "time_activated")
 
     @time_activated.setter
@@ -406,9 +359,6 @@ class AutonomousContainerDatabaseKeyHistoryEntryArgs:
     @property
     @pulumi.getter(name="vaultId")
     def vault_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
-        """
         return pulumi.get(self, "vault_id")
 
     @vault_id.setter
@@ -429,21 +379,6 @@ class AutonomousContainerDatabaseMaintenanceWindowArgs:
                  patching_mode: Optional[pulumi.Input[str]] = None,
                  preference: Optional[pulumi.Input[str]] = None,
                  weeks_of_months: Optional[pulumi.Input[Sequence[pulumi.Input[int]]]] = None):
-        """
-        :param pulumi.Input[int] custom_action_timeout_in_mins: (Updatable) Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
-        :param pulumi.Input[Sequence[pulumi.Input['AutonomousContainerDatabaseMaintenanceWindowDaysOfWeekArgs']]] days_of_weeks: (Updatable) Days during the week when maintenance should be performed.
-        :param pulumi.Input[Sequence[pulumi.Input[int]]] hours_of_days: (Updatable) The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
-               * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
-        :param pulumi.Input[bool] is_custom_action_timeout_enabled: (Updatable) If true, enables the configuration of a custom action timeout (waiting period) between database server patching operations.
-        :param pulumi.Input[bool] is_monthly_patching_enabled: (Updatable) If true, enables the monthly patching option.
-        :param pulumi.Input[int] lead_time_in_weeks: (Updatable) Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
-        :param pulumi.Input[Sequence[pulumi.Input['AutonomousContainerDatabaseMaintenanceWindowMonthArgs']]] months: (Updatable) Months during the year when maintenance should be performed.
-        :param pulumi.Input[str] patching_mode: (Updatable) Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
-               
-               *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
-        :param pulumi.Input[str] preference: (Updatable) The maintenance window scheduling preference.
-        :param pulumi.Input[Sequence[pulumi.Input[int]]] weeks_of_months: (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
-        """
         if custom_action_timeout_in_mins is not None:
             pulumi.set(__self__, "custom_action_timeout_in_mins", custom_action_timeout_in_mins)
         if days_of_weeks is not None:
@@ -468,9 +403,6 @@ class AutonomousContainerDatabaseMaintenanceWindowArgs:
     @property
     @pulumi.getter(name="customActionTimeoutInMins")
     def custom_action_timeout_in_mins(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
-        """
         return pulumi.get(self, "custom_action_timeout_in_mins")
 
     @custom_action_timeout_in_mins.setter
@@ -480,9 +412,6 @@ class AutonomousContainerDatabaseMaintenanceWindowArgs:
     @property
     @pulumi.getter(name="daysOfWeeks")
     def days_of_weeks(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousContainerDatabaseMaintenanceWindowDaysOfWeekArgs']]]]:
-        """
-        (Updatable) Days during the week when maintenance should be performed.
-        """
         return pulumi.get(self, "days_of_weeks")
 
     @days_of_weeks.setter
@@ -492,10 +421,6 @@ class AutonomousContainerDatabaseMaintenanceWindowArgs:
     @property
     @pulumi.getter(name="hoursOfDays")
     def hours_of_days(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[int]]]]:
-        """
-        (Updatable) The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
-        * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
-        """
         return pulumi.get(self, "hours_of_days")
 
     @hours_of_days.setter
@@ -505,9 +430,6 @@ class AutonomousContainerDatabaseMaintenanceWindowArgs:
     @property
     @pulumi.getter(name="isCustomActionTimeoutEnabled")
     def is_custom_action_timeout_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) If true, enables the configuration of a custom action timeout (waiting period) between database server patching operations.
-        """
         return pulumi.get(self, "is_custom_action_timeout_enabled")
 
     @is_custom_action_timeout_enabled.setter
@@ -517,9 +439,6 @@ class AutonomousContainerDatabaseMaintenanceWindowArgs:
     @property
     @pulumi.getter(name="isMonthlyPatchingEnabled")
     def is_monthly_patching_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) If true, enables the monthly patching option.
-        """
         return pulumi.get(self, "is_monthly_patching_enabled")
 
     @is_monthly_patching_enabled.setter
@@ -529,9 +448,6 @@ class AutonomousContainerDatabaseMaintenanceWindowArgs:
     @property
     @pulumi.getter(name="leadTimeInWeeks")
     def lead_time_in_weeks(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
-        """
         return pulumi.get(self, "lead_time_in_weeks")
 
     @lead_time_in_weeks.setter
@@ -541,9 +457,6 @@ class AutonomousContainerDatabaseMaintenanceWindowArgs:
     @property
     @pulumi.getter
     def months(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousContainerDatabaseMaintenanceWindowMonthArgs']]]]:
-        """
-        (Updatable) Months during the year when maintenance should be performed.
-        """
         return pulumi.get(self, "months")
 
     @months.setter
@@ -553,11 +466,6 @@ class AutonomousContainerDatabaseMaintenanceWindowArgs:
     @property
     @pulumi.getter(name="patchingMode")
     def patching_mode(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
-
-        *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
-        """
         return pulumi.get(self, "patching_mode")
 
     @patching_mode.setter
@@ -567,9 +475,6 @@ class AutonomousContainerDatabaseMaintenanceWindowArgs:
     @property
     @pulumi.getter
     def preference(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The maintenance window scheduling preference.
-        """
         return pulumi.get(self, "preference")
 
     @preference.setter
@@ -579,9 +484,6 @@ class AutonomousContainerDatabaseMaintenanceWindowArgs:
     @property
     @pulumi.getter(name="weeksOfMonths")
     def weeks_of_months(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[int]]]]:
-        """
-        (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
-        """
         return pulumi.get(self, "weeks_of_months")
 
     @weeks_of_months.setter
@@ -593,18 +495,12 @@ class AutonomousContainerDatabaseMaintenanceWindowArgs:
 class AutonomousContainerDatabaseMaintenanceWindowDaysOfWeekArgs:
     def __init__(__self__, *,
                  name: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] name: (Updatable) Name of the month of the year.
-        """
         if name is not None:
             pulumi.set(__self__, "name", name)
 
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Name of the month of the year.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -625,21 +521,6 @@ class AutonomousContainerDatabaseMaintenanceWindowDetailsArgs:
                  patching_mode: Optional[pulumi.Input[str]] = None,
                  preference: Optional[pulumi.Input[str]] = None,
                  weeks_of_months: Optional[pulumi.Input[Sequence[pulumi.Input[int]]]] = None):
-        """
-        :param pulumi.Input[int] custom_action_timeout_in_mins: (Updatable) Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
-        :param pulumi.Input[Sequence[pulumi.Input['AutonomousContainerDatabaseMaintenanceWindowDetailsDaysOfWeekArgs']]] days_of_weeks: (Updatable) Days during the week when maintenance should be performed.
-        :param pulumi.Input[Sequence[pulumi.Input[int]]] hours_of_days: (Updatable) The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
-               * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
-        :param pulumi.Input[bool] is_custom_action_timeout_enabled: (Updatable) If true, enables the configuration of a custom action timeout (waiting period) between database server patching operations.
-        :param pulumi.Input[bool] is_monthly_patching_enabled: (Updatable) If true, enables the monthly patching option.
-        :param pulumi.Input[int] lead_time_in_weeks: (Updatable) Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
-        :param pulumi.Input[Sequence[pulumi.Input['AutonomousContainerDatabaseMaintenanceWindowDetailsMonthArgs']]] months: (Updatable) Months during the year when maintenance should be performed.
-        :param pulumi.Input[str] patching_mode: (Updatable) Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
-               
-               *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
-        :param pulumi.Input[str] preference: (Updatable) The maintenance window scheduling preference.
-        :param pulumi.Input[Sequence[pulumi.Input[int]]] weeks_of_months: (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
-        """
         if custom_action_timeout_in_mins is not None:
             pulumi.set(__self__, "custom_action_timeout_in_mins", custom_action_timeout_in_mins)
         if days_of_weeks is not None:
@@ -664,9 +545,6 @@ class AutonomousContainerDatabaseMaintenanceWindowDetailsArgs:
     @property
     @pulumi.getter(name="customActionTimeoutInMins")
     def custom_action_timeout_in_mins(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
-        """
         return pulumi.get(self, "custom_action_timeout_in_mins")
 
     @custom_action_timeout_in_mins.setter
@@ -676,9 +554,6 @@ class AutonomousContainerDatabaseMaintenanceWindowDetailsArgs:
     @property
     @pulumi.getter(name="daysOfWeeks")
     def days_of_weeks(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousContainerDatabaseMaintenanceWindowDetailsDaysOfWeekArgs']]]]:
-        """
-        (Updatable) Days during the week when maintenance should be performed.
-        """
         return pulumi.get(self, "days_of_weeks")
 
     @days_of_weeks.setter
@@ -688,10 +563,6 @@ class AutonomousContainerDatabaseMaintenanceWindowDetailsArgs:
     @property
     @pulumi.getter(name="hoursOfDays")
     def hours_of_days(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[int]]]]:
-        """
-        (Updatable) The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
-        * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
-        """
         return pulumi.get(self, "hours_of_days")
 
     @hours_of_days.setter
@@ -701,9 +572,6 @@ class AutonomousContainerDatabaseMaintenanceWindowDetailsArgs:
     @property
     @pulumi.getter(name="isCustomActionTimeoutEnabled")
     def is_custom_action_timeout_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) If true, enables the configuration of a custom action timeout (waiting period) between database server patching operations.
-        """
         return pulumi.get(self, "is_custom_action_timeout_enabled")
 
     @is_custom_action_timeout_enabled.setter
@@ -713,9 +581,6 @@ class AutonomousContainerDatabaseMaintenanceWindowDetailsArgs:
     @property
     @pulumi.getter(name="isMonthlyPatchingEnabled")
     def is_monthly_patching_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) If true, enables the monthly patching option.
-        """
         return pulumi.get(self, "is_monthly_patching_enabled")
 
     @is_monthly_patching_enabled.setter
@@ -725,9 +590,6 @@ class AutonomousContainerDatabaseMaintenanceWindowDetailsArgs:
     @property
     @pulumi.getter(name="leadTimeInWeeks")
     def lead_time_in_weeks(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
-        """
         return pulumi.get(self, "lead_time_in_weeks")
 
     @lead_time_in_weeks.setter
@@ -737,9 +599,6 @@ class AutonomousContainerDatabaseMaintenanceWindowDetailsArgs:
     @property
     @pulumi.getter
     def months(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousContainerDatabaseMaintenanceWindowDetailsMonthArgs']]]]:
-        """
-        (Updatable) Months during the year when maintenance should be performed.
-        """
         return pulumi.get(self, "months")
 
     @months.setter
@@ -749,11 +608,6 @@ class AutonomousContainerDatabaseMaintenanceWindowDetailsArgs:
     @property
     @pulumi.getter(name="patchingMode")
     def patching_mode(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
-
-        *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
-        """
         return pulumi.get(self, "patching_mode")
 
     @patching_mode.setter
@@ -763,9 +617,6 @@ class AutonomousContainerDatabaseMaintenanceWindowDetailsArgs:
     @property
     @pulumi.getter
     def preference(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The maintenance window scheduling preference.
-        """
         return pulumi.get(self, "preference")
 
     @preference.setter
@@ -775,9 +626,6 @@ class AutonomousContainerDatabaseMaintenanceWindowDetailsArgs:
     @property
     @pulumi.getter(name="weeksOfMonths")
     def weeks_of_months(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[int]]]]:
-        """
-        (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
-        """
         return pulumi.get(self, "weeks_of_months")
 
     @weeks_of_months.setter
@@ -789,17 +637,11 @@ class AutonomousContainerDatabaseMaintenanceWindowDetailsArgs:
 class AutonomousContainerDatabaseMaintenanceWindowDetailsDaysOfWeekArgs:
     def __init__(__self__, *,
                  name: pulumi.Input[str]):
-        """
-        :param pulumi.Input[str] name: (Updatable) Name of the month of the year.
-        """
         pulumi.set(__self__, "name", name)
 
     @property
     @pulumi.getter
     def name(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Name of the month of the year.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -811,17 +653,11 @@ class AutonomousContainerDatabaseMaintenanceWindowDetailsDaysOfWeekArgs:
 class AutonomousContainerDatabaseMaintenanceWindowDetailsMonthArgs:
     def __init__(__self__, *,
                  name: pulumi.Input[str]):
-        """
-        :param pulumi.Input[str] name: (Updatable) Name of the month of the year.
-        """
         pulumi.set(__self__, "name", name)
 
     @property
     @pulumi.getter
     def name(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Name of the month of the year.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -833,18 +669,12 @@ class AutonomousContainerDatabaseMaintenanceWindowDetailsMonthArgs:
 class AutonomousContainerDatabaseMaintenanceWindowMonthArgs:
     def __init__(__self__, *,
                  name: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] name: (Updatable) Name of the month of the year.
-        """
         if name is not None:
             pulumi.set(__self__, "name", name)
 
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Name of the month of the year.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -857,10 +687,6 @@ class AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigArgs
     def __init__(__self__, *,
                  backup_destination_details: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailArgs']]]] = None,
                  recovery_window_in_days: Optional[pulumi.Input[int]] = None):
-        """
-        :param pulumi.Input[Sequence[pulumi.Input['AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailArgs']]] backup_destination_details: Backup destination details.
-        :param pulumi.Input[int] recovery_window_in_days: Number of days between the current and the earliest point of recoverability covered by automatic backups. This value applies to automatic backups. After a new automatic backup has been created, Oracle removes old automatic backups that are created before the window. When the value is updated, it is applied to all existing automatic backups.
-        """
         if backup_destination_details is not None:
             pulumi.set(__self__, "backup_destination_details", backup_destination_details)
         if recovery_window_in_days is not None:
@@ -869,9 +695,6 @@ class AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigArgs
     @property
     @pulumi.getter(name="backupDestinationDetails")
     def backup_destination_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailArgs']]]]:
-        """
-        Backup destination details.
-        """
         return pulumi.get(self, "backup_destination_details")
 
     @backup_destination_details.setter
@@ -881,9 +704,6 @@ class AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigArgs
     @property
     @pulumi.getter(name="recoveryWindowInDays")
     def recovery_window_in_days(self) -> Optional[pulumi.Input[int]]:
-        """
-        Number of days between the current and the earliest point of recoverability covered by automatic backups. This value applies to automatic backups. After a new automatic backup has been created, Oracle removes old automatic backups that are created before the window. When the value is updated, it is applied to all existing automatic backups.
-        """
         return pulumi.get(self, "recovery_window_in_days")
 
     @recovery_window_in_days.setter
@@ -899,13 +719,6 @@ class AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBack
                  internet_proxy: Optional[pulumi.Input[str]] = None,
                  vpc_password: Optional[pulumi.Input[str]] = None,
                  vpc_user: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] type: Type of the database backup destination.
-        :param pulumi.Input[str] id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
-        :param pulumi.Input[str] internet_proxy: Proxy URL to connect to object store.
-        :param pulumi.Input[str] vpc_password: For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
-        :param pulumi.Input[str] vpc_user: For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
-        """
         pulumi.set(__self__, "type", type)
         if id is not None:
             pulumi.set(__self__, "id", id)
@@ -919,9 +732,6 @@ class AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBack
     @property
     @pulumi.getter
     def type(self) -> pulumi.Input[str]:
-        """
-        Type of the database backup destination.
-        """
         return pulumi.get(self, "type")
 
     @type.setter
@@ -931,9 +741,6 @@ class AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBack
     @property
     @pulumi.getter
     def id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
-        """
         return pulumi.get(self, "id")
 
     @id.setter
@@ -943,9 +750,6 @@ class AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBack
     @property
     @pulumi.getter(name="internetProxy")
     def internet_proxy(self) -> Optional[pulumi.Input[str]]:
-        """
-        Proxy URL to connect to object store.
-        """
         return pulumi.get(self, "internet_proxy")
 
     @internet_proxy.setter
@@ -955,9 +759,6 @@ class AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBack
     @property
     @pulumi.getter(name="vpcPassword")
     def vpc_password(self) -> Optional[pulumi.Input[str]]:
-        """
-        For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
-        """
         return pulumi.get(self, "vpc_password")
 
     @vpc_password.setter
@@ -967,9 +768,6 @@ class AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBack
     @property
     @pulumi.getter(name="vpcUser")
     def vpc_user(self) -> Optional[pulumi.Input[str]]:
-        """
-        For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
-        """
         return pulumi.get(self, "vpc_user")
 
     @vpc_user.setter
@@ -982,10 +780,6 @@ class AutonomousDatabaseApexDetailArgs:
     def __init__(__self__, *,
                  apex_version: Optional[pulumi.Input[str]] = None,
                  ords_version: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] apex_version: The Oracle APEX Application Development version.
-        :param pulumi.Input[str] ords_version: The Oracle REST Data Services (ORDS) version.
-        """
         if apex_version is not None:
             pulumi.set(__self__, "apex_version", apex_version)
         if ords_version is not None:
@@ -994,9 +788,6 @@ class AutonomousDatabaseApexDetailArgs:
     @property
     @pulumi.getter(name="apexVersion")
     def apex_version(self) -> Optional[pulumi.Input[str]]:
-        """
-        The Oracle APEX Application Development version.
-        """
         return pulumi.get(self, "apex_version")
 
     @apex_version.setter
@@ -1006,9 +797,6 @@ class AutonomousDatabaseApexDetailArgs:
     @property
     @pulumi.getter(name="ordsVersion")
     def ords_version(self) -> Optional[pulumi.Input[str]]:
-        """
-        The Oracle REST Data Services (ORDS) version.
-        """
         return pulumi.get(self, "ords_version")
 
     @ords_version.setter
@@ -1024,13 +812,6 @@ class AutonomousDatabaseBackupBackupDestinationDetailsArgs:
                  internet_proxy: Optional[pulumi.Input[str]] = None,
                  vpc_password: Optional[pulumi.Input[str]] = None,
                  vpc_user: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] type: The type of backup.
-        :param pulumi.Input[str] id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database backup.
-        :param pulumi.Input[str] internet_proxy: Proxy URL to connect to object store.
-        :param pulumi.Input[str] vpc_password: For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
-        :param pulumi.Input[str] vpc_user: For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
-        """
         pulumi.set(__self__, "type", type)
         if id is not None:
             pulumi.set(__self__, "id", id)
@@ -1044,9 +825,6 @@ class AutonomousDatabaseBackupBackupDestinationDetailsArgs:
     @property
     @pulumi.getter
     def type(self) -> pulumi.Input[str]:
-        """
-        The type of backup.
-        """
         return pulumi.get(self, "type")
 
     @type.setter
@@ -1056,9 +834,6 @@ class AutonomousDatabaseBackupBackupDestinationDetailsArgs:
     @property
     @pulumi.getter
     def id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database backup.
-        """
         return pulumi.get(self, "id")
 
     @id.setter
@@ -1068,9 +843,6 @@ class AutonomousDatabaseBackupBackupDestinationDetailsArgs:
     @property
     @pulumi.getter(name="internetProxy")
     def internet_proxy(self) -> Optional[pulumi.Input[str]]:
-        """
-        Proxy URL to connect to object store.
-        """
         return pulumi.get(self, "internet_proxy")
 
     @internet_proxy.setter
@@ -1080,9 +852,6 @@ class AutonomousDatabaseBackupBackupDestinationDetailsArgs:
     @property
     @pulumi.getter(name="vpcPassword")
     def vpc_password(self) -> Optional[pulumi.Input[str]]:
-        """
-        For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
-        """
         return pulumi.get(self, "vpc_password")
 
     @vpc_password.setter
@@ -1092,9 +861,6 @@ class AutonomousDatabaseBackupBackupDestinationDetailsArgs:
     @property
     @pulumi.getter(name="vpcUser")
     def vpc_user(self) -> Optional[pulumi.Input[str]]:
-        """
-        For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
-        """
         return pulumi.get(self, "vpc_user")
 
     @vpc_user.setter
@@ -1107,10 +873,6 @@ class AutonomousDatabaseBackupConfigArgs:
     def __init__(__self__, *,
                  manual_backup_bucket_name: Optional[pulumi.Input[str]] = None,
                  manual_backup_type: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] manual_backup_bucket_name: Name of [Object Storage](https://docs.cloud.oracle.com/iaas/Content/Object/Concepts/objectstorageoverview.htm) bucket to use for storing manual backups.
-        :param pulumi.Input[str] manual_backup_type: The manual backup destination type.
-        """
         if manual_backup_bucket_name is not None:
             pulumi.set(__self__, "manual_backup_bucket_name", manual_backup_bucket_name)
         if manual_backup_type is not None:
@@ -1119,9 +881,6 @@ class AutonomousDatabaseBackupConfigArgs:
     @property
     @pulumi.getter(name="manualBackupBucketName")
     def manual_backup_bucket_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        Name of [Object Storage](https://docs.cloud.oracle.com/iaas/Content/Object/Concepts/objectstorageoverview.htm) bucket to use for storing manual backups.
-        """
         return pulumi.get(self, "manual_backup_bucket_name")
 
     @manual_backup_bucket_name.setter
@@ -1131,9 +890,6 @@ class AutonomousDatabaseBackupConfigArgs:
     @property
     @pulumi.getter(name="manualBackupType")
     def manual_backup_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        The manual backup destination type.
-        """
         return pulumi.get(self, "manual_backup_type")
 
     @manual_backup_type.setter
@@ -1150,14 +906,6 @@ class AutonomousDatabaseConnectionStringArgs:
                  low: Optional[pulumi.Input[str]] = None,
                  medium: Optional[pulumi.Input[str]] = None,
                  profiles: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseConnectionStringProfileArgs']]]] = None):
-        """
-        :param pulumi.Input[Mapping[str, Any]] all_connection_strings: Returns all connection strings that can be used to connect to the Autonomous Database. For more information, please see [Predefined Database Service Names for Autonomous Transaction Processing](https://docs.oracle.com/en/cloud/paas/atp-cloud/atpug/connect-predefined.html#GUID-9747539B-FD46-44F1-8FF8-F5AC650F15BE)
-        :param pulumi.Input[str] dedicated: The database service provides the least level of resources to each SQL statement, but supports the most number of concurrent SQL statements.
-        :param pulumi.Input[str] high: The High database service provides the highest level of resources to each SQL statement resulting in the highest performance, but supports the fewest number of concurrent SQL statements.
-        :param pulumi.Input[str] low: The Low database service provides the least level of resources to each SQL statement, but supports the most number of concurrent SQL statements.
-        :param pulumi.Input[str] medium: The Medium database service provides a lower level of resources to each SQL statement potentially resulting a lower level of performance, but supports more concurrent SQL statements.
-        :param pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseConnectionStringProfileArgs']]] profiles: A list of connection string profiles to allow clients to group, filter and select connection string values based on structured metadata.
-        """
         if all_connection_strings is not None:
             pulumi.set(__self__, "all_connection_strings", all_connection_strings)
         if dedicated is not None:
@@ -1174,9 +922,6 @@ class AutonomousDatabaseConnectionStringArgs:
     @property
     @pulumi.getter(name="allConnectionStrings")
     def all_connection_strings(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        Returns all connection strings that can be used to connect to the Autonomous Database. For more information, please see [Predefined Database Service Names for Autonomous Transaction Processing](https://docs.oracle.com/en/cloud/paas/atp-cloud/atpug/connect-predefined.html#GUID-9747539B-FD46-44F1-8FF8-F5AC650F15BE)
-        """
         return pulumi.get(self, "all_connection_strings")
 
     @all_connection_strings.setter
@@ -1186,9 +931,6 @@ class AutonomousDatabaseConnectionStringArgs:
     @property
     @pulumi.getter
     def dedicated(self) -> Optional[pulumi.Input[str]]:
-        """
-        The database service provides the least level of resources to each SQL statement, but supports the most number of concurrent SQL statements.
-        """
         return pulumi.get(self, "dedicated")
 
     @dedicated.setter
@@ -1198,9 +940,6 @@ class AutonomousDatabaseConnectionStringArgs:
     @property
     @pulumi.getter
     def high(self) -> Optional[pulumi.Input[str]]:
-        """
-        The High database service provides the highest level of resources to each SQL statement resulting in the highest performance, but supports the fewest number of concurrent SQL statements.
-        """
         return pulumi.get(self, "high")
 
     @high.setter
@@ -1210,9 +949,6 @@ class AutonomousDatabaseConnectionStringArgs:
     @property
     @pulumi.getter
     def low(self) -> Optional[pulumi.Input[str]]:
-        """
-        The Low database service provides the least level of resources to each SQL statement, but supports the most number of concurrent SQL statements.
-        """
         return pulumi.get(self, "low")
 
     @low.setter
@@ -1222,9 +958,6 @@ class AutonomousDatabaseConnectionStringArgs:
     @property
     @pulumi.getter
     def medium(self) -> Optional[pulumi.Input[str]]:
-        """
-        The Medium database service provides a lower level of resources to each SQL statement potentially resulting a lower level of performance, but supports more concurrent SQL statements.
-        """
         return pulumi.get(self, "medium")
 
     @medium.setter
@@ -1234,9 +967,6 @@ class AutonomousDatabaseConnectionStringArgs:
     @property
     @pulumi.getter
     def profiles(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseConnectionStringProfileArgs']]]]:
-        """
-        A list of connection string profiles to allow clients to group, filter and select connection string values based on structured metadata.
-        """
         return pulumi.get(self, "profiles")
 
     @profiles.setter
@@ -1255,16 +985,6 @@ class AutonomousDatabaseConnectionStringProfileArgs:
                  syntax_format: Optional[pulumi.Input[str]] = None,
                  tls_authentication: Optional[pulumi.Input[str]] = None,
                  value: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] consumer_group: Consumer group used by the connection.
-        :param pulumi.Input[str] display_name: (Updatable) The user-friendly name for the Autonomous Database. The name does not have to be unique.
-        :param pulumi.Input[str] host_format: Host format used in connection string.
-        :param pulumi.Input[str] protocol: Protocol used by the connection.
-        :param pulumi.Input[str] session_mode: Specifies whether the listener performs a direct hand-off of the session, or redirects the session. In RAC deployments where SCAN is used, sessions are redirected to a Node VIP. Use `DIRECT` for direct hand-offs. Use `REDIRECT` to redirect the session.
-        :param pulumi.Input[str] syntax_format: Specifies whether the connection string is using the long (`LONG`), Easy Connect (`EZCONNECT`), or Easy Connect Plus (`EZCONNECTPLUS`) format. Autonomous Databases on shared Exadata infrastructure always use the long format.
-        :param pulumi.Input[str] tls_authentication: Specifies whether the TLS handshake is using one-way (`SERVER`) or mutual (`MUTUAL`) authentication.
-        :param pulumi.Input[str] value: Connection string value.
-        """
         if consumer_group is not None:
             pulumi.set(__self__, "consumer_group", consumer_group)
         if display_name is not None:
@@ -1285,9 +1005,6 @@ class AutonomousDatabaseConnectionStringProfileArgs:
     @property
     @pulumi.getter(name="consumerGroup")
     def consumer_group(self) -> Optional[pulumi.Input[str]]:
-        """
-        Consumer group used by the connection.
-        """
         return pulumi.get(self, "consumer_group")
 
     @consumer_group.setter
@@ -1297,9 +1014,6 @@ class AutonomousDatabaseConnectionStringProfileArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The user-friendly name for the Autonomous Database. The name does not have to be unique.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -1309,9 +1023,6 @@ class AutonomousDatabaseConnectionStringProfileArgs:
     @property
     @pulumi.getter(name="hostFormat")
     def host_format(self) -> Optional[pulumi.Input[str]]:
-        """
-        Host format used in connection string.
-        """
         return pulumi.get(self, "host_format")
 
     @host_format.setter
@@ -1321,9 +1032,6 @@ class AutonomousDatabaseConnectionStringProfileArgs:
     @property
     @pulumi.getter
     def protocol(self) -> Optional[pulumi.Input[str]]:
-        """
-        Protocol used by the connection.
-        """
         return pulumi.get(self, "protocol")
 
     @protocol.setter
@@ -1333,9 +1041,6 @@ class AutonomousDatabaseConnectionStringProfileArgs:
     @property
     @pulumi.getter(name="sessionMode")
     def session_mode(self) -> Optional[pulumi.Input[str]]:
-        """
-        Specifies whether the listener performs a direct hand-off of the session, or redirects the session. In RAC deployments where SCAN is used, sessions are redirected to a Node VIP. Use `DIRECT` for direct hand-offs. Use `REDIRECT` to redirect the session.
-        """
         return pulumi.get(self, "session_mode")
 
     @session_mode.setter
@@ -1345,9 +1050,6 @@ class AutonomousDatabaseConnectionStringProfileArgs:
     @property
     @pulumi.getter(name="syntaxFormat")
     def syntax_format(self) -> Optional[pulumi.Input[str]]:
-        """
-        Specifies whether the connection string is using the long (`LONG`), Easy Connect (`EZCONNECT`), or Easy Connect Plus (`EZCONNECTPLUS`) format. Autonomous Databases on shared Exadata infrastructure always use the long format.
-        """
         return pulumi.get(self, "syntax_format")
 
     @syntax_format.setter
@@ -1357,9 +1059,6 @@ class AutonomousDatabaseConnectionStringProfileArgs:
     @property
     @pulumi.getter(name="tlsAuthentication")
     def tls_authentication(self) -> Optional[pulumi.Input[str]]:
-        """
-        Specifies whether the TLS handshake is using one-way (`SERVER`) or mutual (`MUTUAL`) authentication.
-        """
         return pulumi.get(self, "tls_authentication")
 
     @tls_authentication.setter
@@ -1369,9 +1068,6 @@ class AutonomousDatabaseConnectionStringProfileArgs:
     @property
     @pulumi.getter
     def value(self) -> Optional[pulumi.Input[str]]:
-        """
-        Connection string value.
-        """
         return pulumi.get(self, "value")
 
     @value.setter
@@ -1386,12 +1082,6 @@ class AutonomousDatabaseConnectionUrlArgs:
                  graph_studio_url: Optional[pulumi.Input[str]] = None,
                  machine_learning_user_management_url: Optional[pulumi.Input[str]] = None,
                  sql_dev_web_url: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] apex_url: Oracle Application Express (APEX) URL.
-        :param pulumi.Input[str] graph_studio_url: The URL of the Graph Studio for the Autonomous Database.
-        :param pulumi.Input[str] machine_learning_user_management_url: Oracle Machine Learning user management URL.
-        :param pulumi.Input[str] sql_dev_web_url: Oracle SQL Developer Web URL.
-        """
         if apex_url is not None:
             pulumi.set(__self__, "apex_url", apex_url)
         if graph_studio_url is not None:
@@ -1404,9 +1094,6 @@ class AutonomousDatabaseConnectionUrlArgs:
     @property
     @pulumi.getter(name="apexUrl")
     def apex_url(self) -> Optional[pulumi.Input[str]]:
-        """
-        Oracle Application Express (APEX) URL.
-        """
         return pulumi.get(self, "apex_url")
 
     @apex_url.setter
@@ -1416,9 +1103,6 @@ class AutonomousDatabaseConnectionUrlArgs:
     @property
     @pulumi.getter(name="graphStudioUrl")
     def graph_studio_url(self) -> Optional[pulumi.Input[str]]:
-        """
-        The URL of the Graph Studio for the Autonomous Database.
-        """
         return pulumi.get(self, "graph_studio_url")
 
     @graph_studio_url.setter
@@ -1428,9 +1112,6 @@ class AutonomousDatabaseConnectionUrlArgs:
     @property
     @pulumi.getter(name="machineLearningUserManagementUrl")
     def machine_learning_user_management_url(self) -> Optional[pulumi.Input[str]]:
-        """
-        Oracle Machine Learning user management URL.
-        """
         return pulumi.get(self, "machine_learning_user_management_url")
 
     @machine_learning_user_management_url.setter
@@ -1440,9 +1121,6 @@ class AutonomousDatabaseConnectionUrlArgs:
     @property
     @pulumi.getter(name="sqlDevWebUrl")
     def sql_dev_web_url(self) -> Optional[pulumi.Input[str]]:
-        """
-        Oracle SQL Developer Web URL.
-        """
         return pulumi.get(self, "sql_dev_web_url")
 
     @sql_dev_web_url.setter
@@ -1454,18 +1132,12 @@ class AutonomousDatabaseConnectionUrlArgs:
 class AutonomousDatabaseCustomerContactArgs:
     def __init__(__self__, *,
                  email: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] email: (Updatable) The email address used by Oracle to send notifications regarding databases and infrastructure.
-        """
         if email is not None:
             pulumi.set(__self__, "email", email)
 
     @property
     @pulumi.getter
     def email(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The email address used by Oracle to send notifications regarding databases and infrastructure.
-        """
         return pulumi.get(self, "email")
 
     @email.setter
@@ -1480,12 +1152,6 @@ class AutonomousDatabaseKeyHistoryEntryArgs:
                  kms_key_version_id: Optional[pulumi.Input[str]] = None,
                  time_activated: Optional[pulumi.Input[str]] = None,
                  vault_id: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] id: The id of the Autonomous Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
-        :param pulumi.Input[str] kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
-        :param pulumi.Input[str] time_activated: The date and time the kms key activated.
-        :param pulumi.Input[str] vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
-        """
         if id is not None:
             pulumi.set(__self__, "id", id)
         if kms_key_version_id is not None:
@@ -1498,9 +1164,6 @@ class AutonomousDatabaseKeyHistoryEntryArgs:
     @property
     @pulumi.getter
     def id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The id of the Autonomous Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
-        """
         return pulumi.get(self, "id")
 
     @id.setter
@@ -1510,9 +1173,6 @@ class AutonomousDatabaseKeyHistoryEntryArgs:
     @property
     @pulumi.getter(name="kmsKeyVersionId")
     def kms_key_version_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
-        """
         return pulumi.get(self, "kms_key_version_id")
 
     @kms_key_version_id.setter
@@ -1522,9 +1182,6 @@ class AutonomousDatabaseKeyHistoryEntryArgs:
     @property
     @pulumi.getter(name="timeActivated")
     def time_activated(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time the kms key activated.
-        """
         return pulumi.get(self, "time_activated")
 
     @time_activated.setter
@@ -1534,9 +1191,6 @@ class AutonomousDatabaseKeyHistoryEntryArgs:
     @property
     @pulumi.getter(name="vaultId")
     def vault_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
-        """
         return pulumi.get(self, "vault_id")
 
     @vault_id.setter
@@ -1552,13 +1206,6 @@ class AutonomousDatabaseLocalStandbyDbArgs:
                  state: Optional[pulumi.Input[str]] = None,
                  time_data_guard_role_changed: Optional[pulumi.Input[str]] = None,
                  time_disaster_recovery_role_changed: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[int] lag_time_in_seconds: The amount of time, in seconds, that the data of the standby database lags the data of the primary database. Can be used to determine the potential data loss in the event of a failover.
-        :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycle state.
-        :param pulumi.Input[str] state: The current state of the Autonomous Database.
-        :param pulumi.Input[str] time_data_guard_role_changed: The date and time the Autonomous Data Guard role was switched for the Autonomous Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the "primary" role in the primary Data Guard region, or database located in the remote Data Guard standby region.
-        :param pulumi.Input[str] time_disaster_recovery_role_changed: The date and time the Disaster Recovery role was switched for the standby Autonomous Database.
-        """
         if lag_time_in_seconds is not None:
             pulumi.set(__self__, "lag_time_in_seconds", lag_time_in_seconds)
         if lifecycle_details is not None:
@@ -1573,9 +1220,6 @@ class AutonomousDatabaseLocalStandbyDbArgs:
     @property
     @pulumi.getter(name="lagTimeInSeconds")
     def lag_time_in_seconds(self) -> Optional[pulumi.Input[int]]:
-        """
-        The amount of time, in seconds, that the data of the standby database lags the data of the primary database. Can be used to determine the potential data loss in the event of a failover.
-        """
         return pulumi.get(self, "lag_time_in_seconds")
 
     @lag_time_in_seconds.setter
@@ -1585,9 +1229,6 @@ class AutonomousDatabaseLocalStandbyDbArgs:
     @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> Optional[pulumi.Input[str]]:
-        """
-        Additional information about the current lifecycle state.
-        """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
@@ -1597,9 +1238,6 @@ class AutonomousDatabaseLocalStandbyDbArgs:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The current state of the Autonomous Database.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -1609,9 +1247,6 @@ class AutonomousDatabaseLocalStandbyDbArgs:
     @property
     @pulumi.getter(name="timeDataGuardRoleChanged")
     def time_data_guard_role_changed(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time the Autonomous Data Guard role was switched for the Autonomous Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the "primary" role in the primary Data Guard region, or database located in the remote Data Guard standby region.
-        """
         return pulumi.get(self, "time_data_guard_role_changed")
 
     @time_data_guard_role_changed.setter
@@ -1621,9 +1256,6 @@ class AutonomousDatabaseLocalStandbyDbArgs:
     @property
     @pulumi.getter(name="timeDisasterRecoveryRoleChanged")
     def time_disaster_recovery_role_changed(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time the Disaster Recovery role was switched for the standby Autonomous Database.
-        """
         return pulumi.get(self, "time_disaster_recovery_role_changed")
 
     @time_disaster_recovery_role_changed.setter
@@ -1638,12 +1270,6 @@ class AutonomousDatabaseLongTermBackupScheduleArgs:
                  repeat_cadence: Optional[pulumi.Input[str]] = None,
                  retention_period_in_days: Optional[pulumi.Input[int]] = None,
                  time_of_backup: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[bool] is_disabled: Indicates if the long-term backup schedule should be deleted. The default value is `FALSE`.
-        :param pulumi.Input[str] repeat_cadence: The frequency of the long-term backup schedule
-        :param pulumi.Input[int] retention_period_in_days: Retention period, in days, for long-term backups
-        :param pulumi.Input[str] time_of_backup: The timestamp for the long-term backup schedule. For a MONTHLY cadence, months having fewer days than the provided date will have the backup taken on the last day of that month.
-        """
         if is_disabled is not None:
             pulumi.set(__self__, "is_disabled", is_disabled)
         if repeat_cadence is not None:
@@ -1656,9 +1282,6 @@ class AutonomousDatabaseLongTermBackupScheduleArgs:
     @property
     @pulumi.getter(name="isDisabled")
     def is_disabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Indicates if the long-term backup schedule should be deleted. The default value is `FALSE`.
-        """
         return pulumi.get(self, "is_disabled")
 
     @is_disabled.setter
@@ -1668,9 +1291,6 @@ class AutonomousDatabaseLongTermBackupScheduleArgs:
     @property
     @pulumi.getter(name="repeatCadence")
     def repeat_cadence(self) -> Optional[pulumi.Input[str]]:
-        """
-        The frequency of the long-term backup schedule
-        """
         return pulumi.get(self, "repeat_cadence")
 
     @repeat_cadence.setter
@@ -1680,9 +1300,6 @@ class AutonomousDatabaseLongTermBackupScheduleArgs:
     @property
     @pulumi.getter(name="retentionPeriodInDays")
     def retention_period_in_days(self) -> Optional[pulumi.Input[int]]:
-        """
-        Retention period, in days, for long-term backups
-        """
         return pulumi.get(self, "retention_period_in_days")
 
     @retention_period_in_days.setter
@@ -1692,9 +1309,6 @@ class AutonomousDatabaseLongTermBackupScheduleArgs:
     @property
     @pulumi.getter(name="timeOfBackup")
     def time_of_backup(self) -> Optional[pulumi.Input[str]]:
-        """
-        The timestamp for the long-term backup schedule. For a MONTHLY cadence, months having fewer days than the provided date will have the backup taken on the last day of that month.
-        """
         return pulumi.get(self, "time_of_backup")
 
     @time_of_backup.setter
@@ -1706,18 +1320,12 @@ class AutonomousDatabaseLongTermBackupScheduleArgs:
 class AutonomousDatabaseRemoteDisasterRecoveryConfigurationArgs:
     def __init__(__self__, *,
                  disaster_recovery_type: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] disaster_recovery_type: Indicates the disaster recovery (DR) type of the Shared Autonomous Database. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
-        """
         if disaster_recovery_type is not None:
             pulumi.set(__self__, "disaster_recovery_type", disaster_recovery_type)
 
     @property
     @pulumi.getter(name="disasterRecoveryType")
     def disaster_recovery_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        Indicates the disaster recovery (DR) type of the Shared Autonomous Database. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
-        """
         return pulumi.get(self, "disaster_recovery_type")
 
     @disaster_recovery_type.setter
@@ -1730,9 +1338,6 @@ class AutonomousDatabaseResourcePoolSummaryArgs:
     def __init__(__self__, *,
                  is_disabled: Optional[pulumi.Input[bool]] = None,
                  pool_size: Optional[pulumi.Input[int]] = None):
-        """
-        :param pulumi.Input[bool] is_disabled: Indicates if the long-term backup schedule should be deleted. The default value is `FALSE`.
-        """
         if is_disabled is not None:
             pulumi.set(__self__, "is_disabled", is_disabled)
         if pool_size is not None:
@@ -1741,9 +1346,6 @@ class AutonomousDatabaseResourcePoolSummaryArgs:
     @property
     @pulumi.getter(name="isDisabled")
     def is_disabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Indicates if the long-term backup schedule should be deleted. The default value is `FALSE`.
-        """
         return pulumi.get(self, "is_disabled")
 
     @is_disabled.setter
@@ -1766,11 +1368,6 @@ class AutonomousDatabaseScheduledOperationArgs:
                  day_of_week: pulumi.Input['AutonomousDatabaseScheduledOperationDayOfWeekArgs'],
                  scheduled_start_time: Optional[pulumi.Input[str]] = None,
                  scheduled_stop_time: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input['AutonomousDatabaseScheduledOperationDayOfWeekArgs'] day_of_week: (Updatable) Day of the week.
-        :param pulumi.Input[str] scheduled_start_time: (Updatable) auto start time. value must be of ISO-8601 format "HH:mm"
-        :param pulumi.Input[str] scheduled_stop_time: (Updatable) auto stop time. value must be of ISO-8601 format "HH:mm"
-        """
         pulumi.set(__self__, "day_of_week", day_of_week)
         if scheduled_start_time is not None:
             pulumi.set(__self__, "scheduled_start_time", scheduled_start_time)
@@ -1780,9 +1377,6 @@ class AutonomousDatabaseScheduledOperationArgs:
     @property
     @pulumi.getter(name="dayOfWeek")
     def day_of_week(self) -> pulumi.Input['AutonomousDatabaseScheduledOperationDayOfWeekArgs']:
-        """
-        (Updatable) Day of the week.
-        """
         return pulumi.get(self, "day_of_week")
 
     @day_of_week.setter
@@ -1792,9 +1386,6 @@ class AutonomousDatabaseScheduledOperationArgs:
     @property
     @pulumi.getter(name="scheduledStartTime")
     def scheduled_start_time(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) auto start time. value must be of ISO-8601 format "HH:mm"
-        """
         return pulumi.get(self, "scheduled_start_time")
 
     @scheduled_start_time.setter
@@ -1804,9 +1395,6 @@ class AutonomousDatabaseScheduledOperationArgs:
     @property
     @pulumi.getter(name="scheduledStopTime")
     def scheduled_stop_time(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) auto stop time. value must be of ISO-8601 format "HH:mm"
-        """
         return pulumi.get(self, "scheduled_stop_time")
 
     @scheduled_stop_time.setter
@@ -1818,17 +1406,11 @@ class AutonomousDatabaseScheduledOperationArgs:
 class AutonomousDatabaseScheduledOperationDayOfWeekArgs:
     def __init__(__self__, *,
                  name: pulumi.Input[str]):
-        """
-        :param pulumi.Input[str] name: (Updatable) Name of the day of the week.
-        """
         pulumi.set(__self__, "name", name)
 
     @property
     @pulumi.getter
     def name(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Name of the day of the week.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -1844,13 +1426,6 @@ class AutonomousDatabaseStandbyDbArgs:
                  state: Optional[pulumi.Input[str]] = None,
                  time_data_guard_role_changed: Optional[pulumi.Input[str]] = None,
                  time_disaster_recovery_role_changed: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[int] lag_time_in_seconds: The amount of time, in seconds, that the data of the standby database lags the data of the primary database. Can be used to determine the potential data loss in the event of a failover.
-        :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycle state.
-        :param pulumi.Input[str] state: The current state of the Autonomous Database.
-        :param pulumi.Input[str] time_data_guard_role_changed: The date and time the Autonomous Data Guard role was switched for the Autonomous Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the "primary" role in the primary Data Guard region, or database located in the remote Data Guard standby region.
-        :param pulumi.Input[str] time_disaster_recovery_role_changed: The date and time the Disaster Recovery role was switched for the standby Autonomous Database.
-        """
         if lag_time_in_seconds is not None:
             pulumi.set(__self__, "lag_time_in_seconds", lag_time_in_seconds)
         if lifecycle_details is not None:
@@ -1865,9 +1440,6 @@ class AutonomousDatabaseStandbyDbArgs:
     @property
     @pulumi.getter(name="lagTimeInSeconds")
     def lag_time_in_seconds(self) -> Optional[pulumi.Input[int]]:
-        """
-        The amount of time, in seconds, that the data of the standby database lags the data of the primary database. Can be used to determine the potential data loss in the event of a failover.
-        """
         return pulumi.get(self, "lag_time_in_seconds")
 
     @lag_time_in_seconds.setter
@@ -1877,9 +1449,6 @@ class AutonomousDatabaseStandbyDbArgs:
     @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> Optional[pulumi.Input[str]]:
-        """
-        Additional information about the current lifecycle state.
-        """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
@@ -1889,9 +1458,6 @@ class AutonomousDatabaseStandbyDbArgs:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The current state of the Autonomous Database.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -1901,9 +1467,6 @@ class AutonomousDatabaseStandbyDbArgs:
     @property
     @pulumi.getter(name="timeDataGuardRoleChanged")
     def time_data_guard_role_changed(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time the Autonomous Data Guard role was switched for the Autonomous Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the "primary" role in the primary Data Guard region, or database located in the remote Data Guard standby region.
-        """
         return pulumi.get(self, "time_data_guard_role_changed")
 
     @time_data_guard_role_changed.setter
@@ -1913,9 +1476,6 @@ class AutonomousDatabaseStandbyDbArgs:
     @property
     @pulumi.getter(name="timeDisasterRecoveryRoleChanged")
     def time_disaster_recovery_role_changed(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time the Disaster Recovery role was switched for the standby Autonomous Database.
-        """
         return pulumi.get(self, "time_disaster_recovery_role_changed")
 
     @time_disaster_recovery_role_changed.setter
@@ -1936,21 +1496,6 @@ class AutonomousExadataInfrastructureMaintenanceWindowArgs:
                  patching_mode: Optional[pulumi.Input[str]] = None,
                  preference: Optional[pulumi.Input[str]] = None,
                  weeks_of_months: Optional[pulumi.Input[Sequence[pulumi.Input[int]]]] = None):
-        """
-        :param pulumi.Input[int] custom_action_timeout_in_mins: (Updatable) Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
-        :param pulumi.Input[Sequence[pulumi.Input['AutonomousExadataInfrastructureMaintenanceWindowDaysOfWeekArgs']]] days_of_weeks: (Updatable) Days during the week when maintenance should be performed.
-        :param pulumi.Input[Sequence[pulumi.Input[int]]] hours_of_days: (Updatable) The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
-               * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
-        :param pulumi.Input[bool] is_custom_action_timeout_enabled: (Updatable) If true, enables the configuration of a custom action timeout (waiting period) between database server patching operations.
-        :param pulumi.Input[bool] is_monthly_patching_enabled: (Updatable) If true, enables the monthly patching option.
-        :param pulumi.Input[int] lead_time_in_weeks: (Updatable) Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
-        :param pulumi.Input[Sequence[pulumi.Input['AutonomousExadataInfrastructureMaintenanceWindowMonthArgs']]] months: (Updatable) Months during the year when maintenance should be performed.
-        :param pulumi.Input[str] patching_mode: (Updatable) Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
-               
-               *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
-        :param pulumi.Input[str] preference: (Updatable) The maintenance window scheduling preference.
-        :param pulumi.Input[Sequence[pulumi.Input[int]]] weeks_of_months: (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
-        """
         if custom_action_timeout_in_mins is not None:
             pulumi.set(__self__, "custom_action_timeout_in_mins", custom_action_timeout_in_mins)
         if days_of_weeks is not None:
@@ -1975,9 +1520,6 @@ class AutonomousExadataInfrastructureMaintenanceWindowArgs:
     @property
     @pulumi.getter(name="customActionTimeoutInMins")
     def custom_action_timeout_in_mins(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
-        """
         return pulumi.get(self, "custom_action_timeout_in_mins")
 
     @custom_action_timeout_in_mins.setter
@@ -1987,9 +1529,6 @@ class AutonomousExadataInfrastructureMaintenanceWindowArgs:
     @property
     @pulumi.getter(name="daysOfWeeks")
     def days_of_weeks(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousExadataInfrastructureMaintenanceWindowDaysOfWeekArgs']]]]:
-        """
-        (Updatable) Days during the week when maintenance should be performed.
-        """
         return pulumi.get(self, "days_of_weeks")
 
     @days_of_weeks.setter
@@ -1999,10 +1538,6 @@ class AutonomousExadataInfrastructureMaintenanceWindowArgs:
     @property
     @pulumi.getter(name="hoursOfDays")
     def hours_of_days(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[int]]]]:
-        """
-        (Updatable) The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
-        * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
-        """
         return pulumi.get(self, "hours_of_days")
 
     @hours_of_days.setter
@@ -2012,9 +1547,6 @@ class AutonomousExadataInfrastructureMaintenanceWindowArgs:
     @property
     @pulumi.getter(name="isCustomActionTimeoutEnabled")
     def is_custom_action_timeout_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) If true, enables the configuration of a custom action timeout (waiting period) between database server patching operations.
-        """
         return pulumi.get(self, "is_custom_action_timeout_enabled")
 
     @is_custom_action_timeout_enabled.setter
@@ -2024,9 +1556,6 @@ class AutonomousExadataInfrastructureMaintenanceWindowArgs:
     @property
     @pulumi.getter(name="isMonthlyPatchingEnabled")
     def is_monthly_patching_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) If true, enables the monthly patching option.
-        """
         return pulumi.get(self, "is_monthly_patching_enabled")
 
     @is_monthly_patching_enabled.setter
@@ -2036,9 +1565,6 @@ class AutonomousExadataInfrastructureMaintenanceWindowArgs:
     @property
     @pulumi.getter(name="leadTimeInWeeks")
     def lead_time_in_weeks(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
-        """
         return pulumi.get(self, "lead_time_in_weeks")
 
     @lead_time_in_weeks.setter
@@ -2048,9 +1574,6 @@ class AutonomousExadataInfrastructureMaintenanceWindowArgs:
     @property
     @pulumi.getter
     def months(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousExadataInfrastructureMaintenanceWindowMonthArgs']]]]:
-        """
-        (Updatable) Months during the year when maintenance should be performed.
-        """
         return pulumi.get(self, "months")
 
     @months.setter
@@ -2060,11 +1583,6 @@ class AutonomousExadataInfrastructureMaintenanceWindowArgs:
     @property
     @pulumi.getter(name="patchingMode")
     def patching_mode(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
-
-        *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
-        """
         return pulumi.get(self, "patching_mode")
 
     @patching_mode.setter
@@ -2074,9 +1592,6 @@ class AutonomousExadataInfrastructureMaintenanceWindowArgs:
     @property
     @pulumi.getter
     def preference(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The maintenance window scheduling preference.
-        """
         return pulumi.get(self, "preference")
 
     @preference.setter
@@ -2086,9 +1601,6 @@ class AutonomousExadataInfrastructureMaintenanceWindowArgs:
     @property
     @pulumi.getter(name="weeksOfMonths")
     def weeks_of_months(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[int]]]]:
-        """
-        (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
-        """
         return pulumi.get(self, "weeks_of_months")
 
     @weeks_of_months.setter
@@ -2100,18 +1612,12 @@ class AutonomousExadataInfrastructureMaintenanceWindowArgs:
 class AutonomousExadataInfrastructureMaintenanceWindowDaysOfWeekArgs:
     def __init__(__self__, *,
                  name: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] name: (Updatable) Name of the month of the year.
-        """
         if name is not None:
             pulumi.set(__self__, "name", name)
 
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Name of the month of the year.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -2132,21 +1638,6 @@ class AutonomousExadataInfrastructureMaintenanceWindowDetailsArgs:
                  patching_mode: Optional[pulumi.Input[str]] = None,
                  preference: Optional[pulumi.Input[str]] = None,
                  weeks_of_months: Optional[pulumi.Input[Sequence[pulumi.Input[int]]]] = None):
-        """
-        :param pulumi.Input[int] custom_action_timeout_in_mins: (Updatable) Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
-        :param pulumi.Input[Sequence[pulumi.Input['AutonomousExadataInfrastructureMaintenanceWindowDetailsDaysOfWeekArgs']]] days_of_weeks: (Updatable) Days during the week when maintenance should be performed.
-        :param pulumi.Input[Sequence[pulumi.Input[int]]] hours_of_days: (Updatable) The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
-               * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
-        :param pulumi.Input[bool] is_custom_action_timeout_enabled: (Updatable) If true, enables the configuration of a custom action timeout (waiting period) between database server patching operations.
-        :param pulumi.Input[bool] is_monthly_patching_enabled: (Updatable) If true, enables the monthly patching option.
-        :param pulumi.Input[int] lead_time_in_weeks: (Updatable) Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
-        :param pulumi.Input[Sequence[pulumi.Input['AutonomousExadataInfrastructureMaintenanceWindowDetailsMonthArgs']]] months: (Updatable) Months during the year when maintenance should be performed.
-        :param pulumi.Input[str] patching_mode: (Updatable) Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
-               
-               *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
-        :param pulumi.Input[str] preference: (Updatable) The maintenance window scheduling preference.
-        :param pulumi.Input[Sequence[pulumi.Input[int]]] weeks_of_months: (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
-        """
         if custom_action_timeout_in_mins is not None:
             pulumi.set(__self__, "custom_action_timeout_in_mins", custom_action_timeout_in_mins)
         if days_of_weeks is not None:
@@ -2171,9 +1662,6 @@ class AutonomousExadataInfrastructureMaintenanceWindowDetailsArgs:
     @property
     @pulumi.getter(name="customActionTimeoutInMins")
     def custom_action_timeout_in_mins(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
-        """
         return pulumi.get(self, "custom_action_timeout_in_mins")
 
     @custom_action_timeout_in_mins.setter
@@ -2183,9 +1671,6 @@ class AutonomousExadataInfrastructureMaintenanceWindowDetailsArgs:
     @property
     @pulumi.getter(name="daysOfWeeks")
     def days_of_weeks(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousExadataInfrastructureMaintenanceWindowDetailsDaysOfWeekArgs']]]]:
-        """
-        (Updatable) Days during the week when maintenance should be performed.
-        """
         return pulumi.get(self, "days_of_weeks")
 
     @days_of_weeks.setter
@@ -2195,10 +1680,6 @@ class AutonomousExadataInfrastructureMaintenanceWindowDetailsArgs:
     @property
     @pulumi.getter(name="hoursOfDays")
     def hours_of_days(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[int]]]]:
-        """
-        (Updatable) The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
-        * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
-        """
         return pulumi.get(self, "hours_of_days")
 
     @hours_of_days.setter
@@ -2208,9 +1689,6 @@ class AutonomousExadataInfrastructureMaintenanceWindowDetailsArgs:
     @property
     @pulumi.getter(name="isCustomActionTimeoutEnabled")
     def is_custom_action_timeout_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) If true, enables the configuration of a custom action timeout (waiting period) between database server patching operations.
-        """
         return pulumi.get(self, "is_custom_action_timeout_enabled")
 
     @is_custom_action_timeout_enabled.setter
@@ -2220,9 +1698,6 @@ class AutonomousExadataInfrastructureMaintenanceWindowDetailsArgs:
     @property
     @pulumi.getter(name="isMonthlyPatchingEnabled")
     def is_monthly_patching_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) If true, enables the monthly patching option.
-        """
         return pulumi.get(self, "is_monthly_patching_enabled")
 
     @is_monthly_patching_enabled.setter
@@ -2232,9 +1707,6 @@ class AutonomousExadataInfrastructureMaintenanceWindowDetailsArgs:
     @property
     @pulumi.getter(name="leadTimeInWeeks")
     def lead_time_in_weeks(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
-        """
         return pulumi.get(self, "lead_time_in_weeks")
 
     @lead_time_in_weeks.setter
@@ -2244,9 +1716,6 @@ class AutonomousExadataInfrastructureMaintenanceWindowDetailsArgs:
     @property
     @pulumi.getter
     def months(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousExadataInfrastructureMaintenanceWindowDetailsMonthArgs']]]]:
-        """
-        (Updatable) Months during the year when maintenance should be performed.
-        """
         return pulumi.get(self, "months")
 
     @months.setter
@@ -2256,11 +1725,6 @@ class AutonomousExadataInfrastructureMaintenanceWindowDetailsArgs:
     @property
     @pulumi.getter(name="patchingMode")
     def patching_mode(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
-
-        *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
-        """
         return pulumi.get(self, "patching_mode")
 
     @patching_mode.setter
@@ -2270,9 +1734,6 @@ class AutonomousExadataInfrastructureMaintenanceWindowDetailsArgs:
     @property
     @pulumi.getter
     def preference(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The maintenance window scheduling preference.
-        """
         return pulumi.get(self, "preference")
 
     @preference.setter
@@ -2282,9 +1743,6 @@ class AutonomousExadataInfrastructureMaintenanceWindowDetailsArgs:
     @property
     @pulumi.getter(name="weeksOfMonths")
     def weeks_of_months(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[int]]]]:
-        """
-        (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
-        """
         return pulumi.get(self, "weeks_of_months")
 
     @weeks_of_months.setter
@@ -2296,17 +1754,11 @@ class AutonomousExadataInfrastructureMaintenanceWindowDetailsArgs:
 class AutonomousExadataInfrastructureMaintenanceWindowDetailsDaysOfWeekArgs:
     def __init__(__self__, *,
                  name: pulumi.Input[str]):
-        """
-        :param pulumi.Input[str] name: (Updatable) Name of the month of the year.
-        """
         pulumi.set(__self__, "name", name)
 
     @property
     @pulumi.getter
     def name(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Name of the month of the year.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -2318,17 +1770,11 @@ class AutonomousExadataInfrastructureMaintenanceWindowDetailsDaysOfWeekArgs:
 class AutonomousExadataInfrastructureMaintenanceWindowDetailsMonthArgs:
     def __init__(__self__, *,
                  name: pulumi.Input[str]):
-        """
-        :param pulumi.Input[str] name: (Updatable) Name of the month of the year.
-        """
         pulumi.set(__self__, "name", name)
 
     @property
     @pulumi.getter
     def name(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Name of the month of the year.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -2340,18 +1786,12 @@ class AutonomousExadataInfrastructureMaintenanceWindowDetailsMonthArgs:
 class AutonomousExadataInfrastructureMaintenanceWindowMonthArgs:
     def __init__(__self__, *,
                  name: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] name: (Updatable) Name of the month of the year.
-        """
         if name is not None:
             pulumi.set(__self__, "name", name)
 
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Name of the month of the year.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -2372,18 +1812,6 @@ class AutonomousVmClusterMaintenanceWindowArgs:
                  patching_mode: Optional[pulumi.Input[str]] = None,
                  preference: Optional[pulumi.Input[str]] = None,
                  weeks_of_months: Optional[pulumi.Input[Sequence[pulumi.Input[int]]]] = None):
-        """
-        :param pulumi.Input[Sequence[pulumi.Input['AutonomousVmClusterMaintenanceWindowDaysOfWeekArgs']]] days_of_weeks: (Updatable) Days during the week when maintenance should be performed.
-        :param pulumi.Input[Sequence[pulumi.Input[int]]] hours_of_days: (Updatable) The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
-               * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
-        :param pulumi.Input[int] lead_time_in_weeks: (Updatable) Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
-        :param pulumi.Input[Sequence[pulumi.Input['AutonomousVmClusterMaintenanceWindowMonthArgs']]] months: (Updatable) Months during the year when maintenance should be performed.
-        :param pulumi.Input[str] patching_mode: (Updatable) Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
-               
-               *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
-        :param pulumi.Input[str] preference: (Updatable) The maintenance window scheduling preference.
-        :param pulumi.Input[Sequence[pulumi.Input[int]]] weeks_of_months: (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
-        """
         if custom_action_timeout_in_mins is not None:
             pulumi.set(__self__, "custom_action_timeout_in_mins", custom_action_timeout_in_mins)
         if days_of_weeks is not None:
@@ -2417,9 +1845,6 @@ class AutonomousVmClusterMaintenanceWindowArgs:
     @property
     @pulumi.getter(name="daysOfWeeks")
     def days_of_weeks(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousVmClusterMaintenanceWindowDaysOfWeekArgs']]]]:
-        """
-        (Updatable) Days during the week when maintenance should be performed.
-        """
         return pulumi.get(self, "days_of_weeks")
 
     @days_of_weeks.setter
@@ -2429,10 +1854,6 @@ class AutonomousVmClusterMaintenanceWindowArgs:
     @property
     @pulumi.getter(name="hoursOfDays")
     def hours_of_days(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[int]]]]:
-        """
-        (Updatable) The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
-        * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
-        """
         return pulumi.get(self, "hours_of_days")
 
     @hours_of_days.setter
@@ -2460,9 +1881,6 @@ class AutonomousVmClusterMaintenanceWindowArgs:
     @property
     @pulumi.getter(name="leadTimeInWeeks")
     def lead_time_in_weeks(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
-        """
         return pulumi.get(self, "lead_time_in_weeks")
 
     @lead_time_in_weeks.setter
@@ -2472,9 +1890,6 @@ class AutonomousVmClusterMaintenanceWindowArgs:
     @property
     @pulumi.getter
     def months(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousVmClusterMaintenanceWindowMonthArgs']]]]:
-        """
-        (Updatable) Months during the year when maintenance should be performed.
-        """
         return pulumi.get(self, "months")
 
     @months.setter
@@ -2484,11 +1899,6 @@ class AutonomousVmClusterMaintenanceWindowArgs:
     @property
     @pulumi.getter(name="patchingMode")
     def patching_mode(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
-
-        *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
-        """
         return pulumi.get(self, "patching_mode")
 
     @patching_mode.setter
@@ -2498,9 +1908,6 @@ class AutonomousVmClusterMaintenanceWindowArgs:
     @property
     @pulumi.getter
     def preference(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The maintenance window scheduling preference.
-        """
         return pulumi.get(self, "preference")
 
     @preference.setter
@@ -2510,9 +1917,6 @@ class AutonomousVmClusterMaintenanceWindowArgs:
     @property
     @pulumi.getter(name="weeksOfMonths")
     def weeks_of_months(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[int]]]]:
-        """
-        (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
-        """
         return pulumi.get(self, "weeks_of_months")
 
     @weeks_of_months.setter
@@ -2524,18 +1928,12 @@ class AutonomousVmClusterMaintenanceWindowArgs:
 class AutonomousVmClusterMaintenanceWindowDaysOfWeekArgs:
     def __init__(__self__, *,
                  name: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] name: (Updatable) Name of the month of the year.
-        """
         if name is not None:
             pulumi.set(__self__, "name", name)
 
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Name of the month of the year.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -2556,18 +1954,6 @@ class AutonomousVmClusterMaintenanceWindowDetailArgs:
                  patching_mode: Optional[pulumi.Input[str]] = None,
                  preference: Optional[pulumi.Input[str]] = None,
                  weeks_of_months: Optional[pulumi.Input[Sequence[pulumi.Input[int]]]] = None):
-        """
-        :param pulumi.Input[Sequence[pulumi.Input['AutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArgs']]] days_of_weeks: (Updatable) Days during the week when maintenance should be performed.
-        :param pulumi.Input[Sequence[pulumi.Input[int]]] hours_of_days: (Updatable) The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
-               * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
-        :param pulumi.Input[int] lead_time_in_weeks: (Updatable) Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
-        :param pulumi.Input[Sequence[pulumi.Input['AutonomousVmClusterMaintenanceWindowDetailMonthArgs']]] months: (Updatable) Months during the year when maintenance should be performed.
-        :param pulumi.Input[str] patching_mode: (Updatable) Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
-               
-               *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
-        :param pulumi.Input[str] preference: (Updatable) The maintenance window scheduling preference.
-        :param pulumi.Input[Sequence[pulumi.Input[int]]] weeks_of_months: (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
-        """
         if custom_action_timeout_in_mins is not None:
             pulumi.set(__self__, "custom_action_timeout_in_mins", custom_action_timeout_in_mins)
         if days_of_weeks is not None:
@@ -2601,9 +1987,6 @@ class AutonomousVmClusterMaintenanceWindowDetailArgs:
     @property
     @pulumi.getter(name="daysOfWeeks")
     def days_of_weeks(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArgs']]]]:
-        """
-        (Updatable) Days during the week when maintenance should be performed.
-        """
         return pulumi.get(self, "days_of_weeks")
 
     @days_of_weeks.setter
@@ -2613,10 +1996,6 @@ class AutonomousVmClusterMaintenanceWindowDetailArgs:
     @property
     @pulumi.getter(name="hoursOfDays")
     def hours_of_days(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[int]]]]:
-        """
-        (Updatable) The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
-        * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
-        """
         return pulumi.get(self, "hours_of_days")
 
     @hours_of_days.setter
@@ -2644,9 +2023,6 @@ class AutonomousVmClusterMaintenanceWindowDetailArgs:
     @property
     @pulumi.getter(name="leadTimeInWeeks")
     def lead_time_in_weeks(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
-        """
         return pulumi.get(self, "lead_time_in_weeks")
 
     @lead_time_in_weeks.setter
@@ -2656,9 +2032,6 @@ class AutonomousVmClusterMaintenanceWindowDetailArgs:
     @property
     @pulumi.getter
     def months(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousVmClusterMaintenanceWindowDetailMonthArgs']]]]:
-        """
-        (Updatable) Months during the year when maintenance should be performed.
-        """
         return pulumi.get(self, "months")
 
     @months.setter
@@ -2668,11 +2041,6 @@ class AutonomousVmClusterMaintenanceWindowDetailArgs:
     @property
     @pulumi.getter(name="patchingMode")
     def patching_mode(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
-
-        *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
-        """
         return pulumi.get(self, "patching_mode")
 
     @patching_mode.setter
@@ -2682,9 +2050,6 @@ class AutonomousVmClusterMaintenanceWindowDetailArgs:
     @property
     @pulumi.getter
     def preference(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The maintenance window scheduling preference.
-        """
         return pulumi.get(self, "preference")
 
     @preference.setter
@@ -2694,9 +2059,6 @@ class AutonomousVmClusterMaintenanceWindowDetailArgs:
     @property
     @pulumi.getter(name="weeksOfMonths")
     def weeks_of_months(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[int]]]]:
-        """
-        (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
-        """
         return pulumi.get(self, "weeks_of_months")
 
     @weeks_of_months.setter
@@ -2708,17 +2070,11 @@ class AutonomousVmClusterMaintenanceWindowDetailArgs:
 class AutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArgs:
     def __init__(__self__, *,
                  name: pulumi.Input[str]):
-        """
-        :param pulumi.Input[str] name: (Updatable) Name of the month of the year.
-        """
         pulumi.set(__self__, "name", name)
 
     @property
     @pulumi.getter
     def name(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Name of the month of the year.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -2730,17 +2086,11 @@ class AutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArgs:
 class AutonomousVmClusterMaintenanceWindowDetailMonthArgs:
     def __init__(__self__, *,
                  name: pulumi.Input[str]):
-        """
-        :param pulumi.Input[str] name: (Updatable) Name of the month of the year.
-        """
         pulumi.set(__self__, "name", name)
 
     @property
     @pulumi.getter
     def name(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Name of the month of the year.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -2752,18 +2102,12 @@ class AutonomousVmClusterMaintenanceWindowDetailMonthArgs:
 class AutonomousVmClusterMaintenanceWindowMonthArgs:
     def __init__(__self__, *,
                  name: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] name: (Updatable) Name of the month of the year.
-        """
         if name is not None:
             pulumi.set(__self__, "name", name)
 
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Name of the month of the year.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -2776,10 +2120,6 @@ class BackupDestinationAssociatedDatabaseArgs:
     def __init__(__self__, *,
                  db_name: Optional[pulumi.Input[str]] = None,
                  id: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] db_name: The display name of the database that is associated with the backup destination.
-        :param pulumi.Input[str] id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
-        """
         if db_name is not None:
             pulumi.set(__self__, "db_name", db_name)
         if id is not None:
@@ -2788,9 +2128,6 @@ class BackupDestinationAssociatedDatabaseArgs:
     @property
     @pulumi.getter(name="dbName")
     def db_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The display name of the database that is associated with the backup destination.
-        """
         return pulumi.get(self, "db_name")
 
     @db_name.setter
@@ -2800,9 +2137,6 @@ class BackupDestinationAssociatedDatabaseArgs:
     @property
     @pulumi.getter
     def id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
-        """
         return pulumi.get(self, "id")
 
     @id.setter
@@ -2817,12 +2151,6 @@ class BackupDestinationMountTypeDetailsArgs:
                  local_mount_point_path: Optional[pulumi.Input[str]] = None,
                  nfs_server_export: Optional[pulumi.Input[str]] = None,
                  nfs_servers: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
-        """
-        :param pulumi.Input[str] mount_type: Mount type for backup destination.
-        :param pulumi.Input[str] local_mount_point_path: The local directory path on each VM cluster node where the NFS server location is mounted. The local directory path and the NFS server location must each be the same across all of the VM cluster nodes. Ensure that the NFS mount is maintained continuously on all of the VM cluster nodes.
-        :param pulumi.Input[str] nfs_server_export: Specifies the directory on which to mount the file system
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] nfs_servers: IP addresses for NFS Auto mount.
-        """
         pulumi.set(__self__, "mount_type", mount_type)
         if local_mount_point_path is not None:
             pulumi.set(__self__, "local_mount_point_path", local_mount_point_path)
@@ -2834,9 +2162,6 @@ class BackupDestinationMountTypeDetailsArgs:
     @property
     @pulumi.getter(name="mountType")
     def mount_type(self) -> pulumi.Input[str]:
-        """
-        Mount type for backup destination.
-        """
         return pulumi.get(self, "mount_type")
 
     @mount_type.setter
@@ -2846,9 +2171,6 @@ class BackupDestinationMountTypeDetailsArgs:
     @property
     @pulumi.getter(name="localMountPointPath")
     def local_mount_point_path(self) -> Optional[pulumi.Input[str]]:
-        """
-        The local directory path on each VM cluster node where the NFS server location is mounted. The local directory path and the NFS server location must each be the same across all of the VM cluster nodes. Ensure that the NFS mount is maintained continuously on all of the VM cluster nodes.
-        """
         return pulumi.get(self, "local_mount_point_path")
 
     @local_mount_point_path.setter
@@ -2858,9 +2180,6 @@ class BackupDestinationMountTypeDetailsArgs:
     @property
     @pulumi.getter(name="nfsServerExport")
     def nfs_server_export(self) -> Optional[pulumi.Input[str]]:
-        """
-        Specifies the directory on which to mount the file system
-        """
         return pulumi.get(self, "nfs_server_export")
 
     @nfs_server_export.setter
@@ -2870,9 +2189,6 @@ class BackupDestinationMountTypeDetailsArgs:
     @property
     @pulumi.getter(name="nfsServers")
     def nfs_servers(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        IP addresses for NFS Auto mount.
-        """
         return pulumi.get(self, "nfs_servers")
 
     @nfs_servers.setter
@@ -2893,21 +2209,6 @@ class CloudAutonomousVmClusterMaintenanceWindowArgs:
                  patching_mode: Optional[pulumi.Input[str]] = None,
                  preference: Optional[pulumi.Input[str]] = None,
                  weeks_of_months: Optional[pulumi.Input[Sequence[pulumi.Input[int]]]] = None):
-        """
-        :param pulumi.Input[int] custom_action_timeout_in_mins: (Updatable) Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
-        :param pulumi.Input[Sequence[pulumi.Input['CloudAutonomousVmClusterMaintenanceWindowDaysOfWeekArgs']]] days_of_weeks: (Updatable) Days during the week when maintenance should be performed.
-        :param pulumi.Input[Sequence[pulumi.Input[int]]] hours_of_days: (Updatable) The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
-               * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
-        :param pulumi.Input[bool] is_custom_action_timeout_enabled: (Updatable) If true, enables the configuration of a custom action timeout (waiting period) between database server patching operations.
-        :param pulumi.Input[bool] is_monthly_patching_enabled: (Updatable) If true, enables the monthly patching option.
-        :param pulumi.Input[int] lead_time_in_weeks: (Updatable) Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
-        :param pulumi.Input[Sequence[pulumi.Input['CloudAutonomousVmClusterMaintenanceWindowMonthArgs']]] months: (Updatable) Months during the year when maintenance should be performed.
-        :param pulumi.Input[str] patching_mode: (Updatable) Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
-               
-               *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
-        :param pulumi.Input[str] preference: (Updatable) The maintenance window scheduling preference.
-        :param pulumi.Input[Sequence[pulumi.Input[int]]] weeks_of_months: (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
-        """
         if custom_action_timeout_in_mins is not None:
             pulumi.set(__self__, "custom_action_timeout_in_mins", custom_action_timeout_in_mins)
         if days_of_weeks is not None:
@@ -2932,9 +2233,6 @@ class CloudAutonomousVmClusterMaintenanceWindowArgs:
     @property
     @pulumi.getter(name="customActionTimeoutInMins")
     def custom_action_timeout_in_mins(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
-        """
         return pulumi.get(self, "custom_action_timeout_in_mins")
 
     @custom_action_timeout_in_mins.setter
@@ -2944,9 +2242,6 @@ class CloudAutonomousVmClusterMaintenanceWindowArgs:
     @property
     @pulumi.getter(name="daysOfWeeks")
     def days_of_weeks(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['CloudAutonomousVmClusterMaintenanceWindowDaysOfWeekArgs']]]]:
-        """
-        (Updatable) Days during the week when maintenance should be performed.
-        """
         return pulumi.get(self, "days_of_weeks")
 
     @days_of_weeks.setter
@@ -2956,10 +2251,6 @@ class CloudAutonomousVmClusterMaintenanceWindowArgs:
     @property
     @pulumi.getter(name="hoursOfDays")
     def hours_of_days(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[int]]]]:
-        """
-        (Updatable) The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
-        * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
-        """
         return pulumi.get(self, "hours_of_days")
 
     @hours_of_days.setter
@@ -2969,9 +2260,6 @@ class CloudAutonomousVmClusterMaintenanceWindowArgs:
     @property
     @pulumi.getter(name="isCustomActionTimeoutEnabled")
     def is_custom_action_timeout_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) If true, enables the configuration of a custom action timeout (waiting period) between database server patching operations.
-        """
         return pulumi.get(self, "is_custom_action_timeout_enabled")
 
     @is_custom_action_timeout_enabled.setter
@@ -2981,9 +2269,6 @@ class CloudAutonomousVmClusterMaintenanceWindowArgs:
     @property
     @pulumi.getter(name="isMonthlyPatchingEnabled")
     def is_monthly_patching_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) If true, enables the monthly patching option.
-        """
         return pulumi.get(self, "is_monthly_patching_enabled")
 
     @is_monthly_patching_enabled.setter
@@ -2993,9 +2278,6 @@ class CloudAutonomousVmClusterMaintenanceWindowArgs:
     @property
     @pulumi.getter(name="leadTimeInWeeks")
     def lead_time_in_weeks(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
-        """
         return pulumi.get(self, "lead_time_in_weeks")
 
     @lead_time_in_weeks.setter
@@ -3005,9 +2287,6 @@ class CloudAutonomousVmClusterMaintenanceWindowArgs:
     @property
     @pulumi.getter
     def months(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['CloudAutonomousVmClusterMaintenanceWindowMonthArgs']]]]:
-        """
-        (Updatable) Months during the year when maintenance should be performed.
-        """
         return pulumi.get(self, "months")
 
     @months.setter
@@ -3017,11 +2296,6 @@ class CloudAutonomousVmClusterMaintenanceWindowArgs:
     @property
     @pulumi.getter(name="patchingMode")
     def patching_mode(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
-
-        *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
-        """
         return pulumi.get(self, "patching_mode")
 
     @patching_mode.setter
@@ -3031,9 +2305,6 @@ class CloudAutonomousVmClusterMaintenanceWindowArgs:
     @property
     @pulumi.getter
     def preference(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The maintenance window scheduling preference.
-        """
         return pulumi.get(self, "preference")
 
     @preference.setter
@@ -3043,9 +2314,6 @@ class CloudAutonomousVmClusterMaintenanceWindowArgs:
     @property
     @pulumi.getter(name="weeksOfMonths")
     def weeks_of_months(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[int]]]]:
-        """
-        (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
-        """
         return pulumi.get(self, "weeks_of_months")
 
     @weeks_of_months.setter
@@ -3057,18 +2325,12 @@ class CloudAutonomousVmClusterMaintenanceWindowArgs:
 class CloudAutonomousVmClusterMaintenanceWindowDaysOfWeekArgs:
     def __init__(__self__, *,
                  name: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] name: (Updatable) Name of the month of the year.
-        """
         if name is not None:
             pulumi.set(__self__, "name", name)
 
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Name of the month of the year.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -3089,21 +2351,6 @@ class CloudAutonomousVmClusterMaintenanceWindowDetailsArgs:
                  patching_mode: Optional[pulumi.Input[str]] = None,
                  preference: Optional[pulumi.Input[str]] = None,
                  weeks_of_months: Optional[pulumi.Input[Sequence[pulumi.Input[int]]]] = None):
-        """
-        :param pulumi.Input[int] custom_action_timeout_in_mins: (Updatable) Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
-        :param pulumi.Input[Sequence[pulumi.Input['CloudAutonomousVmClusterMaintenanceWindowDetailsDaysOfWeekArgs']]] days_of_weeks: (Updatable) Days during the week when maintenance should be performed.
-        :param pulumi.Input[Sequence[pulumi.Input[int]]] hours_of_days: (Updatable) The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
-               * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
-        :param pulumi.Input[bool] is_custom_action_timeout_enabled: (Updatable) If true, enables the configuration of a custom action timeout (waiting period) between database server patching operations.
-        :param pulumi.Input[bool] is_monthly_patching_enabled: (Updatable) If true, enables the monthly patching option.
-        :param pulumi.Input[int] lead_time_in_weeks: (Updatable) Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
-        :param pulumi.Input[Sequence[pulumi.Input['CloudAutonomousVmClusterMaintenanceWindowDetailsMonthArgs']]] months: (Updatable) Months during the year when maintenance should be performed.
-        :param pulumi.Input[str] patching_mode: (Updatable) Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
-               
-               *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
-        :param pulumi.Input[str] preference: (Updatable) The maintenance window scheduling preference.
-        :param pulumi.Input[Sequence[pulumi.Input[int]]] weeks_of_months: (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
-        """
         if custom_action_timeout_in_mins is not None:
             pulumi.set(__self__, "custom_action_timeout_in_mins", custom_action_timeout_in_mins)
         if days_of_weeks is not None:
@@ -3128,9 +2375,6 @@ class CloudAutonomousVmClusterMaintenanceWindowDetailsArgs:
     @property
     @pulumi.getter(name="customActionTimeoutInMins")
     def custom_action_timeout_in_mins(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
-        """
         return pulumi.get(self, "custom_action_timeout_in_mins")
 
     @custom_action_timeout_in_mins.setter
@@ -3140,9 +2384,6 @@ class CloudAutonomousVmClusterMaintenanceWindowDetailsArgs:
     @property
     @pulumi.getter(name="daysOfWeeks")
     def days_of_weeks(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['CloudAutonomousVmClusterMaintenanceWindowDetailsDaysOfWeekArgs']]]]:
-        """
-        (Updatable) Days during the week when maintenance should be performed.
-        """
         return pulumi.get(self, "days_of_weeks")
 
     @days_of_weeks.setter
@@ -3152,10 +2393,6 @@ class CloudAutonomousVmClusterMaintenanceWindowDetailsArgs:
     @property
     @pulumi.getter(name="hoursOfDays")
     def hours_of_days(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[int]]]]:
-        """
-        (Updatable) The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
-        * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
-        """
         return pulumi.get(self, "hours_of_days")
 
     @hours_of_days.setter
@@ -3165,9 +2402,6 @@ class CloudAutonomousVmClusterMaintenanceWindowDetailsArgs:
     @property
     @pulumi.getter(name="isCustomActionTimeoutEnabled")
     def is_custom_action_timeout_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) If true, enables the configuration of a custom action timeout (waiting period) between database server patching operations.
-        """
         return pulumi.get(self, "is_custom_action_timeout_enabled")
 
     @is_custom_action_timeout_enabled.setter
@@ -3177,9 +2411,6 @@ class CloudAutonomousVmClusterMaintenanceWindowDetailsArgs:
     @property
     @pulumi.getter(name="isMonthlyPatchingEnabled")
     def is_monthly_patching_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) If true, enables the monthly patching option.
-        """
         return pulumi.get(self, "is_monthly_patching_enabled")
 
     @is_monthly_patching_enabled.setter
@@ -3189,9 +2420,6 @@ class CloudAutonomousVmClusterMaintenanceWindowDetailsArgs:
     @property
     @pulumi.getter(name="leadTimeInWeeks")
     def lead_time_in_weeks(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
-        """
         return pulumi.get(self, "lead_time_in_weeks")
 
     @lead_time_in_weeks.setter
@@ -3201,9 +2429,6 @@ class CloudAutonomousVmClusterMaintenanceWindowDetailsArgs:
     @property
     @pulumi.getter
     def months(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['CloudAutonomousVmClusterMaintenanceWindowDetailsMonthArgs']]]]:
-        """
-        (Updatable) Months during the year when maintenance should be performed.
-        """
         return pulumi.get(self, "months")
 
     @months.setter
@@ -3213,11 +2438,6 @@ class CloudAutonomousVmClusterMaintenanceWindowDetailsArgs:
     @property
     @pulumi.getter(name="patchingMode")
     def patching_mode(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
-
-        *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
-        """
         return pulumi.get(self, "patching_mode")
 
     @patching_mode.setter
@@ -3227,9 +2447,6 @@ class CloudAutonomousVmClusterMaintenanceWindowDetailsArgs:
     @property
     @pulumi.getter
     def preference(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The maintenance window scheduling preference.
-        """
         return pulumi.get(self, "preference")
 
     @preference.setter
@@ -3239,9 +2456,6 @@ class CloudAutonomousVmClusterMaintenanceWindowDetailsArgs:
     @property
     @pulumi.getter(name="weeksOfMonths")
     def weeks_of_months(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[int]]]]:
-        """
-        (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
-        """
         return pulumi.get(self, "weeks_of_months")
 
     @weeks_of_months.setter
@@ -3253,17 +2467,11 @@ class CloudAutonomousVmClusterMaintenanceWindowDetailsArgs:
 class CloudAutonomousVmClusterMaintenanceWindowDetailsDaysOfWeekArgs:
     def __init__(__self__, *,
                  name: pulumi.Input[str]):
-        """
-        :param pulumi.Input[str] name: (Updatable) Name of the month of the year.
-        """
         pulumi.set(__self__, "name", name)
 
     @property
     @pulumi.getter
     def name(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Name of the month of the year.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -3275,17 +2483,11 @@ class CloudAutonomousVmClusterMaintenanceWindowDetailsDaysOfWeekArgs:
 class CloudAutonomousVmClusterMaintenanceWindowDetailsMonthArgs:
     def __init__(__self__, *,
                  name: pulumi.Input[str]):
-        """
-        :param pulumi.Input[str] name: (Updatable) Name of the month of the year.
-        """
         pulumi.set(__self__, "name", name)
 
     @property
     @pulumi.getter
     def name(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Name of the month of the year.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -3297,18 +2499,12 @@ class CloudAutonomousVmClusterMaintenanceWindowDetailsMonthArgs:
 class CloudAutonomousVmClusterMaintenanceWindowMonthArgs:
     def __init__(__self__, *,
                  name: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] name: (Updatable) Name of the month of the year.
-        """
         if name is not None:
             pulumi.set(__self__, "name", name)
 
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Name of the month of the year.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -3321,19 +2517,12 @@ class CloudDatabaseManagementCredentialdetailsArgs:
     def __init__(__self__, *,
                  password_secret_id: pulumi.Input[str],
                  user_name: pulumi.Input[str]):
-        """
-        :param pulumi.Input[str] password_secret_id: Specific database username's password [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param pulumi.Input[str] user_name: Database username
-        """
         pulumi.set(__self__, "password_secret_id", password_secret_id)
         pulumi.set(__self__, "user_name", user_name)
 
     @property
     @pulumi.getter(name="passwordSecretId")
     def password_secret_id(self) -> pulumi.Input[str]:
-        """
-        Specific database username's password [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        """
         return pulumi.get(self, "password_secret_id")
 
     @password_secret_id.setter
@@ -3343,9 +2532,6 @@ class CloudDatabaseManagementCredentialdetailsArgs:
     @property
     @pulumi.getter(name="userName")
     def user_name(self) -> pulumi.Input[str]:
-        """
-        Database username
-        """
         return pulumi.get(self, "user_name")
 
     @user_name.setter
@@ -3357,18 +2543,12 @@ class CloudDatabaseManagementCredentialdetailsArgs:
 class CloudExadataInfrastructureCustomerContactArgs:
     def __init__(__self__, *,
                  email: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] email: (Updatable) The email address used by Oracle to send notifications regarding databases and infrastructure.
-        """
         if email is not None:
             pulumi.set(__self__, "email", email)
 
     @property
     @pulumi.getter
     def email(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The email address used by Oracle to send notifications regarding databases and infrastructure.
-        """
         return pulumi.get(self, "email")
 
     @email.setter
@@ -3389,21 +2569,6 @@ class CloudExadataInfrastructureMaintenanceWindowArgs:
                  patching_mode: Optional[pulumi.Input[str]] = None,
                  preference: Optional[pulumi.Input[str]] = None,
                  weeks_of_months: Optional[pulumi.Input[Sequence[pulumi.Input[int]]]] = None):
-        """
-        :param pulumi.Input[int] custom_action_timeout_in_mins: (Updatable) Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
-        :param pulumi.Input[Sequence[pulumi.Input['CloudExadataInfrastructureMaintenanceWindowDaysOfWeekArgs']]] days_of_weeks: (Updatable) Days during the week when maintenance should be performed.
-        :param pulumi.Input[Sequence[pulumi.Input[int]]] hours_of_days: (Updatable) The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
-               * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
-        :param pulumi.Input[bool] is_custom_action_timeout_enabled: (Updatable) If true, enables the configuration of a custom action timeout (waiting period) between database server patching operations.
-        :param pulumi.Input[bool] is_monthly_patching_enabled: (Updatable) If true, enables the monthly patching option.
-        :param pulumi.Input[int] lead_time_in_weeks: (Updatable) Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
-        :param pulumi.Input[Sequence[pulumi.Input['CloudExadataInfrastructureMaintenanceWindowMonthArgs']]] months: (Updatable) Months during the year when maintenance should be performed.
-        :param pulumi.Input[str] patching_mode: (Updatable) Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
-               
-               *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
-        :param pulumi.Input[str] preference: (Updatable) The maintenance window scheduling preference.
-        :param pulumi.Input[Sequence[pulumi.Input[int]]] weeks_of_months: (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
-        """
         if custom_action_timeout_in_mins is not None:
             pulumi.set(__self__, "custom_action_timeout_in_mins", custom_action_timeout_in_mins)
         if days_of_weeks is not None:
@@ -3428,9 +2593,6 @@ class CloudExadataInfrastructureMaintenanceWindowArgs:
     @property
     @pulumi.getter(name="customActionTimeoutInMins")
     def custom_action_timeout_in_mins(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
-        """
         return pulumi.get(self, "custom_action_timeout_in_mins")
 
     @custom_action_timeout_in_mins.setter
@@ -3440,9 +2602,6 @@ class CloudExadataInfrastructureMaintenanceWindowArgs:
     @property
     @pulumi.getter(name="daysOfWeeks")
     def days_of_weeks(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['CloudExadataInfrastructureMaintenanceWindowDaysOfWeekArgs']]]]:
-        """
-        (Updatable) Days during the week when maintenance should be performed.
-        """
         return pulumi.get(self, "days_of_weeks")
 
     @days_of_weeks.setter
@@ -3452,10 +2611,6 @@ class CloudExadataInfrastructureMaintenanceWindowArgs:
     @property
     @pulumi.getter(name="hoursOfDays")
     def hours_of_days(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[int]]]]:
-        """
-        (Updatable) The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
-        * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
-        """
         return pulumi.get(self, "hours_of_days")
 
     @hours_of_days.setter
@@ -3465,9 +2620,6 @@ class CloudExadataInfrastructureMaintenanceWindowArgs:
     @property
     @pulumi.getter(name="isCustomActionTimeoutEnabled")
     def is_custom_action_timeout_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) If true, enables the configuration of a custom action timeout (waiting period) between database server patching operations.
-        """
         return pulumi.get(self, "is_custom_action_timeout_enabled")
 
     @is_custom_action_timeout_enabled.setter
@@ -3477,9 +2629,6 @@ class CloudExadataInfrastructureMaintenanceWindowArgs:
     @property
     @pulumi.getter(name="isMonthlyPatchingEnabled")
     def is_monthly_patching_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) If true, enables the monthly patching option.
-        """
         return pulumi.get(self, "is_monthly_patching_enabled")
 
     @is_monthly_patching_enabled.setter
@@ -3489,9 +2638,6 @@ class CloudExadataInfrastructureMaintenanceWindowArgs:
     @property
     @pulumi.getter(name="leadTimeInWeeks")
     def lead_time_in_weeks(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
-        """
         return pulumi.get(self, "lead_time_in_weeks")
 
     @lead_time_in_weeks.setter
@@ -3501,9 +2647,6 @@ class CloudExadataInfrastructureMaintenanceWindowArgs:
     @property
     @pulumi.getter
     def months(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['CloudExadataInfrastructureMaintenanceWindowMonthArgs']]]]:
-        """
-        (Updatable) Months during the year when maintenance should be performed.
-        """
         return pulumi.get(self, "months")
 
     @months.setter
@@ -3513,11 +2656,6 @@ class CloudExadataInfrastructureMaintenanceWindowArgs:
     @property
     @pulumi.getter(name="patchingMode")
     def patching_mode(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
-
-        *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
-        """
         return pulumi.get(self, "patching_mode")
 
     @patching_mode.setter
@@ -3527,9 +2665,6 @@ class CloudExadataInfrastructureMaintenanceWindowArgs:
     @property
     @pulumi.getter
     def preference(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The maintenance window scheduling preference.
-        """
         return pulumi.get(self, "preference")
 
     @preference.setter
@@ -3539,9 +2674,6 @@ class CloudExadataInfrastructureMaintenanceWindowArgs:
     @property
     @pulumi.getter(name="weeksOfMonths")
     def weeks_of_months(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[int]]]]:
-        """
-        (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
-        """
         return pulumi.get(self, "weeks_of_months")
 
     @weeks_of_months.setter
@@ -3553,17 +2685,11 @@ class CloudExadataInfrastructureMaintenanceWindowArgs:
 class CloudExadataInfrastructureMaintenanceWindowDaysOfWeekArgs:
     def __init__(__self__, *,
                  name: pulumi.Input[str]):
-        """
-        :param pulumi.Input[str] name: (Updatable) Name of the month of the year.
-        """
         pulumi.set(__self__, "name", name)
 
     @property
     @pulumi.getter
     def name(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Name of the month of the year.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -3575,17 +2701,11 @@ class CloudExadataInfrastructureMaintenanceWindowDaysOfWeekArgs:
 class CloudExadataInfrastructureMaintenanceWindowMonthArgs:
     def __init__(__self__, *,
                  name: pulumi.Input[str]):
-        """
-        :param pulumi.Input[str] name: (Updatable) Name of the month of the year.
-        """
         pulumi.set(__self__, "name", name)
 
     @property
     @pulumi.getter
     def name(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Name of the month of the year.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -3599,11 +2719,6 @@ class CloudVmClusterDataCollectionOptionsArgs:
                  is_diagnostics_events_enabled: Optional[pulumi.Input[bool]] = None,
                  is_health_monitoring_enabled: Optional[pulumi.Input[bool]] = None,
                  is_incident_logs_enabled: Optional[pulumi.Input[bool]] = None):
-        """
-        :param pulumi.Input[bool] is_diagnostics_events_enabled: (Updatable) Indicates whether diagnostic collection is enabled for the VM cluster/Cloud VM cluster/VMBM DBCS. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster/Cloud VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` or `updateCloudVmCluster` API.
-        :param pulumi.Input[bool] is_health_monitoring_enabled: (Updatable) Indicates whether health monitoring is enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling health monitoring allows Oracle to collect diagnostic data and share it with its operations and support personnel. You may also receive notifications for some events. Collecting health diagnostics enables Oracle to provide proactive support and enhanced service for your system. Optionally enable health monitoring while provisioning a system. You can also disable or enable health monitoring anytime using the `UpdateVmCluster`, `UpdateCloudVmCluster` or `updateDbsystem` API.
-        :param pulumi.Input[bool] is_incident_logs_enabled: (Updatable) Indicates whether incident logs and trace collection are enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them. Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster`, `updateCloudVmCluster` or `updateDbsystem` API.
-        """
         if is_diagnostics_events_enabled is not None:
             pulumi.set(__self__, "is_diagnostics_events_enabled", is_diagnostics_events_enabled)
         if is_health_monitoring_enabled is not None:
@@ -3614,9 +2729,6 @@ class CloudVmClusterDataCollectionOptionsArgs:
     @property
     @pulumi.getter(name="isDiagnosticsEventsEnabled")
     def is_diagnostics_events_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Indicates whether diagnostic collection is enabled for the VM cluster/Cloud VM cluster/VMBM DBCS. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster/Cloud VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` or `updateCloudVmCluster` API.
-        """
         return pulumi.get(self, "is_diagnostics_events_enabled")
 
     @is_diagnostics_events_enabled.setter
@@ -3626,9 +2738,6 @@ class CloudVmClusterDataCollectionOptionsArgs:
     @property
     @pulumi.getter(name="isHealthMonitoringEnabled")
     def is_health_monitoring_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Indicates whether health monitoring is enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling health monitoring allows Oracle to collect diagnostic data and share it with its operations and support personnel. You may also receive notifications for some events. Collecting health diagnostics enables Oracle to provide proactive support and enhanced service for your system. Optionally enable health monitoring while provisioning a system. You can also disable or enable health monitoring anytime using the `UpdateVmCluster`, `UpdateCloudVmCluster` or `updateDbsystem` API.
-        """
         return pulumi.get(self, "is_health_monitoring_enabled")
 
     @is_health_monitoring_enabled.setter
@@ -3638,9 +2747,6 @@ class CloudVmClusterDataCollectionOptionsArgs:
     @property
     @pulumi.getter(name="isIncidentLogsEnabled")
     def is_incident_logs_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Indicates whether incident logs and trace collection are enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them. Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster`, `updateCloudVmCluster` or `updateDbsystem` API.
-        """
         return pulumi.get(self, "is_incident_logs_enabled")
 
     @is_incident_logs_enabled.setter
@@ -3655,12 +2761,6 @@ class CloudVmClusterIormConfigCachArgs:
                  lifecycle_details: Optional[pulumi.Input[str]] = None,
                  objective: Optional[pulumi.Input[str]] = None,
                  state: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[Sequence[pulumi.Input['CloudVmClusterIormConfigCachDbPlanArgs']]] db_plans: An array of IORM settings for all the database in the Exadata DB system.
-        :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycle state.
-        :param pulumi.Input[str] objective: The current value for the IORM objective. The default is `AUTO`.
-        :param pulumi.Input[str] state: The current state of the cloud VM cluster.
-        """
         if db_plans is not None:
             pulumi.set(__self__, "db_plans", db_plans)
         if lifecycle_details is not None:
@@ -3673,9 +2773,6 @@ class CloudVmClusterIormConfigCachArgs:
     @property
     @pulumi.getter(name="dbPlans")
     def db_plans(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['CloudVmClusterIormConfigCachDbPlanArgs']]]]:
-        """
-        An array of IORM settings for all the database in the Exadata DB system.
-        """
         return pulumi.get(self, "db_plans")
 
     @db_plans.setter
@@ -3685,9 +2782,6 @@ class CloudVmClusterIormConfigCachArgs:
     @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> Optional[pulumi.Input[str]]:
-        """
-        Additional information about the current lifecycle state.
-        """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
@@ -3697,9 +2791,6 @@ class CloudVmClusterIormConfigCachArgs:
     @property
     @pulumi.getter
     def objective(self) -> Optional[pulumi.Input[str]]:
-        """
-        The current value for the IORM objective. The default is `AUTO`.
-        """
         return pulumi.get(self, "objective")
 
     @objective.setter
@@ -3709,9 +2800,6 @@ class CloudVmClusterIormConfigCachArgs:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The current state of the cloud VM cluster.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -3725,11 +2813,6 @@ class CloudVmClusterIormConfigCachDbPlanArgs:
                  db_name: Optional[pulumi.Input[str]] = None,
                  flash_cache_limit: Optional[pulumi.Input[str]] = None,
                  share: Optional[pulumi.Input[int]] = None):
-        """
-        :param pulumi.Input[str] db_name: The database name. For the default `DbPlan`, the `dbName` is `default`.
-        :param pulumi.Input[str] flash_cache_limit: The flash cache limit for this database. This value is internally configured based on the share value assigned to the database.
-        :param pulumi.Input[int] share: The relative priority of this database.
-        """
         if db_name is not None:
             pulumi.set(__self__, "db_name", db_name)
         if flash_cache_limit is not None:
@@ -3740,9 +2823,6 @@ class CloudVmClusterIormConfigCachDbPlanArgs:
     @property
     @pulumi.getter(name="dbName")
     def db_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The database name. For the default `DbPlan`, the `dbName` is `default`.
-        """
         return pulumi.get(self, "db_name")
 
     @db_name.setter
@@ -3752,9 +2832,6 @@ class CloudVmClusterIormConfigCachDbPlanArgs:
     @property
     @pulumi.getter(name="flashCacheLimit")
     def flash_cache_limit(self) -> Optional[pulumi.Input[str]]:
-        """
-        The flash cache limit for this database. This value is internally configured based on the share value assigned to the database.
-        """
         return pulumi.get(self, "flash_cache_limit")
 
     @flash_cache_limit.setter
@@ -3764,9 +2841,6 @@ class CloudVmClusterIormConfigCachDbPlanArgs:
     @property
     @pulumi.getter
     def share(self) -> Optional[pulumi.Input[int]]:
-        """
-        The relative priority of this database.
-        """
         return pulumi.get(self, "share")
 
     @share.setter
@@ -3780,11 +2854,6 @@ class CloudVmClusterIormConfigDbPlanArgs:
                  db_name: pulumi.Input[str],
                  share: pulumi.Input[int],
                  flash_cache_limit: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] db_name: (Updatable) The database name. For the default `DbPlan`, the `dbName` is `default`.
-        :param pulumi.Input[int] share: (Updatable) The relative priority of this database.
-        :param pulumi.Input[str] flash_cache_limit: The flash cache limit for this database. This value is internally configured based on the share value assigned to the database.
-        """
         pulumi.set(__self__, "db_name", db_name)
         pulumi.set(__self__, "share", share)
         if flash_cache_limit is not None:
@@ -3793,9 +2862,6 @@ class CloudVmClusterIormConfigDbPlanArgs:
     @property
     @pulumi.getter(name="dbName")
     def db_name(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The database name. For the default `DbPlan`, the `dbName` is `default`.
-        """
         return pulumi.get(self, "db_name")
 
     @db_name.setter
@@ -3805,9 +2871,6 @@ class CloudVmClusterIormConfigDbPlanArgs:
     @property
     @pulumi.getter
     def share(self) -> pulumi.Input[int]:
-        """
-        (Updatable) The relative priority of this database.
-        """
         return pulumi.get(self, "share")
 
     @share.setter
@@ -3817,9 +2880,6 @@ class CloudVmClusterIormConfigDbPlanArgs:
     @property
     @pulumi.getter(name="flashCacheLimit")
     def flash_cache_limit(self) -> Optional[pulumi.Input[str]]:
-        """
-        The flash cache limit for this database. This value is internally configured based on the share value assigned to the database.
-        """
         return pulumi.get(self, "flash_cache_limit")
 
     @flash_cache_limit.setter
@@ -3833,11 +2893,6 @@ class DataGuardAssociationDataCollectionOptionsArgs:
                  is_diagnostics_events_enabled: Optional[pulumi.Input[bool]] = None,
                  is_health_monitoring_enabled: Optional[pulumi.Input[bool]] = None,
                  is_incident_logs_enabled: Optional[pulumi.Input[bool]] = None):
-        """
-        :param pulumi.Input[bool] is_diagnostics_events_enabled: Indicates whether diagnostic collection is enabled for the VM cluster/Cloud VM cluster/VMBM DBCS. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster/Cloud VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` or `updateCloudVmCluster` API.
-        :param pulumi.Input[bool] is_health_monitoring_enabled: Indicates whether health monitoring is enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling health monitoring allows Oracle to collect diagnostic data and share it with its operations and support personnel. You may also receive notifications for some events. Collecting health diagnostics enables Oracle to provide proactive support and enhanced service for your system. Optionally enable health monitoring while provisioning a system. You can also disable or enable health monitoring anytime using the `UpdateVmCluster`, `UpdateCloudVmCluster` or `updateDbsystem` API.
-        :param pulumi.Input[bool] is_incident_logs_enabled: Indicates whether incident logs and trace collection are enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them. Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster`, `updateCloudVmCluster` or `updateDbsystem` API.
-        """
         if is_diagnostics_events_enabled is not None:
             pulumi.set(__self__, "is_diagnostics_events_enabled", is_diagnostics_events_enabled)
         if is_health_monitoring_enabled is not None:
@@ -3848,9 +2903,6 @@ class DataGuardAssociationDataCollectionOptionsArgs:
     @property
     @pulumi.getter(name="isDiagnosticsEventsEnabled")
     def is_diagnostics_events_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Indicates whether diagnostic collection is enabled for the VM cluster/Cloud VM cluster/VMBM DBCS. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster/Cloud VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` or `updateCloudVmCluster` API.
-        """
         return pulumi.get(self, "is_diagnostics_events_enabled")
 
     @is_diagnostics_events_enabled.setter
@@ -3860,9 +2912,6 @@ class DataGuardAssociationDataCollectionOptionsArgs:
     @property
     @pulumi.getter(name="isHealthMonitoringEnabled")
     def is_health_monitoring_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Indicates whether health monitoring is enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling health monitoring allows Oracle to collect diagnostic data and share it with its operations and support personnel. You may also receive notifications for some events. Collecting health diagnostics enables Oracle to provide proactive support and enhanced service for your system. Optionally enable health monitoring while provisioning a system. You can also disable or enable health monitoring anytime using the `UpdateVmCluster`, `UpdateCloudVmCluster` or `updateDbsystem` API.
-        """
         return pulumi.get(self, "is_health_monitoring_enabled")
 
     @is_health_monitoring_enabled.setter
@@ -3872,9 +2921,6 @@ class DataGuardAssociationDataCollectionOptionsArgs:
     @property
     @pulumi.getter(name="isIncidentLogsEnabled")
     def is_incident_logs_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Indicates whether incident logs and trace collection are enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them. Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster`, `updateCloudVmCluster` or `updateDbsystem` API.
-        """
         return pulumi.get(self, "is_incident_logs_enabled")
 
     @is_incident_logs_enabled.setter
@@ -3888,11 +2934,6 @@ class DatabaseConnectionStringArgs:
                  all_connection_strings: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  cdb_default: Optional[pulumi.Input[str]] = None,
                  cdb_ip_default: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[Mapping[str, Any]] all_connection_strings: All connection strings to use to connect to the Database.
-        :param pulumi.Input[str] cdb_default: Host name based CDB Connection String.
-        :param pulumi.Input[str] cdb_ip_default: IP based CDB Connection String.
-        """
         if all_connection_strings is not None:
             pulumi.set(__self__, "all_connection_strings", all_connection_strings)
         if cdb_default is not None:
@@ -3903,9 +2944,6 @@ class DatabaseConnectionStringArgs:
     @property
     @pulumi.getter(name="allConnectionStrings")
     def all_connection_strings(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        All connection strings to use to connect to the Database.
-        """
         return pulumi.get(self, "all_connection_strings")
 
     @all_connection_strings.setter
@@ -3915,9 +2953,6 @@ class DatabaseConnectionStringArgs:
     @property
     @pulumi.getter(name="cdbDefault")
     def cdb_default(self) -> Optional[pulumi.Input[str]]:
-        """
-        Host name based CDB Connection String.
-        """
         return pulumi.get(self, "cdb_default")
 
     @cdb_default.setter
@@ -3927,9 +2962,6 @@ class DatabaseConnectionStringArgs:
     @property
     @pulumi.getter(name="cdbIpDefault")
     def cdb_ip_default(self) -> Optional[pulumi.Input[str]]:
-        """
-        IP based CDB Connection String.
-        """
         return pulumi.get(self, "cdb_ip_default")
 
     @cdb_ip_default.setter
@@ -3959,31 +2991,6 @@ class DatabaseDatabaseArgs:
                  sid_prefix: Optional[pulumi.Input[str]] = None,
                  tde_wallet_password: Optional[pulumi.Input[str]] = None,
                  vault_id: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] admin_password: A strong password for SYS, SYSTEM, PDB Admin and TDE Wallet. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numbers, and two special characters. The special characters must be _, \\#, or -.
-        :param pulumi.Input[str] db_name: The display name of the database to be created from the backup. It must begin with an alphabetic character and can contain a maximum of eight alphanumeric characters. Special characters are not permitted.
-        :param pulumi.Input[str] backup_id: The backup [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param pulumi.Input[str] backup_tde_password: The password to open the TDE wallet.
-        :param pulumi.Input[str] character_set: The character set for the database.  The default is AL32UTF8. Allowed values are:
-               
-               AL32UTF8, AR8ADOS710, AR8ADOS720, AR8APTEC715, AR8ARABICMACS, AR8ASMO8X, AR8ISO8859P6, AR8MSWIN1256, AR8MUSSAD768, AR8NAFITHA711, AR8NAFITHA721, AR8SAKHR706, AR8SAKHR707, AZ8ISO8859P9E, BG8MSWIN, BG8PC437S, BLT8CP921, BLT8ISO8859P13, BLT8MSWIN1257, BLT8PC775, BN8BSCII, CDN8PC863, CEL8ISO8859P14, CL8ISO8859P5, CL8ISOIR111, CL8KOI8R, CL8KOI8U, CL8MACCYRILLICS, CL8MSWIN1251, EE8ISO8859P2, EE8MACCES, EE8MACCROATIANS, EE8MSWIN1250, EE8PC852, EL8DEC, EL8ISO8859P7, EL8MACGREEKS, EL8MSWIN1253, EL8PC437S, EL8PC851, EL8PC869, ET8MSWIN923, HU8ABMOD, HU8CWI2, IN8ISCII, IS8PC861, IW8ISO8859P8, IW8MACHEBREWS, IW8MSWIN1255, IW8PC1507, JA16EUC, JA16EUCTILDE, JA16SJIS, JA16SJISTILDE, JA16VMS, KO16KSC5601, KO16KSCCS, KO16MSWIN949, LA8ISO6937, LA8PASSPORT, LT8MSWIN921, LT8PC772, LT8PC774, LV8PC1117, LV8PC8LR, LV8RST104090, N8PC865, NE8ISO8859P10, NEE8ISO8859P4, RU8BESTA, RU8PC855, RU8PC866, SE8ISO8859P3, TH8MACTHAIS, TH8TISASCII, TR8DEC, TR8MACTURKISHS, TR8MSWIN1254, TR8PC857, US7ASCII, US8PC437, UTF8, VN8MSWIN1258, VN8VN3, WE8DEC, WE8DG, WE8ISO8859P1, WE8ISO8859P15, WE8ISO8859P9, WE8MACROMAN8S, WE8MSWIN1252, WE8NCR4970, WE8NEXTSTEP, WE8PC850, WE8PC858, WE8PC860, WE8ROMAN8, ZHS16CGB231280, ZHS16GBK, ZHT16BIG5, ZHT16CCDC, ZHT16DBT, ZHT16HKSCS, ZHT16MSWIN950, ZHT32EUC, ZHT32SOPS, ZHT32TRIS
-        :param pulumi.Input[str] database_software_image_id: The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-        :param pulumi.Input['DatabaseDatabaseDbBackupConfigArgs'] db_backup_config: (Updatable) Backup Options To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized, talk to an administrator. If you're an administrator who needs to write policies to give users access, see [Getting Started with Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
-        :param pulumi.Input[str] db_unique_name: The `DB_UNIQUE_NAME` of the Oracle Database being backed up.
-        :param pulumi.Input[str] db_workload: **Deprecated.** The dbWorkload field has been deprecated for Exadata Database Service on Dedicated Infrastructure, Exadata Database Service on Cloud@Customer, and Base Database Service. Support for this attribute will end in November 2023. You may choose to update your custom scripts to exclude the dbWorkload attribute. After November 2023 if you pass a value to the dbWorkload attribute, it will be ignored.
-               
-               The database workload type.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
-        :param pulumi.Input[str] kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
-        :param pulumi.Input[str] ncharacter_set: The national character set for the database.  The default is AL16UTF16. Allowed values are: AL16UTF16 or UTF8.
-        :param pulumi.Input[str] pdb_name: The name of the pluggable database. The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. Pluggable database should not be same as database name.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] pluggable_databases: The list of pluggable databases that needs to be restored into new database.
-        :param pulumi.Input[str] sid_prefix: Specifies a prefix for the `Oracle SID` of the database to be created.
-        :param pulumi.Input[str] tde_wallet_password: The optional password to open the TDE wallet. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numeric, and two special characters. The special characters must be _, \\#, or -.
-        :param pulumi.Input[str] vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
-        """
         pulumi.set(__self__, "admin_password", admin_password)
         pulumi.set(__self__, "db_name", db_name)
         if backup_id is not None:
@@ -4024,9 +3031,6 @@ class DatabaseDatabaseArgs:
     @property
     @pulumi.getter(name="adminPassword")
     def admin_password(self) -> pulumi.Input[str]:
-        """
-        A strong password for SYS, SYSTEM, PDB Admin and TDE Wallet. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numbers, and two special characters. The special characters must be _, \\#, or -.
-        """
         return pulumi.get(self, "admin_password")
 
     @admin_password.setter
@@ -4036,9 +3040,6 @@ class DatabaseDatabaseArgs:
     @property
     @pulumi.getter(name="dbName")
     def db_name(self) -> pulumi.Input[str]:
-        """
-        The display name of the database to be created from the backup. It must begin with an alphabetic character and can contain a maximum of eight alphanumeric characters. Special characters are not permitted.
-        """
         return pulumi.get(self, "db_name")
 
     @db_name.setter
@@ -4048,9 +3049,6 @@ class DatabaseDatabaseArgs:
     @property
     @pulumi.getter(name="backupId")
     def backup_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The backup [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        """
         return pulumi.get(self, "backup_id")
 
     @backup_id.setter
@@ -4060,9 +3058,6 @@ class DatabaseDatabaseArgs:
     @property
     @pulumi.getter(name="backupTdePassword")
     def backup_tde_password(self) -> Optional[pulumi.Input[str]]:
-        """
-        The password to open the TDE wallet.
-        """
         return pulumi.get(self, "backup_tde_password")
 
     @backup_tde_password.setter
@@ -4072,11 +3067,6 @@ class DatabaseDatabaseArgs:
     @property
     @pulumi.getter(name="characterSet")
     def character_set(self) -> Optional[pulumi.Input[str]]:
-        """
-        The character set for the database.  The default is AL32UTF8. Allowed values are:
-
-        AL32UTF8, AR8ADOS710, AR8ADOS720, AR8APTEC715, AR8ARABICMACS, AR8ASMO8X, AR8ISO8859P6, AR8MSWIN1256, AR8MUSSAD768, AR8NAFITHA711, AR8NAFITHA721, AR8SAKHR706, AR8SAKHR707, AZ8ISO8859P9E, BG8MSWIN, BG8PC437S, BLT8CP921, BLT8ISO8859P13, BLT8MSWIN1257, BLT8PC775, BN8BSCII, CDN8PC863, CEL8ISO8859P14, CL8ISO8859P5, CL8ISOIR111, CL8KOI8R, CL8KOI8U, CL8MACCYRILLICS, CL8MSWIN1251, EE8ISO8859P2, EE8MACCES, EE8MACCROATIANS, EE8MSWIN1250, EE8PC852, EL8DEC, EL8ISO8859P7, EL8MACGREEKS, EL8MSWIN1253, EL8PC437S, EL8PC851, EL8PC869, ET8MSWIN923, HU8ABMOD, HU8CWI2, IN8ISCII, IS8PC861, IW8ISO8859P8, IW8MACHEBREWS, IW8MSWIN1255, IW8PC1507, JA16EUC, JA16EUCTILDE, JA16SJIS, JA16SJISTILDE, JA16VMS, KO16KSC5601, KO16KSCCS, KO16MSWIN949, LA8ISO6937, LA8PASSPORT, LT8MSWIN921, LT8PC772, LT8PC774, LV8PC1117, LV8PC8LR, LV8RST104090, N8PC865, NE8ISO8859P10, NEE8ISO8859P4, RU8BESTA, RU8PC855, RU8PC866, SE8ISO8859P3, TH8MACTHAIS, TH8TISASCII, TR8DEC, TR8MACTURKISHS, TR8MSWIN1254, TR8PC857, US7ASCII, US8PC437, UTF8, VN8MSWIN1258, VN8VN3, WE8DEC, WE8DG, WE8ISO8859P1, WE8ISO8859P15, WE8ISO8859P9, WE8MACROMAN8S, WE8MSWIN1252, WE8NCR4970, WE8NEXTSTEP, WE8PC850, WE8PC858, WE8PC860, WE8ROMAN8, ZHS16CGB231280, ZHS16GBK, ZHT16BIG5, ZHT16CCDC, ZHT16DBT, ZHT16HKSCS, ZHT16MSWIN950, ZHT32EUC, ZHT32SOPS, ZHT32TRIS
-        """
         return pulumi.get(self, "character_set")
 
     @character_set.setter
@@ -4086,9 +3076,6 @@ class DatabaseDatabaseArgs:
     @property
     @pulumi.getter(name="databaseSoftwareImageId")
     def database_software_image_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-        """
         return pulumi.get(self, "database_software_image_id")
 
     @database_software_image_id.setter
@@ -4098,9 +3085,6 @@ class DatabaseDatabaseArgs:
     @property
     @pulumi.getter(name="dbBackupConfig")
     def db_backup_config(self) -> Optional[pulumi.Input['DatabaseDatabaseDbBackupConfigArgs']]:
-        """
-        (Updatable) Backup Options To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized, talk to an administrator. If you're an administrator who needs to write policies to give users access, see [Getting Started with Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
-        """
         return pulumi.get(self, "db_backup_config")
 
     @db_backup_config.setter
@@ -4110,9 +3094,6 @@ class DatabaseDatabaseArgs:
     @property
     @pulumi.getter(name="dbUniqueName")
     def db_unique_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The `DB_UNIQUE_NAME` of the Oracle Database being backed up.
-        """
         return pulumi.get(self, "db_unique_name")
 
     @db_unique_name.setter
@@ -4122,11 +3103,6 @@ class DatabaseDatabaseArgs:
     @property
     @pulumi.getter(name="dbWorkload")
     def db_workload(self) -> Optional[pulumi.Input[str]]:
-        """
-        **Deprecated.** The dbWorkload field has been deprecated for Exadata Database Service on Dedicated Infrastructure, Exadata Database Service on Cloud@Customer, and Base Database Service. Support for this attribute will end in November 2023. You may choose to update your custom scripts to exclude the dbWorkload attribute. After November 2023 if you pass a value to the dbWorkload attribute, it will be ignored.
-
-        The database workload type.
-        """
         return pulumi.get(self, "db_workload")
 
     @db_workload.setter
@@ -4136,9 +3112,6 @@ class DatabaseDatabaseArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -4148,9 +3121,6 @@ class DatabaseDatabaseArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -4160,9 +3130,6 @@ class DatabaseDatabaseArgs:
     @property
     @pulumi.getter(name="kmsKeyId")
     def kms_key_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
-        """
         return pulumi.get(self, "kms_key_id")
 
     @kms_key_id.setter
@@ -4172,9 +3139,6 @@ class DatabaseDatabaseArgs:
     @property
     @pulumi.getter(name="kmsKeyVersionId")
     def kms_key_version_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
-        """
         return pulumi.get(self, "kms_key_version_id")
 
     @kms_key_version_id.setter
@@ -4184,9 +3148,6 @@ class DatabaseDatabaseArgs:
     @property
     @pulumi.getter(name="ncharacterSet")
     def ncharacter_set(self) -> Optional[pulumi.Input[str]]:
-        """
-        The national character set for the database.  The default is AL16UTF16. Allowed values are: AL16UTF16 or UTF8.
-        """
         return pulumi.get(self, "ncharacter_set")
 
     @ncharacter_set.setter
@@ -4196,9 +3157,6 @@ class DatabaseDatabaseArgs:
     @property
     @pulumi.getter(name="pdbName")
     def pdb_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The name of the pluggable database. The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. Pluggable database should not be same as database name.
-        """
         return pulumi.get(self, "pdb_name")
 
     @pdb_name.setter
@@ -4208,9 +3166,6 @@ class DatabaseDatabaseArgs:
     @property
     @pulumi.getter(name="pluggableDatabases")
     def pluggable_databases(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        The list of pluggable databases that needs to be restored into new database.
-        """
         return pulumi.get(self, "pluggable_databases")
 
     @pluggable_databases.setter
@@ -4220,9 +3175,6 @@ class DatabaseDatabaseArgs:
     @property
     @pulumi.getter(name="sidPrefix")
     def sid_prefix(self) -> Optional[pulumi.Input[str]]:
-        """
-        Specifies a prefix for the `Oracle SID` of the database to be created.
-        """
         return pulumi.get(self, "sid_prefix")
 
     @sid_prefix.setter
@@ -4232,9 +3184,6 @@ class DatabaseDatabaseArgs:
     @property
     @pulumi.getter(name="tdeWalletPassword")
     def tde_wallet_password(self) -> Optional[pulumi.Input[str]]:
-        """
-        The optional password to open the TDE wallet. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numeric, and two special characters. The special characters must be _, \\#, or -.
-        """
         return pulumi.get(self, "tde_wallet_password")
 
     @tde_wallet_password.setter
@@ -4244,9 +3193,6 @@ class DatabaseDatabaseArgs:
     @property
     @pulumi.getter(name="vaultId")
     def vault_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
-        """
         return pulumi.get(self, "vault_id")
 
     @vault_id.setter
@@ -4265,16 +3211,6 @@ class DatabaseDatabaseDbBackupConfigArgs:
                  backup_destination_details: Optional[pulumi.Input[Sequence[pulumi.Input['DatabaseDatabaseDbBackupConfigBackupDestinationDetailArgs']]]] = None,
                  recovery_window_in_days: Optional[pulumi.Input[int]] = None,
                  run_immediate_full_backup: Optional[pulumi.Input[bool]] = None):
-        """
-        :param pulumi.Input[bool] auto_backup_enabled: (Updatable) If set to true, configures automatic backups. If you previously used RMAN or dbcli to configure backups and then you switch to using the Console or the API for backups, a new backup configuration is created and associated with your database. This means that you can no longer rely on your previously configured unmanaged backups to work.
-        :param pulumi.Input[str] auto_backup_window: (Updatable) Time window selected for initiating automatic backup for the database system. There are twelve available two-hour time windows. If no option is selected, a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
-        :param pulumi.Input[str] auto_full_backup_day: Day of the week the full backup should be applied on the database system. If no option is selected, the value is null and we will default to Sunday.
-        :param pulumi.Input[str] auto_full_backup_window: Time window selected for initiating full backup for the database system. There are twelve available two-hour time windows. If no option is selected, the value is null and a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
-        :param pulumi.Input[str] backup_deletion_policy: This defines when the backups will be deleted. - IMMEDIATE option keep the backup for predefined time i.e 72 hours and then delete permanently... - RETAIN will keep the backups as per the policy defined for database backups.
-        :param pulumi.Input[Sequence[pulumi.Input['DatabaseDatabaseDbBackupConfigBackupDestinationDetailArgs']]] backup_destination_details: Backup destination details.
-        :param pulumi.Input[int] recovery_window_in_days: (Updatable) Number of days between the current and the earliest point of recoverability covered by automatic backups. This value applies to automatic backups only. After a new automatic backup has been created, Oracle removes old automatic backups that are created before the window. When the value is updated, it is applied to all existing automatic backups.
-        :param pulumi.Input[bool] run_immediate_full_backup: If set to true, configures automatic full backups in the local region (the region of the DB system) for the first backup run immediately.
-        """
         if auto_backup_enabled is not None:
             pulumi.set(__self__, "auto_backup_enabled", auto_backup_enabled)
         if auto_backup_window is not None:
@@ -4295,9 +3231,6 @@ class DatabaseDatabaseDbBackupConfigArgs:
     @property
     @pulumi.getter(name="autoBackupEnabled")
     def auto_backup_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) If set to true, configures automatic backups. If you previously used RMAN or dbcli to configure backups and then you switch to using the Console or the API for backups, a new backup configuration is created and associated with your database. This means that you can no longer rely on your previously configured unmanaged backups to work.
-        """
         return pulumi.get(self, "auto_backup_enabled")
 
     @auto_backup_enabled.setter
@@ -4307,9 +3240,6 @@ class DatabaseDatabaseDbBackupConfigArgs:
     @property
     @pulumi.getter(name="autoBackupWindow")
     def auto_backup_window(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Time window selected for initiating automatic backup for the database system. There are twelve available two-hour time windows. If no option is selected, a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
-        """
         return pulumi.get(self, "auto_backup_window")
 
     @auto_backup_window.setter
@@ -4319,9 +3249,6 @@ class DatabaseDatabaseDbBackupConfigArgs:
     @property
     @pulumi.getter(name="autoFullBackupDay")
     def auto_full_backup_day(self) -> Optional[pulumi.Input[str]]:
-        """
-        Day of the week the full backup should be applied on the database system. If no option is selected, the value is null and we will default to Sunday.
-        """
         return pulumi.get(self, "auto_full_backup_day")
 
     @auto_full_backup_day.setter
@@ -4331,9 +3258,6 @@ class DatabaseDatabaseDbBackupConfigArgs:
     @property
     @pulumi.getter(name="autoFullBackupWindow")
     def auto_full_backup_window(self) -> Optional[pulumi.Input[str]]:
-        """
-        Time window selected for initiating full backup for the database system. There are twelve available two-hour time windows. If no option is selected, the value is null and a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
-        """
         return pulumi.get(self, "auto_full_backup_window")
 
     @auto_full_backup_window.setter
@@ -4343,9 +3267,6 @@ class DatabaseDatabaseDbBackupConfigArgs:
     @property
     @pulumi.getter(name="backupDeletionPolicy")
     def backup_deletion_policy(self) -> Optional[pulumi.Input[str]]:
-        """
-        This defines when the backups will be deleted. - IMMEDIATE option keep the backup for predefined time i.e 72 hours and then delete permanently... - RETAIN will keep the backups as per the policy defined for database backups.
-        """
         return pulumi.get(self, "backup_deletion_policy")
 
     @backup_deletion_policy.setter
@@ -4355,9 +3276,6 @@ class DatabaseDatabaseDbBackupConfigArgs:
     @property
     @pulumi.getter(name="backupDestinationDetails")
     def backup_destination_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DatabaseDatabaseDbBackupConfigBackupDestinationDetailArgs']]]]:
-        """
-        Backup destination details.
-        """
         return pulumi.get(self, "backup_destination_details")
 
     @backup_destination_details.setter
@@ -4367,9 +3285,6 @@ class DatabaseDatabaseDbBackupConfigArgs:
     @property
     @pulumi.getter(name="recoveryWindowInDays")
     def recovery_window_in_days(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) Number of days between the current and the earliest point of recoverability covered by automatic backups. This value applies to automatic backups only. After a new automatic backup has been created, Oracle removes old automatic backups that are created before the window. When the value is updated, it is applied to all existing automatic backups.
-        """
         return pulumi.get(self, "recovery_window_in_days")
 
     @recovery_window_in_days.setter
@@ -4379,9 +3294,6 @@ class DatabaseDatabaseDbBackupConfigArgs:
     @property
     @pulumi.getter(name="runImmediateFullBackup")
     def run_immediate_full_backup(self) -> Optional[pulumi.Input[bool]]:
-        """
-        If set to true, configures automatic full backups in the local region (the region of the DB system) for the first backup run immediately.
-        """
         return pulumi.get(self, "run_immediate_full_backup")
 
     @run_immediate_full_backup.setter
@@ -4396,11 +3308,6 @@ class DatabaseDatabaseDbBackupConfigBackupDestinationDetailArgs:
                  id: Optional[pulumi.Input[str]] = None,
                  type: Optional[pulumi.Input[str]] = None,
                  vpc_user: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] dbrs_policy_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
-        :param pulumi.Input[str] id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
-        :param pulumi.Input[str] type: Type of the database backup destination.
-        """
         if dbrs_policy_id is not None:
             pulumi.set(__self__, "dbrs_policy_id", dbrs_policy_id)
         if id is not None:
@@ -4413,9 +3320,6 @@ class DatabaseDatabaseDbBackupConfigBackupDestinationDetailArgs:
     @property
     @pulumi.getter(name="dbrsPolicyId")
     def dbrs_policy_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
-        """
         return pulumi.get(self, "dbrs_policy_id")
 
     @dbrs_policy_id.setter
@@ -4425,9 +3329,6 @@ class DatabaseDatabaseDbBackupConfigBackupDestinationDetailArgs:
     @property
     @pulumi.getter
     def id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
-        """
         return pulumi.get(self, "id")
 
     @id.setter
@@ -4437,9 +3338,6 @@ class DatabaseDatabaseDbBackupConfigBackupDestinationDetailArgs:
     @property
     @pulumi.getter
     def type(self) -> Optional[pulumi.Input[str]]:
-        """
-        Type of the database backup destination.
-        """
         return pulumi.get(self, "type")
 
     @type.setter
@@ -4461,10 +3359,6 @@ class DatabaseDatabaseManagementConfigArgs:
     def __init__(__self__, *,
                  management_status: Optional[pulumi.Input[str]] = None,
                  management_type: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] management_status: The status of the Database Management service.
-        :param pulumi.Input[str] management_type: The Database Management type.
-        """
         if management_status is not None:
             pulumi.set(__self__, "management_status", management_status)
         if management_type is not None:
@@ -4473,9 +3367,6 @@ class DatabaseDatabaseManagementConfigArgs:
     @property
     @pulumi.getter(name="managementStatus")
     def management_status(self) -> Optional[pulumi.Input[str]]:
-        """
-        The status of the Database Management service.
-        """
         return pulumi.get(self, "management_status")
 
     @management_status.setter
@@ -4485,9 +3376,6 @@ class DatabaseDatabaseManagementConfigArgs:
     @property
     @pulumi.getter(name="managementType")
     def management_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        The Database Management type.
-        """
         return pulumi.get(self, "management_type")
 
     @management_type.setter
@@ -4506,16 +3394,6 @@ class DatabaseDbBackupConfigArgs:
                  backup_destination_details: Optional[pulumi.Input[Sequence[pulumi.Input['DatabaseDbBackupConfigBackupDestinationDetailArgs']]]] = None,
                  recovery_window_in_days: Optional[pulumi.Input[int]] = None,
                  run_immediate_full_backup: Optional[pulumi.Input[bool]] = None):
-        """
-        :param pulumi.Input[bool] auto_backup_enabled: (Updatable) If set to true, configures automatic backups. If you previously used RMAN or dbcli to configure backups and then you switch to using the Console or the API for backups, a new backup configuration is created and associated with your database. This means that you can no longer rely on your previously configured unmanaged backups to work.
-        :param pulumi.Input[str] auto_backup_window: (Updatable) Time window selected for initiating automatic backup for the database system. There are twelve available two-hour time windows. If no option is selected, a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
-        :param pulumi.Input[str] auto_full_backup_day: Day of the week the full backup should be applied on the database system. If no option is selected, the value is null and we will default to Sunday.
-        :param pulumi.Input[str] auto_full_backup_window: Time window selected for initiating full backup for the database system. There are twelve available two-hour time windows. If no option is selected, the value is null and a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
-        :param pulumi.Input[str] backup_deletion_policy: This defines when the backups will be deleted. - IMMEDIATE option keep the backup for predefined time i.e 72 hours and then delete permanently... - RETAIN will keep the backups as per the policy defined for database backups.
-        :param pulumi.Input[Sequence[pulumi.Input['DatabaseDbBackupConfigBackupDestinationDetailArgs']]] backup_destination_details: Backup destination details.
-        :param pulumi.Input[int] recovery_window_in_days: (Updatable) Number of days between the current and the earliest point of recoverability covered by automatic backups. This value applies to automatic backups only. After a new automatic backup has been created, Oracle removes old automatic backups that are created before the window. When the value is updated, it is applied to all existing automatic backups.
-        :param pulumi.Input[bool] run_immediate_full_backup: If set to true, configures automatic full backups in the local region (the region of the DB system) for the first backup run immediately.
-        """
         if auto_backup_enabled is not None:
             pulumi.set(__self__, "auto_backup_enabled", auto_backup_enabled)
         if auto_backup_window is not None:
@@ -4536,9 +3414,6 @@ class DatabaseDbBackupConfigArgs:
     @property
     @pulumi.getter(name="autoBackupEnabled")
     def auto_backup_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) If set to true, configures automatic backups. If you previously used RMAN or dbcli to configure backups and then you switch to using the Console or the API for backups, a new backup configuration is created and associated with your database. This means that you can no longer rely on your previously configured unmanaged backups to work.
-        """
         return pulumi.get(self, "auto_backup_enabled")
 
     @auto_backup_enabled.setter
@@ -4548,9 +3423,6 @@ class DatabaseDbBackupConfigArgs:
     @property
     @pulumi.getter(name="autoBackupWindow")
     def auto_backup_window(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Time window selected for initiating automatic backup for the database system. There are twelve available two-hour time windows. If no option is selected, a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
-        """
         return pulumi.get(self, "auto_backup_window")
 
     @auto_backup_window.setter
@@ -4560,9 +3432,6 @@ class DatabaseDbBackupConfigArgs:
     @property
     @pulumi.getter(name="autoFullBackupDay")
     def auto_full_backup_day(self) -> Optional[pulumi.Input[str]]:
-        """
-        Day of the week the full backup should be applied on the database system. If no option is selected, the value is null and we will default to Sunday.
-        """
         return pulumi.get(self, "auto_full_backup_day")
 
     @auto_full_backup_day.setter
@@ -4572,9 +3441,6 @@ class DatabaseDbBackupConfigArgs:
     @property
     @pulumi.getter(name="autoFullBackupWindow")
     def auto_full_backup_window(self) -> Optional[pulumi.Input[str]]:
-        """
-        Time window selected for initiating full backup for the database system. There are twelve available two-hour time windows. If no option is selected, the value is null and a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
-        """
         return pulumi.get(self, "auto_full_backup_window")
 
     @auto_full_backup_window.setter
@@ -4584,9 +3450,6 @@ class DatabaseDbBackupConfigArgs:
     @property
     @pulumi.getter(name="backupDeletionPolicy")
     def backup_deletion_policy(self) -> Optional[pulumi.Input[str]]:
-        """
-        This defines when the backups will be deleted. - IMMEDIATE option keep the backup for predefined time i.e 72 hours and then delete permanently... - RETAIN will keep the backups as per the policy defined for database backups.
-        """
         return pulumi.get(self, "backup_deletion_policy")
 
     @backup_deletion_policy.setter
@@ -4596,9 +3459,6 @@ class DatabaseDbBackupConfigArgs:
     @property
     @pulumi.getter(name="backupDestinationDetails")
     def backup_destination_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DatabaseDbBackupConfigBackupDestinationDetailArgs']]]]:
-        """
-        Backup destination details.
-        """
         return pulumi.get(self, "backup_destination_details")
 
     @backup_destination_details.setter
@@ -4608,9 +3468,6 @@ class DatabaseDbBackupConfigArgs:
     @property
     @pulumi.getter(name="recoveryWindowInDays")
     def recovery_window_in_days(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) Number of days between the current and the earliest point of recoverability covered by automatic backups. This value applies to automatic backups only. After a new automatic backup has been created, Oracle removes old automatic backups that are created before the window. When the value is updated, it is applied to all existing automatic backups.
-        """
         return pulumi.get(self, "recovery_window_in_days")
 
     @recovery_window_in_days.setter
@@ -4620,9 +3477,6 @@ class DatabaseDbBackupConfigArgs:
     @property
     @pulumi.getter(name="runImmediateFullBackup")
     def run_immediate_full_backup(self) -> Optional[pulumi.Input[bool]]:
-        """
-        If set to true, configures automatic full backups in the local region (the region of the DB system) for the first backup run immediately.
-        """
         return pulumi.get(self, "run_immediate_full_backup")
 
     @run_immediate_full_backup.setter
@@ -4637,11 +3491,6 @@ class DatabaseDbBackupConfigBackupDestinationDetailArgs:
                  id: Optional[pulumi.Input[str]] = None,
                  type: Optional[pulumi.Input[str]] = None,
                  vpc_user: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] dbrs_policy_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
-        :param pulumi.Input[str] id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
-        :param pulumi.Input[str] type: Type of the database backup destination.
-        """
         if dbrs_policy_id is not None:
             pulumi.set(__self__, "dbrs_policy_id", dbrs_policy_id)
         if id is not None:
@@ -4654,9 +3503,6 @@ class DatabaseDbBackupConfigBackupDestinationDetailArgs:
     @property
     @pulumi.getter(name="dbrsPolicyId")
     def dbrs_policy_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
-        """
         return pulumi.get(self, "dbrs_policy_id")
 
     @dbrs_policy_id.setter
@@ -4666,9 +3512,6 @@ class DatabaseDbBackupConfigBackupDestinationDetailArgs:
     @property
     @pulumi.getter
     def id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
-        """
         return pulumi.get(self, "id")
 
     @id.setter
@@ -4678,9 +3521,6 @@ class DatabaseDbBackupConfigBackupDestinationDetailArgs:
     @property
     @pulumi.getter
     def type(self) -> Optional[pulumi.Input[str]]:
-        """
-        Type of the database backup destination.
-        """
         return pulumi.get(self, "type")
 
     @type.setter
@@ -4703,11 +3543,6 @@ class DatabaseUpgradeConnectionStringArgs:
                  all_connection_strings: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  cdb_default: Optional[pulumi.Input[str]] = None,
                  cdb_ip_default: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[Mapping[str, Any]] all_connection_strings: All connection strings to use to connect to the Database.
-        :param pulumi.Input[str] cdb_default: Host name based CDB Connection String.
-        :param pulumi.Input[str] cdb_ip_default: IP based CDB Connection String.
-        """
         if all_connection_strings is not None:
             pulumi.set(__self__, "all_connection_strings", all_connection_strings)
         if cdb_default is not None:
@@ -4718,9 +3553,6 @@ class DatabaseUpgradeConnectionStringArgs:
     @property
     @pulumi.getter(name="allConnectionStrings")
     def all_connection_strings(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        All connection strings to use to connect to the Database.
-        """
         return pulumi.get(self, "all_connection_strings")
 
     @all_connection_strings.setter
@@ -4730,9 +3562,6 @@ class DatabaseUpgradeConnectionStringArgs:
     @property
     @pulumi.getter(name="cdbDefault")
     def cdb_default(self) -> Optional[pulumi.Input[str]]:
-        """
-        Host name based CDB Connection String.
-        """
         return pulumi.get(self, "cdb_default")
 
     @cdb_default.setter
@@ -4742,9 +3571,6 @@ class DatabaseUpgradeConnectionStringArgs:
     @property
     @pulumi.getter(name="cdbIpDefault")
     def cdb_ip_default(self) -> Optional[pulumi.Input[str]]:
-        """
-        IP based CDB Connection String.
-        """
         return pulumi.get(self, "cdb_ip_default")
 
     @cdb_ip_default.setter
@@ -4759,20 +3585,6 @@ class DatabaseUpgradeDatabaseUpgradeSourceDetailsArgs:
                  db_version: Optional[pulumi.Input[str]] = None,
                  options: Optional[pulumi.Input[str]] = None,
                  source: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] database_software_image_id: The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the image to be used to upgrade a database.
-        :param pulumi.Input[str] db_version: A valid Oracle Database version. For a list of supported versions, use the ListDbVersions operation.
-               
-               This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
-        :param pulumi.Input[str] options: Additional upgrade options supported by DBUA(Database Upgrade Assistant). Example: "-upgradeTimezone false -keepEvents"
-        :param pulumi.Input[str] source: The source of the Oracle Database software to be used for the upgrade.
-               * Use `DB_VERSION` to specify a generally-available Oracle Database software version to upgrade the database.
-               * Use `DB_SOFTWARE_IMAGE` to specify a [database software image](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/databasesoftwareimage.htm) to upgrade the database.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         if database_software_image_id is not None:
             pulumi.set(__self__, "database_software_image_id", database_software_image_id)
         if db_version is not None:
@@ -4785,9 +3597,6 @@ class DatabaseUpgradeDatabaseUpgradeSourceDetailsArgs:
     @property
     @pulumi.getter(name="databaseSoftwareImageId")
     def database_software_image_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the image to be used to upgrade a database.
-        """
         return pulumi.get(self, "database_software_image_id")
 
     @database_software_image_id.setter
@@ -4797,11 +3606,6 @@ class DatabaseUpgradeDatabaseUpgradeSourceDetailsArgs:
     @property
     @pulumi.getter(name="dbVersion")
     def db_version(self) -> Optional[pulumi.Input[str]]:
-        """
-        A valid Oracle Database version. For a list of supported versions, use the ListDbVersions operation.
-
-        This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
-        """
         return pulumi.get(self, "db_version")
 
     @db_version.setter
@@ -4811,9 +3615,6 @@ class DatabaseUpgradeDatabaseUpgradeSourceDetailsArgs:
     @property
     @pulumi.getter
     def options(self) -> Optional[pulumi.Input[str]]:
-        """
-        Additional upgrade options supported by DBUA(Database Upgrade Assistant). Example: "-upgradeTimezone false -keepEvents"
-        """
         return pulumi.get(self, "options")
 
     @options.setter
@@ -4823,15 +3624,6 @@ class DatabaseUpgradeDatabaseUpgradeSourceDetailsArgs:
     @property
     @pulumi.getter
     def source(self) -> Optional[pulumi.Input[str]]:
-        """
-        The source of the Oracle Database software to be used for the upgrade.
-        * Use `DB_VERSION` to specify a generally-available Oracle Database software version to upgrade the database.
-        * Use `DB_SOFTWARE_IMAGE` to specify a [database software image](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/databasesoftwareimage.htm) to upgrade the database.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "source")
 
     @source.setter
@@ -4850,16 +3642,6 @@ class DatabaseUpgradeDbBackupConfigArgs:
                  backup_destination_details: Optional[pulumi.Input[Sequence[pulumi.Input['DatabaseUpgradeDbBackupConfigBackupDestinationDetailArgs']]]] = None,
                  recovery_window_in_days: Optional[pulumi.Input[int]] = None,
                  run_immediate_full_backup: Optional[pulumi.Input[bool]] = None):
-        """
-        :param pulumi.Input[bool] auto_backup_enabled: If set to true, configures automatic backups. If you previously used RMAN or dbcli to configure backups and then you switch to using the Console or the API for backups, a new backup configuration is created and associated with your database. This means that you can no longer rely on your previously configured unmanaged backups to work.
-        :param pulumi.Input[str] auto_backup_window: Time window selected for initiating automatic backup for the database system. There are twelve available two-hour time windows. If no option is selected, a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
-        :param pulumi.Input[str] auto_full_backup_day: Day of the week the full backup should be applied on the database system. If no option is selected, the value is null and we will default to Sunday.
-        :param pulumi.Input[str] auto_full_backup_window: Time window selected for initiating full backup for the database system. There are twelve available two-hour time windows. If no option is selected, the value is null and a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
-        :param pulumi.Input[str] backup_deletion_policy: This defines when the backups will be deleted. - IMMEDIATE option keep the backup for predefined time i.e 72 hours and then delete permanently... - RETAIN will keep the backups as per the policy defined for database backups.
-        :param pulumi.Input[Sequence[pulumi.Input['DatabaseUpgradeDbBackupConfigBackupDestinationDetailArgs']]] backup_destination_details: Backup destination details.
-        :param pulumi.Input[int] recovery_window_in_days: Number of days between the current and the earliest point of recoverability covered by automatic backups. This value applies to automatic backups only. After a new automatic backup has been created, Oracle removes old automatic backups that are created before the window. When the value is updated, it is applied to all existing automatic backups.
-        :param pulumi.Input[bool] run_immediate_full_backup: If set to true, configures automatic full backups in the local region (the region of the DB system) for the first backup run immediately.
-        """
         if auto_backup_enabled is not None:
             pulumi.set(__self__, "auto_backup_enabled", auto_backup_enabled)
         if auto_backup_window is not None:
@@ -4880,9 +3662,6 @@ class DatabaseUpgradeDbBackupConfigArgs:
     @property
     @pulumi.getter(name="autoBackupEnabled")
     def auto_backup_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        If set to true, configures automatic backups. If you previously used RMAN or dbcli to configure backups and then you switch to using the Console or the API for backups, a new backup configuration is created and associated with your database. This means that you can no longer rely on your previously configured unmanaged backups to work.
-        """
         return pulumi.get(self, "auto_backup_enabled")
 
     @auto_backup_enabled.setter
@@ -4892,9 +3671,6 @@ class DatabaseUpgradeDbBackupConfigArgs:
     @property
     @pulumi.getter(name="autoBackupWindow")
     def auto_backup_window(self) -> Optional[pulumi.Input[str]]:
-        """
-        Time window selected for initiating automatic backup for the database system. There are twelve available two-hour time windows. If no option is selected, a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
-        """
         return pulumi.get(self, "auto_backup_window")
 
     @auto_backup_window.setter
@@ -4904,9 +3680,6 @@ class DatabaseUpgradeDbBackupConfigArgs:
     @property
     @pulumi.getter(name="autoFullBackupDay")
     def auto_full_backup_day(self) -> Optional[pulumi.Input[str]]:
-        """
-        Day of the week the full backup should be applied on the database system. If no option is selected, the value is null and we will default to Sunday.
-        """
         return pulumi.get(self, "auto_full_backup_day")
 
     @auto_full_backup_day.setter
@@ -4916,9 +3689,6 @@ class DatabaseUpgradeDbBackupConfigArgs:
     @property
     @pulumi.getter(name="autoFullBackupWindow")
     def auto_full_backup_window(self) -> Optional[pulumi.Input[str]]:
-        """
-        Time window selected for initiating full backup for the database system. There are twelve available two-hour time windows. If no option is selected, the value is null and a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
-        """
         return pulumi.get(self, "auto_full_backup_window")
 
     @auto_full_backup_window.setter
@@ -4928,9 +3698,6 @@ class DatabaseUpgradeDbBackupConfigArgs:
     @property
     @pulumi.getter(name="backupDeletionPolicy")
     def backup_deletion_policy(self) -> Optional[pulumi.Input[str]]:
-        """
-        This defines when the backups will be deleted. - IMMEDIATE option keep the backup for predefined time i.e 72 hours and then delete permanently... - RETAIN will keep the backups as per the policy defined for database backups.
-        """
         return pulumi.get(self, "backup_deletion_policy")
 
     @backup_deletion_policy.setter
@@ -4940,9 +3707,6 @@ class DatabaseUpgradeDbBackupConfigArgs:
     @property
     @pulumi.getter(name="backupDestinationDetails")
     def backup_destination_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DatabaseUpgradeDbBackupConfigBackupDestinationDetailArgs']]]]:
-        """
-        Backup destination details.
-        """
         return pulumi.get(self, "backup_destination_details")
 
     @backup_destination_details.setter
@@ -4952,9 +3716,6 @@ class DatabaseUpgradeDbBackupConfigArgs:
     @property
     @pulumi.getter(name="recoveryWindowInDays")
     def recovery_window_in_days(self) -> Optional[pulumi.Input[int]]:
-        """
-        Number of days between the current and the earliest point of recoverability covered by automatic backups. This value applies to automatic backups only. After a new automatic backup has been created, Oracle removes old automatic backups that are created before the window. When the value is updated, it is applied to all existing automatic backups.
-        """
         return pulumi.get(self, "recovery_window_in_days")
 
     @recovery_window_in_days.setter
@@ -4964,9 +3725,6 @@ class DatabaseUpgradeDbBackupConfigArgs:
     @property
     @pulumi.getter(name="runImmediateFullBackup")
     def run_immediate_full_backup(self) -> Optional[pulumi.Input[bool]]:
-        """
-        If set to true, configures automatic full backups in the local region (the region of the DB system) for the first backup run immediately.
-        """
         return pulumi.get(self, "run_immediate_full_backup")
 
     @run_immediate_full_backup.setter
@@ -4983,14 +3741,6 @@ class DatabaseUpgradeDbBackupConfigBackupDestinationDetailArgs:
                  type: Optional[pulumi.Input[str]] = None,
                  vpc_password: Optional[pulumi.Input[str]] = None,
                  vpc_user: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] dbrs_policy_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
-        :param pulumi.Input[str] id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
-        :param pulumi.Input[str] internet_proxy: Proxy URL to connect to object store.
-        :param pulumi.Input[str] type: Type of the database backup destination.
-        :param pulumi.Input[str] vpc_password: For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
-        :param pulumi.Input[str] vpc_user: For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
-        """
         if dbrs_policy_id is not None:
             pulumi.set(__self__, "dbrs_policy_id", dbrs_policy_id)
         if id is not None:
@@ -5007,9 +3757,6 @@ class DatabaseUpgradeDbBackupConfigBackupDestinationDetailArgs:
     @property
     @pulumi.getter(name="dbrsPolicyId")
     def dbrs_policy_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
-        """
         return pulumi.get(self, "dbrs_policy_id")
 
     @dbrs_policy_id.setter
@@ -5019,9 +3766,6 @@ class DatabaseUpgradeDbBackupConfigBackupDestinationDetailArgs:
     @property
     @pulumi.getter
     def id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
-        """
         return pulumi.get(self, "id")
 
     @id.setter
@@ -5031,9 +3775,6 @@ class DatabaseUpgradeDbBackupConfigBackupDestinationDetailArgs:
     @property
     @pulumi.getter(name="internetProxy")
     def internet_proxy(self) -> Optional[pulumi.Input[str]]:
-        """
-        Proxy URL to connect to object store.
-        """
         return pulumi.get(self, "internet_proxy")
 
     @internet_proxy.setter
@@ -5043,9 +3784,6 @@ class DatabaseUpgradeDbBackupConfigBackupDestinationDetailArgs:
     @property
     @pulumi.getter
     def type(self) -> Optional[pulumi.Input[str]]:
-        """
-        Type of the database backup destination.
-        """
         return pulumi.get(self, "type")
 
     @type.setter
@@ -5055,9 +3793,6 @@ class DatabaseUpgradeDbBackupConfigBackupDestinationDetailArgs:
     @property
     @pulumi.getter(name="vpcPassword")
     def vpc_password(self) -> Optional[pulumi.Input[str]]:
-        """
-        For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
-        """
         return pulumi.get(self, "vpc_password")
 
     @vpc_password.setter
@@ -5067,9 +3802,6 @@ class DatabaseUpgradeDbBackupConfigBackupDestinationDetailArgs:
     @property
     @pulumi.getter(name="vpcUser")
     def vpc_user(self) -> Optional[pulumi.Input[str]]:
-        """
-        For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
-        """
         return pulumi.get(self, "vpc_user")
 
     @vpc_user.setter
@@ -5107,37 +3839,6 @@ class DbHomeDatabaseArgs:
                  time_created: Optional[pulumi.Input[str]] = None,
                  time_stamp_for_point_in_time_recovery: Optional[pulumi.Input[str]] = None,
                  vault_id: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] admin_password: A strong password for SYS, SYSTEM, PDB Admin and TDE Wallet. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numbers, and two special characters. The special characters must be _, \\#, or -.
-        :param pulumi.Input[str] backup_id: The backup [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param pulumi.Input[str] backup_tde_password: The password to open the TDE wallet.
-        :param pulumi.Input[str] character_set: The character set for the database.  The default is AL32UTF8. Allowed values are:
-               
-               AL32UTF8, AR8ADOS710, AR8ADOS720, AR8APTEC715, AR8ARABICMACS, AR8ASMO8X, AR8ISO8859P6, AR8MSWIN1256, AR8MUSSAD768, AR8NAFITHA711, AR8NAFITHA721, AR8SAKHR706, AR8SAKHR707, AZ8ISO8859P9E, BG8MSWIN, BG8PC437S, BLT8CP921, BLT8ISO8859P13, BLT8MSWIN1257, BLT8PC775, BN8BSCII, CDN8PC863, CEL8ISO8859P14, CL8ISO8859P5, CL8ISOIR111, CL8KOI8R, CL8KOI8U, CL8MACCYRILLICS, CL8MSWIN1251, EE8ISO8859P2, EE8MACCES, EE8MACCROATIANS, EE8MSWIN1250, EE8PC852, EL8DEC, EL8ISO8859P7, EL8MACGREEKS, EL8MSWIN1253, EL8PC437S, EL8PC851, EL8PC869, ET8MSWIN923, HU8ABMOD, HU8CWI2, IN8ISCII, IS8PC861, IW8ISO8859P8, IW8MACHEBREWS, IW8MSWIN1255, IW8PC1507, JA16EUC, JA16EUCTILDE, JA16SJIS, JA16SJISTILDE, JA16VMS, KO16KSC5601, KO16KSCCS, KO16MSWIN949, LA8ISO6937, LA8PASSPORT, LT8MSWIN921, LT8PC772, LT8PC774, LV8PC1117, LV8PC8LR, LV8RST104090, N8PC865, NE8ISO8859P10, NEE8ISO8859P4, RU8BESTA, RU8PC855, RU8PC866, SE8ISO8859P3, TH8MACTHAIS, TH8TISASCII, TR8DEC, TR8MACTURKISHS, TR8MSWIN1254, TR8PC857, US7ASCII, US8PC437, UTF8, VN8MSWIN1258, VN8VN3, WE8DEC, WE8DG, WE8ISO8859P1, WE8ISO8859P15, WE8ISO8859P9, WE8MACROMAN8S, WE8MSWIN1252, WE8NCR4970, WE8NEXTSTEP, WE8PC850, WE8PC858, WE8PC860, WE8ROMAN8, ZHS16CGB231280, ZHS16GBK, ZHT16BIG5, ZHT16CCDC, ZHT16DBT, ZHT16HKSCS, ZHT16MSWIN950, ZHT32EUC, ZHT32SOPS, ZHT32TRIS
-        :param pulumi.Input[str] database_id: The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param pulumi.Input[str] database_software_image_id: The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-        :param pulumi.Input['DbHomeDatabaseDbBackupConfigArgs'] db_backup_config: (Updatable) Backup Options To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized, talk to an administrator. If you're an administrator who needs to write policies to give users access, see [Getting Started with Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
-        :param pulumi.Input[str] db_name: The display name of the database to be created from the backup. It must begin with an alphabetic character and can contain a maximum of eight alphanumeric characters. Special characters are not permitted.
-        :param pulumi.Input[str] db_workload: **Deprecated.** The dbWorkload field has been deprecated for Exadata Database Service on Dedicated Infrastructure, Exadata Database Service on Cloud@Customer, and Base Database Service. Support for this attribute will end in November 2023. You may choose to update your custom scripts to exclude the dbWorkload attribute. After November 2023 if you pass a value to the dbWorkload attribute, it will be ignored.
-               
-               The database workload type.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
-        :param pulumi.Input[str] kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
-        :param pulumi.Input[str] kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
-        :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycle state.
-        :param pulumi.Input[str] ncharacter_set: The national character set for the database.  The default is AL16UTF16. Allowed values are: AL16UTF16 or UTF8.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] one_off_patches: List of one-off patches for Database Homes.
-        :param pulumi.Input[str] pdb_name: The name of the pluggable database. The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. Pluggable database should not be same as database name.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] pluggable_databases: The list of pluggable databases that needs to be restored into new database.
-        :param pulumi.Input[str] sid_prefix: Specifies a prefix for the `Oracle SID` of the database to be created.
-        :param pulumi.Input[str] state: The current state of the Database Home.
-        :param pulumi.Input[str] tde_wallet_password: The optional password to open the TDE wallet. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numeric, and two special characters. The special characters must be _, \\#, or -.
-        :param pulumi.Input[str] time_created: The date and time the Database Home was created.
-        :param pulumi.Input[str] time_stamp_for_point_in_time_recovery: The point in time of the original database from which the new database is created. If not specifed, the latest backup is used to create the database.
-        :param pulumi.Input[str] vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
-        """
         pulumi.set(__self__, "admin_password", admin_password)
         if backup_id is not None:
             pulumi.set(__self__, "backup_id", backup_id)
@@ -5195,9 +3896,6 @@ class DbHomeDatabaseArgs:
     @property
     @pulumi.getter(name="adminPassword")
     def admin_password(self) -> pulumi.Input[str]:
-        """
-        A strong password for SYS, SYSTEM, PDB Admin and TDE Wallet. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numbers, and two special characters. The special characters must be _, \\#, or -.
-        """
         return pulumi.get(self, "admin_password")
 
     @admin_password.setter
@@ -5207,9 +3905,6 @@ class DbHomeDatabaseArgs:
     @property
     @pulumi.getter(name="backupId")
     def backup_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The backup [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        """
         return pulumi.get(self, "backup_id")
 
     @backup_id.setter
@@ -5219,9 +3914,6 @@ class DbHomeDatabaseArgs:
     @property
     @pulumi.getter(name="backupTdePassword")
     def backup_tde_password(self) -> Optional[pulumi.Input[str]]:
-        """
-        The password to open the TDE wallet.
-        """
         return pulumi.get(self, "backup_tde_password")
 
     @backup_tde_password.setter
@@ -5231,11 +3923,6 @@ class DbHomeDatabaseArgs:
     @property
     @pulumi.getter(name="characterSet")
     def character_set(self) -> Optional[pulumi.Input[str]]:
-        """
-        The character set for the database.  The default is AL32UTF8. Allowed values are:
-
-        AL32UTF8, AR8ADOS710, AR8ADOS720, AR8APTEC715, AR8ARABICMACS, AR8ASMO8X, AR8ISO8859P6, AR8MSWIN1256, AR8MUSSAD768, AR8NAFITHA711, AR8NAFITHA721, AR8SAKHR706, AR8SAKHR707, AZ8ISO8859P9E, BG8MSWIN, BG8PC437S, BLT8CP921, BLT8ISO8859P13, BLT8MSWIN1257, BLT8PC775, BN8BSCII, CDN8PC863, CEL8ISO8859P14, CL8ISO8859P5, CL8ISOIR111, CL8KOI8R, CL8KOI8U, CL8MACCYRILLICS, CL8MSWIN1251, EE8ISO8859P2, EE8MACCES, EE8MACCROATIANS, EE8MSWIN1250, EE8PC852, EL8DEC, EL8ISO8859P7, EL8MACGREEKS, EL8MSWIN1253, EL8PC437S, EL8PC851, EL8PC869, ET8MSWIN923, HU8ABMOD, HU8CWI2, IN8ISCII, IS8PC861, IW8ISO8859P8, IW8MACHEBREWS, IW8MSWIN1255, IW8PC1507, JA16EUC, JA16EUCTILDE, JA16SJIS, JA16SJISTILDE, JA16VMS, KO16KSC5601, KO16KSCCS, KO16MSWIN949, LA8ISO6937, LA8PASSPORT, LT8MSWIN921, LT8PC772, LT8PC774, LV8PC1117, LV8PC8LR, LV8RST104090, N8PC865, NE8ISO8859P10, NEE8ISO8859P4, RU8BESTA, RU8PC855, RU8PC866, SE8ISO8859P3, TH8MACTHAIS, TH8TISASCII, TR8DEC, TR8MACTURKISHS, TR8MSWIN1254, TR8PC857, US7ASCII, US8PC437, UTF8, VN8MSWIN1258, VN8VN3, WE8DEC, WE8DG, WE8ISO8859P1, WE8ISO8859P15, WE8ISO8859P9, WE8MACROMAN8S, WE8MSWIN1252, WE8NCR4970, WE8NEXTSTEP, WE8PC850, WE8PC858, WE8PC860, WE8ROMAN8, ZHS16CGB231280, ZHS16GBK, ZHT16BIG5, ZHT16CCDC, ZHT16DBT, ZHT16HKSCS, ZHT16MSWIN950, ZHT32EUC, ZHT32SOPS, ZHT32TRIS
-        """
         return pulumi.get(self, "character_set")
 
     @character_set.setter
@@ -5254,9 +3941,6 @@ class DbHomeDatabaseArgs:
     @property
     @pulumi.getter(name="databaseId")
     def database_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        """
         return pulumi.get(self, "database_id")
 
     @database_id.setter
@@ -5266,9 +3950,6 @@ class DbHomeDatabaseArgs:
     @property
     @pulumi.getter(name="databaseSoftwareImageId")
     def database_software_image_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-        """
         return pulumi.get(self, "database_software_image_id")
 
     @database_software_image_id.setter
@@ -5278,9 +3959,6 @@ class DbHomeDatabaseArgs:
     @property
     @pulumi.getter(name="dbBackupConfig")
     def db_backup_config(self) -> Optional[pulumi.Input['DbHomeDatabaseDbBackupConfigArgs']]:
-        """
-        (Updatable) Backup Options To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized, talk to an administrator. If you're an administrator who needs to write policies to give users access, see [Getting Started with Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
-        """
         return pulumi.get(self, "db_backup_config")
 
     @db_backup_config.setter
@@ -5290,9 +3968,6 @@ class DbHomeDatabaseArgs:
     @property
     @pulumi.getter(name="dbName")
     def db_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The display name of the database to be created from the backup. It must begin with an alphabetic character and can contain a maximum of eight alphanumeric characters. Special characters are not permitted.
-        """
         return pulumi.get(self, "db_name")
 
     @db_name.setter
@@ -5311,11 +3986,6 @@ class DbHomeDatabaseArgs:
     @property
     @pulumi.getter(name="dbWorkload")
     def db_workload(self) -> Optional[pulumi.Input[str]]:
-        """
-        **Deprecated.** The dbWorkload field has been deprecated for Exadata Database Service on Dedicated Infrastructure, Exadata Database Service on Cloud@Customer, and Base Database Service. Support for this attribute will end in November 2023. You may choose to update your custom scripts to exclude the dbWorkload attribute. After November 2023 if you pass a value to the dbWorkload attribute, it will be ignored.
-
-        The database workload type.
-        """
         return pulumi.get(self, "db_workload")
 
     @db_workload.setter
@@ -5325,9 +3995,6 @@ class DbHomeDatabaseArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -5337,9 +4004,6 @@ class DbHomeDatabaseArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -5349,9 +4013,6 @@ class DbHomeDatabaseArgs:
     @property
     @pulumi.getter
     def id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
-        """
         return pulumi.get(self, "id")
 
     @id.setter
@@ -5361,9 +4022,6 @@ class DbHomeDatabaseArgs:
     @property
     @pulumi.getter(name="kmsKeyId")
     def kms_key_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
-        """
         return pulumi.get(self, "kms_key_id")
 
     @kms_key_id.setter
@@ -5373,9 +4031,6 @@ class DbHomeDatabaseArgs:
     @property
     @pulumi.getter(name="kmsKeyVersionId")
     def kms_key_version_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
-        """
         return pulumi.get(self, "kms_key_version_id")
 
     @kms_key_version_id.setter
@@ -5385,9 +4040,6 @@ class DbHomeDatabaseArgs:
     @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> Optional[pulumi.Input[str]]:
-        """
-        Additional information about the current lifecycle state.
-        """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
@@ -5397,9 +4049,6 @@ class DbHomeDatabaseArgs:
     @property
     @pulumi.getter(name="ncharacterSet")
     def ncharacter_set(self) -> Optional[pulumi.Input[str]]:
-        """
-        The national character set for the database.  The default is AL16UTF16. Allowed values are: AL16UTF16 or UTF8.
-        """
         return pulumi.get(self, "ncharacter_set")
 
     @ncharacter_set.setter
@@ -5409,9 +4058,6 @@ class DbHomeDatabaseArgs:
     @property
     @pulumi.getter(name="oneOffPatches")
     def one_off_patches(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        List of one-off patches for Database Homes.
-        """
         return pulumi.get(self, "one_off_patches")
 
     @one_off_patches.setter
@@ -5421,9 +4067,6 @@ class DbHomeDatabaseArgs:
     @property
     @pulumi.getter(name="pdbName")
     def pdb_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The name of the pluggable database. The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. Pluggable database should not be same as database name.
-        """
         return pulumi.get(self, "pdb_name")
 
     @pdb_name.setter
@@ -5433,9 +4076,6 @@ class DbHomeDatabaseArgs:
     @property
     @pulumi.getter(name="pluggableDatabases")
     def pluggable_databases(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        The list of pluggable databases that needs to be restored into new database.
-        """
         return pulumi.get(self, "pluggable_databases")
 
     @pluggable_databases.setter
@@ -5445,9 +4085,6 @@ class DbHomeDatabaseArgs:
     @property
     @pulumi.getter(name="sidPrefix")
     def sid_prefix(self) -> Optional[pulumi.Input[str]]:
-        """
-        Specifies a prefix for the `Oracle SID` of the database to be created.
-        """
         return pulumi.get(self, "sid_prefix")
 
     @sid_prefix.setter
@@ -5457,9 +4094,6 @@ class DbHomeDatabaseArgs:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The current state of the Database Home.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -5469,9 +4103,6 @@ class DbHomeDatabaseArgs:
     @property
     @pulumi.getter(name="tdeWalletPassword")
     def tde_wallet_password(self) -> Optional[pulumi.Input[str]]:
-        """
-        The optional password to open the TDE wallet. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numeric, and two special characters. The special characters must be _, \\#, or -.
-        """
         return pulumi.get(self, "tde_wallet_password")
 
     @tde_wallet_password.setter
@@ -5481,9 +4112,6 @@ class DbHomeDatabaseArgs:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time the Database Home was created.
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -5493,9 +4121,6 @@ class DbHomeDatabaseArgs:
     @property
     @pulumi.getter(name="timeStampForPointInTimeRecovery")
     def time_stamp_for_point_in_time_recovery(self) -> Optional[pulumi.Input[str]]:
-        """
-        The point in time of the original database from which the new database is created. If not specifed, the latest backup is used to create the database.
-        """
         return pulumi.get(self, "time_stamp_for_point_in_time_recovery")
 
     @time_stamp_for_point_in_time_recovery.setter
@@ -5505,9 +4130,6 @@ class DbHomeDatabaseArgs:
     @property
     @pulumi.getter(name="vaultId")
     def vault_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
-        """
         return pulumi.get(self, "vault_id")
 
     @vault_id.setter
@@ -5567,16 +4189,6 @@ class DbHomeDatabaseDbBackupConfigArgs:
                  backup_destination_details: Optional[pulumi.Input[Sequence[pulumi.Input['DbHomeDatabaseDbBackupConfigBackupDestinationDetailArgs']]]] = None,
                  recovery_window_in_days: Optional[pulumi.Input[int]] = None,
                  run_immediate_full_backup: Optional[pulumi.Input[bool]] = None):
-        """
-        :param pulumi.Input[bool] auto_backup_enabled: (Updatable) If set to true, configures automatic backups. If you previously used RMAN or dbcli to configure backups and then you switch to using the Console or the API for backups, a new backup configuration is created and associated with your database. This means that you can no longer rely on your previously configured unmanaged backups to work.
-        :param pulumi.Input[str] auto_backup_window: (Updatable) Time window selected for initiating automatic backup for the database system. There are twelve available two-hour time windows. If no option is selected, a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
-        :param pulumi.Input[str] auto_full_backup_day: Day of the week the full backup should be applied on the database system. If no option is selected, the value is null and we will default to Sunday.
-        :param pulumi.Input[str] auto_full_backup_window: Time window selected for initiating full backup for the database system. There are twelve available two-hour time windows. If no option is selected, the value is null and a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
-        :param pulumi.Input[str] backup_deletion_policy: This defines when the backups will be deleted. - IMMEDIATE option keep the backup for predefined time i.e 72 hours and then delete permanently... - RETAIN will keep the backups as per the policy defined for database backups.
-        :param pulumi.Input[Sequence[pulumi.Input['DbHomeDatabaseDbBackupConfigBackupDestinationDetailArgs']]] backup_destination_details: Backup destination details.
-        :param pulumi.Input[int] recovery_window_in_days: (Updatable) Number of days between the current and the earliest point of recoverability covered by automatic backups. This value applies to automatic backups only. After a new automatic backup has been created, Oracle removes old automatic backups that are created before the window. When the value is updated, it is applied to all existing automatic backups.
-        :param pulumi.Input[bool] run_immediate_full_backup: If set to true, configures automatic full backups in the local region (the region of the DB system) for the first backup run immediately.
-        """
         if auto_backup_enabled is not None:
             pulumi.set(__self__, "auto_backup_enabled", auto_backup_enabled)
         if auto_backup_window is not None:
@@ -5597,9 +4209,6 @@ class DbHomeDatabaseDbBackupConfigArgs:
     @property
     @pulumi.getter(name="autoBackupEnabled")
     def auto_backup_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) If set to true, configures automatic backups. If you previously used RMAN or dbcli to configure backups and then you switch to using the Console or the API for backups, a new backup configuration is created and associated with your database. This means that you can no longer rely on your previously configured unmanaged backups to work.
-        """
         return pulumi.get(self, "auto_backup_enabled")
 
     @auto_backup_enabled.setter
@@ -5609,9 +4218,6 @@ class DbHomeDatabaseDbBackupConfigArgs:
     @property
     @pulumi.getter(name="autoBackupWindow")
     def auto_backup_window(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Time window selected for initiating automatic backup for the database system. There are twelve available two-hour time windows. If no option is selected, a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
-        """
         return pulumi.get(self, "auto_backup_window")
 
     @auto_backup_window.setter
@@ -5621,9 +4227,6 @@ class DbHomeDatabaseDbBackupConfigArgs:
     @property
     @pulumi.getter(name="autoFullBackupDay")
     def auto_full_backup_day(self) -> Optional[pulumi.Input[str]]:
-        """
-        Day of the week the full backup should be applied on the database system. If no option is selected, the value is null and we will default to Sunday.
-        """
         return pulumi.get(self, "auto_full_backup_day")
 
     @auto_full_backup_day.setter
@@ -5633,9 +4236,6 @@ class DbHomeDatabaseDbBackupConfigArgs:
     @property
     @pulumi.getter(name="autoFullBackupWindow")
     def auto_full_backup_window(self) -> Optional[pulumi.Input[str]]:
-        """
-        Time window selected for initiating full backup for the database system. There are twelve available two-hour time windows. If no option is selected, the value is null and a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
-        """
         return pulumi.get(self, "auto_full_backup_window")
 
     @auto_full_backup_window.setter
@@ -5645,9 +4245,6 @@ class DbHomeDatabaseDbBackupConfigArgs:
     @property
     @pulumi.getter(name="backupDeletionPolicy")
     def backup_deletion_policy(self) -> Optional[pulumi.Input[str]]:
-        """
-        This defines when the backups will be deleted. - IMMEDIATE option keep the backup for predefined time i.e 72 hours and then delete permanently... - RETAIN will keep the backups as per the policy defined for database backups.
-        """
         return pulumi.get(self, "backup_deletion_policy")
 
     @backup_deletion_policy.setter
@@ -5657,9 +4254,6 @@ class DbHomeDatabaseDbBackupConfigArgs:
     @property
     @pulumi.getter(name="backupDestinationDetails")
     def backup_destination_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DbHomeDatabaseDbBackupConfigBackupDestinationDetailArgs']]]]:
-        """
-        Backup destination details.
-        """
         return pulumi.get(self, "backup_destination_details")
 
     @backup_destination_details.setter
@@ -5669,9 +4263,6 @@ class DbHomeDatabaseDbBackupConfigArgs:
     @property
     @pulumi.getter(name="recoveryWindowInDays")
     def recovery_window_in_days(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) Number of days between the current and the earliest point of recoverability covered by automatic backups. This value applies to automatic backups only. After a new automatic backup has been created, Oracle removes old automatic backups that are created before the window. When the value is updated, it is applied to all existing automatic backups.
-        """
         return pulumi.get(self, "recovery_window_in_days")
 
     @recovery_window_in_days.setter
@@ -5681,9 +4272,6 @@ class DbHomeDatabaseDbBackupConfigArgs:
     @property
     @pulumi.getter(name="runImmediateFullBackup")
     def run_immediate_full_backup(self) -> Optional[pulumi.Input[bool]]:
-        """
-        If set to true, configures automatic full backups in the local region (the region of the DB system) for the first backup run immediately.
-        """
         return pulumi.get(self, "run_immediate_full_backup")
 
     @run_immediate_full_backup.setter
@@ -5697,11 +4285,6 @@ class DbHomeDatabaseDbBackupConfigBackupDestinationDetailArgs:
                  dbrs_policy_id: Optional[pulumi.Input[str]] = None,
                  id: Optional[pulumi.Input[str]] = None,
                  type: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] dbrs_policy_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
-        :param pulumi.Input[str] id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
-        :param pulumi.Input[str] type: Type of the database backup destination. Supported values: `NFS`.
-        """
         if dbrs_policy_id is not None:
             pulumi.set(__self__, "dbrs_policy_id", dbrs_policy_id)
         if id is not None:
@@ -5712,9 +4295,6 @@ class DbHomeDatabaseDbBackupConfigBackupDestinationDetailArgs:
     @property
     @pulumi.getter(name="dbrsPolicyId")
     def dbrs_policy_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
-        """
         return pulumi.get(self, "dbrs_policy_id")
 
     @dbrs_policy_id.setter
@@ -5724,9 +4304,6 @@ class DbHomeDatabaseDbBackupConfigBackupDestinationDetailArgs:
     @property
     @pulumi.getter
     def id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
-        """
         return pulumi.get(self, "id")
 
     @id.setter
@@ -5736,9 +4313,6 @@ class DbHomeDatabaseDbBackupConfigBackupDestinationDetailArgs:
     @property
     @pulumi.getter
     def type(self) -> Optional[pulumi.Input[str]]:
-        """
-        Type of the database backup destination. Supported values: `NFS`.
-        """
         return pulumi.get(self, "type")
 
     @type.setter
@@ -5752,11 +4326,6 @@ class DbSystemDataCollectionOptionsArgs:
                  is_diagnostics_events_enabled: Optional[pulumi.Input[bool]] = None,
                  is_health_monitoring_enabled: Optional[pulumi.Input[bool]] = None,
                  is_incident_logs_enabled: Optional[pulumi.Input[bool]] = None):
-        """
-        :param pulumi.Input[bool] is_diagnostics_events_enabled: (Updatable) Indicates whether diagnostic collection is enabled for the VM cluster/Cloud VM cluster/VMBM DBCS. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster/Cloud VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` or `updateCloudVmCluster` API.
-        :param pulumi.Input[bool] is_health_monitoring_enabled: (Updatable) Indicates whether health monitoring is enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling health monitoring allows Oracle to collect diagnostic data and share it with its operations and support personnel. You may also receive notifications for some events. Collecting health diagnostics enables Oracle to provide proactive support and enhanced service for your system. Optionally enable health monitoring while provisioning a system. You can also disable or enable health monitoring anytime using the `UpdateVmCluster`, `UpdateCloudVmCluster` or `updateDbsystem` API.
-        :param pulumi.Input[bool] is_incident_logs_enabled: (Updatable) Indicates whether incident logs and trace collection are enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them. Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster`, `updateCloudVmCluster` or `updateDbsystem` API.
-        """
         if is_diagnostics_events_enabled is not None:
             pulumi.set(__self__, "is_diagnostics_events_enabled", is_diagnostics_events_enabled)
         if is_health_monitoring_enabled is not None:
@@ -5767,9 +4336,6 @@ class DbSystemDataCollectionOptionsArgs:
     @property
     @pulumi.getter(name="isDiagnosticsEventsEnabled")
     def is_diagnostics_events_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Indicates whether diagnostic collection is enabled for the VM cluster/Cloud VM cluster/VMBM DBCS. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster/Cloud VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` or `updateCloudVmCluster` API.
-        """
         return pulumi.get(self, "is_diagnostics_events_enabled")
 
     @is_diagnostics_events_enabled.setter
@@ -5779,9 +4345,6 @@ class DbSystemDataCollectionOptionsArgs:
     @property
     @pulumi.getter(name="isHealthMonitoringEnabled")
     def is_health_monitoring_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Indicates whether health monitoring is enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling health monitoring allows Oracle to collect diagnostic data and share it with its operations and support personnel. You may also receive notifications for some events. Collecting health diagnostics enables Oracle to provide proactive support and enhanced service for your system. Optionally enable health monitoring while provisioning a system. You can also disable or enable health monitoring anytime using the `UpdateVmCluster`, `UpdateCloudVmCluster` or `updateDbsystem` API.
-        """
         return pulumi.get(self, "is_health_monitoring_enabled")
 
     @is_health_monitoring_enabled.setter
@@ -5791,9 +4354,6 @@ class DbSystemDataCollectionOptionsArgs:
     @property
     @pulumi.getter(name="isIncidentLogsEnabled")
     def is_incident_logs_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Indicates whether incident logs and trace collection are enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them. Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster`, `updateCloudVmCluster` or `updateDbsystem` API.
-        """
         return pulumi.get(self, "is_incident_logs_enabled")
 
     @is_incident_logs_enabled.setter
@@ -5817,23 +4377,6 @@ class DbSystemDbHomeArgs:
                  lifecycle_details: Optional[pulumi.Input[str]] = None,
                  state: Optional[pulumi.Input[str]] = None,
                  time_created: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input['DbSystemDbHomeDatabaseArgs'] database: (Updatable) Details for creating a database by restoring from a source database system.
-               
-               **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
-        :param pulumi.Input[str] database_software_image_id: The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the image to be used to restore a database.
-        :param pulumi.Input[str] db_version: A valid Oracle Database version. For a list of supported versions, use the ListDbVersions operation.
-               
-               This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        :param pulumi.Input[str] display_name: The user-friendly name for the DB system. The name does not have to be unique.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
-        :param pulumi.Input[str] last_patch_history_entry_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last patch history. This value is updated as soon as a patch operation starts.
-        :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycle state.
-        :param pulumi.Input[str] state: The current state of the DB system.
-        :param pulumi.Input[str] time_created: The date and time the DB system was created.
-        """
         pulumi.set(__self__, "database", database)
         if create_async is not None:
             pulumi.set(__self__, "create_async", create_async)
@@ -5863,11 +4406,6 @@ class DbSystemDbHomeArgs:
     @property
     @pulumi.getter
     def database(self) -> pulumi.Input['DbSystemDbHomeDatabaseArgs']:
-        """
-        (Updatable) Details for creating a database by restoring from a source database system.
-
-        **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
-        """
         return pulumi.get(self, "database")
 
     @database.setter
@@ -5886,9 +4424,6 @@ class DbSystemDbHomeArgs:
     @property
     @pulumi.getter(name="databaseSoftwareImageId")
     def database_software_image_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the image to be used to restore a database.
-        """
         return pulumi.get(self, "database_software_image_id")
 
     @database_software_image_id.setter
@@ -5907,11 +4442,6 @@ class DbSystemDbHomeArgs:
     @property
     @pulumi.getter(name="dbVersion")
     def db_version(self) -> Optional[pulumi.Input[str]]:
-        """
-        A valid Oracle Database version. For a list of supported versions, use the ListDbVersions operation.
-
-        This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
-        """
         return pulumi.get(self, "db_version")
 
     @db_version.setter
@@ -5921,9 +4451,6 @@ class DbSystemDbHomeArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -5933,9 +4460,6 @@ class DbSystemDbHomeArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The user-friendly name for the DB system. The name does not have to be unique.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -5945,9 +4469,6 @@ class DbSystemDbHomeArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -5957,9 +4478,6 @@ class DbSystemDbHomeArgs:
     @property
     @pulumi.getter
     def id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
-        """
         return pulumi.get(self, "id")
 
     @id.setter
@@ -5969,9 +4487,6 @@ class DbSystemDbHomeArgs:
     @property
     @pulumi.getter(name="lastPatchHistoryEntryId")
     def last_patch_history_entry_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last patch history. This value is updated as soon as a patch operation starts.
-        """
         return pulumi.get(self, "last_patch_history_entry_id")
 
     @last_patch_history_entry_id.setter
@@ -5981,9 +4496,6 @@ class DbSystemDbHomeArgs:
     @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> Optional[pulumi.Input[str]]:
-        """
-        Additional information about the current lifecycle state.
-        """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
@@ -5993,9 +4505,6 @@ class DbSystemDbHomeArgs:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The current state of the DB system.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -6005,9 +4514,6 @@ class DbSystemDbHomeArgs:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time the DB system was created.
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -6044,36 +4550,6 @@ class DbSystemDbHomeDatabaseArgs:
                  time_created: Optional[pulumi.Input[str]] = None,
                  time_stamp_for_point_in_time_recovery: Optional[pulumi.Input[str]] = None,
                  vault_id: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] admin_password: A strong password for SYS, SYSTEM, PDB Admin and TDE Wallet. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numbers, and two special characters. The special characters must be _, \\#, or -.
-        :param pulumi.Input[str] backup_id: The backup [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param pulumi.Input[str] backup_tde_password: The password to open the TDE wallet.
-        :param pulumi.Input[str] character_set: The character set for the database.  The default is AL32UTF8. Allowed values are:
-               
-               AL32UTF8, AR8ADOS710, AR8ADOS720, AR8APTEC715, AR8ARABICMACS, AR8ASMO8X, AR8ISO8859P6, AR8MSWIN1256, AR8MUSSAD768, AR8NAFITHA711, AR8NAFITHA721, AR8SAKHR706, AR8SAKHR707, AZ8ISO8859P9E, BG8MSWIN, BG8PC437S, BLT8CP921, BLT8ISO8859P13, BLT8MSWIN1257, BLT8PC775, BN8BSCII, CDN8PC863, CEL8ISO8859P14, CL8ISO8859P5, CL8ISOIR111, CL8KOI8R, CL8KOI8U, CL8MACCYRILLICS, CL8MSWIN1251, EE8ISO8859P2, EE8MACCES, EE8MACCROATIANS, EE8MSWIN1250, EE8PC852, EL8DEC, EL8ISO8859P7, EL8MACGREEKS, EL8MSWIN1253, EL8PC437S, EL8PC851, EL8PC869, ET8MSWIN923, HU8ABMOD, HU8CWI2, IN8ISCII, IS8PC861, IW8ISO8859P8, IW8MACHEBREWS, IW8MSWIN1255, IW8PC1507, JA16EUC, JA16EUCTILDE, JA16SJIS, JA16SJISTILDE, JA16VMS, KO16KSC5601, KO16KSCCS, KO16MSWIN949, LA8ISO6937, LA8PASSPORT, LT8MSWIN921, LT8PC772, LT8PC774, LV8PC1117, LV8PC8LR, LV8RST104090, N8PC865, NE8ISO8859P10, NEE8ISO8859P4, RU8BESTA, RU8PC855, RU8PC866, SE8ISO8859P3, TH8MACTHAIS, TH8TISASCII, TR8DEC, TR8MACTURKISHS, TR8MSWIN1254, TR8PC857, US7ASCII, US8PC437, UTF8, VN8MSWIN1258, VN8VN3, WE8DEC, WE8DG, WE8ISO8859P1, WE8ISO8859P15, WE8ISO8859P9, WE8MACROMAN8S, WE8MSWIN1252, WE8NCR4970, WE8NEXTSTEP, WE8PC850, WE8PC858, WE8PC860, WE8ROMAN8, ZHS16CGB231280, ZHS16GBK, ZHT16BIG5, ZHT16CCDC, ZHT16DBT, ZHT16HKSCS, ZHT16MSWIN950, ZHT32EUC, ZHT32SOPS, ZHT32TRIS
-        :param pulumi.Input[str] database_id: The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param pulumi.Input[str] database_software_image_id: The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the image to be used to restore a database.
-        :param pulumi.Input['DbSystemDbHomeDatabaseDbBackupConfigArgs'] db_backup_config: (Updatable) Backup Options To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized, talk to an administrator. If you're an administrator who needs to write policies to give users access, see [Getting Started with Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
-        :param pulumi.Input[str] db_domain: The database domain. In a distributed database system, DB_DOMAIN specifies the logical location of the database within the network structure.
-        :param pulumi.Input[str] db_name: The display name of the database to be created from the backup. It must begin with an alphabetic character and can contain a maximum of eight alphanumeric characters. Special characters are not permitted.
-        :param pulumi.Input[str] db_workload: **Deprecated.** The dbWorkload field has been deprecated for Exadata Database Service on Dedicated Infrastructure, Exadata Database Service on Cloud@Customer, and Base Database Service. Support for this attribute will end in November 2023. You may choose to update your custom scripts to exclude the dbWorkload attribute. After November 2023 if you pass a value to the dbWorkload attribute, it will be ignored.
-               
-               The database workload type.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
-        :param pulumi.Input[str] kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
-        :param pulumi.Input[str] kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
-        :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycle state.
-        :param pulumi.Input[str] ncharacter_set: The national character set for the database.  The default is AL16UTF16. Allowed values are: AL16UTF16 or UTF8.
-        :param pulumi.Input[str] pdb_name: The name of the pluggable database. The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. Pluggable database should not be same as database name.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] pluggable_databases: The list of pluggable databases that needs to be restored into new database.
-        :param pulumi.Input[str] state: The current state of the DB system.
-        :param pulumi.Input[str] tde_wallet_password: The optional password to open the TDE wallet. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numeric, and two special characters. The special characters must be _, \\#, or -.
-        :param pulumi.Input[str] time_created: The date and time the DB system was created.
-        :param pulumi.Input[str] time_stamp_for_point_in_time_recovery: The point in time of the original database from which the new database is created. If not specifed, the latest backup is used to create the database.
-        :param pulumi.Input[str] vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
-        """
         pulumi.set(__self__, "admin_password", admin_password)
         if backup_id is not None:
             pulumi.set(__self__, "backup_id", backup_id)
@@ -6129,9 +4605,6 @@ class DbSystemDbHomeDatabaseArgs:
     @property
     @pulumi.getter(name="adminPassword")
     def admin_password(self) -> pulumi.Input[str]:
-        """
-        A strong password for SYS, SYSTEM, PDB Admin and TDE Wallet. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numbers, and two special characters. The special characters must be _, \\#, or -.
-        """
         return pulumi.get(self, "admin_password")
 
     @admin_password.setter
@@ -6141,9 +4614,6 @@ class DbSystemDbHomeDatabaseArgs:
     @property
     @pulumi.getter(name="backupId")
     def backup_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The backup [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        """
         return pulumi.get(self, "backup_id")
 
     @backup_id.setter
@@ -6153,9 +4623,6 @@ class DbSystemDbHomeDatabaseArgs:
     @property
     @pulumi.getter(name="backupTdePassword")
     def backup_tde_password(self) -> Optional[pulumi.Input[str]]:
-        """
-        The password to open the TDE wallet.
-        """
         return pulumi.get(self, "backup_tde_password")
 
     @backup_tde_password.setter
@@ -6165,11 +4632,6 @@ class DbSystemDbHomeDatabaseArgs:
     @property
     @pulumi.getter(name="characterSet")
     def character_set(self) -> Optional[pulumi.Input[str]]:
-        """
-        The character set for the database.  The default is AL32UTF8. Allowed values are:
-
-        AL32UTF8, AR8ADOS710, AR8ADOS720, AR8APTEC715, AR8ARABICMACS, AR8ASMO8X, AR8ISO8859P6, AR8MSWIN1256, AR8MUSSAD768, AR8NAFITHA711, AR8NAFITHA721, AR8SAKHR706, AR8SAKHR707, AZ8ISO8859P9E, BG8MSWIN, BG8PC437S, BLT8CP921, BLT8ISO8859P13, BLT8MSWIN1257, BLT8PC775, BN8BSCII, CDN8PC863, CEL8ISO8859P14, CL8ISO8859P5, CL8ISOIR111, CL8KOI8R, CL8KOI8U, CL8MACCYRILLICS, CL8MSWIN1251, EE8ISO8859P2, EE8MACCES, EE8MACCROATIANS, EE8MSWIN1250, EE8PC852, EL8DEC, EL8ISO8859P7, EL8MACGREEKS, EL8MSWIN1253, EL8PC437S, EL8PC851, EL8PC869, ET8MSWIN923, HU8ABMOD, HU8CWI2, IN8ISCII, IS8PC861, IW8ISO8859P8, IW8MACHEBREWS, IW8MSWIN1255, IW8PC1507, JA16EUC, JA16EUCTILDE, JA16SJIS, JA16SJISTILDE, JA16VMS, KO16KSC5601, KO16KSCCS, KO16MSWIN949, LA8ISO6937, LA8PASSPORT, LT8MSWIN921, LT8PC772, LT8PC774, LV8PC1117, LV8PC8LR, LV8RST104090, N8PC865, NE8ISO8859P10, NEE8ISO8859P4, RU8BESTA, RU8PC855, RU8PC866, SE8ISO8859P3, TH8MACTHAIS, TH8TISASCII, TR8DEC, TR8MACTURKISHS, TR8MSWIN1254, TR8PC857, US7ASCII, US8PC437, UTF8, VN8MSWIN1258, VN8VN3, WE8DEC, WE8DG, WE8ISO8859P1, WE8ISO8859P15, WE8ISO8859P9, WE8MACROMAN8S, WE8MSWIN1252, WE8NCR4970, WE8NEXTSTEP, WE8PC850, WE8PC858, WE8PC860, WE8ROMAN8, ZHS16CGB231280, ZHS16GBK, ZHT16BIG5, ZHT16CCDC, ZHT16DBT, ZHT16HKSCS, ZHT16MSWIN950, ZHT32EUC, ZHT32SOPS, ZHT32TRIS
-        """
         return pulumi.get(self, "character_set")
 
     @character_set.setter
@@ -6188,9 +4650,6 @@ class DbSystemDbHomeDatabaseArgs:
     @property
     @pulumi.getter(name="databaseId")
     def database_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        """
         return pulumi.get(self, "database_id")
 
     @database_id.setter
@@ -6200,9 +4659,6 @@ class DbSystemDbHomeDatabaseArgs:
     @property
     @pulumi.getter(name="databaseSoftwareImageId")
     def database_software_image_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the image to be used to restore a database.
-        """
         return pulumi.get(self, "database_software_image_id")
 
     @database_software_image_id.setter
@@ -6212,9 +4668,6 @@ class DbSystemDbHomeDatabaseArgs:
     @property
     @pulumi.getter(name="dbBackupConfig")
     def db_backup_config(self) -> Optional[pulumi.Input['DbSystemDbHomeDatabaseDbBackupConfigArgs']]:
-        """
-        (Updatable) Backup Options To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized, talk to an administrator. If you're an administrator who needs to write policies to give users access, see [Getting Started with Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
-        """
         return pulumi.get(self, "db_backup_config")
 
     @db_backup_config.setter
@@ -6224,9 +4677,6 @@ class DbSystemDbHomeDatabaseArgs:
     @property
     @pulumi.getter(name="dbDomain")
     def db_domain(self) -> Optional[pulumi.Input[str]]:
-        """
-        The database domain. In a distributed database system, DB_DOMAIN specifies the logical location of the database within the network structure.
-        """
         return pulumi.get(self, "db_domain")
 
     @db_domain.setter
@@ -6236,9 +4686,6 @@ class DbSystemDbHomeDatabaseArgs:
     @property
     @pulumi.getter(name="dbName")
     def db_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The display name of the database to be created from the backup. It must begin with an alphabetic character and can contain a maximum of eight alphanumeric characters. Special characters are not permitted.
-        """
         return pulumi.get(self, "db_name")
 
     @db_name.setter
@@ -6257,11 +4704,6 @@ class DbSystemDbHomeDatabaseArgs:
     @property
     @pulumi.getter(name="dbWorkload")
     def db_workload(self) -> Optional[pulumi.Input[str]]:
-        """
-        **Deprecated.** The dbWorkload field has been deprecated for Exadata Database Service on Dedicated Infrastructure, Exadata Database Service on Cloud@Customer, and Base Database Service. Support for this attribute will end in November 2023. You may choose to update your custom scripts to exclude the dbWorkload attribute. After November 2023 if you pass a value to the dbWorkload attribute, it will be ignored.
-
-        The database workload type.
-        """
         return pulumi.get(self, "db_workload")
 
     @db_workload.setter
@@ -6271,9 +4713,6 @@ class DbSystemDbHomeDatabaseArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -6283,9 +4722,6 @@ class DbSystemDbHomeDatabaseArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -6295,9 +4731,6 @@ class DbSystemDbHomeDatabaseArgs:
     @property
     @pulumi.getter
     def id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
-        """
         return pulumi.get(self, "id")
 
     @id.setter
@@ -6307,9 +4740,6 @@ class DbSystemDbHomeDatabaseArgs:
     @property
     @pulumi.getter(name="kmsKeyId")
     def kms_key_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
-        """
         return pulumi.get(self, "kms_key_id")
 
     @kms_key_id.setter
@@ -6319,9 +4749,6 @@ class DbSystemDbHomeDatabaseArgs:
     @property
     @pulumi.getter(name="kmsKeyVersionId")
     def kms_key_version_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
-        """
         return pulumi.get(self, "kms_key_version_id")
 
     @kms_key_version_id.setter
@@ -6331,9 +4758,6 @@ class DbSystemDbHomeDatabaseArgs:
     @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> Optional[pulumi.Input[str]]:
-        """
-        Additional information about the current lifecycle state.
-        """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
@@ -6343,9 +4767,6 @@ class DbSystemDbHomeDatabaseArgs:
     @property
     @pulumi.getter(name="ncharacterSet")
     def ncharacter_set(self) -> Optional[pulumi.Input[str]]:
-        """
-        The national character set for the database.  The default is AL16UTF16. Allowed values are: AL16UTF16 or UTF8.
-        """
         return pulumi.get(self, "ncharacter_set")
 
     @ncharacter_set.setter
@@ -6355,9 +4776,6 @@ class DbSystemDbHomeDatabaseArgs:
     @property
     @pulumi.getter(name="pdbName")
     def pdb_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The name of the pluggable database. The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. Pluggable database should not be same as database name.
-        """
         return pulumi.get(self, "pdb_name")
 
     @pdb_name.setter
@@ -6367,9 +4785,6 @@ class DbSystemDbHomeDatabaseArgs:
     @property
     @pulumi.getter(name="pluggableDatabases")
     def pluggable_databases(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        The list of pluggable databases that needs to be restored into new database.
-        """
         return pulumi.get(self, "pluggable_databases")
 
     @pluggable_databases.setter
@@ -6379,9 +4794,6 @@ class DbSystemDbHomeDatabaseArgs:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The current state of the DB system.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -6391,9 +4803,6 @@ class DbSystemDbHomeDatabaseArgs:
     @property
     @pulumi.getter(name="tdeWalletPassword")
     def tde_wallet_password(self) -> Optional[pulumi.Input[str]]:
-        """
-        The optional password to open the TDE wallet. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numeric, and two special characters. The special characters must be _, \\#, or -.
-        """
         return pulumi.get(self, "tde_wallet_password")
 
     @tde_wallet_password.setter
@@ -6403,9 +4812,6 @@ class DbSystemDbHomeDatabaseArgs:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time the DB system was created.
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -6415,9 +4821,6 @@ class DbSystemDbHomeDatabaseArgs:
     @property
     @pulumi.getter(name="timeStampForPointInTimeRecovery")
     def time_stamp_for_point_in_time_recovery(self) -> Optional[pulumi.Input[str]]:
-        """
-        The point in time of the original database from which the new database is created. If not specifed, the latest backup is used to create the database.
-        """
         return pulumi.get(self, "time_stamp_for_point_in_time_recovery")
 
     @time_stamp_for_point_in_time_recovery.setter
@@ -6427,9 +4830,6 @@ class DbSystemDbHomeDatabaseArgs:
     @property
     @pulumi.getter(name="vaultId")
     def vault_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
-        """
         return pulumi.get(self, "vault_id")
 
     @vault_id.setter
@@ -6489,16 +4889,6 @@ class DbSystemDbHomeDatabaseDbBackupConfigArgs:
                  backup_destination_details: Optional[pulumi.Input[Sequence[pulumi.Input['DbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailArgs']]]] = None,
                  recovery_window_in_days: Optional[pulumi.Input[int]] = None,
                  run_immediate_full_backup: Optional[pulumi.Input[bool]] = None):
-        """
-        :param pulumi.Input[bool] auto_backup_enabled: (Updatable) If set to true, configures automatic backups. If you previously used RMAN or dbcli to configure backups and then you switch to using the Console or the API for backups, a new backup configuration is created and associated with your database. This means that you can no longer rely on your previously configured unmanaged backups to work.
-        :param pulumi.Input[str] auto_backup_window: (Updatable) Time window selected for initiating automatic backup for the database system. There are twelve available two-hour time windows. If no option is selected, a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
-        :param pulumi.Input[str] auto_full_backup_day: Day of the week the full backup should be applied on the database system. If no option is selected, the value is null and we will default to Sunday.
-        :param pulumi.Input[str] auto_full_backup_window: Time window selected for initiating full backup for the database system. There are twelve available two-hour time windows. If no option is selected, the value is null and a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
-        :param pulumi.Input[str] backup_deletion_policy: This defines when the backups will be deleted. - IMMEDIATE option keep the backup for predefined time i.e 72 hours and then delete permanently... - RETAIN will keep the backups as per the policy defined for database backups.
-        :param pulumi.Input[Sequence[pulumi.Input['DbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailArgs']]] backup_destination_details: (Updatable) Backup destination details.
-        :param pulumi.Input[int] recovery_window_in_days: (Updatable) Number of days between the current and the earliest point of recoverability covered by automatic backups. This value applies to automatic backups only. After a new automatic backup has been created, Oracle removes old automatic backups that are created before the window. When the value is updated, it is applied to all existing automatic backups.
-        :param pulumi.Input[bool] run_immediate_full_backup: If set to true, configures automatic full backups in the local region (the region of the DB system) for the first backup run immediately.
-        """
         if auto_backup_enabled is not None:
             pulumi.set(__self__, "auto_backup_enabled", auto_backup_enabled)
         if auto_backup_window is not None:
@@ -6519,9 +4909,6 @@ class DbSystemDbHomeDatabaseDbBackupConfigArgs:
     @property
     @pulumi.getter(name="autoBackupEnabled")
     def auto_backup_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) If set to true, configures automatic backups. If you previously used RMAN or dbcli to configure backups and then you switch to using the Console or the API for backups, a new backup configuration is created and associated with your database. This means that you can no longer rely on your previously configured unmanaged backups to work.
-        """
         return pulumi.get(self, "auto_backup_enabled")
 
     @auto_backup_enabled.setter
@@ -6531,9 +4918,6 @@ class DbSystemDbHomeDatabaseDbBackupConfigArgs:
     @property
     @pulumi.getter(name="autoBackupWindow")
     def auto_backup_window(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Time window selected for initiating automatic backup for the database system. There are twelve available two-hour time windows. If no option is selected, a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
-        """
         return pulumi.get(self, "auto_backup_window")
 
     @auto_backup_window.setter
@@ -6543,9 +4927,6 @@ class DbSystemDbHomeDatabaseDbBackupConfigArgs:
     @property
     @pulumi.getter(name="autoFullBackupDay")
     def auto_full_backup_day(self) -> Optional[pulumi.Input[str]]:
-        """
-        Day of the week the full backup should be applied on the database system. If no option is selected, the value is null and we will default to Sunday.
-        """
         return pulumi.get(self, "auto_full_backup_day")
 
     @auto_full_backup_day.setter
@@ -6555,9 +4936,6 @@ class DbSystemDbHomeDatabaseDbBackupConfigArgs:
     @property
     @pulumi.getter(name="autoFullBackupWindow")
     def auto_full_backup_window(self) -> Optional[pulumi.Input[str]]:
-        """
-        Time window selected for initiating full backup for the database system. There are twelve available two-hour time windows. If no option is selected, the value is null and a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
-        """
         return pulumi.get(self, "auto_full_backup_window")
 
     @auto_full_backup_window.setter
@@ -6567,9 +4945,6 @@ class DbSystemDbHomeDatabaseDbBackupConfigArgs:
     @property
     @pulumi.getter(name="backupDeletionPolicy")
     def backup_deletion_policy(self) -> Optional[pulumi.Input[str]]:
-        """
-        This defines when the backups will be deleted. - IMMEDIATE option keep the backup for predefined time i.e 72 hours and then delete permanently... - RETAIN will keep the backups as per the policy defined for database backups.
-        """
         return pulumi.get(self, "backup_deletion_policy")
 
     @backup_deletion_policy.setter
@@ -6579,9 +4954,6 @@ class DbSystemDbHomeDatabaseDbBackupConfigArgs:
     @property
     @pulumi.getter(name="backupDestinationDetails")
     def backup_destination_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailArgs']]]]:
-        """
-        (Updatable) Backup destination details.
-        """
         return pulumi.get(self, "backup_destination_details")
 
     @backup_destination_details.setter
@@ -6591,9 +4963,6 @@ class DbSystemDbHomeDatabaseDbBackupConfigArgs:
     @property
     @pulumi.getter(name="recoveryWindowInDays")
     def recovery_window_in_days(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) Number of days between the current and the earliest point of recoverability covered by automatic backups. This value applies to automatic backups only. After a new automatic backup has been created, Oracle removes old automatic backups that are created before the window. When the value is updated, it is applied to all existing automatic backups.
-        """
         return pulumi.get(self, "recovery_window_in_days")
 
     @recovery_window_in_days.setter
@@ -6603,9 +4972,6 @@ class DbSystemDbHomeDatabaseDbBackupConfigArgs:
     @property
     @pulumi.getter(name="runImmediateFullBackup")
     def run_immediate_full_backup(self) -> Optional[pulumi.Input[bool]]:
-        """
-        If set to true, configures automatic full backups in the local region (the region of the DB system) for the first backup run immediately.
-        """
         return pulumi.get(self, "run_immediate_full_backup")
 
     @run_immediate_full_backup.setter
@@ -6619,11 +4985,6 @@ class DbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailArgs:
                  dbrs_policy_id: Optional[pulumi.Input[str]] = None,
                  id: Optional[pulumi.Input[str]] = None,
                  type: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] dbrs_policy_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
-        :param pulumi.Input[str] id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
-        :param pulumi.Input[str] type: Type of the database backup destination.
-        """
         if dbrs_policy_id is not None:
             pulumi.set(__self__, "dbrs_policy_id", dbrs_policy_id)
         if id is not None:
@@ -6634,9 +4995,6 @@ class DbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailArgs:
     @property
     @pulumi.getter(name="dbrsPolicyId")
     def dbrs_policy_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
-        """
         return pulumi.get(self, "dbrs_policy_id")
 
     @dbrs_policy_id.setter
@@ -6646,9 +5004,6 @@ class DbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailArgs:
     @property
     @pulumi.getter
     def id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
-        """
         return pulumi.get(self, "id")
 
     @id.setter
@@ -6658,9 +5013,6 @@ class DbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailArgs:
     @property
     @pulumi.getter
     def type(self) -> Optional[pulumi.Input[str]]:
-        """
-        Type of the database backup destination.
-        """
         return pulumi.get(self, "type")
 
     @type.setter
@@ -6672,18 +5024,12 @@ class DbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailArgs:
 class DbSystemDbSystemOptionsArgs:
     def __init__(__self__, *,
                  storage_management: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] storage_management: The storage option used in DB system. ASM - Automatic storage management LVM - Logical Volume management
-        """
         if storage_management is not None:
             pulumi.set(__self__, "storage_management", storage_management)
 
     @property
     @pulumi.getter(name="storageManagement")
     def storage_management(self) -> Optional[pulumi.Input[str]]:
-        """
-        The storage option used in DB system. ASM - Automatic storage management LVM - Logical Volume management
-        """
         return pulumi.get(self, "storage_management")
 
     @storage_management.setter
@@ -6699,12 +5045,6 @@ class DbSystemIormConfigCachArgs:
                  lifecycle_details: Optional[pulumi.Input[str]] = None,
                  objective: Optional[pulumi.Input[str]] = None,
                  state: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[Sequence[pulumi.Input['DbSystemIormConfigCachDbPlanArgs']]] db_plans: An array of IORM settings for all the database in the Exadata DB system.
-        :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycle state.
-        :param pulumi.Input[str] objective: The current value for the IORM objective. The default is `AUTO`.
-        :param pulumi.Input[str] state: The current state of the DB system.
-        """
         if db_plans is not None:
             pulumi.set(__self__, "db_plans", db_plans)
         if db_system_id is not None:
@@ -6719,9 +5059,6 @@ class DbSystemIormConfigCachArgs:
     @property
     @pulumi.getter(name="dbPlans")
     def db_plans(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DbSystemIormConfigCachDbPlanArgs']]]]:
-        """
-        An array of IORM settings for all the database in the Exadata DB system.
-        """
         return pulumi.get(self, "db_plans")
 
     @db_plans.setter
@@ -6740,9 +5077,6 @@ class DbSystemIormConfigCachArgs:
     @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> Optional[pulumi.Input[str]]:
-        """
-        Additional information about the current lifecycle state.
-        """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
@@ -6752,9 +5086,6 @@ class DbSystemIormConfigCachArgs:
     @property
     @pulumi.getter
     def objective(self) -> Optional[pulumi.Input[str]]:
-        """
-        The current value for the IORM objective. The default is `AUTO`.
-        """
         return pulumi.get(self, "objective")
 
     @objective.setter
@@ -6764,9 +5095,6 @@ class DbSystemIormConfigCachArgs:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The current state of the DB system.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -6780,11 +5108,6 @@ class DbSystemIormConfigCachDbPlanArgs:
                  db_name: Optional[pulumi.Input[str]] = None,
                  flash_cache_limit: Optional[pulumi.Input[str]] = None,
                  share: Optional[pulumi.Input[int]] = None):
-        """
-        :param pulumi.Input[str] db_name: The display name of the database to be created from the backup. It must begin with an alphabetic character and can contain a maximum of eight alphanumeric characters. Special characters are not permitted.
-        :param pulumi.Input[str] flash_cache_limit: The flash cache limit for this database. This value is internally configured based on the share value assigned to the database.
-        :param pulumi.Input[int] share: The relative priority of this database.
-        """
         if db_name is not None:
             pulumi.set(__self__, "db_name", db_name)
         if flash_cache_limit is not None:
@@ -6795,9 +5118,6 @@ class DbSystemIormConfigCachDbPlanArgs:
     @property
     @pulumi.getter(name="dbName")
     def db_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The display name of the database to be created from the backup. It must begin with an alphabetic character and can contain a maximum of eight alphanumeric characters. Special characters are not permitted.
-        """
         return pulumi.get(self, "db_name")
 
     @db_name.setter
@@ -6807,9 +5127,6 @@ class DbSystemIormConfigCachDbPlanArgs:
     @property
     @pulumi.getter(name="flashCacheLimit")
     def flash_cache_limit(self) -> Optional[pulumi.Input[str]]:
-        """
-        The flash cache limit for this database. This value is internally configured based on the share value assigned to the database.
-        """
         return pulumi.get(self, "flash_cache_limit")
 
     @flash_cache_limit.setter
@@ -6819,9 +5136,6 @@ class DbSystemIormConfigCachDbPlanArgs:
     @property
     @pulumi.getter
     def share(self) -> Optional[pulumi.Input[int]]:
-        """
-        The relative priority of this database.
-        """
         return pulumi.get(self, "share")
 
     @share.setter
@@ -6842,21 +5156,6 @@ class DbSystemMaintenanceWindowArgs:
                  patching_mode: Optional[pulumi.Input[str]] = None,
                  preference: Optional[pulumi.Input[str]] = None,
                  weeks_of_months: Optional[pulumi.Input[Sequence[pulumi.Input[int]]]] = None):
-        """
-        :param pulumi.Input[int] custom_action_timeout_in_mins: (Updatable) Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
-        :param pulumi.Input[Sequence[pulumi.Input['DbSystemMaintenanceWindowDaysOfWeekArgs']]] days_of_weeks: (Updatable) Days during the week when maintenance should be performed.
-        :param pulumi.Input[Sequence[pulumi.Input[int]]] hours_of_days: (Updatable) The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
-               * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
-        :param pulumi.Input[bool] is_custom_action_timeout_enabled: (Updatable) If true, enables the configuration of a custom action timeout (waiting period) between database server patching operations.
-        :param pulumi.Input[bool] is_monthly_patching_enabled: (Updatable) If true, enables the monthly patching option.
-        :param pulumi.Input[int] lead_time_in_weeks: (Updatable) Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
-        :param pulumi.Input[Sequence[pulumi.Input['DbSystemMaintenanceWindowMonthArgs']]] months: (Updatable) Months during the year when maintenance should be performed.
-        :param pulumi.Input[str] patching_mode: (Updatable) Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
-               
-               *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
-        :param pulumi.Input[str] preference: (Updatable) The maintenance window scheduling preference.
-        :param pulumi.Input[Sequence[pulumi.Input[int]]] weeks_of_months: (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
-        """
         if custom_action_timeout_in_mins is not None:
             pulumi.set(__self__, "custom_action_timeout_in_mins", custom_action_timeout_in_mins)
         if days_of_weeks is not None:
@@ -6881,9 +5180,6 @@ class DbSystemMaintenanceWindowArgs:
     @property
     @pulumi.getter(name="customActionTimeoutInMins")
     def custom_action_timeout_in_mins(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
-        """
         return pulumi.get(self, "custom_action_timeout_in_mins")
 
     @custom_action_timeout_in_mins.setter
@@ -6893,9 +5189,6 @@ class DbSystemMaintenanceWindowArgs:
     @property
     @pulumi.getter(name="daysOfWeeks")
     def days_of_weeks(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DbSystemMaintenanceWindowDaysOfWeekArgs']]]]:
-        """
-        (Updatable) Days during the week when maintenance should be performed.
-        """
         return pulumi.get(self, "days_of_weeks")
 
     @days_of_weeks.setter
@@ -6905,10 +5198,6 @@ class DbSystemMaintenanceWindowArgs:
     @property
     @pulumi.getter(name="hoursOfDays")
     def hours_of_days(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[int]]]]:
-        """
-        (Updatable) The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
-        * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
-        """
         return pulumi.get(self, "hours_of_days")
 
     @hours_of_days.setter
@@ -6918,9 +5207,6 @@ class DbSystemMaintenanceWindowArgs:
     @property
     @pulumi.getter(name="isCustomActionTimeoutEnabled")
     def is_custom_action_timeout_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) If true, enables the configuration of a custom action timeout (waiting period) between database server patching operations.
-        """
         return pulumi.get(self, "is_custom_action_timeout_enabled")
 
     @is_custom_action_timeout_enabled.setter
@@ -6930,9 +5216,6 @@ class DbSystemMaintenanceWindowArgs:
     @property
     @pulumi.getter(name="isMonthlyPatchingEnabled")
     def is_monthly_patching_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) If true, enables the monthly patching option.
-        """
         return pulumi.get(self, "is_monthly_patching_enabled")
 
     @is_monthly_patching_enabled.setter
@@ -6942,9 +5225,6 @@ class DbSystemMaintenanceWindowArgs:
     @property
     @pulumi.getter(name="leadTimeInWeeks")
     def lead_time_in_weeks(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
-        """
         return pulumi.get(self, "lead_time_in_weeks")
 
     @lead_time_in_weeks.setter
@@ -6954,9 +5234,6 @@ class DbSystemMaintenanceWindowArgs:
     @property
     @pulumi.getter
     def months(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DbSystemMaintenanceWindowMonthArgs']]]]:
-        """
-        (Updatable) Months during the year when maintenance should be performed.
-        """
         return pulumi.get(self, "months")
 
     @months.setter
@@ -6966,11 +5243,6 @@ class DbSystemMaintenanceWindowArgs:
     @property
     @pulumi.getter(name="patchingMode")
     def patching_mode(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
-
-        *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
-        """
         return pulumi.get(self, "patching_mode")
 
     @patching_mode.setter
@@ -6980,9 +5252,6 @@ class DbSystemMaintenanceWindowArgs:
     @property
     @pulumi.getter
     def preference(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The maintenance window scheduling preference.
-        """
         return pulumi.get(self, "preference")
 
     @preference.setter
@@ -6992,9 +5261,6 @@ class DbSystemMaintenanceWindowArgs:
     @property
     @pulumi.getter(name="weeksOfMonths")
     def weeks_of_months(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[int]]]]:
-        """
-        (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
-        """
         return pulumi.get(self, "weeks_of_months")
 
     @weeks_of_months.setter
@@ -7006,18 +5272,12 @@ class DbSystemMaintenanceWindowArgs:
 class DbSystemMaintenanceWindowDaysOfWeekArgs:
     def __init__(__self__, *,
                  name: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] name: (Updatable) Name of the month of the year.
-        """
         if name is not None:
             pulumi.set(__self__, "name", name)
 
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Name of the month of the year.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -7038,21 +5298,6 @@ class DbSystemMaintenanceWindowDetailsArgs:
                  patching_mode: Optional[pulumi.Input[str]] = None,
                  preference: Optional[pulumi.Input[str]] = None,
                  weeks_of_months: Optional[pulumi.Input[Sequence[pulumi.Input[int]]]] = None):
-        """
-        :param pulumi.Input[int] custom_action_timeout_in_mins: (Updatable) Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
-        :param pulumi.Input[Sequence[pulumi.Input['DbSystemMaintenanceWindowDetailsDaysOfWeekArgs']]] days_of_weeks: (Updatable) Days during the week when maintenance should be performed.
-        :param pulumi.Input[Sequence[pulumi.Input[int]]] hours_of_days: (Updatable) The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
-               * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
-        :param pulumi.Input[bool] is_custom_action_timeout_enabled: (Updatable) If true, enables the configuration of a custom action timeout (waiting period) between database server patching operations.
-        :param pulumi.Input[bool] is_monthly_patching_enabled: (Updatable) If true, enables the monthly patching option.
-        :param pulumi.Input[int] lead_time_in_weeks: (Updatable) Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
-        :param pulumi.Input[Sequence[pulumi.Input['DbSystemMaintenanceWindowDetailsMonthArgs']]] months: (Updatable) Months during the year when maintenance should be performed.
-        :param pulumi.Input[str] patching_mode: (Updatable) Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
-               
-               *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
-        :param pulumi.Input[str] preference: (Updatable) The maintenance window scheduling preference.
-        :param pulumi.Input[Sequence[pulumi.Input[int]]] weeks_of_months: (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
-        """
         if custom_action_timeout_in_mins is not None:
             pulumi.set(__self__, "custom_action_timeout_in_mins", custom_action_timeout_in_mins)
         if days_of_weeks is not None:
@@ -7077,9 +5322,6 @@ class DbSystemMaintenanceWindowDetailsArgs:
     @property
     @pulumi.getter(name="customActionTimeoutInMins")
     def custom_action_timeout_in_mins(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
-        """
         return pulumi.get(self, "custom_action_timeout_in_mins")
 
     @custom_action_timeout_in_mins.setter
@@ -7089,9 +5331,6 @@ class DbSystemMaintenanceWindowDetailsArgs:
     @property
     @pulumi.getter(name="daysOfWeeks")
     def days_of_weeks(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DbSystemMaintenanceWindowDetailsDaysOfWeekArgs']]]]:
-        """
-        (Updatable) Days during the week when maintenance should be performed.
-        """
         return pulumi.get(self, "days_of_weeks")
 
     @days_of_weeks.setter
@@ -7101,10 +5340,6 @@ class DbSystemMaintenanceWindowDetailsArgs:
     @property
     @pulumi.getter(name="hoursOfDays")
     def hours_of_days(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[int]]]]:
-        """
-        (Updatable) The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
-        * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
-        """
         return pulumi.get(self, "hours_of_days")
 
     @hours_of_days.setter
@@ -7114,9 +5349,6 @@ class DbSystemMaintenanceWindowDetailsArgs:
     @property
     @pulumi.getter(name="isCustomActionTimeoutEnabled")
     def is_custom_action_timeout_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) If true, enables the configuration of a custom action timeout (waiting period) between database server patching operations.
-        """
         return pulumi.get(self, "is_custom_action_timeout_enabled")
 
     @is_custom_action_timeout_enabled.setter
@@ -7126,9 +5358,6 @@ class DbSystemMaintenanceWindowDetailsArgs:
     @property
     @pulumi.getter(name="isMonthlyPatchingEnabled")
     def is_monthly_patching_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) If true, enables the monthly patching option.
-        """
         return pulumi.get(self, "is_monthly_patching_enabled")
 
     @is_monthly_patching_enabled.setter
@@ -7138,9 +5367,6 @@ class DbSystemMaintenanceWindowDetailsArgs:
     @property
     @pulumi.getter(name="leadTimeInWeeks")
     def lead_time_in_weeks(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
-        """
         return pulumi.get(self, "lead_time_in_weeks")
 
     @lead_time_in_weeks.setter
@@ -7150,9 +5376,6 @@ class DbSystemMaintenanceWindowDetailsArgs:
     @property
     @pulumi.getter
     def months(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DbSystemMaintenanceWindowDetailsMonthArgs']]]]:
-        """
-        (Updatable) Months during the year when maintenance should be performed.
-        """
         return pulumi.get(self, "months")
 
     @months.setter
@@ -7162,11 +5385,6 @@ class DbSystemMaintenanceWindowDetailsArgs:
     @property
     @pulumi.getter(name="patchingMode")
     def patching_mode(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
-
-        *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
-        """
         return pulumi.get(self, "patching_mode")
 
     @patching_mode.setter
@@ -7176,9 +5394,6 @@ class DbSystemMaintenanceWindowDetailsArgs:
     @property
     @pulumi.getter
     def preference(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The maintenance window scheduling preference.
-        """
         return pulumi.get(self, "preference")
 
     @preference.setter
@@ -7188,9 +5403,6 @@ class DbSystemMaintenanceWindowDetailsArgs:
     @property
     @pulumi.getter(name="weeksOfMonths")
     def weeks_of_months(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[int]]]]:
-        """
-        (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
-        """
         return pulumi.get(self, "weeks_of_months")
 
     @weeks_of_months.setter
@@ -7202,18 +5414,12 @@ class DbSystemMaintenanceWindowDetailsArgs:
 class DbSystemMaintenanceWindowDetailsDaysOfWeekArgs:
     def __init__(__self__, *,
                  name: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] name: (Updatable) Name of the month of the year.
-        """
         if name is not None:
             pulumi.set(__self__, "name", name)
 
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Name of the month of the year.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -7225,18 +5431,12 @@ class DbSystemMaintenanceWindowDetailsDaysOfWeekArgs:
 class DbSystemMaintenanceWindowDetailsMonthArgs:
     def __init__(__self__, *,
                  name: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] name: (Updatable) Name of the month of the year.
-        """
         if name is not None:
             pulumi.set(__self__, "name", name)
 
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Name of the month of the year.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -7248,18 +5448,12 @@ class DbSystemMaintenanceWindowDetailsMonthArgs:
 class DbSystemMaintenanceWindowMonthArgs:
     def __init__(__self__, *,
                  name: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] name: (Updatable) Name of the month of the year.
-        """
         if name is not None:
             pulumi.set(__self__, "name", name)
 
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Name of the month of the year.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -7271,18 +5465,12 @@ class DbSystemMaintenanceWindowMonthArgs:
 class DbSystemsUpgradeDbSystemOptionArgs:
     def __init__(__self__, *,
                  storage_management: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] storage_management: The storage option used in DB system. ASM - Automatic storage management LVM - Logical Volume management
-        """
         if storage_management is not None:
             pulumi.set(__self__, "storage_management", storage_management)
 
     @property
     @pulumi.getter(name="storageManagement")
     def storage_management(self) -> Optional[pulumi.Input[str]]:
-        """
-        The storage option used in DB system. ASM - Automatic storage management LVM - Logical Volume management
-        """
         return pulumi.get(self, "storage_management")
 
     @storage_management.setter
@@ -7297,12 +5485,6 @@ class DbSystemsUpgradeIormConfigCachArgs:
                  lifecycle_details: Optional[pulumi.Input[str]] = None,
                  objective: Optional[pulumi.Input[str]] = None,
                  state: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[Sequence[pulumi.Input['DbSystemsUpgradeIormConfigCachDbPlanArgs']]] db_plans: An array of IORM settings for all the database in the Exadata DB system.
-        :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycle state.
-        :param pulumi.Input[str] objective: The current value for the IORM objective. The default is `AUTO`.
-        :param pulumi.Input[str] state: The current state of the DB system.
-        """
         if db_plans is not None:
             pulumi.set(__self__, "db_plans", db_plans)
         if lifecycle_details is not None:
@@ -7315,9 +5497,6 @@ class DbSystemsUpgradeIormConfigCachArgs:
     @property
     @pulumi.getter(name="dbPlans")
     def db_plans(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DbSystemsUpgradeIormConfigCachDbPlanArgs']]]]:
-        """
-        An array of IORM settings for all the database in the Exadata DB system.
-        """
         return pulumi.get(self, "db_plans")
 
     @db_plans.setter
@@ -7327,9 +5506,6 @@ class DbSystemsUpgradeIormConfigCachArgs:
     @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> Optional[pulumi.Input[str]]:
-        """
-        Additional information about the current lifecycle state.
-        """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
@@ -7339,9 +5515,6 @@ class DbSystemsUpgradeIormConfigCachArgs:
     @property
     @pulumi.getter
     def objective(self) -> Optional[pulumi.Input[str]]:
-        """
-        The current value for the IORM objective. The default is `AUTO`.
-        """
         return pulumi.get(self, "objective")
 
     @objective.setter
@@ -7351,9 +5524,6 @@ class DbSystemsUpgradeIormConfigCachArgs:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The current state of the DB system.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -7367,11 +5537,6 @@ class DbSystemsUpgradeIormConfigCachDbPlanArgs:
                  db_name: Optional[pulumi.Input[str]] = None,
                  flash_cache_limit: Optional[pulumi.Input[str]] = None,
                  share: Optional[pulumi.Input[int]] = None):
-        """
-        :param pulumi.Input[str] db_name: The database name. For the default `DbPlan`, the `dbName` is `default`.
-        :param pulumi.Input[str] flash_cache_limit: The flash cache limit for this database. This value is internally configured based on the share value assigned to the database.
-        :param pulumi.Input[int] share: The relative priority of this database.
-        """
         if db_name is not None:
             pulumi.set(__self__, "db_name", db_name)
         if flash_cache_limit is not None:
@@ -7382,9 +5547,6 @@ class DbSystemsUpgradeIormConfigCachDbPlanArgs:
     @property
     @pulumi.getter(name="dbName")
     def db_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The database name. For the default `DbPlan`, the `dbName` is `default`.
-        """
         return pulumi.get(self, "db_name")
 
     @db_name.setter
@@ -7394,9 +5556,6 @@ class DbSystemsUpgradeIormConfigCachDbPlanArgs:
     @property
     @pulumi.getter(name="flashCacheLimit")
     def flash_cache_limit(self) -> Optional[pulumi.Input[str]]:
-        """
-        The flash cache limit for this database. This value is internally configured based on the share value assigned to the database.
-        """
         return pulumi.get(self, "flash_cache_limit")
 
     @flash_cache_limit.setter
@@ -7406,9 +5565,6 @@ class DbSystemsUpgradeIormConfigCachDbPlanArgs:
     @property
     @pulumi.getter
     def share(self) -> Optional[pulumi.Input[int]]:
-        """
-        The relative priority of this database.
-        """
         return pulumi.get(self, "share")
 
     @share.setter
@@ -7425,15 +5581,6 @@ class DbSystemsUpgradeMaintenanceWindowArgs:
                  months: Optional[pulumi.Input[Sequence[pulumi.Input['DbSystemsUpgradeMaintenanceWindowMonthArgs']]]] = None,
                  preference: Optional[pulumi.Input[str]] = None,
                  weeks_of_months: Optional[pulumi.Input[Sequence[pulumi.Input[int]]]] = None):
-        """
-        :param pulumi.Input[Sequence[pulumi.Input['DbSystemsUpgradeMaintenanceWindowDaysOfWeekArgs']]] days_of_weeks: Days during the week when maintenance should be performed.
-        :param pulumi.Input[Sequence[pulumi.Input[int]]] hours_of_days: The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
-               * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
-        :param pulumi.Input[int] lead_time_in_weeks: Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
-        :param pulumi.Input[Sequence[pulumi.Input['DbSystemsUpgradeMaintenanceWindowMonthArgs']]] months: Months during the year when maintenance should be performed.
-        :param pulumi.Input[str] preference: The maintenance window scheduling preference.
-        :param pulumi.Input[Sequence[pulumi.Input[int]]] weeks_of_months: Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
-        """
         if days_of_weeks is not None:
             pulumi.set(__self__, "days_of_weeks", days_of_weeks)
         if hours_of_days is not None:
@@ -7450,9 +5597,6 @@ class DbSystemsUpgradeMaintenanceWindowArgs:
     @property
     @pulumi.getter(name="daysOfWeeks")
     def days_of_weeks(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DbSystemsUpgradeMaintenanceWindowDaysOfWeekArgs']]]]:
-        """
-        Days during the week when maintenance should be performed.
-        """
         return pulumi.get(self, "days_of_weeks")
 
     @days_of_weeks.setter
@@ -7462,10 +5606,6 @@ class DbSystemsUpgradeMaintenanceWindowArgs:
     @property
     @pulumi.getter(name="hoursOfDays")
     def hours_of_days(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[int]]]]:
-        """
-        The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
-        * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
-        """
         return pulumi.get(self, "hours_of_days")
 
     @hours_of_days.setter
@@ -7475,9 +5615,6 @@ class DbSystemsUpgradeMaintenanceWindowArgs:
     @property
     @pulumi.getter(name="leadTimeInWeeks")
     def lead_time_in_weeks(self) -> Optional[pulumi.Input[int]]:
-        """
-        Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
-        """
         return pulumi.get(self, "lead_time_in_weeks")
 
     @lead_time_in_weeks.setter
@@ -7487,9 +5624,6 @@ class DbSystemsUpgradeMaintenanceWindowArgs:
     @property
     @pulumi.getter
     def months(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DbSystemsUpgradeMaintenanceWindowMonthArgs']]]]:
-        """
-        Months during the year when maintenance should be performed.
-        """
         return pulumi.get(self, "months")
 
     @months.setter
@@ -7499,9 +5633,6 @@ class DbSystemsUpgradeMaintenanceWindowArgs:
     @property
     @pulumi.getter
     def preference(self) -> Optional[pulumi.Input[str]]:
-        """
-        The maintenance window scheduling preference.
-        """
         return pulumi.get(self, "preference")
 
     @preference.setter
@@ -7511,9 +5642,6 @@ class DbSystemsUpgradeMaintenanceWindowArgs:
     @property
     @pulumi.getter(name="weeksOfMonths")
     def weeks_of_months(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[int]]]]:
-        """
-        Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
-        """
         return pulumi.get(self, "weeks_of_months")
 
     @weeks_of_months.setter
@@ -7525,18 +5653,12 @@ class DbSystemsUpgradeMaintenanceWindowArgs:
 class DbSystemsUpgradeMaintenanceWindowDaysOfWeekArgs:
     def __init__(__self__, *,
                  name: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] name: Name of the month of the year.
-        """
         if name is not None:
             pulumi.set(__self__, "name", name)
 
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        Name of the month of the year.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -7548,18 +5670,12 @@ class DbSystemsUpgradeMaintenanceWindowDaysOfWeekArgs:
 class DbSystemsUpgradeMaintenanceWindowMonthArgs:
     def __init__(__self__, *,
                  name: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] name: Name of the month of the year.
-        """
         if name is not None:
             pulumi.set(__self__, "name", name)
 
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        Name of the month of the year.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -7575,13 +5691,6 @@ class ExadataInfrastructureComputeContactArgs:
                  is_primary: Optional[pulumi.Input[bool]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  phone_number: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] email: The email for the Exadata Infrastructure contact.
-        :param pulumi.Input[bool] is_contact_mos_validated: If `true`, this Exadata Infrastructure contact is a valid My Oracle Support (MOS) contact. If `false`, this Exadata Infrastructure contact is not a valid MOS contact.
-        :param pulumi.Input[bool] is_primary: If `true`, this Exadata Infrastructure contact is a primary contact. If `false`, this Exadata Infrastructure is a secondary contact.
-        :param pulumi.Input[str] name: Name of the month of the year.
-        :param pulumi.Input[str] phone_number: The phone number for the Exadata Infrastructure contact.
-        """
         if email is not None:
             pulumi.set(__self__, "email", email)
         if is_contact_mos_validated is not None:
@@ -7596,9 +5705,6 @@ class ExadataInfrastructureComputeContactArgs:
     @property
     @pulumi.getter
     def email(self) -> Optional[pulumi.Input[str]]:
-        """
-        The email for the Exadata Infrastructure contact.
-        """
         return pulumi.get(self, "email")
 
     @email.setter
@@ -7608,9 +5714,6 @@ class ExadataInfrastructureComputeContactArgs:
     @property
     @pulumi.getter(name="isContactMosValidated")
     def is_contact_mos_validated(self) -> Optional[pulumi.Input[bool]]:
-        """
-        If `true`, this Exadata Infrastructure contact is a valid My Oracle Support (MOS) contact. If `false`, this Exadata Infrastructure contact is not a valid MOS contact.
-        """
         return pulumi.get(self, "is_contact_mos_validated")
 
     @is_contact_mos_validated.setter
@@ -7620,9 +5723,6 @@ class ExadataInfrastructureComputeContactArgs:
     @property
     @pulumi.getter(name="isPrimary")
     def is_primary(self) -> Optional[pulumi.Input[bool]]:
-        """
-        If `true`, this Exadata Infrastructure contact is a primary contact. If `false`, this Exadata Infrastructure is a secondary contact.
-        """
         return pulumi.get(self, "is_primary")
 
     @is_primary.setter
@@ -7632,9 +5732,6 @@ class ExadataInfrastructureComputeContactArgs:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        Name of the month of the year.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -7644,9 +5741,6 @@ class ExadataInfrastructureComputeContactArgs:
     @property
     @pulumi.getter(name="phoneNumber")
     def phone_number(self) -> Optional[pulumi.Input[str]]:
-        """
-        The phone number for the Exadata Infrastructure contact.
-        """
         return pulumi.get(self, "phone_number")
 
     @phone_number.setter
@@ -7667,19 +5761,6 @@ class ExadataInfrastructureComputeMaintenanceWindowArgs:
                  patching_mode: Optional[pulumi.Input[str]] = None,
                  preference: Optional[pulumi.Input[str]] = None,
                  weeks_of_months: Optional[pulumi.Input[Sequence[pulumi.Input[int]]]] = None):
-        """
-        :param pulumi.Input[int] custom_action_timeout_in_mins: Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
-        :param pulumi.Input[Sequence[pulumi.Input['ExadataInfrastructureComputeMaintenanceWindowDaysOfWeekArgs']]] days_of_weeks: Days during the week when maintenance should be performed.
-        :param pulumi.Input[Sequence[pulumi.Input[int]]] hours_of_days: The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
-               * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
-        :param pulumi.Input[bool] is_custom_action_timeout_enabled: If true, enables the configuration of a custom action timeout (waiting period) between database server patching operations.
-        :param pulumi.Input[bool] is_monthly_patching_enabled: If true, enables the monthly patching option.
-        :param pulumi.Input[int] lead_time_in_weeks: Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
-        :param pulumi.Input[Sequence[pulumi.Input['ExadataInfrastructureComputeMaintenanceWindowMonthArgs']]] months: Months during the year when maintenance should be performed.
-        :param pulumi.Input[str] patching_mode: Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
-        :param pulumi.Input[str] preference: The maintenance window scheduling preference.
-        :param pulumi.Input[Sequence[pulumi.Input[int]]] weeks_of_months: Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
-        """
         if custom_action_timeout_in_mins is not None:
             pulumi.set(__self__, "custom_action_timeout_in_mins", custom_action_timeout_in_mins)
         if days_of_weeks is not None:
@@ -7704,9 +5785,6 @@ class ExadataInfrastructureComputeMaintenanceWindowArgs:
     @property
     @pulumi.getter(name="customActionTimeoutInMins")
     def custom_action_timeout_in_mins(self) -> Optional[pulumi.Input[int]]:
-        """
-        Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
-        """
         return pulumi.get(self, "custom_action_timeout_in_mins")
 
     @custom_action_timeout_in_mins.setter
@@ -7716,9 +5794,6 @@ class ExadataInfrastructureComputeMaintenanceWindowArgs:
     @property
     @pulumi.getter(name="daysOfWeeks")
     def days_of_weeks(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ExadataInfrastructureComputeMaintenanceWindowDaysOfWeekArgs']]]]:
-        """
-        Days during the week when maintenance should be performed.
-        """
         return pulumi.get(self, "days_of_weeks")
 
     @days_of_weeks.setter
@@ -7728,10 +5803,6 @@ class ExadataInfrastructureComputeMaintenanceWindowArgs:
     @property
     @pulumi.getter(name="hoursOfDays")
     def hours_of_days(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[int]]]]:
-        """
-        The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
-        * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
-        """
         return pulumi.get(self, "hours_of_days")
 
     @hours_of_days.setter
@@ -7741,9 +5812,6 @@ class ExadataInfrastructureComputeMaintenanceWindowArgs:
     @property
     @pulumi.getter(name="isCustomActionTimeoutEnabled")
     def is_custom_action_timeout_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        If true, enables the configuration of a custom action timeout (waiting period) between database server patching operations.
-        """
         return pulumi.get(self, "is_custom_action_timeout_enabled")
 
     @is_custom_action_timeout_enabled.setter
@@ -7753,9 +5821,6 @@ class ExadataInfrastructureComputeMaintenanceWindowArgs:
     @property
     @pulumi.getter(name="isMonthlyPatchingEnabled")
     def is_monthly_patching_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        If true, enables the monthly patching option.
-        """
         return pulumi.get(self, "is_monthly_patching_enabled")
 
     @is_monthly_patching_enabled.setter
@@ -7765,9 +5830,6 @@ class ExadataInfrastructureComputeMaintenanceWindowArgs:
     @property
     @pulumi.getter(name="leadTimeInWeeks")
     def lead_time_in_weeks(self) -> Optional[pulumi.Input[int]]:
-        """
-        Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
-        """
         return pulumi.get(self, "lead_time_in_weeks")
 
     @lead_time_in_weeks.setter
@@ -7777,9 +5839,6 @@ class ExadataInfrastructureComputeMaintenanceWindowArgs:
     @property
     @pulumi.getter
     def months(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ExadataInfrastructureComputeMaintenanceWindowMonthArgs']]]]:
-        """
-        Months during the year when maintenance should be performed.
-        """
         return pulumi.get(self, "months")
 
     @months.setter
@@ -7789,9 +5848,6 @@ class ExadataInfrastructureComputeMaintenanceWindowArgs:
     @property
     @pulumi.getter(name="patchingMode")
     def patching_mode(self) -> Optional[pulumi.Input[str]]:
-        """
-        Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
-        """
         return pulumi.get(self, "patching_mode")
 
     @patching_mode.setter
@@ -7801,9 +5857,6 @@ class ExadataInfrastructureComputeMaintenanceWindowArgs:
     @property
     @pulumi.getter
     def preference(self) -> Optional[pulumi.Input[str]]:
-        """
-        The maintenance window scheduling preference.
-        """
         return pulumi.get(self, "preference")
 
     @preference.setter
@@ -7813,9 +5866,6 @@ class ExadataInfrastructureComputeMaintenanceWindowArgs:
     @property
     @pulumi.getter(name="weeksOfMonths")
     def weeks_of_months(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[int]]]]:
-        """
-        Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
-        """
         return pulumi.get(self, "weeks_of_months")
 
     @weeks_of_months.setter
@@ -7827,18 +5877,12 @@ class ExadataInfrastructureComputeMaintenanceWindowArgs:
 class ExadataInfrastructureComputeMaintenanceWindowDaysOfWeekArgs:
     def __init__(__self__, *,
                  name: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] name: Name of the month of the year.
-        """
         if name is not None:
             pulumi.set(__self__, "name", name)
 
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        Name of the month of the year.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -7850,18 +5894,12 @@ class ExadataInfrastructureComputeMaintenanceWindowDaysOfWeekArgs:
 class ExadataInfrastructureComputeMaintenanceWindowMonthArgs:
     def __init__(__self__, *,
                  name: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] name: Name of the month of the year.
-        """
         if name is not None:
             pulumi.set(__self__, "name", name)
 
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        Name of the month of the year.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -7877,13 +5915,6 @@ class ExadataInfrastructureContactArgs:
                  name: pulumi.Input[str],
                  is_contact_mos_validated: Optional[pulumi.Input[bool]] = None,
                  phone_number: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] email: (Updatable) The email for the Exadata Infrastructure contact.
-        :param pulumi.Input[bool] is_primary: (Updatable) If `true`, this Exadata Infrastructure contact is a primary contact. If `false`, this Exadata Infrastructure is a secondary contact.
-        :param pulumi.Input[str] name: (Updatable) Name of the month of the year.
-        :param pulumi.Input[bool] is_contact_mos_validated: (Updatable) If `true`, this Exadata Infrastructure contact is a valid My Oracle Support (MOS) contact. If `false`, this Exadata Infrastructure contact is not a valid MOS contact.
-        :param pulumi.Input[str] phone_number: (Updatable) The phone number for the Exadata Infrastructure contact.
-        """
         pulumi.set(__self__, "email", email)
         pulumi.set(__self__, "is_primary", is_primary)
         pulumi.set(__self__, "name", name)
@@ -7895,9 +5926,6 @@ class ExadataInfrastructureContactArgs:
     @property
     @pulumi.getter
     def email(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The email for the Exadata Infrastructure contact.
-        """
         return pulumi.get(self, "email")
 
     @email.setter
@@ -7907,9 +5935,6 @@ class ExadataInfrastructureContactArgs:
     @property
     @pulumi.getter(name="isPrimary")
     def is_primary(self) -> pulumi.Input[bool]:
-        """
-        (Updatable) If `true`, this Exadata Infrastructure contact is a primary contact. If `false`, this Exadata Infrastructure is a secondary contact.
-        """
         return pulumi.get(self, "is_primary")
 
     @is_primary.setter
@@ -7919,9 +5944,6 @@ class ExadataInfrastructureContactArgs:
     @property
     @pulumi.getter
     def name(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Name of the month of the year.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -7931,9 +5953,6 @@ class ExadataInfrastructureContactArgs:
     @property
     @pulumi.getter(name="isContactMosValidated")
     def is_contact_mos_validated(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) If `true`, this Exadata Infrastructure contact is a valid My Oracle Support (MOS) contact. If `false`, this Exadata Infrastructure contact is not a valid MOS contact.
-        """
         return pulumi.get(self, "is_contact_mos_validated")
 
     @is_contact_mos_validated.setter
@@ -7943,9 +5962,6 @@ class ExadataInfrastructureContactArgs:
     @property
     @pulumi.getter(name="phoneNumber")
     def phone_number(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The phone number for the Exadata Infrastructure contact.
-        """
         return pulumi.get(self, "phone_number")
 
     @phone_number.setter
@@ -7966,21 +5982,6 @@ class ExadataInfrastructureMaintenanceWindowArgs:
                  patching_mode: Optional[pulumi.Input[str]] = None,
                  preference: Optional[pulumi.Input[str]] = None,
                  weeks_of_months: Optional[pulumi.Input[Sequence[pulumi.Input[int]]]] = None):
-        """
-        :param pulumi.Input[int] custom_action_timeout_in_mins: (Updatable) Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
-        :param pulumi.Input[Sequence[pulumi.Input['ExadataInfrastructureMaintenanceWindowDaysOfWeekArgs']]] days_of_weeks: (Updatable) Days during the week when maintenance should be performed.
-        :param pulumi.Input[Sequence[pulumi.Input[int]]] hours_of_days: (Updatable) The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
-               * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
-        :param pulumi.Input[bool] is_custom_action_timeout_enabled: (Updatable) If true, enables the configuration of a custom action timeout (waiting period) between database server patching operations.
-        :param pulumi.Input[bool] is_monthly_patching_enabled: (Updatable) If true, enables the monthly patching option.
-        :param pulumi.Input[int] lead_time_in_weeks: (Updatable) Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
-        :param pulumi.Input[Sequence[pulumi.Input['ExadataInfrastructureMaintenanceWindowMonthArgs']]] months: (Updatable) Months during the year when maintenance should be performed.
-        :param pulumi.Input[str] patching_mode: (Updatable) Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
-               
-               *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
-        :param pulumi.Input[str] preference: (Updatable) The maintenance window scheduling preference.
-        :param pulumi.Input[Sequence[pulumi.Input[int]]] weeks_of_months: (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
-        """
         if custom_action_timeout_in_mins is not None:
             pulumi.set(__self__, "custom_action_timeout_in_mins", custom_action_timeout_in_mins)
         if days_of_weeks is not None:
@@ -8005,9 +6006,6 @@ class ExadataInfrastructureMaintenanceWindowArgs:
     @property
     @pulumi.getter(name="customActionTimeoutInMins")
     def custom_action_timeout_in_mins(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
-        """
         return pulumi.get(self, "custom_action_timeout_in_mins")
 
     @custom_action_timeout_in_mins.setter
@@ -8017,9 +6015,6 @@ class ExadataInfrastructureMaintenanceWindowArgs:
     @property
     @pulumi.getter(name="daysOfWeeks")
     def days_of_weeks(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ExadataInfrastructureMaintenanceWindowDaysOfWeekArgs']]]]:
-        """
-        (Updatable) Days during the week when maintenance should be performed.
-        """
         return pulumi.get(self, "days_of_weeks")
 
     @days_of_weeks.setter
@@ -8029,10 +6024,6 @@ class ExadataInfrastructureMaintenanceWindowArgs:
     @property
     @pulumi.getter(name="hoursOfDays")
     def hours_of_days(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[int]]]]:
-        """
-        (Updatable) The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
-        * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
-        """
         return pulumi.get(self, "hours_of_days")
 
     @hours_of_days.setter
@@ -8042,9 +6033,6 @@ class ExadataInfrastructureMaintenanceWindowArgs:
     @property
     @pulumi.getter(name="isCustomActionTimeoutEnabled")
     def is_custom_action_timeout_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) If true, enables the configuration of a custom action timeout (waiting period) between database server patching operations.
-        """
         return pulumi.get(self, "is_custom_action_timeout_enabled")
 
     @is_custom_action_timeout_enabled.setter
@@ -8054,9 +6042,6 @@ class ExadataInfrastructureMaintenanceWindowArgs:
     @property
     @pulumi.getter(name="isMonthlyPatchingEnabled")
     def is_monthly_patching_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) If true, enables the monthly patching option.
-        """
         return pulumi.get(self, "is_monthly_patching_enabled")
 
     @is_monthly_patching_enabled.setter
@@ -8066,9 +6051,6 @@ class ExadataInfrastructureMaintenanceWindowArgs:
     @property
     @pulumi.getter(name="leadTimeInWeeks")
     def lead_time_in_weeks(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
-        """
         return pulumi.get(self, "lead_time_in_weeks")
 
     @lead_time_in_weeks.setter
@@ -8078,9 +6060,6 @@ class ExadataInfrastructureMaintenanceWindowArgs:
     @property
     @pulumi.getter
     def months(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ExadataInfrastructureMaintenanceWindowMonthArgs']]]]:
-        """
-        (Updatable) Months during the year when maintenance should be performed.
-        """
         return pulumi.get(self, "months")
 
     @months.setter
@@ -8090,11 +6069,6 @@ class ExadataInfrastructureMaintenanceWindowArgs:
     @property
     @pulumi.getter(name="patchingMode")
     def patching_mode(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
-
-        *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
-        """
         return pulumi.get(self, "patching_mode")
 
     @patching_mode.setter
@@ -8104,9 +6078,6 @@ class ExadataInfrastructureMaintenanceWindowArgs:
     @property
     @pulumi.getter
     def preference(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The maintenance window scheduling preference.
-        """
         return pulumi.get(self, "preference")
 
     @preference.setter
@@ -8116,9 +6087,6 @@ class ExadataInfrastructureMaintenanceWindowArgs:
     @property
     @pulumi.getter(name="weeksOfMonths")
     def weeks_of_months(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[int]]]]:
-        """
-        (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
-        """
         return pulumi.get(self, "weeks_of_months")
 
     @weeks_of_months.setter
@@ -8130,17 +6098,11 @@ class ExadataInfrastructureMaintenanceWindowArgs:
 class ExadataInfrastructureMaintenanceWindowDaysOfWeekArgs:
     def __init__(__self__, *,
                  name: pulumi.Input[str]):
-        """
-        :param pulumi.Input[str] name: (Updatable) Name of the month of the year.
-        """
         pulumi.set(__self__, "name", name)
 
     @property
     @pulumi.getter
     def name(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Name of the month of the year.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -8152,17 +6114,11 @@ class ExadataInfrastructureMaintenanceWindowDaysOfWeekArgs:
 class ExadataInfrastructureMaintenanceWindowMonthArgs:
     def __init__(__self__, *,
                  name: pulumi.Input[str]):
-        """
-        :param pulumi.Input[str] name: (Updatable) Name of the month of the year.
-        """
         pulumi.set(__self__, "name", name)
 
     @property
     @pulumi.getter
     def name(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Name of the month of the year.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -8176,11 +6132,6 @@ class ExadataInfrastructureNetworkBondingModeDetailsArgs:
                  backup_network_bonding_mode: Optional[pulumi.Input[str]] = None,
                  client_network_bonding_mode: Optional[pulumi.Input[str]] = None,
                  dr_network_bonding_mode: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] backup_network_bonding_mode: (Updatable) The network bonding mode for the Exadata infrastructure.
-        :param pulumi.Input[str] client_network_bonding_mode: (Updatable) The network bonding mode for the Exadata infrastructure.
-        :param pulumi.Input[str] dr_network_bonding_mode: (Updatable) The network bonding mode for the Exadata infrastructure.
-        """
         if backup_network_bonding_mode is not None:
             pulumi.set(__self__, "backup_network_bonding_mode", backup_network_bonding_mode)
         if client_network_bonding_mode is not None:
@@ -8191,9 +6142,6 @@ class ExadataInfrastructureNetworkBondingModeDetailsArgs:
     @property
     @pulumi.getter(name="backupNetworkBondingMode")
     def backup_network_bonding_mode(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The network bonding mode for the Exadata infrastructure.
-        """
         return pulumi.get(self, "backup_network_bonding_mode")
 
     @backup_network_bonding_mode.setter
@@ -8203,9 +6151,6 @@ class ExadataInfrastructureNetworkBondingModeDetailsArgs:
     @property
     @pulumi.getter(name="clientNetworkBondingMode")
     def client_network_bonding_mode(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The network bonding mode for the Exadata infrastructure.
-        """
         return pulumi.get(self, "client_network_bonding_mode")
 
     @client_network_bonding_mode.setter
@@ -8215,9 +6160,6 @@ class ExadataInfrastructureNetworkBondingModeDetailsArgs:
     @property
     @pulumi.getter(name="drNetworkBondingMode")
     def dr_network_bonding_mode(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The network bonding mode for the Exadata infrastructure.
-        """
         return pulumi.get(self, "dr_network_bonding_mode")
 
     @dr_network_bonding_mode.setter
@@ -8401,11 +6343,6 @@ class ExadataIormConfigDbPlanArgs:
                  db_name: pulumi.Input[str],
                  share: pulumi.Input[int],
                  flash_cache_limit: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] db_name: (Updatable) The database name. For the default `DbPlan`, the `dbName` is `default`.
-        :param pulumi.Input[int] share: (Updatable) The relative priority of this database.
-        :param pulumi.Input[str] flash_cache_limit: The flash cache limit for this database. This value is internally configured based on the share value assigned to the database.
-        """
         pulumi.set(__self__, "db_name", db_name)
         pulumi.set(__self__, "share", share)
         if flash_cache_limit is not None:
@@ -8414,9 +6351,6 @@ class ExadataIormConfigDbPlanArgs:
     @property
     @pulumi.getter(name="dbName")
     def db_name(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The database name. For the default `DbPlan`, the `dbName` is `default`.
-        """
         return pulumi.get(self, "db_name")
 
     @db_name.setter
@@ -8426,9 +6360,6 @@ class ExadataIormConfigDbPlanArgs:
     @property
     @pulumi.getter
     def share(self) -> pulumi.Input[int]:
-        """
-        (Updatable) The relative priority of this database.
-        """
         return pulumi.get(self, "share")
 
     @share.setter
@@ -8438,9 +6369,6 @@ class ExadataIormConfigDbPlanArgs:
     @property
     @pulumi.getter(name="flashCacheLimit")
     def flash_cache_limit(self) -> Optional[pulumi.Input[str]]:
-        """
-        The flash cache limit for this database. This value is internally configured based on the share value assigned to the database.
-        """
         return pulumi.get(self, "flash_cache_limit")
 
     @flash_cache_limit.setter
@@ -8454,11 +6382,6 @@ class ExternalContainerDatabaseDatabaseManagementConfigArgs:
                  database_management_connection_id: Optional[pulumi.Input[str]] = None,
                  database_management_status: Optional[pulumi.Input[str]] = None,
                  license_model: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] database_management_connection_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
-        :param pulumi.Input[str] database_management_status: The status of the Database Management service.
-        :param pulumi.Input[str] license_model: The Oracle license model that applies to the external database.
-        """
         if database_management_connection_id is not None:
             pulumi.set(__self__, "database_management_connection_id", database_management_connection_id)
         if database_management_status is not None:
@@ -8469,9 +6392,6 @@ class ExternalContainerDatabaseDatabaseManagementConfigArgs:
     @property
     @pulumi.getter(name="databaseManagementConnectionId")
     def database_management_connection_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
-        """
         return pulumi.get(self, "database_management_connection_id")
 
     @database_management_connection_id.setter
@@ -8481,9 +6401,6 @@ class ExternalContainerDatabaseDatabaseManagementConfigArgs:
     @property
     @pulumi.getter(name="databaseManagementStatus")
     def database_management_status(self) -> Optional[pulumi.Input[str]]:
-        """
-        The status of the Database Management service.
-        """
         return pulumi.get(self, "database_management_status")
 
     @database_management_status.setter
@@ -8493,9 +6410,6 @@ class ExternalContainerDatabaseDatabaseManagementConfigArgs:
     @property
     @pulumi.getter(name="licenseModel")
     def license_model(self) -> Optional[pulumi.Input[str]]:
-        """
-        The Oracle license model that applies to the external database.
-        """
         return pulumi.get(self, "license_model")
 
     @license_model.setter
@@ -8508,10 +6422,6 @@ class ExternalContainerDatabaseStackMonitoringConfigArgs:
     def __init__(__self__, *,
                  stack_monitoring_connector_id: Optional[pulumi.Input[str]] = None,
                  stack_monitoring_status: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] stack_monitoring_connector_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
-        :param pulumi.Input[str] stack_monitoring_status: The status of Stack Monitoring.
-        """
         if stack_monitoring_connector_id is not None:
             pulumi.set(__self__, "stack_monitoring_connector_id", stack_monitoring_connector_id)
         if stack_monitoring_status is not None:
@@ -8520,9 +6430,6 @@ class ExternalContainerDatabaseStackMonitoringConfigArgs:
     @property
     @pulumi.getter(name="stackMonitoringConnectorId")
     def stack_monitoring_connector_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
-        """
         return pulumi.get(self, "stack_monitoring_connector_id")
 
     @stack_monitoring_connector_id.setter
@@ -8532,9 +6439,6 @@ class ExternalContainerDatabaseStackMonitoringConfigArgs:
     @property
     @pulumi.getter(name="stackMonitoringStatus")
     def stack_monitoring_status(self) -> Optional[pulumi.Input[str]]:
-        """
-        The status of Stack Monitoring.
-        """
         return pulumi.get(self, "stack_monitoring_status")
 
     @stack_monitoring_status.setter
@@ -8551,16 +6455,6 @@ class ExternalDatabaseConnectorConnectionCredentialsArgs:
                  role: Optional[pulumi.Input[str]] = None,
                  ssl_secret_id: Optional[pulumi.Input[str]] = None,
                  username: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] credential_name: (Updatable) The name of the credential information that used to connect to the database. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
-               
-               For example: inventorydb.abc112233445566778899
-        :param pulumi.Input[str] credential_type: (Updatable) The type of credential used to connect to the database.
-        :param pulumi.Input[str] password: (Updatable) The password that will be used to connect to the database.
-        :param pulumi.Input[str] role: (Updatable) The role of the user that will be connecting to the database.
-        :param pulumi.Input[str] ssl_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
-        :param pulumi.Input[str] username: (Updatable) The username that will be used to connect to the database.
-        """
         if credential_name is not None:
             pulumi.set(__self__, "credential_name", credential_name)
         if credential_type is not None:
@@ -8577,11 +6471,6 @@ class ExternalDatabaseConnectorConnectionCredentialsArgs:
     @property
     @pulumi.getter(name="credentialName")
     def credential_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The name of the credential information that used to connect to the database. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
-
-        For example: inventorydb.abc112233445566778899
-        """
         return pulumi.get(self, "credential_name")
 
     @credential_name.setter
@@ -8591,9 +6480,6 @@ class ExternalDatabaseConnectorConnectionCredentialsArgs:
     @property
     @pulumi.getter(name="credentialType")
     def credential_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The type of credential used to connect to the database.
-        """
         return pulumi.get(self, "credential_type")
 
     @credential_type.setter
@@ -8603,9 +6489,6 @@ class ExternalDatabaseConnectorConnectionCredentialsArgs:
     @property
     @pulumi.getter
     def password(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The password that will be used to connect to the database.
-        """
         return pulumi.get(self, "password")
 
     @password.setter
@@ -8615,9 +6498,6 @@ class ExternalDatabaseConnectorConnectionCredentialsArgs:
     @property
     @pulumi.getter
     def role(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The role of the user that will be connecting to the database.
-        """
         return pulumi.get(self, "role")
 
     @role.setter
@@ -8627,9 +6507,6 @@ class ExternalDatabaseConnectorConnectionCredentialsArgs:
     @property
     @pulumi.getter(name="sslSecretId")
     def ssl_secret_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
-        """
         return pulumi.get(self, "ssl_secret_id")
 
     @ssl_secret_id.setter
@@ -8639,9 +6516,6 @@ class ExternalDatabaseConnectorConnectionCredentialsArgs:
     @property
     @pulumi.getter
     def username(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The username that will be used to connect to the database.
-        """
         return pulumi.get(self, "username")
 
     @username.setter
@@ -8656,12 +6530,6 @@ class ExternalDatabaseConnectorConnectionStringArgs:
                  port: pulumi.Input[int],
                  protocol: pulumi.Input[str],
                  service: pulumi.Input[str]):
-        """
-        :param pulumi.Input[str] hostname: (Updatable) The host name of the database.
-        :param pulumi.Input[int] port: (Updatable) The port used to connect to the database.
-        :param pulumi.Input[str] protocol: (Updatable) The protocol used to connect to the database.
-        :param pulumi.Input[str] service: (Updatable) The name of the service alias used to connect to the database.
-        """
         pulumi.set(__self__, "hostname", hostname)
         pulumi.set(__self__, "port", port)
         pulumi.set(__self__, "protocol", protocol)
@@ -8670,9 +6538,6 @@ class ExternalDatabaseConnectorConnectionStringArgs:
     @property
     @pulumi.getter
     def hostname(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The host name of the database.
-        """
         return pulumi.get(self, "hostname")
 
     @hostname.setter
@@ -8682,9 +6547,6 @@ class ExternalDatabaseConnectorConnectionStringArgs:
     @property
     @pulumi.getter
     def port(self) -> pulumi.Input[int]:
-        """
-        (Updatable) The port used to connect to the database.
-        """
         return pulumi.get(self, "port")
 
     @port.setter
@@ -8694,9 +6556,6 @@ class ExternalDatabaseConnectorConnectionStringArgs:
     @property
     @pulumi.getter
     def protocol(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The protocol used to connect to the database.
-        """
         return pulumi.get(self, "protocol")
 
     @protocol.setter
@@ -8706,9 +6565,6 @@ class ExternalDatabaseConnectorConnectionStringArgs:
     @property
     @pulumi.getter
     def service(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The name of the service alias used to connect to the database.
-        """
         return pulumi.get(self, "service")
 
     @service.setter
@@ -8722,11 +6578,6 @@ class ExternalNonContainerDatabaseDatabaseManagementConfigArgs:
                  database_management_connection_id: Optional[pulumi.Input[str]] = None,
                  database_management_status: Optional[pulumi.Input[str]] = None,
                  license_model: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] database_management_connection_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
-        :param pulumi.Input[str] database_management_status: The status of the Database Management service.
-        :param pulumi.Input[str] license_model: The Oracle license model that applies to the external database.
-        """
         if database_management_connection_id is not None:
             pulumi.set(__self__, "database_management_connection_id", database_management_connection_id)
         if database_management_status is not None:
@@ -8737,9 +6588,6 @@ class ExternalNonContainerDatabaseDatabaseManagementConfigArgs:
     @property
     @pulumi.getter(name="databaseManagementConnectionId")
     def database_management_connection_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
-        """
         return pulumi.get(self, "database_management_connection_id")
 
     @database_management_connection_id.setter
@@ -8749,9 +6597,6 @@ class ExternalNonContainerDatabaseDatabaseManagementConfigArgs:
     @property
     @pulumi.getter(name="databaseManagementStatus")
     def database_management_status(self) -> Optional[pulumi.Input[str]]:
-        """
-        The status of the Database Management service.
-        """
         return pulumi.get(self, "database_management_status")
 
     @database_management_status.setter
@@ -8761,9 +6606,6 @@ class ExternalNonContainerDatabaseDatabaseManagementConfigArgs:
     @property
     @pulumi.getter(name="licenseModel")
     def license_model(self) -> Optional[pulumi.Input[str]]:
-        """
-        The Oracle license model that applies to the external database.
-        """
         return pulumi.get(self, "license_model")
 
     @license_model.setter
@@ -8776,10 +6618,6 @@ class ExternalNonContainerDatabaseOperationsInsightsConfigArgs:
     def __init__(__self__, *,
                  operations_insights_connector_id: Optional[pulumi.Input[str]] = None,
                  operations_insights_status: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] operations_insights_connector_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
-        :param pulumi.Input[str] operations_insights_status: The status of Operations Insights
-        """
         if operations_insights_connector_id is not None:
             pulumi.set(__self__, "operations_insights_connector_id", operations_insights_connector_id)
         if operations_insights_status is not None:
@@ -8788,9 +6626,6 @@ class ExternalNonContainerDatabaseOperationsInsightsConfigArgs:
     @property
     @pulumi.getter(name="operationsInsightsConnectorId")
     def operations_insights_connector_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
-        """
         return pulumi.get(self, "operations_insights_connector_id")
 
     @operations_insights_connector_id.setter
@@ -8800,9 +6635,6 @@ class ExternalNonContainerDatabaseOperationsInsightsConfigArgs:
     @property
     @pulumi.getter(name="operationsInsightsStatus")
     def operations_insights_status(self) -> Optional[pulumi.Input[str]]:
-        """
-        The status of Operations Insights
-        """
         return pulumi.get(self, "operations_insights_status")
 
     @operations_insights_status.setter
@@ -8815,10 +6647,6 @@ class ExternalNonContainerDatabaseStackMonitoringConfigArgs:
     def __init__(__self__, *,
                  stack_monitoring_connector_id: Optional[pulumi.Input[str]] = None,
                  stack_monitoring_status: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] stack_monitoring_connector_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
-        :param pulumi.Input[str] stack_monitoring_status: The status of Stack Monitoring.
-        """
         if stack_monitoring_connector_id is not None:
             pulumi.set(__self__, "stack_monitoring_connector_id", stack_monitoring_connector_id)
         if stack_monitoring_status is not None:
@@ -8827,9 +6655,6 @@ class ExternalNonContainerDatabaseStackMonitoringConfigArgs:
     @property
     @pulumi.getter(name="stackMonitoringConnectorId")
     def stack_monitoring_connector_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
-        """
         return pulumi.get(self, "stack_monitoring_connector_id")
 
     @stack_monitoring_connector_id.setter
@@ -8839,9 +6664,6 @@ class ExternalNonContainerDatabaseStackMonitoringConfigArgs:
     @property
     @pulumi.getter(name="stackMonitoringStatus")
     def stack_monitoring_status(self) -> Optional[pulumi.Input[str]]:
-        """
-        The status of Stack Monitoring.
-        """
         return pulumi.get(self, "stack_monitoring_status")
 
     @stack_monitoring_status.setter
@@ -8855,11 +6677,6 @@ class ExternalPluggableDatabaseDatabaseManagementConfigArgs:
                  database_management_connection_id: Optional[pulumi.Input[str]] = None,
                  database_management_status: Optional[pulumi.Input[str]] = None,
                  license_model: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] database_management_connection_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
-        :param pulumi.Input[str] database_management_status: The status of the Database Management service.
-        :param pulumi.Input[str] license_model: The Oracle license model that applies to the external database.
-        """
         if database_management_connection_id is not None:
             pulumi.set(__self__, "database_management_connection_id", database_management_connection_id)
         if database_management_status is not None:
@@ -8870,9 +6687,6 @@ class ExternalPluggableDatabaseDatabaseManagementConfigArgs:
     @property
     @pulumi.getter(name="databaseManagementConnectionId")
     def database_management_connection_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
-        """
         return pulumi.get(self, "database_management_connection_id")
 
     @database_management_connection_id.setter
@@ -8882,9 +6696,6 @@ class ExternalPluggableDatabaseDatabaseManagementConfigArgs:
     @property
     @pulumi.getter(name="databaseManagementStatus")
     def database_management_status(self) -> Optional[pulumi.Input[str]]:
-        """
-        The status of the Database Management service.
-        """
         return pulumi.get(self, "database_management_status")
 
     @database_management_status.setter
@@ -8894,9 +6705,6 @@ class ExternalPluggableDatabaseDatabaseManagementConfigArgs:
     @property
     @pulumi.getter(name="licenseModel")
     def license_model(self) -> Optional[pulumi.Input[str]]:
-        """
-        The Oracle license model that applies to the external database.
-        """
         return pulumi.get(self, "license_model")
 
     @license_model.setter
@@ -8909,10 +6717,6 @@ class ExternalPluggableDatabaseOperationsInsightsConfigArgs:
     def __init__(__self__, *,
                  operations_insights_connector_id: Optional[pulumi.Input[str]] = None,
                  operations_insights_status: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] operations_insights_connector_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
-        :param pulumi.Input[str] operations_insights_status: The status of Operations Insights
-        """
         if operations_insights_connector_id is not None:
             pulumi.set(__self__, "operations_insights_connector_id", operations_insights_connector_id)
         if operations_insights_status is not None:
@@ -8921,9 +6725,6 @@ class ExternalPluggableDatabaseOperationsInsightsConfigArgs:
     @property
     @pulumi.getter(name="operationsInsightsConnectorId")
     def operations_insights_connector_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
-        """
         return pulumi.get(self, "operations_insights_connector_id")
 
     @operations_insights_connector_id.setter
@@ -8933,9 +6734,6 @@ class ExternalPluggableDatabaseOperationsInsightsConfigArgs:
     @property
     @pulumi.getter(name="operationsInsightsStatus")
     def operations_insights_status(self) -> Optional[pulumi.Input[str]]:
-        """
-        The status of Operations Insights
-        """
         return pulumi.get(self, "operations_insights_status")
 
     @operations_insights_status.setter
@@ -8948,10 +6746,6 @@ class ExternalPluggableDatabaseStackMonitoringConfigArgs:
     def __init__(__self__, *,
                  stack_monitoring_connector_id: Optional[pulumi.Input[str]] = None,
                  stack_monitoring_status: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] stack_monitoring_connector_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
-        :param pulumi.Input[str] stack_monitoring_status: The status of Stack Monitoring.
-        """
         if stack_monitoring_connector_id is not None:
             pulumi.set(__self__, "stack_monitoring_connector_id", stack_monitoring_connector_id)
         if stack_monitoring_status is not None:
@@ -8960,9 +6754,6 @@ class ExternalPluggableDatabaseStackMonitoringConfigArgs:
     @property
     @pulumi.getter(name="stackMonitoringConnectorId")
     def stack_monitoring_connector_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
-        """
         return pulumi.get(self, "stack_monitoring_connector_id")
 
     @stack_monitoring_connector_id.setter
@@ -8972,9 +6763,6 @@ class ExternalPluggableDatabaseStackMonitoringConfigArgs:
     @property
     @pulumi.getter(name="stackMonitoringStatus")
     def stack_monitoring_status(self) -> Optional[pulumi.Input[str]]:
-        """
-        The status of Stack Monitoring.
-        """
         return pulumi.get(self, "stack_monitoring_status")
 
     @stack_monitoring_status.setter
@@ -8987,10 +6775,6 @@ class KeyStoreAssociatedDatabaseArgs:
     def __init__(__self__, *,
                  db_name: Optional[pulumi.Input[str]] = None,
                  id: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] db_name: The name of the database that is associated with the key store.
-        :param pulumi.Input[str] id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
-        """
         if db_name is not None:
             pulumi.set(__self__, "db_name", db_name)
         if id is not None:
@@ -8999,9 +6783,6 @@ class KeyStoreAssociatedDatabaseArgs:
     @property
     @pulumi.getter(name="dbName")
     def db_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The name of the database that is associated with the key store.
-        """
         return pulumi.get(self, "db_name")
 
     @db_name.setter
@@ -9011,9 +6792,6 @@ class KeyStoreAssociatedDatabaseArgs:
     @property
     @pulumi.getter
     def id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
-        """
         return pulumi.get(self, "id")
 
     @id.setter
@@ -9029,17 +6807,6 @@ class KeyStoreTypeDetailsArgs:
                  secret_id: pulumi.Input[str],
                  type: pulumi.Input[str],
                  vault_id: pulumi.Input[str]):
-        """
-        :param pulumi.Input[str] admin_username: (Updatable) The administrator username to connect to Oracle Key Vault
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] connection_ips: (Updatable) The list of Oracle Key Vault connection IP addresses.
-        :param pulumi.Input[str] secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
-        :param pulumi.Input[str] type: (Updatable) The type of key store.
-        :param pulumi.Input[str] vault_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         pulumi.set(__self__, "admin_username", admin_username)
         pulumi.set(__self__, "connection_ips", connection_ips)
         pulumi.set(__self__, "secret_id", secret_id)
@@ -9049,9 +6816,6 @@ class KeyStoreTypeDetailsArgs:
     @property
     @pulumi.getter(name="adminUsername")
     def admin_username(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The administrator username to connect to Oracle Key Vault
-        """
         return pulumi.get(self, "admin_username")
 
     @admin_username.setter
@@ -9061,9 +6825,6 @@ class KeyStoreTypeDetailsArgs:
     @property
     @pulumi.getter(name="connectionIps")
     def connection_ips(self) -> pulumi.Input[Sequence[pulumi.Input[str]]]:
-        """
-        (Updatable) The list of Oracle Key Vault connection IP addresses.
-        """
         return pulumi.get(self, "connection_ips")
 
     @connection_ips.setter
@@ -9073,9 +6834,6 @@ class KeyStoreTypeDetailsArgs:
     @property
     @pulumi.getter(name="secretId")
     def secret_id(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
-        """
         return pulumi.get(self, "secret_id")
 
     @secret_id.setter
@@ -9085,9 +6843,6 @@ class KeyStoreTypeDetailsArgs:
     @property
     @pulumi.getter
     def type(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The type of key store.
-        """
         return pulumi.get(self, "type")
 
     @type.setter
@@ -9097,13 +6852,6 @@ class KeyStoreTypeDetailsArgs:
     @property
     @pulumi.getter(name="vaultId")
     def vault_id(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "vault_id")
 
     @vault_id.setter
@@ -9118,12 +6866,6 @@ class MaintenanceRunEstimatedPatchingTimeArgs:
                  estimated_network_switches_patching_time: Optional[pulumi.Input[int]] = None,
                  estimated_storage_server_patching_time: Optional[pulumi.Input[int]] = None,
                  total_estimated_patching_time: Optional[pulumi.Input[int]] = None):
-        """
-        :param pulumi.Input[int] estimated_db_server_patching_time: The estimated time required in minutes for database server patching.
-        :param pulumi.Input[int] estimated_network_switches_patching_time: The estimated time required in minutes for network switch patching.
-        :param pulumi.Input[int] estimated_storage_server_patching_time: The estimated time required in minutes for storage server patching.
-        :param pulumi.Input[int] total_estimated_patching_time: The estimated total time required in minutes for all patching operations.
-        """
         if estimated_db_server_patching_time is not None:
             pulumi.set(__self__, "estimated_db_server_patching_time", estimated_db_server_patching_time)
         if estimated_network_switches_patching_time is not None:
@@ -9136,9 +6878,6 @@ class MaintenanceRunEstimatedPatchingTimeArgs:
     @property
     @pulumi.getter(name="estimatedDbServerPatchingTime")
     def estimated_db_server_patching_time(self) -> Optional[pulumi.Input[int]]:
-        """
-        The estimated time required in minutes for database server patching.
-        """
         return pulumi.get(self, "estimated_db_server_patching_time")
 
     @estimated_db_server_patching_time.setter
@@ -9148,9 +6887,6 @@ class MaintenanceRunEstimatedPatchingTimeArgs:
     @property
     @pulumi.getter(name="estimatedNetworkSwitchesPatchingTime")
     def estimated_network_switches_patching_time(self) -> Optional[pulumi.Input[int]]:
-        """
-        The estimated time required in minutes for network switch patching.
-        """
         return pulumi.get(self, "estimated_network_switches_patching_time")
 
     @estimated_network_switches_patching_time.setter
@@ -9160,9 +6896,6 @@ class MaintenanceRunEstimatedPatchingTimeArgs:
     @property
     @pulumi.getter(name="estimatedStorageServerPatchingTime")
     def estimated_storage_server_patching_time(self) -> Optional[pulumi.Input[int]]:
-        """
-        The estimated time required in minutes for storage server patching.
-        """
         return pulumi.get(self, "estimated_storage_server_patching_time")
 
     @estimated_storage_server_patching_time.setter
@@ -9172,9 +6905,6 @@ class MaintenanceRunEstimatedPatchingTimeArgs:
     @property
     @pulumi.getter(name="totalEstimatedPatchingTime")
     def total_estimated_patching_time(self) -> Optional[pulumi.Input[int]]:
-        """
-        The estimated total time required in minutes for all patching operations.
-        """
         return pulumi.get(self, "total_estimated_patching_time")
 
     @total_estimated_patching_time.setter
@@ -9188,11 +6918,6 @@ class PluggableDatabaseConnectionStringArgs:
                  all_connection_strings: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  pdb_default: Optional[pulumi.Input[str]] = None,
                  pdb_ip_default: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[Mapping[str, Any]] all_connection_strings: All connection strings to use to connect to the pluggable database.
-        :param pulumi.Input[str] pdb_default: A host name-based PDB connection string.
-        :param pulumi.Input[str] pdb_ip_default: An IP-based PDB connection string.
-        """
         if all_connection_strings is not None:
             pulumi.set(__self__, "all_connection_strings", all_connection_strings)
         if pdb_default is not None:
@@ -9203,9 +6928,6 @@ class PluggableDatabaseConnectionStringArgs:
     @property
     @pulumi.getter(name="allConnectionStrings")
     def all_connection_strings(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        All connection strings to use to connect to the pluggable database.
-        """
         return pulumi.get(self, "all_connection_strings")
 
     @all_connection_strings.setter
@@ -9215,9 +6937,6 @@ class PluggableDatabaseConnectionStringArgs:
     @property
     @pulumi.getter(name="pdbDefault")
     def pdb_default(self) -> Optional[pulumi.Input[str]]:
-        """
-        A host name-based PDB connection string.
-        """
         return pulumi.get(self, "pdb_default")
 
     @pdb_default.setter
@@ -9227,9 +6946,6 @@ class PluggableDatabaseConnectionStringArgs:
     @property
     @pulumi.getter(name="pdbIpDefault")
     def pdb_ip_default(self) -> Optional[pulumi.Input[str]]:
-        """
-        An IP-based PDB connection string.
-        """
         return pulumi.get(self, "pdb_ip_default")
 
     @pdb_ip_default.setter
@@ -9244,16 +6960,6 @@ class PluggableDatabaseManagementsManagementConnectionStringArgs:
                  all_connection_strings: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  pdb_default: Optional[pulumi.Input[str]] = None,
                  pdb_ip_default: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[bool] enable_pluggabledatabasemanagement: (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Mapping[str, Any]] all_connection_strings: All connection strings to use to connect to the pluggable database.
-        :param pulumi.Input[str] pdb_default: A host name-based PDB connection string.
-        :param pulumi.Input[str] pdb_ip_default: An IP-based PDB connection string.
-        """
         pulumi.set(__self__, "enable_pluggabledatabasemanagement", enable_pluggabledatabasemanagement)
         if all_connection_strings is not None:
             pulumi.set(__self__, "all_connection_strings", all_connection_strings)
@@ -9265,13 +6971,6 @@ class PluggableDatabaseManagementsManagementConnectionStringArgs:
     @property
     @pulumi.getter(name="enablePluggabledatabasemanagement")
     def enable_pluggabledatabasemanagement(self) -> pulumi.Input[bool]:
-        """
-        (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "enable_pluggabledatabasemanagement")
 
     @enable_pluggabledatabasemanagement.setter
@@ -9281,9 +6980,6 @@ class PluggableDatabaseManagementsManagementConnectionStringArgs:
     @property
     @pulumi.getter(name="allConnectionStrings")
     def all_connection_strings(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        All connection strings to use to connect to the pluggable database.
-        """
         return pulumi.get(self, "all_connection_strings")
 
     @all_connection_strings.setter
@@ -9293,9 +6989,6 @@ class PluggableDatabaseManagementsManagementConnectionStringArgs:
     @property
     @pulumi.getter(name="pdbDefault")
     def pdb_default(self) -> Optional[pulumi.Input[str]]:
-        """
-        A host name-based PDB connection string.
-        """
         return pulumi.get(self, "pdb_default")
 
     @pdb_default.setter
@@ -9305,9 +6998,6 @@ class PluggableDatabaseManagementsManagementConnectionStringArgs:
     @property
     @pulumi.getter(name="pdbIpDefault")
     def pdb_ip_default(self) -> Optional[pulumi.Input[str]]:
-        """
-        An IP-based PDB connection string.
-        """
         return pulumi.get(self, "pdb_ip_default")
 
     @pdb_ip_default.setter
@@ -9320,19 +7010,12 @@ class PluggableDatabaseManagementsManagementCredentialDetailsArgs:
     def __init__(__self__, *,
                  password_secret_id: pulumi.Input[str],
                  user_name: pulumi.Input[str]):
-        """
-        :param pulumi.Input[str] password_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
-        :param pulumi.Input[str] user_name: The name of the Oracle Database user that will be used to connect to the database.
-        """
         pulumi.set(__self__, "password_secret_id", password_secret_id)
         pulumi.set(__self__, "user_name", user_name)
 
     @property
     @pulumi.getter(name="passwordSecretId")
     def password_secret_id(self) -> pulumi.Input[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
-        """
         return pulumi.get(self, "password_secret_id")
 
     @password_secret_id.setter
@@ -9342,9 +7025,6 @@ class PluggableDatabaseManagementsManagementCredentialDetailsArgs:
     @property
     @pulumi.getter(name="userName")
     def user_name(self) -> pulumi.Input[str]:
-        """
-        The name of the Oracle Database user that will be used to connect to the database.
-        """
         return pulumi.get(self, "user_name")
 
     @user_name.setter
@@ -9357,14 +7037,6 @@ class PluggableDatabaseManagementsManagementPluggableDatabaseManagementConfigArg
     def __init__(__self__, *,
                  enable_pluggabledatabasemanagement: pulumi.Input[bool],
                  management_status: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[bool] enable_pluggabledatabasemanagement: (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] management_status: The status of the Pluggable Database Management service.
-        """
         pulumi.set(__self__, "enable_pluggabledatabasemanagement", enable_pluggabledatabasemanagement)
         if management_status is not None:
             pulumi.set(__self__, "management_status", management_status)
@@ -9372,13 +7044,6 @@ class PluggableDatabaseManagementsManagementPluggableDatabaseManagementConfigArg
     @property
     @pulumi.getter(name="enablePluggabledatabasemanagement")
     def enable_pluggabledatabasemanagement(self) -> pulumi.Input[bool]:
-        """
-        (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "enable_pluggabledatabasemanagement")
 
     @enable_pluggabledatabasemanagement.setter
@@ -9388,9 +7053,6 @@ class PluggableDatabaseManagementsManagementPluggableDatabaseManagementConfigArg
     @property
     @pulumi.getter(name="managementStatus")
     def management_status(self) -> Optional[pulumi.Input[str]]:
-        """
-        The status of the Pluggable Database Management service.
-        """
         return pulumi.get(self, "management_status")
 
     @management_status.setter
@@ -9407,14 +7069,6 @@ class PluggableDatabasePdbCreationTypeDetailsArgs:
                  dblink_username: Optional[pulumi.Input[str]] = None,
                  refreshable_clone_details: Optional[pulumi.Input['PluggableDatabasePdbCreationTypeDetailsRefreshableCloneDetailsArgs']] = None,
                  source_container_database_admin_password: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] creation_type: The Pluggable Database creation type.
-        :param pulumi.Input[str] source_pluggable_database_id: The OCID of the Source Pluggable Database.
-        :param pulumi.Input[str] dblink_user_password: The DB link user password.
-        :param pulumi.Input[str] dblink_username: The name of the DB link user.
-        :param pulumi.Input['PluggableDatabasePdbCreationTypeDetailsRefreshableCloneDetailsArgs'] refreshable_clone_details: Parameters for creating Pluggable Database Refreshable Clone. **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
-        :param pulumi.Input[str] source_container_database_admin_password: The DB system administrator password of the source Container Database.
-        """
         pulumi.set(__self__, "creation_type", creation_type)
         pulumi.set(__self__, "source_pluggable_database_id", source_pluggable_database_id)
         if dblink_user_password is not None:
@@ -9429,9 +7083,6 @@ class PluggableDatabasePdbCreationTypeDetailsArgs:
     @property
     @pulumi.getter(name="creationType")
     def creation_type(self) -> pulumi.Input[str]:
-        """
-        The Pluggable Database creation type.
-        """
         return pulumi.get(self, "creation_type")
 
     @creation_type.setter
@@ -9441,9 +7092,6 @@ class PluggableDatabasePdbCreationTypeDetailsArgs:
     @property
     @pulumi.getter(name="sourcePluggableDatabaseId")
     def source_pluggable_database_id(self) -> pulumi.Input[str]:
-        """
-        The OCID of the Source Pluggable Database.
-        """
         return pulumi.get(self, "source_pluggable_database_id")
 
     @source_pluggable_database_id.setter
@@ -9453,9 +7101,6 @@ class PluggableDatabasePdbCreationTypeDetailsArgs:
     @property
     @pulumi.getter(name="dblinkUserPassword")
     def dblink_user_password(self) -> Optional[pulumi.Input[str]]:
-        """
-        The DB link user password.
-        """
         return pulumi.get(self, "dblink_user_password")
 
     @dblink_user_password.setter
@@ -9465,9 +7110,6 @@ class PluggableDatabasePdbCreationTypeDetailsArgs:
     @property
     @pulumi.getter(name="dblinkUsername")
     def dblink_username(self) -> Optional[pulumi.Input[str]]:
-        """
-        The name of the DB link user.
-        """
         return pulumi.get(self, "dblink_username")
 
     @dblink_username.setter
@@ -9477,9 +7119,6 @@ class PluggableDatabasePdbCreationTypeDetailsArgs:
     @property
     @pulumi.getter(name="refreshableCloneDetails")
     def refreshable_clone_details(self) -> Optional[pulumi.Input['PluggableDatabasePdbCreationTypeDetailsRefreshableCloneDetailsArgs']]:
-        """
-        Parameters for creating Pluggable Database Refreshable Clone. **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
-        """
         return pulumi.get(self, "refreshable_clone_details")
 
     @refreshable_clone_details.setter
@@ -9489,9 +7128,6 @@ class PluggableDatabasePdbCreationTypeDetailsArgs:
     @property
     @pulumi.getter(name="sourceContainerDatabaseAdminPassword")
     def source_container_database_admin_password(self) -> Optional[pulumi.Input[str]]:
-        """
-        The DB system administrator password of the source Container Database.
-        """
         return pulumi.get(self, "source_container_database_admin_password")
 
     @source_container_database_admin_password.setter
@@ -9503,18 +7139,12 @@ class PluggableDatabasePdbCreationTypeDetailsArgs:
 class PluggableDatabasePdbCreationTypeDetailsRefreshableCloneDetailsArgs:
     def __init__(__self__, *,
                  is_refreshable_clone: Optional[pulumi.Input[bool]] = None):
-        """
-        :param pulumi.Input[bool] is_refreshable_clone: Indicates whether Pluggable Database is a refreshable clone.
-        """
         if is_refreshable_clone is not None:
             pulumi.set(__self__, "is_refreshable_clone", is_refreshable_clone)
 
     @property
     @pulumi.getter(name="isRefreshableClone")
     def is_refreshable_clone(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Indicates whether Pluggable Database is a refreshable clone.
-        """
         return pulumi.get(self, "is_refreshable_clone")
 
     @is_refreshable_clone.setter
@@ -9527,10 +7157,6 @@ class PluggableDatabasePdbNodeLevelDetailArgs:
     def __init__(__self__, *,
                  node_name: Optional[pulumi.Input[str]] = None,
                  open_mode: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] node_name: The Node name of the Database Instance.
-        :param pulumi.Input[str] open_mode: The mode that pluggable database is in. Open mode can only be changed to READ_ONLY or MIGRATE directly from the backend (within the Oracle Database software).
-        """
         if node_name is not None:
             pulumi.set(__self__, "node_name", node_name)
         if open_mode is not None:
@@ -9539,9 +7165,6 @@ class PluggableDatabasePdbNodeLevelDetailArgs:
     @property
     @pulumi.getter(name="nodeName")
     def node_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The Node name of the Database Instance.
-        """
         return pulumi.get(self, "node_name")
 
     @node_name.setter
@@ -9551,9 +7174,6 @@ class PluggableDatabasePdbNodeLevelDetailArgs:
     @property
     @pulumi.getter(name="openMode")
     def open_mode(self) -> Optional[pulumi.Input[str]]:
-        """
-        The mode that pluggable database is in. Open mode can only be changed to READ_ONLY or MIGRATE directly from the backend (within the Oracle Database software).
-        """
         return pulumi.get(self, "open_mode")
 
     @open_mode.setter
@@ -9565,18 +7185,12 @@ class PluggableDatabasePdbNodeLevelDetailArgs:
 class PluggableDatabasePluggableDatabaseManagementConfigArgs:
     def __init__(__self__, *,
                  management_status: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] management_status: The status of the Pluggable Database Management service.
-        """
         if management_status is not None:
             pulumi.set(__self__, "management_status", management_status)
 
     @property
     @pulumi.getter(name="managementStatus")
     def management_status(self) -> Optional[pulumi.Input[str]]:
-        """
-        The status of the Pluggable Database Management service.
-        """
         return pulumi.get(self, "management_status")
 
     @management_status.setter
@@ -9588,18 +7202,12 @@ class PluggableDatabasePluggableDatabaseManagementConfigArgs:
 class PluggableDatabaseRefreshableCloneConfigArgs:
     def __init__(__self__, *,
                  is_refreshable_clone: Optional[pulumi.Input[bool]] = None):
-        """
-        :param pulumi.Input[bool] is_refreshable_clone: Indicates whether Pluggable Database is a refreshable clone.
-        """
         if is_refreshable_clone is not None:
             pulumi.set(__self__, "is_refreshable_clone", is_refreshable_clone)
 
     @property
     @pulumi.getter(name="isRefreshableClone")
     def is_refreshable_clone(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Indicates whether Pluggable Database is a refreshable clone.
-        """
         return pulumi.get(self, "is_refreshable_clone")
 
     @is_refreshable_clone.setter
@@ -9613,11 +7221,6 @@ class PluggableDatabasesLocalCloneConnectionStringArgs:
                  all_connection_strings: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  pdb_default: Optional[pulumi.Input[str]] = None,
                  pdb_ip_default: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[Mapping[str, Any]] all_connection_strings: All connection strings to use to connect to the pluggable database.
-        :param pulumi.Input[str] pdb_default: A host name-based PDB connection string.
-        :param pulumi.Input[str] pdb_ip_default: An IP-based PDB connection string.
-        """
         if all_connection_strings is not None:
             pulumi.set(__self__, "all_connection_strings", all_connection_strings)
         if pdb_default is not None:
@@ -9628,9 +7231,6 @@ class PluggableDatabasesLocalCloneConnectionStringArgs:
     @property
     @pulumi.getter(name="allConnectionStrings")
     def all_connection_strings(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        All connection strings to use to connect to the pluggable database.
-        """
         return pulumi.get(self, "all_connection_strings")
 
     @all_connection_strings.setter
@@ -9640,9 +7240,6 @@ class PluggableDatabasesLocalCloneConnectionStringArgs:
     @property
     @pulumi.getter(name="pdbDefault")
     def pdb_default(self) -> Optional[pulumi.Input[str]]:
-        """
-        A host name-based PDB connection string.
-        """
         return pulumi.get(self, "pdb_default")
 
     @pdb_default.setter
@@ -9652,9 +7249,6 @@ class PluggableDatabasesLocalCloneConnectionStringArgs:
     @property
     @pulumi.getter(name="pdbIpDefault")
     def pdb_ip_default(self) -> Optional[pulumi.Input[str]]:
-        """
-        An IP-based PDB connection string.
-        """
         return pulumi.get(self, "pdb_ip_default")
 
     @pdb_ip_default.setter
@@ -9667,10 +7261,6 @@ class PluggableDatabasesLocalClonePdbNodeLevelDetailArgs:
     def __init__(__self__, *,
                  node_name: Optional[pulumi.Input[str]] = None,
                  open_mode: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] node_name: The Node name of the Database Instance.
-        :param pulumi.Input[str] open_mode: The mode that pluggable database is in. Open mode can only be changed to READ_ONLY or MIGRATE directly from the backend (within the Oracle Database software).
-        """
         if node_name is not None:
             pulumi.set(__self__, "node_name", node_name)
         if open_mode is not None:
@@ -9679,9 +7269,6 @@ class PluggableDatabasesLocalClonePdbNodeLevelDetailArgs:
     @property
     @pulumi.getter(name="nodeName")
     def node_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The Node name of the Database Instance.
-        """
         return pulumi.get(self, "node_name")
 
     @node_name.setter
@@ -9691,9 +7278,6 @@ class PluggableDatabasesLocalClonePdbNodeLevelDetailArgs:
     @property
     @pulumi.getter(name="openMode")
     def open_mode(self) -> Optional[pulumi.Input[str]]:
-        """
-        The mode that pluggable database is in. Open mode can only be changed to READ_ONLY or MIGRATE directly from the backend (within the Oracle Database software).
-        """
         return pulumi.get(self, "open_mode")
 
     @open_mode.setter
@@ -9705,18 +7289,12 @@ class PluggableDatabasesLocalClonePdbNodeLevelDetailArgs:
 class PluggableDatabasesLocalClonePluggableDatabaseManagementConfigArgs:
     def __init__(__self__, *,
                  management_status: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] management_status: The status of the Pluggable Database Management service.
-        """
         if management_status is not None:
             pulumi.set(__self__, "management_status", management_status)
 
     @property
     @pulumi.getter(name="managementStatus")
     def management_status(self) -> Optional[pulumi.Input[str]]:
-        """
-        The status of the Pluggable Database Management service.
-        """
         return pulumi.get(self, "management_status")
 
     @management_status.setter
@@ -9728,18 +7306,12 @@ class PluggableDatabasesLocalClonePluggableDatabaseManagementConfigArgs:
 class PluggableDatabasesLocalCloneRefreshableCloneConfigArgs:
     def __init__(__self__, *,
                  is_refreshable_clone: Optional[pulumi.Input[bool]] = None):
-        """
-        :param pulumi.Input[bool] is_refreshable_clone: Indicates whether the Pluggable Database is a refreshable clone.
-        """
         if is_refreshable_clone is not None:
             pulumi.set(__self__, "is_refreshable_clone", is_refreshable_clone)
 
     @property
     @pulumi.getter(name="isRefreshableClone")
     def is_refreshable_clone(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Indicates whether the Pluggable Database is a refreshable clone.
-        """
         return pulumi.get(self, "is_refreshable_clone")
 
     @is_refreshable_clone.setter
@@ -9753,11 +7325,6 @@ class PluggableDatabasesRemoteCloneConnectionStringArgs:
                  all_connection_strings: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  pdb_default: Optional[pulumi.Input[str]] = None,
                  pdb_ip_default: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[Mapping[str, Any]] all_connection_strings: All connection strings to use to connect to the pluggable database.
-        :param pulumi.Input[str] pdb_default: A host name-based PDB connection string.
-        :param pulumi.Input[str] pdb_ip_default: An IP-based PDB connection string.
-        """
         if all_connection_strings is not None:
             pulumi.set(__self__, "all_connection_strings", all_connection_strings)
         if pdb_default is not None:
@@ -9768,9 +7335,6 @@ class PluggableDatabasesRemoteCloneConnectionStringArgs:
     @property
     @pulumi.getter(name="allConnectionStrings")
     def all_connection_strings(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        All connection strings to use to connect to the pluggable database.
-        """
         return pulumi.get(self, "all_connection_strings")
 
     @all_connection_strings.setter
@@ -9780,9 +7344,6 @@ class PluggableDatabasesRemoteCloneConnectionStringArgs:
     @property
     @pulumi.getter(name="pdbDefault")
     def pdb_default(self) -> Optional[pulumi.Input[str]]:
-        """
-        A host name-based PDB connection string.
-        """
         return pulumi.get(self, "pdb_default")
 
     @pdb_default.setter
@@ -9792,9 +7353,6 @@ class PluggableDatabasesRemoteCloneConnectionStringArgs:
     @property
     @pulumi.getter(name="pdbIpDefault")
     def pdb_ip_default(self) -> Optional[pulumi.Input[str]]:
-        """
-        An IP-based PDB connection string.
-        """
         return pulumi.get(self, "pdb_ip_default")
 
     @pdb_ip_default.setter
@@ -9807,10 +7365,6 @@ class PluggableDatabasesRemoteClonePdbNodeLevelDetailArgs:
     def __init__(__self__, *,
                  node_name: Optional[pulumi.Input[str]] = None,
                  open_mode: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] node_name: The Node name of the Database Instance.
-        :param pulumi.Input[str] open_mode: The mode that pluggable database is in. Open mode can only be changed to READ_ONLY or MIGRATE directly from the backend (within the Oracle Database software).
-        """
         if node_name is not None:
             pulumi.set(__self__, "node_name", node_name)
         if open_mode is not None:
@@ -9819,9 +7373,6 @@ class PluggableDatabasesRemoteClonePdbNodeLevelDetailArgs:
     @property
     @pulumi.getter(name="nodeName")
     def node_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The Node name of the Database Instance.
-        """
         return pulumi.get(self, "node_name")
 
     @node_name.setter
@@ -9831,9 +7382,6 @@ class PluggableDatabasesRemoteClonePdbNodeLevelDetailArgs:
     @property
     @pulumi.getter(name="openMode")
     def open_mode(self) -> Optional[pulumi.Input[str]]:
-        """
-        The mode that pluggable database is in. Open mode can only be changed to READ_ONLY or MIGRATE directly from the backend (within the Oracle Database software).
-        """
         return pulumi.get(self, "open_mode")
 
     @open_mode.setter
@@ -9845,18 +7393,12 @@ class PluggableDatabasesRemoteClonePdbNodeLevelDetailArgs:
 class PluggableDatabasesRemoteClonePluggableDatabaseManagementConfigArgs:
     def __init__(__self__, *,
                  management_status: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] management_status: The status of the Pluggable Database Management service.
-        """
         if management_status is not None:
             pulumi.set(__self__, "management_status", management_status)
 
     @property
     @pulumi.getter(name="managementStatus")
     def management_status(self) -> Optional[pulumi.Input[str]]:
-        """
-        The status of the Pluggable Database Management service.
-        """
         return pulumi.get(self, "management_status")
 
     @management_status.setter
@@ -9868,18 +7410,12 @@ class PluggableDatabasesRemoteClonePluggableDatabaseManagementConfigArgs:
 class PluggableDatabasesRemoteCloneRefreshableCloneConfigArgs:
     def __init__(__self__, *,
                  is_refreshable_clone: Optional[pulumi.Input[bool]] = None):
-        """
-        :param pulumi.Input[bool] is_refreshable_clone: Indicates whether the Pluggable Database is a refreshable clone.
-        """
         if is_refreshable_clone is not None:
             pulumi.set(__self__, "is_refreshable_clone", is_refreshable_clone)
 
     @property
     @pulumi.getter(name="isRefreshableClone")
     def is_refreshable_clone(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Indicates whether the Pluggable Database is a refreshable clone.
-        """
         return pulumi.get(self, "is_refreshable_clone")
 
     @is_refreshable_clone.setter
@@ -9893,11 +7429,6 @@ class VmClusterAddVirtualNetworkDataCollectionOptionArgs:
                  is_diagnostics_events_enabled: Optional[pulumi.Input[bool]] = None,
                  is_health_monitoring_enabled: Optional[pulumi.Input[bool]] = None,
                  is_incident_logs_enabled: Optional[pulumi.Input[bool]] = None):
-        """
-        :param pulumi.Input[bool] is_diagnostics_events_enabled: Indicates whether diagnostic collection is enabled for the VM cluster/Cloud VM cluster/VMBM DBCS. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster/Cloud VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` or `updateCloudVmCluster` API.
-        :param pulumi.Input[bool] is_health_monitoring_enabled: Indicates whether health monitoring is enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling health monitoring allows Oracle to collect diagnostic data and share it with its operations and support personnel. You may also receive notifications for some events. Collecting health diagnostics enables Oracle to provide proactive support and enhanced service for your system. Optionally enable health monitoring while provisioning a system. You can also disable or enable health monitoring anytime using the `UpdateVmCluster`, `UpdateCloudVmCluster` or `updateDbsystem` API.
-        :param pulumi.Input[bool] is_incident_logs_enabled: Indicates whether incident logs and trace collection are enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them. Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster`, `updateCloudVmCluster` or `updateDbsystem` API.
-        """
         if is_diagnostics_events_enabled is not None:
             pulumi.set(__self__, "is_diagnostics_events_enabled", is_diagnostics_events_enabled)
         if is_health_monitoring_enabled is not None:
@@ -9908,9 +7439,6 @@ class VmClusterAddVirtualNetworkDataCollectionOptionArgs:
     @property
     @pulumi.getter(name="isDiagnosticsEventsEnabled")
     def is_diagnostics_events_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Indicates whether diagnostic collection is enabled for the VM cluster/Cloud VM cluster/VMBM DBCS. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster/Cloud VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` or `updateCloudVmCluster` API.
-        """
         return pulumi.get(self, "is_diagnostics_events_enabled")
 
     @is_diagnostics_events_enabled.setter
@@ -9920,9 +7448,6 @@ class VmClusterAddVirtualNetworkDataCollectionOptionArgs:
     @property
     @pulumi.getter(name="isHealthMonitoringEnabled")
     def is_health_monitoring_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Indicates whether health monitoring is enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling health monitoring allows Oracle to collect diagnostic data and share it with its operations and support personnel. You may also receive notifications for some events. Collecting health diagnostics enables Oracle to provide proactive support and enhanced service for your system. Optionally enable health monitoring while provisioning a system. You can also disable or enable health monitoring anytime using the `UpdateVmCluster`, `UpdateCloudVmCluster` or `updateDbsystem` API.
-        """
         return pulumi.get(self, "is_health_monitoring_enabled")
 
     @is_health_monitoring_enabled.setter
@@ -9932,9 +7457,6 @@ class VmClusterAddVirtualNetworkDataCollectionOptionArgs:
     @property
     @pulumi.getter(name="isIncidentLogsEnabled")
     def is_incident_logs_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Indicates whether incident logs and trace collection are enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them. Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster`, `updateCloudVmCluster` or `updateDbsystem` API.
-        """
         return pulumi.get(self, "is_incident_logs_enabled")
 
     @is_incident_logs_enabled.setter
@@ -9946,17 +7468,11 @@ class VmClusterAddVirtualNetworkDataCollectionOptionArgs:
 class VmClusterAddVirtualNetworkDbServerArgs:
     def __init__(__self__, *,
                  db_server_id: pulumi.Input[str]):
-        """
-        :param pulumi.Input[str] db_server_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Exacc Db server.
-        """
         pulumi.set(__self__, "db_server_id", db_server_id)
 
     @property
     @pulumi.getter(name="dbServerId")
     def db_server_id(self) -> pulumi.Input[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Exacc Db server.
-        """
         return pulumi.get(self, "db_server_id")
 
     @db_server_id.setter
@@ -9970,11 +7486,6 @@ class VmClusterDataCollectionOptionsArgs:
                  is_diagnostics_events_enabled: Optional[pulumi.Input[bool]] = None,
                  is_health_monitoring_enabled: Optional[pulumi.Input[bool]] = None,
                  is_incident_logs_enabled: Optional[pulumi.Input[bool]] = None):
-        """
-        :param pulumi.Input[bool] is_diagnostics_events_enabled: (Updatable) Indicates whether diagnostic collection is enabled for the VM cluster/Cloud VM cluster/VMBM DBCS. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster/Cloud VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` or `updateCloudVmCluster` API.
-        :param pulumi.Input[bool] is_health_monitoring_enabled: (Updatable) Indicates whether health monitoring is enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling health monitoring allows Oracle to collect diagnostic data and share it with its operations and support personnel. You may also receive notifications for some events. Collecting health diagnostics enables Oracle to provide proactive support and enhanced service for your system. Optionally enable health monitoring while provisioning a system. You can also disable or enable health monitoring anytime using the `UpdateVmCluster`, `UpdateCloudVmCluster` or `updateDbsystem` API.
-        :param pulumi.Input[bool] is_incident_logs_enabled: (Updatable) Indicates whether incident logs and trace collection are enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them. Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster`, `updateCloudVmCluster` or `updateDbsystem` API.
-        """
         if is_diagnostics_events_enabled is not None:
             pulumi.set(__self__, "is_diagnostics_events_enabled", is_diagnostics_events_enabled)
         if is_health_monitoring_enabled is not None:
@@ -9985,9 +7496,6 @@ class VmClusterDataCollectionOptionsArgs:
     @property
     @pulumi.getter(name="isDiagnosticsEventsEnabled")
     def is_diagnostics_events_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Indicates whether diagnostic collection is enabled for the VM cluster/Cloud VM cluster/VMBM DBCS. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster/Cloud VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` or `updateCloudVmCluster` API.
-        """
         return pulumi.get(self, "is_diagnostics_events_enabled")
 
     @is_diagnostics_events_enabled.setter
@@ -9997,9 +7505,6 @@ class VmClusterDataCollectionOptionsArgs:
     @property
     @pulumi.getter(name="isHealthMonitoringEnabled")
     def is_health_monitoring_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Indicates whether health monitoring is enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling health monitoring allows Oracle to collect diagnostic data and share it with its operations and support personnel. You may also receive notifications for some events. Collecting health diagnostics enables Oracle to provide proactive support and enhanced service for your system. Optionally enable health monitoring while provisioning a system. You can also disable or enable health monitoring anytime using the `UpdateVmCluster`, `UpdateCloudVmCluster` or `updateDbsystem` API.
-        """
         return pulumi.get(self, "is_health_monitoring_enabled")
 
     @is_health_monitoring_enabled.setter
@@ -10009,9 +7514,6 @@ class VmClusterDataCollectionOptionsArgs:
     @property
     @pulumi.getter(name="isIncidentLogsEnabled")
     def is_incident_logs_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Indicates whether incident logs and trace collection are enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them. Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster`, `updateCloudVmCluster` or `updateDbsystem` API.
-        """
         return pulumi.get(self, "is_incident_logs_enabled")
 
     @is_incident_logs_enabled.setter
@@ -10025,11 +7527,6 @@ class VmClusterNetworkDrScanArgs:
                  hostname: pulumi.Input[str],
                  ips: pulumi.Input[Sequence[pulumi.Input[str]]],
                  scan_listener_port_tcp: pulumi.Input[int]):
-        """
-        :param pulumi.Input[str] hostname: (Updatable) The node host name.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] ips: (Updatable) The list of SCAN IP addresses. Three addresses should be provided.
-        :param pulumi.Input[int] scan_listener_port_tcp: (Updatable) The SCAN TCPIP port. Default is 1521.
-        """
         pulumi.set(__self__, "hostname", hostname)
         pulumi.set(__self__, "ips", ips)
         pulumi.set(__self__, "scan_listener_port_tcp", scan_listener_port_tcp)
@@ -10037,9 +7534,6 @@ class VmClusterNetworkDrScanArgs:
     @property
     @pulumi.getter
     def hostname(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The node host name.
-        """
         return pulumi.get(self, "hostname")
 
     @hostname.setter
@@ -10049,9 +7543,6 @@ class VmClusterNetworkDrScanArgs:
     @property
     @pulumi.getter
     def ips(self) -> pulumi.Input[Sequence[pulumi.Input[str]]]:
-        """
-        (Updatable) The list of SCAN IP addresses. Three addresses should be provided.
-        """
         return pulumi.get(self, "ips")
 
     @ips.setter
@@ -10061,9 +7552,6 @@ class VmClusterNetworkDrScanArgs:
     @property
     @pulumi.getter(name="scanListenerPortTcp")
     def scan_listener_port_tcp(self) -> pulumi.Input[int]:
-        """
-        (Updatable) The SCAN TCPIP port. Default is 1521.
-        """
         return pulumi.get(self, "scan_listener_port_tcp")
 
     @scan_listener_port_tcp.setter
@@ -10079,13 +7567,6 @@ class VmClusterNetworkScanArgs:
                  port: Optional[pulumi.Input[int]] = None,
                  scan_listener_port_tcp: Optional[pulumi.Input[int]] = None,
                  scan_listener_port_tcp_ssl: Optional[pulumi.Input[int]] = None):
-        """
-        :param pulumi.Input[str] hostname: (Updatable) The node host name.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] ips: (Updatable) The list of SCAN IP addresses. Three addresses should be provided.
-        :param pulumi.Input[int] port: (Updatable) **Deprecated.** This field is deprecated. You may use 'scanListenerPortTcp' to specify the port. The SCAN TCPIP port. Default is 1521.
-        :param pulumi.Input[int] scan_listener_port_tcp: (Updatable) The SCAN TCPIP port. Default is 1521.
-        :param pulumi.Input[int] scan_listener_port_tcp_ssl: (Updatable) The SCAN TCPIP SSL port. Default is 2484.
-        """
         pulumi.set(__self__, "hostname", hostname)
         pulumi.set(__self__, "ips", ips)
         if port is not None:
@@ -10098,9 +7579,6 @@ class VmClusterNetworkScanArgs:
     @property
     @pulumi.getter
     def hostname(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The node host name.
-        """
         return pulumi.get(self, "hostname")
 
     @hostname.setter
@@ -10110,9 +7588,6 @@ class VmClusterNetworkScanArgs:
     @property
     @pulumi.getter
     def ips(self) -> pulumi.Input[Sequence[pulumi.Input[str]]]:
-        """
-        (Updatable) The list of SCAN IP addresses. Three addresses should be provided.
-        """
         return pulumi.get(self, "ips")
 
     @ips.setter
@@ -10122,9 +7597,6 @@ class VmClusterNetworkScanArgs:
     @property
     @pulumi.getter
     def port(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) **Deprecated.** This field is deprecated. You may use 'scanListenerPortTcp' to specify the port. The SCAN TCPIP port. Default is 1521.
-        """
         return pulumi.get(self, "port")
 
     @port.setter
@@ -10134,9 +7606,6 @@ class VmClusterNetworkScanArgs:
     @property
     @pulumi.getter(name="scanListenerPortTcp")
     def scan_listener_port_tcp(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) The SCAN TCPIP port. Default is 1521.
-        """
         return pulumi.get(self, "scan_listener_port_tcp")
 
     @scan_listener_port_tcp.setter
@@ -10146,9 +7615,6 @@ class VmClusterNetworkScanArgs:
     @property
     @pulumi.getter(name="scanListenerPortTcpSsl")
     def scan_listener_port_tcp_ssl(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) The SCAN TCPIP SSL port. Default is 2484.
-        """
         return pulumi.get(self, "scan_listener_port_tcp_ssl")
 
     @scan_listener_port_tcp_ssl.setter
@@ -10165,18 +7631,6 @@ class VmClusterNetworkVmNetworkArgs:
                  gateway: Optional[pulumi.Input[str]] = None,
                  netmask: Optional[pulumi.Input[str]] = None,
                  vlan_id: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] network_type: (Updatable) The network type.
-        :param pulumi.Input[Sequence[pulumi.Input['VmClusterNetworkVmNetworkNodeArgs']]] nodes: (Updatable) The list of node details.
-        :param pulumi.Input[str] domain_name: (Updatable) The network domain name.
-        :param pulumi.Input[str] gateway: (Updatable) The network gateway.
-        :param pulumi.Input[str] netmask: (Updatable) The network netmask.
-        :param pulumi.Input[str] vlan_id: (Updatable) The network VLAN ID.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         pulumi.set(__self__, "network_type", network_type)
         pulumi.set(__self__, "nodes", nodes)
         if domain_name is not None:
@@ -10191,9 +7645,6 @@ class VmClusterNetworkVmNetworkArgs:
     @property
     @pulumi.getter(name="networkType")
     def network_type(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The network type.
-        """
         return pulumi.get(self, "network_type")
 
     @network_type.setter
@@ -10203,9 +7654,6 @@ class VmClusterNetworkVmNetworkArgs:
     @property
     @pulumi.getter
     def nodes(self) -> pulumi.Input[Sequence[pulumi.Input['VmClusterNetworkVmNetworkNodeArgs']]]:
-        """
-        (Updatable) The list of node details.
-        """
         return pulumi.get(self, "nodes")
 
     @nodes.setter
@@ -10215,9 +7663,6 @@ class VmClusterNetworkVmNetworkArgs:
     @property
     @pulumi.getter(name="domainName")
     def domain_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The network domain name.
-        """
         return pulumi.get(self, "domain_name")
 
     @domain_name.setter
@@ -10227,9 +7672,6 @@ class VmClusterNetworkVmNetworkArgs:
     @property
     @pulumi.getter
     def gateway(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The network gateway.
-        """
         return pulumi.get(self, "gateway")
 
     @gateway.setter
@@ -10239,9 +7681,6 @@ class VmClusterNetworkVmNetworkArgs:
     @property
     @pulumi.getter
     def netmask(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The network netmask.
-        """
         return pulumi.get(self, "netmask")
 
     @netmask.setter
@@ -10251,13 +7690,6 @@ class VmClusterNetworkVmNetworkArgs:
     @property
     @pulumi.getter(name="vlanId")
     def vlan_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The network VLAN ID.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "vlan_id")
 
     @vlan_id.setter
@@ -10274,14 +7706,6 @@ class VmClusterNetworkVmNetworkNodeArgs:
                  state: Optional[pulumi.Input[str]] = None,
                  vip: Optional[pulumi.Input[str]] = None,
                  vip_hostname: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] hostname: (Updatable) The node host name.
-        :param pulumi.Input[str] ip: (Updatable) The node IP address.
-        :param pulumi.Input[str] db_server_id: (Updatable) The Db server associated with the node.
-        :param pulumi.Input[str] state: (Updatable) The current state of the VM cluster network nodes. CREATING - The resource is being created REQUIRES_VALIDATION - The resource is created and may not be usable until it is validated. VALIDATING - The resource is being validated and not available to use. VALIDATED - The resource is validated and is available for consumption by VM cluster. VALIDATION_FAILED - The resource validation has failed and might require user input to be corrected. UPDATING - The resource is being updated and not available to use. ALLOCATED - The resource is currently being used by VM cluster. TERMINATING - The resource is being deleted and not available to use. TERMINATED - The resource is deleted and unavailable. FAILED - The resource is in a failed state due to validation or other errors.
-        :param pulumi.Input[str] vip: (Updatable) The node virtual IP (VIP) address.
-        :param pulumi.Input[str] vip_hostname: (Updatable) The node virtual IP (VIP) host name.
-        """
         pulumi.set(__self__, "hostname", hostname)
         pulumi.set(__self__, "ip", ip)
         if db_server_id is not None:
@@ -10296,9 +7720,6 @@ class VmClusterNetworkVmNetworkNodeArgs:
     @property
     @pulumi.getter
     def hostname(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The node host name.
-        """
         return pulumi.get(self, "hostname")
 
     @hostname.setter
@@ -10308,9 +7729,6 @@ class VmClusterNetworkVmNetworkNodeArgs:
     @property
     @pulumi.getter
     def ip(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The node IP address.
-        """
         return pulumi.get(self, "ip")
 
     @ip.setter
@@ -10320,9 +7738,6 @@ class VmClusterNetworkVmNetworkNodeArgs:
     @property
     @pulumi.getter(name="dbServerId")
     def db_server_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The Db server associated with the node.
-        """
         return pulumi.get(self, "db_server_id")
 
     @db_server_id.setter
@@ -10332,9 +7747,6 @@ class VmClusterNetworkVmNetworkNodeArgs:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The current state of the VM cluster network nodes. CREATING - The resource is being created REQUIRES_VALIDATION - The resource is created and may not be usable until it is validated. VALIDATING - The resource is being validated and not available to use. VALIDATED - The resource is validated and is available for consumption by VM cluster. VALIDATION_FAILED - The resource validation has failed and might require user input to be corrected. UPDATING - The resource is being updated and not available to use. ALLOCATED - The resource is currently being used by VM cluster. TERMINATING - The resource is being deleted and not available to use. TERMINATED - The resource is deleted and unavailable. FAILED - The resource is in a failed state due to validation or other errors.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -10344,9 +7756,6 @@ class VmClusterNetworkVmNetworkNodeArgs:
     @property
     @pulumi.getter
     def vip(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The node virtual IP (VIP) address.
-        """
         return pulumi.get(self, "vip")
 
     @vip.setter
@@ -10356,9 +7765,6 @@ class VmClusterNetworkVmNetworkNodeArgs:
     @property
     @pulumi.getter(name="vipHostname")
     def vip_hostname(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The node virtual IP (VIP) host name.
-        """
         return pulumi.get(self, "vip_hostname")
 
     @vip_hostname.setter
@@ -10372,11 +7778,6 @@ class VmClusterRemoveVirtualMachineDataCollectionOptionArgs:
                  is_diagnostics_events_enabled: Optional[pulumi.Input[bool]] = None,
                  is_health_monitoring_enabled: Optional[pulumi.Input[bool]] = None,
                  is_incident_logs_enabled: Optional[pulumi.Input[bool]] = None):
-        """
-        :param pulumi.Input[bool] is_diagnostics_events_enabled: Indicates whether diagnostic collection is enabled for the VM cluster/Cloud VM cluster/VMBM DBCS. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster/Cloud VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` or `updateCloudVmCluster` API.
-        :param pulumi.Input[bool] is_health_monitoring_enabled: Indicates whether health monitoring is enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling health monitoring allows Oracle to collect diagnostic data and share it with its operations and support personnel. You may also receive notifications for some events. Collecting health diagnostics enables Oracle to provide proactive support and enhanced service for your system. Optionally enable health monitoring while provisioning a system. You can also disable or enable health monitoring anytime using the `UpdateVmCluster`, `UpdateCloudVmCluster` or `updateDbsystem` API.
-        :param pulumi.Input[bool] is_incident_logs_enabled: Indicates whether incident logs and trace collection are enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them. Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster`, `updateCloudVmCluster` or `updateDbsystem` API.
-        """
         if is_diagnostics_events_enabled is not None:
             pulumi.set(__self__, "is_diagnostics_events_enabled", is_diagnostics_events_enabled)
         if is_health_monitoring_enabled is not None:
@@ -10387,9 +7788,6 @@ class VmClusterRemoveVirtualMachineDataCollectionOptionArgs:
     @property
     @pulumi.getter(name="isDiagnosticsEventsEnabled")
     def is_diagnostics_events_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Indicates whether diagnostic collection is enabled for the VM cluster/Cloud VM cluster/VMBM DBCS. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster/Cloud VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` or `updateCloudVmCluster` API.
-        """
         return pulumi.get(self, "is_diagnostics_events_enabled")
 
     @is_diagnostics_events_enabled.setter
@@ -10399,9 +7797,6 @@ class VmClusterRemoveVirtualMachineDataCollectionOptionArgs:
     @property
     @pulumi.getter(name="isHealthMonitoringEnabled")
     def is_health_monitoring_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Indicates whether health monitoring is enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling health monitoring allows Oracle to collect diagnostic data and share it with its operations and support personnel. You may also receive notifications for some events. Collecting health diagnostics enables Oracle to provide proactive support and enhanced service for your system. Optionally enable health monitoring while provisioning a system. You can also disable or enable health monitoring anytime using the `UpdateVmCluster`, `UpdateCloudVmCluster` or `updateDbsystem` API.
-        """
         return pulumi.get(self, "is_health_monitoring_enabled")
 
     @is_health_monitoring_enabled.setter
@@ -10411,9 +7806,6 @@ class VmClusterRemoveVirtualMachineDataCollectionOptionArgs:
     @property
     @pulumi.getter(name="isIncidentLogsEnabled")
     def is_incident_logs_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Indicates whether incident logs and trace collection are enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them. Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster`, `updateCloudVmCluster` or `updateDbsystem` API.
-        """
         return pulumi.get(self, "is_incident_logs_enabled")
 
     @is_incident_logs_enabled.setter
@@ -10425,17 +7817,11 @@ class VmClusterRemoveVirtualMachineDataCollectionOptionArgs:
 class VmClusterRemoveVirtualMachineDbServerArgs:
     def __init__(__self__, *,
                  db_server_id: pulumi.Input[str]):
-        """
-        :param pulumi.Input[str] db_server_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Exacc Db server.
-        """
         pulumi.set(__self__, "db_server_id", db_server_id)
 
     @property
     @pulumi.getter(name="dbServerId")
     def db_server_id(self) -> pulumi.Input[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Exacc Db server.
-        """
         return pulumi.get(self, "db_server_id")
 
     @db_server_id.setter
@@ -10488,9 +7874,6 @@ class GetAutonomousCharacterSetsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: A valid Oracle character set.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -10499,9 +7882,6 @@ class GetAutonomousCharacterSetsFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        A valid Oracle character set.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -10611,9 +7991,6 @@ class GetAutonomousContainerDatabasesFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: Name of the month of the year.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -10622,9 +7999,6 @@ class GetAutonomousContainerDatabasesFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        Name of the month of the year.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -10812,9 +8186,6 @@ class GetAutonomousDatabasesClonesFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: Name of the day of the week.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -10823,9 +8194,6 @@ class GetAutonomousDatabasesClonesFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        Name of the day of the week.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -10857,9 +8225,6 @@ class GetAutonomousDatabasesFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: Name of the day of the week.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -10868,9 +8233,6 @@ class GetAutonomousDatabasesFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        Name of the day of the week.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -10980,9 +8342,6 @@ class GetAutonomousExadataInfrastructureShapesFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: The name of the shape used for the Autonomous Exadata Infrastructure.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -10991,9 +8350,6 @@ class GetAutonomousExadataInfrastructureShapesFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        The name of the shape used for the Autonomous Exadata Infrastructure.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -11025,9 +8381,6 @@ class GetAutonomousExadataInfrastructuresFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: Name of the month of the year.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -11036,9 +8389,6 @@ class GetAutonomousExadataInfrastructuresFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        Name of the month of the year.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -11148,9 +8498,6 @@ class GetAutonomousVmClustersFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: Name of the month of the year.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -11159,9 +8506,6 @@ class GetAutonomousVmClustersFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        Name of the month of the year.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -11310,9 +8654,6 @@ class GetCloudAutonomousVmClustersFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: Name of the month of the year.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -11321,9 +8662,6 @@ class GetCloudAutonomousVmClustersFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        Name of the month of the year.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -11355,9 +8693,6 @@ class GetCloudExadataInfrastructuresFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: Name of the month of the year.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -11366,9 +8701,6 @@ class GetCloudExadataInfrastructuresFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        Name of the month of the year.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -12024,9 +9356,6 @@ class GetDbSystemShapesFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: The name of the shape used for the DB system.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -12035,9 +9364,6 @@ class GetDbSystemShapesFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        The name of the shape used for the DB system.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -12108,9 +9434,6 @@ class GetDbSystemsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: Name of the month of the year.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -12119,9 +9442,6 @@ class GetDbSystemsFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        Name of the month of the year.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -12231,9 +9551,6 @@ class GetExadataInfrastructuresFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: Name of the month of the year.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -12242,9 +9559,6 @@ class GetExadataInfrastructuresFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        Name of the month of the year.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -12432,9 +9746,6 @@ class GetFlexComponentsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: A filter to return only resources that match the entire name given. The match is not case sensitive.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -12443,9 +9754,6 @@ class GetFlexComponentsFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        A filter to return only resources that match the entire name given. The match is not case sensitive.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -12832,15 +10140,6 @@ class GetVmClusterRecommendedNetworkNetworkArgs:
                  network_type: str,
                  prefix: str,
                  vlan_id: str):
-        """
-        :param str cidr: The cidr for the network.
-        :param str domain: The network domain name.
-        :param str gateway: The network gateway.
-        :param str netmask: The network netmask.
-        :param str network_type: The network type.
-        :param str prefix: The network domain name.
-        :param str vlan_id: The network VLAN ID.
-        """
         pulumi.set(__self__, "cidr", cidr)
         pulumi.set(__self__, "domain", domain)
         pulumi.set(__self__, "gateway", gateway)
@@ -12852,9 +10151,6 @@ class GetVmClusterRecommendedNetworkNetworkArgs:
     @property
     @pulumi.getter
     def cidr(self) -> str:
-        """
-        The cidr for the network.
-        """
         return pulumi.get(self, "cidr")
 
     @cidr.setter
@@ -12864,9 +10160,6 @@ class GetVmClusterRecommendedNetworkNetworkArgs:
     @property
     @pulumi.getter
     def domain(self) -> str:
-        """
-        The network domain name.
-        """
         return pulumi.get(self, "domain")
 
     @domain.setter
@@ -12876,9 +10169,6 @@ class GetVmClusterRecommendedNetworkNetworkArgs:
     @property
     @pulumi.getter
     def gateway(self) -> str:
-        """
-        The network gateway.
-        """
         return pulumi.get(self, "gateway")
 
     @gateway.setter
@@ -12888,9 +10178,6 @@ class GetVmClusterRecommendedNetworkNetworkArgs:
     @property
     @pulumi.getter
     def netmask(self) -> str:
-        """
-        The network netmask.
-        """
         return pulumi.get(self, "netmask")
 
     @netmask.setter
@@ -12900,9 +10187,6 @@ class GetVmClusterRecommendedNetworkNetworkArgs:
     @property
     @pulumi.getter(name="networkType")
     def network_type(self) -> str:
-        """
-        The network type.
-        """
         return pulumi.get(self, "network_type")
 
     @network_type.setter
@@ -12912,9 +10196,6 @@ class GetVmClusterRecommendedNetworkNetworkArgs:
     @property
     @pulumi.getter
     def prefix(self) -> str:
-        """
-        The network domain name.
-        """
         return pulumi.get(self, "prefix")
 
     @prefix.setter
@@ -12924,9 +10205,6 @@ class GetVmClusterRecommendedNetworkNetworkArgs:
     @property
     @pulumi.getter(name="vlanId")
     def vlan_id(self) -> str:
-        """
-        The network VLAN ID.
-        """
         return pulumi.get(self, "vlan_id")
 
     @vlan_id.setter

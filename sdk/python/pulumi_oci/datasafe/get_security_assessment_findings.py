@@ -74,15 +74,12 @@ class GetSecurityAssessmentFindingsResult:
 
     @property
     @pulumi.getter
-    def findings(self) -> Sequence['outputs.GetSecurityAssessmentFindingsFindingResult']:
-        """
-        The list of findings.
-        """
+    def findings(self) -> Optional[Sequence['outputs.GetSecurityAssessmentFindingsFindingResult']]:
         return pulumi.get(self, "findings")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -91,9 +88,6 @@ class GetSecurityAssessmentFindingsResult:
     @property
     @pulumi.getter
     def references(self) -> Optional[str]:
-        """
-        Provides information on whether the finding is related to a CIS Oracle Database Benchmark recommendation, a STIG rule, or a GDPR Article/Recital.
-        """
         return pulumi.get(self, "references")
 
     @property
@@ -104,9 +98,6 @@ class GetSecurityAssessmentFindingsResult:
     @property
     @pulumi.getter
     def severity(self) -> Optional[str]:
-        """
-        The severity of the finding.
-        """
         return pulumi.get(self, "severity")
 
 
@@ -136,17 +127,7 @@ def get_security_assessment_findings(access_level: Optional[str] = None,
                                      severity: Optional[str] = None,
                                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetSecurityAssessmentFindingsResult:
     """
-    This data source provides the list of Security Assessment Findings in Oracle Cloud Infrastructure Data Safe service.
-
-    List all the findings from all the targets in the specified compartment.
-
-
-    :param str access_level: Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
-    :param bool compartment_id_in_subtree: Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
-    :param str finding_key: Each finding in security assessment has an associated key (think of key as a finding's name). For a given finding, the key will be the same across targets. The user can use these keys to filter the findings.
-    :param str references: An optional filter to return only findings that match the specified reference.
-    :param str security_assessment_id: The OCID of the security assessment.
-    :param str severity: A filter to return only findings of a particular risk level.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['accessLevel'] = access_level
@@ -181,16 +162,6 @@ def get_security_assessment_findings_output(access_level: Optional[pulumi.Input[
                                             severity: Optional[pulumi.Input[Optional[str]]] = None,
                                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSecurityAssessmentFindingsResult]:
     """
-    This data source provides the list of Security Assessment Findings in Oracle Cloud Infrastructure Data Safe service.
-
-    List all the findings from all the targets in the specified compartment.
-
-
-    :param str access_level: Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
-    :param bool compartment_id_in_subtree: Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
-    :param str finding_key: Each finding in security assessment has an associated key (think of key as a finding's name). For a given finding, the key will be the same across targets. The user can use these keys to filter the findings.
-    :param str references: An optional filter to return only findings that match the specified reference.
-    :param str security_assessment_id: The OCID of the security assessment.
-    :param str severity: A filter to return only findings of a particular risk level.
+    Use this data source to access information about an existing resource.
     """
     ...

@@ -16,29 +16,29 @@ namespace Pulumi.Oci.Database.Outputs
         /// <summary>
         /// The estimated time required in minutes for database server patching.
         /// </summary>
-        public readonly int EstimatedDbServerPatchingTime;
+        public readonly int? EstimatedDbServerPatchingTime;
         /// <summary>
         /// The estimated time required in minutes for network switch patching.
         /// </summary>
-        public readonly int EstimatedNetworkSwitchesPatchingTime;
+        public readonly int? EstimatedNetworkSwitchesPatchingTime;
         /// <summary>
         /// The estimated time required in minutes for storage server patching.
         /// </summary>
-        public readonly int EstimatedStorageServerPatchingTime;
+        public readonly int? EstimatedStorageServerPatchingTime;
         /// <summary>
         /// The estimated total time required in minutes for all patching operations.
         /// </summary>
-        public readonly int TotalEstimatedPatchingTime;
+        public readonly int? TotalEstimatedPatchingTime;
 
         [OutputConstructor]
         private GetMaintenanceRunEstimatedPatchingTimeResult(
-            int estimatedDbServerPatchingTime,
+            int? estimatedDbServerPatchingTime,
 
-            int estimatedNetworkSwitchesPatchingTime,
+            int? estimatedNetworkSwitchesPatchingTime,
 
-            int estimatedStorageServerPatchingTime,
+            int? estimatedStorageServerPatchingTime,
 
-            int totalEstimatedPatchingTime)
+            int? totalEstimatedPatchingTime)
         {
             EstimatedDbServerPatchingTime = estimatedDbServerPatchingTime;
             EstimatedNetworkSwitchesPatchingTime = estimatedNetworkSwitchesPatchingTime;

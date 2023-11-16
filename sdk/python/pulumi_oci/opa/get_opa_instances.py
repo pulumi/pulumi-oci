@@ -46,17 +46,11 @@ class GetOpaInstancesResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[str]:
-        """
-        Compartment Identifier
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        OpaInstance Identifier, can be renamed
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -67,25 +61,16 @@ class GetOpaInstancesResult:
     @property
     @pulumi.getter
     def id(self) -> Optional[str]:
-        """
-        Unique identifier that is immutable on creation
-        """
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="opaInstanceCollections")
-    def opa_instance_collections(self) -> Sequence['outputs.GetOpaInstancesOpaInstanceCollectionResult']:
-        """
-        The list of opa_instance_collection.
-        """
+    def opa_instance_collections(self) -> Optional[Sequence['outputs.GetOpaInstancesOpaInstanceCollectionResult']]:
         return pulumi.get(self, "opa_instance_collections")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the OpaInstance.
-        """
         return pulumi.get(self, "state")
 
 
@@ -110,27 +95,7 @@ def get_opa_instances(compartment_id: Optional[str] = None,
                       state: Optional[str] = None,
                       opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetOpaInstancesResult:
     """
-    This data source provides the list of Opa Instances in Oracle Cloud Infrastructure Opa service.
-
-    Returns a list of OpaInstances.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_opa_instances = oci.Opa.get_opa_instances(compartment_id=var["compartment_id"],
-        display_name=var["opa_instance_display_name"],
-        id=var["opa_instance_id"],
-        state=var["opa_instance_state"])
-    ```
-
-
-    :param str compartment_id: The ID of the compartment in which to list resources.
-    :param str display_name: A filter to return only resources that match the entire display name given.
-    :param str id: unique OpaInstance identifier
-    :param str state: A filter to return only resources their lifecycleState matches the given lifecycleState.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -158,26 +123,6 @@ def get_opa_instances_output(compartment_id: Optional[pulumi.Input[Optional[str]
                              state: Optional[pulumi.Input[Optional[str]]] = None,
                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetOpaInstancesResult]:
     """
-    This data source provides the list of Opa Instances in Oracle Cloud Infrastructure Opa service.
-
-    Returns a list of OpaInstances.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_opa_instances = oci.Opa.get_opa_instances(compartment_id=var["compartment_id"],
-        display_name=var["opa_instance_display_name"],
-        id=var["opa_instance_id"],
-        state=var["opa_instance_state"])
-    ```
-
-
-    :param str compartment_id: The ID of the compartment in which to list resources.
-    :param str display_name: A filter to return only resources that match the entire display name given.
-    :param str id: unique OpaInstance identifier
-    :param str state: A filter to return only resources their lifecycleState matches the given lifecycleState.
+    Use this data source to access information about an existing resource.
     """
     ...

@@ -7,14 +7,15 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.DatabaseTools.outputs.GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollection {
-    private List<GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionItem> items;
+    private @Nullable List<GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionItem> items;
 
     private GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollection() {}
     public List<GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -26,7 +27,7 @@ public final class GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceC
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionItem> items;
+        private @Nullable List<GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionItem> items;
         public Builder() {}
         public Builder(GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -34,8 +35,8 @@ public final class GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceC
         }
 
         @CustomType.Setter
-        public Builder items(List<GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionItem... items) {

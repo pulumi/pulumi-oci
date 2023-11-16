@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Operations Insights Warehouse User resource in Oracle Cloud Infrastructure Opsi service.
@@ -78,11 +77,11 @@ type OperationsInsightsWarehouseUser struct {
 	// (Updatable) Indicate whether user has access to AWR data.
 	IsAwrDataAccess pulumi.BoolOutput `pulumi:"isAwrDataAccess"`
 	// (Updatable) Indicate whether user has access to EM data.
-	IsEmDataAccess pulumi.BoolOutput `pulumi:"isEmDataAccess"`
+	IsEmDataAccess pulumi.BoolPtrOutput `pulumi:"isEmDataAccess"`
 	// (Updatable) Indicate whether user has access to OPSI data.
-	IsOpsiDataAccess pulumi.BoolOutput `pulumi:"isOpsiDataAccess"`
+	IsOpsiDataAccess pulumi.BoolPtrOutput `pulumi:"isOpsiDataAccess"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrOutput `pulumi:"lifecycleDetails"`
 	// Username for schema which would have access to AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
 	Name pulumi.StringOutput `pulumi:"name"`
 	// OPSI Warehouse OCID
@@ -91,13 +90,13 @@ type OperationsInsightsWarehouseUser struct {
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	OperationsInsightsWarehouseId pulumi.StringOutput `pulumi:"operationsInsightsWarehouseId"`
 	// Possible lifecycle states
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
 	// The time at which the resource was first created. An RFC3339 formatted datetime string
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The time at which the resource was last updated. An RFC3339 formatted datetime string
-	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 }
 
 // NewOperationsInsightsWarehouseUser registers a new resource with the given unique name, arguments, and options.
@@ -292,12 +291,6 @@ func (i *OperationsInsightsWarehouseUser) ToOperationsInsightsWarehouseUserOutpu
 	return pulumi.ToOutputWithContext(ctx, i).(OperationsInsightsWarehouseUserOutput)
 }
 
-func (i *OperationsInsightsWarehouseUser) ToOutput(ctx context.Context) pulumix.Output[*OperationsInsightsWarehouseUser] {
-	return pulumix.Output[*OperationsInsightsWarehouseUser]{
-		OutputState: i.ToOperationsInsightsWarehouseUserOutputWithContext(ctx).OutputState,
-	}
-}
-
 // OperationsInsightsWarehouseUserArrayInput is an input type that accepts OperationsInsightsWarehouseUserArray and OperationsInsightsWarehouseUserArrayOutput values.
 // You can construct a concrete instance of `OperationsInsightsWarehouseUserArrayInput` via:
 //
@@ -321,12 +314,6 @@ func (i OperationsInsightsWarehouseUserArray) ToOperationsInsightsWarehouseUserA
 
 func (i OperationsInsightsWarehouseUserArray) ToOperationsInsightsWarehouseUserArrayOutputWithContext(ctx context.Context) OperationsInsightsWarehouseUserArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(OperationsInsightsWarehouseUserArrayOutput)
-}
-
-func (i OperationsInsightsWarehouseUserArray) ToOutput(ctx context.Context) pulumix.Output[[]*OperationsInsightsWarehouseUser] {
-	return pulumix.Output[[]*OperationsInsightsWarehouseUser]{
-		OutputState: i.ToOperationsInsightsWarehouseUserArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // OperationsInsightsWarehouseUserMapInput is an input type that accepts OperationsInsightsWarehouseUserMap and OperationsInsightsWarehouseUserMapOutput values.
@@ -354,12 +341,6 @@ func (i OperationsInsightsWarehouseUserMap) ToOperationsInsightsWarehouseUserMap
 	return pulumi.ToOutputWithContext(ctx, i).(OperationsInsightsWarehouseUserMapOutput)
 }
 
-func (i OperationsInsightsWarehouseUserMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*OperationsInsightsWarehouseUser] {
-	return pulumix.Output[map[string]*OperationsInsightsWarehouseUser]{
-		OutputState: i.ToOperationsInsightsWarehouseUserMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type OperationsInsightsWarehouseUserOutput struct{ *pulumi.OutputState }
 
 func (OperationsInsightsWarehouseUserOutput) ElementType() reflect.Type {
@@ -372,12 +353,6 @@ func (o OperationsInsightsWarehouseUserOutput) ToOperationsInsightsWarehouseUser
 
 func (o OperationsInsightsWarehouseUserOutput) ToOperationsInsightsWarehouseUserOutputWithContext(ctx context.Context) OperationsInsightsWarehouseUserOutput {
 	return o
-}
-
-func (o OperationsInsightsWarehouseUserOutput) ToOutput(ctx context.Context) pulumix.Output[*OperationsInsightsWarehouseUser] {
-	return pulumix.Output[*OperationsInsightsWarehouseUser]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -406,18 +381,18 @@ func (o OperationsInsightsWarehouseUserOutput) IsAwrDataAccess() pulumi.BoolOutp
 }
 
 // (Updatable) Indicate whether user has access to EM data.
-func (o OperationsInsightsWarehouseUserOutput) IsEmDataAccess() pulumi.BoolOutput {
-	return o.ApplyT(func(v *OperationsInsightsWarehouseUser) pulumi.BoolOutput { return v.IsEmDataAccess }).(pulumi.BoolOutput)
+func (o OperationsInsightsWarehouseUserOutput) IsEmDataAccess() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *OperationsInsightsWarehouseUser) pulumi.BoolPtrOutput { return v.IsEmDataAccess }).(pulumi.BoolPtrOutput)
 }
 
 // (Updatable) Indicate whether user has access to OPSI data.
-func (o OperationsInsightsWarehouseUserOutput) IsOpsiDataAccess() pulumi.BoolOutput {
-	return o.ApplyT(func(v *OperationsInsightsWarehouseUser) pulumi.BoolOutput { return v.IsOpsiDataAccess }).(pulumi.BoolOutput)
+func (o OperationsInsightsWarehouseUserOutput) IsOpsiDataAccess() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *OperationsInsightsWarehouseUser) pulumi.BoolPtrOutput { return v.IsOpsiDataAccess }).(pulumi.BoolPtrOutput)
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-func (o OperationsInsightsWarehouseUserOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v *OperationsInsightsWarehouseUser) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o OperationsInsightsWarehouseUserOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *OperationsInsightsWarehouseUser) pulumi.StringPtrOutput { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // Username for schema which would have access to AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
@@ -434,8 +409,8 @@ func (o OperationsInsightsWarehouseUserOutput) OperationsInsightsWarehouseId() p
 }
 
 // Possible lifecycle states
-func (o OperationsInsightsWarehouseUserOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *OperationsInsightsWarehouseUser) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o OperationsInsightsWarehouseUserOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *OperationsInsightsWarehouseUser) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -444,13 +419,13 @@ func (o OperationsInsightsWarehouseUserOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The time at which the resource was first created. An RFC3339 formatted datetime string
-func (o OperationsInsightsWarehouseUserOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *OperationsInsightsWarehouseUser) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o OperationsInsightsWarehouseUserOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *OperationsInsightsWarehouseUser) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time at which the resource was last updated. An RFC3339 formatted datetime string
-func (o OperationsInsightsWarehouseUserOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *OperationsInsightsWarehouseUser) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o OperationsInsightsWarehouseUserOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *OperationsInsightsWarehouseUser) pulumi.StringPtrOutput { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type OperationsInsightsWarehouseUserArrayOutput struct{ *pulumi.OutputState }
@@ -465,12 +440,6 @@ func (o OperationsInsightsWarehouseUserArrayOutput) ToOperationsInsightsWarehous
 
 func (o OperationsInsightsWarehouseUserArrayOutput) ToOperationsInsightsWarehouseUserArrayOutputWithContext(ctx context.Context) OperationsInsightsWarehouseUserArrayOutput {
 	return o
-}
-
-func (o OperationsInsightsWarehouseUserArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*OperationsInsightsWarehouseUser] {
-	return pulumix.Output[[]*OperationsInsightsWarehouseUser]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o OperationsInsightsWarehouseUserArrayOutput) Index(i pulumi.IntInput) OperationsInsightsWarehouseUserOutput {
@@ -491,12 +460,6 @@ func (o OperationsInsightsWarehouseUserMapOutput) ToOperationsInsightsWarehouseU
 
 func (o OperationsInsightsWarehouseUserMapOutput) ToOperationsInsightsWarehouseUserMapOutputWithContext(ctx context.Context) OperationsInsightsWarehouseUserMapOutput {
 	return o
-}
-
-func (o OperationsInsightsWarehouseUserMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*OperationsInsightsWarehouseUser] {
-	return pulumix.Output[map[string]*OperationsInsightsWarehouseUser]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o OperationsInsightsWarehouseUserMapOutput) MapIndex(k pulumi.StringInput) OperationsInsightsWarehouseUserOutput {

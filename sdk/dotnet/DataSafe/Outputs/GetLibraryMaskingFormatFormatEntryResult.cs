@@ -16,31 +16,31 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// <summary>
         /// The name of the substitution column.
         /// </summary>
-        public readonly string ColumnName;
+        public readonly string? ColumnName;
         /// <summary>
         /// The description of the format entry.
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// The upper bound of the range within which all the original column values fall. The end date must be greater than or equal to the start date.
         /// </summary>
-        public readonly string EndDate;
+        public readonly string? EndDate;
         /// <summary>
         /// The maximum number of characters the generated strings should have. It can  be any integer greater than zero, but it must be greater than or equal to  the start length.
         /// </summary>
-        public readonly int EndLength;
+        public readonly int? EndLength;
         /// <summary>
         /// The upper bound of the range within which random decimal numbers should be generated. It must be greater than or equal to the start value. It supports  input of double type.
         /// </summary>
-        public readonly double EndValue;
+        public readonly double? EndValue;
         /// <summary>
         /// The constant number to be used for masking.
         /// </summary>
-        public readonly double FixedNumber;
+        public readonly double? FixedNumber;
         /// <summary>
         /// The constant string to be used for masking.
         /// </summary>
-        public readonly string FixedString;
+        public readonly string? FixedString;
         /// <summary>
         /// One or more reference columns to be used to group column values so that they can be shuffled within their own group. The grouping columns and  the column to be masked must belong to the same table.
         /// </summary>
@@ -48,15 +48,15 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// <summary>
         /// The number of characters that should be there in the substring. It should be an integer and greater than zero.
         /// </summary>
-        public readonly int Length;
+        public readonly int? Length;
         /// <summary>
         /// The OCID of the library masking format.
         /// </summary>
-        public readonly string LibraryMaskingFormatId;
+        public readonly string? LibraryMaskingFormatId;
         /// <summary>
         /// The post processing function in SCHEMA_NAME.PACKAGE_NAME.FUNCTION_NAME format. It can be a standalone or packaged function, so PACKAGE_NAME is optional.
         /// </summary>
-        public readonly string PostProcessingFunction;
+        public readonly string? PostProcessingFunction;
         /// <summary>
         /// A comma-separated list of values to be used to replace column values. The list can be of strings, numbers, or dates. The data type of each value in the list must be compatible with the data type of the column. The number of entries in the list cannot be more than 999.
         /// </summary>
@@ -64,95 +64,95 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// <summary>
         /// The regular expression to be used for masking. For data with characters in the ASCII character set, providing a regular expression is optional. However, it  is required if the data contains multi-byte characters. If not provided, an  error is returned when a multi-byte character is found.
         /// </summary>
-        public readonly string RegularExpression;
+        public readonly string? RegularExpression;
         /// <summary>
         /// The value that should be used to replace the data matching the regular  expression. It can be a fixed string, fixed number, null value, or  SQL expression.
         /// </summary>
-        public readonly string ReplaceWith;
+        public readonly string? ReplaceWith;
         /// <summary>
         /// The name of the schema that contains the substitution column.
         /// </summary>
-        public readonly string SchemaName;
+        public readonly string? SchemaName;
         /// <summary>
         /// The SQL expression to be used to generate the masked values. It can  consist of one or more values, operators, and SQL functions that  evaluate to a value. It can also contain substitution columns from  the same table. Specify the substitution columns within percent (%)  symbols.
         /// </summary>
-        public readonly string SqlExpression;
+        public readonly string? SqlExpression;
         /// <summary>
         /// The lower bound of the range within which all the original column values fall. The start date must be less than or equal to the end date.
         /// </summary>
-        public readonly string StartDate;
+        public readonly string? StartDate;
         /// <summary>
         /// The minimum number of characters the generated strings should have. It can  be any integer greater than zero, but it must be less than or equal to the  end length.
         /// </summary>
-        public readonly int StartLength;
+        public readonly int? StartLength;
         /// <summary>
         /// The starting position in the original string from where the substring should be extracted. It can be either a positive or a negative integer. If It's negative, the counting starts from the end of the string.
         /// </summary>
-        public readonly int StartPosition;
+        public readonly int? StartPosition;
         /// <summary>
         /// The lower bound of the range within which random decimal numbers should  be generated. It must be less than or equal to the end value. It supports  input of double type.
         /// </summary>
-        public readonly double StartValue;
+        public readonly double? StartValue;
         /// <summary>
         /// The name of the table that contains the substitution column.
         /// </summary>
-        public readonly string TableName;
+        public readonly string? TableName;
         /// <summary>
         /// The type of the format entry.
         /// </summary>
-        public readonly string Type;
+        public readonly string? Type;
         /// <summary>
         /// The user-defined function in SCHEMA_NAME.PACKAGE_NAME.FUNCTION_NAME format.  It can be a standalone or packaged function, so PACKAGE_NAME is optional.
         /// </summary>
-        public readonly string UserDefinedFunction;
+        public readonly string? UserDefinedFunction;
 
         [OutputConstructor]
         private GetLibraryMaskingFormatFormatEntryResult(
-            string columnName,
+            string? columnName,
 
-            string description,
+            string? description,
 
-            string endDate,
+            string? endDate,
 
-            int endLength,
+            int? endLength,
 
-            double endValue,
+            double? endValue,
 
-            double fixedNumber,
+            double? fixedNumber,
 
-            string fixedString,
+            string? fixedString,
 
             ImmutableArray<string> groupingColumns,
 
-            int length,
+            int? length,
 
-            string libraryMaskingFormatId,
+            string? libraryMaskingFormatId,
 
-            string postProcessingFunction,
+            string? postProcessingFunction,
 
             ImmutableArray<string> randomLists,
 
-            string regularExpression,
+            string? regularExpression,
 
-            string replaceWith,
+            string? replaceWith,
 
-            string schemaName,
+            string? schemaName,
 
-            string sqlExpression,
+            string? sqlExpression,
 
-            string startDate,
+            string? startDate,
 
-            int startLength,
+            int? startLength,
 
-            int startPosition,
+            int? startPosition,
 
-            double startValue,
+            double? startValue,
 
-            string tableName,
+            string? tableName,
 
-            string type,
+            string? type,
 
-            string userDefinedFunction)
+            string? userDefinedFunction)
         {
             ColumnName = columnName;
             Description = description;

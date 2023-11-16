@@ -9,6 +9,7 @@ import com.pulumi.oci.ApmTraces.outputs.GetQueryQuickPicksQuickPick;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 @CustomType
@@ -19,12 +20,12 @@ public final class GetQueryQuickPicksResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The list of quick_picks.
      * 
      */
-    private List<GetQueryQuickPicksQuickPick> quickPicks;
+    private @Nullable List<GetQueryQuickPicksQuickPick> quickPicks;
 
     private GetQueryQuickPicksResult() {}
     public String apmDomainId() {
@@ -37,15 +38,15 @@ public final class GetQueryQuickPicksResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The list of quick_picks.
      * 
      */
     public List<GetQueryQuickPicksQuickPick> quickPicks() {
-        return this.quickPicks;
+        return this.quickPicks == null ? List.of() : this.quickPicks;
     }
 
     public static Builder builder() {
@@ -59,8 +60,8 @@ public final class GetQueryQuickPicksResult {
     public static final class Builder {
         private String apmDomainId;
         private @Nullable List<GetQueryQuickPicksFilter> filters;
-        private String id;
-        private List<GetQueryQuickPicksQuickPick> quickPicks;
+        private @Nullable String id;
+        private @Nullable List<GetQueryQuickPicksQuickPick> quickPicks;
         public Builder() {}
         public Builder(GetQueryQuickPicksResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -84,13 +85,13 @@ public final class GetQueryQuickPicksResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder quickPicks(List<GetQueryQuickPicksQuickPick> quickPicks) {
-            this.quickPicks = Objects.requireNonNull(quickPicks);
+        public Builder quickPicks(@Nullable List<GetQueryQuickPicksQuickPick> quickPicks) {
+            this.quickPicks = quickPicks;
             return this;
         }
         public Builder quickPicks(GetQueryQuickPicksQuickPick... quickPicks) {

@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Script resource in Oracle Cloud Infrastructure Apm Synthetics service.
@@ -77,9 +76,9 @@ type Script struct {
 	// (Updatable) The content of the script. It may contain custom-defined tags that can be used for setting dynamic parameters. The format to set dynamic parameters is: `<ORAP><ON>param name</ON><OV>param value</OV><OS>isParamValueSecret(true/false)</OS></ORAP>`. Param value and isParamValueSecret are optional, the default value for isParamValueSecret is false. Examples: With mandatory param name : `<ORAP><ON>param name</ON></ORAP>` With parameter name and value : `<ORAP><ON>param name</ON><OV>param value</OV></ORAP>` Note that the content is valid if it matches the given content type. For example, if the content type is SIDE, then the content should be in Side script format. If the content type is JS, then the content should be in JavaScript format.
 	Content pulumi.StringOutput `pulumi:"content"`
 	// (Updatable) File name of uploaded script content.
-	ContentFileName pulumi.StringOutput `pulumi:"contentFileName"`
+	ContentFileName pulumi.StringPtrOutput `pulumi:"contentFileName"`
 	// Size of the script content.
-	ContentSizeInBytes pulumi.IntOutput `pulumi:"contentSizeInBytes"`
+	ContentSizeInBytes pulumi.IntPtrOutput `pulumi:"contentSizeInBytes"`
 	// (Updatable) Content type of script.
 	ContentType pulumi.StringOutput `pulumi:"contentType"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -93,11 +92,11 @@ type Script struct {
 	// (Updatable) List of script parameters. Example: `[{"paramName": "userid", "paramValue":"testuser", "isSecret": false}]`
 	Parameters ScriptParameterArrayOutput `pulumi:"parameters"`
 	// The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
-	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 	// The time the script was uploaded.
-	TimeUploaded pulumi.StringOutput `pulumi:"timeUploaded"`
+	TimeUploaded pulumi.StringPtrOutput `pulumi:"timeUploaded"`
 }
 
 // NewScript registers a new resource with the given unique name, arguments, and options.
@@ -265,12 +264,6 @@ func (i *Script) ToScriptOutputWithContext(ctx context.Context) ScriptOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ScriptOutput)
 }
 
-func (i *Script) ToOutput(ctx context.Context) pulumix.Output[*Script] {
-	return pulumix.Output[*Script]{
-		OutputState: i.ToScriptOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ScriptArrayInput is an input type that accepts ScriptArray and ScriptArrayOutput values.
 // You can construct a concrete instance of `ScriptArrayInput` via:
 //
@@ -294,12 +287,6 @@ func (i ScriptArray) ToScriptArrayOutput() ScriptArrayOutput {
 
 func (i ScriptArray) ToScriptArrayOutputWithContext(ctx context.Context) ScriptArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ScriptArrayOutput)
-}
-
-func (i ScriptArray) ToOutput(ctx context.Context) pulumix.Output[[]*Script] {
-	return pulumix.Output[[]*Script]{
-		OutputState: i.ToScriptArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // ScriptMapInput is an input type that accepts ScriptMap and ScriptMapOutput values.
@@ -327,12 +314,6 @@ func (i ScriptMap) ToScriptMapOutputWithContext(ctx context.Context) ScriptMapOu
 	return pulumi.ToOutputWithContext(ctx, i).(ScriptMapOutput)
 }
 
-func (i ScriptMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*Script] {
-	return pulumix.Output[map[string]*Script]{
-		OutputState: i.ToScriptMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ScriptOutput struct{ *pulumi.OutputState }
 
 func (ScriptOutput) ElementType() reflect.Type {
@@ -347,12 +328,6 @@ func (o ScriptOutput) ToScriptOutputWithContext(ctx context.Context) ScriptOutpu
 	return o
 }
 
-func (o ScriptOutput) ToOutput(ctx context.Context) pulumix.Output[*Script] {
-	return pulumix.Output[*Script]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) The APM domain ID the request is intended for.
 func (o ScriptOutput) ApmDomainId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Script) pulumi.StringOutput { return v.ApmDomainId }).(pulumi.StringOutput)
@@ -364,13 +339,13 @@ func (o ScriptOutput) Content() pulumi.StringOutput {
 }
 
 // (Updatable) File name of uploaded script content.
-func (o ScriptOutput) ContentFileName() pulumi.StringOutput {
-	return o.ApplyT(func(v *Script) pulumi.StringOutput { return v.ContentFileName }).(pulumi.StringOutput)
+func (o ScriptOutput) ContentFileName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Script) pulumi.StringPtrOutput { return v.ContentFileName }).(pulumi.StringPtrOutput)
 }
 
 // Size of the script content.
-func (o ScriptOutput) ContentSizeInBytes() pulumi.IntOutput {
-	return o.ApplyT(func(v *Script) pulumi.IntOutput { return v.ContentSizeInBytes }).(pulumi.IntOutput)
+func (o ScriptOutput) ContentSizeInBytes() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *Script) pulumi.IntPtrOutput { return v.ContentSizeInBytes }).(pulumi.IntPtrOutput)
 }
 
 // (Updatable) Content type of script.
@@ -404,18 +379,18 @@ func (o ScriptOutput) Parameters() ScriptParameterArrayOutput {
 }
 
 // The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
-func (o ScriptOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *Script) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o ScriptOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Script) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
-func (o ScriptOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *Script) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o ScriptOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Script) pulumi.StringPtrOutput { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 // The time the script was uploaded.
-func (o ScriptOutput) TimeUploaded() pulumi.StringOutput {
-	return o.ApplyT(func(v *Script) pulumi.StringOutput { return v.TimeUploaded }).(pulumi.StringOutput)
+func (o ScriptOutput) TimeUploaded() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Script) pulumi.StringPtrOutput { return v.TimeUploaded }).(pulumi.StringPtrOutput)
 }
 
 type ScriptArrayOutput struct{ *pulumi.OutputState }
@@ -430,12 +405,6 @@ func (o ScriptArrayOutput) ToScriptArrayOutput() ScriptArrayOutput {
 
 func (o ScriptArrayOutput) ToScriptArrayOutputWithContext(ctx context.Context) ScriptArrayOutput {
 	return o
-}
-
-func (o ScriptArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*Script] {
-	return pulumix.Output[[]*Script]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ScriptArrayOutput) Index(i pulumi.IntInput) ScriptOutput {
@@ -456,12 +425,6 @@ func (o ScriptMapOutput) ToScriptMapOutput() ScriptMapOutput {
 
 func (o ScriptMapOutput) ToScriptMapOutputWithContext(ctx context.Context) ScriptMapOutput {
 	return o
-}
-
-func (o ScriptMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*Script] {
-	return pulumix.Output[map[string]*Script]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ScriptMapOutput) MapIndex(k pulumi.StringInput) ScriptOutput {

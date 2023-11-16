@@ -47,112 +47,112 @@ export interface GetModelResult {
     /**
      * Average precision of the trained model
      */
-    readonly averagePrecision: number;
+    readonly averagePrecision?: number;
     /**
      * Compartment Identifier
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * Confidence ratio of the calculation
      */
-    readonly confidenceThreshold: number;
+    readonly confidenceThreshold?: number;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * A short description of the model.
      */
-    readonly description: string;
+    readonly description?: string;
     /**
      * Model Identifier, can be renamed
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * Unique identifier that is immutable on creation
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * If It's true, Training is set for recommended epochs needed for quick training.
      */
-    readonly isQuickMode: boolean;
+    readonly isQuickMode?: boolean;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
-    readonly lifecycleDetails: string;
+    readonly lifecycleDetails?: string;
     /**
      * The maximum duration in hours for which the training will run.
      */
-    readonly maxTrainingDurationInHours: number;
+    readonly maxTrainingDurationInHours?: number;
     /**
      * Complete Training Metrics for successful trained model
      */
-    readonly metrics: string;
+    readonly metrics?: string;
     readonly modelId: string;
     /**
      * Type of the Model.
      */
-    readonly modelType: string;
+    readonly modelType?: string;
     /**
      * The version of the model
      */
-    readonly modelVersion: string;
+    readonly modelVersion?: string;
     /**
      * Precision of the trained model
      */
-    readonly precision: number;
+    readonly precision?: number;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model.
      */
-    readonly projectId: string;
+    readonly projectId?: string;
     /**
      * Recall of the trained model
      */
-    readonly recall: number;
+    readonly recall?: number;
     /**
      * The current state of the Model.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    readonly systemTags: {[key: string]: any};
+    readonly systemTags?: {[key: string]: any};
     /**
      * Total number of testing Images
      */
-    readonly testImageCount: number;
+    readonly testImageCount?: number;
     /**
      * The base entity for a Dataset, which is the input for Model creation.
      */
-    readonly testingDatasets: outputs.AiVision.GetModelTestingDataset[];
+    readonly testingDatasets?: outputs.AiVision.GetModelTestingDataset[];
     /**
      * The time the Model was created. An RFC3339 formatted datetime string
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The time the Model was updated. An RFC3339 formatted datetime string
      */
-    readonly timeUpdated: string;
+    readonly timeUpdated?: string;
     /**
      * Total number of training Images
      */
-    readonly totalImageCount: number;
+    readonly totalImageCount?: number;
     /**
      * Total hours actually used for training
      */
-    readonly trainedDurationInHours: number;
+    readonly trainedDurationInHours?: number;
     /**
      * The base entity for a Dataset, which is the input for Model creation.
      */
-    readonly trainingDatasets: outputs.AiVision.GetModelTrainingDataset[];
+    readonly trainingDatasets?: outputs.AiVision.GetModelTrainingDataset[];
     /**
      * The base entity for a Dataset, which is the input for Model creation.
      */
-    readonly validationDatasets: outputs.AiVision.GetModelValidationDataset[];
+    readonly validationDatasets?: outputs.AiVision.GetModelValidationDataset[];
 }
 /**
  * This data source provides details about a specific Model resource in Oracle Cloud Infrastructure Ai Vision service.

@@ -17,76 +17,76 @@ public final class GetComputeImageCapabilitySchemaResult {
      * @return The OCID of the compartment containing the compute global image capability schema
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return The ocid of the compute global image capability schema
      * 
      */
-    private String computeGlobalImageCapabilitySchemaId;
+    private @Nullable String computeGlobalImageCapabilitySchemaId;
     /**
      * @return The name of the compute global image capability schema version
      * 
      */
-    private String computeGlobalImageCapabilitySchemaVersionName;
+    private @Nullable String computeGlobalImageCapabilitySchemaVersionName;
     private String computeImageCapabilitySchemaId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return The compute image capability schema [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The OCID of the image associated with this compute image capability schema
      * 
      */
-    private String imageId;
+    private @Nullable String imageId;
     private @Nullable String isMergeEnabled;
     /**
      * @return A mapping of each capability name to its ImageCapabilityDescriptor.
      * 
      */
-    private Map<String,Object> schemaData;
+    private @Nullable Map<String,Object> schemaData;
     /**
      * @return The date and time the compute image capability schema was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
 
     private GetComputeImageCapabilitySchemaResult() {}
     /**
      * @return The OCID of the compartment containing the compute global image capability schema
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return The ocid of the compute global image capability schema
      * 
      */
-    public String computeGlobalImageCapabilitySchemaId() {
-        return this.computeGlobalImageCapabilitySchemaId;
+    public Optional<String> computeGlobalImageCapabilitySchemaId() {
+        return Optional.ofNullable(this.computeGlobalImageCapabilitySchemaId);
     }
     /**
      * @return The name of the compute global image capability schema version
      * 
      */
-    public String computeGlobalImageCapabilitySchemaVersionName() {
-        return this.computeGlobalImageCapabilitySchemaVersionName;
+    public Optional<String> computeGlobalImageCapabilitySchemaVersionName() {
+        return Optional.ofNullable(this.computeGlobalImageCapabilitySchemaVersionName);
     }
     public String computeImageCapabilitySchemaId() {
         return this.computeImageCapabilitySchemaId;
@@ -96,35 +96,35 @@ public final class GetComputeImageCapabilitySchemaResult {
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return The compute image capability schema [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The OCID of the image associated with this compute image capability schema
      * 
      */
-    public String imageId() {
-        return this.imageId;
+    public Optional<String> imageId() {
+        return Optional.ofNullable(this.imageId);
     }
     public Optional<String> isMergeEnabled() {
         return Optional.ofNullable(this.isMergeEnabled);
@@ -134,14 +134,14 @@ public final class GetComputeImageCapabilitySchemaResult {
      * 
      */
     public Map<String,Object> schemaData() {
-        return this.schemaData;
+        return this.schemaData == null ? Map.of() : this.schemaData;
     }
     /**
      * @return The date and time the compute image capability schema was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
 
     public static Builder builder() {
@@ -153,18 +153,18 @@ public final class GetComputeImageCapabilitySchemaResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String compartmentId;
-        private String computeGlobalImageCapabilitySchemaId;
-        private String computeGlobalImageCapabilitySchemaVersionName;
+        private @Nullable String compartmentId;
+        private @Nullable String computeGlobalImageCapabilitySchemaId;
+        private @Nullable String computeGlobalImageCapabilitySchemaVersionName;
         private String computeImageCapabilitySchemaId;
-        private Map<String,Object> definedTags;
-        private String displayName;
-        private Map<String,Object> freeformTags;
-        private String id;
-        private String imageId;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String displayName;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String id;
+        private @Nullable String imageId;
         private @Nullable String isMergeEnabled;
-        private Map<String,Object> schemaData;
-        private String timeCreated;
+        private @Nullable Map<String,Object> schemaData;
+        private @Nullable String timeCreated;
         public Builder() {}
         public Builder(GetComputeImageCapabilitySchemaResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -183,18 +183,18 @@ public final class GetComputeImageCapabilitySchemaResult {
         }
 
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder computeGlobalImageCapabilitySchemaId(String computeGlobalImageCapabilitySchemaId) {
-            this.computeGlobalImageCapabilitySchemaId = Objects.requireNonNull(computeGlobalImageCapabilitySchemaId);
+        public Builder computeGlobalImageCapabilitySchemaId(@Nullable String computeGlobalImageCapabilitySchemaId) {
+            this.computeGlobalImageCapabilitySchemaId = computeGlobalImageCapabilitySchemaId;
             return this;
         }
         @CustomType.Setter
-        public Builder computeGlobalImageCapabilitySchemaVersionName(String computeGlobalImageCapabilitySchemaVersionName) {
-            this.computeGlobalImageCapabilitySchemaVersionName = Objects.requireNonNull(computeGlobalImageCapabilitySchemaVersionName);
+        public Builder computeGlobalImageCapabilitySchemaVersionName(@Nullable String computeGlobalImageCapabilitySchemaVersionName) {
+            this.computeGlobalImageCapabilitySchemaVersionName = computeGlobalImageCapabilitySchemaVersionName;
             return this;
         }
         @CustomType.Setter
@@ -203,28 +203,28 @@ public final class GetComputeImageCapabilitySchemaResult {
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder imageId(String imageId) {
-            this.imageId = Objects.requireNonNull(imageId);
+        public Builder imageId(@Nullable String imageId) {
+            this.imageId = imageId;
             return this;
         }
         @CustomType.Setter
@@ -233,13 +233,13 @@ public final class GetComputeImageCapabilitySchemaResult {
             return this;
         }
         @CustomType.Setter
-        public Builder schemaData(Map<String,Object> schemaData) {
-            this.schemaData = Objects.requireNonNull(schemaData);
+        public Builder schemaData(@Nullable Map<String,Object> schemaData) {
+            this.schemaData = schemaData;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         public GetComputeImageCapabilitySchemaResult build() {

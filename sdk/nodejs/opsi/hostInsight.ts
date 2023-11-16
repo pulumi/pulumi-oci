@@ -77,35 +77,35 @@ export class HostInsight extends pulumi.CustomResource {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compute Instance
      */
-    public readonly computeId!: pulumi.Output<string>;
+    public readonly computeId!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * OPSI Enterprise Manager Bridge OCID
      */
-    public readonly enterpriseManagerBridgeId!: pulumi.Output<string>;
+    public readonly enterpriseManagerBridgeId!: pulumi.Output<string | undefined>;
     /**
      * Enterprise Manager Entity Display Name
      */
-    public /*out*/ readonly enterpriseManagerEntityDisplayName!: pulumi.Output<string>;
+    public /*out*/ readonly enterpriseManagerEntityDisplayName!: pulumi.Output<string | undefined>;
     /**
      * Enterprise Manager Entity Unique Identifier
      */
-    public readonly enterpriseManagerEntityIdentifier!: pulumi.Output<string>;
+    public readonly enterpriseManagerEntityIdentifier!: pulumi.Output<string | undefined>;
     /**
      * Enterprise Manager Entity Name
      */
-    public /*out*/ readonly enterpriseManagerEntityName!: pulumi.Output<string>;
+    public /*out*/ readonly enterpriseManagerEntityName!: pulumi.Output<string | undefined>;
     /**
      * Enterprise Manager Entity Type
      */
-    public /*out*/ readonly enterpriseManagerEntityType!: pulumi.Output<string>;
+    public /*out*/ readonly enterpriseManagerEntityType!: pulumi.Output<string | undefined>;
     /**
      * Enterprise Manager Unique Identifier
      */
-    public readonly enterpriseManagerIdentifier!: pulumi.Output<string>;
+    public readonly enterpriseManagerIdentifier!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Source of the host entity.
      */
@@ -113,27 +113,27 @@ export class HostInsight extends pulumi.CustomResource {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata insight.
      */
-    public readonly exadataInsightId!: pulumi.Output<string>;
+    public readonly exadataInsightId!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * The user-friendly name for the host. The name does not have to be unique.
      */
-    public /*out*/ readonly hostDisplayName!: pulumi.Output<string>;
+    public /*out*/ readonly hostDisplayName!: pulumi.Output<string | undefined>;
     /**
      * The host name. The host name is unique amongst the hosts managed by the same management agent.
      */
-    public /*out*/ readonly hostName!: pulumi.Output<string>;
+    public /*out*/ readonly hostName!: pulumi.Output<string | undefined>;
     /**
      * Operations Insights internal representation of the host type. Possible value is EXTERNAL-HOST.
      */
-    public /*out*/ readonly hostType!: pulumi.Output<string>;
+    public /*out*/ readonly hostType!: pulumi.Output<string | undefined>;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent
      *
@@ -141,43 +141,43 @@ export class HostInsight extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values. The resource destruction here is basically a soft delete. User cannot create resource using the same Management agent OCID. If resource is in enabled state during destruction, the resource will be disabled automatically before performing delete operation.
      */
-    public readonly managementAgentId!: pulumi.Output<string>;
+    public readonly managementAgentId!: pulumi.Output<string | undefined>;
     /**
      * Platform name.
      */
-    public /*out*/ readonly platformName!: pulumi.Output<string>;
+    public /*out*/ readonly platformName!: pulumi.Output<string | undefined>;
     /**
      * Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX, SOLARIS, WINDOWS]. Supported platformType(s) for MACS-managed cloud host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX, WINDOWS, AIX].
      */
-    public /*out*/ readonly platformType!: pulumi.Output<string>;
+    public /*out*/ readonly platformType!: pulumi.Output<string | undefined>;
     /**
      * Platform version.
      */
-    public /*out*/ readonly platformVersion!: pulumi.Output<string>;
+    public /*out*/ readonly platformVersion!: pulumi.Output<string | undefined>;
     /**
      * Processor count.
      */
-    public /*out*/ readonly processorCount!: pulumi.Output<number>;
+    public /*out*/ readonly processorCount!: pulumi.Output<number | undefined>;
     /**
      * The current state of the host.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Status of the resource. Example: "ENABLED", "DISABLED". Resource can be either enabled or disabled by updating the value of status field to either "ENABLED" or "DISABLED"
      */
-    public readonly status!: pulumi.Output<string>;
+    public readonly status!: pulumi.Output<string | undefined>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any}>;
+    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * The time the the host insight was first enabled. An RFC3339 formatted datetime string
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * The time the host insight was updated. An RFC3339 formatted datetime string
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    public /*out*/ readonly timeUpdated!: pulumi.Output<string | undefined>;
 
     /**
      * Create a HostInsight resource with the given unique name, arguments, and options.

@@ -42,10 +42,7 @@ class GetNetworkFirewallPolicyDecryptionProfilesResult:
 
     @property
     @pulumi.getter(name="decryptionProfileSummaryCollections")
-    def decryption_profile_summary_collections(self) -> Sequence['outputs.GetNetworkFirewallPolicyDecryptionProfilesDecryptionProfileSummaryCollectionResult']:
-        """
-        The list of decryption_profile_summary_collection.
-        """
+    def decryption_profile_summary_collections(self) -> Optional[Sequence['outputs.GetNetworkFirewallPolicyDecryptionProfilesDecryptionProfileSummaryCollectionResult']]:
         return pulumi.get(self, "decryption_profile_summary_collections")
 
     @property
@@ -60,7 +57,7 @@ class GetNetworkFirewallPolicyDecryptionProfilesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -90,23 +87,7 @@ def get_network_firewall_policy_decryption_profiles(display_name: Optional[str] 
                                                     network_firewall_policy_id: Optional[str] = None,
                                                     opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetNetworkFirewallPolicyDecryptionProfilesResult:
     """
-    This data source provides the list of Network Firewall Policy Decryption Profiles in Oracle Cloud Infrastructure Network Firewall service.
-
-    Returns a list of Decryption Profile for the Network Firewall Policy.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_network_firewall_policy_decryption_profiles = oci.NetworkFirewall.get_network_firewall_policy_decryption_profiles(network_firewall_policy_id=oci_network_firewall_network_firewall_policy["test_network_firewall_policy"]["id"],
-        display_name=var["network_firewall_policy_decryption_profile_display_name"])
-    ```
-
-
-    :param str display_name: A filter to return only resources that match the entire display name given.
-    :param str network_firewall_policy_id: Unique Network Firewall Policy identifier
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['displayName'] = display_name
@@ -129,22 +110,6 @@ def get_network_firewall_policy_decryption_profiles_output(display_name: Optiona
                                                            network_firewall_policy_id: Optional[pulumi.Input[str]] = None,
                                                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNetworkFirewallPolicyDecryptionProfilesResult]:
     """
-    This data source provides the list of Network Firewall Policy Decryption Profiles in Oracle Cloud Infrastructure Network Firewall service.
-
-    Returns a list of Decryption Profile for the Network Firewall Policy.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_network_firewall_policy_decryption_profiles = oci.NetworkFirewall.get_network_firewall_policy_decryption_profiles(network_firewall_policy_id=oci_network_firewall_network_firewall_policy["test_network_firewall_policy"]["id"],
-        display_name=var["network_firewall_policy_decryption_profile_display_name"])
-    ```
-
-
-    :param str display_name: A filter to return only resources that match the entire display name given.
-    :param str network_firewall_policy_id: Unique Network Firewall Policy identifier
+    Use this data source to access information about an existing resource.
     """
     ...

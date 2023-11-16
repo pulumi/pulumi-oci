@@ -6,6 +6,8 @@ package com.pulumi.oci.DatabaseManagement.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetManagedDatabaseUserConsumerGroupPrivilegesConsumerGroupPrivilegeCollectionItem {
@@ -13,39 +15,39 @@ public final class GetManagedDatabaseUserConsumerGroupPrivilegesConsumerGroupPri
      * @return Indicates whether the privilege is granted with the GRANT option (YES) or not (NO).
      * 
      */
-    private String grantOption;
+    private @Nullable String grantOption;
     /**
      * @return Indicates whether the consumer group is designated as the default for this user or role (YES) or not (NO).
      * 
      */
-    private String initialGroup;
+    private @Nullable String initialGroup;
     /**
      * @return A filter to return only resources that match the entire name.
      * 
      */
-    private String name;
+    private @Nullable String name;
 
     private GetManagedDatabaseUserConsumerGroupPrivilegesConsumerGroupPrivilegeCollectionItem() {}
     /**
      * @return Indicates whether the privilege is granted with the GRANT option (YES) or not (NO).
      * 
      */
-    public String grantOption() {
-        return this.grantOption;
+    public Optional<String> grantOption() {
+        return Optional.ofNullable(this.grantOption);
     }
     /**
      * @return Indicates whether the consumer group is designated as the default for this user or role (YES) or not (NO).
      * 
      */
-    public String initialGroup() {
-        return this.initialGroup;
+    public Optional<String> initialGroup() {
+        return Optional.ofNullable(this.initialGroup);
     }
     /**
      * @return A filter to return only resources that match the entire name.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
 
     public static Builder builder() {
@@ -57,9 +59,9 @@ public final class GetManagedDatabaseUserConsumerGroupPrivilegesConsumerGroupPri
     }
     @CustomType.Builder
     public static final class Builder {
-        private String grantOption;
-        private String initialGroup;
-        private String name;
+        private @Nullable String grantOption;
+        private @Nullable String initialGroup;
+        private @Nullable String name;
         public Builder() {}
         public Builder(GetManagedDatabaseUserConsumerGroupPrivilegesConsumerGroupPrivilegeCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -69,18 +71,18 @@ public final class GetManagedDatabaseUserConsumerGroupPrivilegesConsumerGroupPri
         }
 
         @CustomType.Setter
-        public Builder grantOption(String grantOption) {
-            this.grantOption = Objects.requireNonNull(grantOption);
+        public Builder grantOption(@Nullable String grantOption) {
+            this.grantOption = grantOption;
             return this;
         }
         @CustomType.Setter
-        public Builder initialGroup(String initialGroup) {
-            this.initialGroup = Objects.requireNonNull(initialGroup);
+        public Builder initialGroup(@Nullable String initialGroup) {
+            this.initialGroup = initialGroup;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         public GetManagedDatabaseUserConsumerGroupPrivilegesConsumerGroupPrivilegeCollectionItem build() {

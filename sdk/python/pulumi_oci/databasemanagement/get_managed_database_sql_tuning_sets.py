@@ -50,7 +50,7 @@ class GetManagedDatabaseSqlTuningSetsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -59,9 +59,6 @@ class GetManagedDatabaseSqlTuningSetsResult:
     @property
     @pulumi.getter(name="managedDatabaseId")
     def managed_database_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
-        """
         return pulumi.get(self, "managed_database_id")
 
     @property
@@ -72,17 +69,11 @@ class GetManagedDatabaseSqlTuningSetsResult:
     @property
     @pulumi.getter
     def owner(self) -> Optional[str]:
-        """
-        The owner of the SQL tuning set.
-        """
         return pulumi.get(self, "owner")
 
     @property
     @pulumi.getter(name="sqlTuningSetCollections")
-    def sql_tuning_set_collections(self) -> Sequence['outputs.GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionResult']:
-        """
-        The list of sql_tuning_set_collection.
-        """
+    def sql_tuning_set_collections(self) -> Optional[Sequence['outputs.GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionResult']]:
         return pulumi.get(self, "sql_tuning_set_collections")
 
 
@@ -106,25 +97,7 @@ def get_managed_database_sql_tuning_sets(filters: Optional[Sequence[pulumi.Input
                                          owner: Optional[str] = None,
                                          opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetManagedDatabaseSqlTuningSetsResult:
     """
-    This data source provides the list of Managed Database Sql Tuning Sets in Oracle Cloud Infrastructure Database Management service.
-
-    Lists the SQL tuning sets for the specified Managed Database.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_managed_database_sql_tuning_sets = oci.DatabaseManagement.get_managed_database_sql_tuning_sets(managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"],
-        name_contains=var["managed_database_sql_tuning_set_name_contains"],
-        owner=var["managed_database_sql_tuning_set_owner"])
-    ```
-
-
-    :param str managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
-    :param str name_contains: Allow searching the name of the SQL tuning set by partial matching. The search is case insensitive.
-    :param str owner: The owner of the SQL tuning set.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['filters'] = filters
@@ -150,24 +123,6 @@ def get_managed_database_sql_tuning_sets_output(filters: Optional[pulumi.Input[O
                                                 owner: Optional[pulumi.Input[Optional[str]]] = None,
                                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetManagedDatabaseSqlTuningSetsResult]:
     """
-    This data source provides the list of Managed Database Sql Tuning Sets in Oracle Cloud Infrastructure Database Management service.
-
-    Lists the SQL tuning sets for the specified Managed Database.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_managed_database_sql_tuning_sets = oci.DatabaseManagement.get_managed_database_sql_tuning_sets(managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"],
-        name_contains=var["managed_database_sql_tuning_set_name_contains"],
-        owner=var["managed_database_sql_tuning_set_owner"])
-    ```
-
-
-    :param str managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
-    :param str name_contains: Allow searching the name of the SQL tuning set by partial matching. The search is case insensitive.
-    :param str owner: The owner of the SQL tuning set.
+    Use this data source to access information about an existing resource.
     """
     ...

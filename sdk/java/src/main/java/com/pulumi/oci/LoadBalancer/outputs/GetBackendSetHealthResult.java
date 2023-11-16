@@ -8,6 +8,8 @@ import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetBackendSetHealthResult {
@@ -16,12 +18,12 @@ public final class GetBackendSetHealthResult {
      * @return A list of backend servers that are currently in the `CRITICAL` health state. The list identifies each backend server by IP address and port.  Example: `10.0.0.4:8080`
      * 
      */
-    private List<String> criticalStateBackendNames;
+    private @Nullable List<String> criticalStateBackendNames;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private String loadBalancerId;
     /**
      * @return Overall health status of the backend set.
@@ -31,22 +33,22 @@ public final class GetBackendSetHealthResult {
      * *  **UNKNOWN:** More than half of the backend set&#39;s backend servers return a status of `UNKNOWN`, the system was unable to retrieve metrics, or the backend set does not have a listener attached.
      * 
      */
-    private String status;
+    private @Nullable String status;
     /**
      * @return The total number of backend servers in this backend set.  Example: `7`
      * 
      */
-    private Integer totalBackendCount;
+    private @Nullable Integer totalBackendCount;
     /**
      * @return A list of backend servers that are currently in the `UNKNOWN` health state. The list identifies each backend server by IP address and port.  Example: `10.0.0.5:8080`
      * 
      */
-    private List<String> unknownStateBackendNames;
+    private @Nullable List<String> unknownStateBackendNames;
     /**
      * @return A list of backend servers that are currently in the `WARNING` health state. The list identifies each backend server by IP address and port.  Example: `10.0.0.3:8080`
      * 
      */
-    private List<String> warningStateBackendNames;
+    private @Nullable List<String> warningStateBackendNames;
 
     private GetBackendSetHealthResult() {}
     public String backendSetName() {
@@ -57,14 +59,14 @@ public final class GetBackendSetHealthResult {
      * 
      */
     public List<String> criticalStateBackendNames() {
-        return this.criticalStateBackendNames;
+        return this.criticalStateBackendNames == null ? List.of() : this.criticalStateBackendNames;
     }
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public String loadBalancerId() {
         return this.loadBalancerId;
@@ -77,29 +79,29 @@ public final class GetBackendSetHealthResult {
      * *  **UNKNOWN:** More than half of the backend set&#39;s backend servers return a status of `UNKNOWN`, the system was unable to retrieve metrics, or the backend set does not have a listener attached.
      * 
      */
-    public String status() {
-        return this.status;
+    public Optional<String> status() {
+        return Optional.ofNullable(this.status);
     }
     /**
      * @return The total number of backend servers in this backend set.  Example: `7`
      * 
      */
-    public Integer totalBackendCount() {
-        return this.totalBackendCount;
+    public Optional<Integer> totalBackendCount() {
+        return Optional.ofNullable(this.totalBackendCount);
     }
     /**
      * @return A list of backend servers that are currently in the `UNKNOWN` health state. The list identifies each backend server by IP address and port.  Example: `10.0.0.5:8080`
      * 
      */
     public List<String> unknownStateBackendNames() {
-        return this.unknownStateBackendNames;
+        return this.unknownStateBackendNames == null ? List.of() : this.unknownStateBackendNames;
     }
     /**
      * @return A list of backend servers that are currently in the `WARNING` health state. The list identifies each backend server by IP address and port.  Example: `10.0.0.3:8080`
      * 
      */
     public List<String> warningStateBackendNames() {
-        return this.warningStateBackendNames;
+        return this.warningStateBackendNames == null ? List.of() : this.warningStateBackendNames;
     }
 
     public static Builder builder() {
@@ -112,13 +114,13 @@ public final class GetBackendSetHealthResult {
     @CustomType.Builder
     public static final class Builder {
         private String backendSetName;
-        private List<String> criticalStateBackendNames;
-        private String id;
+        private @Nullable List<String> criticalStateBackendNames;
+        private @Nullable String id;
         private String loadBalancerId;
-        private String status;
-        private Integer totalBackendCount;
-        private List<String> unknownStateBackendNames;
-        private List<String> warningStateBackendNames;
+        private @Nullable String status;
+        private @Nullable Integer totalBackendCount;
+        private @Nullable List<String> unknownStateBackendNames;
+        private @Nullable List<String> warningStateBackendNames;
         public Builder() {}
         public Builder(GetBackendSetHealthResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -138,16 +140,16 @@ public final class GetBackendSetHealthResult {
             return this;
         }
         @CustomType.Setter
-        public Builder criticalStateBackendNames(List<String> criticalStateBackendNames) {
-            this.criticalStateBackendNames = Objects.requireNonNull(criticalStateBackendNames);
+        public Builder criticalStateBackendNames(@Nullable List<String> criticalStateBackendNames) {
+            this.criticalStateBackendNames = criticalStateBackendNames;
             return this;
         }
         public Builder criticalStateBackendNames(String... criticalStateBackendNames) {
             return criticalStateBackendNames(List.of(criticalStateBackendNames));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -156,26 +158,26 @@ public final class GetBackendSetHealthResult {
             return this;
         }
         @CustomType.Setter
-        public Builder status(String status) {
-            this.status = Objects.requireNonNull(status);
+        public Builder status(@Nullable String status) {
+            this.status = status;
             return this;
         }
         @CustomType.Setter
-        public Builder totalBackendCount(Integer totalBackendCount) {
-            this.totalBackendCount = Objects.requireNonNull(totalBackendCount);
+        public Builder totalBackendCount(@Nullable Integer totalBackendCount) {
+            this.totalBackendCount = totalBackendCount;
             return this;
         }
         @CustomType.Setter
-        public Builder unknownStateBackendNames(List<String> unknownStateBackendNames) {
-            this.unknownStateBackendNames = Objects.requireNonNull(unknownStateBackendNames);
+        public Builder unknownStateBackendNames(@Nullable List<String> unknownStateBackendNames) {
+            this.unknownStateBackendNames = unknownStateBackendNames;
             return this;
         }
         public Builder unknownStateBackendNames(String... unknownStateBackendNames) {
             return unknownStateBackendNames(List.of(unknownStateBackendNames));
         }
         @CustomType.Setter
-        public Builder warningStateBackendNames(List<String> warningStateBackendNames) {
-            this.warningStateBackendNames = Objects.requireNonNull(warningStateBackendNames);
+        public Builder warningStateBackendNames(@Nullable List<String> warningStateBackendNames) {
+            this.warningStateBackendNames = warningStateBackendNames;
             return this;
         }
         public Builder warningStateBackendNames(String... warningStateBackendNames) {

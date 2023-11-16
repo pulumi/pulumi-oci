@@ -67,11 +67,11 @@ export interface GetServiceGatewaysResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The list of service_gateways.
      */
-    readonly serviceGateways: outputs.Core.GetServiceGatewaysServiceGateway[];
+    readonly serviceGateways?: outputs.Core.GetServiceGatewaysServiceGateway[];
     /**
      * The service gateway's current state.
      */

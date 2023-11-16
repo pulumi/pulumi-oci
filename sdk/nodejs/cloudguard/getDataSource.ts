@@ -47,60 +47,60 @@ export interface GetDataSourceResult {
     /**
      * CompartmentId of Data source.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * Details specific to the data source type.
      */
-    readonly dataSourceDetails: outputs.CloudGuard.GetDataSourceDataSourceDetail[];
+    readonly dataSourceDetails?: outputs.CloudGuard.GetDataSourceDataSourceDetail[];
     /**
      * Information about the detector recipe and rule attached
      */
-    readonly dataSourceDetectorMappingInfos: outputs.CloudGuard.GetDataSourceDataSourceDetectorMappingInfo[];
+    readonly dataSourceDetectorMappingInfos?: outputs.CloudGuard.GetDataSourceDataSourceDetectorMappingInfo[];
     /**
      * Possible type of dataSourceFeed Provider(LoggingQuery)
      */
-    readonly dataSourceFeedProvider: string;
+    readonly dataSourceFeedProvider?: string;
     readonly dataSourceId: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * DisplayName of Data source.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * Ocid for Data source
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Information about the region and status of query replication
      */
-    readonly regionStatusDetails: outputs.CloudGuard.GetDataSourceRegionStatusDetail[];
+    readonly regionStatusDetails?: outputs.CloudGuard.GetDataSourceRegionStatusDetail[];
     /**
      * The current state of the resource.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * Status of data Source
      */
-    readonly status: string;
+    readonly status?: string;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    readonly systemTags: {[key: string]: any};
+    readonly systemTags?: {[key: string]: any};
     /**
      * The date and time the Data source was created. Format defined by RFC3339.
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The date and time the Data source was updated. Format defined by RFC3339.
      */
-    readonly timeUpdated: string;
+    readonly timeUpdated?: string;
 }
 /**
  * This data source provides details about a specific Data Source resource in Oracle Cloud Infrastructure Cloud Guard service.

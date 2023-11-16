@@ -21,15 +21,6 @@ class ResourceActionArgs:
                  time_status_end: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a ResourceAction resource.
-        :param pulumi.Input[str] resource_action_id: The unique OCID associated with the resource action.
-        :param pulumi.Input[str] status: (Updatable) The status of the resource action.
-        :param pulumi.Input[str] time_status_end: (Updatable) The date and time the current status will change. The format is defined by RFC3339.
-               
-               For example, "The current `postponed` status of the resource action will end and change to `pending` on this date and time."
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "resource_action_id", resource_action_id)
         pulumi.set(__self__, "status", status)
@@ -39,9 +30,6 @@ class ResourceActionArgs:
     @property
     @pulumi.getter(name="resourceActionId")
     def resource_action_id(self) -> pulumi.Input[str]:
-        """
-        The unique OCID associated with the resource action.
-        """
         return pulumi.get(self, "resource_action_id")
 
     @resource_action_id.setter
@@ -51,9 +39,6 @@ class ResourceActionArgs:
     @property
     @pulumi.getter
     def status(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The status of the resource action.
-        """
         return pulumi.get(self, "status")
 
     @status.setter
@@ -63,15 +48,6 @@ class ResourceActionArgs:
     @property
     @pulumi.getter(name="timeStatusEnd")
     def time_status_end(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The date and time the current status will change. The format is defined by RFC3339.
-
-        For example, "The current `postponed` status of the resource action will end and change to `pending` on this date and time."
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "time_status_end")
 
     @time_status_end.setter
@@ -102,30 +78,6 @@ class _ResourceActionState:
                  time_updated: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering ResourceAction resources.
-        :param pulumi.Input[Sequence[pulumi.Input['ResourceActionActionArgs']]] actions: Details about the recommended action.
-        :param pulumi.Input[str] category_id: The unique OCID associated with the category.
-        :param pulumi.Input[str] compartment_id: The OCID of the compartment.
-        :param pulumi.Input[str] compartment_name: The name associated with the compartment.
-        :param pulumi.Input[float] estimated_cost_saving: The estimated cost savings, in dollars, for the resource action.
-        :param pulumi.Input[Mapping[str, Any]] extended_metadata: Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
-        :param pulumi.Input[Mapping[str, Any]] metadata: Custom metadata key/value pairs for the resource action.
-        :param pulumi.Input[str] name: The name assigned to the resource.
-        :param pulumi.Input[str] recommendation_id: The unique OCID associated with the recommendation.
-        :param pulumi.Input[str] resource_action_id: The unique OCID associated with the resource action.
-        :param pulumi.Input[str] resource_id: The unique OCID associated with the resource.
-        :param pulumi.Input[str] resource_type: The kind of resource.
-        :param pulumi.Input[str] state: The resource action's current state.
-        :param pulumi.Input[str] status: (Updatable) The status of the resource action.
-        :param pulumi.Input[str] time_created: The date and time the resource action details were created, in the format defined by RFC3339.
-        :param pulumi.Input[str] time_status_begin: The date and time that the resource action entered its current status. The format is defined by RFC3339.
-        :param pulumi.Input[str] time_status_end: (Updatable) The date and time the current status will change. The format is defined by RFC3339.
-               
-               For example, "The current `postponed` status of the resource action will end and change to `pending` on this date and time."
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] time_updated: The date and time the resource action details were last updated, in the format defined by RFC3339.
         """
         if actions is not None:
             pulumi.set(__self__, "actions", actions)
@@ -167,9 +119,6 @@ class _ResourceActionState:
     @property
     @pulumi.getter
     def actions(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ResourceActionActionArgs']]]]:
-        """
-        Details about the recommended action.
-        """
         return pulumi.get(self, "actions")
 
     @actions.setter
@@ -179,9 +128,6 @@ class _ResourceActionState:
     @property
     @pulumi.getter(name="categoryId")
     def category_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The unique OCID associated with the category.
-        """
         return pulumi.get(self, "category_id")
 
     @category_id.setter
@@ -191,9 +137,6 @@ class _ResourceActionState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -203,9 +146,6 @@ class _ResourceActionState:
     @property
     @pulumi.getter(name="compartmentName")
     def compartment_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The name associated with the compartment.
-        """
         return pulumi.get(self, "compartment_name")
 
     @compartment_name.setter
@@ -215,9 +155,6 @@ class _ResourceActionState:
     @property
     @pulumi.getter(name="estimatedCostSaving")
     def estimated_cost_saving(self) -> Optional[pulumi.Input[float]]:
-        """
-        The estimated cost savings, in dollars, for the resource action.
-        """
         return pulumi.get(self, "estimated_cost_saving")
 
     @estimated_cost_saving.setter
@@ -227,9 +164,6 @@ class _ResourceActionState:
     @property
     @pulumi.getter(name="extendedMetadata")
     def extended_metadata(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
-        """
         return pulumi.get(self, "extended_metadata")
 
     @extended_metadata.setter
@@ -239,9 +173,6 @@ class _ResourceActionState:
     @property
     @pulumi.getter
     def metadata(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        Custom metadata key/value pairs for the resource action.
-        """
         return pulumi.get(self, "metadata")
 
     @metadata.setter
@@ -251,9 +182,6 @@ class _ResourceActionState:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The name assigned to the resource.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -263,9 +191,6 @@ class _ResourceActionState:
     @property
     @pulumi.getter(name="recommendationId")
     def recommendation_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The unique OCID associated with the recommendation.
-        """
         return pulumi.get(self, "recommendation_id")
 
     @recommendation_id.setter
@@ -275,9 +200,6 @@ class _ResourceActionState:
     @property
     @pulumi.getter(name="resourceActionId")
     def resource_action_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The unique OCID associated with the resource action.
-        """
         return pulumi.get(self, "resource_action_id")
 
     @resource_action_id.setter
@@ -287,9 +209,6 @@ class _ResourceActionState:
     @property
     @pulumi.getter(name="resourceId")
     def resource_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The unique OCID associated with the resource.
-        """
         return pulumi.get(self, "resource_id")
 
     @resource_id.setter
@@ -299,9 +218,6 @@ class _ResourceActionState:
     @property
     @pulumi.getter(name="resourceType")
     def resource_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        The kind of resource.
-        """
         return pulumi.get(self, "resource_type")
 
     @resource_type.setter
@@ -311,9 +227,6 @@ class _ResourceActionState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The resource action's current state.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -323,9 +236,6 @@ class _ResourceActionState:
     @property
     @pulumi.getter
     def status(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The status of the resource action.
-        """
         return pulumi.get(self, "status")
 
     @status.setter
@@ -335,9 +245,6 @@ class _ResourceActionState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time the resource action details were created, in the format defined by RFC3339.
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -347,9 +254,6 @@ class _ResourceActionState:
     @property
     @pulumi.getter(name="timeStatusBegin")
     def time_status_begin(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time that the resource action entered its current status. The format is defined by RFC3339.
-        """
         return pulumi.get(self, "time_status_begin")
 
     @time_status_begin.setter
@@ -359,15 +263,6 @@ class _ResourceActionState:
     @property
     @pulumi.getter(name="timeStatusEnd")
     def time_status_end(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The date and time the current status will change. The format is defined by RFC3339.
-
-        For example, "The current `postponed` status of the resource action will end and change to `pending` on this date and time."
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "time_status_end")
 
     @time_status_end.setter
@@ -377,9 +272,6 @@ class _ResourceActionState:
     @property
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time the resource action details were last updated, in the format defined by RFC3339.
-        """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
@@ -397,34 +289,9 @@ class ResourceAction(pulumi.CustomResource):
                  time_status_end: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Resource Action resource in Oracle Cloud Infrastructure Optimizer service.
-
-        Updates the resource action that corresponds to the specified OCID.
-        Use this operation to implement the following actions:
-
-          * Postpone resource action
-          * Ignore resource action
-          * Reactivate resource action
-
-        ## Import
-
-        ResourceActions can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Optimizer/resourceAction:ResourceAction test_resource_action "id"
-        ```
-
+        Create a ResourceAction resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] resource_action_id: The unique OCID associated with the resource action.
-        :param pulumi.Input[str] status: (Updatable) The status of the resource action.
-        :param pulumi.Input[str] time_status_end: (Updatable) The date and time the current status will change. The format is defined by RFC3339.
-               
-               For example, "The current `postponed` status of the resource action will end and change to `pending` on this date and time."
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -433,23 +300,7 @@ class ResourceAction(pulumi.CustomResource):
                  args: ResourceActionArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Resource Action resource in Oracle Cloud Infrastructure Optimizer service.
-
-        Updates the resource action that corresponds to the specified OCID.
-        Use this operation to implement the following actions:
-
-          * Postpone resource action
-          * Ignore resource action
-          * Reactivate resource action
-
-        ## Import
-
-        ResourceActions can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Optimizer/resourceAction:ResourceAction test_resource_action "id"
-        ```
-
+        Create a ResourceAction resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param ResourceActionArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -534,30 +385,6 @@ class ResourceAction(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ResourceActionActionArgs']]]] actions: Details about the recommended action.
-        :param pulumi.Input[str] category_id: The unique OCID associated with the category.
-        :param pulumi.Input[str] compartment_id: The OCID of the compartment.
-        :param pulumi.Input[str] compartment_name: The name associated with the compartment.
-        :param pulumi.Input[float] estimated_cost_saving: The estimated cost savings, in dollars, for the resource action.
-        :param pulumi.Input[Mapping[str, Any]] extended_metadata: Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
-        :param pulumi.Input[Mapping[str, Any]] metadata: Custom metadata key/value pairs for the resource action.
-        :param pulumi.Input[str] name: The name assigned to the resource.
-        :param pulumi.Input[str] recommendation_id: The unique OCID associated with the recommendation.
-        :param pulumi.Input[str] resource_action_id: The unique OCID associated with the resource action.
-        :param pulumi.Input[str] resource_id: The unique OCID associated with the resource.
-        :param pulumi.Input[str] resource_type: The kind of resource.
-        :param pulumi.Input[str] state: The resource action's current state.
-        :param pulumi.Input[str] status: (Updatable) The status of the resource action.
-        :param pulumi.Input[str] time_created: The date and time the resource action details were created, in the format defined by RFC3339.
-        :param pulumi.Input[str] time_status_begin: The date and time that the resource action entered its current status. The format is defined by RFC3339.
-        :param pulumi.Input[str] time_status_end: (Updatable) The date and time the current status will change. The format is defined by RFC3339.
-               
-               For example, "The current `postponed` status of the resource action will end and change to `pending` on this date and time."
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] time_updated: The date and time the resource action details were last updated, in the format defined by RFC3339.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -585,151 +412,91 @@ class ResourceAction(pulumi.CustomResource):
 
     @property
     @pulumi.getter
-    def actions(self) -> pulumi.Output[Sequence['outputs.ResourceActionAction']]:
-        """
-        Details about the recommended action.
-        """
+    def actions(self) -> pulumi.Output[Optional[Sequence['outputs.ResourceActionAction']]]:
         return pulumi.get(self, "actions")
 
     @property
     @pulumi.getter(name="categoryId")
-    def category_id(self) -> pulumi.Output[str]:
-        """
-        The unique OCID associated with the category.
-        """
+    def category_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "category_id")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> pulumi.Output[str]:
-        """
-        The OCID of the compartment.
-        """
+    def compartment_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="compartmentName")
-    def compartment_name(self) -> pulumi.Output[str]:
-        """
-        The name associated with the compartment.
-        """
+    def compartment_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "compartment_name")
 
     @property
     @pulumi.getter(name="estimatedCostSaving")
-    def estimated_cost_saving(self) -> pulumi.Output[float]:
-        """
-        The estimated cost savings, in dollars, for the resource action.
-        """
+    def estimated_cost_saving(self) -> pulumi.Output[Optional[float]]:
         return pulumi.get(self, "estimated_cost_saving")
 
     @property
     @pulumi.getter(name="extendedMetadata")
-    def extended_metadata(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
-        """
+    def extended_metadata(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "extended_metadata")
 
     @property
     @pulumi.getter
-    def metadata(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        Custom metadata key/value pairs for the resource action.
-        """
+    def metadata(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "metadata")
 
     @property
     @pulumi.getter
-    def name(self) -> pulumi.Output[str]:
-        """
-        The name assigned to the resource.
-        """
+    def name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="recommendationId")
-    def recommendation_id(self) -> pulumi.Output[str]:
-        """
-        The unique OCID associated with the recommendation.
-        """
+    def recommendation_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "recommendation_id")
 
     @property
     @pulumi.getter(name="resourceActionId")
     def resource_action_id(self) -> pulumi.Output[str]:
-        """
-        The unique OCID associated with the resource action.
-        """
         return pulumi.get(self, "resource_action_id")
 
     @property
     @pulumi.getter(name="resourceId")
-    def resource_id(self) -> pulumi.Output[str]:
-        """
-        The unique OCID associated with the resource.
-        """
+    def resource_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "resource_id")
 
     @property
     @pulumi.getter(name="resourceType")
-    def resource_type(self) -> pulumi.Output[str]:
-        """
-        The kind of resource.
-        """
+    def resource_type(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "resource_type")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        The resource action's current state.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter
     def status(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The status of the resource action.
-        """
         return pulumi.get(self, "status")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        The date and time the resource action details were created, in the format defined by RFC3339.
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeStatusBegin")
-    def time_status_begin(self) -> pulumi.Output[str]:
-        """
-        The date and time that the resource action entered its current status. The format is defined by RFC3339.
-        """
+    def time_status_begin(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_status_begin")
 
     @property
     @pulumi.getter(name="timeStatusEnd")
-    def time_status_end(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The date and time the current status will change. The format is defined by RFC3339.
-
-        For example, "The current `postponed` status of the resource action will end and change to `pending` on this date and time."
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
+    def time_status_end(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_status_end")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> pulumi.Output[str]:
-        """
-        The date and time the resource action details were last updated, in the format defined by RFC3339.
-        """
+    def time_updated(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_updated")
 

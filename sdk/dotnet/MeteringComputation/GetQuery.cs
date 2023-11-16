@@ -110,11 +110,11 @@ namespace Pulumi.Oci.MeteringComputation
         /// <summary>
         /// The compartment OCID.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// The query OCID.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The common fields for queries.
         /// </summary>
@@ -123,9 +123,9 @@ namespace Pulumi.Oci.MeteringComputation
 
         [OutputConstructor]
         private GetQueryResult(
-            string compartmentId,
+            string? compartmentId,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetQueryQueryDefinitionResult> queryDefinitions,
 

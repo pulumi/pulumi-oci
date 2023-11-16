@@ -20,9 +20,6 @@ class GetOceInstancesFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: OceInstance Name
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -31,9 +28,6 @@ class GetOceInstancesFilterResult(dict):
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        OceInstance Name
-        """
         return pulumi.get(self, "name")
 
     @property
@@ -50,300 +44,221 @@ class GetOceInstancesFilterResult(dict):
 @pulumi.output_type
 class GetOceInstancesOceInstanceResult(dict):
     def __init__(__self__, *,
-                 add_on_features: Sequence[str],
-                 admin_email: str,
-                 compartment_id: str,
-                 defined_tags: Mapping[str, Any],
-                 description: str,
-                 dr_region: str,
-                 freeform_tags: Mapping[str, Any],
-                 guid: str,
-                 id: str,
-                 idcs_access_token: str,
-                 idcs_tenancy: str,
-                 instance_access_type: str,
-                 instance_license_type: str,
-                 instance_usage_type: str,
-                 lifecycle_details: str,
-                 name: str,
-                 object_storage_namespace: str,
-                 service: Mapping[str, Any],
-                 state: str,
-                 state_message: str,
-                 system_tags: Mapping[str, Any],
-                 tenancy_id: str,
-                 tenancy_name: str,
-                 time_created: str,
-                 time_updated: str,
-                 upgrade_schedule: str,
-                 waf_primary_domain: str):
-        """
-        :param Sequence[str] add_on_features: a list of add-on features for the ocm instance
-        :param str admin_email: Admin Email for Notification
-        :param str compartment_id: The ID of the compartment in which to list resources.
-        :param Mapping[str, Any] defined_tags: Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-        :param str description: OceInstance description, can be updated
-        :param str dr_region: disaster recovery paired ragion name
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param str guid: Unique GUID identifier that is immutable on creation
-        :param str id: Unique identifier that is immutable on creation
-        :param str idcs_tenancy: IDCS Tenancy Identifier
-        :param str instance_access_type: Flag indicating whether the instance access is private or public
-        :param str instance_license_type: Flag indicating whether the instance license is new cloud or bring your own license
-        :param str instance_usage_type: Instance type based on its usage
-        :param str lifecycle_details: Details of the current state of the instance lifecycle
-        :param str name: OceInstance Name
-        :param str object_storage_namespace: Object Storage Namespace of tenancy
-        :param Mapping[str, Any] service: SERVICE data. Example: `{"service": {"IDCS": "value"}}`
-        :param str state: Filter results on lifecycleState.
-        :param str state_message: An message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param str tenancy_id: The ID of the tenancy in which to list resources.
-        :param str tenancy_name: Tenancy Name
-        :param str time_created: The time the the OceInstance was created. An RFC3339 formatted datetime string
-        :param str time_updated: The time the OceInstance was updated. An RFC3339 formatted datetime string
-        :param str upgrade_schedule: Upgrade schedule type representing service to be upgraded immediately whenever latest version is released or delay upgrade of the service to previous released version
-        :param str waf_primary_domain: Web Application Firewall(WAF) primary domain
-        """
-        pulumi.set(__self__, "add_on_features", add_on_features)
-        pulumi.set(__self__, "admin_email", admin_email)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "dr_region", dr_region)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "guid", guid)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "idcs_access_token", idcs_access_token)
-        pulumi.set(__self__, "idcs_tenancy", idcs_tenancy)
-        pulumi.set(__self__, "instance_access_type", instance_access_type)
-        pulumi.set(__self__, "instance_license_type", instance_license_type)
-        pulumi.set(__self__, "instance_usage_type", instance_usage_type)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "object_storage_namespace", object_storage_namespace)
-        pulumi.set(__self__, "service", service)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "state_message", state_message)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "tenancy_id", tenancy_id)
-        pulumi.set(__self__, "tenancy_name", tenancy_name)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
-        pulumi.set(__self__, "upgrade_schedule", upgrade_schedule)
-        pulumi.set(__self__, "waf_primary_domain", waf_primary_domain)
+                 add_on_features: Optional[Sequence[str]] = None,
+                 admin_email: Optional[str] = None,
+                 compartment_id: Optional[str] = None,
+                 defined_tags: Optional[Mapping[str, Any]] = None,
+                 description: Optional[str] = None,
+                 dr_region: Optional[str] = None,
+                 freeform_tags: Optional[Mapping[str, Any]] = None,
+                 guid: Optional[str] = None,
+                 id: Optional[str] = None,
+                 idcs_access_token: Optional[str] = None,
+                 idcs_tenancy: Optional[str] = None,
+                 instance_access_type: Optional[str] = None,
+                 instance_license_type: Optional[str] = None,
+                 instance_usage_type: Optional[str] = None,
+                 lifecycle_details: Optional[str] = None,
+                 name: Optional[str] = None,
+                 object_storage_namespace: Optional[str] = None,
+                 service: Optional[Mapping[str, Any]] = None,
+                 state: Optional[str] = None,
+                 state_message: Optional[str] = None,
+                 system_tags: Optional[Mapping[str, Any]] = None,
+                 tenancy_id: Optional[str] = None,
+                 tenancy_name: Optional[str] = None,
+                 time_created: Optional[str] = None,
+                 time_updated: Optional[str] = None,
+                 upgrade_schedule: Optional[str] = None,
+                 waf_primary_domain: Optional[str] = None):
+        if add_on_features is not None:
+            pulumi.set(__self__, "add_on_features", add_on_features)
+        if admin_email is not None:
+            pulumi.set(__self__, "admin_email", admin_email)
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if dr_region is not None:
+            pulumi.set(__self__, "dr_region", dr_region)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if guid is not None:
+            pulumi.set(__self__, "guid", guid)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if idcs_access_token is not None:
+            pulumi.set(__self__, "idcs_access_token", idcs_access_token)
+        if idcs_tenancy is not None:
+            pulumi.set(__self__, "idcs_tenancy", idcs_tenancy)
+        if instance_access_type is not None:
+            pulumi.set(__self__, "instance_access_type", instance_access_type)
+        if instance_license_type is not None:
+            pulumi.set(__self__, "instance_license_type", instance_license_type)
+        if instance_usage_type is not None:
+            pulumi.set(__self__, "instance_usage_type", instance_usage_type)
+        if lifecycle_details is not None:
+            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if object_storage_namespace is not None:
+            pulumi.set(__self__, "object_storage_namespace", object_storage_namespace)
+        if service is not None:
+            pulumi.set(__self__, "service", service)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if state_message is not None:
+            pulumi.set(__self__, "state_message", state_message)
+        if system_tags is not None:
+            pulumi.set(__self__, "system_tags", system_tags)
+        if tenancy_id is not None:
+            pulumi.set(__self__, "tenancy_id", tenancy_id)
+        if tenancy_name is not None:
+            pulumi.set(__self__, "tenancy_name", tenancy_name)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if time_updated is not None:
+            pulumi.set(__self__, "time_updated", time_updated)
+        if upgrade_schedule is not None:
+            pulumi.set(__self__, "upgrade_schedule", upgrade_schedule)
+        if waf_primary_domain is not None:
+            pulumi.set(__self__, "waf_primary_domain", waf_primary_domain)
 
     @property
     @pulumi.getter(name="addOnFeatures")
-    def add_on_features(self) -> Sequence[str]:
-        """
-        a list of add-on features for the ocm instance
-        """
+    def add_on_features(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "add_on_features")
 
     @property
     @pulumi.getter(name="adminEmail")
-    def admin_email(self) -> str:
-        """
-        Admin Email for Notification
-        """
+    def admin_email(self) -> Optional[str]:
         return pulumi.get(self, "admin_email")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The ID of the compartment in which to list resources.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        OceInstance description, can be updated
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="drRegion")
-    def dr_region(self) -> str:
-        """
-        disaster recovery paired ragion name
-        """
+    def dr_region(self) -> Optional[str]:
         return pulumi.get(self, "dr_region")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def guid(self) -> str:
-        """
-        Unique GUID identifier that is immutable on creation
-        """
+    def guid(self) -> Optional[str]:
         return pulumi.get(self, "guid")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        Unique identifier that is immutable on creation
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="idcsAccessToken")
-    def idcs_access_token(self) -> str:
+    def idcs_access_token(self) -> Optional[str]:
         return pulumi.get(self, "idcs_access_token")
 
     @property
     @pulumi.getter(name="idcsTenancy")
-    def idcs_tenancy(self) -> str:
-        """
-        IDCS Tenancy Identifier
-        """
+    def idcs_tenancy(self) -> Optional[str]:
         return pulumi.get(self, "idcs_tenancy")
 
     @property
     @pulumi.getter(name="instanceAccessType")
-    def instance_access_type(self) -> str:
-        """
-        Flag indicating whether the instance access is private or public
-        """
+    def instance_access_type(self) -> Optional[str]:
         return pulumi.get(self, "instance_access_type")
 
     @property
     @pulumi.getter(name="instanceLicenseType")
-    def instance_license_type(self) -> str:
-        """
-        Flag indicating whether the instance license is new cloud or bring your own license
-        """
+    def instance_license_type(self) -> Optional[str]:
         return pulumi.get(self, "instance_license_type")
 
     @property
     @pulumi.getter(name="instanceUsageType")
-    def instance_usage_type(self) -> str:
-        """
-        Instance type based on its usage
-        """
+    def instance_usage_type(self) -> Optional[str]:
         return pulumi.get(self, "instance_usage_type")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        Details of the current state of the instance lifecycle
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        OceInstance Name
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="objectStorageNamespace")
-    def object_storage_namespace(self) -> str:
-        """
-        Object Storage Namespace of tenancy
-        """
+    def object_storage_namespace(self) -> Optional[str]:
         return pulumi.get(self, "object_storage_namespace")
 
     @property
     @pulumi.getter
-    def service(self) -> Mapping[str, Any]:
-        """
-        SERVICE data. Example: `{"service": {"IDCS": "value"}}`
-        """
+    def service(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "service")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        Filter results on lifecycleState.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="stateMessage")
-    def state_message(self) -> str:
-        """
-        An message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        """
+    def state_message(self) -> Optional[str]:
         return pulumi.get(self, "state_message")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="tenancyId")
-    def tenancy_id(self) -> str:
-        """
-        The ID of the tenancy in which to list resources.
-        """
+    def tenancy_id(self) -> Optional[str]:
         return pulumi.get(self, "tenancy_id")
 
     @property
     @pulumi.getter(name="tenancyName")
-    def tenancy_name(self) -> str:
-        """
-        Tenancy Name
-        """
+    def tenancy_name(self) -> Optional[str]:
         return pulumi.get(self, "tenancy_name")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The time the the OceInstance was created. An RFC3339 formatted datetime string
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The time the OceInstance was updated. An RFC3339 formatted datetime string
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
     @property
     @pulumi.getter(name="upgradeSchedule")
-    def upgrade_schedule(self) -> str:
-        """
-        Upgrade schedule type representing service to be upgraded immediately whenever latest version is released or delay upgrade of the service to previous released version
-        """
+    def upgrade_schedule(self) -> Optional[str]:
         return pulumi.get(self, "upgrade_schedule")
 
     @property
     @pulumi.getter(name="wafPrimaryDomain")
-    def waf_primary_domain(self) -> str:
-        """
-        Web Application Firewall(WAF) primary domain
-        """
+    def waf_primary_domain(self) -> Optional[str]:
         return pulumi.get(self, "waf_primary_domain")
 
 

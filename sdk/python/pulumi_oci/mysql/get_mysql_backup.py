@@ -91,154 +91,97 @@ class GetMysqlBackupResult:
 
     @property
     @pulumi.getter(name="backupSizeInGbs")
-    def backup_size_in_gbs(self) -> int:
-        """
-        The size of the backup in base-2 (IEC) gibibytes. (GiB).
-        """
+    def backup_size_in_gbs(self) -> Optional[int]:
         return pulumi.get(self, "backup_size_in_gbs")
 
     @property
     @pulumi.getter(name="backupType")
-    def backup_type(self) -> str:
-        """
-        The type of backup.
-        """
+    def backup_type(self) -> Optional[str]:
         return pulumi.get(self, "backup_type")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The OCID of the compartment the DB System belongs in.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="creationType")
-    def creation_type(self) -> str:
-        """
-        Indicates how the backup was created: manually, automatic, or by an Operator.
-        """
+    def creation_type(self) -> Optional[str]:
         return pulumi.get(self, "creation_type")
 
     @property
     @pulumi.getter(name="dataStorageSizeInGb")
-    def data_storage_size_in_gb(self) -> int:
-        """
-        Initial size of the data volume in GiBs that will be created and attached.
-        """
+    def data_storage_size_in_gb(self) -> Optional[int]:
         return pulumi.get(self, "data_storage_size_in_gb")
 
     @property
     @pulumi.getter(name="dbSystemId")
-    def db_system_id(self) -> str:
-        """
-        The OCID of the DB System the backup is associated with.
-        """
+    def db_system_id(self) -> Optional[str]:
         return pulumi.get(self, "db_system_id")
 
     @property
     @pulumi.getter(name="dbSystemSnapshots")
-    def db_system_snapshots(self) -> Sequence['outputs.GetMysqlBackupDbSystemSnapshotResult']:
-        """
-        Snapshot of the DbSystem details at the time of the backup
-        """
+    def db_system_snapshots(self) -> Optional[Sequence['outputs.GetMysqlBackupDbSystemSnapshotResult']]:
         return pulumi.get(self, "db_system_snapshots")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        A user-supplied description for the backup.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A user-supplied display name for the backup.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        OCID of the backup itself
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        Additional information about the current lifecycleState.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="mysqlVersion")
-    def mysql_version(self) -> str:
-        """
-        The MySQL server version of the DB System used for backup.
-        """
+    def mysql_version(self) -> Optional[str]:
         return pulumi.get(self, "mysql_version")
 
     @property
     @pulumi.getter(name="retentionInDays")
-    def retention_in_days(self) -> int:
-        """
-        Number of days to retain this backup.
-        """
+    def retention_in_days(self) -> Optional[int]:
         return pulumi.get(self, "retention_in_days")
 
     @property
     @pulumi.getter(name="shapeName")
-    def shape_name(self) -> str:
-        """
-        The shape of the DB System instance used for backup.
-        """
+    def shape_name(self) -> Optional[str]:
         return pulumi.get(self, "shape_name")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The state of the backup.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The time the backup record was created.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The time at which the backup was updated.
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
 
@@ -273,21 +216,7 @@ class AwaitableGetMysqlBackupResult(GetMysqlBackupResult):
 def get_mysql_backup(backup_id: Optional[str] = None,
                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetMysqlBackupResult:
     """
-    This data source provides details about a specific Mysql Backup resource in Oracle Cloud Infrastructure MySQL Database service.
-
-    Get information about the specified Backup
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_mysql_backup = oci.Mysql.get_mysql_backup(backup_id=oci_mysql_mysql_backup["test_backup"]["id"])
-    ```
-
-
-    :param str backup_id: The OCID of the Backup
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['backupId'] = backup_id
@@ -321,20 +250,6 @@ def get_mysql_backup(backup_id: Optional[str] = None,
 def get_mysql_backup_output(backup_id: Optional[pulumi.Input[str]] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetMysqlBackupResult]:
     """
-    This data source provides details about a specific Mysql Backup resource in Oracle Cloud Infrastructure MySQL Database service.
-
-    Get information about the specified Backup
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_mysql_backup = oci.Mysql.get_mysql_backup(backup_id=oci_mysql_mysql_backup["test_backup"]["id"])
-    ```
-
-
-    :param str backup_id: The OCID of the Backup
+    Use this data source to access information about an existing resource.
     """
     ...

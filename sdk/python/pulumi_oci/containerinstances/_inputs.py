@@ -20,9 +20,6 @@ class GetContainerInstanceShapesFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: The name identifying the shape.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -31,9 +28,6 @@ class GetContainerInstanceShapesFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        The name identifying the shape.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -65,9 +59,6 @@ class GetContainerInstancesFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: The name of the volume. This must be unique within a single container instance.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -76,9 +67,6 @@ class GetContainerInstancesFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        The name of the volume. This must be unique within a single container instance.
-        """
         return pulumi.get(self, "name")
 
     @name.setter

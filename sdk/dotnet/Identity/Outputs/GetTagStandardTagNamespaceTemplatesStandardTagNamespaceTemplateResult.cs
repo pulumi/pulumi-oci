@@ -16,23 +16,23 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// The default description of the tag namespace that users can use to create the tag namespace
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// The reserved name of this standard tag namespace
         /// </summary>
-        public readonly string StandardTagNamespaceName;
+        public readonly string? StandardTagNamespaceName;
         /// <summary>
         /// The status of the standard tag namespace
         /// </summary>
-        public readonly string Status;
+        public readonly string? Status;
 
         [OutputConstructor]
         private GetTagStandardTagNamespaceTemplatesStandardTagNamespaceTemplateResult(
-            string description,
+            string? description,
 
-            string standardTagNamespaceName,
+            string? standardTagNamespaceName,
 
-            string status)
+            string? status)
         {
             Description = description;
             StandardTagNamespaceName = standardTagNamespaceName;

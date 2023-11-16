@@ -159,7 +159,7 @@ namespace Pulumi.Oci.Logging
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         public readonly string? LogSavedSearchId;
         /// <summary>
         /// The list of log_saved_search_summary_collection.
@@ -176,7 +176,7 @@ namespace Pulumi.Oci.Logging
 
             ImmutableArray<Outputs.GetLogSavedSearchesFilterResult> filters,
 
-            string id,
+            string? id,
 
             string? logSavedSearchId,
 

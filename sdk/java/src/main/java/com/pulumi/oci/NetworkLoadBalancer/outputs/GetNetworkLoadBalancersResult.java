@@ -29,12 +29,12 @@ public final class GetNetworkLoadBalancersResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The list of network_load_balancer_collection.
      * 
      */
-    private List<GetNetworkLoadBalancersNetworkLoadBalancerCollection> networkLoadBalancerCollections;
+    private @Nullable List<GetNetworkLoadBalancersNetworkLoadBalancerCollection> networkLoadBalancerCollections;
     /**
      * @return The current state of the network load balancer.
      * 
@@ -63,15 +63,15 @@ public final class GetNetworkLoadBalancersResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The list of network_load_balancer_collection.
      * 
      */
     public List<GetNetworkLoadBalancersNetworkLoadBalancerCollection> networkLoadBalancerCollections() {
-        return this.networkLoadBalancerCollections;
+        return this.networkLoadBalancerCollections == null ? List.of() : this.networkLoadBalancerCollections;
     }
     /**
      * @return The current state of the network load balancer.
@@ -93,8 +93,8 @@ public final class GetNetworkLoadBalancersResult {
         private String compartmentId;
         private @Nullable String displayName;
         private @Nullable List<GetNetworkLoadBalancersFilter> filters;
-        private String id;
-        private List<GetNetworkLoadBalancersNetworkLoadBalancerCollection> networkLoadBalancerCollections;
+        private @Nullable String id;
+        private @Nullable List<GetNetworkLoadBalancersNetworkLoadBalancerCollection> networkLoadBalancerCollections;
         private @Nullable String state;
         public Builder() {}
         public Builder(GetNetworkLoadBalancersResult defaults) {
@@ -126,13 +126,13 @@ public final class GetNetworkLoadBalancersResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder networkLoadBalancerCollections(List<GetNetworkLoadBalancersNetworkLoadBalancerCollection> networkLoadBalancerCollections) {
-            this.networkLoadBalancerCollections = Objects.requireNonNull(networkLoadBalancerCollections);
+        public Builder networkLoadBalancerCollections(@Nullable List<GetNetworkLoadBalancersNetworkLoadBalancerCollection> networkLoadBalancerCollections) {
+            this.networkLoadBalancerCollections = networkLoadBalancerCollections;
             return this;
         }
         public Builder networkLoadBalancerCollections(GetNetworkLoadBalancersNetworkLoadBalancerCollection... networkLoadBalancerCollections) {

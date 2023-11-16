@@ -31,7 +31,7 @@ class GetReportContentResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -56,21 +56,7 @@ class AwaitableGetReportContentResult(GetReportContentResult):
 def get_report_content(report_id: Optional[str] = None,
                        opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetReportContentResult:
     """
-    This data source provides details about a specific Report Content resource in Oracle Cloud Infrastructure Data Safe service.
-
-    Downloads the specified report in the form of PDF or XLXS.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_report_content = oci.DataSafe.get_report_content(report_id=oci_data_safe_report["test_report"]["id"])
-    ```
-
-
-    :param str report_id: Unique report identifier
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['reportId'] = report_id
@@ -86,20 +72,6 @@ def get_report_content(report_id: Optional[str] = None,
 def get_report_content_output(report_id: Optional[pulumi.Input[str]] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetReportContentResult]:
     """
-    This data source provides details about a specific Report Content resource in Oracle Cloud Infrastructure Data Safe service.
-
-    Downloads the specified report in the form of PDF or XLXS.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_report_content = oci.DataSafe.get_report_content(report_id=oci_data_safe_report["test_report"]["id"])
-    ```
-
-
-    :param str report_id: Unique report identifier
+    Use this data source to access information about an existing resource.
     """
     ...

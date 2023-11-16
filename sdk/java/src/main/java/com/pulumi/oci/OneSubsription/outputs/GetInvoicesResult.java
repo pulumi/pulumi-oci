@@ -22,12 +22,12 @@ public final class GetInvoicesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The list of invoices.
      * 
      */
-    private List<GetInvoicesInvoice> invoices;
+    private @Nullable List<GetInvoicesInvoice> invoices;
     private @Nullable String timeFrom;
     private @Nullable String timeTo;
 
@@ -48,15 +48,15 @@ public final class GetInvoicesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The list of invoices.
      * 
      */
     public List<GetInvoicesInvoice> invoices() {
-        return this.invoices;
+        return this.invoices == null ? List.of() : this.invoices;
     }
     public Optional<String> timeFrom() {
         return Optional.ofNullable(this.timeFrom);
@@ -78,8 +78,8 @@ public final class GetInvoicesResult {
         private String compartmentId;
         private @Nullable List<String> fields;
         private @Nullable List<GetInvoicesFilter> filters;
-        private String id;
-        private List<GetInvoicesInvoice> invoices;
+        private @Nullable String id;
+        private @Nullable List<GetInvoicesInvoice> invoices;
         private @Nullable String timeFrom;
         private @Nullable String timeTo;
         public Builder() {}
@@ -122,13 +122,13 @@ public final class GetInvoicesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder invoices(List<GetInvoicesInvoice> invoices) {
-            this.invoices = Objects.requireNonNull(invoices);
+        public Builder invoices(@Nullable List<GetInvoicesInvoice> invoices) {
+            this.invoices = invoices;
             return this;
         }
         public Builder invoices(GetInvoicesInvoice... invoices) {

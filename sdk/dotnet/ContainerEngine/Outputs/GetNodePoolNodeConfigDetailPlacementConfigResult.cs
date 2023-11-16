@@ -16,11 +16,11 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
         /// <summary>
         /// The name of the availability domain in which this node is placed.
         /// </summary>
-        public readonly string AvailabilityDomain;
+        public readonly string? AvailabilityDomain;
         /// <summary>
         /// The OCID of the compute capacity reservation in which to place the compute instance.
         /// </summary>
-        public readonly string CapacityReservationId;
+        public readonly string? CapacityReservationId;
         /// <summary>
         /// A list of fault domains in which to place nodes.
         /// </summary>
@@ -32,19 +32,19 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
         /// <summary>
         /// The OCID of the subnet in which this node is placed.
         /// </summary>
-        public readonly string SubnetId;
+        public readonly string? SubnetId;
 
         [OutputConstructor]
         private GetNodePoolNodeConfigDetailPlacementConfigResult(
-            string availabilityDomain,
+            string? availabilityDomain,
 
-            string capacityReservationId,
+            string? capacityReservationId,
 
             ImmutableArray<string> faultDomains,
 
             ImmutableArray<Outputs.GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigResult> preemptibleNodeConfigs,
 
-            string subnetId)
+            string? subnetId)
         {
             AvailabilityDomain = availabilityDomain;
             CapacityReservationId = capacityReservationId;

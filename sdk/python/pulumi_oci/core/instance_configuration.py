@@ -25,20 +25,6 @@ class InstanceConfigurationArgs:
                  source: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a InstanceConfiguration resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment containing images to search
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] instance_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance to use to create the instance configuration.
-        :param pulumi.Input[str] source: The source of the instance configuration. An instance configuration defines the settings to use when creating Compute instances, including details such as the base image, shape, and metadata. You can also specify the associated resources for the instance, such as block volume attachments and network configuration.
-               
-               When you create an instance configuration using an existing instance as a template, the instance configuration does not include any information from the source instance's boot volume, such as installed applications, binaries, and files on the instance. It also does not include the contents of any block volumes that are attached to the instance.
-               
-               To create an instance configuration that includes the custom setup from an instance's boot volume, you must first create a custom image from the instance (see [CreateImage](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Image/CreateImage)). Then, use the custom image to launch a new instance (see [LaunchInstance](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Instance/LaunchInstance)). Finally, create the instance configuration based on the instance that you created from the custom image.
-               
-               To include block volume contents with an instance configuration, first create a backup of the attached block volumes (see [CreateVolumeBackup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/VolumeBackup/CreateVolumeBackup)). Then, create the instance configuration by specifying the list of settings, using [InstanceConfigurationVolumeSourceFromVolumeBackupDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationVolumeSourceFromVolumeBackupDetails) to include the block volume backups in the list of settings.
-               
-               The following values are supported:
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         if defined_tags is not None:
@@ -57,9 +43,6 @@ class InstanceConfigurationArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The OCID of the compartment containing images to search
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -69,9 +52,6 @@ class InstanceConfigurationArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -81,9 +61,6 @@ class InstanceConfigurationArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -93,9 +70,6 @@ class InstanceConfigurationArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -114,9 +88,6 @@ class InstanceConfigurationArgs:
     @property
     @pulumi.getter(name="instanceId")
     def instance_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance to use to create the instance configuration.
-        """
         return pulumi.get(self, "instance_id")
 
     @instance_id.setter
@@ -126,17 +97,6 @@ class InstanceConfigurationArgs:
     @property
     @pulumi.getter
     def source(self) -> Optional[pulumi.Input[str]]:
-        """
-        The source of the instance configuration. An instance configuration defines the settings to use when creating Compute instances, including details such as the base image, shape, and metadata. You can also specify the associated resources for the instance, such as block volume attachments and network configuration.
-
-        When you create an instance configuration using an existing instance as a template, the instance configuration does not include any information from the source instance's boot volume, such as installed applications, binaries, and files on the instance. It also does not include the contents of any block volumes that are attached to the instance.
-
-        To create an instance configuration that includes the custom setup from an instance's boot volume, you must first create a custom image from the instance (see [CreateImage](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Image/CreateImage)). Then, use the custom image to launch a new instance (see [LaunchInstance](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Instance/LaunchInstance)). Finally, create the instance configuration based on the instance that you created from the custom image.
-
-        To include block volume contents with an instance configuration, first create a backup of the attached block volumes (see [CreateVolumeBackup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/VolumeBackup/CreateVolumeBackup)). Then, create the instance configuration by specifying the list of settings, using [InstanceConfigurationVolumeSourceFromVolumeBackupDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationVolumeSourceFromVolumeBackupDetails) to include the block volume backups in the list of settings.
-
-        The following values are supported:
-        """
         return pulumi.get(self, "source")
 
     @source.setter
@@ -158,22 +118,6 @@ class _InstanceConfigurationState:
                  time_created: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering InstanceConfiguration resources.
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment containing images to search
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] deferred_fields: Parameters that were not specified when the instance configuration was created, but that are required to launch an instance from the instance configuration. See the [LaunchInstanceConfiguration](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Instance/LaunchInstanceConfiguration) operation.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] instance_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance to use to create the instance configuration.
-        :param pulumi.Input[str] source: The source of the instance configuration. An instance configuration defines the settings to use when creating Compute instances, including details such as the base image, shape, and metadata. You can also specify the associated resources for the instance, such as block volume attachments and network configuration.
-               
-               When you create an instance configuration using an existing instance as a template, the instance configuration does not include any information from the source instance's boot volume, such as installed applications, binaries, and files on the instance. It also does not include the contents of any block volumes that are attached to the instance.
-               
-               To create an instance configuration that includes the custom setup from an instance's boot volume, you must first create a custom image from the instance (see [CreateImage](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Image/CreateImage)). Then, use the custom image to launch a new instance (see [LaunchInstance](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Instance/LaunchInstance)). Finally, create the instance configuration based on the instance that you created from the custom image.
-               
-               To include block volume contents with an instance configuration, first create a backup of the attached block volumes (see [CreateVolumeBackup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/VolumeBackup/CreateVolumeBackup)). Then, create the instance configuration by specifying the list of settings, using [InstanceConfigurationVolumeSourceFromVolumeBackupDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationVolumeSourceFromVolumeBackupDetails) to include the block volume backups in the list of settings.
-               
-               The following values are supported:
-        :param pulumi.Input[str] time_created: The date and time the instance configuration was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
@@ -197,9 +141,6 @@ class _InstanceConfigurationState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The OCID of the compartment containing images to search
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -209,9 +150,6 @@ class _InstanceConfigurationState:
     @property
     @pulumi.getter(name="deferredFields")
     def deferred_fields(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        Parameters that were not specified when the instance configuration was created, but that are required to launch an instance from the instance configuration. See the [LaunchInstanceConfiguration](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Instance/LaunchInstanceConfiguration) operation.
-        """
         return pulumi.get(self, "deferred_fields")
 
     @deferred_fields.setter
@@ -221,9 +159,6 @@ class _InstanceConfigurationState:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -233,9 +168,6 @@ class _InstanceConfigurationState:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -245,9 +177,6 @@ class _InstanceConfigurationState:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -266,9 +195,6 @@ class _InstanceConfigurationState:
     @property
     @pulumi.getter(name="instanceId")
     def instance_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance to use to create the instance configuration.
-        """
         return pulumi.get(self, "instance_id")
 
     @instance_id.setter
@@ -278,17 +204,6 @@ class _InstanceConfigurationState:
     @property
     @pulumi.getter
     def source(self) -> Optional[pulumi.Input[str]]:
-        """
-        The source of the instance configuration. An instance configuration defines the settings to use when creating Compute instances, including details such as the base image, shape, and metadata. You can also specify the associated resources for the instance, such as block volume attachments and network configuration.
-
-        When you create an instance configuration using an existing instance as a template, the instance configuration does not include any information from the source instance's boot volume, such as installed applications, binaries, and files on the instance. It also does not include the contents of any block volumes that are attached to the instance.
-
-        To create an instance configuration that includes the custom setup from an instance's boot volume, you must first create a custom image from the instance (see [CreateImage](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Image/CreateImage)). Then, use the custom image to launch a new instance (see [LaunchInstance](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Instance/LaunchInstance)). Finally, create the instance configuration based on the instance that you created from the custom image.
-
-        To include block volume contents with an instance configuration, first create a backup of the attached block volumes (see [CreateVolumeBackup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/VolumeBackup/CreateVolumeBackup)). Then, create the instance configuration by specifying the list of settings, using [InstanceConfigurationVolumeSourceFromVolumeBackupDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationVolumeSourceFromVolumeBackupDetails) to include the block volume backups in the list of settings.
-
-        The following values are supported:
-        """
         return pulumi.get(self, "source")
 
     @source.setter
@@ -298,9 +213,6 @@ class _InstanceConfigurationState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time the instance configuration was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -322,390 +234,9 @@ class InstanceConfiguration(pulumi.CustomResource):
                  source: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Instance Configuration resource in Oracle Cloud Infrastructure Core service.
-
-        Creates an instance configuration. An instance configuration is a template that defines the
-        settings to use when creating Compute instances.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_instance_configuration = oci.core.InstanceConfiguration("testInstanceConfiguration",
-            compartment_id=var["compartment_id"],
-            defined_tags={
-                "Operations.CostCenter": "42",
-            },
-            display_name=var["instance_configuration_display_name"],
-            freeform_tags={
-                "Department": "Finance",
-            },
-            instance_details=oci.core.InstanceConfigurationInstanceDetailsArgs(
-                instance_type=var["instance_configuration_instance_details_instance_type"],
-                block_volumes=[oci.core.InstanceConfigurationInstanceDetailsBlockVolumeArgs(
-                    attach_details=oci.core.InstanceConfigurationInstanceDetailsBlockVolumeAttachDetailsArgs(
-                        type=var["instance_configuration_instance_details_block_volumes_attach_details_type"],
-                        device=var["instance_configuration_instance_details_block_volumes_attach_details_device"],
-                        display_name=var["instance_configuration_instance_details_block_volumes_attach_details_display_name"],
-                        is_pv_encryption_in_transit_enabled=var["instance_configuration_instance_details_block_volumes_attach_details_is_pv_encryption_in_transit_enabled"],
-                        is_read_only=var["instance_configuration_instance_details_block_volumes_attach_details_is_read_only"],
-                        is_shareable=var["instance_configuration_instance_details_block_volumes_attach_details_is_shareable"],
-                        use_chap=var["instance_configuration_instance_details_block_volumes_attach_details_use_chap"],
-                    ),
-                    create_details=oci.core.InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsArgs(
-                        autotune_policies=[oci.core.InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsAutotunePolicyArgs(
-                            autotune_type=var["instance_configuration_instance_details_block_volumes_create_details_autotune_policies_autotune_type"],
-                            max_vpus_per_gb=var["instance_configuration_instance_details_block_volumes_create_details_autotune_policies_max_vpus_per_gb"],
-                        )],
-                        availability_domain=var["instance_configuration_instance_details_block_volumes_create_details_availability_domain"],
-                        backup_policy_id=data["oci_core_volume_backup_policies"]["test_volume_backup_policies"]["volume_backup_policies"][0]["id"],
-                        block_volume_replicas=oci.core.InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsBlockVolumeReplicasArgs(
-                            availability_domain=var["instance_configuration_instance_details_block_volumes_create_details_block_volume_replicas_availability_domain"],
-                            display_name=var["instance_configuration_instance_details_block_volumes_create_details_block_volume_replicas_display_name"],
-                        ),
-                        compartment_id=var["compartment_id"],
-                        defined_tags={
-                            "Operations.CostCenter": "42",
-                        },
-                        display_name=var["instance_configuration_instance_details_block_volumes_create_details_display_name"],
-                        freeform_tags={
-                            "Department": "Finance",
-                        },
-                        is_auto_tune_enabled=var["instance_configuration_instance_details_block_volumes_create_details_is_auto_tune_enabled"],
-                        kms_key_id=oci_kms_key["test_key"]["id"],
-                        size_in_gbs=var["instance_configuration_instance_details_block_volumes_create_details_size_in_gbs"],
-                        source_details=oci.core.InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsSourceDetailsArgs(
-                            type=var["instance_configuration_instance_details_block_volumes_create_details_source_details_type"],
-                            id=var["instance_configuration_instance_details_block_volumes_create_details_source_details_id"],
-                        ),
-                        vpus_per_gb=var["instance_configuration_instance_details_block_volumes_create_details_vpus_per_gb"],
-                    ),
-                    volume_id=oci_core_volume["test_volume"]["id"],
-                )],
-                launch_details=oci.core.InstanceConfigurationInstanceDetailsLaunchDetailsArgs(
-                    agent_config=oci.core.InstanceConfigurationInstanceDetailsLaunchDetailsAgentConfigArgs(
-                        are_all_plugins_disabled=var["instance_configuration_instance_details_launch_details_agent_config_are_all_plugins_disabled"],
-                        is_management_disabled=var["instance_configuration_instance_details_launch_details_agent_config_is_management_disabled"],
-                        is_monitoring_disabled=var["instance_configuration_instance_details_launch_details_agent_config_is_monitoring_disabled"],
-                        plugins_configs=[oci.core.InstanceConfigurationInstanceDetailsLaunchDetailsAgentConfigPluginsConfigArgs(
-                            desired_state=var["instance_configuration_instance_details_launch_details_agent_config_plugins_config_desired_state"],
-                            name=var["instance_configuration_instance_details_launch_details_agent_config_plugins_config_name"],
-                        )],
-                    ),
-                    availability_config=oci.core.InstanceConfigurationInstanceDetailsLaunchDetailsAvailabilityConfigArgs(
-                        is_live_migration_preferred=var["instance_configuration_instance_details_launch_details_availability_config_is_live_migration_preferred"],
-                        recovery_action=var["instance_configuration_instance_details_launch_details_availability_config_recovery_action"],
-                    ),
-                    availability_domain=var["instance_configuration_instance_details_launch_details_availability_domain"],
-                    capacity_reservation_id=oci_core_capacity_reservation["test_capacity_reservation"]["id"],
-                    compartment_id=var["compartment_id"],
-                    create_vnic_details=oci.core.InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsArgs(
-                        assign_ipv6ip=var["instance_configuration_instance_details_launch_details_create_vnic_details_assign_ipv6ip"],
-                        assign_private_dns_record=var["instance_configuration_instance_details_launch_details_create_vnic_details_assign_private_dns_record"],
-                        assign_public_ip=var["instance_configuration_instance_details_launch_details_create_vnic_details_assign_public_ip"],
-                        defined_tags={
-                            "Operations.CostCenter": "42",
-                        },
-                        display_name=var["instance_configuration_instance_details_launch_details_create_vnic_details_display_name"],
-                        freeform_tags={
-                            "Department": "Finance",
-                        },
-                        hostname_label=var["instance_configuration_instance_details_launch_details_create_vnic_details_hostname_label"],
-                        ipv6address_ipv6subnet_cidr_pair_details=[oci.core.InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs(
-                            ipv6address=var["instance_configuration_instance_details_launch_details_create_vnic_details_ipv6address_ipv6subnet_cidr_pair_details_ipv6address"],
-                            ipv6subnet_cidr=var["instance_configuration_instance_details_launch_details_create_vnic_details_ipv6address_ipv6subnet_cidr_pair_details_ipv6subnet_cidr"],
-                        )],
-                        nsg_ids=var["instance_configuration_instance_details_launch_details_create_vnic_details_nsg_ids"],
-                        private_ip=var["instance_configuration_instance_details_launch_details_create_vnic_details_private_ip"],
-                        skip_source_dest_check=var["instance_configuration_instance_details_launch_details_create_vnic_details_skip_source_dest_check"],
-                        subnet_id=oci_core_subnet["test_subnet"]["id"],
-                    ),
-                    dedicated_vm_host_id=oci_core_dedicated_vm_host["test_dedicated_vm_host"]["id"],
-                    defined_tags={
-                        "Operations.CostCenter": "42",
-                    },
-                    display_name=var["instance_configuration_instance_details_launch_details_display_name"],
-                    extended_metadata=var["instance_configuration_instance_details_launch_details_extended_metadata"],
-                    fault_domain=var["instance_configuration_instance_details_launch_details_fault_domain"],
-                    freeform_tags={
-                        "Department": "Finance",
-                    },
-                    instance_options=oci.core.InstanceConfigurationInstanceDetailsLaunchDetailsInstanceOptionsArgs(
-                        are_legacy_imds_endpoints_disabled=var["instance_configuration_instance_details_launch_details_instance_options_are_legacy_imds_endpoints_disabled"],
-                    ),
-                    ipxe_script=var["instance_configuration_instance_details_launch_details_ipxe_script"],
-                    is_pv_encryption_in_transit_enabled=var["instance_configuration_instance_details_launch_details_is_pv_encryption_in_transit_enabled"],
-                    launch_mode=var["instance_configuration_instance_details_launch_details_launch_mode"],
-                    launch_options=oci.core.InstanceConfigurationInstanceDetailsLaunchDetailsLaunchOptionsArgs(
-                        boot_volume_type=var["instance_configuration_instance_details_launch_details_launch_options_boot_volume_type"],
-                        firmware=var["instance_configuration_instance_details_launch_details_launch_options_firmware"],
-                        is_consistent_volume_naming_enabled=var["instance_configuration_instance_details_launch_details_launch_options_is_consistent_volume_naming_enabled"],
-                        is_pv_encryption_in_transit_enabled=var["instance_configuration_instance_details_launch_details_launch_options_is_pv_encryption_in_transit_enabled"],
-                        network_type=var["instance_configuration_instance_details_launch_details_launch_options_network_type"],
-                        remote_data_volume_type=var["instance_configuration_instance_details_launch_details_launch_options_remote_data_volume_type"],
-                    ),
-                    metadata=var["instance_configuration_instance_details_launch_details_metadata"],
-                    platform_config=oci.core.InstanceConfigurationInstanceDetailsLaunchDetailsPlatformConfigArgs(
-                        type=var["instance_configuration_instance_details_launch_details_platform_config_type"],
-                        are_virtual_instructions_enabled=var["instance_configuration_instance_details_launch_details_platform_config_are_virtual_instructions_enabled"],
-                        config_map=var["instance_configuration_instance_details_launch_details_platform_config_config_map"],
-                        is_access_control_service_enabled=var["instance_configuration_instance_details_launch_details_platform_config_is_access_control_service_enabled"],
-                        is_input_output_memory_management_unit_enabled=var["instance_configuration_instance_details_launch_details_platform_config_is_input_output_memory_management_unit_enabled"],
-                        is_measured_boot_enabled=var["instance_configuration_instance_details_launch_details_platform_config_is_measured_boot_enabled"],
-                        is_memory_encryption_enabled=var["instance_configuration_instance_details_launch_details_platform_config_is_memory_encryption_enabled"],
-                        is_secure_boot_enabled=var["instance_configuration_instance_details_launch_details_platform_config_is_secure_boot_enabled"],
-                        is_symmetric_multi_threading_enabled=var["instance_configuration_instance_details_launch_details_platform_config_is_symmetric_multi_threading_enabled"],
-                        is_trusted_platform_module_enabled=var["instance_configuration_instance_details_launch_details_platform_config_is_trusted_platform_module_enabled"],
-                        numa_nodes_per_socket=var["instance_configuration_instance_details_launch_details_platform_config_numa_nodes_per_socket"],
-                        percentage_of_cores_enabled=var["instance_configuration_instance_details_launch_details_platform_config_percentage_of_cores_enabled"],
-                    ),
-                    preemptible_instance_config=oci.core.InstanceConfigurationInstanceDetailsLaunchDetailsPreemptibleInstanceConfigArgs(
-                        preemption_action=oci.core.InstanceConfigurationInstanceDetailsLaunchDetailsPreemptibleInstanceConfigPreemptionActionArgs(
-                            type=var["instance_configuration_instance_details_launch_details_preemptible_instance_config_preemption_action_type"],
-                            preserve_boot_volume=var["instance_configuration_instance_details_launch_details_preemptible_instance_config_preemption_action_preserve_boot_volume"],
-                        ),
-                    ),
-                    preferred_maintenance_action=var["instance_configuration_instance_details_launch_details_preferred_maintenance_action"],
-                    shape=var["instance_configuration_instance_details_launch_details_shape"],
-                    shape_config=oci.core.InstanceConfigurationInstanceDetailsLaunchDetailsShapeConfigArgs(
-                        baseline_ocpu_utilization=var["instance_configuration_instance_details_launch_details_shape_config_baseline_ocpu_utilization"],
-                        memory_in_gbs=var["instance_configuration_instance_details_launch_details_shape_config_memory_in_gbs"],
-                        nvmes=var["instance_configuration_instance_details_launch_details_shape_config_nvmes"],
-                        ocpus=var["instance_configuration_instance_details_launch_details_shape_config_ocpus"],
-                        vcpus=var["instance_configuration_instance_details_launch_details_shape_config_vcpus"],
-                    ),
-                    source_details=oci.core.InstanceConfigurationInstanceDetailsLaunchDetailsSourceDetailsArgs(
-                        source_type=var["instance_configuration_instance_details_launch_details_source_details_source_type"],
-                        boot_volume_id=oci_core_boot_volume["test_boot_volume"]["id"],
-                        boot_volume_size_in_gbs=var["instance_configuration_instance_details_launch_details_source_details_boot_volume_size_in_gbs"],
-                        boot_volume_vpus_per_gb=var["instance_configuration_instance_details_launch_details_source_details_boot_volume_vpus_per_gb"],
-                        image_id=oci_core_image["test_image"]["id"],
-                        kms_key_id=oci_kms_key["test_key"]["id"],
-                        instance_source_image_filter_details=oci.core.InstanceConfigurationInstanceDetailsLaunchDetailsSourceDetailsInstanceSourceImageFilterDetailsArgs(
-                            compartment_id=var["compartment_id"],
-                            defined_tags_filter=var["instance_configuration_instance_details_launch_details_source_details_instance_source_image_filter_details_defined_tags_filter"],
-                            operating_system=var["instance_configuration_instance_details_launch_details_source_details_instance_source_image_filter_details_operating_system"],
-                            operating_system_version=var["instance_configuration_instance_details_launch_details_source_details_instance_source_image_filter_details_operating_system_version"],
-                        ),
-                    ),
-                ),
-                options=[oci.core.InstanceConfigurationInstanceDetailsOptionArgs(
-                    block_volumes=[oci.core.InstanceConfigurationInstanceDetailsOptionBlockVolumeArgs(
-                        attach_details=oci.core.InstanceConfigurationInstanceDetailsOptionBlockVolumeAttachDetailsArgs(
-                            type=var["instance_configuration_instance_details_options_block_volumes_attach_details_type"],
-                            device=var["instance_configuration_instance_details_options_block_volumes_attach_details_device"],
-                            display_name=var["instance_configuration_instance_details_options_block_volumes_attach_details_display_name"],
-                            is_pv_encryption_in_transit_enabled=var["instance_configuration_instance_details_options_block_volumes_attach_details_is_pv_encryption_in_transit_enabled"],
-                            is_read_only=var["instance_configuration_instance_details_options_block_volumes_attach_details_is_read_only"],
-                            is_shareable=var["instance_configuration_instance_details_options_block_volumes_attach_details_is_shareable"],
-                            use_chap=var["instance_configuration_instance_details_options_block_volumes_attach_details_use_chap"],
-                        ),
-                        create_details=oci.core.InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetailsArgs(
-                            autotune_policies=[oci.core.InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetailsAutotunePolicyArgs(
-                                autotune_type=var["instance_configuration_instance_details_options_block_volumes_create_details_autotune_policies_autotune_type"],
-                                max_vpus_per_gb=var["instance_configuration_instance_details_options_block_volumes_create_details_autotune_policies_max_vpus_per_gb"],
-                            )],
-                            availability_domain=var["instance_configuration_instance_details_options_block_volumes_create_details_availability_domain"],
-                            backup_policy_id=data["oci_core_volume_backup_policies"]["test_volume_backup_policies"]["volume_backup_policies"][0]["id"],
-                            compartment_id=var["compartment_id"],
-                            defined_tags={
-                                "Operations.CostCenter": "42",
-                            },
-                            display_name=var["instance_configuration_instance_details_options_block_volumes_create_details_display_name"],
-                            freeform_tags={
-                                "Department": "Finance",
-                            },
-                            kms_key_id=oci_kms_key["test_key"]["id"],
-                            size_in_gbs=var["instance_configuration_instance_details_options_block_volumes_create_details_size_in_gbs"],
-                            source_details=oci.core.InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetailsSourceDetailsArgs(
-                                type=var["instance_configuration_instance_details_options_block_volumes_create_details_source_details_type"],
-                                id=var["instance_configuration_instance_details_options_block_volumes_create_details_source_details_id"],
-                            ),
-                            vpus_per_gb=var["instance_configuration_instance_details_options_block_volumes_create_details_vpus_per_gb"],
-                        ),
-                        volume_id=oci_core_volume["test_volume"]["id"],
-                    )],
-                    launch_details=oci.core.InstanceConfigurationInstanceDetailsOptionLaunchDetailsArgs(
-                        agent_config=oci.core.InstanceConfigurationInstanceDetailsOptionLaunchDetailsAgentConfigArgs(
-                            are_all_plugins_disabled=var["instance_configuration_instance_details_options_launch_details_agent_config_are_all_plugins_disabled"],
-                            is_management_disabled=var["instance_configuration_instance_details_options_launch_details_agent_config_is_management_disabled"],
-                            is_monitoring_disabled=var["instance_configuration_instance_details_options_launch_details_agent_config_is_monitoring_disabled"],
-                            plugins_configs=[oci.core.InstanceConfigurationInstanceDetailsOptionLaunchDetailsAgentConfigPluginsConfigArgs(
-                                desired_state=var["instance_configuration_instance_details_options_launch_details_agent_config_plugins_config_desired_state"],
-                                name=var["instance_configuration_instance_details_options_launch_details_agent_config_plugins_config_name"],
-                            )],
-                        ),
-                        availability_config=oci.core.InstanceConfigurationInstanceDetailsOptionLaunchDetailsAvailabilityConfigArgs(
-                            recovery_action=var["instance_configuration_instance_details_options_launch_details_availability_config_recovery_action"],
-                        ),
-                        availability_domain=var["instance_configuration_instance_details_options_launch_details_availability_domain"],
-                        capacity_reservation_id=oci_core_capacity_reservation["test_capacity_reservation"]["id"],
-                        compartment_id=var["compartment_id"],
-                        create_vnic_details=oci.core.InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreateVnicDetailsArgs(
-                            assign_ipv6ip=var["instance_configuration_instance_details_launch_details_create_vnic_details_assign_ipv6ip"],
-                            assign_private_dns_record=var["instance_configuration_instance_details_options_launch_details_create_vnic_details_assign_private_dns_record"],
-                            assign_public_ip=var["instance_configuration_instance_details_options_launch_details_create_vnic_details_assign_public_ip"],
-                            defined_tags={
-                                "Operations.CostCenter": "42",
-                            },
-                            display_name=var["instance_configuration_instance_details_options_launch_details_create_vnic_details_display_name"],
-                            freeform_tags={
-                                "Department": "Finance",
-                            },
-                            hostname_label=var["instance_configuration_instance_details_options_launch_details_create_vnic_details_hostname_label"],
-                            ipv6address_ipv6subnet_cidr_pair_details=[oci.core.InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs(
-                                ipv6address=var["instance_configuration_instance_details_launch_details_create_vnic_details_ipv6address_ipv6subnet_cidr_pair_details_ipv6address"],
-                                ipv6subnet_cidr=var["instance_configuration_instance_details_launch_details_create_vnic_details_ipv6address_ipv6subnet_cidr_pair_details_ipv6subnet_cidr"],
-                            )],
-                            nsg_ids=var["instance_configuration_instance_details_options_launch_details_create_vnic_details_nsg_ids"],
-                            private_ip=var["instance_configuration_instance_details_options_launch_details_create_vnic_details_private_ip"],
-                            skip_source_dest_check=var["instance_configuration_instance_details_options_launch_details_create_vnic_details_skip_source_dest_check"],
-                            subnet_id=oci_core_subnet["test_subnet"]["id"],
-                        ),
-                        dedicated_vm_host_id=oci_core_dedicated_vm_host["test_dedicated_vm_host"]["id"],
-                        defined_tags={
-                            "Operations.CostCenter": "42",
-                        },
-                        display_name=var["instance_configuration_instance_details_options_launch_details_display_name"],
-                        extended_metadata=var["instance_configuration_instance_details_options_launch_details_extended_metadata"],
-                        fault_domain=var["instance_configuration_instance_details_options_launch_details_fault_domain"],
-                        freeform_tags={
-                            "Department": "Finance",
-                        },
-                        instance_options=oci.core.InstanceConfigurationInstanceDetailsOptionLaunchDetailsInstanceOptionsArgs(
-                            are_legacy_imds_endpoints_disabled=var["instance_configuration_instance_details_options_launch_details_instance_options_are_legacy_imds_endpoints_disabled"],
-                        ),
-                        ipxe_script=var["instance_configuration_instance_details_options_launch_details_ipxe_script"],
-                        is_pv_encryption_in_transit_enabled=var["instance_configuration_instance_details_options_launch_details_is_pv_encryption_in_transit_enabled"],
-                        launch_mode=var["instance_configuration_instance_details_options_launch_details_launch_mode"],
-                        launch_options=oci.core.InstanceConfigurationInstanceDetailsOptionLaunchDetailsLaunchOptionsArgs(
-                            boot_volume_type=var["instance_configuration_instance_details_options_launch_details_launch_options_boot_volume_type"],
-                            firmware=var["instance_configuration_instance_details_options_launch_details_launch_options_firmware"],
-                            is_consistent_volume_naming_enabled=var["instance_configuration_instance_details_options_launch_details_launch_options_is_consistent_volume_naming_enabled"],
-                            is_pv_encryption_in_transit_enabled=var["instance_configuration_instance_details_options_launch_details_launch_options_is_pv_encryption_in_transit_enabled"],
-                            network_type=var["instance_configuration_instance_details_options_launch_details_launch_options_network_type"],
-                            remote_data_volume_type=var["instance_configuration_instance_details_options_launch_details_launch_options_remote_data_volume_type"],
-                        ),
-                        metadata=var["instance_configuration_instance_details_options_launch_details_metadata"],
-                        platform_config=oci.core.InstanceConfigurationInstanceDetailsOptionLaunchDetailsPlatformConfigArgs(
-                            type=var["instance_configuration_instance_details_options_launch_details_platform_config_type"],
-                            are_virtual_instructions_enabled=var["instance_configuration_instance_details_options_launch_details_platform_config_are_virtual_instructions_enabled"],
-                            is_access_control_service_enabled=var["instance_configuration_instance_details_options_launch_details_platform_config_is_access_control_service_enabled"],
-                            is_input_output_memory_management_unit_enabled=var["instance_configuration_instance_details_options_launch_details_platform_config_is_input_output_memory_management_unit_enabled"],
-                            is_measured_boot_enabled=var["instance_configuration_instance_details_options_launch_details_platform_config_is_measured_boot_enabled"],
-                            is_memory_encryption_enabled=var["instance_configuration_instance_details_options_launch_details_platform_config_is_memory_encryption_enabled"],
-                            is_secure_boot_enabled=var["instance_configuration_instance_details_options_launch_details_platform_config_is_secure_boot_enabled"],
-                            is_symmetric_multi_threading_enabled=var["instance_configuration_instance_details_options_launch_details_platform_config_is_symmetric_multi_threading_enabled"],
-                            is_trusted_platform_module_enabled=var["instance_configuration_instance_details_options_launch_details_platform_config_is_trusted_platform_module_enabled"],
-                            numa_nodes_per_socket=var["instance_configuration_instance_details_options_launch_details_platform_config_numa_nodes_per_socket"],
-                            percentage_of_cores_enabled=var["instance_configuration_instance_details_options_launch_details_platform_config_percentage_of_cores_enabled"],
-                        ),
-                        preemptible_instance_config=oci.core.InstanceConfigurationInstanceDetailsOptionLaunchDetailsPreemptibleInstanceConfigArgs(
-                            preemption_action=oci.core.InstanceConfigurationInstanceDetailsOptionLaunchDetailsPreemptibleInstanceConfigPreemptionActionArgs(
-                                type=var["instance_configuration_instance_details_options_launch_details_preemptible_instance_config_preemption_action_type"],
-                                preserve_boot_volume=var["instance_configuration_instance_details_options_launch_details_preemptible_instance_config_preemption_action_preserve_boot_volume"],
-                            ),
-                        ),
-                        preferred_maintenance_action=var["instance_configuration_instance_details_options_launch_details_preferred_maintenance_action"],
-                        shape=var["instance_configuration_instance_details_options_launch_details_shape"],
-                        shape_config=oci.core.InstanceConfigurationInstanceDetailsOptionLaunchDetailsShapeConfigArgs(
-                            baseline_ocpu_utilization=var["instance_configuration_instance_details_options_launch_details_shape_config_baseline_ocpu_utilization"],
-                            memory_in_gbs=var["instance_configuration_instance_details_options_launch_details_shape_config_memory_in_gbs"],
-                            nvmes=var["instance_configuration_instance_details_options_launch_details_shape_config_nvmes"],
-                            ocpus=var["instance_configuration_instance_details_options_launch_details_shape_config_ocpus"],
-                            vcpus=var["instance_configuration_instance_details_options_launch_details_shape_config_vcpus"],
-                        ),
-                        source_details=oci.core.InstanceConfigurationInstanceDetailsOptionLaunchDetailsSourceDetailsArgs(
-                            source_type=var["instance_configuration_instance_details_options_launch_details_source_details_source_type"],
-                            boot_volume_id=oci_core_boot_volume["test_boot_volume"]["id"],
-                            boot_volume_size_in_gbs=var["instance_configuration_instance_details_options_launch_details_source_details_boot_volume_size_in_gbs"],
-                            boot_volume_vpus_per_gb=var["instance_configuration_instance_details_options_launch_details_source_details_boot_volume_vpus_per_gb"],
-                            image_id=oci_core_image["test_image"]["id"],
-                            instance_source_image_filter_details=oci.core.InstanceConfigurationInstanceDetailsOptionLaunchDetailsSourceDetailsInstanceSourceImageFilterDetailsArgs(
-                                compartment_id=var["compartment_id"],
-                                defined_tags_filter=var["instance_configuration_instance_details_options_launch_details_source_details_instance_source_image_filter_details_defined_tags_filter"],
-                                operating_system=var["instance_configuration_instance_details_options_launch_details_source_details_instance_source_image_filter_details_operating_system"],
-                                operating_system_version=var["instance_configuration_instance_details_options_launch_details_source_details_instance_source_image_filter_details_operating_system_version"],
-                            ),
-                        ),
-                    ),
-                    secondary_vnics=[oci.core.InstanceConfigurationInstanceDetailsOptionSecondaryVnicArgs(
-                        create_vnic_details=oci.core.InstanceConfigurationInstanceDetailsOptionSecondaryVnicCreateVnicDetailsArgs(
-                            assign_ipv6ip=var["instance_configuration_instance_details_secondary_vnics_create_vnic_details_assign_ipv6ip"],
-                            assign_private_dns_record=var["instance_configuration_instance_details_options_secondary_vnics_create_vnic_details_assign_private_dns_record"],
-                            assign_public_ip=var["instance_configuration_instance_details_options_secondary_vnics_create_vnic_details_assign_public_ip"],
-                            defined_tags={
-                                "Operations.CostCenter": "42",
-                            },
-                            display_name=var["instance_configuration_instance_details_options_secondary_vnics_create_vnic_details_display_name"],
-                            freeform_tags={
-                                "Department": "Finance",
-                            },
-                            hostname_label=var["instance_configuration_instance_details_options_secondary_vnics_create_vnic_details_hostname_label"],
-                            ipv6address_ipv6subnet_cidr_pair_details=[oci.core.InstanceConfigurationInstanceDetailsOptionSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs(
-                                ipv6address=var["instance_configuration_instance_details_secondary_vnics_create_vnic_details_ipv6address_ipv6subnet_cidr_pair_details_ipv6address"],
-                                ipv6subnet_cidr=var["instance_configuration_instance_details_secondary_vnics_create_vnic_details_ipv6address_ipv6subnet_cidr_pair_details_ipv6subnet_cidr"],
-                            )],
-                            nsg_ids=var["instance_configuration_instance_details_options_secondary_vnics_create_vnic_details_nsg_ids"],
-                            private_ip=var["instance_configuration_instance_details_options_secondary_vnics_create_vnic_details_private_ip"],
-                            skip_source_dest_check=var["instance_configuration_instance_details_options_secondary_vnics_create_vnic_details_skip_source_dest_check"],
-                            subnet_id=oci_core_subnet["test_subnet"]["id"],
-                        ),
-                        display_name=var["instance_configuration_instance_details_options_secondary_vnics_display_name"],
-                        nic_index=var["instance_configuration_instance_details_options_secondary_vnics_nic_index"],
-                    )],
-                )],
-                secondary_vnics=[oci.core.InstanceConfigurationInstanceDetailsSecondaryVnicArgs(
-                    create_vnic_details=oci.core.InstanceConfigurationInstanceDetailsSecondaryVnicCreateVnicDetailsArgs(
-                        assign_private_dns_record=var["instance_configuration_instance_details_secondary_vnics_create_vnic_details_assign_private_dns_record"],
-                        assign_public_ip=var["instance_configuration_instance_details_secondary_vnics_create_vnic_details_assign_public_ip"],
-                        defined_tags={
-                            "Operations.CostCenter": "42",
-                        },
-                        display_name=var["instance_configuration_instance_details_secondary_vnics_create_vnic_details_display_name"],
-                        freeform_tags={
-                            "Department": "Finance",
-                        },
-                        hostname_label=var["instance_configuration_instance_details_secondary_vnics_create_vnic_details_hostname_label"],
-                        nsg_ids=var["instance_configuration_instance_details_secondary_vnics_create_vnic_details_nsg_ids"],
-                        private_ip=var["instance_configuration_instance_details_secondary_vnics_create_vnic_details_private_ip"],
-                        skip_source_dest_check=var["instance_configuration_instance_details_secondary_vnics_create_vnic_details_skip_source_dest_check"],
-                        subnet_id=oci_core_subnet["test_subnet"]["id"],
-                    ),
-                    display_name=var["instance_configuration_instance_details_secondary_vnics_display_name"],
-                    nic_index=var["instance_configuration_instance_details_secondary_vnics_nic_index"],
-                )],
-            ),
-            instance_id=oci_core_instance["test_instance"]["id"],
-            source=var["instance_configuration_source"])
-        ```
-
-        ## Import
-
-        InstanceConfigurations can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Core/instanceConfiguration:InstanceConfiguration test_instance_configuration "id"
-        ```
-
+        Create a InstanceConfiguration resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment containing images to search
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] instance_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance to use to create the instance configuration.
-        :param pulumi.Input[str] source: The source of the instance configuration. An instance configuration defines the settings to use when creating Compute instances, including details such as the base image, shape, and metadata. You can also specify the associated resources for the instance, such as block volume attachments and network configuration.
-               
-               When you create an instance configuration using an existing instance as a template, the instance configuration does not include any information from the source instance's boot volume, such as installed applications, binaries, and files on the instance. It also does not include the contents of any block volumes that are attached to the instance.
-               
-               To create an instance configuration that includes the custom setup from an instance's boot volume, you must first create a custom image from the instance (see [CreateImage](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Image/CreateImage)). Then, use the custom image to launch a new instance (see [LaunchInstance](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Instance/LaunchInstance)). Finally, create the instance configuration based on the instance that you created from the custom image.
-               
-               To include block volume contents with an instance configuration, first create a backup of the attached block volumes (see [CreateVolumeBackup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/VolumeBackup/CreateVolumeBackup)). Then, create the instance configuration by specifying the list of settings, using [InstanceConfigurationVolumeSourceFromVolumeBackupDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationVolumeSourceFromVolumeBackupDetails) to include the block volume backups in the list of settings.
-               
-               The following values are supported:
         """
         ...
     @overload
@@ -714,374 +245,7 @@ class InstanceConfiguration(pulumi.CustomResource):
                  args: InstanceConfigurationArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Instance Configuration resource in Oracle Cloud Infrastructure Core service.
-
-        Creates an instance configuration. An instance configuration is a template that defines the
-        settings to use when creating Compute instances.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_instance_configuration = oci.core.InstanceConfiguration("testInstanceConfiguration",
-            compartment_id=var["compartment_id"],
-            defined_tags={
-                "Operations.CostCenter": "42",
-            },
-            display_name=var["instance_configuration_display_name"],
-            freeform_tags={
-                "Department": "Finance",
-            },
-            instance_details=oci.core.InstanceConfigurationInstanceDetailsArgs(
-                instance_type=var["instance_configuration_instance_details_instance_type"],
-                block_volumes=[oci.core.InstanceConfigurationInstanceDetailsBlockVolumeArgs(
-                    attach_details=oci.core.InstanceConfigurationInstanceDetailsBlockVolumeAttachDetailsArgs(
-                        type=var["instance_configuration_instance_details_block_volumes_attach_details_type"],
-                        device=var["instance_configuration_instance_details_block_volumes_attach_details_device"],
-                        display_name=var["instance_configuration_instance_details_block_volumes_attach_details_display_name"],
-                        is_pv_encryption_in_transit_enabled=var["instance_configuration_instance_details_block_volumes_attach_details_is_pv_encryption_in_transit_enabled"],
-                        is_read_only=var["instance_configuration_instance_details_block_volumes_attach_details_is_read_only"],
-                        is_shareable=var["instance_configuration_instance_details_block_volumes_attach_details_is_shareable"],
-                        use_chap=var["instance_configuration_instance_details_block_volumes_attach_details_use_chap"],
-                    ),
-                    create_details=oci.core.InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsArgs(
-                        autotune_policies=[oci.core.InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsAutotunePolicyArgs(
-                            autotune_type=var["instance_configuration_instance_details_block_volumes_create_details_autotune_policies_autotune_type"],
-                            max_vpus_per_gb=var["instance_configuration_instance_details_block_volumes_create_details_autotune_policies_max_vpus_per_gb"],
-                        )],
-                        availability_domain=var["instance_configuration_instance_details_block_volumes_create_details_availability_domain"],
-                        backup_policy_id=data["oci_core_volume_backup_policies"]["test_volume_backup_policies"]["volume_backup_policies"][0]["id"],
-                        block_volume_replicas=oci.core.InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsBlockVolumeReplicasArgs(
-                            availability_domain=var["instance_configuration_instance_details_block_volumes_create_details_block_volume_replicas_availability_domain"],
-                            display_name=var["instance_configuration_instance_details_block_volumes_create_details_block_volume_replicas_display_name"],
-                        ),
-                        compartment_id=var["compartment_id"],
-                        defined_tags={
-                            "Operations.CostCenter": "42",
-                        },
-                        display_name=var["instance_configuration_instance_details_block_volumes_create_details_display_name"],
-                        freeform_tags={
-                            "Department": "Finance",
-                        },
-                        is_auto_tune_enabled=var["instance_configuration_instance_details_block_volumes_create_details_is_auto_tune_enabled"],
-                        kms_key_id=oci_kms_key["test_key"]["id"],
-                        size_in_gbs=var["instance_configuration_instance_details_block_volumes_create_details_size_in_gbs"],
-                        source_details=oci.core.InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsSourceDetailsArgs(
-                            type=var["instance_configuration_instance_details_block_volumes_create_details_source_details_type"],
-                            id=var["instance_configuration_instance_details_block_volumes_create_details_source_details_id"],
-                        ),
-                        vpus_per_gb=var["instance_configuration_instance_details_block_volumes_create_details_vpus_per_gb"],
-                    ),
-                    volume_id=oci_core_volume["test_volume"]["id"],
-                )],
-                launch_details=oci.core.InstanceConfigurationInstanceDetailsLaunchDetailsArgs(
-                    agent_config=oci.core.InstanceConfigurationInstanceDetailsLaunchDetailsAgentConfigArgs(
-                        are_all_plugins_disabled=var["instance_configuration_instance_details_launch_details_agent_config_are_all_plugins_disabled"],
-                        is_management_disabled=var["instance_configuration_instance_details_launch_details_agent_config_is_management_disabled"],
-                        is_monitoring_disabled=var["instance_configuration_instance_details_launch_details_agent_config_is_monitoring_disabled"],
-                        plugins_configs=[oci.core.InstanceConfigurationInstanceDetailsLaunchDetailsAgentConfigPluginsConfigArgs(
-                            desired_state=var["instance_configuration_instance_details_launch_details_agent_config_plugins_config_desired_state"],
-                            name=var["instance_configuration_instance_details_launch_details_agent_config_plugins_config_name"],
-                        )],
-                    ),
-                    availability_config=oci.core.InstanceConfigurationInstanceDetailsLaunchDetailsAvailabilityConfigArgs(
-                        is_live_migration_preferred=var["instance_configuration_instance_details_launch_details_availability_config_is_live_migration_preferred"],
-                        recovery_action=var["instance_configuration_instance_details_launch_details_availability_config_recovery_action"],
-                    ),
-                    availability_domain=var["instance_configuration_instance_details_launch_details_availability_domain"],
-                    capacity_reservation_id=oci_core_capacity_reservation["test_capacity_reservation"]["id"],
-                    compartment_id=var["compartment_id"],
-                    create_vnic_details=oci.core.InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsArgs(
-                        assign_ipv6ip=var["instance_configuration_instance_details_launch_details_create_vnic_details_assign_ipv6ip"],
-                        assign_private_dns_record=var["instance_configuration_instance_details_launch_details_create_vnic_details_assign_private_dns_record"],
-                        assign_public_ip=var["instance_configuration_instance_details_launch_details_create_vnic_details_assign_public_ip"],
-                        defined_tags={
-                            "Operations.CostCenter": "42",
-                        },
-                        display_name=var["instance_configuration_instance_details_launch_details_create_vnic_details_display_name"],
-                        freeform_tags={
-                            "Department": "Finance",
-                        },
-                        hostname_label=var["instance_configuration_instance_details_launch_details_create_vnic_details_hostname_label"],
-                        ipv6address_ipv6subnet_cidr_pair_details=[oci.core.InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs(
-                            ipv6address=var["instance_configuration_instance_details_launch_details_create_vnic_details_ipv6address_ipv6subnet_cidr_pair_details_ipv6address"],
-                            ipv6subnet_cidr=var["instance_configuration_instance_details_launch_details_create_vnic_details_ipv6address_ipv6subnet_cidr_pair_details_ipv6subnet_cidr"],
-                        )],
-                        nsg_ids=var["instance_configuration_instance_details_launch_details_create_vnic_details_nsg_ids"],
-                        private_ip=var["instance_configuration_instance_details_launch_details_create_vnic_details_private_ip"],
-                        skip_source_dest_check=var["instance_configuration_instance_details_launch_details_create_vnic_details_skip_source_dest_check"],
-                        subnet_id=oci_core_subnet["test_subnet"]["id"],
-                    ),
-                    dedicated_vm_host_id=oci_core_dedicated_vm_host["test_dedicated_vm_host"]["id"],
-                    defined_tags={
-                        "Operations.CostCenter": "42",
-                    },
-                    display_name=var["instance_configuration_instance_details_launch_details_display_name"],
-                    extended_metadata=var["instance_configuration_instance_details_launch_details_extended_metadata"],
-                    fault_domain=var["instance_configuration_instance_details_launch_details_fault_domain"],
-                    freeform_tags={
-                        "Department": "Finance",
-                    },
-                    instance_options=oci.core.InstanceConfigurationInstanceDetailsLaunchDetailsInstanceOptionsArgs(
-                        are_legacy_imds_endpoints_disabled=var["instance_configuration_instance_details_launch_details_instance_options_are_legacy_imds_endpoints_disabled"],
-                    ),
-                    ipxe_script=var["instance_configuration_instance_details_launch_details_ipxe_script"],
-                    is_pv_encryption_in_transit_enabled=var["instance_configuration_instance_details_launch_details_is_pv_encryption_in_transit_enabled"],
-                    launch_mode=var["instance_configuration_instance_details_launch_details_launch_mode"],
-                    launch_options=oci.core.InstanceConfigurationInstanceDetailsLaunchDetailsLaunchOptionsArgs(
-                        boot_volume_type=var["instance_configuration_instance_details_launch_details_launch_options_boot_volume_type"],
-                        firmware=var["instance_configuration_instance_details_launch_details_launch_options_firmware"],
-                        is_consistent_volume_naming_enabled=var["instance_configuration_instance_details_launch_details_launch_options_is_consistent_volume_naming_enabled"],
-                        is_pv_encryption_in_transit_enabled=var["instance_configuration_instance_details_launch_details_launch_options_is_pv_encryption_in_transit_enabled"],
-                        network_type=var["instance_configuration_instance_details_launch_details_launch_options_network_type"],
-                        remote_data_volume_type=var["instance_configuration_instance_details_launch_details_launch_options_remote_data_volume_type"],
-                    ),
-                    metadata=var["instance_configuration_instance_details_launch_details_metadata"],
-                    platform_config=oci.core.InstanceConfigurationInstanceDetailsLaunchDetailsPlatformConfigArgs(
-                        type=var["instance_configuration_instance_details_launch_details_platform_config_type"],
-                        are_virtual_instructions_enabled=var["instance_configuration_instance_details_launch_details_platform_config_are_virtual_instructions_enabled"],
-                        config_map=var["instance_configuration_instance_details_launch_details_platform_config_config_map"],
-                        is_access_control_service_enabled=var["instance_configuration_instance_details_launch_details_platform_config_is_access_control_service_enabled"],
-                        is_input_output_memory_management_unit_enabled=var["instance_configuration_instance_details_launch_details_platform_config_is_input_output_memory_management_unit_enabled"],
-                        is_measured_boot_enabled=var["instance_configuration_instance_details_launch_details_platform_config_is_measured_boot_enabled"],
-                        is_memory_encryption_enabled=var["instance_configuration_instance_details_launch_details_platform_config_is_memory_encryption_enabled"],
-                        is_secure_boot_enabled=var["instance_configuration_instance_details_launch_details_platform_config_is_secure_boot_enabled"],
-                        is_symmetric_multi_threading_enabled=var["instance_configuration_instance_details_launch_details_platform_config_is_symmetric_multi_threading_enabled"],
-                        is_trusted_platform_module_enabled=var["instance_configuration_instance_details_launch_details_platform_config_is_trusted_platform_module_enabled"],
-                        numa_nodes_per_socket=var["instance_configuration_instance_details_launch_details_platform_config_numa_nodes_per_socket"],
-                        percentage_of_cores_enabled=var["instance_configuration_instance_details_launch_details_platform_config_percentage_of_cores_enabled"],
-                    ),
-                    preemptible_instance_config=oci.core.InstanceConfigurationInstanceDetailsLaunchDetailsPreemptibleInstanceConfigArgs(
-                        preemption_action=oci.core.InstanceConfigurationInstanceDetailsLaunchDetailsPreemptibleInstanceConfigPreemptionActionArgs(
-                            type=var["instance_configuration_instance_details_launch_details_preemptible_instance_config_preemption_action_type"],
-                            preserve_boot_volume=var["instance_configuration_instance_details_launch_details_preemptible_instance_config_preemption_action_preserve_boot_volume"],
-                        ),
-                    ),
-                    preferred_maintenance_action=var["instance_configuration_instance_details_launch_details_preferred_maintenance_action"],
-                    shape=var["instance_configuration_instance_details_launch_details_shape"],
-                    shape_config=oci.core.InstanceConfigurationInstanceDetailsLaunchDetailsShapeConfigArgs(
-                        baseline_ocpu_utilization=var["instance_configuration_instance_details_launch_details_shape_config_baseline_ocpu_utilization"],
-                        memory_in_gbs=var["instance_configuration_instance_details_launch_details_shape_config_memory_in_gbs"],
-                        nvmes=var["instance_configuration_instance_details_launch_details_shape_config_nvmes"],
-                        ocpus=var["instance_configuration_instance_details_launch_details_shape_config_ocpus"],
-                        vcpus=var["instance_configuration_instance_details_launch_details_shape_config_vcpus"],
-                    ),
-                    source_details=oci.core.InstanceConfigurationInstanceDetailsLaunchDetailsSourceDetailsArgs(
-                        source_type=var["instance_configuration_instance_details_launch_details_source_details_source_type"],
-                        boot_volume_id=oci_core_boot_volume["test_boot_volume"]["id"],
-                        boot_volume_size_in_gbs=var["instance_configuration_instance_details_launch_details_source_details_boot_volume_size_in_gbs"],
-                        boot_volume_vpus_per_gb=var["instance_configuration_instance_details_launch_details_source_details_boot_volume_vpus_per_gb"],
-                        image_id=oci_core_image["test_image"]["id"],
-                        kms_key_id=oci_kms_key["test_key"]["id"],
-                        instance_source_image_filter_details=oci.core.InstanceConfigurationInstanceDetailsLaunchDetailsSourceDetailsInstanceSourceImageFilterDetailsArgs(
-                            compartment_id=var["compartment_id"],
-                            defined_tags_filter=var["instance_configuration_instance_details_launch_details_source_details_instance_source_image_filter_details_defined_tags_filter"],
-                            operating_system=var["instance_configuration_instance_details_launch_details_source_details_instance_source_image_filter_details_operating_system"],
-                            operating_system_version=var["instance_configuration_instance_details_launch_details_source_details_instance_source_image_filter_details_operating_system_version"],
-                        ),
-                    ),
-                ),
-                options=[oci.core.InstanceConfigurationInstanceDetailsOptionArgs(
-                    block_volumes=[oci.core.InstanceConfigurationInstanceDetailsOptionBlockVolumeArgs(
-                        attach_details=oci.core.InstanceConfigurationInstanceDetailsOptionBlockVolumeAttachDetailsArgs(
-                            type=var["instance_configuration_instance_details_options_block_volumes_attach_details_type"],
-                            device=var["instance_configuration_instance_details_options_block_volumes_attach_details_device"],
-                            display_name=var["instance_configuration_instance_details_options_block_volumes_attach_details_display_name"],
-                            is_pv_encryption_in_transit_enabled=var["instance_configuration_instance_details_options_block_volumes_attach_details_is_pv_encryption_in_transit_enabled"],
-                            is_read_only=var["instance_configuration_instance_details_options_block_volumes_attach_details_is_read_only"],
-                            is_shareable=var["instance_configuration_instance_details_options_block_volumes_attach_details_is_shareable"],
-                            use_chap=var["instance_configuration_instance_details_options_block_volumes_attach_details_use_chap"],
-                        ),
-                        create_details=oci.core.InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetailsArgs(
-                            autotune_policies=[oci.core.InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetailsAutotunePolicyArgs(
-                                autotune_type=var["instance_configuration_instance_details_options_block_volumes_create_details_autotune_policies_autotune_type"],
-                                max_vpus_per_gb=var["instance_configuration_instance_details_options_block_volumes_create_details_autotune_policies_max_vpus_per_gb"],
-                            )],
-                            availability_domain=var["instance_configuration_instance_details_options_block_volumes_create_details_availability_domain"],
-                            backup_policy_id=data["oci_core_volume_backup_policies"]["test_volume_backup_policies"]["volume_backup_policies"][0]["id"],
-                            compartment_id=var["compartment_id"],
-                            defined_tags={
-                                "Operations.CostCenter": "42",
-                            },
-                            display_name=var["instance_configuration_instance_details_options_block_volumes_create_details_display_name"],
-                            freeform_tags={
-                                "Department": "Finance",
-                            },
-                            kms_key_id=oci_kms_key["test_key"]["id"],
-                            size_in_gbs=var["instance_configuration_instance_details_options_block_volumes_create_details_size_in_gbs"],
-                            source_details=oci.core.InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetailsSourceDetailsArgs(
-                                type=var["instance_configuration_instance_details_options_block_volumes_create_details_source_details_type"],
-                                id=var["instance_configuration_instance_details_options_block_volumes_create_details_source_details_id"],
-                            ),
-                            vpus_per_gb=var["instance_configuration_instance_details_options_block_volumes_create_details_vpus_per_gb"],
-                        ),
-                        volume_id=oci_core_volume["test_volume"]["id"],
-                    )],
-                    launch_details=oci.core.InstanceConfigurationInstanceDetailsOptionLaunchDetailsArgs(
-                        agent_config=oci.core.InstanceConfigurationInstanceDetailsOptionLaunchDetailsAgentConfigArgs(
-                            are_all_plugins_disabled=var["instance_configuration_instance_details_options_launch_details_agent_config_are_all_plugins_disabled"],
-                            is_management_disabled=var["instance_configuration_instance_details_options_launch_details_agent_config_is_management_disabled"],
-                            is_monitoring_disabled=var["instance_configuration_instance_details_options_launch_details_agent_config_is_monitoring_disabled"],
-                            plugins_configs=[oci.core.InstanceConfigurationInstanceDetailsOptionLaunchDetailsAgentConfigPluginsConfigArgs(
-                                desired_state=var["instance_configuration_instance_details_options_launch_details_agent_config_plugins_config_desired_state"],
-                                name=var["instance_configuration_instance_details_options_launch_details_agent_config_plugins_config_name"],
-                            )],
-                        ),
-                        availability_config=oci.core.InstanceConfigurationInstanceDetailsOptionLaunchDetailsAvailabilityConfigArgs(
-                            recovery_action=var["instance_configuration_instance_details_options_launch_details_availability_config_recovery_action"],
-                        ),
-                        availability_domain=var["instance_configuration_instance_details_options_launch_details_availability_domain"],
-                        capacity_reservation_id=oci_core_capacity_reservation["test_capacity_reservation"]["id"],
-                        compartment_id=var["compartment_id"],
-                        create_vnic_details=oci.core.InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreateVnicDetailsArgs(
-                            assign_ipv6ip=var["instance_configuration_instance_details_launch_details_create_vnic_details_assign_ipv6ip"],
-                            assign_private_dns_record=var["instance_configuration_instance_details_options_launch_details_create_vnic_details_assign_private_dns_record"],
-                            assign_public_ip=var["instance_configuration_instance_details_options_launch_details_create_vnic_details_assign_public_ip"],
-                            defined_tags={
-                                "Operations.CostCenter": "42",
-                            },
-                            display_name=var["instance_configuration_instance_details_options_launch_details_create_vnic_details_display_name"],
-                            freeform_tags={
-                                "Department": "Finance",
-                            },
-                            hostname_label=var["instance_configuration_instance_details_options_launch_details_create_vnic_details_hostname_label"],
-                            ipv6address_ipv6subnet_cidr_pair_details=[oci.core.InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs(
-                                ipv6address=var["instance_configuration_instance_details_launch_details_create_vnic_details_ipv6address_ipv6subnet_cidr_pair_details_ipv6address"],
-                                ipv6subnet_cidr=var["instance_configuration_instance_details_launch_details_create_vnic_details_ipv6address_ipv6subnet_cidr_pair_details_ipv6subnet_cidr"],
-                            )],
-                            nsg_ids=var["instance_configuration_instance_details_options_launch_details_create_vnic_details_nsg_ids"],
-                            private_ip=var["instance_configuration_instance_details_options_launch_details_create_vnic_details_private_ip"],
-                            skip_source_dest_check=var["instance_configuration_instance_details_options_launch_details_create_vnic_details_skip_source_dest_check"],
-                            subnet_id=oci_core_subnet["test_subnet"]["id"],
-                        ),
-                        dedicated_vm_host_id=oci_core_dedicated_vm_host["test_dedicated_vm_host"]["id"],
-                        defined_tags={
-                            "Operations.CostCenter": "42",
-                        },
-                        display_name=var["instance_configuration_instance_details_options_launch_details_display_name"],
-                        extended_metadata=var["instance_configuration_instance_details_options_launch_details_extended_metadata"],
-                        fault_domain=var["instance_configuration_instance_details_options_launch_details_fault_domain"],
-                        freeform_tags={
-                            "Department": "Finance",
-                        },
-                        instance_options=oci.core.InstanceConfigurationInstanceDetailsOptionLaunchDetailsInstanceOptionsArgs(
-                            are_legacy_imds_endpoints_disabled=var["instance_configuration_instance_details_options_launch_details_instance_options_are_legacy_imds_endpoints_disabled"],
-                        ),
-                        ipxe_script=var["instance_configuration_instance_details_options_launch_details_ipxe_script"],
-                        is_pv_encryption_in_transit_enabled=var["instance_configuration_instance_details_options_launch_details_is_pv_encryption_in_transit_enabled"],
-                        launch_mode=var["instance_configuration_instance_details_options_launch_details_launch_mode"],
-                        launch_options=oci.core.InstanceConfigurationInstanceDetailsOptionLaunchDetailsLaunchOptionsArgs(
-                            boot_volume_type=var["instance_configuration_instance_details_options_launch_details_launch_options_boot_volume_type"],
-                            firmware=var["instance_configuration_instance_details_options_launch_details_launch_options_firmware"],
-                            is_consistent_volume_naming_enabled=var["instance_configuration_instance_details_options_launch_details_launch_options_is_consistent_volume_naming_enabled"],
-                            is_pv_encryption_in_transit_enabled=var["instance_configuration_instance_details_options_launch_details_launch_options_is_pv_encryption_in_transit_enabled"],
-                            network_type=var["instance_configuration_instance_details_options_launch_details_launch_options_network_type"],
-                            remote_data_volume_type=var["instance_configuration_instance_details_options_launch_details_launch_options_remote_data_volume_type"],
-                        ),
-                        metadata=var["instance_configuration_instance_details_options_launch_details_metadata"],
-                        platform_config=oci.core.InstanceConfigurationInstanceDetailsOptionLaunchDetailsPlatformConfigArgs(
-                            type=var["instance_configuration_instance_details_options_launch_details_platform_config_type"],
-                            are_virtual_instructions_enabled=var["instance_configuration_instance_details_options_launch_details_platform_config_are_virtual_instructions_enabled"],
-                            is_access_control_service_enabled=var["instance_configuration_instance_details_options_launch_details_platform_config_is_access_control_service_enabled"],
-                            is_input_output_memory_management_unit_enabled=var["instance_configuration_instance_details_options_launch_details_platform_config_is_input_output_memory_management_unit_enabled"],
-                            is_measured_boot_enabled=var["instance_configuration_instance_details_options_launch_details_platform_config_is_measured_boot_enabled"],
-                            is_memory_encryption_enabled=var["instance_configuration_instance_details_options_launch_details_platform_config_is_memory_encryption_enabled"],
-                            is_secure_boot_enabled=var["instance_configuration_instance_details_options_launch_details_platform_config_is_secure_boot_enabled"],
-                            is_symmetric_multi_threading_enabled=var["instance_configuration_instance_details_options_launch_details_platform_config_is_symmetric_multi_threading_enabled"],
-                            is_trusted_platform_module_enabled=var["instance_configuration_instance_details_options_launch_details_platform_config_is_trusted_platform_module_enabled"],
-                            numa_nodes_per_socket=var["instance_configuration_instance_details_options_launch_details_platform_config_numa_nodes_per_socket"],
-                            percentage_of_cores_enabled=var["instance_configuration_instance_details_options_launch_details_platform_config_percentage_of_cores_enabled"],
-                        ),
-                        preemptible_instance_config=oci.core.InstanceConfigurationInstanceDetailsOptionLaunchDetailsPreemptibleInstanceConfigArgs(
-                            preemption_action=oci.core.InstanceConfigurationInstanceDetailsOptionLaunchDetailsPreemptibleInstanceConfigPreemptionActionArgs(
-                                type=var["instance_configuration_instance_details_options_launch_details_preemptible_instance_config_preemption_action_type"],
-                                preserve_boot_volume=var["instance_configuration_instance_details_options_launch_details_preemptible_instance_config_preemption_action_preserve_boot_volume"],
-                            ),
-                        ),
-                        preferred_maintenance_action=var["instance_configuration_instance_details_options_launch_details_preferred_maintenance_action"],
-                        shape=var["instance_configuration_instance_details_options_launch_details_shape"],
-                        shape_config=oci.core.InstanceConfigurationInstanceDetailsOptionLaunchDetailsShapeConfigArgs(
-                            baseline_ocpu_utilization=var["instance_configuration_instance_details_options_launch_details_shape_config_baseline_ocpu_utilization"],
-                            memory_in_gbs=var["instance_configuration_instance_details_options_launch_details_shape_config_memory_in_gbs"],
-                            nvmes=var["instance_configuration_instance_details_options_launch_details_shape_config_nvmes"],
-                            ocpus=var["instance_configuration_instance_details_options_launch_details_shape_config_ocpus"],
-                            vcpus=var["instance_configuration_instance_details_options_launch_details_shape_config_vcpus"],
-                        ),
-                        source_details=oci.core.InstanceConfigurationInstanceDetailsOptionLaunchDetailsSourceDetailsArgs(
-                            source_type=var["instance_configuration_instance_details_options_launch_details_source_details_source_type"],
-                            boot_volume_id=oci_core_boot_volume["test_boot_volume"]["id"],
-                            boot_volume_size_in_gbs=var["instance_configuration_instance_details_options_launch_details_source_details_boot_volume_size_in_gbs"],
-                            boot_volume_vpus_per_gb=var["instance_configuration_instance_details_options_launch_details_source_details_boot_volume_vpus_per_gb"],
-                            image_id=oci_core_image["test_image"]["id"],
-                            instance_source_image_filter_details=oci.core.InstanceConfigurationInstanceDetailsOptionLaunchDetailsSourceDetailsInstanceSourceImageFilterDetailsArgs(
-                                compartment_id=var["compartment_id"],
-                                defined_tags_filter=var["instance_configuration_instance_details_options_launch_details_source_details_instance_source_image_filter_details_defined_tags_filter"],
-                                operating_system=var["instance_configuration_instance_details_options_launch_details_source_details_instance_source_image_filter_details_operating_system"],
-                                operating_system_version=var["instance_configuration_instance_details_options_launch_details_source_details_instance_source_image_filter_details_operating_system_version"],
-                            ),
-                        ),
-                    ),
-                    secondary_vnics=[oci.core.InstanceConfigurationInstanceDetailsOptionSecondaryVnicArgs(
-                        create_vnic_details=oci.core.InstanceConfigurationInstanceDetailsOptionSecondaryVnicCreateVnicDetailsArgs(
-                            assign_ipv6ip=var["instance_configuration_instance_details_secondary_vnics_create_vnic_details_assign_ipv6ip"],
-                            assign_private_dns_record=var["instance_configuration_instance_details_options_secondary_vnics_create_vnic_details_assign_private_dns_record"],
-                            assign_public_ip=var["instance_configuration_instance_details_options_secondary_vnics_create_vnic_details_assign_public_ip"],
-                            defined_tags={
-                                "Operations.CostCenter": "42",
-                            },
-                            display_name=var["instance_configuration_instance_details_options_secondary_vnics_create_vnic_details_display_name"],
-                            freeform_tags={
-                                "Department": "Finance",
-                            },
-                            hostname_label=var["instance_configuration_instance_details_options_secondary_vnics_create_vnic_details_hostname_label"],
-                            ipv6address_ipv6subnet_cidr_pair_details=[oci.core.InstanceConfigurationInstanceDetailsOptionSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs(
-                                ipv6address=var["instance_configuration_instance_details_secondary_vnics_create_vnic_details_ipv6address_ipv6subnet_cidr_pair_details_ipv6address"],
-                                ipv6subnet_cidr=var["instance_configuration_instance_details_secondary_vnics_create_vnic_details_ipv6address_ipv6subnet_cidr_pair_details_ipv6subnet_cidr"],
-                            )],
-                            nsg_ids=var["instance_configuration_instance_details_options_secondary_vnics_create_vnic_details_nsg_ids"],
-                            private_ip=var["instance_configuration_instance_details_options_secondary_vnics_create_vnic_details_private_ip"],
-                            skip_source_dest_check=var["instance_configuration_instance_details_options_secondary_vnics_create_vnic_details_skip_source_dest_check"],
-                            subnet_id=oci_core_subnet["test_subnet"]["id"],
-                        ),
-                        display_name=var["instance_configuration_instance_details_options_secondary_vnics_display_name"],
-                        nic_index=var["instance_configuration_instance_details_options_secondary_vnics_nic_index"],
-                    )],
-                )],
-                secondary_vnics=[oci.core.InstanceConfigurationInstanceDetailsSecondaryVnicArgs(
-                    create_vnic_details=oci.core.InstanceConfigurationInstanceDetailsSecondaryVnicCreateVnicDetailsArgs(
-                        assign_private_dns_record=var["instance_configuration_instance_details_secondary_vnics_create_vnic_details_assign_private_dns_record"],
-                        assign_public_ip=var["instance_configuration_instance_details_secondary_vnics_create_vnic_details_assign_public_ip"],
-                        defined_tags={
-                            "Operations.CostCenter": "42",
-                        },
-                        display_name=var["instance_configuration_instance_details_secondary_vnics_create_vnic_details_display_name"],
-                        freeform_tags={
-                            "Department": "Finance",
-                        },
-                        hostname_label=var["instance_configuration_instance_details_secondary_vnics_create_vnic_details_hostname_label"],
-                        nsg_ids=var["instance_configuration_instance_details_secondary_vnics_create_vnic_details_nsg_ids"],
-                        private_ip=var["instance_configuration_instance_details_secondary_vnics_create_vnic_details_private_ip"],
-                        skip_source_dest_check=var["instance_configuration_instance_details_secondary_vnics_create_vnic_details_skip_source_dest_check"],
-                        subnet_id=oci_core_subnet["test_subnet"]["id"],
-                    ),
-                    display_name=var["instance_configuration_instance_details_secondary_vnics_display_name"],
-                    nic_index=var["instance_configuration_instance_details_secondary_vnics_nic_index"],
-                )],
-            ),
-            instance_id=oci_core_instance["test_instance"]["id"],
-            source=var["instance_configuration_source"])
-        ```
-
-        ## Import
-
-        InstanceConfigurations can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Core/instanceConfiguration:InstanceConfiguration test_instance_configuration "id"
-        ```
-
+        Create a InstanceConfiguration resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param InstanceConfigurationArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -1150,22 +314,6 @@ class InstanceConfiguration(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment containing images to search
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] deferred_fields: Parameters that were not specified when the instance configuration was created, but that are required to launch an instance from the instance configuration. See the [LaunchInstanceConfiguration](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Instance/LaunchInstanceConfiguration) operation.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] instance_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance to use to create the instance configuration.
-        :param pulumi.Input[str] source: The source of the instance configuration. An instance configuration defines the settings to use when creating Compute instances, including details such as the base image, shape, and metadata. You can also specify the associated resources for the instance, such as block volume attachments and network configuration.
-               
-               When you create an instance configuration using an existing instance as a template, the instance configuration does not include any information from the source instance's boot volume, such as installed applications, binaries, and files on the instance. It also does not include the contents of any block volumes that are attached to the instance.
-               
-               To create an instance configuration that includes the custom setup from an instance's boot volume, you must first create a custom image from the instance (see [CreateImage](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Image/CreateImage)). Then, use the custom image to launch a new instance (see [LaunchInstance](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Instance/LaunchInstance)). Finally, create the instance configuration based on the instance that you created from the custom image.
-               
-               To include block volume contents with an instance configuration, first create a backup of the attached block volumes (see [CreateVolumeBackup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/VolumeBackup/CreateVolumeBackup)). Then, create the instance configuration by specifying the list of settings, using [InstanceConfigurationVolumeSourceFromVolumeBackupDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationVolumeSourceFromVolumeBackupDetails) to include the block volume backups in the list of settings.
-               
-               The following values are supported:
-        :param pulumi.Input[str] time_created: The date and time the instance configuration was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -1185,77 +333,45 @@ class InstanceConfiguration(pulumi.CustomResource):
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The OCID of the compartment containing images to search
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="deferredFields")
-    def deferred_fields(self) -> pulumi.Output[Sequence[str]]:
-        """
-        Parameters that were not specified when the instance configuration was created, but that are required to launch an instance from the instance configuration. See the [LaunchInstanceConfiguration](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Instance/LaunchInstanceConfiguration) operation.
-        """
+    def deferred_fields(self) -> pulumi.Output[Optional[Sequence[str]]]:
         return pulumi.get(self, "deferred_fields")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> pulumi.Output[str]:
-        """
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
+    def display_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="instanceDetails")
-    def instance_details(self) -> pulumi.Output['outputs.InstanceConfigurationInstanceDetails']:
+    def instance_details(self) -> pulumi.Output[Optional['outputs.InstanceConfigurationInstanceDetails']]:
         return pulumi.get(self, "instance_details")
 
     @property
     @pulumi.getter(name="instanceId")
-    def instance_id(self) -> pulumi.Output[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance to use to create the instance configuration.
-        """
+    def instance_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "instance_id")
 
     @property
     @pulumi.getter
-    def source(self) -> pulumi.Output[str]:
-        """
-        The source of the instance configuration. An instance configuration defines the settings to use when creating Compute instances, including details such as the base image, shape, and metadata. You can also specify the associated resources for the instance, such as block volume attachments and network configuration.
-
-        When you create an instance configuration using an existing instance as a template, the instance configuration does not include any information from the source instance's boot volume, such as installed applications, binaries, and files on the instance. It also does not include the contents of any block volumes that are attached to the instance.
-
-        To create an instance configuration that includes the custom setup from an instance's boot volume, you must first create a custom image from the instance (see [CreateImage](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Image/CreateImage)). Then, use the custom image to launch a new instance (see [LaunchInstance](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Instance/LaunchInstance)). Finally, create the instance configuration based on the instance that you created from the custom image.
-
-        To include block volume contents with an instance configuration, first create a backup of the attached block volumes (see [CreateVolumeBackup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/VolumeBackup/CreateVolumeBackup)). Then, create the instance configuration by specifying the list of settings, using [InstanceConfigurationVolumeSourceFromVolumeBackupDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationVolumeSourceFromVolumeBackupDetails) to include the block volume backups in the list of settings.
-
-        The following values are supported:
-        """
+    def source(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "source")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        The date and time the instance configuration was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 

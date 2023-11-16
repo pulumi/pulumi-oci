@@ -76,71 +76,47 @@ class GetOneoffPatchResult:
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="dbVersion")
-    def db_version(self) -> str:
-        """
-        A valid Oracle Database version. To get a list of supported versions, use the [ListDbVersions](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/DbVersionSummary/ListDbVersions) operation.
-        """
+    def db_version(self) -> Optional[str]:
         return pulumi.get(self, "db_version")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        One-off patch name.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="downloadOneoffPatchTrigger")
-    def download_oneoff_patch_trigger(self) -> int:
+    def download_oneoff_patch_trigger(self) -> Optional[int]:
         return pulumi.get(self, "download_oneoff_patch_trigger")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the one-off patch.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        Detailed message for the lifecycle state.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="oneOffPatches")
-    def one_off_patches(self) -> Sequence[str]:
-        """
-        List of one-off patches for Database Homes.
-        """
+    def one_off_patches(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "one_off_patches")
 
     @property
@@ -150,58 +126,37 @@ class GetOneoffPatchResult:
 
     @property
     @pulumi.getter(name="releaseUpdate")
-    def release_update(self) -> str:
-        """
-        The PSU or PBP or Release Updates. To get a list of supported versions, use the [ListDbVersions](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/DbVersionSummary/ListDbVersions) operation.
-        """
+    def release_update(self) -> Optional[str]:
         return pulumi.get(self, "release_update")
 
     @property
     @pulumi.getter
-    def sha256sum(self) -> str:
-        """
-        SHA-256 checksum of the one-off patch.
-        """
+    def sha256sum(self) -> Optional[str]:
         return pulumi.get(self, "sha256sum")
 
     @property
     @pulumi.getter(name="sizeInKbs")
-    def size_in_kbs(self) -> float:
-        """
-        The size of one-off patch in kilobytes.
-        """
+    def size_in_kbs(self) -> Optional[float]:
         return pulumi.get(self, "size_in_kbs")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the one-off patch.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time one-off patch was created.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeOfExpiration")
-    def time_of_expiration(self) -> str:
-        """
-        The date and time until which the one-off patch will be available for download.
-        """
+    def time_of_expiration(self) -> Optional[str]:
         return pulumi.get(self, "time_of_expiration")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The date and time one-off patch was updated.
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
 
@@ -233,21 +188,7 @@ class AwaitableGetOneoffPatchResult(GetOneoffPatchResult):
 def get_oneoff_patch(oneoff_patch_id: Optional[str] = None,
                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetOneoffPatchResult:
     """
-    This data source provides details about a specific Oneoff Patch resource in Oracle Cloud Infrastructure Database service.
-
-    Gets information about the specified one-off patch.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_oneoff_patch = oci.Database.get_oneoff_patch(oneoff_patch_id=oci_database_oneoff_patch["test_oneoff_patch"]["id"])
-    ```
-
-
-    :param str oneoff_patch_id: The one-off patch [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['oneoffPatchId'] = oneoff_patch_id
@@ -278,20 +219,6 @@ def get_oneoff_patch(oneoff_patch_id: Optional[str] = None,
 def get_oneoff_patch_output(oneoff_patch_id: Optional[pulumi.Input[str]] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetOneoffPatchResult]:
     """
-    This data source provides details about a specific Oneoff Patch resource in Oracle Cloud Infrastructure Database service.
-
-    Gets information about the specified one-off patch.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_oneoff_patch = oci.Database.get_oneoff_patch(oneoff_patch_id=oci_database_oneoff_patch["test_oneoff_patch"]["id"])
-    ```
-
-
-    :param str oneoff_patch_id: The one-off patch [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+    Use this data source to access information about an existing resource.
     """
     ...

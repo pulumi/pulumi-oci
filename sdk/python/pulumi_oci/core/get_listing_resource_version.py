@@ -55,27 +55,27 @@ class GetListingResourceVersionResult:
 
     @property
     @pulumi.getter(name="accessiblePorts")
-    def accessible_ports(self) -> Sequence[int]:
+    def accessible_ports(self) -> Optional[Sequence[int]]:
         return pulumi.get(self, "accessible_ports")
 
     @property
     @pulumi.getter(name="allowedActions")
-    def allowed_actions(self) -> Sequence[str]:
+    def allowed_actions(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "allowed_actions")
 
     @property
     @pulumi.getter(name="availableRegions")
-    def available_regions(self) -> Sequence[str]:
+    def available_regions(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "available_regions")
 
     @property
     @pulumi.getter(name="compatibleShapes")
-    def compatible_shapes(self) -> Sequence[str]:
+    def compatible_shapes(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "compatible_shapes")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -88,12 +88,12 @@ class GetListingResourceVersionResult:
 
     @property
     @pulumi.getter(name="listingResourceId")
-    def listing_resource_id(self) -> str:
+    def listing_resource_id(self) -> Optional[str]:
         return pulumi.get(self, "listing_resource_id")
 
     @property
     @pulumi.getter(name="listingResourceVersion")
-    def listing_resource_version(self) -> str:
+    def listing_resource_version(self) -> Optional[str]:
         return pulumi.get(self, "listing_resource_version")
 
     @property
@@ -103,7 +103,7 @@ class GetListingResourceVersionResult:
 
     @property
     @pulumi.getter(name="timePublished")
-    def time_published(self) -> str:
+    def time_published(self) -> Optional[str]:
         return pulumi.get(self, "time_published")
 
 

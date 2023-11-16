@@ -70,7 +70,7 @@ export class ExternalExadataInfrastructureExadataManagement extends pulumi.Custo
     /**
      * The Oracle license model.
      */
-    public readonly licenseModel!: pulumi.Output<string>;
+    public readonly licenseModel!: pulumi.Output<string | undefined>;
 
     /**
      * Create a ExternalExadataInfrastructureExadataManagement resource with the given unique name, arguments, and options.

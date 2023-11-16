@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Data Safe Private Endpoint resource in Oracle Cloud Infrastructure Data Safe service.
@@ -60,36 +59,36 @@ type LookupDataSafePrivateEndpointArgs struct {
 // A collection of values returned by getDataSafePrivateEndpoint.
 type LookupDataSafePrivateEndpointResult struct {
 	// The OCID of the compartment.
-	CompartmentId             string `pulumi:"compartmentId"`
-	DataSafePrivateEndpointId string `pulumi:"dataSafePrivateEndpointId"`
+	CompartmentId             *string `pulumi:"compartmentId"`
+	DataSafePrivateEndpointId string  `pulumi:"dataSafePrivateEndpointId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The description of the private endpoint.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// The display name of the private endpoint.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// The three-label fully qualified domain name (FQDN) of the private endpoint. The customer VCN's DNS records are updated with this FQDN.
-	EndpointFqdn string `pulumi:"endpointFqdn"`
+	EndpointFqdn *string `pulumi:"endpointFqdn"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The OCID of the Data Safe private endpoint.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The OCIDs of the network security groups that the private endpoint belongs to.
 	NsgIds []string `pulumi:"nsgIds"`
 	// The OCID of the underlying private endpoint.
-	PrivateEndpointId string `pulumi:"privateEndpointId"`
+	PrivateEndpointId *string `pulumi:"privateEndpointId"`
 	// The private IP address of the private endpoint.
-	PrivateEndpointIp string `pulumi:"privateEndpointIp"`
+	PrivateEndpointIp *string `pulumi:"privateEndpointIp"`
 	// The current state of the private endpoint.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The OCID of the subnet.
-	SubnetId string `pulumi:"subnetId"`
+	SubnetId *string `pulumi:"subnetId"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The date and time the private endpoint was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The OCID of the VCN.
-	VcnId string `pulumi:"vcnId"`
+	VcnId *string `pulumi:"vcnId"`
 }
 
 func LookupDataSafePrivateEndpointOutput(ctx *pulumi.Context, args LookupDataSafePrivateEndpointOutputArgs, opts ...pulumi.InvokeOption) LookupDataSafePrivateEndpointResultOutput {
@@ -130,15 +129,9 @@ func (o LookupDataSafePrivateEndpointResultOutput) ToLookupDataSafePrivateEndpoi
 	return o
 }
 
-func (o LookupDataSafePrivateEndpointResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupDataSafePrivateEndpointResult] {
-	return pulumix.Output[LookupDataSafePrivateEndpointResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the compartment.
-func (o LookupDataSafePrivateEndpointResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDataSafePrivateEndpointResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupDataSafePrivateEndpointResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDataSafePrivateEndpointResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupDataSafePrivateEndpointResultOutput) DataSafePrivateEndpointId() pulumi.StringOutput {
@@ -151,18 +144,18 @@ func (o LookupDataSafePrivateEndpointResultOutput) DefinedTags() pulumi.MapOutpu
 }
 
 // The description of the private endpoint.
-func (o LookupDataSafePrivateEndpointResultOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDataSafePrivateEndpointResult) string { return v.Description }).(pulumi.StringOutput)
+func (o LookupDataSafePrivateEndpointResultOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDataSafePrivateEndpointResult) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // The display name of the private endpoint.
-func (o LookupDataSafePrivateEndpointResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDataSafePrivateEndpointResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupDataSafePrivateEndpointResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDataSafePrivateEndpointResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // The three-label fully qualified domain name (FQDN) of the private endpoint. The customer VCN's DNS records are updated with this FQDN.
-func (o LookupDataSafePrivateEndpointResultOutput) EndpointFqdn() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDataSafePrivateEndpointResult) string { return v.EndpointFqdn }).(pulumi.StringOutput)
+func (o LookupDataSafePrivateEndpointResultOutput) EndpointFqdn() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDataSafePrivateEndpointResult) *string { return v.EndpointFqdn }).(pulumi.StringPtrOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
@@ -171,8 +164,8 @@ func (o LookupDataSafePrivateEndpointResultOutput) FreeformTags() pulumi.MapOutp
 }
 
 // The OCID of the Data Safe private endpoint.
-func (o LookupDataSafePrivateEndpointResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDataSafePrivateEndpointResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupDataSafePrivateEndpointResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDataSafePrivateEndpointResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The OCIDs of the network security groups that the private endpoint belongs to.
@@ -181,23 +174,23 @@ func (o LookupDataSafePrivateEndpointResultOutput) NsgIds() pulumi.StringArrayOu
 }
 
 // The OCID of the underlying private endpoint.
-func (o LookupDataSafePrivateEndpointResultOutput) PrivateEndpointId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDataSafePrivateEndpointResult) string { return v.PrivateEndpointId }).(pulumi.StringOutput)
+func (o LookupDataSafePrivateEndpointResultOutput) PrivateEndpointId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDataSafePrivateEndpointResult) *string { return v.PrivateEndpointId }).(pulumi.StringPtrOutput)
 }
 
 // The private IP address of the private endpoint.
-func (o LookupDataSafePrivateEndpointResultOutput) PrivateEndpointIp() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDataSafePrivateEndpointResult) string { return v.PrivateEndpointIp }).(pulumi.StringOutput)
+func (o LookupDataSafePrivateEndpointResultOutput) PrivateEndpointIp() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDataSafePrivateEndpointResult) *string { return v.PrivateEndpointIp }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the private endpoint.
-func (o LookupDataSafePrivateEndpointResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDataSafePrivateEndpointResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupDataSafePrivateEndpointResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDataSafePrivateEndpointResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the subnet.
-func (o LookupDataSafePrivateEndpointResultOutput) SubnetId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDataSafePrivateEndpointResult) string { return v.SubnetId }).(pulumi.StringOutput)
+func (o LookupDataSafePrivateEndpointResultOutput) SubnetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDataSafePrivateEndpointResult) *string { return v.SubnetId }).(pulumi.StringPtrOutput)
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -206,13 +199,13 @@ func (o LookupDataSafePrivateEndpointResultOutput) SystemTags() pulumi.MapOutput
 }
 
 // The date and time the private endpoint was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-func (o LookupDataSafePrivateEndpointResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDataSafePrivateEndpointResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupDataSafePrivateEndpointResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDataSafePrivateEndpointResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the VCN.
-func (o LookupDataSafePrivateEndpointResultOutput) VcnId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDataSafePrivateEndpointResult) string { return v.VcnId }).(pulumi.StringOutput)
+func (o LookupDataSafePrivateEndpointResultOutput) VcnId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDataSafePrivateEndpointResult) *string { return v.VcnId }).(pulumi.StringPtrOutput)
 }
 
 func init() {

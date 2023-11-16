@@ -20,85 +20,85 @@ namespace Pulumi.Oci.Functions.Outputs
         /// <summary>
         /// Cumulative delay hours
         /// </summary>
-        public readonly int DelayInHours;
+        public readonly int? DelayInHours;
         /// <summary>
         /// A filter to return only resources that match the entire display name given.
         /// </summary>
-        public readonly string DisplayName;
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly string? DisplayName;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// unique FusionEnvironment identifier
         /// </summary>
-        public readonly string FusionEnvironmentId;
+        public readonly string? FusionEnvironmentId;
         /// <summary>
         /// Unique identifier that is immutable on creation.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         /// </summary>
-        public readonly string LifecycleDetails;
+        public readonly string? LifecycleDetails;
         /// <summary>
         /// A filter that returns all resources that match the specified run cycle.
         /// </summary>
-        public readonly string RunCycle;
+        public readonly string? RunCycle;
         /// <summary>
         /// Service availability / impact during scheduled activity execution up down
         /// </summary>
-        public readonly string ServiceAvailability;
+        public readonly string? ServiceAvailability;
         /// <summary>
         /// A filter that returns all resources that match the specified status
         /// </summary>
-        public readonly string State;
-        public readonly string TimeAccepted;
+        public readonly string? State;
+        public readonly string? TimeAccepted;
         /// <summary>
         /// Current time the scheduled activity is scheduled to end. An RFC3339 formatted datetime string.
         /// </summary>
-        public readonly string TimeExpectedFinish;
+        public readonly string? TimeExpectedFinish;
         /// <summary>
         /// The time the scheduled activity actually completed / cancelled / failed. An RFC3339 formatted datetime string.
         /// </summary>
-        public readonly string TimeFinished;
+        public readonly string? TimeFinished;
         /// <summary>
         /// Current time the scheduled activity is scheduled to start. An RFC3339 formatted datetime string.
         /// </summary>
-        public readonly string TimeScheduledStart;
+        public readonly string? TimeScheduledStart;
         /// <summary>
         /// The time the scheduled activity record was updated. An RFC3339 formatted datetime string.
         /// </summary>
-        public readonly string TimeUpdated;
+        public readonly string? TimeUpdated;
 
         [OutputConstructor]
         private GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemResult(
             ImmutableArray<Outputs.GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActionResult> actions,
 
-            int delayInHours,
+            int? delayInHours,
 
-            string displayName,
+            string? displayName,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string fusionEnvironmentId,
+            string? fusionEnvironmentId,
 
-            string id,
+            string? id,
 
-            string lifecycleDetails,
+            string? lifecycleDetails,
 
-            string runCycle,
+            string? runCycle,
 
-            string serviceAvailability,
+            string? serviceAvailability,
 
-            string state,
+            string? state,
 
-            string timeAccepted,
+            string? timeAccepted,
 
-            string timeExpectedFinish,
+            string? timeExpectedFinish,
 
-            string timeFinished,
+            string? timeFinished,
 
-            string timeScheduledStart,
+            string? timeScheduledStart,
 
-            string timeUpdated)
+            string? timeUpdated)
         {
             Actions = actions;
             DelayInHours = delayInHours;

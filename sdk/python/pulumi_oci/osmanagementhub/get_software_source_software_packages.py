@@ -49,9 +49,6 @@ class GetSoftwareSourceSoftwarePackagesResult:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        Software source name.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -66,7 +63,7 @@ class GetSoftwareSourceSoftwarePackagesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -75,17 +72,11 @@ class GetSoftwareSourceSoftwarePackagesResult:
     @property
     @pulumi.getter(name="isLatest")
     def is_latest(self) -> Optional[bool]:
-        """
-        Indicates whether this package is the latest version.
-        """
         return pulumi.get(self, "is_latest")
 
     @property
     @pulumi.getter(name="softwarePackageCollections")
-    def software_package_collections(self) -> Sequence['outputs.GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionResult']:
-        """
-        The list of software_package_collection.
-        """
+    def software_package_collections(self) -> Optional[Sequence['outputs.GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionResult']]:
         return pulumi.get(self, "software_package_collections")
 
     @property
@@ -116,28 +107,7 @@ def get_software_source_software_packages(display_name: Optional[str] = None,
                                           software_source_id: Optional[str] = None,
                                           opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetSoftwareSourceSoftwarePackagesResult:
     """
-    This data source provides the list of Software Source Software Packages in Oracle Cloud Infrastructure Os Management Hub service.
-
-    Lists software packages in the specified software source.  Filter the list against a variety of criteria
-    including but not limited to its name.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_software_source_software_packages = oci.OsManagementHub.get_software_source_software_packages(software_source_id=oci_os_management_hub_software_source["test_software_source"]["id"],
-        display_name=var["software_source_software_package_display_name"],
-        display_name_contains=var["software_source_software_package_display_name_contains"],
-        is_latest=var["software_source_software_package_is_latest"])
-    ```
-
-
-    :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
-    :param str display_name_contains: A filter to return resources that may partially match the given display name.
-    :param bool is_latest: A boolean variable that is used to list only the latest versions of packages, module streams, and stream profiles when set to true. All packages, module streams, and stream profiles are returned when set to false.
-    :param str software_source_id: The software source OCID.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['displayName'] = display_name
@@ -166,27 +136,6 @@ def get_software_source_software_packages_output(display_name: Optional[pulumi.I
                                                  software_source_id: Optional[pulumi.Input[str]] = None,
                                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSoftwareSourceSoftwarePackagesResult]:
     """
-    This data source provides the list of Software Source Software Packages in Oracle Cloud Infrastructure Os Management Hub service.
-
-    Lists software packages in the specified software source.  Filter the list against a variety of criteria
-    including but not limited to its name.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_software_source_software_packages = oci.OsManagementHub.get_software_source_software_packages(software_source_id=oci_os_management_hub_software_source["test_software_source"]["id"],
-        display_name=var["software_source_software_package_display_name"],
-        display_name_contains=var["software_source_software_package_display_name_contains"],
-        is_latest=var["software_source_software_package_is_latest"])
-    ```
-
-
-    :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
-    :param str display_name_contains: A filter to return resources that may partially match the given display name.
-    :param bool is_latest: A boolean variable that is used to list only the latest versions of packages, module streams, and stream profiles when set to true. All packages, module streams, and stream profiles are returned when set to false.
-    :param str software_source_id: The software source OCID.
+    Use this data source to access information about an existing resource.
     """
     ...

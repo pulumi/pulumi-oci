@@ -53,11 +53,11 @@ export interface GetNamespaceResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * (Computed) The name of the user's namespace.
      */
-    readonly namespace: string;
+    readonly namespace?: string;
 }
 /**
  * This data source provides details about a specific Namespace resource in Oracle Cloud Infrastructure Object Storage service.

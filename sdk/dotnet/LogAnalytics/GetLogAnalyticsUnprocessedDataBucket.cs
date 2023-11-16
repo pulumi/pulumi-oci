@@ -110,15 +110,15 @@ namespace Pulumi.Oci.LogAnalytics
         /// <summary>
         /// Name of the Object Storage bucket.
         /// </summary>
-        public readonly string Bucket;
+        public readonly string? Bucket;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Flag that specifies if this configuration is enabled or not.
         /// </summary>
-        public readonly bool IsEnabled;
+        public readonly bool? IsEnabled;
         /// <summary>
         /// Object Storage namespace.
         /// </summary>
@@ -126,25 +126,25 @@ namespace Pulumi.Oci.LogAnalytics
         /// <summary>
         /// The time when this record is created. An RFC3339 formatted datetime string.
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The latest time when this record is updated. An RFC3339 formatted datetime string.
         /// </summary>
-        public readonly string TimeUpdated;
+        public readonly string? TimeUpdated;
 
         [OutputConstructor]
         private GetLogAnalyticsUnprocessedDataBucketResult(
-            string bucket,
+            string? bucket,
 
-            string id,
+            string? id,
 
-            bool isEnabled,
+            bool? isEnabled,
 
             string @namespace,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeUpdated)
+            string? timeUpdated)
         {
             Bucket = bucket;
             Id = id;

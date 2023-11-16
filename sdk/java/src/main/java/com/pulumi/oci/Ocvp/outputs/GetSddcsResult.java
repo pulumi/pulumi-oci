@@ -34,12 +34,12 @@ public final class GetSddcsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The list of sddc_collection.
      * 
      */
-    private List<GetSddcsSddcCollection> sddcCollections;
+    private @Nullable List<GetSddcsSddcCollection> sddcCollections;
     /**
      * @return The current state of the SDDC.
      * 
@@ -75,15 +75,15 @@ public final class GetSddcsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The list of sddc_collection.
      * 
      */
     public List<GetSddcsSddcCollection> sddcCollections() {
-        return this.sddcCollections;
+        return this.sddcCollections == null ? List.of() : this.sddcCollections;
     }
     /**
      * @return The current state of the SDDC.
@@ -106,8 +106,8 @@ public final class GetSddcsResult {
         private @Nullable String computeAvailabilityDomain;
         private @Nullable String displayName;
         private @Nullable List<GetSddcsFilter> filters;
-        private String id;
-        private List<GetSddcsSddcCollection> sddcCollections;
+        private @Nullable String id;
+        private @Nullable List<GetSddcsSddcCollection> sddcCollections;
         private @Nullable String state;
         public Builder() {}
         public Builder(GetSddcsResult defaults) {
@@ -145,13 +145,13 @@ public final class GetSddcsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder sddcCollections(List<GetSddcsSddcCollection> sddcCollections) {
-            this.sddcCollections = Objects.requireNonNull(sddcCollections);
+        public Builder sddcCollections(@Nullable List<GetSddcsSddcCollection> sddcCollections) {
+            this.sddcCollections = sddcCollections;
             return this;
         }
         public Builder sddcCollections(GetSddcsSddcCollection... sddcCollections) {

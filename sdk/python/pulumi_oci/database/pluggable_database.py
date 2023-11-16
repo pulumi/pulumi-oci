@@ -31,25 +31,6 @@ class PluggableDatabaseArgs:
                  tde_wallet_password: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a PluggableDatabase resource.
-        :param pulumi.Input[str] container_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the CDB
-        :param pulumi.Input[str] pdb_name: The name for the pluggable database (PDB). The name is unique in the context of a [container database](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/Database/). The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. The pluggable database name should not be same as the container database name.
-        :param pulumi.Input[str] container_database_admin_password: The DB system administrator password of the Container Database.
-        :param pulumi.Input[int] convert_to_regular_trigger: (Updatable) An optional property when incremented triggers Convert To Regular. Could be set to any integer value.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] pdb_admin_password: A strong password for PDB Admin. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numbers, and two special characters. The special characters must be _, \\#, or -.
-        :param pulumi.Input['PluggableDatabasePdbCreationTypeDetailsArgs'] pdb_creation_type_details: The Pluggable Database creation type. Use `LOCAL_CLONE_PDB` for creating a new PDB using Local Clone on Source Pluggable Database. This will Clone and starts a pluggable database (PDB) in the same database (CDB) as the source PDB. The source PDB must be in the `READ_WRITE` openMode to perform the clone operation. Use `REMOTE_CLONE_PDB` for creating a new PDB using Remote Clone on Source Pluggable Database. This will Clone a pluggable database (PDB) to a different database from the source PDB. The cloned PDB will be started upon completion of the clone operation. The source PDB must be in the `READ_WRITE` openMode when performing the clone. For Exadata Cloud@Customer instances, the source pluggable database (PDB) must be on the same Exadata Infrastructure as the target container database (CDB) to create a remote clone.
-               
-               Use `RELOCATE_PDB` for relocating the Pluggable Database from Source CDB and creating it in target CDB. This will relocate a pluggable database (PDB) to a different database from the source PDB. The source PDB must be in the `READ_WRITE` openMode when performing the relocate.
-        :param pulumi.Input[int] refresh_trigger: (Updatable) An optional property when incremented triggers Refresh. Could be set to any integer value.
-        :param pulumi.Input[int] rotate_key_trigger: (Updatable) An optional property when incremented triggers Rotate Key. Could be set to any integer value.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[bool] should_create_pdb_backup: Indicates whether to take Pluggable Database Backup after the operation.
-        :param pulumi.Input[bool] should_pdb_admin_account_be_locked: The locked mode of the pluggable database admin account. If false, the user needs to provide the PDB Admin Password to connect to it. If true, the pluggable database will be locked and user cannot login to it.
-        :param pulumi.Input[str] tde_wallet_password: The existing TDE wallet password of the CDB.
         """
         pulumi.set(__self__, "container_database_id", container_database_id)
         pulumi.set(__self__, "pdb_name", pdb_name)
@@ -79,9 +60,6 @@ class PluggableDatabaseArgs:
     @property
     @pulumi.getter(name="containerDatabaseId")
     def container_database_id(self) -> pulumi.Input[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the CDB
-        """
         return pulumi.get(self, "container_database_id")
 
     @container_database_id.setter
@@ -91,9 +69,6 @@ class PluggableDatabaseArgs:
     @property
     @pulumi.getter(name="pdbName")
     def pdb_name(self) -> pulumi.Input[str]:
-        """
-        The name for the pluggable database (PDB). The name is unique in the context of a [container database](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/Database/). The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. The pluggable database name should not be same as the container database name.
-        """
         return pulumi.get(self, "pdb_name")
 
     @pdb_name.setter
@@ -103,9 +78,6 @@ class PluggableDatabaseArgs:
     @property
     @pulumi.getter(name="containerDatabaseAdminPassword")
     def container_database_admin_password(self) -> Optional[pulumi.Input[str]]:
-        """
-        The DB system administrator password of the Container Database.
-        """
         return pulumi.get(self, "container_database_admin_password")
 
     @container_database_admin_password.setter
@@ -115,9 +87,6 @@ class PluggableDatabaseArgs:
     @property
     @pulumi.getter(name="convertToRegularTrigger")
     def convert_to_regular_trigger(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) An optional property when incremented triggers Convert To Regular. Could be set to any integer value.
-        """
         return pulumi.get(self, "convert_to_regular_trigger")
 
     @convert_to_regular_trigger.setter
@@ -127,9 +96,6 @@ class PluggableDatabaseArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -139,9 +105,6 @@ class PluggableDatabaseArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -151,9 +114,6 @@ class PluggableDatabaseArgs:
     @property
     @pulumi.getter(name="pdbAdminPassword")
     def pdb_admin_password(self) -> Optional[pulumi.Input[str]]:
-        """
-        A strong password for PDB Admin. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numbers, and two special characters. The special characters must be _, \\#, or -.
-        """
         return pulumi.get(self, "pdb_admin_password")
 
     @pdb_admin_password.setter
@@ -163,11 +123,6 @@ class PluggableDatabaseArgs:
     @property
     @pulumi.getter(name="pdbCreationTypeDetails")
     def pdb_creation_type_details(self) -> Optional[pulumi.Input['PluggableDatabasePdbCreationTypeDetailsArgs']]:
-        """
-        The Pluggable Database creation type. Use `LOCAL_CLONE_PDB` for creating a new PDB using Local Clone on Source Pluggable Database. This will Clone and starts a pluggable database (PDB) in the same database (CDB) as the source PDB. The source PDB must be in the `READ_WRITE` openMode to perform the clone operation. Use `REMOTE_CLONE_PDB` for creating a new PDB using Remote Clone on Source Pluggable Database. This will Clone a pluggable database (PDB) to a different database from the source PDB. The cloned PDB will be started upon completion of the clone operation. The source PDB must be in the `READ_WRITE` openMode when performing the clone. For Exadata Cloud@Customer instances, the source pluggable database (PDB) must be on the same Exadata Infrastructure as the target container database (CDB) to create a remote clone.
-
-        Use `RELOCATE_PDB` for relocating the Pluggable Database from Source CDB and creating it in target CDB. This will relocate a pluggable database (PDB) to a different database from the source PDB. The source PDB must be in the `READ_WRITE` openMode when performing the relocate.
-        """
         return pulumi.get(self, "pdb_creation_type_details")
 
     @pdb_creation_type_details.setter
@@ -177,9 +132,6 @@ class PluggableDatabaseArgs:
     @property
     @pulumi.getter(name="refreshTrigger")
     def refresh_trigger(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) An optional property when incremented triggers Refresh. Could be set to any integer value.
-        """
         return pulumi.get(self, "refresh_trigger")
 
     @refresh_trigger.setter
@@ -189,13 +141,6 @@ class PluggableDatabaseArgs:
     @property
     @pulumi.getter(name="rotateKeyTrigger")
     def rotate_key_trigger(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) An optional property when incremented triggers Rotate Key. Could be set to any integer value.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "rotate_key_trigger")
 
     @rotate_key_trigger.setter
@@ -205,9 +150,6 @@ class PluggableDatabaseArgs:
     @property
     @pulumi.getter(name="shouldCreatePdbBackup")
     def should_create_pdb_backup(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Indicates whether to take Pluggable Database Backup after the operation.
-        """
         return pulumi.get(self, "should_create_pdb_backup")
 
     @should_create_pdb_backup.setter
@@ -217,9 +159,6 @@ class PluggableDatabaseArgs:
     @property
     @pulumi.getter(name="shouldPdbAdminAccountBeLocked")
     def should_pdb_admin_account_be_locked(self) -> Optional[pulumi.Input[bool]]:
-        """
-        The locked mode of the pluggable database admin account. If false, the user needs to provide the PDB Admin Password to connect to it. If true, the pluggable database will be locked and user cannot login to it.
-        """
         return pulumi.get(self, "should_pdb_admin_account_be_locked")
 
     @should_pdb_admin_account_be_locked.setter
@@ -229,9 +168,6 @@ class PluggableDatabaseArgs:
     @property
     @pulumi.getter(name="tdeWalletPassword")
     def tde_wallet_password(self) -> Optional[pulumi.Input[str]]:
-        """
-        The existing TDE wallet password of the CDB.
-        """
         return pulumi.get(self, "tde_wallet_password")
 
     @tde_wallet_password.setter
@@ -267,35 +203,6 @@ class _PluggableDatabaseState:
                  time_created: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering PluggableDatabase resources.
-        :param pulumi.Input[str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param pulumi.Input[Sequence[pulumi.Input['PluggableDatabaseConnectionStringArgs']]] connection_strings: Connection strings to connect to an Oracle Pluggable Database.
-        :param pulumi.Input[str] container_database_admin_password: The DB system administrator password of the Container Database.
-        :param pulumi.Input[str] container_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the CDB
-        :param pulumi.Input[int] convert_to_regular_trigger: (Updatable) An optional property when incremented triggers Convert To Regular. Could be set to any integer value.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[bool] is_restricted: The restricted mode of the pluggable database. If a pluggable database is opened in restricted mode, the user needs both create a session and have restricted session privileges to connect to it.
-        :param pulumi.Input[str] lifecycle_details: Detailed message for the lifecycle state.
-        :param pulumi.Input[str] open_mode: The mode that pluggable database is in. Open mode can only be changed to READ_ONLY or MIGRATE directly from the backend (within the Oracle Database software).
-        :param pulumi.Input[str] pdb_admin_password: A strong password for PDB Admin. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numbers, and two special characters. The special characters must be _, \\#, or -.
-        :param pulumi.Input['PluggableDatabasePdbCreationTypeDetailsArgs'] pdb_creation_type_details: The Pluggable Database creation type. Use `LOCAL_CLONE_PDB` for creating a new PDB using Local Clone on Source Pluggable Database. This will Clone and starts a pluggable database (PDB) in the same database (CDB) as the source PDB. The source PDB must be in the `READ_WRITE` openMode to perform the clone operation. Use `REMOTE_CLONE_PDB` for creating a new PDB using Remote Clone on Source Pluggable Database. This will Clone a pluggable database (PDB) to a different database from the source PDB. The cloned PDB will be started upon completion of the clone operation. The source PDB must be in the `READ_WRITE` openMode when performing the clone. For Exadata Cloud@Customer instances, the source pluggable database (PDB) must be on the same Exadata Infrastructure as the target container database (CDB) to create a remote clone.
-               
-               Use `RELOCATE_PDB` for relocating the Pluggable Database from Source CDB and creating it in target CDB. This will relocate a pluggable database (PDB) to a different database from the source PDB. The source PDB must be in the `READ_WRITE` openMode when performing the relocate.
-        :param pulumi.Input[str] pdb_name: The name for the pluggable database (PDB). The name is unique in the context of a [container database](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/Database/). The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. The pluggable database name should not be same as the container database name.
-        :param pulumi.Input[Sequence[pulumi.Input['PluggableDatabasePdbNodeLevelDetailArgs']]] pdb_node_level_details: Pluggable Database Node Level Details. Example: [{"nodeName" : "node1", "openMode" : "READ_WRITE"}, {"nodeName" : "node2", "openMode" : "READ_ONLY"}]
-        :param pulumi.Input[Sequence[pulumi.Input['PluggableDatabasePluggableDatabaseManagementConfigArgs']]] pluggable_database_management_configs: The configuration of the Pluggable Database Management service.
-        :param pulumi.Input[int] refresh_trigger: (Updatable) An optional property when incremented triggers Refresh. Could be set to any integer value.
-        :param pulumi.Input[Sequence[pulumi.Input['PluggableDatabaseRefreshableCloneConfigArgs']]] refreshable_clone_configs: Pluggable Database Refreshable Clone Configuration.
-        :param pulumi.Input[int] rotate_key_trigger: (Updatable) An optional property when incremented triggers Rotate Key. Could be set to any integer value.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[bool] should_create_pdb_backup: Indicates whether to take Pluggable Database Backup after the operation.
-        :param pulumi.Input[bool] should_pdb_admin_account_be_locked: The locked mode of the pluggable database admin account. If false, the user needs to provide the PDB Admin Password to connect to it. If true, the pluggable database will be locked and user cannot login to it.
-        :param pulumi.Input[str] state: The current state of the pluggable database.
-        :param pulumi.Input[str] tde_wallet_password: The existing TDE wallet password of the CDB.
-        :param pulumi.Input[str] time_created: The date and time the pluggable database was created.
         """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
@@ -347,9 +254,6 @@ class _PluggableDatabaseState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -359,9 +263,6 @@ class _PluggableDatabaseState:
     @property
     @pulumi.getter(name="connectionStrings")
     def connection_strings(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PluggableDatabaseConnectionStringArgs']]]]:
-        """
-        Connection strings to connect to an Oracle Pluggable Database.
-        """
         return pulumi.get(self, "connection_strings")
 
     @connection_strings.setter
@@ -371,9 +272,6 @@ class _PluggableDatabaseState:
     @property
     @pulumi.getter(name="containerDatabaseAdminPassword")
     def container_database_admin_password(self) -> Optional[pulumi.Input[str]]:
-        """
-        The DB system administrator password of the Container Database.
-        """
         return pulumi.get(self, "container_database_admin_password")
 
     @container_database_admin_password.setter
@@ -383,9 +281,6 @@ class _PluggableDatabaseState:
     @property
     @pulumi.getter(name="containerDatabaseId")
     def container_database_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the CDB
-        """
         return pulumi.get(self, "container_database_id")
 
     @container_database_id.setter
@@ -395,9 +290,6 @@ class _PluggableDatabaseState:
     @property
     @pulumi.getter(name="convertToRegularTrigger")
     def convert_to_regular_trigger(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) An optional property when incremented triggers Convert To Regular. Could be set to any integer value.
-        """
         return pulumi.get(self, "convert_to_regular_trigger")
 
     @convert_to_regular_trigger.setter
@@ -407,9 +299,6 @@ class _PluggableDatabaseState:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -419,9 +308,6 @@ class _PluggableDatabaseState:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -431,9 +317,6 @@ class _PluggableDatabaseState:
     @property
     @pulumi.getter(name="isRestricted")
     def is_restricted(self) -> Optional[pulumi.Input[bool]]:
-        """
-        The restricted mode of the pluggable database. If a pluggable database is opened in restricted mode, the user needs both create a session and have restricted session privileges to connect to it.
-        """
         return pulumi.get(self, "is_restricted")
 
     @is_restricted.setter
@@ -443,9 +326,6 @@ class _PluggableDatabaseState:
     @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> Optional[pulumi.Input[str]]:
-        """
-        Detailed message for the lifecycle state.
-        """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
@@ -455,9 +335,6 @@ class _PluggableDatabaseState:
     @property
     @pulumi.getter(name="openMode")
     def open_mode(self) -> Optional[pulumi.Input[str]]:
-        """
-        The mode that pluggable database is in. Open mode can only be changed to READ_ONLY or MIGRATE directly from the backend (within the Oracle Database software).
-        """
         return pulumi.get(self, "open_mode")
 
     @open_mode.setter
@@ -467,9 +344,6 @@ class _PluggableDatabaseState:
     @property
     @pulumi.getter(name="pdbAdminPassword")
     def pdb_admin_password(self) -> Optional[pulumi.Input[str]]:
-        """
-        A strong password for PDB Admin. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numbers, and two special characters. The special characters must be _, \\#, or -.
-        """
         return pulumi.get(self, "pdb_admin_password")
 
     @pdb_admin_password.setter
@@ -479,11 +353,6 @@ class _PluggableDatabaseState:
     @property
     @pulumi.getter(name="pdbCreationTypeDetails")
     def pdb_creation_type_details(self) -> Optional[pulumi.Input['PluggableDatabasePdbCreationTypeDetailsArgs']]:
-        """
-        The Pluggable Database creation type. Use `LOCAL_CLONE_PDB` for creating a new PDB using Local Clone on Source Pluggable Database. This will Clone and starts a pluggable database (PDB) in the same database (CDB) as the source PDB. The source PDB must be in the `READ_WRITE` openMode to perform the clone operation. Use `REMOTE_CLONE_PDB` for creating a new PDB using Remote Clone on Source Pluggable Database. This will Clone a pluggable database (PDB) to a different database from the source PDB. The cloned PDB will be started upon completion of the clone operation. The source PDB must be in the `READ_WRITE` openMode when performing the clone. For Exadata Cloud@Customer instances, the source pluggable database (PDB) must be on the same Exadata Infrastructure as the target container database (CDB) to create a remote clone.
-
-        Use `RELOCATE_PDB` for relocating the Pluggable Database from Source CDB and creating it in target CDB. This will relocate a pluggable database (PDB) to a different database from the source PDB. The source PDB must be in the `READ_WRITE` openMode when performing the relocate.
-        """
         return pulumi.get(self, "pdb_creation_type_details")
 
     @pdb_creation_type_details.setter
@@ -493,9 +362,6 @@ class _PluggableDatabaseState:
     @property
     @pulumi.getter(name="pdbName")
     def pdb_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The name for the pluggable database (PDB). The name is unique in the context of a [container database](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/Database/). The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. The pluggable database name should not be same as the container database name.
-        """
         return pulumi.get(self, "pdb_name")
 
     @pdb_name.setter
@@ -505,9 +371,6 @@ class _PluggableDatabaseState:
     @property
     @pulumi.getter(name="pdbNodeLevelDetails")
     def pdb_node_level_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PluggableDatabasePdbNodeLevelDetailArgs']]]]:
-        """
-        Pluggable Database Node Level Details. Example: [{"nodeName" : "node1", "openMode" : "READ_WRITE"}, {"nodeName" : "node2", "openMode" : "READ_ONLY"}]
-        """
         return pulumi.get(self, "pdb_node_level_details")
 
     @pdb_node_level_details.setter
@@ -517,9 +380,6 @@ class _PluggableDatabaseState:
     @property
     @pulumi.getter(name="pluggableDatabaseManagementConfigs")
     def pluggable_database_management_configs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PluggableDatabasePluggableDatabaseManagementConfigArgs']]]]:
-        """
-        The configuration of the Pluggable Database Management service.
-        """
         return pulumi.get(self, "pluggable_database_management_configs")
 
     @pluggable_database_management_configs.setter
@@ -529,9 +389,6 @@ class _PluggableDatabaseState:
     @property
     @pulumi.getter(name="refreshTrigger")
     def refresh_trigger(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) An optional property when incremented triggers Refresh. Could be set to any integer value.
-        """
         return pulumi.get(self, "refresh_trigger")
 
     @refresh_trigger.setter
@@ -541,9 +398,6 @@ class _PluggableDatabaseState:
     @property
     @pulumi.getter(name="refreshableCloneConfigs")
     def refreshable_clone_configs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PluggableDatabaseRefreshableCloneConfigArgs']]]]:
-        """
-        Pluggable Database Refreshable Clone Configuration.
-        """
         return pulumi.get(self, "refreshable_clone_configs")
 
     @refreshable_clone_configs.setter
@@ -553,13 +407,6 @@ class _PluggableDatabaseState:
     @property
     @pulumi.getter(name="rotateKeyTrigger")
     def rotate_key_trigger(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) An optional property when incremented triggers Rotate Key. Could be set to any integer value.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "rotate_key_trigger")
 
     @rotate_key_trigger.setter
@@ -569,9 +416,6 @@ class _PluggableDatabaseState:
     @property
     @pulumi.getter(name="shouldCreatePdbBackup")
     def should_create_pdb_backup(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Indicates whether to take Pluggable Database Backup after the operation.
-        """
         return pulumi.get(self, "should_create_pdb_backup")
 
     @should_create_pdb_backup.setter
@@ -581,9 +425,6 @@ class _PluggableDatabaseState:
     @property
     @pulumi.getter(name="shouldPdbAdminAccountBeLocked")
     def should_pdb_admin_account_be_locked(self) -> Optional[pulumi.Input[bool]]:
-        """
-        The locked mode of the pluggable database admin account. If false, the user needs to provide the PDB Admin Password to connect to it. If true, the pluggable database will be locked and user cannot login to it.
-        """
         return pulumi.get(self, "should_pdb_admin_account_be_locked")
 
     @should_pdb_admin_account_be_locked.setter
@@ -593,9 +434,6 @@ class _PluggableDatabaseState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The current state of the pluggable database.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -605,9 +443,6 @@ class _PluggableDatabaseState:
     @property
     @pulumi.getter(name="tdeWalletPassword")
     def tde_wallet_password(self) -> Optional[pulumi.Input[str]]:
-        """
-        The existing TDE wallet password of the CDB.
-        """
         return pulumi.get(self, "tde_wallet_password")
 
     @tde_wallet_password.setter
@@ -617,9 +452,6 @@ class _PluggableDatabaseState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time the pluggable database was created.
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -647,41 +479,9 @@ class PluggableDatabase(pulumi.CustomResource):
                  tde_wallet_password: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Pluggable Database resource in Oracle Cloud Infrastructure Database service.
-
-        Creates and starts a pluggable database in the specified container database.
-        Pluggable Database can be created using different operations (e.g. LocalClone, RemoteClone, Relocate ) with this API.
-        Use the [StartPluggableDatabase](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/PluggableDatabase/StartPluggableDatabase) and [StopPluggableDatabase](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/PluggableDatabase/StopPluggableDatabase) APIs to start and stop the pluggable database.
-
-        ## Import
-
-        PluggableDatabases can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Database/pluggableDatabase:PluggableDatabase test_pluggable_database "id"
-        ```
-
+        Create a PluggableDatabase resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] container_database_admin_password: The DB system administrator password of the Container Database.
-        :param pulumi.Input[str] container_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the CDB
-        :param pulumi.Input[int] convert_to_regular_trigger: (Updatable) An optional property when incremented triggers Convert To Regular. Could be set to any integer value.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] pdb_admin_password: A strong password for PDB Admin. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numbers, and two special characters. The special characters must be _, \\#, or -.
-        :param pulumi.Input[pulumi.InputType['PluggableDatabasePdbCreationTypeDetailsArgs']] pdb_creation_type_details: The Pluggable Database creation type. Use `LOCAL_CLONE_PDB` for creating a new PDB using Local Clone on Source Pluggable Database. This will Clone and starts a pluggable database (PDB) in the same database (CDB) as the source PDB. The source PDB must be in the `READ_WRITE` openMode to perform the clone operation. Use `REMOTE_CLONE_PDB` for creating a new PDB using Remote Clone on Source Pluggable Database. This will Clone a pluggable database (PDB) to a different database from the source PDB. The cloned PDB will be started upon completion of the clone operation. The source PDB must be in the `READ_WRITE` openMode when performing the clone. For Exadata Cloud@Customer instances, the source pluggable database (PDB) must be on the same Exadata Infrastructure as the target container database (CDB) to create a remote clone.
-               
-               Use `RELOCATE_PDB` for relocating the Pluggable Database from Source CDB and creating it in target CDB. This will relocate a pluggable database (PDB) to a different database from the source PDB. The source PDB must be in the `READ_WRITE` openMode when performing the relocate.
-        :param pulumi.Input[str] pdb_name: The name for the pluggable database (PDB). The name is unique in the context of a [container database](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/Database/). The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. The pluggable database name should not be same as the container database name.
-        :param pulumi.Input[int] refresh_trigger: (Updatable) An optional property when incremented triggers Refresh. Could be set to any integer value.
-        :param pulumi.Input[int] rotate_key_trigger: (Updatable) An optional property when incremented triggers Rotate Key. Could be set to any integer value.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[bool] should_create_pdb_backup: Indicates whether to take Pluggable Database Backup after the operation.
-        :param pulumi.Input[bool] should_pdb_admin_account_be_locked: The locked mode of the pluggable database admin account. If false, the user needs to provide the PDB Admin Password to connect to it. If true, the pluggable database will be locked and user cannot login to it.
-        :param pulumi.Input[str] tde_wallet_password: The existing TDE wallet password of the CDB.
         """
         ...
     @overload
@@ -690,20 +490,7 @@ class PluggableDatabase(pulumi.CustomResource):
                  args: PluggableDatabaseArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Pluggable Database resource in Oracle Cloud Infrastructure Database service.
-
-        Creates and starts a pluggable database in the specified container database.
-        Pluggable Database can be created using different operations (e.g. LocalClone, RemoteClone, Relocate ) with this API.
-        Use the [StartPluggableDatabase](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/PluggableDatabase/StartPluggableDatabase) and [StopPluggableDatabase](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/PluggableDatabase/StopPluggableDatabase) APIs to start and stop the pluggable database.
-
-        ## Import
-
-        PluggableDatabases can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Database/pluggableDatabase:PluggableDatabase test_pluggable_database "id"
-        ```
-
+        Create a PluggableDatabase resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param PluggableDatabaseArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -810,35 +597,6 @@ class PluggableDatabase(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PluggableDatabaseConnectionStringArgs']]]] connection_strings: Connection strings to connect to an Oracle Pluggable Database.
-        :param pulumi.Input[str] container_database_admin_password: The DB system administrator password of the Container Database.
-        :param pulumi.Input[str] container_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the CDB
-        :param pulumi.Input[int] convert_to_regular_trigger: (Updatable) An optional property when incremented triggers Convert To Regular. Could be set to any integer value.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[bool] is_restricted: The restricted mode of the pluggable database. If a pluggable database is opened in restricted mode, the user needs both create a session and have restricted session privileges to connect to it.
-        :param pulumi.Input[str] lifecycle_details: Detailed message for the lifecycle state.
-        :param pulumi.Input[str] open_mode: The mode that pluggable database is in. Open mode can only be changed to READ_ONLY or MIGRATE directly from the backend (within the Oracle Database software).
-        :param pulumi.Input[str] pdb_admin_password: A strong password for PDB Admin. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numbers, and two special characters. The special characters must be _, \\#, or -.
-        :param pulumi.Input[pulumi.InputType['PluggableDatabasePdbCreationTypeDetailsArgs']] pdb_creation_type_details: The Pluggable Database creation type. Use `LOCAL_CLONE_PDB` for creating a new PDB using Local Clone on Source Pluggable Database. This will Clone and starts a pluggable database (PDB) in the same database (CDB) as the source PDB. The source PDB must be in the `READ_WRITE` openMode to perform the clone operation. Use `REMOTE_CLONE_PDB` for creating a new PDB using Remote Clone on Source Pluggable Database. This will Clone a pluggable database (PDB) to a different database from the source PDB. The cloned PDB will be started upon completion of the clone operation. The source PDB must be in the `READ_WRITE` openMode when performing the clone. For Exadata Cloud@Customer instances, the source pluggable database (PDB) must be on the same Exadata Infrastructure as the target container database (CDB) to create a remote clone.
-               
-               Use `RELOCATE_PDB` for relocating the Pluggable Database from Source CDB and creating it in target CDB. This will relocate a pluggable database (PDB) to a different database from the source PDB. The source PDB must be in the `READ_WRITE` openMode when performing the relocate.
-        :param pulumi.Input[str] pdb_name: The name for the pluggable database (PDB). The name is unique in the context of a [container database](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/Database/). The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. The pluggable database name should not be same as the container database name.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PluggableDatabasePdbNodeLevelDetailArgs']]]] pdb_node_level_details: Pluggable Database Node Level Details. Example: [{"nodeName" : "node1", "openMode" : "READ_WRITE"}, {"nodeName" : "node2", "openMode" : "READ_ONLY"}]
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PluggableDatabasePluggableDatabaseManagementConfigArgs']]]] pluggable_database_management_configs: The configuration of the Pluggable Database Management service.
-        :param pulumi.Input[int] refresh_trigger: (Updatable) An optional property when incremented triggers Refresh. Could be set to any integer value.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PluggableDatabaseRefreshableCloneConfigArgs']]]] refreshable_clone_configs: Pluggable Database Refreshable Clone Configuration.
-        :param pulumi.Input[int] rotate_key_trigger: (Updatable) An optional property when incremented triggers Rotate Key. Could be set to any integer value.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[bool] should_create_pdb_backup: Indicates whether to take Pluggable Database Backup after the operation.
-        :param pulumi.Input[bool] should_pdb_admin_account_be_locked: The locked mode of the pluggable database admin account. If false, the user needs to provide the PDB Admin Password to connect to it. If true, the pluggable database will be locked and user cannot login to it.
-        :param pulumi.Input[str] state: The current state of the pluggable database.
-        :param pulumi.Input[str] tde_wallet_password: The existing TDE wallet password of the CDB.
-        :param pulumi.Input[str] time_created: The date and time the pluggable database was created.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -871,191 +629,116 @@ class PluggableDatabase(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> pulumi.Output[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
+    def compartment_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="connectionStrings")
-    def connection_strings(self) -> pulumi.Output[Sequence['outputs.PluggableDatabaseConnectionString']]:
-        """
-        Connection strings to connect to an Oracle Pluggable Database.
-        """
+    def connection_strings(self) -> pulumi.Output[Optional[Sequence['outputs.PluggableDatabaseConnectionString']]]:
         return pulumi.get(self, "connection_strings")
 
     @property
     @pulumi.getter(name="containerDatabaseAdminPassword")
-    def container_database_admin_password(self) -> pulumi.Output[str]:
-        """
-        The DB system administrator password of the Container Database.
-        """
+    def container_database_admin_password(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "container_database_admin_password")
 
     @property
     @pulumi.getter(name="containerDatabaseId")
     def container_database_id(self) -> pulumi.Output[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the CDB
-        """
         return pulumi.get(self, "container_database_id")
 
     @property
     @pulumi.getter(name="convertToRegularTrigger")
     def convert_to_regular_trigger(self) -> pulumi.Output[Optional[int]]:
-        """
-        (Updatable) An optional property when incremented triggers Convert To Regular. Could be set to any integer value.
-        """
         return pulumi.get(self, "convert_to_regular_trigger")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        """
+    def defined_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="isRestricted")
-    def is_restricted(self) -> pulumi.Output[bool]:
-        """
-        The restricted mode of the pluggable database. If a pluggable database is opened in restricted mode, the user needs both create a session and have restricted session privileges to connect to it.
-        """
+    def is_restricted(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "is_restricted")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> pulumi.Output[str]:
-        """
-        Detailed message for the lifecycle state.
-        """
+    def lifecycle_details(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="openMode")
-    def open_mode(self) -> pulumi.Output[str]:
-        """
-        The mode that pluggable database is in. Open mode can only be changed to READ_ONLY or MIGRATE directly from the backend (within the Oracle Database software).
-        """
+    def open_mode(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "open_mode")
 
     @property
     @pulumi.getter(name="pdbAdminPassword")
-    def pdb_admin_password(self) -> pulumi.Output[str]:
-        """
-        A strong password for PDB Admin. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numbers, and two special characters. The special characters must be _, \\#, or -.
-        """
+    def pdb_admin_password(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "pdb_admin_password")
 
     @property
     @pulumi.getter(name="pdbCreationTypeDetails")
-    def pdb_creation_type_details(self) -> pulumi.Output['outputs.PluggableDatabasePdbCreationTypeDetails']:
-        """
-        The Pluggable Database creation type. Use `LOCAL_CLONE_PDB` for creating a new PDB using Local Clone on Source Pluggable Database. This will Clone and starts a pluggable database (PDB) in the same database (CDB) as the source PDB. The source PDB must be in the `READ_WRITE` openMode to perform the clone operation. Use `REMOTE_CLONE_PDB` for creating a new PDB using Remote Clone on Source Pluggable Database. This will Clone a pluggable database (PDB) to a different database from the source PDB. The cloned PDB will be started upon completion of the clone operation. The source PDB must be in the `READ_WRITE` openMode when performing the clone. For Exadata Cloud@Customer instances, the source pluggable database (PDB) must be on the same Exadata Infrastructure as the target container database (CDB) to create a remote clone.
-
-        Use `RELOCATE_PDB` for relocating the Pluggable Database from Source CDB and creating it in target CDB. This will relocate a pluggable database (PDB) to a different database from the source PDB. The source PDB must be in the `READ_WRITE` openMode when performing the relocate.
-        """
+    def pdb_creation_type_details(self) -> pulumi.Output[Optional['outputs.PluggableDatabasePdbCreationTypeDetails']]:
         return pulumi.get(self, "pdb_creation_type_details")
 
     @property
     @pulumi.getter(name="pdbName")
     def pdb_name(self) -> pulumi.Output[str]:
-        """
-        The name for the pluggable database (PDB). The name is unique in the context of a [container database](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/Database/). The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. The pluggable database name should not be same as the container database name.
-        """
         return pulumi.get(self, "pdb_name")
 
     @property
     @pulumi.getter(name="pdbNodeLevelDetails")
-    def pdb_node_level_details(self) -> pulumi.Output[Sequence['outputs.PluggableDatabasePdbNodeLevelDetail']]:
-        """
-        Pluggable Database Node Level Details. Example: [{"nodeName" : "node1", "openMode" : "READ_WRITE"}, {"nodeName" : "node2", "openMode" : "READ_ONLY"}]
-        """
+    def pdb_node_level_details(self) -> pulumi.Output[Optional[Sequence['outputs.PluggableDatabasePdbNodeLevelDetail']]]:
         return pulumi.get(self, "pdb_node_level_details")
 
     @property
     @pulumi.getter(name="pluggableDatabaseManagementConfigs")
-    def pluggable_database_management_configs(self) -> pulumi.Output[Sequence['outputs.PluggableDatabasePluggableDatabaseManagementConfig']]:
-        """
-        The configuration of the Pluggable Database Management service.
-        """
+    def pluggable_database_management_configs(self) -> pulumi.Output[Optional[Sequence['outputs.PluggableDatabasePluggableDatabaseManagementConfig']]]:
         return pulumi.get(self, "pluggable_database_management_configs")
 
     @property
     @pulumi.getter(name="refreshTrigger")
     def refresh_trigger(self) -> pulumi.Output[Optional[int]]:
-        """
-        (Updatable) An optional property when incremented triggers Refresh. Could be set to any integer value.
-        """
         return pulumi.get(self, "refresh_trigger")
 
     @property
     @pulumi.getter(name="refreshableCloneConfigs")
-    def refreshable_clone_configs(self) -> pulumi.Output[Sequence['outputs.PluggableDatabaseRefreshableCloneConfig']]:
-        """
-        Pluggable Database Refreshable Clone Configuration.
-        """
+    def refreshable_clone_configs(self) -> pulumi.Output[Optional[Sequence['outputs.PluggableDatabaseRefreshableCloneConfig']]]:
         return pulumi.get(self, "refreshable_clone_configs")
 
     @property
     @pulumi.getter(name="rotateKeyTrigger")
     def rotate_key_trigger(self) -> pulumi.Output[Optional[int]]:
-        """
-        (Updatable) An optional property when incremented triggers Rotate Key. Could be set to any integer value.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "rotate_key_trigger")
 
     @property
     @pulumi.getter(name="shouldCreatePdbBackup")
-    def should_create_pdb_backup(self) -> pulumi.Output[bool]:
-        """
-        Indicates whether to take Pluggable Database Backup after the operation.
-        """
+    def should_create_pdb_backup(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "should_create_pdb_backup")
 
     @property
     @pulumi.getter(name="shouldPdbAdminAccountBeLocked")
-    def should_pdb_admin_account_be_locked(self) -> pulumi.Output[bool]:
-        """
-        The locked mode of the pluggable database admin account. If false, the user needs to provide the PDB Admin Password to connect to it. If true, the pluggable database will be locked and user cannot login to it.
-        """
+    def should_pdb_admin_account_be_locked(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "should_pdb_admin_account_be_locked")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        The current state of the pluggable database.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="tdeWalletPassword")
-    def tde_wallet_password(self) -> pulumi.Output[str]:
-        """
-        The existing TDE wallet password of the CDB.
-        """
+    def tde_wallet_password(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "tde_wallet_password")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        The date and time the pluggable database was created.
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 

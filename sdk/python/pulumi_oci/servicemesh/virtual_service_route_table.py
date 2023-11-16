@@ -26,18 +26,6 @@ class VirtualServiceRouteTableArgs:
                  priority: Optional[pulumi.Input[int]] = None):
         """
         The set of arguments for constructing a VirtualServiceRouteTable resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param pulumi.Input[Sequence[pulumi.Input['VirtualServiceRouteTableRouteRuleArgs']]] route_rules: (Updatable) The route rules for the virtual service.
-        :param pulumi.Input[str] virtual_service_id: The OCID of the service mesh in which this access policy is created.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] description: (Updatable) Description of the resource. It can be changed after creation. Avoid entering confidential information.  Example: `This is my new resource`
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] name: A user-friendly name. The name must be unique within the same virtual service and cannot be changed after creation. Avoid entering confidential information.  Example: `My unique resource name`
-        :param pulumi.Input[int] priority: (Updatable) The priority of the route table. Lower value means higher priority. The routes are declared based on the priority.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "route_rules", route_rules)
@@ -56,9 +44,6 @@ class VirtualServiceRouteTableArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -68,9 +53,6 @@ class VirtualServiceRouteTableArgs:
     @property
     @pulumi.getter(name="routeRules")
     def route_rules(self) -> pulumi.Input[Sequence[pulumi.Input['VirtualServiceRouteTableRouteRuleArgs']]]:
-        """
-        (Updatable) The route rules for the virtual service.
-        """
         return pulumi.get(self, "route_rules")
 
     @route_rules.setter
@@ -80,13 +62,6 @@ class VirtualServiceRouteTableArgs:
     @property
     @pulumi.getter(name="virtualServiceId")
     def virtual_service_id(self) -> pulumi.Input[str]:
-        """
-        The OCID of the service mesh in which this access policy is created.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "virtual_service_id")
 
     @virtual_service_id.setter
@@ -96,9 +71,6 @@ class VirtualServiceRouteTableArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -108,9 +80,6 @@ class VirtualServiceRouteTableArgs:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Description of the resource. It can be changed after creation. Avoid entering confidential information.  Example: `This is my new resource`
-        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -120,9 +89,6 @@ class VirtualServiceRouteTableArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -132,9 +98,6 @@ class VirtualServiceRouteTableArgs:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        A user-friendly name. The name must be unique within the same virtual service and cannot be changed after creation. Avoid entering confidential information.  Example: `My unique resource name`
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -144,9 +107,6 @@ class VirtualServiceRouteTableArgs:
     @property
     @pulumi.getter
     def priority(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) The priority of the route table. Lower value means higher priority. The routes are declared based on the priority.
-        """
         return pulumi.get(self, "priority")
 
     @priority.setter
@@ -172,23 +132,6 @@ class _VirtualServiceRouteTableState:
                  virtual_service_id: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering VirtualServiceRouteTable resources.
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] description: (Updatable) Description of the resource. It can be changed after creation. Avoid entering confidential information.  Example: `This is my new resource`
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
-        :param pulumi.Input[str] name: A user-friendly name. The name must be unique within the same virtual service and cannot be changed after creation. Avoid entering confidential information.  Example: `My unique resource name`
-        :param pulumi.Input[int] priority: (Updatable) The priority of the route table. Lower value means higher priority. The routes are declared based on the priority.
-        :param pulumi.Input[Sequence[pulumi.Input['VirtualServiceRouteTableRouteRuleArgs']]] route_rules: (Updatable) The route rules for the virtual service.
-        :param pulumi.Input[str] state: The current state of the Resource.
-        :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[str] time_created: The time when this resource was created in an RFC3339 formatted datetime string.
-        :param pulumi.Input[str] time_updated: The time when this resource was updated in an RFC3339 formatted datetime string.
-        :param pulumi.Input[str] virtual_service_id: The OCID of the service mesh in which this access policy is created.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
@@ -220,9 +163,6 @@ class _VirtualServiceRouteTableState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -232,9 +172,6 @@ class _VirtualServiceRouteTableState:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -244,9 +181,6 @@ class _VirtualServiceRouteTableState:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Description of the resource. It can be changed after creation. Avoid entering confidential information.  Example: `This is my new resource`
-        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -256,9 +190,6 @@ class _VirtualServiceRouteTableState:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -268,9 +199,6 @@ class _VirtualServiceRouteTableState:
     @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> Optional[pulumi.Input[str]]:
-        """
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
-        """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
@@ -280,9 +208,6 @@ class _VirtualServiceRouteTableState:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        A user-friendly name. The name must be unique within the same virtual service and cannot be changed after creation. Avoid entering confidential information.  Example: `My unique resource name`
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -292,9 +217,6 @@ class _VirtualServiceRouteTableState:
     @property
     @pulumi.getter
     def priority(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) The priority of the route table. Lower value means higher priority. The routes are declared based on the priority.
-        """
         return pulumi.get(self, "priority")
 
     @priority.setter
@@ -304,9 +226,6 @@ class _VirtualServiceRouteTableState:
     @property
     @pulumi.getter(name="routeRules")
     def route_rules(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['VirtualServiceRouteTableRouteRuleArgs']]]]:
-        """
-        (Updatable) The route rules for the virtual service.
-        """
         return pulumi.get(self, "route_rules")
 
     @route_rules.setter
@@ -316,9 +235,6 @@ class _VirtualServiceRouteTableState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The current state of the Resource.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -328,9 +244,6 @@ class _VirtualServiceRouteTableState:
     @property
     @pulumi.getter(name="systemTags")
     def system_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
@@ -340,9 +253,6 @@ class _VirtualServiceRouteTableState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The time when this resource was created in an RFC3339 formatted datetime string.
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -352,9 +262,6 @@ class _VirtualServiceRouteTableState:
     @property
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> Optional[pulumi.Input[str]]:
-        """
-        The time when this resource was updated in an RFC3339 formatted datetime string.
-        """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
@@ -364,13 +271,6 @@ class _VirtualServiceRouteTableState:
     @property
     @pulumi.getter(name="virtualServiceId")
     def virtual_service_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the service mesh in which this access policy is created.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "virtual_service_id")
 
     @virtual_service_id.setter
@@ -393,63 +293,9 @@ class VirtualServiceRouteTable(pulumi.CustomResource):
                  virtual_service_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Virtual Service Route Table resource in Oracle Cloud Infrastructure Service Mesh service.
-
-        Creates a new VirtualServiceRouteTable.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_virtual_service_route_table = oci.service_mesh.VirtualServiceRouteTable("testVirtualServiceRouteTable",
-            compartment_id=var["compartment_id"],
-            route_rules=[oci.service_mesh.VirtualServiceRouteTableRouteRuleArgs(
-                destinations=[oci.service_mesh.VirtualServiceRouteTableRouteRuleDestinationArgs(
-                    virtual_deployment_id=oci_service_mesh_virtual_deployment["test_virtual_deployment"]["id"],
-                    weight=var["virtual_service_route_table_route_rules_destinations_weight"],
-                    port=var["virtual_service_route_table_route_rules_destinations_port"],
-                )],
-                type=var["virtual_service_route_table_route_rules_type"],
-                is_grpc=var["virtual_service_route_table_route_rules_is_grpc"],
-                path=var["virtual_service_route_table_route_rules_path"],
-                path_type=var["virtual_service_route_table_route_rules_path_type"],
-                request_timeout_in_ms=var["virtual_service_route_table_route_rules_request_timeout_in_ms"],
-            )],
-            virtual_service_id=oci_service_mesh_virtual_service["test_virtual_service"]["id"],
-            defined_tags={
-                "foo-namespace.bar-key": "value",
-            },
-            description=var["virtual_service_route_table_description"],
-            freeform_tags={
-                "bar-key": "value",
-            },
-            priority=var["virtual_service_route_table_priority"])
-        ```
-
-        ## Import
-
-        VirtualServiceRouteTables can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:ServiceMesh/virtualServiceRouteTable:VirtualServiceRouteTable test_virtual_service_route_table "id"
-        ```
-
+        Create a VirtualServiceRouteTable resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] description: (Updatable) Description of the resource. It can be changed after creation. Avoid entering confidential information.  Example: `This is my new resource`
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] name: A user-friendly name. The name must be unique within the same virtual service and cannot be changed after creation. Avoid entering confidential information.  Example: `My unique resource name`
-        :param pulumi.Input[int] priority: (Updatable) The priority of the route table. Lower value means higher priority. The routes are declared based on the priority.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['VirtualServiceRouteTableRouteRuleArgs']]]] route_rules: (Updatable) The route rules for the virtual service.
-        :param pulumi.Input[str] virtual_service_id: The OCID of the service mesh in which this access policy is created.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -458,49 +304,7 @@ class VirtualServiceRouteTable(pulumi.CustomResource):
                  args: VirtualServiceRouteTableArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Virtual Service Route Table resource in Oracle Cloud Infrastructure Service Mesh service.
-
-        Creates a new VirtualServiceRouteTable.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_virtual_service_route_table = oci.service_mesh.VirtualServiceRouteTable("testVirtualServiceRouteTable",
-            compartment_id=var["compartment_id"],
-            route_rules=[oci.service_mesh.VirtualServiceRouteTableRouteRuleArgs(
-                destinations=[oci.service_mesh.VirtualServiceRouteTableRouteRuleDestinationArgs(
-                    virtual_deployment_id=oci_service_mesh_virtual_deployment["test_virtual_deployment"]["id"],
-                    weight=var["virtual_service_route_table_route_rules_destinations_weight"],
-                    port=var["virtual_service_route_table_route_rules_destinations_port"],
-                )],
-                type=var["virtual_service_route_table_route_rules_type"],
-                is_grpc=var["virtual_service_route_table_route_rules_is_grpc"],
-                path=var["virtual_service_route_table_route_rules_path"],
-                path_type=var["virtual_service_route_table_route_rules_path_type"],
-                request_timeout_in_ms=var["virtual_service_route_table_route_rules_request_timeout_in_ms"],
-            )],
-            virtual_service_id=oci_service_mesh_virtual_service["test_virtual_service"]["id"],
-            defined_tags={
-                "foo-namespace.bar-key": "value",
-            },
-            description=var["virtual_service_route_table_description"],
-            freeform_tags={
-                "bar-key": "value",
-            },
-            priority=var["virtual_service_route_table_priority"])
-        ```
-
-        ## Import
-
-        VirtualServiceRouteTables can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:ServiceMesh/virtualServiceRouteTable:VirtualServiceRouteTable test_virtual_service_route_table "id"
-        ```
-
+        Create a VirtualServiceRouteTable resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param VirtualServiceRouteTableArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -582,23 +386,6 @@ class VirtualServiceRouteTable(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] description: (Updatable) Description of the resource. It can be changed after creation. Avoid entering confidential information.  Example: `This is my new resource`
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
-        :param pulumi.Input[str] name: A user-friendly name. The name must be unique within the same virtual service and cannot be changed after creation. Avoid entering confidential information.  Example: `My unique resource name`
-        :param pulumi.Input[int] priority: (Updatable) The priority of the route table. Lower value means higher priority. The routes are declared based on the priority.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['VirtualServiceRouteTableRouteRuleArgs']]]] route_rules: (Updatable) The route rules for the virtual service.
-        :param pulumi.Input[str] state: The current state of the Resource.
-        :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[str] time_created: The time when this resource was created in an RFC3339 formatted datetime string.
-        :param pulumi.Input[str] time_updated: The time when this resource was updated in an RFC3339 formatted datetime string.
-        :param pulumi.Input[str] virtual_service_id: The OCID of the service mesh in which this access policy is created.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -622,108 +409,65 @@ class VirtualServiceRouteTable(pulumi.CustomResource):
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def description(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Description of the resource. It can be changed after creation. Avoid entering confidential information.  Example: `This is my new resource`
-        """
+    def description(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> pulumi.Output[str]:
-        """
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
-        """
+    def lifecycle_details(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter
     def name(self) -> pulumi.Output[str]:
-        """
-        A user-friendly name. The name must be unique within the same virtual service and cannot be changed after creation. Avoid entering confidential information.  Example: `My unique resource name`
-        """
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
-    def priority(self) -> pulumi.Output[int]:
-        """
-        (Updatable) The priority of the route table. Lower value means higher priority. The routes are declared based on the priority.
-        """
+    def priority(self) -> pulumi.Output[Optional[int]]:
         return pulumi.get(self, "priority")
 
     @property
     @pulumi.getter(name="routeRules")
     def route_rules(self) -> pulumi.Output[Sequence['outputs.VirtualServiceRouteTableRouteRule']]:
-        """
-        (Updatable) The route rules for the virtual service.
-        """
         return pulumi.get(self, "route_rules")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        The current state of the Resource.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        The time when this resource was created in an RFC3339 formatted datetime string.
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> pulumi.Output[str]:
-        """
-        The time when this resource was updated in an RFC3339 formatted datetime string.
-        """
+    def time_updated(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_updated")
 
     @property
     @pulumi.getter(name="virtualServiceId")
     def virtual_service_id(self) -> pulumi.Output[str]:
-        """
-        The OCID of the service mesh in which this access policy is created.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "virtual_service_id")
 

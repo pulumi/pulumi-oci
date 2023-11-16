@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.Functions.outputs.GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollection {
@@ -14,7 +15,7 @@ public final class GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForR
      * @return A list of available refresh time objects.
      * 
      */
-    private List<GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionItem> items;
+    private @Nullable List<GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionItem> items;
 
     private GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollection() {}
     /**
@@ -22,7 +23,7 @@ public final class GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForR
      * 
      */
     public List<GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -34,7 +35,7 @@ public final class GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForR
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionItem> items;
+        private @Nullable List<GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionItem> items;
         public Builder() {}
         public Builder(GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -42,8 +43,8 @@ public final class GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForR
         }
 
         @CustomType.Setter
-        public Builder items(List<GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionItem... items) {

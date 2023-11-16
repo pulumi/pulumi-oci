@@ -97,7 +97,7 @@ export class ReportDefinition extends pulumi.CustomResource {
     /**
      * Specifies the name of the category that this report belongs to.
      */
-    public /*out*/ readonly category!: pulumi.Output<string>;
+    public /*out*/ readonly category!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) An array of column filter objects. A column Filter object stores all information about a column filter including field name, an operator, one or more expressions, if the filter is enabled, or if the filter is hidden.
      */
@@ -117,19 +117,19 @@ export class ReportDefinition extends pulumi.CustomResource {
     /**
      * The list of the data protection regulations/standards used in the report that will help demonstrate compliance.
      */
-    public /*out*/ readonly complianceStandards!: pulumi.Output<string[]>;
+    public /*out*/ readonly complianceStandards!: pulumi.Output<string[] | undefined>;
     /**
      * Specifies the name of a resource that provides data for the report. For example alerts, events.
      */
-    public /*out*/ readonly dataSource!: pulumi.Output<string>;
+    public /*out*/ readonly dataSource!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) The description of the report definition.
      */
-    public readonly description!: pulumi.Output<string>;
+    public readonly description!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Specifies the name of the report definition.
      */
@@ -137,15 +137,15 @@ export class ReportDefinition extends pulumi.CustomResource {
     /**
      * (Updatable) Specifies the order in which the summary must be displayed.
      */
-    public /*out*/ readonly displayOrder!: pulumi.Output<number>;
+    public /*out*/ readonly displayOrder!: pulumi.Output<number | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * Signifies whether the definition is seeded or user defined. Values can either be 'true' or 'false'.
      */
-    public /*out*/ readonly isSeeded!: pulumi.Output<boolean>;
+    public /*out*/ readonly isSeeded!: pulumi.Output<boolean | undefined>;
     /**
      * The OCID of the parent report definition.
      */
@@ -153,27 +153,27 @@ export class ReportDefinition extends pulumi.CustomResource {
     /**
      * The time span for the records in the report to be scheduled. <period-value><period> Allowed period strings - "H","D","M","Y" Each of the above fields potentially introduce constraints. A workRequest is created only when period-value satisfies all the constraints. Constraints introduced: 1. period = H (The allowed range for period-value is [1, 23]) 2. period = D (The allowed range for period-value is [1, 30]) 3. period = M (The allowed range for period-value is [1, 11]) 4. period = Y (The minimum period-value is 1)
      */
-    public /*out*/ readonly recordTimeSpan!: pulumi.Output<string>;
+    public /*out*/ readonly recordTimeSpan!: pulumi.Output<string | undefined>;
     /**
      * The schedule to generate the report periodically in the specified format: <version-string>;<version-specific-schedule>
      */
-    public /*out*/ readonly schedule!: pulumi.Output<string>;
+    public /*out*/ readonly schedule!: pulumi.Output<string | undefined>;
     /**
      * The OCID of the compartment in which the scheduled resource should be created.
      */
-    public /*out*/ readonly scheduledReportCompartmentId!: pulumi.Output<string>;
+    public /*out*/ readonly scheduledReportCompartmentId!: pulumi.Output<string | undefined>;
     /**
      * Specifies the format of the report ( either XLS or PDF )
      */
-    public /*out*/ readonly scheduledReportMimeType!: pulumi.Output<string>;
+    public /*out*/ readonly scheduledReportMimeType!: pulumi.Output<string | undefined>;
     /**
      * The name of the report to be scheduled.
      */
-    public /*out*/ readonly scheduledReportName!: pulumi.Output<string>;
+    public /*out*/ readonly scheduledReportName!: pulumi.Output<string | undefined>;
     /**
      * Specifies the limit on the number of rows in the report.
      */
-    public /*out*/ readonly scheduledReportRowLimit!: pulumi.Output<number>;
+    public /*out*/ readonly scheduledReportRowLimit!: pulumi.Output<number | undefined>;
     /**
      * (Updatable) Additional scim filters used to get the specific summary.
      *
@@ -181,11 +181,11 @@ export class ReportDefinition extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public /*out*/ readonly scimFilter!: pulumi.Output<string>;
+    public /*out*/ readonly scimFilter!: pulumi.Output<string | undefined>;
     /**
      * The current state of the report.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) An array of report summary objects in the order (left to right)  displayed in the report.  A  report summary object stores all information about summary of report to be displayed, including the name displayed on UI, the display order, corresponding group by and count of values, summary visibility (if the summary is visible to user).
      */
@@ -193,15 +193,15 @@ export class ReportDefinition extends pulumi.CustomResource {
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any}>;
+    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * Specifies the data and time the report definition was created.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * The date and time the report definition was update.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    public /*out*/ readonly timeUpdated!: pulumi.Output<string | undefined>;
 
     /**
      * Create a ReportDefinition resource with the given unique name, arguments, and options.

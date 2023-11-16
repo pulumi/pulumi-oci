@@ -191,7 +191,7 @@ namespace Pulumi.Oci.Functions
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         public readonly bool? IsCurrentVersion;
         /// <summary>
         /// A brief descriptive name for the PBF trigger.
@@ -215,7 +215,7 @@ namespace Pulumi.Oci.Functions
         private GetPbfListingVersionsResult(
             ImmutableArray<Outputs.GetPbfListingVersionsFilterResult> filters,
 
-            string id,
+            string? id,
 
             bool? isCurrentVersion,
 

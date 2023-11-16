@@ -15,175 +15,177 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetJobRunResult {
-    private Boolean asynchronous;
+    private @Nullable Boolean asynchronous;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the job.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the job run.
      * 
      */
-    private String createdBy;
+    private @Nullable String createdBy;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return A user-friendly display name for the resource.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job run.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The job configuration details
      * 
      */
-    private List<GetJobRunJobConfigurationOverrideDetail> jobConfigurationOverrideDetails;
+    private @Nullable List<GetJobRunJobConfigurationOverrideDetail> jobConfigurationOverrideDetails;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job run.
      * 
      */
-    private String jobId;
+    private @Nullable String jobId;
     /**
      * @return The job infrastructure configuration details (shape, block storage, etc.)
      * 
      */
-    private List<GetJobRunJobInfrastructureConfigurationDetail> jobInfrastructureConfigurationDetails;
+    private @Nullable List<GetJobRunJobInfrastructureConfigurationDetail> jobInfrastructureConfigurationDetails;
     /**
      * @return Logging configuration for resource.
      * 
      */
-    private List<GetJobRunJobLogConfigurationOverrideDetail> jobLogConfigurationOverrideDetails;
+    private @Nullable List<GetJobRunJobLogConfigurationOverrideDetail> jobLogConfigurationOverrideDetails;
     private String jobRunId;
     /**
      * @return Collection of JobStorageMountConfigurationDetails.
      * 
      */
-    private List<GetJobRunJobStorageMountConfigurationDetailsList> jobStorageMountConfigurationDetailsLists;
+    private @Nullable List<GetJobRunJobStorageMountConfigurationDetailsList> jobStorageMountConfigurationDetailsLists;
     /**
      * @return Details of the state of the job run.
      * 
      */
-    private String lifecycleDetails;
+    private @Nullable String lifecycleDetails;
     /**
      * @return Customer logging details for job run.
      * 
      */
-    private List<GetJobRunLogDetail> logDetails;
+    private @Nullable List<GetJobRunLogDetail> logDetails;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job with.
      * 
      */
-    private String projectId;
+    private @Nullable String projectId;
     /**
      * @return The state of the job run.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return The date and time the job run was accepted in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    private String timeAccepted;
+    private @Nullable String timeAccepted;
     /**
      * @return The date and time the job run request was finished in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    private String timeFinished;
+    private @Nullable String timeFinished;
     /**
      * @return The date and time the job run request was started in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    private String timeStarted;
+    private @Nullable String timeStarted;
 
     private GetJobRunResult() {}
-    public Boolean asynchronous() {
-        return this.asynchronous;
+    public Optional<Boolean> asynchronous() {
+        return Optional.ofNullable(this.asynchronous);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the job.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the job run.
      * 
      */
-    public String createdBy() {
-        return this.createdBy;
+    public Optional<String> createdBy() {
+        return Optional.ofNullable(this.createdBy);
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return A user-friendly display name for the resource.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job run.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The job configuration details
      * 
      */
     public List<GetJobRunJobConfigurationOverrideDetail> jobConfigurationOverrideDetails() {
-        return this.jobConfigurationOverrideDetails;
+        return this.jobConfigurationOverrideDetails == null ? List.of() : this.jobConfigurationOverrideDetails;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job run.
      * 
      */
-    public String jobId() {
-        return this.jobId;
+    public Optional<String> jobId() {
+        return Optional.ofNullable(this.jobId);
     }
     /**
      * @return The job infrastructure configuration details (shape, block storage, etc.)
      * 
      */
     public List<GetJobRunJobInfrastructureConfigurationDetail> jobInfrastructureConfigurationDetails() {
-        return this.jobInfrastructureConfigurationDetails;
+        return this.jobInfrastructureConfigurationDetails == null ? List.of() : this.jobInfrastructureConfigurationDetails;
     }
     /**
      * @return Logging configuration for resource.
      * 
      */
     public List<GetJobRunJobLogConfigurationOverrideDetail> jobLogConfigurationOverrideDetails() {
-        return this.jobLogConfigurationOverrideDetails;
+        return this.jobLogConfigurationOverrideDetails == null ? List.of() : this.jobLogConfigurationOverrideDetails;
     }
     public String jobRunId() {
         return this.jobRunId;
@@ -193,56 +195,56 @@ public final class GetJobRunResult {
      * 
      */
     public List<GetJobRunJobStorageMountConfigurationDetailsList> jobStorageMountConfigurationDetailsLists() {
-        return this.jobStorageMountConfigurationDetailsLists;
+        return this.jobStorageMountConfigurationDetailsLists == null ? List.of() : this.jobStorageMountConfigurationDetailsLists;
     }
     /**
      * @return Details of the state of the job run.
      * 
      */
-    public String lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Optional<String> lifecycleDetails() {
+        return Optional.ofNullable(this.lifecycleDetails);
     }
     /**
      * @return Customer logging details for job run.
      * 
      */
     public List<GetJobRunLogDetail> logDetails() {
-        return this.logDetails;
+        return this.logDetails == null ? List.of() : this.logDetails;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job with.
      * 
      */
-    public String projectId() {
-        return this.projectId;
+    public Optional<String> projectId() {
+        return Optional.ofNullable(this.projectId);
     }
     /**
      * @return The state of the job run.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return The date and time the job run was accepted in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    public String timeAccepted() {
-        return this.timeAccepted;
+    public Optional<String> timeAccepted() {
+        return Optional.ofNullable(this.timeAccepted);
     }
     /**
      * @return The date and time the job run request was finished in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    public String timeFinished() {
-        return this.timeFinished;
+    public Optional<String> timeFinished() {
+        return Optional.ofNullable(this.timeFinished);
     }
     /**
      * @return The date and time the job run request was started in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    public String timeStarted() {
-        return this.timeStarted;
+    public Optional<String> timeStarted() {
+        return Optional.ofNullable(this.timeStarted);
     }
 
     public static Builder builder() {
@@ -254,26 +256,26 @@ public final class GetJobRunResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Boolean asynchronous;
-        private String compartmentId;
-        private String createdBy;
-        private Map<String,Object> definedTags;
-        private String displayName;
-        private Map<String,Object> freeformTags;
-        private String id;
-        private List<GetJobRunJobConfigurationOverrideDetail> jobConfigurationOverrideDetails;
-        private String jobId;
-        private List<GetJobRunJobInfrastructureConfigurationDetail> jobInfrastructureConfigurationDetails;
-        private List<GetJobRunJobLogConfigurationOverrideDetail> jobLogConfigurationOverrideDetails;
+        private @Nullable Boolean asynchronous;
+        private @Nullable String compartmentId;
+        private @Nullable String createdBy;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String displayName;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String id;
+        private @Nullable List<GetJobRunJobConfigurationOverrideDetail> jobConfigurationOverrideDetails;
+        private @Nullable String jobId;
+        private @Nullable List<GetJobRunJobInfrastructureConfigurationDetail> jobInfrastructureConfigurationDetails;
+        private @Nullable List<GetJobRunJobLogConfigurationOverrideDetail> jobLogConfigurationOverrideDetails;
         private String jobRunId;
-        private List<GetJobRunJobStorageMountConfigurationDetailsList> jobStorageMountConfigurationDetailsLists;
-        private String lifecycleDetails;
-        private List<GetJobRunLogDetail> logDetails;
-        private String projectId;
-        private String state;
-        private String timeAccepted;
-        private String timeFinished;
-        private String timeStarted;
+        private @Nullable List<GetJobRunJobStorageMountConfigurationDetailsList> jobStorageMountConfigurationDetailsLists;
+        private @Nullable String lifecycleDetails;
+        private @Nullable List<GetJobRunLogDetail> logDetails;
+        private @Nullable String projectId;
+        private @Nullable String state;
+        private @Nullable String timeAccepted;
+        private @Nullable String timeFinished;
+        private @Nullable String timeStarted;
         public Builder() {}
         public Builder(GetJobRunResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -300,64 +302,64 @@ public final class GetJobRunResult {
         }
 
         @CustomType.Setter
-        public Builder asynchronous(Boolean asynchronous) {
-            this.asynchronous = Objects.requireNonNull(asynchronous);
+        public Builder asynchronous(@Nullable Boolean asynchronous) {
+            this.asynchronous = asynchronous;
             return this;
         }
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder createdBy(String createdBy) {
-            this.createdBy = Objects.requireNonNull(createdBy);
+        public Builder createdBy(@Nullable String createdBy) {
+            this.createdBy = createdBy;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder jobConfigurationOverrideDetails(List<GetJobRunJobConfigurationOverrideDetail> jobConfigurationOverrideDetails) {
-            this.jobConfigurationOverrideDetails = Objects.requireNonNull(jobConfigurationOverrideDetails);
+        public Builder jobConfigurationOverrideDetails(@Nullable List<GetJobRunJobConfigurationOverrideDetail> jobConfigurationOverrideDetails) {
+            this.jobConfigurationOverrideDetails = jobConfigurationOverrideDetails;
             return this;
         }
         public Builder jobConfigurationOverrideDetails(GetJobRunJobConfigurationOverrideDetail... jobConfigurationOverrideDetails) {
             return jobConfigurationOverrideDetails(List.of(jobConfigurationOverrideDetails));
         }
         @CustomType.Setter
-        public Builder jobId(String jobId) {
-            this.jobId = Objects.requireNonNull(jobId);
+        public Builder jobId(@Nullable String jobId) {
+            this.jobId = jobId;
             return this;
         }
         @CustomType.Setter
-        public Builder jobInfrastructureConfigurationDetails(List<GetJobRunJobInfrastructureConfigurationDetail> jobInfrastructureConfigurationDetails) {
-            this.jobInfrastructureConfigurationDetails = Objects.requireNonNull(jobInfrastructureConfigurationDetails);
+        public Builder jobInfrastructureConfigurationDetails(@Nullable List<GetJobRunJobInfrastructureConfigurationDetail> jobInfrastructureConfigurationDetails) {
+            this.jobInfrastructureConfigurationDetails = jobInfrastructureConfigurationDetails;
             return this;
         }
         public Builder jobInfrastructureConfigurationDetails(GetJobRunJobInfrastructureConfigurationDetail... jobInfrastructureConfigurationDetails) {
             return jobInfrastructureConfigurationDetails(List.of(jobInfrastructureConfigurationDetails));
         }
         @CustomType.Setter
-        public Builder jobLogConfigurationOverrideDetails(List<GetJobRunJobLogConfigurationOverrideDetail> jobLogConfigurationOverrideDetails) {
-            this.jobLogConfigurationOverrideDetails = Objects.requireNonNull(jobLogConfigurationOverrideDetails);
+        public Builder jobLogConfigurationOverrideDetails(@Nullable List<GetJobRunJobLogConfigurationOverrideDetail> jobLogConfigurationOverrideDetails) {
+            this.jobLogConfigurationOverrideDetails = jobLogConfigurationOverrideDetails;
             return this;
         }
         public Builder jobLogConfigurationOverrideDetails(GetJobRunJobLogConfigurationOverrideDetail... jobLogConfigurationOverrideDetails) {
@@ -369,49 +371,49 @@ public final class GetJobRunResult {
             return this;
         }
         @CustomType.Setter
-        public Builder jobStorageMountConfigurationDetailsLists(List<GetJobRunJobStorageMountConfigurationDetailsList> jobStorageMountConfigurationDetailsLists) {
-            this.jobStorageMountConfigurationDetailsLists = Objects.requireNonNull(jobStorageMountConfigurationDetailsLists);
+        public Builder jobStorageMountConfigurationDetailsLists(@Nullable List<GetJobRunJobStorageMountConfigurationDetailsList> jobStorageMountConfigurationDetailsLists) {
+            this.jobStorageMountConfigurationDetailsLists = jobStorageMountConfigurationDetailsLists;
             return this;
         }
         public Builder jobStorageMountConfigurationDetailsLists(GetJobRunJobStorageMountConfigurationDetailsList... jobStorageMountConfigurationDetailsLists) {
             return jobStorageMountConfigurationDetailsLists(List.of(jobStorageMountConfigurationDetailsLists));
         }
         @CustomType.Setter
-        public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+        public Builder lifecycleDetails(@Nullable String lifecycleDetails) {
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
-        public Builder logDetails(List<GetJobRunLogDetail> logDetails) {
-            this.logDetails = Objects.requireNonNull(logDetails);
+        public Builder logDetails(@Nullable List<GetJobRunLogDetail> logDetails) {
+            this.logDetails = logDetails;
             return this;
         }
         public Builder logDetails(GetJobRunLogDetail... logDetails) {
             return logDetails(List.of(logDetails));
         }
         @CustomType.Setter
-        public Builder projectId(String projectId) {
-            this.projectId = Objects.requireNonNull(projectId);
+        public Builder projectId(@Nullable String projectId) {
+            this.projectId = projectId;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder timeAccepted(String timeAccepted) {
-            this.timeAccepted = Objects.requireNonNull(timeAccepted);
+        public Builder timeAccepted(@Nullable String timeAccepted) {
+            this.timeAccepted = timeAccepted;
             return this;
         }
         @CustomType.Setter
-        public Builder timeFinished(String timeFinished) {
-            this.timeFinished = Objects.requireNonNull(timeFinished);
+        public Builder timeFinished(@Nullable String timeFinished) {
+            this.timeFinished = timeFinished;
             return this;
         }
         @CustomType.Setter
-        public Builder timeStarted(String timeStarted) {
-            this.timeStarted = Objects.requireNonNull(timeStarted);
+        public Builder timeStarted(@Nullable String timeStarted) {
+            this.timeStarted = timeStarted;
             return this;
         }
         public GetJobRunResult build() {

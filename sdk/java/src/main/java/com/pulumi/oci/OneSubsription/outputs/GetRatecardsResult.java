@@ -20,7 +20,7 @@ public final class GetRatecardsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Product part numner
      * 
@@ -30,7 +30,7 @@ public final class GetRatecardsResult {
      * @return The list of rate_cards.
      * 
      */
-    private List<GetRatecardsRateCard> rateCards;
+    private @Nullable List<GetRatecardsRateCard> rateCards;
     private String subscriptionId;
     private @Nullable String timeFrom;
     private @Nullable String timeTo;
@@ -46,8 +46,8 @@ public final class GetRatecardsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Product part numner
@@ -61,7 +61,7 @@ public final class GetRatecardsResult {
      * 
      */
     public List<GetRatecardsRateCard> rateCards() {
-        return this.rateCards;
+        return this.rateCards == null ? List.of() : this.rateCards;
     }
     public String subscriptionId() {
         return this.subscriptionId;
@@ -84,9 +84,9 @@ public final class GetRatecardsResult {
     public static final class Builder {
         private String compartmentId;
         private @Nullable List<GetRatecardsFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String partNumber;
-        private List<GetRatecardsRateCard> rateCards;
+        private @Nullable List<GetRatecardsRateCard> rateCards;
         private String subscriptionId;
         private @Nullable String timeFrom;
         private @Nullable String timeTo;
@@ -117,8 +117,8 @@ public final class GetRatecardsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -127,8 +127,8 @@ public final class GetRatecardsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder rateCards(List<GetRatecardsRateCard> rateCards) {
-            this.rateCards = Objects.requireNonNull(rateCards);
+        public Builder rateCards(@Nullable List<GetRatecardsRateCard> rateCards) {
+            this.rateCards = rateCards;
             return this;
         }
         public Builder rateCards(GetRatecardsRateCard... rateCards) {

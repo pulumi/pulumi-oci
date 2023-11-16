@@ -8,10 +8,12 @@ import com.pulumi.oci.NetworkFirewall.outputs.GetNetworkFirewallPolicyServicePor
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetNetworkFirewallPolicyServiceResult {
-    private String id;
+    private @Nullable String id;
     /**
      * @return Name of the service.
      * 
@@ -22,21 +24,21 @@ public final class GetNetworkFirewallPolicyServiceResult {
      * @return OCID of the Network Firewall Policy this service belongs to.
      * 
      */
-    private String parentResourceId;
+    private @Nullable String parentResourceId;
     /**
      * @return List of port-ranges used.
      * 
      */
-    private List<GetNetworkFirewallPolicyServicePortRange> portRanges;
+    private @Nullable List<GetNetworkFirewallPolicyServicePortRange> portRanges;
     /**
      * @return Describes the type of Service.
      * 
      */
-    private String type;
+    private @Nullable String type;
 
     private GetNetworkFirewallPolicyServiceResult() {}
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Name of the service.
@@ -52,22 +54,22 @@ public final class GetNetworkFirewallPolicyServiceResult {
      * @return OCID of the Network Firewall Policy this service belongs to.
      * 
      */
-    public String parentResourceId() {
-        return this.parentResourceId;
+    public Optional<String> parentResourceId() {
+        return Optional.ofNullable(this.parentResourceId);
     }
     /**
      * @return List of port-ranges used.
      * 
      */
     public List<GetNetworkFirewallPolicyServicePortRange> portRanges() {
-        return this.portRanges;
+        return this.portRanges == null ? List.of() : this.portRanges;
     }
     /**
      * @return Describes the type of Service.
      * 
      */
-    public String type() {
-        return this.type;
+    public Optional<String> type() {
+        return Optional.ofNullable(this.type);
     }
 
     public static Builder builder() {
@@ -79,12 +81,12 @@ public final class GetNetworkFirewallPolicyServiceResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String id;
+        private @Nullable String id;
         private String name;
         private String networkFirewallPolicyId;
-        private String parentResourceId;
-        private List<GetNetworkFirewallPolicyServicePortRange> portRanges;
-        private String type;
+        private @Nullable String parentResourceId;
+        private @Nullable List<GetNetworkFirewallPolicyServicePortRange> portRanges;
+        private @Nullable String type;
         public Builder() {}
         public Builder(GetNetworkFirewallPolicyServiceResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -97,8 +99,8 @@ public final class GetNetworkFirewallPolicyServiceResult {
         }
 
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -112,21 +114,21 @@ public final class GetNetworkFirewallPolicyServiceResult {
             return this;
         }
         @CustomType.Setter
-        public Builder parentResourceId(String parentResourceId) {
-            this.parentResourceId = Objects.requireNonNull(parentResourceId);
+        public Builder parentResourceId(@Nullable String parentResourceId) {
+            this.parentResourceId = parentResourceId;
             return this;
         }
         @CustomType.Setter
-        public Builder portRanges(List<GetNetworkFirewallPolicyServicePortRange> portRanges) {
-            this.portRanges = Objects.requireNonNull(portRanges);
+        public Builder portRanges(@Nullable List<GetNetworkFirewallPolicyServicePortRange> portRanges) {
+            this.portRanges = portRanges;
             return this;
         }
         public Builder portRanges(GetNetworkFirewallPolicyServicePortRange... portRanges) {
             return portRanges(List.of(portRanges));
         }
         @CustomType.Setter
-        public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+        public Builder type(@Nullable String type) {
+            this.type = type;
             return this;
         }
         public GetNetworkFirewallPolicyServiceResult build() {

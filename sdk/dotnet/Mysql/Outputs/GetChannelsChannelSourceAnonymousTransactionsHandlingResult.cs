@@ -16,29 +16,29 @@ namespace Pulumi.Oci.Mysql.Outputs
         /// <summary>
         /// Specifies one of the coordinates (file) at which the replica should begin reading the source's log. As this value specifies the point where replication starts from, it is only used once, when it starts. It is never used again, unless a new UpdateChannel operation modifies it.
         /// </summary>
-        public readonly string LastConfiguredLogFilename;
+        public readonly string? LastConfiguredLogFilename;
         /// <summary>
         /// Specifies one of the coordinates (offset) at which the replica should begin reading the source's log. As this value specifies the point where replication starts from, it is only used once, when it starts. It is never used again, unless a new UpdateChannel operation modifies it.
         /// </summary>
-        public readonly string LastConfiguredLogOffset;
+        public readonly string? LastConfiguredLogOffset;
         /// <summary>
         /// Specifies how the replication channel handles anonymous transactions.
         /// </summary>
-        public readonly string Policy;
+        public readonly string? Policy;
         /// <summary>
         /// The UUID that is used as a prefix when generating transaction identifiers for anonymous transactions coming from the source. You can change the UUID later.
         /// </summary>
-        public readonly string Uuid;
+        public readonly string? Uuid;
 
         [OutputConstructor]
         private GetChannelsChannelSourceAnonymousTransactionsHandlingResult(
-            string lastConfiguredLogFilename,
+            string? lastConfiguredLogFilename,
 
-            string lastConfiguredLogOffset,
+            string? lastConfiguredLogOffset,
 
-            string policy,
+            string? policy,
 
-            string uuid)
+            string? uuid)
         {
             LastConfiguredLogFilename = lastConfiguredLogFilename;
             LastConfiguredLogOffset = lastConfiguredLogOffset;

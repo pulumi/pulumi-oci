@@ -6,6 +6,8 @@ package com.pulumi.oci.Kms.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetReplicationStatusReplicaDetail {
@@ -13,27 +15,27 @@ public final class GetReplicationStatusReplicaDetail {
      * @return The replica region
      * 
      */
-    private String region;
+    private @Nullable String region;
     /**
      * @return Replication status associated with a replicationId
      * 
      */
-    private String status;
+    private @Nullable String status;
 
     private GetReplicationStatusReplicaDetail() {}
     /**
      * @return The replica region
      * 
      */
-    public String region() {
-        return this.region;
+    public Optional<String> region() {
+        return Optional.ofNullable(this.region);
     }
     /**
      * @return Replication status associated with a replicationId
      * 
      */
-    public String status() {
-        return this.status;
+    public Optional<String> status() {
+        return Optional.ofNullable(this.status);
     }
 
     public static Builder builder() {
@@ -45,8 +47,8 @@ public final class GetReplicationStatusReplicaDetail {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String region;
-        private String status;
+        private @Nullable String region;
+        private @Nullable String status;
         public Builder() {}
         public Builder(GetReplicationStatusReplicaDetail defaults) {
     	      Objects.requireNonNull(defaults);
@@ -55,13 +57,13 @@ public final class GetReplicationStatusReplicaDetail {
         }
 
         @CustomType.Setter
-        public Builder region(String region) {
-            this.region = Objects.requireNonNull(region);
+        public Builder region(@Nullable String region) {
+            this.region = region;
             return this;
         }
         @CustomType.Setter
-        public Builder status(String status) {
-            this.status = Objects.requireNonNull(status);
+        public Builder status(@Nullable String status) {
+            this.status = status;
             return this;
         }
         public GetReplicationStatusReplicaDetail build() {

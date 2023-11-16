@@ -58,41 +58,41 @@ export interface GetReplicationPolicyResult {
     /**
      * @deprecated The 'delete_object_in_destination_bucket' field has been deprecated. It is no longer supported.
      */
-    readonly deleteObjectInDestinationBucket: string;
+    readonly deleteObjectInDestinationBucket?: string;
     /**
      * The bucket to replicate to in the destination region. Replication policy creation does not automatically create a destination bucket. Create the destination bucket before creating the policy.
      */
-    readonly destinationBucketName: string;
+    readonly destinationBucketName?: string;
     /**
      * The destination region to replicate to, for example "us-ashburn-1".
      */
-    readonly destinationRegionName: string;
+    readonly destinationRegionName?: string;
     /**
      * The id of the replication policy.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The name of the policy.
      */
-    readonly name: string;
+    readonly name?: string;
     readonly namespace: string;
     readonly replicationId: string;
     /**
      * The replication status of the policy. If the status is CLIENT_ERROR, once the user fixes the issue described in the status message, the status will become ACTIVE.
      */
-    readonly status: string;
+    readonly status?: string;
     /**
      * A human-readable description of the status.
      */
-    readonly statusMessage: string;
+    readonly statusMessage?: string;
     /**
      * The date when the replication policy was created as per [RFC 3339](https://tools.ietf.org/html/rfc3339).
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * Changes made to the source bucket before this time has been replicated.
      */
-    readonly timeLastSync: string;
+    readonly timeLastSync?: string;
 }
 /**
  * This data source provides details about a specific Replication Policy resource in Oracle Cloud Infrastructure Object Storage service.

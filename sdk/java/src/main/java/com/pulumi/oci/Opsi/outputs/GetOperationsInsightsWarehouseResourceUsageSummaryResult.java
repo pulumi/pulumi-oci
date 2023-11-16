@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Double;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetOperationsInsightsWarehouseResourceUsageSummaryResult {
@@ -14,38 +16,38 @@ public final class GetOperationsInsightsWarehouseResourceUsageSummaryResult {
      * @return Number of OCPUs used by OPSI Warehouse ADW. Can be fractional.
      * 
      */
-    private Double cpuUsed;
+    private @Nullable Double cpuUsed;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private String operationsInsightsWarehouseId;
     /**
      * @return Possible lifecycle states
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return Storage by OPSI Warehouse ADW in GB.
      * 
      */
-    private Double storageUsedInGbs;
+    private @Nullable Double storageUsedInGbs;
 
     private GetOperationsInsightsWarehouseResourceUsageSummaryResult() {}
     /**
      * @return Number of OCPUs used by OPSI Warehouse ADW. Can be fractional.
      * 
      */
-    public Double cpuUsed() {
-        return this.cpuUsed;
+    public Optional<Double> cpuUsed() {
+        return Optional.ofNullable(this.cpuUsed);
     }
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public String operationsInsightsWarehouseId() {
         return this.operationsInsightsWarehouseId;
@@ -54,15 +56,15 @@ public final class GetOperationsInsightsWarehouseResourceUsageSummaryResult {
      * @return Possible lifecycle states
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return Storage by OPSI Warehouse ADW in GB.
      * 
      */
-    public Double storageUsedInGbs() {
-        return this.storageUsedInGbs;
+    public Optional<Double> storageUsedInGbs() {
+        return Optional.ofNullable(this.storageUsedInGbs);
     }
 
     public static Builder builder() {
@@ -74,11 +76,11 @@ public final class GetOperationsInsightsWarehouseResourceUsageSummaryResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Double cpuUsed;
-        private String id;
+        private @Nullable Double cpuUsed;
+        private @Nullable String id;
         private String operationsInsightsWarehouseId;
-        private String state;
-        private Double storageUsedInGbs;
+        private @Nullable String state;
+        private @Nullable Double storageUsedInGbs;
         public Builder() {}
         public Builder(GetOperationsInsightsWarehouseResourceUsageSummaryResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -90,13 +92,13 @@ public final class GetOperationsInsightsWarehouseResourceUsageSummaryResult {
         }
 
         @CustomType.Setter
-        public Builder cpuUsed(Double cpuUsed) {
-            this.cpuUsed = Objects.requireNonNull(cpuUsed);
+        public Builder cpuUsed(@Nullable Double cpuUsed) {
+            this.cpuUsed = cpuUsed;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -105,13 +107,13 @@ public final class GetOperationsInsightsWarehouseResourceUsageSummaryResult {
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder storageUsedInGbs(Double storageUsedInGbs) {
-            this.storageUsedInGbs = Objects.requireNonNull(storageUsedInGbs);
+        public Builder storageUsedInGbs(@Nullable Double storageUsedInGbs) {
+            this.storageUsedInGbs = storageUsedInGbs;
             return this;
         }
         public GetOperationsInsightsWarehouseResourceUsageSummaryResult build() {

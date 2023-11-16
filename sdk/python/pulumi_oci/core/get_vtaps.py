@@ -61,17 +61,11 @@ class GetVtapsResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the `Vtap` resource.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -81,7 +75,7 @@ class GetVtapsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -90,9 +84,6 @@ class GetVtapsResult:
     @property
     @pulumi.getter(name="isVtapEnabled")
     def is_vtap_enabled(self) -> Optional[bool]:
-        """
-        Used to start or stop a `Vtap` resource.
-        """
         return pulumi.get(self, "is_vtap_enabled")
 
     @property
@@ -103,41 +94,26 @@ class GetVtapsResult:
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The VTAP's administrative lifecycle state.
-        """
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="targetId")
     def target_id(self) -> Optional[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the destination resource where mirrored packets are sent.
-        """
         return pulumi.get(self, "target_id")
 
     @property
     @pulumi.getter(name="targetIp")
     def target_ip(self) -> Optional[str]:
-        """
-        The IP address of the destination resource where mirrored packets are sent.
-        """
         return pulumi.get(self, "target_ip")
 
     @property
     @pulumi.getter(name="vcnId")
     def vcn_id(self) -> Optional[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN containing the `Vtap` resource.
-        """
         return pulumi.get(self, "vcn_id")
 
     @property
     @pulumi.getter
-    def vtaps(self) -> Sequence['outputs.GetVtapsVtapResult']:
-        """
-        The list of vtaps.
-        """
+    def vtaps(self) -> Optional[Sequence['outputs.GetVtapsVtapResult']]:
         return pulumi.get(self, "vtaps")
 
 
@@ -171,37 +147,7 @@ def get_vtaps(compartment_id: Optional[str] = None,
               vcn_id: Optional[str] = None,
               opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetVtapsResult:
     """
-    This data source provides the list of Vtaps in Oracle Cloud Infrastructure Core service.
-
-    Lists the virtual test access points (VTAPs) in the specified compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_vtaps = oci.Core.get_vtaps(compartment_id=var["compartment_id"],
-        display_name=var["vtap_display_name"],
-        is_vtap_enabled=var["vtap_is_vtap_enabled"],
-        source=var["vtap_source"],
-        state=var["vtap_state"],
-        target_id=oci_cloud_guard_target["test_target"]["id"],
-        target_ip=var["vtap_target_ip"],
-        vcn_id=oci_core_vcn["test_vcn"]["id"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param str display_name: A filter to return only resources that match the given display name exactly.
-    :param bool is_vtap_enabled: Indicates whether to list all VTAPs or only running VTAPs.
-           * When `FALSE`, lists ALL running and stopped VTAPs.
-           * When `TRUE`, lists only running VTAPs (VTAPs where isVtapEnabled = `TRUE`).
-    :param str source: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VTAP source.
-    :param str state: A filter to return only resources that match the given VTAP administrative lifecycle state. The state value is case-insensitive.
-    :param str target_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VTAP target.
-    :param str target_ip: The IP address of the VTAP target.
-    :param str vcn_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -242,36 +188,6 @@ def get_vtaps_output(compartment_id: Optional[pulumi.Input[str]] = None,
                      vcn_id: Optional[pulumi.Input[Optional[str]]] = None,
                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetVtapsResult]:
     """
-    This data source provides the list of Vtaps in Oracle Cloud Infrastructure Core service.
-
-    Lists the virtual test access points (VTAPs) in the specified compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_vtaps = oci.Core.get_vtaps(compartment_id=var["compartment_id"],
-        display_name=var["vtap_display_name"],
-        is_vtap_enabled=var["vtap_is_vtap_enabled"],
-        source=var["vtap_source"],
-        state=var["vtap_state"],
-        target_id=oci_cloud_guard_target["test_target"]["id"],
-        target_ip=var["vtap_target_ip"],
-        vcn_id=oci_core_vcn["test_vcn"]["id"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param str display_name: A filter to return only resources that match the given display name exactly.
-    :param bool is_vtap_enabled: Indicates whether to list all VTAPs or only running VTAPs.
-           * When `FALSE`, lists ALL running and stopped VTAPs.
-           * When `TRUE`, lists only running VTAPs (VTAPs where isVtapEnabled = `TRUE`).
-    :param str source: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VTAP source.
-    :param str state: A filter to return only resources that match the given VTAP administrative lifecycle state. The state value is case-insensitive.
-    :param str target_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VTAP target.
-    :param str target_ip: The IP address of the VTAP target.
-    :param str vcn_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
+    Use this data source to access information about an existing resource.
     """
     ...

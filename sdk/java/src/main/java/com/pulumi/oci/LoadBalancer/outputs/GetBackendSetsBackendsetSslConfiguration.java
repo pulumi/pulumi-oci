@@ -9,6 +9,8 @@ import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetBackendSetsBackendsetSslConfiguration {
@@ -16,42 +18,42 @@ public final class GetBackendSetsBackendsetSslConfiguration {
      * @return Ids for Oracle Cloud Infrastructure certificates service certificates. Currently only a single Id may be passed.  Example: `[ocid1.certificate.oc1.us-ashburn-1.amaaaaaaav3bgsaa5o2q7rh5nfmkkukfkogasqhk6af2opufhjlqg7m6jqzq]`
      * 
      */
-    private List<String> certificateIds;
+    private @Nullable List<String> certificateIds;
     /**
      * @return A friendly name for the certificate bundle. It must be unique and it cannot be changed. Valid certificate bundle names include only alphanumeric characters, dashes, and underscores. Certificate bundle names cannot contain spaces. Avoid entering confidential information.  Example: `example_certificate_bundle`
      * 
      */
-    private String certificateName;
+    private @Nullable String certificateName;
     /**
      * @return The name of the cipher suite to use for HTTPS or SSL connections.
      * 
      */
-    private String cipherSuiteName;
+    private @Nullable String cipherSuiteName;
     /**
      * @return A list of SSL protocols the load balancer must support for HTTPS or SSL connections.
      * 
      */
-    private List<String> protocols;
+    private @Nullable List<String> protocols;
     /**
      * @return When this attribute is set to ENABLED, the system gives preference to the server ciphers over the client ciphers.
      * 
      */
-    private String serverOrderPreference;
+    private @Nullable String serverOrderPreference;
     /**
      * @return Ids for Oracle Cloud Infrastructure certificates service CA or CA bundles for the load balancer to trust.  Example: `[ocid1.cabundle.oc1.us-ashburn-1.amaaaaaaav3bgsaagl4zzyqdop5i2vuwoqewdvauuw34llqa74otq2jdsfyq]`
      * 
      */
-    private List<String> trustedCertificateAuthorityIds;
+    private @Nullable List<String> trustedCertificateAuthorityIds;
     /**
      * @return The maximum depth for peer certificate chain verification.  Example: `3`
      * 
      */
-    private Integer verifyDepth;
+    private @Nullable Integer verifyDepth;
     /**
      * @return Whether the load balancer listener should verify peer certificates.  Example: `true`
      * 
      */
-    private Boolean verifyPeerCertificate;
+    private @Nullable Boolean verifyPeerCertificate;
 
     private GetBackendSetsBackendsetSslConfiguration() {}
     /**
@@ -59,56 +61,56 @@ public final class GetBackendSetsBackendsetSslConfiguration {
      * 
      */
     public List<String> certificateIds() {
-        return this.certificateIds;
+        return this.certificateIds == null ? List.of() : this.certificateIds;
     }
     /**
      * @return A friendly name for the certificate bundle. It must be unique and it cannot be changed. Valid certificate bundle names include only alphanumeric characters, dashes, and underscores. Certificate bundle names cannot contain spaces. Avoid entering confidential information.  Example: `example_certificate_bundle`
      * 
      */
-    public String certificateName() {
-        return this.certificateName;
+    public Optional<String> certificateName() {
+        return Optional.ofNullable(this.certificateName);
     }
     /**
      * @return The name of the cipher suite to use for HTTPS or SSL connections.
      * 
      */
-    public String cipherSuiteName() {
-        return this.cipherSuiteName;
+    public Optional<String> cipherSuiteName() {
+        return Optional.ofNullable(this.cipherSuiteName);
     }
     /**
      * @return A list of SSL protocols the load balancer must support for HTTPS or SSL connections.
      * 
      */
     public List<String> protocols() {
-        return this.protocols;
+        return this.protocols == null ? List.of() : this.protocols;
     }
     /**
      * @return When this attribute is set to ENABLED, the system gives preference to the server ciphers over the client ciphers.
      * 
      */
-    public String serverOrderPreference() {
-        return this.serverOrderPreference;
+    public Optional<String> serverOrderPreference() {
+        return Optional.ofNullable(this.serverOrderPreference);
     }
     /**
      * @return Ids for Oracle Cloud Infrastructure certificates service CA or CA bundles for the load balancer to trust.  Example: `[ocid1.cabundle.oc1.us-ashburn-1.amaaaaaaav3bgsaagl4zzyqdop5i2vuwoqewdvauuw34llqa74otq2jdsfyq]`
      * 
      */
     public List<String> trustedCertificateAuthorityIds() {
-        return this.trustedCertificateAuthorityIds;
+        return this.trustedCertificateAuthorityIds == null ? List.of() : this.trustedCertificateAuthorityIds;
     }
     /**
      * @return The maximum depth for peer certificate chain verification.  Example: `3`
      * 
      */
-    public Integer verifyDepth() {
-        return this.verifyDepth;
+    public Optional<Integer> verifyDepth() {
+        return Optional.ofNullable(this.verifyDepth);
     }
     /**
      * @return Whether the load balancer listener should verify peer certificates.  Example: `true`
      * 
      */
-    public Boolean verifyPeerCertificate() {
-        return this.verifyPeerCertificate;
+    public Optional<Boolean> verifyPeerCertificate() {
+        return Optional.ofNullable(this.verifyPeerCertificate);
     }
 
     public static Builder builder() {
@@ -120,14 +122,14 @@ public final class GetBackendSetsBackendsetSslConfiguration {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<String> certificateIds;
-        private String certificateName;
-        private String cipherSuiteName;
-        private List<String> protocols;
-        private String serverOrderPreference;
-        private List<String> trustedCertificateAuthorityIds;
-        private Integer verifyDepth;
-        private Boolean verifyPeerCertificate;
+        private @Nullable List<String> certificateIds;
+        private @Nullable String certificateName;
+        private @Nullable String cipherSuiteName;
+        private @Nullable List<String> protocols;
+        private @Nullable String serverOrderPreference;
+        private @Nullable List<String> trustedCertificateAuthorityIds;
+        private @Nullable Integer verifyDepth;
+        private @Nullable Boolean verifyPeerCertificate;
         public Builder() {}
         public Builder(GetBackendSetsBackendsetSslConfiguration defaults) {
     	      Objects.requireNonNull(defaults);
@@ -142,52 +144,52 @@ public final class GetBackendSetsBackendsetSslConfiguration {
         }
 
         @CustomType.Setter
-        public Builder certificateIds(List<String> certificateIds) {
-            this.certificateIds = Objects.requireNonNull(certificateIds);
+        public Builder certificateIds(@Nullable List<String> certificateIds) {
+            this.certificateIds = certificateIds;
             return this;
         }
         public Builder certificateIds(String... certificateIds) {
             return certificateIds(List.of(certificateIds));
         }
         @CustomType.Setter
-        public Builder certificateName(String certificateName) {
-            this.certificateName = Objects.requireNonNull(certificateName);
+        public Builder certificateName(@Nullable String certificateName) {
+            this.certificateName = certificateName;
             return this;
         }
         @CustomType.Setter
-        public Builder cipherSuiteName(String cipherSuiteName) {
-            this.cipherSuiteName = Objects.requireNonNull(cipherSuiteName);
+        public Builder cipherSuiteName(@Nullable String cipherSuiteName) {
+            this.cipherSuiteName = cipherSuiteName;
             return this;
         }
         @CustomType.Setter
-        public Builder protocols(List<String> protocols) {
-            this.protocols = Objects.requireNonNull(protocols);
+        public Builder protocols(@Nullable List<String> protocols) {
+            this.protocols = protocols;
             return this;
         }
         public Builder protocols(String... protocols) {
             return protocols(List.of(protocols));
         }
         @CustomType.Setter
-        public Builder serverOrderPreference(String serverOrderPreference) {
-            this.serverOrderPreference = Objects.requireNonNull(serverOrderPreference);
+        public Builder serverOrderPreference(@Nullable String serverOrderPreference) {
+            this.serverOrderPreference = serverOrderPreference;
             return this;
         }
         @CustomType.Setter
-        public Builder trustedCertificateAuthorityIds(List<String> trustedCertificateAuthorityIds) {
-            this.trustedCertificateAuthorityIds = Objects.requireNonNull(trustedCertificateAuthorityIds);
+        public Builder trustedCertificateAuthorityIds(@Nullable List<String> trustedCertificateAuthorityIds) {
+            this.trustedCertificateAuthorityIds = trustedCertificateAuthorityIds;
             return this;
         }
         public Builder trustedCertificateAuthorityIds(String... trustedCertificateAuthorityIds) {
             return trustedCertificateAuthorityIds(List.of(trustedCertificateAuthorityIds));
         }
         @CustomType.Setter
-        public Builder verifyDepth(Integer verifyDepth) {
-            this.verifyDepth = Objects.requireNonNull(verifyDepth);
+        public Builder verifyDepth(@Nullable Integer verifyDepth) {
+            this.verifyDepth = verifyDepth;
             return this;
         }
         @CustomType.Setter
-        public Builder verifyPeerCertificate(Boolean verifyPeerCertificate) {
-            this.verifyPeerCertificate = Objects.requireNonNull(verifyPeerCertificate);
+        public Builder verifyPeerCertificate(@Nullable Boolean verifyPeerCertificate) {
+            this.verifyPeerCertificate = verifyPeerCertificate;
             return this;
         }
         public GetBackendSetsBackendsetSslConfiguration build() {

@@ -8,6 +8,8 @@ import com.pulumi.oci.Identity.outputs.GetDomainsUsersUserUrnietfparamsscimschem
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20user {
@@ -15,75 +17,75 @@ public final class GetDomainsUsersUserUrnietfparamsscimschemasextensionenterpris
      * @return Identifies the name of a cost center.
      * 
      */
-    private String costCenter;
+    private @Nullable String costCenter;
     /**
      * @return Identifies the name of a department.
      * 
      */
-    private String department;
+    private @Nullable String department;
     /**
      * @return Identifies the name of a division.
      * 
      */
-    private String division;
+    private @Nullable String division;
     /**
      * @return Numeric or alphanumeric identifier assigned to  a person, typically based on order of hire or association with an organization.
      * 
      */
-    private String employeeNumber;
+    private @Nullable String employeeNumber;
     /**
      * @return The User&#39;s manager. A complex type that optionally allows Service Providers to represent organizational hierarchy by referencing the &#39;id&#39; attribute of another User.
      * 
      */
-    private List<GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userManager> managers;
+    private @Nullable List<GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userManager> managers;
     /**
      * @return Identifies the name of an organization.
      * 
      */
-    private String organization;
+    private @Nullable String organization;
 
     private GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20user() {}
     /**
      * @return Identifies the name of a cost center.
      * 
      */
-    public String costCenter() {
-        return this.costCenter;
+    public Optional<String> costCenter() {
+        return Optional.ofNullable(this.costCenter);
     }
     /**
      * @return Identifies the name of a department.
      * 
      */
-    public String department() {
-        return this.department;
+    public Optional<String> department() {
+        return Optional.ofNullable(this.department);
     }
     /**
      * @return Identifies the name of a division.
      * 
      */
-    public String division() {
-        return this.division;
+    public Optional<String> division() {
+        return Optional.ofNullable(this.division);
     }
     /**
      * @return Numeric or alphanumeric identifier assigned to  a person, typically based on order of hire or association with an organization.
      * 
      */
-    public String employeeNumber() {
-        return this.employeeNumber;
+    public Optional<String> employeeNumber() {
+        return Optional.ofNullable(this.employeeNumber);
     }
     /**
      * @return The User&#39;s manager. A complex type that optionally allows Service Providers to represent organizational hierarchy by referencing the &#39;id&#39; attribute of another User.
      * 
      */
     public List<GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userManager> managers() {
-        return this.managers;
+        return this.managers == null ? List.of() : this.managers;
     }
     /**
      * @return Identifies the name of an organization.
      * 
      */
-    public String organization() {
-        return this.organization;
+    public Optional<String> organization() {
+        return Optional.ofNullable(this.organization);
     }
 
     public static Builder builder() {
@@ -95,12 +97,12 @@ public final class GetDomainsUsersUserUrnietfparamsscimschemasextensionenterpris
     }
     @CustomType.Builder
     public static final class Builder {
-        private String costCenter;
-        private String department;
-        private String division;
-        private String employeeNumber;
-        private List<GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userManager> managers;
-        private String organization;
+        private @Nullable String costCenter;
+        private @Nullable String department;
+        private @Nullable String division;
+        private @Nullable String employeeNumber;
+        private @Nullable List<GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userManager> managers;
+        private @Nullable String organization;
         public Builder() {}
         public Builder(GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20user defaults) {
     	      Objects.requireNonNull(defaults);
@@ -113,36 +115,36 @@ public final class GetDomainsUsersUserUrnietfparamsscimschemasextensionenterpris
         }
 
         @CustomType.Setter
-        public Builder costCenter(String costCenter) {
-            this.costCenter = Objects.requireNonNull(costCenter);
+        public Builder costCenter(@Nullable String costCenter) {
+            this.costCenter = costCenter;
             return this;
         }
         @CustomType.Setter
-        public Builder department(String department) {
-            this.department = Objects.requireNonNull(department);
+        public Builder department(@Nullable String department) {
+            this.department = department;
             return this;
         }
         @CustomType.Setter
-        public Builder division(String division) {
-            this.division = Objects.requireNonNull(division);
+        public Builder division(@Nullable String division) {
+            this.division = division;
             return this;
         }
         @CustomType.Setter
-        public Builder employeeNumber(String employeeNumber) {
-            this.employeeNumber = Objects.requireNonNull(employeeNumber);
+        public Builder employeeNumber(@Nullable String employeeNumber) {
+            this.employeeNumber = employeeNumber;
             return this;
         }
         @CustomType.Setter
-        public Builder managers(List<GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userManager> managers) {
-            this.managers = Objects.requireNonNull(managers);
+        public Builder managers(@Nullable List<GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userManager> managers) {
+            this.managers = managers;
             return this;
         }
         public Builder managers(GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userManager... managers) {
             return managers(List.of(managers));
         }
         @CustomType.Setter
-        public Builder organization(String organization) {
-            this.organization = Objects.requireNonNull(organization);
+        public Builder organization(@Nullable String organization) {
+            this.organization = organization;
             return this;
         }
         public GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20user build() {

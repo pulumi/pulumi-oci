@@ -6,6 +6,8 @@ package com.pulumi.oci.LogAnalytics.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPattern {
@@ -13,39 +15,39 @@ public final class GetNamespaceEffectivePropertiesEffectivePropertyCollectionIte
      * @return The effective level of the property value.
      * 
      */
-    private String effectiveLevel;
+    private @Nullable String effectiveLevel;
     /**
      * @return The pattern id.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The effective value of the property. This is determined by considering the value set at the most effective level.
      * 
      */
-    private String value;
+    private @Nullable String value;
 
     private GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPattern() {}
     /**
      * @return The effective level of the property value.
      * 
      */
-    public String effectiveLevel() {
-        return this.effectiveLevel;
+    public Optional<String> effectiveLevel() {
+        return Optional.ofNullable(this.effectiveLevel);
     }
     /**
      * @return The pattern id.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The effective value of the property. This is determined by considering the value set at the most effective level.
      * 
      */
-    public String value() {
-        return this.value;
+    public Optional<String> value() {
+        return Optional.ofNullable(this.value);
     }
 
     public static Builder builder() {
@@ -57,9 +59,9 @@ public final class GetNamespaceEffectivePropertiesEffectivePropertyCollectionIte
     }
     @CustomType.Builder
     public static final class Builder {
-        private String effectiveLevel;
-        private String id;
-        private String value;
+        private @Nullable String effectiveLevel;
+        private @Nullable String id;
+        private @Nullable String value;
         public Builder() {}
         public Builder(GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPattern defaults) {
     	      Objects.requireNonNull(defaults);
@@ -69,18 +71,18 @@ public final class GetNamespaceEffectivePropertiesEffectivePropertyCollectionIte
         }
 
         @CustomType.Setter
-        public Builder effectiveLevel(String effectiveLevel) {
-            this.effectiveLevel = Objects.requireNonNull(effectiveLevel);
+        public Builder effectiveLevel(@Nullable String effectiveLevel) {
+            this.effectiveLevel = effectiveLevel;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder value(String value) {
-            this.value = Objects.requireNonNull(value);
+        public Builder value(@Nullable String value) {
+            this.value = value;
             return this;
         }
         public GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPattern build() {

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Quotas in Oracle Cloud Infrastructure Limits service.
@@ -70,7 +69,7 @@ type GetQuotasResult struct {
 	CompartmentId string            `pulumi:"compartmentId"`
 	Filters       []GetQuotasFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The name you assign to the quota during creation. The name must be unique across all quotas in the tenancy and cannot be changed.
 	Name *string `pulumi:"name"`
 	// The list of quotas.
@@ -122,12 +121,6 @@ func (o GetQuotasResultOutput) ToGetQuotasResultOutputWithContext(ctx context.Co
 	return o
 }
 
-func (o GetQuotasResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetQuotasResult] {
-	return pulumix.Output[GetQuotasResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the compartment containing the resource this quota applies to.
 func (o GetQuotasResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetQuotasResult) string { return v.CompartmentId }).(pulumi.StringOutput)
@@ -138,8 +131,8 @@ func (o GetQuotasResultOutput) Filters() GetQuotasFilterArrayOutput {
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetQuotasResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetQuotasResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetQuotasResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetQuotasResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The name you assign to the quota during creation. The name must be unique across all quotas in the tenancy and cannot be changed.

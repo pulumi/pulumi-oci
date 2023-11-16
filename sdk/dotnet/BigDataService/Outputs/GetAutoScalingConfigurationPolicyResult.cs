@@ -16,7 +16,7 @@ namespace Pulumi.Oci.BigDataService.Outputs
         /// <summary>
         /// Type of autoscaling policy.
         /// </summary>
-        public readonly string PolicyType;
+        public readonly string? PolicyType;
         /// <summary>
         /// The list of rules for autoscaling. If an action has multiple rules, the last rule in the array will be applied.
         /// </summary>
@@ -24,7 +24,7 @@ namespace Pulumi.Oci.BigDataService.Outputs
 
         [OutputConstructor]
         private GetAutoScalingConfigurationPolicyResult(
-            string policyType,
+            string? policyType,
 
             ImmutableArray<Outputs.GetAutoScalingConfigurationPolicyRuleResult> rules)
         {

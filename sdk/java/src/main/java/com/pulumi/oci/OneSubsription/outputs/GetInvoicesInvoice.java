@@ -14,6 +14,8 @@ import com.pulumi.oci.OneSubsription.outputs.GetInvoicesInvoicePaymentTerm;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetInvoicesInvoice {
@@ -21,231 +23,231 @@ public final class GetInvoicesInvoice {
      * @return AR Invoice Numbers comma separated under one invoice
      * 
      */
-    private String arInvoices;
+    private @Nullable String arInvoices;
     /**
      * @return Address.
      * 
      */
-    private List<GetInvoicesInvoiceBillToAddress> billToAddresses;
+    private @Nullable List<GetInvoicesInvoiceBillToAddress> billToAddresses;
     /**
      * @return User.
      * 
      */
-    private List<GetInvoicesInvoiceBillToContact> billToContacts;
+    private @Nullable List<GetInvoicesInvoiceBillToContact> billToContacts;
     /**
      * @return Business partner.
      * 
      */
-    private List<GetInvoicesInvoiceBillToCustomer> billToCustomers;
+    private @Nullable List<GetInvoicesInvoiceBillToCustomer> billToCustomers;
     /**
      * @return User that created the Payment term
      * 
      */
-    private String createdBy;
+    private @Nullable String createdBy;
     /**
      * @return Currency details
      * 
      */
-    private List<GetInvoicesInvoiceCurrency> currencies;
+    private @Nullable List<GetInvoicesInvoiceCurrency> currencies;
     /**
      * @return Invoice Lines under particular invoice.
      * 
      */
-    private List<GetInvoicesInvoiceInvoiceLine> invoiceLines;
+    private @Nullable List<GetInvoicesInvoiceInvoiceLine> invoiceLines;
     /**
      * @return Organization details
      * 
      */
-    private List<GetInvoicesInvoiceOrganization> organizations;
+    private @Nullable List<GetInvoicesInvoiceOrganization> organizations;
     /**
      * @return Payment Method
      * 
      */
-    private String paymentMethod;
+    private @Nullable String paymentMethod;
     /**
      * @return Payment Term details
      * 
      */
-    private List<GetInvoicesInvoicePaymentTerm> paymentTerms;
+    private @Nullable List<GetInvoicesInvoicePaymentTerm> paymentTerms;
     /**
      * @return Receipt Method of Payment Mode
      * 
      */
-    private String receiptMethod;
+    private @Nullable String receiptMethod;
     /**
      * @return SPM Document Number is an functional identifier for invoice in SPM
      * 
      */
-    private String spmInvoiceNumber;
+    private @Nullable String spmInvoiceNumber;
     /**
      * @return Document Status in SPM which depicts current state of invoice
      * 
      */
-    private String status;
+    private @Nullable String status;
     /**
      * @return Invoice associated subscription plan number.
      * 
      */
-    private String subscriptionNumber;
+    private @Nullable String subscriptionNumber;
     /**
      * @return SPM Invocie creation date
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return Invoice Date
      * 
      */
-    private String timeInvoiceDate;
+    private @Nullable String timeInvoiceDate;
     /**
      * @return SPM Invoice updated date
      * 
      */
-    private String timeUpdated;
+    private @Nullable String timeUpdated;
     /**
      * @return Document Type in SPM like SPM Invoice,SPM Credit Memo etc.,
      * 
      */
-    private String type;
+    private @Nullable String type;
     /**
      * @return User that updated SPM Invoice
      * 
      */
-    private String updatedBy;
+    private @Nullable String updatedBy;
 
     private GetInvoicesInvoice() {}
     /**
      * @return AR Invoice Numbers comma separated under one invoice
      * 
      */
-    public String arInvoices() {
-        return this.arInvoices;
+    public Optional<String> arInvoices() {
+        return Optional.ofNullable(this.arInvoices);
     }
     /**
      * @return Address.
      * 
      */
     public List<GetInvoicesInvoiceBillToAddress> billToAddresses() {
-        return this.billToAddresses;
+        return this.billToAddresses == null ? List.of() : this.billToAddresses;
     }
     /**
      * @return User.
      * 
      */
     public List<GetInvoicesInvoiceBillToContact> billToContacts() {
-        return this.billToContacts;
+        return this.billToContacts == null ? List.of() : this.billToContacts;
     }
     /**
      * @return Business partner.
      * 
      */
     public List<GetInvoicesInvoiceBillToCustomer> billToCustomers() {
-        return this.billToCustomers;
+        return this.billToCustomers == null ? List.of() : this.billToCustomers;
     }
     /**
      * @return User that created the Payment term
      * 
      */
-    public String createdBy() {
-        return this.createdBy;
+    public Optional<String> createdBy() {
+        return Optional.ofNullable(this.createdBy);
     }
     /**
      * @return Currency details
      * 
      */
     public List<GetInvoicesInvoiceCurrency> currencies() {
-        return this.currencies;
+        return this.currencies == null ? List.of() : this.currencies;
     }
     /**
      * @return Invoice Lines under particular invoice.
      * 
      */
     public List<GetInvoicesInvoiceInvoiceLine> invoiceLines() {
-        return this.invoiceLines;
+        return this.invoiceLines == null ? List.of() : this.invoiceLines;
     }
     /**
      * @return Organization details
      * 
      */
     public List<GetInvoicesInvoiceOrganization> organizations() {
-        return this.organizations;
+        return this.organizations == null ? List.of() : this.organizations;
     }
     /**
      * @return Payment Method
      * 
      */
-    public String paymentMethod() {
-        return this.paymentMethod;
+    public Optional<String> paymentMethod() {
+        return Optional.ofNullable(this.paymentMethod);
     }
     /**
      * @return Payment Term details
      * 
      */
     public List<GetInvoicesInvoicePaymentTerm> paymentTerms() {
-        return this.paymentTerms;
+        return this.paymentTerms == null ? List.of() : this.paymentTerms;
     }
     /**
      * @return Receipt Method of Payment Mode
      * 
      */
-    public String receiptMethod() {
-        return this.receiptMethod;
+    public Optional<String> receiptMethod() {
+        return Optional.ofNullable(this.receiptMethod);
     }
     /**
      * @return SPM Document Number is an functional identifier for invoice in SPM
      * 
      */
-    public String spmInvoiceNumber() {
-        return this.spmInvoiceNumber;
+    public Optional<String> spmInvoiceNumber() {
+        return Optional.ofNullable(this.spmInvoiceNumber);
     }
     /**
      * @return Document Status in SPM which depicts current state of invoice
      * 
      */
-    public String status() {
-        return this.status;
+    public Optional<String> status() {
+        return Optional.ofNullable(this.status);
     }
     /**
      * @return Invoice associated subscription plan number.
      * 
      */
-    public String subscriptionNumber() {
-        return this.subscriptionNumber;
+    public Optional<String> subscriptionNumber() {
+        return Optional.ofNullable(this.subscriptionNumber);
     }
     /**
      * @return SPM Invocie creation date
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return Invoice Date
      * 
      */
-    public String timeInvoiceDate() {
-        return this.timeInvoiceDate;
+    public Optional<String> timeInvoiceDate() {
+        return Optional.ofNullable(this.timeInvoiceDate);
     }
     /**
      * @return SPM Invoice updated date
      * 
      */
-    public String timeUpdated() {
-        return this.timeUpdated;
+    public Optional<String> timeUpdated() {
+        return Optional.ofNullable(this.timeUpdated);
     }
     /**
      * @return Document Type in SPM like SPM Invoice,SPM Credit Memo etc.,
      * 
      */
-    public String type() {
-        return this.type;
+    public Optional<String> type() {
+        return Optional.ofNullable(this.type);
     }
     /**
      * @return User that updated SPM Invoice
      * 
      */
-    public String updatedBy() {
-        return this.updatedBy;
+    public Optional<String> updatedBy() {
+        return Optional.ofNullable(this.updatedBy);
     }
 
     public static Builder builder() {
@@ -257,25 +259,25 @@ public final class GetInvoicesInvoice {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String arInvoices;
-        private List<GetInvoicesInvoiceBillToAddress> billToAddresses;
-        private List<GetInvoicesInvoiceBillToContact> billToContacts;
-        private List<GetInvoicesInvoiceBillToCustomer> billToCustomers;
-        private String createdBy;
-        private List<GetInvoicesInvoiceCurrency> currencies;
-        private List<GetInvoicesInvoiceInvoiceLine> invoiceLines;
-        private List<GetInvoicesInvoiceOrganization> organizations;
-        private String paymentMethod;
-        private List<GetInvoicesInvoicePaymentTerm> paymentTerms;
-        private String receiptMethod;
-        private String spmInvoiceNumber;
-        private String status;
-        private String subscriptionNumber;
-        private String timeCreated;
-        private String timeInvoiceDate;
-        private String timeUpdated;
-        private String type;
-        private String updatedBy;
+        private @Nullable String arInvoices;
+        private @Nullable List<GetInvoicesInvoiceBillToAddress> billToAddresses;
+        private @Nullable List<GetInvoicesInvoiceBillToContact> billToContacts;
+        private @Nullable List<GetInvoicesInvoiceBillToCustomer> billToCustomers;
+        private @Nullable String createdBy;
+        private @Nullable List<GetInvoicesInvoiceCurrency> currencies;
+        private @Nullable List<GetInvoicesInvoiceInvoiceLine> invoiceLines;
+        private @Nullable List<GetInvoicesInvoiceOrganization> organizations;
+        private @Nullable String paymentMethod;
+        private @Nullable List<GetInvoicesInvoicePaymentTerm> paymentTerms;
+        private @Nullable String receiptMethod;
+        private @Nullable String spmInvoiceNumber;
+        private @Nullable String status;
+        private @Nullable String subscriptionNumber;
+        private @Nullable String timeCreated;
+        private @Nullable String timeInvoiceDate;
+        private @Nullable String timeUpdated;
+        private @Nullable String type;
+        private @Nullable String updatedBy;
         public Builder() {}
         public Builder(GetInvoicesInvoice defaults) {
     	      Objects.requireNonNull(defaults);
@@ -301,119 +303,119 @@ public final class GetInvoicesInvoice {
         }
 
         @CustomType.Setter
-        public Builder arInvoices(String arInvoices) {
-            this.arInvoices = Objects.requireNonNull(arInvoices);
+        public Builder arInvoices(@Nullable String arInvoices) {
+            this.arInvoices = arInvoices;
             return this;
         }
         @CustomType.Setter
-        public Builder billToAddresses(List<GetInvoicesInvoiceBillToAddress> billToAddresses) {
-            this.billToAddresses = Objects.requireNonNull(billToAddresses);
+        public Builder billToAddresses(@Nullable List<GetInvoicesInvoiceBillToAddress> billToAddresses) {
+            this.billToAddresses = billToAddresses;
             return this;
         }
         public Builder billToAddresses(GetInvoicesInvoiceBillToAddress... billToAddresses) {
             return billToAddresses(List.of(billToAddresses));
         }
         @CustomType.Setter
-        public Builder billToContacts(List<GetInvoicesInvoiceBillToContact> billToContacts) {
-            this.billToContacts = Objects.requireNonNull(billToContacts);
+        public Builder billToContacts(@Nullable List<GetInvoicesInvoiceBillToContact> billToContacts) {
+            this.billToContacts = billToContacts;
             return this;
         }
         public Builder billToContacts(GetInvoicesInvoiceBillToContact... billToContacts) {
             return billToContacts(List.of(billToContacts));
         }
         @CustomType.Setter
-        public Builder billToCustomers(List<GetInvoicesInvoiceBillToCustomer> billToCustomers) {
-            this.billToCustomers = Objects.requireNonNull(billToCustomers);
+        public Builder billToCustomers(@Nullable List<GetInvoicesInvoiceBillToCustomer> billToCustomers) {
+            this.billToCustomers = billToCustomers;
             return this;
         }
         public Builder billToCustomers(GetInvoicesInvoiceBillToCustomer... billToCustomers) {
             return billToCustomers(List.of(billToCustomers));
         }
         @CustomType.Setter
-        public Builder createdBy(String createdBy) {
-            this.createdBy = Objects.requireNonNull(createdBy);
+        public Builder createdBy(@Nullable String createdBy) {
+            this.createdBy = createdBy;
             return this;
         }
         @CustomType.Setter
-        public Builder currencies(List<GetInvoicesInvoiceCurrency> currencies) {
-            this.currencies = Objects.requireNonNull(currencies);
+        public Builder currencies(@Nullable List<GetInvoicesInvoiceCurrency> currencies) {
+            this.currencies = currencies;
             return this;
         }
         public Builder currencies(GetInvoicesInvoiceCurrency... currencies) {
             return currencies(List.of(currencies));
         }
         @CustomType.Setter
-        public Builder invoiceLines(List<GetInvoicesInvoiceInvoiceLine> invoiceLines) {
-            this.invoiceLines = Objects.requireNonNull(invoiceLines);
+        public Builder invoiceLines(@Nullable List<GetInvoicesInvoiceInvoiceLine> invoiceLines) {
+            this.invoiceLines = invoiceLines;
             return this;
         }
         public Builder invoiceLines(GetInvoicesInvoiceInvoiceLine... invoiceLines) {
             return invoiceLines(List.of(invoiceLines));
         }
         @CustomType.Setter
-        public Builder organizations(List<GetInvoicesInvoiceOrganization> organizations) {
-            this.organizations = Objects.requireNonNull(organizations);
+        public Builder organizations(@Nullable List<GetInvoicesInvoiceOrganization> organizations) {
+            this.organizations = organizations;
             return this;
         }
         public Builder organizations(GetInvoicesInvoiceOrganization... organizations) {
             return organizations(List.of(organizations));
         }
         @CustomType.Setter
-        public Builder paymentMethod(String paymentMethod) {
-            this.paymentMethod = Objects.requireNonNull(paymentMethod);
+        public Builder paymentMethod(@Nullable String paymentMethod) {
+            this.paymentMethod = paymentMethod;
             return this;
         }
         @CustomType.Setter
-        public Builder paymentTerms(List<GetInvoicesInvoicePaymentTerm> paymentTerms) {
-            this.paymentTerms = Objects.requireNonNull(paymentTerms);
+        public Builder paymentTerms(@Nullable List<GetInvoicesInvoicePaymentTerm> paymentTerms) {
+            this.paymentTerms = paymentTerms;
             return this;
         }
         public Builder paymentTerms(GetInvoicesInvoicePaymentTerm... paymentTerms) {
             return paymentTerms(List.of(paymentTerms));
         }
         @CustomType.Setter
-        public Builder receiptMethod(String receiptMethod) {
-            this.receiptMethod = Objects.requireNonNull(receiptMethod);
+        public Builder receiptMethod(@Nullable String receiptMethod) {
+            this.receiptMethod = receiptMethod;
             return this;
         }
         @CustomType.Setter
-        public Builder spmInvoiceNumber(String spmInvoiceNumber) {
-            this.spmInvoiceNumber = Objects.requireNonNull(spmInvoiceNumber);
+        public Builder spmInvoiceNumber(@Nullable String spmInvoiceNumber) {
+            this.spmInvoiceNumber = spmInvoiceNumber;
             return this;
         }
         @CustomType.Setter
-        public Builder status(String status) {
-            this.status = Objects.requireNonNull(status);
+        public Builder status(@Nullable String status) {
+            this.status = status;
             return this;
         }
         @CustomType.Setter
-        public Builder subscriptionNumber(String subscriptionNumber) {
-            this.subscriptionNumber = Objects.requireNonNull(subscriptionNumber);
+        public Builder subscriptionNumber(@Nullable String subscriptionNumber) {
+            this.subscriptionNumber = subscriptionNumber;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeInvoiceDate(String timeInvoiceDate) {
-            this.timeInvoiceDate = Objects.requireNonNull(timeInvoiceDate);
+        public Builder timeInvoiceDate(@Nullable String timeInvoiceDate) {
+            this.timeInvoiceDate = timeInvoiceDate;
             return this;
         }
         @CustomType.Setter
-        public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+        public Builder timeUpdated(@Nullable String timeUpdated) {
+            this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter
-        public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+        public Builder type(@Nullable String type) {
+            this.type = type;
             return this;
         }
         @CustomType.Setter
-        public Builder updatedBy(String updatedBy) {
-            this.updatedBy = Objects.requireNonNull(updatedBy);
+        public Builder updatedBy(@Nullable String updatedBy) {
+            this.updatedBy = updatedBy;
             return this;
         }
         public GetInvoicesInvoice build() {

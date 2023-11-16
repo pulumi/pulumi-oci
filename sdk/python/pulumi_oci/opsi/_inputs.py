@@ -46,14 +46,6 @@ class DatabaseInsightConnectionCredentialDetailsArgs:
                  role: Optional[pulumi.Input[str]] = None,
                  user_name: Optional[pulumi.Input[str]] = None,
                  wallet_secret_id: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] credential_source_name: Credential source name that had been added in Management Agent wallet. This is supplied in the External Database Service.
-        :param pulumi.Input[str] credential_type: Credential type.
-        :param pulumi.Input[str] password_secret_id: The secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) mapping to the database credentials.
-        :param pulumi.Input[str] role: database user role.
-        :param pulumi.Input[str] user_name: database user name.
-        :param pulumi.Input[str] wallet_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored.
-        """
         if credential_source_name is not None:
             pulumi.set(__self__, "credential_source_name", credential_source_name)
         if credential_type is not None:
@@ -70,9 +62,6 @@ class DatabaseInsightConnectionCredentialDetailsArgs:
     @property
     @pulumi.getter(name="credentialSourceName")
     def credential_source_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        Credential source name that had been added in Management Agent wallet. This is supplied in the External Database Service.
-        """
         return pulumi.get(self, "credential_source_name")
 
     @credential_source_name.setter
@@ -82,9 +71,6 @@ class DatabaseInsightConnectionCredentialDetailsArgs:
     @property
     @pulumi.getter(name="credentialType")
     def credential_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        Credential type.
-        """
         return pulumi.get(self, "credential_type")
 
     @credential_type.setter
@@ -94,9 +80,6 @@ class DatabaseInsightConnectionCredentialDetailsArgs:
     @property
     @pulumi.getter(name="passwordSecretId")
     def password_secret_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) mapping to the database credentials.
-        """
         return pulumi.get(self, "password_secret_id")
 
     @password_secret_id.setter
@@ -106,9 +89,6 @@ class DatabaseInsightConnectionCredentialDetailsArgs:
     @property
     @pulumi.getter
     def role(self) -> Optional[pulumi.Input[str]]:
-        """
-        database user role.
-        """
         return pulumi.get(self, "role")
 
     @role.setter
@@ -118,9 +98,6 @@ class DatabaseInsightConnectionCredentialDetailsArgs:
     @property
     @pulumi.getter(name="userName")
     def user_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        database user name.
-        """
         return pulumi.get(self, "user_name")
 
     @user_name.setter
@@ -130,9 +107,6 @@ class DatabaseInsightConnectionCredentialDetailsArgs:
     @property
     @pulumi.getter(name="walletSecretId")
     def wallet_secret_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored.
-        """
         return pulumi.get(self, "wallet_secret_id")
 
     @wallet_secret_id.setter
@@ -148,13 +122,6 @@ class DatabaseInsightConnectionDetailsArgs:
                  port: Optional[pulumi.Input[int]] = None,
                  protocol: Optional[pulumi.Input[str]] = None,
                  service_name: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] host_name: Name of the listener host that will be used to create the connect string to the database.
-        :param pulumi.Input[Sequence[pulumi.Input['DatabaseInsightConnectionDetailsHostArgs']]] hosts: List of hosts and port for private endpoint accessed database resource.
-        :param pulumi.Input[int] port: Listener port number used for connection requests for rivate endpoint accessed db resource.
-        :param pulumi.Input[str] protocol: Protocol used for connection requests for private endpoint accssed database resource.
-        :param pulumi.Input[str] service_name: Database service name used for connection requests.
-        """
         if host_name is not None:
             pulumi.set(__self__, "host_name", host_name)
         if hosts is not None:
@@ -169,9 +136,6 @@ class DatabaseInsightConnectionDetailsArgs:
     @property
     @pulumi.getter(name="hostName")
     def host_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        Name of the listener host that will be used to create the connect string to the database.
-        """
         return pulumi.get(self, "host_name")
 
     @host_name.setter
@@ -181,9 +145,6 @@ class DatabaseInsightConnectionDetailsArgs:
     @property
     @pulumi.getter
     def hosts(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DatabaseInsightConnectionDetailsHostArgs']]]]:
-        """
-        List of hosts and port for private endpoint accessed database resource.
-        """
         return pulumi.get(self, "hosts")
 
     @hosts.setter
@@ -193,9 +154,6 @@ class DatabaseInsightConnectionDetailsArgs:
     @property
     @pulumi.getter
     def port(self) -> Optional[pulumi.Input[int]]:
-        """
-        Listener port number used for connection requests for rivate endpoint accessed db resource.
-        """
         return pulumi.get(self, "port")
 
     @port.setter
@@ -205,9 +163,6 @@ class DatabaseInsightConnectionDetailsArgs:
     @property
     @pulumi.getter
     def protocol(self) -> Optional[pulumi.Input[str]]:
-        """
-        Protocol used for connection requests for private endpoint accssed database resource.
-        """
         return pulumi.get(self, "protocol")
 
     @protocol.setter
@@ -217,9 +172,6 @@ class DatabaseInsightConnectionDetailsArgs:
     @property
     @pulumi.getter(name="serviceName")
     def service_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        Database service name used for connection requests.
-        """
         return pulumi.get(self, "service_name")
 
     @service_name.setter
@@ -232,10 +184,6 @@ class DatabaseInsightConnectionDetailsHostArgs:
     def __init__(__self__, *,
                  host_ip: Optional[pulumi.Input[str]] = None,
                  port: Optional[pulumi.Input[int]] = None):
-        """
-        :param pulumi.Input[str] host_ip: Host IP used for connection requests for Cloud DB resource.
-        :param pulumi.Input[int] port: Listener port number used for connection requests for rivate endpoint accessed db resource.
-        """
         if host_ip is not None:
             pulumi.set(__self__, "host_ip", host_ip)
         if port is not None:
@@ -244,9 +192,6 @@ class DatabaseInsightConnectionDetailsHostArgs:
     @property
     @pulumi.getter(name="hostIp")
     def host_ip(self) -> Optional[pulumi.Input[str]]:
-        """
-        Host IP used for connection requests for Cloud DB resource.
-        """
         return pulumi.get(self, "host_ip")
 
     @host_ip.setter
@@ -256,9 +201,6 @@ class DatabaseInsightConnectionDetailsHostArgs:
     @property
     @pulumi.getter
     def port(self) -> Optional[pulumi.Input[int]]:
-        """
-        Listener port number used for connection requests for rivate endpoint accessed db resource.
-        """
         return pulumi.get(self, "port")
 
     @port.setter
@@ -275,14 +217,6 @@ class DatabaseInsightCredentialDetailsArgs:
                  role: Optional[pulumi.Input[str]] = None,
                  user_name: Optional[pulumi.Input[str]] = None,
                  wallet_secret_id: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] credential_type: Credential type.
-        :param pulumi.Input[str] credential_source_name: Credential source name that had been added in Management Agent wallet. This is supplied in the External Database Service.
-        :param pulumi.Input[str] password_secret_id: The secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) mapping to the database credentials.
-        :param pulumi.Input[str] role: database user role.
-        :param pulumi.Input[str] user_name: database user name.
-        :param pulumi.Input[str] wallet_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored.
-        """
         pulumi.set(__self__, "credential_type", credential_type)
         if credential_source_name is not None:
             pulumi.set(__self__, "credential_source_name", credential_source_name)
@@ -298,9 +232,6 @@ class DatabaseInsightCredentialDetailsArgs:
     @property
     @pulumi.getter(name="credentialType")
     def credential_type(self) -> pulumi.Input[str]:
-        """
-        Credential type.
-        """
         return pulumi.get(self, "credential_type")
 
     @credential_type.setter
@@ -310,9 +241,6 @@ class DatabaseInsightCredentialDetailsArgs:
     @property
     @pulumi.getter(name="credentialSourceName")
     def credential_source_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        Credential source name that had been added in Management Agent wallet. This is supplied in the External Database Service.
-        """
         return pulumi.get(self, "credential_source_name")
 
     @credential_source_name.setter
@@ -322,9 +250,6 @@ class DatabaseInsightCredentialDetailsArgs:
     @property
     @pulumi.getter(name="passwordSecretId")
     def password_secret_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) mapping to the database credentials.
-        """
         return pulumi.get(self, "password_secret_id")
 
     @password_secret_id.setter
@@ -334,9 +259,6 @@ class DatabaseInsightCredentialDetailsArgs:
     @property
     @pulumi.getter
     def role(self) -> Optional[pulumi.Input[str]]:
-        """
-        database user role.
-        """
         return pulumi.get(self, "role")
 
     @role.setter
@@ -346,9 +268,6 @@ class DatabaseInsightCredentialDetailsArgs:
     @property
     @pulumi.getter(name="userName")
     def user_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        database user name.
-        """
         return pulumi.get(self, "user_name")
 
     @user_name.setter
@@ -358,9 +277,6 @@ class DatabaseInsightCredentialDetailsArgs:
     @property
     @pulumi.getter(name="walletSecretId")
     def wallet_secret_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored.
-        """
         return pulumi.get(self, "wallet_secret_id")
 
     @wallet_secret_id.setter
@@ -376,13 +292,6 @@ class ExadataInsightMemberVmClusterDetailArgs:
                  member_database_details: Optional[pulumi.Input[Sequence[pulumi.Input['ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgs']]]] = None,
                  opsi_private_endpoint_id: Optional[pulumi.Input[str]] = None,
                  vmcluster_id: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier of database
-        :param pulumi.Input[str] dbm_private_endpoint_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Management private endpoint
-        :param pulumi.Input[Sequence[pulumi.Input['ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgs']]] member_database_details: The databases that belong to the VM Cluster
-        :param pulumi.Input[str] opsi_private_endpoint_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OPSI private endpoint
-        :param pulumi.Input[str] vmcluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Cluster.
-        """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
         if dbm_private_endpoint_id is not None:
@@ -397,9 +306,6 @@ class ExadataInsightMemberVmClusterDetailArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Compartment Identifier of database
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -409,9 +315,6 @@ class ExadataInsightMemberVmClusterDetailArgs:
     @property
     @pulumi.getter(name="dbmPrivateEndpointId")
     def dbm_private_endpoint_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Management private endpoint
-        """
         return pulumi.get(self, "dbm_private_endpoint_id")
 
     @dbm_private_endpoint_id.setter
@@ -421,9 +324,6 @@ class ExadataInsightMemberVmClusterDetailArgs:
     @property
     @pulumi.getter(name="memberDatabaseDetails")
     def member_database_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgs']]]]:
-        """
-        The databases that belong to the VM Cluster
-        """
         return pulumi.get(self, "member_database_details")
 
     @member_database_details.setter
@@ -433,9 +333,6 @@ class ExadataInsightMemberVmClusterDetailArgs:
     @property
     @pulumi.getter(name="opsiPrivateEndpointId")
     def opsi_private_endpoint_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OPSI private endpoint
-        """
         return pulumi.get(self, "opsi_private_endpoint_id")
 
     @opsi_private_endpoint_id.setter
@@ -445,9 +342,6 @@ class ExadataInsightMemberVmClusterDetailArgs:
     @property
     @pulumi.getter(name="vmclusterId")
     def vmcluster_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Cluster.
-        """
         return pulumi.get(self, "vmcluster_id")
 
     @vmcluster_id.setter
@@ -471,21 +365,6 @@ class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgs:
                  opsi_private_endpoint_id: Optional[pulumi.Input[str]] = None,
                  service_name: Optional[pulumi.Input[str]] = None,
                  system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None):
-        """
-        :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier of database
-        :param pulumi.Input['ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsArgs'] connection_details: Connection details of the private endpoints.
-        :param pulumi.Input['ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsArgs'] credential_details: User credential details to connect to the database. This is supplied via the External Database Service.
-        :param pulumi.Input[str] database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
-        :param pulumi.Input[str] database_resource_type: Oracle Cloud Infrastructure database resource type
-        :param pulumi.Input[str] dbm_private_endpoint_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Management private endpoint
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] deployment_type: Database Deployment Type
-        :param pulumi.Input[str] entity_source: Source of the database entity.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] opsi_private_endpoint_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OPSI private endpoint
-        :param pulumi.Input[str] service_name: Database service name used for connection requests.
-        :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
         if connection_details is not None:
@@ -516,9 +395,6 @@ class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Compartment Identifier of database
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -528,9 +404,6 @@ class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgs:
     @property
     @pulumi.getter(name="connectionDetails")
     def connection_details(self) -> Optional[pulumi.Input['ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsArgs']]:
-        """
-        Connection details of the private endpoints.
-        """
         return pulumi.get(self, "connection_details")
 
     @connection_details.setter
@@ -540,9 +413,6 @@ class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgs:
     @property
     @pulumi.getter(name="credentialDetails")
     def credential_details(self) -> Optional[pulumi.Input['ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsArgs']]:
-        """
-        User credential details to connect to the database. This is supplied via the External Database Service.
-        """
         return pulumi.get(self, "credential_details")
 
     @credential_details.setter
@@ -552,9 +422,6 @@ class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgs:
     @property
     @pulumi.getter(name="databaseId")
     def database_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
-        """
         return pulumi.get(self, "database_id")
 
     @database_id.setter
@@ -564,9 +431,6 @@ class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgs:
     @property
     @pulumi.getter(name="databaseResourceType")
     def database_resource_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        Oracle Cloud Infrastructure database resource type
-        """
         return pulumi.get(self, "database_resource_type")
 
     @database_resource_type.setter
@@ -576,9 +440,6 @@ class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgs:
     @property
     @pulumi.getter(name="dbmPrivateEndpointId")
     def dbm_private_endpoint_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Management private endpoint
-        """
         return pulumi.get(self, "dbm_private_endpoint_id")
 
     @dbm_private_endpoint_id.setter
@@ -588,9 +449,6 @@ class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -600,9 +458,6 @@ class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgs:
     @property
     @pulumi.getter(name="deploymentType")
     def deployment_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        Database Deployment Type
-        """
         return pulumi.get(self, "deployment_type")
 
     @deployment_type.setter
@@ -612,9 +467,6 @@ class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgs:
     @property
     @pulumi.getter(name="entitySource")
     def entity_source(self) -> Optional[pulumi.Input[str]]:
-        """
-        Source of the database entity.
-        """
         return pulumi.get(self, "entity_source")
 
     @entity_source.setter
@@ -624,9 +476,6 @@ class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -636,9 +485,6 @@ class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgs:
     @property
     @pulumi.getter(name="opsiPrivateEndpointId")
     def opsi_private_endpoint_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OPSI private endpoint
-        """
         return pulumi.get(self, "opsi_private_endpoint_id")
 
     @opsi_private_endpoint_id.setter
@@ -648,9 +494,6 @@ class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgs:
     @property
     @pulumi.getter(name="serviceName")
     def service_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        Database service name used for connection requests.
-        """
         return pulumi.get(self, "service_name")
 
     @service_name.setter
@@ -660,9 +503,6 @@ class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgs:
     @property
     @pulumi.getter(name="systemTags")
     def system_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
@@ -676,11 +516,6 @@ class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsAr
                  hosts: Optional[pulumi.Input[Sequence[pulumi.Input['ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsHostArgs']]]] = None,
                  protocol: Optional[pulumi.Input[str]] = None,
                  service_name: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[Sequence[pulumi.Input['ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsHostArgs']]] hosts: List of hosts and port for private endpoint accessed database resource.
-        :param pulumi.Input[str] protocol: Protocol used for connection requests for private endpoint accssed database resource.
-        :param pulumi.Input[str] service_name: Database service name used for connection requests.
-        """
         if hosts is not None:
             pulumi.set(__self__, "hosts", hosts)
         if protocol is not None:
@@ -691,9 +526,6 @@ class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsAr
     @property
     @pulumi.getter
     def hosts(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsHostArgs']]]]:
-        """
-        List of hosts and port for private endpoint accessed database resource.
-        """
         return pulumi.get(self, "hosts")
 
     @hosts.setter
@@ -703,9 +535,6 @@ class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsAr
     @property
     @pulumi.getter
     def protocol(self) -> Optional[pulumi.Input[str]]:
-        """
-        Protocol used for connection requests for private endpoint accssed database resource.
-        """
         return pulumi.get(self, "protocol")
 
     @protocol.setter
@@ -715,9 +544,6 @@ class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsAr
     @property
     @pulumi.getter(name="serviceName")
     def service_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        Database service name used for connection requests.
-        """
         return pulumi.get(self, "service_name")
 
     @service_name.setter
@@ -730,10 +556,6 @@ class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsHo
     def __init__(__self__, *,
                  host_ip: Optional[pulumi.Input[str]] = None,
                  port: Optional[pulumi.Input[int]] = None):
-        """
-        :param pulumi.Input[str] host_ip: Host IP used for connection requests for Cloud DB resource.
-        :param pulumi.Input[int] port: Listener port number used for connection requests for rivate endpoint accessed db resource.
-        """
         if host_ip is not None:
             pulumi.set(__self__, "host_ip", host_ip)
         if port is not None:
@@ -742,9 +564,6 @@ class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsHo
     @property
     @pulumi.getter(name="hostIp")
     def host_ip(self) -> Optional[pulumi.Input[str]]:
-        """
-        Host IP used for connection requests for Cloud DB resource.
-        """
         return pulumi.get(self, "host_ip")
 
     @host_ip.setter
@@ -754,9 +573,6 @@ class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsHo
     @property
     @pulumi.getter
     def port(self) -> Optional[pulumi.Input[int]]:
-        """
-        Listener port number used for connection requests for rivate endpoint accessed db resource.
-        """
         return pulumi.get(self, "port")
 
     @port.setter
@@ -773,14 +589,6 @@ class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsAr
                  role: Optional[pulumi.Input[str]] = None,
                  user_name: Optional[pulumi.Input[str]] = None,
                  wallet_secret_id: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] credential_type: Credential type.
-        :param pulumi.Input[str] credential_source_name: Credential source name that had been added in Management Agent wallet. This is supplied in the External Database Service.
-        :param pulumi.Input[str] password_secret_id: The secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) mapping to the database credentials.
-        :param pulumi.Input[str] role: database user role.
-        :param pulumi.Input[str] user_name: database user name.
-        :param pulumi.Input[str] wallet_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored.
-        """
         pulumi.set(__self__, "credential_type", credential_type)
         if credential_source_name is not None:
             pulumi.set(__self__, "credential_source_name", credential_source_name)
@@ -796,9 +604,6 @@ class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsAr
     @property
     @pulumi.getter(name="credentialType")
     def credential_type(self) -> pulumi.Input[str]:
-        """
-        Credential type.
-        """
         return pulumi.get(self, "credential_type")
 
     @credential_type.setter
@@ -808,9 +613,6 @@ class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsAr
     @property
     @pulumi.getter(name="credentialSourceName")
     def credential_source_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        Credential source name that had been added in Management Agent wallet. This is supplied in the External Database Service.
-        """
         return pulumi.get(self, "credential_source_name")
 
     @credential_source_name.setter
@@ -820,9 +622,6 @@ class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsAr
     @property
     @pulumi.getter(name="passwordSecretId")
     def password_secret_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) mapping to the database credentials.
-        """
         return pulumi.get(self, "password_secret_id")
 
     @password_secret_id.setter
@@ -832,9 +631,6 @@ class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsAr
     @property
     @pulumi.getter
     def role(self) -> Optional[pulumi.Input[str]]:
-        """
-        database user role.
-        """
         return pulumi.get(self, "role")
 
     @role.setter
@@ -844,9 +640,6 @@ class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsAr
     @property
     @pulumi.getter(name="userName")
     def user_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        database user name.
-        """
         return pulumi.get(self, "user_name")
 
     @user_name.setter
@@ -856,9 +649,6 @@ class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsAr
     @property
     @pulumi.getter(name="walletSecretId")
     def wallet_secret_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored.
-        """
         return pulumi.get(self, "wallet_secret_id")
 
     @wallet_secret_id.setter
@@ -870,17 +660,11 @@ class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsAr
 class NewsReportContentTypesArgs:
     def __init__(__self__, *,
                  capacity_planning_resources: pulumi.Input[Sequence[pulumi.Input[str]]]):
-        """
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] capacity_planning_resources: (Updatable) Supported resources for capacity planning content type.
-        """
         pulumi.set(__self__, "capacity_planning_resources", capacity_planning_resources)
 
     @property
     @pulumi.getter(name="capacityPlanningResources")
     def capacity_planning_resources(self) -> pulumi.Input[Sequence[pulumi.Input[str]]]:
-        """
-        (Updatable) Supported resources for capacity planning content type.
-        """
         return pulumi.get(self, "capacity_planning_resources")
 
     @capacity_planning_resources.setter
@@ -897,14 +681,6 @@ class OpsiConfigurationConfigItemArgs:
                  metadatas: Optional[pulumi.Input[Sequence[pulumi.Input['OpsiConfigurationConfigItemMetadataArgs']]]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  value: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] config_item_type: (Updatable) Type of configuration item.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] applicable_contexts: List of contexts in Operations Insights where this configuration item is applicable.
-        :param pulumi.Input[str] default_value: Value of configuration item.
-        :param pulumi.Input[Sequence[pulumi.Input['OpsiConfigurationConfigItemMetadataArgs']]] metadatas: Configuration item metadata.
-        :param pulumi.Input[str] name: (Updatable) Name of configuration item.
-        :param pulumi.Input[str] value: (Updatable) Value of configuration item.
-        """
         pulumi.set(__self__, "config_item_type", config_item_type)
         if applicable_contexts is not None:
             pulumi.set(__self__, "applicable_contexts", applicable_contexts)
@@ -920,9 +696,6 @@ class OpsiConfigurationConfigItemArgs:
     @property
     @pulumi.getter(name="configItemType")
     def config_item_type(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Type of configuration item.
-        """
         return pulumi.get(self, "config_item_type")
 
     @config_item_type.setter
@@ -932,9 +705,6 @@ class OpsiConfigurationConfigItemArgs:
     @property
     @pulumi.getter(name="applicableContexts")
     def applicable_contexts(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        List of contexts in Operations Insights where this configuration item is applicable.
-        """
         return pulumi.get(self, "applicable_contexts")
 
     @applicable_contexts.setter
@@ -944,9 +714,6 @@ class OpsiConfigurationConfigItemArgs:
     @property
     @pulumi.getter(name="defaultValue")
     def default_value(self) -> Optional[pulumi.Input[str]]:
-        """
-        Value of configuration item.
-        """
         return pulumi.get(self, "default_value")
 
     @default_value.setter
@@ -956,9 +723,6 @@ class OpsiConfigurationConfigItemArgs:
     @property
     @pulumi.getter
     def metadatas(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['OpsiConfigurationConfigItemMetadataArgs']]]]:
-        """
-        Configuration item metadata.
-        """
         return pulumi.get(self, "metadatas")
 
     @metadatas.setter
@@ -968,9 +732,6 @@ class OpsiConfigurationConfigItemArgs:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Name of configuration item.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -980,9 +741,6 @@ class OpsiConfigurationConfigItemArgs:
     @property
     @pulumi.getter
     def value(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Value of configuration item.
-        """
         return pulumi.get(self, "value")
 
     @value.setter
@@ -999,14 +757,6 @@ class OpsiConfigurationConfigItemMetadataArgs:
                  display_name: Optional[pulumi.Input[str]] = None,
                  unit_details: Optional[pulumi.Input[Sequence[pulumi.Input['OpsiConfigurationConfigItemMetadataUnitDetailArgs']]]] = None,
                  value_input_details: Optional[pulumi.Input[Sequence[pulumi.Input['OpsiConfigurationConfigItemMetadataValueInputDetailArgs']]]] = None):
-        """
-        :param pulumi.Input[str] config_item_type: (Updatable) Type of configuration item.
-        :param pulumi.Input[str] data_type: Data type of configuration item. Examples: STRING, BOOLEAN, NUMBER
-        :param pulumi.Input[str] description: (Updatable) Description of OPSI configuration.
-        :param pulumi.Input[str] display_name: (Updatable) User-friendly display name for the OPSI configuration. The name does not have to be unique.
-        :param pulumi.Input[Sequence[pulumi.Input['OpsiConfigurationConfigItemMetadataUnitDetailArgs']]] unit_details: Unit details of configuration item.
-        :param pulumi.Input[Sequence[pulumi.Input['OpsiConfigurationConfigItemMetadataValueInputDetailArgs']]] value_input_details: Allowed value details of configuration item, to validate what value can be assigned to a configuration item.
-        """
         if config_item_type is not None:
             pulumi.set(__self__, "config_item_type", config_item_type)
         if data_type is not None:
@@ -1023,9 +773,6 @@ class OpsiConfigurationConfigItemMetadataArgs:
     @property
     @pulumi.getter(name="configItemType")
     def config_item_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Type of configuration item.
-        """
         return pulumi.get(self, "config_item_type")
 
     @config_item_type.setter
@@ -1035,9 +782,6 @@ class OpsiConfigurationConfigItemMetadataArgs:
     @property
     @pulumi.getter(name="dataType")
     def data_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        Data type of configuration item. Examples: STRING, BOOLEAN, NUMBER
-        """
         return pulumi.get(self, "data_type")
 
     @data_type.setter
@@ -1047,9 +791,6 @@ class OpsiConfigurationConfigItemMetadataArgs:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Description of OPSI configuration.
-        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -1059,9 +800,6 @@ class OpsiConfigurationConfigItemMetadataArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) User-friendly display name for the OPSI configuration. The name does not have to be unique.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -1071,9 +809,6 @@ class OpsiConfigurationConfigItemMetadataArgs:
     @property
     @pulumi.getter(name="unitDetails")
     def unit_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['OpsiConfigurationConfigItemMetadataUnitDetailArgs']]]]:
-        """
-        Unit details of configuration item.
-        """
         return pulumi.get(self, "unit_details")
 
     @unit_details.setter
@@ -1083,9 +818,6 @@ class OpsiConfigurationConfigItemMetadataArgs:
     @property
     @pulumi.getter(name="valueInputDetails")
     def value_input_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['OpsiConfigurationConfigItemMetadataValueInputDetailArgs']]]]:
-        """
-        Allowed value details of configuration item, to validate what value can be assigned to a configuration item.
-        """
         return pulumi.get(self, "value_input_details")
 
     @value_input_details.setter
@@ -1098,10 +830,6 @@ class OpsiConfigurationConfigItemMetadataUnitDetailArgs:
     def __init__(__self__, *,
                  display_name: Optional[pulumi.Input[str]] = None,
                  unit: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] display_name: (Updatable) User-friendly display name for the OPSI configuration. The name does not have to be unique.
-        :param pulumi.Input[str] unit: Unit of configuration item.
-        """
         if display_name is not None:
             pulumi.set(__self__, "display_name", display_name)
         if unit is not None:
@@ -1110,9 +838,6 @@ class OpsiConfigurationConfigItemMetadataUnitDetailArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) User-friendly display name for the OPSI configuration. The name does not have to be unique.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -1122,9 +847,6 @@ class OpsiConfigurationConfigItemMetadataUnitDetailArgs:
     @property
     @pulumi.getter
     def unit(self) -> Optional[pulumi.Input[str]]:
-        """
-        Unit of configuration item.
-        """
         return pulumi.get(self, "unit")
 
     @unit.setter
@@ -1139,12 +861,6 @@ class OpsiConfigurationConfigItemMetadataValueInputDetailArgs:
                  max_value: Optional[pulumi.Input[str]] = None,
                  min_value: Optional[pulumi.Input[str]] = None,
                  possible_values: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
-        """
-        :param pulumi.Input[str] allowed_value_type: Allowed value type of configuration item.
-        :param pulumi.Input[str] max_value: Maximum value limit for the configuration item.
-        :param pulumi.Input[str] min_value: Minimum value limit for the configuration item.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] possible_values: Allowed values to pick for the configuration item.
-        """
         if allowed_value_type is not None:
             pulumi.set(__self__, "allowed_value_type", allowed_value_type)
         if max_value is not None:
@@ -1157,9 +873,6 @@ class OpsiConfigurationConfigItemMetadataValueInputDetailArgs:
     @property
     @pulumi.getter(name="allowedValueType")
     def allowed_value_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        Allowed value type of configuration item.
-        """
         return pulumi.get(self, "allowed_value_type")
 
     @allowed_value_type.setter
@@ -1169,9 +882,6 @@ class OpsiConfigurationConfigItemMetadataValueInputDetailArgs:
     @property
     @pulumi.getter(name="maxValue")
     def max_value(self) -> Optional[pulumi.Input[str]]:
-        """
-        Maximum value limit for the configuration item.
-        """
         return pulumi.get(self, "max_value")
 
     @max_value.setter
@@ -1181,9 +891,6 @@ class OpsiConfigurationConfigItemMetadataValueInputDetailArgs:
     @property
     @pulumi.getter(name="minValue")
     def min_value(self) -> Optional[pulumi.Input[str]]:
-        """
-        Minimum value limit for the configuration item.
-        """
         return pulumi.get(self, "min_value")
 
     @min_value.setter
@@ -1193,9 +900,6 @@ class OpsiConfigurationConfigItemMetadataValueInputDetailArgs:
     @property
     @pulumi.getter(name="possibleValues")
     def possible_values(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        Allowed values to pick for the configuration item.
-        """
         return pulumi.get(self, "possible_values")
 
     @possible_values.setter
@@ -1443,9 +1147,6 @@ class GetNewsReportsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: The news report name.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -1454,9 +1155,6 @@ class GetNewsReportsFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        The news report name.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -1527,9 +1225,6 @@ class GetOperationsInsightsWarehouseUsersFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: Username for schema which would have access to AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -1538,9 +1233,6 @@ class GetOperationsInsightsWarehouseUsersFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        Username for schema which would have access to AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -1611,9 +1303,6 @@ class GetOpsiConfigurationsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: Name of configuration item.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -1622,9 +1311,6 @@ class GetOpsiConfigurationsFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        Name of configuration item.
-        """
         return pulumi.get(self, "name")
 
     @name.setter

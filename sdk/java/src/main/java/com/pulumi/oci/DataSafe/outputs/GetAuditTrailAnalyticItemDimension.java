@@ -6,6 +6,8 @@ package com.pulumi.oci.DataSafe.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAuditTrailAnalyticItemDimension {
@@ -13,51 +15,51 @@ public final class GetAuditTrailAnalyticItemDimension {
      * @return The location represents the source of audit records that provides documentary evidence of the sequence of activities in the target database.
      * 
      */
-    private String location;
+    private @Nullable String location;
     /**
      * @return The current state of the audit trail.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return The current sub-state of the audit trail..
      * 
      */
-    private String status;
+    private @Nullable String status;
     /**
      * @return A filter to return only items related to a specific target OCID.
      * 
      */
-    private String targetId;
+    private @Nullable String targetId;
 
     private GetAuditTrailAnalyticItemDimension() {}
     /**
      * @return The location represents the source of audit records that provides documentary evidence of the sequence of activities in the target database.
      * 
      */
-    public String location() {
-        return this.location;
+    public Optional<String> location() {
+        return Optional.ofNullable(this.location);
     }
     /**
      * @return The current state of the audit trail.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return The current sub-state of the audit trail..
      * 
      */
-    public String status() {
-        return this.status;
+    public Optional<String> status() {
+        return Optional.ofNullable(this.status);
     }
     /**
      * @return A filter to return only items related to a specific target OCID.
      * 
      */
-    public String targetId() {
-        return this.targetId;
+    public Optional<String> targetId() {
+        return Optional.ofNullable(this.targetId);
     }
 
     public static Builder builder() {
@@ -69,10 +71,10 @@ public final class GetAuditTrailAnalyticItemDimension {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String location;
-        private String state;
-        private String status;
-        private String targetId;
+        private @Nullable String location;
+        private @Nullable String state;
+        private @Nullable String status;
+        private @Nullable String targetId;
         public Builder() {}
         public Builder(GetAuditTrailAnalyticItemDimension defaults) {
     	      Objects.requireNonNull(defaults);
@@ -83,23 +85,23 @@ public final class GetAuditTrailAnalyticItemDimension {
         }
 
         @CustomType.Setter
-        public Builder location(String location) {
-            this.location = Objects.requireNonNull(location);
+        public Builder location(@Nullable String location) {
+            this.location = location;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder status(String status) {
-            this.status = Objects.requireNonNull(status);
+        public Builder status(@Nullable String status) {
+            this.status = status;
             return this;
         }
         @CustomType.Setter
-        public Builder targetId(String targetId) {
-            this.targetId = Objects.requireNonNull(targetId);
+        public Builder targetId(@Nullable String targetId) {
+            this.targetId = targetId;
             return this;
         }
         public GetAuditTrailAnalyticItemDimension build() {

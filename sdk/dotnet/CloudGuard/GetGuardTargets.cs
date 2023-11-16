@@ -233,7 +233,7 @@ namespace Pulumi.Oci.CloudGuard
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         public readonly bool? IsNonSecurityZoneTargetsOnlyQuery;
         /// <summary>
         /// The current state of the ResponderRule.
@@ -256,7 +256,7 @@ namespace Pulumi.Oci.CloudGuard
 
             ImmutableArray<Outputs.GetGuardTargetsFilterResult> filters,
 
-            string id,
+            string? id,
 
             bool? isNonSecurityZoneTargetsOnlyQuery,
 

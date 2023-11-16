@@ -45,124 +45,124 @@ export interface GetExsiHostResult {
     /**
      * Current billing cycle end date. If the value in `currentSku` and `nextSku` are different, the value specified in `nextSku` becomes the new `currentSKU` when the `contractEndDate` is reached. Example: `2016-08-25T21:10:29.600Z`
      */
-    readonly billingContractEndDate: string;
+    readonly billingContractEndDate?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deleted ESXi Host with LeftOver billing cycle.
      *
      * @deprecated This 'billing_donor_host_id' argument has been deprecated and will be computed only.
      */
-    readonly billingDonorHostId: string;
+    readonly billingDonorHostId?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
      */
-    readonly capacityReservationId: string;
+    readonly capacityReservationId?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the SDDC.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * The availability domain of the ESXi host.
      */
-    readonly computeAvailabilityDomain: string;
+    readonly computeAvailabilityDomain?: string;
     /**
      * In terms of implementation, an ESXi host is a Compute instance that is configured with the chosen bundle of VMware software. The `computeInstanceId` is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of that Compute instance.
      */
-    readonly computeInstanceId: string;
+    readonly computeInstanceId?: string;
     /**
      * (**Deprecated**) The billing option currently used by the ESXi host. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
      *
      * @deprecated The 'current_sku' field has been deprecated. It is no longer supported.
      */
-    readonly currentSku: string;
+    readonly currentSku?: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * A descriptive name for the ESXi host. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     readonly esxiHostId: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that failed.
      *
      * @deprecated This 'failed_esxi_host_id' argument has been deprecated and will be computed only.
      */
-    readonly failedEsxiHostId: string;
+    readonly failedEsxiHostId?: string;
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * The date and time when the new esxi host should start billing cycle. [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2021-07-25T21:10:29.600Z`
      */
-    readonly gracePeriodEndDate: string;
+    readonly gracePeriodEndDate?: string;
     /**
      * The OCPU count of the ESXi host.
      */
-    readonly hostOcpuCount: number;
+    readonly hostOcpuCount?: number;
     /**
      * The compute shape name of the ESXi host. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
      */
-    readonly hostShapeName: string;
+    readonly hostShapeName?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Indicates whether this host is in the progress of billing continuation.
      */
-    readonly isBillingContinuationInProgress: boolean;
+    readonly isBillingContinuationInProgress?: boolean;
     /**
      * Indicates whether this host is in the progress of swapping billing.
      */
-    readonly isBillingSwappingInProgress: boolean;
+    readonly isBillingSwappingInProgress?: boolean;
     /**
      * (**Deprecated**) The billing option to switch to after the current billing cycle ends. If `nextSku` is null or empty, `currentSku` continues to the next billing cycle. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
      *
      * @deprecated The 'next_sku' field has been deprecated. It is no longer supported.
      */
-    readonly nextSku: string;
+    readonly nextSku?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that will be upgraded.
      *
      * @deprecated This 'non_upgraded_esxi_host_id' argument has been deprecated and will be computed only.
      */
-    readonly nonUpgradedEsxiHostId: string;
+    readonly nonUpgradedEsxiHostId?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the esxi host that is newly created to replace the failed node.
      */
-    readonly replacementEsxiHostId: string;
+    readonly replacementEsxiHostId?: string;
     /**
      * (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC that the ESXi host belongs to.
      *
      * @deprecated The 'sddc_id' field has been deprecated. Please use 'cluster_id' instead.
      */
-    readonly sddcId: string;
+    readonly sddcId?: string;
     /**
      * The current state of the ESXi host.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the active ESXi Host to swap billing with current host.
      */
-    readonly swapBillingHostId: string;
+    readonly swapBillingHostId?: string;
     /**
      * The date and time the ESXi host was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The date and time the ESXi host was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
-    readonly timeUpdated: string;
+    readonly timeUpdated?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that is newly created to upgrade the original host.
      */
-    readonly upgradedReplacementEsxiHostId: string;
+    readonly upgradedReplacementEsxiHostId?: string;
     /**
      * The version of VMware software that Oracle Cloud VMware Solution installed on the ESXi hosts.
      */
-    readonly vmwareSoftwareVersion: string;
+    readonly vmwareSoftwareVersion?: string;
 }
 /**
  * This data source provides details about a specific Esxi Host resource in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.

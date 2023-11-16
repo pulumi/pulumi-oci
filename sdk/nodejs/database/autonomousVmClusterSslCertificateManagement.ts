@@ -63,11 +63,11 @@ export class AutonomousVmClusterSslCertificateManagement extends pulumi.CustomRe
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the certificate bundle.
      */
-    public readonly caBundleId!: pulumi.Output<string>;
+    public readonly caBundleId!: pulumi.Output<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the certificate authority.
      */
-    public readonly certificateAuthorityId!: pulumi.Output<string>;
+    public readonly certificateAuthorityId!: pulumi.Output<string | undefined>;
     /**
      * Specify SYSTEM for using Oracle managed certificates. Specify BYOC when you want to bring your own certificate.
      */
@@ -79,7 +79,7 @@ export class AutonomousVmClusterSslCertificateManagement extends pulumi.CustomRe
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly certificateId!: pulumi.Output<string>;
+    public readonly certificateId!: pulumi.Output<string | undefined>;
 
     /**
      * Create a AutonomousVmClusterSslCertificateManagement resource with the given unique name, arguments, and options.

@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Preauthenticated Request resource in Oracle Cloud Infrastructure Object Storage service.
@@ -63,13 +62,13 @@ type Preauthrequest struct {
 	// The operation that can be performed on this resource. Allowed Values: `ObjectRead`, `ObjectWrite`, `ObjectReadWrite`, `AnyObjectReadWrite` or `AnyObjectRead`
 	AccessType pulumi.StringOutput `pulumi:"accessType"`
 	// The URI to embed in the URL `https://objectstorage.${var.region}.oraclecloud.com{var.access_uri}` when using the pre-authenticated request.
-	AccessUri pulumi.StringOutput `pulumi:"accessUri"`
+	AccessUri pulumi.StringPtrOutput `pulumi:"accessUri"`
 	// The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
 	Bucket pulumi.StringOutput `pulumi:"bucket"`
 	// Specifies whether a list operation is allowed on a PAR with accessType "AnyObjectRead" or "AnyObjectReadWrite". Deny: Prevents the user from performing a list operation. ListObjects: Authorizes the user to perform a list operation.
-	BucketListingAction pulumi.StringOutput `pulumi:"bucketListingAction"`
+	BucketListingAction pulumi.StringPtrOutput `pulumi:"bucketListingAction"`
 	// The full Path for the object.
-	FullPath pulumi.StringOutput `pulumi:"fullPath"`
+	FullPath pulumi.StringPtrOutput `pulumi:"fullPath"`
 	// A user-specified name for the pre-authenticated request. Names can be helpful in managing pre-authenticated requests. Avoid entering confidential information.
 	Name pulumi.StringOutput `pulumi:"name"`
 	// The Object Storage namespace used for the request.
@@ -77,13 +76,13 @@ type Preauthrequest struct {
 	// Deprecated. Instead use `objectName`. Requests that include both `object` and `objectName` will be rejected. (Optional) The name of the object that is being granted access to by the pre-authenticated request. Avoid entering confidential information. The object name can be null and if so, the pre-authenticated request grants access to the entire bucket if the access type allows that. The object name can be a prefix as well, in that case pre-authenticated request grants access to all the objects within the bucket starting with that prefix provided that we have the correct access type.
 	//
 	// Deprecated: The 'object' field has been deprecated. Please use 'object_name' instead.
-	Object pulumi.StringOutput `pulumi:"object"`
+	Object pulumi.StringPtrOutput `pulumi:"object"`
 	// The name of the object that is being granted access to by the pre-authenticated request. Avoid entering confidential information. The object name can be null and if so, the pre-authenticated request grants access to the entire bucket if the access type allows that. The object name can be a prefix as well, in that case pre-authenticated request grants access to all the objects within the bucket starting with that prefix provided that we have the correct access type.
-	ObjectName pulumi.StringOutput `pulumi:"objectName"`
+	ObjectName pulumi.StringPtrOutput `pulumi:"objectName"`
 	// The unique identifier for the pre-authenticated request. This can be used to manage operations against the pre-authenticated request, such as GET or DELETE.
-	ParId pulumi.StringOutput `pulumi:"parId"`
+	ParId pulumi.StringPtrOutput `pulumi:"parId"`
 	// The date when the pre-authenticated request was created as per specification [RFC 3339](https://tools.ietf.org/html/rfc3339).
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The expiration date for the pre-authenticated request as per [RFC 3339](https://tools.ietf.org/html/rfc3339). After this date the pre-authenticated request will no longer be valid.
 	//
 	// ** IMPORTANT **
@@ -272,12 +271,6 @@ func (i *Preauthrequest) ToPreauthrequestOutputWithContext(ctx context.Context) 
 	return pulumi.ToOutputWithContext(ctx, i).(PreauthrequestOutput)
 }
 
-func (i *Preauthrequest) ToOutput(ctx context.Context) pulumix.Output[*Preauthrequest] {
-	return pulumix.Output[*Preauthrequest]{
-		OutputState: i.ToPreauthrequestOutputWithContext(ctx).OutputState,
-	}
-}
-
 // PreauthrequestArrayInput is an input type that accepts PreauthrequestArray and PreauthrequestArrayOutput values.
 // You can construct a concrete instance of `PreauthrequestArrayInput` via:
 //
@@ -301,12 +294,6 @@ func (i PreauthrequestArray) ToPreauthrequestArrayOutput() PreauthrequestArrayOu
 
 func (i PreauthrequestArray) ToPreauthrequestArrayOutputWithContext(ctx context.Context) PreauthrequestArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(PreauthrequestArrayOutput)
-}
-
-func (i PreauthrequestArray) ToOutput(ctx context.Context) pulumix.Output[[]*Preauthrequest] {
-	return pulumix.Output[[]*Preauthrequest]{
-		OutputState: i.ToPreauthrequestArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // PreauthrequestMapInput is an input type that accepts PreauthrequestMap and PreauthrequestMapOutput values.
@@ -334,12 +321,6 @@ func (i PreauthrequestMap) ToPreauthrequestMapOutputWithContext(ctx context.Cont
 	return pulumi.ToOutputWithContext(ctx, i).(PreauthrequestMapOutput)
 }
 
-func (i PreauthrequestMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*Preauthrequest] {
-	return pulumix.Output[map[string]*Preauthrequest]{
-		OutputState: i.ToPreauthrequestMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type PreauthrequestOutput struct{ *pulumi.OutputState }
 
 func (PreauthrequestOutput) ElementType() reflect.Type {
@@ -354,20 +335,14 @@ func (o PreauthrequestOutput) ToPreauthrequestOutputWithContext(ctx context.Cont
 	return o
 }
 
-func (o PreauthrequestOutput) ToOutput(ctx context.Context) pulumix.Output[*Preauthrequest] {
-	return pulumix.Output[*Preauthrequest]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The operation that can be performed on this resource. Allowed Values: `ObjectRead`, `ObjectWrite`, `ObjectReadWrite`, `AnyObjectReadWrite` or `AnyObjectRead`
 func (o PreauthrequestOutput) AccessType() pulumi.StringOutput {
 	return o.ApplyT(func(v *Preauthrequest) pulumi.StringOutput { return v.AccessType }).(pulumi.StringOutput)
 }
 
 // The URI to embed in the URL `https://objectstorage.${var.region}.oraclecloud.com{var.access_uri}` when using the pre-authenticated request.
-func (o PreauthrequestOutput) AccessUri() pulumi.StringOutput {
-	return o.ApplyT(func(v *Preauthrequest) pulumi.StringOutput { return v.AccessUri }).(pulumi.StringOutput)
+func (o PreauthrequestOutput) AccessUri() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Preauthrequest) pulumi.StringPtrOutput { return v.AccessUri }).(pulumi.StringPtrOutput)
 }
 
 // The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
@@ -376,13 +351,13 @@ func (o PreauthrequestOutput) Bucket() pulumi.StringOutput {
 }
 
 // Specifies whether a list operation is allowed on a PAR with accessType "AnyObjectRead" or "AnyObjectReadWrite". Deny: Prevents the user from performing a list operation. ListObjects: Authorizes the user to perform a list operation.
-func (o PreauthrequestOutput) BucketListingAction() pulumi.StringOutput {
-	return o.ApplyT(func(v *Preauthrequest) pulumi.StringOutput { return v.BucketListingAction }).(pulumi.StringOutput)
+func (o PreauthrequestOutput) BucketListingAction() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Preauthrequest) pulumi.StringPtrOutput { return v.BucketListingAction }).(pulumi.StringPtrOutput)
 }
 
 // The full Path for the object.
-func (o PreauthrequestOutput) FullPath() pulumi.StringOutput {
-	return o.ApplyT(func(v *Preauthrequest) pulumi.StringOutput { return v.FullPath }).(pulumi.StringOutput)
+func (o PreauthrequestOutput) FullPath() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Preauthrequest) pulumi.StringPtrOutput { return v.FullPath }).(pulumi.StringPtrOutput)
 }
 
 // A user-specified name for the pre-authenticated request. Names can be helpful in managing pre-authenticated requests. Avoid entering confidential information.
@@ -398,23 +373,23 @@ func (o PreauthrequestOutput) Namespace() pulumi.StringOutput {
 // Deprecated. Instead use `objectName`. Requests that include both `object` and `objectName` will be rejected. (Optional) The name of the object that is being granted access to by the pre-authenticated request. Avoid entering confidential information. The object name can be null and if so, the pre-authenticated request grants access to the entire bucket if the access type allows that. The object name can be a prefix as well, in that case pre-authenticated request grants access to all the objects within the bucket starting with that prefix provided that we have the correct access type.
 //
 // Deprecated: The 'object' field has been deprecated. Please use 'object_name' instead.
-func (o PreauthrequestOutput) Object() pulumi.StringOutput {
-	return o.ApplyT(func(v *Preauthrequest) pulumi.StringOutput { return v.Object }).(pulumi.StringOutput)
+func (o PreauthrequestOutput) Object() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Preauthrequest) pulumi.StringPtrOutput { return v.Object }).(pulumi.StringPtrOutput)
 }
 
 // The name of the object that is being granted access to by the pre-authenticated request. Avoid entering confidential information. The object name can be null and if so, the pre-authenticated request grants access to the entire bucket if the access type allows that. The object name can be a prefix as well, in that case pre-authenticated request grants access to all the objects within the bucket starting with that prefix provided that we have the correct access type.
-func (o PreauthrequestOutput) ObjectName() pulumi.StringOutput {
-	return o.ApplyT(func(v *Preauthrequest) pulumi.StringOutput { return v.ObjectName }).(pulumi.StringOutput)
+func (o PreauthrequestOutput) ObjectName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Preauthrequest) pulumi.StringPtrOutput { return v.ObjectName }).(pulumi.StringPtrOutput)
 }
 
 // The unique identifier for the pre-authenticated request. This can be used to manage operations against the pre-authenticated request, such as GET or DELETE.
-func (o PreauthrequestOutput) ParId() pulumi.StringOutput {
-	return o.ApplyT(func(v *Preauthrequest) pulumi.StringOutput { return v.ParId }).(pulumi.StringOutput)
+func (o PreauthrequestOutput) ParId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Preauthrequest) pulumi.StringPtrOutput { return v.ParId }).(pulumi.StringPtrOutput)
 }
 
 // The date when the pre-authenticated request was created as per specification [RFC 3339](https://tools.ietf.org/html/rfc3339).
-func (o PreauthrequestOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *Preauthrequest) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o PreauthrequestOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Preauthrequest) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The expiration date for the pre-authenticated request as per [RFC 3339](https://tools.ietf.org/html/rfc3339). After this date the pre-authenticated request will no longer be valid.
@@ -439,12 +414,6 @@ func (o PreauthrequestArrayOutput) ToPreauthrequestArrayOutputWithContext(ctx co
 	return o
 }
 
-func (o PreauthrequestArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*Preauthrequest] {
-	return pulumix.Output[[]*Preauthrequest]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o PreauthrequestArrayOutput) Index(i pulumi.IntInput) PreauthrequestOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *Preauthrequest {
 		return vs[0].([]*Preauthrequest)[vs[1].(int)]
@@ -463,12 +432,6 @@ func (o PreauthrequestMapOutput) ToPreauthrequestMapOutput() PreauthrequestMapOu
 
 func (o PreauthrequestMapOutput) ToPreauthrequestMapOutputWithContext(ctx context.Context) PreauthrequestMapOutput {
 	return o
-}
-
-func (o PreauthrequestMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*Preauthrequest] {
-	return pulumix.Output[map[string]*Preauthrequest]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o PreauthrequestMapOutput) MapIndex(k pulumi.StringInput) PreauthrequestOutput {

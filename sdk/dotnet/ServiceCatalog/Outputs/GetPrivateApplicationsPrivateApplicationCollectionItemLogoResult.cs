@@ -16,23 +16,23 @@ namespace Pulumi.Oci.ServiceCatalog.Outputs
         /// <summary>
         /// The content URL of the uploaded data.
         /// </summary>
-        public readonly string ContentUrl;
+        public readonly string? ContentUrl;
         /// <summary>
         /// Exact match name filter.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// The MIME type of the uploaded data.
         /// </summary>
-        public readonly string MimeType;
+        public readonly string? MimeType;
 
         [OutputConstructor]
         private GetPrivateApplicationsPrivateApplicationCollectionItemLogoResult(
-            string contentUrl,
+            string? contentUrl,
 
-            string displayName,
+            string? displayName,
 
-            string mimeType)
+            string? mimeType)
         {
             ContentUrl = contentUrl;
             DisplayName = displayName;

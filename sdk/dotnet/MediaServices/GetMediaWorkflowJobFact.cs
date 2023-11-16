@@ -122,11 +122,11 @@ namespace Pulumi.Oci.MediaServices
         /// <summary>
         /// The body of the detail captured as JSON.
         /// </summary>
-        public readonly string Detail;
+        public readonly string? Detail;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// System generated serial number to uniquely identify a detail in order within a MediaWorkflowJob.
         /// </summary>
@@ -138,25 +138,25 @@ namespace Pulumi.Oci.MediaServices
         /// <summary>
         /// Unique name. It is read-only and generated for the fact.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// The type of information contained in this detail.
         /// </summary>
-        public readonly string Type;
+        public readonly string? Type;
 
         [OutputConstructor]
         private GetMediaWorkflowJobFactResult(
-            string detail,
+            string? detail,
 
-            string id,
+            string? id,
 
             string key,
 
             string mediaWorkflowJobId,
 
-            string name,
+            string? name,
 
-            string type)
+            string? type)
         {
             Detail = detail;
             Id = id;

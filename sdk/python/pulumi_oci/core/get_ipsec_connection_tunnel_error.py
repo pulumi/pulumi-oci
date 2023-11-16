@@ -49,23 +49,17 @@ class GetIpsecConnectionTunnelErrorResult:
 
     @property
     @pulumi.getter(name="errorCode")
-    def error_code(self) -> str:
-        """
-        Unique code describes the error type.
-        """
+    def error_code(self) -> Optional[str]:
         return pulumi.get(self, "error_code")
 
     @property
     @pulumi.getter(name="errorDescription")
-    def error_description(self) -> str:
-        """
-        A detailed description of the error.
-        """
+    def error_description(self) -> Optional[str]:
         return pulumi.get(self, "error_description")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -78,26 +72,17 @@ class GetIpsecConnectionTunnelErrorResult:
 
     @property
     @pulumi.getter(name="ociResourcesLink")
-    def oci_resources_link(self) -> str:
-        """
-        Link to more Oracle resources or relevant documentation.
-        """
+    def oci_resources_link(self) -> Optional[str]:
         return pulumi.get(self, "oci_resources_link")
 
     @property
     @pulumi.getter
-    def solution(self) -> str:
-        """
-        Resolution for the error.
-        """
+    def solution(self) -> Optional[str]:
         return pulumi.get(self, "solution")
 
     @property
     @pulumi.getter
-    def timestamp(self) -> str:
-        """
-        Timestamp when the error occurred.
-        """
+    def timestamp(self) -> Optional[str]:
         return pulumi.get(self, "timestamp")
 
     @property
@@ -126,23 +111,7 @@ def get_ipsec_connection_tunnel_error(ipsec_id: Optional[str] = None,
                                       tunnel_id: Optional[str] = None,
                                       opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetIpsecConnectionTunnelErrorResult:
     """
-    This data source provides details about a specific Ipsec Connection Tunnel Error resource in Oracle Cloud Infrastructure Core service.
-
-    Gets the identified error for the specified IPSec tunnel ID.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_ipsec_connection_tunnel_error = oci.Core.get_ipsec_connection_tunnel_error(ipsec_id=oci_core_ipsec["test_ipsec"]["id"],
-        tunnel_id=oci_core_tunnel["test_tunnel"]["id"])
-    ```
-
-
-    :param str ipsec_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IPSec connection.
-    :param str tunnel_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tunnel.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['ipsecId'] = ipsec_id
@@ -166,22 +135,6 @@ def get_ipsec_connection_tunnel_error_output(ipsec_id: Optional[pulumi.Input[str
                                              tunnel_id: Optional[pulumi.Input[str]] = None,
                                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetIpsecConnectionTunnelErrorResult]:
     """
-    This data source provides details about a specific Ipsec Connection Tunnel Error resource in Oracle Cloud Infrastructure Core service.
-
-    Gets the identified error for the specified IPSec tunnel ID.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_ipsec_connection_tunnel_error = oci.Core.get_ipsec_connection_tunnel_error(ipsec_id=oci_core_ipsec["test_ipsec"]["id"],
-        tunnel_id=oci_core_tunnel["test_tunnel"]["id"])
-    ```
-
-
-    :param str ipsec_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IPSec connection.
-    :param str tunnel_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tunnel.
+    Use this data source to access information about an existing resource.
     """
     ...

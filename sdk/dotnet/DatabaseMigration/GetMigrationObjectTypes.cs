@@ -109,7 +109,7 @@ namespace Pulumi.Oci.DatabaseMigration
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The list of migration_object_type_summary_collection.
         /// </summary>
@@ -119,7 +119,7 @@ namespace Pulumi.Oci.DatabaseMigration
         private GetMigrationObjectTypesResult(
             ImmutableArray<Outputs.GetMigrationObjectTypesFilterResult> filters,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetMigrationObjectTypesMigrationObjectTypeSummaryCollectionResult> migrationObjectTypeSummaryCollections)
         {

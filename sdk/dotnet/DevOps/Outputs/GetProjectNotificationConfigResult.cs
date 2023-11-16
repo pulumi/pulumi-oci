@@ -16,10 +16,10 @@ namespace Pulumi.Oci.DevOps.Outputs
         /// <summary>
         /// The topic ID for notifications.
         /// </summary>
-        public readonly string TopicId;
+        public readonly string? TopicId;
 
         [OutputConstructor]
-        private GetProjectNotificationConfigResult(string topicId)
+        private GetProjectNotificationConfigResult(string? topicId)
         {
             TopicId = topicId;
         }

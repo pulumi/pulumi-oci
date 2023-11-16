@@ -110,7 +110,7 @@ namespace Pulumi.Oci.MeteringComputation
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The list of available configurations.
         /// </summary>
@@ -119,7 +119,7 @@ namespace Pulumi.Oci.MeteringComputation
 
         [OutputConstructor]
         private GetConfigurationResult(
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetConfigurationItemResult> items,
 

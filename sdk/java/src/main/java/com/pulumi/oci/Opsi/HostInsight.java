@@ -14,6 +14,7 @@ import java.lang.Integer;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -91,112 +92,112 @@ public class HostInsight extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="computeId", refs={String.class}, tree="[0]")
-    private Output<String> computeId;
+    private Output</* @Nullable */ String> computeId;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compute Instance
      * 
      */
-    public Output<String> computeId() {
-        return this.computeId;
+    public Output<Optional<String>> computeId() {
+        return Codegen.optional(this.computeId);
     }
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * OPSI Enterprise Manager Bridge OCID
      * 
      */
     @Export(name="enterpriseManagerBridgeId", refs={String.class}, tree="[0]")
-    private Output<String> enterpriseManagerBridgeId;
+    private Output</* @Nullable */ String> enterpriseManagerBridgeId;
 
     /**
      * @return OPSI Enterprise Manager Bridge OCID
      * 
      */
-    public Output<String> enterpriseManagerBridgeId() {
-        return this.enterpriseManagerBridgeId;
+    public Output<Optional<String>> enterpriseManagerBridgeId() {
+        return Codegen.optional(this.enterpriseManagerBridgeId);
     }
     /**
      * Enterprise Manager Entity Display Name
      * 
      */
     @Export(name="enterpriseManagerEntityDisplayName", refs={String.class}, tree="[0]")
-    private Output<String> enterpriseManagerEntityDisplayName;
+    private Output</* @Nullable */ String> enterpriseManagerEntityDisplayName;
 
     /**
      * @return Enterprise Manager Entity Display Name
      * 
      */
-    public Output<String> enterpriseManagerEntityDisplayName() {
-        return this.enterpriseManagerEntityDisplayName;
+    public Output<Optional<String>> enterpriseManagerEntityDisplayName() {
+        return Codegen.optional(this.enterpriseManagerEntityDisplayName);
     }
     /**
      * Enterprise Manager Entity Unique Identifier
      * 
      */
     @Export(name="enterpriseManagerEntityIdentifier", refs={String.class}, tree="[0]")
-    private Output<String> enterpriseManagerEntityIdentifier;
+    private Output</* @Nullable */ String> enterpriseManagerEntityIdentifier;
 
     /**
      * @return Enterprise Manager Entity Unique Identifier
      * 
      */
-    public Output<String> enterpriseManagerEntityIdentifier() {
-        return this.enterpriseManagerEntityIdentifier;
+    public Output<Optional<String>> enterpriseManagerEntityIdentifier() {
+        return Codegen.optional(this.enterpriseManagerEntityIdentifier);
     }
     /**
      * Enterprise Manager Entity Name
      * 
      */
     @Export(name="enterpriseManagerEntityName", refs={String.class}, tree="[0]")
-    private Output<String> enterpriseManagerEntityName;
+    private Output</* @Nullable */ String> enterpriseManagerEntityName;
 
     /**
      * @return Enterprise Manager Entity Name
      * 
      */
-    public Output<String> enterpriseManagerEntityName() {
-        return this.enterpriseManagerEntityName;
+    public Output<Optional<String>> enterpriseManagerEntityName() {
+        return Codegen.optional(this.enterpriseManagerEntityName);
     }
     /**
      * Enterprise Manager Entity Type
      * 
      */
     @Export(name="enterpriseManagerEntityType", refs={String.class}, tree="[0]")
-    private Output<String> enterpriseManagerEntityType;
+    private Output</* @Nullable */ String> enterpriseManagerEntityType;
 
     /**
      * @return Enterprise Manager Entity Type
      * 
      */
-    public Output<String> enterpriseManagerEntityType() {
-        return this.enterpriseManagerEntityType;
+    public Output<Optional<String>> enterpriseManagerEntityType() {
+        return Codegen.optional(this.enterpriseManagerEntityType);
     }
     /**
      * Enterprise Manager Unique Identifier
      * 
      */
     @Export(name="enterpriseManagerIdentifier", refs={String.class}, tree="[0]")
-    private Output<String> enterpriseManagerIdentifier;
+    private Output</* @Nullable */ String> enterpriseManagerIdentifier;
 
     /**
      * @return Enterprise Manager Unique Identifier
      * 
      */
-    public Output<String> enterpriseManagerIdentifier() {
-        return this.enterpriseManagerIdentifier;
+    public Output<Optional<String>> enterpriseManagerIdentifier() {
+        return Codegen.optional(this.enterpriseManagerIdentifier);
     }
     /**
      * (Updatable) Source of the host entity.
@@ -217,84 +218,84 @@ public class HostInsight extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="exadataInsightId", refs={String.class}, tree="[0]")
-    private Output<String> exadataInsightId;
+    private Output</* @Nullable */ String> exadataInsightId;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata insight.
      * 
      */
-    public Output<String> exadataInsightId() {
-        return this.exadataInsightId;
+    public Output<Optional<String>> exadataInsightId() {
+        return Codegen.optional(this.exadataInsightId);
     }
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * The user-friendly name for the host. The name does not have to be unique.
      * 
      */
     @Export(name="hostDisplayName", refs={String.class}, tree="[0]")
-    private Output<String> hostDisplayName;
+    private Output</* @Nullable */ String> hostDisplayName;
 
     /**
      * @return The user-friendly name for the host. The name does not have to be unique.
      * 
      */
-    public Output<String> hostDisplayName() {
-        return this.hostDisplayName;
+    public Output<Optional<String>> hostDisplayName() {
+        return Codegen.optional(this.hostDisplayName);
     }
     /**
      * The host name. The host name is unique amongst the hosts managed by the same management agent.
      * 
      */
     @Export(name="hostName", refs={String.class}, tree="[0]")
-    private Output<String> hostName;
+    private Output</* @Nullable */ String> hostName;
 
     /**
      * @return The host name. The host name is unique amongst the hosts managed by the same management agent.
      * 
      */
-    public Output<String> hostName() {
-        return this.hostName;
+    public Output<Optional<String>> hostName() {
+        return Codegen.optional(this.hostName);
     }
     /**
      * Operations Insights internal representation of the host type. Possible value is EXTERNAL-HOST.
      * 
      */
     @Export(name="hostType", refs={String.class}, tree="[0]")
-    private Output<String> hostType;
+    private Output</* @Nullable */ String> hostType;
 
     /**
      * @return Operations Insights internal representation of the host type. Possible value is EXTERNAL-HOST.
      * 
      */
-    public Output<String> hostType() {
-        return this.hostType;
+    public Output<Optional<String>> hostType() {
+        return Codegen.optional(this.hostType);
     }
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
     @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
-    private Output<String> lifecycleDetails;
+    private Output</* @Nullable */ String> lifecycleDetails;
 
     /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
-    public Output<String> lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Output<Optional<String>> lifecycleDetails() {
+        return Codegen.optional(this.lifecycleDetails);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent
@@ -304,7 +305,7 @@ public class HostInsight extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="managementAgentId", refs={String.class}, tree="[0]")
-    private Output<String> managementAgentId;
+    private Output</* @Nullable */ String> managementAgentId;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent
@@ -313,134 +314,134 @@ public class HostInsight extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values. The resource destruction here is basically a soft delete. User cannot create resource using the same Management agent OCID. If resource is in enabled state during destruction, the resource will be disabled automatically before performing delete operation.
      * 
      */
-    public Output<String> managementAgentId() {
-        return this.managementAgentId;
+    public Output<Optional<String>> managementAgentId() {
+        return Codegen.optional(this.managementAgentId);
     }
     /**
      * Platform name.
      * 
      */
     @Export(name="platformName", refs={String.class}, tree="[0]")
-    private Output<String> platformName;
+    private Output</* @Nullable */ String> platformName;
 
     /**
      * @return Platform name.
      * 
      */
-    public Output<String> platformName() {
-        return this.platformName;
+    public Output<Optional<String>> platformName() {
+        return Codegen.optional(this.platformName);
     }
     /**
      * Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX, SOLARIS, WINDOWS]. Supported platformType(s) for MACS-managed cloud host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX, WINDOWS, AIX].
      * 
      */
     @Export(name="platformType", refs={String.class}, tree="[0]")
-    private Output<String> platformType;
+    private Output</* @Nullable */ String> platformType;
 
     /**
      * @return Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX, SOLARIS, WINDOWS]. Supported platformType(s) for MACS-managed cloud host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX, WINDOWS, AIX].
      * 
      */
-    public Output<String> platformType() {
-        return this.platformType;
+    public Output<Optional<String>> platformType() {
+        return Codegen.optional(this.platformType);
     }
     /**
      * Platform version.
      * 
      */
     @Export(name="platformVersion", refs={String.class}, tree="[0]")
-    private Output<String> platformVersion;
+    private Output</* @Nullable */ String> platformVersion;
 
     /**
      * @return Platform version.
      * 
      */
-    public Output<String> platformVersion() {
-        return this.platformVersion;
+    public Output<Optional<String>> platformVersion() {
+        return Codegen.optional(this.platformVersion);
     }
     /**
      * Processor count.
      * 
      */
     @Export(name="processorCount", refs={Integer.class}, tree="[0]")
-    private Output<Integer> processorCount;
+    private Output</* @Nullable */ Integer> processorCount;
 
     /**
      * @return Processor count.
      * 
      */
-    public Output<Integer> processorCount() {
-        return this.processorCount;
+    public Output<Optional<Integer>> processorCount() {
+        return Codegen.optional(this.processorCount);
     }
     /**
      * The current state of the host.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The current state of the host.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * (Updatable) Status of the resource. Example: &#34;ENABLED&#34;, &#34;DISABLED&#34;. Resource can be either enabled or disabled by updating the value of status field to either &#34;ENABLED&#34; or &#34;DISABLED&#34;
      * 
      */
     @Export(name="status", refs={String.class}, tree="[0]")
-    private Output<String> status;
+    private Output</* @Nullable */ String> status;
 
     /**
      * @return (Updatable) Status of the resource. Example: &#34;ENABLED&#34;, &#34;DISABLED&#34;. Resource can be either enabled or disabled by updating the value of status field to either &#34;ENABLED&#34; or &#34;DISABLED&#34;
      * 
      */
-    public Output<String> status() {
-        return this.status;
+    public Output<Optional<String>> status() {
+        return Codegen.optional(this.status);
     }
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
     @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> systemTags;
+    private Output</* @Nullable */ Map<String,Object>> systemTags;
 
     /**
      * @return System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    public Output<Map<String,Object>> systemTags() {
-        return this.systemTags;
+    public Output<Optional<Map<String,Object>>> systemTags() {
+        return Codegen.optional(this.systemTags);
     }
     /**
      * The time the the host insight was first enabled. An RFC3339 formatted datetime string
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The time the the host insight was first enabled. An RFC3339 formatted datetime string
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * The time the host insight was updated. An RFC3339 formatted datetime string
      * 
      */
     @Export(name="timeUpdated", refs={String.class}, tree="[0]")
-    private Output<String> timeUpdated;
+    private Output</* @Nullable */ String> timeUpdated;
 
     /**
      * @return The time the host insight was updated. An RFC3339 formatted datetime string
      * 
      */
-    public Output<String> timeUpdated() {
-        return this.timeUpdated;
+    public Output<Optional<String>> timeUpdated() {
+        return Codegen.optional(this.timeUpdated);
     }
 
     /**

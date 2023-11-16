@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Monitored Instance resource in Oracle Cloud Infrastructure Appmgmt Control service.
@@ -60,26 +59,26 @@ type GetMonitoredInstanceArgs struct {
 // A collection of values returned by getMonitoredInstance.
 type GetMonitoredInstanceResult struct {
 	// Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// A user-friendly name of the monitored instance. It is binded to [Compute Instance](https://docs.cloud.oracle.com/iaas/Content/Compute/Concepts/computeoverview.htm). DisplayName is fetched from [Core Service API](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/Instance/).
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of monitored instance.
-	InstanceId string `pulumi:"instanceId"`
+	InstanceId *string `pulumi:"instanceId"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// Management Agent Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Used to invoke manage operations on Management Agent Cloud Service.
-	ManagementAgentId   string `pulumi:"managementAgentId"`
-	MonitoredInstanceId string `pulumi:"monitoredInstanceId"`
+	ManagementAgentId   *string `pulumi:"managementAgentId"`
+	MonitoredInstanceId string  `pulumi:"monitoredInstanceId"`
 	// Monitoring status. Can be either enabled or disabled.
-	MonitoringState string `pulumi:"monitoringState"`
+	MonitoringState *string `pulumi:"monitoringState"`
 	// The current state of the monitored instance.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The time the MonitoredInstance was created. An RFC3339 formatted datetime string
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time the MonitoredInstance was updated. An RFC3339 formatted datetime string
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 func GetMonitoredInstanceOutput(ctx *pulumi.Context, args GetMonitoredInstanceOutputArgs, opts ...pulumi.InvokeOption) GetMonitoredInstanceResultOutput {
@@ -120,40 +119,34 @@ func (o GetMonitoredInstanceResultOutput) ToGetMonitoredInstanceResultOutputWith
 	return o
 }
 
-func (o GetMonitoredInstanceResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetMonitoredInstanceResult] {
-	return pulumix.Output[GetMonitoredInstanceResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-func (o GetMonitoredInstanceResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMonitoredInstanceResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetMonitoredInstanceResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMonitoredInstanceResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // A user-friendly name of the monitored instance. It is binded to [Compute Instance](https://docs.cloud.oracle.com/iaas/Content/Compute/Concepts/computeoverview.htm). DisplayName is fetched from [Core Service API](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/Instance/).
-func (o GetMonitoredInstanceResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMonitoredInstanceResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetMonitoredInstanceResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMonitoredInstanceResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetMonitoredInstanceResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMonitoredInstanceResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetMonitoredInstanceResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMonitoredInstanceResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of monitored instance.
-func (o GetMonitoredInstanceResultOutput) InstanceId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMonitoredInstanceResult) string { return v.InstanceId }).(pulumi.StringOutput)
+func (o GetMonitoredInstanceResultOutput) InstanceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMonitoredInstanceResult) *string { return v.InstanceId }).(pulumi.StringPtrOutput)
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-func (o GetMonitoredInstanceResultOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMonitoredInstanceResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o GetMonitoredInstanceResultOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMonitoredInstanceResult) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // Management Agent Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Used to invoke manage operations on Management Agent Cloud Service.
-func (o GetMonitoredInstanceResultOutput) ManagementAgentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMonitoredInstanceResult) string { return v.ManagementAgentId }).(pulumi.StringOutput)
+func (o GetMonitoredInstanceResultOutput) ManagementAgentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMonitoredInstanceResult) *string { return v.ManagementAgentId }).(pulumi.StringPtrOutput)
 }
 
 func (o GetMonitoredInstanceResultOutput) MonitoredInstanceId() pulumi.StringOutput {
@@ -161,23 +154,23 @@ func (o GetMonitoredInstanceResultOutput) MonitoredInstanceId() pulumi.StringOut
 }
 
 // Monitoring status. Can be either enabled or disabled.
-func (o GetMonitoredInstanceResultOutput) MonitoringState() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMonitoredInstanceResult) string { return v.MonitoringState }).(pulumi.StringOutput)
+func (o GetMonitoredInstanceResultOutput) MonitoringState() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMonitoredInstanceResult) *string { return v.MonitoringState }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the monitored instance.
-func (o GetMonitoredInstanceResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMonitoredInstanceResult) string { return v.State }).(pulumi.StringOutput)
+func (o GetMonitoredInstanceResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMonitoredInstanceResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The time the MonitoredInstance was created. An RFC3339 formatted datetime string
-func (o GetMonitoredInstanceResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMonitoredInstanceResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetMonitoredInstanceResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMonitoredInstanceResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time the MonitoredInstance was updated. An RFC3339 formatted datetime string
-func (o GetMonitoredInstanceResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMonitoredInstanceResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o GetMonitoredInstanceResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMonitoredInstanceResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 func init() {

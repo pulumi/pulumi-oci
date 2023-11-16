@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // **Deprecated. Use Dns.getRrsets instead.**
@@ -62,7 +61,7 @@ type GetRecordsResult struct {
 	DomainContains *string            `pulumi:"domainContains"`
 	Filters        []GetRecordsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The list of records.
 	Records []GetRecordsRecord `pulumi:"records"`
 	// The canonical name for the record's type, such as A or CNAME. For more information, see [Resource Record (RR) TYPEs](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).
@@ -131,12 +130,6 @@ func (o GetRecordsResultOutput) ToGetRecordsResultOutputWithContext(ctx context.
 	return o
 }
 
-func (o GetRecordsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetRecordsResult] {
-	return pulumix.Output[GetRecordsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetRecordsResultOutput) CompartmentId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetRecordsResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
@@ -155,8 +148,8 @@ func (o GetRecordsResultOutput) Filters() GetRecordsFilterArrayOutput {
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetRecordsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRecordsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetRecordsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRecordsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The list of records.

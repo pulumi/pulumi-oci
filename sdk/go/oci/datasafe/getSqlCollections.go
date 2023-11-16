@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Sql Collections in Oracle Cloud Infrastructure Data Safe service.
@@ -114,7 +113,7 @@ type GetSqlCollectionsResult struct {
 	DisplayName *string                   `pulumi:"displayName"`
 	Filters     []GetSqlCollectionsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The list of sql_collection_collection.
 	SqlCollectionCollections []GetSqlCollectionsSqlCollectionCollection `pulumi:"sqlCollectionCollections"`
 	SqlCollectionId          *string                                    `pulumi:"sqlCollectionId"`
@@ -187,12 +186,6 @@ func (o GetSqlCollectionsResultOutput) ToGetSqlCollectionsResultOutputWithContex
 	return o
 }
 
-func (o GetSqlCollectionsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetSqlCollectionsResult] {
-	return pulumix.Output[GetSqlCollectionsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSqlCollectionsResultOutput) AccessLevel() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetSqlCollectionsResult) *string { return v.AccessLevel }).(pulumi.StringPtrOutput)
 }
@@ -221,8 +214,8 @@ func (o GetSqlCollectionsResultOutput) Filters() GetSqlCollectionsFilterArrayOut
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetSqlCollectionsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSqlCollectionsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetSqlCollectionsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSqlCollectionsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The list of sql_collection_collection.

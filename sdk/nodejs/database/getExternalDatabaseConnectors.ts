@@ -75,7 +75,7 @@ export interface GetExternalDatabaseConnectorsResult {
     /**
      * The list of external_database_connectors.
      */
-    readonly externalDatabaseConnectors: outputs.Database.GetExternalDatabaseConnectorsExternalDatabaseConnector[];
+    readonly externalDatabaseConnectors?: outputs.Database.GetExternalDatabaseConnectorsExternalDatabaseConnector[];
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database resource.
      */
@@ -84,7 +84,7 @@ export interface GetExternalDatabaseConnectorsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The current lifecycle state of the external database connector resource.
      */

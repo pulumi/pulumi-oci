@@ -95,7 +95,7 @@ export class Replication extends pulumi.CustomResource {
     /**
      * The availability domain the replication is in. The replication must be in the same availability domain as the source file system. Example: `Uocm:PHX-AD-1`
      */
-    public /*out*/ readonly availabilityDomain!: pulumi.Output<string>;
+    public /*out*/ readonly availabilityDomain!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the replication.
      */
@@ -103,43 +103,43 @@ export class Replication extends pulumi.CustomResource {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * Percentage progress of the current replication cycle.
      */
-    public /*out*/ readonly deltaProgress!: pulumi.Output<string>;
+    public /*out*/ readonly deltaProgress!: pulumi.Output<string | undefined>;
     /**
      * The current state of the snapshot during replication operations.
      */
-    public /*out*/ readonly deltaStatus!: pulumi.Output<string>;
+    public /*out*/ readonly deltaStatus!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information. An associated replication target will also created with the same `displayName`. Example: `My replication`
      */
-    public readonly displayName!: pulumi.Output<string>;
+    public readonly displayName!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last snapshot that has been replicated completely. Empty if the copy of the initial snapshot is not complete.
      */
-    public /*out*/ readonly lastSnapshotId!: pulumi.Output<string>;
+    public /*out*/ readonly lastSnapshotId!: pulumi.Output<string | undefined>;
     /**
      * Additional information about the current 'lifecycleState'.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string | undefined>;
     /**
      * The [`snapshotTime`](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Snapshot/snapshotTime) of the most recent recoverable replication snapshot in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. Example: `2021-04-04T20:01:29.100Z`
      */
-    public /*out*/ readonly recoveryPointTime!: pulumi.Output<string>;
+    public /*out*/ readonly recoveryPointTime!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Duration in minutes between replication snapshots.
      */
-    public readonly replicationInterval!: pulumi.Output<string>;
+    public readonly replicationInterval!: pulumi.Output<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [`ReplicationTarget`](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/ReplicationTarget).
      */
-    public /*out*/ readonly replicationTargetId!: pulumi.Output<string>;
+    public /*out*/ readonly replicationTargetId!: pulumi.Output<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source file system.
      */
@@ -147,7 +147,7 @@ export class Replication extends pulumi.CustomResource {
     /**
      * The current state of this replication. This resource can be in a `FAILED` state if replication target is deleted instead of the replication resource.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target file system. 
      *
@@ -159,7 +159,7 @@ export class Replication extends pulumi.CustomResource {
     /**
      * The date and time the replication was created in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2021-01-04T20:01:29.100Z`
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
 
     /**
      * Create a Replication resource with the given unique name, arguments, and options.

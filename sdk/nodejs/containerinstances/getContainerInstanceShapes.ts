@@ -57,12 +57,12 @@ export interface GetContainerInstanceShapesResult {
     /**
      * The list of container_instance_shape_collection.
      */
-    readonly containerInstanceShapeCollections: outputs.ContainerInstances.GetContainerInstanceShapesContainerInstanceShapeCollection[];
+    readonly containerInstanceShapeCollections?: outputs.ContainerInstances.GetContainerInstanceShapesContainerInstanceShapeCollection[];
     readonly filters?: outputs.ContainerInstances.GetContainerInstanceShapesFilter[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
 }
 /**
  * This data source provides the list of Container Instance Shapes in Oracle Cloud Infrastructure Container Instances service.

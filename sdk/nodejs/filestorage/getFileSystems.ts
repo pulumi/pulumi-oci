@@ -104,7 +104,7 @@ export interface GetFileSystemsResult {
     /**
      * The list of file_systems.
      */
-    readonly fileSystems: outputs.FileStorage.GetFileSystemsFileSystem[];
+    readonly fileSystems?: outputs.FileStorage.GetFileSystemsFileSystem[];
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated file system snapshot policy, which controls the frequency of snapshot creation and retention period of the taken snapshots.
      */

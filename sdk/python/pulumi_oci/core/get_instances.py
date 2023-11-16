@@ -55,25 +55,16 @@ class GetInstancesResult:
     @property
     @pulumi.getter(name="availabilityDomain")
     def availability_domain(self) -> Optional[str]:
-        """
-        The availability domain the instance is running in.  Example: `Uocm:PHX-AD-1`
-        """
         return pulumi.get(self, "availability_domain")
 
     @property
     @pulumi.getter(name="capacityReservationId")
     def capacity_reservation_id(self) -> Optional[str]:
-        """
-        The OCID of the compute capacity reservation this instance is launched under. When this field contains an empty string or is null, the instance is not currently in a capacity reservation. For more information, see [Capacity Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default).
-        """
         return pulumi.get(self, "capacity_reservation_id")
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The OCID of the compartment containing images to search
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
@@ -84,9 +75,6 @@ class GetInstancesResult:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -96,7 +84,7 @@ class GetInstancesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -104,18 +92,12 @@ class GetInstancesResult:
 
     @property
     @pulumi.getter
-    def instances(self) -> Sequence['outputs.GetInstancesInstanceResult']:
-        """
-        The list of instances.
-        """
+    def instances(self) -> Optional[Sequence['outputs.GetInstancesInstanceResult']]:
         return pulumi.get(self, "instances")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the instance.
-        """
         return pulumi.get(self, "state")
 
 
@@ -145,36 +127,7 @@ def get_instances(availability_domain: Optional[str] = None,
                   state: Optional[str] = None,
                   opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetInstancesResult:
     """
-    This data source provides the list of Instances in Oracle Cloud Infrastructure Core service.
-
-    Lists the instances in the specified compartment and the specified availability domain.
-    You can filter the results by specifying an instance name (the list will include all the identically-named
-    instances in the compartment).
-
-    **Note:** To retrieve public and private IP addresses for an instance, use the [ListVnicAttachments](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/VnicAttachment/ListVnicAttachments)
-    operation to get the VNIC ID for the instance, and then call [GetVnic](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vnic/GetVnic) with the VNIC ID.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_instances = oci.Core.get_instances(compartment_id=var["compartment_id"],
-        availability_domain=var["instance_availability_domain"],
-        capacity_reservation_id=oci_core_capacity_reservation["test_capacity_reservation"]["id"],
-        compute_cluster_id=oci_core_compute_cluster["test_compute_cluster"]["id"],
-        display_name=var["instance_display_name"],
-        state=var["instance_state"])
-    ```
-
-
-    :param str availability_domain: The name of the availability domain.  Example: `Uocm:PHX-AD-1`
-    :param str capacity_reservation_id: The OCID of the compute capacity reservation.
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param str compute_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute cluster. A [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) is a remote direct memory access (RDMA) network group.
-    :param str display_name: A filter to return only resources that match the given display name exactly.
-    :param str state: A filter to only return resources that match the given lifecycle state. The state value is case-insensitive.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['availabilityDomain'] = availability_domain
@@ -209,35 +162,6 @@ def get_instances_output(availability_domain: Optional[pulumi.Input[Optional[str
                          state: Optional[pulumi.Input[Optional[str]]] = None,
                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetInstancesResult]:
     """
-    This data source provides the list of Instances in Oracle Cloud Infrastructure Core service.
-
-    Lists the instances in the specified compartment and the specified availability domain.
-    You can filter the results by specifying an instance name (the list will include all the identically-named
-    instances in the compartment).
-
-    **Note:** To retrieve public and private IP addresses for an instance, use the [ListVnicAttachments](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/VnicAttachment/ListVnicAttachments)
-    operation to get the VNIC ID for the instance, and then call [GetVnic](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vnic/GetVnic) with the VNIC ID.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_instances = oci.Core.get_instances(compartment_id=var["compartment_id"],
-        availability_domain=var["instance_availability_domain"],
-        capacity_reservation_id=oci_core_capacity_reservation["test_capacity_reservation"]["id"],
-        compute_cluster_id=oci_core_compute_cluster["test_compute_cluster"]["id"],
-        display_name=var["instance_display_name"],
-        state=var["instance_state"])
-    ```
-
-
-    :param str availability_domain: The name of the availability domain.  Example: `Uocm:PHX-AD-1`
-    :param str capacity_reservation_id: The OCID of the compute capacity reservation.
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param str compute_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute cluster. A [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) is a remote direct memory access (RDMA) network group.
-    :param str display_name: A filter to return only resources that match the given display name exactly.
-    :param str state: A filter to only return resources that match the given lifecycle state. The state value is case-insensitive.
+    Use this data source to access information about an existing resource.
     """
     ...

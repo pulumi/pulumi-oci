@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Java Release resource in Oracle Cloud Infrastructure Jms service.
@@ -66,25 +65,25 @@ type GetJavaReleaseResult struct {
 	// Metadata associated with a specific Java release family. A Java release family is typically a major version in the Java version identifier.
 	FamilyDetails []GetJavaReleaseFamilyDetail `pulumi:"familyDetails"`
 	// Java release family identifier.
-	FamilyVersion string `pulumi:"familyVersion"`
+	FamilyVersion *string `pulumi:"familyVersion"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Information about a license type for Java.
 	LicenseDetails []GetJavaReleaseLicenseDetail `pulumi:"licenseDetails"`
 	// License type for the Java version.
-	LicenseType string `pulumi:"licenseType"`
+	LicenseType *string `pulumi:"licenseType"`
 	// Parent Java release version identifier. This is applicable for BPR releases.
-	ParentReleaseVersion string `pulumi:"parentReleaseVersion"`
+	ParentReleaseVersion *string `pulumi:"parentReleaseVersion"`
 	// The release date of the Java version (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-	ReleaseDate string `pulumi:"releaseDate"`
+	ReleaseDate *string `pulumi:"releaseDate"`
 	// Release notes associated with the Java version.
-	ReleaseNotesUrl string `pulumi:"releaseNotesUrl"`
+	ReleaseNotesUrl *string `pulumi:"releaseNotesUrl"`
 	// Release category of the Java version.
-	ReleaseType string `pulumi:"releaseType"`
+	ReleaseType *string `pulumi:"releaseType"`
 	// Java release version identifier.
 	ReleaseVersion string `pulumi:"releaseVersion"`
 	// The security status of the Java version.
-	SecurityStatus string `pulumi:"securityStatus"`
+	SecurityStatus *string `pulumi:"securityStatus"`
 }
 
 func GetJavaReleaseOutput(ctx *pulumi.Context, args GetJavaReleaseOutputArgs, opts ...pulumi.InvokeOption) GetJavaReleaseResultOutput {
@@ -125,12 +124,6 @@ func (o GetJavaReleaseResultOutput) ToGetJavaReleaseResultOutputWithContext(ctx 
 	return o
 }
 
-func (o GetJavaReleaseResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetJavaReleaseResult] {
-	return pulumix.Output[GetJavaReleaseResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Artifact content types for the Java version.
 func (o GetJavaReleaseResultOutput) ArtifactContentTypes() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetJavaReleaseResult) []string { return v.ArtifactContentTypes }).(pulumi.StringArrayOutput)
@@ -147,13 +140,13 @@ func (o GetJavaReleaseResultOutput) FamilyDetails() GetJavaReleaseFamilyDetailAr
 }
 
 // Java release family identifier.
-func (o GetJavaReleaseResultOutput) FamilyVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetJavaReleaseResult) string { return v.FamilyVersion }).(pulumi.StringOutput)
+func (o GetJavaReleaseResultOutput) FamilyVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetJavaReleaseResult) *string { return v.FamilyVersion }).(pulumi.StringPtrOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetJavaReleaseResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetJavaReleaseResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetJavaReleaseResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetJavaReleaseResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Information about a license type for Java.
@@ -162,28 +155,28 @@ func (o GetJavaReleaseResultOutput) LicenseDetails() GetJavaReleaseLicenseDetail
 }
 
 // License type for the Java version.
-func (o GetJavaReleaseResultOutput) LicenseType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetJavaReleaseResult) string { return v.LicenseType }).(pulumi.StringOutput)
+func (o GetJavaReleaseResultOutput) LicenseType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetJavaReleaseResult) *string { return v.LicenseType }).(pulumi.StringPtrOutput)
 }
 
 // Parent Java release version identifier. This is applicable for BPR releases.
-func (o GetJavaReleaseResultOutput) ParentReleaseVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetJavaReleaseResult) string { return v.ParentReleaseVersion }).(pulumi.StringOutput)
+func (o GetJavaReleaseResultOutput) ParentReleaseVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetJavaReleaseResult) *string { return v.ParentReleaseVersion }).(pulumi.StringPtrOutput)
 }
 
 // The release date of the Java version (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-func (o GetJavaReleaseResultOutput) ReleaseDate() pulumi.StringOutput {
-	return o.ApplyT(func(v GetJavaReleaseResult) string { return v.ReleaseDate }).(pulumi.StringOutput)
+func (o GetJavaReleaseResultOutput) ReleaseDate() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetJavaReleaseResult) *string { return v.ReleaseDate }).(pulumi.StringPtrOutput)
 }
 
 // Release notes associated with the Java version.
-func (o GetJavaReleaseResultOutput) ReleaseNotesUrl() pulumi.StringOutput {
-	return o.ApplyT(func(v GetJavaReleaseResult) string { return v.ReleaseNotesUrl }).(pulumi.StringOutput)
+func (o GetJavaReleaseResultOutput) ReleaseNotesUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetJavaReleaseResult) *string { return v.ReleaseNotesUrl }).(pulumi.StringPtrOutput)
 }
 
 // Release category of the Java version.
-func (o GetJavaReleaseResultOutput) ReleaseType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetJavaReleaseResult) string { return v.ReleaseType }).(pulumi.StringOutput)
+func (o GetJavaReleaseResultOutput) ReleaseType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetJavaReleaseResult) *string { return v.ReleaseType }).(pulumi.StringPtrOutput)
 }
 
 // Java release version identifier.
@@ -192,8 +185,8 @@ func (o GetJavaReleaseResultOutput) ReleaseVersion() pulumi.StringOutput {
 }
 
 // The security status of the Java version.
-func (o GetJavaReleaseResultOutput) SecurityStatus() pulumi.StringOutput {
-	return o.ApplyT(func(v GetJavaReleaseResult) string { return v.SecurityStatus }).(pulumi.StringOutput)
+func (o GetJavaReleaseResultOutput) SecurityStatus() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetJavaReleaseResult) *string { return v.SecurityStatus }).(pulumi.StringPtrOutput)
 }
 
 func init() {

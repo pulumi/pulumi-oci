@@ -65,10 +65,7 @@ class GetAuditTrailsResult:
 
     @property
     @pulumi.getter(name="auditTrailCollections")
-    def audit_trail_collections(self) -> Sequence['outputs.GetAuditTrailsAuditTrailCollectionResult']:
-        """
-        The list of audit_trail_collection.
-        """
+    def audit_trail_collections(self) -> Optional[Sequence['outputs.GetAuditTrailsAuditTrailCollectionResult']]:
         return pulumi.get(self, "audit_trail_collections")
 
     @property
@@ -79,9 +76,6 @@ class GetAuditTrailsResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The OCID of the compartment that contains the audit trail and is the same as the compartment of the audit profile resource.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
@@ -92,9 +86,6 @@ class GetAuditTrailsResult:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        The display name of the audit trail.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -104,7 +95,7 @@ class GetAuditTrailsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -113,25 +104,16 @@ class GetAuditTrailsResult:
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the audit trail.
-        """
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter
     def status(self) -> Optional[str]:
-        """
-        The current sub-state of the audit trail.
-        """
         return pulumi.get(self, "status")
 
     @property
     @pulumi.getter(name="targetId")
     def target_id(self) -> Optional[str]:
-        """
-        The OCID of the Data Safe target for which the audit trail is created.
-        """
         return pulumi.get(self, "target_id")
 
 
@@ -165,48 +147,7 @@ def get_audit_trails(access_level: Optional[str] = None,
                      target_id: Optional[str] = None,
                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAuditTrailsResult:
     """
-    This data source provides the list of Audit Trails in Oracle Cloud Infrastructure Data Safe service.
-
-    Gets a list of all audit trails.
-    The ListAuditTrails operation returns only the audit trails in the specified `compartmentId`.
-    The list does not include any subcompartments of the compartmentId passed.
-
-    The parameter `accessLevel` specifies whether to return only those compartments for which the
-    requestor has INSPECT permissions on at least one resource directly
-    or indirectly (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
-    Principal doesn't have access to even one of the child compartments. This is valid only when
-    `compartmentIdInSubtree` is set to `true`.
-
-    The parameter `compartmentIdInSubtree` applies when you perform ListAuditTrails on the
-    `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
-    To get a full list of all compartments and subcompartments in the tenancy (root compartment),
-    set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_audit_trails = oci.DataSafe.get_audit_trails(compartment_id=var["compartment_id"],
-        access_level=var["audit_trail_access_level"],
-        audit_trail_id=oci_data_safe_audit_trail["test_audit_trail"]["id"],
-        compartment_id_in_subtree=var["audit_trail_compartment_id_in_subtree"],
-        display_name=var["audit_trail_display_name"],
-        state=var["audit_trail_state"],
-        status=var["audit_trail_status"],
-        target_id=oci_cloud_guard_target["test_target"]["id"])
-    ```
-
-
-    :param str access_level: Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
-    :param str audit_trail_id: A optional filter to return only resources that match the specified id.
-    :param str compartment_id: A filter to return only resources that match the specified compartment OCID.
-    :param bool compartment_id_in_subtree: Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
-    :param str display_name: A filter to return only resources that match the specified display name.
-    :param str state: A optional filter to return only resources that match the specified lifecycle state.
-    :param str status: A optional filter to return only resources that match the specified sub-state of audit trail.
-    :param str target_id: A filter to return only items related to a specific target OCID.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['accessLevel'] = access_level
@@ -247,47 +188,6 @@ def get_audit_trails_output(access_level: Optional[pulumi.Input[Optional[str]]] 
                             target_id: Optional[pulumi.Input[Optional[str]]] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAuditTrailsResult]:
     """
-    This data source provides the list of Audit Trails in Oracle Cloud Infrastructure Data Safe service.
-
-    Gets a list of all audit trails.
-    The ListAuditTrails operation returns only the audit trails in the specified `compartmentId`.
-    The list does not include any subcompartments of the compartmentId passed.
-
-    The parameter `accessLevel` specifies whether to return only those compartments for which the
-    requestor has INSPECT permissions on at least one resource directly
-    or indirectly (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
-    Principal doesn't have access to even one of the child compartments. This is valid only when
-    `compartmentIdInSubtree` is set to `true`.
-
-    The parameter `compartmentIdInSubtree` applies when you perform ListAuditTrails on the
-    `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
-    To get a full list of all compartments and subcompartments in the tenancy (root compartment),
-    set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_audit_trails = oci.DataSafe.get_audit_trails(compartment_id=var["compartment_id"],
-        access_level=var["audit_trail_access_level"],
-        audit_trail_id=oci_data_safe_audit_trail["test_audit_trail"]["id"],
-        compartment_id_in_subtree=var["audit_trail_compartment_id_in_subtree"],
-        display_name=var["audit_trail_display_name"],
-        state=var["audit_trail_state"],
-        status=var["audit_trail_status"],
-        target_id=oci_cloud_guard_target["test_target"]["id"])
-    ```
-
-
-    :param str access_level: Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
-    :param str audit_trail_id: A optional filter to return only resources that match the specified id.
-    :param str compartment_id: A filter to return only resources that match the specified compartment OCID.
-    :param bool compartment_id_in_subtree: Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
-    :param str display_name: A filter to return only resources that match the specified display name.
-    :param str state: A optional filter to return only resources that match the specified lifecycle state.
-    :param str status: A optional filter to return only resources that match the specified sub-state of audit trail.
-    :param str target_id: A filter to return only items related to a specific target OCID.
+    Use this data source to access information about an existing resource.
     """
     ...

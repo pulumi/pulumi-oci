@@ -61,12 +61,12 @@ export interface GetOdaPrivateEndpointScanProxiesResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly odaPrivateEndpointId: string;
     /**
      * The list of oda_private_endpoint_scan_proxy_collection.
      */
-    readonly odaPrivateEndpointScanProxyCollections: outputs.Oda.GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollection[];
+    readonly odaPrivateEndpointScanProxyCollections?: outputs.Oda.GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollection[];
     /**
      * The current state of the ODA Private Endpoint Scan Proxy.
      */

@@ -6,6 +6,8 @@ package com.pulumi.oci.DevOps.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetRepositoryMirrorRepositoryConfigTriggerSchedule {
@@ -13,27 +15,27 @@ public final class GetRepositoryMirrorRepositoryConfigTriggerSchedule {
      * @return Valid if type is CUSTOM. Following RFC 5545 recurrence rules, we can specify starting time, occurrence frequency, and interval size. Example for frequency could be DAILY/WEEKLY/HOURLY or any RFC 5545 supported frequency, which is followed by start time of this window. You can control the start time with BYHOUR, BYMINUTE and BYSECONDS. It is followed by the interval size.
      * 
      */
-    private String customSchedule;
+    private @Nullable String customSchedule;
     /**
      * @return Different types of trigger schedule: NONE - No automated synchronization schedule. DEFAULT - Trigger schedule is every 30 minutes. CUSTOM - Custom triggering schedule.
      * 
      */
-    private String scheduleType;
+    private @Nullable String scheduleType;
 
     private GetRepositoryMirrorRepositoryConfigTriggerSchedule() {}
     /**
      * @return Valid if type is CUSTOM. Following RFC 5545 recurrence rules, we can specify starting time, occurrence frequency, and interval size. Example for frequency could be DAILY/WEEKLY/HOURLY or any RFC 5545 supported frequency, which is followed by start time of this window. You can control the start time with BYHOUR, BYMINUTE and BYSECONDS. It is followed by the interval size.
      * 
      */
-    public String customSchedule() {
-        return this.customSchedule;
+    public Optional<String> customSchedule() {
+        return Optional.ofNullable(this.customSchedule);
     }
     /**
      * @return Different types of trigger schedule: NONE - No automated synchronization schedule. DEFAULT - Trigger schedule is every 30 minutes. CUSTOM - Custom triggering schedule.
      * 
      */
-    public String scheduleType() {
-        return this.scheduleType;
+    public Optional<String> scheduleType() {
+        return Optional.ofNullable(this.scheduleType);
     }
 
     public static Builder builder() {
@@ -45,8 +47,8 @@ public final class GetRepositoryMirrorRepositoryConfigTriggerSchedule {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String customSchedule;
-        private String scheduleType;
+        private @Nullable String customSchedule;
+        private @Nullable String scheduleType;
         public Builder() {}
         public Builder(GetRepositoryMirrorRepositoryConfigTriggerSchedule defaults) {
     	      Objects.requireNonNull(defaults);
@@ -55,13 +57,13 @@ public final class GetRepositoryMirrorRepositoryConfigTriggerSchedule {
         }
 
         @CustomType.Setter
-        public Builder customSchedule(String customSchedule) {
-            this.customSchedule = Objects.requireNonNull(customSchedule);
+        public Builder customSchedule(@Nullable String customSchedule) {
+            this.customSchedule = customSchedule;
             return this;
         }
         @CustomType.Setter
-        public Builder scheduleType(String scheduleType) {
-            this.scheduleType = Objects.requireNonNull(scheduleType);
+        public Builder scheduleType(@Nullable String scheduleType) {
+            this.scheduleType = scheduleType;
             return this;
         }
         public GetRepositoryMirrorRepositoryConfigTriggerSchedule build() {

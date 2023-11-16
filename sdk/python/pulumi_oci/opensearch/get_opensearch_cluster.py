@@ -148,194 +148,122 @@ class GetOpensearchClusterResult:
 
     @property
     @pulumi.getter(name="availabilityDomains")
-    def availability_domains(self) -> Sequence[str]:
-        """
-        The availability domains to distribute the cluser nodes across.
-        """
+    def availability_domains(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "availability_domains")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The OCID of the compartment where the cluster is located.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="dataNodeCount")
-    def data_node_count(self) -> int:
-        """
-        The number of data nodes configured for the cluster.
-        """
+    def data_node_count(self) -> Optional[int]:
         return pulumi.get(self, "data_node_count")
 
     @property
     @pulumi.getter(name="dataNodeHostBareMetalShape")
-    def data_node_host_bare_metal_shape(self) -> str:
-        """
-        The bare metal shape for the cluster's data nodes.
-        """
+    def data_node_host_bare_metal_shape(self) -> Optional[str]:
         return pulumi.get(self, "data_node_host_bare_metal_shape")
 
     @property
     @pulumi.getter(name="dataNodeHostMemoryGb")
-    def data_node_host_memory_gb(self) -> int:
-        """
-        The amount of memory in GB, for the cluster's data nodes.
-        """
+    def data_node_host_memory_gb(self) -> Optional[int]:
         return pulumi.get(self, "data_node_host_memory_gb")
 
     @property
     @pulumi.getter(name="dataNodeHostOcpuCount")
-    def data_node_host_ocpu_count(self) -> int:
-        """
-        The number of OCPUs configured for the cluster's data nodes.
-        """
+    def data_node_host_ocpu_count(self) -> Optional[int]:
         return pulumi.get(self, "data_node_host_ocpu_count")
 
     @property
     @pulumi.getter(name="dataNodeHostType")
-    def data_node_host_type(self) -> str:
-        """
-        The instance type for the cluster's data nodes.
-        """
+    def data_node_host_type(self) -> Optional[str]:
         return pulumi.get(self, "data_node_host_type")
 
     @property
     @pulumi.getter(name="dataNodeStorageGb")
-    def data_node_storage_gb(self) -> int:
-        """
-        The amount of storage in GB, to configure per node for the cluster's data nodes.
-        """
+    def data_node_storage_gb(self) -> Optional[int]:
         return pulumi.get(self, "data_node_storage_gb")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        The name of the cluster. Avoid entering confidential information.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter
-    def fqdn(self) -> str:
-        """
-        The fully qualified domain name (FQDN) for the cluster's API endpoint.
-        """
+    def fqdn(self) -> Optional[str]:
         return pulumi.get(self, "fqdn")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The OCID of the cluster.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        Additional information about the current lifecycle state of the cluster.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="masterNodeCount")
-    def master_node_count(self) -> int:
-        """
-        The number of master nodes configured for the cluster.
-        """
+    def master_node_count(self) -> Optional[int]:
         return pulumi.get(self, "master_node_count")
 
     @property
     @pulumi.getter(name="masterNodeHostBareMetalShape")
-    def master_node_host_bare_metal_shape(self) -> str:
-        """
-        The bare metal shape for the cluster's master nodes.
-        """
+    def master_node_host_bare_metal_shape(self) -> Optional[str]:
         return pulumi.get(self, "master_node_host_bare_metal_shape")
 
     @property
     @pulumi.getter(name="masterNodeHostMemoryGb")
-    def master_node_host_memory_gb(self) -> int:
-        """
-        The amount of memory in GB, for the cluster's master nodes.
-        """
+    def master_node_host_memory_gb(self) -> Optional[int]:
         return pulumi.get(self, "master_node_host_memory_gb")
 
     @property
     @pulumi.getter(name="masterNodeHostOcpuCount")
-    def master_node_host_ocpu_count(self) -> int:
-        """
-        The number of OCPUs configured for cluster's master nodes.
-        """
+    def master_node_host_ocpu_count(self) -> Optional[int]:
         return pulumi.get(self, "master_node_host_ocpu_count")
 
     @property
     @pulumi.getter(name="masterNodeHostType")
-    def master_node_host_type(self) -> str:
-        """
-        The instance type for the cluster's master nodes.
-        """
+    def master_node_host_type(self) -> Optional[str]:
         return pulumi.get(self, "master_node_host_type")
 
     @property
     @pulumi.getter(name="opendashboardFqdn")
-    def opendashboard_fqdn(self) -> str:
-        """
-        The fully qualified domain name (FQDN) for the cluster's OpenSearch Dashboard API endpoint.
-        """
+    def opendashboard_fqdn(self) -> Optional[str]:
         return pulumi.get(self, "opendashboard_fqdn")
 
     @property
     @pulumi.getter(name="opendashboardNodeCount")
-    def opendashboard_node_count(self) -> int:
-        """
-        The number of OpenSearch Dashboard nodes configured for the cluster.
-        """
+    def opendashboard_node_count(self) -> Optional[int]:
         return pulumi.get(self, "opendashboard_node_count")
 
     @property
     @pulumi.getter(name="opendashboardNodeHostMemoryGb")
-    def opendashboard_node_host_memory_gb(self) -> int:
-        """
-        The amount of memory in GB, for the cluster's OpenSearch Dashboard nodes.
-        """
+    def opendashboard_node_host_memory_gb(self) -> Optional[int]:
         return pulumi.get(self, "opendashboard_node_host_memory_gb")
 
     @property
     @pulumi.getter(name="opendashboardNodeHostOcpuCount")
-    def opendashboard_node_host_ocpu_count(self) -> int:
-        """
-        The amount of memory in GB, for the cluster's OpenSearch Dashboard nodes.
-        """
+    def opendashboard_node_host_ocpu_count(self) -> Optional[int]:
         return pulumi.get(self, "opendashboard_node_host_ocpu_count")
 
     @property
     @pulumi.getter(name="opendashboardPrivateIp")
-    def opendashboard_private_ip(self) -> str:
-        """
-        The private IP address for the cluster's OpenSearch Dashboard.
-        """
+    def opendashboard_private_ip(self) -> Optional[str]:
         return pulumi.get(self, "opendashboard_private_ip")
 
     @property
@@ -345,130 +273,82 @@ class GetOpensearchClusterResult:
 
     @property
     @pulumi.getter(name="opensearchFqdn")
-    def opensearch_fqdn(self) -> str:
-        """
-        The fully qualified domain name (FQDN) for the cluster's API endpoint.
-        """
+    def opensearch_fqdn(self) -> Optional[str]:
         return pulumi.get(self, "opensearch_fqdn")
 
     @property
     @pulumi.getter(name="opensearchPrivateIp")
-    def opensearch_private_ip(self) -> str:
-        """
-        The cluster's private IP address.
-        """
+    def opensearch_private_ip(self) -> Optional[str]:
         return pulumi.get(self, "opensearch_private_ip")
 
     @property
     @pulumi.getter(name="securityMasterUserName")
-    def security_master_user_name(self) -> str:
-        """
-        The name of the master user that are used to manage security config
-        """
+    def security_master_user_name(self) -> Optional[str]:
         return pulumi.get(self, "security_master_user_name")
 
     @property
     @pulumi.getter(name="securityMasterUserPasswordHash")
-    def security_master_user_password_hash(self) -> str:
-        """
-        The password hash of the master user that are used to manage security config
-        """
+    def security_master_user_password_hash(self) -> Optional[str]:
         return pulumi.get(self, "security_master_user_password_hash")
 
     @property
     @pulumi.getter(name="securityMode")
-    def security_mode(self) -> str:
-        """
-        The security mode of the cluster.
-        """
+    def security_mode(self) -> Optional[str]:
         return pulumi.get(self, "security_mode")
 
     @property
     @pulumi.getter(name="softwareVersion")
-    def software_version(self) -> str:
-        """
-        The software version the cluster is running.
-        """
+    def software_version(self) -> Optional[str]:
         return pulumi.get(self, "software_version")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the cluster.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="subnetCompartmentId")
-    def subnet_compartment_id(self) -> str:
-        """
-        The OCID for the compartment where the cluster's subnet is located.
-        """
+    def subnet_compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "subnet_compartment_id")
 
     @property
     @pulumi.getter(name="subnetId")
-    def subnet_id(self) -> str:
-        """
-        The OCID of the cluster's subnet.
-        """
+    def subnet_id(self) -> Optional[str]:
         return pulumi.get(self, "subnet_id")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The amount of time in milliseconds since the cluster was created.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeDeleted")
-    def time_deleted(self) -> str:
-        """
-        The amount of time in milliseconds since the cluster was updated.
-        """
+    def time_deleted(self) -> Optional[str]:
         return pulumi.get(self, "time_deleted")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The amount of time in milliseconds since the cluster was updated.
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
     @property
     @pulumi.getter(name="totalStorageGb")
-    def total_storage_gb(self) -> int:
-        """
-        The size in GB of the cluster's total storage.
-        """
+    def total_storage_gb(self) -> Optional[int]:
         return pulumi.get(self, "total_storage_gb")
 
     @property
     @pulumi.getter(name="vcnCompartmentId")
-    def vcn_compartment_id(self) -> str:
-        """
-        The OCID for the compartment where the cluster's VCN is located.
-        """
+    def vcn_compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "vcn_compartment_id")
 
     @property
     @pulumi.getter(name="vcnId")
-    def vcn_id(self) -> str:
-        """
-        The OCID of the cluster's VCN.
-        """
+    def vcn_id(self) -> Optional[str]:
         return pulumi.get(self, "vcn_id")
 
 
@@ -524,33 +404,7 @@ class AwaitableGetOpensearchClusterResult(GetOpensearchClusterResult):
 def get_opensearch_cluster(opensearch_cluster_id: Optional[str] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetOpensearchClusterResult:
     """
-    This data source provides details about a specific Opensearch Cluster resource in Oracle Cloud Infrastructure Opensearch service.
-
-    Gets a OpensearchCluster by identifier
-
-    ## Prerequisites
-
-    The below policies must be created in compartment before creating OpensearchCluster
-
-    ##### {Compartment-Name} - Name of  your compartment
-    ```python
-    import pulumi
-    ```
-
-    For latest documentation on OpenSearch use please refer to https://docs.oracle.com/en-us/iaas/Content/search-opensearch/home.htm\\
-    Required permissions: https://docs.oracle.com/en-us/iaas/Content/search-opensearch/Concepts/ocisearchpermissions.htm
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_opensearch_cluster = oci.Opensearch.get_opensearch_cluster(opensearch_cluster_id=oci_opensearch_opensearch_cluster["test_opensearch_cluster"]["id"])
-    ```
-
-
-    :param str opensearch_cluster_id: unique OpensearchCluster identifier
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['opensearchClusterId'] = opensearch_cluster_id
@@ -605,32 +459,6 @@ def get_opensearch_cluster(opensearch_cluster_id: Optional[str] = None,
 def get_opensearch_cluster_output(opensearch_cluster_id: Optional[pulumi.Input[str]] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetOpensearchClusterResult]:
     """
-    This data source provides details about a specific Opensearch Cluster resource in Oracle Cloud Infrastructure Opensearch service.
-
-    Gets a OpensearchCluster by identifier
-
-    ## Prerequisites
-
-    The below policies must be created in compartment before creating OpensearchCluster
-
-    ##### {Compartment-Name} - Name of  your compartment
-    ```python
-    import pulumi
-    ```
-
-    For latest documentation on OpenSearch use please refer to https://docs.oracle.com/en-us/iaas/Content/search-opensearch/home.htm\\
-    Required permissions: https://docs.oracle.com/en-us/iaas/Content/search-opensearch/Concepts/ocisearchpermissions.htm
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_opensearch_cluster = oci.Opensearch.get_opensearch_cluster(opensearch_cluster_id=oci_opensearch_opensearch_cluster["test_opensearch_cluster"]["id"])
-    ```
-
-
-    :param str opensearch_cluster_id: unique OpensearchCluster identifier
+    Use this data source to access information about an existing resource.
     """
     ...

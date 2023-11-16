@@ -16,29 +16,29 @@ namespace Pulumi.Oci.ManagementAgent.Outputs
         /// <summary>
         /// The availability status of managementAgent
         /// </summary>
-        public readonly string AvailabilityStatus;
+        public readonly string? AvailabilityStatus;
         /// <summary>
         /// Unique Management Agent identifier
         /// </summary>
-        public readonly string ManagementAgentId;
+        public readonly string? ManagementAgentId;
         /// <summary>
         /// The time till which the Management Agent was known to be in the availability status. An RFC3339 formatted datetime string
         /// </summary>
-        public readonly string TimeAvailabilityStatusEnded;
+        public readonly string? TimeAvailabilityStatusEnded;
         /// <summary>
         /// The time at which the Management Agent moved to the availability status. An RFC3339 formatted datetime string
         /// </summary>
-        public readonly string TimeAvailabilityStatusStarted;
+        public readonly string? TimeAvailabilityStatusStarted;
 
         [OutputConstructor]
         private GetManagementAgentAvailableHistoriesAvailabilityHistoryResult(
-            string availabilityStatus,
+            string? availabilityStatus,
 
-            string managementAgentId,
+            string? managementAgentId,
 
-            string timeAvailabilityStatusEnded,
+            string? timeAvailabilityStatusEnded,
 
-            string timeAvailabilityStatusStarted)
+            string? timeAvailabilityStatusStarted)
         {
             AvailabilityStatus = availabilityStatus;
             ManagementAgentId = managementAgentId;

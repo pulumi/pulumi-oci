@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // The `Kms.EncryptedData` data source provides details about a specific EncryptedData
@@ -72,12 +71,12 @@ type LookupEncryptedDataArgs struct {
 type LookupEncryptedDataResult struct {
 	AssociatedData map[string]interface{} `pulumi:"associatedData"`
 	// The encrypted data.
-	Ciphertext     string `pulumi:"ciphertext"`
-	CryptoEndpoint string `pulumi:"cryptoEndpoint"`
+	Ciphertext     *string `pulumi:"ciphertext"`
+	CryptoEndpoint string  `pulumi:"cryptoEndpoint"`
 	// The provider-assigned unique ID for this managed resource.
-	Id        string `pulumi:"id"`
-	KeyId     string `pulumi:"keyId"`
-	Plaintext string `pulumi:"plaintext"`
+	Id        *string `pulumi:"id"`
+	KeyId     string  `pulumi:"keyId"`
+	Plaintext string  `pulumi:"plaintext"`
 }
 
 func LookupEncryptedDataOutput(ctx *pulumi.Context, args LookupEncryptedDataOutputArgs, opts ...pulumi.InvokeOption) LookupEncryptedDataResultOutput {
@@ -124,19 +123,13 @@ func (o LookupEncryptedDataResultOutput) ToLookupEncryptedDataResultOutputWithCo
 	return o
 }
 
-func (o LookupEncryptedDataResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupEncryptedDataResult] {
-	return pulumix.Output[LookupEncryptedDataResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o LookupEncryptedDataResultOutput) AssociatedData() pulumi.MapOutput {
 	return o.ApplyT(func(v LookupEncryptedDataResult) map[string]interface{} { return v.AssociatedData }).(pulumi.MapOutput)
 }
 
 // The encrypted data.
-func (o LookupEncryptedDataResultOutput) Ciphertext() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupEncryptedDataResult) string { return v.Ciphertext }).(pulumi.StringOutput)
+func (o LookupEncryptedDataResultOutput) Ciphertext() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupEncryptedDataResult) *string { return v.Ciphertext }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupEncryptedDataResultOutput) CryptoEndpoint() pulumi.StringOutput {
@@ -144,8 +137,8 @@ func (o LookupEncryptedDataResultOutput) CryptoEndpoint() pulumi.StringOutput {
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o LookupEncryptedDataResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupEncryptedDataResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupEncryptedDataResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupEncryptedDataResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupEncryptedDataResultOutput) KeyId() pulumi.StringOutput {

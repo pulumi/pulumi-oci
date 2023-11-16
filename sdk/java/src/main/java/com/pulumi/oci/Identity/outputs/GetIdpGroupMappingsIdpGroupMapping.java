@@ -6,6 +6,8 @@ package com.pulumi.oci.Identity.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetIdpGroupMappingsIdpGroupMapping {
@@ -13,99 +15,99 @@ public final class GetIdpGroupMappingsIdpGroupMapping {
      * @return The OCID of the tenancy containing the `IdentityProvider`.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return The OCID of the IAM Service group that is mapped to the IdP group.
      * 
      */
-    private String groupId;
+    private @Nullable String groupId;
     /**
      * @return The OCID of the `IdpGroupMapping`.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The OCID of the identity provider.
      * 
      */
-    private String identityProviderId;
+    private @Nullable String identityProviderId;
     /**
      * @return The name of the IdP group that is mapped to the IAM Service group.
      * 
      */
-    private String idpGroupName;
+    private @Nullable String idpGroupName;
     /**
      * @return The detailed status of INACTIVE lifecycleState.
      * 
      */
-    private String inactiveState;
+    private @Nullable String inactiveState;
     /**
      * @return The mapping&#39;s current state.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return Date and time the mapping was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
 
     private GetIdpGroupMappingsIdpGroupMapping() {}
     /**
      * @return The OCID of the tenancy containing the `IdentityProvider`.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return The OCID of the IAM Service group that is mapped to the IdP group.
      * 
      */
-    public String groupId() {
-        return this.groupId;
+    public Optional<String> groupId() {
+        return Optional.ofNullable(this.groupId);
     }
     /**
      * @return The OCID of the `IdpGroupMapping`.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The OCID of the identity provider.
      * 
      */
-    public String identityProviderId() {
-        return this.identityProviderId;
+    public Optional<String> identityProviderId() {
+        return Optional.ofNullable(this.identityProviderId);
     }
     /**
      * @return The name of the IdP group that is mapped to the IAM Service group.
      * 
      */
-    public String idpGroupName() {
-        return this.idpGroupName;
+    public Optional<String> idpGroupName() {
+        return Optional.ofNullable(this.idpGroupName);
     }
     /**
      * @return The detailed status of INACTIVE lifecycleState.
      * 
      */
-    public String inactiveState() {
-        return this.inactiveState;
+    public Optional<String> inactiveState() {
+        return Optional.ofNullable(this.inactiveState);
     }
     /**
      * @return The mapping&#39;s current state.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return Date and time the mapping was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
 
     public static Builder builder() {
@@ -117,14 +119,14 @@ public final class GetIdpGroupMappingsIdpGroupMapping {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String compartmentId;
-        private String groupId;
-        private String id;
-        private String identityProviderId;
-        private String idpGroupName;
-        private String inactiveState;
-        private String state;
-        private String timeCreated;
+        private @Nullable String compartmentId;
+        private @Nullable String groupId;
+        private @Nullable String id;
+        private @Nullable String identityProviderId;
+        private @Nullable String idpGroupName;
+        private @Nullable String inactiveState;
+        private @Nullable String state;
+        private @Nullable String timeCreated;
         public Builder() {}
         public Builder(GetIdpGroupMappingsIdpGroupMapping defaults) {
     	      Objects.requireNonNull(defaults);
@@ -139,43 +141,43 @@ public final class GetIdpGroupMappingsIdpGroupMapping {
         }
 
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder groupId(String groupId) {
-            this.groupId = Objects.requireNonNull(groupId);
+        public Builder groupId(@Nullable String groupId) {
+            this.groupId = groupId;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder identityProviderId(String identityProviderId) {
-            this.identityProviderId = Objects.requireNonNull(identityProviderId);
+        public Builder identityProviderId(@Nullable String identityProviderId) {
+            this.identityProviderId = identityProviderId;
             return this;
         }
         @CustomType.Setter
-        public Builder idpGroupName(String idpGroupName) {
-            this.idpGroupName = Objects.requireNonNull(idpGroupName);
+        public Builder idpGroupName(@Nullable String idpGroupName) {
+            this.idpGroupName = idpGroupName;
             return this;
         }
         @CustomType.Setter
-        public Builder inactiveState(String inactiveState) {
-            this.inactiveState = Objects.requireNonNull(inactiveState);
+        public Builder inactiveState(@Nullable String inactiveState) {
+            this.inactiveState = inactiveState;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         public GetIdpGroupMappingsIdpGroupMapping build() {

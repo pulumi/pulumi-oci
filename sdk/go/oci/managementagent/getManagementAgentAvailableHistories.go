@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Management Agent Available Histories in Oracle Cloud Infrastructure Management Agent service.
@@ -70,7 +69,7 @@ type GetManagementAgentAvailableHistoriesResult struct {
 	AvailabilityHistories []GetManagementAgentAvailableHistoriesAvailabilityHistory `pulumi:"availabilityHistories"`
 	Filters               []GetManagementAgentAvailableHistoriesFilter              `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// agent identifier
 	ManagementAgentId                      string  `pulumi:"managementAgentId"`
 	TimeAvailabilityStatusEndedGreaterThan *string `pulumi:"timeAvailabilityStatusEndedGreaterThan"`
@@ -120,12 +119,6 @@ func (o GetManagementAgentAvailableHistoriesResultOutput) ToGetManagementAgentAv
 	return o
 }
 
-func (o GetManagementAgentAvailableHistoriesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagementAgentAvailableHistoriesResult] {
-	return pulumix.Output[GetManagementAgentAvailableHistoriesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The list of availability_histories.
 func (o GetManagementAgentAvailableHistoriesResultOutput) AvailabilityHistories() GetManagementAgentAvailableHistoriesAvailabilityHistoryArrayOutput {
 	return o.ApplyT(func(v GetManagementAgentAvailableHistoriesResult) []GetManagementAgentAvailableHistoriesAvailabilityHistory {
@@ -140,8 +133,8 @@ func (o GetManagementAgentAvailableHistoriesResultOutput) Filters() GetManagemen
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetManagementAgentAvailableHistoriesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagementAgentAvailableHistoriesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetManagementAgentAvailableHistoriesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagementAgentAvailableHistoriesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // agent identifier

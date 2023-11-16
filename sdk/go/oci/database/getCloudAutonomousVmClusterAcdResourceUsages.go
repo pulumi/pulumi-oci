@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Cloud Autonomous Vm Cluster Acd Resource Usages in Oracle Cloud Infrastructure Database service.
@@ -70,7 +69,7 @@ type GetCloudAutonomousVmClusterAcdResourceUsagesResult struct {
 	CompartmentId                             *string                                                                                `pulumi:"compartmentId"`
 	Filters                                   []GetCloudAutonomousVmClusterAcdResourceUsagesFilter                                   `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 }
 
 func GetCloudAutonomousVmClusterAcdResourceUsagesOutput(ctx *pulumi.Context, args GetCloudAutonomousVmClusterAcdResourceUsagesOutputArgs, opts ...pulumi.InvokeOption) GetCloudAutonomousVmClusterAcdResourceUsagesResultOutput {
@@ -114,12 +113,6 @@ func (o GetCloudAutonomousVmClusterAcdResourceUsagesResultOutput) ToGetCloudAuto
 	return o
 }
 
-func (o GetCloudAutonomousVmClusterAcdResourceUsagesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetCloudAutonomousVmClusterAcdResourceUsagesResult] {
-	return pulumix.Output[GetCloudAutonomousVmClusterAcdResourceUsagesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The list of autonomous_container_database_resource_usages.
 func (o GetCloudAutonomousVmClusterAcdResourceUsagesResultOutput) AutonomousContainerDatabaseResourceUsages() GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageArrayOutput {
 	return o.ApplyT(func(v GetCloudAutonomousVmClusterAcdResourceUsagesResult) []GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsage {
@@ -142,8 +135,8 @@ func (o GetCloudAutonomousVmClusterAcdResourceUsagesResultOutput) Filters() GetC
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetCloudAutonomousVmClusterAcdResourceUsagesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCloudAutonomousVmClusterAcdResourceUsagesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetCloudAutonomousVmClusterAcdResourceUsagesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCloudAutonomousVmClusterAcdResourceUsagesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func init() {

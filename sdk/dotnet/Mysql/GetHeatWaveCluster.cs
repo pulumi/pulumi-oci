@@ -112,58 +112,58 @@ namespace Pulumi.Oci.Mysql
         /// <summary>
         /// The number of analytics-processing compute instances, of the specified shape, in the HeatWave cluster.
         /// </summary>
-        public readonly int ClusterSize;
+        public readonly int? ClusterSize;
         /// <summary>
         /// The OCID of the parent DB System this HeatWave cluster is attached to.
         /// </summary>
         public readonly string DbSystemId;
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Lakehouse enabled status for the HeatWave cluster.
         /// </summary>
-        public readonly bool IsLakehouseEnabled;
+        public readonly bool? IsLakehouseEnabled;
         /// <summary>
         /// Additional information about the current lifecycleState.
         /// </summary>
-        public readonly string LifecycleDetails;
+        public readonly string? LifecycleDetails;
         /// <summary>
         /// The shape determines resources to allocate to the HeatWave nodes - CPU cores, memory.
         /// </summary>
-        public readonly string ShapeName;
+        public readonly string? ShapeName;
         /// <summary>
         /// The current state of the HeatWave cluster.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// The date and time the HeatWave cluster was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The time the HeatWave cluster was last updated, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         /// </summary>
-        public readonly string TimeUpdated;
+        public readonly string? TimeUpdated;
 
         [OutputConstructor]
         private GetHeatWaveClusterResult(
             ImmutableArray<Outputs.GetHeatWaveClusterClusterNodeResult> clusterNodes,
 
-            int clusterSize,
+            int? clusterSize,
 
             string dbSystemId,
 
-            string id,
+            string? id,
 
-            bool isLakehouseEnabled,
+            bool? isLakehouseEnabled,
 
-            string lifecycleDetails,
+            string? lifecycleDetails,
 
-            string shapeName,
+            string? shapeName,
 
-            string state,
+            string? state,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeUpdated)
+            string? timeUpdated)
         {
             ClusterNodes = clusterNodes;
             ClusterSize = clusterSize;

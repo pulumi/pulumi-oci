@@ -47,7 +47,7 @@ class GetOdaPrivateEndpointScanProxiesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -60,18 +60,12 @@ class GetOdaPrivateEndpointScanProxiesResult:
 
     @property
     @pulumi.getter(name="odaPrivateEndpointScanProxyCollections")
-    def oda_private_endpoint_scan_proxy_collections(self) -> Sequence['outputs.GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionResult']:
-        """
-        The list of oda_private_endpoint_scan_proxy_collection.
-        """
+    def oda_private_endpoint_scan_proxy_collections(self) -> Optional[Sequence['outputs.GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionResult']]:
         return pulumi.get(self, "oda_private_endpoint_scan_proxy_collections")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the ODA Private Endpoint Scan Proxy.
-        """
         return pulumi.get(self, "state")
 
 
@@ -93,28 +87,7 @@ def get_oda_private_endpoint_scan_proxies(filters: Optional[Sequence[pulumi.Inpu
                                           state: Optional[str] = None,
                                           opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetOdaPrivateEndpointScanProxiesResult:
     """
-    This data source provides the list of Oda Private Endpoint Scan Proxies in Oracle Cloud Infrastructure Digital Assistant service.
-
-    Returns a page of ODA Private Endpoint Scan Proxies that belong to the specified
-    ODA Private Endpoint.
-
-    If the `opc-next-page` header appears in the response, then
-    there are more items to retrieve. To get the next page in the subsequent
-    GET request, include the header's value as the `page` query parameter.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_oda_private_endpoint_scan_proxies = oci.Oda.get_oda_private_endpoint_scan_proxies(oda_private_endpoint_id=oci_oda_oda_private_endpoint["test_oda_private_endpoint"]["id"],
-        state=var["oda_private_endpoint_scan_proxy_state"])
-    ```
-
-
-    :param str oda_private_endpoint_id: Unique ODA Private Endpoint identifier which is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param str state: List only the ODA Private Endpoint Scan Proxies that are in this lifecycle state.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['filters'] = filters
@@ -137,27 +110,6 @@ def get_oda_private_endpoint_scan_proxies_output(filters: Optional[pulumi.Input[
                                                  state: Optional[pulumi.Input[Optional[str]]] = None,
                                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetOdaPrivateEndpointScanProxiesResult]:
     """
-    This data source provides the list of Oda Private Endpoint Scan Proxies in Oracle Cloud Infrastructure Digital Assistant service.
-
-    Returns a page of ODA Private Endpoint Scan Proxies that belong to the specified
-    ODA Private Endpoint.
-
-    If the `opc-next-page` header appears in the response, then
-    there are more items to retrieve. To get the next page in the subsequent
-    GET request, include the header's value as the `page` query parameter.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_oda_private_endpoint_scan_proxies = oci.Oda.get_oda_private_endpoint_scan_proxies(oda_private_endpoint_id=oci_oda_oda_private_endpoint["test_oda_private_endpoint"]["id"],
-        state=var["oda_private_endpoint_scan_proxy_state"])
-    ```
-
-
-    :param str oda_private_endpoint_id: Unique ODA Private Endpoint identifier which is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param str state: List only the ODA Private Endpoint Scan Proxies that are in this lifecycle state.
+    Use this data source to access information about an existing resource.
     """
     ...

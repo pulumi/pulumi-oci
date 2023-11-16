@@ -40,17 +40,11 @@ class GetDrgsResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the DRG.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter
-    def drgs(self) -> Sequence['outputs.GetDrgsDrgResult']:
-        """
-        The list of drgs.
-        """
+    def drgs(self) -> Optional[Sequence['outputs.GetDrgsDrgResult']]:
         return pulumi.get(self, "drgs")
 
     @property
@@ -60,7 +54,7 @@ class GetDrgsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -83,21 +77,7 @@ def get_drgs(compartment_id: Optional[str] = None,
              filters: Optional[Sequence[pulumi.InputType['GetDrgsFilterArgs']]] = None,
              opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDrgsResult:
     """
-    This data source provides the list of Drgs in Oracle Cloud Infrastructure Core service.
-
-    Lists the DRGs in the specified compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_drgs = oci.Core.get_drgs(compartment_id=var["compartment_id"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -117,20 +97,6 @@ def get_drgs_output(compartment_id: Optional[pulumi.Input[str]] = None,
                     filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetDrgsFilterArgs']]]]] = None,
                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDrgsResult]:
     """
-    This data source provides the list of Drgs in Oracle Cloud Infrastructure Core service.
-
-    Lists the DRGs in the specified compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_drgs = oci.Core.get_drgs(compartment_id=var["compartment_id"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+    Use this data source to access information about an existing resource.
     """
     ...

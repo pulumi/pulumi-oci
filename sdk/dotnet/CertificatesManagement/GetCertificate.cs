@@ -113,7 +113,7 @@ namespace Pulumi.Oci.CertificatesManagement
         /// <summary>
         /// The name of the profile used to create the certificate, which depends on the type of certificate you need.
         /// </summary>
-        public readonly string CertificateProfileType;
+        public readonly string? CertificateProfileType;
         /// <summary>
         /// The details of the certificate revocation list (CRL).
         /// </summary>
@@ -125,11 +125,11 @@ namespace Pulumi.Oci.CertificatesManagement
         /// <summary>
         /// The OCID of the compartment where you want to create the certificate.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// The origin of the certificate.
         /// </summary>
-        public readonly string ConfigType;
+        public readonly string? ConfigType;
         /// <summary>
         /// The details of the certificate version. This object does not contain the certificate contents.
         /// </summary>
@@ -137,43 +137,43 @@ namespace Pulumi.Oci.CertificatesManagement
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// A brief description of the certificate. Avoid entering confidential information.
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// The OCID of the certificate.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The OCID of the certificate authority (CA) that issued the certificate.
         /// </summary>
-        public readonly string IssuerCertificateAuthorityId;
+        public readonly string? IssuerCertificateAuthorityId;
         /// <summary>
         /// The algorithm used to create key pairs.
         /// </summary>
-        public readonly string KeyAlgorithm;
+        public readonly string? KeyAlgorithm;
         /// <summary>
         /// Additional information about the current lifecycle state of the certificate.
         /// </summary>
-        public readonly string LifecycleDetails;
+        public readonly string? LifecycleDetails;
         /// <summary>
         /// A user-friendly name for the certificate. Names are unique within a compartment. Avoid entering confidential information. Valid characters are uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// The algorithm used to sign the public key certificate.
         /// </summary>
-        public readonly string SignatureAlgorithm;
+        public readonly string? SignatureAlgorithm;
         /// <summary>
         /// The current lifecycle state of the certificate.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// The subject of the certificate, which is a distinguished name that identifies the entity that owns the public key in the certificate.
         /// </summary>
@@ -181,11 +181,11 @@ namespace Pulumi.Oci.CertificatesManagement
         /// <summary>
         /// A property indicating when the certificate was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// An optional property indicating when to delete the certificate version, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
         /// </summary>
-        public readonly string TimeOfDeletion;
+        public readonly string? TimeOfDeletion;
 
         [OutputConstructor]
         private GetCertificateResult(
@@ -193,43 +193,43 @@ namespace Pulumi.Oci.CertificatesManagement
 
             string certificateId,
 
-            string certificateProfileType,
+            string? certificateProfileType,
 
             ImmutableArray<Outputs.GetCertificateCertificateRevocationListDetailResult> certificateRevocationListDetails,
 
             ImmutableArray<Outputs.GetCertificateCertificateRuleResult> certificateRules,
 
-            string compartmentId,
+            string? compartmentId,
 
-            string configType,
+            string? configType,
 
             ImmutableArray<Outputs.GetCertificateCurrentVersionResult> currentVersions,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string description,
+            string? description,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string id,
+            string? id,
 
-            string issuerCertificateAuthorityId,
+            string? issuerCertificateAuthorityId,
 
-            string keyAlgorithm,
+            string? keyAlgorithm,
 
-            string lifecycleDetails,
+            string? lifecycleDetails,
 
-            string name,
+            string? name,
 
-            string signatureAlgorithm,
+            string? signatureAlgorithm,
 
-            string state,
+            string? state,
 
             ImmutableArray<Outputs.GetCertificateSubjectResult> subjects,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeOfDeletion)
+            string? timeOfDeletion)
         {
             CertificateConfigs = certificateConfigs;
             CertificateId = certificateId;

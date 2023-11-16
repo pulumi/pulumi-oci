@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Security Policies in Oracle Cloud Infrastructure Data Safe service.
@@ -96,7 +95,7 @@ type GetSecurityPoliciesResult struct {
 	DisplayName *string                     `pulumi:"displayName"`
 	Filters     []GetSecurityPoliciesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The list of security_policy_collection.
 	SecurityPolicyCollections []GetSecurityPoliciesSecurityPolicyCollection `pulumi:"securityPolicyCollections"`
 	SecurityPolicyId          *string                                       `pulumi:"securityPolicyId"`
@@ -153,12 +152,6 @@ func (o GetSecurityPoliciesResultOutput) ToGetSecurityPoliciesResultOutputWithCo
 	return o
 }
 
-func (o GetSecurityPoliciesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetSecurityPoliciesResult] {
-	return pulumix.Output[GetSecurityPoliciesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSecurityPoliciesResultOutput) AccessLevel() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetSecurityPoliciesResult) *string { return v.AccessLevel }).(pulumi.StringPtrOutput)
 }
@@ -182,8 +175,8 @@ func (o GetSecurityPoliciesResultOutput) Filters() GetSecurityPoliciesFilterArra
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetSecurityPoliciesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSecurityPoliciesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetSecurityPoliciesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSecurityPoliciesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The list of security_policy_collection.

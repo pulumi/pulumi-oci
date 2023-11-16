@@ -47,96 +47,96 @@ export interface GetUserAssessmentResult {
     /**
      * The OCID of the compartment that contains the user assessment.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * The description of the user assessment.
      */
-    readonly description: string;
+    readonly description?: string;
     /**
      * The display name of the user assessment.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * The OCID of the user assessment.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * List containing maps as values. Example: `{"Operations": [ {"CostCenter": "42"} ] }`
      */
-    readonly ignoredAssessmentIds: string[];
+    readonly ignoredAssessmentIds?: string[];
     /**
      * List containing maps as values. Example: `{"Operations": [ {"CostCenter": "42"} ] }`
      */
-    readonly ignoredTargets: outputs.DataSafe.GetUserAssessmentIgnoredTarget[];
+    readonly ignoredTargets?: outputs.DataSafe.GetUserAssessmentIgnoredTarget[];
     /**
      * Indicates if the user assessment is set as a baseline. This is applicable only to saved user assessments.
      */
-    readonly isBaseline: boolean;
+    readonly isBaseline?: boolean;
     /**
      * Indicates if the user assessment deviates from the baseline.
      */
-    readonly isDeviatedFromBaseline: boolean;
+    readonly isDeviatedFromBaseline?: boolean;
     /**
      * The OCID of the last user assessment baseline against which the latest assessment was compared.
      */
-    readonly lastComparedBaselineId: string;
+    readonly lastComparedBaselineId?: string;
     /**
      * Details about the current state of the user assessment.
      */
-    readonly lifecycleDetails: string;
+    readonly lifecycleDetails?: string;
     /**
      * Schedule of the assessment that runs periodically in this specified format: <version-string>;<version-specific-schedule>
      */
-    readonly schedule: string;
+    readonly schedule?: string;
     /**
      * The OCID of the user assessment that is responsible for creating this scheduled save assessment.
      */
-    readonly scheduleAssessmentId: string;
+    readonly scheduleAssessmentId?: string;
     /**
      * The current state of the user assessment.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * Map that contains maps of values. Example: `{"Operations": {"CostCenter": "42"}}`
      */
-    readonly statistics: string;
+    readonly statistics?: string;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    readonly systemTags: {[key: string]: any};
-    readonly targetId: string;
+    readonly systemTags?: {[key: string]: any};
+    readonly targetId?: string;
     /**
      * Array of database target OCIDs.
      */
-    readonly targetIds: string[];
+    readonly targetIds?: string[];
     /**
      * The date and time the user assessment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The date and time the user assessment was last executed, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
-    readonly timeLastAssessed: string;
+    readonly timeLastAssessed?: string;
     /**
      * The date and time the user assessment was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
-    readonly timeUpdated: string;
+    readonly timeUpdated?: string;
     /**
      * Indicates whether the user assessment was created by the system or the user.
      */
-    readonly triggeredBy: string;
+    readonly triggeredBy?: string;
     /**
      * The type of the user assessment. The possible types are:
      */
-    readonly type: string;
+    readonly type?: string;
     readonly userAssessmentId: string;
 }
 /**

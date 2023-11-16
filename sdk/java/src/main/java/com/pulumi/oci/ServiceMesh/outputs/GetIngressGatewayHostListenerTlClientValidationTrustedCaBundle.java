@@ -6,6 +6,8 @@ package com.pulumi.oci.ServiceMesh.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetIngressGatewayHostListenerTlClientValidationTrustedCaBundle {
@@ -13,39 +15,39 @@ public final class GetIngressGatewayHostListenerTlClientValidationTrustedCaBundl
      * @return The OCID of the CA Bundle resource.
      * 
      */
-    private String caBundleId;
+    private @Nullable String caBundleId;
     /**
      * @return Name of the secret. For Kubernetes this is the name of the Kubernetes secret of type tls. For other platforms the secrets must be mounted at: /etc/oci/secrets/${secretName}/tls.{key,crt}
      * 
      */
-    private String secretName;
+    private @Nullable String secretName;
     /**
      * @return Type of certificate.
      * 
      */
-    private String type;
+    private @Nullable String type;
 
     private GetIngressGatewayHostListenerTlClientValidationTrustedCaBundle() {}
     /**
      * @return The OCID of the CA Bundle resource.
      * 
      */
-    public String caBundleId() {
-        return this.caBundleId;
+    public Optional<String> caBundleId() {
+        return Optional.ofNullable(this.caBundleId);
     }
     /**
      * @return Name of the secret. For Kubernetes this is the name of the Kubernetes secret of type tls. For other platforms the secrets must be mounted at: /etc/oci/secrets/${secretName}/tls.{key,crt}
      * 
      */
-    public String secretName() {
-        return this.secretName;
+    public Optional<String> secretName() {
+        return Optional.ofNullable(this.secretName);
     }
     /**
      * @return Type of certificate.
      * 
      */
-    public String type() {
-        return this.type;
+    public Optional<String> type() {
+        return Optional.ofNullable(this.type);
     }
 
     public static Builder builder() {
@@ -57,9 +59,9 @@ public final class GetIngressGatewayHostListenerTlClientValidationTrustedCaBundl
     }
     @CustomType.Builder
     public static final class Builder {
-        private String caBundleId;
-        private String secretName;
-        private String type;
+        private @Nullable String caBundleId;
+        private @Nullable String secretName;
+        private @Nullable String type;
         public Builder() {}
         public Builder(GetIngressGatewayHostListenerTlClientValidationTrustedCaBundle defaults) {
     	      Objects.requireNonNull(defaults);
@@ -69,18 +71,18 @@ public final class GetIngressGatewayHostListenerTlClientValidationTrustedCaBundl
         }
 
         @CustomType.Setter
-        public Builder caBundleId(String caBundleId) {
-            this.caBundleId = Objects.requireNonNull(caBundleId);
+        public Builder caBundleId(@Nullable String caBundleId) {
+            this.caBundleId = caBundleId;
             return this;
         }
         @CustomType.Setter
-        public Builder secretName(String secretName) {
-            this.secretName = Objects.requireNonNull(secretName);
+        public Builder secretName(@Nullable String secretName) {
+            this.secretName = secretName;
             return this;
         }
         @CustomType.Setter
-        public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+        public Builder type(@Nullable String type) {
+            this.type = type;
             return this;
         }
         public GetIngressGatewayHostListenerTlClientValidationTrustedCaBundle build() {

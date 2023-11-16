@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Problem Entity resource in Oracle Cloud Infrastructure Cloud Guard service.
@@ -60,7 +59,7 @@ type GetProblemEntityArgs struct {
 // A collection of values returned by getProblemEntity.
 type GetProblemEntityResult struct {
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// List of problem entities summaries related to a data source.
 	Items []GetProblemEntityItem `pulumi:"items"`
 	// Attached problem id
@@ -105,15 +104,9 @@ func (o GetProblemEntityResultOutput) ToGetProblemEntityResultOutputWithContext(
 	return o
 }
 
-func (o GetProblemEntityResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetProblemEntityResult] {
-	return pulumix.Output[GetProblemEntityResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The provider-assigned unique ID for this managed resource.
-func (o GetProblemEntityResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProblemEntityResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetProblemEntityResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetProblemEntityResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // List of problem entities summaries related to a data source.

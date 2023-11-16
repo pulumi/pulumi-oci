@@ -16,17 +16,17 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
         /// <summary>
         /// Duration after which OKE will give up eviction of the pods on the node. PT0M will indicate you want to delete the node without cordon and drain. Default PT60M, Min PT0M, Max: PT60M. Format ISO 8601 e.g PT30M
         /// </summary>
-        public readonly string EvictionGraceDuration;
+        public readonly string? EvictionGraceDuration;
         /// <summary>
         /// If the underlying compute instance should be deleted if you cannot evict all the pods in grace period
         /// </summary>
-        public readonly bool IsForceDeleteAfterGraceDuration;
+        public readonly bool? IsForceDeleteAfterGraceDuration;
 
         [OutputConstructor]
         private GetNodePoolNodeEvictionNodePoolSettingResult(
-            string evictionGraceDuration,
+            string? evictionGraceDuration,
 
-            bool isForceDeleteAfterGraceDuration)
+            bool? isForceDeleteAfterGraceDuration)
         {
             EvictionGraceDuration = evictionGraceDuration;
             IsForceDeleteAfterGraceDuration = isForceDeleteAfterGraceDuration;

@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetMonitorsMonitorCollectionItemConfigurationDnsConfiguration {
@@ -14,27 +16,27 @@ public final class GetMonitorsMonitorCollectionItemConfigurationDnsConfiguration
      * @return If isOverrideDns is true, then DNS settings will be overridden.
      * 
      */
-    private Boolean isOverrideDns;
+    private @Nullable Boolean isOverrideDns;
     /**
      * @return Attribute to override the DNS IP value. This value will be honored only if isOverrideDns is set to true.
      * 
      */
-    private String overrideDnsIp;
+    private @Nullable String overrideDnsIp;
 
     private GetMonitorsMonitorCollectionItemConfigurationDnsConfiguration() {}
     /**
      * @return If isOverrideDns is true, then DNS settings will be overridden.
      * 
      */
-    public Boolean isOverrideDns() {
-        return this.isOverrideDns;
+    public Optional<Boolean> isOverrideDns() {
+        return Optional.ofNullable(this.isOverrideDns);
     }
     /**
      * @return Attribute to override the DNS IP value. This value will be honored only if isOverrideDns is set to true.
      * 
      */
-    public String overrideDnsIp() {
-        return this.overrideDnsIp;
+    public Optional<String> overrideDnsIp() {
+        return Optional.ofNullable(this.overrideDnsIp);
     }
 
     public static Builder builder() {
@@ -46,8 +48,8 @@ public final class GetMonitorsMonitorCollectionItemConfigurationDnsConfiguration
     }
     @CustomType.Builder
     public static final class Builder {
-        private Boolean isOverrideDns;
-        private String overrideDnsIp;
+        private @Nullable Boolean isOverrideDns;
+        private @Nullable String overrideDnsIp;
         public Builder() {}
         public Builder(GetMonitorsMonitorCollectionItemConfigurationDnsConfiguration defaults) {
     	      Objects.requireNonNull(defaults);
@@ -56,13 +58,13 @@ public final class GetMonitorsMonitorCollectionItemConfigurationDnsConfiguration
         }
 
         @CustomType.Setter
-        public Builder isOverrideDns(Boolean isOverrideDns) {
-            this.isOverrideDns = Objects.requireNonNull(isOverrideDns);
+        public Builder isOverrideDns(@Nullable Boolean isOverrideDns) {
+            this.isOverrideDns = isOverrideDns;
             return this;
         }
         @CustomType.Setter
-        public Builder overrideDnsIp(String overrideDnsIp) {
-            this.overrideDnsIp = Objects.requireNonNull(overrideDnsIp);
+        public Builder overrideDnsIp(@Nullable String overrideDnsIp) {
+            this.overrideDnsIp = overrideDnsIp;
             return this;
         }
         public GetMonitorsMonitorCollectionItemConfigurationDnsConfiguration build() {

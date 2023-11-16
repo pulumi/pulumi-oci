@@ -72,15 +72,15 @@ export class ApmDomain extends pulumi.CustomResource {
     /**
      * The endpoint where the APM agents upload their observations and metrics.
      */
-    public /*out*/ readonly dataUploadEndpoint!: pulumi.Output<string>;
+    public /*out*/ readonly dataUploadEndpoint!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) Description of the APM domain.
      */
-    public readonly description!: pulumi.Output<string>;
+    public readonly description!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Display name of the APM domain.
      */
@@ -88,7 +88,7 @@ export class ApmDomain extends pulumi.CustomResource {
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * Indicates whether this is an "Always Free" resource. The default value is false.
      *
@@ -96,19 +96,19 @@ export class ApmDomain extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly isFreeTier!: pulumi.Output<boolean>;
+    public readonly isFreeTier!: pulumi.Output<boolean | undefined>;
     /**
      * The current lifecycle state of the APM domain.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * The time the APM domain was created, expressed in RFC 3339 timestamp format.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * The time the APM domain was updated, expressed in RFC 3339 timestamp format.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    public /*out*/ readonly timeUpdated!: pulumi.Output<string | undefined>;
 
     /**
      * Create a ApmDomain resource with the given unique name, arguments, and options.

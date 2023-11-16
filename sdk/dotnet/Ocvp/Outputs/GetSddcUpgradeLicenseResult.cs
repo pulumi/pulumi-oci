@@ -16,17 +16,17 @@ namespace Pulumi.Oci.Ocvp.Outputs
         /// <summary>
         /// vSphere license key value.
         /// </summary>
-        public readonly string LicenseKey;
+        public readonly string? LicenseKey;
         /// <summary>
         /// vSphere license type.
         /// </summary>
-        public readonly string LicenseType;
+        public readonly string? LicenseType;
 
         [OutputConstructor]
         private GetSddcUpgradeLicenseResult(
-            string licenseKey,
+            string? licenseKey,
 
-            string licenseType)
+            string? licenseType)
         {
             LicenseKey = licenseKey;
             LicenseType = licenseType;

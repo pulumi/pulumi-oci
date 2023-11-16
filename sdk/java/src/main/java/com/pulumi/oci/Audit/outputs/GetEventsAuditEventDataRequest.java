@@ -8,6 +8,8 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetEventsAuditEventDataRequest {
@@ -15,63 +17,63 @@ public final class GetEventsAuditEventDataRequest {
      * @return The HTTP method of the request.  Example: `GET`
      * 
      */
-    private String action;
+    private @Nullable String action;
     /**
      * @return The headers of the response.
      * 
      */
-    private Map<String,Object> headers;
+    private @Nullable Map<String,Object> headers;
     /**
      * @return The opc-request-id of the request.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The parameters supplied by the caller during this operation.
      * 
      */
-    private Map<String,Object> parameters;
+    private @Nullable Map<String,Object> parameters;
     /**
      * @return The full path of the API request.  Example: `/20160918/instances/ocid1.instance.oc1.phx.&lt;unique_ID&gt;`
      * 
      */
-    private String path;
+    private @Nullable String path;
 
     private GetEventsAuditEventDataRequest() {}
     /**
      * @return The HTTP method of the request.  Example: `GET`
      * 
      */
-    public String action() {
-        return this.action;
+    public Optional<String> action() {
+        return Optional.ofNullable(this.action);
     }
     /**
      * @return The headers of the response.
      * 
      */
     public Map<String,Object> headers() {
-        return this.headers;
+        return this.headers == null ? Map.of() : this.headers;
     }
     /**
      * @return The opc-request-id of the request.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The parameters supplied by the caller during this operation.
      * 
      */
     public Map<String,Object> parameters() {
-        return this.parameters;
+        return this.parameters == null ? Map.of() : this.parameters;
     }
     /**
      * @return The full path of the API request.  Example: `/20160918/instances/ocid1.instance.oc1.phx.&lt;unique_ID&gt;`
      * 
      */
-    public String path() {
-        return this.path;
+    public Optional<String> path() {
+        return Optional.ofNullable(this.path);
     }
 
     public static Builder builder() {
@@ -83,11 +85,11 @@ public final class GetEventsAuditEventDataRequest {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String action;
-        private Map<String,Object> headers;
-        private String id;
-        private Map<String,Object> parameters;
-        private String path;
+        private @Nullable String action;
+        private @Nullable Map<String,Object> headers;
+        private @Nullable String id;
+        private @Nullable Map<String,Object> parameters;
+        private @Nullable String path;
         public Builder() {}
         public Builder(GetEventsAuditEventDataRequest defaults) {
     	      Objects.requireNonNull(defaults);
@@ -99,28 +101,28 @@ public final class GetEventsAuditEventDataRequest {
         }
 
         @CustomType.Setter
-        public Builder action(String action) {
-            this.action = Objects.requireNonNull(action);
+        public Builder action(@Nullable String action) {
+            this.action = action;
             return this;
         }
         @CustomType.Setter
-        public Builder headers(Map<String,Object> headers) {
-            this.headers = Objects.requireNonNull(headers);
+        public Builder headers(@Nullable Map<String,Object> headers) {
+            this.headers = headers;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder parameters(Map<String,Object> parameters) {
-            this.parameters = Objects.requireNonNull(parameters);
+        public Builder parameters(@Nullable Map<String,Object> parameters) {
+            this.parameters = parameters;
             return this;
         }
         @CustomType.Setter
-        public Builder path(String path) {
-            this.path = Objects.requireNonNull(path);
+        public Builder path(@Nullable String path) {
+            this.path = path;
             return this;
         }
         public GetEventsAuditEventDataRequest build() {

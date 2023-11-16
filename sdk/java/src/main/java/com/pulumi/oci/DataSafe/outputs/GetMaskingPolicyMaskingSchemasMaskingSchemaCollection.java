@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.DataSafe.outputs.GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetMaskingPolicyMaskingSchemasMaskingSchemaCollection {
@@ -14,7 +15,7 @@ public final class GetMaskingPolicyMaskingSchemasMaskingSchemaCollection {
      * @return An array of masking schema summary objects.
      * 
      */
-    private List<GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionItem> items;
+    private @Nullable List<GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionItem> items;
 
     private GetMaskingPolicyMaskingSchemasMaskingSchemaCollection() {}
     /**
@@ -22,7 +23,7 @@ public final class GetMaskingPolicyMaskingSchemasMaskingSchemaCollection {
      * 
      */
     public List<GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -34,7 +35,7 @@ public final class GetMaskingPolicyMaskingSchemasMaskingSchemaCollection {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionItem> items;
+        private @Nullable List<GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionItem> items;
         public Builder() {}
         public Builder(GetMaskingPolicyMaskingSchemasMaskingSchemaCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -42,8 +43,8 @@ public final class GetMaskingPolicyMaskingSchemasMaskingSchemaCollection {
         }
 
         @CustomType.Setter
-        public Builder items(List<GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionItem... items) {

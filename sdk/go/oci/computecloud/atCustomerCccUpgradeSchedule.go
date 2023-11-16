@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Ccc Upgrade Schedule resource in Oracle Cloud Infrastructure Compute Cloud At Customer service.
@@ -76,7 +75,7 @@ type AtCustomerCccUpgradeSchedule struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) A description of the Compute Cloud@Customer upgrade schedule time block.
-	Description pulumi.StringOutput `pulumi:"description"`
+	Description pulumi.StringPtrOutput `pulumi:"description"`
 	// (Updatable) Compute Cloud@Customer upgrade schedule display name. Avoid entering confidential information.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) List of preferred times for Compute Cloud@Customer infrastructure to be upgraded.
@@ -89,15 +88,15 @@ type AtCustomerCccUpgradeSchedule struct {
 	// List of Compute Cloud@Customer infrastructure [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that are using this upgrade schedule.
 	InfrastructureIds pulumi.StringArrayOutput `pulumi:"infrastructureIds"`
 	// A message describing the current state in more detail. For example, the message can be used to provide actionable information for a resource in a Failed state.
-	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrOutput `pulumi:"lifecycleDetails"`
 	// Lifecycle state of the resource.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
 	// The time the upgrade schedule was created, using an RFC3339 formatted datetime string.
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The time the upgrade schedule was updated, using an RFC3339 formatted datetime string.
-	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 }
 
 // NewAtCustomerCccUpgradeSchedule registers a new resource with the given unique name, arguments, and options.
@@ -262,12 +261,6 @@ func (i *AtCustomerCccUpgradeSchedule) ToAtCustomerCccUpgradeScheduleOutputWithC
 	return pulumi.ToOutputWithContext(ctx, i).(AtCustomerCccUpgradeScheduleOutput)
 }
 
-func (i *AtCustomerCccUpgradeSchedule) ToOutput(ctx context.Context) pulumix.Output[*AtCustomerCccUpgradeSchedule] {
-	return pulumix.Output[*AtCustomerCccUpgradeSchedule]{
-		OutputState: i.ToAtCustomerCccUpgradeScheduleOutputWithContext(ctx).OutputState,
-	}
-}
-
 // AtCustomerCccUpgradeScheduleArrayInput is an input type that accepts AtCustomerCccUpgradeScheduleArray and AtCustomerCccUpgradeScheduleArrayOutput values.
 // You can construct a concrete instance of `AtCustomerCccUpgradeScheduleArrayInput` via:
 //
@@ -291,12 +284,6 @@ func (i AtCustomerCccUpgradeScheduleArray) ToAtCustomerCccUpgradeScheduleArrayOu
 
 func (i AtCustomerCccUpgradeScheduleArray) ToAtCustomerCccUpgradeScheduleArrayOutputWithContext(ctx context.Context) AtCustomerCccUpgradeScheduleArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(AtCustomerCccUpgradeScheduleArrayOutput)
-}
-
-func (i AtCustomerCccUpgradeScheduleArray) ToOutput(ctx context.Context) pulumix.Output[[]*AtCustomerCccUpgradeSchedule] {
-	return pulumix.Output[[]*AtCustomerCccUpgradeSchedule]{
-		OutputState: i.ToAtCustomerCccUpgradeScheduleArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // AtCustomerCccUpgradeScheduleMapInput is an input type that accepts AtCustomerCccUpgradeScheduleMap and AtCustomerCccUpgradeScheduleMapOutput values.
@@ -324,12 +311,6 @@ func (i AtCustomerCccUpgradeScheduleMap) ToAtCustomerCccUpgradeScheduleMapOutput
 	return pulumi.ToOutputWithContext(ctx, i).(AtCustomerCccUpgradeScheduleMapOutput)
 }
 
-func (i AtCustomerCccUpgradeScheduleMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*AtCustomerCccUpgradeSchedule] {
-	return pulumix.Output[map[string]*AtCustomerCccUpgradeSchedule]{
-		OutputState: i.ToAtCustomerCccUpgradeScheduleMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type AtCustomerCccUpgradeScheduleOutput struct{ *pulumi.OutputState }
 
 func (AtCustomerCccUpgradeScheduleOutput) ElementType() reflect.Type {
@@ -344,12 +325,6 @@ func (o AtCustomerCccUpgradeScheduleOutput) ToAtCustomerCccUpgradeScheduleOutput
 	return o
 }
 
-func (o AtCustomerCccUpgradeScheduleOutput) ToOutput(ctx context.Context) pulumix.Output[*AtCustomerCccUpgradeSchedule] {
-	return pulumix.Output[*AtCustomerCccUpgradeSchedule]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) Compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Compute Cloud@Customer Upgrade Schedule.
 func (o AtCustomerCccUpgradeScheduleOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *AtCustomerCccUpgradeSchedule) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
@@ -361,8 +336,8 @@ func (o AtCustomerCccUpgradeScheduleOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // (Updatable) A description of the Compute Cloud@Customer upgrade schedule time block.
-func (o AtCustomerCccUpgradeScheduleOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v *AtCustomerCccUpgradeSchedule) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
+func (o AtCustomerCccUpgradeScheduleOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AtCustomerCccUpgradeSchedule) pulumi.StringPtrOutput { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Compute Cloud@Customer upgrade schedule display name. Avoid entering confidential information.
@@ -389,13 +364,13 @@ func (o AtCustomerCccUpgradeScheduleOutput) InfrastructureIds() pulumi.StringArr
 }
 
 // A message describing the current state in more detail. For example, the message can be used to provide actionable information for a resource in a Failed state.
-func (o AtCustomerCccUpgradeScheduleOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v *AtCustomerCccUpgradeSchedule) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o AtCustomerCccUpgradeScheduleOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AtCustomerCccUpgradeSchedule) pulumi.StringPtrOutput { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // Lifecycle state of the resource.
-func (o AtCustomerCccUpgradeScheduleOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *AtCustomerCccUpgradeSchedule) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o AtCustomerCccUpgradeScheduleOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AtCustomerCccUpgradeSchedule) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -404,13 +379,13 @@ func (o AtCustomerCccUpgradeScheduleOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The time the upgrade schedule was created, using an RFC3339 formatted datetime string.
-func (o AtCustomerCccUpgradeScheduleOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *AtCustomerCccUpgradeSchedule) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o AtCustomerCccUpgradeScheduleOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AtCustomerCccUpgradeSchedule) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time the upgrade schedule was updated, using an RFC3339 formatted datetime string.
-func (o AtCustomerCccUpgradeScheduleOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *AtCustomerCccUpgradeSchedule) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o AtCustomerCccUpgradeScheduleOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AtCustomerCccUpgradeSchedule) pulumi.StringPtrOutput { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type AtCustomerCccUpgradeScheduleArrayOutput struct{ *pulumi.OutputState }
@@ -425,12 +400,6 @@ func (o AtCustomerCccUpgradeScheduleArrayOutput) ToAtCustomerCccUpgradeScheduleA
 
 func (o AtCustomerCccUpgradeScheduleArrayOutput) ToAtCustomerCccUpgradeScheduleArrayOutputWithContext(ctx context.Context) AtCustomerCccUpgradeScheduleArrayOutput {
 	return o
-}
-
-func (o AtCustomerCccUpgradeScheduleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*AtCustomerCccUpgradeSchedule] {
-	return pulumix.Output[[]*AtCustomerCccUpgradeSchedule]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o AtCustomerCccUpgradeScheduleArrayOutput) Index(i pulumi.IntInput) AtCustomerCccUpgradeScheduleOutput {
@@ -451,12 +420,6 @@ func (o AtCustomerCccUpgradeScheduleMapOutput) ToAtCustomerCccUpgradeScheduleMap
 
 func (o AtCustomerCccUpgradeScheduleMapOutput) ToAtCustomerCccUpgradeScheduleMapOutputWithContext(ctx context.Context) AtCustomerCccUpgradeScheduleMapOutput {
 	return o
-}
-
-func (o AtCustomerCccUpgradeScheduleMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*AtCustomerCccUpgradeSchedule] {
-	return pulumix.Output[map[string]*AtCustomerCccUpgradeSchedule]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o AtCustomerCccUpgradeScheduleMapOutput) MapIndex(k pulumi.StringInput) AtCustomerCccUpgradeScheduleOutput {

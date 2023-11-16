@@ -88,7 +88,7 @@ export class ComputeCapacityReport extends pulumi.CustomResource {
     /**
      * The date and time the capacity report was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
 
     /**
      * Create a ComputeCapacityReport resource with the given unique name, arguments, and options.

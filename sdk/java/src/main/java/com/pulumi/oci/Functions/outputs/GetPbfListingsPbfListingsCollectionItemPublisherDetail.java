@@ -6,6 +6,8 @@ package com.pulumi.oci.Functions.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetPbfListingsPbfListingsCollectionItemPublisherDetail {
@@ -13,15 +15,15 @@ public final class GetPbfListingsPbfListingsCollectionItemPublisherDetail {
      * @return A filter to return only resources that match the entire PBF name given.
      * 
      */
-    private String name;
+    private @Nullable String name;
 
     private GetPbfListingsPbfListingsCollectionItemPublisherDetail() {}
     /**
      * @return A filter to return only resources that match the entire PBF name given.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
 
     public static Builder builder() {
@@ -33,7 +35,7 @@ public final class GetPbfListingsPbfListingsCollectionItemPublisherDetail {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String name;
+        private @Nullable String name;
         public Builder() {}
         public Builder(GetPbfListingsPbfListingsCollectionItemPublisherDetail defaults) {
     	      Objects.requireNonNull(defaults);
@@ -41,8 +43,8 @@ public final class GetPbfListingsPbfListingsCollectionItemPublisherDetail {
         }
 
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         public GetPbfListingsPbfListingsCollectionItemPublisherDetail build() {

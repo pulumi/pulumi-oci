@@ -47,12 +47,12 @@ export interface GetExternalExadataStorageServerTopSqlCpuActivityResult {
     /**
      * A list of sql CPU activity.
      */
-    readonly activities: outputs.DatabaseManagement.GetExternalExadataStorageServerTopSqlCpuActivityActivity[];
+    readonly activities?: outputs.DatabaseManagement.GetExternalExadataStorageServerTopSqlCpuActivityActivity[];
     readonly externalExadataStorageServerId: string;
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
 }
 /**
  * This data source provides details about a specific External Exadata Storage Server Top Sql Cpu Activity resource in Oracle Cloud Infrastructure Database Management service.

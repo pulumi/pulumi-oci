@@ -16,11 +16,11 @@ namespace Pulumi.Oci.LoadBalancer.Outputs
         /// <summary>
         /// An IP address.  Example: `192.168.0.3`
         /// </summary>
-        public readonly string IpAddress;
+        public readonly string? IpAddress;
         /// <summary>
         /// Whether the IP address is public or private.
         /// </summary>
-        public readonly bool IsPublic;
+        public readonly bool? IsPublic;
         /// <summary>
         /// Pre-created public IP that will be used as the IP of this load balancer. This reserved IP will not be deleted when load balancer is deleted. This ip should not be already mapped to any other resource.
         /// </summary>
@@ -28,9 +28,9 @@ namespace Pulumi.Oci.LoadBalancer.Outputs
 
         [OutputConstructor]
         private GetLoadBalancersLoadBalancerIpAddressDetailResult(
-            string ipAddress,
+            string? ipAddress,
 
-            bool isPublic,
+            bool? isPublic,
 
             ImmutableArray<Outputs.GetLoadBalancersLoadBalancerIpAddressDetailReservedIpResult> reservedIps)
         {

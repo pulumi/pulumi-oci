@@ -87,14 +87,14 @@ public class Usage extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="compartmentDepth", refs={Double.class}, tree="[0]")
-    private Output<Double> compartmentDepth;
+    private Output</* @Nullable */ Double> compartmentDepth;
 
     /**
      * @return The compartment depth level.
      * 
      */
-    public Output<Double> compartmentDepth() {
-        return this.compartmentDepth;
+    public Output<Optional<Double>> compartmentDepth() {
+        return Codegen.optional(this.compartmentDepth);
     }
     /**
      * The filter object for query usage.
@@ -115,14 +115,14 @@ public class Usage extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="forecast", refs={UsageForecast.class}, tree="[0]")
-    private Output<UsageForecast> forecast;
+    private Output</* @Nullable */ UsageForecast> forecast;
 
     /**
      * @return Forecast configuration of usage/cost.
      * 
      */
-    public Output<UsageForecast> forecast() {
-        return this.forecast;
+    public Output<Optional<UsageForecast>> forecast() {
+        return Codegen.optional(this.forecast);
     }
     /**
      * The usage granularity. HOURLY - Hourly data aggregation. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation. TOTAL - Not yet supported.
@@ -143,70 +143,70 @@ public class Usage extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="groupBies", refs={List.class,String.class}, tree="[0,1]")
-    private Output<List<String>> groupBies;
+    private Output</* @Nullable */ List<String>> groupBies;
 
     /**
      * @return Aggregate the result by. example: `[&#34;tagNamespace&#34;, &#34;tagKey&#34;, &#34;tagValue&#34;, &#34;service&#34;, &#34;skuName&#34;, &#34;skuPartNumber&#34;, &#34;unit&#34;, &#34;compartmentName&#34;, &#34;compartmentPath&#34;, &#34;compartmentId&#34;, &#34;platform&#34;, &#34;region&#34;, &#34;logicalAd&#34;, &#34;resourceId&#34;, &#34;tenantId&#34;, &#34;tenantName&#34;]`
      * 
      */
-    public Output<List<String>> groupBies() {
-        return this.groupBies;
+    public Output<Optional<List<String>>> groupBies() {
+        return Codegen.optional(this.groupBies);
     }
     /**
      * GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only supports one tag in the list. For example: `[{&#34;namespace&#34;:&#34;oracle&#34;, &#34;key&#34;:&#34;createdBy&#34;]`
      * 
      */
     @Export(name="groupByTags", refs={List.class,UsageGroupByTag.class}, tree="[0,1]")
-    private Output<List<UsageGroupByTag>> groupByTags;
+    private Output</* @Nullable */ List<UsageGroupByTag>> groupByTags;
 
     /**
      * @return GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only supports one tag in the list. For example: `[{&#34;namespace&#34;:&#34;oracle&#34;, &#34;key&#34;:&#34;createdBy&#34;]`
      * 
      */
-    public Output<List<UsageGroupByTag>> groupByTags() {
-        return this.groupByTags;
+    public Output<Optional<List<UsageGroupByTag>>> groupByTags() {
+        return Codegen.optional(this.groupByTags);
     }
     /**
      * Whether aggregated by time. If isAggregateByTime is true, all usage/cost over the query time period will be added up.
      * 
      */
     @Export(name="isAggregateByTime", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isAggregateByTime;
+    private Output</* @Nullable */ Boolean> isAggregateByTime;
 
     /**
      * @return Whether aggregated by time. If isAggregateByTime is true, all usage/cost over the query time period will be added up.
      * 
      */
-    public Output<Boolean> isAggregateByTime() {
-        return this.isAggregateByTime;
+    public Output<Optional<Boolean>> isAggregateByTime() {
+        return Codegen.optional(this.isAggregateByTime);
     }
     /**
      * A list of usage items.
      * 
      */
     @Export(name="items", refs={List.class,UsageItem.class}, tree="[0,1]")
-    private Output<List<UsageItem>> items;
+    private Output</* @Nullable */ List<UsageItem>> items;
 
     /**
      * @return A list of usage items.
      * 
      */
-    public Output<List<UsageItem>> items() {
-        return this.items;
+    public Output<Optional<List<UsageItem>>> items() {
+        return Codegen.optional(this.items);
     }
     /**
      * The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data. Credit - Query the credit adjustments data. ExpiredCredit - Query the expired credits data. AllCredit - Query the credit adjustments and expired credit.
      * 
      */
     @Export(name="queryType", refs={String.class}, tree="[0]")
-    private Output<String> queryType;
+    private Output</* @Nullable */ String> queryType;
 
     /**
      * @return The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data. Credit - Query the credit adjustments data. ExpiredCredit - Query the expired credits data. AllCredit - Query the credit adjustments and expired credit.
      * 
      */
-    public Output<String> queryType() {
-        return this.queryType;
+    public Output<Optional<String>> queryType() {
+        return Codegen.optional(this.queryType);
     }
     /**
      * Tenant ID.

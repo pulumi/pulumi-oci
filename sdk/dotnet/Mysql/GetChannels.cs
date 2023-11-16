@@ -212,7 +212,7 @@ namespace Pulumi.Oci.Mysql
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Whether the Channel has been enabled by the user.
         /// </summary>
@@ -236,7 +236,7 @@ namespace Pulumi.Oci.Mysql
 
             ImmutableArray<Outputs.GetChannelsFilterResult> filters,
 
-            string id,
+            string? id,
 
             bool? isEnabled,
 

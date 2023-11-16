@@ -57,13 +57,13 @@ namespace Pulumi.Oci.DataCatalog
         /// OCID of the user who created the data asset.
         /// </summary>
         [Output("createdById")]
-        public Output<string> CreatedById { get; private set; } = null!;
+        public Output<string?> CreatedById { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Detailed description of the data asset.
         /// </summary>
         [Output("description")]
-        public Output<string> Description { get; private set; } = null!;
+        public Output<string?> Description { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) A user-friendly display name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
@@ -75,46 +75,46 @@ namespace Pulumi.Oci.DataCatalog
         /// External URI that can be used to reference the object. Format will differ based on the type of object.
         /// </summary>
         [Output("externalKey")]
-        public Output<string> ExternalKey { get; private set; } = null!;
+        public Output<string?> ExternalKey { get; private set; } = null!;
 
         /// <summary>
         /// Unique data asset key that is immutable.
         /// </summary>
         [Output("key")]
-        public Output<string> Key { get; private set; } = null!;
+        public Output<string?> Key { get; private set; } = null!;
 
         /// <summary>
         /// A message describing the current state in more detail. An object not in ACTIVE state may have functional limitations, see service documentation for details.
         /// </summary>
         [Output("lifecycleDetails")]
-        public Output<string> LifecycleDetails { get; private set; } = null!;
+        public Output<string?> LifecycleDetails { get; private set; } = null!;
 
         [Output("properties")]
-        public Output<ImmutableDictionary<string, object>> Properties { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> Properties { get; private set; } = null!;
 
         /// <summary>
         /// The current state of the data asset.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the data asset was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2019-03-25T21:10:29.600Z`
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// The last time that a harvest was performed on the data asset. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
         /// </summary>
         [Output("timeHarvested")]
-        public Output<string> TimeHarvested { get; private set; } = null!;
+        public Output<string?> TimeHarvested { get; private set; } = null!;
 
         /// <summary>
         /// The last time that any change was made to the data asset. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
         /// </summary>
         [Output("timeUpdated")]
-        public Output<string> TimeUpdated { get; private set; } = null!;
+        public Output<string?> TimeUpdated { get; private set; } = null!;
 
         /// <summary>
         /// The key of the data asset type. This can be obtained via the '/types' endpoint.
@@ -130,13 +130,13 @@ namespace Pulumi.Oci.DataCatalog
         /// OCID of the user who last modified the data asset.
         /// </summary>
         [Output("updatedById")]
-        public Output<string> UpdatedById { get; private set; } = null!;
+        public Output<string?> UpdatedById { get; private set; } = null!;
 
         /// <summary>
         /// URI to the data asset instance in the API.
         /// </summary>
         [Output("uri")]
-        public Output<string> Uri { get; private set; } = null!;
+        public Output<string?> Uri { get; private set; } = null!;
 
 
         /// <summary>

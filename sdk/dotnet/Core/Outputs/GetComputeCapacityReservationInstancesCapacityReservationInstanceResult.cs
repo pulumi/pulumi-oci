@@ -16,23 +16,23 @@ namespace Pulumi.Oci.Core.Outputs
         /// <summary>
         /// The name of the availability domain.  Example: `Uocm:PHX-AD-1`
         /// </summary>
-        public readonly string AvailabilityDomain;
+        public readonly string? AvailabilityDomain;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// The fault domain the instance is running in.
         /// </summary>
-        public readonly string FaultDomain;
+        public readonly string? FaultDomain;
         /// <summary>
         /// The OCID of the instance.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The shape of the instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
         /// </summary>
-        public readonly string Shape;
+        public readonly string? Shape;
         /// <summary>
         /// The shape configuration requested when launching instances in a compute capacity reservation.
         /// </summary>
@@ -40,15 +40,15 @@ namespace Pulumi.Oci.Core.Outputs
 
         [OutputConstructor]
         private GetComputeCapacityReservationInstancesCapacityReservationInstanceResult(
-            string availabilityDomain,
+            string? availabilityDomain,
 
-            string compartmentId,
+            string? compartmentId,
 
-            string faultDomain,
+            string? faultDomain,
 
-            string id,
+            string? id,
 
-            string shape,
+            string? shape,
 
             ImmutableArray<Outputs.GetComputeCapacityReservationInstancesCapacityReservationInstanceShapeConfigResult> shapeConfigs)
         {

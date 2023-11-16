@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 var _ = internal.GetEnvOrDefault
@@ -63,12 +62,6 @@ func (i AtCustomerCccInfrastructureInfrastructureInventoryArgs) ToAtCustomerCccI
 	return pulumi.ToOutputWithContext(ctx, i).(AtCustomerCccInfrastructureInfrastructureInventoryOutput)
 }
 
-func (i AtCustomerCccInfrastructureInfrastructureInventoryArgs) ToOutput(ctx context.Context) pulumix.Output[AtCustomerCccInfrastructureInfrastructureInventory] {
-	return pulumix.Output[AtCustomerCccInfrastructureInfrastructureInventory]{
-		OutputState: i.ToAtCustomerCccInfrastructureInfrastructureInventoryOutputWithContext(ctx).OutputState,
-	}
-}
-
 // AtCustomerCccInfrastructureInfrastructureInventoryArrayInput is an input type that accepts AtCustomerCccInfrastructureInfrastructureInventoryArray and AtCustomerCccInfrastructureInfrastructureInventoryArrayOutput values.
 // You can construct a concrete instance of `AtCustomerCccInfrastructureInfrastructureInventoryArrayInput` via:
 //
@@ -94,12 +87,6 @@ func (i AtCustomerCccInfrastructureInfrastructureInventoryArray) ToAtCustomerCcc
 	return pulumi.ToOutputWithContext(ctx, i).(AtCustomerCccInfrastructureInfrastructureInventoryArrayOutput)
 }
 
-func (i AtCustomerCccInfrastructureInfrastructureInventoryArray) ToOutput(ctx context.Context) pulumix.Output[[]AtCustomerCccInfrastructureInfrastructureInventory] {
-	return pulumix.Output[[]AtCustomerCccInfrastructureInfrastructureInventory]{
-		OutputState: i.ToAtCustomerCccInfrastructureInfrastructureInventoryArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type AtCustomerCccInfrastructureInfrastructureInventoryOutput struct{ *pulumi.OutputState }
 
 func (AtCustomerCccInfrastructureInfrastructureInventoryOutput) ElementType() reflect.Type {
@@ -112,12 +99,6 @@ func (o AtCustomerCccInfrastructureInfrastructureInventoryOutput) ToAtCustomerCc
 
 func (o AtCustomerCccInfrastructureInfrastructureInventoryOutput) ToAtCustomerCccInfrastructureInfrastructureInventoryOutputWithContext(ctx context.Context) AtCustomerCccInfrastructureInfrastructureInventoryOutput {
 	return o
-}
-
-func (o AtCustomerCccInfrastructureInfrastructureInventoryOutput) ToOutput(ctx context.Context) pulumix.Output[AtCustomerCccInfrastructureInfrastructureInventory] {
-	return pulumix.Output[AtCustomerCccInfrastructureInfrastructureInventory]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The number of storage trays in the Compute Cloud@Customer infrastructure rack that are designated for capacity storage.
@@ -157,12 +138,6 @@ func (o AtCustomerCccInfrastructureInfrastructureInventoryArrayOutput) ToAtCusto
 
 func (o AtCustomerCccInfrastructureInfrastructureInventoryArrayOutput) ToAtCustomerCccInfrastructureInfrastructureInventoryArrayOutputWithContext(ctx context.Context) AtCustomerCccInfrastructureInfrastructureInventoryArrayOutput {
 	return o
-}
-
-func (o AtCustomerCccInfrastructureInfrastructureInventoryArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]AtCustomerCccInfrastructureInfrastructureInventory] {
-	return pulumix.Output[[]AtCustomerCccInfrastructureInfrastructureInventory]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o AtCustomerCccInfrastructureInfrastructureInventoryArrayOutput) Index(i pulumi.IntInput) AtCustomerCccInfrastructureInfrastructureInventoryOutput {
@@ -260,12 +235,6 @@ func (i AtCustomerCccInfrastructureInfrastructureNetworkConfigurationArgs) ToAtC
 	return pulumi.ToOutputWithContext(ctx, i).(AtCustomerCccInfrastructureInfrastructureNetworkConfigurationOutput)
 }
 
-func (i AtCustomerCccInfrastructureInfrastructureNetworkConfigurationArgs) ToOutput(ctx context.Context) pulumix.Output[AtCustomerCccInfrastructureInfrastructureNetworkConfiguration] {
-	return pulumix.Output[AtCustomerCccInfrastructureInfrastructureNetworkConfiguration]{
-		OutputState: i.ToAtCustomerCccInfrastructureInfrastructureNetworkConfigurationOutputWithContext(ctx).OutputState,
-	}
-}
-
 // AtCustomerCccInfrastructureInfrastructureNetworkConfigurationArrayInput is an input type that accepts AtCustomerCccInfrastructureInfrastructureNetworkConfigurationArray and AtCustomerCccInfrastructureInfrastructureNetworkConfigurationArrayOutput values.
 // You can construct a concrete instance of `AtCustomerCccInfrastructureInfrastructureNetworkConfigurationArrayInput` via:
 //
@@ -291,12 +260,6 @@ func (i AtCustomerCccInfrastructureInfrastructureNetworkConfigurationArray) ToAt
 	return pulumi.ToOutputWithContext(ctx, i).(AtCustomerCccInfrastructureInfrastructureNetworkConfigurationArrayOutput)
 }
 
-func (i AtCustomerCccInfrastructureInfrastructureNetworkConfigurationArray) ToOutput(ctx context.Context) pulumix.Output[[]AtCustomerCccInfrastructureInfrastructureNetworkConfiguration] {
-	return pulumix.Output[[]AtCustomerCccInfrastructureInfrastructureNetworkConfiguration]{
-		OutputState: i.ToAtCustomerCccInfrastructureInfrastructureNetworkConfigurationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type AtCustomerCccInfrastructureInfrastructureNetworkConfigurationOutput struct{ *pulumi.OutputState }
 
 func (AtCustomerCccInfrastructureInfrastructureNetworkConfigurationOutput) ElementType() reflect.Type {
@@ -309,12 +272,6 @@ func (o AtCustomerCccInfrastructureInfrastructureNetworkConfigurationOutput) ToA
 
 func (o AtCustomerCccInfrastructureInfrastructureNetworkConfigurationOutput) ToAtCustomerCccInfrastructureInfrastructureNetworkConfigurationOutputWithContext(ctx context.Context) AtCustomerCccInfrastructureInfrastructureNetworkConfigurationOutput {
 	return o
-}
-
-func (o AtCustomerCccInfrastructureInfrastructureNetworkConfigurationOutput) ToOutput(ctx context.Context) pulumix.Output[AtCustomerCccInfrastructureInfrastructureNetworkConfiguration] {
-	return pulumix.Output[AtCustomerCccInfrastructureInfrastructureNetworkConfiguration]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The domain name system (DNS) addresses that the Compute Cloud@Customer infrastructure uses for the data center network.
@@ -420,12 +377,6 @@ func (o AtCustomerCccInfrastructureInfrastructureNetworkConfigurationArrayOutput
 	return o
 }
 
-func (o AtCustomerCccInfrastructureInfrastructureNetworkConfigurationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]AtCustomerCccInfrastructureInfrastructureNetworkConfiguration] {
-	return pulumix.Output[[]AtCustomerCccInfrastructureInfrastructureNetworkConfiguration]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o AtCustomerCccInfrastructureInfrastructureNetworkConfigurationArrayOutput) Index(i pulumi.IntInput) AtCustomerCccInfrastructureInfrastructureNetworkConfigurationOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) AtCustomerCccInfrastructureInfrastructureNetworkConfiguration {
 		return vs[0].([]AtCustomerCccInfrastructureInfrastructureNetworkConfiguration)[vs[1].(int)]
@@ -473,12 +424,6 @@ func (i AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastruct
 	return pulumi.ToOutputWithContext(ctx, i).(AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicOutput)
 }
 
-func (i AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicArgs) ToOutput(ctx context.Context) pulumix.Output[AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamic] {
-	return pulumix.Output[AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamic]{
-		OutputState: i.ToAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicOutputWithContext(ctx).OutputState,
-	}
-}
-
 // AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicArrayInput is an input type that accepts AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicArray and AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicArrayOutput values.
 // You can construct a concrete instance of `AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicArrayInput` via:
 //
@@ -504,12 +449,6 @@ func (i AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastruct
 	return pulumi.ToOutputWithContext(ctx, i).(AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicArrayOutput)
 }
 
-func (i AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicArray) ToOutput(ctx context.Context) pulumix.Output[[]AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamic] {
-	return pulumix.Output[[]AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamic]{
-		OutputState: i.ToAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicOutput struct{ *pulumi.OutputState }
 
 func (AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicOutput) ElementType() reflect.Type {
@@ -522,12 +461,6 @@ func (o AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastruct
 
 func (o AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicOutput) ToAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicOutputWithContext(ctx context.Context) AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicOutput {
 	return o
-}
-
-func (o AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicOutput) ToOutput(ctx context.Context) pulumix.Output[AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamic] {
-	return pulumix.Output[AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamic]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The topology in use for the Border Gateway Protocol (BGP) configuration.
@@ -563,12 +496,6 @@ func (o AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastruct
 
 func (o AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicArrayOutput) ToAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicArrayOutputWithContext(ctx context.Context) AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicArrayOutput {
 	return o
-}
-
-func (o AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamic] {
-	return pulumix.Output[[]AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamic]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicArrayOutput) Index(i pulumi.IntInput) AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicOutput {
@@ -614,12 +541,6 @@ func (i AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastruct
 	return pulumi.ToOutputWithContext(ctx, i).(AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationOutput)
 }
 
-func (i AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationArgs) ToOutput(ctx context.Context) pulumix.Output[AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformation] {
-	return pulumix.Output[AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformation]{
-		OutputState: i.ToAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationOutputWithContext(ctx).OutputState,
-	}
-}
-
 // AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationArrayInput is an input type that accepts AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationArray and AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationArrayOutput values.
 // You can construct a concrete instance of `AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationArrayInput` via:
 //
@@ -645,12 +566,6 @@ func (i AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastruct
 	return pulumi.ToOutputWithContext(ctx, i).(AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationArrayOutput)
 }
 
-func (i AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationArray) ToOutput(ctx context.Context) pulumix.Output[[]AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformation] {
-	return pulumix.Output[[]AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformation]{
-		OutputState: i.ToAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationOutput struct{ *pulumi.OutputState }
 
 func (AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationOutput) ElementType() reflect.Type {
@@ -663,12 +578,6 @@ func (o AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastruct
 
 func (o AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationOutput) ToAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationOutputWithContext(ctx context.Context) AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationOutput {
 	return o
-}
-
-func (o AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationOutput) ToOutput(ctx context.Context) pulumix.Output[AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformation] {
-	return pulumix.Output[AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformation]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The Autonomous System Number (ASN) of the peer network.
@@ -697,12 +606,6 @@ func (o AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastruct
 
 func (o AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationArrayOutput) ToAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationArrayOutputWithContext(ctx context.Context) AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationArrayOutput {
 	return o
-}
-
-func (o AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformation] {
-	return pulumix.Output[[]AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformation]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationArrayOutput) Index(i pulumi.IntInput) AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationOutput {
@@ -748,12 +651,6 @@ func (i AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastruct
 	return pulumi.ToOutputWithContext(ctx, i).(AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStaticOutput)
 }
 
-func (i AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStaticArgs) ToOutput(ctx context.Context) pulumix.Output[AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStatic] {
-	return pulumix.Output[AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStatic]{
-		OutputState: i.ToAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStaticOutputWithContext(ctx).OutputState,
-	}
-}
-
 // AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStaticArrayInput is an input type that accepts AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStaticArray and AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStaticArrayOutput values.
 // You can construct a concrete instance of `AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStaticArrayInput` via:
 //
@@ -779,12 +676,6 @@ func (i AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastruct
 	return pulumi.ToOutputWithContext(ctx, i).(AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStaticArrayOutput)
 }
 
-func (i AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStaticArray) ToOutput(ctx context.Context) pulumix.Output[[]AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStatic] {
-	return pulumix.Output[[]AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStatic]{
-		OutputState: i.ToAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStaticArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStaticOutput struct{ *pulumi.OutputState }
 
 func (AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStaticOutput) ElementType() reflect.Type {
@@ -797,12 +688,6 @@ func (o AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastruct
 
 func (o AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStaticOutput) ToAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStaticOutputWithContext(ctx context.Context) AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStaticOutput {
 	return o
-}
-
-func (o AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStaticOutput) ToOutput(ctx context.Context) pulumix.Output[AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStatic] {
-	return pulumix.Output[AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStatic]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The uplink Hot Standby Router Protocol (HSRP) group value for the switch in the Compute Cloud@Customer infrastructure.
@@ -831,12 +716,6 @@ func (o AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastruct
 
 func (o AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStaticArrayOutput) ToAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStaticArrayOutputWithContext(ctx context.Context) AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStaticArrayOutput {
 	return o
-}
-
-func (o AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStaticArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStatic] {
-	return pulumix.Output[[]AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStatic]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStaticArrayOutput) Index(i pulumi.IntInput) AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStaticOutput {
@@ -882,12 +761,6 @@ func (i AtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementN
 	return pulumi.ToOutputWithContext(ctx, i).(AtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNodeOutput)
 }
 
-func (i AtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNodeArgs) ToOutput(ctx context.Context) pulumix.Output[AtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNode] {
-	return pulumix.Output[AtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNode]{
-		OutputState: i.ToAtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNodeOutputWithContext(ctx).OutputState,
-	}
-}
-
 // AtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNodeArrayInput is an input type that accepts AtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNodeArray and AtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNodeArrayOutput values.
 // You can construct a concrete instance of `AtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNodeArrayInput` via:
 //
@@ -913,12 +786,6 @@ func (i AtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementN
 	return pulumi.ToOutputWithContext(ctx, i).(AtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNodeArrayOutput)
 }
 
-func (i AtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNodeArray) ToOutput(ctx context.Context) pulumix.Output[[]AtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNode] {
-	return pulumix.Output[[]AtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNode]{
-		OutputState: i.ToAtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNodeArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type AtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNodeOutput struct{ *pulumi.OutputState }
 
 func (AtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNodeOutput) ElementType() reflect.Type {
@@ -931,12 +798,6 @@ func (o AtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementN
 
 func (o AtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNodeOutput) ToAtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNodeOutputWithContext(ctx context.Context) AtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNodeOutput {
 	return o
-}
-
-func (o AtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNodeOutput) ToOutput(ctx context.Context) pulumix.Output[AtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNode] {
-	return pulumix.Output[AtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNode]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Hostname for interface to the management node.
@@ -965,12 +826,6 @@ func (o AtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementN
 
 func (o AtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNodeArrayOutput) ToAtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNodeArrayOutputWithContext(ctx context.Context) AtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNodeArrayOutput {
 	return o
-}
-
-func (o AtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNodeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]AtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNode] {
-	return pulumix.Output[[]AtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNode]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o AtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNodeArrayOutput) Index(i pulumi.IntInput) AtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNodeOutput {
@@ -1024,12 +879,6 @@ func (i AtCustomerCccInfrastructureUpgradeInformationArgs) ToAtCustomerCccInfras
 	return pulumi.ToOutputWithContext(ctx, i).(AtCustomerCccInfrastructureUpgradeInformationOutput)
 }
 
-func (i AtCustomerCccInfrastructureUpgradeInformationArgs) ToOutput(ctx context.Context) pulumix.Output[AtCustomerCccInfrastructureUpgradeInformation] {
-	return pulumix.Output[AtCustomerCccInfrastructureUpgradeInformation]{
-		OutputState: i.ToAtCustomerCccInfrastructureUpgradeInformationOutputWithContext(ctx).OutputState,
-	}
-}
-
 // AtCustomerCccInfrastructureUpgradeInformationArrayInput is an input type that accepts AtCustomerCccInfrastructureUpgradeInformationArray and AtCustomerCccInfrastructureUpgradeInformationArrayOutput values.
 // You can construct a concrete instance of `AtCustomerCccInfrastructureUpgradeInformationArrayInput` via:
 //
@@ -1055,12 +904,6 @@ func (i AtCustomerCccInfrastructureUpgradeInformationArray) ToAtCustomerCccInfra
 	return pulumi.ToOutputWithContext(ctx, i).(AtCustomerCccInfrastructureUpgradeInformationArrayOutput)
 }
 
-func (i AtCustomerCccInfrastructureUpgradeInformationArray) ToOutput(ctx context.Context) pulumix.Output[[]AtCustomerCccInfrastructureUpgradeInformation] {
-	return pulumix.Output[[]AtCustomerCccInfrastructureUpgradeInformation]{
-		OutputState: i.ToAtCustomerCccInfrastructureUpgradeInformationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type AtCustomerCccInfrastructureUpgradeInformationOutput struct{ *pulumi.OutputState }
 
 func (AtCustomerCccInfrastructureUpgradeInformationOutput) ElementType() reflect.Type {
@@ -1073,12 +916,6 @@ func (o AtCustomerCccInfrastructureUpgradeInformationOutput) ToAtCustomerCccInfr
 
 func (o AtCustomerCccInfrastructureUpgradeInformationOutput) ToAtCustomerCccInfrastructureUpgradeInformationOutputWithContext(ctx context.Context) AtCustomerCccInfrastructureUpgradeInformationOutput {
 	return o
-}
-
-func (o AtCustomerCccInfrastructureUpgradeInformationOutput) ToOutput(ctx context.Context) pulumix.Output[AtCustomerCccInfrastructureUpgradeInformation] {
-	return pulumix.Output[AtCustomerCccInfrastructureUpgradeInformation]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The current version of software installed on the Compute Cloud@Customer infrastructure.
@@ -1113,12 +950,6 @@ func (o AtCustomerCccInfrastructureUpgradeInformationArrayOutput) ToAtCustomerCc
 
 func (o AtCustomerCccInfrastructureUpgradeInformationArrayOutput) ToAtCustomerCccInfrastructureUpgradeInformationArrayOutputWithContext(ctx context.Context) AtCustomerCccInfrastructureUpgradeInformationArrayOutput {
 	return o
-}
-
-func (o AtCustomerCccInfrastructureUpgradeInformationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]AtCustomerCccInfrastructureUpgradeInformation] {
-	return pulumix.Output[[]AtCustomerCccInfrastructureUpgradeInformation]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o AtCustomerCccInfrastructureUpgradeInformationArrayOutput) Index(i pulumi.IntInput) AtCustomerCccInfrastructureUpgradeInformationOutput {
@@ -1176,12 +1007,6 @@ func (i AtCustomerCccUpgradeScheduleEventArgs) ToAtCustomerCccUpgradeScheduleEve
 	return pulumi.ToOutputWithContext(ctx, i).(AtCustomerCccUpgradeScheduleEventOutput)
 }
 
-func (i AtCustomerCccUpgradeScheduleEventArgs) ToOutput(ctx context.Context) pulumix.Output[AtCustomerCccUpgradeScheduleEvent] {
-	return pulumix.Output[AtCustomerCccUpgradeScheduleEvent]{
-		OutputState: i.ToAtCustomerCccUpgradeScheduleEventOutputWithContext(ctx).OutputState,
-	}
-}
-
 // AtCustomerCccUpgradeScheduleEventArrayInput is an input type that accepts AtCustomerCccUpgradeScheduleEventArray and AtCustomerCccUpgradeScheduleEventArrayOutput values.
 // You can construct a concrete instance of `AtCustomerCccUpgradeScheduleEventArrayInput` via:
 //
@@ -1207,12 +1032,6 @@ func (i AtCustomerCccUpgradeScheduleEventArray) ToAtCustomerCccUpgradeScheduleEv
 	return pulumi.ToOutputWithContext(ctx, i).(AtCustomerCccUpgradeScheduleEventArrayOutput)
 }
 
-func (i AtCustomerCccUpgradeScheduleEventArray) ToOutput(ctx context.Context) pulumix.Output[[]AtCustomerCccUpgradeScheduleEvent] {
-	return pulumix.Output[[]AtCustomerCccUpgradeScheduleEvent]{
-		OutputState: i.ToAtCustomerCccUpgradeScheduleEventArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type AtCustomerCccUpgradeScheduleEventOutput struct{ *pulumi.OutputState }
 
 func (AtCustomerCccUpgradeScheduleEventOutput) ElementType() reflect.Type {
@@ -1225,12 +1044,6 @@ func (o AtCustomerCccUpgradeScheduleEventOutput) ToAtCustomerCccUpgradeScheduleE
 
 func (o AtCustomerCccUpgradeScheduleEventOutput) ToAtCustomerCccUpgradeScheduleEventOutputWithContext(ctx context.Context) AtCustomerCccUpgradeScheduleEventOutput {
 	return o
-}
-
-func (o AtCustomerCccUpgradeScheduleEventOutput) ToOutput(ctx context.Context) pulumix.Output[AtCustomerCccUpgradeScheduleEvent] {
-	return pulumix.Output[AtCustomerCccUpgradeScheduleEvent]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) A description of the Compute Cloud@Customer upgrade schedule time block.
@@ -1272,12 +1085,6 @@ func (o AtCustomerCccUpgradeScheduleEventArrayOutput) ToAtCustomerCccUpgradeSche
 	return o
 }
 
-func (o AtCustomerCccUpgradeScheduleEventArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]AtCustomerCccUpgradeScheduleEvent] {
-	return pulumix.Output[[]AtCustomerCccUpgradeScheduleEvent]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o AtCustomerCccUpgradeScheduleEventArrayOutput) Index(i pulumi.IntInput) AtCustomerCccUpgradeScheduleEventOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) AtCustomerCccUpgradeScheduleEvent {
 		return vs[0].([]AtCustomerCccUpgradeScheduleEvent)[vs[1].(int)]
@@ -1286,15 +1093,15 @@ func (o AtCustomerCccUpgradeScheduleEventArrayOutput) Index(i pulumi.IntInput) A
 
 type GetAtCustomerCccInfrastructureInfrastructureInventory struct {
 	// The number of storage trays in the Compute Cloud@Customer infrastructure rack that are designated for capacity storage.
-	CapacityStorageTrayCount int `pulumi:"capacityStorageTrayCount"`
+	CapacityStorageTrayCount *int `pulumi:"capacityStorageTrayCount"`
 	// The number of compute nodes that are available and usable on the Compute Cloud@Customer infrastructure rack. There is no distinction of compute node type in this information.
-	ComputeNodeCount int `pulumi:"computeNodeCount"`
+	ComputeNodeCount *int `pulumi:"computeNodeCount"`
 	// The number of management nodes that are available and in active use on the Compute Cloud@Customer infrastructure rack.
-	ManagementNodeCount int `pulumi:"managementNodeCount"`
+	ManagementNodeCount *int `pulumi:"managementNodeCount"`
 	// The number of storage trays in the Compute Cloud@Customer infrastructure rack that are designated for performance storage.
-	PerformanceStorageTrayCount int `pulumi:"performanceStorageTrayCount"`
+	PerformanceStorageTrayCount *int `pulumi:"performanceStorageTrayCount"`
 	// The serial number of the Compute Cloud@Customer infrastructure rack.
-	SerialNumber string `pulumi:"serialNumber"`
+	SerialNumber *string `pulumi:"serialNumber"`
 }
 
 // GetAtCustomerCccInfrastructureInfrastructureInventoryInput is an input type that accepts GetAtCustomerCccInfrastructureInfrastructureInventoryArgs and GetAtCustomerCccInfrastructureInfrastructureInventoryOutput values.
@@ -1310,15 +1117,15 @@ type GetAtCustomerCccInfrastructureInfrastructureInventoryInput interface {
 
 type GetAtCustomerCccInfrastructureInfrastructureInventoryArgs struct {
 	// The number of storage trays in the Compute Cloud@Customer infrastructure rack that are designated for capacity storage.
-	CapacityStorageTrayCount pulumi.IntInput `pulumi:"capacityStorageTrayCount"`
+	CapacityStorageTrayCount pulumi.IntPtrInput `pulumi:"capacityStorageTrayCount"`
 	// The number of compute nodes that are available and usable on the Compute Cloud@Customer infrastructure rack. There is no distinction of compute node type in this information.
-	ComputeNodeCount pulumi.IntInput `pulumi:"computeNodeCount"`
+	ComputeNodeCount pulumi.IntPtrInput `pulumi:"computeNodeCount"`
 	// The number of management nodes that are available and in active use on the Compute Cloud@Customer infrastructure rack.
-	ManagementNodeCount pulumi.IntInput `pulumi:"managementNodeCount"`
+	ManagementNodeCount pulumi.IntPtrInput `pulumi:"managementNodeCount"`
 	// The number of storage trays in the Compute Cloud@Customer infrastructure rack that are designated for performance storage.
-	PerformanceStorageTrayCount pulumi.IntInput `pulumi:"performanceStorageTrayCount"`
+	PerformanceStorageTrayCount pulumi.IntPtrInput `pulumi:"performanceStorageTrayCount"`
 	// The serial number of the Compute Cloud@Customer infrastructure rack.
-	SerialNumber pulumi.StringInput `pulumi:"serialNumber"`
+	SerialNumber pulumi.StringPtrInput `pulumi:"serialNumber"`
 }
 
 func (GetAtCustomerCccInfrastructureInfrastructureInventoryArgs) ElementType() reflect.Type {
@@ -1331,12 +1138,6 @@ func (i GetAtCustomerCccInfrastructureInfrastructureInventoryArgs) ToGetAtCustom
 
 func (i GetAtCustomerCccInfrastructureInfrastructureInventoryArgs) ToGetAtCustomerCccInfrastructureInfrastructureInventoryOutputWithContext(ctx context.Context) GetAtCustomerCccInfrastructureInfrastructureInventoryOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetAtCustomerCccInfrastructureInfrastructureInventoryOutput)
-}
-
-func (i GetAtCustomerCccInfrastructureInfrastructureInventoryArgs) ToOutput(ctx context.Context) pulumix.Output[GetAtCustomerCccInfrastructureInfrastructureInventory] {
-	return pulumix.Output[GetAtCustomerCccInfrastructureInfrastructureInventory]{
-		OutputState: i.ToGetAtCustomerCccInfrastructureInfrastructureInventoryOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetAtCustomerCccInfrastructureInfrastructureInventoryArrayInput is an input type that accepts GetAtCustomerCccInfrastructureInfrastructureInventoryArray and GetAtCustomerCccInfrastructureInfrastructureInventoryArrayOutput values.
@@ -1364,12 +1165,6 @@ func (i GetAtCustomerCccInfrastructureInfrastructureInventoryArray) ToGetAtCusto
 	return pulumi.ToOutputWithContext(ctx, i).(GetAtCustomerCccInfrastructureInfrastructureInventoryArrayOutput)
 }
 
-func (i GetAtCustomerCccInfrastructureInfrastructureInventoryArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAtCustomerCccInfrastructureInfrastructureInventory] {
-	return pulumix.Output[[]GetAtCustomerCccInfrastructureInfrastructureInventory]{
-		OutputState: i.ToGetAtCustomerCccInfrastructureInfrastructureInventoryArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAtCustomerCccInfrastructureInfrastructureInventoryOutput struct{ *pulumi.OutputState }
 
 func (GetAtCustomerCccInfrastructureInfrastructureInventoryOutput) ElementType() reflect.Type {
@@ -1384,37 +1179,31 @@ func (o GetAtCustomerCccInfrastructureInfrastructureInventoryOutput) ToGetAtCust
 	return o
 }
 
-func (o GetAtCustomerCccInfrastructureInfrastructureInventoryOutput) ToOutput(ctx context.Context) pulumix.Output[GetAtCustomerCccInfrastructureInfrastructureInventory] {
-	return pulumix.Output[GetAtCustomerCccInfrastructureInfrastructureInventory]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The number of storage trays in the Compute Cloud@Customer infrastructure rack that are designated for capacity storage.
-func (o GetAtCustomerCccInfrastructureInfrastructureInventoryOutput) CapacityStorageTrayCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetAtCustomerCccInfrastructureInfrastructureInventory) int { return v.CapacityStorageTrayCount }).(pulumi.IntOutput)
+func (o GetAtCustomerCccInfrastructureInfrastructureInventoryOutput) CapacityStorageTrayCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetAtCustomerCccInfrastructureInfrastructureInventory) *int { return v.CapacityStorageTrayCount }).(pulumi.IntPtrOutput)
 }
 
 // The number of compute nodes that are available and usable on the Compute Cloud@Customer infrastructure rack. There is no distinction of compute node type in this information.
-func (o GetAtCustomerCccInfrastructureInfrastructureInventoryOutput) ComputeNodeCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetAtCustomerCccInfrastructureInfrastructureInventory) int { return v.ComputeNodeCount }).(pulumi.IntOutput)
+func (o GetAtCustomerCccInfrastructureInfrastructureInventoryOutput) ComputeNodeCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetAtCustomerCccInfrastructureInfrastructureInventory) *int { return v.ComputeNodeCount }).(pulumi.IntPtrOutput)
 }
 
 // The number of management nodes that are available and in active use on the Compute Cloud@Customer infrastructure rack.
-func (o GetAtCustomerCccInfrastructureInfrastructureInventoryOutput) ManagementNodeCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetAtCustomerCccInfrastructureInfrastructureInventory) int { return v.ManagementNodeCount }).(pulumi.IntOutput)
+func (o GetAtCustomerCccInfrastructureInfrastructureInventoryOutput) ManagementNodeCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetAtCustomerCccInfrastructureInfrastructureInventory) *int { return v.ManagementNodeCount }).(pulumi.IntPtrOutput)
 }
 
 // The number of storage trays in the Compute Cloud@Customer infrastructure rack that are designated for performance storage.
-func (o GetAtCustomerCccInfrastructureInfrastructureInventoryOutput) PerformanceStorageTrayCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetAtCustomerCccInfrastructureInfrastructureInventory) int {
+func (o GetAtCustomerCccInfrastructureInfrastructureInventoryOutput) PerformanceStorageTrayCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetAtCustomerCccInfrastructureInfrastructureInventory) *int {
 		return v.PerformanceStorageTrayCount
-	}).(pulumi.IntOutput)
+	}).(pulumi.IntPtrOutput)
 }
 
 // The serial number of the Compute Cloud@Customer infrastructure rack.
-func (o GetAtCustomerCccInfrastructureInfrastructureInventoryOutput) SerialNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAtCustomerCccInfrastructureInfrastructureInventory) string { return v.SerialNumber }).(pulumi.StringOutput)
+func (o GetAtCustomerCccInfrastructureInfrastructureInventoryOutput) SerialNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAtCustomerCccInfrastructureInfrastructureInventory) *string { return v.SerialNumber }).(pulumi.StringPtrOutput)
 }
 
 type GetAtCustomerCccInfrastructureInfrastructureInventoryArrayOutput struct{ *pulumi.OutputState }
@@ -1429,12 +1218,6 @@ func (o GetAtCustomerCccInfrastructureInfrastructureInventoryArrayOutput) ToGetA
 
 func (o GetAtCustomerCccInfrastructureInfrastructureInventoryArrayOutput) ToGetAtCustomerCccInfrastructureInfrastructureInventoryArrayOutputWithContext(ctx context.Context) GetAtCustomerCccInfrastructureInfrastructureInventoryArrayOutput {
 	return o
-}
-
-func (o GetAtCustomerCccInfrastructureInfrastructureInventoryArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAtCustomerCccInfrastructureInfrastructureInventory] {
-	return pulumix.Output[[]GetAtCustomerCccInfrastructureInfrastructureInventory]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAtCustomerCccInfrastructureInfrastructureInventoryArrayOutput) Index(i pulumi.IntInput) GetAtCustomerCccInfrastructureInfrastructureInventoryOutput {
@@ -1453,27 +1236,27 @@ type GetAtCustomerCccInfrastructureInfrastructureNetworkConfiguration struct {
 	// Information about the management nodes that are provisioned in the Compute Cloud@Customer infrastructure.
 	ManagementNodes []GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNode `pulumi:"managementNodes"`
 	// The hostname corresponding to the virtual IP (VIP) address of the management nodes.
-	MgmtVipHostname string `pulumi:"mgmtVipHostname"`
+	MgmtVipHostname *string `pulumi:"mgmtVipHostname"`
 	// The IP address used as the virtual IP (VIP) address of the management nodes.
-	MgmtVipIp string `pulumi:"mgmtVipIp"`
+	MgmtVipIp *string `pulumi:"mgmtVipIp"`
 	// Addresses of the network spine switches.
 	SpineIps []string `pulumi:"spineIps"`
 	// The spine switch public virtual IP (VIP). Traffic routed to the Compute Cloud@Customer infrastructure and  and virtual cloud networks (VCNs) should have this address as next hop.
-	SpineVip string `pulumi:"spineVip"`
+	SpineVip *string `pulumi:"spineVip"`
 	// Domain name to be used as the base domain for the internal network and by  public facing services.
-	UplinkDomain string `pulumi:"uplinkDomain"`
+	UplinkDomain *string `pulumi:"uplinkDomain"`
 	// Uplink gateway in the datacenter network that the Compute Cloud@Customer connects to.
-	UplinkGatewayIp string `pulumi:"uplinkGatewayIp"`
+	UplinkGatewayIp *string `pulumi:"uplinkGatewayIp"`
 	// Netmask of the subnet that the Compute Cloud@Customer infrastructure is connected to.
-	UplinkNetmask string `pulumi:"uplinkNetmask"`
+	UplinkNetmask *string `pulumi:"uplinkNetmask"`
 	// Number of uplink ports per spine switch. Connectivity is identical on both spine switches. For example, if input is two 100 gigabyte ports; then port-1 and port-2 on both spines will be configured.
-	UplinkPortCount int `pulumi:"uplinkPortCount"`
+	UplinkPortCount *int `pulumi:"uplinkPortCount"`
 	// The port forward error correction (FEC) setting for the uplink port on the Compute Cloud@Customer infrastructure.
-	UplinkPortForwardErrorCorrection string `pulumi:"uplinkPortForwardErrorCorrection"`
+	UplinkPortForwardErrorCorrection *string `pulumi:"uplinkPortForwardErrorCorrection"`
 	// Uplink port speed defined in gigabytes per second. All uplink ports must have identical speed.
-	UplinkPortSpeedInGbps int `pulumi:"uplinkPortSpeedInGbps"`
+	UplinkPortSpeedInGbps *int `pulumi:"uplinkPortSpeedInGbps"`
 	// The virtual local area network (VLAN) maximum transmission unit (MTU) size for the uplink ports.
-	UplinkVlanMtu int `pulumi:"uplinkVlanMtu"`
+	UplinkVlanMtu *int `pulumi:"uplinkVlanMtu"`
 }
 
 // GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInput is an input type that accepts GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationArgs and GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationOutput values.
@@ -1497,27 +1280,27 @@ type GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationArgs struct
 	// Information about the management nodes that are provisioned in the Compute Cloud@Customer infrastructure.
 	ManagementNodes GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNodeArrayInput `pulumi:"managementNodes"`
 	// The hostname corresponding to the virtual IP (VIP) address of the management nodes.
-	MgmtVipHostname pulumi.StringInput `pulumi:"mgmtVipHostname"`
+	MgmtVipHostname pulumi.StringPtrInput `pulumi:"mgmtVipHostname"`
 	// The IP address used as the virtual IP (VIP) address of the management nodes.
-	MgmtVipIp pulumi.StringInput `pulumi:"mgmtVipIp"`
+	MgmtVipIp pulumi.StringPtrInput `pulumi:"mgmtVipIp"`
 	// Addresses of the network spine switches.
 	SpineIps pulumi.StringArrayInput `pulumi:"spineIps"`
 	// The spine switch public virtual IP (VIP). Traffic routed to the Compute Cloud@Customer infrastructure and  and virtual cloud networks (VCNs) should have this address as next hop.
-	SpineVip pulumi.StringInput `pulumi:"spineVip"`
+	SpineVip pulumi.StringPtrInput `pulumi:"spineVip"`
 	// Domain name to be used as the base domain for the internal network and by  public facing services.
-	UplinkDomain pulumi.StringInput `pulumi:"uplinkDomain"`
+	UplinkDomain pulumi.StringPtrInput `pulumi:"uplinkDomain"`
 	// Uplink gateway in the datacenter network that the Compute Cloud@Customer connects to.
-	UplinkGatewayIp pulumi.StringInput `pulumi:"uplinkGatewayIp"`
+	UplinkGatewayIp pulumi.StringPtrInput `pulumi:"uplinkGatewayIp"`
 	// Netmask of the subnet that the Compute Cloud@Customer infrastructure is connected to.
-	UplinkNetmask pulumi.StringInput `pulumi:"uplinkNetmask"`
+	UplinkNetmask pulumi.StringPtrInput `pulumi:"uplinkNetmask"`
 	// Number of uplink ports per spine switch. Connectivity is identical on both spine switches. For example, if input is two 100 gigabyte ports; then port-1 and port-2 on both spines will be configured.
-	UplinkPortCount pulumi.IntInput `pulumi:"uplinkPortCount"`
+	UplinkPortCount pulumi.IntPtrInput `pulumi:"uplinkPortCount"`
 	// The port forward error correction (FEC) setting for the uplink port on the Compute Cloud@Customer infrastructure.
-	UplinkPortForwardErrorCorrection pulumi.StringInput `pulumi:"uplinkPortForwardErrorCorrection"`
+	UplinkPortForwardErrorCorrection pulumi.StringPtrInput `pulumi:"uplinkPortForwardErrorCorrection"`
 	// Uplink port speed defined in gigabytes per second. All uplink ports must have identical speed.
-	UplinkPortSpeedInGbps pulumi.IntInput `pulumi:"uplinkPortSpeedInGbps"`
+	UplinkPortSpeedInGbps pulumi.IntPtrInput `pulumi:"uplinkPortSpeedInGbps"`
 	// The virtual local area network (VLAN) maximum transmission unit (MTU) size for the uplink ports.
-	UplinkVlanMtu pulumi.IntInput `pulumi:"uplinkVlanMtu"`
+	UplinkVlanMtu pulumi.IntPtrInput `pulumi:"uplinkVlanMtu"`
 }
 
 func (GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationArgs) ElementType() reflect.Type {
@@ -1530,12 +1313,6 @@ func (i GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationArgs) To
 
 func (i GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationArgs) ToGetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationOutputWithContext(ctx context.Context) GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationOutput)
-}
-
-func (i GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationArgs) ToOutput(ctx context.Context) pulumix.Output[GetAtCustomerCccInfrastructureInfrastructureNetworkConfiguration] {
-	return pulumix.Output[GetAtCustomerCccInfrastructureInfrastructureNetworkConfiguration]{
-		OutputState: i.ToGetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationArrayInput is an input type that accepts GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationArray and GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationArrayOutput values.
@@ -1563,12 +1340,6 @@ func (i GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationArray) T
 	return pulumi.ToOutputWithContext(ctx, i).(GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationArrayOutput)
 }
 
-func (i GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAtCustomerCccInfrastructureInfrastructureNetworkConfiguration] {
-	return pulumix.Output[[]GetAtCustomerCccInfrastructureInfrastructureNetworkConfiguration]{
-		OutputState: i.ToGetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationOutput struct{ *pulumi.OutputState }
 
 func (GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationOutput) ElementType() reflect.Type {
@@ -1581,12 +1352,6 @@ func (o GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationOutput) 
 
 func (o GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationOutput) ToGetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationOutputWithContext(ctx context.Context) GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationOutput {
 	return o
-}
-
-func (o GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationOutput) ToOutput(ctx context.Context) pulumix.Output[GetAtCustomerCccInfrastructureInfrastructureNetworkConfiguration] {
-	return pulumix.Output[GetAtCustomerCccInfrastructureInfrastructureNetworkConfiguration]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The domain name system (DNS) addresses that the Compute Cloud@Customer infrastructure uses for the data center network.
@@ -1616,15 +1381,15 @@ func (o GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationOutput) 
 }
 
 // The hostname corresponding to the virtual IP (VIP) address of the management nodes.
-func (o GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationOutput) MgmtVipHostname() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAtCustomerCccInfrastructureInfrastructureNetworkConfiguration) string {
+func (o GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationOutput) MgmtVipHostname() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAtCustomerCccInfrastructureInfrastructureNetworkConfiguration) *string {
 		return v.MgmtVipHostname
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The IP address used as the virtual IP (VIP) address of the management nodes.
-func (o GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationOutput) MgmtVipIp() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAtCustomerCccInfrastructureInfrastructureNetworkConfiguration) string { return v.MgmtVipIp }).(pulumi.StringOutput)
+func (o GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationOutput) MgmtVipIp() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAtCustomerCccInfrastructureInfrastructureNetworkConfiguration) *string { return v.MgmtVipIp }).(pulumi.StringPtrOutput)
 }
 
 // Addresses of the network spine switches.
@@ -1633,51 +1398,55 @@ func (o GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationOutput) 
 }
 
 // The spine switch public virtual IP (VIP). Traffic routed to the Compute Cloud@Customer infrastructure and  and virtual cloud networks (VCNs) should have this address as next hop.
-func (o GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationOutput) SpineVip() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAtCustomerCccInfrastructureInfrastructureNetworkConfiguration) string { return v.SpineVip }).(pulumi.StringOutput)
+func (o GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationOutput) SpineVip() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAtCustomerCccInfrastructureInfrastructureNetworkConfiguration) *string { return v.SpineVip }).(pulumi.StringPtrOutput)
 }
 
 // Domain name to be used as the base domain for the internal network and by  public facing services.
-func (o GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationOutput) UplinkDomain() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAtCustomerCccInfrastructureInfrastructureNetworkConfiguration) string { return v.UplinkDomain }).(pulumi.StringOutput)
+func (o GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationOutput) UplinkDomain() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAtCustomerCccInfrastructureInfrastructureNetworkConfiguration) *string {
+		return v.UplinkDomain
+	}).(pulumi.StringPtrOutput)
 }
 
 // Uplink gateway in the datacenter network that the Compute Cloud@Customer connects to.
-func (o GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationOutput) UplinkGatewayIp() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAtCustomerCccInfrastructureInfrastructureNetworkConfiguration) string {
+func (o GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationOutput) UplinkGatewayIp() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAtCustomerCccInfrastructureInfrastructureNetworkConfiguration) *string {
 		return v.UplinkGatewayIp
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Netmask of the subnet that the Compute Cloud@Customer infrastructure is connected to.
-func (o GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationOutput) UplinkNetmask() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAtCustomerCccInfrastructureInfrastructureNetworkConfiguration) string {
+func (o GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationOutput) UplinkNetmask() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAtCustomerCccInfrastructureInfrastructureNetworkConfiguration) *string {
 		return v.UplinkNetmask
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Number of uplink ports per spine switch. Connectivity is identical on both spine switches. For example, if input is two 100 gigabyte ports; then port-1 and port-2 on both spines will be configured.
-func (o GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationOutput) UplinkPortCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetAtCustomerCccInfrastructureInfrastructureNetworkConfiguration) int { return v.UplinkPortCount }).(pulumi.IntOutput)
+func (o GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationOutput) UplinkPortCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetAtCustomerCccInfrastructureInfrastructureNetworkConfiguration) *int {
+		return v.UplinkPortCount
+	}).(pulumi.IntPtrOutput)
 }
 
 // The port forward error correction (FEC) setting for the uplink port on the Compute Cloud@Customer infrastructure.
-func (o GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationOutput) UplinkPortForwardErrorCorrection() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAtCustomerCccInfrastructureInfrastructureNetworkConfiguration) string {
+func (o GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationOutput) UplinkPortForwardErrorCorrection() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAtCustomerCccInfrastructureInfrastructureNetworkConfiguration) *string {
 		return v.UplinkPortForwardErrorCorrection
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Uplink port speed defined in gigabytes per second. All uplink ports must have identical speed.
-func (o GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationOutput) UplinkPortSpeedInGbps() pulumi.IntOutput {
-	return o.ApplyT(func(v GetAtCustomerCccInfrastructureInfrastructureNetworkConfiguration) int {
+func (o GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationOutput) UplinkPortSpeedInGbps() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetAtCustomerCccInfrastructureInfrastructureNetworkConfiguration) *int {
 		return v.UplinkPortSpeedInGbps
-	}).(pulumi.IntOutput)
+	}).(pulumi.IntPtrOutput)
 }
 
 // The virtual local area network (VLAN) maximum transmission unit (MTU) size for the uplink ports.
-func (o GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationOutput) UplinkVlanMtu() pulumi.IntOutput {
-	return o.ApplyT(func(v GetAtCustomerCccInfrastructureInfrastructureNetworkConfiguration) int { return v.UplinkVlanMtu }).(pulumi.IntOutput)
+func (o GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationOutput) UplinkVlanMtu() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetAtCustomerCccInfrastructureInfrastructureNetworkConfiguration) *int { return v.UplinkVlanMtu }).(pulumi.IntPtrOutput)
 }
 
 type GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationArrayOutput struct{ *pulumi.OutputState }
@@ -1694,12 +1463,6 @@ func (o GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationArrayOut
 	return o
 }
 
-func (o GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAtCustomerCccInfrastructureInfrastructureNetworkConfiguration] {
-	return pulumix.Output[[]GetAtCustomerCccInfrastructureInfrastructureNetworkConfiguration]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationArrayOutput) Index(i pulumi.IntInput) GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAtCustomerCccInfrastructureInfrastructureNetworkConfiguration {
 		return vs[0].([]GetAtCustomerCccInfrastructureInfrastructureNetworkConfiguration)[vs[1].(int)]
@@ -1708,9 +1471,9 @@ func (o GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationArrayOut
 
 type GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamic struct {
 	// The topology in use for the Border Gateway Protocol (BGP) configuration.
-	BgpTopology string `pulumi:"bgpTopology"`
+	BgpTopology *string `pulumi:"bgpTopology"`
 	// The Oracle Autonomous System Number (ASN) to control routing and exchange information within the dynamic routing configuration.
-	OracleAsn int `pulumi:"oracleAsn"`
+	OracleAsn *int `pulumi:"oracleAsn"`
 	// The list of peer devices in the dynamic routing configuration.
 	PeerInformations []GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformation `pulumi:"peerInformations"`
 }
@@ -1728,9 +1491,9 @@ type GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastruct
 
 type GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicArgs struct {
 	// The topology in use for the Border Gateway Protocol (BGP) configuration.
-	BgpTopology pulumi.StringInput `pulumi:"bgpTopology"`
+	BgpTopology pulumi.StringPtrInput `pulumi:"bgpTopology"`
 	// The Oracle Autonomous System Number (ASN) to control routing and exchange information within the dynamic routing configuration.
-	OracleAsn pulumi.IntInput `pulumi:"oracleAsn"`
+	OracleAsn pulumi.IntPtrInput `pulumi:"oracleAsn"`
 	// The list of peer devices in the dynamic routing configuration.
 	PeerInformations GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationArrayInput `pulumi:"peerInformations"`
 }
@@ -1745,12 +1508,6 @@ func (i GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastr
 
 func (i GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicArgs) ToGetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicOutputWithContext(ctx context.Context) GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicOutput)
-}
-
-func (i GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicArgs) ToOutput(ctx context.Context) pulumix.Output[GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamic] {
-	return pulumix.Output[GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamic]{
-		OutputState: i.ToGetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicArrayInput is an input type that accepts GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicArray and GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicArrayOutput values.
@@ -1778,12 +1535,6 @@ func (i GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastr
 	return pulumi.ToOutputWithContext(ctx, i).(GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicArrayOutput)
 }
 
-func (i GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamic] {
-	return pulumix.Output[[]GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamic]{
-		OutputState: i.ToGetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicOutput struct{ *pulumi.OutputState }
 
 func (GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicOutput) ElementType() reflect.Type {
@@ -1798,24 +1549,18 @@ func (o GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastr
 	return o
 }
 
-func (o GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicOutput) ToOutput(ctx context.Context) pulumix.Output[GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamic] {
-	return pulumix.Output[GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamic]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The topology in use for the Border Gateway Protocol (BGP) configuration.
-func (o GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicOutput) BgpTopology() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamic) string {
+func (o GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicOutput) BgpTopology() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamic) *string {
 		return v.BgpTopology
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The Oracle Autonomous System Number (ASN) to control routing and exchange information within the dynamic routing configuration.
-func (o GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicOutput) OracleAsn() pulumi.IntOutput {
-	return o.ApplyT(func(v GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamic) int {
+func (o GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicOutput) OracleAsn() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamic) *int {
 		return v.OracleAsn
-	}).(pulumi.IntOutput)
+	}).(pulumi.IntPtrOutput)
 }
 
 // The list of peer devices in the dynamic routing configuration.
@@ -1839,12 +1584,6 @@ func (o GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastr
 	return o
 }
 
-func (o GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamic] {
-	return pulumix.Output[[]GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamic]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicArrayOutput) Index(i pulumi.IntInput) GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamic {
 		return vs[0].([]GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamic)[vs[1].(int)]
@@ -1853,9 +1592,9 @@ func (o GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastr
 
 type GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformation struct {
 	// The Autonomous System Number (ASN) of the peer network.
-	Asn int `pulumi:"asn"`
+	Asn *int `pulumi:"asn"`
 	// Address of the management node.
-	Ip string `pulumi:"ip"`
+	Ip *string `pulumi:"ip"`
 }
 
 // GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationInput is an input type that accepts GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationArgs and GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationOutput values.
@@ -1871,9 +1610,9 @@ type GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastruct
 
 type GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationArgs struct {
 	// The Autonomous System Number (ASN) of the peer network.
-	Asn pulumi.IntInput `pulumi:"asn"`
+	Asn pulumi.IntPtrInput `pulumi:"asn"`
 	// Address of the management node.
-	Ip pulumi.StringInput `pulumi:"ip"`
+	Ip pulumi.StringPtrInput `pulumi:"ip"`
 }
 
 func (GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationArgs) ElementType() reflect.Type {
@@ -1886,12 +1625,6 @@ func (i GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastr
 
 func (i GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationArgs) ToGetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationOutputWithContext(ctx context.Context) GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationOutput)
-}
-
-func (i GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationArgs) ToOutput(ctx context.Context) pulumix.Output[GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformation] {
-	return pulumix.Output[GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformation]{
-		OutputState: i.ToGetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationArrayInput is an input type that accepts GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationArray and GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationArrayOutput values.
@@ -1919,12 +1652,6 @@ func (i GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastr
 	return pulumi.ToOutputWithContext(ctx, i).(GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationArrayOutput)
 }
 
-func (i GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformation] {
-	return pulumix.Output[[]GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformation]{
-		OutputState: i.ToGetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationOutput struct{ *pulumi.OutputState }
 
 func (GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationOutput) ElementType() reflect.Type {
@@ -1939,24 +1666,18 @@ func (o GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastr
 	return o
 }
 
-func (o GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationOutput) ToOutput(ctx context.Context) pulumix.Output[GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformation] {
-	return pulumix.Output[GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformation]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The Autonomous System Number (ASN) of the peer network.
-func (o GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationOutput) Asn() pulumi.IntOutput {
-	return o.ApplyT(func(v GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformation) int {
+func (o GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationOutput) Asn() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformation) *int {
 		return v.Asn
-	}).(pulumi.IntOutput)
+	}).(pulumi.IntPtrOutput)
 }
 
 // Address of the management node.
-func (o GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationOutput) Ip() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformation) string {
+func (o GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationOutput) Ip() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformation) *string {
 		return v.Ip
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationArrayOutput struct{ *pulumi.OutputState }
@@ -1973,12 +1694,6 @@ func (o GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastr
 	return o
 }
 
-func (o GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformation] {
-	return pulumix.Output[[]GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformation]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationArrayOutput) Index(i pulumi.IntInput) GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformation {
 		return vs[0].([]GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformation)[vs[1].(int)]
@@ -1987,9 +1702,9 @@ func (o GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastr
 
 type GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStatic struct {
 	// The uplink Hot Standby Router Protocol (HSRP) group value for the switch in the Compute Cloud@Customer infrastructure.
-	UplinkHsrpGroup int `pulumi:"uplinkHsrpGroup"`
+	UplinkHsrpGroup *int `pulumi:"uplinkHsrpGroup"`
 	// The virtual local area network (VLAN) identifier used to connect to the uplink (only access mode is supported).
-	UplinkVlan int `pulumi:"uplinkVlan"`
+	UplinkVlan *int `pulumi:"uplinkVlan"`
 }
 
 // GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStaticInput is an input type that accepts GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStaticArgs and GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStaticOutput values.
@@ -2005,9 +1720,9 @@ type GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastruct
 
 type GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStaticArgs struct {
 	// The uplink Hot Standby Router Protocol (HSRP) group value for the switch in the Compute Cloud@Customer infrastructure.
-	UplinkHsrpGroup pulumi.IntInput `pulumi:"uplinkHsrpGroup"`
+	UplinkHsrpGroup pulumi.IntPtrInput `pulumi:"uplinkHsrpGroup"`
 	// The virtual local area network (VLAN) identifier used to connect to the uplink (only access mode is supported).
-	UplinkVlan pulumi.IntInput `pulumi:"uplinkVlan"`
+	UplinkVlan pulumi.IntPtrInput `pulumi:"uplinkVlan"`
 }
 
 func (GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStaticArgs) ElementType() reflect.Type {
@@ -2020,12 +1735,6 @@ func (i GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastr
 
 func (i GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStaticArgs) ToGetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStaticOutputWithContext(ctx context.Context) GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStaticOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStaticOutput)
-}
-
-func (i GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStaticArgs) ToOutput(ctx context.Context) pulumix.Output[GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStatic] {
-	return pulumix.Output[GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStatic]{
-		OutputState: i.ToGetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStaticOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStaticArrayInput is an input type that accepts GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStaticArray and GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStaticArrayOutput values.
@@ -2053,12 +1762,6 @@ func (i GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastr
 	return pulumi.ToOutputWithContext(ctx, i).(GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStaticArrayOutput)
 }
 
-func (i GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStaticArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStatic] {
-	return pulumix.Output[[]GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStatic]{
-		OutputState: i.ToGetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStaticArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStaticOutput struct{ *pulumi.OutputState }
 
 func (GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStaticOutput) ElementType() reflect.Type {
@@ -2073,24 +1776,18 @@ func (o GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastr
 	return o
 }
 
-func (o GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStaticOutput) ToOutput(ctx context.Context) pulumix.Output[GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStatic] {
-	return pulumix.Output[GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStatic]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The uplink Hot Standby Router Protocol (HSRP) group value for the switch in the Compute Cloud@Customer infrastructure.
-func (o GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStaticOutput) UplinkHsrpGroup() pulumi.IntOutput {
-	return o.ApplyT(func(v GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStatic) int {
+func (o GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStaticOutput) UplinkHsrpGroup() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStatic) *int {
 		return v.UplinkHsrpGroup
-	}).(pulumi.IntOutput)
+	}).(pulumi.IntPtrOutput)
 }
 
 // The virtual local area network (VLAN) identifier used to connect to the uplink (only access mode is supported).
-func (o GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStaticOutput) UplinkVlan() pulumi.IntOutput {
-	return o.ApplyT(func(v GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStatic) int {
+func (o GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStaticOutput) UplinkVlan() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStatic) *int {
 		return v.UplinkVlan
-	}).(pulumi.IntOutput)
+	}).(pulumi.IntPtrOutput)
 }
 
 type GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStaticArrayOutput struct{ *pulumi.OutputState }
@@ -2107,12 +1804,6 @@ func (o GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastr
 	return o
 }
 
-func (o GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStaticArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStatic] {
-	return pulumix.Output[[]GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStatic]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStaticArrayOutput) Index(i pulumi.IntInput) GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStaticOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStatic {
 		return vs[0].([]GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStatic)[vs[1].(int)]
@@ -2121,9 +1812,9 @@ func (o GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastr
 
 type GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNode struct {
 	// Hostname for interface to the management node.
-	Hostname string `pulumi:"hostname"`
+	Hostname *string `pulumi:"hostname"`
 	// Address of the management node.
-	Ip string `pulumi:"ip"`
+	Ip *string `pulumi:"ip"`
 }
 
 // GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNodeInput is an input type that accepts GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNodeArgs and GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNodeOutput values.
@@ -2139,9 +1830,9 @@ type GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementN
 
 type GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNodeArgs struct {
 	// Hostname for interface to the management node.
-	Hostname pulumi.StringInput `pulumi:"hostname"`
+	Hostname pulumi.StringPtrInput `pulumi:"hostname"`
 	// Address of the management node.
-	Ip pulumi.StringInput `pulumi:"ip"`
+	Ip pulumi.StringPtrInput `pulumi:"ip"`
 }
 
 func (GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNodeArgs) ElementType() reflect.Type {
@@ -2154,12 +1845,6 @@ func (i GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationManageme
 
 func (i GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNodeArgs) ToGetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNodeOutputWithContext(ctx context.Context) GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNodeOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNodeOutput)
-}
-
-func (i GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNodeArgs) ToOutput(ctx context.Context) pulumix.Output[GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNode] {
-	return pulumix.Output[GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNode]{
-		OutputState: i.ToGetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNodeOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNodeArrayInput is an input type that accepts GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNodeArray and GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNodeArrayOutput values.
@@ -2187,12 +1872,6 @@ func (i GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationManageme
 	return pulumi.ToOutputWithContext(ctx, i).(GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNodeArrayOutput)
 }
 
-func (i GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNodeArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNode] {
-	return pulumix.Output[[]GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNode]{
-		OutputState: i.ToGetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNodeArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNodeOutput struct{ *pulumi.OutputState }
 
 func (GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNodeOutput) ElementType() reflect.Type {
@@ -2207,24 +1886,18 @@ func (o GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationManageme
 	return o
 }
 
-func (o GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNodeOutput) ToOutput(ctx context.Context) pulumix.Output[GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNode] {
-	return pulumix.Output[GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNode]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Hostname for interface to the management node.
-func (o GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNodeOutput) Hostname() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNode) string {
+func (o GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNodeOutput) Hostname() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNode) *string {
 		return v.Hostname
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Address of the management node.
-func (o GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNodeOutput) Ip() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNode) string {
+func (o GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNodeOutput) Ip() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNode) *string {
 		return v.Ip
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNodeArrayOutput struct{ *pulumi.OutputState }
@@ -2241,12 +1914,6 @@ func (o GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationManageme
 	return o
 }
 
-func (o GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNodeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNode] {
-	return pulumix.Output[[]GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNode]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNodeArrayOutput) Index(i pulumi.IntInput) GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNodeOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNode {
 		return vs[0].([]GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNode)[vs[1].(int)]
@@ -2255,13 +1922,13 @@ func (o GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationManageme
 
 type GetAtCustomerCccInfrastructureUpgradeInformation struct {
 	// The current version of software installed on the Compute Cloud@Customer infrastructure.
-	CurrentVersion string `pulumi:"currentVersion"`
+	CurrentVersion *string `pulumi:"currentVersion"`
 	// Indication that the Compute Cloud@Customer infrastructure is in the process of an upgrade or an upgrade activity (such as preloading upgrade images).
-	IsActive bool `pulumi:"isActive"`
+	IsActive *bool `pulumi:"isActive"`
 	// Expected duration of Compute Cloud@Customer infrastructure scheduled upgrade. The actual upgrade time might be longer or shorter than this duration depending on rack activity, this is only an estimate.
-	ScheduledUpgradeDuration string `pulumi:"scheduledUpgradeDuration"`
+	ScheduledUpgradeDuration *string `pulumi:"scheduledUpgradeDuration"`
 	// Compute Cloud@Customer infrastructure next upgrade time. The rack might have performance impacts during this time.
-	TimeOfScheduledUpgrade string `pulumi:"timeOfScheduledUpgrade"`
+	TimeOfScheduledUpgrade *string `pulumi:"timeOfScheduledUpgrade"`
 }
 
 // GetAtCustomerCccInfrastructureUpgradeInformationInput is an input type that accepts GetAtCustomerCccInfrastructureUpgradeInformationArgs and GetAtCustomerCccInfrastructureUpgradeInformationOutput values.
@@ -2277,13 +1944,13 @@ type GetAtCustomerCccInfrastructureUpgradeInformationInput interface {
 
 type GetAtCustomerCccInfrastructureUpgradeInformationArgs struct {
 	// The current version of software installed on the Compute Cloud@Customer infrastructure.
-	CurrentVersion pulumi.StringInput `pulumi:"currentVersion"`
+	CurrentVersion pulumi.StringPtrInput `pulumi:"currentVersion"`
 	// Indication that the Compute Cloud@Customer infrastructure is in the process of an upgrade or an upgrade activity (such as preloading upgrade images).
-	IsActive pulumi.BoolInput `pulumi:"isActive"`
+	IsActive pulumi.BoolPtrInput `pulumi:"isActive"`
 	// Expected duration of Compute Cloud@Customer infrastructure scheduled upgrade. The actual upgrade time might be longer or shorter than this duration depending on rack activity, this is only an estimate.
-	ScheduledUpgradeDuration pulumi.StringInput `pulumi:"scheduledUpgradeDuration"`
+	ScheduledUpgradeDuration pulumi.StringPtrInput `pulumi:"scheduledUpgradeDuration"`
 	// Compute Cloud@Customer infrastructure next upgrade time. The rack might have performance impacts during this time.
-	TimeOfScheduledUpgrade pulumi.StringInput `pulumi:"timeOfScheduledUpgrade"`
+	TimeOfScheduledUpgrade pulumi.StringPtrInput `pulumi:"timeOfScheduledUpgrade"`
 }
 
 func (GetAtCustomerCccInfrastructureUpgradeInformationArgs) ElementType() reflect.Type {
@@ -2296,12 +1963,6 @@ func (i GetAtCustomerCccInfrastructureUpgradeInformationArgs) ToGetAtCustomerCcc
 
 func (i GetAtCustomerCccInfrastructureUpgradeInformationArgs) ToGetAtCustomerCccInfrastructureUpgradeInformationOutputWithContext(ctx context.Context) GetAtCustomerCccInfrastructureUpgradeInformationOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetAtCustomerCccInfrastructureUpgradeInformationOutput)
-}
-
-func (i GetAtCustomerCccInfrastructureUpgradeInformationArgs) ToOutput(ctx context.Context) pulumix.Output[GetAtCustomerCccInfrastructureUpgradeInformation] {
-	return pulumix.Output[GetAtCustomerCccInfrastructureUpgradeInformation]{
-		OutputState: i.ToGetAtCustomerCccInfrastructureUpgradeInformationOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetAtCustomerCccInfrastructureUpgradeInformationArrayInput is an input type that accepts GetAtCustomerCccInfrastructureUpgradeInformationArray and GetAtCustomerCccInfrastructureUpgradeInformationArrayOutput values.
@@ -2329,12 +1990,6 @@ func (i GetAtCustomerCccInfrastructureUpgradeInformationArray) ToGetAtCustomerCc
 	return pulumi.ToOutputWithContext(ctx, i).(GetAtCustomerCccInfrastructureUpgradeInformationArrayOutput)
 }
 
-func (i GetAtCustomerCccInfrastructureUpgradeInformationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAtCustomerCccInfrastructureUpgradeInformation] {
-	return pulumix.Output[[]GetAtCustomerCccInfrastructureUpgradeInformation]{
-		OutputState: i.ToGetAtCustomerCccInfrastructureUpgradeInformationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAtCustomerCccInfrastructureUpgradeInformationOutput struct{ *pulumi.OutputState }
 
 func (GetAtCustomerCccInfrastructureUpgradeInformationOutput) ElementType() reflect.Type {
@@ -2349,30 +2004,24 @@ func (o GetAtCustomerCccInfrastructureUpgradeInformationOutput) ToGetAtCustomerC
 	return o
 }
 
-func (o GetAtCustomerCccInfrastructureUpgradeInformationOutput) ToOutput(ctx context.Context) pulumix.Output[GetAtCustomerCccInfrastructureUpgradeInformation] {
-	return pulumix.Output[GetAtCustomerCccInfrastructureUpgradeInformation]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The current version of software installed on the Compute Cloud@Customer infrastructure.
-func (o GetAtCustomerCccInfrastructureUpgradeInformationOutput) CurrentVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAtCustomerCccInfrastructureUpgradeInformation) string { return v.CurrentVersion }).(pulumi.StringOutput)
+func (o GetAtCustomerCccInfrastructureUpgradeInformationOutput) CurrentVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAtCustomerCccInfrastructureUpgradeInformation) *string { return v.CurrentVersion }).(pulumi.StringPtrOutput)
 }
 
 // Indication that the Compute Cloud@Customer infrastructure is in the process of an upgrade or an upgrade activity (such as preloading upgrade images).
-func (o GetAtCustomerCccInfrastructureUpgradeInformationOutput) IsActive() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetAtCustomerCccInfrastructureUpgradeInformation) bool { return v.IsActive }).(pulumi.BoolOutput)
+func (o GetAtCustomerCccInfrastructureUpgradeInformationOutput) IsActive() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetAtCustomerCccInfrastructureUpgradeInformation) *bool { return v.IsActive }).(pulumi.BoolPtrOutput)
 }
 
 // Expected duration of Compute Cloud@Customer infrastructure scheduled upgrade. The actual upgrade time might be longer or shorter than this duration depending on rack activity, this is only an estimate.
-func (o GetAtCustomerCccInfrastructureUpgradeInformationOutput) ScheduledUpgradeDuration() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAtCustomerCccInfrastructureUpgradeInformation) string { return v.ScheduledUpgradeDuration }).(pulumi.StringOutput)
+func (o GetAtCustomerCccInfrastructureUpgradeInformationOutput) ScheduledUpgradeDuration() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAtCustomerCccInfrastructureUpgradeInformation) *string { return v.ScheduledUpgradeDuration }).(pulumi.StringPtrOutput)
 }
 
 // Compute Cloud@Customer infrastructure next upgrade time. The rack might have performance impacts during this time.
-func (o GetAtCustomerCccInfrastructureUpgradeInformationOutput) TimeOfScheduledUpgrade() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAtCustomerCccInfrastructureUpgradeInformation) string { return v.TimeOfScheduledUpgrade }).(pulumi.StringOutput)
+func (o GetAtCustomerCccInfrastructureUpgradeInformationOutput) TimeOfScheduledUpgrade() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAtCustomerCccInfrastructureUpgradeInformation) *string { return v.TimeOfScheduledUpgrade }).(pulumi.StringPtrOutput)
 }
 
 type GetAtCustomerCccInfrastructureUpgradeInformationArrayOutput struct{ *pulumi.OutputState }
@@ -2387,12 +2036,6 @@ func (o GetAtCustomerCccInfrastructureUpgradeInformationArrayOutput) ToGetAtCust
 
 func (o GetAtCustomerCccInfrastructureUpgradeInformationArrayOutput) ToGetAtCustomerCccInfrastructureUpgradeInformationArrayOutputWithContext(ctx context.Context) GetAtCustomerCccInfrastructureUpgradeInformationArrayOutput {
 	return o
-}
-
-func (o GetAtCustomerCccInfrastructureUpgradeInformationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAtCustomerCccInfrastructureUpgradeInformation] {
-	return pulumix.Output[[]GetAtCustomerCccInfrastructureUpgradeInformation]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAtCustomerCccInfrastructureUpgradeInformationArrayOutput) Index(i pulumi.IntInput) GetAtCustomerCccInfrastructureUpgradeInformationOutput {
@@ -2432,12 +2075,6 @@ func (i GetAtCustomerCccInfrastructuresCccInfrastructureCollectionArgs) ToGetAtC
 	return pulumi.ToOutputWithContext(ctx, i).(GetAtCustomerCccInfrastructuresCccInfrastructureCollectionOutput)
 }
 
-func (i GetAtCustomerCccInfrastructuresCccInfrastructureCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetAtCustomerCccInfrastructuresCccInfrastructureCollection] {
-	return pulumix.Output[GetAtCustomerCccInfrastructuresCccInfrastructureCollection]{
-		OutputState: i.ToGetAtCustomerCccInfrastructuresCccInfrastructureCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetAtCustomerCccInfrastructuresCccInfrastructureCollectionArrayInput is an input type that accepts GetAtCustomerCccInfrastructuresCccInfrastructureCollectionArray and GetAtCustomerCccInfrastructuresCccInfrastructureCollectionArrayOutput values.
 // You can construct a concrete instance of `GetAtCustomerCccInfrastructuresCccInfrastructureCollectionArrayInput` via:
 //
@@ -2463,12 +2100,6 @@ func (i GetAtCustomerCccInfrastructuresCccInfrastructureCollectionArray) ToGetAt
 	return pulumi.ToOutputWithContext(ctx, i).(GetAtCustomerCccInfrastructuresCccInfrastructureCollectionArrayOutput)
 }
 
-func (i GetAtCustomerCccInfrastructuresCccInfrastructureCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAtCustomerCccInfrastructuresCccInfrastructureCollection] {
-	return pulumix.Output[[]GetAtCustomerCccInfrastructuresCccInfrastructureCollection]{
-		OutputState: i.ToGetAtCustomerCccInfrastructuresCccInfrastructureCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAtCustomerCccInfrastructuresCccInfrastructureCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetAtCustomerCccInfrastructuresCccInfrastructureCollectionOutput) ElementType() reflect.Type {
@@ -2481,12 +2112,6 @@ func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionOutput) ToGetA
 
 func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionOutput) ToGetAtCustomerCccInfrastructuresCccInfrastructureCollectionOutputWithContext(ctx context.Context) GetAtCustomerCccInfrastructuresCccInfrastructureCollectionOutput {
 	return o
-}
-
-func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetAtCustomerCccInfrastructuresCccInfrastructureCollection] {
-	return pulumix.Output[GetAtCustomerCccInfrastructuresCccInfrastructureCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionOutput) Items() GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemArrayOutput {
@@ -2509,12 +2134,6 @@ func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionArrayOutput) T
 	return o
 }
 
-func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAtCustomerCccInfrastructuresCccInfrastructureCollection] {
-	return pulumix.Output[[]GetAtCustomerCccInfrastructuresCccInfrastructureCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionArrayOutput) Index(i pulumi.IntInput) GetAtCustomerCccInfrastructuresCccInfrastructureCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAtCustomerCccInfrastructuresCccInfrastructureCollection {
 		return vs[0].([]GetAtCustomerCccInfrastructuresCccInfrastructureCollection)[vs[1].(int)]
@@ -2523,45 +2142,45 @@ func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionArrayOutput) I
 
 type GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItem struct {
 	// Schedule used for upgrades. If no schedule is associated with the infrastructure, it can be updated at any time.
-	CccUpgradeScheduleId string `pulumi:"cccUpgradeScheduleId"`
+	CccUpgradeScheduleId *string `pulumi:"cccUpgradeScheduleId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// A message describing the current connection state in more detail.
-	ConnectionDetails string `pulumi:"connectionDetails"`
+	ConnectionDetails *string `pulumi:"connectionDetails"`
 	// The current connection state of the infrastructure. A user can only update it from REQUEST to READY or from any state back to REJECT. The system automatically handles the REJECT to REQUEST, READY to CONNECTED, or CONNECTED to DISCONNECTED transitions.
-	ConnectionState string `pulumi:"connectionState"`
+	ConnectionState *string `pulumi:"connectionState"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A mutable client-meaningful text description of the Compute Cloud@Customer infrastructure. Avoid entering confidential information.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// A filter to return only resources that match the entire display name given.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The Compute Cloud@Customer infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). This cannot be changed once created.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Inventory for a Compute Cloud@Customer infrastructure. This information cannot be updated and is from the infrastructure. The information will only be available after the connectionState is transitioned to CONNECTED.
 	InfrastructureInventories []GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureInventory `pulumi:"infrastructureInventories"`
 	// Configuration information for the Compute Cloud@Customer infrastructure. This  network configuration information cannot be updated and is retrieved from the data center. The information will only be available after the connectionState is transitioned to CONNECTED.
 	InfrastructureNetworkConfigurations []GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfiguration `pulumi:"infrastructureNetworkConfigurations"`
 	// A message describing the current lifecycle state in more detail. For example, this can be used to provide actionable information for a resource that is in a Failed state.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// Fingerprint of a Compute Cloud@Customer infrastructure in a data center generated during the initial connection to this resource. The fingerprint should be verified by the administrator when changing the connectionState from REQUEST to READY.
-	ProvisioningFingerprint string `pulumi:"provisioningFingerprint"`
+	ProvisioningFingerprint *string `pulumi:"provisioningFingerprint"`
 	// Code that is required for service personnel to connect a Compute Cloud@Customer infrastructure in a data center to this resource. This code will only be available when the connectionState is REJECT (usually at create time of the Compute Cloud@Customer infrastructure).
-	ProvisioningPin string `pulumi:"provisioningPin"`
+	ProvisioningPin *string `pulumi:"provisioningPin"`
 	// The Compute Cloud@Customer infrastructure short name. This cannot be changed once created. The short name is used to refer to the infrastructure in several contexts and is unique.
-	ShortName string `pulumi:"shortName"`
+	ShortName *string `pulumi:"shortName"`
 	// A filter used to return only resources that match the given lifecycleState.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network subnet that is used to communicate with Compute Cloud@Customer infrastructure.
-	SubnetId string `pulumi:"subnetId"`
+	SubnetId *string `pulumi:"subnetId"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// Compute Cloud@Customer infrastructure creation date and time, using an RFC3339 formatted datetime string.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// Compute Cloud@Customer infrastructure updated date and time, using an RFC3339 formatted datetime string.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 	// Upgrade information that relates to a Compute Cloud@Customer infrastructure. This information cannot be updated.
 	UpgradeInformations []GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemUpgradeInformation `pulumi:"upgradeInformations"`
 }
@@ -2579,45 +2198,45 @@ type GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInput interfa
 
 type GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemArgs struct {
 	// Schedule used for upgrades. If no schedule is associated with the infrastructure, it can be updated at any time.
-	CccUpgradeScheduleId pulumi.StringInput `pulumi:"cccUpgradeScheduleId"`
+	CccUpgradeScheduleId pulumi.StringPtrInput `pulumi:"cccUpgradeScheduleId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// A message describing the current connection state in more detail.
-	ConnectionDetails pulumi.StringInput `pulumi:"connectionDetails"`
+	ConnectionDetails pulumi.StringPtrInput `pulumi:"connectionDetails"`
 	// The current connection state of the infrastructure. A user can only update it from REQUEST to READY or from any state back to REJECT. The system automatically handles the REJECT to REQUEST, READY to CONNECTED, or CONNECTED to DISCONNECTED transitions.
-	ConnectionState pulumi.StringInput `pulumi:"connectionState"`
+	ConnectionState pulumi.StringPtrInput `pulumi:"connectionState"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// A mutable client-meaningful text description of the Compute Cloud@Customer infrastructure. Avoid entering confidential information.
-	Description pulumi.StringInput `pulumi:"description"`
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// A filter to return only resources that match the entire display name given.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// The Compute Cloud@Customer infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). This cannot be changed once created.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// Inventory for a Compute Cloud@Customer infrastructure. This information cannot be updated and is from the infrastructure. The information will only be available after the connectionState is transitioned to CONNECTED.
 	InfrastructureInventories GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureInventoryArrayInput `pulumi:"infrastructureInventories"`
 	// Configuration information for the Compute Cloud@Customer infrastructure. This  network configuration information cannot be updated and is retrieved from the data center. The information will only be available after the connectionState is transitioned to CONNECTED.
 	InfrastructureNetworkConfigurations GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationArrayInput `pulumi:"infrastructureNetworkConfigurations"`
 	// A message describing the current lifecycle state in more detail. For example, this can be used to provide actionable information for a resource that is in a Failed state.
-	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrInput `pulumi:"lifecycleDetails"`
 	// Fingerprint of a Compute Cloud@Customer infrastructure in a data center generated during the initial connection to this resource. The fingerprint should be verified by the administrator when changing the connectionState from REQUEST to READY.
-	ProvisioningFingerprint pulumi.StringInput `pulumi:"provisioningFingerprint"`
+	ProvisioningFingerprint pulumi.StringPtrInput `pulumi:"provisioningFingerprint"`
 	// Code that is required for service personnel to connect a Compute Cloud@Customer infrastructure in a data center to this resource. This code will only be available when the connectionState is REJECT (usually at create time of the Compute Cloud@Customer infrastructure).
-	ProvisioningPin pulumi.StringInput `pulumi:"provisioningPin"`
+	ProvisioningPin pulumi.StringPtrInput `pulumi:"provisioningPin"`
 	// The Compute Cloud@Customer infrastructure short name. This cannot be changed once created. The short name is used to refer to the infrastructure in several contexts and is unique.
-	ShortName pulumi.StringInput `pulumi:"shortName"`
+	ShortName pulumi.StringPtrInput `pulumi:"shortName"`
 	// A filter used to return only resources that match the given lifecycleState.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network subnet that is used to communicate with Compute Cloud@Customer infrastructure.
-	SubnetId pulumi.StringInput `pulumi:"subnetId"`
+	SubnetId pulumi.StringPtrInput `pulumi:"subnetId"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapInput `pulumi:"systemTags"`
 	// Compute Cloud@Customer infrastructure creation date and time, using an RFC3339 formatted datetime string.
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// Compute Cloud@Customer infrastructure updated date and time, using an RFC3339 formatted datetime string.
-	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
 	// Upgrade information that relates to a Compute Cloud@Customer infrastructure. This information cannot be updated.
 	UpgradeInformations GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemUpgradeInformationArrayInput `pulumi:"upgradeInformations"`
 }
@@ -2632,12 +2251,6 @@ func (i GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemArgs) ToGe
 
 func (i GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemArgs) ToGetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemOutputWithContext(ctx context.Context) GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemOutput)
-}
-
-func (i GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItem] {
-	return pulumix.Output[GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItem]{
-		OutputState: i.ToGetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemArrayInput is an input type that accepts GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemArray and GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemArrayOutput values.
@@ -2665,12 +2278,6 @@ func (i GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemArray) ToG
 	return pulumi.ToOutputWithContext(ctx, i).(GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemArrayOutput)
 }
 
-func (i GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItem] {
-	return pulumix.Output[[]GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItem]{
-		OutputState: i.ToGetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemOutput) ElementType() reflect.Type {
@@ -2685,36 +2292,30 @@ func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemOutput) To
 	return o
 }
 
-func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItem] {
-	return pulumix.Output[GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Schedule used for upgrades. If no schedule is associated with the infrastructure, it can be updated at any time.
-func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemOutput) CccUpgradeScheduleId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItem) string {
+func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemOutput) CccUpgradeScheduleId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItem) *string {
 		return v.CccUpgradeScheduleId
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
-func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItem) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // A message describing the current connection state in more detail.
-func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemOutput) ConnectionDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItem) string {
+func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemOutput) ConnectionDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItem) *string {
 		return v.ConnectionDetails
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The current connection state of the infrastructure. A user can only update it from REQUEST to READY or from any state back to REJECT. The system automatically handles the REJECT to REQUEST, READY to CONNECTED, or CONNECTED to DISCONNECTED transitions.
-func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemOutput) ConnectionState() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItem) string {
+func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemOutput) ConnectionState() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItem) *string {
 		return v.ConnectionState
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -2725,13 +2326,13 @@ func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemOutput) De
 }
 
 // A mutable client-meaningful text description of the Compute Cloud@Customer infrastructure. Avoid entering confidential information.
-func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItem) string { return v.Description }).(pulumi.StringOutput)
+func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItem) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // A filter to return only resources that match the entire display name given.
-func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItem) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -2742,8 +2343,8 @@ func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemOutput) Fr
 }
 
 // The Compute Cloud@Customer infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). This cannot be changed once created.
-func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItem) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Inventory for a Compute Cloud@Customer infrastructure. This information cannot be updated and is from the infrastructure. The information will only be available after the connectionState is transitioned to CONNECTED.
@@ -2761,39 +2362,39 @@ func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemOutput) In
 }
 
 // A message describing the current lifecycle state in more detail. For example, this can be used to provide actionable information for a resource that is in a Failed state.
-func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItem) string {
+func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItem) *string {
 		return v.LifecycleDetails
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Fingerprint of a Compute Cloud@Customer infrastructure in a data center generated during the initial connection to this resource. The fingerprint should be verified by the administrator when changing the connectionState from REQUEST to READY.
-func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemOutput) ProvisioningFingerprint() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItem) string {
+func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemOutput) ProvisioningFingerprint() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItem) *string {
 		return v.ProvisioningFingerprint
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Code that is required for service personnel to connect a Compute Cloud@Customer infrastructure in a data center to this resource. This code will only be available when the connectionState is REJECT (usually at create time of the Compute Cloud@Customer infrastructure).
-func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemOutput) ProvisioningPin() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItem) string {
+func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemOutput) ProvisioningPin() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItem) *string {
 		return v.ProvisioningPin
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The Compute Cloud@Customer infrastructure short name. This cannot be changed once created. The short name is used to refer to the infrastructure in several contexts and is unique.
-func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemOutput) ShortName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItem) string { return v.ShortName }).(pulumi.StringOutput)
+func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemOutput) ShortName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItem) *string { return v.ShortName }).(pulumi.StringPtrOutput)
 }
 
 // A filter used to return only resources that match the given lifecycleState.
-func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItem) string { return v.State }).(pulumi.StringOutput)
+func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItem) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network subnet that is used to communicate with Compute Cloud@Customer infrastructure.
-func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemOutput) SubnetId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItem) string { return v.SubnetId }).(pulumi.StringOutput)
+func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemOutput) SubnetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItem) *string { return v.SubnetId }).(pulumi.StringPtrOutput)
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -2804,13 +2405,13 @@ func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemOutput) Sy
 }
 
 // Compute Cloud@Customer infrastructure creation date and time, using an RFC3339 formatted datetime string.
-func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItem) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // Compute Cloud@Customer infrastructure updated date and time, using an RFC3339 formatted datetime string.
-func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItem) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 // Upgrade information that relates to a Compute Cloud@Customer infrastructure. This information cannot be updated.
@@ -2834,12 +2435,6 @@ func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemArrayOutpu
 	return o
 }
 
-func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItem] {
-	return pulumix.Output[[]GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemArrayOutput) Index(i pulumi.IntInput) GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItem {
 		return vs[0].([]GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItem)[vs[1].(int)]
@@ -2848,15 +2443,15 @@ func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemArrayOutpu
 
 type GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureInventory struct {
 	// The number of storage trays in the Compute Cloud@Customer infrastructure rack that are designated for capacity storage.
-	CapacityStorageTrayCount int `pulumi:"capacityStorageTrayCount"`
+	CapacityStorageTrayCount *int `pulumi:"capacityStorageTrayCount"`
 	// The number of compute nodes that are available and usable on the Compute Cloud@Customer infrastructure rack. There is no distinction of compute node type in this information.
-	ComputeNodeCount int `pulumi:"computeNodeCount"`
+	ComputeNodeCount *int `pulumi:"computeNodeCount"`
 	// The number of management nodes that are available and in active use on the Compute Cloud@Customer infrastructure rack.
-	ManagementNodeCount int `pulumi:"managementNodeCount"`
+	ManagementNodeCount *int `pulumi:"managementNodeCount"`
 	// The number of storage trays in the Compute Cloud@Customer infrastructure rack that are designated for performance storage.
-	PerformanceStorageTrayCount int `pulumi:"performanceStorageTrayCount"`
+	PerformanceStorageTrayCount *int `pulumi:"performanceStorageTrayCount"`
 	// The serial number of the Compute Cloud@Customer infrastructure rack.
-	SerialNumber string `pulumi:"serialNumber"`
+	SerialNumber *string `pulumi:"serialNumber"`
 }
 
 // GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureInventoryInput is an input type that accepts GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureInventoryArgs and GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureInventoryOutput values.
@@ -2872,15 +2467,15 @@ type GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructur
 
 type GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureInventoryArgs struct {
 	// The number of storage trays in the Compute Cloud@Customer infrastructure rack that are designated for capacity storage.
-	CapacityStorageTrayCount pulumi.IntInput `pulumi:"capacityStorageTrayCount"`
+	CapacityStorageTrayCount pulumi.IntPtrInput `pulumi:"capacityStorageTrayCount"`
 	// The number of compute nodes that are available and usable on the Compute Cloud@Customer infrastructure rack. There is no distinction of compute node type in this information.
-	ComputeNodeCount pulumi.IntInput `pulumi:"computeNodeCount"`
+	ComputeNodeCount pulumi.IntPtrInput `pulumi:"computeNodeCount"`
 	// The number of management nodes that are available and in active use on the Compute Cloud@Customer infrastructure rack.
-	ManagementNodeCount pulumi.IntInput `pulumi:"managementNodeCount"`
+	ManagementNodeCount pulumi.IntPtrInput `pulumi:"managementNodeCount"`
 	// The number of storage trays in the Compute Cloud@Customer infrastructure rack that are designated for performance storage.
-	PerformanceStorageTrayCount pulumi.IntInput `pulumi:"performanceStorageTrayCount"`
+	PerformanceStorageTrayCount pulumi.IntPtrInput `pulumi:"performanceStorageTrayCount"`
 	// The serial number of the Compute Cloud@Customer infrastructure rack.
-	SerialNumber pulumi.StringInput `pulumi:"serialNumber"`
+	SerialNumber pulumi.StringPtrInput `pulumi:"serialNumber"`
 }
 
 func (GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureInventoryArgs) ElementType() reflect.Type {
@@ -2893,12 +2488,6 @@ func (i GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastruc
 
 func (i GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureInventoryArgs) ToGetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureInventoryOutputWithContext(ctx context.Context) GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureInventoryOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureInventoryOutput)
-}
-
-func (i GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureInventoryArgs) ToOutput(ctx context.Context) pulumix.Output[GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureInventory] {
-	return pulumix.Output[GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureInventory]{
-		OutputState: i.ToGetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureInventoryOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureInventoryArrayInput is an input type that accepts GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureInventoryArray and GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureInventoryArrayOutput values.
@@ -2926,12 +2515,6 @@ func (i GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastruc
 	return pulumi.ToOutputWithContext(ctx, i).(GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureInventoryArrayOutput)
 }
 
-func (i GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureInventoryArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureInventory] {
-	return pulumix.Output[[]GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureInventory]{
-		OutputState: i.ToGetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureInventoryArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureInventoryOutput struct{ *pulumi.OutputState }
 
 func (GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureInventoryOutput) ElementType() reflect.Type {
@@ -2946,45 +2529,39 @@ func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastruc
 	return o
 }
 
-func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureInventoryOutput) ToOutput(ctx context.Context) pulumix.Output[GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureInventory] {
-	return pulumix.Output[GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureInventory]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The number of storage trays in the Compute Cloud@Customer infrastructure rack that are designated for capacity storage.
-func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureInventoryOutput) CapacityStorageTrayCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureInventory) int {
+func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureInventoryOutput) CapacityStorageTrayCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureInventory) *int {
 		return v.CapacityStorageTrayCount
-	}).(pulumi.IntOutput)
+	}).(pulumi.IntPtrOutput)
 }
 
 // The number of compute nodes that are available and usable on the Compute Cloud@Customer infrastructure rack. There is no distinction of compute node type in this information.
-func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureInventoryOutput) ComputeNodeCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureInventory) int {
+func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureInventoryOutput) ComputeNodeCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureInventory) *int {
 		return v.ComputeNodeCount
-	}).(pulumi.IntOutput)
+	}).(pulumi.IntPtrOutput)
 }
 
 // The number of management nodes that are available and in active use on the Compute Cloud@Customer infrastructure rack.
-func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureInventoryOutput) ManagementNodeCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureInventory) int {
+func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureInventoryOutput) ManagementNodeCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureInventory) *int {
 		return v.ManagementNodeCount
-	}).(pulumi.IntOutput)
+	}).(pulumi.IntPtrOutput)
 }
 
 // The number of storage trays in the Compute Cloud@Customer infrastructure rack that are designated for performance storage.
-func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureInventoryOutput) PerformanceStorageTrayCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureInventory) int {
+func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureInventoryOutput) PerformanceStorageTrayCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureInventory) *int {
 		return v.PerformanceStorageTrayCount
-	}).(pulumi.IntOutput)
+	}).(pulumi.IntPtrOutput)
 }
 
 // The serial number of the Compute Cloud@Customer infrastructure rack.
-func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureInventoryOutput) SerialNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureInventory) string {
+func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureInventoryOutput) SerialNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureInventory) *string {
 		return v.SerialNumber
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureInventoryArrayOutput struct{ *pulumi.OutputState }
@@ -2999,12 +2576,6 @@ func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastruc
 
 func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureInventoryArrayOutput) ToGetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureInventoryArrayOutputWithContext(ctx context.Context) GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureInventoryArrayOutput {
 	return o
-}
-
-func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureInventoryArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureInventory] {
-	return pulumix.Output[[]GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureInventory]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureInventoryArrayOutput) Index(i pulumi.IntInput) GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureInventoryOutput {
@@ -3023,27 +2594,27 @@ type GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructur
 	// Information about the management nodes that are provisioned in the Compute Cloud@Customer infrastructure.
 	ManagementNodes []GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationManagementNode `pulumi:"managementNodes"`
 	// The hostname corresponding to the virtual IP (VIP) address of the management nodes.
-	MgmtVipHostname string `pulumi:"mgmtVipHostname"`
+	MgmtVipHostname *string `pulumi:"mgmtVipHostname"`
 	// The IP address used as the virtual IP (VIP) address of the management nodes.
-	MgmtVipIp string `pulumi:"mgmtVipIp"`
+	MgmtVipIp *string `pulumi:"mgmtVipIp"`
 	// Addresses of the network spine switches.
 	SpineIps []string `pulumi:"spineIps"`
 	// The spine switch public virtual IP (VIP). Traffic routed to the Compute Cloud@Customer infrastructure and  and virtual cloud networks (VCNs) should have this address as next hop.
-	SpineVip string `pulumi:"spineVip"`
+	SpineVip *string `pulumi:"spineVip"`
 	// Domain name to be used as the base domain for the internal network and by  public facing services.
-	UplinkDomain string `pulumi:"uplinkDomain"`
+	UplinkDomain *string `pulumi:"uplinkDomain"`
 	// Uplink gateway in the datacenter network that the Compute Cloud@Customer connects to.
-	UplinkGatewayIp string `pulumi:"uplinkGatewayIp"`
+	UplinkGatewayIp *string `pulumi:"uplinkGatewayIp"`
 	// Netmask of the subnet that the Compute Cloud@Customer infrastructure is connected to.
-	UplinkNetmask string `pulumi:"uplinkNetmask"`
+	UplinkNetmask *string `pulumi:"uplinkNetmask"`
 	// Number of uplink ports per spine switch. Connectivity is identical on both spine switches. For example, if input is two 100 gigabyte ports; then port-1 and port-2 on both spines will be configured.
-	UplinkPortCount int `pulumi:"uplinkPortCount"`
+	UplinkPortCount *int `pulumi:"uplinkPortCount"`
 	// The port forward error correction (FEC) setting for the uplink port on the Compute Cloud@Customer infrastructure.
-	UplinkPortForwardErrorCorrection string `pulumi:"uplinkPortForwardErrorCorrection"`
+	UplinkPortForwardErrorCorrection *string `pulumi:"uplinkPortForwardErrorCorrection"`
 	// Uplink port speed defined in gigabytes per second. All uplink ports must have identical speed.
-	UplinkPortSpeedInGbps int `pulumi:"uplinkPortSpeedInGbps"`
+	UplinkPortSpeedInGbps *int `pulumi:"uplinkPortSpeedInGbps"`
 	// The virtual local area network (VLAN) maximum transmission unit (MTU) size for the uplink ports.
-	UplinkVlanMtu int `pulumi:"uplinkVlanMtu"`
+	UplinkVlanMtu *int `pulumi:"uplinkVlanMtu"`
 }
 
 // GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInput is an input type that accepts GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationArgs and GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationOutput values.
@@ -3067,27 +2638,27 @@ type GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructur
 	// Information about the management nodes that are provisioned in the Compute Cloud@Customer infrastructure.
 	ManagementNodes GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationManagementNodeArrayInput `pulumi:"managementNodes"`
 	// The hostname corresponding to the virtual IP (VIP) address of the management nodes.
-	MgmtVipHostname pulumi.StringInput `pulumi:"mgmtVipHostname"`
+	MgmtVipHostname pulumi.StringPtrInput `pulumi:"mgmtVipHostname"`
 	// The IP address used as the virtual IP (VIP) address of the management nodes.
-	MgmtVipIp pulumi.StringInput `pulumi:"mgmtVipIp"`
+	MgmtVipIp pulumi.StringPtrInput `pulumi:"mgmtVipIp"`
 	// Addresses of the network spine switches.
 	SpineIps pulumi.StringArrayInput `pulumi:"spineIps"`
 	// The spine switch public virtual IP (VIP). Traffic routed to the Compute Cloud@Customer infrastructure and  and virtual cloud networks (VCNs) should have this address as next hop.
-	SpineVip pulumi.StringInput `pulumi:"spineVip"`
+	SpineVip pulumi.StringPtrInput `pulumi:"spineVip"`
 	// Domain name to be used as the base domain for the internal network and by  public facing services.
-	UplinkDomain pulumi.StringInput `pulumi:"uplinkDomain"`
+	UplinkDomain pulumi.StringPtrInput `pulumi:"uplinkDomain"`
 	// Uplink gateway in the datacenter network that the Compute Cloud@Customer connects to.
-	UplinkGatewayIp pulumi.StringInput `pulumi:"uplinkGatewayIp"`
+	UplinkGatewayIp pulumi.StringPtrInput `pulumi:"uplinkGatewayIp"`
 	// Netmask of the subnet that the Compute Cloud@Customer infrastructure is connected to.
-	UplinkNetmask pulumi.StringInput `pulumi:"uplinkNetmask"`
+	UplinkNetmask pulumi.StringPtrInput `pulumi:"uplinkNetmask"`
 	// Number of uplink ports per spine switch. Connectivity is identical on both spine switches. For example, if input is two 100 gigabyte ports; then port-1 and port-2 on both spines will be configured.
-	UplinkPortCount pulumi.IntInput `pulumi:"uplinkPortCount"`
+	UplinkPortCount pulumi.IntPtrInput `pulumi:"uplinkPortCount"`
 	// The port forward error correction (FEC) setting for the uplink port on the Compute Cloud@Customer infrastructure.
-	UplinkPortForwardErrorCorrection pulumi.StringInput `pulumi:"uplinkPortForwardErrorCorrection"`
+	UplinkPortForwardErrorCorrection pulumi.StringPtrInput `pulumi:"uplinkPortForwardErrorCorrection"`
 	// Uplink port speed defined in gigabytes per second. All uplink ports must have identical speed.
-	UplinkPortSpeedInGbps pulumi.IntInput `pulumi:"uplinkPortSpeedInGbps"`
+	UplinkPortSpeedInGbps pulumi.IntPtrInput `pulumi:"uplinkPortSpeedInGbps"`
 	// The virtual local area network (VLAN) maximum transmission unit (MTU) size for the uplink ports.
-	UplinkVlanMtu pulumi.IntInput `pulumi:"uplinkVlanMtu"`
+	UplinkVlanMtu pulumi.IntPtrInput `pulumi:"uplinkVlanMtu"`
 }
 
 func (GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationArgs) ElementType() reflect.Type {
@@ -3100,12 +2671,6 @@ func (i GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastruc
 
 func (i GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationArgs) ToGetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationOutputWithContext(ctx context.Context) GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationOutput)
-}
-
-func (i GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationArgs) ToOutput(ctx context.Context) pulumix.Output[GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfiguration] {
-	return pulumix.Output[GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfiguration]{
-		OutputState: i.ToGetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationArrayInput is an input type that accepts GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationArray and GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationArrayOutput values.
@@ -3133,12 +2698,6 @@ func (i GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastruc
 	return pulumi.ToOutputWithContext(ctx, i).(GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationArrayOutput)
 }
 
-func (i GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfiguration] {
-	return pulumix.Output[[]GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfiguration]{
-		OutputState: i.ToGetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationOutput struct{ *pulumi.OutputState }
 
 func (GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationOutput) ElementType() reflect.Type {
@@ -3151,12 +2710,6 @@ func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastruc
 
 func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationOutput) ToGetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationOutputWithContext(ctx context.Context) GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationOutput {
 	return o
-}
-
-func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationOutput) ToOutput(ctx context.Context) pulumix.Output[GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfiguration] {
-	return pulumix.Output[GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfiguration]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The domain name system (DNS) addresses that the Compute Cloud@Customer infrastructure uses for the data center network.
@@ -3188,17 +2741,17 @@ func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastruc
 }
 
 // The hostname corresponding to the virtual IP (VIP) address of the management nodes.
-func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationOutput) MgmtVipHostname() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfiguration) string {
+func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationOutput) MgmtVipHostname() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfiguration) *string {
 		return v.MgmtVipHostname
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The IP address used as the virtual IP (VIP) address of the management nodes.
-func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationOutput) MgmtVipIp() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfiguration) string {
+func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationOutput) MgmtVipIp() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfiguration) *string {
 		return v.MgmtVipIp
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Addresses of the network spine switches.
@@ -3209,59 +2762,59 @@ func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastruc
 }
 
 // The spine switch public virtual IP (VIP). Traffic routed to the Compute Cloud@Customer infrastructure and  and virtual cloud networks (VCNs) should have this address as next hop.
-func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationOutput) SpineVip() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfiguration) string {
+func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationOutput) SpineVip() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfiguration) *string {
 		return v.SpineVip
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Domain name to be used as the base domain for the internal network and by  public facing services.
-func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationOutput) UplinkDomain() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfiguration) string {
+func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationOutput) UplinkDomain() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfiguration) *string {
 		return v.UplinkDomain
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Uplink gateway in the datacenter network that the Compute Cloud@Customer connects to.
-func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationOutput) UplinkGatewayIp() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfiguration) string {
+func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationOutput) UplinkGatewayIp() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfiguration) *string {
 		return v.UplinkGatewayIp
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Netmask of the subnet that the Compute Cloud@Customer infrastructure is connected to.
-func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationOutput) UplinkNetmask() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfiguration) string {
+func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationOutput) UplinkNetmask() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfiguration) *string {
 		return v.UplinkNetmask
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Number of uplink ports per spine switch. Connectivity is identical on both spine switches. For example, if input is two 100 gigabyte ports; then port-1 and port-2 on both spines will be configured.
-func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationOutput) UplinkPortCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfiguration) int {
+func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationOutput) UplinkPortCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfiguration) *int {
 		return v.UplinkPortCount
-	}).(pulumi.IntOutput)
+	}).(pulumi.IntPtrOutput)
 }
 
 // The port forward error correction (FEC) setting for the uplink port on the Compute Cloud@Customer infrastructure.
-func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationOutput) UplinkPortForwardErrorCorrection() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfiguration) string {
+func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationOutput) UplinkPortForwardErrorCorrection() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfiguration) *string {
 		return v.UplinkPortForwardErrorCorrection
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Uplink port speed defined in gigabytes per second. All uplink ports must have identical speed.
-func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationOutput) UplinkPortSpeedInGbps() pulumi.IntOutput {
-	return o.ApplyT(func(v GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfiguration) int {
+func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationOutput) UplinkPortSpeedInGbps() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfiguration) *int {
 		return v.UplinkPortSpeedInGbps
-	}).(pulumi.IntOutput)
+	}).(pulumi.IntPtrOutput)
 }
 
 // The virtual local area network (VLAN) maximum transmission unit (MTU) size for the uplink ports.
-func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationOutput) UplinkVlanMtu() pulumi.IntOutput {
-	return o.ApplyT(func(v GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfiguration) int {
+func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationOutput) UplinkVlanMtu() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfiguration) *int {
 		return v.UplinkVlanMtu
-	}).(pulumi.IntOutput)
+	}).(pulumi.IntPtrOutput)
 }
 
 type GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationArrayOutput struct{ *pulumi.OutputState }
@@ -3278,12 +2831,6 @@ func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastruc
 	return o
 }
 
-func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfiguration] {
-	return pulumix.Output[[]GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfiguration]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationArrayOutput) Index(i pulumi.IntInput) GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfiguration {
 		return vs[0].([]GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfiguration)[vs[1].(int)]
@@ -3292,9 +2839,9 @@ func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastruc
 
 type GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamic struct {
 	// The topology in use for the Border Gateway Protocol (BGP) configuration.
-	BgpTopology string `pulumi:"bgpTopology"`
+	BgpTopology *string `pulumi:"bgpTopology"`
 	// The Oracle Autonomous System Number (ASN) to control routing and exchange information within the dynamic routing configuration.
-	OracleAsn int `pulumi:"oracleAsn"`
+	OracleAsn *int `pulumi:"oracleAsn"`
 	// The list of peer devices in the dynamic routing configuration.
 	PeerInformations []GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformation `pulumi:"peerInformations"`
 }
@@ -3312,9 +2859,9 @@ type GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructur
 
 type GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamicArgs struct {
 	// The topology in use for the Border Gateway Protocol (BGP) configuration.
-	BgpTopology pulumi.StringInput `pulumi:"bgpTopology"`
+	BgpTopology pulumi.StringPtrInput `pulumi:"bgpTopology"`
 	// The Oracle Autonomous System Number (ASN) to control routing and exchange information within the dynamic routing configuration.
-	OracleAsn pulumi.IntInput `pulumi:"oracleAsn"`
+	OracleAsn pulumi.IntPtrInput `pulumi:"oracleAsn"`
 	// The list of peer devices in the dynamic routing configuration.
 	PeerInformations GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationArrayInput `pulumi:"peerInformations"`
 }
@@ -3329,12 +2876,6 @@ func (i GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastruc
 
 func (i GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamicArgs) ToGetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamicOutputWithContext(ctx context.Context) GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamicOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamicOutput)
-}
-
-func (i GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamicArgs) ToOutput(ctx context.Context) pulumix.Output[GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamic] {
-	return pulumix.Output[GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamic]{
-		OutputState: i.ToGetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamicOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamicArrayInput is an input type that accepts GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamicArray and GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamicArrayOutput values.
@@ -3362,12 +2903,6 @@ func (i GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastruc
 	return pulumi.ToOutputWithContext(ctx, i).(GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamicArrayOutput)
 }
 
-func (i GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamicArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamic] {
-	return pulumix.Output[[]GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamic]{
-		OutputState: i.ToGetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamicArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamicOutput struct{ *pulumi.OutputState }
 
 func (GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamicOutput) ElementType() reflect.Type {
@@ -3382,24 +2917,18 @@ func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastruc
 	return o
 }
 
-func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamicOutput) ToOutput(ctx context.Context) pulumix.Output[GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamic] {
-	return pulumix.Output[GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamic]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The topology in use for the Border Gateway Protocol (BGP) configuration.
-func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamicOutput) BgpTopology() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamic) string {
+func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamicOutput) BgpTopology() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamic) *string {
 		return v.BgpTopology
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The Oracle Autonomous System Number (ASN) to control routing and exchange information within the dynamic routing configuration.
-func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamicOutput) OracleAsn() pulumi.IntOutput {
-	return o.ApplyT(func(v GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamic) int {
+func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamicOutput) OracleAsn() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamic) *int {
 		return v.OracleAsn
-	}).(pulumi.IntOutput)
+	}).(pulumi.IntPtrOutput)
 }
 
 // The list of peer devices in the dynamic routing configuration.
@@ -3423,12 +2952,6 @@ func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastruc
 	return o
 }
 
-func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamicArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamic] {
-	return pulumix.Output[[]GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamic]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamicArrayOutput) Index(i pulumi.IntInput) GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamicOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamic {
 		return vs[0].([]GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamic)[vs[1].(int)]
@@ -3437,9 +2960,9 @@ func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastruc
 
 type GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformation struct {
 	// The Autonomous System Number (ASN) of the peer network.
-	Asn int `pulumi:"asn"`
+	Asn *int `pulumi:"asn"`
 	// Address of the management node.
-	Ip string `pulumi:"ip"`
+	Ip *string `pulumi:"ip"`
 }
 
 // GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationInput is an input type that accepts GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationArgs and GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationOutput values.
@@ -3455,9 +2978,9 @@ type GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructur
 
 type GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationArgs struct {
 	// The Autonomous System Number (ASN) of the peer network.
-	Asn pulumi.IntInput `pulumi:"asn"`
+	Asn pulumi.IntPtrInput `pulumi:"asn"`
 	// Address of the management node.
-	Ip pulumi.StringInput `pulumi:"ip"`
+	Ip pulumi.StringPtrInput `pulumi:"ip"`
 }
 
 func (GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationArgs) ElementType() reflect.Type {
@@ -3470,12 +2993,6 @@ func (i GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastruc
 
 func (i GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationArgs) ToGetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationOutputWithContext(ctx context.Context) GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationOutput)
-}
-
-func (i GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationArgs) ToOutput(ctx context.Context) pulumix.Output[GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformation] {
-	return pulumix.Output[GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformation]{
-		OutputState: i.ToGetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationArrayInput is an input type that accepts GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationArray and GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationArrayOutput values.
@@ -3503,12 +3020,6 @@ func (i GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastruc
 	return pulumi.ToOutputWithContext(ctx, i).(GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationArrayOutput)
 }
 
-func (i GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformation] {
-	return pulumix.Output[[]GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformation]{
-		OutputState: i.ToGetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationOutput struct{ *pulumi.OutputState }
 
 func (GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationOutput) ElementType() reflect.Type {
@@ -3523,24 +3034,18 @@ func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastruc
 	return o
 }
 
-func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationOutput) ToOutput(ctx context.Context) pulumix.Output[GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformation] {
-	return pulumix.Output[GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformation]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The Autonomous System Number (ASN) of the peer network.
-func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationOutput) Asn() pulumi.IntOutput {
-	return o.ApplyT(func(v GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformation) int {
+func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationOutput) Asn() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformation) *int {
 		return v.Asn
-	}).(pulumi.IntOutput)
+	}).(pulumi.IntPtrOutput)
 }
 
 // Address of the management node.
-func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationOutput) Ip() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformation) string {
+func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationOutput) Ip() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformation) *string {
 		return v.Ip
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationArrayOutput struct{ *pulumi.OutputState }
@@ -3557,12 +3062,6 @@ func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastruc
 	return o
 }
 
-func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformation] {
-	return pulumix.Output[[]GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformation]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationArrayOutput) Index(i pulumi.IntInput) GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformation {
 		return vs[0].([]GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformation)[vs[1].(int)]
@@ -3571,9 +3070,9 @@ func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastruc
 
 type GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingStatic struct {
 	// The uplink Hot Standby Router Protocol (HSRP) group value for the switch in the Compute Cloud@Customer infrastructure.
-	UplinkHsrpGroup int `pulumi:"uplinkHsrpGroup"`
+	UplinkHsrpGroup *int `pulumi:"uplinkHsrpGroup"`
 	// The virtual local area network (VLAN) identifier used to connect to the uplink (only access mode is supported).
-	UplinkVlan int `pulumi:"uplinkVlan"`
+	UplinkVlan *int `pulumi:"uplinkVlan"`
 }
 
 // GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingStaticInput is an input type that accepts GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingStaticArgs and GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingStaticOutput values.
@@ -3589,9 +3088,9 @@ type GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructur
 
 type GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingStaticArgs struct {
 	// The uplink Hot Standby Router Protocol (HSRP) group value for the switch in the Compute Cloud@Customer infrastructure.
-	UplinkHsrpGroup pulumi.IntInput `pulumi:"uplinkHsrpGroup"`
+	UplinkHsrpGroup pulumi.IntPtrInput `pulumi:"uplinkHsrpGroup"`
 	// The virtual local area network (VLAN) identifier used to connect to the uplink (only access mode is supported).
-	UplinkVlan pulumi.IntInput `pulumi:"uplinkVlan"`
+	UplinkVlan pulumi.IntPtrInput `pulumi:"uplinkVlan"`
 }
 
 func (GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingStaticArgs) ElementType() reflect.Type {
@@ -3604,12 +3103,6 @@ func (i GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastruc
 
 func (i GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingStaticArgs) ToGetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingStaticOutputWithContext(ctx context.Context) GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingStaticOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingStaticOutput)
-}
-
-func (i GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingStaticArgs) ToOutput(ctx context.Context) pulumix.Output[GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingStatic] {
-	return pulumix.Output[GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingStatic]{
-		OutputState: i.ToGetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingStaticOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingStaticArrayInput is an input type that accepts GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingStaticArray and GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingStaticArrayOutput values.
@@ -3637,12 +3130,6 @@ func (i GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastruc
 	return pulumi.ToOutputWithContext(ctx, i).(GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingStaticArrayOutput)
 }
 
-func (i GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingStaticArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingStatic] {
-	return pulumix.Output[[]GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingStatic]{
-		OutputState: i.ToGetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingStaticArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingStaticOutput struct{ *pulumi.OutputState }
 
 func (GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingStaticOutput) ElementType() reflect.Type {
@@ -3657,24 +3144,18 @@ func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastruc
 	return o
 }
 
-func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingStaticOutput) ToOutput(ctx context.Context) pulumix.Output[GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingStatic] {
-	return pulumix.Output[GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingStatic]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The uplink Hot Standby Router Protocol (HSRP) group value for the switch in the Compute Cloud@Customer infrastructure.
-func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingStaticOutput) UplinkHsrpGroup() pulumi.IntOutput {
-	return o.ApplyT(func(v GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingStatic) int {
+func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingStaticOutput) UplinkHsrpGroup() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingStatic) *int {
 		return v.UplinkHsrpGroup
-	}).(pulumi.IntOutput)
+	}).(pulumi.IntPtrOutput)
 }
 
 // The virtual local area network (VLAN) identifier used to connect to the uplink (only access mode is supported).
-func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingStaticOutput) UplinkVlan() pulumi.IntOutput {
-	return o.ApplyT(func(v GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingStatic) int {
+func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingStaticOutput) UplinkVlan() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingStatic) *int {
 		return v.UplinkVlan
-	}).(pulumi.IntOutput)
+	}).(pulumi.IntPtrOutput)
 }
 
 type GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingStaticArrayOutput struct{ *pulumi.OutputState }
@@ -3691,12 +3172,6 @@ func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastruc
 	return o
 }
 
-func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingStaticArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingStatic] {
-	return pulumix.Output[[]GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingStatic]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingStaticArrayOutput) Index(i pulumi.IntInput) GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingStaticOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingStatic {
 		return vs[0].([]GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingStatic)[vs[1].(int)]
@@ -3705,9 +3180,9 @@ func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastruc
 
 type GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationManagementNode struct {
 	// Hostname for interface to the management node.
-	Hostname string `pulumi:"hostname"`
+	Hostname *string `pulumi:"hostname"`
 	// Address of the management node.
-	Ip string `pulumi:"ip"`
+	Ip *string `pulumi:"ip"`
 }
 
 // GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationManagementNodeInput is an input type that accepts GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationManagementNodeArgs and GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationManagementNodeOutput values.
@@ -3723,9 +3198,9 @@ type GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructur
 
 type GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationManagementNodeArgs struct {
 	// Hostname for interface to the management node.
-	Hostname pulumi.StringInput `pulumi:"hostname"`
+	Hostname pulumi.StringPtrInput `pulumi:"hostname"`
 	// Address of the management node.
-	Ip pulumi.StringInput `pulumi:"ip"`
+	Ip pulumi.StringPtrInput `pulumi:"ip"`
 }
 
 func (GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationManagementNodeArgs) ElementType() reflect.Type {
@@ -3738,12 +3213,6 @@ func (i GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastruc
 
 func (i GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationManagementNodeArgs) ToGetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationManagementNodeOutputWithContext(ctx context.Context) GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationManagementNodeOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationManagementNodeOutput)
-}
-
-func (i GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationManagementNodeArgs) ToOutput(ctx context.Context) pulumix.Output[GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationManagementNode] {
-	return pulumix.Output[GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationManagementNode]{
-		OutputState: i.ToGetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationManagementNodeOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationManagementNodeArrayInput is an input type that accepts GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationManagementNodeArray and GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationManagementNodeArrayOutput values.
@@ -3771,12 +3240,6 @@ func (i GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastruc
 	return pulumi.ToOutputWithContext(ctx, i).(GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationManagementNodeArrayOutput)
 }
 
-func (i GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationManagementNodeArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationManagementNode] {
-	return pulumix.Output[[]GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationManagementNode]{
-		OutputState: i.ToGetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationManagementNodeArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationManagementNodeOutput struct{ *pulumi.OutputState }
 
 func (GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationManagementNodeOutput) ElementType() reflect.Type {
@@ -3791,24 +3254,18 @@ func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastruc
 	return o
 }
 
-func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationManagementNodeOutput) ToOutput(ctx context.Context) pulumix.Output[GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationManagementNode] {
-	return pulumix.Output[GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationManagementNode]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Hostname for interface to the management node.
-func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationManagementNodeOutput) Hostname() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationManagementNode) string {
+func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationManagementNodeOutput) Hostname() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationManagementNode) *string {
 		return v.Hostname
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Address of the management node.
-func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationManagementNodeOutput) Ip() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationManagementNode) string {
+func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationManagementNodeOutput) Ip() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationManagementNode) *string {
 		return v.Ip
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationManagementNodeArrayOutput struct{ *pulumi.OutputState }
@@ -3825,12 +3282,6 @@ func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastruc
 	return o
 }
 
-func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationManagementNodeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationManagementNode] {
-	return pulumix.Output[[]GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationManagementNode]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationManagementNodeArrayOutput) Index(i pulumi.IntInput) GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationManagementNodeOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationManagementNode {
 		return vs[0].([]GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationManagementNode)[vs[1].(int)]
@@ -3839,13 +3290,13 @@ func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastruc
 
 type GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemUpgradeInformation struct {
 	// The current version of software installed on the Compute Cloud@Customer infrastructure.
-	CurrentVersion string `pulumi:"currentVersion"`
+	CurrentVersion *string `pulumi:"currentVersion"`
 	// Indication that the Compute Cloud@Customer infrastructure is in the process of an upgrade or an upgrade activity (such as preloading upgrade images).
-	IsActive bool `pulumi:"isActive"`
+	IsActive *bool `pulumi:"isActive"`
 	// Expected duration of Compute Cloud@Customer infrastructure scheduled upgrade. The actual upgrade time might be longer or shorter than this duration depending on rack activity, this is only an estimate.
-	ScheduledUpgradeDuration string `pulumi:"scheduledUpgradeDuration"`
+	ScheduledUpgradeDuration *string `pulumi:"scheduledUpgradeDuration"`
 	// Compute Cloud@Customer infrastructure next upgrade time. The rack might have performance impacts during this time.
-	TimeOfScheduledUpgrade string `pulumi:"timeOfScheduledUpgrade"`
+	TimeOfScheduledUpgrade *string `pulumi:"timeOfScheduledUpgrade"`
 }
 
 // GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemUpgradeInformationInput is an input type that accepts GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemUpgradeInformationArgs and GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemUpgradeInformationOutput values.
@@ -3861,13 +3312,13 @@ type GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemUpgradeInform
 
 type GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemUpgradeInformationArgs struct {
 	// The current version of software installed on the Compute Cloud@Customer infrastructure.
-	CurrentVersion pulumi.StringInput `pulumi:"currentVersion"`
+	CurrentVersion pulumi.StringPtrInput `pulumi:"currentVersion"`
 	// Indication that the Compute Cloud@Customer infrastructure is in the process of an upgrade or an upgrade activity (such as preloading upgrade images).
-	IsActive pulumi.BoolInput `pulumi:"isActive"`
+	IsActive pulumi.BoolPtrInput `pulumi:"isActive"`
 	// Expected duration of Compute Cloud@Customer infrastructure scheduled upgrade. The actual upgrade time might be longer or shorter than this duration depending on rack activity, this is only an estimate.
-	ScheduledUpgradeDuration pulumi.StringInput `pulumi:"scheduledUpgradeDuration"`
+	ScheduledUpgradeDuration pulumi.StringPtrInput `pulumi:"scheduledUpgradeDuration"`
 	// Compute Cloud@Customer infrastructure next upgrade time. The rack might have performance impacts during this time.
-	TimeOfScheduledUpgrade pulumi.StringInput `pulumi:"timeOfScheduledUpgrade"`
+	TimeOfScheduledUpgrade pulumi.StringPtrInput `pulumi:"timeOfScheduledUpgrade"`
 }
 
 func (GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemUpgradeInformationArgs) ElementType() reflect.Type {
@@ -3880,12 +3331,6 @@ func (i GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemUpgradeInf
 
 func (i GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemUpgradeInformationArgs) ToGetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemUpgradeInformationOutputWithContext(ctx context.Context) GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemUpgradeInformationOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemUpgradeInformationOutput)
-}
-
-func (i GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemUpgradeInformationArgs) ToOutput(ctx context.Context) pulumix.Output[GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemUpgradeInformation] {
-	return pulumix.Output[GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemUpgradeInformation]{
-		OutputState: i.ToGetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemUpgradeInformationOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemUpgradeInformationArrayInput is an input type that accepts GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemUpgradeInformationArray and GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemUpgradeInformationArrayOutput values.
@@ -3913,12 +3358,6 @@ func (i GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemUpgradeInf
 	return pulumi.ToOutputWithContext(ctx, i).(GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemUpgradeInformationArrayOutput)
 }
 
-func (i GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemUpgradeInformationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemUpgradeInformation] {
-	return pulumix.Output[[]GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemUpgradeInformation]{
-		OutputState: i.ToGetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemUpgradeInformationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemUpgradeInformationOutput struct{ *pulumi.OutputState }
 
 func (GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemUpgradeInformationOutput) ElementType() reflect.Type {
@@ -3933,38 +3372,32 @@ func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemUpgradeInf
 	return o
 }
 
-func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemUpgradeInformationOutput) ToOutput(ctx context.Context) pulumix.Output[GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemUpgradeInformation] {
-	return pulumix.Output[GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemUpgradeInformation]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The current version of software installed on the Compute Cloud@Customer infrastructure.
-func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemUpgradeInformationOutput) CurrentVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemUpgradeInformation) string {
+func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemUpgradeInformationOutput) CurrentVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemUpgradeInformation) *string {
 		return v.CurrentVersion
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Indication that the Compute Cloud@Customer infrastructure is in the process of an upgrade or an upgrade activity (such as preloading upgrade images).
-func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemUpgradeInformationOutput) IsActive() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemUpgradeInformation) bool {
+func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemUpgradeInformationOutput) IsActive() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemUpgradeInformation) *bool {
 		return v.IsActive
-	}).(pulumi.BoolOutput)
+	}).(pulumi.BoolPtrOutput)
 }
 
 // Expected duration of Compute Cloud@Customer infrastructure scheduled upgrade. The actual upgrade time might be longer or shorter than this duration depending on rack activity, this is only an estimate.
-func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemUpgradeInformationOutput) ScheduledUpgradeDuration() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemUpgradeInformation) string {
+func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemUpgradeInformationOutput) ScheduledUpgradeDuration() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemUpgradeInformation) *string {
 		return v.ScheduledUpgradeDuration
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Compute Cloud@Customer infrastructure next upgrade time. The rack might have performance impacts during this time.
-func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemUpgradeInformationOutput) TimeOfScheduledUpgrade() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemUpgradeInformation) string {
+func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemUpgradeInformationOutput) TimeOfScheduledUpgrade() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemUpgradeInformation) *string {
 		return v.TimeOfScheduledUpgrade
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemUpgradeInformationArrayOutput struct{ *pulumi.OutputState }
@@ -3979,12 +3412,6 @@ func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemUpgradeInf
 
 func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemUpgradeInformationArrayOutput) ToGetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemUpgradeInformationArrayOutputWithContext(ctx context.Context) GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemUpgradeInformationArrayOutput {
 	return o
-}
-
-func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemUpgradeInformationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemUpgradeInformation] {
-	return pulumix.Output[[]GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemUpgradeInformation]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemUpgradeInformationArrayOutput) Index(i pulumi.IntInput) GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemUpgradeInformationOutput {
@@ -4028,12 +3455,6 @@ func (i GetAtCustomerCccInfrastructuresFilterArgs) ToGetAtCustomerCccInfrastruct
 	return pulumi.ToOutputWithContext(ctx, i).(GetAtCustomerCccInfrastructuresFilterOutput)
 }
 
-func (i GetAtCustomerCccInfrastructuresFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetAtCustomerCccInfrastructuresFilter] {
-	return pulumix.Output[GetAtCustomerCccInfrastructuresFilter]{
-		OutputState: i.ToGetAtCustomerCccInfrastructuresFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetAtCustomerCccInfrastructuresFilterArrayInput is an input type that accepts GetAtCustomerCccInfrastructuresFilterArray and GetAtCustomerCccInfrastructuresFilterArrayOutput values.
 // You can construct a concrete instance of `GetAtCustomerCccInfrastructuresFilterArrayInput` via:
 //
@@ -4059,12 +3480,6 @@ func (i GetAtCustomerCccInfrastructuresFilterArray) ToGetAtCustomerCccInfrastruc
 	return pulumi.ToOutputWithContext(ctx, i).(GetAtCustomerCccInfrastructuresFilterArrayOutput)
 }
 
-func (i GetAtCustomerCccInfrastructuresFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAtCustomerCccInfrastructuresFilter] {
-	return pulumix.Output[[]GetAtCustomerCccInfrastructuresFilter]{
-		OutputState: i.ToGetAtCustomerCccInfrastructuresFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAtCustomerCccInfrastructuresFilterOutput struct{ *pulumi.OutputState }
 
 func (GetAtCustomerCccInfrastructuresFilterOutput) ElementType() reflect.Type {
@@ -4077,12 +3492,6 @@ func (o GetAtCustomerCccInfrastructuresFilterOutput) ToGetAtCustomerCccInfrastru
 
 func (o GetAtCustomerCccInfrastructuresFilterOutput) ToGetAtCustomerCccInfrastructuresFilterOutputWithContext(ctx context.Context) GetAtCustomerCccInfrastructuresFilterOutput {
 	return o
-}
-
-func (o GetAtCustomerCccInfrastructuresFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetAtCustomerCccInfrastructuresFilter] {
-	return pulumix.Output[GetAtCustomerCccInfrastructuresFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAtCustomerCccInfrastructuresFilterOutput) Name() pulumi.StringOutput {
@@ -4111,12 +3520,6 @@ func (o GetAtCustomerCccInfrastructuresFilterArrayOutput) ToGetAtCustomerCccInfr
 	return o
 }
 
-func (o GetAtCustomerCccInfrastructuresFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAtCustomerCccInfrastructuresFilter] {
-	return pulumix.Output[[]GetAtCustomerCccInfrastructuresFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetAtCustomerCccInfrastructuresFilterArrayOutput) Index(i pulumi.IntInput) GetAtCustomerCccInfrastructuresFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAtCustomerCccInfrastructuresFilter {
 		return vs[0].([]GetAtCustomerCccInfrastructuresFilter)[vs[1].(int)]
@@ -4125,15 +3528,15 @@ func (o GetAtCustomerCccInfrastructuresFilterArrayOutput) Index(i pulumi.IntInpu
 
 type GetAtCustomerCccUpgradeScheduleEvent struct {
 	// A description of the Compute Cloud@Customer upgrade schedule time block.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// Generated name associated with the event.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// The duration of this block of time. The duration must be specified and be of the ISO-8601 format for durations.
-	ScheduleEventDuration string `pulumi:"scheduleEventDuration"`
+	ScheduleEventDuration *string `pulumi:"scheduleEventDuration"`
 	// Frequency of recurrence of schedule block. When this field is not included, the event is assumed to be a one time occurrence. The frequency field is strictly parsed and must conform to RFC-5545 formatting for recurrences.
-	ScheduleEventRecurrences string `pulumi:"scheduleEventRecurrences"`
+	ScheduleEventRecurrences *string `pulumi:"scheduleEventRecurrences"`
 	// The date and time when the Compute Cloud@Customer upgrade schedule event starts, inclusive. An RFC3339 formatted UTC datetime string. For an event with recurrences, this is the date that a recurrence can start being applied.
-	TimeStart string `pulumi:"timeStart"`
+	TimeStart *string `pulumi:"timeStart"`
 }
 
 // GetAtCustomerCccUpgradeScheduleEventInput is an input type that accepts GetAtCustomerCccUpgradeScheduleEventArgs and GetAtCustomerCccUpgradeScheduleEventOutput values.
@@ -4149,15 +3552,15 @@ type GetAtCustomerCccUpgradeScheduleEventInput interface {
 
 type GetAtCustomerCccUpgradeScheduleEventArgs struct {
 	// A description of the Compute Cloud@Customer upgrade schedule time block.
-	Description pulumi.StringInput `pulumi:"description"`
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// Generated name associated with the event.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// The duration of this block of time. The duration must be specified and be of the ISO-8601 format for durations.
-	ScheduleEventDuration pulumi.StringInput `pulumi:"scheduleEventDuration"`
+	ScheduleEventDuration pulumi.StringPtrInput `pulumi:"scheduleEventDuration"`
 	// Frequency of recurrence of schedule block. When this field is not included, the event is assumed to be a one time occurrence. The frequency field is strictly parsed and must conform to RFC-5545 formatting for recurrences.
-	ScheduleEventRecurrences pulumi.StringInput `pulumi:"scheduleEventRecurrences"`
+	ScheduleEventRecurrences pulumi.StringPtrInput `pulumi:"scheduleEventRecurrences"`
 	// The date and time when the Compute Cloud@Customer upgrade schedule event starts, inclusive. An RFC3339 formatted UTC datetime string. For an event with recurrences, this is the date that a recurrence can start being applied.
-	TimeStart pulumi.StringInput `pulumi:"timeStart"`
+	TimeStart pulumi.StringPtrInput `pulumi:"timeStart"`
 }
 
 func (GetAtCustomerCccUpgradeScheduleEventArgs) ElementType() reflect.Type {
@@ -4170,12 +3573,6 @@ func (i GetAtCustomerCccUpgradeScheduleEventArgs) ToGetAtCustomerCccUpgradeSched
 
 func (i GetAtCustomerCccUpgradeScheduleEventArgs) ToGetAtCustomerCccUpgradeScheduleEventOutputWithContext(ctx context.Context) GetAtCustomerCccUpgradeScheduleEventOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetAtCustomerCccUpgradeScheduleEventOutput)
-}
-
-func (i GetAtCustomerCccUpgradeScheduleEventArgs) ToOutput(ctx context.Context) pulumix.Output[GetAtCustomerCccUpgradeScheduleEvent] {
-	return pulumix.Output[GetAtCustomerCccUpgradeScheduleEvent]{
-		OutputState: i.ToGetAtCustomerCccUpgradeScheduleEventOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetAtCustomerCccUpgradeScheduleEventArrayInput is an input type that accepts GetAtCustomerCccUpgradeScheduleEventArray and GetAtCustomerCccUpgradeScheduleEventArrayOutput values.
@@ -4203,12 +3600,6 @@ func (i GetAtCustomerCccUpgradeScheduleEventArray) ToGetAtCustomerCccUpgradeSche
 	return pulumi.ToOutputWithContext(ctx, i).(GetAtCustomerCccUpgradeScheduleEventArrayOutput)
 }
 
-func (i GetAtCustomerCccUpgradeScheduleEventArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAtCustomerCccUpgradeScheduleEvent] {
-	return pulumix.Output[[]GetAtCustomerCccUpgradeScheduleEvent]{
-		OutputState: i.ToGetAtCustomerCccUpgradeScheduleEventArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAtCustomerCccUpgradeScheduleEventOutput struct{ *pulumi.OutputState }
 
 func (GetAtCustomerCccUpgradeScheduleEventOutput) ElementType() reflect.Type {
@@ -4223,35 +3614,29 @@ func (o GetAtCustomerCccUpgradeScheduleEventOutput) ToGetAtCustomerCccUpgradeSch
 	return o
 }
 
-func (o GetAtCustomerCccUpgradeScheduleEventOutput) ToOutput(ctx context.Context) pulumix.Output[GetAtCustomerCccUpgradeScheduleEvent] {
-	return pulumix.Output[GetAtCustomerCccUpgradeScheduleEvent]{
-		OutputState: o.OutputState,
-	}
-}
-
 // A description of the Compute Cloud@Customer upgrade schedule time block.
-func (o GetAtCustomerCccUpgradeScheduleEventOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAtCustomerCccUpgradeScheduleEvent) string { return v.Description }).(pulumi.StringOutput)
+func (o GetAtCustomerCccUpgradeScheduleEventOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAtCustomerCccUpgradeScheduleEvent) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // Generated name associated with the event.
-func (o GetAtCustomerCccUpgradeScheduleEventOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAtCustomerCccUpgradeScheduleEvent) string { return v.Name }).(pulumi.StringOutput)
+func (o GetAtCustomerCccUpgradeScheduleEventOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAtCustomerCccUpgradeScheduleEvent) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // The duration of this block of time. The duration must be specified and be of the ISO-8601 format for durations.
-func (o GetAtCustomerCccUpgradeScheduleEventOutput) ScheduleEventDuration() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAtCustomerCccUpgradeScheduleEvent) string { return v.ScheduleEventDuration }).(pulumi.StringOutput)
+func (o GetAtCustomerCccUpgradeScheduleEventOutput) ScheduleEventDuration() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAtCustomerCccUpgradeScheduleEvent) *string { return v.ScheduleEventDuration }).(pulumi.StringPtrOutput)
 }
 
 // Frequency of recurrence of schedule block. When this field is not included, the event is assumed to be a one time occurrence. The frequency field is strictly parsed and must conform to RFC-5545 formatting for recurrences.
-func (o GetAtCustomerCccUpgradeScheduleEventOutput) ScheduleEventRecurrences() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAtCustomerCccUpgradeScheduleEvent) string { return v.ScheduleEventRecurrences }).(pulumi.StringOutput)
+func (o GetAtCustomerCccUpgradeScheduleEventOutput) ScheduleEventRecurrences() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAtCustomerCccUpgradeScheduleEvent) *string { return v.ScheduleEventRecurrences }).(pulumi.StringPtrOutput)
 }
 
 // The date and time when the Compute Cloud@Customer upgrade schedule event starts, inclusive. An RFC3339 formatted UTC datetime string. For an event with recurrences, this is the date that a recurrence can start being applied.
-func (o GetAtCustomerCccUpgradeScheduleEventOutput) TimeStart() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAtCustomerCccUpgradeScheduleEvent) string { return v.TimeStart }).(pulumi.StringOutput)
+func (o GetAtCustomerCccUpgradeScheduleEventOutput) TimeStart() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAtCustomerCccUpgradeScheduleEvent) *string { return v.TimeStart }).(pulumi.StringPtrOutput)
 }
 
 type GetAtCustomerCccUpgradeScheduleEventArrayOutput struct{ *pulumi.OutputState }
@@ -4266,12 +3651,6 @@ func (o GetAtCustomerCccUpgradeScheduleEventArrayOutput) ToGetAtCustomerCccUpgra
 
 func (o GetAtCustomerCccUpgradeScheduleEventArrayOutput) ToGetAtCustomerCccUpgradeScheduleEventArrayOutputWithContext(ctx context.Context) GetAtCustomerCccUpgradeScheduleEventArrayOutput {
 	return o
-}
-
-func (o GetAtCustomerCccUpgradeScheduleEventArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAtCustomerCccUpgradeScheduleEvent] {
-	return pulumix.Output[[]GetAtCustomerCccUpgradeScheduleEvent]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAtCustomerCccUpgradeScheduleEventArrayOutput) Index(i pulumi.IntInput) GetAtCustomerCccUpgradeScheduleEventOutput {
@@ -4311,12 +3690,6 @@ func (i GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionArgs) ToGetA
 	return pulumi.ToOutputWithContext(ctx, i).(GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionOutput)
 }
 
-func (i GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollection] {
-	return pulumix.Output[GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollection]{
-		OutputState: i.ToGetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionArrayInput is an input type that accepts GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionArray and GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionArrayOutput values.
 // You can construct a concrete instance of `GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionArrayInput` via:
 //
@@ -4342,12 +3715,6 @@ func (i GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionArray) ToGet
 	return pulumi.ToOutputWithContext(ctx, i).(GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionArrayOutput)
 }
 
-func (i GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollection] {
-	return pulumix.Output[[]GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollection]{
-		OutputState: i.ToGetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionOutput) ElementType() reflect.Type {
@@ -4360,12 +3727,6 @@ func (o GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionOutput) ToGe
 
 func (o GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionOutput) ToGetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionOutputWithContext(ctx context.Context) GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionOutput {
 	return o
-}
-
-func (o GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollection] {
-	return pulumix.Output[GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionOutput) Items() GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemArrayOutput {
@@ -4388,12 +3749,6 @@ func (o GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionArrayOutput)
 	return o
 }
 
-func (o GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollection] {
-	return pulumix.Output[[]GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionArrayOutput) Index(i pulumi.IntInput) GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollection {
 		return vs[0].([]GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollection)[vs[1].(int)]
@@ -4402,31 +3757,31 @@ func (o GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionArrayOutput)
 
 type GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItem struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A description of the Compute Cloud@Customer upgrade schedule time block.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// A filter to return only resources that match the entire display name given.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// List of preferred times for Compute Cloud@Customer infrastructures associated with this schedule to be upgraded.
 	Events []GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemEvent `pulumi:"events"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// Upgrade schedule [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). This cannot be changed once created.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// List of Compute Cloud@Customer infrastructure [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that are using this upgrade schedule.
 	InfrastructureIds []string `pulumi:"infrastructureIds"`
 	// A message describing the current state in more detail. For example, the message can be used to provide actionable information for a resource in a Failed state.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// A filter to return resources only when their lifecycleState matches the given lifecycleState.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The time the upgrade schedule was created, using an RFC3339 formatted datetime string.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time the upgrade schedule was updated, using an RFC3339 formatted datetime string.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 // GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemInput is an input type that accepts GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemArgs and GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemOutput values.
@@ -4442,31 +3797,31 @@ type GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemInput inter
 
 type GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// A description of the Compute Cloud@Customer upgrade schedule time block.
-	Description pulumi.StringInput `pulumi:"description"`
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// A filter to return only resources that match the entire display name given.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// List of preferred times for Compute Cloud@Customer infrastructures associated with this schedule to be upgraded.
 	Events GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemEventArrayInput `pulumi:"events"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// Upgrade schedule [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). This cannot be changed once created.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// List of Compute Cloud@Customer infrastructure [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that are using this upgrade schedule.
 	InfrastructureIds pulumi.StringArrayInput `pulumi:"infrastructureIds"`
 	// A message describing the current state in more detail. For example, the message can be used to provide actionable information for a resource in a Failed state.
-	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrInput `pulumi:"lifecycleDetails"`
 	// A filter to return resources only when their lifecycleState matches the given lifecycleState.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapInput `pulumi:"systemTags"`
 	// The time the upgrade schedule was created, using an RFC3339 formatted datetime string.
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// The time the upgrade schedule was updated, using an RFC3339 formatted datetime string.
-	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
 }
 
 func (GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemArgs) ElementType() reflect.Type {
@@ -4479,12 +3834,6 @@ func (i GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemArgs) To
 
 func (i GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemArgs) ToGetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemOutputWithContext(ctx context.Context) GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemOutput)
-}
-
-func (i GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItem] {
-	return pulumix.Output[GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItem]{
-		OutputState: i.ToGetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemArrayInput is an input type that accepts GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemArray and GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemArrayOutput values.
@@ -4512,12 +3861,6 @@ func (i GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemArray) T
 	return pulumi.ToOutputWithContext(ctx, i).(GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemArrayOutput)
 }
 
-func (i GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItem] {
-	return pulumix.Output[[]GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItem]{
-		OutputState: i.ToGetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemOutput) ElementType() reflect.Type {
@@ -4532,17 +3875,11 @@ func (o GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemOutput) 
 	return o
 }
 
-func (o GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItem] {
-	return pulumix.Output[GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
-func (o GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItem) string {
+func (o GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItem) *string {
 		return v.CompartmentId
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -4553,13 +3890,13 @@ func (o GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemOutput) 
 }
 
 // A description of the Compute Cloud@Customer upgrade schedule time block.
-func (o GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItem) string { return v.Description }).(pulumi.StringOutput)
+func (o GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItem) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // A filter to return only resources that match the entire display name given.
-func (o GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItem) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // List of preferred times for Compute Cloud@Customer infrastructures associated with this schedule to be upgraded.
@@ -4577,8 +3914,8 @@ func (o GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemOutput) 
 }
 
 // Upgrade schedule [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). This cannot be changed once created.
-func (o GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+func (o GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItem) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // List of Compute Cloud@Customer infrastructure [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that are using this upgrade schedule.
@@ -4589,15 +3926,15 @@ func (o GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemOutput) 
 }
 
 // A message describing the current state in more detail. For example, the message can be used to provide actionable information for a resource in a Failed state.
-func (o GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItem) string {
+func (o GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItem) *string {
 		return v.LifecycleDetails
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // A filter to return resources only when their lifecycleState matches the given lifecycleState.
-func (o GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItem) string { return v.State }).(pulumi.StringOutput)
+func (o GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItem) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -4608,13 +3945,13 @@ func (o GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemOutput) 
 }
 
 // The time the upgrade schedule was created, using an RFC3339 formatted datetime string.
-func (o GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItem) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time the upgrade schedule was updated, using an RFC3339 formatted datetime string.
-func (o GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItem) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -4631,12 +3968,6 @@ func (o GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemArrayOut
 	return o
 }
 
-func (o GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItem] {
-	return pulumix.Output[[]GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemArrayOutput) Index(i pulumi.IntInput) GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItem {
 		return vs[0].([]GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItem)[vs[1].(int)]
@@ -4645,15 +3976,15 @@ func (o GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemArrayOut
 
 type GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemEvent struct {
 	// A description of the Compute Cloud@Customer upgrade schedule time block.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// Generated name associated with the event.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// The duration of this block of time. The duration must be specified and be of the ISO-8601 format for durations.
-	ScheduleEventDuration string `pulumi:"scheduleEventDuration"`
+	ScheduleEventDuration *string `pulumi:"scheduleEventDuration"`
 	// Frequency of recurrence of schedule block. When this field is not included, the event is assumed to be a one time occurrence. The frequency field is strictly parsed and must conform to RFC-5545 formatting for recurrences.
-	ScheduleEventRecurrences string `pulumi:"scheduleEventRecurrences"`
+	ScheduleEventRecurrences *string `pulumi:"scheduleEventRecurrences"`
 	// The date and time when the Compute Cloud@Customer upgrade schedule event starts, inclusive. An RFC3339 formatted UTC datetime string. For an event with recurrences, this is the date that a recurrence can start being applied.
-	TimeStart string `pulumi:"timeStart"`
+	TimeStart *string `pulumi:"timeStart"`
 }
 
 // GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemEventInput is an input type that accepts GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemEventArgs and GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemEventOutput values.
@@ -4669,15 +4000,15 @@ type GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemEventInput 
 
 type GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemEventArgs struct {
 	// A description of the Compute Cloud@Customer upgrade schedule time block.
-	Description pulumi.StringInput `pulumi:"description"`
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// Generated name associated with the event.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// The duration of this block of time. The duration must be specified and be of the ISO-8601 format for durations.
-	ScheduleEventDuration pulumi.StringInput `pulumi:"scheduleEventDuration"`
+	ScheduleEventDuration pulumi.StringPtrInput `pulumi:"scheduleEventDuration"`
 	// Frequency of recurrence of schedule block. When this field is not included, the event is assumed to be a one time occurrence. The frequency field is strictly parsed and must conform to RFC-5545 formatting for recurrences.
-	ScheduleEventRecurrences pulumi.StringInput `pulumi:"scheduleEventRecurrences"`
+	ScheduleEventRecurrences pulumi.StringPtrInput `pulumi:"scheduleEventRecurrences"`
 	// The date and time when the Compute Cloud@Customer upgrade schedule event starts, inclusive. An RFC3339 formatted UTC datetime string. For an event with recurrences, this is the date that a recurrence can start being applied.
-	TimeStart pulumi.StringInput `pulumi:"timeStart"`
+	TimeStart pulumi.StringPtrInput `pulumi:"timeStart"`
 }
 
 func (GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemEventArgs) ElementType() reflect.Type {
@@ -4690,12 +4021,6 @@ func (i GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemEventArg
 
 func (i GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemEventArgs) ToGetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemEventOutputWithContext(ctx context.Context) GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemEventOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemEventOutput)
-}
-
-func (i GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemEventArgs) ToOutput(ctx context.Context) pulumix.Output[GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemEvent] {
-	return pulumix.Output[GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemEvent]{
-		OutputState: i.ToGetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemEventOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemEventArrayInput is an input type that accepts GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemEventArray and GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemEventArrayOutput values.
@@ -4723,12 +4048,6 @@ func (i GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemEventArr
 	return pulumi.ToOutputWithContext(ctx, i).(GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemEventArrayOutput)
 }
 
-func (i GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemEventArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemEvent] {
-	return pulumix.Output[[]GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemEvent]{
-		OutputState: i.ToGetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemEventArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemEventOutput struct{ *pulumi.OutputState }
 
 func (GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemEventOutput) ElementType() reflect.Type {
@@ -4743,43 +4062,37 @@ func (o GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemEventOut
 	return o
 }
 
-func (o GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemEventOutput) ToOutput(ctx context.Context) pulumix.Output[GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemEvent] {
-	return pulumix.Output[GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemEvent]{
-		OutputState: o.OutputState,
-	}
-}
-
 // A description of the Compute Cloud@Customer upgrade schedule time block.
-func (o GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemEventOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemEvent) string {
+func (o GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemEventOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemEvent) *string {
 		return v.Description
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Generated name associated with the event.
-func (o GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemEventOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemEvent) string { return v.Name }).(pulumi.StringOutput)
+func (o GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemEventOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemEvent) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // The duration of this block of time. The duration must be specified and be of the ISO-8601 format for durations.
-func (o GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemEventOutput) ScheduleEventDuration() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemEvent) string {
+func (o GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemEventOutput) ScheduleEventDuration() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemEvent) *string {
 		return v.ScheduleEventDuration
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Frequency of recurrence of schedule block. When this field is not included, the event is assumed to be a one time occurrence. The frequency field is strictly parsed and must conform to RFC-5545 formatting for recurrences.
-func (o GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemEventOutput) ScheduleEventRecurrences() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemEvent) string {
+func (o GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemEventOutput) ScheduleEventRecurrences() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemEvent) *string {
 		return v.ScheduleEventRecurrences
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The date and time when the Compute Cloud@Customer upgrade schedule event starts, inclusive. An RFC3339 formatted UTC datetime string. For an event with recurrences, this is the date that a recurrence can start being applied.
-func (o GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemEventOutput) TimeStart() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemEvent) string {
+func (o GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemEventOutput) TimeStart() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemEvent) *string {
 		return v.TimeStart
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemEventArrayOutput struct{ *pulumi.OutputState }
@@ -4794,12 +4107,6 @@ func (o GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemEventArr
 
 func (o GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemEventArrayOutput) ToGetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemEventArrayOutputWithContext(ctx context.Context) GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemEventArrayOutput {
 	return o
-}
-
-func (o GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemEventArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemEvent] {
-	return pulumix.Output[[]GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemEvent]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemEventArrayOutput) Index(i pulumi.IntInput) GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemEventOutput {
@@ -4845,12 +4152,6 @@ func (i GetAtCustomerCccUpgradeSchedulesFilterArgs) ToGetAtCustomerCccUpgradeSch
 	return pulumi.ToOutputWithContext(ctx, i).(GetAtCustomerCccUpgradeSchedulesFilterOutput)
 }
 
-func (i GetAtCustomerCccUpgradeSchedulesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetAtCustomerCccUpgradeSchedulesFilter] {
-	return pulumix.Output[GetAtCustomerCccUpgradeSchedulesFilter]{
-		OutputState: i.ToGetAtCustomerCccUpgradeSchedulesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetAtCustomerCccUpgradeSchedulesFilterArrayInput is an input type that accepts GetAtCustomerCccUpgradeSchedulesFilterArray and GetAtCustomerCccUpgradeSchedulesFilterArrayOutput values.
 // You can construct a concrete instance of `GetAtCustomerCccUpgradeSchedulesFilterArrayInput` via:
 //
@@ -4876,12 +4177,6 @@ func (i GetAtCustomerCccUpgradeSchedulesFilterArray) ToGetAtCustomerCccUpgradeSc
 	return pulumi.ToOutputWithContext(ctx, i).(GetAtCustomerCccUpgradeSchedulesFilterArrayOutput)
 }
 
-func (i GetAtCustomerCccUpgradeSchedulesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAtCustomerCccUpgradeSchedulesFilter] {
-	return pulumix.Output[[]GetAtCustomerCccUpgradeSchedulesFilter]{
-		OutputState: i.ToGetAtCustomerCccUpgradeSchedulesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAtCustomerCccUpgradeSchedulesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetAtCustomerCccUpgradeSchedulesFilterOutput) ElementType() reflect.Type {
@@ -4894,12 +4189,6 @@ func (o GetAtCustomerCccUpgradeSchedulesFilterOutput) ToGetAtCustomerCccUpgradeS
 
 func (o GetAtCustomerCccUpgradeSchedulesFilterOutput) ToGetAtCustomerCccUpgradeSchedulesFilterOutputWithContext(ctx context.Context) GetAtCustomerCccUpgradeSchedulesFilterOutput {
 	return o
-}
-
-func (o GetAtCustomerCccUpgradeSchedulesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetAtCustomerCccUpgradeSchedulesFilter] {
-	return pulumix.Output[GetAtCustomerCccUpgradeSchedulesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Generated name associated with the event.
@@ -4927,12 +4216,6 @@ func (o GetAtCustomerCccUpgradeSchedulesFilterArrayOutput) ToGetAtCustomerCccUpg
 
 func (o GetAtCustomerCccUpgradeSchedulesFilterArrayOutput) ToGetAtCustomerCccUpgradeSchedulesFilterArrayOutputWithContext(ctx context.Context) GetAtCustomerCccUpgradeSchedulesFilterArrayOutput {
 	return o
-}
-
-func (o GetAtCustomerCccUpgradeSchedulesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAtCustomerCccUpgradeSchedulesFilter] {
-	return pulumix.Output[[]GetAtCustomerCccUpgradeSchedulesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAtCustomerCccUpgradeSchedulesFilterArrayOutput) Index(i pulumi.IntInput) GetAtCustomerCccUpgradeSchedulesFilterOutput {

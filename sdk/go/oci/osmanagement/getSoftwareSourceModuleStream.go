@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Software Source Module Stream resource in Oracle Cloud Infrastructure OS Management service.
@@ -66,13 +65,13 @@ type GetSoftwareSourceModuleStreamArgs struct {
 // A collection of values returned by getSoftwareSourceModuleStream.
 type GetSoftwareSourceModuleStreamResult struct {
 	// The architecture for which the packages in this module stream were built
-	Architecture string `pulumi:"architecture"`
+	Architecture *string `pulumi:"architecture"`
 	// A description of the contents of the module stream
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Indicates if this stream is the default for its module.
-	IsDefault bool `pulumi:"isDefault"`
+	IsDefault *bool `pulumi:"isDefault"`
 	// The name of the module that contains the stream
 	ModuleName string `pulumi:"moduleName"`
 	// A list of packages that are contained by the stream.  Each element in the list is the name of a package.  The name is suitable to use as an argument to other OS Management APIs that interact directly with packages.
@@ -127,30 +126,24 @@ func (o GetSoftwareSourceModuleStreamResultOutput) ToGetSoftwareSourceModuleStre
 	return o
 }
 
-func (o GetSoftwareSourceModuleStreamResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetSoftwareSourceModuleStreamResult] {
-	return pulumix.Output[GetSoftwareSourceModuleStreamResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The architecture for which the packages in this module stream were built
-func (o GetSoftwareSourceModuleStreamResultOutput) Architecture() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSoftwareSourceModuleStreamResult) string { return v.Architecture }).(pulumi.StringOutput)
+func (o GetSoftwareSourceModuleStreamResultOutput) Architecture() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSoftwareSourceModuleStreamResult) *string { return v.Architecture }).(pulumi.StringPtrOutput)
 }
 
 // A description of the contents of the module stream
-func (o GetSoftwareSourceModuleStreamResultOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSoftwareSourceModuleStreamResult) string { return v.Description }).(pulumi.StringOutput)
+func (o GetSoftwareSourceModuleStreamResultOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSoftwareSourceModuleStreamResult) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetSoftwareSourceModuleStreamResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSoftwareSourceModuleStreamResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetSoftwareSourceModuleStreamResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSoftwareSourceModuleStreamResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Indicates if this stream is the default for its module.
-func (o GetSoftwareSourceModuleStreamResultOutput) IsDefault() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetSoftwareSourceModuleStreamResult) bool { return v.IsDefault }).(pulumi.BoolOutput)
+func (o GetSoftwareSourceModuleStreamResultOutput) IsDefault() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSoftwareSourceModuleStreamResult) *bool { return v.IsDefault }).(pulumi.BoolPtrOutput)
 }
 
 // The name of the module that contains the stream

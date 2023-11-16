@@ -46,72 +46,72 @@ export interface GetOperationsInsightsWarehouseResult {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * Number of OCPUs allocated to OPSI Warehouse ADW.
      */
-    readonly cpuAllocated: number;
+    readonly cpuAllocated?: number;
     /**
      * Number of OCPUs used by OPSI Warehouse ADW. Can be fractional.
      */
-    readonly cpuUsed: number;
+    readonly cpuUsed?: number;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * User-friedly name of Operations Insights Warehouse that does not have to be unique.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * OCID of the dynamic group created for the warehouse
      */
-    readonly dynamicGroupId: string;
+    readonly dynamicGroupId?: string;
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * OPSI Warehouse OCID
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
-    readonly lifecycleDetails: string;
+    readonly lifecycleDetails?: string;
     /**
      * Tenancy Identifier of Operations Insights service
      */
-    readonly operationsInsightsTenancyId: string;
+    readonly operationsInsightsTenancyId?: string;
     readonly operationsInsightsWarehouseId: string;
     /**
      * Possible lifecycle states
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * Storage allocated to OPSI Warehouse ADW.
      */
-    readonly storageAllocatedInGbs: number;
+    readonly storageAllocatedInGbs?: number;
     /**
      * Storage by OPSI Warehouse ADW in GB.
      */
-    readonly storageUsedInGbs: number;
+    readonly storageUsedInGbs?: number;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    readonly systemTags: {[key: string]: any};
+    readonly systemTags?: {[key: string]: any};
     /**
      * The time at which the resource was first created. An RFC3339 formatted datetime string
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The time at which the ADW wallet was last rotated for the Operations Insights Warehouse. An RFC3339 formatted datetime string
      */
-    readonly timeLastWalletRotated: string;
+    readonly timeLastWalletRotated?: string;
     /**
      * The time at which the resource was last updated. An RFC3339 formatted datetime string
      */
-    readonly timeUpdated: string;
+    readonly timeUpdated?: string;
 }
 /**
  * This data source provides details about a specific Operations Insights Warehouse resource in Oracle Cloud Infrastructure Opsi service.

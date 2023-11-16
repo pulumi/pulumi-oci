@@ -46,17 +46,11 @@ class GetMetastoresResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        OCID of the compartment which holds the metastore.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        Mutable name of the metastore.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -66,7 +60,7 @@ class GetMetastoresResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -74,18 +68,12 @@ class GetMetastoresResult:
 
     @property
     @pulumi.getter
-    def metastores(self) -> Sequence['outputs.GetMetastoresMetastoreResult']:
-        """
-        The list of metastores.
-        """
+    def metastores(self) -> Optional[Sequence['outputs.GetMetastoresMetastoreResult']]:
         return pulumi.get(self, "metastores")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the metastore.
-        """
         return pulumi.get(self, "state")
 
 
@@ -109,25 +97,7 @@ def get_metastores(compartment_id: Optional[str] = None,
                    state: Optional[str] = None,
                    opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetMetastoresResult:
     """
-    This data source provides the list of Metastores in Oracle Cloud Infrastructure Data Catalog service.
-
-    Returns a list of all metastores in the specified compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_metastores = oci.DataCatalog.get_metastores(compartment_id=var["compartment_id"],
-        display_name=var["metastore_display_name"],
-        state=var["metastore_state"])
-    ```
-
-
-    :param str compartment_id: The OCID of the compartment where you want to list resources.
-    :param str display_name: A filter to return only resources that match the entire display name given. The match is not case sensitive.
-    :param str state: A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -153,24 +123,6 @@ def get_metastores_output(compartment_id: Optional[pulumi.Input[str]] = None,
                           state: Optional[pulumi.Input[Optional[str]]] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetMetastoresResult]:
     """
-    This data source provides the list of Metastores in Oracle Cloud Infrastructure Data Catalog service.
-
-    Returns a list of all metastores in the specified compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_metastores = oci.DataCatalog.get_metastores(compartment_id=var["compartment_id"],
-        display_name=var["metastore_display_name"],
-        state=var["metastore_state"])
-    ```
-
-
-    :param str compartment_id: The OCID of the compartment where you want to list resources.
-    :param str display_name: A filter to return only resources that match the entire display name given. The match is not case sensitive.
-    :param str state: A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
+    Use this data source to access information about an existing resource.
     """
     ...

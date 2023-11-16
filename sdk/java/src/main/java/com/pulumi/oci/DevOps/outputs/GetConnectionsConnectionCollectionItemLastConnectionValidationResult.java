@@ -6,6 +6,8 @@ package com.pulumi.oci.DevOps.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetConnectionsConnectionCollectionItemLastConnectionValidationResult {
@@ -13,39 +15,39 @@ public final class GetConnectionsConnectionCollectionItemLastConnectionValidatio
      * @return A message describing the result of connection validation in more detail.
      * 
      */
-    private String message;
+    private @Nullable String message;
     /**
      * @return The latest result of whether the credentials pass the validation.
      * 
      */
-    private String result;
+    private @Nullable String result;
     /**
      * @return The latest timestamp when the connection was validated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      * 
      */
-    private String timeValidated;
+    private @Nullable String timeValidated;
 
     private GetConnectionsConnectionCollectionItemLastConnectionValidationResult() {}
     /**
      * @return A message describing the result of connection validation in more detail.
      * 
      */
-    public String message() {
-        return this.message;
+    public Optional<String> message() {
+        return Optional.ofNullable(this.message);
     }
     /**
      * @return The latest result of whether the credentials pass the validation.
      * 
      */
-    public String result() {
-        return this.result;
+    public Optional<String> result() {
+        return Optional.ofNullable(this.result);
     }
     /**
      * @return The latest timestamp when the connection was validated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      * 
      */
-    public String timeValidated() {
-        return this.timeValidated;
+    public Optional<String> timeValidated() {
+        return Optional.ofNullable(this.timeValidated);
     }
 
     public static Builder builder() {
@@ -57,9 +59,9 @@ public final class GetConnectionsConnectionCollectionItemLastConnectionValidatio
     }
     @CustomType.Builder
     public static final class Builder {
-        private String message;
-        private String result;
-        private String timeValidated;
+        private @Nullable String message;
+        private @Nullable String result;
+        private @Nullable String timeValidated;
         public Builder() {}
         public Builder(GetConnectionsConnectionCollectionItemLastConnectionValidationResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -69,18 +71,18 @@ public final class GetConnectionsConnectionCollectionItemLastConnectionValidatio
         }
 
         @CustomType.Setter
-        public Builder message(String message) {
-            this.message = Objects.requireNonNull(message);
+        public Builder message(@Nullable String message) {
+            this.message = message;
             return this;
         }
         @CustomType.Setter
-        public Builder result(String result) {
-            this.result = Objects.requireNonNull(result);
+        public Builder result(@Nullable String result) {
+            this.result = result;
             return this;
         }
         @CustomType.Setter
-        public Builder timeValidated(String timeValidated) {
-            this.timeValidated = Objects.requireNonNull(timeValidated);
+        public Builder timeValidated(@Nullable String timeValidated) {
+            this.timeValidated = timeValidated;
             return this;
         }
         public GetConnectionsConnectionCollectionItemLastConnectionValidationResult build() {

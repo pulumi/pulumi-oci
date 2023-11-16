@@ -16,35 +16,35 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// Maximum number of connector instances in the pool that are idle and active.
         /// </summary>
-        public readonly int MaxIdle;
+        public readonly int? MaxIdle;
         /// <summary>
         /// Maximum number of connector instances in the pool that are idle and active.
         /// </summary>
-        public readonly int MaxObjects;
+        public readonly int? MaxObjects;
         /// <summary>
         /// Maximum time (in milliseconds) to wait for a free connector instance to become available before failing.
         /// </summary>
-        public readonly int MaxWait;
+        public readonly int? MaxWait;
         /// <summary>
         /// Minimum time (in milliseconds) to wait before evicting an idle conenctor instance from the pool.
         /// </summary>
-        public readonly int MinEvictableIdleTimeMillis;
+        public readonly int? MinEvictableIdleTimeMillis;
         /// <summary>
         /// Minimum number of idle connector instances in the pool.
         /// </summary>
-        public readonly int MinIdle;
+        public readonly int? MinIdle;
 
         [OutputConstructor]
         private GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppBundlePoolConfigurationResult(
-            int maxIdle,
+            int? maxIdle,
 
-            int maxObjects,
+            int? maxObjects,
 
-            int maxWait,
+            int? maxWait,
 
-            int minEvictableIdleTimeMillis,
+            int? minEvictableIdleTimeMillis,
 
-            int minIdle)
+            int? minIdle)
         {
             MaxIdle = maxIdle;
             MaxObjects = maxObjects;

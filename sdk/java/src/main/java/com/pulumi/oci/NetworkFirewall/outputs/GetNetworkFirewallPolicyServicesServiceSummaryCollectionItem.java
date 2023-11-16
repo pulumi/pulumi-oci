@@ -8,6 +8,8 @@ import com.pulumi.oci.NetworkFirewall.outputs.GetNetworkFirewallPolicyServicesSe
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetNetworkFirewallPolicyServicesServiceSummaryCollectionItem {
@@ -25,7 +27,7 @@ public final class GetNetworkFirewallPolicyServicesServiceSummaryCollectionItem 
      * @return OCID of the Network Firewall Policy this service belongs to.
      * 
      */
-    private String parentResourceId;
+    private @Nullable String parentResourceId;
     /**
      * @return List of port-ranges used.
      * 
@@ -56,8 +58,8 @@ public final class GetNetworkFirewallPolicyServicesServiceSummaryCollectionItem 
      * @return OCID of the Network Firewall Policy this service belongs to.
      * 
      */
-    public String parentResourceId() {
-        return this.parentResourceId;
+    public Optional<String> parentResourceId() {
+        return Optional.ofNullable(this.parentResourceId);
     }
     /**
      * @return List of port-ranges used.
@@ -85,7 +87,7 @@ public final class GetNetworkFirewallPolicyServicesServiceSummaryCollectionItem 
     public static final class Builder {
         private String name;
         private String networkFirewallPolicyId;
-        private String parentResourceId;
+        private @Nullable String parentResourceId;
         private List<GetNetworkFirewallPolicyServicesServiceSummaryCollectionItemPortRange> portRanges;
         private String type;
         public Builder() {}
@@ -109,8 +111,8 @@ public final class GetNetworkFirewallPolicyServicesServiceSummaryCollectionItem 
             return this;
         }
         @CustomType.Setter
-        public Builder parentResourceId(String parentResourceId) {
-            this.parentResourceId = Objects.requireNonNull(parentResourceId);
+        public Builder parentResourceId(@Nullable String parentResourceId) {
+            this.parentResourceId = parentResourceId;
             return this;
         }
         @CustomType.Setter

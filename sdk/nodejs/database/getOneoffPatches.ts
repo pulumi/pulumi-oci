@@ -70,11 +70,11 @@ export interface GetOneoffPatchesResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The list of oneoff_patches.
      */
-    readonly oneoffPatches: outputs.Database.GetOneoffPatchesOneoffPatch[];
+    readonly oneoffPatches?: outputs.Database.GetOneoffPatchesOneoffPatch[];
     /**
      * The current state of the one-off patch.
      */

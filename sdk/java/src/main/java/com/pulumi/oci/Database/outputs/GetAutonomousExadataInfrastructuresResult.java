@@ -18,7 +18,7 @@ public final class GetAutonomousExadataInfrastructuresResult {
      * @return The list of autonomous_exadata_infrastructures.
      * 
      */
-    private List<GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructure> autonomousExadataInfrastructures;
+    private @Nullable List<GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructure> autonomousExadataInfrastructures;
     /**
      * @return The name of the availability domain that the Autonomous Exadata Infrastructure is located in.
      * 
@@ -39,7 +39,7 @@ public final class GetAutonomousExadataInfrastructuresResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The current lifecycle state of the Autonomous Exadata Infrastructure.
      * 
@@ -52,7 +52,7 @@ public final class GetAutonomousExadataInfrastructuresResult {
      * 
      */
     public List<GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructure> autonomousExadataInfrastructures() {
-        return this.autonomousExadataInfrastructures;
+        return this.autonomousExadataInfrastructures == null ? List.of() : this.autonomousExadataInfrastructures;
     }
     /**
      * @return The name of the availability domain that the Autonomous Exadata Infrastructure is located in.
@@ -82,8 +82,8 @@ public final class GetAutonomousExadataInfrastructuresResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The current lifecycle state of the Autonomous Exadata Infrastructure.
@@ -102,12 +102,12 @@ public final class GetAutonomousExadataInfrastructuresResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructure> autonomousExadataInfrastructures;
+        private @Nullable List<GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructure> autonomousExadataInfrastructures;
         private @Nullable String availabilityDomain;
         private String compartmentId;
         private @Nullable String displayName;
         private @Nullable List<GetAutonomousExadataInfrastructuresFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String state;
         public Builder() {}
         public Builder(GetAutonomousExadataInfrastructuresResult defaults) {
@@ -122,8 +122,8 @@ public final class GetAutonomousExadataInfrastructuresResult {
         }
 
         @CustomType.Setter
-        public Builder autonomousExadataInfrastructures(List<GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructure> autonomousExadataInfrastructures) {
-            this.autonomousExadataInfrastructures = Objects.requireNonNull(autonomousExadataInfrastructures);
+        public Builder autonomousExadataInfrastructures(@Nullable List<GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructure> autonomousExadataInfrastructures) {
+            this.autonomousExadataInfrastructures = autonomousExadataInfrastructures;
             return this;
         }
         public Builder autonomousExadataInfrastructures(GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructure... autonomousExadataInfrastructures) {
@@ -153,8 +153,8 @@ public final class GetAutonomousExadataInfrastructuresResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

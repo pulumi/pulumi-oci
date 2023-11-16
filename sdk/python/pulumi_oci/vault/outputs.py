@@ -45,12 +45,6 @@ class SecretSecretContent(dict):
                  content_type: str,
                  name: Optional[str] = None,
                  stage: Optional[str] = None):
-        """
-        :param str content: (Updatable) The base64-encoded content of the secret.
-        :param str content_type: (Updatable) content type . Example `BASE64` .
-        :param str name: (Updatable) Names should be unique within a secret. Valid characters are uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
-        :param str stage: (Updatable) The rotation state of the secret content. The default is `CURRENT`, meaning that the secret is currently in use. A secret version that you mark as `PENDING` is staged and available for use, but you don't yet want to rotate it into current, active use. For example, you might create or update a secret and mark its rotation state as `PENDING` if you haven't yet updated the secret on the target system. When creating a secret, only the value `CURRENT` is applicable, although the value `LATEST` is also automatically applied. When updating  a secret, you can specify a version's rotation state as either `CURRENT` or `PENDING`.
-        """
         pulumi.set(__self__, "content", content)
         pulumi.set(__self__, "content_type", content_type)
         if name is not None:
@@ -61,33 +55,21 @@ class SecretSecretContent(dict):
     @property
     @pulumi.getter
     def content(self) -> str:
-        """
-        (Updatable) The base64-encoded content of the secret.
-        """
         return pulumi.get(self, "content")
 
     @property
     @pulumi.getter(name="contentType")
     def content_type(self) -> str:
-        """
-        (Updatable) content type . Example `BASE64` .
-        """
         return pulumi.get(self, "content_type")
 
     @property
     @pulumi.getter
     def name(self) -> Optional[str]:
-        """
-        (Updatable) Names should be unique within a secret. Valid characters are uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
-        """
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
     def stage(self) -> Optional[str]:
-        """
-        (Updatable) The rotation state of the secret content. The default is `CURRENT`, meaning that the secret is currently in use. A secret version that you mark as `PENDING` is staged and available for use, but you don't yet want to rotate it into current, active use. For example, you might create or update a secret and mark its rotation state as `PENDING` if you haven't yet updated the secret on the target system. When creating a secret, only the value `CURRENT` is applicable, although the value `LATEST` is also automatically applied. When updating  a secret, you can specify a version's rotation state as either `CURRENT` or `PENDING`.
-        """
         return pulumi.get(self, "stage")
 
 
@@ -124,13 +106,6 @@ class SecretSecretRule(dict):
                  is_secret_content_retrieval_blocked_on_expiry: Optional[bool] = None,
                  secret_version_expiry_interval: Optional[str] = None,
                  time_of_absolute_expiry: Optional[str] = None):
-        """
-        :param str rule_type: (Updatable) The type of rule, which either controls when the secret contents expire or whether they can be reused.
-        :param bool is_enforced_on_deleted_secret_versions: (Updatable) A property indicating whether the rule is applied even if the secret version with the content you are trying to reuse was deleted.
-        :param bool is_secret_content_retrieval_blocked_on_expiry: (Updatable) A property indicating whether to block retrieval of the secret content, on expiry. The default is false. If the secret has already expired and you would like to retrieve the secret contents, you need to edit the secret rule to disable this property, to allow reading the secret content.
-        :param str secret_version_expiry_interval: (Updatable) A property indicating how long the secret contents will be considered valid, expressed in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals) format. The secret needs to be updated when the secret content expires. No enforcement mechanism exists at this time, but audit logs record the expiration on the appropriate date, according to the time interval specified in the rule. The timer resets after you update the secret contents. The minimum value is 1 day and the maximum value is 90 days for this property. Currently, only intervals expressed in days are supported. For example, pass `P3D` to have the secret version expire every 3 days.
-        :param str time_of_absolute_expiry: (Updatable) An optional property indicating the absolute time when this secret will expire, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. The minimum number of days from current time is 1 day and the maximum number of days from current time is 365 days. Example: `2019-04-03T21:10:29.600Z`
-        """
         pulumi.set(__self__, "rule_type", rule_type)
         if is_enforced_on_deleted_secret_versions is not None:
             pulumi.set(__self__, "is_enforced_on_deleted_secret_versions", is_enforced_on_deleted_secret_versions)
@@ -144,136 +119,108 @@ class SecretSecretRule(dict):
     @property
     @pulumi.getter(name="ruleType")
     def rule_type(self) -> str:
-        """
-        (Updatable) The type of rule, which either controls when the secret contents expire or whether they can be reused.
-        """
         return pulumi.get(self, "rule_type")
 
     @property
     @pulumi.getter(name="isEnforcedOnDeletedSecretVersions")
     def is_enforced_on_deleted_secret_versions(self) -> Optional[bool]:
-        """
-        (Updatable) A property indicating whether the rule is applied even if the secret version with the content you are trying to reuse was deleted.
-        """
         return pulumi.get(self, "is_enforced_on_deleted_secret_versions")
 
     @property
     @pulumi.getter(name="isSecretContentRetrievalBlockedOnExpiry")
     def is_secret_content_retrieval_blocked_on_expiry(self) -> Optional[bool]:
-        """
-        (Updatable) A property indicating whether to block retrieval of the secret content, on expiry. The default is false. If the secret has already expired and you would like to retrieve the secret contents, you need to edit the secret rule to disable this property, to allow reading the secret content.
-        """
         return pulumi.get(self, "is_secret_content_retrieval_blocked_on_expiry")
 
     @property
     @pulumi.getter(name="secretVersionExpiryInterval")
     def secret_version_expiry_interval(self) -> Optional[str]:
-        """
-        (Updatable) A property indicating how long the secret contents will be considered valid, expressed in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals) format. The secret needs to be updated when the secret content expires. No enforcement mechanism exists at this time, but audit logs record the expiration on the appropriate date, according to the time interval specified in the rule. The timer resets after you update the secret contents. The minimum value is 1 day and the maximum value is 90 days for this property. Currently, only intervals expressed in days are supported. For example, pass `P3D` to have the secret version expire every 3 days.
-        """
         return pulumi.get(self, "secret_version_expiry_interval")
 
     @property
     @pulumi.getter(name="timeOfAbsoluteExpiry")
     def time_of_absolute_expiry(self) -> Optional[str]:
-        """
-        (Updatable) An optional property indicating the absolute time when this secret will expire, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. The minimum number of days from current time is 1 day and the maximum number of days from current time is 365 days. Example: `2019-04-03T21:10:29.600Z`
-        """
         return pulumi.get(self, "time_of_absolute_expiry")
 
 
 @pulumi.output_type
 class GetSecretSecretContentResult(dict):
     def __init__(__self__, *,
-                 content: str,
-                 content_type: str,
-                 name: str,
-                 stage: str):
-        pulumi.set(__self__, "content", content)
-        pulumi.set(__self__, "content_type", content_type)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "stage", stage)
+                 content: Optional[str] = None,
+                 content_type: Optional[str] = None,
+                 name: Optional[str] = None,
+                 stage: Optional[str] = None):
+        if content is not None:
+            pulumi.set(__self__, "content", content)
+        if content_type is not None:
+            pulumi.set(__self__, "content_type", content_type)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if stage is not None:
+            pulumi.set(__self__, "stage", stage)
 
     @property
     @pulumi.getter
-    def content(self) -> str:
+    def content(self) -> Optional[str]:
         return pulumi.get(self, "content")
 
     @property
     @pulumi.getter(name="contentType")
-    def content_type(self) -> str:
+    def content_type(self) -> Optional[str]:
         return pulumi.get(self, "content_type")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
-    def stage(self) -> str:
+    def stage(self) -> Optional[str]:
         return pulumi.get(self, "stage")
 
 
 @pulumi.output_type
 class GetSecretSecretRuleResult(dict):
     def __init__(__self__, *,
-                 is_enforced_on_deleted_secret_versions: bool,
-                 is_secret_content_retrieval_blocked_on_expiry: bool,
-                 rule_type: str,
-                 secret_version_expiry_interval: str,
-                 time_of_absolute_expiry: str):
-        """
-        :param bool is_enforced_on_deleted_secret_versions: A property indicating whether the rule is applied even if the secret version with the content you are trying to reuse was deleted.
-        :param bool is_secret_content_retrieval_blocked_on_expiry: A property indicating whether to block retrieval of the secret content, on expiry. The default is false. If the secret has already expired and you would like to retrieve the secret contents, you need to edit the secret rule to disable this property, to allow reading the secret content.
-        :param str rule_type: The type of rule, which either controls when the secret contents expire or whether they can be reused.
-        :param str secret_version_expiry_interval: A property indicating how long the secret contents will be considered valid, expressed in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals) format. The secret needs to be updated when the secret content expires. No enforcement mechanism exists at this time, but audit logs record the expiration on the appropriate date, according to the time interval specified in the rule. The timer resets after you update the secret contents. The minimum value is 1 day and the maximum value is 90 days for this property. Currently, only intervals expressed in days are supported. For example, pass `P3D` to have the secret version expire every 3 days.
-        :param str time_of_absolute_expiry: An optional property indicating the absolute time when this secret will expire, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. The minimum number of days from current time is 1 day and the maximum number of days from current time is 365 days. Example: `2019-04-03T21:10:29.600Z`
-        """
-        pulumi.set(__self__, "is_enforced_on_deleted_secret_versions", is_enforced_on_deleted_secret_versions)
-        pulumi.set(__self__, "is_secret_content_retrieval_blocked_on_expiry", is_secret_content_retrieval_blocked_on_expiry)
-        pulumi.set(__self__, "rule_type", rule_type)
-        pulumi.set(__self__, "secret_version_expiry_interval", secret_version_expiry_interval)
-        pulumi.set(__self__, "time_of_absolute_expiry", time_of_absolute_expiry)
+                 is_enforced_on_deleted_secret_versions: Optional[bool] = None,
+                 is_secret_content_retrieval_blocked_on_expiry: Optional[bool] = None,
+                 rule_type: Optional[str] = None,
+                 secret_version_expiry_interval: Optional[str] = None,
+                 time_of_absolute_expiry: Optional[str] = None):
+        if is_enforced_on_deleted_secret_versions is not None:
+            pulumi.set(__self__, "is_enforced_on_deleted_secret_versions", is_enforced_on_deleted_secret_versions)
+        if is_secret_content_retrieval_blocked_on_expiry is not None:
+            pulumi.set(__self__, "is_secret_content_retrieval_blocked_on_expiry", is_secret_content_retrieval_blocked_on_expiry)
+        if rule_type is not None:
+            pulumi.set(__self__, "rule_type", rule_type)
+        if secret_version_expiry_interval is not None:
+            pulumi.set(__self__, "secret_version_expiry_interval", secret_version_expiry_interval)
+        if time_of_absolute_expiry is not None:
+            pulumi.set(__self__, "time_of_absolute_expiry", time_of_absolute_expiry)
 
     @property
     @pulumi.getter(name="isEnforcedOnDeletedSecretVersions")
-    def is_enforced_on_deleted_secret_versions(self) -> bool:
-        """
-        A property indicating whether the rule is applied even if the secret version with the content you are trying to reuse was deleted.
-        """
+    def is_enforced_on_deleted_secret_versions(self) -> Optional[bool]:
         return pulumi.get(self, "is_enforced_on_deleted_secret_versions")
 
     @property
     @pulumi.getter(name="isSecretContentRetrievalBlockedOnExpiry")
-    def is_secret_content_retrieval_blocked_on_expiry(self) -> bool:
-        """
-        A property indicating whether to block retrieval of the secret content, on expiry. The default is false. If the secret has already expired and you would like to retrieve the secret contents, you need to edit the secret rule to disable this property, to allow reading the secret content.
-        """
+    def is_secret_content_retrieval_blocked_on_expiry(self) -> Optional[bool]:
         return pulumi.get(self, "is_secret_content_retrieval_blocked_on_expiry")
 
     @property
     @pulumi.getter(name="ruleType")
-    def rule_type(self) -> str:
-        """
-        The type of rule, which either controls when the secret contents expire or whether they can be reused.
-        """
+    def rule_type(self) -> Optional[str]:
         return pulumi.get(self, "rule_type")
 
     @property
     @pulumi.getter(name="secretVersionExpiryInterval")
-    def secret_version_expiry_interval(self) -> str:
-        """
-        A property indicating how long the secret contents will be considered valid, expressed in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals) format. The secret needs to be updated when the secret content expires. No enforcement mechanism exists at this time, but audit logs record the expiration on the appropriate date, according to the time interval specified in the rule. The timer resets after you update the secret contents. The minimum value is 1 day and the maximum value is 90 days for this property. Currently, only intervals expressed in days are supported. For example, pass `P3D` to have the secret version expire every 3 days.
-        """
+    def secret_version_expiry_interval(self) -> Optional[str]:
         return pulumi.get(self, "secret_version_expiry_interval")
 
     @property
     @pulumi.getter(name="timeOfAbsoluteExpiry")
-    def time_of_absolute_expiry(self) -> str:
-        """
-        An optional property indicating the absolute time when this secret will expire, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. The minimum number of days from current time is 1 day and the maximum number of days from current time is 365 days. Example: `2019-04-03T21:10:29.600Z`
-        """
+    def time_of_absolute_expiry(self) -> Optional[str]:
         return pulumi.get(self, "time_of_absolute_expiry")
 
 
@@ -283,9 +230,6 @@ class GetSecretsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: The secret name.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -294,9 +238,6 @@ class GetSecretsFilterResult(dict):
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        The secret name.
-        """
         return pulumi.get(self, "name")
 
     @property
@@ -313,291 +254,223 @@ class GetSecretsFilterResult(dict):
 @pulumi.output_type
 class GetSecretsSecretResult(dict):
     def __init__(__self__, *,
-                 compartment_id: str,
-                 current_version_number: str,
-                 defined_tags: Mapping[str, Any],
-                 description: str,
-                 freeform_tags: Mapping[str, Any],
-                 id: str,
-                 key_id: str,
-                 lifecycle_details: str,
-                 metadata: Mapping[str, Any],
-                 secret_contents: Sequence['outputs.GetSecretsSecretSecretContentResult'],
-                 secret_name: str,
-                 secret_rules: Sequence['outputs.GetSecretsSecretSecretRuleResult'],
-                 state: str,
-                 time_created: str,
-                 time_of_current_version_expiry: str,
-                 time_of_deletion: str,
-                 vault_id: str):
-        """
-        :param str compartment_id: The OCID of the compartment.
-        :param str current_version_number: The version number of the secret version that's currently in use.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param str description: A brief description of the secret. Avoid entering confidential information.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param str id: The OCID of the secret.
-        :param str key_id: The OCID of the master encryption key that is used to encrypt the secret.
-        :param str lifecycle_details: Additional information about the current lifecycle state of the secret.
-        :param Mapping[str, Any] metadata: Additional metadata that you can use to provide context about how to use the secret or during rotation or other administrative tasks. For example, for a secret that you use to connect to a database, the additional metadata might specify the connection endpoint and the connection string. Provide additional metadata as key-value pairs.
-        :param str secret_name: The user-friendly name of the secret. Avoid entering confidential information.
-        :param Sequence['GetSecretsSecretSecretRuleArgs'] secret_rules: A list of rules that control how the secret is used and managed.
-        :param str state: A filter that returns only resources that match the specified lifecycle state. The state value is case-insensitive.
-        :param str time_created: A property indicating when the secret was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-        :param str time_of_current_version_expiry: An optional property indicating when the current secret version will expire, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-        :param str time_of_deletion: An optional property indicating when to delete the secret, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-        :param str vault_id: The OCID of the vault.
-        """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "current_version_number", current_version_number)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "key_id", key_id)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "metadata", metadata)
-        pulumi.set(__self__, "secret_contents", secret_contents)
-        pulumi.set(__self__, "secret_name", secret_name)
-        pulumi.set(__self__, "secret_rules", secret_rules)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_of_current_version_expiry", time_of_current_version_expiry)
-        pulumi.set(__self__, "time_of_deletion", time_of_deletion)
-        pulumi.set(__self__, "vault_id", vault_id)
+                 compartment_id: Optional[str] = None,
+                 current_version_number: Optional[str] = None,
+                 defined_tags: Optional[Mapping[str, Any]] = None,
+                 description: Optional[str] = None,
+                 freeform_tags: Optional[Mapping[str, Any]] = None,
+                 id: Optional[str] = None,
+                 key_id: Optional[str] = None,
+                 lifecycle_details: Optional[str] = None,
+                 metadata: Optional[Mapping[str, Any]] = None,
+                 secret_contents: Optional[Sequence['outputs.GetSecretsSecretSecretContentResult']] = None,
+                 secret_name: Optional[str] = None,
+                 secret_rules: Optional[Sequence['outputs.GetSecretsSecretSecretRuleResult']] = None,
+                 state: Optional[str] = None,
+                 time_created: Optional[str] = None,
+                 time_of_current_version_expiry: Optional[str] = None,
+                 time_of_deletion: Optional[str] = None,
+                 vault_id: Optional[str] = None):
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if current_version_number is not None:
+            pulumi.set(__self__, "current_version_number", current_version_number)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if key_id is not None:
+            pulumi.set(__self__, "key_id", key_id)
+        if lifecycle_details is not None:
+            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if metadata is not None:
+            pulumi.set(__self__, "metadata", metadata)
+        if secret_contents is not None:
+            pulumi.set(__self__, "secret_contents", secret_contents)
+        if secret_name is not None:
+            pulumi.set(__self__, "secret_name", secret_name)
+        if secret_rules is not None:
+            pulumi.set(__self__, "secret_rules", secret_rules)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if time_of_current_version_expiry is not None:
+            pulumi.set(__self__, "time_of_current_version_expiry", time_of_current_version_expiry)
+        if time_of_deletion is not None:
+            pulumi.set(__self__, "time_of_deletion", time_of_deletion)
+        if vault_id is not None:
+            pulumi.set(__self__, "vault_id", vault_id)
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The OCID of the compartment.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="currentVersionNumber")
-    def current_version_number(self) -> str:
-        """
-        The version number of the secret version that's currently in use.
-        """
+    def current_version_number(self) -> Optional[str]:
         return pulumi.get(self, "current_version_number")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        A brief description of the secret. Avoid entering confidential information.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The OCID of the secret.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="keyId")
-    def key_id(self) -> str:
-        """
-        The OCID of the master encryption key that is used to encrypt the secret.
-        """
+    def key_id(self) -> Optional[str]:
         return pulumi.get(self, "key_id")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        Additional information about the current lifecycle state of the secret.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter
-    def metadata(self) -> Mapping[str, Any]:
-        """
-        Additional metadata that you can use to provide context about how to use the secret or during rotation or other administrative tasks. For example, for a secret that you use to connect to a database, the additional metadata might specify the connection endpoint and the connection string. Provide additional metadata as key-value pairs.
-        """
+    def metadata(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "metadata")
 
     @property
     @pulumi.getter(name="secretContents")
-    def secret_contents(self) -> Sequence['outputs.GetSecretsSecretSecretContentResult']:
+    def secret_contents(self) -> Optional[Sequence['outputs.GetSecretsSecretSecretContentResult']]:
         return pulumi.get(self, "secret_contents")
 
     @property
     @pulumi.getter(name="secretName")
-    def secret_name(self) -> str:
-        """
-        The user-friendly name of the secret. Avoid entering confidential information.
-        """
+    def secret_name(self) -> Optional[str]:
         return pulumi.get(self, "secret_name")
 
     @property
     @pulumi.getter(name="secretRules")
-    def secret_rules(self) -> Sequence['outputs.GetSecretsSecretSecretRuleResult']:
-        """
-        A list of rules that control how the secret is used and managed.
-        """
+    def secret_rules(self) -> Optional[Sequence['outputs.GetSecretsSecretSecretRuleResult']]:
         return pulumi.get(self, "secret_rules")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        A filter that returns only resources that match the specified lifecycle state. The state value is case-insensitive.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        A property indicating when the secret was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeOfCurrentVersionExpiry")
-    def time_of_current_version_expiry(self) -> str:
-        """
-        An optional property indicating when the current secret version will expire, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-        """
+    def time_of_current_version_expiry(self) -> Optional[str]:
         return pulumi.get(self, "time_of_current_version_expiry")
 
     @property
     @pulumi.getter(name="timeOfDeletion")
-    def time_of_deletion(self) -> str:
-        """
-        An optional property indicating when to delete the secret, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-        """
+    def time_of_deletion(self) -> Optional[str]:
         return pulumi.get(self, "time_of_deletion")
 
     @property
     @pulumi.getter(name="vaultId")
-    def vault_id(self) -> str:
-        """
-        The OCID of the vault.
-        """
+    def vault_id(self) -> Optional[str]:
         return pulumi.get(self, "vault_id")
 
 
 @pulumi.output_type
 class GetSecretsSecretSecretContentResult(dict):
     def __init__(__self__, *,
-                 content: str,
-                 content_type: str,
-                 name: str,
-                 stage: str):
-        """
-        :param str name: The secret name.
-        """
-        pulumi.set(__self__, "content", content)
-        pulumi.set(__self__, "content_type", content_type)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "stage", stage)
+                 content: Optional[str] = None,
+                 content_type: Optional[str] = None,
+                 name: Optional[str] = None,
+                 stage: Optional[str] = None):
+        if content is not None:
+            pulumi.set(__self__, "content", content)
+        if content_type is not None:
+            pulumi.set(__self__, "content_type", content_type)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if stage is not None:
+            pulumi.set(__self__, "stage", stage)
 
     @property
     @pulumi.getter
-    def content(self) -> str:
+    def content(self) -> Optional[str]:
         return pulumi.get(self, "content")
 
     @property
     @pulumi.getter(name="contentType")
-    def content_type(self) -> str:
+    def content_type(self) -> Optional[str]:
         return pulumi.get(self, "content_type")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        The secret name.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
-    def stage(self) -> str:
+    def stage(self) -> Optional[str]:
         return pulumi.get(self, "stage")
 
 
 @pulumi.output_type
 class GetSecretsSecretSecretRuleResult(dict):
     def __init__(__self__, *,
-                 is_enforced_on_deleted_secret_versions: bool,
-                 is_secret_content_retrieval_blocked_on_expiry: bool,
-                 rule_type: str,
-                 secret_version_expiry_interval: str,
-                 time_of_absolute_expiry: str):
-        """
-        :param bool is_enforced_on_deleted_secret_versions: A property indicating whether the rule is applied even if the secret version with the content you are trying to reuse was deleted.
-        :param bool is_secret_content_retrieval_blocked_on_expiry: A property indicating whether to block retrieval of the secret content, on expiry. The default is false. If the secret has already expired and you would like to retrieve the secret contents, you need to edit the secret rule to disable this property, to allow reading the secret content.
-        :param str rule_type: The type of rule, which either controls when the secret contents expire or whether they can be reused.
-        :param str secret_version_expiry_interval: A property indicating how long the secret contents will be considered valid, expressed in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals) format. The secret needs to be updated when the secret content expires. No enforcement mechanism exists at this time, but audit logs record the expiration on the appropriate date, according to the time interval specified in the rule. The timer resets after you update the secret contents. The minimum value is 1 day and the maximum value is 90 days for this property. Currently, only intervals expressed in days are supported. For example, pass `P3D` to have the secret version expire every 3 days.
-        :param str time_of_absolute_expiry: An optional property indicating the absolute time when this secret will expire, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. The minimum number of days from current time is 1 day and the maximum number of days from current time is 365 days. Example: `2019-04-03T21:10:29.600Z`
-        """
-        pulumi.set(__self__, "is_enforced_on_deleted_secret_versions", is_enforced_on_deleted_secret_versions)
-        pulumi.set(__self__, "is_secret_content_retrieval_blocked_on_expiry", is_secret_content_retrieval_blocked_on_expiry)
-        pulumi.set(__self__, "rule_type", rule_type)
-        pulumi.set(__self__, "secret_version_expiry_interval", secret_version_expiry_interval)
-        pulumi.set(__self__, "time_of_absolute_expiry", time_of_absolute_expiry)
+                 is_enforced_on_deleted_secret_versions: Optional[bool] = None,
+                 is_secret_content_retrieval_blocked_on_expiry: Optional[bool] = None,
+                 rule_type: Optional[str] = None,
+                 secret_version_expiry_interval: Optional[str] = None,
+                 time_of_absolute_expiry: Optional[str] = None):
+        if is_enforced_on_deleted_secret_versions is not None:
+            pulumi.set(__self__, "is_enforced_on_deleted_secret_versions", is_enforced_on_deleted_secret_versions)
+        if is_secret_content_retrieval_blocked_on_expiry is not None:
+            pulumi.set(__self__, "is_secret_content_retrieval_blocked_on_expiry", is_secret_content_retrieval_blocked_on_expiry)
+        if rule_type is not None:
+            pulumi.set(__self__, "rule_type", rule_type)
+        if secret_version_expiry_interval is not None:
+            pulumi.set(__self__, "secret_version_expiry_interval", secret_version_expiry_interval)
+        if time_of_absolute_expiry is not None:
+            pulumi.set(__self__, "time_of_absolute_expiry", time_of_absolute_expiry)
 
     @property
     @pulumi.getter(name="isEnforcedOnDeletedSecretVersions")
-    def is_enforced_on_deleted_secret_versions(self) -> bool:
-        """
-        A property indicating whether the rule is applied even if the secret version with the content you are trying to reuse was deleted.
-        """
+    def is_enforced_on_deleted_secret_versions(self) -> Optional[bool]:
         return pulumi.get(self, "is_enforced_on_deleted_secret_versions")
 
     @property
     @pulumi.getter(name="isSecretContentRetrievalBlockedOnExpiry")
-    def is_secret_content_retrieval_blocked_on_expiry(self) -> bool:
-        """
-        A property indicating whether to block retrieval of the secret content, on expiry. The default is false. If the secret has already expired and you would like to retrieve the secret contents, you need to edit the secret rule to disable this property, to allow reading the secret content.
-        """
+    def is_secret_content_retrieval_blocked_on_expiry(self) -> Optional[bool]:
         return pulumi.get(self, "is_secret_content_retrieval_blocked_on_expiry")
 
     @property
     @pulumi.getter(name="ruleType")
-    def rule_type(self) -> str:
-        """
-        The type of rule, which either controls when the secret contents expire or whether they can be reused.
-        """
+    def rule_type(self) -> Optional[str]:
         return pulumi.get(self, "rule_type")
 
     @property
     @pulumi.getter(name="secretVersionExpiryInterval")
-    def secret_version_expiry_interval(self) -> str:
-        """
-        A property indicating how long the secret contents will be considered valid, expressed in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals) format. The secret needs to be updated when the secret content expires. No enforcement mechanism exists at this time, but audit logs record the expiration on the appropriate date, according to the time interval specified in the rule. The timer resets after you update the secret contents. The minimum value is 1 day and the maximum value is 90 days for this property. Currently, only intervals expressed in days are supported. For example, pass `P3D` to have the secret version expire every 3 days.
-        """
+    def secret_version_expiry_interval(self) -> Optional[str]:
         return pulumi.get(self, "secret_version_expiry_interval")
 
     @property
     @pulumi.getter(name="timeOfAbsoluteExpiry")
-    def time_of_absolute_expiry(self) -> str:
-        """
-        An optional property indicating the absolute time when this secret will expire, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. The minimum number of days from current time is 1 day and the maximum number of days from current time is 365 days. Example: `2019-04-03T21:10:29.600Z`
-        """
+    def time_of_absolute_expiry(self) -> Optional[str]:
         return pulumi.get(self, "time_of_absolute_expiry")
 
 

@@ -16,47 +16,47 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// The key's fingerprint (e.g., 12:34:56:78:90:ab:cd:ef:12:34:56:78:90:ab:cd:ef).
         /// </summary>
-        public readonly string Fingerprint;
+        public readonly string? Fingerprint;
         /// <summary>
         /// An Oracle-assigned identifier for the key, in this format: TENANCY_OCID/USER_OCID/KEY_FINGERPRINT.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The detailed status of INACTIVE lifecycleState.
         /// </summary>
-        public readonly string InactiveStatus;
+        public readonly string? InactiveStatus;
         /// <summary>
         /// The key's value.
         /// </summary>
-        public readonly string KeyValue;
+        public readonly string? KeyValue;
         /// <summary>
         /// The API key's current state.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// Date and time the `ApiKey` object was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The OCID of the user.
         /// </summary>
-        public readonly string UserId;
+        public readonly string? UserId;
 
         [OutputConstructor]
         private GetApiKeysApiKeyResult(
-            string fingerprint,
+            string? fingerprint,
 
-            string id,
+            string? id,
 
-            string inactiveStatus,
+            string? inactiveStatus,
 
-            string keyValue,
+            string? keyValue,
 
-            string state,
+            string? state,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string userId)
+            string? userId)
         {
             Fingerprint = fingerprint;
             Id = id;

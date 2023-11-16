@@ -6,6 +6,8 @@ package com.pulumi.oci.Identity.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDomainsAppsAppCertificate {
@@ -13,63 +15,63 @@ public final class GetDomainsAppsAppCertificate {
      * @return Certificate alias
      * 
      */
-    private String certAlias;
+    private @Nullable String certAlias;
     /**
      * @return Certificate kid
      * 
      */
-    private String kid;
+    private @Nullable String kid;
     /**
      * @return sha1Thumbprint
      * 
      */
-    private String sha1thumbprint;
+    private @Nullable String sha1thumbprint;
     /**
      * @return Base-64-encoded certificate.
      * 
      */
-    private String x509base64certificate;
+    private @Nullable String x509base64certificate;
     /**
      * @return Certificate x5t
      * 
      */
-    private String x5t;
+    private @Nullable String x5t;
 
     private GetDomainsAppsAppCertificate() {}
     /**
      * @return Certificate alias
      * 
      */
-    public String certAlias() {
-        return this.certAlias;
+    public Optional<String> certAlias() {
+        return Optional.ofNullable(this.certAlias);
     }
     /**
      * @return Certificate kid
      * 
      */
-    public String kid() {
-        return this.kid;
+    public Optional<String> kid() {
+        return Optional.ofNullable(this.kid);
     }
     /**
      * @return sha1Thumbprint
      * 
      */
-    public String sha1thumbprint() {
-        return this.sha1thumbprint;
+    public Optional<String> sha1thumbprint() {
+        return Optional.ofNullable(this.sha1thumbprint);
     }
     /**
      * @return Base-64-encoded certificate.
      * 
      */
-    public String x509base64certificate() {
-        return this.x509base64certificate;
+    public Optional<String> x509base64certificate() {
+        return Optional.ofNullable(this.x509base64certificate);
     }
     /**
      * @return Certificate x5t
      * 
      */
-    public String x5t() {
-        return this.x5t;
+    public Optional<String> x5t() {
+        return Optional.ofNullable(this.x5t);
     }
 
     public static Builder builder() {
@@ -81,11 +83,11 @@ public final class GetDomainsAppsAppCertificate {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String certAlias;
-        private String kid;
-        private String sha1thumbprint;
-        private String x509base64certificate;
-        private String x5t;
+        private @Nullable String certAlias;
+        private @Nullable String kid;
+        private @Nullable String sha1thumbprint;
+        private @Nullable String x509base64certificate;
+        private @Nullable String x5t;
         public Builder() {}
         public Builder(GetDomainsAppsAppCertificate defaults) {
     	      Objects.requireNonNull(defaults);
@@ -97,28 +99,28 @@ public final class GetDomainsAppsAppCertificate {
         }
 
         @CustomType.Setter
-        public Builder certAlias(String certAlias) {
-            this.certAlias = Objects.requireNonNull(certAlias);
+        public Builder certAlias(@Nullable String certAlias) {
+            this.certAlias = certAlias;
             return this;
         }
         @CustomType.Setter
-        public Builder kid(String kid) {
-            this.kid = Objects.requireNonNull(kid);
+        public Builder kid(@Nullable String kid) {
+            this.kid = kid;
             return this;
         }
         @CustomType.Setter
-        public Builder sha1thumbprint(String sha1thumbprint) {
-            this.sha1thumbprint = Objects.requireNonNull(sha1thumbprint);
+        public Builder sha1thumbprint(@Nullable String sha1thumbprint) {
+            this.sha1thumbprint = sha1thumbprint;
             return this;
         }
         @CustomType.Setter
-        public Builder x509base64certificate(String x509base64certificate) {
-            this.x509base64certificate = Objects.requireNonNull(x509base64certificate);
+        public Builder x509base64certificate(@Nullable String x509base64certificate) {
+            this.x509base64certificate = x509base64certificate;
             return this;
         }
         @CustomType.Setter
-        public Builder x5t(String x5t) {
-            this.x5t = Objects.requireNonNull(x5t);
+        public Builder x5t(@Nullable String x5t) {
+            this.x5t = x5t;
             return this;
         }
         public GetDomainsAppsAppCertificate build() {

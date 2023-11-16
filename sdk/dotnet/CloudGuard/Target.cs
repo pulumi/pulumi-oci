@@ -119,7 +119,7 @@ namespace Pulumi.Oci.CloudGuard
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// The target description.
@@ -127,7 +127,7 @@ namespace Pulumi.Oci.CloudGuard
         /// Avoid entering confidential information.
         /// </summary>
         [Output("description")]
-        public Output<string> Description { get; private set; } = null!;
+        public Output<string?> Description { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) DetectorTemplate identifier.
@@ -143,7 +143,7 @@ namespace Pulumi.Oci.CloudGuard
         /// Avoid entering confidential information.
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// List of inherited compartments
@@ -155,25 +155,25 @@ namespace Pulumi.Oci.CloudGuard
         /// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         /// </summary>
         [Output("lifecyleDetails")]
-        public Output<string> LifecyleDetails { get; private set; } = null!;
+        public Output<string?> LifecyleDetails { get; private set; } = null!;
 
         /// <summary>
         /// Total number of recipes attached to target
         /// </summary>
         [Output("recipeCount")]
-        public Output<int> RecipeCount { get; private set; } = null!;
+        public Output<int?> RecipeCount { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The current state of the DetectorRule.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
         [Output("systemTags")]
-        public Output<ImmutableDictionary<string, object>> SystemTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> SystemTags { get; private set; } = null!;
 
         /// <summary>
         /// Details specific to the target type.
@@ -209,13 +209,13 @@ namespace Pulumi.Oci.CloudGuard
         /// The date and time the target was created. Format defined by RFC3339.
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the target was updated. Format defined by RFC3339.
         /// </summary>
         [Output("timeUpdated")]
-        public Output<string> TimeUpdated { get; private set; } = null!;
+        public Output<string?> TimeUpdated { get; private set; } = null!;
 
 
         /// <summary>

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific My Trusted User Agent resource in Oracle Cloud Infrastructure Identity Domains service.
@@ -78,48 +77,48 @@ type GetDomainsMyTrustedUserAgentResult struct {
 	Attributes    *string  `pulumi:"attributes"`
 	Authorization *string  `pulumi:"authorization"`
 	// Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
-	CompartmentOcid string `pulumi:"compartmentOcid"`
+	CompartmentOcid *string `pulumi:"compartmentOcid"`
 	// A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
-	DeleteInProgress bool `pulumi:"deleteInProgress"`
+	DeleteInProgress *bool `pulumi:"deleteInProgress"`
 	// Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
-	DomainOcid string `pulumi:"domainOcid"`
+	DomainOcid *string `pulumi:"domainOcid"`
 	// Validation period of the trust token.
-	ExpiryTime string `pulumi:"expiryTime"`
+	ExpiryTime *string `pulumi:"expiryTime"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The User or App who created the Resource
 	IdcsCreatedBies []GetDomainsMyTrustedUserAgentIdcsCreatedBy `pulumi:"idcsCreatedBies"`
 	IdcsEndpoint    string                                      `pulumi:"idcsEndpoint"`
 	// The User or App who modified the Resource
 	IdcsLastModifiedBies []GetDomainsMyTrustedUserAgentIdcsLastModifiedBy `pulumi:"idcsLastModifiedBies"`
 	// The release number when the resource was upgraded.
-	IdcsLastUpgradedInRelease string `pulumi:"idcsLastUpgradedInRelease"`
+	IdcsLastUpgradedInRelease *string `pulumi:"idcsLastUpgradedInRelease"`
 	// Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
 	IdcsPreventedOperations []string `pulumi:"idcsPreventedOperations"`
 	// Indicates when this token was used lastime.
-	LastUsedOn string `pulumi:"lastUsedOn"`
+	LastUsedOn *string `pulumi:"lastUsedOn"`
 	// The URI of the Resource being returned. This value MUST be the same as the Location HTTP response header.
-	Location string `pulumi:"location"`
+	Location *string `pulumi:"location"`
 	// A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
 	Metas                []GetDomainsMyTrustedUserAgentMeta `pulumi:"metas"`
 	MyTrustedUserAgentId string                             `pulumi:"myTrustedUserAgentId"`
 	// The name of the User Agent that the user wants the system to trust and to use in Multi-Factor Authentication.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// The OCID of the user
-	Ocid string `pulumi:"ocid"`
+	Ocid *string `pulumi:"ocid"`
 	// User agent platform for which the trust token has been issued.
-	Platform                  string  `pulumi:"platform"`
+	Platform                  *string `pulumi:"platform"`
 	ResourceTypeSchemaVersion *string `pulumi:"resourceTypeSchemaVersion"`
 	// REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
 	Schemas []string `pulumi:"schemas"`
 	// A list of tags on this resource.
 	Tags []GetDomainsMyTrustedUserAgentTag `pulumi:"tags"`
 	// Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
-	TenancyOcid string `pulumi:"tenancyOcid"`
+	TenancyOcid *string `pulumi:"tenancyOcid"`
 	// The token type being created. This token is used as trusted and kmsi token.
-	TokenType string `pulumi:"tokenType"`
+	TokenType *string `pulumi:"tokenType"`
 	// Trust token for the user agent. This is a random string value that will be updated whenever a token that has been issued is verified successfully.
-	TrustToken string `pulumi:"trustToken"`
+	TrustToken *string `pulumi:"trustToken"`
 	// Trusted 2FA Factors
 	TrustedFactors []GetDomainsMyTrustedUserAgentTrustedFactor `pulumi:"trustedFactors"`
 	// user for whom the trust-token was issued
@@ -174,12 +173,6 @@ func (o GetDomainsMyTrustedUserAgentResultOutput) ToGetDomainsMyTrustedUserAgent
 	return o
 }
 
-func (o GetDomainsMyTrustedUserAgentResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDomainsMyTrustedUserAgentResult] {
-	return pulumix.Output[GetDomainsMyTrustedUserAgentResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDomainsMyTrustedUserAgentResultOutput) AttributeSets() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetDomainsMyTrustedUserAgentResult) []string { return v.AttributeSets }).(pulumi.StringArrayOutput)
 }
@@ -193,28 +186,28 @@ func (o GetDomainsMyTrustedUserAgentResultOutput) Authorization() pulumi.StringP
 }
 
 // Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
-func (o GetDomainsMyTrustedUserAgentResultOutput) CompartmentOcid() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDomainsMyTrustedUserAgentResult) string { return v.CompartmentOcid }).(pulumi.StringOutput)
+func (o GetDomainsMyTrustedUserAgentResultOutput) CompartmentOcid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDomainsMyTrustedUserAgentResult) *string { return v.CompartmentOcid }).(pulumi.StringPtrOutput)
 }
 
 // A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
-func (o GetDomainsMyTrustedUserAgentResultOutput) DeleteInProgress() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetDomainsMyTrustedUserAgentResult) bool { return v.DeleteInProgress }).(pulumi.BoolOutput)
+func (o GetDomainsMyTrustedUserAgentResultOutput) DeleteInProgress() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetDomainsMyTrustedUserAgentResult) *bool { return v.DeleteInProgress }).(pulumi.BoolPtrOutput)
 }
 
 // Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
-func (o GetDomainsMyTrustedUserAgentResultOutput) DomainOcid() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDomainsMyTrustedUserAgentResult) string { return v.DomainOcid }).(pulumi.StringOutput)
+func (o GetDomainsMyTrustedUserAgentResultOutput) DomainOcid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDomainsMyTrustedUserAgentResult) *string { return v.DomainOcid }).(pulumi.StringPtrOutput)
 }
 
 // Validation period of the trust token.
-func (o GetDomainsMyTrustedUserAgentResultOutput) ExpiryTime() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDomainsMyTrustedUserAgentResult) string { return v.ExpiryTime }).(pulumi.StringOutput)
+func (o GetDomainsMyTrustedUserAgentResultOutput) ExpiryTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDomainsMyTrustedUserAgentResult) *string { return v.ExpiryTime }).(pulumi.StringPtrOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetDomainsMyTrustedUserAgentResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDomainsMyTrustedUserAgentResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetDomainsMyTrustedUserAgentResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDomainsMyTrustedUserAgentResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The User or App who created the Resource
@@ -236,8 +229,8 @@ func (o GetDomainsMyTrustedUserAgentResultOutput) IdcsLastModifiedBies() GetDoma
 }
 
 // The release number when the resource was upgraded.
-func (o GetDomainsMyTrustedUserAgentResultOutput) IdcsLastUpgradedInRelease() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDomainsMyTrustedUserAgentResult) string { return v.IdcsLastUpgradedInRelease }).(pulumi.StringOutput)
+func (o GetDomainsMyTrustedUserAgentResultOutput) IdcsLastUpgradedInRelease() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDomainsMyTrustedUserAgentResult) *string { return v.IdcsLastUpgradedInRelease }).(pulumi.StringPtrOutput)
 }
 
 // Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
@@ -246,13 +239,13 @@ func (o GetDomainsMyTrustedUserAgentResultOutput) IdcsPreventedOperations() pulu
 }
 
 // Indicates when this token was used lastime.
-func (o GetDomainsMyTrustedUserAgentResultOutput) LastUsedOn() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDomainsMyTrustedUserAgentResult) string { return v.LastUsedOn }).(pulumi.StringOutput)
+func (o GetDomainsMyTrustedUserAgentResultOutput) LastUsedOn() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDomainsMyTrustedUserAgentResult) *string { return v.LastUsedOn }).(pulumi.StringPtrOutput)
 }
 
 // The URI of the Resource being returned. This value MUST be the same as the Location HTTP response header.
-func (o GetDomainsMyTrustedUserAgentResultOutput) Location() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDomainsMyTrustedUserAgentResult) string { return v.Location }).(pulumi.StringOutput)
+func (o GetDomainsMyTrustedUserAgentResultOutput) Location() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDomainsMyTrustedUserAgentResult) *string { return v.Location }).(pulumi.StringPtrOutput)
 }
 
 // A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
@@ -265,18 +258,18 @@ func (o GetDomainsMyTrustedUserAgentResultOutput) MyTrustedUserAgentId() pulumi.
 }
 
 // The name of the User Agent that the user wants the system to trust and to use in Multi-Factor Authentication.
-func (o GetDomainsMyTrustedUserAgentResultOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDomainsMyTrustedUserAgentResult) string { return v.Name }).(pulumi.StringOutput)
+func (o GetDomainsMyTrustedUserAgentResultOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDomainsMyTrustedUserAgentResult) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the user
-func (o GetDomainsMyTrustedUserAgentResultOutput) Ocid() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDomainsMyTrustedUserAgentResult) string { return v.Ocid }).(pulumi.StringOutput)
+func (o GetDomainsMyTrustedUserAgentResultOutput) Ocid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDomainsMyTrustedUserAgentResult) *string { return v.Ocid }).(pulumi.StringPtrOutput)
 }
 
 // User agent platform for which the trust token has been issued.
-func (o GetDomainsMyTrustedUserAgentResultOutput) Platform() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDomainsMyTrustedUserAgentResult) string { return v.Platform }).(pulumi.StringOutput)
+func (o GetDomainsMyTrustedUserAgentResultOutput) Platform() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDomainsMyTrustedUserAgentResult) *string { return v.Platform }).(pulumi.StringPtrOutput)
 }
 
 func (o GetDomainsMyTrustedUserAgentResultOutput) ResourceTypeSchemaVersion() pulumi.StringPtrOutput {
@@ -294,18 +287,18 @@ func (o GetDomainsMyTrustedUserAgentResultOutput) Tags() GetDomainsMyTrustedUser
 }
 
 // Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
-func (o GetDomainsMyTrustedUserAgentResultOutput) TenancyOcid() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDomainsMyTrustedUserAgentResult) string { return v.TenancyOcid }).(pulumi.StringOutput)
+func (o GetDomainsMyTrustedUserAgentResultOutput) TenancyOcid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDomainsMyTrustedUserAgentResult) *string { return v.TenancyOcid }).(pulumi.StringPtrOutput)
 }
 
 // The token type being created. This token is used as trusted and kmsi token.
-func (o GetDomainsMyTrustedUserAgentResultOutput) TokenType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDomainsMyTrustedUserAgentResult) string { return v.TokenType }).(pulumi.StringOutput)
+func (o GetDomainsMyTrustedUserAgentResultOutput) TokenType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDomainsMyTrustedUserAgentResult) *string { return v.TokenType }).(pulumi.StringPtrOutput)
 }
 
 // Trust token for the user agent. This is a random string value that will be updated whenever a token that has been issued is verified successfully.
-func (o GetDomainsMyTrustedUserAgentResultOutput) TrustToken() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDomainsMyTrustedUserAgentResult) string { return v.TrustToken }).(pulumi.StringOutput)
+func (o GetDomainsMyTrustedUserAgentResultOutput) TrustToken() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDomainsMyTrustedUserAgentResult) *string { return v.TrustToken }).(pulumi.StringPtrOutput)
 }
 
 // Trusted 2FA Factors

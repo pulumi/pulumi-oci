@@ -98,31 +98,22 @@ class GetBootVolumeResult:
 
     @property
     @pulumi.getter(name="autoTunedVpusPerGb")
-    def auto_tuned_vpus_per_gb(self) -> str:
-        """
-        The number of Volume Performance Units per GB that this boot volume is effectively tuned to.
-        """
+    def auto_tuned_vpus_per_gb(self) -> Optional[str]:
         return pulumi.get(self, "auto_tuned_vpus_per_gb")
 
     @property
     @pulumi.getter(name="autotunePolicies")
-    def autotune_policies(self) -> Sequence['outputs.GetBootVolumeAutotunePolicyResult']:
-        """
-        The list of autotune policies enabled for this volume.
-        """
+    def autotune_policies(self) -> Optional[Sequence['outputs.GetBootVolumeAutotunePolicyResult']]:
         return pulumi.get(self, "autotune_policies")
 
     @property
     @pulumi.getter(name="availabilityDomain")
-    def availability_domain(self) -> str:
-        """
-        The availability domain of the boot volume replica.  Example: `Uocm:PHX-AD-1`
-        """
+    def availability_domain(self) -> Optional[str]:
         return pulumi.get(self, "availability_domain")
 
     @property
     @pulumi.getter(name="backupPolicyId")
-    def backup_policy_id(self) -> str:
+    def backup_policy_id(self) -> Optional[str]:
         warnings.warn("""The 'backup_policy_id' field has been deprecated. Please use the 'oci_core_volume_backup_policy_assignment' resource instead.""", DeprecationWarning)
         pulumi.log.warn("""backup_policy_id is deprecated: The 'backup_policy_id' field has been deprecated. Please use the 'oci_core_volume_backup_policy_assignment' resource instead.""")
 
@@ -135,148 +126,97 @@ class GetBootVolumeResult:
 
     @property
     @pulumi.getter(name="bootVolumeReplicas")
-    def boot_volume_replicas(self) -> Sequence['outputs.GetBootVolumeBootVolumeReplicaResult']:
-        """
-        The list of boot volume replicas of this boot volume
-        """
+    def boot_volume_replicas(self) -> Optional[Sequence['outputs.GetBootVolumeBootVolumeReplicaResult']]:
         return pulumi.get(self, "boot_volume_replicas")
 
     @property
     @pulumi.getter(name="bootVolumeReplicasDeletion")
-    def boot_volume_replicas_deletion(self) -> bool:
+    def boot_volume_replicas_deletion(self) -> Optional[bool]:
         return pulumi.get(self, "boot_volume_replicas_deletion")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The OCID of the compartment that contains the boot volume.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The OCID of the boot volume replica.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="imageId")
-    def image_id(self) -> str:
-        """
-        The image OCID used to create the boot volume.
-        """
+    def image_id(self) -> Optional[str]:
         return pulumi.get(self, "image_id")
 
     @property
     @pulumi.getter(name="isAutoTuneEnabled")
-    def is_auto_tune_enabled(self) -> bool:
-        """
-        Specifies whether the auto-tune performance is enabled for this boot volume. This field is deprecated. Use the `DetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
-        """
+    def is_auto_tune_enabled(self) -> Optional[bool]:
         return pulumi.get(self, "is_auto_tune_enabled")
 
     @property
     @pulumi.getter(name="isHydrated")
-    def is_hydrated(self) -> bool:
-        """
-        Specifies whether the boot volume's data has finished copying from the source boot volume or boot volume backup.
-        """
+    def is_hydrated(self) -> Optional[bool]:
         return pulumi.get(self, "is_hydrated")
 
     @property
     @pulumi.getter(name="kmsKeyId")
-    def kms_key_id(self) -> str:
-        """
-        The OCID of the Vault service master encryption key assigned to the boot volume.
-        """
+    def kms_key_id(self) -> Optional[str]:
         return pulumi.get(self, "kms_key_id")
 
     @property
     @pulumi.getter(name="sizeInGbs")
-    def size_in_gbs(self) -> str:
-        """
-        The size of the boot volume in GBs.
-        """
+    def size_in_gbs(self) -> Optional[str]:
         return pulumi.get(self, "size_in_gbs")
 
     @property
     @pulumi.getter(name="sizeInMbs")
-    def size_in_mbs(self) -> str:
-        """
-        The size of the volume in MBs. The value must be a multiple of 1024. This field is deprecated. Please use `size_in_gbs`.
-        """
+    def size_in_mbs(self) -> Optional[str]:
         return pulumi.get(self, "size_in_mbs")
 
     @property
     @pulumi.getter(name="sourceDetails")
-    def source_details(self) -> Sequence['outputs.GetBootVolumeSourceDetailResult']:
+    def source_details(self) -> Optional[Sequence['outputs.GetBootVolumeSourceDetailResult']]:
         return pulumi.get(self, "source_details")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of a boot volume.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the boot volume was created. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="volumeGroupId")
-    def volume_group_id(self) -> str:
-        """
-        The OCID of the source volume group.
-        """
+    def volume_group_id(self) -> Optional[str]:
         return pulumi.get(self, "volume_group_id")
 
     @property
     @pulumi.getter(name="vpusPerGb")
-    def vpus_per_gb(self) -> str:
-        """
-        The number of volume performance units (VPUs) that will be applied to this boot volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
-        """
+    def vpus_per_gb(self) -> Optional[str]:
         return pulumi.get(self, "vpus_per_gb")
 
 
@@ -315,21 +255,7 @@ class AwaitableGetBootVolumeResult(GetBootVolumeResult):
 def get_boot_volume(boot_volume_id: Optional[str] = None,
                     opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetBootVolumeResult:
     """
-    This data source provides details about a specific Boot Volume resource in Oracle Cloud Infrastructure Core service.
-
-    Gets information for the specified boot volume.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_boot_volume = oci.Core.get_boot_volume(boot_volume_id=oci_core_boot_volume["test_boot_volume"]["id"])
-    ```
-
-
-    :param str boot_volume_id: The OCID of the boot volume.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['bootVolumeId'] = boot_volume_id
@@ -367,20 +293,6 @@ def get_boot_volume(boot_volume_id: Optional[str] = None,
 def get_boot_volume_output(boot_volume_id: Optional[pulumi.Input[str]] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetBootVolumeResult]:
     """
-    This data source provides details about a specific Boot Volume resource in Oracle Cloud Infrastructure Core service.
-
-    Gets information for the specified boot volume.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_boot_volume = oci.Core.get_boot_volume(boot_volume_id=oci_core_boot_volume["test_boot_volume"]["id"])
-    ```
-
-
-    :param str boot_volume_id: The OCID of the boot volume.
+    Use this data source to access information about an existing resource.
     """
     ...

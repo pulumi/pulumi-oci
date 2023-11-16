@@ -44,7 +44,7 @@ class GetVirtualCircuitBandwidthShapesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -57,10 +57,7 @@ class GetVirtualCircuitBandwidthShapesResult:
 
     @property
     @pulumi.getter(name="virtualCircuitBandwidthShapes")
-    def virtual_circuit_bandwidth_shapes(self) -> Sequence['outputs.GetVirtualCircuitBandwidthShapesVirtualCircuitBandwidthShapeResult']:
-        """
-        The list of virtual_circuit_bandwidth_shapes.
-        """
+    def virtual_circuit_bandwidth_shapes(self) -> Optional[Sequence['outputs.GetVirtualCircuitBandwidthShapesVirtualCircuitBandwidthShapeResult']]:
         return pulumi.get(self, "virtual_circuit_bandwidth_shapes")
 
 
@@ -80,24 +77,7 @@ def get_virtual_circuit_bandwidth_shapes(filters: Optional[Sequence[pulumi.Input
                                          provider_service_id: Optional[str] = None,
                                          opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetVirtualCircuitBandwidthShapesResult:
     """
-    This data source provides the list of Virtual Circuit Bandwidth Shapes in Oracle Cloud Infrastructure Core service.
-
-    Gets the list of available virtual circuit bandwidth levels for a provider.
-    You need this information so you can specify your desired bandwidth level (shape) when you create a virtual circuit.
-
-    For more information about virtual circuits, see [FastConnect Overview](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm).
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_virtual_circuit_bandwidth_shapes = oci.Core.get_virtual_circuit_bandwidth_shapes(provider_service_id=data["oci_core_fast_connect_provider_services"]["test_fast_connect_provider_services"]["fast_connect_provider_services"][0]["id"])
-    ```
-
-
-    :param str provider_service_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the provider service.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['filters'] = filters
@@ -117,23 +97,6 @@ def get_virtual_circuit_bandwidth_shapes_output(filters: Optional[pulumi.Input[O
                                                 provider_service_id: Optional[pulumi.Input[str]] = None,
                                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetVirtualCircuitBandwidthShapesResult]:
     """
-    This data source provides the list of Virtual Circuit Bandwidth Shapes in Oracle Cloud Infrastructure Core service.
-
-    Gets the list of available virtual circuit bandwidth levels for a provider.
-    You need this information so you can specify your desired bandwidth level (shape) when you create a virtual circuit.
-
-    For more information about virtual circuits, see [FastConnect Overview](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm).
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_virtual_circuit_bandwidth_shapes = oci.Core.get_virtual_circuit_bandwidth_shapes(provider_service_id=data["oci_core_fast_connect_provider_services"]["test_fast_connect_provider_services"]["fast_connect_provider_services"][0]["id"])
-    ```
-
-
-    :param str provider_service_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the provider service.
+    Use this data source to access information about an existing resource.
     """
     ...

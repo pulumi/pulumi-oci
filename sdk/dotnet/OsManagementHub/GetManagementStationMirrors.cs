@@ -186,7 +186,7 @@ namespace Pulumi.Oci.OsManagementHub
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         public readonly string ManagementStationId;
         public readonly ImmutableArray<string> MirrorStates;
         /// <summary>
@@ -202,7 +202,7 @@ namespace Pulumi.Oci.OsManagementHub
 
             ImmutableArray<Outputs.GetManagementStationMirrorsFilterResult> filters,
 
-            string id,
+            string? id,
 
             string managementStationId,
 

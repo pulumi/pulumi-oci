@@ -66,13 +66,13 @@ namespace Pulumi.Oci.Identity
         /// (Updatable) Network policy, Consists of a list of Network Source ids.
         /// </summary>
         [Output("networkPolicy")]
-        public Output<Outputs.AuthenticationPolicyNetworkPolicy> NetworkPolicy { get; private set; } = null!;
+        public Output<Outputs.AuthenticationPolicyNetworkPolicy?> NetworkPolicy { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Password policy, currently set for the given compartment.
         /// </summary>
         [Output("passwordPolicy")]
-        public Output<Outputs.AuthenticationPolicyPasswordPolicy> PasswordPolicy { get; private set; } = null!;
+        public Output<Outputs.AuthenticationPolicyPasswordPolicy?> PasswordPolicy { get; private set; } = null!;
 
 
         /// <summary>

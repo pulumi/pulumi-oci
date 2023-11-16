@@ -185,7 +185,7 @@ namespace Pulumi.Oci.ApmSynthetics
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the monitor.
         /// </summary>
@@ -213,7 +213,7 @@ namespace Pulumi.Oci.ApmSynthetics
 
             string executionTime,
 
-            string id,
+            string? id,
 
             string monitorId,
 

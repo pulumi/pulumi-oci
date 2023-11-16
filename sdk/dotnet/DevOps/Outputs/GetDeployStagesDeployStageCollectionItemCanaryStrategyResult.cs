@@ -16,23 +16,23 @@ namespace Pulumi.Oci.DevOps.Outputs
         /// <summary>
         /// Name of the Ingress resource.
         /// </summary>
-        public readonly string IngressName;
+        public readonly string? IngressName;
         /// <summary>
         /// Default Namespace to be used for Kubernetes deployment when not specified in the manifest.
         /// </summary>
-        public readonly string Namespace;
+        public readonly string? Namespace;
         /// <summary>
         /// Canary strategy type.
         /// </summary>
-        public readonly string StrategyType;
+        public readonly string? StrategyType;
 
         [OutputConstructor]
         private GetDeployStagesDeployStageCollectionItemCanaryStrategyResult(
-            string ingressName,
+            string? ingressName,
 
-            string @namespace,
+            string? @namespace,
 
-            string strategyType)
+            string? strategyType)
         {
             IngressName = ingressName;
             Namespace = @namespace;

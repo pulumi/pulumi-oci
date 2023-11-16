@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Domain resource in Oracle Cloud Infrastructure Identity service.
@@ -62,45 +61,45 @@ type LookupDomainArgs struct {
 
 // A collection of values returned by getDomain.
 type LookupDomainResult struct {
-	AdminEmail     string `pulumi:"adminEmail"`
-	AdminFirstName string `pulumi:"adminFirstName"`
-	AdminLastName  string `pulumi:"adminLastName"`
-	AdminUserName  string `pulumi:"adminUserName"`
+	AdminEmail     *string `pulumi:"adminEmail"`
+	AdminFirstName *string `pulumi:"adminFirstName"`
+	AdminLastName  *string `pulumi:"adminLastName"`
+	AdminUserName  *string `pulumi:"adminUserName"`
 	// The OCID of the compartment containing the domain.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The domain descripition
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// The mutable display name of the domain
-	DisplayName string `pulumi:"displayName"`
-	DomainId    string `pulumi:"domainId"`
+	DisplayName *string `pulumi:"displayName"`
+	DomainId    string  `pulumi:"domainId"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The home region for the domain. See [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm) for the full list of supported region names.  Example: `us-phoenix-1`
-	HomeRegion string `pulumi:"homeRegion"`
+	HomeRegion *string `pulumi:"homeRegion"`
 	// Region specific domain URL.
-	HomeRegionUrl string `pulumi:"homeRegionUrl"`
+	HomeRegionUrl *string `pulumi:"homeRegionUrl"`
 	// The OCID of the domain
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Indicates whether domain is hidden on login screen or not.
-	IsHiddenOnLogin        bool `pulumi:"isHiddenOnLogin"`
-	IsNotificationBypassed bool `pulumi:"isNotificationBypassed"`
-	IsPrimaryEmailRequired bool `pulumi:"isPrimaryEmailRequired"`
+	IsHiddenOnLogin        *bool `pulumi:"isHiddenOnLogin"`
+	IsNotificationBypassed *bool `pulumi:"isNotificationBypassed"`
+	IsPrimaryEmailRequired *bool `pulumi:"isPrimaryEmailRequired"`
 	// The License type of Domain
-	LicenseType string `pulumi:"licenseType"`
+	LicenseType *string `pulumi:"licenseType"`
 	// Any additional details about the current state of the Domain.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// The regions domain is replication to.
 	ReplicaRegions []GetDomainReplicaRegion `pulumi:"replicaRegions"`
 	// The current state.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// Date and time the domain was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The type of the domain.
-	Type string `pulumi:"type"`
+	Type *string `pulumi:"type"`
 	// Region agnostic domain URL.
-	Url string `pulumi:"url"`
+	Url *string `pulumi:"url"`
 }
 
 func LookupDomainOutput(ctx *pulumi.Context, args LookupDomainOutputArgs, opts ...pulumi.InvokeOption) LookupDomainResultOutput {
@@ -141,31 +140,25 @@ func (o LookupDomainResultOutput) ToLookupDomainResultOutputWithContext(ctx cont
 	return o
 }
 
-func (o LookupDomainResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupDomainResult] {
-	return pulumix.Output[LookupDomainResult]{
-		OutputState: o.OutputState,
-	}
+func (o LookupDomainResultOutput) AdminEmail() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainResult) *string { return v.AdminEmail }).(pulumi.StringPtrOutput)
 }
 
-func (o LookupDomainResultOutput) AdminEmail() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainResult) string { return v.AdminEmail }).(pulumi.StringOutput)
+func (o LookupDomainResultOutput) AdminFirstName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainResult) *string { return v.AdminFirstName }).(pulumi.StringPtrOutput)
 }
 
-func (o LookupDomainResultOutput) AdminFirstName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainResult) string { return v.AdminFirstName }).(pulumi.StringOutput)
+func (o LookupDomainResultOutput) AdminLastName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainResult) *string { return v.AdminLastName }).(pulumi.StringPtrOutput)
 }
 
-func (o LookupDomainResultOutput) AdminLastName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainResult) string { return v.AdminLastName }).(pulumi.StringOutput)
-}
-
-func (o LookupDomainResultOutput) AdminUserName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainResult) string { return v.AdminUserName }).(pulumi.StringOutput)
+func (o LookupDomainResultOutput) AdminUserName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainResult) *string { return v.AdminUserName }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the compartment containing the domain.
-func (o LookupDomainResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupDomainResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -174,13 +167,13 @@ func (o LookupDomainResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // The domain descripition
-func (o LookupDomainResultOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainResult) string { return v.Description }).(pulumi.StringOutput)
+func (o LookupDomainResultOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainResult) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // The mutable display name of the domain
-func (o LookupDomainResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupDomainResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupDomainResultOutput) DomainId() pulumi.StringOutput {
@@ -193,41 +186,41 @@ func (o LookupDomainResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The home region for the domain. See [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm) for the full list of supported region names.  Example: `us-phoenix-1`
-func (o LookupDomainResultOutput) HomeRegion() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainResult) string { return v.HomeRegion }).(pulumi.StringOutput)
+func (o LookupDomainResultOutput) HomeRegion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainResult) *string { return v.HomeRegion }).(pulumi.StringPtrOutput)
 }
 
 // Region specific domain URL.
-func (o LookupDomainResultOutput) HomeRegionUrl() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainResult) string { return v.HomeRegionUrl }).(pulumi.StringOutput)
+func (o LookupDomainResultOutput) HomeRegionUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainResult) *string { return v.HomeRegionUrl }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the domain
-func (o LookupDomainResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupDomainResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Indicates whether domain is hidden on login screen or not.
-func (o LookupDomainResultOutput) IsHiddenOnLogin() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupDomainResult) bool { return v.IsHiddenOnLogin }).(pulumi.BoolOutput)
+func (o LookupDomainResultOutput) IsHiddenOnLogin() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupDomainResult) *bool { return v.IsHiddenOnLogin }).(pulumi.BoolPtrOutput)
 }
 
-func (o LookupDomainResultOutput) IsNotificationBypassed() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupDomainResult) bool { return v.IsNotificationBypassed }).(pulumi.BoolOutput)
+func (o LookupDomainResultOutput) IsNotificationBypassed() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupDomainResult) *bool { return v.IsNotificationBypassed }).(pulumi.BoolPtrOutput)
 }
 
-func (o LookupDomainResultOutput) IsPrimaryEmailRequired() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupDomainResult) bool { return v.IsPrimaryEmailRequired }).(pulumi.BoolOutput)
+func (o LookupDomainResultOutput) IsPrimaryEmailRequired() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupDomainResult) *bool { return v.IsPrimaryEmailRequired }).(pulumi.BoolPtrOutput)
 }
 
 // The License type of Domain
-func (o LookupDomainResultOutput) LicenseType() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainResult) string { return v.LicenseType }).(pulumi.StringOutput)
+func (o LookupDomainResultOutput) LicenseType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainResult) *string { return v.LicenseType }).(pulumi.StringPtrOutput)
 }
 
 // Any additional details about the current state of the Domain.
-func (o LookupDomainResultOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o LookupDomainResultOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainResult) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // The regions domain is replication to.
@@ -236,23 +229,23 @@ func (o LookupDomainResultOutput) ReplicaRegions() GetDomainReplicaRegionArrayOu
 }
 
 // The current state.
-func (o LookupDomainResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupDomainResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Date and time the domain was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
-func (o LookupDomainResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupDomainResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The type of the domain.
-func (o LookupDomainResultOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainResult) string { return v.Type }).(pulumi.StringOutput)
+func (o LookupDomainResultOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainResult) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
 
 // Region agnostic domain URL.
-func (o LookupDomainResultOutput) Url() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainResult) string { return v.Url }).(pulumi.StringOutput)
+func (o LookupDomainResultOutput) Url() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainResult) *string { return v.Url }).(pulumi.StringPtrOutput)
 }
 
 func init() {

@@ -77,7 +77,7 @@ export interface GetSubnetsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The subnet's current state.
      */
@@ -85,7 +85,7 @@ export interface GetSubnetsResult {
     /**
      * The list of subnets.
      */
-    readonly subnets: outputs.Core.GetSubnetsSubnet[];
+    readonly subnets?: outputs.Core.GetSubnetsSubnet[];
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN the subnet is in.
      */

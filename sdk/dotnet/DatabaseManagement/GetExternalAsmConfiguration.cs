@@ -111,7 +111,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// An array of initialization parameters for the external ASM instances.
         /// </summary>
@@ -121,7 +121,7 @@ namespace Pulumi.Oci.DatabaseManagement
         private GetExternalAsmConfigurationResult(
             string externalAsmId,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetExternalAsmConfigurationInitParameterResult> initParameters)
         {

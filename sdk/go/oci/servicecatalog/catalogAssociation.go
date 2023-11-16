@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Service Catalog Association resource in Oracle Cloud Infrastructure Service Catalog service.
@@ -60,14 +59,14 @@ type CatalogAssociation struct {
 	// Identifier of the entity being associated with service catalog.
 	EntityId pulumi.StringOutput `pulumi:"entityId"`
 	// The type of the entity that is associated with the service catalog.
-	EntityType pulumi.StringOutput `pulumi:"entityType"`
+	EntityType pulumi.StringPtrOutput `pulumi:"entityType"`
 	// Identifier of the service catalog.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ServiceCatalogId pulumi.StringOutput `pulumi:"serviceCatalogId"`
 	// Timestamp of when the resource was associated with service catalog.
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 }
 
 // NewCatalogAssociation registers a new resource with the given unique name, arguments, and options.
@@ -185,12 +184,6 @@ func (i *CatalogAssociation) ToCatalogAssociationOutputWithContext(ctx context.C
 	return pulumi.ToOutputWithContext(ctx, i).(CatalogAssociationOutput)
 }
 
-func (i *CatalogAssociation) ToOutput(ctx context.Context) pulumix.Output[*CatalogAssociation] {
-	return pulumix.Output[*CatalogAssociation]{
-		OutputState: i.ToCatalogAssociationOutputWithContext(ctx).OutputState,
-	}
-}
-
 // CatalogAssociationArrayInput is an input type that accepts CatalogAssociationArray and CatalogAssociationArrayOutput values.
 // You can construct a concrete instance of `CatalogAssociationArrayInput` via:
 //
@@ -214,12 +207,6 @@ func (i CatalogAssociationArray) ToCatalogAssociationArrayOutput() CatalogAssoci
 
 func (i CatalogAssociationArray) ToCatalogAssociationArrayOutputWithContext(ctx context.Context) CatalogAssociationArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(CatalogAssociationArrayOutput)
-}
-
-func (i CatalogAssociationArray) ToOutput(ctx context.Context) pulumix.Output[[]*CatalogAssociation] {
-	return pulumix.Output[[]*CatalogAssociation]{
-		OutputState: i.ToCatalogAssociationArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // CatalogAssociationMapInput is an input type that accepts CatalogAssociationMap and CatalogAssociationMapOutput values.
@@ -247,12 +234,6 @@ func (i CatalogAssociationMap) ToCatalogAssociationMapOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(CatalogAssociationMapOutput)
 }
 
-func (i CatalogAssociationMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*CatalogAssociation] {
-	return pulumix.Output[map[string]*CatalogAssociation]{
-		OutputState: i.ToCatalogAssociationMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type CatalogAssociationOutput struct{ *pulumi.OutputState }
 
 func (CatalogAssociationOutput) ElementType() reflect.Type {
@@ -267,20 +248,14 @@ func (o CatalogAssociationOutput) ToCatalogAssociationOutputWithContext(ctx cont
 	return o
 }
 
-func (o CatalogAssociationOutput) ToOutput(ctx context.Context) pulumix.Output[*CatalogAssociation] {
-	return pulumix.Output[*CatalogAssociation]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Identifier of the entity being associated with service catalog.
 func (o CatalogAssociationOutput) EntityId() pulumi.StringOutput {
 	return o.ApplyT(func(v *CatalogAssociation) pulumi.StringOutput { return v.EntityId }).(pulumi.StringOutput)
 }
 
 // The type of the entity that is associated with the service catalog.
-func (o CatalogAssociationOutput) EntityType() pulumi.StringOutput {
-	return o.ApplyT(func(v *CatalogAssociation) pulumi.StringOutput { return v.EntityType }).(pulumi.StringOutput)
+func (o CatalogAssociationOutput) EntityType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CatalogAssociation) pulumi.StringPtrOutput { return v.EntityType }).(pulumi.StringPtrOutput)
 }
 
 // Identifier of the service catalog.
@@ -292,8 +267,8 @@ func (o CatalogAssociationOutput) ServiceCatalogId() pulumi.StringOutput {
 }
 
 // Timestamp of when the resource was associated with service catalog.
-func (o CatalogAssociationOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *CatalogAssociation) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o CatalogAssociationOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CatalogAssociation) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 type CatalogAssociationArrayOutput struct{ *pulumi.OutputState }
@@ -308,12 +283,6 @@ func (o CatalogAssociationArrayOutput) ToCatalogAssociationArrayOutput() Catalog
 
 func (o CatalogAssociationArrayOutput) ToCatalogAssociationArrayOutputWithContext(ctx context.Context) CatalogAssociationArrayOutput {
 	return o
-}
-
-func (o CatalogAssociationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*CatalogAssociation] {
-	return pulumix.Output[[]*CatalogAssociation]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o CatalogAssociationArrayOutput) Index(i pulumi.IntInput) CatalogAssociationOutput {
@@ -334,12 +303,6 @@ func (o CatalogAssociationMapOutput) ToCatalogAssociationMapOutput() CatalogAsso
 
 func (o CatalogAssociationMapOutput) ToCatalogAssociationMapOutputWithContext(ctx context.Context) CatalogAssociationMapOutput {
 	return o
-}
-
-func (o CatalogAssociationMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*CatalogAssociation] {
-	return pulumix.Output[map[string]*CatalogAssociation]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o CatalogAssociationMapOutput) MapIndex(k pulumi.StringInput) CatalogAssociationOutput {

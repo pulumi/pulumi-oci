@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.LogAnalytics.outputs.GetNamespaceEffectivePropertiesEffectivePropertyCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetNamespaceEffectivePropertiesEffectivePropertyCollection {
@@ -14,7 +15,7 @@ public final class GetNamespaceEffectivePropertiesEffectivePropertyCollection {
      * @return A list of properties and their effective values.
      * 
      */
-    private List<GetNamespaceEffectivePropertiesEffectivePropertyCollectionItem> items;
+    private @Nullable List<GetNamespaceEffectivePropertiesEffectivePropertyCollectionItem> items;
 
     private GetNamespaceEffectivePropertiesEffectivePropertyCollection() {}
     /**
@@ -22,7 +23,7 @@ public final class GetNamespaceEffectivePropertiesEffectivePropertyCollection {
      * 
      */
     public List<GetNamespaceEffectivePropertiesEffectivePropertyCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -34,7 +35,7 @@ public final class GetNamespaceEffectivePropertiesEffectivePropertyCollection {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetNamespaceEffectivePropertiesEffectivePropertyCollectionItem> items;
+        private @Nullable List<GetNamespaceEffectivePropertiesEffectivePropertyCollectionItem> items;
         public Builder() {}
         public Builder(GetNamespaceEffectivePropertiesEffectivePropertyCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -42,8 +43,8 @@ public final class GetNamespaceEffectivePropertiesEffectivePropertyCollection {
         }
 
         @CustomType.Setter
-        public Builder items(List<GetNamespaceEffectivePropertiesEffectivePropertyCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetNamespaceEffectivePropertiesEffectivePropertyCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetNamespaceEffectivePropertiesEffectivePropertyCollectionItem... items) {

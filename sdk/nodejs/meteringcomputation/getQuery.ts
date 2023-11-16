@@ -47,15 +47,15 @@ export interface GetQueryResult {
     /**
      * The compartment OCID.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * The query OCID.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The common fields for queries.
      */
-    readonly queryDefinitions: outputs.MeteringComputation.GetQueryQueryDefinition[];
+    readonly queryDefinitions?: outputs.MeteringComputation.GetQueryQueryDefinition[];
     readonly queryId: string;
 }
 /**

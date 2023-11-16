@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Log Analytics Log Group resource in Oracle Cloud Infrastructure Log Analytics service.
@@ -69,7 +68,7 @@ type LogAnalyticsLogGroup struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) Description for this resource.
-	Description pulumi.StringOutput `pulumi:"description"`
+	Description pulumi.StringPtrOutput `pulumi:"description"`
 	// (Updatable) A user-friendly name that is changeable and that does not have to be unique. Format: a leading alphanumeric, followed by zero or more alphanumerics, underscores, spaces, backslashes, or hyphens in any order). No trailing spaces allowed.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -80,9 +79,9 @@ type LogAnalyticsLogGroup struct {
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Namespace pulumi.StringOutput `pulumi:"namespace"`
 	// The date and time the resource was created, in the format defined by RFC3339.
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The date and time the resource was last updated, in the format defined by RFC3339.
-	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 }
 
 // NewLogAnalyticsLogGroup registers a new resource with the given unique name, arguments, and options.
@@ -231,12 +230,6 @@ func (i *LogAnalyticsLogGroup) ToLogAnalyticsLogGroupOutputWithContext(ctx conte
 	return pulumi.ToOutputWithContext(ctx, i).(LogAnalyticsLogGroupOutput)
 }
 
-func (i *LogAnalyticsLogGroup) ToOutput(ctx context.Context) pulumix.Output[*LogAnalyticsLogGroup] {
-	return pulumix.Output[*LogAnalyticsLogGroup]{
-		OutputState: i.ToLogAnalyticsLogGroupOutputWithContext(ctx).OutputState,
-	}
-}
-
 // LogAnalyticsLogGroupArrayInput is an input type that accepts LogAnalyticsLogGroupArray and LogAnalyticsLogGroupArrayOutput values.
 // You can construct a concrete instance of `LogAnalyticsLogGroupArrayInput` via:
 //
@@ -260,12 +253,6 @@ func (i LogAnalyticsLogGroupArray) ToLogAnalyticsLogGroupArrayOutput() LogAnalyt
 
 func (i LogAnalyticsLogGroupArray) ToLogAnalyticsLogGroupArrayOutputWithContext(ctx context.Context) LogAnalyticsLogGroupArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(LogAnalyticsLogGroupArrayOutput)
-}
-
-func (i LogAnalyticsLogGroupArray) ToOutput(ctx context.Context) pulumix.Output[[]*LogAnalyticsLogGroup] {
-	return pulumix.Output[[]*LogAnalyticsLogGroup]{
-		OutputState: i.ToLogAnalyticsLogGroupArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // LogAnalyticsLogGroupMapInput is an input type that accepts LogAnalyticsLogGroupMap and LogAnalyticsLogGroupMapOutput values.
@@ -293,12 +280,6 @@ func (i LogAnalyticsLogGroupMap) ToLogAnalyticsLogGroupMapOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(LogAnalyticsLogGroupMapOutput)
 }
 
-func (i LogAnalyticsLogGroupMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*LogAnalyticsLogGroup] {
-	return pulumix.Output[map[string]*LogAnalyticsLogGroup]{
-		OutputState: i.ToLogAnalyticsLogGroupMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type LogAnalyticsLogGroupOutput struct{ *pulumi.OutputState }
 
 func (LogAnalyticsLogGroupOutput) ElementType() reflect.Type {
@@ -313,12 +294,6 @@ func (o LogAnalyticsLogGroupOutput) ToLogAnalyticsLogGroupOutputWithContext(ctx 
 	return o
 }
 
-func (o LogAnalyticsLogGroupOutput) ToOutput(ctx context.Context) pulumix.Output[*LogAnalyticsLogGroup] {
-	return pulumix.Output[*LogAnalyticsLogGroup]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 func (o LogAnalyticsLogGroupOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *LogAnalyticsLogGroup) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
@@ -330,8 +305,8 @@ func (o LogAnalyticsLogGroupOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // (Updatable) Description for this resource.
-func (o LogAnalyticsLogGroupOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v *LogAnalyticsLogGroup) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
+func (o LogAnalyticsLogGroupOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *LogAnalyticsLogGroup) pulumi.StringPtrOutput { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) A user-friendly name that is changeable and that does not have to be unique. Format: a leading alphanumeric, followed by zero or more alphanumerics, underscores, spaces, backslashes, or hyphens in any order). No trailing spaces allowed.
@@ -353,13 +328,13 @@ func (o LogAnalyticsLogGroupOutput) Namespace() pulumi.StringOutput {
 }
 
 // The date and time the resource was created, in the format defined by RFC3339.
-func (o LogAnalyticsLogGroupOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *LogAnalyticsLogGroup) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LogAnalyticsLogGroupOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *LogAnalyticsLogGroup) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the resource was last updated, in the format defined by RFC3339.
-func (o LogAnalyticsLogGroupOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *LogAnalyticsLogGroup) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o LogAnalyticsLogGroupOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *LogAnalyticsLogGroup) pulumi.StringPtrOutput { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type LogAnalyticsLogGroupArrayOutput struct{ *pulumi.OutputState }
@@ -374,12 +349,6 @@ func (o LogAnalyticsLogGroupArrayOutput) ToLogAnalyticsLogGroupArrayOutput() Log
 
 func (o LogAnalyticsLogGroupArrayOutput) ToLogAnalyticsLogGroupArrayOutputWithContext(ctx context.Context) LogAnalyticsLogGroupArrayOutput {
 	return o
-}
-
-func (o LogAnalyticsLogGroupArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*LogAnalyticsLogGroup] {
-	return pulumix.Output[[]*LogAnalyticsLogGroup]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o LogAnalyticsLogGroupArrayOutput) Index(i pulumi.IntInput) LogAnalyticsLogGroupOutput {
@@ -400,12 +369,6 @@ func (o LogAnalyticsLogGroupMapOutput) ToLogAnalyticsLogGroupMapOutput() LogAnal
 
 func (o LogAnalyticsLogGroupMapOutput) ToLogAnalyticsLogGroupMapOutputWithContext(ctx context.Context) LogAnalyticsLogGroupMapOutput {
 	return o
-}
-
-func (o LogAnalyticsLogGroupMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*LogAnalyticsLogGroup] {
-	return pulumix.Output[map[string]*LogAnalyticsLogGroup]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o LogAnalyticsLogGroupMapOutput) MapIndex(k pulumi.StringInput) LogAnalyticsLogGroupOutput {

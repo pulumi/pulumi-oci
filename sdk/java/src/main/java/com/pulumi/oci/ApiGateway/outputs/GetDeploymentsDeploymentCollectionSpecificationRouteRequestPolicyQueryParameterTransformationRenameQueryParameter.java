@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.ApiGateway.outputs.GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyQueryParameterTransformationRenameQueryParameterItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyQueryParameterTransformationRenameQueryParameter {
@@ -14,7 +15,7 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRouteRequestPo
      * @return The list of headers.
      * 
      */
-    private List<GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyQueryParameterTransformationRenameQueryParameterItem> items;
+    private @Nullable List<GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyQueryParameterTransformationRenameQueryParameterItem> items;
 
     private GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyQueryParameterTransformationRenameQueryParameter() {}
     /**
@@ -22,7 +23,7 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRouteRequestPo
      * 
      */
     public List<GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyQueryParameterTransformationRenameQueryParameterItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -34,7 +35,7 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRouteRequestPo
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyQueryParameterTransformationRenameQueryParameterItem> items;
+        private @Nullable List<GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyQueryParameterTransformationRenameQueryParameterItem> items;
         public Builder() {}
         public Builder(GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyQueryParameterTransformationRenameQueryParameter defaults) {
     	      Objects.requireNonNull(defaults);
@@ -42,8 +43,8 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRouteRequestPo
         }
 
         @CustomType.Setter
-        public Builder items(List<GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyQueryParameterTransformationRenameQueryParameterItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyQueryParameterTransformationRenameQueryParameterItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyQueryParameterTransformationRenameQueryParameterItem... items) {

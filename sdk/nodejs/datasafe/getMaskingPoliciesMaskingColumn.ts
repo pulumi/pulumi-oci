@@ -53,37 +53,37 @@ export interface GetMaskingPoliciesMaskingColumnResult {
     /**
      * An array of child columns that are in referential relationship with the masking column.
      */
-    readonly childColumns: string[];
+    readonly childColumns?: string[];
     /**
      * The name of the substitution column.
      */
-    readonly columnName: string;
+    readonly columnName?: string;
     /**
      * The data type of the masking column.
      */
-    readonly dataType: string;
-    readonly id: string;
+    readonly dataType?: string;
+    readonly id?: string;
     /**
      * Indicates whether data masking is enabled for the masking column.
      */
-    readonly isMaskingEnabled: boolean;
+    readonly isMaskingEnabled?: boolean;
     /**
      * The unique key that identifies the masking column. It's numeric and unique within a masking policy.
      */
-    readonly key: string;
+    readonly key?: string;
     /**
      * Details about the current state of the masking column.
      */
-    readonly lifecycleDetails: string;
+    readonly lifecycleDetails?: string;
     /**
      * The group of the masking column. All the columns in a group are masked together to ensure  that the masked data across these columns continue to retain the same logical relationship.  For more details, check <a href=https://docs.oracle.com/en/cloud/paas/data-safe/udscs/group-masking1.html#GUID-755056B9-9540-48C0-9491-262A44A85037>Group Masking in the Data Safe documentation.</a>
      */
-    readonly maskingColumnGroup: string;
+    readonly maskingColumnGroup?: string;
     readonly maskingColumnKey: string;
     /**
      * An array of masking formats assigned to the masking column.
      */
-    readonly maskingFormats: outputs.DataSafe.GetMaskingPoliciesMaskingColumnMaskingFormat[];
+    readonly maskingFormats?: outputs.DataSafe.GetMaskingPoliciesMaskingColumnMaskingFormat[];
     /**
      * The OCID of the masking policy that contains the masking column.
      */
@@ -91,31 +91,31 @@ export interface GetMaskingPoliciesMaskingColumnResult {
     /**
      * The name of the object (table or editioning view) that contains the database column.
      */
-    readonly object: string;
+    readonly object?: string;
     /**
      * The type of the object that contains the database column.
      */
-    readonly objectType: string;
+    readonly objectType?: string;
     /**
      * The name of the schema that contains the database column.
      */
-    readonly schemaName: string;
+    readonly schemaName?: string;
     /**
      * The OCID of the sensitive type associated with the masking column.
      */
-    readonly sensitiveTypeId: string;
+    readonly sensitiveTypeId?: string;
     /**
      * The current state of the masking column.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * The date and time the masking column was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The date and time the masking column was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
-    readonly timeUpdated: string;
+    readonly timeUpdated?: string;
 }
 /**
  * This data source provides details about a specific Masking Policies Masking Column resource in Oracle Cloud Infrastructure Data Safe service.

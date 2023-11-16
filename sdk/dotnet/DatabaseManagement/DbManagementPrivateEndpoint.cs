@@ -57,13 +57,13 @@ namespace Pulumi.Oci.DatabaseManagement
         /// (Updatable) The description of the private endpoint.
         /// </summary>
         [Output("description")]
-        public Output<string> Description { get; private set; } = null!;
+        public Output<string?> Description { get; private set; } = null!;
 
         /// <summary>
         /// Specifies whether the Database Management private endpoint will be used for Oracle Databases in a cluster.
         /// </summary>
         [Output("isCluster")]
-        public Output<bool> IsCluster { get; private set; } = null!;
+        public Output<bool?> IsCluster { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The display name of the Database Management private endpoint.
@@ -81,13 +81,13 @@ namespace Pulumi.Oci.DatabaseManagement
         /// The IP addresses assigned to the Database Management private endpoint.
         /// </summary>
         [Output("privateIp")]
-        public Output<string> PrivateIp { get; private set; } = null!;
+        public Output<string?> PrivateIp { get; private set; } = null!;
 
         /// <summary>
         /// The current lifecycle state of the Database Management private endpoint.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet.
@@ -103,13 +103,13 @@ namespace Pulumi.Oci.DatabaseManagement
         /// The date and time the Database Managament private endpoint was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
         /// </summary>
         [Output("vcnId")]
-        public Output<string> VcnId { get; private set; } = null!;
+        public Output<string?> VcnId { get; private set; } = null!;
 
 
         /// <summary>

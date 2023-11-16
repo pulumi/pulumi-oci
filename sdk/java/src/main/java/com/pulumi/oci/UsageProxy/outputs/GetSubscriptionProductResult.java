@@ -17,12 +17,12 @@ public final class GetSubscriptionProductResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The list of product rewards summaries.
      * 
      */
-    private List<GetSubscriptionProductItem> items;
+    private @Nullable List<GetSubscriptionProductItem> items;
     private @Nullable String producttype;
     private String subscriptionId;
     private String tenancyId;
@@ -33,15 +33,15 @@ public final class GetSubscriptionProductResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The list of product rewards summaries.
      * 
      */
     public List<GetSubscriptionProductItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
     public Optional<String> producttype() {
         return Optional.ofNullable(this.producttype);
@@ -65,8 +65,8 @@ public final class GetSubscriptionProductResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String id;
-        private List<GetSubscriptionProductItem> items;
+        private @Nullable String id;
+        private @Nullable List<GetSubscriptionProductItem> items;
         private @Nullable String producttype;
         private String subscriptionId;
         private String tenancyId;
@@ -83,13 +83,13 @@ public final class GetSubscriptionProductResult {
         }
 
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder items(List<GetSubscriptionProductItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetSubscriptionProductItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetSubscriptionProductItem... items) {

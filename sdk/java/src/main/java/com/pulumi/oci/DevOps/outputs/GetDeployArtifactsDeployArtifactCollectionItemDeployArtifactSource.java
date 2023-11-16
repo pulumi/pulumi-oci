@@ -8,6 +8,8 @@ import com.pulumi.oci.DevOps.outputs.GetDeployArtifactsDeployArtifactCollectionI
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSource {
@@ -15,111 +17,111 @@ public final class GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactS
      * @return Specifies content for the inline artifact.
      * 
      */
-    private String base64encodedContent;
+    private @Nullable String base64encodedContent;
     /**
      * @return The URL of an OCIR repository.
      * 
      */
-    private String chartUrl;
+    private @Nullable String chartUrl;
     /**
      * @return Specifies the artifact path in the repository.
      * 
      */
-    private String deployArtifactPath;
+    private @Nullable String deployArtifactPath;
     /**
      * @return Specifies types of artifact sources.
      * 
      */
-    private String deployArtifactSourceType;
+    private @Nullable String deployArtifactSourceType;
     /**
      * @return Users can set this as a placeholder value that refers to a pipeline parameter, for example, ${appVersion}.
      * 
      */
-    private String deployArtifactVersion;
+    private @Nullable String deployArtifactVersion;
     /**
      * @return The source of the verification material.
      * 
      */
-    private List<GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceHelmVerificationKeySource> helmVerificationKeySources;
+    private @Nullable List<GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceHelmVerificationKeySource> helmVerificationKeySources;
     /**
      * @return Specifies image digest for the version of the image.
      * 
      */
-    private String imageDigest;
+    private @Nullable String imageDigest;
     /**
      * @return Specifies OCIR Image Path - optionally include tag.
      * 
      */
-    private String imageUri;
+    private @Nullable String imageUri;
     /**
      * @return The OCID of a repository
      * 
      */
-    private String repositoryId;
+    private @Nullable String repositoryId;
 
     private GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSource() {}
     /**
      * @return Specifies content for the inline artifact.
      * 
      */
-    public String base64encodedContent() {
-        return this.base64encodedContent;
+    public Optional<String> base64encodedContent() {
+        return Optional.ofNullable(this.base64encodedContent);
     }
     /**
      * @return The URL of an OCIR repository.
      * 
      */
-    public String chartUrl() {
-        return this.chartUrl;
+    public Optional<String> chartUrl() {
+        return Optional.ofNullable(this.chartUrl);
     }
     /**
      * @return Specifies the artifact path in the repository.
      * 
      */
-    public String deployArtifactPath() {
-        return this.deployArtifactPath;
+    public Optional<String> deployArtifactPath() {
+        return Optional.ofNullable(this.deployArtifactPath);
     }
     /**
      * @return Specifies types of artifact sources.
      * 
      */
-    public String deployArtifactSourceType() {
-        return this.deployArtifactSourceType;
+    public Optional<String> deployArtifactSourceType() {
+        return Optional.ofNullable(this.deployArtifactSourceType);
     }
     /**
      * @return Users can set this as a placeholder value that refers to a pipeline parameter, for example, ${appVersion}.
      * 
      */
-    public String deployArtifactVersion() {
-        return this.deployArtifactVersion;
+    public Optional<String> deployArtifactVersion() {
+        return Optional.ofNullable(this.deployArtifactVersion);
     }
     /**
      * @return The source of the verification material.
      * 
      */
     public List<GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceHelmVerificationKeySource> helmVerificationKeySources() {
-        return this.helmVerificationKeySources;
+        return this.helmVerificationKeySources == null ? List.of() : this.helmVerificationKeySources;
     }
     /**
      * @return Specifies image digest for the version of the image.
      * 
      */
-    public String imageDigest() {
-        return this.imageDigest;
+    public Optional<String> imageDigest() {
+        return Optional.ofNullable(this.imageDigest);
     }
     /**
      * @return Specifies OCIR Image Path - optionally include tag.
      * 
      */
-    public String imageUri() {
-        return this.imageUri;
+    public Optional<String> imageUri() {
+        return Optional.ofNullable(this.imageUri);
     }
     /**
      * @return The OCID of a repository
      * 
      */
-    public String repositoryId() {
-        return this.repositoryId;
+    public Optional<String> repositoryId() {
+        return Optional.ofNullable(this.repositoryId);
     }
 
     public static Builder builder() {
@@ -131,15 +133,15 @@ public final class GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactS
     }
     @CustomType.Builder
     public static final class Builder {
-        private String base64encodedContent;
-        private String chartUrl;
-        private String deployArtifactPath;
-        private String deployArtifactSourceType;
-        private String deployArtifactVersion;
-        private List<GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceHelmVerificationKeySource> helmVerificationKeySources;
-        private String imageDigest;
-        private String imageUri;
-        private String repositoryId;
+        private @Nullable String base64encodedContent;
+        private @Nullable String chartUrl;
+        private @Nullable String deployArtifactPath;
+        private @Nullable String deployArtifactSourceType;
+        private @Nullable String deployArtifactVersion;
+        private @Nullable List<GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceHelmVerificationKeySource> helmVerificationKeySources;
+        private @Nullable String imageDigest;
+        private @Nullable String imageUri;
+        private @Nullable String repositoryId;
         public Builder() {}
         public Builder(GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSource defaults) {
     	      Objects.requireNonNull(defaults);
@@ -155,51 +157,51 @@ public final class GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactS
         }
 
         @CustomType.Setter
-        public Builder base64encodedContent(String base64encodedContent) {
-            this.base64encodedContent = Objects.requireNonNull(base64encodedContent);
+        public Builder base64encodedContent(@Nullable String base64encodedContent) {
+            this.base64encodedContent = base64encodedContent;
             return this;
         }
         @CustomType.Setter
-        public Builder chartUrl(String chartUrl) {
-            this.chartUrl = Objects.requireNonNull(chartUrl);
+        public Builder chartUrl(@Nullable String chartUrl) {
+            this.chartUrl = chartUrl;
             return this;
         }
         @CustomType.Setter
-        public Builder deployArtifactPath(String deployArtifactPath) {
-            this.deployArtifactPath = Objects.requireNonNull(deployArtifactPath);
+        public Builder deployArtifactPath(@Nullable String deployArtifactPath) {
+            this.deployArtifactPath = deployArtifactPath;
             return this;
         }
         @CustomType.Setter
-        public Builder deployArtifactSourceType(String deployArtifactSourceType) {
-            this.deployArtifactSourceType = Objects.requireNonNull(deployArtifactSourceType);
+        public Builder deployArtifactSourceType(@Nullable String deployArtifactSourceType) {
+            this.deployArtifactSourceType = deployArtifactSourceType;
             return this;
         }
         @CustomType.Setter
-        public Builder deployArtifactVersion(String deployArtifactVersion) {
-            this.deployArtifactVersion = Objects.requireNonNull(deployArtifactVersion);
+        public Builder deployArtifactVersion(@Nullable String deployArtifactVersion) {
+            this.deployArtifactVersion = deployArtifactVersion;
             return this;
         }
         @CustomType.Setter
-        public Builder helmVerificationKeySources(List<GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceHelmVerificationKeySource> helmVerificationKeySources) {
-            this.helmVerificationKeySources = Objects.requireNonNull(helmVerificationKeySources);
+        public Builder helmVerificationKeySources(@Nullable List<GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceHelmVerificationKeySource> helmVerificationKeySources) {
+            this.helmVerificationKeySources = helmVerificationKeySources;
             return this;
         }
         public Builder helmVerificationKeySources(GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceHelmVerificationKeySource... helmVerificationKeySources) {
             return helmVerificationKeySources(List.of(helmVerificationKeySources));
         }
         @CustomType.Setter
-        public Builder imageDigest(String imageDigest) {
-            this.imageDigest = Objects.requireNonNull(imageDigest);
+        public Builder imageDigest(@Nullable String imageDigest) {
+            this.imageDigest = imageDigest;
             return this;
         }
         @CustomType.Setter
-        public Builder imageUri(String imageUri) {
-            this.imageUri = Objects.requireNonNull(imageUri);
+        public Builder imageUri(@Nullable String imageUri) {
+            this.imageUri = imageUri;
             return this;
         }
         @CustomType.Setter
-        public Builder repositoryId(String repositoryId) {
-            this.repositoryId = Objects.requireNonNull(repositoryId);
+        public Builder repositoryId(@Nullable String repositoryId) {
+            this.repositoryId = repositoryId;
             return this;
         }
         public GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSource build() {

@@ -130,7 +130,7 @@ namespace Pulumi.Oci.Kms
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         public readonly string ManagementEndpoint;
         /// <summary>
         /// Replica Details.
@@ -140,7 +140,7 @@ namespace Pulumi.Oci.Kms
 
         [OutputConstructor]
         private GetReplicationStatusResult(
-            string id,
+            string? id,
 
             string managementEndpoint,
 

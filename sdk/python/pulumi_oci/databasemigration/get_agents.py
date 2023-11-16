@@ -45,26 +45,17 @@ class GetAgentsResult:
 
     @property
     @pulumi.getter(name="agentCollections")
-    def agent_collections(self) -> Sequence['outputs.GetAgentsAgentCollectionResult']:
-        """
-        The list of agent_collection.
-        """
+    def agent_collections(self) -> Optional[Sequence['outputs.GetAgentsAgentCollectionResult']]:
         return pulumi.get(self, "agent_collections")
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        OCID of the compartment
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        ODMS Agent name
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -74,7 +65,7 @@ class GetAgentsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -83,9 +74,6 @@ class GetAgentsResult:
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the ODMS on-premises Agent.
-        """
         return pulumi.get(self, "state")
 
 
@@ -109,25 +97,7 @@ def get_agents(compartment_id: Optional[str] = None,
                state: Optional[str] = None,
                opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAgentsResult:
     """
-    This data source provides the list of Agents in Oracle Cloud Infrastructure Database Migration service.
-
-    Display the name of all the existing ODMS Agents in the server.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_agents = oci.DatabaseMigration.get_agents(compartment_id=var["compartment_id"],
-        display_name=var["agent_display_name"],
-        state=var["agent_state"])
-    ```
-
-
-    :param str compartment_id: The ID of the compartment in which to list resources.
-    :param str display_name: A filter to return only resources that match the entire display name given.
-    :param str state: The current state of the Database Migration Deployment.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -153,24 +123,6 @@ def get_agents_output(compartment_id: Optional[pulumi.Input[str]] = None,
                       state: Optional[pulumi.Input[Optional[str]]] = None,
                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAgentsResult]:
     """
-    This data source provides the list of Agents in Oracle Cloud Infrastructure Database Migration service.
-
-    Display the name of all the existing ODMS Agents in the server.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_agents = oci.DatabaseMigration.get_agents(compartment_id=var["compartment_id"],
-        display_name=var["agent_display_name"],
-        state=var["agent_state"])
-    ```
-
-
-    :param str compartment_id: The ID of the compartment in which to list resources.
-    :param str display_name: A filter to return only resources that match the entire display name given.
-    :param str state: The current state of the Database Migration Deployment.
+    Use this data source to access information about an existing resource.
     """
     ...

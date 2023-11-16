@@ -91,28 +91,28 @@ public class VbInstance extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="alternateCustomEndpoints", refs={List.class,VbInstanceAlternateCustomEndpoint.class}, tree="[0,1]")
-    private Output<List<VbInstanceAlternateCustomEndpoint>> alternateCustomEndpoints;
+    private Output</* @Nullable */ List<VbInstanceAlternateCustomEndpoint>> alternateCustomEndpoints;
 
     /**
      * @return (Updatable) A list of alternate custom endpoints to be used for the vb instance URL (contact Oracle for alternateCustomEndpoints availability for a specific instance).
      * 
      */
-    public Output<List<VbInstanceAlternateCustomEndpoint>> alternateCustomEndpoints() {
-        return this.alternateCustomEndpoints;
+    public Output<Optional<List<VbInstanceAlternateCustomEndpoint>>> alternateCustomEndpoints() {
+        return Codegen.optional(this.alternateCustomEndpoints);
     }
     /**
      * A list of associated attachments to other services
      * 
      */
     @Export(name="attachments", refs={List.class,VbInstanceAttachment.class}, tree="[0,1]")
-    private Output<List<VbInstanceAttachment>> attachments;
+    private Output</* @Nullable */ List<VbInstanceAttachment>> attachments;
 
     /**
      * @return A list of associated attachments to other services
      * 
      */
-    public Output<List<VbInstanceAttachment>> attachments() {
-        return this.attachments;
+    public Output<Optional<List<VbInstanceAttachment>>> attachments() {
+        return Codegen.optional(this.attachments);
     }
     /**
      * (Updatable) Compartment Identifier.
@@ -133,42 +133,42 @@ public class VbInstance extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="consumptionModel", refs={String.class}, tree="[0]")
-    private Output<String> consumptionModel;
+    private Output</* @Nullable */ String> consumptionModel;
 
     /**
      * @return Optional parameter specifying which entitlement to use for billing purposes. Only required if the account possesses more than one entitlement.
      * 
      */
-    public Output<String> consumptionModel() {
-        return this.consumptionModel;
+    public Output<Optional<String>> consumptionModel() {
+        return Codegen.optional(this.consumptionModel);
     }
     /**
      * (Updatable) Details for a custom endpoint for the vb instance (update).
      * 
      */
     @Export(name="customEndpoint", refs={VbInstanceCustomEndpoint.class}, tree="[0]")
-    private Output<VbInstanceCustomEndpoint> customEndpoint;
+    private Output</* @Nullable */ VbInstanceCustomEndpoint> customEndpoint;
 
     /**
      * @return (Updatable) Details for a custom endpoint for the vb instance (update).
      * 
      */
-    public Output<VbInstanceCustomEndpoint> customEndpoint() {
-        return this.customEndpoint;
+    public Output<Optional<VbInstanceCustomEndpoint>> customEndpoint() {
+        return Codegen.optional(this.customEndpoint);
     }
     /**
      * (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * (Updatable) Vb Instance Identifier.
@@ -189,28 +189,28 @@ public class VbInstance extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * Information for IDCS access
      * 
      */
     @Export(name="idcsInfos", refs={List.class,VbInstanceIdcsInfo.class}, tree="[0,1]")
-    private Output<List<VbInstanceIdcsInfo>> idcsInfos;
+    private Output</* @Nullable */ List<VbInstanceIdcsInfo>> idcsInfos;
 
     /**
      * @return Information for IDCS access
      * 
      */
-    public Output<List<VbInstanceIdcsInfo>> idcsInfos() {
-        return this.idcsInfos;
+    public Output<Optional<List<VbInstanceIdcsInfo>>> idcsInfos() {
+        return Codegen.optional(this.idcsInfos);
     }
     /**
      * (Updatable) Encrypted IDCS Open ID token. This is required for pre-UCPIS cloud accounts, but not UCPIS, hence not a required parameter
@@ -231,56 +231,56 @@ public class VbInstance extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="instanceUrl", refs={String.class}, tree="[0]")
-    private Output<String> instanceUrl;
+    private Output</* @Nullable */ String> instanceUrl;
 
     /**
      * @return The Vb Instance URL.
      * 
      */
-    public Output<String> instanceUrl() {
-        return this.instanceUrl;
+    public Output<Optional<String>> instanceUrl() {
+        return Codegen.optional(this.instanceUrl);
     }
     /**
      * (Updatable) Visual Builder is enabled or not.
      * 
      */
     @Export(name="isVisualBuilderEnabled", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isVisualBuilderEnabled;
+    private Output</* @Nullable */ Boolean> isVisualBuilderEnabled;
 
     /**
      * @return (Updatable) Visual Builder is enabled or not.
      * 
      */
-    public Output<Boolean> isVisualBuilderEnabled() {
-        return this.isVisualBuilderEnabled;
+    public Output<Optional<Boolean>> isVisualBuilderEnabled() {
+        return Codegen.optional(this.isVisualBuilderEnabled);
     }
     /**
      * The NAT gateway IP address for the VB management VCN
      * 
      */
     @Export(name="managementNatGatewayIp", refs={String.class}, tree="[0]")
-    private Output<String> managementNatGatewayIp;
+    private Output</* @Nullable */ String> managementNatGatewayIp;
 
     /**
      * @return The NAT gateway IP address for the VB management VCN
      * 
      */
-    public Output<String> managementNatGatewayIp() {
-        return this.managementNatGatewayIp;
+    public Output<Optional<String>> managementNatGatewayIp() {
+        return Codegen.optional(this.managementNatGatewayIp);
     }
     /**
      * The Oracle Cloud ID (OCID) of the Visual Builder management VCN
      * 
      */
     @Export(name="managementVcnId", refs={String.class}, tree="[0]")
-    private Output<String> managementVcnId;
+    private Output</* @Nullable */ String> managementVcnId;
 
     /**
      * @return The Oracle Cloud ID (OCID) of the Visual Builder management VCN
      * 
      */
-    public Output<String> managementVcnId() {
-        return this.managementVcnId;
+    public Output<Optional<String>> managementVcnId() {
+        return Codegen.optional(this.managementVcnId);
     }
     /**
      * (Updatable) The number of Nodes
@@ -307,98 +307,98 @@ public class VbInstance extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="serviceNatGatewayIp", refs={String.class}, tree="[0]")
-    private Output<String> serviceNatGatewayIp;
+    private Output</* @Nullable */ String> serviceNatGatewayIp;
 
     /**
      * @return The NAT gateway IP address for the VB service VCN
      * 
      */
-    public Output<String> serviceNatGatewayIp() {
-        return this.serviceNatGatewayIp;
+    public Output<Optional<String>> serviceNatGatewayIp() {
+        return Codegen.optional(this.serviceNatGatewayIp);
     }
     /**
      * The Oracle Cloud ID (OCID) of the Visual Builder service VCN
      * 
      */
     @Export(name="serviceVcnId", refs={String.class}, tree="[0]")
-    private Output<String> serviceVcnId;
+    private Output</* @Nullable */ String> serviceVcnId;
 
     /**
      * @return The Oracle Cloud ID (OCID) of the Visual Builder service VCN
      * 
      */
-    public Output<String> serviceVcnId() {
-        return this.serviceVcnId;
+    public Output<Optional<String>> serviceVcnId() {
+        return Codegen.optional(this.serviceVcnId);
     }
     /**
      * The current state of the vb instance.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The current state of the vb instance.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * An message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
     @Export(name="stateMessage", refs={String.class}, tree="[0]")
-    private Output<String> stateMessage;
+    private Output</* @Nullable */ String> stateMessage;
 
     /**
      * @return An message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
-    public Output<String> stateMessage() {
-        return this.stateMessage;
+    public Output<Optional<String>> stateMessage() {
+        return Codegen.optional(this.stateMessage);
     }
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
     @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> systemTags;
+    private Output</* @Nullable */ Map<String,Object>> systemTags;
 
     /**
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    public Output<Map<String,Object>> systemTags() {
-        return this.systemTags;
+    public Output<Optional<Map<String,Object>>> systemTags() {
+        return Codegen.optional(this.systemTags);
     }
     /**
      * The time the the VbInstance was created. An RFC3339 formatted datetime string.
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The time the the VbInstance was created. An RFC3339 formatted datetime string.
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * The time the VbInstance was updated. An RFC3339 formatted datetime string.
      * 
      */
     @Export(name="timeUpdated", refs={String.class}, tree="[0]")
-    private Output<String> timeUpdated;
+    private Output</* @Nullable */ String> timeUpdated;
 
     /**
      * @return The time the VbInstance was updated. An RFC3339 formatted datetime string.
      * 
      */
-    public Output<String> timeUpdated() {
-        return this.timeUpdated;
+    public Output<Optional<String>> timeUpdated() {
+        return Codegen.optional(this.timeUpdated);
     }
 
     /**

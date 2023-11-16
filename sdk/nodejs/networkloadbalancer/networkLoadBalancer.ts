@@ -80,7 +80,7 @@ export class NetworkLoadBalancer extends pulumi.CustomResource {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) Network load balancer identifier, which can be renamed.
      */
@@ -88,15 +88,15 @@ export class NetworkLoadBalancer extends pulumi.CustomResource {
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * An array of IP addresses.
      */
-    public /*out*/ readonly ipAddresses!: pulumi.Output<outputs.NetworkLoadBalancer.NetworkLoadBalancerIpAddress[]>;
+    public /*out*/ readonly ipAddresses!: pulumi.Output<outputs.NetworkLoadBalancer.NetworkLoadBalancerIpAddress[] | undefined>;
     /**
      * (Updatable) This parameter can be enabled only if backends are compute OCIDs. When enabled, the skipSourceDestinationCheck parameter is automatically enabled on the load balancer VNIC, and packets are sent to the backend with the entire IP header intact.
      */
-    public readonly isPreserveSourceDestination!: pulumi.Output<boolean>;
+    public readonly isPreserveSourceDestination!: pulumi.Output<boolean | undefined>;
     /**
      * Whether the network load balancer has a virtual cloud network-local (private) IP address.
      *
@@ -108,11 +108,11 @@ export class NetworkLoadBalancer extends pulumi.CustomResource {
      *
      * Example: `true`
      */
-    public readonly isPrivate!: pulumi.Output<boolean>;
+    public readonly isPrivate!: pulumi.Output<boolean | undefined>;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) An array of network security groups [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the network load balancer.
      *
@@ -128,15 +128,15 @@ export class NetworkLoadBalancer extends pulumi.CustomResource {
     /**
      * (Updatable) IP version associated with the NLB.
      */
-    public readonly nlbIpVersion!: pulumi.Output<string>;
+    public readonly nlbIpVersion!: pulumi.Output<string | undefined>;
     /**
      * An array of reserved Ips.
      */
-    public readonly reservedIps!: pulumi.Output<outputs.NetworkLoadBalancer.NetworkLoadBalancerReservedIp[]>;
+    public readonly reservedIps!: pulumi.Output<outputs.NetworkLoadBalancer.NetworkLoadBalancerReservedIp[] | undefined>;
     /**
      * The current state of the network load balancer.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * The subnet in which the network load balancer is spawned [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *
@@ -148,15 +148,15 @@ export class NetworkLoadBalancer extends pulumi.CustomResource {
     /**
      * Key-value pair representing system tags' keys and values scoped to a namespace. Example: `{"bar-key": "value"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any}>;
+    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * The date and time the network load balancer was created, in the format defined by RFC3339.  Example: `2020-05-01T21:10:29.600Z`
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * The time the network load balancer was updated. An RFC3339 formatted date-time string.  Example: `2020-05-01T22:10:29.600Z`
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    public /*out*/ readonly timeUpdated!: pulumi.Output<string | undefined>;
 
     /**
      * Create a NetworkLoadBalancer resource with the given unique name, arguments, and options.

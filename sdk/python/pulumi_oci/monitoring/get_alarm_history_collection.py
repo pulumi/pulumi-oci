@@ -53,22 +53,16 @@ class GetAlarmHistoryCollectionResult:
     @property
     @pulumi.getter(name="alarmId")
     def alarm_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the alarm to retrieve history for.
-        """
         return pulumi.get(self, "alarm_id")
 
     @property
     @pulumi.getter
-    def entries(self) -> Sequence['outputs.GetAlarmHistoryCollectionEntryResult']:
-        """
-        The set of history entries retrieved for the alarm.
-        """
+    def entries(self) -> Optional[Sequence['outputs.GetAlarmHistoryCollectionEntryResult']]:
         return pulumi.get(self, "entries")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -76,10 +70,7 @@ class GetAlarmHistoryCollectionResult:
 
     @property
     @pulumi.getter(name="isEnabled")
-    def is_enabled(self) -> bool:
-        """
-        Whether the alarm is enabled.  Example: `true`
-        """
+    def is_enabled(self) -> Optional[bool]:
         return pulumi.get(self, "is_enabled")
 
     @property
@@ -114,35 +105,7 @@ def get_alarm_history_collection(alarm_historytype: Optional[str] = None,
                                  timestamp_less_than: Optional[str] = None,
                                  opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAlarmHistoryCollectionResult:
     """
-    This data source provides details about a specific Alarm History Collection resource in Oracle Cloud Infrastructure Monitoring service.
-
-    Get the history of the specified alarm.
-    For more information, see
-    [Getting History of an Alarm](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/get-alarm-history.htm).
-    For important limits information, see
-    [Limits on Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits).
-
-    This call is subject to a Monitoring limit that applies to the total number of requests across all alarm operations.
-    Monitoring might throttle this call to reject an otherwise valid request when the total rate of alarm operations exceeds 10 requests,
-    or transactions, per second (TPS) for a given tenancy.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_alarm_history_collection = oci.Monitoring.get_alarm_history_collection(alarm_id=oci_monitoring_alarm["test_alarm"]["id"],
-        alarm_historytype=var["alarm_history_collection_alarm_historytype"],
-        timestamp_greater_than_or_equal_to=var["alarm_history_collection_timestamp_greater_than_or_equal_to"],
-        timestamp_less_than=var["alarm_history_collection_timestamp_less_than"])
-    ```
-
-
-    :param str alarm_historytype: The type of history entries to retrieve. State history (STATE_HISTORY) or state transition history (STATE_TRANSITION_HISTORY). If not specified, entries of both types are retrieved.  Example: `STATE_HISTORY`
-    :param str alarm_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of an alarm.
-    :param str timestamp_greater_than_or_equal_to: A filter to return only alarm history entries with timestamps occurring on or after the specified date and time. Format defined by RFC3339.  Example: `2019-01-01T01:00:00.789Z`
-    :param str timestamp_less_than: A filter to return only alarm history entries with timestamps occurring before the specified date and time. Format defined by RFC3339.  Example: `2019-01-02T01:00:00.789Z`
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['alarmHistorytype'] = alarm_historytype
@@ -169,34 +132,6 @@ def get_alarm_history_collection_output(alarm_historytype: Optional[pulumi.Input
                                         timestamp_less_than: Optional[pulumi.Input[Optional[str]]] = None,
                                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAlarmHistoryCollectionResult]:
     """
-    This data source provides details about a specific Alarm History Collection resource in Oracle Cloud Infrastructure Monitoring service.
-
-    Get the history of the specified alarm.
-    For more information, see
-    [Getting History of an Alarm](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/get-alarm-history.htm).
-    For important limits information, see
-    [Limits on Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits).
-
-    This call is subject to a Monitoring limit that applies to the total number of requests across all alarm operations.
-    Monitoring might throttle this call to reject an otherwise valid request when the total rate of alarm operations exceeds 10 requests,
-    or transactions, per second (TPS) for a given tenancy.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_alarm_history_collection = oci.Monitoring.get_alarm_history_collection(alarm_id=oci_monitoring_alarm["test_alarm"]["id"],
-        alarm_historytype=var["alarm_history_collection_alarm_historytype"],
-        timestamp_greater_than_or_equal_to=var["alarm_history_collection_timestamp_greater_than_or_equal_to"],
-        timestamp_less_than=var["alarm_history_collection_timestamp_less_than"])
-    ```
-
-
-    :param str alarm_historytype: The type of history entries to retrieve. State history (STATE_HISTORY) or state transition history (STATE_TRANSITION_HISTORY). If not specified, entries of both types are retrieved.  Example: `STATE_HISTORY`
-    :param str alarm_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of an alarm.
-    :param str timestamp_greater_than_or_equal_to: A filter to return only alarm history entries with timestamps occurring on or after the specified date and time. Format defined by RFC3339.  Example: `2019-01-01T01:00:00.789Z`
-    :param str timestamp_less_than: A filter to return only alarm history entries with timestamps occurring before the specified date and time. Format defined by RFC3339.  Example: `2019-01-02T01:00:00.789Z`
+    Use this data source to access information about an existing resource.
     """
     ...

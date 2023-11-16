@@ -13,17 +13,17 @@ namespace Pulumi.Oci.Kms.Outputs
     [OutputType]
     public sealed class GetKeysKeyRestoreFromFileResult
     {
-        public readonly string ContentLength;
-        public readonly string ContentMd5;
-        public readonly string RestoreKeyFromFileDetails;
+        public readonly string? ContentLength;
+        public readonly string? ContentMd5;
+        public readonly string? RestoreKeyFromFileDetails;
 
         [OutputConstructor]
         private GetKeysKeyRestoreFromFileResult(
-            string contentLength,
+            string? contentLength,
 
-            string contentMd5,
+            string? contentMd5,
 
-            string restoreKeyFromFileDetails)
+            string? restoreKeyFromFileDetails)
         {
             ContentLength = contentLength;
             ContentMd5 = contentMd5;

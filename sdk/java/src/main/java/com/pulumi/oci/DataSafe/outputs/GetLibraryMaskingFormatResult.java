@@ -10,6 +10,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetLibraryMaskingFormatResult {
@@ -17,37 +19,37 @@ public final class GetLibraryMaskingFormatResult {
      * @return The OCID of the compartment that contains the library masking format.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return The description of the format entry.
      * 
      */
-    private String description;
+    private @Nullable String description;
     /**
      * @return The display name of the library masking format.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return An array of format entries. The combined output of all the format entries is used for masking.
      * 
      */
-    private List<GetLibraryMaskingFormatFormatEntry> formatEntries;
+    private @Nullable List<GetLibraryMaskingFormatFormatEntry> formatEntries;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return The OCID of the library masking format.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The OCID of the library masking format.
      * 
@@ -57,77 +59,77 @@ public final class GetLibraryMaskingFormatResult {
      * @return An array of OCIDs of the sensitive types compatible with the library masking format.
      * 
      */
-    private List<String> sensitiveTypeIds;
+    private @Nullable List<String> sensitiveTypeIds;
     /**
      * @return Specifies whether the library masking format is user-defined or predefined.
      * 
      */
-    private String source;
+    private @Nullable String source;
     /**
      * @return The current state of the library masking format.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return The date and time the library masking format was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The date and time the library masking format was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)
      * 
      */
-    private String timeUpdated;
+    private @Nullable String timeUpdated;
 
     private GetLibraryMaskingFormatResult() {}
     /**
      * @return The OCID of the compartment that contains the library masking format.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return The description of the format entry.
      * 
      */
-    public String description() {
-        return this.description;
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
     /**
      * @return The display name of the library masking format.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return An array of format entries. The combined output of all the format entries is used for masking.
      * 
      */
     public List<GetLibraryMaskingFormatFormatEntry> formatEntries() {
-        return this.formatEntries;
+        return this.formatEntries == null ? List.of() : this.formatEntries;
     }
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return The OCID of the library masking format.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The OCID of the library masking format.
@@ -141,35 +143,35 @@ public final class GetLibraryMaskingFormatResult {
      * 
      */
     public List<String> sensitiveTypeIds() {
-        return this.sensitiveTypeIds;
+        return this.sensitiveTypeIds == null ? List.of() : this.sensitiveTypeIds;
     }
     /**
      * @return Specifies whether the library masking format is user-defined or predefined.
      * 
      */
-    public String source() {
-        return this.source;
+    public Optional<String> source() {
+        return Optional.ofNullable(this.source);
     }
     /**
      * @return The current state of the library masking format.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return The date and time the library masking format was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return The date and time the library masking format was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)
      * 
      */
-    public String timeUpdated() {
-        return this.timeUpdated;
+    public Optional<String> timeUpdated() {
+        return Optional.ofNullable(this.timeUpdated);
     }
 
     public static Builder builder() {
@@ -181,19 +183,19 @@ public final class GetLibraryMaskingFormatResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String compartmentId;
-        private Map<String,Object> definedTags;
-        private String description;
-        private String displayName;
-        private List<GetLibraryMaskingFormatFormatEntry> formatEntries;
-        private Map<String,Object> freeformTags;
-        private String id;
+        private @Nullable String compartmentId;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String description;
+        private @Nullable String displayName;
+        private @Nullable List<GetLibraryMaskingFormatFormatEntry> formatEntries;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String id;
         private String libraryMaskingFormatId;
-        private List<String> sensitiveTypeIds;
-        private String source;
-        private String state;
-        private String timeCreated;
-        private String timeUpdated;
+        private @Nullable List<String> sensitiveTypeIds;
+        private @Nullable String source;
+        private @Nullable String state;
+        private @Nullable String timeCreated;
+        private @Nullable String timeUpdated;
         public Builder() {}
         public Builder(GetLibraryMaskingFormatResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -213,41 +215,41 @@ public final class GetLibraryMaskingFormatResult {
         }
 
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+        public Builder description(@Nullable String description) {
+            this.description = description;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder formatEntries(List<GetLibraryMaskingFormatFormatEntry> formatEntries) {
-            this.formatEntries = Objects.requireNonNull(formatEntries);
+        public Builder formatEntries(@Nullable List<GetLibraryMaskingFormatFormatEntry> formatEntries) {
+            this.formatEntries = formatEntries;
             return this;
         }
         public Builder formatEntries(GetLibraryMaskingFormatFormatEntry... formatEntries) {
             return formatEntries(List.of(formatEntries));
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -256,31 +258,31 @@ public final class GetLibraryMaskingFormatResult {
             return this;
         }
         @CustomType.Setter
-        public Builder sensitiveTypeIds(List<String> sensitiveTypeIds) {
-            this.sensitiveTypeIds = Objects.requireNonNull(sensitiveTypeIds);
+        public Builder sensitiveTypeIds(@Nullable List<String> sensitiveTypeIds) {
+            this.sensitiveTypeIds = sensitiveTypeIds;
             return this;
         }
         public Builder sensitiveTypeIds(String... sensitiveTypeIds) {
             return sensitiveTypeIds(List.of(sensitiveTypeIds));
         }
         @CustomType.Setter
-        public Builder source(String source) {
-            this.source = Objects.requireNonNull(source);
+        public Builder source(@Nullable String source) {
+            this.source = source;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+        public Builder timeUpdated(@Nullable String timeUpdated) {
+            this.timeUpdated = timeUpdated;
             return this;
         }
         public GetLibraryMaskingFormatResult build() {

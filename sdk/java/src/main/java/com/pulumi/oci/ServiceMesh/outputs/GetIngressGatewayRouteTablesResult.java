@@ -34,7 +34,7 @@ public final class GetIngressGatewayRouteTablesResult {
      * @return The list of ingress_gateway_route_table_collection.
      * 
      */
-    private List<GetIngressGatewayRouteTablesIngressGatewayRouteTableCollection> ingressGatewayRouteTableCollections;
+    private @Nullable List<GetIngressGatewayRouteTablesIngressGatewayRouteTableCollection> ingressGatewayRouteTableCollections;
     /**
      * @return Name of the ingress gateway host that this route should apply to.
      * 
@@ -76,7 +76,7 @@ public final class GetIngressGatewayRouteTablesResult {
      * 
      */
     public List<GetIngressGatewayRouteTablesIngressGatewayRouteTableCollection> ingressGatewayRouteTableCollections() {
-        return this.ingressGatewayRouteTableCollections;
+        return this.ingressGatewayRouteTableCollections == null ? List.of() : this.ingressGatewayRouteTableCollections;
     }
     /**
      * @return Name of the ingress gateway host that this route should apply to.
@@ -106,7 +106,7 @@ public final class GetIngressGatewayRouteTablesResult {
         private @Nullable List<GetIngressGatewayRouteTablesFilter> filters;
         private @Nullable String id;
         private @Nullable String ingressGatewayId;
-        private List<GetIngressGatewayRouteTablesIngressGatewayRouteTableCollection> ingressGatewayRouteTableCollections;
+        private @Nullable List<GetIngressGatewayRouteTablesIngressGatewayRouteTableCollection> ingressGatewayRouteTableCollections;
         private @Nullable String name;
         private @Nullable String state;
         public Builder() {}
@@ -145,8 +145,8 @@ public final class GetIngressGatewayRouteTablesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder ingressGatewayRouteTableCollections(List<GetIngressGatewayRouteTablesIngressGatewayRouteTableCollection> ingressGatewayRouteTableCollections) {
-            this.ingressGatewayRouteTableCollections = Objects.requireNonNull(ingressGatewayRouteTableCollections);
+        public Builder ingressGatewayRouteTableCollections(@Nullable List<GetIngressGatewayRouteTablesIngressGatewayRouteTableCollection> ingressGatewayRouteTableCollections) {
+            this.ingressGatewayRouteTableCollections = ingressGatewayRouteTableCollections;
             return this;
         }
         public Builder ingressGatewayRouteTableCollections(GetIngressGatewayRouteTablesIngressGatewayRouteTableCollection... ingressGatewayRouteTableCollections) {

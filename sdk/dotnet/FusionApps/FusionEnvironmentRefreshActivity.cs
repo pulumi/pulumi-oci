@@ -48,7 +48,7 @@ namespace Pulumi.Oci.FusionApps
         /// A friendly name for the refresh activity. Can be changed later.
         /// </summary>
         [Output("displayName")]
-        public Output<string> DisplayName { get; private set; } = null!;
+        public Output<string?> DisplayName { get; private set; } = null!;
 
         /// <summary>
         /// unique FusionEnvironment identifier
@@ -60,10 +60,10 @@ namespace Pulumi.Oci.FusionApps
         /// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         /// </summary>
         [Output("lifecycleDetails")]
-        public Output<string> LifecycleDetails { get; private set; } = null!;
+        public Output<string?> LifecycleDetails { get; private set; } = null!;
 
         [Output("refreshActivityId")]
-        public Output<string> RefreshActivityId { get; private set; } = null!;
+        public Output<string?> RefreshActivityId { get; private set; } = null!;
 
         /// <summary>
         /// Details of refresh investigation information, each item represents a different issue.
@@ -75,7 +75,7 @@ namespace Pulumi.Oci.FusionApps
         /// Service availability / impact during refresh activity execution up down
         /// </summary>
         [Output("serviceAvailability")]
-        public Output<string> ServiceAvailability { get; private set; } = null!;
+        public Output<string?> ServiceAvailability { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source environment
@@ -91,37 +91,37 @@ namespace Pulumi.Oci.FusionApps
         /// The current state of the refreshActivity.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// The time the refresh activity record was created. An RFC3339 formatted datetime string.
         /// </summary>
         [Output("timeAccepted")]
-        public Output<string> TimeAccepted { get; private set; } = null!;
+        public Output<string?> TimeAccepted { get; private set; } = null!;
 
         /// <summary>
         /// The time the refresh activity is scheduled to end. An RFC3339 formatted datetime string.
         /// </summary>
         [Output("timeExpectedFinish")]
-        public Output<string> TimeExpectedFinish { get; private set; } = null!;
+        public Output<string?> TimeExpectedFinish { get; private set; } = null!;
 
         /// <summary>
         /// The time the refresh activity actually completed / cancelled / failed. An RFC3339 formatted datetime string.
         /// </summary>
         [Output("timeFinished")]
-        public Output<string> TimeFinished { get; private set; } = null!;
+        public Output<string?> TimeFinished { get; private set; } = null!;
 
         /// <summary>
         /// The date and time of the most recent source environment backup used for the environment refresh.
         /// </summary>
         [Output("timeOfRestorationPoint")]
-        public Output<string> TimeOfRestorationPoint { get; private set; } = null!;
+        public Output<string?> TimeOfRestorationPoint { get; private set; } = null!;
 
         /// <summary>
         /// The time the refresh activity record was updated. An RFC3339 formatted datetime string.
         /// </summary>
         [Output("timeUpdated")]
-        public Output<string> TimeUpdated { get; private set; } = null!;
+        public Output<string?> TimeUpdated { get; private set; } = null!;
 
 
         /// <summary>

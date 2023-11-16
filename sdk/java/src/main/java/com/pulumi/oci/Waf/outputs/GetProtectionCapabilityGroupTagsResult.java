@@ -20,7 +20,7 @@ public final class GetProtectionCapabilityGroupTagsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Unique name of protection capability group tag.
      * 
@@ -30,7 +30,7 @@ public final class GetProtectionCapabilityGroupTagsResult {
      * @return The list of protection_capability_group_tag_collection.
      * 
      */
-    private List<GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollection> protectionCapabilityGroupTagCollections;
+    private @Nullable List<GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollection> protectionCapabilityGroupTagCollections;
     private @Nullable String type;
 
     private GetProtectionCapabilityGroupTagsResult() {}
@@ -44,8 +44,8 @@ public final class GetProtectionCapabilityGroupTagsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Unique name of protection capability group tag.
@@ -59,7 +59,7 @@ public final class GetProtectionCapabilityGroupTagsResult {
      * 
      */
     public List<GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollection> protectionCapabilityGroupTagCollections() {
-        return this.protectionCapabilityGroupTagCollections;
+        return this.protectionCapabilityGroupTagCollections == null ? List.of() : this.protectionCapabilityGroupTagCollections;
     }
     public Optional<String> type() {
         return Optional.ofNullable(this.type);
@@ -76,9 +76,9 @@ public final class GetProtectionCapabilityGroupTagsResult {
     public static final class Builder {
         private String compartmentId;
         private @Nullable List<GetProtectionCapabilityGroupTagsFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String name;
-        private List<GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollection> protectionCapabilityGroupTagCollections;
+        private @Nullable List<GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollection> protectionCapabilityGroupTagCollections;
         private @Nullable String type;
         public Builder() {}
         public Builder(GetProtectionCapabilityGroupTagsResult defaults) {
@@ -105,8 +105,8 @@ public final class GetProtectionCapabilityGroupTagsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -115,8 +115,8 @@ public final class GetProtectionCapabilityGroupTagsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder protectionCapabilityGroupTagCollections(List<GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollection> protectionCapabilityGroupTagCollections) {
-            this.protectionCapabilityGroupTagCollections = Objects.requireNonNull(protectionCapabilityGroupTagCollections);
+        public Builder protectionCapabilityGroupTagCollections(@Nullable List<GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollection> protectionCapabilityGroupTagCollections) {
+            this.protectionCapabilityGroupTagCollections = protectionCapabilityGroupTagCollections;
             return this;
         }
         public Builder protectionCapabilityGroupTagCollections(GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollection... protectionCapabilityGroupTagCollections) {

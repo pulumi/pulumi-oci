@@ -141,7 +141,7 @@ namespace Pulumi.Oci.DevOps
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         public readonly string? RefName;
         /// <summary>
         /// The list of repository_author_collection.
@@ -153,7 +153,7 @@ namespace Pulumi.Oci.DevOps
         private GetRepositoryAuthorsResult(
             ImmutableArray<Outputs.GetRepositoryAuthorsFilterResult> filters,
 
-            string id,
+            string? id,
 
             string? refName,
 

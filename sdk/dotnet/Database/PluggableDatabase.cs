@@ -31,7 +31,7 @@ namespace Pulumi.Oci.Database
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         /// </summary>
         [Output("compartmentId")]
-        public Output<string> CompartmentId { get; private set; } = null!;
+        public Output<string?> CompartmentId { get; private set; } = null!;
 
         /// <summary>
         /// Connection strings to connect to an Oracle Pluggable Database.
@@ -43,7 +43,7 @@ namespace Pulumi.Oci.Database
         /// The DB system administrator password of the Container Database.
         /// </summary>
         [Output("containerDatabaseAdminPassword")]
-        public Output<string> ContainerDatabaseAdminPassword { get; private set; } = null!;
+        public Output<string?> ContainerDatabaseAdminPassword { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the CDB
@@ -61,37 +61,37 @@ namespace Pulumi.Oci.Database
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// The restricted mode of the pluggable database. If a pluggable database is opened in restricted mode, the user needs both create a session and have restricted session privileges to connect to it.
         /// </summary>
         [Output("isRestricted")]
-        public Output<bool> IsRestricted { get; private set; } = null!;
+        public Output<bool?> IsRestricted { get; private set; } = null!;
 
         /// <summary>
         /// Detailed message for the lifecycle state.
         /// </summary>
         [Output("lifecycleDetails")]
-        public Output<string> LifecycleDetails { get; private set; } = null!;
+        public Output<string?> LifecycleDetails { get; private set; } = null!;
 
         /// <summary>
         /// The mode that pluggable database is in. Open mode can only be changed to READ_ONLY or MIGRATE directly from the backend (within the Oracle Database software).
         /// </summary>
         [Output("openMode")]
-        public Output<string> OpenMode { get; private set; } = null!;
+        public Output<string?> OpenMode { get; private set; } = null!;
 
         /// <summary>
         /// A strong password for PDB Admin. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numbers, and two special characters. The special characters must be _, \#, or -.
         /// </summary>
         [Output("pdbAdminPassword")]
-        public Output<string> PdbAdminPassword { get; private set; } = null!;
+        public Output<string?> PdbAdminPassword { get; private set; } = null!;
 
         /// <summary>
         /// The Pluggable Database creation type. Use `LOCAL_CLONE_PDB` for creating a new PDB using Local Clone on Source Pluggable Database. This will Clone and starts a pluggable database (PDB) in the same database (CDB) as the source PDB. The source PDB must be in the `READ_WRITE` openMode to perform the clone operation. Use `REMOTE_CLONE_PDB` for creating a new PDB using Remote Clone on Source Pluggable Database. This will Clone a pluggable database (PDB) to a different database from the source PDB. The cloned PDB will be started upon completion of the clone operation. The source PDB must be in the `READ_WRITE` openMode when performing the clone. For Exadata Cloud@Customer instances, the source pluggable database (PDB) must be on the same Exadata Infrastructure as the target container database (CDB) to create a remote clone.
@@ -99,7 +99,7 @@ namespace Pulumi.Oci.Database
         /// Use `RELOCATE_PDB` for relocating the Pluggable Database from Source CDB and creating it in target CDB. This will relocate a pluggable database (PDB) to a different database from the source PDB. The source PDB must be in the `READ_WRITE` openMode when performing the relocate.
         /// </summary>
         [Output("pdbCreationTypeDetails")]
-        public Output<Outputs.PluggableDatabasePdbCreationTypeDetails> PdbCreationTypeDetails { get; private set; } = null!;
+        public Output<Outputs.PluggableDatabasePdbCreationTypeDetails?> PdbCreationTypeDetails { get; private set; } = null!;
 
         /// <summary>
         /// The name for the pluggable database (PDB). The name is unique in the context of a [container database](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/Database/). The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. The pluggable database name should not be same as the container database name.
@@ -145,31 +145,31 @@ namespace Pulumi.Oci.Database
         /// Indicates whether to take Pluggable Database Backup after the operation.
         /// </summary>
         [Output("shouldCreatePdbBackup")]
-        public Output<bool> ShouldCreatePdbBackup { get; private set; } = null!;
+        public Output<bool?> ShouldCreatePdbBackup { get; private set; } = null!;
 
         /// <summary>
         /// The locked mode of the pluggable database admin account. If false, the user needs to provide the PDB Admin Password to connect to it. If true, the pluggable database will be locked and user cannot login to it.
         /// </summary>
         [Output("shouldPdbAdminAccountBeLocked")]
-        public Output<bool> ShouldPdbAdminAccountBeLocked { get; private set; } = null!;
+        public Output<bool?> ShouldPdbAdminAccountBeLocked { get; private set; } = null!;
 
         /// <summary>
         /// The current state of the pluggable database.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// The existing TDE wallet password of the CDB.
         /// </summary>
         [Output("tdeWalletPassword")]
-        public Output<string> TdeWalletPassword { get; private set; } = null!;
+        public Output<string?> TdeWalletPassword { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the pluggable database was created.
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
 
         /// <summary>

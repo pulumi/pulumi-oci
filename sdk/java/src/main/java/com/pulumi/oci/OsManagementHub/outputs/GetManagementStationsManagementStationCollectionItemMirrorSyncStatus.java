@@ -6,6 +6,8 @@ package com.pulumi.oci.OsManagementHub.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.Integer;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetManagementStationsManagementStationCollectionItemMirrorSyncStatus {
@@ -13,63 +15,63 @@ public final class GetManagementStationsManagementStationCollectionItemMirrorSyn
      * @return Total of mirrors in &#39;failed&#39; state
      * 
      */
-    private Integer failed;
+    private @Nullable Integer failed;
     /**
      * @return Total of mirrors in &#39;queued&#39; state
      * 
      */
-    private Integer queued;
+    private @Nullable Integer queued;
     /**
      * @return Total of mirrors in &#39;synced&#39; state
      * 
      */
-    private Integer synced;
+    private @Nullable Integer synced;
     /**
      * @return Total of mirrors in &#39;syncing&#39; state
      * 
      */
-    private Integer syncing;
+    private @Nullable Integer syncing;
     /**
      * @return Total of mirrors in &#39;failed&#39; state
      * 
      */
-    private Integer unsynced;
+    private @Nullable Integer unsynced;
 
     private GetManagementStationsManagementStationCollectionItemMirrorSyncStatus() {}
     /**
      * @return Total of mirrors in &#39;failed&#39; state
      * 
      */
-    public Integer failed() {
-        return this.failed;
+    public Optional<Integer> failed() {
+        return Optional.ofNullable(this.failed);
     }
     /**
      * @return Total of mirrors in &#39;queued&#39; state
      * 
      */
-    public Integer queued() {
-        return this.queued;
+    public Optional<Integer> queued() {
+        return Optional.ofNullable(this.queued);
     }
     /**
      * @return Total of mirrors in &#39;synced&#39; state
      * 
      */
-    public Integer synced() {
-        return this.synced;
+    public Optional<Integer> synced() {
+        return Optional.ofNullable(this.synced);
     }
     /**
      * @return Total of mirrors in &#39;syncing&#39; state
      * 
      */
-    public Integer syncing() {
-        return this.syncing;
+    public Optional<Integer> syncing() {
+        return Optional.ofNullable(this.syncing);
     }
     /**
      * @return Total of mirrors in &#39;failed&#39; state
      * 
      */
-    public Integer unsynced() {
-        return this.unsynced;
+    public Optional<Integer> unsynced() {
+        return Optional.ofNullable(this.unsynced);
     }
 
     public static Builder builder() {
@@ -81,11 +83,11 @@ public final class GetManagementStationsManagementStationCollectionItemMirrorSyn
     }
     @CustomType.Builder
     public static final class Builder {
-        private Integer failed;
-        private Integer queued;
-        private Integer synced;
-        private Integer syncing;
-        private Integer unsynced;
+        private @Nullable Integer failed;
+        private @Nullable Integer queued;
+        private @Nullable Integer synced;
+        private @Nullable Integer syncing;
+        private @Nullable Integer unsynced;
         public Builder() {}
         public Builder(GetManagementStationsManagementStationCollectionItemMirrorSyncStatus defaults) {
     	      Objects.requireNonNull(defaults);
@@ -97,28 +99,28 @@ public final class GetManagementStationsManagementStationCollectionItemMirrorSyn
         }
 
         @CustomType.Setter
-        public Builder failed(Integer failed) {
-            this.failed = Objects.requireNonNull(failed);
+        public Builder failed(@Nullable Integer failed) {
+            this.failed = failed;
             return this;
         }
         @CustomType.Setter
-        public Builder queued(Integer queued) {
-            this.queued = Objects.requireNonNull(queued);
+        public Builder queued(@Nullable Integer queued) {
+            this.queued = queued;
             return this;
         }
         @CustomType.Setter
-        public Builder synced(Integer synced) {
-            this.synced = Objects.requireNonNull(synced);
+        public Builder synced(@Nullable Integer synced) {
+            this.synced = synced;
             return this;
         }
         @CustomType.Setter
-        public Builder syncing(Integer syncing) {
-            this.syncing = Objects.requireNonNull(syncing);
+        public Builder syncing(@Nullable Integer syncing) {
+            this.syncing = syncing;
             return this;
         }
         @CustomType.Setter
-        public Builder unsynced(Integer unsynced) {
-            this.unsynced = Objects.requireNonNull(unsynced);
+        public Builder unsynced(@Nullable Integer unsynced) {
+            this.unsynced = unsynced;
             return this;
         }
         public GetManagementStationsManagementStationCollectionItemMirrorSyncStatus build() {

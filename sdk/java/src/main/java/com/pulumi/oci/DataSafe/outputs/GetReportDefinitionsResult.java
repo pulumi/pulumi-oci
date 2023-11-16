@@ -42,7 +42,7 @@ public final class GetReportDefinitionsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Signifies whether the definition is seeded or user defined. Values can either be &#39;true&#39; or &#39;false&#39;.
      * 
@@ -52,7 +52,7 @@ public final class GetReportDefinitionsResult {
      * @return The list of report_definition_collection.
      * 
      */
-    private List<GetReportDefinitionsReportDefinitionCollection> reportDefinitionCollections;
+    private @Nullable List<GetReportDefinitionsReportDefinitionCollection> reportDefinitionCollections;
     /**
      * @return The current state of the report.
      * 
@@ -101,8 +101,8 @@ public final class GetReportDefinitionsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Signifies whether the definition is seeded or user defined. Values can either be &#39;true&#39; or &#39;false&#39;.
@@ -116,7 +116,7 @@ public final class GetReportDefinitionsResult {
      * 
      */
     public List<GetReportDefinitionsReportDefinitionCollection> reportDefinitionCollections() {
-        return this.reportDefinitionCollections;
+        return this.reportDefinitionCollections == null ? List.of() : this.reportDefinitionCollections;
     }
     /**
      * @return The current state of the report.
@@ -142,9 +142,9 @@ public final class GetReportDefinitionsResult {
         private @Nullable String dataSource;
         private @Nullable String displayName;
         private @Nullable List<GetReportDefinitionsFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable Boolean isSeeded;
-        private List<GetReportDefinitionsReportDefinitionCollection> reportDefinitionCollections;
+        private @Nullable List<GetReportDefinitionsReportDefinitionCollection> reportDefinitionCollections;
         private @Nullable String state;
         public Builder() {}
         public Builder(GetReportDefinitionsResult defaults) {
@@ -201,8 +201,8 @@ public final class GetReportDefinitionsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -211,8 +211,8 @@ public final class GetReportDefinitionsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder reportDefinitionCollections(List<GetReportDefinitionsReportDefinitionCollection> reportDefinitionCollections) {
-            this.reportDefinitionCollections = Objects.requireNonNull(reportDefinitionCollections);
+        public Builder reportDefinitionCollections(@Nullable List<GetReportDefinitionsReportDefinitionCollection> reportDefinitionCollections) {
+            this.reportDefinitionCollections = reportDefinitionCollections;
             return this;
         }
         public Builder reportDefinitionCollections(GetReportDefinitionsReportDefinitionCollection... reportDefinitionCollections) {

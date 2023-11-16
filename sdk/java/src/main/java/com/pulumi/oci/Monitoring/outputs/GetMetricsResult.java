@@ -30,12 +30,12 @@ public final class GetMetricsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The list of metrics.
      * 
      */
-    private List<GetMetricsMetric> metrics;
+    private @Nullable List<GetMetricsMetric> metrics;
     /**
      * @return The name of the metric.  Example: `CpuUtilization`
      * 
@@ -76,15 +76,15 @@ public final class GetMetricsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The list of metrics.
      * 
      */
     public List<GetMetricsMetric> metrics() {
-        return this.metrics;
+        return this.metrics == null ? List.of() : this.metrics;
     }
     /**
      * @return The name of the metric.  Example: `CpuUtilization`
@@ -122,8 +122,8 @@ public final class GetMetricsResult {
         private @Nullable Map<String,Object> dimensionFilters;
         private @Nullable List<GetMetricsFilter> filters;
         private @Nullable List<String> groupBies;
-        private String id;
-        private List<GetMetricsMetric> metrics;
+        private @Nullable String id;
+        private @Nullable List<GetMetricsMetric> metrics;
         private @Nullable String name;
         private @Nullable String namespace;
         private @Nullable String resourceGroup;
@@ -174,13 +174,13 @@ public final class GetMetricsResult {
             return groupBies(List.of(groupBies));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder metrics(List<GetMetricsMetric> metrics) {
-            this.metrics = Objects.requireNonNull(metrics);
+        public Builder metrics(@Nullable List<GetMetricsMetric> metrics) {
+            this.metrics = metrics;
             return this;
         }
         public Builder metrics(GetMetricsMetric... metrics) {

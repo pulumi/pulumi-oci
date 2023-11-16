@@ -6,6 +6,8 @@ package com.pulumi.oci.VnMonitoring.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetPathAnalyzerTestDestinationEndpoint {
@@ -13,123 +15,123 @@ public final class GetPathAnalyzerTestDestinationEndpoint {
      * @return The IPv4 address of the COMPUTE_INSTANCE-type `Endpoint` object.
      * 
      */
-    private String address;
+    private @Nullable String address;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute instance.
      * 
      */
-    private String instanceId;
+    private @Nullable String instanceId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network load balancer listener.
      * 
      */
-    private String listenerId;
+    private @Nullable String listenerId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the listener&#39;s load balancer.
      * 
      */
-    private String loadBalancerId;
+    private @Nullable String loadBalancerId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the listener&#39;s network load balancer.
      * 
      */
-    private String networkLoadBalancerId;
+    private @Nullable String networkLoadBalancerId;
     /**
      * @return The current state of the `PathAnalyzerTest` resource.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet containing the IP address. This can be used to disambiguate which subnet is intended, in case the IP address is used in more than one subnet (when there are subnets with overlapping IP ranges).
      * 
      */
-    private String subnetId;
+    private @Nullable String subnetId;
     /**
      * @return The type of the `Endpoint`.
      * 
      */
-    private String type;
+    private @Nullable String type;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN containing the IP address. This can be used to disambiguate which VLAN is queried, in case the endpoint IP address belongs to more than one VLAN (when there are VLANs with overlapping IP ranges).
      * 
      */
-    private String vlanId;
+    private @Nullable String vlanId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC attached to the compute instance.
      * 
      */
-    private String vnicId;
+    private @Nullable String vnicId;
 
     private GetPathAnalyzerTestDestinationEndpoint() {}
     /**
      * @return The IPv4 address of the COMPUTE_INSTANCE-type `Endpoint` object.
      * 
      */
-    public String address() {
-        return this.address;
+    public Optional<String> address() {
+        return Optional.ofNullable(this.address);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute instance.
      * 
      */
-    public String instanceId() {
-        return this.instanceId;
+    public Optional<String> instanceId() {
+        return Optional.ofNullable(this.instanceId);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network load balancer listener.
      * 
      */
-    public String listenerId() {
-        return this.listenerId;
+    public Optional<String> listenerId() {
+        return Optional.ofNullable(this.listenerId);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the listener&#39;s load balancer.
      * 
      */
-    public String loadBalancerId() {
-        return this.loadBalancerId;
+    public Optional<String> loadBalancerId() {
+        return Optional.ofNullable(this.loadBalancerId);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the listener&#39;s network load balancer.
      * 
      */
-    public String networkLoadBalancerId() {
-        return this.networkLoadBalancerId;
+    public Optional<String> networkLoadBalancerId() {
+        return Optional.ofNullable(this.networkLoadBalancerId);
     }
     /**
      * @return The current state of the `PathAnalyzerTest` resource.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet containing the IP address. This can be used to disambiguate which subnet is intended, in case the IP address is used in more than one subnet (when there are subnets with overlapping IP ranges).
      * 
      */
-    public String subnetId() {
-        return this.subnetId;
+    public Optional<String> subnetId() {
+        return Optional.ofNullable(this.subnetId);
     }
     /**
      * @return The type of the `Endpoint`.
      * 
      */
-    public String type() {
-        return this.type;
+    public Optional<String> type() {
+        return Optional.ofNullable(this.type);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN containing the IP address. This can be used to disambiguate which VLAN is queried, in case the endpoint IP address belongs to more than one VLAN (when there are VLANs with overlapping IP ranges).
      * 
      */
-    public String vlanId() {
-        return this.vlanId;
+    public Optional<String> vlanId() {
+        return Optional.ofNullable(this.vlanId);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC attached to the compute instance.
      * 
      */
-    public String vnicId() {
-        return this.vnicId;
+    public Optional<String> vnicId() {
+        return Optional.ofNullable(this.vnicId);
     }
 
     public static Builder builder() {
@@ -141,16 +143,16 @@ public final class GetPathAnalyzerTestDestinationEndpoint {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String address;
-        private String instanceId;
-        private String listenerId;
-        private String loadBalancerId;
-        private String networkLoadBalancerId;
-        private String state;
-        private String subnetId;
-        private String type;
-        private String vlanId;
-        private String vnicId;
+        private @Nullable String address;
+        private @Nullable String instanceId;
+        private @Nullable String listenerId;
+        private @Nullable String loadBalancerId;
+        private @Nullable String networkLoadBalancerId;
+        private @Nullable String state;
+        private @Nullable String subnetId;
+        private @Nullable String type;
+        private @Nullable String vlanId;
+        private @Nullable String vnicId;
         public Builder() {}
         public Builder(GetPathAnalyzerTestDestinationEndpoint defaults) {
     	      Objects.requireNonNull(defaults);
@@ -167,53 +169,53 @@ public final class GetPathAnalyzerTestDestinationEndpoint {
         }
 
         @CustomType.Setter
-        public Builder address(String address) {
-            this.address = Objects.requireNonNull(address);
+        public Builder address(@Nullable String address) {
+            this.address = address;
             return this;
         }
         @CustomType.Setter
-        public Builder instanceId(String instanceId) {
-            this.instanceId = Objects.requireNonNull(instanceId);
+        public Builder instanceId(@Nullable String instanceId) {
+            this.instanceId = instanceId;
             return this;
         }
         @CustomType.Setter
-        public Builder listenerId(String listenerId) {
-            this.listenerId = Objects.requireNonNull(listenerId);
+        public Builder listenerId(@Nullable String listenerId) {
+            this.listenerId = listenerId;
             return this;
         }
         @CustomType.Setter
-        public Builder loadBalancerId(String loadBalancerId) {
-            this.loadBalancerId = Objects.requireNonNull(loadBalancerId);
+        public Builder loadBalancerId(@Nullable String loadBalancerId) {
+            this.loadBalancerId = loadBalancerId;
             return this;
         }
         @CustomType.Setter
-        public Builder networkLoadBalancerId(String networkLoadBalancerId) {
-            this.networkLoadBalancerId = Objects.requireNonNull(networkLoadBalancerId);
+        public Builder networkLoadBalancerId(@Nullable String networkLoadBalancerId) {
+            this.networkLoadBalancerId = networkLoadBalancerId;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder subnetId(String subnetId) {
-            this.subnetId = Objects.requireNonNull(subnetId);
+        public Builder subnetId(@Nullable String subnetId) {
+            this.subnetId = subnetId;
             return this;
         }
         @CustomType.Setter
-        public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+        public Builder type(@Nullable String type) {
+            this.type = type;
             return this;
         }
         @CustomType.Setter
-        public Builder vlanId(String vlanId) {
-            this.vlanId = Objects.requireNonNull(vlanId);
+        public Builder vlanId(@Nullable String vlanId) {
+            this.vlanId = vlanId;
             return this;
         }
         @CustomType.Setter
-        public Builder vnicId(String vnicId) {
-            this.vnicId = Objects.requireNonNull(vnicId);
+        public Builder vnicId(@Nullable String vnicId) {
+            this.vnicId = vnicId;
             return this;
         }
         public GetPathAnalyzerTestDestinationEndpoint build() {

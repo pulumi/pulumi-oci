@@ -45,65 +45,65 @@ export interface GetOneoffPatchResult {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * A valid Oracle Database version. To get a list of supported versions, use the [ListDbVersions](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/DbVersionSummary/ListDbVersions) operation.
      */
-    readonly dbVersion: string;
+    readonly dbVersion?: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * One-off patch name.
      */
-    readonly displayName: string;
-    readonly downloadOneoffPatchTrigger: number;
+    readonly displayName?: string;
+    readonly downloadOneoffPatchTrigger?: number;
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the one-off patch.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Detailed message for the lifecycle state.
      */
-    readonly lifecycleDetails: string;
+    readonly lifecycleDetails?: string;
     /**
      * List of one-off patches for Database Homes.
      */
-    readonly oneOffPatches: string[];
+    readonly oneOffPatches?: string[];
     readonly oneoffPatchId: string;
     /**
      * The PSU or PBP or Release Updates. To get a list of supported versions, use the [ListDbVersions](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/DbVersionSummary/ListDbVersions) operation.
      */
-    readonly releaseUpdate: string;
+    readonly releaseUpdate?: string;
     /**
      * SHA-256 checksum of the one-off patch.
      */
-    readonly sha256sum: string;
+    readonly sha256sum?: string;
     /**
      * The size of one-off patch in kilobytes.
      */
-    readonly sizeInKbs: number;
+    readonly sizeInKbs?: number;
     /**
      * The current state of the one-off patch.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * The date and time one-off patch was created.
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The date and time until which the one-off patch will be available for download.
      */
-    readonly timeOfExpiration: string;
+    readonly timeOfExpiration?: string;
     /**
      * The date and time one-off patch was updated.
      */
-    readonly timeUpdated: string;
+    readonly timeUpdated?: string;
 }
 /**
  * This data source provides details about a specific Oneoff Patch resource in Oracle Cloud Infrastructure Database service.

@@ -46,9 +46,6 @@ class GetPoliciesResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The OCID of the compartment containing the policy (either the tenancy or another compartment).
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
@@ -58,7 +55,7 @@ class GetPoliciesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -67,25 +64,16 @@ class GetPoliciesResult:
     @property
     @pulumi.getter
     def name(self) -> Optional[str]:
-        """
-        The name you assign to the policy during creation. The name must be unique across all policies in the tenancy and cannot be changed.
-        """
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
-    def policies(self) -> Sequence['outputs.GetPoliciesPolicyResult']:
-        """
-        The list of policies.
-        """
+    def policies(self) -> Optional[Sequence['outputs.GetPoliciesPolicyResult']]:
         return pulumi.get(self, "policies")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The policy's current state.
-        """
         return pulumi.get(self, "state")
 
 
@@ -109,29 +97,7 @@ def get_policies(compartment_id: Optional[str] = None,
                  state: Optional[str] = None,
                  opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetPoliciesResult:
     """
-    This data source provides the list of Policies in Oracle Cloud Infrastructure Identity service.
-
-    Lists the policies in the specified compartment (either the tenancy or another of your compartments).
-    See [Where to Get the Tenancy's OCID and User's OCID](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/apisigningkey.htm#five).
-
-    To determine which policies apply to a particular group or compartment, you must view the individual
-    statements inside all your policies. There isn't a way to automatically obtain that information via the API.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_policies = oci.Identity.get_policies(compartment_id=var["tenancy_ocid"],
-        name=var["policy_name"],
-        state=var["policy_state"])
-    ```
-
-
-    :param str compartment_id: The OCID of the compartment (remember that the tenancy is simply the root compartment).
-    :param str name: A filter to only return resources that match the given name exactly.
-    :param str state: A filter to only return resources that match the given lifecycle state.  The state value is case-insensitive.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -157,28 +123,6 @@ def get_policies_output(compartment_id: Optional[pulumi.Input[str]] = None,
                         state: Optional[pulumi.Input[Optional[str]]] = None,
                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetPoliciesResult]:
     """
-    This data source provides the list of Policies in Oracle Cloud Infrastructure Identity service.
-
-    Lists the policies in the specified compartment (either the tenancy or another of your compartments).
-    See [Where to Get the Tenancy's OCID and User's OCID](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/apisigningkey.htm#five).
-
-    To determine which policies apply to a particular group or compartment, you must view the individual
-    statements inside all your policies. There isn't a way to automatically obtain that information via the API.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_policies = oci.Identity.get_policies(compartment_id=var["tenancy_ocid"],
-        name=var["policy_name"],
-        state=var["policy_state"])
-    ```
-
-
-    :param str compartment_id: The OCID of the compartment (remember that the tenancy is simply the root compartment).
-    :param str name: A filter to only return resources that match the given name exactly.
-    :param str state: A filter to only return resources that match the given lifecycle state.  The state value is case-insensitive.
+    Use this data source to access information about an existing resource.
     """
     ...

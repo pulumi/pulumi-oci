@@ -16,7 +16,7 @@ namespace Pulumi.Oci.Jms.Outputs
         /// <summary>
         /// PerformanceTuningAnalysis flag to store enabled or disabled status.
         /// </summary>
-        public readonly bool IsEnabled;
+        public readonly bool? IsEnabled;
         /// <summary>
         /// List of available post actions you can execute after the successful Java installation.
         /// </summary>
@@ -24,7 +24,7 @@ namespace Pulumi.Oci.Jms.Outputs
 
         [OutputConstructor]
         private GetFleetAdvancedFeatureConfigurationLcmResult(
-            bool isEnabled,
+            bool? isEnabled,
 
             ImmutableArray<Outputs.GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionResult> postInstallationActions)
         {

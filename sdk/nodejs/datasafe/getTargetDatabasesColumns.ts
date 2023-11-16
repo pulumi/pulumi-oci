@@ -96,13 +96,13 @@ export interface GetTargetDatabasesColumnsResult {
     /**
      * The list of columns.
      */
-    readonly columns: outputs.DataSafe.GetTargetDatabasesColumnsColumn[];
+    readonly columns?: outputs.DataSafe.GetTargetDatabasesColumnsColumn[];
     readonly datatypes?: string[];
     readonly filters?: outputs.DataSafe.GetTargetDatabasesColumnsFilter[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly schemaNameContains?: string;
     /**
      * Name of the schema.

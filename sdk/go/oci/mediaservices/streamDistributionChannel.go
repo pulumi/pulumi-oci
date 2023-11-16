@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Stream Distribution Channel resource in Oracle Cloud Infrastructure Media Services service.
@@ -69,20 +68,20 @@ type StreamDistributionChannel struct {
 	// (Updatable) Stream Distribution Channel display name. Avoid entering confidential information.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// Unique domain name of the Distribution Channel.
-	DomainName pulumi.StringOutput `pulumi:"domainName"`
+	DomainName pulumi.StringPtrOutput `pulumi:"domainName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// The current state of the Stream Distribution Channel.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
 	// The time when the Stream Distribution Channel was created. An RFC3339 formatted datetime string.
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The time when the Stream Distribution Channel was updated. An RFC3339 formatted datetime string.
-	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 }
 
 // NewStreamDistributionChannel registers a new resource with the given unique name, arguments, and options.
@@ -224,12 +223,6 @@ func (i *StreamDistributionChannel) ToStreamDistributionChannelOutputWithContext
 	return pulumi.ToOutputWithContext(ctx, i).(StreamDistributionChannelOutput)
 }
 
-func (i *StreamDistributionChannel) ToOutput(ctx context.Context) pulumix.Output[*StreamDistributionChannel] {
-	return pulumix.Output[*StreamDistributionChannel]{
-		OutputState: i.ToStreamDistributionChannelOutputWithContext(ctx).OutputState,
-	}
-}
-
 // StreamDistributionChannelArrayInput is an input type that accepts StreamDistributionChannelArray and StreamDistributionChannelArrayOutput values.
 // You can construct a concrete instance of `StreamDistributionChannelArrayInput` via:
 //
@@ -253,12 +246,6 @@ func (i StreamDistributionChannelArray) ToStreamDistributionChannelArrayOutput()
 
 func (i StreamDistributionChannelArray) ToStreamDistributionChannelArrayOutputWithContext(ctx context.Context) StreamDistributionChannelArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(StreamDistributionChannelArrayOutput)
-}
-
-func (i StreamDistributionChannelArray) ToOutput(ctx context.Context) pulumix.Output[[]*StreamDistributionChannel] {
-	return pulumix.Output[[]*StreamDistributionChannel]{
-		OutputState: i.ToStreamDistributionChannelArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // StreamDistributionChannelMapInput is an input type that accepts StreamDistributionChannelMap and StreamDistributionChannelMapOutput values.
@@ -286,12 +273,6 @@ func (i StreamDistributionChannelMap) ToStreamDistributionChannelMapOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(StreamDistributionChannelMapOutput)
 }
 
-func (i StreamDistributionChannelMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*StreamDistributionChannel] {
-	return pulumix.Output[map[string]*StreamDistributionChannel]{
-		OutputState: i.ToStreamDistributionChannelMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type StreamDistributionChannelOutput struct{ *pulumi.OutputState }
 
 func (StreamDistributionChannelOutput) ElementType() reflect.Type {
@@ -304,12 +285,6 @@ func (o StreamDistributionChannelOutput) ToStreamDistributionChannelOutput() Str
 
 func (o StreamDistributionChannelOutput) ToStreamDistributionChannelOutputWithContext(ctx context.Context) StreamDistributionChannelOutput {
 	return o
-}
-
-func (o StreamDistributionChannelOutput) ToOutput(ctx context.Context) pulumix.Output[*StreamDistributionChannel] {
-	return pulumix.Output[*StreamDistributionChannel]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Compartment Identifier.
@@ -328,8 +303,8 @@ func (o StreamDistributionChannelOutput) DisplayName() pulumi.StringOutput {
 }
 
 // Unique domain name of the Distribution Channel.
-func (o StreamDistributionChannelOutput) DomainName() pulumi.StringOutput {
-	return o.ApplyT(func(v *StreamDistributionChannel) pulumi.StringOutput { return v.DomainName }).(pulumi.StringOutput)
+func (o StreamDistributionChannelOutput) DomainName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *StreamDistributionChannel) pulumi.StringPtrOutput { return v.DomainName }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -341,8 +316,8 @@ func (o StreamDistributionChannelOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The current state of the Stream Distribution Channel.
-func (o StreamDistributionChannelOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *StreamDistributionChannel) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o StreamDistributionChannelOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *StreamDistributionChannel) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -351,13 +326,13 @@ func (o StreamDistributionChannelOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The time when the Stream Distribution Channel was created. An RFC3339 formatted datetime string.
-func (o StreamDistributionChannelOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *StreamDistributionChannel) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o StreamDistributionChannelOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *StreamDistributionChannel) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time when the Stream Distribution Channel was updated. An RFC3339 formatted datetime string.
-func (o StreamDistributionChannelOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *StreamDistributionChannel) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o StreamDistributionChannelOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *StreamDistributionChannel) pulumi.StringPtrOutput { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type StreamDistributionChannelArrayOutput struct{ *pulumi.OutputState }
@@ -372,12 +347,6 @@ func (o StreamDistributionChannelArrayOutput) ToStreamDistributionChannelArrayOu
 
 func (o StreamDistributionChannelArrayOutput) ToStreamDistributionChannelArrayOutputWithContext(ctx context.Context) StreamDistributionChannelArrayOutput {
 	return o
-}
-
-func (o StreamDistributionChannelArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*StreamDistributionChannel] {
-	return pulumix.Output[[]*StreamDistributionChannel]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o StreamDistributionChannelArrayOutput) Index(i pulumi.IntInput) StreamDistributionChannelOutput {
@@ -398,12 +367,6 @@ func (o StreamDistributionChannelMapOutput) ToStreamDistributionChannelMapOutput
 
 func (o StreamDistributionChannelMapOutput) ToStreamDistributionChannelMapOutputWithContext(ctx context.Context) StreamDistributionChannelMapOutput {
 	return o
-}
-
-func (o StreamDistributionChannelMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*StreamDistributionChannel] {
-	return pulumix.Output[map[string]*StreamDistributionChannel]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o StreamDistributionChannelMapOutput) MapIndex(k pulumi.StringInput) StreamDistributionChannelOutput {

@@ -47,72 +47,72 @@ export interface GetGatewayResult {
     /**
      * An array of CA bundles that should be used on the Gateway for TLS validation.
      */
-    readonly caBundles: outputs.ApiGateway.GetGatewayCaBundle[];
+    readonly caBundles?: outputs.ApiGateway.GetGatewayCaBundle[];
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
      */
-    readonly certificateId: string;
+    readonly certificateId?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the resource is created.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * Gateway endpoint type. `PUBLIC` will have a public ip address assigned to it, while `PRIVATE` will only be accessible on a private IP address on the subnet.  Example: `PUBLIC` or `PRIVATE`
      */
-    readonly endpointType: string;
+    readonly endpointType?: string;
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     readonly gatewayId: string;
     /**
      * The hostname for APIs deployed on the gateway.
      */
-    readonly hostname: string;
+    readonly hostname?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * An array of IP addresses associated with the gateway.
      */
-    readonly ipAddresses: outputs.ApiGateway.GetGatewayIpAddress[];
+    readonly ipAddresses?: outputs.ApiGateway.GetGatewayIpAddress[];
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
      */
-    readonly lifecycleDetails: string;
+    readonly lifecycleDetails?: string;
     /**
      * An array of Network Security Groups OCIDs associated with this API Gateway.
      */
-    readonly networkSecurityGroupIds: string[];
+    readonly networkSecurityGroupIds?: string[];
     /**
      * Base Gateway response cache.
      */
-    readonly responseCacheDetails: outputs.ApiGateway.GetGatewayResponseCacheDetail[];
+    readonly responseCacheDetails?: outputs.ApiGateway.GetGatewayResponseCacheDetail[];
     /**
      * The current state of the gateway.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in which related resources are created.
      */
-    readonly subnetId: string;
+    readonly subnetId?: string;
     /**
      * The time this resource was created. An RFC3339 formatted datetime string.
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The time this resource was last updated. An RFC3339 formatted datetime string.
      */
-    readonly timeUpdated: string;
+    readonly timeUpdated?: string;
 }
 /**
  * This data source provides details about a specific Gateway resource in Oracle Cloud Infrastructure API Gateway service.

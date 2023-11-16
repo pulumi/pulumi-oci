@@ -21,14 +21,14 @@ public final class GetDiscoveryAnalyticsResult {
      * @return The list of discovery_analytics_collection.
      * 
      */
-    private List<GetDiscoveryAnalyticsDiscoveryAnalyticsCollection> discoveryAnalyticsCollections;
+    private @Nullable List<GetDiscoveryAnalyticsDiscoveryAnalyticsCollection> discoveryAnalyticsCollections;
     private @Nullable List<GetDiscoveryAnalyticsFilter> filters;
     private @Nullable String groupBy;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The OCID of the sensitive data model.
      * 
@@ -52,7 +52,7 @@ public final class GetDiscoveryAnalyticsResult {
      * 
      */
     public List<GetDiscoveryAnalyticsDiscoveryAnalyticsCollection> discoveryAnalyticsCollections() {
-        return this.discoveryAnalyticsCollections;
+        return this.discoveryAnalyticsCollections == null ? List.of() : this.discoveryAnalyticsCollections;
     }
     public List<GetDiscoveryAnalyticsFilter> filters() {
         return this.filters == null ? List.of() : this.filters;
@@ -64,8 +64,8 @@ public final class GetDiscoveryAnalyticsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The OCID of the sensitive data model.
@@ -93,10 +93,10 @@ public final class GetDiscoveryAnalyticsResult {
     public static final class Builder {
         private String compartmentId;
         private @Nullable Boolean compartmentIdInSubtree;
-        private List<GetDiscoveryAnalyticsDiscoveryAnalyticsCollection> discoveryAnalyticsCollections;
+        private @Nullable List<GetDiscoveryAnalyticsDiscoveryAnalyticsCollection> discoveryAnalyticsCollections;
         private @Nullable List<GetDiscoveryAnalyticsFilter> filters;
         private @Nullable String groupBy;
-        private String id;
+        private @Nullable String id;
         private @Nullable String sensitiveDataModelId;
         private @Nullable String targetId;
         public Builder() {}
@@ -123,8 +123,8 @@ public final class GetDiscoveryAnalyticsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder discoveryAnalyticsCollections(List<GetDiscoveryAnalyticsDiscoveryAnalyticsCollection> discoveryAnalyticsCollections) {
-            this.discoveryAnalyticsCollections = Objects.requireNonNull(discoveryAnalyticsCollections);
+        public Builder discoveryAnalyticsCollections(@Nullable List<GetDiscoveryAnalyticsDiscoveryAnalyticsCollection> discoveryAnalyticsCollections) {
+            this.discoveryAnalyticsCollections = discoveryAnalyticsCollections;
             return this;
         }
         public Builder discoveryAnalyticsCollections(GetDiscoveryAnalyticsDiscoveryAnalyticsCollection... discoveryAnalyticsCollections) {
@@ -144,8 +144,8 @@ public final class GetDiscoveryAnalyticsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

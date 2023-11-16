@@ -132,27 +132,27 @@ export class TargetAsset extends pulumi.CustomResource {
     /**
      * (Updatable) Performance of the block volumes.
      */
-    public readonly blockVolumesPerformance!: pulumi.Output<number>;
+    public readonly blockVolumesPerformance!: pulumi.Output<number | undefined>;
     /**
      * (Updatable) The OCID of the compartment.
      */
-    public /*out*/ readonly compartmentId!: pulumi.Output<string>;
+    public /*out*/ readonly compartmentId!: pulumi.Output<string | undefined>;
     /**
      * Messages about the compatibility issues.
      */
-    public /*out*/ readonly compatibilityMessages!: pulumi.Output<outputs.CloudMigrations.TargetAssetCompatibilityMessage[]>;
+    public /*out*/ readonly compatibilityMessages!: pulumi.Output<outputs.CloudMigrations.TargetAssetCompatibilityMessage[] | undefined>;
     /**
      * Created resource identifier
      */
-    public /*out*/ readonly createdResourceId!: pulumi.Output<string>;
+    public /*out*/ readonly createdResourceId!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    public /*out*/ readonly displayName!: pulumi.Output<string>;
+    public /*out*/ readonly displayName!: pulumi.Output<string | undefined>;
     /**
      * Cost estimation description
      */
-    public /*out*/ readonly estimatedCosts!: pulumi.Output<outputs.CloudMigrations.TargetAssetEstimatedCost[]>;
+    public /*out*/ readonly estimatedCosts!: pulumi.Output<outputs.CloudMigrations.TargetAssetEstimatedCost[] | undefined>;
     /**
      * (Updatable) A boolean indicating whether the asset should be migrated.
      */
@@ -160,11 +160,11 @@ export class TargetAsset extends pulumi.CustomResource {
     /**
      * A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string | undefined>;
     /**
      * Description of the migration asset.
      */
-    public /*out*/ readonly migrationAssets!: pulumi.Output<outputs.CloudMigrations.TargetAssetMigrationAsset[]>;
+    public /*out*/ readonly migrationAssets!: pulumi.Output<outputs.CloudMigrations.TargetAssetMigrationAsset[] | undefined>;
     /**
      * OCID of the associated migration plan.
      */
@@ -172,7 +172,7 @@ export class TargetAsset extends pulumi.CustomResource {
     /**
      * (Updatable) Microsoft license for the VM configuration.
      */
-    public readonly msLicense!: pulumi.Output<string>;
+    public readonly msLicense!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Preferred VM shape type that you provide.
      */
@@ -180,27 +180,27 @@ export class TargetAsset extends pulumi.CustomResource {
     /**
      * Instance launch details. Use the `sourceDetails` parameter to specify whether a boot volume or an image should be used to launch a new instance.
      */
-    public /*out*/ readonly recommendedSpecs!: pulumi.Output<outputs.CloudMigrations.TargetAssetRecommendedSpec[]>;
+    public /*out*/ readonly recommendedSpecs!: pulumi.Output<outputs.CloudMigrations.TargetAssetRecommendedSpec[] | undefined>;
     /**
      * The current state of the target asset.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * Instance launch details. Use the `sourceDetails` parameter to specify whether a boot volume or an image should be used to launch a new instance.
      */
-    public /*out*/ readonly testSpecs!: pulumi.Output<outputs.CloudMigrations.TargetAssetTestSpec[]>;
+    public /*out*/ readonly testSpecs!: pulumi.Output<outputs.CloudMigrations.TargetAssetTestSpec[] | undefined>;
     /**
      * The time when the assessment was done. An RFC3339 formatted datetime string.
      */
-    public /*out*/ readonly timeAssessed!: pulumi.Output<string>;
+    public /*out*/ readonly timeAssessed!: pulumi.Output<string | undefined>;
     /**
      * The time when the target asset was created. An RFC3339 formatted datetime string.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * The time when the target asset was updated. An RFC3339 formatted datetime string.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    public /*out*/ readonly timeUpdated!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The type of action to run when the instance is interrupted for eviction.
      */

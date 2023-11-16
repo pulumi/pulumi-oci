@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Annotation Formats in Oracle Cloud Infrastructure Data Labeling Service service.
@@ -65,7 +64,7 @@ type GetAnnotationFormatsResult struct {
 	CompartmentId               string                                           `pulumi:"compartmentId"`
 	Filters                     []GetAnnotationFormatsFilter                     `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 }
 
 func GetAnnotationFormatsOutput(ctx *pulumi.Context, args GetAnnotationFormatsOutputArgs, opts ...pulumi.InvokeOption) GetAnnotationFormatsResultOutput {
@@ -107,12 +106,6 @@ func (o GetAnnotationFormatsResultOutput) ToGetAnnotationFormatsResultOutputWith
 	return o
 }
 
-func (o GetAnnotationFormatsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetAnnotationFormatsResult] {
-	return pulumix.Output[GetAnnotationFormatsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The list of annotation_format_collection.
 func (o GetAnnotationFormatsResultOutput) AnnotationFormatCollections() GetAnnotationFormatsAnnotationFormatCollectionArrayOutput {
 	return o.ApplyT(func(v GetAnnotationFormatsResult) []GetAnnotationFormatsAnnotationFormatCollection {
@@ -129,8 +122,8 @@ func (o GetAnnotationFormatsResultOutput) Filters() GetAnnotationFormatsFilterAr
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetAnnotationFormatsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAnnotationFormatsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetAnnotationFormatsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAnnotationFormatsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func init() {

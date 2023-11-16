@@ -16,6 +16,7 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -66,70 +67,70 @@ public class DataSafeConfiguration extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="compartmentId", refs={String.class}, tree="[0]")
-    private Output<String> compartmentId;
+    private Output</* @Nullable */ String> compartmentId;
 
     /**
      * @return (Updatable) A filter to return only resources that match the specified compartment OCID.
      * 
      */
-    public Output<String> compartmentId() {
-        return this.compartmentId;
+    public Output<Optional<String>> compartmentId() {
+        return Codegen.optional(this.compartmentId);
     }
     /**
      * The Oracle Data Safe&#39;s NAT Gateway IP Address.
      * 
      */
     @Export(name="dataSafeNatGatewayIpAddress", refs={String.class}, tree="[0]")
-    private Output<String> dataSafeNatGatewayIpAddress;
+    private Output</* @Nullable */ String> dataSafeNatGatewayIpAddress;
 
     /**
      * @return The Oracle Data Safe&#39;s NAT Gateway IP Address.
      * 
      */
-    public Output<String> dataSafeNatGatewayIpAddress() {
-        return this.dataSafeNatGatewayIpAddress;
+    public Output<Optional<String>> dataSafeNatGatewayIpAddress() {
+        return Codegen.optional(this.dataSafeNatGatewayIpAddress);
     }
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * Details of the tenancy level global settings in Data Safe.
      * 
      */
     @Export(name="globalSettings", refs={List.class,DataSafeConfigurationGlobalSetting.class}, tree="[0,1]")
-    private Output<List<DataSafeConfigurationGlobalSetting>> globalSettings;
+    private Output</* @Nullable */ List<DataSafeConfigurationGlobalSetting>> globalSettings;
 
     /**
      * @return Details of the tenancy level global settings in Data Safe.
      * 
      */
-    public Output<List<DataSafeConfigurationGlobalSetting>> globalSettings() {
-        return this.globalSettings;
+    public Output<Optional<List<DataSafeConfigurationGlobalSetting>>> globalSettings() {
+        return Codegen.optional(this.globalSettings);
     }
     /**
      * (Updatable) Indicates if Data Safe is enabled.
@@ -156,42 +157,42 @@ public class DataSafeConfiguration extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The current state of Data Safe.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * The date and time Data Safe was enabled, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
     @Export(name="timeEnabled", refs={String.class}, tree="[0]")
-    private Output<String> timeEnabled;
+    private Output</* @Nullable */ String> timeEnabled;
 
     /**
      * @return The date and time Data Safe was enabled, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    public Output<String> timeEnabled() {
-        return this.timeEnabled;
+    public Output<Optional<String>> timeEnabled() {
+        return Codegen.optional(this.timeEnabled);
     }
     /**
      * The URL of the Data Safe service.
      * 
      */
     @Export(name="url", refs={String.class}, tree="[0]")
-    private Output<String> url;
+    private Output</* @Nullable */ String> url;
 
     /**
      * @return The URL of the Data Safe service.
      * 
      */
-    public Output<String> url() {
-        return this.url;
+    public Output<Optional<String>> url() {
+        return Codegen.optional(this.url);
     }
 
     /**

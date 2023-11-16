@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Oda Private Endpoint resource in Oracle Cloud Infrastructure Digital Assistant service.
@@ -60,28 +59,28 @@ type LookupOdaPrivateEndpointArgs struct {
 // A collection of values returned by getOdaPrivateEndpoint.
 type LookupOdaPrivateEndpointResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that the ODA private endpoint belongs to.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// Description of the ODA private endpoint.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// User-defined name for the ODA private endpoint. Avoid entering confidential information. You can change this value.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type, or scope. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that was assigned when the ODA private endpoint was created.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// List of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of [network security groups](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/networksecuritygroups.htm)
 	NsgIds               []string `pulumi:"nsgIds"`
 	OdaPrivateEndpointId string   `pulumi:"odaPrivateEndpointId"`
 	// The current state of the ODA private endpoint.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet that the private endpoint belongs to.
-	SubnetId string `pulumi:"subnetId"`
+	SubnetId *string `pulumi:"subnetId"`
 	// When the resource was created. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// When the resource was last updated. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 func LookupOdaPrivateEndpointOutput(ctx *pulumi.Context, args LookupOdaPrivateEndpointOutputArgs, opts ...pulumi.InvokeOption) LookupOdaPrivateEndpointResultOutput {
@@ -122,15 +121,9 @@ func (o LookupOdaPrivateEndpointResultOutput) ToLookupOdaPrivateEndpointResultOu
 	return o
 }
 
-func (o LookupOdaPrivateEndpointResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupOdaPrivateEndpointResult] {
-	return pulumix.Output[LookupOdaPrivateEndpointResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that the ODA private endpoint belongs to.
-func (o LookupOdaPrivateEndpointResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupOdaPrivateEndpointResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupOdaPrivateEndpointResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupOdaPrivateEndpointResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
@@ -139,13 +132,13 @@ func (o LookupOdaPrivateEndpointResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // Description of the ODA private endpoint.
-func (o LookupOdaPrivateEndpointResultOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupOdaPrivateEndpointResult) string { return v.Description }).(pulumi.StringOutput)
+func (o LookupOdaPrivateEndpointResultOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupOdaPrivateEndpointResult) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // User-defined name for the ODA private endpoint. Avoid entering confidential information. You can change this value.
-func (o LookupOdaPrivateEndpointResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupOdaPrivateEndpointResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupOdaPrivateEndpointResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupOdaPrivateEndpointResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type, or scope. Example: `{"bar-key": "value"}`
@@ -154,8 +147,8 @@ func (o LookupOdaPrivateEndpointResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that was assigned when the ODA private endpoint was created.
-func (o LookupOdaPrivateEndpointResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupOdaPrivateEndpointResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupOdaPrivateEndpointResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupOdaPrivateEndpointResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // List of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of [network security groups](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/networksecuritygroups.htm)
@@ -168,23 +161,23 @@ func (o LookupOdaPrivateEndpointResultOutput) OdaPrivateEndpointId() pulumi.Stri
 }
 
 // The current state of the ODA private endpoint.
-func (o LookupOdaPrivateEndpointResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupOdaPrivateEndpointResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupOdaPrivateEndpointResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupOdaPrivateEndpointResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet that the private endpoint belongs to.
-func (o LookupOdaPrivateEndpointResultOutput) SubnetId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupOdaPrivateEndpointResult) string { return v.SubnetId }).(pulumi.StringOutput)
+func (o LookupOdaPrivateEndpointResultOutput) SubnetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupOdaPrivateEndpointResult) *string { return v.SubnetId }).(pulumi.StringPtrOutput)
 }
 
 // When the resource was created. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
-func (o LookupOdaPrivateEndpointResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupOdaPrivateEndpointResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupOdaPrivateEndpointResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupOdaPrivateEndpointResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // When the resource was last updated. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
-func (o LookupOdaPrivateEndpointResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupOdaPrivateEndpointResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o LookupOdaPrivateEndpointResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupOdaPrivateEndpointResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 func init() {

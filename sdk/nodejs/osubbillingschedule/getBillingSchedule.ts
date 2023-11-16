@@ -68,13 +68,13 @@ export interface GetBillingScheduleResult {
     /**
      * The list of billing_schedules.
      */
-    readonly billingSchedules: outputs.OsubBillingSchedule.GetBillingScheduleBillingSchedule[];
+    readonly billingSchedules?: outputs.OsubBillingSchedule.GetBillingScheduleBillingSchedule[];
     readonly compartmentId: string;
     readonly filters?: outputs.OsubBillingSchedule.GetBillingScheduleFilter[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly subscribedServiceId?: string;
     readonly subscriptionId: string;
     readonly xOneOriginRegion?: string;

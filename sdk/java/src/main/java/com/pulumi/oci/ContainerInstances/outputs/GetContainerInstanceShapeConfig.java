@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Double;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetContainerInstanceShapeConfig {
@@ -14,51 +16,51 @@ public final class GetContainerInstanceShapeConfig {
      * @return The total amount of memory available to the container instance, in gigabytes.
      * 
      */
-    private Double memoryInGbs;
+    private @Nullable Double memoryInGbs;
     /**
      * @return The networking bandwidth available to the container instance, in gigabits per second.
      * 
      */
-    private Double networkingBandwidthInGbps;
+    private @Nullable Double networkingBandwidthInGbps;
     /**
      * @return The total number of OCPUs available to the container instance.
      * 
      */
-    private Double ocpus;
+    private @Nullable Double ocpus;
     /**
      * @return A short description of the container instance&#39;s processor (CPU).
      * 
      */
-    private String processorDescription;
+    private @Nullable String processorDescription;
 
     private GetContainerInstanceShapeConfig() {}
     /**
      * @return The total amount of memory available to the container instance, in gigabytes.
      * 
      */
-    public Double memoryInGbs() {
-        return this.memoryInGbs;
+    public Optional<Double> memoryInGbs() {
+        return Optional.ofNullable(this.memoryInGbs);
     }
     /**
      * @return The networking bandwidth available to the container instance, in gigabits per second.
      * 
      */
-    public Double networkingBandwidthInGbps() {
-        return this.networkingBandwidthInGbps;
+    public Optional<Double> networkingBandwidthInGbps() {
+        return Optional.ofNullable(this.networkingBandwidthInGbps);
     }
     /**
      * @return The total number of OCPUs available to the container instance.
      * 
      */
-    public Double ocpus() {
-        return this.ocpus;
+    public Optional<Double> ocpus() {
+        return Optional.ofNullable(this.ocpus);
     }
     /**
      * @return A short description of the container instance&#39;s processor (CPU).
      * 
      */
-    public String processorDescription() {
-        return this.processorDescription;
+    public Optional<String> processorDescription() {
+        return Optional.ofNullable(this.processorDescription);
     }
 
     public static Builder builder() {
@@ -70,10 +72,10 @@ public final class GetContainerInstanceShapeConfig {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Double memoryInGbs;
-        private Double networkingBandwidthInGbps;
-        private Double ocpus;
-        private String processorDescription;
+        private @Nullable Double memoryInGbs;
+        private @Nullable Double networkingBandwidthInGbps;
+        private @Nullable Double ocpus;
+        private @Nullable String processorDescription;
         public Builder() {}
         public Builder(GetContainerInstanceShapeConfig defaults) {
     	      Objects.requireNonNull(defaults);
@@ -84,23 +86,23 @@ public final class GetContainerInstanceShapeConfig {
         }
 
         @CustomType.Setter
-        public Builder memoryInGbs(Double memoryInGbs) {
-            this.memoryInGbs = Objects.requireNonNull(memoryInGbs);
+        public Builder memoryInGbs(@Nullable Double memoryInGbs) {
+            this.memoryInGbs = memoryInGbs;
             return this;
         }
         @CustomType.Setter
-        public Builder networkingBandwidthInGbps(Double networkingBandwidthInGbps) {
-            this.networkingBandwidthInGbps = Objects.requireNonNull(networkingBandwidthInGbps);
+        public Builder networkingBandwidthInGbps(@Nullable Double networkingBandwidthInGbps) {
+            this.networkingBandwidthInGbps = networkingBandwidthInGbps;
             return this;
         }
         @CustomType.Setter
-        public Builder ocpus(Double ocpus) {
-            this.ocpus = Objects.requireNonNull(ocpus);
+        public Builder ocpus(@Nullable Double ocpus) {
+            this.ocpus = ocpus;
             return this;
         }
         @CustomType.Setter
-        public Builder processorDescription(String processorDescription) {
-            this.processorDescription = Objects.requireNonNull(processorDescription);
+        public Builder processorDescription(@Nullable String processorDescription) {
+            this.processorDescription = processorDescription;
             return this;
         }
         public GetContainerInstanceShapeConfig build() {

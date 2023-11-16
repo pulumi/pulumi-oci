@@ -48,68 +48,68 @@ export interface GetAnalyticsInstanceResult {
     /**
      * Service instance capacity metadata (e.g.: OLPU count, number of users, ...etc...).
      */
-    readonly capacities: outputs.Analytics.GetAnalyticsInstanceCapacity[];
+    readonly capacities?: outputs.Analytics.GetAnalyticsInstanceCapacity[];
     /**
      * The OCID of the compartment.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * Description of the vanity url.
      */
-    readonly description: string;
+    readonly description?: string;
     /**
      * Email address receiving notifications.
      */
-    readonly emailNotification: string;
+    readonly emailNotification?: string;
     /**
      * Analytics feature set.
      */
-    readonly featureSet: string;
+    readonly featureSet?: string;
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * The Virtual Cloud Network OCID.
      */
-    readonly id: string;
-    readonly idcsAccessToken: string;
+    readonly id?: string;
+    readonly idcsAccessToken?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates Oracle managed default encryption.
      */
-    readonly kmsKeyId: string;
+    readonly kmsKeyId?: string;
     /**
      * The license used for the service.
      */
-    readonly licenseType: string;
+    readonly licenseType?: string;
     /**
      * The name of the Analytics instance. This name must be unique in the tenancy and cannot be changed.
      */
-    readonly name: string;
+    readonly name?: string;
     /**
      * Base representation of a network endpoint.
      */
-    readonly networkEndpointDetails: outputs.Analytics.GetAnalyticsInstanceNetworkEndpointDetail[];
+    readonly networkEndpointDetails?: outputs.Analytics.GetAnalyticsInstanceNetworkEndpointDetail[];
     /**
      * URL of the Analytics service.
      */
-    readonly serviceUrl: string;
+    readonly serviceUrl?: string;
     /**
      * The current state of an instance.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * The date and time the instance was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The date and time the instance was last updated (in the format defined by RFC3339). This timestamp represents updates made through this API. External events do not influence it.
      */
-    readonly timeUpdated: string;
+    readonly timeUpdated?: string;
 }
 /**
  * This data source provides details about a specific Analytics Instance resource in Oracle Cloud Infrastructure Analytics service.

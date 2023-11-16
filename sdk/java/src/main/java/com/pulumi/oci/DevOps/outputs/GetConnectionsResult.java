@@ -23,7 +23,7 @@ public final class GetConnectionsResult {
      * @return The list of connection_collection.
      * 
      */
-    private List<GetConnectionsConnectionCollection> connectionCollections;
+    private @Nullable List<GetConnectionsConnectionCollection> connectionCollections;
     /**
      * @return The type of connection.
      * 
@@ -64,7 +64,7 @@ public final class GetConnectionsResult {
      * 
      */
     public List<GetConnectionsConnectionCollection> connectionCollections() {
-        return this.connectionCollections;
+        return this.connectionCollections == null ? List.of() : this.connectionCollections;
     }
     /**
      * @return The type of connection.
@@ -115,7 +115,7 @@ public final class GetConnectionsResult {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable String compartmentId;
-        private List<GetConnectionsConnectionCollection> connectionCollections;
+        private @Nullable List<GetConnectionsConnectionCollection> connectionCollections;
         private @Nullable String connectionType;
         private @Nullable String displayName;
         private @Nullable List<GetConnectionsFilter> filters;
@@ -141,8 +141,8 @@ public final class GetConnectionsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder connectionCollections(List<GetConnectionsConnectionCollection> connectionCollections) {
-            this.connectionCollections = Objects.requireNonNull(connectionCollections);
+        public Builder connectionCollections(@Nullable List<GetConnectionsConnectionCollection> connectionCollections) {
+            this.connectionCollections = connectionCollections;
             return this;
         }
         public Builder connectionCollections(GetConnectionsConnectionCollection... connectionCollections) {

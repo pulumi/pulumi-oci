@@ -6,6 +6,8 @@ package com.pulumi.oci.Ocvp.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetSddcUpgradeLicense {
@@ -13,27 +15,27 @@ public final class GetSddcUpgradeLicense {
      * @return vSphere license key value.
      * 
      */
-    private String licenseKey;
+    private @Nullable String licenseKey;
     /**
      * @return vSphere license type.
      * 
      */
-    private String licenseType;
+    private @Nullable String licenseType;
 
     private GetSddcUpgradeLicense() {}
     /**
      * @return vSphere license key value.
      * 
      */
-    public String licenseKey() {
-        return this.licenseKey;
+    public Optional<String> licenseKey() {
+        return Optional.ofNullable(this.licenseKey);
     }
     /**
      * @return vSphere license type.
      * 
      */
-    public String licenseType() {
-        return this.licenseType;
+    public Optional<String> licenseType() {
+        return Optional.ofNullable(this.licenseType);
     }
 
     public static Builder builder() {
@@ -45,8 +47,8 @@ public final class GetSddcUpgradeLicense {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String licenseKey;
-        private String licenseType;
+        private @Nullable String licenseKey;
+        private @Nullable String licenseType;
         public Builder() {}
         public Builder(GetSddcUpgradeLicense defaults) {
     	      Objects.requireNonNull(defaults);
@@ -55,13 +57,13 @@ public final class GetSddcUpgradeLicense {
         }
 
         @CustomType.Setter
-        public Builder licenseKey(String licenseKey) {
-            this.licenseKey = Objects.requireNonNull(licenseKey);
+        public Builder licenseKey(@Nullable String licenseKey) {
+            this.licenseKey = licenseKey;
             return this;
         }
         @CustomType.Setter
-        public Builder licenseType(String licenseType) {
-            this.licenseType = Objects.requireNonNull(licenseType);
+        public Builder licenseType(@Nullable String licenseType) {
+            this.licenseType = licenseType;
             return this;
         }
         public GetSddcUpgradeLicense build() {

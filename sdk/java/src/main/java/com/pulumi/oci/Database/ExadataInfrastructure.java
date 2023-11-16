@@ -126,14 +126,14 @@ public class ExadataInfrastructure extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="activatedStorageCount", refs={Integer.class}, tree="[0]")
-    private Output<Integer> activatedStorageCount;
+    private Output</* @Nullable */ Integer> activatedStorageCount;
 
     /**
      * @return The requested number of additional storage servers activated for the Exadata infrastructure.
      * 
      */
-    public Output<Integer> activatedStorageCount() {
-        return this.activatedStorageCount;
+    public Output<Optional<Integer>> activatedStorageCount() {
+        return Codegen.optional(this.activatedStorageCount);
     }
     /**
      * (Updatable) The activation zip file. If provided in config, exadata infrastructure will be activated after creation. Updates are not allowed on activated exadata infrastructure.
@@ -154,28 +154,28 @@ public class ExadataInfrastructure extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="additionalComputeCount", refs={Integer.class}, tree="[0]")
-    private Output<Integer> additionalComputeCount;
+    private Output</* @Nullable */ Integer> additionalComputeCount;
 
     /**
      * @return The requested number of additional compute servers for the Exadata infrastructure.
      * 
      */
-    public Output<Integer> additionalComputeCount() {
-        return this.additionalComputeCount;
+    public Output<Optional<Integer>> additionalComputeCount() {
+        return Codegen.optional(this.additionalComputeCount);
     }
     /**
      * Oracle Exadata System Model specification. The system model determines the amount of compute or storage server resources available for use. For more information, please see [System and Shape Configuration Options] (https://docs.oracle.com/en/engineered-systems/exadata-cloud-at-customer/ecccm/ecc-system-config-options.html#GUID-9E090174-5C57-4EB1-9243-B470F9F10D6B)
      * 
      */
     @Export(name="additionalComputeSystemModel", refs={String.class}, tree="[0]")
-    private Output<String> additionalComputeSystemModel;
+    private Output</* @Nullable */ String> additionalComputeSystemModel;
 
     /**
      * @return Oracle Exadata System Model specification. The system model determines the amount of compute or storage server resources available for use. For more information, please see [System and Shape Configuration Options] (https://docs.oracle.com/en/engineered-systems/exadata-cloud-at-customer/ecccm/ecc-system-config-options.html#GUID-9E090174-5C57-4EB1-9243-B470F9F10D6B)
      * 
      */
-    public Output<String> additionalComputeSystemModel() {
-        return this.additionalComputeSystemModel;
+    public Output<Optional<String>> additionalComputeSystemModel() {
+        return Codegen.optional(this.additionalComputeSystemModel);
     }
     /**
      * The requested number of additional storage servers for the Exadata infrastructure.
@@ -185,7 +185,7 @@ public class ExadataInfrastructure extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="additionalStorageCount", refs={Integer.class}, tree="[0]")
-    private Output<Integer> additionalStorageCount;
+    private Output</* @Nullable */ Integer> additionalStorageCount;
 
     /**
      * @return The requested number of additional storage servers for the Exadata infrastructure.
@@ -194,8 +194,8 @@ public class ExadataInfrastructure extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Output<Integer> additionalStorageCount() {
-        return this.additionalStorageCount;
+    public Output<Optional<Integer>> additionalStorageCount() {
+        return Codegen.optional(this.additionalStorageCount);
     }
     /**
      * (Updatable) The CIDR block for the Exadata administration network.
@@ -216,14 +216,14 @@ public class ExadataInfrastructure extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="availabilityDomain", refs={String.class}, tree="[0]")
-    private Output<String> availabilityDomain;
+    private Output</* @Nullable */ String> availabilityDomain;
 
     /**
      * @return The name of the availability domain that the Exadata infrastructure is located in.
      * 
      */
-    public Output<String> availabilityDomain() {
-        return this.availabilityDomain;
+    public Output<Optional<String>> availabilityDomain() {
+        return Codegen.optional(this.availabilityDomain);
     }
     /**
      * (Updatable) The IP address for the first control plane server.
@@ -272,14 +272,14 @@ public class ExadataInfrastructure extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="computeCount", refs={Integer.class}, tree="[0]")
-    private Output<Integer> computeCount;
+    private Output</* @Nullable */ Integer> computeCount;
 
     /**
      * @return The number of compute servers for the Exadata infrastructure.
      * 
      */
-    public Output<Integer> computeCount() {
-        return this.computeCount;
+    public Output<Optional<Integer>> computeCount() {
+        return Codegen.optional(this.computeCount);
     }
     /**
      * (Updatable) The list of contacts for the Exadata infrastructure.
@@ -300,28 +300,28 @@ public class ExadataInfrastructure extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="corporateProxy", refs={String.class}, tree="[0]")
-    private Output<String> corporateProxy;
+    private Output</* @Nullable */ String> corporateProxy;
 
     /**
      * @return (Updatable) The corporate network proxy for access to the control plane network. Oracle recommends using an HTTPS proxy when possible for enhanced security.
      * 
      */
-    public Output<String> corporateProxy() {
-        return this.corporateProxy;
+    public Output<Optional<String>> corporateProxy() {
+        return Codegen.optional(this.corporateProxy);
     }
     /**
      * The number of enabled CPU cores.
      * 
      */
     @Export(name="cpusEnabled", refs={Integer.class}, tree="[0]")
-    private Output<Integer> cpusEnabled;
+    private Output</* @Nullable */ Integer> cpusEnabled;
 
     /**
      * @return The number of enabled CPU cores.
      * 
      */
-    public Output<Integer> cpusEnabled() {
-        return this.cpusEnabled;
+    public Output<Optional<Integer>> cpusEnabled() {
+        return Codegen.optional(this.cpusEnabled);
     }
     @Export(name="createAsync", refs={Boolean.class}, tree="[0]")
     private Output</* @Nullable */ Boolean> createAsync;
@@ -334,70 +334,70 @@ public class ExadataInfrastructure extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="csiNumber", refs={String.class}, tree="[0]")
-    private Output<String> csiNumber;
+    private Output</* @Nullable */ String> csiNumber;
 
     /**
      * @return The CSI Number of the Exadata infrastructure.
      * 
      */
-    public Output<String> csiNumber() {
-        return this.csiNumber;
+    public Output<Optional<String>> csiNumber() {
+        return Codegen.optional(this.csiNumber);
     }
     /**
      * Size, in terabytes, of the DATA disk group.
      * 
      */
     @Export(name="dataStorageSizeInTbs", refs={Double.class}, tree="[0]")
-    private Output<Double> dataStorageSizeInTbs;
+    private Output</* @Nullable */ Double> dataStorageSizeInTbs;
 
     /**
      * @return Size, in terabytes, of the DATA disk group.
      * 
      */
-    public Output<Double> dataStorageSizeInTbs() {
-        return this.dataStorageSizeInTbs;
+    public Output<Optional<Double>> dataStorageSizeInTbs() {
+        return Codegen.optional(this.dataStorageSizeInTbs);
     }
     /**
      * The local node storage allocated in GBs.
      * 
      */
     @Export(name="dbNodeStorageSizeInGbs", refs={Integer.class}, tree="[0]")
-    private Output<Integer> dbNodeStorageSizeInGbs;
+    private Output</* @Nullable */ Integer> dbNodeStorageSizeInGbs;
 
     /**
      * @return The local node storage allocated in GBs.
      * 
      */
-    public Output<Integer> dbNodeStorageSizeInGbs() {
-        return this.dbNodeStorageSizeInGbs;
+    public Output<Optional<Integer>> dbNodeStorageSizeInGbs() {
+        return Codegen.optional(this.dbNodeStorageSizeInGbs);
     }
     /**
      * The software version of the database servers (dom0) in the Exadata infrastructure.
      * 
      */
     @Export(name="dbServerVersion", refs={String.class}, tree="[0]")
-    private Output<String> dbServerVersion;
+    private Output</* @Nullable */ String> dbServerVersion;
 
     /**
      * @return The software version of the database servers (dom0) in the Exadata infrastructure.
      * 
      */
-    public Output<String> dbServerVersion() {
-        return this.dbServerVersion;
+    public Output<Optional<String>> dbServerVersion() {
+        return Codegen.optional(this.dbServerVersion);
     }
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * The user-friendly name for the Exadata infrastructure. The name does not need to be unique.
@@ -432,14 +432,14 @@ public class ExadataInfrastructure extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * (Updatable) The gateway for the control plane network.
@@ -474,154 +474,154 @@ public class ExadataInfrastructure extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="isCpsOfflineReportEnabled", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isCpsOfflineReportEnabled;
+    private Output</* @Nullable */ Boolean> isCpsOfflineReportEnabled;
 
     /**
      * @return (Updatable) Indicates whether cps offline diagnostic report is enabled for this Exadata infrastructure. This will allow a customer to quickly check status themselves and fix problems on their end, saving time and frustration for both Oracle and the customer when they find the CPS in a disconnected state.You can enable offline diagnostic report during Exadata infrastructure provisioning. You can also disable or enable it at any time using the UpdateExadatainfrastructure API.
      * 
      */
-    public Output<Boolean> isCpsOfflineReportEnabled() {
-        return this.isCpsOfflineReportEnabled;
+    public Output<Optional<Boolean>> isCpsOfflineReportEnabled() {
+        return Codegen.optional(this.isCpsOfflineReportEnabled);
     }
     /**
      * (Updatable) Indicates if deployment is Multi-Rack or not.
      * 
      */
     @Export(name="isMultiRackDeployment", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isMultiRackDeployment;
+    private Output</* @Nullable */ Boolean> isMultiRackDeployment;
 
     /**
      * @return (Updatable) Indicates if deployment is Multi-Rack or not.
      * 
      */
-    public Output<Boolean> isMultiRackDeployment() {
-        return this.isMultiRackDeployment;
+    public Output<Optional<Boolean>> isMultiRackDeployment() {
+        return Codegen.optional(this.isMultiRackDeployment);
     }
     /**
      * Additional information about the current lifecycle state.
      * 
      */
     @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
-    private Output<String> lifecycleDetails;
+    private Output</* @Nullable */ String> lifecycleDetails;
 
     /**
      * @return Additional information about the current lifecycle state.
      * 
      */
-    public Output<String> lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Output<Optional<String>> lifecycleDetails() {
+        return Codegen.optional(this.lifecycleDetails);
     }
     /**
      * A field to capture ‘Maintenance SLO Status’ for the Exadata infrastructure with values ‘OK’, ‘DEGRADED’. Default is ‘OK’ when the infrastructure is provisioned.
      * 
      */
     @Export(name="maintenanceSloStatus", refs={String.class}, tree="[0]")
-    private Output<String> maintenanceSloStatus;
+    private Output</* @Nullable */ String> maintenanceSloStatus;
 
     /**
      * @return A field to capture ‘Maintenance SLO Status’ for the Exadata infrastructure with values ‘OK’, ‘DEGRADED’. Default is ‘OK’ when the infrastructure is provisioned.
      * 
      */
-    public Output<String> maintenanceSloStatus() {
-        return this.maintenanceSloStatus;
+    public Output<Optional<String>> maintenanceSloStatus() {
+        return Codegen.optional(this.maintenanceSloStatus);
     }
     /**
      * (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
      * 
      */
     @Export(name="maintenanceWindow", refs={ExadataInfrastructureMaintenanceWindow.class}, tree="[0]")
-    private Output<ExadataInfrastructureMaintenanceWindow> maintenanceWindow;
+    private Output</* @Nullable */ ExadataInfrastructureMaintenanceWindow> maintenanceWindow;
 
     /**
      * @return (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
      * 
      */
-    public Output<ExadataInfrastructureMaintenanceWindow> maintenanceWindow() {
-        return this.maintenanceWindow;
+    public Output<Optional<ExadataInfrastructureMaintenanceWindow>> maintenanceWindow() {
+        return Codegen.optional(this.maintenanceWindow);
     }
     /**
      * The total number of CPU cores available.
      * 
      */
     @Export(name="maxCpuCount", refs={Integer.class}, tree="[0]")
-    private Output<Integer> maxCpuCount;
+    private Output</* @Nullable */ Integer> maxCpuCount;
 
     /**
      * @return The total number of CPU cores available.
      * 
      */
-    public Output<Integer> maxCpuCount() {
-        return this.maxCpuCount;
+    public Output<Optional<Integer>> maxCpuCount() {
+        return Codegen.optional(this.maxCpuCount);
     }
     /**
      * The total available DATA disk group size.
      * 
      */
     @Export(name="maxDataStorageInTbs", refs={Double.class}, tree="[0]")
-    private Output<Double> maxDataStorageInTbs;
+    private Output</* @Nullable */ Double> maxDataStorageInTbs;
 
     /**
      * @return The total available DATA disk group size.
      * 
      */
-    public Output<Double> maxDataStorageInTbs() {
-        return this.maxDataStorageInTbs;
+    public Output<Optional<Double>> maxDataStorageInTbs() {
+        return Codegen.optional(this.maxDataStorageInTbs);
     }
     /**
      * The total local node storage available in GBs.
      * 
      */
     @Export(name="maxDbNodeStorageInGbs", refs={Integer.class}, tree="[0]")
-    private Output<Integer> maxDbNodeStorageInGbs;
+    private Output</* @Nullable */ Integer> maxDbNodeStorageInGbs;
 
     /**
      * @return The total local node storage available in GBs.
      * 
      */
-    public Output<Integer> maxDbNodeStorageInGbs() {
-        return this.maxDbNodeStorageInGbs;
+    public Output<Optional<Integer>> maxDbNodeStorageInGbs() {
+        return Codegen.optional(this.maxDbNodeStorageInGbs);
     }
     /**
      * The total memory available in GBs.
      * 
      */
     @Export(name="maxMemoryInGbs", refs={Integer.class}, tree="[0]")
-    private Output<Integer> maxMemoryInGbs;
+    private Output</* @Nullable */ Integer> maxMemoryInGbs;
 
     /**
      * @return The total memory available in GBs.
      * 
      */
-    public Output<Integer> maxMemoryInGbs() {
-        return this.maxMemoryInGbs;
+    public Output<Optional<Integer>> maxMemoryInGbs() {
+        return Codegen.optional(this.maxMemoryInGbs);
     }
     /**
      * The memory allocated in GBs.
      * 
      */
     @Export(name="memorySizeInGbs", refs={Integer.class}, tree="[0]")
-    private Output<Integer> memorySizeInGbs;
+    private Output</* @Nullable */ Integer> memorySizeInGbs;
 
     /**
      * @return The memory allocated in GBs.
      * 
      */
-    public Output<Integer> memorySizeInGbs() {
-        return this.memorySizeInGbs;
+    public Output<Optional<Integer>> memorySizeInGbs() {
+        return Codegen.optional(this.memorySizeInGbs);
     }
     /**
      * The monthly software version of the database servers (dom0) in the Exadata infrastructure.
      * 
      */
     @Export(name="monthlyDbServerVersion", refs={String.class}, tree="[0]")
-    private Output<String> monthlyDbServerVersion;
+    private Output</* @Nullable */ String> monthlyDbServerVersion;
 
     /**
      * @return The monthly software version of the database servers (dom0) in the Exadata infrastructure.
      * 
      */
-    public Output<String> monthlyDbServerVersion() {
-        return this.monthlyDbServerVersion;
+    public Output<Optional<String>> monthlyDbServerVersion() {
+        return Codegen.optional(this.monthlyDbServerVersion);
     }
     /**
      * (Updatable) The base64 encoded Multi-Rack configuration json file.
@@ -656,14 +656,14 @@ public class ExadataInfrastructure extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="networkBondingModeDetails", refs={ExadataInfrastructureNetworkBondingModeDetails.class}, tree="[0]")
-    private Output<ExadataInfrastructureNetworkBondingModeDetails> networkBondingModeDetails;
+    private Output</* @Nullable */ ExadataInfrastructureNetworkBondingModeDetails> networkBondingModeDetails;
 
     /**
      * @return (Updatable) Details of bonding mode for Client and Backup and DR networks of an Exadata infrastructure.
      * 
      */
-    public Output<ExadataInfrastructureNetworkBondingModeDetails> networkBondingModeDetails() {
-        return this.networkBondingModeDetails;
+    public Output<Optional<ExadataInfrastructureNetworkBondingModeDetails>> networkBondingModeDetails() {
+        return Codegen.optional(this.networkBondingModeDetails);
     }
     /**
      * (Updatable) The list of NTP server IP addresses. Maximum of 3 allowed.
@@ -684,14 +684,14 @@ public class ExadataInfrastructure extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="rackSerialNumber", refs={String.class}, tree="[0]")
-    private Output<String> rackSerialNumber;
+    private Output</* @Nullable */ String> rackSerialNumber;
 
     /**
      * @return The serial number for the Exadata infrastructure.
      * 
      */
-    public Output<String> rackSerialNumber() {
-        return this.rackSerialNumber;
+    public Output<Optional<String>> rackSerialNumber() {
+        return Codegen.optional(this.rackSerialNumber);
     }
     /**
      * The shape of the Exadata infrastructure. The shape determines the amount of CPU, storage, and memory resources allocated to the instance.
@@ -712,56 +712,56 @@ public class ExadataInfrastructure extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The current lifecycle state of the Exadata infrastructure.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * The number of storage servers for the Exadata infrastructure.
      * 
      */
     @Export(name="storageCount", refs={Integer.class}, tree="[0]")
-    private Output<Integer> storageCount;
+    private Output</* @Nullable */ Integer> storageCount;
 
     /**
      * @return The number of storage servers for the Exadata infrastructure.
      * 
      */
-    public Output<Integer> storageCount() {
-        return this.storageCount;
+    public Output<Optional<Integer>> storageCount() {
+        return Codegen.optional(this.storageCount);
     }
     /**
      * The software version of the storage servers (cells) in the Exadata infrastructure.
      * 
      */
     @Export(name="storageServerVersion", refs={String.class}, tree="[0]")
-    private Output<String> storageServerVersion;
+    private Output</* @Nullable */ String> storageServerVersion;
 
     /**
      * @return The software version of the storage servers (cells) in the Exadata infrastructure.
      * 
      */
-    public Output<String> storageServerVersion() {
-        return this.storageServerVersion;
+    public Output<Optional<String>> storageServerVersion() {
+        return Codegen.optional(this.storageServerVersion);
     }
     /**
      * The date and time the Exadata infrastructure was created.
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The date and time the Exadata infrastructure was created.
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * (Updatable) The time zone of the Exadata infrastructure. For details, see [Exadata Infrastructure Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).

@@ -16,17 +16,17 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
         /// <summary>
         /// The description of an action that occurred.
         /// </summary>
-        public readonly string Message;
+        public readonly string? Message;
         /// <summary>
         /// The date and time the log entry occurred.
         /// </summary>
-        public readonly string Timestamp;
+        public readonly string? Timestamp;
 
         [OutputConstructor]
         private GetWorkRequestLogEntriesWorkRequestLogEntryResult(
-            string message,
+            string? message,
 
-            string timestamp)
+            string? timestamp)
         {
             Message = message;
             Timestamp = timestamp;

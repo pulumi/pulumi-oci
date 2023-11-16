@@ -18,14 +18,14 @@ public final class GetBillingSchedulesResult {
      * @return The list of billing_schedules.
      * 
      */
-    private List<GetBillingSchedulesBillingSchedule> billingSchedules;
+    private @Nullable List<GetBillingSchedulesBillingSchedule> billingSchedules;
     private String compartmentId;
     private @Nullable List<GetBillingSchedulesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return SPM internal Subscribed Service ID
      * 
@@ -39,7 +39,7 @@ public final class GetBillingSchedulesResult {
      * 
      */
     public List<GetBillingSchedulesBillingSchedule> billingSchedules() {
-        return this.billingSchedules;
+        return this.billingSchedules == null ? List.of() : this.billingSchedules;
     }
     public String compartmentId() {
         return this.compartmentId;
@@ -51,8 +51,8 @@ public final class GetBillingSchedulesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return SPM internal Subscribed Service ID
@@ -74,10 +74,10 @@ public final class GetBillingSchedulesResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetBillingSchedulesBillingSchedule> billingSchedules;
+        private @Nullable List<GetBillingSchedulesBillingSchedule> billingSchedules;
         private String compartmentId;
         private @Nullable List<GetBillingSchedulesFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String subscribedServiceId;
         private String subscriptionId;
         public Builder() {}
@@ -92,8 +92,8 @@ public final class GetBillingSchedulesResult {
         }
 
         @CustomType.Setter
-        public Builder billingSchedules(List<GetBillingSchedulesBillingSchedule> billingSchedules) {
-            this.billingSchedules = Objects.requireNonNull(billingSchedules);
+        public Builder billingSchedules(@Nullable List<GetBillingSchedulesBillingSchedule> billingSchedules) {
+            this.billingSchedules = billingSchedules;
             return this;
         }
         public Builder billingSchedules(GetBillingSchedulesBillingSchedule... billingSchedules) {
@@ -113,8 +113,8 @@ public final class GetBillingSchedulesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

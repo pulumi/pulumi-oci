@@ -53,56 +53,56 @@ export interface GetBucketResult {
     /**
      * The type of public access enabled on this bucket. A bucket is set to `NoPublicAccess` by default, which only allows an authenticated caller to access the bucket and its contents. When `ObjectRead` is enabled on the bucket, public access is allowed for the `GetObject`, `HeadObject`, and `ListObjects` operations. When `ObjectReadWithoutList` is enabled on the bucket, public access is allowed for the `GetObject` and `HeadObject` operations.
      */
-    readonly accessType: string;
+    readonly accessType?: string;
     /**
      * The approximate number of objects in the bucket. Count statistics are reported periodically. You will see a lag between what is displayed and the actual object count.
      */
-    readonly approximateCount: string;
+    readonly approximateCount?: string;
     /**
      * The approximate total size in bytes of all objects in the bucket. Size statistics are reported periodically. You will see a lag between what is displayed and the actual size of the bucket.
      */
-    readonly approximateSize: string;
+    readonly approximateSize?: string;
     /**
      * The auto tiering status on the bucket. A bucket is created with auto tiering `Disabled` by default. For auto tiering `InfrequentAccess`, objects are transitioned automatically between the 'Standard' and 'InfrequentAccess' tiers based on the access pattern of the objects.
      */
-    readonly autoTiering: string;
+    readonly autoTiering?: string;
     /**
      * The OCID of the bucket which is a Oracle assigned unique identifier for this resource type (bucket). `bucketId` cannot be used for bucket lookup.
      */
-    readonly bucketId: string;
+    readonly bucketId?: string;
     /**
      * The compartment ID in which the bucket is authorized.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the bucket.
      */
-    readonly createdBy: string;
+    readonly createdBy?: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * The entity tag (ETag) for the bucket.
      */
-    readonly etag: string;
+    readonly etag?: string;
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    readonly freeformTags: {[key: string]: any};
-    readonly id: string;
+    readonly freeformTags?: {[key: string]: any};
+    readonly id?: string;
     /**
      * Whether or not this bucket is read only. By default, `isReadOnly` is set to `false`. This will be set to 'true' when this bucket is configured as a destination in a replication policy.
      */
-    readonly isReadOnly: boolean;
+    readonly isReadOnly?: boolean;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a master encryption key used to call the Key Management service to generate a data encryption key or to encrypt or decrypt a data encryption key.
      */
-    readonly kmsKeyId: string;
+    readonly kmsKeyId?: string;
     /**
      * Arbitrary string keys and values for user-defined metadata.
      */
-    readonly metadata: {[key: string]: any};
+    readonly metadata?: {[key: string]: any};
     /**
      * The name of the bucket. Avoid entering confidential information. Example: my-new-bucket1
      */
@@ -114,31 +114,31 @@ export interface GetBucketResult {
     /**
      * Whether or not events are emitted for object state changes in this bucket. By default, `objectEventsEnabled` is set to `false`. Set `objectEventsEnabled` to `true` to emit events for object state changes. For more information about events, see [Overview of Events](https://docs.cloud.oracle.com/iaas/Content/Events/Concepts/eventsoverview.htm).
      */
-    readonly objectEventsEnabled: boolean;
+    readonly objectEventsEnabled?: boolean;
     /**
      * The entity tag (ETag) for the live object lifecycle policy on the bucket.
      */
-    readonly objectLifecyclePolicyEtag: string;
+    readonly objectLifecyclePolicyEtag?: string;
     /**
      * Whether or not this bucket is a replication source. By default, `replicationEnabled` is set to `false`. This will be set to 'true' when you create a replication policy for the bucket.
      */
-    readonly replicationEnabled: boolean;
+    readonly replicationEnabled?: boolean;
     /**
      * User specified list of retention rules for the bucket.
      */
-    readonly retentionRules: outputs.ObjectStorage.GetBucketRetentionRule[];
+    readonly retentionRules?: outputs.ObjectStorage.GetBucketRetentionRule[];
     /**
      * The storage tier type assigned to the bucket. A bucket is set to `Standard` tier by default, which means objects uploaded or copied to the bucket will be in the standard storage tier. When the `Archive` tier type is set explicitly for a bucket, objects uploaded or copied to the bucket will be stored in archive storage. The `storageTier` property is immutable after bucket is created.
      */
-    readonly storageTier: string;
+    readonly storageTier?: string;
     /**
      * The date and time the bucket was created, as described in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-14.29).
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The versioning status on the bucket. A bucket is created with versioning `Disabled` by default. For versioning `Enabled`, objects are protected from overwrites and deletes, by maintaining their version history. When versioning is `Suspended`, the previous versions will still remain but new versions will no longer be created when overwitten or deleted.
      */
-    readonly versioning: string;
+    readonly versioning?: string;
 }
 /**
  * This data source provides details about a specific Bucket resource in Oracle Cloud Infrastructure Object Storage service.

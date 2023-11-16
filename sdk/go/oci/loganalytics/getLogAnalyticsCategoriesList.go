@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about Categories in Oracle Cloud Infrastructure Log Analytics service.
@@ -71,7 +70,7 @@ type GetLogAnalyticsCategoriesListResult struct {
 	CategoryDisplayText *string `pulumi:"categoryDisplayText"`
 	CategoryType        *string `pulumi:"categoryType"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// An array of categories.
 	Items []GetLogAnalyticsCategoriesListItem `pulumi:"items"`
 	// The unique name that identifies the category.
@@ -123,12 +122,6 @@ func (o GetLogAnalyticsCategoriesListResultOutput) ToGetLogAnalyticsCategoriesLi
 	return o
 }
 
-func (o GetLogAnalyticsCategoriesListResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetLogAnalyticsCategoriesListResult] {
-	return pulumix.Output[GetLogAnalyticsCategoriesListResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetLogAnalyticsCategoriesListResultOutput) CategoryDisplayText() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetLogAnalyticsCategoriesListResult) *string { return v.CategoryDisplayText }).(pulumi.StringPtrOutput)
 }
@@ -138,8 +131,8 @@ func (o GetLogAnalyticsCategoriesListResultOutput) CategoryType() pulumi.StringP
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetLogAnalyticsCategoriesListResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLogAnalyticsCategoriesListResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetLogAnalyticsCategoriesListResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLogAnalyticsCategoriesListResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // An array of categories.

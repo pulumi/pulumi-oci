@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAssetComputeGpuDevice {
@@ -14,63 +16,63 @@ public final class GetAssetComputeGpuDevice {
      * @return Number of GPU cores.
      * 
      */
-    private Integer coresCount;
+    private @Nullable Integer coresCount;
     /**
      * @return The tag description.
      * 
      */
-    private String description;
+    private @Nullable String description;
     /**
      * @return The manufacturer of GPU.
      * 
      */
-    private String manufacturer;
+    private @Nullable String manufacturer;
     /**
      * @return Memory size in MBs.
      * 
      */
-    private String memoryInMbs;
+    private @Nullable String memoryInMbs;
     /**
      * @return The tag name.
      * 
      */
-    private String name;
+    private @Nullable String name;
 
     private GetAssetComputeGpuDevice() {}
     /**
      * @return Number of GPU cores.
      * 
      */
-    public Integer coresCount() {
-        return this.coresCount;
+    public Optional<Integer> coresCount() {
+        return Optional.ofNullable(this.coresCount);
     }
     /**
      * @return The tag description.
      * 
      */
-    public String description() {
-        return this.description;
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
     /**
      * @return The manufacturer of GPU.
      * 
      */
-    public String manufacturer() {
-        return this.manufacturer;
+    public Optional<String> manufacturer() {
+        return Optional.ofNullable(this.manufacturer);
     }
     /**
      * @return Memory size in MBs.
      * 
      */
-    public String memoryInMbs() {
-        return this.memoryInMbs;
+    public Optional<String> memoryInMbs() {
+        return Optional.ofNullable(this.memoryInMbs);
     }
     /**
      * @return The tag name.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
 
     public static Builder builder() {
@@ -82,11 +84,11 @@ public final class GetAssetComputeGpuDevice {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Integer coresCount;
-        private String description;
-        private String manufacturer;
-        private String memoryInMbs;
-        private String name;
+        private @Nullable Integer coresCount;
+        private @Nullable String description;
+        private @Nullable String manufacturer;
+        private @Nullable String memoryInMbs;
+        private @Nullable String name;
         public Builder() {}
         public Builder(GetAssetComputeGpuDevice defaults) {
     	      Objects.requireNonNull(defaults);
@@ -98,28 +100,28 @@ public final class GetAssetComputeGpuDevice {
         }
 
         @CustomType.Setter
-        public Builder coresCount(Integer coresCount) {
-            this.coresCount = Objects.requireNonNull(coresCount);
+        public Builder coresCount(@Nullable Integer coresCount) {
+            this.coresCount = coresCount;
             return this;
         }
         @CustomType.Setter
-        public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+        public Builder description(@Nullable String description) {
+            this.description = description;
             return this;
         }
         @CustomType.Setter
-        public Builder manufacturer(String manufacturer) {
-            this.manufacturer = Objects.requireNonNull(manufacturer);
+        public Builder manufacturer(@Nullable String manufacturer) {
+            this.manufacturer = manufacturer;
             return this;
         }
         @CustomType.Setter
-        public Builder memoryInMbs(String memoryInMbs) {
-            this.memoryInMbs = Objects.requireNonNull(memoryInMbs);
+        public Builder memoryInMbs(@Nullable String memoryInMbs) {
+            this.memoryInMbs = memoryInMbs;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         public GetAssetComputeGpuDevice build() {

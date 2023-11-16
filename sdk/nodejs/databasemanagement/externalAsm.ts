@@ -50,19 +50,19 @@ export class ExternalAsm extends pulumi.CustomResource {
     /**
      * The additional details of the external ASM defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
      */
-    public /*out*/ readonly additionalDetails!: pulumi.Output<{[key: string]: any}>;
+    public /*out*/ readonly additionalDetails!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the external database resides.
      */
-    public /*out*/ readonly compartmentId!: pulumi.Output<string>;
+    public /*out*/ readonly compartmentId!: pulumi.Output<string | undefined>;
     /**
      * The name of the external ASM.
      */
-    public /*out*/ readonly componentName!: pulumi.Output<string>;
+    public /*out*/ readonly componentName!: pulumi.Output<string | undefined>;
     /**
      * The user-friendly name for the database. The name does not have to be unique.
      */
-    public /*out*/ readonly displayName!: pulumi.Output<string>;
+    public /*out*/ readonly displayName!: pulumi.Output<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external ASM.
      */
@@ -74,47 +74,47 @@ export class ExternalAsm extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly externalConnectorId!: pulumi.Output<string>;
+    public readonly externalConnectorId!: pulumi.Output<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that the ASM is a part of.
      */
-    public /*out*/ readonly externalDbSystemId!: pulumi.Output<string>;
+    public /*out*/ readonly externalDbSystemId!: pulumi.Output<string | undefined>;
     /**
      * The directory in which ASM is installed. This is the same directory in which Oracle Grid Infrastructure is installed.
      */
-    public /*out*/ readonly gridHome!: pulumi.Output<string>;
+    public /*out*/ readonly gridHome!: pulumi.Output<string | undefined>;
     /**
      * Indicates whether the ASM is a cluster ASM or not.
      */
-    public /*out*/ readonly isCluster!: pulumi.Output<boolean>;
+    public /*out*/ readonly isCluster!: pulumi.Output<boolean | undefined>;
     /**
      * Indicates whether Oracle Flex ASM is enabled or not.
      */
-    public /*out*/ readonly isFlexEnabled!: pulumi.Output<boolean>;
+    public /*out*/ readonly isFlexEnabled!: pulumi.Output<boolean | undefined>;
     /**
      * Additional information about the current lifecycle state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string | undefined>;
     /**
      * The list of databases that are serviced by the ASM.
      */
-    public /*out*/ readonly servicedDatabases!: pulumi.Output<outputs.DatabaseManagement.ExternalAsmServicedDatabase[]>;
+    public /*out*/ readonly servicedDatabases!: pulumi.Output<outputs.DatabaseManagement.ExternalAsmServicedDatabase[] | undefined>;
     /**
      * The current lifecycle state of the external ASM.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * The date and time the external ASM was created.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * The date and time the external ASM was last updated.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    public /*out*/ readonly timeUpdated!: pulumi.Output<string | undefined>;
     /**
      * The ASM version.
      */
-    public /*out*/ readonly version!: pulumi.Output<string>;
+    public /*out*/ readonly version!: pulumi.Output<string | undefined>;
 
     /**
      * Create a ExternalAsm resource with the given unique name, arguments, and options.

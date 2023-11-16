@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetClusterNetworksClusterNetworkClusterConfiguration {
@@ -14,27 +16,27 @@ public final class GetClusterNetworksClusterNetworkClusterConfiguration {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HPC island used by the cluster network.
      * 
      */
-    private String hpcIslandId;
+    private @Nullable String hpcIslandId;
     /**
      * @return The list of network block OCIDs of the HPC island.
      * 
      */
-    private List<String> networkBlockIds;
+    private @Nullable List<String> networkBlockIds;
 
     private GetClusterNetworksClusterNetworkClusterConfiguration() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HPC island used by the cluster network.
      * 
      */
-    public String hpcIslandId() {
-        return this.hpcIslandId;
+    public Optional<String> hpcIslandId() {
+        return Optional.ofNullable(this.hpcIslandId);
     }
     /**
      * @return The list of network block OCIDs of the HPC island.
      * 
      */
     public List<String> networkBlockIds() {
-        return this.networkBlockIds;
+        return this.networkBlockIds == null ? List.of() : this.networkBlockIds;
     }
 
     public static Builder builder() {
@@ -46,8 +48,8 @@ public final class GetClusterNetworksClusterNetworkClusterConfiguration {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String hpcIslandId;
-        private List<String> networkBlockIds;
+        private @Nullable String hpcIslandId;
+        private @Nullable List<String> networkBlockIds;
         public Builder() {}
         public Builder(GetClusterNetworksClusterNetworkClusterConfiguration defaults) {
     	      Objects.requireNonNull(defaults);
@@ -56,13 +58,13 @@ public final class GetClusterNetworksClusterNetworkClusterConfiguration {
         }
 
         @CustomType.Setter
-        public Builder hpcIslandId(String hpcIslandId) {
-            this.hpcIslandId = Objects.requireNonNull(hpcIslandId);
+        public Builder hpcIslandId(@Nullable String hpcIslandId) {
+            this.hpcIslandId = hpcIslandId;
             return this;
         }
         @CustomType.Setter
-        public Builder networkBlockIds(List<String> networkBlockIds) {
-            this.networkBlockIds = Objects.requireNonNull(networkBlockIds);
+        public Builder networkBlockIds(@Nullable List<String> networkBlockIds) {
+            this.networkBlockIds = networkBlockIds;
             return this;
         }
         public Builder networkBlockIds(String... networkBlockIds) {

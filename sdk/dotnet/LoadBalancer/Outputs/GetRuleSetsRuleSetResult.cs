@@ -13,7 +13,7 @@ namespace Pulumi.Oci.LoadBalancer.Outputs
     [OutputType]
     public sealed class GetRuleSetsRuleSetResult
     {
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// An array of rules that compose the rule set.
         /// </summary>
@@ -21,24 +21,24 @@ namespace Pulumi.Oci.LoadBalancer.Outputs
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the specified load balancer.
         /// </summary>
-        public readonly string LoadBalancerId;
+        public readonly string? LoadBalancerId;
         /// <summary>
         /// The name for this set of rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `example_rule_set`
         /// </summary>
-        public readonly string Name;
-        public readonly string State;
+        public readonly string? Name;
+        public readonly string? State;
 
         [OutputConstructor]
         private GetRuleSetsRuleSetResult(
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetRuleSetsRuleSetItemResult> items,
 
-            string loadBalancerId,
+            string? loadBalancerId,
 
-            string name,
+            string? name,
 
-            string state)
+            string? state)
         {
             Id = id;
             Items = items;

@@ -24,7 +24,7 @@ public final class GetProfilesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The name assigned to the profile. Avoid entering confidential information.
      * 
@@ -34,7 +34,7 @@ public final class GetProfilesResult {
      * @return The list of profile_collection.
      * 
      */
-    private List<GetProfilesProfileCollection> profileCollections;
+    private @Nullable List<GetProfilesProfileCollection> profileCollections;
     /**
      * @return The profile&#39;s current state.
      * 
@@ -56,8 +56,8 @@ public final class GetProfilesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The name assigned to the profile. Avoid entering confidential information.
@@ -71,7 +71,7 @@ public final class GetProfilesResult {
      * 
      */
     public List<GetProfilesProfileCollection> profileCollections() {
-        return this.profileCollections;
+        return this.profileCollections == null ? List.of() : this.profileCollections;
     }
     /**
      * @return The profile&#39;s current state.
@@ -92,9 +92,9 @@ public final class GetProfilesResult {
     public static final class Builder {
         private String compartmentId;
         private @Nullable List<GetProfilesFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String name;
-        private List<GetProfilesProfileCollection> profileCollections;
+        private @Nullable List<GetProfilesProfileCollection> profileCollections;
         private @Nullable String state;
         public Builder() {}
         public Builder(GetProfilesResult defaults) {
@@ -121,8 +121,8 @@ public final class GetProfilesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -131,8 +131,8 @@ public final class GetProfilesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder profileCollections(List<GetProfilesProfileCollection> profileCollections) {
-            this.profileCollections = Objects.requireNonNull(profileCollections);
+        public Builder profileCollections(@Nullable List<GetProfilesProfileCollection> profileCollections) {
+            this.profileCollections = profileCollections;
             return this;
         }
         public Builder profileCollections(GetProfilesProfileCollection... profileCollections) {

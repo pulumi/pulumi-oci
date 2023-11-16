@@ -29,7 +29,7 @@ public final class GetMigrationPlansResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The OCID of the associated migration.
      * 
@@ -39,7 +39,7 @@ public final class GetMigrationPlansResult {
      * @return The list of migration_plan_collection.
      * 
      */
-    private List<GetMigrationPlansMigrationPlanCollection> migrationPlanCollections;
+    private @Nullable List<GetMigrationPlansMigrationPlanCollection> migrationPlanCollections;
     private @Nullable String migrationPlanId;
     /**
      * @return The current state of the migration plan.
@@ -69,8 +69,8 @@ public final class GetMigrationPlansResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The OCID of the associated migration.
@@ -84,7 +84,7 @@ public final class GetMigrationPlansResult {
      * 
      */
     public List<GetMigrationPlansMigrationPlanCollection> migrationPlanCollections() {
-        return this.migrationPlanCollections;
+        return this.migrationPlanCollections == null ? List.of() : this.migrationPlanCollections;
     }
     public Optional<String> migrationPlanId() {
         return Optional.ofNullable(this.migrationPlanId);
@@ -109,9 +109,9 @@ public final class GetMigrationPlansResult {
         private @Nullable String compartmentId;
         private @Nullable String displayName;
         private @Nullable List<GetMigrationPlansFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String migrationId;
-        private List<GetMigrationPlansMigrationPlanCollection> migrationPlanCollections;
+        private @Nullable List<GetMigrationPlansMigrationPlanCollection> migrationPlanCollections;
         private @Nullable String migrationPlanId;
         private @Nullable String state;
         public Builder() {}
@@ -146,8 +146,8 @@ public final class GetMigrationPlansResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -156,8 +156,8 @@ public final class GetMigrationPlansResult {
             return this;
         }
         @CustomType.Setter
-        public Builder migrationPlanCollections(List<GetMigrationPlansMigrationPlanCollection> migrationPlanCollections) {
-            this.migrationPlanCollections = Objects.requireNonNull(migrationPlanCollections);
+        public Builder migrationPlanCollections(@Nullable List<GetMigrationPlansMigrationPlanCollection> migrationPlanCollections) {
+            this.migrationPlanCollections = migrationPlanCollections;
             return this;
         }
         public Builder migrationPlanCollections(GetMigrationPlansMigrationPlanCollection... migrationPlanCollections) {

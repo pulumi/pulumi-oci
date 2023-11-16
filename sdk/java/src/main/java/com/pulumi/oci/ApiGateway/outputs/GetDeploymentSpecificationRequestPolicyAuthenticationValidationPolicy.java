@@ -13,6 +13,8 @@ import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDeploymentSpecificationRequestPolicyAuthenticationValidationPolicy {
@@ -20,42 +22,42 @@ public final class GetDeploymentSpecificationRequestPolicyAuthenticationValidati
      * @return Additional JWT validation checks.
      * 
      */
-    private List<GetDeploymentSpecificationRequestPolicyAuthenticationValidationPolicyAdditionalValidationPolicy> additionalValidationPolicies;
+    private @Nullable List<GetDeploymentSpecificationRequestPolicyAuthenticationValidationPolicyAdditionalValidationPolicy> additionalValidationPolicies;
     /**
      * @return Client App Credential details.
      * 
      */
-    private List<GetDeploymentSpecificationRequestPolicyAuthenticationValidationPolicyClientDetail> clientDetails;
+    private @Nullable List<GetDeploymentSpecificationRequestPolicyAuthenticationValidationPolicyClientDetail> clientDetails;
     /**
      * @return Defines whether or not to uphold SSL verification.
      * 
      */
-    private Boolean isSslVerifyDisabled;
+    private @Nullable Boolean isSslVerifyDisabled;
     /**
      * @return The set of static public keys.
      * 
      */
-    private List<GetDeploymentSpecificationRequestPolicyAuthenticationValidationPolicyKey> keys;
+    private @Nullable List<GetDeploymentSpecificationRequestPolicyAuthenticationValidationPolicyKey> keys;
     /**
      * @return The duration for which the introspect URL response should be cached before it is fetched again.
      * 
      */
-    private Integer maxCacheDurationInHours;
+    private @Nullable Integer maxCacheDurationInHours;
     /**
      * @return Auth endpoint details.
      * 
      */
-    private List<GetDeploymentSpecificationRequestPolicyAuthenticationValidationPolicySourceUriDetail> sourceUriDetails;
+    private @Nullable List<GetDeploymentSpecificationRequestPolicyAuthenticationValidationPolicySourceUriDetail> sourceUriDetails;
     /**
      * @return Type of the Response Cache Store Policy.
      * 
      */
-    private String type;
+    private @Nullable String type;
     /**
      * @return The uri from which to retrieve the key. It must be accessible without authentication.
      * 
      */
-    private String uri;
+    private @Nullable String uri;
 
     private GetDeploymentSpecificationRequestPolicyAuthenticationValidationPolicy() {}
     /**
@@ -63,56 +65,56 @@ public final class GetDeploymentSpecificationRequestPolicyAuthenticationValidati
      * 
      */
     public List<GetDeploymentSpecificationRequestPolicyAuthenticationValidationPolicyAdditionalValidationPolicy> additionalValidationPolicies() {
-        return this.additionalValidationPolicies;
+        return this.additionalValidationPolicies == null ? List.of() : this.additionalValidationPolicies;
     }
     /**
      * @return Client App Credential details.
      * 
      */
     public List<GetDeploymentSpecificationRequestPolicyAuthenticationValidationPolicyClientDetail> clientDetails() {
-        return this.clientDetails;
+        return this.clientDetails == null ? List.of() : this.clientDetails;
     }
     /**
      * @return Defines whether or not to uphold SSL verification.
      * 
      */
-    public Boolean isSslVerifyDisabled() {
-        return this.isSslVerifyDisabled;
+    public Optional<Boolean> isSslVerifyDisabled() {
+        return Optional.ofNullable(this.isSslVerifyDisabled);
     }
     /**
      * @return The set of static public keys.
      * 
      */
     public List<GetDeploymentSpecificationRequestPolicyAuthenticationValidationPolicyKey> keys() {
-        return this.keys;
+        return this.keys == null ? List.of() : this.keys;
     }
     /**
      * @return The duration for which the introspect URL response should be cached before it is fetched again.
      * 
      */
-    public Integer maxCacheDurationInHours() {
-        return this.maxCacheDurationInHours;
+    public Optional<Integer> maxCacheDurationInHours() {
+        return Optional.ofNullable(this.maxCacheDurationInHours);
     }
     /**
      * @return Auth endpoint details.
      * 
      */
     public List<GetDeploymentSpecificationRequestPolicyAuthenticationValidationPolicySourceUriDetail> sourceUriDetails() {
-        return this.sourceUriDetails;
+        return this.sourceUriDetails == null ? List.of() : this.sourceUriDetails;
     }
     /**
      * @return Type of the Response Cache Store Policy.
      * 
      */
-    public String type() {
-        return this.type;
+    public Optional<String> type() {
+        return Optional.ofNullable(this.type);
     }
     /**
      * @return The uri from which to retrieve the key. It must be accessible without authentication.
      * 
      */
-    public String uri() {
-        return this.uri;
+    public Optional<String> uri() {
+        return Optional.ofNullable(this.uri);
     }
 
     public static Builder builder() {
@@ -124,14 +126,14 @@ public final class GetDeploymentSpecificationRequestPolicyAuthenticationValidati
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetDeploymentSpecificationRequestPolicyAuthenticationValidationPolicyAdditionalValidationPolicy> additionalValidationPolicies;
-        private List<GetDeploymentSpecificationRequestPolicyAuthenticationValidationPolicyClientDetail> clientDetails;
-        private Boolean isSslVerifyDisabled;
-        private List<GetDeploymentSpecificationRequestPolicyAuthenticationValidationPolicyKey> keys;
-        private Integer maxCacheDurationInHours;
-        private List<GetDeploymentSpecificationRequestPolicyAuthenticationValidationPolicySourceUriDetail> sourceUriDetails;
-        private String type;
-        private String uri;
+        private @Nullable List<GetDeploymentSpecificationRequestPolicyAuthenticationValidationPolicyAdditionalValidationPolicy> additionalValidationPolicies;
+        private @Nullable List<GetDeploymentSpecificationRequestPolicyAuthenticationValidationPolicyClientDetail> clientDetails;
+        private @Nullable Boolean isSslVerifyDisabled;
+        private @Nullable List<GetDeploymentSpecificationRequestPolicyAuthenticationValidationPolicyKey> keys;
+        private @Nullable Integer maxCacheDurationInHours;
+        private @Nullable List<GetDeploymentSpecificationRequestPolicyAuthenticationValidationPolicySourceUriDetail> sourceUriDetails;
+        private @Nullable String type;
+        private @Nullable String uri;
         public Builder() {}
         public Builder(GetDeploymentSpecificationRequestPolicyAuthenticationValidationPolicy defaults) {
     	      Objects.requireNonNull(defaults);
@@ -146,55 +148,55 @@ public final class GetDeploymentSpecificationRequestPolicyAuthenticationValidati
         }
 
         @CustomType.Setter
-        public Builder additionalValidationPolicies(List<GetDeploymentSpecificationRequestPolicyAuthenticationValidationPolicyAdditionalValidationPolicy> additionalValidationPolicies) {
-            this.additionalValidationPolicies = Objects.requireNonNull(additionalValidationPolicies);
+        public Builder additionalValidationPolicies(@Nullable List<GetDeploymentSpecificationRequestPolicyAuthenticationValidationPolicyAdditionalValidationPolicy> additionalValidationPolicies) {
+            this.additionalValidationPolicies = additionalValidationPolicies;
             return this;
         }
         public Builder additionalValidationPolicies(GetDeploymentSpecificationRequestPolicyAuthenticationValidationPolicyAdditionalValidationPolicy... additionalValidationPolicies) {
             return additionalValidationPolicies(List.of(additionalValidationPolicies));
         }
         @CustomType.Setter
-        public Builder clientDetails(List<GetDeploymentSpecificationRequestPolicyAuthenticationValidationPolicyClientDetail> clientDetails) {
-            this.clientDetails = Objects.requireNonNull(clientDetails);
+        public Builder clientDetails(@Nullable List<GetDeploymentSpecificationRequestPolicyAuthenticationValidationPolicyClientDetail> clientDetails) {
+            this.clientDetails = clientDetails;
             return this;
         }
         public Builder clientDetails(GetDeploymentSpecificationRequestPolicyAuthenticationValidationPolicyClientDetail... clientDetails) {
             return clientDetails(List.of(clientDetails));
         }
         @CustomType.Setter
-        public Builder isSslVerifyDisabled(Boolean isSslVerifyDisabled) {
-            this.isSslVerifyDisabled = Objects.requireNonNull(isSslVerifyDisabled);
+        public Builder isSslVerifyDisabled(@Nullable Boolean isSslVerifyDisabled) {
+            this.isSslVerifyDisabled = isSslVerifyDisabled;
             return this;
         }
         @CustomType.Setter
-        public Builder keys(List<GetDeploymentSpecificationRequestPolicyAuthenticationValidationPolicyKey> keys) {
-            this.keys = Objects.requireNonNull(keys);
+        public Builder keys(@Nullable List<GetDeploymentSpecificationRequestPolicyAuthenticationValidationPolicyKey> keys) {
+            this.keys = keys;
             return this;
         }
         public Builder keys(GetDeploymentSpecificationRequestPolicyAuthenticationValidationPolicyKey... keys) {
             return keys(List.of(keys));
         }
         @CustomType.Setter
-        public Builder maxCacheDurationInHours(Integer maxCacheDurationInHours) {
-            this.maxCacheDurationInHours = Objects.requireNonNull(maxCacheDurationInHours);
+        public Builder maxCacheDurationInHours(@Nullable Integer maxCacheDurationInHours) {
+            this.maxCacheDurationInHours = maxCacheDurationInHours;
             return this;
         }
         @CustomType.Setter
-        public Builder sourceUriDetails(List<GetDeploymentSpecificationRequestPolicyAuthenticationValidationPolicySourceUriDetail> sourceUriDetails) {
-            this.sourceUriDetails = Objects.requireNonNull(sourceUriDetails);
+        public Builder sourceUriDetails(@Nullable List<GetDeploymentSpecificationRequestPolicyAuthenticationValidationPolicySourceUriDetail> sourceUriDetails) {
+            this.sourceUriDetails = sourceUriDetails;
             return this;
         }
         public Builder sourceUriDetails(GetDeploymentSpecificationRequestPolicyAuthenticationValidationPolicySourceUriDetail... sourceUriDetails) {
             return sourceUriDetails(List.of(sourceUriDetails));
         }
         @CustomType.Setter
-        public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+        public Builder type(@Nullable String type) {
+            this.type = type;
             return this;
         }
         @CustomType.Setter
-        public Builder uri(String uri) {
-            this.uri = Objects.requireNonNull(uri);
+        public Builder uri(@Nullable String uri) {
+            this.uri = uri;
             return this;
         }
         public GetDeploymentSpecificationRequestPolicyAuthenticationValidationPolicy build() {

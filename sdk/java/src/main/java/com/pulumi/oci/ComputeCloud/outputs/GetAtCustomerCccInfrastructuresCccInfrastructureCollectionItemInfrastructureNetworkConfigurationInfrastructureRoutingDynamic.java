@@ -9,6 +9,8 @@ import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamic {
@@ -16,39 +18,39 @@ public final class GetAtCustomerCccInfrastructuresCccInfrastructureCollectionIte
      * @return The topology in use for the Border Gateway Protocol (BGP) configuration.
      * 
      */
-    private String bgpTopology;
+    private @Nullable String bgpTopology;
     /**
      * @return The Oracle Autonomous System Number (ASN) to control routing and exchange information within the dynamic routing configuration.
      * 
      */
-    private Integer oracleAsn;
+    private @Nullable Integer oracleAsn;
     /**
      * @return The list of peer devices in the dynamic routing configuration.
      * 
      */
-    private List<GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformation> peerInformations;
+    private @Nullable List<GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformation> peerInformations;
 
     private GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamic() {}
     /**
      * @return The topology in use for the Border Gateway Protocol (BGP) configuration.
      * 
      */
-    public String bgpTopology() {
-        return this.bgpTopology;
+    public Optional<String> bgpTopology() {
+        return Optional.ofNullable(this.bgpTopology);
     }
     /**
      * @return The Oracle Autonomous System Number (ASN) to control routing and exchange information within the dynamic routing configuration.
      * 
      */
-    public Integer oracleAsn() {
-        return this.oracleAsn;
+    public Optional<Integer> oracleAsn() {
+        return Optional.ofNullable(this.oracleAsn);
     }
     /**
      * @return The list of peer devices in the dynamic routing configuration.
      * 
      */
     public List<GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformation> peerInformations() {
-        return this.peerInformations;
+        return this.peerInformations == null ? List.of() : this.peerInformations;
     }
 
     public static Builder builder() {
@@ -60,9 +62,9 @@ public final class GetAtCustomerCccInfrastructuresCccInfrastructureCollectionIte
     }
     @CustomType.Builder
     public static final class Builder {
-        private String bgpTopology;
-        private Integer oracleAsn;
-        private List<GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformation> peerInformations;
+        private @Nullable String bgpTopology;
+        private @Nullable Integer oracleAsn;
+        private @Nullable List<GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformation> peerInformations;
         public Builder() {}
         public Builder(GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamic defaults) {
     	      Objects.requireNonNull(defaults);
@@ -72,18 +74,18 @@ public final class GetAtCustomerCccInfrastructuresCccInfrastructureCollectionIte
         }
 
         @CustomType.Setter
-        public Builder bgpTopology(String bgpTopology) {
-            this.bgpTopology = Objects.requireNonNull(bgpTopology);
+        public Builder bgpTopology(@Nullable String bgpTopology) {
+            this.bgpTopology = bgpTopology;
             return this;
         }
         @CustomType.Setter
-        public Builder oracleAsn(Integer oracleAsn) {
-            this.oracleAsn = Objects.requireNonNull(oracleAsn);
+        public Builder oracleAsn(@Nullable Integer oracleAsn) {
+            this.oracleAsn = oracleAsn;
             return this;
         }
         @CustomType.Setter
-        public Builder peerInformations(List<GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformation> peerInformations) {
-            this.peerInformations = Objects.requireNonNull(peerInformations);
+        public Builder peerInformations(@Nullable List<GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformation> peerInformations) {
+            this.peerInformations = peerInformations;
             return this;
         }
         public Builder peerInformations(GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformation... peerInformations) {

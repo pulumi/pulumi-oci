@@ -16,41 +16,41 @@ namespace Pulumi.Oci.Core.Outputs
         /// <summary>
         /// Deprecated. Instead use `destination` and `destinationType`. Requests that include both `cidrBlock` and `destination` will be rejected.
         /// </summary>
-        public readonly string CidrBlock;
+        public readonly string? CidrBlock;
         /// <summary>
         /// An optional description of your choice for the rule.
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// Conceptually, this is the range of IP addresses used for matching when routing traffic. Required if you provide a `destinationType`.
         /// </summary>
-        public readonly string Destination;
+        public readonly string? Destination;
         /// <summary>
         /// Type of destination for the rule. Required if you provide a `destination`.
         /// </summary>
-        public readonly string DestinationType;
+        public readonly string? DestinationType;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the route rule's target. For information about the type of targets you can specify, see [Route Tables](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm).
         /// </summary>
-        public readonly string NetworkEntityId;
+        public readonly string? NetworkEntityId;
         /// <summary>
         /// A route rule can be STATIC if manually added to the route table, LOCAL if added by Oracle Cloud Infrastructure to the route table.
         /// </summary>
-        public readonly string RouteType;
+        public readonly string? RouteType;
 
         [OutputConstructor]
         private GetRouteTablesRouteTableRouteRuleResult(
-            string cidrBlock,
+            string? cidrBlock,
 
-            string description,
+            string? description,
 
-            string destination,
+            string? destination,
 
-            string destinationType,
+            string? destinationType,
 
-            string networkEntityId,
+            string? networkEntityId,
 
-            string routeType)
+            string? routeType)
         {
             CidrBlock = cidrBlock;
             Description = description;

@@ -111,7 +111,7 @@ public class Zone extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -119,36 +119,36 @@ public class Zone extends com.pulumi.resources.CustomResource {
      * **Example:** `{&#34;Operations&#34;: {&#34;CostCenter&#34;: &#34;42&#34;}}`
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * (Updatable) External secondary servers for the zone. This field is currently not supported when `zoneType` is `SECONDARY` or `scope` is `PRIVATE`.
      * 
      */
     @Export(name="externalDownstreams", refs={List.class,ZoneExternalDownstream.class}, tree="[0,1]")
-    private Output<List<ZoneExternalDownstream>> externalDownstreams;
+    private Output</* @Nullable */ List<ZoneExternalDownstream>> externalDownstreams;
 
     /**
      * @return (Updatable) External secondary servers for the zone. This field is currently not supported when `zoneType` is `SECONDARY` or `scope` is `PRIVATE`.
      * 
      */
-    public Output<List<ZoneExternalDownstream>> externalDownstreams() {
-        return this.externalDownstreams;
+    public Output<Optional<List<ZoneExternalDownstream>>> externalDownstreams() {
+        return Codegen.optional(this.externalDownstreams);
     }
     /**
      * (Updatable) External master servers for the zone. `externalMasters` becomes a required parameter when the `zoneType` value is `SECONDARY`.
      * 
      */
     @Export(name="externalMasters", refs={List.class,ZoneExternalMaster.class}, tree="[0,1]")
-    private Output<List<ZoneExternalMaster>> externalMasters;
+    private Output</* @Nullable */ List<ZoneExternalMaster>> externalMasters;
 
     /**
      * @return (Updatable) External master servers for the zone. `externalMasters` becomes a required parameter when the `zoneType` value is `SECONDARY`.
      * 
      */
-    public Output<List<ZoneExternalMaster>> externalMasters() {
-        return this.externalMasters;
+    public Output<Optional<List<ZoneExternalMaster>>> externalMasters() {
+        return Codegen.optional(this.externalMasters);
     }
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -157,7 +157,7 @@ public class Zone extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -165,22 +165,22 @@ public class Zone extends com.pulumi.resources.CustomResource {
      * **Example:** `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * A Boolean flag indicating whether or not parts of the resource are unable to be explicitly managed.
      * 
      */
     @Export(name="isProtected", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isProtected;
+    private Output</* @Nullable */ Boolean> isProtected;
 
     /**
      * @return A Boolean flag indicating whether or not parts of the resource are unable to be explicitly managed.
      * 
      */
-    public Output<Boolean> isProtected() {
-        return this.isProtected;
+    public Output<Optional<Boolean>> isProtected() {
+        return Codegen.optional(this.isProtected);
     }
     /**
      * The name of the zone.
@@ -201,14 +201,14 @@ public class Zone extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="nameservers", refs={List.class,ZoneNameserver.class}, tree="[0,1]")
-    private Output<List<ZoneNameserver>> nameservers;
+    private Output</* @Nullable */ List<ZoneNameserver>> nameservers;
 
     /**
      * @return The authoritative nameservers for the zone.
      * 
      */
-    public Output<List<ZoneNameserver>> nameservers() {
-        return this.nameservers;
+    public Output<Optional<List<ZoneNameserver>>> nameservers() {
+        return Codegen.optional(this.nameservers);
     }
     /**
      * Specifies to operate only on resources that have a matching DNS scope.
@@ -216,85 +216,85 @@ public class Zone extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="scope", refs={String.class}, tree="[0]")
-    private Output<String> scope;
+    private Output</* @Nullable */ String> scope;
 
     /**
      * @return Specifies to operate only on resources that have a matching DNS scope.
      * This value will be null for zones in the global DNS and `PRIVATE` when creating a private zone.
      * 
      */
-    public Output<String> scope() {
-        return this.scope;
+    public Output<Optional<String>> scope() {
+        return Codegen.optional(this.scope);
     }
     /**
      * The canonical absolute URL of the resource.
      * 
      */
     @Export(name="self", refs={String.class}, tree="[0]")
-    private Output<String> self;
+    private Output</* @Nullable */ String> self;
 
     /**
      * @return The canonical absolute URL of the resource.
      * 
      */
-    public Output<String> self() {
-        return this.self;
+    public Output<Optional<String>> self() {
+        return Codegen.optional(this.self);
     }
     /**
      * The current serial of the zone. As seen in the zone&#39;s SOA record.
      * 
      */
     @Export(name="serial", refs={Integer.class}, tree="[0]")
-    private Output<Integer> serial;
+    private Output</* @Nullable */ Integer> serial;
 
     /**
      * @return The current serial of the zone. As seen in the zone&#39;s SOA record.
      * 
      */
-    public Output<Integer> serial() {
-        return this.serial;
+    public Output<Optional<Integer>> serial() {
+        return Codegen.optional(this.serial);
     }
     /**
      * The current state of the zone resource.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The current state of the zone resource.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * The date and time the resource was created in &#34;YYYY-MM-ddThh:mm:ssZ&#34; format with a Z offset, as defined by RFC 3339.
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The date and time the resource was created in &#34;YYYY-MM-ddThh:mm:ssZ&#34; format with a Z offset, as defined by RFC 3339.
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * Version is the never-repeating, totally-orderable, version of the zone, from which the serial field of the zone&#39;s SOA record is derived.
      * 
      */
     @Export(name="version", refs={String.class}, tree="[0]")
-    private Output<String> version;
+    private Output</* @Nullable */ String> version;
 
     /**
      * @return Version is the never-repeating, totally-orderable, version of the zone, from which the serial field of the zone&#39;s SOA record is derived.
      * 
      */
-    public Output<String> version() {
-        return this.version;
+    public Output<Optional<String>> version() {
+        return Codegen.optional(this.version);
     }
     /**
      * The OCID of the private view containing the zone. This value will be null for zones in the global DNS, which are publicly resolvable and not part of a private view.
@@ -315,14 +315,14 @@ public class Zone extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="zoneTransferServers", refs={List.class,ZoneZoneTransferServer.class}, tree="[0,1]")
-    private Output<List<ZoneZoneTransferServer>> zoneTransferServers;
+    private Output</* @Nullable */ List<ZoneZoneTransferServer>> zoneTransferServers;
 
     /**
      * @return The Oracle Cloud Infrastructure nameservers that transfer the zone data with external nameservers.
      * 
      */
-    public Output<List<ZoneZoneTransferServer>> zoneTransferServers() {
-        return this.zoneTransferServers;
+    public Output<Optional<List<ZoneZoneTransferServer>>> zoneTransferServers() {
+        return Codegen.optional(this.zoneTransferServers);
     }
     /**
      * The type of the zone. Must be either `PRIMARY` or `SECONDARY`. `SECONDARY` is only supported for GLOBAL zones.

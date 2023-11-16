@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Double;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetProductLicenseConsumersItemMissingProduct {
@@ -14,39 +16,39 @@ public final class GetProductLicenseConsumersItemMissingProduct {
      * @return Product category base or option.
      * 
      */
-    private String category;
+    private @Nullable String category;
     /**
      * @return Units required for the missing product.
      * 
      */
-    private Double count;
+    private @Nullable Double count;
     /**
      * @return Name of the product.
      * 
      */
-    private String name;
+    private @Nullable String name;
 
     private GetProductLicenseConsumersItemMissingProduct() {}
     /**
      * @return Product category base or option.
      * 
      */
-    public String category() {
-        return this.category;
+    public Optional<String> category() {
+        return Optional.ofNullable(this.category);
     }
     /**
      * @return Units required for the missing product.
      * 
      */
-    public Double count() {
-        return this.count;
+    public Optional<Double> count() {
+        return Optional.ofNullable(this.count);
     }
     /**
      * @return Name of the product.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
 
     public static Builder builder() {
@@ -58,9 +60,9 @@ public final class GetProductLicenseConsumersItemMissingProduct {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String category;
-        private Double count;
-        private String name;
+        private @Nullable String category;
+        private @Nullable Double count;
+        private @Nullable String name;
         public Builder() {}
         public Builder(GetProductLicenseConsumersItemMissingProduct defaults) {
     	      Objects.requireNonNull(defaults);
@@ -70,18 +72,18 @@ public final class GetProductLicenseConsumersItemMissingProduct {
         }
 
         @CustomType.Setter
-        public Builder category(String category) {
-            this.category = Objects.requireNonNull(category);
+        public Builder category(@Nullable String category) {
+            this.category = category;
             return this;
         }
         @CustomType.Setter
-        public Builder count(Double count) {
-            this.count = Objects.requireNonNull(count);
+        public Builder count(@Nullable Double count) {
+            this.count = count;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         public GetProductLicenseConsumersItemMissingProduct build() {

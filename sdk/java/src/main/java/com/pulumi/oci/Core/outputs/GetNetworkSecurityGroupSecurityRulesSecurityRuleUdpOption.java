@@ -8,18 +8,19 @@ import com.pulumi.oci.Core.outputs.GetNetworkSecurityGroupSecurityRulesSecurityR
 import com.pulumi.oci.Core.outputs.GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionSourcePortRange;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOption {
-    private List<GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionDestinationPortRange> destinationPortRanges;
-    private List<GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionSourcePortRange> sourcePortRanges;
+    private @Nullable List<GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionDestinationPortRange> destinationPortRanges;
+    private @Nullable List<GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionSourcePortRange> sourcePortRanges;
 
     private GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOption() {}
     public List<GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionDestinationPortRange> destinationPortRanges() {
-        return this.destinationPortRanges;
+        return this.destinationPortRanges == null ? List.of() : this.destinationPortRanges;
     }
     public List<GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionSourcePortRange> sourcePortRanges() {
-        return this.sourcePortRanges;
+        return this.sourcePortRanges == null ? List.of() : this.sourcePortRanges;
     }
 
     public static Builder builder() {
@@ -31,8 +32,8 @@ public final class GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOption {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionDestinationPortRange> destinationPortRanges;
-        private List<GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionSourcePortRange> sourcePortRanges;
+        private @Nullable List<GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionDestinationPortRange> destinationPortRanges;
+        private @Nullable List<GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionSourcePortRange> sourcePortRanges;
         public Builder() {}
         public Builder(GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOption defaults) {
     	      Objects.requireNonNull(defaults);
@@ -41,16 +42,16 @@ public final class GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOption {
         }
 
         @CustomType.Setter
-        public Builder destinationPortRanges(List<GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionDestinationPortRange> destinationPortRanges) {
-            this.destinationPortRanges = Objects.requireNonNull(destinationPortRanges);
+        public Builder destinationPortRanges(@Nullable List<GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionDestinationPortRange> destinationPortRanges) {
+            this.destinationPortRanges = destinationPortRanges;
             return this;
         }
         public Builder destinationPortRanges(GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionDestinationPortRange... destinationPortRanges) {
             return destinationPortRanges(List.of(destinationPortRanges));
         }
         @CustomType.Setter
-        public Builder sourcePortRanges(List<GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionSourcePortRange> sourcePortRanges) {
-            this.sourcePortRanges = Objects.requireNonNull(sourcePortRanges);
+        public Builder sourcePortRanges(@Nullable List<GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionSourcePortRange> sourcePortRanges) {
+            this.sourcePortRanges = sourcePortRanges;
             return this;
         }
         public Builder sourcePortRanges(GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionSourcePortRange... sourcePortRanges) {

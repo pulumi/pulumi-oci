@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Resource Type Schema Attributes in Oracle Cloud Infrastructure Identity Domains service.
@@ -90,10 +89,10 @@ type GetDomainsResourceTypeSchemaAttributesResult struct {
 	Authorization *string  `pulumi:"authorization"`
 	CompartmentId *string  `pulumi:"compartmentId"`
 	// The provider-assigned unique ID for this managed resource.
-	Id           string `pulumi:"id"`
-	IdcsEndpoint string `pulumi:"idcsEndpoint"`
+	Id           *string `pulumi:"id"`
+	IdcsEndpoint string  `pulumi:"idcsEndpoint"`
 	// The number of resources returned in a list response page. REQUIRED when partial results returned due to pagination.
-	ItemsPerPage                      int     `pulumi:"itemsPerPage"`
+	ItemsPerPage                      *int    `pulumi:"itemsPerPage"`
 	ResourceTypeSchemaAttributeCount  *int    `pulumi:"resourceTypeSchemaAttributeCount"`
 	ResourceTypeSchemaAttributeFilter *string `pulumi:"resourceTypeSchemaAttributeFilter"`
 	// The list of resource_type_schema_attributes.
@@ -106,7 +105,7 @@ type GetDomainsResourceTypeSchemaAttributesResult struct {
 	// The 1-based index of the first result in the current set of list results.  REQUIRED when partial results returned due to pagination.
 	StartIndex *int `pulumi:"startIndex"`
 	// The total number of results returned by the list or query operation.  The value may be larger than the number of resources returned such as when returning a single page of results where multiple pages are available. REQUIRED.
-	TotalResults int `pulumi:"totalResults"`
+	TotalResults *int `pulumi:"totalResults"`
 }
 
 func GetDomainsResourceTypeSchemaAttributesOutput(ctx *pulumi.Context, args GetDomainsResourceTypeSchemaAttributesOutputArgs, opts ...pulumi.InvokeOption) GetDomainsResourceTypeSchemaAttributesResultOutput {
@@ -164,12 +163,6 @@ func (o GetDomainsResourceTypeSchemaAttributesResultOutput) ToGetDomainsResource
 	return o
 }
 
-func (o GetDomainsResourceTypeSchemaAttributesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDomainsResourceTypeSchemaAttributesResult] {
-	return pulumix.Output[GetDomainsResourceTypeSchemaAttributesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDomainsResourceTypeSchemaAttributesResultOutput) AttributeSets() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetDomainsResourceTypeSchemaAttributesResult) []string { return v.AttributeSets }).(pulumi.StringArrayOutput)
 }
@@ -187,8 +180,8 @@ func (o GetDomainsResourceTypeSchemaAttributesResultOutput) CompartmentId() pulu
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetDomainsResourceTypeSchemaAttributesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDomainsResourceTypeSchemaAttributesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetDomainsResourceTypeSchemaAttributesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDomainsResourceTypeSchemaAttributesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetDomainsResourceTypeSchemaAttributesResultOutput) IdcsEndpoint() pulumi.StringOutput {
@@ -196,8 +189,8 @@ func (o GetDomainsResourceTypeSchemaAttributesResultOutput) IdcsEndpoint() pulum
 }
 
 // The number of resources returned in a list response page. REQUIRED when partial results returned due to pagination.
-func (o GetDomainsResourceTypeSchemaAttributesResultOutput) ItemsPerPage() pulumi.IntOutput {
-	return o.ApplyT(func(v GetDomainsResourceTypeSchemaAttributesResult) int { return v.ItemsPerPage }).(pulumi.IntOutput)
+func (o GetDomainsResourceTypeSchemaAttributesResultOutput) ItemsPerPage() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetDomainsResourceTypeSchemaAttributesResult) *int { return v.ItemsPerPage }).(pulumi.IntPtrOutput)
 }
 
 func (o GetDomainsResourceTypeSchemaAttributesResultOutput) ResourceTypeSchemaAttributeCount() pulumi.IntPtrOutput {
@@ -240,8 +233,8 @@ func (o GetDomainsResourceTypeSchemaAttributesResultOutput) StartIndex() pulumi.
 }
 
 // The total number of results returned by the list or query operation.  The value may be larger than the number of resources returned such as when returning a single page of results where multiple pages are available. REQUIRED.
-func (o GetDomainsResourceTypeSchemaAttributesResultOutput) TotalResults() pulumi.IntOutput {
-	return o.ApplyT(func(v GetDomainsResourceTypeSchemaAttributesResult) int { return v.TotalResults }).(pulumi.IntOutput)
+func (o GetDomainsResourceTypeSchemaAttributesResultOutput) TotalResults() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetDomainsResourceTypeSchemaAttributesResult) *int { return v.TotalResults }).(pulumi.IntPtrOutput)
 }
 
 func init() {

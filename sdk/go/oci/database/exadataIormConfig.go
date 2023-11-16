@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Exadata Iorm Config resource in Oracle Cloud Infrastructure Database service.
@@ -68,14 +67,14 @@ type ExadataIormConfig struct {
 	// (Updatable) The DB system [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	DbSystemId pulumi.StringOutput `pulumi:"dbSystemId"`
 	// Additional information about the current `lifecycleState`.
-	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrOutput `pulumi:"lifecycleDetails"`
 	// (Updatable) Value for the IORM objective Default is "Auto"
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	Objective pulumi.StringOutput `pulumi:"objective"`
+	Objective pulumi.StringPtrOutput `pulumi:"objective"`
 	// The current state of IORM configuration for the Exadata DB system.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 }
 
 // NewExadataIormConfig registers a new resource with the given unique name, arguments, and options.
@@ -197,12 +196,6 @@ func (i *ExadataIormConfig) ToExadataIormConfigOutputWithContext(ctx context.Con
 	return pulumi.ToOutputWithContext(ctx, i).(ExadataIormConfigOutput)
 }
 
-func (i *ExadataIormConfig) ToOutput(ctx context.Context) pulumix.Output[*ExadataIormConfig] {
-	return pulumix.Output[*ExadataIormConfig]{
-		OutputState: i.ToExadataIormConfigOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ExadataIormConfigArrayInput is an input type that accepts ExadataIormConfigArray and ExadataIormConfigArrayOutput values.
 // You can construct a concrete instance of `ExadataIormConfigArrayInput` via:
 //
@@ -226,12 +219,6 @@ func (i ExadataIormConfigArray) ToExadataIormConfigArrayOutput() ExadataIormConf
 
 func (i ExadataIormConfigArray) ToExadataIormConfigArrayOutputWithContext(ctx context.Context) ExadataIormConfigArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ExadataIormConfigArrayOutput)
-}
-
-func (i ExadataIormConfigArray) ToOutput(ctx context.Context) pulumix.Output[[]*ExadataIormConfig] {
-	return pulumix.Output[[]*ExadataIormConfig]{
-		OutputState: i.ToExadataIormConfigArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // ExadataIormConfigMapInput is an input type that accepts ExadataIormConfigMap and ExadataIormConfigMapOutput values.
@@ -259,12 +246,6 @@ func (i ExadataIormConfigMap) ToExadataIormConfigMapOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(ExadataIormConfigMapOutput)
 }
 
-func (i ExadataIormConfigMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*ExadataIormConfig] {
-	return pulumix.Output[map[string]*ExadataIormConfig]{
-		OutputState: i.ToExadataIormConfigMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ExadataIormConfigOutput struct{ *pulumi.OutputState }
 
 func (ExadataIormConfigOutput) ElementType() reflect.Type {
@@ -279,12 +260,6 @@ func (o ExadataIormConfigOutput) ToExadataIormConfigOutputWithContext(ctx contex
 	return o
 }
 
-func (o ExadataIormConfigOutput) ToOutput(ctx context.Context) pulumix.Output[*ExadataIormConfig] {
-	return pulumix.Output[*ExadataIormConfig]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) Array of IORM Setting for all the database in this Exadata DB System
 func (o ExadataIormConfigOutput) DbPlans() ExadataIormConfigDbPlanArrayOutput {
 	return o.ApplyT(func(v *ExadataIormConfig) ExadataIormConfigDbPlanArrayOutput { return v.DbPlans }).(ExadataIormConfigDbPlanArrayOutput)
@@ -296,21 +271,21 @@ func (o ExadataIormConfigOutput) DbSystemId() pulumi.StringOutput {
 }
 
 // Additional information about the current `lifecycleState`.
-func (o ExadataIormConfigOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v *ExadataIormConfig) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o ExadataIormConfigOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExadataIormConfig) pulumi.StringPtrOutput { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Value for the IORM objective Default is "Auto"
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-func (o ExadataIormConfigOutput) Objective() pulumi.StringOutput {
-	return o.ApplyT(func(v *ExadataIormConfig) pulumi.StringOutput { return v.Objective }).(pulumi.StringOutput)
+func (o ExadataIormConfigOutput) Objective() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExadataIormConfig) pulumi.StringPtrOutput { return v.Objective }).(pulumi.StringPtrOutput)
 }
 
 // The current state of IORM configuration for the Exadata DB system.
-func (o ExadataIormConfigOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *ExadataIormConfig) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o ExadataIormConfigOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExadataIormConfig) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 type ExadataIormConfigArrayOutput struct{ *pulumi.OutputState }
@@ -325,12 +300,6 @@ func (o ExadataIormConfigArrayOutput) ToExadataIormConfigArrayOutput() ExadataIo
 
 func (o ExadataIormConfigArrayOutput) ToExadataIormConfigArrayOutputWithContext(ctx context.Context) ExadataIormConfigArrayOutput {
 	return o
-}
-
-func (o ExadataIormConfigArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*ExadataIormConfig] {
-	return pulumix.Output[[]*ExadataIormConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ExadataIormConfigArrayOutput) Index(i pulumi.IntInput) ExadataIormConfigOutput {
@@ -351,12 +320,6 @@ func (o ExadataIormConfigMapOutput) ToExadataIormConfigMapOutput() ExadataIormCo
 
 func (o ExadataIormConfigMapOutput) ToExadataIormConfigMapOutputWithContext(ctx context.Context) ExadataIormConfigMapOutput {
 	return o
-}
-
-func (o ExadataIormConfigMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*ExadataIormConfig] {
-	return pulumix.Output[map[string]*ExadataIormConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ExadataIormConfigMapOutput) MapIndex(k pulumi.StringInput) ExadataIormConfigOutput {

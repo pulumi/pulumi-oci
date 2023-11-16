@@ -49,48 +49,48 @@ export interface GetManagedDatabaseSqlPlanBaselineConfigurationResult {
     /**
      * The capture filters used in automatic initial plan capture.
      */
-    readonly autoCaptureFilters: outputs.DatabaseManagement.GetManagedDatabaseSqlPlanBaselineConfigurationAutoCaptureFilter[];
+    readonly autoCaptureFilters?: outputs.DatabaseManagement.GetManagedDatabaseSqlPlanBaselineConfigurationAutoCaptureFilter[];
     /**
      * The set of parameters used in an SPM evolve task.
      */
-    readonly autoSpmEvolveTaskParameters: outputs.DatabaseManagement.GetManagedDatabaseSqlPlanBaselineConfigurationAutoSpmEvolveTaskParameter[];
+    readonly autoSpmEvolveTaskParameters?: outputs.DatabaseManagement.GetManagedDatabaseSqlPlanBaselineConfigurationAutoSpmEvolveTaskParameter[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Indicates whether the Automatic SPM Evolve Advisor task is enabled (`true`) or not (`false`).
      */
-    readonly isAutoSpmEvolveTaskEnabled: boolean;
+    readonly isAutoSpmEvolveTaskEnabled?: boolean;
     /**
      * Indicates whether the automatic capture of SQL plan baselines is enabled (`true`) or not (`false`).
      */
-    readonly isAutomaticInitialPlanCaptureEnabled: boolean;
+    readonly isAutomaticInitialPlanCaptureEnabled?: boolean;
     /**
      * Indicates whether the high frequency Automatic SPM Evolve Advisor task is enabled (`true`) or not (`false`).
      */
-    readonly isHighFrequencyAutoSpmEvolveTaskEnabled: boolean;
+    readonly isHighFrequencyAutoSpmEvolveTaskEnabled?: boolean;
     /**
      * Indicates whether the database uses SQL plan baselines (`true`) or not (`false`).
      */
-    readonly isSqlPlanBaselinesUsageEnabled: boolean;
+    readonly isSqlPlanBaselinesUsageEnabled?: boolean;
     readonly managedDatabaseId: string;
     /**
      * The number of weeks to retain unused plans before they are purged.
      */
-    readonly planRetentionWeeks: number;
+    readonly planRetentionWeeks?: number;
     /**
      * The maximum `SYSAUX` space that can be used for SQL Management Base in MB.
      */
-    readonly spaceBudgetMb: number;
+    readonly spaceBudgetMb?: number;
     /**
      * The maximum percent of `SYSAUX` space that can be used for SQL Management Base.
      */
-    readonly spaceBudgetPercent: number;
+    readonly spaceBudgetPercent?: number;
     /**
      * The space used by SQL Management Base in MB.
      */
-    readonly spaceUsedMb: number;
+    readonly spaceUsedMb?: number;
 }
 /**
  * This data source provides details about a specific Managed Database Sql Plan Baseline Configuration resource in Oracle Cloud Infrastructure Database Management service.

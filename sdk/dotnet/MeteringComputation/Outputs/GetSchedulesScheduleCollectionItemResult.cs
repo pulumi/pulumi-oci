@@ -16,31 +16,31 @@ namespace Pulumi.Oci.MeteringComputation.Outputs
         /// <summary>
         /// The compartment ID in which to list resources.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// The description of the schedule.
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// The OCID representing a unique shedule.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Query parameter for filtering by name
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// Specifies supported output file format.
         /// </summary>
-        public readonly string OutputFileFormat;
+        public readonly string? OutputFileFormat;
         /// <summary>
         /// The query properties.
         /// </summary>
@@ -52,65 +52,65 @@ namespace Pulumi.Oci.MeteringComputation.Outputs
         /// <summary>
         /// The saved report id which can also be used to generate query.
         /// </summary>
-        public readonly string SavedReportId;
+        public readonly string? SavedReportId;
         /// <summary>
         /// Specifies the frequency according to when the schedule will be run,  in the x-obmcs-recurring-time format described in [RFC 5545 section 3.3.10](https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10). Supported values are : ONE_TIME, DAILY, WEEKLY and MONTHLY.
         /// </summary>
-        public readonly string ScheduleRecurrences;
+        public readonly string? ScheduleRecurrences;
         /// <summary>
         /// The schedule lifecycle state.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> SystemTags;
+        public readonly ImmutableDictionary<string, object>? SystemTags;
         /// <summary>
         /// The date and time the schedule was created.
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The date and time of the next job execution.
         /// </summary>
-        public readonly string TimeNextRun;
+        public readonly string? TimeNextRun;
         /// <summary>
         /// The date and time of the first time job execution.
         /// </summary>
-        public readonly string TimeScheduled;
+        public readonly string? TimeScheduled;
 
         [OutputConstructor]
         private GetSchedulesScheduleCollectionItemResult(
-            string compartmentId,
+            string? compartmentId,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string description,
+            string? description,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string id,
+            string? id,
 
-            string name,
+            string? name,
 
-            string outputFileFormat,
+            string? outputFileFormat,
 
             ImmutableArray<Outputs.GetSchedulesScheduleCollectionItemQueryPropertyResult> queryProperties,
 
             ImmutableArray<Outputs.GetSchedulesScheduleCollectionItemResultLocationResult> resultLocations,
 
-            string savedReportId,
+            string? savedReportId,
 
-            string scheduleRecurrences,
+            string? scheduleRecurrences,
 
-            string state,
+            string? state,
 
-            ImmutableDictionary<string, object> systemTags,
+            ImmutableDictionary<string, object>? systemTags,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeNextRun,
+            string? timeNextRun,
 
-            string timeScheduled)
+            string? timeScheduled)
         {
             CompartmentId = compartmentId;
             DefinedTags = definedTags;

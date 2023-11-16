@@ -109,135 +109,87 @@ class GetOceInstanceResult:
 
     @property
     @pulumi.getter(name="addOnFeatures")
-    def add_on_features(self) -> Sequence[str]:
-        """
-        a list of add-on features for the ocm instance
-        """
+    def add_on_features(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "add_on_features")
 
     @property
     @pulumi.getter(name="adminEmail")
-    def admin_email(self) -> str:
-        """
-        Admin Email for Notification
-        """
+    def admin_email(self) -> Optional[str]:
         return pulumi.get(self, "admin_email")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        Compartment Identifier
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        OceInstance description, can be updated
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="drRegion")
-    def dr_region(self) -> str:
-        """
-        disaster recovery paired ragion name
-        """
+    def dr_region(self) -> Optional[str]:
         return pulumi.get(self, "dr_region")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def guid(self) -> str:
-        """
-        Unique GUID identifier that is immutable on creation
-        """
+    def guid(self) -> Optional[str]:
         return pulumi.get(self, "guid")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        Unique identifier that is immutable on creation
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="idcsAccessToken")
-    def idcs_access_token(self) -> str:
+    def idcs_access_token(self) -> Optional[str]:
         return pulumi.get(self, "idcs_access_token")
 
     @property
     @pulumi.getter(name="idcsTenancy")
-    def idcs_tenancy(self) -> str:
-        """
-        IDCS Tenancy Identifier
-        """
+    def idcs_tenancy(self) -> Optional[str]:
         return pulumi.get(self, "idcs_tenancy")
 
     @property
     @pulumi.getter(name="instanceAccessType")
-    def instance_access_type(self) -> str:
-        """
-        Flag indicating whether the instance access is private or public
-        """
+    def instance_access_type(self) -> Optional[str]:
         return pulumi.get(self, "instance_access_type")
 
     @property
     @pulumi.getter(name="instanceLicenseType")
-    def instance_license_type(self) -> str:
-        """
-        Flag indicating whether the instance license is new cloud or bring your own license
-        """
+    def instance_license_type(self) -> Optional[str]:
         return pulumi.get(self, "instance_license_type")
 
     @property
     @pulumi.getter(name="instanceUsageType")
-    def instance_usage_type(self) -> str:
-        """
-        Instance type based on its usage
-        """
+    def instance_usage_type(self) -> Optional[str]:
         return pulumi.get(self, "instance_usage_type")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        Details of the current state of the instance lifecycle
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        OceInstance Name
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="objectStorageNamespace")
-    def object_storage_namespace(self) -> str:
-        """
-        Object Storage Namespace of tenancy
-        """
+    def object_storage_namespace(self) -> Optional[str]:
         return pulumi.get(self, "object_storage_namespace")
 
     @property
@@ -247,82 +199,52 @@ class GetOceInstanceResult:
 
     @property
     @pulumi.getter
-    def service(self) -> Mapping[str, Any]:
-        """
-        SERVICE data. Example: `{"service": {"IDCS": "value"}}`
-        """
+    def service(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "service")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the instance lifecycle.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="stateMessage")
-    def state_message(self) -> str:
-        """
-        An message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        """
+    def state_message(self) -> Optional[str]:
         return pulumi.get(self, "state_message")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="tenancyId")
-    def tenancy_id(self) -> str:
-        """
-        Tenancy Identifier
-        """
+    def tenancy_id(self) -> Optional[str]:
         return pulumi.get(self, "tenancy_id")
 
     @property
     @pulumi.getter(name="tenancyName")
-    def tenancy_name(self) -> str:
-        """
-        Tenancy Name
-        """
+    def tenancy_name(self) -> Optional[str]:
         return pulumi.get(self, "tenancy_name")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The time the the OceInstance was created. An RFC3339 formatted datetime string
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The time the OceInstance was updated. An RFC3339 formatted datetime string
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
     @property
     @pulumi.getter(name="upgradeSchedule")
-    def upgrade_schedule(self) -> str:
-        """
-        Upgrade schedule type representing service to be upgraded immediately whenever latest version is released or delay upgrade of the service to previous released version
-        """
+    def upgrade_schedule(self) -> Optional[str]:
         return pulumi.get(self, "upgrade_schedule")
 
     @property
     @pulumi.getter(name="wafPrimaryDomain")
-    def waf_primary_domain(self) -> str:
-        """
-        Web Application Firewall(WAF) primary domain
-        """
+    def waf_primary_domain(self) -> Optional[str]:
         return pulumi.get(self, "waf_primary_domain")
 
 
@@ -365,21 +287,7 @@ class AwaitableGetOceInstanceResult(GetOceInstanceResult):
 def get_oce_instance(oce_instance_id: Optional[str] = None,
                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetOceInstanceResult:
     """
-    This data source provides details about a specific Oce Instance resource in Oracle Cloud Infrastructure Content and Experience service.
-
-    Gets a OceInstance by identifier
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_oce_instance = oci.Oce.get_oce_instance(oce_instance_id=oci_oce_oce_instance["test_oce_instance"]["id"])
-    ```
-
-
-    :param str oce_instance_id: unique OceInstance identifier
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['oceInstanceId'] = oce_instance_id
@@ -421,20 +329,6 @@ def get_oce_instance(oce_instance_id: Optional[str] = None,
 def get_oce_instance_output(oce_instance_id: Optional[pulumi.Input[str]] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetOceInstanceResult]:
     """
-    This data source provides details about a specific Oce Instance resource in Oracle Cloud Infrastructure Content and Experience service.
-
-    Gets a OceInstance by identifier
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_oce_instance = oci.Oce.get_oce_instance(oce_instance_id=oci_oce_oce_instance["test_oce_instance"]["id"])
-    ```
-
-
-    :param str oce_instance_id: unique OceInstance identifier
+    Use this data source to access information about an existing resource.
     """
     ...

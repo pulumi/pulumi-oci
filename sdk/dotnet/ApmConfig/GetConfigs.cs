@@ -288,7 +288,7 @@ namespace Pulumi.Oci.ApmConfig
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// A string that specifies the group that an OPTIONS item belongs to.
         /// </summary>
@@ -314,7 +314,7 @@ namespace Pulumi.Oci.ApmConfig
 
             ImmutableArray<string> freeformTagExists,
 
-            string id,
+            string? id,
 
             string? optionsGroup)
         {

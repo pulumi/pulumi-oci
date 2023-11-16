@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Publishers in Oracle Cloud Infrastructure Marketplace service.
@@ -66,7 +65,7 @@ type GetPublishersResult struct {
 	CompartmentId *string               `pulumi:"compartmentId"`
 	Filters       []GetPublishersFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id          string  `pulumi:"id"`
+	Id          *string `pulumi:"id"`
 	PublisherId *string `pulumi:"publisherId"`
 	// The list of publishers.
 	Publishers []GetPublishersPublisher `pulumi:"publishers"`
@@ -113,12 +112,6 @@ func (o GetPublishersResultOutput) ToGetPublishersResultOutputWithContext(ctx co
 	return o
 }
 
-func (o GetPublishersResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetPublishersResult] {
-	return pulumix.Output[GetPublishersResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetPublishersResultOutput) CompartmentId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetPublishersResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
@@ -128,8 +121,8 @@ func (o GetPublishersResultOutput) Filters() GetPublishersFilterArrayOutput {
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetPublishersResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPublishersResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetPublishersResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetPublishersResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetPublishersResultOutput) PublisherId() pulumi.StringPtrOutput {

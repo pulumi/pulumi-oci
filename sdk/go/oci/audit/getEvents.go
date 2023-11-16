@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Audit Events in Oracle Cloud Infrastructure Audit service.
@@ -78,8 +77,8 @@ type GetEventsResult struct {
 	EndTime       string            `pulumi:"endTime"`
 	Filters       []GetEventsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id        string `pulumi:"id"`
-	StartTime string `pulumi:"startTime"`
+	Id        *string `pulumi:"id"`
+	StartTime string  `pulumi:"startTime"`
 }
 
 func GetEventsOutput(ctx *pulumi.Context, args GetEventsOutputArgs, opts ...pulumi.InvokeOption) GetEventsResultOutput {
@@ -129,12 +128,6 @@ func (o GetEventsResultOutput) ToGetEventsResultOutputWithContext(ctx context.Co
 	return o
 }
 
-func (o GetEventsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetEventsResult] {
-	return pulumix.Output[GetEventsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The list of audit_events.
 func (o GetEventsResultOutput) AuditEvents() GetEventsAuditEventArrayOutput {
 	return o.ApplyT(func(v GetEventsResult) []GetEventsAuditEvent { return v.AuditEvents }).(GetEventsAuditEventArrayOutput)
@@ -154,8 +147,8 @@ func (o GetEventsResultOutput) Filters() GetEventsFilterArrayOutput {
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetEventsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetEventsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetEventsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetEventsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetEventsResultOutput) StartTime() pulumi.StringOutput {

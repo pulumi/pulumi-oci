@@ -6,6 +6,8 @@ package com.pulumi.oci.OsManagementHub.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterPackageFilter {
@@ -13,51 +15,51 @@ public final class GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareS
      * @return The type of the filter, which can be of two types - INCLUDE or EXCLUDE.
      * 
      */
-    private String filterType;
+    private @Nullable String filterType;
     /**
      * @return The package name.
      * 
      */
-    private String packageName;
+    private @Nullable String packageName;
     /**
      * @return The package name pattern.
      * 
      */
-    private String packageNamePattern;
+    private @Nullable String packageNamePattern;
     /**
      * @return The package version, which is denoted by &#39;version-release&#39;, or &#39;epoch:version-release&#39;.
      * 
      */
-    private String packageVersion;
+    private @Nullable String packageVersion;
 
     private GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterPackageFilter() {}
     /**
      * @return The type of the filter, which can be of two types - INCLUDE or EXCLUDE.
      * 
      */
-    public String filterType() {
-        return this.filterType;
+    public Optional<String> filterType() {
+        return Optional.ofNullable(this.filterType);
     }
     /**
      * @return The package name.
      * 
      */
-    public String packageName() {
-        return this.packageName;
+    public Optional<String> packageName() {
+        return Optional.ofNullable(this.packageName);
     }
     /**
      * @return The package name pattern.
      * 
      */
-    public String packageNamePattern() {
-        return this.packageNamePattern;
+    public Optional<String> packageNamePattern() {
+        return Optional.ofNullable(this.packageNamePattern);
     }
     /**
      * @return The package version, which is denoted by &#39;version-release&#39;, or &#39;epoch:version-release&#39;.
      * 
      */
-    public String packageVersion() {
-        return this.packageVersion;
+    public Optional<String> packageVersion() {
+        return Optional.ofNullable(this.packageVersion);
     }
 
     public static Builder builder() {
@@ -69,10 +71,10 @@ public final class GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareS
     }
     @CustomType.Builder
     public static final class Builder {
-        private String filterType;
-        private String packageName;
-        private String packageNamePattern;
-        private String packageVersion;
+        private @Nullable String filterType;
+        private @Nullable String packageName;
+        private @Nullable String packageNamePattern;
+        private @Nullable String packageVersion;
         public Builder() {}
         public Builder(GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterPackageFilter defaults) {
     	      Objects.requireNonNull(defaults);
@@ -83,23 +85,23 @@ public final class GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareS
         }
 
         @CustomType.Setter
-        public Builder filterType(String filterType) {
-            this.filterType = Objects.requireNonNull(filterType);
+        public Builder filterType(@Nullable String filterType) {
+            this.filterType = filterType;
             return this;
         }
         @CustomType.Setter
-        public Builder packageName(String packageName) {
-            this.packageName = Objects.requireNonNull(packageName);
+        public Builder packageName(@Nullable String packageName) {
+            this.packageName = packageName;
             return this;
         }
         @CustomType.Setter
-        public Builder packageNamePattern(String packageNamePattern) {
-            this.packageNamePattern = Objects.requireNonNull(packageNamePattern);
+        public Builder packageNamePattern(@Nullable String packageNamePattern) {
+            this.packageNamePattern = packageNamePattern;
             return this;
         }
         @CustomType.Setter
-        public Builder packageVersion(String packageVersion) {
-            this.packageVersion = Objects.requireNonNull(packageVersion);
+        public Builder packageVersion(@Nullable String packageVersion) {
+            this.packageVersion = packageVersion;
             return this;
         }
         public GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterPackageFilter build() {

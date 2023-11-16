@@ -74,13 +74,13 @@ namespace Pulumi.Oci.DataIntegration
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) A user defined description for the workspace.
         /// </summary>
         [Output("description")]
-        public Output<string> Description { get; private set; } = null!;
+        public Output<string?> Description { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) A user-friendly display name for the workspace. Does not have to be unique, and can be modified. Avoid entering confidential information.
@@ -92,37 +92,37 @@ namespace Pulumi.Oci.DataIntegration
         /// The IP of the custom DNS.
         /// </summary>
         [Output("dnsServerIp")]
-        public Output<string> DnsServerIp { get; private set; } = null!;
+        public Output<string?> DnsServerIp { get; private set; } = null!;
 
         /// <summary>
         /// The DNS zone of the custom DNS to use to resolve names.
         /// </summary>
         [Output("dnsServerZone")]
-        public Output<string> DnsServerZone { get; private set; } = null!;
+        public Output<string?> DnsServerZone { get; private set; } = null!;
 
         /// <summary>
         /// DCMS PRivate Endpoint Compartment Identifier
         /// </summary>
         [Output("endpointCompartmentId")]
-        public Output<string> EndpointCompartmentId { get; private set; } = null!;
+        public Output<string?> EndpointCompartmentId { get; private set; } = null!;
 
         /// <summary>
         /// DCMS Private Endpoint ID associated with workspace if the pvt networking is enabled
         /// </summary>
         [Output("endpointId")]
-        public Output<string> EndpointId { get; private set; } = null!;
+        public Output<string?> EndpointId { get; private set; } = null!;
 
         /// <summary>
         /// DCMS Private Endpoint Name
         /// </summary>
         [Output("endpointName")]
-        public Output<string> EndpointName { get; private set; } = null!;
+        public Output<string?> EndpointName { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         [Output("isForceOperation")]
         public Output<bool?> IsForceOperation { get; private set; } = null!;
@@ -131,58 +131,58 @@ namespace Pulumi.Oci.DataIntegration
         /// Specifies whether the private network connection is enabled or disabled.
         /// </summary>
         [Output("isPrivateNetworkEnabled")]
-        public Output<bool> IsPrivateNetworkEnabled { get; private set; } = null!;
+        public Output<bool?> IsPrivateNetworkEnabled { get; private set; } = null!;
 
         [Output("quiesceTimeout")]
-        public Output<int> QuiesceTimeout { get; private set; } = null!;
+        public Output<int?> QuiesceTimeout { get; private set; } = null!;
 
         /// <summary>
         /// DCMS Data Asset Registry Compartment Identifier
         /// </summary>
         [Output("registryCompartmentId")]
-        public Output<string> RegistryCompartmentId { get; private set; } = null!;
+        public Output<string?> RegistryCompartmentId { get; private set; } = null!;
 
         /// <summary>
         /// DCMS Data Asset Registry ID to which the workspace is associated
         /// </summary>
         [Output("registryId")]
-        public Output<string> RegistryId { get; private set; } = null!;
+        public Output<string?> RegistryId { get; private set; } = null!;
 
         /// <summary>
         /// DCMS Data Asset Registry display name
         /// </summary>
         [Output("registryName")]
-        public Output<string> RegistryName { get; private set; } = null!;
+        public Output<string?> RegistryName { get; private set; } = null!;
 
         /// <summary>
         /// Lifecycle states for workspaces in Data Integration Service CREATING - The resource is being created and may not be usable until the entire metadata is defined UPDATING - The resource is being updated and may not be usable until all changes are commited DELETING - The resource is being deleted and might require deep cleanup of children. ACTIVE   - The resource is valid and available for access INACTIVE - The resource might be incomplete in its definition or might have been made unavailable for administrative reasons DELETED  - The resource has been deleted and isn't available FAILED   - The resource is in a failed state due to validation or other errors STARTING - The resource is being started and may not be usable until becomes ACTIVE again STOPPING - The resource is in the process of Stopping and may not be usable until it Stops or fails STOPPED  - The resource is in Stopped state due to stop operation.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in failed state.
         /// </summary>
         [Output("stateMessage")]
-        public Output<string> StateMessage { get; private set; } = null!;
+        public Output<string?> StateMessage { get; private set; } = null!;
 
         /// <summary>
         /// The OCID of the subnet for customer connected databases.
         /// </summary>
         [Output("subnetId")]
-        public Output<string> SubnetId { get; private set; } = null!;
+        public Output<string?> SubnetId { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the workspace was created, in the timestamp format defined by RFC3339.
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the workspace was updated, in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         /// </summary>
         [Output("timeUpdated")]
-        public Output<string> TimeUpdated { get; private set; } = null!;
+        public Output<string?> TimeUpdated { get; private set; } = null!;
 
         /// <summary>
         /// The OCID of the VCN the subnet is in.
@@ -192,7 +192,7 @@ namespace Pulumi.Oci.DataIntegration
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("vcnId")]
-        public Output<string> VcnId { get; private set; } = null!;
+        public Output<string?> VcnId { get; private set; } = null!;
 
 
         /// <summary>

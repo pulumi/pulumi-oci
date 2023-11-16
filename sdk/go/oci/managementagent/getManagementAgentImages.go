@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Management Agent Images in Oracle Cloud Infrastructure Management Agent service.
@@ -72,7 +71,7 @@ type GetManagementAgentImagesResult struct {
 	CompartmentId string                           `pulumi:"compartmentId"`
 	Filters       []GetManagementAgentImagesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id          string  `pulumi:"id"`
+	Id          *string `pulumi:"id"`
 	InstallType *string `pulumi:"installType"`
 	// The list of management_agent_images.
 	ManagementAgentImages []GetManagementAgentImagesManagementAgentImage `pulumi:"managementAgentImages"`
@@ -126,12 +125,6 @@ func (o GetManagementAgentImagesResultOutput) ToGetManagementAgentImagesResultOu
 	return o
 }
 
-func (o GetManagementAgentImagesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagementAgentImagesResult] {
-	return pulumix.Output[GetManagementAgentImagesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetManagementAgentImagesResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetManagementAgentImagesResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
@@ -141,8 +134,8 @@ func (o GetManagementAgentImagesResultOutput) Filters() GetManagementAgentImages
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetManagementAgentImagesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagementAgentImagesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetManagementAgentImagesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagementAgentImagesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetManagementAgentImagesResultOutput) InstallType() pulumi.StringPtrOutput {

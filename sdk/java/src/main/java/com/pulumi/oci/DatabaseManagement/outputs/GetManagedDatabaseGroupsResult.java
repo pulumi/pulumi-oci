@@ -29,7 +29,7 @@ public final class GetManagedDatabaseGroupsResult {
      * @return The list of managed_database_group_collection.
      * 
      */
-    private List<GetManagedDatabaseGroupsManagedDatabaseGroupCollection> managedDatabaseGroupCollections;
+    private @Nullable List<GetManagedDatabaseGroupsManagedDatabaseGroupCollection> managedDatabaseGroupCollections;
     /**
      * @return The name of the Managed Database Group.
      * 
@@ -64,7 +64,7 @@ public final class GetManagedDatabaseGroupsResult {
      * 
      */
     public List<GetManagedDatabaseGroupsManagedDatabaseGroupCollection> managedDatabaseGroupCollections() {
-        return this.managedDatabaseGroupCollections;
+        return this.managedDatabaseGroupCollections == null ? List.of() : this.managedDatabaseGroupCollections;
     }
     /**
      * @return The name of the Managed Database Group.
@@ -93,7 +93,7 @@ public final class GetManagedDatabaseGroupsResult {
         private String compartmentId;
         private @Nullable List<GetManagedDatabaseGroupsFilter> filters;
         private @Nullable String id;
-        private List<GetManagedDatabaseGroupsManagedDatabaseGroupCollection> managedDatabaseGroupCollections;
+        private @Nullable List<GetManagedDatabaseGroupsManagedDatabaseGroupCollection> managedDatabaseGroupCollections;
         private @Nullable String name;
         private @Nullable String state;
         public Builder() {}
@@ -126,8 +126,8 @@ public final class GetManagedDatabaseGroupsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder managedDatabaseGroupCollections(List<GetManagedDatabaseGroupsManagedDatabaseGroupCollection> managedDatabaseGroupCollections) {
-            this.managedDatabaseGroupCollections = Objects.requireNonNull(managedDatabaseGroupCollections);
+        public Builder managedDatabaseGroupCollections(@Nullable List<GetManagedDatabaseGroupsManagedDatabaseGroupCollection> managedDatabaseGroupCollections) {
+            this.managedDatabaseGroupCollections = managedDatabaseGroupCollections;
             return this;
         }
         public Builder managedDatabaseGroupCollections(GetManagedDatabaseGroupsManagedDatabaseGroupCollection... managedDatabaseGroupCollections) {

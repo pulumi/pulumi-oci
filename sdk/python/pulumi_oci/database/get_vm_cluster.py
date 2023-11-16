@@ -119,225 +119,147 @@ class GetVmClusterResult:
 
     @property
     @pulumi.getter(name="availabilityDomain")
-    def availability_domain(self) -> str:
-        """
-        The name of the availability domain that the VM cluster is located in.
-        """
+    def availability_domain(self) -> Optional[str]:
         return pulumi.get(self, "availability_domain")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="cpuCoreCount")
-    def cpu_core_count(self) -> int:
+    def cpu_core_count(self) -> Optional[int]:
         return pulumi.get(self, "cpu_core_count")
 
     @property
     @pulumi.getter(name="cpusEnabled")
-    def cpus_enabled(self) -> int:
-        """
-        The number of enabled CPU cores.
-        """
+    def cpus_enabled(self) -> Optional[int]:
         return pulumi.get(self, "cpus_enabled")
 
     @property
     @pulumi.getter(name="dataCollectionOptions")
-    def data_collection_options(self) -> Sequence['outputs.GetVmClusterDataCollectionOptionResult']:
-        """
-        Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
-        """
+    def data_collection_options(self) -> Optional[Sequence['outputs.GetVmClusterDataCollectionOptionResult']]:
         return pulumi.get(self, "data_collection_options")
 
     @property
     @pulumi.getter(name="dataStorageSizeInGb")
-    def data_storage_size_in_gb(self) -> float:
-        """
-        Size of the DATA disk group in GBs.
-        """
+    def data_storage_size_in_gb(self) -> Optional[float]:
         return pulumi.get(self, "data_storage_size_in_gb")
 
     @property
     @pulumi.getter(name="dataStorageSizeInTbs")
-    def data_storage_size_in_tbs(self) -> float:
-        """
-        Size, in terabytes, of the DATA disk group.
-        """
+    def data_storage_size_in_tbs(self) -> Optional[float]:
         return pulumi.get(self, "data_storage_size_in_tbs")
 
     @property
     @pulumi.getter(name="dbNodeStorageSizeInGbs")
-    def db_node_storage_size_in_gbs(self) -> int:
-        """
-        The local node storage allocated in GBs.
-        """
+    def db_node_storage_size_in_gbs(self) -> Optional[int]:
         return pulumi.get(self, "db_node_storage_size_in_gbs")
 
     @property
     @pulumi.getter(name="dbServers")
-    def db_servers(self) -> Sequence[str]:
-        """
-        The list of Db server.
-        """
+    def db_servers(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "db_servers")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        The user-friendly name for the Exadata Cloud@Customer VM cluster. The name does not need to be unique.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="exadataInfrastructureId")
-    def exadata_infrastructure_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
-        """
+    def exadata_infrastructure_id(self) -> Optional[str]:
         return pulumi.get(self, "exadata_infrastructure_id")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="giVersion")
-    def gi_version(self) -> str:
-        """
-        The Oracle Grid Infrastructure software version for the VM cluster.
-        """
+    def gi_version(self) -> Optional[str]:
         return pulumi.get(self, "gi_version")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="isLocalBackupEnabled")
-    def is_local_backup_enabled(self) -> bool:
-        """
-        If true, database backup on local Exadata storage is configured for the VM cluster. If false, database backup on local Exadata storage is not available in the VM cluster.
-        """
+    def is_local_backup_enabled(self) -> Optional[bool]:
         return pulumi.get(self, "is_local_backup_enabled")
 
     @property
     @pulumi.getter(name="isSparseDiskgroupEnabled")
-    def is_sparse_diskgroup_enabled(self) -> bool:
-        """
-        If true, sparse disk group is configured for the VM cluster. If false, sparse disk group is not created.
-        """
+    def is_sparse_diskgroup_enabled(self) -> Optional[bool]:
         return pulumi.get(self, "is_sparse_diskgroup_enabled")
 
     @property
     @pulumi.getter(name="lastPatchHistoryEntryId")
-    def last_patch_history_entry_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last patch history. This value is updated as soon as a patch operation starts.
-        """
+    def last_patch_history_entry_id(self) -> Optional[str]:
         return pulumi.get(self, "last_patch_history_entry_id")
 
     @property
     @pulumi.getter(name="licenseModel")
-    def license_model(self) -> str:
-        """
-        The Oracle license model that applies to the VM cluster. The default is LICENSE_INCLUDED.
-        """
+    def license_model(self) -> Optional[str]:
         return pulumi.get(self, "license_model")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        Additional information about the current lifecycle state.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="memorySizeInGbs")
-    def memory_size_in_gbs(self) -> int:
-        """
-        The memory allocated in GBs.
-        """
+    def memory_size_in_gbs(self) -> Optional[int]:
         return pulumi.get(self, "memory_size_in_gbs")
 
     @property
     @pulumi.getter(name="ocpuCount")
-    def ocpu_count(self) -> float:
+    def ocpu_count(self) -> Optional[float]:
         return pulumi.get(self, "ocpu_count")
 
     @property
     @pulumi.getter(name="ocpusEnabled")
-    def ocpus_enabled(self) -> float:
+    def ocpus_enabled(self) -> Optional[float]:
         return pulumi.get(self, "ocpus_enabled")
 
     @property
     @pulumi.getter
-    def shape(self) -> str:
-        """
-        The shape of the Exadata infrastructure. The shape determines the amount of CPU, storage, and memory resources allocated to the instance.
-        """
+    def shape(self) -> Optional[str]:
         return pulumi.get(self, "shape")
 
     @property
     @pulumi.getter(name="sshPublicKeys")
-    def ssh_public_keys(self) -> Sequence[str]:
-        """
-        The public key portion of one or more key pairs used for SSH access to the VM cluster.
-        """
+    def ssh_public_keys(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "ssh_public_keys")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the VM cluster.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="systemVersion")
-    def system_version(self) -> str:
-        """
-        Operating system version of the image.
-        """
+    def system_version(self) -> Optional[str]:
         return pulumi.get(self, "system_version")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time that the VM cluster was created.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeZone")
-    def time_zone(self) -> str:
-        """
-        The time zone of the Exadata infrastructure. For details, see [Exadata Infrastructure Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
-        """
+    def time_zone(self) -> Optional[str]:
         return pulumi.get(self, "time_zone")
 
     @property
@@ -347,10 +269,7 @@ class GetVmClusterResult:
 
     @property
     @pulumi.getter(name="vmClusterNetworkId")
-    def vm_cluster_network_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster network.
-        """
+    def vm_cluster_network_id(self) -> Optional[str]:
         return pulumi.get(self, "vm_cluster_network_id")
 
 
@@ -396,21 +315,7 @@ class AwaitableGetVmClusterResult(GetVmClusterResult):
 def get_vm_cluster(vm_cluster_id: Optional[str] = None,
                    opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetVmClusterResult:
     """
-    This data source provides details about a specific Vm Cluster resource in Oracle Cloud Infrastructure Database service.
-
-    Gets information about the VM cluster. Applies to Exadata Cloud@Customer instances only.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_vm_cluster = oci.Database.get_vm_cluster(vm_cluster_id=oci_database_vm_cluster["test_vm_cluster"]["id"])
-    ```
-
-
-    :param str vm_cluster_id: The VM cluster [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['vmClusterId'] = vm_cluster_id
@@ -455,20 +360,6 @@ def get_vm_cluster(vm_cluster_id: Optional[str] = None,
 def get_vm_cluster_output(vm_cluster_id: Optional[pulumi.Input[str]] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetVmClusterResult]:
     """
-    This data source provides details about a specific Vm Cluster resource in Oracle Cloud Infrastructure Database service.
-
-    Gets information about the VM cluster. Applies to Exadata Cloud@Customer instances only.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_vm_cluster = oci.Database.get_vm_cluster(vm_cluster_id=oci_database_vm_cluster["test_vm_cluster"]["id"])
-    ```
-
-
-    :param str vm_cluster_id: The VM cluster [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+    Use this data source to access information about an existing resource.
     """
     ...

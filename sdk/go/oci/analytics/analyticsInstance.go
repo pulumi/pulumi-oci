@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Analytics Instance resource in Oracle Cloud Infrastructure Analytics service.
@@ -93,9 +92,9 @@ type AnalyticsInstance struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) Optional description.
-	Description pulumi.StringOutput `pulumi:"description"`
+	Description pulumi.StringPtrOutput `pulumi:"description"`
 	// (Updatable) Email address receiving notifications.
-	EmailNotification pulumi.StringOutput `pulumi:"emailNotification"`
+	EmailNotification pulumi.StringPtrOutput `pulumi:"emailNotification"`
 	// Analytics feature set.
 	FeatureSet pulumi.StringOutput `pulumi:"featureSet"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -109,18 +108,18 @@ type AnalyticsInstance struct {
 	// The name of the Analytics instance. This name must be unique in the tenancy and cannot be changed.
 	Name pulumi.StringOutput `pulumi:"name"`
 	// Base representation of a network endpoint.
-	NetworkEndpointDetails AnalyticsInstanceNetworkEndpointDetailsOutput `pulumi:"networkEndpointDetails"`
+	NetworkEndpointDetails AnalyticsInstanceNetworkEndpointDetailsPtrOutput `pulumi:"networkEndpointDetails"`
 	// URL of the Analytics service.
-	ServiceUrl pulumi.StringOutput `pulumi:"serviceUrl"`
+	ServiceUrl pulumi.StringPtrOutput `pulumi:"serviceUrl"`
 	// (Updatable) The target state for the Analytics Instance. Could be set to `ACTIVE` or `INACTIVE`.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// The date and time the instance was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The date and time the instance was last updated (in the format defined by RFC3339). This timestamp represents updates made through this API. External events do not influence it.
-	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 }
 
 // NewAnalyticsInstance registers a new resource with the given unique name, arguments, and options.
@@ -342,12 +341,6 @@ func (i *AnalyticsInstance) ToAnalyticsInstanceOutputWithContext(ctx context.Con
 	return pulumi.ToOutputWithContext(ctx, i).(AnalyticsInstanceOutput)
 }
 
-func (i *AnalyticsInstance) ToOutput(ctx context.Context) pulumix.Output[*AnalyticsInstance] {
-	return pulumix.Output[*AnalyticsInstance]{
-		OutputState: i.ToAnalyticsInstanceOutputWithContext(ctx).OutputState,
-	}
-}
-
 // AnalyticsInstanceArrayInput is an input type that accepts AnalyticsInstanceArray and AnalyticsInstanceArrayOutput values.
 // You can construct a concrete instance of `AnalyticsInstanceArrayInput` via:
 //
@@ -371,12 +364,6 @@ func (i AnalyticsInstanceArray) ToAnalyticsInstanceArrayOutput() AnalyticsInstan
 
 func (i AnalyticsInstanceArray) ToAnalyticsInstanceArrayOutputWithContext(ctx context.Context) AnalyticsInstanceArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(AnalyticsInstanceArrayOutput)
-}
-
-func (i AnalyticsInstanceArray) ToOutput(ctx context.Context) pulumix.Output[[]*AnalyticsInstance] {
-	return pulumix.Output[[]*AnalyticsInstance]{
-		OutputState: i.ToAnalyticsInstanceArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // AnalyticsInstanceMapInput is an input type that accepts AnalyticsInstanceMap and AnalyticsInstanceMapOutput values.
@@ -404,12 +391,6 @@ func (i AnalyticsInstanceMap) ToAnalyticsInstanceMapOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(AnalyticsInstanceMapOutput)
 }
 
-func (i AnalyticsInstanceMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*AnalyticsInstance] {
-	return pulumix.Output[map[string]*AnalyticsInstance]{
-		OutputState: i.ToAnalyticsInstanceMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type AnalyticsInstanceOutput struct{ *pulumi.OutputState }
 
 func (AnalyticsInstanceOutput) ElementType() reflect.Type {
@@ -422,12 +403,6 @@ func (o AnalyticsInstanceOutput) ToAnalyticsInstanceOutput() AnalyticsInstanceOu
 
 func (o AnalyticsInstanceOutput) ToAnalyticsInstanceOutputWithContext(ctx context.Context) AnalyticsInstanceOutput {
 	return o
-}
-
-func (o AnalyticsInstanceOutput) ToOutput(ctx context.Context) pulumix.Output[*AnalyticsInstance] {
-	return pulumix.Output[*AnalyticsInstance]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Service instance capacity metadata (e.g.: OLPU count, number of users, ...etc...).
@@ -446,13 +421,13 @@ func (o AnalyticsInstanceOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // (Updatable) Optional description.
-func (o AnalyticsInstanceOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v *AnalyticsInstance) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
+func (o AnalyticsInstanceOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AnalyticsInstance) pulumi.StringPtrOutput { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Email address receiving notifications.
-func (o AnalyticsInstanceOutput) EmailNotification() pulumi.StringOutput {
-	return o.ApplyT(func(v *AnalyticsInstance) pulumi.StringOutput { return v.EmailNotification }).(pulumi.StringOutput)
+func (o AnalyticsInstanceOutput) EmailNotification() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AnalyticsInstance) pulumi.StringPtrOutput { return v.EmailNotification }).(pulumi.StringPtrOutput)
 }
 
 // Analytics feature set.
@@ -486,33 +461,33 @@ func (o AnalyticsInstanceOutput) Name() pulumi.StringOutput {
 }
 
 // Base representation of a network endpoint.
-func (o AnalyticsInstanceOutput) NetworkEndpointDetails() AnalyticsInstanceNetworkEndpointDetailsOutput {
-	return o.ApplyT(func(v *AnalyticsInstance) AnalyticsInstanceNetworkEndpointDetailsOutput {
+func (o AnalyticsInstanceOutput) NetworkEndpointDetails() AnalyticsInstanceNetworkEndpointDetailsPtrOutput {
+	return o.ApplyT(func(v *AnalyticsInstance) AnalyticsInstanceNetworkEndpointDetailsPtrOutput {
 		return v.NetworkEndpointDetails
-	}).(AnalyticsInstanceNetworkEndpointDetailsOutput)
+	}).(AnalyticsInstanceNetworkEndpointDetailsPtrOutput)
 }
 
 // URL of the Analytics service.
-func (o AnalyticsInstanceOutput) ServiceUrl() pulumi.StringOutput {
-	return o.ApplyT(func(v *AnalyticsInstance) pulumi.StringOutput { return v.ServiceUrl }).(pulumi.StringOutput)
+func (o AnalyticsInstanceOutput) ServiceUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AnalyticsInstance) pulumi.StringPtrOutput { return v.ServiceUrl }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The target state for the Analytics Instance. Could be set to `ACTIVE` or `INACTIVE`.
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-func (o AnalyticsInstanceOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *AnalyticsInstance) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o AnalyticsInstanceOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AnalyticsInstance) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the instance was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
-func (o AnalyticsInstanceOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *AnalyticsInstance) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o AnalyticsInstanceOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AnalyticsInstance) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the instance was last updated (in the format defined by RFC3339). This timestamp represents updates made through this API. External events do not influence it.
-func (o AnalyticsInstanceOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *AnalyticsInstance) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o AnalyticsInstanceOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AnalyticsInstance) pulumi.StringPtrOutput { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type AnalyticsInstanceArrayOutput struct{ *pulumi.OutputState }
@@ -527,12 +502,6 @@ func (o AnalyticsInstanceArrayOutput) ToAnalyticsInstanceArrayOutput() Analytics
 
 func (o AnalyticsInstanceArrayOutput) ToAnalyticsInstanceArrayOutputWithContext(ctx context.Context) AnalyticsInstanceArrayOutput {
 	return o
-}
-
-func (o AnalyticsInstanceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*AnalyticsInstance] {
-	return pulumix.Output[[]*AnalyticsInstance]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o AnalyticsInstanceArrayOutput) Index(i pulumi.IntInput) AnalyticsInstanceOutput {
@@ -553,12 +522,6 @@ func (o AnalyticsInstanceMapOutput) ToAnalyticsInstanceMapOutput() AnalyticsInst
 
 func (o AnalyticsInstanceMapOutput) ToAnalyticsInstanceMapOutputWithContext(ctx context.Context) AnalyticsInstanceMapOutput {
 	return o
-}
-
-func (o AnalyticsInstanceMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*AnalyticsInstance] {
-	return pulumix.Output[map[string]*AnalyticsInstance]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o AnalyticsInstanceMapOutput) MapIndex(k pulumi.StringInput) AnalyticsInstanceOutput {

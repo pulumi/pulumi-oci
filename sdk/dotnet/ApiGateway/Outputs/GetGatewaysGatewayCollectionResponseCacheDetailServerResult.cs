@@ -16,17 +16,17 @@ namespace Pulumi.Oci.ApiGateway.Outputs
         /// <summary>
         /// Hostname or IP address (IPv4 only) where the cache store is running.
         /// </summary>
-        public readonly string Host;
+        public readonly string? Host;
         /// <summary>
         /// The port the cache store is exposed on.
         /// </summary>
-        public readonly int Port;
+        public readonly int? Port;
 
         [OutputConstructor]
         private GetGatewaysGatewayCollectionResponseCacheDetailServerResult(
-            string host,
+            string? host,
 
-            int port)
+            int? port)
         {
             Host = host;
             Port = port;

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Supported Host Shapes in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
@@ -71,7 +70,7 @@ type GetSupportedHostShapesResult struct {
 	CompartmentId string                         `pulumi:"compartmentId"`
 	Filters       []GetSupportedHostShapesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// A list of the supported compute shapes for ESXi hosts.
 	Items []GetSupportedHostShapesItem `pulumi:"items"`
 	// The name of the supported compute shape.
@@ -125,12 +124,6 @@ func (o GetSupportedHostShapesResultOutput) ToGetSupportedHostShapesResultOutput
 	return o
 }
 
-func (o GetSupportedHostShapesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetSupportedHostShapesResult] {
-	return pulumix.Output[GetSupportedHostShapesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSupportedHostShapesResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSupportedHostShapesResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
@@ -140,8 +133,8 @@ func (o GetSupportedHostShapesResultOutput) Filters() GetSupportedHostShapesFilt
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetSupportedHostShapesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSupportedHostShapesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetSupportedHostShapesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSupportedHostShapesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // A list of the supported compute shapes for ESXi hosts.

@@ -76,7 +76,7 @@ export interface GetNodePoolsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The name of the node pool.
      */
@@ -84,7 +84,7 @@ export interface GetNodePoolsResult {
     /**
      * The list of node_pools.
      */
-    readonly nodePools: outputs.ContainerEngine.GetNodePoolsNodePool[];
+    readonly nodePools?: outputs.ContainerEngine.GetNodePoolsNodePool[];
     /**
      * The state of the nodepool.
      */

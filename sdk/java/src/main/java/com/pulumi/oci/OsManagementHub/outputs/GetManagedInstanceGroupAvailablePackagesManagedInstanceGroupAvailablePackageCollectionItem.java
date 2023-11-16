@@ -9,6 +9,8 @@ import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItem {
@@ -16,87 +18,87 @@ public final class GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupA
      * @return The architecture for which this package was built.
      * 
      */
-    private String architecture;
+    private @Nullable String architecture;
     /**
      * @return A filter to return resources that match the given display names.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return A boolean variable that is used to list only the latest versions of packages, module streams, and stream profiles when set to true. All packages, module streams, and stream profiles are returned when set to false.
      * 
      */
-    private Boolean isLatest;
+    private @Nullable Boolean isLatest;
     /**
      * @return Unique identifier for the package. NOTE - This is not an OCID.
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return List of software sources that provide the software package.
      * 
      */
-    private List<GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItemSoftwareSource> softwareSources;
+    private @Nullable List<GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItemSoftwareSource> softwareSources;
     /**
      * @return Type of the package.
      * 
      */
-    private String type;
+    private @Nullable String type;
     /**
      * @return Version of the installed package.
      * 
      */
-    private String version;
+    private @Nullable String version;
 
     private GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItem() {}
     /**
      * @return The architecture for which this package was built.
      * 
      */
-    public String architecture() {
-        return this.architecture;
+    public Optional<String> architecture() {
+        return Optional.ofNullable(this.architecture);
     }
     /**
      * @return A filter to return resources that match the given display names.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return A boolean variable that is used to list only the latest versions of packages, module streams, and stream profiles when set to true. All packages, module streams, and stream profiles are returned when set to false.
      * 
      */
-    public Boolean isLatest() {
-        return this.isLatest;
+    public Optional<Boolean> isLatest() {
+        return Optional.ofNullable(this.isLatest);
     }
     /**
      * @return Unique identifier for the package. NOTE - This is not an OCID.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return List of software sources that provide the software package.
      * 
      */
     public List<GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItemSoftwareSource> softwareSources() {
-        return this.softwareSources;
+        return this.softwareSources == null ? List.of() : this.softwareSources;
     }
     /**
      * @return Type of the package.
      * 
      */
-    public String type() {
-        return this.type;
+    public Optional<String> type() {
+        return Optional.ofNullable(this.type);
     }
     /**
      * @return Version of the installed package.
      * 
      */
-    public String version() {
-        return this.version;
+    public Optional<String> version() {
+        return Optional.ofNullable(this.version);
     }
 
     public static Builder builder() {
@@ -108,13 +110,13 @@ public final class GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupA
     }
     @CustomType.Builder
     public static final class Builder {
-        private String architecture;
-        private String displayName;
-        private Boolean isLatest;
-        private String name;
-        private List<GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItemSoftwareSource> softwareSources;
-        private String type;
-        private String version;
+        private @Nullable String architecture;
+        private @Nullable String displayName;
+        private @Nullable Boolean isLatest;
+        private @Nullable String name;
+        private @Nullable List<GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItemSoftwareSource> softwareSources;
+        private @Nullable String type;
+        private @Nullable String version;
         public Builder() {}
         public Builder(GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -128,41 +130,41 @@ public final class GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupA
         }
 
         @CustomType.Setter
-        public Builder architecture(String architecture) {
-            this.architecture = Objects.requireNonNull(architecture);
+        public Builder architecture(@Nullable String architecture) {
+            this.architecture = architecture;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder isLatest(Boolean isLatest) {
-            this.isLatest = Objects.requireNonNull(isLatest);
+        public Builder isLatest(@Nullable Boolean isLatest) {
+            this.isLatest = isLatest;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder softwareSources(List<GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItemSoftwareSource> softwareSources) {
-            this.softwareSources = Objects.requireNonNull(softwareSources);
+        public Builder softwareSources(@Nullable List<GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItemSoftwareSource> softwareSources) {
+            this.softwareSources = softwareSources;
             return this;
         }
         public Builder softwareSources(GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItemSoftwareSource... softwareSources) {
             return softwareSources(List.of(softwareSources));
         }
         @CustomType.Setter
-        public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+        public Builder type(@Nullable String type) {
+            this.type = type;
             return this;
         }
         @CustomType.Setter
-        public Builder version(String version) {
-            this.version = Objects.requireNonNull(version);
+        public Builder version(@Nullable String version) {
+            this.version = version;
             return this;
         }
         public GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItem build() {

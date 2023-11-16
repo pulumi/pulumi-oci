@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Target Asset resource in Oracle Cloud Infrastructure Cloud Migrations service.
@@ -129,41 +128,41 @@ type TargetAsset struct {
 	pulumi.CustomResourceState
 
 	// (Updatable) Performance of the block volumes.
-	BlockVolumesPerformance pulumi.IntOutput `pulumi:"blockVolumesPerformance"`
+	BlockVolumesPerformance pulumi.IntPtrOutput `pulumi:"blockVolumesPerformance"`
 	// (Updatable) The OCID of the compartment.
-	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrOutput `pulumi:"compartmentId"`
 	// Messages about the compatibility issues.
 	CompatibilityMessages TargetAssetCompatibilityMessageArrayOutput `pulumi:"compatibilityMessages"`
 	// Created resource identifier
-	CreatedResourceId pulumi.StringOutput `pulumi:"createdResourceId"`
+	CreatedResourceId pulumi.StringPtrOutput `pulumi:"createdResourceId"`
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrOutput `pulumi:"displayName"`
 	// Cost estimation description
 	EstimatedCosts TargetAssetEstimatedCostArrayOutput `pulumi:"estimatedCosts"`
 	// (Updatable) A boolean indicating whether the asset should be migrated.
 	IsExcludedFromExecution pulumi.BoolOutput `pulumi:"isExcludedFromExecution"`
 	// A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
-	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrOutput `pulumi:"lifecycleDetails"`
 	// Description of the migration asset.
 	MigrationAssets TargetAssetMigrationAssetArrayOutput `pulumi:"migrationAssets"`
 	// OCID of the associated migration plan.
 	MigrationPlanId pulumi.StringOutput `pulumi:"migrationPlanId"`
 	// (Updatable) Microsoft license for the VM configuration.
-	MsLicense pulumi.StringOutput `pulumi:"msLicense"`
+	MsLicense pulumi.StringPtrOutput `pulumi:"msLicense"`
 	// (Updatable) Preferred VM shape type that you provide.
 	PreferredShapeType pulumi.StringOutput `pulumi:"preferredShapeType"`
 	// Instance launch details. Use the `sourceDetails` parameter to specify whether a boot volume or an image should be used to launch a new instance.
 	RecommendedSpecs TargetAssetRecommendedSpecArrayOutput `pulumi:"recommendedSpecs"`
 	// The current state of the target asset.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// Instance launch details. Use the `sourceDetails` parameter to specify whether a boot volume or an image should be used to launch a new instance.
 	TestSpecs TargetAssetTestSpecArrayOutput `pulumi:"testSpecs"`
 	// The time when the assessment was done. An RFC3339 formatted datetime string.
-	TimeAssessed pulumi.StringOutput `pulumi:"timeAssessed"`
+	TimeAssessed pulumi.StringPtrOutput `pulumi:"timeAssessed"`
 	// The time when the target asset was created. An RFC3339 formatted datetime string.
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The time when the target asset was updated. An RFC3339 formatted datetime string.
-	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 	// (Updatable) The type of action to run when the instance is interrupted for eviction.
 	Type pulumi.StringOutput `pulumi:"type"`
 	// (Updatable) Instance launch details. Use the `sourceDetails` parameter to specify whether a boot volume or an image should be used to launch a new instance.
@@ -362,12 +361,6 @@ func (i *TargetAsset) ToTargetAssetOutputWithContext(ctx context.Context) Target
 	return pulumi.ToOutputWithContext(ctx, i).(TargetAssetOutput)
 }
 
-func (i *TargetAsset) ToOutput(ctx context.Context) pulumix.Output[*TargetAsset] {
-	return pulumix.Output[*TargetAsset]{
-		OutputState: i.ToTargetAssetOutputWithContext(ctx).OutputState,
-	}
-}
-
 // TargetAssetArrayInput is an input type that accepts TargetAssetArray and TargetAssetArrayOutput values.
 // You can construct a concrete instance of `TargetAssetArrayInput` via:
 //
@@ -391,12 +384,6 @@ func (i TargetAssetArray) ToTargetAssetArrayOutput() TargetAssetArrayOutput {
 
 func (i TargetAssetArray) ToTargetAssetArrayOutputWithContext(ctx context.Context) TargetAssetArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(TargetAssetArrayOutput)
-}
-
-func (i TargetAssetArray) ToOutput(ctx context.Context) pulumix.Output[[]*TargetAsset] {
-	return pulumix.Output[[]*TargetAsset]{
-		OutputState: i.ToTargetAssetArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // TargetAssetMapInput is an input type that accepts TargetAssetMap and TargetAssetMapOutput values.
@@ -424,12 +411,6 @@ func (i TargetAssetMap) ToTargetAssetMapOutputWithContext(ctx context.Context) T
 	return pulumi.ToOutputWithContext(ctx, i).(TargetAssetMapOutput)
 }
 
-func (i TargetAssetMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*TargetAsset] {
-	return pulumix.Output[map[string]*TargetAsset]{
-		OutputState: i.ToTargetAssetMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type TargetAssetOutput struct{ *pulumi.OutputState }
 
 func (TargetAssetOutput) ElementType() reflect.Type {
@@ -444,20 +425,14 @@ func (o TargetAssetOutput) ToTargetAssetOutputWithContext(ctx context.Context) T
 	return o
 }
 
-func (o TargetAssetOutput) ToOutput(ctx context.Context) pulumix.Output[*TargetAsset] {
-	return pulumix.Output[*TargetAsset]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) Performance of the block volumes.
-func (o TargetAssetOutput) BlockVolumesPerformance() pulumi.IntOutput {
-	return o.ApplyT(func(v *TargetAsset) pulumi.IntOutput { return v.BlockVolumesPerformance }).(pulumi.IntOutput)
+func (o TargetAssetOutput) BlockVolumesPerformance() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *TargetAsset) pulumi.IntPtrOutput { return v.BlockVolumesPerformance }).(pulumi.IntPtrOutput)
 }
 
 // (Updatable) The OCID of the compartment.
-func (o TargetAssetOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v *TargetAsset) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
+func (o TargetAssetOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *TargetAsset) pulumi.StringPtrOutput { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Messages about the compatibility issues.
@@ -466,13 +441,13 @@ func (o TargetAssetOutput) CompatibilityMessages() TargetAssetCompatibilityMessa
 }
 
 // Created resource identifier
-func (o TargetAssetOutput) CreatedResourceId() pulumi.StringOutput {
-	return o.ApplyT(func(v *TargetAsset) pulumi.StringOutput { return v.CreatedResourceId }).(pulumi.StringOutput)
+func (o TargetAssetOutput) CreatedResourceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *TargetAsset) pulumi.StringPtrOutput { return v.CreatedResourceId }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-func (o TargetAssetOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v *TargetAsset) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+func (o TargetAssetOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *TargetAsset) pulumi.StringPtrOutput { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Cost estimation description
@@ -486,8 +461,8 @@ func (o TargetAssetOutput) IsExcludedFromExecution() pulumi.BoolOutput {
 }
 
 // A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
-func (o TargetAssetOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v *TargetAsset) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o TargetAssetOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *TargetAsset) pulumi.StringPtrOutput { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // Description of the migration asset.
@@ -501,8 +476,8 @@ func (o TargetAssetOutput) MigrationPlanId() pulumi.StringOutput {
 }
 
 // (Updatable) Microsoft license for the VM configuration.
-func (o TargetAssetOutput) MsLicense() pulumi.StringOutput {
-	return o.ApplyT(func(v *TargetAsset) pulumi.StringOutput { return v.MsLicense }).(pulumi.StringOutput)
+func (o TargetAssetOutput) MsLicense() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *TargetAsset) pulumi.StringPtrOutput { return v.MsLicense }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Preferred VM shape type that you provide.
@@ -516,8 +491,8 @@ func (o TargetAssetOutput) RecommendedSpecs() TargetAssetRecommendedSpecArrayOut
 }
 
 // The current state of the target asset.
-func (o TargetAssetOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *TargetAsset) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o TargetAssetOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *TargetAsset) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Instance launch details. Use the `sourceDetails` parameter to specify whether a boot volume or an image should be used to launch a new instance.
@@ -526,18 +501,18 @@ func (o TargetAssetOutput) TestSpecs() TargetAssetTestSpecArrayOutput {
 }
 
 // The time when the assessment was done. An RFC3339 formatted datetime string.
-func (o TargetAssetOutput) TimeAssessed() pulumi.StringOutput {
-	return o.ApplyT(func(v *TargetAsset) pulumi.StringOutput { return v.TimeAssessed }).(pulumi.StringOutput)
+func (o TargetAssetOutput) TimeAssessed() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *TargetAsset) pulumi.StringPtrOutput { return v.TimeAssessed }).(pulumi.StringPtrOutput)
 }
 
 // The time when the target asset was created. An RFC3339 formatted datetime string.
-func (o TargetAssetOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *TargetAsset) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o TargetAssetOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *TargetAsset) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time when the target asset was updated. An RFC3339 formatted datetime string.
-func (o TargetAssetOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *TargetAsset) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o TargetAssetOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *TargetAsset) pulumi.StringPtrOutput { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The type of action to run when the instance is interrupted for eviction.
@@ -564,12 +539,6 @@ func (o TargetAssetArrayOutput) ToTargetAssetArrayOutputWithContext(ctx context.
 	return o
 }
 
-func (o TargetAssetArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*TargetAsset] {
-	return pulumix.Output[[]*TargetAsset]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o TargetAssetArrayOutput) Index(i pulumi.IntInput) TargetAssetOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *TargetAsset {
 		return vs[0].([]*TargetAsset)[vs[1].(int)]
@@ -588,12 +557,6 @@ func (o TargetAssetMapOutput) ToTargetAssetMapOutput() TargetAssetMapOutput {
 
 func (o TargetAssetMapOutput) ToTargetAssetMapOutputWithContext(ctx context.Context) TargetAssetMapOutput {
 	return o
-}
-
-func (o TargetAssetMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*TargetAsset] {
-	return pulumix.Output[map[string]*TargetAsset]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o TargetAssetMapOutput) MapIndex(k pulumi.StringInput) TargetAssetOutput {

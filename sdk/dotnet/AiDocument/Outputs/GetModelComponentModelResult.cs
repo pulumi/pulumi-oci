@@ -16,10 +16,10 @@ namespace Pulumi.Oci.AiDocument.Outputs
         /// <summary>
         /// A unique model identifier.
         /// </summary>
-        public readonly string ModelId;
+        public readonly string? ModelId;
 
         [OutputConstructor]
-        private GetModelComponentModelResult(string modelId)
+        private GetModelComponentModelResult(string? modelId)
         {
             ModelId = modelId;
         }

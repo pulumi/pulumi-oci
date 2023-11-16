@@ -16,119 +16,119 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// If true, this App is able to participate in runtime services, such as automatic-login, OAuth, and SAML. If false, all runtime services are disabled for this App and only administrative operations can be performed.
         /// </summary>
-        public readonly bool Active;
+        public readonly bool? Active;
         /// <summary>
         /// Application icon.
         /// </summary>
-        public readonly string AppIcon;
+        public readonly string? AppIcon;
         /// <summary>
         /// Application thumbnail.
         /// </summary>
-        public readonly string AppThumbnail;
+        public readonly string? AppThumbnail;
         /// <summary>
         /// The base URI for all of the scopes defined in this App. The value of 'audience' is combined with the 'value' of each scope to form an 'fqs' or fully qualified scope.
         /// </summary>
-        public readonly string Audience;
+        public readonly string? Audience;
         /// <summary>
         /// Application description
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// Resource Type display name
         /// </summary>
-        public readonly string Display;
+        public readonly string? Display;
         /// <summary>
         /// If true, this App is an AliasApp and it cannot be granted to an end user directly
         /// </summary>
-        public readonly bool IsAliasApp;
+        public readonly bool? IsAliasApp;
         /// <summary>
         /// If true, sync from the managed app will be performed as authoritative sync.
         /// </summary>
-        public readonly bool IsAuthoritative;
+        public readonly bool? IsAuthoritative;
         /// <summary>
         /// If true, this App allows runtime services to log end users in to this App automatically
         /// </summary>
-        public readonly bool IsLoginTarget;
+        public readonly bool? IsLoginTarget;
         /// <summary>
         /// If true, indicates that access to this App requires an account. That is, in order to log in to the App, a User must use an application-specific identity that is maintained in the remote identity-repository of that App.
         /// </summary>
-        public readonly bool IsManagedApp;
+        public readonly bool? IsManagedApp;
         /// <summary>
         /// If true, indicates that this application acts as an OAuth Resource.
         /// </summary>
-        public readonly bool IsOauthResource;
+        public readonly bool? IsOauthResource;
         /// <summary>
         /// If true, this application is an Oracle Public Cloud service-instance.
         /// </summary>
-        public readonly bool IsOpcService;
+        public readonly bool? IsOpcService;
         /// <summary>
         /// If true, indicates that this application accepts an Oracle Identity Cloud Service user as a login-identity (does not require an account) and relies on authorization of the user's memberships in AppRoles
         /// </summary>
-        public readonly bool IsUnmanagedApp;
+        public readonly bool? IsUnmanagedApp;
         /// <summary>
         /// The protocol that runtime services will use to log end users in to this App automatically. If 'OIDC', then runtime services use the OpenID Connect protocol. If 'SAML', then runtime services use the Security Assertion Markup Language protocol.
         /// </summary>
-        public readonly string LoginMechanism;
+        public readonly string? LoginMechanism;
         /// <summary>
         /// If true, customer is not billed for runtime operations of the app.
         /// </summary>
-        public readonly bool MeterAsOpcService;
+        public readonly bool? MeterAsOpcService;
         /// <summary>
         /// UserWalletArtifact URI
         /// </summary>
-        public readonly string Ref;
+        public readonly string? Ref;
         /// <summary>
         /// This Uniform Resource Name (URN) value identifies the type of Oracle Public Cloud service of which this app is an instance.
         /// </summary>
-        public readonly string ServiceTypeUrn;
+        public readonly string? ServiceTypeUrn;
         /// <summary>
         /// If true, this App will be displayed in the MyApps page of each end-user who has access to the App.
         /// </summary>
-        public readonly bool ShowInMyApps;
+        public readonly bool? ShowInMyApps;
         /// <summary>
         /// UserWalletArtifact identifier
         /// </summary>
-        public readonly string Value;
+        public readonly string? Value;
 
         [OutputConstructor]
         private GetDomainsAccountMgmtInfoAppResult(
-            bool active,
+            bool? active,
 
-            string appIcon,
+            string? appIcon,
 
-            string appThumbnail,
+            string? appThumbnail,
 
-            string audience,
+            string? audience,
 
-            string description,
+            string? description,
 
-            string display,
+            string? display,
 
-            bool isAliasApp,
+            bool? isAliasApp,
 
-            bool isAuthoritative,
+            bool? isAuthoritative,
 
-            bool isLoginTarget,
+            bool? isLoginTarget,
 
-            bool isManagedApp,
+            bool? isManagedApp,
 
-            bool isOauthResource,
+            bool? isOauthResource,
 
-            bool isOpcService,
+            bool? isOpcService,
 
-            bool isUnmanagedApp,
+            bool? isUnmanagedApp,
 
-            string loginMechanism,
+            string? loginMechanism,
 
-            bool meterAsOpcService,
+            bool? meterAsOpcService,
 
-            string @ref,
+            string? @ref,
 
-            string serviceTypeUrn,
+            string? serviceTypeUrn,
 
-            bool showInMyApps,
+            bool? showInMyApps,
 
-            string value)
+            string? value)
         {
             Active = active;
             AppIcon = appIcon;

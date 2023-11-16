@@ -109,31 +109,31 @@ namespace Pulumi.Oci.ContainerEngine
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Credential rotation status of a kubernetes cluster IN_PROGRESS: Issuing new credentials to kubernetes cluster control plane and worker nodes or retiring old credentials from kubernetes cluster control plane and worker nodes. WAITING: Waiting for customer to invoke the complete rotation action or the automcatic complete rotation action. COMPLETED: New credentials are functional on kuberentes cluster.
         /// </summary>
-        public readonly string Status;
+        public readonly string? Status;
         /// <summary>
         /// Details of a kuberenetes cluster credential rotation status: ISSUING_NEW_CREDENTIALS: Credential rotation is in progress. Starting to issue new credentials to kubernetes cluster control plane and worker nodes. NEW_CREDENTIALS_ISSUED: New credentials are added. At this stage cluster has both old and new credentials and is awaiting old credentials retirement. RETIRING_OLD_CREDENTIALS: Retirement of old credentials is in progress. Starting to remove old credentials from kubernetes cluster control plane and worker nodes. COMPLETED: Credential rotation is complete. Old credentials are retired.
         /// </summary>
-        public readonly string StatusDetails;
+        public readonly string? StatusDetails;
         /// <summary>
         /// The time by which retirement of old credentials should start.
         /// </summary>
-        public readonly string TimeAutoCompletionScheduled;
+        public readonly string? TimeAutoCompletionScheduled;
 
         [OutputConstructor]
         private GetClusterCredentialRotationStatusResult(
             string clusterId,
 
-            string id,
+            string? id,
 
-            string status,
+            string? status,
 
-            string statusDetails,
+            string? statusDetails,
 
-            string timeAutoCompletionScheduled)
+            string? timeAutoCompletionScheduled)
         {
             ClusterId = clusterId;
             Id = id;

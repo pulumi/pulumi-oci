@@ -81,11 +81,11 @@ export interface GetAuditProfileAnalyticResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Array of audit profile aggregration data.
      */
-    readonly items: outputs.DataSafe.GetAuditProfileAnalyticItem[];
+    readonly items?: outputs.DataSafe.GetAuditProfileAnalyticItem[];
 }
 /**
  * This data source provides details about a specific Audit Profile Analytic resource in Oracle Cloud Infrastructure Data Safe service.

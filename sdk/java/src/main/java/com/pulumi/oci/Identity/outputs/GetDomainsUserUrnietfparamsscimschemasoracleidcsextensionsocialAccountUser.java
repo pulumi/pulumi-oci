@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.Identity.outputs.GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSocialAccount;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUser {
@@ -14,7 +15,7 @@ public final class GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionsoci
      * @return Description:
      * 
      */
-    private List<GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSocialAccount> socialAccounts;
+    private @Nullable List<GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSocialAccount> socialAccounts;
 
     private GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUser() {}
     /**
@@ -22,7 +23,7 @@ public final class GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionsoci
      * 
      */
     public List<GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSocialAccount> socialAccounts() {
-        return this.socialAccounts;
+        return this.socialAccounts == null ? List.of() : this.socialAccounts;
     }
 
     public static Builder builder() {
@@ -34,7 +35,7 @@ public final class GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionsoci
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSocialAccount> socialAccounts;
+        private @Nullable List<GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSocialAccount> socialAccounts;
         public Builder() {}
         public Builder(GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUser defaults) {
     	      Objects.requireNonNull(defaults);
@@ -42,8 +43,8 @@ public final class GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionsoci
         }
 
         @CustomType.Setter
-        public Builder socialAccounts(List<GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSocialAccount> socialAccounts) {
-            this.socialAccounts = Objects.requireNonNull(socialAccounts);
+        public Builder socialAccounts(@Nullable List<GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSocialAccount> socialAccounts) {
+            this.socialAccounts = socialAccounts;
             return this;
         }
         public Builder socialAccounts(GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSocialAccount... socialAccounts) {

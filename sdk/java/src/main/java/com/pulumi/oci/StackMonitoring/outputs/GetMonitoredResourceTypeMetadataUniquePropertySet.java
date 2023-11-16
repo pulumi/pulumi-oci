@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetMonitoredResourceTypeMetadataUniquePropertySet {
@@ -14,7 +15,7 @@ public final class GetMonitoredResourceTypeMetadataUniquePropertySet {
      * @return List of properties.
      * 
      */
-    private List<String> properties;
+    private @Nullable List<String> properties;
 
     private GetMonitoredResourceTypeMetadataUniquePropertySet() {}
     /**
@@ -22,7 +23,7 @@ public final class GetMonitoredResourceTypeMetadataUniquePropertySet {
      * 
      */
     public List<String> properties() {
-        return this.properties;
+        return this.properties == null ? List.of() : this.properties;
     }
 
     public static Builder builder() {
@@ -34,7 +35,7 @@ public final class GetMonitoredResourceTypeMetadataUniquePropertySet {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<String> properties;
+        private @Nullable List<String> properties;
         public Builder() {}
         public Builder(GetMonitoredResourceTypeMetadataUniquePropertySet defaults) {
     	      Objects.requireNonNull(defaults);
@@ -42,8 +43,8 @@ public final class GetMonitoredResourceTypeMetadataUniquePropertySet {
         }
 
         @CustomType.Setter
-        public Builder properties(List<String> properties) {
-            this.properties = Objects.requireNonNull(properties);
+        public Builder properties(@Nullable List<String> properties) {
+            this.properties = properties;
             return this;
         }
         public Builder properties(String... properties) {

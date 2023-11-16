@@ -24,12 +24,12 @@ public final class GetIndexesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The list of index_collection.
      * 
      */
-    private List<GetIndexesIndexCollection> indexCollections;
+    private @Nullable List<GetIndexesIndexCollection> indexCollections;
     /**
      * @return Index name.
      * 
@@ -57,15 +57,15 @@ public final class GetIndexesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The list of index_collection.
      * 
      */
     public List<GetIndexesIndexCollection> indexCollections() {
-        return this.indexCollections;
+        return this.indexCollections == null ? List.of() : this.indexCollections;
     }
     /**
      * @return Index name.
@@ -96,8 +96,8 @@ public final class GetIndexesResult {
     public static final class Builder {
         private @Nullable String compartmentId;
         private @Nullable List<GetIndexesFilter> filters;
-        private String id;
-        private List<GetIndexesIndexCollection> indexCollections;
+        private @Nullable String id;
+        private @Nullable List<GetIndexesIndexCollection> indexCollections;
         private @Nullable String name;
         private @Nullable String state;
         private String tableNameOrId;
@@ -127,13 +127,13 @@ public final class GetIndexesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder indexCollections(List<GetIndexesIndexCollection> indexCollections) {
-            this.indexCollections = Objects.requireNonNull(indexCollections);
+        public Builder indexCollections(@Nullable List<GetIndexesIndexCollection> indexCollections) {
+            this.indexCollections = indexCollections;
             return this;
         }
         public Builder indexCollections(GetIndexesIndexCollection... indexCollections) {

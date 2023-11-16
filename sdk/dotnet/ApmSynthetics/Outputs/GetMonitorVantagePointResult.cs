@@ -16,17 +16,17 @@ namespace Pulumi.Oci.ApmSynthetics.Outputs
         /// <summary>
         /// Unique name that can be edited. The name should not contain any confidential information.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// Name of the vantage point.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
 
         [OutputConstructor]
         private GetMonitorVantagePointResult(
-            string displayName,
+            string? displayName,
 
-            string name)
+            string? name)
         {
             DisplayName = displayName;
             Name = name;

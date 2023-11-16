@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Database Registrations in Oracle Cloud Infrastructure Golden Gate service.
@@ -75,7 +74,7 @@ type GetDatabaseRegistrationsResult struct {
 	DisplayName *string                          `pulumi:"displayName"`
 	Filters     []GetDatabaseRegistrationsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Possible lifecycle states.
 	State *string `pulumi:"state"`
 }
@@ -123,12 +122,6 @@ func (o GetDatabaseRegistrationsResultOutput) ToGetDatabaseRegistrationsResultOu
 	return o
 }
 
-func (o GetDatabaseRegistrationsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDatabaseRegistrationsResult] {
-	return pulumix.Output[GetDatabaseRegistrationsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
 func (o GetDatabaseRegistrationsResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDatabaseRegistrationsResult) string { return v.CompartmentId }).(pulumi.StringOutput)
@@ -151,8 +144,8 @@ func (o GetDatabaseRegistrationsResultOutput) Filters() GetDatabaseRegistrations
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetDatabaseRegistrationsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDatabaseRegistrationsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetDatabaseRegistrationsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDatabaseRegistrationsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Possible lifecycle states.

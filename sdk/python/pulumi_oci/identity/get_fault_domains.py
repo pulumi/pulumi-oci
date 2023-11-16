@@ -43,25 +43,16 @@ class GetFaultDomainsResult:
     @property
     @pulumi.getter(name="availabilityDomain")
     def availability_domain(self) -> str:
-        """
-        The name of the availabilityDomain where the Fault Domain belongs.
-        """
         return pulumi.get(self, "availability_domain")
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The OCID of the compartment. Currently only tenancy (root) compartment can be provided.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="faultDomains")
-    def fault_domains(self) -> Sequence['outputs.GetFaultDomainsFaultDomainResult']:
-        """
-        The list of fault_domains.
-        """
+    def fault_domains(self) -> Optional[Sequence['outputs.GetFaultDomainsFaultDomainResult']]:
         return pulumi.get(self, "fault_domains")
 
     @property
@@ -71,7 +62,7 @@ class GetFaultDomainsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -96,25 +87,7 @@ def get_fault_domains(availability_domain: Optional[str] = None,
                       filters: Optional[Sequence[pulumi.InputType['GetFaultDomainsFilterArgs']]] = None,
                       opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetFaultDomainsResult:
     """
-    This data source provides the list of Fault Domains in Oracle Cloud Infrastructure Identity service.
-
-    Lists the Fault Domains in your tenancy. Specify the OCID of either the tenancy or another
-    of your compartments as the value for the compartment ID (remember that the tenancy is simply the root compartment).
-    See [Where to Get the Tenancy's OCID and User's OCID](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/apisigningkey.htm#five).
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_fault_domains = oci.Identity.get_fault_domains(availability_domain=var["fault_domain_availability_domain"],
-        compartment_id=var["compartment_id"])
-    ```
-
-
-    :param str availability_domain: The name of the availibilityDomain.
-    :param str compartment_id: The OCID of the compartment (remember that the tenancy is simply the root compartment).
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['availabilityDomain'] = availability_domain
@@ -137,24 +110,6 @@ def get_fault_domains_output(availability_domain: Optional[pulumi.Input[str]] = 
                              filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetFaultDomainsFilterArgs']]]]] = None,
                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetFaultDomainsResult]:
     """
-    This data source provides the list of Fault Domains in Oracle Cloud Infrastructure Identity service.
-
-    Lists the Fault Domains in your tenancy. Specify the OCID of either the tenancy or another
-    of your compartments as the value for the compartment ID (remember that the tenancy is simply the root compartment).
-    See [Where to Get the Tenancy's OCID and User's OCID](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/apisigningkey.htm#five).
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_fault_domains = oci.Identity.get_fault_domains(availability_domain=var["fault_domain_availability_domain"],
-        compartment_id=var["compartment_id"])
-    ```
-
-
-    :param str availability_domain: The name of the availibilityDomain.
-    :param str compartment_id: The OCID of the compartment (remember that the tenancy is simply the root compartment).
+    Use this data source to access information about an existing resource.
     """
     ...

@@ -13,14 +13,14 @@ namespace Pulumi.Oci.Core.Outputs
     [OutputType]
     public sealed class GetVirtualNetworksVirtualNetworkByoipv6cidrDetailResult
     {
-        public readonly string Byoipv6rangeId;
-        public readonly string Ipv6cidrBlock;
+        public readonly string? Byoipv6rangeId;
+        public readonly string? Ipv6cidrBlock;
 
         [OutputConstructor]
         private GetVirtualNetworksVirtualNetworkByoipv6cidrDetailResult(
-            string byoipv6rangeId,
+            string? byoipv6rangeId,
 
-            string ipv6cidrBlock)
+            string? ipv6cidrBlock)
         {
             Byoipv6rangeId = byoipv6rangeId;
             Ipv6cidrBlock = ipv6cidrBlock;

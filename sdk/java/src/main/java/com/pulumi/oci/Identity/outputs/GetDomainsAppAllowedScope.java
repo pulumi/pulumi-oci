@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDomainsAppAllowedScope {
@@ -14,39 +16,39 @@ public final class GetDomainsAppAllowedScope {
      * @return The fully qualified value of this scope within this App. A fully qualified scope combines the &#39;value&#39; of each scope with the value of &#39;audience&#39;. Each value of &#39;fqs&#39; must be unique across the system. Used only when this App acts as an OAuth Resource.
      * 
      */
-    private String fqs;
+    private @Nullable String fqs;
     /**
      * @return The ID of the App that defines this scope.
      * 
      */
-    private String idOfDefiningApp;
+    private @Nullable String idOfDefiningApp;
     /**
      * @return If true, indicates that this value must be protected.
      * 
      */
-    private Boolean readOnly;
+    private @Nullable Boolean readOnly;
 
     private GetDomainsAppAllowedScope() {}
     /**
      * @return The fully qualified value of this scope within this App. A fully qualified scope combines the &#39;value&#39; of each scope with the value of &#39;audience&#39;. Each value of &#39;fqs&#39; must be unique across the system. Used only when this App acts as an OAuth Resource.
      * 
      */
-    public String fqs() {
-        return this.fqs;
+    public Optional<String> fqs() {
+        return Optional.ofNullable(this.fqs);
     }
     /**
      * @return The ID of the App that defines this scope.
      * 
      */
-    public String idOfDefiningApp() {
-        return this.idOfDefiningApp;
+    public Optional<String> idOfDefiningApp() {
+        return Optional.ofNullable(this.idOfDefiningApp);
     }
     /**
      * @return If true, indicates that this value must be protected.
      * 
      */
-    public Boolean readOnly() {
-        return this.readOnly;
+    public Optional<Boolean> readOnly() {
+        return Optional.ofNullable(this.readOnly);
     }
 
     public static Builder builder() {
@@ -58,9 +60,9 @@ public final class GetDomainsAppAllowedScope {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String fqs;
-        private String idOfDefiningApp;
-        private Boolean readOnly;
+        private @Nullable String fqs;
+        private @Nullable String idOfDefiningApp;
+        private @Nullable Boolean readOnly;
         public Builder() {}
         public Builder(GetDomainsAppAllowedScope defaults) {
     	      Objects.requireNonNull(defaults);
@@ -70,18 +72,18 @@ public final class GetDomainsAppAllowedScope {
         }
 
         @CustomType.Setter
-        public Builder fqs(String fqs) {
-            this.fqs = Objects.requireNonNull(fqs);
+        public Builder fqs(@Nullable String fqs) {
+            this.fqs = fqs;
             return this;
         }
         @CustomType.Setter
-        public Builder idOfDefiningApp(String idOfDefiningApp) {
-            this.idOfDefiningApp = Objects.requireNonNull(idOfDefiningApp);
+        public Builder idOfDefiningApp(@Nullable String idOfDefiningApp) {
+            this.idOfDefiningApp = idOfDefiningApp;
             return this;
         }
         @CustomType.Setter
-        public Builder readOnly(Boolean readOnly) {
-            this.readOnly = Objects.requireNonNull(readOnly);
+        public Builder readOnly(@Nullable Boolean readOnly) {
+            this.readOnly = readOnly;
             return this;
         }
         public GetDomainsAppAllowedScope build() {

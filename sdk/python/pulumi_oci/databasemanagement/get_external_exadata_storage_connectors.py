@@ -51,9 +51,6 @@ class GetExternalExadataStorageConnectorsResult:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        The name of the Exadata resource. English letters, numbers, "-", "_" and "." only.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -63,10 +60,7 @@ class GetExternalExadataStorageConnectorsResult:
 
     @property
     @pulumi.getter(name="externalExadataStorageConnectorCollections")
-    def external_exadata_storage_connector_collections(self) -> Sequence['outputs.GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionResult']:
-        """
-        The list of external_exadata_storage_connector_collection.
-        """
+    def external_exadata_storage_connector_collections(self) -> Optional[Sequence['outputs.GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionResult']]:
         return pulumi.get(self, "external_exadata_storage_connector_collections")
 
     @property
@@ -76,7 +70,7 @@ class GetExternalExadataStorageConnectorsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -103,25 +97,7 @@ def get_external_exadata_storage_connectors(compartment_id: Optional[str] = None
                                             filters: Optional[Sequence[pulumi.InputType['GetExternalExadataStorageConnectorsFilterArgs']]] = None,
                                             opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetExternalExadataStorageConnectorsResult:
     """
-    This data source provides the list of External Exadata Storage Connectors in Oracle Cloud Infrastructure Database Management service.
-
-    Lists the Exadata storage server connectors for the specified Exadata infrastructure.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_external_exadata_storage_connectors = oci.DatabaseManagement.get_external_exadata_storage_connectors(compartment_id=var["compartment_id"],
-        external_exadata_infrastructure_id=oci_database_management_external_exadata_infrastructure["test_external_exadata_infrastructure"]["id"],
-        display_name=var["external_exadata_storage_connector_display_name"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param str display_name: The optional single value query filter parameter on the entity display name.
-    :param str external_exadata_infrastructure_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -147,24 +123,6 @@ def get_external_exadata_storage_connectors_output(compartment_id: Optional[pulu
                                                    filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetExternalExadataStorageConnectorsFilterArgs']]]]] = None,
                                                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetExternalExadataStorageConnectorsResult]:
     """
-    This data source provides the list of External Exadata Storage Connectors in Oracle Cloud Infrastructure Database Management service.
-
-    Lists the Exadata storage server connectors for the specified Exadata infrastructure.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_external_exadata_storage_connectors = oci.DatabaseManagement.get_external_exadata_storage_connectors(compartment_id=var["compartment_id"],
-        external_exadata_infrastructure_id=oci_database_management_external_exadata_infrastructure["test_external_exadata_infrastructure"]["id"],
-        display_name=var["external_exadata_storage_connector_display_name"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param str display_name: The optional single value query filter parameter on the entity display name.
-    :param str external_exadata_infrastructure_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
+    Use this data source to access information about an existing resource.
     """
     ...

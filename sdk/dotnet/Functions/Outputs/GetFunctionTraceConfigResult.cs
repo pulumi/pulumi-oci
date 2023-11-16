@@ -16,10 +16,10 @@ namespace Pulumi.Oci.Functions.Outputs
         /// <summary>
         /// Define if tracing is enabled for the resource.
         /// </summary>
-        public readonly bool IsEnabled;
+        public readonly bool? IsEnabled;
 
         [OutputConstructor]
-        private GetFunctionTraceConfigResult(bool isEnabled)
+        private GetFunctionTraceConfigResult(bool? isEnabled)
         {
             IsEnabled = isEnabled;
         }

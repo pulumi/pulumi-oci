@@ -9,6 +9,7 @@ import com.pulumi.oci.Database.outputs.GetDataGuardAssociationsFilter;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 @CustomType
@@ -17,7 +18,7 @@ public final class GetDataGuardAssociationsResult {
      * @return The list of data_guard_associations.
      * 
      */
-    private List<GetDataGuardAssociationsDataGuardAssociation> dataGuardAssociations;
+    private @Nullable List<GetDataGuardAssociationsDataGuardAssociation> dataGuardAssociations;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the reporting database.
      * 
@@ -28,7 +29,7 @@ public final class GetDataGuardAssociationsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
 
     private GetDataGuardAssociationsResult() {}
     /**
@@ -36,7 +37,7 @@ public final class GetDataGuardAssociationsResult {
      * 
      */
     public List<GetDataGuardAssociationsDataGuardAssociation> dataGuardAssociations() {
-        return this.dataGuardAssociations;
+        return this.dataGuardAssociations == null ? List.of() : this.dataGuardAssociations;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the reporting database.
@@ -52,8 +53,8 @@ public final class GetDataGuardAssociationsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
 
     public static Builder builder() {
@@ -65,10 +66,10 @@ public final class GetDataGuardAssociationsResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetDataGuardAssociationsDataGuardAssociation> dataGuardAssociations;
+        private @Nullable List<GetDataGuardAssociationsDataGuardAssociation> dataGuardAssociations;
         private String databaseId;
         private @Nullable List<GetDataGuardAssociationsFilter> filters;
-        private String id;
+        private @Nullable String id;
         public Builder() {}
         public Builder(GetDataGuardAssociationsResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -79,8 +80,8 @@ public final class GetDataGuardAssociationsResult {
         }
 
         @CustomType.Setter
-        public Builder dataGuardAssociations(List<GetDataGuardAssociationsDataGuardAssociation> dataGuardAssociations) {
-            this.dataGuardAssociations = Objects.requireNonNull(dataGuardAssociations);
+        public Builder dataGuardAssociations(@Nullable List<GetDataGuardAssociationsDataGuardAssociation> dataGuardAssociations) {
+            this.dataGuardAssociations = dataGuardAssociations;
             return this;
         }
         public Builder dataGuardAssociations(GetDataGuardAssociationsDataGuardAssociation... dataGuardAssociations) {
@@ -100,8 +101,8 @@ public final class GetDataGuardAssociationsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         public GetDataGuardAssociationsResult build() {

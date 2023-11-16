@@ -16,53 +16,53 @@ namespace Pulumi.Oci.GoldenGate.Outputs
         /// <summary>
         /// Credential store alias.
         /// </summary>
-        public readonly string AliasName;
+        public readonly string? AliasName;
         /// <summary>
         /// The OCID of the compartment that contains the work request. Work requests should be scoped  to the same compartment as the resource the work request affects. If the work request concerns  multiple resources, and those resources are not in the same compartment, it is up to the service team  to pick the primary resource whose compartment should be used.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection.
         /// </summary>
-        public readonly string ConnectionId;
+        public readonly string? ConnectionId;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment in which to list resources.
         /// </summary>
-        public readonly string DeploymentId;
+        public readonly string? DeploymentId;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection assignment being referenced.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// A filter to return only connection assignments having the 'lifecycleState' given.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         /// </summary>
-        public readonly string TimeUpdated;
+        public readonly string? TimeUpdated;
 
         [OutputConstructor]
         private GetConnectionAssignmentsConnectionAssignmentCollectionItemResult(
-            string aliasName,
+            string? aliasName,
 
-            string compartmentId,
+            string? compartmentId,
 
-            string connectionId,
+            string? connectionId,
 
-            string deploymentId,
+            string? deploymentId,
 
-            string id,
+            string? id,
 
-            string state,
+            string? state,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeUpdated)
+            string? timeUpdated)
         {
             AliasName = aliasName;
             CompartmentId = compartmentId;

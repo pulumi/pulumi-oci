@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Address resource in Oracle Cloud Infrastructure Osp Gateway service.
@@ -67,61 +66,61 @@ type GetAddressArgs struct {
 type GetAddressResult struct {
 	AddressId string `pulumi:"addressId"`
 	// Address identifier.
-	AddressKey string `pulumi:"addressKey"`
+	AddressKey *string `pulumi:"addressKey"`
 	// Name of the city.
-	City string `pulumi:"city"`
+	City *string `pulumi:"city"`
 	// Name of the customer company.
-	CompanyName   string `pulumi:"companyName"`
-	CompartmentId string `pulumi:"compartmentId"`
+	CompanyName   *string `pulumi:"companyName"`
+	CompartmentId string  `pulumi:"compartmentId"`
 	// Contributor class of the customer company.
-	ContributorClass string `pulumi:"contributorClass"`
+	ContributorClass *string `pulumi:"contributorClass"`
 	// Country of the address.
-	Country string `pulumi:"country"`
+	Country *string `pulumi:"country"`
 	// County of the address.
-	County string `pulumi:"county"`
+	County *string `pulumi:"county"`
 	// Department name of the customer company.
-	DepartmentName string `pulumi:"departmentName"`
+	DepartmentName *string `pulumi:"departmentName"`
 	// Contact person email address.
-	EmailAddress string `pulumi:"emailAddress"`
+	EmailAddress *string `pulumi:"emailAddress"`
 	// First name of the contact person.
-	FirstName string `pulumi:"firstName"`
+	FirstName *string `pulumi:"firstName"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Internal number of the customer company.
-	InternalNumber string `pulumi:"internalNumber"`
+	InternalNumber *string `pulumi:"internalNumber"`
 	// Job title of the contact person.
-	JobTitle string `pulumi:"jobTitle"`
+	JobTitle *string `pulumi:"jobTitle"`
 	// Last name of the contact person.
-	LastName string `pulumi:"lastName"`
+	LastName *string `pulumi:"lastName"`
 	// Address line 1.
-	Line1 string `pulumi:"line1"`
+	Line1 *string `pulumi:"line1"`
 	// Address line 2.
-	Line2 string `pulumi:"line2"`
+	Line2 *string `pulumi:"line2"`
 	// Address line 3.
-	Line3 string `pulumi:"line3"`
+	Line3 *string `pulumi:"line3"`
 	// Address line 4.
-	Line4 string `pulumi:"line4"`
+	Line4 *string `pulumi:"line4"`
 	// Middle name of the contact person.
-	MiddleName string `pulumi:"middleName"`
+	MiddleName *string `pulumi:"middleName"`
 	// Municipal Inscription.
-	MunicipalInscription string `pulumi:"municipalInscription"`
-	OspHomeRegion        string `pulumi:"ospHomeRegion"`
+	MunicipalInscription *string `pulumi:"municipalInscription"`
+	OspHomeRegion        string  `pulumi:"ospHomeRegion"`
 	// Phone country code of the contact person.
-	PhoneCountryCode string `pulumi:"phoneCountryCode"`
+	PhoneCountryCode *string `pulumi:"phoneCountryCode"`
 	// Phone number of the contact person.
-	PhoneNumber string `pulumi:"phoneNumber"`
+	PhoneNumber *string `pulumi:"phoneNumber"`
 	// Post code of the address.
-	PostalCode string `pulumi:"postalCode"`
+	PostalCode *string `pulumi:"postalCode"`
 	// Province of the address.
-	Province string `pulumi:"province"`
+	Province *string `pulumi:"province"`
 	// State of the address.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// State Inscription.
-	StateInscription string `pulumi:"stateInscription"`
+	StateInscription *string `pulumi:"stateInscription"`
 	// Street name of the address.
-	StreetName string `pulumi:"streetName"`
+	StreetName *string `pulumi:"streetName"`
 	// Street number of the address.
-	StreetNumber string `pulumi:"streetNumber"`
+	StreetNumber *string `pulumi:"streetNumber"`
 }
 
 func GetAddressOutput(ctx *pulumi.Context, args GetAddressOutputArgs, opts ...pulumi.InvokeOption) GetAddressResultOutput {
@@ -166,29 +165,23 @@ func (o GetAddressResultOutput) ToGetAddressResultOutputWithContext(ctx context.
 	return o
 }
 
-func (o GetAddressResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetAddressResult] {
-	return pulumix.Output[GetAddressResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetAddressResultOutput) AddressId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAddressResult) string { return v.AddressId }).(pulumi.StringOutput)
 }
 
 // Address identifier.
-func (o GetAddressResultOutput) AddressKey() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAddressResult) string { return v.AddressKey }).(pulumi.StringOutput)
+func (o GetAddressResultOutput) AddressKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAddressResult) *string { return v.AddressKey }).(pulumi.StringPtrOutput)
 }
 
 // Name of the city.
-func (o GetAddressResultOutput) City() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAddressResult) string { return v.City }).(pulumi.StringOutput)
+func (o GetAddressResultOutput) City() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAddressResult) *string { return v.City }).(pulumi.StringPtrOutput)
 }
 
 // Name of the customer company.
-func (o GetAddressResultOutput) CompanyName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAddressResult) string { return v.CompanyName }).(pulumi.StringOutput)
+func (o GetAddressResultOutput) CompanyName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAddressResult) *string { return v.CompanyName }).(pulumi.StringPtrOutput)
 }
 
 func (o GetAddressResultOutput) CompartmentId() pulumi.StringOutput {
@@ -196,83 +189,83 @@ func (o GetAddressResultOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // Contributor class of the customer company.
-func (o GetAddressResultOutput) ContributorClass() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAddressResult) string { return v.ContributorClass }).(pulumi.StringOutput)
+func (o GetAddressResultOutput) ContributorClass() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAddressResult) *string { return v.ContributorClass }).(pulumi.StringPtrOutput)
 }
 
 // Country of the address.
-func (o GetAddressResultOutput) Country() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAddressResult) string { return v.Country }).(pulumi.StringOutput)
+func (o GetAddressResultOutput) Country() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAddressResult) *string { return v.Country }).(pulumi.StringPtrOutput)
 }
 
 // County of the address.
-func (o GetAddressResultOutput) County() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAddressResult) string { return v.County }).(pulumi.StringOutput)
+func (o GetAddressResultOutput) County() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAddressResult) *string { return v.County }).(pulumi.StringPtrOutput)
 }
 
 // Department name of the customer company.
-func (o GetAddressResultOutput) DepartmentName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAddressResult) string { return v.DepartmentName }).(pulumi.StringOutput)
+func (o GetAddressResultOutput) DepartmentName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAddressResult) *string { return v.DepartmentName }).(pulumi.StringPtrOutput)
 }
 
 // Contact person email address.
-func (o GetAddressResultOutput) EmailAddress() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAddressResult) string { return v.EmailAddress }).(pulumi.StringOutput)
+func (o GetAddressResultOutput) EmailAddress() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAddressResult) *string { return v.EmailAddress }).(pulumi.StringPtrOutput)
 }
 
 // First name of the contact person.
-func (o GetAddressResultOutput) FirstName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAddressResult) string { return v.FirstName }).(pulumi.StringOutput)
+func (o GetAddressResultOutput) FirstName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAddressResult) *string { return v.FirstName }).(pulumi.StringPtrOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetAddressResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAddressResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetAddressResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAddressResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Internal number of the customer company.
-func (o GetAddressResultOutput) InternalNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAddressResult) string { return v.InternalNumber }).(pulumi.StringOutput)
+func (o GetAddressResultOutput) InternalNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAddressResult) *string { return v.InternalNumber }).(pulumi.StringPtrOutput)
 }
 
 // Job title of the contact person.
-func (o GetAddressResultOutput) JobTitle() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAddressResult) string { return v.JobTitle }).(pulumi.StringOutput)
+func (o GetAddressResultOutput) JobTitle() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAddressResult) *string { return v.JobTitle }).(pulumi.StringPtrOutput)
 }
 
 // Last name of the contact person.
-func (o GetAddressResultOutput) LastName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAddressResult) string { return v.LastName }).(pulumi.StringOutput)
+func (o GetAddressResultOutput) LastName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAddressResult) *string { return v.LastName }).(pulumi.StringPtrOutput)
 }
 
 // Address line 1.
-func (o GetAddressResultOutput) Line1() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAddressResult) string { return v.Line1 }).(pulumi.StringOutput)
+func (o GetAddressResultOutput) Line1() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAddressResult) *string { return v.Line1 }).(pulumi.StringPtrOutput)
 }
 
 // Address line 2.
-func (o GetAddressResultOutput) Line2() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAddressResult) string { return v.Line2 }).(pulumi.StringOutput)
+func (o GetAddressResultOutput) Line2() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAddressResult) *string { return v.Line2 }).(pulumi.StringPtrOutput)
 }
 
 // Address line 3.
-func (o GetAddressResultOutput) Line3() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAddressResult) string { return v.Line3 }).(pulumi.StringOutput)
+func (o GetAddressResultOutput) Line3() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAddressResult) *string { return v.Line3 }).(pulumi.StringPtrOutput)
 }
 
 // Address line 4.
-func (o GetAddressResultOutput) Line4() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAddressResult) string { return v.Line4 }).(pulumi.StringOutput)
+func (o GetAddressResultOutput) Line4() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAddressResult) *string { return v.Line4 }).(pulumi.StringPtrOutput)
 }
 
 // Middle name of the contact person.
-func (o GetAddressResultOutput) MiddleName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAddressResult) string { return v.MiddleName }).(pulumi.StringOutput)
+func (o GetAddressResultOutput) MiddleName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAddressResult) *string { return v.MiddleName }).(pulumi.StringPtrOutput)
 }
 
 // Municipal Inscription.
-func (o GetAddressResultOutput) MunicipalInscription() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAddressResult) string { return v.MunicipalInscription }).(pulumi.StringOutput)
+func (o GetAddressResultOutput) MunicipalInscription() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAddressResult) *string { return v.MunicipalInscription }).(pulumi.StringPtrOutput)
 }
 
 func (o GetAddressResultOutput) OspHomeRegion() pulumi.StringOutput {
@@ -280,43 +273,43 @@ func (o GetAddressResultOutput) OspHomeRegion() pulumi.StringOutput {
 }
 
 // Phone country code of the contact person.
-func (o GetAddressResultOutput) PhoneCountryCode() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAddressResult) string { return v.PhoneCountryCode }).(pulumi.StringOutput)
+func (o GetAddressResultOutput) PhoneCountryCode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAddressResult) *string { return v.PhoneCountryCode }).(pulumi.StringPtrOutput)
 }
 
 // Phone number of the contact person.
-func (o GetAddressResultOutput) PhoneNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAddressResult) string { return v.PhoneNumber }).(pulumi.StringOutput)
+func (o GetAddressResultOutput) PhoneNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAddressResult) *string { return v.PhoneNumber }).(pulumi.StringPtrOutput)
 }
 
 // Post code of the address.
-func (o GetAddressResultOutput) PostalCode() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAddressResult) string { return v.PostalCode }).(pulumi.StringOutput)
+func (o GetAddressResultOutput) PostalCode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAddressResult) *string { return v.PostalCode }).(pulumi.StringPtrOutput)
 }
 
 // Province of the address.
-func (o GetAddressResultOutput) Province() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAddressResult) string { return v.Province }).(pulumi.StringOutput)
+func (o GetAddressResultOutput) Province() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAddressResult) *string { return v.Province }).(pulumi.StringPtrOutput)
 }
 
 // State of the address.
-func (o GetAddressResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAddressResult) string { return v.State }).(pulumi.StringOutput)
+func (o GetAddressResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAddressResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // State Inscription.
-func (o GetAddressResultOutput) StateInscription() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAddressResult) string { return v.StateInscription }).(pulumi.StringOutput)
+func (o GetAddressResultOutput) StateInscription() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAddressResult) *string { return v.StateInscription }).(pulumi.StringPtrOutput)
 }
 
 // Street name of the address.
-func (o GetAddressResultOutput) StreetName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAddressResult) string { return v.StreetName }).(pulumi.StringOutput)
+func (o GetAddressResultOutput) StreetName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAddressResult) *string { return v.StreetName }).(pulumi.StringPtrOutput)
 }
 
 // Street number of the address.
-func (o GetAddressResultOutput) StreetNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAddressResult) string { return v.StreetNumber }).(pulumi.StringOutput)
+func (o GetAddressResultOutput) StreetNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAddressResult) *string { return v.StreetNumber }).(pulumi.StringPtrOutput)
 }
 
 func init() {

@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutParamDetail {
@@ -14,27 +16,27 @@ public final class GetMetricExtensionsMetricExtensionCollectionItemQueryProperty
      * @return Position of PL/SQL procedure OUT parameter
      * 
      */
-    private Integer outParamPosition;
+    private @Nullable Integer outParamPosition;
     /**
      * @return SQL Type of PL/SQL procedure OUT parameter
      * 
      */
-    private String outParamType;
+    private @Nullable String outParamType;
 
     private GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutParamDetail() {}
     /**
      * @return Position of PL/SQL procedure OUT parameter
      * 
      */
-    public Integer outParamPosition() {
-        return this.outParamPosition;
+    public Optional<Integer> outParamPosition() {
+        return Optional.ofNullable(this.outParamPosition);
     }
     /**
      * @return SQL Type of PL/SQL procedure OUT parameter
      * 
      */
-    public String outParamType() {
-        return this.outParamType;
+    public Optional<String> outParamType() {
+        return Optional.ofNullable(this.outParamType);
     }
 
     public static Builder builder() {
@@ -46,8 +48,8 @@ public final class GetMetricExtensionsMetricExtensionCollectionItemQueryProperty
     }
     @CustomType.Builder
     public static final class Builder {
-        private Integer outParamPosition;
-        private String outParamType;
+        private @Nullable Integer outParamPosition;
+        private @Nullable String outParamType;
         public Builder() {}
         public Builder(GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutParamDetail defaults) {
     	      Objects.requireNonNull(defaults);
@@ -56,13 +58,13 @@ public final class GetMetricExtensionsMetricExtensionCollectionItemQueryProperty
         }
 
         @CustomType.Setter
-        public Builder outParamPosition(Integer outParamPosition) {
-            this.outParamPosition = Objects.requireNonNull(outParamPosition);
+        public Builder outParamPosition(@Nullable Integer outParamPosition) {
+            this.outParamPosition = outParamPosition;
             return this;
         }
         @CustomType.Setter
-        public Builder outParamType(String outParamType) {
-            this.outParamType = Objects.requireNonNull(outParamType);
+        public Builder outParamType(@Nullable String outParamType) {
+            this.outParamType = outParamType;
             return this;
         }
         public GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutParamDetail build() {

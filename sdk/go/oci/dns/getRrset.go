@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Rrset resource in Oracle Cloud Infrastructure DNS service.
@@ -83,7 +82,7 @@ type LookupRrsetResult struct {
 	CompartmentId *string `pulumi:"compartmentId"`
 	// The fully qualified domain name where the record can be located.
 	Domain string         `pulumi:"domain"`
-	Id     string         `pulumi:"id"`
+	Id     *string        `pulumi:"id"`
 	Items  []GetRrsetItem `pulumi:"items"`
 	// The type of DNS record, such as A or CNAME. For more information, see [Resource Record (RR) TYPEs](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).
 	Rtype        string  `pulumi:"rtype"`
@@ -144,12 +143,6 @@ func (o LookupRrsetResultOutput) ToLookupRrsetResultOutputWithContext(ctx contex
 	return o
 }
 
-func (o LookupRrsetResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupRrsetResult] {
-	return pulumix.Output[LookupRrsetResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o LookupRrsetResultOutput) CompartmentId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v LookupRrsetResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
@@ -159,8 +152,8 @@ func (o LookupRrsetResultOutput) Domain() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupRrsetResult) string { return v.Domain }).(pulumi.StringOutput)
 }
 
-func (o LookupRrsetResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupRrsetResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupRrsetResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupRrsetResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupRrsetResultOutput) Items() GetRrsetItemArrayOutput {

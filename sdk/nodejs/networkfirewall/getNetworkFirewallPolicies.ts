@@ -80,7 +80,7 @@ export interface GetNetworkFirewallPoliciesResult {
     /**
      * The list of network_firewall_policy_summary_collection.
      */
-    readonly networkFirewallPolicySummaryCollections: outputs.NetworkFirewall.GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollection[];
+    readonly networkFirewallPolicySummaryCollections?: outputs.NetworkFirewall.GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollection[];
     /**
      * The current state of the Network Firewall Policy.
      */

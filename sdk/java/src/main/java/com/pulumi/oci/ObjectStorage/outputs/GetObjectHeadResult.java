@@ -9,36 +9,38 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetObjectHeadResult {
-    private String archivalState;
+    private @Nullable String archivalState;
     private String bucket;
     /**
      * @return The content-length of the object
      * 
      */
-    private Integer contentLength;
+    private @Nullable Integer contentLength;
     /**
      * @return The content-type of the object
      * 
      */
-    private String contentType;
+    private @Nullable String contentType;
     /**
      * @return The etag of the object
      * 
      */
-    private String etag;
+    private @Nullable String etag;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The metadata of the object
      * 
      */
-    private Map<String,Object> metadata;
+    private @Nullable Map<String,Object> metadata;
     private String namespace;
     private String object;
     /**
@@ -46,11 +48,11 @@ public final class GetObjectHeadResult {
      * * `archival-state` - Archival state of an object. This field is set only for objects in Archive tier.
      * 
      */
-    private String storageTier;
+    private @Nullable String storageTier;
 
     private GetObjectHeadResult() {}
-    public String archivalState() {
-        return this.archivalState;
+    public Optional<String> archivalState() {
+        return Optional.ofNullable(this.archivalState);
     }
     public String bucket() {
         return this.bucket;
@@ -59,36 +61,36 @@ public final class GetObjectHeadResult {
      * @return The content-length of the object
      * 
      */
-    public Integer contentLength() {
-        return this.contentLength;
+    public Optional<Integer> contentLength() {
+        return Optional.ofNullable(this.contentLength);
     }
     /**
      * @return The content-type of the object
      * 
      */
-    public String contentType() {
-        return this.contentType;
+    public Optional<String> contentType() {
+        return Optional.ofNullable(this.contentType);
     }
     /**
      * @return The etag of the object
      * 
      */
-    public String etag() {
-        return this.etag;
+    public Optional<String> etag() {
+        return Optional.ofNullable(this.etag);
     }
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The metadata of the object
      * 
      */
     public Map<String,Object> metadata() {
-        return this.metadata;
+        return this.metadata == null ? Map.of() : this.metadata;
     }
     public String namespace() {
         return this.namespace;
@@ -101,8 +103,8 @@ public final class GetObjectHeadResult {
      * * `archival-state` - Archival state of an object. This field is set only for objects in Archive tier.
      * 
      */
-    public String storageTier() {
-        return this.storageTier;
+    public Optional<String> storageTier() {
+        return Optional.ofNullable(this.storageTier);
     }
 
     public static Builder builder() {
@@ -114,16 +116,16 @@ public final class GetObjectHeadResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String archivalState;
+        private @Nullable String archivalState;
         private String bucket;
-        private Integer contentLength;
-        private String contentType;
-        private String etag;
-        private String id;
-        private Map<String,Object> metadata;
+        private @Nullable Integer contentLength;
+        private @Nullable String contentType;
+        private @Nullable String etag;
+        private @Nullable String id;
+        private @Nullable Map<String,Object> metadata;
         private String namespace;
         private String object;
-        private String storageTier;
+        private @Nullable String storageTier;
         public Builder() {}
         public Builder(GetObjectHeadResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -140,8 +142,8 @@ public final class GetObjectHeadResult {
         }
 
         @CustomType.Setter
-        public Builder archivalState(String archivalState) {
-            this.archivalState = Objects.requireNonNull(archivalState);
+        public Builder archivalState(@Nullable String archivalState) {
+            this.archivalState = archivalState;
             return this;
         }
         @CustomType.Setter
@@ -150,28 +152,28 @@ public final class GetObjectHeadResult {
             return this;
         }
         @CustomType.Setter
-        public Builder contentLength(Integer contentLength) {
-            this.contentLength = Objects.requireNonNull(contentLength);
+        public Builder contentLength(@Nullable Integer contentLength) {
+            this.contentLength = contentLength;
             return this;
         }
         @CustomType.Setter
-        public Builder contentType(String contentType) {
-            this.contentType = Objects.requireNonNull(contentType);
+        public Builder contentType(@Nullable String contentType) {
+            this.contentType = contentType;
             return this;
         }
         @CustomType.Setter
-        public Builder etag(String etag) {
-            this.etag = Objects.requireNonNull(etag);
+        public Builder etag(@Nullable String etag) {
+            this.etag = etag;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder metadata(Map<String,Object> metadata) {
-            this.metadata = Objects.requireNonNull(metadata);
+        public Builder metadata(@Nullable Map<String,Object> metadata) {
+            this.metadata = metadata;
             return this;
         }
         @CustomType.Setter
@@ -185,8 +187,8 @@ public final class GetObjectHeadResult {
             return this;
         }
         @CustomType.Setter
-        public Builder storageTier(String storageTier) {
-            this.storageTier = Objects.requireNonNull(storageTier);
+        public Builder storageTier(@Nullable String storageTier) {
+            this.storageTier = storageTier;
             return this;
         }
         public GetObjectHeadResult build() {

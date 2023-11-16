@@ -16,17 +16,17 @@ namespace Pulumi.Oci.Limits.Outputs
         /// <summary>
         /// The friendly service name.
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// The service name. Use this when calling other APIs.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
 
         [OutputConstructor]
         private GetServicesServiceResult(
-            string description,
+            string? description,
 
-            string name)
+            string? name)
         {
             Description = description;
             Name = name;

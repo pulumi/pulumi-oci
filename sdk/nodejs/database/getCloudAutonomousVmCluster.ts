@@ -47,216 +47,216 @@ export interface GetCloudAutonomousVmClusterResult {
     /**
      * The percentage of the data storage used for the Autonomous Databases in an Autonomous VM Cluster.
      */
-    readonly autonomousDataStoragePercentage: number;
+    readonly autonomousDataStoragePercentage?: number;
     /**
      * The data disk group size allocated for Autonomous Databases, in TBs.
      */
-    readonly autonomousDataStorageSizeInTbs: number;
+    readonly autonomousDataStorageSizeInTbs?: number;
     /**
      * The name of the availability domain that the cloud Autonomous VM cluster is located in.
      */
-    readonly availabilityDomain: string;
+    readonly availabilityDomain?: string;
     /**
      * The data disk group size available for Autonomous Databases, in TBs.
      */
-    readonly availableAutonomousDataStorageSizeInTbs: number;
+    readonly availableAutonomousDataStorageSizeInTbs?: number;
     /**
      * The number of Autonomous Container Databases that can be created with the currently available local storage.
      */
-    readonly availableContainerDatabases: number;
+    readonly availableContainerDatabases?: number;
     /**
      * CPU cores available for allocation to Autonomous Databases.
      */
-    readonly availableCpus: number;
+    readonly availableCpus?: number;
     readonly cloudAutonomousVmClusterId: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Exadata infrastructure.
      */
-    readonly cloudExadataInfrastructureId: string;
+    readonly cloudExadataInfrastructureId?: string;
     /**
      * The time zone of the Cloud Autonomous VM Cluster.
      */
-    readonly clusterTimeZone: string;
+    readonly clusterTimeZone?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * The compute model of the Cloud Autonomous VM Cluster.
      */
-    readonly computeModel: string;
+    readonly computeModel?: string;
     /**
      * The number of CPU cores on the cloud Autonomous VM cluster.
      */
-    readonly cpuCoreCount: number;
+    readonly cpuCoreCount?: number;
     /**
      * The number of CPU cores enabled per VM cluster node.
      */
-    readonly cpuCoreCountPerNode: number;
+    readonly cpuCoreCountPerNode?: number;
     /**
      * The percentage of total number of CPUs used in an Autonomous VM Cluster.
      */
-    readonly cpuPercentage: number;
+    readonly cpuPercentage?: number;
     /**
      * The total data storage allocated, in gigabytes (GB).
      */
-    readonly dataStorageSizeInGb: number;
+    readonly dataStorageSizeInGb?: number;
     /**
      * The total data storage allocated, in terabytes (TB).
      */
-    readonly dataStorageSizeInTbs: number;
+    readonly dataStorageSizeInTbs?: number;
     /**
      * The local node storage allocated in GBs.
      */
-    readonly dbNodeStorageSizeInGbs: number;
+    readonly dbNodeStorageSizeInGbs?: number;
     /**
      * The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Db servers.
      */
-    readonly dbServers: string[];
+    readonly dbServers?: string[];
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * User defined description of the cloud Autonomous VM cluster.
      */
-    readonly description: string;
+    readonly description?: string;
     /**
      * The user-friendly name for the cloud Autonomous VM cluster. The name does not need to be unique.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * The domain name for the cloud Autonomous VM cluster.
      */
-    readonly domain: string;
+    readonly domain?: string;
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * The hostname for the cloud Autonomous VM cluster.
      */
-    readonly hostname: string;
+    readonly hostname?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cloud Autonomous VM cluster.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Enable mutual TLS(mTLS) authentication for database at time of provisioning a VMCluster. This is applicable to database TLS Certificates only. Default is TLS
      */
-    readonly isMtlsEnabledVmCluster: boolean;
+    readonly isMtlsEnabledVmCluster?: boolean;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
      */
-    readonly lastMaintenanceRunId: string;
+    readonly lastMaintenanceRunId?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance update history. This value is updated when a maintenance update starts.
      */
-    readonly lastUpdateHistoryEntryId: string;
+    readonly lastUpdateHistoryEntryId?: string;
     /**
      * The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle PaaS and IaaS services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Database service. Note that when provisioning an Autonomous Database on [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null because the attribute is already set at the Autonomous Exadata Infrastructure level. When using [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), if a value is not specified, the system will supply the value of `BRING_YOUR_OWN_LICENSE`.
      */
-    readonly licenseModel: string;
+    readonly licenseModel?: string;
     /**
      * Additional information about the current lifecycle state.
      */
-    readonly lifecycleDetails: string;
-    readonly maintenanceWindowDetails: outputs.Database.GetCloudAutonomousVmClusterMaintenanceWindowDetail[];
+    readonly lifecycleDetails?: string;
+    readonly maintenanceWindowDetails?: outputs.Database.GetCloudAutonomousVmClusterMaintenanceWindowDetail[];
     /**
      * The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
      */
-    readonly maintenanceWindows: outputs.Database.GetCloudAutonomousVmClusterMaintenanceWindow[];
+    readonly maintenanceWindows?: outputs.Database.GetCloudAutonomousVmClusterMaintenanceWindow[];
     /**
      * The amount of memory (in GBs) enabled per OCPU or ECPU.
      */
-    readonly memoryPerOracleComputeUnitInGbs: number;
+    readonly memoryPerOracleComputeUnitInGbs?: number;
     /**
      * The memory allocated in GBs.
      */
-    readonly memorySizeInGbs: number;
+    readonly memorySizeInGbs?: number;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
      */
-    readonly nextMaintenanceRunId: string;
+    readonly nextMaintenanceRunId?: string;
     /**
      * The number of database servers in the cloud VM cluster.
      */
-    readonly nodeCount: number;
+    readonly nodeCount?: number;
     /**
      * The number of non-provisionable Autonomous Container Databases in an Autonomous VM Cluster.
      */
-    readonly nonProvisionableAutonomousContainerDatabases: number;
+    readonly nonProvisionableAutonomousContainerDatabases?: number;
     /**
      * The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
      * * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
      */
-    readonly nsgIds: string[];
+    readonly nsgIds?: string[];
     /**
      * The number of CPU cores on the cloud Autonomous VM cluster. Only 1 decimal place is allowed for the fractional part.
      */
-    readonly ocpuCount: number;
+    readonly ocpuCount?: number;
     /**
      * The number of provisionable Autonomous Container Databases in an Autonomous VM Cluster.
      */
-    readonly provisionableAutonomousContainerDatabases: number;
+    readonly provisionableAutonomousContainerDatabases?: number;
     /**
      * The number of provisioned Autonomous Container Databases in an Autonomous VM Cluster.
      */
-    readonly provisionedAutonomousContainerDatabases: number;
+    readonly provisionedAutonomousContainerDatabases?: number;
     /**
      * The number of CPUs provisioned in an Autonomous VM Cluster.
      */
-    readonly provisionedCpus: number;
+    readonly provisionedCpus?: number;
     /**
      * For Autonomous Databases on Dedicated Exadata Infrastructure:
      * * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
      * * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
      */
-    readonly reclaimableCpus: number;
+    readonly reclaimableCpus?: number;
     /**
      * The number of CPUs reserved in an Autonomous VM Cluster.
      */
-    readonly reservedCpus: number;
+    readonly reservedCpus?: number;
     /**
      * The SCAN Listener Non TLS port. Default is 1521.
      */
-    readonly scanListenerPortNonTls: number;
+    readonly scanListenerPortNonTls?: number;
     /**
      * The SCAN Listenenr TLS port. Default is 2484.
      */
-    readonly scanListenerPortTls: number;
+    readonly scanListenerPortTls?: number;
     /**
      * The model name of the Exadata hardware running the cloud Autonomous VM cluster.
      */
-    readonly shape: string;
+    readonly shape?: string;
     /**
      * The current state of the cloud Autonomous VM cluster.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the cloud Autonomous VM Cluster is associated with.
      */
-    readonly subnetId: string;
+    readonly subnetId?: string;
     /**
      * The date and time that the cloud Autonomous VM cluster was created.
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The last date and time that the cloud Autonomous VM cluster was updated.
      */
-    readonly timeUpdated: string;
+    readonly timeUpdated?: string;
     /**
      * The total data disk group size for Autonomous Databases, in TBs.
      */
-    readonly totalAutonomousDataStorageInTbs: number;
+    readonly totalAutonomousDataStorageInTbs?: number;
     /**
      * The total number of Autonomous Container Databases that can be created with the allocated local storage.
      */
-    readonly totalContainerDatabases: number;
+    readonly totalContainerDatabases?: number;
     /**
      * The total number of CPUs in an Autonomous VM Cluster.
      */
-    readonly totalCpus: number;
+    readonly totalCpus?: number;
 }
 /**
  * This data source provides details about a specific Cloud Autonomous Vm Cluster resource in Oracle Cloud Infrastructure Database service.

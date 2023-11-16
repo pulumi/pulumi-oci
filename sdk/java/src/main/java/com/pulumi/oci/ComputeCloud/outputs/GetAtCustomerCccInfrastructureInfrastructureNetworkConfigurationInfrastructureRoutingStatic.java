@@ -6,6 +6,8 @@ package com.pulumi.oci.ComputeCloud.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.Integer;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStatic {
@@ -13,27 +15,27 @@ public final class GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurat
      * @return The uplink Hot Standby Router Protocol (HSRP) group value for the switch in the Compute Cloud@Customer infrastructure.
      * 
      */
-    private Integer uplinkHsrpGroup;
+    private @Nullable Integer uplinkHsrpGroup;
     /**
      * @return The virtual local area network (VLAN) identifier used to connect to the uplink (only access mode is supported).
      * 
      */
-    private Integer uplinkVlan;
+    private @Nullable Integer uplinkVlan;
 
     private GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStatic() {}
     /**
      * @return The uplink Hot Standby Router Protocol (HSRP) group value for the switch in the Compute Cloud@Customer infrastructure.
      * 
      */
-    public Integer uplinkHsrpGroup() {
-        return this.uplinkHsrpGroup;
+    public Optional<Integer> uplinkHsrpGroup() {
+        return Optional.ofNullable(this.uplinkHsrpGroup);
     }
     /**
      * @return The virtual local area network (VLAN) identifier used to connect to the uplink (only access mode is supported).
      * 
      */
-    public Integer uplinkVlan() {
-        return this.uplinkVlan;
+    public Optional<Integer> uplinkVlan() {
+        return Optional.ofNullable(this.uplinkVlan);
     }
 
     public static Builder builder() {
@@ -45,8 +47,8 @@ public final class GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurat
     }
     @CustomType.Builder
     public static final class Builder {
-        private Integer uplinkHsrpGroup;
-        private Integer uplinkVlan;
+        private @Nullable Integer uplinkHsrpGroup;
+        private @Nullable Integer uplinkVlan;
         public Builder() {}
         public Builder(GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStatic defaults) {
     	      Objects.requireNonNull(defaults);
@@ -55,13 +57,13 @@ public final class GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurat
         }
 
         @CustomType.Setter
-        public Builder uplinkHsrpGroup(Integer uplinkHsrpGroup) {
-            this.uplinkHsrpGroup = Objects.requireNonNull(uplinkHsrpGroup);
+        public Builder uplinkHsrpGroup(@Nullable Integer uplinkHsrpGroup) {
+            this.uplinkHsrpGroup = uplinkHsrpGroup;
             return this;
         }
         @CustomType.Setter
-        public Builder uplinkVlan(Integer uplinkVlan) {
-            this.uplinkVlan = Objects.requireNonNull(uplinkVlan);
+        public Builder uplinkVlan(@Nullable Integer uplinkVlan) {
+            this.uplinkVlan = uplinkVlan;
             return this;
         }
         public GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStatic build() {

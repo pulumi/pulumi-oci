@@ -9,6 +9,8 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetEkmsPrivateEndpointResult {
@@ -16,102 +18,102 @@ public final class GetEkmsPrivateEndpointResult {
      * @return CABundle to validate TLS certificate of the external key manager system in PEM format
      * 
      */
-    private String caBundle;
+    private @Nullable String caBundle;
     /**
      * @return Identifier of the compartment this EKMS private endpoint belongs to
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return Mutable name of the EKMS private endpoint
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     private String ekmsPrivateEndpointId;
     /**
      * @return Private IP of the external key manager system to connect to from the EKMS private endpoint
      * 
      */
-    private String externalKeyManagerIp;
+    private @Nullable String externalKeyManagerIp;
     /**
      * @return Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return Unique identifier that is immutable
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in &#39;Failed&#39; state.
      * 
      */
-    private String lifecycleDetails;
+    private @Nullable String lifecycleDetails;
     /**
      * @return The port of the external key manager system
      * 
      */
-    private Integer port;
+    private @Nullable Integer port;
     /**
      * @return The IP address in the customer&#39;s VCN for the EKMS private endpoint. This is taken from subnet
      * 
      */
-    private String privateEndpointIp;
+    private @Nullable String privateEndpointIp;
     /**
      * @return The current state of the EKMS private endpoint resource.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return Subnet Identifier
      * 
      */
-    private String subnetId;
+    private @Nullable String subnetId;
     /**
      * @return The time the EKMS private endpoint was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The time the EKMS private endpoint was updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
      * 
      */
-    private String timeUpdated;
+    private @Nullable String timeUpdated;
 
     private GetEkmsPrivateEndpointResult() {}
     /**
      * @return CABundle to validate TLS certificate of the external key manager system in PEM format
      * 
      */
-    public String caBundle() {
-        return this.caBundle;
+    public Optional<String> caBundle() {
+        return Optional.ofNullable(this.caBundle);
     }
     /**
      * @return Identifier of the compartment this EKMS private endpoint belongs to
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return Mutable name of the EKMS private endpoint
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     public String ekmsPrivateEndpointId() {
         return this.ekmsPrivateEndpointId;
@@ -120,71 +122,71 @@ public final class GetEkmsPrivateEndpointResult {
      * @return Private IP of the external key manager system to connect to from the EKMS private endpoint
      * 
      */
-    public String externalKeyManagerIp() {
-        return this.externalKeyManagerIp;
+    public Optional<String> externalKeyManagerIp() {
+        return Optional.ofNullable(this.externalKeyManagerIp);
     }
     /**
      * @return Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return Unique identifier that is immutable
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in &#39;Failed&#39; state.
      * 
      */
-    public String lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Optional<String> lifecycleDetails() {
+        return Optional.ofNullable(this.lifecycleDetails);
     }
     /**
      * @return The port of the external key manager system
      * 
      */
-    public Integer port() {
-        return this.port;
+    public Optional<Integer> port() {
+        return Optional.ofNullable(this.port);
     }
     /**
      * @return The IP address in the customer&#39;s VCN for the EKMS private endpoint. This is taken from subnet
      * 
      */
-    public String privateEndpointIp() {
-        return this.privateEndpointIp;
+    public Optional<String> privateEndpointIp() {
+        return Optional.ofNullable(this.privateEndpointIp);
     }
     /**
      * @return The current state of the EKMS private endpoint resource.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return Subnet Identifier
      * 
      */
-    public String subnetId() {
-        return this.subnetId;
+    public Optional<String> subnetId() {
+        return Optional.ofNullable(this.subnetId);
     }
     /**
      * @return The time the EKMS private endpoint was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return The time the EKMS private endpoint was updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
      * 
      */
-    public String timeUpdated() {
-        return this.timeUpdated;
+    public Optional<String> timeUpdated() {
+        return Optional.ofNullable(this.timeUpdated);
     }
 
     public static Builder builder() {
@@ -196,21 +198,21 @@ public final class GetEkmsPrivateEndpointResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String caBundle;
-        private String compartmentId;
-        private Map<String,Object> definedTags;
-        private String displayName;
+        private @Nullable String caBundle;
+        private @Nullable String compartmentId;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String displayName;
         private String ekmsPrivateEndpointId;
-        private String externalKeyManagerIp;
-        private Map<String,Object> freeformTags;
-        private String id;
-        private String lifecycleDetails;
-        private Integer port;
-        private String privateEndpointIp;
-        private String state;
-        private String subnetId;
-        private String timeCreated;
-        private String timeUpdated;
+        private @Nullable String externalKeyManagerIp;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String id;
+        private @Nullable String lifecycleDetails;
+        private @Nullable Integer port;
+        private @Nullable String privateEndpointIp;
+        private @Nullable String state;
+        private @Nullable String subnetId;
+        private @Nullable String timeCreated;
+        private @Nullable String timeUpdated;
         public Builder() {}
         public Builder(GetEkmsPrivateEndpointResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -232,23 +234,23 @@ public final class GetEkmsPrivateEndpointResult {
         }
 
         @CustomType.Setter
-        public Builder caBundle(String caBundle) {
-            this.caBundle = Objects.requireNonNull(caBundle);
+        public Builder caBundle(@Nullable String caBundle) {
+            this.caBundle = caBundle;
             return this;
         }
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
@@ -257,53 +259,53 @@ public final class GetEkmsPrivateEndpointResult {
             return this;
         }
         @CustomType.Setter
-        public Builder externalKeyManagerIp(String externalKeyManagerIp) {
-            this.externalKeyManagerIp = Objects.requireNonNull(externalKeyManagerIp);
+        public Builder externalKeyManagerIp(@Nullable String externalKeyManagerIp) {
+            this.externalKeyManagerIp = externalKeyManagerIp;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+        public Builder lifecycleDetails(@Nullable String lifecycleDetails) {
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
-        public Builder port(Integer port) {
-            this.port = Objects.requireNonNull(port);
+        public Builder port(@Nullable Integer port) {
+            this.port = port;
             return this;
         }
         @CustomType.Setter
-        public Builder privateEndpointIp(String privateEndpointIp) {
-            this.privateEndpointIp = Objects.requireNonNull(privateEndpointIp);
+        public Builder privateEndpointIp(@Nullable String privateEndpointIp) {
+            this.privateEndpointIp = privateEndpointIp;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder subnetId(String subnetId) {
-            this.subnetId = Objects.requireNonNull(subnetId);
+        public Builder subnetId(@Nullable String subnetId) {
+            this.subnetId = subnetId;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+        public Builder timeUpdated(@Nullable String timeUpdated) {
+            this.timeUpdated = timeUpdated;
             return this;
         }
         public GetEkmsPrivateEndpointResult build() {

@@ -125,42 +125,42 @@ public class AnalyticsInstance extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * (Updatable) Optional description.
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
-    private Output<String> description;
+    private Output</* @Nullable */ String> description;
 
     /**
      * @return (Updatable) Optional description.
      * 
      */
-    public Output<String> description() {
-        return this.description;
+    public Output<Optional<String>> description() {
+        return Codegen.optional(this.description);
     }
     /**
      * (Updatable) Email address receiving notifications.
      * 
      */
     @Export(name="emailNotification", refs={String.class}, tree="[0]")
-    private Output<String> emailNotification;
+    private Output</* @Nullable */ String> emailNotification;
 
     /**
      * @return (Updatable) Email address receiving notifications.
      * 
      */
-    public Output<String> emailNotification() {
-        return this.emailNotification;
+    public Output<Optional<String>> emailNotification() {
+        return Codegen.optional(this.emailNotification);
     }
     /**
      * Analytics feature set.
@@ -181,14 +181,14 @@ public class AnalyticsInstance extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * IDCS access token identifying a stripe and service administrator user.
@@ -251,28 +251,28 @@ public class AnalyticsInstance extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="networkEndpointDetails", refs={AnalyticsInstanceNetworkEndpointDetails.class}, tree="[0]")
-    private Output<AnalyticsInstanceNetworkEndpointDetails> networkEndpointDetails;
+    private Output</* @Nullable */ AnalyticsInstanceNetworkEndpointDetails> networkEndpointDetails;
 
     /**
      * @return Base representation of a network endpoint.
      * 
      */
-    public Output<AnalyticsInstanceNetworkEndpointDetails> networkEndpointDetails() {
-        return this.networkEndpointDetails;
+    public Output<Optional<AnalyticsInstanceNetworkEndpointDetails>> networkEndpointDetails() {
+        return Codegen.optional(this.networkEndpointDetails);
     }
     /**
      * URL of the Analytics service.
      * 
      */
     @Export(name="serviceUrl", refs={String.class}, tree="[0]")
-    private Output<String> serviceUrl;
+    private Output</* @Nullable */ String> serviceUrl;
 
     /**
      * @return URL of the Analytics service.
      * 
      */
-    public Output<String> serviceUrl() {
-        return this.serviceUrl;
+    public Output<Optional<String>> serviceUrl() {
+        return Codegen.optional(this.serviceUrl);
     }
     /**
      * (Updatable) The target state for the Analytics Instance. Could be set to `ACTIVE` or `INACTIVE`.
@@ -282,7 +282,7 @@ public class AnalyticsInstance extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return (Updatable) The target state for the Analytics Instance. Could be set to `ACTIVE` or `INACTIVE`.
@@ -291,36 +291,36 @@ public class AnalyticsInstance extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * The date and time the instance was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The date and time the instance was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * The date and time the instance was last updated (in the format defined by RFC3339). This timestamp represents updates made through this API. External events do not influence it.
      * 
      */
     @Export(name="timeUpdated", refs={String.class}, tree="[0]")
-    private Output<String> timeUpdated;
+    private Output</* @Nullable */ String> timeUpdated;
 
     /**
      * @return The date and time the instance was last updated (in the format defined by RFC3339). This timestamp represents updates made through this API. External events do not influence it.
      * 
      */
-    public Output<String> timeUpdated() {
-        return this.timeUpdated;
+    public Output<Optional<String>> timeUpdated() {
+        return Codegen.optional(this.timeUpdated);
     }
 
     /**

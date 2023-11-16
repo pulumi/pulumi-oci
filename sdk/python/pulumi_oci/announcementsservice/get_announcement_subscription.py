@@ -79,122 +79,77 @@ class GetAnnouncementSubscriptionResult:
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The OCID of the compartment that contains the announcement subscription.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        A description of the announcement subscription. Avoid entering confidential information.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A user-friendly name for the announcement subscription. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="filterGroups")
-    def filter_groups(self) -> Sequence['outputs.GetAnnouncementSubscriptionFilterGroupResult']:
-        """
-        A list of filter groups for the announcement subscription. A filter group is a combination of multiple filters applied to announcements for matching purposes.
-        """
+    def filter_groups(self) -> Optional[Sequence['outputs.GetAnnouncementSubscriptionFilterGroupResult']]:
         return pulumi.get(self, "filter_groups")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the announcement subscription.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        A message describing the current lifecycle state in more detail. For example, details might provide required or recommended actions for a resource in a Failed state.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="onsTopicId")
-    def ons_topic_id(self) -> str:
-        """
-        The OCID of the Notifications service topic that is the target for publishing announcements that match the configured announcement subscription.
-        """
+    def ons_topic_id(self) -> Optional[str]:
         return pulumi.get(self, "ons_topic_id")
 
     @property
     @pulumi.getter(name="preferredLanguage")
-    def preferred_language(self) -> str:
-        """
-        (For announcement subscriptions with Oracle Fusion Applications configured as the service only) The language in which the user prefers to receive emailed announcements. Specify the preference with a value that uses the language tag format (x-obmcs-human-language). For example fr-FR.
-        """
+    def preferred_language(self) -> Optional[str]:
         return pulumi.get(self, "preferred_language")
 
     @property
     @pulumi.getter(name="preferredTimeZone")
-    def preferred_time_zone(self) -> str:
-        """
-        The time zone that the user prefers for announcement time stamps. Specify the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example America/Los_Angeles.
-        """
+    def preferred_time_zone(self) -> Optional[str]:
         return pulumi.get(self, "preferred_time_zone")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current lifecycle state of the announcement subscription.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time that the announcement subscription was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The date and time that the announcement subscription was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
 
@@ -225,23 +180,7 @@ class AwaitableGetAnnouncementSubscriptionResult(GetAnnouncementSubscriptionResu
 def get_announcement_subscription(announcement_subscription_id: Optional[str] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAnnouncementSubscriptionResult:
     """
-    This data source provides details about a specific Announcement Subscription resource in Oracle Cloud Infrastructure Announcements Service service.
-
-    Gets the specified announcement subscription.
-
-    This call is subject to an Announcements limit that applies to the total number of requests across all read or write operations. Announcements might throttle this call to reject an otherwise valid request when the total rate of operations exceeds 20 requests per second for a given user. The service might also throttle this call to reject an otherwise valid request when the total rate of operations exceeds 100 requests per second for a given tenancy.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_announcement_subscription = oci.AnnouncementsService.get_announcement_subscription(announcement_subscription_id=oci_announcements_service_announcement_subscription["test_announcement_subscription"]["id"])
-    ```
-
-
-    :param str announcement_subscription_id: The OCID of the announcement subscription.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['announcementSubscriptionId'] = announcement_subscription_id
@@ -271,22 +210,6 @@ def get_announcement_subscription(announcement_subscription_id: Optional[str] = 
 def get_announcement_subscription_output(announcement_subscription_id: Optional[pulumi.Input[str]] = None,
                                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAnnouncementSubscriptionResult]:
     """
-    This data source provides details about a specific Announcement Subscription resource in Oracle Cloud Infrastructure Announcements Service service.
-
-    Gets the specified announcement subscription.
-
-    This call is subject to an Announcements limit that applies to the total number of requests across all read or write operations. Announcements might throttle this call to reject an otherwise valid request when the total rate of operations exceeds 20 requests per second for a given user. The service might also throttle this call to reject an otherwise valid request when the total rate of operations exceeds 100 requests per second for a given tenancy.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_announcement_subscription = oci.AnnouncementsService.get_announcement_subscription(announcement_subscription_id=oci_announcements_service_announcement_subscription["test_announcement_subscription"]["id"])
-    ```
-
-
-    :param str announcement_subscription_id: The OCID of the announcement subscription.
+    Use this data source to access information about an existing resource.
     """
     ...

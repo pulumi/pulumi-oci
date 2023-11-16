@@ -54,12 +54,12 @@ class GetBackendSetHealthResult:
 
     @property
     @pulumi.getter(name="criticalStateBackendNames")
-    def critical_state_backend_names(self) -> Sequence[str]:
+    def critical_state_backend_names(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "critical_state_backend_names")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -72,22 +72,22 @@ class GetBackendSetHealthResult:
 
     @property
     @pulumi.getter
-    def status(self) -> str:
+    def status(self) -> Optional[str]:
         return pulumi.get(self, "status")
 
     @property
     @pulumi.getter(name="totalBackendCount")
-    def total_backend_count(self) -> int:
+    def total_backend_count(self) -> Optional[int]:
         return pulumi.get(self, "total_backend_count")
 
     @property
     @pulumi.getter(name="unknownStateBackendNames")
-    def unknown_state_backend_names(self) -> Sequence[str]:
+    def unknown_state_backend_names(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "unknown_state_backend_names")
 
     @property
     @pulumi.getter(name="warningStateBackendNames")
-    def warning_state_backend_names(self) -> Sequence[str]:
+    def warning_state_backend_names(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "warning_state_backend_names")
 
 

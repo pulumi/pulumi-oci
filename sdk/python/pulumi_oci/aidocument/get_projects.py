@@ -46,17 +46,11 @@ class GetProjectsResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[str]:
-        """
-        The compartment identifier.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        A human-friendly name for the project, which can be changed.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -67,25 +61,16 @@ class GetProjectsResult:
     @property
     @pulumi.getter
     def id(self) -> Optional[str]:
-        """
-        A unique identifier that is immutable after creation.
-        """
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="projectCollections")
-    def project_collections(self) -> Sequence['outputs.GetProjectsProjectCollectionResult']:
-        """
-        The list of project_collection.
-        """
+    def project_collections(self) -> Optional[Sequence['outputs.GetProjectsProjectCollectionResult']]:
         return pulumi.get(self, "project_collections")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the project.
-        """
         return pulumi.get(self, "state")
 
 
@@ -110,27 +95,7 @@ def get_projects(compartment_id: Optional[str] = None,
                  state: Optional[str] = None,
                  opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetProjectsResult:
     """
-    This data source provides the list of Projects in Oracle Cloud Infrastructure Ai Document service.
-
-    Returns a list of projects.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_projects = oci.AiDocument.get_projects(compartment_id=var["compartment_id"],
-        display_name=var["project_display_name"],
-        id=var["project_id"],
-        state=var["project_state"])
-    ```
-
-
-    :param str compartment_id: The ID of the compartment in which to list resources.
-    :param str display_name: A filter to return only resources that match the entire display name given.
-    :param str id: The filter to find the project with the given identifier.
-    :param str state: The filter to match projects with the given lifecycleState.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -158,26 +123,6 @@ def get_projects_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = 
                         state: Optional[pulumi.Input[Optional[str]]] = None,
                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetProjectsResult]:
     """
-    This data source provides the list of Projects in Oracle Cloud Infrastructure Ai Document service.
-
-    Returns a list of projects.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_projects = oci.AiDocument.get_projects(compartment_id=var["compartment_id"],
-        display_name=var["project_display_name"],
-        id=var["project_id"],
-        state=var["project_state"])
-    ```
-
-
-    :param str compartment_id: The ID of the compartment in which to list resources.
-    :param str display_name: A filter to return only resources that match the entire display name given.
-    :param str id: The filter to find the project with the given identifier.
-    :param str state: The filter to match projects with the given lifecycleState.
+    Use this data source to access information about an existing resource.
     """
     ...

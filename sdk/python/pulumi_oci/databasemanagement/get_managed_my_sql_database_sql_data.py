@@ -63,7 +63,7 @@ class GetManagedMySqlDatabaseSqlDataResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -76,10 +76,7 @@ class GetManagedMySqlDatabaseSqlDataResult:
 
     @property
     @pulumi.getter(name="mySqlDataCollections")
-    def my_sql_data_collections(self) -> Sequence['outputs.GetManagedMySqlDatabaseSqlDataMySqlDataCollectionResult']:
-        """
-        The list of my_sql_data_collection.
-        """
+    def my_sql_data_collections(self) -> Optional[Sequence['outputs.GetManagedMySqlDatabaseSqlDataMySqlDataCollectionResult']]:
         return pulumi.get(self, "my_sql_data_collections")
 
     @property
@@ -110,27 +107,7 @@ def get_managed_my_sql_database_sql_data(end_time: Optional[str] = None,
                                          start_time: Optional[str] = None,
                                          opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetManagedMySqlDatabaseSqlDataResult:
     """
-    This data source provides the list of Managed My Sql Database Sql Data in Oracle Cloud Infrastructure Database Management service.
-
-    Retrieves SQL performance data for given MySQL Instance.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_managed_my_sql_database_sql_data = oci.DatabaseManagement.get_managed_my_sql_database_sql_data(end_time=var["managed_my_sql_database_sql_data_end_time"],
-        managed_my_sql_database_id=oci_database_management_managed_my_sql_database["test_managed_my_sql_database"]["id"],
-        start_time=var["managed_my_sql_database_sql_data_start_time"],
-        filter_column=var["managed_my_sql_database_sql_data_filter_column"])
-    ```
-
-
-    :param str end_time: The end time of the time range to retrieve the health metrics of a Managed Database in UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
-    :param str filter_column: The parameter to filter results by key criteria.
-    :param str managed_my_sql_database_id: The OCID of ManagedMySqlDatabase.
-    :param str start_time: The start time of the time range to retrieve the health metrics of a Managed Database in UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['endTime'] = end_time
@@ -159,26 +136,6 @@ def get_managed_my_sql_database_sql_data_output(end_time: Optional[pulumi.Input[
                                                 start_time: Optional[pulumi.Input[str]] = None,
                                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetManagedMySqlDatabaseSqlDataResult]:
     """
-    This data source provides the list of Managed My Sql Database Sql Data in Oracle Cloud Infrastructure Database Management service.
-
-    Retrieves SQL performance data for given MySQL Instance.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_managed_my_sql_database_sql_data = oci.DatabaseManagement.get_managed_my_sql_database_sql_data(end_time=var["managed_my_sql_database_sql_data_end_time"],
-        managed_my_sql_database_id=oci_database_management_managed_my_sql_database["test_managed_my_sql_database"]["id"],
-        start_time=var["managed_my_sql_database_sql_data_start_time"],
-        filter_column=var["managed_my_sql_database_sql_data_filter_column"])
-    ```
-
-
-    :param str end_time: The end time of the time range to retrieve the health metrics of a Managed Database in UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
-    :param str filter_column: The parameter to filter results by key criteria.
-    :param str managed_my_sql_database_id: The OCID of ManagedMySqlDatabase.
-    :param str start_time: The start time of the time range to retrieve the health metrics of a Managed Database in UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
+    Use this data source to access information about an existing resource.
     """
     ...

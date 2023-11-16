@@ -124,40 +124,40 @@ namespace Pulumi.Oci.BigDataService
         /// <summary>
         /// The name of the region to establish the Object Storage endpoint which was set as part of key creation operation. If no region was provided this will be set to be the same region where the cluster lives. Example us-phoenix-1 .
         /// </summary>
-        public readonly string DefaultRegion;
+        public readonly string? DefaultRegion;
         /// <summary>
         /// The fingerprint that corresponds to the public API key requested.
         /// </summary>
-        public readonly string Fingerprint;
+        public readonly string? Fingerprint;
         /// <summary>
         /// Identifier of the user's API key.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// User friendly identifier used to uniquely differentiate between different API keys. Only ASCII alphanumeric characters with no spaces allowed.
         /// </summary>
-        public readonly string KeyAlias;
-        public readonly string Passphrase;
+        public readonly string? KeyAlias;
+        public readonly string? Passphrase;
         /// <summary>
         /// The full path and file name of the private key used for authentication. This location will be automatically selected on the BDS local file system.
         /// </summary>
-        public readonly string Pemfilepath;
+        public readonly string? Pemfilepath;
         /// <summary>
         /// The current status of the API key.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// The OCID of your tenancy.
         /// </summary>
-        public readonly string TenantId;
+        public readonly string? TenantId;
         /// <summary>
         /// The time the API key was created, shown as an RFC 3339 formatted datetime string.
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The user OCID for which this API key was created.
         /// </summary>
-        public readonly string UserId;
+        public readonly string? UserId;
 
         [OutputConstructor]
         private GetBdsInstanceApiKeyResult(
@@ -165,25 +165,25 @@ namespace Pulumi.Oci.BigDataService
 
             string bdsInstanceId,
 
-            string defaultRegion,
+            string? defaultRegion,
 
-            string fingerprint,
+            string? fingerprint,
 
-            string id,
+            string? id,
 
-            string keyAlias,
+            string? keyAlias,
 
-            string passphrase,
+            string? passphrase,
 
-            string pemfilepath,
+            string? pemfilepath,
 
-            string state,
+            string? state,
 
-            string tenantId,
+            string? tenantId,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string userId)
+            string? userId)
         {
             ApiKeyId = apiKeyId;
             BdsInstanceId = bdsInstanceId;

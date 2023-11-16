@@ -16,29 +16,29 @@ namespace Pulumi.Oci.DataLabellingService.Outputs
         /// <summary>
         /// Bucket name
         /// </summary>
-        public readonly string Bucket;
+        public readonly string? Bucket;
         /// <summary>
         /// Bucket namespace name
         /// </summary>
-        public readonly string Namespace;
+        public readonly string? Namespace;
         /// <summary>
         /// A common path prefix shared by the objects that make up the dataset. Except for the CSV file type, records are not generated for the objects whose names exactly match with the prefix.
         /// </summary>
-        public readonly string Prefix;
+        public readonly string? Prefix;
         /// <summary>
         /// The type of data source. OBJECT_STORAGE - The source details for an object storage bucket.
         /// </summary>
-        public readonly string SourceType;
+        public readonly string? SourceType;
 
         [OutputConstructor]
         private GetDatasetsDatasetCollectionItemDatasetSourceDetailResult(
-            string bucket,
+            string? bucket,
 
-            string @namespace,
+            string? @namespace,
 
-            string prefix,
+            string? prefix,
 
-            string sourceType)
+            string? sourceType)
         {
             Bucket = bucket;
             Namespace = @namespace;

@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAutonomousDatabasesAutonomousDatabaseResourcePoolSummary {
@@ -14,27 +16,27 @@ public final class GetAutonomousDatabasesAutonomousDatabaseResourcePoolSummary {
      * @return Indicates if the resource pool should be deleted for the Autonomous Database.
      * 
      */
-    private Boolean isDisabled;
+    private @Nullable Boolean isDisabled;
     /**
      * @return Resource pool size.
      * 
      */
-    private Integer poolSize;
+    private @Nullable Integer poolSize;
 
     private GetAutonomousDatabasesAutonomousDatabaseResourcePoolSummary() {}
     /**
      * @return Indicates if the resource pool should be deleted for the Autonomous Database.
      * 
      */
-    public Boolean isDisabled() {
-        return this.isDisabled;
+    public Optional<Boolean> isDisabled() {
+        return Optional.ofNullable(this.isDisabled);
     }
     /**
      * @return Resource pool size.
      * 
      */
-    public Integer poolSize() {
-        return this.poolSize;
+    public Optional<Integer> poolSize() {
+        return Optional.ofNullable(this.poolSize);
     }
 
     public static Builder builder() {
@@ -46,8 +48,8 @@ public final class GetAutonomousDatabasesAutonomousDatabaseResourcePoolSummary {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Boolean isDisabled;
-        private Integer poolSize;
+        private @Nullable Boolean isDisabled;
+        private @Nullable Integer poolSize;
         public Builder() {}
         public Builder(GetAutonomousDatabasesAutonomousDatabaseResourcePoolSummary defaults) {
     	      Objects.requireNonNull(defaults);
@@ -56,13 +58,13 @@ public final class GetAutonomousDatabasesAutonomousDatabaseResourcePoolSummary {
         }
 
         @CustomType.Setter
-        public Builder isDisabled(Boolean isDisabled) {
-            this.isDisabled = Objects.requireNonNull(isDisabled);
+        public Builder isDisabled(@Nullable Boolean isDisabled) {
+            this.isDisabled = isDisabled;
             return this;
         }
         @CustomType.Setter
-        public Builder poolSize(Integer poolSize) {
-            this.poolSize = Objects.requireNonNull(poolSize);
+        public Builder poolSize(@Nullable Integer poolSize) {
+            this.poolSize = poolSize;
             return this;
         }
         public GetAutonomousDatabasesAutonomousDatabaseResourcePoolSummary build() {

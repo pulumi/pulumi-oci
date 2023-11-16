@@ -108,50 +108,50 @@ namespace Pulumi.Oci.Oda
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that the ODA private endpoint attachment belongs to.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ODA Private Endpoint Attachment.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the attached ODA Instance.
         /// </summary>
-        public readonly string OdaInstanceId;
+        public readonly string? OdaInstanceId;
         public readonly string OdaPrivateEndpointAttachmentId;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ODA Private Endpoint.
         /// </summary>
-        public readonly string OdaPrivateEndpointId;
+        public readonly string? OdaPrivateEndpointId;
         /// <summary>
         /// The current state of the ODA Private Endpoint attachment.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// When the resource was created. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// When the resource was last updated. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
         /// </summary>
-        public readonly string TimeUpdated;
+        public readonly string? TimeUpdated;
 
         [OutputConstructor]
         private GetOdaPrivateEndpointAttachmentResult(
-            string compartmentId,
+            string? compartmentId,
 
-            string id,
+            string? id,
 
-            string odaInstanceId,
+            string? odaInstanceId,
 
             string odaPrivateEndpointAttachmentId,
 
-            string odaPrivateEndpointId,
+            string? odaPrivateEndpointId,
 
-            string state,
+            string? state,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeUpdated)
+            string? timeUpdated)
         {
             CompartmentId = compartmentId;
             Id = id;

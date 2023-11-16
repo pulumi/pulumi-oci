@@ -67,7 +67,7 @@ export interface GetAssetSourcesResult {
     /**
      * The list of asset_source_collection.
      */
-    readonly assetSourceCollections: outputs.CloudBridge.GetAssetSourcesAssetSourceCollection[];
+    readonly assetSourceCollections?: outputs.CloudBridge.GetAssetSourcesAssetSourceCollection[];
     readonly assetSourceId?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for the resource.
@@ -81,7 +81,7 @@ export interface GetAssetSourcesResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The current state of the asset source.
      */

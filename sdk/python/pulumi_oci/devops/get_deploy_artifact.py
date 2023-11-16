@@ -74,26 +74,17 @@ class GetDeployArtifactResult:
 
     @property
     @pulumi.getter(name="argumentSubstitutionMode")
-    def argument_substitution_mode(self) -> str:
-        """
-        Mode for artifact parameter substitution. Options: `"NONE", "SUBSTITUTE_PLACEHOLDERS"` For Helm Deployments only "NONE" is supported.
-        """
+    def argument_substitution_mode(self) -> Optional[str]:
         return pulumi.get(self, "argument_substitution_mode")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The OCID of a compartment.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
@@ -103,98 +94,62 @@ class GetDeployArtifactResult:
 
     @property
     @pulumi.getter(name="deployArtifactSources")
-    def deploy_artifact_sources(self) -> Sequence['outputs.GetDeployArtifactDeployArtifactSourceResult']:
-        """
-        Specifies source of an artifact.
-        """
+    def deploy_artifact_sources(self) -> Optional[Sequence['outputs.GetDeployArtifactDeployArtifactSourceResult']]:
         return pulumi.get(self, "deploy_artifact_sources")
 
     @property
     @pulumi.getter(name="deployArtifactType")
-    def deploy_artifact_type(self) -> str:
-        """
-        Type of the deployment artifact.
-        """
+    def deploy_artifact_type(self) -> Optional[str]:
         return pulumi.get(self, "deploy_artifact_type")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        Optional description about the artifact to be deployed.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        Deployment artifact identifier, which can be renamed and is not necessarily unique. Avoid entering confidential information.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        Unique identifier that is immutable on creation.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        A detailed message describing the current state. For example, can be used to provide actionable information for a resource in Failed state.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="projectId")
-    def project_id(self) -> str:
-        """
-        The OCID of a project.
-        """
+    def project_id(self) -> Optional[str]:
         return pulumi.get(self, "project_id")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        Current state of the deployment artifact.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        Time the deployment artifact was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        Time the deployment artifact was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
 
@@ -225,21 +180,7 @@ class AwaitableGetDeployArtifactResult(GetDeployArtifactResult):
 def get_deploy_artifact(deploy_artifact_id: Optional[str] = None,
                         opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDeployArtifactResult:
     """
-    This data source provides details about a specific Deploy Artifact resource in Oracle Cloud Infrastructure Devops service.
-
-    Retrieves a deployment artifact by identifier.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_deploy_artifact = oci.DevOps.get_deploy_artifact(deploy_artifact_id=oci_devops_deploy_artifact["test_deploy_artifact"]["id"])
-    ```
-
-
-    :param str deploy_artifact_id: Unique artifact identifier.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['deployArtifactId'] = deploy_artifact_id
@@ -269,20 +210,6 @@ def get_deploy_artifact(deploy_artifact_id: Optional[str] = None,
 def get_deploy_artifact_output(deploy_artifact_id: Optional[pulumi.Input[str]] = None,
                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDeployArtifactResult]:
     """
-    This data source provides details about a specific Deploy Artifact resource in Oracle Cloud Infrastructure Devops service.
-
-    Retrieves a deployment artifact by identifier.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_deploy_artifact = oci.DevOps.get_deploy_artifact(deploy_artifact_id=oci_devops_deploy_artifact["test_deploy_artifact"]["id"])
-    ```
-
-
-    :param str deploy_artifact_id: Unique artifact identifier.
+    Use this data source to access information about an existing resource.
     """
     ...

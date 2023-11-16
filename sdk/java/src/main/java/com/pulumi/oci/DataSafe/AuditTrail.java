@@ -39,28 +39,28 @@ public class AuditTrail extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="auditCollectionStartTime", refs={String.class}, tree="[0]")
-    private Output<String> auditCollectionStartTime;
+    private Output</* @Nullable */ String> auditCollectionStartTime;
 
     /**
      * @return The date from which the audit trail must start collecting data, in the format defined by RFC3339.
      * 
      */
-    public Output<String> auditCollectionStartTime() {
-        return this.auditCollectionStartTime;
+    public Output<Optional<String>> auditCollectionStartTime() {
+        return Codegen.optional(this.auditCollectionStartTime);
     }
     /**
      * The OCID of the  parent audit.
      * 
      */
     @Export(name="auditProfileId", refs={String.class}, tree="[0]")
-    private Output<String> auditProfileId;
+    private Output</* @Nullable */ String> auditProfileId;
 
     /**
      * @return The OCID of the  parent audit.
      * 
      */
-    public Output<String> auditProfileId() {
-        return this.auditProfileId;
+    public Output<Optional<String>> auditProfileId() {
+        return Codegen.optional(this.auditProfileId);
     }
     /**
      * The OCID of the audit trail.
@@ -81,98 +81,98 @@ public class AuditTrail extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="compartmentId", refs={String.class}, tree="[0]")
-    private Output<String> compartmentId;
+    private Output</* @Nullable */ String> compartmentId;
 
     /**
      * @return The OCID of the compartment that contains the audit trail and is the same as the compartment of the audit profile resource.
      * 
      */
-    public Output<String> compartmentId() {
-        return this.compartmentId;
+    public Output<Optional<String>> compartmentId() {
+        return Codegen.optional(this.compartmentId);
     }
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * (Updatable) The description of the audit trail.
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
-    private Output<String> description;
+    private Output</* @Nullable */ String> description;
 
     /**
      * @return (Updatable) The description of the audit trail.
      * 
      */
-    public Output<String> description() {
-        return this.description;
+    public Output<Optional<String>> description() {
+        return Codegen.optional(this.description);
     }
     /**
      * (Updatable) The display name of the audit trail. The name does not have to be unique, and it&#39;s changeable.
      * 
      */
     @Export(name="displayName", refs={String.class}, tree="[0]")
-    private Output<String> displayName;
+    private Output</* @Nullable */ String> displayName;
 
     /**
      * @return (Updatable) The display name of the audit trail. The name does not have to be unique, and it&#39;s changeable.
      * 
      */
-    public Output<String> displayName() {
-        return this.displayName;
+    public Output<Optional<String>> displayName() {
+        return Codegen.optional(this.displayName);
     }
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * (Updatable) Indicates if auto purge is enabled on the target database, which helps delete audit data in the target database every seven days so that the database&#39;s audit trail does not become too large.
      * 
      */
     @Export(name="isAutoPurgeEnabled", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isAutoPurgeEnabled;
+    private Output</* @Nullable */ Boolean> isAutoPurgeEnabled;
 
     /**
      * @return (Updatable) Indicates if auto purge is enabled on the target database, which helps delete audit data in the target database every seven days so that the database&#39;s audit trail does not become too large.
      * 
      */
-    public Output<Boolean> isAutoPurgeEnabled() {
-        return this.isAutoPurgeEnabled;
+    public Output<Optional<Boolean>> isAutoPurgeEnabled() {
+        return Codegen.optional(this.isAutoPurgeEnabled);
     }
     /**
      * Details about the current state of the audit trail in Data Safe.
      * 
      */
     @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
-    private Output<String> lifecycleDetails;
+    private Output</* @Nullable */ String> lifecycleDetails;
 
     /**
      * @return Details about the current state of the audit trail in Data Safe.
      * 
      */
-    public Output<String> lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Output<Optional<String>> lifecycleDetails() {
+        return Codegen.optional(this.lifecycleDetails);
     }
     /**
      * (Updatable) An optional property when incremented triggers Resume. Could be set to any integer value.
@@ -199,126 +199,126 @@ public class AuditTrail extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return (Updatable) The target state for the Audit Trail. Could be set to `ACTIVE` or `INACTIVE`.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * The current sub-state of the audit trail.
      * 
      */
     @Export(name="status", refs={String.class}, tree="[0]")
-    private Output<String> status;
+    private Output</* @Nullable */ String> status;
 
     /**
      * @return The current sub-state of the audit trail.
      * 
      */
-    public Output<String> status() {
-        return this.status;
+    public Output<Optional<String>> status() {
+        return Codegen.optional(this.status);
     }
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
     @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> systemTags;
+    private Output</* @Nullable */ Map<String,Object>> systemTags;
 
     /**
      * @return System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    public Output<Map<String,Object>> systemTags() {
-        return this.systemTags;
+    public Output<Optional<Map<String,Object>>> systemTags() {
+        return Codegen.optional(this.systemTags);
     }
     /**
      * The OCID of the Data Safe target for which the audit trail is created.
      * 
      */
     @Export(name="targetId", refs={String.class}, tree="[0]")
-    private Output<String> targetId;
+    private Output</* @Nullable */ String> targetId;
 
     /**
      * @return The OCID of the Data Safe target for which the audit trail is created.
      * 
      */
-    public Output<String> targetId() {
-        return this.targetId;
+    public Output<Optional<String>> targetId() {
+        return Codegen.optional(this.targetId);
     }
     /**
      * The date and time the audit trail was created, in the format defined by RFC3339.
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The date and time the audit trail was created, in the format defined by RFC3339.
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * The date and time until when the audit events were collected from the target database by the Data Safe audit trail  collection process, in the format defined by RFC3339.
      * 
      */
     @Export(name="timeLastCollected", refs={String.class}, tree="[0]")
-    private Output<String> timeLastCollected;
+    private Output</* @Nullable */ String> timeLastCollected;
 
     /**
      * @return The date and time until when the audit events were collected from the target database by the Data Safe audit trail  collection process, in the format defined by RFC3339.
      * 
      */
-    public Output<String> timeLastCollected() {
-        return this.timeLastCollected;
+    public Output<Optional<String>> timeLastCollected() {
+        return Codegen.optional(this.timeLastCollected);
     }
     /**
      * The date and time the audit trail was updated, in the format defined by RFC3339.
      * 
      */
     @Export(name="timeUpdated", refs={String.class}, tree="[0]")
-    private Output<String> timeUpdated;
+    private Output</* @Nullable */ String> timeUpdated;
 
     /**
      * @return The date and time the audit trail was updated, in the format defined by RFC3339.
      * 
      */
-    public Output<String> timeUpdated() {
-        return this.timeUpdated;
+    public Output<Optional<String>> timeUpdated() {
+        return Codegen.optional(this.timeUpdated);
     }
     /**
      * An audit trail location represents the source of audit records that provides documentary evidence of the sequence of activities in the target database.
      * 
      */
     @Export(name="trailLocation", refs={String.class}, tree="[0]")
-    private Output<String> trailLocation;
+    private Output</* @Nullable */ String> trailLocation;
 
     /**
      * @return An audit trail location represents the source of audit records that provides documentary evidence of the sequence of activities in the target database.
      * 
      */
-    public Output<String> trailLocation() {
-        return this.trailLocation;
+    public Output<Optional<String>> trailLocation() {
+        return Codegen.optional(this.trailLocation);
     }
     /**
      * The OCID of the workrequest for audit trail which collects audit records.
      * 
      */
     @Export(name="workRequestId", refs={String.class}, tree="[0]")
-    private Output<String> workRequestId;
+    private Output</* @Nullable */ String> workRequestId;
 
     /**
      * @return The OCID of the workrequest for audit trail which collects audit records.
      * 
      */
-    public Output<String> workRequestId() {
-        return this.workRequestId;
+    public Output<Optional<String>> workRequestId() {
+        return Codegen.optional(this.workRequestId);
     }
 
     /**

@@ -169,12 +169,12 @@ namespace Pulumi.Oci.Kms
         /// <summary>
         /// The encrypted data.
         /// </summary>
-        public readonly string Ciphertext;
+        public readonly string? Ciphertext;
         public readonly string CryptoEndpoint;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         public readonly string KeyId;
         public readonly string Plaintext;
 
@@ -182,11 +182,11 @@ namespace Pulumi.Oci.Kms
         private GetEncryptedDataResult(
             ImmutableDictionary<string, object>? associatedData,
 
-            string ciphertext,
+            string? ciphertext,
 
             string cryptoEndpoint,
 
-            string id,
+            string? id,
 
             string keyId,
 

@@ -16,113 +16,113 @@ namespace Pulumi.Oci.LicenseManager.Outputs
         /// <summary>
         /// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) where the license record is created.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// The license record display name. Avoid entering confidential information.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// The license record end date in [RFC 3339](https://tools.ietf.org/html/rfc3339) date format. Example: `2018-09-12`
         /// </summary>
-        public readonly string ExpirationDate;
+        public readonly string? ExpirationDate;
         /// <summary>
         /// Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// The license record [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Specifies if the license record term is perpertual.
         /// </summary>
-        public readonly bool IsPerpetual;
+        public readonly bool? IsPerpetual;
         /// <summary>
         /// Specifies if the license count is unlimited.
         /// </summary>
-        public readonly bool IsUnlimited;
+        public readonly bool? IsUnlimited;
         /// <summary>
         /// The number of license units added by the user for the given license record. Default 1
         /// </summary>
-        public readonly int LicenseCount;
+        public readonly int? LicenseCount;
         /// <summary>
         /// The product license unit.
         /// </summary>
-        public readonly string LicenseUnit;
+        public readonly string? LicenseUnit;
         /// <summary>
         /// The license record product ID.
         /// </summary>
-        public readonly string ProductId;
+        public readonly string? ProductId;
         /// <summary>
         /// The product license name with which the license record is associated.
         /// </summary>
-        public readonly string ProductLicense;
+        public readonly string? ProductLicense;
         /// <summary>
         /// Unique product license identifier.
         /// </summary>
-        public readonly string ProductLicenseId;
+        public readonly string? ProductLicenseId;
         /// <summary>
         /// The current license record state.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// The license record support end date in [RFC 3339](https://tools.ietf.org/html/rfc3339) date format. Example: `2018-09-12`
         /// </summary>
-        public readonly string SupportEndDate;
+        public readonly string? SupportEndDate;
         /// <summary>
         /// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> SystemTags;
+        public readonly ImmutableDictionary<string, object>? SystemTags;
         /// <summary>
         /// The time the license record was created. An [RFC 3339](https://tools.ietf.org/html/rfc3339)-formatted datetime string.
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The time the license record was updated. An [RFC 3339](https://tools.ietf.org/html/rfc3339)-formatted datetime string.
         /// </summary>
-        public readonly string TimeUpdated;
+        public readonly string? TimeUpdated;
 
         [OutputConstructor]
         private GetLicenseRecordsLicenseRecordCollectionItemResult(
-            string compartmentId,
+            string? compartmentId,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string displayName,
+            string? displayName,
 
-            string expirationDate,
+            string? expirationDate,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string id,
+            string? id,
 
-            bool isPerpetual,
+            bool? isPerpetual,
 
-            bool isUnlimited,
+            bool? isUnlimited,
 
-            int licenseCount,
+            int? licenseCount,
 
-            string licenseUnit,
+            string? licenseUnit,
 
-            string productId,
+            string? productId,
 
-            string productLicense,
+            string? productLicense,
 
-            string productLicenseId,
+            string? productLicenseId,
 
-            string state,
+            string? state,
 
-            string supportEndDate,
+            string? supportEndDate,
 
-            ImmutableDictionary<string, object> systemTags,
+            ImmutableDictionary<string, object>? systemTags,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeUpdated)
+            string? timeUpdated)
         {
             CompartmentId = compartmentId;
             DefinedTags = definedTags;

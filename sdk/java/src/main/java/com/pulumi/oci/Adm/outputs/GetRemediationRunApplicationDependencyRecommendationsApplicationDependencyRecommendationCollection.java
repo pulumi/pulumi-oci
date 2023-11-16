@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.Adm.outputs.GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollection {
@@ -14,7 +15,7 @@ public final class GetRemediationRunApplicationDependencyRecommendationsApplicat
      * @return List of application recommendation summaries.
      * 
      */
-    private List<GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItem> items;
+    private @Nullable List<GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItem> items;
 
     private GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollection() {}
     /**
@@ -22,7 +23,7 @@ public final class GetRemediationRunApplicationDependencyRecommendationsApplicat
      * 
      */
     public List<GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -34,7 +35,7 @@ public final class GetRemediationRunApplicationDependencyRecommendationsApplicat
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItem> items;
+        private @Nullable List<GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItem> items;
         public Builder() {}
         public Builder(GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -42,8 +43,8 @@ public final class GetRemediationRunApplicationDependencyRecommendationsApplicat
         }
 
         @CustomType.Setter
-        public Builder items(List<GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItem... items) {

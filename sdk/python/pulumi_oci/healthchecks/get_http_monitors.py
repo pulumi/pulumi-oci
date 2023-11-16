@@ -46,17 +46,11 @@ class GetHttpMonitorsResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The OCID of the compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        A user-friendly and mutable name suitable for display in a user interface.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -67,22 +61,16 @@ class GetHttpMonitorsResult:
     @property
     @pulumi.getter(name="homeRegion")
     def home_region(self) -> Optional[str]:
-        """
-        The region where updates must be made and where results must be fetched from.
-        """
         return pulumi.get(self, "home_region")
 
     @property
     @pulumi.getter(name="httpMonitors")
-    def http_monitors(self) -> Sequence['outputs.GetHttpMonitorsHttpMonitorResult']:
-        """
-        The list of http_monitors.
-        """
+    def http_monitors(self) -> Optional[Sequence['outputs.GetHttpMonitorsHttpMonitorResult']]:
         return pulumi.get(self, "http_monitors")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -109,25 +97,7 @@ def get_http_monitors(compartment_id: Optional[str] = None,
                       home_region: Optional[str] = None,
                       opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetHttpMonitorsResult:
     """
-    This data source provides the list of Http Monitors in Oracle Cloud Infrastructure Health Checks service.
-
-    Gets a list of HTTP monitors.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_http_monitors = oci.HealthChecks.get_http_monitors(compartment_id=var["compartment_id"],
-        display_name=var["http_monitor_display_name"],
-        home_region=var["http_monitor_home_region"])
-    ```
-
-
-    :param str compartment_id: Filters results by compartment.
-    :param str display_name: Filters results that exactly match the `displayName` field.
-    :param str home_region: Filters results that match the `homeRegion`.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -153,24 +123,6 @@ def get_http_monitors_output(compartment_id: Optional[pulumi.Input[str]] = None,
                              home_region: Optional[pulumi.Input[Optional[str]]] = None,
                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetHttpMonitorsResult]:
     """
-    This data source provides the list of Http Monitors in Oracle Cloud Infrastructure Health Checks service.
-
-    Gets a list of HTTP monitors.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_http_monitors = oci.HealthChecks.get_http_monitors(compartment_id=var["compartment_id"],
-        display_name=var["http_monitor_display_name"],
-        home_region=var["http_monitor_home_region"])
-    ```
-
-
-    :param str compartment_id: Filters results by compartment.
-    :param str display_name: Filters results that exactly match the `displayName` field.
-    :param str home_region: Filters results that match the `homeRegion`.
+    Use this data source to access information about an existing resource.
     """
     ...

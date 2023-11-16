@@ -100,11 +100,11 @@ export class NetworkFirewallPolicySecurityRule extends pulumi.CustomResource {
     /**
      * OCID of the Network Firewall Policy this security rule belongs to.
      */
-    public /*out*/ readonly parentResourceId!: pulumi.Output<string>;
+    public /*out*/ readonly parentResourceId!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) An object which defines the position of the rule. Only one of the following position references should be provided.
      */
-    public readonly positions!: pulumi.Output<outputs.NetworkFirewall.NetworkFirewallPolicySecurityRulePosition[]>;
+    public readonly positions!: pulumi.Output<outputs.NetworkFirewall.NetworkFirewallPolicySecurityRulePosition[] | undefined>;
     public readonly priorityOrder!: pulumi.Output<string | undefined>;
 
     /**

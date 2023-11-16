@@ -6,6 +6,8 @@ package com.pulumi.oci.Identity.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDomainsGroupUrnietfparamsscimschemasoracleidcsextensiondynamicGroup {
@@ -13,27 +15,27 @@ public final class GetDomainsGroupUrnietfparamsscimschemasoracleidcsextensiondyn
      * @return Membership rule
      * 
      */
-    private String membershipRule;
+    private @Nullable String membershipRule;
     /**
      * @return Membership type
      * 
      */
-    private String membershipType;
+    private @Nullable String membershipType;
 
     private GetDomainsGroupUrnietfparamsscimschemasoracleidcsextensiondynamicGroup() {}
     /**
      * @return Membership rule
      * 
      */
-    public String membershipRule() {
-        return this.membershipRule;
+    public Optional<String> membershipRule() {
+        return Optional.ofNullable(this.membershipRule);
     }
     /**
      * @return Membership type
      * 
      */
-    public String membershipType() {
-        return this.membershipType;
+    public Optional<String> membershipType() {
+        return Optional.ofNullable(this.membershipType);
     }
 
     public static Builder builder() {
@@ -45,8 +47,8 @@ public final class GetDomainsGroupUrnietfparamsscimschemasoracleidcsextensiondyn
     }
     @CustomType.Builder
     public static final class Builder {
-        private String membershipRule;
-        private String membershipType;
+        private @Nullable String membershipRule;
+        private @Nullable String membershipType;
         public Builder() {}
         public Builder(GetDomainsGroupUrnietfparamsscimschemasoracleidcsextensiondynamicGroup defaults) {
     	      Objects.requireNonNull(defaults);
@@ -55,13 +57,13 @@ public final class GetDomainsGroupUrnietfparamsscimschemasoracleidcsextensiondyn
         }
 
         @CustomType.Setter
-        public Builder membershipRule(String membershipRule) {
-            this.membershipRule = Objects.requireNonNull(membershipRule);
+        public Builder membershipRule(@Nullable String membershipRule) {
+            this.membershipRule = membershipRule;
             return this;
         }
         @CustomType.Setter
-        public Builder membershipType(String membershipType) {
-            this.membershipType = Objects.requireNonNull(membershipType);
+        public Builder membershipType(@Nullable String membershipType) {
+            this.membershipType = membershipType;
             return this;
         }
         public GetDomainsGroupUrnietfparamsscimschemasoracleidcsextensiondynamicGroup build() {

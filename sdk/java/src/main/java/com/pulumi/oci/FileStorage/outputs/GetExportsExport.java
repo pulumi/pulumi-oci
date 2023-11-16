@@ -9,6 +9,8 @@ import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetExportsExport {
@@ -16,42 +18,42 @@ public final class GetExportsExport {
      * @return Policies that apply to NFS requests made through this export. `exportOptions` contains a sequential list of `ClientOptions`. Each `ClientOptions` item defines the export options that are applied to a specified set of clients.
      * 
      */
-    private List<GetExportsExportExportOption> exportOptions;
+    private @Nullable List<GetExportsExportExportOption> exportOptions;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the export set.
      * 
      */
-    private String exportSetId;
+    private @Nullable String exportSetId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system.
      * 
      */
-    private String fileSystemId;
+    private @Nullable String fileSystemId;
     /**
      * @return Filter results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resouce type.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Whether or not the export should use ID mapping for Unix groups rather than the group list provided within an NFS request&#39;s RPC header. When this flag is true the Unix UID from the RPC header is used to retrieve the list of secondary groups from a the ID mapping subsystem. The primary GID is always taken from the RPC header. If ID mapping is not configured, incorrectly configured, unavailable, or cannot be used to determine a list of secondary groups then an empty secondary group list is used for authorization. If the number of groups exceeds the limit of 256 groups, the list retrieved from LDAP is truncated to the first 256 groups read.
      * 
      */
-    private Boolean isIdmapGroupsForSysAuth;
+    private @Nullable Boolean isIdmapGroupsForSysAuth;
     /**
      * @return Path used to access the associated file system.
      * 
      */
-    private String path;
+    private @Nullable String path;
     /**
      * @return Filter results by the specified lifecycle state. Must be a valid state for the resource type.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return The date and time the export was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
 
     private GetExportsExport() {}
     /**
@@ -59,56 +61,56 @@ public final class GetExportsExport {
      * 
      */
     public List<GetExportsExportExportOption> exportOptions() {
-        return this.exportOptions;
+        return this.exportOptions == null ? List.of() : this.exportOptions;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the export set.
      * 
      */
-    public String exportSetId() {
-        return this.exportSetId;
+    public Optional<String> exportSetId() {
+        return Optional.ofNullable(this.exportSetId);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system.
      * 
      */
-    public String fileSystemId() {
-        return this.fileSystemId;
+    public Optional<String> fileSystemId() {
+        return Optional.ofNullable(this.fileSystemId);
     }
     /**
      * @return Filter results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resouce type.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Whether or not the export should use ID mapping for Unix groups rather than the group list provided within an NFS request&#39;s RPC header. When this flag is true the Unix UID from the RPC header is used to retrieve the list of secondary groups from a the ID mapping subsystem. The primary GID is always taken from the RPC header. If ID mapping is not configured, incorrectly configured, unavailable, or cannot be used to determine a list of secondary groups then an empty secondary group list is used for authorization. If the number of groups exceeds the limit of 256 groups, the list retrieved from LDAP is truncated to the first 256 groups read.
      * 
      */
-    public Boolean isIdmapGroupsForSysAuth() {
-        return this.isIdmapGroupsForSysAuth;
+    public Optional<Boolean> isIdmapGroupsForSysAuth() {
+        return Optional.ofNullable(this.isIdmapGroupsForSysAuth);
     }
     /**
      * @return Path used to access the associated file system.
      * 
      */
-    public String path() {
-        return this.path;
+    public Optional<String> path() {
+        return Optional.ofNullable(this.path);
     }
     /**
      * @return Filter results by the specified lifecycle state. Must be a valid state for the resource type.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return The date and time the export was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
 
     public static Builder builder() {
@@ -120,14 +122,14 @@ public final class GetExportsExport {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetExportsExportExportOption> exportOptions;
-        private String exportSetId;
-        private String fileSystemId;
-        private String id;
-        private Boolean isIdmapGroupsForSysAuth;
-        private String path;
-        private String state;
-        private String timeCreated;
+        private @Nullable List<GetExportsExportExportOption> exportOptions;
+        private @Nullable String exportSetId;
+        private @Nullable String fileSystemId;
+        private @Nullable String id;
+        private @Nullable Boolean isIdmapGroupsForSysAuth;
+        private @Nullable String path;
+        private @Nullable String state;
+        private @Nullable String timeCreated;
         public Builder() {}
         public Builder(GetExportsExport defaults) {
     	      Objects.requireNonNull(defaults);
@@ -142,46 +144,46 @@ public final class GetExportsExport {
         }
 
         @CustomType.Setter
-        public Builder exportOptions(List<GetExportsExportExportOption> exportOptions) {
-            this.exportOptions = Objects.requireNonNull(exportOptions);
+        public Builder exportOptions(@Nullable List<GetExportsExportExportOption> exportOptions) {
+            this.exportOptions = exportOptions;
             return this;
         }
         public Builder exportOptions(GetExportsExportExportOption... exportOptions) {
             return exportOptions(List.of(exportOptions));
         }
         @CustomType.Setter
-        public Builder exportSetId(String exportSetId) {
-            this.exportSetId = Objects.requireNonNull(exportSetId);
+        public Builder exportSetId(@Nullable String exportSetId) {
+            this.exportSetId = exportSetId;
             return this;
         }
         @CustomType.Setter
-        public Builder fileSystemId(String fileSystemId) {
-            this.fileSystemId = Objects.requireNonNull(fileSystemId);
+        public Builder fileSystemId(@Nullable String fileSystemId) {
+            this.fileSystemId = fileSystemId;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder isIdmapGroupsForSysAuth(Boolean isIdmapGroupsForSysAuth) {
-            this.isIdmapGroupsForSysAuth = Objects.requireNonNull(isIdmapGroupsForSysAuth);
+        public Builder isIdmapGroupsForSysAuth(@Nullable Boolean isIdmapGroupsForSysAuth) {
+            this.isIdmapGroupsForSysAuth = isIdmapGroupsForSysAuth;
             return this;
         }
         @CustomType.Setter
-        public Builder path(String path) {
-            this.path = Objects.requireNonNull(path);
+        public Builder path(@Nullable String path) {
+            this.path = path;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         public GetExportsExport build() {

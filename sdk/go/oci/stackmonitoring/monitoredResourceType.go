@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Monitored Resource Type resource in Oracle Cloud Infrastructure Stack Monitoring service.
@@ -88,22 +87,22 @@ type MonitoredResourceType struct {
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// (Updatable) The metadata details for resource type.
-	Metadata MonitoredResourceTypeMetadataOutput `pulumi:"metadata"`
+	Metadata MonitoredResourceTypeMetadataPtrOutput `pulumi:"metadata"`
 	// (Updatable) Metric namespace for resource type.
-	MetricNamespace pulumi.StringOutput `pulumi:"metricNamespace"`
+	MetricNamespace pulumi.StringPtrOutput `pulumi:"metricNamespace"`
 	// A unique monitored resource type name. The name must be unique across tenancy.  Name can not be changed.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Name pulumi.StringOutput `pulumi:"name"`
 	// Lifecycle state of the monitored resource type.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
 	// The date and time when the monitored resource type was created, expressed in  [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The date and time when the monitored resource was updated, expressed in  [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
-	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 }
 
 // NewMonitoredResourceType registers a new resource with the given unique name, arguments, and options.
@@ -270,12 +269,6 @@ func (i *MonitoredResourceType) ToMonitoredResourceTypeOutputWithContext(ctx con
 	return pulumi.ToOutputWithContext(ctx, i).(MonitoredResourceTypeOutput)
 }
 
-func (i *MonitoredResourceType) ToOutput(ctx context.Context) pulumix.Output[*MonitoredResourceType] {
-	return pulumix.Output[*MonitoredResourceType]{
-		OutputState: i.ToMonitoredResourceTypeOutputWithContext(ctx).OutputState,
-	}
-}
-
 // MonitoredResourceTypeArrayInput is an input type that accepts MonitoredResourceTypeArray and MonitoredResourceTypeArrayOutput values.
 // You can construct a concrete instance of `MonitoredResourceTypeArrayInput` via:
 //
@@ -299,12 +292,6 @@ func (i MonitoredResourceTypeArray) ToMonitoredResourceTypeArrayOutput() Monitor
 
 func (i MonitoredResourceTypeArray) ToMonitoredResourceTypeArrayOutputWithContext(ctx context.Context) MonitoredResourceTypeArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(MonitoredResourceTypeArrayOutput)
-}
-
-func (i MonitoredResourceTypeArray) ToOutput(ctx context.Context) pulumix.Output[[]*MonitoredResourceType] {
-	return pulumix.Output[[]*MonitoredResourceType]{
-		OutputState: i.ToMonitoredResourceTypeArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // MonitoredResourceTypeMapInput is an input type that accepts MonitoredResourceTypeMap and MonitoredResourceTypeMapOutput values.
@@ -332,12 +319,6 @@ func (i MonitoredResourceTypeMap) ToMonitoredResourceTypeMapOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(MonitoredResourceTypeMapOutput)
 }
 
-func (i MonitoredResourceTypeMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*MonitoredResourceType] {
-	return pulumix.Output[map[string]*MonitoredResourceType]{
-		OutputState: i.ToMonitoredResourceTypeMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type MonitoredResourceTypeOutput struct{ *pulumi.OutputState }
 
 func (MonitoredResourceTypeOutput) ElementType() reflect.Type {
@@ -350,12 +331,6 @@ func (o MonitoredResourceTypeOutput) ToMonitoredResourceTypeOutput() MonitoredRe
 
 func (o MonitoredResourceTypeOutput) ToMonitoredResourceTypeOutputWithContext(ctx context.Context) MonitoredResourceTypeOutput {
 	return o
-}
-
-func (o MonitoredResourceTypeOutput) ToOutput(ctx context.Context) pulumix.Output[*MonitoredResourceType] {
-	return pulumix.Output[*MonitoredResourceType]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy containing the resource type.
@@ -384,13 +359,13 @@ func (o MonitoredResourceTypeOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // (Updatable) The metadata details for resource type.
-func (o MonitoredResourceTypeOutput) Metadata() MonitoredResourceTypeMetadataOutput {
-	return o.ApplyT(func(v *MonitoredResourceType) MonitoredResourceTypeMetadataOutput { return v.Metadata }).(MonitoredResourceTypeMetadataOutput)
+func (o MonitoredResourceTypeOutput) Metadata() MonitoredResourceTypeMetadataPtrOutput {
+	return o.ApplyT(func(v *MonitoredResourceType) MonitoredResourceTypeMetadataPtrOutput { return v.Metadata }).(MonitoredResourceTypeMetadataPtrOutput)
 }
 
 // (Updatable) Metric namespace for resource type.
-func (o MonitoredResourceTypeOutput) MetricNamespace() pulumi.StringOutput {
-	return o.ApplyT(func(v *MonitoredResourceType) pulumi.StringOutput { return v.MetricNamespace }).(pulumi.StringOutput)
+func (o MonitoredResourceTypeOutput) MetricNamespace() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MonitoredResourceType) pulumi.StringPtrOutput { return v.MetricNamespace }).(pulumi.StringPtrOutput)
 }
 
 // A unique monitored resource type name. The name must be unique across tenancy.  Name can not be changed.
@@ -402,8 +377,8 @@ func (o MonitoredResourceTypeOutput) Name() pulumi.StringOutput {
 }
 
 // Lifecycle state of the monitored resource type.
-func (o MonitoredResourceTypeOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *MonitoredResourceType) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o MonitoredResourceTypeOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MonitoredResourceType) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -412,13 +387,13 @@ func (o MonitoredResourceTypeOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The date and time when the monitored resource type was created, expressed in  [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
-func (o MonitoredResourceTypeOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *MonitoredResourceType) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o MonitoredResourceTypeOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MonitoredResourceType) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time when the monitored resource was updated, expressed in  [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
-func (o MonitoredResourceTypeOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *MonitoredResourceType) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o MonitoredResourceTypeOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MonitoredResourceType) pulumi.StringPtrOutput { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type MonitoredResourceTypeArrayOutput struct{ *pulumi.OutputState }
@@ -433,12 +408,6 @@ func (o MonitoredResourceTypeArrayOutput) ToMonitoredResourceTypeArrayOutput() M
 
 func (o MonitoredResourceTypeArrayOutput) ToMonitoredResourceTypeArrayOutputWithContext(ctx context.Context) MonitoredResourceTypeArrayOutput {
 	return o
-}
-
-func (o MonitoredResourceTypeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*MonitoredResourceType] {
-	return pulumix.Output[[]*MonitoredResourceType]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o MonitoredResourceTypeArrayOutput) Index(i pulumi.IntInput) MonitoredResourceTypeOutput {
@@ -459,12 +428,6 @@ func (o MonitoredResourceTypeMapOutput) ToMonitoredResourceTypeMapOutput() Monit
 
 func (o MonitoredResourceTypeMapOutput) ToMonitoredResourceTypeMapOutputWithContext(ctx context.Context) MonitoredResourceTypeMapOutput {
 	return o
-}
-
-func (o MonitoredResourceTypeMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*MonitoredResourceType] {
-	return pulumix.Output[map[string]*MonitoredResourceType]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o MonitoredResourceTypeMapOutput) MapIndex(k pulumi.StringInput) MonitoredResourceTypeOutput {

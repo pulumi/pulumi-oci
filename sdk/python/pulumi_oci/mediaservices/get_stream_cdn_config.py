@@ -68,82 +68,52 @@ class GetStreamCdnConfigResult:
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        Compartment Identifier.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter
-    def configs(self) -> Sequence['outputs.GetStreamCdnConfigConfigResult']:
-        """
-        Base fields of the StreamCdnConfig configuration object.
-        """
+    def configs(self) -> Optional[Sequence['outputs.GetStreamCdnConfigConfigResult']]:
         return pulumi.get(self, "configs")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        The CDN Configuration identifier or display name, which can be renamed and is not necessarily unique. Avoid entering confidential information.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="distributionChannelId")
-    def distribution_channel_id(self) -> str:
-        """
-        Distribution Channel Identifier.
-        """
+    def distribution_channel_id(self) -> Optional[str]:
         return pulumi.get(self, "distribution_channel_id")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        Unique identifier that is immutable on creation.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="isEnabled")
-    def is_enabled(self) -> bool:
-        """
-        Whether publishing to CDN is enabled.
-        """
+    def is_enabled(self) -> Optional[bool]:
         return pulumi.get(self, "is_enabled")
 
     @property
     @pulumi.getter(name="lifecyleDetails")
-    def lifecyle_details(self) -> str:
-        """
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        """
+    def lifecyle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecyle_details")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the CDN Configuration.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
@@ -153,26 +123,17 @@ class GetStreamCdnConfigResult:
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The time when the CDN Config was created. An RFC3339 formatted datetime string.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The time when the CDN Config was updated. An RFC3339 formatted datetime string.
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
 
@@ -201,21 +162,7 @@ class AwaitableGetStreamCdnConfigResult(GetStreamCdnConfigResult):
 def get_stream_cdn_config(stream_cdn_config_id: Optional[str] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetStreamCdnConfigResult:
     """
-    This data source provides details about a specific Stream Cdn Config resource in Oracle Cloud Infrastructure Media Services service.
-
-    Gets a StreamCdnConfig by identifier.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_stream_cdn_config = oci.MediaServices.get_stream_cdn_config(stream_cdn_config_id=oci_media_services_stream_cdn_config["test_stream_cdn_config"]["id"])
-    ```
-
-
-    :param str stream_cdn_config_id: Unique StreamCdnConfig identifier.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['streamCdnConfigId'] = stream_cdn_config_id
@@ -243,20 +190,6 @@ def get_stream_cdn_config(stream_cdn_config_id: Optional[str] = None,
 def get_stream_cdn_config_output(stream_cdn_config_id: Optional[pulumi.Input[str]] = None,
                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetStreamCdnConfigResult]:
     """
-    This data source provides details about a specific Stream Cdn Config resource in Oracle Cloud Infrastructure Media Services service.
-
-    Gets a StreamCdnConfig by identifier.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_stream_cdn_config = oci.MediaServices.get_stream_cdn_config(stream_cdn_config_id=oci_media_services_stream_cdn_config["test_stream_cdn_config"]["id"])
-    ```
-
-
-    :param str stream_cdn_config_id: Unique StreamCdnConfig identifier.
+    Use this data source to access information about an existing resource.
     """
     ...

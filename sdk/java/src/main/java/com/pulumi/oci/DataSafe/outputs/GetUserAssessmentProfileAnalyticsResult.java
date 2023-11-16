@@ -23,12 +23,12 @@ public final class GetUserAssessmentProfileAnalyticsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The list of profile_aggregations.
      * 
      */
-    private List<GetUserAssessmentProfileAnalyticsProfileAggregation> profileAggregations;
+    private @Nullable List<GetUserAssessmentProfileAnalyticsProfileAggregation> profileAggregations;
     private @Nullable String profileName;
     private @Nullable String targetId;
     private String userAssessmentId;
@@ -50,15 +50,15 @@ public final class GetUserAssessmentProfileAnalyticsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The list of profile_aggregations.
      * 
      */
     public List<GetUserAssessmentProfileAnalyticsProfileAggregation> profileAggregations() {
-        return this.profileAggregations;
+        return this.profileAggregations == null ? List.of() : this.profileAggregations;
     }
     public Optional<String> profileName() {
         return Optional.ofNullable(this.profileName);
@@ -83,8 +83,8 @@ public final class GetUserAssessmentProfileAnalyticsResult {
         private String compartmentId;
         private @Nullable Boolean compartmentIdInSubtree;
         private @Nullable List<GetUserAssessmentProfileAnalyticsFilter> filters;
-        private String id;
-        private List<GetUserAssessmentProfileAnalyticsProfileAggregation> profileAggregations;
+        private @Nullable String id;
+        private @Nullable List<GetUserAssessmentProfileAnalyticsProfileAggregation> profileAggregations;
         private @Nullable String profileName;
         private @Nullable String targetId;
         private String userAssessmentId;
@@ -126,13 +126,13 @@ public final class GetUserAssessmentProfileAnalyticsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder profileAggregations(List<GetUserAssessmentProfileAnalyticsProfileAggregation> profileAggregations) {
-            this.profileAggregations = Objects.requireNonNull(profileAggregations);
+        public Builder profileAggregations(@Nullable List<GetUserAssessmentProfileAnalyticsProfileAggregation> profileAggregations) {
+            this.profileAggregations = profileAggregations;
             return this;
         }
         public Builder profileAggregations(GetUserAssessmentProfileAnalyticsProfileAggregation... profileAggregations) {

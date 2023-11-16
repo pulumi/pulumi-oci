@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetImageLaunchOption {
@@ -14,75 +16,75 @@ public final class GetImageLaunchOption {
      * @return Emulation type for the boot volume.
      * 
      */
-    private String bootVolumeType;
+    private @Nullable String bootVolumeType;
     /**
      * @return Firmware used to boot VM. Select the option that matches your operating system.
      * 
      */
-    private String firmware;
+    private @Nullable String firmware;
     /**
      * @return Whether to enable consistent volume naming feature. Defaults to false.
      * 
      */
-    private Boolean isConsistentVolumeNamingEnabled;
+    private @Nullable Boolean isConsistentVolumeNamingEnabled;
     /**
      * @return Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/LaunchInstanceDetails).
      * 
      */
-    private Boolean isPvEncryptionInTransitEnabled;
+    private @Nullable Boolean isPvEncryptionInTransitEnabled;
     /**
      * @return Emulation type for the physical network interface card (NIC).
      * 
      */
-    private String networkType;
+    private @Nullable String networkType;
     /**
      * @return Emulation type for volume.
      * 
      */
-    private String remoteDataVolumeType;
+    private @Nullable String remoteDataVolumeType;
 
     private GetImageLaunchOption() {}
     /**
      * @return Emulation type for the boot volume.
      * 
      */
-    public String bootVolumeType() {
-        return this.bootVolumeType;
+    public Optional<String> bootVolumeType() {
+        return Optional.ofNullable(this.bootVolumeType);
     }
     /**
      * @return Firmware used to boot VM. Select the option that matches your operating system.
      * 
      */
-    public String firmware() {
-        return this.firmware;
+    public Optional<String> firmware() {
+        return Optional.ofNullable(this.firmware);
     }
     /**
      * @return Whether to enable consistent volume naming feature. Defaults to false.
      * 
      */
-    public Boolean isConsistentVolumeNamingEnabled() {
-        return this.isConsistentVolumeNamingEnabled;
+    public Optional<Boolean> isConsistentVolumeNamingEnabled() {
+        return Optional.ofNullable(this.isConsistentVolumeNamingEnabled);
     }
     /**
      * @return Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/LaunchInstanceDetails).
      * 
      */
-    public Boolean isPvEncryptionInTransitEnabled() {
-        return this.isPvEncryptionInTransitEnabled;
+    public Optional<Boolean> isPvEncryptionInTransitEnabled() {
+        return Optional.ofNullable(this.isPvEncryptionInTransitEnabled);
     }
     /**
      * @return Emulation type for the physical network interface card (NIC).
      * 
      */
-    public String networkType() {
-        return this.networkType;
+    public Optional<String> networkType() {
+        return Optional.ofNullable(this.networkType);
     }
     /**
      * @return Emulation type for volume.
      * 
      */
-    public String remoteDataVolumeType() {
-        return this.remoteDataVolumeType;
+    public Optional<String> remoteDataVolumeType() {
+        return Optional.ofNullable(this.remoteDataVolumeType);
     }
 
     public static Builder builder() {
@@ -94,12 +96,12 @@ public final class GetImageLaunchOption {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String bootVolumeType;
-        private String firmware;
-        private Boolean isConsistentVolumeNamingEnabled;
-        private Boolean isPvEncryptionInTransitEnabled;
-        private String networkType;
-        private String remoteDataVolumeType;
+        private @Nullable String bootVolumeType;
+        private @Nullable String firmware;
+        private @Nullable Boolean isConsistentVolumeNamingEnabled;
+        private @Nullable Boolean isPvEncryptionInTransitEnabled;
+        private @Nullable String networkType;
+        private @Nullable String remoteDataVolumeType;
         public Builder() {}
         public Builder(GetImageLaunchOption defaults) {
     	      Objects.requireNonNull(defaults);
@@ -112,33 +114,33 @@ public final class GetImageLaunchOption {
         }
 
         @CustomType.Setter
-        public Builder bootVolumeType(String bootVolumeType) {
-            this.bootVolumeType = Objects.requireNonNull(bootVolumeType);
+        public Builder bootVolumeType(@Nullable String bootVolumeType) {
+            this.bootVolumeType = bootVolumeType;
             return this;
         }
         @CustomType.Setter
-        public Builder firmware(String firmware) {
-            this.firmware = Objects.requireNonNull(firmware);
+        public Builder firmware(@Nullable String firmware) {
+            this.firmware = firmware;
             return this;
         }
         @CustomType.Setter
-        public Builder isConsistentVolumeNamingEnabled(Boolean isConsistentVolumeNamingEnabled) {
-            this.isConsistentVolumeNamingEnabled = Objects.requireNonNull(isConsistentVolumeNamingEnabled);
+        public Builder isConsistentVolumeNamingEnabled(@Nullable Boolean isConsistentVolumeNamingEnabled) {
+            this.isConsistentVolumeNamingEnabled = isConsistentVolumeNamingEnabled;
             return this;
         }
         @CustomType.Setter
-        public Builder isPvEncryptionInTransitEnabled(Boolean isPvEncryptionInTransitEnabled) {
-            this.isPvEncryptionInTransitEnabled = Objects.requireNonNull(isPvEncryptionInTransitEnabled);
+        public Builder isPvEncryptionInTransitEnabled(@Nullable Boolean isPvEncryptionInTransitEnabled) {
+            this.isPvEncryptionInTransitEnabled = isPvEncryptionInTransitEnabled;
             return this;
         }
         @CustomType.Setter
-        public Builder networkType(String networkType) {
-            this.networkType = Objects.requireNonNull(networkType);
+        public Builder networkType(@Nullable String networkType) {
+            this.networkType = networkType;
             return this;
         }
         @CustomType.Setter
-        public Builder remoteDataVolumeType(String remoteDataVolumeType) {
-            this.remoteDataVolumeType = Objects.requireNonNull(remoteDataVolumeType);
+        public Builder remoteDataVolumeType(@Nullable String remoteDataVolumeType) {
+            this.remoteDataVolumeType = remoteDataVolumeType;
             return this;
         }
         public GetImageLaunchOption build() {

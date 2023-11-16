@@ -51,11 +51,11 @@ export interface GetMediaWorkflowJobFactResult {
     /**
      * The body of the detail captured as JSON.
      */
-    readonly detail: string;
+    readonly detail?: string;
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * System generated serial number to uniquely identify a detail in order within a MediaWorkflowJob.
      */
@@ -67,11 +67,11 @@ export interface GetMediaWorkflowJobFactResult {
     /**
      * Unique name. It is read-only and generated for the fact.
      */
-    readonly name: string;
+    readonly name?: string;
     /**
      * The type of information contained in this detail.
      */
-    readonly type: string;
+    readonly type?: string;
 }
 /**
  * This data source provides details about a specific Media Workflow Job Fact resource in Oracle Cloud Infrastructure Media Services service.

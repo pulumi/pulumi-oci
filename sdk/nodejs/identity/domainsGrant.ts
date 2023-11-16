@@ -60,7 +60,7 @@ export class DomainsGrant extends pulumi.CustomResource {
      * * type: complex
      * * uniqueness: none
      */
-    public readonly app!: pulumi.Output<outputs.Identity.DomainsGrantApp>;
+    public readonly app!: pulumi.Output<outputs.Identity.DomainsGrantApp | undefined>;
     /**
      * Application-Entitlement-Collection that is being granted. Each Grant must grant either an App or an App-Entitlement-Collection.
      *
@@ -75,7 +75,7 @@ export class DomainsGrant extends pulumi.CustomResource {
      * * type: complex
      * * uniqueness: none
      */
-    public readonly appEntitlementCollection!: pulumi.Output<outputs.Identity.DomainsGrantAppEntitlementCollection>;
+    public readonly appEntitlementCollection!: pulumi.Output<outputs.Identity.DomainsGrantAppEntitlementCollection | undefined>;
     /**
      * A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
      */
@@ -101,7 +101,7 @@ export class DomainsGrant extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public /*out*/ readonly compartmentOcid!: pulumi.Output<string>;
+    public /*out*/ readonly compartmentOcid!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Unique key of grant, composed by combining a subset of app, entitlement, grantee, grantor and grantMechanism.  Used to prevent duplicate Grants.
      *
@@ -117,7 +117,7 @@ export class DomainsGrant extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: server
      */
-    public /*out*/ readonly compositeKey!: pulumi.Output<string>;
+    public /*out*/ readonly compositeKey!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
      *
@@ -131,7 +131,7 @@ export class DomainsGrant extends pulumi.CustomResource {
      * * type: boolean
      * * uniqueness: none
      */
-    public /*out*/ readonly deleteInProgress!: pulumi.Output<boolean>;
+    public /*out*/ readonly deleteInProgress!: pulumi.Output<boolean | undefined>;
     /**
      * (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
      *
@@ -145,7 +145,7 @@ export class DomainsGrant extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public /*out*/ readonly domainOcid!: pulumi.Output<string>;
+    public /*out*/ readonly domainOcid!: pulumi.Output<string | undefined>;
     /**
      * The entitlement or privilege that is being granted
      *
@@ -158,7 +158,7 @@ export class DomainsGrant extends pulumi.CustomResource {
      * * returned: default
      * * type: complex
      */
-    public readonly entitlement!: pulumi.Output<outputs.Identity.DomainsGrantEntitlement>;
+    public readonly entitlement!: pulumi.Output<outputs.Identity.DomainsGrantEntitlement | undefined>;
     /**
      * Each value of grantMechanism indicates how (or by what component) some App (or App-Entitlement) was granted. A customer or the UI should use only grantMechanism values that start with 'ADMINISTRATOR':
      * * 'ADMINISTRATOR_TO_USER' is for a direct grant to a specific User.
@@ -191,7 +191,7 @@ export class DomainsGrant extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly grantedAttributeValuesJson!: pulumi.Output<string>;
+    public readonly grantedAttributeValuesJson!: pulumi.Output<string | undefined>;
     /**
      * Grantee beneficiary. The grantee may be a User, Group, App or DynamicResourceGroup.
      *
@@ -218,7 +218,7 @@ export class DomainsGrant extends pulumi.CustomResource {
      * * returned: default
      * * type: complex
      */
-    public /*out*/ readonly grantors!: pulumi.Output<outputs.Identity.DomainsGrantGrantor[]>;
+    public /*out*/ readonly grantors!: pulumi.Output<outputs.Identity.DomainsGrantGrantor[] | undefined>;
     /**
      * (Updatable) The User or App who created the Resource
      *
@@ -230,7 +230,7 @@ export class DomainsGrant extends pulumi.CustomResource {
      * * returned: default
      * * type: complex
      */
-    public /*out*/ readonly idcsCreatedBies!: pulumi.Output<outputs.Identity.DomainsGrantIdcsCreatedBy[]>;
+    public /*out*/ readonly idcsCreatedBies!: pulumi.Output<outputs.Identity.DomainsGrantIdcsCreatedBy[] | undefined>;
     /**
      * The basic endpoint for the identity domain
      */
@@ -246,7 +246,7 @@ export class DomainsGrant extends pulumi.CustomResource {
      * * returned: default
      * * type: complex
      */
-    public /*out*/ readonly idcsLastModifiedBies!: pulumi.Output<outputs.Identity.DomainsGrantIdcsLastModifiedBy[]>;
+    public /*out*/ readonly idcsLastModifiedBies!: pulumi.Output<outputs.Identity.DomainsGrantIdcsLastModifiedBy[] | undefined>;
     /**
      * (Updatable) The release number when the resource was upgraded.
      *
@@ -260,7 +260,7 @@ export class DomainsGrant extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public /*out*/ readonly idcsLastUpgradedInRelease!: pulumi.Output<string>;
+    public /*out*/ readonly idcsLastUpgradedInRelease!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
      *
@@ -273,7 +273,7 @@ export class DomainsGrant extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public /*out*/ readonly idcsPreventedOperations!: pulumi.Output<string[]>;
+    public /*out*/ readonly idcsPreventedOperations!: pulumi.Output<string[] | undefined>;
     /**
      * (Updatable) If true, this Grant has been fulfilled successfully.
      *
@@ -286,7 +286,7 @@ export class DomainsGrant extends pulumi.CustomResource {
      * * type: boolean
      * * uniqueness: none
      */
-    public /*out*/ readonly isFulfilled!: pulumi.Output<boolean>;
+    public /*out*/ readonly isFulfilled!: pulumi.Output<boolean | undefined>;
     /**
      * (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
      *
@@ -300,7 +300,7 @@ export class DomainsGrant extends pulumi.CustomResource {
      * * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
      * * type: complex
      */
-    public /*out*/ readonly metas!: pulumi.Output<outputs.Identity.DomainsGrantMeta[]>;
+    public /*out*/ readonly metas!: pulumi.Output<outputs.Identity.DomainsGrantMeta[] | undefined>;
     /**
      * Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
      *
@@ -314,11 +314,11 @@ export class DomainsGrant extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: global
      */
-    public readonly ocid!: pulumi.Output<string>;
+    public readonly ocid!: pulumi.Output<string | undefined>;
     /**
      * An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
      */
-    public readonly resourceTypeSchemaVersion!: pulumi.Output<string>;
+    public readonly resourceTypeSchemaVersion!: pulumi.Output<string | undefined>;
     /**
      * REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
      *
@@ -346,7 +346,7 @@ export class DomainsGrant extends pulumi.CustomResource {
      * * type: complex
      * * uniqueness: none
      */
-    public readonly tags!: pulumi.Output<outputs.Identity.DomainsGrantTag[]>;
+    public readonly tags!: pulumi.Output<outputs.Identity.DomainsGrantTag[] | undefined>;
     /**
      * (Updatable) Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
      *
@@ -364,7 +364,7 @@ export class DomainsGrant extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public /*out*/ readonly tenancyOcid!: pulumi.Output<string>;
+    public /*out*/ readonly tenancyOcid!: pulumi.Output<string | undefined>;
 
     /**
      * Create a DomainsGrant resource with the given unique name, arguments, and options.

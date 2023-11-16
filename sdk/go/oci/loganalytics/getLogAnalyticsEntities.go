@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Log Analytics Entities in Oracle Cloud Infrastructure Log Analytics service.
@@ -104,7 +103,7 @@ type GetLogAnalyticsEntitiesResult struct {
 	Hostname         *string `pulumi:"hostname"`
 	HostnameContains *string `pulumi:"hostnameContains"`
 	// The provider-assigned unique ID for this managed resource.
-	Id                       string  `pulumi:"id"`
+	Id                       *string `pulumi:"id"`
 	IsManagementAgentIdNull  *string `pulumi:"isManagementAgentIdNull"`
 	LifecycleDetailsContains *string `pulumi:"lifecycleDetailsContains"`
 	// The list of log_analytics_entity_collection.
@@ -180,12 +179,6 @@ func (o GetLogAnalyticsEntitiesResultOutput) ToGetLogAnalyticsEntitiesResultOutp
 	return o
 }
 
-func (o GetLogAnalyticsEntitiesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetLogAnalyticsEntitiesResult] {
-	return pulumix.Output[GetLogAnalyticsEntitiesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the Cloud resource which this entity is a representation of. This may be blank when the entity represents a non-cloud resource that the customer may have on their premises.
 func (o GetLogAnalyticsEntitiesResultOutput) CloudResourceId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetLogAnalyticsEntitiesResult) *string { return v.CloudResourceId }).(pulumi.StringPtrOutput)
@@ -215,8 +208,8 @@ func (o GetLogAnalyticsEntitiesResultOutput) HostnameContains() pulumi.StringPtr
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetLogAnalyticsEntitiesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLogAnalyticsEntitiesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetLogAnalyticsEntitiesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLogAnalyticsEntitiesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetLogAnalyticsEntitiesResultOutput) IsManagementAgentIdNull() pulumi.StringPtrOutput {

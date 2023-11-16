@@ -94,49 +94,49 @@ namespace Pulumi.Oci.VnMonitoring
         /// The Cache-Control HTTP header holds directives (instructions) for caching in both requests and responses.
         /// </summary>
         [Output("cacheControl")]
-        public Output<string> CacheControl { get; private set; } = null!;
+        public Output<string?> CacheControl { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the compartment.
         /// </summary>
         [Output("compartmentId")]
-        public Output<string> CompartmentId { get; private set; } = null!;
+        public Output<string?> CompartmentId { get; private set; } = null!;
 
         /// <summary>
         /// Information describing a source or destination in a `PathAnalyzerTest` resource.
         /// </summary>
         [Output("destinationEndpoint")]
-        public Output<Outputs.PathAnalysiDestinationEndpoint> DestinationEndpoint { get; private set; } = null!;
+        public Output<Outputs.PathAnalysiDestinationEndpoint?> DestinationEndpoint { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `PathAnalyzerTest` resource.
         /// </summary>
         [Output("pathAnalyzerTestId")]
-        public Output<string> PathAnalyzerTestId { get; private set; } = null!;
+        public Output<string?> PathAnalyzerTestId { get; private set; } = null!;
 
         /// <summary>
         /// The IP protocol to used for the path analysis.
         /// </summary>
         [Output("protocol")]
-        public Output<int> Protocol { get; private set; } = null!;
+        public Output<int?> Protocol { get; private set; } = null!;
 
         /// <summary>
         /// Defines the IP protocol parameters for a `PathAnalyzerTest` resource.
         /// </summary>
         [Output("protocolParameters")]
-        public Output<Outputs.PathAnalysiProtocolParameters> ProtocolParameters { get; private set; } = null!;
+        public Output<Outputs.PathAnalysiProtocolParameters?> ProtocolParameters { get; private set; } = null!;
 
         /// <summary>
         /// Defines the query options required for a `PathAnalyzerTest` resource.
         /// </summary>
         [Output("queryOptions")]
-        public Output<Outputs.PathAnalysiQueryOptions> QueryOptions { get; private set; } = null!;
+        public Output<Outputs.PathAnalysiQueryOptions?> QueryOptions { get; private set; } = null!;
 
         /// <summary>
         /// Information describing a source or destination in a `PathAnalyzerTest` resource.
         /// </summary>
         [Output("sourceEndpoint")]
-        public Output<Outputs.PathAnalysiSourceEndpoint> SourceEndpoint { get; private set; } = null!;
+        public Output<Outputs.PathAnalysiSourceEndpoint?> SourceEndpoint { get; private set; } = null!;
 
         /// <summary>
         /// The type of the `PathAnalysis` query.

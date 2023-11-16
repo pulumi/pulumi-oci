@@ -25,7 +25,7 @@ namespace Pulumi.Oci.LoadBalancer.Outputs
         /// A friendly name for the SSL cipher suite. It must be unique and it cannot be changed.
         /// </summary>
         public readonly string Name;
-        public readonly string State;
+        public readonly string? State;
 
         [OutputConstructor]
         private GetSslCipherSuitesSslCipherSuiteResult(
@@ -35,7 +35,7 @@ namespace Pulumi.Oci.LoadBalancer.Outputs
 
             string name,
 
-            string state)
+            string? state)
         {
             Ciphers = ciphers;
             LoadBalancerId = loadBalancerId;

@@ -16,17 +16,17 @@ namespace Pulumi.Oci.DevOps.Outputs
         /// <summary>
         /// The content of the line.
         /// </summary>
-        public readonly string LineContent;
+        public readonly string? LineContent;
         /// <summary>
         /// The line number.
         /// </summary>
-        public readonly int LineNumber;
+        public readonly int? LineNumber;
 
         [OutputConstructor]
         private GetRepoFileLineLineResult(
-            string lineContent,
+            string? lineContent,
 
-            int lineNumber)
+            int? lineNumber)
         {
             LineContent = lineContent;
             LineNumber = lineNumber;

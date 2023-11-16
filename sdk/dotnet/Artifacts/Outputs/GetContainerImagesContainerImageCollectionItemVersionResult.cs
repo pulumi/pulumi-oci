@@ -16,23 +16,23 @@ namespace Pulumi.Oci.Artifacts.Outputs
         /// <summary>
         /// The OCID of the user or principal that pushed the version.
         /// </summary>
-        public readonly string CreatedBy;
+        public readonly string? CreatedBy;
         /// <summary>
         /// The creation time of the version.
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// A filter to return container images that match the version.  Example: `foo` or `foo*`
         /// </summary>
-        public readonly string Version;
+        public readonly string? Version;
 
         [OutputConstructor]
         private GetContainerImagesContainerImageCollectionItemVersionResult(
-            string createdBy,
+            string? createdBy,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string version)
+            string? version)
         {
             CreatedBy = createdBy;
             TimeCreated = timeCreated;

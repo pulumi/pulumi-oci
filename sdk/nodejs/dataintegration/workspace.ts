@@ -82,11 +82,11 @@ export class Workspace extends pulumi.CustomResource {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) A user defined description for the workspace.
      */
-    public readonly description!: pulumi.Output<string>;
+    public readonly description!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) A user-friendly display name for the workspace. Does not have to be unique, and can be modified. Avoid entering confidential information.
      */
@@ -94,65 +94,65 @@ export class Workspace extends pulumi.CustomResource {
     /**
      * The IP of the custom DNS.
      */
-    public readonly dnsServerIp!: pulumi.Output<string>;
+    public readonly dnsServerIp!: pulumi.Output<string | undefined>;
     /**
      * The DNS zone of the custom DNS to use to resolve names.
      */
-    public readonly dnsServerZone!: pulumi.Output<string>;
+    public readonly dnsServerZone!: pulumi.Output<string | undefined>;
     /**
      * DCMS PRivate Endpoint Compartment Identifier
      */
-    public readonly endpointCompartmentId!: pulumi.Output<string>;
+    public readonly endpointCompartmentId!: pulumi.Output<string | undefined>;
     /**
      * DCMS Private Endpoint ID associated with workspace if the pvt networking is enabled
      */
-    public readonly endpointId!: pulumi.Output<string>;
+    public readonly endpointId!: pulumi.Output<string | undefined>;
     /**
      * DCMS Private Endpoint Name
      */
-    public readonly endpointName!: pulumi.Output<string>;
+    public readonly endpointName!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     public readonly isForceOperation!: pulumi.Output<boolean | undefined>;
     /**
      * Specifies whether the private network connection is enabled or disabled.
      */
-    public readonly isPrivateNetworkEnabled!: pulumi.Output<boolean>;
-    public readonly quiesceTimeout!: pulumi.Output<number>;
+    public readonly isPrivateNetworkEnabled!: pulumi.Output<boolean | undefined>;
+    public readonly quiesceTimeout!: pulumi.Output<number | undefined>;
     /**
      * DCMS Data Asset Registry Compartment Identifier
      */
-    public readonly registryCompartmentId!: pulumi.Output<string>;
+    public readonly registryCompartmentId!: pulumi.Output<string | undefined>;
     /**
      * DCMS Data Asset Registry ID to which the workspace is associated
      */
-    public readonly registryId!: pulumi.Output<string>;
+    public readonly registryId!: pulumi.Output<string | undefined>;
     /**
      * DCMS Data Asset Registry display name
      */
-    public readonly registryName!: pulumi.Output<string>;
+    public readonly registryName!: pulumi.Output<string | undefined>;
     /**
      * Lifecycle states for workspaces in Data Integration Service CREATING - The resource is being created and may not be usable until the entire metadata is defined UPDATING - The resource is being updated and may not be usable until all changes are commited DELETING - The resource is being deleted and might require deep cleanup of children. ACTIVE   - The resource is valid and available for access INACTIVE - The resource might be incomplete in its definition or might have been made unavailable for administrative reasons DELETED  - The resource has been deleted and isn't available FAILED   - The resource is in a failed state due to validation or other errors STARTING - The resource is being started and may not be usable until becomes ACTIVE again STOPPING - The resource is in the process of Stopping and may not be usable until it Stops or fails STOPPED  - The resource is in Stopped state due to stop operation.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in failed state.
      */
-    public /*out*/ readonly stateMessage!: pulumi.Output<string>;
+    public /*out*/ readonly stateMessage!: pulumi.Output<string | undefined>;
     /**
      * The OCID of the subnet for customer connected databases.
      */
-    public readonly subnetId!: pulumi.Output<string>;
+    public readonly subnetId!: pulumi.Output<string | undefined>;
     /**
      * The date and time the workspace was created, in the timestamp format defined by RFC3339.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * The date and time the workspace was updated, in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    public /*out*/ readonly timeUpdated!: pulumi.Output<string | undefined>;
     /**
      * The OCID of the VCN the subnet is in.
      *
@@ -160,7 +160,7 @@ export class Workspace extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly vcnId!: pulumi.Output<string>;
+    public readonly vcnId!: pulumi.Output<string | undefined>;
 
     /**
      * Create a Workspace resource with the given unique name, arguments, and options.

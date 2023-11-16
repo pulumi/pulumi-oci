@@ -79,12 +79,6 @@ class JobJobConfigurationDetailsArgs:
                  command_line_arguments: Optional[pulumi.Input[str]] = None,
                  environment_variables: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  maximum_runtime_in_minutes: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] job_type: The type of job.
-        :param pulumi.Input[str] command_line_arguments: The arguments to pass to the job.
-        :param pulumi.Input[Mapping[str, Any]] environment_variables: Environment variables to set for the job.
-        :param pulumi.Input[str] maximum_runtime_in_minutes: A time bound for the execution of the job. Timer starts when the job becomes active.
-        """
         pulumi.set(__self__, "job_type", job_type)
         if command_line_arguments is not None:
             pulumi.set(__self__, "command_line_arguments", command_line_arguments)
@@ -96,9 +90,6 @@ class JobJobConfigurationDetailsArgs:
     @property
     @pulumi.getter(name="jobType")
     def job_type(self) -> pulumi.Input[str]:
-        """
-        The type of job.
-        """
         return pulumi.get(self, "job_type")
 
     @job_type.setter
@@ -108,9 +99,6 @@ class JobJobConfigurationDetailsArgs:
     @property
     @pulumi.getter(name="commandLineArguments")
     def command_line_arguments(self) -> Optional[pulumi.Input[str]]:
-        """
-        The arguments to pass to the job.
-        """
         return pulumi.get(self, "command_line_arguments")
 
     @command_line_arguments.setter
@@ -120,9 +108,6 @@ class JobJobConfigurationDetailsArgs:
     @property
     @pulumi.getter(name="environmentVariables")
     def environment_variables(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        Environment variables to set for the job.
-        """
         return pulumi.get(self, "environment_variables")
 
     @environment_variables.setter
@@ -132,9 +117,6 @@ class JobJobConfigurationDetailsArgs:
     @property
     @pulumi.getter(name="maximumRuntimeInMinutes")
     def maximum_runtime_in_minutes(self) -> Optional[pulumi.Input[str]]:
-        """
-        A time bound for the execution of the job. Timer starts when the job becomes active.
-        """
         return pulumi.get(self, "maximum_runtime_in_minutes")
 
     @maximum_runtime_in_minutes.setter
@@ -150,13 +132,6 @@ class JobJobInfrastructureConfigurationDetailsArgs:
                  shape_name: pulumi.Input[str],
                  job_shape_config_details: Optional[pulumi.Input['JobJobInfrastructureConfigurationDetailsJobShapeConfigDetailsArgs']] = None,
                  subnet_id: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[int] block_storage_size_in_gbs: (Updatable) The size of the block storage volume to attach to the instance running the job
-        :param pulumi.Input[str] job_infrastructure_type: (Updatable) The infrastructure type used for job run.
-        :param pulumi.Input[str] shape_name: (Updatable) The shape used to launch the job run instances.
-        :param pulumi.Input['JobJobInfrastructureConfigurationDetailsJobShapeConfigDetailsArgs'] job_shape_config_details: (Updatable) Details for the job run shape configuration. Specify only when a flex shape is selected.
-        :param pulumi.Input[str] subnet_id: (Updatable) The subnet to create a secondary vnic in to attach to the instance running the job
-        """
         pulumi.set(__self__, "block_storage_size_in_gbs", block_storage_size_in_gbs)
         pulumi.set(__self__, "job_infrastructure_type", job_infrastructure_type)
         pulumi.set(__self__, "shape_name", shape_name)
@@ -168,9 +143,6 @@ class JobJobInfrastructureConfigurationDetailsArgs:
     @property
     @pulumi.getter(name="blockStorageSizeInGbs")
     def block_storage_size_in_gbs(self) -> pulumi.Input[int]:
-        """
-        (Updatable) The size of the block storage volume to attach to the instance running the job
-        """
         return pulumi.get(self, "block_storage_size_in_gbs")
 
     @block_storage_size_in_gbs.setter
@@ -180,9 +152,6 @@ class JobJobInfrastructureConfigurationDetailsArgs:
     @property
     @pulumi.getter(name="jobInfrastructureType")
     def job_infrastructure_type(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The infrastructure type used for job run.
-        """
         return pulumi.get(self, "job_infrastructure_type")
 
     @job_infrastructure_type.setter
@@ -192,9 +161,6 @@ class JobJobInfrastructureConfigurationDetailsArgs:
     @property
     @pulumi.getter(name="shapeName")
     def shape_name(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The shape used to launch the job run instances.
-        """
         return pulumi.get(self, "shape_name")
 
     @shape_name.setter
@@ -204,9 +170,6 @@ class JobJobInfrastructureConfigurationDetailsArgs:
     @property
     @pulumi.getter(name="jobShapeConfigDetails")
     def job_shape_config_details(self) -> Optional[pulumi.Input['JobJobInfrastructureConfigurationDetailsJobShapeConfigDetailsArgs']]:
-        """
-        (Updatable) Details for the job run shape configuration. Specify only when a flex shape is selected.
-        """
         return pulumi.get(self, "job_shape_config_details")
 
     @job_shape_config_details.setter
@@ -216,9 +179,6 @@ class JobJobInfrastructureConfigurationDetailsArgs:
     @property
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The subnet to create a secondary vnic in to attach to the instance running the job
-        """
         return pulumi.get(self, "subnet_id")
 
     @subnet_id.setter
@@ -231,10 +191,6 @@ class JobJobInfrastructureConfigurationDetailsJobShapeConfigDetailsArgs:
     def __init__(__self__, *,
                  memory_in_gbs: Optional[pulumi.Input[float]] = None,
                  ocpus: Optional[pulumi.Input[float]] = None):
-        """
-        :param pulumi.Input[float] memory_in_gbs: (Updatable) The total amount of memory available to the job run instance, in gigabytes.
-        :param pulumi.Input[float] ocpus: (Updatable) The total number of OCPUs available to the job run instance.
-        """
         if memory_in_gbs is not None:
             pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
         if ocpus is not None:
@@ -243,9 +199,6 @@ class JobJobInfrastructureConfigurationDetailsJobShapeConfigDetailsArgs:
     @property
     @pulumi.getter(name="memoryInGbs")
     def memory_in_gbs(self) -> Optional[pulumi.Input[float]]:
-        """
-        (Updatable) The total amount of memory available to the job run instance, in gigabytes.
-        """
         return pulumi.get(self, "memory_in_gbs")
 
     @memory_in_gbs.setter
@@ -255,9 +208,6 @@ class JobJobInfrastructureConfigurationDetailsJobShapeConfigDetailsArgs:
     @property
     @pulumi.getter
     def ocpus(self) -> Optional[pulumi.Input[float]]:
-        """
-        (Updatable) The total number of OCPUs available to the job run instance.
-        """
         return pulumi.get(self, "ocpus")
 
     @ocpus.setter
@@ -272,12 +222,6 @@ class JobJobLogConfigurationDetailsArgs:
                  enable_logging: Optional[pulumi.Input[bool]] = None,
                  log_group_id: Optional[pulumi.Input[str]] = None,
                  log_id: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[bool] enable_auto_log_creation: If automatic on-behalf-of log object creation is enabled for job runs.
-        :param pulumi.Input[bool] enable_logging: If customer logging is enabled for job runs.
-        :param pulumi.Input[str] log_group_id: The log group id for where log objects are for job runs.
-        :param pulumi.Input[str] log_id: The log id the job run will push logs too.
-        """
         if enable_auto_log_creation is not None:
             pulumi.set(__self__, "enable_auto_log_creation", enable_auto_log_creation)
         if enable_logging is not None:
@@ -290,9 +234,6 @@ class JobJobLogConfigurationDetailsArgs:
     @property
     @pulumi.getter(name="enableAutoLogCreation")
     def enable_auto_log_creation(self) -> Optional[pulumi.Input[bool]]:
-        """
-        If automatic on-behalf-of log object creation is enabled for job runs.
-        """
         return pulumi.get(self, "enable_auto_log_creation")
 
     @enable_auto_log_creation.setter
@@ -302,9 +243,6 @@ class JobJobLogConfigurationDetailsArgs:
     @property
     @pulumi.getter(name="enableLogging")
     def enable_logging(self) -> Optional[pulumi.Input[bool]]:
-        """
-        If customer logging is enabled for job runs.
-        """
         return pulumi.get(self, "enable_logging")
 
     @enable_logging.setter
@@ -314,9 +252,6 @@ class JobJobLogConfigurationDetailsArgs:
     @property
     @pulumi.getter(name="logGroupId")
     def log_group_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The log group id for where log objects are for job runs.
-        """
         return pulumi.get(self, "log_group_id")
 
     @log_group_id.setter
@@ -326,9 +261,6 @@ class JobJobLogConfigurationDetailsArgs:
     @property
     @pulumi.getter(name="logId")
     def log_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The log id the job run will push logs too.
-        """
         return pulumi.get(self, "log_id")
 
     @log_id.setter
@@ -347,16 +279,6 @@ class JobJobStorageMountConfigurationDetailsListArgs:
                  mount_target_id: Optional[pulumi.Input[str]] = None,
                  namespace: Optional[pulumi.Input[str]] = None,
                  prefix: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] destination_directory_name: (Updatable) The local directory name to be mounted
-        :param pulumi.Input[str] storage_type: (Updatable) The type of storage.
-        :param pulumi.Input[str] bucket: (Updatable) The object storage bucket
-        :param pulumi.Input[str] destination_path: (Updatable) The local path of the mounted directory, excluding directory name.
-        :param pulumi.Input[str] export_id: (Updatable) OCID of the export
-        :param pulumi.Input[str] mount_target_id: (Updatable) OCID of the mount target
-        :param pulumi.Input[str] namespace: (Updatable) The object storage namespace
-        :param pulumi.Input[str] prefix: (Updatable) Prefix in the bucket to mount
-        """
         pulumi.set(__self__, "destination_directory_name", destination_directory_name)
         pulumi.set(__self__, "storage_type", storage_type)
         if bucket is not None:
@@ -375,9 +297,6 @@ class JobJobStorageMountConfigurationDetailsListArgs:
     @property
     @pulumi.getter(name="destinationDirectoryName")
     def destination_directory_name(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The local directory name to be mounted
-        """
         return pulumi.get(self, "destination_directory_name")
 
     @destination_directory_name.setter
@@ -387,9 +306,6 @@ class JobJobStorageMountConfigurationDetailsListArgs:
     @property
     @pulumi.getter(name="storageType")
     def storage_type(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The type of storage.
-        """
         return pulumi.get(self, "storage_type")
 
     @storage_type.setter
@@ -399,9 +315,6 @@ class JobJobStorageMountConfigurationDetailsListArgs:
     @property
     @pulumi.getter
     def bucket(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The object storage bucket
-        """
         return pulumi.get(self, "bucket")
 
     @bucket.setter
@@ -411,9 +324,6 @@ class JobJobStorageMountConfigurationDetailsListArgs:
     @property
     @pulumi.getter(name="destinationPath")
     def destination_path(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The local path of the mounted directory, excluding directory name.
-        """
         return pulumi.get(self, "destination_path")
 
     @destination_path.setter
@@ -423,9 +333,6 @@ class JobJobStorageMountConfigurationDetailsListArgs:
     @property
     @pulumi.getter(name="exportId")
     def export_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) OCID of the export
-        """
         return pulumi.get(self, "export_id")
 
     @export_id.setter
@@ -435,9 +342,6 @@ class JobJobStorageMountConfigurationDetailsListArgs:
     @property
     @pulumi.getter(name="mountTargetId")
     def mount_target_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) OCID of the mount target
-        """
         return pulumi.get(self, "mount_target_id")
 
     @mount_target_id.setter
@@ -447,9 +351,6 @@ class JobJobStorageMountConfigurationDetailsListArgs:
     @property
     @pulumi.getter
     def namespace(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The object storage namespace
-        """
         return pulumi.get(self, "namespace")
 
     @namespace.setter
@@ -459,9 +360,6 @@ class JobJobStorageMountConfigurationDetailsListArgs:
     @property
     @pulumi.getter
     def prefix(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Prefix in the bucket to mount
-        """
         return pulumi.get(self, "prefix")
 
     @prefix.setter
@@ -476,12 +374,6 @@ class JobRunJobConfigurationOverrideDetailsArgs:
                  command_line_arguments: Optional[pulumi.Input[str]] = None,
                  environment_variables: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  maximum_runtime_in_minutes: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] job_type: The type of job.
-        :param pulumi.Input[str] command_line_arguments: The arguments to pass to the job.
-        :param pulumi.Input[Mapping[str, Any]] environment_variables: Environment variables to set for the job.
-        :param pulumi.Input[str] maximum_runtime_in_minutes: A time bound for the execution of the job. Timer starts when the job becomes active.
-        """
         pulumi.set(__self__, "job_type", job_type)
         if command_line_arguments is not None:
             pulumi.set(__self__, "command_line_arguments", command_line_arguments)
@@ -493,9 +385,6 @@ class JobRunJobConfigurationOverrideDetailsArgs:
     @property
     @pulumi.getter(name="jobType")
     def job_type(self) -> pulumi.Input[str]:
-        """
-        The type of job.
-        """
         return pulumi.get(self, "job_type")
 
     @job_type.setter
@@ -505,9 +394,6 @@ class JobRunJobConfigurationOverrideDetailsArgs:
     @property
     @pulumi.getter(name="commandLineArguments")
     def command_line_arguments(self) -> Optional[pulumi.Input[str]]:
-        """
-        The arguments to pass to the job.
-        """
         return pulumi.get(self, "command_line_arguments")
 
     @command_line_arguments.setter
@@ -517,9 +403,6 @@ class JobRunJobConfigurationOverrideDetailsArgs:
     @property
     @pulumi.getter(name="environmentVariables")
     def environment_variables(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        Environment variables to set for the job.
-        """
         return pulumi.get(self, "environment_variables")
 
     @environment_variables.setter
@@ -529,9 +412,6 @@ class JobRunJobConfigurationOverrideDetailsArgs:
     @property
     @pulumi.getter(name="maximumRuntimeInMinutes")
     def maximum_runtime_in_minutes(self) -> Optional[pulumi.Input[str]]:
-        """
-        A time bound for the execution of the job. Timer starts when the job becomes active.
-        """
         return pulumi.get(self, "maximum_runtime_in_minutes")
 
     @maximum_runtime_in_minutes.setter
@@ -547,13 +427,6 @@ class JobRunJobInfrastructureConfigurationDetailArgs:
                  job_shape_config_details: Optional[pulumi.Input[Sequence[pulumi.Input['JobRunJobInfrastructureConfigurationDetailJobShapeConfigDetailArgs']]]] = None,
                  shape_name: Optional[pulumi.Input[str]] = None,
                  subnet_id: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[int] block_storage_size_in_gbs: The size of the block storage volume to attach to the instance running the job
-        :param pulumi.Input[str] job_infrastructure_type: The infrastructure type used for job run.
-        :param pulumi.Input[Sequence[pulumi.Input['JobRunJobInfrastructureConfigurationDetailJobShapeConfigDetailArgs']]] job_shape_config_details: Details for the job run shape configuration. Specify only when a flex shape is selected.
-        :param pulumi.Input[str] shape_name: The shape used to launch the job run instances.
-        :param pulumi.Input[str] subnet_id: The subnet to create a secondary vnic in to attach to the instance running the job
-        """
         if block_storage_size_in_gbs is not None:
             pulumi.set(__self__, "block_storage_size_in_gbs", block_storage_size_in_gbs)
         if job_infrastructure_type is not None:
@@ -568,9 +441,6 @@ class JobRunJobInfrastructureConfigurationDetailArgs:
     @property
     @pulumi.getter(name="blockStorageSizeInGbs")
     def block_storage_size_in_gbs(self) -> Optional[pulumi.Input[int]]:
-        """
-        The size of the block storage volume to attach to the instance running the job
-        """
         return pulumi.get(self, "block_storage_size_in_gbs")
 
     @block_storage_size_in_gbs.setter
@@ -580,9 +450,6 @@ class JobRunJobInfrastructureConfigurationDetailArgs:
     @property
     @pulumi.getter(name="jobInfrastructureType")
     def job_infrastructure_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        The infrastructure type used for job run.
-        """
         return pulumi.get(self, "job_infrastructure_type")
 
     @job_infrastructure_type.setter
@@ -592,9 +459,6 @@ class JobRunJobInfrastructureConfigurationDetailArgs:
     @property
     @pulumi.getter(name="jobShapeConfigDetails")
     def job_shape_config_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['JobRunJobInfrastructureConfigurationDetailJobShapeConfigDetailArgs']]]]:
-        """
-        Details for the job run shape configuration. Specify only when a flex shape is selected.
-        """
         return pulumi.get(self, "job_shape_config_details")
 
     @job_shape_config_details.setter
@@ -604,9 +468,6 @@ class JobRunJobInfrastructureConfigurationDetailArgs:
     @property
     @pulumi.getter(name="shapeName")
     def shape_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The shape used to launch the job run instances.
-        """
         return pulumi.get(self, "shape_name")
 
     @shape_name.setter
@@ -616,9 +477,6 @@ class JobRunJobInfrastructureConfigurationDetailArgs:
     @property
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The subnet to create a secondary vnic in to attach to the instance running the job
-        """
         return pulumi.get(self, "subnet_id")
 
     @subnet_id.setter
@@ -631,10 +489,6 @@ class JobRunJobInfrastructureConfigurationDetailJobShapeConfigDetailArgs:
     def __init__(__self__, *,
                  memory_in_gbs: Optional[pulumi.Input[float]] = None,
                  ocpus: Optional[pulumi.Input[float]] = None):
-        """
-        :param pulumi.Input[float] memory_in_gbs: The total amount of memory available to the job run instance, in gigabytes.
-        :param pulumi.Input[float] ocpus: The total number of OCPUs available to the job run instance.
-        """
         if memory_in_gbs is not None:
             pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
         if ocpus is not None:
@@ -643,9 +497,6 @@ class JobRunJobInfrastructureConfigurationDetailJobShapeConfigDetailArgs:
     @property
     @pulumi.getter(name="memoryInGbs")
     def memory_in_gbs(self) -> Optional[pulumi.Input[float]]:
-        """
-        The total amount of memory available to the job run instance, in gigabytes.
-        """
         return pulumi.get(self, "memory_in_gbs")
 
     @memory_in_gbs.setter
@@ -655,9 +506,6 @@ class JobRunJobInfrastructureConfigurationDetailJobShapeConfigDetailArgs:
     @property
     @pulumi.getter
     def ocpus(self) -> Optional[pulumi.Input[float]]:
-        """
-        The total number of OCPUs available to the job run instance.
-        """
         return pulumi.get(self, "ocpus")
 
     @ocpus.setter
@@ -672,12 +520,6 @@ class JobRunJobLogConfigurationOverrideDetailsArgs:
                  enable_logging: Optional[pulumi.Input[bool]] = None,
                  log_group_id: Optional[pulumi.Input[str]] = None,
                  log_id: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[bool] enable_auto_log_creation: If automatic on-behalf-of log object creation is enabled for job runs.
-        :param pulumi.Input[bool] enable_logging: If customer logging is enabled for job runs.
-        :param pulumi.Input[str] log_group_id: The log group id for where log objects are for job runs.
-        :param pulumi.Input[str] log_id: The log id the job run will push logs too.
-        """
         if enable_auto_log_creation is not None:
             pulumi.set(__self__, "enable_auto_log_creation", enable_auto_log_creation)
         if enable_logging is not None:
@@ -690,9 +532,6 @@ class JobRunJobLogConfigurationOverrideDetailsArgs:
     @property
     @pulumi.getter(name="enableAutoLogCreation")
     def enable_auto_log_creation(self) -> Optional[pulumi.Input[bool]]:
-        """
-        If automatic on-behalf-of log object creation is enabled for job runs.
-        """
         return pulumi.get(self, "enable_auto_log_creation")
 
     @enable_auto_log_creation.setter
@@ -702,9 +541,6 @@ class JobRunJobLogConfigurationOverrideDetailsArgs:
     @property
     @pulumi.getter(name="enableLogging")
     def enable_logging(self) -> Optional[pulumi.Input[bool]]:
-        """
-        If customer logging is enabled for job runs.
-        """
         return pulumi.get(self, "enable_logging")
 
     @enable_logging.setter
@@ -714,9 +550,6 @@ class JobRunJobLogConfigurationOverrideDetailsArgs:
     @property
     @pulumi.getter(name="logGroupId")
     def log_group_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The log group id for where log objects are for job runs.
-        """
         return pulumi.get(self, "log_group_id")
 
     @log_group_id.setter
@@ -726,9 +559,6 @@ class JobRunJobLogConfigurationOverrideDetailsArgs:
     @property
     @pulumi.getter(name="logId")
     def log_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The log id the job run will push logs too.
-        """
         return pulumi.get(self, "log_id")
 
     @log_id.setter
@@ -747,16 +577,6 @@ class JobRunJobStorageMountConfigurationDetailsListArgs:
                  namespace: Optional[pulumi.Input[str]] = None,
                  prefix: Optional[pulumi.Input[str]] = None,
                  storage_type: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] bucket: The object storage bucket
-        :param pulumi.Input[str] destination_directory_name: The local directory name to be mounted
-        :param pulumi.Input[str] destination_path: The local path of the mounted directory, excluding directory name.
-        :param pulumi.Input[str] export_id: OCID of the export
-        :param pulumi.Input[str] mount_target_id: OCID of the mount target
-        :param pulumi.Input[str] namespace: The object storage namespace
-        :param pulumi.Input[str] prefix: Prefix in the bucket to mount
-        :param pulumi.Input[str] storage_type: The type of storage.
-        """
         if bucket is not None:
             pulumi.set(__self__, "bucket", bucket)
         if destination_directory_name is not None:
@@ -777,9 +597,6 @@ class JobRunJobStorageMountConfigurationDetailsListArgs:
     @property
     @pulumi.getter
     def bucket(self) -> Optional[pulumi.Input[str]]:
-        """
-        The object storage bucket
-        """
         return pulumi.get(self, "bucket")
 
     @bucket.setter
@@ -789,9 +606,6 @@ class JobRunJobStorageMountConfigurationDetailsListArgs:
     @property
     @pulumi.getter(name="destinationDirectoryName")
     def destination_directory_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The local directory name to be mounted
-        """
         return pulumi.get(self, "destination_directory_name")
 
     @destination_directory_name.setter
@@ -801,9 +615,6 @@ class JobRunJobStorageMountConfigurationDetailsListArgs:
     @property
     @pulumi.getter(name="destinationPath")
     def destination_path(self) -> Optional[pulumi.Input[str]]:
-        """
-        The local path of the mounted directory, excluding directory name.
-        """
         return pulumi.get(self, "destination_path")
 
     @destination_path.setter
@@ -813,9 +624,6 @@ class JobRunJobStorageMountConfigurationDetailsListArgs:
     @property
     @pulumi.getter(name="exportId")
     def export_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        OCID of the export
-        """
         return pulumi.get(self, "export_id")
 
     @export_id.setter
@@ -825,9 +633,6 @@ class JobRunJobStorageMountConfigurationDetailsListArgs:
     @property
     @pulumi.getter(name="mountTargetId")
     def mount_target_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        OCID of the mount target
-        """
         return pulumi.get(self, "mount_target_id")
 
     @mount_target_id.setter
@@ -837,9 +642,6 @@ class JobRunJobStorageMountConfigurationDetailsListArgs:
     @property
     @pulumi.getter
     def namespace(self) -> Optional[pulumi.Input[str]]:
-        """
-        The object storage namespace
-        """
         return pulumi.get(self, "namespace")
 
     @namespace.setter
@@ -849,9 +651,6 @@ class JobRunJobStorageMountConfigurationDetailsListArgs:
     @property
     @pulumi.getter
     def prefix(self) -> Optional[pulumi.Input[str]]:
-        """
-        Prefix in the bucket to mount
-        """
         return pulumi.get(self, "prefix")
 
     @prefix.setter
@@ -861,9 +660,6 @@ class JobRunJobStorageMountConfigurationDetailsListArgs:
     @property
     @pulumi.getter(name="storageType")
     def storage_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        The type of storage.
-        """
         return pulumi.get(self, "storage_type")
 
     @storage_type.setter
@@ -876,10 +672,6 @@ class JobRunLogDetailArgs:
     def __init__(__self__, *,
                  log_group_id: Optional[pulumi.Input[str]] = None,
                  log_id: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] log_group_id: The log group id for where log objects are for job runs.
-        :param pulumi.Input[str] log_id: The log id the job run will push logs too.
-        """
         if log_group_id is not None:
             pulumi.set(__self__, "log_group_id", log_group_id)
         if log_id is not None:
@@ -888,9 +680,6 @@ class JobRunLogDetailArgs:
     @property
     @pulumi.getter(name="logGroupId")
     def log_group_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The log group id for where log objects are for job runs.
-        """
         return pulumi.get(self, "log_group_id")
 
     @log_group_id.setter
@@ -900,9 +689,6 @@ class JobRunLogDetailArgs:
     @property
     @pulumi.getter(name="logId")
     def log_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The log id the job run will push logs too.
-        """
         return pulumi.get(self, "log_id")
 
     @log_id.setter
@@ -917,20 +703,6 @@ class ModelCustomMetadataListArgs:
                  description: Optional[pulumi.Input[str]] = None,
                  key: Optional[pulumi.Input[str]] = None,
                  value: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] category: (Updatable) Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values "Performance,Training Profile,Training and Validation Datasets,Training Environment,other".
-        :param pulumi.Input[str] description: (Updatable) A short description of the model.
-        :param pulumi.Input[str] key: (Updatable) Key of the model Metadata. The key can either be user defined or Oracle Cloud Infrastructure defined. List of Oracle Cloud Infrastructure defined keys:
-               * useCaseType
-               * libraryName
-               * libraryVersion
-               * estimatorClass
-               * hyperParameters
-               * testartifactresults
-        :param pulumi.Input[str] value: (Updatable) Allowed values for useCaseType: binary_classification, regression, multinomial_classification, clustering, recommender, dimensionality_reduction/representation, time_series_forecasting, anomaly_detection, topic_modeling, ner, sentiment_analysis, image_classification, object_localization, other
-               
-               Allowed values for libraryName: scikit-learn, xgboost, tensorflow, pytorch, mxnet, keras, lightGBM, pymc3, pyOD, spacy, prophet, sktime, statsmodels, cuml, oracle_automl, h2o, transformers, nltk, emcee, pystan, bert, gensim, flair, word2vec, ensemble, other
-        """
         if category is not None:
             pulumi.set(__self__, "category", category)
         if description is not None:
@@ -943,9 +715,6 @@ class ModelCustomMetadataListArgs:
     @property
     @pulumi.getter
     def category(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values "Performance,Training Profile,Training and Validation Datasets,Training Environment,other".
-        """
         return pulumi.get(self, "category")
 
     @category.setter
@@ -955,9 +724,6 @@ class ModelCustomMetadataListArgs:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A short description of the model.
-        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -967,15 +733,6 @@ class ModelCustomMetadataListArgs:
     @property
     @pulumi.getter
     def key(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Key of the model Metadata. The key can either be user defined or Oracle Cloud Infrastructure defined. List of Oracle Cloud Infrastructure defined keys:
-        * useCaseType
-        * libraryName
-        * libraryVersion
-        * estimatorClass
-        * hyperParameters
-        * testartifactresults
-        """
         return pulumi.get(self, "key")
 
     @key.setter
@@ -985,11 +742,6 @@ class ModelCustomMetadataListArgs:
     @property
     @pulumi.getter
     def value(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Allowed values for useCaseType: binary_classification, regression, multinomial_classification, clustering, recommender, dimensionality_reduction/representation, time_series_forecasting, anomaly_detection, topic_modeling, ner, sentiment_analysis, image_classification, object_localization, other
-
-        Allowed values for libraryName: scikit-learn, xgboost, tensorflow, pytorch, mxnet, keras, lightGBM, pymc3, pyOD, spacy, prophet, sktime, statsmodels, cuml, oracle_automl, h2o, transformers, nltk, emcee, pystan, bert, gensim, flair, word2vec, ensemble, other
-        """
         return pulumi.get(self, "value")
 
     @value.setter
@@ -1004,20 +756,6 @@ class ModelDefinedMetadataListArgs:
                  description: Optional[pulumi.Input[str]] = None,
                  key: Optional[pulumi.Input[str]] = None,
                  value: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] category: (Updatable) Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values "Performance,Training Profile,Training and Validation Datasets,Training Environment,other".
-        :param pulumi.Input[str] description: (Updatable) A short description of the model.
-        :param pulumi.Input[str] key: (Updatable) Key of the model Metadata. The key can either be user defined or Oracle Cloud Infrastructure defined. List of Oracle Cloud Infrastructure defined keys:
-               * useCaseType
-               * libraryName
-               * libraryVersion
-               * estimatorClass
-               * hyperParameters
-               * testartifactresults
-        :param pulumi.Input[str] value: (Updatable) Allowed values for useCaseType: binary_classification, regression, multinomial_classification, clustering, recommender, dimensionality_reduction/representation, time_series_forecasting, anomaly_detection, topic_modeling, ner, sentiment_analysis, image_classification, object_localization, other
-               
-               Allowed values for libraryName: scikit-learn, xgboost, tensorflow, pytorch, mxnet, keras, lightGBM, pymc3, pyOD, spacy, prophet, sktime, statsmodels, cuml, oracle_automl, h2o, transformers, nltk, emcee, pystan, bert, gensim, flair, word2vec, ensemble, other
-        """
         if category is not None:
             pulumi.set(__self__, "category", category)
         if description is not None:
@@ -1030,9 +768,6 @@ class ModelDefinedMetadataListArgs:
     @property
     @pulumi.getter
     def category(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values "Performance,Training Profile,Training and Validation Datasets,Training Environment,other".
-        """
         return pulumi.get(self, "category")
 
     @category.setter
@@ -1042,9 +777,6 @@ class ModelDefinedMetadataListArgs:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A short description of the model.
-        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -1054,15 +786,6 @@ class ModelDefinedMetadataListArgs:
     @property
     @pulumi.getter
     def key(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Key of the model Metadata. The key can either be user defined or Oracle Cloud Infrastructure defined. List of Oracle Cloud Infrastructure defined keys:
-        * useCaseType
-        * libraryName
-        * libraryVersion
-        * estimatorClass
-        * hyperParameters
-        * testartifactresults
-        """
         return pulumi.get(self, "key")
 
     @key.setter
@@ -1072,11 +795,6 @@ class ModelDefinedMetadataListArgs:
     @property
     @pulumi.getter
     def value(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Allowed values for useCaseType: binary_classification, regression, multinomial_classification, clustering, recommender, dimensionality_reduction/representation, time_series_forecasting, anomaly_detection, topic_modeling, ner, sentiment_analysis, image_classification, object_localization, other
-
-        Allowed values for libraryName: scikit-learn, xgboost, tensorflow, pytorch, mxnet, keras, lightGBM, pymc3, pyOD, spacy, prophet, sktime, statsmodels, cuml, oracle_automl, h2o, transformers, nltk, emcee, pystan, bert, gensim, flair, word2vec, ensemble, other
-        """
         return pulumi.get(self, "value")
 
     @value.setter
@@ -1089,10 +807,6 @@ class ModelDeploymentCategoryLogDetailsArgs:
     def __init__(__self__, *,
                  access: Optional[pulumi.Input['ModelDeploymentCategoryLogDetailsAccessArgs']] = None,
                  predict: Optional[pulumi.Input['ModelDeploymentCategoryLogDetailsPredictArgs']] = None):
-        """
-        :param pulumi.Input['ModelDeploymentCategoryLogDetailsAccessArgs'] access: (Updatable) The log details.
-        :param pulumi.Input['ModelDeploymentCategoryLogDetailsPredictArgs'] predict: (Updatable) The log details.
-        """
         if access is not None:
             pulumi.set(__self__, "access", access)
         if predict is not None:
@@ -1101,9 +815,6 @@ class ModelDeploymentCategoryLogDetailsArgs:
     @property
     @pulumi.getter
     def access(self) -> Optional[pulumi.Input['ModelDeploymentCategoryLogDetailsAccessArgs']]:
-        """
-        (Updatable) The log details.
-        """
         return pulumi.get(self, "access")
 
     @access.setter
@@ -1113,9 +824,6 @@ class ModelDeploymentCategoryLogDetailsArgs:
     @property
     @pulumi.getter
     def predict(self) -> Optional[pulumi.Input['ModelDeploymentCategoryLogDetailsPredictArgs']]:
-        """
-        (Updatable) The log details.
-        """
         return pulumi.get(self, "predict")
 
     @predict.setter
@@ -1128,19 +836,12 @@ class ModelDeploymentCategoryLogDetailsAccessArgs:
     def __init__(__self__, *,
                  log_group_id: pulumi.Input[str],
                  log_id: pulumi.Input[str]):
-        """
-        :param pulumi.Input[str] log_group_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a log group to work with.
-        :param pulumi.Input[str] log_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a log to work with.
-        """
         pulumi.set(__self__, "log_group_id", log_group_id)
         pulumi.set(__self__, "log_id", log_id)
 
     @property
     @pulumi.getter(name="logGroupId")
     def log_group_id(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a log group to work with.
-        """
         return pulumi.get(self, "log_group_id")
 
     @log_group_id.setter
@@ -1150,9 +851,6 @@ class ModelDeploymentCategoryLogDetailsAccessArgs:
     @property
     @pulumi.getter(name="logId")
     def log_id(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a log to work with.
-        """
         return pulumi.get(self, "log_id")
 
     @log_id.setter
@@ -1165,19 +863,12 @@ class ModelDeploymentCategoryLogDetailsPredictArgs:
     def __init__(__self__, *,
                  log_group_id: pulumi.Input[str],
                  log_id: pulumi.Input[str]):
-        """
-        :param pulumi.Input[str] log_group_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a log group to work with.
-        :param pulumi.Input[str] log_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a log to work with.
-        """
         pulumi.set(__self__, "log_group_id", log_group_id)
         pulumi.set(__self__, "log_id", log_id)
 
     @property
     @pulumi.getter(name="logGroupId")
     def log_group_id(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a log group to work with.
-        """
         return pulumi.get(self, "log_group_id")
 
     @log_group_id.setter
@@ -1187,9 +878,6 @@ class ModelDeploymentCategoryLogDetailsPredictArgs:
     @property
     @pulumi.getter(name="logId")
     def log_id(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a log to work with.
-        """
         return pulumi.get(self, "log_id")
 
     @log_id.setter
@@ -1203,11 +891,6 @@ class ModelDeploymentModelDeploymentConfigurationDetailsArgs:
                  deployment_type: pulumi.Input[str],
                  model_configuration_details: pulumi.Input['ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsArgs'],
                  environment_configuration_details: Optional[pulumi.Input['ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsArgs']] = None):
-        """
-        :param pulumi.Input[str] deployment_type: (Updatable) The type of the model deployment.
-        :param pulumi.Input['ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsArgs'] model_configuration_details: (Updatable) The model configuration details.
-        :param pulumi.Input['ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsArgs'] environment_configuration_details: (Updatable) The configuration to carry the environment details thats used in Model Deployment creation
-        """
         pulumi.set(__self__, "deployment_type", deployment_type)
         pulumi.set(__self__, "model_configuration_details", model_configuration_details)
         if environment_configuration_details is not None:
@@ -1216,9 +899,6 @@ class ModelDeploymentModelDeploymentConfigurationDetailsArgs:
     @property
     @pulumi.getter(name="deploymentType")
     def deployment_type(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The type of the model deployment.
-        """
         return pulumi.get(self, "deployment_type")
 
     @deployment_type.setter
@@ -1228,9 +908,6 @@ class ModelDeploymentModelDeploymentConfigurationDetailsArgs:
     @property
     @pulumi.getter(name="modelConfigurationDetails")
     def model_configuration_details(self) -> pulumi.Input['ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsArgs']:
-        """
-        (Updatable) The model configuration details.
-        """
         return pulumi.get(self, "model_configuration_details")
 
     @model_configuration_details.setter
@@ -1240,9 +917,6 @@ class ModelDeploymentModelDeploymentConfigurationDetailsArgs:
     @property
     @pulumi.getter(name="environmentConfigurationDetails")
     def environment_configuration_details(self) -> Optional[pulumi.Input['ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsArgs']]:
-        """
-        (Updatable) The configuration to carry the environment details thats used in Model Deployment creation
-        """
         return pulumi.get(self, "environment_configuration_details")
 
     @environment_configuration_details.setter
@@ -1261,16 +935,6 @@ class ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfiguration
                  image: Optional[pulumi.Input[str]] = None,
                  image_digest: Optional[pulumi.Input[str]] = None,
                  server_port: Optional[pulumi.Input[int]] = None):
-        """
-        :param pulumi.Input[str] environment_configuration_type: (Updatable) The environment configuration type
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] cmds: (Updatable) The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] entrypoints: (Updatable) The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
-        :param pulumi.Input[Mapping[str, Any]] environment_variables: (Updatable) Environment variables to set for the web server container. The size of envVars must be less than 2048 bytes. Key should be under 32 characters. Key should contain only letters, digits and underscore (_) Key should start with a letter. Key should have at least 2 characters. Key should not end with underscore eg. `TEST_` Key if added cannot be empty. Value can be empty. No specific size limits on individual Values. But overall environment variables is limited to 2048 bytes. Key can't be reserved Model Deployment environment variables.
-        :param pulumi.Input[int] health_check_port: (Updatable) The port on which the container [HEALTHCHECK](https://docs.docker.com/engine/reference/builder/#healthcheck) would listen. The port can be anything between `1024` and `65535`. The following ports cannot be used `24224`, `8446`, `8447`.
-        :param pulumi.Input[str] image: (Updatable) The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format. Acceptable format: `<region>.ocir.io/<registry>/<image>:<tag>` `<region>.ocir.io/<registry>/<image>:<tag>@digest`
-        :param pulumi.Input[str] image_digest: (Updatable) The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
-        :param pulumi.Input[int] server_port: (Updatable) The port on which the web server serving the inference is running. The port can be anything between `1024` and `65535`. The following ports cannot be used `24224`, `8446`, `8447`.
-        """
         pulumi.set(__self__, "environment_configuration_type", environment_configuration_type)
         if cmds is not None:
             pulumi.set(__self__, "cmds", cmds)
@@ -1290,9 +954,6 @@ class ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfiguration
     @property
     @pulumi.getter(name="environmentConfigurationType")
     def environment_configuration_type(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The environment configuration type
-        """
         return pulumi.get(self, "environment_configuration_type")
 
     @environment_configuration_type.setter
@@ -1302,9 +963,6 @@ class ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfiguration
     @property
     @pulumi.getter
     def cmds(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
-        """
         return pulumi.get(self, "cmds")
 
     @cmds.setter
@@ -1314,9 +972,6 @@ class ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfiguration
     @property
     @pulumi.getter
     def entrypoints(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
-        """
         return pulumi.get(self, "entrypoints")
 
     @entrypoints.setter
@@ -1326,9 +981,6 @@ class ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfiguration
     @property
     @pulumi.getter(name="environmentVariables")
     def environment_variables(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Environment variables to set for the web server container. The size of envVars must be less than 2048 bytes. Key should be under 32 characters. Key should contain only letters, digits and underscore (_) Key should start with a letter. Key should have at least 2 characters. Key should not end with underscore eg. `TEST_` Key if added cannot be empty. Value can be empty. No specific size limits on individual Values. But overall environment variables is limited to 2048 bytes. Key can't be reserved Model Deployment environment variables.
-        """
         return pulumi.get(self, "environment_variables")
 
     @environment_variables.setter
@@ -1338,9 +990,6 @@ class ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfiguration
     @property
     @pulumi.getter(name="healthCheckPort")
     def health_check_port(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) The port on which the container [HEALTHCHECK](https://docs.docker.com/engine/reference/builder/#healthcheck) would listen. The port can be anything between `1024` and `65535`. The following ports cannot be used `24224`, `8446`, `8447`.
-        """
         return pulumi.get(self, "health_check_port")
 
     @health_check_port.setter
@@ -1350,9 +999,6 @@ class ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfiguration
     @property
     @pulumi.getter
     def image(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format. Acceptable format: `<region>.ocir.io/<registry>/<image>:<tag>` `<region>.ocir.io/<registry>/<image>:<tag>@digest`
-        """
         return pulumi.get(self, "image")
 
     @image.setter
@@ -1362,9 +1008,6 @@ class ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfiguration
     @property
     @pulumi.getter(name="imageDigest")
     def image_digest(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
-        """
         return pulumi.get(self, "image_digest")
 
     @image_digest.setter
@@ -1374,9 +1017,6 @@ class ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfiguration
     @property
     @pulumi.getter(name="serverPort")
     def server_port(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) The port on which the web server serving the inference is running. The port can be anything between `1024` and `65535`. The following ports cannot be used `24224`, `8446`, `8447`.
-        """
         return pulumi.get(self, "server_port")
 
     @server_port.setter
@@ -1391,12 +1031,6 @@ class ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetail
                  model_id: pulumi.Input[str],
                  bandwidth_mbps: Optional[pulumi.Input[int]] = None,
                  scaling_policy: Optional[pulumi.Input['ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyArgs']] = None):
-        """
-        :param pulumi.Input['ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationArgs'] instance_configuration: (Updatable) The model deployment instance configuration
-        :param pulumi.Input[str] model_id: (Updatable) The OCID of the model you want to deploy.
-        :param pulumi.Input[int] bandwidth_mbps: (Updatable) The minimum network bandwidth for the model deployment.
-        :param pulumi.Input['ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyArgs'] scaling_policy: (Updatable) The scaling policy to apply to each model of the deployment.
-        """
         pulumi.set(__self__, "instance_configuration", instance_configuration)
         pulumi.set(__self__, "model_id", model_id)
         if bandwidth_mbps is not None:
@@ -1407,9 +1041,6 @@ class ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetail
     @property
     @pulumi.getter(name="instanceConfiguration")
     def instance_configuration(self) -> pulumi.Input['ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationArgs']:
-        """
-        (Updatable) The model deployment instance configuration
-        """
         return pulumi.get(self, "instance_configuration")
 
     @instance_configuration.setter
@@ -1419,9 +1050,6 @@ class ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetail
     @property
     @pulumi.getter(name="modelId")
     def model_id(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The OCID of the model you want to deploy.
-        """
         return pulumi.get(self, "model_id")
 
     @model_id.setter
@@ -1431,9 +1059,6 @@ class ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetail
     @property
     @pulumi.getter(name="bandwidthMbps")
     def bandwidth_mbps(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) The minimum network bandwidth for the model deployment.
-        """
         return pulumi.get(self, "bandwidth_mbps")
 
     @bandwidth_mbps.setter
@@ -1443,9 +1068,6 @@ class ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetail
     @property
     @pulumi.getter(name="scalingPolicy")
     def scaling_policy(self) -> Optional[pulumi.Input['ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyArgs']]:
-        """
-        (Updatable) The scaling policy to apply to each model of the deployment.
-        """
         return pulumi.get(self, "scaling_policy")
 
     @scaling_policy.setter
@@ -1458,10 +1080,6 @@ class ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetail
     def __init__(__self__, *,
                  instance_shape_name: pulumi.Input[str],
                  model_deployment_instance_shape_config_details: Optional[pulumi.Input['ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetailsArgs']] = None):
-        """
-        :param pulumi.Input[str] instance_shape_name: (Updatable) The shape used to launch the model deployment instances.
-        :param pulumi.Input['ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetailsArgs'] model_deployment_instance_shape_config_details: (Updatable) Details for the model-deployment instance shape configuration.
-        """
         pulumi.set(__self__, "instance_shape_name", instance_shape_name)
         if model_deployment_instance_shape_config_details is not None:
             pulumi.set(__self__, "model_deployment_instance_shape_config_details", model_deployment_instance_shape_config_details)
@@ -1469,9 +1087,6 @@ class ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetail
     @property
     @pulumi.getter(name="instanceShapeName")
     def instance_shape_name(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The shape used to launch the model deployment instances.
-        """
         return pulumi.get(self, "instance_shape_name")
 
     @instance_shape_name.setter
@@ -1481,9 +1096,6 @@ class ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetail
     @property
     @pulumi.getter(name="modelDeploymentInstanceShapeConfigDetails")
     def model_deployment_instance_shape_config_details(self) -> Optional[pulumi.Input['ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetailsArgs']]:
-        """
-        (Updatable) Details for the model-deployment instance shape configuration.
-        """
         return pulumi.get(self, "model_deployment_instance_shape_config_details")
 
     @model_deployment_instance_shape_config_details.setter
@@ -1496,10 +1108,6 @@ class ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetail
     def __init__(__self__, *,
                  memory_in_gbs: Optional[pulumi.Input[float]] = None,
                  ocpus: Optional[pulumi.Input[float]] = None):
-        """
-        :param pulumi.Input[float] memory_in_gbs: (Updatable) A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the memory to be specified with in the range of 6 to 1024 GB. VM.Standard3.Flex memory range is between 6 to 512 GB and VM.Optimized3.Flex memory range is between 6 to 256 GB.
-        :param pulumi.Input[float] ocpus: (Updatable) A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the ocpu count to be specified with in the range of 1 to 64 ocpu. VM.Standard3.Flex OCPU range is between 1 to 32 ocpu and for VM.Optimized3.Flex OCPU range is 1 to 18 ocpu.
-        """
         if memory_in_gbs is not None:
             pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
         if ocpus is not None:
@@ -1508,9 +1116,6 @@ class ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetail
     @property
     @pulumi.getter(name="memoryInGbs")
     def memory_in_gbs(self) -> Optional[pulumi.Input[float]]:
-        """
-        (Updatable) A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the memory to be specified with in the range of 6 to 1024 GB. VM.Standard3.Flex memory range is between 6 to 512 GB and VM.Optimized3.Flex memory range is between 6 to 256 GB.
-        """
         return pulumi.get(self, "memory_in_gbs")
 
     @memory_in_gbs.setter
@@ -1520,9 +1125,6 @@ class ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetail
     @property
     @pulumi.getter
     def ocpus(self) -> Optional[pulumi.Input[float]]:
-        """
-        (Updatable) A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the ocpu count to be specified with in the range of 1 to 64 ocpu. VM.Standard3.Flex OCPU range is between 1 to 32 ocpu and for VM.Optimized3.Flex OCPU range is 1 to 18 ocpu.
-        """
         return pulumi.get(self, "ocpus")
 
     @ocpus.setter
@@ -1535,19 +1137,12 @@ class ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetail
     def __init__(__self__, *,
                  instance_count: pulumi.Input[int],
                  policy_type: pulumi.Input[str]):
-        """
-        :param pulumi.Input[int] instance_count: (Updatable) The number of instances for the model deployment.
-        :param pulumi.Input[str] policy_type: (Updatable) The type of scaling policy.
-        """
         pulumi.set(__self__, "instance_count", instance_count)
         pulumi.set(__self__, "policy_type", policy_type)
 
     @property
     @pulumi.getter(name="instanceCount")
     def instance_count(self) -> pulumi.Input[int]:
-        """
-        (Updatable) The number of instances for the model deployment.
-        """
         return pulumi.get(self, "instance_count")
 
     @instance_count.setter
@@ -1557,9 +1152,6 @@ class ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetail
     @property
     @pulumi.getter(name="policyType")
     def policy_type(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The type of scaling policy.
-        """
         return pulumi.get(self, "policy_type")
 
     @policy_type.setter
@@ -1575,13 +1167,6 @@ class NotebookSessionNotebookSessionConfigDetailsArgs:
                  notebook_session_shape_config_details: Optional[pulumi.Input['NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetailsArgs']] = None,
                  private_endpoint_id: Optional[pulumi.Input[str]] = None,
                  subnet_id: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] shape: (Updatable) The shape used to launch the notebook session compute instance.  The list of available shapes in a given compartment can be retrieved using the `ListNotebookSessionShapes` endpoint.
-        :param pulumi.Input[int] block_storage_size_in_gbs: (Updatable) A notebook session instance is provided with a block storage volume. This specifies the size of the volume in GBs.
-        :param pulumi.Input['NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetailsArgs'] notebook_session_shape_config_details: (Updatable) Details for the notebook session shape configuration.
-        :param pulumi.Input[str] private_endpoint_id: (Updatable) The OCID of a Data Science private endpoint.
-        :param pulumi.Input[str] subnet_id: (Updatable) A notebook session instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT gateway for egress to the internet.
-        """
         pulumi.set(__self__, "shape", shape)
         if block_storage_size_in_gbs is not None:
             pulumi.set(__self__, "block_storage_size_in_gbs", block_storage_size_in_gbs)
@@ -1595,9 +1180,6 @@ class NotebookSessionNotebookSessionConfigDetailsArgs:
     @property
     @pulumi.getter
     def shape(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The shape used to launch the notebook session compute instance.  The list of available shapes in a given compartment can be retrieved using the `ListNotebookSessionShapes` endpoint.
-        """
         return pulumi.get(self, "shape")
 
     @shape.setter
@@ -1607,9 +1189,6 @@ class NotebookSessionNotebookSessionConfigDetailsArgs:
     @property
     @pulumi.getter(name="blockStorageSizeInGbs")
     def block_storage_size_in_gbs(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) A notebook session instance is provided with a block storage volume. This specifies the size of the volume in GBs.
-        """
         return pulumi.get(self, "block_storage_size_in_gbs")
 
     @block_storage_size_in_gbs.setter
@@ -1619,9 +1198,6 @@ class NotebookSessionNotebookSessionConfigDetailsArgs:
     @property
     @pulumi.getter(name="notebookSessionShapeConfigDetails")
     def notebook_session_shape_config_details(self) -> Optional[pulumi.Input['NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetailsArgs']]:
-        """
-        (Updatable) Details for the notebook session shape configuration.
-        """
         return pulumi.get(self, "notebook_session_shape_config_details")
 
     @notebook_session_shape_config_details.setter
@@ -1631,9 +1207,6 @@ class NotebookSessionNotebookSessionConfigDetailsArgs:
     @property
     @pulumi.getter(name="privateEndpointId")
     def private_endpoint_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The OCID of a Data Science private endpoint.
-        """
         return pulumi.get(self, "private_endpoint_id")
 
     @private_endpoint_id.setter
@@ -1643,9 +1216,6 @@ class NotebookSessionNotebookSessionConfigDetailsArgs:
     @property
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A notebook session instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT gateway for egress to the internet.
-        """
         return pulumi.get(self, "subnet_id")
 
     @subnet_id.setter
@@ -1658,10 +1228,6 @@ class NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetai
     def __init__(__self__, *,
                  memory_in_gbs: Optional[pulumi.Input[float]] = None,
                  ocpus: Optional[pulumi.Input[float]] = None):
-        """
-        :param pulumi.Input[float] memory_in_gbs: (Updatable) The total amount of memory available to the notebook session instance, in gigabytes.
-        :param pulumi.Input[float] ocpus: (Updatable) The total number of OCPUs available to the notebook session instance.
-        """
         if memory_in_gbs is not None:
             pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
         if ocpus is not None:
@@ -1670,9 +1236,6 @@ class NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetai
     @property
     @pulumi.getter(name="memoryInGbs")
     def memory_in_gbs(self) -> Optional[pulumi.Input[float]]:
-        """
-        (Updatable) The total amount of memory available to the notebook session instance, in gigabytes.
-        """
         return pulumi.get(self, "memory_in_gbs")
 
     @memory_in_gbs.setter
@@ -1682,9 +1245,6 @@ class NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetai
     @property
     @pulumi.getter
     def ocpus(self) -> Optional[pulumi.Input[float]]:
-        """
-        (Updatable) The total number of OCPUs available to the notebook session instance.
-        """
         return pulumi.get(self, "ocpus")
 
     @ocpus.setter
@@ -1700,13 +1260,6 @@ class NotebookSessionNotebookSessionConfigurationDetailsArgs:
                  block_storage_size_in_gbs: Optional[pulumi.Input[int]] = None,
                  notebook_session_shape_config_details: Optional[pulumi.Input['NotebookSessionNotebookSessionConfigurationDetailsNotebookSessionShapeConfigDetailsArgs']] = None,
                  private_endpoint_id: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] shape: (Updatable) The shape used to launch the notebook session compute instance.  The list of available shapes in a given compartment can be retrieved using the `ListNotebookSessionShapes` endpoint.
-        :param pulumi.Input[str] subnet_id: (Updatable) A notebook session instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT gateway for egress to the internet.
-        :param pulumi.Input[int] block_storage_size_in_gbs: (Updatable) A notebook session instance is provided with a block storage volume. This specifies the size of the volume in GBs.
-        :param pulumi.Input['NotebookSessionNotebookSessionConfigurationDetailsNotebookSessionShapeConfigDetailsArgs'] notebook_session_shape_config_details: (Updatable) Details for the notebook session shape configuration.
-        :param pulumi.Input[str] private_endpoint_id: (Updatable) The OCID of a Data Science private endpoint.
-        """
         pulumi.set(__self__, "shape", shape)
         pulumi.set(__self__, "subnet_id", subnet_id)
         if block_storage_size_in_gbs is not None:
@@ -1719,9 +1272,6 @@ class NotebookSessionNotebookSessionConfigurationDetailsArgs:
     @property
     @pulumi.getter
     def shape(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The shape used to launch the notebook session compute instance.  The list of available shapes in a given compartment can be retrieved using the `ListNotebookSessionShapes` endpoint.
-        """
         return pulumi.get(self, "shape")
 
     @shape.setter
@@ -1731,9 +1281,6 @@ class NotebookSessionNotebookSessionConfigurationDetailsArgs:
     @property
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> pulumi.Input[str]:
-        """
-        (Updatable) A notebook session instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT gateway for egress to the internet.
-        """
         return pulumi.get(self, "subnet_id")
 
     @subnet_id.setter
@@ -1743,9 +1290,6 @@ class NotebookSessionNotebookSessionConfigurationDetailsArgs:
     @property
     @pulumi.getter(name="blockStorageSizeInGbs")
     def block_storage_size_in_gbs(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) A notebook session instance is provided with a block storage volume. This specifies the size of the volume in GBs.
-        """
         return pulumi.get(self, "block_storage_size_in_gbs")
 
     @block_storage_size_in_gbs.setter
@@ -1755,9 +1299,6 @@ class NotebookSessionNotebookSessionConfigurationDetailsArgs:
     @property
     @pulumi.getter(name="notebookSessionShapeConfigDetails")
     def notebook_session_shape_config_details(self) -> Optional[pulumi.Input['NotebookSessionNotebookSessionConfigurationDetailsNotebookSessionShapeConfigDetailsArgs']]:
-        """
-        (Updatable) Details for the notebook session shape configuration.
-        """
         return pulumi.get(self, "notebook_session_shape_config_details")
 
     @notebook_session_shape_config_details.setter
@@ -1767,9 +1308,6 @@ class NotebookSessionNotebookSessionConfigurationDetailsArgs:
     @property
     @pulumi.getter(name="privateEndpointId")
     def private_endpoint_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The OCID of a Data Science private endpoint.
-        """
         return pulumi.get(self, "private_endpoint_id")
 
     @private_endpoint_id.setter
@@ -1782,10 +1320,6 @@ class NotebookSessionNotebookSessionConfigurationDetailsNotebookSessionShapeConf
     def __init__(__self__, *,
                  memory_in_gbs: Optional[pulumi.Input[float]] = None,
                  ocpus: Optional[pulumi.Input[float]] = None):
-        """
-        :param pulumi.Input[float] memory_in_gbs: (Updatable) The total amount of memory available to the notebook session instance, in gigabytes.
-        :param pulumi.Input[float] ocpus: (Updatable) The total number of OCPUs available to the notebook session instance.
-        """
         if memory_in_gbs is not None:
             pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
         if ocpus is not None:
@@ -1794,9 +1328,6 @@ class NotebookSessionNotebookSessionConfigurationDetailsNotebookSessionShapeConf
     @property
     @pulumi.getter(name="memoryInGbs")
     def memory_in_gbs(self) -> Optional[pulumi.Input[float]]:
-        """
-        (Updatable) The total amount of memory available to the notebook session instance, in gigabytes.
-        """
         return pulumi.get(self, "memory_in_gbs")
 
     @memory_in_gbs.setter
@@ -1806,9 +1337,6 @@ class NotebookSessionNotebookSessionConfigurationDetailsNotebookSessionShapeConf
     @property
     @pulumi.getter
     def ocpus(self) -> Optional[pulumi.Input[float]]:
-        """
-        (Updatable) The total number of OCPUs available to the notebook session instance.
-        """
         return pulumi.get(self, "ocpus")
 
     @ocpus.setter
@@ -1821,10 +1349,6 @@ class NotebookSessionNotebookSessionRuntimeConfigDetailsArgs:
     def __init__(__self__, *,
                  custom_environment_variables: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  notebook_session_git_config_details: Optional[pulumi.Input['NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsArgs']] = None):
-        """
-        :param pulumi.Input[Mapping[str, Any]] custom_environment_variables: (Updatable) Custom environment variables for Notebook Session. These key-value pairs will be available for customers in Notebook Sessions.
-        :param pulumi.Input['NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsArgs'] notebook_session_git_config_details: (Updatable) Git configuration Details.
-        """
         if custom_environment_variables is not None:
             pulumi.set(__self__, "custom_environment_variables", custom_environment_variables)
         if notebook_session_git_config_details is not None:
@@ -1833,9 +1357,6 @@ class NotebookSessionNotebookSessionRuntimeConfigDetailsArgs:
     @property
     @pulumi.getter(name="customEnvironmentVariables")
     def custom_environment_variables(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Custom environment variables for Notebook Session. These key-value pairs will be available for customers in Notebook Sessions.
-        """
         return pulumi.get(self, "custom_environment_variables")
 
     @custom_environment_variables.setter
@@ -1845,9 +1366,6 @@ class NotebookSessionNotebookSessionRuntimeConfigDetailsArgs:
     @property
     @pulumi.getter(name="notebookSessionGitConfigDetails")
     def notebook_session_git_config_details(self) -> Optional[pulumi.Input['NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsArgs']]:
-        """
-        (Updatable) Git configuration Details.
-        """
         return pulumi.get(self, "notebook_session_git_config_details")
 
     @notebook_session_git_config_details.setter
@@ -1859,18 +1377,12 @@ class NotebookSessionNotebookSessionRuntimeConfigDetailsArgs:
 class NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsArgs:
     def __init__(__self__, *,
                  notebook_session_git_repo_config_collections: Optional[pulumi.Input[Sequence[pulumi.Input['NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollectionArgs']]]] = None):
-        """
-        :param pulumi.Input[Sequence[pulumi.Input['NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollectionArgs']]] notebook_session_git_repo_config_collections: (Updatable) A collection of Git repository configurations.
-        """
         if notebook_session_git_repo_config_collections is not None:
             pulumi.set(__self__, "notebook_session_git_repo_config_collections", notebook_session_git_repo_config_collections)
 
     @property
     @pulumi.getter(name="notebookSessionGitRepoConfigCollections")
     def notebook_session_git_repo_config_collections(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollectionArgs']]]]:
-        """
-        (Updatable) A collection of Git repository configurations.
-        """
         return pulumi.get(self, "notebook_session_git_repo_config_collections")
 
     @notebook_session_git_repo_config_collections.setter
@@ -1882,17 +1394,11 @@ class NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfig
 class NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollectionArgs:
     def __init__(__self__, *,
                  url: pulumi.Input[str]):
-        """
-        :param pulumi.Input[str] url: (Updatable) The repository URL
-        """
         pulumi.set(__self__, "url", url)
 
     @property
     @pulumi.getter
     def url(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The repository URL
-        """
         return pulumi.get(self, "url")
 
     @url.setter
@@ -1911,16 +1417,6 @@ class NotebookSessionNotebookSessionStorageMountConfigurationDetailsListArgs:
                  mount_target_id: Optional[pulumi.Input[str]] = None,
                  namespace: Optional[pulumi.Input[str]] = None,
                  prefix: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] destination_directory_name: (Updatable) The local directory name to be mounted
-        :param pulumi.Input[str] storage_type: (Updatable) The type of storage.
-        :param pulumi.Input[str] bucket: (Updatable) The object storage bucket
-        :param pulumi.Input[str] destination_path: (Updatable) The local path of the mounted directory, excluding directory name.
-        :param pulumi.Input[str] export_id: (Updatable) OCID of the export
-        :param pulumi.Input[str] mount_target_id: (Updatable) OCID of the mount target
-        :param pulumi.Input[str] namespace: (Updatable) The object storage namespace
-        :param pulumi.Input[str] prefix: (Updatable) Prefix in the bucket to mount
-        """
         pulumi.set(__self__, "destination_directory_name", destination_directory_name)
         pulumi.set(__self__, "storage_type", storage_type)
         if bucket is not None:
@@ -1939,9 +1435,6 @@ class NotebookSessionNotebookSessionStorageMountConfigurationDetailsListArgs:
     @property
     @pulumi.getter(name="destinationDirectoryName")
     def destination_directory_name(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The local directory name to be mounted
-        """
         return pulumi.get(self, "destination_directory_name")
 
     @destination_directory_name.setter
@@ -1951,9 +1444,6 @@ class NotebookSessionNotebookSessionStorageMountConfigurationDetailsListArgs:
     @property
     @pulumi.getter(name="storageType")
     def storage_type(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The type of storage.
-        """
         return pulumi.get(self, "storage_type")
 
     @storage_type.setter
@@ -1963,9 +1453,6 @@ class NotebookSessionNotebookSessionStorageMountConfigurationDetailsListArgs:
     @property
     @pulumi.getter
     def bucket(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The object storage bucket
-        """
         return pulumi.get(self, "bucket")
 
     @bucket.setter
@@ -1975,9 +1462,6 @@ class NotebookSessionNotebookSessionStorageMountConfigurationDetailsListArgs:
     @property
     @pulumi.getter(name="destinationPath")
     def destination_path(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The local path of the mounted directory, excluding directory name.
-        """
         return pulumi.get(self, "destination_path")
 
     @destination_path.setter
@@ -1987,9 +1471,6 @@ class NotebookSessionNotebookSessionStorageMountConfigurationDetailsListArgs:
     @property
     @pulumi.getter(name="exportId")
     def export_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) OCID of the export
-        """
         return pulumi.get(self, "export_id")
 
     @export_id.setter
@@ -1999,9 +1480,6 @@ class NotebookSessionNotebookSessionStorageMountConfigurationDetailsListArgs:
     @property
     @pulumi.getter(name="mountTargetId")
     def mount_target_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) OCID of the mount target
-        """
         return pulumi.get(self, "mount_target_id")
 
     @mount_target_id.setter
@@ -2011,9 +1489,6 @@ class NotebookSessionNotebookSessionStorageMountConfigurationDetailsListArgs:
     @property
     @pulumi.getter
     def namespace(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The object storage namespace
-        """
         return pulumi.get(self, "namespace")
 
     @namespace.setter
@@ -2023,9 +1498,6 @@ class NotebookSessionNotebookSessionStorageMountConfigurationDetailsListArgs:
     @property
     @pulumi.getter
     def prefix(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Prefix in the bucket to mount
-        """
         return pulumi.get(self, "prefix")
 
     @prefix.setter
@@ -2040,12 +1512,6 @@ class PipelineConfigurationDetailsArgs:
                  command_line_arguments: Optional[pulumi.Input[str]] = None,
                  environment_variables: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  maximum_runtime_in_minutes: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] type: (Updatable) The type of pipeline.
-        :param pulumi.Input[str] command_line_arguments: (Updatable) The command line arguments to set for step.
-        :param pulumi.Input[Mapping[str, Any]] environment_variables: (Updatable) Environment variables to set for step.
-        :param pulumi.Input[str] maximum_runtime_in_minutes: (Updatable) A time bound for the execution of the step.
-        """
         pulumi.set(__self__, "type", type)
         if command_line_arguments is not None:
             pulumi.set(__self__, "command_line_arguments", command_line_arguments)
@@ -2057,9 +1523,6 @@ class PipelineConfigurationDetailsArgs:
     @property
     @pulumi.getter
     def type(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The type of pipeline.
-        """
         return pulumi.get(self, "type")
 
     @type.setter
@@ -2069,9 +1532,6 @@ class PipelineConfigurationDetailsArgs:
     @property
     @pulumi.getter(name="commandLineArguments")
     def command_line_arguments(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The command line arguments to set for step.
-        """
         return pulumi.get(self, "command_line_arguments")
 
     @command_line_arguments.setter
@@ -2081,9 +1541,6 @@ class PipelineConfigurationDetailsArgs:
     @property
     @pulumi.getter(name="environmentVariables")
     def environment_variables(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Environment variables to set for step.
-        """
         return pulumi.get(self, "environment_variables")
 
     @environment_variables.setter
@@ -2093,9 +1550,6 @@ class PipelineConfigurationDetailsArgs:
     @property
     @pulumi.getter(name="maximumRuntimeInMinutes")
     def maximum_runtime_in_minutes(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A time bound for the execution of the step.
-        """
         return pulumi.get(self, "maximum_runtime_in_minutes")
 
     @maximum_runtime_in_minutes.setter
@@ -2109,11 +1563,6 @@ class PipelineInfrastructureConfigurationDetailsArgs:
                  block_storage_size_in_gbs: pulumi.Input[int],
                  shape_name: pulumi.Input[str],
                  shape_config_details: Optional[pulumi.Input['PipelineInfrastructureConfigurationDetailsShapeConfigDetailsArgs']] = None):
-        """
-        :param pulumi.Input[int] block_storage_size_in_gbs: The size of the block storage volume to attach to the instance.
-        :param pulumi.Input[str] shape_name: The shape used to launch the instance for all step runs in the pipeline.
-        :param pulumi.Input['PipelineInfrastructureConfigurationDetailsShapeConfigDetailsArgs'] shape_config_details: Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
-        """
         pulumi.set(__self__, "block_storage_size_in_gbs", block_storage_size_in_gbs)
         pulumi.set(__self__, "shape_name", shape_name)
         if shape_config_details is not None:
@@ -2122,9 +1571,6 @@ class PipelineInfrastructureConfigurationDetailsArgs:
     @property
     @pulumi.getter(name="blockStorageSizeInGbs")
     def block_storage_size_in_gbs(self) -> pulumi.Input[int]:
-        """
-        The size of the block storage volume to attach to the instance.
-        """
         return pulumi.get(self, "block_storage_size_in_gbs")
 
     @block_storage_size_in_gbs.setter
@@ -2134,9 +1580,6 @@ class PipelineInfrastructureConfigurationDetailsArgs:
     @property
     @pulumi.getter(name="shapeName")
     def shape_name(self) -> pulumi.Input[str]:
-        """
-        The shape used to launch the instance for all step runs in the pipeline.
-        """
         return pulumi.get(self, "shape_name")
 
     @shape_name.setter
@@ -2146,9 +1589,6 @@ class PipelineInfrastructureConfigurationDetailsArgs:
     @property
     @pulumi.getter(name="shapeConfigDetails")
     def shape_config_details(self) -> Optional[pulumi.Input['PipelineInfrastructureConfigurationDetailsShapeConfigDetailsArgs']]:
-        """
-        Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
-        """
         return pulumi.get(self, "shape_config_details")
 
     @shape_config_details.setter
@@ -2161,10 +1601,6 @@ class PipelineInfrastructureConfigurationDetailsShapeConfigDetailsArgs:
     def __init__(__self__, *,
                  memory_in_gbs: Optional[pulumi.Input[float]] = None,
                  ocpus: Optional[pulumi.Input[float]] = None):
-        """
-        :param pulumi.Input[float] memory_in_gbs: A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
-        :param pulumi.Input[float] ocpus: A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
-        """
         if memory_in_gbs is not None:
             pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
         if ocpus is not None:
@@ -2173,9 +1609,6 @@ class PipelineInfrastructureConfigurationDetailsShapeConfigDetailsArgs:
     @property
     @pulumi.getter(name="memoryInGbs")
     def memory_in_gbs(self) -> Optional[pulumi.Input[float]]:
-        """
-        A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
-        """
         return pulumi.get(self, "memory_in_gbs")
 
     @memory_in_gbs.setter
@@ -2185,9 +1618,6 @@ class PipelineInfrastructureConfigurationDetailsShapeConfigDetailsArgs:
     @property
     @pulumi.getter
     def ocpus(self) -> Optional[pulumi.Input[float]]:
-        """
-        A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
-        """
         return pulumi.get(self, "ocpus")
 
     @ocpus.setter
@@ -2202,12 +1632,6 @@ class PipelineLogConfigurationDetailsArgs:
                  enable_logging: Optional[pulumi.Input[bool]] = None,
                  log_group_id: Optional[pulumi.Input[str]] = None,
                  log_id: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[bool] enable_auto_log_creation: (Updatable) If automatic on-behalf-of log object creation is enabled for pipeline runs.
-        :param pulumi.Input[bool] enable_logging: (Updatable) If customer logging is enabled for pipeline.
-        :param pulumi.Input[str] log_group_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
-        :param pulumi.Input[str] log_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
-        """
         if enable_auto_log_creation is not None:
             pulumi.set(__self__, "enable_auto_log_creation", enable_auto_log_creation)
         if enable_logging is not None:
@@ -2220,9 +1644,6 @@ class PipelineLogConfigurationDetailsArgs:
     @property
     @pulumi.getter(name="enableAutoLogCreation")
     def enable_auto_log_creation(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) If automatic on-behalf-of log object creation is enabled for pipeline runs.
-        """
         return pulumi.get(self, "enable_auto_log_creation")
 
     @enable_auto_log_creation.setter
@@ -2232,9 +1653,6 @@ class PipelineLogConfigurationDetailsArgs:
     @property
     @pulumi.getter(name="enableLogging")
     def enable_logging(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) If customer logging is enabled for pipeline.
-        """
         return pulumi.get(self, "enable_logging")
 
     @enable_logging.setter
@@ -2244,9 +1662,6 @@ class PipelineLogConfigurationDetailsArgs:
     @property
     @pulumi.getter(name="logGroupId")
     def log_group_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
-        """
         return pulumi.get(self, "log_group_id")
 
     @log_group_id.setter
@@ -2256,9 +1671,6 @@ class PipelineLogConfigurationDetailsArgs:
     @property
     @pulumi.getter(name="logId")
     def log_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
-        """
         return pulumi.get(self, "log_id")
 
     @log_id.setter
@@ -2273,12 +1685,6 @@ class PipelineRunConfigurationDetailArgs:
                  environment_variables: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  maximum_runtime_in_minutes: Optional[pulumi.Input[str]] = None,
                  type: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] command_line_arguments: The command line arguments to set for step.
-        :param pulumi.Input[Mapping[str, Any]] environment_variables: Environment variables to set for step.
-        :param pulumi.Input[str] maximum_runtime_in_minutes: A time bound for the execution of the step.
-        :param pulumi.Input[str] type: The type of pipeline.
-        """
         if command_line_arguments is not None:
             pulumi.set(__self__, "command_line_arguments", command_line_arguments)
         if environment_variables is not None:
@@ -2291,9 +1697,6 @@ class PipelineRunConfigurationDetailArgs:
     @property
     @pulumi.getter(name="commandLineArguments")
     def command_line_arguments(self) -> Optional[pulumi.Input[str]]:
-        """
-        The command line arguments to set for step.
-        """
         return pulumi.get(self, "command_line_arguments")
 
     @command_line_arguments.setter
@@ -2303,9 +1706,6 @@ class PipelineRunConfigurationDetailArgs:
     @property
     @pulumi.getter(name="environmentVariables")
     def environment_variables(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        Environment variables to set for step.
-        """
         return pulumi.get(self, "environment_variables")
 
     @environment_variables.setter
@@ -2315,9 +1715,6 @@ class PipelineRunConfigurationDetailArgs:
     @property
     @pulumi.getter(name="maximumRuntimeInMinutes")
     def maximum_runtime_in_minutes(self) -> Optional[pulumi.Input[str]]:
-        """
-        A time bound for the execution of the step.
-        """
         return pulumi.get(self, "maximum_runtime_in_minutes")
 
     @maximum_runtime_in_minutes.setter
@@ -2327,9 +1724,6 @@ class PipelineRunConfigurationDetailArgs:
     @property
     @pulumi.getter
     def type(self) -> Optional[pulumi.Input[str]]:
-        """
-        The type of pipeline.
-        """
         return pulumi.get(self, "type")
 
     @type.setter
@@ -2344,12 +1738,6 @@ class PipelineRunConfigurationOverrideDetailsArgs:
                  command_line_arguments: Optional[pulumi.Input[str]] = None,
                  environment_variables: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  maximum_runtime_in_minutes: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] type: The type of pipeline.
-        :param pulumi.Input[str] command_line_arguments: The command line arguments to set for step.
-        :param pulumi.Input[Mapping[str, Any]] environment_variables: Environment variables to set for step.
-        :param pulumi.Input[str] maximum_runtime_in_minutes: A time bound for the execution of the step.
-        """
         pulumi.set(__self__, "type", type)
         if command_line_arguments is not None:
             pulumi.set(__self__, "command_line_arguments", command_line_arguments)
@@ -2361,9 +1749,6 @@ class PipelineRunConfigurationOverrideDetailsArgs:
     @property
     @pulumi.getter
     def type(self) -> pulumi.Input[str]:
-        """
-        The type of pipeline.
-        """
         return pulumi.get(self, "type")
 
     @type.setter
@@ -2373,9 +1758,6 @@ class PipelineRunConfigurationOverrideDetailsArgs:
     @property
     @pulumi.getter(name="commandLineArguments")
     def command_line_arguments(self) -> Optional[pulumi.Input[str]]:
-        """
-        The command line arguments to set for step.
-        """
         return pulumi.get(self, "command_line_arguments")
 
     @command_line_arguments.setter
@@ -2385,9 +1767,6 @@ class PipelineRunConfigurationOverrideDetailsArgs:
     @property
     @pulumi.getter(name="environmentVariables")
     def environment_variables(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        Environment variables to set for step.
-        """
         return pulumi.get(self, "environment_variables")
 
     @environment_variables.setter
@@ -2397,9 +1776,6 @@ class PipelineRunConfigurationOverrideDetailsArgs:
     @property
     @pulumi.getter(name="maximumRuntimeInMinutes")
     def maximum_runtime_in_minutes(self) -> Optional[pulumi.Input[str]]:
-        """
-        A time bound for the execution of the step.
-        """
         return pulumi.get(self, "maximum_runtime_in_minutes")
 
     @maximum_runtime_in_minutes.setter
@@ -2414,12 +1790,6 @@ class PipelineRunLogConfigurationOverrideDetailsArgs:
                  enable_logging: Optional[pulumi.Input[bool]] = None,
                  log_group_id: Optional[pulumi.Input[str]] = None,
                  log_id: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[bool] enable_auto_log_creation: If automatic on-behalf-of log object creation is enabled for pipeline runs.
-        :param pulumi.Input[bool] enable_logging: If customer logging is enabled for pipeline.
-        :param pulumi.Input[str] log_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
-        :param pulumi.Input[str] log_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
-        """
         if enable_auto_log_creation is not None:
             pulumi.set(__self__, "enable_auto_log_creation", enable_auto_log_creation)
         if enable_logging is not None:
@@ -2432,9 +1802,6 @@ class PipelineRunLogConfigurationOverrideDetailsArgs:
     @property
     @pulumi.getter(name="enableAutoLogCreation")
     def enable_auto_log_creation(self) -> Optional[pulumi.Input[bool]]:
-        """
-        If automatic on-behalf-of log object creation is enabled for pipeline runs.
-        """
         return pulumi.get(self, "enable_auto_log_creation")
 
     @enable_auto_log_creation.setter
@@ -2444,9 +1811,6 @@ class PipelineRunLogConfigurationOverrideDetailsArgs:
     @property
     @pulumi.getter(name="enableLogging")
     def enable_logging(self) -> Optional[pulumi.Input[bool]]:
-        """
-        If customer logging is enabled for pipeline.
-        """
         return pulumi.get(self, "enable_logging")
 
     @enable_logging.setter
@@ -2456,9 +1820,6 @@ class PipelineRunLogConfigurationOverrideDetailsArgs:
     @property
     @pulumi.getter(name="logGroupId")
     def log_group_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
-        """
         return pulumi.get(self, "log_group_id")
 
     @log_group_id.setter
@@ -2468,9 +1829,6 @@ class PipelineRunLogConfigurationOverrideDetailsArgs:
     @property
     @pulumi.getter(name="logId")
     def log_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
-        """
         return pulumi.get(self, "log_id")
 
     @log_id.setter
@@ -2483,10 +1841,6 @@ class PipelineRunLogDetailArgs:
     def __init__(__self__, *,
                  log_group_id: Optional[pulumi.Input[str]] = None,
                  log_id: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] log_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
-        :param pulumi.Input[str] log_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
-        """
         if log_group_id is not None:
             pulumi.set(__self__, "log_group_id", log_group_id)
         if log_id is not None:
@@ -2495,9 +1849,6 @@ class PipelineRunLogDetailArgs:
     @property
     @pulumi.getter(name="logGroupId")
     def log_group_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
-        """
         return pulumi.get(self, "log_group_id")
 
     @log_group_id.setter
@@ -2507,9 +1858,6 @@ class PipelineRunLogDetailArgs:
     @property
     @pulumi.getter(name="logId")
     def log_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
-        """
         return pulumi.get(self, "log_id")
 
     @log_id.setter
@@ -2522,19 +1870,12 @@ class PipelineRunStepOverrideDetailArgs:
     def __init__(__self__, *,
                  step_configuration_details: pulumi.Input['PipelineRunStepOverrideDetailStepConfigurationDetailsArgs'],
                  step_name: pulumi.Input[str]):
-        """
-        :param pulumi.Input['PipelineRunStepOverrideDetailStepConfigurationDetailsArgs'] step_configuration_details: The configuration details of a step.
-        :param pulumi.Input[str] step_name: The name of the step.
-        """
         pulumi.set(__self__, "step_configuration_details", step_configuration_details)
         pulumi.set(__self__, "step_name", step_name)
 
     @property
     @pulumi.getter(name="stepConfigurationDetails")
     def step_configuration_details(self) -> pulumi.Input['PipelineRunStepOverrideDetailStepConfigurationDetailsArgs']:
-        """
-        The configuration details of a step.
-        """
         return pulumi.get(self, "step_configuration_details")
 
     @step_configuration_details.setter
@@ -2544,9 +1885,6 @@ class PipelineRunStepOverrideDetailArgs:
     @property
     @pulumi.getter(name="stepName")
     def step_name(self) -> pulumi.Input[str]:
-        """
-        The name of the step.
-        """
         return pulumi.get(self, "step_name")
 
     @step_name.setter
@@ -2560,11 +1898,6 @@ class PipelineRunStepOverrideDetailStepConfigurationDetailsArgs:
                  command_line_arguments: Optional[pulumi.Input[str]] = None,
                  environment_variables: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  maximum_runtime_in_minutes: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] command_line_arguments: The command line arguments to set for step.
-        :param pulumi.Input[Mapping[str, Any]] environment_variables: Environment variables to set for step.
-        :param pulumi.Input[str] maximum_runtime_in_minutes: A time bound for the execution of the step.
-        """
         if command_line_arguments is not None:
             pulumi.set(__self__, "command_line_arguments", command_line_arguments)
         if environment_variables is not None:
@@ -2575,9 +1908,6 @@ class PipelineRunStepOverrideDetailStepConfigurationDetailsArgs:
     @property
     @pulumi.getter(name="commandLineArguments")
     def command_line_arguments(self) -> Optional[pulumi.Input[str]]:
-        """
-        The command line arguments to set for step.
-        """
         return pulumi.get(self, "command_line_arguments")
 
     @command_line_arguments.setter
@@ -2587,9 +1917,6 @@ class PipelineRunStepOverrideDetailStepConfigurationDetailsArgs:
     @property
     @pulumi.getter(name="environmentVariables")
     def environment_variables(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        Environment variables to set for step.
-        """
         return pulumi.get(self, "environment_variables")
 
     @environment_variables.setter
@@ -2599,9 +1926,6 @@ class PipelineRunStepOverrideDetailStepConfigurationDetailsArgs:
     @property
     @pulumi.getter(name="maximumRuntimeInMinutes")
     def maximum_runtime_in_minutes(self) -> Optional[pulumi.Input[str]]:
-        """
-        A time bound for the execution of the step.
-        """
         return pulumi.get(self, "maximum_runtime_in_minutes")
 
     @maximum_runtime_in_minutes.setter
@@ -2619,15 +1943,6 @@ class PipelineRunStepRunArgs:
                  step_type: Optional[pulumi.Input[str]] = None,
                  time_finished: Optional[pulumi.Input[str]] = None,
                  time_started: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] job_run_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job run triggered for this step run.
-        :param pulumi.Input[str] lifecycle_details: Details of the state of the step run.
-        :param pulumi.Input[str] state: The state of the step run.
-        :param pulumi.Input[str] step_name: The name of the step.
-        :param pulumi.Input[str] step_type: The type of step.
-        :param pulumi.Input[str] time_finished: The date and time the pipeline run request was finished in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        :param pulumi.Input[str] time_started: The date and time the pipeline run request was started in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        """
         if job_run_id is not None:
             pulumi.set(__self__, "job_run_id", job_run_id)
         if lifecycle_details is not None:
@@ -2646,9 +1961,6 @@ class PipelineRunStepRunArgs:
     @property
     @pulumi.getter(name="jobRunId")
     def job_run_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job run triggered for this step run.
-        """
         return pulumi.get(self, "job_run_id")
 
     @job_run_id.setter
@@ -2658,9 +1970,6 @@ class PipelineRunStepRunArgs:
     @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> Optional[pulumi.Input[str]]:
-        """
-        Details of the state of the step run.
-        """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
@@ -2670,9 +1979,6 @@ class PipelineRunStepRunArgs:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The state of the step run.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -2682,9 +1988,6 @@ class PipelineRunStepRunArgs:
     @property
     @pulumi.getter(name="stepName")
     def step_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The name of the step.
-        """
         return pulumi.get(self, "step_name")
 
     @step_name.setter
@@ -2694,9 +1997,6 @@ class PipelineRunStepRunArgs:
     @property
     @pulumi.getter(name="stepType")
     def step_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        The type of step.
-        """
         return pulumi.get(self, "step_type")
 
     @step_type.setter
@@ -2706,9 +2006,6 @@ class PipelineRunStepRunArgs:
     @property
     @pulumi.getter(name="timeFinished")
     def time_finished(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time the pipeline run request was finished in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        """
         return pulumi.get(self, "time_finished")
 
     @time_finished.setter
@@ -2718,9 +2015,6 @@ class PipelineRunStepRunArgs:
     @property
     @pulumi.getter(name="timeStarted")
     def time_started(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time the pipeline run request was started in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        """
         return pulumi.get(self, "time_started")
 
     @time_started.setter
@@ -2737,9 +2031,6 @@ class PipelineStepArtifactArgs:
                  artifact_content_disposition: Optional[pulumi.Input[str]] = None,
                  artifact_content_md5: Optional[pulumi.Input[str]] = None,
                  artifact_last_modified: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] step_name: (Updatable) The name of the step. It must be unique within the pipeline. This is used to create the pipeline DAG.
-        """
         pulumi.set(__self__, "artifact_content_length", artifact_content_length)
         pulumi.set(__self__, "pipeline_step_artifact", pipeline_step_artifact)
         pulumi.set(__self__, "step_name", step_name)
@@ -2771,9 +2062,6 @@ class PipelineStepArtifactArgs:
     @property
     @pulumi.getter(name="stepName")
     def step_name(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The name of the step. It must be unique within the pipeline. This is used to create the pipeline DAG.
-        """
         return pulumi.get(self, "step_name")
 
     @step_name.setter
@@ -2819,20 +2107,6 @@ class PipelineStepDetailArgs:
                  job_id: Optional[pulumi.Input[str]] = None,
                  step_configuration_details: Optional[pulumi.Input['PipelineStepDetailStepConfigurationDetailsArgs']] = None,
                  step_infrastructure_configuration_details: Optional[pulumi.Input['PipelineStepDetailStepInfrastructureConfigurationDetailsArgs']] = None):
-        """
-        :param pulumi.Input[str] step_name: (Updatable) The name of the step. It must be unique within the pipeline. This is used to create the pipeline DAG.
-        :param pulumi.Input[str] step_type: (Updatable) The type of step.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] depends_ons: The list of step names this current step depends on for execution.
-        :param pulumi.Input[str] description: (Updatable) A short description of the step.
-        :param pulumi.Input[bool] is_artifact_uploaded: A flag to indicate whether the artifact has been uploaded for this step or not.
-        :param pulumi.Input[str] job_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job to be used as a step.
-        :param pulumi.Input['PipelineStepDetailStepConfigurationDetailsArgs'] step_configuration_details: (Updatable) The configuration details of a step.
-        :param pulumi.Input['PipelineStepDetailStepInfrastructureConfigurationDetailsArgs'] step_infrastructure_configuration_details: The infrastructure configuration details of a pipeline or a step.
-        """
         pulumi.set(__self__, "step_name", step_name)
         pulumi.set(__self__, "step_type", step_type)
         if depends_ons is not None:
@@ -2851,9 +2125,6 @@ class PipelineStepDetailArgs:
     @property
     @pulumi.getter(name="stepName")
     def step_name(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The name of the step. It must be unique within the pipeline. This is used to create the pipeline DAG.
-        """
         return pulumi.get(self, "step_name")
 
     @step_name.setter
@@ -2863,13 +2134,6 @@ class PipelineStepDetailArgs:
     @property
     @pulumi.getter(name="stepType")
     def step_type(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The type of step.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "step_type")
 
     @step_type.setter
@@ -2879,9 +2143,6 @@ class PipelineStepDetailArgs:
     @property
     @pulumi.getter(name="dependsOns")
     def depends_ons(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        The list of step names this current step depends on for execution.
-        """
         return pulumi.get(self, "depends_ons")
 
     @depends_ons.setter
@@ -2891,9 +2152,6 @@ class PipelineStepDetailArgs:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A short description of the step.
-        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -2903,9 +2161,6 @@ class PipelineStepDetailArgs:
     @property
     @pulumi.getter(name="isArtifactUploaded")
     def is_artifact_uploaded(self) -> Optional[pulumi.Input[bool]]:
-        """
-        A flag to indicate whether the artifact has been uploaded for this step or not.
-        """
         return pulumi.get(self, "is_artifact_uploaded")
 
     @is_artifact_uploaded.setter
@@ -2915,9 +2170,6 @@ class PipelineStepDetailArgs:
     @property
     @pulumi.getter(name="jobId")
     def job_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job to be used as a step.
-        """
         return pulumi.get(self, "job_id")
 
     @job_id.setter
@@ -2927,9 +2179,6 @@ class PipelineStepDetailArgs:
     @property
     @pulumi.getter(name="stepConfigurationDetails")
     def step_configuration_details(self) -> Optional[pulumi.Input['PipelineStepDetailStepConfigurationDetailsArgs']]:
-        """
-        (Updatable) The configuration details of a step.
-        """
         return pulumi.get(self, "step_configuration_details")
 
     @step_configuration_details.setter
@@ -2939,9 +2188,6 @@ class PipelineStepDetailArgs:
     @property
     @pulumi.getter(name="stepInfrastructureConfigurationDetails")
     def step_infrastructure_configuration_details(self) -> Optional[pulumi.Input['PipelineStepDetailStepInfrastructureConfigurationDetailsArgs']]:
-        """
-        The infrastructure configuration details of a pipeline or a step.
-        """
         return pulumi.get(self, "step_infrastructure_configuration_details")
 
     @step_infrastructure_configuration_details.setter
@@ -2955,11 +2201,6 @@ class PipelineStepDetailStepConfigurationDetailsArgs:
                  command_line_arguments: Optional[pulumi.Input[str]] = None,
                  environment_variables: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  maximum_runtime_in_minutes: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] command_line_arguments: (Updatable) The command line arguments to set for step.
-        :param pulumi.Input[Mapping[str, Any]] environment_variables: (Updatable) Environment variables to set for step.
-        :param pulumi.Input[str] maximum_runtime_in_minutes: (Updatable) A time bound for the execution of the step.
-        """
         if command_line_arguments is not None:
             pulumi.set(__self__, "command_line_arguments", command_line_arguments)
         if environment_variables is not None:
@@ -2970,9 +2211,6 @@ class PipelineStepDetailStepConfigurationDetailsArgs:
     @property
     @pulumi.getter(name="commandLineArguments")
     def command_line_arguments(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The command line arguments to set for step.
-        """
         return pulumi.get(self, "command_line_arguments")
 
     @command_line_arguments.setter
@@ -2982,9 +2220,6 @@ class PipelineStepDetailStepConfigurationDetailsArgs:
     @property
     @pulumi.getter(name="environmentVariables")
     def environment_variables(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Environment variables to set for step.
-        """
         return pulumi.get(self, "environment_variables")
 
     @environment_variables.setter
@@ -2994,9 +2229,6 @@ class PipelineStepDetailStepConfigurationDetailsArgs:
     @property
     @pulumi.getter(name="maximumRuntimeInMinutes")
     def maximum_runtime_in_minutes(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A time bound for the execution of the step.
-        """
         return pulumi.get(self, "maximum_runtime_in_minutes")
 
     @maximum_runtime_in_minutes.setter
@@ -3010,11 +2242,6 @@ class PipelineStepDetailStepInfrastructureConfigurationDetailsArgs:
                  block_storage_size_in_gbs: pulumi.Input[int],
                  shape_name: pulumi.Input[str],
                  shape_config_details: Optional[pulumi.Input['PipelineStepDetailStepInfrastructureConfigurationDetailsShapeConfigDetailsArgs']] = None):
-        """
-        :param pulumi.Input[int] block_storage_size_in_gbs: The size of the block storage volume to attach to the instance.
-        :param pulumi.Input[str] shape_name: The shape used to launch the instance for all step runs in the pipeline.
-        :param pulumi.Input['PipelineStepDetailStepInfrastructureConfigurationDetailsShapeConfigDetailsArgs'] shape_config_details: Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
-        """
         pulumi.set(__self__, "block_storage_size_in_gbs", block_storage_size_in_gbs)
         pulumi.set(__self__, "shape_name", shape_name)
         if shape_config_details is not None:
@@ -3023,9 +2250,6 @@ class PipelineStepDetailStepInfrastructureConfigurationDetailsArgs:
     @property
     @pulumi.getter(name="blockStorageSizeInGbs")
     def block_storage_size_in_gbs(self) -> pulumi.Input[int]:
-        """
-        The size of the block storage volume to attach to the instance.
-        """
         return pulumi.get(self, "block_storage_size_in_gbs")
 
     @block_storage_size_in_gbs.setter
@@ -3035,9 +2259,6 @@ class PipelineStepDetailStepInfrastructureConfigurationDetailsArgs:
     @property
     @pulumi.getter(name="shapeName")
     def shape_name(self) -> pulumi.Input[str]:
-        """
-        The shape used to launch the instance for all step runs in the pipeline.
-        """
         return pulumi.get(self, "shape_name")
 
     @shape_name.setter
@@ -3047,9 +2268,6 @@ class PipelineStepDetailStepInfrastructureConfigurationDetailsArgs:
     @property
     @pulumi.getter(name="shapeConfigDetails")
     def shape_config_details(self) -> Optional[pulumi.Input['PipelineStepDetailStepInfrastructureConfigurationDetailsShapeConfigDetailsArgs']]:
-        """
-        Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
-        """
         return pulumi.get(self, "shape_config_details")
 
     @shape_config_details.setter
@@ -3062,10 +2280,6 @@ class PipelineStepDetailStepInfrastructureConfigurationDetailsShapeConfigDetails
     def __init__(__self__, *,
                  memory_in_gbs: Optional[pulumi.Input[float]] = None,
                  ocpus: Optional[pulumi.Input[float]] = None):
-        """
-        :param pulumi.Input[float] memory_in_gbs: A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
-        :param pulumi.Input[float] ocpus: A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
-        """
         if memory_in_gbs is not None:
             pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
         if ocpus is not None:
@@ -3074,9 +2288,6 @@ class PipelineStepDetailStepInfrastructureConfigurationDetailsShapeConfigDetails
     @property
     @pulumi.getter(name="memoryInGbs")
     def memory_in_gbs(self) -> Optional[pulumi.Input[float]]:
-        """
-        A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
-        """
         return pulumi.get(self, "memory_in_gbs")
 
     @memory_in_gbs.setter
@@ -3086,9 +2297,6 @@ class PipelineStepDetailStepInfrastructureConfigurationDetailsShapeConfigDetails
     @property
     @pulumi.getter
     def ocpus(self) -> Optional[pulumi.Input[float]]:
-        """
-        A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
-        """
         return pulumi.get(self, "ocpus")
 
     @ocpus.setter
@@ -3102,9 +2310,6 @@ class GetFastLaunchJobConfigsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: The name of the fast launch job config
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -3113,9 +2318,6 @@ class GetFastLaunchJobConfigsFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        The name of the fast launch job config
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -3186,9 +2388,6 @@ class GetJobShapesFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: The name of the job shape.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -3197,9 +2396,6 @@ class GetJobShapesFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        The name of the job shape.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -3270,9 +2466,6 @@ class GetModelDeploymentShapesFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: The name of the model deployment shape.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -3281,9 +2474,6 @@ class GetModelDeploymentShapesFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        The name of the model deployment shape.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -3354,9 +2544,6 @@ class GetModelVersionSetsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: A filter to return only resources that match the entire name given.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -3365,9 +2552,6 @@ class GetModelVersionSetsFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        A filter to return only resources that match the entire name given.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -3438,9 +2622,6 @@ class GetNotebookSessionShapesFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: The name of the notebook session shape.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -3449,9 +2630,6 @@ class GetNotebookSessionShapesFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        The name of the notebook session shape.
-        """
         return pulumi.get(self, "name")
 
     @name.setter

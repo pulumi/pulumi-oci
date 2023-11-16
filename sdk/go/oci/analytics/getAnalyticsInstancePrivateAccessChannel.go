@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Analytics Instance Private Access Channel resource in Oracle Cloud Infrastructure Analytics service.
@@ -64,14 +63,14 @@ type LookupAnalyticsInstancePrivateAccessChannelArgs struct {
 type LookupAnalyticsInstancePrivateAccessChannelResult struct {
 	AnalyticsInstanceId string `pulumi:"analyticsInstanceId"`
 	// Display Name of the Private Access Channel.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// The list of IP addresses from the customer subnet connected to private access channel, used as a source Ip by Private Access Channel for network traffic from the AnalyticsInstance to Private Sources.
 	EgressSourceIpAddresses []string `pulumi:"egressSourceIpAddresses"`
-	Id                      string   `pulumi:"id"`
+	Id                      *string  `pulumi:"id"`
 	// IP Address of the Private Access channel.
-	IpAddress string `pulumi:"ipAddress"`
+	IpAddress *string `pulumi:"ipAddress"`
 	// Private Access Channel unique identifier key.
-	Key string `pulumi:"key"`
+	Key *string `pulumi:"key"`
 	// Network Security Group OCIDs for an Analytics instance.
 	NetworkSecurityGroupIds []string `pulumi:"networkSecurityGroupIds"`
 	PrivateAccessChannelKey string   `pulumi:"privateAccessChannelKey"`
@@ -80,9 +79,9 @@ type LookupAnalyticsInstancePrivateAccessChannelResult struct {
 	// List of Private Source DB SCAN hosts registered with Private Access Channel for access from Analytics Instance.
 	PrivateSourceScanHosts []GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHost `pulumi:"privateSourceScanHosts"`
 	// OCID of the customer subnet connected to private access channel.
-	SubnetId string `pulumi:"subnetId"`
+	SubnetId *string `pulumi:"subnetId"`
 	// OCID of the customer VCN peered with private access channel.
-	VcnId string `pulumi:"vcnId"`
+	VcnId *string `pulumi:"vcnId"`
 }
 
 func LookupAnalyticsInstancePrivateAccessChannelOutput(ctx *pulumi.Context, args LookupAnalyticsInstancePrivateAccessChannelOutputArgs, opts ...pulumi.InvokeOption) LookupAnalyticsInstancePrivateAccessChannelResultOutput {
@@ -125,19 +124,13 @@ func (o LookupAnalyticsInstancePrivateAccessChannelResultOutput) ToLookupAnalyti
 	return o
 }
 
-func (o LookupAnalyticsInstancePrivateAccessChannelResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupAnalyticsInstancePrivateAccessChannelResult] {
-	return pulumix.Output[LookupAnalyticsInstancePrivateAccessChannelResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o LookupAnalyticsInstancePrivateAccessChannelResultOutput) AnalyticsInstanceId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAnalyticsInstancePrivateAccessChannelResult) string { return v.AnalyticsInstanceId }).(pulumi.StringOutput)
 }
 
 // Display Name of the Private Access Channel.
-func (o LookupAnalyticsInstancePrivateAccessChannelResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAnalyticsInstancePrivateAccessChannelResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupAnalyticsInstancePrivateAccessChannelResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAnalyticsInstancePrivateAccessChannelResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // The list of IP addresses from the customer subnet connected to private access channel, used as a source Ip by Private Access Channel for network traffic from the AnalyticsInstance to Private Sources.
@@ -145,18 +138,18 @@ func (o LookupAnalyticsInstancePrivateAccessChannelResultOutput) EgressSourceIpA
 	return o.ApplyT(func(v LookupAnalyticsInstancePrivateAccessChannelResult) []string { return v.EgressSourceIpAddresses }).(pulumi.StringArrayOutput)
 }
 
-func (o LookupAnalyticsInstancePrivateAccessChannelResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAnalyticsInstancePrivateAccessChannelResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupAnalyticsInstancePrivateAccessChannelResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAnalyticsInstancePrivateAccessChannelResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // IP Address of the Private Access channel.
-func (o LookupAnalyticsInstancePrivateAccessChannelResultOutput) IpAddress() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAnalyticsInstancePrivateAccessChannelResult) string { return v.IpAddress }).(pulumi.StringOutput)
+func (o LookupAnalyticsInstancePrivateAccessChannelResultOutput) IpAddress() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAnalyticsInstancePrivateAccessChannelResult) *string { return v.IpAddress }).(pulumi.StringPtrOutput)
 }
 
 // Private Access Channel unique identifier key.
-func (o LookupAnalyticsInstancePrivateAccessChannelResultOutput) Key() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAnalyticsInstancePrivateAccessChannelResult) string { return v.Key }).(pulumi.StringOutput)
+func (o LookupAnalyticsInstancePrivateAccessChannelResultOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAnalyticsInstancePrivateAccessChannelResult) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
 // Network Security Group OCIDs for an Analytics instance.
@@ -183,13 +176,13 @@ func (o LookupAnalyticsInstancePrivateAccessChannelResultOutput) PrivateSourceSc
 }
 
 // OCID of the customer subnet connected to private access channel.
-func (o LookupAnalyticsInstancePrivateAccessChannelResultOutput) SubnetId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAnalyticsInstancePrivateAccessChannelResult) string { return v.SubnetId }).(pulumi.StringOutput)
+func (o LookupAnalyticsInstancePrivateAccessChannelResultOutput) SubnetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAnalyticsInstancePrivateAccessChannelResult) *string { return v.SubnetId }).(pulumi.StringPtrOutput)
 }
 
 // OCID of the customer VCN peered with private access channel.
-func (o LookupAnalyticsInstancePrivateAccessChannelResultOutput) VcnId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAnalyticsInstancePrivateAccessChannelResult) string { return v.VcnId }).(pulumi.StringOutput)
+func (o LookupAnalyticsInstancePrivateAccessChannelResultOutput) VcnId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAnalyticsInstancePrivateAccessChannelResult) *string { return v.VcnId }).(pulumi.StringPtrOutput)
 }
 
 func init() {

@@ -16,17 +16,17 @@ namespace Pulumi.Oci.ComputeCloud.Outputs
         /// <summary>
         /// The Autonomous System Number (ASN) of the peer network.
         /// </summary>
-        public readonly int Asn;
+        public readonly int? Asn;
         /// <summary>
         /// Address of the management node.
         /// </summary>
-        public readonly string Ip;
+        public readonly string? Ip;
 
         [OutputConstructor]
         private GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationResult(
-            int asn,
+            int? asn,
 
-            string ip)
+            string? ip)
         {
             Asn = asn;
             Ip = ip;

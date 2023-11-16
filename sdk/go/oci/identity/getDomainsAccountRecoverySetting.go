@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Account Recovery Setting resource in Oracle Cloud Infrastructure Identity Domains service.
@@ -81,41 +80,41 @@ type LookupDomainsAccountRecoverySettingResult struct {
 	Attributes               *string  `pulumi:"attributes"`
 	Authorization            *string  `pulumi:"authorization"`
 	// Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
-	CompartmentOcid string `pulumi:"compartmentOcid"`
+	CompartmentOcid *string `pulumi:"compartmentOcid"`
 	// A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
-	DeleteInProgress bool `pulumi:"deleteInProgress"`
+	DeleteInProgress *bool `pulumi:"deleteInProgress"`
 	// Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
-	DomainOcid string `pulumi:"domainOcid"`
+	DomainOcid *string `pulumi:"domainOcid"`
 	// An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer's tenant.
-	ExternalId string `pulumi:"externalId"`
+	ExternalId *string `pulumi:"externalId"`
 	// The account recovery factor used (for example, email, mobile number (SMS), security questions, mobile application push or TOTP) to verify the identity of the user and reset the user's password.
 	Factors []string `pulumi:"factors"`
 	// Unique identifier for the SCIM Resource as defined by the Service Provider. Each representation of the Resource MUST include a non-empty id value. This identifier MUST be unique across the Service Provider's entire set of Resources. It MUST be a stable, non-reassignable identifier that does not change when the same Resource is returned in subsequent requests. The value of the id attribute is always issued by the Service Provider and MUST never be specified by the Service Consumer. bulkId: is a reserved keyword and MUST NOT be used in the unique identifier.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The User or App who created the Resource
 	IdcsCreatedBies []GetDomainsAccountRecoverySettingIdcsCreatedBy `pulumi:"idcsCreatedBies"`
 	IdcsEndpoint    string                                          `pulumi:"idcsEndpoint"`
 	// The User or App who modified the Resource
 	IdcsLastModifiedBies []GetDomainsAccountRecoverySettingIdcsLastModifiedBy `pulumi:"idcsLastModifiedBies"`
 	// The release number when the resource was upgraded.
-	IdcsLastUpgradedInRelease string `pulumi:"idcsLastUpgradedInRelease"`
+	IdcsLastUpgradedInRelease *string `pulumi:"idcsLastUpgradedInRelease"`
 	// Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
 	IdcsPreventedOperations []string `pulumi:"idcsPreventedOperations"`
 	// Indicates how many minutes to disable account recovery for the user. The default value is 30 metric minutes.
-	LockoutDuration int `pulumi:"lockoutDuration"`
+	LockoutDuration *int `pulumi:"lockoutDuration"`
 	// Indicates the maximum number of failed account recovery attempts allowed for the user.
-	MaxIncorrectAttempts int `pulumi:"maxIncorrectAttempts"`
+	MaxIncorrectAttempts *int `pulumi:"maxIncorrectAttempts"`
 	// A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
 	Metas []GetDomainsAccountRecoverySettingMeta `pulumi:"metas"`
 	// Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
-	Ocid                      string  `pulumi:"ocid"`
+	Ocid                      *string `pulumi:"ocid"`
 	ResourceTypeSchemaVersion *string `pulumi:"resourceTypeSchemaVersion"`
 	// REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
 	Schemas []string `pulumi:"schemas"`
 	// A list of tags on this resource.
 	Tags []GetDomainsAccountRecoverySettingTag `pulumi:"tags"`
 	// Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
-	TenancyOcid string `pulumi:"tenancyOcid"`
+	TenancyOcid *string `pulumi:"tenancyOcid"`
 }
 
 func LookupDomainsAccountRecoverySettingOutput(ctx *pulumi.Context, args LookupDomainsAccountRecoverySettingOutputArgs, opts ...pulumi.InvokeOption) LookupDomainsAccountRecoverySettingResultOutput {
@@ -166,12 +165,6 @@ func (o LookupDomainsAccountRecoverySettingResultOutput) ToLookupDomainsAccountR
 	return o
 }
 
-func (o LookupDomainsAccountRecoverySettingResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupDomainsAccountRecoverySettingResult] {
-	return pulumix.Output[LookupDomainsAccountRecoverySettingResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o LookupDomainsAccountRecoverySettingResultOutput) AccountRecoverySettingId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDomainsAccountRecoverySettingResult) string { return v.AccountRecoverySettingId }).(pulumi.StringOutput)
 }
@@ -189,23 +182,23 @@ func (o LookupDomainsAccountRecoverySettingResultOutput) Authorization() pulumi.
 }
 
 // Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
-func (o LookupDomainsAccountRecoverySettingResultOutput) CompartmentOcid() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsAccountRecoverySettingResult) string { return v.CompartmentOcid }).(pulumi.StringOutput)
+func (o LookupDomainsAccountRecoverySettingResultOutput) CompartmentOcid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsAccountRecoverySettingResult) *string { return v.CompartmentOcid }).(pulumi.StringPtrOutput)
 }
 
 // A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
-func (o LookupDomainsAccountRecoverySettingResultOutput) DeleteInProgress() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupDomainsAccountRecoverySettingResult) bool { return v.DeleteInProgress }).(pulumi.BoolOutput)
+func (o LookupDomainsAccountRecoverySettingResultOutput) DeleteInProgress() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupDomainsAccountRecoverySettingResult) *bool { return v.DeleteInProgress }).(pulumi.BoolPtrOutput)
 }
 
 // Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
-func (o LookupDomainsAccountRecoverySettingResultOutput) DomainOcid() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsAccountRecoverySettingResult) string { return v.DomainOcid }).(pulumi.StringOutput)
+func (o LookupDomainsAccountRecoverySettingResultOutput) DomainOcid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsAccountRecoverySettingResult) *string { return v.DomainOcid }).(pulumi.StringPtrOutput)
 }
 
 // An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer's tenant.
-func (o LookupDomainsAccountRecoverySettingResultOutput) ExternalId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsAccountRecoverySettingResult) string { return v.ExternalId }).(pulumi.StringOutput)
+func (o LookupDomainsAccountRecoverySettingResultOutput) ExternalId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsAccountRecoverySettingResult) *string { return v.ExternalId }).(pulumi.StringPtrOutput)
 }
 
 // The account recovery factor used (for example, email, mobile number (SMS), security questions, mobile application push or TOTP) to verify the identity of the user and reset the user's password.
@@ -214,8 +207,8 @@ func (o LookupDomainsAccountRecoverySettingResultOutput) Factors() pulumi.String
 }
 
 // Unique identifier for the SCIM Resource as defined by the Service Provider. Each representation of the Resource MUST include a non-empty id value. This identifier MUST be unique across the Service Provider's entire set of Resources. It MUST be a stable, non-reassignable identifier that does not change when the same Resource is returned in subsequent requests. The value of the id attribute is always issued by the Service Provider and MUST never be specified by the Service Consumer. bulkId: is a reserved keyword and MUST NOT be used in the unique identifier.
-func (o LookupDomainsAccountRecoverySettingResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsAccountRecoverySettingResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupDomainsAccountRecoverySettingResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsAccountRecoverySettingResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The User or App who created the Resource
@@ -237,8 +230,8 @@ func (o LookupDomainsAccountRecoverySettingResultOutput) IdcsLastModifiedBies() 
 }
 
 // The release number when the resource was upgraded.
-func (o LookupDomainsAccountRecoverySettingResultOutput) IdcsLastUpgradedInRelease() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsAccountRecoverySettingResult) string { return v.IdcsLastUpgradedInRelease }).(pulumi.StringOutput)
+func (o LookupDomainsAccountRecoverySettingResultOutput) IdcsLastUpgradedInRelease() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsAccountRecoverySettingResult) *string { return v.IdcsLastUpgradedInRelease }).(pulumi.StringPtrOutput)
 }
 
 // Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
@@ -247,13 +240,13 @@ func (o LookupDomainsAccountRecoverySettingResultOutput) IdcsPreventedOperations
 }
 
 // Indicates how many minutes to disable account recovery for the user. The default value is 30 metric minutes.
-func (o LookupDomainsAccountRecoverySettingResultOutput) LockoutDuration() pulumi.IntOutput {
-	return o.ApplyT(func(v LookupDomainsAccountRecoverySettingResult) int { return v.LockoutDuration }).(pulumi.IntOutput)
+func (o LookupDomainsAccountRecoverySettingResultOutput) LockoutDuration() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LookupDomainsAccountRecoverySettingResult) *int { return v.LockoutDuration }).(pulumi.IntPtrOutput)
 }
 
 // Indicates the maximum number of failed account recovery attempts allowed for the user.
-func (o LookupDomainsAccountRecoverySettingResultOutput) MaxIncorrectAttempts() pulumi.IntOutput {
-	return o.ApplyT(func(v LookupDomainsAccountRecoverySettingResult) int { return v.MaxIncorrectAttempts }).(pulumi.IntOutput)
+func (o LookupDomainsAccountRecoverySettingResultOutput) MaxIncorrectAttempts() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LookupDomainsAccountRecoverySettingResult) *int { return v.MaxIncorrectAttempts }).(pulumi.IntPtrOutput)
 }
 
 // A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
@@ -264,8 +257,8 @@ func (o LookupDomainsAccountRecoverySettingResultOutput) Metas() GetDomainsAccou
 }
 
 // Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
-func (o LookupDomainsAccountRecoverySettingResultOutput) Ocid() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsAccountRecoverySettingResult) string { return v.Ocid }).(pulumi.StringOutput)
+func (o LookupDomainsAccountRecoverySettingResultOutput) Ocid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsAccountRecoverySettingResult) *string { return v.Ocid }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupDomainsAccountRecoverySettingResultOutput) ResourceTypeSchemaVersion() pulumi.StringPtrOutput {
@@ -283,8 +276,8 @@ func (o LookupDomainsAccountRecoverySettingResultOutput) Tags() GetDomainsAccoun
 }
 
 // Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
-func (o LookupDomainsAccountRecoverySettingResultOutput) TenancyOcid() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsAccountRecoverySettingResult) string { return v.TenancyOcid }).(pulumi.StringOutput)
+func (o LookupDomainsAccountRecoverySettingResultOutput) TenancyOcid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsAccountRecoverySettingResult) *string { return v.TenancyOcid }).(pulumi.StringPtrOutput)
 }
 
 func init() {

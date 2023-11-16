@@ -62,12 +62,12 @@ export interface GetListenerRulesResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly listenerName: string;
     /**
      * The list of listener_rules.
      */
-    readonly listenerRules: outputs.LoadBalancer.GetListenerRulesListenerRule[];
+    readonly listenerRules?: outputs.LoadBalancer.GetListenerRulesListenerRule[];
     readonly loadBalancerId: string;
 }
 /**

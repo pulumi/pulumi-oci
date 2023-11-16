@@ -16,7 +16,7 @@ namespace Pulumi.Oci.LoadBalancer.Outputs
         /// <summary>
         /// The Certificate Authority certificate, or any interim certificate, that you received from your SSL certificate provider.
         /// </summary>
-        public readonly string CaCertificate;
+        public readonly string? CaCertificate;
         /// <summary>
         /// A friendly name for the certificate bundle. It must be unique and it cannot be changed. Valid certificate bundle names include only alphanumeric characters, dashes, and underscores. Certificate bundle names cannot contain spaces. Avoid entering confidential information.  Example: `example_certificate_bundle`
         /// </summary>
@@ -26,16 +26,16 @@ namespace Pulumi.Oci.LoadBalancer.Outputs
         /// </summary>
         public readonly string LoadBalancerId;
         public readonly string? Passphrase;
-        public readonly string PrivateKey;
+        public readonly string? PrivateKey;
         /// <summary>
         /// The public certificate, in PEM format, that you received from your SSL certificate provider.
         /// </summary>
-        public readonly string PublicCertificate;
-        public readonly string State;
+        public readonly string? PublicCertificate;
+        public readonly string? State;
 
         [OutputConstructor]
         private GetCertificatesCertificateResult(
-            string caCertificate,
+            string? caCertificate,
 
             string certificateName,
 
@@ -43,11 +43,11 @@ namespace Pulumi.Oci.LoadBalancer.Outputs
 
             string? passphrase,
 
-            string privateKey,
+            string? privateKey,
 
-            string publicCertificate,
+            string? publicCertificate,
 
-            string state)
+            string? state)
         {
             CaCertificate = caCertificate;
             CertificateName = certificateName;

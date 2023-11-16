@@ -112,7 +112,7 @@ export interface GetReportDefinitionsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Signifies whether the definition is seeded or user defined. Values can either be 'true' or 'false'.
      */
@@ -120,7 +120,7 @@ export interface GetReportDefinitionsResult {
     /**
      * The list of report_definition_collection.
      */
-    readonly reportDefinitionCollections: outputs.DataSafe.GetReportDefinitionsReportDefinitionCollection[];
+    readonly reportDefinitionCollections?: outputs.DataSafe.GetReportDefinitionsReportDefinitionCollection[];
     /**
      * The current state of the report.
      */

@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.Functions.outputs.GetPbfListingsPbfListingsCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetPbfListingsPbfListingsCollection {
@@ -14,7 +15,7 @@ public final class GetPbfListingsPbfListingsCollection {
      * @return List of PbfListingSummary.
      * 
      */
-    private List<GetPbfListingsPbfListingsCollectionItem> items;
+    private @Nullable List<GetPbfListingsPbfListingsCollectionItem> items;
 
     private GetPbfListingsPbfListingsCollection() {}
     /**
@@ -22,7 +23,7 @@ public final class GetPbfListingsPbfListingsCollection {
      * 
      */
     public List<GetPbfListingsPbfListingsCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -34,7 +35,7 @@ public final class GetPbfListingsPbfListingsCollection {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetPbfListingsPbfListingsCollectionItem> items;
+        private @Nullable List<GetPbfListingsPbfListingsCollectionItem> items;
         public Builder() {}
         public Builder(GetPbfListingsPbfListingsCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -42,8 +43,8 @@ public final class GetPbfListingsPbfListingsCollection {
         }
 
         @CustomType.Setter
-        public Builder items(List<GetPbfListingsPbfListingsCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetPbfListingsPbfListingsCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetPbfListingsPbfListingsCollectionItem... items) {

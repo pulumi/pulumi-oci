@@ -16,17 +16,17 @@ namespace Pulumi.Oci.Jms.Outputs
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
         /// </summary>
-        public readonly string LogGroupId;
+        public readonly string? LogGroupId;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
         /// </summary>
-        public readonly string LogId;
+        public readonly string? LogId;
 
         [OutputConstructor]
         private GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogResult(
-            string logGroupId,
+            string? logGroupId,
 
-            string logId)
+            string? logId)
         {
             LogGroupId = logGroupId;
             LogId = logId;

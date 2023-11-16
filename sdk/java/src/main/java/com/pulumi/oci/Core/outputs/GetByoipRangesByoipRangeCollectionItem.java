@@ -19,7 +19,7 @@ public final class GetByoipRangesByoipRangeCollectionItem {
      * @return A list of `ByoipRangeVcnIpv6AllocationSummary` objects.
      * 
      */
-    private List<GetByoipRangesByoipRangeCollectionItemByoipRangeVcnIpv6allocation> byoipRangeVcnIpv6allocations;
+    private @Nullable List<GetByoipRangesByoipRangeCollectionItemByoipRangeVcnIpv6allocation> byoipRangeVcnIpv6allocations;
     /**
      * @return The public IPv4 CIDR block being imported from on-premises to the Oracle cloud.
      * 
@@ -34,62 +34,62 @@ public final class GetByoipRangesByoipRangeCollectionItem {
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return A filter to return only resources that match the given display name exactly.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `ByoipRange` resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The IPv6 prefix being imported to the Oracle cloud. This prefix must be /48 or larger, and can be subdivided into sub-ranges used across multiple VCNs. A BYOIPv6 prefix can be also assigned across multiple VCNs, and each VCN must be /64 or larger. You may specify a ULA or private IPv6 prefix of /64 or larger to use in the VCN. IPv6-enabled subnets will remain a fixed /64 in size.
      * 
      */
-    private String ipv6cidrBlock;
+    private @Nullable String ipv6cidrBlock;
     /**
      * @return The `ByoipRange` resource&#39;s current status.
      * 
      */
-    private String lifecycleDetails;
+    private @Nullable String lifecycleDetails;
     /**
      * @return A filter to return only resources that match the given lifecycle state name exactly.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return The date and time the `ByoipRange` resource was advertised to the internet by BGP, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    private String timeAdvertised;
+    private @Nullable String timeAdvertised;
     /**
      * @return The date and time the `ByoipRange` resource was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The date and time the `ByoipRange` resource was validated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    private String timeValidated;
+    private @Nullable String timeValidated;
     /**
      * @return The date and time the `ByoipRange` resource was withdrawn from advertisement by BGP to the internet, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    private String timeWithdrawn;
+    private @Nullable String timeWithdrawn;
     /**
      * @return The validation token is an internally-generated ASCII string used in the validation process. See [Importing a CIDR block](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/BYOIP.htm#import_cidr) for details.
      * 
      */
-    private String validationToken;
+    private @Nullable String validationToken;
 
     private GetByoipRangesByoipRangeCollectionItem() {}
     /**
@@ -97,7 +97,7 @@ public final class GetByoipRangesByoipRangeCollectionItem {
      * 
      */
     public List<GetByoipRangesByoipRangeCollectionItemByoipRangeVcnIpv6allocation> byoipRangeVcnIpv6allocations() {
-        return this.byoipRangeVcnIpv6allocations;
+        return this.byoipRangeVcnIpv6allocations == null ? List.of() : this.byoipRangeVcnIpv6allocations;
     }
     /**
      * @return The public IPv4 CIDR block being imported from on-premises to the Oracle cloud.
@@ -118,84 +118,84 @@ public final class GetByoipRangesByoipRangeCollectionItem {
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return A filter to return only resources that match the given display name exactly.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `ByoipRange` resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The IPv6 prefix being imported to the Oracle cloud. This prefix must be /48 or larger, and can be subdivided into sub-ranges used across multiple VCNs. A BYOIPv6 prefix can be also assigned across multiple VCNs, and each VCN must be /64 or larger. You may specify a ULA or private IPv6 prefix of /64 or larger to use in the VCN. IPv6-enabled subnets will remain a fixed /64 in size.
      * 
      */
-    public String ipv6cidrBlock() {
-        return this.ipv6cidrBlock;
+    public Optional<String> ipv6cidrBlock() {
+        return Optional.ofNullable(this.ipv6cidrBlock);
     }
     /**
      * @return The `ByoipRange` resource&#39;s current status.
      * 
      */
-    public String lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Optional<String> lifecycleDetails() {
+        return Optional.ofNullable(this.lifecycleDetails);
     }
     /**
      * @return A filter to return only resources that match the given lifecycle state name exactly.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return The date and time the `ByoipRange` resource was advertised to the internet by BGP, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    public String timeAdvertised() {
-        return this.timeAdvertised;
+    public Optional<String> timeAdvertised() {
+        return Optional.ofNullable(this.timeAdvertised);
     }
     /**
      * @return The date and time the `ByoipRange` resource was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return The date and time the `ByoipRange` resource was validated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    public String timeValidated() {
-        return this.timeValidated;
+    public Optional<String> timeValidated() {
+        return Optional.ofNullable(this.timeValidated);
     }
     /**
      * @return The date and time the `ByoipRange` resource was withdrawn from advertisement by BGP to the internet, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    public String timeWithdrawn() {
-        return this.timeWithdrawn;
+    public Optional<String> timeWithdrawn() {
+        return Optional.ofNullable(this.timeWithdrawn);
     }
     /**
      * @return The validation token is an internally-generated ASCII string used in the validation process. See [Importing a CIDR block](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/BYOIP.htm#import_cidr) for details.
      * 
      */
-    public String validationToken() {
-        return this.validationToken;
+    public Optional<String> validationToken() {
+        return Optional.ofNullable(this.validationToken);
     }
 
     public static Builder builder() {
@@ -207,21 +207,21 @@ public final class GetByoipRangesByoipRangeCollectionItem {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetByoipRangesByoipRangeCollectionItemByoipRangeVcnIpv6allocation> byoipRangeVcnIpv6allocations;
+        private @Nullable List<GetByoipRangesByoipRangeCollectionItemByoipRangeVcnIpv6allocation> byoipRangeVcnIpv6allocations;
         private @Nullable String cidrBlock;
         private @Nullable String compartmentId;
-        private Map<String,Object> definedTags;
-        private String displayName;
-        private Map<String,Object> freeformTags;
-        private String id;
-        private String ipv6cidrBlock;
-        private String lifecycleDetails;
-        private String state;
-        private String timeAdvertised;
-        private String timeCreated;
-        private String timeValidated;
-        private String timeWithdrawn;
-        private String validationToken;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String displayName;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String id;
+        private @Nullable String ipv6cidrBlock;
+        private @Nullable String lifecycleDetails;
+        private @Nullable String state;
+        private @Nullable String timeAdvertised;
+        private @Nullable String timeCreated;
+        private @Nullable String timeValidated;
+        private @Nullable String timeWithdrawn;
+        private @Nullable String validationToken;
         public Builder() {}
         public Builder(GetByoipRangesByoipRangeCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -243,8 +243,8 @@ public final class GetByoipRangesByoipRangeCollectionItem {
         }
 
         @CustomType.Setter
-        public Builder byoipRangeVcnIpv6allocations(List<GetByoipRangesByoipRangeCollectionItemByoipRangeVcnIpv6allocation> byoipRangeVcnIpv6allocations) {
-            this.byoipRangeVcnIpv6allocations = Objects.requireNonNull(byoipRangeVcnIpv6allocations);
+        public Builder byoipRangeVcnIpv6allocations(@Nullable List<GetByoipRangesByoipRangeCollectionItemByoipRangeVcnIpv6allocation> byoipRangeVcnIpv6allocations) {
+            this.byoipRangeVcnIpv6allocations = byoipRangeVcnIpv6allocations;
             return this;
         }
         public Builder byoipRangeVcnIpv6allocations(GetByoipRangesByoipRangeCollectionItemByoipRangeVcnIpv6allocation... byoipRangeVcnIpv6allocations) {
@@ -261,63 +261,63 @@ public final class GetByoipRangesByoipRangeCollectionItem {
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder ipv6cidrBlock(String ipv6cidrBlock) {
-            this.ipv6cidrBlock = Objects.requireNonNull(ipv6cidrBlock);
+        public Builder ipv6cidrBlock(@Nullable String ipv6cidrBlock) {
+            this.ipv6cidrBlock = ipv6cidrBlock;
             return this;
         }
         @CustomType.Setter
-        public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+        public Builder lifecycleDetails(@Nullable String lifecycleDetails) {
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder timeAdvertised(String timeAdvertised) {
-            this.timeAdvertised = Objects.requireNonNull(timeAdvertised);
+        public Builder timeAdvertised(@Nullable String timeAdvertised) {
+            this.timeAdvertised = timeAdvertised;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeValidated(String timeValidated) {
-            this.timeValidated = Objects.requireNonNull(timeValidated);
+        public Builder timeValidated(@Nullable String timeValidated) {
+            this.timeValidated = timeValidated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeWithdrawn(String timeWithdrawn) {
-            this.timeWithdrawn = Objects.requireNonNull(timeWithdrawn);
+        public Builder timeWithdrawn(@Nullable String timeWithdrawn) {
+            this.timeWithdrawn = timeWithdrawn;
             return this;
         }
         @CustomType.Setter
-        public Builder validationToken(String validationToken) {
-            this.validationToken = Objects.requireNonNull(validationToken);
+        public Builder validationToken(@Nullable String validationToken) {
+            this.validationToken = validationToken;
             return this;
         }
         public GetByoipRangesByoipRangeCollectionItem build() {

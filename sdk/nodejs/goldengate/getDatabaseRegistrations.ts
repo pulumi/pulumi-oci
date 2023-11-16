@@ -66,7 +66,7 @@ export interface GetDatabaseRegistrationsResult {
     /**
      * The list of database_registration_collection.
      */
-    readonly databaseRegistrationCollections: outputs.GoldenGate.GetDatabaseRegistrationsDatabaseRegistrationCollection[];
+    readonly databaseRegistrationCollections?: outputs.GoldenGate.GetDatabaseRegistrationsDatabaseRegistrationCollection[];
     /**
      * An object's Display Name.
      */
@@ -75,7 +75,7 @@ export interface GetDatabaseRegistrationsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Possible lifecycle states.
      */

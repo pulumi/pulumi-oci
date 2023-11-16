@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpoint {
@@ -14,51 +16,51 @@ public final class GetIntegrationInstancesIntegrationInstanceAlternateCustomEndp
      * @return When creating the DNS CNAME record for the custom hostname, this value must be specified in the rdata.
      * 
      */
-    private String alias;
+    private @Nullable String alias;
     /**
      * @return Optional OCID of a vault/secret containing a private SSL certificate bundle to be used for the custom hostname.
      * 
      */
-    private String certificateSecretId;
+    private @Nullable String certificateSecretId;
     /**
      * @return The secret version used for the certificate-secret-id (if certificate-secret-id is specified).
      * 
      */
-    private Integer certificateSecretVersion;
+    private @Nullable Integer certificateSecretVersion;
     /**
      * @return A custom hostname to be used for the integration instance URL, in FQDN format.
      * 
      */
-    private String hostname;
+    private @Nullable String hostname;
 
     private GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpoint() {}
     /**
      * @return When creating the DNS CNAME record for the custom hostname, this value must be specified in the rdata.
      * 
      */
-    public String alias() {
-        return this.alias;
+    public Optional<String> alias() {
+        return Optional.ofNullable(this.alias);
     }
     /**
      * @return Optional OCID of a vault/secret containing a private SSL certificate bundle to be used for the custom hostname.
      * 
      */
-    public String certificateSecretId() {
-        return this.certificateSecretId;
+    public Optional<String> certificateSecretId() {
+        return Optional.ofNullable(this.certificateSecretId);
     }
     /**
      * @return The secret version used for the certificate-secret-id (if certificate-secret-id is specified).
      * 
      */
-    public Integer certificateSecretVersion() {
-        return this.certificateSecretVersion;
+    public Optional<Integer> certificateSecretVersion() {
+        return Optional.ofNullable(this.certificateSecretVersion);
     }
     /**
      * @return A custom hostname to be used for the integration instance URL, in FQDN format.
      * 
      */
-    public String hostname() {
-        return this.hostname;
+    public Optional<String> hostname() {
+        return Optional.ofNullable(this.hostname);
     }
 
     public static Builder builder() {
@@ -70,10 +72,10 @@ public final class GetIntegrationInstancesIntegrationInstanceAlternateCustomEndp
     }
     @CustomType.Builder
     public static final class Builder {
-        private String alias;
-        private String certificateSecretId;
-        private Integer certificateSecretVersion;
-        private String hostname;
+        private @Nullable String alias;
+        private @Nullable String certificateSecretId;
+        private @Nullable Integer certificateSecretVersion;
+        private @Nullable String hostname;
         public Builder() {}
         public Builder(GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpoint defaults) {
     	      Objects.requireNonNull(defaults);
@@ -84,23 +86,23 @@ public final class GetIntegrationInstancesIntegrationInstanceAlternateCustomEndp
         }
 
         @CustomType.Setter
-        public Builder alias(String alias) {
-            this.alias = Objects.requireNonNull(alias);
+        public Builder alias(@Nullable String alias) {
+            this.alias = alias;
             return this;
         }
         @CustomType.Setter
-        public Builder certificateSecretId(String certificateSecretId) {
-            this.certificateSecretId = Objects.requireNonNull(certificateSecretId);
+        public Builder certificateSecretId(@Nullable String certificateSecretId) {
+            this.certificateSecretId = certificateSecretId;
             return this;
         }
         @CustomType.Setter
-        public Builder certificateSecretVersion(Integer certificateSecretVersion) {
-            this.certificateSecretVersion = Objects.requireNonNull(certificateSecretVersion);
+        public Builder certificateSecretVersion(@Nullable Integer certificateSecretVersion) {
+            this.certificateSecretVersion = certificateSecretVersion;
             return this;
         }
         @CustomType.Setter
-        public Builder hostname(String hostname) {
-            this.hostname = Objects.requireNonNull(hostname);
+        public Builder hostname(@Nullable String hostname) {
+            this.hostname = hostname;
             return this;
         }
         public GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpoint build() {

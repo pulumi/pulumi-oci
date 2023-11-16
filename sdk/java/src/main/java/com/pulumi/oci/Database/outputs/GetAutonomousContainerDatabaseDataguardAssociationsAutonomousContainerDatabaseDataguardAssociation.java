@@ -8,6 +8,8 @@ import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAutonomousContainerDatabaseDataguardAssociationsAutonomousContainerDatabaseDataguardAssociation {
@@ -15,223 +17,223 @@ public final class GetAutonomousContainerDatabaseDataguardAssociationsAutonomous
      * @return The lag time between updates to the primary Autonomous Container Database and application of the redo data on the standby Autonomous Container Database, as computed by the reporting database.  Example: `9 seconds`
      * 
      */
-    private String applyLag;
+    private @Nullable String applyLag;
     /**
      * @return The rate at which redo logs are synchronized between the associated Autonomous Container Databases.  Example: `180 Mb per second`
      * 
      */
-    private String applyRate;
-    private String autonomousContainerDatabaseDataguardAssociationId;
+    private @Nullable String applyRate;
+    private @Nullable String autonomousContainerDatabaseDataguardAssociationId;
     /**
      * @return The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
-    private String autonomousContainerDatabaseId;
+    private @Nullable String autonomousContainerDatabaseId;
     /**
      * @return The lag time for my preference based on data loss tolerance in seconds.
      * 
      */
-    private Integer fastStartFailOverLagLimitInSeconds;
+    private @Nullable Integer fastStartFailOverLagLimitInSeconds;
     /**
      * @return The OCID of the Autonomous Data Guard created for a given Autonomous Container Database.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Output DataType: boolean. Example : is_automatic_failover_enabled = true.
      * 
      */
-    private Boolean isAutomaticFailoverEnabled;
+    private @Nullable Boolean isAutomaticFailoverEnabled;
     /**
      * @return Additional information about the current lifecycleState, if available.
      * 
      */
-    private String lifecycleDetails;
+    private @Nullable String lifecycleDetails;
     /**
      * @return The OCID of the peer Autonomous Container Database-Autonomous Data Guard association.
      * 
      */
-    private String peerAutonomousContainerDatabaseDataguardAssociationId;
+    private @Nullable String peerAutonomousContainerDatabaseDataguardAssociationId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer Autonomous Container Database.
      * 
      */
-    private String peerAutonomousContainerDatabaseId;
+    private @Nullable String peerAutonomousContainerDatabaseId;
     /**
      * @return The current state of Autonomous Data Guard.
      * 
      */
-    private String peerLifecycleState;
+    private @Nullable String peerLifecycleState;
     /**
      * @return The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
      * 
      */
-    private String peerRole;
+    private @Nullable String peerRole;
     /**
      * @return The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
      * 
      */
-    private String protectionMode;
+    private @Nullable String protectionMode;
     /**
      * @return The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
      * 
      */
-    private String role;
+    private @Nullable String role;
     /**
      * @return The current state of Autonomous Data Guard.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return The date and time the Autonomous DataGuard association was created.
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The date and time when the last role change action happened.
      * 
      */
-    private String timeLastRoleChanged;
+    private @Nullable String timeLastRoleChanged;
     /**
      * @return The date and time of the last update to the apply lag, apply rate, and transport lag values.
      * 
      */
-    private String timeLastSynced;
+    private @Nullable String timeLastSynced;
     /**
      * @return The approximate number of seconds of redo data not yet available on the standby Autonomous Container Database, as computed by the reporting database.  Example: `7 seconds`
      * 
      */
-    private String transportLag;
+    private @Nullable String transportLag;
 
     private GetAutonomousContainerDatabaseDataguardAssociationsAutonomousContainerDatabaseDataguardAssociation() {}
     /**
      * @return The lag time between updates to the primary Autonomous Container Database and application of the redo data on the standby Autonomous Container Database, as computed by the reporting database.  Example: `9 seconds`
      * 
      */
-    public String applyLag() {
-        return this.applyLag;
+    public Optional<String> applyLag() {
+        return Optional.ofNullable(this.applyLag);
     }
     /**
      * @return The rate at which redo logs are synchronized between the associated Autonomous Container Databases.  Example: `180 Mb per second`
      * 
      */
-    public String applyRate() {
-        return this.applyRate;
+    public Optional<String> applyRate() {
+        return Optional.ofNullable(this.applyRate);
     }
-    public String autonomousContainerDatabaseDataguardAssociationId() {
-        return this.autonomousContainerDatabaseDataguardAssociationId;
+    public Optional<String> autonomousContainerDatabaseDataguardAssociationId() {
+        return Optional.ofNullable(this.autonomousContainerDatabaseDataguardAssociationId);
     }
     /**
      * @return The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
-    public String autonomousContainerDatabaseId() {
-        return this.autonomousContainerDatabaseId;
+    public Optional<String> autonomousContainerDatabaseId() {
+        return Optional.ofNullable(this.autonomousContainerDatabaseId);
     }
     /**
      * @return The lag time for my preference based on data loss tolerance in seconds.
      * 
      */
-    public Integer fastStartFailOverLagLimitInSeconds() {
-        return this.fastStartFailOverLagLimitInSeconds;
+    public Optional<Integer> fastStartFailOverLagLimitInSeconds() {
+        return Optional.ofNullable(this.fastStartFailOverLagLimitInSeconds);
     }
     /**
      * @return The OCID of the Autonomous Data Guard created for a given Autonomous Container Database.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Output DataType: boolean. Example : is_automatic_failover_enabled = true.
      * 
      */
-    public Boolean isAutomaticFailoverEnabled() {
-        return this.isAutomaticFailoverEnabled;
+    public Optional<Boolean> isAutomaticFailoverEnabled() {
+        return Optional.ofNullable(this.isAutomaticFailoverEnabled);
     }
     /**
      * @return Additional information about the current lifecycleState, if available.
      * 
      */
-    public String lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Optional<String> lifecycleDetails() {
+        return Optional.ofNullable(this.lifecycleDetails);
     }
     /**
      * @return The OCID of the peer Autonomous Container Database-Autonomous Data Guard association.
      * 
      */
-    public String peerAutonomousContainerDatabaseDataguardAssociationId() {
-        return this.peerAutonomousContainerDatabaseDataguardAssociationId;
+    public Optional<String> peerAutonomousContainerDatabaseDataguardAssociationId() {
+        return Optional.ofNullable(this.peerAutonomousContainerDatabaseDataguardAssociationId);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer Autonomous Container Database.
      * 
      */
-    public String peerAutonomousContainerDatabaseId() {
-        return this.peerAutonomousContainerDatabaseId;
+    public Optional<String> peerAutonomousContainerDatabaseId() {
+        return Optional.ofNullable(this.peerAutonomousContainerDatabaseId);
     }
     /**
      * @return The current state of Autonomous Data Guard.
      * 
      */
-    public String peerLifecycleState() {
-        return this.peerLifecycleState;
+    public Optional<String> peerLifecycleState() {
+        return Optional.ofNullable(this.peerLifecycleState);
     }
     /**
      * @return The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
      * 
      */
-    public String peerRole() {
-        return this.peerRole;
+    public Optional<String> peerRole() {
+        return Optional.ofNullable(this.peerRole);
     }
     /**
      * @return The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
      * 
      */
-    public String protectionMode() {
-        return this.protectionMode;
+    public Optional<String> protectionMode() {
+        return Optional.ofNullable(this.protectionMode);
     }
     /**
      * @return The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
      * 
      */
-    public String role() {
-        return this.role;
+    public Optional<String> role() {
+        return Optional.ofNullable(this.role);
     }
     /**
      * @return The current state of Autonomous Data Guard.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return The date and time the Autonomous DataGuard association was created.
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return The date and time when the last role change action happened.
      * 
      */
-    public String timeLastRoleChanged() {
-        return this.timeLastRoleChanged;
+    public Optional<String> timeLastRoleChanged() {
+        return Optional.ofNullable(this.timeLastRoleChanged);
     }
     /**
      * @return The date and time of the last update to the apply lag, apply rate, and transport lag values.
      * 
      */
-    public String timeLastSynced() {
-        return this.timeLastSynced;
+    public Optional<String> timeLastSynced() {
+        return Optional.ofNullable(this.timeLastSynced);
     }
     /**
      * @return The approximate number of seconds of redo data not yet available on the standby Autonomous Container Database, as computed by the reporting database.  Example: `7 seconds`
      * 
      */
-    public String transportLag() {
-        return this.transportLag;
+    public Optional<String> transportLag() {
+        return Optional.ofNullable(this.transportLag);
     }
 
     public static Builder builder() {
@@ -243,25 +245,25 @@ public final class GetAutonomousContainerDatabaseDataguardAssociationsAutonomous
     }
     @CustomType.Builder
     public static final class Builder {
-        private String applyLag;
-        private String applyRate;
-        private String autonomousContainerDatabaseDataguardAssociationId;
-        private String autonomousContainerDatabaseId;
-        private Integer fastStartFailOverLagLimitInSeconds;
-        private String id;
-        private Boolean isAutomaticFailoverEnabled;
-        private String lifecycleDetails;
-        private String peerAutonomousContainerDatabaseDataguardAssociationId;
-        private String peerAutonomousContainerDatabaseId;
-        private String peerLifecycleState;
-        private String peerRole;
-        private String protectionMode;
-        private String role;
-        private String state;
-        private String timeCreated;
-        private String timeLastRoleChanged;
-        private String timeLastSynced;
-        private String transportLag;
+        private @Nullable String applyLag;
+        private @Nullable String applyRate;
+        private @Nullable String autonomousContainerDatabaseDataguardAssociationId;
+        private @Nullable String autonomousContainerDatabaseId;
+        private @Nullable Integer fastStartFailOverLagLimitInSeconds;
+        private @Nullable String id;
+        private @Nullable Boolean isAutomaticFailoverEnabled;
+        private @Nullable String lifecycleDetails;
+        private @Nullable String peerAutonomousContainerDatabaseDataguardAssociationId;
+        private @Nullable String peerAutonomousContainerDatabaseId;
+        private @Nullable String peerLifecycleState;
+        private @Nullable String peerRole;
+        private @Nullable String protectionMode;
+        private @Nullable String role;
+        private @Nullable String state;
+        private @Nullable String timeCreated;
+        private @Nullable String timeLastRoleChanged;
+        private @Nullable String timeLastSynced;
+        private @Nullable String transportLag;
         public Builder() {}
         public Builder(GetAutonomousContainerDatabaseDataguardAssociationsAutonomousContainerDatabaseDataguardAssociation defaults) {
     	      Objects.requireNonNull(defaults);
@@ -287,98 +289,98 @@ public final class GetAutonomousContainerDatabaseDataguardAssociationsAutonomous
         }
 
         @CustomType.Setter
-        public Builder applyLag(String applyLag) {
-            this.applyLag = Objects.requireNonNull(applyLag);
+        public Builder applyLag(@Nullable String applyLag) {
+            this.applyLag = applyLag;
             return this;
         }
         @CustomType.Setter
-        public Builder applyRate(String applyRate) {
-            this.applyRate = Objects.requireNonNull(applyRate);
+        public Builder applyRate(@Nullable String applyRate) {
+            this.applyRate = applyRate;
             return this;
         }
         @CustomType.Setter
-        public Builder autonomousContainerDatabaseDataguardAssociationId(String autonomousContainerDatabaseDataguardAssociationId) {
-            this.autonomousContainerDatabaseDataguardAssociationId = Objects.requireNonNull(autonomousContainerDatabaseDataguardAssociationId);
+        public Builder autonomousContainerDatabaseDataguardAssociationId(@Nullable String autonomousContainerDatabaseDataguardAssociationId) {
+            this.autonomousContainerDatabaseDataguardAssociationId = autonomousContainerDatabaseDataguardAssociationId;
             return this;
         }
         @CustomType.Setter
-        public Builder autonomousContainerDatabaseId(String autonomousContainerDatabaseId) {
-            this.autonomousContainerDatabaseId = Objects.requireNonNull(autonomousContainerDatabaseId);
+        public Builder autonomousContainerDatabaseId(@Nullable String autonomousContainerDatabaseId) {
+            this.autonomousContainerDatabaseId = autonomousContainerDatabaseId;
             return this;
         }
         @CustomType.Setter
-        public Builder fastStartFailOverLagLimitInSeconds(Integer fastStartFailOverLagLimitInSeconds) {
-            this.fastStartFailOverLagLimitInSeconds = Objects.requireNonNull(fastStartFailOverLagLimitInSeconds);
+        public Builder fastStartFailOverLagLimitInSeconds(@Nullable Integer fastStartFailOverLagLimitInSeconds) {
+            this.fastStartFailOverLagLimitInSeconds = fastStartFailOverLagLimitInSeconds;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder isAutomaticFailoverEnabled(Boolean isAutomaticFailoverEnabled) {
-            this.isAutomaticFailoverEnabled = Objects.requireNonNull(isAutomaticFailoverEnabled);
+        public Builder isAutomaticFailoverEnabled(@Nullable Boolean isAutomaticFailoverEnabled) {
+            this.isAutomaticFailoverEnabled = isAutomaticFailoverEnabled;
             return this;
         }
         @CustomType.Setter
-        public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+        public Builder lifecycleDetails(@Nullable String lifecycleDetails) {
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
-        public Builder peerAutonomousContainerDatabaseDataguardAssociationId(String peerAutonomousContainerDatabaseDataguardAssociationId) {
-            this.peerAutonomousContainerDatabaseDataguardAssociationId = Objects.requireNonNull(peerAutonomousContainerDatabaseDataguardAssociationId);
+        public Builder peerAutonomousContainerDatabaseDataguardAssociationId(@Nullable String peerAutonomousContainerDatabaseDataguardAssociationId) {
+            this.peerAutonomousContainerDatabaseDataguardAssociationId = peerAutonomousContainerDatabaseDataguardAssociationId;
             return this;
         }
         @CustomType.Setter
-        public Builder peerAutonomousContainerDatabaseId(String peerAutonomousContainerDatabaseId) {
-            this.peerAutonomousContainerDatabaseId = Objects.requireNonNull(peerAutonomousContainerDatabaseId);
+        public Builder peerAutonomousContainerDatabaseId(@Nullable String peerAutonomousContainerDatabaseId) {
+            this.peerAutonomousContainerDatabaseId = peerAutonomousContainerDatabaseId;
             return this;
         }
         @CustomType.Setter
-        public Builder peerLifecycleState(String peerLifecycleState) {
-            this.peerLifecycleState = Objects.requireNonNull(peerLifecycleState);
+        public Builder peerLifecycleState(@Nullable String peerLifecycleState) {
+            this.peerLifecycleState = peerLifecycleState;
             return this;
         }
         @CustomType.Setter
-        public Builder peerRole(String peerRole) {
-            this.peerRole = Objects.requireNonNull(peerRole);
+        public Builder peerRole(@Nullable String peerRole) {
+            this.peerRole = peerRole;
             return this;
         }
         @CustomType.Setter
-        public Builder protectionMode(String protectionMode) {
-            this.protectionMode = Objects.requireNonNull(protectionMode);
+        public Builder protectionMode(@Nullable String protectionMode) {
+            this.protectionMode = protectionMode;
             return this;
         }
         @CustomType.Setter
-        public Builder role(String role) {
-            this.role = Objects.requireNonNull(role);
+        public Builder role(@Nullable String role) {
+            this.role = role;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeLastRoleChanged(String timeLastRoleChanged) {
-            this.timeLastRoleChanged = Objects.requireNonNull(timeLastRoleChanged);
+        public Builder timeLastRoleChanged(@Nullable String timeLastRoleChanged) {
+            this.timeLastRoleChanged = timeLastRoleChanged;
             return this;
         }
         @CustomType.Setter
-        public Builder timeLastSynced(String timeLastSynced) {
-            this.timeLastSynced = Objects.requireNonNull(timeLastSynced);
+        public Builder timeLastSynced(@Nullable String timeLastSynced) {
+            this.timeLastSynced = timeLastSynced;
             return this;
         }
         @CustomType.Setter
-        public Builder transportLag(String transportLag) {
-            this.transportLag = Objects.requireNonNull(transportLag);
+        public Builder transportLag(@Nullable String transportLag) {
+            this.transportLag = transportLag;
             return this;
         }
         public GetAutonomousContainerDatabaseDataguardAssociationsAutonomousContainerDatabaseDataguardAssociation build() {

@@ -16,35 +16,35 @@ namespace Pulumi.Oci.Audit.Outputs
         /// <summary>
         /// The HTTP method of the request.  Example: `GET`
         /// </summary>
-        public readonly string Action;
+        public readonly string? Action;
         /// <summary>
         /// The headers of the response.
         /// </summary>
-        public readonly ImmutableDictionary<string, object> Headers;
+        public readonly ImmutableDictionary<string, object>? Headers;
         /// <summary>
         /// The opc-request-id of the request.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The parameters supplied by the caller during this operation.
         /// </summary>
-        public readonly ImmutableDictionary<string, object> Parameters;
+        public readonly ImmutableDictionary<string, object>? Parameters;
         /// <summary>
         /// The full path of the API request.  Example: `/20160918/instances/ocid1.instance.oc1.phx.&lt;unique_ID&gt;`
         /// </summary>
-        public readonly string Path;
+        public readonly string? Path;
 
         [OutputConstructor]
         private GetEventsAuditEventDataRequestResult(
-            string action,
+            string? action,
 
-            ImmutableDictionary<string, object> headers,
+            ImmutableDictionary<string, object>? headers,
 
-            string id,
+            string? id,
 
-            ImmutableDictionary<string, object> parameters,
+            ImmutableDictionary<string, object>? parameters,
 
-            string path)
+            string? path)
         {
             Action = action;
             Headers = headers;

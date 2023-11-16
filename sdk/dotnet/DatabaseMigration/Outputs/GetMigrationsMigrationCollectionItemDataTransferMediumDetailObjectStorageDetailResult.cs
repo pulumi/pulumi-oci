@@ -16,17 +16,17 @@ namespace Pulumi.Oci.DatabaseMigration.Outputs
         /// <summary>
         /// Bucket name.
         /// </summary>
-        public readonly string Bucket;
+        public readonly string? Bucket;
         /// <summary>
         /// Namespace name of the object store bucket.
         /// </summary>
-        public readonly string Namespace;
+        public readonly string? Namespace;
 
         [OutputConstructor]
         private GetMigrationsMigrationCollectionItemDataTransferMediumDetailObjectStorageDetailResult(
-            string bucket,
+            string? bucket,
 
-            string @namespace)
+            string? @namespace)
         {
             Bucket = bucket;
             Namespace = @namespace;

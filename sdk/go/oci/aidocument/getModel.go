@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Model resource in Oracle Cloud Infrastructure Ai Document service.
@@ -60,53 +59,53 @@ type LookupModelArgs struct {
 // A collection of values returned by getModel.
 type LookupModelResult struct {
 	// The compartment identifier.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) collection of active custom Key Value models that need to be composed.
 	ComponentModels []GetModelComponentModel `pulumi:"componentModels"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// An optional description of the model.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// A human-friendly name for the model, which can be changed.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// A unique identifier that is immutable after creation.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Set to true when the model is created by using multiple key value extraction models.
-	IsComposedModel bool `pulumi:"isComposedModel"`
+	IsComposedModel *bool `pulumi:"isComposedModel"`
 	// Set to true when experimenting with a new model type or dataset, so model training is quick, with a predefined low number of passes through the training data.
-	IsQuickMode bool `pulumi:"isQuickMode"`
+	IsQuickMode *bool `pulumi:"isQuickMode"`
 	// The collection of labels used to train the custom model.
 	Labels []string `pulumi:"labels"`
 	// A message describing the current state in more detail, that can provide actionable information if training failed.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// The maximum model training time in hours, expressed as a decimal fraction.
-	MaxTrainingTimeInHours float64 `pulumi:"maxTrainingTimeInHours"`
+	MaxTrainingTimeInHours *float64 `pulumi:"maxTrainingTimeInHours"`
 	// Trained Model Metrics.
 	Metrics []GetModelMetric `pulumi:"metrics"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of active custom Key Value model that need to be composed.
 	ModelId string `pulumi:"modelId"`
 	// The type of the Document model.
-	ModelType string `pulumi:"modelType"`
+	ModelType *string `pulumi:"modelType"`
 	// The version of the model.
-	ModelVersion string `pulumi:"modelVersion"`
+	ModelVersion *string `pulumi:"modelVersion"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project that contains the model.
-	ProjectId string `pulumi:"projectId"`
+	ProjectId *string `pulumi:"projectId"`
 	// The current state of the model.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. For example: `{"orcl-cloud": {"free-tier-retained": "true"}}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The tenancy id of the model.
-	TenancyId string `pulumi:"tenancyId"`
+	TenancyId *string `pulumi:"tenancyId"`
 	// The base entity which is the input for creating and training a model.
 	TestingDatasets []GetModelTestingDataset `pulumi:"testingDatasets"`
 	// When the model was created, as an RFC3339 datetime string.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// When the model was updated, as an RFC3339 datetime string.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 	// The total hours actually used for model training.
-	TrainedTimeInHours float64 `pulumi:"trainedTimeInHours"`
+	TrainedTimeInHours *float64 `pulumi:"trainedTimeInHours"`
 	// The base entity which is the input for creating and training a model.
 	TrainingDatasets []GetModelTrainingDataset `pulumi:"trainingDatasets"`
 	// The base entity which is the input for creating and training a model.
@@ -151,15 +150,9 @@ func (o LookupModelResultOutput) ToLookupModelResultOutputWithContext(ctx contex
 	return o
 }
 
-func (o LookupModelResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupModelResult] {
-	return pulumix.Output[LookupModelResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The compartment identifier.
-func (o LookupModelResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupModelResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupModelResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupModelResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) collection of active custom Key Value models that need to be composed.
@@ -173,13 +166,13 @@ func (o LookupModelResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // An optional description of the model.
-func (o LookupModelResultOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupModelResult) string { return v.Description }).(pulumi.StringOutput)
+func (o LookupModelResultOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupModelResult) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // A human-friendly name for the model, which can be changed.
-func (o LookupModelResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupModelResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupModelResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupModelResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
@@ -188,18 +181,18 @@ func (o LookupModelResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // A unique identifier that is immutable after creation.
-func (o LookupModelResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupModelResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupModelResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupModelResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Set to true when the model is created by using multiple key value extraction models.
-func (o LookupModelResultOutput) IsComposedModel() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupModelResult) bool { return v.IsComposedModel }).(pulumi.BoolOutput)
+func (o LookupModelResultOutput) IsComposedModel() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupModelResult) *bool { return v.IsComposedModel }).(pulumi.BoolPtrOutput)
 }
 
 // Set to true when experimenting with a new model type or dataset, so model training is quick, with a predefined low number of passes through the training data.
-func (o LookupModelResultOutput) IsQuickMode() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupModelResult) bool { return v.IsQuickMode }).(pulumi.BoolOutput)
+func (o LookupModelResultOutput) IsQuickMode() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupModelResult) *bool { return v.IsQuickMode }).(pulumi.BoolPtrOutput)
 }
 
 // The collection of labels used to train the custom model.
@@ -208,13 +201,13 @@ func (o LookupModelResultOutput) Labels() pulumi.StringArrayOutput {
 }
 
 // A message describing the current state in more detail, that can provide actionable information if training failed.
-func (o LookupModelResultOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupModelResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o LookupModelResultOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupModelResult) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // The maximum model training time in hours, expressed as a decimal fraction.
-func (o LookupModelResultOutput) MaxTrainingTimeInHours() pulumi.Float64Output {
-	return o.ApplyT(func(v LookupModelResult) float64 { return v.MaxTrainingTimeInHours }).(pulumi.Float64Output)
+func (o LookupModelResultOutput) MaxTrainingTimeInHours() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v LookupModelResult) *float64 { return v.MaxTrainingTimeInHours }).(pulumi.Float64PtrOutput)
 }
 
 // Trained Model Metrics.
@@ -228,23 +221,23 @@ func (o LookupModelResultOutput) ModelId() pulumi.StringOutput {
 }
 
 // The type of the Document model.
-func (o LookupModelResultOutput) ModelType() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupModelResult) string { return v.ModelType }).(pulumi.StringOutput)
+func (o LookupModelResultOutput) ModelType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupModelResult) *string { return v.ModelType }).(pulumi.StringPtrOutput)
 }
 
 // The version of the model.
-func (o LookupModelResultOutput) ModelVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupModelResult) string { return v.ModelVersion }).(pulumi.StringOutput)
+func (o LookupModelResultOutput) ModelVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupModelResult) *string { return v.ModelVersion }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project that contains the model.
-func (o LookupModelResultOutput) ProjectId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupModelResult) string { return v.ProjectId }).(pulumi.StringOutput)
+func (o LookupModelResultOutput) ProjectId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupModelResult) *string { return v.ProjectId }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the model.
-func (o LookupModelResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupModelResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupModelResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupModelResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. For example: `{"orcl-cloud": {"free-tier-retained": "true"}}`
@@ -253,8 +246,8 @@ func (o LookupModelResultOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The tenancy id of the model.
-func (o LookupModelResultOutput) TenancyId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupModelResult) string { return v.TenancyId }).(pulumi.StringOutput)
+func (o LookupModelResultOutput) TenancyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupModelResult) *string { return v.TenancyId }).(pulumi.StringPtrOutput)
 }
 
 // The base entity which is the input for creating and training a model.
@@ -263,18 +256,18 @@ func (o LookupModelResultOutput) TestingDatasets() GetModelTestingDatasetArrayOu
 }
 
 // When the model was created, as an RFC3339 datetime string.
-func (o LookupModelResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupModelResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupModelResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupModelResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // When the model was updated, as an RFC3339 datetime string.
-func (o LookupModelResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupModelResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o LookupModelResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupModelResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 // The total hours actually used for model training.
-func (o LookupModelResultOutput) TrainedTimeInHours() pulumi.Float64Output {
-	return o.ApplyT(func(v LookupModelResult) float64 { return v.TrainedTimeInHours }).(pulumi.Float64Output)
+func (o LookupModelResultOutput) TrainedTimeInHours() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v LookupModelResult) *float64 { return v.TrainedTimeInHours }).(pulumi.Float64PtrOutput)
 }
 
 // The base entity which is the input for creating and training a model.

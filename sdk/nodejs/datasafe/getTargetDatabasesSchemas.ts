@@ -68,7 +68,7 @@ export interface GetTargetDatabasesSchemasResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Indicates if the schema is oracle supplied.
      */
@@ -81,7 +81,7 @@ export interface GetTargetDatabasesSchemasResult {
     /**
      * The list of schemas.
      */
-    readonly schemas: outputs.DataSafe.GetTargetDatabasesSchemasSchema[];
+    readonly schemas?: outputs.DataSafe.GetTargetDatabasesSchemasSchema[];
     readonly targetDatabaseId: string;
 }
 /**

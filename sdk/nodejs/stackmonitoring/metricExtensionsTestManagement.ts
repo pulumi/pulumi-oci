@@ -68,19 +68,19 @@ export class MetricExtensionsTestManagement extends pulumi.CustomResource {
     /**
      * Test Run Id
      */
-    public /*out*/ readonly testRunId!: pulumi.Output<string>;
+    public /*out*/ readonly testRunId!: pulumi.Output<string | undefined>;
     /**
      * Test Run Metric Suffix
      */
-    public /*out*/ readonly testRunMetricSuffix!: pulumi.Output<string>;
+    public /*out*/ readonly testRunMetricSuffix!: pulumi.Output<string | undefined>;
     /**
      * Test Run Namespace name
      */
-    public /*out*/ readonly testRunNamespaceName!: pulumi.Output<string>;
+    public /*out*/ readonly testRunNamespaceName!: pulumi.Output<string | undefined>;
     /**
      * Test Run Resource Group name
      */
-    public /*out*/ readonly testRunResourceGroupName!: pulumi.Output<string>;
+    public /*out*/ readonly testRunResourceGroupName!: pulumi.Output<string | undefined>;
 
     /**
      * Create a MetricExtensionsTestManagement resource with the given unique name, arguments, and options.

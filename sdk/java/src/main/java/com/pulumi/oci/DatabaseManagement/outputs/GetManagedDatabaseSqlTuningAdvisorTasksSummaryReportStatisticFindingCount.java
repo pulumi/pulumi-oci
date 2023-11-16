@@ -6,6 +6,8 @@ package com.pulumi.oci.DatabaseManagement.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.Integer;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticFindingCount {
@@ -13,75 +15,75 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatistic
      * @return The number of distinct SQL statements with alternative plan recommendations.
      * 
      */
-    private Integer alternatePlan;
+    private @Nullable Integer alternatePlan;
     /**
      * @return The number of distinct SQL statements with implemented SQL profiles.
      * 
      */
-    private Integer implementedSqlProfile;
+    private @Nullable Integer implementedSqlProfile;
     /**
      * @return The number of distinct SQL statements with index recommendations.
      * 
      */
-    private Integer index;
+    private @Nullable Integer index;
     /**
      * @return The number of distinct SQL statements with recommended SQL profiles.
      * 
      */
-    private Integer recommendedSqlProfile;
+    private @Nullable Integer recommendedSqlProfile;
     /**
      * @return The number of distinct SQL statements with restructured SQL recommendations.
      * 
      */
-    private Integer restructure;
+    private @Nullable Integer restructure;
     /**
      * @return The number of distinct SQL statements with stale or missing optimizer statistics recommendations.
      * 
      */
-    private Integer statistics;
+    private @Nullable Integer statistics;
 
     private GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticFindingCount() {}
     /**
      * @return The number of distinct SQL statements with alternative plan recommendations.
      * 
      */
-    public Integer alternatePlan() {
-        return this.alternatePlan;
+    public Optional<Integer> alternatePlan() {
+        return Optional.ofNullable(this.alternatePlan);
     }
     /**
      * @return The number of distinct SQL statements with implemented SQL profiles.
      * 
      */
-    public Integer implementedSqlProfile() {
-        return this.implementedSqlProfile;
+    public Optional<Integer> implementedSqlProfile() {
+        return Optional.ofNullable(this.implementedSqlProfile);
     }
     /**
      * @return The number of distinct SQL statements with index recommendations.
      * 
      */
-    public Integer index() {
-        return this.index;
+    public Optional<Integer> index() {
+        return Optional.ofNullable(this.index);
     }
     /**
      * @return The number of distinct SQL statements with recommended SQL profiles.
      * 
      */
-    public Integer recommendedSqlProfile() {
-        return this.recommendedSqlProfile;
+    public Optional<Integer> recommendedSqlProfile() {
+        return Optional.ofNullable(this.recommendedSqlProfile);
     }
     /**
      * @return The number of distinct SQL statements with restructured SQL recommendations.
      * 
      */
-    public Integer restructure() {
-        return this.restructure;
+    public Optional<Integer> restructure() {
+        return Optional.ofNullable(this.restructure);
     }
     /**
      * @return The number of distinct SQL statements with stale or missing optimizer statistics recommendations.
      * 
      */
-    public Integer statistics() {
-        return this.statistics;
+    public Optional<Integer> statistics() {
+        return Optional.ofNullable(this.statistics);
     }
 
     public static Builder builder() {
@@ -93,12 +95,12 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatistic
     }
     @CustomType.Builder
     public static final class Builder {
-        private Integer alternatePlan;
-        private Integer implementedSqlProfile;
-        private Integer index;
-        private Integer recommendedSqlProfile;
-        private Integer restructure;
-        private Integer statistics;
+        private @Nullable Integer alternatePlan;
+        private @Nullable Integer implementedSqlProfile;
+        private @Nullable Integer index;
+        private @Nullable Integer recommendedSqlProfile;
+        private @Nullable Integer restructure;
+        private @Nullable Integer statistics;
         public Builder() {}
         public Builder(GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticFindingCount defaults) {
     	      Objects.requireNonNull(defaults);
@@ -111,33 +113,33 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatistic
         }
 
         @CustomType.Setter
-        public Builder alternatePlan(Integer alternatePlan) {
-            this.alternatePlan = Objects.requireNonNull(alternatePlan);
+        public Builder alternatePlan(@Nullable Integer alternatePlan) {
+            this.alternatePlan = alternatePlan;
             return this;
         }
         @CustomType.Setter
-        public Builder implementedSqlProfile(Integer implementedSqlProfile) {
-            this.implementedSqlProfile = Objects.requireNonNull(implementedSqlProfile);
+        public Builder implementedSqlProfile(@Nullable Integer implementedSqlProfile) {
+            this.implementedSqlProfile = implementedSqlProfile;
             return this;
         }
         @CustomType.Setter
-        public Builder index(Integer index) {
-            this.index = Objects.requireNonNull(index);
+        public Builder index(@Nullable Integer index) {
+            this.index = index;
             return this;
         }
         @CustomType.Setter
-        public Builder recommendedSqlProfile(Integer recommendedSqlProfile) {
-            this.recommendedSqlProfile = Objects.requireNonNull(recommendedSqlProfile);
+        public Builder recommendedSqlProfile(@Nullable Integer recommendedSqlProfile) {
+            this.recommendedSqlProfile = recommendedSqlProfile;
             return this;
         }
         @CustomType.Setter
-        public Builder restructure(Integer restructure) {
-            this.restructure = Objects.requireNonNull(restructure);
+        public Builder restructure(@Nullable Integer restructure) {
+            this.restructure = restructure;
             return this;
         }
         @CustomType.Setter
-        public Builder statistics(Integer statistics) {
-            this.statistics = Objects.requireNonNull(statistics);
+        public Builder statistics(@Nullable Integer statistics) {
+            this.statistics = statistics;
             return this;
         }
         public GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticFindingCount build() {

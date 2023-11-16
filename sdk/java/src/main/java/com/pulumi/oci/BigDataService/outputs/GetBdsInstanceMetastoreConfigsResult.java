@@ -24,7 +24,7 @@ public final class GetBdsInstanceMetastoreConfigsResult {
      * @return The list of bds_metastore_configurations.
      * 
      */
-    private List<GetBdsInstanceMetastoreConfigsBdsMetastoreConfiguration> bdsMetastoreConfigurations;
+    private @Nullable List<GetBdsInstanceMetastoreConfigsBdsMetastoreConfiguration> bdsMetastoreConfigurations;
     /**
      * @return The display name of metastore configuration
      * 
@@ -35,7 +35,7 @@ public final class GetBdsInstanceMetastoreConfigsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The OCID of the Data Catalog metastore. Set only if metastore&#39;s type is EXTERNAL.
      * 
@@ -68,7 +68,7 @@ public final class GetBdsInstanceMetastoreConfigsResult {
      * 
      */
     public List<GetBdsInstanceMetastoreConfigsBdsMetastoreConfiguration> bdsMetastoreConfigurations() {
-        return this.bdsMetastoreConfigurations;
+        return this.bdsMetastoreConfigurations == null ? List.of() : this.bdsMetastoreConfigurations;
     }
     /**
      * @return The display name of metastore configuration
@@ -84,8 +84,8 @@ public final class GetBdsInstanceMetastoreConfigsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The OCID of the Data Catalog metastore. Set only if metastore&#39;s type is EXTERNAL.
@@ -120,10 +120,10 @@ public final class GetBdsInstanceMetastoreConfigsResult {
     public static final class Builder {
         private @Nullable String bdsApiKeyId;
         private String bdsInstanceId;
-        private List<GetBdsInstanceMetastoreConfigsBdsMetastoreConfiguration> bdsMetastoreConfigurations;
+        private @Nullable List<GetBdsInstanceMetastoreConfigsBdsMetastoreConfiguration> bdsMetastoreConfigurations;
         private @Nullable String displayName;
         private @Nullable List<GetBdsInstanceMetastoreConfigsFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String metastoreId;
         private @Nullable String metastoreType;
         private @Nullable String state;
@@ -152,8 +152,8 @@ public final class GetBdsInstanceMetastoreConfigsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder bdsMetastoreConfigurations(List<GetBdsInstanceMetastoreConfigsBdsMetastoreConfiguration> bdsMetastoreConfigurations) {
-            this.bdsMetastoreConfigurations = Objects.requireNonNull(bdsMetastoreConfigurations);
+        public Builder bdsMetastoreConfigurations(@Nullable List<GetBdsInstanceMetastoreConfigsBdsMetastoreConfiguration> bdsMetastoreConfigurations) {
+            this.bdsMetastoreConfigurations = bdsMetastoreConfigurations;
             return this;
         }
         public Builder bdsMetastoreConfigurations(GetBdsInstanceMetastoreConfigsBdsMetastoreConfiguration... bdsMetastoreConfigurations) {
@@ -173,8 +173,8 @@ public final class GetBdsInstanceMetastoreConfigsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

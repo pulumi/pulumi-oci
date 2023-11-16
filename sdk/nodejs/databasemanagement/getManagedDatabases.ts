@@ -98,7 +98,7 @@ export interface GetManagedDatabasesResult {
     /**
      * The list of managed_database_collection.
      */
-    readonly managedDatabaseCollections: outputs.DatabaseManagement.GetManagedDatabasesManagedDatabaseCollection[];
+    readonly managedDatabaseCollections?: outputs.DatabaseManagement.GetManagedDatabasesManagedDatabaseCollection[];
     /**
      * The management option used when enabling Database Management.
      */

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Tables in Oracle Cloud Infrastructure NoSQL Database service.
@@ -70,7 +69,7 @@ type GetTablesResult struct {
 	CompartmentId string            `pulumi:"compartmentId"`
 	Filters       []GetTablesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Human-friendly table name, immutable.
 	Name *string `pulumi:"name"`
 	// The state of a table.
@@ -122,12 +121,6 @@ func (o GetTablesResultOutput) ToGetTablesResultOutputWithContext(ctx context.Co
 	return o
 }
 
-func (o GetTablesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetTablesResult] {
-	return pulumix.Output[GetTablesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Compartment Identifier.
 func (o GetTablesResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetTablesResult) string { return v.CompartmentId }).(pulumi.StringOutput)
@@ -138,8 +131,8 @@ func (o GetTablesResultOutput) Filters() GetTablesFilterArrayOutput {
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetTablesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetTablesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetTablesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetTablesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Human-friendly table name, immutable.

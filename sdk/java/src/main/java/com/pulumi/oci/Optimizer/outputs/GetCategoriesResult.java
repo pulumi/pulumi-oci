@@ -19,7 +19,7 @@ public final class GetCategoriesResult {
      * @return The list of category_collection.
      * 
      */
-    private List<GetCategoriesCategoryCollection> categoryCollections;
+    private @Nullable List<GetCategoriesCategoryCollection> categoryCollections;
     private @Nullable List<String> childTenancyIds;
     /**
      * @return The OCID of the tenancy. The tenancy is the root compartment.
@@ -32,7 +32,7 @@ public final class GetCategoriesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private @Nullable Boolean includeOrganization;
     /**
      * @return The name assigned to the category.
@@ -51,7 +51,7 @@ public final class GetCategoriesResult {
      * 
      */
     public List<GetCategoriesCategoryCollection> categoryCollections() {
-        return this.categoryCollections;
+        return this.categoryCollections == null ? List.of() : this.categoryCollections;
     }
     public List<String> childTenancyIds() {
         return this.childTenancyIds == null ? List.of() : this.childTenancyIds;
@@ -73,8 +73,8 @@ public final class GetCategoriesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public Optional<Boolean> includeOrganization() {
         return Optional.ofNullable(this.includeOrganization);
@@ -103,12 +103,12 @@ public final class GetCategoriesResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetCategoriesCategoryCollection> categoryCollections;
+        private @Nullable List<GetCategoriesCategoryCollection> categoryCollections;
         private @Nullable List<String> childTenancyIds;
         private String compartmentId;
         private Boolean compartmentIdInSubtree;
         private @Nullable List<GetCategoriesFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable Boolean includeOrganization;
         private @Nullable String name;
         private @Nullable String state;
@@ -127,8 +127,8 @@ public final class GetCategoriesResult {
         }
 
         @CustomType.Setter
-        public Builder categoryCollections(List<GetCategoriesCategoryCollection> categoryCollections) {
-            this.categoryCollections = Objects.requireNonNull(categoryCollections);
+        public Builder categoryCollections(@Nullable List<GetCategoriesCategoryCollection> categoryCollections) {
+            this.categoryCollections = categoryCollections;
             return this;
         }
         public Builder categoryCollections(GetCategoriesCategoryCollection... categoryCollections) {
@@ -161,8 +161,8 @@ public final class GetCategoriesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

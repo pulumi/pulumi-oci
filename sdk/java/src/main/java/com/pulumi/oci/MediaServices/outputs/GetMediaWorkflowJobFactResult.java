@@ -6,6 +6,8 @@ package com.pulumi.oci.MediaServices.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetMediaWorkflowJobFactResult {
@@ -13,12 +15,12 @@ public final class GetMediaWorkflowJobFactResult {
      * @return The body of the detail captured as JSON.
      * 
      */
-    private String detail;
+    private @Nullable String detail;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return System generated serial number to uniquely identify a detail in order within a MediaWorkflowJob.
      * 
@@ -33,27 +35,27 @@ public final class GetMediaWorkflowJobFactResult {
      * @return Unique name. It is read-only and generated for the fact.
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return The type of information contained in this detail.
      * 
      */
-    private String type;
+    private @Nullable String type;
 
     private GetMediaWorkflowJobFactResult() {}
     /**
      * @return The body of the detail captured as JSON.
      * 
      */
-    public String detail() {
-        return this.detail;
+    public Optional<String> detail() {
+        return Optional.ofNullable(this.detail);
     }
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return System generated serial number to uniquely identify a detail in order within a MediaWorkflowJob.
@@ -73,15 +75,15 @@ public final class GetMediaWorkflowJobFactResult {
      * @return Unique name. It is read-only and generated for the fact.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return The type of information contained in this detail.
      * 
      */
-    public String type() {
-        return this.type;
+    public Optional<String> type() {
+        return Optional.ofNullable(this.type);
     }
 
     public static Builder builder() {
@@ -93,12 +95,12 @@ public final class GetMediaWorkflowJobFactResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String detail;
-        private String id;
+        private @Nullable String detail;
+        private @Nullable String id;
         private String key;
         private String mediaWorkflowJobId;
-        private String name;
-        private String type;
+        private @Nullable String name;
+        private @Nullable String type;
         public Builder() {}
         public Builder(GetMediaWorkflowJobFactResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -111,13 +113,13 @@ public final class GetMediaWorkflowJobFactResult {
         }
 
         @CustomType.Setter
-        public Builder detail(String detail) {
-            this.detail = Objects.requireNonNull(detail);
+        public Builder detail(@Nullable String detail) {
+            this.detail = detail;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -131,13 +133,13 @@ public final class GetMediaWorkflowJobFactResult {
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+        public Builder type(@Nullable String type) {
+            this.type = type;
             return this;
         }
         public GetMediaWorkflowJobFactResult build() {

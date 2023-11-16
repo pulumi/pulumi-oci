@@ -16,17 +16,17 @@ namespace Pulumi.Oci.Waf.Outputs
         /// <summary>
         /// Rule name. Must be unique within the module.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// The value of the header field.
         /// </summary>
-        public readonly string Value;
+        public readonly string? Value;
 
         [OutputConstructor]
         private GetWebAppFirewallPolicyActionHeaderResult(
-            string name,
+            string? name,
 
-            string value)
+            string? value)
         {
             Name = name;
             Value = value;

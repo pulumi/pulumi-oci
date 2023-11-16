@@ -11,6 +11,7 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 @CustomType
@@ -19,162 +20,162 @@ public final class GetRepositoryResult {
      * @return The count of the branches present in the repository.
      * 
      */
-    private Integer branchCount;
+    private @Nullable Integer branchCount;
     /**
      * @return The count of the commits present in the repository.
      * 
      */
-    private Integer commitCount;
+    private @Nullable Integer commitCount;
     /**
      * @return The OCID of the repository&#39;s compartment.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return The default branch of the repository.
      * 
      */
-    private String defaultBranch;
+    private @Nullable String defaultBranch;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return Details of the repository. Avoid entering confidential information.
      * 
      */
-    private String description;
+    private @Nullable String description;
     private @Nullable List<String> fields;
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return HTTP URL that you use to git clone, pull and push.
      * 
      */
-    private String httpUrl;
+    private @Nullable String httpUrl;
     /**
      * @return The OCID of the repository. This value is unique and immutable.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
-    private String lifecyleDetails;
+    private @Nullable String lifecyleDetails;
     /**
      * @return Configuration information for mirroring the repository.
      * 
      */
-    private List<GetRepositoryMirrorRepositoryConfig> mirrorRepositoryConfigs;
+    private @Nullable List<GetRepositoryMirrorRepositoryConfig> mirrorRepositoryConfigs;
     /**
      * @return Unique name of a repository. This value is mutable.
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return Tenancy unique namespace.
      * 
      */
-    private String namespace;
+    private @Nullable String namespace;
     /**
      * @return The OCID of the DevOps project containing the repository.
      * 
      */
-    private String projectId;
+    private @Nullable String projectId;
     /**
      * @return Unique project name in a namespace.
      * 
      */
-    private String projectName;
+    private @Nullable String projectName;
     private String repositoryId;
     /**
      * @return Type of repository: MIRRORED - Repository created by mirroring an existing repository. HOSTED - Repository created and hosted using Oracle Cloud Infrastructure DevOps code repository.
      * 
      */
-    private String repositoryType;
+    private @Nullable String repositoryType;
     /**
      * @return The size of the repository in bytes.
      * 
      */
-    private String sizeInBytes;
+    private @Nullable String sizeInBytes;
     /**
      * @return SSH URL that you use to git clone, pull and push.
      * 
      */
-    private String sshUrl;
+    private @Nullable String sshUrl;
     /**
      * @return The current state of the repository.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    private Map<String,Object> systemTags;
+    private @Nullable Map<String,Object> systemTags;
     /**
      * @return The time the repository was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The time the repository was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      * 
      */
-    private String timeUpdated;
+    private @Nullable String timeUpdated;
     /**
      * @return Trigger build events supported for this repository: PUSH - Build is triggered when a push event occurs. COMMIT_UPDATES - Build is triggered when new commits are mirrored into a repository.
      * 
      */
-    private List<String> triggerBuildEvents;
+    private @Nullable List<String> triggerBuildEvents;
 
     private GetRepositoryResult() {}
     /**
      * @return The count of the branches present in the repository.
      * 
      */
-    public Integer branchCount() {
-        return this.branchCount;
+    public Optional<Integer> branchCount() {
+        return Optional.ofNullable(this.branchCount);
     }
     /**
      * @return The count of the commits present in the repository.
      * 
      */
-    public Integer commitCount() {
-        return this.commitCount;
+    public Optional<Integer> commitCount() {
+        return Optional.ofNullable(this.commitCount);
     }
     /**
      * @return The OCID of the repository&#39;s compartment.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return The default branch of the repository.
      * 
      */
-    public String defaultBranch() {
-        return this.defaultBranch;
+    public Optional<String> defaultBranch() {
+        return Optional.ofNullable(this.defaultBranch);
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return Details of the repository. Avoid entering confidential information.
      * 
      */
-    public String description() {
-        return this.description;
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
     public List<String> fields() {
         return this.fields == null ? List.of() : this.fields;
@@ -184,63 +185,63 @@ public final class GetRepositoryResult {
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return HTTP URL that you use to git clone, pull and push.
      * 
      */
-    public String httpUrl() {
-        return this.httpUrl;
+    public Optional<String> httpUrl() {
+        return Optional.ofNullable(this.httpUrl);
     }
     /**
      * @return The OCID of the repository. This value is unique and immutable.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
-    public String lifecyleDetails() {
-        return this.lifecyleDetails;
+    public Optional<String> lifecyleDetails() {
+        return Optional.ofNullable(this.lifecyleDetails);
     }
     /**
      * @return Configuration information for mirroring the repository.
      * 
      */
     public List<GetRepositoryMirrorRepositoryConfig> mirrorRepositoryConfigs() {
-        return this.mirrorRepositoryConfigs;
+        return this.mirrorRepositoryConfigs == null ? List.of() : this.mirrorRepositoryConfigs;
     }
     /**
      * @return Unique name of a repository. This value is mutable.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return Tenancy unique namespace.
      * 
      */
-    public String namespace() {
-        return this.namespace;
+    public Optional<String> namespace() {
+        return Optional.ofNullable(this.namespace);
     }
     /**
      * @return The OCID of the DevOps project containing the repository.
      * 
      */
-    public String projectId() {
-        return this.projectId;
+    public Optional<String> projectId() {
+        return Optional.ofNullable(this.projectId);
     }
     /**
      * @return Unique project name in a namespace.
      * 
      */
-    public String projectName() {
-        return this.projectName;
+    public Optional<String> projectName() {
+        return Optional.ofNullable(this.projectName);
     }
     public String repositoryId() {
         return this.repositoryId;
@@ -249,57 +250,57 @@ public final class GetRepositoryResult {
      * @return Type of repository: MIRRORED - Repository created by mirroring an existing repository. HOSTED - Repository created and hosted using Oracle Cloud Infrastructure DevOps code repository.
      * 
      */
-    public String repositoryType() {
-        return this.repositoryType;
+    public Optional<String> repositoryType() {
+        return Optional.ofNullable(this.repositoryType);
     }
     /**
      * @return The size of the repository in bytes.
      * 
      */
-    public String sizeInBytes() {
-        return this.sizeInBytes;
+    public Optional<String> sizeInBytes() {
+        return Optional.ofNullable(this.sizeInBytes);
     }
     /**
      * @return SSH URL that you use to git clone, pull and push.
      * 
      */
-    public String sshUrl() {
-        return this.sshUrl;
+    public Optional<String> sshUrl() {
+        return Optional.ofNullable(this.sshUrl);
     }
     /**
      * @return The current state of the repository.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
     public Map<String,Object> systemTags() {
-        return this.systemTags;
+        return this.systemTags == null ? Map.of() : this.systemTags;
     }
     /**
      * @return The time the repository was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return The time the repository was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      * 
      */
-    public String timeUpdated() {
-        return this.timeUpdated;
+    public Optional<String> timeUpdated() {
+        return Optional.ofNullable(this.timeUpdated);
     }
     /**
      * @return Trigger build events supported for this repository: PUSH - Build is triggered when a push event occurs. COMMIT_UPDATES - Build is triggered when new commits are mirrored into a repository.
      * 
      */
     public List<String> triggerBuildEvents() {
-        return this.triggerBuildEvents;
+        return this.triggerBuildEvents == null ? List.of() : this.triggerBuildEvents;
     }
 
     public static Builder builder() {
@@ -311,31 +312,31 @@ public final class GetRepositoryResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Integer branchCount;
-        private Integer commitCount;
-        private String compartmentId;
-        private String defaultBranch;
-        private Map<String,Object> definedTags;
-        private String description;
+        private @Nullable Integer branchCount;
+        private @Nullable Integer commitCount;
+        private @Nullable String compartmentId;
+        private @Nullable String defaultBranch;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String description;
         private @Nullable List<String> fields;
-        private Map<String,Object> freeformTags;
-        private String httpUrl;
-        private String id;
-        private String lifecyleDetails;
-        private List<GetRepositoryMirrorRepositoryConfig> mirrorRepositoryConfigs;
-        private String name;
-        private String namespace;
-        private String projectId;
-        private String projectName;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String httpUrl;
+        private @Nullable String id;
+        private @Nullable String lifecyleDetails;
+        private @Nullable List<GetRepositoryMirrorRepositoryConfig> mirrorRepositoryConfigs;
+        private @Nullable String name;
+        private @Nullable String namespace;
+        private @Nullable String projectId;
+        private @Nullable String projectName;
         private String repositoryId;
-        private String repositoryType;
-        private String sizeInBytes;
-        private String sshUrl;
-        private String state;
-        private Map<String,Object> systemTags;
-        private String timeCreated;
-        private String timeUpdated;
-        private List<String> triggerBuildEvents;
+        private @Nullable String repositoryType;
+        private @Nullable String sizeInBytes;
+        private @Nullable String sshUrl;
+        private @Nullable String state;
+        private @Nullable Map<String,Object> systemTags;
+        private @Nullable String timeCreated;
+        private @Nullable String timeUpdated;
+        private @Nullable List<String> triggerBuildEvents;
         public Builder() {}
         public Builder(GetRepositoryResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -367,33 +368,33 @@ public final class GetRepositoryResult {
         }
 
         @CustomType.Setter
-        public Builder branchCount(Integer branchCount) {
-            this.branchCount = Objects.requireNonNull(branchCount);
+        public Builder branchCount(@Nullable Integer branchCount) {
+            this.branchCount = branchCount;
             return this;
         }
         @CustomType.Setter
-        public Builder commitCount(Integer commitCount) {
-            this.commitCount = Objects.requireNonNull(commitCount);
+        public Builder commitCount(@Nullable Integer commitCount) {
+            this.commitCount = commitCount;
             return this;
         }
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder defaultBranch(String defaultBranch) {
-            this.defaultBranch = Objects.requireNonNull(defaultBranch);
+        public Builder defaultBranch(@Nullable String defaultBranch) {
+            this.defaultBranch = defaultBranch;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+        public Builder description(@Nullable String description) {
+            this.description = description;
             return this;
         }
         @CustomType.Setter
@@ -405,51 +406,51 @@ public final class GetRepositoryResult {
             return fields(List.of(fields));
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder httpUrl(String httpUrl) {
-            this.httpUrl = Objects.requireNonNull(httpUrl);
+        public Builder httpUrl(@Nullable String httpUrl) {
+            this.httpUrl = httpUrl;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder lifecyleDetails(String lifecyleDetails) {
-            this.lifecyleDetails = Objects.requireNonNull(lifecyleDetails);
+        public Builder lifecyleDetails(@Nullable String lifecyleDetails) {
+            this.lifecyleDetails = lifecyleDetails;
             return this;
         }
         @CustomType.Setter
-        public Builder mirrorRepositoryConfigs(List<GetRepositoryMirrorRepositoryConfig> mirrorRepositoryConfigs) {
-            this.mirrorRepositoryConfigs = Objects.requireNonNull(mirrorRepositoryConfigs);
+        public Builder mirrorRepositoryConfigs(@Nullable List<GetRepositoryMirrorRepositoryConfig> mirrorRepositoryConfigs) {
+            this.mirrorRepositoryConfigs = mirrorRepositoryConfigs;
             return this;
         }
         public Builder mirrorRepositoryConfigs(GetRepositoryMirrorRepositoryConfig... mirrorRepositoryConfigs) {
             return mirrorRepositoryConfigs(List.of(mirrorRepositoryConfigs));
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder namespace(String namespace) {
-            this.namespace = Objects.requireNonNull(namespace);
+        public Builder namespace(@Nullable String namespace) {
+            this.namespace = namespace;
             return this;
         }
         @CustomType.Setter
-        public Builder projectId(String projectId) {
-            this.projectId = Objects.requireNonNull(projectId);
+        public Builder projectId(@Nullable String projectId) {
+            this.projectId = projectId;
             return this;
         }
         @CustomType.Setter
-        public Builder projectName(String projectName) {
-            this.projectName = Objects.requireNonNull(projectName);
+        public Builder projectName(@Nullable String projectName) {
+            this.projectName = projectName;
             return this;
         }
         @CustomType.Setter
@@ -458,43 +459,43 @@ public final class GetRepositoryResult {
             return this;
         }
         @CustomType.Setter
-        public Builder repositoryType(String repositoryType) {
-            this.repositoryType = Objects.requireNonNull(repositoryType);
+        public Builder repositoryType(@Nullable String repositoryType) {
+            this.repositoryType = repositoryType;
             return this;
         }
         @CustomType.Setter
-        public Builder sizeInBytes(String sizeInBytes) {
-            this.sizeInBytes = Objects.requireNonNull(sizeInBytes);
+        public Builder sizeInBytes(@Nullable String sizeInBytes) {
+            this.sizeInBytes = sizeInBytes;
             return this;
         }
         @CustomType.Setter
-        public Builder sshUrl(String sshUrl) {
-            this.sshUrl = Objects.requireNonNull(sshUrl);
+        public Builder sshUrl(@Nullable String sshUrl) {
+            this.sshUrl = sshUrl;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+        public Builder systemTags(@Nullable Map<String,Object> systemTags) {
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+        public Builder timeUpdated(@Nullable String timeUpdated) {
+            this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter
-        public Builder triggerBuildEvents(List<String> triggerBuildEvents) {
-            this.triggerBuildEvents = Objects.requireNonNull(triggerBuildEvents);
+        public Builder triggerBuildEvents(@Nullable List<String> triggerBuildEvents) {
+            this.triggerBuildEvents = triggerBuildEvents;
             return this;
         }
         public Builder triggerBuildEvents(String... triggerBuildEvents) {

@@ -109,7 +109,7 @@ namespace Pulumi.Oci.Bastion
         /// <summary>
         /// The type of bastion.
         /// </summary>
-        public readonly string BastionType;
+        public readonly string? BastionType;
         /// <summary>
         /// A list of address ranges in CIDR notation that you want to allow to connect to sessions hosted by this bastion.
         /// </summary>
@@ -117,51 +117,51 @@ namespace Pulumi.Oci.Bastion
         /// <summary>
         /// The unique identifier (OCID) of the compartment where the bastion is located.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// Flag to enable FQDN and SOCKS5 Proxy Support. Example: `ENABLED`, `DISABLED`
         /// </summary>
-        public readonly string DnsProxyStatus;
+        public readonly string? DnsProxyStatus;
         /// <summary>
         /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// The unique identifier (OCID) of the bastion, which can't be changed after creation.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// A message describing the current state in more detail.
         /// </summary>
-        public readonly string LifecycleDetails;
+        public readonly string? LifecycleDetails;
         /// <summary>
         /// The maximum amount of time that any session on the bastion can remain active.
         /// </summary>
-        public readonly int MaxSessionTtlInSeconds;
+        public readonly int? MaxSessionTtlInSeconds;
         /// <summary>
         /// The maximum number of active sessions allowed on the bastion.
         /// </summary>
-        public readonly int MaxSessionsAllowed;
+        public readonly int? MaxSessionsAllowed;
         /// <summary>
         /// The name of the bastion, which can't be changed after creation.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// The phonebook entry of the customer's team, which can't be changed after creation. Not applicable to `standard` bastions.
         /// </summary>
-        public readonly string PhoneBookEntry;
+        public readonly string? PhoneBookEntry;
         /// <summary>
         /// The private IP address of the created private endpoint.
         /// </summary>
-        public readonly string PrivateEndpointIpAddress;
+        public readonly string? PrivateEndpointIpAddress;
         /// <summary>
         /// The current state of the bastion.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// A list of IP addresses of the hosts that the bastion has access to. Not applicable to `standard` bastions.
         /// </summary>
@@ -169,67 +169,67 @@ namespace Pulumi.Oci.Bastion
         /// <summary>
         /// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> SystemTags;
+        public readonly ImmutableDictionary<string, object>? SystemTags;
         /// <summary>
         /// The unique identifier (OCID) of the subnet that the bastion connects to.
         /// </summary>
-        public readonly string TargetSubnetId;
+        public readonly string? TargetSubnetId;
         /// <summary>
         /// The unique identifier (OCID) of the virtual cloud network (VCN) that the bastion connects to.
         /// </summary>
-        public readonly string TargetVcnId;
+        public readonly string? TargetVcnId;
         /// <summary>
         /// The time the bastion was created. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The time the bastion was updated. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
         /// </summary>
-        public readonly string TimeUpdated;
+        public readonly string? TimeUpdated;
 
         [OutputConstructor]
         private GetBastionResult(
             string bastionId,
 
-            string bastionType,
+            string? bastionType,
 
             ImmutableArray<string> clientCidrBlockAllowLists,
 
-            string compartmentId,
+            string? compartmentId,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string dnsProxyStatus,
+            string? dnsProxyStatus,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string id,
+            string? id,
 
-            string lifecycleDetails,
+            string? lifecycleDetails,
 
-            int maxSessionTtlInSeconds,
+            int? maxSessionTtlInSeconds,
 
-            int maxSessionsAllowed,
+            int? maxSessionsAllowed,
 
-            string name,
+            string? name,
 
-            string phoneBookEntry,
+            string? phoneBookEntry,
 
-            string privateEndpointIpAddress,
+            string? privateEndpointIpAddress,
 
-            string state,
+            string? state,
 
             ImmutableArray<string> staticJumpHostIpAddresses,
 
-            ImmutableDictionary<string, object> systemTags,
+            ImmutableDictionary<string, object>? systemTags,
 
-            string targetSubnetId,
+            string? targetSubnetId,
 
-            string targetVcnId,
+            string? targetVcnId,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeUpdated)
+            string? timeUpdated)
         {
             BastionId = bastionId;
             BastionType = bastionType;

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Peers in Oracle Cloud Infrastructure Blockchain service.
@@ -67,7 +66,7 @@ type GetPeersResult struct {
 	DisplayName          *string          `pulumi:"displayName"`
 	Filters              []GetPeersFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The list of peer_collection.
 	PeerCollections []GetPeersPeerCollection `pulumi:"peerCollections"`
 }
@@ -113,12 +112,6 @@ func (o GetPeersResultOutput) ToGetPeersResultOutputWithContext(ctx context.Cont
 	return o
 }
 
-func (o GetPeersResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetPeersResult] {
-	return pulumix.Output[GetPeersResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetPeersResultOutput) BlockchainPlatformId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetPeersResult) string { return v.BlockchainPlatformId }).(pulumi.StringOutput)
 }
@@ -132,8 +125,8 @@ func (o GetPeersResultOutput) Filters() GetPeersFilterArrayOutput {
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetPeersResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPeersResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetPeersResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetPeersResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The list of peer_collection.

@@ -7,14 +7,15 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.Waa.outputs.GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAppAccelerationPoliciesWebAppAccelerationPolicyCollection {
-    private List<GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItem> items;
+    private @Nullable List<GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItem> items;
 
     private GetAppAccelerationPoliciesWebAppAccelerationPolicyCollection() {}
     public List<GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -26,7 +27,7 @@ public final class GetAppAccelerationPoliciesWebAppAccelerationPolicyCollection 
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItem> items;
+        private @Nullable List<GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItem> items;
         public Builder() {}
         public Builder(GetAppAccelerationPoliciesWebAppAccelerationPolicyCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -34,8 +35,8 @@ public final class GetAppAccelerationPoliciesWebAppAccelerationPolicyCollection 
         }
 
         @CustomType.Setter
-        public Builder items(List<GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItem... items) {

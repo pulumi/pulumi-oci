@@ -158,48 +158,42 @@ class GetDataGuardAssociationResult:
 
     @property
     @pulumi.getter(name="applyLag")
-    def apply_lag(self) -> str:
-        """
-        The lag time between updates to the primary database and application of the redo data on the standby database, as computed by the reporting database.  Example: `9 seconds`
-        """
+    def apply_lag(self) -> Optional[str]:
         return pulumi.get(self, "apply_lag")
 
     @property
     @pulumi.getter(name="applyRate")
-    def apply_rate(self) -> str:
-        """
-        The rate at which redo logs are synced between the associated databases.  Example: `180 Mb per second`
-        """
+    def apply_rate(self) -> Optional[str]:
         return pulumi.get(self, "apply_rate")
 
     @property
     @pulumi.getter(name="availabilityDomain")
-    def availability_domain(self) -> str:
+    def availability_domain(self) -> Optional[str]:
         return pulumi.get(self, "availability_domain")
 
     @property
     @pulumi.getter(name="backupNetworkNsgIds")
-    def backup_network_nsg_ids(self) -> Sequence[str]:
+    def backup_network_nsg_ids(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "backup_network_nsg_ids")
 
     @property
     @pulumi.getter(name="cpuCoreCount")
-    def cpu_core_count(self) -> int:
+    def cpu_core_count(self) -> Optional[int]:
         return pulumi.get(self, "cpu_core_count")
 
     @property
     @pulumi.getter(name="createAsync")
-    def create_async(self) -> bool:
+    def create_async(self) -> Optional[bool]:
         return pulumi.get(self, "create_async")
 
     @property
     @pulumi.getter(name="creationType")
-    def creation_type(self) -> str:
+    def creation_type(self) -> Optional[str]:
         return pulumi.get(self, "creation_type")
 
     @property
     @pulumi.getter(name="dataCollectionOptions")
-    def data_collection_options(self) -> Sequence['outputs.GetDataGuardAssociationDataCollectionOptionResult']:
+    def data_collection_options(self) -> Optional[Sequence['outputs.GetDataGuardAssociationDataCollectionOptionResult']]:
         return pulumi.get(self, "data_collection_options")
 
     @property
@@ -209,219 +203,177 @@ class GetDataGuardAssociationResult:
 
     @property
     @pulumi.getter(name="databaseAdminPassword")
-    def database_admin_password(self) -> str:
+    def database_admin_password(self) -> Optional[str]:
         return pulumi.get(self, "database_admin_password")
 
     @property
     @pulumi.getter(name="databaseDefinedTags")
-    def database_defined_tags(self) -> Mapping[str, Any]:
+    def database_defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "database_defined_tags")
 
     @property
     @pulumi.getter(name="databaseFreeformTags")
-    def database_freeform_tags(self) -> Mapping[str, Any]:
+    def database_freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "database_freeform_tags")
 
     @property
     @pulumi.getter(name="databaseId")
     def database_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the reporting database.
-        """
         return pulumi.get(self, "database_id")
 
     @property
     @pulumi.getter(name="databaseSoftwareImageId")
-    def database_software_image_id(self) -> str:
+    def database_software_image_id(self) -> Optional[str]:
         return pulumi.get(self, "database_software_image_id")
 
     @property
     @pulumi.getter(name="dbSystemDefinedTags")
-    def db_system_defined_tags(self) -> Mapping[str, Any]:
+    def db_system_defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "db_system_defined_tags")
 
     @property
     @pulumi.getter(name="dbSystemFreeformTags")
-    def db_system_freeform_tags(self) -> Mapping[str, Any]:
+    def db_system_freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "db_system_freeform_tags")
 
     @property
     @pulumi.getter(name="deleteStandbyDbHomeOnDelete")
-    def delete_standby_db_home_on_delete(self) -> str:
+    def delete_standby_db_home_on_delete(self) -> Optional[str]:
         return pulumi.get(self, "delete_standby_db_home_on_delete")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="faultDomains")
-    def fault_domains(self) -> Sequence[str]:
+    def fault_domains(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "fault_domains")
 
     @property
     @pulumi.getter
-    def hostname(self) -> str:
+    def hostname(self) -> Optional[str]:
         return pulumi.get(self, "hostname")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Data Guard association.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="isActiveDataGuardEnabled")
-    def is_active_data_guard_enabled(self) -> bool:
-        """
-        True if active Data Guard is enabled.
-        """
+    def is_active_data_guard_enabled(self) -> Optional[bool]:
         return pulumi.get(self, "is_active_data_guard_enabled")
 
     @property
     @pulumi.getter(name="licenseModel")
-    def license_model(self) -> str:
+    def license_model(self) -> Optional[str]:
         return pulumi.get(self, "license_model")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        Additional information about the current lifecycleState, if available.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="nodeCount")
-    def node_count(self) -> int:
+    def node_count(self) -> Optional[int]:
         return pulumi.get(self, "node_count")
 
     @property
     @pulumi.getter(name="nsgIds")
-    def nsg_ids(self) -> Sequence[str]:
+    def nsg_ids(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "nsg_ids")
 
     @property
     @pulumi.getter(name="peerDataGuardAssociationId")
-    def peer_data_guard_association_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer database's Data Guard association.
-        """
+    def peer_data_guard_association_id(self) -> Optional[str]:
         return pulumi.get(self, "peer_data_guard_association_id")
 
     @property
     @pulumi.getter(name="peerDatabaseId")
-    def peer_database_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated peer database.
-        """
+    def peer_database_id(self) -> Optional[str]:
         return pulumi.get(self, "peer_database_id")
 
     @property
     @pulumi.getter(name="peerDbHomeId")
-    def peer_db_home_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home containing the associated peer database.
-        """
+    def peer_db_home_id(self) -> Optional[str]:
         return pulumi.get(self, "peer_db_home_id")
 
     @property
     @pulumi.getter(name="peerDbSystemId")
-    def peer_db_system_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system containing the associated peer database.
-        """
+    def peer_db_system_id(self) -> Optional[str]:
         return pulumi.get(self, "peer_db_system_id")
 
     @property
     @pulumi.getter(name="peerDbUniqueName")
-    def peer_db_unique_name(self) -> str:
+    def peer_db_unique_name(self) -> Optional[str]:
         return pulumi.get(self, "peer_db_unique_name")
 
     @property
     @pulumi.getter(name="peerRole")
-    def peer_role(self) -> str:
-        """
-        The role of the peer database in this Data Guard association.
-        """
+    def peer_role(self) -> Optional[str]:
         return pulumi.get(self, "peer_role")
 
     @property
     @pulumi.getter(name="peerSidPrefix")
-    def peer_sid_prefix(self) -> str:
+    def peer_sid_prefix(self) -> Optional[str]:
         return pulumi.get(self, "peer_sid_prefix")
 
     @property
     @pulumi.getter(name="peerVmClusterId")
-    def peer_vm_cluster_id(self) -> str:
+    def peer_vm_cluster_id(self) -> Optional[str]:
         return pulumi.get(self, "peer_vm_cluster_id")
 
     @property
     @pulumi.getter(name="privateIp")
-    def private_ip(self) -> str:
+    def private_ip(self) -> Optional[str]:
         return pulumi.get(self, "private_ip")
 
     @property
     @pulumi.getter(name="protectionMode")
-    def protection_mode(self) -> str:
-        """
-        The protection mode of this Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
-        """
+    def protection_mode(self) -> Optional[str]:
         return pulumi.get(self, "protection_mode")
 
     @property
     @pulumi.getter
-    def role(self) -> str:
-        """
-        The role of the reporting database in this Data Guard association.
-        """
+    def role(self) -> Optional[str]:
         return pulumi.get(self, "role")
 
     @property
     @pulumi.getter
-    def shape(self) -> str:
+    def shape(self) -> Optional[str]:
         return pulumi.get(self, "shape")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the Data Guard association.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="storageVolumePerformanceMode")
-    def storage_volume_performance_mode(self) -> str:
+    def storage_volume_performance_mode(self) -> Optional[str]:
         return pulumi.get(self, "storage_volume_performance_mode")
 
     @property
     @pulumi.getter(name="subnetId")
-    def subnet_id(self) -> str:
+    def subnet_id(self) -> Optional[str]:
         return pulumi.get(self, "subnet_id")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the Data Guard association was created.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeZone")
-    def time_zone(self) -> str:
+    def time_zone(self) -> Optional[str]:
         return pulumi.get(self, "time_zone")
 
     @property
     @pulumi.getter(name="transportType")
-    def transport_type(self) -> str:
-        """
-        The redo transport type used by this Data Guard association.  For more information, see [Redo Transport Services](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-redo-transport-services.htm#SBYDB00400) in the Oracle Data Guard documentation.
-        """
+    def transport_type(self) -> Optional[str]:
         return pulumi.get(self, "transport_type")
 
 
@@ -481,23 +433,7 @@ def get_data_guard_association(data_guard_association_id: Optional[str] = None,
                                database_id: Optional[str] = None,
                                opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDataGuardAssociationResult:
     """
-    This data source provides details about a specific Data Guard Association resource in Oracle Cloud Infrastructure Database service.
-
-    Gets the specified Data Guard association's configuration information.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_data_guard_association = oci.Database.get_data_guard_association(data_guard_association_id=oci_database_data_guard_association["test_data_guard_association"]["id"],
-        database_id=oci_database_database["test_database"]["id"])
-    ```
-
-
-    :param str data_guard_association_id: The Data Guard association's [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param str database_id: The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['dataGuardAssociationId'] = data_guard_association_id
@@ -557,22 +493,6 @@ def get_data_guard_association_output(data_guard_association_id: Optional[pulumi
                                       database_id: Optional[pulumi.Input[str]] = None,
                                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDataGuardAssociationResult]:
     """
-    This data source provides details about a specific Data Guard Association resource in Oracle Cloud Infrastructure Database service.
-
-    Gets the specified Data Guard association's configuration information.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_data_guard_association = oci.Database.get_data_guard_association(data_guard_association_id=oci_database_data_guard_association["test_data_guard_association"]["id"],
-        database_id=oci_database_database["test_database"]["id"])
-    ```
-
-
-    :param str data_guard_association_id: The Data Guard association's [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param str database_id: The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+    Use this data source to access information about an existing resource.
     """
     ...

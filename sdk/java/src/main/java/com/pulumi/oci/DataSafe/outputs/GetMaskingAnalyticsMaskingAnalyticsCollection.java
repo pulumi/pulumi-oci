@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.DataSafe.outputs.GetMaskingAnalyticsMaskingAnalyticsCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetMaskingAnalyticsMaskingAnalyticsCollection {
@@ -14,7 +15,7 @@ public final class GetMaskingAnalyticsMaskingAnalyticsCollection {
      * @return An array of masking analytics summary objects.
      * 
      */
-    private List<GetMaskingAnalyticsMaskingAnalyticsCollectionItem> items;
+    private @Nullable List<GetMaskingAnalyticsMaskingAnalyticsCollectionItem> items;
 
     private GetMaskingAnalyticsMaskingAnalyticsCollection() {}
     /**
@@ -22,7 +23,7 @@ public final class GetMaskingAnalyticsMaskingAnalyticsCollection {
      * 
      */
     public List<GetMaskingAnalyticsMaskingAnalyticsCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -34,7 +35,7 @@ public final class GetMaskingAnalyticsMaskingAnalyticsCollection {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetMaskingAnalyticsMaskingAnalyticsCollectionItem> items;
+        private @Nullable List<GetMaskingAnalyticsMaskingAnalyticsCollectionItem> items;
         public Builder() {}
         public Builder(GetMaskingAnalyticsMaskingAnalyticsCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -42,8 +43,8 @@ public final class GetMaskingAnalyticsMaskingAnalyticsCollection {
         }
 
         @CustomType.Setter
-        public Builder items(List<GetMaskingAnalyticsMaskingAnalyticsCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetMaskingAnalyticsMaskingAnalyticsCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetMaskingAnalyticsMaskingAnalyticsCollectionItem... items) {

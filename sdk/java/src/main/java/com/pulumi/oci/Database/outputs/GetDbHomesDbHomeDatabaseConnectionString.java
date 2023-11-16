@@ -8,22 +8,24 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDbHomesDbHomeDatabaseConnectionString {
-    private Map<String,Object> allConnectionStrings;
-    private String cdbDefault;
-    private String cdbIpDefault;
+    private @Nullable Map<String,Object> allConnectionStrings;
+    private @Nullable String cdbDefault;
+    private @Nullable String cdbIpDefault;
 
     private GetDbHomesDbHomeDatabaseConnectionString() {}
     public Map<String,Object> allConnectionStrings() {
-        return this.allConnectionStrings;
+        return this.allConnectionStrings == null ? Map.of() : this.allConnectionStrings;
     }
-    public String cdbDefault() {
-        return this.cdbDefault;
+    public Optional<String> cdbDefault() {
+        return Optional.ofNullable(this.cdbDefault);
     }
-    public String cdbIpDefault() {
-        return this.cdbIpDefault;
+    public Optional<String> cdbIpDefault() {
+        return Optional.ofNullable(this.cdbIpDefault);
     }
 
     public static Builder builder() {
@@ -35,9 +37,9 @@ public final class GetDbHomesDbHomeDatabaseConnectionString {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Map<String,Object> allConnectionStrings;
-        private String cdbDefault;
-        private String cdbIpDefault;
+        private @Nullable Map<String,Object> allConnectionStrings;
+        private @Nullable String cdbDefault;
+        private @Nullable String cdbIpDefault;
         public Builder() {}
         public Builder(GetDbHomesDbHomeDatabaseConnectionString defaults) {
     	      Objects.requireNonNull(defaults);
@@ -47,18 +49,18 @@ public final class GetDbHomesDbHomeDatabaseConnectionString {
         }
 
         @CustomType.Setter
-        public Builder allConnectionStrings(Map<String,Object> allConnectionStrings) {
-            this.allConnectionStrings = Objects.requireNonNull(allConnectionStrings);
+        public Builder allConnectionStrings(@Nullable Map<String,Object> allConnectionStrings) {
+            this.allConnectionStrings = allConnectionStrings;
             return this;
         }
         @CustomType.Setter
-        public Builder cdbDefault(String cdbDefault) {
-            this.cdbDefault = Objects.requireNonNull(cdbDefault);
+        public Builder cdbDefault(@Nullable String cdbDefault) {
+            this.cdbDefault = cdbDefault;
             return this;
         }
         @CustomType.Setter
-        public Builder cdbIpDefault(String cdbIpDefault) {
-            this.cdbIpDefault = Objects.requireNonNull(cdbIpDefault);
+        public Builder cdbIpDefault(@Nullable String cdbIpDefault) {
+            this.cdbIpDefault = cdbIpDefault;
             return this;
         }
         public GetDbHomesDbHomeDatabaseConnectionString build() {

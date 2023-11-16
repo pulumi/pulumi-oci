@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Rule Set resource in Oracle Cloud Infrastructure Load Balancer service.
@@ -93,8 +92,8 @@ type RuleSet struct {
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	Name  pulumi.StringOutput `pulumi:"name"`
-	State pulumi.StringOutput `pulumi:"state"`
+	Name  pulumi.StringOutput    `pulumi:"name"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 }
 
 // NewRuleSet registers a new resource with the given unique name, arguments, and options.
@@ -210,12 +209,6 @@ func (i *RuleSet) ToRuleSetOutputWithContext(ctx context.Context) RuleSetOutput 
 	return pulumi.ToOutputWithContext(ctx, i).(RuleSetOutput)
 }
 
-func (i *RuleSet) ToOutput(ctx context.Context) pulumix.Output[*RuleSet] {
-	return pulumix.Output[*RuleSet]{
-		OutputState: i.ToRuleSetOutputWithContext(ctx).OutputState,
-	}
-}
-
 // RuleSetArrayInput is an input type that accepts RuleSetArray and RuleSetArrayOutput values.
 // You can construct a concrete instance of `RuleSetArrayInput` via:
 //
@@ -239,12 +232,6 @@ func (i RuleSetArray) ToRuleSetArrayOutput() RuleSetArrayOutput {
 
 func (i RuleSetArray) ToRuleSetArrayOutputWithContext(ctx context.Context) RuleSetArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(RuleSetArrayOutput)
-}
-
-func (i RuleSetArray) ToOutput(ctx context.Context) pulumix.Output[[]*RuleSet] {
-	return pulumix.Output[[]*RuleSet]{
-		OutputState: i.ToRuleSetArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // RuleSetMapInput is an input type that accepts RuleSetMap and RuleSetMapOutput values.
@@ -272,12 +259,6 @@ func (i RuleSetMap) ToRuleSetMapOutputWithContext(ctx context.Context) RuleSetMa
 	return pulumi.ToOutputWithContext(ctx, i).(RuleSetMapOutput)
 }
 
-func (i RuleSetMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*RuleSet] {
-	return pulumix.Output[map[string]*RuleSet]{
-		OutputState: i.ToRuleSetMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type RuleSetOutput struct{ *pulumi.OutputState }
 
 func (RuleSetOutput) ElementType() reflect.Type {
@@ -290,12 +271,6 @@ func (o RuleSetOutput) ToRuleSetOutput() RuleSetOutput {
 
 func (o RuleSetOutput) ToRuleSetOutputWithContext(ctx context.Context) RuleSetOutput {
 	return o
-}
-
-func (o RuleSetOutput) ToOutput(ctx context.Context) pulumix.Output[*RuleSet] {
-	return pulumix.Output[*RuleSet]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) An array of rules that compose the rule set. For more information, see [Managing Rule Sets](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/managingrulesets.htm)
@@ -316,8 +291,8 @@ func (o RuleSetOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v *RuleSet) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
 }
 
-func (o RuleSetOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *RuleSet) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o RuleSetOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *RuleSet) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 type RuleSetArrayOutput struct{ *pulumi.OutputState }
@@ -332,12 +307,6 @@ func (o RuleSetArrayOutput) ToRuleSetArrayOutput() RuleSetArrayOutput {
 
 func (o RuleSetArrayOutput) ToRuleSetArrayOutputWithContext(ctx context.Context) RuleSetArrayOutput {
 	return o
-}
-
-func (o RuleSetArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*RuleSet] {
-	return pulumix.Output[[]*RuleSet]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o RuleSetArrayOutput) Index(i pulumi.IntInput) RuleSetOutput {
@@ -358,12 +327,6 @@ func (o RuleSetMapOutput) ToRuleSetMapOutput() RuleSetMapOutput {
 
 func (o RuleSetMapOutput) ToRuleSetMapOutputWithContext(ctx context.Context) RuleSetMapOutput {
 	return o
-}
-
-func (o RuleSetMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*RuleSet] {
-	return pulumix.Output[map[string]*RuleSet]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o RuleSetMapOutput) MapIndex(k pulumi.StringInput) RuleSetOutput {

@@ -16,107 +16,107 @@ namespace Pulumi.Oci.Opsi.Outputs
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// Number of OCPUs allocated to OPSI Warehouse ADW.
         /// </summary>
-        public readonly double CpuAllocated;
+        public readonly double? CpuAllocated;
         /// <summary>
         /// Number of OCPUs used by OPSI Warehouse ADW. Can be fractional.
         /// </summary>
-        public readonly double CpuUsed;
+        public readonly double? CpuUsed;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// A filter to return only resources that match the entire display name.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// OCID of the dynamic group created for the warehouse
         /// </summary>
-        public readonly string DynamicGroupId;
+        public readonly string? DynamicGroupId;
         /// <summary>
         /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// Unique Operations Insights Warehouse identifier
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         /// </summary>
-        public readonly string LifecycleDetails;
+        public readonly string? LifecycleDetails;
         /// <summary>
         /// Tenancy Identifier of Operations Insights service
         /// </summary>
-        public readonly string OperationsInsightsTenancyId;
+        public readonly string? OperationsInsightsTenancyId;
         /// <summary>
         /// Lifecycle states
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// Storage allocated to OPSI Warehouse ADW.
         /// </summary>
-        public readonly double StorageAllocatedInGbs;
+        public readonly double? StorageAllocatedInGbs;
         /// <summary>
         /// Storage by OPSI Warehouse ADW in GB.
         /// </summary>
-        public readonly double StorageUsedInGbs;
+        public readonly double? StorageUsedInGbs;
         /// <summary>
         /// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> SystemTags;
+        public readonly ImmutableDictionary<string, object>? SystemTags;
         /// <summary>
         /// The time at which the resource was first created. An RFC3339 formatted datetime string
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The time at which the ADW wallet was last rotated for the Operations Insights Warehouse. An RFC3339 formatted datetime string
         /// </summary>
-        public readonly string TimeLastWalletRotated;
+        public readonly string? TimeLastWalletRotated;
         /// <summary>
         /// The time at which the resource was last updated. An RFC3339 formatted datetime string
         /// </summary>
-        public readonly string TimeUpdated;
+        public readonly string? TimeUpdated;
 
         [OutputConstructor]
         private GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItemResult(
-            string compartmentId,
+            string? compartmentId,
 
-            double cpuAllocated,
+            double? cpuAllocated,
 
-            double cpuUsed,
+            double? cpuUsed,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string displayName,
+            string? displayName,
 
-            string dynamicGroupId,
+            string? dynamicGroupId,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string id,
+            string? id,
 
-            string lifecycleDetails,
+            string? lifecycleDetails,
 
-            string operationsInsightsTenancyId,
+            string? operationsInsightsTenancyId,
 
-            string state,
+            string? state,
 
-            double storageAllocatedInGbs,
+            double? storageAllocatedInGbs,
 
-            double storageUsedInGbs,
+            double? storageUsedInGbs,
 
-            ImmutableDictionary<string, object> systemTags,
+            ImmutableDictionary<string, object>? systemTags,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeLastWalletRotated,
+            string? timeLastWalletRotated,
 
-            string timeUpdated)
+            string? timeUpdated)
         {
             CompartmentId = compartmentId;
             CpuAllocated = cpuAllocated;

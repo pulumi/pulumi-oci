@@ -16,23 +16,23 @@ namespace Pulumi.Oci.Dns.Outputs
         /// <summary>
         /// An expression that is used to select a set of answers that match a condition. For example, answers with matching pool properties.
         /// </summary>
-        public readonly string AnswerCondition;
+        public readonly string? AnswerCondition;
         /// <summary>
         /// Keeps the answer only if the value is `true`.
         /// </summary>
-        public readonly bool ShouldKeep;
+        public readonly bool? ShouldKeep;
         /// <summary>
         /// The rank assigned to the set of answers that match the expression in `answerCondition`. Answers with the lowest values move to the beginning of the list without changing the relative order of those with the same value. Answers can be given a value between `0` and `255`.
         /// </summary>
-        public readonly int Value;
+        public readonly int? Value;
 
         [OutputConstructor]
         private GetSteeringPoliciesSteeringPolicyRuleDefaultAnswerDataResult(
-            string answerCondition,
+            string? answerCondition,
 
-            bool shouldKeep,
+            bool? shouldKeep,
 
-            int value)
+            int? value)
         {
             AnswerCondition = answerCondition;
             ShouldKeep = shouldKeep;

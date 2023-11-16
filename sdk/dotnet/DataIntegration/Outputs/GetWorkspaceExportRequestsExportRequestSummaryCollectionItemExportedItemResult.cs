@@ -16,53 +16,53 @@ namespace Pulumi.Oci.DataIntegration.Outputs
         /// <summary>
         /// Aggregator key
         /// </summary>
-        public readonly string AggregatorKey;
+        public readonly string? AggregatorKey;
         /// <summary>
         /// Object identifier
         /// </summary>
-        public readonly string Identifier;
+        public readonly string? Identifier;
         /// <summary>
         /// Export object request key
         /// </summary>
-        public readonly string Key;
+        public readonly string? Key;
         /// <summary>
         /// Used to filter by the name of the object.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// Object name path
         /// </summary>
-        public readonly string NamePath;
+        public readonly string? NamePath;
         /// <summary>
         /// Object type
         /// </summary>
-        public readonly string ObjectType;
+        public readonly string? ObjectType;
         /// <summary>
         /// Object version
         /// </summary>
-        public readonly string ObjectVersion;
+        public readonly string? ObjectVersion;
         /// <summary>
         /// time at which this object was last updated.
         /// </summary>
-        public readonly string TimeUpdatedInMillis;
+        public readonly string? TimeUpdatedInMillis;
 
         [OutputConstructor]
         private GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItemResult(
-            string aggregatorKey,
+            string? aggregatorKey,
 
-            string identifier,
+            string? identifier,
 
-            string key,
+            string? key,
 
-            string name,
+            string? name,
 
-            string namePath,
+            string? namePath,
 
-            string objectType,
+            string? objectType,
 
-            string objectVersion,
+            string? objectVersion,
 
-            string timeUpdatedInMillis)
+            string? timeUpdatedInMillis)
         {
             AggregatorKey = aggregatorKey;
             Identifier = identifier;

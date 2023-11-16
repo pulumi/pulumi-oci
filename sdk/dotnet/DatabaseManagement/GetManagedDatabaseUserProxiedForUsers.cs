@@ -153,7 +153,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         public readonly string ManagedDatabaseId;
         /// <summary>
         /// The name of a proxy user or the name of the client user.
@@ -169,7 +169,7 @@ namespace Pulumi.Oci.DatabaseManagement
         private GetManagedDatabaseUserProxiedForUsersResult(
             ImmutableArray<Outputs.GetManagedDatabaseUserProxiedForUsersFilterResult> filters,
 
-            string id,
+            string? id,
 
             string managedDatabaseId,
 

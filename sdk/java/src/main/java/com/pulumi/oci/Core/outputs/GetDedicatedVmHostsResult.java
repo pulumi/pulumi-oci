@@ -29,7 +29,7 @@ public final class GetDedicatedVmHostsResult {
      * @return The list of dedicated_vm_hosts.
      * 
      */
-    private List<GetDedicatedVmHostsDedicatedVmHost> dedicatedVmHosts;
+    private @Nullable List<GetDedicatedVmHostsDedicatedVmHost> dedicatedVmHosts;
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
@@ -40,7 +40,7 @@ public final class GetDedicatedVmHostsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private @Nullable String instanceShapeName;
     private @Nullable Double remainingMemoryInGbsGreaterThanOrEqualTo;
     private @Nullable Double remainingOcpusGreaterThanOrEqualTo;
@@ -70,7 +70,7 @@ public final class GetDedicatedVmHostsResult {
      * 
      */
     public List<GetDedicatedVmHostsDedicatedVmHost> dedicatedVmHosts() {
-        return this.dedicatedVmHosts;
+        return this.dedicatedVmHosts == null ? List.of() : this.dedicatedVmHosts;
     }
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
@@ -86,8 +86,8 @@ public final class GetDedicatedVmHostsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public Optional<String> instanceShapeName() {
         return Optional.ofNullable(this.instanceShapeName);
@@ -117,10 +117,10 @@ public final class GetDedicatedVmHostsResult {
     public static final class Builder {
         private @Nullable String availabilityDomain;
         private String compartmentId;
-        private List<GetDedicatedVmHostsDedicatedVmHost> dedicatedVmHosts;
+        private @Nullable List<GetDedicatedVmHostsDedicatedVmHost> dedicatedVmHosts;
         private @Nullable String displayName;
         private @Nullable List<GetDedicatedVmHostsFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String instanceShapeName;
         private @Nullable Double remainingMemoryInGbsGreaterThanOrEqualTo;
         private @Nullable Double remainingOcpusGreaterThanOrEqualTo;
@@ -151,8 +151,8 @@ public final class GetDedicatedVmHostsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder dedicatedVmHosts(List<GetDedicatedVmHostsDedicatedVmHost> dedicatedVmHosts) {
-            this.dedicatedVmHosts = Objects.requireNonNull(dedicatedVmHosts);
+        public Builder dedicatedVmHosts(@Nullable List<GetDedicatedVmHostsDedicatedVmHost> dedicatedVmHosts) {
+            this.dedicatedVmHosts = dedicatedVmHosts;
             return this;
         }
         public Builder dedicatedVmHosts(GetDedicatedVmHostsDedicatedVmHost... dedicatedVmHosts) {
@@ -172,8 +172,8 @@ public final class GetDedicatedVmHostsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Double;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetVantagePointItemGeo {
@@ -14,75 +16,75 @@ public final class GetVantagePointItemGeo {
      * @return The ISO 3166-2 code for this location&#39;s first-level administrative division, either a US state or Canadian province. Only included for locations in the US or Canada. For a list of codes, see Country Codes.
      * 
      */
-    private String adminDivCode;
+    private @Nullable String adminDivCode;
     /**
      * @return Common English-language name for the city.
      * 
      */
-    private String cityName;
+    private @Nullable String cityName;
     /**
      * @return The ISO 3166-1 alpha-2 country code. For a list of codes, see Country Codes.
      * 
      */
-    private String countryCode;
+    private @Nullable String countryCode;
     /**
      * @return The common English-language name for the country.
      * 
      */
-    private String countryName;
+    private @Nullable String countryName;
     /**
      * @return Degrees north of the Equator.
      * 
      */
-    private Double latitude;
+    private @Nullable Double latitude;
     /**
      * @return Degrees east of the prime meridian.
      * 
      */
-    private Double longitude;
+    private @Nullable Double longitude;
 
     private GetVantagePointItemGeo() {}
     /**
      * @return The ISO 3166-2 code for this location&#39;s first-level administrative division, either a US state or Canadian province. Only included for locations in the US or Canada. For a list of codes, see Country Codes.
      * 
      */
-    public String adminDivCode() {
-        return this.adminDivCode;
+    public Optional<String> adminDivCode() {
+        return Optional.ofNullable(this.adminDivCode);
     }
     /**
      * @return Common English-language name for the city.
      * 
      */
-    public String cityName() {
-        return this.cityName;
+    public Optional<String> cityName() {
+        return Optional.ofNullable(this.cityName);
     }
     /**
      * @return The ISO 3166-1 alpha-2 country code. For a list of codes, see Country Codes.
      * 
      */
-    public String countryCode() {
-        return this.countryCode;
+    public Optional<String> countryCode() {
+        return Optional.ofNullable(this.countryCode);
     }
     /**
      * @return The common English-language name for the country.
      * 
      */
-    public String countryName() {
-        return this.countryName;
+    public Optional<String> countryName() {
+        return Optional.ofNullable(this.countryName);
     }
     /**
      * @return Degrees north of the Equator.
      * 
      */
-    public Double latitude() {
-        return this.latitude;
+    public Optional<Double> latitude() {
+        return Optional.ofNullable(this.latitude);
     }
     /**
      * @return Degrees east of the prime meridian.
      * 
      */
-    public Double longitude() {
-        return this.longitude;
+    public Optional<Double> longitude() {
+        return Optional.ofNullable(this.longitude);
     }
 
     public static Builder builder() {
@@ -94,12 +96,12 @@ public final class GetVantagePointItemGeo {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String adminDivCode;
-        private String cityName;
-        private String countryCode;
-        private String countryName;
-        private Double latitude;
-        private Double longitude;
+        private @Nullable String adminDivCode;
+        private @Nullable String cityName;
+        private @Nullable String countryCode;
+        private @Nullable String countryName;
+        private @Nullable Double latitude;
+        private @Nullable Double longitude;
         public Builder() {}
         public Builder(GetVantagePointItemGeo defaults) {
     	      Objects.requireNonNull(defaults);
@@ -112,33 +114,33 @@ public final class GetVantagePointItemGeo {
         }
 
         @CustomType.Setter
-        public Builder adminDivCode(String adminDivCode) {
-            this.adminDivCode = Objects.requireNonNull(adminDivCode);
+        public Builder adminDivCode(@Nullable String adminDivCode) {
+            this.adminDivCode = adminDivCode;
             return this;
         }
         @CustomType.Setter
-        public Builder cityName(String cityName) {
-            this.cityName = Objects.requireNonNull(cityName);
+        public Builder cityName(@Nullable String cityName) {
+            this.cityName = cityName;
             return this;
         }
         @CustomType.Setter
-        public Builder countryCode(String countryCode) {
-            this.countryCode = Objects.requireNonNull(countryCode);
+        public Builder countryCode(@Nullable String countryCode) {
+            this.countryCode = countryCode;
             return this;
         }
         @CustomType.Setter
-        public Builder countryName(String countryName) {
-            this.countryName = Objects.requireNonNull(countryName);
+        public Builder countryName(@Nullable String countryName) {
+            this.countryName = countryName;
             return this;
         }
         @CustomType.Setter
-        public Builder latitude(Double latitude) {
-            this.latitude = Objects.requireNonNull(latitude);
+        public Builder latitude(@Nullable Double latitude) {
+            this.latitude = latitude;
             return this;
         }
         @CustomType.Setter
-        public Builder longitude(Double longitude) {
-            this.longitude = Objects.requireNonNull(longitude);
+        public Builder longitude(@Nullable Double longitude) {
+            this.longitude = longitude;
             return this;
         }
         public GetVantagePointItemGeo build() {

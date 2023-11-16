@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Managed Databases User System Privileges in Oracle Cloud Infrastructure Database Management service.
@@ -68,8 +67,8 @@ type GetManagedDatabasesUserSystemPrivilegesArgs struct {
 type GetManagedDatabasesUserSystemPrivilegesResult struct {
 	Filters []GetManagedDatabasesUserSystemPrivilegesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id                string `pulumi:"id"`
-	ManagedDatabaseId string `pulumi:"managedDatabaseId"`
+	Id                *string `pulumi:"id"`
+	ManagedDatabaseId string  `pulumi:"managedDatabaseId"`
 	// The name of a system privilege.
 	Name *string `pulumi:"name"`
 	// The list of system_privilege_collection.
@@ -120,12 +119,6 @@ func (o GetManagedDatabasesUserSystemPrivilegesResultOutput) ToGetManagedDatabas
 	return o
 }
 
-func (o GetManagedDatabasesUserSystemPrivilegesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagedDatabasesUserSystemPrivilegesResult] {
-	return pulumix.Output[GetManagedDatabasesUserSystemPrivilegesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetManagedDatabasesUserSystemPrivilegesResultOutput) Filters() GetManagedDatabasesUserSystemPrivilegesFilterArrayOutput {
 	return o.ApplyT(func(v GetManagedDatabasesUserSystemPrivilegesResult) []GetManagedDatabasesUserSystemPrivilegesFilter {
 		return v.Filters
@@ -133,8 +126,8 @@ func (o GetManagedDatabasesUserSystemPrivilegesResultOutput) Filters() GetManage
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetManagedDatabasesUserSystemPrivilegesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedDatabasesUserSystemPrivilegesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetManagedDatabasesUserSystemPrivilegesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedDatabasesUserSystemPrivilegesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetManagedDatabasesUserSystemPrivilegesResultOutput) ManagedDatabaseId() pulumi.StringOutput {

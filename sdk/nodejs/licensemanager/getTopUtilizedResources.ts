@@ -60,12 +60,12 @@ export interface GetTopUtilizedResourcesResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly isCompartmentIdInSubtree?: boolean;
     /**
      * The top utilized resource summary collection.
      */
-    readonly items: outputs.LicenseManager.GetTopUtilizedResourcesItem[];
+    readonly items?: outputs.LicenseManager.GetTopUtilizedResourcesItem[];
     readonly resourceUnitType?: string;
 }
 /**

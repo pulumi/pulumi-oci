@@ -20,10 +20,6 @@ class ListingPackageAgreementArgs:
                  compartment_id: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a ListingPackageAgreement resource.
-        :param pulumi.Input[str] agreement_id: The unique identifier for the agreement.
-        :param pulumi.Input[str] listing_id: The unique identifier for the listing.
-        :param pulumi.Input[str] package_version: The version of the package. Package versions are unique within a listing.
-        :param pulumi.Input[str] compartment_id: The unique identifier for the compartment, required in gov regions.
         """
         pulumi.set(__self__, "agreement_id", agreement_id)
         pulumi.set(__self__, "listing_id", listing_id)
@@ -34,9 +30,6 @@ class ListingPackageAgreementArgs:
     @property
     @pulumi.getter(name="agreementId")
     def agreement_id(self) -> pulumi.Input[str]:
-        """
-        The unique identifier for the agreement.
-        """
         return pulumi.get(self, "agreement_id")
 
     @agreement_id.setter
@@ -46,9 +39,6 @@ class ListingPackageAgreementArgs:
     @property
     @pulumi.getter(name="listingId")
     def listing_id(self) -> pulumi.Input[str]:
-        """
-        The unique identifier for the listing.
-        """
         return pulumi.get(self, "listing_id")
 
     @listing_id.setter
@@ -58,9 +48,6 @@ class ListingPackageAgreementArgs:
     @property
     @pulumi.getter(name="packageVersion")
     def package_version(self) -> pulumi.Input[str]:
-        """
-        The version of the package. Package versions are unique within a listing.
-        """
         return pulumi.get(self, "package_version")
 
     @package_version.setter
@@ -70,9 +57,6 @@ class ListingPackageAgreementArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The unique identifier for the compartment, required in gov regions.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -93,14 +77,6 @@ class _ListingPackageAgreementState:
                  signature: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering ListingPackageAgreement resources.
-        :param pulumi.Input[str] agreement_id: The unique identifier for the agreement.
-        :param pulumi.Input[str] author: Who authored the agreement.
-        :param pulumi.Input[str] compartment_id: The unique identifier for the compartment, required in gov regions.
-        :param pulumi.Input[str] content_url: The content URL of the agreement.
-        :param pulumi.Input[str] listing_id: The unique identifier for the listing.
-        :param pulumi.Input[str] package_version: The version of the package. Package versions are unique within a listing.
-        :param pulumi.Input[str] prompt: Textual prompt to read and accept the agreement.
-        :param pulumi.Input[str] signature: A time-based signature that can be used to accept an agreement or remove a previously accepted agreement from the list that Marketplace checks before a deployment.
         """
         if agreement_id is not None:
             pulumi.set(__self__, "agreement_id", agreement_id)
@@ -122,9 +98,6 @@ class _ListingPackageAgreementState:
     @property
     @pulumi.getter(name="agreementId")
     def agreement_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The unique identifier for the agreement.
-        """
         return pulumi.get(self, "agreement_id")
 
     @agreement_id.setter
@@ -134,9 +107,6 @@ class _ListingPackageAgreementState:
     @property
     @pulumi.getter
     def author(self) -> Optional[pulumi.Input[str]]:
-        """
-        Who authored the agreement.
-        """
         return pulumi.get(self, "author")
 
     @author.setter
@@ -146,9 +116,6 @@ class _ListingPackageAgreementState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The unique identifier for the compartment, required in gov regions.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -158,9 +125,6 @@ class _ListingPackageAgreementState:
     @property
     @pulumi.getter(name="contentUrl")
     def content_url(self) -> Optional[pulumi.Input[str]]:
-        """
-        The content URL of the agreement.
-        """
         return pulumi.get(self, "content_url")
 
     @content_url.setter
@@ -170,9 +134,6 @@ class _ListingPackageAgreementState:
     @property
     @pulumi.getter(name="listingId")
     def listing_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The unique identifier for the listing.
-        """
         return pulumi.get(self, "listing_id")
 
     @listing_id.setter
@@ -182,9 +143,6 @@ class _ListingPackageAgreementState:
     @property
     @pulumi.getter(name="packageVersion")
     def package_version(self) -> Optional[pulumi.Input[str]]:
-        """
-        The version of the package. Package versions are unique within a listing.
-        """
         return pulumi.get(self, "package_version")
 
     @package_version.setter
@@ -194,9 +152,6 @@ class _ListingPackageAgreementState:
     @property
     @pulumi.getter
     def prompt(self) -> Optional[pulumi.Input[str]]:
-        """
-        Textual prompt to read and accept the agreement.
-        """
         return pulumi.get(self, "prompt")
 
     @prompt.setter
@@ -206,9 +161,6 @@ class _ListingPackageAgreementState:
     @property
     @pulumi.getter
     def signature(self) -> Optional[pulumi.Input[str]]:
-        """
-        A time-based signature that can be used to accept an agreement or remove a previously accepted agreement from the list that Marketplace checks before a deployment.
-        """
         return pulumi.get(self, "signature")
 
     @signature.setter
@@ -227,34 +179,9 @@ class ListingPackageAgreement(pulumi.CustomResource):
                  package_version: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides details about a specific Listing Package Agreement resource in Oracle Cloud Infrastructure Marketplace service.
-
-        This resource can be used to retrieve the time-based signature of terms of use agreement for a package that can be used to
-        accept the agreement.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_listing_package_agreement = oci.marketplace.ListingPackageAgreement("testListingPackageAgreement",
-            agreement_id=oci_marketplace_agreement["test_agreement"]["id"],
-            listing_id=oci_marketplace_listing["test_listing"]["id"],
-            package_version=var["listing_package_agreement_package_version"],
-            compartment_id=var["compartment_id"])
-        ```
-
-        ## Import
-
-        Import is not supported for this resource.
-
+        Create a ListingPackageAgreement resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] agreement_id: The unique identifier for the agreement.
-        :param pulumi.Input[str] compartment_id: The unique identifier for the compartment, required in gov regions.
-        :param pulumi.Input[str] listing_id: The unique identifier for the listing.
-        :param pulumi.Input[str] package_version: The version of the package. Package versions are unique within a listing.
         """
         ...
     @overload
@@ -263,28 +190,7 @@ class ListingPackageAgreement(pulumi.CustomResource):
                  args: ListingPackageAgreementArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides details about a specific Listing Package Agreement resource in Oracle Cloud Infrastructure Marketplace service.
-
-        This resource can be used to retrieve the time-based signature of terms of use agreement for a package that can be used to
-        accept the agreement.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_listing_package_agreement = oci.marketplace.ListingPackageAgreement("testListingPackageAgreement",
-            agreement_id=oci_marketplace_agreement["test_agreement"]["id"],
-            listing_id=oci_marketplace_listing["test_listing"]["id"],
-            package_version=var["listing_package_agreement_package_version"],
-            compartment_id=var["compartment_id"])
-        ```
-
-        ## Import
-
-        Import is not supported for this resource.
-
+        Create a ListingPackageAgreement resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param ListingPackageAgreementArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -352,14 +258,6 @@ class ListingPackageAgreement(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] agreement_id: The unique identifier for the agreement.
-        :param pulumi.Input[str] author: Who authored the agreement.
-        :param pulumi.Input[str] compartment_id: The unique identifier for the compartment, required in gov regions.
-        :param pulumi.Input[str] content_url: The content URL of the agreement.
-        :param pulumi.Input[str] listing_id: The unique identifier for the listing.
-        :param pulumi.Input[str] package_version: The version of the package. Package versions are unique within a listing.
-        :param pulumi.Input[str] prompt: Textual prompt to read and accept the agreement.
-        :param pulumi.Input[str] signature: A time-based signature that can be used to accept an agreement or remove a previously accepted agreement from the list that Marketplace checks before a deployment.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -378,64 +276,40 @@ class ListingPackageAgreement(pulumi.CustomResource):
     @property
     @pulumi.getter(name="agreementId")
     def agreement_id(self) -> pulumi.Output[str]:
-        """
-        The unique identifier for the agreement.
-        """
         return pulumi.get(self, "agreement_id")
 
     @property
     @pulumi.getter
-    def author(self) -> pulumi.Output[str]:
-        """
-        Who authored the agreement.
-        """
+    def author(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "author")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> pulumi.Output[str]:
-        """
-        The unique identifier for the compartment, required in gov regions.
-        """
+    def compartment_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="contentUrl")
-    def content_url(self) -> pulumi.Output[str]:
-        """
-        The content URL of the agreement.
-        """
+    def content_url(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "content_url")
 
     @property
     @pulumi.getter(name="listingId")
     def listing_id(self) -> pulumi.Output[str]:
-        """
-        The unique identifier for the listing.
-        """
         return pulumi.get(self, "listing_id")
 
     @property
     @pulumi.getter(name="packageVersion")
     def package_version(self) -> pulumi.Output[str]:
-        """
-        The version of the package. Package versions are unique within a listing.
-        """
         return pulumi.get(self, "package_version")
 
     @property
     @pulumi.getter
-    def prompt(self) -> pulumi.Output[str]:
-        """
-        Textual prompt to read and accept the agreement.
-        """
+    def prompt(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "prompt")
 
     @property
     @pulumi.getter
-    def signature(self) -> pulumi.Output[str]:
-        """
-        A time-based signature that can be used to accept an agreement or remove a previously accepted agreement from the list that Marketplace checks before a deployment.
-        """
+    def signature(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "signature")
 

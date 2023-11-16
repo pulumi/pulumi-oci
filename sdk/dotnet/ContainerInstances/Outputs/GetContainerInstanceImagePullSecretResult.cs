@@ -13,32 +13,32 @@ namespace Pulumi.Oci.ContainerInstances.Outputs
     [OutputType]
     public sealed class GetContainerInstanceImagePullSecretResult
     {
-        public readonly string Password;
+        public readonly string? Password;
         /// <summary>
         /// The registry endpoint of the container image.
         /// </summary>
-        public readonly string RegistryEndpoint;
+        public readonly string? RegistryEndpoint;
         /// <summary>
         /// The OCID of the secret for registry credentials.
         /// </summary>
-        public readonly string SecretId;
+        public readonly string? SecretId;
         /// <summary>
         /// The type of ImagePullSecret.
         /// </summary>
-        public readonly string SecretType;
-        public readonly string Username;
+        public readonly string? SecretType;
+        public readonly string? Username;
 
         [OutputConstructor]
         private GetContainerInstanceImagePullSecretResult(
-            string password,
+            string? password,
 
-            string registryEndpoint,
+            string? registryEndpoint,
 
-            string secretId,
+            string? secretId,
 
-            string secretType,
+            string? secretType,
 
-            string username)
+            string? username)
         {
             Password = password;
             RegistryEndpoint = registryEndpoint;

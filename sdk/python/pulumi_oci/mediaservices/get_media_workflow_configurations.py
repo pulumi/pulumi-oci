@@ -46,17 +46,11 @@ class GetMediaWorkflowConfigurationsResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[str]:
-        """
-        Compartment Identifier.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        Display name for the MediaWorkflowConfiguration. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -67,25 +61,16 @@ class GetMediaWorkflowConfigurationsResult:
     @property
     @pulumi.getter
     def id(self) -> Optional[str]:
-        """
-        Unique identifier that is immutable on creation.
-        """
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="mediaWorkflowConfigurationCollections")
-    def media_workflow_configuration_collections(self) -> Sequence['outputs.GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionResult']:
-        """
-        The list of media_workflow_configuration_collection.
-        """
+    def media_workflow_configuration_collections(self) -> Optional[Sequence['outputs.GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionResult']]:
         return pulumi.get(self, "media_workflow_configuration_collections")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the MediaWorkflowConfiguration.
-        """
         return pulumi.get(self, "state")
 
 
@@ -110,27 +95,7 @@ def get_media_workflow_configurations(compartment_id: Optional[str] = None,
                                       state: Optional[str] = None,
                                       opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetMediaWorkflowConfigurationsResult:
     """
-    This data source provides the list of Media Workflow Configurations in Oracle Cloud Infrastructure Media Services service.
-
-    Returns a list of MediaWorkflowConfigurations.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_media_workflow_configurations = oci.MediaServices.get_media_workflow_configurations(compartment_id=var["compartment_id"],
-        display_name=var["media_workflow_configuration_display_name"],
-        id=var["media_workflow_configuration_id"],
-        state=var["media_workflow_configuration_state"])
-    ```
-
-
-    :param str compartment_id: The ID of the compartment in which to list resources.
-    :param str display_name: A filter to return only the resources that match the entire display name given.
-    :param str id: Unique MediaWorkflowConfiguration identifier.
-    :param str state: A filter to return only the resources with lifecycleState matching the given lifecycleState.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -158,26 +123,6 @@ def get_media_workflow_configurations_output(compartment_id: Optional[pulumi.Inp
                                              state: Optional[pulumi.Input[Optional[str]]] = None,
                                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetMediaWorkflowConfigurationsResult]:
     """
-    This data source provides the list of Media Workflow Configurations in Oracle Cloud Infrastructure Media Services service.
-
-    Returns a list of MediaWorkflowConfigurations.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_media_workflow_configurations = oci.MediaServices.get_media_workflow_configurations(compartment_id=var["compartment_id"],
-        display_name=var["media_workflow_configuration_display_name"],
-        id=var["media_workflow_configuration_id"],
-        state=var["media_workflow_configuration_state"])
-    ```
-
-
-    :param str compartment_id: The ID of the compartment in which to list resources.
-    :param str display_name: A filter to return only the resources that match the entire display name given.
-    :param str id: Unique MediaWorkflowConfiguration identifier.
-    :param str state: A filter to return only the resources with lifecycleState matching the given lifecycleState.
+    Use this data source to access information about an existing resource.
     """
     ...

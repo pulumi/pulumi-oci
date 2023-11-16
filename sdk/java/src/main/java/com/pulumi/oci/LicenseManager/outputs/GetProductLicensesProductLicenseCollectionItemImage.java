@@ -6,6 +6,8 @@ package com.pulumi.oci.LicenseManager.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetProductLicensesProductLicenseCollectionItemImage {
@@ -13,63 +15,63 @@ public final class GetProductLicensesProductLicenseCollectionItemImage {
      * @return The image ID associated with the product license.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The image listing ID.
      * 
      */
-    private String listingId;
+    private @Nullable String listingId;
     /**
      * @return The listing name associated with the product license.
      * 
      */
-    private String listingName;
+    private @Nullable String listingName;
     /**
      * @return The image package version.
      * 
      */
-    private String packageVersion;
+    private @Nullable String packageVersion;
     /**
      * @return The image publisher.
      * 
      */
-    private String publisher;
+    private @Nullable String publisher;
 
     private GetProductLicensesProductLicenseCollectionItemImage() {}
     /**
      * @return The image ID associated with the product license.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The image listing ID.
      * 
      */
-    public String listingId() {
-        return this.listingId;
+    public Optional<String> listingId() {
+        return Optional.ofNullable(this.listingId);
     }
     /**
      * @return The listing name associated with the product license.
      * 
      */
-    public String listingName() {
-        return this.listingName;
+    public Optional<String> listingName() {
+        return Optional.ofNullable(this.listingName);
     }
     /**
      * @return The image package version.
      * 
      */
-    public String packageVersion() {
-        return this.packageVersion;
+    public Optional<String> packageVersion() {
+        return Optional.ofNullable(this.packageVersion);
     }
     /**
      * @return The image publisher.
      * 
      */
-    public String publisher() {
-        return this.publisher;
+    public Optional<String> publisher() {
+        return Optional.ofNullable(this.publisher);
     }
 
     public static Builder builder() {
@@ -81,11 +83,11 @@ public final class GetProductLicensesProductLicenseCollectionItemImage {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String id;
-        private String listingId;
-        private String listingName;
-        private String packageVersion;
-        private String publisher;
+        private @Nullable String id;
+        private @Nullable String listingId;
+        private @Nullable String listingName;
+        private @Nullable String packageVersion;
+        private @Nullable String publisher;
         public Builder() {}
         public Builder(GetProductLicensesProductLicenseCollectionItemImage defaults) {
     	      Objects.requireNonNull(defaults);
@@ -97,28 +99,28 @@ public final class GetProductLicensesProductLicenseCollectionItemImage {
         }
 
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder listingId(String listingId) {
-            this.listingId = Objects.requireNonNull(listingId);
+        public Builder listingId(@Nullable String listingId) {
+            this.listingId = listingId;
             return this;
         }
         @CustomType.Setter
-        public Builder listingName(String listingName) {
-            this.listingName = Objects.requireNonNull(listingName);
+        public Builder listingName(@Nullable String listingName) {
+            this.listingName = listingName;
             return this;
         }
         @CustomType.Setter
-        public Builder packageVersion(String packageVersion) {
-            this.packageVersion = Objects.requireNonNull(packageVersion);
+        public Builder packageVersion(@Nullable String packageVersion) {
+            this.packageVersion = packageVersion;
             return this;
         }
         @CustomType.Setter
-        public Builder publisher(String publisher) {
-            this.publisher = Objects.requireNonNull(publisher);
+        public Builder publisher(@Nullable String publisher) {
+            this.publisher = publisher;
             return this;
         }
         public GetProductLicensesProductLicenseCollectionItemImage build() {

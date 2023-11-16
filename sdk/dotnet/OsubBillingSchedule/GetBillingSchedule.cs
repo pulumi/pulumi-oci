@@ -176,7 +176,7 @@ namespace Pulumi.Oci.OsubBillingSchedule
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         public readonly string? SubscribedServiceId;
         public readonly string SubscriptionId;
         public readonly string? XOneOriginRegion;
@@ -189,7 +189,7 @@ namespace Pulumi.Oci.OsubBillingSchedule
 
             ImmutableArray<Outputs.GetBillingScheduleFilterResult> filters,
 
-            string id,
+            string? id,
 
             string? subscribedServiceId,
 

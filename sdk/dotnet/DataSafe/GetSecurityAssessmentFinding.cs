@@ -99,7 +99,7 @@ namespace Pulumi.Oci.DataSafe
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         public readonly string? References;
         public readonly string SecurityAssessmentId;
         public readonly string? Severity;
@@ -116,7 +116,7 @@ namespace Pulumi.Oci.DataSafe
 
             ImmutableArray<Outputs.GetSecurityAssessmentFindingFindingResult> findings,
 
-            string id,
+            string? id,
 
             string? references,
 

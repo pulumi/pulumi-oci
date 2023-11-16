@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Fault Domains in Oracle Cloud Infrastructure Identity service.
@@ -73,7 +72,7 @@ type GetFaultDomainsResult struct {
 	FaultDomains []GetFaultDomainsFaultDomain `pulumi:"faultDomains"`
 	Filters      []GetFaultDomainsFilter      `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 }
 
 func GetFaultDomainsOutput(ctx *pulumi.Context, args GetFaultDomainsOutputArgs, opts ...pulumi.InvokeOption) GetFaultDomainsResultOutput {
@@ -117,12 +116,6 @@ func (o GetFaultDomainsResultOutput) ToGetFaultDomainsResultOutputWithContext(ct
 	return o
 }
 
-func (o GetFaultDomainsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetFaultDomainsResult] {
-	return pulumix.Output[GetFaultDomainsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The name of the availabilityDomain where the Fault Domain belongs.
 func (o GetFaultDomainsResultOutput) AvailabilityDomain() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFaultDomainsResult) string { return v.AvailabilityDomain }).(pulumi.StringOutput)
@@ -143,8 +136,8 @@ func (o GetFaultDomainsResultOutput) Filters() GetFaultDomainsFilterArrayOutput 
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetFaultDomainsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFaultDomainsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetFaultDomainsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFaultDomainsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func init() {

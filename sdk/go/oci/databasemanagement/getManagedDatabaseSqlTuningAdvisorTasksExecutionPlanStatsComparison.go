@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Managed Database Sql Tuning Advisor Tasks Execution Plan Stats Comparision resource in Oracle Cloud Infrastructure Database Management service.
@@ -72,8 +71,8 @@ type GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonArgs str
 type GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonResult struct {
 	ExecutionId string `pulumi:"executionId"`
 	// The provider-assigned unique ID for this managed resource.
-	Id                string `pulumi:"id"`
-	ManagedDatabaseId string `pulumi:"managedDatabaseId"`
+	Id                *string `pulumi:"id"`
+	ManagedDatabaseId string  `pulumi:"managedDatabaseId"`
 	// The statistics of a SQL execution plan.
 	Modifieds []GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonModified `pulumi:"modifieds"`
 	// The statistics of a SQL execution plan.
@@ -126,12 +125,6 @@ func (o GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonResul
 	return o
 }
 
-func (o GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonResult] {
-	return pulumix.Output[GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonResultOutput) ExecutionId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonResult) string {
 		return v.ExecutionId
@@ -139,8 +132,8 @@ func (o GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonResul
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonResultOutput) ManagedDatabaseId() pulumi.StringOutput {

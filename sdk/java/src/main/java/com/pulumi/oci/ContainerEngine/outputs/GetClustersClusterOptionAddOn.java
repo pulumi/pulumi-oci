@@ -6,6 +6,8 @@ package com.pulumi.oci.ContainerEngine.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.Boolean;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetClustersClusterOptionAddOn {
@@ -13,27 +15,27 @@ public final class GetClustersClusterOptionAddOn {
      * @return Whether or not to enable the Kubernetes Dashboard add-on.
      * 
      */
-    private Boolean isKubernetesDashboardEnabled;
+    private @Nullable Boolean isKubernetesDashboardEnabled;
     /**
      * @return Whether or not to enable the Tiller add-on.
      * 
      */
-    private Boolean isTillerEnabled;
+    private @Nullable Boolean isTillerEnabled;
 
     private GetClustersClusterOptionAddOn() {}
     /**
      * @return Whether or not to enable the Kubernetes Dashboard add-on.
      * 
      */
-    public Boolean isKubernetesDashboardEnabled() {
-        return this.isKubernetesDashboardEnabled;
+    public Optional<Boolean> isKubernetesDashboardEnabled() {
+        return Optional.ofNullable(this.isKubernetesDashboardEnabled);
     }
     /**
      * @return Whether or not to enable the Tiller add-on.
      * 
      */
-    public Boolean isTillerEnabled() {
-        return this.isTillerEnabled;
+    public Optional<Boolean> isTillerEnabled() {
+        return Optional.ofNullable(this.isTillerEnabled);
     }
 
     public static Builder builder() {
@@ -45,8 +47,8 @@ public final class GetClustersClusterOptionAddOn {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Boolean isKubernetesDashboardEnabled;
-        private Boolean isTillerEnabled;
+        private @Nullable Boolean isKubernetesDashboardEnabled;
+        private @Nullable Boolean isTillerEnabled;
         public Builder() {}
         public Builder(GetClustersClusterOptionAddOn defaults) {
     	      Objects.requireNonNull(defaults);
@@ -55,13 +57,13 @@ public final class GetClustersClusterOptionAddOn {
         }
 
         @CustomType.Setter
-        public Builder isKubernetesDashboardEnabled(Boolean isKubernetesDashboardEnabled) {
-            this.isKubernetesDashboardEnabled = Objects.requireNonNull(isKubernetesDashboardEnabled);
+        public Builder isKubernetesDashboardEnabled(@Nullable Boolean isKubernetesDashboardEnabled) {
+            this.isKubernetesDashboardEnabled = isKubernetesDashboardEnabled;
             return this;
         }
         @CustomType.Setter
-        public Builder isTillerEnabled(Boolean isTillerEnabled) {
-            this.isTillerEnabled = Objects.requireNonNull(isTillerEnabled);
+        public Builder isTillerEnabled(@Nullable Boolean isTillerEnabled) {
+            this.isTillerEnabled = isTillerEnabled;
             return this;
         }
         public GetClustersClusterOptionAddOn build() {

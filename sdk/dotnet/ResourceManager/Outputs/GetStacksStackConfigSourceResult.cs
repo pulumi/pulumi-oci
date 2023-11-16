@@ -14,14 +14,14 @@ namespace Pulumi.Oci.ResourceManager.Outputs
     public sealed class GetStacksStackConfigSourceResult
     {
         public readonly string ConfigSourceType;
-        public readonly string WorkingDirectory;
+        public readonly string? WorkingDirectory;
         public readonly string ZipFileBase64encoded;
 
         [OutputConstructor]
         private GetStacksStackConfigSourceResult(
             string configSourceType,
 
-            string workingDirectory,
+            string? workingDirectory,
 
             string zipFileBase64encoded)
         {

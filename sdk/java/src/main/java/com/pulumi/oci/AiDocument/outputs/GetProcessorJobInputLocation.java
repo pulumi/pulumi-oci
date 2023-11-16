@@ -8,6 +8,8 @@ import com.pulumi.oci.AiDocument.outputs.GetProcessorJobInputLocationObjectLocat
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetProcessorJobInputLocation {
@@ -15,39 +17,39 @@ public final class GetProcessorJobInputLocation {
      * @return Raw document data with Base64 encoding.
      * 
      */
-    private String data;
+    private @Nullable String data;
     /**
      * @return The list of ObjectLocations.
      * 
      */
-    private List<GetProcessorJobInputLocationObjectLocation> objectLocations;
+    private @Nullable List<GetProcessorJobInputLocationObjectLocation> objectLocations;
     /**
      * @return The type of input location. The allowed values are:
      * 
      */
-    private String sourceType;
+    private @Nullable String sourceType;
 
     private GetProcessorJobInputLocation() {}
     /**
      * @return Raw document data with Base64 encoding.
      * 
      */
-    public String data() {
-        return this.data;
+    public Optional<String> data() {
+        return Optional.ofNullable(this.data);
     }
     /**
      * @return The list of ObjectLocations.
      * 
      */
     public List<GetProcessorJobInputLocationObjectLocation> objectLocations() {
-        return this.objectLocations;
+        return this.objectLocations == null ? List.of() : this.objectLocations;
     }
     /**
      * @return The type of input location. The allowed values are:
      * 
      */
-    public String sourceType() {
-        return this.sourceType;
+    public Optional<String> sourceType() {
+        return Optional.ofNullable(this.sourceType);
     }
 
     public static Builder builder() {
@@ -59,9 +61,9 @@ public final class GetProcessorJobInputLocation {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String data;
-        private List<GetProcessorJobInputLocationObjectLocation> objectLocations;
-        private String sourceType;
+        private @Nullable String data;
+        private @Nullable List<GetProcessorJobInputLocationObjectLocation> objectLocations;
+        private @Nullable String sourceType;
         public Builder() {}
         public Builder(GetProcessorJobInputLocation defaults) {
     	      Objects.requireNonNull(defaults);
@@ -71,21 +73,21 @@ public final class GetProcessorJobInputLocation {
         }
 
         @CustomType.Setter
-        public Builder data(String data) {
-            this.data = Objects.requireNonNull(data);
+        public Builder data(@Nullable String data) {
+            this.data = data;
             return this;
         }
         @CustomType.Setter
-        public Builder objectLocations(List<GetProcessorJobInputLocationObjectLocation> objectLocations) {
-            this.objectLocations = Objects.requireNonNull(objectLocations);
+        public Builder objectLocations(@Nullable List<GetProcessorJobInputLocationObjectLocation> objectLocations) {
+            this.objectLocations = objectLocations;
             return this;
         }
         public Builder objectLocations(GetProcessorJobInputLocationObjectLocation... objectLocations) {
             return objectLocations(List.of(objectLocations));
         }
         @CustomType.Setter
-        public Builder sourceType(String sourceType) {
-            this.sourceType = Objects.requireNonNull(sourceType);
+        public Builder sourceType(@Nullable String sourceType) {
+            this.sourceType = sourceType;
             return this;
         }
         public GetProcessorJobInputLocation build() {

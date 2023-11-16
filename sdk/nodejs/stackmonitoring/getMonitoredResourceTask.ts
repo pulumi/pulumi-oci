@@ -47,52 +47,52 @@ export interface GetMonitoredResourceTaskResult {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment identifier.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * Task identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
-    readonly id: string;
+    readonly id?: string;
     readonly monitoredResourceTaskId: string;
     /**
      * Name of the task.
      */
-    readonly name: string;
+    readonly name?: string;
     /**
      * The current state of the stack monitoring resource task.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    readonly systemTags: {[key: string]: any};
+    readonly systemTags?: {[key: string]: any};
     /**
      * The request details for the performing the task.
      */
-    readonly taskDetails: outputs.StackMonitoring.GetMonitoredResourceTaskTaskDetail[];
+    readonly taskDetails?: outputs.StackMonitoring.GetMonitoredResourceTaskTaskDetail[];
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy.
      */
-    readonly tenantId: string;
+    readonly tenantId?: string;
     /**
      * The date and time when the stack monitoring resource task was created, expressed in  [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The date and time when the stack monitoring resource task was last updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
      */
-    readonly timeUpdated: string;
+    readonly timeUpdated?: string;
     /**
      * Identifiers [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for work requests submitted for this task.
      */
-    readonly workRequestIds: string[];
+    readonly workRequestIds?: string[];
 }
 /**
  * This data source provides details about a specific Monitored Resource Task resource in Oracle Cloud Infrastructure Stack Monitoring service.

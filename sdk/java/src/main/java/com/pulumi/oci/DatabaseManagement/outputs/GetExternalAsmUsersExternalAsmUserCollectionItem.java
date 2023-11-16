@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetExternalAsmUsersExternalAsmUserCollectionItem {
@@ -14,39 +16,39 @@ public final class GetExternalAsmUsersExternalAsmUserCollectionItem {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external ASM.
      * 
      */
-    private String asmId;
+    private @Nullable String asmId;
     /**
      * @return The name of the ASM user.
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return The list of privileges of the ASM user.
      * 
      */
-    private List<String> privileges;
+    private @Nullable List<String> privileges;
 
     private GetExternalAsmUsersExternalAsmUserCollectionItem() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external ASM.
      * 
      */
-    public String asmId() {
-        return this.asmId;
+    public Optional<String> asmId() {
+        return Optional.ofNullable(this.asmId);
     }
     /**
      * @return The name of the ASM user.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return The list of privileges of the ASM user.
      * 
      */
     public List<String> privileges() {
-        return this.privileges;
+        return this.privileges == null ? List.of() : this.privileges;
     }
 
     public static Builder builder() {
@@ -58,9 +60,9 @@ public final class GetExternalAsmUsersExternalAsmUserCollectionItem {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String asmId;
-        private String name;
-        private List<String> privileges;
+        private @Nullable String asmId;
+        private @Nullable String name;
+        private @Nullable List<String> privileges;
         public Builder() {}
         public Builder(GetExternalAsmUsersExternalAsmUserCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -70,18 +72,18 @@ public final class GetExternalAsmUsersExternalAsmUserCollectionItem {
         }
 
         @CustomType.Setter
-        public Builder asmId(String asmId) {
-            this.asmId = Objects.requireNonNull(asmId);
+        public Builder asmId(@Nullable String asmId) {
+            this.asmId = asmId;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder privileges(List<String> privileges) {
-            this.privileges = Objects.requireNonNull(privileges);
+        public Builder privileges(@Nullable List<String> privileges) {
+            this.privileges = privileges;
             return this;
         }
         public Builder privileges(String... privileges) {

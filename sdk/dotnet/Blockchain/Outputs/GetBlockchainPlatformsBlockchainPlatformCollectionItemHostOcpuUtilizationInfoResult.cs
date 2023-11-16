@@ -16,23 +16,23 @@ namespace Pulumi.Oci.Blockchain.Outputs
         /// <summary>
         /// Host name of VM
         /// </summary>
-        public readonly string Host;
+        public readonly string? Host;
         /// <summary>
         /// Number of total OCPU capacity on the host
         /// </summary>
-        public readonly double OcpuCapacityNumber;
+        public readonly double? OcpuCapacityNumber;
         /// <summary>
         /// Number of OCPU utilized
         /// </summary>
-        public readonly double OcpuUtilizationNumber;
+        public readonly double? OcpuUtilizationNumber;
 
         [OutputConstructor]
         private GetBlockchainPlatformsBlockchainPlatformCollectionItemHostOcpuUtilizationInfoResult(
-            string host,
+            string? host,
 
-            double ocpuCapacityNumber,
+            double? ocpuCapacityNumber,
 
-            double ocpuUtilizationNumber)
+            double? ocpuUtilizationNumber)
         {
             Host = host;
             OcpuCapacityNumber = ocpuCapacityNumber;

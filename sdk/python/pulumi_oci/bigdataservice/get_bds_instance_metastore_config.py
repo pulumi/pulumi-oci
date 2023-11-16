@@ -64,20 +64,17 @@ class GetBdsInstanceMetastoreConfigResult:
 
     @property
     @pulumi.getter(name="activateTrigger")
-    def activate_trigger(self) -> int:
+    def activate_trigger(self) -> Optional[int]:
         return pulumi.get(self, "activate_trigger")
 
     @property
     @pulumi.getter(name="bdsApiKeyId")
-    def bds_api_key_id(self) -> str:
-        """
-        The ID of BDS API Key used for metastore configuration. Set only if metastore's type is EXTERNAL.
-        """
+    def bds_api_key_id(self) -> Optional[str]:
         return pulumi.get(self, "bds_api_key_id")
 
     @property
     @pulumi.getter(name="bdsApiKeyPassphrase")
-    def bds_api_key_passphrase(self) -> str:
+    def bds_api_key_passphrase(self) -> Optional[str]:
         return pulumi.get(self, "bds_api_key_passphrase")
 
     @property
@@ -87,23 +84,17 @@ class GetBdsInstanceMetastoreConfigResult:
 
     @property
     @pulumi.getter(name="clusterAdminPassword")
-    def cluster_admin_password(self) -> str:
+    def cluster_admin_password(self) -> Optional[str]:
         return pulumi.get(self, "cluster_admin_password")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        The display name of metastore configuration
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The ID of the metastore configuration
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
@@ -113,42 +104,27 @@ class GetBdsInstanceMetastoreConfigResult:
 
     @property
     @pulumi.getter(name="metastoreId")
-    def metastore_id(self) -> str:
-        """
-        The OCID of the Data Catalog metastore. Set only if metastore's type is EXTERNAL.
-        """
+    def metastore_id(self) -> Optional[str]:
         return pulumi.get(self, "metastore_id")
 
     @property
     @pulumi.getter(name="metastoreType")
-    def metastore_type(self) -> str:
-        """
-        The type of the metastore in the metastore configuration.
-        """
+    def metastore_type(self) -> Optional[str]:
         return pulumi.get(self, "metastore_type")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        the lifecycle state of the metastore configuration.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The time when the configuration was created, shown as an RFC 3339 formatted datetime string.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The time when the configuration was updated, shown as an RFC 3339 formatted datetime string.
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
 
@@ -177,23 +153,7 @@ def get_bds_instance_metastore_config(bds_instance_id: Optional[str] = None,
                                       metastore_config_id: Optional[str] = None,
                                       opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetBdsInstanceMetastoreConfigResult:
     """
-    This data source provides details about a specific Bds Instance Metastore Config resource in Oracle Cloud Infrastructure Big Data Service service.
-
-    Returns the BDS Metastore configuration information for the given ID.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_bds_instance_metastore_config = oci.BigDataService.get_bds_instance_metastore_config(bds_instance_id=oci_bds_bds_instance["test_bds_instance"]["id"],
-        metastore_config_id=oci_apm_config_config["test_config"]["id"])
-    ```
-
-
-    :param str bds_instance_id: The OCID of the cluster.
-    :param str metastore_config_id: The metastore configuration ID
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['bdsInstanceId'] = bds_instance_id
@@ -222,22 +182,6 @@ def get_bds_instance_metastore_config_output(bds_instance_id: Optional[pulumi.In
                                              metastore_config_id: Optional[pulumi.Input[str]] = None,
                                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetBdsInstanceMetastoreConfigResult]:
     """
-    This data source provides details about a specific Bds Instance Metastore Config resource in Oracle Cloud Infrastructure Big Data Service service.
-
-    Returns the BDS Metastore configuration information for the given ID.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_bds_instance_metastore_config = oci.BigDataService.get_bds_instance_metastore_config(bds_instance_id=oci_bds_bds_instance["test_bds_instance"]["id"],
-        metastore_config_id=oci_apm_config_config["test_config"]["id"])
-    ```
-
-
-    :param str bds_instance_id: The OCID of the cluster.
-    :param str metastore_config_id: The metastore configuration ID
+    Use this data source to access information about an existing resource.
     """
     ...

@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Double;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetSubscriptionRewardSummary {
@@ -14,75 +16,75 @@ public final class GetSubscriptionRewardSummary {
      * @return The currency unit for the reward amount.
      * 
      */
-    private String currency;
+    private @Nullable String currency;
     /**
      * @return The redemption code used in the Billing Center during the reward redemption process.
      * 
      */
-    private String redemptionCode;
+    private @Nullable String redemptionCode;
     /**
      * @return The current Rewards percentage in decimal format.
      * 
      */
-    private Double rewardsRate;
+    private @Nullable Double rewardsRate;
     /**
      * @return The subscription ID for which rewards information is requested for.
      * 
      */
-    private String subscriptionId;
+    private @Nullable String subscriptionId;
     /**
      * @return The OCID of the tenancy.
      * 
      */
-    private String tenancyId;
+    private @Nullable String tenancyId;
     /**
      * @return The total number of available rewards for a given subscription ID.
      * 
      */
-    private Double totalRewardsAvailable;
+    private @Nullable Double totalRewardsAvailable;
 
     private GetSubscriptionRewardSummary() {}
     /**
      * @return The currency unit for the reward amount.
      * 
      */
-    public String currency() {
-        return this.currency;
+    public Optional<String> currency() {
+        return Optional.ofNullable(this.currency);
     }
     /**
      * @return The redemption code used in the Billing Center during the reward redemption process.
      * 
      */
-    public String redemptionCode() {
-        return this.redemptionCode;
+    public Optional<String> redemptionCode() {
+        return Optional.ofNullable(this.redemptionCode);
     }
     /**
      * @return The current Rewards percentage in decimal format.
      * 
      */
-    public Double rewardsRate() {
-        return this.rewardsRate;
+    public Optional<Double> rewardsRate() {
+        return Optional.ofNullable(this.rewardsRate);
     }
     /**
      * @return The subscription ID for which rewards information is requested for.
      * 
      */
-    public String subscriptionId() {
-        return this.subscriptionId;
+    public Optional<String> subscriptionId() {
+        return Optional.ofNullable(this.subscriptionId);
     }
     /**
      * @return The OCID of the tenancy.
      * 
      */
-    public String tenancyId() {
-        return this.tenancyId;
+    public Optional<String> tenancyId() {
+        return Optional.ofNullable(this.tenancyId);
     }
     /**
      * @return The total number of available rewards for a given subscription ID.
      * 
      */
-    public Double totalRewardsAvailable() {
-        return this.totalRewardsAvailable;
+    public Optional<Double> totalRewardsAvailable() {
+        return Optional.ofNullable(this.totalRewardsAvailable);
     }
 
     public static Builder builder() {
@@ -94,12 +96,12 @@ public final class GetSubscriptionRewardSummary {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String currency;
-        private String redemptionCode;
-        private Double rewardsRate;
-        private String subscriptionId;
-        private String tenancyId;
-        private Double totalRewardsAvailable;
+        private @Nullable String currency;
+        private @Nullable String redemptionCode;
+        private @Nullable Double rewardsRate;
+        private @Nullable String subscriptionId;
+        private @Nullable String tenancyId;
+        private @Nullable Double totalRewardsAvailable;
         public Builder() {}
         public Builder(GetSubscriptionRewardSummary defaults) {
     	      Objects.requireNonNull(defaults);
@@ -112,33 +114,33 @@ public final class GetSubscriptionRewardSummary {
         }
 
         @CustomType.Setter
-        public Builder currency(String currency) {
-            this.currency = Objects.requireNonNull(currency);
+        public Builder currency(@Nullable String currency) {
+            this.currency = currency;
             return this;
         }
         @CustomType.Setter
-        public Builder redemptionCode(String redemptionCode) {
-            this.redemptionCode = Objects.requireNonNull(redemptionCode);
+        public Builder redemptionCode(@Nullable String redemptionCode) {
+            this.redemptionCode = redemptionCode;
             return this;
         }
         @CustomType.Setter
-        public Builder rewardsRate(Double rewardsRate) {
-            this.rewardsRate = Objects.requireNonNull(rewardsRate);
+        public Builder rewardsRate(@Nullable Double rewardsRate) {
+            this.rewardsRate = rewardsRate;
             return this;
         }
         @CustomType.Setter
-        public Builder subscriptionId(String subscriptionId) {
-            this.subscriptionId = Objects.requireNonNull(subscriptionId);
+        public Builder subscriptionId(@Nullable String subscriptionId) {
+            this.subscriptionId = subscriptionId;
             return this;
         }
         @CustomType.Setter
-        public Builder tenancyId(String tenancyId) {
-            this.tenancyId = Objects.requireNonNull(tenancyId);
+        public Builder tenancyId(@Nullable String tenancyId) {
+            this.tenancyId = tenancyId;
             return this;
         }
         @CustomType.Setter
-        public Builder totalRewardsAvailable(Double totalRewardsAvailable) {
-            this.totalRewardsAvailable = Objects.requireNonNull(totalRewardsAvailable);
+        public Builder totalRewardsAvailable(@Nullable Double totalRewardsAvailable) {
+            this.totalRewardsAvailable = totalRewardsAvailable;
             return this;
         }
         public GetSubscriptionRewardSummary build() {

@@ -20,35 +20,35 @@ namespace Pulumi.Oci.UsageProxy.Outputs
         /// <summary>
         /// Units to be used for daily aggregated data.
         /// </summary>
-        public readonly string DailyUnitDisplayName;
+        public readonly string? DailyUnitDisplayName;
         /// <summary>
         /// Description of the resource.
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// Units to be used for hourly aggregated data.
         /// </summary>
-        public readonly string HourlyUnitDisplayName;
+        public readonly string? HourlyUnitDisplayName;
         /// <summary>
         /// Instance type for the resource.
         /// </summary>
-        public readonly string InstanceType;
+        public readonly string? InstanceType;
         /// <summary>
         /// Indicates if the SKU was purchased
         /// </summary>
-        public readonly bool IsPurchased;
+        public readonly bool? IsPurchased;
         /// <summary>
         /// Name of the resource.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// Default units to use when unspecified.
         /// </summary>
-        public readonly string RawUnitDisplayName;
+        public readonly string? RawUnitDisplayName;
         /// <summary>
         /// Name of the service.
         /// </summary>
-        public readonly string Servicename;
+        public readonly string? Servicename;
         /// <summary>
         /// The details of resource Skus.
         /// </summary>
@@ -56,31 +56,31 @@ namespace Pulumi.Oci.UsageProxy.Outputs
         /// <summary>
         /// Usage data type of the resource.
         /// </summary>
-        public readonly string UsageDataType;
+        public readonly string? UsageDataType;
 
         [OutputConstructor]
         private GetResourcesResourcesCollectionItemResult(
             ImmutableArray<string> childResources,
 
-            string dailyUnitDisplayName,
+            string? dailyUnitDisplayName,
 
-            string description,
+            string? description,
 
-            string hourlyUnitDisplayName,
+            string? hourlyUnitDisplayName,
 
-            string instanceType,
+            string? instanceType,
 
-            bool isPurchased,
+            bool? isPurchased,
 
-            string name,
+            string? name,
 
-            string rawUnitDisplayName,
+            string? rawUnitDisplayName,
 
-            string servicename,
+            string? servicename,
 
             ImmutableArray<Outputs.GetResourcesResourcesCollectionItemSkusResult> skuses,
 
-            string usageDataType)
+            string? usageDataType)
         {
             ChildResources = childResources;
             DailyUnitDisplayName = dailyUnitDisplayName;

@@ -39,7 +39,7 @@ public final class GetNetworkFirewallsResult {
      * @return The list of network_firewall_collection.
      * 
      */
-    private List<GetNetworkFirewallsNetworkFirewallCollection> networkFirewallCollections;
+    private @Nullable List<GetNetworkFirewallsNetworkFirewallCollection> networkFirewallCollections;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Network Firewall Policy.
      * 
@@ -88,7 +88,7 @@ public final class GetNetworkFirewallsResult {
      * 
      */
     public List<GetNetworkFirewallsNetworkFirewallCollection> networkFirewallCollections() {
-        return this.networkFirewallCollections;
+        return this.networkFirewallCollections == null ? List.of() : this.networkFirewallCollections;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Network Firewall Policy.
@@ -119,7 +119,7 @@ public final class GetNetworkFirewallsResult {
         private @Nullable String displayName;
         private @Nullable List<GetNetworkFirewallsFilter> filters;
         private @Nullable String id;
-        private List<GetNetworkFirewallsNetworkFirewallCollection> networkFirewallCollections;
+        private @Nullable List<GetNetworkFirewallsNetworkFirewallCollection> networkFirewallCollections;
         private @Nullable String networkFirewallPolicyId;
         private @Nullable String state;
         public Builder() {}
@@ -164,8 +164,8 @@ public final class GetNetworkFirewallsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder networkFirewallCollections(List<GetNetworkFirewallsNetworkFirewallCollection> networkFirewallCollections) {
-            this.networkFirewallCollections = Objects.requireNonNull(networkFirewallCollections);
+        public Builder networkFirewallCollections(@Nullable List<GetNetworkFirewallsNetworkFirewallCollection> networkFirewallCollections) {
+            this.networkFirewallCollections = networkFirewallCollections;
             return this;
         }
         public Builder networkFirewallCollections(GetNetworkFirewallsNetworkFirewallCollection... networkFirewallCollections) {

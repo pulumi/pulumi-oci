@@ -78,7 +78,7 @@ export class Quota extends pulumi.CustomResource {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) The description you assign to the quota.
      */
@@ -86,15 +86,15 @@ export class Quota extends pulumi.CustomResource {
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * this is a computed field which is set to true if any lock is present`
      */
-    public /*out*/ readonly isLockOverride!: pulumi.Output<boolean>;
+    public /*out*/ readonly isLockOverride!: pulumi.Output<boolean | undefined>;
     /**
      * Locks associated with this resource.
      */
-    public readonly locks!: pulumi.Output<outputs.Limits.QuotaLock[]>;
+    public readonly locks!: pulumi.Output<outputs.Limits.QuotaLock[] | undefined>;
     /**
      * The name you assign to the quota during creation. The name must be unique across all quotas in the tenancy and cannot be changed.
      */
@@ -102,7 +102,7 @@ export class Quota extends pulumi.CustomResource {
     /**
      * The quota's current state.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) An array of quota statements written in the declarative quota statement language. 
      *
@@ -113,7 +113,7 @@ export class Quota extends pulumi.CustomResource {
     /**
      * Date and time the quota was created, in the format defined by RFC 3339. Example: `2016-08-25T21:10:29.600Z`
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
 
     /**
      * Create a Quota resource with the given unique name, arguments, and options.

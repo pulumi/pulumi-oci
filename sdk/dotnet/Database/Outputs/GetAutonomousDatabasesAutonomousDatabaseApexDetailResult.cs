@@ -16,17 +16,17 @@ namespace Pulumi.Oci.Database.Outputs
         /// <summary>
         /// The Oracle APEX Application Development version.
         /// </summary>
-        public readonly string ApexVersion;
+        public readonly string? ApexVersion;
         /// <summary>
         /// The Oracle REST Data Services (ORDS) version.
         /// </summary>
-        public readonly string OrdsVersion;
+        public readonly string? OrdsVersion;
 
         [OutputConstructor]
         private GetAutonomousDatabasesAutonomousDatabaseApexDetailResult(
-            string apexVersion,
+            string? apexVersion,
 
-            string ordsVersion)
+            string? ordsVersion)
         {
             ApexVersion = apexVersion;
             OrdsVersion = ordsVersion;

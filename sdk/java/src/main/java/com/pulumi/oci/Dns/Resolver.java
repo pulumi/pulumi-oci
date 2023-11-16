@@ -45,14 +45,14 @@ public class Resolver extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="attachedVcnId", refs={String.class}, tree="[0]")
-    private Output<String> attachedVcnId;
+    private Output</* @Nullable */ String> attachedVcnId;
 
     /**
      * @return The OCID of the attached VCN.
      * 
      */
-    public Output<String> attachedVcnId() {
-        return this.attachedVcnId;
+    public Output<Optional<String>> attachedVcnId() {
+        return Codegen.optional(this.attachedVcnId);
     }
     /**
      * (Updatable) The attached views. Views are evaluated in order.
@@ -73,28 +73,28 @@ public class Resolver extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="compartmentId", refs={String.class}, tree="[0]")
-    private Output<String> compartmentId;
+    private Output</* @Nullable */ String> compartmentId;
 
     /**
      * @return (Updatable) The OCID of the owning compartment.
      * 
      */
-    public Output<String> compartmentId() {
-        return this.compartmentId;
+    public Output<Optional<String>> compartmentId() {
+        return Codegen.optional(this.compartmentId);
     }
     /**
      * The OCID of the default view.
      * 
      */
     @Export(name="defaultViewId", refs={String.class}, tree="[0]")
-    private Output<String> defaultViewId;
+    private Output</* @Nullable */ String> defaultViewId;
 
     /**
      * @return The OCID of the default view.
      * 
      */
-    public Output<String> defaultViewId() {
-        return this.defaultViewId;
+    public Output<Optional<String>> defaultViewId() {
+        return Codegen.optional(this.defaultViewId);
     }
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -103,7 +103,7 @@ public class Resolver extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -111,36 +111,36 @@ public class Resolver extends com.pulumi.resources.CustomResource {
      * **Example:** `{&#34;Operations&#34;: {&#34;CostCenter&#34;: &#34;42&#34;}}`
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * (Updatable) The display name of the resolver.
      * 
      */
     @Export(name="displayName", refs={String.class}, tree="[0]")
-    private Output<String> displayName;
+    private Output</* @Nullable */ String> displayName;
 
     /**
      * @return (Updatable) The display name of the resolver.
      * 
      */
-    public Output<String> displayName() {
-        return this.displayName;
+    public Output<Optional<String>> displayName() {
+        return Codegen.optional(this.displayName);
     }
     /**
      * Read-only array of endpoints for the resolver.
      * 
      */
     @Export(name="endpoints", refs={List.class,ResolverEndpoint.class}, tree="[0,1]")
-    private Output<List<ResolverEndpoint>> endpoints;
+    private Output</* @Nullable */ List<ResolverEndpoint>> endpoints;
 
     /**
      * @return Read-only array of endpoints for the resolver.
      * 
      */
-    public Output<List<ResolverEndpoint>> endpoints() {
-        return this.endpoints;
+    public Output<Optional<List<ResolverEndpoint>>> endpoints() {
+        return Codegen.optional(this.endpoints);
     }
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -149,7 +149,7 @@ public class Resolver extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -157,22 +157,22 @@ public class Resolver extends com.pulumi.resources.CustomResource {
      * **Example:** `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * A Boolean flag indicating whether or not parts of the resource are unable to be explicitly managed.
      * 
      */
     @Export(name="isProtected", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isProtected;
+    private Output</* @Nullable */ Boolean> isProtected;
 
     /**
      * @return A Boolean flag indicating whether or not parts of the resource are unable to be explicitly managed.
      * 
      */
-    public Output<Boolean> isProtected() {
-        return this.isProtected;
+    public Output<Optional<Boolean>> isProtected() {
+        return Codegen.optional(this.isProtected);
     }
     /**
      * The OCID of the target resolver.
@@ -227,56 +227,56 @@ public class Resolver extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="self", refs={String.class}, tree="[0]")
-    private Output<String> self;
+    private Output</* @Nullable */ String> self;
 
     /**
      * @return The canonical absolute URL of the resource.
      * 
      */
-    public Output<String> self() {
-        return this.self;
+    public Output<Optional<String>> self() {
+        return Codegen.optional(this.self);
     }
     /**
      * The current state of the resource.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The current state of the resource.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * The date and time the resource was created in &#34;YYYY-MM-ddThh:mm:ssZ&#34; format with a Z offset, as defined by RFC 3339.
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The date and time the resource was created in &#34;YYYY-MM-ddThh:mm:ssZ&#34; format with a Z offset, as defined by RFC 3339.
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * The date and time the resource was last updated in &#34;YYYY-MM-ddThh:mm:ssZ&#34; format with a Z offset, as defined by RFC 3339.
      * 
      */
     @Export(name="timeUpdated", refs={String.class}, tree="[0]")
-    private Output<String> timeUpdated;
+    private Output</* @Nullable */ String> timeUpdated;
 
     /**
      * @return The date and time the resource was last updated in &#34;YYYY-MM-ddThh:mm:ssZ&#34; format with a Z offset, as defined by RFC 3339.
      * 
      */
-    public Output<String> timeUpdated() {
-        return this.timeUpdated;
+    public Output<Optional<String>> timeUpdated() {
+        return Codegen.optional(this.timeUpdated);
     }
 
     /**

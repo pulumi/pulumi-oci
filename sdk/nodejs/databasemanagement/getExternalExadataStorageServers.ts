@@ -67,12 +67,12 @@ export interface GetExternalExadataStorageServersResult {
     /**
      * The list of external_exadata_storage_server_collection.
      */
-    readonly externalExadataStorageServerCollections: outputs.DatabaseManagement.GetExternalExadataStorageServersExternalExadataStorageServerCollection[];
+    readonly externalExadataStorageServerCollections?: outputs.DatabaseManagement.GetExternalExadataStorageServersExternalExadataStorageServerCollection[];
     readonly filters?: outputs.DatabaseManagement.GetExternalExadataStorageServersFilter[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
 }
 /**
  * This data source provides the list of External Exadata Storage Servers in Oracle Cloud Infrastructure Database Management service.

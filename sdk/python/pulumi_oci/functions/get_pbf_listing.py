@@ -62,31 +62,22 @@ class GetPbfListingResult:
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        A short overview of the PBF Listing: the purpose of the PBF and and associated information.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -94,10 +85,7 @@ class GetPbfListingResult:
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        A brief descriptive name for the PBF trigger.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
@@ -107,50 +95,32 @@ class GetPbfListingResult:
 
     @property
     @pulumi.getter(name="publisherDetails")
-    def publisher_details(self) -> Sequence['outputs.GetPbfListingPublisherDetailResult']:
-        """
-        Contains details about the publisher of this PBF Listing.
-        """
+    def publisher_details(self) -> Optional[Sequence['outputs.GetPbfListingPublisherDetailResult']]:
         return pulumi.get(self, "publisher_details")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the PBF resource.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The time the PbfListing was created. An RFC3339 formatted datetime string.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The last time the PbfListing was updated. An RFC3339 formatted datetime string.
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
     @property
     @pulumi.getter
-    def triggers(self) -> Sequence['outputs.GetPbfListingTriggerResult']:
-        """
-        An array of Trigger. A list of triggers that may activate the PBF.
-        """
+    def triggers(self) -> Optional[Sequence['outputs.GetPbfListingTriggerResult']]:
         return pulumi.get(self, "triggers")
 
 
@@ -177,21 +147,7 @@ class AwaitableGetPbfListingResult(GetPbfListingResult):
 def get_pbf_listing(pbf_listing_id: Optional[str] = None,
                     opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetPbfListingResult:
     """
-    This data source provides details about a specific Pbf Listing resource in Oracle Cloud Infrastructure Functions service.
-
-    Fetches a Pre-built Function(PBF) Listing. Returns a PbfListing response model.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_pbf_listing = oci.Functions.get_pbf_listing(pbf_listing_id=oci_functions_pbf_listing["test_pbf_listing"]["id"])
-    ```
-
-
-    :param str pbf_listing_id: unique PbfListing identifier
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['pbfListingId'] = pbf_listing_id
@@ -217,20 +173,6 @@ def get_pbf_listing(pbf_listing_id: Optional[str] = None,
 def get_pbf_listing_output(pbf_listing_id: Optional[pulumi.Input[str]] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetPbfListingResult]:
     """
-    This data source provides details about a specific Pbf Listing resource in Oracle Cloud Infrastructure Functions service.
-
-    Fetches a Pre-built Function(PBF) Listing. Returns a PbfListing response model.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_pbf_listing = oci.Functions.get_pbf_listing(pbf_listing_id=oci_functions_pbf_listing["test_pbf_listing"]["id"])
-    ```
-
-
-    :param str pbf_listing_id: unique PbfListing identifier
+    Use this data source to access information about an existing resource.
     """
     ...

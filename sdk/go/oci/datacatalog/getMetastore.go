@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Metastore resource in Oracle Cloud Infrastructure Data Catalog service.
@@ -60,28 +59,28 @@ type LookupMetastoreArgs struct {
 // A collection of values returned by getMetastore.
 type LookupMetastoreResult struct {
 	// OCID of the compartment which holds the metastore.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Location under which external tables will be created by default. This references Object Storage using an HDFS URI format. Example: oci://bucket@namespace/sub-dir/
-	DefaultExternalTableLocation string `pulumi:"defaultExternalTableLocation"`
+	DefaultExternalTableLocation *string `pulumi:"defaultExternalTableLocation"`
 	// Location under which managed tables will be created by default. This references Object Storage using an HDFS URI format. Example: oci://bucket@namespace/sub-dir/
-	DefaultManagedTableLocation string `pulumi:"defaultManagedTableLocation"`
+	DefaultManagedTableLocation *string `pulumi:"defaultManagedTableLocation"`
 	// Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// Mutable name of the metastore.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The metastore's OCID.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
-	MetastoreId      string `pulumi:"metastoreId"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
+	MetastoreId      string  `pulumi:"metastoreId"`
 	// The current state of the metastore.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// Time at which the metastore was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// Time at which the metastore was last modified. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 func LookupMetastoreOutput(ctx *pulumi.Context, args LookupMetastoreOutputArgs, opts ...pulumi.InvokeOption) LookupMetastoreResultOutput {
@@ -122,25 +121,19 @@ func (o LookupMetastoreResultOutput) ToLookupMetastoreResultOutputWithContext(ct
 	return o
 }
 
-func (o LookupMetastoreResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupMetastoreResult] {
-	return pulumix.Output[LookupMetastoreResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // OCID of the compartment which holds the metastore.
-func (o LookupMetastoreResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupMetastoreResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupMetastoreResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupMetastoreResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Location under which external tables will be created by default. This references Object Storage using an HDFS URI format. Example: oci://bucket@namespace/sub-dir/
-func (o LookupMetastoreResultOutput) DefaultExternalTableLocation() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupMetastoreResult) string { return v.DefaultExternalTableLocation }).(pulumi.StringOutput)
+func (o LookupMetastoreResultOutput) DefaultExternalTableLocation() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupMetastoreResult) *string { return v.DefaultExternalTableLocation }).(pulumi.StringPtrOutput)
 }
 
 // Location under which managed tables will be created by default. This references Object Storage using an HDFS URI format. Example: oci://bucket@namespace/sub-dir/
-func (o LookupMetastoreResultOutput) DefaultManagedTableLocation() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupMetastoreResult) string { return v.DefaultManagedTableLocation }).(pulumi.StringOutput)
+func (o LookupMetastoreResultOutput) DefaultManagedTableLocation() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupMetastoreResult) *string { return v.DefaultManagedTableLocation }).(pulumi.StringPtrOutput)
 }
 
 // Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
@@ -149,8 +142,8 @@ func (o LookupMetastoreResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // Mutable name of the metastore.
-func (o LookupMetastoreResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupMetastoreResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupMetastoreResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupMetastoreResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -159,13 +152,13 @@ func (o LookupMetastoreResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The metastore's OCID.
-func (o LookupMetastoreResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupMetastoreResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupMetastoreResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupMetastoreResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-func (o LookupMetastoreResultOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupMetastoreResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o LookupMetastoreResultOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupMetastoreResult) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupMetastoreResultOutput) MetastoreId() pulumi.StringOutput {
@@ -173,18 +166,18 @@ func (o LookupMetastoreResultOutput) MetastoreId() pulumi.StringOutput {
 }
 
 // The current state of the metastore.
-func (o LookupMetastoreResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupMetastoreResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupMetastoreResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupMetastoreResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Time at which the metastore was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-func (o LookupMetastoreResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupMetastoreResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupMetastoreResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupMetastoreResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // Time at which the metastore was last modified. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-func (o LookupMetastoreResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupMetastoreResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o LookupMetastoreResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupMetastoreResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 func init() {

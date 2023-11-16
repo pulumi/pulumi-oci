@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Connections in Oracle Cloud Infrastructure Data Catalog service.
@@ -111,7 +110,7 @@ type GetConnectionsResult struct {
 	Fields      []string               `pulumi:"fields"`
 	Filters     []GetConnectionsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Indicates whether this connection is the default connection.
 	IsDefault *bool `pulumi:"isDefault"`
 	// The current state of the connection.
@@ -189,12 +188,6 @@ func (o GetConnectionsResultOutput) ToGetConnectionsResultOutputWithContext(ctx 
 	return o
 }
 
-func (o GetConnectionsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetConnectionsResult] {
-	return pulumix.Output[GetConnectionsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetConnectionsResultOutput) CatalogId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetConnectionsResult) string { return v.CatalogId }).(pulumi.StringOutput)
 }
@@ -237,8 +230,8 @@ func (o GetConnectionsResultOutput) Filters() GetConnectionsFilterArrayOutput {
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetConnectionsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetConnectionsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetConnectionsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetConnectionsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Indicates whether this connection is the default connection.

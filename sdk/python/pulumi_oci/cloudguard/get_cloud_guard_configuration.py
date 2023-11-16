@@ -45,31 +45,22 @@ class GetCloudGuardConfigurationResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="reportingRegion")
-    def reporting_region(self) -> str:
-        """
-        The reporting region value
-        """
+    def reporting_region(self) -> Optional[str]:
         return pulumi.get(self, "reporting_region")
 
     @property
     @pulumi.getter(name="selfManageResources")
-    def self_manage_resources(self) -> bool:
-        """
-        Identifies if Oracle managed resources were created by customers
-        """
+    def self_manage_resources(self) -> Optional[bool]:
         return pulumi.get(self, "self_manage_resources")
 
     @property
     @pulumi.getter
-    def status(self) -> str:
-        """
-        Status of Cloud Guard Tenant
-        """
+    def status(self) -> Optional[str]:
         return pulumi.get(self, "status")
 
 
@@ -89,21 +80,7 @@ class AwaitableGetCloudGuardConfigurationResult(GetCloudGuardConfigurationResult
 def get_cloud_guard_configuration(compartment_id: Optional[str] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetCloudGuardConfigurationResult:
     """
-    This data source provides details about a specific Cloud Guard Configuration resource in Oracle Cloud Infrastructure Cloud Guard service.
-
-    GET Cloud Guard Configuration Details for a Tenancy.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_cloud_guard_configuration = oci.CloudGuard.get_cloud_guard_configuration(compartment_id=var["compartment_id"])
-    ```
-
-
-    :param str compartment_id: The ID of the compartment in which to list resources.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -122,20 +99,6 @@ def get_cloud_guard_configuration(compartment_id: Optional[str] = None,
 def get_cloud_guard_configuration_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCloudGuardConfigurationResult]:
     """
-    This data source provides details about a specific Cloud Guard Configuration resource in Oracle Cloud Infrastructure Cloud Guard service.
-
-    GET Cloud Guard Configuration Details for a Tenancy.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_cloud_guard_configuration = oci.CloudGuard.get_cloud_guard_configuration(compartment_id=var["compartment_id"])
-    ```
-
-
-    :param str compartment_id: The ID of the compartment in which to list resources.
+    Use this data source to access information about an existing resource.
     """
     ...

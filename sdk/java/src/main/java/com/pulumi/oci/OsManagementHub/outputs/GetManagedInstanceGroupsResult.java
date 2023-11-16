@@ -35,12 +35,12 @@ public final class GetManagedInstanceGroupsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The list of managed_instance_group_collection.
      * 
      */
-    private List<GetManagedInstanceGroupsManagedInstanceGroupCollection> managedInstanceGroupCollections;
+    private @Nullable List<GetManagedInstanceGroupsManagedInstanceGroupCollection> managedInstanceGroupCollections;
     private @Nullable String managedInstanceGroupId;
     /**
      * @return The operating system type of the instances in the managed instance group.
@@ -86,15 +86,15 @@ public final class GetManagedInstanceGroupsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The list of managed_instance_group_collection.
      * 
      */
     public List<GetManagedInstanceGroupsManagedInstanceGroupCollection> managedInstanceGroupCollections() {
-        return this.managedInstanceGroupCollections;
+        return this.managedInstanceGroupCollections == null ? List.of() : this.managedInstanceGroupCollections;
     }
     public Optional<String> managedInstanceGroupId() {
         return Optional.ofNullable(this.managedInstanceGroupId);
@@ -131,8 +131,8 @@ public final class GetManagedInstanceGroupsResult {
         private @Nullable String displayNameContains;
         private @Nullable List<String> displayNames;
         private @Nullable List<GetManagedInstanceGroupsFilter> filters;
-        private String id;
-        private List<GetManagedInstanceGroupsManagedInstanceGroupCollection> managedInstanceGroupCollections;
+        private @Nullable String id;
+        private @Nullable List<GetManagedInstanceGroupsManagedInstanceGroupCollection> managedInstanceGroupCollections;
         private @Nullable String managedInstanceGroupId;
         private @Nullable String osFamily;
         private @Nullable String softwareSourceId;
@@ -185,13 +185,13 @@ public final class GetManagedInstanceGroupsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder managedInstanceGroupCollections(List<GetManagedInstanceGroupsManagedInstanceGroupCollection> managedInstanceGroupCollections) {
-            this.managedInstanceGroupCollections = Objects.requireNonNull(managedInstanceGroupCollections);
+        public Builder managedInstanceGroupCollections(@Nullable List<GetManagedInstanceGroupsManagedInstanceGroupCollection> managedInstanceGroupCollections) {
+            this.managedInstanceGroupCollections = managedInstanceGroupCollections;
             return this;
         }
         public Builder managedInstanceGroupCollections(GetManagedInstanceGroupsManagedInstanceGroupCollection... managedInstanceGroupCollections) {

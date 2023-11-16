@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Mysql Configurations in Oracle Cloud Infrastructure MySQL Database service.
@@ -91,7 +90,7 @@ type GetMysqlConfigurationsResult struct {
 	DisplayName *string                        `pulumi:"displayName"`
 	Filters     []GetMysqlConfigurationsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The name of the associated Shape.
 	ShapeName *string `pulumi:"shapeName"`
 	// The current state of the Configuration.
@@ -149,12 +148,6 @@ func (o GetMysqlConfigurationsResultOutput) ToGetMysqlConfigurationsResultOutput
 	return o
 }
 
-func (o GetMysqlConfigurationsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetMysqlConfigurationsResult] {
-	return pulumix.Output[GetMysqlConfigurationsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // OCID of the Compartment the Configuration exists in.
 func (o GetMysqlConfigurationsResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMysqlConfigurationsResult) string { return v.CompartmentId }).(pulumi.StringOutput)
@@ -179,8 +172,8 @@ func (o GetMysqlConfigurationsResultOutput) Filters() GetMysqlConfigurationsFilt
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetMysqlConfigurationsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetMysqlConfigurationsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The name of the associated Shape.

@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // ## Example Usage
@@ -59,7 +58,7 @@ type Compartment struct {
 	pulumi.CustomResourceState
 
 	// (Updatable) The OCID of the parent compartment containing the compartment.
-	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) The description you assign to the compartment during creation. Does not have to be unique, and it's changeable.
@@ -72,15 +71,15 @@ type Compartment struct {
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// The detailed status of INACTIVE lifecycleState.
-	InactiveState pulumi.StringOutput `pulumi:"inactiveState"`
+	InactiveState pulumi.StringPtrOutput `pulumi:"inactiveState"`
 	// Indicates whether or not the compartment is accessible for the user making the request. Returns true when the user has INSPECT permissions directly on a resource in the compartment or indirectly (permissions can be on a resource in a subcompartment).
-	IsAccessible pulumi.BoolOutput `pulumi:"isAccessible"`
+	IsAccessible pulumi.BoolPtrOutput `pulumi:"isAccessible"`
 	// (Updatable) The name you assign to the compartment during creation. The name must be unique across all compartments in the parent compartment. Avoid entering confidential information.
 	Name pulumi.StringOutput `pulumi:"name"`
 	// The compartment's current state.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// Date and time the compartment was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 }
 
 // NewCompartment registers a new resource with the given unique name, arguments, and options.
@@ -231,12 +230,6 @@ func (i *Compartment) ToCompartmentOutputWithContext(ctx context.Context) Compar
 	return pulumi.ToOutputWithContext(ctx, i).(CompartmentOutput)
 }
 
-func (i *Compartment) ToOutput(ctx context.Context) pulumix.Output[*Compartment] {
-	return pulumix.Output[*Compartment]{
-		OutputState: i.ToCompartmentOutputWithContext(ctx).OutputState,
-	}
-}
-
 // CompartmentArrayInput is an input type that accepts CompartmentArray and CompartmentArrayOutput values.
 // You can construct a concrete instance of `CompartmentArrayInput` via:
 //
@@ -260,12 +253,6 @@ func (i CompartmentArray) ToCompartmentArrayOutput() CompartmentArrayOutput {
 
 func (i CompartmentArray) ToCompartmentArrayOutputWithContext(ctx context.Context) CompartmentArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(CompartmentArrayOutput)
-}
-
-func (i CompartmentArray) ToOutput(ctx context.Context) pulumix.Output[[]*Compartment] {
-	return pulumix.Output[[]*Compartment]{
-		OutputState: i.ToCompartmentArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // CompartmentMapInput is an input type that accepts CompartmentMap and CompartmentMapOutput values.
@@ -293,12 +280,6 @@ func (i CompartmentMap) ToCompartmentMapOutputWithContext(ctx context.Context) C
 	return pulumi.ToOutputWithContext(ctx, i).(CompartmentMapOutput)
 }
 
-func (i CompartmentMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*Compartment] {
-	return pulumix.Output[map[string]*Compartment]{
-		OutputState: i.ToCompartmentMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type CompartmentOutput struct{ *pulumi.OutputState }
 
 func (CompartmentOutput) ElementType() reflect.Type {
@@ -313,15 +294,9 @@ func (o CompartmentOutput) ToCompartmentOutputWithContext(ctx context.Context) C
 	return o
 }
 
-func (o CompartmentOutput) ToOutput(ctx context.Context) pulumix.Output[*Compartment] {
-	return pulumix.Output[*Compartment]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) The OCID of the parent compartment containing the compartment.
-func (o CompartmentOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v *Compartment) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
+func (o CompartmentOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Compartment) pulumi.StringPtrOutput { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -348,13 +323,13 @@ func (o CompartmentOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The detailed status of INACTIVE lifecycleState.
-func (o CompartmentOutput) InactiveState() pulumi.StringOutput {
-	return o.ApplyT(func(v *Compartment) pulumi.StringOutput { return v.InactiveState }).(pulumi.StringOutput)
+func (o CompartmentOutput) InactiveState() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Compartment) pulumi.StringPtrOutput { return v.InactiveState }).(pulumi.StringPtrOutput)
 }
 
 // Indicates whether or not the compartment is accessible for the user making the request. Returns true when the user has INSPECT permissions directly on a resource in the compartment or indirectly (permissions can be on a resource in a subcompartment).
-func (o CompartmentOutput) IsAccessible() pulumi.BoolOutput {
-	return o.ApplyT(func(v *Compartment) pulumi.BoolOutput { return v.IsAccessible }).(pulumi.BoolOutput)
+func (o CompartmentOutput) IsAccessible() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *Compartment) pulumi.BoolPtrOutput { return v.IsAccessible }).(pulumi.BoolPtrOutput)
 }
 
 // (Updatable) The name you assign to the compartment during creation. The name must be unique across all compartments in the parent compartment. Avoid entering confidential information.
@@ -363,13 +338,13 @@ func (o CompartmentOutput) Name() pulumi.StringOutput {
 }
 
 // The compartment's current state.
-func (o CompartmentOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *Compartment) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o CompartmentOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Compartment) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Date and time the compartment was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
-func (o CompartmentOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *Compartment) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o CompartmentOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Compartment) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 type CompartmentArrayOutput struct{ *pulumi.OutputState }
@@ -384,12 +359,6 @@ func (o CompartmentArrayOutput) ToCompartmentArrayOutput() CompartmentArrayOutpu
 
 func (o CompartmentArrayOutput) ToCompartmentArrayOutputWithContext(ctx context.Context) CompartmentArrayOutput {
 	return o
-}
-
-func (o CompartmentArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*Compartment] {
-	return pulumix.Output[[]*Compartment]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o CompartmentArrayOutput) Index(i pulumi.IntInput) CompartmentOutput {
@@ -410,12 +379,6 @@ func (o CompartmentMapOutput) ToCompartmentMapOutput() CompartmentMapOutput {
 
 func (o CompartmentMapOutput) ToCompartmentMapOutputWithContext(ctx context.Context) CompartmentMapOutput {
 	return o
-}
-
-func (o CompartmentMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*Compartment] {
-	return pulumix.Output[map[string]*Compartment]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o CompartmentMapOutput) MapIndex(k pulumi.StringInput) CompartmentOutput {

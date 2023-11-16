@@ -24,7 +24,7 @@ namespace Pulumi.Oci.LoadBalancer.Outputs
         /// <summary>
         /// Whether the load balancer should drain this server. Servers marked "drain" receive no new incoming traffic.  Example: `false`
         /// </summary>
-        public readonly bool Drain;
+        public readonly bool? Drain;
         /// <summary>
         /// The IP address of the backend server.  Example: `10.0.0.3`
         /// </summary>
@@ -36,20 +36,20 @@ namespace Pulumi.Oci.LoadBalancer.Outputs
         /// <summary>
         /// A read-only field showing the IP address and port that uniquely identify this backend server in the backend set.  Example: `10.0.0.3:8080`
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// Whether the load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
         /// </summary>
-        public readonly bool Offline;
+        public readonly bool? Offline;
         /// <summary>
         /// The communication port for the backend server.  Example: `8080`
         /// </summary>
         public readonly int Port;
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// The load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives 3 times the number of new connections as a server weighted '1'. For more information on load balancing policies, see [How Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm).  Example: `3`
         /// </summary>
-        public readonly int Weight;
+        public readonly int? Weight;
 
         [OutputConstructor]
         private GetBackendsBackendResult(
@@ -57,21 +57,21 @@ namespace Pulumi.Oci.LoadBalancer.Outputs
 
             bool? backup,
 
-            bool drain,
+            bool? drain,
 
             string ipAddress,
 
             string loadBalancerId,
 
-            string name,
+            string? name,
 
-            bool offline,
+            bool? offline,
 
             int port,
 
-            string state,
+            string? state,
 
-            int weight)
+            int? weight)
         {
             BackendsetName = backendsetName;
             Backup = backup;

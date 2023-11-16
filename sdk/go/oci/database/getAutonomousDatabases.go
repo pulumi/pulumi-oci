@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // ##
@@ -125,7 +124,7 @@ type GetAutonomousDatabasesResult struct {
 	DisplayName *string                        `pulumi:"displayName"`
 	Filters     []GetAutonomousDatabasesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The infrastructure type this resource belongs to.
 	InfrastructureType *string `pulumi:"infrastructureType"`
 	// **Deprecated.** Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
@@ -202,12 +201,6 @@ func (o GetAutonomousDatabasesResultOutput) ToGetAutonomousDatabasesResultOutput
 	return o
 }
 
-func (o GetAutonomousDatabasesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetAutonomousDatabasesResult] {
-	return pulumix.Output[GetAutonomousDatabasesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 func (o GetAutonomousDatabasesResultOutput) AutonomousContainerDatabaseId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetAutonomousDatabasesResult) *string { return v.AutonomousContainerDatabaseId }).(pulumi.StringPtrOutput)
@@ -249,8 +242,8 @@ func (o GetAutonomousDatabasesResultOutput) Filters() GetAutonomousDatabasesFilt
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetAutonomousDatabasesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAutonomousDatabasesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetAutonomousDatabasesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAutonomousDatabasesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The infrastructure type this resource belongs to.

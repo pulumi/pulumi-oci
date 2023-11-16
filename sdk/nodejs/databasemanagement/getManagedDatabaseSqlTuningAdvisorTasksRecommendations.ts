@@ -70,7 +70,7 @@ export interface GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly managedDatabaseId: string;
     readonly sqlObjectId: string;
     /**
@@ -80,7 +80,7 @@ export interface GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsResult {
     /**
      * The list of sql_tuning_advisor_task_recommendation_collection.
      */
-    readonly sqlTuningAdvisorTaskRecommendationCollections: outputs.DatabaseManagement.GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsSqlTuningAdvisorTaskRecommendationCollection[];
+    readonly sqlTuningAdvisorTaskRecommendationCollections?: outputs.DatabaseManagement.GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsSqlTuningAdvisorTaskRecommendationCollection[];
 }
 /**
  * This data source provides the list of Managed Database Sql Tuning Advisor Tasks Recommendations in Oracle Cloud Infrastructure Database Management service.

@@ -35,7 +35,7 @@ public final class GetManagedDatabasesResult {
      * @return The list of managed_database_collection.
      * 
      */
-    private List<GetManagedDatabasesManagedDatabaseCollection> managedDatabaseCollections;
+    private @Nullable List<GetManagedDatabasesManagedDatabaseCollection> managedDatabaseCollections;
     /**
      * @return The management option used when enabling Database Management.
      * 
@@ -80,7 +80,7 @@ public final class GetManagedDatabasesResult {
      * 
      */
     public List<GetManagedDatabasesManagedDatabaseCollection> managedDatabaseCollections() {
-        return this.managedDatabaseCollections;
+        return this.managedDatabaseCollections == null ? List.of() : this.managedDatabaseCollections;
     }
     /**
      * @return The management option used when enabling Database Management.
@@ -111,7 +111,7 @@ public final class GetManagedDatabasesResult {
         private @Nullable String externalExadataInfrastructureId;
         private @Nullable List<GetManagedDatabasesFilter> filters;
         private @Nullable String id;
-        private List<GetManagedDatabasesManagedDatabaseCollection> managedDatabaseCollections;
+        private @Nullable List<GetManagedDatabasesManagedDatabaseCollection> managedDatabaseCollections;
         private @Nullable String managementOption;
         private @Nullable String name;
         public Builder() {}
@@ -156,8 +156,8 @@ public final class GetManagedDatabasesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder managedDatabaseCollections(List<GetManagedDatabasesManagedDatabaseCollection> managedDatabaseCollections) {
-            this.managedDatabaseCollections = Objects.requireNonNull(managedDatabaseCollections);
+        public Builder managedDatabaseCollections(@Nullable List<GetManagedDatabasesManagedDatabaseCollection> managedDatabaseCollections) {
+            this.managedDatabaseCollections = managedDatabaseCollections;
             return this;
         }
         public Builder managedDatabaseCollections(GetManagedDatabasesManagedDatabaseCollection... managedDatabaseCollections) {

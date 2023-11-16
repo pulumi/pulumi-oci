@@ -34,14 +34,14 @@ export class DefaultRouteTable extends pulumi.CustomResource {
         return obj['__pulumiType'] === DefaultRouteTable.__pulumiType;
     }
 
-    public readonly compartmentId!: pulumi.Output<string>;
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
-    public readonly displayName!: pulumi.Output<string>;
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly compartmentId!: pulumi.Output<string | undefined>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
+    public readonly displayName!: pulumi.Output<string | undefined>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     public readonly manageDefaultResourceId!: pulumi.Output<string>;
     public readonly routeRules!: pulumi.Output<outputs.Core.DefaultRouteTableRouteRule[] | undefined>;
-    public /*out*/ readonly state!: pulumi.Output<string>;
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
 
     /**
      * Create a DefaultRouteTable resource with the given unique name, arguments, and options.

@@ -205,7 +205,7 @@ namespace Pulumi.Oci.DataSafe
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         public readonly string? ScimQuery;
         /// <summary>
         /// The list of sql_firewall_allowed_sql_collection.
@@ -222,7 +222,7 @@ namespace Pulumi.Oci.DataSafe
 
             ImmutableArray<Outputs.GetSqlFirewallAllowedSqlsFilterResult> filters,
 
-            string id,
+            string? id,
 
             string? scimQuery,
 

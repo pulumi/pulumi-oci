@@ -80,10 +80,7 @@ class GetBackupDestinationResult:
 
     @property
     @pulumi.getter(name="associatedDatabases")
-    def associated_databases(self) -> Sequence['outputs.GetBackupDestinationAssociatedDatabaseResult']:
-        """
-        List of databases associated with the backup destination.
-        """
+    def associated_databases(self) -> Optional[Sequence['outputs.GetBackupDestinationAssociatedDatabaseResult']]:
         return pulumi.get(self, "associated_databases")
 
     @property
@@ -93,66 +90,42 @@ class GetBackupDestinationResult:
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="connectionString")
-    def connection_string(self) -> str:
-        """
-        For a RECOVERY_APPLIANCE backup destination, the connection string for connecting to the Recovery Appliance.
-        """
+    def connection_string(self) -> Optional[str]:
         return pulumi.get(self, "connection_string")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        The user-provided name of the backup destination.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        A descriptive text associated with the lifecycleState. Typically contains additional displayable text
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="localMountPointPath")
-    def local_mount_point_path(self) -> str:
-        """
-        The local directory path on each VM cluster node where the NFS server location is mounted. The local directory path and the NFS server location must each be the same across all of the VM cluster nodes. Ensure that the NFS mount is maintained continuously on all of the VM cluster nodes.
-        """
+    def local_mount_point_path(self) -> Optional[str]:
         warnings.warn("""The 'local_mount_point_path' field has been deprecated. Please use 'local_mount_point_path under mount_type_details' instead.""", DeprecationWarning)
         pulumi.log.warn("""local_mount_point_path is deprecated: The 'local_mount_point_path' field has been deprecated. Please use 'local_mount_point_path under mount_type_details' instead.""")
 
@@ -160,63 +133,42 @@ class GetBackupDestinationResult:
 
     @property
     @pulumi.getter(name="mountTypeDetails")
-    def mount_type_details(self) -> Sequence['outputs.GetBackupDestinationMountTypeDetailResult']:
+    def mount_type_details(self) -> Optional[Sequence['outputs.GetBackupDestinationMountTypeDetailResult']]:
         return pulumi.get(self, "mount_type_details")
 
     @property
     @pulumi.getter(name="nfsMountType")
-    def nfs_mount_type(self) -> str:
-        """
-        NFS Mount type for backup destination.
-        """
+    def nfs_mount_type(self) -> Optional[str]:
         return pulumi.get(self, "nfs_mount_type")
 
     @property
     @pulumi.getter(name="nfsServerExport")
-    def nfs_server_export(self) -> str:
-        """
-        Specifies the directory on which to mount the file system
-        """
+    def nfs_server_export(self) -> Optional[str]:
         return pulumi.get(self, "nfs_server_export")
 
     @property
     @pulumi.getter(name="nfsServers")
-    def nfs_servers(self) -> Sequence[str]:
-        """
-        Host names or IP addresses for NFS Auto mount.
-        """
+    def nfs_servers(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "nfs_servers")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current lifecycle state of the backup destination.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the backup destination was created.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter
-    def type(self) -> str:
-        """
-        Type of the backup destination.
-        """
+    def type(self) -> Optional[str]:
         return pulumi.get(self, "type")
 
     @property
     @pulumi.getter(name="vpcUsers")
-    def vpc_users(self) -> Sequence[str]:
-        """
-        For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) users that are used to access the Recovery Appliance.
-        """
+    def vpc_users(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "vpc_users")
 
 
@@ -249,21 +201,7 @@ class AwaitableGetBackupDestinationResult(GetBackupDestinationResult):
 def get_backup_destination(backup_destination_id: Optional[str] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetBackupDestinationResult:
     """
-    This data source provides details about a specific Backup Destination resource in Oracle Cloud Infrastructure Database service.
-
-    Gets information about the specified backup destination in an Exadata Cloud@Customer system.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_backup_destination = oci.Database.get_backup_destination(backup_destination_id=oci_database_backup_destination["test_backup_destination"]["id"])
-    ```
-
-
-    :param str backup_destination_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['backupDestinationId'] = backup_destination_id
@@ -295,20 +233,6 @@ def get_backup_destination(backup_destination_id: Optional[str] = None,
 def get_backup_destination_output(backup_destination_id: Optional[pulumi.Input[str]] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetBackupDestinationResult]:
     """
-    This data source provides details about a specific Backup Destination resource in Oracle Cloud Infrastructure Database service.
-
-    Gets information about the specified backup destination in an Exadata Cloud@Customer system.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_backup_destination = oci.Database.get_backup_destination(backup_destination_id=oci_database_backup_destination["test_backup_destination"]["id"])
-    ```
-
-
-    :param str backup_destination_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
+    Use this data source to access information about an existing resource.
     """
     ...

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Fusion Environment Admin User resource in Oracle Cloud Infrastructure Fusion Apps service.
@@ -60,18 +59,18 @@ type GetFusionEnvironmentAdminUserArgs struct {
 // A collection of values returned by getFusionEnvironmentAdminUser.
 type GetFusionEnvironmentAdminUserResult struct {
 	// Admin users email address
-	EmailAddress string `pulumi:"emailAddress"`
+	EmailAddress *string `pulumi:"emailAddress"`
 	// Admin users first name
-	FirstName           string `pulumi:"firstName"`
-	FusionEnvironmentId string `pulumi:"fusionEnvironmentId"`
-	Id                  string `pulumi:"id"`
+	FirstName           *string `pulumi:"firstName"`
+	FusionEnvironmentId string  `pulumi:"fusionEnvironmentId"`
+	Id                  *string `pulumi:"id"`
 	// A page of AdminUserSummary objects.
 	Items []GetFusionEnvironmentAdminUserItem `pulumi:"items"`
 	// Admin users last name
-	LastName string `pulumi:"lastName"`
-	Password string `pulumi:"password"`
+	LastName *string `pulumi:"lastName"`
+	Password *string `pulumi:"password"`
 	// Admin username
-	Username string `pulumi:"username"`
+	Username *string `pulumi:"username"`
 }
 
 func GetFusionEnvironmentAdminUserOutput(ctx *pulumi.Context, args GetFusionEnvironmentAdminUserOutputArgs, opts ...pulumi.InvokeOption) GetFusionEnvironmentAdminUserResultOutput {
@@ -112,28 +111,22 @@ func (o GetFusionEnvironmentAdminUserResultOutput) ToGetFusionEnvironmentAdminUs
 	return o
 }
 
-func (o GetFusionEnvironmentAdminUserResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetFusionEnvironmentAdminUserResult] {
-	return pulumix.Output[GetFusionEnvironmentAdminUserResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Admin users email address
-func (o GetFusionEnvironmentAdminUserResultOutput) EmailAddress() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentAdminUserResult) string { return v.EmailAddress }).(pulumi.StringOutput)
+func (o GetFusionEnvironmentAdminUserResultOutput) EmailAddress() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentAdminUserResult) *string { return v.EmailAddress }).(pulumi.StringPtrOutput)
 }
 
 // Admin users first name
-func (o GetFusionEnvironmentAdminUserResultOutput) FirstName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentAdminUserResult) string { return v.FirstName }).(pulumi.StringOutput)
+func (o GetFusionEnvironmentAdminUserResultOutput) FirstName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentAdminUserResult) *string { return v.FirstName }).(pulumi.StringPtrOutput)
 }
 
 func (o GetFusionEnvironmentAdminUserResultOutput) FusionEnvironmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFusionEnvironmentAdminUserResult) string { return v.FusionEnvironmentId }).(pulumi.StringOutput)
 }
 
-func (o GetFusionEnvironmentAdminUserResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentAdminUserResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetFusionEnvironmentAdminUserResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentAdminUserResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // A page of AdminUserSummary objects.
@@ -142,17 +135,17 @@ func (o GetFusionEnvironmentAdminUserResultOutput) Items() GetFusionEnvironmentA
 }
 
 // Admin users last name
-func (o GetFusionEnvironmentAdminUserResultOutput) LastName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentAdminUserResult) string { return v.LastName }).(pulumi.StringOutput)
+func (o GetFusionEnvironmentAdminUserResultOutput) LastName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentAdminUserResult) *string { return v.LastName }).(pulumi.StringPtrOutput)
 }
 
-func (o GetFusionEnvironmentAdminUserResultOutput) Password() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentAdminUserResult) string { return v.Password }).(pulumi.StringOutput)
+func (o GetFusionEnvironmentAdminUserResultOutput) Password() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentAdminUserResult) *string { return v.Password }).(pulumi.StringPtrOutput)
 }
 
 // Admin username
-func (o GetFusionEnvironmentAdminUserResultOutput) Username() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentAdminUserResult) string { return v.Username }).(pulumi.StringOutput)
+func (o GetFusionEnvironmentAdminUserResultOutput) Username() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentAdminUserResult) *string { return v.Username }).(pulumi.StringPtrOutput)
 }
 
 func init() {

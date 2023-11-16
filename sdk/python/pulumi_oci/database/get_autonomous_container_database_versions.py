@@ -42,10 +42,7 @@ class GetAutonomousContainerDatabaseVersionsResult:
 
     @property
     @pulumi.getter(name="autonomousContainerDatabaseVersions")
-    def autonomous_container_database_versions(self) -> Sequence['outputs.GetAutonomousContainerDatabaseVersionsAutonomousContainerDatabaseVersionResult']:
-        """
-        The list of autonomous_container_database_versions.
-        """
+    def autonomous_container_database_versions(self) -> Optional[Sequence['outputs.GetAutonomousContainerDatabaseVersionsAutonomousContainerDatabaseVersionResult']]:
         return pulumi.get(self, "autonomous_container_database_versions")
 
     @property
@@ -60,7 +57,7 @@ class GetAutonomousContainerDatabaseVersionsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -90,23 +87,7 @@ def get_autonomous_container_database_versions(compartment_id: Optional[str] = N
                                                service_component: Optional[str] = None,
                                                opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAutonomousContainerDatabaseVersionsResult:
     """
-    This data source provides the list of Autonomous Container Database Versions in Oracle Cloud Infrastructure Database service.
-
-    Gets a list of supported Autonomous Container Database versions.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_autonomous_container_database_versions = oci.Database.get_autonomous_container_database_versions(compartment_id=var["compartment_id"],
-        service_component=var["autonomous_container_database_version_service_component"])
-    ```
-
-
-    :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param str service_component: The service component to use, either ADBD or EXACC.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -129,22 +110,6 @@ def get_autonomous_container_database_versions_output(compartment_id: Optional[p
                                                       service_component: Optional[pulumi.Input[str]] = None,
                                                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAutonomousContainerDatabaseVersionsResult]:
     """
-    This data source provides the list of Autonomous Container Database Versions in Oracle Cloud Infrastructure Database service.
-
-    Gets a list of supported Autonomous Container Database versions.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_autonomous_container_database_versions = oci.Database.get_autonomous_container_database_versions(compartment_id=var["compartment_id"],
-        service_component=var["autonomous_container_database_version_service_component"])
-    ```
-
-
-    :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param str service_component: The service component to use, either ADBD or EXACC.
+    Use this data source to access information about an existing resource.
     """
     ...

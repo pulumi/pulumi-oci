@@ -9,26 +9,25 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 var _ = internal.GetEnvOrDefault
 
 type GetCommitmentsCommitment struct {
 	// Commitment available amount
-	AvailableAmount string `pulumi:"availableAmount"`
+	AvailableAmount *string `pulumi:"availableAmount"`
 	// Funded Allocation line value example: 12000.00
-	FundedAllocationValue string `pulumi:"fundedAllocationValue"`
+	FundedAllocationValue *string `pulumi:"fundedAllocationValue"`
 	// SPM internal Commitment ID
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Commitment quantity
-	Quantity string `pulumi:"quantity"`
+	Quantity *string `pulumi:"quantity"`
 	// Commitment end date
-	TimeEnd string `pulumi:"timeEnd"`
+	TimeEnd *string `pulumi:"timeEnd"`
 	// Commitment start date
-	TimeStart string `pulumi:"timeStart"`
+	TimeStart *string `pulumi:"timeStart"`
 	// Commitment used amount
-	UsedAmount string `pulumi:"usedAmount"`
+	UsedAmount *string `pulumi:"usedAmount"`
 }
 
 // GetCommitmentsCommitmentInput is an input type that accepts GetCommitmentsCommitmentArgs and GetCommitmentsCommitmentOutput values.
@@ -44,19 +43,19 @@ type GetCommitmentsCommitmentInput interface {
 
 type GetCommitmentsCommitmentArgs struct {
 	// Commitment available amount
-	AvailableAmount pulumi.StringInput `pulumi:"availableAmount"`
+	AvailableAmount pulumi.StringPtrInput `pulumi:"availableAmount"`
 	// Funded Allocation line value example: 12000.00
-	FundedAllocationValue pulumi.StringInput `pulumi:"fundedAllocationValue"`
+	FundedAllocationValue pulumi.StringPtrInput `pulumi:"fundedAllocationValue"`
 	// SPM internal Commitment ID
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// Commitment quantity
-	Quantity pulumi.StringInput `pulumi:"quantity"`
+	Quantity pulumi.StringPtrInput `pulumi:"quantity"`
 	// Commitment end date
-	TimeEnd pulumi.StringInput `pulumi:"timeEnd"`
+	TimeEnd pulumi.StringPtrInput `pulumi:"timeEnd"`
 	// Commitment start date
-	TimeStart pulumi.StringInput `pulumi:"timeStart"`
+	TimeStart pulumi.StringPtrInput `pulumi:"timeStart"`
 	// Commitment used amount
-	UsedAmount pulumi.StringInput `pulumi:"usedAmount"`
+	UsedAmount pulumi.StringPtrInput `pulumi:"usedAmount"`
 }
 
 func (GetCommitmentsCommitmentArgs) ElementType() reflect.Type {
@@ -69,12 +68,6 @@ func (i GetCommitmentsCommitmentArgs) ToGetCommitmentsCommitmentOutput() GetComm
 
 func (i GetCommitmentsCommitmentArgs) ToGetCommitmentsCommitmentOutputWithContext(ctx context.Context) GetCommitmentsCommitmentOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetCommitmentsCommitmentOutput)
-}
-
-func (i GetCommitmentsCommitmentArgs) ToOutput(ctx context.Context) pulumix.Output[GetCommitmentsCommitment] {
-	return pulumix.Output[GetCommitmentsCommitment]{
-		OutputState: i.ToGetCommitmentsCommitmentOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetCommitmentsCommitmentArrayInput is an input type that accepts GetCommitmentsCommitmentArray and GetCommitmentsCommitmentArrayOutput values.
@@ -102,12 +95,6 @@ func (i GetCommitmentsCommitmentArray) ToGetCommitmentsCommitmentArrayOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetCommitmentsCommitmentArrayOutput)
 }
 
-func (i GetCommitmentsCommitmentArray) ToOutput(ctx context.Context) pulumix.Output[[]GetCommitmentsCommitment] {
-	return pulumix.Output[[]GetCommitmentsCommitment]{
-		OutputState: i.ToGetCommitmentsCommitmentArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetCommitmentsCommitmentOutput struct{ *pulumi.OutputState }
 
 func (GetCommitmentsCommitmentOutput) ElementType() reflect.Type {
@@ -122,45 +109,39 @@ func (o GetCommitmentsCommitmentOutput) ToGetCommitmentsCommitmentOutputWithCont
 	return o
 }
 
-func (o GetCommitmentsCommitmentOutput) ToOutput(ctx context.Context) pulumix.Output[GetCommitmentsCommitment] {
-	return pulumix.Output[GetCommitmentsCommitment]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Commitment available amount
-func (o GetCommitmentsCommitmentOutput) AvailableAmount() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCommitmentsCommitment) string { return v.AvailableAmount }).(pulumi.StringOutput)
+func (o GetCommitmentsCommitmentOutput) AvailableAmount() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCommitmentsCommitment) *string { return v.AvailableAmount }).(pulumi.StringPtrOutput)
 }
 
 // Funded Allocation line value example: 12000.00
-func (o GetCommitmentsCommitmentOutput) FundedAllocationValue() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCommitmentsCommitment) string { return v.FundedAllocationValue }).(pulumi.StringOutput)
+func (o GetCommitmentsCommitmentOutput) FundedAllocationValue() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCommitmentsCommitment) *string { return v.FundedAllocationValue }).(pulumi.StringPtrOutput)
 }
 
 // SPM internal Commitment ID
-func (o GetCommitmentsCommitmentOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCommitmentsCommitment) string { return v.Id }).(pulumi.StringOutput)
+func (o GetCommitmentsCommitmentOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCommitmentsCommitment) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Commitment quantity
-func (o GetCommitmentsCommitmentOutput) Quantity() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCommitmentsCommitment) string { return v.Quantity }).(pulumi.StringOutput)
+func (o GetCommitmentsCommitmentOutput) Quantity() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCommitmentsCommitment) *string { return v.Quantity }).(pulumi.StringPtrOutput)
 }
 
 // Commitment end date
-func (o GetCommitmentsCommitmentOutput) TimeEnd() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCommitmentsCommitment) string { return v.TimeEnd }).(pulumi.StringOutput)
+func (o GetCommitmentsCommitmentOutput) TimeEnd() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCommitmentsCommitment) *string { return v.TimeEnd }).(pulumi.StringPtrOutput)
 }
 
 // Commitment start date
-func (o GetCommitmentsCommitmentOutput) TimeStart() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCommitmentsCommitment) string { return v.TimeStart }).(pulumi.StringOutput)
+func (o GetCommitmentsCommitmentOutput) TimeStart() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCommitmentsCommitment) *string { return v.TimeStart }).(pulumi.StringPtrOutput)
 }
 
 // Commitment used amount
-func (o GetCommitmentsCommitmentOutput) UsedAmount() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCommitmentsCommitment) string { return v.UsedAmount }).(pulumi.StringOutput)
+func (o GetCommitmentsCommitmentOutput) UsedAmount() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCommitmentsCommitment) *string { return v.UsedAmount }).(pulumi.StringPtrOutput)
 }
 
 type GetCommitmentsCommitmentArrayOutput struct{ *pulumi.OutputState }
@@ -175,12 +156,6 @@ func (o GetCommitmentsCommitmentArrayOutput) ToGetCommitmentsCommitmentArrayOutp
 
 func (o GetCommitmentsCommitmentArrayOutput) ToGetCommitmentsCommitmentArrayOutputWithContext(ctx context.Context) GetCommitmentsCommitmentArrayOutput {
 	return o
-}
-
-func (o GetCommitmentsCommitmentArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetCommitmentsCommitment] {
-	return pulumix.Output[[]GetCommitmentsCommitment]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetCommitmentsCommitmentArrayOutput) Index(i pulumi.IntInput) GetCommitmentsCommitmentOutput {
@@ -224,12 +199,6 @@ func (i GetCommitmentsFilterArgs) ToGetCommitmentsFilterOutputWithContext(ctx co
 	return pulumi.ToOutputWithContext(ctx, i).(GetCommitmentsFilterOutput)
 }
 
-func (i GetCommitmentsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetCommitmentsFilter] {
-	return pulumix.Output[GetCommitmentsFilter]{
-		OutputState: i.ToGetCommitmentsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetCommitmentsFilterArrayInput is an input type that accepts GetCommitmentsFilterArray and GetCommitmentsFilterArrayOutput values.
 // You can construct a concrete instance of `GetCommitmentsFilterArrayInput` via:
 //
@@ -255,12 +224,6 @@ func (i GetCommitmentsFilterArray) ToGetCommitmentsFilterArrayOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(GetCommitmentsFilterArrayOutput)
 }
 
-func (i GetCommitmentsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetCommitmentsFilter] {
-	return pulumix.Output[[]GetCommitmentsFilter]{
-		OutputState: i.ToGetCommitmentsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetCommitmentsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetCommitmentsFilterOutput) ElementType() reflect.Type {
@@ -273,12 +236,6 @@ func (o GetCommitmentsFilterOutput) ToGetCommitmentsFilterOutput() GetCommitment
 
 func (o GetCommitmentsFilterOutput) ToGetCommitmentsFilterOutputWithContext(ctx context.Context) GetCommitmentsFilterOutput {
 	return o
-}
-
-func (o GetCommitmentsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetCommitmentsFilter] {
-	return pulumix.Output[GetCommitmentsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetCommitmentsFilterOutput) Name() pulumi.StringOutput {
@@ -305,12 +262,6 @@ func (o GetCommitmentsFilterArrayOutput) ToGetCommitmentsFilterArrayOutput() Get
 
 func (o GetCommitmentsFilterArrayOutput) ToGetCommitmentsFilterArrayOutputWithContext(ctx context.Context) GetCommitmentsFilterArrayOutput {
 	return o
-}
-
-func (o GetCommitmentsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetCommitmentsFilter] {
-	return pulumix.Output[[]GetCommitmentsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetCommitmentsFilterArrayOutput) Index(i pulumi.IntInput) GetCommitmentsFilterOutput {
@@ -356,12 +307,6 @@ func (i GetRatecardsFilterArgs) ToGetRatecardsFilterOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(GetRatecardsFilterOutput)
 }
 
-func (i GetRatecardsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetRatecardsFilter] {
-	return pulumix.Output[GetRatecardsFilter]{
-		OutputState: i.ToGetRatecardsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetRatecardsFilterArrayInput is an input type that accepts GetRatecardsFilterArray and GetRatecardsFilterArrayOutput values.
 // You can construct a concrete instance of `GetRatecardsFilterArrayInput` via:
 //
@@ -387,12 +332,6 @@ func (i GetRatecardsFilterArray) ToGetRatecardsFilterArrayOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(GetRatecardsFilterArrayOutput)
 }
 
-func (i GetRatecardsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetRatecardsFilter] {
-	return pulumix.Output[[]GetRatecardsFilter]{
-		OutputState: i.ToGetRatecardsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetRatecardsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetRatecardsFilterOutput) ElementType() reflect.Type {
@@ -405,12 +344,6 @@ func (o GetRatecardsFilterOutput) ToGetRatecardsFilterOutput() GetRatecardsFilte
 
 func (o GetRatecardsFilterOutput) ToGetRatecardsFilterOutputWithContext(ctx context.Context) GetRatecardsFilterOutput {
 	return o
-}
-
-func (o GetRatecardsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetRatecardsFilter] {
-	return pulumix.Output[GetRatecardsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Product name
@@ -440,12 +373,6 @@ func (o GetRatecardsFilterArrayOutput) ToGetRatecardsFilterArrayOutputWithContex
 	return o
 }
 
-func (o GetRatecardsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetRatecardsFilter] {
-	return pulumix.Output[[]GetRatecardsFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetRatecardsFilterArrayOutput) Index(i pulumi.IntInput) GetRatecardsFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRatecardsFilter {
 		return vs[0].([]GetRatecardsFilter)[vs[1].(int)]
@@ -456,21 +383,21 @@ type GetRatecardsRateCard struct {
 	// Currency details
 	Currencies []GetRatecardsRateCardCurrency `pulumi:"currencies"`
 	// Rate card discretionary discount percentage
-	DiscretionaryDiscountPercentage string `pulumi:"discretionaryDiscountPercentage"`
+	DiscretionaryDiscountPercentage *string `pulumi:"discretionaryDiscountPercentage"`
 	// Rate card price tier flag
-	IsTier bool `pulumi:"isTier"`
+	IsTier *bool `pulumi:"isTier"`
 	// Rate card tier net unit price
-	NetUnitPrice string `pulumi:"netUnitPrice"`
+	NetUnitPrice *string `pulumi:"netUnitPrice"`
 	// Rate card tier overage price
-	OveragePrice string `pulumi:"overagePrice"`
+	OveragePrice *string `pulumi:"overagePrice"`
 	// Product description
 	Products []GetRatecardsRateCardProduct `pulumi:"products"`
 	// List of tiered rate card prices
 	RateCardTiers []GetRatecardsRateCardRateCardTier `pulumi:"rateCardTiers"`
 	// Rate card end date
-	TimeEnd string `pulumi:"timeEnd"`
+	TimeEnd *string `pulumi:"timeEnd"`
 	// Rate card start date
-	TimeStart string `pulumi:"timeStart"`
+	TimeStart *string `pulumi:"timeStart"`
 }
 
 // GetRatecardsRateCardInput is an input type that accepts GetRatecardsRateCardArgs and GetRatecardsRateCardOutput values.
@@ -488,21 +415,21 @@ type GetRatecardsRateCardArgs struct {
 	// Currency details
 	Currencies GetRatecardsRateCardCurrencyArrayInput `pulumi:"currencies"`
 	// Rate card discretionary discount percentage
-	DiscretionaryDiscountPercentage pulumi.StringInput `pulumi:"discretionaryDiscountPercentage"`
+	DiscretionaryDiscountPercentage pulumi.StringPtrInput `pulumi:"discretionaryDiscountPercentage"`
 	// Rate card price tier flag
-	IsTier pulumi.BoolInput `pulumi:"isTier"`
+	IsTier pulumi.BoolPtrInput `pulumi:"isTier"`
 	// Rate card tier net unit price
-	NetUnitPrice pulumi.StringInput `pulumi:"netUnitPrice"`
+	NetUnitPrice pulumi.StringPtrInput `pulumi:"netUnitPrice"`
 	// Rate card tier overage price
-	OveragePrice pulumi.StringInput `pulumi:"overagePrice"`
+	OveragePrice pulumi.StringPtrInput `pulumi:"overagePrice"`
 	// Product description
 	Products GetRatecardsRateCardProductArrayInput `pulumi:"products"`
 	// List of tiered rate card prices
 	RateCardTiers GetRatecardsRateCardRateCardTierArrayInput `pulumi:"rateCardTiers"`
 	// Rate card end date
-	TimeEnd pulumi.StringInput `pulumi:"timeEnd"`
+	TimeEnd pulumi.StringPtrInput `pulumi:"timeEnd"`
 	// Rate card start date
-	TimeStart pulumi.StringInput `pulumi:"timeStart"`
+	TimeStart pulumi.StringPtrInput `pulumi:"timeStart"`
 }
 
 func (GetRatecardsRateCardArgs) ElementType() reflect.Type {
@@ -515,12 +442,6 @@ func (i GetRatecardsRateCardArgs) ToGetRatecardsRateCardOutput() GetRatecardsRat
 
 func (i GetRatecardsRateCardArgs) ToGetRatecardsRateCardOutputWithContext(ctx context.Context) GetRatecardsRateCardOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetRatecardsRateCardOutput)
-}
-
-func (i GetRatecardsRateCardArgs) ToOutput(ctx context.Context) pulumix.Output[GetRatecardsRateCard] {
-	return pulumix.Output[GetRatecardsRateCard]{
-		OutputState: i.ToGetRatecardsRateCardOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetRatecardsRateCardArrayInput is an input type that accepts GetRatecardsRateCardArray and GetRatecardsRateCardArrayOutput values.
@@ -548,12 +469,6 @@ func (i GetRatecardsRateCardArray) ToGetRatecardsRateCardArrayOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(GetRatecardsRateCardArrayOutput)
 }
 
-func (i GetRatecardsRateCardArray) ToOutput(ctx context.Context) pulumix.Output[[]GetRatecardsRateCard] {
-	return pulumix.Output[[]GetRatecardsRateCard]{
-		OutputState: i.ToGetRatecardsRateCardArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetRatecardsRateCardOutput struct{ *pulumi.OutputState }
 
 func (GetRatecardsRateCardOutput) ElementType() reflect.Type {
@@ -568,35 +483,29 @@ func (o GetRatecardsRateCardOutput) ToGetRatecardsRateCardOutputWithContext(ctx 
 	return o
 }
 
-func (o GetRatecardsRateCardOutput) ToOutput(ctx context.Context) pulumix.Output[GetRatecardsRateCard] {
-	return pulumix.Output[GetRatecardsRateCard]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Currency details
 func (o GetRatecardsRateCardOutput) Currencies() GetRatecardsRateCardCurrencyArrayOutput {
 	return o.ApplyT(func(v GetRatecardsRateCard) []GetRatecardsRateCardCurrency { return v.Currencies }).(GetRatecardsRateCardCurrencyArrayOutput)
 }
 
 // Rate card discretionary discount percentage
-func (o GetRatecardsRateCardOutput) DiscretionaryDiscountPercentage() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRatecardsRateCard) string { return v.DiscretionaryDiscountPercentage }).(pulumi.StringOutput)
+func (o GetRatecardsRateCardOutput) DiscretionaryDiscountPercentage() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRatecardsRateCard) *string { return v.DiscretionaryDiscountPercentage }).(pulumi.StringPtrOutput)
 }
 
 // Rate card price tier flag
-func (o GetRatecardsRateCardOutput) IsTier() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetRatecardsRateCard) bool { return v.IsTier }).(pulumi.BoolOutput)
+func (o GetRatecardsRateCardOutput) IsTier() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetRatecardsRateCard) *bool { return v.IsTier }).(pulumi.BoolPtrOutput)
 }
 
 // Rate card tier net unit price
-func (o GetRatecardsRateCardOutput) NetUnitPrice() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRatecardsRateCard) string { return v.NetUnitPrice }).(pulumi.StringOutput)
+func (o GetRatecardsRateCardOutput) NetUnitPrice() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRatecardsRateCard) *string { return v.NetUnitPrice }).(pulumi.StringPtrOutput)
 }
 
 // Rate card tier overage price
-func (o GetRatecardsRateCardOutput) OveragePrice() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRatecardsRateCard) string { return v.OveragePrice }).(pulumi.StringOutput)
+func (o GetRatecardsRateCardOutput) OveragePrice() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRatecardsRateCard) *string { return v.OveragePrice }).(pulumi.StringPtrOutput)
 }
 
 // Product description
@@ -610,13 +519,13 @@ func (o GetRatecardsRateCardOutput) RateCardTiers() GetRatecardsRateCardRateCard
 }
 
 // Rate card end date
-func (o GetRatecardsRateCardOutput) TimeEnd() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRatecardsRateCard) string { return v.TimeEnd }).(pulumi.StringOutput)
+func (o GetRatecardsRateCardOutput) TimeEnd() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRatecardsRateCard) *string { return v.TimeEnd }).(pulumi.StringPtrOutput)
 }
 
 // Rate card start date
-func (o GetRatecardsRateCardOutput) TimeStart() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRatecardsRateCard) string { return v.TimeStart }).(pulumi.StringOutput)
+func (o GetRatecardsRateCardOutput) TimeStart() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRatecardsRateCard) *string { return v.TimeStart }).(pulumi.StringPtrOutput)
 }
 
 type GetRatecardsRateCardArrayOutput struct{ *pulumi.OutputState }
@@ -633,12 +542,6 @@ func (o GetRatecardsRateCardArrayOutput) ToGetRatecardsRateCardArrayOutputWithCo
 	return o
 }
 
-func (o GetRatecardsRateCardArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetRatecardsRateCard] {
-	return pulumix.Output[[]GetRatecardsRateCard]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetRatecardsRateCardArrayOutput) Index(i pulumi.IntInput) GetRatecardsRateCardOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRatecardsRateCard {
 		return vs[0].([]GetRatecardsRateCard)[vs[1].(int)]
@@ -647,11 +550,11 @@ func (o GetRatecardsRateCardArrayOutput) Index(i pulumi.IntInput) GetRatecardsRa
 
 type GetRatecardsRateCardCurrency struct {
 	// Currency Code
-	IsoCode string `pulumi:"isoCode"`
+	IsoCode *string `pulumi:"isoCode"`
 	// Product name
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// Standard Precision of the Currency
-	StdPrecision string `pulumi:"stdPrecision"`
+	StdPrecision *string `pulumi:"stdPrecision"`
 }
 
 // GetRatecardsRateCardCurrencyInput is an input type that accepts GetRatecardsRateCardCurrencyArgs and GetRatecardsRateCardCurrencyOutput values.
@@ -667,11 +570,11 @@ type GetRatecardsRateCardCurrencyInput interface {
 
 type GetRatecardsRateCardCurrencyArgs struct {
 	// Currency Code
-	IsoCode pulumi.StringInput `pulumi:"isoCode"`
+	IsoCode pulumi.StringPtrInput `pulumi:"isoCode"`
 	// Product name
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// Standard Precision of the Currency
-	StdPrecision pulumi.StringInput `pulumi:"stdPrecision"`
+	StdPrecision pulumi.StringPtrInput `pulumi:"stdPrecision"`
 }
 
 func (GetRatecardsRateCardCurrencyArgs) ElementType() reflect.Type {
@@ -684,12 +587,6 @@ func (i GetRatecardsRateCardCurrencyArgs) ToGetRatecardsRateCardCurrencyOutput()
 
 func (i GetRatecardsRateCardCurrencyArgs) ToGetRatecardsRateCardCurrencyOutputWithContext(ctx context.Context) GetRatecardsRateCardCurrencyOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetRatecardsRateCardCurrencyOutput)
-}
-
-func (i GetRatecardsRateCardCurrencyArgs) ToOutput(ctx context.Context) pulumix.Output[GetRatecardsRateCardCurrency] {
-	return pulumix.Output[GetRatecardsRateCardCurrency]{
-		OutputState: i.ToGetRatecardsRateCardCurrencyOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetRatecardsRateCardCurrencyArrayInput is an input type that accepts GetRatecardsRateCardCurrencyArray and GetRatecardsRateCardCurrencyArrayOutput values.
@@ -717,12 +614,6 @@ func (i GetRatecardsRateCardCurrencyArray) ToGetRatecardsRateCardCurrencyArrayOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetRatecardsRateCardCurrencyArrayOutput)
 }
 
-func (i GetRatecardsRateCardCurrencyArray) ToOutput(ctx context.Context) pulumix.Output[[]GetRatecardsRateCardCurrency] {
-	return pulumix.Output[[]GetRatecardsRateCardCurrency]{
-		OutputState: i.ToGetRatecardsRateCardCurrencyArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetRatecardsRateCardCurrencyOutput struct{ *pulumi.OutputState }
 
 func (GetRatecardsRateCardCurrencyOutput) ElementType() reflect.Type {
@@ -737,25 +628,19 @@ func (o GetRatecardsRateCardCurrencyOutput) ToGetRatecardsRateCardCurrencyOutput
 	return o
 }
 
-func (o GetRatecardsRateCardCurrencyOutput) ToOutput(ctx context.Context) pulumix.Output[GetRatecardsRateCardCurrency] {
-	return pulumix.Output[GetRatecardsRateCardCurrency]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Currency Code
-func (o GetRatecardsRateCardCurrencyOutput) IsoCode() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRatecardsRateCardCurrency) string { return v.IsoCode }).(pulumi.StringOutput)
+func (o GetRatecardsRateCardCurrencyOutput) IsoCode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRatecardsRateCardCurrency) *string { return v.IsoCode }).(pulumi.StringPtrOutput)
 }
 
 // Product name
-func (o GetRatecardsRateCardCurrencyOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRatecardsRateCardCurrency) string { return v.Name }).(pulumi.StringOutput)
+func (o GetRatecardsRateCardCurrencyOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRatecardsRateCardCurrency) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // Standard Precision of the Currency
-func (o GetRatecardsRateCardCurrencyOutput) StdPrecision() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRatecardsRateCardCurrency) string { return v.StdPrecision }).(pulumi.StringOutput)
+func (o GetRatecardsRateCardCurrencyOutput) StdPrecision() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRatecardsRateCardCurrency) *string { return v.StdPrecision }).(pulumi.StringPtrOutput)
 }
 
 type GetRatecardsRateCardCurrencyArrayOutput struct{ *pulumi.OutputState }
@@ -772,12 +657,6 @@ func (o GetRatecardsRateCardCurrencyArrayOutput) ToGetRatecardsRateCardCurrencyA
 	return o
 }
 
-func (o GetRatecardsRateCardCurrencyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetRatecardsRateCardCurrency] {
-	return pulumix.Output[[]GetRatecardsRateCardCurrency]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetRatecardsRateCardCurrencyArrayOutput) Index(i pulumi.IntInput) GetRatecardsRateCardCurrencyOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRatecardsRateCardCurrency {
 		return vs[0].([]GetRatecardsRateCardCurrency)[vs[1].(int)]
@@ -786,17 +665,17 @@ func (o GetRatecardsRateCardCurrencyArrayOutput) Index(i pulumi.IntInput) GetRat
 
 type GetRatecardsRateCardProduct struct {
 	// Metered service billing category
-	BillingCategory string `pulumi:"billingCategory"`
+	BillingCategory *string `pulumi:"billingCategory"`
 	// Product name
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// This param is used to get the rate card(s) filterd by the partNumber
-	PartNumber string `pulumi:"partNumber"`
+	PartNumber *string `pulumi:"partNumber"`
 	// Product category
-	ProductCategory string `pulumi:"productCategory"`
+	ProductCategory *string `pulumi:"productCategory"`
 	// Rate card part type of Product
-	UcmRateCardPartType string `pulumi:"ucmRateCardPartType"`
+	UcmRateCardPartType *string `pulumi:"ucmRateCardPartType"`
 	// Unit of measure
-	UnitOfMeasure string `pulumi:"unitOfMeasure"`
+	UnitOfMeasure *string `pulumi:"unitOfMeasure"`
 }
 
 // GetRatecardsRateCardProductInput is an input type that accepts GetRatecardsRateCardProductArgs and GetRatecardsRateCardProductOutput values.
@@ -812,17 +691,17 @@ type GetRatecardsRateCardProductInput interface {
 
 type GetRatecardsRateCardProductArgs struct {
 	// Metered service billing category
-	BillingCategory pulumi.StringInput `pulumi:"billingCategory"`
+	BillingCategory pulumi.StringPtrInput `pulumi:"billingCategory"`
 	// Product name
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// This param is used to get the rate card(s) filterd by the partNumber
-	PartNumber pulumi.StringInput `pulumi:"partNumber"`
+	PartNumber pulumi.StringPtrInput `pulumi:"partNumber"`
 	// Product category
-	ProductCategory pulumi.StringInput `pulumi:"productCategory"`
+	ProductCategory pulumi.StringPtrInput `pulumi:"productCategory"`
 	// Rate card part type of Product
-	UcmRateCardPartType pulumi.StringInput `pulumi:"ucmRateCardPartType"`
+	UcmRateCardPartType pulumi.StringPtrInput `pulumi:"ucmRateCardPartType"`
 	// Unit of measure
-	UnitOfMeasure pulumi.StringInput `pulumi:"unitOfMeasure"`
+	UnitOfMeasure pulumi.StringPtrInput `pulumi:"unitOfMeasure"`
 }
 
 func (GetRatecardsRateCardProductArgs) ElementType() reflect.Type {
@@ -835,12 +714,6 @@ func (i GetRatecardsRateCardProductArgs) ToGetRatecardsRateCardProductOutput() G
 
 func (i GetRatecardsRateCardProductArgs) ToGetRatecardsRateCardProductOutputWithContext(ctx context.Context) GetRatecardsRateCardProductOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetRatecardsRateCardProductOutput)
-}
-
-func (i GetRatecardsRateCardProductArgs) ToOutput(ctx context.Context) pulumix.Output[GetRatecardsRateCardProduct] {
-	return pulumix.Output[GetRatecardsRateCardProduct]{
-		OutputState: i.ToGetRatecardsRateCardProductOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetRatecardsRateCardProductArrayInput is an input type that accepts GetRatecardsRateCardProductArray and GetRatecardsRateCardProductArrayOutput values.
@@ -868,12 +741,6 @@ func (i GetRatecardsRateCardProductArray) ToGetRatecardsRateCardProductArrayOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetRatecardsRateCardProductArrayOutput)
 }
 
-func (i GetRatecardsRateCardProductArray) ToOutput(ctx context.Context) pulumix.Output[[]GetRatecardsRateCardProduct] {
-	return pulumix.Output[[]GetRatecardsRateCardProduct]{
-		OutputState: i.ToGetRatecardsRateCardProductArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetRatecardsRateCardProductOutput struct{ *pulumi.OutputState }
 
 func (GetRatecardsRateCardProductOutput) ElementType() reflect.Type {
@@ -888,40 +755,34 @@ func (o GetRatecardsRateCardProductOutput) ToGetRatecardsRateCardProductOutputWi
 	return o
 }
 
-func (o GetRatecardsRateCardProductOutput) ToOutput(ctx context.Context) pulumix.Output[GetRatecardsRateCardProduct] {
-	return pulumix.Output[GetRatecardsRateCardProduct]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Metered service billing category
-func (o GetRatecardsRateCardProductOutput) BillingCategory() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRatecardsRateCardProduct) string { return v.BillingCategory }).(pulumi.StringOutput)
+func (o GetRatecardsRateCardProductOutput) BillingCategory() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRatecardsRateCardProduct) *string { return v.BillingCategory }).(pulumi.StringPtrOutput)
 }
 
 // Product name
-func (o GetRatecardsRateCardProductOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRatecardsRateCardProduct) string { return v.Name }).(pulumi.StringOutput)
+func (o GetRatecardsRateCardProductOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRatecardsRateCardProduct) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // This param is used to get the rate card(s) filterd by the partNumber
-func (o GetRatecardsRateCardProductOutput) PartNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRatecardsRateCardProduct) string { return v.PartNumber }).(pulumi.StringOutput)
+func (o GetRatecardsRateCardProductOutput) PartNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRatecardsRateCardProduct) *string { return v.PartNumber }).(pulumi.StringPtrOutput)
 }
 
 // Product category
-func (o GetRatecardsRateCardProductOutput) ProductCategory() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRatecardsRateCardProduct) string { return v.ProductCategory }).(pulumi.StringOutput)
+func (o GetRatecardsRateCardProductOutput) ProductCategory() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRatecardsRateCardProduct) *string { return v.ProductCategory }).(pulumi.StringPtrOutput)
 }
 
 // Rate card part type of Product
-func (o GetRatecardsRateCardProductOutput) UcmRateCardPartType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRatecardsRateCardProduct) string { return v.UcmRateCardPartType }).(pulumi.StringOutput)
+func (o GetRatecardsRateCardProductOutput) UcmRateCardPartType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRatecardsRateCardProduct) *string { return v.UcmRateCardPartType }).(pulumi.StringPtrOutput)
 }
 
 // Unit of measure
-func (o GetRatecardsRateCardProductOutput) UnitOfMeasure() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRatecardsRateCardProduct) string { return v.UnitOfMeasure }).(pulumi.StringOutput)
+func (o GetRatecardsRateCardProductOutput) UnitOfMeasure() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRatecardsRateCardProduct) *string { return v.UnitOfMeasure }).(pulumi.StringPtrOutput)
 }
 
 type GetRatecardsRateCardProductArrayOutput struct{ *pulumi.OutputState }
@@ -938,12 +799,6 @@ func (o GetRatecardsRateCardProductArrayOutput) ToGetRatecardsRateCardProductArr
 	return o
 }
 
-func (o GetRatecardsRateCardProductArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetRatecardsRateCardProduct] {
-	return pulumix.Output[[]GetRatecardsRateCardProduct]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetRatecardsRateCardProductArrayOutput) Index(i pulumi.IntInput) GetRatecardsRateCardProductOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRatecardsRateCardProduct {
 		return vs[0].([]GetRatecardsRateCardProduct)[vs[1].(int)]
@@ -952,11 +807,11 @@ func (o GetRatecardsRateCardProductArrayOutput) Index(i pulumi.IntInput) GetRate
 
 type GetRatecardsRateCardRateCardTier struct {
 	// Rate card tier net unit price
-	NetUnitPrice string `pulumi:"netUnitPrice"`
+	NetUnitPrice *string `pulumi:"netUnitPrice"`
 	// Rate card tier overage price
-	OveragePrice string `pulumi:"overagePrice"`
+	OveragePrice *string `pulumi:"overagePrice"`
 	// Rate card tier quantity range
-	UpToQuantity string `pulumi:"upToQuantity"`
+	UpToQuantity *string `pulumi:"upToQuantity"`
 }
 
 // GetRatecardsRateCardRateCardTierInput is an input type that accepts GetRatecardsRateCardRateCardTierArgs and GetRatecardsRateCardRateCardTierOutput values.
@@ -972,11 +827,11 @@ type GetRatecardsRateCardRateCardTierInput interface {
 
 type GetRatecardsRateCardRateCardTierArgs struct {
 	// Rate card tier net unit price
-	NetUnitPrice pulumi.StringInput `pulumi:"netUnitPrice"`
+	NetUnitPrice pulumi.StringPtrInput `pulumi:"netUnitPrice"`
 	// Rate card tier overage price
-	OveragePrice pulumi.StringInput `pulumi:"overagePrice"`
+	OveragePrice pulumi.StringPtrInput `pulumi:"overagePrice"`
 	// Rate card tier quantity range
-	UpToQuantity pulumi.StringInput `pulumi:"upToQuantity"`
+	UpToQuantity pulumi.StringPtrInput `pulumi:"upToQuantity"`
 }
 
 func (GetRatecardsRateCardRateCardTierArgs) ElementType() reflect.Type {
@@ -989,12 +844,6 @@ func (i GetRatecardsRateCardRateCardTierArgs) ToGetRatecardsRateCardRateCardTier
 
 func (i GetRatecardsRateCardRateCardTierArgs) ToGetRatecardsRateCardRateCardTierOutputWithContext(ctx context.Context) GetRatecardsRateCardRateCardTierOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetRatecardsRateCardRateCardTierOutput)
-}
-
-func (i GetRatecardsRateCardRateCardTierArgs) ToOutput(ctx context.Context) pulumix.Output[GetRatecardsRateCardRateCardTier] {
-	return pulumix.Output[GetRatecardsRateCardRateCardTier]{
-		OutputState: i.ToGetRatecardsRateCardRateCardTierOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetRatecardsRateCardRateCardTierArrayInput is an input type that accepts GetRatecardsRateCardRateCardTierArray and GetRatecardsRateCardRateCardTierArrayOutput values.
@@ -1022,12 +871,6 @@ func (i GetRatecardsRateCardRateCardTierArray) ToGetRatecardsRateCardRateCardTie
 	return pulumi.ToOutputWithContext(ctx, i).(GetRatecardsRateCardRateCardTierArrayOutput)
 }
 
-func (i GetRatecardsRateCardRateCardTierArray) ToOutput(ctx context.Context) pulumix.Output[[]GetRatecardsRateCardRateCardTier] {
-	return pulumix.Output[[]GetRatecardsRateCardRateCardTier]{
-		OutputState: i.ToGetRatecardsRateCardRateCardTierArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetRatecardsRateCardRateCardTierOutput struct{ *pulumi.OutputState }
 
 func (GetRatecardsRateCardRateCardTierOutput) ElementType() reflect.Type {
@@ -1042,25 +885,19 @@ func (o GetRatecardsRateCardRateCardTierOutput) ToGetRatecardsRateCardRateCardTi
 	return o
 }
 
-func (o GetRatecardsRateCardRateCardTierOutput) ToOutput(ctx context.Context) pulumix.Output[GetRatecardsRateCardRateCardTier] {
-	return pulumix.Output[GetRatecardsRateCardRateCardTier]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Rate card tier net unit price
-func (o GetRatecardsRateCardRateCardTierOutput) NetUnitPrice() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRatecardsRateCardRateCardTier) string { return v.NetUnitPrice }).(pulumi.StringOutput)
+func (o GetRatecardsRateCardRateCardTierOutput) NetUnitPrice() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRatecardsRateCardRateCardTier) *string { return v.NetUnitPrice }).(pulumi.StringPtrOutput)
 }
 
 // Rate card tier overage price
-func (o GetRatecardsRateCardRateCardTierOutput) OveragePrice() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRatecardsRateCardRateCardTier) string { return v.OveragePrice }).(pulumi.StringOutput)
+func (o GetRatecardsRateCardRateCardTierOutput) OveragePrice() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRatecardsRateCardRateCardTier) *string { return v.OveragePrice }).(pulumi.StringPtrOutput)
 }
 
 // Rate card tier quantity range
-func (o GetRatecardsRateCardRateCardTierOutput) UpToQuantity() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRatecardsRateCardRateCardTier) string { return v.UpToQuantity }).(pulumi.StringOutput)
+func (o GetRatecardsRateCardRateCardTierOutput) UpToQuantity() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRatecardsRateCardRateCardTier) *string { return v.UpToQuantity }).(pulumi.StringPtrOutput)
 }
 
 type GetRatecardsRateCardRateCardTierArrayOutput struct{ *pulumi.OutputState }
@@ -1075,12 +912,6 @@ func (o GetRatecardsRateCardRateCardTierArrayOutput) ToGetRatecardsRateCardRateC
 
 func (o GetRatecardsRateCardRateCardTierArrayOutput) ToGetRatecardsRateCardRateCardTierArrayOutputWithContext(ctx context.Context) GetRatecardsRateCardRateCardTierArrayOutput {
 	return o
-}
-
-func (o GetRatecardsRateCardRateCardTierArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetRatecardsRateCardRateCardTier] {
-	return pulumix.Output[[]GetRatecardsRateCardRateCardTier]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetRatecardsRateCardRateCardTierArrayOutput) Index(i pulumi.IntInput) GetRatecardsRateCardRateCardTierOutput {
@@ -1126,12 +957,6 @@ func (i GetSubscriptionsFilterArgs) ToGetSubscriptionsFilterOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionsFilterOutput)
 }
 
-func (i GetSubscriptionsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionsFilter] {
-	return pulumix.Output[GetSubscriptionsFilter]{
-		OutputState: i.ToGetSubscriptionsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetSubscriptionsFilterArrayInput is an input type that accepts GetSubscriptionsFilterArray and GetSubscriptionsFilterArrayOutput values.
 // You can construct a concrete instance of `GetSubscriptionsFilterArrayInput` via:
 //
@@ -1157,12 +982,6 @@ func (i GetSubscriptionsFilterArray) ToGetSubscriptionsFilterArrayOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionsFilterArrayOutput)
 }
 
-func (i GetSubscriptionsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionsFilter] {
-	return pulumix.Output[[]GetSubscriptionsFilter]{
-		OutputState: i.ToGetSubscriptionsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSubscriptionsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetSubscriptionsFilterOutput) ElementType() reflect.Type {
@@ -1175,12 +994,6 @@ func (o GetSubscriptionsFilterOutput) ToGetSubscriptionsFilterOutput() GetSubscr
 
 func (o GetSubscriptionsFilterOutput) ToGetSubscriptionsFilterOutputWithContext(ctx context.Context) GetSubscriptionsFilterOutput {
 	return o
-}
-
-func (o GetSubscriptionsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionsFilter] {
-	return pulumix.Output[GetSubscriptionsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Product name
@@ -1210,12 +1023,6 @@ func (o GetSubscriptionsFilterArrayOutput) ToGetSubscriptionsFilterArrayOutputWi
 	return o
 }
 
-func (o GetSubscriptionsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionsFilter] {
-	return pulumix.Output[[]GetSubscriptionsFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSubscriptionsFilterArrayOutput) Index(i pulumi.IntInput) GetSubscriptionsFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSubscriptionsFilter {
 		return vs[0].([]GetSubscriptionsFilter)[vs[1].(int)]
@@ -1226,15 +1033,15 @@ type GetSubscriptionsSubscription struct {
 	// Currency details
 	Currencies []GetSubscriptionsSubscriptionCurrency `pulumi:"currencies"`
 	// Customer friendly service name provided by PRG
-	ServiceName string `pulumi:"serviceName"`
+	ServiceName *string `pulumi:"serviceName"`
 	// Subscribed service status
-	Status string `pulumi:"status"`
+	Status *string `pulumi:"status"`
 	// List of Subscribed Services of the plan
 	SubscribedServices []GetSubscriptionsSubscriptionSubscribedService `pulumi:"subscribedServices"`
 	// Represents the date when the last service of the subscription ends
-	TimeEnd string `pulumi:"timeEnd"`
+	TimeEnd *string `pulumi:"timeEnd"`
 	// Represents the date when the first service of the subscription was activated
-	TimeStart string `pulumi:"timeStart"`
+	TimeStart *string `pulumi:"timeStart"`
 }
 
 // GetSubscriptionsSubscriptionInput is an input type that accepts GetSubscriptionsSubscriptionArgs and GetSubscriptionsSubscriptionOutput values.
@@ -1252,15 +1059,15 @@ type GetSubscriptionsSubscriptionArgs struct {
 	// Currency details
 	Currencies GetSubscriptionsSubscriptionCurrencyArrayInput `pulumi:"currencies"`
 	// Customer friendly service name provided by PRG
-	ServiceName pulumi.StringInput `pulumi:"serviceName"`
+	ServiceName pulumi.StringPtrInput `pulumi:"serviceName"`
 	// Subscribed service status
-	Status pulumi.StringInput `pulumi:"status"`
+	Status pulumi.StringPtrInput `pulumi:"status"`
 	// List of Subscribed Services of the plan
 	SubscribedServices GetSubscriptionsSubscriptionSubscribedServiceArrayInput `pulumi:"subscribedServices"`
 	// Represents the date when the last service of the subscription ends
-	TimeEnd pulumi.StringInput `pulumi:"timeEnd"`
+	TimeEnd pulumi.StringPtrInput `pulumi:"timeEnd"`
 	// Represents the date when the first service of the subscription was activated
-	TimeStart pulumi.StringInput `pulumi:"timeStart"`
+	TimeStart pulumi.StringPtrInput `pulumi:"timeStart"`
 }
 
 func (GetSubscriptionsSubscriptionArgs) ElementType() reflect.Type {
@@ -1273,12 +1080,6 @@ func (i GetSubscriptionsSubscriptionArgs) ToGetSubscriptionsSubscriptionOutput()
 
 func (i GetSubscriptionsSubscriptionArgs) ToGetSubscriptionsSubscriptionOutputWithContext(ctx context.Context) GetSubscriptionsSubscriptionOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionsSubscriptionOutput)
-}
-
-func (i GetSubscriptionsSubscriptionArgs) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionsSubscription] {
-	return pulumix.Output[GetSubscriptionsSubscription]{
-		OutputState: i.ToGetSubscriptionsSubscriptionOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSubscriptionsSubscriptionArrayInput is an input type that accepts GetSubscriptionsSubscriptionArray and GetSubscriptionsSubscriptionArrayOutput values.
@@ -1306,12 +1107,6 @@ func (i GetSubscriptionsSubscriptionArray) ToGetSubscriptionsSubscriptionArrayOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionsSubscriptionArrayOutput)
 }
 
-func (i GetSubscriptionsSubscriptionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionsSubscription] {
-	return pulumix.Output[[]GetSubscriptionsSubscription]{
-		OutputState: i.ToGetSubscriptionsSubscriptionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSubscriptionsSubscriptionOutput struct{ *pulumi.OutputState }
 
 func (GetSubscriptionsSubscriptionOutput) ElementType() reflect.Type {
@@ -1326,25 +1121,19 @@ func (o GetSubscriptionsSubscriptionOutput) ToGetSubscriptionsSubscriptionOutput
 	return o
 }
 
-func (o GetSubscriptionsSubscriptionOutput) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionsSubscription] {
-	return pulumix.Output[GetSubscriptionsSubscription]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Currency details
 func (o GetSubscriptionsSubscriptionOutput) Currencies() GetSubscriptionsSubscriptionCurrencyArrayOutput {
 	return o.ApplyT(func(v GetSubscriptionsSubscription) []GetSubscriptionsSubscriptionCurrency { return v.Currencies }).(GetSubscriptionsSubscriptionCurrencyArrayOutput)
 }
 
 // Customer friendly service name provided by PRG
-func (o GetSubscriptionsSubscriptionOutput) ServiceName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscription) string { return v.ServiceName }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionOutput) ServiceName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscription) *string { return v.ServiceName }).(pulumi.StringPtrOutput)
 }
 
 // Subscribed service status
-func (o GetSubscriptionsSubscriptionOutput) Status() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscription) string { return v.Status }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscription) *string { return v.Status }).(pulumi.StringPtrOutput)
 }
 
 // List of Subscribed Services of the plan
@@ -1355,13 +1144,13 @@ func (o GetSubscriptionsSubscriptionOutput) SubscribedServices() GetSubscription
 }
 
 // Represents the date when the last service of the subscription ends
-func (o GetSubscriptionsSubscriptionOutput) TimeEnd() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscription) string { return v.TimeEnd }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionOutput) TimeEnd() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscription) *string { return v.TimeEnd }).(pulumi.StringPtrOutput)
 }
 
 // Represents the date when the first service of the subscription was activated
-func (o GetSubscriptionsSubscriptionOutput) TimeStart() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscription) string { return v.TimeStart }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionOutput) TimeStart() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscription) *string { return v.TimeStart }).(pulumi.StringPtrOutput)
 }
 
 type GetSubscriptionsSubscriptionArrayOutput struct{ *pulumi.OutputState }
@@ -1378,12 +1167,6 @@ func (o GetSubscriptionsSubscriptionArrayOutput) ToGetSubscriptionsSubscriptionA
 	return o
 }
 
-func (o GetSubscriptionsSubscriptionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionsSubscription] {
-	return pulumix.Output[[]GetSubscriptionsSubscription]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSubscriptionsSubscriptionArrayOutput) Index(i pulumi.IntInput) GetSubscriptionsSubscriptionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSubscriptionsSubscription {
 		return vs[0].([]GetSubscriptionsSubscription)[vs[1].(int)]
@@ -1392,11 +1175,11 @@ func (o GetSubscriptionsSubscriptionArrayOutput) Index(i pulumi.IntInput) GetSub
 
 type GetSubscriptionsSubscriptionCurrency struct {
 	// Currency Code
-	IsoCode string `pulumi:"isoCode"`
+	IsoCode *string `pulumi:"isoCode"`
 	// Product name
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// Standard Precision of the Currency
-	StdPrecision string `pulumi:"stdPrecision"`
+	StdPrecision *string `pulumi:"stdPrecision"`
 }
 
 // GetSubscriptionsSubscriptionCurrencyInput is an input type that accepts GetSubscriptionsSubscriptionCurrencyArgs and GetSubscriptionsSubscriptionCurrencyOutput values.
@@ -1412,11 +1195,11 @@ type GetSubscriptionsSubscriptionCurrencyInput interface {
 
 type GetSubscriptionsSubscriptionCurrencyArgs struct {
 	// Currency Code
-	IsoCode pulumi.StringInput `pulumi:"isoCode"`
+	IsoCode pulumi.StringPtrInput `pulumi:"isoCode"`
 	// Product name
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// Standard Precision of the Currency
-	StdPrecision pulumi.StringInput `pulumi:"stdPrecision"`
+	StdPrecision pulumi.StringPtrInput `pulumi:"stdPrecision"`
 }
 
 func (GetSubscriptionsSubscriptionCurrencyArgs) ElementType() reflect.Type {
@@ -1429,12 +1212,6 @@ func (i GetSubscriptionsSubscriptionCurrencyArgs) ToGetSubscriptionsSubscription
 
 func (i GetSubscriptionsSubscriptionCurrencyArgs) ToGetSubscriptionsSubscriptionCurrencyOutputWithContext(ctx context.Context) GetSubscriptionsSubscriptionCurrencyOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionsSubscriptionCurrencyOutput)
-}
-
-func (i GetSubscriptionsSubscriptionCurrencyArgs) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionsSubscriptionCurrency] {
-	return pulumix.Output[GetSubscriptionsSubscriptionCurrency]{
-		OutputState: i.ToGetSubscriptionsSubscriptionCurrencyOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSubscriptionsSubscriptionCurrencyArrayInput is an input type that accepts GetSubscriptionsSubscriptionCurrencyArray and GetSubscriptionsSubscriptionCurrencyArrayOutput values.
@@ -1462,12 +1239,6 @@ func (i GetSubscriptionsSubscriptionCurrencyArray) ToGetSubscriptionsSubscriptio
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionsSubscriptionCurrencyArrayOutput)
 }
 
-func (i GetSubscriptionsSubscriptionCurrencyArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionsSubscriptionCurrency] {
-	return pulumix.Output[[]GetSubscriptionsSubscriptionCurrency]{
-		OutputState: i.ToGetSubscriptionsSubscriptionCurrencyArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSubscriptionsSubscriptionCurrencyOutput struct{ *pulumi.OutputState }
 
 func (GetSubscriptionsSubscriptionCurrencyOutput) ElementType() reflect.Type {
@@ -1482,25 +1253,19 @@ func (o GetSubscriptionsSubscriptionCurrencyOutput) ToGetSubscriptionsSubscripti
 	return o
 }
 
-func (o GetSubscriptionsSubscriptionCurrencyOutput) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionsSubscriptionCurrency] {
-	return pulumix.Output[GetSubscriptionsSubscriptionCurrency]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Currency Code
-func (o GetSubscriptionsSubscriptionCurrencyOutput) IsoCode() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionCurrency) string { return v.IsoCode }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionCurrencyOutput) IsoCode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionCurrency) *string { return v.IsoCode }).(pulumi.StringPtrOutput)
 }
 
 // Product name
-func (o GetSubscriptionsSubscriptionCurrencyOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionCurrency) string { return v.Name }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionCurrencyOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionCurrency) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // Standard Precision of the Currency
-func (o GetSubscriptionsSubscriptionCurrencyOutput) StdPrecision() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionCurrency) string { return v.StdPrecision }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionCurrencyOutput) StdPrecision() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionCurrency) *string { return v.StdPrecision }).(pulumi.StringPtrOutput)
 }
 
 type GetSubscriptionsSubscriptionCurrencyArrayOutput struct{ *pulumi.OutputState }
@@ -1517,12 +1282,6 @@ func (o GetSubscriptionsSubscriptionCurrencyArrayOutput) ToGetSubscriptionsSubsc
 	return o
 }
 
-func (o GetSubscriptionsSubscriptionCurrencyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionsSubscriptionCurrency] {
-	return pulumix.Output[[]GetSubscriptionsSubscriptionCurrency]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSubscriptionsSubscriptionCurrencyArrayOutput) Index(i pulumi.IntInput) GetSubscriptionsSubscriptionCurrencyOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSubscriptionsSubscriptionCurrency {
 		return vs[0].([]GetSubscriptionsSubscriptionCurrency)[vs[1].(int)]
@@ -1531,49 +1290,49 @@ func (o GetSubscriptionsSubscriptionCurrencyArrayOutput) Index(i pulumi.IntInput
 
 type GetSubscriptionsSubscriptionSubscribedService struct {
 	// Booking Opportunity Number of Subscribed Service
-	BookingOptyNumber string `pulumi:"bookingOptyNumber"`
+	BookingOptyNumber *string `pulumi:"bookingOptyNumber"`
 	// List of Commitment services of a line
 	CommitmentServices []GetSubscriptionsSubscriptionSubscribedServiceCommitmentService `pulumi:"commitmentServices"`
 	// Subscribed service CSI number
-	Csi string `pulumi:"csi"`
+	Csi *string `pulumi:"csi"`
 	// Subscribed service data center region
-	DataCenterRegion string `pulumi:"dataCenterRegion"`
+	DataCenterRegion *string `pulumi:"dataCenterRegion"`
 	// Funded Allocation line value example: 12000.00
-	FundedAllocationValue string `pulumi:"fundedAllocationValue"`
+	FundedAllocationValue *string `pulumi:"fundedAllocationValue"`
 	// SPM internal Subscribed Service ID
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Subscribed service intent to pay flag
-	IsIntentToPay bool `pulumi:"isIntentToPay"`
+	IsIntentToPay *bool `pulumi:"isIntentToPay"`
 	// Subscribed service net unit price
-	NetUnitPrice string `pulumi:"netUnitPrice"`
+	NetUnitPrice *string `pulumi:"netUnitPrice"`
 	// Subscribed service operation type
-	OperationType string `pulumi:"operationType"`
+	OperationType *string `pulumi:"operationType"`
 	// Sales Order Number associated to the subscribed service
-	OrderNumber string `pulumi:"orderNumber"`
+	OrderNumber *string `pulumi:"orderNumber"`
 	// This field contains the name of the partner to which the subscription belongs - depending on which the invoicing may differ
-	PartnerTransactionType string `pulumi:"partnerTransactionType"`
+	PartnerTransactionType *string `pulumi:"partnerTransactionType"`
 	// Subscribed service pricing model
-	PricingModel string `pulumi:"pricingModel"`
+	PricingModel *string `pulumi:"pricingModel"`
 	// Product description
 	Products []GetSubscriptionsSubscriptionSubscribedServiceProduct `pulumi:"products"`
 	// Subscribed service program type
-	ProgramType string `pulumi:"programType"`
+	ProgramType *string `pulumi:"programType"`
 	// Subscribed service promotion type
-	PromoType string `pulumi:"promoType"`
+	PromoType *string `pulumi:"promoType"`
 	// Subscribed service quantity
-	Quantity string `pulumi:"quantity"`
+	Quantity *string `pulumi:"quantity"`
 	// Subscribed service status
-	Status string `pulumi:"status"`
+	Status *string `pulumi:"status"`
 	// Term value in Months
-	TermValue string `pulumi:"termValue"`
+	TermValue *string `pulumi:"termValue"`
 	// Term value UOM
-	TermValueUom string `pulumi:"termValueUom"`
+	TermValueUom *string `pulumi:"termValueUom"`
 	// Represents the date when the last service of the subscription ends
-	TimeEnd string `pulumi:"timeEnd"`
+	TimeEnd *string `pulumi:"timeEnd"`
 	// Represents the date when the first service of the subscription was activated
-	TimeStart string `pulumi:"timeStart"`
+	TimeStart *string `pulumi:"timeStart"`
 	// Subscribed service total value
-	TotalValue string `pulumi:"totalValue"`
+	TotalValue *string `pulumi:"totalValue"`
 }
 
 // GetSubscriptionsSubscriptionSubscribedServiceInput is an input type that accepts GetSubscriptionsSubscriptionSubscribedServiceArgs and GetSubscriptionsSubscriptionSubscribedServiceOutput values.
@@ -1589,49 +1348,49 @@ type GetSubscriptionsSubscriptionSubscribedServiceInput interface {
 
 type GetSubscriptionsSubscriptionSubscribedServiceArgs struct {
 	// Booking Opportunity Number of Subscribed Service
-	BookingOptyNumber pulumi.StringInput `pulumi:"bookingOptyNumber"`
+	BookingOptyNumber pulumi.StringPtrInput `pulumi:"bookingOptyNumber"`
 	// List of Commitment services of a line
 	CommitmentServices GetSubscriptionsSubscriptionSubscribedServiceCommitmentServiceArrayInput `pulumi:"commitmentServices"`
 	// Subscribed service CSI number
-	Csi pulumi.StringInput `pulumi:"csi"`
+	Csi pulumi.StringPtrInput `pulumi:"csi"`
 	// Subscribed service data center region
-	DataCenterRegion pulumi.StringInput `pulumi:"dataCenterRegion"`
+	DataCenterRegion pulumi.StringPtrInput `pulumi:"dataCenterRegion"`
 	// Funded Allocation line value example: 12000.00
-	FundedAllocationValue pulumi.StringInput `pulumi:"fundedAllocationValue"`
+	FundedAllocationValue pulumi.StringPtrInput `pulumi:"fundedAllocationValue"`
 	// SPM internal Subscribed Service ID
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// Subscribed service intent to pay flag
-	IsIntentToPay pulumi.BoolInput `pulumi:"isIntentToPay"`
+	IsIntentToPay pulumi.BoolPtrInput `pulumi:"isIntentToPay"`
 	// Subscribed service net unit price
-	NetUnitPrice pulumi.StringInput `pulumi:"netUnitPrice"`
+	NetUnitPrice pulumi.StringPtrInput `pulumi:"netUnitPrice"`
 	// Subscribed service operation type
-	OperationType pulumi.StringInput `pulumi:"operationType"`
+	OperationType pulumi.StringPtrInput `pulumi:"operationType"`
 	// Sales Order Number associated to the subscribed service
-	OrderNumber pulumi.StringInput `pulumi:"orderNumber"`
+	OrderNumber pulumi.StringPtrInput `pulumi:"orderNumber"`
 	// This field contains the name of the partner to which the subscription belongs - depending on which the invoicing may differ
-	PartnerTransactionType pulumi.StringInput `pulumi:"partnerTransactionType"`
+	PartnerTransactionType pulumi.StringPtrInput `pulumi:"partnerTransactionType"`
 	// Subscribed service pricing model
-	PricingModel pulumi.StringInput `pulumi:"pricingModel"`
+	PricingModel pulumi.StringPtrInput `pulumi:"pricingModel"`
 	// Product description
 	Products GetSubscriptionsSubscriptionSubscribedServiceProductArrayInput `pulumi:"products"`
 	// Subscribed service program type
-	ProgramType pulumi.StringInput `pulumi:"programType"`
+	ProgramType pulumi.StringPtrInput `pulumi:"programType"`
 	// Subscribed service promotion type
-	PromoType pulumi.StringInput `pulumi:"promoType"`
+	PromoType pulumi.StringPtrInput `pulumi:"promoType"`
 	// Subscribed service quantity
-	Quantity pulumi.StringInput `pulumi:"quantity"`
+	Quantity pulumi.StringPtrInput `pulumi:"quantity"`
 	// Subscribed service status
-	Status pulumi.StringInput `pulumi:"status"`
+	Status pulumi.StringPtrInput `pulumi:"status"`
 	// Term value in Months
-	TermValue pulumi.StringInput `pulumi:"termValue"`
+	TermValue pulumi.StringPtrInput `pulumi:"termValue"`
 	// Term value UOM
-	TermValueUom pulumi.StringInput `pulumi:"termValueUom"`
+	TermValueUom pulumi.StringPtrInput `pulumi:"termValueUom"`
 	// Represents the date when the last service of the subscription ends
-	TimeEnd pulumi.StringInput `pulumi:"timeEnd"`
+	TimeEnd pulumi.StringPtrInput `pulumi:"timeEnd"`
 	// Represents the date when the first service of the subscription was activated
-	TimeStart pulumi.StringInput `pulumi:"timeStart"`
+	TimeStart pulumi.StringPtrInput `pulumi:"timeStart"`
 	// Subscribed service total value
-	TotalValue pulumi.StringInput `pulumi:"totalValue"`
+	TotalValue pulumi.StringPtrInput `pulumi:"totalValue"`
 }
 
 func (GetSubscriptionsSubscriptionSubscribedServiceArgs) ElementType() reflect.Type {
@@ -1644,12 +1403,6 @@ func (i GetSubscriptionsSubscriptionSubscribedServiceArgs) ToGetSubscriptionsSub
 
 func (i GetSubscriptionsSubscriptionSubscribedServiceArgs) ToGetSubscriptionsSubscriptionSubscribedServiceOutputWithContext(ctx context.Context) GetSubscriptionsSubscriptionSubscribedServiceOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionsSubscriptionSubscribedServiceOutput)
-}
-
-func (i GetSubscriptionsSubscriptionSubscribedServiceArgs) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionsSubscriptionSubscribedService] {
-	return pulumix.Output[GetSubscriptionsSubscriptionSubscribedService]{
-		OutputState: i.ToGetSubscriptionsSubscriptionSubscribedServiceOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSubscriptionsSubscriptionSubscribedServiceArrayInput is an input type that accepts GetSubscriptionsSubscriptionSubscribedServiceArray and GetSubscriptionsSubscriptionSubscribedServiceArrayOutput values.
@@ -1677,12 +1430,6 @@ func (i GetSubscriptionsSubscriptionSubscribedServiceArray) ToGetSubscriptionsSu
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionsSubscriptionSubscribedServiceArrayOutput)
 }
 
-func (i GetSubscriptionsSubscriptionSubscribedServiceArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionsSubscriptionSubscribedService] {
-	return pulumix.Output[[]GetSubscriptionsSubscriptionSubscribedService]{
-		OutputState: i.ToGetSubscriptionsSubscriptionSubscribedServiceArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSubscriptionsSubscriptionSubscribedServiceOutput struct{ *pulumi.OutputState }
 
 func (GetSubscriptionsSubscriptionSubscribedServiceOutput) ElementType() reflect.Type {
@@ -1697,15 +1444,9 @@ func (o GetSubscriptionsSubscriptionSubscribedServiceOutput) ToGetSubscriptionsS
 	return o
 }
 
-func (o GetSubscriptionsSubscriptionSubscribedServiceOutput) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionsSubscriptionSubscribedService] {
-	return pulumix.Output[GetSubscriptionsSubscriptionSubscribedService]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Booking Opportunity Number of Subscribed Service
-func (o GetSubscriptionsSubscriptionSubscribedServiceOutput) BookingOptyNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionSubscribedService) string { return v.BookingOptyNumber }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionSubscribedServiceOutput) BookingOptyNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionSubscribedService) *string { return v.BookingOptyNumber }).(pulumi.StringPtrOutput)
 }
 
 // List of Commitment services of a line
@@ -1716,53 +1457,53 @@ func (o GetSubscriptionsSubscriptionSubscribedServiceOutput) CommitmentServices(
 }
 
 // Subscribed service CSI number
-func (o GetSubscriptionsSubscriptionSubscribedServiceOutput) Csi() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionSubscribedService) string { return v.Csi }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionSubscribedServiceOutput) Csi() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionSubscribedService) *string { return v.Csi }).(pulumi.StringPtrOutput)
 }
 
 // Subscribed service data center region
-func (o GetSubscriptionsSubscriptionSubscribedServiceOutput) DataCenterRegion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionSubscribedService) string { return v.DataCenterRegion }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionSubscribedServiceOutput) DataCenterRegion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionSubscribedService) *string { return v.DataCenterRegion }).(pulumi.StringPtrOutput)
 }
 
 // Funded Allocation line value example: 12000.00
-func (o GetSubscriptionsSubscriptionSubscribedServiceOutput) FundedAllocationValue() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionSubscribedService) string { return v.FundedAllocationValue }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionSubscribedServiceOutput) FundedAllocationValue() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionSubscribedService) *string { return v.FundedAllocationValue }).(pulumi.StringPtrOutput)
 }
 
 // SPM internal Subscribed Service ID
-func (o GetSubscriptionsSubscriptionSubscribedServiceOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionSubscribedService) string { return v.Id }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionSubscribedServiceOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionSubscribedService) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Subscribed service intent to pay flag
-func (o GetSubscriptionsSubscriptionSubscribedServiceOutput) IsIntentToPay() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionSubscribedService) bool { return v.IsIntentToPay }).(pulumi.BoolOutput)
+func (o GetSubscriptionsSubscriptionSubscribedServiceOutput) IsIntentToPay() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionSubscribedService) *bool { return v.IsIntentToPay }).(pulumi.BoolPtrOutput)
 }
 
 // Subscribed service net unit price
-func (o GetSubscriptionsSubscriptionSubscribedServiceOutput) NetUnitPrice() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionSubscribedService) string { return v.NetUnitPrice }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionSubscribedServiceOutput) NetUnitPrice() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionSubscribedService) *string { return v.NetUnitPrice }).(pulumi.StringPtrOutput)
 }
 
 // Subscribed service operation type
-func (o GetSubscriptionsSubscriptionSubscribedServiceOutput) OperationType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionSubscribedService) string { return v.OperationType }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionSubscribedServiceOutput) OperationType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionSubscribedService) *string { return v.OperationType }).(pulumi.StringPtrOutput)
 }
 
 // Sales Order Number associated to the subscribed service
-func (o GetSubscriptionsSubscriptionSubscribedServiceOutput) OrderNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionSubscribedService) string { return v.OrderNumber }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionSubscribedServiceOutput) OrderNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionSubscribedService) *string { return v.OrderNumber }).(pulumi.StringPtrOutput)
 }
 
 // This field contains the name of the partner to which the subscription belongs - depending on which the invoicing may differ
-func (o GetSubscriptionsSubscriptionSubscribedServiceOutput) PartnerTransactionType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionSubscribedService) string { return v.PartnerTransactionType }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionSubscribedServiceOutput) PartnerTransactionType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionSubscribedService) *string { return v.PartnerTransactionType }).(pulumi.StringPtrOutput)
 }
 
 // Subscribed service pricing model
-func (o GetSubscriptionsSubscriptionSubscribedServiceOutput) PricingModel() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionSubscribedService) string { return v.PricingModel }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionSubscribedServiceOutput) PricingModel() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionSubscribedService) *string { return v.PricingModel }).(pulumi.StringPtrOutput)
 }
 
 // Product description
@@ -1773,48 +1514,48 @@ func (o GetSubscriptionsSubscriptionSubscribedServiceOutput) Products() GetSubsc
 }
 
 // Subscribed service program type
-func (o GetSubscriptionsSubscriptionSubscribedServiceOutput) ProgramType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionSubscribedService) string { return v.ProgramType }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionSubscribedServiceOutput) ProgramType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionSubscribedService) *string { return v.ProgramType }).(pulumi.StringPtrOutput)
 }
 
 // Subscribed service promotion type
-func (o GetSubscriptionsSubscriptionSubscribedServiceOutput) PromoType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionSubscribedService) string { return v.PromoType }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionSubscribedServiceOutput) PromoType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionSubscribedService) *string { return v.PromoType }).(pulumi.StringPtrOutput)
 }
 
 // Subscribed service quantity
-func (o GetSubscriptionsSubscriptionSubscribedServiceOutput) Quantity() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionSubscribedService) string { return v.Quantity }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionSubscribedServiceOutput) Quantity() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionSubscribedService) *string { return v.Quantity }).(pulumi.StringPtrOutput)
 }
 
 // Subscribed service status
-func (o GetSubscriptionsSubscriptionSubscribedServiceOutput) Status() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionSubscribedService) string { return v.Status }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionSubscribedServiceOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionSubscribedService) *string { return v.Status }).(pulumi.StringPtrOutput)
 }
 
 // Term value in Months
-func (o GetSubscriptionsSubscriptionSubscribedServiceOutput) TermValue() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionSubscribedService) string { return v.TermValue }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionSubscribedServiceOutput) TermValue() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionSubscribedService) *string { return v.TermValue }).(pulumi.StringPtrOutput)
 }
 
 // Term value UOM
-func (o GetSubscriptionsSubscriptionSubscribedServiceOutput) TermValueUom() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionSubscribedService) string { return v.TermValueUom }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionSubscribedServiceOutput) TermValueUom() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionSubscribedService) *string { return v.TermValueUom }).(pulumi.StringPtrOutput)
 }
 
 // Represents the date when the last service of the subscription ends
-func (o GetSubscriptionsSubscriptionSubscribedServiceOutput) TimeEnd() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionSubscribedService) string { return v.TimeEnd }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionSubscribedServiceOutput) TimeEnd() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionSubscribedService) *string { return v.TimeEnd }).(pulumi.StringPtrOutput)
 }
 
 // Represents the date when the first service of the subscription was activated
-func (o GetSubscriptionsSubscriptionSubscribedServiceOutput) TimeStart() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionSubscribedService) string { return v.TimeStart }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionSubscribedServiceOutput) TimeStart() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionSubscribedService) *string { return v.TimeStart }).(pulumi.StringPtrOutput)
 }
 
 // Subscribed service total value
-func (o GetSubscriptionsSubscriptionSubscribedServiceOutput) TotalValue() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionSubscribedService) string { return v.TotalValue }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionSubscribedServiceOutput) TotalValue() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionSubscribedService) *string { return v.TotalValue }).(pulumi.StringPtrOutput)
 }
 
 type GetSubscriptionsSubscriptionSubscribedServiceArrayOutput struct{ *pulumi.OutputState }
@@ -1831,12 +1572,6 @@ func (o GetSubscriptionsSubscriptionSubscribedServiceArrayOutput) ToGetSubscript
 	return o
 }
 
-func (o GetSubscriptionsSubscriptionSubscribedServiceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionsSubscriptionSubscribedService] {
-	return pulumix.Output[[]GetSubscriptionsSubscriptionSubscribedService]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSubscriptionsSubscriptionSubscribedServiceArrayOutput) Index(i pulumi.IntInput) GetSubscriptionsSubscriptionSubscribedServiceOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSubscriptionsSubscriptionSubscribedService {
 		return vs[0].([]GetSubscriptionsSubscriptionSubscribedService)[vs[1].(int)]
@@ -1845,17 +1580,17 @@ func (o GetSubscriptionsSubscriptionSubscribedServiceArrayOutput) Index(i pulumi
 
 type GetSubscriptionsSubscriptionSubscribedServiceCommitmentService struct {
 	// Commitment available amount
-	AvailableAmount string `pulumi:"availableAmount"`
+	AvailableAmount *string `pulumi:"availableAmount"`
 	// Funded Allocation line value example: 12000.00
-	FundedAllocationValue string `pulumi:"fundedAllocationValue"`
+	FundedAllocationValue *string `pulumi:"fundedAllocationValue"`
 	// Commitment line net amount
-	LineNetAmount string `pulumi:"lineNetAmount"`
+	LineNetAmount *string `pulumi:"lineNetAmount"`
 	// Subscribed service quantity
-	Quantity string `pulumi:"quantity"`
+	Quantity *string `pulumi:"quantity"`
 	// Represents the date when the last service of the subscription ends
-	TimeEnd string `pulumi:"timeEnd"`
+	TimeEnd *string `pulumi:"timeEnd"`
 	// Represents the date when the first service of the subscription was activated
-	TimeStart string `pulumi:"timeStart"`
+	TimeStart *string `pulumi:"timeStart"`
 }
 
 // GetSubscriptionsSubscriptionSubscribedServiceCommitmentServiceInput is an input type that accepts GetSubscriptionsSubscriptionSubscribedServiceCommitmentServiceArgs and GetSubscriptionsSubscriptionSubscribedServiceCommitmentServiceOutput values.
@@ -1871,17 +1606,17 @@ type GetSubscriptionsSubscriptionSubscribedServiceCommitmentServiceInput interfa
 
 type GetSubscriptionsSubscriptionSubscribedServiceCommitmentServiceArgs struct {
 	// Commitment available amount
-	AvailableAmount pulumi.StringInput `pulumi:"availableAmount"`
+	AvailableAmount pulumi.StringPtrInput `pulumi:"availableAmount"`
 	// Funded Allocation line value example: 12000.00
-	FundedAllocationValue pulumi.StringInput `pulumi:"fundedAllocationValue"`
+	FundedAllocationValue pulumi.StringPtrInput `pulumi:"fundedAllocationValue"`
 	// Commitment line net amount
-	LineNetAmount pulumi.StringInput `pulumi:"lineNetAmount"`
+	LineNetAmount pulumi.StringPtrInput `pulumi:"lineNetAmount"`
 	// Subscribed service quantity
-	Quantity pulumi.StringInput `pulumi:"quantity"`
+	Quantity pulumi.StringPtrInput `pulumi:"quantity"`
 	// Represents the date when the last service of the subscription ends
-	TimeEnd pulumi.StringInput `pulumi:"timeEnd"`
+	TimeEnd pulumi.StringPtrInput `pulumi:"timeEnd"`
 	// Represents the date when the first service of the subscription was activated
-	TimeStart pulumi.StringInput `pulumi:"timeStart"`
+	TimeStart pulumi.StringPtrInput `pulumi:"timeStart"`
 }
 
 func (GetSubscriptionsSubscriptionSubscribedServiceCommitmentServiceArgs) ElementType() reflect.Type {
@@ -1894,12 +1629,6 @@ func (i GetSubscriptionsSubscriptionSubscribedServiceCommitmentServiceArgs) ToGe
 
 func (i GetSubscriptionsSubscriptionSubscribedServiceCommitmentServiceArgs) ToGetSubscriptionsSubscriptionSubscribedServiceCommitmentServiceOutputWithContext(ctx context.Context) GetSubscriptionsSubscriptionSubscribedServiceCommitmentServiceOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionsSubscriptionSubscribedServiceCommitmentServiceOutput)
-}
-
-func (i GetSubscriptionsSubscriptionSubscribedServiceCommitmentServiceArgs) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionsSubscriptionSubscribedServiceCommitmentService] {
-	return pulumix.Output[GetSubscriptionsSubscriptionSubscribedServiceCommitmentService]{
-		OutputState: i.ToGetSubscriptionsSubscriptionSubscribedServiceCommitmentServiceOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSubscriptionsSubscriptionSubscribedServiceCommitmentServiceArrayInput is an input type that accepts GetSubscriptionsSubscriptionSubscribedServiceCommitmentServiceArray and GetSubscriptionsSubscriptionSubscribedServiceCommitmentServiceArrayOutput values.
@@ -1927,12 +1656,6 @@ func (i GetSubscriptionsSubscriptionSubscribedServiceCommitmentServiceArray) ToG
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionsSubscriptionSubscribedServiceCommitmentServiceArrayOutput)
 }
 
-func (i GetSubscriptionsSubscriptionSubscribedServiceCommitmentServiceArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionsSubscriptionSubscribedServiceCommitmentService] {
-	return pulumix.Output[[]GetSubscriptionsSubscriptionSubscribedServiceCommitmentService]{
-		OutputState: i.ToGetSubscriptionsSubscriptionSubscribedServiceCommitmentServiceArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSubscriptionsSubscriptionSubscribedServiceCommitmentServiceOutput struct{ *pulumi.OutputState }
 
 func (GetSubscriptionsSubscriptionSubscribedServiceCommitmentServiceOutput) ElementType() reflect.Type {
@@ -1947,44 +1670,38 @@ func (o GetSubscriptionsSubscriptionSubscribedServiceCommitmentServiceOutput) To
 	return o
 }
 
-func (o GetSubscriptionsSubscriptionSubscribedServiceCommitmentServiceOutput) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionsSubscriptionSubscribedServiceCommitmentService] {
-	return pulumix.Output[GetSubscriptionsSubscriptionSubscribedServiceCommitmentService]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Commitment available amount
-func (o GetSubscriptionsSubscriptionSubscribedServiceCommitmentServiceOutput) AvailableAmount() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionSubscribedServiceCommitmentService) string {
+func (o GetSubscriptionsSubscriptionSubscribedServiceCommitmentServiceOutput) AvailableAmount() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionSubscribedServiceCommitmentService) *string {
 		return v.AvailableAmount
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Funded Allocation line value example: 12000.00
-func (o GetSubscriptionsSubscriptionSubscribedServiceCommitmentServiceOutput) FundedAllocationValue() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionSubscribedServiceCommitmentService) string {
+func (o GetSubscriptionsSubscriptionSubscribedServiceCommitmentServiceOutput) FundedAllocationValue() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionSubscribedServiceCommitmentService) *string {
 		return v.FundedAllocationValue
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Commitment line net amount
-func (o GetSubscriptionsSubscriptionSubscribedServiceCommitmentServiceOutput) LineNetAmount() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionSubscribedServiceCommitmentService) string { return v.LineNetAmount }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionSubscribedServiceCommitmentServiceOutput) LineNetAmount() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionSubscribedServiceCommitmentService) *string { return v.LineNetAmount }).(pulumi.StringPtrOutput)
 }
 
 // Subscribed service quantity
-func (o GetSubscriptionsSubscriptionSubscribedServiceCommitmentServiceOutput) Quantity() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionSubscribedServiceCommitmentService) string { return v.Quantity }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionSubscribedServiceCommitmentServiceOutput) Quantity() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionSubscribedServiceCommitmentService) *string { return v.Quantity }).(pulumi.StringPtrOutput)
 }
 
 // Represents the date when the last service of the subscription ends
-func (o GetSubscriptionsSubscriptionSubscribedServiceCommitmentServiceOutput) TimeEnd() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionSubscribedServiceCommitmentService) string { return v.TimeEnd }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionSubscribedServiceCommitmentServiceOutput) TimeEnd() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionSubscribedServiceCommitmentService) *string { return v.TimeEnd }).(pulumi.StringPtrOutput)
 }
 
 // Represents the date when the first service of the subscription was activated
-func (o GetSubscriptionsSubscriptionSubscribedServiceCommitmentServiceOutput) TimeStart() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionSubscribedServiceCommitmentService) string { return v.TimeStart }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionSubscribedServiceCommitmentServiceOutput) TimeStart() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionSubscribedServiceCommitmentService) *string { return v.TimeStart }).(pulumi.StringPtrOutput)
 }
 
 type GetSubscriptionsSubscriptionSubscribedServiceCommitmentServiceArrayOutput struct{ *pulumi.OutputState }
@@ -2001,12 +1718,6 @@ func (o GetSubscriptionsSubscriptionSubscribedServiceCommitmentServiceArrayOutpu
 	return o
 }
 
-func (o GetSubscriptionsSubscriptionSubscribedServiceCommitmentServiceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionsSubscriptionSubscribedServiceCommitmentService] {
-	return pulumix.Output[[]GetSubscriptionsSubscriptionSubscribedServiceCommitmentService]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSubscriptionsSubscriptionSubscribedServiceCommitmentServiceArrayOutput) Index(i pulumi.IntInput) GetSubscriptionsSubscriptionSubscribedServiceCommitmentServiceOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSubscriptionsSubscriptionSubscribedServiceCommitmentService {
 		return vs[0].([]GetSubscriptionsSubscriptionSubscribedServiceCommitmentService)[vs[1].(int)]
@@ -2015,13 +1726,13 @@ func (o GetSubscriptionsSubscriptionSubscribedServiceCommitmentServiceArrayOutpu
 
 type GetSubscriptionsSubscriptionSubscribedServiceProduct struct {
 	// Product name
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// Product part numner
-	PartNumber string `pulumi:"partNumber"`
+	PartNumber *string `pulumi:"partNumber"`
 	// Product provisioning group
-	ProvisioningGroup string `pulumi:"provisioningGroup"`
+	ProvisioningGroup *string `pulumi:"provisioningGroup"`
 	// Unit of measure
-	UnitOfMeasure string `pulumi:"unitOfMeasure"`
+	UnitOfMeasure *string `pulumi:"unitOfMeasure"`
 }
 
 // GetSubscriptionsSubscriptionSubscribedServiceProductInput is an input type that accepts GetSubscriptionsSubscriptionSubscribedServiceProductArgs and GetSubscriptionsSubscriptionSubscribedServiceProductOutput values.
@@ -2037,13 +1748,13 @@ type GetSubscriptionsSubscriptionSubscribedServiceProductInput interface {
 
 type GetSubscriptionsSubscriptionSubscribedServiceProductArgs struct {
 	// Product name
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// Product part numner
-	PartNumber pulumi.StringInput `pulumi:"partNumber"`
+	PartNumber pulumi.StringPtrInput `pulumi:"partNumber"`
 	// Product provisioning group
-	ProvisioningGroup pulumi.StringInput `pulumi:"provisioningGroup"`
+	ProvisioningGroup pulumi.StringPtrInput `pulumi:"provisioningGroup"`
 	// Unit of measure
-	UnitOfMeasure pulumi.StringInput `pulumi:"unitOfMeasure"`
+	UnitOfMeasure pulumi.StringPtrInput `pulumi:"unitOfMeasure"`
 }
 
 func (GetSubscriptionsSubscriptionSubscribedServiceProductArgs) ElementType() reflect.Type {
@@ -2056,12 +1767,6 @@ func (i GetSubscriptionsSubscriptionSubscribedServiceProductArgs) ToGetSubscript
 
 func (i GetSubscriptionsSubscriptionSubscribedServiceProductArgs) ToGetSubscriptionsSubscriptionSubscribedServiceProductOutputWithContext(ctx context.Context) GetSubscriptionsSubscriptionSubscribedServiceProductOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionsSubscriptionSubscribedServiceProductOutput)
-}
-
-func (i GetSubscriptionsSubscriptionSubscribedServiceProductArgs) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionsSubscriptionSubscribedServiceProduct] {
-	return pulumix.Output[GetSubscriptionsSubscriptionSubscribedServiceProduct]{
-		OutputState: i.ToGetSubscriptionsSubscriptionSubscribedServiceProductOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSubscriptionsSubscriptionSubscribedServiceProductArrayInput is an input type that accepts GetSubscriptionsSubscriptionSubscribedServiceProductArray and GetSubscriptionsSubscriptionSubscribedServiceProductArrayOutput values.
@@ -2089,12 +1794,6 @@ func (i GetSubscriptionsSubscriptionSubscribedServiceProductArray) ToGetSubscrip
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionsSubscriptionSubscribedServiceProductArrayOutput)
 }
 
-func (i GetSubscriptionsSubscriptionSubscribedServiceProductArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionsSubscriptionSubscribedServiceProduct] {
-	return pulumix.Output[[]GetSubscriptionsSubscriptionSubscribedServiceProduct]{
-		OutputState: i.ToGetSubscriptionsSubscriptionSubscribedServiceProductArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSubscriptionsSubscriptionSubscribedServiceProductOutput struct{ *pulumi.OutputState }
 
 func (GetSubscriptionsSubscriptionSubscribedServiceProductOutput) ElementType() reflect.Type {
@@ -2109,30 +1808,24 @@ func (o GetSubscriptionsSubscriptionSubscribedServiceProductOutput) ToGetSubscri
 	return o
 }
 
-func (o GetSubscriptionsSubscriptionSubscribedServiceProductOutput) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionsSubscriptionSubscribedServiceProduct] {
-	return pulumix.Output[GetSubscriptionsSubscriptionSubscribedServiceProduct]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Product name
-func (o GetSubscriptionsSubscriptionSubscribedServiceProductOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionSubscribedServiceProduct) string { return v.Name }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionSubscribedServiceProductOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionSubscribedServiceProduct) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // Product part numner
-func (o GetSubscriptionsSubscriptionSubscribedServiceProductOutput) PartNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionSubscribedServiceProduct) string { return v.PartNumber }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionSubscribedServiceProductOutput) PartNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionSubscribedServiceProduct) *string { return v.PartNumber }).(pulumi.StringPtrOutput)
 }
 
 // Product provisioning group
-func (o GetSubscriptionsSubscriptionSubscribedServiceProductOutput) ProvisioningGroup() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionSubscribedServiceProduct) string { return v.ProvisioningGroup }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionSubscribedServiceProductOutput) ProvisioningGroup() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionSubscribedServiceProduct) *string { return v.ProvisioningGroup }).(pulumi.StringPtrOutput)
 }
 
 // Unit of measure
-func (o GetSubscriptionsSubscriptionSubscribedServiceProductOutput) UnitOfMeasure() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionSubscribedServiceProduct) string { return v.UnitOfMeasure }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionSubscribedServiceProductOutput) UnitOfMeasure() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionSubscribedServiceProduct) *string { return v.UnitOfMeasure }).(pulumi.StringPtrOutput)
 }
 
 type GetSubscriptionsSubscriptionSubscribedServiceProductArrayOutput struct{ *pulumi.OutputState }
@@ -2147,12 +1840,6 @@ func (o GetSubscriptionsSubscriptionSubscribedServiceProductArrayOutput) ToGetSu
 
 func (o GetSubscriptionsSubscriptionSubscribedServiceProductArrayOutput) ToGetSubscriptionsSubscriptionSubscribedServiceProductArrayOutputWithContext(ctx context.Context) GetSubscriptionsSubscriptionSubscribedServiceProductArrayOutput {
 	return o
-}
-
-func (o GetSubscriptionsSubscriptionSubscribedServiceProductArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionsSubscriptionSubscribedServiceProduct] {
-	return pulumix.Output[[]GetSubscriptionsSubscriptionSubscribedServiceProduct]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetSubscriptionsSubscriptionSubscribedServiceProductArrayOutput) Index(i pulumi.IntInput) GetSubscriptionsSubscriptionSubscribedServiceProductOutput {

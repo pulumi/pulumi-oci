@@ -48,51 +48,51 @@ export interface GetCategoryResult {
     /**
      * The OCID of the tenancy. The tenancy is the root compartment.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * The name associated with the compartment.
      */
-    readonly compartmentName: string;
+    readonly compartmentName?: string;
     /**
      * Text describing the category.
      */
-    readonly description: string;
+    readonly description?: string;
     /**
      * The estimated cost savings, in dollars, for the category.
      */
-    readonly estimatedCostSaving: number;
+    readonly estimatedCostSaving?: number;
     /**
      * Additional metadata key/value pairs for the category.
      */
-    readonly extendedMetadata: {[key: string]: any};
+    readonly extendedMetadata?: {[key: string]: any};
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The name assigned to the category.
      */
-    readonly name: string;
+    readonly name?: string;
     /**
      * An array of `RecommendationCount` objects grouped by the level of importance assigned to the recommendation.
      */
-    readonly recommendationCounts: outputs.Optimizer.GetCategoryRecommendationCount[];
+    readonly recommendationCounts?: outputs.Optimizer.GetCategoryRecommendationCount[];
     /**
      * An array of `ResourceCount` objects grouped by the status of the recommendation.
      */
-    readonly resourceCounts: outputs.Optimizer.GetCategoryResourceCount[];
+    readonly resourceCounts?: outputs.Optimizer.GetCategoryResourceCount[];
     /**
      * The category's current state.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * The date and time the category details were created, in the format defined by RFC3339.
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The date and time the category details were last updated, in the format defined by RFC3339.
      */
-    readonly timeUpdated: string;
+    readonly timeUpdated?: string;
 }
 /**
  * This data source provides details about a specific Category resource in Oracle Cloud Infrastructure Optimizer service.

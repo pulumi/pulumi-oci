@@ -40,7 +40,7 @@ class GetAnnotationFormatResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -48,10 +48,7 @@ class GetAnnotationFormatResult:
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetAnnotationFormatItemResult']:
-        """
-        List of annotation formats.
-        """
+    def items(self) -> Optional[Sequence['outputs.GetAnnotationFormatItemResult']]:
         return pulumi.get(self, "items")
 
 
@@ -69,21 +66,7 @@ class AwaitableGetAnnotationFormatResult(GetAnnotationFormatResult):
 def get_annotation_format(compartment_id: Optional[str] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAnnotationFormatResult:
     """
-    This data source provides details about a specific Annotation Format resource in Oracle Cloud Infrastructure Data Labeling Service service.
-
-    These are a static list in a given region.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_annotation_format = oci.DataLabellingService.get_annotation_format(compartment_id=var["compartment_id"])
-    ```
-
-
-    :param str compartment_id: The ID of the compartment in which to list resources.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -100,20 +83,6 @@ def get_annotation_format(compartment_id: Optional[str] = None,
 def get_annotation_format_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAnnotationFormatResult]:
     """
-    This data source provides details about a specific Annotation Format resource in Oracle Cloud Infrastructure Data Labeling Service service.
-
-    These are a static list in a given region.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_annotation_format = oci.DataLabellingService.get_annotation_format(compartment_id=var["compartment_id"])
-    ```
-
-
-    :param str compartment_id: The ID of the compartment in which to list resources.
+    Use this data source to access information about an existing resource.
     """
     ...

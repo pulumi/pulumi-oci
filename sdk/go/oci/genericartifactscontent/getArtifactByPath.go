@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Artifact By Path resource in Oracle Cloud Infrastructure Generic Artifacts Content service.
@@ -65,20 +64,20 @@ type LookupArtifactByPathArgs struct {
 
 // A collection of values returned by getArtifactByPath.
 type LookupArtifactByPathResult struct {
-	ArtifactId    string                 `pulumi:"artifactId"`
+	ArtifactId    *string                `pulumi:"artifactId"`
 	ArtifactPath  string                 `pulumi:"artifactPath"`
-	CompartmentId string                 `pulumi:"compartmentId"`
-	Content       string                 `pulumi:"content"`
+	CompartmentId *string                `pulumi:"compartmentId"`
+	Content       *string                `pulumi:"content"`
 	DefinedTags   map[string]interface{} `pulumi:"definedTags"`
-	DisplayName   string                 `pulumi:"displayName"`
+	DisplayName   *string                `pulumi:"displayName"`
 	FreeformTags  map[string]interface{} `pulumi:"freeformTags"`
-	Id            string                 `pulumi:"id"`
+	Id            *string                `pulumi:"id"`
 	RepositoryId  string                 `pulumi:"repositoryId"`
-	Sha256        string                 `pulumi:"sha256"`
-	SizeInBytes   string                 `pulumi:"sizeInBytes"`
-	Source        string                 `pulumi:"source"`
-	State         string                 `pulumi:"state"`
-	TimeCreated   string                 `pulumi:"timeCreated"`
+	Sha256        *string                `pulumi:"sha256"`
+	SizeInBytes   *string                `pulumi:"sizeInBytes"`
+	Source        *string                `pulumi:"source"`
+	State         *string                `pulumi:"state"`
+	TimeCreated   *string                `pulumi:"timeCreated"`
 	Version       string                 `pulumi:"version"`
 }
 
@@ -124,66 +123,60 @@ func (o LookupArtifactByPathResultOutput) ToLookupArtifactByPathResultOutputWith
 	return o
 }
 
-func (o LookupArtifactByPathResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupArtifactByPathResult] {
-	return pulumix.Output[LookupArtifactByPathResult]{
-		OutputState: o.OutputState,
-	}
-}
-
-func (o LookupArtifactByPathResultOutput) ArtifactId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupArtifactByPathResult) string { return v.ArtifactId }).(pulumi.StringOutput)
+func (o LookupArtifactByPathResultOutput) ArtifactId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupArtifactByPathResult) *string { return v.ArtifactId }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupArtifactByPathResultOutput) ArtifactPath() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupArtifactByPathResult) string { return v.ArtifactPath }).(pulumi.StringOutput)
 }
 
-func (o LookupArtifactByPathResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupArtifactByPathResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupArtifactByPathResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupArtifactByPathResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
-func (o LookupArtifactByPathResultOutput) Content() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupArtifactByPathResult) string { return v.Content }).(pulumi.StringOutput)
+func (o LookupArtifactByPathResultOutput) Content() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupArtifactByPathResult) *string { return v.Content }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupArtifactByPathResultOutput) DefinedTags() pulumi.MapOutput {
 	return o.ApplyT(func(v LookupArtifactByPathResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
 }
 
-func (o LookupArtifactByPathResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupArtifactByPathResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupArtifactByPathResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupArtifactByPathResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupArtifactByPathResultOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v LookupArtifactByPathResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
 }
 
-func (o LookupArtifactByPathResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupArtifactByPathResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupArtifactByPathResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupArtifactByPathResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupArtifactByPathResultOutput) RepositoryId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupArtifactByPathResult) string { return v.RepositoryId }).(pulumi.StringOutput)
 }
 
-func (o LookupArtifactByPathResultOutput) Sha256() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupArtifactByPathResult) string { return v.Sha256 }).(pulumi.StringOutput)
+func (o LookupArtifactByPathResultOutput) Sha256() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupArtifactByPathResult) *string { return v.Sha256 }).(pulumi.StringPtrOutput)
 }
 
-func (o LookupArtifactByPathResultOutput) SizeInBytes() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupArtifactByPathResult) string { return v.SizeInBytes }).(pulumi.StringOutput)
+func (o LookupArtifactByPathResultOutput) SizeInBytes() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupArtifactByPathResult) *string { return v.SizeInBytes }).(pulumi.StringPtrOutput)
 }
 
-func (o LookupArtifactByPathResultOutput) Source() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupArtifactByPathResult) string { return v.Source }).(pulumi.StringOutput)
+func (o LookupArtifactByPathResultOutput) Source() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupArtifactByPathResult) *string { return v.Source }).(pulumi.StringPtrOutput)
 }
 
-func (o LookupArtifactByPathResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupArtifactByPathResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupArtifactByPathResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupArtifactByPathResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
-func (o LookupArtifactByPathResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupArtifactByPathResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupArtifactByPathResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupArtifactByPathResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupArtifactByPathResultOutput) Version() pulumi.StringOutput {

@@ -16,29 +16,29 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// <summary>
         /// The actual database time of the SQL statements for which SQL Tuning Advisor recommendations are implemented.
         /// </summary>
-        public readonly int DbTimeAfterImplemented;
+        public readonly int? DbTimeAfterImplemented;
         /// <summary>
         /// The estimated database time of the above SQL statements, if SQL Tuning Advisor recommendations are implemented.
         /// </summary>
-        public readonly int DbTimeAfterRecommended;
+        public readonly int? DbTimeAfterRecommended;
         /// <summary>
         /// The actual database time of the above SQL statements, before SQL Tuning Advisor recommendations are implemented.
         /// </summary>
-        public readonly int DbTimeBeforeImplemented;
+        public readonly int? DbTimeBeforeImplemented;
         /// <summary>
         /// The actual database time of the SQL statements for which SQL Tuning Advisor recommendations are not implemented.
         /// </summary>
-        public readonly int DbTimeBeforeRecommended;
+        public readonly int? DbTimeBeforeRecommended;
 
         [OutputConstructor]
         private GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticFindingBenefitResult(
-            int dbTimeAfterImplemented,
+            int? dbTimeAfterImplemented,
 
-            int dbTimeAfterRecommended,
+            int? dbTimeAfterRecommended,
 
-            int dbTimeBeforeImplemented,
+            int? dbTimeBeforeImplemented,
 
-            int dbTimeBeforeRecommended)
+            int? dbTimeBeforeRecommended)
         {
             DbTimeAfterImplemented = dbTimeAfterImplemented;
             DbTimeAfterRecommended = dbTimeAfterRecommended;

@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Security Question resource in Oracle Cloud Infrastructure Identity Domains service.
@@ -57,7 +56,7 @@ type DomainsSecurityQuestion struct {
 	// * returned: default
 	// * type: string
 	// * uniqueness: none
-	CompartmentOcid pulumi.StringOutput `pulumi:"compartmentOcid"`
+	CompartmentOcid pulumi.StringPtrOutput `pulumi:"compartmentOcid"`
 	// (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
 	//
 	// **SCIM++ Properties:**
@@ -69,7 +68,7 @@ type DomainsSecurityQuestion struct {
 	// * returned: default
 	// * type: boolean
 	// * uniqueness: none
-	DeleteInProgress pulumi.BoolOutput `pulumi:"deleteInProgress"`
+	DeleteInProgress pulumi.BoolPtrOutput `pulumi:"deleteInProgress"`
 	// (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
 	//
 	// **SCIM++ Properties:**
@@ -81,7 +80,7 @@ type DomainsSecurityQuestion struct {
 	// * returned: default
 	// * type: string
 	// * uniqueness: none
-	DomainOcid pulumi.StringOutput `pulumi:"domainOcid"`
+	DomainOcid pulumi.StringPtrOutput `pulumi:"domainOcid"`
 	// An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer's tenant.
 	//
 	// **SCIM++ Properties:**
@@ -93,7 +92,7 @@ type DomainsSecurityQuestion struct {
 	// * returned: default
 	// * type: string
 	// * uniqueness: none
-	ExternalId pulumi.StringOutput `pulumi:"externalId"`
+	ExternalId pulumi.StringPtrOutput `pulumi:"externalId"`
 	// (Updatable) The User or App who created the Resource
 	//
 	// **SCIM++ Properties:**
@@ -127,7 +126,7 @@ type DomainsSecurityQuestion struct {
 	// * returned: request
 	// * type: string
 	// * uniqueness: none
-	IdcsLastUpgradedInRelease pulumi.StringOutput `pulumi:"idcsLastUpgradedInRelease"`
+	IdcsLastUpgradedInRelease pulumi.StringPtrOutput `pulumi:"idcsLastUpgradedInRelease"`
 	// (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
 	//
 	// **SCIM++ Properties:**
@@ -162,7 +161,7 @@ type DomainsSecurityQuestion struct {
 	// * returned: default
 	// * type: string
 	// * uniqueness: global
-	Ocid pulumi.StringOutput `pulumi:"ocid"`
+	Ocid pulumi.StringPtrOutput `pulumi:"ocid"`
 	// Locale values for the Question
 	//
 	// **SCIM++ Properties:**
@@ -213,7 +212,7 @@ type DomainsSecurityQuestion struct {
 	// * returned: default
 	// * type: string
 	// * uniqueness: none
-	TenancyOcid pulumi.StringOutput `pulumi:"tenancyOcid"`
+	TenancyOcid pulumi.StringPtrOutput `pulumi:"tenancyOcid"`
 	// This indicates if the question is a Custom Question added by the Security Admin.
 	//
 	// **SCIM++ Properties:**
@@ -909,12 +908,6 @@ func (i *DomainsSecurityQuestion) ToDomainsSecurityQuestionOutputWithContext(ctx
 	return pulumi.ToOutputWithContext(ctx, i).(DomainsSecurityQuestionOutput)
 }
 
-func (i *DomainsSecurityQuestion) ToOutput(ctx context.Context) pulumix.Output[*DomainsSecurityQuestion] {
-	return pulumix.Output[*DomainsSecurityQuestion]{
-		OutputState: i.ToDomainsSecurityQuestionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // DomainsSecurityQuestionArrayInput is an input type that accepts DomainsSecurityQuestionArray and DomainsSecurityQuestionArrayOutput values.
 // You can construct a concrete instance of `DomainsSecurityQuestionArrayInput` via:
 //
@@ -938,12 +931,6 @@ func (i DomainsSecurityQuestionArray) ToDomainsSecurityQuestionArrayOutput() Dom
 
 func (i DomainsSecurityQuestionArray) ToDomainsSecurityQuestionArrayOutputWithContext(ctx context.Context) DomainsSecurityQuestionArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(DomainsSecurityQuestionArrayOutput)
-}
-
-func (i DomainsSecurityQuestionArray) ToOutput(ctx context.Context) pulumix.Output[[]*DomainsSecurityQuestion] {
-	return pulumix.Output[[]*DomainsSecurityQuestion]{
-		OutputState: i.ToDomainsSecurityQuestionArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // DomainsSecurityQuestionMapInput is an input type that accepts DomainsSecurityQuestionMap and DomainsSecurityQuestionMapOutput values.
@@ -971,12 +958,6 @@ func (i DomainsSecurityQuestionMap) ToDomainsSecurityQuestionMapOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(DomainsSecurityQuestionMapOutput)
 }
 
-func (i DomainsSecurityQuestionMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*DomainsSecurityQuestion] {
-	return pulumix.Output[map[string]*DomainsSecurityQuestion]{
-		OutputState: i.ToDomainsSecurityQuestionMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DomainsSecurityQuestionOutput struct{ *pulumi.OutputState }
 
 func (DomainsSecurityQuestionOutput) ElementType() reflect.Type {
@@ -989,12 +970,6 @@ func (o DomainsSecurityQuestionOutput) ToDomainsSecurityQuestionOutput() Domains
 
 func (o DomainsSecurityQuestionOutput) ToDomainsSecurityQuestionOutputWithContext(ctx context.Context) DomainsSecurityQuestionOutput {
 	return o
-}
-
-func (o DomainsSecurityQuestionOutput) ToOutput(ctx context.Context) pulumix.Output[*DomainsSecurityQuestion] {
-	return pulumix.Output[*DomainsSecurityQuestion]{
-		OutputState: o.OutputState,
-	}
 }
 
 // This indicates if the question is selected by the Security Admin and is available for the end user.
@@ -1037,8 +1012,8 @@ func (o DomainsSecurityQuestionOutput) Authorization() pulumi.StringPtrOutput {
 // * returned: default
 // * type: string
 // * uniqueness: none
-func (o DomainsSecurityQuestionOutput) CompartmentOcid() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsSecurityQuestion) pulumi.StringOutput { return v.CompartmentOcid }).(pulumi.StringOutput)
+func (o DomainsSecurityQuestionOutput) CompartmentOcid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsSecurityQuestion) pulumi.StringPtrOutput { return v.CompartmentOcid }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
@@ -1052,8 +1027,8 @@ func (o DomainsSecurityQuestionOutput) CompartmentOcid() pulumi.StringOutput {
 // * returned: default
 // * type: boolean
 // * uniqueness: none
-func (o DomainsSecurityQuestionOutput) DeleteInProgress() pulumi.BoolOutput {
-	return o.ApplyT(func(v *DomainsSecurityQuestion) pulumi.BoolOutput { return v.DeleteInProgress }).(pulumi.BoolOutput)
+func (o DomainsSecurityQuestionOutput) DeleteInProgress() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DomainsSecurityQuestion) pulumi.BoolPtrOutput { return v.DeleteInProgress }).(pulumi.BoolPtrOutput)
 }
 
 // (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
@@ -1067,8 +1042,8 @@ func (o DomainsSecurityQuestionOutput) DeleteInProgress() pulumi.BoolOutput {
 // * returned: default
 // * type: string
 // * uniqueness: none
-func (o DomainsSecurityQuestionOutput) DomainOcid() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsSecurityQuestion) pulumi.StringOutput { return v.DomainOcid }).(pulumi.StringOutput)
+func (o DomainsSecurityQuestionOutput) DomainOcid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsSecurityQuestion) pulumi.StringPtrOutput { return v.DomainOcid }).(pulumi.StringPtrOutput)
 }
 
 // An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer's tenant.
@@ -1082,8 +1057,8 @@ func (o DomainsSecurityQuestionOutput) DomainOcid() pulumi.StringOutput {
 // * returned: default
 // * type: string
 // * uniqueness: none
-func (o DomainsSecurityQuestionOutput) ExternalId() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsSecurityQuestion) pulumi.StringOutput { return v.ExternalId }).(pulumi.StringOutput)
+func (o DomainsSecurityQuestionOutput) ExternalId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsSecurityQuestion) pulumi.StringPtrOutput { return v.ExternalId }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The User or App who created the Resource
@@ -1132,8 +1107,8 @@ func (o DomainsSecurityQuestionOutput) IdcsLastModifiedBies() DomainsSecurityQue
 // * returned: request
 // * type: string
 // * uniqueness: none
-func (o DomainsSecurityQuestionOutput) IdcsLastUpgradedInRelease() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsSecurityQuestion) pulumi.StringOutput { return v.IdcsLastUpgradedInRelease }).(pulumi.StringOutput)
+func (o DomainsSecurityQuestionOutput) IdcsLastUpgradedInRelease() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsSecurityQuestion) pulumi.StringPtrOutput { return v.IdcsLastUpgradedInRelease }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
@@ -1176,8 +1151,8 @@ func (o DomainsSecurityQuestionOutput) Metas() DomainsSecurityQuestionMetaArrayO
 // * returned: default
 // * type: string
 // * uniqueness: global
-func (o DomainsSecurityQuestionOutput) Ocid() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsSecurityQuestion) pulumi.StringOutput { return v.Ocid }).(pulumi.StringOutput)
+func (o DomainsSecurityQuestionOutput) Ocid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsSecurityQuestion) pulumi.StringPtrOutput { return v.Ocid }).(pulumi.StringPtrOutput)
 }
 
 // Locale values for the Question
@@ -1244,8 +1219,8 @@ func (o DomainsSecurityQuestionOutput) Tags() DomainsSecurityQuestionTagArrayOut
 // * returned: default
 // * type: string
 // * uniqueness: none
-func (o DomainsSecurityQuestionOutput) TenancyOcid() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsSecurityQuestion) pulumi.StringOutput { return v.TenancyOcid }).(pulumi.StringOutput)
+func (o DomainsSecurityQuestionOutput) TenancyOcid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsSecurityQuestion) pulumi.StringPtrOutput { return v.TenancyOcid }).(pulumi.StringPtrOutput)
 }
 
 // This indicates if the question is a Custom Question added by the Security Admin.
@@ -1280,12 +1255,6 @@ func (o DomainsSecurityQuestionArrayOutput) ToDomainsSecurityQuestionArrayOutput
 	return o
 }
 
-func (o DomainsSecurityQuestionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*DomainsSecurityQuestion] {
-	return pulumix.Output[[]*DomainsSecurityQuestion]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o DomainsSecurityQuestionArrayOutput) Index(i pulumi.IntInput) DomainsSecurityQuestionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *DomainsSecurityQuestion {
 		return vs[0].([]*DomainsSecurityQuestion)[vs[1].(int)]
@@ -1304,12 +1273,6 @@ func (o DomainsSecurityQuestionMapOutput) ToDomainsSecurityQuestionMapOutput() D
 
 func (o DomainsSecurityQuestionMapOutput) ToDomainsSecurityQuestionMapOutputWithContext(ctx context.Context) DomainsSecurityQuestionMapOutput {
 	return o
-}
-
-func (o DomainsSecurityQuestionMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*DomainsSecurityQuestion] {
-	return pulumix.Output[map[string]*DomainsSecurityQuestion]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DomainsSecurityQuestionMapOutput) MapIndex(k pulumi.StringInput) DomainsSecurityQuestionOutput {

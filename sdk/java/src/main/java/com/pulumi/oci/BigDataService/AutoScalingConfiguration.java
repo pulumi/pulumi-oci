@@ -15,6 +15,7 @@ import com.pulumi.oci.Utilities;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -138,14 +139,14 @@ public class AutoScalingConfiguration extends com.pulumi.resources.CustomResourc
      * 
      */
     @Export(name="displayName", refs={String.class}, tree="[0]")
-    private Output<String> displayName;
+    private Output</* @Nullable */ String> displayName;
 
     /**
      * @return (Updatable) A user-friendly name. The name does not have to be unique, and it may be changed. Avoid entering confidential information.
      * 
      */
-    public Output<String> displayName() {
-        return this.displayName;
+    public Output<Optional<String>> displayName() {
+        return Codegen.optional(this.displayName);
     }
     /**
      * (Updatable) Whether the autoscale configuration is enabled.
@@ -180,14 +181,14 @@ public class AutoScalingConfiguration extends com.pulumi.resources.CustomResourc
      * 
      */
     @Export(name="policy", refs={AutoScalingConfigurationPolicy.class}, tree="[0]")
-    private Output<AutoScalingConfigurationPolicy> policy;
+    private Output</* @Nullable */ AutoScalingConfigurationPolicy> policy;
 
     /**
      * @return (Updatable) This model for autoscaling policy is deprecated and not supported for ODH clusters. Use the `AutoScalePolicyDetails` model to manage autoscale policy details for ODH clusters.
      * 
      */
-    public Output<AutoScalingConfigurationPolicy> policy() {
-        return this.policy;
+    public Output<Optional<AutoScalingConfigurationPolicy>> policy() {
+        return Codegen.optional(this.policy);
     }
     /**
      * (Updatable) Policy definition for the autoscale configuration.
@@ -204,7 +205,7 @@ public class AutoScalingConfiguration extends com.pulumi.resources.CustomResourc
      * 
      */
     @Export(name="policyDetails", refs={AutoScalingConfigurationPolicyDetails.class}, tree="[0]")
-    private Output<AutoScalingConfigurationPolicyDetails> policyDetails;
+    private Output</* @Nullable */ AutoScalingConfigurationPolicyDetails> policyDetails;
 
     /**
      * @return (Updatable) Policy definition for the autoscale configuration.
@@ -220,50 +221,50 @@ public class AutoScalingConfiguration extends com.pulumi.resources.CustomResourc
      * An autoscaling configuration can have one of above supported policies.
      * 
      */
-    public Output<AutoScalingConfigurationPolicyDetails> policyDetails() {
-        return this.policyDetails;
+    public Output<Optional<AutoScalingConfigurationPolicyDetails>> policyDetails() {
+        return Codegen.optional(this.policyDetails);
     }
     /**
      * The state of the autoscale configuration.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The state of the autoscale configuration.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * The time the cluster was created, shown as an RFC 3339 formatted datetime string.
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The time the cluster was created, shown as an RFC 3339 formatted datetime string.
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * The time the autoscale configuration was updated, shown as an RFC 3339 formatted datetime string.
      * 
      */
     @Export(name="timeUpdated", refs={String.class}, tree="[0]")
-    private Output<String> timeUpdated;
+    private Output</* @Nullable */ String> timeUpdated;
 
     /**
      * @return The time the autoscale configuration was updated, shown as an RFC 3339 formatted datetime string.
      * 
      */
-    public Output<String> timeUpdated() {
-        return this.timeUpdated;
+    public Output<Optional<String>> timeUpdated() {
+        return Codegen.optional(this.timeUpdated);
     }
 
     /**

@@ -8,6 +8,8 @@ import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetSoftwareSourceModuleStreamsModuleStreamCollectionItem {
@@ -15,111 +17,111 @@ public final class GetSoftwareSourceModuleStreamsModuleStreamCollectionItem {
      * @return The architecture for which the packages in this module stream were built.
      * 
      */
-    private String archType;
+    private @Nullable String archType;
     /**
      * @return A description of the contents of the module stream.
      * 
      */
-    private String description;
+    private @Nullable String description;
     /**
      * @return Indicates if this stream is the default for its module.
      * 
      */
-    private Boolean isDefault;
+    private @Nullable Boolean isDefault;
     /**
      * @return A boolean variable that is used to list only the latest versions of packages, module streams, and stream profiles when set to true. All packages, module streams, and stream profiles are returned when set to false.
      * 
      */
-    private Boolean isLatest;
+    private @Nullable Boolean isLatest;
     /**
      * @return The name of a module. This parameter is required if a streamName is specified.
      * 
      */
-    private String moduleName;
+    private @Nullable String moduleName;
     /**
      * @return The name of the entity to be queried.
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return A list of packages that are contained by the stream.  Each element in the list is the name of a package.  The name is suitable to use as an argument to other OS Management Hub APIs that interact directly with packages.
      * 
      */
-    private List<String> packages;
+    private @Nullable List<String> packages;
     /**
      * @return A list of profiles that are part of the stream.  Each element in the list is the name of a profile.  The name is suitable to use as an argument to other OS Management Hub APIs that interact directly with module stream profiles.  However, it is not URL encoded.
      * 
      */
-    private List<String> profiles;
+    private @Nullable List<String> profiles;
     /**
      * @return The software source OCID.
      * 
      */
-    private String softwareSourceId;
+    private @Nullable String softwareSourceId;
 
     private GetSoftwareSourceModuleStreamsModuleStreamCollectionItem() {}
     /**
      * @return The architecture for which the packages in this module stream were built.
      * 
      */
-    public String archType() {
-        return this.archType;
+    public Optional<String> archType() {
+        return Optional.ofNullable(this.archType);
     }
     /**
      * @return A description of the contents of the module stream.
      * 
      */
-    public String description() {
-        return this.description;
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
     /**
      * @return Indicates if this stream is the default for its module.
      * 
      */
-    public Boolean isDefault() {
-        return this.isDefault;
+    public Optional<Boolean> isDefault() {
+        return Optional.ofNullable(this.isDefault);
     }
     /**
      * @return A boolean variable that is used to list only the latest versions of packages, module streams, and stream profiles when set to true. All packages, module streams, and stream profiles are returned when set to false.
      * 
      */
-    public Boolean isLatest() {
-        return this.isLatest;
+    public Optional<Boolean> isLatest() {
+        return Optional.ofNullable(this.isLatest);
     }
     /**
      * @return The name of a module. This parameter is required if a streamName is specified.
      * 
      */
-    public String moduleName() {
-        return this.moduleName;
+    public Optional<String> moduleName() {
+        return Optional.ofNullable(this.moduleName);
     }
     /**
      * @return The name of the entity to be queried.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return A list of packages that are contained by the stream.  Each element in the list is the name of a package.  The name is suitable to use as an argument to other OS Management Hub APIs that interact directly with packages.
      * 
      */
     public List<String> packages() {
-        return this.packages;
+        return this.packages == null ? List.of() : this.packages;
     }
     /**
      * @return A list of profiles that are part of the stream.  Each element in the list is the name of a profile.  The name is suitable to use as an argument to other OS Management Hub APIs that interact directly with module stream profiles.  However, it is not URL encoded.
      * 
      */
     public List<String> profiles() {
-        return this.profiles;
+        return this.profiles == null ? List.of() : this.profiles;
     }
     /**
      * @return The software source OCID.
      * 
      */
-    public String softwareSourceId() {
-        return this.softwareSourceId;
+    public Optional<String> softwareSourceId() {
+        return Optional.ofNullable(this.softwareSourceId);
     }
 
     public static Builder builder() {
@@ -131,15 +133,15 @@ public final class GetSoftwareSourceModuleStreamsModuleStreamCollectionItem {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String archType;
-        private String description;
-        private Boolean isDefault;
-        private Boolean isLatest;
-        private String moduleName;
-        private String name;
-        private List<String> packages;
-        private List<String> profiles;
-        private String softwareSourceId;
+        private @Nullable String archType;
+        private @Nullable String description;
+        private @Nullable Boolean isDefault;
+        private @Nullable Boolean isLatest;
+        private @Nullable String moduleName;
+        private @Nullable String name;
+        private @Nullable List<String> packages;
+        private @Nullable List<String> profiles;
+        private @Nullable String softwareSourceId;
         public Builder() {}
         public Builder(GetSoftwareSourceModuleStreamsModuleStreamCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -155,54 +157,54 @@ public final class GetSoftwareSourceModuleStreamsModuleStreamCollectionItem {
         }
 
         @CustomType.Setter
-        public Builder archType(String archType) {
-            this.archType = Objects.requireNonNull(archType);
+        public Builder archType(@Nullable String archType) {
+            this.archType = archType;
             return this;
         }
         @CustomType.Setter
-        public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+        public Builder description(@Nullable String description) {
+            this.description = description;
             return this;
         }
         @CustomType.Setter
-        public Builder isDefault(Boolean isDefault) {
-            this.isDefault = Objects.requireNonNull(isDefault);
+        public Builder isDefault(@Nullable Boolean isDefault) {
+            this.isDefault = isDefault;
             return this;
         }
         @CustomType.Setter
-        public Builder isLatest(Boolean isLatest) {
-            this.isLatest = Objects.requireNonNull(isLatest);
+        public Builder isLatest(@Nullable Boolean isLatest) {
+            this.isLatest = isLatest;
             return this;
         }
         @CustomType.Setter
-        public Builder moduleName(String moduleName) {
-            this.moduleName = Objects.requireNonNull(moduleName);
+        public Builder moduleName(@Nullable String moduleName) {
+            this.moduleName = moduleName;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder packages(List<String> packages) {
-            this.packages = Objects.requireNonNull(packages);
+        public Builder packages(@Nullable List<String> packages) {
+            this.packages = packages;
             return this;
         }
         public Builder packages(String... packages) {
             return packages(List.of(packages));
         }
         @CustomType.Setter
-        public Builder profiles(List<String> profiles) {
-            this.profiles = Objects.requireNonNull(profiles);
+        public Builder profiles(@Nullable List<String> profiles) {
+            this.profiles = profiles;
             return this;
         }
         public Builder profiles(String... profiles) {
             return profiles(List.of(profiles));
         }
         @CustomType.Setter
-        public Builder softwareSourceId(String softwareSourceId) {
-            this.softwareSourceId = Objects.requireNonNull(softwareSourceId);
+        public Builder softwareSourceId(@Nullable String softwareSourceId) {
+            this.softwareSourceId = softwareSourceId;
             return this;
         }
         public GetSoftwareSourceModuleStreamsModuleStreamCollectionItem build() {

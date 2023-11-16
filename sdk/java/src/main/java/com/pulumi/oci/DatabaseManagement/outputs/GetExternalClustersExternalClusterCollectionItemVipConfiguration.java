@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetExternalClustersExternalClusterCollectionItemVipConfiguration {
@@ -14,39 +16,39 @@ public final class GetExternalClustersExternalClusterCollectionItemVipConfigurat
      * @return The VIP name or IP address.
      * 
      */
-    private String address;
+    private @Nullable String address;
     /**
      * @return The network number from which VIPs are obtained.
      * 
      */
-    private Integer networkNumber;
+    private @Nullable Integer networkNumber;
     /**
      * @return The name of the node with the VIP.
      * 
      */
-    private String nodeName;
+    private @Nullable String nodeName;
 
     private GetExternalClustersExternalClusterCollectionItemVipConfiguration() {}
     /**
      * @return The VIP name or IP address.
      * 
      */
-    public String address() {
-        return this.address;
+    public Optional<String> address() {
+        return Optional.ofNullable(this.address);
     }
     /**
      * @return The network number from which VIPs are obtained.
      * 
      */
-    public Integer networkNumber() {
-        return this.networkNumber;
+    public Optional<Integer> networkNumber() {
+        return Optional.ofNullable(this.networkNumber);
     }
     /**
      * @return The name of the node with the VIP.
      * 
      */
-    public String nodeName() {
-        return this.nodeName;
+    public Optional<String> nodeName() {
+        return Optional.ofNullable(this.nodeName);
     }
 
     public static Builder builder() {
@@ -58,9 +60,9 @@ public final class GetExternalClustersExternalClusterCollectionItemVipConfigurat
     }
     @CustomType.Builder
     public static final class Builder {
-        private String address;
-        private Integer networkNumber;
-        private String nodeName;
+        private @Nullable String address;
+        private @Nullable Integer networkNumber;
+        private @Nullable String nodeName;
         public Builder() {}
         public Builder(GetExternalClustersExternalClusterCollectionItemVipConfiguration defaults) {
     	      Objects.requireNonNull(defaults);
@@ -70,18 +72,18 @@ public final class GetExternalClustersExternalClusterCollectionItemVipConfigurat
         }
 
         @CustomType.Setter
-        public Builder address(String address) {
-            this.address = Objects.requireNonNull(address);
+        public Builder address(@Nullable String address) {
+            this.address = address;
             return this;
         }
         @CustomType.Setter
-        public Builder networkNumber(Integer networkNumber) {
-            this.networkNumber = Objects.requireNonNull(networkNumber);
+        public Builder networkNumber(@Nullable Integer networkNumber) {
+            this.networkNumber = networkNumber;
             return this;
         }
         @CustomType.Setter
-        public Builder nodeName(String nodeName) {
-            this.nodeName = Objects.requireNonNull(nodeName);
+        public Builder nodeName(@Nullable String nodeName) {
+            this.nodeName = nodeName;
             return this;
         }
         public GetExternalClustersExternalClusterCollectionItemVipConfiguration build() {

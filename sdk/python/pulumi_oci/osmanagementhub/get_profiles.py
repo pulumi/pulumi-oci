@@ -64,17 +64,11 @@ class GetProfilesResult:
     @property
     @pulumi.getter(name="archType")
     def arch_type(self) -> Optional[str]:
-        """
-        The architecture type.
-        """
         return pulumi.get(self, "arch_type")
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[str]:
-        """
-        The OCID of the tenancy containing the registration profile.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
@@ -85,9 +79,6 @@ class GetProfilesResult:
     @property
     @pulumi.getter(name="displayNames")
     def display_names(self) -> Optional[Sequence[str]]:
-        """
-        Software source name.
-        """
         return pulumi.get(self, "display_names")
 
     @property
@@ -97,7 +88,7 @@ class GetProfilesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -106,17 +97,11 @@ class GetProfilesResult:
     @property
     @pulumi.getter(name="osFamily")
     def os_family(self) -> Optional[str]:
-        """
-        The operating system family.
-        """
         return pulumi.get(self, "os_family")
 
     @property
     @pulumi.getter(name="profileCollections")
-    def profile_collections(self) -> Sequence['outputs.GetProfilesProfileCollectionResult']:
-        """
-        The list of profile_collection.
-        """
+    def profile_collections(self) -> Optional[Sequence['outputs.GetProfilesProfileCollectionResult']]:
         return pulumi.get(self, "profile_collections")
 
     @property
@@ -127,25 +112,16 @@ class GetProfilesResult:
     @property
     @pulumi.getter(name="profileTypes")
     def profile_types(self) -> Optional[Sequence[str]]:
-        """
-        The type of Profile. One of SOFTWARESOURCE, GROUP or LIFECYCLE.
-        """
         return pulumi.get(self, "profile_types")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the registration profile.
-        """
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="vendorName")
     def vendor_name(self) -> Optional[str]:
-        """
-        The software source vendor name.
-        """
         return pulumi.get(self, "vendor_name")
 
 
@@ -181,38 +157,7 @@ def get_profiles(arch_type: Optional[str] = None,
                  vendor_name: Optional[str] = None,
                  opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetProfilesResult:
     """
-    This data source provides the list of Profiles in Oracle Cloud Infrastructure Os Management Hub service.
-
-    Lists registration profiles that match the specified compartment or profile OCID. Filter the list against a
-    variety of criteria including but not limited to its name, status, vendor name, and architecture type.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_profiles = oci.OsManagementHub.get_profiles(arch_type=var["profile_arch_type"],
-        compartment_id=var["compartment_id"],
-        display_names=var["profile_display_name"],
-        display_name_contains=var["profile_display_name_contains"],
-        os_family=var["profile_os_family"],
-        profile_id=oci_os_management_hub_profile["test_profile"]["id"],
-        profile_types=var["profile_profile_type"],
-        state=var["profile_state"],
-        vendor_name=var["profile_vendor_name"])
-    ```
-
-
-    :param str arch_type: A filter to return only profiles that match the given archType.
-    :param str compartment_id: The OCID of the compartment that contains the resources to list.
-    :param str display_name_contains: A filter to return resources that may partially match the given display name.
-    :param Sequence[str] display_names: A filter to return resources that match the given display names.
-    :param str os_family: A filter to return only profiles that match the given osFamily.
-    :param str profile_id: The OCID of the registration profile.
-    :param Sequence[str] profile_types: A filter to return registration profiles that match the given profileType.
-    :param str state: A filter to return only registration profile whose lifecycleState matches the given lifecycleState.
-    :param str vendor_name: A filter to return only profiles that match the given vendorName.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['archType'] = arch_type
@@ -256,37 +201,6 @@ def get_profiles_output(arch_type: Optional[pulumi.Input[Optional[str]]] = None,
                         vendor_name: Optional[pulumi.Input[Optional[str]]] = None,
                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetProfilesResult]:
     """
-    This data source provides the list of Profiles in Oracle Cloud Infrastructure Os Management Hub service.
-
-    Lists registration profiles that match the specified compartment or profile OCID. Filter the list against a
-    variety of criteria including but not limited to its name, status, vendor name, and architecture type.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_profiles = oci.OsManagementHub.get_profiles(arch_type=var["profile_arch_type"],
-        compartment_id=var["compartment_id"],
-        display_names=var["profile_display_name"],
-        display_name_contains=var["profile_display_name_contains"],
-        os_family=var["profile_os_family"],
-        profile_id=oci_os_management_hub_profile["test_profile"]["id"],
-        profile_types=var["profile_profile_type"],
-        state=var["profile_state"],
-        vendor_name=var["profile_vendor_name"])
-    ```
-
-
-    :param str arch_type: A filter to return only profiles that match the given archType.
-    :param str compartment_id: The OCID of the compartment that contains the resources to list.
-    :param str display_name_contains: A filter to return resources that may partially match the given display name.
-    :param Sequence[str] display_names: A filter to return resources that match the given display names.
-    :param str os_family: A filter to return only profiles that match the given osFamily.
-    :param str profile_id: The OCID of the registration profile.
-    :param Sequence[str] profile_types: A filter to return registration profiles that match the given profileType.
-    :param str state: A filter to return only registration profile whose lifecycleState matches the given lifecycleState.
-    :param str vendor_name: A filter to return only profiles that match the given vendorName.
+    Use this data source to access information about an existing resource.
     """
     ...

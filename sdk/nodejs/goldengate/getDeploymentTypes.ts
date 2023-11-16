@@ -72,7 +72,7 @@ export interface GetDeploymentTypesResult {
     /**
      * The list of deployment_type_collection.
      */
-    readonly deploymentTypeCollections: outputs.GoldenGate.GetDeploymentTypesDeploymentTypeCollection[];
+    readonly deploymentTypeCollections?: outputs.GoldenGate.GetDeploymentTypesDeploymentTypeCollection[];
     /**
      * An object's Display Name.
      */
@@ -81,7 +81,7 @@ export interface GetDeploymentTypesResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Version of OGG
      */

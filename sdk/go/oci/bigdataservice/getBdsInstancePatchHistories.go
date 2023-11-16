@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Bds Instance Patch Histories in Oracle Cloud Infrastructure Big Data Service service.
@@ -72,7 +71,7 @@ type GetBdsInstancePatchHistoriesResult struct {
 	BdsInstanceId string                               `pulumi:"bdsInstanceId"`
 	Filters       []GetBdsInstancePatchHistoriesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The list of patch_histories.
 	PatchHistories []GetBdsInstancePatchHistoriesPatchHistory `pulumi:"patchHistories"`
 	// The type of current patch history. DP - Data Plane patch(This history type is internal available only) ODH - Oracle Distribution of Hadoop patch OS - Operating System patch
@@ -127,12 +126,6 @@ func (o GetBdsInstancePatchHistoriesResultOutput) ToGetBdsInstancePatchHistories
 	return o
 }
 
-func (o GetBdsInstancePatchHistoriesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetBdsInstancePatchHistoriesResult] {
-	return pulumix.Output[GetBdsInstancePatchHistoriesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetBdsInstancePatchHistoriesResultOutput) BdsInstanceId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetBdsInstancePatchHistoriesResult) string { return v.BdsInstanceId }).(pulumi.StringOutput)
 }
@@ -142,8 +135,8 @@ func (o GetBdsInstancePatchHistoriesResultOutput) Filters() GetBdsInstancePatchH
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetBdsInstancePatchHistoriesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBdsInstancePatchHistoriesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetBdsInstancePatchHistoriesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBdsInstancePatchHistoriesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The list of patch_histories.

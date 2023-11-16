@@ -50,13 +50,13 @@ export interface GetDbSystemComputePerformancesResult {
     /**
      * The list of db_system_compute_performances.
      */
-    readonly dbSystemComputePerformances: outputs.Database.GetDbSystemComputePerformancesDbSystemComputePerformance[];
+    readonly dbSystemComputePerformances?: outputs.Database.GetDbSystemComputePerformancesDbSystemComputePerformance[];
     readonly dbSystemShape?: string;
     readonly filters?: outputs.Database.GetDbSystemComputePerformancesFilter[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
 }
 /**
  * This data source provides the list of Db System Compute Performances in Oracle Cloud Infrastructure Database service.

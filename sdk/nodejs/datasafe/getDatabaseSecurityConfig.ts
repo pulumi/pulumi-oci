@@ -47,61 +47,61 @@ export interface GetDatabaseSecurityConfigResult {
     /**
      * The OCID of the compartment containing the database security config.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     readonly databaseSecurityConfigId: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * The description of the database security config.
      */
-    readonly description: string;
+    readonly description?: string;
     /**
      * The display name of the database security config.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * The OCID of the database security config.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Details about the current state of the database security config in Data Safe.
      */
-    readonly lifecycleDetails: string;
-    readonly refreshTrigger: number;
+    readonly lifecycleDetails?: string;
+    readonly refreshTrigger?: number;
     /**
      * The SQL firewall related configurations.
      */
-    readonly sqlFirewallConfigs: outputs.DataSafe.GetDatabaseSecurityConfigSqlFirewallConfig[];
+    readonly sqlFirewallConfigs?: outputs.DataSafe.GetDatabaseSecurityConfigSqlFirewallConfig[];
     /**
      * The current state of the database security config.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    readonly systemTags: {[key: string]: any};
+    readonly systemTags?: {[key: string]: any};
     /**
      * The target OCID corresponding to the database security config.
      */
-    readonly targetId: string;
+    readonly targetId?: string;
     /**
      * The time that the database security config was created, in the format defined by RFC3339.
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The last date and time the database security config was refreshed, in the format defined by RFC3339.
      */
-    readonly timeLastRefreshed: string;
+    readonly timeLastRefreshed?: string;
     /**
      * The date and time the database security configuration was last updated, in the format defined by RFC3339.
      */
-    readonly timeUpdated: string;
+    readonly timeUpdated?: string;
 }
 /**
  * This data source provides details about a specific Database Security Config resource in Oracle Cloud Infrastructure Data Safe service.

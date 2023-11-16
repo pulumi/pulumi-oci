@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Security Assessment Findings in Oracle Cloud Infrastructure Data Safe service.
@@ -51,7 +50,7 @@ type GetSecurityAssessmentFindingsResult struct {
 	// The list of findings.
 	Findings []GetSecurityAssessmentFindingsFinding `pulumi:"findings"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Provides information on whether the finding is related to a CIS Oracle Database Benchmark recommendation, a STIG rule, or a GDPR Article/Recital.
 	References           *string `pulumi:"references"`
 	SecurityAssessmentId string  `pulumi:"securityAssessmentId"`
@@ -108,12 +107,6 @@ func (o GetSecurityAssessmentFindingsResultOutput) ToGetSecurityAssessmentFindin
 	return o
 }
 
-func (o GetSecurityAssessmentFindingsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetSecurityAssessmentFindingsResult] {
-	return pulumix.Output[GetSecurityAssessmentFindingsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSecurityAssessmentFindingsResultOutput) AccessLevel() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetSecurityAssessmentFindingsResult) *string { return v.AccessLevel }).(pulumi.StringPtrOutput)
 }
@@ -136,8 +129,8 @@ func (o GetSecurityAssessmentFindingsResultOutput) Findings() GetSecurityAssessm
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetSecurityAssessmentFindingsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSecurityAssessmentFindingsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetSecurityAssessmentFindingsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentFindingsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Provides information on whether the finding is related to a CIS Oracle Database Benchmark recommendation, a STIG rule, or a GDPR Article/Recital.

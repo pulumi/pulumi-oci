@@ -9,6 +9,8 @@ import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDrPlanExecutionGroupExecution {
@@ -16,111 +18,111 @@ public final class GetDrPlanExecutionGroupExecution {
      * @return The display name of the step execution.  Example: `DATABASE_SWITCHOVER`
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return The total duration in seconds taken to complete the step execution.  Example: `35`
      * 
      */
-    private Integer executionDurationInSec;
+    private @Nullable Integer executionDurationInSec;
     /**
      * @return The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..uniqueID`
      * 
      */
-    private String groupId;
+    private @Nullable String groupId;
     /**
      * @return The status of the step execution.
      * 
      */
-    private String status;
+    private @Nullable String status;
     /**
      * @return Additional details on the step execution status.  Example: `This step failed to complete due to a timeout`
      * 
      */
-    private String statusDetails;
+    private @Nullable String statusDetails;
     /**
      * @return A list of step executions in the group.
      * 
      */
-    private List<GetDrPlanExecutionGroupExecutionStepExecution> stepExecutions;
+    private @Nullable List<GetDrPlanExecutionGroupExecutionStepExecution> stepExecutions;
     /**
      * @return The date and time at which DR plan execution succeeded, failed, was paused, or was canceled. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
      * 
      */
-    private String timeEnded;
+    private @Nullable String timeEnded;
     /**
      * @return The date and time at which DR plan execution began. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
      * 
      */
-    private String timeStarted;
+    private @Nullable String timeStarted;
     /**
      * @return The group type.  Example: `BUILT_IN`
      * 
      */
-    private String type;
+    private @Nullable String type;
 
     private GetDrPlanExecutionGroupExecution() {}
     /**
      * @return The display name of the step execution.  Example: `DATABASE_SWITCHOVER`
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return The total duration in seconds taken to complete the step execution.  Example: `35`
      * 
      */
-    public Integer executionDurationInSec() {
-        return this.executionDurationInSec;
+    public Optional<Integer> executionDurationInSec() {
+        return Optional.ofNullable(this.executionDurationInSec);
     }
     /**
      * @return The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..uniqueID`
      * 
      */
-    public String groupId() {
-        return this.groupId;
+    public Optional<String> groupId() {
+        return Optional.ofNullable(this.groupId);
     }
     /**
      * @return The status of the step execution.
      * 
      */
-    public String status() {
-        return this.status;
+    public Optional<String> status() {
+        return Optional.ofNullable(this.status);
     }
     /**
      * @return Additional details on the step execution status.  Example: `This step failed to complete due to a timeout`
      * 
      */
-    public String statusDetails() {
-        return this.statusDetails;
+    public Optional<String> statusDetails() {
+        return Optional.ofNullable(this.statusDetails);
     }
     /**
      * @return A list of step executions in the group.
      * 
      */
     public List<GetDrPlanExecutionGroupExecutionStepExecution> stepExecutions() {
-        return this.stepExecutions;
+        return this.stepExecutions == null ? List.of() : this.stepExecutions;
     }
     /**
      * @return The date and time at which DR plan execution succeeded, failed, was paused, or was canceled. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
      * 
      */
-    public String timeEnded() {
-        return this.timeEnded;
+    public Optional<String> timeEnded() {
+        return Optional.ofNullable(this.timeEnded);
     }
     /**
      * @return The date and time at which DR plan execution began. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
      * 
      */
-    public String timeStarted() {
-        return this.timeStarted;
+    public Optional<String> timeStarted() {
+        return Optional.ofNullable(this.timeStarted);
     }
     /**
      * @return The group type.  Example: `BUILT_IN`
      * 
      */
-    public String type() {
-        return this.type;
+    public Optional<String> type() {
+        return Optional.ofNullable(this.type);
     }
 
     public static Builder builder() {
@@ -132,15 +134,15 @@ public final class GetDrPlanExecutionGroupExecution {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String displayName;
-        private Integer executionDurationInSec;
-        private String groupId;
-        private String status;
-        private String statusDetails;
-        private List<GetDrPlanExecutionGroupExecutionStepExecution> stepExecutions;
-        private String timeEnded;
-        private String timeStarted;
-        private String type;
+        private @Nullable String displayName;
+        private @Nullable Integer executionDurationInSec;
+        private @Nullable String groupId;
+        private @Nullable String status;
+        private @Nullable String statusDetails;
+        private @Nullable List<GetDrPlanExecutionGroupExecutionStepExecution> stepExecutions;
+        private @Nullable String timeEnded;
+        private @Nullable String timeStarted;
+        private @Nullable String type;
         public Builder() {}
         public Builder(GetDrPlanExecutionGroupExecution defaults) {
     	      Objects.requireNonNull(defaults);
@@ -156,51 +158,51 @@ public final class GetDrPlanExecutionGroupExecution {
         }
 
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder executionDurationInSec(Integer executionDurationInSec) {
-            this.executionDurationInSec = Objects.requireNonNull(executionDurationInSec);
+        public Builder executionDurationInSec(@Nullable Integer executionDurationInSec) {
+            this.executionDurationInSec = executionDurationInSec;
             return this;
         }
         @CustomType.Setter
-        public Builder groupId(String groupId) {
-            this.groupId = Objects.requireNonNull(groupId);
+        public Builder groupId(@Nullable String groupId) {
+            this.groupId = groupId;
             return this;
         }
         @CustomType.Setter
-        public Builder status(String status) {
-            this.status = Objects.requireNonNull(status);
+        public Builder status(@Nullable String status) {
+            this.status = status;
             return this;
         }
         @CustomType.Setter
-        public Builder statusDetails(String statusDetails) {
-            this.statusDetails = Objects.requireNonNull(statusDetails);
+        public Builder statusDetails(@Nullable String statusDetails) {
+            this.statusDetails = statusDetails;
             return this;
         }
         @CustomType.Setter
-        public Builder stepExecutions(List<GetDrPlanExecutionGroupExecutionStepExecution> stepExecutions) {
-            this.stepExecutions = Objects.requireNonNull(stepExecutions);
+        public Builder stepExecutions(@Nullable List<GetDrPlanExecutionGroupExecutionStepExecution> stepExecutions) {
+            this.stepExecutions = stepExecutions;
             return this;
         }
         public Builder stepExecutions(GetDrPlanExecutionGroupExecutionStepExecution... stepExecutions) {
             return stepExecutions(List.of(stepExecutions));
         }
         @CustomType.Setter
-        public Builder timeEnded(String timeEnded) {
-            this.timeEnded = Objects.requireNonNull(timeEnded);
+        public Builder timeEnded(@Nullable String timeEnded) {
+            this.timeEnded = timeEnded;
             return this;
         }
         @CustomType.Setter
-        public Builder timeStarted(String timeStarted) {
-            this.timeStarted = Objects.requireNonNull(timeStarted);
+        public Builder timeStarted(@Nullable String timeStarted) {
+            this.timeStarted = timeStarted;
             return this;
         }
         @CustomType.Setter
-        public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+        public Builder type(@Nullable String type) {
+            this.type = type;
             return this;
         }
         public GetDrPlanExecutionGroupExecution build() {

@@ -8,6 +8,8 @@ import com.pulumi.oci.DataSafe.outputs.GetAlertAnalyticItemDimension;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAlertAnalyticItem {
@@ -15,63 +17,63 @@ public final class GetAlertAnalyticItem {
      * @return Total count of aggregated values.
      * 
      */
-    private String count;
+    private @Nullable String count;
     /**
      * @return Details of aggregation dimension summarizing alerts.
      * 
      */
-    private List<GetAlertAnalyticItemDimension> dimensions;
+    private @Nullable List<GetAlertAnalyticItemDimension> dimensions;
     /**
      * @return The name of the aggregation.
      * 
      */
-    private String metricName;
+    private @Nullable String metricName;
     /**
      * @return An optional filter to return audit events whose creation time in the database is less than and equal to the date-time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    private String timeEnded;
+    private @Nullable String timeEnded;
     /**
      * @return An optional filter to return audit events whose creation time in the database is greater than and equal to the date-time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    private String timeStarted;
+    private @Nullable String timeStarted;
 
     private GetAlertAnalyticItem() {}
     /**
      * @return Total count of aggregated values.
      * 
      */
-    public String count() {
-        return this.count;
+    public Optional<String> count() {
+        return Optional.ofNullable(this.count);
     }
     /**
      * @return Details of aggregation dimension summarizing alerts.
      * 
      */
     public List<GetAlertAnalyticItemDimension> dimensions() {
-        return this.dimensions;
+        return this.dimensions == null ? List.of() : this.dimensions;
     }
     /**
      * @return The name of the aggregation.
      * 
      */
-    public String metricName() {
-        return this.metricName;
+    public Optional<String> metricName() {
+        return Optional.ofNullable(this.metricName);
     }
     /**
      * @return An optional filter to return audit events whose creation time in the database is less than and equal to the date-time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    public String timeEnded() {
-        return this.timeEnded;
+    public Optional<String> timeEnded() {
+        return Optional.ofNullable(this.timeEnded);
     }
     /**
      * @return An optional filter to return audit events whose creation time in the database is greater than and equal to the date-time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    public String timeStarted() {
-        return this.timeStarted;
+    public Optional<String> timeStarted() {
+        return Optional.ofNullable(this.timeStarted);
     }
 
     public static Builder builder() {
@@ -83,11 +85,11 @@ public final class GetAlertAnalyticItem {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String count;
-        private List<GetAlertAnalyticItemDimension> dimensions;
-        private String metricName;
-        private String timeEnded;
-        private String timeStarted;
+        private @Nullable String count;
+        private @Nullable List<GetAlertAnalyticItemDimension> dimensions;
+        private @Nullable String metricName;
+        private @Nullable String timeEnded;
+        private @Nullable String timeStarted;
         public Builder() {}
         public Builder(GetAlertAnalyticItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -99,31 +101,31 @@ public final class GetAlertAnalyticItem {
         }
 
         @CustomType.Setter
-        public Builder count(String count) {
-            this.count = Objects.requireNonNull(count);
+        public Builder count(@Nullable String count) {
+            this.count = count;
             return this;
         }
         @CustomType.Setter
-        public Builder dimensions(List<GetAlertAnalyticItemDimension> dimensions) {
-            this.dimensions = Objects.requireNonNull(dimensions);
+        public Builder dimensions(@Nullable List<GetAlertAnalyticItemDimension> dimensions) {
+            this.dimensions = dimensions;
             return this;
         }
         public Builder dimensions(GetAlertAnalyticItemDimension... dimensions) {
             return dimensions(List.of(dimensions));
         }
         @CustomType.Setter
-        public Builder metricName(String metricName) {
-            this.metricName = Objects.requireNonNull(metricName);
+        public Builder metricName(@Nullable String metricName) {
+            this.metricName = metricName;
             return this;
         }
         @CustomType.Setter
-        public Builder timeEnded(String timeEnded) {
-            this.timeEnded = Objects.requireNonNull(timeEnded);
+        public Builder timeEnded(@Nullable String timeEnded) {
+            this.timeEnded = timeEnded;
             return this;
         }
         @CustomType.Setter
-        public Builder timeStarted(String timeStarted) {
-            this.timeStarted = Objects.requireNonNull(timeStarted);
+        public Builder timeStarted(@Nullable String timeStarted) {
+            this.timeStarted = timeStarted;
             return this;
         }
         public GetAlertAnalyticItem build() {

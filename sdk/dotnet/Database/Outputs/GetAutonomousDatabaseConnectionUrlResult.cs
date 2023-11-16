@@ -16,29 +16,29 @@ namespace Pulumi.Oci.Database.Outputs
         /// <summary>
         /// Oracle Application Express (APEX) URL.
         /// </summary>
-        public readonly string ApexUrl;
+        public readonly string? ApexUrl;
         /// <summary>
         /// The URL of the Graph Studio for the Autonomous Database.
         /// </summary>
-        public readonly string GraphStudioUrl;
+        public readonly string? GraphStudioUrl;
         /// <summary>
         /// Oracle Machine Learning user management URL.
         /// </summary>
-        public readonly string MachineLearningUserManagementUrl;
+        public readonly string? MachineLearningUserManagementUrl;
         /// <summary>
         /// Oracle SQL Developer Web URL.
         /// </summary>
-        public readonly string SqlDevWebUrl;
+        public readonly string? SqlDevWebUrl;
 
         [OutputConstructor]
         private GetAutonomousDatabaseConnectionUrlResult(
-            string apexUrl,
+            string? apexUrl,
 
-            string graphStudioUrl,
+            string? graphStudioUrl,
 
-            string machineLearningUserManagementUrl,
+            string? machineLearningUserManagementUrl,
 
-            string sqlDevWebUrl)
+            string? sqlDevWebUrl)
         {
             ApexUrl = apexUrl;
             GraphStudioUrl = graphStudioUrl;

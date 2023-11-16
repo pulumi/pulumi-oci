@@ -106,19 +106,19 @@ namespace Pulumi.Oci.Audit
     public sealed class GetConfigurationResult
     {
         public readonly string CompartmentId;
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The retention period setting, specified in days. The minimum is 90, the maximum 365.  Example: `90`
         /// </summary>
-        public readonly int RetentionPeriodDays;
+        public readonly int? RetentionPeriodDays;
 
         [OutputConstructor]
         private GetConfigurationResult(
             string compartmentId,
 
-            string id,
+            string? id,
 
-            int retentionPeriodDays)
+            int? retentionPeriodDays)
         {
             CompartmentId = compartmentId;
             Id = id;

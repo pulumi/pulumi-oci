@@ -16,11 +16,11 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used for the external DB system connector.
         /// </summary>
-        public readonly string AgentId;
+        public readonly string? AgentId;
         /// <summary>
         /// The error message indicating the reason for connection failure or `null` if the connection was successful.
         /// </summary>
-        public readonly string ConnectionFailureMessage;
+        public readonly string? ConnectionFailureMessage;
         /// <summary>
         /// The connection details required to connect to an external DB system component.
         /// </summary>
@@ -28,35 +28,35 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// <summary>
         /// The status of connectivity to the external DB system component.
         /// </summary>
-        public readonly string ConnectionStatus;
+        public readonly string? ConnectionStatus;
         /// <summary>
         /// The type of connector.
         /// </summary>
-        public readonly string ConnectorType;
+        public readonly string? ConnectorType;
         /// <summary>
         /// A filter to only return the resources that match the entire display name.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// The date and time the connectionStatus of the external DB system connector was last updated.
         /// </summary>
-        public readonly string TimeConnectionStatusLastUpdated;
+        public readonly string? TimeConnectionStatusLastUpdated;
 
         [OutputConstructor]
         private GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorResult(
-            string agentId,
+            string? agentId,
 
-            string connectionFailureMessage,
+            string? connectionFailureMessage,
 
             ImmutableArray<Outputs.GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoResult> connectionInfos,
 
-            string connectionStatus,
+            string? connectionStatus,
 
-            string connectorType,
+            string? connectorType,
 
-            string displayName,
+            string? displayName,
 
-            string timeConnectionStatusLastUpdated)
+            string? timeConnectionStatusLastUpdated)
         {
             AgentId = agentId;
             ConnectionFailureMessage = connectionFailureMessage;

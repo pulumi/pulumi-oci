@@ -233,7 +233,7 @@ namespace Pulumi.Oci.CloudGuard
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         public readonly bool? ResourceMetadataOnly;
         /// <summary>
         /// The list of responder_recipe_collection.
@@ -256,7 +256,7 @@ namespace Pulumi.Oci.CloudGuard
 
             ImmutableArray<Outputs.GetResponderRecipesFilterResult> filters,
 
-            string id,
+            string? id,
 
             bool? resourceMetadataOnly,
 

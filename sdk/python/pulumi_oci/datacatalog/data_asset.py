@@ -21,14 +21,6 @@ class DataAssetArgs:
                  properties: Optional[pulumi.Input[Mapping[str, Any]]] = None):
         """
         The set of arguments for constructing a DataAsset resource.
-        :param pulumi.Input[str] catalog_id: Unique catalog identifier.
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly display name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[str] type_key: The key of the data asset type. This can be obtained via the '/types' endpoint.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] description: (Updatable) Detailed description of the data asset.
         """
         pulumi.set(__self__, "catalog_id", catalog_id)
         pulumi.set(__self__, "display_name", display_name)
@@ -41,9 +33,6 @@ class DataAssetArgs:
     @property
     @pulumi.getter(name="catalogId")
     def catalog_id(self) -> pulumi.Input[str]:
-        """
-        Unique catalog identifier.
-        """
         return pulumi.get(self, "catalog_id")
 
     @catalog_id.setter
@@ -53,9 +42,6 @@ class DataAssetArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Input[str]:
-        """
-        (Updatable) A user-friendly display name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -65,13 +51,6 @@ class DataAssetArgs:
     @property
     @pulumi.getter(name="typeKey")
     def type_key(self) -> pulumi.Input[str]:
-        """
-        The key of the data asset type. This can be obtained via the '/types' endpoint.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "type_key")
 
     @type_key.setter
@@ -81,9 +60,6 @@ class DataAssetArgs:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Detailed description of the data asset.
-        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -120,24 +96,6 @@ class _DataAssetState:
                  uri: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering DataAsset resources.
-        :param pulumi.Input[str] catalog_id: Unique catalog identifier.
-        :param pulumi.Input[str] created_by_id: OCID of the user who created the data asset.
-        :param pulumi.Input[str] description: (Updatable) Detailed description of the data asset.
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly display name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[str] external_key: External URI that can be used to reference the object. Format will differ based on the type of object.
-        :param pulumi.Input[str] key: Unique data asset key that is immutable.
-        :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. An object not in ACTIVE state may have functional limitations, see service documentation for details.
-        :param pulumi.Input[str] state: The current state of the data asset.
-        :param pulumi.Input[str] time_created: The date and time the data asset was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2019-03-25T21:10:29.600Z`
-        :param pulumi.Input[str] time_harvested: The last time that a harvest was performed on the data asset. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-        :param pulumi.Input[str] time_updated: The last time that any change was made to the data asset. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-        :param pulumi.Input[str] type_key: The key of the data asset type. This can be obtained via the '/types' endpoint.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] updated_by_id: OCID of the user who last modified the data asset.
-        :param pulumi.Input[str] uri: URI to the data asset instance in the API.
         """
         if catalog_id is not None:
             pulumi.set(__self__, "catalog_id", catalog_id)
@@ -173,9 +131,6 @@ class _DataAssetState:
     @property
     @pulumi.getter(name="catalogId")
     def catalog_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        Unique catalog identifier.
-        """
         return pulumi.get(self, "catalog_id")
 
     @catalog_id.setter
@@ -185,9 +140,6 @@ class _DataAssetState:
     @property
     @pulumi.getter(name="createdById")
     def created_by_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        OCID of the user who created the data asset.
-        """
         return pulumi.get(self, "created_by_id")
 
     @created_by_id.setter
@@ -197,9 +149,6 @@ class _DataAssetState:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Detailed description of the data asset.
-        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -209,9 +158,6 @@ class _DataAssetState:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A user-friendly display name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -221,9 +167,6 @@ class _DataAssetState:
     @property
     @pulumi.getter(name="externalKey")
     def external_key(self) -> Optional[pulumi.Input[str]]:
-        """
-        External URI that can be used to reference the object. Format will differ based on the type of object.
-        """
         return pulumi.get(self, "external_key")
 
     @external_key.setter
@@ -233,9 +176,6 @@ class _DataAssetState:
     @property
     @pulumi.getter
     def key(self) -> Optional[pulumi.Input[str]]:
-        """
-        Unique data asset key that is immutable.
-        """
         return pulumi.get(self, "key")
 
     @key.setter
@@ -245,9 +185,6 @@ class _DataAssetState:
     @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> Optional[pulumi.Input[str]]:
-        """
-        A message describing the current state in more detail. An object not in ACTIVE state may have functional limitations, see service documentation for details.
-        """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
@@ -266,9 +203,6 @@ class _DataAssetState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The current state of the data asset.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -278,9 +212,6 @@ class _DataAssetState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time the data asset was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2019-03-25T21:10:29.600Z`
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -290,9 +221,6 @@ class _DataAssetState:
     @property
     @pulumi.getter(name="timeHarvested")
     def time_harvested(self) -> Optional[pulumi.Input[str]]:
-        """
-        The last time that a harvest was performed on the data asset. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-        """
         return pulumi.get(self, "time_harvested")
 
     @time_harvested.setter
@@ -302,9 +230,6 @@ class _DataAssetState:
     @property
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> Optional[pulumi.Input[str]]:
-        """
-        The last time that any change was made to the data asset. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-        """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
@@ -314,13 +239,6 @@ class _DataAssetState:
     @property
     @pulumi.getter(name="typeKey")
     def type_key(self) -> Optional[pulumi.Input[str]]:
-        """
-        The key of the data asset type. This can be obtained via the '/types' endpoint.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "type_key")
 
     @type_key.setter
@@ -330,9 +248,6 @@ class _DataAssetState:
     @property
     @pulumi.getter(name="updatedById")
     def updated_by_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        OCID of the user who last modified the data asset.
-        """
         return pulumi.get(self, "updated_by_id")
 
     @updated_by_id.setter
@@ -342,9 +257,6 @@ class _DataAssetState:
     @property
     @pulumi.getter
     def uri(self) -> Optional[pulumi.Input[str]]:
-        """
-        URI to the data asset instance in the API.
-        """
         return pulumi.get(self, "uri")
 
     @uri.setter
@@ -364,42 +276,9 @@ class DataAsset(pulumi.CustomResource):
                  type_key: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Data Asset resource in Oracle Cloud Infrastructure Data Catalog service.
-
-        Create a new data asset.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_data_asset = oci.data_catalog.DataAsset("testDataAsset",
-            catalog_id=oci_datacatalog_catalog["test_catalog"]["id"],
-            display_name=var["data_asset_display_name"],
-            type_key=var["data_asset_type_key"],
-            description=var["data_asset_description"],
-            properties=var["data_asset_properties"])
-        ```
-
-        ## Import
-
-        DataAssets can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:DataCatalog/dataAsset:DataAsset test_data_asset "catalogs/{catalogId}/dataAssets/{dataAssetKey}"
-        ```
-
+        Create a DataAsset resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] catalog_id: Unique catalog identifier.
-        :param pulumi.Input[str] description: (Updatable) Detailed description of the data asset.
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly display name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[str] type_key: The key of the data asset type. This can be obtained via the '/types' endpoint.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -408,32 +287,7 @@ class DataAsset(pulumi.CustomResource):
                  args: DataAssetArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Data Asset resource in Oracle Cloud Infrastructure Data Catalog service.
-
-        Create a new data asset.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_data_asset = oci.data_catalog.DataAsset("testDataAsset",
-            catalog_id=oci_datacatalog_catalog["test_catalog"]["id"],
-            display_name=var["data_asset_display_name"],
-            type_key=var["data_asset_type_key"],
-            description=var["data_asset_description"],
-            properties=var["data_asset_properties"])
-        ```
-
-        ## Import
-
-        DataAssets can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:DataCatalog/dataAsset:DataAsset test_data_asset "catalogs/{catalogId}/dataAssets/{dataAssetKey}"
-        ```
-
+        Create a DataAsset resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param DataAssetArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -516,24 +370,6 @@ class DataAsset(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] catalog_id: Unique catalog identifier.
-        :param pulumi.Input[str] created_by_id: OCID of the user who created the data asset.
-        :param pulumi.Input[str] description: (Updatable) Detailed description of the data asset.
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly display name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[str] external_key: External URI that can be used to reference the object. Format will differ based on the type of object.
-        :param pulumi.Input[str] key: Unique data asset key that is immutable.
-        :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. An object not in ACTIVE state may have functional limitations, see service documentation for details.
-        :param pulumi.Input[str] state: The current state of the data asset.
-        :param pulumi.Input[str] time_created: The date and time the data asset was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2019-03-25T21:10:29.600Z`
-        :param pulumi.Input[str] time_harvested: The last time that a harvest was performed on the data asset. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-        :param pulumi.Input[str] time_updated: The last time that any change was made to the data asset. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-        :param pulumi.Input[str] type_key: The key of the data asset type. This can be obtained via the '/types' endpoint.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] updated_by_id: OCID of the user who last modified the data asset.
-        :param pulumi.Input[str] uri: URI to the data asset instance in the API.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -559,121 +395,75 @@ class DataAsset(pulumi.CustomResource):
     @property
     @pulumi.getter(name="catalogId")
     def catalog_id(self) -> pulumi.Output[str]:
-        """
-        Unique catalog identifier.
-        """
         return pulumi.get(self, "catalog_id")
 
     @property
     @pulumi.getter(name="createdById")
-    def created_by_id(self) -> pulumi.Output[str]:
-        """
-        OCID of the user who created the data asset.
-        """
+    def created_by_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "created_by_id")
 
     @property
     @pulumi.getter
-    def description(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Detailed description of the data asset.
-        """
+    def description(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Output[str]:
-        """
-        (Updatable) A user-friendly display name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="externalKey")
-    def external_key(self) -> pulumi.Output[str]:
-        """
-        External URI that can be used to reference the object. Format will differ based on the type of object.
-        """
+    def external_key(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "external_key")
 
     @property
     @pulumi.getter
-    def key(self) -> pulumi.Output[str]:
-        """
-        Unique data asset key that is immutable.
-        """
+    def key(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "key")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> pulumi.Output[str]:
-        """
-        A message describing the current state in more detail. An object not in ACTIVE state may have functional limitations, see service documentation for details.
-        """
+    def lifecycle_details(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter
-    def properties(self) -> pulumi.Output[Mapping[str, Any]]:
+    def properties(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "properties")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        The current state of the data asset.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        The date and time the data asset was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2019-03-25T21:10:29.600Z`
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeHarvested")
-    def time_harvested(self) -> pulumi.Output[str]:
-        """
-        The last time that a harvest was performed on the data asset. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-        """
+    def time_harvested(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_harvested")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> pulumi.Output[str]:
-        """
-        The last time that any change was made to the data asset. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-        """
+    def time_updated(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_updated")
 
     @property
     @pulumi.getter(name="typeKey")
     def type_key(self) -> pulumi.Output[str]:
-        """
-        The key of the data asset type. This can be obtained via the '/types' endpoint.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "type_key")
 
     @property
     @pulumi.getter(name="updatedById")
-    def updated_by_id(self) -> pulumi.Output[str]:
-        """
-        OCID of the user who last modified the data asset.
-        """
+    def updated_by_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "updated_by_id")
 
     @property
     @pulumi.getter
-    def uri(self) -> pulumi.Output[str]:
-        """
-        URI to the data asset instance in the API.
-        """
+    def uri(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "uri")
 

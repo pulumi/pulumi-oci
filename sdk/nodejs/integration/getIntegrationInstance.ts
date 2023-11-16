@@ -47,95 +47,95 @@ export interface GetIntegrationInstanceResult {
     /**
      * A list of alternate custom endpoints used for the integration instance URL.
      */
-    readonly alternateCustomEndpoints: outputs.Integration.GetIntegrationInstanceAlternateCustomEndpoint[];
+    readonly alternateCustomEndpoints?: outputs.Integration.GetIntegrationInstanceAlternateCustomEndpoint[];
     /**
      * A list of associated attachments to other services
      */
-    readonly attachments: outputs.Integration.GetIntegrationInstanceAttachment[];
+    readonly attachments?: outputs.Integration.GetIntegrationInstanceAttachment[];
     /**
      * Compartment Identifier.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * The entitlement used for billing purposes.
      */
-    readonly consumptionModel: string;
+    readonly consumptionModel?: string;
     /**
      * Details for a custom endpoint for the integration instance.
      */
-    readonly customEndpoints: outputs.Integration.GetIntegrationInstanceCustomEndpoint[];
+    readonly customEndpoints?: outputs.Integration.GetIntegrationInstanceCustomEndpoint[];
     /**
      * Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * Integration Instance Identifier, can be renamed.
      */
-    readonly displayName: string;
-    readonly domainId: string;
-    readonly enableProcessAutomationTrigger: number;
+    readonly displayName?: string;
+    readonly domainId?: string;
+    readonly enableProcessAutomationTrigger?: number;
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * The Virtual Cloud Network OCID.
      */
-    readonly id: string;
-    readonly idcsAt: string;
+    readonly id?: string;
+    readonly idcsAt?: string;
     /**
      * Information for IDCS access
      */
-    readonly idcsInfos: outputs.Integration.GetIntegrationInstanceIdcsInfo[];
+    readonly idcsInfos?: outputs.Integration.GetIntegrationInstanceIdcsInfo[];
     /**
      * The Integration Instance URL.
      */
-    readonly instanceUrl: string;
+    readonly instanceUrl?: string;
     readonly integrationInstanceId: string;
     /**
      * Standard or Enterprise type,  Oracle Integration Generation 2 uses ENTERPRISE and STANDARD,  Oracle Integration 3 uses ENTERPRISEX and STANDARDX
      */
-    readonly integrationInstanceType: string;
+    readonly integrationInstanceType?: string;
     /**
      * Bring your own license.
      */
-    readonly isByol: boolean;
+    readonly isByol?: boolean;
     /**
      * The file server is enabled or not.
      */
-    readonly isFileServerEnabled: boolean;
+    readonly isFileServerEnabled?: boolean;
     /**
      * Visual Builder is enabled or not.
      */
-    readonly isVisualBuilderEnabled: boolean;
+    readonly isVisualBuilderEnabled?: boolean;
     /**
      * The number of configured message packs (if any)
      */
-    readonly messagePacks: number;
+    readonly messagePacks?: number;
     /**
      * Base representation of a network endpoint.
      */
-    readonly networkEndpointDetails: outputs.Integration.GetIntegrationInstanceNetworkEndpointDetail[];
+    readonly networkEndpointDetails?: outputs.Integration.GetIntegrationInstanceNetworkEndpointDetail[];
     /**
      * Shape
      */
-    readonly shape: string;
+    readonly shape?: string;
     /**
      * The current state of the integration instance.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * An message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
-    readonly stateMessage: string;
+    readonly stateMessage?: string;
     /**
      * The time the the Integration Instance was created. An RFC3339 formatted datetime string.
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The time the IntegrationInstance was updated. An RFC3339 formatted datetime string.
      */
-    readonly timeUpdated: string;
+    readonly timeUpdated?: string;
 }
 /**
  * This data source provides details about a specific Integration Instance resource in Oracle Cloud Infrastructure Integration service.

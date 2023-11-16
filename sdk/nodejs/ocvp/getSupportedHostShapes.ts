@@ -65,11 +65,11 @@ export interface GetSupportedHostShapesResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * A list of the supported compute shapes for ESXi hosts.
      */
-    readonly items: outputs.Ocvp.GetSupportedHostShapesItem[];
+    readonly items?: outputs.Ocvp.GetSupportedHostShapesItem[];
     /**
      * The name of the supported compute shape.
      */

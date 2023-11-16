@@ -10,6 +10,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetVolumeGroupBackupsVolumeGroupBackup {
@@ -17,223 +19,223 @@ public final class GetVolumeGroupBackupsVolumeGroupBackup {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return A filter to return only resources that match the given display name exactly.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return The date and time the volume group backup will expire and be automatically deleted. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). This parameter will always be present for volume group backups that were created automatically by a scheduled-backup policy. For manually created volume group backups, it will be absent, signifying that there is no expiration time and the backup will last forever until manually deleted.
      * 
      */
-    private String expirationTime;
+    private @Nullable String expirationTime;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return The OCID of the volume group backup.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The aggregate size of the volume group backup, in GBs.
      * 
      */
-    private String sizeInGbs;
+    private @Nullable String sizeInGbs;
     /**
      * @return The aggregate size of the volume group backup, in MBs.
      * 
      */
-    private String sizeInMbs;
-    private List<GetVolumeGroupBackupsVolumeGroupBackupSourceDetail> sourceDetails;
+    private @Nullable String sizeInMbs;
+    private @Nullable List<GetVolumeGroupBackupsVolumeGroupBackupSourceDetail> sourceDetails;
     /**
      * @return Specifies whether the volume group backup was created manually, or via scheduled backup policy.
      * 
      */
-    private String sourceType;
+    private @Nullable String sourceType;
     /**
      * @return The OCID of the source volume group backup.
      * 
      */
-    private String sourceVolumeGroupBackupId;
+    private @Nullable String sourceVolumeGroupBackupId;
     /**
      * @return The current state of a volume group backup.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return The date and time the volume group backup was created. This is the time the actual point-in-time image of the volume group data was taken. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The date and time the request to create the volume group backup was received. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    private String timeRequestReceived;
+    private @Nullable String timeRequestReceived;
     /**
      * @return The type of backup.
      * 
      */
-    private String type;
+    private @Nullable String type;
     /**
      * @return The aggregate size used by the volume group backup, in GBs.  It is typically smaller than `size_in_gbs`, depending on the space consumed on the volume group and whether the volume backup is full or incremental.
      * 
      */
-    private String uniqueSizeInGbs;
+    private @Nullable String uniqueSizeInGbs;
     /**
      * @return The aggregate size used by the volume group backup, in MBs.  It is typically smaller than `size_in_mbs`, depending on the space consumed on the volume group and whether the volume backup is full or incremental.
      * 
      */
-    private String uniqueSizeInMbs;
+    private @Nullable String uniqueSizeInMbs;
     /**
      * @return OCIDs for the volume backups in this volume group backup.
      * 
      */
-    private List<String> volumeBackupIds;
+    private @Nullable List<String> volumeBackupIds;
     /**
      * @return The OCID of the volume group.
      * 
      */
-    private String volumeGroupId;
+    private @Nullable String volumeGroupId;
 
     private GetVolumeGroupBackupsVolumeGroupBackup() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return A filter to return only resources that match the given display name exactly.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return The date and time the volume group backup will expire and be automatically deleted. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). This parameter will always be present for volume group backups that were created automatically by a scheduled-backup policy. For manually created volume group backups, it will be absent, signifying that there is no expiration time and the backup will last forever until manually deleted.
      * 
      */
-    public String expirationTime() {
-        return this.expirationTime;
+    public Optional<String> expirationTime() {
+        return Optional.ofNullable(this.expirationTime);
     }
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return The OCID of the volume group backup.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The aggregate size of the volume group backup, in GBs.
      * 
      */
-    public String sizeInGbs() {
-        return this.sizeInGbs;
+    public Optional<String> sizeInGbs() {
+        return Optional.ofNullable(this.sizeInGbs);
     }
     /**
      * @return The aggregate size of the volume group backup, in MBs.
      * 
      */
-    public String sizeInMbs() {
-        return this.sizeInMbs;
+    public Optional<String> sizeInMbs() {
+        return Optional.ofNullable(this.sizeInMbs);
     }
     public List<GetVolumeGroupBackupsVolumeGroupBackupSourceDetail> sourceDetails() {
-        return this.sourceDetails;
+        return this.sourceDetails == null ? List.of() : this.sourceDetails;
     }
     /**
      * @return Specifies whether the volume group backup was created manually, or via scheduled backup policy.
      * 
      */
-    public String sourceType() {
-        return this.sourceType;
+    public Optional<String> sourceType() {
+        return Optional.ofNullable(this.sourceType);
     }
     /**
      * @return The OCID of the source volume group backup.
      * 
      */
-    public String sourceVolumeGroupBackupId() {
-        return this.sourceVolumeGroupBackupId;
+    public Optional<String> sourceVolumeGroupBackupId() {
+        return Optional.ofNullable(this.sourceVolumeGroupBackupId);
     }
     /**
      * @return The current state of a volume group backup.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return The date and time the volume group backup was created. This is the time the actual point-in-time image of the volume group data was taken. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return The date and time the request to create the volume group backup was received. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    public String timeRequestReceived() {
-        return this.timeRequestReceived;
+    public Optional<String> timeRequestReceived() {
+        return Optional.ofNullable(this.timeRequestReceived);
     }
     /**
      * @return The type of backup.
      * 
      */
-    public String type() {
-        return this.type;
+    public Optional<String> type() {
+        return Optional.ofNullable(this.type);
     }
     /**
      * @return The aggregate size used by the volume group backup, in GBs.  It is typically smaller than `size_in_gbs`, depending on the space consumed on the volume group and whether the volume backup is full or incremental.
      * 
      */
-    public String uniqueSizeInGbs() {
-        return this.uniqueSizeInGbs;
+    public Optional<String> uniqueSizeInGbs() {
+        return Optional.ofNullable(this.uniqueSizeInGbs);
     }
     /**
      * @return The aggregate size used by the volume group backup, in MBs.  It is typically smaller than `size_in_mbs`, depending on the space consumed on the volume group and whether the volume backup is full or incremental.
      * 
      */
-    public String uniqueSizeInMbs() {
-        return this.uniqueSizeInMbs;
+    public Optional<String> uniqueSizeInMbs() {
+        return Optional.ofNullable(this.uniqueSizeInMbs);
     }
     /**
      * @return OCIDs for the volume backups in this volume group backup.
      * 
      */
     public List<String> volumeBackupIds() {
-        return this.volumeBackupIds;
+        return this.volumeBackupIds == null ? List.of() : this.volumeBackupIds;
     }
     /**
      * @return The OCID of the volume group.
      * 
      */
-    public String volumeGroupId() {
-        return this.volumeGroupId;
+    public Optional<String> volumeGroupId() {
+        return Optional.ofNullable(this.volumeGroupId);
     }
 
     public static Builder builder() {
@@ -245,25 +247,25 @@ public final class GetVolumeGroupBackupsVolumeGroupBackup {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String compartmentId;
-        private Map<String,Object> definedTags;
-        private String displayName;
-        private String expirationTime;
-        private Map<String,Object> freeformTags;
-        private String id;
-        private String sizeInGbs;
-        private String sizeInMbs;
-        private List<GetVolumeGroupBackupsVolumeGroupBackupSourceDetail> sourceDetails;
-        private String sourceType;
-        private String sourceVolumeGroupBackupId;
-        private String state;
-        private String timeCreated;
-        private String timeRequestReceived;
-        private String type;
-        private String uniqueSizeInGbs;
-        private String uniqueSizeInMbs;
-        private List<String> volumeBackupIds;
-        private String volumeGroupId;
+        private @Nullable String compartmentId;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String displayName;
+        private @Nullable String expirationTime;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String id;
+        private @Nullable String sizeInGbs;
+        private @Nullable String sizeInMbs;
+        private @Nullable List<GetVolumeGroupBackupsVolumeGroupBackupSourceDetail> sourceDetails;
+        private @Nullable String sourceType;
+        private @Nullable String sourceVolumeGroupBackupId;
+        private @Nullable String state;
+        private @Nullable String timeCreated;
+        private @Nullable String timeRequestReceived;
+        private @Nullable String type;
+        private @Nullable String uniqueSizeInGbs;
+        private @Nullable String uniqueSizeInMbs;
+        private @Nullable List<String> volumeBackupIds;
+        private @Nullable String volumeGroupId;
         public Builder() {}
         public Builder(GetVolumeGroupBackupsVolumeGroupBackup defaults) {
     	      Objects.requireNonNull(defaults);
@@ -289,104 +291,104 @@ public final class GetVolumeGroupBackupsVolumeGroupBackup {
         }
 
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder expirationTime(String expirationTime) {
-            this.expirationTime = Objects.requireNonNull(expirationTime);
+        public Builder expirationTime(@Nullable String expirationTime) {
+            this.expirationTime = expirationTime;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder sizeInGbs(String sizeInGbs) {
-            this.sizeInGbs = Objects.requireNonNull(sizeInGbs);
+        public Builder sizeInGbs(@Nullable String sizeInGbs) {
+            this.sizeInGbs = sizeInGbs;
             return this;
         }
         @CustomType.Setter
-        public Builder sizeInMbs(String sizeInMbs) {
-            this.sizeInMbs = Objects.requireNonNull(sizeInMbs);
+        public Builder sizeInMbs(@Nullable String sizeInMbs) {
+            this.sizeInMbs = sizeInMbs;
             return this;
         }
         @CustomType.Setter
-        public Builder sourceDetails(List<GetVolumeGroupBackupsVolumeGroupBackupSourceDetail> sourceDetails) {
-            this.sourceDetails = Objects.requireNonNull(sourceDetails);
+        public Builder sourceDetails(@Nullable List<GetVolumeGroupBackupsVolumeGroupBackupSourceDetail> sourceDetails) {
+            this.sourceDetails = sourceDetails;
             return this;
         }
         public Builder sourceDetails(GetVolumeGroupBackupsVolumeGroupBackupSourceDetail... sourceDetails) {
             return sourceDetails(List.of(sourceDetails));
         }
         @CustomType.Setter
-        public Builder sourceType(String sourceType) {
-            this.sourceType = Objects.requireNonNull(sourceType);
+        public Builder sourceType(@Nullable String sourceType) {
+            this.sourceType = sourceType;
             return this;
         }
         @CustomType.Setter
-        public Builder sourceVolumeGroupBackupId(String sourceVolumeGroupBackupId) {
-            this.sourceVolumeGroupBackupId = Objects.requireNonNull(sourceVolumeGroupBackupId);
+        public Builder sourceVolumeGroupBackupId(@Nullable String sourceVolumeGroupBackupId) {
+            this.sourceVolumeGroupBackupId = sourceVolumeGroupBackupId;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeRequestReceived(String timeRequestReceived) {
-            this.timeRequestReceived = Objects.requireNonNull(timeRequestReceived);
+        public Builder timeRequestReceived(@Nullable String timeRequestReceived) {
+            this.timeRequestReceived = timeRequestReceived;
             return this;
         }
         @CustomType.Setter
-        public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+        public Builder type(@Nullable String type) {
+            this.type = type;
             return this;
         }
         @CustomType.Setter
-        public Builder uniqueSizeInGbs(String uniqueSizeInGbs) {
-            this.uniqueSizeInGbs = Objects.requireNonNull(uniqueSizeInGbs);
+        public Builder uniqueSizeInGbs(@Nullable String uniqueSizeInGbs) {
+            this.uniqueSizeInGbs = uniqueSizeInGbs;
             return this;
         }
         @CustomType.Setter
-        public Builder uniqueSizeInMbs(String uniqueSizeInMbs) {
-            this.uniqueSizeInMbs = Objects.requireNonNull(uniqueSizeInMbs);
+        public Builder uniqueSizeInMbs(@Nullable String uniqueSizeInMbs) {
+            this.uniqueSizeInMbs = uniqueSizeInMbs;
             return this;
         }
         @CustomType.Setter
-        public Builder volumeBackupIds(List<String> volumeBackupIds) {
-            this.volumeBackupIds = Objects.requireNonNull(volumeBackupIds);
+        public Builder volumeBackupIds(@Nullable List<String> volumeBackupIds) {
+            this.volumeBackupIds = volumeBackupIds;
             return this;
         }
         public Builder volumeBackupIds(String... volumeBackupIds) {
             return volumeBackupIds(List.of(volumeBackupIds));
         }
         @CustomType.Setter
-        public Builder volumeGroupId(String volumeGroupId) {
-            this.volumeGroupId = Objects.requireNonNull(volumeGroupId);
+        public Builder volumeGroupId(@Nullable String volumeGroupId) {
+            this.volumeGroupId = volumeGroupId;
             return this;
         }
         public GetVolumeGroupBackupsVolumeGroupBackup build() {

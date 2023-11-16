@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific HeatWave cluster resource in Oracle Cloud Infrastructure MySQL Database service.
@@ -62,22 +61,22 @@ type LookupHeatWaveClusterResult struct {
 	// A HeatWave node is a compute host that is part of a HeatWave cluster.
 	ClusterNodes []GetHeatWaveClusterClusterNode `pulumi:"clusterNodes"`
 	// The number of analytics-processing compute instances, of the specified shape, in the HeatWave cluster.
-	ClusterSize int `pulumi:"clusterSize"`
+	ClusterSize *int `pulumi:"clusterSize"`
 	// The OCID of the parent DB System this HeatWave cluster is attached to.
-	DbSystemId string `pulumi:"dbSystemId"`
-	Id         string `pulumi:"id"`
+	DbSystemId string  `pulumi:"dbSystemId"`
+	Id         *string `pulumi:"id"`
 	// Lakehouse enabled status for the HeatWave cluster.
-	IsLakehouseEnabled bool `pulumi:"isLakehouseEnabled"`
+	IsLakehouseEnabled *bool `pulumi:"isLakehouseEnabled"`
 	// Additional information about the current lifecycleState.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// The shape determines resources to allocate to the HeatWave nodes - CPU cores, memory.
-	ShapeName string `pulumi:"shapeName"`
+	ShapeName *string `pulumi:"shapeName"`
 	// The current state of the HeatWave cluster.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The date and time the HeatWave cluster was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time the HeatWave cluster was last updated, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 func LookupHeatWaveClusterOutput(ctx *pulumi.Context, args LookupHeatWaveClusterOutputArgs, opts ...pulumi.InvokeOption) LookupHeatWaveClusterResultOutput {
@@ -118,20 +117,14 @@ func (o LookupHeatWaveClusterResultOutput) ToLookupHeatWaveClusterResultOutputWi
 	return o
 }
 
-func (o LookupHeatWaveClusterResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupHeatWaveClusterResult] {
-	return pulumix.Output[LookupHeatWaveClusterResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // A HeatWave node is a compute host that is part of a HeatWave cluster.
 func (o LookupHeatWaveClusterResultOutput) ClusterNodes() GetHeatWaveClusterClusterNodeArrayOutput {
 	return o.ApplyT(func(v LookupHeatWaveClusterResult) []GetHeatWaveClusterClusterNode { return v.ClusterNodes }).(GetHeatWaveClusterClusterNodeArrayOutput)
 }
 
 // The number of analytics-processing compute instances, of the specified shape, in the HeatWave cluster.
-func (o LookupHeatWaveClusterResultOutput) ClusterSize() pulumi.IntOutput {
-	return o.ApplyT(func(v LookupHeatWaveClusterResult) int { return v.ClusterSize }).(pulumi.IntOutput)
+func (o LookupHeatWaveClusterResultOutput) ClusterSize() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LookupHeatWaveClusterResult) *int { return v.ClusterSize }).(pulumi.IntPtrOutput)
 }
 
 // The OCID of the parent DB System this HeatWave cluster is attached to.
@@ -139,38 +132,38 @@ func (o LookupHeatWaveClusterResultOutput) DbSystemId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupHeatWaveClusterResult) string { return v.DbSystemId }).(pulumi.StringOutput)
 }
 
-func (o LookupHeatWaveClusterResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupHeatWaveClusterResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupHeatWaveClusterResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupHeatWaveClusterResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Lakehouse enabled status for the HeatWave cluster.
-func (o LookupHeatWaveClusterResultOutput) IsLakehouseEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupHeatWaveClusterResult) bool { return v.IsLakehouseEnabled }).(pulumi.BoolOutput)
+func (o LookupHeatWaveClusterResultOutput) IsLakehouseEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupHeatWaveClusterResult) *bool { return v.IsLakehouseEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // Additional information about the current lifecycleState.
-func (o LookupHeatWaveClusterResultOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupHeatWaveClusterResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o LookupHeatWaveClusterResultOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupHeatWaveClusterResult) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // The shape determines resources to allocate to the HeatWave nodes - CPU cores, memory.
-func (o LookupHeatWaveClusterResultOutput) ShapeName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupHeatWaveClusterResult) string { return v.ShapeName }).(pulumi.StringOutput)
+func (o LookupHeatWaveClusterResultOutput) ShapeName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupHeatWaveClusterResult) *string { return v.ShapeName }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the HeatWave cluster.
-func (o LookupHeatWaveClusterResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupHeatWaveClusterResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupHeatWaveClusterResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupHeatWaveClusterResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the HeatWave cluster was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-func (o LookupHeatWaveClusterResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupHeatWaveClusterResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupHeatWaveClusterResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupHeatWaveClusterResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time the HeatWave cluster was last updated, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-func (o LookupHeatWaveClusterResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupHeatWaveClusterResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o LookupHeatWaveClusterResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupHeatWaveClusterResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 func init() {

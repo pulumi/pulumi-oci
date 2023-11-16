@@ -16,17 +16,17 @@ namespace Pulumi.Oci.Core.Outputs
         /// <summary>
         /// The name of the availability domain.  Example: `Uocm:PHX-AD-1`
         /// </summary>
-        public readonly string AvailabilityDomain;
+        public readonly string? AvailabilityDomain;
         /// <summary>
         /// The name of the available shape used to launch instances in a compute capacity reservation.
         /// </summary>
-        public readonly string InstanceShape;
+        public readonly string? InstanceShape;
 
         [OutputConstructor]
         private GetComputeCapacityReservationInstanceShapesComputeCapacityReservationInstanceShapeResult(
-            string availabilityDomain,
+            string? availabilityDomain,
 
-            string instanceShape)
+            string? instanceShape)
         {
             AvailabilityDomain = availabilityDomain;
             InstanceShape = instanceShape;

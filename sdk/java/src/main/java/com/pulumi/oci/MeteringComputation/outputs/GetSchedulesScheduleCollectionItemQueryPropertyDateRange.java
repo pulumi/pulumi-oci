@@ -6,6 +6,8 @@ package com.pulumi.oci.MeteringComputation.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetSchedulesScheduleCollectionItemQueryPropertyDateRange {
@@ -13,43 +15,43 @@ public final class GetSchedulesScheduleCollectionItemQueryPropertyDateRange {
      * @return Defines whether the schedule date range is STATIC or DYNAMIC.
      * 
      */
-    private String dateRangeType;
-    private String dynamicDateRangeType;
+    private @Nullable String dateRangeType;
+    private @Nullable String dynamicDateRangeType;
     /**
      * @return The usage end time.
      * 
      */
-    private String timeUsageEnded;
+    private @Nullable String timeUsageEnded;
     /**
      * @return The usage start time.
      * 
      */
-    private String timeUsageStarted;
+    private @Nullable String timeUsageStarted;
 
     private GetSchedulesScheduleCollectionItemQueryPropertyDateRange() {}
     /**
      * @return Defines whether the schedule date range is STATIC or DYNAMIC.
      * 
      */
-    public String dateRangeType() {
-        return this.dateRangeType;
+    public Optional<String> dateRangeType() {
+        return Optional.ofNullable(this.dateRangeType);
     }
-    public String dynamicDateRangeType() {
-        return this.dynamicDateRangeType;
+    public Optional<String> dynamicDateRangeType() {
+        return Optional.ofNullable(this.dynamicDateRangeType);
     }
     /**
      * @return The usage end time.
      * 
      */
-    public String timeUsageEnded() {
-        return this.timeUsageEnded;
+    public Optional<String> timeUsageEnded() {
+        return Optional.ofNullable(this.timeUsageEnded);
     }
     /**
      * @return The usage start time.
      * 
      */
-    public String timeUsageStarted() {
-        return this.timeUsageStarted;
+    public Optional<String> timeUsageStarted() {
+        return Optional.ofNullable(this.timeUsageStarted);
     }
 
     public static Builder builder() {
@@ -61,10 +63,10 @@ public final class GetSchedulesScheduleCollectionItemQueryPropertyDateRange {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String dateRangeType;
-        private String dynamicDateRangeType;
-        private String timeUsageEnded;
-        private String timeUsageStarted;
+        private @Nullable String dateRangeType;
+        private @Nullable String dynamicDateRangeType;
+        private @Nullable String timeUsageEnded;
+        private @Nullable String timeUsageStarted;
         public Builder() {}
         public Builder(GetSchedulesScheduleCollectionItemQueryPropertyDateRange defaults) {
     	      Objects.requireNonNull(defaults);
@@ -75,23 +77,23 @@ public final class GetSchedulesScheduleCollectionItemQueryPropertyDateRange {
         }
 
         @CustomType.Setter
-        public Builder dateRangeType(String dateRangeType) {
-            this.dateRangeType = Objects.requireNonNull(dateRangeType);
+        public Builder dateRangeType(@Nullable String dateRangeType) {
+            this.dateRangeType = dateRangeType;
             return this;
         }
         @CustomType.Setter
-        public Builder dynamicDateRangeType(String dynamicDateRangeType) {
-            this.dynamicDateRangeType = Objects.requireNonNull(dynamicDateRangeType);
+        public Builder dynamicDateRangeType(@Nullable String dynamicDateRangeType) {
+            this.dynamicDateRangeType = dynamicDateRangeType;
             return this;
         }
         @CustomType.Setter
-        public Builder timeUsageEnded(String timeUsageEnded) {
-            this.timeUsageEnded = Objects.requireNonNull(timeUsageEnded);
+        public Builder timeUsageEnded(@Nullable String timeUsageEnded) {
+            this.timeUsageEnded = timeUsageEnded;
             return this;
         }
         @CustomType.Setter
-        public Builder timeUsageStarted(String timeUsageStarted) {
-            this.timeUsageStarted = Objects.requireNonNull(timeUsageStarted);
+        public Builder timeUsageStarted(@Nullable String timeUsageStarted) {
+            this.timeUsageStarted = timeUsageStarted;
             return this;
         }
         public GetSchedulesScheduleCollectionItemQueryPropertyDateRange build() {

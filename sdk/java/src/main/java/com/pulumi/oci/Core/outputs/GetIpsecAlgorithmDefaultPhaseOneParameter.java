@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetIpsecAlgorithmDefaultPhaseOneParameter {
@@ -14,17 +15,17 @@ public final class GetIpsecAlgorithmDefaultPhaseOneParameter {
      * @return Default phase two authentication algorithms.
      * 
      */
-    private List<String> defaultAuthenticationAlgorithms;
+    private @Nullable List<String> defaultAuthenticationAlgorithms;
     /**
      * @return Default phase one Diffie-Hellman groups.
      * 
      */
-    private List<String> defaultDhGroups;
+    private @Nullable List<String> defaultDhGroups;
     /**
      * @return Default phase two encryption algorithms.
      * 
      */
-    private List<String> defaultEncryptionAlgorithms;
+    private @Nullable List<String> defaultEncryptionAlgorithms;
 
     private GetIpsecAlgorithmDefaultPhaseOneParameter() {}
     /**
@@ -32,21 +33,21 @@ public final class GetIpsecAlgorithmDefaultPhaseOneParameter {
      * 
      */
     public List<String> defaultAuthenticationAlgorithms() {
-        return this.defaultAuthenticationAlgorithms;
+        return this.defaultAuthenticationAlgorithms == null ? List.of() : this.defaultAuthenticationAlgorithms;
     }
     /**
      * @return Default phase one Diffie-Hellman groups.
      * 
      */
     public List<String> defaultDhGroups() {
-        return this.defaultDhGroups;
+        return this.defaultDhGroups == null ? List.of() : this.defaultDhGroups;
     }
     /**
      * @return Default phase two encryption algorithms.
      * 
      */
     public List<String> defaultEncryptionAlgorithms() {
-        return this.defaultEncryptionAlgorithms;
+        return this.defaultEncryptionAlgorithms == null ? List.of() : this.defaultEncryptionAlgorithms;
     }
 
     public static Builder builder() {
@@ -58,9 +59,9 @@ public final class GetIpsecAlgorithmDefaultPhaseOneParameter {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<String> defaultAuthenticationAlgorithms;
-        private List<String> defaultDhGroups;
-        private List<String> defaultEncryptionAlgorithms;
+        private @Nullable List<String> defaultAuthenticationAlgorithms;
+        private @Nullable List<String> defaultDhGroups;
+        private @Nullable List<String> defaultEncryptionAlgorithms;
         public Builder() {}
         public Builder(GetIpsecAlgorithmDefaultPhaseOneParameter defaults) {
     	      Objects.requireNonNull(defaults);
@@ -70,24 +71,24 @@ public final class GetIpsecAlgorithmDefaultPhaseOneParameter {
         }
 
         @CustomType.Setter
-        public Builder defaultAuthenticationAlgorithms(List<String> defaultAuthenticationAlgorithms) {
-            this.defaultAuthenticationAlgorithms = Objects.requireNonNull(defaultAuthenticationAlgorithms);
+        public Builder defaultAuthenticationAlgorithms(@Nullable List<String> defaultAuthenticationAlgorithms) {
+            this.defaultAuthenticationAlgorithms = defaultAuthenticationAlgorithms;
             return this;
         }
         public Builder defaultAuthenticationAlgorithms(String... defaultAuthenticationAlgorithms) {
             return defaultAuthenticationAlgorithms(List.of(defaultAuthenticationAlgorithms));
         }
         @CustomType.Setter
-        public Builder defaultDhGroups(List<String> defaultDhGroups) {
-            this.defaultDhGroups = Objects.requireNonNull(defaultDhGroups);
+        public Builder defaultDhGroups(@Nullable List<String> defaultDhGroups) {
+            this.defaultDhGroups = defaultDhGroups;
             return this;
         }
         public Builder defaultDhGroups(String... defaultDhGroups) {
             return defaultDhGroups(List.of(defaultDhGroups));
         }
         @CustomType.Setter
-        public Builder defaultEncryptionAlgorithms(List<String> defaultEncryptionAlgorithms) {
-            this.defaultEncryptionAlgorithms = Objects.requireNonNull(defaultEncryptionAlgorithms);
+        public Builder defaultEncryptionAlgorithms(@Nullable List<String> defaultEncryptionAlgorithms) {
+            this.defaultEncryptionAlgorithms = defaultEncryptionAlgorithms;
             return this;
         }
         public Builder defaultEncryptionAlgorithms(String... defaultEncryptionAlgorithms) {

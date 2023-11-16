@@ -29,7 +29,7 @@ public final class GetFunctionsResult {
      * @return The list of functions.
      * 
      */
-    private List<GetFunctionsFunction> functions;
+    private @Nullable List<GetFunctionsFunction> functions;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the function.
      * 
@@ -64,7 +64,7 @@ public final class GetFunctionsResult {
      * 
      */
     public List<GetFunctionsFunction> functions() {
-        return this.functions;
+        return this.functions == null ? List.of() : this.functions;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the function.
@@ -93,7 +93,7 @@ public final class GetFunctionsResult {
         private String applicationId;
         private @Nullable String displayName;
         private @Nullable List<GetFunctionsFilter> filters;
-        private List<GetFunctionsFunction> functions;
+        private @Nullable List<GetFunctionsFunction> functions;
         private @Nullable String id;
         private @Nullable String state;
         public Builder() {}
@@ -126,8 +126,8 @@ public final class GetFunctionsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder functions(List<GetFunctionsFunction> functions) {
-            this.functions = Objects.requireNonNull(functions);
+        public Builder functions(@Nullable List<GetFunctionsFunction> functions) {
+            this.functions = functions;
             return this;
         }
         public Builder functions(GetFunctionsFunction... functions) {

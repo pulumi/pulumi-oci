@@ -16,29 +16,29 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// The way in which this resource is affected by the work tracked in the work request. A resource being created, updated, or deleted will remain in the IN_PROGRESS state until work is complete for that resource at which point it will transition to CREATED, UPDATED, or DELETED, respectively.
         /// </summary>
-        public readonly string ActionType;
+        public readonly string? ActionType;
         /// <summary>
         /// The resource type the work request is affects.
         /// </summary>
-        public readonly string EntityType;
+        public readonly string? EntityType;
         /// <summary>
         /// The URI path that the user can do a GET on to access the resource metadata.
         /// </summary>
-        public readonly string EntityUri;
+        public readonly string? EntityUri;
         /// <summary>
         /// An OCID of the resource that the work request affects.
         /// </summary>
-        public readonly string Identifier;
+        public readonly string? Identifier;
 
         [OutputConstructor]
         private GetIamWorkRequestResourceResult(
-            string actionType,
+            string? actionType,
 
-            string entityType,
+            string? entityType,
 
-            string entityUri,
+            string? entityUri,
 
-            string identifier)
+            string? identifier)
         {
             ActionType = actionType;
             EntityType = entityType;

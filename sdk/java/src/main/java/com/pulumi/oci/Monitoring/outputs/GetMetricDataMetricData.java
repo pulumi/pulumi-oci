@@ -11,6 +11,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetMetricDataMetricData {
@@ -18,7 +20,7 @@ public final class GetMetricDataMetricData {
      * @return The list of timestamp-value pairs returned for the specified request. Metric values are rolled up to the start time specified in the request. For important limits information related to data points, see MetricData Reference at the top of this page.
      * 
      */
-    private List<GetMetricDataMetricDataAggregatedDatapoint> aggregatedDatapoints;
+    private @Nullable List<GetMetricDataMetricDataAggregatedDatapoint> aggregatedDatapoints;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the resources monitored by the metric that you are searching for. Use tenancyId to search in the root compartment.  Example: `ocid1.compartment.oc1..exampleuniqueID`
      * 
@@ -28,27 +30,27 @@ public final class GetMetricDataMetricData {
      * @return When true, returns resources from all compartments and subcompartments. The parameter can only be set to true when compartmentId is the tenancy OCID (the tenancy is the root compartment). A true value requires the user to have tenancy-level permissions. If this requirement is not met, then the call is rejected. When false, returns resources from only the compartment specified in compartmentId. Default is false.
      * 
      */
-    private Boolean compartmentIdInSubtree;
+    private @Nullable Boolean compartmentIdInSubtree;
     /**
      * @return Qualifiers provided in the definition of the returned metric. Available dimensions vary by metric namespace. Each dimension takes the form of a key-value pair.  Example: `&#34;resourceId&#34;: &#34;ocid1.instance.region1.phx.exampleuniqueID&#34;`
      * 
      */
-    private Map<String,Object> dimensions;
+    private @Nullable Map<String,Object> dimensions;
     /**
      * @return The end of the time range to use when searching for metric data points. Format is defined by RFC3339. The response excludes metric data points for the endTime. Default value: the timestamp representing when the call was sent.  Example: `2019-02-01T02:02:29.600Z`
      * 
      */
-    private String endTime;
+    private @Nullable String endTime;
     /**
      * @return The references provided in a metric definition to indicate extra information about the metric.  Example: `&#34;unit&#34;: &#34;bytes&#34;`
      * 
      */
-    private Map<String,Object> metadata;
+    private @Nullable Map<String,Object> metadata;
     /**
      * @return The name of the metric.  Example: `CpuUtilization`
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return The source service or application to use when searching for metric data points to aggregate.  Example: `oci_computeagent`
      * 
@@ -69,17 +71,17 @@ public final class GetMetricDataMetricData {
      * @return The time between calculated aggregation windows. Use with the query interval to vary the frequency for returning aggregated data points. For example, use a query interval of 5 minutes with a resolution of 1 minute to retrieve five-minute aggregations at a one-minute frequency. The resolution must be equal or less than the interval in the query. The default resolution is 1m (one minute). Supported values: `1m`-`60m`, `1h`-`24h`, `1d`.  Example: `5m`
      * 
      */
-    private String resolution;
+    private @Nullable String resolution;
     /**
      * @return Resource group that you want to match. A null value returns only metric data that has no resource groups. The specified resource group must exist in the definition of the posted metric. Only one resource group can be applied per metric. A valid resourceGroup value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).  Example: `frontend-fleet`
      * 
      */
-    private String resourceGroup;
+    private @Nullable String resourceGroup;
     /**
      * @return The beginning of the time range to use when searching for metric data points. Format is defined by RFC3339. The response includes metric data points for the startTime. Default value: the timestamp 3 hours before the call was sent.  Example: `2019-02-01T01:02:29.600Z`
      * 
      */
-    private String startTime;
+    private @Nullable String startTime;
 
     private GetMetricDataMetricData() {}
     /**
@@ -87,7 +89,7 @@ public final class GetMetricDataMetricData {
      * 
      */
     public List<GetMetricDataMetricDataAggregatedDatapoint> aggregatedDatapoints() {
-        return this.aggregatedDatapoints;
+        return this.aggregatedDatapoints == null ? List.of() : this.aggregatedDatapoints;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the resources monitored by the metric that you are searching for. Use tenancyId to search in the root compartment.  Example: `ocid1.compartment.oc1..exampleuniqueID`
@@ -100,36 +102,36 @@ public final class GetMetricDataMetricData {
      * @return When true, returns resources from all compartments and subcompartments. The parameter can only be set to true when compartmentId is the tenancy OCID (the tenancy is the root compartment). A true value requires the user to have tenancy-level permissions. If this requirement is not met, then the call is rejected. When false, returns resources from only the compartment specified in compartmentId. Default is false.
      * 
      */
-    public Boolean compartmentIdInSubtree() {
-        return this.compartmentIdInSubtree;
+    public Optional<Boolean> compartmentIdInSubtree() {
+        return Optional.ofNullable(this.compartmentIdInSubtree);
     }
     /**
      * @return Qualifiers provided in the definition of the returned metric. Available dimensions vary by metric namespace. Each dimension takes the form of a key-value pair.  Example: `&#34;resourceId&#34;: &#34;ocid1.instance.region1.phx.exampleuniqueID&#34;`
      * 
      */
     public Map<String,Object> dimensions() {
-        return this.dimensions;
+        return this.dimensions == null ? Map.of() : this.dimensions;
     }
     /**
      * @return The end of the time range to use when searching for metric data points. Format is defined by RFC3339. The response excludes metric data points for the endTime. Default value: the timestamp representing when the call was sent.  Example: `2019-02-01T02:02:29.600Z`
      * 
      */
-    public String endTime() {
-        return this.endTime;
+    public Optional<String> endTime() {
+        return Optional.ofNullable(this.endTime);
     }
     /**
      * @return The references provided in a metric definition to indicate extra information about the metric.  Example: `&#34;unit&#34;: &#34;bytes&#34;`
      * 
      */
     public Map<String,Object> metadata() {
-        return this.metadata;
+        return this.metadata == null ? Map.of() : this.metadata;
     }
     /**
      * @return The name of the metric.  Example: `CpuUtilization`
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return The source service or application to use when searching for metric data points to aggregate.  Example: `oci_computeagent`
@@ -155,22 +157,22 @@ public final class GetMetricDataMetricData {
      * @return The time between calculated aggregation windows. Use with the query interval to vary the frequency for returning aggregated data points. For example, use a query interval of 5 minutes with a resolution of 1 minute to retrieve five-minute aggregations at a one-minute frequency. The resolution must be equal or less than the interval in the query. The default resolution is 1m (one minute). Supported values: `1m`-`60m`, `1h`-`24h`, `1d`.  Example: `5m`
      * 
      */
-    public String resolution() {
-        return this.resolution;
+    public Optional<String> resolution() {
+        return Optional.ofNullable(this.resolution);
     }
     /**
      * @return Resource group that you want to match. A null value returns only metric data that has no resource groups. The specified resource group must exist in the definition of the posted metric. Only one resource group can be applied per metric. A valid resourceGroup value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).  Example: `frontend-fleet`
      * 
      */
-    public String resourceGroup() {
-        return this.resourceGroup;
+    public Optional<String> resourceGroup() {
+        return Optional.ofNullable(this.resourceGroup);
     }
     /**
      * @return The beginning of the time range to use when searching for metric data points. Format is defined by RFC3339. The response includes metric data points for the startTime. Default value: the timestamp 3 hours before the call was sent.  Example: `2019-02-01T01:02:29.600Z`
      * 
      */
-    public String startTime() {
-        return this.startTime;
+    public Optional<String> startTime() {
+        return Optional.ofNullable(this.startTime);
     }
 
     public static Builder builder() {
@@ -182,18 +184,18 @@ public final class GetMetricDataMetricData {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetMetricDataMetricDataAggregatedDatapoint> aggregatedDatapoints;
+        private @Nullable List<GetMetricDataMetricDataAggregatedDatapoint> aggregatedDatapoints;
         private String compartmentId;
-        private Boolean compartmentIdInSubtree;
-        private Map<String,Object> dimensions;
-        private String endTime;
-        private Map<String,Object> metadata;
-        private String name;
+        private @Nullable Boolean compartmentIdInSubtree;
+        private @Nullable Map<String,Object> dimensions;
+        private @Nullable String endTime;
+        private @Nullable Map<String,Object> metadata;
+        private @Nullable String name;
         private String namespace;
         private String query;
-        private String resolution;
-        private String resourceGroup;
-        private String startTime;
+        private @Nullable String resolution;
+        private @Nullable String resourceGroup;
+        private @Nullable String startTime;
         public Builder() {}
         public Builder(GetMetricDataMetricData defaults) {
     	      Objects.requireNonNull(defaults);
@@ -212,8 +214,8 @@ public final class GetMetricDataMetricData {
         }
 
         @CustomType.Setter
-        public Builder aggregatedDatapoints(List<GetMetricDataMetricDataAggregatedDatapoint> aggregatedDatapoints) {
-            this.aggregatedDatapoints = Objects.requireNonNull(aggregatedDatapoints);
+        public Builder aggregatedDatapoints(@Nullable List<GetMetricDataMetricDataAggregatedDatapoint> aggregatedDatapoints) {
+            this.aggregatedDatapoints = aggregatedDatapoints;
             return this;
         }
         public Builder aggregatedDatapoints(GetMetricDataMetricDataAggregatedDatapoint... aggregatedDatapoints) {
@@ -225,28 +227,28 @@ public final class GetMetricDataMetricData {
             return this;
         }
         @CustomType.Setter
-        public Builder compartmentIdInSubtree(Boolean compartmentIdInSubtree) {
-            this.compartmentIdInSubtree = Objects.requireNonNull(compartmentIdInSubtree);
+        public Builder compartmentIdInSubtree(@Nullable Boolean compartmentIdInSubtree) {
+            this.compartmentIdInSubtree = compartmentIdInSubtree;
             return this;
         }
         @CustomType.Setter
-        public Builder dimensions(Map<String,Object> dimensions) {
-            this.dimensions = Objects.requireNonNull(dimensions);
+        public Builder dimensions(@Nullable Map<String,Object> dimensions) {
+            this.dimensions = dimensions;
             return this;
         }
         @CustomType.Setter
-        public Builder endTime(String endTime) {
-            this.endTime = Objects.requireNonNull(endTime);
+        public Builder endTime(@Nullable String endTime) {
+            this.endTime = endTime;
             return this;
         }
         @CustomType.Setter
-        public Builder metadata(Map<String,Object> metadata) {
-            this.metadata = Objects.requireNonNull(metadata);
+        public Builder metadata(@Nullable Map<String,Object> metadata) {
+            this.metadata = metadata;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
@@ -260,18 +262,18 @@ public final class GetMetricDataMetricData {
             return this;
         }
         @CustomType.Setter
-        public Builder resolution(String resolution) {
-            this.resolution = Objects.requireNonNull(resolution);
+        public Builder resolution(@Nullable String resolution) {
+            this.resolution = resolution;
             return this;
         }
         @CustomType.Setter
-        public Builder resourceGroup(String resourceGroup) {
-            this.resourceGroup = Objects.requireNonNull(resourceGroup);
+        public Builder resourceGroup(@Nullable String resourceGroup) {
+            this.resourceGroup = resourceGroup;
             return this;
         }
         @CustomType.Setter
-        public Builder startTime(String startTime) {
-            this.startTime = Objects.requireNonNull(startTime);
+        public Builder startTime(@Nullable String startTime) {
+            this.startTime = startTime;
             return this;
         }
         public GetMetricDataMetricData build() {

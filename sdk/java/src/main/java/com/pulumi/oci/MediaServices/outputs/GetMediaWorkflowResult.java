@@ -10,6 +10,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetMediaWorkflowResult {
@@ -17,123 +19,123 @@ public final class GetMediaWorkflowResult {
      * @return Compartment Identifier.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return Name of the Media Workflow. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return Unique identifier that is immutable on creation.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
-    private String lifecyleDetails;
+    private @Nullable String lifecyleDetails;
     /**
      * @return Configurations to be applied to all the runs of this workflow. Parameters in these configurations are overridden by parameters in the MediaWorkflowConfigurations of the MediaWorkflowJob and the parameters of the MediaWorkflowJob. If the same parameter appears in multiple configurations, the values that appear in the configuration at the highest index will be used.
      * 
      */
-    private List<String> mediaWorkflowConfigurationIds;
+    private @Nullable List<String> mediaWorkflowConfigurationIds;
     private String mediaWorkflowId;
     /**
      * @return Data specifiying how this task is to be run. The data is a JSON object that must conform to the JSON Schema specified by the parameters of the MediaWorkflowTaskDeclaration this task references. The parameters may contain values or references to other parameters.
      * 
      */
-    private String parameters;
+    private @Nullable String parameters;
     /**
      * @return The current state of the MediaWorkflow.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    private Map<String,Object> systemTags;
+    private @Nullable Map<String,Object> systemTags;
     /**
      * @return The processing to be done in this workflow. Each key of the MediaWorkflowTasks in this array is unique within the array.  The order of the items is preserved from the order of the tasks array in CreateMediaWorkflowDetails or UpdateMediaWorkflowDetails.
      * 
      */
-    private List<GetMediaWorkflowTask> tasks;
+    private @Nullable List<GetMediaWorkflowTask> tasks;
     /**
      * @return The time when the MediaWorkflow was created. An RFC3339 formatted datetime string.
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The time when the MediaWorkflow was updated. An RFC3339 formatted datetime string.
      * 
      */
-    private String timeUpdated;
+    private @Nullable String timeUpdated;
     /**
      * @return The version of the MediaWorkflow.
      * 
      */
-    private String version;
+    private @Nullable String version;
 
     private GetMediaWorkflowResult() {}
     /**
      * @return Compartment Identifier.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return Name of the Media Workflow. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return Unique identifier that is immutable on creation.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
-    public String lifecyleDetails() {
-        return this.lifecyleDetails;
+    public Optional<String> lifecyleDetails() {
+        return Optional.ofNullable(this.lifecyleDetails);
     }
     /**
      * @return Configurations to be applied to all the runs of this workflow. Parameters in these configurations are overridden by parameters in the MediaWorkflowConfigurations of the MediaWorkflowJob and the parameters of the MediaWorkflowJob. If the same parameter appears in multiple configurations, the values that appear in the configuration at the highest index will be used.
      * 
      */
     public List<String> mediaWorkflowConfigurationIds() {
-        return this.mediaWorkflowConfigurationIds;
+        return this.mediaWorkflowConfigurationIds == null ? List.of() : this.mediaWorkflowConfigurationIds;
     }
     public String mediaWorkflowId() {
         return this.mediaWorkflowId;
@@ -142,50 +144,50 @@ public final class GetMediaWorkflowResult {
      * @return Data specifiying how this task is to be run. The data is a JSON object that must conform to the JSON Schema specified by the parameters of the MediaWorkflowTaskDeclaration this task references. The parameters may contain values or references to other parameters.
      * 
      */
-    public String parameters() {
-        return this.parameters;
+    public Optional<String> parameters() {
+        return Optional.ofNullable(this.parameters);
     }
     /**
      * @return The current state of the MediaWorkflow.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
     public Map<String,Object> systemTags() {
-        return this.systemTags;
+        return this.systemTags == null ? Map.of() : this.systemTags;
     }
     /**
      * @return The processing to be done in this workflow. Each key of the MediaWorkflowTasks in this array is unique within the array.  The order of the items is preserved from the order of the tasks array in CreateMediaWorkflowDetails or UpdateMediaWorkflowDetails.
      * 
      */
     public List<GetMediaWorkflowTask> tasks() {
-        return this.tasks;
+        return this.tasks == null ? List.of() : this.tasks;
     }
     /**
      * @return The time when the MediaWorkflow was created. An RFC3339 formatted datetime string.
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return The time when the MediaWorkflow was updated. An RFC3339 formatted datetime string.
      * 
      */
-    public String timeUpdated() {
-        return this.timeUpdated;
+    public Optional<String> timeUpdated() {
+        return Optional.ofNullable(this.timeUpdated);
     }
     /**
      * @return The version of the MediaWorkflow.
      * 
      */
-    public String version() {
-        return this.version;
+    public Optional<String> version() {
+        return Optional.ofNullable(this.version);
     }
 
     public static Builder builder() {
@@ -197,21 +199,21 @@ public final class GetMediaWorkflowResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String compartmentId;
-        private Map<String,Object> definedTags;
-        private String displayName;
-        private Map<String,Object> freeformTags;
-        private String id;
-        private String lifecyleDetails;
-        private List<String> mediaWorkflowConfigurationIds;
+        private @Nullable String compartmentId;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String displayName;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String id;
+        private @Nullable String lifecyleDetails;
+        private @Nullable List<String> mediaWorkflowConfigurationIds;
         private String mediaWorkflowId;
-        private String parameters;
-        private String state;
-        private Map<String,Object> systemTags;
-        private List<GetMediaWorkflowTask> tasks;
-        private String timeCreated;
-        private String timeUpdated;
-        private String version;
+        private @Nullable String parameters;
+        private @Nullable String state;
+        private @Nullable Map<String,Object> systemTags;
+        private @Nullable List<GetMediaWorkflowTask> tasks;
+        private @Nullable String timeCreated;
+        private @Nullable String timeUpdated;
+        private @Nullable String version;
         public Builder() {}
         public Builder(GetMediaWorkflowResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -233,38 +235,38 @@ public final class GetMediaWorkflowResult {
         }
 
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder lifecyleDetails(String lifecyleDetails) {
-            this.lifecyleDetails = Objects.requireNonNull(lifecyleDetails);
+        public Builder lifecyleDetails(@Nullable String lifecyleDetails) {
+            this.lifecyleDetails = lifecyleDetails;
             return this;
         }
         @CustomType.Setter
-        public Builder mediaWorkflowConfigurationIds(List<String> mediaWorkflowConfigurationIds) {
-            this.mediaWorkflowConfigurationIds = Objects.requireNonNull(mediaWorkflowConfigurationIds);
+        public Builder mediaWorkflowConfigurationIds(@Nullable List<String> mediaWorkflowConfigurationIds) {
+            this.mediaWorkflowConfigurationIds = mediaWorkflowConfigurationIds;
             return this;
         }
         public Builder mediaWorkflowConfigurationIds(String... mediaWorkflowConfigurationIds) {
@@ -276,41 +278,41 @@ public final class GetMediaWorkflowResult {
             return this;
         }
         @CustomType.Setter
-        public Builder parameters(String parameters) {
-            this.parameters = Objects.requireNonNull(parameters);
+        public Builder parameters(@Nullable String parameters) {
+            this.parameters = parameters;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+        public Builder systemTags(@Nullable Map<String,Object> systemTags) {
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
-        public Builder tasks(List<GetMediaWorkflowTask> tasks) {
-            this.tasks = Objects.requireNonNull(tasks);
+        public Builder tasks(@Nullable List<GetMediaWorkflowTask> tasks) {
+            this.tasks = tasks;
             return this;
         }
         public Builder tasks(GetMediaWorkflowTask... tasks) {
             return tasks(List.of(tasks));
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+        public Builder timeUpdated(@Nullable String timeUpdated) {
+            this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter
-        public Builder version(String version) {
-            this.version = Objects.requireNonNull(version);
+        public Builder version(@Nullable String version) {
+            this.version = version;
             return this;
         }
         public GetMediaWorkflowResult build() {

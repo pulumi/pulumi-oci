@@ -29,19 +29,6 @@ class VolumeGroupArgs:
                  volume_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
         """
         The set of arguments for constructing a VolumeGroup resource.
-        :param pulumi.Input[str] availability_domain: (Updatable) The availability domain of the volume group replica.  Example: `Uocm:PHX-AD-1`
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment that contains the volume group.
-        :param pulumi.Input['VolumeGroupSourceDetailsArgs'] source_details: Specifies the source for a volume group.
-        :param pulumi.Input[str] backup_policy_id: If provided, specifies the ID of the volume backup policy to assign to the newly created volume group. If omitted, no policy will be assigned.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[Sequence[pulumi.Input['VolumeGroupVolumeGroupReplicaArgs']]] volume_group_replicas: (Updatable) The list of volume group replicas that this volume group will be enabled to have in the specified destination availability domains.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] volume_ids: OCIDs for the volumes in this volume group.
         """
         pulumi.set(__self__, "availability_domain", availability_domain)
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -66,9 +53,6 @@ class VolumeGroupArgs:
     @property
     @pulumi.getter(name="availabilityDomain")
     def availability_domain(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The availability domain of the volume group replica.  Example: `Uocm:PHX-AD-1`
-        """
         return pulumi.get(self, "availability_domain")
 
     @availability_domain.setter
@@ -78,9 +62,6 @@ class VolumeGroupArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The OCID of the compartment that contains the volume group.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -90,9 +71,6 @@ class VolumeGroupArgs:
     @property
     @pulumi.getter(name="sourceDetails")
     def source_details(self) -> pulumi.Input['VolumeGroupSourceDetailsArgs']:
-        """
-        Specifies the source for a volume group.
-        """
         return pulumi.get(self, "source_details")
 
     @source_details.setter
@@ -102,9 +80,6 @@ class VolumeGroupArgs:
     @property
     @pulumi.getter(name="backupPolicyId")
     def backup_policy_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        If provided, specifies the ID of the volume backup policy to assign to the newly created volume group. If omitted, no policy will be assigned.
-        """
         return pulumi.get(self, "backup_policy_id")
 
     @backup_policy_id.setter
@@ -114,9 +89,6 @@ class VolumeGroupArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -126,13 +98,6 @@ class VolumeGroupArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -142,9 +107,6 @@ class VolumeGroupArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -163,9 +125,6 @@ class VolumeGroupArgs:
     @property
     @pulumi.getter(name="volumeGroupReplicas")
     def volume_group_replicas(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['VolumeGroupVolumeGroupReplicaArgs']]]]:
-        """
-        (Updatable) The list of volume group replicas that this volume group will be enabled to have in the specified destination availability domains.
-        """
         return pulumi.get(self, "volume_group_replicas")
 
     @volume_group_replicas.setter
@@ -184,9 +143,6 @@ class VolumeGroupArgs:
     @property
     @pulumi.getter(name="volumeIds")
     def volume_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        OCIDs for the volumes in this volume group.
-        """
         return pulumi.get(self, "volume_ids")
 
     @volume_ids.setter
@@ -215,24 +171,6 @@ class _VolumeGroupState:
                  volume_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
         """
         Input properties used for looking up and filtering VolumeGroup resources.
-        :param pulumi.Input[str] availability_domain: (Updatable) The availability domain of the volume group replica.  Example: `Uocm:PHX-AD-1`
-        :param pulumi.Input[str] backup_policy_id: If provided, specifies the ID of the volume backup policy to assign to the newly created volume group. If omitted, no policy will be assigned.
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment that contains the volume group.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[bool] is_hydrated: Specifies whether the newly created cloned volume group's data has finished copying from the source volume group or backup.
-        :param pulumi.Input[str] size_in_gbs: The aggregate size of the volume group in GBs.
-        :param pulumi.Input[str] size_in_mbs: The aggregate size of the volume group in MBs.
-        :param pulumi.Input['VolumeGroupSourceDetailsArgs'] source_details: Specifies the source for a volume group.
-        :param pulumi.Input[str] state: The current state of a volume group.
-        :param pulumi.Input[str] time_created: The date and time the volume group was created. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        :param pulumi.Input[Sequence[pulumi.Input['VolumeGroupVolumeGroupReplicaArgs']]] volume_group_replicas: (Updatable) The list of volume group replicas that this volume group will be enabled to have in the specified destination availability domains.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] volume_ids: OCIDs for the volumes in this volume group.
         """
         if availability_domain is not None:
             pulumi.set(__self__, "availability_domain", availability_domain)
@@ -270,9 +208,6 @@ class _VolumeGroupState:
     @property
     @pulumi.getter(name="availabilityDomain")
     def availability_domain(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The availability domain of the volume group replica.  Example: `Uocm:PHX-AD-1`
-        """
         return pulumi.get(self, "availability_domain")
 
     @availability_domain.setter
@@ -282,9 +217,6 @@ class _VolumeGroupState:
     @property
     @pulumi.getter(name="backupPolicyId")
     def backup_policy_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        If provided, specifies the ID of the volume backup policy to assign to the newly created volume group. If omitted, no policy will be assigned.
-        """
         return pulumi.get(self, "backup_policy_id")
 
     @backup_policy_id.setter
@@ -294,9 +226,6 @@ class _VolumeGroupState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The OCID of the compartment that contains the volume group.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -306,9 +235,6 @@ class _VolumeGroupState:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -318,13 +244,6 @@ class _VolumeGroupState:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -334,9 +253,6 @@ class _VolumeGroupState:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -346,9 +262,6 @@ class _VolumeGroupState:
     @property
     @pulumi.getter(name="isHydrated")
     def is_hydrated(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Specifies whether the newly created cloned volume group's data has finished copying from the source volume group or backup.
-        """
         return pulumi.get(self, "is_hydrated")
 
     @is_hydrated.setter
@@ -367,9 +280,6 @@ class _VolumeGroupState:
     @property
     @pulumi.getter(name="sizeInGbs")
     def size_in_gbs(self) -> Optional[pulumi.Input[str]]:
-        """
-        The aggregate size of the volume group in GBs.
-        """
         return pulumi.get(self, "size_in_gbs")
 
     @size_in_gbs.setter
@@ -379,9 +289,6 @@ class _VolumeGroupState:
     @property
     @pulumi.getter(name="sizeInMbs")
     def size_in_mbs(self) -> Optional[pulumi.Input[str]]:
-        """
-        The aggregate size of the volume group in MBs.
-        """
         return pulumi.get(self, "size_in_mbs")
 
     @size_in_mbs.setter
@@ -391,9 +298,6 @@ class _VolumeGroupState:
     @property
     @pulumi.getter(name="sourceDetails")
     def source_details(self) -> Optional[pulumi.Input['VolumeGroupSourceDetailsArgs']]:
-        """
-        Specifies the source for a volume group.
-        """
         return pulumi.get(self, "source_details")
 
     @source_details.setter
@@ -403,9 +307,6 @@ class _VolumeGroupState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The current state of a volume group.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -415,9 +316,6 @@ class _VolumeGroupState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time the volume group was created. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -427,9 +325,6 @@ class _VolumeGroupState:
     @property
     @pulumi.getter(name="volumeGroupReplicas")
     def volume_group_replicas(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['VolumeGroupVolumeGroupReplicaArgs']]]]:
-        """
-        (Updatable) The list of volume group replicas that this volume group will be enabled to have in the specified destination availability domains.
-        """
         return pulumi.get(self, "volume_group_replicas")
 
     @volume_group_replicas.setter
@@ -448,9 +343,6 @@ class _VolumeGroupState:
     @property
     @pulumi.getter(name="volumeIds")
     def volume_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        OCIDs for the volumes in this volume group.
-        """
         return pulumi.get(self, "volume_ids")
 
     @volume_ids.setter
@@ -476,56 +368,9 @@ class VolumeGroup(pulumi.CustomResource):
                  volume_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  __props__=None):
         """
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_volume_group = oci.core.VolumeGroup("testVolumeGroup",
-            availability_domain=var["volume_group_availability_domain"],
-            compartment_id=var["compartment_id"],
-            source_details=oci.core.VolumeGroupSourceDetailsArgs(
-                type="volumeIds",
-                volume_ids=[var["volume_group_source_id"]],
-            ),
-            backup_policy_id=data["oci_core_volume_backup_policies"]["test_volume_backup_policies"]["volume_backup_policies"][0]["id"],
-            defined_tags={
-                "Operations.CostCenter": "42",
-            },
-            display_name=var["volume_group_display_name"],
-            freeform_tags={
-                "Department": "Finance",
-            },
-            volume_group_replicas=[oci.core.VolumeGroupVolumeGroupReplicaArgs(
-                availability_domain=var["volume_group_volume_group_replicas_availability_domain"],
-                display_name=var["volume_group_volume_group_replicas_display_name"],
-            )])
-        ```
-
-        ## Import
-
-        VolumeGroups can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Core/volumeGroup:VolumeGroup test_volume_group "id"
-        ```
-
+        Create a VolumeGroup resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] availability_domain: (Updatable) The availability domain of the volume group replica.  Example: `Uocm:PHX-AD-1`
-        :param pulumi.Input[str] backup_policy_id: If provided, specifies the ID of the volume backup policy to assign to the newly created volume group. If omitted, no policy will be assigned.
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment that contains the volume group.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[pulumi.InputType['VolumeGroupSourceDetailsArgs']] source_details: Specifies the source for a volume group.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['VolumeGroupVolumeGroupReplicaArgs']]]] volume_group_replicas: (Updatable) The list of volume group replicas that this volume group will be enabled to have in the specified destination availability domains.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] volume_ids: OCIDs for the volumes in this volume group.
         """
         ...
     @overload
@@ -534,41 +379,7 @@ class VolumeGroup(pulumi.CustomResource):
                  args: VolumeGroupArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_volume_group = oci.core.VolumeGroup("testVolumeGroup",
-            availability_domain=var["volume_group_availability_domain"],
-            compartment_id=var["compartment_id"],
-            source_details=oci.core.VolumeGroupSourceDetailsArgs(
-                type="volumeIds",
-                volume_ids=[var["volume_group_source_id"]],
-            ),
-            backup_policy_id=data["oci_core_volume_backup_policies"]["test_volume_backup_policies"]["volume_backup_policies"][0]["id"],
-            defined_tags={
-                "Operations.CostCenter": "42",
-            },
-            display_name=var["volume_group_display_name"],
-            freeform_tags={
-                "Department": "Finance",
-            },
-            volume_group_replicas=[oci.core.VolumeGroupVolumeGroupReplicaArgs(
-                availability_domain=var["volume_group_volume_group_replicas_availability_domain"],
-                display_name=var["volume_group_volume_group_replicas_display_name"],
-            )])
-        ```
-
-        ## Import
-
-        VolumeGroups can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Core/volumeGroup:VolumeGroup test_volume_group "id"
-        ```
-
+        Create a VolumeGroup resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param VolumeGroupArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -659,24 +470,6 @@ class VolumeGroup(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] availability_domain: (Updatable) The availability domain of the volume group replica.  Example: `Uocm:PHX-AD-1`
-        :param pulumi.Input[str] backup_policy_id: If provided, specifies the ID of the volume backup policy to assign to the newly created volume group. If omitted, no policy will be assigned.
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment that contains the volume group.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[bool] is_hydrated: Specifies whether the newly created cloned volume group's data has finished copying from the source volume group or backup.
-        :param pulumi.Input[str] size_in_gbs: The aggregate size of the volume group in GBs.
-        :param pulumi.Input[str] size_in_mbs: The aggregate size of the volume group in MBs.
-        :param pulumi.Input[pulumi.InputType['VolumeGroupSourceDetailsArgs']] source_details: Specifies the source for a volume group.
-        :param pulumi.Input[str] state: The current state of a volume group.
-        :param pulumi.Input[str] time_created: The date and time the volume group was created. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['VolumeGroupVolumeGroupReplicaArgs']]]] volume_group_replicas: (Updatable) The list of volume group replicas that this volume group will be enabled to have in the specified destination availability domains.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] volume_ids: OCIDs for the volumes in this volume group.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -703,61 +496,36 @@ class VolumeGroup(pulumi.CustomResource):
     @property
     @pulumi.getter(name="availabilityDomain")
     def availability_domain(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The availability domain of the volume group replica.  Example: `Uocm:PHX-AD-1`
-        """
         return pulumi.get(self, "availability_domain")
 
     @property
     @pulumi.getter(name="backupPolicyId")
-    def backup_policy_id(self) -> pulumi.Output[str]:
-        """
-        If provided, specifies the ID of the volume backup policy to assign to the newly created volume group. If omitted, no policy will be assigned.
-        """
+    def backup_policy_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "backup_policy_id")
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The OCID of the compartment that contains the volume group.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> pulumi.Output[str]:
-        """
-        (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
+    def display_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="isHydrated")
-    def is_hydrated(self) -> pulumi.Output[bool]:
-        """
-        Specifies whether the newly created cloned volume group's data has finished copying from the source volume group or backup.
-        """
+    def is_hydrated(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "is_hydrated")
 
     @property
@@ -767,50 +535,32 @@ class VolumeGroup(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="sizeInGbs")
-    def size_in_gbs(self) -> pulumi.Output[str]:
-        """
-        The aggregate size of the volume group in GBs.
-        """
+    def size_in_gbs(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "size_in_gbs")
 
     @property
     @pulumi.getter(name="sizeInMbs")
-    def size_in_mbs(self) -> pulumi.Output[str]:
-        """
-        The aggregate size of the volume group in MBs.
-        """
+    def size_in_mbs(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "size_in_mbs")
 
     @property
     @pulumi.getter(name="sourceDetails")
     def source_details(self) -> pulumi.Output['outputs.VolumeGroupSourceDetails']:
-        """
-        Specifies the source for a volume group.
-        """
         return pulumi.get(self, "source_details")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        The current state of a volume group.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        The date and time the volume group was created. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="volumeGroupReplicas")
-    def volume_group_replicas(self) -> pulumi.Output[Sequence['outputs.VolumeGroupVolumeGroupReplica']]:
-        """
-        (Updatable) The list of volume group replicas that this volume group will be enabled to have in the specified destination availability domains.
-        """
+    def volume_group_replicas(self) -> pulumi.Output[Optional[Sequence['outputs.VolumeGroupVolumeGroupReplica']]]:
         return pulumi.get(self, "volume_group_replicas")
 
     @property
@@ -820,9 +570,6 @@ class VolumeGroup(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="volumeIds")
-    def volume_ids(self) -> pulumi.Output[Sequence[str]]:
-        """
-        OCIDs for the volumes in this volume group.
-        """
+    def volume_ids(self) -> pulumi.Output[Optional[Sequence[str]]]:
         return pulumi.get(self, "volume_ids")
 

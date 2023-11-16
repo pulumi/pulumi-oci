@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyInParamDetail {
@@ -14,27 +16,27 @@ public final class GetMetricExtensionsMetricExtensionCollectionItemQueryProperty
      * @return Position of IN parameter
      * 
      */
-    private Integer inParamPosition;
+    private @Nullable Integer inParamPosition;
     /**
      * @return Value of IN parameter
      * 
      */
-    private String inParamValue;
+    private @Nullable String inParamValue;
 
     private GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyInParamDetail() {}
     /**
      * @return Position of IN parameter
      * 
      */
-    public Integer inParamPosition() {
-        return this.inParamPosition;
+    public Optional<Integer> inParamPosition() {
+        return Optional.ofNullable(this.inParamPosition);
     }
     /**
      * @return Value of IN parameter
      * 
      */
-    public String inParamValue() {
-        return this.inParamValue;
+    public Optional<String> inParamValue() {
+        return Optional.ofNullable(this.inParamValue);
     }
 
     public static Builder builder() {
@@ -46,8 +48,8 @@ public final class GetMetricExtensionsMetricExtensionCollectionItemQueryProperty
     }
     @CustomType.Builder
     public static final class Builder {
-        private Integer inParamPosition;
-        private String inParamValue;
+        private @Nullable Integer inParamPosition;
+        private @Nullable String inParamValue;
         public Builder() {}
         public Builder(GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyInParamDetail defaults) {
     	      Objects.requireNonNull(defaults);
@@ -56,13 +58,13 @@ public final class GetMetricExtensionsMetricExtensionCollectionItemQueryProperty
         }
 
         @CustomType.Setter
-        public Builder inParamPosition(Integer inParamPosition) {
-            this.inParamPosition = Objects.requireNonNull(inParamPosition);
+        public Builder inParamPosition(@Nullable Integer inParamPosition) {
+            this.inParamPosition = inParamPosition;
             return this;
         }
         @CustomType.Setter
-        public Builder inParamValue(String inParamValue) {
-            this.inParamValue = Objects.requireNonNull(inParamValue);
+        public Builder inParamValue(@Nullable String inParamValue) {
+            this.inParamValue = inParamValue;
             return this;
         }
         public GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyInParamDetail build() {

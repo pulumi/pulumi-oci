@@ -19,8 +19,8 @@ public final class GetRrsetResult {
      * 
      */
     private String domain;
-    private String id;
-    private List<GetRrsetItem> items;
+    private @Nullable String id;
+    private @Nullable List<GetRrsetItem> items;
     /**
      * @return The type of DNS record, such as A or CNAME. For more information, see [Resource Record (RR) TYPEs](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).
      * 
@@ -42,11 +42,11 @@ public final class GetRrsetResult {
     public String domain() {
         return this.domain;
     }
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public List<GetRrsetItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
     /**
      * @return The type of DNS record, such as A or CNAME. For more information, see [Resource Record (RR) TYPEs](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).
@@ -79,8 +79,8 @@ public final class GetRrsetResult {
     public static final class Builder {
         private @Nullable String compartmentId;
         private String domain;
-        private String id;
-        private List<GetRrsetItem> items;
+        private @Nullable String id;
+        private @Nullable List<GetRrsetItem> items;
         private String rtype;
         private @Nullable String scope;
         private @Nullable String viewId;
@@ -111,13 +111,13 @@ public final class GetRrsetResult {
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder items(List<GetRrsetItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetRrsetItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetRrsetItem... items) {

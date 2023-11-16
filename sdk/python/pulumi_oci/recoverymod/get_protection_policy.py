@@ -64,66 +64,42 @@ class GetProtectionPolicyResult:
 
     @property
     @pulumi.getter(name="backupRetentionPeriodInDays")
-    def backup_retention_period_in_days(self) -> int:
-        """
-        The maximum number of days to retain backups for a protected database. Specify a period ranging from a minimum 14 days to a maximum 95 days. For example, specify the value 55 if you want to retain backups for 55 days.
-        """
+    def backup_retention_period_in_days(self) -> Optional[int]:
         return pulumi.get(self, "backup_retention_period_in_days")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The OCID of the compartment that contains the protection policy.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A user provided name for the protection policy.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The protection policy OCID.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="isPredefinedPolicy")
-    def is_predefined_policy(self) -> bool:
-        """
-        Set to TRUE if the policy is Oracle-defined, and FALSE for a user-defined custom policy. You can modify only the custom policies.
-        """
+    def is_predefined_policy(self) -> Optional[bool]:
         return pulumi.get(self, "is_predefined_policy")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        Detailed description about the current lifecycle state of the protection policy. For example, it can be used to provide actionable information for a resource in a Failed state.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
@@ -133,40 +109,22 @@ class GetProtectionPolicyResult:
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the protection policy. Allowed values are:
-        * CREATING
-        * UPDATING
-        * ACTIVE
-        * DELETING
-        * DELETED
-        * FAILED
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
-        """
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        An RFC3339 formatted datetime string that indicates the created time for the protection policy. For example: '2020-05-22T21:10:29.600Z'.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        An RFC3339 formatted datetime string that indicates the updated time for the protection policy. For example: '2020-05-22T21:10:29.600Z'.
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
 
@@ -194,21 +152,7 @@ class AwaitableGetProtectionPolicyResult(GetProtectionPolicyResult):
 def get_protection_policy(protection_policy_id: Optional[str] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetProtectionPolicyResult:
     """
-    This data source provides details about a specific Protection Policy resource in Oracle Cloud Infrastructure Recovery service.
-
-    Gets information about a specified protection policy.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_protection_policy = oci.RecoveryMod.get_protection_policy(protection_policy_id=oci_recovery_protection_policy["test_protection_policy"]["id"])
-    ```
-
-
-    :param str protection_policy_id: The protection policy OCID.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['protectionPolicyId'] = protection_policy_id
@@ -235,20 +179,6 @@ def get_protection_policy(protection_policy_id: Optional[str] = None,
 def get_protection_policy_output(protection_policy_id: Optional[pulumi.Input[str]] = None,
                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetProtectionPolicyResult]:
     """
-    This data source provides details about a specific Protection Policy resource in Oracle Cloud Infrastructure Recovery service.
-
-    Gets information about a specified protection policy.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_protection_policy = oci.RecoveryMod.get_protection_policy(protection_policy_id=oci_recovery_protection_policy["test_protection_policy"]["id"])
-    ```
-
-
-    :param str protection_policy_id: The protection policy OCID.
+    Use this data source to access information about an existing resource.
     """
     ...

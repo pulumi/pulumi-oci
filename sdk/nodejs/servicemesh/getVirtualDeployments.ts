@@ -90,7 +90,7 @@ export interface GetVirtualDeploymentsResult {
     /**
      * The list of virtual_deployment_collection.
      */
-    readonly virtualDeploymentCollections: outputs.ServiceMesh.GetVirtualDeploymentsVirtualDeploymentCollection[];
+    readonly virtualDeploymentCollections?: outputs.ServiceMesh.GetVirtualDeploymentsVirtualDeploymentCollection[];
     /**
      * The OCID of the virtual service in which this virtual deployment is created.
      */

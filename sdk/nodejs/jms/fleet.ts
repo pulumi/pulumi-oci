@@ -84,23 +84,23 @@ export class Fleet extends pulumi.CustomResource {
     /**
      * The approximate count of all unique applications in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
      */
-    public /*out*/ readonly approximateApplicationCount!: pulumi.Output<number>;
+    public /*out*/ readonly approximateApplicationCount!: pulumi.Output<number | undefined>;
     /**
      * The approximate count of all unique Java installations in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
      */
-    public /*out*/ readonly approximateInstallationCount!: pulumi.Output<number>;
+    public /*out*/ readonly approximateInstallationCount!: pulumi.Output<number | undefined>;
     /**
      * The approximate count of all unique Java servers in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
      */
-    public /*out*/ readonly approximateJavaServerCount!: pulumi.Output<number>;
+    public /*out*/ readonly approximateJavaServerCount!: pulumi.Output<number | undefined>;
     /**
      * The approximate count of all unique Java Runtimes in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
      */
-    public /*out*/ readonly approximateJreCount!: pulumi.Output<number>;
+    public /*out*/ readonly approximateJreCount!: pulumi.Output<number | undefined>;
     /**
      * The approximate count of all unique managed instances in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
      */
-    public /*out*/ readonly approximateManagedInstanceCount!: pulumi.Output<number>;
+    public /*out*/ readonly approximateManagedInstanceCount!: pulumi.Output<number | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment of the Fleet.
      */
@@ -108,11 +108,11 @@ export class Fleet extends pulumi.CustomResource {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. (See [Understanding Free-form Tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) The Fleet's description. If nothing is provided, the Fleet description will be null.
      */
-    public readonly description!: pulumi.Output<string>;
+    public readonly description!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The name of the Fleet. The displayName must be unique for Fleets in the same compartment.
      */
@@ -120,7 +120,7 @@ export class Fleet extends pulumi.CustomResource {
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`. (See [Managing Tags and Tag Namespaces](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) Custom Log for inventory or operation log.
      */
@@ -128,23 +128,23 @@ export class Fleet extends pulumi.CustomResource {
     /**
      * (Updatable) Whether or not advanced features are enabled in this Fleet. Deprecated, use `/fleets/{fleetId}/advanceFeatureConfiguration` API instead.
      */
-    public readonly isAdvancedFeaturesEnabled!: pulumi.Output<boolean>;
+    public readonly isAdvancedFeaturesEnabled!: pulumi.Output<boolean | undefined>;
     /**
      * (Updatable) Custom Log for inventory or operation log.
      */
-    public readonly operationLog!: pulumi.Output<outputs.Jms.FleetOperationLog>;
+    public readonly operationLog!: pulumi.Output<outputs.Jms.FleetOperationLog | undefined>;
     /**
      * The lifecycle state of the Fleet.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any}>;
+    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * The creation date and time of the Fleet (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
 
     /**
      * Create a Fleet resource with the given unique name, arguments, and options.

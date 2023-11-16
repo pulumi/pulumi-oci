@@ -88,18 +88,12 @@ class GetAuditTrailResult:
 
     @property
     @pulumi.getter(name="auditCollectionStartTime")
-    def audit_collection_start_time(self) -> str:
-        """
-        The date from which the audit trail must start collecting data, in the format defined by RFC3339.
-        """
+    def audit_collection_start_time(self) -> Optional[str]:
         return pulumi.get(self, "audit_collection_start_time")
 
     @property
     @pulumi.getter(name="auditProfileId")
-    def audit_profile_id(self) -> str:
-        """
-        The OCID of the  parent audit.
-        """
+    def audit_profile_id(self) -> Optional[str]:
         return pulumi.get(self, "audit_profile_id")
 
     @property
@@ -109,143 +103,92 @@ class GetAuditTrailResult:
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The OCID of the compartment that contains the audit trail and is the same as the compartment of the audit profile resource.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        The description of the audit trail.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        The display name of the audit trail.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The OCID of the audit trail.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="isAutoPurgeEnabled")
-    def is_auto_purge_enabled(self) -> bool:
-        """
-        Indicates if auto purge is enabled on the target database, which helps delete audit data in the target database every seven days so that the database's audit trail does not become too large.
-        """
+    def is_auto_purge_enabled(self) -> Optional[bool]:
         return pulumi.get(self, "is_auto_purge_enabled")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        Details about the current state of the audit trail in Data Safe.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="resumeTrigger")
-    def resume_trigger(self) -> int:
+    def resume_trigger(self) -> Optional[int]:
         return pulumi.get(self, "resume_trigger")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the audit trail.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter
-    def status(self) -> str:
-        """
-        The current sub-state of the audit trail.
-        """
+    def status(self) -> Optional[str]:
         return pulumi.get(self, "status")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="targetId")
-    def target_id(self) -> str:
-        """
-        The OCID of the Data Safe target for which the audit trail is created.
-        """
+    def target_id(self) -> Optional[str]:
         return pulumi.get(self, "target_id")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the audit trail was created, in the format defined by RFC3339.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeLastCollected")
-    def time_last_collected(self) -> str:
-        """
-        The date and time until when the audit events were collected from the target database by the Data Safe audit trail  collection process, in the format defined by RFC3339.
-        """
+    def time_last_collected(self) -> Optional[str]:
         return pulumi.get(self, "time_last_collected")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The date and time the audit trail was updated, in the format defined by RFC3339.
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
     @property
     @pulumi.getter(name="trailLocation")
-    def trail_location(self) -> str:
-        """
-        An audit trail location represents the source of audit records that provides documentary evidence of the sequence of activities in the target database.
-        """
+    def trail_location(self) -> Optional[str]:
         return pulumi.get(self, "trail_location")
 
     @property
     @pulumi.getter(name="workRequestId")
-    def work_request_id(self) -> str:
-        """
-        The OCID of the workrequest for audit trail which collects audit records.
-        """
+    def work_request_id(self) -> Optional[str]:
         return pulumi.get(self, "work_request_id")
 
 
@@ -281,21 +224,7 @@ class AwaitableGetAuditTrailResult(GetAuditTrailResult):
 def get_audit_trail(audit_trail_id: Optional[str] = None,
                     opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAuditTrailResult:
     """
-    This data source provides details about a specific Audit Trail resource in Oracle Cloud Infrastructure Data Safe service.
-
-    Gets the details of audit trail.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_audit_trail = oci.DataSafe.get_audit_trail(audit_trail_id=oci_data_safe_audit_trail["test_audit_trail"]["id"])
-    ```
-
-
-    :param str audit_trail_id: The OCID of the audit trail.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['auditTrailId'] = audit_trail_id
@@ -330,20 +259,6 @@ def get_audit_trail(audit_trail_id: Optional[str] = None,
 def get_audit_trail_output(audit_trail_id: Optional[pulumi.Input[str]] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAuditTrailResult]:
     """
-    This data source provides details about a specific Audit Trail resource in Oracle Cloud Infrastructure Data Safe service.
-
-    Gets the details of audit trail.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_audit_trail = oci.DataSafe.get_audit_trail(audit_trail_id=oci_data_safe_audit_trail["test_audit_trail"]["id"])
-    ```
-
-
-    :param str audit_trail_id: The OCID of the audit trail.
+    Use this data source to access information about an existing resource.
     """
     ...

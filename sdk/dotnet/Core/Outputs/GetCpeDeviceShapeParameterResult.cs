@@ -16,23 +16,23 @@ namespace Pulumi.Oci.Core.Outputs
         /// <summary>
         /// A descriptive label for the question (for example, to display in a form in a graphical interface). Avoid entering confidential information.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// A description or explanation of the question, to help the customer answer accurately.
         /// </summary>
-        public readonly string Explanation;
+        public readonly string? Explanation;
         /// <summary>
         /// A string that identifies the question.
         /// </summary>
-        public readonly string Key;
+        public readonly string? Key;
 
         [OutputConstructor]
         private GetCpeDeviceShapeParameterResult(
-            string displayName,
+            string? displayName,
 
-            string explanation,
+            string? explanation,
 
-            string key)
+            string? key)
         {
             DisplayName = displayName;
             Explanation = explanation;

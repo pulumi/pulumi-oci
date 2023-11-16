@@ -28,11 +28,6 @@ class DatabaseToolsConnectionKeyStoreArgs:
                  key_store_content: Optional[pulumi.Input['DatabaseToolsConnectionKeyStoreKeyStoreContentArgs']] = None,
                  key_store_password: Optional[pulumi.Input['DatabaseToolsConnectionKeyStoreKeyStorePasswordArgs']] = None,
                  key_store_type: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input['DatabaseToolsConnectionKeyStoreKeyStoreContentArgs'] key_store_content: (Updatable) The key store content.
-        :param pulumi.Input['DatabaseToolsConnectionKeyStoreKeyStorePasswordArgs'] key_store_password: (Updatable) The key store password.
-        :param pulumi.Input[str] key_store_type: (Updatable) The key store type.
-        """
         if key_store_content is not None:
             pulumi.set(__self__, "key_store_content", key_store_content)
         if key_store_password is not None:
@@ -43,9 +38,6 @@ class DatabaseToolsConnectionKeyStoreArgs:
     @property
     @pulumi.getter(name="keyStoreContent")
     def key_store_content(self) -> Optional[pulumi.Input['DatabaseToolsConnectionKeyStoreKeyStoreContentArgs']]:
-        """
-        (Updatable) The key store content.
-        """
         return pulumi.get(self, "key_store_content")
 
     @key_store_content.setter
@@ -55,9 +47,6 @@ class DatabaseToolsConnectionKeyStoreArgs:
     @property
     @pulumi.getter(name="keyStorePassword")
     def key_store_password(self) -> Optional[pulumi.Input['DatabaseToolsConnectionKeyStoreKeyStorePasswordArgs']]:
-        """
-        (Updatable) The key store password.
-        """
         return pulumi.get(self, "key_store_password")
 
     @key_store_password.setter
@@ -67,9 +56,6 @@ class DatabaseToolsConnectionKeyStoreArgs:
     @property
     @pulumi.getter(name="keyStoreType")
     def key_store_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The key store type.
-        """
         return pulumi.get(self, "key_store_type")
 
     @key_store_type.setter
@@ -82,14 +68,6 @@ class DatabaseToolsConnectionKeyStoreKeyStoreContentArgs:
     def __init__(__self__, *,
                  value_type: pulumi.Input[str],
                  secret_id: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] value_type: (Updatable) The value type of the user password.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
-        """
         pulumi.set(__self__, "value_type", value_type)
         if secret_id is not None:
             pulumi.set(__self__, "secret_id", secret_id)
@@ -97,13 +75,6 @@ class DatabaseToolsConnectionKeyStoreKeyStoreContentArgs:
     @property
     @pulumi.getter(name="valueType")
     def value_type(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The value type of the user password.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "value_type")
 
     @value_type.setter
@@ -113,9 +84,6 @@ class DatabaseToolsConnectionKeyStoreKeyStoreContentArgs:
     @property
     @pulumi.getter(name="secretId")
     def secret_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
-        """
         return pulumi.get(self, "secret_id")
 
     @secret_id.setter
@@ -128,14 +96,6 @@ class DatabaseToolsConnectionKeyStoreKeyStorePasswordArgs:
     def __init__(__self__, *,
                  value_type: pulumi.Input[str],
                  secret_id: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] value_type: (Updatable) The value type of the user password.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
-        """
         pulumi.set(__self__, "value_type", value_type)
         if secret_id is not None:
             pulumi.set(__self__, "secret_id", secret_id)
@@ -143,13 +103,6 @@ class DatabaseToolsConnectionKeyStoreKeyStorePasswordArgs:
     @property
     @pulumi.getter(name="valueType")
     def value_type(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The value type of the user password.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "value_type")
 
     @value_type.setter
@@ -159,9 +112,6 @@ class DatabaseToolsConnectionKeyStoreKeyStorePasswordArgs:
     @property
     @pulumi.getter(name="secretId")
     def secret_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
-        """
         return pulumi.get(self, "secret_id")
 
     @secret_id.setter
@@ -174,19 +124,12 @@ class DatabaseToolsConnectionRelatedResourceArgs:
     def __init__(__self__, *,
                  entity_type: pulumi.Input[str],
                  identifier: pulumi.Input[str]):
-        """
-        :param pulumi.Input[str] entity_type: (Updatable) The resource entity type.
-        :param pulumi.Input[str] identifier: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related resource.
-        """
         pulumi.set(__self__, "entity_type", entity_type)
         pulumi.set(__self__, "identifier", identifier)
 
     @property
     @pulumi.getter(name="entityType")
     def entity_type(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The resource entity type.
-        """
         return pulumi.get(self, "entity_type")
 
     @entity_type.setter
@@ -196,9 +139,6 @@ class DatabaseToolsConnectionRelatedResourceArgs:
     @property
     @pulumi.getter
     def identifier(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related resource.
-        """
         return pulumi.get(self, "identifier")
 
     @identifier.setter
@@ -211,23 +151,12 @@ class DatabaseToolsConnectionUserPasswordArgs:
     def __init__(__self__, *,
                  secret_id: pulumi.Input[str],
                  value_type: pulumi.Input[str]):
-        """
-        :param pulumi.Input[str] secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
-        :param pulumi.Input[str] value_type: (Updatable) The value type of the user password.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         pulumi.set(__self__, "secret_id", secret_id)
         pulumi.set(__self__, "value_type", value_type)
 
     @property
     @pulumi.getter(name="secretId")
     def secret_id(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
-        """
         return pulumi.get(self, "secret_id")
 
     @secret_id.setter
@@ -237,13 +166,6 @@ class DatabaseToolsConnectionUserPasswordArgs:
     @property
     @pulumi.getter(name="valueType")
     def value_type(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The value type of the user password.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "value_type")
 
     @value_type.setter
@@ -255,18 +177,12 @@ class DatabaseToolsConnectionUserPasswordArgs:
 class DatabaseToolsPrivateEndpointReverseConnectionConfigurationArgs:
     def __init__(__self__, *,
                  reverse_connections_source_ips: Optional[pulumi.Input[Sequence[pulumi.Input['DatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIpArgs']]]] = None):
-        """
-        :param pulumi.Input[Sequence[pulumi.Input['DatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIpArgs']]] reverse_connections_source_ips: A list of IP addresses in the customer VCN to be used as the source IPs for reverse connection packets traveling from the service's VCN to the customer's VCN.
-        """
         if reverse_connections_source_ips is not None:
             pulumi.set(__self__, "reverse_connections_source_ips", reverse_connections_source_ips)
 
     @property
     @pulumi.getter(name="reverseConnectionsSourceIps")
     def reverse_connections_source_ips(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIpArgs']]]]:
-        """
-        A list of IP addresses in the customer VCN to be used as the source IPs for reverse connection packets traveling from the service's VCN to the customer's VCN.
-        """
         return pulumi.get(self, "reverse_connections_source_ips")
 
     @reverse_connections_source_ips.setter
@@ -278,18 +194,12 @@ class DatabaseToolsPrivateEndpointReverseConnectionConfigurationArgs:
 class DatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIpArgs:
     def __init__(__self__, *,
                  source_ip: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] source_ip: The IP address in the customer's VCN to be used as the source IP for reverse connection packets traveling from the customer's VCN to the service's VCN.
-        """
         if source_ip is not None:
             pulumi.set(__self__, "source_ip", source_ip)
 
     @property
     @pulumi.getter(name="sourceIp")
     def source_ip(self) -> Optional[pulumi.Input[str]]:
-        """
-        The IP address in the customer's VCN to be used as the source IP for reverse connection packets traveling from the customer's VCN to the service's VCN.
-        """
         return pulumi.get(self, "source_ip")
 
     @source_ip.setter
@@ -342,9 +252,6 @@ class GetDatabaseToolsEndpointServicesFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: A filter to return only resources that match the entire specified name.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -353,9 +260,6 @@ class GetDatabaseToolsEndpointServicesFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        A filter to return only resources that match the entire specified name.
-        """
         return pulumi.get(self, "name")
 
     @name.setter

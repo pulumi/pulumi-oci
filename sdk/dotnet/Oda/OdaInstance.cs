@@ -81,13 +81,13 @@ namespace Pulumi.Oci.Oda
         /// URL for the connector's endpoint.
         /// </summary>
         [Output("connectorUrl")]
-        public Output<string> ConnectorUrl { get; private set; } = null!;
+        public Output<string?> ConnectorUrl { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Description of the Digital Assistant instance.
@@ -99,31 +99,31 @@ namespace Pulumi.Oci.Oda
         /// (Updatable) User-friendly name for the instance. Avoid entering confidential information. You can change this value anytime.
         /// </summary>
         [Output("displayName")]
-        public Output<string> DisplayName { get; private set; } = null!;
+        public Output<string?> DisplayName { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Example: `{"bar-key": "value"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// If isRoleBasedAccess is set to true, this property specifies the URL for the administration console used to manage the Identity Application instance Digital Assistant has created inside the user-specified identity domain.
         /// </summary>
         [Output("identityAppConsoleUrl")]
-        public Output<string> IdentityAppConsoleUrl { get; private set; } = null!;
+        public Output<string?> IdentityAppConsoleUrl { get; private set; } = null!;
 
         /// <summary>
         /// If isRoleBasedAccess is set to true, this property specifies the GUID of the Identity Application instance Digital Assistant has created inside the user-specified identity domain. This identity application instance may be used to host user roll mappings to grant access to this Digital Assistant instance for users within the identity domain.
         /// </summary>
         [Output("identityAppGuid")]
-        public Output<string> IdentityAppGuid { get; private set; } = null!;
+        public Output<string?> IdentityAppGuid { get; private set; } = null!;
 
         /// <summary>
         /// If isRoleBasedAccess is set to true, this property specifies the identity domain that is to be used to implement this type of authorzation. Digital Assistant will create an Identity Application instance and Application Roles within this identity domain. The caller may then perform and user roll mappings they like to grant access to users within the identity domain.
         /// </summary>
         [Output("identityDomain")]
-        public Output<string> IdentityDomain { get; private set; } = null!;
+        public Output<string?> IdentityDomain { get; private set; } = null!;
 
         /// <summary>
         /// A list of package ids imported into this instance (if any). Use GetImportedPackage to get the details of the imported packages.
@@ -141,13 +141,13 @@ namespace Pulumi.Oci.Oda
         /// Should this Digital Assistant instance use role-based authorization via an identity domain (true) or use the default policy-based authorization via IAM policies (false)
         /// </summary>
         [Output("isRoleBasedAccess")]
-        public Output<bool> IsRoleBasedAccess { get; private set; } = null!;
+        public Output<bool?> IsRoleBasedAccess { get; private set; } = null!;
 
         /// <summary>
         /// The current sub-state of the Digital Assistant instance.
         /// </summary>
         [Output("lifecycleSubState")]
-        public Output<string> LifecycleSubState { get; private set; } = null!;
+        public Output<string?> LifecycleSubState { get; private set; } = null!;
 
         /// <summary>
         /// A list of restricted operations (across all attachments) for this instance (if any). Use GetOdaInstanceAttachment to get the details of the attachments.
@@ -169,31 +169,31 @@ namespace Pulumi.Oci.Oda
         /// The current state of the Digital Assistant instance.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// A message that describes the current state in more detail. For example, actionable information about an instance that's in the `FAILED` state.
         /// </summary>
         [Output("stateMessage")]
-        public Output<string> StateMessage { get; private set; } = null!;
+        public Output<string?> StateMessage { get; private set; } = null!;
 
         /// <summary>
         /// When the Digital Assistant instance was created. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// When the Digital Assistance instance was last updated. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
         /// </summary>
         [Output("timeUpdated")]
-        public Output<string> TimeUpdated { get; private set; } = null!;
+        public Output<string?> TimeUpdated { get; private set; } = null!;
 
         /// <summary>
         /// URL for the Digital Assistant web application that's associated with the instance.
         /// </summary>
         [Output("webAppUrl")]
-        public Output<string> WebAppUrl { get; private set; } = null!;
+        public Output<string?> WebAppUrl { get; private set; } = null!;
 
 
         /// <summary>

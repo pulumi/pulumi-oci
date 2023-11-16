@@ -13,50 +13,50 @@ namespace Pulumi.Oci.ServiceCatalog.Outputs
     [OutputType]
     public sealed class GetPrivateApplicationPackagesPrivateApplicationPackageCollectionItemResult
     {
-        public readonly string ContentUrl;
+        public readonly string? ContentUrl;
         /// <summary>
         /// Exact match name filter.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private application package.
         /// </summary>
-        public readonly string Id;
-        public readonly string MimeType;
+        public readonly string? Id;
+        public readonly string? MimeType;
         /// <summary>
         /// Name of the package type. If multiple package types are provided, then any resource with one or more matching package types will be returned.
         /// </summary>
-        public readonly string PackageType;
+        public readonly string? PackageType;
         /// <summary>
         /// The unique identifier for the private application.
         /// </summary>
-        public readonly string PrivateApplicationId;
+        public readonly string? PrivateApplicationId;
         /// <summary>
         /// The date and time the private application package was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2021-05-27T21:10:29.600Z`
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The package version.
         /// </summary>
-        public readonly string Version;
+        public readonly string? Version;
 
         [OutputConstructor]
         private GetPrivateApplicationPackagesPrivateApplicationPackageCollectionItemResult(
-            string contentUrl,
+            string? contentUrl,
 
-            string displayName,
+            string? displayName,
 
-            string id,
+            string? id,
 
-            string mimeType,
+            string? mimeType,
 
-            string packageType,
+            string? packageType,
 
-            string privateApplicationId,
+            string? privateApplicationId,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string version)
+            string? version)
         {
             ContentUrl = contentUrl;
             DisplayName = displayName;

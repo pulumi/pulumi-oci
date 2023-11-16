@@ -57,13 +57,13 @@ namespace Pulumi.Oci.BigDataService
         /// The name of the region to establish the Object Storage endpoint. See https://docs.oracle.com/en-us/iaas/api/#/en/identity/20160918/Region/ for additional information.
         /// </summary>
         [Output("defaultRegion")]
-        public Output<string> DefaultRegion { get; private set; } = null!;
+        public Output<string?> DefaultRegion { get; private set; } = null!;
 
         /// <summary>
         /// The fingerprint that corresponds to the public API key requested.
         /// </summary>
         [Output("fingerprint")]
-        public Output<string> Fingerprint { get; private set; } = null!;
+        public Output<string?> Fingerprint { get; private set; } = null!;
 
         /// <summary>
         /// User friendly identifier used to uniquely differentiate between different API keys associated with this Big Data Service cluster. Only ASCII alphanumeric characters with no spaces allowed.
@@ -81,25 +81,25 @@ namespace Pulumi.Oci.BigDataService
         /// The full path and file name of the private key used for authentication. This location will be automatically selected on the BDS local file system.
         /// </summary>
         [Output("pemfilepath")]
-        public Output<string> Pemfilepath { get; private set; } = null!;
+        public Output<string?> Pemfilepath { get; private set; } = null!;
 
         /// <summary>
         /// The current status of the API key.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// The OCID of your tenancy.
         /// </summary>
         [Output("tenantId")]
-        public Output<string> TenantId { get; private set; } = null!;
+        public Output<string?> TenantId { get; private set; } = null!;
 
         /// <summary>
         /// The time the API key was created, shown as an RFC 3339 formatted datetime string.
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// The OCID of the user for whom this new generated API key pair will be created.

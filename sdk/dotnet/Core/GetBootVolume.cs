@@ -108,7 +108,7 @@ namespace Pulumi.Oci.Core
         /// <summary>
         /// The number of Volume Performance Units per GB that this boot volume is effectively tuned to.
         /// </summary>
-        public readonly string AutoTunedVpusPerGb;
+        public readonly string? AutoTunedVpusPerGb;
         /// <summary>
         /// The list of autotune policies enabled for this volume.
         /// </summary>
@@ -116,129 +116,129 @@ namespace Pulumi.Oci.Core
         /// <summary>
         /// The availability domain of the boot volume replica.  Example: `Uocm:PHX-AD-1`
         /// </summary>
-        public readonly string AvailabilityDomain;
-        public readonly string BackupPolicyId;
+        public readonly string? AvailabilityDomain;
+        public readonly string? BackupPolicyId;
         public readonly string BootVolumeId;
         /// <summary>
         /// The list of boot volume replicas of this boot volume
         /// </summary>
         public readonly ImmutableArray<Outputs.GetBootVolumeBootVolumeReplicaResult> BootVolumeReplicas;
-        public readonly bool BootVolumeReplicasDeletion;
+        public readonly bool? BootVolumeReplicasDeletion;
         /// <summary>
         /// The OCID of the compartment that contains the boot volume.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// The OCID of the boot volume replica.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The image OCID used to create the boot volume.
         /// </summary>
-        public readonly string ImageId;
+        public readonly string? ImageId;
         /// <summary>
         /// Specifies whether the auto-tune performance is enabled for this boot volume. This field is deprecated. Use the `DetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
         /// </summary>
-        public readonly bool IsAutoTuneEnabled;
+        public readonly bool? IsAutoTuneEnabled;
         /// <summary>
         /// Specifies whether the boot volume's data has finished copying from the source boot volume or boot volume backup.
         /// </summary>
-        public readonly bool IsHydrated;
+        public readonly bool? IsHydrated;
         /// <summary>
         /// The OCID of the Vault service master encryption key assigned to the boot volume.
         /// </summary>
-        public readonly string KmsKeyId;
+        public readonly string? KmsKeyId;
         /// <summary>
         /// The size of the boot volume in GBs.
         /// </summary>
-        public readonly string SizeInGbs;
+        public readonly string? SizeInGbs;
         /// <summary>
         /// The size of the volume in MBs. The value must be a multiple of 1024. This field is deprecated. Please use `size_in_gbs`.
         /// </summary>
-        public readonly string SizeInMbs;
+        public readonly string? SizeInMbs;
         public readonly ImmutableArray<Outputs.GetBootVolumeSourceDetailResult> SourceDetails;
         /// <summary>
         /// The current state of a boot volume.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> SystemTags;
+        public readonly ImmutableDictionary<string, object>? SystemTags;
         /// <summary>
         /// The date and time the boot volume was created. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The OCID of the source volume group.
         /// </summary>
-        public readonly string VolumeGroupId;
+        public readonly string? VolumeGroupId;
         /// <summary>
         /// The number of volume performance units (VPUs) that will be applied to this boot volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
         /// </summary>
-        public readonly string VpusPerGb;
+        public readonly string? VpusPerGb;
 
         [OutputConstructor]
         private GetBootVolumeResult(
-            string autoTunedVpusPerGb,
+            string? autoTunedVpusPerGb,
 
             ImmutableArray<Outputs.GetBootVolumeAutotunePolicyResult> autotunePolicies,
 
-            string availabilityDomain,
+            string? availabilityDomain,
 
-            string backupPolicyId,
+            string? backupPolicyId,
 
             string bootVolumeId,
 
             ImmutableArray<Outputs.GetBootVolumeBootVolumeReplicaResult> bootVolumeReplicas,
 
-            bool bootVolumeReplicasDeletion,
+            bool? bootVolumeReplicasDeletion,
 
-            string compartmentId,
+            string? compartmentId,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string displayName,
+            string? displayName,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string id,
+            string? id,
 
-            string imageId,
+            string? imageId,
 
-            bool isAutoTuneEnabled,
+            bool? isAutoTuneEnabled,
 
-            bool isHydrated,
+            bool? isHydrated,
 
-            string kmsKeyId,
+            string? kmsKeyId,
 
-            string sizeInGbs,
+            string? sizeInGbs,
 
-            string sizeInMbs,
+            string? sizeInMbs,
 
             ImmutableArray<Outputs.GetBootVolumeSourceDetailResult> sourceDetails,
 
-            string state,
+            string? state,
 
-            ImmutableDictionary<string, object> systemTags,
+            ImmutableDictionary<string, object>? systemTags,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string volumeGroupId,
+            string? volumeGroupId,
 
-            string vpusPerGb)
+            string? vpusPerGb)
         {
             AutoTunedVpusPerGb = autoTunedVpusPerGb;
             AutotunePolicies = autotunePolicies;

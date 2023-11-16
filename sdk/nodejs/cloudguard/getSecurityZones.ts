@@ -94,7 +94,7 @@ export interface GetSecurityZonesResult {
     /**
      * The list of security_zone_collection.
      */
-    readonly securityZoneCollections: outputs.CloudGuard.GetSecurityZonesSecurityZoneCollection[];
+    readonly securityZoneCollections?: outputs.CloudGuard.GetSecurityZonesSecurityZoneCollection[];
     /**
      * The current state of the security zone
      */

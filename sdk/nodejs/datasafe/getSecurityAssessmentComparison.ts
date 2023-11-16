@@ -53,25 +53,25 @@ export interface GetSecurityAssessmentComparisonResult {
     /**
      * The OCID of the security assessment that is set as a baseline.
      */
-    readonly baselineId: string;
+    readonly baselineId?: string;
     readonly comparisonSecurityAssessmentId: string;
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly securityAssessmentId: string;
     /**
      * The current state of the security assessment comparison.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * A target-based comparison between two security assessments.
      */
-    readonly targets: outputs.DataSafe.GetSecurityAssessmentComparisonTarget[];
+    readonly targets?: outputs.DataSafe.GetSecurityAssessmentComparisonTarget[];
     /**
      * The date and time when the security assessment comparison was created. Conforms to the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
 }
 /**
  * This data source provides details about a specific Security Assessment Comparison resource in Oracle Cloud Infrastructure Data Safe service.

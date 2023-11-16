@@ -16,11 +16,11 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// If true, then the account form will be displayed in the Oracle Identity Cloud Service UI to interactively create or update an account for this App. If a value is not specified for this attribute, a default value of \"false\" will be assumed as the value for this attribute.
         /// </summary>
-        public readonly bool AccountFormVisible;
+        public readonly bool? AccountFormVisible;
         /// <summary>
         /// If true, admin has granted consent to perform managed app run-time operations.
         /// </summary>
-        public readonly bool AdminConsentGranted;
+        public readonly bool? AdminConsentGranted;
         /// <summary>
         /// ConnectorBundle configuration properties
         /// </summary>
@@ -32,11 +32,11 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// If true, the managed app can be authoritative.
         /// </summary>
-        public readonly bool CanBeAuthoritative;
+        public readonly bool? CanBeAuthoritative;
         /// <summary>
         /// If true, the accounts of the application are managed through an ICF connector bundle
         /// </summary>
-        public readonly bool Connected;
+        public readonly bool? Connected;
         /// <summary>
         /// ConnectorBundle
         /// </summary>
@@ -44,15 +44,15 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// If true, send activation email to new users created from authoritative sync.
         /// </summary>
-        public readonly bool EnableAuthSyncNewUserNotification;
+        public readonly bool? EnableAuthSyncNewUserNotification;
         /// <summary>
         /// If true, sync run-time operations are enabled for this App.
         /// </summary>
-        public readonly bool EnableSync;
+        public readonly bool? EnableSync;
         /// <summary>
         /// If true, send sync summary as notification upon job completion.
         /// </summary>
-        public readonly bool EnableSyncSummaryReportNotification;
+        public readonly bool? EnableSyncSummaryReportNotification;
         /// <summary>
         /// Flat file connector bundle configuration properties
         /// </summary>
@@ -68,31 +68,31 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// If true, sync from the managed app will be performed as authoritative sync.
         /// </summary>
-        public readonly bool IsAuthoritative;
+        public readonly bool? IsAuthoritative;
         /// <summary>
         /// If true, the managed app is a directory.
         /// </summary>
-        public readonly bool IsDirectory;
+        public readonly bool? IsDirectory;
         /// <summary>
         /// If true, the managed app is an On-Premise app.
         /// </summary>
-        public readonly bool IsOnPremiseApp;
+        public readonly bool? IsOnPremiseApp;
         /// <summary>
         /// If true, the managed app supports schema customization.
         /// </summary>
-        public readonly bool IsSchemaCustomizationSupported;
+        public readonly bool? IsSchemaCustomizationSupported;
         /// <summary>
         /// If true, the managed app supports schema discovery.
         /// </summary>
-        public readonly bool IsSchemaDiscoverySupported;
+        public readonly bool? IsSchemaDiscoverySupported;
         /// <summary>
         /// If true, the managed app requires 3-legged OAuth for authorization.
         /// </summary>
-        public readonly bool IsThreeLeggedOauthEnabled;
+        public readonly bool? IsThreeLeggedOauthEnabled;
         /// <summary>
         /// If true, indicates that Oracle Identity Cloud Service can use two-legged OAuth to connect to this ManagedApp.
         /// </summary>
-        public readonly bool IsTwoLeggedOauthEnabled;
+        public readonly bool? IsTwoLeggedOauthEnabled;
         /// <summary>
         /// Object classes
         /// </summary>
@@ -100,7 +100,7 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// The most recent DateTime that the configuration of this App was updated. AppServices updates this timestamp whenever AppServices updates an App's configuration with respect to synchronization.
         /// </summary>
-        public readonly string SyncConfigLastModified;
+        public readonly string? SyncConfigLastModified;
         /// <summary>
         /// The value of this attribute persists any OAuth access token that the system uses to connect to this ManagedApp. The system obtains this access token using an OAuth protocol flow that could be two-legged or three-legged. A two-legged flow involves only the requester and the server. A three-legged flow also requires the consent of a user -- in this case the consent of an administrator.
         /// </summary>
@@ -108,29 +108,29 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// Three legged OAuth provider name in Oracle Identity Cloud Service.
         /// </summary>
-        public readonly string ThreeLeggedOauthProviderName;
+        public readonly string? ThreeLeggedOauthProviderName;
 
         [OutputConstructor]
         private GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppResult(
-            bool accountFormVisible,
+            bool? accountFormVisible,
 
-            bool adminConsentGranted,
+            bool? adminConsentGranted,
 
             ImmutableArray<Outputs.GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppBundleConfigurationPropertyResult> bundleConfigurationProperties,
 
             ImmutableArray<Outputs.GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppBundlePoolConfigurationResult> bundlePoolConfigurations,
 
-            bool canBeAuthoritative,
+            bool? canBeAuthoritative,
 
-            bool connected,
+            bool? connected,
 
             ImmutableArray<Outputs.GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppConnectorBundleResult> connectorBundles,
 
-            bool enableAuthSyncNewUserNotification,
+            bool? enableAuthSyncNewUserNotification,
 
-            bool enableSync,
+            bool? enableSync,
 
-            bool enableSyncSummaryReportNotification,
+            bool? enableSyncSummaryReportNotification,
 
             ImmutableArray<Outputs.GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppFlatFileBundleConfigurationPropertyResult> flatFileBundleConfigurationProperties,
 
@@ -138,27 +138,27 @@ namespace Pulumi.Oci.Identity.Outputs
 
             ImmutableArray<Outputs.GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppIdentityBridgeResult> identityBridges,
 
-            bool isAuthoritative,
+            bool? isAuthoritative,
 
-            bool isDirectory,
+            bool? isDirectory,
 
-            bool isOnPremiseApp,
+            bool? isOnPremiseApp,
 
-            bool isSchemaCustomizationSupported,
+            bool? isSchemaCustomizationSupported,
 
-            bool isSchemaDiscoverySupported,
+            bool? isSchemaDiscoverySupported,
 
-            bool isThreeLeggedOauthEnabled,
+            bool? isThreeLeggedOauthEnabled,
 
-            bool isTwoLeggedOauthEnabled,
+            bool? isTwoLeggedOauthEnabled,
 
             ImmutableArray<Outputs.GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppObjectClassResult> objectClasses,
 
-            string syncConfigLastModified,
+            string? syncConfigLastModified,
 
             ImmutableArray<Outputs.GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppThreeLeggedOauthCredentialResult> threeLeggedOauthCredentials,
 
-            string threeLeggedOauthProviderName)
+            string? threeLeggedOauthProviderName)
         {
             AccountFormVisible = accountFormVisible;
             AdminConsentGranted = adminConsentGranted;

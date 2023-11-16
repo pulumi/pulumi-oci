@@ -51,11 +51,11 @@ export interface GetPoliciesResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The list of policies.
      */
-    readonly policies: outputs.LoadBalancer.GetPoliciesPolicy[];
+    readonly policies?: outputs.LoadBalancer.GetPoliciesPolicy[];
 }
 /**
  * This data source provides the list of Load Balancer Policies in Oracle Cloud Infrastructure Load Balancer service.

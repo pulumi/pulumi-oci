@@ -171,7 +171,7 @@ namespace Pulumi.Oci.LogAnalytics
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The list of log_analytics_object_collection_rule_collection.
         /// </summary>
@@ -192,7 +192,7 @@ namespace Pulumi.Oci.LogAnalytics
 
             ImmutableArray<Outputs.GetLogAnalyticsObjectCollectionRulesFilterResult> filters,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionResult> logAnalyticsObjectCollectionRuleCollections,
 

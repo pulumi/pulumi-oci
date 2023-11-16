@@ -54,35 +54,35 @@ export interface GetObjectHeadArgs {
  * A collection of values returned by getObjectHead.
  */
 export interface GetObjectHeadResult {
-    readonly archivalState: string;
+    readonly archivalState?: string;
     readonly bucket: string;
     /**
      * The content-length of the object
      */
-    readonly contentLength: number;
+    readonly contentLength?: number;
     /**
      * The content-type of the object
      */
-    readonly contentType: string;
+    readonly contentType?: string;
     /**
      * The etag of the object
      */
-    readonly etag: string;
+    readonly etag?: string;
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The metadata of the object
      */
-    readonly metadata: {[key: string]: any};
+    readonly metadata?: {[key: string]: any};
     readonly namespace: string;
     readonly object: string;
     /**
      * The storage tier that the object is stored in.
      * * `archival-state` - Archival state of an object. This field is set only for objects in Archive tier.
      */
-    readonly storageTier: string;
+    readonly storageTier?: string;
 }
 /**
  * This data source provides details about metadata of a specific Object resource in Oracle Cloud Infrastructure Object Storage service.

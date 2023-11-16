@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Masking Analytic resource in Oracle Cloud Infrastructure Data Safe service.
@@ -77,7 +76,7 @@ type GetMaskingAnalyticResult struct {
 	CompartmentIdInSubtree *bool   `pulumi:"compartmentIdInSubtree"`
 	GroupBy                *string `pulumi:"groupBy"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// An array of masking analytics summary objects.
 	Items           []GetMaskingAnalyticItem `pulumi:"items"`
 	MaskingPolicyId *string                  `pulumi:"maskingPolicyId"`
@@ -131,12 +130,6 @@ func (o GetMaskingAnalyticResultOutput) ToGetMaskingAnalyticResultOutputWithCont
 	return o
 }
 
-func (o GetMaskingAnalyticResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetMaskingAnalyticResult] {
-	return pulumix.Output[GetMaskingAnalyticResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetMaskingAnalyticResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMaskingAnalyticResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
@@ -150,8 +143,8 @@ func (o GetMaskingAnalyticResultOutput) GroupBy() pulumi.StringPtrOutput {
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetMaskingAnalyticResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMaskingAnalyticResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetMaskingAnalyticResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMaskingAnalyticResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // An array of masking analytics summary objects.

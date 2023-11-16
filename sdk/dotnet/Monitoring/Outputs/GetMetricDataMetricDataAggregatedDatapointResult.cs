@@ -16,17 +16,17 @@ namespace Pulumi.Oci.Monitoring.Outputs
         /// <summary>
         /// The date and time associated with the value of this data point. Format defined by RFC3339.  Example: `2019-02-01T01:02:29.600Z`
         /// </summary>
-        public readonly string Timestamp;
+        public readonly string? Timestamp;
         /// <summary>
         /// Numeric value of the metric.  Example: `10.4`
         /// </summary>
-        public readonly double Value;
+        public readonly double? Value;
 
         [OutputConstructor]
         private GetMetricDataMetricDataAggregatedDatapointResult(
-            string timestamp,
+            string? timestamp,
 
-            double value)
+            double? value)
         {
             Timestamp = timestamp;
             Value = value;

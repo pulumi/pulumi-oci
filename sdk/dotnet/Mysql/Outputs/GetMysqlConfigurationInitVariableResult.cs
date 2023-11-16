@@ -16,10 +16,10 @@ namespace Pulumi.Oci.Mysql.Outputs
         /// <summary>
         /// Represents the MySQL server system variable lower_case_table_names (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_lower_case_table_names).
         /// </summary>
-        public readonly string LowerCaseTableNames;
+        public readonly string? LowerCaseTableNames;
 
         [OutputConstructor]
-        private GetMysqlConfigurationInitVariableResult(string lowerCaseTableNames)
+        private GetMysqlConfigurationInitVariableResult(string? lowerCaseTableNames)
         {
             LowerCaseTableNames = lowerCaseTableNames;
         }

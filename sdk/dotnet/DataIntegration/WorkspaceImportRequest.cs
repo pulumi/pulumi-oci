@@ -64,13 +64,13 @@ namespace Pulumi.Oci.DataIntegration
         /// Name of the user who initiated import request.
         /// </summary>
         [Output("createdBy")]
-        public Output<string> CreatedBy { get; private set; } = null!;
+        public Output<string?> CreatedBy { get; private set; } = null!;
 
         /// <summary>
         /// Contains key of the error
         /// </summary>
         [Output("errorMessages")]
-        public Output<ImmutableDictionary<string, object>> ErrorMessages { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> ErrorMessages { get; private set; } = null!;
 
         /// <summary>
         /// Name of the zip file to be imported.
@@ -82,7 +82,7 @@ namespace Pulumi.Oci.DataIntegration
         /// Import Objects Conflict resolution.
         /// </summary>
         [Output("importConflictResolution")]
-        public Output<Outputs.WorkspaceImportRequestImportConflictResolution> ImportConflictResolution { get; private set; } = null!;
+        public Output<Outputs.WorkspaceImportRequestImportConflictResolution?> ImportConflictResolution { get; private set; } = null!;
 
         /// <summary>
         /// The array of imported object details.
@@ -94,55 +94,55 @@ namespace Pulumi.Oci.DataIntegration
         /// Import object request key
         /// </summary>
         [Output("key")]
-        public Output<string> Key { get; private set; } = null!;
+        public Output<string?> Key { get; private set; } = null!;
 
         /// <summary>
         /// Name of the import request.
         /// </summary>
         [Output("name")]
-        public Output<string> Name { get; private set; } = null!;
+        public Output<string?> Name { get; private set; } = null!;
 
         /// <summary>
         /// Key of the object inside which all the objects will be imported
         /// </summary>
         [Output("objectKeyForImport")]
-        public Output<string> ObjectKeyForImport { get; private set; } = null!;
+        public Output<string?> ObjectKeyForImport { get; private set; } = null!;
 
         /// <summary>
         /// Region of the object storage (if using object storage of different region)
         /// </summary>
         [Output("objectStorageRegion")]
-        public Output<string> ObjectStorageRegion { get; private set; } = null!;
+        public Output<string?> ObjectStorageRegion { get; private set; } = null!;
 
         /// <summary>
         /// Optional parameter to point to object storage tenancy (if using Object Storage of different tenancy)
         /// </summary>
         [Output("objectStorageTenancyId")]
-        public Output<string> ObjectStorageTenancyId { get; private set; } = null!;
+        public Output<string?> ObjectStorageTenancyId { get; private set; } = null!;
 
         /// <summary>
         /// Import Objects request status.
         /// </summary>
         [Output("status")]
-        public Output<string> Status { get; private set; } = null!;
+        public Output<string?> Status { get; private set; } = null!;
 
         /// <summary>
         /// Time at which the request was completely processed.
         /// </summary>
         [Output("timeEndedInMillis")]
-        public Output<string> TimeEndedInMillis { get; private set; } = null!;
+        public Output<string?> TimeEndedInMillis { get; private set; } = null!;
 
         /// <summary>
         /// Time at which the request started getting processed.
         /// </summary>
         [Output("timeStartedInMillis")]
-        public Output<string> TimeStartedInMillis { get; private set; } = null!;
+        public Output<string?> TimeStartedInMillis { get; private set; } = null!;
 
         /// <summary>
         /// Number of objects that are imported.
         /// </summary>
         [Output("totalImportedObjectCount")]
-        public Output<int> TotalImportedObjectCount { get; private set; } = null!;
+        public Output<int?> TotalImportedObjectCount { get; private set; } = null!;
 
         /// <summary>
         /// The workspace ID.

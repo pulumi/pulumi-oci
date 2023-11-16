@@ -16,17 +16,17 @@ namespace Pulumi.Oci.ComputeCloud.Outputs
         /// <summary>
         /// Hostname for interface to the management node.
         /// </summary>
-        public readonly string Hostname;
+        public readonly string? Hostname;
         /// <summary>
         /// Address of the management node.
         /// </summary>
-        public readonly string Ip;
+        public readonly string? Ip;
 
         [OutputConstructor]
         private GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNodeResult(
-            string hostname,
+            string? hostname,
 
-            string ip)
+            string? ip)
         {
             Hostname = hostname;
             Ip = ip;

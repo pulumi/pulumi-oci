@@ -60,33 +60,33 @@ export interface GetIndexResult {
      * Compartment Identifier.
      */
     readonly compartmentId: string;
-    readonly id: string;
+    readonly id?: string;
     readonly indexName: string;
-    readonly isIfNotExists: boolean;
+    readonly isIfNotExists?: boolean;
     /**
      * A set of keys for a secondary index.
      */
-    readonly keys: outputs.Nosql.GetIndexKey[];
+    readonly keys?: outputs.Nosql.GetIndexKey[];
     /**
      * A message describing the current state in more detail.
      */
-    readonly lifecycleDetails: string;
+    readonly lifecycleDetails?: string;
     /**
      * Index name.
      */
-    readonly name: string;
+    readonly name?: string;
     /**
      * The state of an index.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * the OCID of the table to which this index belongs.
      */
-    readonly tableId: string;
+    readonly tableId?: string;
     /**
      * The name of the table to which this index belongs.
      */
-    readonly tableName: string;
+    readonly tableName?: string;
     readonly tableNameOrId: string;
 }
 /**

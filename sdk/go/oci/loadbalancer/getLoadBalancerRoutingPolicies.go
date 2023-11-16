@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Load Balancer Routing Policies in Oracle Cloud Infrastructure Load Balancer service.
@@ -62,8 +61,8 @@ type GetLoadBalancerRoutingPoliciesArgs struct {
 type GetLoadBalancerRoutingPoliciesResult struct {
 	Filters []GetLoadBalancerRoutingPoliciesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id             string `pulumi:"id"`
-	LoadBalancerId string `pulumi:"loadBalancerId"`
+	Id             *string `pulumi:"id"`
+	LoadBalancerId string  `pulumi:"loadBalancerId"`
 	// The list of routing_policies.
 	RoutingPolicies []GetLoadBalancerRoutingPoliciesRoutingPolicy `pulumi:"routingPolicies"`
 }
@@ -107,19 +106,13 @@ func (o GetLoadBalancerRoutingPoliciesResultOutput) ToGetLoadBalancerRoutingPoli
 	return o
 }
 
-func (o GetLoadBalancerRoutingPoliciesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetLoadBalancerRoutingPoliciesResult] {
-	return pulumix.Output[GetLoadBalancerRoutingPoliciesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetLoadBalancerRoutingPoliciesResultOutput) Filters() GetLoadBalancerRoutingPoliciesFilterArrayOutput {
 	return o.ApplyT(func(v GetLoadBalancerRoutingPoliciesResult) []GetLoadBalancerRoutingPoliciesFilter { return v.Filters }).(GetLoadBalancerRoutingPoliciesFilterArrayOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetLoadBalancerRoutingPoliciesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLoadBalancerRoutingPoliciesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetLoadBalancerRoutingPoliciesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLoadBalancerRoutingPoliciesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetLoadBalancerRoutingPoliciesResultOutput) LoadBalancerId() pulumi.StringOutput {

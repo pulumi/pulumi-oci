@@ -16,23 +16,23 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
         /// <summary>
         /// If nodes in the nodepool will be cycled to have new changes.
         /// </summary>
-        public readonly bool IsNodeCyclingEnabled;
+        public readonly bool? IsNodeCyclingEnabled;
         /// <summary>
         /// Maximum additional new compute instances that would be temporarily created and added to nodepool during the cycling nodepool process. OKE supports both integer and percentage input. Defaults to 1, Ranges from 0 to Nodepool size or 0% to 100%
         /// </summary>
-        public readonly string MaximumSurge;
+        public readonly string? MaximumSurge;
         /// <summary>
         /// Maximum active nodes that would be terminated from nodepool during the cycling nodepool process. OKE supports both integer and percentage input. Defaults to 0, Ranges from 0 to Nodepool size or 0% to 100%
         /// </summary>
-        public readonly string MaximumUnavailable;
+        public readonly string? MaximumUnavailable;
 
         [OutputConstructor]
         private GetNodePoolsNodePoolNodePoolCyclingDetailResult(
-            bool isNodeCyclingEnabled,
+            bool? isNodeCyclingEnabled,
 
-            string maximumSurge,
+            string? maximumSurge,
 
-            string maximumUnavailable)
+            string? maximumUnavailable)
         {
             IsNodeCyclingEnabled = isNodeCyclingEnabled;
             MaximumSurge = maximumSurge;

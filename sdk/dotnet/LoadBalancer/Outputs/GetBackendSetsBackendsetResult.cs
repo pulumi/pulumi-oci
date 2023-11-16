@@ -18,7 +18,7 @@ namespace Pulumi.Oci.LoadBalancer.Outputs
         /// The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/editinghealthcheck.htm).
         /// </summary>
         public readonly ImmutableArray<Outputs.GetBackendSetsBackendsetHealthCheckerResult> HealthCheckers;
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The configuration details for implementing load balancer cookie session persistence (LB cookie stickiness).
         /// </summary>
@@ -26,15 +26,15 @@ namespace Pulumi.Oci.LoadBalancer.Outputs
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer associated with the backend sets to retrieve.
         /// </summary>
-        public readonly string LoadBalancerId;
+        public readonly string? LoadBalancerId;
         /// <summary>
         /// A friendly name for the backend set. It must be unique and it cannot be changed.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// The load balancer policy for the backend set. To get a list of available policies, use the [ListPolicies](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerPolicy/ListPolicies) operation.  Example: `LEAST_CONNECTIONS`
         /// </summary>
-        public readonly string Policy;
+        public readonly string? Policy;
         /// <summary>
         /// The configuration details for implementing session persistence based on a user-specified cookie name (application cookie stickiness).
         /// </summary>
@@ -43,7 +43,7 @@ namespace Pulumi.Oci.LoadBalancer.Outputs
         /// A listener's SSL handling configuration.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetBackendSetsBackendsetSslConfigurationResult> SslConfigurations;
-        public readonly string State;
+        public readonly string? State;
 
         [OutputConstructor]
         private GetBackendSetsBackendsetResult(
@@ -51,21 +51,21 @@ namespace Pulumi.Oci.LoadBalancer.Outputs
 
             ImmutableArray<Outputs.GetBackendSetsBackendsetHealthCheckerResult> healthCheckers,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetBackendSetsBackendsetLbCookieSessionPersistenceConfigurationResult> lbCookieSessionPersistenceConfigurations,
 
-            string loadBalancerId,
+            string? loadBalancerId,
 
-            string name,
+            string? name,
 
-            string policy,
+            string? policy,
 
             ImmutableArray<Outputs.GetBackendSetsBackendsetSessionPersistenceConfigurationResult> sessionPersistenceConfigurations,
 
             ImmutableArray<Outputs.GetBackendSetsBackendsetSslConfigurationResult> sslConfigurations,
 
-            string state)
+            string? state)
         {
             Backends = backends;
             HealthCheckers = healthCheckers;

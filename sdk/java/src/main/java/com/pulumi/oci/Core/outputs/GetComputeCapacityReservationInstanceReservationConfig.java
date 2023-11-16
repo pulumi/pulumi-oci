@@ -9,6 +9,8 @@ import com.pulumi.oci.Core.outputs.GetComputeCapacityReservationInstanceReservat
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetComputeCapacityReservationInstanceReservationConfig {
@@ -16,32 +18,32 @@ public final class GetComputeCapacityReservationInstanceReservationConfig {
      * @return The HPC cluster configuration requested when launching instances in a compute capacity reservation.
      * 
      */
-    private List<GetComputeCapacityReservationInstanceReservationConfigClusterConfig> clusterConfigs;
+    private @Nullable List<GetComputeCapacityReservationInstanceReservationConfigClusterConfig> clusterConfigs;
     /**
      * @return The fault domain of this capacity configuration. If a value is not supplied, this capacity configuration is applicable to all fault domains in the specified availability domain. For more information, see [Capacity Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm).
      * 
      */
-    private String faultDomain;
+    private @Nullable String faultDomain;
     /**
      * @return The shape to use when launching instances using compute capacity reservations. The shape determines the number of CPUs, the amount of memory, and other resources allocated to the instance. You can list all available shapes by calling [ListComputeCapacityReservationInstanceShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/computeCapacityReservationInstanceShapes/ListComputeCapacityReservationInstanceShapes).
      * 
      */
-    private String instanceShape;
+    private @Nullable String instanceShape;
     /**
      * @return The shape configuration requested when launching instances in a compute capacity reservation.
      * 
      */
-    private List<GetComputeCapacityReservationInstanceReservationConfigInstanceShapeConfig> instanceShapeConfigs;
+    private @Nullable List<GetComputeCapacityReservationInstanceReservationConfigInstanceShapeConfig> instanceShapeConfigs;
     /**
      * @return The total number of instances that can be launched from the capacity configuration.
      * 
      */
-    private String reservedCount;
+    private @Nullable String reservedCount;
     /**
      * @return The amount of capacity in use out of the total capacity reserved in this capacity configuration.
      * 
      */
-    private String usedCount;
+    private @Nullable String usedCount;
 
     private GetComputeCapacityReservationInstanceReservationConfig() {}
     /**
@@ -49,42 +51,42 @@ public final class GetComputeCapacityReservationInstanceReservationConfig {
      * 
      */
     public List<GetComputeCapacityReservationInstanceReservationConfigClusterConfig> clusterConfigs() {
-        return this.clusterConfigs;
+        return this.clusterConfigs == null ? List.of() : this.clusterConfigs;
     }
     /**
      * @return The fault domain of this capacity configuration. If a value is not supplied, this capacity configuration is applicable to all fault domains in the specified availability domain. For more information, see [Capacity Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm).
      * 
      */
-    public String faultDomain() {
-        return this.faultDomain;
+    public Optional<String> faultDomain() {
+        return Optional.ofNullable(this.faultDomain);
     }
     /**
      * @return The shape to use when launching instances using compute capacity reservations. The shape determines the number of CPUs, the amount of memory, and other resources allocated to the instance. You can list all available shapes by calling [ListComputeCapacityReservationInstanceShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/computeCapacityReservationInstanceShapes/ListComputeCapacityReservationInstanceShapes).
      * 
      */
-    public String instanceShape() {
-        return this.instanceShape;
+    public Optional<String> instanceShape() {
+        return Optional.ofNullable(this.instanceShape);
     }
     /**
      * @return The shape configuration requested when launching instances in a compute capacity reservation.
      * 
      */
     public List<GetComputeCapacityReservationInstanceReservationConfigInstanceShapeConfig> instanceShapeConfigs() {
-        return this.instanceShapeConfigs;
+        return this.instanceShapeConfigs == null ? List.of() : this.instanceShapeConfigs;
     }
     /**
      * @return The total number of instances that can be launched from the capacity configuration.
      * 
      */
-    public String reservedCount() {
-        return this.reservedCount;
+    public Optional<String> reservedCount() {
+        return Optional.ofNullable(this.reservedCount);
     }
     /**
      * @return The amount of capacity in use out of the total capacity reserved in this capacity configuration.
      * 
      */
-    public String usedCount() {
-        return this.usedCount;
+    public Optional<String> usedCount() {
+        return Optional.ofNullable(this.usedCount);
     }
 
     public static Builder builder() {
@@ -96,12 +98,12 @@ public final class GetComputeCapacityReservationInstanceReservationConfig {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetComputeCapacityReservationInstanceReservationConfigClusterConfig> clusterConfigs;
-        private String faultDomain;
-        private String instanceShape;
-        private List<GetComputeCapacityReservationInstanceReservationConfigInstanceShapeConfig> instanceShapeConfigs;
-        private String reservedCount;
-        private String usedCount;
+        private @Nullable List<GetComputeCapacityReservationInstanceReservationConfigClusterConfig> clusterConfigs;
+        private @Nullable String faultDomain;
+        private @Nullable String instanceShape;
+        private @Nullable List<GetComputeCapacityReservationInstanceReservationConfigInstanceShapeConfig> instanceShapeConfigs;
+        private @Nullable String reservedCount;
+        private @Nullable String usedCount;
         public Builder() {}
         public Builder(GetComputeCapacityReservationInstanceReservationConfig defaults) {
     	      Objects.requireNonNull(defaults);
@@ -114,39 +116,39 @@ public final class GetComputeCapacityReservationInstanceReservationConfig {
         }
 
         @CustomType.Setter
-        public Builder clusterConfigs(List<GetComputeCapacityReservationInstanceReservationConfigClusterConfig> clusterConfigs) {
-            this.clusterConfigs = Objects.requireNonNull(clusterConfigs);
+        public Builder clusterConfigs(@Nullable List<GetComputeCapacityReservationInstanceReservationConfigClusterConfig> clusterConfigs) {
+            this.clusterConfigs = clusterConfigs;
             return this;
         }
         public Builder clusterConfigs(GetComputeCapacityReservationInstanceReservationConfigClusterConfig... clusterConfigs) {
             return clusterConfigs(List.of(clusterConfigs));
         }
         @CustomType.Setter
-        public Builder faultDomain(String faultDomain) {
-            this.faultDomain = Objects.requireNonNull(faultDomain);
+        public Builder faultDomain(@Nullable String faultDomain) {
+            this.faultDomain = faultDomain;
             return this;
         }
         @CustomType.Setter
-        public Builder instanceShape(String instanceShape) {
-            this.instanceShape = Objects.requireNonNull(instanceShape);
+        public Builder instanceShape(@Nullable String instanceShape) {
+            this.instanceShape = instanceShape;
             return this;
         }
         @CustomType.Setter
-        public Builder instanceShapeConfigs(List<GetComputeCapacityReservationInstanceReservationConfigInstanceShapeConfig> instanceShapeConfigs) {
-            this.instanceShapeConfigs = Objects.requireNonNull(instanceShapeConfigs);
+        public Builder instanceShapeConfigs(@Nullable List<GetComputeCapacityReservationInstanceReservationConfigInstanceShapeConfig> instanceShapeConfigs) {
+            this.instanceShapeConfigs = instanceShapeConfigs;
             return this;
         }
         public Builder instanceShapeConfigs(GetComputeCapacityReservationInstanceReservationConfigInstanceShapeConfig... instanceShapeConfigs) {
             return instanceShapeConfigs(List.of(instanceShapeConfigs));
         }
         @CustomType.Setter
-        public Builder reservedCount(String reservedCount) {
-            this.reservedCount = Objects.requireNonNull(reservedCount);
+        public Builder reservedCount(@Nullable String reservedCount) {
+            this.reservedCount = reservedCount;
             return this;
         }
         @CustomType.Setter
-        public Builder usedCount(String usedCount) {
-            this.usedCount = Objects.requireNonNull(usedCount);
+        public Builder usedCount(@Nullable String usedCount) {
+            this.usedCount = usedCount;
             return this;
         }
         public GetComputeCapacityReservationInstanceReservationConfig build() {

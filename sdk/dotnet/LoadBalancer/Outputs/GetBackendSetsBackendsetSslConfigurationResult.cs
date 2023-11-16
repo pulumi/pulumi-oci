@@ -20,11 +20,11 @@ namespace Pulumi.Oci.LoadBalancer.Outputs
         /// <summary>
         /// A friendly name for the certificate bundle. It must be unique and it cannot be changed. Valid certificate bundle names include only alphanumeric characters, dashes, and underscores. Certificate bundle names cannot contain spaces. Avoid entering confidential information.  Example: `example_certificate_bundle`
         /// </summary>
-        public readonly string CertificateName;
+        public readonly string? CertificateName;
         /// <summary>
         /// The name of the cipher suite to use for HTTPS or SSL connections.
         /// </summary>
-        public readonly string CipherSuiteName;
+        public readonly string? CipherSuiteName;
         /// <summary>
         /// A list of SSL protocols the load balancer must support for HTTPS or SSL connections.
         /// </summary>
@@ -32,7 +32,7 @@ namespace Pulumi.Oci.LoadBalancer.Outputs
         /// <summary>
         /// When this attribute is set to ENABLED, the system gives preference to the server ciphers over the client ciphers.
         /// </summary>
-        public readonly string ServerOrderPreference;
+        public readonly string? ServerOrderPreference;
         /// <summary>
         /// Ids for Oracle Cloud Infrastructure certificates service CA or CA bundles for the load balancer to trust.  Example: `[ocid1.cabundle.oc1.us-ashburn-1.amaaaaaaav3bgsaagl4zzyqdop5i2vuwoqewdvauuw34llqa74otq2jdsfyq]`
         /// </summary>
@@ -40,29 +40,29 @@ namespace Pulumi.Oci.LoadBalancer.Outputs
         /// <summary>
         /// The maximum depth for peer certificate chain verification.  Example: `3`
         /// </summary>
-        public readonly int VerifyDepth;
+        public readonly int? VerifyDepth;
         /// <summary>
         /// Whether the load balancer listener should verify peer certificates.  Example: `true`
         /// </summary>
-        public readonly bool VerifyPeerCertificate;
+        public readonly bool? VerifyPeerCertificate;
 
         [OutputConstructor]
         private GetBackendSetsBackendsetSslConfigurationResult(
             ImmutableArray<string> certificateIds,
 
-            string certificateName,
+            string? certificateName,
 
-            string cipherSuiteName,
+            string? cipherSuiteName,
 
             ImmutableArray<string> protocols,
 
-            string serverOrderPreference,
+            string? serverOrderPreference,
 
             ImmutableArray<string> trustedCertificateAuthorityIds,
 
-            int verifyDepth,
+            int? verifyDepth,
 
-            bool verifyPeerCertificate)
+            bool? verifyPeerCertificate)
         {
             CertificateIds = certificateIds;
             CertificateName = certificateName;

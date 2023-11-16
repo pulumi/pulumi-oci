@@ -29,13 +29,13 @@ public final class GetInstancePoolInstancesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private String instancePoolId;
     /**
      * @return The list of instances.
      * 
      */
-    private List<GetInstancePoolInstancesInstance> instances;
+    private @Nullable List<GetInstancePoolInstancesInstance> instances;
 
     private GetInstancePoolInstancesResult() {}
     /**
@@ -59,8 +59,8 @@ public final class GetInstancePoolInstancesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public String instancePoolId() {
         return this.instancePoolId;
@@ -70,7 +70,7 @@ public final class GetInstancePoolInstancesResult {
      * 
      */
     public List<GetInstancePoolInstancesInstance> instances() {
-        return this.instances;
+        return this.instances == null ? List.of() : this.instances;
     }
 
     public static Builder builder() {
@@ -85,9 +85,9 @@ public final class GetInstancePoolInstancesResult {
         private String compartmentId;
         private @Nullable String displayName;
         private @Nullable List<GetInstancePoolInstancesFilter> filters;
-        private String id;
+        private @Nullable String id;
         private String instancePoolId;
-        private List<GetInstancePoolInstancesInstance> instances;
+        private @Nullable List<GetInstancePoolInstancesInstance> instances;
         public Builder() {}
         public Builder(GetInstancePoolInstancesResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -118,8 +118,8 @@ public final class GetInstancePoolInstancesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -128,8 +128,8 @@ public final class GetInstancePoolInstancesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder instances(List<GetInstancePoolInstancesInstance> instances) {
-            this.instances = Objects.requireNonNull(instances);
+        public Builder instances(@Nullable List<GetInstancePoolInstancesInstance> instances) {
+            this.instances = instances;
             return this;
         }
         public Builder instances(GetInstancePoolInstancesInstance... instances) {

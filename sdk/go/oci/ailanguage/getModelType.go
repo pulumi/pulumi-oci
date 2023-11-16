@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Model Type resource in Oracle Cloud Infrastructure Ai Language service.
@@ -60,10 +59,10 @@ type GetModelTypeArgs struct {
 // A collection of values returned by getModelType.
 type GetModelTypeResult struct {
 	// Model information capabilities related to version
-	Capabilities string `pulumi:"capabilities"`
+	Capabilities *string `pulumi:"capabilities"`
 	// The provider-assigned unique ID for this managed resource.
-	Id        string `pulumi:"id"`
-	ModelType string `pulumi:"modelType"`
+	Id        *string `pulumi:"id"`
+	ModelType string  `pulumi:"modelType"`
 	// Model versions available for this model type
 	Versions []string `pulumi:"versions"`
 }
@@ -106,20 +105,14 @@ func (o GetModelTypeResultOutput) ToGetModelTypeResultOutputWithContext(ctx cont
 	return o
 }
 
-func (o GetModelTypeResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetModelTypeResult] {
-	return pulumix.Output[GetModelTypeResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Model information capabilities related to version
-func (o GetModelTypeResultOutput) Capabilities() pulumi.StringOutput {
-	return o.ApplyT(func(v GetModelTypeResult) string { return v.Capabilities }).(pulumi.StringOutput)
+func (o GetModelTypeResultOutput) Capabilities() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetModelTypeResult) *string { return v.Capabilities }).(pulumi.StringPtrOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetModelTypeResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetModelTypeResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetModelTypeResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetModelTypeResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetModelTypeResultOutput) ModelType() pulumi.StringOutput {

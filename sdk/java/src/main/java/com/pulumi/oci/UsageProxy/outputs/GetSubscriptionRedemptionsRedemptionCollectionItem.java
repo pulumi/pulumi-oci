@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.UsageProxy.outputs.GetSubscriptionRedemptionsRedemptionCollectionItemItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetSubscriptionRedemptionsRedemptionCollectionItem {
@@ -14,7 +15,7 @@ public final class GetSubscriptionRedemptionsRedemptionCollectionItem {
      * @return The list of redemption summary.
      * 
      */
-    private List<GetSubscriptionRedemptionsRedemptionCollectionItemItem> items;
+    private @Nullable List<GetSubscriptionRedemptionsRedemptionCollectionItemItem> items;
 
     private GetSubscriptionRedemptionsRedemptionCollectionItem() {}
     /**
@@ -22,7 +23,7 @@ public final class GetSubscriptionRedemptionsRedemptionCollectionItem {
      * 
      */
     public List<GetSubscriptionRedemptionsRedemptionCollectionItemItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -34,7 +35,7 @@ public final class GetSubscriptionRedemptionsRedemptionCollectionItem {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetSubscriptionRedemptionsRedemptionCollectionItemItem> items;
+        private @Nullable List<GetSubscriptionRedemptionsRedemptionCollectionItemItem> items;
         public Builder() {}
         public Builder(GetSubscriptionRedemptionsRedemptionCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -42,8 +43,8 @@ public final class GetSubscriptionRedemptionsRedemptionCollectionItem {
         }
 
         @CustomType.Setter
-        public Builder items(List<GetSubscriptionRedemptionsRedemptionCollectionItemItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetSubscriptionRedemptionsRedemptionCollectionItemItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetSubscriptionRedemptionsRedemptionCollectionItemItem... items) {

@@ -170,7 +170,7 @@ namespace Pulumi.Oci.DataSafe
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         public readonly string SqlCollectionId;
         /// <summary>
         /// The list of sql_collection_log_insights_collection.
@@ -191,7 +191,7 @@ namespace Pulumi.Oci.DataSafe
 
             string? groupBy,
 
-            string id,
+            string? id,
 
             string sqlCollectionId,
 

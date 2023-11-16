@@ -16,41 +16,41 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
         /// <summary>
         /// A filter to return only profiles that match the given archType.
         /// </summary>
-        public readonly string ArchType;
+        public readonly string? ArchType;
         /// <summary>
         /// The OCID of the compartment that contains the resources to list.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// Software source description.
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// A filter to return resources that match the given display names.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// The OCID of the software source.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Identifying information for the specified lifecycle environment.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetProfilesProfileCollectionItemLifecycleEnvironmentResult> LifecycleEnvironments;
-        public readonly string LifecycleStageId;
+        public readonly string? LifecycleStageId;
         /// <summary>
         /// Identifying information for the specified lifecycle stage.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetProfilesProfileCollectionItemLifecycleStageResult> LifecycleStages;
-        public readonly string ManagedInstanceGroupId;
+        public readonly string? ManagedInstanceGroupId;
         /// <summary>
         /// Identifying information for the specified managed instance group.
         /// </summary>
@@ -58,15 +58,15 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
         /// <summary>
         /// The OCID of the management station.
         /// </summary>
-        public readonly string ManagementStationId;
+        public readonly string? ManagementStationId;
         /// <summary>
         /// A filter to return only profiles that match the given osFamily.
         /// </summary>
-        public readonly string OsFamily;
+        public readonly string? OsFamily;
         /// <summary>
         /// A filter to return registration profiles that match the given profileType.
         /// </summary>
-        public readonly string ProfileType;
+        public readonly string? ProfileType;
         public readonly ImmutableArray<string> SoftwareSourceIds;
         /// <summary>
         /// The list of software sources that the registration profile will use.
@@ -75,63 +75,63 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
         /// <summary>
         /// A filter to return only registration profile whose lifecycleState matches the given lifecycleState.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> SystemTags;
+        public readonly ImmutableDictionary<string, object>? SystemTags;
         /// <summary>
         /// The time the the registration profile was created. An RFC3339 formatted datetime string.
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// A filter to return only profiles that match the given vendorName.
         /// </summary>
-        public readonly string VendorName;
+        public readonly string? VendorName;
 
         [OutputConstructor]
         private GetProfilesProfileCollectionItemResult(
-            string archType,
+            string? archType,
 
-            string compartmentId,
+            string? compartmentId,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string description,
+            string? description,
 
-            string displayName,
+            string? displayName,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetProfilesProfileCollectionItemLifecycleEnvironmentResult> lifecycleEnvironments,
 
-            string lifecycleStageId,
+            string? lifecycleStageId,
 
             ImmutableArray<Outputs.GetProfilesProfileCollectionItemLifecycleStageResult> lifecycleStages,
 
-            string managedInstanceGroupId,
+            string? managedInstanceGroupId,
 
             ImmutableArray<Outputs.GetProfilesProfileCollectionItemManagedInstanceGroupResult> managedInstanceGroups,
 
-            string managementStationId,
+            string? managementStationId,
 
-            string osFamily,
+            string? osFamily,
 
-            string profileType,
+            string? profileType,
 
             ImmutableArray<string> softwareSourceIds,
 
             ImmutableArray<Outputs.GetProfilesProfileCollectionItemSoftwareSourceResult> softwareSources,
 
-            string state,
+            string? state,
 
-            ImmutableDictionary<string, object> systemTags,
+            ImmutableDictionary<string, object>? systemTags,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string vendorName)
+            string? vendorName)
         {
             ArchType = archType;
             CompartmentId = compartmentId;

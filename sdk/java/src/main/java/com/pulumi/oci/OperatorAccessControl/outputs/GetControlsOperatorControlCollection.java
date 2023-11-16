@@ -7,14 +7,15 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.OperatorAccessControl.outputs.GetControlsOperatorControlCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetControlsOperatorControlCollection {
-    private List<GetControlsOperatorControlCollectionItem> items;
+    private @Nullable List<GetControlsOperatorControlCollectionItem> items;
 
     private GetControlsOperatorControlCollection() {}
     public List<GetControlsOperatorControlCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -26,7 +27,7 @@ public final class GetControlsOperatorControlCollection {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetControlsOperatorControlCollectionItem> items;
+        private @Nullable List<GetControlsOperatorControlCollectionItem> items;
         public Builder() {}
         public Builder(GetControlsOperatorControlCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -34,8 +35,8 @@ public final class GetControlsOperatorControlCollection {
         }
 
         @CustomType.Setter
-        public Builder items(List<GetControlsOperatorControlCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetControlsOperatorControlCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetControlsOperatorControlCollectionItem... items) {

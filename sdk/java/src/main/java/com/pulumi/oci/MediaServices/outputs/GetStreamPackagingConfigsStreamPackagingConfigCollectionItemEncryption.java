@@ -6,6 +6,8 @@ package com.pulumi.oci.MediaServices.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetStreamPackagingConfigsStreamPackagingConfigCollectionItemEncryption {
@@ -13,27 +15,27 @@ public final class GetStreamPackagingConfigsStreamPackagingConfigCollectionItemE
      * @return The encryption algorithm for the stream packaging configuration.
      * 
      */
-    private String algorithm;
+    private @Nullable String algorithm;
     /**
      * @return The identifier of the customer managed Vault KMS symmetric encryption key (null if Oracle managed).
      * 
      */
-    private String kmsKeyId;
+    private @Nullable String kmsKeyId;
 
     private GetStreamPackagingConfigsStreamPackagingConfigCollectionItemEncryption() {}
     /**
      * @return The encryption algorithm for the stream packaging configuration.
      * 
      */
-    public String algorithm() {
-        return this.algorithm;
+    public Optional<String> algorithm() {
+        return Optional.ofNullable(this.algorithm);
     }
     /**
      * @return The identifier of the customer managed Vault KMS symmetric encryption key (null if Oracle managed).
      * 
      */
-    public String kmsKeyId() {
-        return this.kmsKeyId;
+    public Optional<String> kmsKeyId() {
+        return Optional.ofNullable(this.kmsKeyId);
     }
 
     public static Builder builder() {
@@ -45,8 +47,8 @@ public final class GetStreamPackagingConfigsStreamPackagingConfigCollectionItemE
     }
     @CustomType.Builder
     public static final class Builder {
-        private String algorithm;
-        private String kmsKeyId;
+        private @Nullable String algorithm;
+        private @Nullable String kmsKeyId;
         public Builder() {}
         public Builder(GetStreamPackagingConfigsStreamPackagingConfigCollectionItemEncryption defaults) {
     	      Objects.requireNonNull(defaults);
@@ -55,13 +57,13 @@ public final class GetStreamPackagingConfigsStreamPackagingConfigCollectionItemE
         }
 
         @CustomType.Setter
-        public Builder algorithm(String algorithm) {
-            this.algorithm = Objects.requireNonNull(algorithm);
+        public Builder algorithm(@Nullable String algorithm) {
+            this.algorithm = algorithm;
             return this;
         }
         @CustomType.Setter
-        public Builder kmsKeyId(String kmsKeyId) {
-            this.kmsKeyId = Objects.requireNonNull(kmsKeyId);
+        public Builder kmsKeyId(@Nullable String kmsKeyId) {
+            this.kmsKeyId = kmsKeyId;
             return this;
         }
         public GetStreamPackagingConfigsStreamPackagingConfigCollectionItemEncryption build() {

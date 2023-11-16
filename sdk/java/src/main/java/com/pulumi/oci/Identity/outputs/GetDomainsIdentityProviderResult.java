@@ -27,311 +27,311 @@ public final class GetDomainsIdentityProviderResult {
      * @return Assertion attribute name.
      * 
      */
-    private String assertionAttribute;
+    private @Nullable String assertionAttribute;
     private @Nullable List<String> attributeSets;
     private @Nullable String attributes;
     /**
      * @return HTTP binding to use for authentication requests.
      * 
      */
-    private String authnRequestBinding;
+    private @Nullable String authnRequestBinding;
     private @Nullable String authorization;
     /**
      * @return Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
      * 
      */
-    private String compartmentOcid;
+    private @Nullable String compartmentOcid;
     /**
      * @return Correlation policy
      * 
      */
-    private List<GetDomainsIdentityProviderCorrelationPolicy> correlationPolicies;
+    private @Nullable List<GetDomainsIdentityProviderCorrelationPolicy> correlationPolicies;
     /**
      * @return A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
      * 
      */
-    private Boolean deleteInProgress;
+    private @Nullable Boolean deleteInProgress;
     /**
      * @return Description
      * 
      */
-    private String description;
+    private @Nullable String description;
     /**
      * @return Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
      * 
      */
-    private String domainOcid;
+    private @Nullable String domainOcid;
     /**
      * @return Set to true to indicate Partner enabled.
      * 
      */
-    private Boolean enabled;
+    private @Nullable Boolean enabled;
     /**
      * @return Encryption certificate
      * 
      */
-    private String encryptionCertificate;
+    private @Nullable String encryptionCertificate;
     /**
      * @return An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer&#39;s tenant.
      * 
      */
-    private String externalId;
+    private @Nullable String externalId;
     /**
      * @return Identity Provider Icon URL.
      * 
      */
-    private String iconUrl;
+    private @Nullable String iconUrl;
     /**
      * @return Unique identifier for the SCIM Resource as defined by the Service Provider. Each representation of the Resource MUST include a non-empty id value. This identifier MUST be unique across the Service Provider&#39;s entire set of Resources. It MUST be a stable, non-reassignable identifier that does not change when the same Resource is returned in subsequent requests. The value of the id attribute is always issued by the Service Provider and MUST never be specified by the Service Consumer. bulkId: is a reserved keyword and MUST NOT be used in the unique identifier.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The User or App who created the Resource
      * 
      */
-    private List<GetDomainsIdentityProviderIdcsCreatedBy> idcsCreatedBies;
+    private @Nullable List<GetDomainsIdentityProviderIdcsCreatedBy> idcsCreatedBies;
     private String idcsEndpoint;
     /**
      * @return The User or App who modified the Resource
      * 
      */
-    private List<GetDomainsIdentityProviderIdcsLastModifiedBy> idcsLastModifiedBies;
+    private @Nullable List<GetDomainsIdentityProviderIdcsLastModifiedBy> idcsLastModifiedBies;
     /**
      * @return The release number when the resource was upgraded.
      * 
      */
-    private String idcsLastUpgradedInRelease;
+    private @Nullable String idcsLastUpgradedInRelease;
     /**
      * @return Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
      * 
      */
-    private List<String> idcsPreventedOperations;
+    private @Nullable List<String> idcsPreventedOperations;
     private String identityProviderId;
     /**
      * @return Identity Provider SSO URL
      * 
      */
-    private String idpSsoUrl;
+    private @Nullable String idpSsoUrl;
     /**
      * @return Set to true to include the signing certificate in the signature.
      * 
      */
-    private Boolean includeSigningCertInSignature;
+    private @Nullable Boolean includeSigningCertInSignature;
     /**
      * @return Refers to every group of which a JIT-provisioned User should be a member.  Just-in-Time user-provisioning applies this static list when jitUserProvGroupStaticListEnabled:true.
      * 
      */
-    private List<GetDomainsIdentityProviderJitUserProvAssignedGroup> jitUserProvAssignedGroups;
+    private @Nullable List<GetDomainsIdentityProviderJitUserProvAssignedGroup> jitUserProvAssignedGroups;
     /**
      * @return Set to true to indicate JIT User Creation is enabled
      * 
      */
-    private Boolean jitUserProvAttributeUpdateEnabled;
+    private @Nullable Boolean jitUserProvAttributeUpdateEnabled;
     /**
      * @return Assertion To User Mapping
      * 
      */
-    private List<GetDomainsIdentityProviderJitUserProvAttribute> jitUserProvAttributes;
+    private @Nullable List<GetDomainsIdentityProviderJitUserProvAttribute> jitUserProvAttributes;
     /**
      * @return Set to true to indicate JIT User Creation is enabled
      * 
      */
-    private Boolean jitUserProvCreateUserEnabled;
+    private @Nullable Boolean jitUserProvCreateUserEnabled;
     /**
      * @return Set to true to indicate JIT User Provisioning is enabled
      * 
      */
-    private Boolean jitUserProvEnabled;
+    private @Nullable Boolean jitUserProvEnabled;
     /**
      * @return Set to true to indicate JIT User Provisioning Groups should be assigned based on assertion attribute
      * 
      */
-    private Boolean jitUserProvGroupAssertionAttributeEnabled;
+    private @Nullable Boolean jitUserProvGroupAssertionAttributeEnabled;
     /**
      * @return The default value is &#39;Overwrite&#39;, which tells Just-In-Time user-provisioning to replace any current group-assignments for a User with those assigned by assertions and/or those assigned statically. Specify &#39;Merge&#39; if you want Just-In-Time user-provisioning to combine its group-assignments with those the user already has.
      * 
      */
-    private String jitUserProvGroupAssignmentMethod;
+    private @Nullable String jitUserProvGroupAssignmentMethod;
     /**
      * @return Property to indicate the mode of group mapping
      * 
      */
-    private String jitUserProvGroupMappingMode;
+    private @Nullable String jitUserProvGroupMappingMode;
     /**
      * @return The list of mappings between the Identity Domain Group and the IDP group.
      * 
      */
-    private List<GetDomainsIdentityProviderJitUserProvGroupMapping> jitUserProvGroupMappings;
+    private @Nullable List<GetDomainsIdentityProviderJitUserProvGroupMapping> jitUserProvGroupMappings;
     /**
      * @return Name of the assertion attribute containing the users groups
      * 
      */
-    private String jitUserProvGroupSamlAttributeName;
+    private @Nullable String jitUserProvGroupSamlAttributeName;
     /**
      * @return Set to true to indicate JIT User Provisioning Groups should be assigned from a static list
      * 
      */
-    private Boolean jitUserProvGroupStaticListEnabled;
+    private @Nullable Boolean jitUserProvGroupStaticListEnabled;
     /**
      * @return Set to true to indicate ignoring absence of group while provisioning
      * 
      */
-    private Boolean jitUserProvIgnoreErrorOnAbsentGroups;
+    private @Nullable Boolean jitUserProvIgnoreErrorOnAbsentGroups;
     /**
      * @return Records the notification timestamp for the IdP whose signing certificate is about to expire
      * 
      */
-    private String lastNotificationSentTime;
+    private @Nullable String lastNotificationSentTime;
     /**
      * @return HTTP binding to use for logout.
      * 
      */
-    private String logoutBinding;
+    private @Nullable String logoutBinding;
     /**
      * @return Set to true to enable logout.
      * 
      */
-    private Boolean logoutEnabled;
+    private @Nullable Boolean logoutEnabled;
     /**
      * @return Logout request URL
      * 
      */
-    private String logoutRequestUrl;
+    private @Nullable String logoutRequestUrl;
     /**
      * @return Logout response URL
      * 
      */
-    private String logoutResponseUrl;
+    private @Nullable String logoutResponseUrl;
     /**
      * @return Metadata
      * 
      */
-    private String metadata;
+    private @Nullable String metadata;
     /**
      * @return A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
      * 
      */
-    private List<GetDomainsIdentityProviderMeta> metas;
+    private @Nullable List<GetDomainsIdentityProviderMeta> metas;
     /**
      * @return Default authentication request name ID format.
      * 
      */
-    private String nameIdFormat;
+    private @Nullable String nameIdFormat;
     /**
      * @return Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
      * 
      */
-    private String ocid;
+    private @Nullable String ocid;
     /**
      * @return Unique name of the trusted Identity Provider.
      * 
      */
-    private String partnerName;
+    private @Nullable String partnerName;
     /**
      * @return Provider ID
      * 
      */
-    private String partnerProviderId;
+    private @Nullable String partnerProviderId;
     /**
      * @return SAML SP authentication type.
      * 
      */
-    private List<String> requestedAuthenticationContexts;
+    private @Nullable List<String> requestedAuthenticationContexts;
     /**
      * @return This SP requires requests SAML IdP to enforce re-authentication.
      * 
      */
-    private Boolean requireForceAuthn;
+    private @Nullable Boolean requireForceAuthn;
     /**
      * @return SAML SP must accept encrypted assertion only.
      * 
      */
-    private Boolean requiresEncryptedAssertion;
+    private @Nullable Boolean requiresEncryptedAssertion;
     private @Nullable String resourceTypeSchemaVersion;
     /**
      * @return SAML SP HoK Enabled.
      * 
      */
-    private Boolean samlHoKrequired;
+    private @Nullable Boolean samlHoKrequired;
     /**
      * @return REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \&#34;enterprise\&#34; extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
      * 
      */
-    private List<String> schemas;
+    private @Nullable List<String> schemas;
     /**
      * @return The serviceInstanceIdentifier of the App that hosts this IdP. This value will match the opcServiceInstanceGUID of any service-instance that the IdP represents.
      * 
      */
-    private String serviceInstanceIdentifier;
+    private @Nullable String serviceInstanceIdentifier;
     /**
      * @return Set to true to indicate whether to show IdP in login page or not.
      * 
      */
-    private Boolean shownOnLoginPage;
+    private @Nullable Boolean shownOnLoginPage;
     /**
      * @return Signature hash algorithm.
      * 
      */
-    private String signatureHashAlgorithm;
+    private @Nullable String signatureHashAlgorithm;
     /**
      * @return Signing certificate
      * 
      */
-    private String signingCertificate;
+    private @Nullable String signingCertificate;
     /**
      * @return Succinct ID
      * 
      */
-    private String succinctId;
+    private @Nullable String succinctId;
     /**
      * @return A list of tags on this resource.
      * 
      */
-    private List<GetDomainsIdentityProviderTag> tags;
+    private @Nullable List<GetDomainsIdentityProviderTag> tags;
     /**
      * @return Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
      * 
      */
-    private String tenancyOcid;
+    private @Nullable String tenancyOcid;
     /**
      * @return The alternate Provider ID to be used as the Oracle Identity Cloud Service providerID (instead of the one in SamlSettings) when interacting with this IdP.
      * 
      */
-    private String tenantProviderId;
+    private @Nullable String tenantProviderId;
     /**
      * @return Identity Provider Type
      * 
      */
-    private String type;
+    private @Nullable String type;
     /**
      * @return Social Identity Provider Extension Schema
      * 
      */
-    private List<GetDomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionsocialIdentityProvider> urnietfparamsscimschemasoracleidcsextensionsocialIdentityProviders;
+    private @Nullable List<GetDomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionsocialIdentityProvider> urnietfparamsscimschemasoracleidcsextensionsocialIdentityProviders;
     /**
      * @return X509 Identity Provider Extension Schema
      * 
      */
-    private List<GetDomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProvider> urnietfparamsscimschemasoracleidcsextensionx509identityProviders;
+    private @Nullable List<GetDomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProvider> urnietfparamsscimschemasoracleidcsextensionx509identityProviders;
     /**
      * @return User mapping method.
      * 
      */
-    private String userMappingMethod;
+    private @Nullable String userMappingMethod;
     /**
      * @return This property specifies the userstore attribute value that must match the incoming assertion attribute value or the incoming nameid attribute value in order to identify the user during SSO.&lt;br&gt;You can construct the userMappingStoreAttribute value by specifying attributes from the Oracle Identity Cloud Service Core Users schema. For examples of how to construct the userMappingStoreAttribute value, see the &lt;b&gt;Example of a Request Body&lt;/b&gt; section of the Examples tab for the &lt;a href=&#39;./op-admin-v1-identityproviders-post.html&#39;&gt;POST&lt;/a&gt; and &lt;a href=&#39;./op-admin-v1-identityproviders-id-put.html&#39;&gt;PUT&lt;/a&gt; methods of the /IdentityProviders endpoint.
      * 
      */
-    private String userMappingStoreAttribute;
+    private @Nullable String userMappingStoreAttribute;
 
     private GetDomainsIdentityProviderResult() {}
     /**
      * @return Assertion attribute name.
      * 
      */
-    public String assertionAttribute() {
-        return this.assertionAttribute;
+    public Optional<String> assertionAttribute() {
+        return Optional.ofNullable(this.assertionAttribute);
     }
     public List<String> attributeSets() {
         return this.attributeSets == null ? List.of() : this.attributeSets;
@@ -343,8 +343,8 @@ public final class GetDomainsIdentityProviderResult {
      * @return HTTP binding to use for authentication requests.
      * 
      */
-    public String authnRequestBinding() {
-        return this.authnRequestBinding;
+    public Optional<String> authnRequestBinding() {
+        return Optional.ofNullable(this.authnRequestBinding);
     }
     public Optional<String> authorization() {
         return Optional.ofNullable(this.authorization);
@@ -353,78 +353,78 @@ public final class GetDomainsIdentityProviderResult {
      * @return Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
      * 
      */
-    public String compartmentOcid() {
-        return this.compartmentOcid;
+    public Optional<String> compartmentOcid() {
+        return Optional.ofNullable(this.compartmentOcid);
     }
     /**
      * @return Correlation policy
      * 
      */
     public List<GetDomainsIdentityProviderCorrelationPolicy> correlationPolicies() {
-        return this.correlationPolicies;
+        return this.correlationPolicies == null ? List.of() : this.correlationPolicies;
     }
     /**
      * @return A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
      * 
      */
-    public Boolean deleteInProgress() {
-        return this.deleteInProgress;
+    public Optional<Boolean> deleteInProgress() {
+        return Optional.ofNullable(this.deleteInProgress);
     }
     /**
      * @return Description
      * 
      */
-    public String description() {
-        return this.description;
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
     /**
      * @return Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
      * 
      */
-    public String domainOcid() {
-        return this.domainOcid;
+    public Optional<String> domainOcid() {
+        return Optional.ofNullable(this.domainOcid);
     }
     /**
      * @return Set to true to indicate Partner enabled.
      * 
      */
-    public Boolean enabled() {
-        return this.enabled;
+    public Optional<Boolean> enabled() {
+        return Optional.ofNullable(this.enabled);
     }
     /**
      * @return Encryption certificate
      * 
      */
-    public String encryptionCertificate() {
-        return this.encryptionCertificate;
+    public Optional<String> encryptionCertificate() {
+        return Optional.ofNullable(this.encryptionCertificate);
     }
     /**
      * @return An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer&#39;s tenant.
      * 
      */
-    public String externalId() {
-        return this.externalId;
+    public Optional<String> externalId() {
+        return Optional.ofNullable(this.externalId);
     }
     /**
      * @return Identity Provider Icon URL.
      * 
      */
-    public String iconUrl() {
-        return this.iconUrl;
+    public Optional<String> iconUrl() {
+        return Optional.ofNullable(this.iconUrl);
     }
     /**
      * @return Unique identifier for the SCIM Resource as defined by the Service Provider. Each representation of the Resource MUST include a non-empty id value. This identifier MUST be unique across the Service Provider&#39;s entire set of Resources. It MUST be a stable, non-reassignable identifier that does not change when the same Resource is returned in subsequent requests. The value of the id attribute is always issued by the Service Provider and MUST never be specified by the Service Consumer. bulkId: is a reserved keyword and MUST NOT be used in the unique identifier.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The User or App who created the Resource
      * 
      */
     public List<GetDomainsIdentityProviderIdcsCreatedBy> idcsCreatedBies() {
-        return this.idcsCreatedBies;
+        return this.idcsCreatedBies == null ? List.of() : this.idcsCreatedBies;
     }
     public String idcsEndpoint() {
         return this.idcsEndpoint;
@@ -434,21 +434,21 @@ public final class GetDomainsIdentityProviderResult {
      * 
      */
     public List<GetDomainsIdentityProviderIdcsLastModifiedBy> idcsLastModifiedBies() {
-        return this.idcsLastModifiedBies;
+        return this.idcsLastModifiedBies == null ? List.of() : this.idcsLastModifiedBies;
     }
     /**
      * @return The release number when the resource was upgraded.
      * 
      */
-    public String idcsLastUpgradedInRelease() {
-        return this.idcsLastUpgradedInRelease;
+    public Optional<String> idcsLastUpgradedInRelease() {
+        return Optional.ofNullable(this.idcsLastUpgradedInRelease);
     }
     /**
      * @return Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
      * 
      */
     public List<String> idcsPreventedOperations() {
-        return this.idcsPreventedOperations;
+        return this.idcsPreventedOperations == null ? List.of() : this.idcsPreventedOperations;
     }
     public String identityProviderId() {
         return this.identityProviderId;
@@ -457,197 +457,197 @@ public final class GetDomainsIdentityProviderResult {
      * @return Identity Provider SSO URL
      * 
      */
-    public String idpSsoUrl() {
-        return this.idpSsoUrl;
+    public Optional<String> idpSsoUrl() {
+        return Optional.ofNullable(this.idpSsoUrl);
     }
     /**
      * @return Set to true to include the signing certificate in the signature.
      * 
      */
-    public Boolean includeSigningCertInSignature() {
-        return this.includeSigningCertInSignature;
+    public Optional<Boolean> includeSigningCertInSignature() {
+        return Optional.ofNullable(this.includeSigningCertInSignature);
     }
     /**
      * @return Refers to every group of which a JIT-provisioned User should be a member.  Just-in-Time user-provisioning applies this static list when jitUserProvGroupStaticListEnabled:true.
      * 
      */
     public List<GetDomainsIdentityProviderJitUserProvAssignedGroup> jitUserProvAssignedGroups() {
-        return this.jitUserProvAssignedGroups;
+        return this.jitUserProvAssignedGroups == null ? List.of() : this.jitUserProvAssignedGroups;
     }
     /**
      * @return Set to true to indicate JIT User Creation is enabled
      * 
      */
-    public Boolean jitUserProvAttributeUpdateEnabled() {
-        return this.jitUserProvAttributeUpdateEnabled;
+    public Optional<Boolean> jitUserProvAttributeUpdateEnabled() {
+        return Optional.ofNullable(this.jitUserProvAttributeUpdateEnabled);
     }
     /**
      * @return Assertion To User Mapping
      * 
      */
     public List<GetDomainsIdentityProviderJitUserProvAttribute> jitUserProvAttributes() {
-        return this.jitUserProvAttributes;
+        return this.jitUserProvAttributes == null ? List.of() : this.jitUserProvAttributes;
     }
     /**
      * @return Set to true to indicate JIT User Creation is enabled
      * 
      */
-    public Boolean jitUserProvCreateUserEnabled() {
-        return this.jitUserProvCreateUserEnabled;
+    public Optional<Boolean> jitUserProvCreateUserEnabled() {
+        return Optional.ofNullable(this.jitUserProvCreateUserEnabled);
     }
     /**
      * @return Set to true to indicate JIT User Provisioning is enabled
      * 
      */
-    public Boolean jitUserProvEnabled() {
-        return this.jitUserProvEnabled;
+    public Optional<Boolean> jitUserProvEnabled() {
+        return Optional.ofNullable(this.jitUserProvEnabled);
     }
     /**
      * @return Set to true to indicate JIT User Provisioning Groups should be assigned based on assertion attribute
      * 
      */
-    public Boolean jitUserProvGroupAssertionAttributeEnabled() {
-        return this.jitUserProvGroupAssertionAttributeEnabled;
+    public Optional<Boolean> jitUserProvGroupAssertionAttributeEnabled() {
+        return Optional.ofNullable(this.jitUserProvGroupAssertionAttributeEnabled);
     }
     /**
      * @return The default value is &#39;Overwrite&#39;, which tells Just-In-Time user-provisioning to replace any current group-assignments for a User with those assigned by assertions and/or those assigned statically. Specify &#39;Merge&#39; if you want Just-In-Time user-provisioning to combine its group-assignments with those the user already has.
      * 
      */
-    public String jitUserProvGroupAssignmentMethod() {
-        return this.jitUserProvGroupAssignmentMethod;
+    public Optional<String> jitUserProvGroupAssignmentMethod() {
+        return Optional.ofNullable(this.jitUserProvGroupAssignmentMethod);
     }
     /**
      * @return Property to indicate the mode of group mapping
      * 
      */
-    public String jitUserProvGroupMappingMode() {
-        return this.jitUserProvGroupMappingMode;
+    public Optional<String> jitUserProvGroupMappingMode() {
+        return Optional.ofNullable(this.jitUserProvGroupMappingMode);
     }
     /**
      * @return The list of mappings between the Identity Domain Group and the IDP group.
      * 
      */
     public List<GetDomainsIdentityProviderJitUserProvGroupMapping> jitUserProvGroupMappings() {
-        return this.jitUserProvGroupMappings;
+        return this.jitUserProvGroupMappings == null ? List.of() : this.jitUserProvGroupMappings;
     }
     /**
      * @return Name of the assertion attribute containing the users groups
      * 
      */
-    public String jitUserProvGroupSamlAttributeName() {
-        return this.jitUserProvGroupSamlAttributeName;
+    public Optional<String> jitUserProvGroupSamlAttributeName() {
+        return Optional.ofNullable(this.jitUserProvGroupSamlAttributeName);
     }
     /**
      * @return Set to true to indicate JIT User Provisioning Groups should be assigned from a static list
      * 
      */
-    public Boolean jitUserProvGroupStaticListEnabled() {
-        return this.jitUserProvGroupStaticListEnabled;
+    public Optional<Boolean> jitUserProvGroupStaticListEnabled() {
+        return Optional.ofNullable(this.jitUserProvGroupStaticListEnabled);
     }
     /**
      * @return Set to true to indicate ignoring absence of group while provisioning
      * 
      */
-    public Boolean jitUserProvIgnoreErrorOnAbsentGroups() {
-        return this.jitUserProvIgnoreErrorOnAbsentGroups;
+    public Optional<Boolean> jitUserProvIgnoreErrorOnAbsentGroups() {
+        return Optional.ofNullable(this.jitUserProvIgnoreErrorOnAbsentGroups);
     }
     /**
      * @return Records the notification timestamp for the IdP whose signing certificate is about to expire
      * 
      */
-    public String lastNotificationSentTime() {
-        return this.lastNotificationSentTime;
+    public Optional<String> lastNotificationSentTime() {
+        return Optional.ofNullable(this.lastNotificationSentTime);
     }
     /**
      * @return HTTP binding to use for logout.
      * 
      */
-    public String logoutBinding() {
-        return this.logoutBinding;
+    public Optional<String> logoutBinding() {
+        return Optional.ofNullable(this.logoutBinding);
     }
     /**
      * @return Set to true to enable logout.
      * 
      */
-    public Boolean logoutEnabled() {
-        return this.logoutEnabled;
+    public Optional<Boolean> logoutEnabled() {
+        return Optional.ofNullable(this.logoutEnabled);
     }
     /**
      * @return Logout request URL
      * 
      */
-    public String logoutRequestUrl() {
-        return this.logoutRequestUrl;
+    public Optional<String> logoutRequestUrl() {
+        return Optional.ofNullable(this.logoutRequestUrl);
     }
     /**
      * @return Logout response URL
      * 
      */
-    public String logoutResponseUrl() {
-        return this.logoutResponseUrl;
+    public Optional<String> logoutResponseUrl() {
+        return Optional.ofNullable(this.logoutResponseUrl);
     }
     /**
      * @return Metadata
      * 
      */
-    public String metadata() {
-        return this.metadata;
+    public Optional<String> metadata() {
+        return Optional.ofNullable(this.metadata);
     }
     /**
      * @return A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
      * 
      */
     public List<GetDomainsIdentityProviderMeta> metas() {
-        return this.metas;
+        return this.metas == null ? List.of() : this.metas;
     }
     /**
      * @return Default authentication request name ID format.
      * 
      */
-    public String nameIdFormat() {
-        return this.nameIdFormat;
+    public Optional<String> nameIdFormat() {
+        return Optional.ofNullable(this.nameIdFormat);
     }
     /**
      * @return Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
      * 
      */
-    public String ocid() {
-        return this.ocid;
+    public Optional<String> ocid() {
+        return Optional.ofNullable(this.ocid);
     }
     /**
      * @return Unique name of the trusted Identity Provider.
      * 
      */
-    public String partnerName() {
-        return this.partnerName;
+    public Optional<String> partnerName() {
+        return Optional.ofNullable(this.partnerName);
     }
     /**
      * @return Provider ID
      * 
      */
-    public String partnerProviderId() {
-        return this.partnerProviderId;
+    public Optional<String> partnerProviderId() {
+        return Optional.ofNullable(this.partnerProviderId);
     }
     /**
      * @return SAML SP authentication type.
      * 
      */
     public List<String> requestedAuthenticationContexts() {
-        return this.requestedAuthenticationContexts;
+        return this.requestedAuthenticationContexts == null ? List.of() : this.requestedAuthenticationContexts;
     }
     /**
      * @return This SP requires requests SAML IdP to enforce re-authentication.
      * 
      */
-    public Boolean requireForceAuthn() {
-        return this.requireForceAuthn;
+    public Optional<Boolean> requireForceAuthn() {
+        return Optional.ofNullable(this.requireForceAuthn);
     }
     /**
      * @return SAML SP must accept encrypted assertion only.
      * 
      */
-    public Boolean requiresEncryptedAssertion() {
-        return this.requiresEncryptedAssertion;
+    public Optional<Boolean> requiresEncryptedAssertion() {
+        return Optional.ofNullable(this.requiresEncryptedAssertion);
     }
     public Optional<String> resourceTypeSchemaVersion() {
         return Optional.ofNullable(this.resourceTypeSchemaVersion);
@@ -656,106 +656,106 @@ public final class GetDomainsIdentityProviderResult {
      * @return SAML SP HoK Enabled.
      * 
      */
-    public Boolean samlHoKrequired() {
-        return this.samlHoKrequired;
+    public Optional<Boolean> samlHoKrequired() {
+        return Optional.ofNullable(this.samlHoKrequired);
     }
     /**
      * @return REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \&#34;enterprise\&#34; extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
      * 
      */
     public List<String> schemas() {
-        return this.schemas;
+        return this.schemas == null ? List.of() : this.schemas;
     }
     /**
      * @return The serviceInstanceIdentifier of the App that hosts this IdP. This value will match the opcServiceInstanceGUID of any service-instance that the IdP represents.
      * 
      */
-    public String serviceInstanceIdentifier() {
-        return this.serviceInstanceIdentifier;
+    public Optional<String> serviceInstanceIdentifier() {
+        return Optional.ofNullable(this.serviceInstanceIdentifier);
     }
     /**
      * @return Set to true to indicate whether to show IdP in login page or not.
      * 
      */
-    public Boolean shownOnLoginPage() {
-        return this.shownOnLoginPage;
+    public Optional<Boolean> shownOnLoginPage() {
+        return Optional.ofNullable(this.shownOnLoginPage);
     }
     /**
      * @return Signature hash algorithm.
      * 
      */
-    public String signatureHashAlgorithm() {
-        return this.signatureHashAlgorithm;
+    public Optional<String> signatureHashAlgorithm() {
+        return Optional.ofNullable(this.signatureHashAlgorithm);
     }
     /**
      * @return Signing certificate
      * 
      */
-    public String signingCertificate() {
-        return this.signingCertificate;
+    public Optional<String> signingCertificate() {
+        return Optional.ofNullable(this.signingCertificate);
     }
     /**
      * @return Succinct ID
      * 
      */
-    public String succinctId() {
-        return this.succinctId;
+    public Optional<String> succinctId() {
+        return Optional.ofNullable(this.succinctId);
     }
     /**
      * @return A list of tags on this resource.
      * 
      */
     public List<GetDomainsIdentityProviderTag> tags() {
-        return this.tags;
+        return this.tags == null ? List.of() : this.tags;
     }
     /**
      * @return Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
      * 
      */
-    public String tenancyOcid() {
-        return this.tenancyOcid;
+    public Optional<String> tenancyOcid() {
+        return Optional.ofNullable(this.tenancyOcid);
     }
     /**
      * @return The alternate Provider ID to be used as the Oracle Identity Cloud Service providerID (instead of the one in SamlSettings) when interacting with this IdP.
      * 
      */
-    public String tenantProviderId() {
-        return this.tenantProviderId;
+    public Optional<String> tenantProviderId() {
+        return Optional.ofNullable(this.tenantProviderId);
     }
     /**
      * @return Identity Provider Type
      * 
      */
-    public String type() {
-        return this.type;
+    public Optional<String> type() {
+        return Optional.ofNullable(this.type);
     }
     /**
      * @return Social Identity Provider Extension Schema
      * 
      */
     public List<GetDomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionsocialIdentityProvider> urnietfparamsscimschemasoracleidcsextensionsocialIdentityProviders() {
-        return this.urnietfparamsscimschemasoracleidcsextensionsocialIdentityProviders;
+        return this.urnietfparamsscimschemasoracleidcsextensionsocialIdentityProviders == null ? List.of() : this.urnietfparamsscimschemasoracleidcsextensionsocialIdentityProviders;
     }
     /**
      * @return X509 Identity Provider Extension Schema
      * 
      */
     public List<GetDomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProvider> urnietfparamsscimschemasoracleidcsextensionx509identityProviders() {
-        return this.urnietfparamsscimschemasoracleidcsextensionx509identityProviders;
+        return this.urnietfparamsscimschemasoracleidcsextensionx509identityProviders == null ? List.of() : this.urnietfparamsscimschemasoracleidcsextensionx509identityProviders;
     }
     /**
      * @return User mapping method.
      * 
      */
-    public String userMappingMethod() {
-        return this.userMappingMethod;
+    public Optional<String> userMappingMethod() {
+        return Optional.ofNullable(this.userMappingMethod);
     }
     /**
      * @return This property specifies the userstore attribute value that must match the incoming assertion attribute value or the incoming nameid attribute value in order to identify the user during SSO.&lt;br&gt;You can construct the userMappingStoreAttribute value by specifying attributes from the Oracle Identity Cloud Service Core Users schema. For examples of how to construct the userMappingStoreAttribute value, see the &lt;b&gt;Example of a Request Body&lt;/b&gt; section of the Examples tab for the &lt;a href=&#39;./op-admin-v1-identityproviders-post.html&#39;&gt;POST&lt;/a&gt; and &lt;a href=&#39;./op-admin-v1-identityproviders-id-put.html&#39;&gt;PUT&lt;/a&gt; methods of the /IdentityProviders endpoint.
      * 
      */
-    public String userMappingStoreAttribute() {
-        return this.userMappingStoreAttribute;
+    public Optional<String> userMappingStoreAttribute() {
+        return Optional.ofNullable(this.userMappingStoreAttribute);
     }
 
     public static Builder builder() {
@@ -767,71 +767,71 @@ public final class GetDomainsIdentityProviderResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String assertionAttribute;
+        private @Nullable String assertionAttribute;
         private @Nullable List<String> attributeSets;
         private @Nullable String attributes;
-        private String authnRequestBinding;
+        private @Nullable String authnRequestBinding;
         private @Nullable String authorization;
-        private String compartmentOcid;
-        private List<GetDomainsIdentityProviderCorrelationPolicy> correlationPolicies;
-        private Boolean deleteInProgress;
-        private String description;
-        private String domainOcid;
-        private Boolean enabled;
-        private String encryptionCertificate;
-        private String externalId;
-        private String iconUrl;
-        private String id;
-        private List<GetDomainsIdentityProviderIdcsCreatedBy> idcsCreatedBies;
+        private @Nullable String compartmentOcid;
+        private @Nullable List<GetDomainsIdentityProviderCorrelationPolicy> correlationPolicies;
+        private @Nullable Boolean deleteInProgress;
+        private @Nullable String description;
+        private @Nullable String domainOcid;
+        private @Nullable Boolean enabled;
+        private @Nullable String encryptionCertificate;
+        private @Nullable String externalId;
+        private @Nullable String iconUrl;
+        private @Nullable String id;
+        private @Nullable List<GetDomainsIdentityProviderIdcsCreatedBy> idcsCreatedBies;
         private String idcsEndpoint;
-        private List<GetDomainsIdentityProviderIdcsLastModifiedBy> idcsLastModifiedBies;
-        private String idcsLastUpgradedInRelease;
-        private List<String> idcsPreventedOperations;
+        private @Nullable List<GetDomainsIdentityProviderIdcsLastModifiedBy> idcsLastModifiedBies;
+        private @Nullable String idcsLastUpgradedInRelease;
+        private @Nullable List<String> idcsPreventedOperations;
         private String identityProviderId;
-        private String idpSsoUrl;
-        private Boolean includeSigningCertInSignature;
-        private List<GetDomainsIdentityProviderJitUserProvAssignedGroup> jitUserProvAssignedGroups;
-        private Boolean jitUserProvAttributeUpdateEnabled;
-        private List<GetDomainsIdentityProviderJitUserProvAttribute> jitUserProvAttributes;
-        private Boolean jitUserProvCreateUserEnabled;
-        private Boolean jitUserProvEnabled;
-        private Boolean jitUserProvGroupAssertionAttributeEnabled;
-        private String jitUserProvGroupAssignmentMethod;
-        private String jitUserProvGroupMappingMode;
-        private List<GetDomainsIdentityProviderJitUserProvGroupMapping> jitUserProvGroupMappings;
-        private String jitUserProvGroupSamlAttributeName;
-        private Boolean jitUserProvGroupStaticListEnabled;
-        private Boolean jitUserProvIgnoreErrorOnAbsentGroups;
-        private String lastNotificationSentTime;
-        private String logoutBinding;
-        private Boolean logoutEnabled;
-        private String logoutRequestUrl;
-        private String logoutResponseUrl;
-        private String metadata;
-        private List<GetDomainsIdentityProviderMeta> metas;
-        private String nameIdFormat;
-        private String ocid;
-        private String partnerName;
-        private String partnerProviderId;
-        private List<String> requestedAuthenticationContexts;
-        private Boolean requireForceAuthn;
-        private Boolean requiresEncryptedAssertion;
+        private @Nullable String idpSsoUrl;
+        private @Nullable Boolean includeSigningCertInSignature;
+        private @Nullable List<GetDomainsIdentityProviderJitUserProvAssignedGroup> jitUserProvAssignedGroups;
+        private @Nullable Boolean jitUserProvAttributeUpdateEnabled;
+        private @Nullable List<GetDomainsIdentityProviderJitUserProvAttribute> jitUserProvAttributes;
+        private @Nullable Boolean jitUserProvCreateUserEnabled;
+        private @Nullable Boolean jitUserProvEnabled;
+        private @Nullable Boolean jitUserProvGroupAssertionAttributeEnabled;
+        private @Nullable String jitUserProvGroupAssignmentMethod;
+        private @Nullable String jitUserProvGroupMappingMode;
+        private @Nullable List<GetDomainsIdentityProviderJitUserProvGroupMapping> jitUserProvGroupMappings;
+        private @Nullable String jitUserProvGroupSamlAttributeName;
+        private @Nullable Boolean jitUserProvGroupStaticListEnabled;
+        private @Nullable Boolean jitUserProvIgnoreErrorOnAbsentGroups;
+        private @Nullable String lastNotificationSentTime;
+        private @Nullable String logoutBinding;
+        private @Nullable Boolean logoutEnabled;
+        private @Nullable String logoutRequestUrl;
+        private @Nullable String logoutResponseUrl;
+        private @Nullable String metadata;
+        private @Nullable List<GetDomainsIdentityProviderMeta> metas;
+        private @Nullable String nameIdFormat;
+        private @Nullable String ocid;
+        private @Nullable String partnerName;
+        private @Nullable String partnerProviderId;
+        private @Nullable List<String> requestedAuthenticationContexts;
+        private @Nullable Boolean requireForceAuthn;
+        private @Nullable Boolean requiresEncryptedAssertion;
         private @Nullable String resourceTypeSchemaVersion;
-        private Boolean samlHoKrequired;
-        private List<String> schemas;
-        private String serviceInstanceIdentifier;
-        private Boolean shownOnLoginPage;
-        private String signatureHashAlgorithm;
-        private String signingCertificate;
-        private String succinctId;
-        private List<GetDomainsIdentityProviderTag> tags;
-        private String tenancyOcid;
-        private String tenantProviderId;
-        private String type;
-        private List<GetDomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionsocialIdentityProvider> urnietfparamsscimschemasoracleidcsextensionsocialIdentityProviders;
-        private List<GetDomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProvider> urnietfparamsscimschemasoracleidcsextensionx509identityProviders;
-        private String userMappingMethod;
-        private String userMappingStoreAttribute;
+        private @Nullable Boolean samlHoKrequired;
+        private @Nullable List<String> schemas;
+        private @Nullable String serviceInstanceIdentifier;
+        private @Nullable Boolean shownOnLoginPage;
+        private @Nullable String signatureHashAlgorithm;
+        private @Nullable String signingCertificate;
+        private @Nullable String succinctId;
+        private @Nullable List<GetDomainsIdentityProviderTag> tags;
+        private @Nullable String tenancyOcid;
+        private @Nullable String tenantProviderId;
+        private @Nullable String type;
+        private @Nullable List<GetDomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionsocialIdentityProvider> urnietfparamsscimschemasoracleidcsextensionsocialIdentityProviders;
+        private @Nullable List<GetDomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProvider> urnietfparamsscimschemasoracleidcsextensionx509identityProviders;
+        private @Nullable String userMappingMethod;
+        private @Nullable String userMappingStoreAttribute;
         public Builder() {}
         public Builder(GetDomainsIdentityProviderResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -903,8 +903,8 @@ public final class GetDomainsIdentityProviderResult {
         }
 
         @CustomType.Setter
-        public Builder assertionAttribute(String assertionAttribute) {
-            this.assertionAttribute = Objects.requireNonNull(assertionAttribute);
+        public Builder assertionAttribute(@Nullable String assertionAttribute) {
+            this.assertionAttribute = assertionAttribute;
             return this;
         }
         @CustomType.Setter
@@ -921,8 +921,8 @@ public final class GetDomainsIdentityProviderResult {
             return this;
         }
         @CustomType.Setter
-        public Builder authnRequestBinding(String authnRequestBinding) {
-            this.authnRequestBinding = Objects.requireNonNull(authnRequestBinding);
+        public Builder authnRequestBinding(@Nullable String authnRequestBinding) {
+            this.authnRequestBinding = authnRequestBinding;
             return this;
         }
         @CustomType.Setter
@@ -931,61 +931,61 @@ public final class GetDomainsIdentityProviderResult {
             return this;
         }
         @CustomType.Setter
-        public Builder compartmentOcid(String compartmentOcid) {
-            this.compartmentOcid = Objects.requireNonNull(compartmentOcid);
+        public Builder compartmentOcid(@Nullable String compartmentOcid) {
+            this.compartmentOcid = compartmentOcid;
             return this;
         }
         @CustomType.Setter
-        public Builder correlationPolicies(List<GetDomainsIdentityProviderCorrelationPolicy> correlationPolicies) {
-            this.correlationPolicies = Objects.requireNonNull(correlationPolicies);
+        public Builder correlationPolicies(@Nullable List<GetDomainsIdentityProviderCorrelationPolicy> correlationPolicies) {
+            this.correlationPolicies = correlationPolicies;
             return this;
         }
         public Builder correlationPolicies(GetDomainsIdentityProviderCorrelationPolicy... correlationPolicies) {
             return correlationPolicies(List.of(correlationPolicies));
         }
         @CustomType.Setter
-        public Builder deleteInProgress(Boolean deleteInProgress) {
-            this.deleteInProgress = Objects.requireNonNull(deleteInProgress);
+        public Builder deleteInProgress(@Nullable Boolean deleteInProgress) {
+            this.deleteInProgress = deleteInProgress;
             return this;
         }
         @CustomType.Setter
-        public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+        public Builder description(@Nullable String description) {
+            this.description = description;
             return this;
         }
         @CustomType.Setter
-        public Builder domainOcid(String domainOcid) {
-            this.domainOcid = Objects.requireNonNull(domainOcid);
+        public Builder domainOcid(@Nullable String domainOcid) {
+            this.domainOcid = domainOcid;
             return this;
         }
         @CustomType.Setter
-        public Builder enabled(Boolean enabled) {
-            this.enabled = Objects.requireNonNull(enabled);
+        public Builder enabled(@Nullable Boolean enabled) {
+            this.enabled = enabled;
             return this;
         }
         @CustomType.Setter
-        public Builder encryptionCertificate(String encryptionCertificate) {
-            this.encryptionCertificate = Objects.requireNonNull(encryptionCertificate);
+        public Builder encryptionCertificate(@Nullable String encryptionCertificate) {
+            this.encryptionCertificate = encryptionCertificate;
             return this;
         }
         @CustomType.Setter
-        public Builder externalId(String externalId) {
-            this.externalId = Objects.requireNonNull(externalId);
+        public Builder externalId(@Nullable String externalId) {
+            this.externalId = externalId;
             return this;
         }
         @CustomType.Setter
-        public Builder iconUrl(String iconUrl) {
-            this.iconUrl = Objects.requireNonNull(iconUrl);
+        public Builder iconUrl(@Nullable String iconUrl) {
+            this.iconUrl = iconUrl;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder idcsCreatedBies(List<GetDomainsIdentityProviderIdcsCreatedBy> idcsCreatedBies) {
-            this.idcsCreatedBies = Objects.requireNonNull(idcsCreatedBies);
+        public Builder idcsCreatedBies(@Nullable List<GetDomainsIdentityProviderIdcsCreatedBy> idcsCreatedBies) {
+            this.idcsCreatedBies = idcsCreatedBies;
             return this;
         }
         public Builder idcsCreatedBies(GetDomainsIdentityProviderIdcsCreatedBy... idcsCreatedBies) {
@@ -997,21 +997,21 @@ public final class GetDomainsIdentityProviderResult {
             return this;
         }
         @CustomType.Setter
-        public Builder idcsLastModifiedBies(List<GetDomainsIdentityProviderIdcsLastModifiedBy> idcsLastModifiedBies) {
-            this.idcsLastModifiedBies = Objects.requireNonNull(idcsLastModifiedBies);
+        public Builder idcsLastModifiedBies(@Nullable List<GetDomainsIdentityProviderIdcsLastModifiedBy> idcsLastModifiedBies) {
+            this.idcsLastModifiedBies = idcsLastModifiedBies;
             return this;
         }
         public Builder idcsLastModifiedBies(GetDomainsIdentityProviderIdcsLastModifiedBy... idcsLastModifiedBies) {
             return idcsLastModifiedBies(List.of(idcsLastModifiedBies));
         }
         @CustomType.Setter
-        public Builder idcsLastUpgradedInRelease(String idcsLastUpgradedInRelease) {
-            this.idcsLastUpgradedInRelease = Objects.requireNonNull(idcsLastUpgradedInRelease);
+        public Builder idcsLastUpgradedInRelease(@Nullable String idcsLastUpgradedInRelease) {
+            this.idcsLastUpgradedInRelease = idcsLastUpgradedInRelease;
             return this;
         }
         @CustomType.Setter
-        public Builder idcsPreventedOperations(List<String> idcsPreventedOperations) {
-            this.idcsPreventedOperations = Objects.requireNonNull(idcsPreventedOperations);
+        public Builder idcsPreventedOperations(@Nullable List<String> idcsPreventedOperations) {
+            this.idcsPreventedOperations = idcsPreventedOperations;
             return this;
         }
         public Builder idcsPreventedOperations(String... idcsPreventedOperations) {
@@ -1023,158 +1023,158 @@ public final class GetDomainsIdentityProviderResult {
             return this;
         }
         @CustomType.Setter
-        public Builder idpSsoUrl(String idpSsoUrl) {
-            this.idpSsoUrl = Objects.requireNonNull(idpSsoUrl);
+        public Builder idpSsoUrl(@Nullable String idpSsoUrl) {
+            this.idpSsoUrl = idpSsoUrl;
             return this;
         }
         @CustomType.Setter
-        public Builder includeSigningCertInSignature(Boolean includeSigningCertInSignature) {
-            this.includeSigningCertInSignature = Objects.requireNonNull(includeSigningCertInSignature);
+        public Builder includeSigningCertInSignature(@Nullable Boolean includeSigningCertInSignature) {
+            this.includeSigningCertInSignature = includeSigningCertInSignature;
             return this;
         }
         @CustomType.Setter
-        public Builder jitUserProvAssignedGroups(List<GetDomainsIdentityProviderJitUserProvAssignedGroup> jitUserProvAssignedGroups) {
-            this.jitUserProvAssignedGroups = Objects.requireNonNull(jitUserProvAssignedGroups);
+        public Builder jitUserProvAssignedGroups(@Nullable List<GetDomainsIdentityProviderJitUserProvAssignedGroup> jitUserProvAssignedGroups) {
+            this.jitUserProvAssignedGroups = jitUserProvAssignedGroups;
             return this;
         }
         public Builder jitUserProvAssignedGroups(GetDomainsIdentityProviderJitUserProvAssignedGroup... jitUserProvAssignedGroups) {
             return jitUserProvAssignedGroups(List.of(jitUserProvAssignedGroups));
         }
         @CustomType.Setter
-        public Builder jitUserProvAttributeUpdateEnabled(Boolean jitUserProvAttributeUpdateEnabled) {
-            this.jitUserProvAttributeUpdateEnabled = Objects.requireNonNull(jitUserProvAttributeUpdateEnabled);
+        public Builder jitUserProvAttributeUpdateEnabled(@Nullable Boolean jitUserProvAttributeUpdateEnabled) {
+            this.jitUserProvAttributeUpdateEnabled = jitUserProvAttributeUpdateEnabled;
             return this;
         }
         @CustomType.Setter
-        public Builder jitUserProvAttributes(List<GetDomainsIdentityProviderJitUserProvAttribute> jitUserProvAttributes) {
-            this.jitUserProvAttributes = Objects.requireNonNull(jitUserProvAttributes);
+        public Builder jitUserProvAttributes(@Nullable List<GetDomainsIdentityProviderJitUserProvAttribute> jitUserProvAttributes) {
+            this.jitUserProvAttributes = jitUserProvAttributes;
             return this;
         }
         public Builder jitUserProvAttributes(GetDomainsIdentityProviderJitUserProvAttribute... jitUserProvAttributes) {
             return jitUserProvAttributes(List.of(jitUserProvAttributes));
         }
         @CustomType.Setter
-        public Builder jitUserProvCreateUserEnabled(Boolean jitUserProvCreateUserEnabled) {
-            this.jitUserProvCreateUserEnabled = Objects.requireNonNull(jitUserProvCreateUserEnabled);
+        public Builder jitUserProvCreateUserEnabled(@Nullable Boolean jitUserProvCreateUserEnabled) {
+            this.jitUserProvCreateUserEnabled = jitUserProvCreateUserEnabled;
             return this;
         }
         @CustomType.Setter
-        public Builder jitUserProvEnabled(Boolean jitUserProvEnabled) {
-            this.jitUserProvEnabled = Objects.requireNonNull(jitUserProvEnabled);
+        public Builder jitUserProvEnabled(@Nullable Boolean jitUserProvEnabled) {
+            this.jitUserProvEnabled = jitUserProvEnabled;
             return this;
         }
         @CustomType.Setter
-        public Builder jitUserProvGroupAssertionAttributeEnabled(Boolean jitUserProvGroupAssertionAttributeEnabled) {
-            this.jitUserProvGroupAssertionAttributeEnabled = Objects.requireNonNull(jitUserProvGroupAssertionAttributeEnabled);
+        public Builder jitUserProvGroupAssertionAttributeEnabled(@Nullable Boolean jitUserProvGroupAssertionAttributeEnabled) {
+            this.jitUserProvGroupAssertionAttributeEnabled = jitUserProvGroupAssertionAttributeEnabled;
             return this;
         }
         @CustomType.Setter
-        public Builder jitUserProvGroupAssignmentMethod(String jitUserProvGroupAssignmentMethod) {
-            this.jitUserProvGroupAssignmentMethod = Objects.requireNonNull(jitUserProvGroupAssignmentMethod);
+        public Builder jitUserProvGroupAssignmentMethod(@Nullable String jitUserProvGroupAssignmentMethod) {
+            this.jitUserProvGroupAssignmentMethod = jitUserProvGroupAssignmentMethod;
             return this;
         }
         @CustomType.Setter
-        public Builder jitUserProvGroupMappingMode(String jitUserProvGroupMappingMode) {
-            this.jitUserProvGroupMappingMode = Objects.requireNonNull(jitUserProvGroupMappingMode);
+        public Builder jitUserProvGroupMappingMode(@Nullable String jitUserProvGroupMappingMode) {
+            this.jitUserProvGroupMappingMode = jitUserProvGroupMappingMode;
             return this;
         }
         @CustomType.Setter
-        public Builder jitUserProvGroupMappings(List<GetDomainsIdentityProviderJitUserProvGroupMapping> jitUserProvGroupMappings) {
-            this.jitUserProvGroupMappings = Objects.requireNonNull(jitUserProvGroupMappings);
+        public Builder jitUserProvGroupMappings(@Nullable List<GetDomainsIdentityProviderJitUserProvGroupMapping> jitUserProvGroupMappings) {
+            this.jitUserProvGroupMappings = jitUserProvGroupMappings;
             return this;
         }
         public Builder jitUserProvGroupMappings(GetDomainsIdentityProviderJitUserProvGroupMapping... jitUserProvGroupMappings) {
             return jitUserProvGroupMappings(List.of(jitUserProvGroupMappings));
         }
         @CustomType.Setter
-        public Builder jitUserProvGroupSamlAttributeName(String jitUserProvGroupSamlAttributeName) {
-            this.jitUserProvGroupSamlAttributeName = Objects.requireNonNull(jitUserProvGroupSamlAttributeName);
+        public Builder jitUserProvGroupSamlAttributeName(@Nullable String jitUserProvGroupSamlAttributeName) {
+            this.jitUserProvGroupSamlAttributeName = jitUserProvGroupSamlAttributeName;
             return this;
         }
         @CustomType.Setter
-        public Builder jitUserProvGroupStaticListEnabled(Boolean jitUserProvGroupStaticListEnabled) {
-            this.jitUserProvGroupStaticListEnabled = Objects.requireNonNull(jitUserProvGroupStaticListEnabled);
+        public Builder jitUserProvGroupStaticListEnabled(@Nullable Boolean jitUserProvGroupStaticListEnabled) {
+            this.jitUserProvGroupStaticListEnabled = jitUserProvGroupStaticListEnabled;
             return this;
         }
         @CustomType.Setter
-        public Builder jitUserProvIgnoreErrorOnAbsentGroups(Boolean jitUserProvIgnoreErrorOnAbsentGroups) {
-            this.jitUserProvIgnoreErrorOnAbsentGroups = Objects.requireNonNull(jitUserProvIgnoreErrorOnAbsentGroups);
+        public Builder jitUserProvIgnoreErrorOnAbsentGroups(@Nullable Boolean jitUserProvIgnoreErrorOnAbsentGroups) {
+            this.jitUserProvIgnoreErrorOnAbsentGroups = jitUserProvIgnoreErrorOnAbsentGroups;
             return this;
         }
         @CustomType.Setter
-        public Builder lastNotificationSentTime(String lastNotificationSentTime) {
-            this.lastNotificationSentTime = Objects.requireNonNull(lastNotificationSentTime);
+        public Builder lastNotificationSentTime(@Nullable String lastNotificationSentTime) {
+            this.lastNotificationSentTime = lastNotificationSentTime;
             return this;
         }
         @CustomType.Setter
-        public Builder logoutBinding(String logoutBinding) {
-            this.logoutBinding = Objects.requireNonNull(logoutBinding);
+        public Builder logoutBinding(@Nullable String logoutBinding) {
+            this.logoutBinding = logoutBinding;
             return this;
         }
         @CustomType.Setter
-        public Builder logoutEnabled(Boolean logoutEnabled) {
-            this.logoutEnabled = Objects.requireNonNull(logoutEnabled);
+        public Builder logoutEnabled(@Nullable Boolean logoutEnabled) {
+            this.logoutEnabled = logoutEnabled;
             return this;
         }
         @CustomType.Setter
-        public Builder logoutRequestUrl(String logoutRequestUrl) {
-            this.logoutRequestUrl = Objects.requireNonNull(logoutRequestUrl);
+        public Builder logoutRequestUrl(@Nullable String logoutRequestUrl) {
+            this.logoutRequestUrl = logoutRequestUrl;
             return this;
         }
         @CustomType.Setter
-        public Builder logoutResponseUrl(String logoutResponseUrl) {
-            this.logoutResponseUrl = Objects.requireNonNull(logoutResponseUrl);
+        public Builder logoutResponseUrl(@Nullable String logoutResponseUrl) {
+            this.logoutResponseUrl = logoutResponseUrl;
             return this;
         }
         @CustomType.Setter
-        public Builder metadata(String metadata) {
-            this.metadata = Objects.requireNonNull(metadata);
+        public Builder metadata(@Nullable String metadata) {
+            this.metadata = metadata;
             return this;
         }
         @CustomType.Setter
-        public Builder metas(List<GetDomainsIdentityProviderMeta> metas) {
-            this.metas = Objects.requireNonNull(metas);
+        public Builder metas(@Nullable List<GetDomainsIdentityProviderMeta> metas) {
+            this.metas = metas;
             return this;
         }
         public Builder metas(GetDomainsIdentityProviderMeta... metas) {
             return metas(List.of(metas));
         }
         @CustomType.Setter
-        public Builder nameIdFormat(String nameIdFormat) {
-            this.nameIdFormat = Objects.requireNonNull(nameIdFormat);
+        public Builder nameIdFormat(@Nullable String nameIdFormat) {
+            this.nameIdFormat = nameIdFormat;
             return this;
         }
         @CustomType.Setter
-        public Builder ocid(String ocid) {
-            this.ocid = Objects.requireNonNull(ocid);
+        public Builder ocid(@Nullable String ocid) {
+            this.ocid = ocid;
             return this;
         }
         @CustomType.Setter
-        public Builder partnerName(String partnerName) {
-            this.partnerName = Objects.requireNonNull(partnerName);
+        public Builder partnerName(@Nullable String partnerName) {
+            this.partnerName = partnerName;
             return this;
         }
         @CustomType.Setter
-        public Builder partnerProviderId(String partnerProviderId) {
-            this.partnerProviderId = Objects.requireNonNull(partnerProviderId);
+        public Builder partnerProviderId(@Nullable String partnerProviderId) {
+            this.partnerProviderId = partnerProviderId;
             return this;
         }
         @CustomType.Setter
-        public Builder requestedAuthenticationContexts(List<String> requestedAuthenticationContexts) {
-            this.requestedAuthenticationContexts = Objects.requireNonNull(requestedAuthenticationContexts);
+        public Builder requestedAuthenticationContexts(@Nullable List<String> requestedAuthenticationContexts) {
+            this.requestedAuthenticationContexts = requestedAuthenticationContexts;
             return this;
         }
         public Builder requestedAuthenticationContexts(String... requestedAuthenticationContexts) {
             return requestedAuthenticationContexts(List.of(requestedAuthenticationContexts));
         }
         @CustomType.Setter
-        public Builder requireForceAuthn(Boolean requireForceAuthn) {
-            this.requireForceAuthn = Objects.requireNonNull(requireForceAuthn);
+        public Builder requireForceAuthn(@Nullable Boolean requireForceAuthn) {
+            this.requireForceAuthn = requireForceAuthn;
             return this;
         }
         @CustomType.Setter
-        public Builder requiresEncryptedAssertion(Boolean requiresEncryptedAssertion) {
-            this.requiresEncryptedAssertion = Objects.requireNonNull(requiresEncryptedAssertion);
+        public Builder requiresEncryptedAssertion(@Nullable Boolean requiresEncryptedAssertion) {
+            this.requiresEncryptedAssertion = requiresEncryptedAssertion;
             return this;
         }
         @CustomType.Setter
@@ -1183,90 +1183,90 @@ public final class GetDomainsIdentityProviderResult {
             return this;
         }
         @CustomType.Setter
-        public Builder samlHoKrequired(Boolean samlHoKrequired) {
-            this.samlHoKrequired = Objects.requireNonNull(samlHoKrequired);
+        public Builder samlHoKrequired(@Nullable Boolean samlHoKrequired) {
+            this.samlHoKrequired = samlHoKrequired;
             return this;
         }
         @CustomType.Setter
-        public Builder schemas(List<String> schemas) {
-            this.schemas = Objects.requireNonNull(schemas);
+        public Builder schemas(@Nullable List<String> schemas) {
+            this.schemas = schemas;
             return this;
         }
         public Builder schemas(String... schemas) {
             return schemas(List.of(schemas));
         }
         @CustomType.Setter
-        public Builder serviceInstanceIdentifier(String serviceInstanceIdentifier) {
-            this.serviceInstanceIdentifier = Objects.requireNonNull(serviceInstanceIdentifier);
+        public Builder serviceInstanceIdentifier(@Nullable String serviceInstanceIdentifier) {
+            this.serviceInstanceIdentifier = serviceInstanceIdentifier;
             return this;
         }
         @CustomType.Setter
-        public Builder shownOnLoginPage(Boolean shownOnLoginPage) {
-            this.shownOnLoginPage = Objects.requireNonNull(shownOnLoginPage);
+        public Builder shownOnLoginPage(@Nullable Boolean shownOnLoginPage) {
+            this.shownOnLoginPage = shownOnLoginPage;
             return this;
         }
         @CustomType.Setter
-        public Builder signatureHashAlgorithm(String signatureHashAlgorithm) {
-            this.signatureHashAlgorithm = Objects.requireNonNull(signatureHashAlgorithm);
+        public Builder signatureHashAlgorithm(@Nullable String signatureHashAlgorithm) {
+            this.signatureHashAlgorithm = signatureHashAlgorithm;
             return this;
         }
         @CustomType.Setter
-        public Builder signingCertificate(String signingCertificate) {
-            this.signingCertificate = Objects.requireNonNull(signingCertificate);
+        public Builder signingCertificate(@Nullable String signingCertificate) {
+            this.signingCertificate = signingCertificate;
             return this;
         }
         @CustomType.Setter
-        public Builder succinctId(String succinctId) {
-            this.succinctId = Objects.requireNonNull(succinctId);
+        public Builder succinctId(@Nullable String succinctId) {
+            this.succinctId = succinctId;
             return this;
         }
         @CustomType.Setter
-        public Builder tags(List<GetDomainsIdentityProviderTag> tags) {
-            this.tags = Objects.requireNonNull(tags);
+        public Builder tags(@Nullable List<GetDomainsIdentityProviderTag> tags) {
+            this.tags = tags;
             return this;
         }
         public Builder tags(GetDomainsIdentityProviderTag... tags) {
             return tags(List.of(tags));
         }
         @CustomType.Setter
-        public Builder tenancyOcid(String tenancyOcid) {
-            this.tenancyOcid = Objects.requireNonNull(tenancyOcid);
+        public Builder tenancyOcid(@Nullable String tenancyOcid) {
+            this.tenancyOcid = tenancyOcid;
             return this;
         }
         @CustomType.Setter
-        public Builder tenantProviderId(String tenantProviderId) {
-            this.tenantProviderId = Objects.requireNonNull(tenantProviderId);
+        public Builder tenantProviderId(@Nullable String tenantProviderId) {
+            this.tenantProviderId = tenantProviderId;
             return this;
         }
         @CustomType.Setter
-        public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+        public Builder type(@Nullable String type) {
+            this.type = type;
             return this;
         }
         @CustomType.Setter
-        public Builder urnietfparamsscimschemasoracleidcsextensionsocialIdentityProviders(List<GetDomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionsocialIdentityProvider> urnietfparamsscimschemasoracleidcsextensionsocialIdentityProviders) {
-            this.urnietfparamsscimschemasoracleidcsextensionsocialIdentityProviders = Objects.requireNonNull(urnietfparamsscimschemasoracleidcsextensionsocialIdentityProviders);
+        public Builder urnietfparamsscimschemasoracleidcsextensionsocialIdentityProviders(@Nullable List<GetDomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionsocialIdentityProvider> urnietfparamsscimschemasoracleidcsextensionsocialIdentityProviders) {
+            this.urnietfparamsscimschemasoracleidcsextensionsocialIdentityProviders = urnietfparamsscimschemasoracleidcsextensionsocialIdentityProviders;
             return this;
         }
         public Builder urnietfparamsscimschemasoracleidcsextensionsocialIdentityProviders(GetDomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionsocialIdentityProvider... urnietfparamsscimschemasoracleidcsextensionsocialIdentityProviders) {
             return urnietfparamsscimschemasoracleidcsextensionsocialIdentityProviders(List.of(urnietfparamsscimschemasoracleidcsextensionsocialIdentityProviders));
         }
         @CustomType.Setter
-        public Builder urnietfparamsscimschemasoracleidcsextensionx509identityProviders(List<GetDomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProvider> urnietfparamsscimschemasoracleidcsextensionx509identityProviders) {
-            this.urnietfparamsscimschemasoracleidcsextensionx509identityProviders = Objects.requireNonNull(urnietfparamsscimschemasoracleidcsextensionx509identityProviders);
+        public Builder urnietfparamsscimschemasoracleidcsextensionx509identityProviders(@Nullable List<GetDomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProvider> urnietfparamsscimschemasoracleidcsextensionx509identityProviders) {
+            this.urnietfparamsscimschemasoracleidcsextensionx509identityProviders = urnietfparamsscimschemasoracleidcsextensionx509identityProviders;
             return this;
         }
         public Builder urnietfparamsscimschemasoracleidcsextensionx509identityProviders(GetDomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProvider... urnietfparamsscimschemasoracleidcsextensionx509identityProviders) {
             return urnietfparamsscimschemasoracleidcsextensionx509identityProviders(List.of(urnietfparamsscimschemasoracleidcsextensionx509identityProviders));
         }
         @CustomType.Setter
-        public Builder userMappingMethod(String userMappingMethod) {
-            this.userMappingMethod = Objects.requireNonNull(userMappingMethod);
+        public Builder userMappingMethod(@Nullable String userMappingMethod) {
+            this.userMappingMethod = userMappingMethod;
             return this;
         }
         @CustomType.Setter
-        public Builder userMappingStoreAttribute(String userMappingStoreAttribute) {
-            this.userMappingStoreAttribute = Objects.requireNonNull(userMappingStoreAttribute);
+        public Builder userMappingStoreAttribute(@Nullable String userMappingStoreAttribute) {
+            this.userMappingStoreAttribute = userMappingStoreAttribute;
             return this;
         }
         public GetDomainsIdentityProviderResult build() {

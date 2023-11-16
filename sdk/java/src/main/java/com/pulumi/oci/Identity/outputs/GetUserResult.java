@@ -11,6 +11,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetUserResult {
@@ -18,57 +20,57 @@ public final class GetUserResult {
      * @return Properties indicating how the user is allowed to authenticate.
      * 
      */
-    private List<GetUserCapability> capabilities;
+    private @Nullable List<GetUserCapability> capabilities;
     /**
      * @return The OCID of the tenancy containing the user.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return DB username of the DB credential. Has to be unique across the tenancy.
      * 
      */
-    private String dbUserName;
+    private @Nullable String dbUserName;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return The description you assign to the user. Does not have to be unique, and it&#39;s changeable.
      * 
      */
-    private String description;
+    private @Nullable String description;
     /**
      * @return The email address you assign to the user. The email address must be unique across all users in the tenancy.
      * 
      */
-    private String email;
+    private @Nullable String email;
     /**
      * @return Whether the email address has been validated.
      * 
      */
-    private Boolean emailVerified;
+    private @Nullable Boolean emailVerified;
     /**
      * @return Identifier of the user in the identity provider
      * 
      */
-    private String externalIdentifier;
+    private @Nullable String externalIdentifier;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return The OCID of the user.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The OCID of the `IdentityProvider` this user belongs to.
      * 
      */
-    private String identityProviderId;
+    private @Nullable String identityProviderId;
     /**
      * @return Returned only if the user&#39;s `lifecycleState` is INACTIVE. A 16-bit value showing the reason why the user is inactive:
      * * bit 0: SUSPENDED (reserved for future use)
@@ -76,32 +78,32 @@ public final class GetUserResult {
      * * bit 2: BLOCKED (the user has exceeded the maximum number of failed login attempts for the Console)
      * 
      */
-    private String inactiveState;
+    private @Nullable String inactiveState;
     /**
      * @return The date and time of when the user most recently logged in the format defined by RFC3339 (ex. `2016-08-25T21:10:29.600Z`). If there is no login history, this field is null.
      * 
      */
-    private String lastSuccessfulLoginTime;
+    private @Nullable String lastSuccessfulLoginTime;
     /**
      * @return The name you assign to the user during creation. This is the user&#39;s login for the Console. The name must be unique across all users in the tenancy and cannot be changed.
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return The date and time of when the user most recently logged in the format defined by RFC3339 (ex. `2016-08-25T21:10:29.600Z`). If there is no login history, this field is null.
      * 
      */
-    private String previousSuccessfulLoginTime;
+    private @Nullable String previousSuccessfulLoginTime;
     /**
      * @return The user&#39;s current state.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return Date and time the user was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     private String userId;
 
     private GetUserResult() {}
@@ -110,77 +112,77 @@ public final class GetUserResult {
      * 
      */
     public List<GetUserCapability> capabilities() {
-        return this.capabilities;
+        return this.capabilities == null ? List.of() : this.capabilities;
     }
     /**
      * @return The OCID of the tenancy containing the user.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return DB username of the DB credential. Has to be unique across the tenancy.
      * 
      */
-    public String dbUserName() {
-        return this.dbUserName;
+    public Optional<String> dbUserName() {
+        return Optional.ofNullable(this.dbUserName);
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return The description you assign to the user. Does not have to be unique, and it&#39;s changeable.
      * 
      */
-    public String description() {
-        return this.description;
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
     /**
      * @return The email address you assign to the user. The email address must be unique across all users in the tenancy.
      * 
      */
-    public String email() {
-        return this.email;
+    public Optional<String> email() {
+        return Optional.ofNullable(this.email);
     }
     /**
      * @return Whether the email address has been validated.
      * 
      */
-    public Boolean emailVerified() {
-        return this.emailVerified;
+    public Optional<Boolean> emailVerified() {
+        return Optional.ofNullable(this.emailVerified);
     }
     /**
      * @return Identifier of the user in the identity provider
      * 
      */
-    public String externalIdentifier() {
-        return this.externalIdentifier;
+    public Optional<String> externalIdentifier() {
+        return Optional.ofNullable(this.externalIdentifier);
     }
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return The OCID of the user.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The OCID of the `IdentityProvider` this user belongs to.
      * 
      */
-    public String identityProviderId() {
-        return this.identityProviderId;
+    public Optional<String> identityProviderId() {
+        return Optional.ofNullable(this.identityProviderId);
     }
     /**
      * @return Returned only if the user&#39;s `lifecycleState` is INACTIVE. A 16-bit value showing the reason why the user is inactive:
@@ -189,43 +191,43 @@ public final class GetUserResult {
      * * bit 2: BLOCKED (the user has exceeded the maximum number of failed login attempts for the Console)
      * 
      */
-    public String inactiveState() {
-        return this.inactiveState;
+    public Optional<String> inactiveState() {
+        return Optional.ofNullable(this.inactiveState);
     }
     /**
      * @return The date and time of when the user most recently logged in the format defined by RFC3339 (ex. `2016-08-25T21:10:29.600Z`). If there is no login history, this field is null.
      * 
      */
-    public String lastSuccessfulLoginTime() {
-        return this.lastSuccessfulLoginTime;
+    public Optional<String> lastSuccessfulLoginTime() {
+        return Optional.ofNullable(this.lastSuccessfulLoginTime);
     }
     /**
      * @return The name you assign to the user during creation. This is the user&#39;s login for the Console. The name must be unique across all users in the tenancy and cannot be changed.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return The date and time of when the user most recently logged in the format defined by RFC3339 (ex. `2016-08-25T21:10:29.600Z`). If there is no login history, this field is null.
      * 
      */
-    public String previousSuccessfulLoginTime() {
-        return this.previousSuccessfulLoginTime;
+    public Optional<String> previousSuccessfulLoginTime() {
+        return Optional.ofNullable(this.previousSuccessfulLoginTime);
     }
     /**
      * @return The user&#39;s current state.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return Date and time the user was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     public String userId() {
         return this.userId;
@@ -240,23 +242,23 @@ public final class GetUserResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetUserCapability> capabilities;
-        private String compartmentId;
-        private String dbUserName;
-        private Map<String,Object> definedTags;
-        private String description;
-        private String email;
-        private Boolean emailVerified;
-        private String externalIdentifier;
-        private Map<String,Object> freeformTags;
-        private String id;
-        private String identityProviderId;
-        private String inactiveState;
-        private String lastSuccessfulLoginTime;
-        private String name;
-        private String previousSuccessfulLoginTime;
-        private String state;
-        private String timeCreated;
+        private @Nullable List<GetUserCapability> capabilities;
+        private @Nullable String compartmentId;
+        private @Nullable String dbUserName;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String description;
+        private @Nullable String email;
+        private @Nullable Boolean emailVerified;
+        private @Nullable String externalIdentifier;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String id;
+        private @Nullable String identityProviderId;
+        private @Nullable String inactiveState;
+        private @Nullable String lastSuccessfulLoginTime;
+        private @Nullable String name;
+        private @Nullable String previousSuccessfulLoginTime;
+        private @Nullable String state;
+        private @Nullable String timeCreated;
         private String userId;
         public Builder() {}
         public Builder(GetUserResult defaults) {
@@ -282,91 +284,91 @@ public final class GetUserResult {
         }
 
         @CustomType.Setter
-        public Builder capabilities(List<GetUserCapability> capabilities) {
-            this.capabilities = Objects.requireNonNull(capabilities);
+        public Builder capabilities(@Nullable List<GetUserCapability> capabilities) {
+            this.capabilities = capabilities;
             return this;
         }
         public Builder capabilities(GetUserCapability... capabilities) {
             return capabilities(List.of(capabilities));
         }
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder dbUserName(String dbUserName) {
-            this.dbUserName = Objects.requireNonNull(dbUserName);
+        public Builder dbUserName(@Nullable String dbUserName) {
+            this.dbUserName = dbUserName;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+        public Builder description(@Nullable String description) {
+            this.description = description;
             return this;
         }
         @CustomType.Setter
-        public Builder email(String email) {
-            this.email = Objects.requireNonNull(email);
+        public Builder email(@Nullable String email) {
+            this.email = email;
             return this;
         }
         @CustomType.Setter
-        public Builder emailVerified(Boolean emailVerified) {
-            this.emailVerified = Objects.requireNonNull(emailVerified);
+        public Builder emailVerified(@Nullable Boolean emailVerified) {
+            this.emailVerified = emailVerified;
             return this;
         }
         @CustomType.Setter
-        public Builder externalIdentifier(String externalIdentifier) {
-            this.externalIdentifier = Objects.requireNonNull(externalIdentifier);
+        public Builder externalIdentifier(@Nullable String externalIdentifier) {
+            this.externalIdentifier = externalIdentifier;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder identityProviderId(String identityProviderId) {
-            this.identityProviderId = Objects.requireNonNull(identityProviderId);
+        public Builder identityProviderId(@Nullable String identityProviderId) {
+            this.identityProviderId = identityProviderId;
             return this;
         }
         @CustomType.Setter
-        public Builder inactiveState(String inactiveState) {
-            this.inactiveState = Objects.requireNonNull(inactiveState);
+        public Builder inactiveState(@Nullable String inactiveState) {
+            this.inactiveState = inactiveState;
             return this;
         }
         @CustomType.Setter
-        public Builder lastSuccessfulLoginTime(String lastSuccessfulLoginTime) {
-            this.lastSuccessfulLoginTime = Objects.requireNonNull(lastSuccessfulLoginTime);
+        public Builder lastSuccessfulLoginTime(@Nullable String lastSuccessfulLoginTime) {
+            this.lastSuccessfulLoginTime = lastSuccessfulLoginTime;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder previousSuccessfulLoginTime(String previousSuccessfulLoginTime) {
-            this.previousSuccessfulLoginTime = Objects.requireNonNull(previousSuccessfulLoginTime);
+        public Builder previousSuccessfulLoginTime(@Nullable String previousSuccessfulLoginTime) {
+            this.previousSuccessfulLoginTime = previousSuccessfulLoginTime;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter

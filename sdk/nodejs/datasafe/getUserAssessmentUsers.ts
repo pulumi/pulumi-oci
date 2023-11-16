@@ -176,7 +176,7 @@ export interface GetUserAssessmentUsersResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The OCID of the target database.
      */
@@ -206,7 +206,7 @@ export interface GetUserAssessmentUsersResult {
     /**
      * The list of users.
      */
-    readonly users: outputs.DataSafe.GetUserAssessmentUsersUser[];
+    readonly users?: outputs.DataSafe.GetUserAssessmentUsersUser[];
 }
 /**
  * This data source provides the list of User Assessment Users in Oracle Cloud Infrastructure Data Safe service.

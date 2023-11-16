@@ -75,11 +75,11 @@ export interface GetOdaInstancesResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The list of oda_instances.
      */
-    readonly odaInstances: outputs.Oda.GetOdaInstancesOdaInstance[];
+    readonly odaInstances?: outputs.Oda.GetOdaInstancesOdaInstance[];
     /**
      * The current state of the Digital Assistant instance.
      */

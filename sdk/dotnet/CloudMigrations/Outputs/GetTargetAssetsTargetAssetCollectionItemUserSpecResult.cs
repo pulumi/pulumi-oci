@@ -20,15 +20,15 @@ namespace Pulumi.Oci.CloudMigrations.Outputs
         /// <summary>
         /// The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
         /// </summary>
-        public readonly string AvailabilityDomain;
+        public readonly string? AvailabilityDomain;
         /// <summary>
         /// The OCID of the compute capacity reservation under which this instance is launched. You can opt out of all default reservations by specifying an empty string as input for this field. For more information, see [Capacity Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default).
         /// </summary>
-        public readonly string CapacityReservationId;
+        public readonly string? CapacityReservationId;
         /// <summary>
         /// The OCID of the compartment.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// Contains properties for a VNIC. You use this object when creating the primary VNIC during instance launch or when creating a secondary VNIC. For more information about VNICs, see [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
         /// </summary>
@@ -36,27 +36,27 @@ namespace Pulumi.Oci.CloudMigrations.Outputs
         /// <summary>
         /// The OCID of the dedicated VM host.
         /// </summary>
-        public readonly string DedicatedVmHostId;
+        public readonly string? DedicatedVmHostId;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// A filter to return only resources that match the entire given display name.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// A fault domain is a grouping of hardware and infrastructure within an availability domain. Each availability domain contains three fault domains. Fault domains lets you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or Compute hardware maintenance that affects one fault domain does not affect instances in other fault domains.
         /// </summary>
-        public readonly string FaultDomain;
+        public readonly string? FaultDomain;
         /// <summary>
         /// Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// Deprecated. Instead use `hostnameLabel` in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/). If you provide both, the values must match.
         /// </summary>
-        public readonly string HostnameLabel;
+        public readonly string? HostnameLabel;
         /// <summary>
         /// Optional mutable instance options
         /// </summary>
@@ -64,11 +64,11 @@ namespace Pulumi.Oci.CloudMigrations.Outputs
         /// <summary>
         /// This is an advanced option.
         /// </summary>
-        public readonly string IpxeScript;
+        public readonly string? IpxeScript;
         /// <summary>
         /// Whether to enable in-transit encryption for the data volume's paravirtualized attachment. This field applies to both block volumes and boot volumes. By default, the value is false.
         /// </summary>
-        public readonly bool IsPvEncryptionInTransitEnabled;
+        public readonly bool? IsPvEncryptionInTransitEnabled;
         /// <summary>
         /// Configuration options for preemptible instances.
         /// </summary>
@@ -76,7 +76,7 @@ namespace Pulumi.Oci.CloudMigrations.Outputs
         /// <summary>
         /// The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
         /// </summary>
-        public readonly string Shape;
+        public readonly string? Shape;
         /// <summary>
         /// The shape configuration requested for the instance.
         /// </summary>
@@ -87,35 +87,35 @@ namespace Pulumi.Oci.CloudMigrations.Outputs
         private GetTargetAssetsTargetAssetCollectionItemUserSpecResult(
             ImmutableArray<Outputs.GetTargetAssetsTargetAssetCollectionItemUserSpecAgentConfigResult> agentConfigs,
 
-            string availabilityDomain,
+            string? availabilityDomain,
 
-            string capacityReservationId,
+            string? capacityReservationId,
 
-            string compartmentId,
+            string? compartmentId,
 
             ImmutableArray<Outputs.GetTargetAssetsTargetAssetCollectionItemUserSpecCreateVnicDetailResult> createVnicDetails,
 
-            string dedicatedVmHostId,
+            string? dedicatedVmHostId,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string displayName,
+            string? displayName,
 
-            string faultDomain,
+            string? faultDomain,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string hostnameLabel,
+            string? hostnameLabel,
 
             ImmutableArray<Outputs.GetTargetAssetsTargetAssetCollectionItemUserSpecInstanceOptionResult> instanceOptions,
 
-            string ipxeScript,
+            string? ipxeScript,
 
-            bool isPvEncryptionInTransitEnabled,
+            bool? isPvEncryptionInTransitEnabled,
 
             ImmutableArray<Outputs.GetTargetAssetsTargetAssetCollectionItemUserSpecPreemptibleInstanceConfigResult> preemptibleInstanceConfigs,
 
-            string shape,
+            string? shape,
 
             ImmutableArray<Outputs.GetTargetAssetsTargetAssetCollectionItemUserSpecShapeConfigResult> shapeConfigs,
 

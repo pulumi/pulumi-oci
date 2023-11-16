@@ -78,43 +78,43 @@ export class Repository extends pulumi.CustomResource {
     /**
      * The count of the branches present in the repository.
      */
-    public /*out*/ readonly branchCount!: pulumi.Output<number>;
+    public /*out*/ readonly branchCount!: pulumi.Output<number | undefined>;
     /**
      * The count of the commits present in the repository.
      */
-    public /*out*/ readonly commitCount!: pulumi.Output<number>;
+    public /*out*/ readonly commitCount!: pulumi.Output<number | undefined>;
     /**
      * The OCID of the repository's compartment.
      */
-    public /*out*/ readonly compartmentId!: pulumi.Output<string>;
+    public /*out*/ readonly compartmentId!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The default branch of the repository.
      */
-    public readonly defaultBranch!: pulumi.Output<string>;
+    public readonly defaultBranch!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) Details of the repository. Avoid entering confidential information.
      */
-    public readonly description!: pulumi.Output<string>;
+    public readonly description!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * HTTP URL that you use to git clone, pull and push.
      */
-    public /*out*/ readonly httpUrl!: pulumi.Output<string>;
+    public /*out*/ readonly httpUrl!: pulumi.Output<string | undefined>;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
-    public /*out*/ readonly lifecyleDetails!: pulumi.Output<string>;
+    public /*out*/ readonly lifecyleDetails!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Configuration information for mirroring the repository.
      */
-    public readonly mirrorRepositoryConfig!: pulumi.Output<outputs.DevOps.RepositoryMirrorRepositoryConfig>;
+    public readonly mirrorRepositoryConfig!: pulumi.Output<outputs.DevOps.RepositoryMirrorRepositoryConfig | undefined>;
     /**
      * (Updatable) Unique name of a repository.
      */
@@ -122,7 +122,7 @@ export class Repository extends pulumi.CustomResource {
     /**
      * Tenancy unique namespace.
      */
-    public /*out*/ readonly namespace!: pulumi.Output<string>;
+    public /*out*/ readonly namespace!: pulumi.Output<string | undefined>;
     /**
      * The OCID of the DevOps project containing the repository.
      */
@@ -130,7 +130,7 @@ export class Repository extends pulumi.CustomResource {
     /**
      * Unique project name in a namespace.
      */
-    public /*out*/ readonly projectName!: pulumi.Output<string>;
+    public /*out*/ readonly projectName!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Type of repository. Allowed values:  `MIRRORED`  `HOSTED` 
      *
@@ -142,31 +142,31 @@ export class Repository extends pulumi.CustomResource {
     /**
      * The size of the repository in bytes.
      */
-    public /*out*/ readonly sizeInBytes!: pulumi.Output<string>;
+    public /*out*/ readonly sizeInBytes!: pulumi.Output<string | undefined>;
     /**
      * SSH URL that you use to git clone, pull and push.
      */
-    public /*out*/ readonly sshUrl!: pulumi.Output<string>;
+    public /*out*/ readonly sshUrl!: pulumi.Output<string | undefined>;
     /**
      * The current state of the repository.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any}>;
+    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * The time the repository was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * The time the repository was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    public /*out*/ readonly timeUpdated!: pulumi.Output<string | undefined>;
     /**
      * Trigger build events supported for this repository: PUSH - Build is triggered when a push event occurs. COMMIT_UPDATES - Build is triggered when new commits are mirrored into a repository.
      */
-    public /*out*/ readonly triggerBuildEvents!: pulumi.Output<string[]>;
+    public /*out*/ readonly triggerBuildEvents!: pulumi.Output<string[] | undefined>;
 
     /**
      * Create a Repository resource with the given unique name, arguments, and options.

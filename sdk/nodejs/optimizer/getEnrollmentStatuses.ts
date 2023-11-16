@@ -65,12 +65,12 @@ export interface GetEnrollmentStatusesResult {
     /**
      * The list of enrollment_status_collection.
      */
-    readonly enrollmentStatusCollections: outputs.Optimizer.GetEnrollmentStatusesEnrollmentStatusCollection[];
+    readonly enrollmentStatusCollections?: outputs.Optimizer.GetEnrollmentStatusesEnrollmentStatusCollection[];
     readonly filters?: outputs.Optimizer.GetEnrollmentStatusesFilter[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The enrollment status' current state.
      */

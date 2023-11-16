@@ -116,7 +116,7 @@ export class MaskingPoliciesMaskingColumn extends pulumi.CustomResource {
     /**
      * An array of child columns that are in referential relationship with the masking column.
      */
-    public /*out*/ readonly childColumns!: pulumi.Output<string[]>;
+    public /*out*/ readonly childColumns!: pulumi.Output<string[] | undefined>;
     /**
      * (Updatable) The name of the substitution column.
      */
@@ -124,27 +124,27 @@ export class MaskingPoliciesMaskingColumn extends pulumi.CustomResource {
     /**
      * The data type of the masking column.
      */
-    public /*out*/ readonly dataType!: pulumi.Output<string>;
+    public /*out*/ readonly dataType!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Indicates whether data masking is enabled for the masking column. Set it to false if  you don't want to mask the column.
      */
-    public readonly isMaskingEnabled!: pulumi.Output<boolean>;
+    public readonly isMaskingEnabled!: pulumi.Output<boolean | undefined>;
     /**
      * The unique key that identifies the masking column. It's numeric and unique within a masking policy.
      */
-    public /*out*/ readonly key!: pulumi.Output<string>;
+    public /*out*/ readonly key!: pulumi.Output<string | undefined>;
     /**
      * Details about the current state of the masking column.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The group of the masking column. It's a masking group identifier and can be any string  of acceptable length. All the columns in a group are masked together to ensure that  the masked data across these columns continue to retain the same logical relationship.  For more details, check  <a href=https://docs.oracle.com/en/cloud/paas/data-safe/udscs/group-masking1.html#GUID-755056B9-9540-48C0-9491-262A44A85037>Group Masking in the Data Safe documentation.</a>
      */
-    public readonly maskingColumnGroup!: pulumi.Output<string>;
+    public readonly maskingColumnGroup!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The masking formats to be assigned to the masking column. You can specify a condition  as part of each masking format. It enables you to do  <a href="https://docs.oracle.com/en/cloud/paas/data-safe/udscs/conditional-masking.html">conditional masking</a>  so that you can mask the column data values differently using different masking  formats and the associated conditions. A masking format can have one or more format  entries. The combined output of all the format entries is used for masking. It  provides the flexibility to define a masking format that can generate different parts  of a data value separately and then combine them to get the final data value for masking.
      */
-    public readonly maskingFormats!: pulumi.Output<outputs.DataSafe.MaskingPoliciesMaskingColumnMaskingFormat[]>;
+    public readonly maskingFormats!: pulumi.Output<outputs.DataSafe.MaskingPoliciesMaskingColumnMaskingFormat[] | undefined>;
     /**
      * The OCID of the masking policy.
      */
@@ -156,7 +156,7 @@ export class MaskingPoliciesMaskingColumn extends pulumi.CustomResource {
     /**
      * (Updatable) The type of the object that contains the database column.
      */
-    public readonly objectType!: pulumi.Output<string>;
+    public readonly objectType!: pulumi.Output<string | undefined>;
     /**
      * The name of the schema that contains the database column. This attribute cannot be updated for an existing masking column.
      */
@@ -168,19 +168,19 @@ export class MaskingPoliciesMaskingColumn extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly sensitiveTypeId!: pulumi.Output<string>;
+    public readonly sensitiveTypeId!: pulumi.Output<string | undefined>;
     /**
      * The current state of the masking column.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * The date and time the masking column was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * The date and time the masking column was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    public /*out*/ readonly timeUpdated!: pulumi.Output<string | undefined>;
 
     /**
      * Create a MaskingPoliciesMaskingColumn resource with the given unique name, arguments, and options.

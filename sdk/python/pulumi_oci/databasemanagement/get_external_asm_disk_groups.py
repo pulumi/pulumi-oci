@@ -39,10 +39,7 @@ class GetExternalAsmDiskGroupsResult:
 
     @property
     @pulumi.getter(name="externalAsmDiskGroupCollections")
-    def external_asm_disk_group_collections(self) -> Sequence['outputs.GetExternalAsmDiskGroupsExternalAsmDiskGroupCollectionResult']:
-        """
-        The list of external_asm_disk_group_collection.
-        """
+    def external_asm_disk_group_collections(self) -> Optional[Sequence['outputs.GetExternalAsmDiskGroupsExternalAsmDiskGroupCollectionResult']]:
         return pulumi.get(self, "external_asm_disk_group_collections")
 
     @property
@@ -57,7 +54,7 @@ class GetExternalAsmDiskGroupsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -80,21 +77,7 @@ def get_external_asm_disk_groups(external_asm_id: Optional[str] = None,
                                  filters: Optional[Sequence[pulumi.InputType['GetExternalAsmDiskGroupsFilterArgs']]] = None,
                                  opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetExternalAsmDiskGroupsResult:
     """
-    This data source provides the list of External Asm Disk Groups in Oracle Cloud Infrastructure Database Management service.
-
-    Lists ASM disk groups for the external ASM specified by `externalAsmId`.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_external_asm_disk_groups = oci.DatabaseManagement.get_external_asm_disk_groups(external_asm_id=oci_database_management_external_asm["test_external_asm"]["id"])
-    ```
-
-
-    :param str external_asm_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external ASM.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['externalAsmId'] = external_asm_id
@@ -114,20 +97,6 @@ def get_external_asm_disk_groups_output(external_asm_id: Optional[pulumi.Input[s
                                         filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetExternalAsmDiskGroupsFilterArgs']]]]] = None,
                                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetExternalAsmDiskGroupsResult]:
     """
-    This data source provides the list of External Asm Disk Groups in Oracle Cloud Infrastructure Database Management service.
-
-    Lists ASM disk groups for the external ASM specified by `externalAsmId`.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_external_asm_disk_groups = oci.DatabaseManagement.get_external_asm_disk_groups(external_asm_id=oci_database_management_external_asm["test_external_asm"]["id"])
-    ```
-
-
-    :param str external_asm_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external ASM.
+    Use this data source to access information about an existing resource.
     """
     ...

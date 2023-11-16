@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Monitored Resource Types in Oracle Cloud Infrastructure Stack Monitoring service.
@@ -91,8 +90,8 @@ type GetMonitoredResourceTypesResult struct {
 	Fields        []string                          `pulumi:"fields"`
 	Filters       []GetMonitoredResourceTypesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id                   string `pulumi:"id"`
-	IsExcludeSystemTypes *bool  `pulumi:"isExcludeSystemTypes"`
+	Id                   *string `pulumi:"id"`
+	IsExcludeSystemTypes *bool   `pulumi:"isExcludeSystemTypes"`
 	// Metric namespace for resource type.
 	MetricNamespace *string `pulumi:"metricNamespace"`
 	// The list of monitored_resource_types_collection.
@@ -155,12 +154,6 @@ func (o GetMonitoredResourceTypesResultOutput) ToGetMonitoredResourceTypesResult
 	return o
 }
 
-func (o GetMonitoredResourceTypesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetMonitoredResourceTypesResult] {
-	return pulumix.Output[GetMonitoredResourceTypesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy containing the resource type.
 func (o GetMonitoredResourceTypesResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMonitoredResourceTypesResult) string { return v.CompartmentId }).(pulumi.StringOutput)
@@ -179,8 +172,8 @@ func (o GetMonitoredResourceTypesResultOutput) Filters() GetMonitoredResourceTyp
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetMonitoredResourceTypesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMonitoredResourceTypesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetMonitoredResourceTypesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTypesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetMonitoredResourceTypesResultOutput) IsExcludeSystemTypes() pulumi.BoolPtrOutput {

@@ -140,7 +140,7 @@ namespace Pulumi.Oci.OspGateway
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         public readonly string OspHomeRegion;
         /// <summary>
         /// The list of subscription_collection.
@@ -153,7 +153,7 @@ namespace Pulumi.Oci.OspGateway
 
             ImmutableArray<Outputs.GetSubscriptionsFilterResult> filters,
 
-            string id,
+            string? id,
 
             string ospHomeRegion,
 

@@ -53,22 +53,22 @@ export interface GetOsnResult {
     /**
      * Availability Domain of OSN
      */
-    readonly ad: string;
+    readonly ad?: string;
     readonly blockchainPlatformId: string;
-    readonly id: string;
+    readonly id?: string;
     /**
      * OCPU allocation parameter
      */
-    readonly ocpuAllocationParams: outputs.Blockchain.GetOsnOcpuAllocationParam[];
+    readonly ocpuAllocationParams?: outputs.Blockchain.GetOsnOcpuAllocationParam[];
     readonly osnId: string;
     /**
      * OSN identifier
      */
-    readonly osnKey: string;
+    readonly osnKey?: string;
     /**
      * The current state of the OSN.
      */
-    readonly state: string;
+    readonly state?: string;
 }
 /**
  * This data source provides details about a specific Osn resource in Oracle Cloud Infrastructure Blockchain service.

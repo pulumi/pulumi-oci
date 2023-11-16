@@ -70,122 +70,77 @@ class GetPublicIpResult:
 
     @property
     @pulumi.getter(name="assignedEntityId")
-    def assigned_entity_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the entity the public IP is assigned to, or in the process of being assigned to.
-        """
+    def assigned_entity_id(self) -> Optional[str]:
         return pulumi.get(self, "assigned_entity_id")
 
     @property
     @pulumi.getter(name="assignedEntityType")
-    def assigned_entity_type(self) -> str:
-        """
-        The type of entity the public IP is assigned to, or in the process of being assigned to.
-        """
+    def assigned_entity_type(self) -> Optional[str]:
         return pulumi.get(self, "assigned_entity_type")
 
     @property
     @pulumi.getter(name="availabilityDomain")
-    def availability_domain(self) -> str:
-        """
-        The public IP's availability domain. This property is set only for ephemeral public IPs that are assigned to a private IP (that is, when the `scope` of the public IP is set to AVAILABILITY_DOMAIN). The value is the availability domain of the assigned private IP.  Example: `Uocm:PHX-AD-1`
-        """
+    def availability_domain(self) -> Optional[str]:
         return pulumi.get(self, "availability_domain")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the public IP. For an ephemeral public IP, this is the compartment of its assigned entity (which can be a private IP or a regional entity such as a NAT gateway). For a reserved public IP that is currently assigned, its compartment can be different from the assigned private IP's.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The public IP's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="ipAddress")
-    def ip_address(self) -> str:
-        """
-        The public IP address of the `publicIp` object.  Example: `203.0.113.2`
-        """
+    def ip_address(self) -> Optional[str]:
         return pulumi.get(self, "ip_address")
 
     @property
     @pulumi.getter
-    def lifetime(self) -> str:
-        """
-        Defines when the public IP is deleted and released back to Oracle's public IP pool.
-        """
+    def lifetime(self) -> Optional[str]:
         return pulumi.get(self, "lifetime")
 
     @property
     @pulumi.getter(name="privateIpId")
-    def private_ip_id(self) -> str:
-        """
-        Deprecated. Use `assignedEntityId` instead.
-        """
+    def private_ip_id(self) -> Optional[str]:
         return pulumi.get(self, "private_ip_id")
 
     @property
     @pulumi.getter(name="publicIpPoolId")
-    def public_ip_pool_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pool object created in the current tenancy.
-        """
+    def public_ip_pool_id(self) -> Optional[str]:
         return pulumi.get(self, "public_ip_pool_id")
 
     @property
     @pulumi.getter
-    def scope(self) -> str:
-        """
-        Whether the public IP is regional or specific to a particular availability domain.
-        """
+    def scope(self) -> Optional[str]:
         return pulumi.get(self, "scope")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The public IP's current state.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the public IP was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
 
@@ -217,47 +172,7 @@ def get_public_ip(id: Optional[str] = None,
                   private_ip_id: Optional[str] = None,
                   opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetPublicIpResult:
     """
-    This data source provides details about a specific Public Ip resource in Oracle Cloud Infrastructure Core service.
-
-    Gets the specified public IP. You must specify the object's [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-
-    Alternatively, you can get the object by using [GetPublicIpByIpAddress](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PublicIp/GetPublicIpByIpAddress)
-    with the public IP address (for example, 203.0.113.2).
-
-    Or you can use [GetPublicIpByPrivateIpId](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PublicIp/GetPublicIpByPrivateIpId)
-    with the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private IP that the public IP is assigned to.
-
-    **Note:** If you're fetching a reserved public IP that is in the process of being
-    moved to a different private IP, the service returns the public IP object with
-    `lifecycleState` = ASSIGNING and `assignedEntityId` = [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target private IP.
-
-    ## Example Usage
-    ### Get a public ip by public ip id
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_oci_core_public_ip_by_id = oci.Core.get_public_ip(id=var["test_public_ip_id"])
-    ```
-    ### Get a public ip by private ip id
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_oci_core_public_ip_by_private_ip_id = oci.Core.get_public_ip(private_ip_id=var["test_public_ip_private_ip_id"])
-    ```
-    ### Get a public ip by public ip address
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_oci_core_public_ip_by_ip = oci.Core.get_public_ip(ip_address=var["test_public_ip_ip_address"])
-    ```
-
-
-    :param str id: The OCID of the public IP.
-    :param str ip_address: Gets the public IP based on the public IP address (for example, 129.146.2.1).
-    :param str private_ip_id: Gets the public IP assigned to the specified private IP. You must specify the OCID of the private IP. If no public IP is assigned, a 404 is returned.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['id'] = id
@@ -290,46 +205,6 @@ def get_public_ip_output(id: Optional[pulumi.Input[Optional[str]]] = None,
                          private_ip_id: Optional[pulumi.Input[Optional[str]]] = None,
                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetPublicIpResult]:
     """
-    This data source provides details about a specific Public Ip resource in Oracle Cloud Infrastructure Core service.
-
-    Gets the specified public IP. You must specify the object's [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-
-    Alternatively, you can get the object by using [GetPublicIpByIpAddress](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PublicIp/GetPublicIpByIpAddress)
-    with the public IP address (for example, 203.0.113.2).
-
-    Or you can use [GetPublicIpByPrivateIpId](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PublicIp/GetPublicIpByPrivateIpId)
-    with the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private IP that the public IP is assigned to.
-
-    **Note:** If you're fetching a reserved public IP that is in the process of being
-    moved to a different private IP, the service returns the public IP object with
-    `lifecycleState` = ASSIGNING and `assignedEntityId` = [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target private IP.
-
-    ## Example Usage
-    ### Get a public ip by public ip id
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_oci_core_public_ip_by_id = oci.Core.get_public_ip(id=var["test_public_ip_id"])
-    ```
-    ### Get a public ip by private ip id
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_oci_core_public_ip_by_private_ip_id = oci.Core.get_public_ip(private_ip_id=var["test_public_ip_private_ip_id"])
-    ```
-    ### Get a public ip by public ip address
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_oci_core_public_ip_by_ip = oci.Core.get_public_ip(ip_address=var["test_public_ip_ip_address"])
-    ```
-
-
-    :param str id: The OCID of the public IP.
-    :param str ip_address: Gets the public IP based on the public IP address (for example, 129.146.2.1).
-    :param str private_ip_id: Gets the public IP assigned to the specified private IP. You must specify the OCID of the private IP. If no public IP is assigned, a 404 is returned.
+    Use this data source to access information about an existing resource.
     """
     ...

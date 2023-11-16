@@ -16,29 +16,29 @@ namespace Pulumi.Oci.Limits.Outputs
         /// <summary>
         /// A message added by the lock creator. The message typically gives an indication of why the resource is locked.
         /// </summary>
-        public readonly string Message;
+        public readonly string? Message;
         /// <summary>
         /// The resource ID that is locking this resource. Indicates that deleting this resource removes the lock.
         /// </summary>
-        public readonly string RelatedResourceId;
+        public readonly string? RelatedResourceId;
         /// <summary>
         /// Date and time the quota was created, in the format defined by RFC 3339. Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// Lock type.
         /// </summary>
-        public readonly string Type;
+        public readonly string? Type;
 
         [OutputConstructor]
         private GetQuotaLockResult(
-            string message,
+            string? message,
 
-            string relatedResourceId,
+            string? relatedResourceId,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string type)
+            string? type)
         {
             Message = message;
             RelatedResourceId = relatedResourceId;

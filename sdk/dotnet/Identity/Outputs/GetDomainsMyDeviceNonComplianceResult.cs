@@ -16,23 +16,23 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// Device Compliance Action
         /// </summary>
-        public readonly string Action;
+        public readonly string? Action;
         /// <summary>
         /// Device Compliance name
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// The identifier of the user
         /// </summary>
-        public readonly string Value;
+        public readonly string? Value;
 
         [OutputConstructor]
         private GetDomainsMyDeviceNonComplianceResult(
-            string action,
+            string? action,
 
-            string name,
+            string? name,
 
-            string value)
+            string? value)
         {
             Action = action;
             Name = name;

@@ -16,50 +16,50 @@ namespace Pulumi.Oci.LogAnalytics.Outputs
         /// <summary>
         /// if true, purge child compartments data
         /// </summary>
-        public readonly bool CompartmentIdInSubtree;
+        public readonly bool? CompartmentIdInSubtree;
         /// <summary>
         /// the type of the log data to be purged
         /// </summary>
-        public readonly string DataType;
+        public readonly string? DataType;
         public readonly ImmutableArray<Outputs.GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionResult> MetricExtractions;
         /// <summary>
         /// the compartment OCID under which the data will be purged
         /// </summary>
-        public readonly string PurgeCompartmentId;
+        public readonly string? PurgeCompartmentId;
         /// <summary>
         /// The duration of data to be retained, which is used to calculate the timeDataEnded when the task fires. The value should be negative. Purge duration in ISO 8601 extended format as described in https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. -P365D (not -P1Y) or -P14D (not -P2W).
         /// </summary>
-        public readonly string PurgeDuration;
+        public readonly string? PurgeDuration;
         /// <summary>
         /// Purge query string.
         /// </summary>
-        public readonly string QueryString;
+        public readonly string? QueryString;
         /// <summary>
         /// The ManagementSavedSearch id [OCID] utilized in the action.
         /// </summary>
-        public readonly string SavedSearchId;
+        public readonly string? SavedSearchId;
         /// <summary>
         /// Schedule type discriminator.
         /// </summary>
-        public readonly string Type;
+        public readonly string? Type;
 
         [OutputConstructor]
         private GetNamespaceScheduledTasksScheduledTaskCollectionItemActionResult(
-            bool compartmentIdInSubtree,
+            bool? compartmentIdInSubtree,
 
-            string dataType,
+            string? dataType,
 
             ImmutableArray<Outputs.GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionResult> metricExtractions,
 
-            string purgeCompartmentId,
+            string? purgeCompartmentId,
 
-            string purgeDuration,
+            string? purgeDuration,
 
-            string queryString,
+            string? queryString,
 
-            string savedSearchId,
+            string? savedSearchId,
 
-            string type)
+            string? type)
         {
             CompartmentIdInSubtree = compartmentIdInSubtree;
             DataType = dataType;

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Sdm Masking Policy Difference Difference Column resource in Oracle Cloud Infrastructure Data Safe service.
@@ -63,31 +62,31 @@ type GetSdmMaskingPolicyDifferenceDifferenceColumnArgs struct {
 // A collection of values returned by getSdmMaskingPolicyDifferenceDifferenceColumn.
 type GetSdmMaskingPolicyDifferenceDifferenceColumnResult struct {
 	// The name of the difference column.
-	ColumnName          string `pulumi:"columnName"`
-	DifferenceColumnKey string `pulumi:"differenceColumnKey"`
+	ColumnName          *string `pulumi:"columnName"`
+	DifferenceColumnKey string  `pulumi:"differenceColumnKey"`
 	// The type of the SDM masking policy difference column. It can be one of the following three types: NEW: A new sensitive column in the sensitive data model that is not in the masking policy. DELETED: A column that is present in the masking policy but has been deleted from the sensitive data model. MODIFIED: A column that is present in the masking policy as well as the sensitive data model but some of its attributes have been modified.
-	DifferenceType string `pulumi:"differenceType"`
+	DifferenceType *string `pulumi:"differenceType"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The unique key that identifies the SDM masking policy difference column.
-	Key string `pulumi:"key"`
+	Key *string `pulumi:"key"`
 	// The unique key that identifies the masking column represented by the SDM masking policy difference column.
-	MaskingColumnkey string `pulumi:"maskingColumnkey"`
+	MaskingColumnkey *string `pulumi:"maskingColumnkey"`
 	// The database object that contains the difference column.
-	Object string `pulumi:"object"`
+	Object *string `pulumi:"object"`
 	// Specifies how to process the difference column. It's set to SYNC by default. Use the PatchSdmMaskingPolicyDifferenceColumns operation to update this attribute. You can choose one of the following options: SYNC: To sync the difference column and update the masking policy to reflect the changes. NO_SYNC: To not sync the difference column so that it doesn't change the masking policy. After specifying the planned action, you can use the ApplySdmMaskingPolicyDifference operation to automatically process the difference columns.
-	PlannedAction string `pulumi:"plannedAction"`
+	PlannedAction *string `pulumi:"plannedAction"`
 	// The database schema that contains the difference column.
-	SchemaName                   string `pulumi:"schemaName"`
-	SdmMaskingPolicyDifferenceId string `pulumi:"sdmMaskingPolicyDifferenceId"`
+	SchemaName                   *string `pulumi:"schemaName"`
+	SdmMaskingPolicyDifferenceId string  `pulumi:"sdmMaskingPolicyDifferenceId"`
 	// The unique key that identifies the sensitive column represented by the SDM masking policy difference column.
-	SensitiveColumnkey string `pulumi:"sensitiveColumnkey"`
+	SensitiveColumnkey *string `pulumi:"sensitiveColumnkey"`
 	// The OCID of the sensitive type associated with the difference column.
-	SensitiveTypeId string `pulumi:"sensitiveTypeId"`
+	SensitiveTypeId *string `pulumi:"sensitiveTypeId"`
 	// Indicates if the difference column has been processed. Use GetDifferenceColumn operation to  track whether the difference column has already been processed and applied to the masking policy.
-	SyncStatus string `pulumi:"syncStatus"`
+	SyncStatus *string `pulumi:"syncStatus"`
 	// The date and time the SDM masking policy difference column was last synced, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-	TimeLastSynced string `pulumi:"timeLastSynced"`
+	TimeLastSynced *string `pulumi:"timeLastSynced"`
 }
 
 func GetSdmMaskingPolicyDifferenceDifferenceColumnOutput(ctx *pulumi.Context, args GetSdmMaskingPolicyDifferenceDifferenceColumnOutputArgs, opts ...pulumi.InvokeOption) GetSdmMaskingPolicyDifferenceDifferenceColumnResultOutput {
@@ -130,15 +129,9 @@ func (o GetSdmMaskingPolicyDifferenceDifferenceColumnResultOutput) ToGetSdmMaski
 	return o
 }
 
-func (o GetSdmMaskingPolicyDifferenceDifferenceColumnResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetSdmMaskingPolicyDifferenceDifferenceColumnResult] {
-	return pulumix.Output[GetSdmMaskingPolicyDifferenceDifferenceColumnResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The name of the difference column.
-func (o GetSdmMaskingPolicyDifferenceDifferenceColumnResultOutput) ColumnName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSdmMaskingPolicyDifferenceDifferenceColumnResult) string { return v.ColumnName }).(pulumi.StringOutput)
+func (o GetSdmMaskingPolicyDifferenceDifferenceColumnResultOutput) ColumnName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSdmMaskingPolicyDifferenceDifferenceColumnResult) *string { return v.ColumnName }).(pulumi.StringPtrOutput)
 }
 
 func (o GetSdmMaskingPolicyDifferenceDifferenceColumnResultOutput) DifferenceColumnKey() pulumi.StringOutput {
@@ -146,38 +139,38 @@ func (o GetSdmMaskingPolicyDifferenceDifferenceColumnResultOutput) DifferenceCol
 }
 
 // The type of the SDM masking policy difference column. It can be one of the following three types: NEW: A new sensitive column in the sensitive data model that is not in the masking policy. DELETED: A column that is present in the masking policy but has been deleted from the sensitive data model. MODIFIED: A column that is present in the masking policy as well as the sensitive data model but some of its attributes have been modified.
-func (o GetSdmMaskingPolicyDifferenceDifferenceColumnResultOutput) DifferenceType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSdmMaskingPolicyDifferenceDifferenceColumnResult) string { return v.DifferenceType }).(pulumi.StringOutput)
+func (o GetSdmMaskingPolicyDifferenceDifferenceColumnResultOutput) DifferenceType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSdmMaskingPolicyDifferenceDifferenceColumnResult) *string { return v.DifferenceType }).(pulumi.StringPtrOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetSdmMaskingPolicyDifferenceDifferenceColumnResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSdmMaskingPolicyDifferenceDifferenceColumnResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetSdmMaskingPolicyDifferenceDifferenceColumnResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSdmMaskingPolicyDifferenceDifferenceColumnResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The unique key that identifies the SDM masking policy difference column.
-func (o GetSdmMaskingPolicyDifferenceDifferenceColumnResultOutput) Key() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSdmMaskingPolicyDifferenceDifferenceColumnResult) string { return v.Key }).(pulumi.StringOutput)
+func (o GetSdmMaskingPolicyDifferenceDifferenceColumnResultOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSdmMaskingPolicyDifferenceDifferenceColumnResult) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
 // The unique key that identifies the masking column represented by the SDM masking policy difference column.
-func (o GetSdmMaskingPolicyDifferenceDifferenceColumnResultOutput) MaskingColumnkey() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSdmMaskingPolicyDifferenceDifferenceColumnResult) string { return v.MaskingColumnkey }).(pulumi.StringOutput)
+func (o GetSdmMaskingPolicyDifferenceDifferenceColumnResultOutput) MaskingColumnkey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSdmMaskingPolicyDifferenceDifferenceColumnResult) *string { return v.MaskingColumnkey }).(pulumi.StringPtrOutput)
 }
 
 // The database object that contains the difference column.
-func (o GetSdmMaskingPolicyDifferenceDifferenceColumnResultOutput) Object() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSdmMaskingPolicyDifferenceDifferenceColumnResult) string { return v.Object }).(pulumi.StringOutput)
+func (o GetSdmMaskingPolicyDifferenceDifferenceColumnResultOutput) Object() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSdmMaskingPolicyDifferenceDifferenceColumnResult) *string { return v.Object }).(pulumi.StringPtrOutput)
 }
 
 // Specifies how to process the difference column. It's set to SYNC by default. Use the PatchSdmMaskingPolicyDifferenceColumns operation to update this attribute. You can choose one of the following options: SYNC: To sync the difference column and update the masking policy to reflect the changes. NO_SYNC: To not sync the difference column so that it doesn't change the masking policy. After specifying the planned action, you can use the ApplySdmMaskingPolicyDifference operation to automatically process the difference columns.
-func (o GetSdmMaskingPolicyDifferenceDifferenceColumnResultOutput) PlannedAction() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSdmMaskingPolicyDifferenceDifferenceColumnResult) string { return v.PlannedAction }).(pulumi.StringOutput)
+func (o GetSdmMaskingPolicyDifferenceDifferenceColumnResultOutput) PlannedAction() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSdmMaskingPolicyDifferenceDifferenceColumnResult) *string { return v.PlannedAction }).(pulumi.StringPtrOutput)
 }
 
 // The database schema that contains the difference column.
-func (o GetSdmMaskingPolicyDifferenceDifferenceColumnResultOutput) SchemaName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSdmMaskingPolicyDifferenceDifferenceColumnResult) string { return v.SchemaName }).(pulumi.StringOutput)
+func (o GetSdmMaskingPolicyDifferenceDifferenceColumnResultOutput) SchemaName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSdmMaskingPolicyDifferenceDifferenceColumnResult) *string { return v.SchemaName }).(pulumi.StringPtrOutput)
 }
 
 func (o GetSdmMaskingPolicyDifferenceDifferenceColumnResultOutput) SdmMaskingPolicyDifferenceId() pulumi.StringOutput {
@@ -187,23 +180,23 @@ func (o GetSdmMaskingPolicyDifferenceDifferenceColumnResultOutput) SdmMaskingPol
 }
 
 // The unique key that identifies the sensitive column represented by the SDM masking policy difference column.
-func (o GetSdmMaskingPolicyDifferenceDifferenceColumnResultOutput) SensitiveColumnkey() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSdmMaskingPolicyDifferenceDifferenceColumnResult) string { return v.SensitiveColumnkey }).(pulumi.StringOutput)
+func (o GetSdmMaskingPolicyDifferenceDifferenceColumnResultOutput) SensitiveColumnkey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSdmMaskingPolicyDifferenceDifferenceColumnResult) *string { return v.SensitiveColumnkey }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the sensitive type associated with the difference column.
-func (o GetSdmMaskingPolicyDifferenceDifferenceColumnResultOutput) SensitiveTypeId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSdmMaskingPolicyDifferenceDifferenceColumnResult) string { return v.SensitiveTypeId }).(pulumi.StringOutput)
+func (o GetSdmMaskingPolicyDifferenceDifferenceColumnResultOutput) SensitiveTypeId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSdmMaskingPolicyDifferenceDifferenceColumnResult) *string { return v.SensitiveTypeId }).(pulumi.StringPtrOutput)
 }
 
 // Indicates if the difference column has been processed. Use GetDifferenceColumn operation to  track whether the difference column has already been processed and applied to the masking policy.
-func (o GetSdmMaskingPolicyDifferenceDifferenceColumnResultOutput) SyncStatus() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSdmMaskingPolicyDifferenceDifferenceColumnResult) string { return v.SyncStatus }).(pulumi.StringOutput)
+func (o GetSdmMaskingPolicyDifferenceDifferenceColumnResultOutput) SyncStatus() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSdmMaskingPolicyDifferenceDifferenceColumnResult) *string { return v.SyncStatus }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the SDM masking policy difference column was last synced, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-func (o GetSdmMaskingPolicyDifferenceDifferenceColumnResultOutput) TimeLastSynced() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSdmMaskingPolicyDifferenceDifferenceColumnResult) string { return v.TimeLastSynced }).(pulumi.StringOutput)
+func (o GetSdmMaskingPolicyDifferenceDifferenceColumnResultOutput) TimeLastSynced() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSdmMaskingPolicyDifferenceDifferenceColumnResult) *string { return v.TimeLastSynced }).(pulumi.StringPtrOutput)
 }
 
 func init() {

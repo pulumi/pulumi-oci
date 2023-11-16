@@ -69,11 +69,11 @@ export interface GetBdsInstancePatchHistoriesResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The list of patch_histories.
      */
-    readonly patchHistories: outputs.BigDataService.GetBdsInstancePatchHistoriesPatchHistory[];
+    readonly patchHistories?: outputs.BigDataService.GetBdsInstancePatchHistoriesPatchHistory[];
     /**
      * The type of current patch history. DP - Data Plane patch(This history type is internal available only) ODH - Oracle Distribution of Hadoop patch OS - Operating System patch
      */

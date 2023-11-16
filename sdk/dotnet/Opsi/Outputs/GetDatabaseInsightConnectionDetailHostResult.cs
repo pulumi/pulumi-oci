@@ -16,17 +16,17 @@ namespace Pulumi.Oci.Opsi.Outputs
         /// <summary>
         /// Host IP used for connection requests for Cloud DB resource.
         /// </summary>
-        public readonly string HostIp;
+        public readonly string? HostIp;
         /// <summary>
         /// Listener port number used for connection requests.
         /// </summary>
-        public readonly int Port;
+        public readonly int? Port;
 
         [OutputConstructor]
         private GetDatabaseInsightConnectionDetailHostResult(
-            string hostIp,
+            string? hostIp,
 
-            int port)
+            int? port)
         {
             HostIp = hostIp;
             Port = port;

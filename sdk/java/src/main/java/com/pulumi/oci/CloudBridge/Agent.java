@@ -15,6 +15,7 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -75,14 +76,14 @@ public class Agent extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="agentPubKey", refs={String.class}, tree="[0]")
-    private Output<String> agentPubKey;
+    private Output</* @Nullable */ String> agentPubKey;
 
     /**
      * @return Resource principal public key.
      * 
      */
-    public Output<String> agentPubKey() {
-        return this.agentPubKey;
+    public Output<Optional<String>> agentPubKey() {
+        return Codegen.optional(this.agentPubKey);
     }
     /**
      * Agent identifier.
@@ -131,14 +132,14 @@ public class Agent extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * (Updatable) Agent identifier.
@@ -173,42 +174,42 @@ public class Agent extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * The current heartbeat status of the Agent based on its timeLastSyncReceived value.
      * 
      */
     @Export(name="heartBeatStatus", refs={String.class}, tree="[0]")
-    private Output<String> heartBeatStatus;
+    private Output</* @Nullable */ String> heartBeatStatus;
 
     /**
      * @return The current heartbeat status of the Agent based on its timeLastSyncReceived value.
      * 
      */
-    public Output<String> heartBeatStatus() {
-        return this.heartBeatStatus;
+    public Output<Optional<String>> heartBeatStatus() {
+        return Codegen.optional(this.heartBeatStatus);
     }
     /**
      * A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
      * 
      */
     @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
-    private Output<String> lifecycleDetails;
+    private Output</* @Nullable */ String> lifecycleDetails;
 
     /**
      * @return A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
      * 
      */
-    public Output<String> lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Output<Optional<String>> lifecycleDetails() {
+        return Codegen.optional(this.lifecycleDetails);
     }
     /**
      * OS version.
@@ -235,98 +236,98 @@ public class Agent extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="pluginLists", refs={List.class,AgentPluginList.class}, tree="[0,1]")
-    private Output<List<AgentPluginList>> pluginLists;
+    private Output</* @Nullable */ List<AgentPluginList>> pluginLists;
 
     /**
      * @return List of plugins associated with the agent.
      * 
      */
-    public Output<List<AgentPluginList>> pluginLists() {
-        return this.pluginLists;
+    public Output<Optional<List<AgentPluginList>>> pluginLists() {
+        return Codegen.optional(this.pluginLists);
     }
     /**
      * The current state of the Agent.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The current state of the Agent.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
      * 
      */
     @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> systemTags;
+    private Output</* @Nullable */ Map<String,Object>> systemTags;
 
     /**
      * @return The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
      * 
      */
-    public Output<Map<String,Object>> systemTags() {
-        return this.systemTags;
+    public Output<Optional<Map<String,Object>>> systemTags() {
+        return Codegen.optional(this.systemTags);
     }
     /**
      * The time when the Agent was created. An RFC3339 formatted datetime string.
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The time when the Agent was created. An RFC3339 formatted datetime string.
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * The time since epoch for when the public key will expire. An RFC3339 formatted datetime string.
      * 
      */
     @Export(name="timeExpireAgentKeyInMs", refs={String.class}, tree="[0]")
-    private Output<String> timeExpireAgentKeyInMs;
+    private Output</* @Nullable */ String> timeExpireAgentKeyInMs;
 
     /**
      * @return The time since epoch for when the public key will expire. An RFC3339 formatted datetime string.
      * 
      */
-    public Output<String> timeExpireAgentKeyInMs() {
-        return this.timeExpireAgentKeyInMs;
+    public Output<Optional<String>> timeExpireAgentKeyInMs() {
+        return Codegen.optional(this.timeExpireAgentKeyInMs);
     }
     /**
      * The time when the last heartbeat of the Agent was noted. An RFC3339 formatted datetime string.
      * 
      */
     @Export(name="timeLastSyncReceived", refs={String.class}, tree="[0]")
-    private Output<String> timeLastSyncReceived;
+    private Output</* @Nullable */ String> timeLastSyncReceived;
 
     /**
      * @return The time when the last heartbeat of the Agent was noted. An RFC3339 formatted datetime string.
      * 
      */
-    public Output<String> timeLastSyncReceived() {
-        return this.timeLastSyncReceived;
+    public Output<Optional<String>> timeLastSyncReceived() {
+        return Codegen.optional(this.timeLastSyncReceived);
     }
     /**
      * The time when the Agent was updated. An RFC3339 formatted datetime string.
      * 
      */
     @Export(name="timeUpdated", refs={String.class}, tree="[0]")
-    private Output<String> timeUpdated;
+    private Output</* @Nullable */ String> timeUpdated;
 
     /**
      * @return The time when the Agent was updated. An RFC3339 formatted datetime string.
      * 
      */
-    public Output<String> timeUpdated() {
-        return this.timeUpdated;
+    public Output<Optional<String>> timeUpdated() {
+        return Codegen.optional(this.timeUpdated);
     }
 
     /**

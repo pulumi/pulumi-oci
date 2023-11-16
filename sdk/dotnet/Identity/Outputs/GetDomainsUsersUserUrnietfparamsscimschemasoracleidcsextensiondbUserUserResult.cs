@@ -20,15 +20,15 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// DB domain level schema to which the user is granted access.
         /// </summary>
-        public readonly string DomainLevelSchema;
+        public readonly string? DomainLevelSchema;
         /// <summary>
         /// DB instance level schema to which the user is granted access.
         /// </summary>
-        public readonly string InstanceLevelSchema;
+        public readonly string? InstanceLevelSchema;
         /// <summary>
         /// If true, indicates this is a database user.
         /// </summary>
-        public readonly bool IsDbUser;
+        public readonly bool? IsDbUser;
         /// <summary>
         /// Password Verifiers for DB User.
         /// </summary>
@@ -38,11 +38,11 @@ namespace Pulumi.Oci.Identity.Outputs
         private GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserResult(
             ImmutableArray<string> dbGlobalRoles,
 
-            string domainLevelSchema,
+            string? domainLevelSchema,
 
-            string instanceLevelSchema,
+            string? instanceLevelSchema,
 
-            bool isDbUser,
+            bool? isDbUser,
 
             ImmutableArray<Outputs.GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserPasswordVerifierResult> passwordVerifiers)
         {

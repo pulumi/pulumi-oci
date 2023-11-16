@@ -47,80 +47,80 @@ export interface GetManagementStationResult {
     /**
      * The OCID of the tenancy containing the Management Station.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * Details describing the ManagementStation config.
      */
-    readonly description: string;
+    readonly description?: string;
     /**
      * ManagementStation name
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * Name of the host
      */
-    readonly hostname: string;
+    readonly hostname?: string;
     /**
      * OCID for the ManagementStation config
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * OCID for the Instance associated with the Management Station.
      */
-    readonly managedInstanceId: string;
+    readonly managedInstanceId?: string;
     readonly managementStationId: string;
     /**
      * A decimal number representing the mirror capacity
      */
-    readonly mirrorCapacity: number;
+    readonly mirrorCapacity?: number;
     /**
      * Status summary of all repos
      */
-    readonly mirrorSyncStatuses: outputs.OsManagementHub.GetManagementStationMirrorSyncStatus[];
+    readonly mirrorSyncStatuses?: outputs.OsManagementHub.GetManagementStationMirrorSyncStatus[];
     /**
      * Information for a mirror configuration
      */
-    readonly mirrors: outputs.OsManagementHub.GetManagementStationMirror[];
+    readonly mirrors?: outputs.OsManagementHub.GetManagementStationMirror[];
     /**
      * A decimal number representing the completeness percentage
      */
-    readonly overallPercentage: number;
+    readonly overallPercentage?: number;
     /**
      * Current state of the mirroring
      */
-    readonly overallState: string;
+    readonly overallState?: string;
     /**
      * OCID of the Profile associated with the Station
      */
-    readonly profileId: string;
+    readonly profileId?: string;
     /**
      * Information for a proxy configuration
      */
-    readonly proxies: outputs.OsManagementHub.GetManagementStationProxy[];
+    readonly proxies?: outputs.OsManagementHub.GetManagementStationProxy[];
     /**
      * OCID of the Scheduled Job for mirror sync
      */
-    readonly scheduledJobId: string;
+    readonly scheduledJobId?: string;
     /**
      * The current state of the Management Station config.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    readonly systemTags: {[key: string]: any};
+    readonly systemTags?: {[key: string]: any};
     /**
      * A decimal number representing the total of repos
      */
-    readonly totalMirrors: number;
+    readonly totalMirrors?: number;
 }
 /**
  * This data source provides details about a specific Management Station resource in Oracle Cloud Infrastructure Os Management Hub service.

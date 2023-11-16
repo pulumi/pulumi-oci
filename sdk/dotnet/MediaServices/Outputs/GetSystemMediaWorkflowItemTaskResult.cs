@@ -16,15 +16,15 @@ namespace Pulumi.Oci.MediaServices.Outputs
         /// <summary>
         /// Allows this task to be conditionally enabled.  If no value or a blank value is given, the task is unconditionally enbled.  Otherwise the given string specifies a parameter of the job created for this task's workflow using the JSON pointer syntax. The JSON pointer is validated when a job is created from the workflow of this task.
         /// </summary>
-        public readonly string EnableParameterReference;
+        public readonly string? EnableParameterReference;
         /// <summary>
         /// Used in conjunction with enableParameterReference to conditionally enable a task.  When a job is created from the workflow of this task, the task will only be enabled if the value of the parameter specified by enableParameterReference is equal to the value of this property. This property must be prenset if and only if a enableParameterReference is given. The value is a JSON node.
         /// </summary>
-        public readonly ImmutableDictionary<string, object> EnableWhenReferencedParameterEquals;
+        public readonly ImmutableDictionary<string, object>? EnableWhenReferencedParameterEquals;
         /// <summary>
         /// A unique identifier for this task within its workflow. Keys are used to reference a task within workflows and MediaWorkflowJobs. Tasks are referenced as prerequisites and to track output and state.
         /// </summary>
-        public readonly string Key;
+        public readonly string? Key;
         /// <summary>
         /// Data specifiying how this task is to be run. The data is a JSON object that must conform to the JSON Schema specified by the parameters of the MediaWorkflowTaskDeclaration this task references. The parameters may contain values or references to other parameters.
         /// </summary>
@@ -36,27 +36,27 @@ namespace Pulumi.Oci.MediaServices.Outputs
         /// <summary>
         /// The type of process to run at this task. Refers to the name of a MediaWorkflowTaskDeclaration.
         /// </summary>
-        public readonly string Type;
+        public readonly string? Type;
         /// <summary>
         /// The version of the MediaWorkflowTaskDeclaration.
         /// </summary>
-        public readonly string Version;
+        public readonly string? Version;
 
         [OutputConstructor]
         private GetSystemMediaWorkflowItemTaskResult(
-            string enableParameterReference,
+            string? enableParameterReference,
 
-            ImmutableDictionary<string, object> enableWhenReferencedParameterEquals,
+            ImmutableDictionary<string, object>? enableWhenReferencedParameterEquals,
 
-            string key,
+            string? key,
 
             string parameters,
 
             ImmutableArray<string> prerequisites,
 
-            string type,
+            string? type,
 
-            string version)
+            string? version)
         {
             EnableParameterReference = enableParameterReference;
             EnableWhenReferencedParameterEquals = enableWhenReferencedParameterEquals;

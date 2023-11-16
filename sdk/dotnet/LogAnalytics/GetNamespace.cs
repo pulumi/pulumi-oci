@@ -110,15 +110,15 @@ namespace Pulumi.Oci.LogAnalytics
         /// <summary>
         /// The is the tenancy ID
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// This indicates if the tenancy is onboarded to Logging Analytics
         /// </summary>
-        public readonly bool IsOnboarded;
+        public readonly bool? IsOnboarded;
         /// <summary>
         /// This is the namespace name of a tenancy
         /// </summary>
@@ -126,11 +126,11 @@ namespace Pulumi.Oci.LogAnalytics
 
         [OutputConstructor]
         private GetNamespaceResult(
-            string compartmentId,
+            string? compartmentId,
 
-            string id,
+            string? id,
 
-            bool isOnboarded,
+            bool? isOnboarded,
 
             string @namespace)
         {

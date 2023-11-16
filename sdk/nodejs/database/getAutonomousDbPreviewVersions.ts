@@ -50,13 +50,13 @@ export interface GetAutonomousDbPreviewVersionsResult {
     /**
      * The list of autonomous_db_preview_versions.
      */
-    readonly autonomousDbPreviewVersions: outputs.Database.GetAutonomousDbPreviewVersionsAutonomousDbPreviewVersion[];
+    readonly autonomousDbPreviewVersions?: outputs.Database.GetAutonomousDbPreviewVersionsAutonomousDbPreviewVersion[];
     readonly compartmentId: string;
     readonly filters?: outputs.Database.GetAutonomousDbPreviewVersionsFilter[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
 }
 /**
  * This data source provides the list of Autonomous Db Preview Versions in Oracle Cloud Infrastructure Database service.

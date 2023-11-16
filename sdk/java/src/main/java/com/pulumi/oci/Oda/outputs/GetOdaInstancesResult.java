@@ -29,12 +29,12 @@ public final class GetOdaInstancesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The list of oda_instances.
      * 
      */
-    private List<GetOdaInstancesOdaInstance> odaInstances;
+    private @Nullable List<GetOdaInstancesOdaInstance> odaInstances;
     /**
      * @return The current state of the Digital Assistant instance.
      * 
@@ -63,15 +63,15 @@ public final class GetOdaInstancesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The list of oda_instances.
      * 
      */
     public List<GetOdaInstancesOdaInstance> odaInstances() {
-        return this.odaInstances;
+        return this.odaInstances == null ? List.of() : this.odaInstances;
     }
     /**
      * @return The current state of the Digital Assistant instance.
@@ -93,8 +93,8 @@ public final class GetOdaInstancesResult {
         private String compartmentId;
         private @Nullable String displayName;
         private @Nullable List<GetOdaInstancesFilter> filters;
-        private String id;
-        private List<GetOdaInstancesOdaInstance> odaInstances;
+        private @Nullable String id;
+        private @Nullable List<GetOdaInstancesOdaInstance> odaInstances;
         private @Nullable String state;
         public Builder() {}
         public Builder(GetOdaInstancesResult defaults) {
@@ -126,13 +126,13 @@ public final class GetOdaInstancesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder odaInstances(List<GetOdaInstancesOdaInstance> odaInstances) {
-            this.odaInstances = Objects.requireNonNull(odaInstances);
+        public Builder odaInstances(@Nullable List<GetOdaInstancesOdaInstance> odaInstances) {
+            this.odaInstances = odaInstances;
             return this;
         }
         public Builder odaInstances(GetOdaInstancesOdaInstance... odaInstances) {

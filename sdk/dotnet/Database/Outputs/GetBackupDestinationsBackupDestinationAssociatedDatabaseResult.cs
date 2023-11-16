@@ -16,17 +16,17 @@ namespace Pulumi.Oci.Database.Outputs
         /// <summary>
         /// The display name of the database that is associated with the backup destination.
         /// </summary>
-        public readonly string DbName;
+        public readonly string? DbName;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
 
         [OutputConstructor]
         private GetBackupDestinationsBackupDestinationAssociatedDatabaseResult(
-            string dbName,
+            string? dbName,
 
-            string id)
+            string? id)
         {
             DbName = dbName;
             Id = id;

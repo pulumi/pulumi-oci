@@ -8,30 +8,32 @@ import com.pulumi.oci.BigDataService.outputs.GetAutoScalingConfigurationsAutoSca
 import java.lang.Integer;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfig {
-    private Integer memoryStepSize;
-    private List<GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetric> metrics;
-    private Integer minMemoryPerNode;
-    private Integer minOcpusPerNode;
-    private Integer ocpuStepSize;
+    private @Nullable Integer memoryStepSize;
+    private @Nullable List<GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetric> metrics;
+    private @Nullable Integer minMemoryPerNode;
+    private @Nullable Integer minOcpusPerNode;
+    private @Nullable Integer ocpuStepSize;
 
     private GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfig() {}
-    public Integer memoryStepSize() {
-        return this.memoryStepSize;
+    public Optional<Integer> memoryStepSize() {
+        return Optional.ofNullable(this.memoryStepSize);
     }
     public List<GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetric> metrics() {
-        return this.metrics;
+        return this.metrics == null ? List.of() : this.metrics;
     }
-    public Integer minMemoryPerNode() {
-        return this.minMemoryPerNode;
+    public Optional<Integer> minMemoryPerNode() {
+        return Optional.ofNullable(this.minMemoryPerNode);
     }
-    public Integer minOcpusPerNode() {
-        return this.minOcpusPerNode;
+    public Optional<Integer> minOcpusPerNode() {
+        return Optional.ofNullable(this.minOcpusPerNode);
     }
-    public Integer ocpuStepSize() {
-        return this.ocpuStepSize;
+    public Optional<Integer> ocpuStepSize() {
+        return Optional.ofNullable(this.ocpuStepSize);
     }
 
     public static Builder builder() {
@@ -43,11 +45,11 @@ public final class GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDet
     }
     @CustomType.Builder
     public static final class Builder {
-        private Integer memoryStepSize;
-        private List<GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetric> metrics;
-        private Integer minMemoryPerNode;
-        private Integer minOcpusPerNode;
-        private Integer ocpuStepSize;
+        private @Nullable Integer memoryStepSize;
+        private @Nullable List<GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetric> metrics;
+        private @Nullable Integer minMemoryPerNode;
+        private @Nullable Integer minOcpusPerNode;
+        private @Nullable Integer ocpuStepSize;
         public Builder() {}
         public Builder(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfig defaults) {
     	      Objects.requireNonNull(defaults);
@@ -59,31 +61,31 @@ public final class GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDet
         }
 
         @CustomType.Setter
-        public Builder memoryStepSize(Integer memoryStepSize) {
-            this.memoryStepSize = Objects.requireNonNull(memoryStepSize);
+        public Builder memoryStepSize(@Nullable Integer memoryStepSize) {
+            this.memoryStepSize = memoryStepSize;
             return this;
         }
         @CustomType.Setter
-        public Builder metrics(List<GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetric> metrics) {
-            this.metrics = Objects.requireNonNull(metrics);
+        public Builder metrics(@Nullable List<GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetric> metrics) {
+            this.metrics = metrics;
             return this;
         }
         public Builder metrics(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetric... metrics) {
             return metrics(List.of(metrics));
         }
         @CustomType.Setter
-        public Builder minMemoryPerNode(Integer minMemoryPerNode) {
-            this.minMemoryPerNode = Objects.requireNonNull(minMemoryPerNode);
+        public Builder minMemoryPerNode(@Nullable Integer minMemoryPerNode) {
+            this.minMemoryPerNode = minMemoryPerNode;
             return this;
         }
         @CustomType.Setter
-        public Builder minOcpusPerNode(Integer minOcpusPerNode) {
-            this.minOcpusPerNode = Objects.requireNonNull(minOcpusPerNode);
+        public Builder minOcpusPerNode(@Nullable Integer minOcpusPerNode) {
+            this.minOcpusPerNode = minOcpusPerNode;
             return this;
         }
         @CustomType.Setter
-        public Builder ocpuStepSize(Integer ocpuStepSize) {
-            this.ocpuStepSize = Objects.requireNonNull(ocpuStepSize);
+        public Builder ocpuStepSize(@Nullable Integer ocpuStepSize) {
+            this.ocpuStepSize = ocpuStepSize;
             return this;
         }
         public GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfig build() {

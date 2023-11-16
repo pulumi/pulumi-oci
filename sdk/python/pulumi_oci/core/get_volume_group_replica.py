@@ -65,47 +65,32 @@ class GetVolumeGroupReplicaResult:
 
     @property
     @pulumi.getter(name="availabilityDomain")
-    def availability_domain(self) -> str:
-        """
-        The availability domain of the volume group replica.
-        """
+    def availability_domain(self) -> Optional[str]:
         return pulumi.get(self, "availability_domain")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The OCID of the compartment that contains the volume group replica.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -113,50 +98,32 @@ class GetVolumeGroupReplicaResult:
 
     @property
     @pulumi.getter(name="memberReplicas")
-    def member_replicas(self) -> Sequence['outputs.GetVolumeGroupReplicaMemberReplicaResult']:
-        """
-        Volume replicas within this volume group replica.
-        """
+    def member_replicas(self) -> Optional[Sequence['outputs.GetVolumeGroupReplicaMemberReplicaResult']]:
         return pulumi.get(self, "member_replicas")
 
     @property
     @pulumi.getter(name="sizeInGbs")
-    def size_in_gbs(self) -> str:
-        """
-        The aggregate size of the volume group replica in GBs.
-        """
+    def size_in_gbs(self) -> Optional[str]:
         return pulumi.get(self, "size_in_gbs")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of a volume group.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the volume group replica was created. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeLastSynced")
-    def time_last_synced(self) -> str:
-        """
-        The date and time the volume group replica was last synced from the source volume group. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        """
+    def time_last_synced(self) -> Optional[str]:
         return pulumi.get(self, "time_last_synced")
 
     @property
     @pulumi.getter(name="volumeGroupId")
-    def volume_group_id(self) -> str:
-        """
-        The OCID of the source volume group.
-        """
+    def volume_group_id(self) -> Optional[str]:
         return pulumi.get(self, "volume_group_id")
 
     @property
@@ -189,21 +156,7 @@ class AwaitableGetVolumeGroupReplicaResult(GetVolumeGroupReplicaResult):
 def get_volume_group_replica(volume_group_replica_id: Optional[str] = None,
                              opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetVolumeGroupReplicaResult:
     """
-    This data source provides details about a specific Volume Group Replica resource in Oracle Cloud Infrastructure Core service.
-
-    Gets information for the specified volume group replica.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_volume_group_replica = oci.Core.get_volume_group_replica(volume_group_replica_id=oci_core_volume_group_replica["test_volume_group_replica"]["id"])
-    ```
-
-
-    :param str volume_group_replica_id: The OCID of the volume replica group.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['volumeGroupReplicaId'] = volume_group_replica_id
@@ -230,20 +183,6 @@ def get_volume_group_replica(volume_group_replica_id: Optional[str] = None,
 def get_volume_group_replica_output(volume_group_replica_id: Optional[pulumi.Input[str]] = None,
                                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetVolumeGroupReplicaResult]:
     """
-    This data source provides details about a specific Volume Group Replica resource in Oracle Cloud Infrastructure Core service.
-
-    Gets information for the specified volume group replica.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_volume_group_replica = oci.Core.get_volume_group_replica(volume_group_replica_id=oci_core_volume_group_replica["test_volume_group_replica"]["id"])
-    ```
-
-
-    :param str volume_group_replica_id: The OCID of the volume replica group.
+    Use this data source to access information about an existing resource.
     """
     ...

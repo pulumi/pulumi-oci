@@ -76,13 +76,13 @@ export interface GetSessionsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly sessionId?: string;
     readonly sessionLifecycleState?: string;
     /**
      * The list of sessions.
      */
-    readonly sessions: outputs.Bastion.GetSessionsSession[];
+    readonly sessions?: outputs.Bastion.GetSessionsSession[];
 }
 /**
  * This data source provides the list of Sessions in Oracle Cloud Infrastructure Bastion service.

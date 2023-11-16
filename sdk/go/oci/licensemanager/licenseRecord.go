@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the License Record resource in Oracle Cloud Infrastructure License Manager service.
@@ -69,13 +68,13 @@ type LicenseRecord struct {
 	pulumi.CustomResourceState
 
 	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) where the license record is created.
-	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) License record name.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) The license record end date in [RFC 3339](https://tools.ietf.org/html/rfc3339) date format. Example: `2018-09-12`
-	ExpirationDate pulumi.StringOutput `pulumi:"expirationDate"`
+	ExpirationDate pulumi.StringPtrOutput `pulumi:"expirationDate"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// (Updatable) Specifies if the license record term is perpertual.
@@ -83,28 +82,28 @@ type LicenseRecord struct {
 	// (Updatable) Specifies if the license count is unlimited.
 	IsUnlimited pulumi.BoolOutput `pulumi:"isUnlimited"`
 	// (Updatable) The number of license units added by a user in a license record. Default 1
-	LicenseCount pulumi.IntOutput `pulumi:"licenseCount"`
+	LicenseCount pulumi.IntPtrOutput `pulumi:"licenseCount"`
 	// The product license unit.
-	LicenseUnit pulumi.StringOutput `pulumi:"licenseUnit"`
+	LicenseUnit pulumi.StringPtrOutput `pulumi:"licenseUnit"`
 	// (Updatable) The license record product ID.
-	ProductId pulumi.StringOutput `pulumi:"productId"`
+	ProductId pulumi.StringPtrOutput `pulumi:"productId"`
 	// The product license name with which the license record is associated.
-	ProductLicense pulumi.StringOutput `pulumi:"productLicense"`
+	ProductLicense pulumi.StringPtrOutput `pulumi:"productLicense"`
 	// Unique product license identifier.
 	ProductLicenseId pulumi.StringOutput `pulumi:"productLicenseId"`
 	// The current license record state.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// (Updatable) The license record support end date in [RFC 3339](https://tools.ietf.org/html/rfc3339) date format. Example: `2018-09-12`
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	SupportEndDate pulumi.StringOutput `pulumi:"supportEndDate"`
+	SupportEndDate pulumi.StringPtrOutput `pulumi:"supportEndDate"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
 	// The time the license record was created. An [RFC 3339](https://tools.ietf.org/html/rfc3339)-formatted datetime string.
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The time the license record was updated. An [RFC 3339](https://tools.ietf.org/html/rfc3339)-formatted datetime string.
-	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 }
 
 // NewLicenseRecord registers a new resource with the given unique name, arguments, and options.
@@ -308,12 +307,6 @@ func (i *LicenseRecord) ToLicenseRecordOutputWithContext(ctx context.Context) Li
 	return pulumi.ToOutputWithContext(ctx, i).(LicenseRecordOutput)
 }
 
-func (i *LicenseRecord) ToOutput(ctx context.Context) pulumix.Output[*LicenseRecord] {
-	return pulumix.Output[*LicenseRecord]{
-		OutputState: i.ToLicenseRecordOutputWithContext(ctx).OutputState,
-	}
-}
-
 // LicenseRecordArrayInput is an input type that accepts LicenseRecordArray and LicenseRecordArrayOutput values.
 // You can construct a concrete instance of `LicenseRecordArrayInput` via:
 //
@@ -337,12 +330,6 @@ func (i LicenseRecordArray) ToLicenseRecordArrayOutput() LicenseRecordArrayOutpu
 
 func (i LicenseRecordArray) ToLicenseRecordArrayOutputWithContext(ctx context.Context) LicenseRecordArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(LicenseRecordArrayOutput)
-}
-
-func (i LicenseRecordArray) ToOutput(ctx context.Context) pulumix.Output[[]*LicenseRecord] {
-	return pulumix.Output[[]*LicenseRecord]{
-		OutputState: i.ToLicenseRecordArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // LicenseRecordMapInput is an input type that accepts LicenseRecordMap and LicenseRecordMapOutput values.
@@ -370,12 +357,6 @@ func (i LicenseRecordMap) ToLicenseRecordMapOutputWithContext(ctx context.Contex
 	return pulumi.ToOutputWithContext(ctx, i).(LicenseRecordMapOutput)
 }
 
-func (i LicenseRecordMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*LicenseRecord] {
-	return pulumix.Output[map[string]*LicenseRecord]{
-		OutputState: i.ToLicenseRecordMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type LicenseRecordOutput struct{ *pulumi.OutputState }
 
 func (LicenseRecordOutput) ElementType() reflect.Type {
@@ -390,15 +371,9 @@ func (o LicenseRecordOutput) ToLicenseRecordOutputWithContext(ctx context.Contex
 	return o
 }
 
-func (o LicenseRecordOutput) ToOutput(ctx context.Context) pulumix.Output[*LicenseRecord] {
-	return pulumix.Output[*LicenseRecord]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) where the license record is created.
-func (o LicenseRecordOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v *LicenseRecord) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LicenseRecordOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *LicenseRecord) pulumi.StringPtrOutput { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -412,8 +387,8 @@ func (o LicenseRecordOutput) DisplayName() pulumi.StringOutput {
 }
 
 // (Updatable) The license record end date in [RFC 3339](https://tools.ietf.org/html/rfc3339) date format. Example: `2018-09-12`
-func (o LicenseRecordOutput) ExpirationDate() pulumi.StringOutput {
-	return o.ApplyT(func(v *LicenseRecord) pulumi.StringOutput { return v.ExpirationDate }).(pulumi.StringOutput)
+func (o LicenseRecordOutput) ExpirationDate() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *LicenseRecord) pulumi.StringPtrOutput { return v.ExpirationDate }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -432,23 +407,23 @@ func (o LicenseRecordOutput) IsUnlimited() pulumi.BoolOutput {
 }
 
 // (Updatable) The number of license units added by a user in a license record. Default 1
-func (o LicenseRecordOutput) LicenseCount() pulumi.IntOutput {
-	return o.ApplyT(func(v *LicenseRecord) pulumi.IntOutput { return v.LicenseCount }).(pulumi.IntOutput)
+func (o LicenseRecordOutput) LicenseCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *LicenseRecord) pulumi.IntPtrOutput { return v.LicenseCount }).(pulumi.IntPtrOutput)
 }
 
 // The product license unit.
-func (o LicenseRecordOutput) LicenseUnit() pulumi.StringOutput {
-	return o.ApplyT(func(v *LicenseRecord) pulumi.StringOutput { return v.LicenseUnit }).(pulumi.StringOutput)
+func (o LicenseRecordOutput) LicenseUnit() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *LicenseRecord) pulumi.StringPtrOutput { return v.LicenseUnit }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The license record product ID.
-func (o LicenseRecordOutput) ProductId() pulumi.StringOutput {
-	return o.ApplyT(func(v *LicenseRecord) pulumi.StringOutput { return v.ProductId }).(pulumi.StringOutput)
+func (o LicenseRecordOutput) ProductId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *LicenseRecord) pulumi.StringPtrOutput { return v.ProductId }).(pulumi.StringPtrOutput)
 }
 
 // The product license name with which the license record is associated.
-func (o LicenseRecordOutput) ProductLicense() pulumi.StringOutput {
-	return o.ApplyT(func(v *LicenseRecord) pulumi.StringOutput { return v.ProductLicense }).(pulumi.StringOutput)
+func (o LicenseRecordOutput) ProductLicense() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *LicenseRecord) pulumi.StringPtrOutput { return v.ProductLicense }).(pulumi.StringPtrOutput)
 }
 
 // Unique product license identifier.
@@ -457,16 +432,16 @@ func (o LicenseRecordOutput) ProductLicenseId() pulumi.StringOutput {
 }
 
 // The current license record state.
-func (o LicenseRecordOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *LicenseRecord) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o LicenseRecordOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *LicenseRecord) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The license record support end date in [RFC 3339](https://tools.ietf.org/html/rfc3339) date format. Example: `2018-09-12`
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-func (o LicenseRecordOutput) SupportEndDate() pulumi.StringOutput {
-	return o.ApplyT(func(v *LicenseRecord) pulumi.StringOutput { return v.SupportEndDate }).(pulumi.StringOutput)
+func (o LicenseRecordOutput) SupportEndDate() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *LicenseRecord) pulumi.StringPtrOutput { return v.SupportEndDate }).(pulumi.StringPtrOutput)
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -475,13 +450,13 @@ func (o LicenseRecordOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The time the license record was created. An [RFC 3339](https://tools.ietf.org/html/rfc3339)-formatted datetime string.
-func (o LicenseRecordOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *LicenseRecord) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LicenseRecordOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *LicenseRecord) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time the license record was updated. An [RFC 3339](https://tools.ietf.org/html/rfc3339)-formatted datetime string.
-func (o LicenseRecordOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *LicenseRecord) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o LicenseRecordOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *LicenseRecord) pulumi.StringPtrOutput { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type LicenseRecordArrayOutput struct{ *pulumi.OutputState }
@@ -496,12 +471,6 @@ func (o LicenseRecordArrayOutput) ToLicenseRecordArrayOutput() LicenseRecordArra
 
 func (o LicenseRecordArrayOutput) ToLicenseRecordArrayOutputWithContext(ctx context.Context) LicenseRecordArrayOutput {
 	return o
-}
-
-func (o LicenseRecordArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*LicenseRecord] {
-	return pulumix.Output[[]*LicenseRecord]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o LicenseRecordArrayOutput) Index(i pulumi.IntInput) LicenseRecordOutput {
@@ -522,12 +491,6 @@ func (o LicenseRecordMapOutput) ToLicenseRecordMapOutput() LicenseRecordMapOutpu
 
 func (o LicenseRecordMapOutput) ToLicenseRecordMapOutputWithContext(ctx context.Context) LicenseRecordMapOutput {
 	return o
-}
-
-func (o LicenseRecordMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*LicenseRecord] {
-	return pulumix.Output[map[string]*LicenseRecord]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o LicenseRecordMapOutput) MapIndex(k pulumi.StringInput) LicenseRecordOutput {

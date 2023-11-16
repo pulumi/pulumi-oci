@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Bastion resource in Oracle Cloud Infrastructure Bastion service.
@@ -77,23 +76,23 @@ type Bastion struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// Flag to enable FQDN and SOCKS5 Proxy Support. Example: `ENABLED`, `DISABLED`
-	DnsProxyStatus pulumi.StringOutput `pulumi:"dnsProxyStatus"`
+	DnsProxyStatus pulumi.StringPtrOutput `pulumi:"dnsProxyStatus"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// A message describing the current state in more detail.
-	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrOutput `pulumi:"lifecycleDetails"`
 	// (Updatable) The maximum amount of time that any session on the bastion can remain active.
-	MaxSessionTtlInSeconds pulumi.IntOutput `pulumi:"maxSessionTtlInSeconds"`
+	MaxSessionTtlInSeconds pulumi.IntPtrOutput `pulumi:"maxSessionTtlInSeconds"`
 	// The maximum number of active sessions allowed on the bastion.
-	MaxSessionsAllowed pulumi.IntOutput `pulumi:"maxSessionsAllowed"`
+	MaxSessionsAllowed pulumi.IntPtrOutput `pulumi:"maxSessionsAllowed"`
 	// The name of the bastion, which can't be changed after creation.
 	Name pulumi.StringOutput `pulumi:"name"`
 	// The phonebook entry of the customer's team, which can't be changed after creation. Not applicable to `standard` bastions.
-	PhoneBookEntry pulumi.StringOutput `pulumi:"phoneBookEntry"`
+	PhoneBookEntry pulumi.StringPtrOutput `pulumi:"phoneBookEntry"`
 	// The private IP address of the created private endpoint.
-	PrivateEndpointIpAddress pulumi.StringOutput `pulumi:"privateEndpointIpAddress"`
+	PrivateEndpointIpAddress pulumi.StringPtrOutput `pulumi:"privateEndpointIpAddress"`
 	// The current state of the bastion.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// (Updatable) A list of IP addresses of the hosts that the bastion has access to. Not applicable to `standard` bastions.
 	StaticJumpHostIpAddresses pulumi.StringArrayOutput `pulumi:"staticJumpHostIpAddresses"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -104,11 +103,11 @@ type Bastion struct {
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TargetSubnetId pulumi.StringOutput `pulumi:"targetSubnetId"`
 	// The unique identifier (OCID) of the virtual cloud network (VCN) that the bastion connects to.
-	TargetVcnId pulumi.StringOutput `pulumi:"targetVcnId"`
+	TargetVcnId pulumi.StringPtrOutput `pulumi:"targetVcnId"`
 	// The time the bastion was created. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The time the bastion was updated. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
-	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 }
 
 // NewBastion registers a new resource with the given unique name, arguments, and options.
@@ -321,12 +320,6 @@ func (i *Bastion) ToBastionOutputWithContext(ctx context.Context) BastionOutput 
 	return pulumi.ToOutputWithContext(ctx, i).(BastionOutput)
 }
 
-func (i *Bastion) ToOutput(ctx context.Context) pulumix.Output[*Bastion] {
-	return pulumix.Output[*Bastion]{
-		OutputState: i.ToBastionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // BastionArrayInput is an input type that accepts BastionArray and BastionArrayOutput values.
 // You can construct a concrete instance of `BastionArrayInput` via:
 //
@@ -350,12 +343,6 @@ func (i BastionArray) ToBastionArrayOutput() BastionArrayOutput {
 
 func (i BastionArray) ToBastionArrayOutputWithContext(ctx context.Context) BastionArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(BastionArrayOutput)
-}
-
-func (i BastionArray) ToOutput(ctx context.Context) pulumix.Output[[]*Bastion] {
-	return pulumix.Output[[]*Bastion]{
-		OutputState: i.ToBastionArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // BastionMapInput is an input type that accepts BastionMap and BastionMapOutput values.
@@ -383,12 +370,6 @@ func (i BastionMap) ToBastionMapOutputWithContext(ctx context.Context) BastionMa
 	return pulumi.ToOutputWithContext(ctx, i).(BastionMapOutput)
 }
 
-func (i BastionMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*Bastion] {
-	return pulumix.Output[map[string]*Bastion]{
-		OutputState: i.ToBastionMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type BastionOutput struct{ *pulumi.OutputState }
 
 func (BastionOutput) ElementType() reflect.Type {
@@ -401,12 +382,6 @@ func (o BastionOutput) ToBastionOutput() BastionOutput {
 
 func (o BastionOutput) ToBastionOutputWithContext(ctx context.Context) BastionOutput {
 	return o
-}
-
-func (o BastionOutput) ToOutput(ctx context.Context) pulumix.Output[*Bastion] {
-	return pulumix.Output[*Bastion]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The type of bastion. Use `standard`.
@@ -430,8 +405,8 @@ func (o BastionOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // Flag to enable FQDN and SOCKS5 Proxy Support. Example: `ENABLED`, `DISABLED`
-func (o BastionOutput) DnsProxyStatus() pulumi.StringOutput {
-	return o.ApplyT(func(v *Bastion) pulumi.StringOutput { return v.DnsProxyStatus }).(pulumi.StringOutput)
+func (o BastionOutput) DnsProxyStatus() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Bastion) pulumi.StringPtrOutput { return v.DnsProxyStatus }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -440,18 +415,18 @@ func (o BastionOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // A message describing the current state in more detail.
-func (o BastionOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v *Bastion) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o BastionOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Bastion) pulumi.StringPtrOutput { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The maximum amount of time that any session on the bastion can remain active.
-func (o BastionOutput) MaxSessionTtlInSeconds() pulumi.IntOutput {
-	return o.ApplyT(func(v *Bastion) pulumi.IntOutput { return v.MaxSessionTtlInSeconds }).(pulumi.IntOutput)
+func (o BastionOutput) MaxSessionTtlInSeconds() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *Bastion) pulumi.IntPtrOutput { return v.MaxSessionTtlInSeconds }).(pulumi.IntPtrOutput)
 }
 
 // The maximum number of active sessions allowed on the bastion.
-func (o BastionOutput) MaxSessionsAllowed() pulumi.IntOutput {
-	return o.ApplyT(func(v *Bastion) pulumi.IntOutput { return v.MaxSessionsAllowed }).(pulumi.IntOutput)
+func (o BastionOutput) MaxSessionsAllowed() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *Bastion) pulumi.IntPtrOutput { return v.MaxSessionsAllowed }).(pulumi.IntPtrOutput)
 }
 
 // The name of the bastion, which can't be changed after creation.
@@ -460,18 +435,18 @@ func (o BastionOutput) Name() pulumi.StringOutput {
 }
 
 // The phonebook entry of the customer's team, which can't be changed after creation. Not applicable to `standard` bastions.
-func (o BastionOutput) PhoneBookEntry() pulumi.StringOutput {
-	return o.ApplyT(func(v *Bastion) pulumi.StringOutput { return v.PhoneBookEntry }).(pulumi.StringOutput)
+func (o BastionOutput) PhoneBookEntry() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Bastion) pulumi.StringPtrOutput { return v.PhoneBookEntry }).(pulumi.StringPtrOutput)
 }
 
 // The private IP address of the created private endpoint.
-func (o BastionOutput) PrivateEndpointIpAddress() pulumi.StringOutput {
-	return o.ApplyT(func(v *Bastion) pulumi.StringOutput { return v.PrivateEndpointIpAddress }).(pulumi.StringOutput)
+func (o BastionOutput) PrivateEndpointIpAddress() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Bastion) pulumi.StringPtrOutput { return v.PrivateEndpointIpAddress }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the bastion.
-func (o BastionOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *Bastion) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o BastionOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Bastion) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) A list of IP addresses of the hosts that the bastion has access to. Not applicable to `standard` bastions.
@@ -493,18 +468,18 @@ func (o BastionOutput) TargetSubnetId() pulumi.StringOutput {
 }
 
 // The unique identifier (OCID) of the virtual cloud network (VCN) that the bastion connects to.
-func (o BastionOutput) TargetVcnId() pulumi.StringOutput {
-	return o.ApplyT(func(v *Bastion) pulumi.StringOutput { return v.TargetVcnId }).(pulumi.StringOutput)
+func (o BastionOutput) TargetVcnId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Bastion) pulumi.StringPtrOutput { return v.TargetVcnId }).(pulumi.StringPtrOutput)
 }
 
 // The time the bastion was created. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
-func (o BastionOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *Bastion) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o BastionOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Bastion) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time the bastion was updated. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
-func (o BastionOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *Bastion) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o BastionOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Bastion) pulumi.StringPtrOutput { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type BastionArrayOutput struct{ *pulumi.OutputState }
@@ -519,12 +494,6 @@ func (o BastionArrayOutput) ToBastionArrayOutput() BastionArrayOutput {
 
 func (o BastionArrayOutput) ToBastionArrayOutputWithContext(ctx context.Context) BastionArrayOutput {
 	return o
-}
-
-func (o BastionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*Bastion] {
-	return pulumix.Output[[]*Bastion]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o BastionArrayOutput) Index(i pulumi.IntInput) BastionOutput {
@@ -545,12 +514,6 @@ func (o BastionMapOutput) ToBastionMapOutput() BastionMapOutput {
 
 func (o BastionMapOutput) ToBastionMapOutputWithContext(ctx context.Context) BastionMapOutput {
 	return o
-}
-
-func (o BastionMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*Bastion] {
-	return pulumix.Output[map[string]*Bastion]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o BastionMapOutput) MapIndex(k pulumi.StringInput) BastionOutput {

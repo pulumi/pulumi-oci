@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Nat Gateway resource in Oracle Cloud Infrastructure Core service.
@@ -60,30 +59,30 @@ type LookupNatGatewayArgs struct {
 // A collection of values returned by getNatGateway.
 type LookupNatGatewayResult struct {
 	// Whether the NAT gateway blocks traffic through it. The default is `false`.  Example: `true`
-	BlockTraffic bool `pulumi:"blockTraffic"`
+	BlockTraffic *bool `pulumi:"blockTraffic"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the NAT gateway.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the NAT gateway.
-	Id           string `pulumi:"id"`
-	NatGatewayId string `pulumi:"natGatewayId"`
+	Id           *string `pulumi:"id"`
+	NatGatewayId string  `pulumi:"natGatewayId"`
 	// The IP address associated with the NAT gateway.
-	NatIp string `pulumi:"natIp"`
+	NatIp *string `pulumi:"natIp"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the public IP address associated with the NAT gateway.
-	PublicIpId string `pulumi:"publicIpId"`
+	PublicIpId *string `pulumi:"publicIpId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table used by the NAT gateway.
-	RouteTableId string `pulumi:"routeTableId"`
+	RouteTableId *string `pulumi:"routeTableId"`
 	// The NAT gateway's current state.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The date and time the NAT gateway was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN the NAT gateway belongs to.
-	VcnId string `pulumi:"vcnId"`
+	VcnId *string `pulumi:"vcnId"`
 }
 
 func LookupNatGatewayOutput(ctx *pulumi.Context, args LookupNatGatewayOutputArgs, opts ...pulumi.InvokeOption) LookupNatGatewayResultOutput {
@@ -124,20 +123,14 @@ func (o LookupNatGatewayResultOutput) ToLookupNatGatewayResultOutputWithContext(
 	return o
 }
 
-func (o LookupNatGatewayResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupNatGatewayResult] {
-	return pulumix.Output[LookupNatGatewayResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Whether the NAT gateway blocks traffic through it. The default is `false`.  Example: `true`
-func (o LookupNatGatewayResultOutput) BlockTraffic() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupNatGatewayResult) bool { return v.BlockTraffic }).(pulumi.BoolOutput)
+func (o LookupNatGatewayResultOutput) BlockTraffic() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupNatGatewayResult) *bool { return v.BlockTraffic }).(pulumi.BoolPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the NAT gateway.
-func (o LookupNatGatewayResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupNatGatewayResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupNatGatewayResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupNatGatewayResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -146,8 +139,8 @@ func (o LookupNatGatewayResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-func (o LookupNatGatewayResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupNatGatewayResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupNatGatewayResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupNatGatewayResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -156,8 +149,8 @@ func (o LookupNatGatewayResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the NAT gateway.
-func (o LookupNatGatewayResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupNatGatewayResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupNatGatewayResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupNatGatewayResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupNatGatewayResultOutput) NatGatewayId() pulumi.StringOutput {
@@ -165,33 +158,33 @@ func (o LookupNatGatewayResultOutput) NatGatewayId() pulumi.StringOutput {
 }
 
 // The IP address associated with the NAT gateway.
-func (o LookupNatGatewayResultOutput) NatIp() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupNatGatewayResult) string { return v.NatIp }).(pulumi.StringOutput)
+func (o LookupNatGatewayResultOutput) NatIp() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupNatGatewayResult) *string { return v.NatIp }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the public IP address associated with the NAT gateway.
-func (o LookupNatGatewayResultOutput) PublicIpId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupNatGatewayResult) string { return v.PublicIpId }).(pulumi.StringOutput)
+func (o LookupNatGatewayResultOutput) PublicIpId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupNatGatewayResult) *string { return v.PublicIpId }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table used by the NAT gateway.
-func (o LookupNatGatewayResultOutput) RouteTableId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupNatGatewayResult) string { return v.RouteTableId }).(pulumi.StringOutput)
+func (o LookupNatGatewayResultOutput) RouteTableId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupNatGatewayResult) *string { return v.RouteTableId }).(pulumi.StringPtrOutput)
 }
 
 // The NAT gateway's current state.
-func (o LookupNatGatewayResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupNatGatewayResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupNatGatewayResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupNatGatewayResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the NAT gateway was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-func (o LookupNatGatewayResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupNatGatewayResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupNatGatewayResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupNatGatewayResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN the NAT gateway belongs to.
-func (o LookupNatGatewayResultOutput) VcnId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupNatGatewayResult) string { return v.VcnId }).(pulumi.StringOutput)
+func (o LookupNatGatewayResultOutput) VcnId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupNatGatewayResult) *string { return v.VcnId }).(pulumi.StringPtrOutput)
 }
 
 func init() {

@@ -8,6 +8,8 @@ import com.pulumi.oci.Opensearch.outputs.GetOpensearchVersionItem;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetOpensearchVersionResult {
@@ -16,12 +18,12 @@ public final class GetOpensearchVersionResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return A list of OpenSearch versions.
      * 
      */
-    private List<GetOpensearchVersionItem> items;
+    private @Nullable List<GetOpensearchVersionItem> items;
 
     private GetOpensearchVersionResult() {}
     public String compartmentId() {
@@ -31,15 +33,15 @@ public final class GetOpensearchVersionResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return A list of OpenSearch versions.
      * 
      */
     public List<GetOpensearchVersionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -52,8 +54,8 @@ public final class GetOpensearchVersionResult {
     @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
-        private String id;
-        private List<GetOpensearchVersionItem> items;
+        private @Nullable String id;
+        private @Nullable List<GetOpensearchVersionItem> items;
         public Builder() {}
         public Builder(GetOpensearchVersionResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -68,13 +70,13 @@ public final class GetOpensearchVersionResult {
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder items(List<GetOpensearchVersionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetOpensearchVersionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetOpensearchVersionItem... items) {

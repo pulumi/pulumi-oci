@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Job resource in Oracle Cloud Infrastructure Data Science service.
@@ -105,21 +104,21 @@ type Job struct {
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ArtifactContentLength pulumi.StringPtrOutput `pulumi:"artifactContentLength"`
-	ArtifactContentMd5    pulumi.StringOutput    `pulumi:"artifactContentMd5"`
-	ArtifactLastModified  pulumi.StringOutput    `pulumi:"artifactLastModified"`
+	ArtifactContentMd5    pulumi.StringPtrOutput `pulumi:"artifactContentMd5"`
+	ArtifactLastModified  pulumi.StringPtrOutput `pulumi:"artifactLastModified"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the job.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the project.
-	CreatedBy pulumi.StringOutput `pulumi:"createdBy"`
+	CreatedBy pulumi.StringPtrOutput `pulumi:"createdBy"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) Delete all related JobRuns upon deletion of the Job.
 	DeleteRelatedJobRuns pulumi.BoolPtrOutput `pulumi:"deleteRelatedJobRuns"`
 	// (Updatable) A short description of the job.
-	Description pulumi.StringOutput `pulumi:"description"`
+	Description pulumi.StringPtrOutput `pulumi:"description"`
 	// (Updatable) A user-friendly display name for the resource.
-	DisplayName   pulumi.StringOutput `pulumi:"displayName"`
-	EmptyArtifact pulumi.BoolOutput   `pulumi:"emptyArtifact"`
+	DisplayName   pulumi.StringPtrOutput `pulumi:"displayName"`
+	EmptyArtifact pulumi.BoolPtrOutput   `pulumi:"emptyArtifact"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// The job artifact to upload. This can be done in a separate step or from cli/sdk. The Job will remain in "Creating" state until its artifact is uploaded.
@@ -129,17 +128,17 @@ type Job struct {
 	// (Updatable) The job infrastructure configuration details (shape, block storage, etc.)
 	JobInfrastructureConfigurationDetails JobJobInfrastructureConfigurationDetailsOutput `pulumi:"jobInfrastructureConfigurationDetails"`
 	// Logging configuration for resource.
-	JobLogConfigurationDetails JobJobLogConfigurationDetailsOutput `pulumi:"jobLogConfigurationDetails"`
+	JobLogConfigurationDetails JobJobLogConfigurationDetailsPtrOutput `pulumi:"jobLogConfigurationDetails"`
 	// (Updatable) Collection of JobStorageMountConfigurationDetails.
 	JobStorageMountConfigurationDetailsLists JobJobStorageMountConfigurationDetailsListArrayOutput `pulumi:"jobStorageMountConfigurationDetailsLists"`
 	// The state of the job.
-	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrOutput `pulumi:"lifecycleDetails"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job with.
 	ProjectId pulumi.StringOutput `pulumi:"projectId"`
 	// The state of the job.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2020-08-06T21:10:29.41Z
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 }
 
 // NewJob registers a new resource with the given unique name, arguments, and options.
@@ -369,12 +368,6 @@ func (i *Job) ToJobOutputWithContext(ctx context.Context) JobOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(JobOutput)
 }
 
-func (i *Job) ToOutput(ctx context.Context) pulumix.Output[*Job] {
-	return pulumix.Output[*Job]{
-		OutputState: i.ToJobOutputWithContext(ctx).OutputState,
-	}
-}
-
 // JobArrayInput is an input type that accepts JobArray and JobArrayOutput values.
 // You can construct a concrete instance of `JobArrayInput` via:
 //
@@ -398,12 +391,6 @@ func (i JobArray) ToJobArrayOutput() JobArrayOutput {
 
 func (i JobArray) ToJobArrayOutputWithContext(ctx context.Context) JobArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(JobArrayOutput)
-}
-
-func (i JobArray) ToOutput(ctx context.Context) pulumix.Output[[]*Job] {
-	return pulumix.Output[[]*Job]{
-		OutputState: i.ToJobArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // JobMapInput is an input type that accepts JobMap and JobMapOutput values.
@@ -431,12 +418,6 @@ func (i JobMap) ToJobMapOutputWithContext(ctx context.Context) JobMapOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(JobMapOutput)
 }
 
-func (i JobMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*Job] {
-	return pulumix.Output[map[string]*Job]{
-		OutputState: i.ToJobMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type JobOutput struct{ *pulumi.OutputState }
 
 func (JobOutput) ElementType() reflect.Type {
@@ -449,12 +430,6 @@ func (o JobOutput) ToJobOutput() JobOutput {
 
 func (o JobOutput) ToJobOutputWithContext(ctx context.Context) JobOutput {
 	return o
-}
-
-func (o JobOutput) ToOutput(ctx context.Context) pulumix.Output[*Job] {
-	return pulumix.Output[*Job]{
-		OutputState: o.OutputState,
-	}
 }
 
 // This header allows you to specify a filename during upload. This file name is used to dispose of the file contents while downloading the file. Example: `attachment; filename=job-artifact.py`
@@ -470,12 +445,12 @@ func (o JobOutput) ArtifactContentLength() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *Job) pulumi.StringPtrOutput { return v.ArtifactContentLength }).(pulumi.StringPtrOutput)
 }
 
-func (o JobOutput) ArtifactContentMd5() pulumi.StringOutput {
-	return o.ApplyT(func(v *Job) pulumi.StringOutput { return v.ArtifactContentMd5 }).(pulumi.StringOutput)
+func (o JobOutput) ArtifactContentMd5() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Job) pulumi.StringPtrOutput { return v.ArtifactContentMd5 }).(pulumi.StringPtrOutput)
 }
 
-func (o JobOutput) ArtifactLastModified() pulumi.StringOutput {
-	return o.ApplyT(func(v *Job) pulumi.StringOutput { return v.ArtifactLastModified }).(pulumi.StringOutput)
+func (o JobOutput) ArtifactLastModified() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Job) pulumi.StringPtrOutput { return v.ArtifactLastModified }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the job.
@@ -484,8 +459,8 @@ func (o JobOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the project.
-func (o JobOutput) CreatedBy() pulumi.StringOutput {
-	return o.ApplyT(func(v *Job) pulumi.StringOutput { return v.CreatedBy }).(pulumi.StringOutput)
+func (o JobOutput) CreatedBy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Job) pulumi.StringPtrOutput { return v.CreatedBy }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -499,17 +474,17 @@ func (o JobOutput) DeleteRelatedJobRuns() pulumi.BoolPtrOutput {
 }
 
 // (Updatable) A short description of the job.
-func (o JobOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v *Job) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
+func (o JobOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Job) pulumi.StringPtrOutput { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) A user-friendly display name for the resource.
-func (o JobOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v *Job) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+func (o JobOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Job) pulumi.StringPtrOutput { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
-func (o JobOutput) EmptyArtifact() pulumi.BoolOutput {
-	return o.ApplyT(func(v *Job) pulumi.BoolOutput { return v.EmptyArtifact }).(pulumi.BoolOutput)
+func (o JobOutput) EmptyArtifact() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *Job) pulumi.BoolPtrOutput { return v.EmptyArtifact }).(pulumi.BoolPtrOutput)
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -535,8 +510,8 @@ func (o JobOutput) JobInfrastructureConfigurationDetails() JobJobInfrastructureC
 }
 
 // Logging configuration for resource.
-func (o JobOutput) JobLogConfigurationDetails() JobJobLogConfigurationDetailsOutput {
-	return o.ApplyT(func(v *Job) JobJobLogConfigurationDetailsOutput { return v.JobLogConfigurationDetails }).(JobJobLogConfigurationDetailsOutput)
+func (o JobOutput) JobLogConfigurationDetails() JobJobLogConfigurationDetailsPtrOutput {
+	return o.ApplyT(func(v *Job) JobJobLogConfigurationDetailsPtrOutput { return v.JobLogConfigurationDetails }).(JobJobLogConfigurationDetailsPtrOutput)
 }
 
 // (Updatable) Collection of JobStorageMountConfigurationDetails.
@@ -547,8 +522,8 @@ func (o JobOutput) JobStorageMountConfigurationDetailsLists() JobJobStorageMount
 }
 
 // The state of the job.
-func (o JobOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v *Job) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o JobOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Job) pulumi.StringPtrOutput { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job with.
@@ -557,13 +532,13 @@ func (o JobOutput) ProjectId() pulumi.StringOutput {
 }
 
 // The state of the job.
-func (o JobOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *Job) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o JobOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Job) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2020-08-06T21:10:29.41Z
-func (o JobOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *Job) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o JobOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Job) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 type JobArrayOutput struct{ *pulumi.OutputState }
@@ -578,12 +553,6 @@ func (o JobArrayOutput) ToJobArrayOutput() JobArrayOutput {
 
 func (o JobArrayOutput) ToJobArrayOutputWithContext(ctx context.Context) JobArrayOutput {
 	return o
-}
-
-func (o JobArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*Job] {
-	return pulumix.Output[[]*Job]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o JobArrayOutput) Index(i pulumi.IntInput) JobOutput {
@@ -604,12 +573,6 @@ func (o JobMapOutput) ToJobMapOutput() JobMapOutput {
 
 func (o JobMapOutput) ToJobMapOutputWithContext(ctx context.Context) JobMapOutput {
 	return o
-}
-
-func (o JobMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*Job] {
-	return pulumix.Output[map[string]*Job]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o JobMapOutput) MapIndex(k pulumi.StringInput) JobOutput {

@@ -28,120 +28,120 @@ public final class GetDomainsIdentitySettingResult {
      * @return Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
      * 
      */
-    private String compartmentOcid;
+    private @Nullable String compartmentOcid;
     /**
      * @return A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
      * 
      */
-    private Boolean deleteInProgress;
+    private @Nullable Boolean deleteInProgress;
     /**
      * @return Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
      * 
      */
-    private String domainOcid;
+    private @Nullable String domainOcid;
     /**
      * @return Indicates whether to show the &#39;user-is-locked&#39; message during authentication if the user is already locked. The default value is false, which tells the system to show a generic &#39;authentication-failure&#39; message. This is the most secure behavior. If the option is set to true, the system shows a more detailed &#39;error-message&#39; that says the user is locked. This is more helpful but is less secure, for example, because the difference in error-messages could be used to determine which usernames exist and which do not.
      * 
      */
-    private Boolean emitLockedMessageWhenUserIsLocked;
+    private @Nullable Boolean emitLockedMessageWhenUserIsLocked;
     /**
      * @return An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer&#39;s tenant.
      * 
      */
-    private String externalId;
+    private @Nullable String externalId;
     /**
      * @return Unique identifier for the SCIM Resource as defined by the Service Provider. Each representation of the Resource MUST include a non-empty id value. This identifier MUST be unique across the Service Provider&#39;s entire set of Resources. It MUST be a stable, non-reassignable identifier that does not change when the same Resource is returned in subsequent requests. The value of the id attribute is always issued by the Service Provider and MUST never be specified by the Service Consumer. bulkId: is a reserved keyword and MUST NOT be used in the unique identifier.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The User or App who created the Resource
      * 
      */
-    private List<GetDomainsIdentitySettingIdcsCreatedBy> idcsCreatedBies;
+    private @Nullable List<GetDomainsIdentitySettingIdcsCreatedBy> idcsCreatedBies;
     private String idcsEndpoint;
     /**
      * @return The User or App who modified the Resource
      * 
      */
-    private List<GetDomainsIdentitySettingIdcsLastModifiedBy> idcsLastModifiedBies;
+    private @Nullable List<GetDomainsIdentitySettingIdcsLastModifiedBy> idcsLastModifiedBies;
     /**
      * @return The release number when the resource was upgraded.
      * 
      */
-    private String idcsLastUpgradedInRelease;
+    private @Nullable String idcsLastUpgradedInRelease;
     /**
      * @return Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
      * 
      */
-    private List<String> idcsPreventedOperations;
+    private @Nullable List<String> idcsPreventedOperations;
     private String identitySettingId;
     /**
      * @return A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
      * 
      */
-    private List<GetDomainsIdentitySettingMeta> metas;
+    private @Nullable List<GetDomainsIdentitySettingMeta> metas;
     /**
      * @return Whether to allow users to update their own profile.
      * 
      */
-    private List<GetDomainsIdentitySettingMyProfile> myProfiles;
+    private @Nullable List<GetDomainsIdentitySettingMyProfile> myProfiles;
     /**
      * @return Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
      * 
      */
-    private String ocid;
+    private @Nullable String ocid;
     /**
      * @return A list of Posix Gid settings.
      * 
      */
-    private List<GetDomainsIdentitySettingPosixGid> posixGids;
+    private @Nullable List<GetDomainsIdentitySettingPosixGid> posixGids;
     /**
      * @return A list of Posix Uid settings.
      * 
      */
-    private List<GetDomainsIdentitySettingPosixUid> posixUids;
+    private @Nullable List<GetDomainsIdentitySettingPosixUid> posixUids;
     /**
      * @return Indicates whether the primary email is required.
      * 
      */
-    private Boolean primaryEmailRequired;
+    private @Nullable Boolean primaryEmailRequired;
     /**
      * @return Indicates whether to remove non-RFC5322 compliant emails before creating a user.
      * 
      */
-    private Boolean removeInvalidEmails;
+    private @Nullable Boolean removeInvalidEmails;
     private @Nullable String resourceTypeSchemaVersion;
     /**
      * @return **Added In:** 2302092332
      * 
      */
-    private Boolean returnInactiveOverLockedMessage;
+    private @Nullable Boolean returnInactiveOverLockedMessage;
     /**
      * @return REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \&#34;enterprise\&#34; extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
      * 
      */
-    private List<String> schemas;
+    private @Nullable List<String> schemas;
     /**
      * @return A list of tags on this resource.
      * 
      */
-    private List<GetDomainsIdentitySettingTag> tags;
+    private @Nullable List<GetDomainsIdentitySettingTag> tags;
     /**
      * @return Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
      * 
      */
-    private String tenancyOcid;
+    private @Nullable String tenancyOcid;
     /**
      * @return A list of tokens and their expiry length.
      * 
      */
-    private List<GetDomainsIdentitySettingToken> tokens;
+    private @Nullable List<GetDomainsIdentitySettingToken> tokens;
     /**
      * @return Indicates whether a user is allowed to change their own recovery email.
      * 
      */
-    private Boolean userAllowedToSetRecoveryEmail;
+    private @Nullable Boolean userAllowedToSetRecoveryEmail;
 
     private GetDomainsIdentitySettingResult() {}
     public List<String> attributeSets() {
@@ -157,50 +157,50 @@ public final class GetDomainsIdentitySettingResult {
      * @return Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
      * 
      */
-    public String compartmentOcid() {
-        return this.compartmentOcid;
+    public Optional<String> compartmentOcid() {
+        return Optional.ofNullable(this.compartmentOcid);
     }
     /**
      * @return A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
      * 
      */
-    public Boolean deleteInProgress() {
-        return this.deleteInProgress;
+    public Optional<Boolean> deleteInProgress() {
+        return Optional.ofNullable(this.deleteInProgress);
     }
     /**
      * @return Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
      * 
      */
-    public String domainOcid() {
-        return this.domainOcid;
+    public Optional<String> domainOcid() {
+        return Optional.ofNullable(this.domainOcid);
     }
     /**
      * @return Indicates whether to show the &#39;user-is-locked&#39; message during authentication if the user is already locked. The default value is false, which tells the system to show a generic &#39;authentication-failure&#39; message. This is the most secure behavior. If the option is set to true, the system shows a more detailed &#39;error-message&#39; that says the user is locked. This is more helpful but is less secure, for example, because the difference in error-messages could be used to determine which usernames exist and which do not.
      * 
      */
-    public Boolean emitLockedMessageWhenUserIsLocked() {
-        return this.emitLockedMessageWhenUserIsLocked;
+    public Optional<Boolean> emitLockedMessageWhenUserIsLocked() {
+        return Optional.ofNullable(this.emitLockedMessageWhenUserIsLocked);
     }
     /**
      * @return An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer&#39;s tenant.
      * 
      */
-    public String externalId() {
-        return this.externalId;
+    public Optional<String> externalId() {
+        return Optional.ofNullable(this.externalId);
     }
     /**
      * @return Unique identifier for the SCIM Resource as defined by the Service Provider. Each representation of the Resource MUST include a non-empty id value. This identifier MUST be unique across the Service Provider&#39;s entire set of Resources. It MUST be a stable, non-reassignable identifier that does not change when the same Resource is returned in subsequent requests. The value of the id attribute is always issued by the Service Provider and MUST never be specified by the Service Consumer. bulkId: is a reserved keyword and MUST NOT be used in the unique identifier.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The User or App who created the Resource
      * 
      */
     public List<GetDomainsIdentitySettingIdcsCreatedBy> idcsCreatedBies() {
-        return this.idcsCreatedBies;
+        return this.idcsCreatedBies == null ? List.of() : this.idcsCreatedBies;
     }
     public String idcsEndpoint() {
         return this.idcsEndpoint;
@@ -210,21 +210,21 @@ public final class GetDomainsIdentitySettingResult {
      * 
      */
     public List<GetDomainsIdentitySettingIdcsLastModifiedBy> idcsLastModifiedBies() {
-        return this.idcsLastModifiedBies;
+        return this.idcsLastModifiedBies == null ? List.of() : this.idcsLastModifiedBies;
     }
     /**
      * @return The release number when the resource was upgraded.
      * 
      */
-    public String idcsLastUpgradedInRelease() {
-        return this.idcsLastUpgradedInRelease;
+    public Optional<String> idcsLastUpgradedInRelease() {
+        return Optional.ofNullable(this.idcsLastUpgradedInRelease);
     }
     /**
      * @return Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
      * 
      */
     public List<String> idcsPreventedOperations() {
-        return this.idcsPreventedOperations;
+        return this.idcsPreventedOperations == null ? List.of() : this.idcsPreventedOperations;
     }
     public String identitySettingId() {
         return this.identitySettingId;
@@ -234,49 +234,49 @@ public final class GetDomainsIdentitySettingResult {
      * 
      */
     public List<GetDomainsIdentitySettingMeta> metas() {
-        return this.metas;
+        return this.metas == null ? List.of() : this.metas;
     }
     /**
      * @return Whether to allow users to update their own profile.
      * 
      */
     public List<GetDomainsIdentitySettingMyProfile> myProfiles() {
-        return this.myProfiles;
+        return this.myProfiles == null ? List.of() : this.myProfiles;
     }
     /**
      * @return Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
      * 
      */
-    public String ocid() {
-        return this.ocid;
+    public Optional<String> ocid() {
+        return Optional.ofNullable(this.ocid);
     }
     /**
      * @return A list of Posix Gid settings.
      * 
      */
     public List<GetDomainsIdentitySettingPosixGid> posixGids() {
-        return this.posixGids;
+        return this.posixGids == null ? List.of() : this.posixGids;
     }
     /**
      * @return A list of Posix Uid settings.
      * 
      */
     public List<GetDomainsIdentitySettingPosixUid> posixUids() {
-        return this.posixUids;
+        return this.posixUids == null ? List.of() : this.posixUids;
     }
     /**
      * @return Indicates whether the primary email is required.
      * 
      */
-    public Boolean primaryEmailRequired() {
-        return this.primaryEmailRequired;
+    public Optional<Boolean> primaryEmailRequired() {
+        return Optional.ofNullable(this.primaryEmailRequired);
     }
     /**
      * @return Indicates whether to remove non-RFC5322 compliant emails before creating a user.
      * 
      */
-    public Boolean removeInvalidEmails() {
-        return this.removeInvalidEmails;
+    public Optional<Boolean> removeInvalidEmails() {
+        return Optional.ofNullable(this.removeInvalidEmails);
     }
     public Optional<String> resourceTypeSchemaVersion() {
         return Optional.ofNullable(this.resourceTypeSchemaVersion);
@@ -285,43 +285,43 @@ public final class GetDomainsIdentitySettingResult {
      * @return **Added In:** 2302092332
      * 
      */
-    public Boolean returnInactiveOverLockedMessage() {
-        return this.returnInactiveOverLockedMessage;
+    public Optional<Boolean> returnInactiveOverLockedMessage() {
+        return Optional.ofNullable(this.returnInactiveOverLockedMessage);
     }
     /**
      * @return REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \&#34;enterprise\&#34; extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
      * 
      */
     public List<String> schemas() {
-        return this.schemas;
+        return this.schemas == null ? List.of() : this.schemas;
     }
     /**
      * @return A list of tags on this resource.
      * 
      */
     public List<GetDomainsIdentitySettingTag> tags() {
-        return this.tags;
+        return this.tags == null ? List.of() : this.tags;
     }
     /**
      * @return Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
      * 
      */
-    public String tenancyOcid() {
-        return this.tenancyOcid;
+    public Optional<String> tenancyOcid() {
+        return Optional.ofNullable(this.tenancyOcid);
     }
     /**
      * @return A list of tokens and their expiry length.
      * 
      */
     public List<GetDomainsIdentitySettingToken> tokens() {
-        return this.tokens;
+        return this.tokens == null ? List.of() : this.tokens;
     }
     /**
      * @return Indicates whether a user is allowed to change their own recovery email.
      * 
      */
-    public Boolean userAllowedToSetRecoveryEmail() {
-        return this.userAllowedToSetRecoveryEmail;
+    public Optional<Boolean> userAllowedToSetRecoveryEmail() {
+        return Optional.ofNullable(this.userAllowedToSetRecoveryEmail);
     }
 
     public static Builder builder() {
@@ -336,32 +336,32 @@ public final class GetDomainsIdentitySettingResult {
         private @Nullable List<String> attributeSets;
         private @Nullable String attributes;
         private @Nullable String authorization;
-        private String compartmentOcid;
-        private Boolean deleteInProgress;
-        private String domainOcid;
-        private Boolean emitLockedMessageWhenUserIsLocked;
-        private String externalId;
-        private String id;
-        private List<GetDomainsIdentitySettingIdcsCreatedBy> idcsCreatedBies;
+        private @Nullable String compartmentOcid;
+        private @Nullable Boolean deleteInProgress;
+        private @Nullable String domainOcid;
+        private @Nullable Boolean emitLockedMessageWhenUserIsLocked;
+        private @Nullable String externalId;
+        private @Nullable String id;
+        private @Nullable List<GetDomainsIdentitySettingIdcsCreatedBy> idcsCreatedBies;
         private String idcsEndpoint;
-        private List<GetDomainsIdentitySettingIdcsLastModifiedBy> idcsLastModifiedBies;
-        private String idcsLastUpgradedInRelease;
-        private List<String> idcsPreventedOperations;
+        private @Nullable List<GetDomainsIdentitySettingIdcsLastModifiedBy> idcsLastModifiedBies;
+        private @Nullable String idcsLastUpgradedInRelease;
+        private @Nullable List<String> idcsPreventedOperations;
         private String identitySettingId;
-        private List<GetDomainsIdentitySettingMeta> metas;
-        private List<GetDomainsIdentitySettingMyProfile> myProfiles;
-        private String ocid;
-        private List<GetDomainsIdentitySettingPosixGid> posixGids;
-        private List<GetDomainsIdentitySettingPosixUid> posixUids;
-        private Boolean primaryEmailRequired;
-        private Boolean removeInvalidEmails;
+        private @Nullable List<GetDomainsIdentitySettingMeta> metas;
+        private @Nullable List<GetDomainsIdentitySettingMyProfile> myProfiles;
+        private @Nullable String ocid;
+        private @Nullable List<GetDomainsIdentitySettingPosixGid> posixGids;
+        private @Nullable List<GetDomainsIdentitySettingPosixUid> posixUids;
+        private @Nullable Boolean primaryEmailRequired;
+        private @Nullable Boolean removeInvalidEmails;
         private @Nullable String resourceTypeSchemaVersion;
-        private Boolean returnInactiveOverLockedMessage;
-        private List<String> schemas;
-        private List<GetDomainsIdentitySettingTag> tags;
-        private String tenancyOcid;
-        private List<GetDomainsIdentitySettingToken> tokens;
-        private Boolean userAllowedToSetRecoveryEmail;
+        private @Nullable Boolean returnInactiveOverLockedMessage;
+        private @Nullable List<String> schemas;
+        private @Nullable List<GetDomainsIdentitySettingTag> tags;
+        private @Nullable String tenancyOcid;
+        private @Nullable List<GetDomainsIdentitySettingToken> tokens;
+        private @Nullable Boolean userAllowedToSetRecoveryEmail;
         public Builder() {}
         public Builder(GetDomainsIdentitySettingResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -415,38 +415,38 @@ public final class GetDomainsIdentitySettingResult {
             return this;
         }
         @CustomType.Setter
-        public Builder compartmentOcid(String compartmentOcid) {
-            this.compartmentOcid = Objects.requireNonNull(compartmentOcid);
+        public Builder compartmentOcid(@Nullable String compartmentOcid) {
+            this.compartmentOcid = compartmentOcid;
             return this;
         }
         @CustomType.Setter
-        public Builder deleteInProgress(Boolean deleteInProgress) {
-            this.deleteInProgress = Objects.requireNonNull(deleteInProgress);
+        public Builder deleteInProgress(@Nullable Boolean deleteInProgress) {
+            this.deleteInProgress = deleteInProgress;
             return this;
         }
         @CustomType.Setter
-        public Builder domainOcid(String domainOcid) {
-            this.domainOcid = Objects.requireNonNull(domainOcid);
+        public Builder domainOcid(@Nullable String domainOcid) {
+            this.domainOcid = domainOcid;
             return this;
         }
         @CustomType.Setter
-        public Builder emitLockedMessageWhenUserIsLocked(Boolean emitLockedMessageWhenUserIsLocked) {
-            this.emitLockedMessageWhenUserIsLocked = Objects.requireNonNull(emitLockedMessageWhenUserIsLocked);
+        public Builder emitLockedMessageWhenUserIsLocked(@Nullable Boolean emitLockedMessageWhenUserIsLocked) {
+            this.emitLockedMessageWhenUserIsLocked = emitLockedMessageWhenUserIsLocked;
             return this;
         }
         @CustomType.Setter
-        public Builder externalId(String externalId) {
-            this.externalId = Objects.requireNonNull(externalId);
+        public Builder externalId(@Nullable String externalId) {
+            this.externalId = externalId;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder idcsCreatedBies(List<GetDomainsIdentitySettingIdcsCreatedBy> idcsCreatedBies) {
-            this.idcsCreatedBies = Objects.requireNonNull(idcsCreatedBies);
+        public Builder idcsCreatedBies(@Nullable List<GetDomainsIdentitySettingIdcsCreatedBy> idcsCreatedBies) {
+            this.idcsCreatedBies = idcsCreatedBies;
             return this;
         }
         public Builder idcsCreatedBies(GetDomainsIdentitySettingIdcsCreatedBy... idcsCreatedBies) {
@@ -458,21 +458,21 @@ public final class GetDomainsIdentitySettingResult {
             return this;
         }
         @CustomType.Setter
-        public Builder idcsLastModifiedBies(List<GetDomainsIdentitySettingIdcsLastModifiedBy> idcsLastModifiedBies) {
-            this.idcsLastModifiedBies = Objects.requireNonNull(idcsLastModifiedBies);
+        public Builder idcsLastModifiedBies(@Nullable List<GetDomainsIdentitySettingIdcsLastModifiedBy> idcsLastModifiedBies) {
+            this.idcsLastModifiedBies = idcsLastModifiedBies;
             return this;
         }
         public Builder idcsLastModifiedBies(GetDomainsIdentitySettingIdcsLastModifiedBy... idcsLastModifiedBies) {
             return idcsLastModifiedBies(List.of(idcsLastModifiedBies));
         }
         @CustomType.Setter
-        public Builder idcsLastUpgradedInRelease(String idcsLastUpgradedInRelease) {
-            this.idcsLastUpgradedInRelease = Objects.requireNonNull(idcsLastUpgradedInRelease);
+        public Builder idcsLastUpgradedInRelease(@Nullable String idcsLastUpgradedInRelease) {
+            this.idcsLastUpgradedInRelease = idcsLastUpgradedInRelease;
             return this;
         }
         @CustomType.Setter
-        public Builder idcsPreventedOperations(List<String> idcsPreventedOperations) {
-            this.idcsPreventedOperations = Objects.requireNonNull(idcsPreventedOperations);
+        public Builder idcsPreventedOperations(@Nullable List<String> idcsPreventedOperations) {
+            this.idcsPreventedOperations = idcsPreventedOperations;
             return this;
         }
         public Builder idcsPreventedOperations(String... idcsPreventedOperations) {
@@ -484,50 +484,50 @@ public final class GetDomainsIdentitySettingResult {
             return this;
         }
         @CustomType.Setter
-        public Builder metas(List<GetDomainsIdentitySettingMeta> metas) {
-            this.metas = Objects.requireNonNull(metas);
+        public Builder metas(@Nullable List<GetDomainsIdentitySettingMeta> metas) {
+            this.metas = metas;
             return this;
         }
         public Builder metas(GetDomainsIdentitySettingMeta... metas) {
             return metas(List.of(metas));
         }
         @CustomType.Setter
-        public Builder myProfiles(List<GetDomainsIdentitySettingMyProfile> myProfiles) {
-            this.myProfiles = Objects.requireNonNull(myProfiles);
+        public Builder myProfiles(@Nullable List<GetDomainsIdentitySettingMyProfile> myProfiles) {
+            this.myProfiles = myProfiles;
             return this;
         }
         public Builder myProfiles(GetDomainsIdentitySettingMyProfile... myProfiles) {
             return myProfiles(List.of(myProfiles));
         }
         @CustomType.Setter
-        public Builder ocid(String ocid) {
-            this.ocid = Objects.requireNonNull(ocid);
+        public Builder ocid(@Nullable String ocid) {
+            this.ocid = ocid;
             return this;
         }
         @CustomType.Setter
-        public Builder posixGids(List<GetDomainsIdentitySettingPosixGid> posixGids) {
-            this.posixGids = Objects.requireNonNull(posixGids);
+        public Builder posixGids(@Nullable List<GetDomainsIdentitySettingPosixGid> posixGids) {
+            this.posixGids = posixGids;
             return this;
         }
         public Builder posixGids(GetDomainsIdentitySettingPosixGid... posixGids) {
             return posixGids(List.of(posixGids));
         }
         @CustomType.Setter
-        public Builder posixUids(List<GetDomainsIdentitySettingPosixUid> posixUids) {
-            this.posixUids = Objects.requireNonNull(posixUids);
+        public Builder posixUids(@Nullable List<GetDomainsIdentitySettingPosixUid> posixUids) {
+            this.posixUids = posixUids;
             return this;
         }
         public Builder posixUids(GetDomainsIdentitySettingPosixUid... posixUids) {
             return posixUids(List.of(posixUids));
         }
         @CustomType.Setter
-        public Builder primaryEmailRequired(Boolean primaryEmailRequired) {
-            this.primaryEmailRequired = Objects.requireNonNull(primaryEmailRequired);
+        public Builder primaryEmailRequired(@Nullable Boolean primaryEmailRequired) {
+            this.primaryEmailRequired = primaryEmailRequired;
             return this;
         }
         @CustomType.Setter
-        public Builder removeInvalidEmails(Boolean removeInvalidEmails) {
-            this.removeInvalidEmails = Objects.requireNonNull(removeInvalidEmails);
+        public Builder removeInvalidEmails(@Nullable Boolean removeInvalidEmails) {
+            this.removeInvalidEmails = removeInvalidEmails;
             return this;
         }
         @CustomType.Setter
@@ -536,42 +536,42 @@ public final class GetDomainsIdentitySettingResult {
             return this;
         }
         @CustomType.Setter
-        public Builder returnInactiveOverLockedMessage(Boolean returnInactiveOverLockedMessage) {
-            this.returnInactiveOverLockedMessage = Objects.requireNonNull(returnInactiveOverLockedMessage);
+        public Builder returnInactiveOverLockedMessage(@Nullable Boolean returnInactiveOverLockedMessage) {
+            this.returnInactiveOverLockedMessage = returnInactiveOverLockedMessage;
             return this;
         }
         @CustomType.Setter
-        public Builder schemas(List<String> schemas) {
-            this.schemas = Objects.requireNonNull(schemas);
+        public Builder schemas(@Nullable List<String> schemas) {
+            this.schemas = schemas;
             return this;
         }
         public Builder schemas(String... schemas) {
             return schemas(List.of(schemas));
         }
         @CustomType.Setter
-        public Builder tags(List<GetDomainsIdentitySettingTag> tags) {
-            this.tags = Objects.requireNonNull(tags);
+        public Builder tags(@Nullable List<GetDomainsIdentitySettingTag> tags) {
+            this.tags = tags;
             return this;
         }
         public Builder tags(GetDomainsIdentitySettingTag... tags) {
             return tags(List.of(tags));
         }
         @CustomType.Setter
-        public Builder tenancyOcid(String tenancyOcid) {
-            this.tenancyOcid = Objects.requireNonNull(tenancyOcid);
+        public Builder tenancyOcid(@Nullable String tenancyOcid) {
+            this.tenancyOcid = tenancyOcid;
             return this;
         }
         @CustomType.Setter
-        public Builder tokens(List<GetDomainsIdentitySettingToken> tokens) {
-            this.tokens = Objects.requireNonNull(tokens);
+        public Builder tokens(@Nullable List<GetDomainsIdentitySettingToken> tokens) {
+            this.tokens = tokens;
             return this;
         }
         public Builder tokens(GetDomainsIdentitySettingToken... tokens) {
             return tokens(List.of(tokens));
         }
         @CustomType.Setter
-        public Builder userAllowedToSetRecoveryEmail(Boolean userAllowedToSetRecoveryEmail) {
-            this.userAllowedToSetRecoveryEmail = Objects.requireNonNull(userAllowedToSetRecoveryEmail);
+        public Builder userAllowedToSetRecoveryEmail(@Nullable Boolean userAllowedToSetRecoveryEmail) {
+            this.userAllowedToSetRecoveryEmail = userAllowedToSetRecoveryEmail;
             return this;
         }
         public GetDomainsIdentitySettingResult build() {

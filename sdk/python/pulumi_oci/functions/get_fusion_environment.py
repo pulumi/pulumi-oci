@@ -116,79 +116,52 @@ class GetFusionEnvironmentResult:
 
     @property
     @pulumi.getter(name="additionalLanguagePacks")
-    def additional_language_packs(self) -> Sequence[str]:
-        """
-        Language packs
-        """
+    def additional_language_packs(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "additional_language_packs")
 
     @property
     @pulumi.getter(name="appliedPatchBundles")
-    def applied_patch_bundles(self) -> Sequence[str]:
-        """
-        Patch bundle names
-        """
+    def applied_patch_bundles(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "applied_patch_bundles")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        Compartment Identifier
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="createFusionEnvironmentAdminUserDetails")
-    def create_fusion_environment_admin_user_details(self) -> Sequence['outputs.GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetailResult']:
+    def create_fusion_environment_admin_user_details(self) -> Optional[Sequence['outputs.GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetailResult']]:
         return pulumi.get(self, "create_fusion_environment_admin_user_details")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        FusionEnvironment Identifier, can be renamed
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="dnsPrefix")
-    def dns_prefix(self) -> str:
-        """
-        DNS prefix
-        """
+    def dns_prefix(self) -> Optional[str]:
         return pulumi.get(self, "dns_prefix")
 
     @property
     @pulumi.getter(name="domainId")
-    def domain_id(self) -> str:
-        """
-        The IDCS domain created for the fusion instance
-        """
+    def domain_id(self) -> Optional[str]:
         return pulumi.get(self, "domain_id")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="fusionEnvironmentFamilyId")
-    def fusion_environment_family_id(self) -> str:
-        """
-        FusionEnvironmentFamily Identifier
-        """
+    def fusion_environment_family_id(self) -> Optional[str]:
         return pulumi.get(self, "fusion_environment_family_id")
 
     @property
@@ -198,154 +171,97 @@ class GetFusionEnvironmentResult:
 
     @property
     @pulumi.getter(name="fusionEnvironmentType")
-    def fusion_environment_type(self) -> str:
-        """
-        Type of the FusionEnvironment.
-        """
+    def fusion_environment_type(self) -> Optional[str]:
         return pulumi.get(self, "fusion_environment_type")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        Unique identifier that is immutable on creation
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="idcsDomainUrl")
-    def idcs_domain_url(self) -> str:
-        """
-        The IDCS Domain URL
-        """
+    def idcs_domain_url(self) -> Optional[str]:
         return pulumi.get(self, "idcs_domain_url")
 
     @property
     @pulumi.getter(name="isBreakGlassEnabled")
-    def is_break_glass_enabled(self) -> bool:
-        """
-        If it's true, then the Break Glass feature is enabled
-        """
+    def is_break_glass_enabled(self) -> Optional[bool]:
         return pulumi.get(self, "is_break_glass_enabled")
 
     @property
     @pulumi.getter(name="kmsKeyId")
-    def kms_key_id(self) -> str:
-        """
-        BYOK key id
-        """
+    def kms_key_id(self) -> Optional[str]:
         return pulumi.get(self, "kms_key_id")
 
     @property
     @pulumi.getter(name="kmsKeyInfos")
-    def kms_key_infos(self) -> Sequence['outputs.GetFusionEnvironmentKmsKeyInfoResult']:
-        """
-        BYOK key info
-        """
+    def kms_key_infos(self) -> Optional[Sequence['outputs.GetFusionEnvironmentKmsKeyInfoResult']]:
         return pulumi.get(self, "kms_key_infos")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="lockboxId")
-    def lockbox_id(self) -> str:
-        """
-        The lockbox Id of this fusion environment. If there's no lockbox id, this field will be null
-        """
+    def lockbox_id(self) -> Optional[str]:
         return pulumi.get(self, "lockbox_id")
 
     @property
     @pulumi.getter(name="maintenancePolicies")
-    def maintenance_policies(self) -> Sequence['outputs.GetFusionEnvironmentMaintenancePolicyResult']:
-        """
-        The policy that specifies the maintenance and upgrade preferences for an environment. For more information about the options, see [Understanding Environment Maintenance](https://docs.cloud.oracle.com/iaas/Content/fusion-applications/plan-environment-family.htm#about-env-maintenance).
-        """
+    def maintenance_policies(self) -> Optional[Sequence['outputs.GetFusionEnvironmentMaintenancePolicyResult']]:
         return pulumi.get(self, "maintenance_policies")
 
     @property
     @pulumi.getter(name="publicUrl")
-    def public_url(self) -> str:
-        """
-        Public URL
-        """
+    def public_url(self) -> Optional[str]:
         return pulumi.get(self, "public_url")
 
     @property
     @pulumi.getter
-    def refreshes(self) -> Sequence['outputs.GetFusionEnvironmentRefreshResult']:
-        """
-        Describes a refresh of a fusion environment
-        """
+    def refreshes(self) -> Optional[Sequence['outputs.GetFusionEnvironmentRefreshResult']]:
         return pulumi.get(self, "refreshes")
 
     @property
     @pulumi.getter
-    def rules(self) -> Sequence['outputs.GetFusionEnvironmentRuleResult']:
-        """
-        Network Access Control Rules
-        """
+    def rules(self) -> Optional[Sequence['outputs.GetFusionEnvironmentRuleResult']]:
         return pulumi.get(self, "rules")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the ServiceInstance.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="subscriptionIds")
-    def subscription_ids(self) -> Sequence[str]:
-        """
-        List of subscription IDs.
-        """
+    def subscription_ids(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "subscription_ids")
 
     @property
     @pulumi.getter(name="systemName")
-    def system_name(self) -> str:
-        """
-        Environment Specific Guid/ System Name
-        """
+    def system_name(self) -> Optional[str]:
         return pulumi.get(self, "system_name")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The time the the FusionEnvironment was created. An RFC3339 formatted datetime string
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpcomingMaintenance")
-    def time_upcoming_maintenance(self) -> str:
-        """
-        The next maintenance for this environment
-        """
+    def time_upcoming_maintenance(self) -> Optional[str]:
         return pulumi.get(self, "time_upcoming_maintenance")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The time the FusionEnvironment was updated. An RFC3339 formatted datetime string
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
     @property
     @pulumi.getter
-    def version(self) -> str:
-        """
-        Version of Fusion Apps used by this environment
-        """
+    def version(self) -> Optional[str]:
         return pulumi.get(self, "version")
 
 
@@ -390,21 +306,7 @@ class AwaitableGetFusionEnvironmentResult(GetFusionEnvironmentResult):
 def get_fusion_environment(fusion_environment_id: Optional[str] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetFusionEnvironmentResult:
     """
-    This data source provides details about a specific Fusion Environment resource in Oracle Cloud Infrastructure Fusion Apps service.
-
-    Gets a FusionEnvironment by identifier
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_fusion_environment = oci.Functions.get_fusion_environment(fusion_environment_id=oci_fusion_apps_fusion_environment["test_fusion_environment"]["id"])
-    ```
-
-
-    :param str fusion_environment_id: unique FusionEnvironment identifier
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['fusionEnvironmentId'] = fusion_environment_id
@@ -448,20 +350,6 @@ def get_fusion_environment(fusion_environment_id: Optional[str] = None,
 def get_fusion_environment_output(fusion_environment_id: Optional[pulumi.Input[str]] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetFusionEnvironmentResult]:
     """
-    This data source provides details about a specific Fusion Environment resource in Oracle Cloud Infrastructure Fusion Apps service.
-
-    Gets a FusionEnvironment by identifier
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_fusion_environment = oci.Functions.get_fusion_environment(fusion_environment_id=oci_fusion_apps_fusion_environment["test_fusion_environment"]["id"])
-    ```
-
-
-    :param str fusion_environment_id: unique FusionEnvironment identifier
+    Use this data source to access information about an existing resource.
     """
     ...

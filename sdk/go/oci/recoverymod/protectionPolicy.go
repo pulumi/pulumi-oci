@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Protection Policy resource in Oracle Cloud Infrastructure Recovery service.
@@ -77,9 +76,9 @@ type ProtectionPolicy struct {
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// Set to TRUE if the policy is Oracle-defined, and FALSE for a user-defined custom policy. You can modify only the custom policies.
-	IsPredefinedPolicy pulumi.BoolOutput `pulumi:"isPredefinedPolicy"`
+	IsPredefinedPolicy pulumi.BoolPtrOutput `pulumi:"isPredefinedPolicy"`
 	// Detailed description about the current lifecycle state of the protection policy. For example, it can be used to provide actionable information for a resource in a Failed state.
-	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrOutput `pulumi:"lifecycleDetails"`
 	// The current state of the protection policy. Allowed values are:
 	// * CREATING
 	// * UPDATING
@@ -87,13 +86,13 @@ type ProtectionPolicy struct {
 	// * DELETING
 	// * DELETED
 	// * FAILED
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
 	// An RFC3339 formatted datetime string that indicates the created time for the protection policy. For example: '2020-05-22T21:10:29.600Z'.
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// An RFC3339 formatted datetime string that indicates the updated time for the protection policy. For example: '2020-05-22T21:10:29.600Z'.
-	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 }
 
 // NewProtectionPolicy registers a new resource with the given unique name, arguments, and options.
@@ -262,12 +261,6 @@ func (i *ProtectionPolicy) ToProtectionPolicyOutputWithContext(ctx context.Conte
 	return pulumi.ToOutputWithContext(ctx, i).(ProtectionPolicyOutput)
 }
 
-func (i *ProtectionPolicy) ToOutput(ctx context.Context) pulumix.Output[*ProtectionPolicy] {
-	return pulumix.Output[*ProtectionPolicy]{
-		OutputState: i.ToProtectionPolicyOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ProtectionPolicyArrayInput is an input type that accepts ProtectionPolicyArray and ProtectionPolicyArrayOutput values.
 // You can construct a concrete instance of `ProtectionPolicyArrayInput` via:
 //
@@ -291,12 +284,6 @@ func (i ProtectionPolicyArray) ToProtectionPolicyArrayOutput() ProtectionPolicyA
 
 func (i ProtectionPolicyArray) ToProtectionPolicyArrayOutputWithContext(ctx context.Context) ProtectionPolicyArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ProtectionPolicyArrayOutput)
-}
-
-func (i ProtectionPolicyArray) ToOutput(ctx context.Context) pulumix.Output[[]*ProtectionPolicy] {
-	return pulumix.Output[[]*ProtectionPolicy]{
-		OutputState: i.ToProtectionPolicyArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // ProtectionPolicyMapInput is an input type that accepts ProtectionPolicyMap and ProtectionPolicyMapOutput values.
@@ -324,12 +311,6 @@ func (i ProtectionPolicyMap) ToProtectionPolicyMapOutputWithContext(ctx context.
 	return pulumi.ToOutputWithContext(ctx, i).(ProtectionPolicyMapOutput)
 }
 
-func (i ProtectionPolicyMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*ProtectionPolicy] {
-	return pulumix.Output[map[string]*ProtectionPolicy]{
-		OutputState: i.ToProtectionPolicyMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ProtectionPolicyOutput struct{ *pulumi.OutputState }
 
 func (ProtectionPolicyOutput) ElementType() reflect.Type {
@@ -342,12 +323,6 @@ func (o ProtectionPolicyOutput) ToProtectionPolicyOutput() ProtectionPolicyOutpu
 
 func (o ProtectionPolicyOutput) ToProtectionPolicyOutputWithContext(ctx context.Context) ProtectionPolicyOutput {
 	return o
-}
-
-func (o ProtectionPolicyOutput) ToOutput(ctx context.Context) pulumix.Output[*ProtectionPolicy] {
-	return pulumix.Output[*ProtectionPolicy]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The maximum number of days to retain backups for a protected database.
@@ -379,13 +354,13 @@ func (o ProtectionPolicyOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // Set to TRUE if the policy is Oracle-defined, and FALSE for a user-defined custom policy. You can modify only the custom policies.
-func (o ProtectionPolicyOutput) IsPredefinedPolicy() pulumi.BoolOutput {
-	return o.ApplyT(func(v *ProtectionPolicy) pulumi.BoolOutput { return v.IsPredefinedPolicy }).(pulumi.BoolOutput)
+func (o ProtectionPolicyOutput) IsPredefinedPolicy() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *ProtectionPolicy) pulumi.BoolPtrOutput { return v.IsPredefinedPolicy }).(pulumi.BoolPtrOutput)
 }
 
 // Detailed description about the current lifecycle state of the protection policy. For example, it can be used to provide actionable information for a resource in a Failed state.
-func (o ProtectionPolicyOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v *ProtectionPolicy) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o ProtectionPolicyOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ProtectionPolicy) pulumi.StringPtrOutput { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the protection policy. Allowed values are:
@@ -395,8 +370,8 @@ func (o ProtectionPolicyOutput) LifecycleDetails() pulumi.StringOutput {
 // * DELETING
 // * DELETED
 // * FAILED
-func (o ProtectionPolicyOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *ProtectionPolicy) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o ProtectionPolicyOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ProtectionPolicy) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
@@ -405,13 +380,13 @@ func (o ProtectionPolicyOutput) SystemTags() pulumi.MapOutput {
 }
 
 // An RFC3339 formatted datetime string that indicates the created time for the protection policy. For example: '2020-05-22T21:10:29.600Z'.
-func (o ProtectionPolicyOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *ProtectionPolicy) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o ProtectionPolicyOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ProtectionPolicy) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // An RFC3339 formatted datetime string that indicates the updated time for the protection policy. For example: '2020-05-22T21:10:29.600Z'.
-func (o ProtectionPolicyOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *ProtectionPolicy) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o ProtectionPolicyOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ProtectionPolicy) pulumi.StringPtrOutput { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type ProtectionPolicyArrayOutput struct{ *pulumi.OutputState }
@@ -426,12 +401,6 @@ func (o ProtectionPolicyArrayOutput) ToProtectionPolicyArrayOutput() ProtectionP
 
 func (o ProtectionPolicyArrayOutput) ToProtectionPolicyArrayOutputWithContext(ctx context.Context) ProtectionPolicyArrayOutput {
 	return o
-}
-
-func (o ProtectionPolicyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*ProtectionPolicy] {
-	return pulumix.Output[[]*ProtectionPolicy]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ProtectionPolicyArrayOutput) Index(i pulumi.IntInput) ProtectionPolicyOutput {
@@ -452,12 +421,6 @@ func (o ProtectionPolicyMapOutput) ToProtectionPolicyMapOutput() ProtectionPolic
 
 func (o ProtectionPolicyMapOutput) ToProtectionPolicyMapOutputWithContext(ctx context.Context) ProtectionPolicyMapOutput {
 	return o
-}
-
-func (o ProtectionPolicyMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*ProtectionPolicy] {
-	return pulumix.Output[map[string]*ProtectionPolicy]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ProtectionPolicyMapOutput) MapIndex(k pulumi.StringInput) ProtectionPolicyOutput {

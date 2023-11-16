@@ -95,11 +95,11 @@ export class DiscoveryJob extends pulumi.CustomResource {
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * Client who submits discovery job.
      */
-    public readonly discoveryClient!: pulumi.Output<string>;
+    public readonly discoveryClient!: pulumi.Output<string | undefined>;
     /**
      * The request of DiscoveryJob Resource details.
      */
@@ -111,7 +111,7 @@ export class DiscoveryJob extends pulumi.CustomResource {
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * If this parameter set to true, the specified tags will be applied  to all resources discovered in the current request.  Default is true. 
      *
@@ -119,35 +119,35 @@ export class DiscoveryJob extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly shouldPropagateTagsToDiscoveredResources!: pulumi.Output<boolean>;
+    public readonly shouldPropagateTagsToDiscoveredResources!: pulumi.Output<boolean | undefined>;
     /**
      * The current state of the DiscoveryJob Resource.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * Specifies the status of the discovery job
      */
-    public /*out*/ readonly status!: pulumi.Output<string>;
+    public /*out*/ readonly status!: pulumi.Output<string | undefined>;
     /**
      * The short summary of the status of the discovery job
      */
-    public /*out*/ readonly statusMessage!: pulumi.Output<string>;
+    public /*out*/ readonly statusMessage!: pulumi.Output<string | undefined>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any}>;
+    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * The OCID of Tenant
      */
-    public /*out*/ readonly tenantId!: pulumi.Output<string>;
+    public /*out*/ readonly tenantId!: pulumi.Output<string | undefined>;
     /**
      * The time the discovery Job was updated.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    public /*out*/ readonly timeUpdated!: pulumi.Output<string | undefined>;
     /**
      * The OCID of user in which the job is submitted
      */
-    public /*out*/ readonly userId!: pulumi.Output<string>;
+    public /*out*/ readonly userId!: pulumi.Output<string | undefined>;
 
     /**
      * Create a DiscoveryJob resource with the given unique name, arguments, and options.

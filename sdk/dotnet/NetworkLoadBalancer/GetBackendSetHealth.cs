@@ -56,10 +56,10 @@ namespace Pulumi.Oci.NetworkLoadBalancer
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         public readonly string NetworkLoadBalancerId;
-        public readonly string Status;
-        public readonly int TotalBackendCount;
+        public readonly string? Status;
+        public readonly int? TotalBackendCount;
         public readonly ImmutableArray<string> UnknownStateBackendNames;
         public readonly ImmutableArray<string> WarningStateBackendNames;
 
@@ -69,13 +69,13 @@ namespace Pulumi.Oci.NetworkLoadBalancer
 
             ImmutableArray<string> criticalStateBackendNames,
 
-            string id,
+            string? id,
 
             string networkLoadBalancerId,
 
-            string status,
+            string? status,
 
-            int totalBackendCount,
+            int? totalBackendCount,
 
             ImmutableArray<string> unknownStateBackendNames,
 

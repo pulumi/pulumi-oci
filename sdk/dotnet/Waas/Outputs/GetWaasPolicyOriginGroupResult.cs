@@ -13,12 +13,12 @@ namespace Pulumi.Oci.Waas.Outputs
     [OutputType]
     public sealed class GetWaasPolicyOriginGroupResult
     {
-        public readonly string Label;
+        public readonly string? Label;
         public readonly ImmutableArray<Outputs.GetWaasPolicyOriginGroupOriginGroupResult> OriginGroups;
 
         [OutputConstructor]
         private GetWaasPolicyOriginGroupResult(
-            string label,
+            string? label,
 
             ImmutableArray<Outputs.GetWaasPolicyOriginGroupOriginGroupResult> originGroups)
         {

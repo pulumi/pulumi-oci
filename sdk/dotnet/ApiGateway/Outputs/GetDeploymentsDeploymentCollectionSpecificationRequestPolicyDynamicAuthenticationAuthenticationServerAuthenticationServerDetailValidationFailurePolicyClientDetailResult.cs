@@ -16,29 +16,29 @@ namespace Pulumi.Oci.ApiGateway.Outputs
         /// <summary>
         /// Client ID for the OAuth2/OIDC app.
         /// </summary>
-        public readonly string ClientId;
+        public readonly string? ClientId;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Vault Service secret resource.
         /// </summary>
-        public readonly string ClientSecretId;
+        public readonly string? ClientSecretId;
         /// <summary>
         /// The version number of the client secret to use.
         /// </summary>
-        public readonly string ClientSecretVersionNumber;
+        public readonly string? ClientSecretVersionNumber;
         /// <summary>
         /// Type of the Response Cache Store Policy.
         /// </summary>
-        public readonly string Type;
+        public readonly string? Type;
 
         [OutputConstructor]
         private GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyClientDetailResult(
-            string clientId,
+            string? clientId,
 
-            string clientSecretId,
+            string? clientSecretId,
 
-            string clientSecretVersionNumber,
+            string? clientSecretVersionNumber,
 
-            string type)
+            string? type)
         {
             ClientId = clientId;
             ClientSecretId = clientSecretId;

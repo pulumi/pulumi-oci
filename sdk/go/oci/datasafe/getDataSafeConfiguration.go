@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Data Safe Configuration resource in Oracle Cloud Infrastructure Data Safe service.
@@ -62,22 +61,22 @@ type LookupDataSafeConfigurationResult struct {
 	// The OCID of the tenancy used to enable Data Safe.
 	CompartmentId string `pulumi:"compartmentId"`
 	// The Oracle Data Safe's NAT Gateway IP Address.
-	DataSafeNatGatewayIpAddress string `pulumi:"dataSafeNatGatewayIpAddress"`
+	DataSafeNatGatewayIpAddress *string `pulumi:"dataSafeNatGatewayIpAddress"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// Details of the tenancy level global settings in Data Safe.
 	GlobalSettings []GetDataSafeConfigurationGlobalSetting `pulumi:"globalSettings"`
-	Id             string                                  `pulumi:"id"`
+	Id             *string                                 `pulumi:"id"`
 	// Indicates if Data Safe is enabled.
-	IsEnabled bool `pulumi:"isEnabled"`
+	IsEnabled *bool `pulumi:"isEnabled"`
 	// The current state of Data Safe.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The date and time Data Safe was enabled, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-	TimeEnabled string `pulumi:"timeEnabled"`
+	TimeEnabled *string `pulumi:"timeEnabled"`
 	// The URL of the Data Safe service.
-	Url string `pulumi:"url"`
+	Url *string `pulumi:"url"`
 }
 
 func LookupDataSafeConfigurationOutput(ctx *pulumi.Context, args LookupDataSafeConfigurationOutputArgs, opts ...pulumi.InvokeOption) LookupDataSafeConfigurationResultOutput {
@@ -118,20 +117,14 @@ func (o LookupDataSafeConfigurationResultOutput) ToLookupDataSafeConfigurationRe
 	return o
 }
 
-func (o LookupDataSafeConfigurationResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupDataSafeConfigurationResult] {
-	return pulumix.Output[LookupDataSafeConfigurationResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the tenancy used to enable Data Safe.
 func (o LookupDataSafeConfigurationResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDataSafeConfigurationResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
 // The Oracle Data Safe's NAT Gateway IP Address.
-func (o LookupDataSafeConfigurationResultOutput) DataSafeNatGatewayIpAddress() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDataSafeConfigurationResult) string { return v.DataSafeNatGatewayIpAddress }).(pulumi.StringOutput)
+func (o LookupDataSafeConfigurationResultOutput) DataSafeNatGatewayIpAddress() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDataSafeConfigurationResult) *string { return v.DataSafeNatGatewayIpAddress }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
@@ -151,28 +144,28 @@ func (o LookupDataSafeConfigurationResultOutput) GlobalSettings() GetDataSafeCon
 	}).(GetDataSafeConfigurationGlobalSettingArrayOutput)
 }
 
-func (o LookupDataSafeConfigurationResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDataSafeConfigurationResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupDataSafeConfigurationResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDataSafeConfigurationResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Indicates if Data Safe is enabled.
-func (o LookupDataSafeConfigurationResultOutput) IsEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupDataSafeConfigurationResult) bool { return v.IsEnabled }).(pulumi.BoolOutput)
+func (o LookupDataSafeConfigurationResultOutput) IsEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupDataSafeConfigurationResult) *bool { return v.IsEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // The current state of Data Safe.
-func (o LookupDataSafeConfigurationResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDataSafeConfigurationResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupDataSafeConfigurationResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDataSafeConfigurationResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time Data Safe was enabled, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-func (o LookupDataSafeConfigurationResultOutput) TimeEnabled() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDataSafeConfigurationResult) string { return v.TimeEnabled }).(pulumi.StringOutput)
+func (o LookupDataSafeConfigurationResultOutput) TimeEnabled() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDataSafeConfigurationResult) *string { return v.TimeEnabled }).(pulumi.StringPtrOutput)
 }
 
 // The URL of the Data Safe service.
-func (o LookupDataSafeConfigurationResultOutput) Url() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDataSafeConfigurationResult) string { return v.Url }).(pulumi.StringOutput)
+func (o LookupDataSafeConfigurationResultOutput) Url() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDataSafeConfigurationResult) *string { return v.Url }).(pulumi.StringPtrOutput)
 }
 
 func init() {

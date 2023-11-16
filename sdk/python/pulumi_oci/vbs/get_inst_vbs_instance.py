@@ -73,119 +73,77 @@ class GetInstVbsInstanceResult:
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        Compartment of the service instance
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        Service instance display name
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        Unique identifier that is immutable on creation
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="idcsAccessToken")
-    def idcs_access_token(self) -> str:
+    def idcs_access_token(self) -> Optional[str]:
         return pulumi.get(self, "idcs_access_token")
 
     @property
     @pulumi.getter(name="isResourceUsageAgreementGranted")
-    def is_resource_usage_agreement_granted(self) -> bool:
-        """
-        Whether the VBS service instance owner explicitly approved VBS to create and use resources in the customer tenancy
-        """
+    def is_resource_usage_agreement_granted(self) -> Optional[bool]:
         return pulumi.get(self, "is_resource_usage_agreement_granted")
 
     @property
     @pulumi.getter(name="lifecyleDetails")
-    def lifecyle_details(self) -> str:
-        """
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        """
+    def lifecyle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecyle_details")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        Service instance name (unique identifier)
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="resourceCompartmentId")
-    def resource_compartment_id(self) -> str:
-        """
-        Compartment where VBS may create additional resources for the service instance
-        """
+    def resource_compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "resource_compartment_id")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the VbsInstance.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The time the the VbsInstance was created. An RFC3339 formatted datetime string
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The time the VbsInstance was updated. An RFC3339 formatted datetime string
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
     @property
     @pulumi.getter(name="vbsAccessUrl")
-    def vbs_access_url(self) -> str:
-        """
-        Public web URL for accessing the VBS service instance
-        """
+    def vbs_access_url(self) -> Optional[str]:
         return pulumi.get(self, "vbs_access_url")
 
     @property
@@ -221,21 +179,7 @@ class AwaitableGetInstVbsInstanceResult(GetInstVbsInstanceResult):
 def get_inst_vbs_instance(vbs_instance_id: Optional[str] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetInstVbsInstanceResult:
     """
-    This data source provides details about a specific Vbs Instance resource in Oracle Cloud Infrastructure Vbs Inst service.
-
-    Gets a VbsInstance by identifier
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_vbs_instance = oci.Vbs.get_inst_vbs_instance(vbs_instance_id=oci_vbs_inst_vbs_instance["test_vbs_instance"]["id"])
-    ```
-
-
-    :param str vbs_instance_id: unique VbsInstance identifier
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['vbsInstanceId'] = vbs_instance_id
@@ -265,20 +209,6 @@ def get_inst_vbs_instance(vbs_instance_id: Optional[str] = None,
 def get_inst_vbs_instance_output(vbs_instance_id: Optional[pulumi.Input[str]] = None,
                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetInstVbsInstanceResult]:
     """
-    This data source provides details about a specific Vbs Instance resource in Oracle Cloud Infrastructure Vbs Inst service.
-
-    Gets a VbsInstance by identifier
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_vbs_instance = oci.Vbs.get_inst_vbs_instance(vbs_instance_id=oci_vbs_inst_vbs_instance["test_vbs_instance"]["id"])
-    ```
-
-
-    :param str vbs_instance_id: unique VbsInstance identifier
+    Use this data source to access information about an existing resource.
     """
     ...

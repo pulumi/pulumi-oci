@@ -82,7 +82,7 @@ export class ExternalDatabaseConnector extends pulumi.CustomResource {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
-    public /*out*/ readonly compartmentId!: pulumi.Output<string>;
+    public /*out*/ readonly compartmentId!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Credentials used to connect to the database. Currently only the `DETAILS` type is supported for creating MACS connector crendentials.
      */
@@ -90,7 +90,7 @@ export class ExternalDatabaseConnector extends pulumi.CustomResource {
     /**
      * The status of connectivity to the external database.
      */
-    public /*out*/ readonly connectionStatus!: pulumi.Output<string>;
+    public /*out*/ readonly connectionStatus!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The Oracle Database connection string.
      */
@@ -102,11 +102,11 @@ export class ExternalDatabaseConnector extends pulumi.CustomResource {
     /**
      * (Updatable) The type of connector used by the external database resource.
      */
-    public readonly connectorType!: pulumi.Output<string>;
+    public readonly connectorType!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) The user-friendly name for the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails). The name does not have to be unique.
      */
@@ -122,23 +122,23 @@ export class ExternalDatabaseConnector extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * Additional information about the current lifecycle state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string | undefined>;
     /**
      * The current lifecycle state of the external database connector resource.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * The date and time the `connectionStatus` of this external connector was last updated.
      */
-    public /*out*/ readonly timeConnectionStatusLastUpdated!: pulumi.Output<string>;
+    public /*out*/ readonly timeConnectionStatusLastUpdated!: pulumi.Output<string | undefined>;
     /**
      * The date and time the external connector was created.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
 
     /**
      * Create a ExternalDatabaseConnector resource with the given unique name, arguments, and options.

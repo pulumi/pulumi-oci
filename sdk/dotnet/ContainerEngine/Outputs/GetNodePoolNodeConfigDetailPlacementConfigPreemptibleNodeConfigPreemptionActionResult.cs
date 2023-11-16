@@ -16,17 +16,17 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
         /// <summary>
         /// Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. Defaults to false if not specified.
         /// </summary>
-        public readonly bool IsPreserveBootVolume;
+        public readonly bool? IsPreserveBootVolume;
         /// <summary>
         /// The type of action to run when the instance is interrupted for eviction.
         /// </summary>
-        public readonly string Type;
+        public readonly string? Type;
 
         [OutputConstructor]
         private GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionResult(
-            bool isPreserveBootVolume,
+            bool? isPreserveBootVolume,
 
-            string type)
+            string? type)
         {
             IsPreserveBootVolume = isPreserveBootVolume;
             Type = type;

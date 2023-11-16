@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Key Version resource in Oracle Cloud Infrastructure Kms service.
@@ -36,36 +35,36 @@ type KeyVersion struct {
 	pulumi.CustomResourceState
 
 	// The OCID of the compartment that contains this key version.
-	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrOutput `pulumi:"compartmentId"`
 	// Key reference data to be returned to the customer as a response.
 	ExternalKeyReferenceDetails KeyVersionExternalKeyReferenceDetailArrayOutput `pulumi:"externalKeyReferenceDetails"`
 	// Key version ID associated with the external key.
-	ExternalKeyVersionId pulumi.StringOutput `pulumi:"externalKeyVersionId"`
+	ExternalKeyVersionId pulumi.StringPtrOutput `pulumi:"externalKeyVersionId"`
 	// A Boolean value that indicates whether the KeyVersion belongs to primary Vault or replica Vault.
-	IsPrimary pulumi.BoolOutput `pulumi:"isPrimary"`
+	IsPrimary pulumi.BoolPtrOutput `pulumi:"isPrimary"`
 	// The OCID of the key.
-	KeyId        pulumi.StringOutput `pulumi:"keyId"`
-	KeyVersionId pulumi.StringOutput `pulumi:"keyVersionId"`
+	KeyId        pulumi.StringOutput    `pulumi:"keyId"`
+	KeyVersionId pulumi.StringPtrOutput `pulumi:"keyVersionId"`
 	// The service endpoint to perform management operations against. Management operations include 'Create,' 'Update,' 'List,' 'Get,' and 'Delete' operations. See Vault Management endpoint.
 	ManagementEndpoint pulumi.StringOutput `pulumi:"managementEndpoint"`
 	// The public key in PEM format. (This value pertains only to RSA and ECDSA keys.)
-	PublicKey pulumi.StringOutput `pulumi:"publicKey"`
+	PublicKey pulumi.StringPtrOutput `pulumi:"publicKey"`
 	// KeyVersion replica details
 	ReplicaDetails    KeyVersionReplicaDetailArrayOutput `pulumi:"replicaDetails"`
-	RestoredFromKeyId pulumi.StringOutput                `pulumi:"restoredFromKeyId"`
+	RestoredFromKeyId pulumi.StringPtrOutput             `pulumi:"restoredFromKeyId"`
 	// The OCID of the key version from which this key version was restored.
-	RestoredFromKeyVersionId pulumi.StringOutput `pulumi:"restoredFromKeyVersionId"`
+	RestoredFromKeyVersionId pulumi.StringPtrOutput `pulumi:"restoredFromKeyVersionId"`
 	// The key version's current lifecycle state.  Example: `ENABLED`
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// The date and time this key version was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: "2018-04-03T21:10:29.600Z"
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// (Updatable) An optional property for the deletion time of the key version, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	TimeOfDeletion pulumi.StringOutput `pulumi:"timeOfDeletion"`
+	TimeOfDeletion pulumi.StringPtrOutput `pulumi:"timeOfDeletion"`
 	// The OCID of the vault that contains this key version.
-	VaultId pulumi.StringOutput `pulumi:"vaultId"`
+	VaultId pulumi.StringPtrOutput `pulumi:"vaultId"`
 }
 
 // NewKeyVersion registers a new resource with the given unique name, arguments, and options.
@@ -227,12 +226,6 @@ func (i *KeyVersion) ToKeyVersionOutputWithContext(ctx context.Context) KeyVersi
 	return pulumi.ToOutputWithContext(ctx, i).(KeyVersionOutput)
 }
 
-func (i *KeyVersion) ToOutput(ctx context.Context) pulumix.Output[*KeyVersion] {
-	return pulumix.Output[*KeyVersion]{
-		OutputState: i.ToKeyVersionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // KeyVersionArrayInput is an input type that accepts KeyVersionArray and KeyVersionArrayOutput values.
 // You can construct a concrete instance of `KeyVersionArrayInput` via:
 //
@@ -256,12 +249,6 @@ func (i KeyVersionArray) ToKeyVersionArrayOutput() KeyVersionArrayOutput {
 
 func (i KeyVersionArray) ToKeyVersionArrayOutputWithContext(ctx context.Context) KeyVersionArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(KeyVersionArrayOutput)
-}
-
-func (i KeyVersionArray) ToOutput(ctx context.Context) pulumix.Output[[]*KeyVersion] {
-	return pulumix.Output[[]*KeyVersion]{
-		OutputState: i.ToKeyVersionArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // KeyVersionMapInput is an input type that accepts KeyVersionMap and KeyVersionMapOutput values.
@@ -289,12 +276,6 @@ func (i KeyVersionMap) ToKeyVersionMapOutputWithContext(ctx context.Context) Key
 	return pulumi.ToOutputWithContext(ctx, i).(KeyVersionMapOutput)
 }
 
-func (i KeyVersionMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*KeyVersion] {
-	return pulumix.Output[map[string]*KeyVersion]{
-		OutputState: i.ToKeyVersionMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type KeyVersionOutput struct{ *pulumi.OutputState }
 
 func (KeyVersionOutput) ElementType() reflect.Type {
@@ -309,15 +290,9 @@ func (o KeyVersionOutput) ToKeyVersionOutputWithContext(ctx context.Context) Key
 	return o
 }
 
-func (o KeyVersionOutput) ToOutput(ctx context.Context) pulumix.Output[*KeyVersion] {
-	return pulumix.Output[*KeyVersion]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the compartment that contains this key version.
-func (o KeyVersionOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v *KeyVersion) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
+func (o KeyVersionOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *KeyVersion) pulumi.StringPtrOutput { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Key reference data to be returned to the customer as a response.
@@ -328,13 +303,13 @@ func (o KeyVersionOutput) ExternalKeyReferenceDetails() KeyVersionExternalKeyRef
 }
 
 // Key version ID associated with the external key.
-func (o KeyVersionOutput) ExternalKeyVersionId() pulumi.StringOutput {
-	return o.ApplyT(func(v *KeyVersion) pulumi.StringOutput { return v.ExternalKeyVersionId }).(pulumi.StringOutput)
+func (o KeyVersionOutput) ExternalKeyVersionId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *KeyVersion) pulumi.StringPtrOutput { return v.ExternalKeyVersionId }).(pulumi.StringPtrOutput)
 }
 
 // A Boolean value that indicates whether the KeyVersion belongs to primary Vault or replica Vault.
-func (o KeyVersionOutput) IsPrimary() pulumi.BoolOutput {
-	return o.ApplyT(func(v *KeyVersion) pulumi.BoolOutput { return v.IsPrimary }).(pulumi.BoolOutput)
+func (o KeyVersionOutput) IsPrimary() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *KeyVersion) pulumi.BoolPtrOutput { return v.IsPrimary }).(pulumi.BoolPtrOutput)
 }
 
 // The OCID of the key.
@@ -342,8 +317,8 @@ func (o KeyVersionOutput) KeyId() pulumi.StringOutput {
 	return o.ApplyT(func(v *KeyVersion) pulumi.StringOutput { return v.KeyId }).(pulumi.StringOutput)
 }
 
-func (o KeyVersionOutput) KeyVersionId() pulumi.StringOutput {
-	return o.ApplyT(func(v *KeyVersion) pulumi.StringOutput { return v.KeyVersionId }).(pulumi.StringOutput)
+func (o KeyVersionOutput) KeyVersionId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *KeyVersion) pulumi.StringPtrOutput { return v.KeyVersionId }).(pulumi.StringPtrOutput)
 }
 
 // The service endpoint to perform management operations against. Management operations include 'Create,' 'Update,' 'List,' 'Get,' and 'Delete' operations. See Vault Management endpoint.
@@ -352,8 +327,8 @@ func (o KeyVersionOutput) ManagementEndpoint() pulumi.StringOutput {
 }
 
 // The public key in PEM format. (This value pertains only to RSA and ECDSA keys.)
-func (o KeyVersionOutput) PublicKey() pulumi.StringOutput {
-	return o.ApplyT(func(v *KeyVersion) pulumi.StringOutput { return v.PublicKey }).(pulumi.StringOutput)
+func (o KeyVersionOutput) PublicKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *KeyVersion) pulumi.StringPtrOutput { return v.PublicKey }).(pulumi.StringPtrOutput)
 }
 
 // KeyVersion replica details
@@ -361,36 +336,36 @@ func (o KeyVersionOutput) ReplicaDetails() KeyVersionReplicaDetailArrayOutput {
 	return o.ApplyT(func(v *KeyVersion) KeyVersionReplicaDetailArrayOutput { return v.ReplicaDetails }).(KeyVersionReplicaDetailArrayOutput)
 }
 
-func (o KeyVersionOutput) RestoredFromKeyId() pulumi.StringOutput {
-	return o.ApplyT(func(v *KeyVersion) pulumi.StringOutput { return v.RestoredFromKeyId }).(pulumi.StringOutput)
+func (o KeyVersionOutput) RestoredFromKeyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *KeyVersion) pulumi.StringPtrOutput { return v.RestoredFromKeyId }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the key version from which this key version was restored.
-func (o KeyVersionOutput) RestoredFromKeyVersionId() pulumi.StringOutput {
-	return o.ApplyT(func(v *KeyVersion) pulumi.StringOutput { return v.RestoredFromKeyVersionId }).(pulumi.StringOutput)
+func (o KeyVersionOutput) RestoredFromKeyVersionId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *KeyVersion) pulumi.StringPtrOutput { return v.RestoredFromKeyVersionId }).(pulumi.StringPtrOutput)
 }
 
 // The key version's current lifecycle state.  Example: `ENABLED`
-func (o KeyVersionOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *KeyVersion) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o KeyVersionOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *KeyVersion) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time this key version was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: "2018-04-03T21:10:29.600Z"
-func (o KeyVersionOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *KeyVersion) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o KeyVersionOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *KeyVersion) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) An optional property for the deletion time of the key version, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-func (o KeyVersionOutput) TimeOfDeletion() pulumi.StringOutput {
-	return o.ApplyT(func(v *KeyVersion) pulumi.StringOutput { return v.TimeOfDeletion }).(pulumi.StringOutput)
+func (o KeyVersionOutput) TimeOfDeletion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *KeyVersion) pulumi.StringPtrOutput { return v.TimeOfDeletion }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the vault that contains this key version.
-func (o KeyVersionOutput) VaultId() pulumi.StringOutput {
-	return o.ApplyT(func(v *KeyVersion) pulumi.StringOutput { return v.VaultId }).(pulumi.StringOutput)
+func (o KeyVersionOutput) VaultId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *KeyVersion) pulumi.StringPtrOutput { return v.VaultId }).(pulumi.StringPtrOutput)
 }
 
 type KeyVersionArrayOutput struct{ *pulumi.OutputState }
@@ -405,12 +380,6 @@ func (o KeyVersionArrayOutput) ToKeyVersionArrayOutput() KeyVersionArrayOutput {
 
 func (o KeyVersionArrayOutput) ToKeyVersionArrayOutputWithContext(ctx context.Context) KeyVersionArrayOutput {
 	return o
-}
-
-func (o KeyVersionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*KeyVersion] {
-	return pulumix.Output[[]*KeyVersion]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o KeyVersionArrayOutput) Index(i pulumi.IntInput) KeyVersionOutput {
@@ -431,12 +400,6 @@ func (o KeyVersionMapOutput) ToKeyVersionMapOutput() KeyVersionMapOutput {
 
 func (o KeyVersionMapOutput) ToKeyVersionMapOutputWithContext(ctx context.Context) KeyVersionMapOutput {
 	return o
-}
-
-func (o KeyVersionMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*KeyVersion] {
-	return pulumix.Output[map[string]*KeyVersion]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o KeyVersionMapOutput) MapIndex(k pulumi.StringInput) KeyVersionOutput {

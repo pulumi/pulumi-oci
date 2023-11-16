@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Replication resource in Oracle Cloud Infrastructure File Storage service.
@@ -92,40 +91,40 @@ type Replication struct {
 	pulumi.CustomResourceState
 
 	// The availability domain the replication is in. The replication must be in the same availability domain as the source file system. Example: `Uocm:PHX-AD-1`
-	AvailabilityDomain pulumi.StringOutput `pulumi:"availabilityDomain"`
+	AvailabilityDomain pulumi.StringPtrOutput `pulumi:"availabilityDomain"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the replication.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// Percentage progress of the current replication cycle.
-	DeltaProgress pulumi.StringOutput `pulumi:"deltaProgress"`
+	DeltaProgress pulumi.StringPtrOutput `pulumi:"deltaProgress"`
 	// The current state of the snapshot during replication operations.
-	DeltaStatus pulumi.StringOutput `pulumi:"deltaStatus"`
+	DeltaStatus pulumi.StringPtrOutput `pulumi:"deltaStatus"`
 	// (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information. An associated replication target will also created with the same `displayName`. Example: `My replication`
-	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrOutput `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last snapshot that has been replicated completely. Empty if the copy of the initial snapshot is not complete.
-	LastSnapshotId pulumi.StringOutput `pulumi:"lastSnapshotId"`
+	LastSnapshotId pulumi.StringPtrOutput `pulumi:"lastSnapshotId"`
 	// Additional information about the current 'lifecycleState'.
-	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrOutput `pulumi:"lifecycleDetails"`
 	// The [`snapshotTime`](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Snapshot/snapshotTime) of the most recent recoverable replication snapshot in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. Example: `2021-04-04T20:01:29.100Z`
-	RecoveryPointTime pulumi.StringOutput `pulumi:"recoveryPointTime"`
+	RecoveryPointTime pulumi.StringPtrOutput `pulumi:"recoveryPointTime"`
 	// (Updatable) Duration in minutes between replication snapshots.
-	ReplicationInterval pulumi.StringOutput `pulumi:"replicationInterval"`
+	ReplicationInterval pulumi.StringPtrOutput `pulumi:"replicationInterval"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [`ReplicationTarget`](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/ReplicationTarget).
-	ReplicationTargetId pulumi.StringOutput `pulumi:"replicationTargetId"`
+	ReplicationTargetId pulumi.StringPtrOutput `pulumi:"replicationTargetId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source file system.
 	SourceId pulumi.StringOutput `pulumi:"sourceId"`
 	// The current state of this replication. This resource can be in a `FAILED` state if replication target is deleted instead of the replication resource.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target file system.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TargetId pulumi.StringOutput `pulumi:"targetId"`
 	// The date and time the replication was created in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2021-01-04T20:01:29.100Z`
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 }
 
 // NewReplication registers a new resource with the given unique name, arguments, and options.
@@ -310,12 +309,6 @@ func (i *Replication) ToReplicationOutputWithContext(ctx context.Context) Replic
 	return pulumi.ToOutputWithContext(ctx, i).(ReplicationOutput)
 }
 
-func (i *Replication) ToOutput(ctx context.Context) pulumix.Output[*Replication] {
-	return pulumix.Output[*Replication]{
-		OutputState: i.ToReplicationOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ReplicationArrayInput is an input type that accepts ReplicationArray and ReplicationArrayOutput values.
 // You can construct a concrete instance of `ReplicationArrayInput` via:
 //
@@ -339,12 +332,6 @@ func (i ReplicationArray) ToReplicationArrayOutput() ReplicationArrayOutput {
 
 func (i ReplicationArray) ToReplicationArrayOutputWithContext(ctx context.Context) ReplicationArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ReplicationArrayOutput)
-}
-
-func (i ReplicationArray) ToOutput(ctx context.Context) pulumix.Output[[]*Replication] {
-	return pulumix.Output[[]*Replication]{
-		OutputState: i.ToReplicationArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // ReplicationMapInput is an input type that accepts ReplicationMap and ReplicationMapOutput values.
@@ -372,12 +359,6 @@ func (i ReplicationMap) ToReplicationMapOutputWithContext(ctx context.Context) R
 	return pulumi.ToOutputWithContext(ctx, i).(ReplicationMapOutput)
 }
 
-func (i ReplicationMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*Replication] {
-	return pulumix.Output[map[string]*Replication]{
-		OutputState: i.ToReplicationMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ReplicationOutput struct{ *pulumi.OutputState }
 
 func (ReplicationOutput) ElementType() reflect.Type {
@@ -392,15 +373,9 @@ func (o ReplicationOutput) ToReplicationOutputWithContext(ctx context.Context) R
 	return o
 }
 
-func (o ReplicationOutput) ToOutput(ctx context.Context) pulumix.Output[*Replication] {
-	return pulumix.Output[*Replication]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The availability domain the replication is in. The replication must be in the same availability domain as the source file system. Example: `Uocm:PHX-AD-1`
-func (o ReplicationOutput) AvailabilityDomain() pulumi.StringOutput {
-	return o.ApplyT(func(v *Replication) pulumi.StringOutput { return v.AvailabilityDomain }).(pulumi.StringOutput)
+func (o ReplicationOutput) AvailabilityDomain() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Replication) pulumi.StringPtrOutput { return v.AvailabilityDomain }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the replication.
@@ -414,18 +389,18 @@ func (o ReplicationOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // Percentage progress of the current replication cycle.
-func (o ReplicationOutput) DeltaProgress() pulumi.StringOutput {
-	return o.ApplyT(func(v *Replication) pulumi.StringOutput { return v.DeltaProgress }).(pulumi.StringOutput)
+func (o ReplicationOutput) DeltaProgress() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Replication) pulumi.StringPtrOutput { return v.DeltaProgress }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the snapshot during replication operations.
-func (o ReplicationOutput) DeltaStatus() pulumi.StringOutput {
-	return o.ApplyT(func(v *Replication) pulumi.StringOutput { return v.DeltaStatus }).(pulumi.StringOutput)
+func (o ReplicationOutput) DeltaStatus() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Replication) pulumi.StringPtrOutput { return v.DeltaStatus }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information. An associated replication target will also created with the same `displayName`. Example: `My replication`
-func (o ReplicationOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v *Replication) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+func (o ReplicationOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Replication) pulumi.StringPtrOutput { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -434,28 +409,28 @@ func (o ReplicationOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last snapshot that has been replicated completely. Empty if the copy of the initial snapshot is not complete.
-func (o ReplicationOutput) LastSnapshotId() pulumi.StringOutput {
-	return o.ApplyT(func(v *Replication) pulumi.StringOutput { return v.LastSnapshotId }).(pulumi.StringOutput)
+func (o ReplicationOutput) LastSnapshotId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Replication) pulumi.StringPtrOutput { return v.LastSnapshotId }).(pulumi.StringPtrOutput)
 }
 
 // Additional information about the current 'lifecycleState'.
-func (o ReplicationOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v *Replication) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o ReplicationOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Replication) pulumi.StringPtrOutput { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // The [`snapshotTime`](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Snapshot/snapshotTime) of the most recent recoverable replication snapshot in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. Example: `2021-04-04T20:01:29.100Z`
-func (o ReplicationOutput) RecoveryPointTime() pulumi.StringOutput {
-	return o.ApplyT(func(v *Replication) pulumi.StringOutput { return v.RecoveryPointTime }).(pulumi.StringOutput)
+func (o ReplicationOutput) RecoveryPointTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Replication) pulumi.StringPtrOutput { return v.RecoveryPointTime }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Duration in minutes between replication snapshots.
-func (o ReplicationOutput) ReplicationInterval() pulumi.StringOutput {
-	return o.ApplyT(func(v *Replication) pulumi.StringOutput { return v.ReplicationInterval }).(pulumi.StringOutput)
+func (o ReplicationOutput) ReplicationInterval() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Replication) pulumi.StringPtrOutput { return v.ReplicationInterval }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [`ReplicationTarget`](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/ReplicationTarget).
-func (o ReplicationOutput) ReplicationTargetId() pulumi.StringOutput {
-	return o.ApplyT(func(v *Replication) pulumi.StringOutput { return v.ReplicationTargetId }).(pulumi.StringOutput)
+func (o ReplicationOutput) ReplicationTargetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Replication) pulumi.StringPtrOutput { return v.ReplicationTargetId }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source file system.
@@ -464,8 +439,8 @@ func (o ReplicationOutput) SourceId() pulumi.StringOutput {
 }
 
 // The current state of this replication. This resource can be in a `FAILED` state if replication target is deleted instead of the replication resource.
-func (o ReplicationOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *Replication) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o ReplicationOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Replication) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target file system.
@@ -477,8 +452,8 @@ func (o ReplicationOutput) TargetId() pulumi.StringOutput {
 }
 
 // The date and time the replication was created in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2021-01-04T20:01:29.100Z`
-func (o ReplicationOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *Replication) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o ReplicationOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Replication) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 type ReplicationArrayOutput struct{ *pulumi.OutputState }
@@ -493,12 +468,6 @@ func (o ReplicationArrayOutput) ToReplicationArrayOutput() ReplicationArrayOutpu
 
 func (o ReplicationArrayOutput) ToReplicationArrayOutputWithContext(ctx context.Context) ReplicationArrayOutput {
 	return o
-}
-
-func (o ReplicationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*Replication] {
-	return pulumix.Output[[]*Replication]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ReplicationArrayOutput) Index(i pulumi.IntInput) ReplicationOutput {
@@ -519,12 +488,6 @@ func (o ReplicationMapOutput) ToReplicationMapOutput() ReplicationMapOutput {
 
 func (o ReplicationMapOutput) ToReplicationMapOutputWithContext(ctx context.Context) ReplicationMapOutput {
 	return o
-}
-
-func (o ReplicationMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*Replication] {
-	return pulumix.Output[map[string]*Replication]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ReplicationMapOutput) MapIndex(k pulumi.StringInput) ReplicationOutput {

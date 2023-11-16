@@ -16,17 +16,17 @@ namespace Pulumi.Oci.DatabaseMigration.Outputs
         /// <summary>
         /// OCID of a GoldenGate Deployment
         /// </summary>
-        public readonly string DeploymentId;
+        public readonly string? DeploymentId;
         /// <summary>
         /// OCID of a VaultSecret containing the Admin Credentials for the GGS Deployment
         /// </summary>
-        public readonly string GgsAdminCredentialsSecretId;
+        public readonly string? GgsAdminCredentialsSecretId;
 
         [OutputConstructor]
         private GetMigrationGoldenGateServiceDetailGgsDeploymentResult(
-            string deploymentId,
+            string? deploymentId,
 
-            string ggsAdminCredentialsSecretId)
+            string? ggsAdminCredentialsSecretId)
         {
             DeploymentId = deploymentId;
             GgsAdminCredentialsSecretId = ggsAdminCredentialsSecretId;

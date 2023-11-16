@@ -7,14 +7,15 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.Database.outputs.GetManagedPreferredCredentialsPreferredCredentialCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetManagedPreferredCredentialsPreferredCredentialCollection {
-    private List<GetManagedPreferredCredentialsPreferredCredentialCollectionItem> items;
+    private @Nullable List<GetManagedPreferredCredentialsPreferredCredentialCollectionItem> items;
 
     private GetManagedPreferredCredentialsPreferredCredentialCollection() {}
     public List<GetManagedPreferredCredentialsPreferredCredentialCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -26,7 +27,7 @@ public final class GetManagedPreferredCredentialsPreferredCredentialCollection {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetManagedPreferredCredentialsPreferredCredentialCollectionItem> items;
+        private @Nullable List<GetManagedPreferredCredentialsPreferredCredentialCollectionItem> items;
         public Builder() {}
         public Builder(GetManagedPreferredCredentialsPreferredCredentialCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -34,8 +35,8 @@ public final class GetManagedPreferredCredentialsPreferredCredentialCollection {
         }
 
         @CustomType.Setter
-        public Builder items(List<GetManagedPreferredCredentialsPreferredCredentialCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetManagedPreferredCredentialsPreferredCredentialCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetManagedPreferredCredentialsPreferredCredentialCollectionItem... items) {

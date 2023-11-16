@@ -66,9 +66,6 @@ class GetSecurityPolicyDeploymentsResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The OCID of the compartment containing the security policy deployment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
@@ -79,9 +76,6 @@ class GetSecurityPolicyDeploymentsResult:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        The display name of the security policy deployment.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -91,7 +85,7 @@ class GetSecurityPolicyDeploymentsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -99,10 +93,7 @@ class GetSecurityPolicyDeploymentsResult:
 
     @property
     @pulumi.getter(name="securityPolicyDeploymentCollections")
-    def security_policy_deployment_collections(self) -> Sequence['outputs.GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionResult']:
-        """
-        The list of security_policy_deployment_collection.
-        """
+    def security_policy_deployment_collections(self) -> Optional[Sequence['outputs.GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionResult']]:
         return pulumi.get(self, "security_policy_deployment_collections")
 
     @property
@@ -113,25 +104,16 @@ class GetSecurityPolicyDeploymentsResult:
     @property
     @pulumi.getter(name="securityPolicyId")
     def security_policy_id(self) -> Optional[str]:
-        """
-        The OCID of the security policy corresponding to the security policy deployment.
-        """
         return pulumi.get(self, "security_policy_id")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the security policy deployment.
-        """
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="targetId")
     def target_id(self) -> Optional[str]:
-        """
-        The OCID of the target where the security policy is deployed.
-        """
         return pulumi.get(self, "target_id")
 
 
@@ -165,48 +147,7 @@ def get_security_policy_deployments(access_level: Optional[str] = None,
                                     target_id: Optional[str] = None,
                                     opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetSecurityPolicyDeploymentsResult:
     """
-    This data source provides the list of Security Policy Deployments in Oracle Cloud Infrastructure Data Safe service.
-
-    Retrieves a list of all security policy deployments in Data Safe.
-
-    The ListSecurityPolicyDeployments operation returns only the security policy deployments in the specified `compartmentId`.
-
-    The parameter `accessLevel` specifies whether to return only those compartments for which the
-    requestor has INSPECT permissions on at least one resource directly
-    or indirectly (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
-    Principal doesn't have access to even one of the child compartments. This is valid only when
-    `compartmentIdInSubtree` is set to `true`.
-
-    The parameter `compartmentIdInSubtree` applies when you perform ListSecurityPolicyDeployments on the
-    `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
-    To get a full list of all compartments and subcompartments in the tenancy (root compartment),
-    set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_security_policy_deployments = oci.DataSafe.get_security_policy_deployments(compartment_id=var["compartment_id"],
-        access_level=var["security_policy_deployment_access_level"],
-        compartment_id_in_subtree=var["security_policy_deployment_compartment_id_in_subtree"],
-        display_name=var["security_policy_deployment_display_name"],
-        security_policy_deployment_id=oci_data_safe_security_policy_deployment["test_security_policy_deployment"]["id"],
-        security_policy_id=oci_data_safe_security_policy["test_security_policy"]["id"],
-        state=var["security_policy_deployment_state"],
-        target_id=oci_cloud_guard_target["test_target"]["id"])
-    ```
-
-
-    :param str access_level: Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
-    :param str compartment_id: A filter to return only resources that match the specified compartment OCID.
-    :param bool compartment_id_in_subtree: Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
-    :param str display_name: A filter to return only resources that match the specified display name.
-    :param str security_policy_deployment_id: An optional filter to return only resources that match the specified OCID of the security policy deployment resource.
-    :param str security_policy_id: An optional filter to return only resources that match the specified OCID of the security policy resource.
-    :param str state: The current state of the security policy deployment.
-    :param str target_id: A filter to return only items related to a specific target OCID.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['accessLevel'] = access_level
@@ -247,47 +188,6 @@ def get_security_policy_deployments_output(access_level: Optional[pulumi.Input[O
                                            target_id: Optional[pulumi.Input[Optional[str]]] = None,
                                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSecurityPolicyDeploymentsResult]:
     """
-    This data source provides the list of Security Policy Deployments in Oracle Cloud Infrastructure Data Safe service.
-
-    Retrieves a list of all security policy deployments in Data Safe.
-
-    The ListSecurityPolicyDeployments operation returns only the security policy deployments in the specified `compartmentId`.
-
-    The parameter `accessLevel` specifies whether to return only those compartments for which the
-    requestor has INSPECT permissions on at least one resource directly
-    or indirectly (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
-    Principal doesn't have access to even one of the child compartments. This is valid only when
-    `compartmentIdInSubtree` is set to `true`.
-
-    The parameter `compartmentIdInSubtree` applies when you perform ListSecurityPolicyDeployments on the
-    `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
-    To get a full list of all compartments and subcompartments in the tenancy (root compartment),
-    set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_security_policy_deployments = oci.DataSafe.get_security_policy_deployments(compartment_id=var["compartment_id"],
-        access_level=var["security_policy_deployment_access_level"],
-        compartment_id_in_subtree=var["security_policy_deployment_compartment_id_in_subtree"],
-        display_name=var["security_policy_deployment_display_name"],
-        security_policy_deployment_id=oci_data_safe_security_policy_deployment["test_security_policy_deployment"]["id"],
-        security_policy_id=oci_data_safe_security_policy["test_security_policy"]["id"],
-        state=var["security_policy_deployment_state"],
-        target_id=oci_cloud_guard_target["test_target"]["id"])
-    ```
-
-
-    :param str access_level: Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
-    :param str compartment_id: A filter to return only resources that match the specified compartment OCID.
-    :param bool compartment_id_in_subtree: Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
-    :param str display_name: A filter to return only resources that match the specified display name.
-    :param str security_policy_deployment_id: An optional filter to return only resources that match the specified OCID of the security policy deployment resource.
-    :param str security_policy_id: An optional filter to return only resources that match the specified OCID of the security policy resource.
-    :param str state: The current state of the security policy deployment.
-    :param str target_id: A filter to return only items related to a specific target OCID.
+    Use this data source to access information about an existing resource.
     """
     ...

@@ -25,12 +25,12 @@ public final class GetMaintenanceRunsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The list of maintenance_runs.
      * 
      */
-    private List<GetMaintenanceRunsMaintenanceRun> maintenanceRuns;
+    private @Nullable List<GetMaintenanceRunsMaintenanceRun> maintenanceRuns;
     /**
      * @return Maintenance sub-type.
      * 
@@ -75,15 +75,15 @@ public final class GetMaintenanceRunsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The list of maintenance_runs.
      * 
      */
     public List<GetMaintenanceRunsMaintenanceRun> maintenanceRuns() {
-        return this.maintenanceRuns;
+        return this.maintenanceRuns == null ? List.of() : this.maintenanceRuns;
     }
     /**
      * @return Maintenance sub-type.
@@ -133,8 +133,8 @@ public final class GetMaintenanceRunsResult {
         private @Nullable String availabilityDomain;
         private String compartmentId;
         private @Nullable List<GetMaintenanceRunsFilter> filters;
-        private String id;
-        private List<GetMaintenanceRunsMaintenanceRun> maintenanceRuns;
+        private @Nullable String id;
+        private @Nullable List<GetMaintenanceRunsMaintenanceRun> maintenanceRuns;
         private @Nullable String maintenanceSubtype;
         private @Nullable String maintenanceType;
         private @Nullable String state;
@@ -174,13 +174,13 @@ public final class GetMaintenanceRunsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder maintenanceRuns(List<GetMaintenanceRunsMaintenanceRun> maintenanceRuns) {
-            this.maintenanceRuns = Objects.requireNonNull(maintenanceRuns);
+        public Builder maintenanceRuns(@Nullable List<GetMaintenanceRunsMaintenanceRun> maintenanceRuns) {
+            this.maintenanceRuns = maintenanceRuns;
             return this;
         }
         public Builder maintenanceRuns(GetMaintenanceRunsMaintenanceRun... maintenanceRuns) {

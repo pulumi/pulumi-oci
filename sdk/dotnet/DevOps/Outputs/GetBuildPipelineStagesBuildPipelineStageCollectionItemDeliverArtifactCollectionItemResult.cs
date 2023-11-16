@@ -16,17 +16,17 @@ namespace Pulumi.Oci.DevOps.Outputs
         /// <summary>
         /// Artifact identifier that contains the artifact definition.
         /// </summary>
-        public readonly string ArtifactId;
+        public readonly string? ArtifactId;
         /// <summary>
         /// Name of the artifact specified in the build_spec.yaml file.
         /// </summary>
-        public readonly string ArtifactName;
+        public readonly string? ArtifactName;
 
         [OutputConstructor]
         private GetBuildPipelineStagesBuildPipelineStageCollectionItemDeliverArtifactCollectionItemResult(
-            string artifactId,
+            string? artifactId,
 
-            string artifactName)
+            string? artifactName)
         {
             ArtifactId = artifactId;
             ArtifactName = artifactName;

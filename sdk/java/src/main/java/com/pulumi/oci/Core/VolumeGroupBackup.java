@@ -75,98 +75,98 @@ public class VolumeGroupBackup extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="compartmentId", refs={String.class}, tree="[0]")
-    private Output<String> compartmentId;
+    private Output</* @Nullable */ String> compartmentId;
 
     /**
      * @return (Updatable) The OCID of the compartment that will contain the volume group backup. This parameter is optional, by default backup will be created in the same compartment and source volume group.
      * 
      */
-    public Output<String> compartmentId() {
-        return this.compartmentId;
+    public Output<Optional<String>> compartmentId() {
+        return Codegen.optional(this.compartmentId);
     }
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
     @Export(name="displayName", refs={String.class}, tree="[0]")
-    private Output<String> displayName;
+    private Output</* @Nullable */ String> displayName;
 
     /**
      * @return (Updatable) A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    public Output<String> displayName() {
-        return this.displayName;
+    public Output<Optional<String>> displayName() {
+        return Codegen.optional(this.displayName);
     }
     /**
      * The date and time the volume group backup will expire and be automatically deleted. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). This parameter will always be present for volume group backups that were created automatically by a scheduled-backup policy. For manually created volume group backups, it will be absent, signifying that there is no expiration time and the backup will last forever until manually deleted.
      * 
      */
     @Export(name="expirationTime", refs={String.class}, tree="[0]")
-    private Output<String> expirationTime;
+    private Output</* @Nullable */ String> expirationTime;
 
     /**
      * @return The date and time the volume group backup will expire and be automatically deleted. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). This parameter will always be present for volume group backups that were created automatically by a scheduled-backup policy. For manually created volume group backups, it will be absent, signifying that there is no expiration time and the backup will last forever until manually deleted.
      * 
      */
-    public Output<String> expirationTime() {
-        return this.expirationTime;
+    public Output<Optional<String>> expirationTime() {
+        return Codegen.optional(this.expirationTime);
     }
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * The aggregate size of the volume group backup, in GBs.
      * 
      */
     @Export(name="sizeInGbs", refs={String.class}, tree="[0]")
-    private Output<String> sizeInGbs;
+    private Output</* @Nullable */ String> sizeInGbs;
 
     /**
      * @return The aggregate size of the volume group backup, in GBs.
      * 
      */
-    public Output<String> sizeInGbs() {
-        return this.sizeInGbs;
+    public Output<Optional<String>> sizeInGbs() {
+        return Codegen.optional(this.sizeInGbs);
     }
     /**
      * The aggregate size of the volume group backup, in MBs.
      * 
      */
     @Export(name="sizeInMbs", refs={String.class}, tree="[0]")
-    private Output<String> sizeInMbs;
+    private Output</* @Nullable */ String> sizeInMbs;
 
     /**
      * @return The aggregate size of the volume group backup, in MBs.
      * 
      */
-    public Output<String> sizeInMbs() {
-        return this.sizeInMbs;
+    public Output<Optional<String>> sizeInMbs() {
+        return Codegen.optional(this.sizeInMbs);
     }
     /**
      * Details of the volume group backup source in the cloud.
@@ -187,70 +187,70 @@ public class VolumeGroupBackup extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="sourceType", refs={String.class}, tree="[0]")
-    private Output<String> sourceType;
+    private Output</* @Nullable */ String> sourceType;
 
     /**
      * @return Specifies whether the volume group backup was created manually, or via scheduled backup policy.
      * 
      */
-    public Output<String> sourceType() {
-        return this.sourceType;
+    public Output<Optional<String>> sourceType() {
+        return Codegen.optional(this.sourceType);
     }
     /**
      * The OCID of the source volume group backup.
      * 
      */
     @Export(name="sourceVolumeGroupBackupId", refs={String.class}, tree="[0]")
-    private Output<String> sourceVolumeGroupBackupId;
+    private Output</* @Nullable */ String> sourceVolumeGroupBackupId;
 
     /**
      * @return The OCID of the source volume group backup.
      * 
      */
-    public Output<String> sourceVolumeGroupBackupId() {
-        return this.sourceVolumeGroupBackupId;
+    public Output<Optional<String>> sourceVolumeGroupBackupId() {
+        return Codegen.optional(this.sourceVolumeGroupBackupId);
     }
     /**
      * The current state of a volume group backup.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The current state of a volume group backup.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * The date and time the volume group backup was created. This is the time the actual point-in-time image of the volume group data was taken. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The date and time the volume group backup was created. This is the time the actual point-in-time image of the volume group data was taken. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * The date and time the request to create the volume group backup was received. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
     @Export(name="timeRequestReceived", refs={String.class}, tree="[0]")
-    private Output<String> timeRequestReceived;
+    private Output</* @Nullable */ String> timeRequestReceived;
 
     /**
      * @return The date and time the request to create the volume group backup was received. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    public Output<String> timeRequestReceived() {
-        return this.timeRequestReceived;
+    public Output<Optional<String>> timeRequestReceived() {
+        return Codegen.optional(this.timeRequestReceived);
     }
     /**
      * The type of backup to create. If omitted, defaults to incremental.
@@ -260,7 +260,7 @@ public class VolumeGroupBackup extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="type", refs={String.class}, tree="[0]")
-    private Output<String> type;
+    private Output</* @Nullable */ String> type;
 
     /**
      * @return The type of backup to create. If omitted, defaults to incremental.
@@ -269,64 +269,64 @@ public class VolumeGroupBackup extends com.pulumi.resources.CustomResource {
      * * INCREMENTAL
      * 
      */
-    public Output<String> type() {
-        return this.type;
+    public Output<Optional<String>> type() {
+        return Codegen.optional(this.type);
     }
     /**
      * The aggregate size used by the volume group backup, in GBs.  It is typically smaller than `size_in_gbs`, depending on the space consumed on the volume group and whether the volume backup is full or incremental.
      * 
      */
     @Export(name="uniqueSizeInGbs", refs={String.class}, tree="[0]")
-    private Output<String> uniqueSizeInGbs;
+    private Output</* @Nullable */ String> uniqueSizeInGbs;
 
     /**
      * @return The aggregate size used by the volume group backup, in GBs.  It is typically smaller than `size_in_gbs`, depending on the space consumed on the volume group and whether the volume backup is full or incremental.
      * 
      */
-    public Output<String> uniqueSizeInGbs() {
-        return this.uniqueSizeInGbs;
+    public Output<Optional<String>> uniqueSizeInGbs() {
+        return Codegen.optional(this.uniqueSizeInGbs);
     }
     /**
      * The aggregate size used by the volume group backup, in MBs.  It is typically smaller than `size_in_mbs`, depending on the space consumed on the volume group and whether the volume backup is full or incremental.
      * 
      */
     @Export(name="uniqueSizeInMbs", refs={String.class}, tree="[0]")
-    private Output<String> uniqueSizeInMbs;
+    private Output</* @Nullable */ String> uniqueSizeInMbs;
 
     /**
      * @return The aggregate size used by the volume group backup, in MBs.  It is typically smaller than `size_in_mbs`, depending on the space consumed on the volume group and whether the volume backup is full or incremental.
      * 
      */
-    public Output<String> uniqueSizeInMbs() {
-        return this.uniqueSizeInMbs;
+    public Output<Optional<String>> uniqueSizeInMbs() {
+        return Codegen.optional(this.uniqueSizeInMbs);
     }
     /**
      * OCIDs for the volume backups in this volume group backup.
      * 
      */
     @Export(name="volumeBackupIds", refs={List.class,String.class}, tree="[0,1]")
-    private Output<List<String>> volumeBackupIds;
+    private Output</* @Nullable */ List<String>> volumeBackupIds;
 
     /**
      * @return OCIDs for the volume backups in this volume group backup.
      * 
      */
-    public Output<List<String>> volumeBackupIds() {
-        return this.volumeBackupIds;
+    public Output<Optional<List<String>>> volumeBackupIds() {
+        return Codegen.optional(this.volumeBackupIds);
     }
     /**
      * The OCID of the volume group that needs to be backed up.
      * 
      */
     @Export(name="volumeGroupId", refs={String.class}, tree="[0]")
-    private Output<String> volumeGroupId;
+    private Output</* @Nullable */ String> volumeGroupId;
 
     /**
      * @return The OCID of the volume group that needs to be backed up.
      * 
      */
-    public Output<String> volumeGroupId() {
-        return this.volumeGroupId;
+    public Output<Optional<String>> volumeGroupId() {
+        return Codegen.optional(this.volumeGroupId);
     }
 
     /**

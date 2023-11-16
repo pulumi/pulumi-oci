@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Log Analytics Entity Topology resource in Oracle Cloud Infrastructure Log Analytics service.
@@ -66,7 +65,7 @@ type GetLogAnalyticsEntityTopologyArgs struct {
 // A collection of values returned by getLogAnalyticsEntityTopology.
 type GetLogAnalyticsEntityTopologyResult struct {
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Array of log analytics entity summary.
 	Items                []GetLogAnalyticsEntityTopologyItem `pulumi:"items"`
 	LogAnalyticsEntityId string                              `pulumi:"logAnalyticsEntityId"`
@@ -117,15 +116,9 @@ func (o GetLogAnalyticsEntityTopologyResultOutput) ToGetLogAnalyticsEntityTopolo
 	return o
 }
 
-func (o GetLogAnalyticsEntityTopologyResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetLogAnalyticsEntityTopologyResult] {
-	return pulumix.Output[GetLogAnalyticsEntityTopologyResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The provider-assigned unique ID for this managed resource.
-func (o GetLogAnalyticsEntityTopologyResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLogAnalyticsEntityTopologyResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetLogAnalyticsEntityTopologyResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLogAnalyticsEntityTopologyResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Array of log analytics entity summary.

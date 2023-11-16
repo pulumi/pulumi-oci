@@ -66,7 +66,7 @@ export class DrProtectionGroup extends pulumi.CustomResource {
     /**
      * The details for associating a DR protection group with a peer DR protection group.
      */
-    public readonly association!: pulumi.Output<outputs.DisasterRecovery.DrProtectionGroupAssociation>;
+    public readonly association!: pulumi.Output<outputs.DisasterRecovery.DrProtectionGroupAssociation | undefined>;
     /**
      * (Updatable) The OCID of the compartment in which to create the DR protection group.  Example: `ocid1.compartment.oc1..uniqueID`
      */
@@ -74,7 +74,7 @@ export class DrProtectionGroup extends pulumi.CustomResource {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) An optional property when incremented triggers Disassociate. Could be set to any integer value.
      *
@@ -90,15 +90,15 @@ export class DrProtectionGroup extends pulumi.CustomResource {
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * A message describing the DR protection group's current state in more detail.
      */
-    public /*out*/ readonly lifeCycleDetails!: pulumi.Output<string>;
+    public /*out*/ readonly lifeCycleDetails!: pulumi.Output<string | undefined>;
     /**
      * The current sub-state of the DR protection group.
      */
-    public /*out*/ readonly lifecycleSubState!: pulumi.Output<string>;
+    public /*out*/ readonly lifecycleSubState!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The details for creating an object storage log location for a DR protection group.
      */
@@ -106,35 +106,35 @@ export class DrProtectionGroup extends pulumi.CustomResource {
     /**
      * (Updatable) A list of DR protection group members.
      */
-    public readonly members!: pulumi.Output<outputs.DisasterRecovery.DrProtectionGroupMember[]>;
+    public readonly members!: pulumi.Output<outputs.DisasterRecovery.DrProtectionGroupMember[] | undefined>;
     /**
      * The OCID of the peer DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
      */
-    public /*out*/ readonly peerId!: pulumi.Output<string>;
+    public /*out*/ readonly peerId!: pulumi.Output<string | undefined>;
     /**
      * The region of the peer DR protection group.  Example: `us-ashburn-1`
      */
-    public /*out*/ readonly peerRegion!: pulumi.Output<string>;
+    public /*out*/ readonly peerRegion!: pulumi.Output<string | undefined>;
     /**
      * The role of the DR protection group.  Example: `STANDBY`
      */
-    public /*out*/ readonly role!: pulumi.Output<string>;
+    public /*out*/ readonly role!: pulumi.Output<string | undefined>;
     /**
      * The current state of the DR protection group.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any}>;
+    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * The date and time the DR protection group was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * The date and time the DR protection group was updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    public /*out*/ readonly timeUpdated!: pulumi.Output<string | undefined>;
 
     /**
      * Create a DrProtectionGroup resource with the given unique name, arguments, and options.

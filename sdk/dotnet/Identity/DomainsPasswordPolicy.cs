@@ -38,7 +38,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("allowedChars")]
-        public Output<string> AllowedChars { get; private set; } = null!;
+        public Output<string?> AllowedChars { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
@@ -72,7 +72,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("compartmentOcid")]
-        public Output<string> CompartmentOcid { get; private set; } = null!;
+        public Output<string?> CompartmentOcid { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) List of password policy rules that have values set. This map of stringKey:stringValue pairs can be used to aid users while setting/resetting password
@@ -104,7 +104,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("deleteInProgress")]
-        public Output<bool> DeleteInProgress { get; private set; } = null!;
+        public Output<bool?> DeleteInProgress { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) A String that describes the password policy
@@ -119,7 +119,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("description")]
-        public Output<string> Description { get; private set; } = null!;
+        public Output<string?> Description { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) A delimiter used to separate characters in the dictionary file
@@ -134,7 +134,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("dictionaryDelimiter")]
-        public Output<string> DictionaryDelimiter { get; private set; } = null!;
+        public Output<string?> DictionaryDelimiter { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) A Reference value that contains the URI of a dictionary of words not allowed to appear within a password value
@@ -149,7 +149,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("dictionaryLocation")]
-        public Output<string> DictionaryLocation { get; private set; } = null!;
+        public Output<string?> DictionaryLocation { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Indicates whether the password can match a dictionary word
@@ -164,7 +164,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("dictionaryWordDisallowed")]
-        public Output<bool> DictionaryWordDisallowed { get; private set; } = null!;
+        public Output<bool?> DictionaryWordDisallowed { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) A String value whose contents indicate a set of characters that cannot appear, in any sequence, in a password value
@@ -179,7 +179,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("disallowedChars")]
-        public Output<string> DisallowedChars { get; private set; } = null!;
+        public Output<string?> DisallowedChars { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) A String value whose contents indicate a set of substrings that cannot appear, in any sequence, in a password value
@@ -228,7 +228,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("distinctCharacters")]
-        public Output<int> DistinctCharacters { get; private set; } = null!;
+        public Output<int?> DistinctCharacters { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
@@ -244,7 +244,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("domainOcid")]
-        public Output<string> DomainOcid { get; private set; } = null!;
+        public Output<string?> DomainOcid { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer's tenant.
@@ -259,7 +259,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("externalId")]
-        public Output<string> ExternalId { get; private set; } = null!;
+        public Output<string?> ExternalId { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Indicates a sequence of characters that match the user's first name of given name cannot be the password. Password validation against policy will be ignored if length of first name is less than or equal to 3 characters.
@@ -274,7 +274,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("firstNameDisallowed")]
-        public Output<bool> FirstNameDisallowed { get; private set; } = null!;
+        public Output<bool?> FirstNameDisallowed { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Indicates whether all of the users should be forced to reset their password on the next login (to comply with new password policy changes)
@@ -289,7 +289,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("forcePasswordReset")]
-        public Output<bool> ForcePasswordReset { get; private set; } = null!;
+        public Output<bool?> ForcePasswordReset { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) A list of groups that the password policy belongs to.
@@ -358,7 +358,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("idcsLastUpgradedInRelease")]
-        public Output<string> IdcsLastUpgradedInRelease { get; private set; } = null!;
+        public Output<string?> IdcsLastUpgradedInRelease { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
@@ -388,7 +388,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("lastNameDisallowed")]
-        public Output<bool> LastNameDisallowed { get; private set; } = null!;
+        public Output<bool?> LastNameDisallowed { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The time period in minutes to lock out a user account when the threshold of invalid login attempts is reached. The available range is from 5 through 1440 minutes (24 hours).
@@ -403,7 +403,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("lockoutDuration")]
-        public Output<int> LockoutDuration { get; private set; } = null!;
+        public Output<int?> LockoutDuration { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) An integer that represents the maximum number of failed logins before an account is locked
@@ -418,7 +418,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("maxIncorrectAttempts")]
-        public Output<int> MaxIncorrectAttempts { get; private set; } = null!;
+        public Output<int?> MaxIncorrectAttempts { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The maximum password length (in characters). A value of 0 or no value indicates no maximum length restriction.
@@ -434,7 +434,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("maxLength")]
-        public Output<int> MaxLength { get; private set; } = null!;
+        public Output<int?> MaxLength { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The maximum number of repeated characters allowed in a password.  A value of 0 or no value indicates no such restriction.
@@ -449,7 +449,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("maxRepeatedChars")]
-        public Output<int> MaxRepeatedChars { get; private set; } = null!;
+        public Output<int?> MaxRepeatedChars { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The maximum number of special characters in a password.  A value of 0 or no value indicates no maximum special characters restriction.
@@ -464,7 +464,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("maxSpecialChars")]
-        public Output<int> MaxSpecialChars { get; private set; } = null!;
+        public Output<int?> MaxSpecialChars { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
@@ -495,7 +495,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("minAlphaNumerals")]
-        public Output<int> MinAlphaNumerals { get; private set; } = null!;
+        public Output<int?> MinAlphaNumerals { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The minimum number of alphabetic characters in a password.  A value of 0 or no value indicates no minimum alphas restriction.
@@ -510,7 +510,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("minAlphas")]
-        public Output<int> MinAlphas { get; private set; } = null!;
+        public Output<int?> MinAlphas { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The minimum password length (in characters). A value of 0 or no value indicates no minimum length restriction.
@@ -525,7 +525,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("minLength")]
-        public Output<int> MinLength { get; private set; } = null!;
+        public Output<int?> MinLength { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The minimum number of lowercase alphabetic characters in a password.  A value of 0 or no value indicates no minimum lowercase restriction.
@@ -540,7 +540,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("minLowerCase")]
-        public Output<int> MinLowerCase { get; private set; } = null!;
+        public Output<int?> MinLowerCase { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The minimum number of numeric characters in a password.  A value of 0 or no value indicates no minimum numeric character restriction.
@@ -555,7 +555,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("minNumerals")]
-        public Output<int> MinNumerals { get; private set; } = null!;
+        public Output<int?> MinNumerals { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Minimum time after which the user can resubmit the reset password request
@@ -570,7 +570,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("minPasswordAge")]
-        public Output<int> MinPasswordAge { get; private set; } = null!;
+        public Output<int?> MinPasswordAge { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The minimum number of special characters in a password. A value of 0 or no value indicates no minimum special characters restriction.
@@ -585,7 +585,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("minSpecialChars")]
-        public Output<int> MinSpecialChars { get; private set; } = null!;
+        public Output<int?> MinSpecialChars { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The minimum number of unique characters in a password.  A value of 0 or no value indicates no minimum unique characters restriction.
@@ -600,7 +600,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("minUniqueChars")]
-        public Output<int> MinUniqueChars { get; private set; } = null!;
+        public Output<int?> MinUniqueChars { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The minimum number of uppercase alphabetic characters in a password. A value of 0 or no value indicates no minimum uppercase restriction.
@@ -615,7 +615,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("minUpperCase")]
-        public Output<int> MinUpperCase { get; private set; } = null!;
+        public Output<int?> MinUpperCase { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) A String that is the name of the policy to display to the user. This is the only mandatory attribute for a password policy.
@@ -646,7 +646,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("numPasswordsInHistory")]
-        public Output<int> NumPasswordsInHistory { get; private set; } = null!;
+        public Output<int?> NumPasswordsInHistory { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
@@ -662,7 +662,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: global
         /// </summary>
         [Output("ocid")]
-        public Output<string> Ocid { get; private set; } = null!;
+        public Output<string?> Ocid { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) An integer indicating the number of days before which the user should be warned about password expiry.
@@ -677,7 +677,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("passwordExpireWarning")]
-        public Output<int> PasswordExpireWarning { get; private set; } = null!;
+        public Output<int?> PasswordExpireWarning { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The number of days after which the password expires automatically
@@ -692,7 +692,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("passwordExpiresAfter")]
-        public Output<int> PasswordExpiresAfter { get; private set; } = null!;
+        public Output<int?> PasswordExpiresAfter { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Indicates whether the password policy is configured as Simple, Standard, or Custom.
@@ -707,7 +707,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("passwordStrength")]
-        public Output<string> PasswordStrength { get; private set; } = null!;
+        public Output<string?> PasswordStrength { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Password policy priority
@@ -725,7 +725,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: server
         /// </summary>
         [Output("priority")]
-        public Output<int> Priority { get; private set; } = null!;
+        public Output<int?> Priority { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) A String value whose contents indicate a set of characters that must appear, in any sequence, in a password value
@@ -740,7 +740,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("requiredChars")]
-        public Output<string> RequiredChars { get; private set; } = null!;
+        public Output<string?> RequiredChars { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
@@ -777,7 +777,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("startsWithAlphabet")]
-        public Output<bool> StartsWithAlphabet { get; private set; } = null!;
+        public Output<bool?> StartsWithAlphabet { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) A list of tags on this resource.
@@ -809,7 +809,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("tenancyOcid")]
-        public Output<string> TenancyOcid { get; private set; } = null!;
+        public Output<string?> TenancyOcid { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Indicates a sequence of characters that match the username cannot be the password. Password validation against policy will be ignored if length of user name is less than or equal to 3 characters.
@@ -828,7 +828,7 @@ namespace Pulumi.Oci.Identity
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("userNameDisallowed")]
-        public Output<bool> UserNameDisallowed { get; private set; } = null!;
+        public Output<bool?> UserNameDisallowed { get; private set; } = null!;
 
 
         /// <summary>

@@ -136,241 +136,172 @@ class GetBdsInstanceResult:
 
     @property
     @pulumi.getter(name="bootstrapScriptUrl")
-    def bootstrap_script_url(self) -> str:
-        """
-        pre-authenticated URL of the bootstrap script in Object Store that can be downloaded and executed.
-        """
+    def bootstrap_script_url(self) -> Optional[str]:
         return pulumi.get(self, "bootstrap_script_url")
 
     @property
     @pulumi.getter(name="cloudSqlDetails")
-    def cloud_sql_details(self) -> Sequence['outputs.GetBdsInstanceCloudSqlDetailResult']:
-        """
-        The information about added Cloud SQL capability
-        """
+    def cloud_sql_details(self) -> Optional[Sequence['outputs.GetBdsInstanceCloudSqlDetailResult']]:
         return pulumi.get(self, "cloud_sql_details")
 
     @property
     @pulumi.getter(name="clusterAdminPassword")
-    def cluster_admin_password(self) -> str:
+    def cluster_admin_password(self) -> Optional[str]:
         return pulumi.get(self, "cluster_admin_password")
 
     @property
     @pulumi.getter(name="clusterDetails")
-    def cluster_details(self) -> Sequence['outputs.GetBdsInstanceClusterDetailResult']:
-        """
-        Specific info about a Hadoop cluster
-        """
+    def cluster_details(self) -> Optional[Sequence['outputs.GetBdsInstanceClusterDetailResult']]:
         return pulumi.get(self, "cluster_details")
 
     @property
     @pulumi.getter(name="clusterProfile")
-    def cluster_profile(self) -> str:
-        """
-        Profile of the Big Data Service cluster.
-        """
+    def cluster_profile(self) -> Optional[str]:
         return pulumi.get(self, "cluster_profile")
 
     @property
     @pulumi.getter(name="clusterPublicKey")
-    def cluster_public_key(self) -> str:
+    def cluster_public_key(self) -> Optional[str]:
         return pulumi.get(self, "cluster_public_key")
 
     @property
     @pulumi.getter(name="clusterVersion")
-    def cluster_version(self) -> str:
-        """
-        Version of the Hadoop distribution.
-        """
+    def cluster_version(self) -> Optional[str]:
         return pulumi.get(self, "cluster_version")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The OCID of the compartment.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="computeOnlyWorkerNodes")
-    def compute_only_worker_nodes(self) -> Sequence['outputs.GetBdsInstanceComputeOnlyWorkerNodeResult']:
+    def compute_only_worker_nodes(self) -> Optional[Sequence['outputs.GetBdsInstanceComputeOnlyWorkerNodeResult']]:
         return pulumi.get(self, "compute_only_worker_nodes")
 
     @property
     @pulumi.getter(name="createdBy")
-    def created_by(self) -> str:
-        """
-        The user who created the cluster.
-        """
+    def created_by(self) -> Optional[str]:
         return pulumi.get(self, "created_by")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For example, `{"foo-namespace": {"bar-key": "value"}}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        The name of the node.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="edgeNodes")
-    def edge_nodes(self) -> Sequence['outputs.GetBdsInstanceEdgeNodeResult']:
+    def edge_nodes(self) -> Optional[Sequence['outputs.GetBdsInstanceEdgeNodeResult']]:
         return pulumi.get(self, "edge_nodes")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. For example, `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The OCID of the Big Data Service resource.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="isCloudSqlConfigured")
-    def is_cloud_sql_configured(self) -> bool:
-        """
-        Boolean flag specifying whether or not Cloud SQL should be configured.
-        """
+    def is_cloud_sql_configured(self) -> Optional[bool]:
         return pulumi.get(self, "is_cloud_sql_configured")
 
     @property
     @pulumi.getter(name="isForceStopJobs")
-    def is_force_stop_jobs(self) -> bool:
+    def is_force_stop_jobs(self) -> Optional[bool]:
         return pulumi.get(self, "is_force_stop_jobs")
 
     @property
     @pulumi.getter(name="isHighAvailability")
-    def is_high_availability(self) -> bool:
-        """
-        Boolean flag specifying whether or not the cluster is highly available (HA)
-        """
+    def is_high_availability(self) -> Optional[bool]:
         return pulumi.get(self, "is_high_availability")
 
     @property
     @pulumi.getter(name="isKafkaConfigured")
-    def is_kafka_configured(self) -> bool:
-        """
-        Boolean flag specifying whether or not Kafka should be configured.
-        """
+    def is_kafka_configured(self) -> Optional[bool]:
         return pulumi.get(self, "is_kafka_configured")
 
     @property
     @pulumi.getter(name="isSecure")
-    def is_secure(self) -> bool:
-        """
-        Boolean flag specifying whether or not the cluster should be set up as secure.
-        """
+    def is_secure(self) -> Optional[bool]:
         return pulumi.get(self, "is_secure")
 
     @property
     @pulumi.getter(name="kafkaBrokerNodes")
-    def kafka_broker_nodes(self) -> Sequence['outputs.GetBdsInstanceKafkaBrokerNodeResult']:
+    def kafka_broker_nodes(self) -> Optional[Sequence['outputs.GetBdsInstanceKafkaBrokerNodeResult']]:
         return pulumi.get(self, "kafka_broker_nodes")
 
     @property
     @pulumi.getter(name="kerberosRealmName")
-    def kerberos_realm_name(self) -> str:
+    def kerberos_realm_name(self) -> Optional[str]:
         return pulumi.get(self, "kerberos_realm_name")
 
     @property
     @pulumi.getter(name="kmsKeyId")
-    def kms_key_id(self) -> str:
-        """
-        The OCID of the Key Management master encryption key.
-        """
+    def kms_key_id(self) -> Optional[str]:
         return pulumi.get(self, "kms_key_id")
 
     @property
     @pulumi.getter(name="masterNodes")
-    def master_nodes(self) -> Sequence['outputs.GetBdsInstanceMasterNodeResult']:
+    def master_nodes(self) -> Optional[Sequence['outputs.GetBdsInstanceMasterNodeResult']]:
         return pulumi.get(self, "master_nodes")
 
     @property
     @pulumi.getter(name="networkConfigs")
-    def network_configs(self) -> Sequence['outputs.GetBdsInstanceNetworkConfigResult']:
-        """
-        Additional configuration of the user's network.
-        """
+    def network_configs(self) -> Optional[Sequence['outputs.GetBdsInstanceNetworkConfigResult']]:
         return pulumi.get(self, "network_configs")
 
     @property
     @pulumi.getter
-    def nodes(self) -> Sequence['outputs.GetBdsInstanceNodeResult']:
-        """
-        The list of nodes in the cluster.
-        """
+    def nodes(self) -> Optional[Sequence['outputs.GetBdsInstanceNodeResult']]:
         return pulumi.get(self, "nodes")
 
     @property
     @pulumi.getter(name="numberOfNodes")
-    def number_of_nodes(self) -> int:
-        """
-        The number of nodes that form the cluster.
-        """
+    def number_of_nodes(self) -> Optional[int]:
         return pulumi.get(self, "number_of_nodes")
 
     @property
     @pulumi.getter(name="numberOfNodesRequiringMaintenanceReboot")
-    def number_of_nodes_requiring_maintenance_reboot(self) -> int:
-        """
-        Number of nodes that require a maintenance reboot
-        """
+    def number_of_nodes_requiring_maintenance_reboot(self) -> Optional[int]:
         return pulumi.get(self, "number_of_nodes_requiring_maintenance_reboot")
 
     @property
     @pulumi.getter(name="osPatchVersion")
-    def os_patch_version(self) -> str:
+    def os_patch_version(self) -> Optional[str]:
         return pulumi.get(self, "os_patch_version")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The state of the cluster.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The time the cluster was created, shown as an RFC 3339 formatted datetime string.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The time the cluster was updated, shown as an RFC 3339 formatted datetime string.
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
     @property
     @pulumi.getter(name="utilNodes")
-    def util_nodes(self) -> Sequence['outputs.GetBdsInstanceUtilNodeResult']:
+    def util_nodes(self) -> Optional[Sequence['outputs.GetBdsInstanceUtilNodeResult']]:
         return pulumi.get(self, "util_nodes")
 
     @property
     @pulumi.getter(name="workerNodes")
-    def worker_nodes(self) -> Sequence['outputs.GetBdsInstanceWorkerNodeResult']:
+    def worker_nodes(self) -> Optional[Sequence['outputs.GetBdsInstanceWorkerNodeResult']]:
         return pulumi.get(self, "worker_nodes")
 
 
@@ -420,21 +351,7 @@ class AwaitableGetBdsInstanceResult(GetBdsInstanceResult):
 def get_bds_instance(bds_instance_id: Optional[str] = None,
                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetBdsInstanceResult:
     """
-    This data source provides details about a specific Bds Instance resource in Oracle Cloud Infrastructure Big Data Service service.
-
-    Returns information about the Big Data Service cluster identified by the given ID.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_bds_instance = oci.BigDataService.get_bds_instance(bds_instance_id=oci_bds_bds_instance["test_bds_instance"]["id"])
-    ```
-
-
-    :param str bds_instance_id: The OCID of the cluster.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['bdsInstanceId'] = bds_instance_id
@@ -483,20 +400,6 @@ def get_bds_instance(bds_instance_id: Optional[str] = None,
 def get_bds_instance_output(bds_instance_id: Optional[pulumi.Input[str]] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetBdsInstanceResult]:
     """
-    This data source provides details about a specific Bds Instance resource in Oracle Cloud Infrastructure Big Data Service service.
-
-    Returns information about the Big Data Service cluster identified by the given ID.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_bds_instance = oci.BigDataService.get_bds_instance(bds_instance_id=oci_bds_bds_instance["test_bds_instance"]["id"])
-    ```
-
-
-    :param str bds_instance_id: The OCID of the cluster.
+    Use this data source to access information about an existing resource.
     """
     ...

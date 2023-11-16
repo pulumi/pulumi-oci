@@ -16,7 +16,7 @@ namespace Pulumi.Oci.MeteringComputation.Outputs
         /// <summary>
         /// The depth level of the compartment.
         /// </summary>
-        public readonly double CompartmentDepth;
+        public readonly double? CompartmentDepth;
         /// <summary>
         /// Static or dynamic date range `dateRangeType`, which corresponds with type-specific characteristics.
         /// </summary>
@@ -24,11 +24,11 @@ namespace Pulumi.Oci.MeteringComputation.Outputs
         /// <summary>
         /// The filter object for query usage.
         /// </summary>
-        public readonly string Filter;
+        public readonly string? Filter;
         /// <summary>
         /// The usage granularity. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation. Allowed values are: DAILY MONTHLY
         /// </summary>
-        public readonly string Granularity;
+        public readonly string? Granularity;
         /// <summary>
         /// Aggregate the result by. For example: [ "tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName" ]
         /// </summary>
@@ -40,29 +40,29 @@ namespace Pulumi.Oci.MeteringComputation.Outputs
         /// <summary>
         /// Specifies whether aggregated by time. If isAggregateByTime is true, all usage or cost over the query time period will be added up.
         /// </summary>
-        public readonly bool IsAggregateByTime;
+        public readonly bool? IsAggregateByTime;
         /// <summary>
         /// The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data. Allowed values are: USAGE COST USAGE_AND_COST
         /// </summary>
-        public readonly string QueryType;
+        public readonly string? QueryType;
 
         [OutputConstructor]
         private GetScheduleQueryPropertyResult(
-            double compartmentDepth,
+            double? compartmentDepth,
 
             ImmutableArray<Outputs.GetScheduleQueryPropertyDateRangeResult> dateRanges,
 
-            string filter,
+            string? filter,
 
-            string granularity,
+            string? granularity,
 
             ImmutableArray<string> groupBies,
 
             ImmutableArray<Outputs.GetScheduleQueryPropertyGroupByTagResult> groupByTags,
 
-            bool isAggregateByTime,
+            bool? isAggregateByTime,
 
-            string queryType)
+            string? queryType)
         {
             CompartmentDepth = compartmentDepth;
             DateRanges = dateRanges;

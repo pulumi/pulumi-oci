@@ -23,11 +23,6 @@ class ProcessorJobArgs:
                  display_name: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a ProcessorJob resource.
-        :param pulumi.Input[str] compartment_id: The compartment identifier.
-        :param pulumi.Input['ProcessorJobInputLocationArgs'] input_location: The location of the inputs.
-        :param pulumi.Input['ProcessorJobOutputLocationArgs'] output_location: The object storage location where to store analysis results.
-        :param pulumi.Input['ProcessorJobProcessorConfigArgs'] processor_config: The configuration of a processor.
-        :param pulumi.Input[str] display_name: The display name of the processor job.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "input_location", input_location)
@@ -39,9 +34,6 @@ class ProcessorJobArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
-        """
-        The compartment identifier.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -51,9 +43,6 @@ class ProcessorJobArgs:
     @property
     @pulumi.getter(name="inputLocation")
     def input_location(self) -> pulumi.Input['ProcessorJobInputLocationArgs']:
-        """
-        The location of the inputs.
-        """
         return pulumi.get(self, "input_location")
 
     @input_location.setter
@@ -63,9 +52,6 @@ class ProcessorJobArgs:
     @property
     @pulumi.getter(name="outputLocation")
     def output_location(self) -> pulumi.Input['ProcessorJobOutputLocationArgs']:
-        """
-        The object storage location where to store analysis results.
-        """
         return pulumi.get(self, "output_location")
 
     @output_location.setter
@@ -75,9 +61,6 @@ class ProcessorJobArgs:
     @property
     @pulumi.getter(name="processorConfig")
     def processor_config(self) -> pulumi.Input['ProcessorJobProcessorConfigArgs']:
-        """
-        The configuration of a processor.
-        """
         return pulumi.get(self, "processor_config")
 
     @processor_config.setter
@@ -87,9 +70,6 @@ class ProcessorJobArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The display name of the processor job.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -113,17 +93,6 @@ class _ProcessorJobState:
                  time_started: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering ProcessorJob resources.
-        :param pulumi.Input[str] compartment_id: The compartment identifier.
-        :param pulumi.Input[str] display_name: The display name of the processor job.
-        :param pulumi.Input['ProcessorJobInputLocationArgs'] input_location: The location of the inputs.
-        :param pulumi.Input[str] lifecycle_details: The detailed status of FAILED state.
-        :param pulumi.Input['ProcessorJobOutputLocationArgs'] output_location: The object storage location where to store analysis results.
-        :param pulumi.Input[float] percent_complete: How much progress the operation has made, compared to the total amount of work to be performed.
-        :param pulumi.Input['ProcessorJobProcessorConfigArgs'] processor_config: The configuration of a processor.
-        :param pulumi.Input[str] state: The current state of the processor job.
-        :param pulumi.Input[str] time_accepted: The job acceptance time.
-        :param pulumi.Input[str] time_finished: The job finish time.
-        :param pulumi.Input[str] time_started: The job start time.
         """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
@@ -151,9 +120,6 @@ class _ProcessorJobState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The compartment identifier.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -163,9 +129,6 @@ class _ProcessorJobState:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The display name of the processor job.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -175,9 +138,6 @@ class _ProcessorJobState:
     @property
     @pulumi.getter(name="inputLocation")
     def input_location(self) -> Optional[pulumi.Input['ProcessorJobInputLocationArgs']]:
-        """
-        The location of the inputs.
-        """
         return pulumi.get(self, "input_location")
 
     @input_location.setter
@@ -187,9 +147,6 @@ class _ProcessorJobState:
     @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> Optional[pulumi.Input[str]]:
-        """
-        The detailed status of FAILED state.
-        """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
@@ -199,9 +156,6 @@ class _ProcessorJobState:
     @property
     @pulumi.getter(name="outputLocation")
     def output_location(self) -> Optional[pulumi.Input['ProcessorJobOutputLocationArgs']]:
-        """
-        The object storage location where to store analysis results.
-        """
         return pulumi.get(self, "output_location")
 
     @output_location.setter
@@ -211,9 +165,6 @@ class _ProcessorJobState:
     @property
     @pulumi.getter(name="percentComplete")
     def percent_complete(self) -> Optional[pulumi.Input[float]]:
-        """
-        How much progress the operation has made, compared to the total amount of work to be performed.
-        """
         return pulumi.get(self, "percent_complete")
 
     @percent_complete.setter
@@ -223,9 +174,6 @@ class _ProcessorJobState:
     @property
     @pulumi.getter(name="processorConfig")
     def processor_config(self) -> Optional[pulumi.Input['ProcessorJobProcessorConfigArgs']]:
-        """
-        The configuration of a processor.
-        """
         return pulumi.get(self, "processor_config")
 
     @processor_config.setter
@@ -235,9 +183,6 @@ class _ProcessorJobState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The current state of the processor job.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -247,9 +192,6 @@ class _ProcessorJobState:
     @property
     @pulumi.getter(name="timeAccepted")
     def time_accepted(self) -> Optional[pulumi.Input[str]]:
-        """
-        The job acceptance time.
-        """
         return pulumi.get(self, "time_accepted")
 
     @time_accepted.setter
@@ -259,9 +201,6 @@ class _ProcessorJobState:
     @property
     @pulumi.getter(name="timeFinished")
     def time_finished(self) -> Optional[pulumi.Input[str]]:
-        """
-        The job finish time.
-        """
         return pulumi.get(self, "time_finished")
 
     @time_finished.setter
@@ -271,9 +210,6 @@ class _ProcessorJobState:
     @property
     @pulumi.getter(name="timeStarted")
     def time_started(self) -> Optional[pulumi.Input[str]]:
-        """
-        The job start time.
-        """
         return pulumi.get(self, "time_started")
 
     @time_started.setter
@@ -293,63 +229,9 @@ class ProcessorJob(pulumi.CustomResource):
                  processor_config: Optional[pulumi.Input[pulumi.InputType['ProcessorJobProcessorConfigArgs']]] = None,
                  __props__=None):
         """
-        This resource provides the Processor Job resource in Oracle Cloud Infrastructure Ai Document service.
-
-        Create a processor job for document analysis.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_processor_job = oci.ai_document.ProcessorJob("testProcessorJob",
-            compartment_id=var["compartment_id"],
-            input_location=oci.ai_document.ProcessorJobInputLocationArgs(
-                source_type=var["processor_job_input_location_source_type"],
-                data=var["processor_job_input_location_data"],
-                object_locations=[oci.ai_document.ProcessorJobInputLocationObjectLocationArgs(
-                    bucket=var["processor_job_input_location_object_locations_bucket"],
-                    namespace=var["processor_job_input_location_object_locations_namespace"],
-                    object=var["processor_job_input_location_object_locations_object"],
-                )],
-            ),
-            output_location=oci.ai_document.ProcessorJobOutputLocationArgs(
-                bucket=var["processor_job_output_location_bucket"],
-                namespace=var["processor_job_output_location_namespace"],
-                prefix=var["processor_job_output_location_prefix"],
-            ),
-            processor_config=oci.ai_document.ProcessorJobProcessorConfigArgs(
-                features=[oci.ai_document.ProcessorJobProcessorConfigFeatureArgs(
-                    feature_type=var["processor_job_processor_config_features_feature_type"],
-                    generate_searchable_pdf=var["processor_job_processor_config_features_generate_searchable_pdf"],
-                    max_results=var["processor_job_processor_config_features_max_results"],
-                    model_id=oci_ai_document_model["test_model"]["id"],
-                    tenancy_id=oci_identity_tenancy["test_tenancy"]["id"],
-                )],
-                processor_type=var["processor_job_processor_config_processor_type"],
-                document_type=var["processor_job_processor_config_document_type"],
-                is_zip_output_enabled=var["processor_job_processor_config_is_zip_output_enabled"],
-                language=var["processor_job_processor_config_language"],
-            ),
-            display_name=var["processor_job_display_name"])
-        ```
-
-        ## Import
-
-        ProcessorJobs can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:AiDocument/processorJob:ProcessorJob test_processor_job "id"
-        ```
-
+        Create a ProcessorJob resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: The compartment identifier.
-        :param pulumi.Input[str] display_name: The display name of the processor job.
-        :param pulumi.Input[pulumi.InputType['ProcessorJobInputLocationArgs']] input_location: The location of the inputs.
-        :param pulumi.Input[pulumi.InputType['ProcessorJobOutputLocationArgs']] output_location: The object storage location where to store analysis results.
-        :param pulumi.Input[pulumi.InputType['ProcessorJobProcessorConfigArgs']] processor_config: The configuration of a processor.
         """
         ...
     @overload
@@ -358,56 +240,7 @@ class ProcessorJob(pulumi.CustomResource):
                  args: ProcessorJobArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Processor Job resource in Oracle Cloud Infrastructure Ai Document service.
-
-        Create a processor job for document analysis.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_processor_job = oci.ai_document.ProcessorJob("testProcessorJob",
-            compartment_id=var["compartment_id"],
-            input_location=oci.ai_document.ProcessorJobInputLocationArgs(
-                source_type=var["processor_job_input_location_source_type"],
-                data=var["processor_job_input_location_data"],
-                object_locations=[oci.ai_document.ProcessorJobInputLocationObjectLocationArgs(
-                    bucket=var["processor_job_input_location_object_locations_bucket"],
-                    namespace=var["processor_job_input_location_object_locations_namespace"],
-                    object=var["processor_job_input_location_object_locations_object"],
-                )],
-            ),
-            output_location=oci.ai_document.ProcessorJobOutputLocationArgs(
-                bucket=var["processor_job_output_location_bucket"],
-                namespace=var["processor_job_output_location_namespace"],
-                prefix=var["processor_job_output_location_prefix"],
-            ),
-            processor_config=oci.ai_document.ProcessorJobProcessorConfigArgs(
-                features=[oci.ai_document.ProcessorJobProcessorConfigFeatureArgs(
-                    feature_type=var["processor_job_processor_config_features_feature_type"],
-                    generate_searchable_pdf=var["processor_job_processor_config_features_generate_searchable_pdf"],
-                    max_results=var["processor_job_processor_config_features_max_results"],
-                    model_id=oci_ai_document_model["test_model"]["id"],
-                    tenancy_id=oci_identity_tenancy["test_tenancy"]["id"],
-                )],
-                processor_type=var["processor_job_processor_config_processor_type"],
-                document_type=var["processor_job_processor_config_document_type"],
-                is_zip_output_enabled=var["processor_job_processor_config_is_zip_output_enabled"],
-                language=var["processor_job_processor_config_language"],
-            ),
-            display_name=var["processor_job_display_name"])
-        ```
-
-        ## Import
-
-        ProcessorJobs can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:AiDocument/processorJob:ProcessorJob test_processor_job "id"
-        ```
-
+        Create a ProcessorJob resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param ProcessorJobArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -484,17 +317,6 @@ class ProcessorJob(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: The compartment identifier.
-        :param pulumi.Input[str] display_name: The display name of the processor job.
-        :param pulumi.Input[pulumi.InputType['ProcessorJobInputLocationArgs']] input_location: The location of the inputs.
-        :param pulumi.Input[str] lifecycle_details: The detailed status of FAILED state.
-        :param pulumi.Input[pulumi.InputType['ProcessorJobOutputLocationArgs']] output_location: The object storage location where to store analysis results.
-        :param pulumi.Input[float] percent_complete: How much progress the operation has made, compared to the total amount of work to be performed.
-        :param pulumi.Input[pulumi.InputType['ProcessorJobProcessorConfigArgs']] processor_config: The configuration of a processor.
-        :param pulumi.Input[str] state: The current state of the processor job.
-        :param pulumi.Input[str] time_accepted: The job acceptance time.
-        :param pulumi.Input[str] time_finished: The job finish time.
-        :param pulumi.Input[str] time_started: The job start time.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -516,88 +338,55 @@ class ProcessorJob(pulumi.CustomResource):
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
-        """
-        The compartment identifier.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> pulumi.Output[str]:
-        """
-        The display name of the processor job.
-        """
+    def display_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="inputLocation")
     def input_location(self) -> pulumi.Output['outputs.ProcessorJobInputLocation']:
-        """
-        The location of the inputs.
-        """
         return pulumi.get(self, "input_location")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> pulumi.Output[str]:
-        """
-        The detailed status of FAILED state.
-        """
+    def lifecycle_details(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="outputLocation")
     def output_location(self) -> pulumi.Output['outputs.ProcessorJobOutputLocation']:
-        """
-        The object storage location where to store analysis results.
-        """
         return pulumi.get(self, "output_location")
 
     @property
     @pulumi.getter(name="percentComplete")
-    def percent_complete(self) -> pulumi.Output[float]:
-        """
-        How much progress the operation has made, compared to the total amount of work to be performed.
-        """
+    def percent_complete(self) -> pulumi.Output[Optional[float]]:
         return pulumi.get(self, "percent_complete")
 
     @property
     @pulumi.getter(name="processorConfig")
     def processor_config(self) -> pulumi.Output['outputs.ProcessorJobProcessorConfig']:
-        """
-        The configuration of a processor.
-        """
         return pulumi.get(self, "processor_config")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        The current state of the processor job.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeAccepted")
-    def time_accepted(self) -> pulumi.Output[str]:
-        """
-        The job acceptance time.
-        """
+    def time_accepted(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_accepted")
 
     @property
     @pulumi.getter(name="timeFinished")
-    def time_finished(self) -> pulumi.Output[str]:
-        """
-        The job finish time.
-        """
+    def time_finished(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_finished")
 
     @property
     @pulumi.getter(name="timeStarted")
-    def time_started(self) -> pulumi.Output[str]:
-        """
-        The job start time.
-        """
+    def time_started(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_started")
 

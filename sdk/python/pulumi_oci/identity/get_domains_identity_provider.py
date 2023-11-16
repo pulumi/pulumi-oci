@@ -221,10 +221,7 @@ class GetDomainsIdentityProviderResult:
 
     @property
     @pulumi.getter(name="assertionAttribute")
-    def assertion_attribute(self) -> str:
-        """
-        Assertion attribute name.
-        """
+    def assertion_attribute(self) -> Optional[str]:
         return pulumi.get(self, "assertion_attribute")
 
     @property
@@ -239,10 +236,7 @@ class GetDomainsIdentityProviderResult:
 
     @property
     @pulumi.getter(name="authnRequestBinding")
-    def authn_request_binding(self) -> str:
-        """
-        HTTP binding to use for authentication requests.
-        """
+    def authn_request_binding(self) -> Optional[str]:
         return pulumi.get(self, "authn_request_binding")
 
     @property
@@ -252,90 +246,57 @@ class GetDomainsIdentityProviderResult:
 
     @property
     @pulumi.getter(name="compartmentOcid")
-    def compartment_ocid(self) -> str:
-        """
-        Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
-        """
+    def compartment_ocid(self) -> Optional[str]:
         return pulumi.get(self, "compartment_ocid")
 
     @property
     @pulumi.getter(name="correlationPolicies")
-    def correlation_policies(self) -> Sequence['outputs.GetDomainsIdentityProviderCorrelationPolicyResult']:
-        """
-        Correlation policy
-        """
+    def correlation_policies(self) -> Optional[Sequence['outputs.GetDomainsIdentityProviderCorrelationPolicyResult']]:
         return pulumi.get(self, "correlation_policies")
 
     @property
     @pulumi.getter(name="deleteInProgress")
-    def delete_in_progress(self) -> bool:
-        """
-        A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
-        """
+    def delete_in_progress(self) -> Optional[bool]:
         return pulumi.get(self, "delete_in_progress")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        Description
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="domainOcid")
-    def domain_ocid(self) -> str:
-        """
-        Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
-        """
+    def domain_ocid(self) -> Optional[str]:
         return pulumi.get(self, "domain_ocid")
 
     @property
     @pulumi.getter
-    def enabled(self) -> bool:
-        """
-        Set to true to indicate Partner enabled.
-        """
+    def enabled(self) -> Optional[bool]:
         return pulumi.get(self, "enabled")
 
     @property
     @pulumi.getter(name="encryptionCertificate")
-    def encryption_certificate(self) -> str:
-        """
-        Encryption certificate
-        """
+    def encryption_certificate(self) -> Optional[str]:
         return pulumi.get(self, "encryption_certificate")
 
     @property
     @pulumi.getter(name="externalId")
-    def external_id(self) -> str:
-        """
-        An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer's tenant.
-        """
+    def external_id(self) -> Optional[str]:
         return pulumi.get(self, "external_id")
 
     @property
     @pulumi.getter(name="iconUrl")
-    def icon_url(self) -> str:
-        """
-        Identity Provider Icon URL.
-        """
+    def icon_url(self) -> Optional[str]:
         return pulumi.get(self, "icon_url")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        Unique identifier for the SCIM Resource as defined by the Service Provider. Each representation of the Resource MUST include a non-empty id value. This identifier MUST be unique across the Service Provider's entire set of Resources. It MUST be a stable, non-reassignable identifier that does not change when the same Resource is returned in subsequent requests. The value of the id attribute is always issued by the Service Provider and MUST never be specified by the Service Consumer. bulkId: is a reserved keyword and MUST NOT be used in the unique identifier.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="idcsCreatedBies")
-    def idcs_created_bies(self) -> Sequence['outputs.GetDomainsIdentityProviderIdcsCreatedByResult']:
-        """
-        The User or App who created the Resource
-        """
+    def idcs_created_bies(self) -> Optional[Sequence['outputs.GetDomainsIdentityProviderIdcsCreatedByResult']]:
         return pulumi.get(self, "idcs_created_bies")
 
     @property
@@ -345,26 +306,17 @@ class GetDomainsIdentityProviderResult:
 
     @property
     @pulumi.getter(name="idcsLastModifiedBies")
-    def idcs_last_modified_bies(self) -> Sequence['outputs.GetDomainsIdentityProviderIdcsLastModifiedByResult']:
-        """
-        The User or App who modified the Resource
-        """
+    def idcs_last_modified_bies(self) -> Optional[Sequence['outputs.GetDomainsIdentityProviderIdcsLastModifiedByResult']]:
         return pulumi.get(self, "idcs_last_modified_bies")
 
     @property
     @pulumi.getter(name="idcsLastUpgradedInRelease")
-    def idcs_last_upgraded_in_release(self) -> str:
-        """
-        The release number when the resource was upgraded.
-        """
+    def idcs_last_upgraded_in_release(self) -> Optional[str]:
         return pulumi.get(self, "idcs_last_upgraded_in_release")
 
     @property
     @pulumi.getter(name="idcsPreventedOperations")
-    def idcs_prevented_operations(self) -> Sequence[str]:
-        """
-        Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
-        """
+    def idcs_prevented_operations(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "idcs_prevented_operations")
 
     @property
@@ -374,226 +326,142 @@ class GetDomainsIdentityProviderResult:
 
     @property
     @pulumi.getter(name="idpSsoUrl")
-    def idp_sso_url(self) -> str:
-        """
-        Identity Provider SSO URL
-        """
+    def idp_sso_url(self) -> Optional[str]:
         return pulumi.get(self, "idp_sso_url")
 
     @property
     @pulumi.getter(name="includeSigningCertInSignature")
-    def include_signing_cert_in_signature(self) -> bool:
-        """
-        Set to true to include the signing certificate in the signature.
-        """
+    def include_signing_cert_in_signature(self) -> Optional[bool]:
         return pulumi.get(self, "include_signing_cert_in_signature")
 
     @property
     @pulumi.getter(name="jitUserProvAssignedGroups")
-    def jit_user_prov_assigned_groups(self) -> Sequence['outputs.GetDomainsIdentityProviderJitUserProvAssignedGroupResult']:
-        """
-        Refers to every group of which a JIT-provisioned User should be a member.  Just-in-Time user-provisioning applies this static list when jitUserProvGroupStaticListEnabled:true.
-        """
+    def jit_user_prov_assigned_groups(self) -> Optional[Sequence['outputs.GetDomainsIdentityProviderJitUserProvAssignedGroupResult']]:
         return pulumi.get(self, "jit_user_prov_assigned_groups")
 
     @property
     @pulumi.getter(name="jitUserProvAttributeUpdateEnabled")
-    def jit_user_prov_attribute_update_enabled(self) -> bool:
-        """
-        Set to true to indicate JIT User Creation is enabled
-        """
+    def jit_user_prov_attribute_update_enabled(self) -> Optional[bool]:
         return pulumi.get(self, "jit_user_prov_attribute_update_enabled")
 
     @property
     @pulumi.getter(name="jitUserProvAttributes")
-    def jit_user_prov_attributes(self) -> Sequence['outputs.GetDomainsIdentityProviderJitUserProvAttributeResult']:
-        """
-        Assertion To User Mapping
-        """
+    def jit_user_prov_attributes(self) -> Optional[Sequence['outputs.GetDomainsIdentityProviderJitUserProvAttributeResult']]:
         return pulumi.get(self, "jit_user_prov_attributes")
 
     @property
     @pulumi.getter(name="jitUserProvCreateUserEnabled")
-    def jit_user_prov_create_user_enabled(self) -> bool:
-        """
-        Set to true to indicate JIT User Creation is enabled
-        """
+    def jit_user_prov_create_user_enabled(self) -> Optional[bool]:
         return pulumi.get(self, "jit_user_prov_create_user_enabled")
 
     @property
     @pulumi.getter(name="jitUserProvEnabled")
-    def jit_user_prov_enabled(self) -> bool:
-        """
-        Set to true to indicate JIT User Provisioning is enabled
-        """
+    def jit_user_prov_enabled(self) -> Optional[bool]:
         return pulumi.get(self, "jit_user_prov_enabled")
 
     @property
     @pulumi.getter(name="jitUserProvGroupAssertionAttributeEnabled")
-    def jit_user_prov_group_assertion_attribute_enabled(self) -> bool:
-        """
-        Set to true to indicate JIT User Provisioning Groups should be assigned based on assertion attribute
-        """
+    def jit_user_prov_group_assertion_attribute_enabled(self) -> Optional[bool]:
         return pulumi.get(self, "jit_user_prov_group_assertion_attribute_enabled")
 
     @property
     @pulumi.getter(name="jitUserProvGroupAssignmentMethod")
-    def jit_user_prov_group_assignment_method(self) -> str:
-        """
-        The default value is 'Overwrite', which tells Just-In-Time user-provisioning to replace any current group-assignments for a User with those assigned by assertions and/or those assigned statically. Specify 'Merge' if you want Just-In-Time user-provisioning to combine its group-assignments with those the user already has.
-        """
+    def jit_user_prov_group_assignment_method(self) -> Optional[str]:
         return pulumi.get(self, "jit_user_prov_group_assignment_method")
 
     @property
     @pulumi.getter(name="jitUserProvGroupMappingMode")
-    def jit_user_prov_group_mapping_mode(self) -> str:
-        """
-        Property to indicate the mode of group mapping
-        """
+    def jit_user_prov_group_mapping_mode(self) -> Optional[str]:
         return pulumi.get(self, "jit_user_prov_group_mapping_mode")
 
     @property
     @pulumi.getter(name="jitUserProvGroupMappings")
-    def jit_user_prov_group_mappings(self) -> Sequence['outputs.GetDomainsIdentityProviderJitUserProvGroupMappingResult']:
-        """
-        The list of mappings between the Identity Domain Group and the IDP group.
-        """
+    def jit_user_prov_group_mappings(self) -> Optional[Sequence['outputs.GetDomainsIdentityProviderJitUserProvGroupMappingResult']]:
         return pulumi.get(self, "jit_user_prov_group_mappings")
 
     @property
     @pulumi.getter(name="jitUserProvGroupSamlAttributeName")
-    def jit_user_prov_group_saml_attribute_name(self) -> str:
-        """
-        Name of the assertion attribute containing the users groups
-        """
+    def jit_user_prov_group_saml_attribute_name(self) -> Optional[str]:
         return pulumi.get(self, "jit_user_prov_group_saml_attribute_name")
 
     @property
     @pulumi.getter(name="jitUserProvGroupStaticListEnabled")
-    def jit_user_prov_group_static_list_enabled(self) -> bool:
-        """
-        Set to true to indicate JIT User Provisioning Groups should be assigned from a static list
-        """
+    def jit_user_prov_group_static_list_enabled(self) -> Optional[bool]:
         return pulumi.get(self, "jit_user_prov_group_static_list_enabled")
 
     @property
     @pulumi.getter(name="jitUserProvIgnoreErrorOnAbsentGroups")
-    def jit_user_prov_ignore_error_on_absent_groups(self) -> bool:
-        """
-        Set to true to indicate ignoring absence of group while provisioning
-        """
+    def jit_user_prov_ignore_error_on_absent_groups(self) -> Optional[bool]:
         return pulumi.get(self, "jit_user_prov_ignore_error_on_absent_groups")
 
     @property
     @pulumi.getter(name="lastNotificationSentTime")
-    def last_notification_sent_time(self) -> str:
-        """
-        Records the notification timestamp for the IdP whose signing certificate is about to expire
-        """
+    def last_notification_sent_time(self) -> Optional[str]:
         return pulumi.get(self, "last_notification_sent_time")
 
     @property
     @pulumi.getter(name="logoutBinding")
-    def logout_binding(self) -> str:
-        """
-        HTTP binding to use for logout.
-        """
+    def logout_binding(self) -> Optional[str]:
         return pulumi.get(self, "logout_binding")
 
     @property
     @pulumi.getter(name="logoutEnabled")
-    def logout_enabled(self) -> bool:
-        """
-        Set to true to enable logout.
-        """
+    def logout_enabled(self) -> Optional[bool]:
         return pulumi.get(self, "logout_enabled")
 
     @property
     @pulumi.getter(name="logoutRequestUrl")
-    def logout_request_url(self) -> str:
-        """
-        Logout request URL
-        """
+    def logout_request_url(self) -> Optional[str]:
         return pulumi.get(self, "logout_request_url")
 
     @property
     @pulumi.getter(name="logoutResponseUrl")
-    def logout_response_url(self) -> str:
-        """
-        Logout response URL
-        """
+    def logout_response_url(self) -> Optional[str]:
         return pulumi.get(self, "logout_response_url")
 
     @property
     @pulumi.getter
-    def metadata(self) -> str:
-        """
-        Metadata
-        """
+    def metadata(self) -> Optional[str]:
         return pulumi.get(self, "metadata")
 
     @property
     @pulumi.getter
-    def metas(self) -> Sequence['outputs.GetDomainsIdentityProviderMetaResult']:
-        """
-        A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
-        """
+    def metas(self) -> Optional[Sequence['outputs.GetDomainsIdentityProviderMetaResult']]:
         return pulumi.get(self, "metas")
 
     @property
     @pulumi.getter(name="nameIdFormat")
-    def name_id_format(self) -> str:
-        """
-        Default authentication request name ID format.
-        """
+    def name_id_format(self) -> Optional[str]:
         return pulumi.get(self, "name_id_format")
 
     @property
     @pulumi.getter
-    def ocid(self) -> str:
-        """
-        Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
-        """
+    def ocid(self) -> Optional[str]:
         return pulumi.get(self, "ocid")
 
     @property
     @pulumi.getter(name="partnerName")
-    def partner_name(self) -> str:
-        """
-        Unique name of the trusted Identity Provider.
-        """
+    def partner_name(self) -> Optional[str]:
         return pulumi.get(self, "partner_name")
 
     @property
     @pulumi.getter(name="partnerProviderId")
-    def partner_provider_id(self) -> str:
-        """
-        Provider ID
-        """
+    def partner_provider_id(self) -> Optional[str]:
         return pulumi.get(self, "partner_provider_id")
 
     @property
     @pulumi.getter(name="requestedAuthenticationContexts")
-    def requested_authentication_contexts(self) -> Sequence[str]:
-        """
-        SAML SP authentication type.
-        """
+    def requested_authentication_contexts(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "requested_authentication_contexts")
 
     @property
     @pulumi.getter(name="requireForceAuthn")
-    def require_force_authn(self) -> bool:
-        """
-        This SP requires requests SAML IdP to enforce re-authentication.
-        """
+    def require_force_authn(self) -> Optional[bool]:
         return pulumi.get(self, "require_force_authn")
 
     @property
     @pulumi.getter(name="requiresEncryptedAssertion")
-    def requires_encrypted_assertion(self) -> bool:
-        """
-        SAML SP must accept encrypted assertion only.
-        """
+    def requires_encrypted_assertion(self) -> Optional[bool]:
         return pulumi.get(self, "requires_encrypted_assertion")
 
     @property
@@ -603,122 +471,77 @@ class GetDomainsIdentityProviderResult:
 
     @property
     @pulumi.getter(name="samlHoKrequired")
-    def saml_ho_krequired(self) -> bool:
-        """
-        SAML SP HoK Enabled.
-        """
+    def saml_ho_krequired(self) -> Optional[bool]:
         return pulumi.get(self, "saml_ho_krequired")
 
     @property
     @pulumi.getter
-    def schemas(self) -> Sequence[str]:
-        """
-        REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \\"enterprise\\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
-        """
+    def schemas(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "schemas")
 
     @property
     @pulumi.getter(name="serviceInstanceIdentifier")
-    def service_instance_identifier(self) -> str:
-        """
-        The serviceInstanceIdentifier of the App that hosts this IdP. This value will match the opcServiceInstanceGUID of any service-instance that the IdP represents.
-        """
+    def service_instance_identifier(self) -> Optional[str]:
         return pulumi.get(self, "service_instance_identifier")
 
     @property
     @pulumi.getter(name="shownOnLoginPage")
-    def shown_on_login_page(self) -> bool:
-        """
-        Set to true to indicate whether to show IdP in login page or not.
-        """
+    def shown_on_login_page(self) -> Optional[bool]:
         return pulumi.get(self, "shown_on_login_page")
 
     @property
     @pulumi.getter(name="signatureHashAlgorithm")
-    def signature_hash_algorithm(self) -> str:
-        """
-        Signature hash algorithm.
-        """
+    def signature_hash_algorithm(self) -> Optional[str]:
         return pulumi.get(self, "signature_hash_algorithm")
 
     @property
     @pulumi.getter(name="signingCertificate")
-    def signing_certificate(self) -> str:
-        """
-        Signing certificate
-        """
+    def signing_certificate(self) -> Optional[str]:
         return pulumi.get(self, "signing_certificate")
 
     @property
     @pulumi.getter(name="succinctId")
-    def succinct_id(self) -> str:
-        """
-        Succinct ID
-        """
+    def succinct_id(self) -> Optional[str]:
         return pulumi.get(self, "succinct_id")
 
     @property
     @pulumi.getter
-    def tags(self) -> Sequence['outputs.GetDomainsIdentityProviderTagResult']:
-        """
-        A list of tags on this resource.
-        """
+    def tags(self) -> Optional[Sequence['outputs.GetDomainsIdentityProviderTagResult']]:
         return pulumi.get(self, "tags")
 
     @property
     @pulumi.getter(name="tenancyOcid")
-    def tenancy_ocid(self) -> str:
-        """
-        Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
-        """
+    def tenancy_ocid(self) -> Optional[str]:
         return pulumi.get(self, "tenancy_ocid")
 
     @property
     @pulumi.getter(name="tenantProviderId")
-    def tenant_provider_id(self) -> str:
-        """
-        The alternate Provider ID to be used as the Oracle Identity Cloud Service providerID (instead of the one in SamlSettings) when interacting with this IdP.
-        """
+    def tenant_provider_id(self) -> Optional[str]:
         return pulumi.get(self, "tenant_provider_id")
 
     @property
     @pulumi.getter
-    def type(self) -> str:
-        """
-        Identity Provider Type
-        """
+    def type(self) -> Optional[str]:
         return pulumi.get(self, "type")
 
     @property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionsocialIdentityProviders")
-    def urnietfparamsscimschemasoracleidcsextensionsocial_identity_providers(self) -> Sequence['outputs.GetDomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionsocialIdentityProviderResult']:
-        """
-        Social Identity Provider Extension Schema
-        """
+    def urnietfparamsscimschemasoracleidcsextensionsocial_identity_providers(self) -> Optional[Sequence['outputs.GetDomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionsocialIdentityProviderResult']]:
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionsocial_identity_providers")
 
     @property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionx509identityProviders")
-    def urnietfparamsscimschemasoracleidcsextensionx509identity_providers(self) -> Sequence['outputs.GetDomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProviderResult']:
-        """
-        X509 Identity Provider Extension Schema
-        """
+    def urnietfparamsscimschemasoracleidcsextensionx509identity_providers(self) -> Optional[Sequence['outputs.GetDomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProviderResult']]:
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionx509identity_providers")
 
     @property
     @pulumi.getter(name="userMappingMethod")
-    def user_mapping_method(self) -> str:
-        """
-        User mapping method.
-        """
+    def user_mapping_method(self) -> Optional[str]:
         return pulumi.get(self, "user_mapping_method")
 
     @property
     @pulumi.getter(name="userMappingStoreAttribute")
-    def user_mapping_store_attribute(self) -> str:
-        """
-        This property specifies the userstore attribute value that must match the incoming assertion attribute value or the incoming nameid attribute value in order to identify the user during SSO.<br>You can construct the userMappingStoreAttribute value by specifying attributes from the Oracle Identity Cloud Service Core Users schema. For examples of how to construct the userMappingStoreAttribute value, see the <b>Example of a Request Body</b> section of the Examples tab for the <a href='./op-admin-v1-identityproviders-post.html'>POST</a> and <a href='./op-admin-v1-identityproviders-id-put.html'>PUT</a> methods of the /IdentityProviders endpoint.
-        """
+    def user_mapping_store_attribute(self) -> Optional[str]:
         return pulumi.get(self, "user_mapping_store_attribute")
 
 
@@ -803,31 +626,7 @@ def get_domains_identity_provider(attribute_sets: Optional[Sequence[str]] = None
                                   resource_type_schema_version: Optional[str] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDomainsIdentityProviderResult:
     """
-    This data source provides details about a specific Identity Provider resource in Oracle Cloud Infrastructure Identity Domains service.
-
-    Get an Identity Provider
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_identity_provider = oci.Identity.get_domains_identity_provider(idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
-        identity_provider_id=oci_identity_identity_provider["test_identity_provider"]["id"],
-        attribute_sets=[],
-        attributes="",
-        authorization=var["identity_provider_authorization"],
-        resource_type_schema_version=var["identity_provider_resource_type_schema_version"])
-    ```
-
-
-    :param Sequence[str] attribute_sets: A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
-    :param str attributes: A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
-    :param str authorization: The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
-    :param str idcs_endpoint: The basic endpoint for the identity domain
-    :param str identity_provider_id: ID of the resource
-    :param str resource_type_schema_version: An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['attributeSets'] = attribute_sets
@@ -916,30 +715,6 @@ def get_domains_identity_provider_output(attribute_sets: Optional[pulumi.Input[O
                                          resource_type_schema_version: Optional[pulumi.Input[Optional[str]]] = None,
                                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDomainsIdentityProviderResult]:
     """
-    This data source provides details about a specific Identity Provider resource in Oracle Cloud Infrastructure Identity Domains service.
-
-    Get an Identity Provider
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_identity_provider = oci.Identity.get_domains_identity_provider(idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
-        identity_provider_id=oci_identity_identity_provider["test_identity_provider"]["id"],
-        attribute_sets=[],
-        attributes="",
-        authorization=var["identity_provider_authorization"],
-        resource_type_schema_version=var["identity_provider_resource_type_schema_version"])
-    ```
-
-
-    :param Sequence[str] attribute_sets: A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
-    :param str attributes: A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
-    :param str authorization: The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
-    :param str idcs_endpoint: The basic endpoint for the identity domain
-    :param str identity_provider_id: ID of the resource
-    :param str resource_type_schema_version: An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
+    Use this data source to access information about an existing resource.
     """
     ...

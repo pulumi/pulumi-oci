@@ -12,6 +12,7 @@ import com.pulumi.oci.Kms.inputs.VerifyState;
 import com.pulumi.oci.Utilities;
 import java.lang.Boolean;
 import java.lang.String;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -88,14 +89,14 @@ public class Verify extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="isSignatureValid", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isSignatureValid;
+    private Output</* @Nullable */ Boolean> isSignatureValid;
 
     /**
      * @return A Boolean value that indicates whether the signature was verified.
      * 
      */
-    public Output<Boolean> isSignatureValid() {
-        return this.isSignatureValid;
+    public Output<Optional<Boolean>> isSignatureValid() {
+        return Codegen.optional(this.isSignatureValid);
     }
     /**
      * The OCID of the key used to sign the message.
@@ -144,14 +145,14 @@ public class Verify extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="messageType", refs={String.class}, tree="[0]")
-    private Output<String> messageType;
+    private Output</* @Nullable */ String> messageType;
 
     /**
      * @return Denotes whether the value of the message parameter is a raw message or a message digest. The default value, `RAW`, indicates a message. To indicate a message digest, use `DIGEST`.
      * 
      */
-    public Output<String> messageType() {
-        return this.messageType;
+    public Output<Optional<String>> messageType() {
+        return Codegen.optional(this.messageType);
     }
     /**
      * The base64-encoded binary data object denoting the cryptographic signature generated for the message.

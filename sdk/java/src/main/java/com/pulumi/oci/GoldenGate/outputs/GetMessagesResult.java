@@ -9,6 +9,7 @@ import com.pulumi.oci.GoldenGate.outputs.GetMessagesFilter;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 @CustomType
@@ -18,13 +19,13 @@ public final class GetMessagesResult {
      * @return The list of deployment_messages_collection.
      * 
      */
-    private List<GetMessagesDeploymentMessagesCollection> deploymentMessagesCollections;
+    private @Nullable List<GetMessagesDeploymentMessagesCollection> deploymentMessagesCollections;
     private @Nullable List<GetMessagesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
 
     private GetMessagesResult() {}
     public String deploymentId() {
@@ -35,7 +36,7 @@ public final class GetMessagesResult {
      * 
      */
     public List<GetMessagesDeploymentMessagesCollection> deploymentMessagesCollections() {
-        return this.deploymentMessagesCollections;
+        return this.deploymentMessagesCollections == null ? List.of() : this.deploymentMessagesCollections;
     }
     public List<GetMessagesFilter> filters() {
         return this.filters == null ? List.of() : this.filters;
@@ -44,8 +45,8 @@ public final class GetMessagesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
 
     public static Builder builder() {
@@ -58,9 +59,9 @@ public final class GetMessagesResult {
     @CustomType.Builder
     public static final class Builder {
         private String deploymentId;
-        private List<GetMessagesDeploymentMessagesCollection> deploymentMessagesCollections;
+        private @Nullable List<GetMessagesDeploymentMessagesCollection> deploymentMessagesCollections;
         private @Nullable List<GetMessagesFilter> filters;
-        private String id;
+        private @Nullable String id;
         public Builder() {}
         public Builder(GetMessagesResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -76,8 +77,8 @@ public final class GetMessagesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder deploymentMessagesCollections(List<GetMessagesDeploymentMessagesCollection> deploymentMessagesCollections) {
-            this.deploymentMessagesCollections = Objects.requireNonNull(deploymentMessagesCollections);
+        public Builder deploymentMessagesCollections(@Nullable List<GetMessagesDeploymentMessagesCollection> deploymentMessagesCollections) {
+            this.deploymentMessagesCollections = deploymentMessagesCollections;
             return this;
         }
         public Builder deploymentMessagesCollections(GetMessagesDeploymentMessagesCollection... deploymentMessagesCollections) {
@@ -92,8 +93,8 @@ public final class GetMessagesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         public GetMessagesResult build() {

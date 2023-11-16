@@ -19,7 +19,7 @@ public final class GetMysqlBackupsResult {
      * @return The list of backups.
      * 
      */
-    private List<GetMysqlBackupsBackup> backups;
+    private @Nullable List<GetMysqlBackupsBackup> backups;
     /**
      * @return The OCID of the compartment the DB System belongs in.
      * 
@@ -45,7 +45,7 @@ public final class GetMysqlBackupsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The state of the backup.
      * 
@@ -61,7 +61,7 @@ public final class GetMysqlBackupsResult {
      * 
      */
     public List<GetMysqlBackupsBackup> backups() {
-        return this.backups;
+        return this.backups == null ? List.of() : this.backups;
     }
     /**
      * @return The OCID of the compartment the DB System belongs in.
@@ -98,8 +98,8 @@ public final class GetMysqlBackupsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The state of the backup.
@@ -119,13 +119,13 @@ public final class GetMysqlBackupsResult {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable String backupId;
-        private List<GetMysqlBackupsBackup> backups;
+        private @Nullable List<GetMysqlBackupsBackup> backups;
         private String compartmentId;
         private @Nullable String creationType;
         private @Nullable String dbSystemId;
         private @Nullable String displayName;
         private @Nullable List<GetMysqlBackupsFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String state;
         public Builder() {}
         public Builder(GetMysqlBackupsResult defaults) {
@@ -147,8 +147,8 @@ public final class GetMysqlBackupsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder backups(List<GetMysqlBackupsBackup> backups) {
-            this.backups = Objects.requireNonNull(backups);
+        public Builder backups(@Nullable List<GetMysqlBackupsBackup> backups) {
+            this.backups = backups;
             return this;
         }
         public Builder backups(GetMysqlBackupsBackup... backups) {
@@ -183,8 +183,8 @@ public final class GetMysqlBackupsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

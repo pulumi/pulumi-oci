@@ -9,6 +9,8 @@ import com.pulumi.oci.Core.outputs.GetClusterNetworkInstancePoolPlacementConfigu
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetClusterNetworkInstancePoolPlacementConfiguration {
@@ -16,63 +18,63 @@ public final class GetClusterNetworkInstancePoolPlacementConfiguration {
      * @return The availability domain to place instances.  Example: `Uocm:PHX-AD-1`
      * 
      */
-    private String availabilityDomain;
+    private @Nullable String availabilityDomain;
     /**
      * @return The fault domains to place instances.
      * 
      */
-    private List<String> faultDomains;
+    private @Nullable List<String> faultDomains;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary subnet to place instances. This field is deprecated. Use `primaryVnicSubnets` instead to set VNIC data for instances in the pool.
      * 
      */
-    private String primarySubnetId;
+    private @Nullable String primarySubnetId;
     /**
      * @return Details about the IPv6 primary subnet.
      * 
      */
-    private List<GetClusterNetworkInstancePoolPlacementConfigurationPrimaryVnicSubnet> primaryVnicSubnets;
+    private @Nullable List<GetClusterNetworkInstancePoolPlacementConfigurationPrimaryVnicSubnet> primaryVnicSubnets;
     /**
      * @return The set of secondary VNIC data for instances in the pool.
      * 
      */
-    private List<GetClusterNetworkInstancePoolPlacementConfigurationSecondaryVnicSubnet> secondaryVnicSubnets;
+    private @Nullable List<GetClusterNetworkInstancePoolPlacementConfigurationSecondaryVnicSubnet> secondaryVnicSubnets;
 
     private GetClusterNetworkInstancePoolPlacementConfiguration() {}
     /**
      * @return The availability domain to place instances.  Example: `Uocm:PHX-AD-1`
      * 
      */
-    public String availabilityDomain() {
-        return this.availabilityDomain;
+    public Optional<String> availabilityDomain() {
+        return Optional.ofNullable(this.availabilityDomain);
     }
     /**
      * @return The fault domains to place instances.
      * 
      */
     public List<String> faultDomains() {
-        return this.faultDomains;
+        return this.faultDomains == null ? List.of() : this.faultDomains;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary subnet to place instances. This field is deprecated. Use `primaryVnicSubnets` instead to set VNIC data for instances in the pool.
      * 
      */
-    public String primarySubnetId() {
-        return this.primarySubnetId;
+    public Optional<String> primarySubnetId() {
+        return Optional.ofNullable(this.primarySubnetId);
     }
     /**
      * @return Details about the IPv6 primary subnet.
      * 
      */
     public List<GetClusterNetworkInstancePoolPlacementConfigurationPrimaryVnicSubnet> primaryVnicSubnets() {
-        return this.primaryVnicSubnets;
+        return this.primaryVnicSubnets == null ? List.of() : this.primaryVnicSubnets;
     }
     /**
      * @return The set of secondary VNIC data for instances in the pool.
      * 
      */
     public List<GetClusterNetworkInstancePoolPlacementConfigurationSecondaryVnicSubnet> secondaryVnicSubnets() {
-        return this.secondaryVnicSubnets;
+        return this.secondaryVnicSubnets == null ? List.of() : this.secondaryVnicSubnets;
     }
 
     public static Builder builder() {
@@ -84,11 +86,11 @@ public final class GetClusterNetworkInstancePoolPlacementConfiguration {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String availabilityDomain;
-        private List<String> faultDomains;
-        private String primarySubnetId;
-        private List<GetClusterNetworkInstancePoolPlacementConfigurationPrimaryVnicSubnet> primaryVnicSubnets;
-        private List<GetClusterNetworkInstancePoolPlacementConfigurationSecondaryVnicSubnet> secondaryVnicSubnets;
+        private @Nullable String availabilityDomain;
+        private @Nullable List<String> faultDomains;
+        private @Nullable String primarySubnetId;
+        private @Nullable List<GetClusterNetworkInstancePoolPlacementConfigurationPrimaryVnicSubnet> primaryVnicSubnets;
+        private @Nullable List<GetClusterNetworkInstancePoolPlacementConfigurationSecondaryVnicSubnet> secondaryVnicSubnets;
         public Builder() {}
         public Builder(GetClusterNetworkInstancePoolPlacementConfiguration defaults) {
     	      Objects.requireNonNull(defaults);
@@ -100,34 +102,34 @@ public final class GetClusterNetworkInstancePoolPlacementConfiguration {
         }
 
         @CustomType.Setter
-        public Builder availabilityDomain(String availabilityDomain) {
-            this.availabilityDomain = Objects.requireNonNull(availabilityDomain);
+        public Builder availabilityDomain(@Nullable String availabilityDomain) {
+            this.availabilityDomain = availabilityDomain;
             return this;
         }
         @CustomType.Setter
-        public Builder faultDomains(List<String> faultDomains) {
-            this.faultDomains = Objects.requireNonNull(faultDomains);
+        public Builder faultDomains(@Nullable List<String> faultDomains) {
+            this.faultDomains = faultDomains;
             return this;
         }
         public Builder faultDomains(String... faultDomains) {
             return faultDomains(List.of(faultDomains));
         }
         @CustomType.Setter
-        public Builder primarySubnetId(String primarySubnetId) {
-            this.primarySubnetId = Objects.requireNonNull(primarySubnetId);
+        public Builder primarySubnetId(@Nullable String primarySubnetId) {
+            this.primarySubnetId = primarySubnetId;
             return this;
         }
         @CustomType.Setter
-        public Builder primaryVnicSubnets(List<GetClusterNetworkInstancePoolPlacementConfigurationPrimaryVnicSubnet> primaryVnicSubnets) {
-            this.primaryVnicSubnets = Objects.requireNonNull(primaryVnicSubnets);
+        public Builder primaryVnicSubnets(@Nullable List<GetClusterNetworkInstancePoolPlacementConfigurationPrimaryVnicSubnet> primaryVnicSubnets) {
+            this.primaryVnicSubnets = primaryVnicSubnets;
             return this;
         }
         public Builder primaryVnicSubnets(GetClusterNetworkInstancePoolPlacementConfigurationPrimaryVnicSubnet... primaryVnicSubnets) {
             return primaryVnicSubnets(List.of(primaryVnicSubnets));
         }
         @CustomType.Setter
-        public Builder secondaryVnicSubnets(List<GetClusterNetworkInstancePoolPlacementConfigurationSecondaryVnicSubnet> secondaryVnicSubnets) {
-            this.secondaryVnicSubnets = Objects.requireNonNull(secondaryVnicSubnets);
+        public Builder secondaryVnicSubnets(@Nullable List<GetClusterNetworkInstancePoolPlacementConfigurationSecondaryVnicSubnet> secondaryVnicSubnets) {
+            this.secondaryVnicSubnets = secondaryVnicSubnets;
             return this;
         }
         public Builder secondaryVnicSubnets(GetClusterNetworkInstancePoolPlacementConfigurationSecondaryVnicSubnet... secondaryVnicSubnets) {

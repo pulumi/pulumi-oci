@@ -217,7 +217,7 @@ namespace Pulumi.Oci.LogAnalytics
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         public readonly bool? IsIncludePatterns;
         /// <summary>
         /// The property name.
@@ -237,7 +237,7 @@ namespace Pulumi.Oci.LogAnalytics
 
             ImmutableArray<Outputs.GetNamespaceEffectivePropertiesFilterResult> filters,
 
-            string id,
+            string? id,
 
             bool? isIncludePatterns,
 

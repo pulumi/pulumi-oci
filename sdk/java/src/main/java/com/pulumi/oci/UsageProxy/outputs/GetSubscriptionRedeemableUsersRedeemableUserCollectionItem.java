@@ -8,6 +8,8 @@ import com.pulumi.oci.UsageProxy.outputs.GetSubscriptionRedeemableUsersRedeemabl
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetSubscriptionRedeemableUsersRedeemableUserCollectionItem {
@@ -26,7 +28,7 @@ public final class GetSubscriptionRedeemableUsersRedeemableUserCollectionItem {
      * 
      */
     private String tenancyId;
-    private String userId;
+    private @Nullable String userId;
 
     private GetSubscriptionRedeemableUsersRedeemableUserCollectionItem() {}
     /**
@@ -50,8 +52,8 @@ public final class GetSubscriptionRedeemableUsersRedeemableUserCollectionItem {
     public String tenancyId() {
         return this.tenancyId;
     }
-    public String userId() {
-        return this.userId;
+    public Optional<String> userId() {
+        return Optional.ofNullable(this.userId);
     }
 
     public static Builder builder() {
@@ -66,7 +68,7 @@ public final class GetSubscriptionRedeemableUsersRedeemableUserCollectionItem {
         private List<GetSubscriptionRedeemableUsersRedeemableUserCollectionItemItem> items;
         private String subscriptionId;
         private String tenancyId;
-        private String userId;
+        private @Nullable String userId;
         public Builder() {}
         public Builder(GetSubscriptionRedeemableUsersRedeemableUserCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -95,8 +97,8 @@ public final class GetSubscriptionRedeemableUsersRedeemableUserCollectionItem {
             return this;
         }
         @CustomType.Setter
-        public Builder userId(String userId) {
-            this.userId = Objects.requireNonNull(userId);
+        public Builder userId(@Nullable String userId) {
+            this.userId = userId;
             return this;
         }
         public GetSubscriptionRedeemableUsersRedeemableUserCollectionItem build() {

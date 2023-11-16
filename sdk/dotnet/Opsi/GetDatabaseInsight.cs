@@ -108,7 +108,7 @@ namespace Pulumi.Oci.Opsi
         /// <summary>
         /// Compartment identifier of the database
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// User credential details to connect to the database. This is supplied via the External Database Service.
         /// </summary>
@@ -124,126 +124,126 @@ namespace Pulumi.Oci.Opsi
         /// <summary>
         /// A message describing the status of the database connection of this resource. For example, it can be used to provide actionable information about the permission and content validity of the database connection.
         /// </summary>
-        public readonly string DatabaseConnectionStatusDetails;
+        public readonly string? DatabaseConnectionStatusDetails;
         /// <summary>
         /// Display name of database
         /// </summary>
-        public readonly string DatabaseDisplayName;
+        public readonly string? DatabaseDisplayName;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
         /// </summary>
-        public readonly string DatabaseId;
+        public readonly string? DatabaseId;
         public readonly string DatabaseInsightId;
         /// <summary>
         /// Name of database
         /// </summary>
-        public readonly string DatabaseName;
+        public readonly string? DatabaseName;
         /// <summary>
         /// Oracle Cloud Infrastructure database resource type
         /// </summary>
-        public readonly string DatabaseResourceType;
+        public readonly string? DatabaseResourceType;
         /// <summary>
         /// Operations Insights internal representation of the database type.
         /// </summary>
-        public readonly string DatabaseType;
+        public readonly string? DatabaseType;
         /// <summary>
         /// The version of the database.
         /// </summary>
-        public readonly string DatabaseVersion;
-        public readonly string DbmPrivateEndpointId;
+        public readonly string? DatabaseVersion;
+        public readonly string? DbmPrivateEndpointId;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
-        public readonly string DeploymentType;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
+        public readonly string? DeploymentType;
         /// <summary>
         /// OPSI Enterprise Manager Bridge OCID
         /// </summary>
-        public readonly string EnterpriseManagerBridgeId;
+        public readonly string? EnterpriseManagerBridgeId;
         /// <summary>
         /// Enterprise Manager Entity Display Name
         /// </summary>
-        public readonly string EnterpriseManagerEntityDisplayName;
+        public readonly string? EnterpriseManagerEntityDisplayName;
         /// <summary>
         /// Enterprise Manager Entity Unique Identifier
         /// </summary>
-        public readonly string EnterpriseManagerEntityIdentifier;
+        public readonly string? EnterpriseManagerEntityIdentifier;
         /// <summary>
         /// Enterprise Manager Entity Name
         /// </summary>
-        public readonly string EnterpriseManagerEntityName;
+        public readonly string? EnterpriseManagerEntityName;
         /// <summary>
         /// Enterprise Manager Entity Type
         /// </summary>
-        public readonly string EnterpriseManagerEntityType;
+        public readonly string? EnterpriseManagerEntityType;
         /// <summary>
         /// Enterprise Manager Unqiue Identifier
         /// </summary>
-        public readonly string EnterpriseManagerIdentifier;
+        public readonly string? EnterpriseManagerIdentifier;
         /// <summary>
         /// Source of the database entity.
         /// </summary>
-        public readonly string EntitySource;
+        public readonly string? EntitySource;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata insight.
         /// </summary>
-        public readonly string ExadataInsightId;
+        public readonly string? ExadataInsightId;
         /// <summary>
         /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// Database insight identifier
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         /// </summary>
-        public readonly string LifecycleDetails;
+        public readonly string? LifecycleDetails;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OPSI private endpoint
         /// </summary>
-        public readonly string OpsiPrivateEndpointId;
+        public readonly string? OpsiPrivateEndpointId;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Cluster or DB System ID, depending on which configuration the resource belongs to.
         /// </summary>
-        public readonly string ParentId;
+        public readonly string? ParentId;
         /// <summary>
         /// Processor count. This is the OCPU count for Autonomous Database and CPU core count for other database types.
         /// </summary>
-        public readonly int ProcessorCount;
+        public readonly int? ProcessorCount;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Infrastructure.
         /// </summary>
-        public readonly string RootId;
+        public readonly string? RootId;
         /// <summary>
         /// Database service name used for connection requests.
         /// </summary>
-        public readonly string ServiceName;
+        public readonly string? ServiceName;
         /// <summary>
         /// The current state of the database.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// Indicates the status of a database insight in Operations Insights
         /// </summary>
-        public readonly string Status;
+        public readonly string? Status;
         /// <summary>
         /// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> SystemTags;
+        public readonly ImmutableDictionary<string, object>? SystemTags;
         /// <summary>
         /// The time the the database insight was first enabled. An RFC3339 formatted datetime string
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The time the database insight was updated. An RFC3339 formatted datetime string
         /// </summary>
-        public readonly string TimeUpdated;
+        public readonly string? TimeUpdated;
 
         [OutputConstructor]
         private GetDatabaseInsightResult(
-            string compartmentId,
+            string? compartmentId,
 
             ImmutableArray<Outputs.GetDatabaseInsightConnectionCredentialDetailResult> connectionCredentialDetails,
 
@@ -251,69 +251,69 @@ namespace Pulumi.Oci.Opsi
 
             ImmutableArray<Outputs.GetDatabaseInsightCredentialDetailResult> credentialDetails,
 
-            string databaseConnectionStatusDetails,
+            string? databaseConnectionStatusDetails,
 
-            string databaseDisplayName,
+            string? databaseDisplayName,
 
-            string databaseId,
+            string? databaseId,
 
             string databaseInsightId,
 
-            string databaseName,
+            string? databaseName,
 
-            string databaseResourceType,
+            string? databaseResourceType,
 
-            string databaseType,
+            string? databaseType,
 
-            string databaseVersion,
+            string? databaseVersion,
 
-            string dbmPrivateEndpointId,
+            string? dbmPrivateEndpointId,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string deploymentType,
+            string? deploymentType,
 
-            string enterpriseManagerBridgeId,
+            string? enterpriseManagerBridgeId,
 
-            string enterpriseManagerEntityDisplayName,
+            string? enterpriseManagerEntityDisplayName,
 
-            string enterpriseManagerEntityIdentifier,
+            string? enterpriseManagerEntityIdentifier,
 
-            string enterpriseManagerEntityName,
+            string? enterpriseManagerEntityName,
 
-            string enterpriseManagerEntityType,
+            string? enterpriseManagerEntityType,
 
-            string enterpriseManagerIdentifier,
+            string? enterpriseManagerIdentifier,
 
-            string entitySource,
+            string? entitySource,
 
-            string exadataInsightId,
+            string? exadataInsightId,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string id,
+            string? id,
 
-            string lifecycleDetails,
+            string? lifecycleDetails,
 
-            string opsiPrivateEndpointId,
+            string? opsiPrivateEndpointId,
 
-            string parentId,
+            string? parentId,
 
-            int processorCount,
+            int? processorCount,
 
-            string rootId,
+            string? rootId,
 
-            string serviceName,
+            string? serviceName,
 
-            string state,
+            string? state,
 
-            string status,
+            string? status,
 
-            ImmutableDictionary<string, object> systemTags,
+            ImmutableDictionary<string, object>? systemTags,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeUpdated)
+            string? timeUpdated)
         {
             CompartmentId = compartmentId;
             ConnectionCredentialDetails = connectionCredentialDetails;

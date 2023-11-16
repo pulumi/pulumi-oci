@@ -9,6 +9,8 @@ import com.pulumi.oci.AiLanguage.outputs.GetModelsModelCollectionItemTestStrateg
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetModelsModelCollectionItemTestStrategy {
@@ -16,39 +18,39 @@ public final class GetModelsModelCollectionItemTestStrategy {
      * @return This information will define the test strategy different datasets for test and validation(optional) dataset.
      * 
      */
-    private String strategyType;
+    private @Nullable String strategyType;
     /**
      * @return Possible data set type
      * 
      */
-    private List<GetModelsModelCollectionItemTestStrategyTestingDataset> testingDatasets;
+    private @Nullable List<GetModelsModelCollectionItemTestStrategyTestingDataset> testingDatasets;
     /**
      * @return Possible data set type
      * 
      */
-    private List<GetModelsModelCollectionItemTestStrategyValidationDataset> validationDatasets;
+    private @Nullable List<GetModelsModelCollectionItemTestStrategyValidationDataset> validationDatasets;
 
     private GetModelsModelCollectionItemTestStrategy() {}
     /**
      * @return This information will define the test strategy different datasets for test and validation(optional) dataset.
      * 
      */
-    public String strategyType() {
-        return this.strategyType;
+    public Optional<String> strategyType() {
+        return Optional.ofNullable(this.strategyType);
     }
     /**
      * @return Possible data set type
      * 
      */
     public List<GetModelsModelCollectionItemTestStrategyTestingDataset> testingDatasets() {
-        return this.testingDatasets;
+        return this.testingDatasets == null ? List.of() : this.testingDatasets;
     }
     /**
      * @return Possible data set type
      * 
      */
     public List<GetModelsModelCollectionItemTestStrategyValidationDataset> validationDatasets() {
-        return this.validationDatasets;
+        return this.validationDatasets == null ? List.of() : this.validationDatasets;
     }
 
     public static Builder builder() {
@@ -60,9 +62,9 @@ public final class GetModelsModelCollectionItemTestStrategy {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String strategyType;
-        private List<GetModelsModelCollectionItemTestStrategyTestingDataset> testingDatasets;
-        private List<GetModelsModelCollectionItemTestStrategyValidationDataset> validationDatasets;
+        private @Nullable String strategyType;
+        private @Nullable List<GetModelsModelCollectionItemTestStrategyTestingDataset> testingDatasets;
+        private @Nullable List<GetModelsModelCollectionItemTestStrategyValidationDataset> validationDatasets;
         public Builder() {}
         public Builder(GetModelsModelCollectionItemTestStrategy defaults) {
     	      Objects.requireNonNull(defaults);
@@ -72,21 +74,21 @@ public final class GetModelsModelCollectionItemTestStrategy {
         }
 
         @CustomType.Setter
-        public Builder strategyType(String strategyType) {
-            this.strategyType = Objects.requireNonNull(strategyType);
+        public Builder strategyType(@Nullable String strategyType) {
+            this.strategyType = strategyType;
             return this;
         }
         @CustomType.Setter
-        public Builder testingDatasets(List<GetModelsModelCollectionItemTestStrategyTestingDataset> testingDatasets) {
-            this.testingDatasets = Objects.requireNonNull(testingDatasets);
+        public Builder testingDatasets(@Nullable List<GetModelsModelCollectionItemTestStrategyTestingDataset> testingDatasets) {
+            this.testingDatasets = testingDatasets;
             return this;
         }
         public Builder testingDatasets(GetModelsModelCollectionItemTestStrategyTestingDataset... testingDatasets) {
             return testingDatasets(List.of(testingDatasets));
         }
         @CustomType.Setter
-        public Builder validationDatasets(List<GetModelsModelCollectionItemTestStrategyValidationDataset> validationDatasets) {
-            this.validationDatasets = Objects.requireNonNull(validationDatasets);
+        public Builder validationDatasets(@Nullable List<GetModelsModelCollectionItemTestStrategyValidationDataset> validationDatasets) {
+            this.validationDatasets = validationDatasets;
             return this;
         }
         public Builder validationDatasets(GetModelsModelCollectionItemTestStrategyValidationDataset... validationDatasets) {

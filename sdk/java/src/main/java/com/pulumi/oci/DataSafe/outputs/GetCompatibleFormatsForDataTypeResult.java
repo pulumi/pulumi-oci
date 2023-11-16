@@ -8,6 +8,8 @@ import com.pulumi.oci.DataSafe.outputs.GetCompatibleFormatsForDataTypeFormatsFor
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetCompatibleFormatsForDataTypeResult {
@@ -15,12 +17,12 @@ public final class GetCompatibleFormatsForDataTypeResult {
      * @return An array of lists of basic masking formats compatible with the supported data types.
      * 
      */
-    private List<GetCompatibleFormatsForDataTypeFormatsForDataType> formatsForDataTypes;
+    private @Nullable List<GetCompatibleFormatsForDataTypeFormatsForDataType> formatsForDataTypes;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
 
     private GetCompatibleFormatsForDataTypeResult() {}
     /**
@@ -28,14 +30,14 @@ public final class GetCompatibleFormatsForDataTypeResult {
      * 
      */
     public List<GetCompatibleFormatsForDataTypeFormatsForDataType> formatsForDataTypes() {
-        return this.formatsForDataTypes;
+        return this.formatsForDataTypes == null ? List.of() : this.formatsForDataTypes;
     }
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
 
     public static Builder builder() {
@@ -47,8 +49,8 @@ public final class GetCompatibleFormatsForDataTypeResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetCompatibleFormatsForDataTypeFormatsForDataType> formatsForDataTypes;
-        private String id;
+        private @Nullable List<GetCompatibleFormatsForDataTypeFormatsForDataType> formatsForDataTypes;
+        private @Nullable String id;
         public Builder() {}
         public Builder(GetCompatibleFormatsForDataTypeResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -57,16 +59,16 @@ public final class GetCompatibleFormatsForDataTypeResult {
         }
 
         @CustomType.Setter
-        public Builder formatsForDataTypes(List<GetCompatibleFormatsForDataTypeFormatsForDataType> formatsForDataTypes) {
-            this.formatsForDataTypes = Objects.requireNonNull(formatsForDataTypes);
+        public Builder formatsForDataTypes(@Nullable List<GetCompatibleFormatsForDataTypeFormatsForDataType> formatsForDataTypes) {
+            this.formatsForDataTypes = formatsForDataTypes;
             return this;
         }
         public Builder formatsForDataTypes(GetCompatibleFormatsForDataTypeFormatsForDataType... formatsForDataTypes) {
             return formatsForDataTypes(List.of(formatsForDataTypes));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         public GetCompatibleFormatsForDataTypeResult build() {

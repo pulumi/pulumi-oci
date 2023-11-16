@@ -114,28 +114,28 @@ public class DatabaseInsight extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="connectionCredentialDetails", refs={DatabaseInsightConnectionCredentialDetails.class}, tree="[0]")
-    private Output<DatabaseInsightConnectionCredentialDetails> connectionCredentialDetails;
+    private Output</* @Nullable */ DatabaseInsightConnectionCredentialDetails> connectionCredentialDetails;
 
     /**
      * @return User credential details to connect to the database. This is supplied via the External Database Service.
      * 
      */
-    public Output<DatabaseInsightConnectionCredentialDetails> connectionCredentialDetails() {
-        return this.connectionCredentialDetails;
+    public Output<Optional<DatabaseInsightConnectionCredentialDetails>> connectionCredentialDetails() {
+        return Codegen.optional(this.connectionCredentialDetails);
     }
     /**
      * Connection details of the private endpoints.
      * 
      */
     @Export(name="connectionDetails", refs={DatabaseInsightConnectionDetails.class}, tree="[0]")
-    private Output<DatabaseInsightConnectionDetails> connectionDetails;
+    private Output</* @Nullable */ DatabaseInsightConnectionDetails> connectionDetails;
 
     /**
      * @return Connection details of the private endpoints.
      * 
      */
-    public Output<DatabaseInsightConnectionDetails> connectionDetails() {
-        return this.connectionDetails;
+    public Output<Optional<DatabaseInsightConnectionDetails>> connectionDetails() {
+        return Codegen.optional(this.connectionDetails);
     }
     /**
      * User credential details to connect to the database. This is supplied via the External Database Service.
@@ -156,224 +156,224 @@ public class DatabaseInsight extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="databaseConnectionStatusDetails", refs={String.class}, tree="[0]")
-    private Output<String> databaseConnectionStatusDetails;
+    private Output</* @Nullable */ String> databaseConnectionStatusDetails;
 
     /**
      * @return A message describing the status of the database connection of this resource. For example, it can be used to provide actionable information about the permission and content validity of the database connection.
      * 
      */
-    public Output<String> databaseConnectionStatusDetails() {
-        return this.databaseConnectionStatusDetails;
+    public Output<Optional<String>> databaseConnectionStatusDetails() {
+        return Codegen.optional(this.databaseConnectionStatusDetails);
     }
     /**
      * Display name of database
      * 
      */
     @Export(name="databaseDisplayName", refs={String.class}, tree="[0]")
-    private Output<String> databaseDisplayName;
+    private Output</* @Nullable */ String> databaseDisplayName;
 
     /**
      * @return Display name of database
      * 
      */
-    public Output<String> databaseDisplayName() {
-        return this.databaseDisplayName;
+    public Output<Optional<String>> databaseDisplayName() {
+        return Codegen.optional(this.databaseDisplayName);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
      * 
      */
     @Export(name="databaseId", refs={String.class}, tree="[0]")
-    private Output<String> databaseId;
+    private Output</* @Nullable */ String> databaseId;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
      * 
      */
-    public Output<String> databaseId() {
-        return this.databaseId;
+    public Output<Optional<String>> databaseId() {
+        return Codegen.optional(this.databaseId);
     }
     /**
      * Name of database
      * 
      */
     @Export(name="databaseName", refs={String.class}, tree="[0]")
-    private Output<String> databaseName;
+    private Output</* @Nullable */ String> databaseName;
 
     /**
      * @return Name of database
      * 
      */
-    public Output<String> databaseName() {
-        return this.databaseName;
+    public Output<Optional<String>> databaseName() {
+        return Codegen.optional(this.databaseName);
     }
     /**
      * Oracle Cloud Infrastructure database resource type
      * 
      */
     @Export(name="databaseResourceType", refs={String.class}, tree="[0]")
-    private Output<String> databaseResourceType;
+    private Output</* @Nullable */ String> databaseResourceType;
 
     /**
      * @return Oracle Cloud Infrastructure database resource type
      * 
      */
-    public Output<String> databaseResourceType() {
-        return this.databaseResourceType;
+    public Output<Optional<String>> databaseResourceType() {
+        return Codegen.optional(this.databaseResourceType);
     }
     /**
      * Operations Insights internal representation of the database type.
      * 
      */
     @Export(name="databaseType", refs={String.class}, tree="[0]")
-    private Output<String> databaseType;
+    private Output</* @Nullable */ String> databaseType;
 
     /**
      * @return Operations Insights internal representation of the database type.
      * 
      */
-    public Output<String> databaseType() {
-        return this.databaseType;
+    public Output<Optional<String>> databaseType() {
+        return Codegen.optional(this.databaseType);
     }
     /**
      * The version of the database.
      * 
      */
     @Export(name="databaseVersion", refs={String.class}, tree="[0]")
-    private Output<String> databaseVersion;
+    private Output</* @Nullable */ String> databaseVersion;
 
     /**
      * @return The version of the database.
      * 
      */
-    public Output<String> databaseVersion() {
-        return this.databaseVersion;
+    public Output<Optional<String>> databaseVersion() {
+        return Codegen.optional(this.databaseVersion);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Management private endpoint. This field and opsi_private_endpoint_id are mutually exclusive. If DBM private endpoint ID is provided, a new OPSI private endpoint ID will be created.
      * 
      */
     @Export(name="dbmPrivateEndpointId", refs={String.class}, tree="[0]")
-    private Output<String> dbmPrivateEndpointId;
+    private Output</* @Nullable */ String> dbmPrivateEndpointId;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Management private endpoint. This field and opsi_private_endpoint_id are mutually exclusive. If DBM private endpoint ID is provided, a new OPSI private endpoint ID will be created.
      * 
      */
-    public Output<String> dbmPrivateEndpointId() {
-        return this.dbmPrivateEndpointId;
+    public Output<Optional<String>> dbmPrivateEndpointId() {
+        return Codegen.optional(this.dbmPrivateEndpointId);
     }
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * Database Deployment Type
      * 
      */
     @Export(name="deploymentType", refs={String.class}, tree="[0]")
-    private Output<String> deploymentType;
+    private Output</* @Nullable */ String> deploymentType;
 
     /**
      * @return Database Deployment Type
      * 
      */
-    public Output<String> deploymentType() {
-        return this.deploymentType;
+    public Output<Optional<String>> deploymentType() {
+        return Codegen.optional(this.deploymentType);
     }
     /**
      * OPSI Enterprise Manager Bridge OCID
      * 
      */
     @Export(name="enterpriseManagerBridgeId", refs={String.class}, tree="[0]")
-    private Output<String> enterpriseManagerBridgeId;
+    private Output</* @Nullable */ String> enterpriseManagerBridgeId;
 
     /**
      * @return OPSI Enterprise Manager Bridge OCID
      * 
      */
-    public Output<String> enterpriseManagerBridgeId() {
-        return this.enterpriseManagerBridgeId;
+    public Output<Optional<String>> enterpriseManagerBridgeId() {
+        return Codegen.optional(this.enterpriseManagerBridgeId);
     }
     /**
      * Enterprise Manager Entity Display Name
      * 
      */
     @Export(name="enterpriseManagerEntityDisplayName", refs={String.class}, tree="[0]")
-    private Output<String> enterpriseManagerEntityDisplayName;
+    private Output</* @Nullable */ String> enterpriseManagerEntityDisplayName;
 
     /**
      * @return Enterprise Manager Entity Display Name
      * 
      */
-    public Output<String> enterpriseManagerEntityDisplayName() {
-        return this.enterpriseManagerEntityDisplayName;
+    public Output<Optional<String>> enterpriseManagerEntityDisplayName() {
+        return Codegen.optional(this.enterpriseManagerEntityDisplayName);
     }
     /**
      * Enterprise Manager Entity Unique Identifier
      * 
      */
     @Export(name="enterpriseManagerEntityIdentifier", refs={String.class}, tree="[0]")
-    private Output<String> enterpriseManagerEntityIdentifier;
+    private Output</* @Nullable */ String> enterpriseManagerEntityIdentifier;
 
     /**
      * @return Enterprise Manager Entity Unique Identifier
      * 
      */
-    public Output<String> enterpriseManagerEntityIdentifier() {
-        return this.enterpriseManagerEntityIdentifier;
+    public Output<Optional<String>> enterpriseManagerEntityIdentifier() {
+        return Codegen.optional(this.enterpriseManagerEntityIdentifier);
     }
     /**
      * Enterprise Manager Entity Name
      * 
      */
     @Export(name="enterpriseManagerEntityName", refs={String.class}, tree="[0]")
-    private Output<String> enterpriseManagerEntityName;
+    private Output</* @Nullable */ String> enterpriseManagerEntityName;
 
     /**
      * @return Enterprise Manager Entity Name
      * 
      */
-    public Output<String> enterpriseManagerEntityName() {
-        return this.enterpriseManagerEntityName;
+    public Output<Optional<String>> enterpriseManagerEntityName() {
+        return Codegen.optional(this.enterpriseManagerEntityName);
     }
     /**
      * Enterprise Manager Entity Type
      * 
      */
     @Export(name="enterpriseManagerEntityType", refs={String.class}, tree="[0]")
-    private Output<String> enterpriseManagerEntityType;
+    private Output</* @Nullable */ String> enterpriseManagerEntityType;
 
     /**
      * @return Enterprise Manager Entity Type
      * 
      */
-    public Output<String> enterpriseManagerEntityType() {
-        return this.enterpriseManagerEntityType;
+    public Output<Optional<String>> enterpriseManagerEntityType() {
+        return Codegen.optional(this.enterpriseManagerEntityType);
     }
     /**
      * Enterprise Manager Unique Identifier
      * 
      */
     @Export(name="enterpriseManagerIdentifier", refs={String.class}, tree="[0]")
-    private Output<String> enterpriseManagerIdentifier;
+    private Output</* @Nullable */ String> enterpriseManagerIdentifier;
 
     /**
      * @return Enterprise Manager Unique Identifier
      * 
      */
-    public Output<String> enterpriseManagerIdentifier() {
-        return this.enterpriseManagerIdentifier;
+    public Output<Optional<String>> enterpriseManagerIdentifier() {
+        return Codegen.optional(this.enterpriseManagerIdentifier);
     }
     /**
      * (Updatable) Source of the database entity.
@@ -394,126 +394,126 @@ public class DatabaseInsight extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="exadataInsightId", refs={String.class}, tree="[0]")
-    private Output<String> exadataInsightId;
+    private Output</* @Nullable */ String> exadataInsightId;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata insight.
      * 
      */
-    public Output<String> exadataInsightId() {
-        return this.exadataInsightId;
+    public Output<Optional<String>> exadataInsightId() {
+        return Codegen.optional(this.exadataInsightId);
     }
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
     @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
-    private Output<String> lifecycleDetails;
+    private Output</* @Nullable */ String> lifecycleDetails;
 
     /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
-    public Output<String> lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Output<Optional<String>> lifecycleDetails() {
+        return Codegen.optional(this.lifecycleDetails);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OPSI private endpoint
      * 
      */
     @Export(name="opsiPrivateEndpointId", refs={String.class}, tree="[0]")
-    private Output<String> opsiPrivateEndpointId;
+    private Output</* @Nullable */ String> opsiPrivateEndpointId;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OPSI private endpoint
      * 
      */
-    public Output<String> opsiPrivateEndpointId() {
-        return this.opsiPrivateEndpointId;
+    public Output<Optional<String>> opsiPrivateEndpointId() {
+        return Codegen.optional(this.opsiPrivateEndpointId);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Cluster or DB System ID, depending on which configuration the resource belongs to.
      * 
      */
     @Export(name="parentId", refs={String.class}, tree="[0]")
-    private Output<String> parentId;
+    private Output</* @Nullable */ String> parentId;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Cluster or DB System ID, depending on which configuration the resource belongs to.
      * 
      */
-    public Output<String> parentId() {
-        return this.parentId;
+    public Output<Optional<String>> parentId() {
+        return Codegen.optional(this.parentId);
     }
     /**
      * Processor count. This is the OCPU count for Autonomous Database and CPU core count for other database types.
      * 
      */
     @Export(name="processorCount", refs={Integer.class}, tree="[0]")
-    private Output<Integer> processorCount;
+    private Output</* @Nullable */ Integer> processorCount;
 
     /**
      * @return Processor count. This is the OCPU count for Autonomous Database and CPU core count for other database types.
      * 
      */
-    public Output<Integer> processorCount() {
-        return this.processorCount;
+    public Output<Optional<Integer>> processorCount() {
+        return Codegen.optional(this.processorCount);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Infrastructure.
      * 
      */
     @Export(name="rootId", refs={String.class}, tree="[0]")
-    private Output<String> rootId;
+    private Output</* @Nullable */ String> rootId;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Infrastructure.
      * 
      */
-    public Output<String> rootId() {
-        return this.rootId;
+    public Output<Optional<String>> rootId() {
+        return Codegen.optional(this.rootId);
     }
     /**
      * Database service name used for connection requests.
      * 
      */
     @Export(name="serviceName", refs={String.class}, tree="[0]")
-    private Output<String> serviceName;
+    private Output</* @Nullable */ String> serviceName;
 
     /**
      * @return Database service name used for connection requests.
      * 
      */
-    public Output<String> serviceName() {
-        return this.serviceName;
+    public Output<Optional<String>> serviceName() {
+        return Codegen.optional(this.serviceName);
     }
     /**
      * The current state of the database.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The current state of the database.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * (Updatable) Status of the resource. Example: &#34;ENABLED&#34;, &#34;DISABLED&#34;. Resource can be either enabled or disabled by updating the value of status field to either &#34;ENABLED&#34; or &#34;DISABLED&#34;
@@ -523,7 +523,7 @@ public class DatabaseInsight extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="status", refs={String.class}, tree="[0]")
-    private Output<String> status;
+    private Output</* @Nullable */ String> status;
 
     /**
      * @return (Updatable) Status of the resource. Example: &#34;ENABLED&#34;, &#34;DISABLED&#34;. Resource can be either enabled or disabled by updating the value of status field to either &#34;ENABLED&#34; or &#34;DISABLED&#34;
@@ -532,50 +532,50 @@ public class DatabaseInsight extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values. The resource destruction here is basically a soft delete. User cannot create resource using the same EM managed bridge OCID. If resource is in enabled state during destruction, the resource will be disabled automatically before performing delete operation.
      * 
      */
-    public Output<String> status() {
-        return this.status;
+    public Output<Optional<String>> status() {
+        return Codegen.optional(this.status);
     }
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
     @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> systemTags;
+    private Output</* @Nullable */ Map<String,Object>> systemTags;
 
     /**
      * @return System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    public Output<Map<String,Object>> systemTags() {
-        return this.systemTags;
+    public Output<Optional<Map<String,Object>>> systemTags() {
+        return Codegen.optional(this.systemTags);
     }
     /**
      * The time the the database insight was first enabled. An RFC3339 formatted datetime string
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The time the the database insight was first enabled. An RFC3339 formatted datetime string
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * The time the database insight was updated. An RFC3339 formatted datetime string
      * 
      */
     @Export(name="timeUpdated", refs={String.class}, tree="[0]")
-    private Output<String> timeUpdated;
+    private Output</* @Nullable */ String> timeUpdated;
 
     /**
      * @return The time the database insight was updated. An RFC3339 formatted datetime string
      * 
      */
-    public Output<String> timeUpdated() {
-        return this.timeUpdated;
+    public Output<Optional<String>> timeUpdated() {
+        return Codegen.optional(this.timeUpdated);
     }
 
     /**

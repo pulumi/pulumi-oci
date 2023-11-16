@@ -63,13 +63,13 @@ namespace Pulumi.Oci.LogAnalytics
         /// The Boolean flag to indicate if logs are collected for an entity for log analytics usage.
         /// </summary>
         [Output("areLogsCollected")]
-        public Output<bool> AreLogsCollected { get; private set; } = null!;
+        public Output<bool?> AreLogsCollected { get; private set; } = null!;
 
         /// <summary>
         /// The OCID of the Cloud resource which this entity is a representation of. This may be blank when the entity represents a non-cloud resource that the customer may have on their premises.
         /// </summary>
         [Output("cloudResourceId")]
-        public Output<string> CloudResourceId { get; private set; } = null!;
+        public Output<string?> CloudResourceId { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -81,13 +81,13 @@ namespace Pulumi.Oci.LogAnalytics
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// Internal name for the log analytics entity type.
         /// </summary>
         [Output("entityTypeInternalName")]
-        public Output<string> EntityTypeInternalName { get; private set; } = null!;
+        public Output<string?> EntityTypeInternalName { get; private set; } = null!;
 
         /// <summary>
         /// Log analytics entity type name.
@@ -99,37 +99,37 @@ namespace Pulumi.Oci.LogAnalytics
         /// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The hostname where the entity represented here is actually present. This would be the output one would get if they run `echo $HOSTNAME` on Linux or an equivalent OS command. This may be different from management agents host since logs may be collected remotely.
         /// </summary>
         [Output("hostname")]
-        public Output<string> Hostname { get; private set; } = null!;
+        public Output<string?> Hostname { get; private set; } = null!;
 
         /// <summary>
         /// lifecycleDetails has additional information regarding substeps such as management agent plugin deployment.
         /// </summary>
         [Output("lifecycleDetails")]
-        public Output<string> LifecycleDetails { get; private set; } = null!;
+        public Output<string?> LifecycleDetails { get; private set; } = null!;
 
         /// <summary>
         /// Management agent (management-agents resource kind) compartment OCID
         /// </summary>
         [Output("managementAgentCompartmentId")]
-        public Output<string> ManagementAgentCompartmentId { get; private set; } = null!;
+        public Output<string?> ManagementAgentCompartmentId { get; private set; } = null!;
 
         /// <summary>
         /// Management agent (management-agents resource kind) display name
         /// </summary>
         [Output("managementAgentDisplayName")]
-        public Output<string> ManagementAgentDisplayName { get; private set; } = null!;
+        public Output<string?> ManagementAgentDisplayName { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The OCID of the Management Agent.
         /// </summary>
         [Output("managementAgentId")]
-        public Output<string> ManagementAgentId { get; private set; } = null!;
+        public Output<string?> ManagementAgentId { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Log analytics entity name.
@@ -147,31 +147,31 @@ namespace Pulumi.Oci.LogAnalytics
         /// (Updatable) The name/value pairs for parameter values to be used in file patterns specified in log sources.
         /// </summary>
         [Output("properties")]
-        public Output<ImmutableDictionary<string, object>> Properties { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> Properties { get; private set; } = null!;
 
         /// <summary>
         /// This indicates the type of source. It is primarily for Enterprise Manager Repository ID.
         /// </summary>
         [Output("sourceId")]
-        public Output<string> SourceId { get; private set; } = null!;
+        public Output<string?> SourceId { get; private set; } = null!;
 
         /// <summary>
         /// The current state of the log analytics entity.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the resource was created, in the format defined by RFC3339.
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the resource was last updated, in the format defined by RFC3339.
         /// </summary>
         [Output("timeUpdated")]
-        public Output<string> TimeUpdated { get; private set; } = null!;
+        public Output<string?> TimeUpdated { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The timezone region of the log analytics entity. 
@@ -181,7 +181,7 @@ namespace Pulumi.Oci.LogAnalytics
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("timezoneRegion")]
-        public Output<string> TimezoneRegion { get; private set; } = null!;
+        public Output<string?> TimezoneRegion { get; private set; } = null!;
 
 
         /// <summary>

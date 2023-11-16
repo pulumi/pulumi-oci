@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Domain resource in Oracle Cloud Infrastructure Identity service.
@@ -88,13 +87,13 @@ type Domain struct {
 	pulumi.CustomResourceState
 
 	// The admin email address
-	AdminEmail pulumi.StringOutput `pulumi:"adminEmail"`
+	AdminEmail pulumi.StringPtrOutput `pulumi:"adminEmail"`
 	// The admin first name
-	AdminFirstName pulumi.StringOutput `pulumi:"adminFirstName"`
+	AdminFirstName pulumi.StringPtrOutput `pulumi:"adminFirstName"`
 	// The admin last name
-	AdminLastName pulumi.StringOutput `pulumi:"adminLastName"`
+	AdminLastName pulumi.StringPtrOutput `pulumi:"adminLastName"`
 	// The admin user name
-	AdminUserName pulumi.StringOutput `pulumi:"adminUserName"`
+	AdminUserName pulumi.StringPtrOutput `pulumi:"adminUserName"`
 	// (Updatable) The OCID of the Compartment where domain is created
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -108,30 +107,30 @@ type Domain struct {
 	// The region's name. See [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm) for the full list of supported region names.  Example: `us-phoenix-1`
 	HomeRegion pulumi.StringOutput `pulumi:"homeRegion"`
 	// Region specific domain URL.
-	HomeRegionUrl pulumi.StringOutput `pulumi:"homeRegionUrl"`
+	HomeRegionUrl pulumi.StringPtrOutput `pulumi:"homeRegionUrl"`
 	// (Updatable) Indicates whether domain is hidden on login screen or not.
-	IsHiddenOnLogin pulumi.BoolOutput `pulumi:"isHiddenOnLogin"`
+	IsHiddenOnLogin pulumi.BoolPtrOutput `pulumi:"isHiddenOnLogin"`
 	// Indicates if admin user created in IDCS stripe would like to receive notification like welcome email or not. Required field only if admin information is provided, otherwise optional.
-	IsNotificationBypassed pulumi.BoolOutput `pulumi:"isNotificationBypassed"`
+	IsNotificationBypassed pulumi.BoolPtrOutput `pulumi:"isNotificationBypassed"`
 	// Optional field to indicate whether users in the domain are required to have a primary email address or not Defaults to true
-	IsPrimaryEmailRequired pulumi.BoolOutput `pulumi:"isPrimaryEmailRequired"`
+	IsPrimaryEmailRequired pulumi.BoolPtrOutput `pulumi:"isPrimaryEmailRequired"`
 	// The License type of Domain
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	LicenseType pulumi.StringOutput `pulumi:"licenseType"`
 	// Any additional details about the current state of the Domain.
-	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrOutput `pulumi:"lifecycleDetails"`
 	// The regions domain is replication to.
 	ReplicaRegions DomainReplicaRegionArrayOutput `pulumi:"replicaRegions"`
 	// The current state.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// Date and time the domain was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The type of the domain.
-	Type pulumi.StringOutput `pulumi:"type"`
+	Type pulumi.StringPtrOutput `pulumi:"type"`
 	// Region agnostic domain URL.
-	Url pulumi.StringOutput `pulumi:"url"`
+	Url pulumi.StringPtrOutput `pulumi:"url"`
 }
 
 // NewDomain registers a new resource with the given unique name, arguments, and options.
@@ -374,12 +373,6 @@ func (i *Domain) ToDomainOutputWithContext(ctx context.Context) DomainOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(DomainOutput)
 }
 
-func (i *Domain) ToOutput(ctx context.Context) pulumix.Output[*Domain] {
-	return pulumix.Output[*Domain]{
-		OutputState: i.ToDomainOutputWithContext(ctx).OutputState,
-	}
-}
-
 // DomainArrayInput is an input type that accepts DomainArray and DomainArrayOutput values.
 // You can construct a concrete instance of `DomainArrayInput` via:
 //
@@ -403,12 +396,6 @@ func (i DomainArray) ToDomainArrayOutput() DomainArrayOutput {
 
 func (i DomainArray) ToDomainArrayOutputWithContext(ctx context.Context) DomainArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(DomainArrayOutput)
-}
-
-func (i DomainArray) ToOutput(ctx context.Context) pulumix.Output[[]*Domain] {
-	return pulumix.Output[[]*Domain]{
-		OutputState: i.ToDomainArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // DomainMapInput is an input type that accepts DomainMap and DomainMapOutput values.
@@ -436,12 +423,6 @@ func (i DomainMap) ToDomainMapOutputWithContext(ctx context.Context) DomainMapOu
 	return pulumi.ToOutputWithContext(ctx, i).(DomainMapOutput)
 }
 
-func (i DomainMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*Domain] {
-	return pulumix.Output[map[string]*Domain]{
-		OutputState: i.ToDomainMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DomainOutput struct{ *pulumi.OutputState }
 
 func (DomainOutput) ElementType() reflect.Type {
@@ -456,30 +437,24 @@ func (o DomainOutput) ToDomainOutputWithContext(ctx context.Context) DomainOutpu
 	return o
 }
 
-func (o DomainOutput) ToOutput(ctx context.Context) pulumix.Output[*Domain] {
-	return pulumix.Output[*Domain]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The admin email address
-func (o DomainOutput) AdminEmail() pulumi.StringOutput {
-	return o.ApplyT(func(v *Domain) pulumi.StringOutput { return v.AdminEmail }).(pulumi.StringOutput)
+func (o DomainOutput) AdminEmail() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Domain) pulumi.StringPtrOutput { return v.AdminEmail }).(pulumi.StringPtrOutput)
 }
 
 // The admin first name
-func (o DomainOutput) AdminFirstName() pulumi.StringOutput {
-	return o.ApplyT(func(v *Domain) pulumi.StringOutput { return v.AdminFirstName }).(pulumi.StringOutput)
+func (o DomainOutput) AdminFirstName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Domain) pulumi.StringPtrOutput { return v.AdminFirstName }).(pulumi.StringPtrOutput)
 }
 
 // The admin last name
-func (o DomainOutput) AdminLastName() pulumi.StringOutput {
-	return o.ApplyT(func(v *Domain) pulumi.StringOutput { return v.AdminLastName }).(pulumi.StringOutput)
+func (o DomainOutput) AdminLastName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Domain) pulumi.StringPtrOutput { return v.AdminLastName }).(pulumi.StringPtrOutput)
 }
 
 // The admin user name
-func (o DomainOutput) AdminUserName() pulumi.StringOutput {
-	return o.ApplyT(func(v *Domain) pulumi.StringOutput { return v.AdminUserName }).(pulumi.StringOutput)
+func (o DomainOutput) AdminUserName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Domain) pulumi.StringPtrOutput { return v.AdminUserName }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The OCID of the Compartment where domain is created
@@ -513,23 +488,23 @@ func (o DomainOutput) HomeRegion() pulumi.StringOutput {
 }
 
 // Region specific domain URL.
-func (o DomainOutput) HomeRegionUrl() pulumi.StringOutput {
-	return o.ApplyT(func(v *Domain) pulumi.StringOutput { return v.HomeRegionUrl }).(pulumi.StringOutput)
+func (o DomainOutput) HomeRegionUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Domain) pulumi.StringPtrOutput { return v.HomeRegionUrl }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Indicates whether domain is hidden on login screen or not.
-func (o DomainOutput) IsHiddenOnLogin() pulumi.BoolOutput {
-	return o.ApplyT(func(v *Domain) pulumi.BoolOutput { return v.IsHiddenOnLogin }).(pulumi.BoolOutput)
+func (o DomainOutput) IsHiddenOnLogin() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *Domain) pulumi.BoolPtrOutput { return v.IsHiddenOnLogin }).(pulumi.BoolPtrOutput)
 }
 
 // Indicates if admin user created in IDCS stripe would like to receive notification like welcome email or not. Required field only if admin information is provided, otherwise optional.
-func (o DomainOutput) IsNotificationBypassed() pulumi.BoolOutput {
-	return o.ApplyT(func(v *Domain) pulumi.BoolOutput { return v.IsNotificationBypassed }).(pulumi.BoolOutput)
+func (o DomainOutput) IsNotificationBypassed() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *Domain) pulumi.BoolPtrOutput { return v.IsNotificationBypassed }).(pulumi.BoolPtrOutput)
 }
 
 // Optional field to indicate whether users in the domain are required to have a primary email address or not Defaults to true
-func (o DomainOutput) IsPrimaryEmailRequired() pulumi.BoolOutput {
-	return o.ApplyT(func(v *Domain) pulumi.BoolOutput { return v.IsPrimaryEmailRequired }).(pulumi.BoolOutput)
+func (o DomainOutput) IsPrimaryEmailRequired() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *Domain) pulumi.BoolPtrOutput { return v.IsPrimaryEmailRequired }).(pulumi.BoolPtrOutput)
 }
 
 // The License type of Domain
@@ -541,8 +516,8 @@ func (o DomainOutput) LicenseType() pulumi.StringOutput {
 }
 
 // Any additional details about the current state of the Domain.
-func (o DomainOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v *Domain) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o DomainOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Domain) pulumi.StringPtrOutput { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // The regions domain is replication to.
@@ -551,23 +526,23 @@ func (o DomainOutput) ReplicaRegions() DomainReplicaRegionArrayOutput {
 }
 
 // The current state.
-func (o DomainOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *Domain) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o DomainOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Domain) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Date and time the domain was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
-func (o DomainOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *Domain) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o DomainOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Domain) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The type of the domain.
-func (o DomainOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v *Domain) pulumi.StringOutput { return v.Type }).(pulumi.StringOutput)
+func (o DomainOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Domain) pulumi.StringPtrOutput { return v.Type }).(pulumi.StringPtrOutput)
 }
 
 // Region agnostic domain URL.
-func (o DomainOutput) Url() pulumi.StringOutput {
-	return o.ApplyT(func(v *Domain) pulumi.StringOutput { return v.Url }).(pulumi.StringOutput)
+func (o DomainOutput) Url() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Domain) pulumi.StringPtrOutput { return v.Url }).(pulumi.StringPtrOutput)
 }
 
 type DomainArrayOutput struct{ *pulumi.OutputState }
@@ -582,12 +557,6 @@ func (o DomainArrayOutput) ToDomainArrayOutput() DomainArrayOutput {
 
 func (o DomainArrayOutput) ToDomainArrayOutputWithContext(ctx context.Context) DomainArrayOutput {
 	return o
-}
-
-func (o DomainArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*Domain] {
-	return pulumix.Output[[]*Domain]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DomainArrayOutput) Index(i pulumi.IntInput) DomainOutput {
@@ -608,12 +577,6 @@ func (o DomainMapOutput) ToDomainMapOutput() DomainMapOutput {
 
 func (o DomainMapOutput) ToDomainMapOutputWithContext(ctx context.Context) DomainMapOutput {
 	return o
-}
-
-func (o DomainMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*Domain] {
-	return pulumix.Output[map[string]*Domain]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DomainMapOutput) MapIndex(k pulumi.StringInput) DomainOutput {

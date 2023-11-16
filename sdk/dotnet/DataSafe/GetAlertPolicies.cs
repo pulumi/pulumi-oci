@@ -276,7 +276,7 @@ namespace Pulumi.Oci.DataSafe
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Indicates if the alert policy is user-defined (true) or pre-defined (false).
         /// </summary>
@@ -305,7 +305,7 @@ namespace Pulumi.Oci.DataSafe
 
             ImmutableArray<Outputs.GetAlertPoliciesFilterResult> filters,
 
-            string id,
+            string? id,
 
             bool? isUserDefined,
 

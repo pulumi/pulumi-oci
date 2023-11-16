@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the External Exadata Storage Connector resource in Oracle Cloud Infrastructure Database Management service.
@@ -76,28 +75,28 @@ type ExternalExadataStorageConnector struct {
 	// (Updatable) The user credential information.
 	CredentialInfo ExternalExadataStorageConnectorCredentialInfoOutput `pulumi:"credentialInfo"`
 	// The name of the Exadata resource. English letters, numbers, "-", "_" and "." only.
-	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrOutput `pulumi:"displayName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
-	ExadataInfrastructureId pulumi.StringOutput `pulumi:"exadataInfrastructureId"`
+	ExadataInfrastructureId pulumi.StringPtrOutput `pulumi:"exadataInfrastructureId"`
 	// The internal ID of the Exadata resource.
-	InternalId pulumi.StringOutput `pulumi:"internalId"`
+	InternalId pulumi.StringPtrOutput `pulumi:"internalId"`
 	// The details of the lifecycle state of the Exadata resource.
-	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrOutput `pulumi:"lifecycleDetails"`
 	// The current lifecycle state of the database resource.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// The status of the Exadata resource.
-	Status pulumi.StringOutput `pulumi:"status"`
+	Status pulumi.StringPtrOutput `pulumi:"status"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata storage server.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	StorageServerId pulumi.StringOutput `pulumi:"storageServerId"`
 	// The timestamp of the creation of the Exadata resource.
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The timestamp of the last update of the Exadata resource.
-	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 	// The version of the Exadata resource.
-	Version pulumi.StringOutput `pulumi:"version"`
+	Version pulumi.StringPtrOutput `pulumi:"version"`
 }
 
 // NewExternalExadataStorageConnector registers a new resource with the given unique name, arguments, and options.
@@ -276,12 +275,6 @@ func (i *ExternalExadataStorageConnector) ToExternalExadataStorageConnectorOutpu
 	return pulumi.ToOutputWithContext(ctx, i).(ExternalExadataStorageConnectorOutput)
 }
 
-func (i *ExternalExadataStorageConnector) ToOutput(ctx context.Context) pulumix.Output[*ExternalExadataStorageConnector] {
-	return pulumix.Output[*ExternalExadataStorageConnector]{
-		OutputState: i.ToExternalExadataStorageConnectorOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ExternalExadataStorageConnectorArrayInput is an input type that accepts ExternalExadataStorageConnectorArray and ExternalExadataStorageConnectorArrayOutput values.
 // You can construct a concrete instance of `ExternalExadataStorageConnectorArrayInput` via:
 //
@@ -305,12 +298,6 @@ func (i ExternalExadataStorageConnectorArray) ToExternalExadataStorageConnectorA
 
 func (i ExternalExadataStorageConnectorArray) ToExternalExadataStorageConnectorArrayOutputWithContext(ctx context.Context) ExternalExadataStorageConnectorArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ExternalExadataStorageConnectorArrayOutput)
-}
-
-func (i ExternalExadataStorageConnectorArray) ToOutput(ctx context.Context) pulumix.Output[[]*ExternalExadataStorageConnector] {
-	return pulumix.Output[[]*ExternalExadataStorageConnector]{
-		OutputState: i.ToExternalExadataStorageConnectorArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // ExternalExadataStorageConnectorMapInput is an input type that accepts ExternalExadataStorageConnectorMap and ExternalExadataStorageConnectorMapOutput values.
@@ -338,12 +325,6 @@ func (i ExternalExadataStorageConnectorMap) ToExternalExadataStorageConnectorMap
 	return pulumi.ToOutputWithContext(ctx, i).(ExternalExadataStorageConnectorMapOutput)
 }
 
-func (i ExternalExadataStorageConnectorMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*ExternalExadataStorageConnector] {
-	return pulumix.Output[map[string]*ExternalExadataStorageConnector]{
-		OutputState: i.ToExternalExadataStorageConnectorMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ExternalExadataStorageConnectorOutput struct{ *pulumi.OutputState }
 
 func (ExternalExadataStorageConnectorOutput) ElementType() reflect.Type {
@@ -356,12 +337,6 @@ func (o ExternalExadataStorageConnectorOutput) ToExternalExadataStorageConnector
 
 func (o ExternalExadataStorageConnectorOutput) ToExternalExadataStorageConnectorOutputWithContext(ctx context.Context) ExternalExadataStorageConnectorOutput {
 	return o
-}
-
-func (o ExternalExadataStorageConnectorOutput) ToOutput(ctx context.Context) pulumix.Output[*ExternalExadataStorageConnector] {
-	return pulumix.Output[*ExternalExadataStorageConnector]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
@@ -392,33 +367,33 @@ func (o ExternalExadataStorageConnectorOutput) CredentialInfo() ExternalExadataS
 }
 
 // The name of the Exadata resource. English letters, numbers, "-", "_" and "." only.
-func (o ExternalExadataStorageConnectorOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v *ExternalExadataStorageConnector) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+func (o ExternalExadataStorageConnectorOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExternalExadataStorageConnector) pulumi.StringPtrOutput { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
-func (o ExternalExadataStorageConnectorOutput) ExadataInfrastructureId() pulumi.StringOutput {
-	return o.ApplyT(func(v *ExternalExadataStorageConnector) pulumi.StringOutput { return v.ExadataInfrastructureId }).(pulumi.StringOutput)
+func (o ExternalExadataStorageConnectorOutput) ExadataInfrastructureId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExternalExadataStorageConnector) pulumi.StringPtrOutput { return v.ExadataInfrastructureId }).(pulumi.StringPtrOutput)
 }
 
 // The internal ID of the Exadata resource.
-func (o ExternalExadataStorageConnectorOutput) InternalId() pulumi.StringOutput {
-	return o.ApplyT(func(v *ExternalExadataStorageConnector) pulumi.StringOutput { return v.InternalId }).(pulumi.StringOutput)
+func (o ExternalExadataStorageConnectorOutput) InternalId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExternalExadataStorageConnector) pulumi.StringPtrOutput { return v.InternalId }).(pulumi.StringPtrOutput)
 }
 
 // The details of the lifecycle state of the Exadata resource.
-func (o ExternalExadataStorageConnectorOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v *ExternalExadataStorageConnector) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o ExternalExadataStorageConnectorOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExternalExadataStorageConnector) pulumi.StringPtrOutput { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // The current lifecycle state of the database resource.
-func (o ExternalExadataStorageConnectorOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *ExternalExadataStorageConnector) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o ExternalExadataStorageConnectorOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExternalExadataStorageConnector) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The status of the Exadata resource.
-func (o ExternalExadataStorageConnectorOutput) Status() pulumi.StringOutput {
-	return o.ApplyT(func(v *ExternalExadataStorageConnector) pulumi.StringOutput { return v.Status }).(pulumi.StringOutput)
+func (o ExternalExadataStorageConnectorOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExternalExadataStorageConnector) pulumi.StringPtrOutput { return v.Status }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata storage server.
@@ -430,18 +405,18 @@ func (o ExternalExadataStorageConnectorOutput) StorageServerId() pulumi.StringOu
 }
 
 // The timestamp of the creation of the Exadata resource.
-func (o ExternalExadataStorageConnectorOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *ExternalExadataStorageConnector) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o ExternalExadataStorageConnectorOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExternalExadataStorageConnector) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The timestamp of the last update of the Exadata resource.
-func (o ExternalExadataStorageConnectorOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *ExternalExadataStorageConnector) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o ExternalExadataStorageConnectorOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExternalExadataStorageConnector) pulumi.StringPtrOutput { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 // The version of the Exadata resource.
-func (o ExternalExadataStorageConnectorOutput) Version() pulumi.StringOutput {
-	return o.ApplyT(func(v *ExternalExadataStorageConnector) pulumi.StringOutput { return v.Version }).(pulumi.StringOutput)
+func (o ExternalExadataStorageConnectorOutput) Version() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExternalExadataStorageConnector) pulumi.StringPtrOutput { return v.Version }).(pulumi.StringPtrOutput)
 }
 
 type ExternalExadataStorageConnectorArrayOutput struct{ *pulumi.OutputState }
@@ -456,12 +431,6 @@ func (o ExternalExadataStorageConnectorArrayOutput) ToExternalExadataStorageConn
 
 func (o ExternalExadataStorageConnectorArrayOutput) ToExternalExadataStorageConnectorArrayOutputWithContext(ctx context.Context) ExternalExadataStorageConnectorArrayOutput {
 	return o
-}
-
-func (o ExternalExadataStorageConnectorArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*ExternalExadataStorageConnector] {
-	return pulumix.Output[[]*ExternalExadataStorageConnector]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ExternalExadataStorageConnectorArrayOutput) Index(i pulumi.IntInput) ExternalExadataStorageConnectorOutput {
@@ -482,12 +451,6 @@ func (o ExternalExadataStorageConnectorMapOutput) ToExternalExadataStorageConnec
 
 func (o ExternalExadataStorageConnectorMapOutput) ToExternalExadataStorageConnectorMapOutputWithContext(ctx context.Context) ExternalExadataStorageConnectorMapOutput {
 	return o
-}
-
-func (o ExternalExadataStorageConnectorMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*ExternalExadataStorageConnector] {
-	return pulumix.Output[map[string]*ExternalExadataStorageConnector]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ExternalExadataStorageConnectorMapOutput) MapIndex(k pulumi.StringInput) ExternalExadataStorageConnectorOutput {

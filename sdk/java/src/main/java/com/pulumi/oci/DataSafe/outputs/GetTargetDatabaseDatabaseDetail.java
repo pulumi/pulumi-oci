@@ -8,6 +8,8 @@ import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetTargetDatabaseDatabaseDetail {
@@ -15,111 +17,111 @@ public final class GetTargetDatabaseDatabaseDetail {
      * @return The OCID of the Autonomous Database registered as a target database in Data Safe.
      * 
      */
-    private String autonomousDatabaseId;
+    private @Nullable String autonomousDatabaseId;
     /**
      * @return The database type.
      * 
      */
-    private String databaseType;
+    private @Nullable String databaseType;
     /**
      * @return The OCID of the cloud database registered as a target database in Data Safe.
      * 
      */
-    private String dbSystemId;
+    private @Nullable String dbSystemId;
     /**
      * @return The infrastructure type the database is running on.
      * 
      */
-    private String infrastructureType;
+    private @Nullable String infrastructureType;
     /**
      * @return The OCID of the compute instance on which the database is running.
      * 
      */
-    private String instanceId;
+    private @Nullable String instanceId;
     /**
      * @return The list of database host IP Addresses. Fully qualified domain names can be used if connectionType is &#39;ONPREM_CONNECTOR&#39;.
      * 
      */
-    private List<String> ipAddresses;
+    private @Nullable List<String> ipAddresses;
     /**
      * @return The port number of the database listener.
      * 
      */
-    private Integer listenerPort;
+    private @Nullable Integer listenerPort;
     /**
      * @return The service name of the database registered as target database.
      * 
      */
-    private String serviceName;
+    private @Nullable String serviceName;
     /**
      * @return The OCID of the VM cluster in which the database is running.
      * 
      */
-    private String vmClusterId;
+    private @Nullable String vmClusterId;
 
     private GetTargetDatabaseDatabaseDetail() {}
     /**
      * @return The OCID of the Autonomous Database registered as a target database in Data Safe.
      * 
      */
-    public String autonomousDatabaseId() {
-        return this.autonomousDatabaseId;
+    public Optional<String> autonomousDatabaseId() {
+        return Optional.ofNullable(this.autonomousDatabaseId);
     }
     /**
      * @return The database type.
      * 
      */
-    public String databaseType() {
-        return this.databaseType;
+    public Optional<String> databaseType() {
+        return Optional.ofNullable(this.databaseType);
     }
     /**
      * @return The OCID of the cloud database registered as a target database in Data Safe.
      * 
      */
-    public String dbSystemId() {
-        return this.dbSystemId;
+    public Optional<String> dbSystemId() {
+        return Optional.ofNullable(this.dbSystemId);
     }
     /**
      * @return The infrastructure type the database is running on.
      * 
      */
-    public String infrastructureType() {
-        return this.infrastructureType;
+    public Optional<String> infrastructureType() {
+        return Optional.ofNullable(this.infrastructureType);
     }
     /**
      * @return The OCID of the compute instance on which the database is running.
      * 
      */
-    public String instanceId() {
-        return this.instanceId;
+    public Optional<String> instanceId() {
+        return Optional.ofNullable(this.instanceId);
     }
     /**
      * @return The list of database host IP Addresses. Fully qualified domain names can be used if connectionType is &#39;ONPREM_CONNECTOR&#39;.
      * 
      */
     public List<String> ipAddresses() {
-        return this.ipAddresses;
+        return this.ipAddresses == null ? List.of() : this.ipAddresses;
     }
     /**
      * @return The port number of the database listener.
      * 
      */
-    public Integer listenerPort() {
-        return this.listenerPort;
+    public Optional<Integer> listenerPort() {
+        return Optional.ofNullable(this.listenerPort);
     }
     /**
      * @return The service name of the database registered as target database.
      * 
      */
-    public String serviceName() {
-        return this.serviceName;
+    public Optional<String> serviceName() {
+        return Optional.ofNullable(this.serviceName);
     }
     /**
      * @return The OCID of the VM cluster in which the database is running.
      * 
      */
-    public String vmClusterId() {
-        return this.vmClusterId;
+    public Optional<String> vmClusterId() {
+        return Optional.ofNullable(this.vmClusterId);
     }
 
     public static Builder builder() {
@@ -131,15 +133,15 @@ public final class GetTargetDatabaseDatabaseDetail {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String autonomousDatabaseId;
-        private String databaseType;
-        private String dbSystemId;
-        private String infrastructureType;
-        private String instanceId;
-        private List<String> ipAddresses;
-        private Integer listenerPort;
-        private String serviceName;
-        private String vmClusterId;
+        private @Nullable String autonomousDatabaseId;
+        private @Nullable String databaseType;
+        private @Nullable String dbSystemId;
+        private @Nullable String infrastructureType;
+        private @Nullable String instanceId;
+        private @Nullable List<String> ipAddresses;
+        private @Nullable Integer listenerPort;
+        private @Nullable String serviceName;
+        private @Nullable String vmClusterId;
         public Builder() {}
         public Builder(GetTargetDatabaseDatabaseDetail defaults) {
     	      Objects.requireNonNull(defaults);
@@ -155,51 +157,51 @@ public final class GetTargetDatabaseDatabaseDetail {
         }
 
         @CustomType.Setter
-        public Builder autonomousDatabaseId(String autonomousDatabaseId) {
-            this.autonomousDatabaseId = Objects.requireNonNull(autonomousDatabaseId);
+        public Builder autonomousDatabaseId(@Nullable String autonomousDatabaseId) {
+            this.autonomousDatabaseId = autonomousDatabaseId;
             return this;
         }
         @CustomType.Setter
-        public Builder databaseType(String databaseType) {
-            this.databaseType = Objects.requireNonNull(databaseType);
+        public Builder databaseType(@Nullable String databaseType) {
+            this.databaseType = databaseType;
             return this;
         }
         @CustomType.Setter
-        public Builder dbSystemId(String dbSystemId) {
-            this.dbSystemId = Objects.requireNonNull(dbSystemId);
+        public Builder dbSystemId(@Nullable String dbSystemId) {
+            this.dbSystemId = dbSystemId;
             return this;
         }
         @CustomType.Setter
-        public Builder infrastructureType(String infrastructureType) {
-            this.infrastructureType = Objects.requireNonNull(infrastructureType);
+        public Builder infrastructureType(@Nullable String infrastructureType) {
+            this.infrastructureType = infrastructureType;
             return this;
         }
         @CustomType.Setter
-        public Builder instanceId(String instanceId) {
-            this.instanceId = Objects.requireNonNull(instanceId);
+        public Builder instanceId(@Nullable String instanceId) {
+            this.instanceId = instanceId;
             return this;
         }
         @CustomType.Setter
-        public Builder ipAddresses(List<String> ipAddresses) {
-            this.ipAddresses = Objects.requireNonNull(ipAddresses);
+        public Builder ipAddresses(@Nullable List<String> ipAddresses) {
+            this.ipAddresses = ipAddresses;
             return this;
         }
         public Builder ipAddresses(String... ipAddresses) {
             return ipAddresses(List.of(ipAddresses));
         }
         @CustomType.Setter
-        public Builder listenerPort(Integer listenerPort) {
-            this.listenerPort = Objects.requireNonNull(listenerPort);
+        public Builder listenerPort(@Nullable Integer listenerPort) {
+            this.listenerPort = listenerPort;
             return this;
         }
         @CustomType.Setter
-        public Builder serviceName(String serviceName) {
-            this.serviceName = Objects.requireNonNull(serviceName);
+        public Builder serviceName(@Nullable String serviceName) {
+            this.serviceName = serviceName;
             return this;
         }
         @CustomType.Setter
-        public Builder vmClusterId(String vmClusterId) {
-            this.vmClusterId = Objects.requireNonNull(vmClusterId);
+        public Builder vmClusterId(@Nullable String vmClusterId) {
+            this.vmClusterId = vmClusterId;
             return this;
         }
         public GetTargetDatabaseDatabaseDetail build() {

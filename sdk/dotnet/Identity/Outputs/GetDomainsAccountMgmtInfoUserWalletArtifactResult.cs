@@ -16,17 +16,17 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// UserWalletArtifact URI
         /// </summary>
-        public readonly string Ref;
+        public readonly string? Ref;
         /// <summary>
         /// UserWalletArtifact identifier
         /// </summary>
-        public readonly string Value;
+        public readonly string? Value;
 
         [OutputConstructor]
         private GetDomainsAccountMgmtInfoUserWalletArtifactResult(
-            string @ref,
+            string? @ref,
 
-            string value)
+            string? value)
         {
             Ref = @ref;
             Value = value;

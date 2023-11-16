@@ -365,186 +365,117 @@ class GetSubscribedServiceResult:
 
     @property
     @pulumi.getter(name="adminEmail")
-    def admin_email(self) -> str:
-        """
-        Subscribed service admin email id
-        """
+    def admin_email(self) -> Optional[str]:
         return pulumi.get(self, "admin_email")
 
     @property
     @pulumi.getter(name="agreementId")
-    def agreement_id(self) -> str:
-        """
-        Subscribed service agreement ID
-        """
+    def agreement_id(self) -> Optional[str]:
         return pulumi.get(self, "agreement_id")
 
     @property
     @pulumi.getter(name="agreementName")
-    def agreement_name(self) -> str:
-        """
-        Subscribed service agrrement name
-        """
+    def agreement_name(self) -> Optional[str]:
         return pulumi.get(self, "agreement_name")
 
     @property
     @pulumi.getter(name="agreementType")
-    def agreement_type(self) -> str:
-        """
-        Subscribed service agrrement type
-        """
+    def agreement_type(self) -> Optional[str]:
         return pulumi.get(self, "agreement_type")
 
     @property
     @pulumi.getter(name="availableAmount")
-    def available_amount(self) -> str:
-        """
-        Commitment available amount
-        """
+    def available_amount(self) -> Optional[str]:
         return pulumi.get(self, "available_amount")
 
     @property
     @pulumi.getter(name="billToAddresses")
-    def bill_to_addresses(self) -> Sequence['outputs.GetSubscribedServiceBillToAddressResult']:
-        """
-        Address.
-        """
+    def bill_to_addresses(self) -> Optional[Sequence['outputs.GetSubscribedServiceBillToAddressResult']]:
         return pulumi.get(self, "bill_to_addresses")
 
     @property
     @pulumi.getter(name="billToContacts")
-    def bill_to_contacts(self) -> Sequence['outputs.GetSubscribedServiceBillToContactResult']:
-        """
-        User.
-        """
+    def bill_to_contacts(self) -> Optional[Sequence['outputs.GetSubscribedServiceBillToContactResult']]:
         return pulumi.get(self, "bill_to_contacts")
 
     @property
     @pulumi.getter(name="billToCustomers")
-    def bill_to_customers(self) -> Sequence['outputs.GetSubscribedServiceBillToCustomerResult']:
-        """
-        Business partner.
-        """
+    def bill_to_customers(self) -> Optional[Sequence['outputs.GetSubscribedServiceBillToCustomerResult']]:
         return pulumi.get(self, "bill_to_customers")
 
     @property
     @pulumi.getter(name="billingFrequency")
-    def billing_frequency(self) -> str:
-        """
-        Subscribed service invoice frequency
-        """
+    def billing_frequency(self) -> Optional[str]:
         return pulumi.get(self, "billing_frequency")
 
     @property
     @pulumi.getter(name="bookingOptyNumber")
-    def booking_opty_number(self) -> str:
-        """
-        Booking Opportunity Number of Subscribed Service
-        """
+    def booking_opty_number(self) -> Optional[str]:
         return pulumi.get(self, "booking_opty_number")
 
     @property
     @pulumi.getter(name="buyerEmail")
-    def buyer_email(self) -> str:
-        """
-        Subscribed service buyer email id
-        """
+    def buyer_email(self) -> Optional[str]:
         return pulumi.get(self, "buyer_email")
 
     @property
     @pulumi.getter(name="commitmentScheduleId")
-    def commitment_schedule_id(self) -> str:
-        """
-        Subscribed service commitment schedule Id
-        """
+    def commitment_schedule_id(self) -> Optional[str]:
         return pulumi.get(self, "commitment_schedule_id")
 
     @property
     @pulumi.getter(name="commitmentServices")
-    def commitment_services(self) -> Sequence['outputs.GetSubscribedServiceCommitmentServiceResult']:
-        """
-        List of Commitment services of a line
-        """
+    def commitment_services(self) -> Optional[Sequence['outputs.GetSubscribedServiceCommitmentServiceResult']]:
         return pulumi.get(self, "commitment_services")
 
     @property
     @pulumi.getter(name="createdBy")
-    def created_by(self) -> str:
-        """
-        User that created the Payment term
-        """
+    def created_by(self) -> Optional[str]:
         return pulumi.get(self, "created_by")
 
     @property
     @pulumi.getter(name="creditPercentage")
-    def credit_percentage(self) -> str:
-        """
-        Subscribed service credit percentage
-        """
+    def credit_percentage(self) -> Optional[str]:
         return pulumi.get(self, "credit_percentage")
 
     @property
     @pulumi.getter
-    def csi(self) -> str:
-        """
-        Subscribed service CSI number
-        """
+    def csi(self) -> Optional[str]:
         return pulumi.get(self, "csi")
 
     @property
     @pulumi.getter(name="customerTransactionReference")
-    def customer_transaction_reference(self) -> str:
-        """
-        Identifier for a customer's transactions for purchase of ay oracle services
-        """
+    def customer_transaction_reference(self) -> Optional[str]:
         return pulumi.get(self, "customer_transaction_reference")
 
     @property
     @pulumi.getter(name="dataCenter")
-    def data_center(self) -> str:
-        """
-        Subscribed service data center
-        """
+    def data_center(self) -> Optional[str]:
         return pulumi.get(self, "data_center")
 
     @property
     @pulumi.getter(name="dataCenterRegion")
-    def data_center_region(self) -> str:
-        """
-        Subscribed service data center region
-        """
+    def data_center_region(self) -> Optional[str]:
         return pulumi.get(self, "data_center_region")
 
     @property
     @pulumi.getter(name="eligibleToRenew")
-    def eligible_to_renew(self) -> str:
-        """
-        Subscribed service eligible to renew field
-        """
+    def eligible_to_renew(self) -> Optional[str]:
         return pulumi.get(self, "eligible_to_renew")
 
     @property
     @pulumi.getter(name="endUserAddresses")
-    def end_user_addresses(self) -> Sequence['outputs.GetSubscribedServiceEndUserAddressResult']:
-        """
-        Address.
-        """
+    def end_user_addresses(self) -> Optional[Sequence['outputs.GetSubscribedServiceEndUserAddressResult']]:
         return pulumi.get(self, "end_user_addresses")
 
     @property
     @pulumi.getter(name="endUserContacts")
-    def end_user_contacts(self) -> Sequence['outputs.GetSubscribedServiceEndUserContactResult']:
-        """
-        User.
-        """
+    def end_user_contacts(self) -> Optional[Sequence['outputs.GetSubscribedServiceEndUserContactResult']]:
         return pulumi.get(self, "end_user_contacts")
 
     @property
     @pulumi.getter(name="endUserCustomers")
-    def end_user_customers(self) -> Sequence['outputs.GetSubscribedServiceEndUserCustomerResult']:
-        """
-        Business partner.
-        """
+    def end_user_customers(self) -> Optional[Sequence['outputs.GetSubscribedServiceEndUserCustomerResult']]:
         return pulumi.get(self, "end_user_customers")
 
     @property
@@ -554,23 +485,17 @@ class GetSubscribedServiceResult:
 
     @property
     @pulumi.getter(name="fulfillmentSet")
-    def fulfillment_set(self) -> str:
-        """
-        Subscribed service fulfillment set
-        """
+    def fulfillment_set(self) -> Optional[str]:
         return pulumi.get(self, "fulfillment_set")
 
     @property
     @pulumi.getter(name="fundedAllocationValue")
-    def funded_allocation_value(self) -> str:
-        """
-        Funded Allocation line value example: 12000.00
-        """
+    def funded_allocation_value(self) -> Optional[str]:
         return pulumi.get(self, "funded_allocation_value")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -578,690 +503,432 @@ class GetSubscribedServiceResult:
 
     @property
     @pulumi.getter(name="isAllowance")
-    def is_allowance(self) -> bool:
-        """
-        Indicates if a service can recieve usages and consequently have available amounts computed
-        """
+    def is_allowance(self) -> Optional[bool]:
         return pulumi.get(self, "is_allowance")
 
     @property
     @pulumi.getter(name="isCapToPriceList")
-    def is_cap_to_price_list(self) -> bool:
-        """
-        If true compares rate between ratecard and the active pricelist and minimum rate would be fetched
-        """
+    def is_cap_to_price_list(self) -> Optional[bool]:
         return pulumi.get(self, "is_cap_to_price_list")
 
     @property
     @pulumi.getter(name="isCreditEnabled")
-    def is_credit_enabled(self) -> bool:
-        """
-        Used in context of service credit lines
-        """
+    def is_credit_enabled(self) -> Optional[bool]:
         return pulumi.get(self, "is_credit_enabled")
 
     @property
     @pulumi.getter(name="isHavingUsage")
-    def is_having_usage(self) -> bool:
-        """
-        Indicator on whether or not there has been usage for the subscribed service
-        """
+    def is_having_usage(self) -> Optional[bool]:
         return pulumi.get(self, "is_having_usage")
 
     @property
     @pulumi.getter(name="isIntentToPay")
-    def is_intent_to_pay(self) -> bool:
-        """
-        Subscribed service intent to pay flag
-        """
+    def is_intent_to_pay(self) -> Optional[bool]:
         return pulumi.get(self, "is_intent_to_pay")
 
     @property
     @pulumi.getter(name="isPayg")
-    def is_payg(self) -> bool:
-        """
-        Subscribed service payg flag
-        """
+    def is_payg(self) -> Optional[bool]:
         return pulumi.get(self, "is_payg")
 
     @property
     @pulumi.getter(name="isSingleRateCard")
-    def is_single_rate_card(self) -> bool:
-        """
-        Indicates if the Subscribed service has a single ratecard
-        """
+    def is_single_rate_card(self) -> Optional[bool]:
         return pulumi.get(self, "is_single_rate_card")
 
     @property
     @pulumi.getter(name="isVariableCommitment")
-    def is_variable_commitment(self) -> bool:
-        """
-        Indicates if the commitment lines can have different quantities
-        """
+    def is_variable_commitment(self) -> Optional[bool]:
         return pulumi.get(self, "is_variable_commitment")
 
     @property
     @pulumi.getter(name="lineNetAmount")
-    def line_net_amount(self) -> str:
-        """
-        Subscribed service line net amount
-        """
+    def line_net_amount(self) -> Optional[str]:
         return pulumi.get(self, "line_net_amount")
 
     @property
     @pulumi.getter(name="majorSet")
-    def major_set(self) -> str:
-        """
-        Subscribed service Major Set
-        """
+    def major_set(self) -> Optional[str]:
         return pulumi.get(self, "major_set")
 
     @property
     @pulumi.getter(name="netUnitPrice")
-    def net_unit_price(self) -> str:
-        """
-        Rate card tier net unit price
-        """
+    def net_unit_price(self) -> Optional[str]:
         return pulumi.get(self, "net_unit_price")
 
     @property
     @pulumi.getter(name="operationType")
-    def operation_type(self) -> str:
-        """
-        Subscribed service operation type
-        """
+    def operation_type(self) -> Optional[str]:
         return pulumi.get(self, "operation_type")
 
     @property
     @pulumi.getter(name="orderHeaderId")
-    def order_header_id(self) -> str:
-        """
-        Sales Order Header associated to the subscribed service
-        """
+    def order_header_id(self) -> Optional[str]:
         return pulumi.get(self, "order_header_id")
 
     @property
     @pulumi.getter(name="orderLineId")
-    def order_line_id(self) -> str:
-        """
-        Sales Order Line Id associated to the subscribed service
-        """
+    def order_line_id(self) -> Optional[str]:
         return pulumi.get(self, "order_line_id")
 
     @property
     @pulumi.getter(name="orderLineNumber")
-    def order_line_number(self) -> int:
-        """
-        Sales Order Line Number associated to the subscribed service
-        """
+    def order_line_number(self) -> Optional[int]:
         return pulumi.get(self, "order_line_number")
 
     @property
     @pulumi.getter(name="orderNumber")
-    def order_number(self) -> str:
-        """
-        Sales Order Number associated to the subscribed service
-        """
+    def order_number(self) -> Optional[str]:
         return pulumi.get(self, "order_number")
 
     @property
     @pulumi.getter(name="orderType")
-    def order_type(self) -> str:
-        """
-        Order Type of Subscribed Service
-        """
+    def order_type(self) -> Optional[str]:
         return pulumi.get(self, "order_type")
 
     @property
     @pulumi.getter(name="originalPromoAmount")
-    def original_promo_amount(self) -> str:
-        """
-        Subscribed service Promotion Amount
-        """
+    def original_promo_amount(self) -> Optional[str]:
         return pulumi.get(self, "original_promo_amount")
 
     @property
     @pulumi.getter(name="overageBillTo")
-    def overage_bill_to(self) -> str:
-        """
-        Overage Bill To of Subscribed Service
-        """
+    def overage_bill_to(self) -> Optional[str]:
         return pulumi.get(self, "overage_bill_to")
 
     @property
     @pulumi.getter(name="overageDiscountPercentage")
-    def overage_discount_percentage(self) -> str:
-        """
-        Subscribed service Overage Discount Percentage
-        """
+    def overage_discount_percentage(self) -> Optional[str]:
         return pulumi.get(self, "overage_discount_percentage")
 
     @property
     @pulumi.getter(name="overagePolicy")
-    def overage_policy(self) -> str:
-        """
-        Overage Policy of Subscribed Service
-        """
+    def overage_policy(self) -> Optional[str]:
         return pulumi.get(self, "overage_policy")
 
     @property
     @pulumi.getter(name="partnerCreditAmount")
-    def partner_credit_amount(self) -> str:
-        """
-        Subscribed service partner credit amount
-        """
+    def partner_credit_amount(self) -> Optional[str]:
         return pulumi.get(self, "partner_credit_amount")
 
     @property
     @pulumi.getter(name="partnerTransactionType")
-    def partner_transaction_type(self) -> str:
-        """
-        This field contains the name of the partner to which the subscription belongs - depending on which the invoicing may differ
-        """
+    def partner_transaction_type(self) -> Optional[str]:
         return pulumi.get(self, "partner_transaction_type")
 
     @property
     @pulumi.getter(name="paygPolicy")
-    def payg_policy(self) -> str:
-        """
-        Pay As You Go policy of Subscribed Service (Can be null - indicating no payg policy)
-        """
+    def payg_policy(self) -> Optional[str]:
         return pulumi.get(self, "payg_policy")
 
     @property
     @pulumi.getter(name="paymentMethod")
-    def payment_method(self) -> str:
-        """
-        Payment Method of Subscribed Service
-        """
+    def payment_method(self) -> Optional[str]:
         return pulumi.get(self, "payment_method")
 
     @property
     @pulumi.getter(name="paymentNumber")
-    def payment_number(self) -> str:
-        """
-        Payment Number of Subscribed Service
-        """
+    def payment_number(self) -> Optional[str]:
         return pulumi.get(self, "payment_number")
 
     @property
     @pulumi.getter(name="paymentTerms")
-    def payment_terms(self) -> Sequence['outputs.GetSubscribedServicePaymentTermResult']:
-        """
-        Payment Term details
-        """
+    def payment_terms(self) -> Optional[Sequence['outputs.GetSubscribedServicePaymentTermResult']]:
         return pulumi.get(self, "payment_terms")
 
     @property
     @pulumi.getter(name="pricePeriod")
-    def price_period(self) -> str:
-        """
-        Indicates the period for which the commitment amount can be utilised exceeding which the amount lapses. Also used in calculation of total contract line value
-        """
+    def price_period(self) -> Optional[str]:
         return pulumi.get(self, "price_period")
 
     @property
     @pulumi.getter(name="pricingModel")
-    def pricing_model(self) -> str:
-        """
-        Subscribed service pricing model
-        """
+    def pricing_model(self) -> Optional[str]:
         return pulumi.get(self, "pricing_model")
 
     @property
     @pulumi.getter
-    def products(self) -> Sequence['outputs.GetSubscribedServiceProductResult']:
-        """
-        Product description
-        """
+    def products(self) -> Optional[Sequence['outputs.GetSubscribedServiceProductResult']]:
         return pulumi.get(self, "products")
 
     @property
     @pulumi.getter(name="programType")
-    def program_type(self) -> str:
-        """
-        Subscribed service program type
-        """
+    def program_type(self) -> Optional[str]:
         return pulumi.get(self, "program_type")
 
     @property
     @pulumi.getter(name="promoOrderLineId")
-    def promo_order_line_id(self) -> str:
-        """
-        Not null if this service has an associated promotion line in SPM. Contains the line identifier from Order Management of  the associated promo line.
-        """
+    def promo_order_line_id(self) -> Optional[str]:
         return pulumi.get(self, "promo_order_line_id")
 
     @property
     @pulumi.getter(name="promoType")
-    def promo_type(self) -> str:
-        """
-        Subscribed service promotion type
-        """
+    def promo_type(self) -> Optional[str]:
         return pulumi.get(self, "promo_type")
 
     @property
     @pulumi.getter(name="promotionPricingType")
-    def promotion_pricing_type(self) -> str:
-        """
-        Promotion Pricing Type of Subscribed Service (Can be null - indicating no promotion pricing)
-        """
+    def promotion_pricing_type(self) -> Optional[str]:
         return pulumi.get(self, "promotion_pricing_type")
 
     @property
     @pulumi.getter(name="provisioningSource")
-    def provisioning_source(self) -> str:
-        """
-        Subscribed service provisioning source
-        """
+    def provisioning_source(self) -> Optional[str]:
         return pulumi.get(self, "provisioning_source")
 
     @property
     @pulumi.getter
-    def quantity(self) -> str:
-        """
-        Subscribed service quantity
-        """
+    def quantity(self) -> Optional[str]:
         return pulumi.get(self, "quantity")
 
     @property
     @pulumi.getter(name="rateCardDiscountPercentage")
-    def rate_card_discount_percentage(self) -> str:
-        """
-        Subscribed service Rate Card Discount Percentage
-        """
+    def rate_card_discount_percentage(self) -> Optional[str]:
         return pulumi.get(self, "rate_card_discount_percentage")
 
     @property
     @pulumi.getter(name="rateCards")
-    def rate_cards(self) -> Sequence['outputs.GetSubscribedServiceRateCardResult']:
-        """
-        List of Rate Cards of a Subscribed Service
-        """
+    def rate_cards(self) -> Optional[Sequence['outputs.GetSubscribedServiceRateCardResult']]:
         return pulumi.get(self, "rate_cards")
 
     @property
     @pulumi.getter(name="ratecardType")
-    def ratecard_type(self) -> str:
-        """
-        SPM Ratecard Type
-        """
+    def ratecard_type(self) -> Optional[str]:
         return pulumi.get(self, "ratecard_type")
 
     @property
     @pulumi.getter(name="renewalOptyId")
-    def renewal_opty_id(self) -> str:
-        """
-        Subscribed service Opportunity Id
-        """
+    def renewal_opty_id(self) -> Optional[str]:
         return pulumi.get(self, "renewal_opty_id")
 
     @property
     @pulumi.getter(name="renewalOptyNumber")
-    def renewal_opty_number(self) -> str:
-        """
-        Renewal Opportunity Number of Subscribed Service
-        """
+    def renewal_opty_number(self) -> Optional[str]:
         return pulumi.get(self, "renewal_opty_number")
 
     @property
     @pulumi.getter(name="renewalOptyType")
-    def renewal_opty_type(self) -> str:
-        """
-        Renewal Opportunity Type of Subscribed Service
-        """
+    def renewal_opty_type(self) -> Optional[str]:
         return pulumi.get(self, "renewal_opty_type")
 
     @property
     @pulumi.getter(name="renewedSubscribedServiceId")
-    def renewed_subscribed_service_id(self) -> str:
-        """
-        SPM renewed Subscription ID
-        """
+    def renewed_subscribed_service_id(self) -> Optional[str]:
         return pulumi.get(self, "renewed_subscribed_service_id")
 
     @property
     @pulumi.getter(name="resellerAddresses")
-    def reseller_addresses(self) -> Sequence['outputs.GetSubscribedServiceResellerAddressResult']:
-        """
-        Address.
-        """
+    def reseller_addresses(self) -> Optional[Sequence['outputs.GetSubscribedServiceResellerAddressResult']]:
         return pulumi.get(self, "reseller_addresses")
 
     @property
     @pulumi.getter(name="resellerContacts")
-    def reseller_contacts(self) -> Sequence['outputs.GetSubscribedServiceResellerContactResult']:
-        """
-        User.
-        """
+    def reseller_contacts(self) -> Optional[Sequence['outputs.GetSubscribedServiceResellerContactResult']]:
         return pulumi.get(self, "reseller_contacts")
 
     @property
     @pulumi.getter(name="resellerCustomers")
-    def reseller_customers(self) -> Sequence['outputs.GetSubscribedServiceResellerCustomerResult']:
-        """
-        Business partner.
-        """
+    def reseller_customers(self) -> Optional[Sequence['outputs.GetSubscribedServiceResellerCustomerResult']]:
         return pulumi.get(self, "reseller_customers")
 
     @property
     @pulumi.getter(name="revenueLineId")
-    def revenue_line_id(self) -> str:
-        """
-        Subscribed service Revenue Line Id
-        """
+    def revenue_line_id(self) -> Optional[str]:
         return pulumi.get(self, "revenue_line_id")
 
     @property
     @pulumi.getter(name="revenueLineNumber")
-    def revenue_line_number(self) -> str:
-        """
-        Revenue Line NUmber of Subscribed Service
-        """
+    def revenue_line_number(self) -> Optional[str]:
         return pulumi.get(self, "revenue_line_number")
 
     @property
     @pulumi.getter(name="revisedArrInLc")
-    def revised_arr_in_lc(self) -> str:
-        """
-        Subscribed service Revised ARR
-        """
+    def revised_arr_in_lc(self) -> Optional[str]:
         return pulumi.get(self, "revised_arr_in_lc")
 
     @property
     @pulumi.getter(name="revisedArrInSc")
-    def revised_arr_in_sc(self) -> str:
-        """
-        Subscribed service Revised ARR in Standard Currency
-        """
+    def revised_arr_in_sc(self) -> Optional[str]:
         return pulumi.get(self, "revised_arr_in_sc")
 
     @property
     @pulumi.getter(name="salesAccountPartyId")
-    def sales_account_party_id(self) -> str:
-        """
-        Subscribed service sales account party id
-        """
+    def sales_account_party_id(self) -> Optional[str]:
         return pulumi.get(self, "sales_account_party_id")
 
     @property
     @pulumi.getter(name="salesChannel")
-    def sales_channel(self) -> str:
-        """
-        Sales Channel of Subscribed Service
-        """
+    def sales_channel(self) -> Optional[str]:
         return pulumi.get(self, "sales_channel")
 
     @property
     @pulumi.getter(name="serialNumber")
-    def serial_number(self) -> str:
-        """
-        Subscribed service line number
-        """
+    def serial_number(self) -> Optional[str]:
         return pulumi.get(self, "serial_number")
 
     @property
     @pulumi.getter(name="serviceToAddresses")
-    def service_to_addresses(self) -> Sequence['outputs.GetSubscribedServiceServiceToAddressResult']:
-        """
-        Address.
-        """
+    def service_to_addresses(self) -> Optional[Sequence['outputs.GetSubscribedServiceServiceToAddressResult']]:
         return pulumi.get(self, "service_to_addresses")
 
     @property
     @pulumi.getter(name="serviceToContacts")
-    def service_to_contacts(self) -> Sequence['outputs.GetSubscribedServiceServiceToContactResult']:
-        """
-        User.
-        """
+    def service_to_contacts(self) -> Optional[Sequence['outputs.GetSubscribedServiceServiceToContactResult']]:
         return pulumi.get(self, "service_to_contacts")
 
     @property
     @pulumi.getter(name="serviceToCustomers")
-    def service_to_customers(self) -> Sequence['outputs.GetSubscribedServiceServiceToCustomerResult']:
-        """
-        Business partner.
-        """
+    def service_to_customers(self) -> Optional[Sequence['outputs.GetSubscribedServiceServiceToCustomerResult']]:
         return pulumi.get(self, "service_to_customers")
 
     @property
     @pulumi.getter(name="soldToContacts")
-    def sold_to_contacts(self) -> Sequence['outputs.GetSubscribedServiceSoldToContactResult']:
-        """
-        User.
-        """
+    def sold_to_contacts(self) -> Optional[Sequence['outputs.GetSubscribedServiceSoldToContactResult']]:
         return pulumi.get(self, "sold_to_contacts")
 
     @property
     @pulumi.getter(name="soldToCustomers")
-    def sold_to_customers(self) -> Sequence['outputs.GetSubscribedServiceSoldToCustomerResult']:
-        """
-        Business partner.
-        """
+    def sold_to_customers(self) -> Optional[Sequence['outputs.GetSubscribedServiceSoldToCustomerResult']]:
         return pulumi.get(self, "sold_to_customers")
 
     @property
     @pulumi.getter(name="startDateType")
-    def start_date_type(self) -> str:
-        """
-        Subscribed service start date type
-        """
+    def start_date_type(self) -> Optional[str]:
         return pulumi.get(self, "start_date_type")
 
     @property
     @pulumi.getter
-    def status(self) -> str:
-        """
-        Subscribed service status
-        """
+    def status(self) -> Optional[str]:
         return pulumi.get(self, "status")
 
     @property
     @pulumi.getter(name="subscribedServiceId")
     def subscribed_service_id(self) -> str:
-        """
-        SPM internal Subscribed Service ID
-        """
         return pulumi.get(self, "subscribed_service_id")
 
     @property
     @pulumi.getter(name="subscriptionId")
-    def subscription_id(self) -> str:
-        """
-        Subscription ID associated to the subscribed service
-        """
+    def subscription_id(self) -> Optional[str]:
         return pulumi.get(self, "subscription_id")
 
     @property
     @pulumi.getter(name="subscriptionSource")
-    def subscription_source(self) -> str:
-        """
-        Subscribed service source
-        """
+    def subscription_source(self) -> Optional[str]:
         return pulumi.get(self, "subscription_source")
 
     @property
     @pulumi.getter(name="systemArrInLc")
-    def system_arr_in_lc(self) -> str:
-        """
-        Subscribed service System ARR
-        """
+    def system_arr_in_lc(self) -> Optional[str]:
         return pulumi.get(self, "system_arr_in_lc")
 
     @property
     @pulumi.getter(name="systemArrInSc")
-    def system_arr_in_sc(self) -> str:
-        """
-        Subscribed service System ARR in Standard Currency
-        """
+    def system_arr_in_sc(self) -> Optional[str]:
         return pulumi.get(self, "system_arr_in_sc")
 
     @property
     @pulumi.getter(name="systemAtrArrInLc")
-    def system_atr_arr_in_lc(self) -> str:
-        """
-        Subscribed service System ATR-ARR
-        """
+    def system_atr_arr_in_lc(self) -> Optional[str]:
         return pulumi.get(self, "system_atr_arr_in_lc")
 
     @property
     @pulumi.getter(name="systemAtrArrInSc")
-    def system_atr_arr_in_sc(self) -> str:
-        """
-        Subscribed service System ATR-ARR in Standard Currency
-        """
+    def system_atr_arr_in_sc(self) -> Optional[str]:
         return pulumi.get(self, "system_atr_arr_in_sc")
 
     @property
     @pulumi.getter(name="termValue")
-    def term_value(self) -> str:
-        """
-        Term value in Months
-        """
+    def term_value(self) -> Optional[str]:
         return pulumi.get(self, "term_value")
 
     @property
     @pulumi.getter(name="termValueUom")
-    def term_value_uom(self) -> str:
-        """
-        Term value UOM
-        """
+    def term_value_uom(self) -> Optional[str]:
         return pulumi.get(self, "term_value_uom")
 
     @property
     @pulumi.getter(name="timeAgreementEnd")
-    def time_agreement_end(self) -> str:
-        """
-        Subscribed service agrrement end date
-        """
+    def time_agreement_end(self) -> Optional[str]:
         return pulumi.get(self, "time_agreement_end")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        Subscribed service creation date
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeCustomerConfig")
-    def time_customer_config(self) -> str:
-        """
-        Subscribed service customer config date
-        """
+    def time_customer_config(self) -> Optional[str]:
         return pulumi.get(self, "time_customer_config")
 
     @property
     @pulumi.getter(name="timeEnd")
-    def time_end(self) -> str:
-        """
-        Subscribed service end date
-        """
+    def time_end(self) -> Optional[str]:
         return pulumi.get(self, "time_end")
 
     @property
     @pulumi.getter(name="timeMajorsetEnd")
-    def time_majorset_end(self) -> str:
-        """
-        Subscribed service Major Set End date
-        """
+    def time_majorset_end(self) -> Optional[str]:
         return pulumi.get(self, "time_majorset_end")
 
     @property
     @pulumi.getter(name="timeMajorsetStart")
-    def time_majorset_start(self) -> str:
-        """
-        Subscribed service Major Set Start date
-        """
+    def time_majorset_start(self) -> Optional[str]:
         return pulumi.get(self, "time_majorset_start")
 
     @property
     @pulumi.getter(name="timePaymentExpiry")
-    def time_payment_expiry(self) -> str:
-        """
-        Subscribed service payment expiry date
-        """
+    def time_payment_expiry(self) -> Optional[str]:
         return pulumi.get(self, "time_payment_expiry")
 
     @property
     @pulumi.getter(name="timeProvisioned")
-    def time_provisioned(self) -> str:
-        """
-        Subscribed service provisioning date
-        """
+    def time_provisioned(self) -> Optional[str]:
         return pulumi.get(self, "time_provisioned")
 
     @property
     @pulumi.getter(name="timeServiceConfigurationEmailSent")
-    def time_service_configuration_email_sent(self) -> str:
-        """
-        Subscribed service service configuration email sent date
-        """
+    def time_service_configuration_email_sent(self) -> Optional[str]:
         return pulumi.get(self, "time_service_configuration_email_sent")
 
     @property
     @pulumi.getter(name="timeStart")
-    def time_start(self) -> str:
-        """
-        Subscribed service start date
-        """
+    def time_start(self) -> Optional[str]:
         return pulumi.get(self, "time_start")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        Subscribed service last update date
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
     @property
     @pulumi.getter(name="timeWelcomeEmailSent")
-    def time_welcome_email_sent(self) -> str:
-        """
-        Subscribed service welcome email sent date
-        """
+    def time_welcome_email_sent(self) -> Optional[str]:
         return pulumi.get(self, "time_welcome_email_sent")
 
     @property
     @pulumi.getter(name="totalValue")
-    def total_value(self) -> str:
-        """
-        Subscribed service total value
-        """
+    def total_value(self) -> Optional[str]:
         return pulumi.get(self, "total_value")
 
     @property
     @pulumi.getter(name="transactionExtensionId")
-    def transaction_extension_id(self) -> str:
-        """
-        Subscribed service Transaction Extension Id
-        """
+    def transaction_extension_id(self) -> Optional[str]:
         return pulumi.get(self, "transaction_extension_id")
 
     @property
     @pulumi.getter
-    def type(self) -> str:
-        """
-        Subscribed Service line type
-        """
+    def type(self) -> Optional[str]:
         return pulumi.get(self, "type")
 
     @property
     @pulumi.getter(name="updatedBy")
-    def updated_by(self) -> str:
-        """
-        User that updated the subscribed service
-        """
+    def updated_by(self) -> Optional[str]:
         return pulumi.get(self, "updated_by")
 
     @property
     @pulumi.getter(name="usedAmount")
-    def used_amount(self) -> str:
-        """
-        Subscribed service used amount
-        """
+    def used_amount(self) -> Optional[str]:
         return pulumi.get(self, "used_amount")
 
 
@@ -1390,23 +1057,7 @@ def get_subscribed_service(fields: Optional[Sequence[str]] = None,
                            subscribed_service_id: Optional[str] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetSubscribedServiceResult:
     """
-    This data source provides details about a specific Subscribed Service resource in Oracle Cloud Infrastructure Onesubscription service.
-
-    This API returns the subscribed service details corresponding to the id provided
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_subscribed_service = oci.OneSubsription.get_subscribed_service(subscribed_service_id=oci_onesubscription_subscribed_service["test_subscribed_service"]["id"],
-        fields=var["subscribed_service_fields"])
-    ```
-
-
-    :param Sequence[str] fields: Partial response refers to an optimization technique offered by the RESTful web APIs to return only the information  (fields) required by the client. In this mechanism, the client sends the required field names as the query parameters for an API to the server, and the server trims down the default response content by removing the fields that are not required by the client. The parameter used to control what fields to return should be a query string parameter called "fields" of type array, and usecollectionFormat
-    :param str subscribed_service_id: The Subscribed Service Id
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['fields'] = fields
@@ -1535,22 +1186,6 @@ def get_subscribed_service_output(fields: Optional[pulumi.Input[Optional[Sequenc
                                   subscribed_service_id: Optional[pulumi.Input[str]] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSubscribedServiceResult]:
     """
-    This data source provides details about a specific Subscribed Service resource in Oracle Cloud Infrastructure Onesubscription service.
-
-    This API returns the subscribed service details corresponding to the id provided
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_subscribed_service = oci.OneSubsription.get_subscribed_service(subscribed_service_id=oci_onesubscription_subscribed_service["test_subscribed_service"]["id"],
-        fields=var["subscribed_service_fields"])
-    ```
-
-
-    :param Sequence[str] fields: Partial response refers to an optimization technique offered by the RESTful web APIs to return only the information  (fields) required by the client. In this mechanism, the client sends the required field names as the query parameters for an API to the server, and the server trims down the default response content by removing the fields that are not required by the client. The parameter used to control what fields to return should be a query string parameter called "fields" of type array, and usecollectionFormat
-    :param str subscribed_service_id: The Subscribed Service Id
+    Use this data source to access information about an existing resource.
     """
     ...

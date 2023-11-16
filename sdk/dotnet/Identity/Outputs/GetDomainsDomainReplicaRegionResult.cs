@@ -16,23 +16,23 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// A REPLICATION_ENABLED region, e.g. us-ashburn-1. See [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm) for the full list of supported region names.
         /// </summary>
-        public readonly string Region;
+        public readonly string? Region;
         /// <summary>
         /// A filter to only return resources that match the given lifecycle state.  The state value is case-insensitive.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// The region agnostic domain URL
         /// </summary>
-        public readonly string Url;
+        public readonly string? Url;
 
         [OutputConstructor]
         private GetDomainsDomainReplicaRegionResult(
-            string region,
+            string? region,
 
-            string state,
+            string? state,
 
-            string url)
+            string? url)
         {
             Region = region;
             State = state;

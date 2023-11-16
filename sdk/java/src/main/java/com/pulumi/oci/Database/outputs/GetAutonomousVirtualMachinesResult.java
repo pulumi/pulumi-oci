@@ -18,7 +18,7 @@ public final class GetAutonomousVirtualMachinesResult {
      * @return The list of autonomous_virtual_machines.
      * 
      */
-    private List<GetAutonomousVirtualMachinesAutonomousVirtualMachine> autonomousVirtualMachines;
+    private @Nullable List<GetAutonomousVirtualMachinesAutonomousVirtualMachine> autonomousVirtualMachines;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous VM Cluster associated with the Autonomous Virtual Machine.
      * 
@@ -34,7 +34,7 @@ public final class GetAutonomousVirtualMachinesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The current state of the Autonomous Virtual Machine.
      * 
@@ -47,7 +47,7 @@ public final class GetAutonomousVirtualMachinesResult {
      * 
      */
     public List<GetAutonomousVirtualMachinesAutonomousVirtualMachine> autonomousVirtualMachines() {
-        return this.autonomousVirtualMachines;
+        return this.autonomousVirtualMachines == null ? List.of() : this.autonomousVirtualMachines;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous VM Cluster associated with the Autonomous Virtual Machine.
@@ -70,8 +70,8 @@ public final class GetAutonomousVirtualMachinesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The current state of the Autonomous Virtual Machine.
@@ -90,11 +90,11 @@ public final class GetAutonomousVirtualMachinesResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetAutonomousVirtualMachinesAutonomousVirtualMachine> autonomousVirtualMachines;
+        private @Nullable List<GetAutonomousVirtualMachinesAutonomousVirtualMachine> autonomousVirtualMachines;
         private String autonomousVmClusterId;
         private String compartmentId;
         private @Nullable List<GetAutonomousVirtualMachinesFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String state;
         public Builder() {}
         public Builder(GetAutonomousVirtualMachinesResult defaults) {
@@ -108,8 +108,8 @@ public final class GetAutonomousVirtualMachinesResult {
         }
 
         @CustomType.Setter
-        public Builder autonomousVirtualMachines(List<GetAutonomousVirtualMachinesAutonomousVirtualMachine> autonomousVirtualMachines) {
-            this.autonomousVirtualMachines = Objects.requireNonNull(autonomousVirtualMachines);
+        public Builder autonomousVirtualMachines(@Nullable List<GetAutonomousVirtualMachinesAutonomousVirtualMachine> autonomousVirtualMachines) {
+            this.autonomousVirtualMachines = autonomousVirtualMachines;
             return this;
         }
         public Builder autonomousVirtualMachines(GetAutonomousVirtualMachinesAutonomousVirtualMachine... autonomousVirtualMachines) {
@@ -134,8 +134,8 @@ public final class GetAutonomousVirtualMachinesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

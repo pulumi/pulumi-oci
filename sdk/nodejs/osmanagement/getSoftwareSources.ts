@@ -70,11 +70,11 @@ export interface GetSoftwareSourcesResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The list of software_sources.
      */
-    readonly softwareSources: outputs.OsManagement.GetSoftwareSourcesSoftwareSource[];
+    readonly softwareSources?: outputs.OsManagement.GetSoftwareSourcesSoftwareSource[];
     /**
      * The current state of the Software Source.
      */

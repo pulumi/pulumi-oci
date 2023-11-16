@@ -43,7 +43,7 @@ class GetTopUtilizedProductLicensesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -56,10 +56,7 @@ class GetTopUtilizedProductLicensesResult:
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetTopUtilizedProductLicensesItemResult']:
-        """
-        Collection of top utilized product licenses.
-        """
+    def items(self) -> Optional[Sequence['outputs.GetTopUtilizedProductLicensesItemResult']]:
         return pulumi.get(self, "items")
 
 
@@ -79,23 +76,7 @@ def get_top_utilized_product_licenses(compartment_id: Optional[str] = None,
                                       is_compartment_id_in_subtree: Optional[bool] = None,
                                       opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetTopUtilizedProductLicensesResult:
     """
-    This data source provides the list of Top Utilized Product Licenses in Oracle Cloud Infrastructure License Manager service.
-
-    Retrieves the top utilized product licenses for a given compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_top_utilized_product_licenses = oci.LicenseManager.get_top_utilized_product_licenses(compartment_id=var["compartment_id"],
-        is_compartment_id_in_subtree=var["top_utilized_product_license_is_compartment_id_in_subtree"])
-    ```
-
-
-    :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) used for the license record, product license, and configuration.
-    :param bool is_compartment_id_in_subtree: Indicates if the given compartment is the root compartment.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -115,22 +96,6 @@ def get_top_utilized_product_licenses_output(compartment_id: Optional[pulumi.Inp
                                              is_compartment_id_in_subtree: Optional[pulumi.Input[Optional[bool]]] = None,
                                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetTopUtilizedProductLicensesResult]:
     """
-    This data source provides the list of Top Utilized Product Licenses in Oracle Cloud Infrastructure License Manager service.
-
-    Retrieves the top utilized product licenses for a given compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_top_utilized_product_licenses = oci.LicenseManager.get_top_utilized_product_licenses(compartment_id=var["compartment_id"],
-        is_compartment_id_in_subtree=var["top_utilized_product_license_is_compartment_id_in_subtree"])
-    ```
-
-
-    :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) used for the license record, product license, and configuration.
-    :param bool is_compartment_id_in_subtree: Indicates if the given compartment is the root compartment.
+    Use this data source to access information about an existing resource.
     """
     ...

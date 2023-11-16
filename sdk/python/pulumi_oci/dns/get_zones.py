@@ -73,9 +73,6 @@ class GetZonesResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The OCID of the compartment containing the zone.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
@@ -85,7 +82,7 @@ class GetZonesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -94,9 +91,6 @@ class GetZonesResult:
     @property
     @pulumi.getter
     def name(self) -> Optional[str]:
-        """
-        The name of the zone.
-        """
         return pulumi.get(self, "name")
 
     @property
@@ -107,9 +101,6 @@ class GetZonesResult:
     @property
     @pulumi.getter
     def scope(self) -> Optional[str]:
-        """
-        The scope of the zone.
-        """
         return pulumi.get(self, "scope")
 
     @property
@@ -125,9 +116,6 @@ class GetZonesResult:
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the zone resource.
-        """
         return pulumi.get(self, "state")
 
     @property
@@ -143,33 +131,21 @@ class GetZonesResult:
     @property
     @pulumi.getter(name="tsigKeyId")
     def tsig_key_id(self) -> Optional[str]:
-        """
-        The OCID of the TSIG key.
-        """
         return pulumi.get(self, "tsig_key_id")
 
     @property
     @pulumi.getter(name="viewId")
     def view_id(self) -> Optional[str]:
-        """
-        The OCID of the private view containing the zone. This value will be null for zones in the global DNS, which are publicly resolvable and not part of a private view.
-        """
         return pulumi.get(self, "view_id")
 
     @property
     @pulumi.getter(name="zoneType")
     def zone_type(self) -> Optional[str]:
-        """
-        The type of the zone. Must be either `PRIMARY` or `SECONDARY`. `SECONDARY` is only supported for GLOBAL zones.
-        """
         return pulumi.get(self, "zone_type")
 
     @property
     @pulumi.getter
-    def zones(self) -> Sequence['outputs.GetZonesZoneResult']:
-        """
-        The list of zones.
-        """
+    def zones(self) -> Optional[Sequence['outputs.GetZonesZoneResult']]:
         return pulumi.get(self, "zones")
 
 
@@ -211,45 +187,7 @@ def get_zones(compartment_id: Optional[str] = None,
               zone_type: Optional[str] = None,
               opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetZonesResult:
     """
-    This data source provides the list of Zones in Oracle Cloud Infrastructure DNS service.
-
-    Gets a list of all zones in the specified compartment. The collection
-    can be filtered by name, time created, scope, associated view, and zone type.
-    Additionally, for Private DNS, the `scope` query parameter is required when
-    listing private zones.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_zones = oci.Dns.get_zones(compartment_id=var["compartment_id"],
-        name=var["zone_name"],
-        name_contains=var["zone_name_contains"],
-        scope=var["zone_scope"],
-        state=var["zone_state"],
-        time_created_greater_than_or_equal_to=var["zone_time_created_greater_than_or_equal_to"],
-        time_created_less_than=var["zone_time_created_less_than"],
-        tsig_key_id=oci_dns_tsig_key["test_tsig_key"]["id"],
-        view_id=oci_dns_view["test_view"]["id"],
-        zone_type=var["zone_zone_type"])
-    ```
-
-
-    :param str compartment_id: The OCID of the compartment the resource belongs to.
-    :param str name: A case-sensitive filter for zone names. Will match any zone with a name that equals the provided value.
-    :param str name_contains: Search by zone name. Will match any zone whose name (case-insensitive) contains the provided value.
-    :param str scope: Specifies to operate only on resources that have a matching DNS scope. This value will be null 
-           for zones in the global DNS and `PRIVATE` when listing private zones.
-    :param str sort_by: The field by which to sort zones. Allowed values are: name|zoneType|timeCreated
-    :param str sort_order: The order to sort the resources. Allowed values are: ASC|DESC
-    :param str state: The state of a resource.
-    :param str time_created_greater_than_or_equal_to: An [RFC 3339](https://www.ietf.org/rfc/rfc3339.txt) timestamp that states all returned resources were created on or after the indicated time.
-    :param str time_created_less_than: An [RFC 3339](https://www.ietf.org/rfc/rfc3339.txt) timestamp that states all returned resources were created before the indicated time.
-    :param str tsig_key_id: Search for zones that are associated with a TSIG key.
-    :param str view_id: The OCID of the view the resource is associated with.
-    :param str zone_type: Search by zone type, `PRIMARY` or `SECONDARY`. Will match any zone whose type equals the provided value.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -302,44 +240,6 @@ def get_zones_output(compartment_id: Optional[pulumi.Input[str]] = None,
                      zone_type: Optional[pulumi.Input[Optional[str]]] = None,
                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetZonesResult]:
     """
-    This data source provides the list of Zones in Oracle Cloud Infrastructure DNS service.
-
-    Gets a list of all zones in the specified compartment. The collection
-    can be filtered by name, time created, scope, associated view, and zone type.
-    Additionally, for Private DNS, the `scope` query parameter is required when
-    listing private zones.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_zones = oci.Dns.get_zones(compartment_id=var["compartment_id"],
-        name=var["zone_name"],
-        name_contains=var["zone_name_contains"],
-        scope=var["zone_scope"],
-        state=var["zone_state"],
-        time_created_greater_than_or_equal_to=var["zone_time_created_greater_than_or_equal_to"],
-        time_created_less_than=var["zone_time_created_less_than"],
-        tsig_key_id=oci_dns_tsig_key["test_tsig_key"]["id"],
-        view_id=oci_dns_view["test_view"]["id"],
-        zone_type=var["zone_zone_type"])
-    ```
-
-
-    :param str compartment_id: The OCID of the compartment the resource belongs to.
-    :param str name: A case-sensitive filter for zone names. Will match any zone with a name that equals the provided value.
-    :param str name_contains: Search by zone name. Will match any zone whose name (case-insensitive) contains the provided value.
-    :param str scope: Specifies to operate only on resources that have a matching DNS scope. This value will be null 
-           for zones in the global DNS and `PRIVATE` when listing private zones.
-    :param str sort_by: The field by which to sort zones. Allowed values are: name|zoneType|timeCreated
-    :param str sort_order: The order to sort the resources. Allowed values are: ASC|DESC
-    :param str state: The state of a resource.
-    :param str time_created_greater_than_or_equal_to: An [RFC 3339](https://www.ietf.org/rfc/rfc3339.txt) timestamp that states all returned resources were created on or after the indicated time.
-    :param str time_created_less_than: An [RFC 3339](https://www.ietf.org/rfc/rfc3339.txt) timestamp that states all returned resources were created before the indicated time.
-    :param str tsig_key_id: Search for zones that are associated with a TSIG key.
-    :param str view_id: The OCID of the view the resource is associated with.
-    :param str zone_type: Search by zone type, `PRIMARY` or `SECONDARY`. Will match any zone whose type equals the provided value.
+    Use this data source to access information about an existing resource.
     """
     ...

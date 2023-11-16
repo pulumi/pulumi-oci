@@ -19,13 +19,13 @@ public final class GetManagedDatabaseCursorCacheStatementsResult {
      * @return The list of cursor_cache_statement_collection.
      * 
      */
-    private List<GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollection> cursorCacheStatementCollections;
+    private @Nullable List<GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollection> cursorCacheStatementCollections;
     private @Nullable List<GetManagedDatabaseCursorCacheStatementsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private @Nullable Integer limit;
     private String managedDatabaseId;
     /**
@@ -40,7 +40,7 @@ public final class GetManagedDatabaseCursorCacheStatementsResult {
      * 
      */
     public List<GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollection> cursorCacheStatementCollections() {
-        return this.cursorCacheStatementCollections;
+        return this.cursorCacheStatementCollections == null ? List.of() : this.cursorCacheStatementCollections;
     }
     public List<GetManagedDatabaseCursorCacheStatementsFilter> filters() {
         return this.filters == null ? List.of() : this.filters;
@@ -49,8 +49,8 @@ public final class GetManagedDatabaseCursorCacheStatementsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public Optional<Integer> limit() {
         return Optional.ofNullable(this.limit);
@@ -75,9 +75,9 @@ public final class GetManagedDatabaseCursorCacheStatementsResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollection> cursorCacheStatementCollections;
+        private @Nullable List<GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollection> cursorCacheStatementCollections;
         private @Nullable List<GetManagedDatabaseCursorCacheStatementsFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable Integer limit;
         private String managedDatabaseId;
         private @Nullable String sqlText;
@@ -93,8 +93,8 @@ public final class GetManagedDatabaseCursorCacheStatementsResult {
         }
 
         @CustomType.Setter
-        public Builder cursorCacheStatementCollections(List<GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollection> cursorCacheStatementCollections) {
-            this.cursorCacheStatementCollections = Objects.requireNonNull(cursorCacheStatementCollections);
+        public Builder cursorCacheStatementCollections(@Nullable List<GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollection> cursorCacheStatementCollections) {
+            this.cursorCacheStatementCollections = cursorCacheStatementCollections;
             return this;
         }
         public Builder cursorCacheStatementCollections(GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollection... cursorCacheStatementCollections) {
@@ -109,8 +109,8 @@ public final class GetManagedDatabaseCursorCacheStatementsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

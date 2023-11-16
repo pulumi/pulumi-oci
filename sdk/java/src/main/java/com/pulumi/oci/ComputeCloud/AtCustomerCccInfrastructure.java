@@ -17,6 +17,7 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -79,14 +80,14 @@ public class AtCustomerCccInfrastructure extends com.pulumi.resources.CustomReso
      * 
      */
     @Export(name="cccUpgradeScheduleId", refs={String.class}, tree="[0]")
-    private Output<String> cccUpgradeScheduleId;
+    private Output</* @Nullable */ String> cccUpgradeScheduleId;
 
     /**
      * @return (Updatable) Schedule used for upgrades. If no schedule is associated with the infrastructure, it can be upgraded at any time.
      * 
      */
-    public Output<String> cccUpgradeScheduleId() {
-        return this.cccUpgradeScheduleId;
+    public Output<Optional<String>> cccUpgradeScheduleId() {
+        return Codegen.optional(this.cccUpgradeScheduleId);
     }
     /**
      * (Updatable) The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the infrastructure.
@@ -107,56 +108,56 @@ public class AtCustomerCccInfrastructure extends com.pulumi.resources.CustomReso
      * 
      */
     @Export(name="connectionDetails", refs={String.class}, tree="[0]")
-    private Output<String> connectionDetails;
+    private Output</* @Nullable */ String> connectionDetails;
 
     /**
      * @return (Updatable) A message describing the current connection state in more detail.
      * 
      */
-    public Output<String> connectionDetails() {
-        return this.connectionDetails;
+    public Output<Optional<String>> connectionDetails() {
+        return Codegen.optional(this.connectionDetails);
     }
     /**
      * (Updatable) The current connection state of the Compute Cloud@Customer infrastructure. This value will default to REJECT if the value is not provided. The only valid value at creation time is REJECT.
      * 
      */
     @Export(name="connectionState", refs={String.class}, tree="[0]")
-    private Output<String> connectionState;
+    private Output</* @Nullable */ String> connectionState;
 
     /**
      * @return (Updatable) The current connection state of the Compute Cloud@Customer infrastructure. This value will default to REJECT if the value is not provided. The only valid value at creation time is REJECT.
      * 
      */
-    public Output<String> connectionState() {
-        return this.connectionState;
+    public Output<Optional<String>> connectionState() {
+        return Codegen.optional(this.connectionState);
     }
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * (Updatable) A mutable client-meaningful text description of the Compute Cloud@Customer infrastructure. Avoid entering confidential information.
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
-    private Output<String> description;
+    private Output</* @Nullable */ String> description;
 
     /**
      * @return (Updatable) A mutable client-meaningful text description of the Compute Cloud@Customer infrastructure. Avoid entering confidential information.
      * 
      */
-    public Output<String> description() {
-        return this.description;
+    public Output<Optional<String>> description() {
+        return Codegen.optional(this.description);
     }
     /**
      * (Updatable) The name that will be used to display the Compute Cloud@Customer infrastructure in the Oracle Cloud Infrastructure console. Does not have to be unique and can be changed. Avoid entering confidential information.
@@ -177,112 +178,112 @@ public class AtCustomerCccInfrastructure extends com.pulumi.resources.CustomReso
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * Inventory for a Compute Cloud@Customer infrastructure. This information cannot be updated and is from the infrastructure. The information will only be available after the connectionState is transitioned to CONNECTED.
      * 
      */
     @Export(name="infrastructureInventories", refs={List.class,AtCustomerCccInfrastructureInfrastructureInventory.class}, tree="[0,1]")
-    private Output<List<AtCustomerCccInfrastructureInfrastructureInventory>> infrastructureInventories;
+    private Output</* @Nullable */ List<AtCustomerCccInfrastructureInfrastructureInventory>> infrastructureInventories;
 
     /**
      * @return Inventory for a Compute Cloud@Customer infrastructure. This information cannot be updated and is from the infrastructure. The information will only be available after the connectionState is transitioned to CONNECTED.
      * 
      */
-    public Output<List<AtCustomerCccInfrastructureInfrastructureInventory>> infrastructureInventories() {
-        return this.infrastructureInventories;
+    public Output<Optional<List<AtCustomerCccInfrastructureInfrastructureInventory>>> infrastructureInventories() {
+        return Codegen.optional(this.infrastructureInventories);
     }
     /**
      * Configuration information for the Compute Cloud@Customer infrastructure. This  network configuration information cannot be updated and is retrieved from the data center. The information will only be available after the connectionState is transitioned to CONNECTED.
      * 
      */
     @Export(name="infrastructureNetworkConfigurations", refs={List.class,AtCustomerCccInfrastructureInfrastructureNetworkConfiguration.class}, tree="[0,1]")
-    private Output<List<AtCustomerCccInfrastructureInfrastructureNetworkConfiguration>> infrastructureNetworkConfigurations;
+    private Output</* @Nullable */ List<AtCustomerCccInfrastructureInfrastructureNetworkConfiguration>> infrastructureNetworkConfigurations;
 
     /**
      * @return Configuration information for the Compute Cloud@Customer infrastructure. This  network configuration information cannot be updated and is retrieved from the data center. The information will only be available after the connectionState is transitioned to CONNECTED.
      * 
      */
-    public Output<List<AtCustomerCccInfrastructureInfrastructureNetworkConfiguration>> infrastructureNetworkConfigurations() {
-        return this.infrastructureNetworkConfigurations;
+    public Output<Optional<List<AtCustomerCccInfrastructureInfrastructureNetworkConfiguration>>> infrastructureNetworkConfigurations() {
+        return Codegen.optional(this.infrastructureNetworkConfigurations);
     }
     /**
      * A message describing the current lifecycle state in more detail. For example, this can be used to provide actionable information for a resource that is in a Failed state.
      * 
      */
     @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
-    private Output<String> lifecycleDetails;
+    private Output</* @Nullable */ String> lifecycleDetails;
 
     /**
      * @return A message describing the current lifecycle state in more detail. For example, this can be used to provide actionable information for a resource that is in a Failed state.
      * 
      */
-    public Output<String> lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Output<Optional<String>> lifecycleDetails() {
+        return Codegen.optional(this.lifecycleDetails);
     }
     /**
      * Fingerprint of a Compute Cloud@Customer infrastructure in a data center generated during the initial connection to this resource. The fingerprint should be verified by the administrator when changing the connectionState from REQUEST to READY.
      * 
      */
     @Export(name="provisioningFingerprint", refs={String.class}, tree="[0]")
-    private Output<String> provisioningFingerprint;
+    private Output</* @Nullable */ String> provisioningFingerprint;
 
     /**
      * @return Fingerprint of a Compute Cloud@Customer infrastructure in a data center generated during the initial connection to this resource. The fingerprint should be verified by the administrator when changing the connectionState from REQUEST to READY.
      * 
      */
-    public Output<String> provisioningFingerprint() {
-        return this.provisioningFingerprint;
+    public Output<Optional<String>> provisioningFingerprint() {
+        return Codegen.optional(this.provisioningFingerprint);
     }
     /**
      * Code that is required for service personnel to connect a Compute Cloud@Customer infrastructure in a data center to this resource. This code will only be available when the connectionState is REJECT (usually at create time of the Compute Cloud@Customer infrastructure).
      * 
      */
     @Export(name="provisioningPin", refs={String.class}, tree="[0]")
-    private Output<String> provisioningPin;
+    private Output</* @Nullable */ String> provisioningPin;
 
     /**
      * @return Code that is required for service personnel to connect a Compute Cloud@Customer infrastructure in a data center to this resource. This code will only be available when the connectionState is REJECT (usually at create time of the Compute Cloud@Customer infrastructure).
      * 
      */
-    public Output<String> provisioningPin() {
-        return this.provisioningPin;
+    public Output<Optional<String>> provisioningPin() {
+        return Codegen.optional(this.provisioningPin);
     }
     /**
      * The Compute Cloud@Customer infrastructure short name. This cannot be changed once created. The short name is used to refer to the infrastructure in several contexts and is unique.
      * 
      */
     @Export(name="shortName", refs={String.class}, tree="[0]")
-    private Output<String> shortName;
+    private Output</* @Nullable */ String> shortName;
 
     /**
      * @return The Compute Cloud@Customer infrastructure short name. This cannot be changed once created. The short name is used to refer to the infrastructure in several contexts and is unique.
      * 
      */
-    public Output<String> shortName() {
-        return this.shortName;
+    public Output<Optional<String>> shortName() {
+        return Codegen.optional(this.shortName);
     }
     /**
      * The current state of the Compute Cloud@Customer infrastructure.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The current state of the Compute Cloud@Customer infrastructure.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * (Updatable) Identifier for network subnet that will be used to communicate with Compute Cloud@Customer infrastructure.
@@ -309,56 +310,56 @@ public class AtCustomerCccInfrastructure extends com.pulumi.resources.CustomReso
      * 
      */
     @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> systemTags;
+    private Output</* @Nullable */ Map<String,Object>> systemTags;
 
     /**
      * @return System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    public Output<Map<String,Object>> systemTags() {
-        return this.systemTags;
+    public Output<Optional<Map<String,Object>>> systemTags() {
+        return Codegen.optional(this.systemTags);
     }
     /**
      * Compute Cloud@Customer infrastructure creation date and time, using an RFC3339 formatted datetime string.
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return Compute Cloud@Customer infrastructure creation date and time, using an RFC3339 formatted datetime string.
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * Compute Cloud@Customer infrastructure updated date and time, using an RFC3339 formatted datetime string.
      * 
      */
     @Export(name="timeUpdated", refs={String.class}, tree="[0]")
-    private Output<String> timeUpdated;
+    private Output</* @Nullable */ String> timeUpdated;
 
     /**
      * @return Compute Cloud@Customer infrastructure updated date and time, using an RFC3339 formatted datetime string.
      * 
      */
-    public Output<String> timeUpdated() {
-        return this.timeUpdated;
+    public Output<Optional<String>> timeUpdated() {
+        return Codegen.optional(this.timeUpdated);
     }
     /**
      * Upgrade information that relates to a Compute Cloud@Customer infrastructure. This information cannot be updated.
      * 
      */
     @Export(name="upgradeInformations", refs={List.class,AtCustomerCccInfrastructureUpgradeInformation.class}, tree="[0,1]")
-    private Output<List<AtCustomerCccInfrastructureUpgradeInformation>> upgradeInformations;
+    private Output</* @Nullable */ List<AtCustomerCccInfrastructureUpgradeInformation>> upgradeInformations;
 
     /**
      * @return Upgrade information that relates to a Compute Cloud@Customer infrastructure. This information cannot be updated.
      * 
      */
-    public Output<List<AtCustomerCccInfrastructureUpgradeInformation>> upgradeInformations() {
-        return this.upgradeInformations;
+    public Output<Optional<List<AtCustomerCccInfrastructureUpgradeInformation>>> upgradeInformations() {
+        return Codegen.optional(this.upgradeInformations);
     }
 
     /**

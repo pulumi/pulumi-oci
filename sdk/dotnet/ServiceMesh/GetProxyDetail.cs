@@ -75,17 +75,17 @@ namespace Pulumi.Oci.ServiceMesh
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Proxy container image version to be deployed.
         /// </summary>
-        public readonly string ProxyImage;
+        public readonly string? ProxyImage;
 
         [OutputConstructor]
         private GetProxyDetailResult(
-            string id,
+            string? id,
 
-            string proxyImage)
+            string? proxyImage)
         {
             Id = id;
             ProxyImage = proxyImage;

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific External Container Database resource in Oracle Cloud Infrastructure Database service.
@@ -60,44 +59,44 @@ type LookupExternalContainerDatabaseArgs struct {
 // A collection of values returned by getExternalContainerDatabase.
 type LookupExternalContainerDatabaseResult struct {
 	// The character set of the external database.
-	CharacterSet string `pulumi:"characterSet"`
+	CharacterSet *string `pulumi:"characterSet"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// The Oracle Database configuration
-	DatabaseConfiguration string `pulumi:"databaseConfiguration"`
+	DatabaseConfiguration *string `pulumi:"databaseConfiguration"`
 	// The Oracle Database edition.
-	DatabaseEdition string `pulumi:"databaseEdition"`
+	DatabaseEdition *string `pulumi:"databaseEdition"`
 	// The configuration of the Database Management service.
 	DatabaseManagementConfigs []GetExternalContainerDatabaseDatabaseManagementConfig `pulumi:"databaseManagementConfigs"`
 	// The Oracle Database version.
-	DatabaseVersion string `pulumi:"databaseVersion"`
+	DatabaseVersion *string `pulumi:"databaseVersion"`
 	// The Oracle Database ID, which identifies an Oracle Database located outside of Oracle Cloud.
-	DbId string `pulumi:"dbId"`
+	DbId *string `pulumi:"dbId"`
 	// The database packs licensed for the external Oracle Database.
-	DbPacks string `pulumi:"dbPacks"`
+	DbPacks *string `pulumi:"dbPacks"`
 	// The `DB_UNIQUE_NAME` of the external database.
-	DbUniqueName string `pulumi:"dbUniqueName"`
+	DbUniqueName *string `pulumi:"dbUniqueName"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The user-friendly name for the external database. The name does not have to be unique.
-	DisplayName                 string `pulumi:"displayName"`
-	ExternalContainerDatabaseId string `pulumi:"externalContainerDatabaseId"`
+	DisplayName                 *string `pulumi:"displayName"`
+	ExternalContainerDatabaseId string  `pulumi:"externalContainerDatabaseId"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure external database resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Additional information about the current lifecycle state.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// The national character of the external database.
-	NcharacterSet string `pulumi:"ncharacterSet"`
+	NcharacterSet *string `pulumi:"ncharacterSet"`
 	// The configuration of Stack Monitoring for the external database.
 	StackMonitoringConfigs []GetExternalContainerDatabaseStackMonitoringConfig `pulumi:"stackMonitoringConfigs"`
 	// The current state of the Oracle Cloud Infrastructure external database resource.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The date and time the database was created.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time zone of the external database. It is a time zone offset (a character type in the format '[+|-]TZH:TZM') or a time zone region name, depending on how the time zone value was specified when the database was created / last altered.
-	TimeZone string `pulumi:"timeZone"`
+	TimeZone *string `pulumi:"timeZone"`
 }
 
 func LookupExternalContainerDatabaseOutput(ctx *pulumi.Context, args LookupExternalContainerDatabaseOutputArgs, opts ...pulumi.InvokeOption) LookupExternalContainerDatabaseResultOutput {
@@ -138,30 +137,24 @@ func (o LookupExternalContainerDatabaseResultOutput) ToLookupExternalContainerDa
 	return o
 }
 
-func (o LookupExternalContainerDatabaseResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupExternalContainerDatabaseResult] {
-	return pulumix.Output[LookupExternalContainerDatabaseResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The character set of the external database.
-func (o LookupExternalContainerDatabaseResultOutput) CharacterSet() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupExternalContainerDatabaseResult) string { return v.CharacterSet }).(pulumi.StringOutput)
+func (o LookupExternalContainerDatabaseResultOutput) CharacterSet() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupExternalContainerDatabaseResult) *string { return v.CharacterSet }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-func (o LookupExternalContainerDatabaseResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupExternalContainerDatabaseResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupExternalContainerDatabaseResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupExternalContainerDatabaseResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // The Oracle Database configuration
-func (o LookupExternalContainerDatabaseResultOutput) DatabaseConfiguration() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupExternalContainerDatabaseResult) string { return v.DatabaseConfiguration }).(pulumi.StringOutput)
+func (o LookupExternalContainerDatabaseResultOutput) DatabaseConfiguration() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupExternalContainerDatabaseResult) *string { return v.DatabaseConfiguration }).(pulumi.StringPtrOutput)
 }
 
 // The Oracle Database edition.
-func (o LookupExternalContainerDatabaseResultOutput) DatabaseEdition() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupExternalContainerDatabaseResult) string { return v.DatabaseEdition }).(pulumi.StringOutput)
+func (o LookupExternalContainerDatabaseResultOutput) DatabaseEdition() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupExternalContainerDatabaseResult) *string { return v.DatabaseEdition }).(pulumi.StringPtrOutput)
 }
 
 // The configuration of the Database Management service.
@@ -172,23 +165,23 @@ func (o LookupExternalContainerDatabaseResultOutput) DatabaseManagementConfigs()
 }
 
 // The Oracle Database version.
-func (o LookupExternalContainerDatabaseResultOutput) DatabaseVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupExternalContainerDatabaseResult) string { return v.DatabaseVersion }).(pulumi.StringOutput)
+func (o LookupExternalContainerDatabaseResultOutput) DatabaseVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupExternalContainerDatabaseResult) *string { return v.DatabaseVersion }).(pulumi.StringPtrOutput)
 }
 
 // The Oracle Database ID, which identifies an Oracle Database located outside of Oracle Cloud.
-func (o LookupExternalContainerDatabaseResultOutput) DbId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupExternalContainerDatabaseResult) string { return v.DbId }).(pulumi.StringOutput)
+func (o LookupExternalContainerDatabaseResultOutput) DbId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupExternalContainerDatabaseResult) *string { return v.DbId }).(pulumi.StringPtrOutput)
 }
 
 // The database packs licensed for the external Oracle Database.
-func (o LookupExternalContainerDatabaseResultOutput) DbPacks() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupExternalContainerDatabaseResult) string { return v.DbPacks }).(pulumi.StringOutput)
+func (o LookupExternalContainerDatabaseResultOutput) DbPacks() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupExternalContainerDatabaseResult) *string { return v.DbPacks }).(pulumi.StringPtrOutput)
 }
 
 // The `DB_UNIQUE_NAME` of the external database.
-func (o LookupExternalContainerDatabaseResultOutput) DbUniqueName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupExternalContainerDatabaseResult) string { return v.DbUniqueName }).(pulumi.StringOutput)
+func (o LookupExternalContainerDatabaseResultOutput) DbUniqueName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupExternalContainerDatabaseResult) *string { return v.DbUniqueName }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -197,8 +190,8 @@ func (o LookupExternalContainerDatabaseResultOutput) DefinedTags() pulumi.MapOut
 }
 
 // The user-friendly name for the external database. The name does not have to be unique.
-func (o LookupExternalContainerDatabaseResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupExternalContainerDatabaseResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupExternalContainerDatabaseResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupExternalContainerDatabaseResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupExternalContainerDatabaseResultOutput) ExternalContainerDatabaseId() pulumi.StringOutput {
@@ -211,18 +204,18 @@ func (o LookupExternalContainerDatabaseResultOutput) FreeformTags() pulumi.MapOu
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure external database resource.
-func (o LookupExternalContainerDatabaseResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupExternalContainerDatabaseResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupExternalContainerDatabaseResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupExternalContainerDatabaseResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Additional information about the current lifecycle state.
-func (o LookupExternalContainerDatabaseResultOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupExternalContainerDatabaseResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o LookupExternalContainerDatabaseResultOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupExternalContainerDatabaseResult) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // The national character of the external database.
-func (o LookupExternalContainerDatabaseResultOutput) NcharacterSet() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupExternalContainerDatabaseResult) string { return v.NcharacterSet }).(pulumi.StringOutput)
+func (o LookupExternalContainerDatabaseResultOutput) NcharacterSet() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupExternalContainerDatabaseResult) *string { return v.NcharacterSet }).(pulumi.StringPtrOutput)
 }
 
 // The configuration of Stack Monitoring for the external database.
@@ -233,18 +226,18 @@ func (o LookupExternalContainerDatabaseResultOutput) StackMonitoringConfigs() Ge
 }
 
 // The current state of the Oracle Cloud Infrastructure external database resource.
-func (o LookupExternalContainerDatabaseResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupExternalContainerDatabaseResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupExternalContainerDatabaseResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupExternalContainerDatabaseResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the database was created.
-func (o LookupExternalContainerDatabaseResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupExternalContainerDatabaseResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupExternalContainerDatabaseResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupExternalContainerDatabaseResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time zone of the external database. It is a time zone offset (a character type in the format '[+|-]TZH:TZM') or a time zone region name, depending on how the time zone value was specified when the database was created / last altered.
-func (o LookupExternalContainerDatabaseResultOutput) TimeZone() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupExternalContainerDatabaseResult) string { return v.TimeZone }).(pulumi.StringOutput)
+func (o LookupExternalContainerDatabaseResultOutput) TimeZone() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupExternalContainerDatabaseResult) *string { return v.TimeZone }).(pulumi.StringPtrOutput)
 }
 
 func init() {

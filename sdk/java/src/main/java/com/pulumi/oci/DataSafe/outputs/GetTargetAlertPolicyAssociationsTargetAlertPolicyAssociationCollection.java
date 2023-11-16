@@ -7,14 +7,15 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.DataSafe.outputs.GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollection {
-    private List<GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItem> items;
+    private @Nullable List<GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItem> items;
 
     private GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollection() {}
     public List<GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -26,7 +27,7 @@ public final class GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationC
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItem> items;
+        private @Nullable List<GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItem> items;
         public Builder() {}
         public Builder(GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -34,8 +35,8 @@ public final class GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationC
         }
 
         @CustomType.Setter
-        public Builder items(List<GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItem... items) {

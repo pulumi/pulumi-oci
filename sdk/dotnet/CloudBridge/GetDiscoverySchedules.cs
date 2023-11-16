@@ -180,7 +180,7 @@ namespace Pulumi.Oci.CloudBridge
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Current state of the discovery schedule.
         /// </summary>
@@ -198,7 +198,7 @@ namespace Pulumi.Oci.CloudBridge
 
             ImmutableArray<Outputs.GetDiscoverySchedulesFilterResult> filters,
 
-            string id,
+            string? id,
 
             string? state)
         {

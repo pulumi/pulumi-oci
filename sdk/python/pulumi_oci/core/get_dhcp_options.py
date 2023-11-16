@@ -49,17 +49,11 @@ class GetDhcpOptionsResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the set of DHCP options.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -69,7 +63,7 @@ class GetDhcpOptionsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -77,26 +71,17 @@ class GetDhcpOptionsResult:
 
     @property
     @pulumi.getter
-    def options(self) -> Sequence['outputs.GetDhcpOptionsOptionResult']:
-        """
-        The collection of individual DHCP options.
-        """
+    def options(self) -> Optional[Sequence['outputs.GetDhcpOptionsOptionResult']]:
         return pulumi.get(self, "options")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the set of DHCP options.
-        """
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="vcnId")
     def vcn_id(self) -> Optional[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN the set of DHCP options belongs to.
-        """
         return pulumi.get(self, "vcn_id")
 
 
@@ -122,30 +107,7 @@ def get_dhcp_options(compartment_id: Optional[str] = None,
                      vcn_id: Optional[str] = None,
                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDhcpOptionsResult:
     """
-    This data source provides the list of Dhcp Options in Oracle Cloud Infrastructure Core service.
-
-    Lists the sets of DHCP options in the specified VCN and specified compartment.
-    If the VCN ID is not provided, then the list includes the sets of DHCP options from all VCNs in the specified compartment.
-    The response includes the default set of options that automatically comes with each VCN,
-    plus any other sets you've created.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_dhcp_options = oci.Core.get_dhcp_options(compartment_id=var["compartment_id"],
-        display_name=var["dhcp_options_display_name"],
-        state=var["dhcp_options_state"],
-        vcn_id=oci_core_vcn["test_vcn"]["id"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param str display_name: A filter to return only resources that match the given display name exactly.
-    :param str state: A filter to only return resources that match the given lifecycle state. The state value is case-insensitive.
-    :param str vcn_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -174,29 +136,6 @@ def get_dhcp_options_output(compartment_id: Optional[pulumi.Input[str]] = None,
                             vcn_id: Optional[pulumi.Input[Optional[str]]] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDhcpOptionsResult]:
     """
-    This data source provides the list of Dhcp Options in Oracle Cloud Infrastructure Core service.
-
-    Lists the sets of DHCP options in the specified VCN and specified compartment.
-    If the VCN ID is not provided, then the list includes the sets of DHCP options from all VCNs in the specified compartment.
-    The response includes the default set of options that automatically comes with each VCN,
-    plus any other sets you've created.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_dhcp_options = oci.Core.get_dhcp_options(compartment_id=var["compartment_id"],
-        display_name=var["dhcp_options_display_name"],
-        state=var["dhcp_options_state"],
-        vcn_id=oci_core_vcn["test_vcn"]["id"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param str display_name: A filter to return only resources that match the given display name exactly.
-    :param str state: A filter to only return resources that match the given lifecycle state. The state value is case-insensitive.
-    :param str vcn_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
+    Use this data source to access information about an existing resource.
     """
     ...

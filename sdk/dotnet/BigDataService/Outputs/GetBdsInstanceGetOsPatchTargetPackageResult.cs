@@ -16,7 +16,7 @@ namespace Pulumi.Oci.BigDataService.Outputs
         /// <summary>
         /// The package's name.
         /// </summary>
-        public readonly string PackageName;
+        public readonly string? PackageName;
         /// <summary>
         /// Related CVEs of the package update.
         /// </summary>
@@ -24,21 +24,21 @@ namespace Pulumi.Oci.BigDataService.Outputs
         /// <summary>
         /// The target version of the package.
         /// </summary>
-        public readonly string TargetVersion;
+        public readonly string? TargetVersion;
         /// <summary>
         /// The action that current package will be executed on the cluster.
         /// </summary>
-        public readonly string UpdateType;
+        public readonly string? UpdateType;
 
         [OutputConstructor]
         private GetBdsInstanceGetOsPatchTargetPackageResult(
-            string packageName,
+            string? packageName,
 
             ImmutableArray<string> relatedCvEs,
 
-            string targetVersion,
+            string? targetVersion,
 
-            string updateType)
+            string? updateType)
         {
             PackageName = packageName;
             RelatedCvEs = relatedCvEs;

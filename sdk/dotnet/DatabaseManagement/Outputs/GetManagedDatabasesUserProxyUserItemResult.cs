@@ -16,23 +16,23 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// <summary>
         /// Indicates whether the proxy is required to supply the client credentials (YES) or not (NO).
         /// </summary>
-        public readonly string Authentication;
+        public readonly string? Authentication;
         /// <summary>
         /// The flags associated with the proxy/client pair.
         /// </summary>
-        public readonly string Flags;
+        public readonly string? Flags;
         /// <summary>
         /// A filter to return only resources that match the entire name.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
 
         [OutputConstructor]
         private GetManagedDatabasesUserProxyUserItemResult(
-            string authentication,
+            string? authentication,
 
-            string flags,
+            string? flags,
 
-            string name)
+            string? name)
         {
             Authentication = authentication;
             Flags = flags;

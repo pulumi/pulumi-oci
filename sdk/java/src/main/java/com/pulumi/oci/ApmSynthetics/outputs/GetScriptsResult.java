@@ -30,12 +30,12 @@ public final class GetScriptsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The list of script_collection.
      * 
      */
-    private List<GetScriptsScriptCollection> scriptCollections;
+    private @Nullable List<GetScriptsScriptCollection> scriptCollections;
 
     private GetScriptsResult() {}
     public String apmDomainId() {
@@ -62,15 +62,15 @@ public final class GetScriptsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The list of script_collection.
      * 
      */
     public List<GetScriptsScriptCollection> scriptCollections() {
-        return this.scriptCollections;
+        return this.scriptCollections == null ? List.of() : this.scriptCollections;
     }
 
     public static Builder builder() {
@@ -86,8 +86,8 @@ public final class GetScriptsResult {
         private @Nullable String contentType;
         private @Nullable String displayName;
         private @Nullable List<GetScriptsFilter> filters;
-        private String id;
-        private List<GetScriptsScriptCollection> scriptCollections;
+        private @Nullable String id;
+        private @Nullable List<GetScriptsScriptCollection> scriptCollections;
         public Builder() {}
         public Builder(GetScriptsResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -123,13 +123,13 @@ public final class GetScriptsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder scriptCollections(List<GetScriptsScriptCollection> scriptCollections) {
-            this.scriptCollections = Objects.requireNonNull(scriptCollections);
+        public Builder scriptCollections(@Nullable List<GetScriptsScriptCollection> scriptCollections) {
+            this.scriptCollections = scriptCollections;
             return this;
         }
         public Builder scriptCollections(GetScriptsScriptCollection... scriptCollections) {

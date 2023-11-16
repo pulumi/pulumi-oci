@@ -16,18 +16,18 @@ namespace Pulumi.Oci.NetworkFirewall.Outputs
         /// <summary>
         /// A string consisting of a concatenation of optional host component and optional path component. The host component may start with `*.` to match the case-insensitive domain and all its subdomains. The path component must start with a `/`, and may end with `*` to match all paths of which it is a case-sensitive prefix. A missing host component matches all request domains, and a missing path component matches all request paths. An empty value matches all requests.
         /// </summary>
-        public readonly string Pattern;
+        public readonly string? Pattern;
         /// <summary>
         /// The type of pattern.
         /// * SIMPLE - A simple pattern with optional subdomain and/or path suffix wildcards.
         /// </summary>
-        public readonly string Type;
+        public readonly string? Type;
 
         [OutputConstructor]
         private GetNetworkFirewallPolicyUrlListUrlResult(
-            string pattern,
+            string? pattern,
 
-            string type)
+            string? type)
         {
             Pattern = pattern;
             Type = type;

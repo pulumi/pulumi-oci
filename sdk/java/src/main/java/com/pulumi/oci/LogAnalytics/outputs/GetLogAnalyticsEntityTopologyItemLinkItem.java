@@ -6,6 +6,8 @@ package com.pulumi.oci.LogAnalytics.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetLogAnalyticsEntityTopologyItemLinkItem {
@@ -13,27 +15,27 @@ public final class GetLogAnalyticsEntityTopologyItemLinkItem {
      * @return The log analytics entity OCID. This ID is a reference used by log analytics features and it represents a resource that is provisioned and managed by the customer on their premises or on the cloud.
      * 
      */
-    private String destinationEntityId;
+    private @Nullable String destinationEntityId;
     /**
      * @return The log analytics entity OCID. This ID is a reference used by log analytics features and it represents a resource that is provisioned and managed by the customer on their premises or on the cloud.
      * 
      */
-    private String sourceEntityId;
+    private @Nullable String sourceEntityId;
 
     private GetLogAnalyticsEntityTopologyItemLinkItem() {}
     /**
      * @return The log analytics entity OCID. This ID is a reference used by log analytics features and it represents a resource that is provisioned and managed by the customer on their premises or on the cloud.
      * 
      */
-    public String destinationEntityId() {
-        return this.destinationEntityId;
+    public Optional<String> destinationEntityId() {
+        return Optional.ofNullable(this.destinationEntityId);
     }
     /**
      * @return The log analytics entity OCID. This ID is a reference used by log analytics features and it represents a resource that is provisioned and managed by the customer on their premises or on the cloud.
      * 
      */
-    public String sourceEntityId() {
-        return this.sourceEntityId;
+    public Optional<String> sourceEntityId() {
+        return Optional.ofNullable(this.sourceEntityId);
     }
 
     public static Builder builder() {
@@ -45,8 +47,8 @@ public final class GetLogAnalyticsEntityTopologyItemLinkItem {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String destinationEntityId;
-        private String sourceEntityId;
+        private @Nullable String destinationEntityId;
+        private @Nullable String sourceEntityId;
         public Builder() {}
         public Builder(GetLogAnalyticsEntityTopologyItemLinkItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -55,13 +57,13 @@ public final class GetLogAnalyticsEntityTopologyItemLinkItem {
         }
 
         @CustomType.Setter
-        public Builder destinationEntityId(String destinationEntityId) {
-            this.destinationEntityId = Objects.requireNonNull(destinationEntityId);
+        public Builder destinationEntityId(@Nullable String destinationEntityId) {
+            this.destinationEntityId = destinationEntityId;
             return this;
         }
         @CustomType.Setter
-        public Builder sourceEntityId(String sourceEntityId) {
-            this.sourceEntityId = Objects.requireNonNull(sourceEntityId);
+        public Builder sourceEntityId(@Nullable String sourceEntityId) {
+            this.sourceEntityId = sourceEntityId;
             return this;
         }
         public GetLogAnalyticsEntityTopologyItemLinkItem build() {

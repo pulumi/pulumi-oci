@@ -51,53 +51,53 @@ export interface GetSdmMaskingPolicyDifferenceDifferenceColumnResult {
     /**
      * The name of the difference column.
      */
-    readonly columnName: string;
+    readonly columnName?: string;
     readonly differenceColumnKey: string;
     /**
      * The type of the SDM masking policy difference column. It can be one of the following three types: NEW: A new sensitive column in the sensitive data model that is not in the masking policy. DELETED: A column that is present in the masking policy but has been deleted from the sensitive data model. MODIFIED: A column that is present in the masking policy as well as the sensitive data model but some of its attributes have been modified.
      */
-    readonly differenceType: string;
+    readonly differenceType?: string;
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The unique key that identifies the SDM masking policy difference column.
      */
-    readonly key: string;
+    readonly key?: string;
     /**
      * The unique key that identifies the masking column represented by the SDM masking policy difference column.
      */
-    readonly maskingColumnkey: string;
+    readonly maskingColumnkey?: string;
     /**
      * The database object that contains the difference column.
      */
-    readonly object: string;
+    readonly object?: string;
     /**
      * Specifies how to process the difference column. It's set to SYNC by default. Use the PatchSdmMaskingPolicyDifferenceColumns operation to update this attribute. You can choose one of the following options: SYNC: To sync the difference column and update the masking policy to reflect the changes. NO_SYNC: To not sync the difference column so that it doesn't change the masking policy. After specifying the planned action, you can use the ApplySdmMaskingPolicyDifference operation to automatically process the difference columns.
      */
-    readonly plannedAction: string;
+    readonly plannedAction?: string;
     /**
      * The database schema that contains the difference column.
      */
-    readonly schemaName: string;
+    readonly schemaName?: string;
     readonly sdmMaskingPolicyDifferenceId: string;
     /**
      * The unique key that identifies the sensitive column represented by the SDM masking policy difference column.
      */
-    readonly sensitiveColumnkey: string;
+    readonly sensitiveColumnkey?: string;
     /**
      * The OCID of the sensitive type associated with the difference column.
      */
-    readonly sensitiveTypeId: string;
+    readonly sensitiveTypeId?: string;
     /**
      * Indicates if the difference column has been processed. Use GetDifferenceColumn operation to  track whether the difference column has already been processed and applied to the masking policy.
      */
-    readonly syncStatus: string;
+    readonly syncStatus?: string;
     /**
      * The date and time the SDM masking policy difference column was last synced, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
-    readonly timeLastSynced: string;
+    readonly timeLastSynced?: string;
 }
 /**
  * This data source provides details about a specific Sdm Masking Policy Difference Difference Column resource in Oracle Cloud Infrastructure Data Safe service.

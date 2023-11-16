@@ -173,7 +173,7 @@ namespace Pulumi.Oci.CloudMigrations
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// OCID of the associated migration plan.
         /// </summary>
@@ -194,7 +194,7 @@ namespace Pulumi.Oci.CloudMigrations
 
             ImmutableArray<Outputs.GetTargetAssetsFilterResult> filters,
 
-            string id,
+            string? id,
 
             string? migrationPlanId,
 

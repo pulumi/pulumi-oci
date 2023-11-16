@@ -20,7 +20,7 @@ namespace Pulumi.Oci.StackMonitoring.Outputs
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// Add option submits new discovery Job. Add with retry option to re-submit failed discovery job. Refresh option refreshes the existing discovered resources.
         /// </summary>
@@ -28,7 +28,7 @@ namespace Pulumi.Oci.StackMonitoring.Outputs
         /// <summary>
         /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// The OCID of Discovery job
         /// </summary>
@@ -44,41 +44,41 @@ namespace Pulumi.Oci.StackMonitoring.Outputs
         /// <summary>
         /// The current state of the DiscoveryJob Resource.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// Specifies the status of the discovery job
         /// </summary>
-        public readonly string Status;
+        public readonly string? Status;
         /// <summary>
         /// The short summary of the status of the discovery job
         /// </summary>
-        public readonly string StatusMessage;
+        public readonly string? StatusMessage;
         /// <summary>
         /// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> SystemTags;
+        public readonly ImmutableDictionary<string, object>? SystemTags;
         /// <summary>
         /// The OCID of Tenant
         /// </summary>
-        public readonly string TenantId;
+        public readonly string? TenantId;
         /// <summary>
         /// The time the discovery Job was updated.
         /// </summary>
-        public readonly string TimeUpdated;
+        public readonly string? TimeUpdated;
         /// <summary>
         /// The OCID of user in which the job is submitted
         /// </summary>
-        public readonly string UserId;
+        public readonly string? UserId;
 
         [OutputConstructor]
         private GetDiscoveryJobsDiscoveryJobCollectionItemResult(
             string compartmentId,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
             string discoveryType,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
             string id,
 
@@ -86,19 +86,19 @@ namespace Pulumi.Oci.StackMonitoring.Outputs
 
             string resourceType,
 
-            string state,
+            string? state,
 
-            string status,
+            string? status,
 
-            string statusMessage,
+            string? statusMessage,
 
-            ImmutableDictionary<string, object> systemTags,
+            ImmutableDictionary<string, object>? systemTags,
 
-            string tenantId,
+            string? tenantId,
 
-            string timeUpdated,
+            string? timeUpdated,
 
-            string userId)
+            string? userId)
         {
             CompartmentId = compartmentId;
             DefinedTags = definedTags;

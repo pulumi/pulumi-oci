@@ -62,7 +62,7 @@ export interface GetKeyVersionsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The OCID of the master encryption key associated with this key version.
      */
@@ -70,7 +70,7 @@ export interface GetKeyVersionsResult {
     /**
      * The list of key_versions.
      */
-    readonly keyVersions: outputs.Kms.GetKeyVersionsKeyVersion[];
+    readonly keyVersions?: outputs.Kms.GetKeyVersionsKeyVersion[];
     readonly managementEndpoint: string;
 }
 /**

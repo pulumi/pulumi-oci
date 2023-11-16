@@ -51,7 +51,7 @@ namespace Pulumi.Oci.Database
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         /// </summary>
         [Output("compartmentId")]
-        public Output<string> CompartmentId { get; private set; } = null!;
+        public Output<string?> CompartmentId { get; private set; } = null!;
 
         /// <summary>
         /// Connection strings to connect to an Oracle Pluggable Database.
@@ -63,7 +63,7 @@ namespace Pulumi.Oci.Database
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the CDB.
         /// </summary>
         [Output("containerDatabaseId")]
-        public Output<string> ContainerDatabaseId { get; private set; } = null!;
+        public Output<string?> ContainerDatabaseId { get; private set; } = null!;
 
         /// <summary>
         /// Data for the credential used to connect to the database.
@@ -75,7 +75,7 @@ namespace Pulumi.Oci.Database
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
@@ -91,31 +91,31 @@ namespace Pulumi.Oci.Database
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// The restricted mode of the pluggable database. If a pluggable database is opened in restricted mode, the user needs both create a session and have restricted session privileges to connect to it.
         /// </summary>
         [Output("isRestricted")]
-        public Output<bool> IsRestricted { get; private set; } = null!;
+        public Output<bool?> IsRestricted { get; private set; } = null!;
 
         /// <summary>
         /// Detailed message for the lifecycle state.
         /// </summary>
         [Output("lifecycleDetails")]
-        public Output<string> LifecycleDetails { get; private set; } = null!;
+        public Output<string?> LifecycleDetails { get; private set; } = null!;
 
         /// <summary>
         /// The mode that pluggable database is in. Open mode can only be changed to READ_ONLY or MIGRATE directly from the backend (within the Oracle Database software).
         /// </summary>
         [Output("openMode")]
-        public Output<string> OpenMode { get; private set; } = null!;
+        public Output<string?> OpenMode { get; private set; } = null!;
 
         /// <summary>
         /// The name for the pluggable database (PDB). The name is unique in the context of a [container database](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/Database/). The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. The pluggable database name should not be same as the container database name.
         /// </summary>
         [Output("pdbName")]
-        public Output<string> PdbName { get; private set; } = null!;
+        public Output<string?> PdbName { get; private set; } = null!;
 
         /// <summary>
         /// The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -133,7 +133,7 @@ namespace Pulumi.Oci.Database
         /// The port used to connect to the pluggable database.
         /// </summary>
         [Output("port")]
-        public Output<int> Port { get; private set; } = null!;
+        public Output<int?> Port { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
@@ -145,13 +145,13 @@ namespace Pulumi.Oci.Database
         /// Protocol used by the database connection.
         /// </summary>
         [Output("protocol")]
-        public Output<string> Protocol { get; private set; } = null!;
+        public Output<string?> Protocol { get; private set; } = null!;
 
         /// <summary>
         /// The role of the user that will be connecting to the pluggable database.
         /// </summary>
         [Output("role")]
-        public Output<string> Role { get; private set; } = null!;
+        public Output<string?> Role { get; private set; } = null!;
 
         /// <summary>
         /// The name of the Oracle Database service that will be used to connect to the database.
@@ -163,19 +163,19 @@ namespace Pulumi.Oci.Database
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
         /// </summary>
         [Output("sslSecretId")]
-        public Output<string> SslSecretId { get; private set; } = null!;
+        public Output<string?> SslSecretId { get; private set; } = null!;
 
         /// <summary>
         /// The current state of the pluggable database.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the pluggable database was created.
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
 
         /// <summary>

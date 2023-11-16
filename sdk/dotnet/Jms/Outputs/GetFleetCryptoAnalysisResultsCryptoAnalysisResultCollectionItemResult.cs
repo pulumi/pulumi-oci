@@ -16,107 +16,107 @@ namespace Pulumi.Oci.Jms.Outputs
         /// <summary>
         /// The aggregation mode of the crypto event analysis result.
         /// </summary>
-        public readonly string AggregationMode;
+        public readonly string? AggregationMode;
         /// <summary>
         /// The Object Storage bucket name of this analysis result.
         /// </summary>
-        public readonly string Bucket;
+        public readonly string? Bucket;
         /// <summary>
         /// The Crypto Roadmap version used to perform the analysis.
         /// </summary>
-        public readonly string CryptoRoadmapVersion;
+        public readonly string? CryptoRoadmapVersion;
         /// <summary>
         /// Total number of findings with the analysis.
         /// </summary>
-        public readonly int FindingCount;
+        public readonly int? FindingCount;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
         /// </summary>
-        public readonly string FleetId;
+        public readonly string? FleetId;
         /// <summary>
         /// The hostname of the managed instance.
         /// </summary>
-        public readonly string HostName;
+        public readonly string? HostName;
         /// <summary>
         /// The OCID to identify this analysis results.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The Fleet-unique identifier of the related managed instance.
         /// </summary>
-        public readonly string ManagedInstanceId;
+        public readonly string? ManagedInstanceId;
         /// <summary>
         /// The Object Storage namespace of this analysis result.
         /// </summary>
-        public readonly string Namespace;
+        public readonly string? Namespace;
         /// <summary>
         /// Total number of non-compliant findings with the analysis. A non-compliant finding means the application won't work properly with the changes introduced by the Crypto Roadmap version used by the analysis.
         /// </summary>
-        public readonly int NonCompliantFindingCount;
+        public readonly int? NonCompliantFindingCount;
         /// <summary>
         /// The Object Storage object name of this analysis result.
         /// </summary>
-        public readonly string Object;
+        public readonly string? Object;
         /// <summary>
         /// Total number of summarized events. Summarized events are deduplicated events of interest.
         /// </summary>
-        public readonly int SummarizedEventCount;
+        public readonly int? SummarizedEventCount;
         /// <summary>
         /// The time the result is compiled.
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// Time of the first event in the analysis.
         /// </summary>
-        public readonly string TimeFirstEvent;
+        public readonly string? TimeFirstEvent;
         /// <summary>
         /// Time of the last event in the analysis.
         /// </summary>
-        public readonly string TimeLastEvent;
+        public readonly string? TimeLastEvent;
         /// <summary>
         /// Total number of events in the analysis.
         /// </summary>
-        public readonly int TotalEventCount;
+        public readonly int? TotalEventCount;
         /// <summary>
         /// The OCID of the work request to start the analysis.
         /// </summary>
-        public readonly string WorkRequestId;
+        public readonly string? WorkRequestId;
 
         [OutputConstructor]
         private GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemResult(
-            string aggregationMode,
+            string? aggregationMode,
 
-            string bucket,
+            string? bucket,
 
-            string cryptoRoadmapVersion,
+            string? cryptoRoadmapVersion,
 
-            int findingCount,
+            int? findingCount,
 
-            string fleetId,
+            string? fleetId,
 
-            string hostName,
+            string? hostName,
 
-            string id,
+            string? id,
 
-            string managedInstanceId,
+            string? managedInstanceId,
 
-            string @namespace,
+            string? @namespace,
 
-            int nonCompliantFindingCount,
+            int? nonCompliantFindingCount,
 
-            string @object,
+            string? @object,
 
-            int summarizedEventCount,
+            int? summarizedEventCount,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeFirstEvent,
+            string? timeFirstEvent,
 
-            string timeLastEvent,
+            string? timeLastEvent,
 
-            int totalEventCount,
+            int? totalEventCount,
 
-            string workRequestId)
+            string? workRequestId)
         {
             AggregationMode = aggregationMode;
             Bucket = bucket;

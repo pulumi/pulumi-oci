@@ -8,6 +8,7 @@ import com.pulumi.oci.ApiGateway.outputs.GetDeploymentsDeploymentCollectionSpeci
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationValidationPolicyAdditionalValidationPolicy {
@@ -15,17 +16,17 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyA
      * @return The list of intended recipients for the token.
      * 
      */
-    private List<String> audiences;
+    private @Nullable List<String> audiences;
     /**
      * @return A list of parties that could have issued the token.
      * 
      */
-    private List<String> issuers;
+    private @Nullable List<String> issuers;
     /**
      * @return A list of claims which should be validated to consider the token valid.
      * 
      */
-    private List<GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationValidationPolicyAdditionalValidationPolicyVerifyClaim> verifyClaims;
+    private @Nullable List<GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationValidationPolicyAdditionalValidationPolicyVerifyClaim> verifyClaims;
 
     private GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationValidationPolicyAdditionalValidationPolicy() {}
     /**
@@ -33,21 +34,21 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyA
      * 
      */
     public List<String> audiences() {
-        return this.audiences;
+        return this.audiences == null ? List.of() : this.audiences;
     }
     /**
      * @return A list of parties that could have issued the token.
      * 
      */
     public List<String> issuers() {
-        return this.issuers;
+        return this.issuers == null ? List.of() : this.issuers;
     }
     /**
      * @return A list of claims which should be validated to consider the token valid.
      * 
      */
     public List<GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationValidationPolicyAdditionalValidationPolicyVerifyClaim> verifyClaims() {
-        return this.verifyClaims;
+        return this.verifyClaims == null ? List.of() : this.verifyClaims;
     }
 
     public static Builder builder() {
@@ -59,9 +60,9 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyA
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<String> audiences;
-        private List<String> issuers;
-        private List<GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationValidationPolicyAdditionalValidationPolicyVerifyClaim> verifyClaims;
+        private @Nullable List<String> audiences;
+        private @Nullable List<String> issuers;
+        private @Nullable List<GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationValidationPolicyAdditionalValidationPolicyVerifyClaim> verifyClaims;
         public Builder() {}
         public Builder(GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationValidationPolicyAdditionalValidationPolicy defaults) {
     	      Objects.requireNonNull(defaults);
@@ -71,24 +72,24 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyA
         }
 
         @CustomType.Setter
-        public Builder audiences(List<String> audiences) {
-            this.audiences = Objects.requireNonNull(audiences);
+        public Builder audiences(@Nullable List<String> audiences) {
+            this.audiences = audiences;
             return this;
         }
         public Builder audiences(String... audiences) {
             return audiences(List.of(audiences));
         }
         @CustomType.Setter
-        public Builder issuers(List<String> issuers) {
-            this.issuers = Objects.requireNonNull(issuers);
+        public Builder issuers(@Nullable List<String> issuers) {
+            this.issuers = issuers;
             return this;
         }
         public Builder issuers(String... issuers) {
             return issuers(List.of(issuers));
         }
         @CustomType.Setter
-        public Builder verifyClaims(List<GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationValidationPolicyAdditionalValidationPolicyVerifyClaim> verifyClaims) {
-            this.verifyClaims = Objects.requireNonNull(verifyClaims);
+        public Builder verifyClaims(@Nullable List<GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationValidationPolicyAdditionalValidationPolicyVerifyClaim> verifyClaims) {
+            this.verifyClaims = verifyClaims;
             return this;
         }
         public Builder verifyClaims(GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationValidationPolicyAdditionalValidationPolicyVerifyClaim... verifyClaims) {

@@ -112,11 +112,11 @@ export interface GetMetricDataResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The list of metric_data.
      */
-    readonly metricDatas: outputs.Monitoring.GetMetricDataMetricData[];
+    readonly metricDatas?: outputs.Monitoring.GetMetricDataMetricData[];
     /**
      * The reference provided in a metric definition to indicate the source service or application that emitted the metric.  Example: `ociComputeagent`
      */

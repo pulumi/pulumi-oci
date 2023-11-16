@@ -55,7 +55,7 @@ export interface GetAutonomousDbVersionsResult {
     /**
      * The list of autonomous_db_versions.
      */
-    readonly autonomousDbVersions: outputs.Database.GetAutonomousDbVersionsAutonomousDbVersion[];
+    readonly autonomousDbVersions?: outputs.Database.GetAutonomousDbVersionsAutonomousDbVersion[];
     readonly compartmentId: string;
     /**
      * The Autonomous Database workload type. The following values are valid:
@@ -69,7 +69,7 @@ export interface GetAutonomousDbVersionsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
 }
 /**
  * This data source provides the list of Autonomous Db Versions in Oracle Cloud Infrastructure Database service.

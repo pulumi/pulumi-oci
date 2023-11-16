@@ -13,17 +13,17 @@ namespace Pulumi.Oci.Functions.Outputs
     [OutputType]
     public sealed class GetFusionEnvironmentFamilyLimitsAndUsageDevelopmentLimitAndUsageResult
     {
-        public readonly int Limit;
+        public readonly int? Limit;
         /// <summary>
         /// The usage of current environment.
         /// </summary>
-        public readonly int Usage;
+        public readonly int? Usage;
 
         [OutputConstructor]
         private GetFusionEnvironmentFamilyLimitsAndUsageDevelopmentLimitAndUsageResult(
-            int limit,
+            int? limit,
 
-            int usage)
+            int? usage)
         {
             Limit = limit;
             Usage = usage;

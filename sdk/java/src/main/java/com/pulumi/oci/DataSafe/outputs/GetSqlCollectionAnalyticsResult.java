@@ -24,12 +24,12 @@ public final class GetSqlCollectionAnalyticsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The list of sql_collection_analytics_collection.
      * 
      */
-    private List<GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollection> sqlCollectionAnalyticsCollections;
+    private @Nullable List<GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollection> sqlCollectionAnalyticsCollections;
     /**
      * @return The current state of the SQL collection.
      * 
@@ -63,15 +63,15 @@ public final class GetSqlCollectionAnalyticsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The list of sql_collection_analytics_collection.
      * 
      */
     public List<GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollection> sqlCollectionAnalyticsCollections() {
-        return this.sqlCollectionAnalyticsCollections;
+        return this.sqlCollectionAnalyticsCollections == null ? List.of() : this.sqlCollectionAnalyticsCollections;
     }
     /**
      * @return The current state of the SQL collection.
@@ -108,8 +108,8 @@ public final class GetSqlCollectionAnalyticsResult {
         private @Nullable Boolean compartmentIdInSubtree;
         private @Nullable List<GetSqlCollectionAnalyticsFilter> filters;
         private @Nullable List<String> groupBies;
-        private String id;
-        private List<GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollection> sqlCollectionAnalyticsCollections;
+        private @Nullable String id;
+        private @Nullable List<GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollection> sqlCollectionAnalyticsCollections;
         private @Nullable String state;
         private @Nullable String targetId;
         private @Nullable String timeEnded;
@@ -162,13 +162,13 @@ public final class GetSqlCollectionAnalyticsResult {
             return groupBies(List.of(groupBies));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder sqlCollectionAnalyticsCollections(List<GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollection> sqlCollectionAnalyticsCollections) {
-            this.sqlCollectionAnalyticsCollections = Objects.requireNonNull(sqlCollectionAnalyticsCollections);
+        public Builder sqlCollectionAnalyticsCollections(@Nullable List<GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollection> sqlCollectionAnalyticsCollections) {
+            this.sqlCollectionAnalyticsCollections = sqlCollectionAnalyticsCollections;
             return this;
         }
         public Builder sqlCollectionAnalyticsCollections(GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollection... sqlCollectionAnalyticsCollections) {

@@ -35,91 +35,91 @@ namespace Pulumi.Oci.DataSafe
         /// Type of the alert. Indicates the Data Safe feature triggering the alert.
         /// </summary>
         [Output("alertType")]
-        public Output<string> AlertType { get; private set; } = null!;
+        public Output<string?> AlertType { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) A comment can be entered to track the alert changes done by the user.
         /// </summary>
         [Output("comment")]
-        public Output<string> Comment { get; private set; } = null!;
+        public Output<string?> Comment { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The OCID of the compartment that contains the alert.
         /// </summary>
         [Output("compartmentId")]
-        public Output<string> CompartmentId { get; private set; } = null!;
+        public Output<string?> CompartmentId { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// The description of the alert.
         /// </summary>
         [Output("description")]
-        public Output<string> Description { get; private set; } = null!;
+        public Output<string?> Description { get; private set; } = null!;
 
         /// <summary>
         /// The display name of the alert.
         /// </summary>
         [Output("displayName")]
-        public Output<string> DisplayName { get; private set; } = null!;
+        public Output<string?> DisplayName { get; private set; } = null!;
 
         /// <summary>
         /// Map that contains maps of values. Example: `{"Operations": {"CostCenter": "42"}}`
         /// </summary>
         [Output("featureDetails")]
-        public Output<ImmutableDictionary<string, object>> FeatureDetails { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FeatureDetails { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// The operation (event) that triggered alert.
         /// </summary>
         [Output("operation")]
-        public Output<string> Operation { get; private set; } = null!;
+        public Output<string?> Operation { get; private set; } = null!;
 
         /// <summary>
         /// The result of the operation (event) that triggered alert.
         /// </summary>
         [Output("operationStatus")]
-        public Output<string> OperationStatus { get; private set; } = null!;
+        public Output<string?> OperationStatus { get; private set; } = null!;
 
         /// <summary>
         /// Creation date and time of the operation that triggered alert, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         /// </summary>
         [Output("operationTime")]
-        public Output<string> OperationTime { get; private set; } = null!;
+        public Output<string?> OperationTime { get; private set; } = null!;
 
         /// <summary>
         /// The OCID of the policy that triggered alert.
         /// </summary>
         [Output("policyId")]
-        public Output<string> PolicyId { get; private set; } = null!;
+        public Output<string?> PolicyId { get; private set; } = null!;
 
         /// <summary>
         /// The resource endpoint that triggered the alert.
         /// </summary>
         [Output("resourceName")]
-        public Output<string> ResourceName { get; private set; } = null!;
+        public Output<string?> ResourceName { get; private set; } = null!;
 
         /// <summary>
         /// Severity level of the alert.
         /// </summary>
         [Output("severity")]
-        public Output<string> Severity { get; private set; } = null!;
+        public Output<string?> Severity { get; private set; } = null!;
 
         /// <summary>
         /// The current state of the alert.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The status of the alert.
@@ -129,13 +129,13 @@ namespace Pulumi.Oci.DataSafe
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("status")]
-        public Output<string> Status { get; private set; } = null!;
+        public Output<string?> Status { get; private set; } = null!;
 
         /// <summary>
         /// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
         [Output("systemTags")]
-        public Output<ImmutableDictionary<string, object>> SystemTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> SystemTags { get; private set; } = null!;
 
         /// <summary>
         /// Array of OCIDs of the target database which are associated with the alert.
@@ -153,13 +153,13 @@ namespace Pulumi.Oci.DataSafe
         /// Creation date and time of the alert, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// Last date and time the alert was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         /// </summary>
         [Output("timeUpdated")]
-        public Output<string> TimeUpdated { get; private set; } = null!;
+        public Output<string?> TimeUpdated { get; private set; } = null!;
 
 
         /// <summary>

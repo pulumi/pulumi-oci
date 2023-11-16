@@ -13,20 +13,20 @@ namespace Pulumi.Oci.Database.Outputs
     [OutputType]
     public sealed class GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailResult
     {
-        public readonly string DbrsPolicyId;
+        public readonly string? DbrsPolicyId;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
         /// </summary>
-        public readonly string Id;
-        public readonly string Type;
+        public readonly string? Id;
+        public readonly string? Type;
 
         [OutputConstructor]
         private GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailResult(
-            string dbrsPolicyId,
+            string? dbrsPolicyId,
 
-            string id,
+            string? id,
 
-            string type)
+            string? type)
         {
             DbrsPolicyId = dbrsPolicyId;
             Id = id;

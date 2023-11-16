@@ -6,6 +6,8 @@ package com.pulumi.oci.Logging.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetLogsLogConfigurationSource {
@@ -13,53 +15,53 @@ public final class GetLogsLogConfigurationSource {
      * @return Log object category.
      * 
      */
-    private String category;
+    private @Nullable String category;
     /**
      * @return The unique identifier of the resource emitting the log.
      * 
      */
-    private String resource;
+    private @Nullable String resource;
     /**
      * @return Service generating log.
      * 
      */
-    private String service;
+    private @Nullable String service;
     /**
      * @return The log source.
      * * **OCISERVICE:** Oracle Service.
      * 
      */
-    private String sourceType;
+    private @Nullable String sourceType;
 
     private GetLogsLogConfigurationSource() {}
     /**
      * @return Log object category.
      * 
      */
-    public String category() {
-        return this.category;
+    public Optional<String> category() {
+        return Optional.ofNullable(this.category);
     }
     /**
      * @return The unique identifier of the resource emitting the log.
      * 
      */
-    public String resource() {
-        return this.resource;
+    public Optional<String> resource() {
+        return Optional.ofNullable(this.resource);
     }
     /**
      * @return Service generating log.
      * 
      */
-    public String service() {
-        return this.service;
+    public Optional<String> service() {
+        return Optional.ofNullable(this.service);
     }
     /**
      * @return The log source.
      * * **OCISERVICE:** Oracle Service.
      * 
      */
-    public String sourceType() {
-        return this.sourceType;
+    public Optional<String> sourceType() {
+        return Optional.ofNullable(this.sourceType);
     }
 
     public static Builder builder() {
@@ -71,10 +73,10 @@ public final class GetLogsLogConfigurationSource {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String category;
-        private String resource;
-        private String service;
-        private String sourceType;
+        private @Nullable String category;
+        private @Nullable String resource;
+        private @Nullable String service;
+        private @Nullable String sourceType;
         public Builder() {}
         public Builder(GetLogsLogConfigurationSource defaults) {
     	      Objects.requireNonNull(defaults);
@@ -85,23 +87,23 @@ public final class GetLogsLogConfigurationSource {
         }
 
         @CustomType.Setter
-        public Builder category(String category) {
-            this.category = Objects.requireNonNull(category);
+        public Builder category(@Nullable String category) {
+            this.category = category;
             return this;
         }
         @CustomType.Setter
-        public Builder resource(String resource) {
-            this.resource = Objects.requireNonNull(resource);
+        public Builder resource(@Nullable String resource) {
+            this.resource = resource;
             return this;
         }
         @CustomType.Setter
-        public Builder service(String service) {
-            this.service = Objects.requireNonNull(service);
+        public Builder service(@Nullable String service) {
+            this.service = service;
             return this;
         }
         @CustomType.Setter
-        public Builder sourceType(String sourceType) {
-            this.sourceType = Objects.requireNonNull(sourceType);
+        public Builder sourceType(@Nullable String sourceType) {
+            this.sourceType = sourceType;
             return this;
         }
         public GetLogsLogConfigurationSource build() {

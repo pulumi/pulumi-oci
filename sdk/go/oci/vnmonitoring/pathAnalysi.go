@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Path Analysi resource in Oracle Cloud Infrastructure Vn Monitoring service.
@@ -99,21 +98,21 @@ type PathAnalysi struct {
 	pulumi.CustomResourceState
 
 	// The Cache-Control HTTP header holds directives (instructions) for caching in both requests and responses.
-	CacheControl pulumi.StringOutput `pulumi:"cacheControl"`
+	CacheControl pulumi.StringPtrOutput `pulumi:"cacheControl"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the compartment.
-	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrOutput `pulumi:"compartmentId"`
 	// Information describing a source or destination in a `PathAnalyzerTest` resource.
-	DestinationEndpoint PathAnalysiDestinationEndpointOutput `pulumi:"destinationEndpoint"`
+	DestinationEndpoint PathAnalysiDestinationEndpointPtrOutput `pulumi:"destinationEndpoint"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `PathAnalyzerTest` resource.
-	PathAnalyzerTestId pulumi.StringOutput `pulumi:"pathAnalyzerTestId"`
+	PathAnalyzerTestId pulumi.StringPtrOutput `pulumi:"pathAnalyzerTestId"`
 	// The IP protocol to used for the path analysis.
-	Protocol pulumi.IntOutput `pulumi:"protocol"`
+	Protocol pulumi.IntPtrOutput `pulumi:"protocol"`
 	// Defines the IP protocol parameters for a `PathAnalyzerTest` resource.
-	ProtocolParameters PathAnalysiProtocolParametersOutput `pulumi:"protocolParameters"`
+	ProtocolParameters PathAnalysiProtocolParametersPtrOutput `pulumi:"protocolParameters"`
 	// Defines the query options required for a `PathAnalyzerTest` resource.
-	QueryOptions PathAnalysiQueryOptionsOutput `pulumi:"queryOptions"`
+	QueryOptions PathAnalysiQueryOptionsPtrOutput `pulumi:"queryOptions"`
 	// Information describing a source or destination in a `PathAnalyzerTest` resource.
-	SourceEndpoint PathAnalysiSourceEndpointOutput `pulumi:"sourceEndpoint"`
+	SourceEndpoint PathAnalysiSourceEndpointPtrOutput `pulumi:"sourceEndpoint"`
 	// The type of the `PathAnalysis` query.
 	//
 	// ** IMPORTANT **
@@ -277,12 +276,6 @@ func (i *PathAnalysi) ToPathAnalysiOutputWithContext(ctx context.Context) PathAn
 	return pulumi.ToOutputWithContext(ctx, i).(PathAnalysiOutput)
 }
 
-func (i *PathAnalysi) ToOutput(ctx context.Context) pulumix.Output[*PathAnalysi] {
-	return pulumix.Output[*PathAnalysi]{
-		OutputState: i.ToPathAnalysiOutputWithContext(ctx).OutputState,
-	}
-}
-
 // PathAnalysiArrayInput is an input type that accepts PathAnalysiArray and PathAnalysiArrayOutput values.
 // You can construct a concrete instance of `PathAnalysiArrayInput` via:
 //
@@ -306,12 +299,6 @@ func (i PathAnalysiArray) ToPathAnalysiArrayOutput() PathAnalysiArrayOutput {
 
 func (i PathAnalysiArray) ToPathAnalysiArrayOutputWithContext(ctx context.Context) PathAnalysiArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(PathAnalysiArrayOutput)
-}
-
-func (i PathAnalysiArray) ToOutput(ctx context.Context) pulumix.Output[[]*PathAnalysi] {
-	return pulumix.Output[[]*PathAnalysi]{
-		OutputState: i.ToPathAnalysiArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // PathAnalysiMapInput is an input type that accepts PathAnalysiMap and PathAnalysiMapOutput values.
@@ -339,12 +326,6 @@ func (i PathAnalysiMap) ToPathAnalysiMapOutputWithContext(ctx context.Context) P
 	return pulumi.ToOutputWithContext(ctx, i).(PathAnalysiMapOutput)
 }
 
-func (i PathAnalysiMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*PathAnalysi] {
-	return pulumix.Output[map[string]*PathAnalysi]{
-		OutputState: i.ToPathAnalysiMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type PathAnalysiOutput struct{ *pulumi.OutputState }
 
 func (PathAnalysiOutput) ElementType() reflect.Type {
@@ -359,50 +340,44 @@ func (o PathAnalysiOutput) ToPathAnalysiOutputWithContext(ctx context.Context) P
 	return o
 }
 
-func (o PathAnalysiOutput) ToOutput(ctx context.Context) pulumix.Output[*PathAnalysi] {
-	return pulumix.Output[*PathAnalysi]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The Cache-Control HTTP header holds directives (instructions) for caching in both requests and responses.
-func (o PathAnalysiOutput) CacheControl() pulumi.StringOutput {
-	return o.ApplyT(func(v *PathAnalysi) pulumi.StringOutput { return v.CacheControl }).(pulumi.StringOutput)
+func (o PathAnalysiOutput) CacheControl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *PathAnalysi) pulumi.StringPtrOutput { return v.CacheControl }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the compartment.
-func (o PathAnalysiOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v *PathAnalysi) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
+func (o PathAnalysiOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *PathAnalysi) pulumi.StringPtrOutput { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Information describing a source or destination in a `PathAnalyzerTest` resource.
-func (o PathAnalysiOutput) DestinationEndpoint() PathAnalysiDestinationEndpointOutput {
-	return o.ApplyT(func(v *PathAnalysi) PathAnalysiDestinationEndpointOutput { return v.DestinationEndpoint }).(PathAnalysiDestinationEndpointOutput)
+func (o PathAnalysiOutput) DestinationEndpoint() PathAnalysiDestinationEndpointPtrOutput {
+	return o.ApplyT(func(v *PathAnalysi) PathAnalysiDestinationEndpointPtrOutput { return v.DestinationEndpoint }).(PathAnalysiDestinationEndpointPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `PathAnalyzerTest` resource.
-func (o PathAnalysiOutput) PathAnalyzerTestId() pulumi.StringOutput {
-	return o.ApplyT(func(v *PathAnalysi) pulumi.StringOutput { return v.PathAnalyzerTestId }).(pulumi.StringOutput)
+func (o PathAnalysiOutput) PathAnalyzerTestId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *PathAnalysi) pulumi.StringPtrOutput { return v.PathAnalyzerTestId }).(pulumi.StringPtrOutput)
 }
 
 // The IP protocol to used for the path analysis.
-func (o PathAnalysiOutput) Protocol() pulumi.IntOutput {
-	return o.ApplyT(func(v *PathAnalysi) pulumi.IntOutput { return v.Protocol }).(pulumi.IntOutput)
+func (o PathAnalysiOutput) Protocol() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *PathAnalysi) pulumi.IntPtrOutput { return v.Protocol }).(pulumi.IntPtrOutput)
 }
 
 // Defines the IP protocol parameters for a `PathAnalyzerTest` resource.
-func (o PathAnalysiOutput) ProtocolParameters() PathAnalysiProtocolParametersOutput {
-	return o.ApplyT(func(v *PathAnalysi) PathAnalysiProtocolParametersOutput { return v.ProtocolParameters }).(PathAnalysiProtocolParametersOutput)
+func (o PathAnalysiOutput) ProtocolParameters() PathAnalysiProtocolParametersPtrOutput {
+	return o.ApplyT(func(v *PathAnalysi) PathAnalysiProtocolParametersPtrOutput { return v.ProtocolParameters }).(PathAnalysiProtocolParametersPtrOutput)
 }
 
 // Defines the query options required for a `PathAnalyzerTest` resource.
-func (o PathAnalysiOutput) QueryOptions() PathAnalysiQueryOptionsOutput {
-	return o.ApplyT(func(v *PathAnalysi) PathAnalysiQueryOptionsOutput { return v.QueryOptions }).(PathAnalysiQueryOptionsOutput)
+func (o PathAnalysiOutput) QueryOptions() PathAnalysiQueryOptionsPtrOutput {
+	return o.ApplyT(func(v *PathAnalysi) PathAnalysiQueryOptionsPtrOutput { return v.QueryOptions }).(PathAnalysiQueryOptionsPtrOutput)
 }
 
 // Information describing a source or destination in a `PathAnalyzerTest` resource.
-func (o PathAnalysiOutput) SourceEndpoint() PathAnalysiSourceEndpointOutput {
-	return o.ApplyT(func(v *PathAnalysi) PathAnalysiSourceEndpointOutput { return v.SourceEndpoint }).(PathAnalysiSourceEndpointOutput)
+func (o PathAnalysiOutput) SourceEndpoint() PathAnalysiSourceEndpointPtrOutput {
+	return o.ApplyT(func(v *PathAnalysi) PathAnalysiSourceEndpointPtrOutput { return v.SourceEndpoint }).(PathAnalysiSourceEndpointPtrOutput)
 }
 
 // The type of the `PathAnalysis` query.
@@ -427,12 +402,6 @@ func (o PathAnalysiArrayOutput) ToPathAnalysiArrayOutputWithContext(ctx context.
 	return o
 }
 
-func (o PathAnalysiArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*PathAnalysi] {
-	return pulumix.Output[[]*PathAnalysi]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o PathAnalysiArrayOutput) Index(i pulumi.IntInput) PathAnalysiOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *PathAnalysi {
 		return vs[0].([]*PathAnalysi)[vs[1].(int)]
@@ -451,12 +420,6 @@ func (o PathAnalysiMapOutput) ToPathAnalysiMapOutput() PathAnalysiMapOutput {
 
 func (o PathAnalysiMapOutput) ToPathAnalysiMapOutputWithContext(ctx context.Context) PathAnalysiMapOutput {
 	return o
-}
-
-func (o PathAnalysiMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*PathAnalysi] {
-	return pulumix.Output[map[string]*PathAnalysi]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o PathAnalysiMapOutput) MapIndex(k pulumi.StringInput) PathAnalysiOutput {

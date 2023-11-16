@@ -16,23 +16,23 @@ namespace Pulumi.Oci.Autoscaling.Outputs
         /// <summary>
         /// A cron expression that represents the time at which to execute the autoscaling policy.
         /// </summary>
-        public readonly string Expression;
+        public readonly string? Expression;
         /// <summary>
         /// The time zone for the execution schedule.
         /// </summary>
-        public readonly string Timezone;
+        public readonly string? Timezone;
         /// <summary>
         /// The type of action to take.
         /// </summary>
-        public readonly string Type;
+        public readonly string? Type;
 
         [OutputConstructor]
         private GetAutoScalingConfigurationsAutoScalingConfigurationPolicyExecutionScheduleResult(
-            string expression,
+            string? expression,
 
-            string timezone,
+            string? timezone,
 
-            string type)
+            string? type)
         {
             Expression = expression;
             Timezone = timezone;

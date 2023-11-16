@@ -34,7 +34,7 @@ public final class GetResolversResult {
      * @return The list of resolvers.
      * 
      */
-    private List<GetResolversResolver> resolvers;
+    private @Nullable List<GetResolversResolver> resolvers;
     private String scope;
     /**
      * @return The current state of the resource.
@@ -72,7 +72,7 @@ public final class GetResolversResult {
      * 
      */
     public List<GetResolversResolver> resolvers() {
-        return this.resolvers;
+        return this.resolvers == null ? List.of() : this.resolvers;
     }
     public String scope() {
         return this.scope;
@@ -98,7 +98,7 @@ public final class GetResolversResult {
         private @Nullable String displayName;
         private @Nullable List<GetResolversFilter> filters;
         private @Nullable String id;
-        private List<GetResolversResolver> resolvers;
+        private @Nullable List<GetResolversResolver> resolvers;
         private String scope;
         private @Nullable String state;
         public Builder() {}
@@ -137,8 +137,8 @@ public final class GetResolversResult {
             return this;
         }
         @CustomType.Setter
-        public Builder resolvers(List<GetResolversResolver> resolvers) {
-            this.resolvers = Objects.requireNonNull(resolvers);
+        public Builder resolvers(@Nullable List<GetResolversResolver> resolvers) {
+            this.resolvers = resolvers;
             return this;
         }
         public Builder resolvers(GetResolversResolver... resolvers) {

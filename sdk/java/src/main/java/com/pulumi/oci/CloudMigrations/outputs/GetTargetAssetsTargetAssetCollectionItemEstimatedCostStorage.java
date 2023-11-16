@@ -8,6 +8,8 @@ import com.pulumi.oci.CloudMigrations.outputs.GetTargetAssetsTargetAssetCollecti
 import java.lang.Double;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetTargetAssetsTargetAssetCollectionItemEstimatedCostStorage {
@@ -15,39 +17,39 @@ public final class GetTargetAssetsTargetAssetCollectionItemEstimatedCostStorage 
      * @return Gigabyte storage capacity per month.
      * 
      */
-    private Double totalGbPerMonth;
+    private @Nullable Double totalGbPerMonth;
     /**
      * @return Gigabyte storage capacity per month by subscription
      * 
      */
-    private Double totalGbPerMonthBySubscription;
+    private @Nullable Double totalGbPerMonthBySubscription;
     /**
      * @return Volume estimation
      * 
      */
-    private List<GetTargetAssetsTargetAssetCollectionItemEstimatedCostStorageVolume> volumes;
+    private @Nullable List<GetTargetAssetsTargetAssetCollectionItemEstimatedCostStorageVolume> volumes;
 
     private GetTargetAssetsTargetAssetCollectionItemEstimatedCostStorage() {}
     /**
      * @return Gigabyte storage capacity per month.
      * 
      */
-    public Double totalGbPerMonth() {
-        return this.totalGbPerMonth;
+    public Optional<Double> totalGbPerMonth() {
+        return Optional.ofNullable(this.totalGbPerMonth);
     }
     /**
      * @return Gigabyte storage capacity per month by subscription
      * 
      */
-    public Double totalGbPerMonthBySubscription() {
-        return this.totalGbPerMonthBySubscription;
+    public Optional<Double> totalGbPerMonthBySubscription() {
+        return Optional.ofNullable(this.totalGbPerMonthBySubscription);
     }
     /**
      * @return Volume estimation
      * 
      */
     public List<GetTargetAssetsTargetAssetCollectionItemEstimatedCostStorageVolume> volumes() {
-        return this.volumes;
+        return this.volumes == null ? List.of() : this.volumes;
     }
 
     public static Builder builder() {
@@ -59,9 +61,9 @@ public final class GetTargetAssetsTargetAssetCollectionItemEstimatedCostStorage 
     }
     @CustomType.Builder
     public static final class Builder {
-        private Double totalGbPerMonth;
-        private Double totalGbPerMonthBySubscription;
-        private List<GetTargetAssetsTargetAssetCollectionItemEstimatedCostStorageVolume> volumes;
+        private @Nullable Double totalGbPerMonth;
+        private @Nullable Double totalGbPerMonthBySubscription;
+        private @Nullable List<GetTargetAssetsTargetAssetCollectionItemEstimatedCostStorageVolume> volumes;
         public Builder() {}
         public Builder(GetTargetAssetsTargetAssetCollectionItemEstimatedCostStorage defaults) {
     	      Objects.requireNonNull(defaults);
@@ -71,18 +73,18 @@ public final class GetTargetAssetsTargetAssetCollectionItemEstimatedCostStorage 
         }
 
         @CustomType.Setter
-        public Builder totalGbPerMonth(Double totalGbPerMonth) {
-            this.totalGbPerMonth = Objects.requireNonNull(totalGbPerMonth);
+        public Builder totalGbPerMonth(@Nullable Double totalGbPerMonth) {
+            this.totalGbPerMonth = totalGbPerMonth;
             return this;
         }
         @CustomType.Setter
-        public Builder totalGbPerMonthBySubscription(Double totalGbPerMonthBySubscription) {
-            this.totalGbPerMonthBySubscription = Objects.requireNonNull(totalGbPerMonthBySubscription);
+        public Builder totalGbPerMonthBySubscription(@Nullable Double totalGbPerMonthBySubscription) {
+            this.totalGbPerMonthBySubscription = totalGbPerMonthBySubscription;
             return this;
         }
         @CustomType.Setter
-        public Builder volumes(List<GetTargetAssetsTargetAssetCollectionItemEstimatedCostStorageVolume> volumes) {
-            this.volumes = Objects.requireNonNull(volumes);
+        public Builder volumes(@Nullable List<GetTargetAssetsTargetAssetCollectionItemEstimatedCostStorageVolume> volumes) {
+            this.volumes = volumes;
             return this;
         }
         public Builder volumes(GetTargetAssetsTargetAssetCollectionItemEstimatedCostStorageVolume... volumes) {

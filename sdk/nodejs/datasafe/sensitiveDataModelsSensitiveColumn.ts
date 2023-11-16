@@ -71,15 +71,15 @@ export class SensitiveDataModelsSensitiveColumn extends pulumi.CustomResource {
     /**
      * (Updatable) Unique keys identifying the columns that are application-level (non-dictionary) children of the sensitive column. This attribute can be used to establish relationship between columns in a sensitive data model. Note that the child columns must be added to the sensitive data model before their keys can be specified here. If this attribute is provided, the parentColumnKeys and relationType attributes of the child columns are automatically updated to reflect the relationship.
      */
-    public readonly appDefinedChildColumnKeys!: pulumi.Output<string[]>;
+    public readonly appDefinedChildColumnKeys!: pulumi.Output<string[] | undefined>;
     /**
      * The name of the application associated with the sensitive column. It's useful when the application name is different from the schema name. Otherwise, it can be ignored. If this attribute is not provided, it's automatically populated with the value provided for the schemaName attribute.
      */
-    public readonly appName!: pulumi.Output<string>;
+    public readonly appName!: pulumi.Output<string | undefined>;
     /**
      * The composite key groups to which the sensitive column belongs. If the column is part of a composite key, it's assigned a column group. It helps identify and manage referential relationships that involve composite keys.
      */
-    public /*out*/ readonly columnGroups!: pulumi.Output<string[]>;
+    public /*out*/ readonly columnGroups!: pulumi.Output<string[] | undefined>;
     /**
      * The name of the sensitive column.
      */
@@ -87,23 +87,23 @@ export class SensitiveDataModelsSensitiveColumn extends pulumi.CustomResource {
     /**
      * (Updatable) The data type of the sensitive column.
      */
-    public readonly dataType!: pulumi.Output<string>;
+    public readonly dataType!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Unique keys identifying the columns that are database-level (dictionary-defined) children of the sensitive column. This attribute can be used to establish relationship between columns in a sensitive data model. Note that the child columns must be added to the sensitive data model before their keys can be specified here. If this attribute is provided, the parentColumnKeys and relationType attributes of the child columns are automatically updated to reflect the relationship.
      */
-    public readonly dbDefinedChildColumnKeys!: pulumi.Output<string[]>;
+    public readonly dbDefinedChildColumnKeys!: pulumi.Output<string[] | undefined>;
     /**
      * The estimated number of data values the column has in the associated database.
      */
-    public /*out*/ readonly estimatedDataValueCount!: pulumi.Output<string>;
+    public /*out*/ readonly estimatedDataValueCount!: pulumi.Output<string | undefined>;
     /**
      * The unique key that identifies the sensitive column. It's numeric and unique within a sensitive data model.
      */
-    public /*out*/ readonly key!: pulumi.Output<string>;
+    public /*out*/ readonly key!: pulumi.Output<string | undefined>;
     /**
      * Details about the current state of the sensitive column.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string | undefined>;
     /**
      * The database object that contains the sensitive column.
      */
@@ -111,19 +111,19 @@ export class SensitiveDataModelsSensitiveColumn extends pulumi.CustomResource {
     /**
      * The type of the database object that contains the sensitive column.
      */
-    public readonly objectType!: pulumi.Output<string>;
+    public readonly objectType!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Unique keys identifying the columns that are parents of the sensitive column. At present, it accepts only one parent column key. This attribute can be used to establish relationship between columns in a sensitive data model. Note that the parent column must be added to the sensitive data model before its key can be specified here. If this attribute is provided, the appDefinedChildColumnKeys or dbDefinedChildColumnKeys attribute of the parent column is automatically updated to reflect the relationship.
      */
-    public readonly parentColumnKeys!: pulumi.Output<string[]>;
+    public readonly parentColumnKeys!: pulumi.Output<string[] | undefined>;
     /**
      * (Updatable) The type of referential relationship the sensitive column has with its parent. NONE indicates that the sensitive column does not have a parent. DB_DEFINED indicates that the relationship is defined in the database dictionary. APP_DEFINED indicates that the relationship is defined at the application level and not in the database dictionary.
      */
-    public readonly relationType!: pulumi.Output<string>;
+    public readonly relationType!: pulumi.Output<string | undefined>;
     /**
      * Original data values collected for the sensitive column from the associated database. Sample data helps review the column and ensure that it actually contains sensitive data. Note that sample data is retrieved by a data discovery job only if the isSampleDataCollectionEnabled attribute is set to true. At present, only one data value is collected per sensitive column.
      */
-    public /*out*/ readonly sampleDataValues!: pulumi.Output<string[]>;
+    public /*out*/ readonly sampleDataValues!: pulumi.Output<string[] | undefined>;
     /**
      * The database schema that contains the sensitive column.
      */
@@ -135,15 +135,15 @@ export class SensitiveDataModelsSensitiveColumn extends pulumi.CustomResource {
     /**
      * (Updatable) The OCID of the sensitive type to be associated with the sensitive column.
      */
-    public readonly sensitiveTypeId!: pulumi.Output<string>;
+    public readonly sensitiveTypeId!: pulumi.Output<string | undefined>;
     /**
      * The source of the sensitive column. DISCOVERY indicates that the column was added to the sensitive data model using a data discovery job. MANUAL indicates that the column was added manually.
      */
-    public /*out*/ readonly source!: pulumi.Output<string>;
+    public /*out*/ readonly source!: pulumi.Output<string | undefined>;
     /**
      * The current state of the sensitive column.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The status of the sensitive column. VALID means the column is considered sensitive. INVALID means the column is not considered sensitive. Tracking invalid columns in a sensitive data model helps ensure that an incremental data discovery job does not identify these columns as sensitive. 
      *
@@ -151,15 +151,15 @@ export class SensitiveDataModelsSensitiveColumn extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly status!: pulumi.Output<string>;
+    public readonly status!: pulumi.Output<string | undefined>;
     /**
      * The date and time, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339), the sensitive column was created in the sensitive data model.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * The date and time, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339), the sensitive column was last updated in the sensitive data model.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    public /*out*/ readonly timeUpdated!: pulumi.Output<string | undefined>;
 
     /**
      * Create a SensitiveDataModelsSensitiveColumn resource with the given unique name, arguments, and options.

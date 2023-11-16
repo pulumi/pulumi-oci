@@ -16,10 +16,10 @@ namespace Pulumi.Oci.Jms.Outputs
         /// <summary>
         /// PerformanceTuningAnalysis flag to store enabled or disabled status.
         /// </summary>
-        public readonly bool IsEnabled;
+        public readonly bool? IsEnabled;
 
         [OutputConstructor]
-        private GetFleetAdvancedFeatureConfigurationAdvancedUsageTrackingResult(bool isEnabled)
+        private GetFleetAdvancedFeatureConfigurationAdvancedUsageTrackingResult(bool? isEnabled)
         {
             IsEnabled = isEnabled;
         }

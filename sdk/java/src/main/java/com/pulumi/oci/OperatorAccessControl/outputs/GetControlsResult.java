@@ -25,12 +25,12 @@ public final class GetControlsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The list of operator_control_collection.
      * 
      */
-    private List<GetControlsOperatorControlCollection> operatorControlCollections;
+    private @Nullable List<GetControlsOperatorControlCollection> operatorControlCollections;
     /**
      * @return resourceType for which the OperatorControl is applicable
      * 
@@ -60,15 +60,15 @@ public final class GetControlsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The list of operator_control_collection.
      * 
      */
     public List<GetControlsOperatorControlCollection> operatorControlCollections() {
-        return this.operatorControlCollections;
+        return this.operatorControlCollections == null ? List.of() : this.operatorControlCollections;
     }
     /**
      * @return resourceType for which the OperatorControl is applicable
@@ -97,8 +97,8 @@ public final class GetControlsResult {
         private String compartmentId;
         private @Nullable String displayName;
         private @Nullable List<GetControlsFilter> filters;
-        private String id;
-        private List<GetControlsOperatorControlCollection> operatorControlCollections;
+        private @Nullable String id;
+        private @Nullable List<GetControlsOperatorControlCollection> operatorControlCollections;
         private @Nullable String resourceType;
         private @Nullable String state;
         public Builder() {}
@@ -132,13 +132,13 @@ public final class GetControlsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder operatorControlCollections(List<GetControlsOperatorControlCollection> operatorControlCollections) {
-            this.operatorControlCollections = Objects.requireNonNull(operatorControlCollections);
+        public Builder operatorControlCollections(@Nullable List<GetControlsOperatorControlCollection> operatorControlCollections) {
+            this.operatorControlCollections = operatorControlCollections;
             return this;
         }
         public Builder operatorControlCollections(GetControlsOperatorControlCollection... operatorControlCollections) {

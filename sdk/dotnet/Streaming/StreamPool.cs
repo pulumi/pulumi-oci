@@ -77,43 +77,43 @@ namespace Pulumi.Oci.Streaming
         /// (Updatable) The OCID of the custom encryption key to be used or deleted if currently being used.
         /// </summary>
         [Output("customEncryptionKey")]
-        public Output<Outputs.StreamPoolCustomEncryptionKey> CustomEncryptionKey { get; private set; } = null!;
+        public Output<Outputs.StreamPoolCustomEncryptionKey?> CustomEncryptionKey { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// The FQDN used to access the streams inside the stream pool (same FQDN as the messagesEndpoint attribute of a [Stream](https://docs.cloud.oracle.com/iaas/api/#/en/streaming/20180418/Stream) object). If the stream pool is private, the FQDN is customized and can only be accessed from inside the associated subnetId, otherwise the FQDN is publicly resolvable. Depending on which protocol you attempt to use, you need to either prepend https or append the Kafka port.
         /// </summary>
         [Output("endpointFqdn")]
-        public Output<string> EndpointFqdn { get; private set; } = null!;
+        public Output<string?> EndpointFqdn { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair that is applied with no predefined name, type, or namespace. Exists for cross-compatibility only. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// True if the stream pool is private, false otherwise. The associated endpoint and subnetId of a private stream pool can be retrieved through the [GetStreamPool](https://docs.cloud.oracle.com/iaas/api/#/en/streaming/20180418/StreamPool/GetStreamPool) API.
         /// </summary>
         [Output("isPrivate")]
-        public Output<bool> IsPrivate { get; private set; } = null!;
+        public Output<bool?> IsPrivate { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Settings for the Kafka compatibility layer.
         /// </summary>
         [Output("kafkaSettings")]
-        public Output<Outputs.StreamPoolKafkaSettings> KafkaSettings { get; private set; } = null!;
+        public Output<Outputs.StreamPoolKafkaSettings?> KafkaSettings { get; private set; } = null!;
 
         /// <summary>
         /// Any additional details about the current state of the stream.
         /// </summary>
         [Output("lifecycleStateDetails")]
-        public Output<string> LifecycleStateDetails { get; private set; } = null!;
+        public Output<string?> LifecycleStateDetails { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The name of the stream pool. Avoid entering confidential information.  Example: `MyStreamPool`
@@ -125,19 +125,19 @@ namespace Pulumi.Oci.Streaming
         /// Optional parameters if a private stream pool is requested.
         /// </summary>
         [Output("privateEndpointSettings")]
-        public Output<Outputs.StreamPoolPrivateEndpointSettings> PrivateEndpointSettings { get; private set; } = null!;
+        public Output<Outputs.StreamPoolPrivateEndpointSettings?> PrivateEndpointSettings { get; private set; } = null!;
 
         /// <summary>
         /// The current state of the stream pool.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the stream pool was created, expressed in in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2018-04-20T00:00:07.405Z`
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
 
         /// <summary>

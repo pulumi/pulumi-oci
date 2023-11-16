@@ -145,7 +145,7 @@ namespace Pulumi.Oci.OspGateway
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Transaction identifier
         /// </summary>
@@ -153,63 +153,63 @@ namespace Pulumi.Oci.OspGateway
         /// <summary>
         /// Total amount of invoice
         /// </summary>
-        public readonly double InvoiceAmount;
+        public readonly double? InvoiceAmount;
         /// <summary>
         /// Invoice amount adjust
         /// </summary>
-        public readonly double InvoiceAmountAdjusted;
+        public readonly double? InvoiceAmountAdjusted;
         /// <summary>
         /// Invoice amount applied
         /// </summary>
-        public readonly double InvoiceAmountApplied;
+        public readonly double? InvoiceAmountApplied;
         /// <summary>
         /// Invoice amount credit
         /// </summary>
-        public readonly double InvoiceAmountCredited;
+        public readonly double? InvoiceAmountCredited;
         /// <summary>
         /// Balance of invoice
         /// </summary>
-        public readonly double InvoiceAmountDue;
+        public readonly double? InvoiceAmountDue;
         /// <summary>
         /// Invoice identifier which is generated on the on-premise sie. Pls note this is not an OCID
         /// </summary>
-        public readonly string InvoiceId;
+        public readonly string? InvoiceId;
         /// <summary>
         /// Invoice external reference
         /// </summary>
-        public readonly string InvoiceNumber;
+        public readonly string? InvoiceNumber;
         /// <summary>
         /// Invoice PO number
         /// </summary>
-        public readonly string InvoicePoNumber;
+        public readonly string? InvoicePoNumber;
         /// <summary>
         /// Invoice reference number
         /// </summary>
-        public readonly string InvoiceRefNumber;
+        public readonly string? InvoiceRefNumber;
         /// <summary>
         /// Invoice status
         /// </summary>
-        public readonly string InvoiceStatus;
+        public readonly string? InvoiceStatus;
         /// <summary>
         /// Type of invoice
         /// </summary>
-        public readonly string InvoiceType;
+        public readonly string? InvoiceType;
         /// <summary>
         /// Is credit card payment eligible
         /// </summary>
-        public readonly bool IsCreditCardPayable;
+        public readonly bool? IsCreditCardPayable;
         /// <summary>
         /// Is pdf download access allowed
         /// </summary>
-        public readonly bool IsDisplayDownloadPdf;
+        public readonly bool? IsDisplayDownloadPdf;
         /// <summary>
         /// Whether invoice can be payed
         /// </summary>
-        public readonly bool IsPayable;
+        public readonly bool? IsPayable;
         /// <summary>
         /// Is emailing pdf allowed
         /// </summary>
-        public readonly bool IsPdfEmailAvailable;
+        public readonly bool? IsPdfEmailAvailable;
         /// <summary>
         /// Payment related details
         /// </summary>
@@ -218,11 +218,11 @@ namespace Pulumi.Oci.OspGateway
         /// <summary>
         /// Payment terms
         /// </summary>
-        public readonly string PaymentTerms;
+        public readonly string? PaymentTerms;
         /// <summary>
         /// Preferred Email on the invoice
         /// </summary>
-        public readonly string PreferredEmail;
+        public readonly string? PreferredEmail;
         /// <summary>
         /// List of subscription identifiers
         /// </summary>
@@ -230,15 +230,15 @@ namespace Pulumi.Oci.OspGateway
         /// <summary>
         /// Tax of invoice amount
         /// </summary>
-        public readonly double Tax;
+        public readonly double? Tax;
         /// <summary>
         /// Date of invoice
         /// </summary>
-        public readonly string TimeInvoice;
+        public readonly string? TimeInvoice;
         /// <summary>
         /// Due date of invoice
         /// </summary>
-        public readonly string TimeInvoiceDue;
+        public readonly string? TimeInvoiceDue;
 
         [OutputConstructor]
         private GetInvoiceResult(
@@ -248,55 +248,55 @@ namespace Pulumi.Oci.OspGateway
 
             ImmutableArray<Outputs.GetInvoiceCurrencyResult> currencies,
 
-            string id,
+            string? id,
 
             string internalInvoiceId,
 
-            double invoiceAmount,
+            double? invoiceAmount,
 
-            double invoiceAmountAdjusted,
+            double? invoiceAmountAdjusted,
 
-            double invoiceAmountApplied,
+            double? invoiceAmountApplied,
 
-            double invoiceAmountCredited,
+            double? invoiceAmountCredited,
 
-            double invoiceAmountDue,
+            double? invoiceAmountDue,
 
-            string invoiceId,
+            string? invoiceId,
 
-            string invoiceNumber,
+            string? invoiceNumber,
 
-            string invoicePoNumber,
+            string? invoicePoNumber,
 
-            string invoiceRefNumber,
+            string? invoiceRefNumber,
 
-            string invoiceStatus,
+            string? invoiceStatus,
 
-            string invoiceType,
+            string? invoiceType,
 
-            bool isCreditCardPayable,
+            bool? isCreditCardPayable,
 
-            bool isDisplayDownloadPdf,
+            bool? isDisplayDownloadPdf,
 
-            bool isPayable,
+            bool? isPayable,
 
-            bool isPdfEmailAvailable,
+            bool? isPdfEmailAvailable,
 
             ImmutableArray<Outputs.GetInvoiceLastPaymentDetailResult> lastPaymentDetails,
 
             string ospHomeRegion,
 
-            string paymentTerms,
+            string? paymentTerms,
 
-            string preferredEmail,
+            string? preferredEmail,
 
             ImmutableArray<string> subscriptionIds,
 
-            double tax,
+            double? tax,
 
-            string timeInvoice,
+            string? timeInvoice,
 
-            string timeInvoiceDue)
+            string? timeInvoiceDue)
         {
             BillToAddresses = billToAddresses;
             CompartmentId = compartmentId;

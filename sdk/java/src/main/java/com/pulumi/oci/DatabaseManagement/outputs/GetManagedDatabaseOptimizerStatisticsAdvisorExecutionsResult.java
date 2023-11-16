@@ -20,13 +20,13 @@ public final class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsResult 
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private String managedDatabaseId;
     /**
      * @return The list of optimizer_statistics_advisor_executions_collection.
      * 
      */
-    private List<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollection> optimizerStatisticsAdvisorExecutionsCollections;
+    private @Nullable List<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollection> optimizerStatisticsAdvisorExecutionsCollections;
     private @Nullable String startTimeGreaterThanOrEqualTo;
 
     private GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsResult() {}
@@ -40,8 +40,8 @@ public final class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsResult 
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public String managedDatabaseId() {
         return this.managedDatabaseId;
@@ -51,7 +51,7 @@ public final class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsResult 
      * 
      */
     public List<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollection> optimizerStatisticsAdvisorExecutionsCollections() {
-        return this.optimizerStatisticsAdvisorExecutionsCollections;
+        return this.optimizerStatisticsAdvisorExecutionsCollections == null ? List.of() : this.optimizerStatisticsAdvisorExecutionsCollections;
     }
     public Optional<String> startTimeGreaterThanOrEqualTo() {
         return Optional.ofNullable(this.startTimeGreaterThanOrEqualTo);
@@ -68,9 +68,9 @@ public final class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsResult 
     public static final class Builder {
         private @Nullable String endTimeLessThanOrEqualTo;
         private @Nullable List<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsFilter> filters;
-        private String id;
+        private @Nullable String id;
         private String managedDatabaseId;
-        private List<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollection> optimizerStatisticsAdvisorExecutionsCollections;
+        private @Nullable List<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollection> optimizerStatisticsAdvisorExecutionsCollections;
         private @Nullable String startTimeGreaterThanOrEqualTo;
         public Builder() {}
         public Builder(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsResult defaults) {
@@ -97,8 +97,8 @@ public final class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsResult 
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -107,8 +107,8 @@ public final class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsResult 
             return this;
         }
         @CustomType.Setter
-        public Builder optimizerStatisticsAdvisorExecutionsCollections(List<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollection> optimizerStatisticsAdvisorExecutionsCollections) {
-            this.optimizerStatisticsAdvisorExecutionsCollections = Objects.requireNonNull(optimizerStatisticsAdvisorExecutionsCollections);
+        public Builder optimizerStatisticsAdvisorExecutionsCollections(@Nullable List<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollection> optimizerStatisticsAdvisorExecutionsCollections) {
+            this.optimizerStatisticsAdvisorExecutionsCollections = optimizerStatisticsAdvisorExecutionsCollections;
             return this;
         }
         public Builder optimizerStatisticsAdvisorExecutionsCollections(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollection... optimizerStatisticsAdvisorExecutionsCollections) {

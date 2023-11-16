@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // ## Import
@@ -33,50 +32,50 @@ type DbHome struct {
 	pulumi.CustomResourceState
 
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrOutput `pulumi:"compartmentId"`
 	// (Updatable) Details for creating a database.
 	//
 	// **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
-	Database DbHomeDatabaseOutput `pulumi:"database"`
+	Database DbHomeDatabasePtrOutput `pulumi:"database"`
 	// The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-	DatabaseSoftwareImageId pulumi.StringOutput `pulumi:"databaseSoftwareImageId"`
+	DatabaseSoftwareImageId pulumi.StringPtrOutput `pulumi:"databaseSoftwareImageId"`
 	// The location of the Oracle Database Home.
-	DbHomeLocation pulumi.StringOutput `pulumi:"dbHomeLocation"`
+	DbHomeLocation pulumi.StringPtrOutput `pulumi:"dbHomeLocation"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
-	DbSystemId pulumi.StringOutput `pulumi:"dbSystemId"`
+	DbSystemId pulumi.StringPtrOutput `pulumi:"dbSystemId"`
 	// A valid Oracle Database version. For a list of supported versions, use the ListDbVersions operation.
 	//
 	// This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
-	DbVersion pulumi.StringOutput `pulumi:"dbVersion"`
+	DbVersion pulumi.StringPtrOutput `pulumi:"dbVersion"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// The user-provided name of the Database Home.
-	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrOutput `pulumi:"displayName"`
 	// Defaults to false. If omitted or set to false the provider will not delete databases removed from the Db Home configuration.
 	EnableDatabaseDelete pulumi.BoolPtrOutput `pulumi:"enableDatabaseDelete"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// If true, the customer acknowledges that the specified Oracle Database software is an older release that is not currently supported by OCI.
-	IsDesupportedVersion pulumi.BoolOutput `pulumi:"isDesupportedVersion"`
+	IsDesupportedVersion pulumi.BoolPtrOutput `pulumi:"isDesupportedVersion"`
 	// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
-	KmsKeyId pulumi.StringOutput `pulumi:"kmsKeyId"`
+	KmsKeyId pulumi.StringPtrOutput `pulumi:"kmsKeyId"`
 	// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
-	KmsKeyVersionId pulumi.StringOutput `pulumi:"kmsKeyVersionId"`
+	KmsKeyVersionId pulumi.StringPtrOutput `pulumi:"kmsKeyVersionId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last patch history. This value is updated as soon as a patch operation is started.
-	LastPatchHistoryEntryId pulumi.StringOutput `pulumi:"lastPatchHistoryEntryId"`
+	LastPatchHistoryEntryId pulumi.StringPtrOutput `pulumi:"lastPatchHistoryEntryId"`
 	// Additional information about the current lifecycle state.
-	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrOutput `pulumi:"lifecycleDetails"`
 	// The source of database: NONE for creating a new database. DB_BACKUP for creating a new database by restoring from a database backup. VM_CLUSTER_NEW for creating a database for VM Cluster.
-	Source pulumi.StringOutput `pulumi:"source"`
+	Source pulumi.StringPtrOutput `pulumi:"source"`
 	// The current state of the Database Home.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// The date and time the Database Home was created.
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	VmClusterId pulumi.StringOutput `pulumi:"vmClusterId"`
+	VmClusterId pulumi.StringPtrOutput `pulumi:"vmClusterId"`
 }
 
 // NewDbHome registers a new resource with the given unique name, arguments, and options.
@@ -304,12 +303,6 @@ func (i *DbHome) ToDbHomeOutputWithContext(ctx context.Context) DbHomeOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(DbHomeOutput)
 }
 
-func (i *DbHome) ToOutput(ctx context.Context) pulumix.Output[*DbHome] {
-	return pulumix.Output[*DbHome]{
-		OutputState: i.ToDbHomeOutputWithContext(ctx).OutputState,
-	}
-}
-
 // DbHomeArrayInput is an input type that accepts DbHomeArray and DbHomeArrayOutput values.
 // You can construct a concrete instance of `DbHomeArrayInput` via:
 //
@@ -333,12 +326,6 @@ func (i DbHomeArray) ToDbHomeArrayOutput() DbHomeArrayOutput {
 
 func (i DbHomeArray) ToDbHomeArrayOutputWithContext(ctx context.Context) DbHomeArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(DbHomeArrayOutput)
-}
-
-func (i DbHomeArray) ToOutput(ctx context.Context) pulumix.Output[[]*DbHome] {
-	return pulumix.Output[[]*DbHome]{
-		OutputState: i.ToDbHomeArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // DbHomeMapInput is an input type that accepts DbHomeMap and DbHomeMapOutput values.
@@ -366,12 +353,6 @@ func (i DbHomeMap) ToDbHomeMapOutputWithContext(ctx context.Context) DbHomeMapOu
 	return pulumi.ToOutputWithContext(ctx, i).(DbHomeMapOutput)
 }
 
-func (i DbHomeMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*DbHome] {
-	return pulumix.Output[map[string]*DbHome]{
-		OutputState: i.ToDbHomeMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DbHomeOutput struct{ *pulumi.OutputState }
 
 func (DbHomeOutput) ElementType() reflect.Type {
@@ -386,44 +367,38 @@ func (o DbHomeOutput) ToDbHomeOutputWithContext(ctx context.Context) DbHomeOutpu
 	return o
 }
 
-func (o DbHomeOutput) ToOutput(ctx context.Context) pulumix.Output[*DbHome] {
-	return pulumix.Output[*DbHome]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-func (o DbHomeOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v *DbHome) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
+func (o DbHomeOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DbHome) pulumi.StringPtrOutput { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Details for creating a database.
 //
 // **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
-func (o DbHomeOutput) Database() DbHomeDatabaseOutput {
-	return o.ApplyT(func(v *DbHome) DbHomeDatabaseOutput { return v.Database }).(DbHomeDatabaseOutput)
+func (o DbHomeOutput) Database() DbHomeDatabasePtrOutput {
+	return o.ApplyT(func(v *DbHome) DbHomeDatabasePtrOutput { return v.Database }).(DbHomeDatabasePtrOutput)
 }
 
 // The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-func (o DbHomeOutput) DatabaseSoftwareImageId() pulumi.StringOutput {
-	return o.ApplyT(func(v *DbHome) pulumi.StringOutput { return v.DatabaseSoftwareImageId }).(pulumi.StringOutput)
+func (o DbHomeOutput) DatabaseSoftwareImageId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DbHome) pulumi.StringPtrOutput { return v.DatabaseSoftwareImageId }).(pulumi.StringPtrOutput)
 }
 
 // The location of the Oracle Database Home.
-func (o DbHomeOutput) DbHomeLocation() pulumi.StringOutput {
-	return o.ApplyT(func(v *DbHome) pulumi.StringOutput { return v.DbHomeLocation }).(pulumi.StringOutput)
+func (o DbHomeOutput) DbHomeLocation() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DbHome) pulumi.StringPtrOutput { return v.DbHomeLocation }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
-func (o DbHomeOutput) DbSystemId() pulumi.StringOutput {
-	return o.ApplyT(func(v *DbHome) pulumi.StringOutput { return v.DbSystemId }).(pulumi.StringOutput)
+func (o DbHomeOutput) DbSystemId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DbHome) pulumi.StringPtrOutput { return v.DbSystemId }).(pulumi.StringPtrOutput)
 }
 
 // A valid Oracle Database version. For a list of supported versions, use the ListDbVersions operation.
 //
 // This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
-func (o DbHomeOutput) DbVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v *DbHome) pulumi.StringOutput { return v.DbVersion }).(pulumi.StringOutput)
+func (o DbHomeOutput) DbVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DbHome) pulumi.StringPtrOutput { return v.DbVersion }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -432,8 +407,8 @@ func (o DbHomeOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // The user-provided name of the Database Home.
-func (o DbHomeOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v *DbHome) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+func (o DbHomeOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DbHome) pulumi.StringPtrOutput { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Defaults to false. If omitted or set to false the provider will not delete databases removed from the Db Home configuration.
@@ -447,51 +422,51 @@ func (o DbHomeOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // If true, the customer acknowledges that the specified Oracle Database software is an older release that is not currently supported by OCI.
-func (o DbHomeOutput) IsDesupportedVersion() pulumi.BoolOutput {
-	return o.ApplyT(func(v *DbHome) pulumi.BoolOutput { return v.IsDesupportedVersion }).(pulumi.BoolOutput)
+func (o DbHomeOutput) IsDesupportedVersion() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DbHome) pulumi.BoolPtrOutput { return v.IsDesupportedVersion }).(pulumi.BoolPtrOutput)
 }
 
 // The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
-func (o DbHomeOutput) KmsKeyId() pulumi.StringOutput {
-	return o.ApplyT(func(v *DbHome) pulumi.StringOutput { return v.KmsKeyId }).(pulumi.StringOutput)
+func (o DbHomeOutput) KmsKeyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DbHome) pulumi.StringPtrOutput { return v.KmsKeyId }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
-func (o DbHomeOutput) KmsKeyVersionId() pulumi.StringOutput {
-	return o.ApplyT(func(v *DbHome) pulumi.StringOutput { return v.KmsKeyVersionId }).(pulumi.StringOutput)
+func (o DbHomeOutput) KmsKeyVersionId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DbHome) pulumi.StringPtrOutput { return v.KmsKeyVersionId }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last patch history. This value is updated as soon as a patch operation is started.
-func (o DbHomeOutput) LastPatchHistoryEntryId() pulumi.StringOutput {
-	return o.ApplyT(func(v *DbHome) pulumi.StringOutput { return v.LastPatchHistoryEntryId }).(pulumi.StringOutput)
+func (o DbHomeOutput) LastPatchHistoryEntryId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DbHome) pulumi.StringPtrOutput { return v.LastPatchHistoryEntryId }).(pulumi.StringPtrOutput)
 }
 
 // Additional information about the current lifecycle state.
-func (o DbHomeOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v *DbHome) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o DbHomeOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DbHome) pulumi.StringPtrOutput { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // The source of database: NONE for creating a new database. DB_BACKUP for creating a new database by restoring from a database backup. VM_CLUSTER_NEW for creating a database for VM Cluster.
-func (o DbHomeOutput) Source() pulumi.StringOutput {
-	return o.ApplyT(func(v *DbHome) pulumi.StringOutput { return v.Source }).(pulumi.StringOutput)
+func (o DbHomeOutput) Source() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DbHome) pulumi.StringPtrOutput { return v.Source }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the Database Home.
-func (o DbHomeOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *DbHome) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o DbHomeOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DbHome) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the Database Home was created.
-func (o DbHomeOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *DbHome) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o DbHomeOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DbHome) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-func (o DbHomeOutput) VmClusterId() pulumi.StringOutput {
-	return o.ApplyT(func(v *DbHome) pulumi.StringOutput { return v.VmClusterId }).(pulumi.StringOutput)
+func (o DbHomeOutput) VmClusterId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DbHome) pulumi.StringPtrOutput { return v.VmClusterId }).(pulumi.StringPtrOutput)
 }
 
 type DbHomeArrayOutput struct{ *pulumi.OutputState }
@@ -506,12 +481,6 @@ func (o DbHomeArrayOutput) ToDbHomeArrayOutput() DbHomeArrayOutput {
 
 func (o DbHomeArrayOutput) ToDbHomeArrayOutputWithContext(ctx context.Context) DbHomeArrayOutput {
 	return o
-}
-
-func (o DbHomeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*DbHome] {
-	return pulumix.Output[[]*DbHome]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DbHomeArrayOutput) Index(i pulumi.IntInput) DbHomeOutput {
@@ -532,12 +501,6 @@ func (o DbHomeMapOutput) ToDbHomeMapOutput() DbHomeMapOutput {
 
 func (o DbHomeMapOutput) ToDbHomeMapOutputWithContext(ctx context.Context) DbHomeMapOutput {
 	return o
-}
-
-func (o DbHomeMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*DbHome] {
-	return pulumix.Output[map[string]*DbHome]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DbHomeMapOutput) MapIndex(k pulumi.StringInput) DbHomeOutput {

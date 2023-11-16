@@ -47,60 +47,60 @@ export interface GetPathAnalyzerTestResult {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `PathAnalyzerTest` resource's compartment.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * Information describing a source or destination in a `PathAnalyzerTest` resource.
      */
-    readonly destinationEndpoints: outputs.VnMonitoring.GetPathAnalyzerTestDestinationEndpoint[];
+    readonly destinationEndpoints?: outputs.VnMonitoring.GetPathAnalyzerTestDestinationEndpoint[];
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * A unique identifier established when the resource is created. The identifier can't be changed later.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly pathAnalyzerTestId: string;
     /**
      * The IP protocol to use for the `PathAnalyzerTest` resource.
      */
-    readonly protocol: number;
+    readonly protocol?: number;
     /**
      * Defines the IP protocol parameters for a `PathAnalyzerTest` resource.
      */
-    readonly protocolParameters: outputs.VnMonitoring.GetPathAnalyzerTestProtocolParameter[];
+    readonly protocolParameters?: outputs.VnMonitoring.GetPathAnalyzerTestProtocolParameter[];
     /**
      * Defines the query options required for a `PathAnalyzerTest` resource.
      */
-    readonly queryOptions: outputs.VnMonitoring.GetPathAnalyzerTestQueryOption[];
+    readonly queryOptions?: outputs.VnMonitoring.GetPathAnalyzerTestQueryOption[];
     /**
      * Information describing a source or destination in a `PathAnalyzerTest` resource.
      */
-    readonly sourceEndpoints: outputs.VnMonitoring.GetPathAnalyzerTestSourceEndpoint[];
+    readonly sourceEndpoints?: outputs.VnMonitoring.GetPathAnalyzerTestSourceEndpoint[];
     /**
      * The current state of the `PathAnalyzerTest` resource.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    readonly systemTags: {[key: string]: any};
+    readonly systemTags?: {[key: string]: any};
     /**
      * The date and time the `PathAnalyzerTest` resource was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The date and time the `PathAnalyzerTest` resource was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
-    readonly timeUpdated: string;
+    readonly timeUpdated?: string;
 }
 /**
  * This data source provides details about a specific Path Analyzer Test resource in Oracle Cloud Infrastructure Vn Monitoring service.

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Software Source Software Packages in Oracle Cloud Infrastructure Os Management Hub service.
@@ -75,7 +74,7 @@ type GetSoftwareSourceSoftwarePackagesResult struct {
 	DisplayNameContains *string                                   `pulumi:"displayNameContains"`
 	Filters             []GetSoftwareSourceSoftwarePackagesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Indicates whether this package is the latest version.
 	IsLatest *bool `pulumi:"isLatest"`
 	// The list of software_package_collection.
@@ -128,12 +127,6 @@ func (o GetSoftwareSourceSoftwarePackagesResultOutput) ToGetSoftwareSourceSoftwa
 	return o
 }
 
-func (o GetSoftwareSourceSoftwarePackagesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetSoftwareSourceSoftwarePackagesResult] {
-	return pulumix.Output[GetSoftwareSourceSoftwarePackagesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Software source name.
 func (o GetSoftwareSourceSoftwarePackagesResultOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetSoftwareSourceSoftwarePackagesResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
@@ -150,8 +143,8 @@ func (o GetSoftwareSourceSoftwarePackagesResultOutput) Filters() GetSoftwareSour
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetSoftwareSourceSoftwarePackagesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSoftwareSourceSoftwarePackagesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetSoftwareSourceSoftwarePackagesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSoftwareSourceSoftwarePackagesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Indicates whether this package is the latest version.

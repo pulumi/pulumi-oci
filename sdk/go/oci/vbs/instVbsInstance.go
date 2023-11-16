@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Vbs Instance resource in Oracle Cloud Infrastructure Vbs Inst service.
@@ -74,28 +73,28 @@ type InstVbsInstance struct {
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// IDCS personal acceess token identifying IDCS user and stripe for the VBS service
-	IdcsAccessToken pulumi.StringOutput `pulumi:"idcsAccessToken"`
+	IdcsAccessToken pulumi.StringPtrOutput `pulumi:"idcsAccessToken"`
 	// (Updatable) Whether VBS is authorized to create and use resources in the customer tenancy
-	IsResourceUsageAgreementGranted pulumi.BoolOutput `pulumi:"isResourceUsageAgreementGranted"`
+	IsResourceUsageAgreementGranted pulumi.BoolPtrOutput `pulumi:"isResourceUsageAgreementGranted"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-	LifecyleDetails pulumi.StringOutput `pulumi:"lifecyleDetails"`
+	LifecyleDetails pulumi.StringPtrOutput `pulumi:"lifecyleDetails"`
 	// Service Instance Name
 	Name pulumi.StringOutput `pulumi:"name"`
 	// (Updatable) Compartment where VBS may create additional resources for the service instance
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	ResourceCompartmentId pulumi.StringOutput `pulumi:"resourceCompartmentId"`
+	ResourceCompartmentId pulumi.StringPtrOutput `pulumi:"resourceCompartmentId"`
 	// The current state of the VbsInstance.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
 	// The time the the VbsInstance was created. An RFC3339 formatted datetime string
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The time the VbsInstance was updated. An RFC3339 formatted datetime string
-	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 	// Public web URL for accessing the VBS service instance
-	VbsAccessUrl pulumi.StringOutput `pulumi:"vbsAccessUrl"`
+	VbsAccessUrl pulumi.StringPtrOutput `pulumi:"vbsAccessUrl"`
 }
 
 // NewInstVbsInstance registers a new resource with the given unique name, arguments, and options.
@@ -273,12 +272,6 @@ func (i *InstVbsInstance) ToInstVbsInstanceOutputWithContext(ctx context.Context
 	return pulumi.ToOutputWithContext(ctx, i).(InstVbsInstanceOutput)
 }
 
-func (i *InstVbsInstance) ToOutput(ctx context.Context) pulumix.Output[*InstVbsInstance] {
-	return pulumix.Output[*InstVbsInstance]{
-		OutputState: i.ToInstVbsInstanceOutputWithContext(ctx).OutputState,
-	}
-}
-
 // InstVbsInstanceArrayInput is an input type that accepts InstVbsInstanceArray and InstVbsInstanceArrayOutput values.
 // You can construct a concrete instance of `InstVbsInstanceArrayInput` via:
 //
@@ -302,12 +295,6 @@ func (i InstVbsInstanceArray) ToInstVbsInstanceArrayOutput() InstVbsInstanceArra
 
 func (i InstVbsInstanceArray) ToInstVbsInstanceArrayOutputWithContext(ctx context.Context) InstVbsInstanceArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(InstVbsInstanceArrayOutput)
-}
-
-func (i InstVbsInstanceArray) ToOutput(ctx context.Context) pulumix.Output[[]*InstVbsInstance] {
-	return pulumix.Output[[]*InstVbsInstance]{
-		OutputState: i.ToInstVbsInstanceArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // InstVbsInstanceMapInput is an input type that accepts InstVbsInstanceMap and InstVbsInstanceMapOutput values.
@@ -335,12 +322,6 @@ func (i InstVbsInstanceMap) ToInstVbsInstanceMapOutputWithContext(ctx context.Co
 	return pulumi.ToOutputWithContext(ctx, i).(InstVbsInstanceMapOutput)
 }
 
-func (i InstVbsInstanceMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*InstVbsInstance] {
-	return pulumix.Output[map[string]*InstVbsInstance]{
-		OutputState: i.ToInstVbsInstanceMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type InstVbsInstanceOutput struct{ *pulumi.OutputState }
 
 func (InstVbsInstanceOutput) ElementType() reflect.Type {
@@ -353,12 +334,6 @@ func (o InstVbsInstanceOutput) ToInstVbsInstanceOutput() InstVbsInstanceOutput {
 
 func (o InstVbsInstanceOutput) ToInstVbsInstanceOutputWithContext(ctx context.Context) InstVbsInstanceOutput {
 	return o
-}
-
-func (o InstVbsInstanceOutput) ToOutput(ctx context.Context) pulumix.Output[*InstVbsInstance] {
-	return pulumix.Output[*InstVbsInstance]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Compartment Identifier. It can only be the root compartment
@@ -382,18 +357,18 @@ func (o InstVbsInstanceOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // IDCS personal acceess token identifying IDCS user and stripe for the VBS service
-func (o InstVbsInstanceOutput) IdcsAccessToken() pulumi.StringOutput {
-	return o.ApplyT(func(v *InstVbsInstance) pulumi.StringOutput { return v.IdcsAccessToken }).(pulumi.StringOutput)
+func (o InstVbsInstanceOutput) IdcsAccessToken() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *InstVbsInstance) pulumi.StringPtrOutput { return v.IdcsAccessToken }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Whether VBS is authorized to create and use resources in the customer tenancy
-func (o InstVbsInstanceOutput) IsResourceUsageAgreementGranted() pulumi.BoolOutput {
-	return o.ApplyT(func(v *InstVbsInstance) pulumi.BoolOutput { return v.IsResourceUsageAgreementGranted }).(pulumi.BoolOutput)
+func (o InstVbsInstanceOutput) IsResourceUsageAgreementGranted() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *InstVbsInstance) pulumi.BoolPtrOutput { return v.IsResourceUsageAgreementGranted }).(pulumi.BoolPtrOutput)
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-func (o InstVbsInstanceOutput) LifecyleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v *InstVbsInstance) pulumi.StringOutput { return v.LifecyleDetails }).(pulumi.StringOutput)
+func (o InstVbsInstanceOutput) LifecyleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *InstVbsInstance) pulumi.StringPtrOutput { return v.LifecyleDetails }).(pulumi.StringPtrOutput)
 }
 
 // Service Instance Name
@@ -405,13 +380,13 @@ func (o InstVbsInstanceOutput) Name() pulumi.StringOutput {
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-func (o InstVbsInstanceOutput) ResourceCompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v *InstVbsInstance) pulumi.StringOutput { return v.ResourceCompartmentId }).(pulumi.StringOutput)
+func (o InstVbsInstanceOutput) ResourceCompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *InstVbsInstance) pulumi.StringPtrOutput { return v.ResourceCompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the VbsInstance.
-func (o InstVbsInstanceOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *InstVbsInstance) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o InstVbsInstanceOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *InstVbsInstance) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -420,18 +395,18 @@ func (o InstVbsInstanceOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The time the the VbsInstance was created. An RFC3339 formatted datetime string
-func (o InstVbsInstanceOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *InstVbsInstance) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o InstVbsInstanceOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *InstVbsInstance) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time the VbsInstance was updated. An RFC3339 formatted datetime string
-func (o InstVbsInstanceOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *InstVbsInstance) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o InstVbsInstanceOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *InstVbsInstance) pulumi.StringPtrOutput { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 // Public web URL for accessing the VBS service instance
-func (o InstVbsInstanceOutput) VbsAccessUrl() pulumi.StringOutput {
-	return o.ApplyT(func(v *InstVbsInstance) pulumi.StringOutput { return v.VbsAccessUrl }).(pulumi.StringOutput)
+func (o InstVbsInstanceOutput) VbsAccessUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *InstVbsInstance) pulumi.StringPtrOutput { return v.VbsAccessUrl }).(pulumi.StringPtrOutput)
 }
 
 type InstVbsInstanceArrayOutput struct{ *pulumi.OutputState }
@@ -446,12 +421,6 @@ func (o InstVbsInstanceArrayOutput) ToInstVbsInstanceArrayOutput() InstVbsInstan
 
 func (o InstVbsInstanceArrayOutput) ToInstVbsInstanceArrayOutputWithContext(ctx context.Context) InstVbsInstanceArrayOutput {
 	return o
-}
-
-func (o InstVbsInstanceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*InstVbsInstance] {
-	return pulumix.Output[[]*InstVbsInstance]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o InstVbsInstanceArrayOutput) Index(i pulumi.IntInput) InstVbsInstanceOutput {
@@ -472,12 +441,6 @@ func (o InstVbsInstanceMapOutput) ToInstVbsInstanceMapOutput() InstVbsInstanceMa
 
 func (o InstVbsInstanceMapOutput) ToInstVbsInstanceMapOutputWithContext(ctx context.Context) InstVbsInstanceMapOutput {
 	return o
-}
-
-func (o InstVbsInstanceMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*InstVbsInstance] {
-	return pulumix.Output[map[string]*InstVbsInstance]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o InstVbsInstanceMapOutput) MapIndex(k pulumi.StringInput) InstVbsInstanceOutput {

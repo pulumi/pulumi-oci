@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Monitor resource in Oracle Cloud Infrastructure Apm Synthetics service.
@@ -66,48 +65,48 @@ type GetMonitorResult struct {
 	// Monitor availability configuration details.
 	AvailabilityConfigurations []GetMonitorAvailabilityConfiguration `pulumi:"availabilityConfigurations"`
 	// Time interval between two runs in round robin batch mode (SchedulingPolicy - BATCHED_ROUND_ROBIN).
-	BatchIntervalInSeconds int `pulumi:"batchIntervalInSeconds"`
+	BatchIntervalInSeconds *int `pulumi:"batchIntervalInSeconds"`
 	// Details of monitor configuration.
 	Configurations []GetMonitorConfiguration `pulumi:"configurations"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// Unique name that can be edited. The name should not contain any confidential information.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the monitor.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// If isRunNow is enabled, then the monitor will run immediately.
-	IsRunNow bool `pulumi:"isRunNow"`
+	IsRunNow *bool `pulumi:"isRunNow"`
 	// If runOnce is enabled, then the monitor will run once.
-	IsRunOnce bool `pulumi:"isRunOnce"`
+	IsRunOnce *bool `pulumi:"isRunOnce"`
 	// Details required to schedule maintenance window.
 	MaintenanceWindowSchedules []GetMonitorMaintenanceWindowSchedule `pulumi:"maintenanceWindowSchedules"`
 	MonitorId                  string                                `pulumi:"monitorId"`
 	// Type of monitor.
-	MonitorType string `pulumi:"monitorType"`
+	MonitorType *string `pulumi:"monitorType"`
 	// Interval in seconds after the start time when the job should be repeated. Minimum repeatIntervalInSeconds should be 300 seconds for Scripted REST, Scripted Browser and Browser monitors, and 60 seconds for REST monitor.
-	RepeatIntervalInSeconds int `pulumi:"repeatIntervalInSeconds"`
+	RepeatIntervalInSeconds *int `pulumi:"repeatIntervalInSeconds"`
 	// Scheduling policy to decide the distribution of monitor executions on vantage points.
-	SchedulingPolicy string `pulumi:"schedulingPolicy"`
+	SchedulingPolicy *string `pulumi:"schedulingPolicy"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the script. scriptId is mandatory for creation of SCRIPTED_BROWSER and SCRIPTED_REST monitor types. For other monitor types, it should be set to null.
-	ScriptId string `pulumi:"scriptId"`
+	ScriptId *string `pulumi:"scriptId"`
 	// Name of the script.
-	ScriptName string `pulumi:"scriptName"`
+	ScriptName *string `pulumi:"scriptName"`
 	// List of script parameters. Example: `[{"monitorScriptParameter": {"paramName": "userid", "paramValue":"testuser"}, "isSecret": false, "isOverwritten": false}]`
 	ScriptParameters []GetMonitorScriptParameter `pulumi:"scriptParameters"`
 	// Enables or disables the monitor.
-	Status string `pulumi:"status"`
+	Status *string `pulumi:"status"`
 	// Specify the endpoint on which to run the monitor. For BROWSER and REST monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is. For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80
-	Target string `pulumi:"target"`
+	Target *string `pulumi:"target"`
 	// The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 	// Timeout in seconds. If isFailureRetried is true, then timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. If isFailureRetried is false, then timeout cannot be more than 50% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
-	TimeoutInSeconds int `pulumi:"timeoutInSeconds"`
+	TimeoutInSeconds *int `pulumi:"timeoutInSeconds"`
 	// Number of vantage points where monitor is running.
-	VantagePointCount int `pulumi:"vantagePointCount"`
+	VantagePointCount *int `pulumi:"vantagePointCount"`
 	// List of public and dedicated vantage points where the monitor is running.
 	VantagePoints []GetMonitorVantagePoint `pulumi:"vantagePoints"`
 }
@@ -152,12 +151,6 @@ func (o GetMonitorResultOutput) ToGetMonitorResultOutputWithContext(ctx context.
 	return o
 }
 
-func (o GetMonitorResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetMonitorResult] {
-	return pulumix.Output[GetMonitorResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetMonitorResultOutput) ApmDomainId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMonitorResult) string { return v.ApmDomainId }).(pulumi.StringOutput)
 }
@@ -168,8 +161,8 @@ func (o GetMonitorResultOutput) AvailabilityConfigurations() GetMonitorAvailabil
 }
 
 // Time interval between two runs in round robin batch mode (SchedulingPolicy - BATCHED_ROUND_ROBIN).
-func (o GetMonitorResultOutput) BatchIntervalInSeconds() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMonitorResult) int { return v.BatchIntervalInSeconds }).(pulumi.IntOutput)
+func (o GetMonitorResultOutput) BatchIntervalInSeconds() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetMonitorResult) *int { return v.BatchIntervalInSeconds }).(pulumi.IntPtrOutput)
 }
 
 // Details of monitor configuration.
@@ -183,8 +176,8 @@ func (o GetMonitorResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // Unique name that can be edited. The name should not contain any confidential information.
-func (o GetMonitorResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMonitorResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetMonitorResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMonitorResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -193,18 +186,18 @@ func (o GetMonitorResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the monitor.
-func (o GetMonitorResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMonitorResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetMonitorResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMonitorResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // If isRunNow is enabled, then the monitor will run immediately.
-func (o GetMonitorResultOutput) IsRunNow() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetMonitorResult) bool { return v.IsRunNow }).(pulumi.BoolOutput)
+func (o GetMonitorResultOutput) IsRunNow() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetMonitorResult) *bool { return v.IsRunNow }).(pulumi.BoolPtrOutput)
 }
 
 // If runOnce is enabled, then the monitor will run once.
-func (o GetMonitorResultOutput) IsRunOnce() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetMonitorResult) bool { return v.IsRunOnce }).(pulumi.BoolOutput)
+func (o GetMonitorResultOutput) IsRunOnce() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetMonitorResult) *bool { return v.IsRunOnce }).(pulumi.BoolPtrOutput)
 }
 
 // Details required to schedule maintenance window.
@@ -217,28 +210,28 @@ func (o GetMonitorResultOutput) MonitorId() pulumi.StringOutput {
 }
 
 // Type of monitor.
-func (o GetMonitorResultOutput) MonitorType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMonitorResult) string { return v.MonitorType }).(pulumi.StringOutput)
+func (o GetMonitorResultOutput) MonitorType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMonitorResult) *string { return v.MonitorType }).(pulumi.StringPtrOutput)
 }
 
 // Interval in seconds after the start time when the job should be repeated. Minimum repeatIntervalInSeconds should be 300 seconds for Scripted REST, Scripted Browser and Browser monitors, and 60 seconds for REST monitor.
-func (o GetMonitorResultOutput) RepeatIntervalInSeconds() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMonitorResult) int { return v.RepeatIntervalInSeconds }).(pulumi.IntOutput)
+func (o GetMonitorResultOutput) RepeatIntervalInSeconds() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetMonitorResult) *int { return v.RepeatIntervalInSeconds }).(pulumi.IntPtrOutput)
 }
 
 // Scheduling policy to decide the distribution of monitor executions on vantage points.
-func (o GetMonitorResultOutput) SchedulingPolicy() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMonitorResult) string { return v.SchedulingPolicy }).(pulumi.StringOutput)
+func (o GetMonitorResultOutput) SchedulingPolicy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMonitorResult) *string { return v.SchedulingPolicy }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the script. scriptId is mandatory for creation of SCRIPTED_BROWSER and SCRIPTED_REST monitor types. For other monitor types, it should be set to null.
-func (o GetMonitorResultOutput) ScriptId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMonitorResult) string { return v.ScriptId }).(pulumi.StringOutput)
+func (o GetMonitorResultOutput) ScriptId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMonitorResult) *string { return v.ScriptId }).(pulumi.StringPtrOutput)
 }
 
 // Name of the script.
-func (o GetMonitorResultOutput) ScriptName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMonitorResult) string { return v.ScriptName }).(pulumi.StringOutput)
+func (o GetMonitorResultOutput) ScriptName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMonitorResult) *string { return v.ScriptName }).(pulumi.StringPtrOutput)
 }
 
 // List of script parameters. Example: `[{"monitorScriptParameter": {"paramName": "userid", "paramValue":"testuser"}, "isSecret": false, "isOverwritten": false}]`
@@ -247,33 +240,33 @@ func (o GetMonitorResultOutput) ScriptParameters() GetMonitorScriptParameterArra
 }
 
 // Enables or disables the monitor.
-func (o GetMonitorResultOutput) Status() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMonitorResult) string { return v.Status }).(pulumi.StringOutput)
+func (o GetMonitorResultOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMonitorResult) *string { return v.Status }).(pulumi.StringPtrOutput)
 }
 
 // Specify the endpoint on which to run the monitor. For BROWSER and REST monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is. For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80
-func (o GetMonitorResultOutput) Target() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMonitorResult) string { return v.Target }).(pulumi.StringOutput)
+func (o GetMonitorResultOutput) Target() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMonitorResult) *string { return v.Target }).(pulumi.StringPtrOutput)
 }
 
 // The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
-func (o GetMonitorResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMonitorResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetMonitorResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMonitorResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
-func (o GetMonitorResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMonitorResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o GetMonitorResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMonitorResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 // Timeout in seconds. If isFailureRetried is true, then timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. If isFailureRetried is false, then timeout cannot be more than 50% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
-func (o GetMonitorResultOutput) TimeoutInSeconds() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMonitorResult) int { return v.TimeoutInSeconds }).(pulumi.IntOutput)
+func (o GetMonitorResultOutput) TimeoutInSeconds() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetMonitorResult) *int { return v.TimeoutInSeconds }).(pulumi.IntPtrOutput)
 }
 
 // Number of vantage points where monitor is running.
-func (o GetMonitorResultOutput) VantagePointCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMonitorResult) int { return v.VantagePointCount }).(pulumi.IntOutput)
+func (o GetMonitorResultOutput) VantagePointCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetMonitorResult) *int { return v.VantagePointCount }).(pulumi.IntPtrOutput)
 }
 
 // List of public and dedicated vantage points where the monitor is running.

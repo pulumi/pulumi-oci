@@ -141,7 +141,7 @@ namespace Pulumi.Oci.Kms
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The list of vaults.
         /// </summary>
@@ -153,7 +153,7 @@ namespace Pulumi.Oci.Kms
 
             ImmutableArray<Outputs.GetVaultsFilterResult> filters,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetVaultsVaultResult> vaults)
         {

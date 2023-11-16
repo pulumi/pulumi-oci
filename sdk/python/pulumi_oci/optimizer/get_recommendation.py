@@ -77,66 +77,42 @@ class GetRecommendationResult:
 
     @property
     @pulumi.getter(name="categoryId")
-    def category_id(self) -> str:
-        """
-        The unique OCID associated with the category.
-        """
+    def category_id(self) -> Optional[str]:
         return pulumi.get(self, "category_id")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The OCID of the tenancy. The tenancy is the root compartment.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        Text describing the recommendation.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="estimatedCostSaving")
-    def estimated_cost_saving(self) -> float:
-        """
-        The estimated cost savings, in dollars, for the recommendation.
-        """
+    def estimated_cost_saving(self) -> Optional[float]:
         return pulumi.get(self, "estimated_cost_saving")
 
     @property
     @pulumi.getter(name="extendedMetadata")
-    def extended_metadata(self) -> Mapping[str, Any]:
-        """
-        Additional metadata key/value pairs for the recommendation.
-        """
+    def extended_metadata(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "extended_metadata")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The unique OCID associated with the recommendation.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter
-    def importance(self) -> str:
-        """
-        The level of importance assigned to the recommendation.
-        """
+    def importance(self) -> Optional[str]:
         return pulumi.get(self, "importance")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        The name of the profile level.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
@@ -146,66 +122,42 @@ class GetRecommendationResult:
 
     @property
     @pulumi.getter(name="resourceCounts")
-    def resource_counts(self) -> Sequence['outputs.GetRecommendationResourceCountResult']:
-        """
-        An array of `ResourceCount` objects grouped by the status of the resource actions.
-        """
+    def resource_counts(self) -> Optional[Sequence['outputs.GetRecommendationResourceCountResult']]:
         return pulumi.get(self, "resource_counts")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The recommendation's current state.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter
-    def status(self) -> str:
-        """
-        The current status of the recommendation.
-        """
+    def status(self) -> Optional[str]:
         return pulumi.get(self, "status")
 
     @property
     @pulumi.getter(name="supportedLevels")
-    def supported_levels(self) -> Sequence['outputs.GetRecommendationSupportedLevelResult']:
-        """
-        Optional. The profile levels supported by a recommendation. For example, profile level values could be `Low`, `Medium`, and `High`. Not all recommendations support this field.
-        """
+    def supported_levels(self) -> Optional[Sequence['outputs.GetRecommendationSupportedLevelResult']]:
         return pulumi.get(self, "supported_levels")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the recommendation details were created, in the format defined by RFC3339.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeStatusBegin")
-    def time_status_begin(self) -> str:
-        """
-        The date and time that the recommendation entered its current status. The format is defined by RFC3339.
-        """
+    def time_status_begin(self) -> Optional[str]:
         return pulumi.get(self, "time_status_begin")
 
     @property
     @pulumi.getter(name="timeStatusEnd")
-    def time_status_end(self) -> str:
-        """
-        The date and time the current status will change. The format is defined by RFC3339.
-        """
+    def time_status_end(self) -> Optional[str]:
         return pulumi.get(self, "time_status_end")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The date and time the recommendation details were last updated, in the format defined by RFC3339.
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
 
@@ -237,21 +189,7 @@ class AwaitableGetRecommendationResult(GetRecommendationResult):
 def get_recommendation(recommendation_id: Optional[str] = None,
                        opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetRecommendationResult:
     """
-    This data source provides details about a specific Recommendation resource in Oracle Cloud Infrastructure Optimizer service.
-
-    Gets the recommendation for the specified OCID.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_recommendation = oci.Optimizer.get_recommendation(recommendation_id=oci_optimizer_recommendation["test_recommendation"]["id"])
-    ```
-
-
-    :param str recommendation_id: The unique OCID associated with the recommendation.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['recommendationId'] = recommendation_id
@@ -282,20 +220,6 @@ def get_recommendation(recommendation_id: Optional[str] = None,
 def get_recommendation_output(recommendation_id: Optional[pulumi.Input[str]] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetRecommendationResult]:
     """
-    This data source provides details about a specific Recommendation resource in Oracle Cloud Infrastructure Optimizer service.
-
-    Gets the recommendation for the specified OCID.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_recommendation = oci.Optimizer.get_recommendation(recommendation_id=oci_optimizer_recommendation["test_recommendation"]["id"])
-    ```
-
-
-    :param str recommendation_id: The unique OCID associated with the recommendation.
+    Use this data source to access information about an existing resource.
     """
     ...

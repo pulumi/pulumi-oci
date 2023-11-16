@@ -54,15 +54,12 @@ class GetBackendSetHealthResult:
 
     @property
     @pulumi.getter(name="criticalStateBackendNames")
-    def critical_state_backend_names(self) -> Sequence[str]:
-        """
-        A list of backend servers that are currently in the `CRITICAL` health state. The list identifies each backend server by IP address and port.  Example: `10.0.0.4:8080`
-        """
+    def critical_state_backend_names(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "critical_state_backend_names")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -75,38 +72,22 @@ class GetBackendSetHealthResult:
 
     @property
     @pulumi.getter
-    def status(self) -> str:
-        """
-        Overall health status of the backend set.
-        *  **OK:** All backend servers in the backend set return a status of `OK`.
-        *  **WARNING:** Half or more of the backend set's backend servers return a status of `OK` and at least one backend server returns a status of `WARNING`, `CRITICAL`, or `UNKNOWN`.
-        *  **CRITICAL:** Fewer than half of the backend set's backend servers return a status of `OK`.
-        *  **UNKNOWN:** More than half of the backend set's backend servers return a status of `UNKNOWN`, the system was unable to retrieve metrics, or the backend set does not have a listener attached.
-        """
+    def status(self) -> Optional[str]:
         return pulumi.get(self, "status")
 
     @property
     @pulumi.getter(name="totalBackendCount")
-    def total_backend_count(self) -> int:
-        """
-        The total number of backend servers in this backend set.  Example: `7`
-        """
+    def total_backend_count(self) -> Optional[int]:
         return pulumi.get(self, "total_backend_count")
 
     @property
     @pulumi.getter(name="unknownStateBackendNames")
-    def unknown_state_backend_names(self) -> Sequence[str]:
-        """
-        A list of backend servers that are currently in the `UNKNOWN` health state. The list identifies each backend server by IP address and port.  Example: `10.0.0.5:8080`
-        """
+    def unknown_state_backend_names(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "unknown_state_backend_names")
 
     @property
     @pulumi.getter(name="warningStateBackendNames")
-    def warning_state_backend_names(self) -> Sequence[str]:
-        """
-        A list of backend servers that are currently in the `WARNING` health state. The list identifies each backend server by IP address and port.  Example: `10.0.0.3:8080`
-        """
+    def warning_state_backend_names(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "warning_state_backend_names")
 
 
@@ -130,23 +111,7 @@ def get_backend_set_health(backend_set_name: Optional[str] = None,
                            load_balancer_id: Optional[str] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetBackendSetHealthResult:
     """
-    This data source provides details about a specific Backend Set Health resource in Oracle Cloud Infrastructure Load Balancer service.
-
-    Gets the health status for the specified backend set.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_backend_set_health = oci.LoadBalancer.get_backend_set_health(backend_set_name=oci_load_balancer_backend_set["test_backend_set"]["name"],
-        load_balancer_id=oci_load_balancer_load_balancer["test_load_balancer"]["id"])
-    ```
-
-
-    :param str backend_set_name: The name of the backend set to retrieve the health status for.  Example: `example_backend_set`
-    :param str load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer associated with the backend set health status to be retrieved.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['backendSetName'] = backend_set_name
@@ -170,22 +135,6 @@ def get_backend_set_health_output(backend_set_name: Optional[pulumi.Input[str]] 
                                   load_balancer_id: Optional[pulumi.Input[str]] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetBackendSetHealthResult]:
     """
-    This data source provides details about a specific Backend Set Health resource in Oracle Cloud Infrastructure Load Balancer service.
-
-    Gets the health status for the specified backend set.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_backend_set_health = oci.LoadBalancer.get_backend_set_health(backend_set_name=oci_load_balancer_backend_set["test_backend_set"]["name"],
-        load_balancer_id=oci_load_balancer_load_balancer["test_load_balancer"]["id"])
-    ```
-
-
-    :param str backend_set_name: The name of the backend set to retrieve the health status for.  Example: `example_backend_set`
-    :param str load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer associated with the backend set health status to be retrieved.
+    Use this data source to access information about an existing resource.
     """
     ...

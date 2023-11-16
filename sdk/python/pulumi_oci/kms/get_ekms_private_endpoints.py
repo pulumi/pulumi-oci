@@ -40,17 +40,11 @@ class GetEkmsPrivateEndpointsResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        Identifier of the compartment this EKMS private endpoint belongs to
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="ekmsPrivateEndpoints")
-    def ekms_private_endpoints(self) -> Sequence['outputs.GetEkmsPrivateEndpointsEkmsPrivateEndpointResult']:
-        """
-        The list of ekms_private_endpoints.
-        """
+    def ekms_private_endpoints(self) -> Optional[Sequence['outputs.GetEkmsPrivateEndpointsEkmsPrivateEndpointResult']]:
         return pulumi.get(self, "ekms_private_endpoints")
 
     @property
@@ -60,7 +54,7 @@ class GetEkmsPrivateEndpointsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -83,21 +77,7 @@ def get_ekms_private_endpoints(compartment_id: Optional[str] = None,
                                filters: Optional[Sequence[pulumi.InputType['GetEkmsPrivateEndpointsFilterArgs']]] = None,
                                opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetEkmsPrivateEndpointsResult:
     """
-    This data source provides the list of Ekms Private Endpoints in Oracle Cloud Infrastructure Kms service.
-
-    Returns a list of all the EKMS private endpoints in the specified compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_ekms_private_endpoints = oci.Kms.get_ekms_private_endpoints(compartment_id=var["compartment_id"])
-    ```
-
-
-    :param str compartment_id: The OCID of the compartment.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -117,20 +97,6 @@ def get_ekms_private_endpoints_output(compartment_id: Optional[pulumi.Input[str]
                                       filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetEkmsPrivateEndpointsFilterArgs']]]]] = None,
                                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetEkmsPrivateEndpointsResult]:
     """
-    This data source provides the list of Ekms Private Endpoints in Oracle Cloud Infrastructure Kms service.
-
-    Returns a list of all the EKMS private endpoints in the specified compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_ekms_private_endpoints = oci.Kms.get_ekms_private_endpoints(compartment_id=var["compartment_id"])
-    ```
-
-
-    :param str compartment_id: The OCID of the compartment.
+    Use this data source to access information about an existing resource.
     """
     ...

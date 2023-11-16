@@ -48,10 +48,7 @@ class GetBillingScheduleResult:
 
     @property
     @pulumi.getter(name="billingSchedules")
-    def billing_schedules(self) -> Sequence['outputs.GetBillingScheduleBillingScheduleResult']:
-        """
-        The list of billing_schedules.
-        """
+    def billing_schedules(self) -> Optional[Sequence['outputs.GetBillingScheduleBillingScheduleResult']]:
         return pulumi.get(self, "billing_schedules")
 
     @property
@@ -66,7 +63,7 @@ class GetBillingScheduleResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -110,28 +107,7 @@ def get_billing_schedule(compartment_id: Optional[str] = None,
                          x_one_origin_region: Optional[str] = None,
                          opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetBillingScheduleResult:
     """
-    This data source provides the list of Billing Schedules in Oracle Cloud Infrastructure Osub Billing Schedule service.
-
-    This list API returns all billing schedules for given subscription id and
-    for a particular Subscribed Service if provided
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_billing_schedules = oci.OsubBillingSchedule.get_billing_schedule(compartment_id=var["compartment_id"],
-        subscription_id=oci_ons_subscription["test_subscription"]["id"],
-        subscribed_service_id=oci_core_service["test_service"]["id"],
-        x_one_origin_region=var["billing_schedule_x_one_origin_region"])
-    ```
-
-
-    :param str compartment_id: The OCID of the compartment.
-    :param str subscribed_service_id: This param is used to get only the billing schedules for a particular Subscribed Service
-    :param str subscription_id: This param is used to get only the billing schedules for a particular Subscription Id
-    :param str x_one_origin_region: The Oracle Cloud Infrastructure home region name in case home region is not us-ashburn-1 (IAD), e.g. ap-mumbai-1, us-phoenix-1 etc.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -160,27 +136,6 @@ def get_billing_schedule_output(compartment_id: Optional[pulumi.Input[str]] = No
                                 x_one_origin_region: Optional[pulumi.Input[Optional[str]]] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetBillingScheduleResult]:
     """
-    This data source provides the list of Billing Schedules in Oracle Cloud Infrastructure Osub Billing Schedule service.
-
-    This list API returns all billing schedules for given subscription id and
-    for a particular Subscribed Service if provided
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_billing_schedules = oci.OsubBillingSchedule.get_billing_schedule(compartment_id=var["compartment_id"],
-        subscription_id=oci_ons_subscription["test_subscription"]["id"],
-        subscribed_service_id=oci_core_service["test_service"]["id"],
-        x_one_origin_region=var["billing_schedule_x_one_origin_region"])
-    ```
-
-
-    :param str compartment_id: The OCID of the compartment.
-    :param str subscribed_service_id: This param is used to get only the billing schedules for a particular Subscribed Service
-    :param str subscription_id: This param is used to get only the billing schedules for a particular Subscription Id
-    :param str x_one_origin_region: The Oracle Cloud Infrastructure home region name in case home region is not us-ashburn-1 (IAD), e.g. ap-mumbai-1, us-phoenix-1 etc.
+    Use this data source to access information about an existing resource.
     """
     ...

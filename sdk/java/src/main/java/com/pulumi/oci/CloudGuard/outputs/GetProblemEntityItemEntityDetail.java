@@ -6,6 +6,8 @@ package com.pulumi.oci.CloudGuard.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetProblemEntityItemEntityDetail {
@@ -13,39 +15,39 @@ public final class GetProblemEntityItemEntityDetail {
      * @return The display name of entity
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return Type of entity
      * 
      */
-    private String type;
+    private @Nullable String type;
     /**
      * @return The entity value
      * 
      */
-    private String value;
+    private @Nullable String value;
 
     private GetProblemEntityItemEntityDetail() {}
     /**
      * @return The display name of entity
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return Type of entity
      * 
      */
-    public String type() {
-        return this.type;
+    public Optional<String> type() {
+        return Optional.ofNullable(this.type);
     }
     /**
      * @return The entity value
      * 
      */
-    public String value() {
-        return this.value;
+    public Optional<String> value() {
+        return Optional.ofNullable(this.value);
     }
 
     public static Builder builder() {
@@ -57,9 +59,9 @@ public final class GetProblemEntityItemEntityDetail {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String displayName;
-        private String type;
-        private String value;
+        private @Nullable String displayName;
+        private @Nullable String type;
+        private @Nullable String value;
         public Builder() {}
         public Builder(GetProblemEntityItemEntityDetail defaults) {
     	      Objects.requireNonNull(defaults);
@@ -69,18 +71,18 @@ public final class GetProblemEntityItemEntityDetail {
         }
 
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+        public Builder type(@Nullable String type) {
+            this.type = type;
             return this;
         }
         @CustomType.Setter
-        public Builder value(String value) {
-            this.value = Objects.requireNonNull(value);
+        public Builder value(@Nullable String value) {
+            this.value = value;
             return this;
         }
         public GetProblemEntityItemEntityDetail build() {

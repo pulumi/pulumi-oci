@@ -46,23 +46,17 @@ class GetLogAnalyticsCategoryResult:
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        The category description.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        The category display name.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -70,18 +64,12 @@ class GetLogAnalyticsCategoryResult:
 
     @property
     @pulumi.getter(name="isSystem")
-    def is_system(self) -> bool:
-        """
-        The system flag. A value of false denotes a user-created category. A value of true denotes an Oracle-defined category.
-        """
+    def is_system(self) -> Optional[bool]:
         return pulumi.get(self, "is_system")
 
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        The unique name that identifies the category.
-        """
         return pulumi.get(self, "name")
 
     @property
@@ -91,10 +79,7 @@ class GetLogAnalyticsCategoryResult:
 
     @property
     @pulumi.getter
-    def type(self) -> str:
-        """
-        The category type. Values include "PRODUCT", "TIER", "VENDOR" and "GENERIC".
-        """
+    def type(self) -> Optional[str]:
         return pulumi.get(self, "type")
 
 
@@ -117,23 +102,7 @@ def get_log_analytics_category(name: Optional[str] = None,
                                namespace: Optional[str] = None,
                                opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetLogAnalyticsCategoryResult:
     """
-    This data source provides details about a specific Log Analytics Category resource in Oracle Cloud Infrastructure Log Analytics service.
-
-    Gets detailed information about the category with the specified name.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_log_analytics_category = oci.LogAnalytics.get_log_analytics_category(name=var["log_analytics_category_name"],
-        namespace=var["log_analytics_category_namespace"])
-    ```
-
-
-    :param str name: The category name.
-    :param str namespace: The Logging Analytics namespace used for the request.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['name'] = name
@@ -156,22 +125,6 @@ def get_log_analytics_category_output(name: Optional[pulumi.Input[str]] = None,
                                       namespace: Optional[pulumi.Input[str]] = None,
                                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetLogAnalyticsCategoryResult]:
     """
-    This data source provides details about a specific Log Analytics Category resource in Oracle Cloud Infrastructure Log Analytics service.
-
-    Gets detailed information about the category with the specified name.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_log_analytics_category = oci.LogAnalytics.get_log_analytics_category(name=var["log_analytics_category_name"],
-        namespace=var["log_analytics_category_namespace"])
-    ```
-
-
-    :param str name: The category name.
-    :param str namespace: The Logging Analytics namespace used for the request.
+    Use this data source to access information about an existing resource.
     """
     ...

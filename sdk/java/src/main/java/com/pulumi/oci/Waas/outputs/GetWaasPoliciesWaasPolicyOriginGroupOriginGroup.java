@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetWaasPoliciesWaasPolicyOriginGroupOriginGroup {
@@ -14,19 +16,19 @@ public final class GetWaasPoliciesWaasPolicyOriginGroupOriginGroup {
      * @return The key in the map of origins referencing the origin used for the Web Application Firewall. The origin must already be included in `Origins`. Required when creating the `WafConfig` resource, but not on update.
      * 
      */
-    private String origin;
-    private Integer weight;
+    private @Nullable String origin;
+    private @Nullable Integer weight;
 
     private GetWaasPoliciesWaasPolicyOriginGroupOriginGroup() {}
     /**
      * @return The key in the map of origins referencing the origin used for the Web Application Firewall. The origin must already be included in `Origins`. Required when creating the `WafConfig` resource, but not on update.
      * 
      */
-    public String origin() {
-        return this.origin;
+    public Optional<String> origin() {
+        return Optional.ofNullable(this.origin);
     }
-    public Integer weight() {
-        return this.weight;
+    public Optional<Integer> weight() {
+        return Optional.ofNullable(this.weight);
     }
 
     public static Builder builder() {
@@ -38,8 +40,8 @@ public final class GetWaasPoliciesWaasPolicyOriginGroupOriginGroup {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String origin;
-        private Integer weight;
+        private @Nullable String origin;
+        private @Nullable Integer weight;
         public Builder() {}
         public Builder(GetWaasPoliciesWaasPolicyOriginGroupOriginGroup defaults) {
     	      Objects.requireNonNull(defaults);
@@ -48,13 +50,13 @@ public final class GetWaasPoliciesWaasPolicyOriginGroupOriginGroup {
         }
 
         @CustomType.Setter
-        public Builder origin(String origin) {
-            this.origin = Objects.requireNonNull(origin);
+        public Builder origin(@Nullable String origin) {
+            this.origin = origin;
             return this;
         }
         @CustomType.Setter
-        public Builder weight(Integer weight) {
-            this.weight = Objects.requireNonNull(weight);
+        public Builder weight(@Nullable Integer weight) {
+            this.weight = weight;
             return this;
         }
         public GetWaasPoliciesWaasPolicyOriginGroupOriginGroup build() {

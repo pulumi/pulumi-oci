@@ -16,6 +16,7 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -78,14 +79,14 @@ public class OpaInstance extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="attachments", refs={List.class,OpaInstanceAttachment.class}, tree="[0,1]")
-    private Output<List<OpaInstanceAttachment>> attachments;
+    private Output</* @Nullable */ List<OpaInstanceAttachment>> attachments;
 
     /**
      * @return A list of associated attachments to other services
      * 
      */
-    public Output<List<OpaInstanceAttachment>> attachments() {
-        return this.attachments;
+    public Output<Optional<List<OpaInstanceAttachment>>> attachments() {
+        return Codegen.optional(this.attachments);
     }
     /**
      * (Updatable) Compartment Identifier
@@ -106,42 +107,42 @@ public class OpaInstance extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="consumptionModel", refs={String.class}, tree="[0]")
-    private Output<String> consumptionModel;
+    private Output</* @Nullable */ String> consumptionModel;
 
     /**
      * @return Parameter specifying which entitlement to use for billing purposes
      * 
      */
-    public Output<String> consumptionModel() {
-        return this.consumptionModel;
+    public Output<Optional<String>> consumptionModel() {
+        return Codegen.optional(this.consumptionModel);
     }
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * (Updatable) Description of the Oracle Process Automation instance.
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
-    private Output<String> description;
+    private Output</* @Nullable */ String> description;
 
     /**
      * @return (Updatable) Description of the Oracle Process Automation instance.
      * 
      */
-    public Output<String> description() {
-        return this.description;
+    public Output<Optional<String>> description() {
+        return Codegen.optional(this.description);
     }
     /**
      * (Updatable) OpaInstance Identifier. User-friendly name for the instance. Avoid entering confidential information. You can change this value anytime.
@@ -162,126 +163,126 @@ public class OpaInstance extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * IDCS Authentication token. This is required for all realms with IDCS. This property is optional, as it is not required for non-IDCS realms.
      * 
      */
     @Export(name="idcsAt", refs={String.class}, tree="[0]")
-    private Output<String> idcsAt;
+    private Output</* @Nullable */ String> idcsAt;
 
     /**
      * @return IDCS Authentication token. This is required for all realms with IDCS. This property is optional, as it is not required for non-IDCS realms.
      * 
      */
-    public Output<String> idcsAt() {
-        return this.idcsAt;
+    public Output<Optional<String>> idcsAt() {
+        return Codegen.optional(this.idcsAt);
     }
     /**
      * This property specifies the name of the Identity Application instance OPA has created inside the user-specified identity domain. This identity application instance may be used to host user roll mappings to grant access to this OPA instance for users within the identity domain.
      * 
      */
     @Export(name="identityAppDisplayName", refs={String.class}, tree="[0]")
-    private Output<String> identityAppDisplayName;
+    private Output</* @Nullable */ String> identityAppDisplayName;
 
     /**
      * @return This property specifies the name of the Identity Application instance OPA has created inside the user-specified identity domain. This identity application instance may be used to host user roll mappings to grant access to this OPA instance for users within the identity domain.
      * 
      */
-    public Output<String> identityAppDisplayName() {
-        return this.identityAppDisplayName;
+    public Output<Optional<String>> identityAppDisplayName() {
+        return Codegen.optional(this.identityAppDisplayName);
     }
     /**
      * This property specifies the GUID of the Identity Application instance OPA has created inside the user-specified identity domain. This identity application instance may be used to host user role mappings to grant access to this OPA instance for users within the identity domain.
      * 
      */
     @Export(name="identityAppGuid", refs={String.class}, tree="[0]")
-    private Output<String> identityAppGuid;
+    private Output</* @Nullable */ String> identityAppGuid;
 
     /**
      * @return This property specifies the GUID of the Identity Application instance OPA has created inside the user-specified identity domain. This identity application instance may be used to host user role mappings to grant access to this OPA instance for users within the identity domain.
      * 
      */
-    public Output<String> identityAppGuid() {
-        return this.identityAppGuid;
+    public Output<Optional<String>> identityAppGuid() {
+        return Codegen.optional(this.identityAppGuid);
     }
     /**
      * This property specifies the OPC Service Instance GUID of the Identity Application instance OPA has created inside the user-specified identity domain. This identity application instance may be used to host user roll mappings to grant access to this OPA instance for users within the identity domain.
      * 
      */
     @Export(name="identityAppOpcServiceInstanceGuid", refs={String.class}, tree="[0]")
-    private Output<String> identityAppOpcServiceInstanceGuid;
+    private Output</* @Nullable */ String> identityAppOpcServiceInstanceGuid;
 
     /**
      * @return This property specifies the OPC Service Instance GUID of the Identity Application instance OPA has created inside the user-specified identity domain. This identity application instance may be used to host user roll mappings to grant access to this OPA instance for users within the identity domain.
      * 
      */
-    public Output<String> identityAppOpcServiceInstanceGuid() {
-        return this.identityAppOpcServiceInstanceGuid;
+    public Output<Optional<String>> identityAppOpcServiceInstanceGuid() {
+        return Codegen.optional(this.identityAppOpcServiceInstanceGuid);
     }
     /**
      * This property specifies the domain url of the Identity Application instance OPA has created inside the user-specified identity domain. This identity application instance may be used to host user roll mappings to grant access to this OPA instance for users within the identity domain.
      * 
      */
     @Export(name="identityDomainUrl", refs={String.class}, tree="[0]")
-    private Output<String> identityDomainUrl;
+    private Output</* @Nullable */ String> identityDomainUrl;
 
     /**
      * @return This property specifies the domain url of the Identity Application instance OPA has created inside the user-specified identity domain. This identity application instance may be used to host user roll mappings to grant access to this OPA instance for users within the identity domain.
      * 
      */
-    public Output<String> identityDomainUrl() {
-        return this.identityDomainUrl;
+    public Output<Optional<String>> identityDomainUrl() {
+        return Codegen.optional(this.identityDomainUrl);
     }
     /**
      * OPA Instance URL
      * 
      */
     @Export(name="instanceUrl", refs={String.class}, tree="[0]")
-    private Output<String> instanceUrl;
+    private Output</* @Nullable */ String> instanceUrl;
 
     /**
      * @return OPA Instance URL
      * 
      */
-    public Output<String> instanceUrl() {
-        return this.instanceUrl;
+    public Output<Optional<String>> instanceUrl() {
+        return Codegen.optional(this.instanceUrl);
     }
     /**
      * indicates if breakGlass is enabled for the opa instance.
      * 
      */
     @Export(name="isBreakglassEnabled", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isBreakglassEnabled;
+    private Output</* @Nullable */ Boolean> isBreakglassEnabled;
 
     /**
      * @return indicates if breakGlass is enabled for the opa instance.
      * 
      */
-    public Output<Boolean> isBreakglassEnabled() {
-        return this.isBreakglassEnabled;
+    public Output<Optional<Boolean>> isBreakglassEnabled() {
+        return Codegen.optional(this.isBreakglassEnabled);
     }
     /**
      * MeteringType Identifier
      * 
      */
     @Export(name="meteringType", refs={String.class}, tree="[0]")
-    private Output<String> meteringType;
+    private Output</* @Nullable */ String> meteringType;
 
     /**
      * @return MeteringType Identifier
      * 
      */
-    public Output<String> meteringType() {
-        return this.meteringType;
+    public Output<Optional<String>> meteringType() {
+        return Codegen.optional(this.meteringType);
     }
     /**
      * Shape of the instance.
@@ -308,56 +309,56 @@ public class OpaInstance extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The current state of the OpaInstance.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
     @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> systemTags;
+    private Output</* @Nullable */ Map<String,Object>> systemTags;
 
     /**
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    public Output<Map<String,Object>> systemTags() {
-        return this.systemTags;
+    public Output<Optional<Map<String,Object>>> systemTags() {
+        return Codegen.optional(this.systemTags);
     }
     /**
      * The time when OpaInstance was created. An RFC3339 formatted datetime string
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The time when OpaInstance was created. An RFC3339 formatted datetime string
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * The time the OpaInstance was updated. An RFC3339 formatted datetime string
      * 
      */
     @Export(name="timeUpdated", refs={String.class}, tree="[0]")
-    private Output<String> timeUpdated;
+    private Output</* @Nullable */ String> timeUpdated;
 
     /**
      * @return The time the OpaInstance was updated. An RFC3339 formatted datetime string
      * 
      */
-    public Output<String> timeUpdated() {
-        return this.timeUpdated;
+    public Output<Optional<String>> timeUpdated() {
+        return Codegen.optional(this.timeUpdated);
     }
 
     /**

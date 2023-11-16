@@ -47,68 +47,68 @@ export interface GetManagedDatabaseResult {
     /**
      * The additional details specific to a type of database defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
      */
-    readonly additionalDetails: {[key: string]: any};
+    readonly additionalDetails?: {[key: string]: any};
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the Managed Database Group resides.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * The status of the Oracle Database. Indicates whether the status of the database is UP, DOWN, or UNKNOWN at the current time.
      */
-    readonly databaseStatus: string;
+    readonly databaseStatus?: string;
     /**
      * The subtype of the Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, Non-container Database, Autonomous Database, or Autonomous Container Database.
      */
-    readonly databaseSubType: string;
+    readonly databaseSubType?: string;
     /**
      * The type of Oracle Database installation.
      */
-    readonly databaseType: string;
+    readonly databaseType?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that this Managed Database is part of.
      */
-    readonly dbSystemId: string;
+    readonly dbSystemId?: string;
     /**
      * The infrastructure used to deploy the Oracle Database.
      */
-    readonly deploymentType: string;
+    readonly deploymentType?: string;
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Indicates whether the Oracle Database is part of a cluster.
      */
-    readonly isCluster: boolean;
+    readonly isCluster?: boolean;
     /**
      * A list of Managed Database Groups that the Managed Database belongs to.
      */
-    readonly managedDatabaseGroups: outputs.DatabaseManagement.GetManagedDatabaseManagedDatabaseGroup[];
+    readonly managedDatabaseGroups?: outputs.DatabaseManagement.GetManagedDatabaseManagedDatabaseGroup[];
     readonly managedDatabaseId: string;
     /**
      * The management option used when enabling Database Management.
      */
-    readonly managementOption: string;
+    readonly managementOption?: string;
     /**
      * The name of the Managed Database.
      */
-    readonly name: string;
+    readonly name?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent Container Database if Managed Database is a Pluggable Database.
      */
-    readonly parentContainerId: string;
+    readonly parentContainerId?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the storage DB system.
      */
-    readonly storageSystemId: string;
+    readonly storageSystemId?: string;
     /**
      * The date and time the Managed Database was created.
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The workload type of the Autonomous Database.
      */
-    readonly workloadType: string;
+    readonly workloadType?: string;
 }
 /**
  * This data source provides details about a specific Managed Database resource in Oracle Cloud Infrastructure Database Management service.

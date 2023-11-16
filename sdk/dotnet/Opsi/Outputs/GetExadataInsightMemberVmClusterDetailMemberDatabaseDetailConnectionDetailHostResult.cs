@@ -13,14 +13,14 @@ namespace Pulumi.Oci.Opsi.Outputs
     [OutputType]
     public sealed class GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailHostResult
     {
-        public readonly string HostIp;
-        public readonly int Port;
+        public readonly string? HostIp;
+        public readonly int? Port;
 
         [OutputConstructor]
         private GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailHostResult(
-            string hostIp,
+            string? hostIp,
 
-            int port)
+            int? port)
         {
             HostIp = hostIp;
             Port = port;

@@ -34,7 +34,7 @@ public final class GetVirtualNodePoolsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The state of the Virtual Node Pool.
      * 
@@ -44,7 +44,7 @@ public final class GetVirtualNodePoolsResult {
      * @return The list of virtual_node_pools.
      * 
      */
-    private List<GetVirtualNodePoolsVirtualNodePool> virtualNodePools;
+    private @Nullable List<GetVirtualNodePoolsVirtualNodePool> virtualNodePools;
 
     private GetVirtualNodePoolsResult() {}
     /**
@@ -75,8 +75,8 @@ public final class GetVirtualNodePoolsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The state of the Virtual Node Pool.
@@ -90,7 +90,7 @@ public final class GetVirtualNodePoolsResult {
      * 
      */
     public List<GetVirtualNodePoolsVirtualNodePool> virtualNodePools() {
-        return this.virtualNodePools;
+        return this.virtualNodePools == null ? List.of() : this.virtualNodePools;
     }
 
     public static Builder builder() {
@@ -106,9 +106,9 @@ public final class GetVirtualNodePoolsResult {
         private String compartmentId;
         private @Nullable String displayName;
         private @Nullable List<GetVirtualNodePoolsFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable List<String> states;
-        private List<GetVirtualNodePoolsVirtualNodePool> virtualNodePools;
+        private @Nullable List<GetVirtualNodePoolsVirtualNodePool> virtualNodePools;
         public Builder() {}
         public Builder(GetVirtualNodePoolsResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -145,8 +145,8 @@ public final class GetVirtualNodePoolsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -158,8 +158,8 @@ public final class GetVirtualNodePoolsResult {
             return states(List.of(states));
         }
         @CustomType.Setter
-        public Builder virtualNodePools(List<GetVirtualNodePoolsVirtualNodePool> virtualNodePools) {
-            this.virtualNodePools = Objects.requireNonNull(virtualNodePools);
+        public Builder virtualNodePools(@Nullable List<GetVirtualNodePoolsVirtualNodePool> virtualNodePools) {
+            this.virtualNodePools = virtualNodePools;
             return this;
         }
         public Builder virtualNodePools(GetVirtualNodePoolsVirtualNodePool... virtualNodePools) {

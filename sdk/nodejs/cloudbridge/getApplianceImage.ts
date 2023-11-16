@@ -58,11 +58,11 @@ export interface GetApplianceImageResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * List of appliance images.
      */
-    readonly items: outputs.CloudBridge.GetApplianceImageItem[];
+    readonly items?: outputs.CloudBridge.GetApplianceImageItem[];
 }
 /**
  * This data source provides details about a specific Appliance Image resource in Oracle Cloud Infrastructure Cloud Bridge service.

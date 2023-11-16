@@ -7,14 +7,15 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.OsManagementHub.outputs.GetSoftwareSourcesSoftwareSourceCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetSoftwareSourcesSoftwareSourceCollection {
-    private List<GetSoftwareSourcesSoftwareSourceCollectionItem> items;
+    private @Nullable List<GetSoftwareSourcesSoftwareSourceCollectionItem> items;
 
     private GetSoftwareSourcesSoftwareSourceCollection() {}
     public List<GetSoftwareSourcesSoftwareSourceCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -26,7 +27,7 @@ public final class GetSoftwareSourcesSoftwareSourceCollection {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetSoftwareSourcesSoftwareSourceCollectionItem> items;
+        private @Nullable List<GetSoftwareSourcesSoftwareSourceCollectionItem> items;
         public Builder() {}
         public Builder(GetSoftwareSourcesSoftwareSourceCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -34,8 +35,8 @@ public final class GetSoftwareSourcesSoftwareSourceCollection {
         }
 
         @CustomType.Setter
-        public Builder items(List<GetSoftwareSourcesSoftwareSourceCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetSoftwareSourcesSoftwareSourceCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetSoftwareSourcesSoftwareSourceCollectionItem... items) {

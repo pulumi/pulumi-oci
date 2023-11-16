@@ -6,6 +6,8 @@ package com.pulumi.oci.MediaServices.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetMediaAssetsMediaAssetCollectionItemMetadata {
@@ -13,15 +15,15 @@ public final class GetMediaAssetsMediaAssetCollectionItemMetadata {
      * @return JSON string containing the technial metadata for the media asset.
      * 
      */
-    private String metadata;
+    private @Nullable String metadata;
 
     private GetMediaAssetsMediaAssetCollectionItemMetadata() {}
     /**
      * @return JSON string containing the technial metadata for the media asset.
      * 
      */
-    public String metadata() {
-        return this.metadata;
+    public Optional<String> metadata() {
+        return Optional.ofNullable(this.metadata);
     }
 
     public static Builder builder() {
@@ -33,7 +35,7 @@ public final class GetMediaAssetsMediaAssetCollectionItemMetadata {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String metadata;
+        private @Nullable String metadata;
         public Builder() {}
         public Builder(GetMediaAssetsMediaAssetCollectionItemMetadata defaults) {
     	      Objects.requireNonNull(defaults);
@@ -41,8 +43,8 @@ public final class GetMediaAssetsMediaAssetCollectionItemMetadata {
         }
 
         @CustomType.Setter
-        public Builder metadata(String metadata) {
-            this.metadata = Objects.requireNonNull(metadata);
+        public Builder metadata(@Nullable String metadata) {
+            this.metadata = metadata;
             return this;
         }
         public GetMediaAssetsMediaAssetCollectionItemMetadata build() {

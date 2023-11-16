@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Custom Tables in Oracle Cloud Infrastructure Metering Computation service.
@@ -69,7 +68,7 @@ type GetCustomTablesResult struct {
 	CustomTableCollections []GetCustomTablesCustomTableCollection `pulumi:"customTableCollections"`
 	Filters                []GetCustomTablesFilter                `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The custom table associated saved report OCID.
 	SavedReportId string `pulumi:"savedReportId"`
 }
@@ -115,12 +114,6 @@ func (o GetCustomTablesResultOutput) ToGetCustomTablesResultOutputWithContext(ct
 	return o
 }
 
-func (o GetCustomTablesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetCustomTablesResult] {
-	return pulumix.Output[GetCustomTablesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The custom table compartment OCID.
 func (o GetCustomTablesResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetCustomTablesResult) string { return v.CompartmentId }).(pulumi.StringOutput)
@@ -136,8 +129,8 @@ func (o GetCustomTablesResultOutput) Filters() GetCustomTablesFilterArrayOutput 
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetCustomTablesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCustomTablesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetCustomTablesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCustomTablesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The custom table associated saved report OCID.

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Stream Packaging Configs in Oracle Cloud Infrastructure Media Services service.
@@ -75,7 +74,7 @@ type GetStreamPackagingConfigsResult struct {
 	DistributionChannelId string                            `pulumi:"distributionChannelId"`
 	Filters               []GetStreamPackagingConfigsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The current state of the Packaging Configuration.
 	State *string `pulumi:"state"`
 	// The list of stream_packaging_config_collection.
@@ -128,12 +127,6 @@ func (o GetStreamPackagingConfigsResultOutput) ToGetStreamPackagingConfigsResult
 	return o
 }
 
-func (o GetStreamPackagingConfigsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetStreamPackagingConfigsResult] {
-	return pulumix.Output[GetStreamPackagingConfigsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The name of the stream packaging configuration. Avoid entering confidential information.
 func (o GetStreamPackagingConfigsResultOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetStreamPackagingConfigsResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
@@ -149,8 +142,8 @@ func (o GetStreamPackagingConfigsResultOutput) Filters() GetStreamPackagingConfi
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetStreamPackagingConfigsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetStreamPackagingConfigsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetStreamPackagingConfigsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetStreamPackagingConfigsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the Packaging Configuration.

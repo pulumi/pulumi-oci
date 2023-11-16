@@ -60,12 +60,12 @@ export interface GetNetworkSecurityGroupSecurityRulesResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly networkSecurityGroupId: string;
     /**
      * The list of security_rules.
      */
-    readonly securityRules: outputs.Core.GetNetworkSecurityGroupSecurityRulesSecurityRule[];
+    readonly securityRules?: outputs.Core.GetNetworkSecurityGroupSecurityRulesSecurityRule[];
 }
 /**
  * This data source provides the list of Network Security Group Security Rules in Oracle Cloud Infrastructure Core service.

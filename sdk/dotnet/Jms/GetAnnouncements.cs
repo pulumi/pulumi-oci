@@ -157,7 +157,7 @@ namespace Pulumi.Oci.Jms
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         public readonly string? SummaryContains;
         public readonly string? TimeEnd;
         public readonly string? TimeStart;
@@ -168,7 +168,7 @@ namespace Pulumi.Oci.Jms
 
             ImmutableArray<Outputs.GetAnnouncementsFilterResult> filters,
 
-            string id,
+            string? id,
 
             string? summaryContains,
 

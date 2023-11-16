@@ -16,23 +16,23 @@ namespace Pulumi.Oci.MeteringComputation.Outputs
         /// <summary>
         /// The tag key.
         /// </summary>
-        public readonly string Key;
+        public readonly string? Key;
         /// <summary>
         /// The tag namespace.
         /// </summary>
-        public readonly string Namespace;
+        public readonly string? Namespace;
         /// <summary>
         /// The tag value.
         /// </summary>
-        public readonly string Value;
+        public readonly string? Value;
 
         [OutputConstructor]
         private GetCustomTableSavedCustomTableGroupByTagResult(
-            string key,
+            string? key,
 
-            string @namespace,
+            string? @namespace,
 
-            string value)
+            string? value)
         {
             Key = key;
             Namespace = @namespace;

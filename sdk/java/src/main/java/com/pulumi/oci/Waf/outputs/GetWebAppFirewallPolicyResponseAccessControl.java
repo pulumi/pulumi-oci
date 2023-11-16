@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.Waf.outputs.GetWebAppFirewallPolicyResponseAccessControlRule;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetWebAppFirewallPolicyResponseAccessControl {
@@ -14,7 +15,7 @@ public final class GetWebAppFirewallPolicyResponseAccessControl {
      * @return Ordered list of ProtectionRules. Rules are executed in order of appearance in this array. ProtectionRules in this array can only use protection capabilities of RESPONSE_PROTECTION_CAPABILITY type.
      * 
      */
-    private List<GetWebAppFirewallPolicyResponseAccessControlRule> rules;
+    private @Nullable List<GetWebAppFirewallPolicyResponseAccessControlRule> rules;
 
     private GetWebAppFirewallPolicyResponseAccessControl() {}
     /**
@@ -22,7 +23,7 @@ public final class GetWebAppFirewallPolicyResponseAccessControl {
      * 
      */
     public List<GetWebAppFirewallPolicyResponseAccessControlRule> rules() {
-        return this.rules;
+        return this.rules == null ? List.of() : this.rules;
     }
 
     public static Builder builder() {
@@ -34,7 +35,7 @@ public final class GetWebAppFirewallPolicyResponseAccessControl {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetWebAppFirewallPolicyResponseAccessControlRule> rules;
+        private @Nullable List<GetWebAppFirewallPolicyResponseAccessControlRule> rules;
         public Builder() {}
         public Builder(GetWebAppFirewallPolicyResponseAccessControl defaults) {
     	      Objects.requireNonNull(defaults);
@@ -42,8 +43,8 @@ public final class GetWebAppFirewallPolicyResponseAccessControl {
         }
 
         @CustomType.Setter
-        public Builder rules(List<GetWebAppFirewallPolicyResponseAccessControlRule> rules) {
-            this.rules = Objects.requireNonNull(rules);
+        public Builder rules(@Nullable List<GetWebAppFirewallPolicyResponseAccessControlRule> rules) {
+            this.rules = rules;
             return this;
         }
         public Builder rules(GetWebAppFirewallPolicyResponseAccessControlRule... rules) {

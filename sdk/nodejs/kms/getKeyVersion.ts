@@ -64,23 +64,23 @@ export interface GetKeyVersionResult {
     /**
      * The OCID of the compartment that contains this key version.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * Key reference data to be returned to the customer as a response.
      */
-    readonly externalKeyReferenceDetails: outputs.Kms.GetKeyVersionExternalKeyReferenceDetail[];
+    readonly externalKeyReferenceDetails?: outputs.Kms.GetKeyVersionExternalKeyReferenceDetail[];
     /**
      * Key version ID associated with the external key.
      */
-    readonly externalKeyVersionId: string;
+    readonly externalKeyVersionId?: string;
     /**
      * The OCID of the key version.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * A Boolean value that indicates whether the KeyVersion belongs to primary Vault or replica Vault.
      */
-    readonly isPrimary: boolean;
+    readonly isPrimary?: boolean;
     /**
      * The OCID of the master encryption key associated with this key version.
      */
@@ -93,32 +93,32 @@ export interface GetKeyVersionResult {
     /**
      * The public key in PEM format. (This value pertains only to RSA and ECDSA keys.)
      */
-    readonly publicKey: string;
+    readonly publicKey?: string;
     /**
      * KeyVersion replica details
      */
-    readonly replicaDetails: outputs.Kms.GetKeyVersionReplicaDetail[];
-    readonly restoredFromKeyId: string;
+    readonly replicaDetails?: outputs.Kms.GetKeyVersionReplicaDetail[];
+    readonly restoredFromKeyId?: string;
     /**
      * The OCID of the key version from which this key version was restored.
      */
-    readonly restoredFromKeyVersionId: string;
+    readonly restoredFromKeyVersionId?: string;
     /**
      * The key version's current lifecycle state.  Example: `ENABLED`
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * The date and time this key version was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: "2018-04-03T21:10:29.600Z"
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * An optional property to indicate when to delete the key version, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
      */
-    readonly timeOfDeletion: string;
+    readonly timeOfDeletion?: string;
     /**
      * The OCID of the vault that contains this key version.
      */
-    readonly vaultId: string;
+    readonly vaultId?: string;
 }
 /**
  * This data source provides details about a specific Key Version resource in Oracle Cloud Infrastructure Kms service.

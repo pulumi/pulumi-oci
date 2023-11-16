@@ -20,13 +20,13 @@ namespace Pulumi.Oci.DevOps.Outputs
         /// <summary>
         /// Wait criteria type.
         /// </summary>
-        public readonly string WaitType;
+        public readonly string? WaitType;
 
         [OutputConstructor]
         private GetBuildPipelineStagesBuildPipelineStageCollectionItemWaitCriteriaResult(
             string waitDuration,
 
-            string waitType)
+            string? waitType)
         {
             WaitDuration = waitDuration;
             WaitType = waitType;

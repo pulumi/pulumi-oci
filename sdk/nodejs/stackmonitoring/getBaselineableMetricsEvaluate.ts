@@ -70,11 +70,11 @@ export interface GetBaselineableMetricsEvaluateResult {
     /**
      * list of anomaly data points for the metric
      */
-    readonly dataPoints: outputs.StackMonitoring.GetBaselineableMetricsEvaluateDataPoint[];
+    readonly dataPoints?: outputs.StackMonitoring.GetBaselineableMetricsEvaluateDataPoint[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * List of Metric data
      */

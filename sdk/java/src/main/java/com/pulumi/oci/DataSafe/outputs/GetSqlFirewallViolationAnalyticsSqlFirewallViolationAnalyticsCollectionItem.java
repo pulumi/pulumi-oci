@@ -8,6 +8,8 @@ import com.pulumi.oci.DataSafe.outputs.GetSqlFirewallViolationAnalyticsSqlFirewa
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItem {
@@ -15,32 +17,32 @@ public final class GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalytics
      * @return The details of the aggregation dimensions used for summarizing SQL violations.
      * 
      */
-    private List<GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimension> dimensions;
+    private @Nullable List<GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimension> dimensions;
     /**
      * @return The display name of aggregation field.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return The name of the aggregation.
      * 
      */
-    private String metricName;
+    private @Nullable String metricName;
     /**
      * @return Total count of aggregated value.
      * 
      */
-    private String sqlFirewallViolationAnalyticCount;
+    private @Nullable String sqlFirewallViolationAnalyticCount;
     /**
      * @return An optional filter to return audit events whose creation time in the database is less than and equal to the date-time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    private String timeEnded;
+    private @Nullable String timeEnded;
     /**
      * @return An optional filter to return audit events whose creation time in the database is greater than and equal to the date-time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    private String timeStarted;
+    private @Nullable String timeStarted;
 
     private GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItem() {}
     /**
@@ -48,42 +50,42 @@ public final class GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalytics
      * 
      */
     public List<GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimension> dimensions() {
-        return this.dimensions;
+        return this.dimensions == null ? List.of() : this.dimensions;
     }
     /**
      * @return The display name of aggregation field.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return The name of the aggregation.
      * 
      */
-    public String metricName() {
-        return this.metricName;
+    public Optional<String> metricName() {
+        return Optional.ofNullable(this.metricName);
     }
     /**
      * @return Total count of aggregated value.
      * 
      */
-    public String sqlFirewallViolationAnalyticCount() {
-        return this.sqlFirewallViolationAnalyticCount;
+    public Optional<String> sqlFirewallViolationAnalyticCount() {
+        return Optional.ofNullable(this.sqlFirewallViolationAnalyticCount);
     }
     /**
      * @return An optional filter to return audit events whose creation time in the database is less than and equal to the date-time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    public String timeEnded() {
-        return this.timeEnded;
+    public Optional<String> timeEnded() {
+        return Optional.ofNullable(this.timeEnded);
     }
     /**
      * @return An optional filter to return audit events whose creation time in the database is greater than and equal to the date-time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    public String timeStarted() {
-        return this.timeStarted;
+    public Optional<String> timeStarted() {
+        return Optional.ofNullable(this.timeStarted);
     }
 
     public static Builder builder() {
@@ -95,12 +97,12 @@ public final class GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalytics
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimension> dimensions;
-        private String displayName;
-        private String metricName;
-        private String sqlFirewallViolationAnalyticCount;
-        private String timeEnded;
-        private String timeStarted;
+        private @Nullable List<GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimension> dimensions;
+        private @Nullable String displayName;
+        private @Nullable String metricName;
+        private @Nullable String sqlFirewallViolationAnalyticCount;
+        private @Nullable String timeEnded;
+        private @Nullable String timeStarted;
         public Builder() {}
         public Builder(GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -113,36 +115,36 @@ public final class GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalytics
         }
 
         @CustomType.Setter
-        public Builder dimensions(List<GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimension> dimensions) {
-            this.dimensions = Objects.requireNonNull(dimensions);
+        public Builder dimensions(@Nullable List<GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimension> dimensions) {
+            this.dimensions = dimensions;
             return this;
         }
         public Builder dimensions(GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimension... dimensions) {
             return dimensions(List.of(dimensions));
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder metricName(String metricName) {
-            this.metricName = Objects.requireNonNull(metricName);
+        public Builder metricName(@Nullable String metricName) {
+            this.metricName = metricName;
             return this;
         }
         @CustomType.Setter
-        public Builder sqlFirewallViolationAnalyticCount(String sqlFirewallViolationAnalyticCount) {
-            this.sqlFirewallViolationAnalyticCount = Objects.requireNonNull(sqlFirewallViolationAnalyticCount);
+        public Builder sqlFirewallViolationAnalyticCount(@Nullable String sqlFirewallViolationAnalyticCount) {
+            this.sqlFirewallViolationAnalyticCount = sqlFirewallViolationAnalyticCount;
             return this;
         }
         @CustomType.Setter
-        public Builder timeEnded(String timeEnded) {
-            this.timeEnded = Objects.requireNonNull(timeEnded);
+        public Builder timeEnded(@Nullable String timeEnded) {
+            this.timeEnded = timeEnded;
             return this;
         }
         @CustomType.Setter
-        public Builder timeStarted(String timeStarted) {
-            this.timeStarted = Objects.requireNonNull(timeStarted);
+        public Builder timeStarted(@Nullable String timeStarted) {
+            this.timeStarted = timeStarted;
             return this;
         }
         public GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItem build() {

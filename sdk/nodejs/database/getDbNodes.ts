@@ -74,7 +74,7 @@ export interface GetDbNodesResult {
     /**
      * The list of db_nodes.
      */
-    readonly dbNodes: outputs.Database.GetDbNodesDbNode[];
+    readonly dbNodes?: outputs.Database.GetDbNodesDbNode[];
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exacc Db server associated with the database node.
      */
@@ -87,7 +87,7 @@ export interface GetDbNodesResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The current state of the database node.
      */

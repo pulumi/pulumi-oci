@@ -6,6 +6,8 @@ package com.pulumi.oci.Core.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetCpeDeviceShapesCpeDeviceShapeCpeDeviceInfo {
@@ -13,27 +15,27 @@ public final class GetCpeDeviceShapesCpeDeviceShapeCpeDeviceInfo {
      * @return The platform or software version of the CPE device.
      * 
      */
-    private String platformSoftwareVersion;
+    private @Nullable String platformSoftwareVersion;
     /**
      * @return The vendor that makes the CPE device.
      * 
      */
-    private String vendor;
+    private @Nullable String vendor;
 
     private GetCpeDeviceShapesCpeDeviceShapeCpeDeviceInfo() {}
     /**
      * @return The platform or software version of the CPE device.
      * 
      */
-    public String platformSoftwareVersion() {
-        return this.platformSoftwareVersion;
+    public Optional<String> platformSoftwareVersion() {
+        return Optional.ofNullable(this.platformSoftwareVersion);
     }
     /**
      * @return The vendor that makes the CPE device.
      * 
      */
-    public String vendor() {
-        return this.vendor;
+    public Optional<String> vendor() {
+        return Optional.ofNullable(this.vendor);
     }
 
     public static Builder builder() {
@@ -45,8 +47,8 @@ public final class GetCpeDeviceShapesCpeDeviceShapeCpeDeviceInfo {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String platformSoftwareVersion;
-        private String vendor;
+        private @Nullable String platformSoftwareVersion;
+        private @Nullable String vendor;
         public Builder() {}
         public Builder(GetCpeDeviceShapesCpeDeviceShapeCpeDeviceInfo defaults) {
     	      Objects.requireNonNull(defaults);
@@ -55,13 +57,13 @@ public final class GetCpeDeviceShapesCpeDeviceShapeCpeDeviceInfo {
         }
 
         @CustomType.Setter
-        public Builder platformSoftwareVersion(String platformSoftwareVersion) {
-            this.platformSoftwareVersion = Objects.requireNonNull(platformSoftwareVersion);
+        public Builder platformSoftwareVersion(@Nullable String platformSoftwareVersion) {
+            this.platformSoftwareVersion = platformSoftwareVersion;
             return this;
         }
         @CustomType.Setter
-        public Builder vendor(String vendor) {
-            this.vendor = Objects.requireNonNull(vendor);
+        public Builder vendor(@Nullable String vendor) {
+            this.vendor = vendor;
             return this;
         }
         public GetCpeDeviceShapesCpeDeviceShapeCpeDeviceInfo build() {

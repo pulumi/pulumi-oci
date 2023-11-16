@@ -14,6 +14,7 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -89,28 +90,28 @@ public class DataSafePrivateEndpoint extends com.pulumi.resources.CustomResource
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * (Updatable) The description of the private endpoint.
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
-    private Output<String> description;
+    private Output</* @Nullable */ String> description;
 
     /**
      * @return (Updatable) The description of the private endpoint.
      * 
      */
-    public Output<String> description() {
-        return this.description;
+    public Output<Optional<String>> description() {
+        return Codegen.optional(this.description);
     }
     /**
      * (Updatable) The display name for the private endpoint. The name does not have to be unique, and it&#39;s changeable.
@@ -131,84 +132,84 @@ public class DataSafePrivateEndpoint extends com.pulumi.resources.CustomResource
      * 
      */
     @Export(name="endpointFqdn", refs={String.class}, tree="[0]")
-    private Output<String> endpointFqdn;
+    private Output</* @Nullable */ String> endpointFqdn;
 
     /**
      * @return The three-label fully qualified domain name (FQDN) of the private endpoint. The customer VCN&#39;s DNS records are updated with this FQDN.
      * 
      */
-    public Output<String> endpointFqdn() {
-        return this.endpointFqdn;
+    public Output<Optional<String>> endpointFqdn() {
+        return Codegen.optional(this.endpointFqdn);
     }
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * (Updatable) The OCIDs of the network security groups that the private endpoint belongs to.
      * 
      */
     @Export(name="nsgIds", refs={List.class,String.class}, tree="[0,1]")
-    private Output<List<String>> nsgIds;
+    private Output</* @Nullable */ List<String>> nsgIds;
 
     /**
      * @return (Updatable) The OCIDs of the network security groups that the private endpoint belongs to.
      * 
      */
-    public Output<List<String>> nsgIds() {
-        return this.nsgIds;
+    public Output<Optional<List<String>>> nsgIds() {
+        return Codegen.optional(this.nsgIds);
     }
     /**
      * The OCID of the underlying private endpoint.
      * 
      */
     @Export(name="privateEndpointId", refs={String.class}, tree="[0]")
-    private Output<String> privateEndpointId;
+    private Output</* @Nullable */ String> privateEndpointId;
 
     /**
      * @return The OCID of the underlying private endpoint.
      * 
      */
-    public Output<String> privateEndpointId() {
-        return this.privateEndpointId;
+    public Output<Optional<String>> privateEndpointId() {
+        return Codegen.optional(this.privateEndpointId);
     }
     /**
      * The private IP address of the private endpoint.
      * 
      */
     @Export(name="privateEndpointIp", refs={String.class}, tree="[0]")
-    private Output<String> privateEndpointIp;
+    private Output</* @Nullable */ String> privateEndpointIp;
 
     /**
      * @return The private IP address of the private endpoint.
      * 
      */
-    public Output<String> privateEndpointIp() {
-        return this.privateEndpointIp;
+    public Output<Optional<String>> privateEndpointIp() {
+        return Codegen.optional(this.privateEndpointIp);
     }
     /**
      * The current state of the private endpoint.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The current state of the private endpoint.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * The OCID of the subnet.
@@ -229,28 +230,28 @@ public class DataSafePrivateEndpoint extends com.pulumi.resources.CustomResource
      * 
      */
     @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> systemTags;
+    private Output</* @Nullable */ Map<String,Object>> systemTags;
 
     /**
      * @return System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    public Output<Map<String,Object>> systemTags() {
-        return this.systemTags;
+    public Output<Optional<Map<String,Object>>> systemTags() {
+        return Codegen.optional(this.systemTags);
     }
     /**
      * The date and time the private endpoint was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The date and time the private endpoint was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * The OCID of the VCN.

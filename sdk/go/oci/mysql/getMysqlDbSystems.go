@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Mysql Db Systems in Oracle Cloud Infrastructure MySQL Database service.
@@ -96,7 +95,7 @@ type GetMysqlDbSystemsResult struct {
 	DisplayName *string                   `pulumi:"displayName"`
 	Filters     []GetMysqlDbSystemsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// If the DB System has a HeatWave Cluster attached.
 	IsHeatWaveClusterAttached *bool `pulumi:"isHeatWaveClusterAttached"`
 	IsUpToDate                *bool `pulumi:"isUpToDate"`
@@ -157,12 +156,6 @@ func (o GetMysqlDbSystemsResultOutput) ToGetMysqlDbSystemsResultOutputWithContex
 	return o
 }
 
-func (o GetMysqlDbSystemsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetMysqlDbSystemsResult] {
-	return pulumix.Output[GetMysqlDbSystemsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the compartment the DB System belongs in.
 func (o GetMysqlDbSystemsResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMysqlDbSystemsResult) string { return v.CompartmentId }).(pulumi.StringOutput)
@@ -198,8 +191,8 @@ func (o GetMysqlDbSystemsResultOutput) Filters() GetMysqlDbSystemsFilterArrayOut
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetMysqlDbSystemsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlDbSystemsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetMysqlDbSystemsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // If the DB System has a HeatWave Cluster attached.

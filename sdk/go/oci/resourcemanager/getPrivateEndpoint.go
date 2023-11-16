@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Private Endpoint resource in Oracle Cloud Infrastructure Resource Manager service.
@@ -60,34 +59,34 @@ type LookupPrivateEndpointArgs struct {
 // A collection of values returned by getPrivateEndpoint.
 type LookupPrivateEndpointResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing this private endpoint details.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// Description of the private endpoint. Avoid entering confidential information.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// DNS Proxy forwards any DNS FQDN queries over into the consumer DNS resolver if the DNS FQDN is included in the dns zones list otherwise it goes to service provider VCN resolver.
 	DnsZones []string `pulumi:"dnsZones"`
 	// Free-form tags associated with the resource. Each tag is a key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// Unique identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the private endpoint details.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// When `true`, allows the private endpoint to be used with a configuration source provider.
-	IsUsedWithConfigurationSourceProvider bool `pulumi:"isUsedWithConfigurationSourceProvider"`
+	IsUsedWithConfigurationSourceProvider *bool `pulumi:"isUsedWithConfigurationSourceProvider"`
 	// An array of network security groups (NSG) that the customer can optionally provide.
 	NsgIdLists        []string `pulumi:"nsgIdLists"`
 	PrivateEndpointId string   `pulumi:"privateEndpointId"`
 	// The source IPs which resource manager service will use to connect to customer's network. Automatically assigned by Resource Manager Service.
 	SourceIps []string `pulumi:"sourceIps"`
 	// The current lifecycle state of the private endpoint.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet within the VCN for the private endpoint.
-	SubnetId string `pulumi:"subnetId"`
+	SubnetId *string `pulumi:"subnetId"`
 	// The date and time at which the private endpoint was created. Format is defined by RFC3339. Example: `2020-11-25T21:10:29.600Z`
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN for the private endpoint.
-	VcnId string `pulumi:"vcnId"`
+	VcnId *string `pulumi:"vcnId"`
 }
 
 func LookupPrivateEndpointOutput(ctx *pulumi.Context, args LookupPrivateEndpointOutputArgs, opts ...pulumi.InvokeOption) LookupPrivateEndpointResultOutput {
@@ -128,15 +127,9 @@ func (o LookupPrivateEndpointResultOutput) ToLookupPrivateEndpointResultOutputWi
 	return o
 }
 
-func (o LookupPrivateEndpointResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupPrivateEndpointResult] {
-	return pulumix.Output[LookupPrivateEndpointResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing this private endpoint details.
-func (o LookupPrivateEndpointResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupPrivateEndpointResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupPrivateEndpointResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupPrivateEndpointResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -145,13 +138,13 @@ func (o LookupPrivateEndpointResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // Description of the private endpoint. Avoid entering confidential information.
-func (o LookupPrivateEndpointResultOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupPrivateEndpointResult) string { return v.Description }).(pulumi.StringOutput)
+func (o LookupPrivateEndpointResultOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupPrivateEndpointResult) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-func (o LookupPrivateEndpointResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupPrivateEndpointResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupPrivateEndpointResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupPrivateEndpointResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // DNS Proxy forwards any DNS FQDN queries over into the consumer DNS resolver if the DNS FQDN is included in the dns zones list otherwise it goes to service provider VCN resolver.
@@ -165,13 +158,13 @@ func (o LookupPrivateEndpointResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // Unique identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the private endpoint details.
-func (o LookupPrivateEndpointResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupPrivateEndpointResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupPrivateEndpointResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupPrivateEndpointResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // When `true`, allows the private endpoint to be used with a configuration source provider.
-func (o LookupPrivateEndpointResultOutput) IsUsedWithConfigurationSourceProvider() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupPrivateEndpointResult) bool { return v.IsUsedWithConfigurationSourceProvider }).(pulumi.BoolOutput)
+func (o LookupPrivateEndpointResultOutput) IsUsedWithConfigurationSourceProvider() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupPrivateEndpointResult) *bool { return v.IsUsedWithConfigurationSourceProvider }).(pulumi.BoolPtrOutput)
 }
 
 // An array of network security groups (NSG) that the customer can optionally provide.
@@ -189,23 +182,23 @@ func (o LookupPrivateEndpointResultOutput) SourceIps() pulumi.StringArrayOutput 
 }
 
 // The current lifecycle state of the private endpoint.
-func (o LookupPrivateEndpointResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupPrivateEndpointResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupPrivateEndpointResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupPrivateEndpointResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet within the VCN for the private endpoint.
-func (o LookupPrivateEndpointResultOutput) SubnetId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupPrivateEndpointResult) string { return v.SubnetId }).(pulumi.StringOutput)
+func (o LookupPrivateEndpointResultOutput) SubnetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupPrivateEndpointResult) *string { return v.SubnetId }).(pulumi.StringPtrOutput)
 }
 
 // The date and time at which the private endpoint was created. Format is defined by RFC3339. Example: `2020-11-25T21:10:29.600Z`
-func (o LookupPrivateEndpointResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupPrivateEndpointResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupPrivateEndpointResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupPrivateEndpointResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN for the private endpoint.
-func (o LookupPrivateEndpointResultOutput) VcnId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupPrivateEndpointResult) string { return v.VcnId }).(pulumi.StringOutput)
+func (o LookupPrivateEndpointResultOutput) VcnId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupPrivateEndpointResult) *string { return v.VcnId }).(pulumi.StringPtrOutput)
 }
 
 func init() {

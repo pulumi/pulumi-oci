@@ -48,51 +48,51 @@ export class SqlFirewallPolicy extends pulumi.CustomResource {
     /**
      * (Updatable) List of allowed ip addresses for the SQL firewall policy.
      */
-    public readonly allowedClientIps!: pulumi.Output<string[]>;
+    public readonly allowedClientIps!: pulumi.Output<string[] | undefined>;
     /**
      * (Updatable) List of allowed operating system user names for the SQL firewall policy.
      */
-    public readonly allowedClientOsUsernames!: pulumi.Output<string[]>;
+    public readonly allowedClientOsUsernames!: pulumi.Output<string[] | undefined>;
     /**
      * (Updatable) List of allowed client programs for the SQL firewall policy.
      */
-    public readonly allowedClientPrograms!: pulumi.Output<string[]>;
+    public readonly allowedClientPrograms!: pulumi.Output<string[] | undefined>;
     /**
      * (Updatable) The OCID of the compartment containing the SQL firewall policy.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    public readonly compartmentId!: pulumi.Output<string | undefined>;
     /**
      * The database user name.
      */
-    public /*out*/ readonly dbUserName!: pulumi.Output<string>;
+    public /*out*/ readonly dbUserName!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) The description of the SQL firewall policy.
      */
-    public readonly description!: pulumi.Output<string>;
+    public readonly description!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The display name of the SQL firewall policy. The name does not have to be unique, and it is changeable.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    public readonly displayName!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Specifies the SQL firewall policy enforcement option.
      */
-    public readonly enforcementScope!: pulumi.Output<string>;
+    public readonly enforcementScope!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * Details about the current state of the SQL firewall policy in Data Safe.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string | undefined>;
     /**
      * The OCID of the security policy corresponding to the SQL firewall policy.
      */
-    public /*out*/ readonly securityPolicyId!: pulumi.Output<string>;
+    public /*out*/ readonly securityPolicyId!: pulumi.Output<string | undefined>;
     /**
      * The OCID of the SQL firewall policy resource.
      */
@@ -100,31 +100,31 @@ export class SqlFirewallPolicy extends pulumi.CustomResource {
     /**
      * Specifies the level of SQL included for this SQL firewall policy. USER_ISSUED_SQL - User issued SQL statements only. ALL_SQL - Includes all SQL statements including SQL statement issued inside PL/SQL units.
      */
-    public /*out*/ readonly sqlLevel!: pulumi.Output<string>;
+    public /*out*/ readonly sqlLevel!: pulumi.Output<string | undefined>;
     /**
      * The current state of the SQL firewall policy.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Specifies whether the SQL firewall policy is enabled or disabled.
      */
-    public readonly status!: pulumi.Output<string>;
+    public readonly status!: pulumi.Output<string | undefined>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any}>;
+    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * The time that the SQL firewall policy was created, in the format defined by RFC3339.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * The date and time the SQL firewall policy was last updated, in the format defined by RFC3339.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    public /*out*/ readonly timeUpdated!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Specifies the SQL firewall action based on detection of SQL firewall violations.
      */
-    public readonly violationAction!: pulumi.Output<string>;
+    public readonly violationAction!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Specifies whether a unified audit policy should be enabled for auditing the SQL firewall policy violations.
      *
@@ -132,7 +132,7 @@ export class SqlFirewallPolicy extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly violationAudit!: pulumi.Output<string>;
+    public readonly violationAudit!: pulumi.Output<string | undefined>;
 
     /**
      * Create a SqlFirewallPolicy resource with the given unique name, arguments, and options.

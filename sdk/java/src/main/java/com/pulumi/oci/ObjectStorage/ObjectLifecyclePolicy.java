@@ -13,6 +13,7 @@ import com.pulumi.oci.ObjectStorage.outputs.ObjectLifecyclePolicyRule;
 import com.pulumi.oci.Utilities;
 import java.lang.String;
 import java.util.List;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -110,28 +111,28 @@ public class ObjectLifecyclePolicy extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="rules", refs={List.class,ObjectLifecyclePolicyRule.class}, tree="[0,1]")
-    private Output<List<ObjectLifecyclePolicyRule>> rules;
+    private Output</* @Nullable */ List<ObjectLifecyclePolicyRule>> rules;
 
     /**
      * @return (Updatable) The bucket&#39;s set of lifecycle policy rules.
      * 
      */
-    public Output<List<ObjectLifecyclePolicyRule>> rules() {
-        return this.rules;
+    public Output<Optional<List<ObjectLifecyclePolicyRule>>> rules() {
+        return Codegen.optional(this.rules);
     }
     /**
      * The date and time the object lifecycle policy was created, as described in [RFC 3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The date and time the object lifecycle policy was created, as described in [RFC 3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
 
     /**

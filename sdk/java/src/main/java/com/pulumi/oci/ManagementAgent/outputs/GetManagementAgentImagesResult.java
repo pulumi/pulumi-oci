@@ -20,13 +20,13 @@ public final class GetManagementAgentImagesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private @Nullable String installType;
     /**
      * @return The list of management_agent_images.
      * 
      */
-    private List<GetManagementAgentImagesManagementAgentImage> managementAgentImages;
+    private @Nullable List<GetManagementAgentImagesManagementAgentImage> managementAgentImages;
     private @Nullable String name;
     /**
      * @return The current state of Management Agent Image
@@ -45,8 +45,8 @@ public final class GetManagementAgentImagesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public Optional<String> installType() {
         return Optional.ofNullable(this.installType);
@@ -56,7 +56,7 @@ public final class GetManagementAgentImagesResult {
      * 
      */
     public List<GetManagementAgentImagesManagementAgentImage> managementAgentImages() {
-        return this.managementAgentImages;
+        return this.managementAgentImages == null ? List.of() : this.managementAgentImages;
     }
     public Optional<String> name() {
         return Optional.ofNullable(this.name);
@@ -80,9 +80,9 @@ public final class GetManagementAgentImagesResult {
     public static final class Builder {
         private String compartmentId;
         private @Nullable List<GetManagementAgentImagesFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String installType;
-        private List<GetManagementAgentImagesManagementAgentImage> managementAgentImages;
+        private @Nullable List<GetManagementAgentImagesManagementAgentImage> managementAgentImages;
         private @Nullable String name;
         private @Nullable String state;
         public Builder() {}
@@ -111,8 +111,8 @@ public final class GetManagementAgentImagesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -121,8 +121,8 @@ public final class GetManagementAgentImagesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder managementAgentImages(List<GetManagementAgentImagesManagementAgentImage> managementAgentImages) {
-            this.managementAgentImages = Objects.requireNonNull(managementAgentImages);
+        public Builder managementAgentImages(@Nullable List<GetManagementAgentImagesManagementAgentImage> managementAgentImages) {
+            this.managementAgentImages = managementAgentImages;
             return this;
         }
         public Builder managementAgentImages(GetManagementAgentImagesManagementAgentImage... managementAgentImages) {

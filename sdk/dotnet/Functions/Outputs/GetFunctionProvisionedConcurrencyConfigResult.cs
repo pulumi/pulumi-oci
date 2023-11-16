@@ -16,17 +16,17 @@ namespace Pulumi.Oci.Functions.Outputs
         /// <summary>
         /// Configuration specifying a constant amount of provisioned concurrency.
         /// </summary>
-        public readonly int Count;
+        public readonly int? Count;
         /// <summary>
         /// The strategy for provisioned concurrency to be used.
         /// </summary>
-        public readonly string Strategy;
+        public readonly string? Strategy;
 
         [OutputConstructor]
         private GetFunctionProvisionedConcurrencyConfigResult(
-            int count,
+            int? count,
 
-            string strategy)
+            string? strategy)
         {
             Count = count;
             Strategy = strategy;

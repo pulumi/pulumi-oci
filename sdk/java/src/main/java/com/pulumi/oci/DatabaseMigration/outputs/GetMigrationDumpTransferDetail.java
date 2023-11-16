@@ -9,38 +9,40 @@ import com.pulumi.oci.DatabaseMigration.outputs.GetMigrationDumpTransferDetailTa
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetMigrationDumpTransferDetail {
-    private String sharedStorageMountTargetId;
+    private @Nullable String sharedStorageMountTargetId;
     /**
      * @return Optional additional properties for dump transfer in source or target host. Default kind is CURL
      * 
      */
-    private List<GetMigrationDumpTransferDetailSource> sources;
+    private @Nullable List<GetMigrationDumpTransferDetailSource> sources;
     /**
      * @return Optional additional properties for dump transfer in source or target host. Default kind is CURL
      * 
      */
-    private List<GetMigrationDumpTransferDetailTarget> targets;
+    private @Nullable List<GetMigrationDumpTransferDetailTarget> targets;
 
     private GetMigrationDumpTransferDetail() {}
-    public String sharedStorageMountTargetId() {
-        return this.sharedStorageMountTargetId;
+    public Optional<String> sharedStorageMountTargetId() {
+        return Optional.ofNullable(this.sharedStorageMountTargetId);
     }
     /**
      * @return Optional additional properties for dump transfer in source or target host. Default kind is CURL
      * 
      */
     public List<GetMigrationDumpTransferDetailSource> sources() {
-        return this.sources;
+        return this.sources == null ? List.of() : this.sources;
     }
     /**
      * @return Optional additional properties for dump transfer in source or target host. Default kind is CURL
      * 
      */
     public List<GetMigrationDumpTransferDetailTarget> targets() {
-        return this.targets;
+        return this.targets == null ? List.of() : this.targets;
     }
 
     public static Builder builder() {
@@ -52,9 +54,9 @@ public final class GetMigrationDumpTransferDetail {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String sharedStorageMountTargetId;
-        private List<GetMigrationDumpTransferDetailSource> sources;
-        private List<GetMigrationDumpTransferDetailTarget> targets;
+        private @Nullable String sharedStorageMountTargetId;
+        private @Nullable List<GetMigrationDumpTransferDetailSource> sources;
+        private @Nullable List<GetMigrationDumpTransferDetailTarget> targets;
         public Builder() {}
         public Builder(GetMigrationDumpTransferDetail defaults) {
     	      Objects.requireNonNull(defaults);
@@ -64,21 +66,21 @@ public final class GetMigrationDumpTransferDetail {
         }
 
         @CustomType.Setter
-        public Builder sharedStorageMountTargetId(String sharedStorageMountTargetId) {
-            this.sharedStorageMountTargetId = Objects.requireNonNull(sharedStorageMountTargetId);
+        public Builder sharedStorageMountTargetId(@Nullable String sharedStorageMountTargetId) {
+            this.sharedStorageMountTargetId = sharedStorageMountTargetId;
             return this;
         }
         @CustomType.Setter
-        public Builder sources(List<GetMigrationDumpTransferDetailSource> sources) {
-            this.sources = Objects.requireNonNull(sources);
+        public Builder sources(@Nullable List<GetMigrationDumpTransferDetailSource> sources) {
+            this.sources = sources;
             return this;
         }
         public Builder sources(GetMigrationDumpTransferDetailSource... sources) {
             return sources(List.of(sources));
         }
         @CustomType.Setter
-        public Builder targets(List<GetMigrationDumpTransferDetailTarget> targets) {
-            this.targets = Objects.requireNonNull(targets);
+        public Builder targets(@Nullable List<GetMigrationDumpTransferDetailTarget> targets) {
+            this.targets = targets;
             return this;
         }
         public Builder targets(GetMigrationDumpTransferDetailTarget... targets) {

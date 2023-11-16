@@ -13,6 +13,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetExternalClustersExternalClusterCollectionItem {
@@ -20,93 +22,93 @@ public final class GetExternalClustersExternalClusterCollectionItem {
      * @return The additional details of the external cluster defined in `{&#34;key&#34;: &#34;value&#34;}` format. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> additionalDetails;
+    private @Nullable Map<String,Object> additionalDetails;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return The name of the external cluster.
      * 
      */
-    private String componentName;
+    private @Nullable String componentName;
     /**
      * @return A filter to only return the resources that match the entire display name.
      * 
      */
-    private String displayName;
-    private String externalClusterId;
+    private @Nullable String displayName;
+    private @Nullable String externalClusterId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external connector.
      * 
      */
-    private String externalConnectorId;
+    private @Nullable String externalConnectorId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system.
      * 
      */
-    private String externalDbSystemId;
+    private @Nullable String externalDbSystemId;
     /**
      * @return The directory in which Oracle Grid Infrastructure is installed.
      * 
      */
-    private String gridHome;
+    private @Nullable String gridHome;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external cluster.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Indicates whether the cluster is Oracle Flex Cluster or not.
      * 
      */
-    private Boolean isFlexCluster;
+    private @Nullable Boolean isFlexCluster;
     /**
      * @return Additional information about the current lifecycle state.
      * 
      */
-    private String lifecycleDetails;
+    private @Nullable String lifecycleDetails;
     /**
      * @return The list of network address configurations of the external cluster.
      * 
      */
-    private List<GetExternalClustersExternalClusterCollectionItemNetworkConfiguration> networkConfigurations;
+    private @Nullable List<GetExternalClustersExternalClusterCollectionItemNetworkConfiguration> networkConfigurations;
     /**
      * @return The location of the Oracle Cluster Registry (OCR).
      * 
      */
-    private String ocrFileLocation;
+    private @Nullable String ocrFileLocation;
     /**
      * @return The list of Single Client Access Name (SCAN) configurations of the external cluster.
      * 
      */
-    private List<GetExternalClustersExternalClusterCollectionItemScanConfiguration> scanConfigurations;
+    private @Nullable List<GetExternalClustersExternalClusterCollectionItemScanConfiguration> scanConfigurations;
     /**
      * @return The current lifecycle state of the external cluster.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return The date and time the external cluster was created.
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The date and time the external cluster was last updated.
      * 
      */
-    private String timeUpdated;
+    private @Nullable String timeUpdated;
     /**
      * @return The cluster version.
      * 
      */
-    private String version;
+    private @Nullable String version;
     /**
      * @return The list of Virtual IP (VIP) configurations of the external cluster.
      * 
      */
-    private List<GetExternalClustersExternalClusterCollectionItemVipConfiguration> vipConfigurations;
+    private @Nullable List<GetExternalClustersExternalClusterCollectionItemVipConfiguration> vipConfigurations;
 
     private GetExternalClustersExternalClusterCollectionItem() {}
     /**
@@ -114,129 +116,129 @@ public final class GetExternalClustersExternalClusterCollectionItem {
      * 
      */
     public Map<String,Object> additionalDetails() {
-        return this.additionalDetails;
+        return this.additionalDetails == null ? Map.of() : this.additionalDetails;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return The name of the external cluster.
      * 
      */
-    public String componentName() {
-        return this.componentName;
+    public Optional<String> componentName() {
+        return Optional.ofNullable(this.componentName);
     }
     /**
      * @return A filter to only return the resources that match the entire display name.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
-    public String externalClusterId() {
-        return this.externalClusterId;
+    public Optional<String> externalClusterId() {
+        return Optional.ofNullable(this.externalClusterId);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external connector.
      * 
      */
-    public String externalConnectorId() {
-        return this.externalConnectorId;
+    public Optional<String> externalConnectorId() {
+        return Optional.ofNullable(this.externalConnectorId);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system.
      * 
      */
-    public String externalDbSystemId() {
-        return this.externalDbSystemId;
+    public Optional<String> externalDbSystemId() {
+        return Optional.ofNullable(this.externalDbSystemId);
     }
     /**
      * @return The directory in which Oracle Grid Infrastructure is installed.
      * 
      */
-    public String gridHome() {
-        return this.gridHome;
+    public Optional<String> gridHome() {
+        return Optional.ofNullable(this.gridHome);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external cluster.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Indicates whether the cluster is Oracle Flex Cluster or not.
      * 
      */
-    public Boolean isFlexCluster() {
-        return this.isFlexCluster;
+    public Optional<Boolean> isFlexCluster() {
+        return Optional.ofNullable(this.isFlexCluster);
     }
     /**
      * @return Additional information about the current lifecycle state.
      * 
      */
-    public String lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Optional<String> lifecycleDetails() {
+        return Optional.ofNullable(this.lifecycleDetails);
     }
     /**
      * @return The list of network address configurations of the external cluster.
      * 
      */
     public List<GetExternalClustersExternalClusterCollectionItemNetworkConfiguration> networkConfigurations() {
-        return this.networkConfigurations;
+        return this.networkConfigurations == null ? List.of() : this.networkConfigurations;
     }
     /**
      * @return The location of the Oracle Cluster Registry (OCR).
      * 
      */
-    public String ocrFileLocation() {
-        return this.ocrFileLocation;
+    public Optional<String> ocrFileLocation() {
+        return Optional.ofNullable(this.ocrFileLocation);
     }
     /**
      * @return The list of Single Client Access Name (SCAN) configurations of the external cluster.
      * 
      */
     public List<GetExternalClustersExternalClusterCollectionItemScanConfiguration> scanConfigurations() {
-        return this.scanConfigurations;
+        return this.scanConfigurations == null ? List.of() : this.scanConfigurations;
     }
     /**
      * @return The current lifecycle state of the external cluster.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return The date and time the external cluster was created.
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return The date and time the external cluster was last updated.
      * 
      */
-    public String timeUpdated() {
-        return this.timeUpdated;
+    public Optional<String> timeUpdated() {
+        return Optional.ofNullable(this.timeUpdated);
     }
     /**
      * @return The cluster version.
      * 
      */
-    public String version() {
-        return this.version;
+    public Optional<String> version() {
+        return Optional.ofNullable(this.version);
     }
     /**
      * @return The list of Virtual IP (VIP) configurations of the external cluster.
      * 
      */
     public List<GetExternalClustersExternalClusterCollectionItemVipConfiguration> vipConfigurations() {
-        return this.vipConfigurations;
+        return this.vipConfigurations == null ? List.of() : this.vipConfigurations;
     }
 
     public static Builder builder() {
@@ -248,25 +250,25 @@ public final class GetExternalClustersExternalClusterCollectionItem {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Map<String,Object> additionalDetails;
-        private String compartmentId;
-        private String componentName;
-        private String displayName;
-        private String externalClusterId;
-        private String externalConnectorId;
-        private String externalDbSystemId;
-        private String gridHome;
-        private String id;
-        private Boolean isFlexCluster;
-        private String lifecycleDetails;
-        private List<GetExternalClustersExternalClusterCollectionItemNetworkConfiguration> networkConfigurations;
-        private String ocrFileLocation;
-        private List<GetExternalClustersExternalClusterCollectionItemScanConfiguration> scanConfigurations;
-        private String state;
-        private String timeCreated;
-        private String timeUpdated;
-        private String version;
-        private List<GetExternalClustersExternalClusterCollectionItemVipConfiguration> vipConfigurations;
+        private @Nullable Map<String,Object> additionalDetails;
+        private @Nullable String compartmentId;
+        private @Nullable String componentName;
+        private @Nullable String displayName;
+        private @Nullable String externalClusterId;
+        private @Nullable String externalConnectorId;
+        private @Nullable String externalDbSystemId;
+        private @Nullable String gridHome;
+        private @Nullable String id;
+        private @Nullable Boolean isFlexCluster;
+        private @Nullable String lifecycleDetails;
+        private @Nullable List<GetExternalClustersExternalClusterCollectionItemNetworkConfiguration> networkConfigurations;
+        private @Nullable String ocrFileLocation;
+        private @Nullable List<GetExternalClustersExternalClusterCollectionItemScanConfiguration> scanConfigurations;
+        private @Nullable String state;
+        private @Nullable String timeCreated;
+        private @Nullable String timeUpdated;
+        private @Nullable String version;
+        private @Nullable List<GetExternalClustersExternalClusterCollectionItemVipConfiguration> vipConfigurations;
         public Builder() {}
         public Builder(GetExternalClustersExternalClusterCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -292,104 +294,104 @@ public final class GetExternalClustersExternalClusterCollectionItem {
         }
 
         @CustomType.Setter
-        public Builder additionalDetails(Map<String,Object> additionalDetails) {
-            this.additionalDetails = Objects.requireNonNull(additionalDetails);
+        public Builder additionalDetails(@Nullable Map<String,Object> additionalDetails) {
+            this.additionalDetails = additionalDetails;
             return this;
         }
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder componentName(String componentName) {
-            this.componentName = Objects.requireNonNull(componentName);
+        public Builder componentName(@Nullable String componentName) {
+            this.componentName = componentName;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder externalClusterId(String externalClusterId) {
-            this.externalClusterId = Objects.requireNonNull(externalClusterId);
+        public Builder externalClusterId(@Nullable String externalClusterId) {
+            this.externalClusterId = externalClusterId;
             return this;
         }
         @CustomType.Setter
-        public Builder externalConnectorId(String externalConnectorId) {
-            this.externalConnectorId = Objects.requireNonNull(externalConnectorId);
+        public Builder externalConnectorId(@Nullable String externalConnectorId) {
+            this.externalConnectorId = externalConnectorId;
             return this;
         }
         @CustomType.Setter
-        public Builder externalDbSystemId(String externalDbSystemId) {
-            this.externalDbSystemId = Objects.requireNonNull(externalDbSystemId);
+        public Builder externalDbSystemId(@Nullable String externalDbSystemId) {
+            this.externalDbSystemId = externalDbSystemId;
             return this;
         }
         @CustomType.Setter
-        public Builder gridHome(String gridHome) {
-            this.gridHome = Objects.requireNonNull(gridHome);
+        public Builder gridHome(@Nullable String gridHome) {
+            this.gridHome = gridHome;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder isFlexCluster(Boolean isFlexCluster) {
-            this.isFlexCluster = Objects.requireNonNull(isFlexCluster);
+        public Builder isFlexCluster(@Nullable Boolean isFlexCluster) {
+            this.isFlexCluster = isFlexCluster;
             return this;
         }
         @CustomType.Setter
-        public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+        public Builder lifecycleDetails(@Nullable String lifecycleDetails) {
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
-        public Builder networkConfigurations(List<GetExternalClustersExternalClusterCollectionItemNetworkConfiguration> networkConfigurations) {
-            this.networkConfigurations = Objects.requireNonNull(networkConfigurations);
+        public Builder networkConfigurations(@Nullable List<GetExternalClustersExternalClusterCollectionItemNetworkConfiguration> networkConfigurations) {
+            this.networkConfigurations = networkConfigurations;
             return this;
         }
         public Builder networkConfigurations(GetExternalClustersExternalClusterCollectionItemNetworkConfiguration... networkConfigurations) {
             return networkConfigurations(List.of(networkConfigurations));
         }
         @CustomType.Setter
-        public Builder ocrFileLocation(String ocrFileLocation) {
-            this.ocrFileLocation = Objects.requireNonNull(ocrFileLocation);
+        public Builder ocrFileLocation(@Nullable String ocrFileLocation) {
+            this.ocrFileLocation = ocrFileLocation;
             return this;
         }
         @CustomType.Setter
-        public Builder scanConfigurations(List<GetExternalClustersExternalClusterCollectionItemScanConfiguration> scanConfigurations) {
-            this.scanConfigurations = Objects.requireNonNull(scanConfigurations);
+        public Builder scanConfigurations(@Nullable List<GetExternalClustersExternalClusterCollectionItemScanConfiguration> scanConfigurations) {
+            this.scanConfigurations = scanConfigurations;
             return this;
         }
         public Builder scanConfigurations(GetExternalClustersExternalClusterCollectionItemScanConfiguration... scanConfigurations) {
             return scanConfigurations(List.of(scanConfigurations));
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+        public Builder timeUpdated(@Nullable String timeUpdated) {
+            this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter
-        public Builder version(String version) {
-            this.version = Objects.requireNonNull(version);
+        public Builder version(@Nullable String version) {
+            this.version = version;
             return this;
         }
         @CustomType.Setter
-        public Builder vipConfigurations(List<GetExternalClustersExternalClusterCollectionItemVipConfiguration> vipConfigurations) {
-            this.vipConfigurations = Objects.requireNonNull(vipConfigurations);
+        public Builder vipConfigurations(@Nullable List<GetExternalClustersExternalClusterCollectionItemVipConfiguration> vipConfigurations) {
+            this.vipConfigurations = vipConfigurations;
             return this;
         }
         public Builder vipConfigurations(GetExternalClustersExternalClusterCollectionItemVipConfiguration... vipConfigurations) {

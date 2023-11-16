@@ -8,6 +8,8 @@ import com.pulumi.oci.Jms.outputs.GetFleetAdvancedFeatureConfigurationCryptoEven
 import java.lang.Boolean;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetFleetAdvancedFeatureConfigurationCryptoEventAnalysis {
@@ -15,27 +17,27 @@ public final class GetFleetAdvancedFeatureConfigurationCryptoEventAnalysis {
      * @return PerformanceTuningAnalysis flag to store enabled or disabled status.
      * 
      */
-    private Boolean isEnabled;
+    private @Nullable Boolean isEnabled;
     /**
      * @return Summarized events log for advanced feature.
      * 
      */
-    private List<GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLog> summarizedEventsLogs;
+    private @Nullable List<GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLog> summarizedEventsLogs;
 
     private GetFleetAdvancedFeatureConfigurationCryptoEventAnalysis() {}
     /**
      * @return PerformanceTuningAnalysis flag to store enabled or disabled status.
      * 
      */
-    public Boolean isEnabled() {
-        return this.isEnabled;
+    public Optional<Boolean> isEnabled() {
+        return Optional.ofNullable(this.isEnabled);
     }
     /**
      * @return Summarized events log for advanced feature.
      * 
      */
     public List<GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLog> summarizedEventsLogs() {
-        return this.summarizedEventsLogs;
+        return this.summarizedEventsLogs == null ? List.of() : this.summarizedEventsLogs;
     }
 
     public static Builder builder() {
@@ -47,8 +49,8 @@ public final class GetFleetAdvancedFeatureConfigurationCryptoEventAnalysis {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Boolean isEnabled;
-        private List<GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLog> summarizedEventsLogs;
+        private @Nullable Boolean isEnabled;
+        private @Nullable List<GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLog> summarizedEventsLogs;
         public Builder() {}
         public Builder(GetFleetAdvancedFeatureConfigurationCryptoEventAnalysis defaults) {
     	      Objects.requireNonNull(defaults);
@@ -57,13 +59,13 @@ public final class GetFleetAdvancedFeatureConfigurationCryptoEventAnalysis {
         }
 
         @CustomType.Setter
-        public Builder isEnabled(Boolean isEnabled) {
-            this.isEnabled = Objects.requireNonNull(isEnabled);
+        public Builder isEnabled(@Nullable Boolean isEnabled) {
+            this.isEnabled = isEnabled;
             return this;
         }
         @CustomType.Setter
-        public Builder summarizedEventsLogs(List<GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLog> summarizedEventsLogs) {
-            this.summarizedEventsLogs = Objects.requireNonNull(summarizedEventsLogs);
+        public Builder summarizedEventsLogs(@Nullable List<GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLog> summarizedEventsLogs) {
+            this.summarizedEventsLogs = summarizedEventsLogs;
             return this;
         }
         public Builder summarizedEventsLogs(GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLog... summarizedEventsLogs) {

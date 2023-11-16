@@ -122,31 +122,31 @@ namespace Pulumi.Oci.DataSafe
         /// The data type of the masking column.
         /// </summary>
         [Output("dataType")]
-        public Output<string> DataType { get; private set; } = null!;
+        public Output<string?> DataType { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Indicates whether data masking is enabled for the masking column. Set it to false if  you don't want to mask the column.
         /// </summary>
         [Output("isMaskingEnabled")]
-        public Output<bool> IsMaskingEnabled { get; private set; } = null!;
+        public Output<bool?> IsMaskingEnabled { get; private set; } = null!;
 
         /// <summary>
         /// The unique key that identifies the masking column. It's numeric and unique within a masking policy.
         /// </summary>
         [Output("key")]
-        public Output<string> Key { get; private set; } = null!;
+        public Output<string?> Key { get; private set; } = null!;
 
         /// <summary>
         /// Details about the current state of the masking column.
         /// </summary>
         [Output("lifecycleDetails")]
-        public Output<string> LifecycleDetails { get; private set; } = null!;
+        public Output<string?> LifecycleDetails { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The group of the masking column. It's a masking group identifier and can be any string  of acceptable length. All the columns in a group are masked together to ensure that  the masked data across these columns continue to retain the same logical relationship.  For more details, check  &lt;a href=https://docs.oracle.com/en/cloud/paas/data-safe/udscs/group-masking1.html#GUID-755056B9-9540-48C0-9491-262A44A85037&gt;Group Masking in the Data Safe documentation.&lt;/a&gt;
         /// </summary>
         [Output("maskingColumnGroup")]
-        public Output<string> MaskingColumnGroup { get; private set; } = null!;
+        public Output<string?> MaskingColumnGroup { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The masking formats to be assigned to the masking column. You can specify a condition  as part of each masking format. It enables you to do  &lt;a href="https://docs.oracle.com/en/cloud/paas/data-safe/udscs/conditional-masking.html"&gt;conditional masking&lt;/a&gt;  so that you can mask the column data values differently using different masking  formats and the associated conditions. A masking format can have one or more format  entries. The combined output of all the format entries is used for masking. It  provides the flexibility to define a masking format that can generate different parts  of a data value separately and then combine them to get the final data value for masking.
@@ -170,7 +170,7 @@ namespace Pulumi.Oci.DataSafe
         /// (Updatable) The type of the object that contains the database column.
         /// </summary>
         [Output("objectType")]
-        public Output<string> ObjectType { get; private set; } = null!;
+        public Output<string?> ObjectType { get; private set; } = null!;
 
         /// <summary>
         /// The name of the schema that contains the database column. This attribute cannot be updated for an existing masking column.
@@ -186,25 +186,25 @@ namespace Pulumi.Oci.DataSafe
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("sensitiveTypeId")]
-        public Output<string> SensitiveTypeId { get; private set; } = null!;
+        public Output<string?> SensitiveTypeId { get; private set; } = null!;
 
         /// <summary>
         /// The current state of the masking column.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the masking column was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the masking column was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         /// </summary>
         [Output("timeUpdated")]
-        public Output<string> TimeUpdated { get; private set; } = null!;
+        public Output<string?> TimeUpdated { get; private set; } = null!;
 
 
         /// <summary>

@@ -70,7 +70,7 @@ export class GeneratedKey extends pulumi.CustomResource {
     /**
      * The encrypted data encryption key generated from a master encryption key.
      */
-    public /*out*/ readonly ciphertext!: pulumi.Output<string>;
+    public /*out*/ readonly ciphertext!: pulumi.Output<string | undefined>;
     /**
      * The service endpoint to perform cryptographic operations against. Cryptographic operations include 'Encrypt,' 'Decrypt,' and 'GenerateDataEncryptionKey' operations. see Vault Crypto endpoint.
      */
@@ -98,11 +98,11 @@ export class GeneratedKey extends pulumi.CustomResource {
     /**
      * The plaintext data encryption key, a base64-encoded sequence of random bytes, which is included if the [GenerateDataEncryptionKey](https://docs.cloud.oracle.com/iaas/api/#/en/key/latest/GeneratedKey/GenerateDataEncryptionKey) request includes the `includePlaintextKey` parameter and sets its value to "true".
      */
-    public /*out*/ readonly plaintext!: pulumi.Output<string>;
+    public /*out*/ readonly plaintext!: pulumi.Output<string | undefined>;
     /**
      * The checksum of the plaintext data encryption key, which is included if the [GenerateDataEncryptionKey](https://docs.cloud.oracle.com/iaas/api/#/en/key/latest/GeneratedKey/GenerateDataEncryptionKey) request includes the `includePlaintextKey` parameter and sets its value to "true".
      */
-    public /*out*/ readonly plaintextChecksum!: pulumi.Output<string>;
+    public /*out*/ readonly plaintextChecksum!: pulumi.Output<string | undefined>;
 
     /**
      * Create a GeneratedKey resource with the given unique name, arguments, and options.

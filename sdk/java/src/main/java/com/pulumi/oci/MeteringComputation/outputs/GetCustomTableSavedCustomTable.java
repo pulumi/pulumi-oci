@@ -9,6 +9,8 @@ import java.lang.Double;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetCustomTableSavedCustomTable {
@@ -16,32 +18,32 @@ public final class GetCustomTableSavedCustomTable {
      * @return The column groupBy key list. example: `[&#34;tagNamespace&#34;, &#34;tagKey&#34;, &#34;tagValue&#34;, &#34;service&#34;, &#34;skuName&#34;, &#34;skuPartNumber&#34;, &#34;unit&#34;, &#34;compartmentName&#34;, &#34;compartmentPath&#34;, &#34;compartmentId&#34;, &#34;platform&#34;, &#34;region&#34;, &#34;logicalAd&#34;, &#34;resourceId&#34;, &#34;tenantId&#34;, &#34;tenantName&#34;]`
      * 
      */
-    private List<String> columnGroupBies;
+    private @Nullable List<String> columnGroupBies;
     /**
      * @return The compartment depth level.
      * 
      */
-    private Double compartmentDepth;
+    private @Nullable Double compartmentDepth;
     /**
      * @return The name of the custom table.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only one tag in the list is supported. For example: `[{&#34;namespace&#34;:&#34;oracle&#34;, &#34;key&#34;:&#34;createdBy&#34;]`
      * 
      */
-    private List<GetCustomTableSavedCustomTableGroupByTag> groupByTags;
+    private @Nullable List<GetCustomTableSavedCustomTableGroupByTag> groupByTags;
     /**
      * @return The row groupBy key list. example: `[&#34;tagNamespace&#34;, &#34;tagKey&#34;, &#34;tagValue&#34;, &#34;service&#34;, &#34;skuName&#34;, &#34;skuPartNumber&#34;, &#34;unit&#34;, &#34;compartmentName&#34;, &#34;compartmentPath&#34;, &#34;compartmentId&#34;, &#34;platform&#34;, &#34;region&#34;, &#34;logicalAd&#34;, &#34;resourceId&#34;, &#34;tenantId&#34;, &#34;tenantName&#34;]`
      * 
      */
-    private List<String> rowGroupBies;
+    private @Nullable List<String> rowGroupBies;
     /**
      * @return The version of the custom table.
      * 
      */
-    private Double version;
+    private @Nullable Double version;
 
     private GetCustomTableSavedCustomTable() {}
     /**
@@ -49,42 +51,42 @@ public final class GetCustomTableSavedCustomTable {
      * 
      */
     public List<String> columnGroupBies() {
-        return this.columnGroupBies;
+        return this.columnGroupBies == null ? List.of() : this.columnGroupBies;
     }
     /**
      * @return The compartment depth level.
      * 
      */
-    public Double compartmentDepth() {
-        return this.compartmentDepth;
+    public Optional<Double> compartmentDepth() {
+        return Optional.ofNullable(this.compartmentDepth);
     }
     /**
      * @return The name of the custom table.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only one tag in the list is supported. For example: `[{&#34;namespace&#34;:&#34;oracle&#34;, &#34;key&#34;:&#34;createdBy&#34;]`
      * 
      */
     public List<GetCustomTableSavedCustomTableGroupByTag> groupByTags() {
-        return this.groupByTags;
+        return this.groupByTags == null ? List.of() : this.groupByTags;
     }
     /**
      * @return The row groupBy key list. example: `[&#34;tagNamespace&#34;, &#34;tagKey&#34;, &#34;tagValue&#34;, &#34;service&#34;, &#34;skuName&#34;, &#34;skuPartNumber&#34;, &#34;unit&#34;, &#34;compartmentName&#34;, &#34;compartmentPath&#34;, &#34;compartmentId&#34;, &#34;platform&#34;, &#34;region&#34;, &#34;logicalAd&#34;, &#34;resourceId&#34;, &#34;tenantId&#34;, &#34;tenantName&#34;]`
      * 
      */
     public List<String> rowGroupBies() {
-        return this.rowGroupBies;
+        return this.rowGroupBies == null ? List.of() : this.rowGroupBies;
     }
     /**
      * @return The version of the custom table.
      * 
      */
-    public Double version() {
-        return this.version;
+    public Optional<Double> version() {
+        return Optional.ofNullable(this.version);
     }
 
     public static Builder builder() {
@@ -96,12 +98,12 @@ public final class GetCustomTableSavedCustomTable {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<String> columnGroupBies;
-        private Double compartmentDepth;
-        private String displayName;
-        private List<GetCustomTableSavedCustomTableGroupByTag> groupByTags;
-        private List<String> rowGroupBies;
-        private Double version;
+        private @Nullable List<String> columnGroupBies;
+        private @Nullable Double compartmentDepth;
+        private @Nullable String displayName;
+        private @Nullable List<GetCustomTableSavedCustomTableGroupByTag> groupByTags;
+        private @Nullable List<String> rowGroupBies;
+        private @Nullable Double version;
         public Builder() {}
         public Builder(GetCustomTableSavedCustomTable defaults) {
     	      Objects.requireNonNull(defaults);
@@ -114,42 +116,42 @@ public final class GetCustomTableSavedCustomTable {
         }
 
         @CustomType.Setter
-        public Builder columnGroupBies(List<String> columnGroupBies) {
-            this.columnGroupBies = Objects.requireNonNull(columnGroupBies);
+        public Builder columnGroupBies(@Nullable List<String> columnGroupBies) {
+            this.columnGroupBies = columnGroupBies;
             return this;
         }
         public Builder columnGroupBies(String... columnGroupBies) {
             return columnGroupBies(List.of(columnGroupBies));
         }
         @CustomType.Setter
-        public Builder compartmentDepth(Double compartmentDepth) {
-            this.compartmentDepth = Objects.requireNonNull(compartmentDepth);
+        public Builder compartmentDepth(@Nullable Double compartmentDepth) {
+            this.compartmentDepth = compartmentDepth;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder groupByTags(List<GetCustomTableSavedCustomTableGroupByTag> groupByTags) {
-            this.groupByTags = Objects.requireNonNull(groupByTags);
+        public Builder groupByTags(@Nullable List<GetCustomTableSavedCustomTableGroupByTag> groupByTags) {
+            this.groupByTags = groupByTags;
             return this;
         }
         public Builder groupByTags(GetCustomTableSavedCustomTableGroupByTag... groupByTags) {
             return groupByTags(List.of(groupByTags));
         }
         @CustomType.Setter
-        public Builder rowGroupBies(List<String> rowGroupBies) {
-            this.rowGroupBies = Objects.requireNonNull(rowGroupBies);
+        public Builder rowGroupBies(@Nullable List<String> rowGroupBies) {
+            this.rowGroupBies = rowGroupBies;
             return this;
         }
         public Builder rowGroupBies(String... rowGroupBies) {
             return rowGroupBies(List.of(rowGroupBies));
         }
         @CustomType.Setter
-        public Builder version(Double version) {
-            this.version = Objects.requireNonNull(version);
+        public Builder version(@Nullable Double version) {
+            this.version = version;
             return this;
         }
         public GetCustomTableSavedCustomTable build() {

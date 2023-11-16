@@ -96,7 +96,7 @@ export interface GetPipelinesResult {
     /**
      * The list of pipelines.
      */
-    readonly pipelines: outputs.DataScience.GetPipelinesPipeline[];
+    readonly pipelines?: outputs.DataScience.GetPipelinesPipeline[];
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the pipeline with.
      */

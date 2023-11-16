@@ -73,11 +73,11 @@ export class NetworkFirewallPolicyUrlList extends pulumi.CustomResource {
     /**
      * OCID of the Network Firewall Policy this URL List belongs to.
      */
-    public /*out*/ readonly parentResourceId!: pulumi.Output<string>;
+    public /*out*/ readonly parentResourceId!: pulumi.Output<string | undefined>;
     /**
      * Total count of URLs in the URL List
      */
-    public /*out*/ readonly totalUrls!: pulumi.Output<number>;
+    public /*out*/ readonly totalUrls!: pulumi.Output<number | undefined>;
     /**
      * (Updatable) List of urls.
      */

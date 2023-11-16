@@ -23,19 +23,12 @@ class AnalyticsInstanceCapacityArgs:
     def __init__(__self__, *,
                  capacity_type: pulumi.Input[str],
                  capacity_value: pulumi.Input[int]):
-        """
-        :param pulumi.Input[str] capacity_type: The capacity model to use.
-        :param pulumi.Input[int] capacity_value: (Updatable) The capacity value selected (OLPU count, number of users, ...etc...). This parameter affects the number of CPUs, amount of memory or other resources allocated to the instance.
-        """
         pulumi.set(__self__, "capacity_type", capacity_type)
         pulumi.set(__self__, "capacity_value", capacity_value)
 
     @property
     @pulumi.getter(name="capacityType")
     def capacity_type(self) -> pulumi.Input[str]:
-        """
-        The capacity model to use.
-        """
         return pulumi.get(self, "capacity_type")
 
     @capacity_type.setter
@@ -45,9 +38,6 @@ class AnalyticsInstanceCapacityArgs:
     @property
     @pulumi.getter(name="capacityValue")
     def capacity_value(self) -> pulumi.Input[int]:
-        """
-        (Updatable) The capacity value selected (OLPU count, number of users, ...etc...). This parameter affects the number of CPUs, amount of memory or other resources allocated to the instance.
-        """
         return pulumi.get(self, "capacity_value")
 
     @capacity_value.setter
@@ -65,15 +55,6 @@ class AnalyticsInstanceNetworkEndpointDetailsArgs:
                  whitelisted_ips: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  whitelisted_services: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  whitelisted_vcns: Optional[pulumi.Input[Sequence[pulumi.Input['AnalyticsInstanceNetworkEndpointDetailsWhitelistedVcnArgs']]]] = None):
-        """
-        :param pulumi.Input[str] network_endpoint_type: The type of network endpoint.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] network_security_group_ids: Network Security Group OCIDs for an Analytics instance.
-        :param pulumi.Input[str] subnet_id: The subnet OCID for the private endpoint.
-        :param pulumi.Input[str] vcn_id: The VCN OCID for the private endpoint.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] whitelisted_ips: Source IP addresses or IP address ranges in ingress rules.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] whitelisted_services: Oracle Cloud Services that are allowed to access this Analytics instance.
-        :param pulumi.Input[Sequence[pulumi.Input['AnalyticsInstanceNetworkEndpointDetailsWhitelistedVcnArgs']]] whitelisted_vcns: Virtual Cloud Networks allowed to access this network endpoint.
-        """
         pulumi.set(__self__, "network_endpoint_type", network_endpoint_type)
         if network_security_group_ids is not None:
             pulumi.set(__self__, "network_security_group_ids", network_security_group_ids)
@@ -91,9 +72,6 @@ class AnalyticsInstanceNetworkEndpointDetailsArgs:
     @property
     @pulumi.getter(name="networkEndpointType")
     def network_endpoint_type(self) -> pulumi.Input[str]:
-        """
-        The type of network endpoint.
-        """
         return pulumi.get(self, "network_endpoint_type")
 
     @network_endpoint_type.setter
@@ -103,9 +81,6 @@ class AnalyticsInstanceNetworkEndpointDetailsArgs:
     @property
     @pulumi.getter(name="networkSecurityGroupIds")
     def network_security_group_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        Network Security Group OCIDs for an Analytics instance.
-        """
         return pulumi.get(self, "network_security_group_ids")
 
     @network_security_group_ids.setter
@@ -115,9 +90,6 @@ class AnalyticsInstanceNetworkEndpointDetailsArgs:
     @property
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The subnet OCID for the private endpoint.
-        """
         return pulumi.get(self, "subnet_id")
 
     @subnet_id.setter
@@ -127,9 +99,6 @@ class AnalyticsInstanceNetworkEndpointDetailsArgs:
     @property
     @pulumi.getter(name="vcnId")
     def vcn_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The VCN OCID for the private endpoint.
-        """
         return pulumi.get(self, "vcn_id")
 
     @vcn_id.setter
@@ -139,9 +108,6 @@ class AnalyticsInstanceNetworkEndpointDetailsArgs:
     @property
     @pulumi.getter(name="whitelistedIps")
     def whitelisted_ips(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        Source IP addresses or IP address ranges in ingress rules.
-        """
         return pulumi.get(self, "whitelisted_ips")
 
     @whitelisted_ips.setter
@@ -151,9 +117,6 @@ class AnalyticsInstanceNetworkEndpointDetailsArgs:
     @property
     @pulumi.getter(name="whitelistedServices")
     def whitelisted_services(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        Oracle Cloud Services that are allowed to access this Analytics instance.
-        """
         return pulumi.get(self, "whitelisted_services")
 
     @whitelisted_services.setter
@@ -163,9 +126,6 @@ class AnalyticsInstanceNetworkEndpointDetailsArgs:
     @property
     @pulumi.getter(name="whitelistedVcns")
     def whitelisted_vcns(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AnalyticsInstanceNetworkEndpointDetailsWhitelistedVcnArgs']]]]:
-        """
-        Virtual Cloud Networks allowed to access this network endpoint.
-        """
         return pulumi.get(self, "whitelisted_vcns")
 
     @whitelisted_vcns.setter
@@ -178,10 +138,6 @@ class AnalyticsInstanceNetworkEndpointDetailsWhitelistedVcnArgs:
     def __init__(__self__, *,
                  id: Optional[pulumi.Input[str]] = None,
                  whitelisted_ips: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
-        """
-        :param pulumi.Input[str] id: The Virtual Cloud Network OCID.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] whitelisted_ips: Source IP addresses or IP address ranges in ingress rules.
-        """
         if id is not None:
             pulumi.set(__self__, "id", id)
         if whitelisted_ips is not None:
@@ -190,9 +146,6 @@ class AnalyticsInstanceNetworkEndpointDetailsWhitelistedVcnArgs:
     @property
     @pulumi.getter
     def id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The Virtual Cloud Network OCID.
-        """
         return pulumi.get(self, "id")
 
     @id.setter
@@ -202,9 +155,6 @@ class AnalyticsInstanceNetworkEndpointDetailsWhitelistedVcnArgs:
     @property
     @pulumi.getter(name="whitelistedIps")
     def whitelisted_ips(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        Source IP addresses or IP address ranges in ingress rules.
-        """
         return pulumi.get(self, "whitelisted_ips")
 
     @whitelisted_ips.setter
@@ -217,10 +167,6 @@ class AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArgs:
     def __init__(__self__, *,
                  dns_zone: pulumi.Input[str],
                  description: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] dns_zone: (Updatable) Private Source DNS Zone. Ex: example-vcn.oraclevcn.com, corp.example.com.
-        :param pulumi.Input[str] description: (Updatable) Description of private source scan host zone.
-        """
         pulumi.set(__self__, "dns_zone", dns_zone)
         if description is not None:
             pulumi.set(__self__, "description", description)
@@ -228,9 +174,6 @@ class AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArgs:
     @property
     @pulumi.getter(name="dnsZone")
     def dns_zone(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Private Source DNS Zone. Ex: example-vcn.oraclevcn.com, corp.example.com.
-        """
         return pulumi.get(self, "dns_zone")
 
     @dns_zone.setter
@@ -240,9 +183,6 @@ class AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArgs:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Description of private source scan host zone.
-        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -256,11 +196,6 @@ class AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArgs:
                  scan_hostname: pulumi.Input[str],
                  scan_port: pulumi.Input[int],
                  description: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] scan_hostname: (Updatable) Private Source Scan hostname. Ex: db01-scan.corp.example.com, prd-db01-scan.mycompany.com.
-        :param pulumi.Input[int] scan_port: (Updatable) Private Source Scan host port. This is the source port where SCAN protocol will get connected (e.g. 1521).
-        :param pulumi.Input[str] description: (Updatable) Description of private source scan host zone.
-        """
         pulumi.set(__self__, "scan_hostname", scan_hostname)
         pulumi.set(__self__, "scan_port", scan_port)
         if description is not None:
@@ -269,9 +204,6 @@ class AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArgs:
     @property
     @pulumi.getter(name="scanHostname")
     def scan_hostname(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Private Source Scan hostname. Ex: db01-scan.corp.example.com, prd-db01-scan.mycompany.com.
-        """
         return pulumi.get(self, "scan_hostname")
 
     @scan_hostname.setter
@@ -281,9 +213,6 @@ class AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArgs:
     @property
     @pulumi.getter(name="scanPort")
     def scan_port(self) -> pulumi.Input[int]:
-        """
-        (Updatable) Private Source Scan host port. This is the source port where SCAN protocol will get connected (e.g. 1521).
-        """
         return pulumi.get(self, "scan_port")
 
     @scan_port.setter
@@ -293,9 +222,6 @@ class AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArgs:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Description of private source scan host zone.
-        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -309,9 +235,6 @@ class GetAnalyticsInstancesFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: A filter to return only resources that match the given name exactly.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -320,9 +243,6 @@ class GetAnalyticsInstancesFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        A filter to return only resources that match the given name exactly.
-        """
         return pulumi.get(self, "name")
 
     @name.setter

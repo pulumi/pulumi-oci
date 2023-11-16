@@ -9,6 +9,8 @@ import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetPoolsPoolCollectionItemConfiguration {
@@ -16,51 +18,51 @@ public final class GetPoolsPoolCollectionItemConfiguration {
      * @return Maximum number of compute instances in the pool for a given compute shape.
      * 
      */
-    private Integer max;
+    private @Nullable Integer max;
     /**
      * @return Minimum number of compute instances in the pool for a given compute shape.
      * 
      */
-    private Integer min;
+    private @Nullable Integer min;
     /**
      * @return The compute shape of the resources you would like to provision.
      * 
      */
-    private String shape;
+    private @Nullable String shape;
     /**
      * @return This is used to configure the shape of the driver or executor if a flexible shape is used.
      * 
      */
-    private List<GetPoolsPoolCollectionItemConfigurationShapeConfig> shapeConfigs;
+    private @Nullable List<GetPoolsPoolCollectionItemConfigurationShapeConfig> shapeConfigs;
 
     private GetPoolsPoolCollectionItemConfiguration() {}
     /**
      * @return Maximum number of compute instances in the pool for a given compute shape.
      * 
      */
-    public Integer max() {
-        return this.max;
+    public Optional<Integer> max() {
+        return Optional.ofNullable(this.max);
     }
     /**
      * @return Minimum number of compute instances in the pool for a given compute shape.
      * 
      */
-    public Integer min() {
-        return this.min;
+    public Optional<Integer> min() {
+        return Optional.ofNullable(this.min);
     }
     /**
      * @return The compute shape of the resources you would like to provision.
      * 
      */
-    public String shape() {
-        return this.shape;
+    public Optional<String> shape() {
+        return Optional.ofNullable(this.shape);
     }
     /**
      * @return This is used to configure the shape of the driver or executor if a flexible shape is used.
      * 
      */
     public List<GetPoolsPoolCollectionItemConfigurationShapeConfig> shapeConfigs() {
-        return this.shapeConfigs;
+        return this.shapeConfigs == null ? List.of() : this.shapeConfigs;
     }
 
     public static Builder builder() {
@@ -72,10 +74,10 @@ public final class GetPoolsPoolCollectionItemConfiguration {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Integer max;
-        private Integer min;
-        private String shape;
-        private List<GetPoolsPoolCollectionItemConfigurationShapeConfig> shapeConfigs;
+        private @Nullable Integer max;
+        private @Nullable Integer min;
+        private @Nullable String shape;
+        private @Nullable List<GetPoolsPoolCollectionItemConfigurationShapeConfig> shapeConfigs;
         public Builder() {}
         public Builder(GetPoolsPoolCollectionItemConfiguration defaults) {
     	      Objects.requireNonNull(defaults);
@@ -86,23 +88,23 @@ public final class GetPoolsPoolCollectionItemConfiguration {
         }
 
         @CustomType.Setter
-        public Builder max(Integer max) {
-            this.max = Objects.requireNonNull(max);
+        public Builder max(@Nullable Integer max) {
+            this.max = max;
             return this;
         }
         @CustomType.Setter
-        public Builder min(Integer min) {
-            this.min = Objects.requireNonNull(min);
+        public Builder min(@Nullable Integer min) {
+            this.min = min;
             return this;
         }
         @CustomType.Setter
-        public Builder shape(String shape) {
-            this.shape = Objects.requireNonNull(shape);
+        public Builder shape(@Nullable String shape) {
+            this.shape = shape;
             return this;
         }
         @CustomType.Setter
-        public Builder shapeConfigs(List<GetPoolsPoolCollectionItemConfigurationShapeConfig> shapeConfigs) {
-            this.shapeConfigs = Objects.requireNonNull(shapeConfigs);
+        public Builder shapeConfigs(@Nullable List<GetPoolsPoolCollectionItemConfigurationShapeConfig> shapeConfigs) {
+            this.shapeConfigs = shapeConfigs;
             return this;
         }
         public Builder shapeConfigs(GetPoolsPoolCollectionItemConfigurationShapeConfig... shapeConfigs) {

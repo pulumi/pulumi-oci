@@ -66,7 +66,7 @@ export class ExternalDbSystemDatabaseManagementsManagement extends pulumi.Custom
     /**
      * The Oracle license model that applies to the external database.
      */
-    public readonly licenseModel!: pulumi.Output<string>;
+    public readonly licenseModel!: pulumi.Output<string | undefined>;
 
     /**
      * Create a ExternalDbSystemDatabaseManagementsManagement resource with the given unique name, arguments, and options.

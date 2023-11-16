@@ -39,7 +39,7 @@ public final class GetMediaWorkflowJobsResult {
      * @return The list of media_workflow_job_collection.
      * 
      */
-    private List<GetMediaWorkflowJobsMediaWorkflowJobCollection> mediaWorkflowJobCollections;
+    private @Nullable List<GetMediaWorkflowJobsMediaWorkflowJobCollection> mediaWorkflowJobCollections;
     /**
      * @return The current state of the MediaWorkflowJob task.
      * 
@@ -83,7 +83,7 @@ public final class GetMediaWorkflowJobsResult {
      * 
      */
     public List<GetMediaWorkflowJobsMediaWorkflowJobCollection> mediaWorkflowJobCollections() {
-        return this.mediaWorkflowJobCollections;
+        return this.mediaWorkflowJobCollections == null ? List.of() : this.mediaWorkflowJobCollections;
     }
     /**
      * @return The current state of the MediaWorkflowJob task.
@@ -107,7 +107,7 @@ public final class GetMediaWorkflowJobsResult {
         private @Nullable List<GetMediaWorkflowJobsFilter> filters;
         private @Nullable String id;
         private @Nullable String mediaWorkflowId;
-        private List<GetMediaWorkflowJobsMediaWorkflowJobCollection> mediaWorkflowJobCollections;
+        private @Nullable List<GetMediaWorkflowJobsMediaWorkflowJobCollection> mediaWorkflowJobCollections;
         private @Nullable String state;
         public Builder() {}
         public Builder(GetMediaWorkflowJobsResult defaults) {
@@ -150,8 +150,8 @@ public final class GetMediaWorkflowJobsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder mediaWorkflowJobCollections(List<GetMediaWorkflowJobsMediaWorkflowJobCollection> mediaWorkflowJobCollections) {
-            this.mediaWorkflowJobCollections = Objects.requireNonNull(mediaWorkflowJobCollections);
+        public Builder mediaWorkflowJobCollections(@Nullable List<GetMediaWorkflowJobsMediaWorkflowJobCollection> mediaWorkflowJobCollections) {
+            this.mediaWorkflowJobCollections = mediaWorkflowJobCollections;
             return this;
         }
         public Builder mediaWorkflowJobCollections(GetMediaWorkflowJobsMediaWorkflowJobCollection... mediaWorkflowJobCollections) {

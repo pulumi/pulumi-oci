@@ -8,6 +8,8 @@ import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetStreamPoolKafkaSetting {
@@ -15,51 +17,51 @@ public final class GetStreamPoolKafkaSetting {
      * @return Enable auto creation of topic on the server.
      * 
      */
-    private Boolean autoCreateTopicsEnable;
+    private @Nullable Boolean autoCreateTopicsEnable;
     /**
      * @return Bootstrap servers.
      * 
      */
-    private String bootstrapServers;
+    private @Nullable String bootstrapServers;
     /**
      * @return The number of hours to keep a log file before deleting it (in hours).
      * 
      */
-    private Integer logRetentionHours;
+    private @Nullable Integer logRetentionHours;
     /**
      * @return The default number of log partitions per topic.
      * 
      */
-    private Integer numPartitions;
+    private @Nullable Integer numPartitions;
 
     private GetStreamPoolKafkaSetting() {}
     /**
      * @return Enable auto creation of topic on the server.
      * 
      */
-    public Boolean autoCreateTopicsEnable() {
-        return this.autoCreateTopicsEnable;
+    public Optional<Boolean> autoCreateTopicsEnable() {
+        return Optional.ofNullable(this.autoCreateTopicsEnable);
     }
     /**
      * @return Bootstrap servers.
      * 
      */
-    public String bootstrapServers() {
-        return this.bootstrapServers;
+    public Optional<String> bootstrapServers() {
+        return Optional.ofNullable(this.bootstrapServers);
     }
     /**
      * @return The number of hours to keep a log file before deleting it (in hours).
      * 
      */
-    public Integer logRetentionHours() {
-        return this.logRetentionHours;
+    public Optional<Integer> logRetentionHours() {
+        return Optional.ofNullable(this.logRetentionHours);
     }
     /**
      * @return The default number of log partitions per topic.
      * 
      */
-    public Integer numPartitions() {
-        return this.numPartitions;
+    public Optional<Integer> numPartitions() {
+        return Optional.ofNullable(this.numPartitions);
     }
 
     public static Builder builder() {
@@ -71,10 +73,10 @@ public final class GetStreamPoolKafkaSetting {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Boolean autoCreateTopicsEnable;
-        private String bootstrapServers;
-        private Integer logRetentionHours;
-        private Integer numPartitions;
+        private @Nullable Boolean autoCreateTopicsEnable;
+        private @Nullable String bootstrapServers;
+        private @Nullable Integer logRetentionHours;
+        private @Nullable Integer numPartitions;
         public Builder() {}
         public Builder(GetStreamPoolKafkaSetting defaults) {
     	      Objects.requireNonNull(defaults);
@@ -85,23 +87,23 @@ public final class GetStreamPoolKafkaSetting {
         }
 
         @CustomType.Setter
-        public Builder autoCreateTopicsEnable(Boolean autoCreateTopicsEnable) {
-            this.autoCreateTopicsEnable = Objects.requireNonNull(autoCreateTopicsEnable);
+        public Builder autoCreateTopicsEnable(@Nullable Boolean autoCreateTopicsEnable) {
+            this.autoCreateTopicsEnable = autoCreateTopicsEnable;
             return this;
         }
         @CustomType.Setter
-        public Builder bootstrapServers(String bootstrapServers) {
-            this.bootstrapServers = Objects.requireNonNull(bootstrapServers);
+        public Builder bootstrapServers(@Nullable String bootstrapServers) {
+            this.bootstrapServers = bootstrapServers;
             return this;
         }
         @CustomType.Setter
-        public Builder logRetentionHours(Integer logRetentionHours) {
-            this.logRetentionHours = Objects.requireNonNull(logRetentionHours);
+        public Builder logRetentionHours(@Nullable Integer logRetentionHours) {
+            this.logRetentionHours = logRetentionHours;
             return this;
         }
         @CustomType.Setter
-        public Builder numPartitions(Integer numPartitions) {
-            this.numPartitions = Objects.requireNonNull(numPartitions);
+        public Builder numPartitions(@Nullable Integer numPartitions) {
+            this.numPartitions = numPartitions;
             return this;
         }
         public GetStreamPoolKafkaSetting build() {

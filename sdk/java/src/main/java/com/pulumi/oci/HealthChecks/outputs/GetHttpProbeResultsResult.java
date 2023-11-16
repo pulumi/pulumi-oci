@@ -20,12 +20,12 @@ public final class GetHttpProbeResultsResult {
      * @return The list of http_probe_results.
      * 
      */
-    private List<GetHttpProbeResultsHttpProbeResult> httpProbeResults;
+    private @Nullable List<GetHttpProbeResultsHttpProbeResult> httpProbeResults;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The OCID of the monitor or on-demand probe responsible for creating this result.
      * 
@@ -48,14 +48,14 @@ public final class GetHttpProbeResultsResult {
      * 
      */
     public List<GetHttpProbeResultsHttpProbeResult> httpProbeResults() {
-        return this.httpProbeResults;
+        return this.httpProbeResults == null ? List.of() : this.httpProbeResults;
     }
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The OCID of the monitor or on-demand probe responsible for creating this result.
@@ -88,8 +88,8 @@ public final class GetHttpProbeResultsResult {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable List<GetHttpProbeResultsFilter> filters;
-        private List<GetHttpProbeResultsHttpProbeResult> httpProbeResults;
-        private String id;
+        private @Nullable List<GetHttpProbeResultsHttpProbeResult> httpProbeResults;
+        private @Nullable String id;
         private String probeConfigurationId;
         private @Nullable Double startTimeGreaterThanOrEqualTo;
         private @Nullable Double startTimeLessThanOrEqualTo;
@@ -115,16 +115,16 @@ public final class GetHttpProbeResultsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder httpProbeResults(List<GetHttpProbeResultsHttpProbeResult> httpProbeResults) {
-            this.httpProbeResults = Objects.requireNonNull(httpProbeResults);
+        public Builder httpProbeResults(@Nullable List<GetHttpProbeResultsHttpProbeResult> httpProbeResults) {
+            this.httpProbeResults = httpProbeResults;
             return this;
         }
         public Builder httpProbeResults(GetHttpProbeResultsHttpProbeResult... httpProbeResults) {
             return httpProbeResults(List.of(httpProbeResults));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

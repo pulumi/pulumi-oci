@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetResolverEndpoint {
@@ -14,147 +16,147 @@ public final class GetResolverEndpoint {
      * @return The OCID of the owning compartment. This will match the resolver that the resolver endpoint is under and will be updated if the resolver&#39;s compartment is changed.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return The type of resolver endpoint. VNIC is currently the only supported type.
      * 
      */
-    private String endpointType;
+    private @Nullable String endpointType;
     /**
      * @return An IP address from which forwarded queries may be sent. For VNIC endpoints, this IP address must be part of the subnet and will be assigned by the system if unspecified when isForwarding is true.
      * 
      */
-    private String forwardingAddress;
+    private @Nullable String forwardingAddress;
     /**
      * @return A Boolean flag indicating whether or not the resolver endpoint is for forwarding.
      * 
      */
-    private Boolean isForwarding;
+    private @Nullable Boolean isForwarding;
     /**
      * @return A Boolean flag indicating whether or not the resolver endpoint is for listening.
      * 
      */
-    private Boolean isListening;
+    private @Nullable Boolean isListening;
     /**
      * @return An IP address to listen to queries on. For VNIC endpoints this IP address must be part of the subnet and will be assigned by the system if unspecified when isListening is true.
      * 
      */
-    private String listeningAddress;
+    private @Nullable String listeningAddress;
     /**
      * @return The name of the resolver endpoint. Must be unique, case-insensitive, within the resolver.
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return The canonical absolute URL of the resource.
      * 
      */
-    private String self;
+    private @Nullable String self;
     /**
      * @return The current state of the resource.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return The OCID of a subnet. Must be part of the VCN that the resolver is attached to.
      * 
      */
-    private String subnetId;
+    private @Nullable String subnetId;
     /**
      * @return The date and time the resource was created in &#34;YYYY-MM-ddThh:mm:ssZ&#34; format with a Z offset, as defined by RFC 3339.
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The date and time the resource was last updated in &#34;YYYY-MM-ddThh:mm:ssZ&#34; format with a Z offset, as defined by RFC 3339.
      * 
      */
-    private String timeUpdated;
+    private @Nullable String timeUpdated;
 
     private GetResolverEndpoint() {}
     /**
      * @return The OCID of the owning compartment. This will match the resolver that the resolver endpoint is under and will be updated if the resolver&#39;s compartment is changed.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return The type of resolver endpoint. VNIC is currently the only supported type.
      * 
      */
-    public String endpointType() {
-        return this.endpointType;
+    public Optional<String> endpointType() {
+        return Optional.ofNullable(this.endpointType);
     }
     /**
      * @return An IP address from which forwarded queries may be sent. For VNIC endpoints, this IP address must be part of the subnet and will be assigned by the system if unspecified when isForwarding is true.
      * 
      */
-    public String forwardingAddress() {
-        return this.forwardingAddress;
+    public Optional<String> forwardingAddress() {
+        return Optional.ofNullable(this.forwardingAddress);
     }
     /**
      * @return A Boolean flag indicating whether or not the resolver endpoint is for forwarding.
      * 
      */
-    public Boolean isForwarding() {
-        return this.isForwarding;
+    public Optional<Boolean> isForwarding() {
+        return Optional.ofNullable(this.isForwarding);
     }
     /**
      * @return A Boolean flag indicating whether or not the resolver endpoint is for listening.
      * 
      */
-    public Boolean isListening() {
-        return this.isListening;
+    public Optional<Boolean> isListening() {
+        return Optional.ofNullable(this.isListening);
     }
     /**
      * @return An IP address to listen to queries on. For VNIC endpoints this IP address must be part of the subnet and will be assigned by the system if unspecified when isListening is true.
      * 
      */
-    public String listeningAddress() {
-        return this.listeningAddress;
+    public Optional<String> listeningAddress() {
+        return Optional.ofNullable(this.listeningAddress);
     }
     /**
      * @return The name of the resolver endpoint. Must be unique, case-insensitive, within the resolver.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return The canonical absolute URL of the resource.
      * 
      */
-    public String self() {
-        return this.self;
+    public Optional<String> self() {
+        return Optional.ofNullable(this.self);
     }
     /**
      * @return The current state of the resource.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return The OCID of a subnet. Must be part of the VCN that the resolver is attached to.
      * 
      */
-    public String subnetId() {
-        return this.subnetId;
+    public Optional<String> subnetId() {
+        return Optional.ofNullable(this.subnetId);
     }
     /**
      * @return The date and time the resource was created in &#34;YYYY-MM-ddThh:mm:ssZ&#34; format with a Z offset, as defined by RFC 3339.
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return The date and time the resource was last updated in &#34;YYYY-MM-ddThh:mm:ssZ&#34; format with a Z offset, as defined by RFC 3339.
      * 
      */
-    public String timeUpdated() {
-        return this.timeUpdated;
+    public Optional<String> timeUpdated() {
+        return Optional.ofNullable(this.timeUpdated);
     }
 
     public static Builder builder() {
@@ -166,18 +168,18 @@ public final class GetResolverEndpoint {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String compartmentId;
-        private String endpointType;
-        private String forwardingAddress;
-        private Boolean isForwarding;
-        private Boolean isListening;
-        private String listeningAddress;
-        private String name;
-        private String self;
-        private String state;
-        private String subnetId;
-        private String timeCreated;
-        private String timeUpdated;
+        private @Nullable String compartmentId;
+        private @Nullable String endpointType;
+        private @Nullable String forwardingAddress;
+        private @Nullable Boolean isForwarding;
+        private @Nullable Boolean isListening;
+        private @Nullable String listeningAddress;
+        private @Nullable String name;
+        private @Nullable String self;
+        private @Nullable String state;
+        private @Nullable String subnetId;
+        private @Nullable String timeCreated;
+        private @Nullable String timeUpdated;
         public Builder() {}
         public Builder(GetResolverEndpoint defaults) {
     	      Objects.requireNonNull(defaults);
@@ -196,63 +198,63 @@ public final class GetResolverEndpoint {
         }
 
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder endpointType(String endpointType) {
-            this.endpointType = Objects.requireNonNull(endpointType);
+        public Builder endpointType(@Nullable String endpointType) {
+            this.endpointType = endpointType;
             return this;
         }
         @CustomType.Setter
-        public Builder forwardingAddress(String forwardingAddress) {
-            this.forwardingAddress = Objects.requireNonNull(forwardingAddress);
+        public Builder forwardingAddress(@Nullable String forwardingAddress) {
+            this.forwardingAddress = forwardingAddress;
             return this;
         }
         @CustomType.Setter
-        public Builder isForwarding(Boolean isForwarding) {
-            this.isForwarding = Objects.requireNonNull(isForwarding);
+        public Builder isForwarding(@Nullable Boolean isForwarding) {
+            this.isForwarding = isForwarding;
             return this;
         }
         @CustomType.Setter
-        public Builder isListening(Boolean isListening) {
-            this.isListening = Objects.requireNonNull(isListening);
+        public Builder isListening(@Nullable Boolean isListening) {
+            this.isListening = isListening;
             return this;
         }
         @CustomType.Setter
-        public Builder listeningAddress(String listeningAddress) {
-            this.listeningAddress = Objects.requireNonNull(listeningAddress);
+        public Builder listeningAddress(@Nullable String listeningAddress) {
+            this.listeningAddress = listeningAddress;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder self(String self) {
-            this.self = Objects.requireNonNull(self);
+        public Builder self(@Nullable String self) {
+            this.self = self;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder subnetId(String subnetId) {
-            this.subnetId = Objects.requireNonNull(subnetId);
+        public Builder subnetId(@Nullable String subnetId) {
+            this.subnetId = subnetId;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+        public Builder timeUpdated(@Nullable String timeUpdated) {
+            this.timeUpdated = timeUpdated;
             return this;
         }
         public GetResolverEndpoint build() {

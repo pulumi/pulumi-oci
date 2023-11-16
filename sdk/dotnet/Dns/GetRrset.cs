@@ -202,7 +202,7 @@ namespace Pulumi.Oci.Dns
         /// The fully qualified domain name where the record can be located.
         /// </summary>
         public readonly string Domain;
-        public readonly string Id;
+        public readonly string? Id;
         public readonly ImmutableArray<Outputs.GetRrsetItemResult> Items;
         /// <summary>
         /// The type of DNS record, such as A or CNAME. For more information, see [Resource Record (RR) TYPEs](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).
@@ -219,7 +219,7 @@ namespace Pulumi.Oci.Dns
 
             string domain,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetRrsetItemResult> items,
 

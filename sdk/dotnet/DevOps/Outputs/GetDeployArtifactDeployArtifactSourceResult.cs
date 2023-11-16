@@ -16,23 +16,23 @@ namespace Pulumi.Oci.DevOps.Outputs
         /// <summary>
         /// Specifies content for the inline artifact.
         /// </summary>
-        public readonly string Base64encodedContent;
+        public readonly string? Base64encodedContent;
         /// <summary>
         /// The URL of an OCIR repository.
         /// </summary>
-        public readonly string ChartUrl;
+        public readonly string? ChartUrl;
         /// <summary>
         /// Specifies the artifact path in the repository.
         /// </summary>
-        public readonly string DeployArtifactPath;
+        public readonly string? DeployArtifactPath;
         /// <summary>
         /// Specifies types of artifact sources.
         /// </summary>
-        public readonly string DeployArtifactSourceType;
+        public readonly string? DeployArtifactSourceType;
         /// <summary>
         /// Users can set this as a placeholder value that refers to a pipeline parameter, for example, ${appVersion}.
         /// </summary>
-        public readonly string DeployArtifactVersion;
+        public readonly string? DeployArtifactVersion;
         /// <summary>
         /// The source of the verification material.
         /// </summary>
@@ -40,35 +40,35 @@ namespace Pulumi.Oci.DevOps.Outputs
         /// <summary>
         /// Specifies image digest for the version of the image.
         /// </summary>
-        public readonly string ImageDigest;
+        public readonly string? ImageDigest;
         /// <summary>
         /// Specifies OCIR Image Path - optionally include tag.
         /// </summary>
-        public readonly string ImageUri;
+        public readonly string? ImageUri;
         /// <summary>
         /// The OCID of a repository
         /// </summary>
-        public readonly string RepositoryId;
+        public readonly string? RepositoryId;
 
         [OutputConstructor]
         private GetDeployArtifactDeployArtifactSourceResult(
-            string base64encodedContent,
+            string? base64encodedContent,
 
-            string chartUrl,
+            string? chartUrl,
 
-            string deployArtifactPath,
+            string? deployArtifactPath,
 
-            string deployArtifactSourceType,
+            string? deployArtifactSourceType,
 
-            string deployArtifactVersion,
+            string? deployArtifactVersion,
 
             ImmutableArray<Outputs.GetDeployArtifactDeployArtifactSourceHelmVerificationKeySourceResult> helmVerificationKeySources,
 
-            string imageDigest,
+            string? imageDigest,
 
-            string imageUri,
+            string? imageUri,
 
-            string repositoryId)
+            string? repositoryId)
         {
             Base64encodedContent = base64encodedContent;
             ChartUrl = chartUrl;

@@ -101,11 +101,11 @@ export class Volume extends pulumi.CustomResource {
     /**
      * The number of Volume Performance Units per GB that this volume is effectively tuned to.
      */
-    public /*out*/ readonly autoTunedVpusPerGb!: pulumi.Output<string>;
+    public /*out*/ readonly autoTunedVpusPerGb!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The list of autotune policies to be enabled for this volume.
      */
-    public readonly autotunePolicies!: pulumi.Output<outputs.Core.VolumeAutotunePolicy[]>;
+    public readonly autotunePolicies!: pulumi.Output<outputs.Core.VolumeAutotunePolicy[] | undefined>;
     /**
      * (Updatable) The availability domain of the block volume replica.  Example: `Uocm:PHX-AD-1`
      */
@@ -115,11 +115,11 @@ export class Volume extends pulumi.CustomResource {
      *
      * @deprecated The 'backup_policy_id' field has been deprecated. Please use the 'oci_core_volume_backup_policy_assignment' resource instead.
      */
-    public readonly backupPolicyId!: pulumi.Output<string>;
+    public readonly backupPolicyId!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The list of block volume replicas to be enabled for this volume in the specified destination availability domains.
      */
-    public readonly blockVolumeReplicas!: pulumi.Output<outputs.Core.VolumeBlockVolumeReplica[]>;
+    public readonly blockVolumeReplicas!: pulumi.Output<outputs.Core.VolumeBlockVolumeReplica[] | undefined>;
     public readonly blockVolumeReplicasDeletion!: pulumi.Output<boolean | undefined>;
     /**
      * (Updatable) The OCID of the compartment that contains the volume.
@@ -128,64 +128,64 @@ export class Volume extends pulumi.CustomResource {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    public readonly displayName!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) Specifies whether the auto-tune performance is enabled for this volume. This field is deprecated. Use the `DetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
      */
-    public readonly isAutoTuneEnabled!: pulumi.Output<boolean>;
+    public readonly isAutoTuneEnabled!: pulumi.Output<boolean | undefined>;
     /**
      * Specifies whether the cloned volume's data has finished copying from the source volume or backup.
      */
-    public /*out*/ readonly isHydrated!: pulumi.Output<boolean>;
+    public /*out*/ readonly isHydrated!: pulumi.Output<boolean | undefined>;
     /**
      * (Updatable) The OCID of the Vault service key to assign as the master encryption key for the volume.
      */
-    public readonly kmsKeyId!: pulumi.Output<string>;
+    public readonly kmsKeyId!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The size of the volume in GBs.
      */
-    public readonly sizeInGbs!: pulumi.Output<string>;
+    public readonly sizeInGbs!: pulumi.Output<string | undefined>;
     /**
      * The size of the volume in MBs. The value must be a multiple of 1024. This field is deprecated. Use `sizeInGbs` instead.
      *
      * @deprecated The 'size_in_mbs' field has been deprecated. Please use 'size_in_gbs' instead.
      */
-    public readonly sizeInMbs!: pulumi.Output<string>;
-    public readonly sourceDetails!: pulumi.Output<outputs.Core.VolumeSourceDetails>;
+    public readonly sizeInMbs!: pulumi.Output<string | undefined>;
+    public readonly sourceDetails!: pulumi.Output<outputs.Core.VolumeSourceDetails | undefined>;
     /**
      * The current state of a volume.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any}>;
+    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * The date and time the volume was created. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * The OCID of the volume backup from which the data should be restored on the newly created volume. This field is deprecated. Use the sourceDetails field instead to specify the backup for the volume.
      */
-    public readonly volumeBackupId!: pulumi.Output<string>;
+    public readonly volumeBackupId!: pulumi.Output<string | undefined>;
     /**
      * The OCID of the source volume group.
      */
-    public /*out*/ readonly volumeGroupId!: pulumi.Output<string>;
+    public /*out*/ readonly volumeGroupId!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
      *
      * Allowed values:
      */
-    public readonly vpusPerGb!: pulumi.Output<string>;
+    public readonly vpusPerGb!: pulumi.Output<string | undefined>;
 
     /**
      * Create a Volume resource with the given unique name, arguments, and options.

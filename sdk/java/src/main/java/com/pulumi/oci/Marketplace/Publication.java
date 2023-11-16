@@ -19,6 +19,7 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -113,42 +114,42 @@ public class Publication extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * (Updatable) The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * The model for upload data for images and icons.
      * 
      */
     @Export(name="icons", refs={List.class,PublicationIcon.class}, tree="[0,1]")
-    private Output<List<PublicationIcon>> icons;
+    private Output</* @Nullable */ List<PublicationIcon>> icons;
 
     /**
      * @return The model for upload data for images and icons.
      * 
      */
-    public Output<List<PublicationIcon>> icons() {
-        return this.icons;
+    public Output<Optional<List<PublicationIcon>>> icons() {
+        return Codegen.optional(this.icons);
     }
     /**
      * Whether the publisher acknowledged that they have the right and authority to share the contents of the publication and that they accepted the Oracle terms of use agreements required to create a publication.
@@ -183,14 +184,14 @@ public class Publication extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="longDescription", refs={String.class}, tree="[0]")
-    private Output<String> longDescription;
+    private Output</* @Nullable */ String> longDescription;
 
     /**
      * @return (Updatable) A long description of the publication to use in the listing.
      * 
      */
-    public Output<String> longDescription() {
-        return this.longDescription;
+    public Output<Optional<String>> longDescription() {
+        return Codegen.optional(this.longDescription);
     }
     /**
      * (Updatable) The name of the contact.
@@ -225,14 +226,14 @@ public class Publication extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="packageType", refs={String.class}, tree="[0]")
-    private Output<String> packageType;
+    private Output</* @Nullable */ String> packageType;
 
     /**
      * @return The package&#39;s type.
      * 
      */
-    public Output<String> packageType() {
-        return this.packageType;
+    public Output<Optional<String>> packageType() {
+        return Codegen.optional(this.packageType);
     }
     /**
      * (Updatable) A short description of the publication to use in the listing.
@@ -253,14 +254,14 @@ public class Publication extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The lifecycle state of the publication.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * (Updatable) Contact information for getting support from the publisher for the listing.
@@ -281,28 +282,28 @@ public class Publication extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="supportedOperatingSystems", refs={List.class,PublicationSupportedOperatingSystem.class}, tree="[0,1]")
-    private Output<List<PublicationSupportedOperatingSystem>> supportedOperatingSystems;
+    private Output</* @Nullable */ List<PublicationSupportedOperatingSystem>> supportedOperatingSystems;
 
     /**
      * @return The list of operating systems supported by the listing.
      * 
      */
-    public Output<List<PublicationSupportedOperatingSystem>> supportedOperatingSystems() {
-        return this.supportedOperatingSystems;
+    public Output<Optional<List<PublicationSupportedOperatingSystem>>> supportedOperatingSystems() {
+        return Codegen.optional(this.supportedOperatingSystems);
     }
     /**
      * The date and time the publication was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The date and time the publication was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
 
     /**

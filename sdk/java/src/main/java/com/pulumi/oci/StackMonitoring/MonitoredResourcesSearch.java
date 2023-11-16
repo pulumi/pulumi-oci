@@ -169,28 +169,28 @@ public class MonitoredResourcesSearch extends com.pulumi.resources.CustomResourc
      * 
      */
     @Export(name="items", refs={List.class,MonitoredResourcesSearchItem.class}, tree="[0,1]")
-    private Output<List<MonitoredResourcesSearchItem>> items;
+    private Output</* @Nullable */ List<MonitoredResourcesSearchItem>> items;
 
     /**
      * @return List of monitored resources.
      * 
      */
-    public Output<List<MonitoredResourcesSearchItem>> items() {
-        return this.items;
+    public Output<Optional<List<MonitoredResourcesSearchItem>>> items() {
+        return Codegen.optional(this.items);
     }
     /**
      * License edition of the monitored resource.
      * 
      */
     @Export(name="license", refs={String.class}, tree="[0]")
-    private Output<String> license;
+    private Output</* @Nullable */ String> license;
 
     /**
      * @return License edition of the monitored resource.
      * 
      */
-    public Output<String> license() {
-        return this.license;
+    public Output<Optional<String>> license() {
+        return Codegen.optional(this.license);
     }
     /**
      * A filter to return resources with matching management agent id.

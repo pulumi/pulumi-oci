@@ -47,85 +47,85 @@ export interface GetMetricExtensionResult {
     /**
      * Type of possible collection methods.
      */
-    readonly collectionMethod: string;
+    readonly collectionMethod?: string;
     /**
      * Schedule of metric extension should use RFC 5545 format > recur-rule-part = "FREQ";"INTERVAL" where FREQ rule part identifies the type of recurrence rule. Valid values are "MINUTELY","HOURLY","DAILY" to specify repeating events based on an interval of a minute, an hour and a day or more. Example- FREQ=DAILY;INTERVAL=1
      */
-    readonly collectionRecurrences: string;
+    readonly collectionRecurrences?: string;
     /**
      * Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * Created by user
      */
-    readonly createdBy: string;
+    readonly createdBy?: string;
     /**
      * Description of the metric extension.
      */
-    readonly description: string;
+    readonly description?: string;
     /**
      * Display name of the metric.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * List of resource objects on which this metric extension is enabled.
      */
-    readonly enabledOnResources: outputs.StackMonitoring.GetMetricExtensionEnabledOnResource[];
+    readonly enabledOnResources?: outputs.StackMonitoring.GetMetricExtensionEnabledOnResource[];
     /**
      * Count of resources on which this metric extension is enabled.
      */
-    readonly enabledOnResourcesCount: number;
+    readonly enabledOnResourcesCount?: number;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Metric Extension resource
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Last updated by user
      */
-    readonly lastUpdatedBy: string;
+    readonly lastUpdatedBy?: string;
     readonly metricExtensionId: string;
     /**
      * List of metrics which are part of this metric extension
      */
-    readonly metricLists: outputs.StackMonitoring.GetMetricExtensionMetricList[];
+    readonly metricLists?: outputs.StackMonitoring.GetMetricExtensionMetricList[];
     /**
      * Name of the script file
      */
-    readonly name: string;
-    readonly publishTrigger: boolean;
+    readonly name?: string;
+    readonly publishTrigger?: boolean;
     /**
      * Collection method and query properties details of metric extension
      */
-    readonly queryProperties: outputs.StackMonitoring.GetMetricExtensionQueryProperty[];
+    readonly queryProperties?: outputs.StackMonitoring.GetMetricExtensionQueryProperty[];
     /**
      * Resource type to which Metric Extension applies
      */
-    readonly resourceType: string;
+    readonly resourceType?: string;
     /**
      * The URI path that the user can do a GET on to access the metric extension metadata
      */
-    readonly resourceUri: string;
+    readonly resourceUri?: string;
     /**
      * The current lifecycle state of the metric extension
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * The current status of the metric extension i.e. whether it is Draft or Published
      */
-    readonly status: string;
+    readonly status?: string;
     /**
      * Tenant Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
      */
-    readonly tenantId: string;
+    readonly tenantId?: string;
     /**
      * Metric Extension creation time. An RFC3339 formatted datetime string.
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * Metric Extension update time. An RFC3339 formatted datetime string.
      */
-    readonly timeUpdated: string;
+    readonly timeUpdated?: string;
 }
 /**
  * This data source provides details about a specific Metric Extension resource in Oracle Cloud Infrastructure Stack Monitoring service.

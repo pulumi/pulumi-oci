@@ -81,7 +81,7 @@ export interface GetDataAssetsResult {
     /**
      * The list of data_asset_collection.
      */
-    readonly dataAssetCollections: outputs.DataCatalog.GetDataAssetsDataAssetCollection[];
+    readonly dataAssetCollections?: outputs.DataCatalog.GetDataAssetsDataAssetCollection[];
     /**
      * A user-friendly display name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
@@ -96,7 +96,7 @@ export interface GetDataAssetsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The current state of the data asset.
      */

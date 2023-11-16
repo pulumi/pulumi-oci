@@ -39,7 +39,7 @@ export interface GetMediaAssetDistributionChannelAttachmentResult {
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * OCID of associated Distribution Channel.
      */
@@ -47,24 +47,24 @@ export interface GetMediaAssetDistributionChannelAttachmentResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly mediaAssetId: string;
     /**
      * The ingest MediaWorkflowJob ID that created this attachment.
      */
-    readonly mediaWorkflowJobId: string;
+    readonly mediaWorkflowJobId?: string;
     /**
      * The identifier for the metadata.
      */
-    readonly metadataRef: string;
+    readonly metadataRef?: string;
     /**
      * Lifecycle state of the attachment.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * Version of the attachment.
      */
-    readonly version: string;
+    readonly version?: string;
 }
 /**
  * This data source provides details about a specific Media Asset Distribution Channel Attachment resource in Oracle Cloud Infrastructure Media Services service.

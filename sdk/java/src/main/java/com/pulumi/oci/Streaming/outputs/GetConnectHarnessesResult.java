@@ -23,7 +23,7 @@ public final class GetConnectHarnessesResult {
      * @return The list of connect_harness.
      * 
      */
-    private List<GetConnectHarnessesConnectHarness> connectHarnesses;
+    private @Nullable List<GetConnectHarnessesConnectHarness> connectHarnesses;
     private @Nullable List<GetConnectHarnessesFilter> filters;
     /**
      * @return The OCID of the connect harness.
@@ -54,7 +54,7 @@ public final class GetConnectHarnessesResult {
      * 
      */
     public List<GetConnectHarnessesConnectHarness> connectHarnesses() {
-        return this.connectHarnesses;
+        return this.connectHarnesses == null ? List.of() : this.connectHarnesses;
     }
     public List<GetConnectHarnessesFilter> filters() {
         return this.filters == null ? List.of() : this.filters;
@@ -91,7 +91,7 @@ public final class GetConnectHarnessesResult {
     @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
-        private List<GetConnectHarnessesConnectHarness> connectHarnesses;
+        private @Nullable List<GetConnectHarnessesConnectHarness> connectHarnesses;
         private @Nullable List<GetConnectHarnessesFilter> filters;
         private @Nullable String id;
         private @Nullable String name;
@@ -113,8 +113,8 @@ public final class GetConnectHarnessesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder connectHarnesses(List<GetConnectHarnessesConnectHarness> connectHarnesses) {
-            this.connectHarnesses = Objects.requireNonNull(connectHarnesses);
+        public Builder connectHarnesses(@Nullable List<GetConnectHarnessesConnectHarness> connectHarnesses) {
+            this.connectHarnesses = connectHarnesses;
             return this;
         }
         public Builder connectHarnesses(GetConnectHarnessesConnectHarness... connectHarnesses) {

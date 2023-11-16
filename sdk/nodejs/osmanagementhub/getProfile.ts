@@ -47,79 +47,79 @@ export interface GetProfileResult {
     /**
      * The architecture type.
      */
-    readonly archType: string;
+    readonly archType?: string;
     /**
      * The OCID of the tenancy containing the registration profile.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * Software source description.
      */
-    readonly description: string;
+    readonly description?: string;
     /**
      * Software source name.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * The OCID of the software source.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Identifying information for the specified lifecycle environment.
      */
-    readonly lifecycleEnvironments: outputs.OsManagementHub.GetProfileLifecycleEnvironment[];
-    readonly lifecycleStageId: string;
+    readonly lifecycleEnvironments?: outputs.OsManagementHub.GetProfileLifecycleEnvironment[];
+    readonly lifecycleStageId?: string;
     /**
      * Identifying information for the specified lifecycle stage.
      */
-    readonly lifecycleStages: outputs.OsManagementHub.GetProfileLifecycleStage[];
-    readonly managedInstanceGroupId: string;
+    readonly lifecycleStages?: outputs.OsManagementHub.GetProfileLifecycleStage[];
+    readonly managedInstanceGroupId?: string;
     /**
      * Identifying information for the specified managed instance group.
      */
-    readonly managedInstanceGroups: outputs.OsManagementHub.GetProfileManagedInstanceGroup[];
+    readonly managedInstanceGroups?: outputs.OsManagementHub.GetProfileManagedInstanceGroup[];
     /**
      * The OCID of the management station.
      */
-    readonly managementStationId: string;
+    readonly managementStationId?: string;
     /**
      * The operating system family.
      */
-    readonly osFamily: string;
+    readonly osFamily?: string;
     readonly profileId: string;
     /**
      * The type of Profile. One of SOFTWARESOURCE, GROUP or LIFECYCLE.
      */
-    readonly profileType: string;
-    readonly softwareSourceIds: string[];
+    readonly profileType?: string;
+    readonly softwareSourceIds?: string[];
     /**
      * The list of software sources that the registration profile will use.
      */
-    readonly softwareSources: outputs.OsManagementHub.GetProfileSoftwareSource[];
+    readonly softwareSources?: outputs.OsManagementHub.GetProfileSoftwareSource[];
     /**
      * The current state of the registration profile.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    readonly systemTags: {[key: string]: any};
+    readonly systemTags?: {[key: string]: any};
     /**
      * The time the the registration profile was created. An RFC3339 formatted datetime string.
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The software source vendor name.
      */
-    readonly vendorName: string;
+    readonly vendorName?: string;
 }
 /**
  * This data source provides details about a specific Profile resource in Oracle Cloud Infrastructure Os Management Hub service.

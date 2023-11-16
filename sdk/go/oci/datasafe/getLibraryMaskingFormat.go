@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Library Masking Format resource in Oracle Cloud Infrastructure Data Safe service.
@@ -60,31 +59,31 @@ type GetLibraryMaskingFormatArgs struct {
 // A collection of values returned by getLibraryMaskingFormat.
 type GetLibraryMaskingFormatResult struct {
 	// The OCID of the compartment that contains the library masking format.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The description of the format entry.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// The display name of the library masking format.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// An array of format entries. The combined output of all the format entries is used for masking.
 	FormatEntries []GetLibraryMaskingFormatFormatEntry `pulumi:"formatEntries"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The OCID of the library masking format.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The OCID of the library masking format.
 	LibraryMaskingFormatId string `pulumi:"libraryMaskingFormatId"`
 	// An array of OCIDs of the sensitive types compatible with the library masking format.
 	SensitiveTypeIds []string `pulumi:"sensitiveTypeIds"`
 	// Specifies whether the library masking format is user-defined or predefined.
-	Source string `pulumi:"source"`
+	Source *string `pulumi:"source"`
 	// The current state of the library masking format.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The date and time the library masking format was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The date and time the library masking format was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 func GetLibraryMaskingFormatOutput(ctx *pulumi.Context, args GetLibraryMaskingFormatOutputArgs, opts ...pulumi.InvokeOption) GetLibraryMaskingFormatResultOutput {
@@ -125,15 +124,9 @@ func (o GetLibraryMaskingFormatResultOutput) ToGetLibraryMaskingFormatResultOutp
 	return o
 }
 
-func (o GetLibraryMaskingFormatResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetLibraryMaskingFormatResult] {
-	return pulumix.Output[GetLibraryMaskingFormatResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the compartment that contains the library masking format.
-func (o GetLibraryMaskingFormatResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLibraryMaskingFormatResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetLibraryMaskingFormatResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLibraryMaskingFormatResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
@@ -142,13 +135,13 @@ func (o GetLibraryMaskingFormatResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // The description of the format entry.
-func (o GetLibraryMaskingFormatResultOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLibraryMaskingFormatResult) string { return v.Description }).(pulumi.StringOutput)
+func (o GetLibraryMaskingFormatResultOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLibraryMaskingFormatResult) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // The display name of the library masking format.
-func (o GetLibraryMaskingFormatResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLibraryMaskingFormatResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetLibraryMaskingFormatResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLibraryMaskingFormatResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // An array of format entries. The combined output of all the format entries is used for masking.
@@ -162,8 +155,8 @@ func (o GetLibraryMaskingFormatResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The OCID of the library masking format.
-func (o GetLibraryMaskingFormatResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLibraryMaskingFormatResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetLibraryMaskingFormatResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLibraryMaskingFormatResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the library masking format.
@@ -177,23 +170,23 @@ func (o GetLibraryMaskingFormatResultOutput) SensitiveTypeIds() pulumi.StringArr
 }
 
 // Specifies whether the library masking format is user-defined or predefined.
-func (o GetLibraryMaskingFormatResultOutput) Source() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLibraryMaskingFormatResult) string { return v.Source }).(pulumi.StringOutput)
+func (o GetLibraryMaskingFormatResultOutput) Source() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLibraryMaskingFormatResult) *string { return v.Source }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the library masking format.
-func (o GetLibraryMaskingFormatResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLibraryMaskingFormatResult) string { return v.State }).(pulumi.StringOutput)
+func (o GetLibraryMaskingFormatResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLibraryMaskingFormatResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the library masking format was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)
-func (o GetLibraryMaskingFormatResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLibraryMaskingFormatResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetLibraryMaskingFormatResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLibraryMaskingFormatResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the library masking format was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)
-func (o GetLibraryMaskingFormatResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLibraryMaskingFormatResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o GetLibraryMaskingFormatResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLibraryMaskingFormatResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 func init() {

@@ -127,7 +127,7 @@ namespace Pulumi.Oci.Database
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         public readonly string ManagedDatabaseId;
         /// <summary>
         /// The list of preferred_credential_collection.
@@ -138,7 +138,7 @@ namespace Pulumi.Oci.Database
         private GetManagedPreferredCredentialsResult(
             ImmutableArray<Outputs.GetManagedPreferredCredentialsFilterResult> filters,
 
-            string id,
+            string? id,
 
             string managedDatabaseId,
 

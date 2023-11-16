@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Migration resource in Oracle Cloud Infrastructure Cloud Migrations service.
@@ -73,22 +72,22 @@ type Migration struct {
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// (Updatable) Indicates whether migration is marked as complete.
-	IsCompleted pulumi.BoolOutput `pulumi:"isCompleted"`
+	IsCompleted pulumi.BoolPtrOutput `pulumi:"isCompleted"`
 	// A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
-	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrOutput `pulumi:"lifecycleDetails"`
 	// (Updatable) Replication schedule identifier
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	ReplicationScheduleId pulumi.StringOutput `pulumi:"replicationScheduleId"`
+	ReplicationScheduleId pulumi.StringPtrOutput `pulumi:"replicationScheduleId"`
 	// The current state of migration.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
 	// The time when the migration project was created. An RFC3339 formatted datetime string
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The time when the migration project was updated. An RFC3339 formatted datetime string
-	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 }
 
 // NewMigration registers a new resource with the given unique name, arguments, and options.
@@ -246,12 +245,6 @@ func (i *Migration) ToMigrationOutputWithContext(ctx context.Context) MigrationO
 	return pulumi.ToOutputWithContext(ctx, i).(MigrationOutput)
 }
 
-func (i *Migration) ToOutput(ctx context.Context) pulumix.Output[*Migration] {
-	return pulumix.Output[*Migration]{
-		OutputState: i.ToMigrationOutputWithContext(ctx).OutputState,
-	}
-}
-
 // MigrationArrayInput is an input type that accepts MigrationArray and MigrationArrayOutput values.
 // You can construct a concrete instance of `MigrationArrayInput` via:
 //
@@ -275,12 +268,6 @@ func (i MigrationArray) ToMigrationArrayOutput() MigrationArrayOutput {
 
 func (i MigrationArray) ToMigrationArrayOutputWithContext(ctx context.Context) MigrationArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(MigrationArrayOutput)
-}
-
-func (i MigrationArray) ToOutput(ctx context.Context) pulumix.Output[[]*Migration] {
-	return pulumix.Output[[]*Migration]{
-		OutputState: i.ToMigrationArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // MigrationMapInput is an input type that accepts MigrationMap and MigrationMapOutput values.
@@ -308,12 +295,6 @@ func (i MigrationMap) ToMigrationMapOutputWithContext(ctx context.Context) Migra
 	return pulumi.ToOutputWithContext(ctx, i).(MigrationMapOutput)
 }
 
-func (i MigrationMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*Migration] {
-	return pulumix.Output[map[string]*Migration]{
-		OutputState: i.ToMigrationMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type MigrationOutput struct{ *pulumi.OutputState }
 
 func (MigrationOutput) ElementType() reflect.Type {
@@ -326,12 +307,6 @@ func (o MigrationOutput) ToMigrationOutput() MigrationOutput {
 
 func (o MigrationOutput) ToMigrationOutputWithContext(ctx context.Context) MigrationOutput {
 	return o
-}
-
-func (o MigrationOutput) ToOutput(ctx context.Context) pulumix.Output[*Migration] {
-	return pulumix.Output[*Migration]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Compartment identifier
@@ -355,26 +330,26 @@ func (o MigrationOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // (Updatable) Indicates whether migration is marked as complete.
-func (o MigrationOutput) IsCompleted() pulumi.BoolOutput {
-	return o.ApplyT(func(v *Migration) pulumi.BoolOutput { return v.IsCompleted }).(pulumi.BoolOutput)
+func (o MigrationOutput) IsCompleted() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *Migration) pulumi.BoolPtrOutput { return v.IsCompleted }).(pulumi.BoolPtrOutput)
 }
 
 // A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
-func (o MigrationOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v *Migration) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o MigrationOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Migration) pulumi.StringPtrOutput { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Replication schedule identifier
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-func (o MigrationOutput) ReplicationScheduleId() pulumi.StringOutput {
-	return o.ApplyT(func(v *Migration) pulumi.StringOutput { return v.ReplicationScheduleId }).(pulumi.StringOutput)
+func (o MigrationOutput) ReplicationScheduleId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Migration) pulumi.StringPtrOutput { return v.ReplicationScheduleId }).(pulumi.StringPtrOutput)
 }
 
 // The current state of migration.
-func (o MigrationOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *Migration) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o MigrationOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Migration) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -383,13 +358,13 @@ func (o MigrationOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The time when the migration project was created. An RFC3339 formatted datetime string
-func (o MigrationOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *Migration) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o MigrationOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Migration) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time when the migration project was updated. An RFC3339 formatted datetime string
-func (o MigrationOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *Migration) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o MigrationOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Migration) pulumi.StringPtrOutput { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type MigrationArrayOutput struct{ *pulumi.OutputState }
@@ -404,12 +379,6 @@ func (o MigrationArrayOutput) ToMigrationArrayOutput() MigrationArrayOutput {
 
 func (o MigrationArrayOutput) ToMigrationArrayOutputWithContext(ctx context.Context) MigrationArrayOutput {
 	return o
-}
-
-func (o MigrationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*Migration] {
-	return pulumix.Output[[]*Migration]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o MigrationArrayOutput) Index(i pulumi.IntInput) MigrationOutput {
@@ -430,12 +399,6 @@ func (o MigrationMapOutput) ToMigrationMapOutput() MigrationMapOutput {
 
 func (o MigrationMapOutput) ToMigrationMapOutputWithContext(ctx context.Context) MigrationMapOutput {
 	return o
-}
-
-func (o MigrationMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*Migration] {
-	return pulumix.Output[map[string]*Migration]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o MigrationMapOutput) MapIndex(k pulumi.StringInput) MigrationOutput {

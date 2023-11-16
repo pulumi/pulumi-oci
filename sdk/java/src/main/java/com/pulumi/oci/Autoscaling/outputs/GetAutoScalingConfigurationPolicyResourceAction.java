@@ -6,6 +6,8 @@ package com.pulumi.oci.Autoscaling.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAutoScalingConfigurationPolicyResourceAction {
@@ -13,27 +15,27 @@ public final class GetAutoScalingConfigurationPolicyResourceAction {
      * @return The action to take when autoscaling is triggered.
      * 
      */
-    private String action;
+    private @Nullable String action;
     /**
      * @return The type of resource action.
      * 
      */
-    private String actionType;
+    private @Nullable String actionType;
 
     private GetAutoScalingConfigurationPolicyResourceAction() {}
     /**
      * @return The action to take when autoscaling is triggered.
      * 
      */
-    public String action() {
-        return this.action;
+    public Optional<String> action() {
+        return Optional.ofNullable(this.action);
     }
     /**
      * @return The type of resource action.
      * 
      */
-    public String actionType() {
-        return this.actionType;
+    public Optional<String> actionType() {
+        return Optional.ofNullable(this.actionType);
     }
 
     public static Builder builder() {
@@ -45,8 +47,8 @@ public final class GetAutoScalingConfigurationPolicyResourceAction {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String action;
-        private String actionType;
+        private @Nullable String action;
+        private @Nullable String actionType;
         public Builder() {}
         public Builder(GetAutoScalingConfigurationPolicyResourceAction defaults) {
     	      Objects.requireNonNull(defaults);
@@ -55,13 +57,13 @@ public final class GetAutoScalingConfigurationPolicyResourceAction {
         }
 
         @CustomType.Setter
-        public Builder action(String action) {
-            this.action = Objects.requireNonNull(action);
+        public Builder action(@Nullable String action) {
+            this.action = action;
             return this;
         }
         @CustomType.Setter
-        public Builder actionType(String actionType) {
-            this.actionType = Objects.requireNonNull(actionType);
+        public Builder actionType(@Nullable String actionType) {
+            this.actionType = actionType;
             return this;
         }
         public GetAutoScalingConfigurationPolicyResourceAction build() {

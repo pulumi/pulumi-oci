@@ -20,12 +20,6 @@ class RunStatementArgs:
                  run_id: pulumi.Input[str]):
         """
         The set of arguments for constructing a RunStatement resource.
-        :param pulumi.Input[str] code: The statement code to execute. Example: `println(sc.version)`
-        :param pulumi.Input[str] run_id: The unique ID for the run 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "code", code)
         pulumi.set(__self__, "run_id", run_id)
@@ -33,9 +27,6 @@ class RunStatementArgs:
     @property
     @pulumi.getter
     def code(self) -> pulumi.Input[str]:
-        """
-        The statement code to execute. Example: `println(sc.version)`
-        """
         return pulumi.get(self, "code")
 
     @code.setter
@@ -45,13 +36,6 @@ class RunStatementArgs:
     @property
     @pulumi.getter(name="runId")
     def run_id(self) -> pulumi.Input[str]:
-        """
-        The unique ID for the run 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "run_id")
 
     @run_id.setter
@@ -71,17 +55,6 @@ class _RunStatementState:
                  time_created: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering RunStatement resources.
-        :param pulumi.Input[str] code: The statement code to execute. Example: `println(sc.version)`
-        :param pulumi.Input[Sequence[pulumi.Input['RunStatementOutputArgs']]] outputs: The execution output of a statement.
-        :param pulumi.Input[float] progress: The execution progress.
-        :param pulumi.Input[str] run_id: The unique ID for the run 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] state: The current state of this statement.
-        :param pulumi.Input[str] time_completed: The date and time a statement execution was completed, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2022-05-31T21:10:29.600Z`
-        :param pulumi.Input[str] time_created: The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
         """
         if code is not None:
             pulumi.set(__self__, "code", code)
@@ -101,9 +74,6 @@ class _RunStatementState:
     @property
     @pulumi.getter
     def code(self) -> Optional[pulumi.Input[str]]:
-        """
-        The statement code to execute. Example: `println(sc.version)`
-        """
         return pulumi.get(self, "code")
 
     @code.setter
@@ -113,9 +83,6 @@ class _RunStatementState:
     @property
     @pulumi.getter
     def outputs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['RunStatementOutputArgs']]]]:
-        """
-        The execution output of a statement.
-        """
         return pulumi.get(self, "outputs")
 
     @outputs.setter
@@ -125,9 +92,6 @@ class _RunStatementState:
     @property
     @pulumi.getter
     def progress(self) -> Optional[pulumi.Input[float]]:
-        """
-        The execution progress.
-        """
         return pulumi.get(self, "progress")
 
     @progress.setter
@@ -137,13 +101,6 @@ class _RunStatementState:
     @property
     @pulumi.getter(name="runId")
     def run_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The unique ID for the run 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "run_id")
 
     @run_id.setter
@@ -153,9 +110,6 @@ class _RunStatementState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The current state of this statement.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -165,9 +119,6 @@ class _RunStatementState:
     @property
     @pulumi.getter(name="timeCompleted")
     def time_completed(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time a statement execution was completed, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2022-05-31T21:10:29.600Z`
-        """
         return pulumi.get(self, "time_completed")
 
     @time_completed.setter
@@ -177,9 +128,6 @@ class _RunStatementState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -196,37 +144,9 @@ class RunStatement(pulumi.CustomResource):
                  run_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Run Statement resource in Oracle Cloud Infrastructure Data Flow service.
-
-        Executes a statement for a Session run.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_run_statement = oci.data_flow.RunStatement("testRunStatement",
-            code=var["run_statement_code"],
-            run_id=oci_dataflow_run["test_run"]["id"])
-        ```
-
-        ## Import
-
-        RunStatements can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:DataFlow/runStatement:RunStatement test_run_statement "runs/{runId}/statements/{statementId}"
-        ```
-
+        Create a RunStatement resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] code: The statement code to execute. Example: `println(sc.version)`
-        :param pulumi.Input[str] run_id: The unique ID for the run 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -235,29 +155,7 @@ class RunStatement(pulumi.CustomResource):
                  args: RunStatementArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Run Statement resource in Oracle Cloud Infrastructure Data Flow service.
-
-        Executes a statement for a Session run.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_run_statement = oci.data_flow.RunStatement("testRunStatement",
-            code=var["run_statement_code"],
-            run_id=oci_dataflow_run["test_run"]["id"])
-        ```
-
-        ## Import
-
-        RunStatements can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:DataFlow/runStatement:RunStatement test_run_statement "runs/{runId}/statements/{statementId}"
-        ```
-
+        Create a RunStatement resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param RunStatementArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -319,17 +217,6 @@ class RunStatement(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] code: The statement code to execute. Example: `println(sc.version)`
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['RunStatementOutputArgs']]]] outputs: The execution output of a statement.
-        :param pulumi.Input[float] progress: The execution progress.
-        :param pulumi.Input[str] run_id: The unique ID for the run 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] state: The current state of this statement.
-        :param pulumi.Input[str] time_completed: The date and time a statement execution was completed, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2022-05-31T21:10:29.600Z`
-        :param pulumi.Input[str] time_created: The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -347,60 +234,35 @@ class RunStatement(pulumi.CustomResource):
     @property
     @pulumi.getter
     def code(self) -> pulumi.Output[str]:
-        """
-        The statement code to execute. Example: `println(sc.version)`
-        """
         return pulumi.get(self, "code")
 
     @property
     @pulumi.getter
-    def outputs(self) -> pulumi.Output[Sequence['outputs.RunStatementOutput']]:
-        """
-        The execution output of a statement.
-        """
+    def outputs(self) -> pulumi.Output[Optional[Sequence['outputs.RunStatementOutput']]]:
         return pulumi.get(self, "outputs")
 
     @property
     @pulumi.getter
-    def progress(self) -> pulumi.Output[float]:
-        """
-        The execution progress.
-        """
+    def progress(self) -> pulumi.Output[Optional[float]]:
         return pulumi.get(self, "progress")
 
     @property
     @pulumi.getter(name="runId")
     def run_id(self) -> pulumi.Output[str]:
-        """
-        The unique ID for the run 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "run_id")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        The current state of this statement.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCompleted")
-    def time_completed(self) -> pulumi.Output[str]:
-        """
-        The date and time a statement execution was completed, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2022-05-31T21:10:29.600Z`
-        """
+    def time_completed(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_completed")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 

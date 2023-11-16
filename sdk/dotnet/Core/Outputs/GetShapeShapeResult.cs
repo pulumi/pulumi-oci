@@ -14,32 +14,32 @@ namespace Pulumi.Oci.Core.Outputs
     public sealed class GetShapeShapeResult
     {
         public readonly ImmutableArray<string> BaselineOcpuUtilizations;
-        public readonly string BillingType;
-        public readonly string GpuDescription;
-        public readonly int Gpus;
-        public readonly bool IsBilledForStoppedInstance;
-        public readonly bool IsFlexible;
-        public readonly bool IsLiveMigrationSupported;
-        public readonly bool IsSubcore;
-        public readonly string LocalDiskDescription;
-        public readonly int LocalDisks;
-        public readonly double LocalDisksTotalSizeInGbs;
+        public readonly string? BillingType;
+        public readonly string? GpuDescription;
+        public readonly int? Gpus;
+        public readonly bool? IsBilledForStoppedInstance;
+        public readonly bool? IsFlexible;
+        public readonly bool? IsLiveMigrationSupported;
+        public readonly bool? IsSubcore;
+        public readonly string? LocalDiskDescription;
+        public readonly int? LocalDisks;
+        public readonly double? LocalDisksTotalSizeInGbs;
         public readonly ImmutableArray<Outputs.GetShapeShapeMaxVnicAttachmentOptionResult> MaxVnicAttachmentOptions;
-        public readonly int MaxVnicAttachments;
-        public readonly double MemoryInGbs;
+        public readonly int? MaxVnicAttachments;
+        public readonly double? MemoryInGbs;
         public readonly ImmutableArray<Outputs.GetShapeShapeMemoryOptionResult> MemoryOptions;
-        public readonly double MinTotalBaselineOcpusRequired;
-        public readonly string Name;
-        public readonly int NetworkPorts;
-        public readonly double NetworkingBandwidthInGbps;
+        public readonly double? MinTotalBaselineOcpusRequired;
+        public readonly string? Name;
+        public readonly int? NetworkPorts;
+        public readonly double? NetworkingBandwidthInGbps;
         public readonly ImmutableArray<Outputs.GetShapeShapeNetworkingBandwidthOptionResult> NetworkingBandwidthOptions;
         public readonly ImmutableArray<Outputs.GetShapeShapeOcpuOptionResult> OcpuOptions;
-        public readonly double Ocpus;
+        public readonly double? Ocpus;
         public readonly ImmutableArray<Outputs.GetShapeShapePlatformConfigOptionResult> PlatformConfigOptions;
-        public readonly string ProcessorDescription;
+        public readonly string? ProcessorDescription;
         public readonly ImmutableArray<string> QuotaNames;
-        public readonly int RdmaBandwidthInGbps;
-        public readonly int RdmaPorts;
+        public readonly int? RdmaBandwidthInGbps;
+        public readonly int? RdmaPorts;
         public readonly ImmutableArray<Outputs.GetShapeShapeRecommendedAlternativeResult> RecommendedAlternatives;
         public readonly ImmutableArray<string> ResizeCompatibleShapes;
 
@@ -47,57 +47,57 @@ namespace Pulumi.Oci.Core.Outputs
         private GetShapeShapeResult(
             ImmutableArray<string> baselineOcpuUtilizations,
 
-            string billingType,
+            string? billingType,
 
-            string gpuDescription,
+            string? gpuDescription,
 
-            int gpus,
+            int? gpus,
 
-            bool isBilledForStoppedInstance,
+            bool? isBilledForStoppedInstance,
 
-            bool isFlexible,
+            bool? isFlexible,
 
-            bool isLiveMigrationSupported,
+            bool? isLiveMigrationSupported,
 
-            bool isSubcore,
+            bool? isSubcore,
 
-            string localDiskDescription,
+            string? localDiskDescription,
 
-            int localDisks,
+            int? localDisks,
 
-            double localDisksTotalSizeInGbs,
+            double? localDisksTotalSizeInGbs,
 
             ImmutableArray<Outputs.GetShapeShapeMaxVnicAttachmentOptionResult> maxVnicAttachmentOptions,
 
-            int maxVnicAttachments,
+            int? maxVnicAttachments,
 
-            double memoryInGbs,
+            double? memoryInGbs,
 
             ImmutableArray<Outputs.GetShapeShapeMemoryOptionResult> memoryOptions,
 
-            double minTotalBaselineOcpusRequired,
+            double? minTotalBaselineOcpusRequired,
 
-            string name,
+            string? name,
 
-            int networkPorts,
+            int? networkPorts,
 
-            double networkingBandwidthInGbps,
+            double? networkingBandwidthInGbps,
 
             ImmutableArray<Outputs.GetShapeShapeNetworkingBandwidthOptionResult> networkingBandwidthOptions,
 
             ImmutableArray<Outputs.GetShapeShapeOcpuOptionResult> ocpuOptions,
 
-            double ocpus,
+            double? ocpus,
 
             ImmutableArray<Outputs.GetShapeShapePlatformConfigOptionResult> platformConfigOptions,
 
-            string processorDescription,
+            string? processorDescription,
 
             ImmutableArray<string> quotaNames,
 
-            int rdmaBandwidthInGbps,
+            int? rdmaBandwidthInGbps,
 
-            int rdmaPorts,
+            int? rdmaPorts,
 
             ImmutableArray<Outputs.GetShapeShapeRecommendedAlternativeResult> recommendedAlternatives,
 

@@ -81,157 +81,157 @@ export interface GetDomainsAuthenticationFactorSettingResult {
     /**
      * If true, indicates that email will not be enrolled as a MFA factor automatically if it a account recovery factor
      */
-    readonly autoEnrollEmailFactorDisabled: boolean;
+    readonly autoEnrollEmailFactorDisabled?: boolean;
     /**
      * If true, indicates that Bypass Code is enabled for authentication
      */
-    readonly bypassCodeEnabled: boolean;
+    readonly bypassCodeEnabled?: boolean;
     /**
      * Settings related to the bypass code, such as bypass code length, bypass code expiry, max active bypass codes, and so on
      */
-    readonly bypassCodeSettings: outputs.Identity.GetDomainsAuthenticationFactorSettingBypassCodeSetting[];
+    readonly bypassCodeSettings?: outputs.Identity.GetDomainsAuthenticationFactorSettingBypassCodeSetting[];
     /**
      * Settings related to compliance, Personal Identification Number (PIN) policy, and so on
      */
-    readonly clientAppSettings: outputs.Identity.GetDomainsAuthenticationFactorSettingClientAppSetting[];
+    readonly clientAppSettings?: outputs.Identity.GetDomainsAuthenticationFactorSettingClientAppSetting[];
     /**
      * Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
      */
-    readonly compartmentOcid: string;
+    readonly compartmentOcid?: string;
     /**
      * Compliance Policy that defines actions to be taken when a condition is violated
      */
-    readonly compliancePolicies: outputs.Identity.GetDomainsAuthenticationFactorSettingCompliancePolicy[];
+    readonly compliancePolicies?: outputs.Identity.GetDomainsAuthenticationFactorSettingCompliancePolicy[];
     /**
      * A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
      */
-    readonly deleteInProgress: boolean;
+    readonly deleteInProgress?: boolean;
     /**
      * Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
      */
-    readonly domainOcid: string;
+    readonly domainOcid?: string;
     /**
      * If true, indicates that the EMAIL channel is enabled for authentication
      */
-    readonly emailEnabled: boolean;
+    readonly emailEnabled?: boolean;
     /**
      * Settings related to Email Factor, such as enabled email magic link factor, custom url for Email Link
      */
-    readonly emailSettings: outputs.Identity.GetDomainsAuthenticationFactorSettingEmailSetting[];
+    readonly emailSettings?: outputs.Identity.GetDomainsAuthenticationFactorSettingEmailSetting[];
     /**
      * Settings that describe the set of restrictions that the system should apply to devices and trusted endpoints of a user
      */
-    readonly endpointRestrictions: outputs.Identity.GetDomainsAuthenticationFactorSettingEndpointRestriction[];
+    readonly endpointRestrictions?: outputs.Identity.GetDomainsAuthenticationFactorSettingEndpointRestriction[];
     /**
      * If true, indicates that the Fido Authenticator channels are enabled for authentication
      */
-    readonly fidoAuthenticatorEnabled: boolean;
+    readonly fidoAuthenticatorEnabled?: boolean;
     /**
      * If true, indicates that 'Show backup factor(s)' button will be hidden during authentication
      */
-    readonly hideBackupFactorEnabled: boolean;
+    readonly hideBackupFactorEnabled?: boolean;
     /**
      * Unique identifier for the SCIM Resource as defined by the Service Provider. Each representation of the Resource MUST include a non-empty id value. This identifier MUST be unique across the Service Provider's entire set of Resources. It MUST be a stable, non-reassignable identifier that does not change when the same Resource is returned in subsequent requests. The value of the id attribute is always issued by the Service Provider and MUST never be specified by the Service Consumer. bulkId: is a reserved keyword and MUST NOT be used in the unique identifier.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The User or App who created the Resource
      */
-    readonly idcsCreatedBies: outputs.Identity.GetDomainsAuthenticationFactorSettingIdcsCreatedBy[];
+    readonly idcsCreatedBies?: outputs.Identity.GetDomainsAuthenticationFactorSettingIdcsCreatedBy[];
     readonly idcsEndpoint: string;
     /**
      * The User or App who modified the Resource
      */
-    readonly idcsLastModifiedBies: outputs.Identity.GetDomainsAuthenticationFactorSettingIdcsLastModifiedBy[];
+    readonly idcsLastModifiedBies?: outputs.Identity.GetDomainsAuthenticationFactorSettingIdcsLastModifiedBy[];
     /**
      * The release number when the resource was upgraded.
      */
-    readonly idcsLastUpgradedInRelease: string;
+    readonly idcsLastUpgradedInRelease?: string;
     /**
      * Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
      */
-    readonly idcsPreventedOperations: string[];
+    readonly idcsPreventedOperations?: string[];
     /**
      * Settings related to the use of a user's profile details from the identity store
      */
-    readonly identityStoreSettings: outputs.Identity.GetDomainsAuthenticationFactorSettingIdentityStoreSetting[];
+    readonly identityStoreSettings?: outputs.Identity.GetDomainsAuthenticationFactorSettingIdentityStoreSetting[];
     /**
      * A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
      */
-    readonly metas: outputs.Identity.GetDomainsAuthenticationFactorSettingMeta[];
+    readonly metas?: outputs.Identity.GetDomainsAuthenticationFactorSettingMeta[];
     /**
      * Specifies the category of people for whom Multi-Factor Authentication is enabled. This is a readOnly attribute which reflects the value of mfaEnabledCategory attribute in SsoSettings
      */
-    readonly mfaEnabledCategory: string;
+    readonly mfaEnabledCategory?: string;
     /**
      * Specifies if Multi-Factor Authentication enrollment is mandatory or optional for a user
      */
-    readonly mfaEnrollmentType: string;
+    readonly mfaEnrollmentType?: string;
     /**
      * Settings related to the Mobile App Notification channel, such as pull
      */
-    readonly notificationSettings: outputs.Identity.GetDomainsAuthenticationFactorSettingNotificationSetting[];
+    readonly notificationSettings?: outputs.Identity.GetDomainsAuthenticationFactorSettingNotificationSetting[];
     /**
      * Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
      */
-    readonly ocid: string;
+    readonly ocid?: string;
     /**
      * If true, indicates that the phone (PHONE_CALL) channel is enabled for authentication
      */
-    readonly phoneCallEnabled: boolean;
+    readonly phoneCallEnabled?: boolean;
     /**
      * If true, indicates that the Mobile App Push Notification channel is enabled for authentication
      */
-    readonly pushEnabled: boolean;
+    readonly pushEnabled?: boolean;
     readonly resourceTypeSchemaVersion?: string;
     /**
      * REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
      */
-    readonly schemas: string[];
+    readonly schemas?: string[];
     /**
      * If true, indicates that Security Questions are enabled for authentication
      */
-    readonly securityQuestionsEnabled: boolean;
+    readonly securityQuestionsEnabled?: boolean;
     /**
      * If true, indicates that the Short Message Service (SMS) channel is enabled for authentication
      */
-    readonly smsEnabled: boolean;
+    readonly smsEnabled?: boolean;
     /**
      * A list of tags on this resource.
      */
-    readonly tags: outputs.Identity.GetDomainsAuthenticationFactorSettingTag[];
+    readonly tags?: outputs.Identity.GetDomainsAuthenticationFactorSettingTag[];
     /**
      * Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
      */
-    readonly tenancyOcid: string;
+    readonly tenancyOcid?: string;
     /**
      * Settings related to third-party factor
      */
-    readonly thirdPartyFactors: outputs.Identity.GetDomainsAuthenticationFactorSettingThirdPartyFactor[];
+    readonly thirdPartyFactors?: outputs.Identity.GetDomainsAuthenticationFactorSettingThirdPartyFactor[];
     /**
      * If true, indicates that the Mobile App One Time Passcode channel is enabled for authentication
      */
-    readonly totpEnabled: boolean;
+    readonly totpEnabled?: boolean;
     /**
      * Settings related to Time-Based One-Time Passcodes (TOTP), such as hashing algo, totp time step, passcode length, and so on
      */
-    readonly totpSettings: outputs.Identity.GetDomainsAuthenticationFactorSettingTotpSetting[];
+    readonly totpSettings?: outputs.Identity.GetDomainsAuthenticationFactorSettingTotpSetting[];
     /**
      * This extension defines attributes used to manage Multi-Factor Authentication settings of fido authentication
      */
-    readonly urnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettings: outputs.Identity.GetDomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSetting[];
+    readonly urnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettings?: outputs.Identity.GetDomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSetting[];
     /**
      * This extension defines attributes used to manage Multi-Factor Authentication settings of third party provider
      */
-    readonly urnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettings: outputs.Identity.GetDomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSetting[];
+    readonly urnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettings?: outputs.Identity.GetDomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSetting[];
     /**
      * Factors for which enrollment should be blocked for End User
      */
-    readonly userEnrollmentDisabledFactors: string[];
+    readonly userEnrollmentDisabledFactors?: string[];
     /**
      * If true, indicates that the Yubico OTP is enabled for authentication
      */
-    readonly yubicoOtpEnabled: boolean;
+    readonly yubicoOtpEnabled?: boolean;
 }
 /**
  * This data source provides details about a specific Authentication Factor Setting resource in Oracle Cloud Infrastructure Identity Domains service.

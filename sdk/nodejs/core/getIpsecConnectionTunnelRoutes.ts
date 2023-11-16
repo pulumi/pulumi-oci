@@ -66,13 +66,13 @@ export interface GetIpsecConnectionTunnelRoutesResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly ipsecId: string;
     readonly tunnelId: string;
     /**
      * The list of tunnel_routes.
      */
-    readonly tunnelRoutes: outputs.Core.GetIpsecConnectionTunnelRoutesTunnelRoute[];
+    readonly tunnelRoutes?: outputs.Core.GetIpsecConnectionTunnelRoutesTunnelRoute[];
 }
 /**
  * This data source provides the list of Ipsec Connection Tunnel Routes in Oracle Cloud Infrastructure Core service.

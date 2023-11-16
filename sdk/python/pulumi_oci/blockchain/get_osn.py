@@ -47,10 +47,7 @@ class GetOsnResult:
 
     @property
     @pulumi.getter
-    def ad(self) -> str:
-        """
-        Availability Domain of OSN
-        """
+    def ad(self) -> Optional[str]:
         return pulumi.get(self, "ad")
 
     @property
@@ -60,15 +57,12 @@ class GetOsnResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="ocpuAllocationParams")
-    def ocpu_allocation_params(self) -> Sequence['outputs.GetOsnOcpuAllocationParamResult']:
-        """
-        OCPU allocation parameter
-        """
+    def ocpu_allocation_params(self) -> Optional[Sequence['outputs.GetOsnOcpuAllocationParamResult']]:
         return pulumi.get(self, "ocpu_allocation_params")
 
     @property
@@ -78,18 +72,12 @@ class GetOsnResult:
 
     @property
     @pulumi.getter(name="osnKey")
-    def osn_key(self) -> str:
-        """
-        OSN identifier
-        """
+    def osn_key(self) -> Optional[str]:
         return pulumi.get(self, "osn_key")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the OSN.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
 
@@ -112,23 +100,7 @@ def get_osn(blockchain_platform_id: Optional[str] = None,
             osn_id: Optional[str] = None,
             opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetOsnResult:
     """
-    This data source provides details about a specific Osn resource in Oracle Cloud Infrastructure Blockchain service.
-
-    Gets information about an OSN identified by the specific id
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_osn = oci.Blockchain.get_osn(blockchain_platform_id=oci_blockchain_blockchain_platform["test_blockchain_platform"]["id"],
-        osn_id=oci_blockchain_osn["test_osn"]["id"])
-    ```
-
-
-    :param str blockchain_platform_id: Unique service identifier.
-    :param str osn_id: OSN identifier.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['blockchainPlatformId'] = blockchain_platform_id
@@ -151,22 +123,6 @@ def get_osn_output(blockchain_platform_id: Optional[pulumi.Input[str]] = None,
                    osn_id: Optional[pulumi.Input[str]] = None,
                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetOsnResult]:
     """
-    This data source provides details about a specific Osn resource in Oracle Cloud Infrastructure Blockchain service.
-
-    Gets information about an OSN identified by the specific id
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_osn = oci.Blockchain.get_osn(blockchain_platform_id=oci_blockchain_blockchain_platform["test_blockchain_platform"]["id"],
-        osn_id=oci_blockchain_osn["test_osn"]["id"])
-    ```
-
-
-    :param str blockchain_platform_id: Unique service identifier.
-    :param str osn_id: OSN identifier.
+    Use this data source to access information about an existing resource.
     """
     ...

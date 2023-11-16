@@ -51,11 +51,11 @@ export interface GetDbSystemHistoryEntriesResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The list of patch_history_entries.
      */
-    readonly patchHistoryEntries: outputs.Database.GetDbSystemHistoryEntriesPatchHistoryEntry[];
+    readonly patchHistoryEntries?: outputs.Database.GetDbSystemHistoryEntriesPatchHistoryEntry[];
 }
 /**
  * This data source provides the list of Db System Patch History Entries in Oracle Cloud Infrastructure Database service.

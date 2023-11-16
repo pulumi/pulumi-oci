@@ -84,7 +84,7 @@ export interface GetTsigKeysResult {
     /**
      * The list of tsig_keys.
      */
-    readonly tsigKeys: outputs.Dns.GetTsigKeysTsigKey[];
+    readonly tsigKeys?: outputs.Dns.GetTsigKeysTsigKey[];
 }
 /**
  * This data source provides the list of Tsig Keys in Oracle Cloud Infrastructure DNS service.

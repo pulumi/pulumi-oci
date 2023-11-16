@@ -8,6 +8,7 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAlertAnalyticItemDimension {
@@ -15,7 +16,7 @@ public final class GetAlertAnalyticItemDimension {
      * @return A groupBy can only be used in combination with summaryField parameter. A groupBy value has to be a subset of the values mentioned in summaryField parameter.
      * 
      */
-    private Map<String,Object> groupBy;
+    private @Nullable Map<String,Object> groupBy;
 
     private GetAlertAnalyticItemDimension() {}
     /**
@@ -23,7 +24,7 @@ public final class GetAlertAnalyticItemDimension {
      * 
      */
     public Map<String,Object> groupBy() {
-        return this.groupBy;
+        return this.groupBy == null ? Map.of() : this.groupBy;
     }
 
     public static Builder builder() {
@@ -35,7 +36,7 @@ public final class GetAlertAnalyticItemDimension {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Map<String,Object> groupBy;
+        private @Nullable Map<String,Object> groupBy;
         public Builder() {}
         public Builder(GetAlertAnalyticItemDimension defaults) {
     	      Objects.requireNonNull(defaults);
@@ -43,8 +44,8 @@ public final class GetAlertAnalyticItemDimension {
         }
 
         @CustomType.Setter
-        public Builder groupBy(Map<String,Object> groupBy) {
-            this.groupBy = Objects.requireNonNull(groupBy);
+        public Builder groupBy(@Nullable Map<String,Object> groupBy) {
+            this.groupBy = groupBy;
             return this;
         }
         public GetAlertAnalyticItemDimension build() {

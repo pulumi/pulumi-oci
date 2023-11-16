@@ -68,106 +68,67 @@ class GetUnifiedAgentConfigurationResult:
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The OCID of the compartment that the resource belongs to.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="configurationState")
-    def configuration_state(self) -> str:
-        """
-        State of unified agent service configuration.
-        """
+    def configuration_state(self) -> Optional[str]:
         return pulumi.get(self, "configuration_state")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        Description for this resource.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        The user-friendly display name. This must be unique within the enclosing resource, and it's changeable. Avoid entering confidential information.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="groupAssociations")
-    def group_associations(self) -> Sequence['outputs.GetUnifiedAgentConfigurationGroupAssociationResult']:
-        """
-        Groups using the configuration.
-        """
+    def group_associations(self) -> Optional[Sequence['outputs.GetUnifiedAgentConfigurationGroupAssociationResult']]:
         return pulumi.get(self, "group_associations")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The OCID of the resource.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="isEnabled")
-    def is_enabled(self) -> bool:
-        """
-        Whether or not this resource is currently enabled.
-        """
+    def is_enabled(self) -> Optional[bool]:
         return pulumi.get(self, "is_enabled")
 
     @property
     @pulumi.getter(name="serviceConfigurations")
-    def service_configurations(self) -> Sequence['outputs.GetUnifiedAgentConfigurationServiceConfigurationResult']:
-        """
-        Top level Unified Agent service configuration object.
-        """
+    def service_configurations(self) -> Optional[Sequence['outputs.GetUnifiedAgentConfigurationServiceConfigurationResult']]:
         return pulumi.get(self, "service_configurations")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The pipeline state.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        Time the resource was created.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeLastModified")
-    def time_last_modified(self) -> str:
-        """
-        Time the resource was last modified.
-        """
+    def time_last_modified(self) -> Optional[str]:
         return pulumi.get(self, "time_last_modified")
 
     @property
@@ -201,21 +162,7 @@ class AwaitableGetUnifiedAgentConfigurationResult(GetUnifiedAgentConfigurationRe
 def get_unified_agent_configuration(unified_agent_configuration_id: Optional[str] = None,
                                     opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetUnifiedAgentConfigurationResult:
     """
-    This data source provides details about a specific Unified Agent Configuration resource in Oracle Cloud Infrastructure Logging service.
-
-    Get the unified agent configuration for an ID.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_unified_agent_configuration = oci.Logging.get_unified_agent_configuration(unified_agent_configuration_id=oci_logging_unified_agent_configuration["test_unified_agent_configuration"]["id"])
-    ```
-
-
-    :param str unified_agent_configuration_id: The OCID of the Unified Agent configuration.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['unifiedAgentConfigurationId'] = unified_agent_configuration_id
@@ -243,20 +190,6 @@ def get_unified_agent_configuration(unified_agent_configuration_id: Optional[str
 def get_unified_agent_configuration_output(unified_agent_configuration_id: Optional[pulumi.Input[str]] = None,
                                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetUnifiedAgentConfigurationResult]:
     """
-    This data source provides details about a specific Unified Agent Configuration resource in Oracle Cloud Infrastructure Logging service.
-
-    Get the unified agent configuration for an ID.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_unified_agent_configuration = oci.Logging.get_unified_agent_configuration(unified_agent_configuration_id=oci_logging_unified_agent_configuration["test_unified_agent_configuration"]["id"])
-    ```
-
-
-    :param str unified_agent_configuration_id: The OCID of the Unified Agent configuration.
+    Use this data source to access information about an existing resource.
     """
     ...

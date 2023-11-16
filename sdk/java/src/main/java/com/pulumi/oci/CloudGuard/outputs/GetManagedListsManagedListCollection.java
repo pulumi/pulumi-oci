@@ -7,14 +7,15 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.CloudGuard.outputs.GetManagedListsManagedListCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetManagedListsManagedListCollection {
-    private List<GetManagedListsManagedListCollectionItem> items;
+    private @Nullable List<GetManagedListsManagedListCollectionItem> items;
 
     private GetManagedListsManagedListCollection() {}
     public List<GetManagedListsManagedListCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -26,7 +27,7 @@ public final class GetManagedListsManagedListCollection {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetManagedListsManagedListCollectionItem> items;
+        private @Nullable List<GetManagedListsManagedListCollectionItem> items;
         public Builder() {}
         public Builder(GetManagedListsManagedListCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -34,8 +35,8 @@ public final class GetManagedListsManagedListCollection {
         }
 
         @CustomType.Setter
-        public Builder items(List<GetManagedListsManagedListCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetManagedListsManagedListCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetManagedListsManagedListCollectionItem... items) {

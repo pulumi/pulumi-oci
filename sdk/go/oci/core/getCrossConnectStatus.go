@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Cross Connect Status resource in Oracle Cloud Infrastructure Core service.
@@ -62,20 +61,20 @@ type GetCrossConnectStatusResult struct {
 	// The OCID of the cross-connect.
 	CrossConnectId string `pulumi:"crossConnectId"`
 	// Encryption status of the CrossConnect
-	EncryptionStatus string `pulumi:"encryptionStatus"`
+	EncryptionStatus *string `pulumi:"encryptionStatus"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Whether Oracle's side of the interface is up or down.
-	InterfaceState string `pulumi:"interfaceState"`
+	InterfaceState *string `pulumi:"interfaceState"`
 	// The light level of the cross-connect (in dBm).  Example: `14.0`
-	LightLevelIndBm float64 `pulumi:"lightLevelIndBm"`
+	LightLevelIndBm *float64 `pulumi:"lightLevelIndBm"`
 	// Status indicator corresponding to the light level.
 	// * **NO_LIGHT:** No measurable light
 	// * **LOW_WARN:** There's measurable light but it's too low
 	// * **HIGH_WARN:** Light level is too high
 	// * **BAD:** There's measurable light but the signal-to-noise ratio is bad
 	// * **GOOD:** Good light level
-	LightLevelIndicator string `pulumi:"lightLevelIndicator"`
+	LightLevelIndicator *string `pulumi:"lightLevelIndicator"`
 }
 
 func GetCrossConnectStatusOutput(ctx *pulumi.Context, args GetCrossConnectStatusOutputArgs, opts ...pulumi.InvokeOption) GetCrossConnectStatusResultOutput {
@@ -116,35 +115,29 @@ func (o GetCrossConnectStatusResultOutput) ToGetCrossConnectStatusResultOutputWi
 	return o
 }
 
-func (o GetCrossConnectStatusResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetCrossConnectStatusResult] {
-	return pulumix.Output[GetCrossConnectStatusResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the cross-connect.
 func (o GetCrossConnectStatusResultOutput) CrossConnectId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetCrossConnectStatusResult) string { return v.CrossConnectId }).(pulumi.StringOutput)
 }
 
 // Encryption status of the CrossConnect
-func (o GetCrossConnectStatusResultOutput) EncryptionStatus() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCrossConnectStatusResult) string { return v.EncryptionStatus }).(pulumi.StringOutput)
+func (o GetCrossConnectStatusResultOutput) EncryptionStatus() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCrossConnectStatusResult) *string { return v.EncryptionStatus }).(pulumi.StringPtrOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetCrossConnectStatusResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCrossConnectStatusResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetCrossConnectStatusResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCrossConnectStatusResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Whether Oracle's side of the interface is up or down.
-func (o GetCrossConnectStatusResultOutput) InterfaceState() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCrossConnectStatusResult) string { return v.InterfaceState }).(pulumi.StringOutput)
+func (o GetCrossConnectStatusResultOutput) InterfaceState() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCrossConnectStatusResult) *string { return v.InterfaceState }).(pulumi.StringPtrOutput)
 }
 
 // The light level of the cross-connect (in dBm).  Example: `14.0`
-func (o GetCrossConnectStatusResultOutput) LightLevelIndBm() pulumi.Float64Output {
-	return o.ApplyT(func(v GetCrossConnectStatusResult) float64 { return v.LightLevelIndBm }).(pulumi.Float64Output)
+func (o GetCrossConnectStatusResultOutput) LightLevelIndBm() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetCrossConnectStatusResult) *float64 { return v.LightLevelIndBm }).(pulumi.Float64PtrOutput)
 }
 
 // Status indicator corresponding to the light level.
@@ -153,8 +146,8 @@ func (o GetCrossConnectStatusResultOutput) LightLevelIndBm() pulumi.Float64Outpu
 // * **HIGH_WARN:** Light level is too high
 // * **BAD:** There's measurable light but the signal-to-noise ratio is bad
 // * **GOOD:** Good light level
-func (o GetCrossConnectStatusResultOutput) LightLevelIndicator() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCrossConnectStatusResult) string { return v.LightLevelIndicator }).(pulumi.StringOutput)
+func (o GetCrossConnectStatusResultOutput) LightLevelIndicator() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCrossConnectStatusResult) *string { return v.LightLevelIndicator }).(pulumi.StringPtrOutput)
 }
 
 func init() {

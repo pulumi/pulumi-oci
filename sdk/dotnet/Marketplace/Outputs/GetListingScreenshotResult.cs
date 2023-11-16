@@ -16,35 +16,35 @@ namespace Pulumi.Oci.Marketplace.Outputs
         /// <summary>
         /// The content URL of the screenshot.
         /// </summary>
-        public readonly string ContentUrl;
+        public readonly string? ContentUrl;
         /// <summary>
         /// A description of the screenshot.
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// The file extension of the screenshot.
         /// </summary>
-        public readonly string FileExtension;
+        public readonly string? FileExtension;
         /// <summary>
         /// The MIME type of the screenshot.
         /// </summary>
-        public readonly string MimeType;
+        public readonly string? MimeType;
         /// <summary>
         /// Text that describes the resource.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
 
         [OutputConstructor]
         private GetListingScreenshotResult(
-            string contentUrl,
+            string? contentUrl,
 
-            string description,
+            string? description,
 
-            string fileExtension,
+            string? fileExtension,
 
-            string mimeType,
+            string? mimeType,
 
-            string name)
+            string? name)
         {
             ContentUrl = contentUrl;
             Description = description;

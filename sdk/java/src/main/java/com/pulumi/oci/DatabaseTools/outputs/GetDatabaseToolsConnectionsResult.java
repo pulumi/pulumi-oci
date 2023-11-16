@@ -23,7 +23,7 @@ public final class GetDatabaseToolsConnectionsResult {
      * @return The list of database_tools_connection_collection.
      * 
      */
-    private List<GetDatabaseToolsConnectionsDatabaseToolsConnectionCollection> databaseToolsConnectionCollections;
+    private @Nullable List<GetDatabaseToolsConnectionsDatabaseToolsConnectionCollection> databaseToolsConnectionCollections;
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
@@ -34,7 +34,7 @@ public final class GetDatabaseToolsConnectionsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The current state of the Database Tools connection.
      * 
@@ -59,7 +59,7 @@ public final class GetDatabaseToolsConnectionsResult {
      * 
      */
     public List<GetDatabaseToolsConnectionsDatabaseToolsConnectionCollection> databaseToolsConnectionCollections() {
-        return this.databaseToolsConnectionCollections;
+        return this.databaseToolsConnectionCollections == null ? List.of() : this.databaseToolsConnectionCollections;
     }
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
@@ -75,8 +75,8 @@ public final class GetDatabaseToolsConnectionsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The current state of the Database Tools connection.
@@ -103,10 +103,10 @@ public final class GetDatabaseToolsConnectionsResult {
     @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
-        private List<GetDatabaseToolsConnectionsDatabaseToolsConnectionCollection> databaseToolsConnectionCollections;
+        private @Nullable List<GetDatabaseToolsConnectionsDatabaseToolsConnectionCollection> databaseToolsConnectionCollections;
         private @Nullable String displayName;
         private @Nullable List<GetDatabaseToolsConnectionsFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String state;
         private @Nullable List<String> types;
         public Builder() {}
@@ -127,8 +127,8 @@ public final class GetDatabaseToolsConnectionsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder databaseToolsConnectionCollections(List<GetDatabaseToolsConnectionsDatabaseToolsConnectionCollection> databaseToolsConnectionCollections) {
-            this.databaseToolsConnectionCollections = Objects.requireNonNull(databaseToolsConnectionCollections);
+        public Builder databaseToolsConnectionCollections(@Nullable List<GetDatabaseToolsConnectionsDatabaseToolsConnectionCollection> databaseToolsConnectionCollections) {
+            this.databaseToolsConnectionCollections = databaseToolsConnectionCollections;
             return this;
         }
         public Builder databaseToolsConnectionCollections(GetDatabaseToolsConnectionsDatabaseToolsConnectionCollection... databaseToolsConnectionCollections) {
@@ -148,8 +148,8 @@ public final class GetDatabaseToolsConnectionsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

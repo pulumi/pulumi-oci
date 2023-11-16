@@ -16,35 +16,35 @@ namespace Pulumi.Oci.MediaServices.Outputs
         /// <summary>
         /// Type of job output.
         /// </summary>
-        public readonly string AssetType;
+        public readonly string? AssetType;
         /// <summary>
         /// The bucket name of the job output.
         /// </summary>
-        public readonly string Bucket;
+        public readonly string? Bucket;
         /// <summary>
         /// unique MediaWorkflowJob identifier
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The namespace name of the job output.
         /// </summary>
-        public readonly string Namespace;
+        public readonly string? Namespace;
         /// <summary>
         /// The object name of the job output.
         /// </summary>
-        public readonly string Object;
+        public readonly string? Object;
 
         [OutputConstructor]
         private GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutputResult(
-            string assetType,
+            string? assetType,
 
-            string bucket,
+            string? bucket,
 
-            string id,
+            string? id,
 
-            string @namespace,
+            string? @namespace,
 
-            string @object)
+            string? @object)
         {
             AssetType = assetType;
             Bucket = bucket;

@@ -16,15 +16,15 @@ namespace Pulumi.Oci.ApmSynthetics.Outputs
         /// <summary>
         /// The APM domain ID the request is intended for.
         /// </summary>
-        public readonly string ApmDomainId;
+        public readonly string? ApmDomainId;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// A filter to return only the resources that match the entire display name.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// Details of a Dedicated Vantage Point (DVP) stack in Resource Manager.
         /// </summary>
@@ -32,11 +32,11 @@ namespace Pulumi.Oci.ApmSynthetics.Outputs
         /// <summary>
         /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dedicated vantage point.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Details of the monitor count per state. Example: `{ "total" : 5, "enabled" : 3 , "disabled" : 2, "invalid" : 0 }`
         /// </summary>
@@ -44,49 +44,49 @@ namespace Pulumi.Oci.ApmSynthetics.Outputs
         /// <summary>
         /// A filter to return only the resources that match the entire name.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// Name of the region.
         /// </summary>
-        public readonly string Region;
+        public readonly string? Region;
         /// <summary>
         /// A filter to return only the dedicated vantage points that match a given status.
         /// </summary>
-        public readonly string Status;
+        public readonly string? Status;
         /// <summary>
         /// The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
         /// </summary>
-        public readonly string TimeUpdated;
+        public readonly string? TimeUpdated;
 
         [OutputConstructor]
         private GetDedicatedVantagePointsDedicatedVantagePointCollectionItemResult(
-            string apmDomainId,
+            string? apmDomainId,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string displayName,
+            string? displayName,
 
             ImmutableArray<Outputs.GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetailResult> dvpStackDetails,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMapResult> monitorStatusCountMaps,
 
-            string name,
+            string? name,
 
-            string region,
+            string? region,
 
-            string status,
+            string? status,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeUpdated)
+            string? timeUpdated)
         {
             ApmDomainId = apmDomainId;
             DefinedTags = definedTags;

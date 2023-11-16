@@ -47,32 +47,32 @@ export interface GetJobAdvisorReportResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly jobId: string;
     /**
      * Number of Fatal results in the advisor report.
      */
-    readonly numberOfFatal: number;
+    readonly numberOfFatal?: number;
     /**
      * Number of Fatal Blocker results in the advisor report.
      */
-    readonly numberOfFatalBlockers: number;
+    readonly numberOfFatalBlockers?: number;
     /**
      * Number of Informational results in the advisor report.
      */
-    readonly numberOfInformationalResults: number;
+    readonly numberOfInformationalResults?: number;
     /**
      * Number of Warning results in the advisor report.
      */
-    readonly numberOfWarnings: number;
+    readonly numberOfWarnings?: number;
     /**
      * Details to access Pre-Migration Advisor report.
      */
-    readonly reportLocationDetails: outputs.DatabaseMigration.GetJobAdvisorReportReportLocationDetail[];
+    readonly reportLocationDetails?: outputs.DatabaseMigration.GetJobAdvisorReportReportLocationDetail[];
     /**
      * Pre-Migration advisor result.
      */
-    readonly result: string;
+    readonly result?: string;
 }
 /**
  * This data source provides details about a specific Job Advisor Report resource in Oracle Cloud Infrastructure Database Migration service.

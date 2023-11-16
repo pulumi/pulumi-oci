@@ -69,7 +69,7 @@ class GetManagedDatabaseOptimizerStatisticsCollectionOperationsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -87,10 +87,7 @@ class GetManagedDatabaseOptimizerStatisticsCollectionOperationsResult:
 
     @property
     @pulumi.getter(name="optimizerStatisticsCollectionOperationsCollections")
-    def optimizer_statistics_collection_operations_collections(self) -> Sequence['outputs.GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionResult']:
-        """
-        The list of optimizer_statistics_collection_operations_collection.
-        """
+    def optimizer_statistics_collection_operations_collections(self) -> Optional[Sequence['outputs.GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionResult']]:
         return pulumi.get(self, "optimizer_statistics_collection_operations_collections")
 
     @property
@@ -130,35 +127,7 @@ def get_managed_database_optimizer_statistics_collection_operations(end_time_les
                                                                     task_type: Optional[str] = None,
                                                                     opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetManagedDatabaseOptimizerStatisticsCollectionOperationsResult:
     """
-    This data source provides the list of Managed Database Optimizer Statistics Collection Operations in Oracle Cloud Infrastructure Database Management service.
-
-    Lists the optimizer statistics (Auto and Manual) task operation summary for the specified Managed Database.
-    The summary includes the details of each operation and the number of tasks grouped by status: Completed, In Progress, Failed, and so on.
-    Optionally, you can specify a date-time range (of seven days) to obtain the list of operations that fall within the specified time range.
-    If the date-time range is not specified, then the operations in the last seven days are listed.
-    This API also enables the pagination of results and the opc-next-page response header indicates whether there is a next page.
-    If you use the same header value in a consecutive request, the next page records are returned.
-    To obtain the required results, you can apply the different types of filters supported by this API.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_managed_database_optimizer_statistics_collection_operations = oci.DatabaseManagement.get_managed_database_optimizer_statistics_collection_operations(managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"],
-        end_time_less_than_or_equal_to=var["managed_database_optimizer_statistics_collection_operation_end_time_less_than_or_equal_to"],
-        filter_by=var["managed_database_optimizer_statistics_collection_operation_filter_by"],
-        start_time_greater_than_or_equal_to=var["managed_database_optimizer_statistics_collection_operation_start_time_greater_than_or_equal_to"],
-        task_type=var["managed_database_optimizer_statistics_collection_operation_task_type"])
-    ```
-
-
-    :param str end_time_less_than_or_equal_to: The end time of the time range to retrieve the optimizer statistics of a Managed Database in UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
-    :param str filter_by: The parameter used to filter the optimizer statistics operations. Any property of the OptimizerStatisticsCollectionOperationSummary can be used to define the filter condition. The allowed conditional operators are AND or OR, and the allowed binary operators are are >, < and =. Any other operator is regarded invalid. Example: jobName=<replace with job name> AND status=<replace with status>
-    :param str managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
-    :param str start_time_greater_than_or_equal_to: The start time of the time range to retrieve the optimizer statistics of a Managed Database in UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
-    :param str task_type: The filter types of the optimizer statistics tasks.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['endTimeLessThanOrEqualTo'] = end_time_less_than_or_equal_to
@@ -193,34 +162,6 @@ def get_managed_database_optimizer_statistics_collection_operations_output(end_t
                                                                            task_type: Optional[pulumi.Input[Optional[str]]] = None,
                                                                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetManagedDatabaseOptimizerStatisticsCollectionOperationsResult]:
     """
-    This data source provides the list of Managed Database Optimizer Statistics Collection Operations in Oracle Cloud Infrastructure Database Management service.
-
-    Lists the optimizer statistics (Auto and Manual) task operation summary for the specified Managed Database.
-    The summary includes the details of each operation and the number of tasks grouped by status: Completed, In Progress, Failed, and so on.
-    Optionally, you can specify a date-time range (of seven days) to obtain the list of operations that fall within the specified time range.
-    If the date-time range is not specified, then the operations in the last seven days are listed.
-    This API also enables the pagination of results and the opc-next-page response header indicates whether there is a next page.
-    If you use the same header value in a consecutive request, the next page records are returned.
-    To obtain the required results, you can apply the different types of filters supported by this API.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_managed_database_optimizer_statistics_collection_operations = oci.DatabaseManagement.get_managed_database_optimizer_statistics_collection_operations(managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"],
-        end_time_less_than_or_equal_to=var["managed_database_optimizer_statistics_collection_operation_end_time_less_than_or_equal_to"],
-        filter_by=var["managed_database_optimizer_statistics_collection_operation_filter_by"],
-        start_time_greater_than_or_equal_to=var["managed_database_optimizer_statistics_collection_operation_start_time_greater_than_or_equal_to"],
-        task_type=var["managed_database_optimizer_statistics_collection_operation_task_type"])
-    ```
-
-
-    :param str end_time_less_than_or_equal_to: The end time of the time range to retrieve the optimizer statistics of a Managed Database in UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
-    :param str filter_by: The parameter used to filter the optimizer statistics operations. Any property of the OptimizerStatisticsCollectionOperationSummary can be used to define the filter condition. The allowed conditional operators are AND or OR, and the allowed binary operators are are >, < and =. Any other operator is regarded invalid. Example: jobName=<replace with job name> AND status=<replace with status>
-    :param str managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
-    :param str start_time_greater_than_or_equal_to: The start time of the time range to retrieve the optimizer statistics of a Managed Database in UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
-    :param str task_type: The filter types of the optimizer statistics tasks.
+    Use this data source to access information about an existing resource.
     """
     ...

@@ -179,7 +179,7 @@ namespace Pulumi.Oci.Core
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The list of security_lists.
         /// </summary>
@@ -201,7 +201,7 @@ namespace Pulumi.Oci.Core
 
             ImmutableArray<Outputs.GetSecurityListsFilterResult> filters,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetSecurityListsSecurityListResult> securityLists,
 

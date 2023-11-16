@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Ssl Cipher Suite resource in Oracle Cloud Infrastructure Load Balancer service.
@@ -66,11 +65,11 @@ type LookupSslCipherSuiteArgs struct {
 type LookupSslCipherSuiteResult struct {
 	// A list of SSL ciphers the load balancer must support for HTTPS or SSL connections.
 	Ciphers        []string `pulumi:"ciphers"`
-	Id             string   `pulumi:"id"`
+	Id             *string  `pulumi:"id"`
 	LoadBalancerId string   `pulumi:"loadBalancerId"`
 	// A friendly name for the SSL cipher suite. It must be unique and it cannot be changed.
-	Name  string `pulumi:"name"`
-	State string `pulumi:"state"`
+	Name  string  `pulumi:"name"`
+	State *string `pulumi:"state"`
 }
 
 func LookupSslCipherSuiteOutput(ctx *pulumi.Context, args LookupSslCipherSuiteOutputArgs, opts ...pulumi.InvokeOption) LookupSslCipherSuiteResultOutput {
@@ -115,19 +114,13 @@ func (o LookupSslCipherSuiteResultOutput) ToLookupSslCipherSuiteResultOutputWith
 	return o
 }
 
-func (o LookupSslCipherSuiteResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupSslCipherSuiteResult] {
-	return pulumix.Output[LookupSslCipherSuiteResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // A list of SSL ciphers the load balancer must support for HTTPS or SSL connections.
 func (o LookupSslCipherSuiteResultOutput) Ciphers() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v LookupSslCipherSuiteResult) []string { return v.Ciphers }).(pulumi.StringArrayOutput)
 }
 
-func (o LookupSslCipherSuiteResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSslCipherSuiteResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupSslCipherSuiteResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSslCipherSuiteResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupSslCipherSuiteResultOutput) LoadBalancerId() pulumi.StringOutput {
@@ -139,8 +132,8 @@ func (o LookupSslCipherSuiteResultOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupSslCipherSuiteResult) string { return v.Name }).(pulumi.StringOutput)
 }
 
-func (o LookupSslCipherSuiteResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSslCipherSuiteResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupSslCipherSuiteResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSslCipherSuiteResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 func init() {

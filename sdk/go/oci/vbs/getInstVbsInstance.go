@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Vbs Instance resource in Oracle Cloud Infrastructure Vbs Inst service.
@@ -60,35 +59,35 @@ type LookupInstVbsInstanceArgs struct {
 // A collection of values returned by getInstVbsInstance.
 type LookupInstVbsInstanceResult struct {
 	// Compartment of the service instance
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// Service instance display name
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// Unique identifier that is immutable on creation
-	Id              string `pulumi:"id"`
-	IdcsAccessToken string `pulumi:"idcsAccessToken"`
+	Id              *string `pulumi:"id"`
+	IdcsAccessToken *string `pulumi:"idcsAccessToken"`
 	// Whether the VBS service instance owner explicitly approved VBS to create and use resources in the customer tenancy
-	IsResourceUsageAgreementGranted bool `pulumi:"isResourceUsageAgreementGranted"`
+	IsResourceUsageAgreementGranted *bool `pulumi:"isResourceUsageAgreementGranted"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-	LifecyleDetails string `pulumi:"lifecyleDetails"`
+	LifecyleDetails *string `pulumi:"lifecyleDetails"`
 	// Service instance name (unique identifier)
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// Compartment where VBS may create additional resources for the service instance
-	ResourceCompartmentId string `pulumi:"resourceCompartmentId"`
+	ResourceCompartmentId *string `pulumi:"resourceCompartmentId"`
 	// The current state of the VbsInstance.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The time the the VbsInstance was created. An RFC3339 formatted datetime string
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time the VbsInstance was updated. An RFC3339 formatted datetime string
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 	// Public web URL for accessing the VBS service instance
-	VbsAccessUrl  string `pulumi:"vbsAccessUrl"`
-	VbsInstanceId string `pulumi:"vbsInstanceId"`
+	VbsAccessUrl  *string `pulumi:"vbsAccessUrl"`
+	VbsInstanceId string  `pulumi:"vbsInstanceId"`
 }
 
 func LookupInstVbsInstanceOutput(ctx *pulumi.Context, args LookupInstVbsInstanceOutputArgs, opts ...pulumi.InvokeOption) LookupInstVbsInstanceResultOutput {
@@ -129,15 +128,9 @@ func (o LookupInstVbsInstanceResultOutput) ToLookupInstVbsInstanceResultOutputWi
 	return o
 }
 
-func (o LookupInstVbsInstanceResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupInstVbsInstanceResult] {
-	return pulumix.Output[LookupInstVbsInstanceResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Compartment of the service instance
-func (o LookupInstVbsInstanceResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupInstVbsInstanceResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupInstVbsInstanceResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupInstVbsInstanceResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -146,8 +139,8 @@ func (o LookupInstVbsInstanceResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // Service instance display name
-func (o LookupInstVbsInstanceResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupInstVbsInstanceResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupInstVbsInstanceResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupInstVbsInstanceResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -156,37 +149,37 @@ func (o LookupInstVbsInstanceResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // Unique identifier that is immutable on creation
-func (o LookupInstVbsInstanceResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupInstVbsInstanceResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupInstVbsInstanceResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupInstVbsInstanceResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
-func (o LookupInstVbsInstanceResultOutput) IdcsAccessToken() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupInstVbsInstanceResult) string { return v.IdcsAccessToken }).(pulumi.StringOutput)
+func (o LookupInstVbsInstanceResultOutput) IdcsAccessToken() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupInstVbsInstanceResult) *string { return v.IdcsAccessToken }).(pulumi.StringPtrOutput)
 }
 
 // Whether the VBS service instance owner explicitly approved VBS to create and use resources in the customer tenancy
-func (o LookupInstVbsInstanceResultOutput) IsResourceUsageAgreementGranted() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupInstVbsInstanceResult) bool { return v.IsResourceUsageAgreementGranted }).(pulumi.BoolOutput)
+func (o LookupInstVbsInstanceResultOutput) IsResourceUsageAgreementGranted() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupInstVbsInstanceResult) *bool { return v.IsResourceUsageAgreementGranted }).(pulumi.BoolPtrOutput)
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-func (o LookupInstVbsInstanceResultOutput) LifecyleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupInstVbsInstanceResult) string { return v.LifecyleDetails }).(pulumi.StringOutput)
+func (o LookupInstVbsInstanceResultOutput) LifecyleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupInstVbsInstanceResult) *string { return v.LifecyleDetails }).(pulumi.StringPtrOutput)
 }
 
 // Service instance name (unique identifier)
-func (o LookupInstVbsInstanceResultOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupInstVbsInstanceResult) string { return v.Name }).(pulumi.StringOutput)
+func (o LookupInstVbsInstanceResultOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupInstVbsInstanceResult) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // Compartment where VBS may create additional resources for the service instance
-func (o LookupInstVbsInstanceResultOutput) ResourceCompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupInstVbsInstanceResult) string { return v.ResourceCompartmentId }).(pulumi.StringOutput)
+func (o LookupInstVbsInstanceResultOutput) ResourceCompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupInstVbsInstanceResult) *string { return v.ResourceCompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the VbsInstance.
-func (o LookupInstVbsInstanceResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupInstVbsInstanceResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupInstVbsInstanceResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupInstVbsInstanceResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -195,18 +188,18 @@ func (o LookupInstVbsInstanceResultOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The time the the VbsInstance was created. An RFC3339 formatted datetime string
-func (o LookupInstVbsInstanceResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupInstVbsInstanceResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupInstVbsInstanceResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupInstVbsInstanceResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time the VbsInstance was updated. An RFC3339 formatted datetime string
-func (o LookupInstVbsInstanceResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupInstVbsInstanceResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o LookupInstVbsInstanceResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupInstVbsInstanceResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 // Public web URL for accessing the VBS service instance
-func (o LookupInstVbsInstanceResultOutput) VbsAccessUrl() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupInstVbsInstanceResult) string { return v.VbsAccessUrl }).(pulumi.StringOutput)
+func (o LookupInstVbsInstanceResultOutput) VbsAccessUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupInstVbsInstanceResult) *string { return v.VbsAccessUrl }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupInstVbsInstanceResultOutput) VbsInstanceId() pulumi.StringOutput {

@@ -70,7 +70,7 @@ export class Certificate extends pulumi.CustomResource {
      * ...
      * -----END CERTIFICATE-----
      */
-    public readonly caCertificate!: pulumi.Output<string>;
+    public readonly caCertificate!: pulumi.Output<string | undefined>;
     /**
      * A friendly name for the certificate bundle. It must be unique and it cannot be changed. Valid certificate bundle names include only alphanumeric characters, dashes, and underscores. Certificate bundle names cannot contain spaces. Avoid entering confidential information.  Example: `exampleCertificateBundle`
      */
@@ -96,7 +96,7 @@ export class Certificate extends pulumi.CustomResource {
      * ...
      * -----END RSA PRIVATE KEY-----
      */
-    public readonly privateKey!: pulumi.Output<string>;
+    public readonly privateKey!: pulumi.Output<string | undefined>;
     /**
      * The public certificate, in PEM format, that you received from your SSL certificate provider.
      *
@@ -115,8 +115,8 @@ export class Certificate extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly publicCertificate!: pulumi.Output<string>;
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public readonly publicCertificate!: pulumi.Output<string | undefined>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
 
     /**
      * Create a Certificate resource with the given unique name, arguments, and options.

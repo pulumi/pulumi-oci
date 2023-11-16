@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Managed List resource in Oracle Cloud Infrastructure Cloud Guard service.
@@ -60,38 +59,38 @@ type LookupManagedListArgs struct {
 // A collection of values returned by getManagedList.
 type LookupManagedListResult struct {
 	// Compartment Identifier where the resource is created
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// ManagedList description.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// ManagedList display name.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// provider of the feed
-	FeedProvider string `pulumi:"feedProvider"`
+	FeedProvider *string `pulumi:"feedProvider"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// Unique identifier that is immutable on creation
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// If this list is editable or not
-	IsEditable bool `pulumi:"isEditable"`
+	IsEditable *bool `pulumi:"isEditable"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-	LifecyleDetails string `pulumi:"lifecyleDetails"`
+	LifecyleDetails *string `pulumi:"lifecyleDetails"`
 	// List of ManagedListItem
 	ListItems []string `pulumi:"listItems"`
 	// type of the list
-	ListType      string `pulumi:"listType"`
-	ManagedListId string `pulumi:"managedListId"`
+	ListType      *string `pulumi:"listType"`
+	ManagedListId string  `pulumi:"managedListId"`
 	// OCID of the Source ManagedList
-	SourceManagedListId string `pulumi:"sourceManagedListId"`
+	SourceManagedListId *string `pulumi:"sourceManagedListId"`
 	// The current state of the resource.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The date and time the managed list was created. Format defined by RFC3339.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The date and time the managed list was updated. Format defined by RFC3339.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 func LookupManagedListOutput(ctx *pulumi.Context, args LookupManagedListOutputArgs, opts ...pulumi.InvokeOption) LookupManagedListResultOutput {
@@ -132,15 +131,9 @@ func (o LookupManagedListResultOutput) ToLookupManagedListResultOutputWithContex
 	return o
 }
 
-func (o LookupManagedListResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupManagedListResult] {
-	return pulumix.Output[LookupManagedListResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Compartment Identifier where the resource is created
-func (o LookupManagedListResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupManagedListResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupManagedListResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupManagedListResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -149,18 +142,18 @@ func (o LookupManagedListResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // ManagedList description.
-func (o LookupManagedListResultOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupManagedListResult) string { return v.Description }).(pulumi.StringOutput)
+func (o LookupManagedListResultOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupManagedListResult) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // ManagedList display name.
-func (o LookupManagedListResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupManagedListResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupManagedListResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupManagedListResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // provider of the feed
-func (o LookupManagedListResultOutput) FeedProvider() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupManagedListResult) string { return v.FeedProvider }).(pulumi.StringOutput)
+func (o LookupManagedListResultOutput) FeedProvider() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupManagedListResult) *string { return v.FeedProvider }).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -169,18 +162,18 @@ func (o LookupManagedListResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // Unique identifier that is immutable on creation
-func (o LookupManagedListResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupManagedListResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupManagedListResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupManagedListResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // If this list is editable or not
-func (o LookupManagedListResultOutput) IsEditable() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupManagedListResult) bool { return v.IsEditable }).(pulumi.BoolOutput)
+func (o LookupManagedListResultOutput) IsEditable() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupManagedListResult) *bool { return v.IsEditable }).(pulumi.BoolPtrOutput)
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-func (o LookupManagedListResultOutput) LifecyleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupManagedListResult) string { return v.LifecyleDetails }).(pulumi.StringOutput)
+func (o LookupManagedListResultOutput) LifecyleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupManagedListResult) *string { return v.LifecyleDetails }).(pulumi.StringPtrOutput)
 }
 
 // List of ManagedListItem
@@ -189,8 +182,8 @@ func (o LookupManagedListResultOutput) ListItems() pulumi.StringArrayOutput {
 }
 
 // type of the list
-func (o LookupManagedListResultOutput) ListType() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupManagedListResult) string { return v.ListType }).(pulumi.StringOutput)
+func (o LookupManagedListResultOutput) ListType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupManagedListResult) *string { return v.ListType }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupManagedListResultOutput) ManagedListId() pulumi.StringOutput {
@@ -198,13 +191,13 @@ func (o LookupManagedListResultOutput) ManagedListId() pulumi.StringOutput {
 }
 
 // OCID of the Source ManagedList
-func (o LookupManagedListResultOutput) SourceManagedListId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupManagedListResult) string { return v.SourceManagedListId }).(pulumi.StringOutput)
+func (o LookupManagedListResultOutput) SourceManagedListId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupManagedListResult) *string { return v.SourceManagedListId }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the resource.
-func (o LookupManagedListResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupManagedListResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupManagedListResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupManagedListResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -213,13 +206,13 @@ func (o LookupManagedListResultOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The date and time the managed list was created. Format defined by RFC3339.
-func (o LookupManagedListResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupManagedListResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupManagedListResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupManagedListResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the managed list was updated. Format defined by RFC3339.
-func (o LookupManagedListResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupManagedListResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o LookupManagedListResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupManagedListResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 func init() {

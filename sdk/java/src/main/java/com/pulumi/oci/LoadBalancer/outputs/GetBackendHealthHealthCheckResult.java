@@ -6,6 +6,8 @@ package com.pulumi.oci.LoadBalancer.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetBackendHealthHealthCheckResult {
@@ -13,51 +15,51 @@ public final class GetBackendHealthHealthCheckResult {
      * @return The result of the most recent health check.
      * 
      */
-    private String healthCheckStatus;
+    private @Nullable String healthCheckStatus;
     /**
      * @return The IP address of the health check status report provider. This identifier helps you differentiate same-subnet load balancers that report health check status.  Example: `10.0.0.7`
      * 
      */
-    private String sourceIpAddress;
+    private @Nullable String sourceIpAddress;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet hosting the load balancer that reported this health check status.
      * 
      */
-    private String subnetId;
+    private @Nullable String subnetId;
     /**
      * @return The date and time the data was retrieved, in the format defined by RFC3339.  Example: `2017-06-02T18:28:11+00:00`
      * 
      */
-    private String timestamp;
+    private @Nullable String timestamp;
 
     private GetBackendHealthHealthCheckResult() {}
     /**
      * @return The result of the most recent health check.
      * 
      */
-    public String healthCheckStatus() {
-        return this.healthCheckStatus;
+    public Optional<String> healthCheckStatus() {
+        return Optional.ofNullable(this.healthCheckStatus);
     }
     /**
      * @return The IP address of the health check status report provider. This identifier helps you differentiate same-subnet load balancers that report health check status.  Example: `10.0.0.7`
      * 
      */
-    public String sourceIpAddress() {
-        return this.sourceIpAddress;
+    public Optional<String> sourceIpAddress() {
+        return Optional.ofNullable(this.sourceIpAddress);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet hosting the load balancer that reported this health check status.
      * 
      */
-    public String subnetId() {
-        return this.subnetId;
+    public Optional<String> subnetId() {
+        return Optional.ofNullable(this.subnetId);
     }
     /**
      * @return The date and time the data was retrieved, in the format defined by RFC3339.  Example: `2017-06-02T18:28:11+00:00`
      * 
      */
-    public String timestamp() {
-        return this.timestamp;
+    public Optional<String> timestamp() {
+        return Optional.ofNullable(this.timestamp);
     }
 
     public static Builder builder() {
@@ -69,10 +71,10 @@ public final class GetBackendHealthHealthCheckResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String healthCheckStatus;
-        private String sourceIpAddress;
-        private String subnetId;
-        private String timestamp;
+        private @Nullable String healthCheckStatus;
+        private @Nullable String sourceIpAddress;
+        private @Nullable String subnetId;
+        private @Nullable String timestamp;
         public Builder() {}
         public Builder(GetBackendHealthHealthCheckResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -83,23 +85,23 @@ public final class GetBackendHealthHealthCheckResult {
         }
 
         @CustomType.Setter
-        public Builder healthCheckStatus(String healthCheckStatus) {
-            this.healthCheckStatus = Objects.requireNonNull(healthCheckStatus);
+        public Builder healthCheckStatus(@Nullable String healthCheckStatus) {
+            this.healthCheckStatus = healthCheckStatus;
             return this;
         }
         @CustomType.Setter
-        public Builder sourceIpAddress(String sourceIpAddress) {
-            this.sourceIpAddress = Objects.requireNonNull(sourceIpAddress);
+        public Builder sourceIpAddress(@Nullable String sourceIpAddress) {
+            this.sourceIpAddress = sourceIpAddress;
             return this;
         }
         @CustomType.Setter
-        public Builder subnetId(String subnetId) {
-            this.subnetId = Objects.requireNonNull(subnetId);
+        public Builder subnetId(@Nullable String subnetId) {
+            this.subnetId = subnetId;
             return this;
         }
         @CustomType.Setter
-        public Builder timestamp(String timestamp) {
-            this.timestamp = Objects.requireNonNull(timestamp);
+        public Builder timestamp(@Nullable String timestamp) {
+            this.timestamp = timestamp;
             return this;
         }
         public GetBackendHealthHealthCheckResult build() {

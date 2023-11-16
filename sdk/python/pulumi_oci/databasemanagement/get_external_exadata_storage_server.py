@@ -95,42 +95,27 @@ class GetExternalExadataStorageServerResult:
 
     @property
     @pulumi.getter(name="additionalDetails")
-    def additional_details(self) -> Mapping[str, Any]:
-        """
-        The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
-        """
+    def additional_details(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "additional_details")
 
     @property
     @pulumi.getter
-    def connectors(self) -> Sequence['outputs.GetExternalExadataStorageServerConnectorResult']:
-        """
-        The connector of the Exadata storage server.
-        """
+    def connectors(self) -> Optional[Sequence['outputs.GetExternalExadataStorageServerConnectorResult']]:
         return pulumi.get(self, "connectors")
 
     @property
     @pulumi.getter(name="cpuCount")
-    def cpu_count(self) -> float:
-        """
-        The CPU count of the Exadata storage server.
-        """
+    def cpu_count(self) -> Optional[float]:
         return pulumi.get(self, "cpu_count")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        The name of the Exadata resource. English letters, numbers, "-", "_" and "." only.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="exadataInfrastructureId")
-    def exadata_infrastructure_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
-        """
+    def exadata_infrastructure_id(self) -> Optional[str]:
         return pulumi.get(self, "exadata_infrastructure_id")
 
     @property
@@ -140,7 +125,7 @@ class GetExternalExadataStorageServerResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -148,130 +133,82 @@ class GetExternalExadataStorageServerResult:
 
     @property
     @pulumi.getter(name="internalId")
-    def internal_id(self) -> str:
-        """
-        The internal ID of the Exadata resource.
-        """
+    def internal_id(self) -> Optional[str]:
         return pulumi.get(self, "internal_id")
 
     @property
     @pulumi.getter(name="ipAddress")
-    def ip_address(self) -> str:
-        """
-        The IP address of the Exadata storage server.
-        """
+    def ip_address(self) -> Optional[str]:
         return pulumi.get(self, "ip_address")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        The details of the lifecycle state of the Exadata resource.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="makeModel")
-    def make_model(self) -> str:
-        """
-        The make model of the Exadata storage server.
-        """
+    def make_model(self) -> Optional[str]:
         return pulumi.get(self, "make_model")
 
     @property
     @pulumi.getter(name="maxFlashDiskIops")
-    def max_flash_disk_iops(self) -> int:
-        """
-        The maximum flash disk IO operations per second of the Exadata storage server.
-        """
+    def max_flash_disk_iops(self) -> Optional[int]:
         return pulumi.get(self, "max_flash_disk_iops")
 
     @property
     @pulumi.getter(name="maxFlashDiskThroughput")
-    def max_flash_disk_throughput(self) -> int:
-        """
-        The maximum flash disk IO throughput in MB/s of the Exadata storage server.
-        """
+    def max_flash_disk_throughput(self) -> Optional[int]:
         return pulumi.get(self, "max_flash_disk_throughput")
 
     @property
     @pulumi.getter(name="maxHardDiskIops")
-    def max_hard_disk_iops(self) -> int:
-        """
-        The maximum hard disk IO operations per second of the Exadata storage server.
-        """
+    def max_hard_disk_iops(self) -> Optional[int]:
         return pulumi.get(self, "max_hard_disk_iops")
 
     @property
     @pulumi.getter(name="maxHardDiskThroughput")
-    def max_hard_disk_throughput(self) -> int:
-        """
-        The maximum hard disk IO throughput in MB/s of the Exadata storage server.
-        """
+    def max_hard_disk_throughput(self) -> Optional[int]:
         return pulumi.get(self, "max_hard_disk_throughput")
 
     @property
     @pulumi.getter(name="memoryGb")
-    def memory_gb(self) -> float:
-        """
-        The Exadata storage server memory size in GB.
-        """
+    def memory_gb(self) -> Optional[float]:
         return pulumi.get(self, "memory_gb")
 
     @property
     @pulumi.getter(name="resourceType")
-    def resource_type(self) -> str:
-        """
-        The type of Exadata resource.
-        """
+    def resource_type(self) -> Optional[str]:
         return pulumi.get(self, "resource_type")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current lifecycle state of the database resource.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter
-    def status(self) -> str:
-        """
-        The status of the Exadata resource.
-        """
+    def status(self) -> Optional[str]:
         return pulumi.get(self, "status")
 
     @property
     @pulumi.getter(name="storageGridId")
-    def storage_grid_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata storage server grid.
-        """
+    def storage_grid_id(self) -> Optional[str]:
         return pulumi.get(self, "storage_grid_id")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The timestamp of the creation of the Exadata resource.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The timestamp of the last update of the Exadata resource.
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
     @property
     @pulumi.getter
-    def version(self) -> str:
-        """
-        The version of the Exadata resource.
-        """
+    def version(self) -> Optional[str]:
         return pulumi.get(self, "version")
 
 
@@ -309,21 +246,7 @@ class AwaitableGetExternalExadataStorageServerResult(GetExternalExadataStorageSe
 def get_external_exadata_storage_server(external_exadata_storage_server_id: Optional[str] = None,
                                         opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetExternalExadataStorageServerResult:
     """
-    This data source provides details about a specific External Exadata Storage Server resource in Oracle Cloud Infrastructure Database Management service.
-
-    Gets the summary for the Exadata storage server specified by exadataStorageServerId.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_external_exadata_storage_server = oci.DatabaseManagement.get_external_exadata_storage_server(external_exadata_storage_server_id=oci_database_management_external_exadata_storage_server["test_external_exadata_storage_server"]["id"])
-    ```
-
-
-    :param str external_exadata_storage_server_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata storage server.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['externalExadataStorageServerId'] = external_exadata_storage_server_id
@@ -360,20 +283,6 @@ def get_external_exadata_storage_server(external_exadata_storage_server_id: Opti
 def get_external_exadata_storage_server_output(external_exadata_storage_server_id: Optional[pulumi.Input[str]] = None,
                                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetExternalExadataStorageServerResult]:
     """
-    This data source provides details about a specific External Exadata Storage Server resource in Oracle Cloud Infrastructure Database Management service.
-
-    Gets the summary for the Exadata storage server specified by exadataStorageServerId.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_external_exadata_storage_server = oci.DatabaseManagement.get_external_exadata_storage_server(external_exadata_storage_server_id=oci_database_management_external_exadata_storage_server["test_external_exadata_storage_server"]["id"])
-    ```
-
-
-    :param str external_exadata_storage_server_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata storage server.
+    Use this data source to access information about an existing resource.
     """
     ...

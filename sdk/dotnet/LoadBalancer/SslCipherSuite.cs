@@ -73,7 +73,7 @@ namespace Pulumi.Oci.LoadBalancer
         public Output<string> Name { get; private set; } = null!;
 
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
 
         /// <summary>

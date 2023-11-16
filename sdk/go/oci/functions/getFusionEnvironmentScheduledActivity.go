@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Fusion Environment Scheduled Activity resource in Oracle Cloud Infrastructure Fusion Apps service.
@@ -65,32 +64,32 @@ type GetFusionEnvironmentScheduledActivityResult struct {
 	// List of actions
 	Actions []GetFusionEnvironmentScheduledActivityAction `pulumi:"actions"`
 	// Cumulative delay hours
-	DelayInHours int `pulumi:"delayInHours"`
+	DelayInHours *int `pulumi:"delayInHours"`
 	// scheduled activity display name, can be renamed.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// FAaaS Environment Identifier.
 	FusionEnvironmentId string `pulumi:"fusionEnvironmentId"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// run cadence.
-	RunCycle            string `pulumi:"runCycle"`
-	ScheduledActivityId string `pulumi:"scheduledActivityId"`
+	RunCycle            *string `pulumi:"runCycle"`
+	ScheduledActivityId string  `pulumi:"scheduledActivityId"`
 	// Service availability / impact during scheduled activity execution up down
-	ServiceAvailability string `pulumi:"serviceAvailability"`
+	ServiceAvailability *string `pulumi:"serviceAvailability"`
 	// The current state of the scheduledActivity.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The time the scheduled activity record was created. An RFC3339 formatted datetime string.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// Current time the scheduled activity is scheduled to end. An RFC3339 formatted datetime string.
-	TimeExpectedFinish string `pulumi:"timeExpectedFinish"`
+	TimeExpectedFinish *string `pulumi:"timeExpectedFinish"`
 	// The time the scheduled activity actually completed / cancelled / failed. An RFC3339 formatted datetime string.
-	TimeFinished string `pulumi:"timeFinished"`
+	TimeFinished *string `pulumi:"timeFinished"`
 	// Current time the scheduled activity is scheduled to start. An RFC3339 formatted datetime string.
-	TimeScheduledStart string `pulumi:"timeScheduledStart"`
+	TimeScheduledStart *string `pulumi:"timeScheduledStart"`
 	// The time the scheduled activity record was updated. An RFC3339 formatted datetime string.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 func GetFusionEnvironmentScheduledActivityOutput(ctx *pulumi.Context, args GetFusionEnvironmentScheduledActivityOutputArgs, opts ...pulumi.InvokeOption) GetFusionEnvironmentScheduledActivityResultOutput {
@@ -133,12 +132,6 @@ func (o GetFusionEnvironmentScheduledActivityResultOutput) ToGetFusionEnvironmen
 	return o
 }
 
-func (o GetFusionEnvironmentScheduledActivityResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetFusionEnvironmentScheduledActivityResult] {
-	return pulumix.Output[GetFusionEnvironmentScheduledActivityResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // List of actions
 func (o GetFusionEnvironmentScheduledActivityResultOutput) Actions() GetFusionEnvironmentScheduledActivityActionArrayOutput {
 	return o.ApplyT(func(v GetFusionEnvironmentScheduledActivityResult) []GetFusionEnvironmentScheduledActivityAction {
@@ -147,13 +140,13 @@ func (o GetFusionEnvironmentScheduledActivityResultOutput) Actions() GetFusionEn
 }
 
 // Cumulative delay hours
-func (o GetFusionEnvironmentScheduledActivityResultOutput) DelayInHours() pulumi.IntOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentScheduledActivityResult) int { return v.DelayInHours }).(pulumi.IntOutput)
+func (o GetFusionEnvironmentScheduledActivityResultOutput) DelayInHours() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentScheduledActivityResult) *int { return v.DelayInHours }).(pulumi.IntPtrOutput)
 }
 
 // scheduled activity display name, can be renamed.
-func (o GetFusionEnvironmentScheduledActivityResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentScheduledActivityResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetFusionEnvironmentScheduledActivityResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentScheduledActivityResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // FAaaS Environment Identifier.
@@ -162,18 +155,18 @@ func (o GetFusionEnvironmentScheduledActivityResultOutput) FusionEnvironmentId()
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetFusionEnvironmentScheduledActivityResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentScheduledActivityResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetFusionEnvironmentScheduledActivityResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentScheduledActivityResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-func (o GetFusionEnvironmentScheduledActivityResultOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentScheduledActivityResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o GetFusionEnvironmentScheduledActivityResultOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentScheduledActivityResult) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // run cadence.
-func (o GetFusionEnvironmentScheduledActivityResultOutput) RunCycle() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentScheduledActivityResult) string { return v.RunCycle }).(pulumi.StringOutput)
+func (o GetFusionEnvironmentScheduledActivityResultOutput) RunCycle() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentScheduledActivityResult) *string { return v.RunCycle }).(pulumi.StringPtrOutput)
 }
 
 func (o GetFusionEnvironmentScheduledActivityResultOutput) ScheduledActivityId() pulumi.StringOutput {
@@ -181,38 +174,38 @@ func (o GetFusionEnvironmentScheduledActivityResultOutput) ScheduledActivityId()
 }
 
 // Service availability / impact during scheduled activity execution up down
-func (o GetFusionEnvironmentScheduledActivityResultOutput) ServiceAvailability() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentScheduledActivityResult) string { return v.ServiceAvailability }).(pulumi.StringOutput)
+func (o GetFusionEnvironmentScheduledActivityResultOutput) ServiceAvailability() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentScheduledActivityResult) *string { return v.ServiceAvailability }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the scheduledActivity.
-func (o GetFusionEnvironmentScheduledActivityResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentScheduledActivityResult) string { return v.State }).(pulumi.StringOutput)
+func (o GetFusionEnvironmentScheduledActivityResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentScheduledActivityResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The time the scheduled activity record was created. An RFC3339 formatted datetime string.
-func (o GetFusionEnvironmentScheduledActivityResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentScheduledActivityResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetFusionEnvironmentScheduledActivityResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentScheduledActivityResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // Current time the scheduled activity is scheduled to end. An RFC3339 formatted datetime string.
-func (o GetFusionEnvironmentScheduledActivityResultOutput) TimeExpectedFinish() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentScheduledActivityResult) string { return v.TimeExpectedFinish }).(pulumi.StringOutput)
+func (o GetFusionEnvironmentScheduledActivityResultOutput) TimeExpectedFinish() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentScheduledActivityResult) *string { return v.TimeExpectedFinish }).(pulumi.StringPtrOutput)
 }
 
 // The time the scheduled activity actually completed / cancelled / failed. An RFC3339 formatted datetime string.
-func (o GetFusionEnvironmentScheduledActivityResultOutput) TimeFinished() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentScheduledActivityResult) string { return v.TimeFinished }).(pulumi.StringOutput)
+func (o GetFusionEnvironmentScheduledActivityResultOutput) TimeFinished() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentScheduledActivityResult) *string { return v.TimeFinished }).(pulumi.StringPtrOutput)
 }
 
 // Current time the scheduled activity is scheduled to start. An RFC3339 formatted datetime string.
-func (o GetFusionEnvironmentScheduledActivityResultOutput) TimeScheduledStart() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentScheduledActivityResult) string { return v.TimeScheduledStart }).(pulumi.StringOutput)
+func (o GetFusionEnvironmentScheduledActivityResultOutput) TimeScheduledStart() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentScheduledActivityResult) *string { return v.TimeScheduledStart }).(pulumi.StringPtrOutput)
 }
 
 // The time the scheduled activity record was updated. An RFC3339 formatted datetime string.
-func (o GetFusionEnvironmentScheduledActivityResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentScheduledActivityResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o GetFusionEnvironmentScheduledActivityResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentScheduledActivityResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 func init() {

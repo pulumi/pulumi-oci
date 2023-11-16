@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 var _ = internal.GetEnvOrDefault
@@ -45,12 +44,6 @@ func (i GetDkimsDkimCollectionArgs) ToGetDkimsDkimCollectionOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(GetDkimsDkimCollectionOutput)
 }
 
-func (i GetDkimsDkimCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetDkimsDkimCollection] {
-	return pulumix.Output[GetDkimsDkimCollection]{
-		OutputState: i.ToGetDkimsDkimCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDkimsDkimCollectionArrayInput is an input type that accepts GetDkimsDkimCollectionArray and GetDkimsDkimCollectionArrayOutput values.
 // You can construct a concrete instance of `GetDkimsDkimCollectionArrayInput` via:
 //
@@ -76,12 +69,6 @@ func (i GetDkimsDkimCollectionArray) ToGetDkimsDkimCollectionArrayOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetDkimsDkimCollectionArrayOutput)
 }
 
-func (i GetDkimsDkimCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDkimsDkimCollection] {
-	return pulumix.Output[[]GetDkimsDkimCollection]{
-		OutputState: i.ToGetDkimsDkimCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDkimsDkimCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetDkimsDkimCollectionOutput) ElementType() reflect.Type {
@@ -94,12 +81,6 @@ func (o GetDkimsDkimCollectionOutput) ToGetDkimsDkimCollectionOutput() GetDkimsD
 
 func (o GetDkimsDkimCollectionOutput) ToGetDkimsDkimCollectionOutputWithContext(ctx context.Context) GetDkimsDkimCollectionOutput {
 	return o
-}
-
-func (o GetDkimsDkimCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetDkimsDkimCollection] {
-	return pulumix.Output[GetDkimsDkimCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDkimsDkimCollectionOutput) Items() GetDkimsDkimCollectionItemArrayOutput {
@@ -120,12 +101,6 @@ func (o GetDkimsDkimCollectionArrayOutput) ToGetDkimsDkimCollectionArrayOutputWi
 	return o
 }
 
-func (o GetDkimsDkimCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDkimsDkimCollection] {
-	return pulumix.Output[[]GetDkimsDkimCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDkimsDkimCollectionArrayOutput) Index(i pulumi.IntInput) GetDkimsDkimCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDkimsDkimCollection {
 		return vs[0].([]GetDkimsDkimCollection)[vs[1].(int)]
@@ -134,35 +109,35 @@ func (o GetDkimsDkimCollectionArrayOutput) Index(i pulumi.IntInput) GetDkimsDkim
 
 type GetDkimsDkimCollectionItem struct {
 	// The DNS CNAME record value to provision to the DKIM DNS subdomain, when using the CNAME method for DKIM setup (preferred).
-	CnameRecordValue string `pulumi:"cnameRecordValue"`
+	CnameRecordValue *string `pulumi:"cnameRecordValue"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains this DKIM.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The description of the DKIM. Avoid entering confidential information.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// The name of the DNS subdomain that must be provisioned to enable email recipients to verify DKIM signatures. It is usually created with a CNAME record set to the cnameRecordValue
-	DnsSubdomainName string `pulumi:"dnsSubdomainName"`
+	DnsSubdomainName *string `pulumi:"dnsSubdomainName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the email domain to which this DKIM belongs.
-	EmailDomainId string `pulumi:"emailDomainId"`
+	EmailDomainId *string `pulumi:"emailDomainId"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// A filter to only return resources that match the given id exactly.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// A filter to only return resources that match the given name exactly.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// Filter returned list by specified lifecycle state. This parameter is case-insensitive.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The time the DKIM was created. Times are expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, "YYYY-MM-ddThh:mmZ".  Example: `2021-02-12T22:47:12.613Z`
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time of the last change to the DKIM configuration, due to a state change or an update operation. Times are expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, "YYYY-MM-ddThh:mmZ".
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 	// The DNS TXT record value to provision to the DKIM DNS subdomain in place of using a CNAME record. This is used in cases where a CNAME can not be used, such as when the cnameRecordValue would exceed the maximum length for a DNS entry. This can also be used by customers who have an existing procedure to directly provision TXT records for DKIM. Be aware that many DNS APIs will require you to break this string into segments of less than 255 characters.
-	TxtRecordValue string `pulumi:"txtRecordValue"`
+	TxtRecordValue *string `pulumi:"txtRecordValue"`
 }
 
 // GetDkimsDkimCollectionItemInput is an input type that accepts GetDkimsDkimCollectionItemArgs and GetDkimsDkimCollectionItemOutput values.
@@ -178,35 +153,35 @@ type GetDkimsDkimCollectionItemInput interface {
 
 type GetDkimsDkimCollectionItemArgs struct {
 	// The DNS CNAME record value to provision to the DKIM DNS subdomain, when using the CNAME method for DKIM setup (preferred).
-	CnameRecordValue pulumi.StringInput `pulumi:"cnameRecordValue"`
+	CnameRecordValue pulumi.StringPtrInput `pulumi:"cnameRecordValue"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains this DKIM.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// The description of the DKIM. Avoid entering confidential information.
-	Description pulumi.StringInput `pulumi:"description"`
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// The name of the DNS subdomain that must be provisioned to enable email recipients to verify DKIM signatures. It is usually created with a CNAME record set to the cnameRecordValue
-	DnsSubdomainName pulumi.StringInput `pulumi:"dnsSubdomainName"`
+	DnsSubdomainName pulumi.StringPtrInput `pulumi:"dnsSubdomainName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the email domain to which this DKIM belongs.
-	EmailDomainId pulumi.StringInput `pulumi:"emailDomainId"`
+	EmailDomainId pulumi.StringPtrInput `pulumi:"emailDomainId"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// A filter to only return resources that match the given id exactly.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource.
-	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrInput `pulumi:"lifecycleDetails"`
 	// A filter to only return resources that match the given name exactly.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// Filter returned list by specified lifecycle state. This parameter is case-insensitive.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapInput `pulumi:"systemTags"`
 	// The time the DKIM was created. Times are expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, "YYYY-MM-ddThh:mmZ".  Example: `2021-02-12T22:47:12.613Z`
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// The time of the last change to the DKIM configuration, due to a state change or an update operation. Times are expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, "YYYY-MM-ddThh:mmZ".
-	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
 	// The DNS TXT record value to provision to the DKIM DNS subdomain in place of using a CNAME record. This is used in cases where a CNAME can not be used, such as when the cnameRecordValue would exceed the maximum length for a DNS entry. This can also be used by customers who have an existing procedure to directly provision TXT records for DKIM. Be aware that many DNS APIs will require you to break this string into segments of less than 255 characters.
-	TxtRecordValue pulumi.StringInput `pulumi:"txtRecordValue"`
+	TxtRecordValue pulumi.StringPtrInput `pulumi:"txtRecordValue"`
 }
 
 func (GetDkimsDkimCollectionItemArgs) ElementType() reflect.Type {
@@ -219,12 +194,6 @@ func (i GetDkimsDkimCollectionItemArgs) ToGetDkimsDkimCollectionItemOutput() Get
 
 func (i GetDkimsDkimCollectionItemArgs) ToGetDkimsDkimCollectionItemOutputWithContext(ctx context.Context) GetDkimsDkimCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetDkimsDkimCollectionItemOutput)
-}
-
-func (i GetDkimsDkimCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetDkimsDkimCollectionItem] {
-	return pulumix.Output[GetDkimsDkimCollectionItem]{
-		OutputState: i.ToGetDkimsDkimCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetDkimsDkimCollectionItemArrayInput is an input type that accepts GetDkimsDkimCollectionItemArray and GetDkimsDkimCollectionItemArrayOutput values.
@@ -252,12 +221,6 @@ func (i GetDkimsDkimCollectionItemArray) ToGetDkimsDkimCollectionItemArrayOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetDkimsDkimCollectionItemArrayOutput)
 }
 
-func (i GetDkimsDkimCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDkimsDkimCollectionItem] {
-	return pulumix.Output[[]GetDkimsDkimCollectionItem]{
-		OutputState: i.ToGetDkimsDkimCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDkimsDkimCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetDkimsDkimCollectionItemOutput) ElementType() reflect.Type {
@@ -272,20 +235,14 @@ func (o GetDkimsDkimCollectionItemOutput) ToGetDkimsDkimCollectionItemOutputWith
 	return o
 }
 
-func (o GetDkimsDkimCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetDkimsDkimCollectionItem] {
-	return pulumix.Output[GetDkimsDkimCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The DNS CNAME record value to provision to the DKIM DNS subdomain, when using the CNAME method for DKIM setup (preferred).
-func (o GetDkimsDkimCollectionItemOutput) CnameRecordValue() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDkimsDkimCollectionItem) string { return v.CnameRecordValue }).(pulumi.StringOutput)
+func (o GetDkimsDkimCollectionItemOutput) CnameRecordValue() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDkimsDkimCollectionItem) *string { return v.CnameRecordValue }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains this DKIM.
-func (o GetDkimsDkimCollectionItemOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDkimsDkimCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetDkimsDkimCollectionItemOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDkimsDkimCollectionItem) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -294,18 +251,18 @@ func (o GetDkimsDkimCollectionItemOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // The description of the DKIM. Avoid entering confidential information.
-func (o GetDkimsDkimCollectionItemOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDkimsDkimCollectionItem) string { return v.Description }).(pulumi.StringOutput)
+func (o GetDkimsDkimCollectionItemOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDkimsDkimCollectionItem) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // The name of the DNS subdomain that must be provisioned to enable email recipients to verify DKIM signatures. It is usually created with a CNAME record set to the cnameRecordValue
-func (o GetDkimsDkimCollectionItemOutput) DnsSubdomainName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDkimsDkimCollectionItem) string { return v.DnsSubdomainName }).(pulumi.StringOutput)
+func (o GetDkimsDkimCollectionItemOutput) DnsSubdomainName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDkimsDkimCollectionItem) *string { return v.DnsSubdomainName }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the email domain to which this DKIM belongs.
-func (o GetDkimsDkimCollectionItemOutput) EmailDomainId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDkimsDkimCollectionItem) string { return v.EmailDomainId }).(pulumi.StringOutput)
+func (o GetDkimsDkimCollectionItemOutput) EmailDomainId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDkimsDkimCollectionItem) *string { return v.EmailDomainId }).(pulumi.StringPtrOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -314,23 +271,23 @@ func (o GetDkimsDkimCollectionItemOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // A filter to only return resources that match the given id exactly.
-func (o GetDkimsDkimCollectionItemOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDkimsDkimCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+func (o GetDkimsDkimCollectionItemOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDkimsDkimCollectionItem) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource.
-func (o GetDkimsDkimCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDkimsDkimCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o GetDkimsDkimCollectionItemOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDkimsDkimCollectionItem) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // A filter to only return resources that match the given name exactly.
-func (o GetDkimsDkimCollectionItemOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDkimsDkimCollectionItem) string { return v.Name }).(pulumi.StringOutput)
+func (o GetDkimsDkimCollectionItemOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDkimsDkimCollectionItem) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // Filter returned list by specified lifecycle state. This parameter is case-insensitive.
-func (o GetDkimsDkimCollectionItemOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDkimsDkimCollectionItem) string { return v.State }).(pulumi.StringOutput)
+func (o GetDkimsDkimCollectionItemOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDkimsDkimCollectionItem) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -339,18 +296,18 @@ func (o GetDkimsDkimCollectionItemOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The time the DKIM was created. Times are expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, "YYYY-MM-ddThh:mmZ".  Example: `2021-02-12T22:47:12.613Z`
-func (o GetDkimsDkimCollectionItemOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDkimsDkimCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetDkimsDkimCollectionItemOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDkimsDkimCollectionItem) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time of the last change to the DKIM configuration, due to a state change or an update operation. Times are expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, "YYYY-MM-ddThh:mmZ".
-func (o GetDkimsDkimCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDkimsDkimCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o GetDkimsDkimCollectionItemOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDkimsDkimCollectionItem) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 // The DNS TXT record value to provision to the DKIM DNS subdomain in place of using a CNAME record. This is used in cases where a CNAME can not be used, such as when the cnameRecordValue would exceed the maximum length for a DNS entry. This can also be used by customers who have an existing procedure to directly provision TXT records for DKIM. Be aware that many DNS APIs will require you to break this string into segments of less than 255 characters.
-func (o GetDkimsDkimCollectionItemOutput) TxtRecordValue() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDkimsDkimCollectionItem) string { return v.TxtRecordValue }).(pulumi.StringOutput)
+func (o GetDkimsDkimCollectionItemOutput) TxtRecordValue() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDkimsDkimCollectionItem) *string { return v.TxtRecordValue }).(pulumi.StringPtrOutput)
 }
 
 type GetDkimsDkimCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -365,12 +322,6 @@ func (o GetDkimsDkimCollectionItemArrayOutput) ToGetDkimsDkimCollectionItemArray
 
 func (o GetDkimsDkimCollectionItemArrayOutput) ToGetDkimsDkimCollectionItemArrayOutputWithContext(ctx context.Context) GetDkimsDkimCollectionItemArrayOutput {
 	return o
-}
-
-func (o GetDkimsDkimCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDkimsDkimCollectionItem] {
-	return pulumix.Output[[]GetDkimsDkimCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDkimsDkimCollectionItemArrayOutput) Index(i pulumi.IntInput) GetDkimsDkimCollectionItemOutput {
@@ -416,12 +367,6 @@ func (i GetDkimsFilterArgs) ToGetDkimsFilterOutputWithContext(ctx context.Contex
 	return pulumi.ToOutputWithContext(ctx, i).(GetDkimsFilterOutput)
 }
 
-func (i GetDkimsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetDkimsFilter] {
-	return pulumix.Output[GetDkimsFilter]{
-		OutputState: i.ToGetDkimsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDkimsFilterArrayInput is an input type that accepts GetDkimsFilterArray and GetDkimsFilterArrayOutput values.
 // You can construct a concrete instance of `GetDkimsFilterArrayInput` via:
 //
@@ -447,12 +392,6 @@ func (i GetDkimsFilterArray) ToGetDkimsFilterArrayOutputWithContext(ctx context.
 	return pulumi.ToOutputWithContext(ctx, i).(GetDkimsFilterArrayOutput)
 }
 
-func (i GetDkimsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDkimsFilter] {
-	return pulumix.Output[[]GetDkimsFilter]{
-		OutputState: i.ToGetDkimsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDkimsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetDkimsFilterOutput) ElementType() reflect.Type {
@@ -465,12 +404,6 @@ func (o GetDkimsFilterOutput) ToGetDkimsFilterOutput() GetDkimsFilterOutput {
 
 func (o GetDkimsFilterOutput) ToGetDkimsFilterOutputWithContext(ctx context.Context) GetDkimsFilterOutput {
 	return o
-}
-
-func (o GetDkimsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetDkimsFilter] {
-	return pulumix.Output[GetDkimsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A filter to only return resources that match the given name exactly.
@@ -498,12 +431,6 @@ func (o GetDkimsFilterArrayOutput) ToGetDkimsFilterArrayOutput() GetDkimsFilterA
 
 func (o GetDkimsFilterArrayOutput) ToGetDkimsFilterArrayOutputWithContext(ctx context.Context) GetDkimsFilterArrayOutput {
 	return o
-}
-
-func (o GetDkimsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDkimsFilter] {
-	return pulumix.Output[[]GetDkimsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDkimsFilterArrayOutput) Index(i pulumi.IntInput) GetDkimsFilterOutput {
@@ -543,12 +470,6 @@ func (i GetEmailDomainsEmailDomainCollectionArgs) ToGetEmailDomainsEmailDomainCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetEmailDomainsEmailDomainCollectionOutput)
 }
 
-func (i GetEmailDomainsEmailDomainCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetEmailDomainsEmailDomainCollection] {
-	return pulumix.Output[GetEmailDomainsEmailDomainCollection]{
-		OutputState: i.ToGetEmailDomainsEmailDomainCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetEmailDomainsEmailDomainCollectionArrayInput is an input type that accepts GetEmailDomainsEmailDomainCollectionArray and GetEmailDomainsEmailDomainCollectionArrayOutput values.
 // You can construct a concrete instance of `GetEmailDomainsEmailDomainCollectionArrayInput` via:
 //
@@ -574,12 +495,6 @@ func (i GetEmailDomainsEmailDomainCollectionArray) ToGetEmailDomainsEmailDomainC
 	return pulumi.ToOutputWithContext(ctx, i).(GetEmailDomainsEmailDomainCollectionArrayOutput)
 }
 
-func (i GetEmailDomainsEmailDomainCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetEmailDomainsEmailDomainCollection] {
-	return pulumix.Output[[]GetEmailDomainsEmailDomainCollection]{
-		OutputState: i.ToGetEmailDomainsEmailDomainCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetEmailDomainsEmailDomainCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetEmailDomainsEmailDomainCollectionOutput) ElementType() reflect.Type {
@@ -592,12 +507,6 @@ func (o GetEmailDomainsEmailDomainCollectionOutput) ToGetEmailDomainsEmailDomain
 
 func (o GetEmailDomainsEmailDomainCollectionOutput) ToGetEmailDomainsEmailDomainCollectionOutputWithContext(ctx context.Context) GetEmailDomainsEmailDomainCollectionOutput {
 	return o
-}
-
-func (o GetEmailDomainsEmailDomainCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetEmailDomainsEmailDomainCollection] {
-	return pulumix.Output[GetEmailDomainsEmailDomainCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetEmailDomainsEmailDomainCollectionOutput) Items() GetEmailDomainsEmailDomainCollectionItemArrayOutput {
@@ -620,12 +529,6 @@ func (o GetEmailDomainsEmailDomainCollectionArrayOutput) ToGetEmailDomainsEmailD
 	return o
 }
 
-func (o GetEmailDomainsEmailDomainCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetEmailDomainsEmailDomainCollection] {
-	return pulumix.Output[[]GetEmailDomainsEmailDomainCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetEmailDomainsEmailDomainCollectionArrayOutput) Index(i pulumi.IntInput) GetEmailDomainsEmailDomainCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetEmailDomainsEmailDomainCollection {
 		return vs[0].([]GetEmailDomainsEmailDomainCollection)[vs[1].(int)]
@@ -634,27 +537,27 @@ func (o GetEmailDomainsEmailDomainCollectionArrayOutput) Index(i pulumi.IntInput
 
 type GetEmailDomainsEmailDomainCollectionItem struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DKIM key that will be used to sign mail sent from this email domain.
-	ActiveDkimId string `pulumi:"activeDkimId"`
+	ActiveDkimId *string `pulumi:"activeDkimId"`
 	// The OCID for the compartment.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The description of a email domain.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// A filter to only return resources that match the given id exactly.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Value of the SPF field. For more information about SPF, please see [SPF Authentication](https://docs.cloud.oracle.com/iaas/Content/Email/Concepts/overview.htm#components).
-	IsSpf bool `pulumi:"isSpf"`
+	IsSpf *bool `pulumi:"isSpf"`
 	// A filter to only return resources that match the given name exactly.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// Filter returned list by specified lifecycle state. This parameter is case-insensitive.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The time the email domain was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, "YYYY-MM-ddThh:mmZ".  Example: `2021-02-12T22:47:12.613Z`
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 }
 
 // GetEmailDomainsEmailDomainCollectionItemInput is an input type that accepts GetEmailDomainsEmailDomainCollectionItemArgs and GetEmailDomainsEmailDomainCollectionItemOutput values.
@@ -670,27 +573,27 @@ type GetEmailDomainsEmailDomainCollectionItemInput interface {
 
 type GetEmailDomainsEmailDomainCollectionItemArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DKIM key that will be used to sign mail sent from this email domain.
-	ActiveDkimId pulumi.StringInput `pulumi:"activeDkimId"`
+	ActiveDkimId pulumi.StringPtrInput `pulumi:"activeDkimId"`
 	// The OCID for the compartment.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// The description of a email domain.
-	Description pulumi.StringInput `pulumi:"description"`
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// A filter to only return resources that match the given id exactly.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// Value of the SPF field. For more information about SPF, please see [SPF Authentication](https://docs.cloud.oracle.com/iaas/Content/Email/Concepts/overview.htm#components).
-	IsSpf pulumi.BoolInput `pulumi:"isSpf"`
+	IsSpf pulumi.BoolPtrInput `pulumi:"isSpf"`
 	// A filter to only return resources that match the given name exactly.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// Filter returned list by specified lifecycle state. This parameter is case-insensitive.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapInput `pulumi:"systemTags"`
 	// The time the email domain was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, "YYYY-MM-ddThh:mmZ".  Example: `2021-02-12T22:47:12.613Z`
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 }
 
 func (GetEmailDomainsEmailDomainCollectionItemArgs) ElementType() reflect.Type {
@@ -703,12 +606,6 @@ func (i GetEmailDomainsEmailDomainCollectionItemArgs) ToGetEmailDomainsEmailDoma
 
 func (i GetEmailDomainsEmailDomainCollectionItemArgs) ToGetEmailDomainsEmailDomainCollectionItemOutputWithContext(ctx context.Context) GetEmailDomainsEmailDomainCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetEmailDomainsEmailDomainCollectionItemOutput)
-}
-
-func (i GetEmailDomainsEmailDomainCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetEmailDomainsEmailDomainCollectionItem] {
-	return pulumix.Output[GetEmailDomainsEmailDomainCollectionItem]{
-		OutputState: i.ToGetEmailDomainsEmailDomainCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetEmailDomainsEmailDomainCollectionItemArrayInput is an input type that accepts GetEmailDomainsEmailDomainCollectionItemArray and GetEmailDomainsEmailDomainCollectionItemArrayOutput values.
@@ -736,12 +633,6 @@ func (i GetEmailDomainsEmailDomainCollectionItemArray) ToGetEmailDomainsEmailDom
 	return pulumi.ToOutputWithContext(ctx, i).(GetEmailDomainsEmailDomainCollectionItemArrayOutput)
 }
 
-func (i GetEmailDomainsEmailDomainCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetEmailDomainsEmailDomainCollectionItem] {
-	return pulumix.Output[[]GetEmailDomainsEmailDomainCollectionItem]{
-		OutputState: i.ToGetEmailDomainsEmailDomainCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetEmailDomainsEmailDomainCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetEmailDomainsEmailDomainCollectionItemOutput) ElementType() reflect.Type {
@@ -756,20 +647,14 @@ func (o GetEmailDomainsEmailDomainCollectionItemOutput) ToGetEmailDomainsEmailDo
 	return o
 }
 
-func (o GetEmailDomainsEmailDomainCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetEmailDomainsEmailDomainCollectionItem] {
-	return pulumix.Output[GetEmailDomainsEmailDomainCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DKIM key that will be used to sign mail sent from this email domain.
-func (o GetEmailDomainsEmailDomainCollectionItemOutput) ActiveDkimId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetEmailDomainsEmailDomainCollectionItem) string { return v.ActiveDkimId }).(pulumi.StringOutput)
+func (o GetEmailDomainsEmailDomainCollectionItemOutput) ActiveDkimId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetEmailDomainsEmailDomainCollectionItem) *string { return v.ActiveDkimId }).(pulumi.StringPtrOutput)
 }
 
 // The OCID for the compartment.
-func (o GetEmailDomainsEmailDomainCollectionItemOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetEmailDomainsEmailDomainCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetEmailDomainsEmailDomainCollectionItemOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetEmailDomainsEmailDomainCollectionItem) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -778,8 +663,8 @@ func (o GetEmailDomainsEmailDomainCollectionItemOutput) DefinedTags() pulumi.Map
 }
 
 // The description of a email domain.
-func (o GetEmailDomainsEmailDomainCollectionItemOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetEmailDomainsEmailDomainCollectionItem) string { return v.Description }).(pulumi.StringOutput)
+func (o GetEmailDomainsEmailDomainCollectionItemOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetEmailDomainsEmailDomainCollectionItem) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -788,23 +673,23 @@ func (o GetEmailDomainsEmailDomainCollectionItemOutput) FreeformTags() pulumi.Ma
 }
 
 // A filter to only return resources that match the given id exactly.
-func (o GetEmailDomainsEmailDomainCollectionItemOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetEmailDomainsEmailDomainCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+func (o GetEmailDomainsEmailDomainCollectionItemOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetEmailDomainsEmailDomainCollectionItem) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Value of the SPF field. For more information about SPF, please see [SPF Authentication](https://docs.cloud.oracle.com/iaas/Content/Email/Concepts/overview.htm#components).
-func (o GetEmailDomainsEmailDomainCollectionItemOutput) IsSpf() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetEmailDomainsEmailDomainCollectionItem) bool { return v.IsSpf }).(pulumi.BoolOutput)
+func (o GetEmailDomainsEmailDomainCollectionItemOutput) IsSpf() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetEmailDomainsEmailDomainCollectionItem) *bool { return v.IsSpf }).(pulumi.BoolPtrOutput)
 }
 
 // A filter to only return resources that match the given name exactly.
-func (o GetEmailDomainsEmailDomainCollectionItemOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetEmailDomainsEmailDomainCollectionItem) string { return v.Name }).(pulumi.StringOutput)
+func (o GetEmailDomainsEmailDomainCollectionItemOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetEmailDomainsEmailDomainCollectionItem) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // Filter returned list by specified lifecycle state. This parameter is case-insensitive.
-func (o GetEmailDomainsEmailDomainCollectionItemOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetEmailDomainsEmailDomainCollectionItem) string { return v.State }).(pulumi.StringOutput)
+func (o GetEmailDomainsEmailDomainCollectionItemOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetEmailDomainsEmailDomainCollectionItem) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -813,8 +698,8 @@ func (o GetEmailDomainsEmailDomainCollectionItemOutput) SystemTags() pulumi.MapO
 }
 
 // The time the email domain was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, "YYYY-MM-ddThh:mmZ".  Example: `2021-02-12T22:47:12.613Z`
-func (o GetEmailDomainsEmailDomainCollectionItemOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetEmailDomainsEmailDomainCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetEmailDomainsEmailDomainCollectionItemOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetEmailDomainsEmailDomainCollectionItem) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 type GetEmailDomainsEmailDomainCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -829,12 +714,6 @@ func (o GetEmailDomainsEmailDomainCollectionItemArrayOutput) ToGetEmailDomainsEm
 
 func (o GetEmailDomainsEmailDomainCollectionItemArrayOutput) ToGetEmailDomainsEmailDomainCollectionItemArrayOutputWithContext(ctx context.Context) GetEmailDomainsEmailDomainCollectionItemArrayOutput {
 	return o
-}
-
-func (o GetEmailDomainsEmailDomainCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetEmailDomainsEmailDomainCollectionItem] {
-	return pulumix.Output[[]GetEmailDomainsEmailDomainCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetEmailDomainsEmailDomainCollectionItemArrayOutput) Index(i pulumi.IntInput) GetEmailDomainsEmailDomainCollectionItemOutput {
@@ -880,12 +759,6 @@ func (i GetEmailDomainsFilterArgs) ToGetEmailDomainsFilterOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(GetEmailDomainsFilterOutput)
 }
 
-func (i GetEmailDomainsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetEmailDomainsFilter] {
-	return pulumix.Output[GetEmailDomainsFilter]{
-		OutputState: i.ToGetEmailDomainsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetEmailDomainsFilterArrayInput is an input type that accepts GetEmailDomainsFilterArray and GetEmailDomainsFilterArrayOutput values.
 // You can construct a concrete instance of `GetEmailDomainsFilterArrayInput` via:
 //
@@ -911,12 +784,6 @@ func (i GetEmailDomainsFilterArray) ToGetEmailDomainsFilterArrayOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetEmailDomainsFilterArrayOutput)
 }
 
-func (i GetEmailDomainsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetEmailDomainsFilter] {
-	return pulumix.Output[[]GetEmailDomainsFilter]{
-		OutputState: i.ToGetEmailDomainsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetEmailDomainsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetEmailDomainsFilterOutput) ElementType() reflect.Type {
@@ -929,12 +796,6 @@ func (o GetEmailDomainsFilterOutput) ToGetEmailDomainsFilterOutput() GetEmailDom
 
 func (o GetEmailDomainsFilterOutput) ToGetEmailDomainsFilterOutputWithContext(ctx context.Context) GetEmailDomainsFilterOutput {
 	return o
-}
-
-func (o GetEmailDomainsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetEmailDomainsFilter] {
-	return pulumix.Output[GetEmailDomainsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A filter to only return resources that match the given name exactly.
@@ -962,12 +823,6 @@ func (o GetEmailDomainsFilterArrayOutput) ToGetEmailDomainsFilterArrayOutput() G
 
 func (o GetEmailDomainsFilterArrayOutput) ToGetEmailDomainsFilterArrayOutputWithContext(ctx context.Context) GetEmailDomainsFilterArrayOutput {
 	return o
-}
-
-func (o GetEmailDomainsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetEmailDomainsFilter] {
-	return pulumix.Output[[]GetEmailDomainsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetEmailDomainsFilterArrayOutput) Index(i pulumi.IntInput) GetEmailDomainsFilterOutput {
@@ -1011,12 +866,6 @@ func (i GetSendersFilterArgs) ToGetSendersFilterOutputWithContext(ctx context.Co
 	return pulumi.ToOutputWithContext(ctx, i).(GetSendersFilterOutput)
 }
 
-func (i GetSendersFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetSendersFilter] {
-	return pulumix.Output[GetSendersFilter]{
-		OutputState: i.ToGetSendersFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetSendersFilterArrayInput is an input type that accepts GetSendersFilterArray and GetSendersFilterArrayOutput values.
 // You can construct a concrete instance of `GetSendersFilterArrayInput` via:
 //
@@ -1042,12 +891,6 @@ func (i GetSendersFilterArray) ToGetSendersFilterArrayOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(GetSendersFilterArrayOutput)
 }
 
-func (i GetSendersFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSendersFilter] {
-	return pulumix.Output[[]GetSendersFilter]{
-		OutputState: i.ToGetSendersFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSendersFilterOutput struct{ *pulumi.OutputState }
 
 func (GetSendersFilterOutput) ElementType() reflect.Type {
@@ -1060,12 +903,6 @@ func (o GetSendersFilterOutput) ToGetSendersFilterOutput() GetSendersFilterOutpu
 
 func (o GetSendersFilterOutput) ToGetSendersFilterOutputWithContext(ctx context.Context) GetSendersFilterOutput {
 	return o
-}
-
-func (o GetSendersFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetSendersFilter] {
-	return pulumix.Output[GetSendersFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetSendersFilterOutput) Name() pulumi.StringOutput {
@@ -1094,12 +931,6 @@ func (o GetSendersFilterArrayOutput) ToGetSendersFilterArrayOutputWithContext(ct
 	return o
 }
 
-func (o GetSendersFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSendersFilter] {
-	return pulumix.Output[[]GetSendersFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSendersFilterArrayOutput) Index(i pulumi.IntInput) GetSendersFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSendersFilter {
 		return vs[0].([]GetSendersFilter)[vs[1].(int)]
@@ -1108,23 +939,23 @@ func (o GetSendersFilterArrayOutput) Index(i pulumi.IntInput) GetSendersFilterOu
 
 type GetSendersSender struct {
 	// The OCID for the compartment.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The email address of the approved sender.
-	EmailAddress string `pulumi:"emailAddress"`
+	EmailAddress *string `pulumi:"emailAddress"`
 	// The email domain used to assert responsibility for emails sent from this sender.
-	EmailDomainId string `pulumi:"emailDomainId"`
+	EmailDomainId *string `pulumi:"emailDomainId"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The unique OCID of the sender.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Value of the SPF field. For more information about SPF, please see [SPF Authentication](https://docs.cloud.oracle.com/iaas/Content/Email/Concepts/overview.htm#components).
-	IsSpf bool `pulumi:"isSpf"`
+	IsSpf *bool `pulumi:"isSpf"`
 	// The current state of a sender.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The date and time the approved sender was added in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by RFC 3339.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 }
 
 // GetSendersSenderInput is an input type that accepts GetSendersSenderArgs and GetSendersSenderOutput values.
@@ -1140,23 +971,23 @@ type GetSendersSenderInput interface {
 
 type GetSendersSenderArgs struct {
 	// The OCID for the compartment.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// The email address of the approved sender.
-	EmailAddress pulumi.StringInput `pulumi:"emailAddress"`
+	EmailAddress pulumi.StringPtrInput `pulumi:"emailAddress"`
 	// The email domain used to assert responsibility for emails sent from this sender.
-	EmailDomainId pulumi.StringInput `pulumi:"emailDomainId"`
+	EmailDomainId pulumi.StringPtrInput `pulumi:"emailDomainId"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// The unique OCID of the sender.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// Value of the SPF field. For more information about SPF, please see [SPF Authentication](https://docs.cloud.oracle.com/iaas/Content/Email/Concepts/overview.htm#components).
-	IsSpf pulumi.BoolInput `pulumi:"isSpf"`
+	IsSpf pulumi.BoolPtrInput `pulumi:"isSpf"`
 	// The current state of a sender.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// The date and time the approved sender was added in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by RFC 3339.
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 }
 
 func (GetSendersSenderArgs) ElementType() reflect.Type {
@@ -1169,12 +1000,6 @@ func (i GetSendersSenderArgs) ToGetSendersSenderOutput() GetSendersSenderOutput 
 
 func (i GetSendersSenderArgs) ToGetSendersSenderOutputWithContext(ctx context.Context) GetSendersSenderOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSendersSenderOutput)
-}
-
-func (i GetSendersSenderArgs) ToOutput(ctx context.Context) pulumix.Output[GetSendersSender] {
-	return pulumix.Output[GetSendersSender]{
-		OutputState: i.ToGetSendersSenderOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSendersSenderArrayInput is an input type that accepts GetSendersSenderArray and GetSendersSenderArrayOutput values.
@@ -1202,12 +1027,6 @@ func (i GetSendersSenderArray) ToGetSendersSenderArrayOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(GetSendersSenderArrayOutput)
 }
 
-func (i GetSendersSenderArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSendersSender] {
-	return pulumix.Output[[]GetSendersSender]{
-		OutputState: i.ToGetSendersSenderArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSendersSenderOutput struct{ *pulumi.OutputState }
 
 func (GetSendersSenderOutput) ElementType() reflect.Type {
@@ -1222,15 +1041,9 @@ func (o GetSendersSenderOutput) ToGetSendersSenderOutputWithContext(ctx context.
 	return o
 }
 
-func (o GetSendersSenderOutput) ToOutput(ctx context.Context) pulumix.Output[GetSendersSender] {
-	return pulumix.Output[GetSendersSender]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID for the compartment.
-func (o GetSendersSenderOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSendersSender) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetSendersSenderOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSendersSender) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -1239,13 +1052,13 @@ func (o GetSendersSenderOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // The email address of the approved sender.
-func (o GetSendersSenderOutput) EmailAddress() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSendersSender) string { return v.EmailAddress }).(pulumi.StringOutput)
+func (o GetSendersSenderOutput) EmailAddress() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSendersSender) *string { return v.EmailAddress }).(pulumi.StringPtrOutput)
 }
 
 // The email domain used to assert responsibility for emails sent from this sender.
-func (o GetSendersSenderOutput) EmailDomainId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSendersSender) string { return v.EmailDomainId }).(pulumi.StringOutput)
+func (o GetSendersSenderOutput) EmailDomainId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSendersSender) *string { return v.EmailDomainId }).(pulumi.StringPtrOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -1254,23 +1067,23 @@ func (o GetSendersSenderOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The unique OCID of the sender.
-func (o GetSendersSenderOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSendersSender) string { return v.Id }).(pulumi.StringOutput)
+func (o GetSendersSenderOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSendersSender) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Value of the SPF field. For more information about SPF, please see [SPF Authentication](https://docs.cloud.oracle.com/iaas/Content/Email/Concepts/overview.htm#components).
-func (o GetSendersSenderOutput) IsSpf() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetSendersSender) bool { return v.IsSpf }).(pulumi.BoolOutput)
+func (o GetSendersSenderOutput) IsSpf() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSendersSender) *bool { return v.IsSpf }).(pulumi.BoolPtrOutput)
 }
 
 // The current state of a sender.
-func (o GetSendersSenderOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSendersSender) string { return v.State }).(pulumi.StringOutput)
+func (o GetSendersSenderOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSendersSender) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the approved sender was added in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by RFC 3339.
-func (o GetSendersSenderOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSendersSender) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetSendersSenderOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSendersSender) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 type GetSendersSenderArrayOutput struct{ *pulumi.OutputState }
@@ -1285,12 +1098,6 @@ func (o GetSendersSenderArrayOutput) ToGetSendersSenderArrayOutput() GetSendersS
 
 func (o GetSendersSenderArrayOutput) ToGetSendersSenderArrayOutputWithContext(ctx context.Context) GetSendersSenderArrayOutput {
 	return o
-}
-
-func (o GetSendersSenderArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSendersSender] {
-	return pulumix.Output[[]GetSendersSender]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetSendersSenderArrayOutput) Index(i pulumi.IntInput) GetSendersSenderOutput {
@@ -1334,12 +1141,6 @@ func (i GetSuppressionsFilterArgs) ToGetSuppressionsFilterOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(GetSuppressionsFilterOutput)
 }
 
-func (i GetSuppressionsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetSuppressionsFilter] {
-	return pulumix.Output[GetSuppressionsFilter]{
-		OutputState: i.ToGetSuppressionsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetSuppressionsFilterArrayInput is an input type that accepts GetSuppressionsFilterArray and GetSuppressionsFilterArrayOutput values.
 // You can construct a concrete instance of `GetSuppressionsFilterArrayInput` via:
 //
@@ -1365,12 +1166,6 @@ func (i GetSuppressionsFilterArray) ToGetSuppressionsFilterArrayOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetSuppressionsFilterArrayOutput)
 }
 
-func (i GetSuppressionsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSuppressionsFilter] {
-	return pulumix.Output[[]GetSuppressionsFilter]{
-		OutputState: i.ToGetSuppressionsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSuppressionsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetSuppressionsFilterOutput) ElementType() reflect.Type {
@@ -1383,12 +1178,6 @@ func (o GetSuppressionsFilterOutput) ToGetSuppressionsFilterOutput() GetSuppress
 
 func (o GetSuppressionsFilterOutput) ToGetSuppressionsFilterOutputWithContext(ctx context.Context) GetSuppressionsFilterOutput {
 	return o
-}
-
-func (o GetSuppressionsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetSuppressionsFilter] {
-	return pulumix.Output[GetSuppressionsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetSuppressionsFilterOutput) Name() pulumi.StringOutput {
@@ -1417,12 +1206,6 @@ func (o GetSuppressionsFilterArrayOutput) ToGetSuppressionsFilterArrayOutputWith
 	return o
 }
 
-func (o GetSuppressionsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSuppressionsFilter] {
-	return pulumix.Output[[]GetSuppressionsFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSuppressionsFilterArrayOutput) Index(i pulumi.IntInput) GetSuppressionsFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSuppressionsFilter {
 		return vs[0].([]GetSuppressionsFilter)[vs[1].(int)]
@@ -1431,23 +1214,23 @@ func (o GetSuppressionsFilterArrayOutput) Index(i pulumi.IntInput) GetSuppressio
 
 type GetSuppressionsSuppression struct {
 	// The OCID for the compartment.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// The email address of the suppression.
-	EmailAddress string `pulumi:"emailAddress"`
+	EmailAddress *string `pulumi:"emailAddress"`
 	// The specific error message returned by a system that resulted in the suppression. This message is usually an SMTP error code with additional descriptive text. Not provided for all types of suppressions.
-	ErrorDetail string `pulumi:"errorDetail"`
+	ErrorDetail *string `pulumi:"errorDetail"`
 	// DNS name of the source of the error that caused the suppression. Will be set to either the remote-mta or reporting-mta field from a delivery status notification (RFC 3464) when available. Not provided for all types of suppressions, and not always known.
-	ErrorSource string `pulumi:"errorSource"`
+	ErrorSource *string `pulumi:"errorSource"`
 	// The unique OCID of the suppression.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The value of the Message-ID header from the email that triggered a suppression. This value is as defined in RFC 5322 section 3.6.4, excluding angle-brackets. Not provided for all types of suppressions.
-	MessageId string `pulumi:"messageId"`
+	MessageId *string `pulumi:"messageId"`
 	// The reason that the email address was suppressed. For more information on the types of bounces, see [Suppression List](https://docs.cloud.oracle.com/iaas/Content/Email/Concepts/overview.htm#components).
-	Reason string `pulumi:"reason"`
+	Reason *string `pulumi:"reason"`
 	// The date and time a recipient's email address was added to the suppression list, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by RFC 3339.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The last date and time the suppression prevented submission in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by RFC 3339.
-	TimeLastSuppressed string `pulumi:"timeLastSuppressed"`
+	TimeLastSuppressed *string `pulumi:"timeLastSuppressed"`
 }
 
 // GetSuppressionsSuppressionInput is an input type that accepts GetSuppressionsSuppressionArgs and GetSuppressionsSuppressionOutput values.
@@ -1463,23 +1246,23 @@ type GetSuppressionsSuppressionInput interface {
 
 type GetSuppressionsSuppressionArgs struct {
 	// The OCID for the compartment.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// The email address of the suppression.
-	EmailAddress pulumi.StringInput `pulumi:"emailAddress"`
+	EmailAddress pulumi.StringPtrInput `pulumi:"emailAddress"`
 	// The specific error message returned by a system that resulted in the suppression. This message is usually an SMTP error code with additional descriptive text. Not provided for all types of suppressions.
-	ErrorDetail pulumi.StringInput `pulumi:"errorDetail"`
+	ErrorDetail pulumi.StringPtrInput `pulumi:"errorDetail"`
 	// DNS name of the source of the error that caused the suppression. Will be set to either the remote-mta or reporting-mta field from a delivery status notification (RFC 3464) when available. Not provided for all types of suppressions, and not always known.
-	ErrorSource pulumi.StringInput `pulumi:"errorSource"`
+	ErrorSource pulumi.StringPtrInput `pulumi:"errorSource"`
 	// The unique OCID of the suppression.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// The value of the Message-ID header from the email that triggered a suppression. This value is as defined in RFC 5322 section 3.6.4, excluding angle-brackets. Not provided for all types of suppressions.
-	MessageId pulumi.StringInput `pulumi:"messageId"`
+	MessageId pulumi.StringPtrInput `pulumi:"messageId"`
 	// The reason that the email address was suppressed. For more information on the types of bounces, see [Suppression List](https://docs.cloud.oracle.com/iaas/Content/Email/Concepts/overview.htm#components).
-	Reason pulumi.StringInput `pulumi:"reason"`
+	Reason pulumi.StringPtrInput `pulumi:"reason"`
 	// The date and time a recipient's email address was added to the suppression list, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by RFC 3339.
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// The last date and time the suppression prevented submission in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by RFC 3339.
-	TimeLastSuppressed pulumi.StringInput `pulumi:"timeLastSuppressed"`
+	TimeLastSuppressed pulumi.StringPtrInput `pulumi:"timeLastSuppressed"`
 }
 
 func (GetSuppressionsSuppressionArgs) ElementType() reflect.Type {
@@ -1492,12 +1275,6 @@ func (i GetSuppressionsSuppressionArgs) ToGetSuppressionsSuppressionOutput() Get
 
 func (i GetSuppressionsSuppressionArgs) ToGetSuppressionsSuppressionOutputWithContext(ctx context.Context) GetSuppressionsSuppressionOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSuppressionsSuppressionOutput)
-}
-
-func (i GetSuppressionsSuppressionArgs) ToOutput(ctx context.Context) pulumix.Output[GetSuppressionsSuppression] {
-	return pulumix.Output[GetSuppressionsSuppression]{
-		OutputState: i.ToGetSuppressionsSuppressionOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSuppressionsSuppressionArrayInput is an input type that accepts GetSuppressionsSuppressionArray and GetSuppressionsSuppressionArrayOutput values.
@@ -1525,12 +1302,6 @@ func (i GetSuppressionsSuppressionArray) ToGetSuppressionsSuppressionArrayOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetSuppressionsSuppressionArrayOutput)
 }
 
-func (i GetSuppressionsSuppressionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSuppressionsSuppression] {
-	return pulumix.Output[[]GetSuppressionsSuppression]{
-		OutputState: i.ToGetSuppressionsSuppressionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSuppressionsSuppressionOutput struct{ *pulumi.OutputState }
 
 func (GetSuppressionsSuppressionOutput) ElementType() reflect.Type {
@@ -1545,55 +1316,49 @@ func (o GetSuppressionsSuppressionOutput) ToGetSuppressionsSuppressionOutputWith
 	return o
 }
 
-func (o GetSuppressionsSuppressionOutput) ToOutput(ctx context.Context) pulumix.Output[GetSuppressionsSuppression] {
-	return pulumix.Output[GetSuppressionsSuppression]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID for the compartment.
-func (o GetSuppressionsSuppressionOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSuppressionsSuppression) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetSuppressionsSuppressionOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSuppressionsSuppression) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // The email address of the suppression.
-func (o GetSuppressionsSuppressionOutput) EmailAddress() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSuppressionsSuppression) string { return v.EmailAddress }).(pulumi.StringOutput)
+func (o GetSuppressionsSuppressionOutput) EmailAddress() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSuppressionsSuppression) *string { return v.EmailAddress }).(pulumi.StringPtrOutput)
 }
 
 // The specific error message returned by a system that resulted in the suppression. This message is usually an SMTP error code with additional descriptive text. Not provided for all types of suppressions.
-func (o GetSuppressionsSuppressionOutput) ErrorDetail() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSuppressionsSuppression) string { return v.ErrorDetail }).(pulumi.StringOutput)
+func (o GetSuppressionsSuppressionOutput) ErrorDetail() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSuppressionsSuppression) *string { return v.ErrorDetail }).(pulumi.StringPtrOutput)
 }
 
 // DNS name of the source of the error that caused the suppression. Will be set to either the remote-mta or reporting-mta field from a delivery status notification (RFC 3464) when available. Not provided for all types of suppressions, and not always known.
-func (o GetSuppressionsSuppressionOutput) ErrorSource() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSuppressionsSuppression) string { return v.ErrorSource }).(pulumi.StringOutput)
+func (o GetSuppressionsSuppressionOutput) ErrorSource() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSuppressionsSuppression) *string { return v.ErrorSource }).(pulumi.StringPtrOutput)
 }
 
 // The unique OCID of the suppression.
-func (o GetSuppressionsSuppressionOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSuppressionsSuppression) string { return v.Id }).(pulumi.StringOutput)
+func (o GetSuppressionsSuppressionOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSuppressionsSuppression) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The value of the Message-ID header from the email that triggered a suppression. This value is as defined in RFC 5322 section 3.6.4, excluding angle-brackets. Not provided for all types of suppressions.
-func (o GetSuppressionsSuppressionOutput) MessageId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSuppressionsSuppression) string { return v.MessageId }).(pulumi.StringOutput)
+func (o GetSuppressionsSuppressionOutput) MessageId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSuppressionsSuppression) *string { return v.MessageId }).(pulumi.StringPtrOutput)
 }
 
 // The reason that the email address was suppressed. For more information on the types of bounces, see [Suppression List](https://docs.cloud.oracle.com/iaas/Content/Email/Concepts/overview.htm#components).
-func (o GetSuppressionsSuppressionOutput) Reason() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSuppressionsSuppression) string { return v.Reason }).(pulumi.StringOutput)
+func (o GetSuppressionsSuppressionOutput) Reason() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSuppressionsSuppression) *string { return v.Reason }).(pulumi.StringPtrOutput)
 }
 
 // The date and time a recipient's email address was added to the suppression list, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by RFC 3339.
-func (o GetSuppressionsSuppressionOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSuppressionsSuppression) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetSuppressionsSuppressionOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSuppressionsSuppression) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The last date and time the suppression prevented submission in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by RFC 3339.
-func (o GetSuppressionsSuppressionOutput) TimeLastSuppressed() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSuppressionsSuppression) string { return v.TimeLastSuppressed }).(pulumi.StringOutput)
+func (o GetSuppressionsSuppressionOutput) TimeLastSuppressed() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSuppressionsSuppression) *string { return v.TimeLastSuppressed }).(pulumi.StringPtrOutput)
 }
 
 type GetSuppressionsSuppressionArrayOutput struct{ *pulumi.OutputState }
@@ -1608,12 +1373,6 @@ func (o GetSuppressionsSuppressionArrayOutput) ToGetSuppressionsSuppressionArray
 
 func (o GetSuppressionsSuppressionArrayOutput) ToGetSuppressionsSuppressionArrayOutputWithContext(ctx context.Context) GetSuppressionsSuppressionArrayOutput {
 	return o
-}
-
-func (o GetSuppressionsSuppressionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSuppressionsSuppression] {
-	return pulumix.Output[[]GetSuppressionsSuppression]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetSuppressionsSuppressionArrayOutput) Index(i pulumi.IntInput) GetSuppressionsSuppressionOutput {

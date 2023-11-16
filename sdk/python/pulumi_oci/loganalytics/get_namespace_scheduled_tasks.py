@@ -49,17 +49,11 @@ class GetNamespaceScheduledTasksResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        A user-friendly name that is changeable and that does not have to be unique. Format: a leading alphanumeric, followed by zero or more alphanumerics, underscores, spaces, backslashes, or hyphens in any order). No trailing spaces allowed.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -69,7 +63,7 @@ class GetNamespaceScheduledTasksResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -82,18 +76,12 @@ class GetNamespaceScheduledTasksResult:
 
     @property
     @pulumi.getter(name="scheduledTaskCollections")
-    def scheduled_task_collections(self) -> Sequence['outputs.GetNamespaceScheduledTasksScheduledTaskCollectionResult']:
-        """
-        The list of scheduled_task_collection.
-        """
+    def scheduled_task_collections(self) -> Optional[Sequence['outputs.GetNamespaceScheduledTasksScheduledTaskCollectionResult']]:
         return pulumi.get(self, "scheduled_task_collections")
 
     @property
     @pulumi.getter(name="taskType")
     def task_type(self) -> str:
-        """
-        Task type.
-        """
         return pulumi.get(self, "task_type")
 
 
@@ -119,27 +107,7 @@ def get_namespace_scheduled_tasks(compartment_id: Optional[str] = None,
                                   task_type: Optional[str] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetNamespaceScheduledTasksResult:
     """
-    This data source provides the list of Namespace Scheduled Tasks in Oracle Cloud Infrastructure Log Analytics service.
-
-    Lists scheduled tasks.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_namespace_scheduled_tasks = oci.LogAnalytics.get_namespace_scheduled_tasks(compartment_id=var["compartment_id"],
-        namespace=var["namespace_scheduled_task_namespace"],
-        display_name=var["namespace_scheduled_task_display_name"],
-        task_type=var["namespace_scheduled_task_task_type"])
-    ```
-
-
-    :param str compartment_id: The ID of the compartment in which to list resources.
-    :param str display_name: A filter to return only resources that match the given display name exactly.
-    :param str namespace: The Logging Analytics namespace used for the request.
-    :param str task_type: Required parameter to specify schedule task type.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -168,26 +136,6 @@ def get_namespace_scheduled_tasks_output(compartment_id: Optional[pulumi.Input[s
                                          task_type: Optional[pulumi.Input[str]] = None,
                                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNamespaceScheduledTasksResult]:
     """
-    This data source provides the list of Namespace Scheduled Tasks in Oracle Cloud Infrastructure Log Analytics service.
-
-    Lists scheduled tasks.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_namespace_scheduled_tasks = oci.LogAnalytics.get_namespace_scheduled_tasks(compartment_id=var["compartment_id"],
-        namespace=var["namespace_scheduled_task_namespace"],
-        display_name=var["namespace_scheduled_task_display_name"],
-        task_type=var["namespace_scheduled_task_task_type"])
-    ```
-
-
-    :param str compartment_id: The ID of the compartment in which to list resources.
-    :param str display_name: A filter to return only resources that match the given display name exactly.
-    :param str namespace: The Logging Analytics namespace used for the request.
-    :param str task_type: Required parameter to specify schedule task type.
+    Use this data source to access information about an existing resource.
     """
     ...

@@ -25,7 +25,7 @@ namespace Pulumi.Oci.DevOps.Outputs
         /// <summary>
         /// Source of the trigger. Allowed values are, GITHUB and GITLAB.
         /// </summary>
-        public readonly string TriggerSource;
+        public readonly string? TriggerSource;
 
         [OutputConstructor]
         private GetBuildRunBuildRunSourceTriggerInfoActionFilterResult(
@@ -35,7 +35,7 @@ namespace Pulumi.Oci.DevOps.Outputs
 
             ImmutableArray<Outputs.GetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeResult> includes,
 
-            string triggerSource)
+            string? triggerSource)
         {
             Events = events;
             Excludes = excludes;

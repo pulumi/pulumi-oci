@@ -9,6 +9,7 @@ import com.pulumi.oci.NetworkLoadBalancer.outputs.GetNetworkLoadBalancersProtoco
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 @CustomType
@@ -18,12 +19,12 @@ public final class GetNetworkLoadBalancersProtocolsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The list of network_load_balancers_protocol_collection.
      * 
      */
-    private List<GetNetworkLoadBalancersProtocolsNetworkLoadBalancersProtocolCollection> networkLoadBalancersProtocolCollections;
+    private @Nullable List<GetNetworkLoadBalancersProtocolsNetworkLoadBalancersProtocolCollection> networkLoadBalancersProtocolCollections;
 
     private GetNetworkLoadBalancersProtocolsResult() {}
     public List<GetNetworkLoadBalancersProtocolsFilter> filters() {
@@ -33,15 +34,15 @@ public final class GetNetworkLoadBalancersProtocolsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The list of network_load_balancers_protocol_collection.
      * 
      */
     public List<GetNetworkLoadBalancersProtocolsNetworkLoadBalancersProtocolCollection> networkLoadBalancersProtocolCollections() {
-        return this.networkLoadBalancersProtocolCollections;
+        return this.networkLoadBalancersProtocolCollections == null ? List.of() : this.networkLoadBalancersProtocolCollections;
     }
 
     public static Builder builder() {
@@ -54,8 +55,8 @@ public final class GetNetworkLoadBalancersProtocolsResult {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable List<GetNetworkLoadBalancersProtocolsFilter> filters;
-        private String id;
-        private List<GetNetworkLoadBalancersProtocolsNetworkLoadBalancersProtocolCollection> networkLoadBalancersProtocolCollections;
+        private @Nullable String id;
+        private @Nullable List<GetNetworkLoadBalancersProtocolsNetworkLoadBalancersProtocolCollection> networkLoadBalancersProtocolCollections;
         public Builder() {}
         public Builder(GetNetworkLoadBalancersProtocolsResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -73,13 +74,13 @@ public final class GetNetworkLoadBalancersProtocolsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder networkLoadBalancersProtocolCollections(List<GetNetworkLoadBalancersProtocolsNetworkLoadBalancersProtocolCollection> networkLoadBalancersProtocolCollections) {
-            this.networkLoadBalancersProtocolCollections = Objects.requireNonNull(networkLoadBalancersProtocolCollections);
+        public Builder networkLoadBalancersProtocolCollections(@Nullable List<GetNetworkLoadBalancersProtocolsNetworkLoadBalancersProtocolCollection> networkLoadBalancersProtocolCollections) {
+            this.networkLoadBalancersProtocolCollections = networkLoadBalancersProtocolCollections;
             return this;
         }
         public Builder networkLoadBalancersProtocolCollections(GetNetworkLoadBalancersProtocolsNetworkLoadBalancersProtocolCollection... networkLoadBalancersProtocolCollections) {

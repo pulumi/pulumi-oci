@@ -10,6 +10,8 @@ import com.pulumi.oci.Core.outputs.GetCaptureFilterVtapCaptureFilterRuleUdpOptio
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetCaptureFilterVtapCaptureFilterRule {
@@ -17,14 +19,14 @@ public final class GetCaptureFilterVtapCaptureFilterRule {
      * @return Traffic sent to this CIDR block through the VTAP source will be mirrored to the VTAP target.
      * 
      */
-    private String destinationCidr;
+    private @Nullable String destinationCidr;
     /**
      * @return Optional and valid only for ICMP and ICMPv6. Use to specify a particular ICMP type and code as defined in:
      * * [ICMP Parameters](http://www.iana.org/assignments/icmp-parameters/icmp-parameters.xhtml)
      * * [ICMPv6 Parameters](https://www.iana.org/assignments/icmpv6-parameters/icmpv6-parameters.xhtml)
      * 
      */
-    private List<GetCaptureFilterVtapCaptureFilterRuleIcmpOption> icmpOptions;
+    private @Nullable List<GetCaptureFilterVtapCaptureFilterRuleIcmpOption> icmpOptions;
     /**
      * @return The transport protocol used in the filter. If do not choose a protocol, all protocols will be used in the filter. Supported options are:
      * * 1 = ICMP
@@ -32,40 +34,40 @@ public final class GetCaptureFilterVtapCaptureFilterRule {
      * * 17 = UDP
      * 
      */
-    private String protocol;
+    private @Nullable String protocol;
     /**
      * @return Include or exclude packets meeting this definition from mirrored traffic.
      * 
      */
-    private String ruleAction;
+    private @Nullable String ruleAction;
     /**
      * @return Traffic from this CIDR block to the VTAP source will be mirrored to the VTAP target.
      * 
      */
-    private String sourceCidr;
+    private @Nullable String sourceCidr;
     /**
      * @return Optional and valid only for TCP. Use to specify particular destination ports for TCP rules. If you specify TCP as the protocol but omit this object, then all destination ports are allowed.
      * 
      */
-    private List<GetCaptureFilterVtapCaptureFilterRuleTcpOption> tcpOptions;
+    private @Nullable List<GetCaptureFilterVtapCaptureFilterRuleTcpOption> tcpOptions;
     /**
      * @return The traffic direction the VTAP is configured to mirror.
      * 
      */
-    private String trafficDirection;
+    private @Nullable String trafficDirection;
     /**
      * @return Optional and valid only for UDP. Use to specify particular destination ports for UDP rules. If you specify UDP as the protocol but omit this object, then all destination ports are allowed.
      * 
      */
-    private List<GetCaptureFilterVtapCaptureFilterRuleUdpOption> udpOptions;
+    private @Nullable List<GetCaptureFilterVtapCaptureFilterRuleUdpOption> udpOptions;
 
     private GetCaptureFilterVtapCaptureFilterRule() {}
     /**
      * @return Traffic sent to this CIDR block through the VTAP source will be mirrored to the VTAP target.
      * 
      */
-    public String destinationCidr() {
-        return this.destinationCidr;
+    public Optional<String> destinationCidr() {
+        return Optional.ofNullable(this.destinationCidr);
     }
     /**
      * @return Optional and valid only for ICMP and ICMPv6. Use to specify a particular ICMP type and code as defined in:
@@ -74,7 +76,7 @@ public final class GetCaptureFilterVtapCaptureFilterRule {
      * 
      */
     public List<GetCaptureFilterVtapCaptureFilterRuleIcmpOption> icmpOptions() {
-        return this.icmpOptions;
+        return this.icmpOptions == null ? List.of() : this.icmpOptions;
     }
     /**
      * @return The transport protocol used in the filter. If do not choose a protocol, all protocols will be used in the filter. Supported options are:
@@ -83,43 +85,43 @@ public final class GetCaptureFilterVtapCaptureFilterRule {
      * * 17 = UDP
      * 
      */
-    public String protocol() {
-        return this.protocol;
+    public Optional<String> protocol() {
+        return Optional.ofNullable(this.protocol);
     }
     /**
      * @return Include or exclude packets meeting this definition from mirrored traffic.
      * 
      */
-    public String ruleAction() {
-        return this.ruleAction;
+    public Optional<String> ruleAction() {
+        return Optional.ofNullable(this.ruleAction);
     }
     /**
      * @return Traffic from this CIDR block to the VTAP source will be mirrored to the VTAP target.
      * 
      */
-    public String sourceCidr() {
-        return this.sourceCidr;
+    public Optional<String> sourceCidr() {
+        return Optional.ofNullable(this.sourceCidr);
     }
     /**
      * @return Optional and valid only for TCP. Use to specify particular destination ports for TCP rules. If you specify TCP as the protocol but omit this object, then all destination ports are allowed.
      * 
      */
     public List<GetCaptureFilterVtapCaptureFilterRuleTcpOption> tcpOptions() {
-        return this.tcpOptions;
+        return this.tcpOptions == null ? List.of() : this.tcpOptions;
     }
     /**
      * @return The traffic direction the VTAP is configured to mirror.
      * 
      */
-    public String trafficDirection() {
-        return this.trafficDirection;
+    public Optional<String> trafficDirection() {
+        return Optional.ofNullable(this.trafficDirection);
     }
     /**
      * @return Optional and valid only for UDP. Use to specify particular destination ports for UDP rules. If you specify UDP as the protocol but omit this object, then all destination ports are allowed.
      * 
      */
     public List<GetCaptureFilterVtapCaptureFilterRuleUdpOption> udpOptions() {
-        return this.udpOptions;
+        return this.udpOptions == null ? List.of() : this.udpOptions;
     }
 
     public static Builder builder() {
@@ -131,14 +133,14 @@ public final class GetCaptureFilterVtapCaptureFilterRule {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String destinationCidr;
-        private List<GetCaptureFilterVtapCaptureFilterRuleIcmpOption> icmpOptions;
-        private String protocol;
-        private String ruleAction;
-        private String sourceCidr;
-        private List<GetCaptureFilterVtapCaptureFilterRuleTcpOption> tcpOptions;
-        private String trafficDirection;
-        private List<GetCaptureFilterVtapCaptureFilterRuleUdpOption> udpOptions;
+        private @Nullable String destinationCidr;
+        private @Nullable List<GetCaptureFilterVtapCaptureFilterRuleIcmpOption> icmpOptions;
+        private @Nullable String protocol;
+        private @Nullable String ruleAction;
+        private @Nullable String sourceCidr;
+        private @Nullable List<GetCaptureFilterVtapCaptureFilterRuleTcpOption> tcpOptions;
+        private @Nullable String trafficDirection;
+        private @Nullable List<GetCaptureFilterVtapCaptureFilterRuleUdpOption> udpOptions;
         public Builder() {}
         public Builder(GetCaptureFilterVtapCaptureFilterRule defaults) {
     	      Objects.requireNonNull(defaults);
@@ -153,49 +155,49 @@ public final class GetCaptureFilterVtapCaptureFilterRule {
         }
 
         @CustomType.Setter
-        public Builder destinationCidr(String destinationCidr) {
-            this.destinationCidr = Objects.requireNonNull(destinationCidr);
+        public Builder destinationCidr(@Nullable String destinationCidr) {
+            this.destinationCidr = destinationCidr;
             return this;
         }
         @CustomType.Setter
-        public Builder icmpOptions(List<GetCaptureFilterVtapCaptureFilterRuleIcmpOption> icmpOptions) {
-            this.icmpOptions = Objects.requireNonNull(icmpOptions);
+        public Builder icmpOptions(@Nullable List<GetCaptureFilterVtapCaptureFilterRuleIcmpOption> icmpOptions) {
+            this.icmpOptions = icmpOptions;
             return this;
         }
         public Builder icmpOptions(GetCaptureFilterVtapCaptureFilterRuleIcmpOption... icmpOptions) {
             return icmpOptions(List.of(icmpOptions));
         }
         @CustomType.Setter
-        public Builder protocol(String protocol) {
-            this.protocol = Objects.requireNonNull(protocol);
+        public Builder protocol(@Nullable String protocol) {
+            this.protocol = protocol;
             return this;
         }
         @CustomType.Setter
-        public Builder ruleAction(String ruleAction) {
-            this.ruleAction = Objects.requireNonNull(ruleAction);
+        public Builder ruleAction(@Nullable String ruleAction) {
+            this.ruleAction = ruleAction;
             return this;
         }
         @CustomType.Setter
-        public Builder sourceCidr(String sourceCidr) {
-            this.sourceCidr = Objects.requireNonNull(sourceCidr);
+        public Builder sourceCidr(@Nullable String sourceCidr) {
+            this.sourceCidr = sourceCidr;
             return this;
         }
         @CustomType.Setter
-        public Builder tcpOptions(List<GetCaptureFilterVtapCaptureFilterRuleTcpOption> tcpOptions) {
-            this.tcpOptions = Objects.requireNonNull(tcpOptions);
+        public Builder tcpOptions(@Nullable List<GetCaptureFilterVtapCaptureFilterRuleTcpOption> tcpOptions) {
+            this.tcpOptions = tcpOptions;
             return this;
         }
         public Builder tcpOptions(GetCaptureFilterVtapCaptureFilterRuleTcpOption... tcpOptions) {
             return tcpOptions(List.of(tcpOptions));
         }
         @CustomType.Setter
-        public Builder trafficDirection(String trafficDirection) {
-            this.trafficDirection = Objects.requireNonNull(trafficDirection);
+        public Builder trafficDirection(@Nullable String trafficDirection) {
+            this.trafficDirection = trafficDirection;
             return this;
         }
         @CustomType.Setter
-        public Builder udpOptions(List<GetCaptureFilterVtapCaptureFilterRuleUdpOption> udpOptions) {
-            this.udpOptions = Objects.requireNonNull(udpOptions);
+        public Builder udpOptions(@Nullable List<GetCaptureFilterVtapCaptureFilterRuleUdpOption> udpOptions) {
+            this.udpOptions = udpOptions;
             return this;
         }
         public Builder udpOptions(GetCaptureFilterVtapCaptureFilterRuleUdpOption... udpOptions) {

@@ -16,17 +16,17 @@ namespace Pulumi.Oci.Functions.Outputs
         /// <summary>
         /// The OCID of the collector (e.g. an APM Domain) trace events will be sent to.
         /// </summary>
-        public readonly string DomainId;
+        public readonly string? DomainId;
         /// <summary>
         /// Define if tracing is enabled for the resource.
         /// </summary>
-        public readonly bool IsEnabled;
+        public readonly bool? IsEnabled;
 
         [OutputConstructor]
         private GetApplicationTraceConfigResult(
-            string domainId,
+            string? domainId,
 
-            bool isEnabled)
+            bool? isEnabled)
         {
             DomainId = domainId;
             IsEnabled = isEnabled;

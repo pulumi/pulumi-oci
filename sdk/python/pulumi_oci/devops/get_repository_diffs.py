@@ -53,10 +53,7 @@ class GetRepositoryDiffsResult:
 
     @property
     @pulumi.getter(name="diffCollections")
-    def diff_collections(self) -> Sequence['outputs.GetRepositoryDiffsDiffCollectionResult']:
-        """
-        The list of diff_collection.
-        """
+    def diff_collections(self) -> Optional[Sequence['outputs.GetRepositoryDiffsDiffCollectionResult']]:
         return pulumi.get(self, "diff_collections")
 
     @property
@@ -66,7 +63,7 @@ class GetRepositoryDiffsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -110,27 +107,7 @@ def get_repository_diffs(base_version: Optional[str] = None,
                          target_version: Optional[str] = None,
                          opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetRepositoryDiffsResult:
     """
-    This data source provides the list of Repository Diffs in Oracle Cloud Infrastructure Devops service.
-
-    Compares two revisions and lists the differences. Supports comparison between two references or commits.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_repository_diffs = oci.DevOps.get_repository_diffs(base_version=var["repository_diff_base_version"],
-        repository_id=oci_devops_repository["test_repository"]["id"],
-        target_version=var["repository_diff_target_version"],
-        is_comparison_from_merge_base=var["repository_diff_is_comparison_from_merge_base"])
-    ```
-
-
-    :param str base_version: The commit or reference name to compare changes against.
-    :param bool is_comparison_from_merge_base: Boolean value to indicate whether to use merge base or most recent revision.
-    :param str repository_id: Unique repository identifier.
-    :param str target_version: The commit or reference name where changes are coming from.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['baseVersion'] = base_version
@@ -159,26 +136,6 @@ def get_repository_diffs_output(base_version: Optional[pulumi.Input[str]] = None
                                 target_version: Optional[pulumi.Input[str]] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetRepositoryDiffsResult]:
     """
-    This data source provides the list of Repository Diffs in Oracle Cloud Infrastructure Devops service.
-
-    Compares two revisions and lists the differences. Supports comparison between two references or commits.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_repository_diffs = oci.DevOps.get_repository_diffs(base_version=var["repository_diff_base_version"],
-        repository_id=oci_devops_repository["test_repository"]["id"],
-        target_version=var["repository_diff_target_version"],
-        is_comparison_from_merge_base=var["repository_diff_is_comparison_from_merge_base"])
-    ```
-
-
-    :param str base_version: The commit or reference name to compare changes against.
-    :param bool is_comparison_from_merge_base: Boolean value to indicate whether to use merge base or most recent revision.
-    :param str repository_id: Unique repository identifier.
-    :param str target_version: The commit or reference name where changes are coming from.
+    Use this data source to access information about an existing resource.
     """
     ...

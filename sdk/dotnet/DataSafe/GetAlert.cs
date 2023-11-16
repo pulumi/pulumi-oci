@@ -109,75 +109,75 @@ namespace Pulumi.Oci.DataSafe
         /// <summary>
         /// Type of the alert. Indicates the Data Safe feature triggering the alert.
         /// </summary>
-        public readonly string AlertType;
+        public readonly string? AlertType;
         /// <summary>
         /// A comment for the alert. Entered by the user.
         /// </summary>
-        public readonly string Comment;
+        public readonly string? Comment;
         /// <summary>
         /// The OCID of the compartment that contains the alert.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// The description of the alert.
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// The display name of the alert.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// Map that contains maps of values. Example: `{"Operations": {"CostCenter": "42"}}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FeatureDetails;
+        public readonly ImmutableDictionary<string, object>? FeatureDetails;
         /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// The OCID of the alert.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The operation (event) that triggered alert.
         /// </summary>
-        public readonly string Operation;
+        public readonly string? Operation;
         /// <summary>
         /// The result of the operation (event) that triggered alert.
         /// </summary>
-        public readonly string OperationStatus;
+        public readonly string? OperationStatus;
         /// <summary>
         /// Creation date and time of the operation that triggered alert, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         /// </summary>
-        public readonly string OperationTime;
+        public readonly string? OperationTime;
         /// <summary>
         /// The OCID of the policy that triggered alert.
         /// </summary>
-        public readonly string PolicyId;
+        public readonly string? PolicyId;
         /// <summary>
         /// The resource endpoint that triggered the alert.
         /// </summary>
-        public readonly string ResourceName;
+        public readonly string? ResourceName;
         /// <summary>
         /// Severity level of the alert.
         /// </summary>
-        public readonly string Severity;
+        public readonly string? Severity;
         /// <summary>
         /// The current state of the alert.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// The status of the alert.
         /// </summary>
-        public readonly string Status;
+        public readonly string? Status;
         /// <summary>
         /// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> SystemTags;
+        public readonly ImmutableDictionary<string, object>? SystemTags;
         /// <summary>
         /// Array of OCIDs of the target database which are associated with the alert.
         /// </summary>
@@ -189,59 +189,59 @@ namespace Pulumi.Oci.DataSafe
         /// <summary>
         /// Creation date and time of the alert, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// Last date and time the alert was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         /// </summary>
-        public readonly string TimeUpdated;
+        public readonly string? TimeUpdated;
 
         [OutputConstructor]
         private GetAlertResult(
             string alertId,
 
-            string alertType,
+            string? alertType,
 
-            string comment,
+            string? comment,
 
-            string compartmentId,
+            string? compartmentId,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string description,
+            string? description,
 
-            string displayName,
+            string? displayName,
 
-            ImmutableDictionary<string, object> featureDetails,
+            ImmutableDictionary<string, object>? featureDetails,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string id,
+            string? id,
 
-            string operation,
+            string? operation,
 
-            string operationStatus,
+            string? operationStatus,
 
-            string operationTime,
+            string? operationTime,
 
-            string policyId,
+            string? policyId,
 
-            string resourceName,
+            string? resourceName,
 
-            string severity,
+            string? severity,
 
-            string state,
+            string? state,
 
-            string status,
+            string? status,
 
-            ImmutableDictionary<string, object> systemTags,
+            ImmutableDictionary<string, object>? systemTags,
 
             ImmutableArray<string> targetIds,
 
             ImmutableArray<string> targetNames,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeUpdated)
+            string? timeUpdated)
         {
             AlertId = alertId;
             AlertType = alertType;

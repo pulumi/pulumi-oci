@@ -15,6 +15,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetReportDefinitionResult {
@@ -22,251 +24,251 @@ public final class GetReportDefinitionResult {
      * @return Specifies the name of the category that this report belongs to.
      * 
      */
-    private String category;
+    private @Nullable String category;
     /**
      * @return An array of columnFilter objects. A columnFilter object stores all information about a column filter including field name, an operator, one or more expressions, if the filter is enabled, or if the filter is hidden.
      * 
      */
-    private List<GetReportDefinitionColumnFilter> columnFilters;
+    private @Nullable List<GetReportDefinitionColumnFilter> columnFilters;
     /**
      * @return An array of column objects in the order (left to right) displayed in the report. A column object stores all information about a column, including the name displayed on the UI, corresponding field name in the data source, data type of the column, and column visibility (if the column is visible to the user).
      * 
      */
-    private List<GetReportDefinitionColumnInfo> columnInfos;
+    private @Nullable List<GetReportDefinitionColumnInfo> columnInfos;
     /**
      * @return An array of column sorting objects. Each column sorting object stores the column name to be sorted and if the sorting is in ascending order; sorting is done by the first column in the array, then by the second column in the array, etc.
      * 
      */
-    private List<GetReportDefinitionColumnSorting> columnSortings;
+    private @Nullable List<GetReportDefinitionColumnSorting> columnSortings;
     /**
      * @return The OCID of the compartment containing the report definition.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return The list of the data protection regulations/standards used in the report that will help demonstrate compliance.
      * 
      */
-    private List<String> complianceStandards;
+    private @Nullable List<String> complianceStandards;
     /**
      * @return Specifies the name of a resource that provides data for the report. For example alerts, events.
      * 
      */
-    private String dataSource;
+    private @Nullable String dataSource;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return A description of the report definition.
      * 
      */
-    private String description;
+    private @Nullable String description;
     /**
      * @return Name of the report definition.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return Specifies the order in which the summary must be displayed.
      * 
      */
-    private Integer displayOrder;
+    private @Nullable Integer displayOrder;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return The OCID of the report definition.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Signifies whether the definition is seeded or user defined. Values can either be &#39;true&#39; or &#39;false&#39;.
      * 
      */
-    private Boolean isSeeded;
+    private @Nullable Boolean isSeeded;
     /**
      * @return The OCID of the parent report definition. In the case of seeded report definition, this is same as definition OCID.
      * 
      */
-    private String parentId;
+    private @Nullable String parentId;
     /**
      * @return The time span for the records in the report to be scheduled. &lt;period-value&gt;&lt;period&gt; Allowed period strings - &#34;H&#34;,&#34;D&#34;,&#34;M&#34;,&#34;Y&#34; Each of the above fields potentially introduce constraints. A workRequest is created only when period-value satisfies all the constraints. Constraints introduced: 1. period = H (The allowed range for period-value is [1, 23]) 2. period = D (The allowed range for period-value is [1, 30]) 3. period = M (The allowed range for period-value is [1, 11]) 4. period = Y (The minimum period-value is 1)
      * 
      */
-    private String recordTimeSpan;
+    private @Nullable String recordTimeSpan;
     private String reportDefinitionId;
     /**
      * @return The schedule to generate the report periodically in the specified format: &lt;version-string&gt;;&lt;version-specific-schedule&gt;
      * 
      */
-    private String schedule;
+    private @Nullable String schedule;
     /**
      * @return The OCID of the compartment in which the scheduled resource should be created.
      * 
      */
-    private String scheduledReportCompartmentId;
+    private @Nullable String scheduledReportCompartmentId;
     /**
      * @return Specifies the format of the report ( either XLS or PDF )
      * 
      */
-    private String scheduledReportMimeType;
+    private @Nullable String scheduledReportMimeType;
     /**
      * @return The name of the report to be scheduled.
      * 
      */
-    private String scheduledReportName;
+    private @Nullable String scheduledReportName;
     /**
      * @return Specifies the limit on the number of rows in the report.
      * 
      */
-    private Integer scheduledReportRowLimit;
+    private @Nullable Integer scheduledReportRowLimit;
     /**
      * @return Additional scim filters used to get the specific summary.
      * 
      */
-    private String scimFilter;
+    private @Nullable String scimFilter;
     /**
      * @return The current state of the report.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return An array of report summary objects in the order (left to right)  displayed in the report.  A  report summary object stores all information about summary of report to be displayed, including the name displayed on UI, the display order, corresponding group by and count of values, summary visibility (if the summary is visible to user).
      * 
      */
-    private List<GetReportDefinitionSummary> summaries;
+    private @Nullable List<GetReportDefinitionSummary> summaries;
     /**
      * @return System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    private Map<String,Object> systemTags;
+    private @Nullable Map<String,Object> systemTags;
     /**
      * @return Specifies the data and time the report definition was created.
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The date and time the report definition was update.
      * 
      */
-    private String timeUpdated;
+    private @Nullable String timeUpdated;
 
     private GetReportDefinitionResult() {}
     /**
      * @return Specifies the name of the category that this report belongs to.
      * 
      */
-    public String category() {
-        return this.category;
+    public Optional<String> category() {
+        return Optional.ofNullable(this.category);
     }
     /**
      * @return An array of columnFilter objects. A columnFilter object stores all information about a column filter including field name, an operator, one or more expressions, if the filter is enabled, or if the filter is hidden.
      * 
      */
     public List<GetReportDefinitionColumnFilter> columnFilters() {
-        return this.columnFilters;
+        return this.columnFilters == null ? List.of() : this.columnFilters;
     }
     /**
      * @return An array of column objects in the order (left to right) displayed in the report. A column object stores all information about a column, including the name displayed on the UI, corresponding field name in the data source, data type of the column, and column visibility (if the column is visible to the user).
      * 
      */
     public List<GetReportDefinitionColumnInfo> columnInfos() {
-        return this.columnInfos;
+        return this.columnInfos == null ? List.of() : this.columnInfos;
     }
     /**
      * @return An array of column sorting objects. Each column sorting object stores the column name to be sorted and if the sorting is in ascending order; sorting is done by the first column in the array, then by the second column in the array, etc.
      * 
      */
     public List<GetReportDefinitionColumnSorting> columnSortings() {
-        return this.columnSortings;
+        return this.columnSortings == null ? List.of() : this.columnSortings;
     }
     /**
      * @return The OCID of the compartment containing the report definition.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return The list of the data protection regulations/standards used in the report that will help demonstrate compliance.
      * 
      */
     public List<String> complianceStandards() {
-        return this.complianceStandards;
+        return this.complianceStandards == null ? List.of() : this.complianceStandards;
     }
     /**
      * @return Specifies the name of a resource that provides data for the report. For example alerts, events.
      * 
      */
-    public String dataSource() {
-        return this.dataSource;
+    public Optional<String> dataSource() {
+        return Optional.ofNullable(this.dataSource);
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return A description of the report definition.
      * 
      */
-    public String description() {
-        return this.description;
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
     /**
      * @return Name of the report definition.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return Specifies the order in which the summary must be displayed.
      * 
      */
-    public Integer displayOrder() {
-        return this.displayOrder;
+    public Optional<Integer> displayOrder() {
+        return Optional.ofNullable(this.displayOrder);
     }
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return The OCID of the report definition.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Signifies whether the definition is seeded or user defined. Values can either be &#39;true&#39; or &#39;false&#39;.
      * 
      */
-    public Boolean isSeeded() {
-        return this.isSeeded;
+    public Optional<Boolean> isSeeded() {
+        return Optional.ofNullable(this.isSeeded);
     }
     /**
      * @return The OCID of the parent report definition. In the case of seeded report definition, this is same as definition OCID.
      * 
      */
-    public String parentId() {
-        return this.parentId;
+    public Optional<String> parentId() {
+        return Optional.ofNullable(this.parentId);
     }
     /**
      * @return The time span for the records in the report to be scheduled. &lt;period-value&gt;&lt;period&gt; Allowed period strings - &#34;H&#34;,&#34;D&#34;,&#34;M&#34;,&#34;Y&#34; Each of the above fields potentially introduce constraints. A workRequest is created only when period-value satisfies all the constraints. Constraints introduced: 1. period = H (The allowed range for period-value is [1, 23]) 2. period = D (The allowed range for period-value is [1, 30]) 3. period = M (The allowed range for period-value is [1, 11]) 4. period = Y (The minimum period-value is 1)
      * 
      */
-    public String recordTimeSpan() {
-        return this.recordTimeSpan;
+    public Optional<String> recordTimeSpan() {
+        return Optional.ofNullable(this.recordTimeSpan);
     }
     public String reportDefinitionId() {
         return this.reportDefinitionId;
@@ -275,78 +277,78 @@ public final class GetReportDefinitionResult {
      * @return The schedule to generate the report periodically in the specified format: &lt;version-string&gt;;&lt;version-specific-schedule&gt;
      * 
      */
-    public String schedule() {
-        return this.schedule;
+    public Optional<String> schedule() {
+        return Optional.ofNullable(this.schedule);
     }
     /**
      * @return The OCID of the compartment in which the scheduled resource should be created.
      * 
      */
-    public String scheduledReportCompartmentId() {
-        return this.scheduledReportCompartmentId;
+    public Optional<String> scheduledReportCompartmentId() {
+        return Optional.ofNullable(this.scheduledReportCompartmentId);
     }
     /**
      * @return Specifies the format of the report ( either XLS or PDF )
      * 
      */
-    public String scheduledReportMimeType() {
-        return this.scheduledReportMimeType;
+    public Optional<String> scheduledReportMimeType() {
+        return Optional.ofNullable(this.scheduledReportMimeType);
     }
     /**
      * @return The name of the report to be scheduled.
      * 
      */
-    public String scheduledReportName() {
-        return this.scheduledReportName;
+    public Optional<String> scheduledReportName() {
+        return Optional.ofNullable(this.scheduledReportName);
     }
     /**
      * @return Specifies the limit on the number of rows in the report.
      * 
      */
-    public Integer scheduledReportRowLimit() {
-        return this.scheduledReportRowLimit;
+    public Optional<Integer> scheduledReportRowLimit() {
+        return Optional.ofNullable(this.scheduledReportRowLimit);
     }
     /**
      * @return Additional scim filters used to get the specific summary.
      * 
      */
-    public String scimFilter() {
-        return this.scimFilter;
+    public Optional<String> scimFilter() {
+        return Optional.ofNullable(this.scimFilter);
     }
     /**
      * @return The current state of the report.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return An array of report summary objects in the order (left to right)  displayed in the report.  A  report summary object stores all information about summary of report to be displayed, including the name displayed on UI, the display order, corresponding group by and count of values, summary visibility (if the summary is visible to user).
      * 
      */
     public List<GetReportDefinitionSummary> summaries() {
-        return this.summaries;
+        return this.summaries == null ? List.of() : this.summaries;
     }
     /**
      * @return System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
     public Map<String,Object> systemTags() {
-        return this.systemTags;
+        return this.systemTags == null ? Map.of() : this.systemTags;
     }
     /**
      * @return Specifies the data and time the report definition was created.
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return The date and time the report definition was update.
      * 
      */
-    public String timeUpdated() {
-        return this.timeUpdated;
+    public Optional<String> timeUpdated() {
+        return Optional.ofNullable(this.timeUpdated);
     }
 
     public static Builder builder() {
@@ -358,34 +360,34 @@ public final class GetReportDefinitionResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String category;
-        private List<GetReportDefinitionColumnFilter> columnFilters;
-        private List<GetReportDefinitionColumnInfo> columnInfos;
-        private List<GetReportDefinitionColumnSorting> columnSortings;
-        private String compartmentId;
-        private List<String> complianceStandards;
-        private String dataSource;
-        private Map<String,Object> definedTags;
-        private String description;
-        private String displayName;
-        private Integer displayOrder;
-        private Map<String,Object> freeformTags;
-        private String id;
-        private Boolean isSeeded;
-        private String parentId;
-        private String recordTimeSpan;
+        private @Nullable String category;
+        private @Nullable List<GetReportDefinitionColumnFilter> columnFilters;
+        private @Nullable List<GetReportDefinitionColumnInfo> columnInfos;
+        private @Nullable List<GetReportDefinitionColumnSorting> columnSortings;
+        private @Nullable String compartmentId;
+        private @Nullable List<String> complianceStandards;
+        private @Nullable String dataSource;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String description;
+        private @Nullable String displayName;
+        private @Nullable Integer displayOrder;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String id;
+        private @Nullable Boolean isSeeded;
+        private @Nullable String parentId;
+        private @Nullable String recordTimeSpan;
         private String reportDefinitionId;
-        private String schedule;
-        private String scheduledReportCompartmentId;
-        private String scheduledReportMimeType;
-        private String scheduledReportName;
-        private Integer scheduledReportRowLimit;
-        private String scimFilter;
-        private String state;
-        private List<GetReportDefinitionSummary> summaries;
-        private Map<String,Object> systemTags;
-        private String timeCreated;
-        private String timeUpdated;
+        private @Nullable String schedule;
+        private @Nullable String scheduledReportCompartmentId;
+        private @Nullable String scheduledReportMimeType;
+        private @Nullable String scheduledReportName;
+        private @Nullable Integer scheduledReportRowLimit;
+        private @Nullable String scimFilter;
+        private @Nullable String state;
+        private @Nullable List<GetReportDefinitionSummary> summaries;
+        private @Nullable Map<String,Object> systemTags;
+        private @Nullable String timeCreated;
+        private @Nullable String timeUpdated;
         public Builder() {}
         public Builder(GetReportDefinitionResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -420,95 +422,95 @@ public final class GetReportDefinitionResult {
         }
 
         @CustomType.Setter
-        public Builder category(String category) {
-            this.category = Objects.requireNonNull(category);
+        public Builder category(@Nullable String category) {
+            this.category = category;
             return this;
         }
         @CustomType.Setter
-        public Builder columnFilters(List<GetReportDefinitionColumnFilter> columnFilters) {
-            this.columnFilters = Objects.requireNonNull(columnFilters);
+        public Builder columnFilters(@Nullable List<GetReportDefinitionColumnFilter> columnFilters) {
+            this.columnFilters = columnFilters;
             return this;
         }
         public Builder columnFilters(GetReportDefinitionColumnFilter... columnFilters) {
             return columnFilters(List.of(columnFilters));
         }
         @CustomType.Setter
-        public Builder columnInfos(List<GetReportDefinitionColumnInfo> columnInfos) {
-            this.columnInfos = Objects.requireNonNull(columnInfos);
+        public Builder columnInfos(@Nullable List<GetReportDefinitionColumnInfo> columnInfos) {
+            this.columnInfos = columnInfos;
             return this;
         }
         public Builder columnInfos(GetReportDefinitionColumnInfo... columnInfos) {
             return columnInfos(List.of(columnInfos));
         }
         @CustomType.Setter
-        public Builder columnSortings(List<GetReportDefinitionColumnSorting> columnSortings) {
-            this.columnSortings = Objects.requireNonNull(columnSortings);
+        public Builder columnSortings(@Nullable List<GetReportDefinitionColumnSorting> columnSortings) {
+            this.columnSortings = columnSortings;
             return this;
         }
         public Builder columnSortings(GetReportDefinitionColumnSorting... columnSortings) {
             return columnSortings(List.of(columnSortings));
         }
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder complianceStandards(List<String> complianceStandards) {
-            this.complianceStandards = Objects.requireNonNull(complianceStandards);
+        public Builder complianceStandards(@Nullable List<String> complianceStandards) {
+            this.complianceStandards = complianceStandards;
             return this;
         }
         public Builder complianceStandards(String... complianceStandards) {
             return complianceStandards(List.of(complianceStandards));
         }
         @CustomType.Setter
-        public Builder dataSource(String dataSource) {
-            this.dataSource = Objects.requireNonNull(dataSource);
+        public Builder dataSource(@Nullable String dataSource) {
+            this.dataSource = dataSource;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+        public Builder description(@Nullable String description) {
+            this.description = description;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder displayOrder(Integer displayOrder) {
-            this.displayOrder = Objects.requireNonNull(displayOrder);
+        public Builder displayOrder(@Nullable Integer displayOrder) {
+            this.displayOrder = displayOrder;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder isSeeded(Boolean isSeeded) {
-            this.isSeeded = Objects.requireNonNull(isSeeded);
+        public Builder isSeeded(@Nullable Boolean isSeeded) {
+            this.isSeeded = isSeeded;
             return this;
         }
         @CustomType.Setter
-        public Builder parentId(String parentId) {
-            this.parentId = Objects.requireNonNull(parentId);
+        public Builder parentId(@Nullable String parentId) {
+            this.parentId = parentId;
             return this;
         }
         @CustomType.Setter
-        public Builder recordTimeSpan(String recordTimeSpan) {
-            this.recordTimeSpan = Objects.requireNonNull(recordTimeSpan);
+        public Builder recordTimeSpan(@Nullable String recordTimeSpan) {
+            this.recordTimeSpan = recordTimeSpan;
             return this;
         }
         @CustomType.Setter
@@ -517,61 +519,61 @@ public final class GetReportDefinitionResult {
             return this;
         }
         @CustomType.Setter
-        public Builder schedule(String schedule) {
-            this.schedule = Objects.requireNonNull(schedule);
+        public Builder schedule(@Nullable String schedule) {
+            this.schedule = schedule;
             return this;
         }
         @CustomType.Setter
-        public Builder scheduledReportCompartmentId(String scheduledReportCompartmentId) {
-            this.scheduledReportCompartmentId = Objects.requireNonNull(scheduledReportCompartmentId);
+        public Builder scheduledReportCompartmentId(@Nullable String scheduledReportCompartmentId) {
+            this.scheduledReportCompartmentId = scheduledReportCompartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder scheduledReportMimeType(String scheduledReportMimeType) {
-            this.scheduledReportMimeType = Objects.requireNonNull(scheduledReportMimeType);
+        public Builder scheduledReportMimeType(@Nullable String scheduledReportMimeType) {
+            this.scheduledReportMimeType = scheduledReportMimeType;
             return this;
         }
         @CustomType.Setter
-        public Builder scheduledReportName(String scheduledReportName) {
-            this.scheduledReportName = Objects.requireNonNull(scheduledReportName);
+        public Builder scheduledReportName(@Nullable String scheduledReportName) {
+            this.scheduledReportName = scheduledReportName;
             return this;
         }
         @CustomType.Setter
-        public Builder scheduledReportRowLimit(Integer scheduledReportRowLimit) {
-            this.scheduledReportRowLimit = Objects.requireNonNull(scheduledReportRowLimit);
+        public Builder scheduledReportRowLimit(@Nullable Integer scheduledReportRowLimit) {
+            this.scheduledReportRowLimit = scheduledReportRowLimit;
             return this;
         }
         @CustomType.Setter
-        public Builder scimFilter(String scimFilter) {
-            this.scimFilter = Objects.requireNonNull(scimFilter);
+        public Builder scimFilter(@Nullable String scimFilter) {
+            this.scimFilter = scimFilter;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder summaries(List<GetReportDefinitionSummary> summaries) {
-            this.summaries = Objects.requireNonNull(summaries);
+        public Builder summaries(@Nullable List<GetReportDefinitionSummary> summaries) {
+            this.summaries = summaries;
             return this;
         }
         public Builder summaries(GetReportDefinitionSummary... summaries) {
             return summaries(List.of(summaries));
         }
         @CustomType.Setter
-        public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+        public Builder systemTags(@Nullable Map<String,Object> systemTags) {
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+        public Builder timeUpdated(@Nullable String timeUpdated) {
+            this.timeUpdated = timeUpdated;
             return this;
         }
         public GetReportDefinitionResult build() {

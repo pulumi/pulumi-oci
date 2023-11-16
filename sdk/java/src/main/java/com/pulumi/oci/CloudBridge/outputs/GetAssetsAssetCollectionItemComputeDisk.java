@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAssetsAssetCollectionItemComputeDisk {
@@ -14,87 +16,87 @@ public final class GetAssetsAssetCollectionItemComputeDisk {
      * @return Order of boot volumes.
      * 
      */
-    private Integer bootOrder;
+    private @Nullable Integer bootOrder;
     /**
      * @return Location of the boot/data volume.
      * 
      */
-    private String location;
+    private @Nullable String location;
     /**
      * @return The tag name.
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return The disk persistent mode.
      * 
      */
-    private String persistentMode;
+    private @Nullable String persistentMode;
     /**
      * @return The size of the volume in MBs.
      * 
      */
-    private String sizeInMbs;
+    private @Nullable String sizeInMbs;
     /**
      * @return Disk UUID for the virtual disk, if available.
      * 
      */
-    private String uuid;
+    private @Nullable String uuid;
     /**
      * @return Disk UUID LUN for the virtual disk, if available.
      * 
      */
-    private String uuidLun;
+    private @Nullable String uuidLun;
 
     private GetAssetsAssetCollectionItemComputeDisk() {}
     /**
      * @return Order of boot volumes.
      * 
      */
-    public Integer bootOrder() {
-        return this.bootOrder;
+    public Optional<Integer> bootOrder() {
+        return Optional.ofNullable(this.bootOrder);
     }
     /**
      * @return Location of the boot/data volume.
      * 
      */
-    public String location() {
-        return this.location;
+    public Optional<String> location() {
+        return Optional.ofNullable(this.location);
     }
     /**
      * @return The tag name.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return The disk persistent mode.
      * 
      */
-    public String persistentMode() {
-        return this.persistentMode;
+    public Optional<String> persistentMode() {
+        return Optional.ofNullable(this.persistentMode);
     }
     /**
      * @return The size of the volume in MBs.
      * 
      */
-    public String sizeInMbs() {
-        return this.sizeInMbs;
+    public Optional<String> sizeInMbs() {
+        return Optional.ofNullable(this.sizeInMbs);
     }
     /**
      * @return Disk UUID for the virtual disk, if available.
      * 
      */
-    public String uuid() {
-        return this.uuid;
+    public Optional<String> uuid() {
+        return Optional.ofNullable(this.uuid);
     }
     /**
      * @return Disk UUID LUN for the virtual disk, if available.
      * 
      */
-    public String uuidLun() {
-        return this.uuidLun;
+    public Optional<String> uuidLun() {
+        return Optional.ofNullable(this.uuidLun);
     }
 
     public static Builder builder() {
@@ -106,13 +108,13 @@ public final class GetAssetsAssetCollectionItemComputeDisk {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Integer bootOrder;
-        private String location;
-        private String name;
-        private String persistentMode;
-        private String sizeInMbs;
-        private String uuid;
-        private String uuidLun;
+        private @Nullable Integer bootOrder;
+        private @Nullable String location;
+        private @Nullable String name;
+        private @Nullable String persistentMode;
+        private @Nullable String sizeInMbs;
+        private @Nullable String uuid;
+        private @Nullable String uuidLun;
         public Builder() {}
         public Builder(GetAssetsAssetCollectionItemComputeDisk defaults) {
     	      Objects.requireNonNull(defaults);
@@ -126,38 +128,38 @@ public final class GetAssetsAssetCollectionItemComputeDisk {
         }
 
         @CustomType.Setter
-        public Builder bootOrder(Integer bootOrder) {
-            this.bootOrder = Objects.requireNonNull(bootOrder);
+        public Builder bootOrder(@Nullable Integer bootOrder) {
+            this.bootOrder = bootOrder;
             return this;
         }
         @CustomType.Setter
-        public Builder location(String location) {
-            this.location = Objects.requireNonNull(location);
+        public Builder location(@Nullable String location) {
+            this.location = location;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder persistentMode(String persistentMode) {
-            this.persistentMode = Objects.requireNonNull(persistentMode);
+        public Builder persistentMode(@Nullable String persistentMode) {
+            this.persistentMode = persistentMode;
             return this;
         }
         @CustomType.Setter
-        public Builder sizeInMbs(String sizeInMbs) {
-            this.sizeInMbs = Objects.requireNonNull(sizeInMbs);
+        public Builder sizeInMbs(@Nullable String sizeInMbs) {
+            this.sizeInMbs = sizeInMbs;
             return this;
         }
         @CustomType.Setter
-        public Builder uuid(String uuid) {
-            this.uuid = Objects.requireNonNull(uuid);
+        public Builder uuid(@Nullable String uuid) {
+            this.uuid = uuid;
             return this;
         }
         @CustomType.Setter
-        public Builder uuidLun(String uuidLun) {
-            this.uuidLun = Objects.requireNonNull(uuidLun);
+        public Builder uuidLun(@Nullable String uuidLun) {
+            this.uuidLun = uuidLun;
             return this;
         }
         public GetAssetsAssetCollectionItemComputeDisk build() {

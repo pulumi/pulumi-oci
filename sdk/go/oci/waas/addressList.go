@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Address List resource in Oracle Cloud Infrastructure Web Application Acceleration and Security service.
@@ -64,7 +63,7 @@ type AddressList struct {
 	pulumi.CustomResourceState
 
 	// The total number of unique IP addresses in the address list.
-	AddressCount pulumi.Float64Output `pulumi:"addressCount"`
+	AddressCount pulumi.Float64PtrOutput `pulumi:"addressCount"`
 	// (Updatable) A list of IP addresses or CIDR notations.
 	Addresses pulumi.StringArrayOutput `pulumi:"addresses"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to create the address list.
@@ -79,9 +78,9 @@ type AddressList struct {
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// The current lifecycle state of the address list.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// The date and time the address list was created, expressed in RFC 3339 timestamp format.
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 }
 
 // NewAddressList registers a new resource with the given unique name, arguments, and options.
@@ -226,12 +225,6 @@ func (i *AddressList) ToAddressListOutputWithContext(ctx context.Context) Addres
 	return pulumi.ToOutputWithContext(ctx, i).(AddressListOutput)
 }
 
-func (i *AddressList) ToOutput(ctx context.Context) pulumix.Output[*AddressList] {
-	return pulumix.Output[*AddressList]{
-		OutputState: i.ToAddressListOutputWithContext(ctx).OutputState,
-	}
-}
-
 // AddressListArrayInput is an input type that accepts AddressListArray and AddressListArrayOutput values.
 // You can construct a concrete instance of `AddressListArrayInput` via:
 //
@@ -255,12 +248,6 @@ func (i AddressListArray) ToAddressListArrayOutput() AddressListArrayOutput {
 
 func (i AddressListArray) ToAddressListArrayOutputWithContext(ctx context.Context) AddressListArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(AddressListArrayOutput)
-}
-
-func (i AddressListArray) ToOutput(ctx context.Context) pulumix.Output[[]*AddressList] {
-	return pulumix.Output[[]*AddressList]{
-		OutputState: i.ToAddressListArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // AddressListMapInput is an input type that accepts AddressListMap and AddressListMapOutput values.
@@ -288,12 +275,6 @@ func (i AddressListMap) ToAddressListMapOutputWithContext(ctx context.Context) A
 	return pulumi.ToOutputWithContext(ctx, i).(AddressListMapOutput)
 }
 
-func (i AddressListMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*AddressList] {
-	return pulumix.Output[map[string]*AddressList]{
-		OutputState: i.ToAddressListMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type AddressListOutput struct{ *pulumi.OutputState }
 
 func (AddressListOutput) ElementType() reflect.Type {
@@ -308,15 +289,9 @@ func (o AddressListOutput) ToAddressListOutputWithContext(ctx context.Context) A
 	return o
 }
 
-func (o AddressListOutput) ToOutput(ctx context.Context) pulumix.Output[*AddressList] {
-	return pulumix.Output[*AddressList]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The total number of unique IP addresses in the address list.
-func (o AddressListOutput) AddressCount() pulumi.Float64Output {
-	return o.ApplyT(func(v *AddressList) pulumi.Float64Output { return v.AddressCount }).(pulumi.Float64Output)
+func (o AddressListOutput) AddressCount() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v *AddressList) pulumi.Float64PtrOutput { return v.AddressCount }).(pulumi.Float64PtrOutput)
 }
 
 // (Updatable) A list of IP addresses or CIDR notations.
@@ -348,13 +323,13 @@ func (o AddressListOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The current lifecycle state of the address list.
-func (o AddressListOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *AddressList) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o AddressListOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AddressList) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the address list was created, expressed in RFC 3339 timestamp format.
-func (o AddressListOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *AddressList) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o AddressListOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AddressList) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 type AddressListArrayOutput struct{ *pulumi.OutputState }
@@ -369,12 +344,6 @@ func (o AddressListArrayOutput) ToAddressListArrayOutput() AddressListArrayOutpu
 
 func (o AddressListArrayOutput) ToAddressListArrayOutputWithContext(ctx context.Context) AddressListArrayOutput {
 	return o
-}
-
-func (o AddressListArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*AddressList] {
-	return pulumix.Output[[]*AddressList]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o AddressListArrayOutput) Index(i pulumi.IntInput) AddressListOutput {
@@ -395,12 +364,6 @@ func (o AddressListMapOutput) ToAddressListMapOutput() AddressListMapOutput {
 
 func (o AddressListMapOutput) ToAddressListMapOutputWithContext(ctx context.Context) AddressListMapOutput {
 	return o
-}
-
-func (o AddressListMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*AddressList] {
-	return pulumix.Output[map[string]*AddressList]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o AddressListMapOutput) MapIndex(k pulumi.StringInput) AddressListOutput {

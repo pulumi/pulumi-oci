@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Discovery Job resource in Oracle Cloud Infrastructure Data Safe service.
@@ -79,19 +78,19 @@ type DiscoveryMod struct {
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// The type of the discovery job. It defines the job's scope. NEW identifies new sensitive columns in the target database that are not in the sensitive data model. DELETED identifies columns that are present in the sensitive data model but have been deleted from the target database. MODIFIED identifies columns that are present in the target database as well as the sensitive data model but some of their attributes have been modified. ALL covers all the above three scenarios and reports new, deleted and modified columns.
-	DiscoveryType pulumi.StringOutput `pulumi:"discoveryType"`
+	DiscoveryType pulumi.StringPtrOutput `pulumi:"discoveryType"`
 	// A user-friendly name for the discovery job. Does not have to be unique, and it is changeable. Avoid entering confidential information.
-	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrOutput `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// Indicates if the discovery job should identify potential application-level (non-dictionary) referential relationships between columns. Note that data discovery automatically identifies and adds database-level (dictionary-defined) relationships. This option helps identify application-level relationships that are not defined in the database dictionary, which in turn, helps identify additional sensitive columns and preserve referential integrity during data masking. It's disabled by default and should be used only if there is a need to identify application-level relationships.
-	IsAppDefinedRelationDiscoveryEnabled pulumi.BoolOutput `pulumi:"isAppDefinedRelationDiscoveryEnabled"`
+	IsAppDefinedRelationDiscoveryEnabled pulumi.BoolPtrOutput `pulumi:"isAppDefinedRelationDiscoveryEnabled"`
 	// Indicates if all the schemas should be scanned by the discovery job. If it is set to true, sensitive data is discovered in all schemas (except for schemas maintained by Oracle). If both attributes are not provided, the configuration from the sensitive data model is used.
-	IsIncludeAllSchemas pulumi.BoolOutput `pulumi:"isIncludeAllSchemas"`
+	IsIncludeAllSchemas pulumi.BoolPtrOutput `pulumi:"isIncludeAllSchemas"`
 	// Indicates if all the existing sensitive types should be used by the discovery job. If it's set to true, the sensitiveTypeIdsForDiscovery attribute is ignored and all sensitive types are used for data discovery. If both attributes are not provided, the configuration from the sensitive data model is used.
-	IsIncludeAllSensitiveTypes pulumi.BoolOutput `pulumi:"isIncludeAllSensitiveTypes"`
+	IsIncludeAllSensitiveTypes pulumi.BoolPtrOutput `pulumi:"isIncludeAllSensitiveTypes"`
 	// Indicates if the discovery job should collect and store sample data values for the discovered columns. Sample data helps review the discovered columns and ensure that they actually contain sensitive data. As it collects original data from the target database, it's disabled by default and should be used only if it's acceptable to store sample data in Data Safe's repository in Oracle Cloud. Note that sample data values are not collected for columns with the following data types: LONG, LOB, RAW, XMLTYPE and BFILE.
-	IsSampleDataCollectionEnabled pulumi.BoolOutput `pulumi:"isSampleDataCollectionEnabled"`
+	IsSampleDataCollectionEnabled pulumi.BoolPtrOutput `pulumi:"isSampleDataCollectionEnabled"`
 	// The schemas to be scanned by the discovery job. If not provided, the schemasForDiscovery attribute of the sensitive data model is used to get the list of schemas.
 	SchemasForDiscoveries pulumi.StringArrayOutput `pulumi:"schemasForDiscoveries"`
 	// The OCID of the sensitive data model.
@@ -102,27 +101,27 @@ type DiscoveryMod struct {
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SensitiveTypeIdsForDiscoveries pulumi.StringArrayOutput `pulumi:"sensitiveTypeIdsForDiscoveries"`
 	// The current state of the discovery job.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
 	// The OCID of the target database associated with the discovery job.
-	TargetId pulumi.StringOutput `pulumi:"targetId"`
+	TargetId pulumi.StringPtrOutput `pulumi:"targetId"`
 	// The date and time the discovery job finished, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)..
-	TimeFinished pulumi.StringOutput `pulumi:"timeFinished"`
+	TimeFinished pulumi.StringPtrOutput `pulumi:"timeFinished"`
 	// The date and time the discovery job started, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-	TimeStarted pulumi.StringOutput `pulumi:"timeStarted"`
+	TimeStarted pulumi.StringPtrOutput `pulumi:"timeStarted"`
 	// The total number of columns scanned by the discovery job.
-	TotalColumnsScanned pulumi.StringOutput `pulumi:"totalColumnsScanned"`
+	TotalColumnsScanned pulumi.StringPtrOutput `pulumi:"totalColumnsScanned"`
 	// The total number of deleted sensitive columns identified by the discovery job.
-	TotalDeletedSensitiveColumns pulumi.StringOutput `pulumi:"totalDeletedSensitiveColumns"`
+	TotalDeletedSensitiveColumns pulumi.StringPtrOutput `pulumi:"totalDeletedSensitiveColumns"`
 	// The total number of modified sensitive columns identified by the discovery job.
-	TotalModifiedSensitiveColumns pulumi.StringOutput `pulumi:"totalModifiedSensitiveColumns"`
+	TotalModifiedSensitiveColumns pulumi.StringPtrOutput `pulumi:"totalModifiedSensitiveColumns"`
 	// The total number of new sensitive columns identified by the discovery job.
-	TotalNewSensitiveColumns pulumi.StringOutput `pulumi:"totalNewSensitiveColumns"`
+	TotalNewSensitiveColumns pulumi.StringPtrOutput `pulumi:"totalNewSensitiveColumns"`
 	// The total number of objects (tables and editioning views) scanned by the discovery job.
-	TotalObjectsScanned pulumi.StringOutput `pulumi:"totalObjectsScanned"`
+	TotalObjectsScanned pulumi.StringPtrOutput `pulumi:"totalObjectsScanned"`
 	// The total number of schemas scanned by the discovery job.
-	TotalSchemasScanned pulumi.StringOutput `pulumi:"totalSchemasScanned"`
+	TotalSchemasScanned pulumi.StringPtrOutput `pulumi:"totalSchemasScanned"`
 }
 
 // NewDiscoveryMod registers a new resource with the given unique name, arguments, and options.
@@ -352,12 +351,6 @@ func (i *DiscoveryMod) ToDiscoveryModOutputWithContext(ctx context.Context) Disc
 	return pulumi.ToOutputWithContext(ctx, i).(DiscoveryModOutput)
 }
 
-func (i *DiscoveryMod) ToOutput(ctx context.Context) pulumix.Output[*DiscoveryMod] {
-	return pulumix.Output[*DiscoveryMod]{
-		OutputState: i.ToDiscoveryModOutputWithContext(ctx).OutputState,
-	}
-}
-
 // DiscoveryModArrayInput is an input type that accepts DiscoveryModArray and DiscoveryModArrayOutput values.
 // You can construct a concrete instance of `DiscoveryModArrayInput` via:
 //
@@ -381,12 +374,6 @@ func (i DiscoveryModArray) ToDiscoveryModArrayOutput() DiscoveryModArrayOutput {
 
 func (i DiscoveryModArray) ToDiscoveryModArrayOutputWithContext(ctx context.Context) DiscoveryModArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(DiscoveryModArrayOutput)
-}
-
-func (i DiscoveryModArray) ToOutput(ctx context.Context) pulumix.Output[[]*DiscoveryMod] {
-	return pulumix.Output[[]*DiscoveryMod]{
-		OutputState: i.ToDiscoveryModArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // DiscoveryModMapInput is an input type that accepts DiscoveryModMap and DiscoveryModMapOutput values.
@@ -414,12 +401,6 @@ func (i DiscoveryModMap) ToDiscoveryModMapOutputWithContext(ctx context.Context)
 	return pulumi.ToOutputWithContext(ctx, i).(DiscoveryModMapOutput)
 }
 
-func (i DiscoveryModMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*DiscoveryMod] {
-	return pulumix.Output[map[string]*DiscoveryMod]{
-		OutputState: i.ToDiscoveryModMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DiscoveryModOutput struct{ *pulumi.OutputState }
 
 func (DiscoveryModOutput) ElementType() reflect.Type {
@@ -434,12 +415,6 @@ func (o DiscoveryModOutput) ToDiscoveryModOutputWithContext(ctx context.Context)
 	return o
 }
 
-func (o DiscoveryModOutput) ToOutput(ctx context.Context) pulumix.Output[*DiscoveryMod] {
-	return pulumix.Output[*DiscoveryMod]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) The OCID of the compartment where the discovery job resource should be created.
 func (o DiscoveryModOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *DiscoveryMod) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
@@ -451,13 +426,13 @@ func (o DiscoveryModOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // The type of the discovery job. It defines the job's scope. NEW identifies new sensitive columns in the target database that are not in the sensitive data model. DELETED identifies columns that are present in the sensitive data model but have been deleted from the target database. MODIFIED identifies columns that are present in the target database as well as the sensitive data model but some of their attributes have been modified. ALL covers all the above three scenarios and reports new, deleted and modified columns.
-func (o DiscoveryModOutput) DiscoveryType() pulumi.StringOutput {
-	return o.ApplyT(func(v *DiscoveryMod) pulumi.StringOutput { return v.DiscoveryType }).(pulumi.StringOutput)
+func (o DiscoveryModOutput) DiscoveryType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DiscoveryMod) pulumi.StringPtrOutput { return v.DiscoveryType }).(pulumi.StringPtrOutput)
 }
 
 // A user-friendly name for the discovery job. Does not have to be unique, and it is changeable. Avoid entering confidential information.
-func (o DiscoveryModOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v *DiscoveryMod) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+func (o DiscoveryModOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DiscoveryMod) pulumi.StringPtrOutput { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
@@ -466,23 +441,23 @@ func (o DiscoveryModOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // Indicates if the discovery job should identify potential application-level (non-dictionary) referential relationships between columns. Note that data discovery automatically identifies and adds database-level (dictionary-defined) relationships. This option helps identify application-level relationships that are not defined in the database dictionary, which in turn, helps identify additional sensitive columns and preserve referential integrity during data masking. It's disabled by default and should be used only if there is a need to identify application-level relationships.
-func (o DiscoveryModOutput) IsAppDefinedRelationDiscoveryEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v *DiscoveryMod) pulumi.BoolOutput { return v.IsAppDefinedRelationDiscoveryEnabled }).(pulumi.BoolOutput)
+func (o DiscoveryModOutput) IsAppDefinedRelationDiscoveryEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DiscoveryMod) pulumi.BoolPtrOutput { return v.IsAppDefinedRelationDiscoveryEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // Indicates if all the schemas should be scanned by the discovery job. If it is set to true, sensitive data is discovered in all schemas (except for schemas maintained by Oracle). If both attributes are not provided, the configuration from the sensitive data model is used.
-func (o DiscoveryModOutput) IsIncludeAllSchemas() pulumi.BoolOutput {
-	return o.ApplyT(func(v *DiscoveryMod) pulumi.BoolOutput { return v.IsIncludeAllSchemas }).(pulumi.BoolOutput)
+func (o DiscoveryModOutput) IsIncludeAllSchemas() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DiscoveryMod) pulumi.BoolPtrOutput { return v.IsIncludeAllSchemas }).(pulumi.BoolPtrOutput)
 }
 
 // Indicates if all the existing sensitive types should be used by the discovery job. If it's set to true, the sensitiveTypeIdsForDiscovery attribute is ignored and all sensitive types are used for data discovery. If both attributes are not provided, the configuration from the sensitive data model is used.
-func (o DiscoveryModOutput) IsIncludeAllSensitiveTypes() pulumi.BoolOutput {
-	return o.ApplyT(func(v *DiscoveryMod) pulumi.BoolOutput { return v.IsIncludeAllSensitiveTypes }).(pulumi.BoolOutput)
+func (o DiscoveryModOutput) IsIncludeAllSensitiveTypes() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DiscoveryMod) pulumi.BoolPtrOutput { return v.IsIncludeAllSensitiveTypes }).(pulumi.BoolPtrOutput)
 }
 
 // Indicates if the discovery job should collect and store sample data values for the discovered columns. Sample data helps review the discovered columns and ensure that they actually contain sensitive data. As it collects original data from the target database, it's disabled by default and should be used only if it's acceptable to store sample data in Data Safe's repository in Oracle Cloud. Note that sample data values are not collected for columns with the following data types: LONG, LOB, RAW, XMLTYPE and BFILE.
-func (o DiscoveryModOutput) IsSampleDataCollectionEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v *DiscoveryMod) pulumi.BoolOutput { return v.IsSampleDataCollectionEnabled }).(pulumi.BoolOutput)
+func (o DiscoveryModOutput) IsSampleDataCollectionEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DiscoveryMod) pulumi.BoolPtrOutput { return v.IsSampleDataCollectionEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // The schemas to be scanned by the discovery job. If not provided, the schemasForDiscovery attribute of the sensitive data model is used to get the list of schemas.
@@ -504,8 +479,8 @@ func (o DiscoveryModOutput) SensitiveTypeIdsForDiscoveries() pulumi.StringArrayO
 }
 
 // The current state of the discovery job.
-func (o DiscoveryModOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *DiscoveryMod) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o DiscoveryModOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DiscoveryMod) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -514,48 +489,48 @@ func (o DiscoveryModOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The OCID of the target database associated with the discovery job.
-func (o DiscoveryModOutput) TargetId() pulumi.StringOutput {
-	return o.ApplyT(func(v *DiscoveryMod) pulumi.StringOutput { return v.TargetId }).(pulumi.StringOutput)
+func (o DiscoveryModOutput) TargetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DiscoveryMod) pulumi.StringPtrOutput { return v.TargetId }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the discovery job finished, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)..
-func (o DiscoveryModOutput) TimeFinished() pulumi.StringOutput {
-	return o.ApplyT(func(v *DiscoveryMod) pulumi.StringOutput { return v.TimeFinished }).(pulumi.StringOutput)
+func (o DiscoveryModOutput) TimeFinished() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DiscoveryMod) pulumi.StringPtrOutput { return v.TimeFinished }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the discovery job started, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-func (o DiscoveryModOutput) TimeStarted() pulumi.StringOutput {
-	return o.ApplyT(func(v *DiscoveryMod) pulumi.StringOutput { return v.TimeStarted }).(pulumi.StringOutput)
+func (o DiscoveryModOutput) TimeStarted() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DiscoveryMod) pulumi.StringPtrOutput { return v.TimeStarted }).(pulumi.StringPtrOutput)
 }
 
 // The total number of columns scanned by the discovery job.
-func (o DiscoveryModOutput) TotalColumnsScanned() pulumi.StringOutput {
-	return o.ApplyT(func(v *DiscoveryMod) pulumi.StringOutput { return v.TotalColumnsScanned }).(pulumi.StringOutput)
+func (o DiscoveryModOutput) TotalColumnsScanned() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DiscoveryMod) pulumi.StringPtrOutput { return v.TotalColumnsScanned }).(pulumi.StringPtrOutput)
 }
 
 // The total number of deleted sensitive columns identified by the discovery job.
-func (o DiscoveryModOutput) TotalDeletedSensitiveColumns() pulumi.StringOutput {
-	return o.ApplyT(func(v *DiscoveryMod) pulumi.StringOutput { return v.TotalDeletedSensitiveColumns }).(pulumi.StringOutput)
+func (o DiscoveryModOutput) TotalDeletedSensitiveColumns() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DiscoveryMod) pulumi.StringPtrOutput { return v.TotalDeletedSensitiveColumns }).(pulumi.StringPtrOutput)
 }
 
 // The total number of modified sensitive columns identified by the discovery job.
-func (o DiscoveryModOutput) TotalModifiedSensitiveColumns() pulumi.StringOutput {
-	return o.ApplyT(func(v *DiscoveryMod) pulumi.StringOutput { return v.TotalModifiedSensitiveColumns }).(pulumi.StringOutput)
+func (o DiscoveryModOutput) TotalModifiedSensitiveColumns() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DiscoveryMod) pulumi.StringPtrOutput { return v.TotalModifiedSensitiveColumns }).(pulumi.StringPtrOutput)
 }
 
 // The total number of new sensitive columns identified by the discovery job.
-func (o DiscoveryModOutput) TotalNewSensitiveColumns() pulumi.StringOutput {
-	return o.ApplyT(func(v *DiscoveryMod) pulumi.StringOutput { return v.TotalNewSensitiveColumns }).(pulumi.StringOutput)
+func (o DiscoveryModOutput) TotalNewSensitiveColumns() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DiscoveryMod) pulumi.StringPtrOutput { return v.TotalNewSensitiveColumns }).(pulumi.StringPtrOutput)
 }
 
 // The total number of objects (tables and editioning views) scanned by the discovery job.
-func (o DiscoveryModOutput) TotalObjectsScanned() pulumi.StringOutput {
-	return o.ApplyT(func(v *DiscoveryMod) pulumi.StringOutput { return v.TotalObjectsScanned }).(pulumi.StringOutput)
+func (o DiscoveryModOutput) TotalObjectsScanned() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DiscoveryMod) pulumi.StringPtrOutput { return v.TotalObjectsScanned }).(pulumi.StringPtrOutput)
 }
 
 // The total number of schemas scanned by the discovery job.
-func (o DiscoveryModOutput) TotalSchemasScanned() pulumi.StringOutput {
-	return o.ApplyT(func(v *DiscoveryMod) pulumi.StringOutput { return v.TotalSchemasScanned }).(pulumi.StringOutput)
+func (o DiscoveryModOutput) TotalSchemasScanned() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DiscoveryMod) pulumi.StringPtrOutput { return v.TotalSchemasScanned }).(pulumi.StringPtrOutput)
 }
 
 type DiscoveryModArrayOutput struct{ *pulumi.OutputState }
@@ -570,12 +545,6 @@ func (o DiscoveryModArrayOutput) ToDiscoveryModArrayOutput() DiscoveryModArrayOu
 
 func (o DiscoveryModArrayOutput) ToDiscoveryModArrayOutputWithContext(ctx context.Context) DiscoveryModArrayOutput {
 	return o
-}
-
-func (o DiscoveryModArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*DiscoveryMod] {
-	return pulumix.Output[[]*DiscoveryMod]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DiscoveryModArrayOutput) Index(i pulumi.IntInput) DiscoveryModOutput {
@@ -596,12 +565,6 @@ func (o DiscoveryModMapOutput) ToDiscoveryModMapOutput() DiscoveryModMapOutput {
 
 func (o DiscoveryModMapOutput) ToDiscoveryModMapOutputWithContext(ctx context.Context) DiscoveryModMapOutput {
 	return o
-}
-
-func (o DiscoveryModMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*DiscoveryMod] {
-	return pulumix.Output[map[string]*DiscoveryMod]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DiscoveryModMapOutput) MapIndex(k pulumi.StringInput) DiscoveryModOutput {

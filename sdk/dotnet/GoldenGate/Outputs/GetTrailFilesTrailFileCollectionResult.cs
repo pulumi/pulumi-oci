@@ -20,13 +20,13 @@ namespace Pulumi.Oci.GoldenGate.Outputs
         /// <summary>
         /// The time the data was last fetched from the deployment. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         /// </summary>
-        public readonly string TimeLastFetched;
+        public readonly string? TimeLastFetched;
 
         [OutputConstructor]
         private GetTrailFilesTrailFileCollectionResult(
             ImmutableArray<Outputs.GetTrailFilesTrailFileCollectionItemResult> items,
 
-            string timeLastFetched)
+            string? timeLastFetched)
         {
             Items = items;
             TimeLastFetched = timeLastFetched;

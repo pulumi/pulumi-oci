@@ -6,6 +6,8 @@ package com.pulumi.oci.ContainerEngine.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetWorkRequestLogEntriesWorkRequestLogEntry {
@@ -13,27 +15,27 @@ public final class GetWorkRequestLogEntriesWorkRequestLogEntry {
      * @return The description of an action that occurred.
      * 
      */
-    private String message;
+    private @Nullable String message;
     /**
      * @return The date and time the log entry occurred.
      * 
      */
-    private String timestamp;
+    private @Nullable String timestamp;
 
     private GetWorkRequestLogEntriesWorkRequestLogEntry() {}
     /**
      * @return The description of an action that occurred.
      * 
      */
-    public String message() {
-        return this.message;
+    public Optional<String> message() {
+        return Optional.ofNullable(this.message);
     }
     /**
      * @return The date and time the log entry occurred.
      * 
      */
-    public String timestamp() {
-        return this.timestamp;
+    public Optional<String> timestamp() {
+        return Optional.ofNullable(this.timestamp);
     }
 
     public static Builder builder() {
@@ -45,8 +47,8 @@ public final class GetWorkRequestLogEntriesWorkRequestLogEntry {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String message;
-        private String timestamp;
+        private @Nullable String message;
+        private @Nullable String timestamp;
         public Builder() {}
         public Builder(GetWorkRequestLogEntriesWorkRequestLogEntry defaults) {
     	      Objects.requireNonNull(defaults);
@@ -55,13 +57,13 @@ public final class GetWorkRequestLogEntriesWorkRequestLogEntry {
         }
 
         @CustomType.Setter
-        public Builder message(String message) {
-            this.message = Objects.requireNonNull(message);
+        public Builder message(@Nullable String message) {
+            this.message = message;
             return this;
         }
         @CustomType.Setter
-        public Builder timestamp(String timestamp) {
-            this.timestamp = Objects.requireNonNull(timestamp);
+        public Builder timestamp(@Nullable String timestamp) {
+            this.timestamp = timestamp;
             return this;
         }
         public GetWorkRequestLogEntriesWorkRequestLogEntry build() {

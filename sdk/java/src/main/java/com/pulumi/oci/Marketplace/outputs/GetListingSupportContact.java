@@ -6,6 +6,8 @@ package com.pulumi.oci.Marketplace.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetListingSupportContact {
@@ -13,51 +15,51 @@ public final class GetListingSupportContact {
      * @return The email of the contact.
      * 
      */
-    private String email;
+    private @Nullable String email;
     /**
      * @return Text that describes the resource.
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return The phone number of the contact.
      * 
      */
-    private String phone;
+    private @Nullable String phone;
     /**
      * @return The email subject line to use when contacting support.
      * 
      */
-    private String subject;
+    private @Nullable String subject;
 
     private GetListingSupportContact() {}
     /**
      * @return The email of the contact.
      * 
      */
-    public String email() {
-        return this.email;
+    public Optional<String> email() {
+        return Optional.ofNullable(this.email);
     }
     /**
      * @return Text that describes the resource.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return The phone number of the contact.
      * 
      */
-    public String phone() {
-        return this.phone;
+    public Optional<String> phone() {
+        return Optional.ofNullable(this.phone);
     }
     /**
      * @return The email subject line to use when contacting support.
      * 
      */
-    public String subject() {
-        return this.subject;
+    public Optional<String> subject() {
+        return Optional.ofNullable(this.subject);
     }
 
     public static Builder builder() {
@@ -69,10 +71,10 @@ public final class GetListingSupportContact {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String email;
-        private String name;
-        private String phone;
-        private String subject;
+        private @Nullable String email;
+        private @Nullable String name;
+        private @Nullable String phone;
+        private @Nullable String subject;
         public Builder() {}
         public Builder(GetListingSupportContact defaults) {
     	      Objects.requireNonNull(defaults);
@@ -83,23 +85,23 @@ public final class GetListingSupportContact {
         }
 
         @CustomType.Setter
-        public Builder email(String email) {
-            this.email = Objects.requireNonNull(email);
+        public Builder email(@Nullable String email) {
+            this.email = email;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder phone(String phone) {
-            this.phone = Objects.requireNonNull(phone);
+        public Builder phone(@Nullable String phone) {
+            this.phone = phone;
             return this;
         }
         @CustomType.Setter
-        public Builder subject(String subject) {
-            this.subject = Objects.requireNonNull(subject);
+        public Builder subject(@Nullable String subject) {
+            this.subject = subject;
             return this;
         }
         public GetListingSupportContact build() {

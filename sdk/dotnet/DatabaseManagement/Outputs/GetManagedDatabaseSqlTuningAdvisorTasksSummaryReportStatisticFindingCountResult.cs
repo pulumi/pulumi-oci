@@ -16,41 +16,41 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// <summary>
         /// The number of distinct SQL statements with alternative plan recommendations.
         /// </summary>
-        public readonly int AlternatePlan;
+        public readonly int? AlternatePlan;
         /// <summary>
         /// The number of distinct SQL statements with implemented SQL profiles.
         /// </summary>
-        public readonly int ImplementedSqlProfile;
+        public readonly int? ImplementedSqlProfile;
         /// <summary>
         /// The number of distinct SQL statements with index recommendations.
         /// </summary>
-        public readonly int Index;
+        public readonly int? Index;
         /// <summary>
         /// The number of distinct SQL statements with recommended SQL profiles.
         /// </summary>
-        public readonly int RecommendedSqlProfile;
+        public readonly int? RecommendedSqlProfile;
         /// <summary>
         /// The number of distinct SQL statements with restructured SQL recommendations.
         /// </summary>
-        public readonly int Restructure;
+        public readonly int? Restructure;
         /// <summary>
         /// The number of distinct SQL statements with stale or missing optimizer statistics recommendations.
         /// </summary>
-        public readonly int Statistics;
+        public readonly int? Statistics;
 
         [OutputConstructor]
         private GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticFindingCountResult(
-            int alternatePlan,
+            int? alternatePlan,
 
-            int implementedSqlProfile,
+            int? implementedSqlProfile,
 
-            int index,
+            int? index,
 
-            int recommendedSqlProfile,
+            int? recommendedSqlProfile,
 
-            int restructure,
+            int? restructure,
 
-            int statistics)
+            int? statistics)
         {
             AlternatePlan = alternatePlan;
             ImplementedSqlProfile = implementedSqlProfile;

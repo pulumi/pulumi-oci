@@ -112,62 +112,62 @@ namespace Pulumi.Oci.Email
         /// <summary>
         /// The OCID of the compartment to contain the suppression. Since suppressions are at the customer level, this must be the tenancy OCID.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// The email address of the suppression.
         /// </summary>
-        public readonly string EmailAddress;
+        public readonly string? EmailAddress;
         /// <summary>
         /// The specific error message returned by a system that resulted in the suppression. This message is usually an SMTP error code with additional descriptive text. Not provided for all types of suppressions.
         /// </summary>
-        public readonly string ErrorDetail;
+        public readonly string? ErrorDetail;
         /// <summary>
         /// DNS name of the source of the error that caused the suppression. Will be set to either the remote-mta or reporting-mta field from a delivery status notification (RFC 3464) when available. Not provided for all types of suppressions, and not always known.
         /// </summary>
-        public readonly string ErrorSource;
+        public readonly string? ErrorSource;
         /// <summary>
         /// The unique OCID of the suppression.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The value of the Message-ID header from the email that triggered a suppression. This value is as defined in RFC 5322 section 3.6.4, excluding angle-brackets. Not provided for all types of suppressions.
         /// </summary>
-        public readonly string MessageId;
+        public readonly string? MessageId;
         /// <summary>
         /// The reason that the email address was suppressed. For more information on the types of bounces, see [Suppression List](https://docs.cloud.oracle.com/iaas/Content/Email/Concepts/overview.htm#components).
         /// </summary>
-        public readonly string Reason;
+        public readonly string? Reason;
         public readonly string SuppressionId;
         /// <summary>
         /// The date and time a recipient's email address was added to the suppression list, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by RFC 3339.
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The last date and time the suppression prevented submission in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by RFC 3339.
         /// </summary>
-        public readonly string TimeLastSuppressed;
+        public readonly string? TimeLastSuppressed;
 
         [OutputConstructor]
         private GetSuppressionResult(
-            string compartmentId,
+            string? compartmentId,
 
-            string emailAddress,
+            string? emailAddress,
 
-            string errorDetail,
+            string? errorDetail,
 
-            string errorSource,
+            string? errorSource,
 
-            string id,
+            string? id,
 
-            string messageId,
+            string? messageId,
 
-            string reason,
+            string? reason,
 
             string suppressionId,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeLastSuppressed)
+            string? timeLastSuppressed)
         {
             CompartmentId = compartmentId;
             EmailAddress = emailAddress;

@@ -34,7 +34,7 @@ public final class GetOpaInstancesResult {
      * @return The list of opa_instance_collection.
      * 
      */
-    private List<GetOpaInstancesOpaInstanceCollection> opaInstanceCollections;
+    private @Nullable List<GetOpaInstancesOpaInstanceCollection> opaInstanceCollections;
     /**
      * @return The current state of the OpaInstance.
      * 
@@ -71,7 +71,7 @@ public final class GetOpaInstancesResult {
      * 
      */
     public List<GetOpaInstancesOpaInstanceCollection> opaInstanceCollections() {
-        return this.opaInstanceCollections;
+        return this.opaInstanceCollections == null ? List.of() : this.opaInstanceCollections;
     }
     /**
      * @return The current state of the OpaInstance.
@@ -94,7 +94,7 @@ public final class GetOpaInstancesResult {
         private @Nullable String displayName;
         private @Nullable List<GetOpaInstancesFilter> filters;
         private @Nullable String id;
-        private List<GetOpaInstancesOpaInstanceCollection> opaInstanceCollections;
+        private @Nullable List<GetOpaInstancesOpaInstanceCollection> opaInstanceCollections;
         private @Nullable String state;
         public Builder() {}
         public Builder(GetOpaInstancesResult defaults) {
@@ -131,8 +131,8 @@ public final class GetOpaInstancesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder opaInstanceCollections(List<GetOpaInstancesOpaInstanceCollection> opaInstanceCollections) {
-            this.opaInstanceCollections = Objects.requireNonNull(opaInstanceCollections);
+        public Builder opaInstanceCollections(@Nullable List<GetOpaInstancesOpaInstanceCollection> opaInstanceCollections) {
+            this.opaInstanceCollections = opaInstanceCollections;
             return this;
         }
         public Builder opaInstanceCollections(GetOpaInstancesOpaInstanceCollection... opaInstanceCollections) {

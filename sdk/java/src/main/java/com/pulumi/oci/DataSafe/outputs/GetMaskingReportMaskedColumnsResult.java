@@ -24,12 +24,12 @@ public final class GetMaskingReportMaskedColumnsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The list of masked_column_collection.
      * 
      */
-    private List<GetMaskingReportMaskedColumnsMaskedColumnCollection> maskedColumnCollections;
+    private @Nullable List<GetMaskingReportMaskedColumnsMaskedColumnCollection> maskedColumnCollections;
     /**
      * @return The masking group of the masked column.
      * 
@@ -72,15 +72,15 @@ public final class GetMaskingReportMaskedColumnsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The list of masked_column_collection.
      * 
      */
     public List<GetMaskingReportMaskedColumnsMaskedColumnCollection> maskedColumnCollections() {
-        return this.maskedColumnCollections;
+        return this.maskedColumnCollections == null ? List.of() : this.maskedColumnCollections;
     }
     /**
      * @return The masking group of the masked column.
@@ -132,8 +132,8 @@ public final class GetMaskingReportMaskedColumnsResult {
     public static final class Builder {
         private @Nullable List<String> columnNames;
         private @Nullable List<GetMaskingReportMaskedColumnsFilter> filters;
-        private String id;
-        private List<GetMaskingReportMaskedColumnsMaskedColumnCollection> maskedColumnCollections;
+        private @Nullable String id;
+        private @Nullable List<GetMaskingReportMaskedColumnsMaskedColumnCollection> maskedColumnCollections;
         private @Nullable List<String> maskingColumnGroups;
         private String maskingReportId;
         private @Nullable List<String> objectTypes;
@@ -172,13 +172,13 @@ public final class GetMaskingReportMaskedColumnsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder maskedColumnCollections(List<GetMaskingReportMaskedColumnsMaskedColumnCollection> maskedColumnCollections) {
-            this.maskedColumnCollections = Objects.requireNonNull(maskedColumnCollections);
+        public Builder maskedColumnCollections(@Nullable List<GetMaskingReportMaskedColumnsMaskedColumnCollection> maskedColumnCollections) {
+            this.maskedColumnCollections = maskedColumnCollections;
             return this;
         }
         public Builder maskedColumnCollections(GetMaskingReportMaskedColumnsMaskedColumnCollection... maskedColumnCollections) {

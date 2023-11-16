@@ -40,14 +40,14 @@ public final class GetReplicasResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private @Nullable Boolean isUpToDate;
     private @Nullable String replicaId;
     /**
      * @return The list of replicas.
      * 
      */
-    private List<GetReplicasReplica> replicas;
+    private @Nullable List<GetReplicasReplica> replicas;
     /**
      * @return The state of the read replica.
      * 
@@ -90,8 +90,8 @@ public final class GetReplicasResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public Optional<Boolean> isUpToDate() {
         return Optional.ofNullable(this.isUpToDate);
@@ -104,7 +104,7 @@ public final class GetReplicasResult {
      * 
      */
     public List<GetReplicasReplica> replicas() {
-        return this.replicas;
+        return this.replicas == null ? List.of() : this.replicas;
     }
     /**
      * @return The state of the read replica.
@@ -128,10 +128,10 @@ public final class GetReplicasResult {
         private @Nullable String dbSystemId;
         private @Nullable String displayName;
         private @Nullable List<GetReplicasFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable Boolean isUpToDate;
         private @Nullable String replicaId;
-        private List<GetReplicasReplica> replicas;
+        private @Nullable List<GetReplicasReplica> replicas;
         private @Nullable String state;
         public Builder() {}
         public Builder(GetReplicasResult defaults) {
@@ -177,8 +177,8 @@ public final class GetReplicasResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -192,8 +192,8 @@ public final class GetReplicasResult {
             return this;
         }
         @CustomType.Setter
-        public Builder replicas(List<GetReplicasReplica> replicas) {
-            this.replicas = Objects.requireNonNull(replicas);
+        public Builder replicas(@Nullable List<GetReplicasReplica> replicas) {
+            this.replicas = replicas;
             return this;
         }
         public Builder replicas(GetReplicasReplica... replicas) {

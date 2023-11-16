@@ -50,12 +50,12 @@ export interface GetDrgRouteDistributionStatementsResult {
     /**
      * The list of drg_route_distribution_statements.
      */
-    readonly drgRouteDistributionStatements: outputs.Core.GetDrgRouteDistributionStatementsDrgRouteDistributionStatement[];
+    readonly drgRouteDistributionStatements?: outputs.Core.GetDrgRouteDistributionStatementsDrgRouteDistributionStatement[];
     readonly filters?: outputs.Core.GetDrgRouteDistributionStatementsFilter[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
 }
 /**
  * This data source provides the list of Drg Route Distribution Statements in Oracle Cloud Infrastructure Core service.

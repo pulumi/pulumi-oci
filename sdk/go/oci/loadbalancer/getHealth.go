@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Load Balancer Health resource in Oracle Cloud Infrastructure Load Balancer service.
@@ -62,8 +61,8 @@ type GetHealthResult struct {
 	// A list of backend sets that are currently in the `CRITICAL` health state. The list identifies each backend set by the friendly name you assigned when you created it.  Example: `exampleBackendSet`
 	CriticalStateBackendSetNames []string `pulumi:"criticalStateBackendSetNames"`
 	// The provider-assigned unique ID for this managed resource.
-	Id             string `pulumi:"id"`
-	LoadBalancerId string `pulumi:"loadBalancerId"`
+	Id             *string `pulumi:"id"`
+	LoadBalancerId string  `pulumi:"loadBalancerId"`
 	// The overall health status of the load balancer.
 	// *  **OK:** All backend sets associated with the load balancer return a status of `OK`.
 	// *  **WARNING:** At least one of the backend sets associated with the load balancer returns a status of `WARNING`, no backend sets return a status of `CRITICAL`, and the load balancer life cycle state is `ACTIVE`.
@@ -73,9 +72,9 @@ type GetHealthResult struct {
 	// *  No backend sets are defined for the load balancer.
 	// *  More than half of the backend sets associated with the load balancer return a status of `UNKNOWN`, none of the backend sets return a status of `WARNING` or `CRITICAL`, and the load balancer life cycle state is `ACTIVE`.
 	// *  The system could not retrieve metrics for any reason.
-	Status string `pulumi:"status"`
+	Status *string `pulumi:"status"`
 	// The total number of backend sets associated with this load balancer.  Example: `4`
-	TotalBackendSetCount int `pulumi:"totalBackendSetCount"`
+	TotalBackendSetCount *int `pulumi:"totalBackendSetCount"`
 	// A list of backend sets that are currently in the `UNKNOWN` health state. The list identifies each backend set by the friendly name you assigned when you created it.  Example: `exampleBackendSet2`
 	UnknownStateBackendSetNames []string `pulumi:"unknownStateBackendSetNames"`
 	// A list of backend sets that are currently in the `WARNING` health state. The list identifies each backend set by the friendly name you assigned when you created it.  Example: `exampleBackendSet3`
@@ -120,20 +119,14 @@ func (o GetHealthResultOutput) ToGetHealthResultOutputWithContext(ctx context.Co
 	return o
 }
 
-func (o GetHealthResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetHealthResult] {
-	return pulumix.Output[GetHealthResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // A list of backend sets that are currently in the `CRITICAL` health state. The list identifies each backend set by the friendly name you assigned when you created it.  Example: `exampleBackendSet`
 func (o GetHealthResultOutput) CriticalStateBackendSetNames() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetHealthResult) []string { return v.CriticalStateBackendSetNames }).(pulumi.StringArrayOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetHealthResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetHealthResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetHealthResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetHealthResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetHealthResultOutput) LoadBalancerId() pulumi.StringOutput {
@@ -149,13 +142,13 @@ func (o GetHealthResultOutput) LoadBalancerId() pulumi.StringOutput {
 // *  No backend sets are defined for the load balancer.
 // *  More than half of the backend sets associated with the load balancer return a status of `UNKNOWN`, none of the backend sets return a status of `WARNING` or `CRITICAL`, and the load balancer life cycle state is `ACTIVE`.
 // *  The system could not retrieve metrics for any reason.
-func (o GetHealthResultOutput) Status() pulumi.StringOutput {
-	return o.ApplyT(func(v GetHealthResult) string { return v.Status }).(pulumi.StringOutput)
+func (o GetHealthResultOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetHealthResult) *string { return v.Status }).(pulumi.StringPtrOutput)
 }
 
 // The total number of backend sets associated with this load balancer.  Example: `4`
-func (o GetHealthResultOutput) TotalBackendSetCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetHealthResult) int { return v.TotalBackendSetCount }).(pulumi.IntOutput)
+func (o GetHealthResultOutput) TotalBackendSetCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetHealthResult) *int { return v.TotalBackendSetCount }).(pulumi.IntPtrOutput)
 }
 
 // A list of backend sets that are currently in the `UNKNOWN` health state. The list identifies each backend set by the friendly name you assigned when you created it.  Example: `exampleBackendSet2`

@@ -65,106 +65,67 @@ class GetLibraryMaskingFormatResult:
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The OCID of the compartment that contains the library masking format.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        The description of the format entry.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        The display name of the library masking format.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="formatEntries")
-    def format_entries(self) -> Sequence['outputs.GetLibraryMaskingFormatFormatEntryResult']:
-        """
-        An array of format entries. The combined output of all the format entries is used for masking.
-        """
+    def format_entries(self) -> Optional[Sequence['outputs.GetLibraryMaskingFormatFormatEntryResult']]:
         return pulumi.get(self, "format_entries")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The OCID of the library masking format.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="libraryMaskingFormatId")
     def library_masking_format_id(self) -> str:
-        """
-        The OCID of the library masking format.
-        """
         return pulumi.get(self, "library_masking_format_id")
 
     @property
     @pulumi.getter(name="sensitiveTypeIds")
-    def sensitive_type_ids(self) -> Sequence[str]:
-        """
-        An array of OCIDs of the sensitive types compatible with the library masking format.
-        """
+    def sensitive_type_ids(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "sensitive_type_ids")
 
     @property
     @pulumi.getter
-    def source(self) -> str:
-        """
-        Specifies whether the library masking format is user-defined or predefined.
-        """
+    def source(self) -> Optional[str]:
         return pulumi.get(self, "source")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the library masking format.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the library masking format was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The date and time the library masking format was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
 
@@ -192,21 +153,7 @@ class AwaitableGetLibraryMaskingFormatResult(GetLibraryMaskingFormatResult):
 def get_library_masking_format(library_masking_format_id: Optional[str] = None,
                                opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetLibraryMaskingFormatResult:
     """
-    This data source provides details about a specific Library Masking Format resource in Oracle Cloud Infrastructure Data Safe service.
-
-    Gets the details of the specified library masking format.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_library_masking_format = oci.DataSafe.get_library_masking_format(library_masking_format_id=oci_data_safe_library_masking_format["test_library_masking_format"]["id"])
-    ```
-
-
-    :param str library_masking_format_id: The OCID of the library masking format.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['libraryMaskingFormatId'] = library_masking_format_id
@@ -233,20 +180,6 @@ def get_library_masking_format(library_masking_format_id: Optional[str] = None,
 def get_library_masking_format_output(library_masking_format_id: Optional[pulumi.Input[str]] = None,
                                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetLibraryMaskingFormatResult]:
     """
-    This data source provides details about a specific Library Masking Format resource in Oracle Cloud Infrastructure Data Safe service.
-
-    Gets the details of the specified library masking format.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_library_masking_format = oci.DataSafe.get_library_masking_format(library_masking_format_id=oci_data_safe_library_masking_format["test_library_masking_format"]["id"])
-    ```
-
-
-    :param str library_masking_format_id: The OCID of the library masking format.
+    Use this data source to access information about an existing resource.
     """
     ...

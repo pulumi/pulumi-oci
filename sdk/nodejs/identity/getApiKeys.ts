@@ -52,12 +52,12 @@ export interface GetApiKeysResult {
     /**
      * The list of api_keys.
      */
-    readonly apiKeys: outputs.Identity.GetApiKeysApiKey[];
+    readonly apiKeys?: outputs.Identity.GetApiKeysApiKey[];
     readonly filters?: outputs.Identity.GetApiKeysFilter[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The OCID of the user the key belongs to.
      */

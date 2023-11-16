@@ -85,92 +85,62 @@ class GetQueueResult:
 
     @property
     @pulumi.getter(name="channelConsumptionLimit")
-    def channel_consumption_limit(self) -> int:
-        """
-        The percentage of allocated queue resources that can be consumed by a single channel. For example, if a queue has a storage limit of 2Gb, and a single channel consumption limit is 0.1 (10%), that means data size of a single channel  can't exceed 200Mb. Consumption limit of 100% (default) means that a single channel can consume up-to all allocated queue's resources.
-        """
+    def channel_consumption_limit(self) -> Optional[int]:
         return pulumi.get(self, "channel_consumption_limit")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the queue.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="customEncryptionKeyId")
-    def custom_encryption_key_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom encryption key to be used to encrypt messages content.
-        """
+    def custom_encryption_key_id(self) -> Optional[str]:
         return pulumi.get(self, "custom_encryption_key_id")
 
     @property
     @pulumi.getter(name="deadLetterQueueDeliveryCount")
-    def dead_letter_queue_delivery_count(self) -> int:
-        """
-        The number of times a message can be delivered to a consumer before being moved to the dead letter queue. A value of 0 indicates that the DLQ is not used.
-        """
+    def dead_letter_queue_delivery_count(self) -> Optional[int]:
         return pulumi.get(self, "dead_letter_queue_delivery_count")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A user-friendly name for the queue. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        A unique identifier for the queue that is immutable on creation.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        Any additional details about the current state of the queue.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="messagesEndpoint")
-    def messages_endpoint(self) -> str:
-        """
-        The endpoint to use to consume or publish messages in the queue.
-        """
+    def messages_endpoint(self) -> Optional[str]:
         return pulumi.get(self, "messages_endpoint")
 
     @property
     @pulumi.getter(name="purgeQueue")
-    def purge_queue(self) -> bool:
+    def purge_queue(self) -> Optional[bool]:
         return pulumi.get(self, "purge_queue")
 
     @property
     @pulumi.getter(name="purgeType")
-    def purge_type(self) -> str:
+    def purge_type(self) -> Optional[str]:
         return pulumi.get(self, "purge_type")
 
     @property
@@ -180,58 +150,37 @@ class GetQueueResult:
 
     @property
     @pulumi.getter(name="retentionInSeconds")
-    def retention_in_seconds(self) -> int:
-        """
-        The retention period of the messages in the queue, in seconds.
-        """
+    def retention_in_seconds(self) -> Optional[int]:
         return pulumi.get(self, "retention_in_seconds")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the queue.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The time that the queue was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2018-04-20T00:00:07.405Z`
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The time that the queue was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2018-04-20T00:00:07.405Z`
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
     @property
     @pulumi.getter(name="timeoutInSeconds")
-    def timeout_in_seconds(self) -> int:
-        """
-        The default polling timeout of the messages in the queue, in seconds.
-        """
+    def timeout_in_seconds(self) -> Optional[int]:
         return pulumi.get(self, "timeout_in_seconds")
 
     @property
     @pulumi.getter(name="visibilityInSeconds")
-    def visibility_in_seconds(self) -> int:
-        """
-        The default visibility timeout of the messages consumed from the queue, in seconds.
-        """
+    def visibility_in_seconds(self) -> Optional[int]:
         return pulumi.get(self, "visibility_in_seconds")
 
 
@@ -266,21 +215,7 @@ class AwaitableGetQueueResult(GetQueueResult):
 def get_queue(queue_id: Optional[str] = None,
               opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetQueueResult:
     """
-    This data source provides details about a specific Queue resource in Oracle Cloud Infrastructure Queue service.
-
-    Gets a queue by identifier.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_queue = oci.Queue.get_queue(queue_id=oci_queue_queue["test_queue"]["id"])
-    ```
-
-
-    :param str queue_id: The unique queue identifier.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['queueId'] = queue_id
@@ -314,20 +249,6 @@ def get_queue(queue_id: Optional[str] = None,
 def get_queue_output(queue_id: Optional[pulumi.Input[str]] = None,
                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetQueueResult]:
     """
-    This data source provides details about a specific Queue resource in Oracle Cloud Infrastructure Queue service.
-
-    Gets a queue by identifier.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_queue = oci.Queue.get_queue(queue_id=oci_queue_queue["test_queue"]["id"])
-    ```
-
-
-    :param str queue_id: The unique queue identifier.
+    Use this data source to access information about an existing resource.
     """
     ...

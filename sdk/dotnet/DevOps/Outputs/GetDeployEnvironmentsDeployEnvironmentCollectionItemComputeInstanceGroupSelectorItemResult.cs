@@ -20,25 +20,25 @@ namespace Pulumi.Oci.DevOps.Outputs
         /// <summary>
         /// Query expression confirming to the Oracle Cloud Infrastructure Search Language syntax to select compute instances for the group. The language is documented at https://docs.oracle.com/en-us/iaas/Content/Search/Concepts/querysyntax.htm
         /// </summary>
-        public readonly string Query;
+        public readonly string? Query;
         /// <summary>
         /// Region identifier referred by the deployment environment. Region identifiers are listed at https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm
         /// </summary>
-        public readonly string Region;
+        public readonly string? Region;
         /// <summary>
         /// Defines the type of the instance selector for the group.
         /// </summary>
-        public readonly string SelectorType;
+        public readonly string? SelectorType;
 
         [OutputConstructor]
         private GetDeployEnvironmentsDeployEnvironmentCollectionItemComputeInstanceGroupSelectorItemResult(
             ImmutableArray<string> computeInstanceIds,
 
-            string query,
+            string? query,
 
-            string region,
+            string? region,
 
-            string selectorType)
+            string? selectorType)
         {
             ComputeInstanceIds = computeInstanceIds;
             Query = query;

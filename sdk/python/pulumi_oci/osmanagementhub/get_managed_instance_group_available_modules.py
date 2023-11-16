@@ -58,7 +58,7 @@ class GetManagedInstanceGroupAvailableModulesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -66,10 +66,7 @@ class GetManagedInstanceGroupAvailableModulesResult:
 
     @property
     @pulumi.getter(name="managedInstanceGroupAvailableModuleCollections")
-    def managed_instance_group_available_module_collections(self) -> Sequence['outputs.GetManagedInstanceGroupAvailableModulesManagedInstanceGroupAvailableModuleCollectionResult']:
-        """
-        The list of managed_instance_group_available_module_collection.
-        """
+    def managed_instance_group_available_module_collections(self) -> Optional[Sequence['outputs.GetManagedInstanceGroupAvailableModulesManagedInstanceGroupAvailableModuleCollectionResult']]:
         return pulumi.get(self, "managed_instance_group_available_module_collections")
 
     @property
@@ -80,9 +77,6 @@ class GetManagedInstanceGroupAvailableModulesResult:
     @property
     @pulumi.getter
     def name(self) -> Optional[str]:
-        """
-        The name of the module that is available to be enabled on the managed instance group.
-        """
         return pulumi.get(self, "name")
 
     @property
@@ -113,28 +107,7 @@ def get_managed_instance_group_available_modules(compartment_id: Optional[str] =
                                                  name_contains: Optional[str] = None,
                                                  opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetManagedInstanceGroupAvailableModulesResult:
     """
-    This data source provides the list of Managed Instance Group Available Modules in Oracle Cloud Infrastructure Os Management Hub service.
-
-    Lists available modules that for the specified managed instance group. Filter the list against a variety of
-    criteria including but not limited to its name.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_managed_instance_group_available_modules = oci.OsManagementHub.get_managed_instance_group_available_modules(managed_instance_group_id=oci_os_management_hub_managed_instance_group["test_managed_instance_group"]["id"],
-        compartment_id=var["compartment_id"],
-        name=var["managed_instance_group_available_module_name"],
-        name_contains=var["managed_instance_group_available_module_name_contains"])
-    ```
-
-
-    :param str compartment_id: The OCID of the compartment that contains the resources to list.
-    :param str managed_instance_group_id: The managed instance group OCID.
-    :param str name: The resource name.
-    :param str name_contains: A filter to return resources that may partially match the name given.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -163,27 +136,6 @@ def get_managed_instance_group_available_modules_output(compartment_id: Optional
                                                         name_contains: Optional[pulumi.Input[Optional[str]]] = None,
                                                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetManagedInstanceGroupAvailableModulesResult]:
     """
-    This data source provides the list of Managed Instance Group Available Modules in Oracle Cloud Infrastructure Os Management Hub service.
-
-    Lists available modules that for the specified managed instance group. Filter the list against a variety of
-    criteria including but not limited to its name.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_managed_instance_group_available_modules = oci.OsManagementHub.get_managed_instance_group_available_modules(managed_instance_group_id=oci_os_management_hub_managed_instance_group["test_managed_instance_group"]["id"],
-        compartment_id=var["compartment_id"],
-        name=var["managed_instance_group_available_module_name"],
-        name_contains=var["managed_instance_group_available_module_name_contains"])
-    ```
-
-
-    :param str compartment_id: The OCID of the compartment that contains the resources to list.
-    :param str managed_instance_group_id: The managed instance group OCID.
-    :param str name: The resource name.
-    :param str name_contains: A filter to return resources that may partially match the name given.
+    Use this data source to access information about an existing resource.
     """
     ...

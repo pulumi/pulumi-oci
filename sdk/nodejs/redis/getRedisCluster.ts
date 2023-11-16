@@ -47,80 +47,80 @@ export interface GetRedisClusterResult {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the compartment that contains the Redis cluster.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * A user-friendly name of a Redis cluster node.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the Redis cluster.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * A message describing the current state in more detail. For example, the message might provide actionable information for a resource in `FAILED` state.
      */
-    readonly lifecycleDetails: string;
+    readonly lifecycleDetails?: string;
     /**
      * The collection of Redis cluster nodes.
      */
-    readonly nodeCollections: outputs.Redis.GetRedisClusterNodeCollection[];
+    readonly nodeCollections?: outputs.Redis.GetRedisClusterNodeCollection[];
     /**
      * The number of nodes in the Redis cluster.
      */
-    readonly nodeCount: number;
+    readonly nodeCount?: number;
     /**
      * The amount of memory allocated to the Redis cluster's nodes, in gigabytes.
      */
-    readonly nodeMemoryInGbs: number;
+    readonly nodeMemoryInGbs?: number;
     /**
      * The private IP address of the API endpoint for the Redis cluster's primary node.
      */
-    readonly primaryEndpointIpAddress: string;
+    readonly primaryEndpointIpAddress?: string;
     /**
      * The fully qualified domain name (FQDN) of the API endpoint for the Redis cluster's primary node.
      */
-    readonly primaryFqdn: string;
+    readonly primaryFqdn?: string;
     readonly redisClusterId: string;
     /**
      * The private IP address of the API endpoint for the Redis cluster's replica nodes.
      */
-    readonly replicasEndpointIpAddress: string;
+    readonly replicasEndpointIpAddress?: string;
     /**
      * The fully qualified domain name (FQDN) of the API endpoint for the Redis cluster's replica nodes.
      */
-    readonly replicasFqdn: string;
+    readonly replicasFqdn?: string;
     /**
      * The Redis version that the cluster is running.
      */
-    readonly softwareVersion: string;
+    readonly softwareVersion?: string;
     /**
      * The current state of the Redis cluster.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the Redis cluster's subnet.
      */
-    readonly subnetId: string;
+    readonly subnetId?: string;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    readonly systemTags: {[key: string]: any};
+    readonly systemTags?: {[key: string]: any};
     /**
      * The date and time the Redis cluster was created. An [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The date and time the Redis cluster was updated. An [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
      */
-    readonly timeUpdated: string;
+    readonly timeUpdated?: string;
 }
 /**
  * This data source provides details about a specific Redis Cluster resource in Oracle Cloud Infrastructure Redis service.

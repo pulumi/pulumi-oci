@@ -6,6 +6,8 @@ package com.pulumi.oci.Functions.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetPbfListingVersionRequirementPolicy {
@@ -13,27 +15,27 @@ public final class GetPbfListingVersionRequirementPolicy {
      * @return Details about why this policy is required and what it will be used for.
      * 
      */
-    private String description;
+    private @Nullable String description;
     /**
      * @return Policy required for PBF execution
      * 
      */
-    private String policy;
+    private @Nullable String policy;
 
     private GetPbfListingVersionRequirementPolicy() {}
     /**
      * @return Details about why this policy is required and what it will be used for.
      * 
      */
-    public String description() {
-        return this.description;
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
     /**
      * @return Policy required for PBF execution
      * 
      */
-    public String policy() {
-        return this.policy;
+    public Optional<String> policy() {
+        return Optional.ofNullable(this.policy);
     }
 
     public static Builder builder() {
@@ -45,8 +47,8 @@ public final class GetPbfListingVersionRequirementPolicy {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String description;
-        private String policy;
+        private @Nullable String description;
+        private @Nullable String policy;
         public Builder() {}
         public Builder(GetPbfListingVersionRequirementPolicy defaults) {
     	      Objects.requireNonNull(defaults);
@@ -55,13 +57,13 @@ public final class GetPbfListingVersionRequirementPolicy {
         }
 
         @CustomType.Setter
-        public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+        public Builder description(@Nullable String description) {
+            this.description = description;
             return this;
         }
         @CustomType.Setter
-        public Builder policy(String policy) {
-            this.policy = Objects.requireNonNull(policy);
+        public Builder policy(@Nullable String policy) {
+            this.policy = policy;
             return this;
         }
         public GetPbfListingVersionRequirementPolicy build() {

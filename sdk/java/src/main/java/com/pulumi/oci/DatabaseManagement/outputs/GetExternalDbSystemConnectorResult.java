@@ -8,6 +8,8 @@ import com.pulumi.oci.DatabaseManagement.outputs.GetExternalDbSystemConnectorCon
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetExternalDbSystemConnectorResult {
@@ -15,123 +17,123 @@ public final class GetExternalDbSystemConnectorResult {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used for the external DB system connector.
      * 
      */
-    private String agentId;
+    private @Nullable String agentId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return The error message indicating the reason for connection failure or `null` if the connection was successful.
      * 
      */
-    private String connectionFailureMessage;
+    private @Nullable String connectionFailureMessage;
     /**
      * @return The connection details required to connect to an external DB system component.
      * 
      */
-    private List<GetExternalDbSystemConnectorConnectionInfo> connectionInfos;
+    private @Nullable List<GetExternalDbSystemConnectorConnectionInfo> connectionInfos;
     /**
      * @return The status of connectivity to the external DB system component.
      * 
      */
-    private String connectionStatus;
+    private @Nullable String connectionStatus;
     /**
      * @return The type of connector.
      * 
      */
-    private String connectorType;
+    private @Nullable String connectorType;
     /**
      * @return The user-friendly name for the external connector. The name does not have to be unique.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     private String externalDbSystemConnectorId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that the connector is a part of.
      * 
      */
-    private String externalDbSystemId;
+    private @Nullable String externalDbSystemId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system connector.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Additional information about the current lifecycle state.
      * 
      */
-    private String lifecycleDetails;
+    private @Nullable String lifecycleDetails;
     /**
      * @return The current lifecycle state of the external DB system connector.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return The date and time the connectionStatus of the external DB system connector was last updated.
      * 
      */
-    private String timeConnectionStatusLastUpdated;
+    private @Nullable String timeConnectionStatusLastUpdated;
     /**
      * @return The date and time the external DB system connector was created.
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The date and time the external DB system connector was last updated.
      * 
      */
-    private String timeUpdated;
+    private @Nullable String timeUpdated;
 
     private GetExternalDbSystemConnectorResult() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used for the external DB system connector.
      * 
      */
-    public String agentId() {
-        return this.agentId;
+    public Optional<String> agentId() {
+        return Optional.ofNullable(this.agentId);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return The error message indicating the reason for connection failure or `null` if the connection was successful.
      * 
      */
-    public String connectionFailureMessage() {
-        return this.connectionFailureMessage;
+    public Optional<String> connectionFailureMessage() {
+        return Optional.ofNullable(this.connectionFailureMessage);
     }
     /**
      * @return The connection details required to connect to an external DB system component.
      * 
      */
     public List<GetExternalDbSystemConnectorConnectionInfo> connectionInfos() {
-        return this.connectionInfos;
+        return this.connectionInfos == null ? List.of() : this.connectionInfos;
     }
     /**
      * @return The status of connectivity to the external DB system component.
      * 
      */
-    public String connectionStatus() {
-        return this.connectionStatus;
+    public Optional<String> connectionStatus() {
+        return Optional.ofNullable(this.connectionStatus);
     }
     /**
      * @return The type of connector.
      * 
      */
-    public String connectorType() {
-        return this.connectorType;
+    public Optional<String> connectorType() {
+        return Optional.ofNullable(this.connectorType);
     }
     /**
      * @return The user-friendly name for the external connector. The name does not have to be unique.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     public String externalDbSystemConnectorId() {
         return this.externalDbSystemConnectorId;
@@ -140,50 +142,50 @@ public final class GetExternalDbSystemConnectorResult {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that the connector is a part of.
      * 
      */
-    public String externalDbSystemId() {
-        return this.externalDbSystemId;
+    public Optional<String> externalDbSystemId() {
+        return Optional.ofNullable(this.externalDbSystemId);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system connector.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Additional information about the current lifecycle state.
      * 
      */
-    public String lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Optional<String> lifecycleDetails() {
+        return Optional.ofNullable(this.lifecycleDetails);
     }
     /**
      * @return The current lifecycle state of the external DB system connector.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return The date and time the connectionStatus of the external DB system connector was last updated.
      * 
      */
-    public String timeConnectionStatusLastUpdated() {
-        return this.timeConnectionStatusLastUpdated;
+    public Optional<String> timeConnectionStatusLastUpdated() {
+        return Optional.ofNullable(this.timeConnectionStatusLastUpdated);
     }
     /**
      * @return The date and time the external DB system connector was created.
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return The date and time the external DB system connector was last updated.
      * 
      */
-    public String timeUpdated() {
-        return this.timeUpdated;
+    public Optional<String> timeUpdated() {
+        return Optional.ofNullable(this.timeUpdated);
     }
 
     public static Builder builder() {
@@ -195,21 +197,21 @@ public final class GetExternalDbSystemConnectorResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String agentId;
-        private String compartmentId;
-        private String connectionFailureMessage;
-        private List<GetExternalDbSystemConnectorConnectionInfo> connectionInfos;
-        private String connectionStatus;
-        private String connectorType;
-        private String displayName;
+        private @Nullable String agentId;
+        private @Nullable String compartmentId;
+        private @Nullable String connectionFailureMessage;
+        private @Nullable List<GetExternalDbSystemConnectorConnectionInfo> connectionInfos;
+        private @Nullable String connectionStatus;
+        private @Nullable String connectorType;
+        private @Nullable String displayName;
         private String externalDbSystemConnectorId;
-        private String externalDbSystemId;
-        private String id;
-        private String lifecycleDetails;
-        private String state;
-        private String timeConnectionStatusLastUpdated;
-        private String timeCreated;
-        private String timeUpdated;
+        private @Nullable String externalDbSystemId;
+        private @Nullable String id;
+        private @Nullable String lifecycleDetails;
+        private @Nullable String state;
+        private @Nullable String timeConnectionStatusLastUpdated;
+        private @Nullable String timeCreated;
+        private @Nullable String timeUpdated;
         public Builder() {}
         public Builder(GetExternalDbSystemConnectorResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -231,41 +233,41 @@ public final class GetExternalDbSystemConnectorResult {
         }
 
         @CustomType.Setter
-        public Builder agentId(String agentId) {
-            this.agentId = Objects.requireNonNull(agentId);
+        public Builder agentId(@Nullable String agentId) {
+            this.agentId = agentId;
             return this;
         }
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder connectionFailureMessage(String connectionFailureMessage) {
-            this.connectionFailureMessage = Objects.requireNonNull(connectionFailureMessage);
+        public Builder connectionFailureMessage(@Nullable String connectionFailureMessage) {
+            this.connectionFailureMessage = connectionFailureMessage;
             return this;
         }
         @CustomType.Setter
-        public Builder connectionInfos(List<GetExternalDbSystemConnectorConnectionInfo> connectionInfos) {
-            this.connectionInfos = Objects.requireNonNull(connectionInfos);
+        public Builder connectionInfos(@Nullable List<GetExternalDbSystemConnectorConnectionInfo> connectionInfos) {
+            this.connectionInfos = connectionInfos;
             return this;
         }
         public Builder connectionInfos(GetExternalDbSystemConnectorConnectionInfo... connectionInfos) {
             return connectionInfos(List.of(connectionInfos));
         }
         @CustomType.Setter
-        public Builder connectionStatus(String connectionStatus) {
-            this.connectionStatus = Objects.requireNonNull(connectionStatus);
+        public Builder connectionStatus(@Nullable String connectionStatus) {
+            this.connectionStatus = connectionStatus;
             return this;
         }
         @CustomType.Setter
-        public Builder connectorType(String connectorType) {
-            this.connectorType = Objects.requireNonNull(connectorType);
+        public Builder connectorType(@Nullable String connectorType) {
+            this.connectorType = connectorType;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
@@ -274,38 +276,38 @@ public final class GetExternalDbSystemConnectorResult {
             return this;
         }
         @CustomType.Setter
-        public Builder externalDbSystemId(String externalDbSystemId) {
-            this.externalDbSystemId = Objects.requireNonNull(externalDbSystemId);
+        public Builder externalDbSystemId(@Nullable String externalDbSystemId) {
+            this.externalDbSystemId = externalDbSystemId;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+        public Builder lifecycleDetails(@Nullable String lifecycleDetails) {
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder timeConnectionStatusLastUpdated(String timeConnectionStatusLastUpdated) {
-            this.timeConnectionStatusLastUpdated = Objects.requireNonNull(timeConnectionStatusLastUpdated);
+        public Builder timeConnectionStatusLastUpdated(@Nullable String timeConnectionStatusLastUpdated) {
+            this.timeConnectionStatusLastUpdated = timeConnectionStatusLastUpdated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+        public Builder timeUpdated(@Nullable String timeUpdated) {
+            this.timeUpdated = timeUpdated;
             return this;
         }
         public GetExternalDbSystemConnectorResult build() {

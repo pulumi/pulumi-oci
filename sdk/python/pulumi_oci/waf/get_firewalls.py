@@ -49,17 +49,11 @@ class GetFirewallsResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        WebAppFirewall display name, can be renamed.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -70,33 +64,21 @@ class GetFirewallsResult:
     @property
     @pulumi.getter
     def id(self) -> Optional[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the WebAppFirewall.
-        """
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter
     def states(self) -> Optional[Sequence[str]]:
-        """
-        The current state of the WebAppFirewall.
-        """
         return pulumi.get(self, "states")
 
     @property
     @pulumi.getter(name="webAppFirewallCollections")
-    def web_app_firewall_collections(self) -> Sequence['outputs.GetFirewallsWebAppFirewallCollectionResult']:
-        """
-        The list of web_app_firewall_collection.
-        """
+    def web_app_firewall_collections(self) -> Optional[Sequence['outputs.GetFirewallsWebAppFirewallCollectionResult']]:
         return pulumi.get(self, "web_app_firewall_collections")
 
     @property
     @pulumi.getter(name="webAppFirewallPolicyId")
     def web_app_firewall_policy_id(self) -> Optional[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of WebAppFirewallPolicy, which is attached to the resource.
-        """
         return pulumi.get(self, "web_app_firewall_policy_id")
 
 
@@ -123,29 +105,7 @@ def get_firewalls(compartment_id: Optional[str] = None,
                   web_app_firewall_policy_id: Optional[str] = None,
                   opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetFirewallsResult:
     """
-    This data source provides the list of Web App Firewalls in Oracle Cloud Infrastructure Waf service.
-
-    Gets a list of all WebAppFirewalls in a compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_web_app_firewalls = oci.Waf.get_firewalls(compartment_id=var["compartment_id"],
-        display_name=var["web_app_firewall_display_name"],
-        id=var["web_app_firewall_id"],
-        states=var["web_app_firewall_state"],
-        web_app_firewall_policy_id=oci_waf_web_app_firewall_policy["test_web_app_firewall_policy"]["id"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
-    :param str display_name: A filter to return only resources that match the entire display name given.
-    :param str id: A filter to return only the WebAppFirewall with the given [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param Sequence[str] states: A filter to return only resources that match the given lifecycleState.
-    :param str web_app_firewall_policy_id: A filter to return only the WebAppFirewall with the given [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of related WebAppFirewallPolicy.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -176,28 +136,6 @@ def get_firewalls_output(compartment_id: Optional[pulumi.Input[str]] = None,
                          web_app_firewall_policy_id: Optional[pulumi.Input[Optional[str]]] = None,
                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetFirewallsResult]:
     """
-    This data source provides the list of Web App Firewalls in Oracle Cloud Infrastructure Waf service.
-
-    Gets a list of all WebAppFirewalls in a compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_web_app_firewalls = oci.Waf.get_firewalls(compartment_id=var["compartment_id"],
-        display_name=var["web_app_firewall_display_name"],
-        id=var["web_app_firewall_id"],
-        states=var["web_app_firewall_state"],
-        web_app_firewall_policy_id=oci_waf_web_app_firewall_policy["test_web_app_firewall_policy"]["id"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
-    :param str display_name: A filter to return only resources that match the entire display name given.
-    :param str id: A filter to return only the WebAppFirewall with the given [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param Sequence[str] states: A filter to return only resources that match the given lifecycleState.
-    :param str web_app_firewall_policy_id: A filter to return only the WebAppFirewall with the given [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of related WebAppFirewallPolicy.
+    Use this data source to access information about an existing resource.
     """
     ...

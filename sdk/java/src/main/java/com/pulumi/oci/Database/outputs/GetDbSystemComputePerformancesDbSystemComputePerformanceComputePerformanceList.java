@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Double;
 import java.lang.Integer;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceList {
@@ -14,63 +16,63 @@ public final class GetDbSystemComputePerformancesDbSystemComputePerformanceCompu
      * @return The number of OCPU cores available.
      * 
      */
-    private Integer cpuCoreCount;
+    private @Nullable Integer cpuCoreCount;
     /**
      * @return The amount of memory allocated for the VMDB System.
      * 
      */
-    private Double memoryInGbs;
+    private @Nullable Double memoryInGbs;
     /**
      * @return The network bandwidth of the VMDB system in gbps.
      * 
      */
-    private Double networkBandwidthInGbps;
+    private @Nullable Double networkBandwidthInGbps;
     /**
      * @return IOPS for the VMDB System.
      * 
      */
-    private Double networkIops;
+    private @Nullable Double networkIops;
     /**
      * @return Network throughput for the VMDB System.
      * 
      */
-    private Double networkThroughputInMbps;
+    private @Nullable Double networkThroughputInMbps;
 
     private GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceList() {}
     /**
      * @return The number of OCPU cores available.
      * 
      */
-    public Integer cpuCoreCount() {
-        return this.cpuCoreCount;
+    public Optional<Integer> cpuCoreCount() {
+        return Optional.ofNullable(this.cpuCoreCount);
     }
     /**
      * @return The amount of memory allocated for the VMDB System.
      * 
      */
-    public Double memoryInGbs() {
-        return this.memoryInGbs;
+    public Optional<Double> memoryInGbs() {
+        return Optional.ofNullable(this.memoryInGbs);
     }
     /**
      * @return The network bandwidth of the VMDB system in gbps.
      * 
      */
-    public Double networkBandwidthInGbps() {
-        return this.networkBandwidthInGbps;
+    public Optional<Double> networkBandwidthInGbps() {
+        return Optional.ofNullable(this.networkBandwidthInGbps);
     }
     /**
      * @return IOPS for the VMDB System.
      * 
      */
-    public Double networkIops() {
-        return this.networkIops;
+    public Optional<Double> networkIops() {
+        return Optional.ofNullable(this.networkIops);
     }
     /**
      * @return Network throughput for the VMDB System.
      * 
      */
-    public Double networkThroughputInMbps() {
-        return this.networkThroughputInMbps;
+    public Optional<Double> networkThroughputInMbps() {
+        return Optional.ofNullable(this.networkThroughputInMbps);
     }
 
     public static Builder builder() {
@@ -82,11 +84,11 @@ public final class GetDbSystemComputePerformancesDbSystemComputePerformanceCompu
     }
     @CustomType.Builder
     public static final class Builder {
-        private Integer cpuCoreCount;
-        private Double memoryInGbs;
-        private Double networkBandwidthInGbps;
-        private Double networkIops;
-        private Double networkThroughputInMbps;
+        private @Nullable Integer cpuCoreCount;
+        private @Nullable Double memoryInGbs;
+        private @Nullable Double networkBandwidthInGbps;
+        private @Nullable Double networkIops;
+        private @Nullable Double networkThroughputInMbps;
         public Builder() {}
         public Builder(GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceList defaults) {
     	      Objects.requireNonNull(defaults);
@@ -98,28 +100,28 @@ public final class GetDbSystemComputePerformancesDbSystemComputePerformanceCompu
         }
 
         @CustomType.Setter
-        public Builder cpuCoreCount(Integer cpuCoreCount) {
-            this.cpuCoreCount = Objects.requireNonNull(cpuCoreCount);
+        public Builder cpuCoreCount(@Nullable Integer cpuCoreCount) {
+            this.cpuCoreCount = cpuCoreCount;
             return this;
         }
         @CustomType.Setter
-        public Builder memoryInGbs(Double memoryInGbs) {
-            this.memoryInGbs = Objects.requireNonNull(memoryInGbs);
+        public Builder memoryInGbs(@Nullable Double memoryInGbs) {
+            this.memoryInGbs = memoryInGbs;
             return this;
         }
         @CustomType.Setter
-        public Builder networkBandwidthInGbps(Double networkBandwidthInGbps) {
-            this.networkBandwidthInGbps = Objects.requireNonNull(networkBandwidthInGbps);
+        public Builder networkBandwidthInGbps(@Nullable Double networkBandwidthInGbps) {
+            this.networkBandwidthInGbps = networkBandwidthInGbps;
             return this;
         }
         @CustomType.Setter
-        public Builder networkIops(Double networkIops) {
-            this.networkIops = Objects.requireNonNull(networkIops);
+        public Builder networkIops(@Nullable Double networkIops) {
+            this.networkIops = networkIops;
             return this;
         }
         @CustomType.Setter
-        public Builder networkThroughputInMbps(Double networkThroughputInMbps) {
-            this.networkThroughputInMbps = Objects.requireNonNull(networkThroughputInMbps);
+        public Builder networkThroughputInMbps(@Nullable Double networkThroughputInMbps) {
+            this.networkThroughputInMbps = networkThroughputInMbps;
             return this;
         }
         public GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceList build() {

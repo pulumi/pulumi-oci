@@ -48,31 +48,31 @@ export class ExternalDbNode extends pulumi.CustomResource {
     /**
      * The additional details of the external DB node defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
      */
-    public /*out*/ readonly additionalDetails!: pulumi.Output<{[key: string]: any}>;
+    public /*out*/ readonly additionalDetails!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
-    public /*out*/ readonly compartmentId!: pulumi.Output<string>;
+    public /*out*/ readonly compartmentId!: pulumi.Output<string | undefined>;
     /**
      * The name of the external DB node.
      */
-    public /*out*/ readonly componentName!: pulumi.Output<string>;
+    public /*out*/ readonly componentName!: pulumi.Output<string | undefined>;
     /**
      * The number of CPU cores available on the DB node.
      */
-    public /*out*/ readonly cpuCoreCount!: pulumi.Output<number>;
+    public /*out*/ readonly cpuCoreCount!: pulumi.Output<number | undefined>;
     /**
      * The user-friendly name for the external DB node. The name does not have to be unique.
      */
-    public /*out*/ readonly displayName!: pulumi.Output<string>;
+    public /*out*/ readonly displayName!: pulumi.Output<string | undefined>;
     /**
      * Name of the domain.
      */
-    public /*out*/ readonly domainName!: pulumi.Output<string>;
+    public /*out*/ readonly domainName!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external connector.
      */
-    public readonly externalConnectorId!: pulumi.Output<string>;
+    public readonly externalConnectorId!: pulumi.Output<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database node.
      *
@@ -84,31 +84,31 @@ export class ExternalDbNode extends pulumi.CustomResource {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that the DB node is a part of.
      */
-    public /*out*/ readonly externalDbSystemId!: pulumi.Output<string>;
+    public /*out*/ readonly externalDbSystemId!: pulumi.Output<string | undefined>;
     /**
      * The host name for the DB node.
      */
-    public /*out*/ readonly hostName!: pulumi.Output<string>;
+    public /*out*/ readonly hostName!: pulumi.Output<string | undefined>;
     /**
      * Additional information about the current lifecycle state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string | undefined>;
     /**
      * The total memory in gigabytes (GB) on the DB node.
      */
-    public /*out*/ readonly memorySizeInGbs!: pulumi.Output<number>;
+    public /*out*/ readonly memorySizeInGbs!: pulumi.Output<number | undefined>;
     /**
      * The current lifecycle state of the external DB node.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * The date and time the external DB node was created.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * The date and time the external DB node was last updated.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    public /*out*/ readonly timeUpdated!: pulumi.Output<string | undefined>;
 
     /**
      * Create a ExternalDbNode resource with the given unique name, arguments, and options.

@@ -6,6 +6,8 @@ package com.pulumi.oci.Adm.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetRemediationRunStagesRemediationRunStageCollectionItemPipelineProperty {
@@ -13,27 +15,27 @@ public final class GetRemediationRunStagesRemediationRunStageCollectionItemPipel
      * @return Unique identifier for the pipeline or action created in the Verify stage.
      * 
      */
-    private String pipelineIdentifier;
+    private @Nullable String pipelineIdentifier;
     /**
      * @return The web link to the pipeline from the Verify stage.
      * 
      */
-    private String pipelineUrl;
+    private @Nullable String pipelineUrl;
 
     private GetRemediationRunStagesRemediationRunStageCollectionItemPipelineProperty() {}
     /**
      * @return Unique identifier for the pipeline or action created in the Verify stage.
      * 
      */
-    public String pipelineIdentifier() {
-        return this.pipelineIdentifier;
+    public Optional<String> pipelineIdentifier() {
+        return Optional.ofNullable(this.pipelineIdentifier);
     }
     /**
      * @return The web link to the pipeline from the Verify stage.
      * 
      */
-    public String pipelineUrl() {
-        return this.pipelineUrl;
+    public Optional<String> pipelineUrl() {
+        return Optional.ofNullable(this.pipelineUrl);
     }
 
     public static Builder builder() {
@@ -45,8 +47,8 @@ public final class GetRemediationRunStagesRemediationRunStageCollectionItemPipel
     }
     @CustomType.Builder
     public static final class Builder {
-        private String pipelineIdentifier;
-        private String pipelineUrl;
+        private @Nullable String pipelineIdentifier;
+        private @Nullable String pipelineUrl;
         public Builder() {}
         public Builder(GetRemediationRunStagesRemediationRunStageCollectionItemPipelineProperty defaults) {
     	      Objects.requireNonNull(defaults);
@@ -55,13 +57,13 @@ public final class GetRemediationRunStagesRemediationRunStageCollectionItemPipel
         }
 
         @CustomType.Setter
-        public Builder pipelineIdentifier(String pipelineIdentifier) {
-            this.pipelineIdentifier = Objects.requireNonNull(pipelineIdentifier);
+        public Builder pipelineIdentifier(@Nullable String pipelineIdentifier) {
+            this.pipelineIdentifier = pipelineIdentifier;
             return this;
         }
         @CustomType.Setter
-        public Builder pipelineUrl(String pipelineUrl) {
-            this.pipelineUrl = Objects.requireNonNull(pipelineUrl);
+        public Builder pipelineUrl(@Nullable String pipelineUrl) {
+            this.pipelineUrl = pipelineUrl;
             return this;
         }
         public GetRemediationRunStagesRemediationRunStageCollectionItemPipelineProperty build() {

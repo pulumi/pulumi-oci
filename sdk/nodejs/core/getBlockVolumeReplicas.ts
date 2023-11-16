@@ -78,7 +78,7 @@ export interface GetBlockVolumeReplicasResult {
     /**
      * The list of block_volume_replicas.
      */
-    readonly blockVolumeReplicas: outputs.Core.GetBlockVolumeReplicasBlockVolumeReplica[];
+    readonly blockVolumeReplicas?: outputs.Core.GetBlockVolumeReplicasBlockVolumeReplica[];
     /**
      * The OCID of the compartment that contains the block volume replica.
      */
@@ -91,7 +91,7 @@ export interface GetBlockVolumeReplicasResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The current state of a block volume replica.
      */

@@ -20,12 +20,12 @@ public final class GetFlexComponentsResult {
      * @return The list of flex_component_collection.
      * 
      */
-    private List<GetFlexComponentsFlexComponentCollection> flexComponentCollections;
+    private @Nullable List<GetFlexComponentsFlexComponentCollection> flexComponentCollections;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The name of the Flex Component used for the DB system.
      * 
@@ -44,14 +44,14 @@ public final class GetFlexComponentsResult {
      * 
      */
     public List<GetFlexComponentsFlexComponentCollection> flexComponentCollections() {
-        return this.flexComponentCollections;
+        return this.flexComponentCollections == null ? List.of() : this.flexComponentCollections;
     }
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The name of the Flex Component used for the DB system.
@@ -72,8 +72,8 @@ public final class GetFlexComponentsResult {
     public static final class Builder {
         private String compartmentId;
         private @Nullable List<GetFlexComponentsFilter> filters;
-        private List<GetFlexComponentsFlexComponentCollection> flexComponentCollections;
-        private String id;
+        private @Nullable List<GetFlexComponentsFlexComponentCollection> flexComponentCollections;
+        private @Nullable String id;
         private @Nullable String name;
         public Builder() {}
         public Builder(GetFlexComponentsResult defaults) {
@@ -99,16 +99,16 @@ public final class GetFlexComponentsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder flexComponentCollections(List<GetFlexComponentsFlexComponentCollection> flexComponentCollections) {
-            this.flexComponentCollections = Objects.requireNonNull(flexComponentCollections);
+        public Builder flexComponentCollections(@Nullable List<GetFlexComponentsFlexComponentCollection> flexComponentCollections) {
+            this.flexComponentCollections = flexComponentCollections;
             return this;
         }
         public Builder flexComponentCollections(GetFlexComponentsFlexComponentCollection... flexComponentCollections) {
             return flexComponentCollections(List.of(flexComponentCollections));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

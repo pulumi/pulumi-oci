@@ -77,7 +77,7 @@ export interface GetDatabasesResult {
     /**
      * The list of databases.
      */
-    readonly databases: outputs.Database.GetDatabasesDatabase[];
+    readonly databases?: outputs.Database.GetDatabasesDatabase[];
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
      */
@@ -90,7 +90,7 @@ export interface GetDatabasesResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The current state of the database.
      */

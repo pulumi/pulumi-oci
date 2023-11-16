@@ -16,23 +16,23 @@ namespace Pulumi.Oci.Database.Outputs
         /// <summary>
         /// All connection strings to use to connect to the pluggable database.
         /// </summary>
-        public readonly ImmutableDictionary<string, object> AllConnectionStrings;
+        public readonly ImmutableDictionary<string, object>? AllConnectionStrings;
         /// <summary>
         /// A host name-based PDB connection string.
         /// </summary>
-        public readonly string PdbDefault;
+        public readonly string? PdbDefault;
         /// <summary>
         /// An IP-based PDB connection string.
         /// </summary>
-        public readonly string PdbIpDefault;
+        public readonly string? PdbIpDefault;
 
         [OutputConstructor]
         private GetPluggableDatabaseConnectionStringResult(
-            ImmutableDictionary<string, object> allConnectionStrings,
+            ImmutableDictionary<string, object>? allConnectionStrings,
 
-            string pdbDefault,
+            string? pdbDefault,
 
-            string pdbIpDefault)
+            string? pdbIpDefault)
         {
             AllConnectionStrings = allConnectionStrings;
             PdbDefault = pdbDefault;

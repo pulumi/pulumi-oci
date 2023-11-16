@@ -28,14 +28,14 @@ public final class GetEnvironmentsResult {
      * @return The list of environment_collection.
      * 
      */
-    private List<GetEnvironmentsEnvironmentCollection> environmentCollections;
+    private @Nullable List<GetEnvironmentsEnvironmentCollection> environmentCollections;
     private @Nullable String environmentId;
     private @Nullable List<GetEnvironmentsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The current state of the source environment.
      * 
@@ -62,7 +62,7 @@ public final class GetEnvironmentsResult {
      * 
      */
     public List<GetEnvironmentsEnvironmentCollection> environmentCollections() {
-        return this.environmentCollections;
+        return this.environmentCollections == null ? List.of() : this.environmentCollections;
     }
     public Optional<String> environmentId() {
         return Optional.ofNullable(this.environmentId);
@@ -74,8 +74,8 @@ public final class GetEnvironmentsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The current state of the source environment.
@@ -96,10 +96,10 @@ public final class GetEnvironmentsResult {
     public static final class Builder {
         private String compartmentId;
         private @Nullable String displayName;
-        private List<GetEnvironmentsEnvironmentCollection> environmentCollections;
+        private @Nullable List<GetEnvironmentsEnvironmentCollection> environmentCollections;
         private @Nullable String environmentId;
         private @Nullable List<GetEnvironmentsFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String state;
         public Builder() {}
         public Builder(GetEnvironmentsResult defaults) {
@@ -124,8 +124,8 @@ public final class GetEnvironmentsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder environmentCollections(List<GetEnvironmentsEnvironmentCollection> environmentCollections) {
-            this.environmentCollections = Objects.requireNonNull(environmentCollections);
+        public Builder environmentCollections(@Nullable List<GetEnvironmentsEnvironmentCollection> environmentCollections) {
+            this.environmentCollections = environmentCollections;
             return this;
         }
         public Builder environmentCollections(GetEnvironmentsEnvironmentCollection... environmentCollections) {
@@ -145,8 +145,8 @@ public final class GetEnvironmentsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

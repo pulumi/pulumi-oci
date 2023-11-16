@@ -129,7 +129,7 @@ namespace Pulumi.Oci.Identity
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The list of tokens.
         /// </summary>
@@ -143,7 +143,7 @@ namespace Pulumi.Oci.Identity
         private GetAuthTokensResult(
             ImmutableArray<Outputs.GetAuthTokensFilterResult> filters,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetAuthTokensTokenResult> tokens,
 

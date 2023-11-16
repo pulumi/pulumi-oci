@@ -8,6 +8,8 @@ import com.pulumi.oci.Kms.outputs.GetReplicationStatusReplicaDetail;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetReplicationStatusResult {
@@ -15,13 +17,13 @@ public final class GetReplicationStatusResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private String managementEndpoint;
     /**
      * @return Replica Details.
      * 
      */
-    private List<GetReplicationStatusReplicaDetail> replicaDetails;
+    private @Nullable List<GetReplicationStatusReplicaDetail> replicaDetails;
     private String replicationId;
 
     private GetReplicationStatusResult() {}
@@ -29,8 +31,8 @@ public final class GetReplicationStatusResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public String managementEndpoint() {
         return this.managementEndpoint;
@@ -40,7 +42,7 @@ public final class GetReplicationStatusResult {
      * 
      */
     public List<GetReplicationStatusReplicaDetail> replicaDetails() {
-        return this.replicaDetails;
+        return this.replicaDetails == null ? List.of() : this.replicaDetails;
     }
     public String replicationId() {
         return this.replicationId;
@@ -55,9 +57,9 @@ public final class GetReplicationStatusResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String id;
+        private @Nullable String id;
         private String managementEndpoint;
-        private List<GetReplicationStatusReplicaDetail> replicaDetails;
+        private @Nullable List<GetReplicationStatusReplicaDetail> replicaDetails;
         private String replicationId;
         public Builder() {}
         public Builder(GetReplicationStatusResult defaults) {
@@ -69,8 +71,8 @@ public final class GetReplicationStatusResult {
         }
 
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -79,8 +81,8 @@ public final class GetReplicationStatusResult {
             return this;
         }
         @CustomType.Setter
-        public Builder replicaDetails(List<GetReplicationStatusReplicaDetail> replicaDetails) {
-            this.replicaDetails = Objects.requireNonNull(replicaDetails);
+        public Builder replicaDetails(@Nullable List<GetReplicationStatusReplicaDetail> replicaDetails) {
+            this.replicaDetails = replicaDetails;
             return this;
         }
         public Builder replicaDetails(GetReplicationStatusReplicaDetail... replicaDetails) {

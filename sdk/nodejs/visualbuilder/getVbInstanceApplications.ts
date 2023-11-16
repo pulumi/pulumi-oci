@@ -53,11 +53,11 @@ export interface GetVbInstanceApplicationsResult {
     /**
      * The list of application_summary_collection.
      */
-    readonly applicationSummaryCollections: outputs.VisualBuilder.GetVbInstanceApplicationsApplicationSummaryCollection[];
+    readonly applicationSummaryCollections?: outputs.VisualBuilder.GetVbInstanceApplicationsApplicationSummaryCollection[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly idcsOpenId?: string;
     readonly vbInstanceId: string;
 }

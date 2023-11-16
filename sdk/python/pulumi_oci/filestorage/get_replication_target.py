@@ -76,63 +76,42 @@ class GetReplicationTargetResult:
 
     @property
     @pulumi.getter(name="availabilityDomain")
-    def availability_domain(self) -> str:
-        """
-        The availability domain the replication target is in. Must be in the same availability domain as the target file system. Example: `Uocm:PHX-AD-1`
-        """
+    def availability_domain(self) -> Optional[str]:
         return pulumi.get(self, "availability_domain")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the replication.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="deltaProgress")
-    def delta_progress(self) -> str:
-        """
-        Percentage progress of the current replication cycle.
-        """
+    def delta_progress(self) -> Optional[str]:
         return pulumi.get(self, "delta_progress")
 
     @property
     @pulumi.getter(name="deltaStatus")
-    def delta_status(self) -> str:
-        """
-        The current state of the snapshot during replication operations.
-        """
+    def delta_status(self) -> Optional[str]:
         return pulumi.get(self, "delta_status")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A user-friendly name. This name is same as the replication display name for the associated resource. Example: `My Replication`
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -140,34 +119,22 @@ class GetReplicationTargetResult:
 
     @property
     @pulumi.getter(name="lastSnapshotId")
-    def last_snapshot_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last snapshot snapshot which was completely applied to the target file system. Empty while the initial snapshot is being applied.
-        """
+    def last_snapshot_id(self) -> Optional[str]:
         return pulumi.get(self, "last_snapshot_id")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        Additional information about the current `lifecycleState`.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="recoveryPointTime")
-    def recovery_point_time(self) -> str:
-        """
-        The snapshotTime of the most recent recoverable replication snapshot in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. Example: `2021-04-04T20:01:29.100Z`
-        """
+    def recovery_point_time(self) -> Optional[str]:
         return pulumi.get(self, "recovery_point_time")
 
     @property
     @pulumi.getter(name="replicationId")
-    def replication_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of replication.
-        """
+    def replication_id(self) -> Optional[str]:
         return pulumi.get(self, "replication_id")
 
     @property
@@ -177,34 +144,22 @@ class GetReplicationTargetResult:
 
     @property
     @pulumi.getter(name="sourceId")
-    def source_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of source filesystem.
-        """
+    def source_id(self) -> Optional[str]:
         return pulumi.get(self, "source_id")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of this replication.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="targetId")
-    def target_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of target filesystem.
-        """
+    def target_id(self) -> Optional[str]:
         return pulumi.get(self, "target_id")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the replication target was created in target region. in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. Example: `2021-01-04T20:01:29.100Z`
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
 
@@ -236,21 +191,7 @@ class AwaitableGetReplicationTargetResult(GetReplicationTargetResult):
 def get_replication_target(replication_target_id: Optional[str] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetReplicationTargetResult:
     """
-    This data source provides details about a specific Replication Target resource in Oracle Cloud Infrastructure File Storage service.
-
-    Gets the specified replication target's information.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_replication_target = oci.FileStorage.get_replication_target(replication_target_id=oci_file_storage_replication_target["test_replication_target"]["id"])
-    ```
-
-
-    :param str replication_target_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the replication target.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['replicationTargetId'] = replication_target_id
@@ -281,20 +222,6 @@ def get_replication_target(replication_target_id: Optional[str] = None,
 def get_replication_target_output(replication_target_id: Optional[pulumi.Input[str]] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetReplicationTargetResult]:
     """
-    This data source provides details about a specific Replication Target resource in Oracle Cloud Infrastructure File Storage service.
-
-    Gets the specified replication target's information.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_replication_target = oci.FileStorage.get_replication_target(replication_target_id=oci_file_storage_replication_target["test_replication_target"]["id"])
-    ```
-
-
-    :param str replication_target_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the replication target.
+    Use this data source to access information about an existing resource.
     """
     ...

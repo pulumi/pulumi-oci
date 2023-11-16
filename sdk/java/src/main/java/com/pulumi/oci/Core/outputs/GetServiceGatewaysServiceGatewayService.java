@@ -6,6 +6,8 @@ package com.pulumi.oci.Core.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetServiceGatewaysServiceGatewayService {
@@ -13,27 +15,27 @@ public final class GetServiceGatewaysServiceGatewayService {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the service.
      * 
      */
-    private String serviceId;
+    private @Nullable String serviceId;
     /**
      * @return The name of the service.
      * 
      */
-    private String serviceName;
+    private @Nullable String serviceName;
 
     private GetServiceGatewaysServiceGatewayService() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the service.
      * 
      */
-    public String serviceId() {
-        return this.serviceId;
+    public Optional<String> serviceId() {
+        return Optional.ofNullable(this.serviceId);
     }
     /**
      * @return The name of the service.
      * 
      */
-    public String serviceName() {
-        return this.serviceName;
+    public Optional<String> serviceName() {
+        return Optional.ofNullable(this.serviceName);
     }
 
     public static Builder builder() {
@@ -45,8 +47,8 @@ public final class GetServiceGatewaysServiceGatewayService {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String serviceId;
-        private String serviceName;
+        private @Nullable String serviceId;
+        private @Nullable String serviceName;
         public Builder() {}
         public Builder(GetServiceGatewaysServiceGatewayService defaults) {
     	      Objects.requireNonNull(defaults);
@@ -55,13 +57,13 @@ public final class GetServiceGatewaysServiceGatewayService {
         }
 
         @CustomType.Setter
-        public Builder serviceId(String serviceId) {
-            this.serviceId = Objects.requireNonNull(serviceId);
+        public Builder serviceId(@Nullable String serviceId) {
+            this.serviceId = serviceId;
             return this;
         }
         @CustomType.Setter
-        public Builder serviceName(String serviceName) {
-            this.serviceName = Objects.requireNonNull(serviceName);
+        public Builder serviceName(@Nullable String serviceName) {
+            this.serviceName = serviceName;
             return this;
         }
         public GetServiceGatewaysServiceGatewayService build() {

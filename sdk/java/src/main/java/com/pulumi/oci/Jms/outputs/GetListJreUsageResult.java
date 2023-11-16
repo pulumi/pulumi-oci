@@ -21,12 +21,12 @@ public final class GetListJreUsageResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return A list of Java Runtimes.
      * 
      */
-    private List<GetListJreUsageItem> items;
+    private @Nullable List<GetListJreUsageItem> items;
     /**
      * @return Upper bound of the specified time period filter. JMS provides a view of the data that is _per day_. The query uses only the date element of the parameter.
      * 
@@ -55,15 +55,15 @@ public final class GetListJreUsageResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return A list of Java Runtimes.
      * 
      */
     public List<GetListJreUsageItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
     /**
      * @return Upper bound of the specified time period filter. JMS provides a view of the data that is _per day_. The query uses only the date element of the parameter.
@@ -93,8 +93,8 @@ public final class GetListJreUsageResult {
         private @Nullable String applicationName;
         private @Nullable String compartmentId;
         private @Nullable String hostId;
-        private String id;
-        private List<GetListJreUsageItem> items;
+        private @Nullable String id;
+        private @Nullable List<GetListJreUsageItem> items;
         private @Nullable String timeEnd;
         private @Nullable String timeStart;
         public Builder() {}
@@ -131,13 +131,13 @@ public final class GetListJreUsageResult {
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder items(List<GetListJreUsageItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetListJreUsageItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetListJreUsageItem... items) {

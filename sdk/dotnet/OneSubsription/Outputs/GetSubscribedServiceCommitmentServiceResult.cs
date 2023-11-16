@@ -16,41 +16,41 @@ namespace Pulumi.Oci.OneSubsription.Outputs
         /// <summary>
         /// Commitment available amount
         /// </summary>
-        public readonly string AvailableAmount;
+        public readonly string? AvailableAmount;
         /// <summary>
         /// Funded Allocation line value example: 12000.00
         /// </summary>
-        public readonly string FundedAllocationValue;
+        public readonly string? FundedAllocationValue;
         /// <summary>
         /// Subscribed service line net amount
         /// </summary>
-        public readonly string LineNetAmount;
+        public readonly string? LineNetAmount;
         /// <summary>
         /// Subscribed service quantity
         /// </summary>
-        public readonly string Quantity;
+        public readonly string? Quantity;
         /// <summary>
         /// Subscribed service end date
         /// </summary>
-        public readonly string TimeEnd;
+        public readonly string? TimeEnd;
         /// <summary>
         /// Subscribed service start date
         /// </summary>
-        public readonly string TimeStart;
+        public readonly string? TimeStart;
 
         [OutputConstructor]
         private GetSubscribedServiceCommitmentServiceResult(
-            string availableAmount,
+            string? availableAmount,
 
-            string fundedAllocationValue,
+            string? fundedAllocationValue,
 
-            string lineNetAmount,
+            string? lineNetAmount,
 
-            string quantity,
+            string? quantity,
 
-            string timeEnd,
+            string? timeEnd,
 
-            string timeStart)
+            string? timeStart)
         {
             AvailableAmount = availableAmount;
             FundedAllocationValue = fundedAllocationValue;

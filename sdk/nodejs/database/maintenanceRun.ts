@@ -69,63 +69,63 @@ export class MaintenanceRun extends pulumi.CustomResource {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Maintenance Run.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    public readonly compartmentId!: pulumi.Output<string | undefined>;
     /**
      * Extend current custom action timeout between the current database servers during waiting state, from 0 (zero) to 30 minutes.
      */
-    public /*out*/ readonly currentCustomActionTimeoutInMins!: pulumi.Output<number>;
+    public /*out*/ readonly currentCustomActionTimeoutInMins!: pulumi.Output<number | undefined>;
     /**
      * The name of the current infrastruture component that is getting patched.
      */
-    public /*out*/ readonly currentPatchingComponent!: pulumi.Output<string>;
+    public /*out*/ readonly currentPatchingComponent!: pulumi.Output<string | undefined>;
     /**
      * Determines the amount of time the system will wait before the start of each database server patching operation. Specify a number of minutes, from 15 to 120.
      */
-    public /*out*/ readonly customActionTimeoutInMins!: pulumi.Output<number>;
+    public /*out*/ readonly customActionTimeoutInMins!: pulumi.Output<number | undefined>;
     /**
      * Description of the maintenance run.
      */
-    public /*out*/ readonly description!: pulumi.Output<string>;
+    public /*out*/ readonly description!: pulumi.Output<string | undefined>;
     /**
      * The user-friendly name for the maintenance run.
      */
-    public /*out*/ readonly displayName!: pulumi.Output<string>;
+    public /*out*/ readonly displayName!: pulumi.Output<string | undefined>;
     /**
      * The estimated start time of the next infrastruture component patching operation.
      */
-    public /*out*/ readonly estimatedComponentPatchingStartTime!: pulumi.Output<string>;
+    public /*out*/ readonly estimatedComponentPatchingStartTime!: pulumi.Output<string | undefined>;
     /**
      * The estimated total time required in minutes for all patching operations (database server, storage server, and network switch patching).
      */
-    public /*out*/ readonly estimatedPatchingTimes!: pulumi.Output<outputs.Database.MaintenanceRunEstimatedPatchingTime[]>;
+    public /*out*/ readonly estimatedPatchingTimes!: pulumi.Output<outputs.Database.MaintenanceRunEstimatedPatchingTime[] | undefined>;
     /**
      * If true, enables the configuration of a custom action timeout (waiting period) between database servers patching operations.
      */
-    public /*out*/ readonly isCustomActionTimeoutEnabled!: pulumi.Output<boolean>;
+    public /*out*/ readonly isCustomActionTimeoutEnabled!: pulumi.Output<boolean | undefined>;
     /**
      * Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
      */
-    public readonly isDstFileUpdateEnabled!: pulumi.Output<boolean>;
+    public readonly isDstFileUpdateEnabled!: pulumi.Output<boolean | undefined>;
     /**
      * Additional information about the current lifecycle state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string | undefined>;
     /**
      * Maintenance sub-type.
      */
-    public /*out*/ readonly maintenanceSubtype!: pulumi.Output<string>;
+    public /*out*/ readonly maintenanceSubtype!: pulumi.Output<string | undefined>;
     /**
      * Maintenance type.
      */
-    public /*out*/ readonly maintenanceType!: pulumi.Output<string>;
+    public /*out*/ readonly maintenanceType!: pulumi.Output<string | undefined>;
     /**
      * Contain the patch failure count.
      */
-    public /*out*/ readonly patchFailureCount!: pulumi.Output<number>;
+    public /*out*/ readonly patchFailureCount!: pulumi.Output<number | undefined>;
     /**
      * The unique identifier of the patch. The identifier string includes the patch type, the Oracle Database version, and the patch creation date (using the format YYMMDD). For example, the identifier `ru_patch_19.9.0.0_201030` is used for an RU patch for Oracle Database 19.9.0.0 that was released October 30, 2020.
      */
-    public /*out*/ readonly patchId!: pulumi.Output<string>;
+    public /*out*/ readonly patchId!: pulumi.Output<string | undefined>;
     /**
      * Patch type, either "QUARTERLY" or "TIMEZONE".
      */
@@ -133,33 +133,33 @@ export class MaintenanceRun extends pulumi.CustomResource {
     /**
      * The time when the patching operation ended.
      */
-    public /*out*/ readonly patchingEndTime!: pulumi.Output<string>;
+    public /*out*/ readonly patchingEndTime!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
      *
      * *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
      */
-    public readonly patchingMode!: pulumi.Output<string>;
+    public readonly patchingMode!: pulumi.Output<string | undefined>;
     /**
      * The time when the patching operation started.
      */
-    public /*out*/ readonly patchingStartTime!: pulumi.Output<string>;
+    public /*out*/ readonly patchingStartTime!: pulumi.Output<string | undefined>;
     /**
      * The status of the patching operation.
      */
-    public /*out*/ readonly patchingStatus!: pulumi.Output<string>;
+    public /*out*/ readonly patchingStatus!: pulumi.Output<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance run for the Autonomous Data Guard association's peer container database.
      */
-    public /*out*/ readonly peerMaintenanceRunId!: pulumi.Output<string>;
+    public /*out*/ readonly peerMaintenanceRunId!: pulumi.Output<string | undefined>;
     /**
      * The current state of the maintenance run. For Autonomous Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * The target software version for the database server patching operation.
      */
-    public /*out*/ readonly targetDbServerVersion!: pulumi.Output<string>;
+    public /*out*/ readonly targetDbServerVersion!: pulumi.Output<string | undefined>;
     /**
      * The ID of the target resource for which the maintenance run should be created.
      */
@@ -167,15 +167,15 @@ export class MaintenanceRun extends pulumi.CustomResource {
     /**
      * The type of the target resource on which the maintenance run occurs.
      */
-    public /*out*/ readonly targetResourceType!: pulumi.Output<string>;
+    public /*out*/ readonly targetResourceType!: pulumi.Output<string | undefined>;
     /**
      * The target Cell version that is to be patched to.
      */
-    public /*out*/ readonly targetStorageServerVersion!: pulumi.Output<string>;
+    public /*out*/ readonly targetStorageServerVersion!: pulumi.Output<string | undefined>;
     /**
      * The date and time the maintenance run was completed.
      */
-    public /*out*/ readonly timeEnded!: pulumi.Output<string>;
+    public /*out*/ readonly timeEnded!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The date and time that update should be scheduled.
      *
@@ -187,7 +187,7 @@ export class MaintenanceRun extends pulumi.CustomResource {
     /**
      * The date and time the maintenance run starts.
      */
-    public /*out*/ readonly timeStarted!: pulumi.Output<string>;
+    public /*out*/ readonly timeStarted!: pulumi.Output<string | undefined>;
 
     /**
      * Create a MaintenanceRun resource with the given unique name, arguments, and options.

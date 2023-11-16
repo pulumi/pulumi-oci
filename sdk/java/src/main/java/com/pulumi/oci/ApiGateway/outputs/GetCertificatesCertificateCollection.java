@@ -7,14 +7,15 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.ApiGateway.outputs.GetCertificatesCertificateCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetCertificatesCertificateCollection {
-    private List<GetCertificatesCertificateCollectionItem> items;
+    private @Nullable List<GetCertificatesCertificateCollectionItem> items;
 
     private GetCertificatesCertificateCollection() {}
     public List<GetCertificatesCertificateCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -26,7 +27,7 @@ public final class GetCertificatesCertificateCollection {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetCertificatesCertificateCollectionItem> items;
+        private @Nullable List<GetCertificatesCertificateCollectionItem> items;
         public Builder() {}
         public Builder(GetCertificatesCertificateCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -34,8 +35,8 @@ public final class GetCertificatesCertificateCollection {
         }
 
         @CustomType.Setter
-        public Builder items(List<GetCertificatesCertificateCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetCertificatesCertificateCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetCertificatesCertificateCollectionItem... items) {

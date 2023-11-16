@@ -58,7 +58,7 @@ class GetSubscribedServicesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -67,33 +67,21 @@ class GetSubscribedServicesResult:
     @property
     @pulumi.getter(name="orderLineId")
     def order_line_id(self) -> Optional[str]:
-        """
-        Sales Order Line Id associated to the subscribed service
-        """
         return pulumi.get(self, "order_line_id")
 
     @property
     @pulumi.getter
     def status(self) -> Optional[str]:
-        """
-        Subscribed service status
-        """
         return pulumi.get(self, "status")
 
     @property
     @pulumi.getter(name="subscribedServices")
-    def subscribed_services(self) -> Sequence['outputs.GetSubscribedServicesSubscribedServiceResult']:
-        """
-        The list of subscribed_services.
-        """
+    def subscribed_services(self) -> Optional[Sequence['outputs.GetSubscribedServicesSubscribedServiceResult']]:
         return pulumi.get(self, "subscribed_services")
 
     @property
     @pulumi.getter(name="subscriptionId")
     def subscription_id(self) -> str:
-        """
-        Subscription ID associated to the subscribed service
-        """
         return pulumi.get(self, "subscription_id")
 
 
@@ -119,27 +107,7 @@ def get_subscribed_services(compartment_id: Optional[str] = None,
                             subscription_id: Optional[str] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetSubscribedServicesResult:
     """
-    This data source provides the list of Subscribed Services in Oracle Cloud Infrastructure Onesubscription service.
-
-    This list API returns all subscribed services for given Subscription ID
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_subscribed_services = oci.OneSubsription.get_subscribed_services(compartment_id=var["compartment_id"],
-        subscription_id=oci_onesubscription_subscription["test_subscription"]["id"],
-        order_line_id=oci_onesubscription_order_line["test_order_line"]["id"],
-        status=var["subscribed_service_status"])
-    ```
-
-
-    :param str compartment_id: The OCID of the root compartment.
-    :param str order_line_id: Order Line identifier at subscribed service level . This identifier is originated in Order Management module. Default is null.
-    :param str status: This param is used to filter subscribed services based on its status
-    :param str subscription_id: Line level Subscription Id
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -168,26 +136,6 @@ def get_subscribed_services_output(compartment_id: Optional[pulumi.Input[str]] =
                                    subscription_id: Optional[pulumi.Input[str]] = None,
                                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSubscribedServicesResult]:
     """
-    This data source provides the list of Subscribed Services in Oracle Cloud Infrastructure Onesubscription service.
-
-    This list API returns all subscribed services for given Subscription ID
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_subscribed_services = oci.OneSubsription.get_subscribed_services(compartment_id=var["compartment_id"],
-        subscription_id=oci_onesubscription_subscription["test_subscription"]["id"],
-        order_line_id=oci_onesubscription_order_line["test_order_line"]["id"],
-        status=var["subscribed_service_status"])
-    ```
-
-
-    :param str compartment_id: The OCID of the root compartment.
-    :param str order_line_id: Order Line identifier at subscribed service level . This identifier is originated in Order Management module. Default is null.
-    :param str status: This param is used to filter subscribed services based on its status
-    :param str subscription_id: Line level Subscription Id
+    Use this data source to access information about an existing resource.
     """
     ...

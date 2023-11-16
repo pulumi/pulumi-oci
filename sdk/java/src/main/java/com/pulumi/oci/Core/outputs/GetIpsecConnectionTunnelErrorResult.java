@@ -6,6 +6,8 @@ package com.pulumi.oci.Core.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetIpsecConnectionTunnelErrorResult {
@@ -13,33 +15,33 @@ public final class GetIpsecConnectionTunnelErrorResult {
      * @return Unique code describes the error type.
      * 
      */
-    private String errorCode;
+    private @Nullable String errorCode;
     /**
      * @return A detailed description of the error.
      * 
      */
-    private String errorDescription;
+    private @Nullable String errorDescription;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private String ipsecId;
     /**
      * @return Link to more Oracle resources or relevant documentation.
      * 
      */
-    private String ociResourcesLink;
+    private @Nullable String ociResourcesLink;
     /**
      * @return Resolution for the error.
      * 
      */
-    private String solution;
+    private @Nullable String solution;
     /**
      * @return Timestamp when the error occurred.
      * 
      */
-    private String timestamp;
+    private @Nullable String timestamp;
     private String tunnelId;
 
     private GetIpsecConnectionTunnelErrorResult() {}
@@ -47,22 +49,22 @@ public final class GetIpsecConnectionTunnelErrorResult {
      * @return Unique code describes the error type.
      * 
      */
-    public String errorCode() {
-        return this.errorCode;
+    public Optional<String> errorCode() {
+        return Optional.ofNullable(this.errorCode);
     }
     /**
      * @return A detailed description of the error.
      * 
      */
-    public String errorDescription() {
-        return this.errorDescription;
+    public Optional<String> errorDescription() {
+        return Optional.ofNullable(this.errorDescription);
     }
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public String ipsecId() {
         return this.ipsecId;
@@ -71,22 +73,22 @@ public final class GetIpsecConnectionTunnelErrorResult {
      * @return Link to more Oracle resources or relevant documentation.
      * 
      */
-    public String ociResourcesLink() {
-        return this.ociResourcesLink;
+    public Optional<String> ociResourcesLink() {
+        return Optional.ofNullable(this.ociResourcesLink);
     }
     /**
      * @return Resolution for the error.
      * 
      */
-    public String solution() {
-        return this.solution;
+    public Optional<String> solution() {
+        return Optional.ofNullable(this.solution);
     }
     /**
      * @return Timestamp when the error occurred.
      * 
      */
-    public String timestamp() {
-        return this.timestamp;
+    public Optional<String> timestamp() {
+        return Optional.ofNullable(this.timestamp);
     }
     public String tunnelId() {
         return this.tunnelId;
@@ -101,13 +103,13 @@ public final class GetIpsecConnectionTunnelErrorResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String errorCode;
-        private String errorDescription;
-        private String id;
+        private @Nullable String errorCode;
+        private @Nullable String errorDescription;
+        private @Nullable String id;
         private String ipsecId;
-        private String ociResourcesLink;
-        private String solution;
-        private String timestamp;
+        private @Nullable String ociResourcesLink;
+        private @Nullable String solution;
+        private @Nullable String timestamp;
         private String tunnelId;
         public Builder() {}
         public Builder(GetIpsecConnectionTunnelErrorResult defaults) {
@@ -123,18 +125,18 @@ public final class GetIpsecConnectionTunnelErrorResult {
         }
 
         @CustomType.Setter
-        public Builder errorCode(String errorCode) {
-            this.errorCode = Objects.requireNonNull(errorCode);
+        public Builder errorCode(@Nullable String errorCode) {
+            this.errorCode = errorCode;
             return this;
         }
         @CustomType.Setter
-        public Builder errorDescription(String errorDescription) {
-            this.errorDescription = Objects.requireNonNull(errorDescription);
+        public Builder errorDescription(@Nullable String errorDescription) {
+            this.errorDescription = errorDescription;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -143,18 +145,18 @@ public final class GetIpsecConnectionTunnelErrorResult {
             return this;
         }
         @CustomType.Setter
-        public Builder ociResourcesLink(String ociResourcesLink) {
-            this.ociResourcesLink = Objects.requireNonNull(ociResourcesLink);
+        public Builder ociResourcesLink(@Nullable String ociResourcesLink) {
+            this.ociResourcesLink = ociResourcesLink;
             return this;
         }
         @CustomType.Setter
-        public Builder solution(String solution) {
-            this.solution = Objects.requireNonNull(solution);
+        public Builder solution(@Nullable String solution) {
+            this.solution = solution;
             return this;
         }
         @CustomType.Setter
-        public Builder timestamp(String timestamp) {
-            this.timestamp = Objects.requireNonNull(timestamp);
+        public Builder timestamp(@Nullable String timestamp) {
+            this.timestamp = timestamp;
             return this;
         }
         @CustomType.Setter

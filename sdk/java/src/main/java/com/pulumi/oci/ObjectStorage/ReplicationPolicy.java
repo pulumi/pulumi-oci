@@ -156,56 +156,56 @@ public class ReplicationPolicy extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="status", refs={String.class}, tree="[0]")
-    private Output<String> status;
+    private Output</* @Nullable */ String> status;
 
     /**
      * @return The replication status of the policy. If the status is CLIENT_ERROR, once the user fixes the issue described in the status message, the status will become ACTIVE.
      * 
      */
-    public Output<String> status() {
-        return this.status;
+    public Output<Optional<String>> status() {
+        return Codegen.optional(this.status);
     }
     /**
      * A human-readable description of the status.
      * 
      */
     @Export(name="statusMessage", refs={String.class}, tree="[0]")
-    private Output<String> statusMessage;
+    private Output</* @Nullable */ String> statusMessage;
 
     /**
      * @return A human-readable description of the status.
      * 
      */
-    public Output<String> statusMessage() {
-        return this.statusMessage;
+    public Output<Optional<String>> statusMessage() {
+        return Codegen.optional(this.statusMessage);
     }
     /**
      * The date when the replication policy was created as per [RFC 3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The date when the replication policy was created as per [RFC 3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * Changes made to the source bucket before this time has been replicated.
      * 
      */
     @Export(name="timeLastSync", refs={String.class}, tree="[0]")
-    private Output<String> timeLastSync;
+    private Output</* @Nullable */ String> timeLastSync;
 
     /**
      * @return Changes made to the source bucket before this time has been replicated.
      * 
      */
-    public Output<String> timeLastSync() {
-        return this.timeLastSync;
+    public Output<Optional<String>> timeLastSync() {
+        return Codegen.optional(this.timeLastSync);
     }
 
     /**

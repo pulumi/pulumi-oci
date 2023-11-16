@@ -8,6 +8,8 @@ import com.pulumi.oci.OsManagement.outputs.GetManagedInstanceModuleStreamsModule
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetManagedInstanceModuleStreamsModuleStreamOnManagedInstance {
@@ -15,75 +17,75 @@ public final class GetManagedInstanceModuleStreamsModuleStreamOnManagedInstance 
      * @return The name of a module.  This parameter is required if a streamName is specified.
      * 
      */
-    private String moduleName;
+    private @Nullable String moduleName;
     /**
      * @return The set of profiles that the module stream contains.
      * 
      */
-    private List<GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfile> profiles;
+    private @Nullable List<GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfile> profiles;
     /**
      * @return The OCID of the software source that provides this module stream.
      * 
      */
-    private String softwareSourceId;
+    private @Nullable String softwareSourceId;
     /**
      * @return The status of the stream
      * 
      */
-    private String status;
+    private @Nullable String status;
     /**
      * @return The name of the stream of the containing module.  This parameter is required if a profileName is specified.
      * 
      */
-    private String streamName;
+    private @Nullable String streamName;
     /**
      * @return The date and time of the last status change for this profile, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
      * 
      */
-    private String timeModified;
+    private @Nullable String timeModified;
 
     private GetManagedInstanceModuleStreamsModuleStreamOnManagedInstance() {}
     /**
      * @return The name of a module.  This parameter is required if a streamName is specified.
      * 
      */
-    public String moduleName() {
-        return this.moduleName;
+    public Optional<String> moduleName() {
+        return Optional.ofNullable(this.moduleName);
     }
     /**
      * @return The set of profiles that the module stream contains.
      * 
      */
     public List<GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfile> profiles() {
-        return this.profiles;
+        return this.profiles == null ? List.of() : this.profiles;
     }
     /**
      * @return The OCID of the software source that provides this module stream.
      * 
      */
-    public String softwareSourceId() {
-        return this.softwareSourceId;
+    public Optional<String> softwareSourceId() {
+        return Optional.ofNullable(this.softwareSourceId);
     }
     /**
      * @return The status of the stream
      * 
      */
-    public String status() {
-        return this.status;
+    public Optional<String> status() {
+        return Optional.ofNullable(this.status);
     }
     /**
      * @return The name of the stream of the containing module.  This parameter is required if a profileName is specified.
      * 
      */
-    public String streamName() {
-        return this.streamName;
+    public Optional<String> streamName() {
+        return Optional.ofNullable(this.streamName);
     }
     /**
      * @return The date and time of the last status change for this profile, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
      * 
      */
-    public String timeModified() {
-        return this.timeModified;
+    public Optional<String> timeModified() {
+        return Optional.ofNullable(this.timeModified);
     }
 
     public static Builder builder() {
@@ -95,12 +97,12 @@ public final class GetManagedInstanceModuleStreamsModuleStreamOnManagedInstance 
     }
     @CustomType.Builder
     public static final class Builder {
-        private String moduleName;
-        private List<GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfile> profiles;
-        private String softwareSourceId;
-        private String status;
-        private String streamName;
-        private String timeModified;
+        private @Nullable String moduleName;
+        private @Nullable List<GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfile> profiles;
+        private @Nullable String softwareSourceId;
+        private @Nullable String status;
+        private @Nullable String streamName;
+        private @Nullable String timeModified;
         public Builder() {}
         public Builder(GetManagedInstanceModuleStreamsModuleStreamOnManagedInstance defaults) {
     	      Objects.requireNonNull(defaults);
@@ -113,36 +115,36 @@ public final class GetManagedInstanceModuleStreamsModuleStreamOnManagedInstance 
         }
 
         @CustomType.Setter
-        public Builder moduleName(String moduleName) {
-            this.moduleName = Objects.requireNonNull(moduleName);
+        public Builder moduleName(@Nullable String moduleName) {
+            this.moduleName = moduleName;
             return this;
         }
         @CustomType.Setter
-        public Builder profiles(List<GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfile> profiles) {
-            this.profiles = Objects.requireNonNull(profiles);
+        public Builder profiles(@Nullable List<GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfile> profiles) {
+            this.profiles = profiles;
             return this;
         }
         public Builder profiles(GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfile... profiles) {
             return profiles(List.of(profiles));
         }
         @CustomType.Setter
-        public Builder softwareSourceId(String softwareSourceId) {
-            this.softwareSourceId = Objects.requireNonNull(softwareSourceId);
+        public Builder softwareSourceId(@Nullable String softwareSourceId) {
+            this.softwareSourceId = softwareSourceId;
             return this;
         }
         @CustomType.Setter
-        public Builder status(String status) {
-            this.status = Objects.requireNonNull(status);
+        public Builder status(@Nullable String status) {
+            this.status = status;
             return this;
         }
         @CustomType.Setter
-        public Builder streamName(String streamName) {
-            this.streamName = Objects.requireNonNull(streamName);
+        public Builder streamName(@Nullable String streamName) {
+            this.streamName = streamName;
             return this;
         }
         @CustomType.Setter
-        public Builder timeModified(String timeModified) {
-            this.timeModified = Objects.requireNonNull(timeModified);
+        public Builder timeModified(@Nullable String timeModified) {
+            this.timeModified = timeModified;
             return this;
         }
         public GetManagedInstanceModuleStreamsModuleStreamOnManagedInstance build() {

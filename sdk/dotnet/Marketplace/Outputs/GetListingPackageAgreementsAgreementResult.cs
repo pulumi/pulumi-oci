@@ -16,29 +16,29 @@ namespace Pulumi.Oci.Marketplace.Outputs
         /// <summary>
         /// Who authored the agreement.
         /// </summary>
-        public readonly string Author;
+        public readonly string? Author;
         /// <summary>
         /// The content URL of the agreement.
         /// </summary>
-        public readonly string ContentUrl;
+        public readonly string? ContentUrl;
         /// <summary>
         /// The unique identifier for the agreement.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Textual prompt to read and accept the agreement.
         /// </summary>
-        public readonly string Prompt;
+        public readonly string? Prompt;
 
         [OutputConstructor]
         private GetListingPackageAgreementsAgreementResult(
-            string author,
+            string? author,
 
-            string contentUrl,
+            string? contentUrl,
 
-            string id,
+            string? id,
 
-            string prompt)
+            string? prompt)
         {
             Author = author;
             ContentUrl = contentUrl;

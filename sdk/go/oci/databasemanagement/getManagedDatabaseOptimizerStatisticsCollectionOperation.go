@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Managed Database Optimizer Statistics Collection Operation resource in Oracle Cloud Infrastructure Database Management service.
@@ -63,37 +62,37 @@ type GetManagedDatabaseOptimizerStatisticsCollectionOperationArgs struct {
 // A collection of values returned by getManagedDatabaseOptimizerStatisticsCollectionOperation.
 type GetManagedDatabaseOptimizerStatisticsCollectionOperationResult struct {
 	// The number of objects for which statistics collection is completed.
-	CompletedCount int `pulumi:"completedCount"`
+	CompletedCount *int `pulumi:"completedCount"`
 	// The summary of the Managed Database resource.
 	Databases []GetManagedDatabaseOptimizerStatisticsCollectionOperationDatabase `pulumi:"databases"`
 	// The time it takes to complete the operation (in seconds).
-	DurationInSeconds float64 `pulumi:"durationInSeconds"`
+	DurationInSeconds *float64 `pulumi:"durationInSeconds"`
 	// The end time of the operation.
-	EndTime string `pulumi:"endTime"`
+	EndTime *string `pulumi:"endTime"`
 	// The number of objects for which statistics collection failed.
-	FailedCount int `pulumi:"failedCount"`
+	FailedCount *int `pulumi:"failedCount"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The number of objects for which statistics collection is in progress.
-	InProgressCount int `pulumi:"inProgressCount"`
+	InProgressCount *int `pulumi:"inProgressCount"`
 	// The name of the job.
-	JobName           string `pulumi:"jobName"`
-	ManagedDatabaseId string `pulumi:"managedDatabaseId"`
+	JobName           *string `pulumi:"jobName"`
+	ManagedDatabaseId string  `pulumi:"managedDatabaseId"`
 	// The name of the operation.
-	OperationName                            string  `pulumi:"operationName"`
+	OperationName                            *string `pulumi:"operationName"`
 	OptimizerStatisticsCollectionOperationId float64 `pulumi:"optimizerStatisticsCollectionOperationId"`
 	// The start time of the operation.
-	StartTime string `pulumi:"startTime"`
+	StartTime *string `pulumi:"startTime"`
 	// The status of the Optimizer Statistics Collection task.
-	Status string `pulumi:"status"`
+	Status *string `pulumi:"status"`
 	// The name of the target object for which statistics are gathered.
-	Target string `pulumi:"target"`
+	Target *string `pulumi:"target"`
 	// An array of Optimizer Statistics Collection task details.
 	Tasks []GetManagedDatabaseOptimizerStatisticsCollectionOperationTask `pulumi:"tasks"`
 	// The number of objects for which statistics collection timed out.
-	TimedOutCount int `pulumi:"timedOutCount"`
+	TimedOutCount *int `pulumi:"timedOutCount"`
 	// The total number of objects for which statistics is collected. This number is the sum of all the objects with various statuses: completed, inProgress, failed, and timedOut.
-	TotalObjectsCount int `pulumi:"totalObjectsCount"`
+	TotalObjectsCount *int `pulumi:"totalObjectsCount"`
 }
 
 func GetManagedDatabaseOptimizerStatisticsCollectionOperationOutput(ctx *pulumi.Context, args GetManagedDatabaseOptimizerStatisticsCollectionOperationOutputArgs, opts ...pulumi.InvokeOption) GetManagedDatabaseOptimizerStatisticsCollectionOperationResultOutput {
@@ -136,15 +135,9 @@ func (o GetManagedDatabaseOptimizerStatisticsCollectionOperationResultOutput) To
 	return o
 }
 
-func (o GetManagedDatabaseOptimizerStatisticsCollectionOperationResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagedDatabaseOptimizerStatisticsCollectionOperationResult] {
-	return pulumix.Output[GetManagedDatabaseOptimizerStatisticsCollectionOperationResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The number of objects for which statistics collection is completed.
-func (o GetManagedDatabaseOptimizerStatisticsCollectionOperationResultOutput) CompletedCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsCollectionOperationResult) int { return v.CompletedCount }).(pulumi.IntOutput)
+func (o GetManagedDatabaseOptimizerStatisticsCollectionOperationResultOutput) CompletedCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsCollectionOperationResult) *int { return v.CompletedCount }).(pulumi.IntPtrOutput)
 }
 
 // The summary of the Managed Database resource.
@@ -155,35 +148,35 @@ func (o GetManagedDatabaseOptimizerStatisticsCollectionOperationResultOutput) Da
 }
 
 // The time it takes to complete the operation (in seconds).
-func (o GetManagedDatabaseOptimizerStatisticsCollectionOperationResultOutput) DurationInSeconds() pulumi.Float64Output {
-	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsCollectionOperationResult) float64 {
+func (o GetManagedDatabaseOptimizerStatisticsCollectionOperationResultOutput) DurationInSeconds() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsCollectionOperationResult) *float64 {
 		return v.DurationInSeconds
-	}).(pulumi.Float64Output)
+	}).(pulumi.Float64PtrOutput)
 }
 
 // The end time of the operation.
-func (o GetManagedDatabaseOptimizerStatisticsCollectionOperationResultOutput) EndTime() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsCollectionOperationResult) string { return v.EndTime }).(pulumi.StringOutput)
+func (o GetManagedDatabaseOptimizerStatisticsCollectionOperationResultOutput) EndTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsCollectionOperationResult) *string { return v.EndTime }).(pulumi.StringPtrOutput)
 }
 
 // The number of objects for which statistics collection failed.
-func (o GetManagedDatabaseOptimizerStatisticsCollectionOperationResultOutput) FailedCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsCollectionOperationResult) int { return v.FailedCount }).(pulumi.IntOutput)
+func (o GetManagedDatabaseOptimizerStatisticsCollectionOperationResultOutput) FailedCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsCollectionOperationResult) *int { return v.FailedCount }).(pulumi.IntPtrOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetManagedDatabaseOptimizerStatisticsCollectionOperationResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsCollectionOperationResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetManagedDatabaseOptimizerStatisticsCollectionOperationResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsCollectionOperationResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The number of objects for which statistics collection is in progress.
-func (o GetManagedDatabaseOptimizerStatisticsCollectionOperationResultOutput) InProgressCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsCollectionOperationResult) int { return v.InProgressCount }).(pulumi.IntOutput)
+func (o GetManagedDatabaseOptimizerStatisticsCollectionOperationResultOutput) InProgressCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsCollectionOperationResult) *int { return v.InProgressCount }).(pulumi.IntPtrOutput)
 }
 
 // The name of the job.
-func (o GetManagedDatabaseOptimizerStatisticsCollectionOperationResultOutput) JobName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsCollectionOperationResult) string { return v.JobName }).(pulumi.StringOutput)
+func (o GetManagedDatabaseOptimizerStatisticsCollectionOperationResultOutput) JobName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsCollectionOperationResult) *string { return v.JobName }).(pulumi.StringPtrOutput)
 }
 
 func (o GetManagedDatabaseOptimizerStatisticsCollectionOperationResultOutput) ManagedDatabaseId() pulumi.StringOutput {
@@ -193,8 +186,8 @@ func (o GetManagedDatabaseOptimizerStatisticsCollectionOperationResultOutput) Ma
 }
 
 // The name of the operation.
-func (o GetManagedDatabaseOptimizerStatisticsCollectionOperationResultOutput) OperationName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsCollectionOperationResult) string { return v.OperationName }).(pulumi.StringOutput)
+func (o GetManagedDatabaseOptimizerStatisticsCollectionOperationResultOutput) OperationName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsCollectionOperationResult) *string { return v.OperationName }).(pulumi.StringPtrOutput)
 }
 
 func (o GetManagedDatabaseOptimizerStatisticsCollectionOperationResultOutput) OptimizerStatisticsCollectionOperationId() pulumi.Float64Output {
@@ -204,18 +197,18 @@ func (o GetManagedDatabaseOptimizerStatisticsCollectionOperationResultOutput) Op
 }
 
 // The start time of the operation.
-func (o GetManagedDatabaseOptimizerStatisticsCollectionOperationResultOutput) StartTime() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsCollectionOperationResult) string { return v.StartTime }).(pulumi.StringOutput)
+func (o GetManagedDatabaseOptimizerStatisticsCollectionOperationResultOutput) StartTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsCollectionOperationResult) *string { return v.StartTime }).(pulumi.StringPtrOutput)
 }
 
 // The status of the Optimizer Statistics Collection task.
-func (o GetManagedDatabaseOptimizerStatisticsCollectionOperationResultOutput) Status() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsCollectionOperationResult) string { return v.Status }).(pulumi.StringOutput)
+func (o GetManagedDatabaseOptimizerStatisticsCollectionOperationResultOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsCollectionOperationResult) *string { return v.Status }).(pulumi.StringPtrOutput)
 }
 
 // The name of the target object for which statistics are gathered.
-func (o GetManagedDatabaseOptimizerStatisticsCollectionOperationResultOutput) Target() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsCollectionOperationResult) string { return v.Target }).(pulumi.StringOutput)
+func (o GetManagedDatabaseOptimizerStatisticsCollectionOperationResultOutput) Target() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsCollectionOperationResult) *string { return v.Target }).(pulumi.StringPtrOutput)
 }
 
 // An array of Optimizer Statistics Collection task details.
@@ -226,13 +219,15 @@ func (o GetManagedDatabaseOptimizerStatisticsCollectionOperationResultOutput) Ta
 }
 
 // The number of objects for which statistics collection timed out.
-func (o GetManagedDatabaseOptimizerStatisticsCollectionOperationResultOutput) TimedOutCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsCollectionOperationResult) int { return v.TimedOutCount }).(pulumi.IntOutput)
+func (o GetManagedDatabaseOptimizerStatisticsCollectionOperationResultOutput) TimedOutCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsCollectionOperationResult) *int { return v.TimedOutCount }).(pulumi.IntPtrOutput)
 }
 
 // The total number of objects for which statistics is collected. This number is the sum of all the objects with various statuses: completed, inProgress, failed, and timedOut.
-func (o GetManagedDatabaseOptimizerStatisticsCollectionOperationResultOutput) TotalObjectsCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsCollectionOperationResult) int { return v.TotalObjectsCount }).(pulumi.IntOutput)
+func (o GetManagedDatabaseOptimizerStatisticsCollectionOperationResultOutput) TotalObjectsCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsCollectionOperationResult) *int {
+		return v.TotalObjectsCount
+	}).(pulumi.IntPtrOutput)
 }
 
 func init() {

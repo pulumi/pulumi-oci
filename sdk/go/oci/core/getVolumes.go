@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Volumes in Oracle Cloud Infrastructure Core service.
@@ -80,7 +79,7 @@ type GetVolumesResult struct {
 	DisplayName *string            `pulumi:"displayName"`
 	Filters     []GetVolumesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The current state of a volume.
 	State *string `pulumi:"state"`
 	// The OCID of the source volume group.
@@ -136,12 +135,6 @@ func (o GetVolumesResultOutput) ToGetVolumesResultOutputWithContext(ctx context.
 	return o
 }
 
-func (o GetVolumesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetVolumesResult] {
-	return pulumix.Output[GetVolumesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The availability domain of the block volume replica.  Example: `Uocm:PHX-AD-1`
 func (o GetVolumesResultOutput) AvailabilityDomain() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetVolumesResult) *string { return v.AvailabilityDomain }).(pulumi.StringPtrOutput)
@@ -162,8 +155,8 @@ func (o GetVolumesResultOutput) Filters() GetVolumesFilterArrayOutput {
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetVolumesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVolumesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetVolumesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVolumesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The current state of a volume.

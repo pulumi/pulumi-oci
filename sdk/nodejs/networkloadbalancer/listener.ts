@@ -67,7 +67,7 @@ export class Listener extends pulumi.CustomResource {
     /**
      * (Updatable) IP version associated with the listener.
      */
-    public readonly ipVersion!: pulumi.Output<string>;
+    public readonly ipVersion!: pulumi.Output<string | undefined>;
     /**
      * A friendly name for the listener. It must be unique and it cannot be changed.  Example: `exampleListener`
      */

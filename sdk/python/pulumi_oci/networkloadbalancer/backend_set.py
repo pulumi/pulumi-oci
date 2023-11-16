@@ -24,20 +24,6 @@ class BackendSetArgs:
                  name: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a BackendSet resource.
-        :param pulumi.Input['BackendSetHealthCheckerArgs'] health_checker: (Updatable) The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/editinghealthcheck.htm).
-        :param pulumi.Input[str] network_load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network load balancer to update.
-        :param pulumi.Input[str] policy: (Updatable) The network load balancer policy for the backend set.  Example: `FIVE_TUPLE`` 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] ip_version: (Updatable) IP version associated with the backend set.
-        :param pulumi.Input[bool] is_preserve_source: (Updatable) If this parameter is enabled, then the network load balancer preserves the source IP of the packet when it is forwarded to backends. Backends see the original source IP. If the isPreserveSourceDestination parameter is enabled for the network load balancer resource, then this parameter cannot be disabled. The value is true by default.
-        :param pulumi.Input[str] name: A user-friendly name for the backend set that must be unique and cannot be changed.
-               
-               Valid backend set names include only alphanumeric characters, dashes, and underscores. Backend set names cannot contain spaces. Avoid entering confidential information.
-               
-               Example: `example_backend_set`
         """
         pulumi.set(__self__, "health_checker", health_checker)
         pulumi.set(__self__, "network_load_balancer_id", network_load_balancer_id)
@@ -52,9 +38,6 @@ class BackendSetArgs:
     @property
     @pulumi.getter(name="healthChecker")
     def health_checker(self) -> pulumi.Input['BackendSetHealthCheckerArgs']:
-        """
-        (Updatable) The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/editinghealthcheck.htm).
-        """
         return pulumi.get(self, "health_checker")
 
     @health_checker.setter
@@ -64,9 +47,6 @@ class BackendSetArgs:
     @property
     @pulumi.getter(name="networkLoadBalancerId")
     def network_load_balancer_id(self) -> pulumi.Input[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network load balancer to update.
-        """
         return pulumi.get(self, "network_load_balancer_id")
 
     @network_load_balancer_id.setter
@@ -76,13 +56,6 @@ class BackendSetArgs:
     @property
     @pulumi.getter
     def policy(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The network load balancer policy for the backend set.  Example: `FIVE_TUPLE`` 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "policy")
 
     @policy.setter
@@ -92,9 +65,6 @@ class BackendSetArgs:
     @property
     @pulumi.getter(name="ipVersion")
     def ip_version(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) IP version associated with the backend set.
-        """
         return pulumi.get(self, "ip_version")
 
     @ip_version.setter
@@ -104,9 +74,6 @@ class BackendSetArgs:
     @property
     @pulumi.getter(name="isPreserveSource")
     def is_preserve_source(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) If this parameter is enabled, then the network load balancer preserves the source IP of the packet when it is forwarded to backends. Backends see the original source IP. If the isPreserveSourceDestination parameter is enabled for the network load balancer resource, then this parameter cannot be disabled. The value is true by default.
-        """
         return pulumi.get(self, "is_preserve_source")
 
     @is_preserve_source.setter
@@ -116,13 +83,6 @@ class BackendSetArgs:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        A user-friendly name for the backend set that must be unique and cannot be changed.
-
-        Valid backend set names include only alphanumeric characters, dashes, and underscores. Backend set names cannot contain spaces. Avoid entering confidential information.
-
-        Example: `example_backend_set`
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -142,21 +102,6 @@ class _BackendSetState:
                  policy: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering BackendSet resources.
-        :param pulumi.Input[Sequence[pulumi.Input['BackendSetBackendArgs']]] backends: Array of backends.
-        :param pulumi.Input['BackendSetHealthCheckerArgs'] health_checker: (Updatable) The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/editinghealthcheck.htm).
-        :param pulumi.Input[str] ip_version: (Updatable) IP version associated with the backend set.
-        :param pulumi.Input[bool] is_preserve_source: (Updatable) If this parameter is enabled, then the network load balancer preserves the source IP of the packet when it is forwarded to backends. Backends see the original source IP. If the isPreserveSourceDestination parameter is enabled for the network load balancer resource, then this parameter cannot be disabled. The value is true by default.
-        :param pulumi.Input[str] name: A user-friendly name for the backend set that must be unique and cannot be changed.
-               
-               Valid backend set names include only alphanumeric characters, dashes, and underscores. Backend set names cannot contain spaces. Avoid entering confidential information.
-               
-               Example: `example_backend_set`
-        :param pulumi.Input[str] network_load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network load balancer to update.
-        :param pulumi.Input[str] policy: (Updatable) The network load balancer policy for the backend set.  Example: `FIVE_TUPLE`` 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if backends is not None:
             pulumi.set(__self__, "backends", backends)
@@ -176,9 +121,6 @@ class _BackendSetState:
     @property
     @pulumi.getter
     def backends(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['BackendSetBackendArgs']]]]:
-        """
-        Array of backends.
-        """
         return pulumi.get(self, "backends")
 
     @backends.setter
@@ -188,9 +130,6 @@ class _BackendSetState:
     @property
     @pulumi.getter(name="healthChecker")
     def health_checker(self) -> Optional[pulumi.Input['BackendSetHealthCheckerArgs']]:
-        """
-        (Updatable) The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/editinghealthcheck.htm).
-        """
         return pulumi.get(self, "health_checker")
 
     @health_checker.setter
@@ -200,9 +139,6 @@ class _BackendSetState:
     @property
     @pulumi.getter(name="ipVersion")
     def ip_version(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) IP version associated with the backend set.
-        """
         return pulumi.get(self, "ip_version")
 
     @ip_version.setter
@@ -212,9 +148,6 @@ class _BackendSetState:
     @property
     @pulumi.getter(name="isPreserveSource")
     def is_preserve_source(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) If this parameter is enabled, then the network load balancer preserves the source IP of the packet when it is forwarded to backends. Backends see the original source IP. If the isPreserveSourceDestination parameter is enabled for the network load balancer resource, then this parameter cannot be disabled. The value is true by default.
-        """
         return pulumi.get(self, "is_preserve_source")
 
     @is_preserve_source.setter
@@ -224,13 +157,6 @@ class _BackendSetState:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        A user-friendly name for the backend set that must be unique and cannot be changed.
-
-        Valid backend set names include only alphanumeric characters, dashes, and underscores. Backend set names cannot contain spaces. Avoid entering confidential information.
-
-        Example: `example_backend_set`
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -240,9 +166,6 @@ class _BackendSetState:
     @property
     @pulumi.getter(name="networkLoadBalancerId")
     def network_load_balancer_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network load balancer to update.
-        """
         return pulumi.get(self, "network_load_balancer_id")
 
     @network_load_balancer_id.setter
@@ -252,13 +175,6 @@ class _BackendSetState:
     @property
     @pulumi.getter
     def policy(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The network load balancer policy for the backend set.  Example: `FIVE_TUPLE`` 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "policy")
 
     @policy.setter
@@ -279,59 +195,9 @@ class BackendSet(pulumi.CustomResource):
                  policy: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Backend Set resource in Oracle Cloud Infrastructure Network Load Balancer service.
-
-        Adds a backend set to a network load balancer.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_backend_set = oci.network_load_balancer.BackendSet("testBackendSet",
-            health_checker=oci.network_load_balancer.BackendSetHealthCheckerArgs(
-                protocol=var["backend_set_health_checker_protocol"],
-                interval_in_millis=var["backend_set_health_checker_interval_in_millis"],
-                port=var["backend_set_health_checker_port"],
-                request_data=var["backend_set_health_checker_request_data"],
-                response_body_regex=var["backend_set_health_checker_response_body_regex"],
-                response_data=var["backend_set_health_checker_response_data"],
-                retries=var["backend_set_health_checker_retries"],
-                return_code=var["backend_set_health_checker_return_code"],
-                timeout_in_millis=var["backend_set_health_checker_timeout_in_millis"],
-                url_path=var["backend_set_health_checker_url_path"],
-            ),
-            network_load_balancer_id=oci_network_load_balancer_network_load_balancer["test_network_load_balancer"]["id"],
-            policy=var["backend_set_policy"],
-            ip_version=var["backend_set_ip_version"],
-            is_preserve_source=var["backend_set_is_preserve_source"])
-        ```
-
-        ## Import
-
-        BackendSets can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:NetworkLoadBalancer/backendSet:BackendSet test_backend_set "networkLoadBalancers/{networkLoadBalancerId}/backendSets/{backendSetName}"
-        ```
-
+        Create a BackendSet resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[pulumi.InputType['BackendSetHealthCheckerArgs']] health_checker: (Updatable) The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/editinghealthcheck.htm).
-        :param pulumi.Input[str] ip_version: (Updatable) IP version associated with the backend set.
-        :param pulumi.Input[bool] is_preserve_source: (Updatable) If this parameter is enabled, then the network load balancer preserves the source IP of the packet when it is forwarded to backends. Backends see the original source IP. If the isPreserveSourceDestination parameter is enabled for the network load balancer resource, then this parameter cannot be disabled. The value is true by default.
-        :param pulumi.Input[str] name: A user-friendly name for the backend set that must be unique and cannot be changed.
-               
-               Valid backend set names include only alphanumeric characters, dashes, and underscores. Backend set names cannot contain spaces. Avoid entering confidential information.
-               
-               Example: `example_backend_set`
-        :param pulumi.Input[str] network_load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network load balancer to update.
-        :param pulumi.Input[str] policy: (Updatable) The network load balancer policy for the backend set.  Example: `FIVE_TUPLE`` 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -340,43 +206,7 @@ class BackendSet(pulumi.CustomResource):
                  args: BackendSetArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Backend Set resource in Oracle Cloud Infrastructure Network Load Balancer service.
-
-        Adds a backend set to a network load balancer.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_backend_set = oci.network_load_balancer.BackendSet("testBackendSet",
-            health_checker=oci.network_load_balancer.BackendSetHealthCheckerArgs(
-                protocol=var["backend_set_health_checker_protocol"],
-                interval_in_millis=var["backend_set_health_checker_interval_in_millis"],
-                port=var["backend_set_health_checker_port"],
-                request_data=var["backend_set_health_checker_request_data"],
-                response_body_regex=var["backend_set_health_checker_response_body_regex"],
-                response_data=var["backend_set_health_checker_response_data"],
-                retries=var["backend_set_health_checker_retries"],
-                return_code=var["backend_set_health_checker_return_code"],
-                timeout_in_millis=var["backend_set_health_checker_timeout_in_millis"],
-                url_path=var["backend_set_health_checker_url_path"],
-            ),
-            network_load_balancer_id=oci_network_load_balancer_network_load_balancer["test_network_load_balancer"]["id"],
-            policy=var["backend_set_policy"],
-            ip_version=var["backend_set_ip_version"],
-            is_preserve_source=var["backend_set_is_preserve_source"])
-        ```
-
-        ## Import
-
-        BackendSets can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:NetworkLoadBalancer/backendSet:BackendSet test_backend_set "networkLoadBalancers/{networkLoadBalancerId}/backendSets/{backendSetName}"
-        ```
-
+        Create a BackendSet resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param BackendSetArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -444,21 +274,6 @@ class BackendSet(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['BackendSetBackendArgs']]]] backends: Array of backends.
-        :param pulumi.Input[pulumi.InputType['BackendSetHealthCheckerArgs']] health_checker: (Updatable) The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/editinghealthcheck.htm).
-        :param pulumi.Input[str] ip_version: (Updatable) IP version associated with the backend set.
-        :param pulumi.Input[bool] is_preserve_source: (Updatable) If this parameter is enabled, then the network load balancer preserves the source IP of the packet when it is forwarded to backends. Backends see the original source IP. If the isPreserveSourceDestination parameter is enabled for the network load balancer resource, then this parameter cannot be disabled. The value is true by default.
-        :param pulumi.Input[str] name: A user-friendly name for the backend set that must be unique and cannot be changed.
-               
-               Valid backend set names include only alphanumeric characters, dashes, and underscores. Backend set names cannot contain spaces. Avoid entering confidential information.
-               
-               Example: `example_backend_set`
-        :param pulumi.Input[str] network_load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network load balancer to update.
-        :param pulumi.Input[str] policy: (Updatable) The network load balancer policy for the backend set.  Example: `FIVE_TUPLE`` 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -475,65 +290,36 @@ class BackendSet(pulumi.CustomResource):
 
     @property
     @pulumi.getter
-    def backends(self) -> pulumi.Output[Sequence['outputs.BackendSetBackend']]:
-        """
-        Array of backends.
-        """
+    def backends(self) -> pulumi.Output[Optional[Sequence['outputs.BackendSetBackend']]]:
         return pulumi.get(self, "backends")
 
     @property
     @pulumi.getter(name="healthChecker")
     def health_checker(self) -> pulumi.Output['outputs.BackendSetHealthChecker']:
-        """
-        (Updatable) The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/editinghealthcheck.htm).
-        """
         return pulumi.get(self, "health_checker")
 
     @property
     @pulumi.getter(name="ipVersion")
-    def ip_version(self) -> pulumi.Output[str]:
-        """
-        (Updatable) IP version associated with the backend set.
-        """
+    def ip_version(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "ip_version")
 
     @property
     @pulumi.getter(name="isPreserveSource")
-    def is_preserve_source(self) -> pulumi.Output[bool]:
-        """
-        (Updatable) If this parameter is enabled, then the network load balancer preserves the source IP of the packet when it is forwarded to backends. Backends see the original source IP. If the isPreserveSourceDestination parameter is enabled for the network load balancer resource, then this parameter cannot be disabled. The value is true by default.
-        """
+    def is_preserve_source(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "is_preserve_source")
 
     @property
     @pulumi.getter
     def name(self) -> pulumi.Output[str]:
-        """
-        A user-friendly name for the backend set that must be unique and cannot be changed.
-
-        Valid backend set names include only alphanumeric characters, dashes, and underscores. Backend set names cannot contain spaces. Avoid entering confidential information.
-
-        Example: `example_backend_set`
-        """
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="networkLoadBalancerId")
     def network_load_balancer_id(self) -> pulumi.Output[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network load balancer to update.
-        """
         return pulumi.get(self, "network_load_balancer_id")
 
     @property
     @pulumi.getter
     def policy(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The network load balancer policy for the backend set.  Example: `FIVE_TUPLE`` 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "policy")
 

@@ -59,34 +59,22 @@ class GetFleetAdvancedFeatureConfigurationResult:
 
     @property
     @pulumi.getter(name="advancedUsageTrackings")
-    def advanced_usage_trackings(self) -> Sequence['outputs.GetFleetAdvancedFeatureConfigurationAdvancedUsageTrackingResult']:
-        """
-        AdvancedUsageTracking configuration
-        """
+    def advanced_usage_trackings(self) -> Optional[Sequence['outputs.GetFleetAdvancedFeatureConfigurationAdvancedUsageTrackingResult']]:
         return pulumi.get(self, "advanced_usage_trackings")
 
     @property
     @pulumi.getter(name="analyticBucketName")
-    def analytic_bucket_name(self) -> str:
-        """
-        Bucket name required to store JFR and related data.
-        """
+    def analytic_bucket_name(self) -> Optional[str]:
         return pulumi.get(self, "analytic_bucket_name")
 
     @property
     @pulumi.getter(name="analyticNamespace")
-    def analytic_namespace(self) -> str:
-        """
-        Namespace for the Fleet advanced feature.
-        """
+    def analytic_namespace(self) -> Optional[str]:
         return pulumi.get(self, "analytic_namespace")
 
     @property
     @pulumi.getter(name="cryptoEventAnalyses")
-    def crypto_event_analyses(self) -> Sequence['outputs.GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisResult']:
-        """
-        CryptoEventAnalysis configuration
-        """
+    def crypto_event_analyses(self) -> Optional[Sequence['outputs.GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisResult']]:
         return pulumi.get(self, "crypto_event_analyses")
 
     @property
@@ -96,7 +84,7 @@ class GetFleetAdvancedFeatureConfigurationResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -104,42 +92,27 @@ class GetFleetAdvancedFeatureConfigurationResult:
 
     @property
     @pulumi.getter(name="javaMigrationAnalyses")
-    def java_migration_analyses(self) -> Sequence['outputs.GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysisResult']:
-        """
-        JavaMigrationAnalysis configuration
-        """
+    def java_migration_analyses(self) -> Optional[Sequence['outputs.GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysisResult']]:
         return pulumi.get(self, "java_migration_analyses")
 
     @property
     @pulumi.getter(name="jfrRecordings")
-    def jfr_recordings(self) -> Sequence['outputs.GetFleetAdvancedFeatureConfigurationJfrRecordingResult']:
-        """
-        JfrRecording configuration
-        """
+    def jfr_recordings(self) -> Optional[Sequence['outputs.GetFleetAdvancedFeatureConfigurationJfrRecordingResult']]:
         return pulumi.get(self, "jfr_recordings")
 
     @property
     @pulumi.getter
-    def lcms(self) -> Sequence['outputs.GetFleetAdvancedFeatureConfigurationLcmResult']:
-        """
-        Enable lifecycle management and set post action configurations.
-        """
+    def lcms(self) -> Optional[Sequence['outputs.GetFleetAdvancedFeatureConfigurationLcmResult']]:
         return pulumi.get(self, "lcms")
 
     @property
     @pulumi.getter(name="performanceTuningAnalyses")
-    def performance_tuning_analyses(self) -> Sequence['outputs.GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisResult']:
-        """
-        Performance tuning analysis configuration
-        """
+    def performance_tuning_analyses(self) -> Optional[Sequence['outputs.GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisResult']]:
         return pulumi.get(self, "performance_tuning_analyses")
 
     @property
     @pulumi.getter(name="timeLastModified")
-    def time_last_modified(self) -> str:
-        """
-        The date and time of the last modification to the Fleet Agent Configuration (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-        """
+    def time_last_modified(self) -> Optional[str]:
         return pulumi.get(self, "time_last_modified")
 
 
@@ -165,21 +138,7 @@ class AwaitableGetFleetAdvancedFeatureConfigurationResult(GetFleetAdvancedFeatur
 def get_fleet_advanced_feature_configuration(fleet_id: Optional[str] = None,
                                              opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetFleetAdvancedFeatureConfigurationResult:
     """
-    This data source provides details about a specific Fleet Advanced Feature Configuration resource in Oracle Cloud Infrastructure Jms service.
-
-    Returns Fleet level advanced feature configuration.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_fleet_advanced_feature_configuration = oci.Jms.get_fleet_advanced_feature_configuration(fleet_id=oci_jms_fleet["test_fleet"]["id"])
-    ```
-
-
-    :param str fleet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['fleetId'] = fleet_id
@@ -204,20 +163,6 @@ def get_fleet_advanced_feature_configuration(fleet_id: Optional[str] = None,
 def get_fleet_advanced_feature_configuration_output(fleet_id: Optional[pulumi.Input[str]] = None,
                                                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetFleetAdvancedFeatureConfigurationResult]:
     """
-    This data source provides details about a specific Fleet Advanced Feature Configuration resource in Oracle Cloud Infrastructure Jms service.
-
-    Returns Fleet level advanced feature configuration.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_fleet_advanced_feature_configuration = oci.Jms.get_fleet_advanced_feature_configuration(fleet_id=oci_jms_fleet["test_fleet"]["id"])
-    ```
-
-
-    :param str fleet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
+    Use this data source to access information about an existing resource.
     """
     ...

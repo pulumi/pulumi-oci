@@ -39,7 +39,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("app")]
-        public Output<Outputs.DomainsGrantApp> App { get; private set; } = null!;
+        public Output<Outputs.DomainsGrantApp?> App { get; private set; } = null!;
 
         /// <summary>
         /// Application-Entitlement-Collection that is being granted. Each Grant must grant either an App or an App-Entitlement-Collection.
@@ -56,7 +56,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("appEntitlementCollection")]
-        public Output<Outputs.DomainsGrantAppEntitlementCollection> AppEntitlementCollection { get; private set; } = null!;
+        public Output<Outputs.DomainsGrantAppEntitlementCollection?> AppEntitlementCollection { get; private set; } = null!;
 
         /// <summary>
         /// A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
@@ -90,7 +90,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("compartmentOcid")]
-        public Output<string> CompartmentOcid { get; private set; } = null!;
+        public Output<string?> CompartmentOcid { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Unique key of grant, composed by combining a subset of app, entitlement, grantee, grantor and grantMechanism.  Used to prevent duplicate Grants.
@@ -108,7 +108,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: server
         /// </summary>
         [Output("compositeKey")]
-        public Output<string> CompositeKey { get; private set; } = null!;
+        public Output<string?> CompositeKey { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
@@ -124,7 +124,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("deleteInProgress")]
-        public Output<bool> DeleteInProgress { get; private set; } = null!;
+        public Output<bool?> DeleteInProgress { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
@@ -140,7 +140,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("domainOcid")]
-        public Output<string> DomainOcid { get; private set; } = null!;
+        public Output<string?> DomainOcid { get; private set; } = null!;
 
         /// <summary>
         /// The entitlement or privilege that is being granted
@@ -155,7 +155,7 @@ namespace Pulumi.Oci.Identity
         /// * type: complex
         /// </summary>
         [Output("entitlement")]
-        public Output<Outputs.DomainsGrantEntitlement> Entitlement { get; private set; } = null!;
+        public Output<Outputs.DomainsGrantEntitlement?> Entitlement { get; private set; } = null!;
 
         /// <summary>
         /// Each value of grantMechanism indicates how (or by what component) some App (or App-Entitlement) was granted. A customer or the UI should use only grantMechanism values that start with 'ADMINISTRATOR':
@@ -192,7 +192,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("grantedAttributeValuesJson")]
-        public Output<string> GrantedAttributeValuesJson { get; private set; } = null!;
+        public Output<string?> GrantedAttributeValuesJson { get; private set; } = null!;
 
         /// <summary>
         /// Grantee beneficiary. The grantee may be a User, Group, App or DynamicResourceGroup.
@@ -273,7 +273,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("idcsLastUpgradedInRelease")]
-        public Output<string> IdcsLastUpgradedInRelease { get; private set; } = null!;
+        public Output<string?> IdcsLastUpgradedInRelease { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
@@ -303,7 +303,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("isFulfilled")]
-        public Output<bool> IsFulfilled { get; private set; } = null!;
+        public Output<bool?> IsFulfilled { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
@@ -335,13 +335,13 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: global
         /// </summary>
         [Output("ocid")]
-        public Output<string> Ocid { get; private set; } = null!;
+        public Output<string?> Ocid { get; private set; } = null!;
 
         /// <summary>
         /// An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
         /// </summary>
         [Output("resourceTypeSchemaVersion")]
-        public Output<string> ResourceTypeSchemaVersion { get; private set; } = null!;
+        public Output<string?> ResourceTypeSchemaVersion { get; private set; } = null!;
 
         /// <summary>
         /// REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
@@ -393,7 +393,7 @@ namespace Pulumi.Oci.Identity
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("tenancyOcid")]
-        public Output<string> TenancyOcid { get; private set; } = null!;
+        public Output<string?> TenancyOcid { get; private set; } = null!;
 
 
         /// <summary>

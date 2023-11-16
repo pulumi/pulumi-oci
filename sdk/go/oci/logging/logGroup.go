@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Log Group resource in Oracle Cloud Infrastructure Logging service.
@@ -69,7 +68,7 @@ type LogGroup struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) Description for this resource.
-	Description pulumi.StringOutput `pulumi:"description"`
+	Description pulumi.StringPtrOutput `pulumi:"description"`
 	// (Updatable) The user-friendly display name. This must be unique within the enclosing resource, and it's changeable. Avoid entering confidential information.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -78,11 +77,11 @@ type LogGroup struct {
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// The log group object state.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// Time the resource was created.
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// Time the resource was last modified.
-	TimeLastModified pulumi.StringOutput `pulumi:"timeLastModified"`
+	TimeLastModified pulumi.StringPtrOutput `pulumi:"timeLastModified"`
 }
 
 // NewLogGroup registers a new resource with the given unique name, arguments, and options.
@@ -224,12 +223,6 @@ func (i *LogGroup) ToLogGroupOutputWithContext(ctx context.Context) LogGroupOutp
 	return pulumi.ToOutputWithContext(ctx, i).(LogGroupOutput)
 }
 
-func (i *LogGroup) ToOutput(ctx context.Context) pulumix.Output[*LogGroup] {
-	return pulumix.Output[*LogGroup]{
-		OutputState: i.ToLogGroupOutputWithContext(ctx).OutputState,
-	}
-}
-
 // LogGroupArrayInput is an input type that accepts LogGroupArray and LogGroupArrayOutput values.
 // You can construct a concrete instance of `LogGroupArrayInput` via:
 //
@@ -253,12 +246,6 @@ func (i LogGroupArray) ToLogGroupArrayOutput() LogGroupArrayOutput {
 
 func (i LogGroupArray) ToLogGroupArrayOutputWithContext(ctx context.Context) LogGroupArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(LogGroupArrayOutput)
-}
-
-func (i LogGroupArray) ToOutput(ctx context.Context) pulumix.Output[[]*LogGroup] {
-	return pulumix.Output[[]*LogGroup]{
-		OutputState: i.ToLogGroupArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // LogGroupMapInput is an input type that accepts LogGroupMap and LogGroupMapOutput values.
@@ -286,12 +273,6 @@ func (i LogGroupMap) ToLogGroupMapOutputWithContext(ctx context.Context) LogGrou
 	return pulumi.ToOutputWithContext(ctx, i).(LogGroupMapOutput)
 }
 
-func (i LogGroupMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*LogGroup] {
-	return pulumix.Output[map[string]*LogGroup]{
-		OutputState: i.ToLogGroupMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type LogGroupOutput struct{ *pulumi.OutputState }
 
 func (LogGroupOutput) ElementType() reflect.Type {
@@ -306,12 +287,6 @@ func (o LogGroupOutput) ToLogGroupOutputWithContext(ctx context.Context) LogGrou
 	return o
 }
 
-func (o LogGroupOutput) ToOutput(ctx context.Context) pulumix.Output[*LogGroup] {
-	return pulumix.Output[*LogGroup]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) The OCID of the compartment that the resource belongs to.
 func (o LogGroupOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *LogGroup) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
@@ -323,8 +298,8 @@ func (o LogGroupOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // (Updatable) Description for this resource.
-func (o LogGroupOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v *LogGroup) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
+func (o LogGroupOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *LogGroup) pulumi.StringPtrOutput { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The user-friendly display name. This must be unique within the enclosing resource, and it's changeable. Avoid entering confidential information.
@@ -341,18 +316,18 @@ func (o LogGroupOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The log group object state.
-func (o LogGroupOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *LogGroup) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o LogGroupOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *LogGroup) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Time the resource was created.
-func (o LogGroupOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *LogGroup) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LogGroupOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *LogGroup) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // Time the resource was last modified.
-func (o LogGroupOutput) TimeLastModified() pulumi.StringOutput {
-	return o.ApplyT(func(v *LogGroup) pulumi.StringOutput { return v.TimeLastModified }).(pulumi.StringOutput)
+func (o LogGroupOutput) TimeLastModified() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *LogGroup) pulumi.StringPtrOutput { return v.TimeLastModified }).(pulumi.StringPtrOutput)
 }
 
 type LogGroupArrayOutput struct{ *pulumi.OutputState }
@@ -367,12 +342,6 @@ func (o LogGroupArrayOutput) ToLogGroupArrayOutput() LogGroupArrayOutput {
 
 func (o LogGroupArrayOutput) ToLogGroupArrayOutputWithContext(ctx context.Context) LogGroupArrayOutput {
 	return o
-}
-
-func (o LogGroupArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*LogGroup] {
-	return pulumix.Output[[]*LogGroup]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o LogGroupArrayOutput) Index(i pulumi.IntInput) LogGroupOutput {
@@ -393,12 +362,6 @@ func (o LogGroupMapOutput) ToLogGroupMapOutput() LogGroupMapOutput {
 
 func (o LogGroupMapOutput) ToLogGroupMapOutputWithContext(ctx context.Context) LogGroupMapOutput {
 	return o
-}
-
-func (o LogGroupMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*LogGroup] {
-	return pulumix.Output[map[string]*LogGroup]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o LogGroupMapOutput) MapIndex(k pulumi.StringInput) LogGroupOutput {

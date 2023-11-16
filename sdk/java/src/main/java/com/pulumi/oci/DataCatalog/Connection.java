@@ -90,14 +90,14 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="createdById", refs={String.class}, tree="[0]")
-    private Output<String> createdById;
+    private Output</* @Nullable */ String> createdById;
 
     /**
      * @return OCID of the user who created the connection.
      * 
      */
-    public Output<String> createdById() {
-        return this.createdById;
+    public Output<Optional<String>> createdById() {
+        return Codegen.optional(this.createdById);
     }
     /**
      * Unique data asset key.
@@ -118,14 +118,14 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
-    private Output<String> description;
+    private Output</* @Nullable */ String> description;
 
     /**
      * @return (Updatable) A description of the connection.
      * 
      */
-    public Output<String> description() {
-        return this.description;
+    public Output<Optional<String>> description() {
+        return Codegen.optional(this.description);
     }
     /**
      * (Updatable) A user-friendly display name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
@@ -160,42 +160,42 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="externalKey", refs={String.class}, tree="[0]")
-    private Output<String> externalKey;
+    private Output</* @Nullable */ String> externalKey;
 
     /**
      * @return Unique external key of this object from the source system.
      * 
      */
-    public Output<String> externalKey() {
-        return this.externalKey;
+    public Output<Optional<String>> externalKey() {
+        return Codegen.optional(this.externalKey);
     }
     /**
      * (Updatable) Indicates whether this connection is the default connection. The first connection of a data asset defaults to being the default, subsequent connections default to not being the default. If a default connection already exists, then trying to create a connection as the default will fail. In this case the default connection would need to be updated not to be the default and then the new connection can then be created as the default.
      * 
      */
     @Export(name="isDefault", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isDefault;
+    private Output</* @Nullable */ Boolean> isDefault;
 
     /**
      * @return (Updatable) Indicates whether this connection is the default connection. The first connection of a data asset defaults to being the default, subsequent connections default to not being the default. If a default connection already exists, then trying to create a connection as the default will fail. In this case the default connection would need to be updated not to be the default and then the new connection can then be created as the default.
      * 
      */
-    public Output<Boolean> isDefault() {
-        return this.isDefault;
+    public Output<Optional<Boolean>> isDefault() {
+        return Codegen.optional(this.isDefault);
     }
     /**
      * Unique connection key that is immutable.
      * 
      */
     @Export(name="key", refs={String.class}, tree="[0]")
-    private Output<String> key;
+    private Output</* @Nullable */ String> key;
 
     /**
      * @return Unique connection key that is immutable.
      * 
      */
-    public Output<String> key() {
-        return this.key;
+    public Output<Optional<String>> key() {
+        return Codegen.optional(this.key);
     }
     @Export(name="properties", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> properties;
@@ -208,56 +208,56 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The current state of the connection.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * The date and time the connection was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2019-03-25T21:10:29.600Z`
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The date and time the connection was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2019-03-25T21:10:29.600Z`
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * Time that the connections status was last updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
      * 
      */
     @Export(name="timeStatusUpdated", refs={String.class}, tree="[0]")
-    private Output<String> timeStatusUpdated;
+    private Output</* @Nullable */ String> timeStatusUpdated;
 
     /**
      * @return Time that the connections status was last updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
      * 
      */
-    public Output<String> timeStatusUpdated() {
-        return this.timeStatusUpdated;
+    public Output<Optional<String>> timeStatusUpdated() {
+        return Codegen.optional(this.timeStatusUpdated);
     }
     /**
      * The last time that any change was made to the connection. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
      * 
      */
     @Export(name="timeUpdated", refs={String.class}, tree="[0]")
-    private Output<String> timeUpdated;
+    private Output</* @Nullable */ String> timeUpdated;
 
     /**
      * @return The last time that any change was made to the connection. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
      * 
      */
-    public Output<String> timeUpdated() {
-        return this.timeUpdated;
+    public Output<Optional<String>> timeUpdated() {
+        return Codegen.optional(this.timeUpdated);
     }
     /**
      * The key of the object type. Type key&#39;s can be found via the &#39;/types&#39; endpoint.
@@ -284,28 +284,28 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="updatedById", refs={String.class}, tree="[0]")
-    private Output<String> updatedById;
+    private Output</* @Nullable */ String> updatedById;
 
     /**
      * @return OCID of the user who modified the connection.
      * 
      */
-    public Output<String> updatedById() {
-        return this.updatedById;
+    public Output<Optional<String>> updatedById() {
+        return Codegen.optional(this.updatedById);
     }
     /**
      * URI to the connection instance in the API.
      * 
      */
     @Export(name="uri", refs={String.class}, tree="[0]")
-    private Output<String> uri;
+    private Output</* @Nullable */ String> uri;
 
     /**
      * @return URI to the connection instance in the API.
      * 
      */
-    public Output<String> uri() {
-        return this.uri;
+    public Output<Optional<String>> uri() {
+        return Codegen.optional(this.uri);
     }
 
     /**

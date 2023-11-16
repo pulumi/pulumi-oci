@@ -163,7 +163,7 @@ namespace Pulumi.Oci.Optimizer
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The enrollment status' current state.
         /// </summary>
@@ -181,7 +181,7 @@ namespace Pulumi.Oci.Optimizer
 
             ImmutableArray<Outputs.GetEnrollmentStatusesFilterResult> filters,
 
-            string id,
+            string? id,
 
             string? state,
 

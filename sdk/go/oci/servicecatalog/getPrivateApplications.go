@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Private Applications in Oracle Cloud Infrastructure Service Catalog service.
@@ -72,7 +71,7 @@ type GetPrivateApplicationsResult struct {
 	DisplayName *string                        `pulumi:"displayName"`
 	Filters     []GetPrivateApplicationsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The list of private_application_collection.
 	PrivateApplicationCollections []GetPrivateApplicationsPrivateApplicationCollection `pulumi:"privateApplicationCollections"`
 	PrivateApplicationId          *string                                              `pulumi:"privateApplicationId"`
@@ -121,12 +120,6 @@ func (o GetPrivateApplicationsResultOutput) ToGetPrivateApplicationsResultOutput
 	return o
 }
 
-func (o GetPrivateApplicationsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetPrivateApplicationsResult] {
-	return pulumix.Output[GetPrivateApplicationsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where the private application resides.
 func (o GetPrivateApplicationsResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetPrivateApplicationsResult) string { return v.CompartmentId }).(pulumi.StringOutput)
@@ -142,8 +135,8 @@ func (o GetPrivateApplicationsResultOutput) Filters() GetPrivateApplicationsFilt
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetPrivateApplicationsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPrivateApplicationsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetPrivateApplicationsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetPrivateApplicationsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The list of private_application_collection.

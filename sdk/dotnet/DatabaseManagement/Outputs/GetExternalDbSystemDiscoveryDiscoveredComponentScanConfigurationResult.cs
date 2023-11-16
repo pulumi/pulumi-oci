@@ -16,29 +16,29 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// <summary>
         /// The network number from which VIPs are obtained.
         /// </summary>
-        public readonly int NetworkNumber;
+        public readonly int? NetworkNumber;
         /// <summary>
         /// The name of the SCAN listener.
         /// </summary>
-        public readonly string ScanName;
+        public readonly string? ScanName;
         /// <summary>
         /// The port number of the SCAN listener.
         /// </summary>
-        public readonly int ScanPort;
+        public readonly int? ScanPort;
         /// <summary>
         /// The protocol of the SCAN listener.
         /// </summary>
-        public readonly string ScanProtocol;
+        public readonly string? ScanProtocol;
 
         [OutputConstructor]
         private GetExternalDbSystemDiscoveryDiscoveredComponentScanConfigurationResult(
-            int networkNumber,
+            int? networkNumber,
 
-            string scanName,
+            string? scanName,
 
-            int scanPort,
+            int? scanPort,
 
-            string scanProtocol)
+            string? scanProtocol)
         {
             NetworkNumber = networkNumber;
             ScanName = scanName;

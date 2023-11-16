@@ -16,15 +16,15 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// The default description of the tag namespace that users can use to create the tag definition
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// The mutability of the possible values list for enum tags. This will default to IMMUTABLE for string value tags
         /// </summary>
-        public readonly string EnumMutability;
+        public readonly string? EnumMutability;
         /// <summary>
         /// Is the tag a cost tracking tag. Default will be false as cost tracking tags have been deprecated
         /// </summary>
-        public readonly bool IsCostTracking;
+        public readonly bool? IsCostTracking;
         /// <summary>
         /// List of possible values. An optional parameter that will be present if the type of definition is enum.
         /// </summary>
@@ -32,25 +32,25 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// The name of this standard tag definition
         /// </summary>
-        public readonly string TagDefinitionName;
+        public readonly string? TagDefinitionName;
         /// <summary>
         /// The type of tag definition. Enum or string.
         /// </summary>
-        public readonly string Type;
+        public readonly string? Type;
 
         [OutputConstructor]
         private GetTagStandardTagNamespaceTemplateTagDefinitionTemplateResult(
-            string description,
+            string? description,
 
-            string enumMutability,
+            string? enumMutability,
 
-            bool isCostTracking,
+            bool? isCostTracking,
 
             ImmutableArray<string> possibleValues,
 
-            string tagDefinitionName,
+            string? tagDefinitionName,
 
-            string type)
+            string? type)
         {
             Description = description;
             EnumMutability = enumMutability;

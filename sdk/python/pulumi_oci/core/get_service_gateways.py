@@ -46,9 +46,6 @@ class GetServiceGatewaysResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the service gateway.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
@@ -58,7 +55,7 @@ class GetServiceGatewaysResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -66,26 +63,17 @@ class GetServiceGatewaysResult:
 
     @property
     @pulumi.getter(name="serviceGateways")
-    def service_gateways(self) -> Sequence['outputs.GetServiceGatewaysServiceGatewayResult']:
-        """
-        The list of service_gateways.
-        """
+    def service_gateways(self) -> Optional[Sequence['outputs.GetServiceGatewaysServiceGatewayResult']]:
         return pulumi.get(self, "service_gateways")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The service gateway's current state.
-        """
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="vcnId")
     def vcn_id(self) -> Optional[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN the service gateway belongs to.
-        """
         return pulumi.get(self, "vcn_id")
 
 
@@ -109,26 +97,7 @@ def get_service_gateways(compartment_id: Optional[str] = None,
                          vcn_id: Optional[str] = None,
                          opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetServiceGatewaysResult:
     """
-    This data source provides the list of Service Gateways in Oracle Cloud Infrastructure Core service.
-
-    Lists the service gateways in the specified compartment. You may optionally specify a VCN OCID
-    to filter the results by VCN.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_service_gateways = oci.Core.get_service_gateways(compartment_id=var["compartment_id"],
-        state=var["service_gateway_state"],
-        vcn_id=oci_core_vcn["test_vcn"]["id"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param str state: A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
-    :param str vcn_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -154,25 +123,6 @@ def get_service_gateways_output(compartment_id: Optional[pulumi.Input[str]] = No
                                 vcn_id: Optional[pulumi.Input[Optional[str]]] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetServiceGatewaysResult]:
     """
-    This data source provides the list of Service Gateways in Oracle Cloud Infrastructure Core service.
-
-    Lists the service gateways in the specified compartment. You may optionally specify a VCN OCID
-    to filter the results by VCN.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_service_gateways = oci.Core.get_service_gateways(compartment_id=var["compartment_id"],
-        state=var["service_gateway_state"],
-        vcn_id=oci_core_vcn["test_vcn"]["id"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param str state: A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
-    :param str vcn_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
+    Use this data source to access information about an existing resource.
     """
     ...

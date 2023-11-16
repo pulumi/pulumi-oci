@@ -140,7 +140,7 @@ namespace Pulumi.Oci.ContainerEngine
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         public readonly string WorkRequestId;
         /// <summary>
         /// The list of work_request_log_entries.
@@ -153,7 +153,7 @@ namespace Pulumi.Oci.ContainerEngine
 
             ImmutableArray<Outputs.GetWorkRequestLogEntriesFilterResult> filters,
 
-            string id,
+            string? id,
 
             string workRequestId,
 

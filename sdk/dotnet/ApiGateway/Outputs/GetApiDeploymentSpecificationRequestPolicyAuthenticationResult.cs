@@ -24,11 +24,11 @@ namespace Pulumi.Oci.ApiGateway.Outputs
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Functions function resource.
         /// </summary>
-        public readonly string FunctionId;
+        public readonly string? FunctionId;
         /// <summary>
         /// Whether an unauthenticated user may access the API. Must be "true" to enable ANONYMOUS route authorization.
         /// </summary>
-        public readonly bool IsAnonymousAccessAllowed;
+        public readonly bool? IsAnonymousAccessAllowed;
         /// <summary>
         /// A list of parties that could have issued the token.
         /// </summary>
@@ -36,8 +36,8 @@ namespace Pulumi.Oci.ApiGateway.Outputs
         /// <summary>
         /// The maximum expected time difference between the system clocks of the token issuer and the API Gateway.
         /// </summary>
-        public readonly double MaxClockSkewInSeconds;
-        public readonly ImmutableDictionary<string, object> Parameters;
+        public readonly double? MaxClockSkewInSeconds;
+        public readonly ImmutableDictionary<string, object>? Parameters;
         /// <summary>
         /// A set of Public Keys that will be used to verify the JWT signature.
         /// </summary>
@@ -45,19 +45,19 @@ namespace Pulumi.Oci.ApiGateway.Outputs
         /// <summary>
         /// The authentication scheme that is to be used when authenticating the token. This must to be provided if "tokenHeader" is specified.
         /// </summary>
-        public readonly string TokenAuthScheme;
+        public readonly string? TokenAuthScheme;
         /// <summary>
         /// The name of the header containing the authentication token.
         /// </summary>
-        public readonly string TokenHeader;
+        public readonly string? TokenHeader;
         /// <summary>
         /// The name of the query parameter containing the authentication token.
         /// </summary>
-        public readonly string TokenQueryParam;
+        public readonly string? TokenQueryParam;
         /// <summary>
         /// Type of the Response Cache Store Policy.
         /// </summary>
-        public readonly string Type;
+        public readonly string? Type;
         /// <summary>
         /// Policy for defining behaviour on validation failure.
         /// </summary>
@@ -77,25 +77,25 @@ namespace Pulumi.Oci.ApiGateway.Outputs
 
             ImmutableArray<string> cacheKeys,
 
-            string functionId,
+            string? functionId,
 
-            bool isAnonymousAccessAllowed,
+            bool? isAnonymousAccessAllowed,
 
             ImmutableArray<string> issuers,
 
-            double maxClockSkewInSeconds,
+            double? maxClockSkewInSeconds,
 
-            ImmutableDictionary<string, object> parameters,
+            ImmutableDictionary<string, object>? parameters,
 
             ImmutableArray<Outputs.GetApiDeploymentSpecificationRequestPolicyAuthenticationPublicKeyResult> publicKeys,
 
-            string tokenAuthScheme,
+            string? tokenAuthScheme,
 
-            string tokenHeader,
+            string? tokenHeader,
 
-            string tokenQueryParam,
+            string? tokenQueryParam,
 
-            string type,
+            string? type,
 
             ImmutableArray<Outputs.GetApiDeploymentSpecificationRequestPolicyAuthenticationValidationFailurePolicyResult> validationFailurePolicies,
 

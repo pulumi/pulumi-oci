@@ -196,7 +196,7 @@ namespace Pulumi.Oci.Identity
         /// <summary>
         /// Access token expiry
         /// </summary>
-        public readonly int AccessTokenExpiry;
+        public readonly int? AccessTokenExpiry;
         /// <summary>
         /// Accounts of App
         /// </summary>
@@ -204,7 +204,7 @@ namespace Pulumi.Oci.Identity
         /// <summary>
         /// If true, this App is able to participate in runtime services, such as automatic-login, OAuth, and SAML. If false, all runtime services are disabled for this App, and only administrative operations can be performed.
         /// </summary>
-        public readonly bool Active;
+        public readonly bool? Active;
         /// <summary>
         /// A list of AppRoles defined by this UnmanagedApp. Membership in each of these AppRoles confers administrative privilege within this App.
         /// </summary>
@@ -216,15 +216,15 @@ namespace Pulumi.Oci.Identity
         /// <summary>
         /// If true, indicates that the system should allow all URL-schemes within each value of the 'redirectUris' attribute.  Also indicates that the system should not attempt to confirm that each value of the 'redirectUris' attribute is a valid URI.  In particular, the system should not confirm that the domain component of the URI is a top-level domain and the system should not confirm that the hostname portion is a valid system that is reachable over the network.
         /// </summary>
-        public readonly bool AllUrlSchemesAllowed;
+        public readonly bool? AllUrlSchemesAllowed;
         /// <summary>
         /// If true, any managed App that is based on this template is checked for access control that is, access to this app is subject to successful authorization at SSO service, viz. app grants to start with.
         /// </summary>
-        public readonly bool AllowAccessControl;
+        public readonly bool? AllowAccessControl;
         /// <summary>
         /// If true, indicates that the Refresh Token is allowed when this App acts as an OAuth Resource.
         /// </summary>
-        public readonly bool AllowOffline;
+        public readonly bool? AllowOffline;
         /// <summary>
         /// List of grant-types that this App is allowed to use when it acts as an OAuthClient.
         /// </summary>
@@ -244,7 +244,7 @@ namespace Pulumi.Oci.Identity
         /// <summary>
         /// Application icon.
         /// </summary>
-        public readonly string AppIcon;
+        public readonly string? AppIcon;
         /// <summary>
         /// The id of the App that defines this AppRole, which is granted to this App. The App that defines the AppRole acts as the producer; the App to which the AppRole is granted acts as a consumer.
         /// </summary>
@@ -256,7 +256,7 @@ namespace Pulumi.Oci.Identity
         /// <summary>
         /// Application thumbnail.
         /// </summary>
-        public readonly string AppThumbnail;
+        public readonly string? AppThumbnail;
         /// <summary>
         /// Network Perimeter
         /// </summary>
@@ -274,7 +274,7 @@ namespace Pulumi.Oci.Identity
         /// <summary>
         /// The base URI for all of the scopes defined in this App. The value of 'audience' is combined with the 'value' of each scope to form an 'fqs' or fully qualified scope.
         /// </summary>
-        public readonly string Audience;
+        public readonly string? Audience;
         public readonly string? Authorization;
         /// <summary>
         /// Application template on which the application is based.
@@ -283,11 +283,11 @@ namespace Pulumi.Oci.Identity
         /// <summary>
         /// If true, indicates that consent should be skipped for all scopes
         /// </summary>
-        public readonly bool BypassConsent;
+        public readonly bool? BypassConsent;
         /// <summary>
         /// Callback Service URL
         /// </summary>
-        public readonly string CallbackServiceUrl;
+        public readonly string? CallbackServiceUrl;
         /// <summary>
         /// Each value of this attribute represent a certificate that this App uses when it acts as an OAuthClient.
         /// </summary>
@@ -295,15 +295,15 @@ namespace Pulumi.Oci.Identity
         /// <summary>
         /// Network Perimeters checking mode
         /// </summary>
-        public readonly string ClientIpChecking;
+        public readonly string? ClientIpChecking;
         /// <summary>
         /// This value is the credential of this App, which this App supplies as a password when this App authenticates to the Oracle Public Cloud infrastructure. This value is also the client secret of this App when it acts as an OAuthClient.
         /// </summary>
-        public readonly string ClientSecret;
+        public readonly string? ClientSecret;
         /// <summary>
         /// Specifies the type of access that this App has when it acts as an OAuthClient.
         /// </summary>
-        public readonly string ClientType;
+        public readonly string? ClientType;
         /// <summary>
         /// A collection of arbitrary properties that scope the privileges of a cloud-control App.
         /// </summary>
@@ -311,11 +311,11 @@ namespace Pulumi.Oci.Identity
         /// <summary>
         /// Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
         /// </summary>
-        public readonly string CompartmentOcid;
+        public readonly string? CompartmentOcid;
         /// <summary>
         /// Contact Email Address
         /// </summary>
-        public readonly string ContactEmailAddress;
+        public readonly string? ContactEmailAddress;
         /// <summary>
         /// Service Names allow to use Oracle Cloud Infrastructure signature for client authentication instead of client credentials
         /// </summary>
@@ -323,23 +323,23 @@ namespace Pulumi.Oci.Identity
         /// <summary>
         /// A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
         /// </summary>
-        public readonly bool DeleteInProgress;
+        public readonly bool? DeleteInProgress;
         /// <summary>
         /// The description of the AppRole.
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// Indicates whether the application is allowed to be access using kmsi token.
         /// </summary>
-        public readonly bool DisableKmsiTokenAuthentication;
+        public readonly bool? DisableKmsiTokenAuthentication;
         /// <summary>
         /// Display name of the flatfile bundle configuration property. This attribute maps to \"displayName\" attribute in \"ConfigurationProperty\" in ICF.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
         /// </summary>
-        public readonly string DomainOcid;
+        public readonly string? DomainOcid;
         /// <summary>
         /// App attributes editable by subject
         /// </summary>
@@ -347,7 +347,7 @@ namespace Pulumi.Oci.Identity
         /// <summary>
         /// This attribute specifies the URL of the page to which an application will redirect an end-user in case of error.
         /// </summary>
-        public readonly string ErrorPageUrl;
+        public readonly string? ErrorPageUrl;
         /// <summary>
         /// A list of AppRoles that are granted to this App (and that are defined by other Apps). Within the Oracle Public Cloud infrastructure, this allows AppID-based association. Such an association allows this App to act as a consumer and thus to access resources of another App that acts as a producer.
         /// </summary>
@@ -359,23 +359,23 @@ namespace Pulumi.Oci.Identity
         /// <summary>
         /// Hashed Client Secret. This hash-value is used to verify the 'clientSecret' credential of this App
         /// </summary>
-        public readonly string HashedClientSecret;
+        public readonly string? HashedClientSecret;
         /// <summary>
         /// Home Page URL
         /// </summary>
-        public readonly string HomePageUrl;
+        public readonly string? HomePageUrl;
         /// <summary>
         /// URL of application icon.
         /// </summary>
-        public readonly string Icon;
+        public readonly string? Icon;
         /// <summary>
         /// Unique identifier for the SCIM Resource as defined by the Service Provider. Each representation of the Resource MUST include a non-empty id value. This identifier MUST be unique across the Service Provider's entire set of Resources. It MUST be a stable, non-reassignable identifier that does not change when the same Resource is returned in subsequent requests. The value of the id attribute is always issued by the Service Provider and MUST never be specified by the Service Consumer. bulkId: is a reserved keyword and MUST NOT be used in the unique identifier.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Encryption Alogrithm to use for encrypting ID token.
         /// </summary>
-        public readonly string IdTokenEncAlgo;
+        public readonly string? IdTokenEncAlgo;
         /// <summary>
         /// The User or App who created the Resource
         /// </summary>
@@ -388,7 +388,7 @@ namespace Pulumi.Oci.Identity
         /// <summary>
         /// The release number when the resource was upgraded.
         /// </summary>
-        public readonly string IdcsLastUpgradedInRelease;
+        public readonly string? IdcsLastUpgradedInRelease;
         /// <summary>
         /// Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
         /// </summary>
@@ -404,99 +404,99 @@ namespace Pulumi.Oci.Identity
         /// <summary>
         /// If true, this App is an internal infrastructure App.
         /// </summary>
-        public readonly bool Infrastructure;
+        public readonly bool? Infrastructure;
         /// <summary>
         /// If true, this App is an AliasApp and it cannot be granted to an end-user directly.
         /// </summary>
-        public readonly bool IsAliasApp;
+        public readonly bool? IsAliasApp;
         /// <summary>
         /// If true, this application acts as database service Application
         /// </summary>
-        public readonly bool IsDatabaseService;
+        public readonly bool? IsDatabaseService;
         /// <summary>
         /// If true, this app acts as Enterprise app with Authentication and URL Authz policy.
         /// </summary>
-        public readonly bool IsEnterpriseApp;
+        public readonly bool? IsEnterpriseApp;
         /// <summary>
         /// If true, this application acts as FormFill Application
         /// </summary>
-        public readonly bool IsFormFill;
+        public readonly bool? IsFormFill;
         /// <summary>
         /// If true, indicates that this App supports Kerberos Authentication
         /// </summary>
-        public readonly bool IsKerberosRealm;
+        public readonly bool? IsKerberosRealm;
         /// <summary>
         /// If true, this App allows runtime services to log end users into this App automatically.
         /// </summary>
-        public readonly bool IsLoginTarget;
+        public readonly bool? IsLoginTarget;
         /// <summary>
         /// If true, indicates that access to this App requires an account. That is, in order to log in to the App, a User must use an application-specific identity that is maintained in the remote identity-repository of that App.
         /// </summary>
-        public readonly bool IsManagedApp;
+        public readonly bool? IsManagedApp;
         /// <summary>
         /// If true, indicates that the App should be visible in each end-user's mobile application.
         /// </summary>
-        public readonly bool IsMobileTarget;
+        public readonly bool? IsMobileTarget;
         /// <summary>
         /// If true, indicates the app is used for multicloud service integration.
         /// </summary>
-        public readonly bool IsMulticloudServiceApp;
+        public readonly bool? IsMulticloudServiceApp;
         /// <summary>
         /// If true, this application acts as an OAuth Client
         /// </summary>
-        public readonly bool IsOauthClient;
+        public readonly bool? IsOauthClient;
         /// <summary>
         /// If true, indicates that this application acts as an OAuth Resource.
         /// </summary>
-        public readonly bool IsOauthResource;
+        public readonly bool? IsOauthResource;
         /// <summary>
         /// This flag indicates if the App is capable of validating obligations with the token for allowing access to the App.
         /// </summary>
-        public readonly bool IsObligationCapable;
+        public readonly bool? IsObligationCapable;
         /// <summary>
         /// If true, this application is an Oracle Public Cloud service-instance.
         /// </summary>
-        public readonly bool IsOpcService;
+        public readonly bool? IsOpcService;
         /// <summary>
         /// If true, this application acts as an Radius App
         /// </summary>
-        public readonly bool IsRadiusApp;
+        public readonly bool? IsRadiusApp;
         /// <summary>
         /// If true, then this App acts as a SAML Service Provider.
         /// </summary>
-        public readonly bool IsSamlServiceProvider;
+        public readonly bool? IsSamlServiceProvider;
         /// <summary>
         /// If true, indicates that this application accepts an Oracle Cloud Identity Service User as a login-identity (does not require an account) and relies for authorization on the User's memberships in AppRoles.
         /// </summary>
-        public readonly bool IsUnmanagedApp;
+        public readonly bool? IsUnmanagedApp;
         /// <summary>
         /// If true, the webtier policy is active
         /// </summary>
-        public readonly bool IsWebTierPolicy;
+        public readonly bool? IsWebTierPolicy;
         /// <summary>
         /// The URL of the landing page for this App, which is the first page that an end user should see if runtime services log that end user in to this App automatically.
         /// </summary>
-        public readonly string LandingPageUrl;
+        public readonly string? LandingPageUrl;
         /// <summary>
         /// This attribute specifies the callback URL for the social linking operation.
         /// </summary>
-        public readonly string LinkingCallbackUrl;
+        public readonly string? LinkingCallbackUrl;
         /// <summary>
         /// The protocol that runtime services will use to log end users in to this App automatically. If 'OIDC', then runtime services use the OpenID Connect protocol. If 'SAML', then runtime services use Security Assertion Markup Language protocol.
         /// </summary>
-        public readonly string LoginMechanism;
+        public readonly string? LoginMechanism;
         /// <summary>
         /// This attribute specifies the URL of the page that the App uses when an end-user signs in to that App.
         /// </summary>
-        public readonly string LoginPageUrl;
+        public readonly string? LoginPageUrl;
         /// <summary>
         /// This attribute specifies the URL of the page that the App uses when an end-user signs out.
         /// </summary>
-        public readonly string LogoutPageUrl;
+        public readonly string? LogoutPageUrl;
         /// <summary>
         /// OAuth will use this URI to logout if this App wants to participate in SSO, and if this App's session gets cleared as part of global logout. Note: This attribute is used only if this App acts as an OAuthClient.
         /// </summary>
-        public readonly string LogoutUri;
+        public readonly string? LogoutUri;
         /// <summary>
         /// A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
         /// </summary>
@@ -504,19 +504,19 @@ namespace Pulumi.Oci.Identity
         /// <summary>
         /// Indicates whether the application is billed as an OPCService. If true, customer is not billed for runtime operations of the app.
         /// </summary>
-        public readonly bool MeterAsOpcService;
+        public readonly bool? MeterAsOpcService;
         /// <summary>
         /// If true, this App was migrated from an earlier version of Oracle Public Cloud infrastructure (and may therefore require special handling from runtime services such as OAuth or SAML). If false, this App requires no special handling from runtime services.
         /// </summary>
-        public readonly bool Migrated;
+        public readonly bool? Migrated;
         /// <summary>
         /// The attribute represents the name of the attribute that will be used in the Security Assertion Markup Language (SAML) assertion
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
         /// </summary>
-        public readonly string Ocid;
+        public readonly string? Ocid;
         /// <summary>
         /// Each value of this attribute is the URI of a landing page within this App. It is used only when this App, acting as an OAuthClient, initiates the logout flow and wants to be redirected back to one of its landing pages.
         /// </summary>
@@ -524,15 +524,15 @@ namespace Pulumi.Oci.Identity
         /// <summary>
         /// Privacy Policy URL
         /// </summary>
-        public readonly string PrivacyPolicyUrl;
+        public readonly string? PrivacyPolicyUrl;
         /// <summary>
         /// Application Logo URL
         /// </summary>
-        public readonly string ProductLogoUrl;
+        public readonly string? ProductLogoUrl;
         /// <summary>
         /// Product Name
         /// </summary>
-        public readonly string ProductName;
+        public readonly string? ProductName;
         /// <summary>
         /// A list of secondary audiences--additional URIs to be added automatically to any OAuth token that allows access to this App. Note: This attribute is used mainly for backward compatibility in certain Oracle Public Cloud Apps.
         /// </summary>
@@ -544,7 +544,7 @@ namespace Pulumi.Oci.Identity
         /// <summary>
         /// If true, this App requires an upgrade and mandates attention from application administrator. The flag is used by UI to indicate this app is ready to upgrade.
         /// </summary>
-        public readonly bool ReadyToUpgrade;
+        public readonly bool? ReadyToUpgrade;
         /// <summary>
         /// OPTIONAL. Each value is a URI within this App. This attribute is required when this App acts as an OAuthClient and is involved in three-legged flows (authorization-code flows).
         /// </summary>
@@ -552,7 +552,7 @@ namespace Pulumi.Oci.Identity
         /// <summary>
         /// Expiry-time in seconds for a Refresh Token.  Any token that allows access to this App, once refreshed, will expire after the specified duration.
         /// </summary>
-        public readonly int RefreshTokenExpiry;
+        public readonly int? RefreshTokenExpiry;
         public readonly string? ResourceTypeSchemaVersion;
         /// <summary>
         /// An attribute that refers to the SAML Service Provider that runtime services will use to log an end user in to this App automatically. Note that this will be used only if the loginMechanism is 'SAML'.
@@ -577,15 +577,15 @@ namespace Pulumi.Oci.Identity
         /// <summary>
         /// This Uniform Resource Name (URN) value identifies the type of Oracle Public Cloud service of which this app is an instance.
         /// </summary>
-        public readonly string ServiceTypeUrn;
+        public readonly string? ServiceTypeUrn;
         /// <summary>
         /// This value specifies the version of the Oracle Public Cloud service of which this App is an instance
         /// </summary>
-        public readonly string ServiceTypeVersion;
+        public readonly string? ServiceTypeVersion;
         /// <summary>
         /// If true, this app will be displayed in the MyApps page of each end-user who has access to the App.
         /// </summary>
-        public readonly bool ShowInMyApps;
+        public readonly bool? ShowInMyApps;
         /// <summary>
         /// Sign-on Policy.
         /// </summary>
@@ -597,11 +597,11 @@ namespace Pulumi.Oci.Identity
         /// <summary>
         /// Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
         /// </summary>
-        public readonly string TenancyOcid;
+        public readonly string? TenancyOcid;
         /// <summary>
         /// Terms of Service URL
         /// </summary>
-        public readonly string TermsOfServiceUrl;
+        public readonly string? TermsOfServiceUrl;
         /// <summary>
         /// Terms Of Use.
         /// </summary>
@@ -613,7 +613,7 @@ namespace Pulumi.Oci.Identity
         /// <summary>
         /// Indicates the scope of trust for this App when acting as an OAuthClient. A value of 'Explicit' indicates that the App is allowed to access only the scopes of OAuthResources that are explicitly specified as 'allowedScopes'. A value of 'Account' indicates that the App is allowed implicitly to access any scope of any OAuthResource within the same Oracle Cloud Account. A value of 'Tags' indicates that the App is allowed to access any scope of any OAuthResource with a matching tag within the same Oracle Cloud Account. A value of 'Default' indicates that the Tenant default trust scope configured in the Tenant Settings is used.
         /// </summary>
-        public readonly string TrustScope;
+        public readonly string? TrustScope;
         /// <summary>
         /// Oracle Cloud Infrastructure Tags.
         /// </summary>
@@ -673,21 +673,21 @@ namespace Pulumi.Oci.Identity
 
         [OutputConstructor]
         private GetDomainsAppResult(
-            int accessTokenExpiry,
+            int? accessTokenExpiry,
 
             ImmutableArray<Outputs.GetDomainsAppAccountResult> accounts,
 
-            bool active,
+            bool? active,
 
             ImmutableArray<Outputs.GetDomainsAppAdminRoleResult> adminRoles,
 
             ImmutableArray<Outputs.GetDomainsAppAliasAppResult> aliasApps,
 
-            bool allUrlSchemesAllowed,
+            bool? allUrlSchemesAllowed,
 
-            bool allowAccessControl,
+            bool? allowAccessControl,
 
-            bool allowOffline,
+            bool? allowOffline,
 
             ImmutableArray<string> allowedGrants,
 
@@ -697,13 +697,13 @@ namespace Pulumi.Oci.Identity
 
             ImmutableArray<Outputs.GetDomainsAppAllowedTagResult> allowedTags,
 
-            string appIcon,
+            string? appIcon,
 
             string appId,
 
             ImmutableArray<Outputs.GetDomainsAppAppSignonPolicyResult> appSignonPolicies,
 
-            string appThumbnail,
+            string? appThumbnail,
 
             ImmutableArray<Outputs.GetDomainsAppAppsNetworkPerimeterResult> appsNetworkPerimeters,
 
@@ -715,59 +715,59 @@ namespace Pulumi.Oci.Identity
 
             string? attributes,
 
-            string audience,
+            string? audience,
 
             string? authorization,
 
             ImmutableArray<Outputs.GetDomainsAppBasedOnTemplateResult> basedOnTemplates,
 
-            bool bypassConsent,
+            bool? bypassConsent,
 
-            string callbackServiceUrl,
+            string? callbackServiceUrl,
 
             ImmutableArray<Outputs.GetDomainsAppCertificateResult> certificates,
 
-            string clientIpChecking,
+            string? clientIpChecking,
 
-            string clientSecret,
+            string? clientSecret,
 
-            string clientType,
+            string? clientType,
 
             ImmutableArray<Outputs.GetDomainsAppCloudControlPropertyResult> cloudControlProperties,
 
-            string compartmentOcid,
+            string? compartmentOcid,
 
-            string contactEmailAddress,
+            string? contactEmailAddress,
 
             ImmutableArray<string> delegatedServiceNames,
 
-            bool deleteInProgress,
+            bool? deleteInProgress,
 
-            string description,
+            string? description,
 
-            bool disableKmsiTokenAuthentication,
+            bool? disableKmsiTokenAuthentication,
 
-            string displayName,
+            string? displayName,
 
-            string domainOcid,
+            string? domainOcid,
 
             ImmutableArray<Outputs.GetDomainsAppEditableAttributeResult> editableAttributes,
 
-            string errorPageUrl,
+            string? errorPageUrl,
 
             ImmutableArray<Outputs.GetDomainsAppGrantedAppRoleResult> grantedAppRoles,
 
             ImmutableArray<Outputs.GetDomainsAppGrantResult> grants,
 
-            string hashedClientSecret,
+            string? hashedClientSecret,
 
-            string homePageUrl,
+            string? homePageUrl,
 
-            string icon,
+            string? icon,
 
-            string id,
+            string? id,
 
-            string idTokenEncAlgo,
+            string? idTokenEncAlgo,
 
             ImmutableArray<Outputs.GetDomainsAppIdcsCreatedByResult> idcsCreatedBies,
 
@@ -775,7 +775,7 @@ namespace Pulumi.Oci.Identity
 
             ImmutableArray<Outputs.GetDomainsAppIdcsLastModifiedByResult> idcsLastModifiedBies,
 
-            string idcsLastUpgradedInRelease,
+            string? idcsLastUpgradedInRelease,
 
             ImmutableArray<string> idcsPreventedOperations,
 
@@ -783,81 +783,81 @@ namespace Pulumi.Oci.Identity
 
             ImmutableArray<Outputs.GetDomainsAppIdpPolicyResult> idpPolicies,
 
-            bool infrastructure,
+            bool? infrastructure,
 
-            bool isAliasApp,
+            bool? isAliasApp,
 
-            bool isDatabaseService,
+            bool? isDatabaseService,
 
-            bool isEnterpriseApp,
+            bool? isEnterpriseApp,
 
-            bool isFormFill,
+            bool? isFormFill,
 
-            bool isKerberosRealm,
+            bool? isKerberosRealm,
 
-            bool isLoginTarget,
+            bool? isLoginTarget,
 
-            bool isManagedApp,
+            bool? isManagedApp,
 
-            bool isMobileTarget,
+            bool? isMobileTarget,
 
-            bool isMulticloudServiceApp,
+            bool? isMulticloudServiceApp,
 
-            bool isOauthClient,
+            bool? isOauthClient,
 
-            bool isOauthResource,
+            bool? isOauthResource,
 
-            bool isObligationCapable,
+            bool? isObligationCapable,
 
-            bool isOpcService,
+            bool? isOpcService,
 
-            bool isRadiusApp,
+            bool? isRadiusApp,
 
-            bool isSamlServiceProvider,
+            bool? isSamlServiceProvider,
 
-            bool isUnmanagedApp,
+            bool? isUnmanagedApp,
 
-            bool isWebTierPolicy,
+            bool? isWebTierPolicy,
 
-            string landingPageUrl,
+            string? landingPageUrl,
 
-            string linkingCallbackUrl,
+            string? linkingCallbackUrl,
 
-            string loginMechanism,
+            string? loginMechanism,
 
-            string loginPageUrl,
+            string? loginPageUrl,
 
-            string logoutPageUrl,
+            string? logoutPageUrl,
 
-            string logoutUri,
+            string? logoutUri,
 
             ImmutableArray<Outputs.GetDomainsAppMetaResult> metas,
 
-            bool meterAsOpcService,
+            bool? meterAsOpcService,
 
-            bool migrated,
+            bool? migrated,
 
-            string name,
+            string? name,
 
-            string ocid,
+            string? ocid,
 
             ImmutableArray<string> postLogoutRedirectUris,
 
-            string privacyPolicyUrl,
+            string? privacyPolicyUrl,
 
-            string productLogoUrl,
+            string? productLogoUrl,
 
-            string productName,
+            string? productName,
 
             ImmutableArray<Outputs.GetDomainsAppProtectableSecondaryAudienceResult> protectableSecondaryAudiences,
 
             ImmutableArray<Outputs.GetDomainsAppRadiusPolicyResult> radiusPolicies,
 
-            bool readyToUpgrade,
+            bool? readyToUpgrade,
 
             ImmutableArray<string> redirectUris,
 
-            int refreshTokenExpiry,
+            int? refreshTokenExpiry,
 
             string? resourceTypeSchemaVersion,
 
@@ -871,25 +871,25 @@ namespace Pulumi.Oci.Identity
 
             ImmutableArray<Outputs.GetDomainsAppServiceParamResult> serviceParams,
 
-            string serviceTypeUrn,
+            string? serviceTypeUrn,
 
-            string serviceTypeVersion,
+            string? serviceTypeVersion,
 
-            bool showInMyApps,
+            bool? showInMyApps,
 
             ImmutableArray<Outputs.GetDomainsAppSignonPolicyResult> signonPolicies,
 
             ImmutableArray<Outputs.GetDomainsAppTagResult> tags,
 
-            string tenancyOcid,
+            string? tenancyOcid,
 
-            string termsOfServiceUrl,
+            string? termsOfServiceUrl,
 
             ImmutableArray<Outputs.GetDomainsAppTermsOfUseResult> termsOfUses,
 
             ImmutableArray<Outputs.GetDomainsAppTrustPolicyResult> trustPolicies,
 
-            string trustScope,
+            string? trustScope,
 
             ImmutableArray<Outputs.GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTagResult> urnietfparamsscimschemasoracleidcsextensionOciTags,
 

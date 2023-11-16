@@ -46,9 +46,6 @@ class GetWorkspacesResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The OCID of the compartment that contains the workspace.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
@@ -58,7 +55,7 @@ class GetWorkspacesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -72,17 +69,11 @@ class GetWorkspacesResult:
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        Lifecycle states for workspaces in Data Integration Service CREATING - The resource is being created and may not be usable until the entire metadata is defined UPDATING - The resource is being updated and may not be usable until all changes are commited DELETING - The resource is being deleted and might require deep cleanup of children. ACTIVE   - The resource is valid and available for access INACTIVE - The resource might be incomplete in its definition or might have been made unavailable for administrative reasons DELETED  - The resource has been deleted and isn't available FAILED   - The resource is in a failed state due to validation or other errors STARTING - The resource is being started and may not be usable until becomes ACTIVE again STOPPING - The resource is in the process of Stopping and may not be usable until it Stops or fails STOPPED  - The resource is in Stopped state due to stop operation.
-        """
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter
-    def workspaces(self) -> Sequence['outputs.GetWorkspacesWorkspaceResult']:
-        """
-        The list of workspaces.
-        """
+    def workspaces(self) -> Optional[Sequence['outputs.GetWorkspacesWorkspaceResult']]:
         return pulumi.get(self, "workspaces")
 
 
@@ -106,25 +97,7 @@ def get_workspaces(compartment_id: Optional[str] = None,
                    state: Optional[str] = None,
                    opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetWorkspacesResult:
     """
-    This data source provides the list of Workspaces in Oracle Cloud Infrastructure Data Integration service.
-
-    Retrieves a list of Data Integration workspaces.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_workspaces = oci.DataIntegration.get_workspaces(compartment_id=var["compartment_id"],
-        name=var["workspace_name"],
-        state=var["workspace_state"])
-    ```
-
-
-    :param str compartment_id: The OCID of the compartment containing the resources you want to list.
-    :param str name: Used to filter by the name of the object.
-    :param str state: The lifecycle state of a resource. When specified, the operation only returns resources that match the given lifecycle state. When not specified, all lifecycle states are processed as a match.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -150,24 +123,6 @@ def get_workspaces_output(compartment_id: Optional[pulumi.Input[str]] = None,
                           state: Optional[pulumi.Input[Optional[str]]] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetWorkspacesResult]:
     """
-    This data source provides the list of Workspaces in Oracle Cloud Infrastructure Data Integration service.
-
-    Retrieves a list of Data Integration workspaces.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_workspaces = oci.DataIntegration.get_workspaces(compartment_id=var["compartment_id"],
-        name=var["workspace_name"],
-        state=var["workspace_state"])
-    ```
-
-
-    :param str compartment_id: The OCID of the compartment containing the resources you want to list.
-    :param str name: Used to filter by the name of the object.
-    :param str state: The lifecycle state of a resource. When specified, the operation only returns resources that match the given lifecycle state. When not specified, all lifecycle states are processed as a match.
+    Use this data source to access information about an existing resource.
     """
     ...

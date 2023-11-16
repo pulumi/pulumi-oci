@@ -75,19 +75,19 @@ export class DatabaseSoftwareImage extends pulumi.CustomResource {
     /**
      * List of one-off patches for Database Homes.
      */
-    public /*out*/ readonly databaseSoftwareImageIncludedPatches!: pulumi.Output<string[]>;
+    public /*out*/ readonly databaseSoftwareImageIncludedPatches!: pulumi.Output<string[] | undefined>;
     /**
      * List of one-off patches for Database Homes.
      */
-    public readonly databaseSoftwareImageOneOffPatches!: pulumi.Output<string[]>;
+    public readonly databaseSoftwareImageOneOffPatches!: pulumi.Output<string[] | undefined>;
     /**
      * The database version with which the database software image is to be built.
      */
-    public readonly databaseVersion!: pulumi.Output<string>;
+    public readonly databaseVersion!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) The user-friendly name for the database software image. The name does not have to be unique.
      */
@@ -95,35 +95,35 @@ export class DatabaseSoftwareImage extends pulumi.CustomResource {
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * To what shape the image is meant for.
      */
-    public readonly imageShapeFamily!: pulumi.Output<string>;
+    public readonly imageShapeFamily!: pulumi.Output<string | undefined>;
     /**
      * The type of software image. Can be grid or database.
      */
-    public readonly imageType!: pulumi.Output<string>;
+    public readonly imageType!: pulumi.Output<string | undefined>;
     /**
      * The patches included in the image and the version of the image.
      */
-    public /*out*/ readonly includedPatchesSummary!: pulumi.Output<string>;
+    public /*out*/ readonly includedPatchesSummary!: pulumi.Output<string | undefined>;
     /**
      * True if this Database software image is supported for Upgrade.
      */
-    public /*out*/ readonly isUpgradeSupported!: pulumi.Output<boolean>;
+    public /*out*/ readonly isUpgradeSupported!: pulumi.Output<boolean | undefined>;
     /**
      * Detailed message for the lifecycle state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string | undefined>;
     /**
      * The output from the OPatch lsInventory command, which is passed as a string.
      */
-    public readonly lsInventory!: pulumi.Output<string>;
+    public readonly lsInventory!: pulumi.Output<string | undefined>;
     /**
      * The PSU or PBP or Release Updates. To get a list of supported versions, use the [ListDbVersions](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/DbVersionSummary/ListDbVersions) operation.
      */
-    public readonly patchSet!: pulumi.Output<string>;
+    public readonly patchSet!: pulumi.Output<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
      *
@@ -131,15 +131,15 @@ export class DatabaseSoftwareImage extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly sourceDbHomeId!: pulumi.Output<string>;
+    public readonly sourceDbHomeId!: pulumi.Output<string | undefined>;
     /**
      * The current state of the database software image.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * The date and time the database software image was created.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
 
     /**
      * Create a DatabaseSoftwareImage resource with the given unique name, arguments, and options.

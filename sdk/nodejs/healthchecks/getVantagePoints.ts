@@ -61,11 +61,11 @@ export interface GetVantagePointsResult {
     /**
      * The list of health_checks_vantage_points.
      */
-    readonly healthChecksVantagePoints: outputs.HealthChecks.GetVantagePointsHealthChecksVantagePoint[];
+    readonly healthChecksVantagePoints?: outputs.HealthChecks.GetVantagePointsHealthChecksVantagePoint[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The unique, permanent name for the vantage point.
      */

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Replication Policies in Oracle Cloud Infrastructure Object Storage service.
@@ -66,8 +65,8 @@ type GetReplicationPoliciesResult struct {
 	Bucket  string                         `pulumi:"bucket"`
 	Filters []GetReplicationPoliciesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id        string `pulumi:"id"`
-	Namespace string `pulumi:"namespace"`
+	Id        *string `pulumi:"id"`
+	Namespace string  `pulumi:"namespace"`
 	// The list of replication_policies.
 	ReplicationPolicies []GetReplicationPoliciesReplicationPolicy `pulumi:"replicationPolicies"`
 }
@@ -113,12 +112,6 @@ func (o GetReplicationPoliciesResultOutput) ToGetReplicationPoliciesResultOutput
 	return o
 }
 
-func (o GetReplicationPoliciesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetReplicationPoliciesResult] {
-	return pulumix.Output[GetReplicationPoliciesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetReplicationPoliciesResultOutput) Bucket() pulumi.StringOutput {
 	return o.ApplyT(func(v GetReplicationPoliciesResult) string { return v.Bucket }).(pulumi.StringOutput)
 }
@@ -128,8 +121,8 @@ func (o GetReplicationPoliciesResultOutput) Filters() GetReplicationPoliciesFilt
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetReplicationPoliciesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetReplicationPoliciesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetReplicationPoliciesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetReplicationPoliciesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetReplicationPoliciesResultOutput) Namespace() pulumi.StringOutput {

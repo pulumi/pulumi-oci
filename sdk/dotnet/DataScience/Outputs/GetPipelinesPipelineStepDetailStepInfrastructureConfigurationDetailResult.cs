@@ -16,7 +16,7 @@ namespace Pulumi.Oci.DataScience.Outputs
         /// <summary>
         /// The size of the block storage volume to attach to the instance.
         /// </summary>
-        public readonly int BlockStorageSizeInGbs;
+        public readonly int? BlockStorageSizeInGbs;
         /// <summary>
         /// Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
         /// </summary>
@@ -24,15 +24,15 @@ namespace Pulumi.Oci.DataScience.Outputs
         /// <summary>
         /// The shape used to launch the instance for all step runs in the pipeline.
         /// </summary>
-        public readonly string ShapeName;
+        public readonly string? ShapeName;
 
         [OutputConstructor]
         private GetPipelinesPipelineStepDetailStepInfrastructureConfigurationDetailResult(
-            int blockStorageSizeInGbs,
+            int? blockStorageSizeInGbs,
 
             ImmutableArray<Outputs.GetPipelinesPipelineStepDetailStepInfrastructureConfigurationDetailShapeConfigDetailResult> shapeConfigDetails,
 
-            string shapeName)
+            string? shapeName)
         {
             BlockStorageSizeInGbs = blockStorageSizeInGbs;
             ShapeConfigDetails = shapeConfigDetails;

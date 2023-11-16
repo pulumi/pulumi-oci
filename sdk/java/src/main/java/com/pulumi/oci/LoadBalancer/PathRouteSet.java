@@ -13,6 +13,7 @@ import com.pulumi.oci.LoadBalancer.outputs.PathRouteSetPathRoute;
 import com.pulumi.oci.Utilities;
 import java.lang.String;
 import java.util.List;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -114,10 +115,10 @@ public class PathRouteSet extends com.pulumi.resources.CustomResource {
         return this.pathRoutes;
     }
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
 
     /**

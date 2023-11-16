@@ -31,19 +31,6 @@ class AssetArgs:
                  vmware_vm: Optional[pulumi.Input['AssetVmwareVmArgs']] = None):
         """
         The set of arguments for constructing a Asset resource.
-        :param pulumi.Input[str] asset_type: (Updatable) The type of asset.
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment that the asset belongs to.
-        :param pulumi.Input[str] external_asset_key: The key of the asset from the external environment.
-        :param pulumi.Input[str] inventory_id: Inventory ID to which an asset belongs.
-        :param pulumi.Input[str] source_key: The source key to which the asset belongs.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] asset_source_ids: (Updatable) List of asset source OCID.
-        :param pulumi.Input['AssetComputeArgs'] compute: (Updatable) Compute related properties.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] display_name: (Updatable) Asset display name.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input['AssetVmArgs'] vm: (Updatable) Virtual machine related properties.
-        :param pulumi.Input['AssetVmwareVcenterArgs'] vmware_vcenter: (Updatable) VMware vCenter related properties.
-        :param pulumi.Input['AssetVmwareVmArgs'] vmware_vm: (Updatable) VMware virtual machine related properties.
         """
         pulumi.set(__self__, "asset_type", asset_type)
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -70,9 +57,6 @@ class AssetArgs:
     @property
     @pulumi.getter(name="assetType")
     def asset_type(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The type of asset.
-        """
         return pulumi.get(self, "asset_type")
 
     @asset_type.setter
@@ -82,9 +66,6 @@ class AssetArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The OCID of the compartment that the asset belongs to.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -94,9 +75,6 @@ class AssetArgs:
     @property
     @pulumi.getter(name="externalAssetKey")
     def external_asset_key(self) -> pulumi.Input[str]:
-        """
-        The key of the asset from the external environment.
-        """
         return pulumi.get(self, "external_asset_key")
 
     @external_asset_key.setter
@@ -106,9 +84,6 @@ class AssetArgs:
     @property
     @pulumi.getter(name="inventoryId")
     def inventory_id(self) -> pulumi.Input[str]:
-        """
-        Inventory ID to which an asset belongs.
-        """
         return pulumi.get(self, "inventory_id")
 
     @inventory_id.setter
@@ -118,9 +93,6 @@ class AssetArgs:
     @property
     @pulumi.getter(name="sourceKey")
     def source_key(self) -> pulumi.Input[str]:
-        """
-        The source key to which the asset belongs.
-        """
         return pulumi.get(self, "source_key")
 
     @source_key.setter
@@ -130,9 +102,6 @@ class AssetArgs:
     @property
     @pulumi.getter(name="assetSourceIds")
     def asset_source_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) List of asset source OCID.
-        """
         return pulumi.get(self, "asset_source_ids")
 
     @asset_source_ids.setter
@@ -142,9 +111,6 @@ class AssetArgs:
     @property
     @pulumi.getter
     def compute(self) -> Optional[pulumi.Input['AssetComputeArgs']]:
-        """
-        (Updatable) Compute related properties.
-        """
         return pulumi.get(self, "compute")
 
     @compute.setter
@@ -154,9 +120,6 @@ class AssetArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -166,9 +129,6 @@ class AssetArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Asset display name.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -178,9 +138,6 @@ class AssetArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -190,9 +147,6 @@ class AssetArgs:
     @property
     @pulumi.getter
     def vm(self) -> Optional[pulumi.Input['AssetVmArgs']]:
-        """
-        (Updatable) Virtual machine related properties.
-        """
         return pulumi.get(self, "vm")
 
     @vm.setter
@@ -202,9 +156,6 @@ class AssetArgs:
     @property
     @pulumi.getter(name="vmwareVcenter")
     def vmware_vcenter(self) -> Optional[pulumi.Input['AssetVmwareVcenterArgs']]:
-        """
-        (Updatable) VMware vCenter related properties.
-        """
         return pulumi.get(self, "vmware_vcenter")
 
     @vmware_vcenter.setter
@@ -214,9 +165,6 @@ class AssetArgs:
     @property
     @pulumi.getter(name="vmwareVm")
     def vmware_vm(self) -> Optional[pulumi.Input['AssetVmwareVmArgs']]:
-        """
-        (Updatable) VMware virtual machine related properties.
-        """
         return pulumi.get(self, "vmware_vm")
 
     @vmware_vm.setter
@@ -246,23 +194,6 @@ class _AssetState:
                  vmware_vm: Optional[pulumi.Input['AssetVmwareVmArgs']] = None):
         """
         Input properties used for looking up and filtering Asset resources.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] asset_source_ids: (Updatable) List of asset source OCID.
-        :param pulumi.Input[str] asset_type: (Updatable) The type of asset.
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment that the asset belongs to.
-        :param pulumi.Input['AssetComputeArgs'] compute: (Updatable) Compute related properties.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] display_name: (Updatable) Asset display name.
-        :param pulumi.Input[str] external_asset_key: The key of the asset from the external environment.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] inventory_id: Inventory ID to which an asset belongs.
-        :param pulumi.Input[str] source_key: The source key to which the asset belongs.
-        :param pulumi.Input[str] state: The current state of the asset.
-        :param pulumi.Input[Mapping[str, Any]] system_tags: The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
-        :param pulumi.Input[str] time_created: The time when the asset was created. An RFC3339 formatted datetime string.
-        :param pulumi.Input[str] time_updated: The time when the asset was updated. An RFC3339 formatted datetime string.
-        :param pulumi.Input['AssetVmArgs'] vm: (Updatable) Virtual machine related properties.
-        :param pulumi.Input['AssetVmwareVcenterArgs'] vmware_vcenter: (Updatable) VMware vCenter related properties.
-        :param pulumi.Input['AssetVmwareVmArgs'] vmware_vm: (Updatable) VMware virtual machine related properties.
         """
         if asset_source_ids is not None:
             pulumi.set(__self__, "asset_source_ids", asset_source_ids)
@@ -302,9 +233,6 @@ class _AssetState:
     @property
     @pulumi.getter(name="assetSourceIds")
     def asset_source_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) List of asset source OCID.
-        """
         return pulumi.get(self, "asset_source_ids")
 
     @asset_source_ids.setter
@@ -314,9 +242,6 @@ class _AssetState:
     @property
     @pulumi.getter(name="assetType")
     def asset_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The type of asset.
-        """
         return pulumi.get(self, "asset_type")
 
     @asset_type.setter
@@ -326,9 +251,6 @@ class _AssetState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The OCID of the compartment that the asset belongs to.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -338,9 +260,6 @@ class _AssetState:
     @property
     @pulumi.getter
     def compute(self) -> Optional[pulumi.Input['AssetComputeArgs']]:
-        """
-        (Updatable) Compute related properties.
-        """
         return pulumi.get(self, "compute")
 
     @compute.setter
@@ -350,9 +269,6 @@ class _AssetState:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -362,9 +278,6 @@ class _AssetState:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Asset display name.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -374,9 +287,6 @@ class _AssetState:
     @property
     @pulumi.getter(name="externalAssetKey")
     def external_asset_key(self) -> Optional[pulumi.Input[str]]:
-        """
-        The key of the asset from the external environment.
-        """
         return pulumi.get(self, "external_asset_key")
 
     @external_asset_key.setter
@@ -386,9 +296,6 @@ class _AssetState:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -398,9 +305,6 @@ class _AssetState:
     @property
     @pulumi.getter(name="inventoryId")
     def inventory_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        Inventory ID to which an asset belongs.
-        """
         return pulumi.get(self, "inventory_id")
 
     @inventory_id.setter
@@ -410,9 +314,6 @@ class _AssetState:
     @property
     @pulumi.getter(name="sourceKey")
     def source_key(self) -> Optional[pulumi.Input[str]]:
-        """
-        The source key to which the asset belongs.
-        """
         return pulumi.get(self, "source_key")
 
     @source_key.setter
@@ -422,9 +323,6 @@ class _AssetState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The current state of the asset.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -434,9 +332,6 @@ class _AssetState:
     @property
     @pulumi.getter(name="systemTags")
     def system_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
-        """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
@@ -446,9 +341,6 @@ class _AssetState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The time when the asset was created. An RFC3339 formatted datetime string.
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -458,9 +350,6 @@ class _AssetState:
     @property
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> Optional[pulumi.Input[str]]:
-        """
-        The time when the asset was updated. An RFC3339 formatted datetime string.
-        """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
@@ -470,9 +359,6 @@ class _AssetState:
     @property
     @pulumi.getter
     def vm(self) -> Optional[pulumi.Input['AssetVmArgs']]:
-        """
-        (Updatable) Virtual machine related properties.
-        """
         return pulumi.get(self, "vm")
 
     @vm.setter
@@ -482,9 +368,6 @@ class _AssetState:
     @property
     @pulumi.getter(name="vmwareVcenter")
     def vmware_vcenter(self) -> Optional[pulumi.Input['AssetVmwareVcenterArgs']]:
-        """
-        (Updatable) VMware vCenter related properties.
-        """
         return pulumi.get(self, "vmware_vcenter")
 
     @vmware_vcenter.setter
@@ -494,9 +377,6 @@ class _AssetState:
     @property
     @pulumi.getter(name="vmwareVm")
     def vmware_vm(self) -> Optional[pulumi.Input['AssetVmwareVmArgs']]:
-        """
-        (Updatable) VMware virtual machine related properties.
-        """
         return pulumi.get(self, "vmware_vm")
 
     @vmware_vm.setter
@@ -524,144 +404,9 @@ class Asset(pulumi.CustomResource):
                  vmware_vm: Optional[pulumi.Input[pulumi.InputType['AssetVmwareVmArgs']]] = None,
                  __props__=None):
         """
-        This resource provides the Asset resource in Oracle Cloud Infrastructure Cloud Bridge service.
-
-        Creates an asset.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_asset = oci.cloud_bridge.Asset("testAsset",
-            asset_type=var["asset_asset_type"],
-            compartment_id=var["compartment_id"],
-            external_asset_key=var["asset_external_asset_key"],
-            inventory_id=oci_cloud_bridge_inventory["test_inventory"]["id"],
-            source_key=var["asset_source_key"],
-            asset_source_ids=var["asset_asset_source_ids"],
-            compute=oci.cloud_bridge.AssetComputeArgs(
-                connected_networks=var["asset_compute_connected_networks"],
-                cores_count=var["asset_compute_cores_count"],
-                cpu_model=var["asset_compute_cpu_model"],
-                description=var["asset_compute_description"],
-                disks=[oci.cloud_bridge.AssetComputeDiskArgs(
-                    boot_order=var["asset_compute_disks_boot_order"],
-                    location=var["asset_compute_disks_location"],
-                    name=var["asset_compute_disks_name"],
-                    persistent_mode=var["asset_compute_disks_persistent_mode"],
-                    size_in_mbs=var["asset_compute_disks_size_in_mbs"],
-                    uuid=var["asset_compute_disks_uuid"],
-                    uuid_lun=var["asset_compute_disks_uuid_lun"],
-                )],
-                disks_count=var["asset_compute_disks_count"],
-                dns_name=var["asset_compute_dns_name"],
-                firmware=var["asset_compute_firmware"],
-                gpu_devices=[oci.cloud_bridge.AssetComputeGpuDeviceArgs(
-                    cores_count=var["asset_compute_gpu_devices_cores_count"],
-                    description=var["asset_compute_gpu_devices_description"],
-                    manufacturer=var["asset_compute_gpu_devices_manufacturer"],
-                    memory_in_mbs=var["asset_compute_gpu_devices_memory_in_mbs"],
-                    name=var["asset_compute_gpu_devices_name"],
-                )],
-                gpu_devices_count=var["asset_compute_gpu_devices_count"],
-                guest_state=var["asset_compute_guest_state"],
-                hardware_version=var["asset_compute_hardware_version"],
-                host_name=var["asset_compute_host_name"],
-                is_pmem_enabled=var["asset_compute_is_pmem_enabled"],
-                is_tpm_enabled=var["asset_compute_is_tpm_enabled"],
-                latency_sensitivity=var["asset_compute_latency_sensitivity"],
-                memory_in_mbs=var["asset_compute_memory_in_mbs"],
-                nics=[oci.cloud_bridge.AssetComputeNicArgs(
-                    ip_addresses=var["asset_compute_nics_ip_addresses"],
-                    label=var["asset_compute_nics_label"],
-                    mac_address=var["asset_compute_nics_mac_address"],
-                    mac_address_type=var["asset_compute_nics_mac_address_type"],
-                    network_name=var["asset_compute_nics_network_name"],
-                    switch_name=var["asset_compute_nics_switch_name"],
-                )],
-                nics_count=var["asset_compute_nics_count"],
-                nvdimm_controller=oci.cloud_bridge.AssetComputeNvdimmControllerArgs(
-                    bus_number=var["asset_compute_nvdimm_controller_bus_number"],
-                    label=var["asset_compute_nvdimm_controller_label"],
-                ),
-                nvdimms=[oci.cloud_bridge.AssetComputeNvdimmArgs(
-                    controller_key=var["asset_compute_nvdimms_controller_key"],
-                    label=var["asset_compute_nvdimms_label"],
-                    unit_number=var["asset_compute_nvdimms_unit_number"],
-                )],
-                operating_system=var["asset_compute_operating_system"],
-                operating_system_version=var["asset_compute_operating_system_version"],
-                pmem_in_mbs=var["asset_compute_pmem_in_mbs"],
-                power_state=var["asset_compute_power_state"],
-                primary_ip=var["asset_compute_primary_ip"],
-                scsi_controller=oci.cloud_bridge.AssetComputeScsiControllerArgs(
-                    label=var["asset_compute_scsi_controller_label"],
-                    shared_bus=var["asset_compute_scsi_controller_shared_bus"],
-                    unit_number=var["asset_compute_scsi_controller_unit_number"],
-                ),
-                storage_provisioned_in_mbs=var["asset_compute_storage_provisioned_in_mbs"],
-                threads_per_core_count=var["asset_compute_threads_per_core_count"],
-            ),
-            defined_tags={
-                "Operations.CostCenter": "42",
-            },
-            display_name=var["asset_display_name"],
-            freeform_tags={
-                "Department": "Finance",
-            },
-            vm=oci.cloud_bridge.AssetVmArgs(
-                hypervisor_host=var["asset_vm_hypervisor_host"],
-                hypervisor_vendor=var["asset_vm_hypervisor_vendor"],
-                hypervisor_version=var["asset_vm_hypervisor_version"],
-            ),
-            vmware_vcenter=oci.cloud_bridge.AssetVmwareVcenterArgs(
-                data_center=var["asset_vmware_vcenter_data_center"],
-                vcenter_key=var["asset_vmware_vcenter_vcenter_key"],
-                vcenter_version=var["asset_vmware_vcenter_vcenter_version"],
-            ),
-            vmware_vm=oci.cloud_bridge.AssetVmwareVmArgs(
-                cluster=var["asset_vmware_vm_cluster"],
-                customer_fields=var["asset_vmware_vm_customer_fields"],
-                customer_tags=[oci.cloud_bridge.AssetVmwareVmCustomerTagArgs(
-                    description=var["asset_vmware_vm_customer_tags_description"],
-                    name=var["asset_vmware_vm_customer_tags_name"],
-                )],
-                fault_tolerance_bandwidth=var["asset_vmware_vm_fault_tolerance_bandwidth"],
-                fault_tolerance_secondary_latency=var["asset_vmware_vm_fault_tolerance_secondary_latency"],
-                fault_tolerance_state=var["asset_vmware_vm_fault_tolerance_state"],
-                instance_uuid=var["asset_vmware_vm_instance_uuid"],
-                is_disks_cbt_enabled=var["asset_vmware_vm_is_disks_cbt_enabled"],
-                is_disks_uuid_enabled=var["asset_vmware_vm_is_disks_uuid_enabled"],
-                path=var["asset_vmware_vm_path"],
-                vmware_tools_status=var["asset_vmware_vm_vmware_tools_status"],
-            ))
-        ```
-
-        ## Import
-
-        Assets can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:CloudBridge/asset:Asset test_asset "id"
-        ```
-
+        Create a Asset resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] asset_source_ids: (Updatable) List of asset source OCID.
-        :param pulumi.Input[str] asset_type: (Updatable) The type of asset.
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment that the asset belongs to.
-        :param pulumi.Input[pulumi.InputType['AssetComputeArgs']] compute: (Updatable) Compute related properties.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] display_name: (Updatable) Asset display name.
-        :param pulumi.Input[str] external_asset_key: The key of the asset from the external environment.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] inventory_id: Inventory ID to which an asset belongs.
-        :param pulumi.Input[str] source_key: The source key to which the asset belongs.
-        :param pulumi.Input[pulumi.InputType['AssetVmArgs']] vm: (Updatable) Virtual machine related properties.
-        :param pulumi.Input[pulumi.InputType['AssetVmwareVcenterArgs']] vmware_vcenter: (Updatable) VMware vCenter related properties.
-        :param pulumi.Input[pulumi.InputType['AssetVmwareVmArgs']] vmware_vm: (Updatable) VMware virtual machine related properties.
         """
         ...
     @overload
@@ -670,129 +415,7 @@ class Asset(pulumi.CustomResource):
                  args: AssetArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Asset resource in Oracle Cloud Infrastructure Cloud Bridge service.
-
-        Creates an asset.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_asset = oci.cloud_bridge.Asset("testAsset",
-            asset_type=var["asset_asset_type"],
-            compartment_id=var["compartment_id"],
-            external_asset_key=var["asset_external_asset_key"],
-            inventory_id=oci_cloud_bridge_inventory["test_inventory"]["id"],
-            source_key=var["asset_source_key"],
-            asset_source_ids=var["asset_asset_source_ids"],
-            compute=oci.cloud_bridge.AssetComputeArgs(
-                connected_networks=var["asset_compute_connected_networks"],
-                cores_count=var["asset_compute_cores_count"],
-                cpu_model=var["asset_compute_cpu_model"],
-                description=var["asset_compute_description"],
-                disks=[oci.cloud_bridge.AssetComputeDiskArgs(
-                    boot_order=var["asset_compute_disks_boot_order"],
-                    location=var["asset_compute_disks_location"],
-                    name=var["asset_compute_disks_name"],
-                    persistent_mode=var["asset_compute_disks_persistent_mode"],
-                    size_in_mbs=var["asset_compute_disks_size_in_mbs"],
-                    uuid=var["asset_compute_disks_uuid"],
-                    uuid_lun=var["asset_compute_disks_uuid_lun"],
-                )],
-                disks_count=var["asset_compute_disks_count"],
-                dns_name=var["asset_compute_dns_name"],
-                firmware=var["asset_compute_firmware"],
-                gpu_devices=[oci.cloud_bridge.AssetComputeGpuDeviceArgs(
-                    cores_count=var["asset_compute_gpu_devices_cores_count"],
-                    description=var["asset_compute_gpu_devices_description"],
-                    manufacturer=var["asset_compute_gpu_devices_manufacturer"],
-                    memory_in_mbs=var["asset_compute_gpu_devices_memory_in_mbs"],
-                    name=var["asset_compute_gpu_devices_name"],
-                )],
-                gpu_devices_count=var["asset_compute_gpu_devices_count"],
-                guest_state=var["asset_compute_guest_state"],
-                hardware_version=var["asset_compute_hardware_version"],
-                host_name=var["asset_compute_host_name"],
-                is_pmem_enabled=var["asset_compute_is_pmem_enabled"],
-                is_tpm_enabled=var["asset_compute_is_tpm_enabled"],
-                latency_sensitivity=var["asset_compute_latency_sensitivity"],
-                memory_in_mbs=var["asset_compute_memory_in_mbs"],
-                nics=[oci.cloud_bridge.AssetComputeNicArgs(
-                    ip_addresses=var["asset_compute_nics_ip_addresses"],
-                    label=var["asset_compute_nics_label"],
-                    mac_address=var["asset_compute_nics_mac_address"],
-                    mac_address_type=var["asset_compute_nics_mac_address_type"],
-                    network_name=var["asset_compute_nics_network_name"],
-                    switch_name=var["asset_compute_nics_switch_name"],
-                )],
-                nics_count=var["asset_compute_nics_count"],
-                nvdimm_controller=oci.cloud_bridge.AssetComputeNvdimmControllerArgs(
-                    bus_number=var["asset_compute_nvdimm_controller_bus_number"],
-                    label=var["asset_compute_nvdimm_controller_label"],
-                ),
-                nvdimms=[oci.cloud_bridge.AssetComputeNvdimmArgs(
-                    controller_key=var["asset_compute_nvdimms_controller_key"],
-                    label=var["asset_compute_nvdimms_label"],
-                    unit_number=var["asset_compute_nvdimms_unit_number"],
-                )],
-                operating_system=var["asset_compute_operating_system"],
-                operating_system_version=var["asset_compute_operating_system_version"],
-                pmem_in_mbs=var["asset_compute_pmem_in_mbs"],
-                power_state=var["asset_compute_power_state"],
-                primary_ip=var["asset_compute_primary_ip"],
-                scsi_controller=oci.cloud_bridge.AssetComputeScsiControllerArgs(
-                    label=var["asset_compute_scsi_controller_label"],
-                    shared_bus=var["asset_compute_scsi_controller_shared_bus"],
-                    unit_number=var["asset_compute_scsi_controller_unit_number"],
-                ),
-                storage_provisioned_in_mbs=var["asset_compute_storage_provisioned_in_mbs"],
-                threads_per_core_count=var["asset_compute_threads_per_core_count"],
-            ),
-            defined_tags={
-                "Operations.CostCenter": "42",
-            },
-            display_name=var["asset_display_name"],
-            freeform_tags={
-                "Department": "Finance",
-            },
-            vm=oci.cloud_bridge.AssetVmArgs(
-                hypervisor_host=var["asset_vm_hypervisor_host"],
-                hypervisor_vendor=var["asset_vm_hypervisor_vendor"],
-                hypervisor_version=var["asset_vm_hypervisor_version"],
-            ),
-            vmware_vcenter=oci.cloud_bridge.AssetVmwareVcenterArgs(
-                data_center=var["asset_vmware_vcenter_data_center"],
-                vcenter_key=var["asset_vmware_vcenter_vcenter_key"],
-                vcenter_version=var["asset_vmware_vcenter_vcenter_version"],
-            ),
-            vmware_vm=oci.cloud_bridge.AssetVmwareVmArgs(
-                cluster=var["asset_vmware_vm_cluster"],
-                customer_fields=var["asset_vmware_vm_customer_fields"],
-                customer_tags=[oci.cloud_bridge.AssetVmwareVmCustomerTagArgs(
-                    description=var["asset_vmware_vm_customer_tags_description"],
-                    name=var["asset_vmware_vm_customer_tags_name"],
-                )],
-                fault_tolerance_bandwidth=var["asset_vmware_vm_fault_tolerance_bandwidth"],
-                fault_tolerance_secondary_latency=var["asset_vmware_vm_fault_tolerance_secondary_latency"],
-                fault_tolerance_state=var["asset_vmware_vm_fault_tolerance_state"],
-                instance_uuid=var["asset_vmware_vm_instance_uuid"],
-                is_disks_cbt_enabled=var["asset_vmware_vm_is_disks_cbt_enabled"],
-                is_disks_uuid_enabled=var["asset_vmware_vm_is_disks_uuid_enabled"],
-                path=var["asset_vmware_vm_path"],
-                vmware_tools_status=var["asset_vmware_vm_vmware_tools_status"],
-            ))
-        ```
-
-        ## Import
-
-        Assets can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:CloudBridge/asset:Asset test_asset "id"
-        ```
-
+        Create a Asset resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param AssetArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -891,23 +514,6 @@ class Asset(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] asset_source_ids: (Updatable) List of asset source OCID.
-        :param pulumi.Input[str] asset_type: (Updatable) The type of asset.
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment that the asset belongs to.
-        :param pulumi.Input[pulumi.InputType['AssetComputeArgs']] compute: (Updatable) Compute related properties.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] display_name: (Updatable) Asset display name.
-        :param pulumi.Input[str] external_asset_key: The key of the asset from the external environment.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] inventory_id: Inventory ID to which an asset belongs.
-        :param pulumi.Input[str] source_key: The source key to which the asset belongs.
-        :param pulumi.Input[str] state: The current state of the asset.
-        :param pulumi.Input[Mapping[str, Any]] system_tags: The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
-        :param pulumi.Input[str] time_created: The time when the asset was created. An RFC3339 formatted datetime string.
-        :param pulumi.Input[str] time_updated: The time when the asset was updated. An RFC3339 formatted datetime string.
-        :param pulumi.Input[pulumi.InputType['AssetVmArgs']] vm: (Updatable) Virtual machine related properties.
-        :param pulumi.Input[pulumi.InputType['AssetVmwareVcenterArgs']] vmware_vcenter: (Updatable) VMware vCenter related properties.
-        :param pulumi.Input[pulumi.InputType['AssetVmwareVmArgs']] vmware_vm: (Updatable) VMware virtual machine related properties.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -934,137 +540,86 @@ class Asset(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="assetSourceIds")
-    def asset_source_ids(self) -> pulumi.Output[Sequence[str]]:
-        """
-        (Updatable) List of asset source OCID.
-        """
+    def asset_source_ids(self) -> pulumi.Output[Optional[Sequence[str]]]:
         return pulumi.get(self, "asset_source_ids")
 
     @property
     @pulumi.getter(name="assetType")
     def asset_type(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The type of asset.
-        """
         return pulumi.get(self, "asset_type")
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The OCID of the compartment that the asset belongs to.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter
-    def compute(self) -> pulumi.Output['outputs.AssetCompute']:
-        """
-        (Updatable) Compute related properties.
-        """
+    def compute(self) -> pulumi.Output[Optional['outputs.AssetCompute']]:
         return pulumi.get(self, "compute")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Asset display name.
-        """
+    def display_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="externalAssetKey")
     def external_asset_key(self) -> pulumi.Output[str]:
-        """
-        The key of the asset from the external environment.
-        """
         return pulumi.get(self, "external_asset_key")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="inventoryId")
     def inventory_id(self) -> pulumi.Output[str]:
-        """
-        Inventory ID to which an asset belongs.
-        """
         return pulumi.get(self, "inventory_id")
 
     @property
     @pulumi.getter(name="sourceKey")
     def source_key(self) -> pulumi.Output[str]:
-        """
-        The source key to which the asset belongs.
-        """
         return pulumi.get(self, "source_key")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        The current state of the asset.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
-        """
+    def system_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        The time when the asset was created. An RFC3339 formatted datetime string.
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> pulumi.Output[str]:
-        """
-        The time when the asset was updated. An RFC3339 formatted datetime string.
-        """
+    def time_updated(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_updated")
 
     @property
     @pulumi.getter
-    def vm(self) -> pulumi.Output['outputs.AssetVm']:
-        """
-        (Updatable) Virtual machine related properties.
-        """
+    def vm(self) -> pulumi.Output[Optional['outputs.AssetVm']]:
         return pulumi.get(self, "vm")
 
     @property
     @pulumi.getter(name="vmwareVcenter")
-    def vmware_vcenter(self) -> pulumi.Output['outputs.AssetVmwareVcenter']:
-        """
-        (Updatable) VMware vCenter related properties.
-        """
+    def vmware_vcenter(self) -> pulumi.Output[Optional['outputs.AssetVmwareVcenter']]:
         return pulumi.get(self, "vmware_vcenter")
 
     @property
     @pulumi.getter(name="vmwareVm")
-    def vmware_vm(self) -> pulumi.Output['outputs.AssetVmwareVm']:
-        """
-        (Updatable) VMware virtual machine related properties.
-        """
+    def vmware_vm(self) -> pulumi.Output[Optional['outputs.AssetVmwareVm']]:
         return pulumi.get(self, "vmware_vm")
 

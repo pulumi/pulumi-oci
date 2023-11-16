@@ -7,26 +7,28 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfig {
-    private Integer targetMemoryPerNode;
-    private Integer targetOcpusPerNode;
-    private String targetShape;
-    private String timeRecurrence;
+    private @Nullable Integer targetMemoryPerNode;
+    private @Nullable Integer targetOcpusPerNode;
+    private @Nullable String targetShape;
+    private @Nullable String timeRecurrence;
 
     private GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfig() {}
-    public Integer targetMemoryPerNode() {
-        return this.targetMemoryPerNode;
+    public Optional<Integer> targetMemoryPerNode() {
+        return Optional.ofNullable(this.targetMemoryPerNode);
     }
-    public Integer targetOcpusPerNode() {
-        return this.targetOcpusPerNode;
+    public Optional<Integer> targetOcpusPerNode() {
+        return Optional.ofNullable(this.targetOcpusPerNode);
     }
-    public String targetShape() {
-        return this.targetShape;
+    public Optional<String> targetShape() {
+        return Optional.ofNullable(this.targetShape);
     }
-    public String timeRecurrence() {
-        return this.timeRecurrence;
+    public Optional<String> timeRecurrence() {
+        return Optional.ofNullable(this.timeRecurrence);
     }
 
     public static Builder builder() {
@@ -38,10 +40,10 @@ public final class GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDet
     }
     @CustomType.Builder
     public static final class Builder {
-        private Integer targetMemoryPerNode;
-        private Integer targetOcpusPerNode;
-        private String targetShape;
-        private String timeRecurrence;
+        private @Nullable Integer targetMemoryPerNode;
+        private @Nullable Integer targetOcpusPerNode;
+        private @Nullable String targetShape;
+        private @Nullable String timeRecurrence;
         public Builder() {}
         public Builder(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfig defaults) {
     	      Objects.requireNonNull(defaults);
@@ -52,23 +54,23 @@ public final class GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDet
         }
 
         @CustomType.Setter
-        public Builder targetMemoryPerNode(Integer targetMemoryPerNode) {
-            this.targetMemoryPerNode = Objects.requireNonNull(targetMemoryPerNode);
+        public Builder targetMemoryPerNode(@Nullable Integer targetMemoryPerNode) {
+            this.targetMemoryPerNode = targetMemoryPerNode;
             return this;
         }
         @CustomType.Setter
-        public Builder targetOcpusPerNode(Integer targetOcpusPerNode) {
-            this.targetOcpusPerNode = Objects.requireNonNull(targetOcpusPerNode);
+        public Builder targetOcpusPerNode(@Nullable Integer targetOcpusPerNode) {
+            this.targetOcpusPerNode = targetOcpusPerNode;
             return this;
         }
         @CustomType.Setter
-        public Builder targetShape(String targetShape) {
-            this.targetShape = Objects.requireNonNull(targetShape);
+        public Builder targetShape(@Nullable String targetShape) {
+            this.targetShape = targetShape;
             return this;
         }
         @CustomType.Setter
-        public Builder timeRecurrence(String timeRecurrence) {
-            this.timeRecurrence = Objects.requireNonNull(timeRecurrence);
+        public Builder timeRecurrence(@Nullable String timeRecurrence) {
+            this.timeRecurrence = timeRecurrence;
             return this;
         }
         public GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfig build() {

@@ -24,14 +24,14 @@ public final class GetComputeCapacityReservationInstanceShapesResult {
      * @return The list of compute_capacity_reservation_instance_shapes.
      * 
      */
-    private List<GetComputeCapacityReservationInstanceShapesComputeCapacityReservationInstanceShape> computeCapacityReservationInstanceShapes;
+    private @Nullable List<GetComputeCapacityReservationInstanceShapesComputeCapacityReservationInstanceShape> computeCapacityReservationInstanceShapes;
     private @Nullable String displayName;
     private @Nullable List<GetComputeCapacityReservationInstanceShapesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
 
     private GetComputeCapacityReservationInstanceShapesResult() {}
     /**
@@ -49,7 +49,7 @@ public final class GetComputeCapacityReservationInstanceShapesResult {
      * 
      */
     public List<GetComputeCapacityReservationInstanceShapesComputeCapacityReservationInstanceShape> computeCapacityReservationInstanceShapes() {
-        return this.computeCapacityReservationInstanceShapes;
+        return this.computeCapacityReservationInstanceShapes == null ? List.of() : this.computeCapacityReservationInstanceShapes;
     }
     public Optional<String> displayName() {
         return Optional.ofNullable(this.displayName);
@@ -61,8 +61,8 @@ public final class GetComputeCapacityReservationInstanceShapesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
 
     public static Builder builder() {
@@ -76,10 +76,10 @@ public final class GetComputeCapacityReservationInstanceShapesResult {
     public static final class Builder {
         private @Nullable String availabilityDomain;
         private String compartmentId;
-        private List<GetComputeCapacityReservationInstanceShapesComputeCapacityReservationInstanceShape> computeCapacityReservationInstanceShapes;
+        private @Nullable List<GetComputeCapacityReservationInstanceShapesComputeCapacityReservationInstanceShape> computeCapacityReservationInstanceShapes;
         private @Nullable String displayName;
         private @Nullable List<GetComputeCapacityReservationInstanceShapesFilter> filters;
-        private String id;
+        private @Nullable String id;
         public Builder() {}
         public Builder(GetComputeCapacityReservationInstanceShapesResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -102,8 +102,8 @@ public final class GetComputeCapacityReservationInstanceShapesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder computeCapacityReservationInstanceShapes(List<GetComputeCapacityReservationInstanceShapesComputeCapacityReservationInstanceShape> computeCapacityReservationInstanceShapes) {
-            this.computeCapacityReservationInstanceShapes = Objects.requireNonNull(computeCapacityReservationInstanceShapes);
+        public Builder computeCapacityReservationInstanceShapes(@Nullable List<GetComputeCapacityReservationInstanceShapesComputeCapacityReservationInstanceShape> computeCapacityReservationInstanceShapes) {
+            this.computeCapacityReservationInstanceShapes = computeCapacityReservationInstanceShapes;
             return this;
         }
         public Builder computeCapacityReservationInstanceShapes(GetComputeCapacityReservationInstanceShapesComputeCapacityReservationInstanceShape... computeCapacityReservationInstanceShapes) {
@@ -123,8 +123,8 @@ public final class GetComputeCapacityReservationInstanceShapesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         public GetComputeCapacityReservationInstanceShapesResult build() {

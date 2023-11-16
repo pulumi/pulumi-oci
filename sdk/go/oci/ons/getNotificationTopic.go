@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Notification Topic resource in Oracle Cloud Infrastructure Notifications service.
@@ -62,26 +61,26 @@ type LookupNotificationTopicArgs struct {
 // A collection of values returned by getNotificationTopic.
 type LookupNotificationTopicResult struct {
 	// The endpoint for managing subscriptions or publishing messages to the topic.
-	ApiEndpoint string `pulumi:"apiEndpoint"`
+	ApiEndpoint *string `pulumi:"apiEndpoint"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for the topic.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The description of the topic.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// For optimistic concurrency control. See `if-match`.
-	Etag string `pulumi:"etag"`
+	Etag *string `pulumi:"etag"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
-	Id           string                 `pulumi:"id"`
+	Id           *string                `pulumi:"id"`
 	// The name of the topic.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// A unique short topic Id. This is used only for SMS subscriptions.
-	ShortTopicId string `pulumi:"shortTopicId"`
+	ShortTopicId *string `pulumi:"shortTopicId"`
 	// The lifecycle state of the topic.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The time the topic was created.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic.
 	TopicId string `pulumi:"topicId"`
 }
@@ -126,20 +125,14 @@ func (o LookupNotificationTopicResultOutput) ToLookupNotificationTopicResultOutp
 	return o
 }
 
-func (o LookupNotificationTopicResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupNotificationTopicResult] {
-	return pulumix.Output[LookupNotificationTopicResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The endpoint for managing subscriptions or publishing messages to the topic.
-func (o LookupNotificationTopicResultOutput) ApiEndpoint() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupNotificationTopicResult) string { return v.ApiEndpoint }).(pulumi.StringOutput)
+func (o LookupNotificationTopicResultOutput) ApiEndpoint() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupNotificationTopicResult) *string { return v.ApiEndpoint }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for the topic.
-func (o LookupNotificationTopicResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupNotificationTopicResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupNotificationTopicResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupNotificationTopicResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -148,13 +141,13 @@ func (o LookupNotificationTopicResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // The description of the topic.
-func (o LookupNotificationTopicResultOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupNotificationTopicResult) string { return v.Description }).(pulumi.StringOutput)
+func (o LookupNotificationTopicResultOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupNotificationTopicResult) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // For optimistic concurrency control. See `if-match`.
-func (o LookupNotificationTopicResultOutput) Etag() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupNotificationTopicResult) string { return v.Etag }).(pulumi.StringOutput)
+func (o LookupNotificationTopicResultOutput) Etag() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupNotificationTopicResult) *string { return v.Etag }).(pulumi.StringPtrOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -162,28 +155,28 @@ func (o LookupNotificationTopicResultOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v LookupNotificationTopicResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
 }
 
-func (o LookupNotificationTopicResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupNotificationTopicResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupNotificationTopicResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupNotificationTopicResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The name of the topic.
-func (o LookupNotificationTopicResultOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupNotificationTopicResult) string { return v.Name }).(pulumi.StringOutput)
+func (o LookupNotificationTopicResultOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupNotificationTopicResult) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // A unique short topic Id. This is used only for SMS subscriptions.
-func (o LookupNotificationTopicResultOutput) ShortTopicId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupNotificationTopicResult) string { return v.ShortTopicId }).(pulumi.StringOutput)
+func (o LookupNotificationTopicResultOutput) ShortTopicId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupNotificationTopicResult) *string { return v.ShortTopicId }).(pulumi.StringPtrOutput)
 }
 
 // The lifecycle state of the topic.
-func (o LookupNotificationTopicResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupNotificationTopicResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupNotificationTopicResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupNotificationTopicResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The time the topic was created.
-func (o LookupNotificationTopicResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupNotificationTopicResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupNotificationTopicResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupNotificationTopicResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic.

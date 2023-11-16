@@ -74,7 +74,7 @@ namespace Pulumi.Oci.OspGateway
         /// Address identifier.
         /// </summary>
         [Output("addressKey")]
-        public Output<string> AddressKey { get; private set; } = null!;
+        public Output<string?> AddressKey { get; private set; } = null!;
 
         /// <summary>
         /// Address details model.
@@ -86,13 +86,13 @@ namespace Pulumi.Oci.OspGateway
         /// Name of the city.
         /// </summary>
         [Output("city")]
-        public Output<string> City { get; private set; } = null!;
+        public Output<string?> City { get; private set; } = null!;
 
         /// <summary>
         /// Name of the customer company.
         /// </summary>
         [Output("companyName")]
-        public Output<string> CompanyName { get; private set; } = null!;
+        public Output<string?> CompanyName { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -104,91 +104,91 @@ namespace Pulumi.Oci.OspGateway
         /// Contributor class of the customer company.
         /// </summary>
         [Output("contributorClass")]
-        public Output<string> ContributorClass { get; private set; } = null!;
+        public Output<string?> ContributorClass { get; private set; } = null!;
 
         /// <summary>
         /// Country of the address.
         /// </summary>
         [Output("country")]
-        public Output<string> Country { get; private set; } = null!;
+        public Output<string?> Country { get; private set; } = null!;
 
         /// <summary>
         /// County of the address.
         /// </summary>
         [Output("county")]
-        public Output<string> County { get; private set; } = null!;
+        public Output<string?> County { get; private set; } = null!;
 
         /// <summary>
         /// Department name of the customer company.
         /// </summary>
         [Output("departmentName")]
-        public Output<string> DepartmentName { get; private set; } = null!;
+        public Output<string?> DepartmentName { get; private set; } = null!;
 
         /// <summary>
         /// Contact person email address.
         /// </summary>
         [Output("emailAddress")]
-        public Output<string> EmailAddress { get; private set; } = null!;
+        public Output<string?> EmailAddress { get; private set; } = null!;
 
         /// <summary>
         /// First name of the contact person.
         /// </summary>
         [Output("firstName")]
-        public Output<string> FirstName { get; private set; } = null!;
+        public Output<string?> FirstName { get; private set; } = null!;
 
         /// <summary>
         /// Internal number of the customer company.
         /// </summary>
         [Output("internalNumber")]
-        public Output<string> InternalNumber { get; private set; } = null!;
+        public Output<string?> InternalNumber { get; private set; } = null!;
 
         /// <summary>
         /// Job title of the contact person.
         /// </summary>
         [Output("jobTitle")]
-        public Output<string> JobTitle { get; private set; } = null!;
+        public Output<string?> JobTitle { get; private set; } = null!;
 
         /// <summary>
         /// Last name of the contact person.
         /// </summary>
         [Output("lastName")]
-        public Output<string> LastName { get; private set; } = null!;
+        public Output<string?> LastName { get; private set; } = null!;
 
         /// <summary>
         /// Address line 1.
         /// </summary>
         [Output("line1")]
-        public Output<string> Line1 { get; private set; } = null!;
+        public Output<string?> Line1 { get; private set; } = null!;
 
         /// <summary>
         /// Address line 2.
         /// </summary>
         [Output("line2")]
-        public Output<string> Line2 { get; private set; } = null!;
+        public Output<string?> Line2 { get; private set; } = null!;
 
         /// <summary>
         /// Address line 3.
         /// </summary>
         [Output("line3")]
-        public Output<string> Line3 { get; private set; } = null!;
+        public Output<string?> Line3 { get; private set; } = null!;
 
         /// <summary>
         /// Address line 4.
         /// </summary>
         [Output("line4")]
-        public Output<string> Line4 { get; private set; } = null!;
+        public Output<string?> Line4 { get; private set; } = null!;
 
         /// <summary>
         /// Middle name of the contact person.
         /// </summary>
         [Output("middleName")]
-        public Output<string> MiddleName { get; private set; } = null!;
+        public Output<string?> MiddleName { get; private set; } = null!;
 
         /// <summary>
         /// Municipal Inscription.
         /// </summary>
         [Output("municipalInscription")]
-        public Output<string> MunicipalInscription { get; private set; } = null!;
+        public Output<string?> MunicipalInscription { get; private set; } = null!;
 
         /// <summary>
         /// The home region's public name of the logged in user.
@@ -200,49 +200,49 @@ namespace Pulumi.Oci.OspGateway
         /// Phone country code of the contact person.
         /// </summary>
         [Output("phoneCountryCode")]
-        public Output<string> PhoneCountryCode { get; private set; } = null!;
+        public Output<string?> PhoneCountryCode { get; private set; } = null!;
 
         /// <summary>
         /// Phone number of the contact person.
         /// </summary>
         [Output("phoneNumber")]
-        public Output<string> PhoneNumber { get; private set; } = null!;
+        public Output<string?> PhoneNumber { get; private set; } = null!;
 
         /// <summary>
         /// Post code of the address.
         /// </summary>
         [Output("postalCode")]
-        public Output<string> PostalCode { get; private set; } = null!;
+        public Output<string?> PostalCode { get; private set; } = null!;
 
         /// <summary>
         /// Province of the address.
         /// </summary>
         [Output("province")]
-        public Output<string> Province { get; private set; } = null!;
+        public Output<string?> Province { get; private set; } = null!;
 
         /// <summary>
         /// Address quality type.
         /// </summary>
         [Output("quality")]
-        public Output<string> Quality { get; private set; } = null!;
+        public Output<string?> Quality { get; private set; } = null!;
 
         /// <summary>
         /// State of the address.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// State Inscription.
         /// </summary>
         [Output("stateInscription")]
-        public Output<string> StateInscription { get; private set; } = null!;
+        public Output<string?> StateInscription { get; private set; } = null!;
 
         /// <summary>
         /// Street name of the address.
         /// </summary>
         [Output("streetName")]
-        public Output<string> StreetName { get; private set; } = null!;
+        public Output<string?> StreetName { get; private set; } = null!;
 
         /// <summary>
         /// Street number of the address.
@@ -252,13 +252,13 @@ namespace Pulumi.Oci.OspGateway
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("streetNumber")]
-        public Output<string> StreetNumber { get; private set; } = null!;
+        public Output<string?> StreetNumber { get; private set; } = null!;
 
         /// <summary>
         /// Address verification code.
         /// </summary>
         [Output("verificationCode")]
-        public Output<string> VerificationCode { get; private set; } = null!;
+        public Output<string?> VerificationCode { get; private set; } = null!;
 
 
         /// <summary>

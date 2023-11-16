@@ -48,10 +48,7 @@ class GetManagedDatabasesDatabaseParametersResult:
 
     @property
     @pulumi.getter(name="databaseParametersCollections")
-    def database_parameters_collections(self) -> Sequence['outputs.GetManagedDatabasesDatabaseParametersDatabaseParametersCollectionResult']:
-        """
-        The list of database_parameters_collection.
-        """
+    def database_parameters_collections(self) -> Optional[Sequence['outputs.GetManagedDatabasesDatabaseParametersDatabaseParametersCollectionResult']]:
         return pulumi.get(self, "database_parameters_collections")
 
     @property
@@ -61,7 +58,7 @@ class GetManagedDatabasesDatabaseParametersResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -80,9 +77,6 @@ class GetManagedDatabasesDatabaseParametersResult:
     @property
     @pulumi.getter
     def name(self) -> Optional[str]:
-        """
-        The parameter name.
-        """
         return pulumi.get(self, "name")
 
     @property
@@ -113,27 +107,7 @@ def get_managed_databases_database_parameters(filters: Optional[Sequence[pulumi.
                                               source: Optional[str] = None,
                                               opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetManagedDatabasesDatabaseParametersResult:
     """
-    This data source provides the list of Managed Databases Database Parameters in Oracle Cloud Infrastructure Database Management service.
-
-    Gets the list of database parameters for the specified Managed Database. The parameters are listed in alphabetical order, along with their current values.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_managed_databases_database_parameters = oci.DatabaseManagement.get_managed_databases_database_parameters(managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"],
-        is_allowed_values_included=var["managed_databases_database_parameter_is_allowed_values_included"],
-        name=var["managed_databases_database_parameter_name"],
-        source=var["managed_databases_database_parameter_source"])
-    ```
-
-
-    :param bool is_allowed_values_included: When true, results include a list of valid values for parameters (if applicable).
-    :param str managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
-    :param str name: A filter to return all parameters that have the text given in their names.
-    :param str source: The source used to list database parameters. `CURRENT` is used to get the database parameters that are currently in effect for the database instance. `SPFILE` is used to list parameters from the server parameter file. Default is `CURRENT`.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['filters'] = filters
@@ -162,26 +136,6 @@ def get_managed_databases_database_parameters_output(filters: Optional[pulumi.In
                                                      source: Optional[pulumi.Input[Optional[str]]] = None,
                                                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetManagedDatabasesDatabaseParametersResult]:
     """
-    This data source provides the list of Managed Databases Database Parameters in Oracle Cloud Infrastructure Database Management service.
-
-    Gets the list of database parameters for the specified Managed Database. The parameters are listed in alphabetical order, along with their current values.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_managed_databases_database_parameters = oci.DatabaseManagement.get_managed_databases_database_parameters(managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"],
-        is_allowed_values_included=var["managed_databases_database_parameter_is_allowed_values_included"],
-        name=var["managed_databases_database_parameter_name"],
-        source=var["managed_databases_database_parameter_source"])
-    ```
-
-
-    :param bool is_allowed_values_included: When true, results include a list of valid values for parameters (if applicable).
-    :param str managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
-    :param str name: A filter to return all parameters that have the text given in their names.
-    :param str source: The source used to list database parameters. `CURRENT` is used to get the database parameters that are currently in effect for the database instance. `SPFILE` is used to list parameters from the server parameter file. Default is `CURRENT`.
+    Use this data source to access information about an existing resource.
     """
     ...

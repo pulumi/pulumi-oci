@@ -8,6 +8,8 @@ import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetSoftwareSourceModuleStreamProfilesModuleStreamProfileCollectionItem {
@@ -15,75 +17,75 @@ public final class GetSoftwareSourceModuleStreamProfilesModuleStreamProfileColle
      * @return A description of the contents of the module stream profile.
      * 
      */
-    private String description;
+    private @Nullable String description;
     /**
      * @return Indicates if this profile is the default for its module stream.
      * 
      */
-    private Boolean isDefault;
+    private @Nullable Boolean isDefault;
     /**
      * @return The name of a module. This parameter is required if a streamName is specified.
      * 
      */
-    private String moduleName;
+    private @Nullable String moduleName;
     /**
      * @return The name of the entity to be queried.
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return A list of packages that constitute the profile.  Each element in the list is the name of a package.  The name is suitable to use as an argument to other OS Management Hub APIs that interact directly with packages.
      * 
      */
-    private List<String> packages;
+    private @Nullable List<String> packages;
     /**
      * @return The name of the stream of the containing module.  This parameter is required if a profileName is specified.
      * 
      */
-    private String streamName;
+    private @Nullable String streamName;
 
     private GetSoftwareSourceModuleStreamProfilesModuleStreamProfileCollectionItem() {}
     /**
      * @return A description of the contents of the module stream profile.
      * 
      */
-    public String description() {
-        return this.description;
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
     /**
      * @return Indicates if this profile is the default for its module stream.
      * 
      */
-    public Boolean isDefault() {
-        return this.isDefault;
+    public Optional<Boolean> isDefault() {
+        return Optional.ofNullable(this.isDefault);
     }
     /**
      * @return The name of a module. This parameter is required if a streamName is specified.
      * 
      */
-    public String moduleName() {
-        return this.moduleName;
+    public Optional<String> moduleName() {
+        return Optional.ofNullable(this.moduleName);
     }
     /**
      * @return The name of the entity to be queried.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return A list of packages that constitute the profile.  Each element in the list is the name of a package.  The name is suitable to use as an argument to other OS Management Hub APIs that interact directly with packages.
      * 
      */
     public List<String> packages() {
-        return this.packages;
+        return this.packages == null ? List.of() : this.packages;
     }
     /**
      * @return The name of the stream of the containing module.  This parameter is required if a profileName is specified.
      * 
      */
-    public String streamName() {
-        return this.streamName;
+    public Optional<String> streamName() {
+        return Optional.ofNullable(this.streamName);
     }
 
     public static Builder builder() {
@@ -95,12 +97,12 @@ public final class GetSoftwareSourceModuleStreamProfilesModuleStreamProfileColle
     }
     @CustomType.Builder
     public static final class Builder {
-        private String description;
-        private Boolean isDefault;
-        private String moduleName;
-        private String name;
-        private List<String> packages;
-        private String streamName;
+        private @Nullable String description;
+        private @Nullable Boolean isDefault;
+        private @Nullable String moduleName;
+        private @Nullable String name;
+        private @Nullable List<String> packages;
+        private @Nullable String streamName;
         public Builder() {}
         public Builder(GetSoftwareSourceModuleStreamProfilesModuleStreamProfileCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -113,36 +115,36 @@ public final class GetSoftwareSourceModuleStreamProfilesModuleStreamProfileColle
         }
 
         @CustomType.Setter
-        public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+        public Builder description(@Nullable String description) {
+            this.description = description;
             return this;
         }
         @CustomType.Setter
-        public Builder isDefault(Boolean isDefault) {
-            this.isDefault = Objects.requireNonNull(isDefault);
+        public Builder isDefault(@Nullable Boolean isDefault) {
+            this.isDefault = isDefault;
             return this;
         }
         @CustomType.Setter
-        public Builder moduleName(String moduleName) {
-            this.moduleName = Objects.requireNonNull(moduleName);
+        public Builder moduleName(@Nullable String moduleName) {
+            this.moduleName = moduleName;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder packages(List<String> packages) {
-            this.packages = Objects.requireNonNull(packages);
+        public Builder packages(@Nullable List<String> packages) {
+            this.packages = packages;
             return this;
         }
         public Builder packages(String... packages) {
             return packages(List.of(packages));
         }
         @CustomType.Setter
-        public Builder streamName(String streamName) {
-            this.streamName = Objects.requireNonNull(streamName);
+        public Builder streamName(@Nullable String streamName) {
+            this.streamName = streamName;
             return this;
         }
         public GetSoftwareSourceModuleStreamProfilesModuleStreamProfileCollectionItem build() {

@@ -182,7 +182,7 @@ namespace Pulumi.Oci.Jms
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// A list of Java Runtimes.
         /// </summary>
@@ -206,7 +206,7 @@ namespace Pulumi.Oci.Jms
 
             string? hostId,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetListJreUsageItemResult> items,
 

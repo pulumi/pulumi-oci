@@ -112,12 +112,6 @@ class PublicationIcon(dict):
                  file_extension: Optional[str] = None,
                  mime_type: Optional[str] = None,
                  name: Optional[str] = None):
-        """
-        :param str content_url: The content URL of the upload data.
-        :param str file_extension: The file extension of the upload data.
-        :param str mime_type: The MIME type of the upload data.
-        :param str name: (Updatable) The name of the contact.
-        """
         if content_url is not None:
             pulumi.set(__self__, "content_url", content_url)
         if file_extension is not None:
@@ -130,33 +124,21 @@ class PublicationIcon(dict):
     @property
     @pulumi.getter(name="contentUrl")
     def content_url(self) -> Optional[str]:
-        """
-        The content URL of the upload data.
-        """
         return pulumi.get(self, "content_url")
 
     @property
     @pulumi.getter(name="fileExtension")
     def file_extension(self) -> Optional[str]:
-        """
-        The file extension of the upload data.
-        """
         return pulumi.get(self, "file_extension")
 
     @property
     @pulumi.getter(name="mimeType")
     def mime_type(self) -> Optional[str]:
-        """
-        The MIME type of the upload data.
-        """
         return pulumi.get(self, "mime_type")
 
     @property
     @pulumi.getter
     def name(self) -> Optional[str]:
-        """
-        (Updatable) The name of the contact.
-        """
         return pulumi.get(self, "name")
 
 
@@ -191,13 +173,6 @@ class PublicationPackageDetails(dict):
                  package_type: str,
                  package_version: str,
                  image_id: Optional[str] = None):
-        """
-        :param Sequence['PublicationPackageDetailsEulaArgs'] eulas: The end user license agreeement (EULA) that consumers of this listing must accept.
-        :param 'PublicationPackageDetailsOperatingSystemArgs' operating_system: The operating system used by the listing.
-        :param str package_type: The package's type.
-        :param str package_version: The package version.
-        :param str image_id: The unique identifier for the base image of the publication.
-        """
         pulumi.set(__self__, "eulas", eulas)
         pulumi.set(__self__, "operating_system", operating_system)
         pulumi.set(__self__, "package_type", package_type)
@@ -208,41 +183,26 @@ class PublicationPackageDetails(dict):
     @property
     @pulumi.getter
     def eulas(self) -> Sequence['outputs.PublicationPackageDetailsEula']:
-        """
-        The end user license agreeement (EULA) that consumers of this listing must accept.
-        """
         return pulumi.get(self, "eulas")
 
     @property
     @pulumi.getter(name="operatingSystem")
     def operating_system(self) -> 'outputs.PublicationPackageDetailsOperatingSystem':
-        """
-        The operating system used by the listing.
-        """
         return pulumi.get(self, "operating_system")
 
     @property
     @pulumi.getter(name="packageType")
     def package_type(self) -> str:
-        """
-        The package's type.
-        """
         return pulumi.get(self, "package_type")
 
     @property
     @pulumi.getter(name="packageVersion")
     def package_version(self) -> str:
-        """
-        The package version.
-        """
         return pulumi.get(self, "package_version")
 
     @property
     @pulumi.getter(name="imageId")
     def image_id(self) -> Optional[str]:
-        """
-        The unique identifier for the base image of the publication.
-        """
         return pulumi.get(self, "image_id")
 
 
@@ -270,10 +230,6 @@ class PublicationPackageDetailsEula(dict):
     def __init__(__self__, *,
                  eula_type: str,
                  license_text: Optional[str] = None):
-        """
-        :param str eula_type: The end user license agreement's type.
-        :param str license_text: The text of the end user license agreement.
-        """
         pulumi.set(__self__, "eula_type", eula_type)
         if license_text is not None:
             pulumi.set(__self__, "license_text", license_text)
@@ -281,17 +237,11 @@ class PublicationPackageDetailsEula(dict):
     @property
     @pulumi.getter(name="eulaType")
     def eula_type(self) -> str:
-        """
-        The end user license agreement's type.
-        """
         return pulumi.get(self, "eula_type")
 
     @property
     @pulumi.getter(name="licenseText")
     def license_text(self) -> Optional[str]:
-        """
-        The text of the end user license agreement.
-        """
         return pulumi.get(self, "license_text")
 
 
@@ -299,18 +249,12 @@ class PublicationPackageDetailsEula(dict):
 class PublicationPackageDetailsOperatingSystem(dict):
     def __init__(__self__, *,
                  name: Optional[str] = None):
-        """
-        :param str name: (Updatable) The name of the contact.
-        """
         if name is not None:
             pulumi.set(__self__, "name", name)
 
     @property
     @pulumi.getter
     def name(self) -> Optional[str]:
-        """
-        (Updatable) The name of the contact.
-        """
         return pulumi.get(self, "name")
 
 
@@ -321,16 +265,6 @@ class PublicationSupportContact(dict):
                  name: Optional[str] = None,
                  phone: Optional[str] = None,
                  subject: Optional[str] = None):
-        """
-        :param str email: (Updatable) The email of the contact.
-        :param str name: (Updatable) The name of the contact.
-        :param str phone: (Updatable) The phone number of the contact.
-        :param str subject: (Updatable) The email subject line to use when contacting support.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         if email is not None:
             pulumi.set(__self__, "email", email)
         if name is not None:
@@ -343,37 +277,21 @@ class PublicationSupportContact(dict):
     @property
     @pulumi.getter
     def email(self) -> Optional[str]:
-        """
-        (Updatable) The email of the contact.
-        """
         return pulumi.get(self, "email")
 
     @property
     @pulumi.getter
     def name(self) -> Optional[str]:
-        """
-        (Updatable) The name of the contact.
-        """
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
     def phone(self) -> Optional[str]:
-        """
-        (Updatable) The phone number of the contact.
-        """
         return pulumi.get(self, "phone")
 
     @property
     @pulumi.getter
     def subject(self) -> Optional[str]:
-        """
-        (Updatable) The email subject line to use when contacting support.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "subject")
 
 
@@ -381,131 +299,97 @@ class PublicationSupportContact(dict):
 class PublicationSupportedOperatingSystem(dict):
     def __init__(__self__, *,
                  name: Optional[str] = None):
-        """
-        :param str name: (Updatable) The name of the contact.
-        """
         if name is not None:
             pulumi.set(__self__, "name", name)
 
     @property
     @pulumi.getter
     def name(self) -> Optional[str]:
-        """
-        (Updatable) The name of the contact.
-        """
         return pulumi.get(self, "name")
 
 
 @pulumi.output_type
 class GetAcceptedAgreementsAcceptedAgreementResult(dict):
     def __init__(__self__, *,
-                 agreement_id: str,
-                 compartment_id: str,
-                 defined_tags: Mapping[str, Any],
-                 display_name: str,
-                 freeform_tags: Mapping[str, Any],
-                 id: str,
-                 listing_id: str,
-                 package_version: str,
-                 signature: str,
-                 time_accepted: str):
-        """
-        :param str agreement_id: The unique identifier for the terms of use agreement itself.
-        :param str compartment_id: The unique identifier for the compartment.
-        :param Mapping[str, Any] defined_tags: The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param str display_name: The display name of the resource.
-        :param Mapping[str, Any] freeform_tags: The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param str id: The unique identifier for the acceptance of the agreement within a specific compartment.
-        :param str listing_id: The unique identifier for the listing.
-        :param str package_version: The version of the package. Package versions are unique within a listing.
-        :param str time_accepted: The time the agreement was accepted.
-        """
-        pulumi.set(__self__, "agreement_id", agreement_id)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "listing_id", listing_id)
-        pulumi.set(__self__, "package_version", package_version)
-        pulumi.set(__self__, "signature", signature)
-        pulumi.set(__self__, "time_accepted", time_accepted)
+                 agreement_id: Optional[str] = None,
+                 compartment_id: Optional[str] = None,
+                 defined_tags: Optional[Mapping[str, Any]] = None,
+                 display_name: Optional[str] = None,
+                 freeform_tags: Optional[Mapping[str, Any]] = None,
+                 id: Optional[str] = None,
+                 listing_id: Optional[str] = None,
+                 package_version: Optional[str] = None,
+                 signature: Optional[str] = None,
+                 time_accepted: Optional[str] = None):
+        if agreement_id is not None:
+            pulumi.set(__self__, "agreement_id", agreement_id)
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if listing_id is not None:
+            pulumi.set(__self__, "listing_id", listing_id)
+        if package_version is not None:
+            pulumi.set(__self__, "package_version", package_version)
+        if signature is not None:
+            pulumi.set(__self__, "signature", signature)
+        if time_accepted is not None:
+            pulumi.set(__self__, "time_accepted", time_accepted)
 
     @property
     @pulumi.getter(name="agreementId")
-    def agreement_id(self) -> str:
-        """
-        The unique identifier for the terms of use agreement itself.
-        """
+    def agreement_id(self) -> Optional[str]:
         return pulumi.get(self, "agreement_id")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The unique identifier for the compartment.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        The display name of the resource.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The unique identifier for the acceptance of the agreement within a specific compartment.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="listingId")
-    def listing_id(self) -> str:
-        """
-        The unique identifier for the listing.
-        """
+    def listing_id(self) -> Optional[str]:
         return pulumi.get(self, "listing_id")
 
     @property
     @pulumi.getter(name="packageVersion")
-    def package_version(self) -> str:
-        """
-        The version of the package. Package versions are unique within a listing.
-        """
+    def package_version(self) -> Optional[str]:
         return pulumi.get(self, "package_version")
 
     @property
     @pulumi.getter
-    def signature(self) -> str:
+    def signature(self) -> Optional[str]:
         return pulumi.get(self, "signature")
 
     @property
     @pulumi.getter(name="timeAccepted")
-    def time_accepted(self) -> str:
-        """
-        The time the agreement was accepted.
-        """
+    def time_accepted(self) -> Optional[str]:
         return pulumi.get(self, "time_accepted")
 
 
@@ -539,18 +423,13 @@ class GetAcceptedAgreementsFilterResult(dict):
 @pulumi.output_type
 class GetCategoriesCategoryResult(dict):
     def __init__(__self__, *,
-                 name: str):
-        """
-        :param str name: Name of the product category.
-        """
-        pulumi.set(__self__, "name", name)
+                 name: Optional[str] = None):
+        if name is not None:
+            pulumi.set(__self__, "name", name)
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        Name of the product category.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
 
@@ -560,9 +439,6 @@ class GetCategoriesFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: Name of the product category.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -571,9 +447,6 @@ class GetCategoriesFilterResult(dict):
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        Name of the product category.
-        """
         return pulumi.get(self, "name")
 
     @property
@@ -590,251 +463,182 @@ class GetCategoriesFilterResult(dict):
 @pulumi.output_type
 class GetListingBannerResult(dict):
     def __init__(__self__, *,
-                 content_url: str,
-                 file_extension: str,
-                 mime_type: str,
-                 name: str):
-        """
-        :param str content_url: The content URL of the screenshot.
-        :param str file_extension: The file extension of the screenshot.
-        :param str mime_type: The MIME type of the screenshot.
-        :param str name: Text that describes the resource.
-        """
-        pulumi.set(__self__, "content_url", content_url)
-        pulumi.set(__self__, "file_extension", file_extension)
-        pulumi.set(__self__, "mime_type", mime_type)
-        pulumi.set(__self__, "name", name)
+                 content_url: Optional[str] = None,
+                 file_extension: Optional[str] = None,
+                 mime_type: Optional[str] = None,
+                 name: Optional[str] = None):
+        if content_url is not None:
+            pulumi.set(__self__, "content_url", content_url)
+        if file_extension is not None:
+            pulumi.set(__self__, "file_extension", file_extension)
+        if mime_type is not None:
+            pulumi.set(__self__, "mime_type", mime_type)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
 
     @property
     @pulumi.getter(name="contentUrl")
-    def content_url(self) -> str:
-        """
-        The content URL of the screenshot.
-        """
+    def content_url(self) -> Optional[str]:
         return pulumi.get(self, "content_url")
 
     @property
     @pulumi.getter(name="fileExtension")
-    def file_extension(self) -> str:
-        """
-        The file extension of the screenshot.
-        """
+    def file_extension(self) -> Optional[str]:
         return pulumi.get(self, "file_extension")
 
     @property
     @pulumi.getter(name="mimeType")
-    def mime_type(self) -> str:
-        """
-        The MIME type of the screenshot.
-        """
+    def mime_type(self) -> Optional[str]:
         return pulumi.get(self, "mime_type")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        Text that describes the resource.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
 
 @pulumi.output_type
 class GetListingDocumentationLinkResult(dict):
     def __init__(__self__, *,
-                 document_category: str,
-                 name: str,
-                 url: str):
-        """
-        :param str document_category: The category that the document belongs to.
-        :param str name: Text that describes the resource.
-        :param str url: The URL of the resource.
-        """
-        pulumi.set(__self__, "document_category", document_category)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "url", url)
+                 document_category: Optional[str] = None,
+                 name: Optional[str] = None,
+                 url: Optional[str] = None):
+        if document_category is not None:
+            pulumi.set(__self__, "document_category", document_category)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if url is not None:
+            pulumi.set(__self__, "url", url)
 
     @property
     @pulumi.getter(name="documentCategory")
-    def document_category(self) -> str:
-        """
-        The category that the document belongs to.
-        """
+    def document_category(self) -> Optional[str]:
         return pulumi.get(self, "document_category")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        Text that describes the resource.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
-    def url(self) -> str:
-        """
-        The URL of the resource.
-        """
+    def url(self) -> Optional[str]:
         return pulumi.get(self, "url")
 
 
 @pulumi.output_type
 class GetListingIconResult(dict):
     def __init__(__self__, *,
-                 content_url: str,
-                 file_extension: str,
-                 mime_type: str,
-                 name: str):
-        """
-        :param str content_url: The content URL of the screenshot.
-        :param str file_extension: The file extension of the screenshot.
-        :param str mime_type: The MIME type of the screenshot.
-        :param str name: Text that describes the resource.
-        """
-        pulumi.set(__self__, "content_url", content_url)
-        pulumi.set(__self__, "file_extension", file_extension)
-        pulumi.set(__self__, "mime_type", mime_type)
-        pulumi.set(__self__, "name", name)
+                 content_url: Optional[str] = None,
+                 file_extension: Optional[str] = None,
+                 mime_type: Optional[str] = None,
+                 name: Optional[str] = None):
+        if content_url is not None:
+            pulumi.set(__self__, "content_url", content_url)
+        if file_extension is not None:
+            pulumi.set(__self__, "file_extension", file_extension)
+        if mime_type is not None:
+            pulumi.set(__self__, "mime_type", mime_type)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
 
     @property
     @pulumi.getter(name="contentUrl")
-    def content_url(self) -> str:
-        """
-        The content URL of the screenshot.
-        """
+    def content_url(self) -> Optional[str]:
         return pulumi.get(self, "content_url")
 
     @property
     @pulumi.getter(name="fileExtension")
-    def file_extension(self) -> str:
-        """
-        The file extension of the screenshot.
-        """
+    def file_extension(self) -> Optional[str]:
         return pulumi.get(self, "file_extension")
 
     @property
     @pulumi.getter(name="mimeType")
-    def mime_type(self) -> str:
-        """
-        The MIME type of the screenshot.
-        """
+    def mime_type(self) -> Optional[str]:
         return pulumi.get(self, "mime_type")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        Text that describes the resource.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
 
 @pulumi.output_type
 class GetListingLanguageResult(dict):
     def __init__(__self__, *,
-                 code: str,
-                 name: str):
-        """
-        :param str code: A code assigned to the item.
-        :param str name: Text that describes the resource.
-        """
-        pulumi.set(__self__, "code", code)
-        pulumi.set(__self__, "name", name)
+                 code: Optional[str] = None,
+                 name: Optional[str] = None):
+        if code is not None:
+            pulumi.set(__self__, "code", code)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
 
     @property
     @pulumi.getter
-    def code(self) -> str:
-        """
-        A code assigned to the item.
-        """
+    def code(self) -> Optional[str]:
         return pulumi.get(self, "code")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        Text that describes the resource.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
 
 @pulumi.output_type
 class GetListingLinkResult(dict):
     def __init__(__self__, *,
-                 href: str,
-                 rel: str):
-        """
-        :param str href: The anchor tag.
-        :param str rel: Reference links to the previous page, next page, and other pages.
-        """
-        pulumi.set(__self__, "href", href)
-        pulumi.set(__self__, "rel", rel)
+                 href: Optional[str] = None,
+                 rel: Optional[str] = None):
+        if href is not None:
+            pulumi.set(__self__, "href", href)
+        if rel is not None:
+            pulumi.set(__self__, "rel", rel)
 
     @property
     @pulumi.getter
-    def href(self) -> str:
-        """
-        The anchor tag.
-        """
+    def href(self) -> Optional[str]:
         return pulumi.get(self, "href")
 
     @property
     @pulumi.getter
-    def rel(self) -> str:
-        """
-        Reference links to the previous page, next page, and other pages.
-        """
+    def rel(self) -> Optional[str]:
         return pulumi.get(self, "rel")
 
 
 @pulumi.output_type
 class GetListingPackageAgreementsAgreementResult(dict):
     def __init__(__self__, *,
-                 author: str,
-                 content_url: str,
-                 id: str,
-                 prompt: str):
-        """
-        :param str author: Who authored the agreement.
-        :param str content_url: The content URL of the agreement.
-        :param str id: The unique identifier for the agreement.
-        :param str prompt: Textual prompt to read and accept the agreement.
-        """
-        pulumi.set(__self__, "author", author)
-        pulumi.set(__self__, "content_url", content_url)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "prompt", prompt)
+                 author: Optional[str] = None,
+                 content_url: Optional[str] = None,
+                 id: Optional[str] = None,
+                 prompt: Optional[str] = None):
+        if author is not None:
+            pulumi.set(__self__, "author", author)
+        if content_url is not None:
+            pulumi.set(__self__, "content_url", content_url)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if prompt is not None:
+            pulumi.set(__self__, "prompt", prompt)
 
     @property
     @pulumi.getter
-    def author(self) -> str:
-        """
-        Who authored the agreement.
-        """
+    def author(self) -> Optional[str]:
         return pulumi.get(self, "author")
 
     @property
     @pulumi.getter(name="contentUrl")
-    def content_url(self) -> str:
-        """
-        The content URL of the agreement.
-        """
+    def content_url(self) -> Optional[str]:
         return pulumi.get(self, "content_url")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The unique identifier for the agreement.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter
-    def prompt(self) -> str:
-        """
-        Textual prompt to read and accept the agreement.
-        """
+    def prompt(self) -> Optional[str]:
         return pulumi.get(self, "prompt")
 
 
@@ -868,262 +672,190 @@ class GetListingPackageAgreementsFilterResult(dict):
 @pulumi.output_type
 class GetListingPackageOperatingSystemResult(dict):
     def __init__(__self__, *,
-                 name: str):
-        """
-        :param str name: The name of the variable.
-        """
-        pulumi.set(__self__, "name", name)
+                 name: Optional[str] = None):
+        if name is not None:
+            pulumi.set(__self__, "name", name)
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        The name of the variable.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
 
 @pulumi.output_type
 class GetListingPackagePricingResult(dict):
     def __init__(__self__, *,
-                 currency: str,
-                 international_market_prices: Sequence['outputs.GetListingPackagePricingInternationalMarketPriceResult'],
-                 pay_go_strategy: str,
-                 rate: float,
-                 type: str):
-        """
-        :param str currency: The currency of the pricing model.
-        :param Sequence['GetListingPackagePricingInternationalMarketPriceArgs'] international_market_prices: The model for international market pricing.
-        :param str pay_go_strategy: The type of pricing for a PAYGO model, eg PER_OCPU_LINEAR, PER_OCPU_MIN_BILLING, PER_INSTANCE.  Null if type is not PAYGO.
-        :param float rate: The pricing rate.
-        :param str type: The type of the pricing model.
-        """
-        pulumi.set(__self__, "currency", currency)
-        pulumi.set(__self__, "international_market_prices", international_market_prices)
-        pulumi.set(__self__, "pay_go_strategy", pay_go_strategy)
-        pulumi.set(__self__, "rate", rate)
-        pulumi.set(__self__, "type", type)
+                 currency: Optional[str] = None,
+                 international_market_prices: Optional[Sequence['outputs.GetListingPackagePricingInternationalMarketPriceResult']] = None,
+                 pay_go_strategy: Optional[str] = None,
+                 rate: Optional[float] = None,
+                 type: Optional[str] = None):
+        if currency is not None:
+            pulumi.set(__self__, "currency", currency)
+        if international_market_prices is not None:
+            pulumi.set(__self__, "international_market_prices", international_market_prices)
+        if pay_go_strategy is not None:
+            pulumi.set(__self__, "pay_go_strategy", pay_go_strategy)
+        if rate is not None:
+            pulumi.set(__self__, "rate", rate)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
 
     @property
     @pulumi.getter
-    def currency(self) -> str:
-        """
-        The currency of the pricing model.
-        """
+    def currency(self) -> Optional[str]:
         return pulumi.get(self, "currency")
 
     @property
     @pulumi.getter(name="internationalMarketPrices")
-    def international_market_prices(self) -> Sequence['outputs.GetListingPackagePricingInternationalMarketPriceResult']:
-        """
-        The model for international market pricing.
-        """
+    def international_market_prices(self) -> Optional[Sequence['outputs.GetListingPackagePricingInternationalMarketPriceResult']]:
         return pulumi.get(self, "international_market_prices")
 
     @property
     @pulumi.getter(name="payGoStrategy")
-    def pay_go_strategy(self) -> str:
-        """
-        The type of pricing for a PAYGO model, eg PER_OCPU_LINEAR, PER_OCPU_MIN_BILLING, PER_INSTANCE.  Null if type is not PAYGO.
-        """
+    def pay_go_strategy(self) -> Optional[str]:
         return pulumi.get(self, "pay_go_strategy")
 
     @property
     @pulumi.getter
-    def rate(self) -> float:
-        """
-        The pricing rate.
-        """
+    def rate(self) -> Optional[float]:
         return pulumi.get(self, "rate")
 
     @property
     @pulumi.getter
-    def type(self) -> str:
-        """
-        The type of the pricing model.
-        """
+    def type(self) -> Optional[str]:
         return pulumi.get(self, "type")
 
 
 @pulumi.output_type
 class GetListingPackagePricingInternationalMarketPriceResult(dict):
     def __init__(__self__, *,
-                 currency_code: str,
-                 currency_symbol: str,
-                 rate: float):
-        """
-        :param str currency_code: The currency of the pricing model.
-        :param str currency_symbol: The symbol of the currency
-        :param float rate: The pricing rate.
-        """
-        pulumi.set(__self__, "currency_code", currency_code)
-        pulumi.set(__self__, "currency_symbol", currency_symbol)
-        pulumi.set(__self__, "rate", rate)
+                 currency_code: Optional[str] = None,
+                 currency_symbol: Optional[str] = None,
+                 rate: Optional[float] = None):
+        if currency_code is not None:
+            pulumi.set(__self__, "currency_code", currency_code)
+        if currency_symbol is not None:
+            pulumi.set(__self__, "currency_symbol", currency_symbol)
+        if rate is not None:
+            pulumi.set(__self__, "rate", rate)
 
     @property
     @pulumi.getter(name="currencyCode")
-    def currency_code(self) -> str:
-        """
-        The currency of the pricing model.
-        """
+    def currency_code(self) -> Optional[str]:
         return pulumi.get(self, "currency_code")
 
     @property
     @pulumi.getter(name="currencySymbol")
-    def currency_symbol(self) -> str:
-        """
-        The symbol of the currency
-        """
+    def currency_symbol(self) -> Optional[str]:
         return pulumi.get(self, "currency_symbol")
 
     @property
     @pulumi.getter
-    def rate(self) -> float:
-        """
-        The pricing rate.
-        """
+    def rate(self) -> Optional[float]:
         return pulumi.get(self, "rate")
 
 
 @pulumi.output_type
 class GetListingPackageRegionResult(dict):
     def __init__(__self__, *,
-                 code: str,
-                 countries: Sequence['outputs.GetListingPackageRegionCountryResult'],
-                 name: str):
-        """
-        :param str code: A code assigned to the item.
-        :param Sequence['GetListingPackageRegionCountryArgs'] countries: Countries in the region.
-        :param str name: The name of the variable.
-        """
-        pulumi.set(__self__, "code", code)
-        pulumi.set(__self__, "countries", countries)
-        pulumi.set(__self__, "name", name)
+                 code: Optional[str] = None,
+                 countries: Optional[Sequence['outputs.GetListingPackageRegionCountryResult']] = None,
+                 name: Optional[str] = None):
+        if code is not None:
+            pulumi.set(__self__, "code", code)
+        if countries is not None:
+            pulumi.set(__self__, "countries", countries)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
 
     @property
     @pulumi.getter
-    def code(self) -> str:
-        """
-        A code assigned to the item.
-        """
+    def code(self) -> Optional[str]:
         return pulumi.get(self, "code")
 
     @property
     @pulumi.getter
-    def countries(self) -> Sequence['outputs.GetListingPackageRegionCountryResult']:
-        """
-        Countries in the region.
-        """
+    def countries(self) -> Optional[Sequence['outputs.GetListingPackageRegionCountryResult']]:
         return pulumi.get(self, "countries")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        The name of the variable.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
 
 @pulumi.output_type
 class GetListingPackageRegionCountryResult(dict):
     def __init__(__self__, *,
-                 code: str,
-                 name: str):
-        """
-        :param str code: A code assigned to the item.
-        :param str name: The name of the variable.
-        """
-        pulumi.set(__self__, "code", code)
-        pulumi.set(__self__, "name", name)
+                 code: Optional[str] = None,
+                 name: Optional[str] = None):
+        if code is not None:
+            pulumi.set(__self__, "code", code)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
 
     @property
     @pulumi.getter
-    def code(self) -> str:
-        """
-        A code assigned to the item.
-        """
+    def code(self) -> Optional[str]:
         return pulumi.get(self, "code")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        The name of the variable.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
 
 @pulumi.output_type
 class GetListingPackageVariableResult(dict):
     def __init__(__self__, *,
-                 data_type: str,
-                 default_value: str,
-                 description: str,
-                 hint_message: str,
-                 is_mandatory: bool,
-                 name: str):
-        """
-        :param str data_type: The data type of the variable.
-        :param str default_value: The variable's default value.
-        :param str description: A description of the variable.
-        :param str hint_message: A brief textual description that helps to explain the variable.
-        :param bool is_mandatory: Whether the variable is mandatory.
-        :param str name: The name of the variable.
-        """
-        pulumi.set(__self__, "data_type", data_type)
-        pulumi.set(__self__, "default_value", default_value)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "hint_message", hint_message)
-        pulumi.set(__self__, "is_mandatory", is_mandatory)
-        pulumi.set(__self__, "name", name)
+                 data_type: Optional[str] = None,
+                 default_value: Optional[str] = None,
+                 description: Optional[str] = None,
+                 hint_message: Optional[str] = None,
+                 is_mandatory: Optional[bool] = None,
+                 name: Optional[str] = None):
+        if data_type is not None:
+            pulumi.set(__self__, "data_type", data_type)
+        if default_value is not None:
+            pulumi.set(__self__, "default_value", default_value)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if hint_message is not None:
+            pulumi.set(__self__, "hint_message", hint_message)
+        if is_mandatory is not None:
+            pulumi.set(__self__, "is_mandatory", is_mandatory)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
 
     @property
     @pulumi.getter(name="dataType")
-    def data_type(self) -> str:
-        """
-        The data type of the variable.
-        """
+    def data_type(self) -> Optional[str]:
         return pulumi.get(self, "data_type")
 
     @property
     @pulumi.getter(name="defaultValue")
-    def default_value(self) -> str:
-        """
-        The variable's default value.
-        """
+    def default_value(self) -> Optional[str]:
         return pulumi.get(self, "default_value")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        A description of the variable.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="hintMessage")
-    def hint_message(self) -> str:
-        """
-        A brief textual description that helps to explain the variable.
-        """
+    def hint_message(self) -> Optional[str]:
         return pulumi.get(self, "hint_message")
 
     @property
     @pulumi.getter(name="isMandatory")
-    def is_mandatory(self) -> bool:
-        """
-        Whether the variable is mandatory.
-        """
+    def is_mandatory(self) -> Optional[bool]:
         return pulumi.get(self, "is_mandatory")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        The name of the variable.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
 
@@ -1133,9 +865,6 @@ class GetListingPackagesFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: The name of the variable.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -1144,9 +873,6 @@ class GetListingPackagesFilterResult(dict):
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        The name of the variable.
-        """
         return pulumi.get(self, "name")
 
     @property
@@ -1163,710 +889,515 @@ class GetListingPackagesFilterResult(dict):
 @pulumi.output_type
 class GetListingPackagesListingPackageResult(dict):
     def __init__(__self__, *,
-                 listing_id: str,
-                 operating_systems: Sequence['outputs.GetListingPackagesListingPackageOperatingSystemResult'],
-                 package_type: str,
-                 package_version: str,
-                 pricings: Sequence['outputs.GetListingPackagesListingPackagePricingResult'],
-                 regions: Sequence['outputs.GetListingPackagesListingPackageRegionResult'],
-                 resource_id: str,
-                 time_created: str):
-        """
-        :param str listing_id: The unique identifier for the listing.
-        :param Sequence['GetListingPackagesListingPackageOperatingSystemArgs'] operating_systems: The operating system used by the listing.
-        :param str package_type: A filter to return only packages that match the given package type exactly.
-        :param str package_version: The version of the package. Package versions are unique within a listing.
-        :param Sequence['GetListingPackagesListingPackagePricingArgs'] pricings: The model for pricing.
-        :param Sequence['GetListingPackagesListingPackageRegionArgs'] regions: The regions where you can deploy the listing package. (Some packages have restrictions that limit their deployment to United States regions only.)
-        :param str resource_id: The unique identifier for the package resource.
-        :param str time_created: The date and time this listing package was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
-        """
-        pulumi.set(__self__, "listing_id", listing_id)
-        pulumi.set(__self__, "operating_systems", operating_systems)
-        pulumi.set(__self__, "package_type", package_type)
-        pulumi.set(__self__, "package_version", package_version)
-        pulumi.set(__self__, "pricings", pricings)
-        pulumi.set(__self__, "regions", regions)
-        pulumi.set(__self__, "resource_id", resource_id)
-        pulumi.set(__self__, "time_created", time_created)
+                 listing_id: Optional[str] = None,
+                 operating_systems: Optional[Sequence['outputs.GetListingPackagesListingPackageOperatingSystemResult']] = None,
+                 package_type: Optional[str] = None,
+                 package_version: Optional[str] = None,
+                 pricings: Optional[Sequence['outputs.GetListingPackagesListingPackagePricingResult']] = None,
+                 regions: Optional[Sequence['outputs.GetListingPackagesListingPackageRegionResult']] = None,
+                 resource_id: Optional[str] = None,
+                 time_created: Optional[str] = None):
+        if listing_id is not None:
+            pulumi.set(__self__, "listing_id", listing_id)
+        if operating_systems is not None:
+            pulumi.set(__self__, "operating_systems", operating_systems)
+        if package_type is not None:
+            pulumi.set(__self__, "package_type", package_type)
+        if package_version is not None:
+            pulumi.set(__self__, "package_version", package_version)
+        if pricings is not None:
+            pulumi.set(__self__, "pricings", pricings)
+        if regions is not None:
+            pulumi.set(__self__, "regions", regions)
+        if resource_id is not None:
+            pulumi.set(__self__, "resource_id", resource_id)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
 
     @property
     @pulumi.getter(name="listingId")
-    def listing_id(self) -> str:
-        """
-        The unique identifier for the listing.
-        """
+    def listing_id(self) -> Optional[str]:
         return pulumi.get(self, "listing_id")
 
     @property
     @pulumi.getter(name="operatingSystems")
-    def operating_systems(self) -> Sequence['outputs.GetListingPackagesListingPackageOperatingSystemResult']:
-        """
-        The operating system used by the listing.
-        """
+    def operating_systems(self) -> Optional[Sequence['outputs.GetListingPackagesListingPackageOperatingSystemResult']]:
         return pulumi.get(self, "operating_systems")
 
     @property
     @pulumi.getter(name="packageType")
-    def package_type(self) -> str:
-        """
-        A filter to return only packages that match the given package type exactly.
-        """
+    def package_type(self) -> Optional[str]:
         return pulumi.get(self, "package_type")
 
     @property
     @pulumi.getter(name="packageVersion")
-    def package_version(self) -> str:
-        """
-        The version of the package. Package versions are unique within a listing.
-        """
+    def package_version(self) -> Optional[str]:
         return pulumi.get(self, "package_version")
 
     @property
     @pulumi.getter
-    def pricings(self) -> Sequence['outputs.GetListingPackagesListingPackagePricingResult']:
-        """
-        The model for pricing.
-        """
+    def pricings(self) -> Optional[Sequence['outputs.GetListingPackagesListingPackagePricingResult']]:
         return pulumi.get(self, "pricings")
 
     @property
     @pulumi.getter
-    def regions(self) -> Sequence['outputs.GetListingPackagesListingPackageRegionResult']:
-        """
-        The regions where you can deploy the listing package. (Some packages have restrictions that limit their deployment to United States regions only.)
-        """
+    def regions(self) -> Optional[Sequence['outputs.GetListingPackagesListingPackageRegionResult']]:
         return pulumi.get(self, "regions")
 
     @property
     @pulumi.getter(name="resourceId")
-    def resource_id(self) -> str:
-        """
-        The unique identifier for the package resource.
-        """
+    def resource_id(self) -> Optional[str]:
         return pulumi.get(self, "resource_id")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time this listing package was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
 
 @pulumi.output_type
 class GetListingPackagesListingPackageOperatingSystemResult(dict):
     def __init__(__self__, *,
-                 name: str):
-        """
-        :param str name: The name of the variable.
-        """
-        pulumi.set(__self__, "name", name)
+                 name: Optional[str] = None):
+        if name is not None:
+            pulumi.set(__self__, "name", name)
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        The name of the variable.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
 
 @pulumi.output_type
 class GetListingPackagesListingPackagePricingResult(dict):
     def __init__(__self__, *,
-                 currency: str,
-                 international_market_prices: Sequence['outputs.GetListingPackagesListingPackagePricingInternationalMarketPriceResult'],
-                 pay_go_strategy: str,
-                 rate: float,
-                 type: str):
-        """
-        :param str currency: The currency of the pricing model.
-        :param Sequence['GetListingPackagesListingPackagePricingInternationalMarketPriceArgs'] international_market_prices: The model for international market pricing.
-        :param str pay_go_strategy: The type of pricing for a PAYGO model, eg PER_OCPU_LINEAR, PER_OCPU_MIN_BILLING, PER_INSTANCE.  Null if type is not PAYGO.
-        :param float rate: The pricing rate.
-        :param str type: The type of the pricing model.
-        """
-        pulumi.set(__self__, "currency", currency)
-        pulumi.set(__self__, "international_market_prices", international_market_prices)
-        pulumi.set(__self__, "pay_go_strategy", pay_go_strategy)
-        pulumi.set(__self__, "rate", rate)
-        pulumi.set(__self__, "type", type)
+                 currency: Optional[str] = None,
+                 international_market_prices: Optional[Sequence['outputs.GetListingPackagesListingPackagePricingInternationalMarketPriceResult']] = None,
+                 pay_go_strategy: Optional[str] = None,
+                 rate: Optional[float] = None,
+                 type: Optional[str] = None):
+        if currency is not None:
+            pulumi.set(__self__, "currency", currency)
+        if international_market_prices is not None:
+            pulumi.set(__self__, "international_market_prices", international_market_prices)
+        if pay_go_strategy is not None:
+            pulumi.set(__self__, "pay_go_strategy", pay_go_strategy)
+        if rate is not None:
+            pulumi.set(__self__, "rate", rate)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
 
     @property
     @pulumi.getter
-    def currency(self) -> str:
-        """
-        The currency of the pricing model.
-        """
+    def currency(self) -> Optional[str]:
         return pulumi.get(self, "currency")
 
     @property
     @pulumi.getter(name="internationalMarketPrices")
-    def international_market_prices(self) -> Sequence['outputs.GetListingPackagesListingPackagePricingInternationalMarketPriceResult']:
-        """
-        The model for international market pricing.
-        """
+    def international_market_prices(self) -> Optional[Sequence['outputs.GetListingPackagesListingPackagePricingInternationalMarketPriceResult']]:
         return pulumi.get(self, "international_market_prices")
 
     @property
     @pulumi.getter(name="payGoStrategy")
-    def pay_go_strategy(self) -> str:
-        """
-        The type of pricing for a PAYGO model, eg PER_OCPU_LINEAR, PER_OCPU_MIN_BILLING, PER_INSTANCE.  Null if type is not PAYGO.
-        """
+    def pay_go_strategy(self) -> Optional[str]:
         return pulumi.get(self, "pay_go_strategy")
 
     @property
     @pulumi.getter
-    def rate(self) -> float:
-        """
-        The pricing rate.
-        """
+    def rate(self) -> Optional[float]:
         return pulumi.get(self, "rate")
 
     @property
     @pulumi.getter
-    def type(self) -> str:
-        """
-        The type of the pricing model.
-        """
+    def type(self) -> Optional[str]:
         return pulumi.get(self, "type")
 
 
 @pulumi.output_type
 class GetListingPackagesListingPackagePricingInternationalMarketPriceResult(dict):
     def __init__(__self__, *,
-                 currency_code: str,
-                 currency_symbol: str,
-                 rate: float):
-        """
-        :param str currency_code: The currency of the pricing model.
-        :param str currency_symbol: The symbol of the currency
-        :param float rate: The pricing rate.
-        """
-        pulumi.set(__self__, "currency_code", currency_code)
-        pulumi.set(__self__, "currency_symbol", currency_symbol)
-        pulumi.set(__self__, "rate", rate)
+                 currency_code: Optional[str] = None,
+                 currency_symbol: Optional[str] = None,
+                 rate: Optional[float] = None):
+        if currency_code is not None:
+            pulumi.set(__self__, "currency_code", currency_code)
+        if currency_symbol is not None:
+            pulumi.set(__self__, "currency_symbol", currency_symbol)
+        if rate is not None:
+            pulumi.set(__self__, "rate", rate)
 
     @property
     @pulumi.getter(name="currencyCode")
-    def currency_code(self) -> str:
-        """
-        The currency of the pricing model.
-        """
+    def currency_code(self) -> Optional[str]:
         return pulumi.get(self, "currency_code")
 
     @property
     @pulumi.getter(name="currencySymbol")
-    def currency_symbol(self) -> str:
-        """
-        The symbol of the currency
-        """
+    def currency_symbol(self) -> Optional[str]:
         return pulumi.get(self, "currency_symbol")
 
     @property
     @pulumi.getter
-    def rate(self) -> float:
-        """
-        The pricing rate.
-        """
+    def rate(self) -> Optional[float]:
         return pulumi.get(self, "rate")
 
 
 @pulumi.output_type
 class GetListingPackagesListingPackageRegionResult(dict):
     def __init__(__self__, *,
-                 code: str,
-                 countries: Sequence['outputs.GetListingPackagesListingPackageRegionCountryResult'],
-                 name: str):
-        """
-        :param str code: A code assigned to the item.
-        :param Sequence['GetListingPackagesListingPackageRegionCountryArgs'] countries: Countries in the region.
-        :param str name: The name of the variable.
-        """
-        pulumi.set(__self__, "code", code)
-        pulumi.set(__self__, "countries", countries)
-        pulumi.set(__self__, "name", name)
+                 code: Optional[str] = None,
+                 countries: Optional[Sequence['outputs.GetListingPackagesListingPackageRegionCountryResult']] = None,
+                 name: Optional[str] = None):
+        if code is not None:
+            pulumi.set(__self__, "code", code)
+        if countries is not None:
+            pulumi.set(__self__, "countries", countries)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
 
     @property
     @pulumi.getter
-    def code(self) -> str:
-        """
-        A code assigned to the item.
-        """
+    def code(self) -> Optional[str]:
         return pulumi.get(self, "code")
 
     @property
     @pulumi.getter
-    def countries(self) -> Sequence['outputs.GetListingPackagesListingPackageRegionCountryResult']:
-        """
-        Countries in the region.
-        """
+    def countries(self) -> Optional[Sequence['outputs.GetListingPackagesListingPackageRegionCountryResult']]:
         return pulumi.get(self, "countries")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        The name of the variable.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
 
 @pulumi.output_type
 class GetListingPackagesListingPackageRegionCountryResult(dict):
     def __init__(__self__, *,
-                 code: str,
-                 name: str):
-        """
-        :param str code: A code assigned to the item.
-        :param str name: The name of the variable.
-        """
-        pulumi.set(__self__, "code", code)
-        pulumi.set(__self__, "name", name)
+                 code: Optional[str] = None,
+                 name: Optional[str] = None):
+        if code is not None:
+            pulumi.set(__self__, "code", code)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
 
     @property
     @pulumi.getter
-    def code(self) -> str:
-        """
-        A code assigned to the item.
-        """
+    def code(self) -> Optional[str]:
         return pulumi.get(self, "code")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        The name of the variable.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
 
 @pulumi.output_type
 class GetListingPublisherResult(dict):
     def __init__(__self__, *,
-                 contact_email: str,
-                 contact_phone: str,
-                 description: str,
-                 hq_address: str,
-                 id: str,
-                 links: Sequence['outputs.GetListingPublisherLinkResult'],
-                 logos: Sequence['outputs.GetListingPublisherLogoResult'],
-                 name: str,
-                 website_url: str,
-                 year_founded: str):
-        """
-        :param str contact_email: The email address of the publisher.
-        :param str contact_phone: The phone number of the publisher.
-        :param str description: A description of the screenshot.
-        :param str hq_address: The address of the publisher's headquarters.
-        :param str id: The unique identifier for the publisher.
-        :param Sequence['GetListingPublisherLinkArgs'] links: Reference links.
-        :param Sequence['GetListingPublisherLogoArgs'] logos: The model for upload data for images and icons.
-        :param str name: Text that describes the resource.
-        :param str website_url: The publisher's website.
-        :param str year_founded: The year the publisher's company or organization was founded.
-        """
-        pulumi.set(__self__, "contact_email", contact_email)
-        pulumi.set(__self__, "contact_phone", contact_phone)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "hq_address", hq_address)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "links", links)
-        pulumi.set(__self__, "logos", logos)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "website_url", website_url)
-        pulumi.set(__self__, "year_founded", year_founded)
+                 contact_email: Optional[str] = None,
+                 contact_phone: Optional[str] = None,
+                 description: Optional[str] = None,
+                 hq_address: Optional[str] = None,
+                 id: Optional[str] = None,
+                 links: Optional[Sequence['outputs.GetListingPublisherLinkResult']] = None,
+                 logos: Optional[Sequence['outputs.GetListingPublisherLogoResult']] = None,
+                 name: Optional[str] = None,
+                 website_url: Optional[str] = None,
+                 year_founded: Optional[str] = None):
+        if contact_email is not None:
+            pulumi.set(__self__, "contact_email", contact_email)
+        if contact_phone is not None:
+            pulumi.set(__self__, "contact_phone", contact_phone)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if hq_address is not None:
+            pulumi.set(__self__, "hq_address", hq_address)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if links is not None:
+            pulumi.set(__self__, "links", links)
+        if logos is not None:
+            pulumi.set(__self__, "logos", logos)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if website_url is not None:
+            pulumi.set(__self__, "website_url", website_url)
+        if year_founded is not None:
+            pulumi.set(__self__, "year_founded", year_founded)
 
     @property
     @pulumi.getter(name="contactEmail")
-    def contact_email(self) -> str:
-        """
-        The email address of the publisher.
-        """
+    def contact_email(self) -> Optional[str]:
         return pulumi.get(self, "contact_email")
 
     @property
     @pulumi.getter(name="contactPhone")
-    def contact_phone(self) -> str:
-        """
-        The phone number of the publisher.
-        """
+    def contact_phone(self) -> Optional[str]:
         return pulumi.get(self, "contact_phone")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        A description of the screenshot.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="hqAddress")
-    def hq_address(self) -> str:
-        """
-        The address of the publisher's headquarters.
-        """
+    def hq_address(self) -> Optional[str]:
         return pulumi.get(self, "hq_address")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The unique identifier for the publisher.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter
-    def links(self) -> Sequence['outputs.GetListingPublisherLinkResult']:
-        """
-        Reference links.
-        """
+    def links(self) -> Optional[Sequence['outputs.GetListingPublisherLinkResult']]:
         return pulumi.get(self, "links")
 
     @property
     @pulumi.getter
-    def logos(self) -> Sequence['outputs.GetListingPublisherLogoResult']:
-        """
-        The model for upload data for images and icons.
-        """
+    def logos(self) -> Optional[Sequence['outputs.GetListingPublisherLogoResult']]:
         return pulumi.get(self, "logos")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        Text that describes the resource.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="websiteUrl")
-    def website_url(self) -> str:
-        """
-        The publisher's website.
-        """
+    def website_url(self) -> Optional[str]:
         return pulumi.get(self, "website_url")
 
     @property
     @pulumi.getter(name="yearFounded")
-    def year_founded(self) -> str:
-        """
-        The year the publisher's company or organization was founded.
-        """
+    def year_founded(self) -> Optional[str]:
         return pulumi.get(self, "year_founded")
 
 
 @pulumi.output_type
 class GetListingPublisherLinkResult(dict):
     def __init__(__self__, *,
-                 href: str,
-                 rel: str):
-        """
-        :param str href: The anchor tag.
-        :param str rel: Reference links to the previous page, next page, and other pages.
-        """
-        pulumi.set(__self__, "href", href)
-        pulumi.set(__self__, "rel", rel)
+                 href: Optional[str] = None,
+                 rel: Optional[str] = None):
+        if href is not None:
+            pulumi.set(__self__, "href", href)
+        if rel is not None:
+            pulumi.set(__self__, "rel", rel)
 
     @property
     @pulumi.getter
-    def href(self) -> str:
-        """
-        The anchor tag.
-        """
+    def href(self) -> Optional[str]:
         return pulumi.get(self, "href")
 
     @property
     @pulumi.getter
-    def rel(self) -> str:
-        """
-        Reference links to the previous page, next page, and other pages.
-        """
+    def rel(self) -> Optional[str]:
         return pulumi.get(self, "rel")
 
 
 @pulumi.output_type
 class GetListingPublisherLogoResult(dict):
     def __init__(__self__, *,
-                 content_url: str,
-                 file_extension: str,
-                 mime_type: str,
-                 name: str):
-        """
-        :param str content_url: The content URL of the screenshot.
-        :param str file_extension: The file extension of the screenshot.
-        :param str mime_type: The MIME type of the screenshot.
-        :param str name: Text that describes the resource.
-        """
-        pulumi.set(__self__, "content_url", content_url)
-        pulumi.set(__self__, "file_extension", file_extension)
-        pulumi.set(__self__, "mime_type", mime_type)
-        pulumi.set(__self__, "name", name)
+                 content_url: Optional[str] = None,
+                 file_extension: Optional[str] = None,
+                 mime_type: Optional[str] = None,
+                 name: Optional[str] = None):
+        if content_url is not None:
+            pulumi.set(__self__, "content_url", content_url)
+        if file_extension is not None:
+            pulumi.set(__self__, "file_extension", file_extension)
+        if mime_type is not None:
+            pulumi.set(__self__, "mime_type", mime_type)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
 
     @property
     @pulumi.getter(name="contentUrl")
-    def content_url(self) -> str:
-        """
-        The content URL of the screenshot.
-        """
+    def content_url(self) -> Optional[str]:
         return pulumi.get(self, "content_url")
 
     @property
     @pulumi.getter(name="fileExtension")
-    def file_extension(self) -> str:
-        """
-        The file extension of the screenshot.
-        """
+    def file_extension(self) -> Optional[str]:
         return pulumi.get(self, "file_extension")
 
     @property
     @pulumi.getter(name="mimeType")
-    def mime_type(self) -> str:
-        """
-        The MIME type of the screenshot.
-        """
+    def mime_type(self) -> Optional[str]:
         return pulumi.get(self, "mime_type")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        Text that describes the resource.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
 
 @pulumi.output_type
 class GetListingRegionResult(dict):
     def __init__(__self__, *,
-                 code: str,
-                 countries: Sequence['outputs.GetListingRegionCountryResult'],
-                 name: str):
-        """
-        :param str code: A code assigned to the item.
-        :param Sequence['GetListingRegionCountryArgs'] countries: Countries in the region.
-        :param str name: Text that describes the resource.
-        """
-        pulumi.set(__self__, "code", code)
-        pulumi.set(__self__, "countries", countries)
-        pulumi.set(__self__, "name", name)
+                 code: Optional[str] = None,
+                 countries: Optional[Sequence['outputs.GetListingRegionCountryResult']] = None,
+                 name: Optional[str] = None):
+        if code is not None:
+            pulumi.set(__self__, "code", code)
+        if countries is not None:
+            pulumi.set(__self__, "countries", countries)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
 
     @property
     @pulumi.getter
-    def code(self) -> str:
-        """
-        A code assigned to the item.
-        """
+    def code(self) -> Optional[str]:
         return pulumi.get(self, "code")
 
     @property
     @pulumi.getter
-    def countries(self) -> Sequence['outputs.GetListingRegionCountryResult']:
-        """
-        Countries in the region.
-        """
+    def countries(self) -> Optional[Sequence['outputs.GetListingRegionCountryResult']]:
         return pulumi.get(self, "countries")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        Text that describes the resource.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
 
 @pulumi.output_type
 class GetListingRegionCountryResult(dict):
     def __init__(__self__, *,
-                 code: str,
-                 name: str):
-        """
-        :param str code: A code assigned to the item.
-        :param str name: Text that describes the resource.
-        """
-        pulumi.set(__self__, "code", code)
-        pulumi.set(__self__, "name", name)
+                 code: Optional[str] = None,
+                 name: Optional[str] = None):
+        if code is not None:
+            pulumi.set(__self__, "code", code)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
 
     @property
     @pulumi.getter
-    def code(self) -> str:
-        """
-        A code assigned to the item.
-        """
+    def code(self) -> Optional[str]:
         return pulumi.get(self, "code")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        Text that describes the resource.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
 
 @pulumi.output_type
 class GetListingScreenshotResult(dict):
     def __init__(__self__, *,
-                 content_url: str,
-                 description: str,
-                 file_extension: str,
-                 mime_type: str,
-                 name: str):
-        """
-        :param str content_url: The content URL of the screenshot.
-        :param str description: A description of the screenshot.
-        :param str file_extension: The file extension of the screenshot.
-        :param str mime_type: The MIME type of the screenshot.
-        :param str name: Text that describes the resource.
-        """
-        pulumi.set(__self__, "content_url", content_url)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "file_extension", file_extension)
-        pulumi.set(__self__, "mime_type", mime_type)
-        pulumi.set(__self__, "name", name)
+                 content_url: Optional[str] = None,
+                 description: Optional[str] = None,
+                 file_extension: Optional[str] = None,
+                 mime_type: Optional[str] = None,
+                 name: Optional[str] = None):
+        if content_url is not None:
+            pulumi.set(__self__, "content_url", content_url)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if file_extension is not None:
+            pulumi.set(__self__, "file_extension", file_extension)
+        if mime_type is not None:
+            pulumi.set(__self__, "mime_type", mime_type)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
 
     @property
     @pulumi.getter(name="contentUrl")
-    def content_url(self) -> str:
-        """
-        The content URL of the screenshot.
-        """
+    def content_url(self) -> Optional[str]:
         return pulumi.get(self, "content_url")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        A description of the screenshot.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="fileExtension")
-    def file_extension(self) -> str:
-        """
-        The file extension of the screenshot.
-        """
+    def file_extension(self) -> Optional[str]:
         return pulumi.get(self, "file_extension")
 
     @property
     @pulumi.getter(name="mimeType")
-    def mime_type(self) -> str:
-        """
-        The MIME type of the screenshot.
-        """
+    def mime_type(self) -> Optional[str]:
         return pulumi.get(self, "mime_type")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        Text that describes the resource.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
 
 @pulumi.output_type
 class GetListingSupportContactResult(dict):
     def __init__(__self__, *,
-                 email: str,
-                 name: str,
-                 phone: str,
-                 subject: str):
-        """
-        :param str email: The email of the contact.
-        :param str name: Text that describes the resource.
-        :param str phone: The phone number of the contact.
-        :param str subject: The email subject line to use when contacting support.
-        """
-        pulumi.set(__self__, "email", email)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "phone", phone)
-        pulumi.set(__self__, "subject", subject)
+                 email: Optional[str] = None,
+                 name: Optional[str] = None,
+                 phone: Optional[str] = None,
+                 subject: Optional[str] = None):
+        if email is not None:
+            pulumi.set(__self__, "email", email)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if phone is not None:
+            pulumi.set(__self__, "phone", phone)
+        if subject is not None:
+            pulumi.set(__self__, "subject", subject)
 
     @property
     @pulumi.getter
-    def email(self) -> str:
-        """
-        The email of the contact.
-        """
+    def email(self) -> Optional[str]:
         return pulumi.get(self, "email")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        Text that describes the resource.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
-    def phone(self) -> str:
-        """
-        The phone number of the contact.
-        """
+    def phone(self) -> Optional[str]:
         return pulumi.get(self, "phone")
 
     @property
     @pulumi.getter
-    def subject(self) -> str:
-        """
-        The email subject line to use when contacting support.
-        """
+    def subject(self) -> Optional[str]:
         return pulumi.get(self, "subject")
 
 
 @pulumi.output_type
 class GetListingSupportLinkResult(dict):
     def __init__(__self__, *,
-                 name: str,
-                 url: str):
-        """
-        :param str name: Text that describes the resource.
-        :param str url: The URL of the resource.
-        """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "url", url)
+                 name: Optional[str] = None,
+                 url: Optional[str] = None):
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if url is not None:
+            pulumi.set(__self__, "url", url)
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        Text that describes the resource.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
-    def url(self) -> str:
-        """
-        The URL of the resource.
-        """
+    def url(self) -> Optional[str]:
         return pulumi.get(self, "url")
 
 
 @pulumi.output_type
 class GetListingSupportedOperatingSystemResult(dict):
     def __init__(__self__, *,
-                 name: str):
-        """
-        :param str name: Text that describes the resource.
-        """
-        pulumi.set(__self__, "name", name)
+                 name: Optional[str] = None):
+        if name is not None:
+            pulumi.set(__self__, "name", name)
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        Text that describes the resource.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
 
@@ -1876,9 +1407,6 @@ class GetListingTaxesFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: Name of the tax code.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -1887,9 +1415,6 @@ class GetListingTaxesFilterResult(dict):
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        Name of the tax code.
-        """
         return pulumi.get(self, "name")
 
     @property
@@ -1906,80 +1431,58 @@ class GetListingTaxesFilterResult(dict):
 @pulumi.output_type
 class GetListingTaxesTaxResult(dict):
     def __init__(__self__, *,
-                 code: str,
-                 country: str,
-                 name: str,
-                 url: str):
-        """
-        :param str code: Unique code for the tax.
-        :param str country: Country, which imposes the tax.
-        :param str name: Name of the tax code.
-        :param str url: The URL with more details about this tax.
-        """
-        pulumi.set(__self__, "code", code)
-        pulumi.set(__self__, "country", country)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "url", url)
+                 code: Optional[str] = None,
+                 country: Optional[str] = None,
+                 name: Optional[str] = None,
+                 url: Optional[str] = None):
+        if code is not None:
+            pulumi.set(__self__, "code", code)
+        if country is not None:
+            pulumi.set(__self__, "country", country)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if url is not None:
+            pulumi.set(__self__, "url", url)
 
     @property
     @pulumi.getter
-    def code(self) -> str:
-        """
-        Unique code for the tax.
-        """
+    def code(self) -> Optional[str]:
         return pulumi.get(self, "code")
 
     @property
     @pulumi.getter
-    def country(self) -> str:
-        """
-        Country, which imposes the tax.
-        """
+    def country(self) -> Optional[str]:
         return pulumi.get(self, "country")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        Name of the tax code.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
-    def url(self) -> str:
-        """
-        The URL with more details about this tax.
-        """
+    def url(self) -> Optional[str]:
         return pulumi.get(self, "url")
 
 
 @pulumi.output_type
 class GetListingVideoResult(dict):
     def __init__(__self__, *,
-                 name: str,
-                 url: str):
-        """
-        :param str name: Text that describes the resource.
-        :param str url: The URL of the resource.
-        """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "url", url)
+                 name: Optional[str] = None,
+                 url: Optional[str] = None):
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if url is not None:
+            pulumi.set(__self__, "url", url)
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        Text that describes the resource.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
-    def url(self) -> str:
-        """
-        The URL of the resource.
-        """
+    def url(self) -> Optional[str]:
         return pulumi.get(self, "url")
 
 
@@ -1989,9 +1492,6 @@ class GetListingsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: The name of the listing.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -2000,9 +1500,6 @@ class GetListingsFilterResult(dict):
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        The name of the listing.
-        """
         return pulumi.get(self, "name")
 
     @property
@@ -2019,673 +1516,510 @@ class GetListingsFilterResult(dict):
 @pulumi.output_type
 class GetListingsListingResult(dict):
     def __init__(__self__, *,
-                 banners: Sequence['outputs.GetListingsListingBannerResult'],
-                 categories: Sequence[str],
-                 compatible_architectures: Sequence[str],
-                 default_package_version: str,
-                 documentation_links: Sequence['outputs.GetListingsListingDocumentationLinkResult'],
-                 icons: Sequence['outputs.GetListingsListingIconResult'],
-                 id: str,
-                 is_featured: bool,
-                 listing_type: str,
-                 name: str,
-                 package_type: str,
-                 pricing_types: Sequence[str],
-                 publishers: Sequence['outputs.GetListingsListingPublisherResult'],
-                 regions: Sequence['outputs.GetListingsListingRegionResult'],
-                 short_description: str,
-                 supported_operating_systems: Sequence['outputs.GetListingsListingSupportedOperatingSystemResult']):
-        """
-        :param Sequence['GetListingsListingBannerArgs'] banners: The model for upload data for images and icons.
-        :param Sequence[str] categories: Product categories that the listing belongs to.
-        :param Sequence[str] compatible_architectures: The list of compatible architectures supported by the listing
-        :param str default_package_version: The default package version.
-        :param Sequence['GetListingsListingDocumentationLinkArgs'] documentation_links: Links to additional documentation provided by the publisher specifically for the listing.
-        :param Sequence['GetListingsListingIconArgs'] icons: The model for upload data for images and icons.
-        :param str id: The unique identifier for the publisher.
-        :param bool is_featured: Indicates whether to show only featured listings. If this is set to `false` or is omitted, then all listings will be returned.
-        :param str listing_type: The publisher category to which the listing belongs. The publisher category informs where the listing appears for use.
-        :param str name: The name of the listing.
-        :param str package_type: A filter to return only packages that match the given package type exactly.
-        :param Sequence['GetListingsListingPublisherArgs'] publishers: Summary details about the publisher of the listing.
-        :param Sequence['GetListingsListingRegionArgs'] regions: The regions where the listing is eligible to be deployed.
-        :param str short_description: A short description of the listing.
-        :param Sequence['GetListingsListingSupportedOperatingSystemArgs'] supported_operating_systems: The list of operating systems supported by the listing.
-        """
-        pulumi.set(__self__, "banners", banners)
-        pulumi.set(__self__, "categories", categories)
-        pulumi.set(__self__, "compatible_architectures", compatible_architectures)
-        pulumi.set(__self__, "default_package_version", default_package_version)
-        pulumi.set(__self__, "documentation_links", documentation_links)
-        pulumi.set(__self__, "icons", icons)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "is_featured", is_featured)
-        pulumi.set(__self__, "listing_type", listing_type)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "package_type", package_type)
-        pulumi.set(__self__, "pricing_types", pricing_types)
-        pulumi.set(__self__, "publishers", publishers)
-        pulumi.set(__self__, "regions", regions)
-        pulumi.set(__self__, "short_description", short_description)
-        pulumi.set(__self__, "supported_operating_systems", supported_operating_systems)
+                 banners: Optional[Sequence['outputs.GetListingsListingBannerResult']] = None,
+                 categories: Optional[Sequence[str]] = None,
+                 compatible_architectures: Optional[Sequence[str]] = None,
+                 default_package_version: Optional[str] = None,
+                 documentation_links: Optional[Sequence['outputs.GetListingsListingDocumentationLinkResult']] = None,
+                 icons: Optional[Sequence['outputs.GetListingsListingIconResult']] = None,
+                 id: Optional[str] = None,
+                 is_featured: Optional[bool] = None,
+                 listing_type: Optional[str] = None,
+                 name: Optional[str] = None,
+                 package_type: Optional[str] = None,
+                 pricing_types: Optional[Sequence[str]] = None,
+                 publishers: Optional[Sequence['outputs.GetListingsListingPublisherResult']] = None,
+                 regions: Optional[Sequence['outputs.GetListingsListingRegionResult']] = None,
+                 short_description: Optional[str] = None,
+                 supported_operating_systems: Optional[Sequence['outputs.GetListingsListingSupportedOperatingSystemResult']] = None):
+        if banners is not None:
+            pulumi.set(__self__, "banners", banners)
+        if categories is not None:
+            pulumi.set(__self__, "categories", categories)
+        if compatible_architectures is not None:
+            pulumi.set(__self__, "compatible_architectures", compatible_architectures)
+        if default_package_version is not None:
+            pulumi.set(__self__, "default_package_version", default_package_version)
+        if documentation_links is not None:
+            pulumi.set(__self__, "documentation_links", documentation_links)
+        if icons is not None:
+            pulumi.set(__self__, "icons", icons)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if is_featured is not None:
+            pulumi.set(__self__, "is_featured", is_featured)
+        if listing_type is not None:
+            pulumi.set(__self__, "listing_type", listing_type)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if package_type is not None:
+            pulumi.set(__self__, "package_type", package_type)
+        if pricing_types is not None:
+            pulumi.set(__self__, "pricing_types", pricing_types)
+        if publishers is not None:
+            pulumi.set(__self__, "publishers", publishers)
+        if regions is not None:
+            pulumi.set(__self__, "regions", regions)
+        if short_description is not None:
+            pulumi.set(__self__, "short_description", short_description)
+        if supported_operating_systems is not None:
+            pulumi.set(__self__, "supported_operating_systems", supported_operating_systems)
 
     @property
     @pulumi.getter
-    def banners(self) -> Sequence['outputs.GetListingsListingBannerResult']:
-        """
-        The model for upload data for images and icons.
-        """
+    def banners(self) -> Optional[Sequence['outputs.GetListingsListingBannerResult']]:
         return pulumi.get(self, "banners")
 
     @property
     @pulumi.getter
-    def categories(self) -> Sequence[str]:
-        """
-        Product categories that the listing belongs to.
-        """
+    def categories(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "categories")
 
     @property
     @pulumi.getter(name="compatibleArchitectures")
-    def compatible_architectures(self) -> Sequence[str]:
-        """
-        The list of compatible architectures supported by the listing
-        """
+    def compatible_architectures(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "compatible_architectures")
 
     @property
     @pulumi.getter(name="defaultPackageVersion")
-    def default_package_version(self) -> str:
-        """
-        The default package version.
-        """
+    def default_package_version(self) -> Optional[str]:
         return pulumi.get(self, "default_package_version")
 
     @property
     @pulumi.getter(name="documentationLinks")
-    def documentation_links(self) -> Sequence['outputs.GetListingsListingDocumentationLinkResult']:
-        """
-        Links to additional documentation provided by the publisher specifically for the listing.
-        """
+    def documentation_links(self) -> Optional[Sequence['outputs.GetListingsListingDocumentationLinkResult']]:
         return pulumi.get(self, "documentation_links")
 
     @property
     @pulumi.getter
-    def icons(self) -> Sequence['outputs.GetListingsListingIconResult']:
-        """
-        The model for upload data for images and icons.
-        """
+    def icons(self) -> Optional[Sequence['outputs.GetListingsListingIconResult']]:
         return pulumi.get(self, "icons")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The unique identifier for the publisher.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="isFeatured")
-    def is_featured(self) -> bool:
-        """
-        Indicates whether to show only featured listings. If this is set to `false` or is omitted, then all listings will be returned.
-        """
+    def is_featured(self) -> Optional[bool]:
         return pulumi.get(self, "is_featured")
 
     @property
     @pulumi.getter(name="listingType")
-    def listing_type(self) -> str:
-        """
-        The publisher category to which the listing belongs. The publisher category informs where the listing appears for use.
-        """
+    def listing_type(self) -> Optional[str]:
         return pulumi.get(self, "listing_type")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        The name of the listing.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="packageType")
-    def package_type(self) -> str:
-        """
-        A filter to return only packages that match the given package type exactly.
-        """
+    def package_type(self) -> Optional[str]:
         return pulumi.get(self, "package_type")
 
     @property
     @pulumi.getter(name="pricingTypes")
-    def pricing_types(self) -> Sequence[str]:
+    def pricing_types(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "pricing_types")
 
     @property
     @pulumi.getter
-    def publishers(self) -> Sequence['outputs.GetListingsListingPublisherResult']:
-        """
-        Summary details about the publisher of the listing.
-        """
+    def publishers(self) -> Optional[Sequence['outputs.GetListingsListingPublisherResult']]:
         return pulumi.get(self, "publishers")
 
     @property
     @pulumi.getter
-    def regions(self) -> Sequence['outputs.GetListingsListingRegionResult']:
-        """
-        The regions where the listing is eligible to be deployed.
-        """
+    def regions(self) -> Optional[Sequence['outputs.GetListingsListingRegionResult']]:
         return pulumi.get(self, "regions")
 
     @property
     @pulumi.getter(name="shortDescription")
-    def short_description(self) -> str:
-        """
-        A short description of the listing.
-        """
+    def short_description(self) -> Optional[str]:
         return pulumi.get(self, "short_description")
 
     @property
     @pulumi.getter(name="supportedOperatingSystems")
-    def supported_operating_systems(self) -> Sequence['outputs.GetListingsListingSupportedOperatingSystemResult']:
-        """
-        The list of operating systems supported by the listing.
-        """
+    def supported_operating_systems(self) -> Optional[Sequence['outputs.GetListingsListingSupportedOperatingSystemResult']]:
         return pulumi.get(self, "supported_operating_systems")
 
 
 @pulumi.output_type
 class GetListingsListingBannerResult(dict):
     def __init__(__self__, *,
-                 content_url: str,
-                 file_extension: str,
-                 mime_type: str,
-                 name: str):
-        """
-        :param str content_url: The content URL of the screenshot.
-        :param str file_extension: The file extension of the screenshot.
-        :param str mime_type: The MIME type of the screenshot.
-        :param str name: The name of the listing.
-        """
-        pulumi.set(__self__, "content_url", content_url)
-        pulumi.set(__self__, "file_extension", file_extension)
-        pulumi.set(__self__, "mime_type", mime_type)
-        pulumi.set(__self__, "name", name)
+                 content_url: Optional[str] = None,
+                 file_extension: Optional[str] = None,
+                 mime_type: Optional[str] = None,
+                 name: Optional[str] = None):
+        if content_url is not None:
+            pulumi.set(__self__, "content_url", content_url)
+        if file_extension is not None:
+            pulumi.set(__self__, "file_extension", file_extension)
+        if mime_type is not None:
+            pulumi.set(__self__, "mime_type", mime_type)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
 
     @property
     @pulumi.getter(name="contentUrl")
-    def content_url(self) -> str:
-        """
-        The content URL of the screenshot.
-        """
+    def content_url(self) -> Optional[str]:
         return pulumi.get(self, "content_url")
 
     @property
     @pulumi.getter(name="fileExtension")
-    def file_extension(self) -> str:
-        """
-        The file extension of the screenshot.
-        """
+    def file_extension(self) -> Optional[str]:
         return pulumi.get(self, "file_extension")
 
     @property
     @pulumi.getter(name="mimeType")
-    def mime_type(self) -> str:
-        """
-        The MIME type of the screenshot.
-        """
+    def mime_type(self) -> Optional[str]:
         return pulumi.get(self, "mime_type")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        The name of the listing.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
 
 @pulumi.output_type
 class GetListingsListingDocumentationLinkResult(dict):
     def __init__(__self__, *,
-                 document_category: str,
-                 name: str,
-                 url: str):
-        """
-        :param str document_category: The category that the document belongs to.
-        :param str name: The name of the listing.
-        :param str url: The URL of the resource.
-        """
-        pulumi.set(__self__, "document_category", document_category)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "url", url)
+                 document_category: Optional[str] = None,
+                 name: Optional[str] = None,
+                 url: Optional[str] = None):
+        if document_category is not None:
+            pulumi.set(__self__, "document_category", document_category)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if url is not None:
+            pulumi.set(__self__, "url", url)
 
     @property
     @pulumi.getter(name="documentCategory")
-    def document_category(self) -> str:
-        """
-        The category that the document belongs to.
-        """
+    def document_category(self) -> Optional[str]:
         return pulumi.get(self, "document_category")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        The name of the listing.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
-    def url(self) -> str:
-        """
-        The URL of the resource.
-        """
+    def url(self) -> Optional[str]:
         return pulumi.get(self, "url")
 
 
 @pulumi.output_type
 class GetListingsListingIconResult(dict):
     def __init__(__self__, *,
-                 content_url: str,
-                 file_extension: str,
-                 mime_type: str,
-                 name: str):
-        """
-        :param str content_url: The content URL of the screenshot.
-        :param str file_extension: The file extension of the screenshot.
-        :param str mime_type: The MIME type of the screenshot.
-        :param str name: The name of the listing.
-        """
-        pulumi.set(__self__, "content_url", content_url)
-        pulumi.set(__self__, "file_extension", file_extension)
-        pulumi.set(__self__, "mime_type", mime_type)
-        pulumi.set(__self__, "name", name)
+                 content_url: Optional[str] = None,
+                 file_extension: Optional[str] = None,
+                 mime_type: Optional[str] = None,
+                 name: Optional[str] = None):
+        if content_url is not None:
+            pulumi.set(__self__, "content_url", content_url)
+        if file_extension is not None:
+            pulumi.set(__self__, "file_extension", file_extension)
+        if mime_type is not None:
+            pulumi.set(__self__, "mime_type", mime_type)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
 
     @property
     @pulumi.getter(name="contentUrl")
-    def content_url(self) -> str:
-        """
-        The content URL of the screenshot.
-        """
+    def content_url(self) -> Optional[str]:
         return pulumi.get(self, "content_url")
 
     @property
     @pulumi.getter(name="fileExtension")
-    def file_extension(self) -> str:
-        """
-        The file extension of the screenshot.
-        """
+    def file_extension(self) -> Optional[str]:
         return pulumi.get(self, "file_extension")
 
     @property
     @pulumi.getter(name="mimeType")
-    def mime_type(self) -> str:
-        """
-        The MIME type of the screenshot.
-        """
+    def mime_type(self) -> Optional[str]:
         return pulumi.get(self, "mime_type")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        The name of the listing.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
 
 @pulumi.output_type
 class GetListingsListingPublisherResult(dict):
     def __init__(__self__, *,
-                 description: str,
-                 id: str,
-                 name: str):
-        """
-        :param str description: A description of the screenshot.
-        :param str id: The unique identifier for the publisher.
-        :param str name: The name of the listing.
-        """
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "name", name)
+                 description: Optional[str] = None,
+                 id: Optional[str] = None,
+                 name: Optional[str] = None):
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        A description of the screenshot.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The unique identifier for the publisher.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        The name of the listing.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
 
 @pulumi.output_type
 class GetListingsListingRegionResult(dict):
     def __init__(__self__, *,
-                 code: str,
-                 countries: Sequence['outputs.GetListingsListingRegionCountryResult'],
-                 name: str):
-        """
-        :param str code: A code assigned to the item.
-        :param Sequence['GetListingsListingRegionCountryArgs'] countries: Countries in the region.
-        :param str name: The name of the listing.
-        """
-        pulumi.set(__self__, "code", code)
-        pulumi.set(__self__, "countries", countries)
-        pulumi.set(__self__, "name", name)
+                 code: Optional[str] = None,
+                 countries: Optional[Sequence['outputs.GetListingsListingRegionCountryResult']] = None,
+                 name: Optional[str] = None):
+        if code is not None:
+            pulumi.set(__self__, "code", code)
+        if countries is not None:
+            pulumi.set(__self__, "countries", countries)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
 
     @property
     @pulumi.getter
-    def code(self) -> str:
-        """
-        A code assigned to the item.
-        """
+    def code(self) -> Optional[str]:
         return pulumi.get(self, "code")
 
     @property
     @pulumi.getter
-    def countries(self) -> Sequence['outputs.GetListingsListingRegionCountryResult']:
-        """
-        Countries in the region.
-        """
+    def countries(self) -> Optional[Sequence['outputs.GetListingsListingRegionCountryResult']]:
         return pulumi.get(self, "countries")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        The name of the listing.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
 
 @pulumi.output_type
 class GetListingsListingRegionCountryResult(dict):
     def __init__(__self__, *,
-                 code: str,
-                 name: str):
-        """
-        :param str code: A code assigned to the item.
-        :param str name: The name of the listing.
-        """
-        pulumi.set(__self__, "code", code)
-        pulumi.set(__self__, "name", name)
+                 code: Optional[str] = None,
+                 name: Optional[str] = None):
+        if code is not None:
+            pulumi.set(__self__, "code", code)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
 
     @property
     @pulumi.getter
-    def code(self) -> str:
-        """
-        A code assigned to the item.
-        """
+    def code(self) -> Optional[str]:
         return pulumi.get(self, "code")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        The name of the listing.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
 
 @pulumi.output_type
 class GetListingsListingSupportedOperatingSystemResult(dict):
     def __init__(__self__, *,
-                 name: str):
-        """
-        :param str name: The name of the listing.
-        """
-        pulumi.set(__self__, "name", name)
+                 name: Optional[str] = None):
+        if name is not None:
+            pulumi.set(__self__, "name", name)
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        The name of the listing.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
 
 @pulumi.output_type
 class GetPublicationIconResult(dict):
     def __init__(__self__, *,
-                 content_url: str,
-                 file_extension: str,
-                 mime_type: str,
-                 name: str):
-        """
-        :param str content_url: The content URL of the upload data.
-        :param str file_extension: The file extension of the upload data.
-        :param str mime_type: The MIME type of the upload data.
-        :param str name: The name of the operating system.
-        """
-        pulumi.set(__self__, "content_url", content_url)
-        pulumi.set(__self__, "file_extension", file_extension)
-        pulumi.set(__self__, "mime_type", mime_type)
-        pulumi.set(__self__, "name", name)
+                 content_url: Optional[str] = None,
+                 file_extension: Optional[str] = None,
+                 mime_type: Optional[str] = None,
+                 name: Optional[str] = None):
+        if content_url is not None:
+            pulumi.set(__self__, "content_url", content_url)
+        if file_extension is not None:
+            pulumi.set(__self__, "file_extension", file_extension)
+        if mime_type is not None:
+            pulumi.set(__self__, "mime_type", mime_type)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
 
     @property
     @pulumi.getter(name="contentUrl")
-    def content_url(self) -> str:
-        """
-        The content URL of the upload data.
-        """
+    def content_url(self) -> Optional[str]:
         return pulumi.get(self, "content_url")
 
     @property
     @pulumi.getter(name="fileExtension")
-    def file_extension(self) -> str:
-        """
-        The file extension of the upload data.
-        """
+    def file_extension(self) -> Optional[str]:
         return pulumi.get(self, "file_extension")
 
     @property
     @pulumi.getter(name="mimeType")
-    def mime_type(self) -> str:
-        """
-        The MIME type of the upload data.
-        """
+    def mime_type(self) -> Optional[str]:
         return pulumi.get(self, "mime_type")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        The name of the operating system.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
 
 @pulumi.output_type
 class GetPublicationPackageDetailResult(dict):
     def __init__(__self__, *,
-                 eulas: Sequence['outputs.GetPublicationPackageDetailEulaResult'],
-                 image_id: str,
-                 operating_systems: Sequence['outputs.GetPublicationPackageDetailOperatingSystemResult'],
-                 package_type: str,
-                 package_version: str):
-        """
-        :param str package_type: The listing's package type.
-        """
-        pulumi.set(__self__, "eulas", eulas)
-        pulumi.set(__self__, "image_id", image_id)
-        pulumi.set(__self__, "operating_systems", operating_systems)
-        pulumi.set(__self__, "package_type", package_type)
-        pulumi.set(__self__, "package_version", package_version)
+                 eulas: Optional[Sequence['outputs.GetPublicationPackageDetailEulaResult']] = None,
+                 image_id: Optional[str] = None,
+                 operating_systems: Optional[Sequence['outputs.GetPublicationPackageDetailOperatingSystemResult']] = None,
+                 package_type: Optional[str] = None,
+                 package_version: Optional[str] = None):
+        if eulas is not None:
+            pulumi.set(__self__, "eulas", eulas)
+        if image_id is not None:
+            pulumi.set(__self__, "image_id", image_id)
+        if operating_systems is not None:
+            pulumi.set(__self__, "operating_systems", operating_systems)
+        if package_type is not None:
+            pulumi.set(__self__, "package_type", package_type)
+        if package_version is not None:
+            pulumi.set(__self__, "package_version", package_version)
 
     @property
     @pulumi.getter
-    def eulas(self) -> Sequence['outputs.GetPublicationPackageDetailEulaResult']:
+    def eulas(self) -> Optional[Sequence['outputs.GetPublicationPackageDetailEulaResult']]:
         return pulumi.get(self, "eulas")
 
     @property
     @pulumi.getter(name="imageId")
-    def image_id(self) -> str:
+    def image_id(self) -> Optional[str]:
         return pulumi.get(self, "image_id")
 
     @property
     @pulumi.getter(name="operatingSystems")
-    def operating_systems(self) -> Sequence['outputs.GetPublicationPackageDetailOperatingSystemResult']:
+    def operating_systems(self) -> Optional[Sequence['outputs.GetPublicationPackageDetailOperatingSystemResult']]:
         return pulumi.get(self, "operating_systems")
 
     @property
     @pulumi.getter(name="packageType")
-    def package_type(self) -> str:
-        """
-        The listing's package type.
-        """
+    def package_type(self) -> Optional[str]:
         return pulumi.get(self, "package_type")
 
     @property
     @pulumi.getter(name="packageVersion")
-    def package_version(self) -> str:
+    def package_version(self) -> Optional[str]:
         return pulumi.get(self, "package_version")
 
 
 @pulumi.output_type
 class GetPublicationPackageDetailEulaResult(dict):
     def __init__(__self__, *,
-                 eula_type: str,
-                 license_text: str):
-        pulumi.set(__self__, "eula_type", eula_type)
-        pulumi.set(__self__, "license_text", license_text)
+                 eula_type: Optional[str] = None,
+                 license_text: Optional[str] = None):
+        if eula_type is not None:
+            pulumi.set(__self__, "eula_type", eula_type)
+        if license_text is not None:
+            pulumi.set(__self__, "license_text", license_text)
 
     @property
     @pulumi.getter(name="eulaType")
-    def eula_type(self) -> str:
+    def eula_type(self) -> Optional[str]:
         return pulumi.get(self, "eula_type")
 
     @property
     @pulumi.getter(name="licenseText")
-    def license_text(self) -> str:
+    def license_text(self) -> Optional[str]:
         return pulumi.get(self, "license_text")
 
 
 @pulumi.output_type
 class GetPublicationPackageDetailOperatingSystemResult(dict):
     def __init__(__self__, *,
-                 name: str):
-        """
-        :param str name: The name of the operating system.
-        """
-        pulumi.set(__self__, "name", name)
+                 name: Optional[str] = None):
+        if name is not None:
+            pulumi.set(__self__, "name", name)
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        The name of the operating system.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
 
 @pulumi.output_type
 class GetPublicationPackageOperatingSystemResult(dict):
     def __init__(__self__, *,
-                 name: str):
-        """
-        :param str name: The name of the variable.
-        """
-        pulumi.set(__self__, "name", name)
+                 name: Optional[str] = None):
+        if name is not None:
+            pulumi.set(__self__, "name", name)
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        The name of the variable.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
 
 @pulumi.output_type
 class GetPublicationPackageVariableResult(dict):
     def __init__(__self__, *,
-                 data_type: str,
-                 default_value: str,
-                 description: str,
-                 hint_message: str,
-                 is_mandatory: bool,
-                 name: str):
-        """
-        :param str data_type: The data type of the variable.
-        :param str default_value: The variable's default value.
-        :param str description: A description of the variable.
-        :param str hint_message: A brief textual description that helps to explain the variable.
-        :param bool is_mandatory: Whether the variable is mandatory.
-        :param str name: The name of the variable.
-        """
-        pulumi.set(__self__, "data_type", data_type)
-        pulumi.set(__self__, "default_value", default_value)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "hint_message", hint_message)
-        pulumi.set(__self__, "is_mandatory", is_mandatory)
-        pulumi.set(__self__, "name", name)
+                 data_type: Optional[str] = None,
+                 default_value: Optional[str] = None,
+                 description: Optional[str] = None,
+                 hint_message: Optional[str] = None,
+                 is_mandatory: Optional[bool] = None,
+                 name: Optional[str] = None):
+        if data_type is not None:
+            pulumi.set(__self__, "data_type", data_type)
+        if default_value is not None:
+            pulumi.set(__self__, "default_value", default_value)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if hint_message is not None:
+            pulumi.set(__self__, "hint_message", hint_message)
+        if is_mandatory is not None:
+            pulumi.set(__self__, "is_mandatory", is_mandatory)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
 
     @property
     @pulumi.getter(name="dataType")
-    def data_type(self) -> str:
-        """
-        The data type of the variable.
-        """
+    def data_type(self) -> Optional[str]:
         return pulumi.get(self, "data_type")
 
     @property
     @pulumi.getter(name="defaultValue")
-    def default_value(self) -> str:
-        """
-        The variable's default value.
-        """
+    def default_value(self) -> Optional[str]:
         return pulumi.get(self, "default_value")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        A description of the variable.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="hintMessage")
-    def hint_message(self) -> str:
-        """
-        A brief textual description that helps to explain the variable.
-        """
+    def hint_message(self) -> Optional[str]:
         return pulumi.get(self, "hint_message")
 
     @property
     @pulumi.getter(name="isMandatory")
-    def is_mandatory(self) -> bool:
-        """
-        Whether the variable is mandatory.
-        """
+    def is_mandatory(self) -> Optional[bool]:
         return pulumi.get(self, "is_mandatory")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        The name of the variable.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
 
@@ -2695,9 +2029,6 @@ class GetPublicationPackagesFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: The name of the variable.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -2706,9 +2037,6 @@ class GetPublicationPackagesFilterResult(dict):
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        The name of the variable.
-        """
         return pulumi.get(self, "name")
 
     @property
@@ -2725,131 +2053,95 @@ class GetPublicationPackagesFilterResult(dict):
 @pulumi.output_type
 class GetPublicationPackagesPublicationPackageResult(dict):
     def __init__(__self__, *,
-                 listing_id: str,
-                 package_type: str,
-                 package_version: str,
-                 resource_id: str,
-                 time_created: str):
-        """
-        :param str listing_id: The ID of the listing that the specified package belongs to.
-        :param str package_type: A filter to return only packages that match the given package type exactly.
-        :param str package_version: The version of the package. Package versions are unique within a listing.
-        :param str resource_id: The unique identifier for the package resource.
-        :param str time_created: The date and time the publication package was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
-        """
-        pulumi.set(__self__, "listing_id", listing_id)
-        pulumi.set(__self__, "package_type", package_type)
-        pulumi.set(__self__, "package_version", package_version)
-        pulumi.set(__self__, "resource_id", resource_id)
-        pulumi.set(__self__, "time_created", time_created)
+                 listing_id: Optional[str] = None,
+                 package_type: Optional[str] = None,
+                 package_version: Optional[str] = None,
+                 resource_id: Optional[str] = None,
+                 time_created: Optional[str] = None):
+        if listing_id is not None:
+            pulumi.set(__self__, "listing_id", listing_id)
+        if package_type is not None:
+            pulumi.set(__self__, "package_type", package_type)
+        if package_version is not None:
+            pulumi.set(__self__, "package_version", package_version)
+        if resource_id is not None:
+            pulumi.set(__self__, "resource_id", resource_id)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
 
     @property
     @pulumi.getter(name="listingId")
-    def listing_id(self) -> str:
-        """
-        The ID of the listing that the specified package belongs to.
-        """
+    def listing_id(self) -> Optional[str]:
         return pulumi.get(self, "listing_id")
 
     @property
     @pulumi.getter(name="packageType")
-    def package_type(self) -> str:
-        """
-        A filter to return only packages that match the given package type exactly.
-        """
+    def package_type(self) -> Optional[str]:
         return pulumi.get(self, "package_type")
 
     @property
     @pulumi.getter(name="packageVersion")
-    def package_version(self) -> str:
-        """
-        The version of the package. Package versions are unique within a listing.
-        """
+    def package_version(self) -> Optional[str]:
         return pulumi.get(self, "package_version")
 
     @property
     @pulumi.getter(name="resourceId")
-    def resource_id(self) -> str:
-        """
-        The unique identifier for the package resource.
-        """
+    def resource_id(self) -> Optional[str]:
         return pulumi.get(self, "resource_id")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the publication package was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
 
 @pulumi.output_type
 class GetPublicationSupportContactResult(dict):
     def __init__(__self__, *,
-                 email: str,
-                 name: str,
-                 phone: str,
-                 subject: str):
-        """
-        :param str email: The email of the contact.
-        :param str name: The name of the operating system.
-        :param str phone: The phone number of the contact.
-        :param str subject: The email subject line to use when contacting support.
-        """
-        pulumi.set(__self__, "email", email)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "phone", phone)
-        pulumi.set(__self__, "subject", subject)
+                 email: Optional[str] = None,
+                 name: Optional[str] = None,
+                 phone: Optional[str] = None,
+                 subject: Optional[str] = None):
+        if email is not None:
+            pulumi.set(__self__, "email", email)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if phone is not None:
+            pulumi.set(__self__, "phone", phone)
+        if subject is not None:
+            pulumi.set(__self__, "subject", subject)
 
     @property
     @pulumi.getter
-    def email(self) -> str:
-        """
-        The email of the contact.
-        """
+    def email(self) -> Optional[str]:
         return pulumi.get(self, "email")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        The name of the operating system.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
-    def phone(self) -> str:
-        """
-        The phone number of the contact.
-        """
+    def phone(self) -> Optional[str]:
         return pulumi.get(self, "phone")
 
     @property
     @pulumi.getter
-    def subject(self) -> str:
-        """
-        The email subject line to use when contacting support.
-        """
+    def subject(self) -> Optional[str]:
         return pulumi.get(self, "subject")
 
 
 @pulumi.output_type
 class GetPublicationSupportedOperatingSystemResult(dict):
     def __init__(__self__, *,
-                 name: str):
-        """
-        :param str name: The name of the operating system.
-        """
-        pulumi.set(__self__, "name", name)
+                 name: Optional[str] = None):
+        if name is not None:
+            pulumi.set(__self__, "name", name)
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        The name of the operating system.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
 
@@ -2859,9 +2151,6 @@ class GetPublicationsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: The name of the publication.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -2870,9 +2159,6 @@ class GetPublicationsFilterResult(dict):
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        The name of the publication.
-        """
         return pulumi.get(self, "name")
 
     @property
@@ -2889,378 +2175,299 @@ class GetPublicationsFilterResult(dict):
 @pulumi.output_type
 class GetPublicationsPublicationResult(dict):
     def __init__(__self__, *,
-                 compartment_id: str,
-                 defined_tags: Mapping[str, Any],
-                 freeform_tags: Mapping[str, Any],
-                 icons: Sequence['outputs.GetPublicationsPublicationIconResult'],
-                 id: str,
-                 is_agreement_acknowledged: bool,
-                 listing_type: str,
-                 long_description: str,
-                 name: str,
-                 package_details: Sequence['outputs.GetPublicationsPublicationPackageDetailResult'],
-                 package_type: str,
-                 short_description: str,
-                 state: str,
-                 support_contacts: Sequence['outputs.GetPublicationsPublicationSupportContactResult'],
-                 supported_operating_systems: Sequence['outputs.GetPublicationsPublicationSupportedOperatingSystemResult'],
-                 time_created: str):
-        """
-        :param str compartment_id: The unique identifier for the compartment.
-        :param Mapping[str, Any] defined_tags: The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param Mapping[str, Any] freeform_tags: The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param Sequence['GetPublicationsPublicationIconArgs'] icons: The model for upload data for images and icons.
-        :param str id: The unique identifier for the publication in Marketplace.
-        :param str listing_type: The type of the listing.
-        :param str long_description: A long description of the publication to use in the listing.
-        :param str name: The name of the publication.
-        :param str package_type: The listing's package type.
-        :param str short_description: A short description of the publication to use in the listing.
-        :param str state: The lifecycle state of the publication.
-        :param Sequence['GetPublicationsPublicationSupportContactArgs'] support_contacts: Contact information for getting support from the publisher for the listing.
-        :param Sequence['GetPublicationsPublicationSupportedOperatingSystemArgs'] supported_operating_systems: The list of operating systems supported by the listing.
-        :param str time_created: The date and time the publication was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
-        """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "icons", icons)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "is_agreement_acknowledged", is_agreement_acknowledged)
-        pulumi.set(__self__, "listing_type", listing_type)
-        pulumi.set(__self__, "long_description", long_description)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "package_details", package_details)
-        pulumi.set(__self__, "package_type", package_type)
-        pulumi.set(__self__, "short_description", short_description)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "support_contacts", support_contacts)
-        pulumi.set(__self__, "supported_operating_systems", supported_operating_systems)
-        pulumi.set(__self__, "time_created", time_created)
+                 compartment_id: Optional[str] = None,
+                 defined_tags: Optional[Mapping[str, Any]] = None,
+                 freeform_tags: Optional[Mapping[str, Any]] = None,
+                 icons: Optional[Sequence['outputs.GetPublicationsPublicationIconResult']] = None,
+                 id: Optional[str] = None,
+                 is_agreement_acknowledged: Optional[bool] = None,
+                 listing_type: Optional[str] = None,
+                 long_description: Optional[str] = None,
+                 name: Optional[str] = None,
+                 package_details: Optional[Sequence['outputs.GetPublicationsPublicationPackageDetailResult']] = None,
+                 package_type: Optional[str] = None,
+                 short_description: Optional[str] = None,
+                 state: Optional[str] = None,
+                 support_contacts: Optional[Sequence['outputs.GetPublicationsPublicationSupportContactResult']] = None,
+                 supported_operating_systems: Optional[Sequence['outputs.GetPublicationsPublicationSupportedOperatingSystemResult']] = None,
+                 time_created: Optional[str] = None):
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if icons is not None:
+            pulumi.set(__self__, "icons", icons)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if is_agreement_acknowledged is not None:
+            pulumi.set(__self__, "is_agreement_acknowledged", is_agreement_acknowledged)
+        if listing_type is not None:
+            pulumi.set(__self__, "listing_type", listing_type)
+        if long_description is not None:
+            pulumi.set(__self__, "long_description", long_description)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if package_details is not None:
+            pulumi.set(__self__, "package_details", package_details)
+        if package_type is not None:
+            pulumi.set(__self__, "package_type", package_type)
+        if short_description is not None:
+            pulumi.set(__self__, "short_description", short_description)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if support_contacts is not None:
+            pulumi.set(__self__, "support_contacts", support_contacts)
+        if supported_operating_systems is not None:
+            pulumi.set(__self__, "supported_operating_systems", supported_operating_systems)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The unique identifier for the compartment.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def icons(self) -> Sequence['outputs.GetPublicationsPublicationIconResult']:
-        """
-        The model for upload data for images and icons.
-        """
+    def icons(self) -> Optional[Sequence['outputs.GetPublicationsPublicationIconResult']]:
         return pulumi.get(self, "icons")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The unique identifier for the publication in Marketplace.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="isAgreementAcknowledged")
-    def is_agreement_acknowledged(self) -> bool:
+    def is_agreement_acknowledged(self) -> Optional[bool]:
         return pulumi.get(self, "is_agreement_acknowledged")
 
     @property
     @pulumi.getter(name="listingType")
-    def listing_type(self) -> str:
-        """
-        The type of the listing.
-        """
+    def listing_type(self) -> Optional[str]:
         return pulumi.get(self, "listing_type")
 
     @property
     @pulumi.getter(name="longDescription")
-    def long_description(self) -> str:
-        """
-        A long description of the publication to use in the listing.
-        """
+    def long_description(self) -> Optional[str]:
         return pulumi.get(self, "long_description")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        The name of the publication.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="packageDetails")
-    def package_details(self) -> Sequence['outputs.GetPublicationsPublicationPackageDetailResult']:
+    def package_details(self) -> Optional[Sequence['outputs.GetPublicationsPublicationPackageDetailResult']]:
         return pulumi.get(self, "package_details")
 
     @property
     @pulumi.getter(name="packageType")
-    def package_type(self) -> str:
-        """
-        The listing's package type.
-        """
+    def package_type(self) -> Optional[str]:
         return pulumi.get(self, "package_type")
 
     @property
     @pulumi.getter(name="shortDescription")
-    def short_description(self) -> str:
-        """
-        A short description of the publication to use in the listing.
-        """
+    def short_description(self) -> Optional[str]:
         return pulumi.get(self, "short_description")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The lifecycle state of the publication.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="supportContacts")
-    def support_contacts(self) -> Sequence['outputs.GetPublicationsPublicationSupportContactResult']:
-        """
-        Contact information for getting support from the publisher for the listing.
-        """
+    def support_contacts(self) -> Optional[Sequence['outputs.GetPublicationsPublicationSupportContactResult']]:
         return pulumi.get(self, "support_contacts")
 
     @property
     @pulumi.getter(name="supportedOperatingSystems")
-    def supported_operating_systems(self) -> Sequence['outputs.GetPublicationsPublicationSupportedOperatingSystemResult']:
-        """
-        The list of operating systems supported by the listing.
-        """
+    def supported_operating_systems(self) -> Optional[Sequence['outputs.GetPublicationsPublicationSupportedOperatingSystemResult']]:
         return pulumi.get(self, "supported_operating_systems")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the publication was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
 
 @pulumi.output_type
 class GetPublicationsPublicationIconResult(dict):
     def __init__(__self__, *,
-                 content_url: str,
-                 file_extension: str,
-                 mime_type: str,
-                 name: str):
-        """
-        :param str content_url: The content URL of the upload data.
-        :param str file_extension: The file extension of the upload data.
-        :param str mime_type: The MIME type of the upload data.
-        :param str name: The name of the publication.
-        """
-        pulumi.set(__self__, "content_url", content_url)
-        pulumi.set(__self__, "file_extension", file_extension)
-        pulumi.set(__self__, "mime_type", mime_type)
-        pulumi.set(__self__, "name", name)
+                 content_url: Optional[str] = None,
+                 file_extension: Optional[str] = None,
+                 mime_type: Optional[str] = None,
+                 name: Optional[str] = None):
+        if content_url is not None:
+            pulumi.set(__self__, "content_url", content_url)
+        if file_extension is not None:
+            pulumi.set(__self__, "file_extension", file_extension)
+        if mime_type is not None:
+            pulumi.set(__self__, "mime_type", mime_type)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
 
     @property
     @pulumi.getter(name="contentUrl")
-    def content_url(self) -> str:
-        """
-        The content URL of the upload data.
-        """
+    def content_url(self) -> Optional[str]:
         return pulumi.get(self, "content_url")
 
     @property
     @pulumi.getter(name="fileExtension")
-    def file_extension(self) -> str:
-        """
-        The file extension of the upload data.
-        """
+    def file_extension(self) -> Optional[str]:
         return pulumi.get(self, "file_extension")
 
     @property
     @pulumi.getter(name="mimeType")
-    def mime_type(self) -> str:
-        """
-        The MIME type of the upload data.
-        """
+    def mime_type(self) -> Optional[str]:
         return pulumi.get(self, "mime_type")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        The name of the publication.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
 
 @pulumi.output_type
 class GetPublicationsPublicationPackageDetailResult(dict):
     def __init__(__self__, *,
-                 eulas: Sequence['outputs.GetPublicationsPublicationPackageDetailEulaResult'],
-                 image_id: str,
-                 operating_systems: Sequence['outputs.GetPublicationsPublicationPackageDetailOperatingSystemResult'],
-                 package_type: str,
-                 package_version: str):
-        """
-        :param str package_type: The listing's package type.
-        """
-        pulumi.set(__self__, "eulas", eulas)
-        pulumi.set(__self__, "image_id", image_id)
-        pulumi.set(__self__, "operating_systems", operating_systems)
-        pulumi.set(__self__, "package_type", package_type)
-        pulumi.set(__self__, "package_version", package_version)
+                 eulas: Optional[Sequence['outputs.GetPublicationsPublicationPackageDetailEulaResult']] = None,
+                 image_id: Optional[str] = None,
+                 operating_systems: Optional[Sequence['outputs.GetPublicationsPublicationPackageDetailOperatingSystemResult']] = None,
+                 package_type: Optional[str] = None,
+                 package_version: Optional[str] = None):
+        if eulas is not None:
+            pulumi.set(__self__, "eulas", eulas)
+        if image_id is not None:
+            pulumi.set(__self__, "image_id", image_id)
+        if operating_systems is not None:
+            pulumi.set(__self__, "operating_systems", operating_systems)
+        if package_type is not None:
+            pulumi.set(__self__, "package_type", package_type)
+        if package_version is not None:
+            pulumi.set(__self__, "package_version", package_version)
 
     @property
     @pulumi.getter
-    def eulas(self) -> Sequence['outputs.GetPublicationsPublicationPackageDetailEulaResult']:
+    def eulas(self) -> Optional[Sequence['outputs.GetPublicationsPublicationPackageDetailEulaResult']]:
         return pulumi.get(self, "eulas")
 
     @property
     @pulumi.getter(name="imageId")
-    def image_id(self) -> str:
+    def image_id(self) -> Optional[str]:
         return pulumi.get(self, "image_id")
 
     @property
     @pulumi.getter(name="operatingSystems")
-    def operating_systems(self) -> Sequence['outputs.GetPublicationsPublicationPackageDetailOperatingSystemResult']:
+    def operating_systems(self) -> Optional[Sequence['outputs.GetPublicationsPublicationPackageDetailOperatingSystemResult']]:
         return pulumi.get(self, "operating_systems")
 
     @property
     @pulumi.getter(name="packageType")
-    def package_type(self) -> str:
-        """
-        The listing's package type.
-        """
+    def package_type(self) -> Optional[str]:
         return pulumi.get(self, "package_type")
 
     @property
     @pulumi.getter(name="packageVersion")
-    def package_version(self) -> str:
+    def package_version(self) -> Optional[str]:
         return pulumi.get(self, "package_version")
 
 
 @pulumi.output_type
 class GetPublicationsPublicationPackageDetailEulaResult(dict):
     def __init__(__self__, *,
-                 eula_type: str,
-                 license_text: str):
-        pulumi.set(__self__, "eula_type", eula_type)
-        pulumi.set(__self__, "license_text", license_text)
+                 eula_type: Optional[str] = None,
+                 license_text: Optional[str] = None):
+        if eula_type is not None:
+            pulumi.set(__self__, "eula_type", eula_type)
+        if license_text is not None:
+            pulumi.set(__self__, "license_text", license_text)
 
     @property
     @pulumi.getter(name="eulaType")
-    def eula_type(self) -> str:
+    def eula_type(self) -> Optional[str]:
         return pulumi.get(self, "eula_type")
 
     @property
     @pulumi.getter(name="licenseText")
-    def license_text(self) -> str:
+    def license_text(self) -> Optional[str]:
         return pulumi.get(self, "license_text")
 
 
 @pulumi.output_type
 class GetPublicationsPublicationPackageDetailOperatingSystemResult(dict):
     def __init__(__self__, *,
-                 name: str):
-        """
-        :param str name: The name of the publication.
-        """
-        pulumi.set(__self__, "name", name)
+                 name: Optional[str] = None):
+        if name is not None:
+            pulumi.set(__self__, "name", name)
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        The name of the publication.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
 
 @pulumi.output_type
 class GetPublicationsPublicationSupportContactResult(dict):
     def __init__(__self__, *,
-                 email: str,
-                 name: str,
-                 phone: str,
-                 subject: str):
-        """
-        :param str email: The email of the contact.
-        :param str name: The name of the publication.
-        :param str phone: The phone number of the contact.
-        :param str subject: The email subject line to use when contacting support.
-        """
-        pulumi.set(__self__, "email", email)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "phone", phone)
-        pulumi.set(__self__, "subject", subject)
+                 email: Optional[str] = None,
+                 name: Optional[str] = None,
+                 phone: Optional[str] = None,
+                 subject: Optional[str] = None):
+        if email is not None:
+            pulumi.set(__self__, "email", email)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if phone is not None:
+            pulumi.set(__self__, "phone", phone)
+        if subject is not None:
+            pulumi.set(__self__, "subject", subject)
 
     @property
     @pulumi.getter
-    def email(self) -> str:
-        """
-        The email of the contact.
-        """
+    def email(self) -> Optional[str]:
         return pulumi.get(self, "email")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        The name of the publication.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
-    def phone(self) -> str:
-        """
-        The phone number of the contact.
-        """
+    def phone(self) -> Optional[str]:
         return pulumi.get(self, "phone")
 
     @property
     @pulumi.getter
-    def subject(self) -> str:
-        """
-        The email subject line to use when contacting support.
-        """
+    def subject(self) -> Optional[str]:
         return pulumi.get(self, "subject")
 
 
 @pulumi.output_type
 class GetPublicationsPublicationSupportedOperatingSystemResult(dict):
     def __init__(__self__, *,
-                 name: str):
-        """
-        :param str name: The name of the publication.
-        """
-        pulumi.set(__self__, "name", name)
+                 name: Optional[str] = None):
+        if name is not None:
+            pulumi.set(__self__, "name", name)
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        The name of the publication.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
 
@@ -3270,9 +2477,6 @@ class GetPublishersFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: The name of the publisher.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -3281,9 +2485,6 @@ class GetPublishersFilterResult(dict):
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        The name of the publisher.
-        """
         return pulumi.get(self, "name")
 
     @property
@@ -3300,40 +2501,29 @@ class GetPublishersFilterResult(dict):
 @pulumi.output_type
 class GetPublishersPublisherResult(dict):
     def __init__(__self__, *,
-                 description: str,
-                 id: str,
-                 name: str):
-        """
-        :param str description: A description of the publisher.
-        :param str id: The unique identifier for the publisher.
-        :param str name: The name of the publisher.
-        """
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "name", name)
+                 description: Optional[str] = None,
+                 id: Optional[str] = None,
+                 name: Optional[str] = None):
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        A description of the publisher.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The unique identifier for the publisher.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        The name of the publisher.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
 

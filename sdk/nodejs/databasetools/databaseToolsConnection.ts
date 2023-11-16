@@ -92,7 +92,7 @@ export class DatabaseToolsConnection extends pulumi.CustomResource {
     /**
      * (Updatable) The advanced connection properties key-value pair (e.g., `oracle.net.ssl_server_dn_match`).
      */
-    public readonly advancedProperties!: pulumi.Output<{[key: string]: any}>;
+    public readonly advancedProperties!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Database Tools connection.
      */
@@ -100,11 +100,11 @@ export class DatabaseToolsConnection extends pulumi.CustomResource {
     /**
      * (Updatable) The connect descriptor or Easy Connect Naming method use to connect to the database.
      */
-    public readonly connectionString!: pulumi.Output<string>;
+    public readonly connectionString!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
@@ -112,39 +112,39 @@ export class DatabaseToolsConnection extends pulumi.CustomResource {
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) Oracle wallet or Java Keystores containing trusted certificates for authenticating the server's public certificate and the client private key and associated certificates required for client authentication.
      */
-    public readonly keyStores!: pulumi.Output<outputs.DatabaseTools.DatabaseToolsConnectionKeyStore[]>;
+    public readonly keyStores!: pulumi.Output<outputs.DatabaseTools.DatabaseToolsConnectionKeyStore[] | undefined>;
     /**
      * A message describing the current state in more detail. For example, this message can be used to provide actionable information for a resource in the Failed state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools private endpoint used to access the database in the customer VCN.
      */
-    public readonly privateEndpointId!: pulumi.Output<string>;
+    public readonly privateEndpointId!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The related resource
      */
-    public readonly relatedResource!: pulumi.Output<outputs.DatabaseTools.DatabaseToolsConnectionRelatedResource>;
+    public readonly relatedResource!: pulumi.Output<outputs.DatabaseTools.DatabaseToolsConnectionRelatedResource | undefined>;
     /**
      * The current state of the Database Tools connection.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any}>;
+    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * The time the Database Tools connection was created. An RFC3339 formatted datetime string.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * The time the DatabaseToolsConnection was updated. An RFC3339 formatted datetime string.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    public /*out*/ readonly timeUpdated!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The DatabaseToolsConnection type.
      */
@@ -152,11 +152,11 @@ export class DatabaseToolsConnection extends pulumi.CustomResource {
     /**
      * (Updatable) The database user name.
      */
-    public readonly userName!: pulumi.Output<string>;
+    public readonly userName!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The user password.
      */
-    public readonly userPassword!: pulumi.Output<outputs.DatabaseTools.DatabaseToolsConnectionUserPassword>;
+    public readonly userPassword!: pulumi.Output<outputs.DatabaseTools.DatabaseToolsConnectionUserPassword | undefined>;
 
     /**
      * Create a DatabaseToolsConnection resource with the given unique name, arguments, and options.

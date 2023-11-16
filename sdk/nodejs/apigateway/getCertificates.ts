@@ -61,7 +61,7 @@ export interface GetCertificatesResult {
     /**
      * The list of certificate_collection.
      */
-    readonly certificateCollections: outputs.ApiGateway.GetCertificatesCertificateCollection[];
+    readonly certificateCollections?: outputs.ApiGateway.GetCertificatesCertificateCollection[];
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the resource is created.
      */
@@ -74,7 +74,7 @@ export interface GetCertificatesResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The current state of the certificate.
      */

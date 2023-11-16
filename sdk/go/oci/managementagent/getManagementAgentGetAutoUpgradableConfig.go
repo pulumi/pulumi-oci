@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Management Agent Get Auto Upgradable Config resource in Oracle Cloud Infrastructure Management Agent service.
@@ -62,9 +61,9 @@ type GetManagementAgentGetAutoUpgradableConfigArgs struct {
 type GetManagementAgentGetAutoUpgradableConfigResult struct {
 	CompartmentId string `pulumi:"compartmentId"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// true if the agents can be upgraded automatically; false if they must be upgraded manually.
-	IsAgentAutoUpgradable bool `pulumi:"isAgentAutoUpgradable"`
+	IsAgentAutoUpgradable *bool `pulumi:"isAgentAutoUpgradable"`
 }
 
 func GetManagementAgentGetAutoUpgradableConfigOutput(ctx *pulumi.Context, args GetManagementAgentGetAutoUpgradableConfigOutputArgs, opts ...pulumi.InvokeOption) GetManagementAgentGetAutoUpgradableConfigResultOutput {
@@ -105,24 +104,18 @@ func (o GetManagementAgentGetAutoUpgradableConfigResultOutput) ToGetManagementAg
 	return o
 }
 
-func (o GetManagementAgentGetAutoUpgradableConfigResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagementAgentGetAutoUpgradableConfigResult] {
-	return pulumix.Output[GetManagementAgentGetAutoUpgradableConfigResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetManagementAgentGetAutoUpgradableConfigResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetManagementAgentGetAutoUpgradableConfigResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetManagementAgentGetAutoUpgradableConfigResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagementAgentGetAutoUpgradableConfigResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetManagementAgentGetAutoUpgradableConfigResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagementAgentGetAutoUpgradableConfigResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // true if the agents can be upgraded automatically; false if they must be upgraded manually.
-func (o GetManagementAgentGetAutoUpgradableConfigResultOutput) IsAgentAutoUpgradable() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetManagementAgentGetAutoUpgradableConfigResult) bool { return v.IsAgentAutoUpgradable }).(pulumi.BoolOutput)
+func (o GetManagementAgentGetAutoUpgradableConfigResultOutput) IsAgentAutoUpgradable() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetManagementAgentGetAutoUpgradableConfigResult) *bool { return v.IsAgentAutoUpgradable }).(pulumi.BoolPtrOutput)
 }
 
 func init() {

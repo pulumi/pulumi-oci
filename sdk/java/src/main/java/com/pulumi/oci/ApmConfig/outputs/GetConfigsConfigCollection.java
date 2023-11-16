@@ -7,14 +7,15 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.ApmConfig.outputs.GetConfigsConfigCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetConfigsConfigCollection {
-    private List<GetConfigsConfigCollectionItem> items;
+    private @Nullable List<GetConfigsConfigCollectionItem> items;
 
     private GetConfigsConfigCollection() {}
     public List<GetConfigsConfigCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -26,7 +27,7 @@ public final class GetConfigsConfigCollection {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetConfigsConfigCollectionItem> items;
+        private @Nullable List<GetConfigsConfigCollectionItem> items;
         public Builder() {}
         public Builder(GetConfigsConfigCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -34,8 +35,8 @@ public final class GetConfigsConfigCollection {
         }
 
         @CustomType.Setter
-        public Builder items(List<GetConfigsConfigCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetConfigsConfigCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetConfigsConfigCollectionItem... items) {

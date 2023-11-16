@@ -153,7 +153,7 @@ namespace Pulumi.Oci.DevOps
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The list of lines in the file.
         /// </summary>
@@ -166,7 +166,7 @@ namespace Pulumi.Oci.DevOps
         private GetRepositoryFileLineResult(
             string filePath,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetRepositoryFileLineLineResult> lines,
 

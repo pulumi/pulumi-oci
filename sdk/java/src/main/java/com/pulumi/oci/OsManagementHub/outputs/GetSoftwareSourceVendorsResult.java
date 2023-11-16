@@ -20,7 +20,7 @@ public final class GetSoftwareSourceVendorsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Name of the vendor providing the software source.
      * 
@@ -30,7 +30,7 @@ public final class GetSoftwareSourceVendorsResult {
      * @return The list of software_source_vendor_collection.
      * 
      */
-    private List<GetSoftwareSourceVendorsSoftwareSourceVendorCollection> softwareSourceVendorCollections;
+    private @Nullable List<GetSoftwareSourceVendorsSoftwareSourceVendorCollection> softwareSourceVendorCollections;
 
     private GetSoftwareSourceVendorsResult() {}
     public String compartmentId() {
@@ -43,8 +43,8 @@ public final class GetSoftwareSourceVendorsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Name of the vendor providing the software source.
@@ -58,7 +58,7 @@ public final class GetSoftwareSourceVendorsResult {
      * 
      */
     public List<GetSoftwareSourceVendorsSoftwareSourceVendorCollection> softwareSourceVendorCollections() {
-        return this.softwareSourceVendorCollections;
+        return this.softwareSourceVendorCollections == null ? List.of() : this.softwareSourceVendorCollections;
     }
 
     public static Builder builder() {
@@ -72,9 +72,9 @@ public final class GetSoftwareSourceVendorsResult {
     public static final class Builder {
         private String compartmentId;
         private @Nullable List<GetSoftwareSourceVendorsFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String name;
-        private List<GetSoftwareSourceVendorsSoftwareSourceVendorCollection> softwareSourceVendorCollections;
+        private @Nullable List<GetSoftwareSourceVendorsSoftwareSourceVendorCollection> softwareSourceVendorCollections;
         public Builder() {}
         public Builder(GetSoftwareSourceVendorsResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -99,8 +99,8 @@ public final class GetSoftwareSourceVendorsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -109,8 +109,8 @@ public final class GetSoftwareSourceVendorsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder softwareSourceVendorCollections(List<GetSoftwareSourceVendorsSoftwareSourceVendorCollection> softwareSourceVendorCollections) {
-            this.softwareSourceVendorCollections = Objects.requireNonNull(softwareSourceVendorCollections);
+        public Builder softwareSourceVendorCollections(@Nullable List<GetSoftwareSourceVendorsSoftwareSourceVendorCollection> softwareSourceVendorCollections) {
+            this.softwareSourceVendorCollections = softwareSourceVendorCollections;
             return this;
         }
         public Builder softwareSourceVendorCollections(GetSoftwareSourceVendorsSoftwareSourceVendorCollection... softwareSourceVendorCollections) {

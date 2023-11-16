@@ -16,7 +16,7 @@ namespace Pulumi.Oci.Optimizer.Outputs
         /// <summary>
         /// Optional. A filter that returns results that match the name specified.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// The list of strategies used.
         /// </summary>
@@ -24,7 +24,7 @@ namespace Pulumi.Oci.Optimizer.Outputs
 
         [OutputConstructor]
         private GetRecommendationStrategyItemResult(
-            string name,
+            string? name,
 
             ImmutableArray<Outputs.GetRecommendationStrategyItemStrategyResult> strategies)
         {

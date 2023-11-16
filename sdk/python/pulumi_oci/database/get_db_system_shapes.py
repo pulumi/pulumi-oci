@@ -52,10 +52,7 @@ class GetDbSystemShapesResult:
 
     @property
     @pulumi.getter(name="dbSystemShapes")
-    def db_system_shapes(self) -> Sequence['outputs.GetDbSystemShapesDbSystemShapeResult']:
-        """
-        The list of db_system_shapes.
-        """
+    def db_system_shapes(self) -> Optional[Sequence['outputs.GetDbSystemShapesDbSystemShapeResult']]:
         return pulumi.get(self, "db_system_shapes")
 
     @property
@@ -65,7 +62,7 @@ class GetDbSystemShapesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -90,23 +87,7 @@ def get_db_system_shapes(availability_domain: Optional[str] = None,
                          filters: Optional[Sequence[pulumi.InputType['GetDbSystemShapesFilterArgs']]] = None,
                          opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDbSystemShapesResult:
     """
-    This data source provides the list of Db System Shapes in Oracle Cloud Infrastructure Database service.
-
-    Gets a list of the shapes that can be used to launch a new DB system. The shape determines resources to allocate to the DB system - CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_db_system_shapes = oci.Database.get_db_system_shapes(compartment_id=var["compartment_id"],
-        availability_domain=var["db_system_shape_availability_domain"])
-    ```
-
-
-    :param str availability_domain: The name of the Availability Domain.
-    :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['availabilityDomain'] = availability_domain
@@ -129,22 +110,6 @@ def get_db_system_shapes_output(availability_domain: Optional[pulumi.Input[Optio
                                 filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetDbSystemShapesFilterArgs']]]]] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDbSystemShapesResult]:
     """
-    This data source provides the list of Db System Shapes in Oracle Cloud Infrastructure Database service.
-
-    Gets a list of the shapes that can be used to launch a new DB system. The shape determines resources to allocate to the DB system - CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_db_system_shapes = oci.Database.get_db_system_shapes(compartment_id=var["compartment_id"],
-        availability_domain=var["db_system_shape_availability_domain"])
-    ```
-
-
-    :param str availability_domain: The name of the Availability Domain.
-    :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+    Use this data source to access information about an existing resource.
     """
     ...

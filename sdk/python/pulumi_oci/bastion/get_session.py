@@ -74,74 +74,47 @@ class GetSessionResult:
 
     @property
     @pulumi.getter(name="bastionId")
-    def bastion_id(self) -> str:
-        """
-        The unique identifier (OCID) of the bastion that is hosting this session.
-        """
+    def bastion_id(self) -> Optional[str]:
         return pulumi.get(self, "bastion_id")
 
     @property
     @pulumi.getter(name="bastionName")
-    def bastion_name(self) -> str:
-        """
-        The name of the bastion that is hosting this session.
-        """
+    def bastion_name(self) -> Optional[str]:
         return pulumi.get(self, "bastion_name")
 
     @property
     @pulumi.getter(name="bastionPublicHostKeyInfo")
-    def bastion_public_host_key_info(self) -> str:
-        """
-        The public key of the bastion host. You can use this to verify that you're connecting to the correct bastion.
-        """
+    def bastion_public_host_key_info(self) -> Optional[str]:
         return pulumi.get(self, "bastion_public_host_key_info")
 
     @property
     @pulumi.getter(name="bastionUserName")
-    def bastion_user_name(self) -> str:
-        """
-        The username that the session uses to connect to the target resource.
-        """
+    def bastion_user_name(self) -> Optional[str]:
         return pulumi.get(self, "bastion_user_name")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        The name of the session.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The unique identifier (OCID) of the session, which can't be changed after creation.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="keyDetails")
-    def key_details(self) -> Sequence['outputs.GetSessionKeyDetailResult']:
-        """
-        Public key details for a bastion session.
-        """
+    def key_details(self) -> Optional[Sequence['outputs.GetSessionKeyDetailResult']]:
         return pulumi.get(self, "key_details")
 
     @property
     @pulumi.getter(name="keyType")
-    def key_type(self) -> str:
-        """
-        The type of the key used to connect to the session. PUB is a standard public key in OpenSSH format.
-        """
+    def key_type(self) -> Optional[str]:
         return pulumi.get(self, "key_type")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        A message describing the current session state in more detail.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
@@ -151,50 +124,32 @@ class GetSessionResult:
 
     @property
     @pulumi.getter(name="sessionTtlInSeconds")
-    def session_ttl_in_seconds(self) -> int:
-        """
-        The amount of time the session can remain active.
-        """
+    def session_ttl_in_seconds(self) -> Optional[int]:
         return pulumi.get(self, "session_ttl_in_seconds")
 
     @property
     @pulumi.getter(name="sshMetadata")
-    def ssh_metadata(self) -> Mapping[str, Any]:
-        """
-        The connection message for the session.
-        """
+    def ssh_metadata(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "ssh_metadata")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the session.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="targetResourceDetails")
-    def target_resource_details(self) -> Sequence['outputs.GetSessionTargetResourceDetailResult']:
-        """
-        Details about a bastion session's target resource.
-        """
+    def target_resource_details(self) -> Optional[Sequence['outputs.GetSessionTargetResourceDetailResult']]:
         return pulumi.get(self, "target_resource_details")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The time the session was created. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The time the session was updated. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
 
@@ -225,21 +180,7 @@ class AwaitableGetSessionResult(GetSessionResult):
 def get_session(session_id: Optional[str] = None,
                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetSessionResult:
     """
-    This data source provides details about a specific Session resource in Oracle Cloud Infrastructure Bastion service.
-
-    Retrieves a session identified by the session ID. A bastion session lets authorized users connect to a target resource for a predetermined amount of time.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_session = oci.Bastion.get_session(session_id=oci_bastion_session["test_session"]["id"])
-    ```
-
-
-    :param str session_id: The unique identifier (OCID) of the session.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['sessionId'] = session_id
@@ -269,20 +210,6 @@ def get_session(session_id: Optional[str] = None,
 def get_session_output(session_id: Optional[pulumi.Input[str]] = None,
                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSessionResult]:
     """
-    This data source provides details about a specific Session resource in Oracle Cloud Infrastructure Bastion service.
-
-    Retrieves a session identified by the session ID. A bastion session lets authorized users connect to a target resource for a predetermined amount of time.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_session = oci.Bastion.get_session(session_id=oci_bastion_session["test_session"]["id"])
-    ```
-
-
-    :param str session_id: The unique identifier (OCID) of the session.
+    Use this data source to access information about an existing resource.
     """
     ...

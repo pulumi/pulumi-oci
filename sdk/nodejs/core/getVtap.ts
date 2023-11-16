@@ -45,92 +45,92 @@ export interface GetVtapResult {
     /**
      * The capture filter's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
      */
-    readonly captureFilterId: string;
+    readonly captureFilterId?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the `Vtap` resource.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * Defines an encapsulation header type for the VTAP's mirrored traffic.
      */
-    readonly encapsulationProtocol: string;
+    readonly encapsulationProtocol?: string;
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * The VTAP's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Used to start or stop a `Vtap` resource.
      */
-    readonly isVtapEnabled: boolean;
+    readonly isVtapEnabled?: boolean;
     /**
      * The VTAP's current running state.
      */
-    readonly lifecycleStateDetails: string;
+    readonly lifecycleStateDetails?: string;
     /**
      * The maximum size of the packets to be included in the filter.
      */
-    readonly maxPacketSize: number;
+    readonly maxPacketSize?: number;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source point where packets are captured.
      */
-    readonly sourceId: string;
+    readonly sourceId?: string;
     /**
      * The IP Address of the source private endpoint.
      */
-    readonly sourcePrivateEndpointIp: string;
+    readonly sourcePrivateEndpointIp?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet that source private endpoint belongs to.
      */
-    readonly sourcePrivateEndpointSubnetId: string;
+    readonly sourcePrivateEndpointSubnetId?: string;
     /**
      * The source type for the VTAP.
      */
-    readonly sourceType: string;
+    readonly sourceType?: string;
     /**
      * The VTAP's administrative lifecycle state.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the destination resource where mirrored packets are sent.
      */
-    readonly targetId: string;
+    readonly targetId?: string;
     /**
      * The IP address of the destination resource where mirrored packets are sent.
      */
-    readonly targetIp: string;
+    readonly targetIp?: string;
     /**
      * The target type for the VTAP.
      */
-    readonly targetType: string;
+    readonly targetType?: string;
     /**
      * The date and time the VTAP was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2020-08-25T21:10:29.600Z`
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * Used to control the priority of traffic. It is an optional field. If it not passed, the value is DEFAULT
      */
-    readonly trafficMode: string;
+    readonly trafficMode?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN containing the `Vtap` resource.
      */
-    readonly vcnId: string;
+    readonly vcnId?: string;
     readonly vtapId: string;
     /**
      * The virtual extensible LAN (VXLAN) network identifier (or VXLAN segment ID) that uniquely identifies the VXLAN.
      */
-    readonly vxlanNetworkIdentifier: string;
+    readonly vxlanNetworkIdentifier?: string;
 }
 /**
  * This data source provides details about a specific Vtap resource in Oracle Cloud Infrastructure Core service.

@@ -6,6 +6,8 @@ package com.pulumi.oci.ApmSynthetics.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetMonitorsMonitorCollectionItemVantagePoint {
@@ -13,27 +15,27 @@ public final class GetMonitorsMonitorCollectionItemVantagePoint {
      * @return A filter to return only the resources that match the entire display name.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return Name of the vantage point.
      * 
      */
-    private String name;
+    private @Nullable String name;
 
     private GetMonitorsMonitorCollectionItemVantagePoint() {}
     /**
      * @return A filter to return only the resources that match the entire display name.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return Name of the vantage point.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
 
     public static Builder builder() {
@@ -45,8 +47,8 @@ public final class GetMonitorsMonitorCollectionItemVantagePoint {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String displayName;
-        private String name;
+        private @Nullable String displayName;
+        private @Nullable String name;
         public Builder() {}
         public Builder(GetMonitorsMonitorCollectionItemVantagePoint defaults) {
     	      Objects.requireNonNull(defaults);
@@ -55,13 +57,13 @@ public final class GetMonitorsMonitorCollectionItemVantagePoint {
         }
 
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         public GetMonitorsMonitorCollectionItemVantagePoint build() {

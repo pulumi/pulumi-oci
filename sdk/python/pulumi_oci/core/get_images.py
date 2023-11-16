@@ -61,17 +61,11 @@ class GetImagesResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The OCID of the compartment containing the instance you want to use as the basis for the image.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        A user-friendly name for the image. It does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -81,7 +75,7 @@ class GetImagesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -89,26 +83,17 @@ class GetImagesResult:
 
     @property
     @pulumi.getter
-    def images(self) -> Sequence['outputs.GetImagesImageResult']:
-        """
-        The list of images.
-        """
+    def images(self) -> Optional[Sequence['outputs.GetImagesImageResult']]:
         return pulumi.get(self, "images")
 
     @property
     @pulumi.getter(name="operatingSystem")
     def operating_system(self) -> Optional[str]:
-        """
-        The image's operating system.  Example: `Oracle Linux`
-        """
         return pulumi.get(self, "operating_system")
 
     @property
     @pulumi.getter(name="operatingSystemVersion")
     def operating_system_version(self) -> Optional[str]:
-        """
-        The image's operating system version.  Example: `7.2`
-        """
         return pulumi.get(self, "operating_system_version")
 
     @property
@@ -129,9 +114,6 @@ class GetImagesResult:
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the image.
-        """
         return pulumi.get(self, "state")
 
 
@@ -165,45 +147,7 @@ def get_images(compartment_id: Optional[str] = None,
                state: Optional[str] = None,
                opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetImagesResult:
     """
-    This data source provides the list of Images in Oracle Cloud Infrastructure Core service.
-
-    Lists a subset of images available in the specified compartment, including
-    [platform images](https://docs.cloud.oracle.com/iaas/Content/Compute/References/images.htm) and
-    [custom images](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/managingcustomimages.htm).
-    The list of platform images includes the three most recently published versions
-    of each major distribution. The list does not support filtering based on image tags.
-
-    The list of images returned is ordered to first show the recent platform images,
-    then all of the custom images.
-
-    **Caution:** Platform images are refreshed regularly. When new images are released, older versions are replaced.
-    The image OCIDs remain available, but when the platform image is replaced, the image OCIDs are no longer returned as part of the platform image list.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_images = oci.Core.get_images(compartment_id=var["compartment_id"],
-        display_name=var["image_display_name"],
-        operating_system=var["image_operating_system"],
-        operating_system_version=var["image_operating_system_version"],
-        shape=var["image_shape"],
-        state=var["image_state"],
-        sort_by=var["image_sort_by"],
-        sort_order=var["image_sort_order"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param str display_name: A filter to return only resources that match the given display name exactly.
-    :param str operating_system: The image's operating system.  Example: `Oracle Linux`
-    :param str operating_system_version: The image's operating system version.  Example: `7.2`
-    :param str shape: Shape name.
-    :param str sort_by: Sort the resources returned, by creation time or display name. Example `TIMECREATED` or `DISPLAYNAME`.
-    :param str sort_order: The sort order to use, either ascending (`ASC`) or descending (`DESC`).
-    :param str state: A filter to only return resources that match the given lifecycle state.  The state value is case-insensitive.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -244,44 +188,6 @@ def get_images_output(compartment_id: Optional[pulumi.Input[str]] = None,
                       state: Optional[pulumi.Input[Optional[str]]] = None,
                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetImagesResult]:
     """
-    This data source provides the list of Images in Oracle Cloud Infrastructure Core service.
-
-    Lists a subset of images available in the specified compartment, including
-    [platform images](https://docs.cloud.oracle.com/iaas/Content/Compute/References/images.htm) and
-    [custom images](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/managingcustomimages.htm).
-    The list of platform images includes the three most recently published versions
-    of each major distribution. The list does not support filtering based on image tags.
-
-    The list of images returned is ordered to first show the recent platform images,
-    then all of the custom images.
-
-    **Caution:** Platform images are refreshed regularly. When new images are released, older versions are replaced.
-    The image OCIDs remain available, but when the platform image is replaced, the image OCIDs are no longer returned as part of the platform image list.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_images = oci.Core.get_images(compartment_id=var["compartment_id"],
-        display_name=var["image_display_name"],
-        operating_system=var["image_operating_system"],
-        operating_system_version=var["image_operating_system_version"],
-        shape=var["image_shape"],
-        state=var["image_state"],
-        sort_by=var["image_sort_by"],
-        sort_order=var["image_sort_order"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param str display_name: A filter to return only resources that match the given display name exactly.
-    :param str operating_system: The image's operating system.  Example: `Oracle Linux`
-    :param str operating_system_version: The image's operating system version.  Example: `7.2`
-    :param str shape: Shape name.
-    :param str sort_by: Sort the resources returned, by creation time or display name. Example `TIMECREATED` or `DISPLAYNAME`.
-    :param str sort_order: The sort order to use, either ascending (`ASC`) or descending (`DESC`).
-    :param str state: A filter to only return resources that match the given lifecycle state.  The state value is case-insensitive.
+    Use this data source to access information about an existing resource.
     """
     ...

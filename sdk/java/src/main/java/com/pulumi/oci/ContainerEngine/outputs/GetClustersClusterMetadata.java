@@ -6,6 +6,8 @@ package com.pulumi.oci.ContainerEngine.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetClustersClusterMetadata {
@@ -13,123 +15,123 @@ public final class GetClustersClusterMetadata {
      * @return The user who created the cluster.
      * 
      */
-    private String createdByUserId;
+    private @Nullable String createdByUserId;
     /**
      * @return The OCID of the work request which created the cluster.
      * 
      */
-    private String createdByWorkRequestId;
+    private @Nullable String createdByWorkRequestId;
     /**
      * @return The user who deleted the cluster.
      * 
      */
-    private String deletedByUserId;
+    private @Nullable String deletedByUserId;
     /**
      * @return The OCID of the work request which deleted the cluster.
      * 
      */
-    private String deletedByWorkRequestId;
+    private @Nullable String deletedByWorkRequestId;
     /**
      * @return The time the cluster was created.
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The time until which the cluster credential is valid.
      * 
      */
-    private String timeCredentialExpiration;
+    private @Nullable String timeCredentialExpiration;
     /**
      * @return The time the cluster was deleted.
      * 
      */
-    private String timeDeleted;
+    private @Nullable String timeDeleted;
     /**
      * @return The time the cluster was updated.
      * 
      */
-    private String timeUpdated;
+    private @Nullable String timeUpdated;
     /**
      * @return The user who updated the cluster.
      * 
      */
-    private String updatedByUserId;
+    private @Nullable String updatedByUserId;
     /**
      * @return The OCID of the work request which updated the cluster.
      * 
      */
-    private String updatedByWorkRequestId;
+    private @Nullable String updatedByWorkRequestId;
 
     private GetClustersClusterMetadata() {}
     /**
      * @return The user who created the cluster.
      * 
      */
-    public String createdByUserId() {
-        return this.createdByUserId;
+    public Optional<String> createdByUserId() {
+        return Optional.ofNullable(this.createdByUserId);
     }
     /**
      * @return The OCID of the work request which created the cluster.
      * 
      */
-    public String createdByWorkRequestId() {
-        return this.createdByWorkRequestId;
+    public Optional<String> createdByWorkRequestId() {
+        return Optional.ofNullable(this.createdByWorkRequestId);
     }
     /**
      * @return The user who deleted the cluster.
      * 
      */
-    public String deletedByUserId() {
-        return this.deletedByUserId;
+    public Optional<String> deletedByUserId() {
+        return Optional.ofNullable(this.deletedByUserId);
     }
     /**
      * @return The OCID of the work request which deleted the cluster.
      * 
      */
-    public String deletedByWorkRequestId() {
-        return this.deletedByWorkRequestId;
+    public Optional<String> deletedByWorkRequestId() {
+        return Optional.ofNullable(this.deletedByWorkRequestId);
     }
     /**
      * @return The time the cluster was created.
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return The time until which the cluster credential is valid.
      * 
      */
-    public String timeCredentialExpiration() {
-        return this.timeCredentialExpiration;
+    public Optional<String> timeCredentialExpiration() {
+        return Optional.ofNullable(this.timeCredentialExpiration);
     }
     /**
      * @return The time the cluster was deleted.
      * 
      */
-    public String timeDeleted() {
-        return this.timeDeleted;
+    public Optional<String> timeDeleted() {
+        return Optional.ofNullable(this.timeDeleted);
     }
     /**
      * @return The time the cluster was updated.
      * 
      */
-    public String timeUpdated() {
-        return this.timeUpdated;
+    public Optional<String> timeUpdated() {
+        return Optional.ofNullable(this.timeUpdated);
     }
     /**
      * @return The user who updated the cluster.
      * 
      */
-    public String updatedByUserId() {
-        return this.updatedByUserId;
+    public Optional<String> updatedByUserId() {
+        return Optional.ofNullable(this.updatedByUserId);
     }
     /**
      * @return The OCID of the work request which updated the cluster.
      * 
      */
-    public String updatedByWorkRequestId() {
-        return this.updatedByWorkRequestId;
+    public Optional<String> updatedByWorkRequestId() {
+        return Optional.ofNullable(this.updatedByWorkRequestId);
     }
 
     public static Builder builder() {
@@ -141,16 +143,16 @@ public final class GetClustersClusterMetadata {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String createdByUserId;
-        private String createdByWorkRequestId;
-        private String deletedByUserId;
-        private String deletedByWorkRequestId;
-        private String timeCreated;
-        private String timeCredentialExpiration;
-        private String timeDeleted;
-        private String timeUpdated;
-        private String updatedByUserId;
-        private String updatedByWorkRequestId;
+        private @Nullable String createdByUserId;
+        private @Nullable String createdByWorkRequestId;
+        private @Nullable String deletedByUserId;
+        private @Nullable String deletedByWorkRequestId;
+        private @Nullable String timeCreated;
+        private @Nullable String timeCredentialExpiration;
+        private @Nullable String timeDeleted;
+        private @Nullable String timeUpdated;
+        private @Nullable String updatedByUserId;
+        private @Nullable String updatedByWorkRequestId;
         public Builder() {}
         public Builder(GetClustersClusterMetadata defaults) {
     	      Objects.requireNonNull(defaults);
@@ -167,53 +169,53 @@ public final class GetClustersClusterMetadata {
         }
 
         @CustomType.Setter
-        public Builder createdByUserId(String createdByUserId) {
-            this.createdByUserId = Objects.requireNonNull(createdByUserId);
+        public Builder createdByUserId(@Nullable String createdByUserId) {
+            this.createdByUserId = createdByUserId;
             return this;
         }
         @CustomType.Setter
-        public Builder createdByWorkRequestId(String createdByWorkRequestId) {
-            this.createdByWorkRequestId = Objects.requireNonNull(createdByWorkRequestId);
+        public Builder createdByWorkRequestId(@Nullable String createdByWorkRequestId) {
+            this.createdByWorkRequestId = createdByWorkRequestId;
             return this;
         }
         @CustomType.Setter
-        public Builder deletedByUserId(String deletedByUserId) {
-            this.deletedByUserId = Objects.requireNonNull(deletedByUserId);
+        public Builder deletedByUserId(@Nullable String deletedByUserId) {
+            this.deletedByUserId = deletedByUserId;
             return this;
         }
         @CustomType.Setter
-        public Builder deletedByWorkRequestId(String deletedByWorkRequestId) {
-            this.deletedByWorkRequestId = Objects.requireNonNull(deletedByWorkRequestId);
+        public Builder deletedByWorkRequestId(@Nullable String deletedByWorkRequestId) {
+            this.deletedByWorkRequestId = deletedByWorkRequestId;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCredentialExpiration(String timeCredentialExpiration) {
-            this.timeCredentialExpiration = Objects.requireNonNull(timeCredentialExpiration);
+        public Builder timeCredentialExpiration(@Nullable String timeCredentialExpiration) {
+            this.timeCredentialExpiration = timeCredentialExpiration;
             return this;
         }
         @CustomType.Setter
-        public Builder timeDeleted(String timeDeleted) {
-            this.timeDeleted = Objects.requireNonNull(timeDeleted);
+        public Builder timeDeleted(@Nullable String timeDeleted) {
+            this.timeDeleted = timeDeleted;
             return this;
         }
         @CustomType.Setter
-        public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+        public Builder timeUpdated(@Nullable String timeUpdated) {
+            this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter
-        public Builder updatedByUserId(String updatedByUserId) {
-            this.updatedByUserId = Objects.requireNonNull(updatedByUserId);
+        public Builder updatedByUserId(@Nullable String updatedByUserId) {
+            this.updatedByUserId = updatedByUserId;
             return this;
         }
         @CustomType.Setter
-        public Builder updatedByWorkRequestId(String updatedByWorkRequestId) {
-            this.updatedByWorkRequestId = Objects.requireNonNull(updatedByWorkRequestId);
+        public Builder updatedByWorkRequestId(@Nullable String updatedByWorkRequestId) {
+            this.updatedByWorkRequestId = updatedByWorkRequestId;
             return this;
         }
         public GetClustersClusterMetadata build() {

@@ -24,18 +24,6 @@ class EkmsPrivateEndpointArgs:
                  port: Optional[pulumi.Input[int]] = None):
         """
         The set of arguments for constructing a EkmsPrivateEndpoint resource.
-        :param pulumi.Input[str] ca_bundle: CABundle to validate TLS certificate of the external key manager system in PEM format
-        :param pulumi.Input[str] compartment_id: Compartment identifier.
-        :param pulumi.Input[str] display_name: (Updatable) Display name of the EKMS private endpoint resource being created.
-        :param pulumi.Input[str] external_key_manager_ip: External private IP to connect to from this EKMS private endpoint
-        :param pulumi.Input[str] subnet_id: The OCID of subnet in which the EKMS private endpoint is to be created 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[int] port: The port of the external key manager system
         """
         pulumi.set(__self__, "ca_bundle", ca_bundle)
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -52,9 +40,6 @@ class EkmsPrivateEndpointArgs:
     @property
     @pulumi.getter(name="caBundle")
     def ca_bundle(self) -> pulumi.Input[str]:
-        """
-        CABundle to validate TLS certificate of the external key manager system in PEM format
-        """
         return pulumi.get(self, "ca_bundle")
 
     @ca_bundle.setter
@@ -64,9 +49,6 @@ class EkmsPrivateEndpointArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
-        """
-        Compartment identifier.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -76,9 +58,6 @@ class EkmsPrivateEndpointArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Display name of the EKMS private endpoint resource being created.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -88,9 +67,6 @@ class EkmsPrivateEndpointArgs:
     @property
     @pulumi.getter(name="externalKeyManagerIp")
     def external_key_manager_ip(self) -> pulumi.Input[str]:
-        """
-        External private IP to connect to from this EKMS private endpoint
-        """
         return pulumi.get(self, "external_key_manager_ip")
 
     @external_key_manager_ip.setter
@@ -100,13 +76,6 @@ class EkmsPrivateEndpointArgs:
     @property
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> pulumi.Input[str]:
-        """
-        The OCID of subnet in which the EKMS private endpoint is to be created 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "subnet_id")
 
     @subnet_id.setter
@@ -116,9 +85,6 @@ class EkmsPrivateEndpointArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -128,9 +94,6 @@ class EkmsPrivateEndpointArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -140,9 +103,6 @@ class EkmsPrivateEndpointArgs:
     @property
     @pulumi.getter
     def port(self) -> Optional[pulumi.Input[int]]:
-        """
-        The port of the external key manager system
-        """
         return pulumi.get(self, "port")
 
     @port.setter
@@ -168,23 +128,6 @@ class _EkmsPrivateEndpointState:
                  time_updated: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering EkmsPrivateEndpoint resources.
-        :param pulumi.Input[str] ca_bundle: CABundle to validate TLS certificate of the external key manager system in PEM format
-        :param pulumi.Input[str] compartment_id: Compartment identifier.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] display_name: (Updatable) Display name of the EKMS private endpoint resource being created.
-        :param pulumi.Input[str] external_key_manager_ip: External private IP to connect to from this EKMS private endpoint
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'Failed' state.
-        :param pulumi.Input[int] port: The port of the external key manager system
-        :param pulumi.Input[str] private_endpoint_ip: The IP address in the customer's VCN for the EKMS private endpoint. This is taken from subnet
-        :param pulumi.Input[str] state: The current state of the EKMS private endpoint resource.
-        :param pulumi.Input[str] subnet_id: The OCID of subnet in which the EKMS private endpoint is to be created 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] time_created: The time the EKMS private endpoint was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-        :param pulumi.Input[str] time_updated: The time the EKMS private endpoint was updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
         """
         if ca_bundle is not None:
             pulumi.set(__self__, "ca_bundle", ca_bundle)
@@ -216,9 +159,6 @@ class _EkmsPrivateEndpointState:
     @property
     @pulumi.getter(name="caBundle")
     def ca_bundle(self) -> Optional[pulumi.Input[str]]:
-        """
-        CABundle to validate TLS certificate of the external key manager system in PEM format
-        """
         return pulumi.get(self, "ca_bundle")
 
     @ca_bundle.setter
@@ -228,9 +168,6 @@ class _EkmsPrivateEndpointState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        Compartment identifier.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -240,9 +177,6 @@ class _EkmsPrivateEndpointState:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -252,9 +186,6 @@ class _EkmsPrivateEndpointState:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Display name of the EKMS private endpoint resource being created.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -264,9 +195,6 @@ class _EkmsPrivateEndpointState:
     @property
     @pulumi.getter(name="externalKeyManagerIp")
     def external_key_manager_ip(self) -> Optional[pulumi.Input[str]]:
-        """
-        External private IP to connect to from this EKMS private endpoint
-        """
         return pulumi.get(self, "external_key_manager_ip")
 
     @external_key_manager_ip.setter
@@ -276,9 +204,6 @@ class _EkmsPrivateEndpointState:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -288,9 +213,6 @@ class _EkmsPrivateEndpointState:
     @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> Optional[pulumi.Input[str]]:
-        """
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'Failed' state.
-        """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
@@ -300,9 +222,6 @@ class _EkmsPrivateEndpointState:
     @property
     @pulumi.getter
     def port(self) -> Optional[pulumi.Input[int]]:
-        """
-        The port of the external key manager system
-        """
         return pulumi.get(self, "port")
 
     @port.setter
@@ -312,9 +231,6 @@ class _EkmsPrivateEndpointState:
     @property
     @pulumi.getter(name="privateEndpointIp")
     def private_endpoint_ip(self) -> Optional[pulumi.Input[str]]:
-        """
-        The IP address in the customer's VCN for the EKMS private endpoint. This is taken from subnet
-        """
         return pulumi.get(self, "private_endpoint_ip")
 
     @private_endpoint_ip.setter
@@ -324,9 +240,6 @@ class _EkmsPrivateEndpointState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The current state of the EKMS private endpoint resource.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -336,13 +249,6 @@ class _EkmsPrivateEndpointState:
     @property
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of subnet in which the EKMS private endpoint is to be created 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "subnet_id")
 
     @subnet_id.setter
@@ -352,9 +258,6 @@ class _EkmsPrivateEndpointState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The time the EKMS private endpoint was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -364,9 +267,6 @@ class _EkmsPrivateEndpointState:
     @property
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> Optional[pulumi.Input[str]]:
-        """
-        The time the EKMS private endpoint was updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-        """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
@@ -389,53 +289,9 @@ class EkmsPrivateEndpoint(pulumi.CustomResource):
                  subnet_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Ekms Private Endpoint resource in Oracle Cloud Infrastructure Kms service.
-
-        Create a new EKMS private endpoint used to connect to external key manager system
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_ekms_private_endpoint = oci.kms.EkmsPrivateEndpoint("testEkmsPrivateEndpoint",
-            ca_bundle=var["ekms_private_endpoint_ca_bundle"],
-            compartment_id=var["compartment_id"],
-            display_name=var["ekms_private_endpoint_display_name"],
-            external_key_manager_ip=var["ekms_private_endpoint_external_key_manager_ip"],
-            subnet_id=oci_core_subnet["test_subnet"]["id"],
-            defined_tags={
-                "foo-namespace.bar-key": "value",
-            },
-            freeform_tags={
-                "bar-key": "value",
-            },
-            port=var["ekms_private_endpoint_port"])
-        ```
-
-        ## Import
-
-        EkmsPrivateEndpoints can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Kms/ekmsPrivateEndpoint:EkmsPrivateEndpoint test_ekms_private_endpoint "id"
-        ```
-
+        Create a EkmsPrivateEndpoint resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] ca_bundle: CABundle to validate TLS certificate of the external key manager system in PEM format
-        :param pulumi.Input[str] compartment_id: Compartment identifier.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] display_name: (Updatable) Display name of the EKMS private endpoint resource being created.
-        :param pulumi.Input[str] external_key_manager_ip: External private IP to connect to from this EKMS private endpoint
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[int] port: The port of the external key manager system
-        :param pulumi.Input[str] subnet_id: The OCID of subnet in which the EKMS private endpoint is to be created 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -444,39 +300,7 @@ class EkmsPrivateEndpoint(pulumi.CustomResource):
                  args: EkmsPrivateEndpointArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Ekms Private Endpoint resource in Oracle Cloud Infrastructure Kms service.
-
-        Create a new EKMS private endpoint used to connect to external key manager system
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_ekms_private_endpoint = oci.kms.EkmsPrivateEndpoint("testEkmsPrivateEndpoint",
-            ca_bundle=var["ekms_private_endpoint_ca_bundle"],
-            compartment_id=var["compartment_id"],
-            display_name=var["ekms_private_endpoint_display_name"],
-            external_key_manager_ip=var["ekms_private_endpoint_external_key_manager_ip"],
-            subnet_id=oci_core_subnet["test_subnet"]["id"],
-            defined_tags={
-                "foo-namespace.bar-key": "value",
-            },
-            freeform_tags={
-                "bar-key": "value",
-            },
-            port=var["ekms_private_endpoint_port"])
-        ```
-
-        ## Import
-
-        EkmsPrivateEndpoints can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Kms/ekmsPrivateEndpoint:EkmsPrivateEndpoint test_ekms_private_endpoint "id"
-        ```
-
+        Create a EkmsPrivateEndpoint resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param EkmsPrivateEndpointArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -562,23 +386,6 @@ class EkmsPrivateEndpoint(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] ca_bundle: CABundle to validate TLS certificate of the external key manager system in PEM format
-        :param pulumi.Input[str] compartment_id: Compartment identifier.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] display_name: (Updatable) Display name of the EKMS private endpoint resource being created.
-        :param pulumi.Input[str] external_key_manager_ip: External private IP to connect to from this EKMS private endpoint
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'Failed' state.
-        :param pulumi.Input[int] port: The port of the external key manager system
-        :param pulumi.Input[str] private_endpoint_ip: The IP address in the customer's VCN for the EKMS private endpoint. This is taken from subnet
-        :param pulumi.Input[str] state: The current state of the EKMS private endpoint resource.
-        :param pulumi.Input[str] subnet_id: The OCID of subnet in which the EKMS private endpoint is to be created 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] time_created: The time the EKMS private endpoint was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-        :param pulumi.Input[str] time_updated: The time the EKMS private endpoint was updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -602,108 +409,65 @@ class EkmsPrivateEndpoint(pulumi.CustomResource):
     @property
     @pulumi.getter(name="caBundle")
     def ca_bundle(self) -> pulumi.Output[str]:
-        """
-        CABundle to validate TLS certificate of the external key manager system in PEM format
-        """
         return pulumi.get(self, "ca_bundle")
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
-        """
-        Compartment identifier.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Display name of the EKMS private endpoint resource being created.
-        """
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="externalKeyManagerIp")
     def external_key_manager_ip(self) -> pulumi.Output[str]:
-        """
-        External private IP to connect to from this EKMS private endpoint
-        """
         return pulumi.get(self, "external_key_manager_ip")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> pulumi.Output[str]:
-        """
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'Failed' state.
-        """
+    def lifecycle_details(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter
-    def port(self) -> pulumi.Output[int]:
-        """
-        The port of the external key manager system
-        """
+    def port(self) -> pulumi.Output[Optional[int]]:
         return pulumi.get(self, "port")
 
     @property
     @pulumi.getter(name="privateEndpointIp")
-    def private_endpoint_ip(self) -> pulumi.Output[str]:
-        """
-        The IP address in the customer's VCN for the EKMS private endpoint. This is taken from subnet
-        """
+    def private_endpoint_ip(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "private_endpoint_ip")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        The current state of the EKMS private endpoint resource.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> pulumi.Output[str]:
-        """
-        The OCID of subnet in which the EKMS private endpoint is to be created 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "subnet_id")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        The time the EKMS private endpoint was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> pulumi.Output[str]:
-        """
-        The time the EKMS private endpoint was updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-        """
+    def time_updated(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_updated")
 

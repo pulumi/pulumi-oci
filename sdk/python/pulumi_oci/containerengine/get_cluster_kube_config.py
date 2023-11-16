@@ -48,10 +48,7 @@ class GetClusterKubeConfigResult:
 
     @property
     @pulumi.getter
-    def content(self) -> str:
-        """
-        content of the Kubeconfig YAML for the cluster.
-        """
+    def content(self) -> Optional[str]:
         return pulumi.get(self, "content")
 
     @property
@@ -66,7 +63,7 @@ class GetClusterKubeConfigResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -98,27 +95,7 @@ def get_cluster_kube_config(cluster_id: Optional[str] = None,
                             token_version: Optional[str] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetClusterKubeConfigResult:
     """
-    This data source provides details about a specific Cluster Kube Config resource in Oracle Cloud Infrastructure Container Engine service.
-
-    Create the Kubeconfig YAML for a cluster.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_cluster_kube_config = oci.ContainerEngine.get_cluster_kube_config(cluster_id=oci_containerengine_cluster["test_cluster"]["id"],
-        endpoint=var["cluster_kube_config_endpoint"],
-        expiration=var["cluster_kube_config_expiration"],
-        token_version=var["cluster_kube_config_token_version"])
-    ```
-
-
-    :param str cluster_id: The OCID of the cluster.
-    :param str endpoint: The endpoint to target. A cluster may have multiple endpoints exposed but the kubeconfig can only target one at a time.
-    :param int expiration: Deprecated. This field is no longer used.
-    :param str token_version: The version of the kubeconfig token. Supported value 2.0.0
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['clusterId'] = cluster_id
@@ -144,26 +121,6 @@ def get_cluster_kube_config_output(cluster_id: Optional[pulumi.Input[str]] = Non
                                    token_version: Optional[pulumi.Input[Optional[str]]] = None,
                                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetClusterKubeConfigResult]:
     """
-    This data source provides details about a specific Cluster Kube Config resource in Oracle Cloud Infrastructure Container Engine service.
-
-    Create the Kubeconfig YAML for a cluster.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_cluster_kube_config = oci.ContainerEngine.get_cluster_kube_config(cluster_id=oci_containerengine_cluster["test_cluster"]["id"],
-        endpoint=var["cluster_kube_config_endpoint"],
-        expiration=var["cluster_kube_config_expiration"],
-        token_version=var["cluster_kube_config_token_version"])
-    ```
-
-
-    :param str cluster_id: The OCID of the cluster.
-    :param str endpoint: The endpoint to target. A cluster may have multiple endpoints exposed but the kubeconfig can only target one at a time.
-    :param int expiration: Deprecated. This field is no longer used.
-    :param str token_version: The version of the kubeconfig token. Supported value 2.0.0
+    Use this data source to access information about an existing resource.
     """
     ...

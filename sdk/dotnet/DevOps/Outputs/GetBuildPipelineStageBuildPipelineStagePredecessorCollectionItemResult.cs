@@ -16,10 +16,10 @@ namespace Pulumi.Oci.DevOps.Outputs
         /// <summary>
         /// Unique identifier that is immutable on creation.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
 
         [OutputConstructor]
-        private GetBuildPipelineStageBuildPipelineStagePredecessorCollectionItemResult(string id)
+        private GetBuildPipelineStageBuildPipelineStagePredecessorCollectionItemResult(string? id)
         {
             Id = id;
         }

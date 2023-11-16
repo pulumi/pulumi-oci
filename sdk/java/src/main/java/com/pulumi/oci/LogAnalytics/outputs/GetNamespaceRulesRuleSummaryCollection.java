@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.LogAnalytics.outputs.GetNamespaceRulesRuleSummaryCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetNamespaceRulesRuleSummaryCollection {
@@ -14,7 +15,7 @@ public final class GetNamespaceRulesRuleSummaryCollection {
      * @return An array of rule summary objects.
      * 
      */
-    private List<GetNamespaceRulesRuleSummaryCollectionItem> items;
+    private @Nullable List<GetNamespaceRulesRuleSummaryCollectionItem> items;
 
     private GetNamespaceRulesRuleSummaryCollection() {}
     /**
@@ -22,7 +23,7 @@ public final class GetNamespaceRulesRuleSummaryCollection {
      * 
      */
     public List<GetNamespaceRulesRuleSummaryCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -34,7 +35,7 @@ public final class GetNamespaceRulesRuleSummaryCollection {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetNamespaceRulesRuleSummaryCollectionItem> items;
+        private @Nullable List<GetNamespaceRulesRuleSummaryCollectionItem> items;
         public Builder() {}
         public Builder(GetNamespaceRulesRuleSummaryCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -42,8 +43,8 @@ public final class GetNamespaceRulesRuleSummaryCollection {
         }
 
         @CustomType.Setter
-        public Builder items(List<GetNamespaceRulesRuleSummaryCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetNamespaceRulesRuleSummaryCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetNamespaceRulesRuleSummaryCollectionItem... items) {

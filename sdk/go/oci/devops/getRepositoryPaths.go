@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Repository Paths in Oracle Cloud Infrastructure Devops service.
@@ -76,7 +75,7 @@ type GetRepositoryPathsResult struct {
 	Filters     []GetRepositoryPathsFilter `pulumi:"filters"`
 	FolderPath  *string                    `pulumi:"folderPath"`
 	// The provider-assigned unique ID for this managed resource.
-	Id             string  `pulumi:"id"`
+	Id             *string `pulumi:"id"`
 	PathsInSubtree *bool   `pulumi:"pathsInSubtree"`
 	Ref            *string `pulumi:"ref"`
 	RepositoryId   string  `pulumi:"repositoryId"`
@@ -131,12 +130,6 @@ func (o GetRepositoryPathsResultOutput) ToGetRepositoryPathsResultOutputWithCont
 	return o
 }
 
-func (o GetRepositoryPathsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetRepositoryPathsResult] {
-	return pulumix.Output[GetRepositoryPathsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetRepositoryPathsResultOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetRepositoryPathsResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
@@ -150,8 +143,8 @@ func (o GetRepositoryPathsResultOutput) FolderPath() pulumi.StringPtrOutput {
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetRepositoryPathsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRepositoryPathsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetRepositoryPathsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRepositoryPathsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetRepositoryPathsResultOutput) PathsInSubtree() pulumi.BoolPtrOutput {

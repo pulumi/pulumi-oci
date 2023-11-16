@@ -77,213 +77,213 @@ export interface GetDomainsPasswordPolicyResult {
     /**
      * A String value whose contents indicate a set of characters that can appear, in any sequence, in a password value
      */
-    readonly allowedChars: string;
+    readonly allowedChars?: string;
     readonly attributeSets?: string[];
     readonly attributes?: string;
     readonly authorization?: string;
     /**
      * Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
      */
-    readonly compartmentOcid: string;
+    readonly compartmentOcid?: string;
     /**
      * List of password policy rules that have values set. This map of stringKey:stringValue pairs can be used to aid users while setting/resetting password
      */
-    readonly configuredPasswordPolicyRules: outputs.Identity.GetDomainsPasswordPolicyConfiguredPasswordPolicyRule[];
+    readonly configuredPasswordPolicyRules?: outputs.Identity.GetDomainsPasswordPolicyConfiguredPasswordPolicyRule[];
     /**
      * A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
      */
-    readonly deleteInProgress: boolean;
+    readonly deleteInProgress?: boolean;
     /**
      * A String that describes the password policy
      */
-    readonly description: string;
+    readonly description?: string;
     /**
      * A delimiter used to separate characters in the dictionary file
      */
-    readonly dictionaryDelimiter: string;
+    readonly dictionaryDelimiter?: string;
     /**
      * A Reference value that contains the URI of a dictionary of words not allowed to appear within a password value
      */
-    readonly dictionaryLocation: string;
+    readonly dictionaryLocation?: string;
     /**
      * Indicates whether the password can match a dictionary word
      */
-    readonly dictionaryWordDisallowed: boolean;
+    readonly dictionaryWordDisallowed?: boolean;
     /**
      * A String value whose contents indicate a set of characters that cannot appear, in any sequence, in a password value
      */
-    readonly disallowedChars: string;
+    readonly disallowedChars?: string;
     /**
      * A String value whose contents indicate a set of substrings that cannot appear, in any sequence, in a password value
      */
-    readonly disallowedSubstrings: string[];
+    readonly disallowedSubstrings?: string[];
     /**
      * List of User attributes whose values are not allowed in the password.
      */
-    readonly disallowedUserAttributeValues: string[];
+    readonly disallowedUserAttributeValues?: string[];
     /**
      * The number of distinct characters between old password and new password
      */
-    readonly distinctCharacters: number;
+    readonly distinctCharacters?: number;
     /**
      * Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
      */
-    readonly domainOcid: string;
+    readonly domainOcid?: string;
     /**
      * An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer's tenant.
      */
-    readonly externalId: string;
+    readonly externalId?: string;
     /**
      * Indicates a sequence of characters that match the user's first name of given name cannot be the password. Password validation against policy will be ignored if length of first name is less than or equal to 3 characters.
      */
-    readonly firstNameDisallowed: boolean;
+    readonly firstNameDisallowed?: boolean;
     /**
      * Indicates whether all of the users should be forced to reset their password on the next login (to comply with new password policy changes)
      */
-    readonly forcePasswordReset: boolean;
+    readonly forcePasswordReset?: boolean;
     /**
      * A list of groups that the password policy belongs to.
      */
-    readonly groups: outputs.Identity.GetDomainsPasswordPolicyGroup[];
+    readonly groups?: outputs.Identity.GetDomainsPasswordPolicyGroup[];
     /**
      * Unique identifier for the SCIM Resource as defined by the Service Provider. Each representation of the Resource MUST include a non-empty id value. This identifier MUST be unique across the Service Provider's entire set of Resources. It MUST be a stable, non-reassignable identifier that does not change when the same Resource is returned in subsequent requests. The value of the id attribute is always issued by the Service Provider and MUST never be specified by the Service Consumer. bulkId: is a reserved keyword and MUST NOT be used in the unique identifier.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The User or App who created the Resource
      */
-    readonly idcsCreatedBies: outputs.Identity.GetDomainsPasswordPolicyIdcsCreatedBy[];
+    readonly idcsCreatedBies?: outputs.Identity.GetDomainsPasswordPolicyIdcsCreatedBy[];
     readonly idcsEndpoint: string;
     /**
      * The User or App who modified the Resource
      */
-    readonly idcsLastModifiedBies: outputs.Identity.GetDomainsPasswordPolicyIdcsLastModifiedBy[];
+    readonly idcsLastModifiedBies?: outputs.Identity.GetDomainsPasswordPolicyIdcsLastModifiedBy[];
     /**
      * The release number when the resource was upgraded.
      */
-    readonly idcsLastUpgradedInRelease: string;
+    readonly idcsLastUpgradedInRelease?: string;
     /**
      * Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
      */
-    readonly idcsPreventedOperations: string[];
+    readonly idcsPreventedOperations?: string[];
     /**
      * Indicates a sequence of characters that match the user's last name of given name cannot be the password. Password validation against policy will be ignored if length of last name is less than or equal to 3 characters.
      */
-    readonly lastNameDisallowed: boolean;
+    readonly lastNameDisallowed?: boolean;
     /**
      * The time period in minutes to lock out a user account when the threshold of invalid login attempts is reached. The available range is from 5 through 1440 minutes (24 hours).
      */
-    readonly lockoutDuration: number;
+    readonly lockoutDuration?: number;
     /**
      * An integer that represents the maximum number of failed logins before an account is locked
      */
-    readonly maxIncorrectAttempts: number;
+    readonly maxIncorrectAttempts?: number;
     /**
      * The maximum password length (in characters). A value of 0 or no value indicates no maximum length restriction.
      */
-    readonly maxLength: number;
+    readonly maxLength?: number;
     /**
      * The maximum number of repeated characters allowed in a password.  A value of 0 or no value indicates no such restriction.
      */
-    readonly maxRepeatedChars: number;
+    readonly maxRepeatedChars?: number;
     /**
      * The maximum number of special characters in a password.  A value of 0 or no value indicates no maximum special characters restriction.
      */
-    readonly maxSpecialChars: number;
+    readonly maxSpecialChars?: number;
     /**
      * A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
      */
-    readonly metas: outputs.Identity.GetDomainsPasswordPolicyMeta[];
+    readonly metas?: outputs.Identity.GetDomainsPasswordPolicyMeta[];
     /**
      * The minimum number of a combination of alphabetic and numeric characters in a password.  A value of 0 or no value indicates no minimum alphanumeric character restriction.
      */
-    readonly minAlphaNumerals: number;
+    readonly minAlphaNumerals?: number;
     /**
      * The minimum number of alphabetic characters in a password.  A value of 0 or no value indicates no minimum alphas restriction.
      */
-    readonly minAlphas: number;
+    readonly minAlphas?: number;
     /**
      * The minimum password length (in characters). A value of 0 or no value indicates no minimum length restriction.
      */
-    readonly minLength: number;
+    readonly minLength?: number;
     /**
      * The minimum number of lowercase alphabetic characters in a password.  A value of 0 or no value indicates no minimum lowercase restriction.
      */
-    readonly minLowerCase: number;
+    readonly minLowerCase?: number;
     /**
      * The minimum number of numeric characters in a password.  A value of 0 or no value indicates no minimum numeric character restriction.
      */
-    readonly minNumerals: number;
+    readonly minNumerals?: number;
     /**
      * Minimum time after which the user can resubmit the reset password request
      */
-    readonly minPasswordAge: number;
+    readonly minPasswordAge?: number;
     /**
      * The minimum number of special characters in a password. A value of 0 or no value indicates no minimum special characters restriction.
      */
-    readonly minSpecialChars: number;
+    readonly minSpecialChars?: number;
     /**
      * The minimum number of unique characters in a password.  A value of 0 or no value indicates no minimum unique characters restriction.
      */
-    readonly minUniqueChars: number;
+    readonly minUniqueChars?: number;
     /**
      * The minimum number of uppercase alphabetic characters in a password. A value of 0 or no value indicates no minimum uppercase restriction.
      */
-    readonly minUpperCase: number;
+    readonly minUpperCase?: number;
     /**
      * A String that is the name of the policy to display to the user. This is the only mandatory attribute for a password policy.
      */
-    readonly name: string;
+    readonly name?: string;
     /**
      * The number of passwords that will be kept in history that may not be used as a password
      */
-    readonly numPasswordsInHistory: number;
+    readonly numPasswordsInHistory?: number;
     /**
      * Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
      */
-    readonly ocid: string;
+    readonly ocid?: string;
     /**
      * An integer indicating the number of days before which the user should be warned about password expiry.
      */
-    readonly passwordExpireWarning: number;
+    readonly passwordExpireWarning?: number;
     /**
      * The number of days after which the password expires automatically
      */
-    readonly passwordExpiresAfter: number;
+    readonly passwordExpiresAfter?: number;
     readonly passwordPolicyId: string;
     /**
      * Indicates whether the password policy is configured as Simple, Standard, or Custom.
      */
-    readonly passwordStrength: string;
+    readonly passwordStrength?: string;
     /**
      * Password policy priority
      */
-    readonly priority: number;
+    readonly priority?: number;
     /**
      * A String value whose contents indicate a set of characters that must appear, in any sequence, in a password value
      */
-    readonly requiredChars: string;
+    readonly requiredChars?: string;
     readonly resourceTypeSchemaVersion?: string;
     /**
      * REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
      */
-    readonly schemas: string[];
+    readonly schemas?: string[];
     /**
      * Indicates that the password must begin with an alphabetic character
      */
-    readonly startsWithAlphabet: boolean;
+    readonly startsWithAlphabet?: boolean;
     /**
      * A list of tags on this resource.
      */
-    readonly tags: outputs.Identity.GetDomainsPasswordPolicyTag[];
+    readonly tags?: outputs.Identity.GetDomainsPasswordPolicyTag[];
     /**
      * Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
      */
-    readonly tenancyOcid: string;
+    readonly tenancyOcid?: string;
     /**
      * Indicates a sequence of characters that match the username cannot be the password. Password validation against policy will be ignored if length of user name is less than or equal to 3 characters.
      */
-    readonly userNameDisallowed: boolean;
+    readonly userNameDisallowed?: boolean;
 }
 /**
  * This data source provides details about a specific Password Policy resource in Oracle Cloud Infrastructure Identity Domains service.

@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Connection resource in Oracle Cloud Infrastructure Devops service.
@@ -73,21 +72,21 @@ type Connection struct {
 	pulumi.CustomResourceState
 
 	// (Updatable) The OCID of personal access token saved in secret store.
-	AccessToken pulumi.StringOutput `pulumi:"accessToken"`
+	AccessToken pulumi.StringPtrOutput `pulumi:"accessToken"`
 	// (Updatable) OCID of personal Bitbucket Cloud AppPassword saved in secret store
-	AppPassword pulumi.StringOutput `pulumi:"appPassword"`
+	AppPassword pulumi.StringPtrOutput `pulumi:"appPassword"`
 	// (Updatable) The Base URL of the hosted BitbucketServer.
-	BaseUrl pulumi.StringOutput `pulumi:"baseUrl"`
+	BaseUrl pulumi.StringPtrOutput `pulumi:"baseUrl"`
 	// The OCID of the compartment containing the connection.
-	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrOutput `pulumi:"compartmentId"`
 	// (Updatable) The type of connection.
 	ConnectionType pulumi.StringOutput `pulumi:"connectionType"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) Optional description about the connection.
-	Description pulumi.StringOutput `pulumi:"description"`
+	Description pulumi.StringPtrOutput `pulumi:"description"`
 	// (Updatable) Optional connection display name. Avoid entering confidential information.
-	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrOutput `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// The result of validating the credentials of a connection.
@@ -95,20 +94,20 @@ type Connection struct {
 	// The OCID of the DevOps project.
 	ProjectId pulumi.StringOutput `pulumi:"projectId"`
 	// The current state of the connection.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
 	// The time the connection was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The time the connection was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
-	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 	// (Updatable) TLS configuration used by build service to verify TLS connection.
-	TlsVerifyConfig ConnectionTlsVerifyConfigOutput `pulumi:"tlsVerifyConfig"`
+	TlsVerifyConfig ConnectionTlsVerifyConfigPtrOutput `pulumi:"tlsVerifyConfig"`
 	// (Updatable) Public Bitbucket Cloud Username in plain text(not more than 30 characters)
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	Username pulumi.StringOutput `pulumi:"username"`
+	Username pulumi.StringPtrOutput `pulumi:"username"`
 }
 
 // NewConnection registers a new resource with the given unique name, arguments, and options.
@@ -317,12 +316,6 @@ func (i *Connection) ToConnectionOutputWithContext(ctx context.Context) Connecti
 	return pulumi.ToOutputWithContext(ctx, i).(ConnectionOutput)
 }
 
-func (i *Connection) ToOutput(ctx context.Context) pulumix.Output[*Connection] {
-	return pulumix.Output[*Connection]{
-		OutputState: i.ToConnectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ConnectionArrayInput is an input type that accepts ConnectionArray and ConnectionArrayOutput values.
 // You can construct a concrete instance of `ConnectionArrayInput` via:
 //
@@ -346,12 +339,6 @@ func (i ConnectionArray) ToConnectionArrayOutput() ConnectionArrayOutput {
 
 func (i ConnectionArray) ToConnectionArrayOutputWithContext(ctx context.Context) ConnectionArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ConnectionArrayOutput)
-}
-
-func (i ConnectionArray) ToOutput(ctx context.Context) pulumix.Output[[]*Connection] {
-	return pulumix.Output[[]*Connection]{
-		OutputState: i.ToConnectionArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // ConnectionMapInput is an input type that accepts ConnectionMap and ConnectionMapOutput values.
@@ -379,12 +366,6 @@ func (i ConnectionMap) ToConnectionMapOutputWithContext(ctx context.Context) Con
 	return pulumi.ToOutputWithContext(ctx, i).(ConnectionMapOutput)
 }
 
-func (i ConnectionMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*Connection] {
-	return pulumix.Output[map[string]*Connection]{
-		OutputState: i.ToConnectionMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ConnectionOutput struct{ *pulumi.OutputState }
 
 func (ConnectionOutput) ElementType() reflect.Type {
@@ -399,30 +380,24 @@ func (o ConnectionOutput) ToConnectionOutputWithContext(ctx context.Context) Con
 	return o
 }
 
-func (o ConnectionOutput) ToOutput(ctx context.Context) pulumix.Output[*Connection] {
-	return pulumix.Output[*Connection]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) The OCID of personal access token saved in secret store.
-func (o ConnectionOutput) AccessToken() pulumi.StringOutput {
-	return o.ApplyT(func(v *Connection) pulumi.StringOutput { return v.AccessToken }).(pulumi.StringOutput)
+func (o ConnectionOutput) AccessToken() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Connection) pulumi.StringPtrOutput { return v.AccessToken }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) OCID of personal Bitbucket Cloud AppPassword saved in secret store
-func (o ConnectionOutput) AppPassword() pulumi.StringOutput {
-	return o.ApplyT(func(v *Connection) pulumi.StringOutput { return v.AppPassword }).(pulumi.StringOutput)
+func (o ConnectionOutput) AppPassword() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Connection) pulumi.StringPtrOutput { return v.AppPassword }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The Base URL of the hosted BitbucketServer.
-func (o ConnectionOutput) BaseUrl() pulumi.StringOutput {
-	return o.ApplyT(func(v *Connection) pulumi.StringOutput { return v.BaseUrl }).(pulumi.StringOutput)
+func (o ConnectionOutput) BaseUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Connection) pulumi.StringPtrOutput { return v.BaseUrl }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the compartment containing the connection.
-func (o ConnectionOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v *Connection) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
+func (o ConnectionOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Connection) pulumi.StringPtrOutput { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The type of connection.
@@ -436,13 +411,13 @@ func (o ConnectionOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // (Updatable) Optional description about the connection.
-func (o ConnectionOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v *Connection) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
+func (o ConnectionOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Connection) pulumi.StringPtrOutput { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Optional connection display name. Avoid entering confidential information.
-func (o ConnectionOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v *Connection) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+func (o ConnectionOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Connection) pulumi.StringPtrOutput { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
@@ -463,8 +438,8 @@ func (o ConnectionOutput) ProjectId() pulumi.StringOutput {
 }
 
 // The current state of the connection.
-func (o ConnectionOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *Connection) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o ConnectionOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Connection) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -473,26 +448,26 @@ func (o ConnectionOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The time the connection was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
-func (o ConnectionOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *Connection) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o ConnectionOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Connection) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time the connection was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
-func (o ConnectionOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *Connection) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o ConnectionOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Connection) pulumi.StringPtrOutput { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) TLS configuration used by build service to verify TLS connection.
-func (o ConnectionOutput) TlsVerifyConfig() ConnectionTlsVerifyConfigOutput {
-	return o.ApplyT(func(v *Connection) ConnectionTlsVerifyConfigOutput { return v.TlsVerifyConfig }).(ConnectionTlsVerifyConfigOutput)
+func (o ConnectionOutput) TlsVerifyConfig() ConnectionTlsVerifyConfigPtrOutput {
+	return o.ApplyT(func(v *Connection) ConnectionTlsVerifyConfigPtrOutput { return v.TlsVerifyConfig }).(ConnectionTlsVerifyConfigPtrOutput)
 }
 
 // (Updatable) Public Bitbucket Cloud Username in plain text(not more than 30 characters)
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-func (o ConnectionOutput) Username() pulumi.StringOutput {
-	return o.ApplyT(func(v *Connection) pulumi.StringOutput { return v.Username }).(pulumi.StringOutput)
+func (o ConnectionOutput) Username() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Connection) pulumi.StringPtrOutput { return v.Username }).(pulumi.StringPtrOutput)
 }
 
 type ConnectionArrayOutput struct{ *pulumi.OutputState }
@@ -507,12 +482,6 @@ func (o ConnectionArrayOutput) ToConnectionArrayOutput() ConnectionArrayOutput {
 
 func (o ConnectionArrayOutput) ToConnectionArrayOutputWithContext(ctx context.Context) ConnectionArrayOutput {
 	return o
-}
-
-func (o ConnectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*Connection] {
-	return pulumix.Output[[]*Connection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ConnectionArrayOutput) Index(i pulumi.IntInput) ConnectionOutput {
@@ -533,12 +502,6 @@ func (o ConnectionMapOutput) ToConnectionMapOutput() ConnectionMapOutput {
 
 func (o ConnectionMapOutput) ToConnectionMapOutputWithContext(ctx context.Context) ConnectionMapOutput {
 	return o
-}
-
-func (o ConnectionMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*Connection] {
-	return pulumix.Output[map[string]*Connection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ConnectionMapOutput) MapIndex(k pulumi.StringInput) ConnectionOutput {

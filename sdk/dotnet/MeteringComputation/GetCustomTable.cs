@@ -110,12 +110,12 @@ namespace Pulumi.Oci.MeteringComputation
         /// <summary>
         /// The custom table compartment OCID.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         public readonly string CustomTableId;
         /// <summary>
         /// The custom table OCID.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The custom table for Cost Analysis UI rendering.
         /// </summary>
@@ -123,19 +123,19 @@ namespace Pulumi.Oci.MeteringComputation
         /// <summary>
         /// The custom table associated saved report OCID.
         /// </summary>
-        public readonly string SavedReportId;
+        public readonly string? SavedReportId;
 
         [OutputConstructor]
         private GetCustomTableResult(
-            string compartmentId,
+            string? compartmentId,
 
             string customTableId,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetCustomTableSavedCustomTableResult> savedCustomTables,
 
-            string savedReportId)
+            string? savedReportId)
         {
             CompartmentId = compartmentId;
             CustomTableId = customTableId;

@@ -11,6 +11,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItem {
@@ -18,187 +20,187 @@ public final class GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionIte
      * @return A filter to return only resources that match the specified compartment OCID.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return An optional filter to return only resources that match the specified OCID of the database security configuration resource.
      * 
      */
-    private String databaseSecurityConfigId;
+    private @Nullable String databaseSecurityConfigId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return The description of the database security config.
      * 
      */
-    private String description;
+    private @Nullable String description;
     /**
      * @return A filter to return only resources that match the specified display name.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return The OCID of the database security config.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Details about the current state of the database security config in Data Safe.
      * 
      */
-    private String lifecycleDetails;
-    private Integer refreshTrigger;
+    private @Nullable String lifecycleDetails;
+    private @Nullable Integer refreshTrigger;
     /**
      * @return The SQL firewall related configurations.
      * 
      */
-    private List<GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfig> sqlFirewallConfigs;
+    private @Nullable List<GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfig> sqlFirewallConfigs;
     /**
      * @return The current state of the database security configuration.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    private Map<String,Object> systemTags;
+    private @Nullable Map<String,Object> systemTags;
     /**
      * @return A filter to return only items related to a specific target OCID.
      * 
      */
-    private String targetId;
+    private @Nullable String targetId;
     /**
      * @return The time that the database security config was created, in the format defined by RFC3339.
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The last date and time the database security config was refreshed, in the format defined by RFC3339.
      * 
      */
-    private String timeLastRefreshed;
+    private @Nullable String timeLastRefreshed;
     /**
      * @return The date and time the database security configuration was last updated, in the format defined by RFC3339.
      * 
      */
-    private String timeUpdated;
+    private @Nullable String timeUpdated;
 
     private GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItem() {}
     /**
      * @return A filter to return only resources that match the specified compartment OCID.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return An optional filter to return only resources that match the specified OCID of the database security configuration resource.
      * 
      */
-    public String databaseSecurityConfigId() {
-        return this.databaseSecurityConfigId;
+    public Optional<String> databaseSecurityConfigId() {
+        return Optional.ofNullable(this.databaseSecurityConfigId);
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return The description of the database security config.
      * 
      */
-    public String description() {
-        return this.description;
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
     /**
      * @return A filter to return only resources that match the specified display name.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return The OCID of the database security config.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Details about the current state of the database security config in Data Safe.
      * 
      */
-    public String lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Optional<String> lifecycleDetails() {
+        return Optional.ofNullable(this.lifecycleDetails);
     }
-    public Integer refreshTrigger() {
-        return this.refreshTrigger;
+    public Optional<Integer> refreshTrigger() {
+        return Optional.ofNullable(this.refreshTrigger);
     }
     /**
      * @return The SQL firewall related configurations.
      * 
      */
     public List<GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfig> sqlFirewallConfigs() {
-        return this.sqlFirewallConfigs;
+        return this.sqlFirewallConfigs == null ? List.of() : this.sqlFirewallConfigs;
     }
     /**
      * @return The current state of the database security configuration.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
     public Map<String,Object> systemTags() {
-        return this.systemTags;
+        return this.systemTags == null ? Map.of() : this.systemTags;
     }
     /**
      * @return A filter to return only items related to a specific target OCID.
      * 
      */
-    public String targetId() {
-        return this.targetId;
+    public Optional<String> targetId() {
+        return Optional.ofNullable(this.targetId);
     }
     /**
      * @return The time that the database security config was created, in the format defined by RFC3339.
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return The last date and time the database security config was refreshed, in the format defined by RFC3339.
      * 
      */
-    public String timeLastRefreshed() {
-        return this.timeLastRefreshed;
+    public Optional<String> timeLastRefreshed() {
+        return Optional.ofNullable(this.timeLastRefreshed);
     }
     /**
      * @return The date and time the database security configuration was last updated, in the format defined by RFC3339.
      * 
      */
-    public String timeUpdated() {
-        return this.timeUpdated;
+    public Optional<String> timeUpdated() {
+        return Optional.ofNullable(this.timeUpdated);
     }
 
     public static Builder builder() {
@@ -210,22 +212,22 @@ public final class GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionIte
     }
     @CustomType.Builder
     public static final class Builder {
-        private String compartmentId;
-        private String databaseSecurityConfigId;
-        private Map<String,Object> definedTags;
-        private String description;
-        private String displayName;
-        private Map<String,Object> freeformTags;
-        private String id;
-        private String lifecycleDetails;
-        private Integer refreshTrigger;
-        private List<GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfig> sqlFirewallConfigs;
-        private String state;
-        private Map<String,Object> systemTags;
-        private String targetId;
-        private String timeCreated;
-        private String timeLastRefreshed;
-        private String timeUpdated;
+        private @Nullable String compartmentId;
+        private @Nullable String databaseSecurityConfigId;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String description;
+        private @Nullable String displayName;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String id;
+        private @Nullable String lifecycleDetails;
+        private @Nullable Integer refreshTrigger;
+        private @Nullable List<GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfig> sqlFirewallConfigs;
+        private @Nullable String state;
+        private @Nullable Map<String,Object> systemTags;
+        private @Nullable String targetId;
+        private @Nullable String timeCreated;
+        private @Nullable String timeLastRefreshed;
+        private @Nullable String timeUpdated;
         public Builder() {}
         public Builder(GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -248,86 +250,86 @@ public final class GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionIte
         }
 
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder databaseSecurityConfigId(String databaseSecurityConfigId) {
-            this.databaseSecurityConfigId = Objects.requireNonNull(databaseSecurityConfigId);
+        public Builder databaseSecurityConfigId(@Nullable String databaseSecurityConfigId) {
+            this.databaseSecurityConfigId = databaseSecurityConfigId;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+        public Builder description(@Nullable String description) {
+            this.description = description;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+        public Builder lifecycleDetails(@Nullable String lifecycleDetails) {
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
-        public Builder refreshTrigger(Integer refreshTrigger) {
-            this.refreshTrigger = Objects.requireNonNull(refreshTrigger);
+        public Builder refreshTrigger(@Nullable Integer refreshTrigger) {
+            this.refreshTrigger = refreshTrigger;
             return this;
         }
         @CustomType.Setter
-        public Builder sqlFirewallConfigs(List<GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfig> sqlFirewallConfigs) {
-            this.sqlFirewallConfigs = Objects.requireNonNull(sqlFirewallConfigs);
+        public Builder sqlFirewallConfigs(@Nullable List<GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfig> sqlFirewallConfigs) {
+            this.sqlFirewallConfigs = sqlFirewallConfigs;
             return this;
         }
         public Builder sqlFirewallConfigs(GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfig... sqlFirewallConfigs) {
             return sqlFirewallConfigs(List.of(sqlFirewallConfigs));
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+        public Builder systemTags(@Nullable Map<String,Object> systemTags) {
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
-        public Builder targetId(String targetId) {
-            this.targetId = Objects.requireNonNull(targetId);
+        public Builder targetId(@Nullable String targetId) {
+            this.targetId = targetId;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeLastRefreshed(String timeLastRefreshed) {
-            this.timeLastRefreshed = Objects.requireNonNull(timeLastRefreshed);
+        public Builder timeLastRefreshed(@Nullable String timeLastRefreshed) {
+            this.timeLastRefreshed = timeLastRefreshed;
             return this;
         }
         @CustomType.Setter
-        public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+        public Builder timeUpdated(@Nullable String timeUpdated) {
+            this.timeUpdated = timeUpdated;
             return this;
         }
         public GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItem build() {

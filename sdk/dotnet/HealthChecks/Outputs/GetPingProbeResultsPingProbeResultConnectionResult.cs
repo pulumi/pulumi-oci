@@ -16,17 +16,17 @@ namespace Pulumi.Oci.HealthChecks.Outputs
         /// <summary>
         /// The connection IP address.
         /// </summary>
-        public readonly string Address;
+        public readonly string? Address;
         /// <summary>
         /// The port.
         /// </summary>
-        public readonly int Port;
+        public readonly int? Port;
 
         [OutputConstructor]
         private GetPingProbeResultsPingProbeResultConnectionResult(
-            string address,
+            string? address,
 
-            int port)
+            int? port)
         {
             Address = address;
             Port = port;

@@ -112,107 +112,107 @@ namespace Pulumi.Oci.Identity
         /// <summary>
         /// The OCID of the tenancy containing the user.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// DB username of the DB credential. Has to be unique across the tenancy.
         /// </summary>
-        public readonly string DbUserName;
+        public readonly string? DbUserName;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// The description you assign to the user. Does not have to be unique, and it's changeable.
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// The email address you assign to the user. The email address must be unique across all users in the tenancy.
         /// </summary>
-        public readonly string Email;
+        public readonly string? Email;
         /// <summary>
         /// Whether the email address has been validated.
         /// </summary>
-        public readonly bool EmailVerified;
+        public readonly bool? EmailVerified;
         /// <summary>
         /// Identifier of the user in the identity provider
         /// </summary>
-        public readonly string ExternalIdentifier;
+        public readonly string? ExternalIdentifier;
         /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// The OCID of the user.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The OCID of the `IdentityProvider` this user belongs to.
         /// </summary>
-        public readonly string IdentityProviderId;
+        public readonly string? IdentityProviderId;
         /// <summary>
         /// Returned only if the user's `lifecycleState` is INACTIVE. A 16-bit value showing the reason why the user is inactive:
         /// * bit 0: SUSPENDED (reserved for future use)
         /// * bit 1: DISABLED (reserved for future use)
         /// * bit 2: BLOCKED (the user has exceeded the maximum number of failed login attempts for the Console)
         /// </summary>
-        public readonly string InactiveState;
+        public readonly string? InactiveState;
         /// <summary>
         /// The date and time of when the user most recently logged in the format defined by RFC3339 (ex. `2016-08-25T21:10:29.600Z`). If there is no login history, this field is null.
         /// </summary>
-        public readonly string LastSuccessfulLoginTime;
+        public readonly string? LastSuccessfulLoginTime;
         /// <summary>
         /// The name you assign to the user during creation. This is the user's login for the Console. The name must be unique across all users in the tenancy and cannot be changed.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// The date and time of when the user most recently logged in the format defined by RFC3339 (ex. `2016-08-25T21:10:29.600Z`). If there is no login history, this field is null.
         /// </summary>
-        public readonly string PreviousSuccessfulLoginTime;
+        public readonly string? PreviousSuccessfulLoginTime;
         /// <summary>
         /// The user's current state.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// Date and time the user was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         public readonly string UserId;
 
         [OutputConstructor]
         private GetUserResult(
             ImmutableArray<Outputs.GetUserCapabilityResult> capabilities,
 
-            string compartmentId,
+            string? compartmentId,
 
-            string dbUserName,
+            string? dbUserName,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string description,
+            string? description,
 
-            string email,
+            string? email,
 
-            bool emailVerified,
+            bool? emailVerified,
 
-            string externalIdentifier,
+            string? externalIdentifier,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string id,
+            string? id,
 
-            string identityProviderId,
+            string? identityProviderId,
 
-            string inactiveState,
+            string? inactiveState,
 
-            string lastSuccessfulLoginTime,
+            string? lastSuccessfulLoginTime,
 
-            string name,
+            string? name,
 
-            string previousSuccessfulLoginTime,
+            string? previousSuccessfulLoginTime,
 
-            string state,
+            string? state,
 
-            string timeCreated,
+            string? timeCreated,
 
             string userId)
         {

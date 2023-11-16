@@ -8,6 +8,8 @@ import com.pulumi.oci.DatabaseManagement.outputs.GetExternalDbSystemDiscoveryPat
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetExternalDbSystemDiscoveryPatchOperationValueConnector {
@@ -15,51 +17,51 @@ public final class GetExternalDbSystemDiscoveryPatchOperationValueConnector {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used for the external DB system connector.
      * 
      */
-    private String agentId;
+    private @Nullable String agentId;
     /**
      * @return The connection details required to connect to an external DB system component.
      * 
      */
-    private List<GetExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfo> connectionInfos;
+    private @Nullable List<GetExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfo> connectionInfos;
     /**
      * @return The type of connector.
      * 
      */
-    private String connectorType;
+    private @Nullable String connectorType;
     /**
      * @return The user-friendly name for the DB system. The name does not have to be unique.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
 
     private GetExternalDbSystemDiscoveryPatchOperationValueConnector() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used for the external DB system connector.
      * 
      */
-    public String agentId() {
-        return this.agentId;
+    public Optional<String> agentId() {
+        return Optional.ofNullable(this.agentId);
     }
     /**
      * @return The connection details required to connect to an external DB system component.
      * 
      */
     public List<GetExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfo> connectionInfos() {
-        return this.connectionInfos;
+        return this.connectionInfos == null ? List.of() : this.connectionInfos;
     }
     /**
      * @return The type of connector.
      * 
      */
-    public String connectorType() {
-        return this.connectorType;
+    public Optional<String> connectorType() {
+        return Optional.ofNullable(this.connectorType);
     }
     /**
      * @return The user-friendly name for the DB system. The name does not have to be unique.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
 
     public static Builder builder() {
@@ -71,10 +73,10 @@ public final class GetExternalDbSystemDiscoveryPatchOperationValueConnector {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String agentId;
-        private List<GetExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfo> connectionInfos;
-        private String connectorType;
-        private String displayName;
+        private @Nullable String agentId;
+        private @Nullable List<GetExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfo> connectionInfos;
+        private @Nullable String connectorType;
+        private @Nullable String displayName;
         public Builder() {}
         public Builder(GetExternalDbSystemDiscoveryPatchOperationValueConnector defaults) {
     	      Objects.requireNonNull(defaults);
@@ -85,26 +87,26 @@ public final class GetExternalDbSystemDiscoveryPatchOperationValueConnector {
         }
 
         @CustomType.Setter
-        public Builder agentId(String agentId) {
-            this.agentId = Objects.requireNonNull(agentId);
+        public Builder agentId(@Nullable String agentId) {
+            this.agentId = agentId;
             return this;
         }
         @CustomType.Setter
-        public Builder connectionInfos(List<GetExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfo> connectionInfos) {
-            this.connectionInfos = Objects.requireNonNull(connectionInfos);
+        public Builder connectionInfos(@Nullable List<GetExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfo> connectionInfos) {
+            this.connectionInfos = connectionInfos;
             return this;
         }
         public Builder connectionInfos(GetExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfo... connectionInfos) {
             return connectionInfos(List.of(connectionInfos));
         }
         @CustomType.Setter
-        public Builder connectorType(String connectorType) {
-            this.connectorType = Objects.requireNonNull(connectorType);
+        public Builder connectorType(@Nullable String connectorType) {
+            this.connectorType = connectorType;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         public GetExternalDbSystemDiscoveryPatchOperationValueConnector build() {

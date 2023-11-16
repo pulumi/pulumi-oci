@@ -15,6 +15,7 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -91,14 +92,14 @@ public class Bastion extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="clientCidrBlockAllowLists", refs={List.class,String.class}, tree="[0,1]")
-    private Output<List<String>> clientCidrBlockAllowLists;
+    private Output</* @Nullable */ List<String>> clientCidrBlockAllowLists;
 
     /**
      * @return (Updatable) A list of address ranges in CIDR notation that you want to allow to connect to sessions hosted by this bastion.
      * 
      */
-    public Output<List<String>> clientCidrBlockAllowLists() {
-        return this.clientCidrBlockAllowLists;
+    public Output<Optional<List<String>>> clientCidrBlockAllowLists() {
+        return Codegen.optional(this.clientCidrBlockAllowLists);
     }
     /**
      * (Updatable) The unique identifier (OCID) of the compartment where the bastion is located.
@@ -119,84 +120,84 @@ public class Bastion extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * Flag to enable FQDN and SOCKS5 Proxy Support. Example: `ENABLED`, `DISABLED`
      * 
      */
     @Export(name="dnsProxyStatus", refs={String.class}, tree="[0]")
-    private Output<String> dnsProxyStatus;
+    private Output</* @Nullable */ String> dnsProxyStatus;
 
     /**
      * @return Flag to enable FQDN and SOCKS5 Proxy Support. Example: `ENABLED`, `DISABLED`
      * 
      */
-    public Output<String> dnsProxyStatus() {
-        return this.dnsProxyStatus;
+    public Output<Optional<String>> dnsProxyStatus() {
+        return Codegen.optional(this.dnsProxyStatus);
     }
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * A message describing the current state in more detail.
      * 
      */
     @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
-    private Output<String> lifecycleDetails;
+    private Output</* @Nullable */ String> lifecycleDetails;
 
     /**
      * @return A message describing the current state in more detail.
      * 
      */
-    public Output<String> lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Output<Optional<String>> lifecycleDetails() {
+        return Codegen.optional(this.lifecycleDetails);
     }
     /**
      * (Updatable) The maximum amount of time that any session on the bastion can remain active.
      * 
      */
     @Export(name="maxSessionTtlInSeconds", refs={Integer.class}, tree="[0]")
-    private Output<Integer> maxSessionTtlInSeconds;
+    private Output</* @Nullable */ Integer> maxSessionTtlInSeconds;
 
     /**
      * @return (Updatable) The maximum amount of time that any session on the bastion can remain active.
      * 
      */
-    public Output<Integer> maxSessionTtlInSeconds() {
-        return this.maxSessionTtlInSeconds;
+    public Output<Optional<Integer>> maxSessionTtlInSeconds() {
+        return Codegen.optional(this.maxSessionTtlInSeconds);
     }
     /**
      * The maximum number of active sessions allowed on the bastion.
      * 
      */
     @Export(name="maxSessionsAllowed", refs={Integer.class}, tree="[0]")
-    private Output<Integer> maxSessionsAllowed;
+    private Output</* @Nullable */ Integer> maxSessionsAllowed;
 
     /**
      * @return The maximum number of active sessions allowed on the bastion.
      * 
      */
-    public Output<Integer> maxSessionsAllowed() {
-        return this.maxSessionsAllowed;
+    public Output<Optional<Integer>> maxSessionsAllowed() {
+        return Codegen.optional(this.maxSessionsAllowed);
     }
     /**
      * The name of the bastion, which can&#39;t be changed after creation.
@@ -217,70 +218,70 @@ public class Bastion extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="phoneBookEntry", refs={String.class}, tree="[0]")
-    private Output<String> phoneBookEntry;
+    private Output</* @Nullable */ String> phoneBookEntry;
 
     /**
      * @return The phonebook entry of the customer&#39;s team, which can&#39;t be changed after creation. Not applicable to `standard` bastions.
      * 
      */
-    public Output<String> phoneBookEntry() {
-        return this.phoneBookEntry;
+    public Output<Optional<String>> phoneBookEntry() {
+        return Codegen.optional(this.phoneBookEntry);
     }
     /**
      * The private IP address of the created private endpoint.
      * 
      */
     @Export(name="privateEndpointIpAddress", refs={String.class}, tree="[0]")
-    private Output<String> privateEndpointIpAddress;
+    private Output</* @Nullable */ String> privateEndpointIpAddress;
 
     /**
      * @return The private IP address of the created private endpoint.
      * 
      */
-    public Output<String> privateEndpointIpAddress() {
-        return this.privateEndpointIpAddress;
+    public Output<Optional<String>> privateEndpointIpAddress() {
+        return Codegen.optional(this.privateEndpointIpAddress);
     }
     /**
      * The current state of the bastion.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The current state of the bastion.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * (Updatable) A list of IP addresses of the hosts that the bastion has access to. Not applicable to `standard` bastions.
      * 
      */
     @Export(name="staticJumpHostIpAddresses", refs={List.class,String.class}, tree="[0,1]")
-    private Output<List<String>> staticJumpHostIpAddresses;
+    private Output</* @Nullable */ List<String>> staticJumpHostIpAddresses;
 
     /**
      * @return (Updatable) A list of IP addresses of the hosts that the bastion has access to. Not applicable to `standard` bastions.
      * 
      */
-    public Output<List<String>> staticJumpHostIpAddresses() {
-        return this.staticJumpHostIpAddresses;
+    public Output<Optional<List<String>>> staticJumpHostIpAddresses() {
+        return Codegen.optional(this.staticJumpHostIpAddresses);
     }
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
     @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> systemTags;
+    private Output</* @Nullable */ Map<String,Object>> systemTags;
 
     /**
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    public Output<Map<String,Object>> systemTags() {
-        return this.systemTags;
+    public Output<Optional<Map<String,Object>>> systemTags() {
+        return Codegen.optional(this.systemTags);
     }
     /**
      * The unique identifier (OCID) of the subnet that the bastion connects to.
@@ -307,42 +308,42 @@ public class Bastion extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="targetVcnId", refs={String.class}, tree="[0]")
-    private Output<String> targetVcnId;
+    private Output</* @Nullable */ String> targetVcnId;
 
     /**
      * @return The unique identifier (OCID) of the virtual cloud network (VCN) that the bastion connects to.
      * 
      */
-    public Output<String> targetVcnId() {
-        return this.targetVcnId;
+    public Output<Optional<String>> targetVcnId() {
+        return Codegen.optional(this.targetVcnId);
     }
     /**
      * The time the bastion was created. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The time the bastion was created. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * The time the bastion was updated. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
      * 
      */
     @Export(name="timeUpdated", refs={String.class}, tree="[0]")
-    private Output<String> timeUpdated;
+    private Output</* @Nullable */ String> timeUpdated;
 
     /**
      * @return The time the bastion was updated. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
      * 
      */
-    public Output<String> timeUpdated() {
-        return this.timeUpdated;
+    public Output<Optional<String>> timeUpdated() {
+        return Codegen.optional(this.timeUpdated);
     }
 
     /**

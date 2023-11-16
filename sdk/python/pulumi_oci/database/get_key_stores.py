@@ -40,9 +40,6 @@ class GetKeyStoresResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
@@ -52,7 +49,7 @@ class GetKeyStoresResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -60,10 +57,7 @@ class GetKeyStoresResult:
 
     @property
     @pulumi.getter(name="keyStores")
-    def key_stores(self) -> Sequence['outputs.GetKeyStoresKeyStoreResult']:
-        """
-        The list of key_stores.
-        """
+    def key_stores(self) -> Optional[Sequence['outputs.GetKeyStoresKeyStoreResult']]:
         return pulumi.get(self, "key_stores")
 
 
@@ -83,21 +77,7 @@ def get_key_stores(compartment_id: Optional[str] = None,
                    filters: Optional[Sequence[pulumi.InputType['GetKeyStoresFilterArgs']]] = None,
                    opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetKeyStoresResult:
     """
-    This data source provides the list of Key Stores in Oracle Cloud Infrastructure Database service.
-
-    Gets a list of key stores in the specified compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_key_stores = oci.Database.get_key_stores(compartment_id=var["compartment_id"])
-    ```
-
-
-    :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -117,20 +97,6 @@ def get_key_stores_output(compartment_id: Optional[pulumi.Input[str]] = None,
                           filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetKeyStoresFilterArgs']]]]] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetKeyStoresResult]:
     """
-    This data source provides the list of Key Stores in Oracle Cloud Infrastructure Database service.
-
-    Gets a list of key stores in the specified compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_key_stores = oci.Database.get_key_stores(compartment_id=var["compartment_id"])
-    ```
-
-
-    :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+    Use this data source to access information about an existing resource.
     """
     ...

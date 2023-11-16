@@ -16,10 +16,10 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// <summary>
         /// The name of the disk group.
         /// </summary>
-        public readonly string DiskGroup;
+        public readonly string? DiskGroup;
 
         [OutputConstructor]
-        private GetManagedDatabasesAsmPropertiesAsmPropertyCollectionItemResult(string diskGroup)
+        private GetManagedDatabasesAsmPropertiesAsmPropertyCollectionItemResult(string? diskGroup)
         {
             DiskGroup = diskGroup;
         }

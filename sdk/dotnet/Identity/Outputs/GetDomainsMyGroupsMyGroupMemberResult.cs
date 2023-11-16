@@ -16,53 +16,53 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// The date and time that the member was added to the group.
         /// </summary>
-        public readonly string DateAdded;
+        public readonly string? DateAdded;
         /// <summary>
         /// App Display Name
         /// </summary>
-        public readonly string Display;
+        public readonly string? Display;
         /// <summary>
         /// The membership OCID.
         /// </summary>
-        public readonly string MembershipOcid;
+        public readonly string? MembershipOcid;
         /// <summary>
         /// PasswordPolicy Name
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
         /// </summary>
-        public readonly string Ocid;
+        public readonly string? Ocid;
         /// <summary>
         /// App URI
         /// </summary>
-        public readonly string Ref;
+        public readonly string? Ref;
         /// <summary>
         /// The type of the entity that created this Group.
         /// </summary>
-        public readonly string Type;
+        public readonly string? Type;
         /// <summary>
         /// The ID of the App.
         /// </summary>
-        public readonly string Value;
+        public readonly string? Value;
 
         [OutputConstructor]
         private GetDomainsMyGroupsMyGroupMemberResult(
-            string dateAdded,
+            string? dateAdded,
 
-            string display,
+            string? display,
 
-            string membershipOcid,
+            string? membershipOcid,
 
-            string name,
+            string? name,
 
-            string ocid,
+            string? ocid,
 
-            string @ref,
+            string? @ref,
 
-            string type,
+            string? type,
 
-            string value)
+            string? value)
         {
             DateAdded = dateAdded;
             Display = display;

@@ -34,7 +34,7 @@ public final class GetSecurityPoliciesResult {
      * @return The list of security_policy_collection.
      * 
      */
-    private List<GetSecurityPoliciesSecurityPolicyCollection> securityPolicyCollections;
+    private @Nullable List<GetSecurityPoliciesSecurityPolicyCollection> securityPolicyCollections;
     /**
      * @return The current state of the security policy
      * 
@@ -71,7 +71,7 @@ public final class GetSecurityPoliciesResult {
      * 
      */
     public List<GetSecurityPoliciesSecurityPolicyCollection> securityPolicyCollections() {
-        return this.securityPolicyCollections;
+        return this.securityPolicyCollections == null ? List.of() : this.securityPolicyCollections;
     }
     /**
      * @return The current state of the security policy
@@ -94,7 +94,7 @@ public final class GetSecurityPoliciesResult {
         private @Nullable String displayName;
         private @Nullable List<GetSecurityPoliciesFilter> filters;
         private @Nullable String id;
-        private List<GetSecurityPoliciesSecurityPolicyCollection> securityPolicyCollections;
+        private @Nullable List<GetSecurityPoliciesSecurityPolicyCollection> securityPolicyCollections;
         private @Nullable String state;
         public Builder() {}
         public Builder(GetSecurityPoliciesResult defaults) {
@@ -131,8 +131,8 @@ public final class GetSecurityPoliciesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder securityPolicyCollections(List<GetSecurityPoliciesSecurityPolicyCollection> securityPolicyCollections) {
-            this.securityPolicyCollections = Objects.requireNonNull(securityPolicyCollections);
+        public Builder securityPolicyCollections(@Nullable List<GetSecurityPoliciesSecurityPolicyCollection> securityPolicyCollections) {
+            this.securityPolicyCollections = securityPolicyCollections;
             return this;
         }
         public Builder securityPolicyCollections(GetSecurityPoliciesSecurityPolicyCollection... securityPolicyCollections) {

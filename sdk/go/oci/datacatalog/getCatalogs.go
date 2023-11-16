@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Catalogs in Oracle Cloud Infrastructure Data Catalog service.
@@ -74,7 +73,7 @@ type GetCatalogsResult struct {
 	DisplayName *string             `pulumi:"displayName"`
 	Filters     []GetCatalogsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The current state of the data catalog resource.
 	State *string `pulumi:"state"`
 }
@@ -122,12 +121,6 @@ func (o GetCatalogsResultOutput) ToGetCatalogsResultOutputWithContext(ctx contex
 	return o
 }
 
-func (o GetCatalogsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetCatalogsResult] {
-	return pulumix.Output[GetCatalogsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The list of catalogs.
 func (o GetCatalogsResultOutput) Catalogs() GetCatalogsCatalogArrayOutput {
 	return o.ApplyT(func(v GetCatalogsResult) []GetCatalogsCatalog { return v.Catalogs }).(GetCatalogsCatalogArrayOutput)
@@ -148,8 +141,8 @@ func (o GetCatalogsResultOutput) Filters() GetCatalogsFilterArrayOutput {
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetCatalogsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCatalogsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetCatalogsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCatalogsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the data catalog resource.

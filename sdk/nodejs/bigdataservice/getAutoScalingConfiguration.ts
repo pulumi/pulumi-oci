@@ -52,40 +52,40 @@ export interface GetAutoScalingConfigurationArgs {
 export interface GetAutoScalingConfigurationResult {
     readonly autoScalingConfigurationId: string;
     readonly bdsInstanceId: string;
-    readonly clusterAdminPassword: string;
+    readonly clusterAdminPassword?: string;
     /**
      * A user-friendly name. The name does not have to be unique, and it may be changed. Avoid entering confidential information.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * The unique identifier for the autoscale configuration.
      */
-    readonly id: string;
-    readonly isEnabled: boolean;
+    readonly id?: string;
+    readonly isEnabled?: boolean;
     /**
      * A node type that is managed by an autoscale configuration. The only supported types are WORKER, COMPUTE_ONLY_WORKER, KAFKA_BROKER.
      */
-    readonly nodeType: string;
+    readonly nodeType?: string;
     /**
      * This model for autoscaling policy is deprecated and not supported for ODH clusters. Use the `AutoScalePolicyDetails` model to manage autoscale policy details for ODH clusters.
      */
-    readonly policies: outputs.BigDataService.GetAutoScalingConfigurationPolicy[];
+    readonly policies?: outputs.BigDataService.GetAutoScalingConfigurationPolicy[];
     /**
      * Details of an autoscale policy.
      */
-    readonly policyDetails: outputs.BigDataService.GetAutoScalingConfigurationPolicyDetail[];
+    readonly policyDetails?: outputs.BigDataService.GetAutoScalingConfigurationPolicyDetail[];
     /**
      * The state of the autoscale configuration.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * The time the cluster was created, shown as an RFC 3339 formatted datetime string.
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The time the autoscale configuration was updated, shown as an RFC 3339 formatted datetime string.
      */
-    readonly timeUpdated: string;
+    readonly timeUpdated?: string;
 }
 /**
  * This data source provides details about a specific Auto Scaling Configuration resource in Oracle Cloud Infrastructure Big Data Service service.

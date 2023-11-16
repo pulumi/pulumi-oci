@@ -46,17 +46,11 @@ class GetStreamCdnConfigsResult:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        The CDN Configuration identifier or display name, which can be renamed and is not necessarily unique. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="distributionChannelId")
     def distribution_channel_id(self) -> str:
-        """
-        Distribution Channel Identifier.
-        """
         return pulumi.get(self, "distribution_channel_id")
 
     @property
@@ -67,25 +61,16 @@ class GetStreamCdnConfigsResult:
     @property
     @pulumi.getter
     def id(self) -> Optional[str]:
-        """
-        Unique identifier that is immutable on creation.
-        """
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the CDN Configuration.
-        """
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="streamCdnConfigCollections")
-    def stream_cdn_config_collections(self) -> Sequence['outputs.GetStreamCdnConfigsStreamCdnConfigCollectionResult']:
-        """
-        The list of stream_cdn_config_collection.
-        """
+    def stream_cdn_config_collections(self) -> Optional[Sequence['outputs.GetStreamCdnConfigsStreamCdnConfigCollectionResult']]:
         return pulumi.get(self, "stream_cdn_config_collections")
 
 
@@ -110,27 +95,7 @@ def get_stream_cdn_configs(display_name: Optional[str] = None,
                            state: Optional[str] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetStreamCdnConfigsResult:
     """
-    This data source provides the list of Stream Cdn Configs in Oracle Cloud Infrastructure Media Services service.
-
-    Lists the StreamCdnConfig.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_stream_cdn_configs = oci.MediaServices.get_stream_cdn_configs(distribution_channel_id=oci_mysql_channel["test_channel"]["id"],
-        display_name=var["stream_cdn_config_display_name"],
-        id=var["stream_cdn_config_id"],
-        state=var["stream_cdn_config_state"])
-    ```
-
-
-    :param str display_name: A filter to return only the resources that match the entire display name given.
-    :param str distribution_channel_id: The Stream Distribution Channel identifier this CdnConfig belongs to.
-    :param str id: Unique StreamCdnConfig identifier.
-    :param str state: A filter to return only the resources with lifecycleState matching the given lifecycleState.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['displayName'] = display_name
@@ -158,26 +123,6 @@ def get_stream_cdn_configs_output(display_name: Optional[pulumi.Input[Optional[s
                                   state: Optional[pulumi.Input[Optional[str]]] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetStreamCdnConfigsResult]:
     """
-    This data source provides the list of Stream Cdn Configs in Oracle Cloud Infrastructure Media Services service.
-
-    Lists the StreamCdnConfig.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_stream_cdn_configs = oci.MediaServices.get_stream_cdn_configs(distribution_channel_id=oci_mysql_channel["test_channel"]["id"],
-        display_name=var["stream_cdn_config_display_name"],
-        id=var["stream_cdn_config_id"],
-        state=var["stream_cdn_config_state"])
-    ```
-
-
-    :param str display_name: A filter to return only the resources that match the entire display name given.
-    :param str distribution_channel_id: The Stream Distribution Channel identifier this CdnConfig belongs to.
-    :param str id: Unique StreamCdnConfig identifier.
-    :param str state: A filter to return only the resources with lifecycleState matching the given lifecycleState.
+    Use this data source to access information about an existing resource.
     """
     ...

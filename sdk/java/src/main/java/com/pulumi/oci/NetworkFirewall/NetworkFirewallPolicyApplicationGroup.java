@@ -13,6 +13,7 @@ import com.pulumi.oci.Utilities;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -115,28 +116,28 @@ public class NetworkFirewallPolicyApplicationGroup extends com.pulumi.resources.
      * 
      */
     @Export(name="parentResourceId", refs={String.class}, tree="[0]")
-    private Output<String> parentResourceId;
+    private Output</* @Nullable */ String> parentResourceId;
 
     /**
      * @return OCID of the Network Firewall Policy this application group belongs to.
      * 
      */
-    public Output<String> parentResourceId() {
-        return this.parentResourceId;
+    public Output<Optional<String>> parentResourceId() {
+        return Codegen.optional(this.parentResourceId);
     }
     /**
      * Count of total applications in the given application group.
      * 
      */
     @Export(name="totalApps", refs={Integer.class}, tree="[0]")
-    private Output<Integer> totalApps;
+    private Output</* @Nullable */ Integer> totalApps;
 
     /**
      * @return Count of total applications in the given application group.
      * 
      */
-    public Output<Integer> totalApps() {
-        return this.totalApps;
+    public Output<Optional<Integer>> totalApps() {
+        return Codegen.optional(this.totalApps);
     }
 
     /**

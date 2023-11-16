@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Vm Cluster Recommended Network resource in Oracle Cloud Infrastructure Database service.
@@ -71,7 +70,7 @@ type GetVmClusterRecommendedNetworkResult struct {
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The provider-assigned unique ID for this managed resource.
-	Id       string                                  `pulumi:"id"`
+	Id       *string                                 `pulumi:"id"`
 	Networks []GetVmClusterRecommendedNetworkNetwork `pulumi:"networks"`
 	// The list of NTP server IP addresses. Maximum of 3 allowed.
 	Ntps []string `pulumi:"ntps"`
@@ -145,12 +144,6 @@ func (o GetVmClusterRecommendedNetworkResultOutput) ToGetVmClusterRecommendedNet
 	return o
 }
 
-func (o GetVmClusterRecommendedNetworkResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetVmClusterRecommendedNetworkResult] {
-	return pulumix.Output[GetVmClusterRecommendedNetworkResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 func (o GetVmClusterRecommendedNetworkResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetVmClusterRecommendedNetworkResult) string { return v.CompartmentId }).(pulumi.StringOutput)
@@ -194,8 +187,8 @@ func (o GetVmClusterRecommendedNetworkResultOutput) FreeformTags() pulumi.MapOut
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetVmClusterRecommendedNetworkResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVmClusterRecommendedNetworkResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetVmClusterRecommendedNetworkResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVmClusterRecommendedNetworkResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetVmClusterRecommendedNetworkResultOutput) Networks() GetVmClusterRecommendedNetworkNetworkArrayOutput {

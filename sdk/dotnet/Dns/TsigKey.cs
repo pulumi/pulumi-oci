@@ -66,7 +66,7 @@ namespace Pulumi.Oci.Dns
         /// **Example:** `{"Operations": {"CostCenter": "42"}}`
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -74,7 +74,7 @@ namespace Pulumi.Oci.Dns
         /// **Example:** `{"Department": "Finance"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// A globally unique domain name identifying the key for a given pair of hosts.
@@ -96,25 +96,25 @@ namespace Pulumi.Oci.Dns
         /// The canonical absolute URL of the resource.
         /// </summary>
         [Output("self")]
-        public Output<string> Self { get; private set; } = null!;
+        public Output<string?> Self { get; private set; } = null!;
 
         /// <summary>
         /// The current state of the resource.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the resource was created, expressed in RFC 3339 timestamp format.
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the resource was last updated, expressed in RFC 3339 timestamp format.
         /// </summary>
         [Output("timeUpdated")]
-        public Output<string> TimeUpdated { get; private set; } = null!;
+        public Output<string?> TimeUpdated { get; private set; } = null!;
 
 
         /// <summary>

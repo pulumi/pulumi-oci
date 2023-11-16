@@ -32,11 +32,11 @@ namespace Pulumi.Oci.ApiGateway.Outputs
         /// <summary>
         /// Whether to send the Access-Control-Allow-Credentials header to allow CORS requests with cookies.
         /// </summary>
-        public readonly bool IsAllowCredentialsEnabled;
+        public readonly bool? IsAllowCredentialsEnabled;
         /// <summary>
         /// The time in seconds for the client to cache preflight responses. This is sent as the Access-Control-Max-Age if greater than 0.
         /// </summary>
-        public readonly int MaxAgeInSeconds;
+        public readonly int? MaxAgeInSeconds;
 
         [OutputConstructor]
         private GetDeploymentSpecificationRequestPolicyCorResult(
@@ -48,9 +48,9 @@ namespace Pulumi.Oci.ApiGateway.Outputs
 
             ImmutableArray<string> exposedHeaders,
 
-            bool isAllowCredentialsEnabled,
+            bool? isAllowCredentialsEnabled,
 
-            int maxAgeInSeconds)
+            int? maxAgeInSeconds)
         {
             AllowedHeaders = allowedHeaders;
             AllowedMethods = allowedMethods;

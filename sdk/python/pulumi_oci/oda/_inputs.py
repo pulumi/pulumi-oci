@@ -23,10 +23,6 @@ class OdaInstanceRestrictedOperationArgs:
     def __init__(__self__, *,
                  operation_name: Optional[pulumi.Input[str]] = None,
                  restricting_service: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] operation_name: Name of the restricted operation.
-        :param pulumi.Input[str] restricting_service: Name of the service restricting the operation.
-        """
         if operation_name is not None:
             pulumi.set(__self__, "operation_name", operation_name)
         if restricting_service is not None:
@@ -35,9 +31,6 @@ class OdaInstanceRestrictedOperationArgs:
     @property
     @pulumi.getter(name="operationName")
     def operation_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        Name of the restricted operation.
-        """
         return pulumi.get(self, "operation_name")
 
     @operation_name.setter
@@ -47,9 +40,6 @@ class OdaInstanceRestrictedOperationArgs:
     @property
     @pulumi.getter(name="restrictingService")
     def restricting_service(self) -> Optional[pulumi.Input[str]]:
-        """
-        Name of the service restricting the operation.
-        """
         return pulumi.get(self, "restricting_service")
 
     @restricting_service.setter
@@ -63,11 +53,6 @@ class OdaPrivateEndpointScanProxyScanListenerInfoArgs:
                  scan_listener_fqdn: Optional[pulumi.Input[str]] = None,
                  scan_listener_ip: Optional[pulumi.Input[str]] = None,
                  scan_listener_port: Optional[pulumi.Input[int]] = None):
-        """
-        :param pulumi.Input[str] scan_listener_fqdn: FQDN of the customer's Real Application Cluster (RAC)'s SCAN listeners.
-        :param pulumi.Input[str] scan_listener_ip: A SCAN listener's IP of the customer's Real Application Cluster (RAC).
-        :param pulumi.Input[int] scan_listener_port: The port that customer's Real Application Cluster (RAC)'s SCAN listeners are listening on.
-        """
         if scan_listener_fqdn is not None:
             pulumi.set(__self__, "scan_listener_fqdn", scan_listener_fqdn)
         if scan_listener_ip is not None:
@@ -78,9 +63,6 @@ class OdaPrivateEndpointScanProxyScanListenerInfoArgs:
     @property
     @pulumi.getter(name="scanListenerFqdn")
     def scan_listener_fqdn(self) -> Optional[pulumi.Input[str]]:
-        """
-        FQDN of the customer's Real Application Cluster (RAC)'s SCAN listeners.
-        """
         return pulumi.get(self, "scan_listener_fqdn")
 
     @scan_listener_fqdn.setter
@@ -90,9 +72,6 @@ class OdaPrivateEndpointScanProxyScanListenerInfoArgs:
     @property
     @pulumi.getter(name="scanListenerIp")
     def scan_listener_ip(self) -> Optional[pulumi.Input[str]]:
-        """
-        A SCAN listener's IP of the customer's Real Application Cluster (RAC).
-        """
         return pulumi.get(self, "scan_listener_ip")
 
     @scan_listener_ip.setter
@@ -102,9 +81,6 @@ class OdaPrivateEndpointScanProxyScanListenerInfoArgs:
     @property
     @pulumi.getter(name="scanListenerPort")
     def scan_listener_port(self) -> Optional[pulumi.Input[int]]:
-        """
-        The port that customer's Real Application Cluster (RAC)'s SCAN listeners are listening on.
-        """
         return pulumi.get(self, "scan_listener_port")
 
     @scan_listener_port.setter

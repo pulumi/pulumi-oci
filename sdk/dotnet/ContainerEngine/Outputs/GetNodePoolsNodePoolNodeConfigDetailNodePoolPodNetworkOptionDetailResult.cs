@@ -16,11 +16,11 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
         /// <summary>
         /// The CNI plugin used by this node pool
         /// </summary>
-        public readonly string CniType;
+        public readonly string? CniType;
         /// <summary>
         /// The max number of pods per node in the node pool. This value will be limited by the number of VNICs attachable to the node pool shape
         /// </summary>
-        public readonly int MaxPodsPerNode;
+        public readonly int? MaxPodsPerNode;
         /// <summary>
         /// The OCIDs of the Network Security Group(s) to associate pods for this node pool with. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
         /// </summary>
@@ -32,9 +32,9 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
 
         [OutputConstructor]
         private GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailResult(
-            string cniType,
+            string? cniType,
 
-            int maxPodsPerNode,
+            int? maxPodsPerNode,
 
             ImmutableArray<string> podNsgIds,
 

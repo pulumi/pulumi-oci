@@ -16,104 +16,104 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// <summary>
         /// The Automatic Diagnostic Repository (ADR) home directory for the cluster instance.
         /// </summary>
-        public readonly string AdrHomeDirectory;
+        public readonly string? AdrHomeDirectory;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// The name of the external cluster instance.
         /// </summary>
-        public readonly string ComponentName;
+        public readonly string? ComponentName;
         /// <summary>
         /// The Oracle base location of Cluster Ready Services (CRS).
         /// </summary>
-        public readonly string CrsBaseDirectory;
+        public readonly string? CrsBaseDirectory;
         /// <summary>
         /// A filter to only return the resources that match the entire display name.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external cluster.
         /// </summary>
-        public readonly string ExternalClusterId;
-        public readonly string ExternalClusterInstanceId;
+        public readonly string? ExternalClusterId;
+        public readonly string? ExternalClusterInstanceId;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external connector.
         /// </summary>
-        public readonly string ExternalConnectorId;
+        public readonly string? ExternalConnectorId;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB node.
         /// </summary>
-        public readonly string ExternalDbNodeId;
+        public readonly string? ExternalDbNodeId;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that the cluster instance is a part of.
         /// </summary>
-        public readonly string ExternalDbSystemId;
+        public readonly string? ExternalDbSystemId;
         /// <summary>
         /// The name of the host on which the cluster instance is running.
         /// </summary>
-        public readonly string HostName;
+        public readonly string? HostName;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external cluster instance.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Additional information about the current lifecycle state.
         /// </summary>
-        public readonly string LifecycleDetails;
+        public readonly string? LifecycleDetails;
         /// <summary>
         /// The role of the cluster node.
         /// </summary>
-        public readonly string NodeRole;
+        public readonly string? NodeRole;
         /// <summary>
         /// The current lifecycle state of the external cluster instance.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// The date and time the external cluster instance was created.
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The date and time the external cluster instance was last updated.
         /// </summary>
-        public readonly string TimeUpdated;
+        public readonly string? TimeUpdated;
 
         [OutputConstructor]
         private GetExternalClusterInstancesExternalClusterInstanceCollectionItemResult(
-            string adrHomeDirectory,
+            string? adrHomeDirectory,
 
-            string compartmentId,
+            string? compartmentId,
 
-            string componentName,
+            string? componentName,
 
-            string crsBaseDirectory,
+            string? crsBaseDirectory,
 
-            string displayName,
+            string? displayName,
 
-            string externalClusterId,
+            string? externalClusterId,
 
-            string externalClusterInstanceId,
+            string? externalClusterInstanceId,
 
-            string externalConnectorId,
+            string? externalConnectorId,
 
-            string externalDbNodeId,
+            string? externalDbNodeId,
 
-            string externalDbSystemId,
+            string? externalDbSystemId,
 
-            string hostName,
+            string? hostName,
 
-            string id,
+            string? id,
 
-            string lifecycleDetails,
+            string? lifecycleDetails,
 
-            string nodeRole,
+            string? nodeRole,
 
-            string state,
+            string? state,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeUpdated)
+            string? timeUpdated)
         {
             AdrHomeDirectory = adrHomeDirectory;
             CompartmentId = compartmentId;

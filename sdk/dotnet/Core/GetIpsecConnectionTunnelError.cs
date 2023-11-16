@@ -124,45 +124,45 @@ namespace Pulumi.Oci.Core
         /// <summary>
         /// Unique code describes the error type.
         /// </summary>
-        public readonly string ErrorCode;
+        public readonly string? ErrorCode;
         /// <summary>
         /// A detailed description of the error.
         /// </summary>
-        public readonly string ErrorDescription;
+        public readonly string? ErrorDescription;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         public readonly string IpsecId;
         /// <summary>
         /// Link to more Oracle resources or relevant documentation.
         /// </summary>
-        public readonly string OciResourcesLink;
+        public readonly string? OciResourcesLink;
         /// <summary>
         /// Resolution for the error.
         /// </summary>
-        public readonly string Solution;
+        public readonly string? Solution;
         /// <summary>
         /// Timestamp when the error occurred.
         /// </summary>
-        public readonly string Timestamp;
+        public readonly string? Timestamp;
         public readonly string TunnelId;
 
         [OutputConstructor]
         private GetIpsecConnectionTunnelErrorResult(
-            string errorCode,
+            string? errorCode,
 
-            string errorDescription,
+            string? errorDescription,
 
-            string id,
+            string? id,
 
             string ipsecId,
 
-            string ociResourcesLink,
+            string? ociResourcesLink,
 
-            string solution,
+            string? solution,
 
-            string timestamp,
+            string? timestamp,
 
             string tunnelId)
         {

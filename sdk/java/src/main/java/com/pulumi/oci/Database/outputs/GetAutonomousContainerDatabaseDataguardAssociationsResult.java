@@ -9,6 +9,7 @@ import com.pulumi.oci.Database.outputs.GetAutonomousContainerDatabaseDataguardAs
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 @CustomType
@@ -17,7 +18,7 @@ public final class GetAutonomousContainerDatabaseDataguardAssociationsResult {
      * @return The list of autonomous_container_database_dataguard_associations.
      * 
      */
-    private List<GetAutonomousContainerDatabaseDataguardAssociationsAutonomousContainerDatabaseDataguardAssociation> autonomousContainerDatabaseDataguardAssociations;
+    private @Nullable List<GetAutonomousContainerDatabaseDataguardAssociationsAutonomousContainerDatabaseDataguardAssociation> autonomousContainerDatabaseDataguardAssociations;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Container Database that has a relationship with the peer Autonomous Container Database.
      * 
@@ -28,7 +29,7 @@ public final class GetAutonomousContainerDatabaseDataguardAssociationsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
 
     private GetAutonomousContainerDatabaseDataguardAssociationsResult() {}
     /**
@@ -36,7 +37,7 @@ public final class GetAutonomousContainerDatabaseDataguardAssociationsResult {
      * 
      */
     public List<GetAutonomousContainerDatabaseDataguardAssociationsAutonomousContainerDatabaseDataguardAssociation> autonomousContainerDatabaseDataguardAssociations() {
-        return this.autonomousContainerDatabaseDataguardAssociations;
+        return this.autonomousContainerDatabaseDataguardAssociations == null ? List.of() : this.autonomousContainerDatabaseDataguardAssociations;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Container Database that has a relationship with the peer Autonomous Container Database.
@@ -52,8 +53,8 @@ public final class GetAutonomousContainerDatabaseDataguardAssociationsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
 
     public static Builder builder() {
@@ -65,10 +66,10 @@ public final class GetAutonomousContainerDatabaseDataguardAssociationsResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetAutonomousContainerDatabaseDataguardAssociationsAutonomousContainerDatabaseDataguardAssociation> autonomousContainerDatabaseDataguardAssociations;
+        private @Nullable List<GetAutonomousContainerDatabaseDataguardAssociationsAutonomousContainerDatabaseDataguardAssociation> autonomousContainerDatabaseDataguardAssociations;
         private String autonomousContainerDatabaseId;
         private @Nullable List<GetAutonomousContainerDatabaseDataguardAssociationsFilter> filters;
-        private String id;
+        private @Nullable String id;
         public Builder() {}
         public Builder(GetAutonomousContainerDatabaseDataguardAssociationsResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -79,8 +80,8 @@ public final class GetAutonomousContainerDatabaseDataguardAssociationsResult {
         }
 
         @CustomType.Setter
-        public Builder autonomousContainerDatabaseDataguardAssociations(List<GetAutonomousContainerDatabaseDataguardAssociationsAutonomousContainerDatabaseDataguardAssociation> autonomousContainerDatabaseDataguardAssociations) {
-            this.autonomousContainerDatabaseDataguardAssociations = Objects.requireNonNull(autonomousContainerDatabaseDataguardAssociations);
+        public Builder autonomousContainerDatabaseDataguardAssociations(@Nullable List<GetAutonomousContainerDatabaseDataguardAssociationsAutonomousContainerDatabaseDataguardAssociation> autonomousContainerDatabaseDataguardAssociations) {
+            this.autonomousContainerDatabaseDataguardAssociations = autonomousContainerDatabaseDataguardAssociations;
             return this;
         }
         public Builder autonomousContainerDatabaseDataguardAssociations(GetAutonomousContainerDatabaseDataguardAssociationsAutonomousContainerDatabaseDataguardAssociation... autonomousContainerDatabaseDataguardAssociations) {
@@ -100,8 +101,8 @@ public final class GetAutonomousContainerDatabaseDataguardAssociationsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         public GetAutonomousContainerDatabaseDataguardAssociationsResult build() {

@@ -9,6 +9,8 @@ import com.pulumi.oci.ServiceMesh.outputs.GetIngressGatewayHostListenerTlServerC
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetIngressGatewayHostListenerTl {
@@ -16,17 +18,17 @@ public final class GetIngressGatewayHostListenerTl {
      * @return Resource representing the TLS configuration used for validating client certificates.
      * 
      */
-    private List<GetIngressGatewayHostListenerTlClientValidation> clientValidations;
+    private @Nullable List<GetIngressGatewayHostListenerTlClientValidation> clientValidations;
     /**
      * @return DISABLED: Connection can only be plaintext. PERMISSIVE: Connection can be either plaintext or TLS/mTLS. If the clientValidation.trustedCaBundle property is configured for the listener, mTLS is performed and the client&#39;s certificates are validated by the gateway. TLS: Connection can only be TLS.  MUTUAL_TLS: Connection can only be MTLS.
      * 
      */
-    private String mode;
+    private @Nullable String mode;
     /**
      * @return Resource representing the location of the TLS certificate.
      * 
      */
-    private List<GetIngressGatewayHostListenerTlServerCertificate> serverCertificates;
+    private @Nullable List<GetIngressGatewayHostListenerTlServerCertificate> serverCertificates;
 
     private GetIngressGatewayHostListenerTl() {}
     /**
@@ -34,21 +36,21 @@ public final class GetIngressGatewayHostListenerTl {
      * 
      */
     public List<GetIngressGatewayHostListenerTlClientValidation> clientValidations() {
-        return this.clientValidations;
+        return this.clientValidations == null ? List.of() : this.clientValidations;
     }
     /**
      * @return DISABLED: Connection can only be plaintext. PERMISSIVE: Connection can be either plaintext or TLS/mTLS. If the clientValidation.trustedCaBundle property is configured for the listener, mTLS is performed and the client&#39;s certificates are validated by the gateway. TLS: Connection can only be TLS.  MUTUAL_TLS: Connection can only be MTLS.
      * 
      */
-    public String mode() {
-        return this.mode;
+    public Optional<String> mode() {
+        return Optional.ofNullable(this.mode);
     }
     /**
      * @return Resource representing the location of the TLS certificate.
      * 
      */
     public List<GetIngressGatewayHostListenerTlServerCertificate> serverCertificates() {
-        return this.serverCertificates;
+        return this.serverCertificates == null ? List.of() : this.serverCertificates;
     }
 
     public static Builder builder() {
@@ -60,9 +62,9 @@ public final class GetIngressGatewayHostListenerTl {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetIngressGatewayHostListenerTlClientValidation> clientValidations;
-        private String mode;
-        private List<GetIngressGatewayHostListenerTlServerCertificate> serverCertificates;
+        private @Nullable List<GetIngressGatewayHostListenerTlClientValidation> clientValidations;
+        private @Nullable String mode;
+        private @Nullable List<GetIngressGatewayHostListenerTlServerCertificate> serverCertificates;
         public Builder() {}
         public Builder(GetIngressGatewayHostListenerTl defaults) {
     	      Objects.requireNonNull(defaults);
@@ -72,21 +74,21 @@ public final class GetIngressGatewayHostListenerTl {
         }
 
         @CustomType.Setter
-        public Builder clientValidations(List<GetIngressGatewayHostListenerTlClientValidation> clientValidations) {
-            this.clientValidations = Objects.requireNonNull(clientValidations);
+        public Builder clientValidations(@Nullable List<GetIngressGatewayHostListenerTlClientValidation> clientValidations) {
+            this.clientValidations = clientValidations;
             return this;
         }
         public Builder clientValidations(GetIngressGatewayHostListenerTlClientValidation... clientValidations) {
             return clientValidations(List.of(clientValidations));
         }
         @CustomType.Setter
-        public Builder mode(String mode) {
-            this.mode = Objects.requireNonNull(mode);
+        public Builder mode(@Nullable String mode) {
+            this.mode = mode;
             return this;
         }
         @CustomType.Setter
-        public Builder serverCertificates(List<GetIngressGatewayHostListenerTlServerCertificate> serverCertificates) {
-            this.serverCertificates = Objects.requireNonNull(serverCertificates);
+        public Builder serverCertificates(@Nullable List<GetIngressGatewayHostListenerTlServerCertificate> serverCertificates) {
+            this.serverCertificates = serverCertificates;
             return this;
         }
         public Builder serverCertificates(GetIngressGatewayHostListenerTlServerCertificate... serverCertificates) {

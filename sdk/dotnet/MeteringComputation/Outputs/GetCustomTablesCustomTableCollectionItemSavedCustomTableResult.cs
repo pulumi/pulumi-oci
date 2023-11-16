@@ -20,11 +20,11 @@ namespace Pulumi.Oci.MeteringComputation.Outputs
         /// <summary>
         /// The compartment depth level.
         /// </summary>
-        public readonly double CompartmentDepth;
+        public readonly double? CompartmentDepth;
         /// <summary>
         /// The name of the custom table.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only one tag in the list is supported. For example: `[{"namespace":"oracle", "key":"createdBy"]`
         /// </summary>
@@ -36,21 +36,21 @@ namespace Pulumi.Oci.MeteringComputation.Outputs
         /// <summary>
         /// The version of the custom table.
         /// </summary>
-        public readonly double Version;
+        public readonly double? Version;
 
         [OutputConstructor]
         private GetCustomTablesCustomTableCollectionItemSavedCustomTableResult(
             ImmutableArray<string> columnGroupBies,
 
-            double compartmentDepth,
+            double? compartmentDepth,
 
-            string displayName,
+            string? displayName,
 
             ImmutableArray<Outputs.GetCustomTablesCustomTableCollectionItemSavedCustomTableGroupByTagResult> groupByTags,
 
             ImmutableArray<string> rowGroupBies,
 
-            double version)
+            double? version)
         {
             ColumnGroupBies = columnGroupBies;
             CompartmentDepth = compartmentDepth;

@@ -12,6 +12,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetLogResult {
@@ -19,37 +21,37 @@ public final class GetLogResult {
      * @return The OCID of the compartment that the resource belongs to.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return Log object configuration.
      * 
      */
-    private List<GetLogConfiguration> configurations;
+    private @Nullable List<GetLogConfiguration> configurations;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return The user-friendly display name. This must be unique within the enclosing resource, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return The OCID of the resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Whether or not this resource is currently enabled.
      * 
      */
-    private Boolean isEnabled;
+    private @Nullable Boolean isEnabled;
     /**
      * @return Log group OCID.
      * 
@@ -60,82 +62,82 @@ public final class GetLogResult {
      * @return The logType that the log object is for, whether custom or service.
      * 
      */
-    private String logType;
+    private @Nullable String logType;
     /**
      * @return Log retention duration in 30-day increments (30, 60, 90 and so on until 180).
      * 
      */
-    private Integer retentionDuration;
+    private @Nullable Integer retentionDuration;
     /**
      * @return The pipeline state.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return The OCID of the tenancy.
      * 
      */
-    private String tenancyId;
+    private @Nullable String tenancyId;
     /**
      * @return Time the resource was created.
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return Time the resource was last modified.
      * 
      */
-    private String timeLastModified;
+    private @Nullable String timeLastModified;
 
     private GetLogResult() {}
     /**
      * @return The OCID of the compartment that the resource belongs to.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return Log object configuration.
      * 
      */
     public List<GetLogConfiguration> configurations() {
-        return this.configurations;
+        return this.configurations == null ? List.of() : this.configurations;
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return The user-friendly display name. This must be unique within the enclosing resource, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return The OCID of the resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Whether or not this resource is currently enabled.
      * 
      */
-    public Boolean isEnabled() {
-        return this.isEnabled;
+    public Optional<Boolean> isEnabled() {
+        return Optional.ofNullable(this.isEnabled);
     }
     /**
      * @return Log group OCID.
@@ -151,43 +153,43 @@ public final class GetLogResult {
      * @return The logType that the log object is for, whether custom or service.
      * 
      */
-    public String logType() {
-        return this.logType;
+    public Optional<String> logType() {
+        return Optional.ofNullable(this.logType);
     }
     /**
      * @return Log retention duration in 30-day increments (30, 60, 90 and so on until 180).
      * 
      */
-    public Integer retentionDuration() {
-        return this.retentionDuration;
+    public Optional<Integer> retentionDuration() {
+        return Optional.ofNullable(this.retentionDuration);
     }
     /**
      * @return The pipeline state.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return The OCID of the tenancy.
      * 
      */
-    public String tenancyId() {
-        return this.tenancyId;
+    public Optional<String> tenancyId() {
+        return Optional.ofNullable(this.tenancyId);
     }
     /**
      * @return Time the resource was created.
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return Time the resource was last modified.
      * 
      */
-    public String timeLastModified() {
-        return this.timeLastModified;
+    public Optional<String> timeLastModified() {
+        return Optional.ofNullable(this.timeLastModified);
     }
 
     public static Builder builder() {
@@ -199,21 +201,21 @@ public final class GetLogResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String compartmentId;
-        private List<GetLogConfiguration> configurations;
-        private Map<String,Object> definedTags;
-        private String displayName;
-        private Map<String,Object> freeformTags;
-        private String id;
-        private Boolean isEnabled;
+        private @Nullable String compartmentId;
+        private @Nullable List<GetLogConfiguration> configurations;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String displayName;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String id;
+        private @Nullable Boolean isEnabled;
         private String logGroupId;
         private String logId;
-        private String logType;
-        private Integer retentionDuration;
-        private String state;
-        private String tenancyId;
-        private String timeCreated;
-        private String timeLastModified;
+        private @Nullable String logType;
+        private @Nullable Integer retentionDuration;
+        private @Nullable String state;
+        private @Nullable String tenancyId;
+        private @Nullable String timeCreated;
+        private @Nullable String timeLastModified;
         public Builder() {}
         public Builder(GetLogResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -235,41 +237,41 @@ public final class GetLogResult {
         }
 
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder configurations(List<GetLogConfiguration> configurations) {
-            this.configurations = Objects.requireNonNull(configurations);
+        public Builder configurations(@Nullable List<GetLogConfiguration> configurations) {
+            this.configurations = configurations;
             return this;
         }
         public Builder configurations(GetLogConfiguration... configurations) {
             return configurations(List.of(configurations));
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder isEnabled(Boolean isEnabled) {
-            this.isEnabled = Objects.requireNonNull(isEnabled);
+        public Builder isEnabled(@Nullable Boolean isEnabled) {
+            this.isEnabled = isEnabled;
             return this;
         }
         @CustomType.Setter
@@ -283,33 +285,33 @@ public final class GetLogResult {
             return this;
         }
         @CustomType.Setter
-        public Builder logType(String logType) {
-            this.logType = Objects.requireNonNull(logType);
+        public Builder logType(@Nullable String logType) {
+            this.logType = logType;
             return this;
         }
         @CustomType.Setter
-        public Builder retentionDuration(Integer retentionDuration) {
-            this.retentionDuration = Objects.requireNonNull(retentionDuration);
+        public Builder retentionDuration(@Nullable Integer retentionDuration) {
+            this.retentionDuration = retentionDuration;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder tenancyId(String tenancyId) {
-            this.tenancyId = Objects.requireNonNull(tenancyId);
+        public Builder tenancyId(@Nullable String tenancyId) {
+            this.tenancyId = tenancyId;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeLastModified(String timeLastModified) {
-            this.timeLastModified = Objects.requireNonNull(timeLastModified);
+        public Builder timeLastModified(@Nullable String timeLastModified) {
+            this.timeLastModified = timeLastModified;
             return this;
         }
         public GetLogResult build() {

@@ -16,27 +16,27 @@ namespace Pulumi.Oci.LicenseManager.Outputs
         /// <summary>
         /// The number of active license records associated with the product license.
         /// </summary>
-        public readonly int ActiveLicenseRecordCount;
+        public readonly int? ActiveLicenseRecordCount;
         /// <summary>
         /// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) used for the license record, product license, and configuration.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// License record name
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// The image ID associated with the product license.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The images associated with the product license.
         /// </summary>
@@ -44,103 +44,103 @@ namespace Pulumi.Oci.LicenseManager.Outputs
         /// <summary>
         /// Specifies whether or not the product license is oversubscribed.
         /// </summary>
-        public readonly bool IsOverSubscribed;
+        public readonly bool? IsOverSubscribed;
         /// <summary>
         /// Specifies if the license unit count is unlimited.
         /// </summary>
-        public readonly bool IsUnlimited;
+        public readonly bool? IsUnlimited;
         /// <summary>
         /// Specifies whether the vendor is Oracle or a third party.
         /// </summary>
-        public readonly bool IsVendorOracle;
+        public readonly bool? IsVendorOracle;
         /// <summary>
         /// The product license unit.
         /// </summary>
-        public readonly string LicenseUnit;
+        public readonly string? LicenseUnit;
         /// <summary>
         /// The current product license state.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// The current product license status.
         /// </summary>
-        public readonly string Status;
+        public readonly string? Status;
         /// <summary>
         /// Status description for the current product license status.
         /// </summary>
-        public readonly string StatusDescription;
+        public readonly string? StatusDescription;
         /// <summary>
         /// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> SystemTags;
+        public readonly ImmutableDictionary<string, object>? SystemTags;
         /// <summary>
         /// The time the product license was created. An [RFC 3339](https://tools.ietf.org/html/rfc3339)-formatted datetime string.
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The time the product license was updated. An [RFC 3339](https://tools.ietf.org/html/rfc3339)-formatted datetime string.
         /// </summary>
-        public readonly string TimeUpdated;
+        public readonly string? TimeUpdated;
         /// <summary>
         /// The total number of licenses available for the product license, calculated by adding up all the license counts for active license records associated with the product license.
         /// </summary>
-        public readonly int TotalActiveLicenseUnitCount;
+        public readonly int? TotalActiveLicenseUnitCount;
         /// <summary>
         /// The number of license records associated with the product license.
         /// </summary>
-        public readonly int TotalLicenseRecordCount;
+        public readonly int? TotalLicenseRecordCount;
         /// <summary>
         /// The number of license units consumed. Updated after each allocation run.
         /// </summary>
-        public readonly double TotalLicenseUnitsConsumed;
+        public readonly double? TotalLicenseUnitsConsumed;
         /// <summary>
         /// The vendor of the ProductLicense
         /// </summary>
-        public readonly string VendorName;
+        public readonly string? VendorName;
 
         [OutputConstructor]
         private GetProductLicensesProductLicenseCollectionItemResult(
-            int activeLicenseRecordCount,
+            int? activeLicenseRecordCount,
 
-            string compartmentId,
+            string? compartmentId,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string displayName,
+            string? displayName,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetProductLicensesProductLicenseCollectionItemImageResult> images,
 
-            bool isOverSubscribed,
+            bool? isOverSubscribed,
 
-            bool isUnlimited,
+            bool? isUnlimited,
 
-            bool isVendorOracle,
+            bool? isVendorOracle,
 
-            string licenseUnit,
+            string? licenseUnit,
 
-            string state,
+            string? state,
 
-            string status,
+            string? status,
 
-            string statusDescription,
+            string? statusDescription,
 
-            ImmutableDictionary<string, object> systemTags,
+            ImmutableDictionary<string, object>? systemTags,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeUpdated,
+            string? timeUpdated,
 
-            int totalActiveLicenseUnitCount,
+            int? totalActiveLicenseUnitCount,
 
-            int totalLicenseRecordCount,
+            int? totalLicenseRecordCount,
 
-            double totalLicenseUnitsConsumed,
+            double? totalLicenseUnitsConsumed,
 
-            string vendorName)
+            string? vendorName)
         {
             ActiveLicenseRecordCount = activeLicenseRecordCount;
             CompartmentId = compartmentId;

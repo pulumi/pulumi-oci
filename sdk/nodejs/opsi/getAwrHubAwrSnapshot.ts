@@ -68,11 +68,11 @@ export interface GetAwrHubAwrSnapshotResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * A list of AWR snapshot summary data.
      */
-    readonly items: outputs.Opsi.GetAwrHubAwrSnapshotItem[];
+    readonly items?: outputs.Opsi.GetAwrHubAwrSnapshotItem[];
     readonly timeGreaterThanOrEqualTo?: string;
     readonly timeLessThanOrEqualTo?: string;
 }

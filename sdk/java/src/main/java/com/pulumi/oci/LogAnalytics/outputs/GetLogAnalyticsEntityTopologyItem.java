@@ -8,6 +8,7 @@ import com.pulumi.oci.LogAnalytics.outputs.GetLogAnalyticsEntityTopologyItemLink
 import com.pulumi.oci.LogAnalytics.outputs.GetLogAnalyticsEntityTopologyItemNode;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetLogAnalyticsEntityTopologyItem {
@@ -15,12 +16,12 @@ public final class GetLogAnalyticsEntityTopologyItem {
      * @return Collection of log analytics entity relationship links.
      * 
      */
-    private List<GetLogAnalyticsEntityTopologyItemLink> links;
+    private @Nullable List<GetLogAnalyticsEntityTopologyItemLink> links;
     /**
      * @return Collection of log analytics entities.
      * 
      */
-    private List<GetLogAnalyticsEntityTopologyItemNode> nodes;
+    private @Nullable List<GetLogAnalyticsEntityTopologyItemNode> nodes;
 
     private GetLogAnalyticsEntityTopologyItem() {}
     /**
@@ -28,14 +29,14 @@ public final class GetLogAnalyticsEntityTopologyItem {
      * 
      */
     public List<GetLogAnalyticsEntityTopologyItemLink> links() {
-        return this.links;
+        return this.links == null ? List.of() : this.links;
     }
     /**
      * @return Collection of log analytics entities.
      * 
      */
     public List<GetLogAnalyticsEntityTopologyItemNode> nodes() {
-        return this.nodes;
+        return this.nodes == null ? List.of() : this.nodes;
     }
 
     public static Builder builder() {
@@ -47,8 +48,8 @@ public final class GetLogAnalyticsEntityTopologyItem {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetLogAnalyticsEntityTopologyItemLink> links;
-        private List<GetLogAnalyticsEntityTopologyItemNode> nodes;
+        private @Nullable List<GetLogAnalyticsEntityTopologyItemLink> links;
+        private @Nullable List<GetLogAnalyticsEntityTopologyItemNode> nodes;
         public Builder() {}
         public Builder(GetLogAnalyticsEntityTopologyItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -57,16 +58,16 @@ public final class GetLogAnalyticsEntityTopologyItem {
         }
 
         @CustomType.Setter
-        public Builder links(List<GetLogAnalyticsEntityTopologyItemLink> links) {
-            this.links = Objects.requireNonNull(links);
+        public Builder links(@Nullable List<GetLogAnalyticsEntityTopologyItemLink> links) {
+            this.links = links;
             return this;
         }
         public Builder links(GetLogAnalyticsEntityTopologyItemLink... links) {
             return links(List.of(links));
         }
         @CustomType.Setter
-        public Builder nodes(List<GetLogAnalyticsEntityTopologyItemNode> nodes) {
-            this.nodes = Objects.requireNonNull(nodes);
+        public Builder nodes(@Nullable List<GetLogAnalyticsEntityTopologyItemNode> nodes) {
+            this.nodes = nodes;
             return this;
         }
         public Builder nodes(GetLogAnalyticsEntityTopologyItemNode... nodes) {

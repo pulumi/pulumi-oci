@@ -60,10 +60,7 @@ class GetAssetsResult:
 
     @property
     @pulumi.getter(name="assetCollections")
-    def asset_collections(self) -> Sequence['outputs.GetAssetsAssetCollectionResult']:
-        """
-        The list of asset_collection.
-        """
+    def asset_collections(self) -> Optional[Sequence['outputs.GetAssetsAssetCollectionResult']]:
         return pulumi.get(self, "asset_collections")
 
     @property
@@ -74,33 +71,21 @@ class GetAssetsResult:
     @property
     @pulumi.getter(name="assetType")
     def asset_type(self) -> Optional[str]:
-        """
-        The type of asset.
-        """
         return pulumi.get(self, "asset_type")
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The OCID of the compartment to which an asset belongs to.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        Asset display name.
-        """
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="externalAssetKey")
     def external_asset_key(self) -> Optional[str]:
-        """
-        The key of the asset from the external environment.
-        """
         return pulumi.get(self, "external_asset_key")
 
     @property
@@ -110,7 +95,7 @@ class GetAssetsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -119,25 +104,16 @@ class GetAssetsResult:
     @property
     @pulumi.getter(name="inventoryId")
     def inventory_id(self) -> Optional[str]:
-        """
-        Inventory ID to which an asset belongs to.
-        """
         return pulumi.get(self, "inventory_id")
 
     @property
     @pulumi.getter(name="sourceKey")
     def source_key(self) -> Optional[str]:
-        """
-        The source key that the asset belongs to.
-        """
         return pulumi.get(self, "source_key")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the asset.
-        """
         return pulumi.get(self, "state")
 
 
@@ -171,35 +147,7 @@ def get_assets(asset_id: Optional[str] = None,
                state: Optional[str] = None,
                opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAssetsResult:
     """
-    This data source provides the list of Assets in Oracle Cloud Infrastructure Cloud Bridge service.
-
-    Returns a list of assets.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_assets = oci.CloudBridge.get_assets(compartment_id=var["compartment_id"],
-        asset_id=oci_cloud_bridge_asset["test_asset"]["id"],
-        asset_type=var["asset_asset_type"],
-        display_name=var["asset_display_name"],
-        external_asset_key=var["asset_external_asset_key"],
-        inventory_id=oci_cloud_bridge_inventory["test_inventory"]["id"],
-        source_key=var["asset_source_key"],
-        state=var["asset_state"])
-    ```
-
-
-    :param str asset_id: Unique asset identifier.
-    :param str asset_type: The type of asset.
-    :param str compartment_id: The ID of the compartment in which to list resources.
-    :param str display_name: A filter to return only resources that match the entire display name given.
-    :param str external_asset_key: External asset key.
-    :param str inventory_id: Unique Inventory identifier.
-    :param str source_key: Source key from where the assets originate.
-    :param str state: A filter to return only assets whose lifecycleState matches the given lifecycleState.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['assetId'] = asset_id
@@ -240,34 +188,6 @@ def get_assets_output(asset_id: Optional[pulumi.Input[Optional[str]]] = None,
                       state: Optional[pulumi.Input[Optional[str]]] = None,
                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAssetsResult]:
     """
-    This data source provides the list of Assets in Oracle Cloud Infrastructure Cloud Bridge service.
-
-    Returns a list of assets.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_assets = oci.CloudBridge.get_assets(compartment_id=var["compartment_id"],
-        asset_id=oci_cloud_bridge_asset["test_asset"]["id"],
-        asset_type=var["asset_asset_type"],
-        display_name=var["asset_display_name"],
-        external_asset_key=var["asset_external_asset_key"],
-        inventory_id=oci_cloud_bridge_inventory["test_inventory"]["id"],
-        source_key=var["asset_source_key"],
-        state=var["asset_state"])
-    ```
-
-
-    :param str asset_id: Unique asset identifier.
-    :param str asset_type: The type of asset.
-    :param str compartment_id: The ID of the compartment in which to list resources.
-    :param str display_name: A filter to return only resources that match the entire display name given.
-    :param str external_asset_key: External asset key.
-    :param str inventory_id: Unique Inventory identifier.
-    :param str source_key: Source key from where the assets originate.
-    :param str state: A filter to return only assets whose lifecycleState matches the given lifecycleState.
+    Use this data source to access information about an existing resource.
     """
     ...

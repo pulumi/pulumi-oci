@@ -29,13 +29,13 @@ public final class GetEtlRunsResult {
      * @return The list of etl_run_collection.
      * 
      */
-    private List<GetEtlRunsEtlRunCollection> etlRunCollections;
+    private @Nullable List<GetEtlRunsEtlRunCollection> etlRunCollections;
     private @Nullable List<GetEtlRunsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
 
     private GetEtlRunsResult() {}
     /**
@@ -60,7 +60,7 @@ public final class GetEtlRunsResult {
      * 
      */
     public List<GetEtlRunsEtlRunCollection> etlRunCollections() {
-        return this.etlRunCollections;
+        return this.etlRunCollections == null ? List.of() : this.etlRunCollections;
     }
     public List<GetEtlRunsFilter> filters() {
         return this.filters == null ? List.of() : this.filters;
@@ -69,8 +69,8 @@ public final class GetEtlRunsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
 
     public static Builder builder() {
@@ -85,9 +85,9 @@ public final class GetEtlRunsResult {
         private @Nullable String compartmentId;
         private @Nullable String displayName;
         private String emWarehouseId;
-        private List<GetEtlRunsEtlRunCollection> etlRunCollections;
+        private @Nullable List<GetEtlRunsEtlRunCollection> etlRunCollections;
         private @Nullable List<GetEtlRunsFilter> filters;
-        private String id;
+        private @Nullable String id;
         public Builder() {}
         public Builder(GetEtlRunsResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -115,8 +115,8 @@ public final class GetEtlRunsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder etlRunCollections(List<GetEtlRunsEtlRunCollection> etlRunCollections) {
-            this.etlRunCollections = Objects.requireNonNull(etlRunCollections);
+        public Builder etlRunCollections(@Nullable List<GetEtlRunsEtlRunCollection> etlRunCollections) {
+            this.etlRunCollections = etlRunCollections;
             return this;
         }
         public Builder etlRunCollections(GetEtlRunsEtlRunCollection... etlRunCollections) {
@@ -131,8 +131,8 @@ public final class GetEtlRunsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         public GetEtlRunsResult build() {

@@ -6,6 +6,8 @@ package com.pulumi.oci.LoadBalancer.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetProtocolsProtocol {
@@ -13,15 +15,15 @@ public final class GetProtocolsProtocol {
      * @return The name of a protocol.  Example: &#39;HTTP&#39;
      * 
      */
-    private String name;
+    private @Nullable String name;
 
     private GetProtocolsProtocol() {}
     /**
      * @return The name of a protocol.  Example: &#39;HTTP&#39;
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
 
     public static Builder builder() {
@@ -33,7 +35,7 @@ public final class GetProtocolsProtocol {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String name;
+        private @Nullable String name;
         public Builder() {}
         public Builder(GetProtocolsProtocol defaults) {
     	      Objects.requireNonNull(defaults);
@@ -41,8 +43,8 @@ public final class GetProtocolsProtocol {
         }
 
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         public GetProtocolsProtocol build() {

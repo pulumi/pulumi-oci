@@ -45,10 +45,7 @@ class GetManagedDatabaseUserConsumerGroupPrivilegesResult:
 
     @property
     @pulumi.getter(name="consumerGroupPrivilegeCollections")
-    def consumer_group_privilege_collections(self) -> Sequence['outputs.GetManagedDatabaseUserConsumerGroupPrivilegesConsumerGroupPrivilegeCollectionResult']:
-        """
-        The list of consumer_group_privilege_collection.
-        """
+    def consumer_group_privilege_collections(self) -> Optional[Sequence['outputs.GetManagedDatabaseUserConsumerGroupPrivilegesConsumerGroupPrivilegeCollectionResult']]:
         return pulumi.get(self, "consumer_group_privilege_collections")
 
     @property
@@ -58,7 +55,7 @@ class GetManagedDatabaseUserConsumerGroupPrivilegesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -72,9 +69,6 @@ class GetManagedDatabaseUserConsumerGroupPrivilegesResult:
     @property
     @pulumi.getter
     def name(self) -> Optional[str]:
-        """
-        The name of the granted consumer group privilege.
-        """
         return pulumi.get(self, "name")
 
     @property
@@ -103,25 +97,7 @@ def get_managed_database_user_consumer_group_privileges(filters: Optional[Sequen
                                                         user_name: Optional[str] = None,
                                                         opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetManagedDatabaseUserConsumerGroupPrivilegesResult:
     """
-    This data source provides the list of Managed Database User Consumer Group Privileges in Oracle Cloud Infrastructure Database Management service.
-
-    Gets the list of consumer group privileges granted to a specific user.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_managed_database_user_consumer_group_privileges = oci.DatabaseManagement.get_managed_database_user_consumer_group_privileges(managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"],
-        user_name=oci_identity_user["test_user"]["name"],
-        name=var["managed_database_user_consumer_group_privilege_name"])
-    ```
-
-
-    :param str managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
-    :param str name: A filter to return only resources that match the entire name.
-    :param str user_name: The name of the user whose details are to be viewed.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['filters'] = filters
@@ -147,24 +123,6 @@ def get_managed_database_user_consumer_group_privileges_output(filters: Optional
                                                                user_name: Optional[pulumi.Input[str]] = None,
                                                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetManagedDatabaseUserConsumerGroupPrivilegesResult]:
     """
-    This data source provides the list of Managed Database User Consumer Group Privileges in Oracle Cloud Infrastructure Database Management service.
-
-    Gets the list of consumer group privileges granted to a specific user.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_managed_database_user_consumer_group_privileges = oci.DatabaseManagement.get_managed_database_user_consumer_group_privileges(managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"],
-        user_name=oci_identity_user["test_user"]["name"],
-        name=var["managed_database_user_consumer_group_privilege_name"])
-    ```
-
-
-    :param str managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
-    :param str name: A filter to return only resources that match the entire name.
-    :param str user_name: The name of the user whose details are to be viewed.
+    Use this data source to access information about an existing resource.
     """
     ...

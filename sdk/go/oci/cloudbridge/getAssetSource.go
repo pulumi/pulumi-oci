@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Asset Source resource in Oracle Cloud Infrastructure Cloud Bridge service.
@@ -60,46 +59,46 @@ type LookupAssetSourceArgs struct {
 // A collection of values returned by getAssetSource.
 type LookupAssetSourceResult struct {
 	// Flag indicating whether historical metrics are collected for assets, originating from this asset source.
-	AreHistoricalMetricsCollected bool `pulumi:"areHistoricalMetricsCollected"`
+	AreHistoricalMetricsCollected *bool `pulumi:"areHistoricalMetricsCollected"`
 	// Flag indicating whether real-time metrics are collected for assets, originating from this asset source.
-	AreRealtimeMetricsCollected bool   `pulumi:"areRealtimeMetricsCollected"`
+	AreRealtimeMetricsCollected *bool  `pulumi:"areRealtimeMetricsCollected"`
 	AssetSourceId               string `pulumi:"assetSourceId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that is going to be used to create assets.
-	AssetsCompartmentId string `pulumi:"assetsCompartmentId"`
+	AssetsCompartmentId *string `pulumi:"assetsCompartmentId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for the resource.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// Credentials for an asset source.
 	DiscoveryCredentials []GetAssetSourceDiscoveryCredential `pulumi:"discoveryCredentials"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of an attached discovery schedule.
-	DiscoveryScheduleId string `pulumi:"discoveryScheduleId"`
+	DiscoveryScheduleId *string `pulumi:"discoveryScheduleId"`
 	// A user-friendly name for the asset source. Does not have to be unique, and it's mutable. Avoid entering confidential information.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the environment.
-	EnvironmentId string `pulumi:"environmentId"`
+	EnvironmentId *string `pulumi:"environmentId"`
 	// The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the inventory that will contain created assets.
-	InventoryId string `pulumi:"inventoryId"`
+	InventoryId *string `pulumi:"inventoryId"`
 	// The detailed state of the asset source.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// Credentials for an asset source.
 	ReplicationCredentials []GetAssetSourceReplicationCredential `pulumi:"replicationCredentials"`
 	// The current state of the asset source.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The time when the asset source was created in the RFC3339 format.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The point in time that the asset source was last updated in the RFC3339 format.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 	// The type of asset source. Indicates external origin of the assets that are read by assigning this asset source.
-	Type string `pulumi:"type"`
+	Type *string `pulumi:"type"`
 	// Endpoint for VMware asset discovery and replication in the form of ```https://<host>:<port>/sdk```
-	VcenterEndpoint string `pulumi:"vcenterEndpoint"`
+	VcenterEndpoint *string `pulumi:"vcenterEndpoint"`
 }
 
 func LookupAssetSourceOutput(ctx *pulumi.Context, args LookupAssetSourceOutputArgs, opts ...pulumi.InvokeOption) LookupAssetSourceResultOutput {
@@ -140,20 +139,14 @@ func (o LookupAssetSourceResultOutput) ToLookupAssetSourceResultOutputWithContex
 	return o
 }
 
-func (o LookupAssetSourceResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupAssetSourceResult] {
-	return pulumix.Output[LookupAssetSourceResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Flag indicating whether historical metrics are collected for assets, originating from this asset source.
-func (o LookupAssetSourceResultOutput) AreHistoricalMetricsCollected() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupAssetSourceResult) bool { return v.AreHistoricalMetricsCollected }).(pulumi.BoolOutput)
+func (o LookupAssetSourceResultOutput) AreHistoricalMetricsCollected() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupAssetSourceResult) *bool { return v.AreHistoricalMetricsCollected }).(pulumi.BoolPtrOutput)
 }
 
 // Flag indicating whether real-time metrics are collected for assets, originating from this asset source.
-func (o LookupAssetSourceResultOutput) AreRealtimeMetricsCollected() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupAssetSourceResult) bool { return v.AreRealtimeMetricsCollected }).(pulumi.BoolOutput)
+func (o LookupAssetSourceResultOutput) AreRealtimeMetricsCollected() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupAssetSourceResult) *bool { return v.AreRealtimeMetricsCollected }).(pulumi.BoolPtrOutput)
 }
 
 func (o LookupAssetSourceResultOutput) AssetSourceId() pulumi.StringOutput {
@@ -161,13 +154,13 @@ func (o LookupAssetSourceResultOutput) AssetSourceId() pulumi.StringOutput {
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that is going to be used to create assets.
-func (o LookupAssetSourceResultOutput) AssetsCompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAssetSourceResult) string { return v.AssetsCompartmentId }).(pulumi.StringOutput)
+func (o LookupAssetSourceResultOutput) AssetsCompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAssetSourceResult) *string { return v.AssetsCompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for the resource.
-func (o LookupAssetSourceResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAssetSourceResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupAssetSourceResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAssetSourceResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -181,18 +174,18 @@ func (o LookupAssetSourceResultOutput) DiscoveryCredentials() GetAssetSourceDisc
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of an attached discovery schedule.
-func (o LookupAssetSourceResultOutput) DiscoveryScheduleId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAssetSourceResult) string { return v.DiscoveryScheduleId }).(pulumi.StringOutput)
+func (o LookupAssetSourceResultOutput) DiscoveryScheduleId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAssetSourceResult) *string { return v.DiscoveryScheduleId }).(pulumi.StringPtrOutput)
 }
 
 // A user-friendly name for the asset source. Does not have to be unique, and it's mutable. Avoid entering confidential information.
-func (o LookupAssetSourceResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAssetSourceResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupAssetSourceResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAssetSourceResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the environment.
-func (o LookupAssetSourceResultOutput) EnvironmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAssetSourceResult) string { return v.EnvironmentId }).(pulumi.StringOutput)
+func (o LookupAssetSourceResultOutput) EnvironmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAssetSourceResult) *string { return v.EnvironmentId }).(pulumi.StringPtrOutput)
 }
 
 // The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -201,18 +194,18 @@ func (o LookupAssetSourceResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
-func (o LookupAssetSourceResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAssetSourceResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupAssetSourceResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAssetSourceResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the inventory that will contain created assets.
-func (o LookupAssetSourceResultOutput) InventoryId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAssetSourceResult) string { return v.InventoryId }).(pulumi.StringOutput)
+func (o LookupAssetSourceResultOutput) InventoryId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAssetSourceResult) *string { return v.InventoryId }).(pulumi.StringPtrOutput)
 }
 
 // The detailed state of the asset source.
-func (o LookupAssetSourceResultOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAssetSourceResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o LookupAssetSourceResultOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAssetSourceResult) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // Credentials for an asset source.
@@ -221,8 +214,8 @@ func (o LookupAssetSourceResultOutput) ReplicationCredentials() GetAssetSourceRe
 }
 
 // The current state of the asset source.
-func (o LookupAssetSourceResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAssetSourceResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupAssetSourceResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAssetSourceResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
@@ -231,23 +224,23 @@ func (o LookupAssetSourceResultOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The time when the asset source was created in the RFC3339 format.
-func (o LookupAssetSourceResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAssetSourceResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupAssetSourceResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAssetSourceResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The point in time that the asset source was last updated in the RFC3339 format.
-func (o LookupAssetSourceResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAssetSourceResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o LookupAssetSourceResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAssetSourceResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 // The type of asset source. Indicates external origin of the assets that are read by assigning this asset source.
-func (o LookupAssetSourceResultOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAssetSourceResult) string { return v.Type }).(pulumi.StringOutput)
+func (o LookupAssetSourceResultOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAssetSourceResult) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
 
 // Endpoint for VMware asset discovery and replication in the form of ```https://<host>:<port>/sdk```
-func (o LookupAssetSourceResultOutput) VcenterEndpoint() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAssetSourceResult) string { return v.VcenterEndpoint }).(pulumi.StringOutput)
+func (o LookupAssetSourceResultOutput) VcenterEndpoint() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAssetSourceResult) *string { return v.VcenterEndpoint }).(pulumi.StringPtrOutput)
 }
 
 func init() {

@@ -108,83 +108,83 @@ namespace Pulumi.Oci.Core
         /// <summary>
         /// The availability domain of the boot volume replica.  Example: `Uocm:PHX-AD-1`
         /// </summary>
-        public readonly string AvailabilityDomain;
+        public readonly string? AvailabilityDomain;
         /// <summary>
         /// The OCID of the source boot volume.
         /// </summary>
-        public readonly string BootVolumeId;
+        public readonly string? BootVolumeId;
         public readonly string BootVolumeReplicaId;
         /// <summary>
         /// The OCID of the compartment that contains the boot volume replica.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The image OCID used to create the boot volume the replica is replicated from.
         /// </summary>
-        public readonly string ImageId;
+        public readonly string? ImageId;
         /// <summary>
         /// The size of the source boot volume, in GBs.
         /// </summary>
-        public readonly string SizeInGbs;
+        public readonly string? SizeInGbs;
         /// <summary>
         /// The current state of a boot volume replica.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// The date and time the boot volume replica was created. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The date and time the boot volume replica was last synced from the source boot volume. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         /// </summary>
-        public readonly string TimeLastSynced;
-        public readonly string VolumeGroupReplicaId;
+        public readonly string? TimeLastSynced;
+        public readonly string? VolumeGroupReplicaId;
 
         [OutputConstructor]
         private GetBootVolumeReplicaResult(
-            string availabilityDomain,
+            string? availabilityDomain,
 
-            string bootVolumeId,
+            string? bootVolumeId,
 
             string bootVolumeReplicaId,
 
-            string compartmentId,
+            string? compartmentId,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string displayName,
+            string? displayName,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string id,
+            string? id,
 
-            string imageId,
+            string? imageId,
 
-            string sizeInGbs,
+            string? sizeInGbs,
 
-            string state,
+            string? state,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeLastSynced,
+            string? timeLastSynced,
 
-            string volumeGroupReplicaId)
+            string? volumeGroupReplicaId)
         {
             AvailabilityDomain = availabilityDomain;
             BootVolumeId = bootVolumeId;

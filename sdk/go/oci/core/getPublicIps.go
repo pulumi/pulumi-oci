@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Public Ips in Oracle Cloud Infrastructure Core service.
@@ -97,7 +96,7 @@ type GetPublicIpsResult struct {
 	CompartmentId string               `pulumi:"compartmentId"`
 	Filters       []GetPublicIpsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Defines when the public IP is deleted and released back to Oracle's public IP pool.
 	Lifetime *string `pulumi:"lifetime"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pool object created in the current tenancy.
@@ -155,12 +154,6 @@ func (o GetPublicIpsResultOutput) ToGetPublicIpsResultOutputWithContext(ctx cont
 	return o
 }
 
-func (o GetPublicIpsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetPublicIpsResult] {
-	return pulumix.Output[GetPublicIpsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The public IP's availability domain. This property is set only for ephemeral public IPs that are assigned to a private IP (that is, when the `scope` of the public IP is set to AVAILABILITY_DOMAIN). The value is the availability domain of the assigned private IP.  Example: `Uocm:PHX-AD-1`
 func (o GetPublicIpsResultOutput) AvailabilityDomain() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetPublicIpsResult) *string { return v.AvailabilityDomain }).(pulumi.StringPtrOutput)
@@ -176,8 +169,8 @@ func (o GetPublicIpsResultOutput) Filters() GetPublicIpsFilterArrayOutput {
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetPublicIpsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPublicIpsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetPublicIpsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetPublicIpsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Defines when the public IP is deleted and released back to Oracle's public IP pool.

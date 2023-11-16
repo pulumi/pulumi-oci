@@ -96,7 +96,7 @@ export interface GetJobsResult {
     /**
      * The list of jobs.
      */
-    readonly jobs: outputs.DataScience.GetJobsJob[];
+    readonly jobs?: outputs.DataScience.GetJobsJob[];
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job with.
      */

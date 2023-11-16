@@ -50,7 +50,7 @@ export class AuditProfile extends pulumi.CustomResource {
     /**
      * Indicates number of audit records collected by Data Safe in the current calendar month.  Audit records for the Data Safe service account are excluded and are not counted towards your monthly free limit.
      */
-    public /*out*/ readonly auditCollectedVolume!: pulumi.Output<string>;
+    public /*out*/ readonly auditCollectedVolume!: pulumi.Output<string | undefined>;
     /**
      * The OCID of the audit.
      */
@@ -58,7 +58,7 @@ export class AuditProfile extends pulumi.CustomResource {
     /**
      * Indicates the list of available audit trails on the target.
      */
-    public /*out*/ readonly auditTrails!: pulumi.Output<outputs.DataSafe.AuditProfileAuditTrail[]>;
+    public /*out*/ readonly auditTrails!: pulumi.Output<outputs.DataSafe.AuditProfileAuditTrail[] | undefined>;
     /**
      * (Updatable) An optional property when incremented triggers Change Retention. Could be set to any integer value.
      *
@@ -70,63 +70,63 @@ export class AuditProfile extends pulumi.CustomResource {
     /**
      * (Updatable) The OCID of the compartment that contains the audit.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    public readonly compartmentId!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) The description of the audit profile.
      */
-    public readonly description!: pulumi.Output<string>;
+    public readonly description!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The display name of the audit profile. The name does not have to be unique, and it's changeable.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    public readonly displayName!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * Indicates whether audit retention settings like online and offline months is set at the target level overriding the global audit retention settings.
      */
-    public /*out*/ readonly isOverrideGlobalRetentionSetting!: pulumi.Output<boolean>;
+    public /*out*/ readonly isOverrideGlobalRetentionSetting!: pulumi.Output<boolean | undefined>;
     /**
      * (Updatable) Indicates if you want to continue collecting audit records beyond the free limit of one million audit records per month per target database, potentially incurring additional charges. The default value is inherited from the global settings.  You can change at the global level or at the target level.
      */
-    public readonly isPaidUsageEnabled!: pulumi.Output<boolean>;
+    public readonly isPaidUsageEnabled!: pulumi.Output<boolean | undefined>;
     /**
      * Details about the current state of the audit profile in Data Safe.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string | undefined>;
     /**
      * Indicates the number of months the audit records will be stored offline in the Data Safe audit archive. Minimum: 0; Maximum: 72 months. If you have a requirement to store the audit data even longer in archive, please contact the Oracle Support.
      */
-    public /*out*/ readonly offlineMonths!: pulumi.Output<number>;
+    public /*out*/ readonly offlineMonths!: pulumi.Output<number | undefined>;
     /**
      * Indicates the number of months the audit records will be stored online in Oracle Data Safe audit repository for immediate reporting and analysis.  Minimum: 1; Maximum:12 months
      */
-    public /*out*/ readonly onlineMonths!: pulumi.Output<number>;
+    public /*out*/ readonly onlineMonths!: pulumi.Output<number | undefined>;
     /**
      * The current state of the audit profile.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any}>;
+    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * The OCID of the Data Safe target for which the audit profile is created.
      */
-    public /*out*/ readonly targetId!: pulumi.Output<string>;
+    public /*out*/ readonly targetId!: pulumi.Output<string | undefined>;
     /**
      * The date and time the audit profile was created, in the format defined by RFC3339.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * The date and time the audit profile was updated, in the format defined by RFC3339.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    public /*out*/ readonly timeUpdated!: pulumi.Output<string | undefined>;
 
     /**
      * Create a AuditProfile resource with the given unique name, arguments, and options.

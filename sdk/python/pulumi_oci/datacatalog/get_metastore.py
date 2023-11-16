@@ -61,66 +61,42 @@ class GetMetastoreResult:
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        OCID of the compartment which holds the metastore.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="defaultExternalTableLocation")
-    def default_external_table_location(self) -> str:
-        """
-        Location under which external tables will be created by default. This references Object Storage using an HDFS URI format. Example: oci://bucket@namespace/sub-dir/
-        """
+    def default_external_table_location(self) -> Optional[str]:
         return pulumi.get(self, "default_external_table_location")
 
     @property
     @pulumi.getter(name="defaultManagedTableLocation")
-    def default_managed_table_location(self) -> str:
-        """
-        Location under which managed tables will be created by default. This references Object Storage using an HDFS URI format. Example: oci://bucket@namespace/sub-dir/
-        """
+    def default_managed_table_location(self) -> Optional[str]:
         return pulumi.get(self, "default_managed_table_location")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        Mutable name of the metastore.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The metastore's OCID.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
@@ -130,26 +106,17 @@ class GetMetastoreResult:
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the metastore.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        Time at which the metastore was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        Time at which the metastore was last modified. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
 
@@ -176,21 +143,7 @@ class AwaitableGetMetastoreResult(GetMetastoreResult):
 def get_metastore(metastore_id: Optional[str] = None,
                   opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetMetastoreResult:
     """
-    This data source provides details about a specific Metastore resource in Oracle Cloud Infrastructure Data Catalog service.
-
-    Gets a metastore by identifier.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_metastore = oci.DataCatalog.get_metastore(metastore_id=oci_datacatalog_metastore["test_metastore"]["id"])
-    ```
-
-
-    :param str metastore_id: The metastore's OCID.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['metastoreId'] = metastore_id
@@ -216,20 +169,6 @@ def get_metastore(metastore_id: Optional[str] = None,
 def get_metastore_output(metastore_id: Optional[pulumi.Input[str]] = None,
                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetMetastoreResult]:
     """
-    This data source provides details about a specific Metastore resource in Oracle Cloud Infrastructure Data Catalog service.
-
-    Gets a metastore by identifier.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_metastore = oci.DataCatalog.get_metastore(metastore_id=oci_datacatalog_metastore["test_metastore"]["id"])
-    ```
-
-
-    :param str metastore_id: The metastore's OCID.
+    Use this data source to access information about an existing resource.
     """
     ...

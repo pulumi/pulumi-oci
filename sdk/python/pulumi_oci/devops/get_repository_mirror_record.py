@@ -49,7 +49,7 @@ class GetRepositoryMirrorRecordResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -62,10 +62,7 @@ class GetRepositoryMirrorRecordResult:
 
     @property
     @pulumi.getter(name="mirrorStatus")
-    def mirror_status(self) -> str:
-        """
-        Mirror status of current mirror entry. QUEUED - Mirroring Queued RUNNING - Mirroring is Running PASSED - Mirroring Passed FAILED - Mirroring Failed
-        """
+    def mirror_status(self) -> Optional[str]:
         return pulumi.get(self, "mirror_status")
 
     @property
@@ -75,34 +72,22 @@ class GetRepositoryMirrorRecordResult:
 
     @property
     @pulumi.getter(name="timeEnded")
-    def time_ended(self) -> str:
-        """
-        The time taken to complete a mirror operation. Value is null if not completed.
-        """
+    def time_ended(self) -> Optional[str]:
         return pulumi.get(self, "time_ended")
 
     @property
     @pulumi.getter(name="timeEnqueued")
-    def time_enqueued(self) -> str:
-        """
-        The time to enqueue a mirror operation.
-        """
+    def time_enqueued(self) -> Optional[str]:
         return pulumi.get(self, "time_enqueued")
 
     @property
     @pulumi.getter(name="timeStarted")
-    def time_started(self) -> str:
-        """
-        The time to start a mirror operation.
-        """
+    def time_started(self) -> Optional[str]:
         return pulumi.get(self, "time_started")
 
     @property
     @pulumi.getter(name="workRequestId")
-    def work_request_id(self) -> str:
-        """
-        Workrequest ID to track current mirror operation.
-        """
+    def work_request_id(self) -> Optional[str]:
         return pulumi.get(self, "work_request_id")
 
 
@@ -126,23 +111,7 @@ def get_repository_mirror_record(mirror_record_type: Optional[str] = None,
                                  repository_id: Optional[str] = None,
                                  opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetRepositoryMirrorRecordResult:
     """
-    This data source provides details about a specific Repository Mirror Record resource in Oracle Cloud Infrastructure Devops service.
-
-    Returns either current mirror record or last successful mirror record for a specific mirror repository.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_repository_mirror_record = oci.DevOps.get_repository_mirror_record(mirror_record_type=var["repository_mirror_record_mirror_record_type"],
-        repository_id=oci_devops_repository["test_repository"]["id"])
-    ```
-
-
-    :param str mirror_record_type: The field of mirror record type. Only one mirror record type can be provided: current - The current mirror record. lastSuccessful - The last successful mirror record.
-    :param str repository_id: Unique repository identifier.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['mirrorRecordType'] = mirror_record_type
@@ -166,22 +135,6 @@ def get_repository_mirror_record_output(mirror_record_type: Optional[pulumi.Inpu
                                         repository_id: Optional[pulumi.Input[str]] = None,
                                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetRepositoryMirrorRecordResult]:
     """
-    This data source provides details about a specific Repository Mirror Record resource in Oracle Cloud Infrastructure Devops service.
-
-    Returns either current mirror record or last successful mirror record for a specific mirror repository.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_repository_mirror_record = oci.DevOps.get_repository_mirror_record(mirror_record_type=var["repository_mirror_record_mirror_record_type"],
-        repository_id=oci_devops_repository["test_repository"]["id"])
-    ```
-
-
-    :param str mirror_record_type: The field of mirror record type. Only one mirror record type can be provided: current - The current mirror record. lastSuccessful - The last successful mirror record.
-    :param str repository_id: Unique repository identifier.
+    Use this data source to access information about an existing resource.
     """
     ...

@@ -51,29 +51,29 @@ export interface GetRepositoryMirrorRecordResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly mirrorRecordType: string;
     /**
      * Mirror status of current mirror entry. QUEUED - Mirroring Queued RUNNING - Mirroring is Running PASSED - Mirroring Passed FAILED - Mirroring Failed
      */
-    readonly mirrorStatus: string;
+    readonly mirrorStatus?: string;
     readonly repositoryId: string;
     /**
      * The time taken to complete a mirror operation. Value is null if not completed.
      */
-    readonly timeEnded: string;
+    readonly timeEnded?: string;
     /**
      * The time to enqueue a mirror operation.
      */
-    readonly timeEnqueued: string;
+    readonly timeEnqueued?: string;
     /**
      * The time to start a mirror operation.
      */
-    readonly timeStarted: string;
+    readonly timeStarted?: string;
     /**
      * Workrequest ID to track current mirror operation.
      */
-    readonly workRequestId: string;
+    readonly workRequestId?: string;
 }
 /**
  * This data source provides details about a specific Repository Mirror Record resource in Oracle Cloud Infrastructure Devops service.

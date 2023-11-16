@@ -67,87 +67,57 @@ class GetNetworkFirewallPolicyDecryptionProfileResult:
 
     @property
     @pulumi.getter(name="areCertificateExtensionsRestricted")
-    def are_certificate_extensions_restricted(self) -> bool:
-        """
-        Whether to block sessions if the server's certificate uses extensions other than key usage and/or extended key usage.
-        """
+    def are_certificate_extensions_restricted(self) -> Optional[bool]:
         return pulumi.get(self, "are_certificate_extensions_restricted")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="isAutoIncludeAltName")
-    def is_auto_include_alt_name(self) -> bool:
-        """
-        Whether to automatically append SAN to impersonating certificate if server certificate is missing SAN.
-        """
+    def is_auto_include_alt_name(self) -> Optional[bool]:
         return pulumi.get(self, "is_auto_include_alt_name")
 
     @property
     @pulumi.getter(name="isExpiredCertificateBlocked")
-    def is_expired_certificate_blocked(self) -> bool:
-        """
-        Whether to block sessions if server's certificate is expired.
-        """
+    def is_expired_certificate_blocked(self) -> Optional[bool]:
         return pulumi.get(self, "is_expired_certificate_blocked")
 
     @property
     @pulumi.getter(name="isOutOfCapacityBlocked")
-    def is_out_of_capacity_blocked(self) -> bool:
-        """
-        Whether to block sessions if the firewall is temporarily unable to decrypt their traffic.
-        """
+    def is_out_of_capacity_blocked(self) -> Optional[bool]:
         return pulumi.get(self, "is_out_of_capacity_blocked")
 
     @property
     @pulumi.getter(name="isRevocationStatusTimeoutBlocked")
-    def is_revocation_status_timeout_blocked(self) -> bool:
-        """
-        Whether to block sessions if the revocation status check for server's certificate does not succeed within the maximum allowed time (defaulting to 5 seconds).
-        """
+    def is_revocation_status_timeout_blocked(self) -> Optional[bool]:
         return pulumi.get(self, "is_revocation_status_timeout_blocked")
 
     @property
     @pulumi.getter(name="isUnknownRevocationStatusBlocked")
-    def is_unknown_revocation_status_blocked(self) -> bool:
-        """
-        Whether to block sessions if the revocation status check for server's certificate results in "unknown".
-        """
+    def is_unknown_revocation_status_blocked(self) -> Optional[bool]:
         return pulumi.get(self, "is_unknown_revocation_status_blocked")
 
     @property
     @pulumi.getter(name="isUnsupportedCipherBlocked")
-    def is_unsupported_cipher_blocked(self) -> bool:
-        """
-        Whether to block sessions if SSL cipher suite is not supported.
-        """
+    def is_unsupported_cipher_blocked(self) -> Optional[bool]:
         return pulumi.get(self, "is_unsupported_cipher_blocked")
 
     @property
     @pulumi.getter(name="isUnsupportedVersionBlocked")
-    def is_unsupported_version_blocked(self) -> bool:
-        """
-        Whether to block sessions if SSL version is not supported.
-        """
+    def is_unsupported_version_blocked(self) -> Optional[bool]:
         return pulumi.get(self, "is_unsupported_version_blocked")
 
     @property
     @pulumi.getter(name="isUntrustedIssuerBlocked")
-    def is_untrusted_issuer_blocked(self) -> bool:
-        """
-        Whether to block sessions if server's certificate is issued by an untrusted certificate authority (CA).
-        """
+    def is_untrusted_issuer_blocked(self) -> Optional[bool]:
         return pulumi.get(self, "is_untrusted_issuer_blocked")
 
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        Unique Name of the decryption profile.
-        """
         return pulumi.get(self, "name")
 
     @property
@@ -157,18 +127,12 @@ class GetNetworkFirewallPolicyDecryptionProfileResult:
 
     @property
     @pulumi.getter(name="parentResourceId")
-    def parent_resource_id(self) -> str:
-        """
-        OCID of the Network Firewall Policy this decryption profile belongs to.
-        """
+    def parent_resource_id(self) -> Optional[str]:
         return pulumi.get(self, "parent_resource_id")
 
     @property
     @pulumi.getter
-    def type(self) -> str:
-        """
-        Describes the type of Decryption Profile SslForwardProxy or SslInboundInspection.
-        """
+    def type(self) -> Optional[str]:
         return pulumi.get(self, "type")
 
 
@@ -198,13 +162,7 @@ def get_network_firewall_policy_decryption_profile(name: Optional[str] = None,
                                                    network_firewall_policy_id: Optional[str] = None,
                                                    opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetNetworkFirewallPolicyDecryptionProfileResult:
     """
-    This data source provides details about a specific Network Firewall Policy Decryption Profile resource in Oracle Cloud Infrastructure Network Firewall service.
-
-    Get Decryption Profile by the given name in the context of network firewall policy.
-
-
-    :param str name: Unique Name of the decryption profile.
-    :param str network_firewall_policy_id: Unique Network Firewall Policy identifier
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['name'] = name
@@ -234,12 +192,6 @@ def get_network_firewall_policy_decryption_profile_output(name: Optional[pulumi.
                                                           network_firewall_policy_id: Optional[pulumi.Input[str]] = None,
                                                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNetworkFirewallPolicyDecryptionProfileResult]:
     """
-    This data source provides details about a specific Network Firewall Policy Decryption Profile resource in Oracle Cloud Infrastructure Network Firewall service.
-
-    Get Decryption Profile by the given name in the context of network firewall policy.
-
-
-    :param str name: Unique Name of the decryption profile.
-    :param str network_firewall_policy_id: Unique Network Firewall Policy identifier
+    Use this data source to access information about an existing resource.
     """
     ...

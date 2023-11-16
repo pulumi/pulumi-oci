@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Software Source resource in Oracle Cloud Infrastructure OS Management service.
@@ -76,46 +75,46 @@ type SoftwareSource struct {
 	// list of the Managed Instances associated with this Software Sources
 	AssociatedManagedInstances SoftwareSourceAssociatedManagedInstanceArrayOutput `pulumi:"associatedManagedInstances"`
 	// (Updatable) The yum repository checksum type used by this software source
-	ChecksumType pulumi.StringOutput `pulumi:"checksumType"`
+	ChecksumType pulumi.StringPtrOutput `pulumi:"checksumType"`
 	// (Updatable) OCID for the Compartment
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) Information specified by the user about the software source
-	Description pulumi.StringOutput `pulumi:"description"`
+	Description pulumi.StringPtrOutput `pulumi:"description"`
 	// (Updatable) User friendly name for the software source
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// Fingerprint of the GPG key for this software source
-	GpgKeyFingerprint pulumi.StringOutput `pulumi:"gpgKeyFingerprint"`
+	GpgKeyFingerprint pulumi.StringPtrOutput `pulumi:"gpgKeyFingerprint"`
 	// ID of the GPG key for this software source
-	GpgKeyId pulumi.StringOutput `pulumi:"gpgKeyId"`
+	GpgKeyId pulumi.StringPtrOutput `pulumi:"gpgKeyId"`
 	// URL of the GPG key for this software source
-	GpgKeyUrl pulumi.StringOutput `pulumi:"gpgKeyUrl"`
+	GpgKeyUrl pulumi.StringPtrOutput `pulumi:"gpgKeyUrl"`
 	// (Updatable) Email address of the person maintaining this software source
-	MaintainerEmail pulumi.StringOutput `pulumi:"maintainerEmail"`
+	MaintainerEmail pulumi.StringPtrOutput `pulumi:"maintainerEmail"`
 	// (Updatable) Name of the person maintaining this software source
-	MaintainerName pulumi.StringOutput `pulumi:"maintainerName"`
+	MaintainerName pulumi.StringPtrOutput `pulumi:"maintainerName"`
 	// (Updatable) Phone number of the person maintaining this software source
-	MaintainerPhone pulumi.StringOutput `pulumi:"maintainerPhone"`
+	MaintainerPhone pulumi.StringPtrOutput `pulumi:"maintainerPhone"`
 	// Number of packages
-	Packages pulumi.IntOutput `pulumi:"packages"`
+	Packages pulumi.IntPtrOutput `pulumi:"packages"`
 	// OCID for the parent software source, if there is one
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	ParentId pulumi.StringOutput `pulumi:"parentId"`
+	ParentId pulumi.StringPtrOutput `pulumi:"parentId"`
 	// Display name the parent software source, if there is one
-	ParentName pulumi.StringOutput `pulumi:"parentName"`
+	ParentName pulumi.StringPtrOutput `pulumi:"parentName"`
 	// Type of the Software Source
-	RepoType pulumi.StringOutput `pulumi:"repoType"`
+	RepoType pulumi.StringPtrOutput `pulumi:"repoType"`
 	// The current state of the Software Source.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// status of the software source.
-	Status pulumi.StringOutput `pulumi:"status"`
+	Status pulumi.StringPtrOutput `pulumi:"status"`
 	// URL for the repostiory
-	Url pulumi.StringOutput `pulumi:"url"`
+	Url pulumi.StringPtrOutput `pulumi:"url"`
 }
 
 // NewSoftwareSource registers a new resource with the given unique name, arguments, and options.
@@ -336,12 +335,6 @@ func (i *SoftwareSource) ToSoftwareSourceOutputWithContext(ctx context.Context) 
 	return pulumi.ToOutputWithContext(ctx, i).(SoftwareSourceOutput)
 }
 
-func (i *SoftwareSource) ToOutput(ctx context.Context) pulumix.Output[*SoftwareSource] {
-	return pulumix.Output[*SoftwareSource]{
-		OutputState: i.ToSoftwareSourceOutputWithContext(ctx).OutputState,
-	}
-}
-
 // SoftwareSourceArrayInput is an input type that accepts SoftwareSourceArray and SoftwareSourceArrayOutput values.
 // You can construct a concrete instance of `SoftwareSourceArrayInput` via:
 //
@@ -365,12 +358,6 @@ func (i SoftwareSourceArray) ToSoftwareSourceArrayOutput() SoftwareSourceArrayOu
 
 func (i SoftwareSourceArray) ToSoftwareSourceArrayOutputWithContext(ctx context.Context) SoftwareSourceArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(SoftwareSourceArrayOutput)
-}
-
-func (i SoftwareSourceArray) ToOutput(ctx context.Context) pulumix.Output[[]*SoftwareSource] {
-	return pulumix.Output[[]*SoftwareSource]{
-		OutputState: i.ToSoftwareSourceArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // SoftwareSourceMapInput is an input type that accepts SoftwareSourceMap and SoftwareSourceMapOutput values.
@@ -398,12 +385,6 @@ func (i SoftwareSourceMap) ToSoftwareSourceMapOutputWithContext(ctx context.Cont
 	return pulumi.ToOutputWithContext(ctx, i).(SoftwareSourceMapOutput)
 }
 
-func (i SoftwareSourceMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*SoftwareSource] {
-	return pulumix.Output[map[string]*SoftwareSource]{
-		OutputState: i.ToSoftwareSourceMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type SoftwareSourceOutput struct{ *pulumi.OutputState }
 
 func (SoftwareSourceOutput) ElementType() reflect.Type {
@@ -416,12 +397,6 @@ func (o SoftwareSourceOutput) ToSoftwareSourceOutput() SoftwareSourceOutput {
 
 func (o SoftwareSourceOutput) ToSoftwareSourceOutputWithContext(ctx context.Context) SoftwareSourceOutput {
 	return o
-}
-
-func (o SoftwareSourceOutput) ToOutput(ctx context.Context) pulumix.Output[*SoftwareSource] {
-	return pulumix.Output[*SoftwareSource]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The architecture type supported by the Software Source
@@ -437,8 +412,8 @@ func (o SoftwareSourceOutput) AssociatedManagedInstances() SoftwareSourceAssocia
 }
 
 // (Updatable) The yum repository checksum type used by this software source
-func (o SoftwareSourceOutput) ChecksumType() pulumi.StringOutput {
-	return o.ApplyT(func(v *SoftwareSource) pulumi.StringOutput { return v.ChecksumType }).(pulumi.StringOutput)
+func (o SoftwareSourceOutput) ChecksumType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SoftwareSource) pulumi.StringPtrOutput { return v.ChecksumType }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) OCID for the Compartment
@@ -452,8 +427,8 @@ func (o SoftwareSourceOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // (Updatable) Information specified by the user about the software source
-func (o SoftwareSourceOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v *SoftwareSource) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
+func (o SoftwareSourceOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SoftwareSource) pulumi.StringPtrOutput { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) User friendly name for the software source
@@ -467,71 +442,71 @@ func (o SoftwareSourceOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // Fingerprint of the GPG key for this software source
-func (o SoftwareSourceOutput) GpgKeyFingerprint() pulumi.StringOutput {
-	return o.ApplyT(func(v *SoftwareSource) pulumi.StringOutput { return v.GpgKeyFingerprint }).(pulumi.StringOutput)
+func (o SoftwareSourceOutput) GpgKeyFingerprint() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SoftwareSource) pulumi.StringPtrOutput { return v.GpgKeyFingerprint }).(pulumi.StringPtrOutput)
 }
 
 // ID of the GPG key for this software source
-func (o SoftwareSourceOutput) GpgKeyId() pulumi.StringOutput {
-	return o.ApplyT(func(v *SoftwareSource) pulumi.StringOutput { return v.GpgKeyId }).(pulumi.StringOutput)
+func (o SoftwareSourceOutput) GpgKeyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SoftwareSource) pulumi.StringPtrOutput { return v.GpgKeyId }).(pulumi.StringPtrOutput)
 }
 
 // URL of the GPG key for this software source
-func (o SoftwareSourceOutput) GpgKeyUrl() pulumi.StringOutput {
-	return o.ApplyT(func(v *SoftwareSource) pulumi.StringOutput { return v.GpgKeyUrl }).(pulumi.StringOutput)
+func (o SoftwareSourceOutput) GpgKeyUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SoftwareSource) pulumi.StringPtrOutput { return v.GpgKeyUrl }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Email address of the person maintaining this software source
-func (o SoftwareSourceOutput) MaintainerEmail() pulumi.StringOutput {
-	return o.ApplyT(func(v *SoftwareSource) pulumi.StringOutput { return v.MaintainerEmail }).(pulumi.StringOutput)
+func (o SoftwareSourceOutput) MaintainerEmail() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SoftwareSource) pulumi.StringPtrOutput { return v.MaintainerEmail }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Name of the person maintaining this software source
-func (o SoftwareSourceOutput) MaintainerName() pulumi.StringOutput {
-	return o.ApplyT(func(v *SoftwareSource) pulumi.StringOutput { return v.MaintainerName }).(pulumi.StringOutput)
+func (o SoftwareSourceOutput) MaintainerName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SoftwareSource) pulumi.StringPtrOutput { return v.MaintainerName }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Phone number of the person maintaining this software source
-func (o SoftwareSourceOutput) MaintainerPhone() pulumi.StringOutput {
-	return o.ApplyT(func(v *SoftwareSource) pulumi.StringOutput { return v.MaintainerPhone }).(pulumi.StringOutput)
+func (o SoftwareSourceOutput) MaintainerPhone() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SoftwareSource) pulumi.StringPtrOutput { return v.MaintainerPhone }).(pulumi.StringPtrOutput)
 }
 
 // Number of packages
-func (o SoftwareSourceOutput) Packages() pulumi.IntOutput {
-	return o.ApplyT(func(v *SoftwareSource) pulumi.IntOutput { return v.Packages }).(pulumi.IntOutput)
+func (o SoftwareSourceOutput) Packages() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *SoftwareSource) pulumi.IntPtrOutput { return v.Packages }).(pulumi.IntPtrOutput)
 }
 
 // OCID for the parent software source, if there is one
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-func (o SoftwareSourceOutput) ParentId() pulumi.StringOutput {
-	return o.ApplyT(func(v *SoftwareSource) pulumi.StringOutput { return v.ParentId }).(pulumi.StringOutput)
+func (o SoftwareSourceOutput) ParentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SoftwareSource) pulumi.StringPtrOutput { return v.ParentId }).(pulumi.StringPtrOutput)
 }
 
 // Display name the parent software source, if there is one
-func (o SoftwareSourceOutput) ParentName() pulumi.StringOutput {
-	return o.ApplyT(func(v *SoftwareSource) pulumi.StringOutput { return v.ParentName }).(pulumi.StringOutput)
+func (o SoftwareSourceOutput) ParentName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SoftwareSource) pulumi.StringPtrOutput { return v.ParentName }).(pulumi.StringPtrOutput)
 }
 
 // Type of the Software Source
-func (o SoftwareSourceOutput) RepoType() pulumi.StringOutput {
-	return o.ApplyT(func(v *SoftwareSource) pulumi.StringOutput { return v.RepoType }).(pulumi.StringOutput)
+func (o SoftwareSourceOutput) RepoType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SoftwareSource) pulumi.StringPtrOutput { return v.RepoType }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the Software Source.
-func (o SoftwareSourceOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *SoftwareSource) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o SoftwareSourceOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SoftwareSource) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // status of the software source.
-func (o SoftwareSourceOutput) Status() pulumi.StringOutput {
-	return o.ApplyT(func(v *SoftwareSource) pulumi.StringOutput { return v.Status }).(pulumi.StringOutput)
+func (o SoftwareSourceOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SoftwareSource) pulumi.StringPtrOutput { return v.Status }).(pulumi.StringPtrOutput)
 }
 
 // URL for the repostiory
-func (o SoftwareSourceOutput) Url() pulumi.StringOutput {
-	return o.ApplyT(func(v *SoftwareSource) pulumi.StringOutput { return v.Url }).(pulumi.StringOutput)
+func (o SoftwareSourceOutput) Url() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SoftwareSource) pulumi.StringPtrOutput { return v.Url }).(pulumi.StringPtrOutput)
 }
 
 type SoftwareSourceArrayOutput struct{ *pulumi.OutputState }
@@ -546,12 +521,6 @@ func (o SoftwareSourceArrayOutput) ToSoftwareSourceArrayOutput() SoftwareSourceA
 
 func (o SoftwareSourceArrayOutput) ToSoftwareSourceArrayOutputWithContext(ctx context.Context) SoftwareSourceArrayOutput {
 	return o
-}
-
-func (o SoftwareSourceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*SoftwareSource] {
-	return pulumix.Output[[]*SoftwareSource]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o SoftwareSourceArrayOutput) Index(i pulumi.IntInput) SoftwareSourceOutput {
@@ -572,12 +541,6 @@ func (o SoftwareSourceMapOutput) ToSoftwareSourceMapOutput() SoftwareSourceMapOu
 
 func (o SoftwareSourceMapOutput) ToSoftwareSourceMapOutputWithContext(ctx context.Context) SoftwareSourceMapOutput {
 	return o
-}
-
-func (o SoftwareSourceMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*SoftwareSource] {
-	return pulumix.Output[map[string]*SoftwareSource]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o SoftwareSourceMapOutput) MapIndex(k pulumi.StringInput) SoftwareSourceOutput {

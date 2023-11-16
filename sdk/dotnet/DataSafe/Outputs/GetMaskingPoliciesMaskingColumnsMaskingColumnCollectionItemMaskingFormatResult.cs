@@ -16,11 +16,11 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// <summary>
         /// A condition that must be true for applying the masking format. It can be any valid  SQL construct that can be used in a SQL predicate. It enables you to do  &lt;a href="https://docs.oracle.com/en/cloud/paas/data-safe/udscs/conditional-masking.html"&gt;conditional masking&lt;/a&gt;  so that you can mask the column data values differently using different masking  formats and the associated conditions.
         /// </summary>
-        public readonly string Condition;
+        public readonly string? Condition;
         /// <summary>
         /// The description of the format entry.
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// An array of format entries. The combined output of all the format entries is  used for masking the column data values.
         /// </summary>
@@ -28,9 +28,9 @@ namespace Pulumi.Oci.DataSafe.Outputs
 
         [OutputConstructor]
         private GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormatResult(
-            string condition,
+            string? condition,
 
-            string description,
+            string? description,
 
             ImmutableArray<Outputs.GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormatFormatEntryResult> formatEntries)
         {

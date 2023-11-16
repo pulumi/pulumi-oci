@@ -52,21 +52,21 @@ export interface GetIpsecConfigResult {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the IPSec connection.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     readonly filters?: outputs.Core.GetIpsecConfigFilter[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly ipsecId: string;
     /**
      * The date and time the IPSec connection was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * Two [TunnelConfig](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/TunnelConfig/) objects.
      */
-    readonly tunnels: outputs.Core.GetIpsecConfigTunnel[];
+    readonly tunnels?: outputs.Core.GetIpsecConfigTunnel[];
 }
 /**
  * This data source provides details about a specific Ip Sec Connection Device Config resource in Oracle Cloud Infrastructure Core service.

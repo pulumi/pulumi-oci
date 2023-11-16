@@ -8,6 +8,8 @@ import com.pulumi.oci.DatabaseManagement.outputs.GetExternalExadataStorageServer
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetExternalExadataStorageServerIormPlanResult {
@@ -15,23 +17,23 @@ public final class GetExternalExadataStorageServerIormPlanResult {
      * @return The resource allocation directives must all use the share attribute, or they must all use the level and allocation attributes. If you use the share attribute to allocate I/O resources, then the database plan can have a maximum of 1024 directives. If you use the level and allocation attributes to allocate I/O resources, then the database plan can have a maximum of 32 directives. Only one directive is allowed for each database name and each profile name.
      * 
      */
-    private List<GetExternalExadataStorageServerIormPlanDbPlan> dbPlans;
+    private @Nullable List<GetExternalExadataStorageServerIormPlanDbPlan> dbPlans;
     private String externalExadataStorageServerId;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The objective of the IORM plan.
      * 
      */
-    private String planObjective;
+    private @Nullable String planObjective;
     /**
      * @return The status of the IORM plan.
      * 
      */
-    private String planStatus;
+    private @Nullable String planStatus;
 
     private GetExternalExadataStorageServerIormPlanResult() {}
     /**
@@ -39,7 +41,7 @@ public final class GetExternalExadataStorageServerIormPlanResult {
      * 
      */
     public List<GetExternalExadataStorageServerIormPlanDbPlan> dbPlans() {
-        return this.dbPlans;
+        return this.dbPlans == null ? List.of() : this.dbPlans;
     }
     public String externalExadataStorageServerId() {
         return this.externalExadataStorageServerId;
@@ -48,22 +50,22 @@ public final class GetExternalExadataStorageServerIormPlanResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The objective of the IORM plan.
      * 
      */
-    public String planObjective() {
-        return this.planObjective;
+    public Optional<String> planObjective() {
+        return Optional.ofNullable(this.planObjective);
     }
     /**
      * @return The status of the IORM plan.
      * 
      */
-    public String planStatus() {
-        return this.planStatus;
+    public Optional<String> planStatus() {
+        return Optional.ofNullable(this.planStatus);
     }
 
     public static Builder builder() {
@@ -75,11 +77,11 @@ public final class GetExternalExadataStorageServerIormPlanResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetExternalExadataStorageServerIormPlanDbPlan> dbPlans;
+        private @Nullable List<GetExternalExadataStorageServerIormPlanDbPlan> dbPlans;
         private String externalExadataStorageServerId;
-        private String id;
-        private String planObjective;
-        private String planStatus;
+        private @Nullable String id;
+        private @Nullable String planObjective;
+        private @Nullable String planStatus;
         public Builder() {}
         public Builder(GetExternalExadataStorageServerIormPlanResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -91,8 +93,8 @@ public final class GetExternalExadataStorageServerIormPlanResult {
         }
 
         @CustomType.Setter
-        public Builder dbPlans(List<GetExternalExadataStorageServerIormPlanDbPlan> dbPlans) {
-            this.dbPlans = Objects.requireNonNull(dbPlans);
+        public Builder dbPlans(@Nullable List<GetExternalExadataStorageServerIormPlanDbPlan> dbPlans) {
+            this.dbPlans = dbPlans;
             return this;
         }
         public Builder dbPlans(GetExternalExadataStorageServerIormPlanDbPlan... dbPlans) {
@@ -104,18 +106,18 @@ public final class GetExternalExadataStorageServerIormPlanResult {
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder planObjective(String planObjective) {
-            this.planObjective = Objects.requireNonNull(planObjective);
+        public Builder planObjective(@Nullable String planObjective) {
+            this.planObjective = planObjective;
             return this;
         }
         @CustomType.Setter
-        public Builder planStatus(String planStatus) {
-            this.planStatus = Objects.requireNonNull(planStatus);
+        public Builder planStatus(@Nullable String planStatus) {
+            this.planStatus = planStatus;
             return this;
         }
         public GetExternalExadataStorageServerIormPlanResult build() {

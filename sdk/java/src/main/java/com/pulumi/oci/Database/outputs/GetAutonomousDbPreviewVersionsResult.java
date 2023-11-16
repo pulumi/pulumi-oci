@@ -9,6 +9,7 @@ import com.pulumi.oci.Database.outputs.GetAutonomousDbPreviewVersionsFilter;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 @CustomType
@@ -17,14 +18,14 @@ public final class GetAutonomousDbPreviewVersionsResult {
      * @return The list of autonomous_db_preview_versions.
      * 
      */
-    private List<GetAutonomousDbPreviewVersionsAutonomousDbPreviewVersion> autonomousDbPreviewVersions;
+    private @Nullable List<GetAutonomousDbPreviewVersionsAutonomousDbPreviewVersion> autonomousDbPreviewVersions;
     private String compartmentId;
     private @Nullable List<GetAutonomousDbPreviewVersionsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
 
     private GetAutonomousDbPreviewVersionsResult() {}
     /**
@@ -32,7 +33,7 @@ public final class GetAutonomousDbPreviewVersionsResult {
      * 
      */
     public List<GetAutonomousDbPreviewVersionsAutonomousDbPreviewVersion> autonomousDbPreviewVersions() {
-        return this.autonomousDbPreviewVersions;
+        return this.autonomousDbPreviewVersions == null ? List.of() : this.autonomousDbPreviewVersions;
     }
     public String compartmentId() {
         return this.compartmentId;
@@ -44,8 +45,8 @@ public final class GetAutonomousDbPreviewVersionsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
 
     public static Builder builder() {
@@ -57,10 +58,10 @@ public final class GetAutonomousDbPreviewVersionsResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetAutonomousDbPreviewVersionsAutonomousDbPreviewVersion> autonomousDbPreviewVersions;
+        private @Nullable List<GetAutonomousDbPreviewVersionsAutonomousDbPreviewVersion> autonomousDbPreviewVersions;
         private String compartmentId;
         private @Nullable List<GetAutonomousDbPreviewVersionsFilter> filters;
-        private String id;
+        private @Nullable String id;
         public Builder() {}
         public Builder(GetAutonomousDbPreviewVersionsResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -71,8 +72,8 @@ public final class GetAutonomousDbPreviewVersionsResult {
         }
 
         @CustomType.Setter
-        public Builder autonomousDbPreviewVersions(List<GetAutonomousDbPreviewVersionsAutonomousDbPreviewVersion> autonomousDbPreviewVersions) {
-            this.autonomousDbPreviewVersions = Objects.requireNonNull(autonomousDbPreviewVersions);
+        public Builder autonomousDbPreviewVersions(@Nullable List<GetAutonomousDbPreviewVersionsAutonomousDbPreviewVersion> autonomousDbPreviewVersions) {
+            this.autonomousDbPreviewVersions = autonomousDbPreviewVersions;
             return this;
         }
         public Builder autonomousDbPreviewVersions(GetAutonomousDbPreviewVersionsAutonomousDbPreviewVersion... autonomousDbPreviewVersions) {
@@ -92,8 +93,8 @@ public final class GetAutonomousDbPreviewVersionsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         public GetAutonomousDbPreviewVersionsResult build() {

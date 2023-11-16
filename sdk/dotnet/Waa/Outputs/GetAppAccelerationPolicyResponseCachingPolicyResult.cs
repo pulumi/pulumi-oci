@@ -16,10 +16,10 @@ namespace Pulumi.Oci.Waa.Outputs
         /// <summary>
         /// When false, responses will not be cached by the backend based on response headers.
         /// </summary>
-        public readonly bool IsResponseHeaderBasedCachingEnabled;
+        public readonly bool? IsResponseHeaderBasedCachingEnabled;
 
         [OutputConstructor]
-        private GetAppAccelerationPolicyResponseCachingPolicyResult(bool isResponseHeaderBasedCachingEnabled)
+        private GetAppAccelerationPolicyResponseCachingPolicyResult(bool? isResponseHeaderBasedCachingEnabled)
         {
             IsResponseHeaderBasedCachingEnabled = isResponseHeaderBasedCachingEnabled;
         }

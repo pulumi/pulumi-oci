@@ -16,131 +16,131 @@ namespace Pulumi.Oci.LogAnalytics.Outputs
         /// <summary>
         /// The Boolean flag to indicate if logs are collected for an entity for log analytics usage.
         /// </summary>
-        public readonly bool AreLogsCollected;
+        public readonly bool? AreLogsCollected;
         /// <summary>
         /// A filter to return only log analytics entities whose cloudResourceId matches the cloudResourceId given.
         /// </summary>
-        public readonly string CloudResourceId;
+        public readonly string? CloudResourceId;
         /// <summary>
         /// The ID of the compartment in which to list resources.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// Internal name for the log analytics entity type.
         /// </summary>
-        public readonly string EntityTypeInternalName;
+        public readonly string? EntityTypeInternalName;
         /// <summary>
         /// A filter to return only log analytics entities whose entityTypeName matches the entire log analytics entity type name of one of the entityTypeNames given in the list. The match is case-insensitive.
         /// </summary>
-        public readonly string EntityTypeName;
+        public readonly string? EntityTypeName;
         /// <summary>
         /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// A filter to return only log analytics entities whose hostname matches the entire hostname given.
         /// </summary>
-        public readonly string Hostname;
+        public readonly string? Hostname;
         /// <summary>
         /// The log analytics entity OCID. This ID is a reference used by log analytics features and it represents a resource that is provisioned and managed by the customer on their premises or on the cloud.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// lifecycleDetails has additional information regarding substeps such as management agent plugin deployment.
         /// </summary>
-        public readonly string LifecycleDetails;
+        public readonly string? LifecycleDetails;
         /// <summary>
         /// Management agent (management-agents resource kind) compartment OCID
         /// </summary>
-        public readonly string ManagementAgentCompartmentId;
+        public readonly string? ManagementAgentCompartmentId;
         /// <summary>
         /// Management agent (management-agents resource kind) display name
         /// </summary>
-        public readonly string ManagementAgentDisplayName;
+        public readonly string? ManagementAgentDisplayName;
         /// <summary>
         /// The OCID of the Management Agent.
         /// </summary>
-        public readonly string ManagementAgentId;
+        public readonly string? ManagementAgentId;
         /// <summary>
         /// A filter to return only log analytics entities whose name matches the entire name given. The match is case-insensitive.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// The Logging Analytics namespace used for the request.
         /// </summary>
-        public readonly string Namespace;
+        public readonly string? Namespace;
         /// <summary>
         /// The name/value pairs for parameter values to be used in file patterns specified in log sources.
         /// </summary>
-        public readonly ImmutableDictionary<string, object> Properties;
+        public readonly ImmutableDictionary<string, object>? Properties;
         /// <summary>
         /// A filter to return only log analytics entities whose sourceId matches the sourceId given.
         /// </summary>
-        public readonly string SourceId;
+        public readonly string? SourceId;
         /// <summary>
         /// A filter to return only those log analytics entities with the specified lifecycle state. The state value is case-insensitive.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// The date and time the resource was created, in the format defined by RFC3339.
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The date and time the resource was last updated, in the format defined by RFC3339.
         /// </summary>
-        public readonly string TimeUpdated;
+        public readonly string? TimeUpdated;
         /// <summary>
         /// The timezone region of the log analytics entity.
         /// </summary>
-        public readonly string TimezoneRegion;
+        public readonly string? TimezoneRegion;
 
         [OutputConstructor]
         private GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemResult(
-            bool areLogsCollected,
+            bool? areLogsCollected,
 
-            string cloudResourceId,
+            string? cloudResourceId,
 
-            string compartmentId,
+            string? compartmentId,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string entityTypeInternalName,
+            string? entityTypeInternalName,
 
-            string entityTypeName,
+            string? entityTypeName,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string hostname,
+            string? hostname,
 
-            string id,
+            string? id,
 
-            string lifecycleDetails,
+            string? lifecycleDetails,
 
-            string managementAgentCompartmentId,
+            string? managementAgentCompartmentId,
 
-            string managementAgentDisplayName,
+            string? managementAgentDisplayName,
 
-            string managementAgentId,
+            string? managementAgentId,
 
-            string name,
+            string? name,
 
-            string @namespace,
+            string? @namespace,
 
-            ImmutableDictionary<string, object> properties,
+            ImmutableDictionary<string, object>? properties,
 
-            string sourceId,
+            string? sourceId,
 
-            string state,
+            string? state,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeUpdated,
+            string? timeUpdated,
 
-            string timezoneRegion)
+            string? timezoneRegion)
         {
             AreLogsCollected = areLogsCollected;
             CloudResourceId = cloudResourceId;

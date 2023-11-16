@@ -13,13 +13,13 @@ namespace Pulumi.Oci.Database
     public partial class ExadataInfrastructureStorage : global::Pulumi.CustomResource
     {
         [Output("activatedStorageCount")]
-        public Output<int> ActivatedStorageCount { get; private set; } = null!;
+        public Output<int?> ActivatedStorageCount { get; private set; } = null!;
 
         [Output("activationFile")]
         public Output<string?> ActivationFile { get; private set; } = null!;
 
         [Output("additionalStorageCount")]
-        public Output<int> AdditionalStorageCount { get; private set; } = null!;
+        public Output<int?> AdditionalStorageCount { get; private set; } = null!;
 
         [Output("adminNetworkCidr")]
         public Output<string> AdminNetworkCidr { get; private set; } = null!;
@@ -34,28 +34,28 @@ namespace Pulumi.Oci.Database
         public Output<string> CompartmentId { get; private set; } = null!;
 
         [Output("computeCount")]
-        public Output<int> ComputeCount { get; private set; } = null!;
+        public Output<int?> ComputeCount { get; private set; } = null!;
 
         [Output("contacts")]
         public Output<ImmutableArray<Outputs.ExadataInfrastructureStorageContact>> Contacts { get; private set; } = null!;
 
         [Output("corporateProxy")]
-        public Output<string> CorporateProxy { get; private set; } = null!;
+        public Output<string?> CorporateProxy { get; private set; } = null!;
 
         [Output("cpusEnabled")]
-        public Output<int> CpusEnabled { get; private set; } = null!;
+        public Output<int?> CpusEnabled { get; private set; } = null!;
 
         [Output("csiNumber")]
-        public Output<string> CsiNumber { get; private set; } = null!;
+        public Output<string?> CsiNumber { get; private set; } = null!;
 
         [Output("dataStorageSizeInTbs")]
-        public Output<double> DataStorageSizeInTbs { get; private set; } = null!;
+        public Output<double?> DataStorageSizeInTbs { get; private set; } = null!;
 
         [Output("dbNodeStorageSizeInGbs")]
-        public Output<int> DbNodeStorageSizeInGbs { get; private set; } = null!;
+        public Output<int?> DbNodeStorageSizeInGbs { get; private set; } = null!;
 
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         [Output("displayName")]
         public Output<string> DisplayName { get; private set; } = null!;
@@ -67,7 +67,7 @@ namespace Pulumi.Oci.Database
         public Output<string?> ExadataInfrastructureId { get; private set; } = null!;
 
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         [Output("gateway")]
         public Output<string> Gateway { get; private set; } = null!;
@@ -76,28 +76,28 @@ namespace Pulumi.Oci.Database
         public Output<string> InfiniBandNetworkCidr { get; private set; } = null!;
 
         [Output("lifecycleDetails")]
-        public Output<string> LifecycleDetails { get; private set; } = null!;
+        public Output<string?> LifecycleDetails { get; private set; } = null!;
 
         [Output("maintenanceSloStatus")]
-        public Output<string> MaintenanceSloStatus { get; private set; } = null!;
+        public Output<string?> MaintenanceSloStatus { get; private set; } = null!;
 
         [Output("maintenanceWindow")]
-        public Output<Outputs.ExadataInfrastructureStorageMaintenanceWindow> MaintenanceWindow { get; private set; } = null!;
+        public Output<Outputs.ExadataInfrastructureStorageMaintenanceWindow?> MaintenanceWindow { get; private set; } = null!;
 
         [Output("maxCpuCount")]
-        public Output<int> MaxCpuCount { get; private set; } = null!;
+        public Output<int?> MaxCpuCount { get; private set; } = null!;
 
         [Output("maxDataStorageInTbs")]
-        public Output<double> MaxDataStorageInTbs { get; private set; } = null!;
+        public Output<double?> MaxDataStorageInTbs { get; private set; } = null!;
 
         [Output("maxDbNodeStorageInGbs")]
-        public Output<int> MaxDbNodeStorageInGbs { get; private set; } = null!;
+        public Output<int?> MaxDbNodeStorageInGbs { get; private set; } = null!;
 
         [Output("maxMemoryInGbs")]
-        public Output<int> MaxMemoryInGbs { get; private set; } = null!;
+        public Output<int?> MaxMemoryInGbs { get; private set; } = null!;
 
         [Output("memorySizeInGbs")]
-        public Output<int> MemorySizeInGbs { get; private set; } = null!;
+        public Output<int?> MemorySizeInGbs { get; private set; } = null!;
 
         [Output("netmask")]
         public Output<string> Netmask { get; private set; } = null!;
@@ -109,13 +109,13 @@ namespace Pulumi.Oci.Database
         public Output<string> Shape { get; private set; } = null!;
 
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         [Output("storageCount")]
-        public Output<int> StorageCount { get; private set; } = null!;
+        public Output<int?> StorageCount { get; private set; } = null!;
 
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         [Output("timeZone")]
         public Output<string> TimeZone { get; private set; } = null!;

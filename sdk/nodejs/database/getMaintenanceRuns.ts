@@ -91,11 +91,11 @@ export interface GetMaintenanceRunsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The list of maintenance_runs.
      */
-    readonly maintenanceRuns: outputs.Database.GetMaintenanceRunsMaintenanceRun[];
+    readonly maintenanceRuns?: outputs.Database.GetMaintenanceRunsMaintenanceRun[];
     /**
      * Maintenance sub-type.
      */

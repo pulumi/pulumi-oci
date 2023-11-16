@@ -9,6 +9,8 @@ import com.pulumi.oci.NetworkFirewall.outputs.GetNetworkFirewallPolicyDecryption
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetNetworkFirewallPolicyDecryptionRuleResult {
@@ -18,18 +20,18 @@ public final class GetNetworkFirewallPolicyDecryptionRuleResult {
      * * DECRYPT - Matching traffic is decrypted with the specified `secret` according to the specified `decryptionProfile`.
      * 
      */
-    private String action;
+    private @Nullable String action;
     /**
      * @return Match criteria used in Decryption Rule used on the firewall policy rules.
      * 
      */
-    private List<GetNetworkFirewallPolicyDecryptionRuleCondition> conditions;
+    private @Nullable List<GetNetworkFirewallPolicyDecryptionRuleCondition> conditions;
     /**
      * @return The name of the decryption profile to use.
      * 
      */
-    private String decryptionProfile;
-    private String id;
+    private @Nullable String decryptionProfile;
+    private @Nullable String id;
     /**
      * @return Name for the decryption rule, must be unique within the policy.
      * 
@@ -40,18 +42,18 @@ public final class GetNetworkFirewallPolicyDecryptionRuleResult {
      * @return OCID of the Network Firewall Policy this decryption rule belongs to.
      * 
      */
-    private String parentResourceId;
+    private @Nullable String parentResourceId;
     /**
      * @return An object which defines the position of the rule.
      * 
      */
-    private List<GetNetworkFirewallPolicyDecryptionRulePosition> positions;
-    private String priorityOrder;
+    private @Nullable List<GetNetworkFirewallPolicyDecryptionRulePosition> positions;
+    private @Nullable String priorityOrder;
     /**
      * @return The name of a mapped secret. Its `type` must match that of the specified decryption profile.
      * 
      */
-    private String secret;
+    private @Nullable String secret;
 
     private GetNetworkFirewallPolicyDecryptionRuleResult() {}
     /**
@@ -60,25 +62,25 @@ public final class GetNetworkFirewallPolicyDecryptionRuleResult {
      * * DECRYPT - Matching traffic is decrypted with the specified `secret` according to the specified `decryptionProfile`.
      * 
      */
-    public String action() {
-        return this.action;
+    public Optional<String> action() {
+        return Optional.ofNullable(this.action);
     }
     /**
      * @return Match criteria used in Decryption Rule used on the firewall policy rules.
      * 
      */
     public List<GetNetworkFirewallPolicyDecryptionRuleCondition> conditions() {
-        return this.conditions;
+        return this.conditions == null ? List.of() : this.conditions;
     }
     /**
      * @return The name of the decryption profile to use.
      * 
      */
-    public String decryptionProfile() {
-        return this.decryptionProfile;
+    public Optional<String> decryptionProfile() {
+        return Optional.ofNullable(this.decryptionProfile);
     }
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Name for the decryption rule, must be unique within the policy.
@@ -94,25 +96,25 @@ public final class GetNetworkFirewallPolicyDecryptionRuleResult {
      * @return OCID of the Network Firewall Policy this decryption rule belongs to.
      * 
      */
-    public String parentResourceId() {
-        return this.parentResourceId;
+    public Optional<String> parentResourceId() {
+        return Optional.ofNullable(this.parentResourceId);
     }
     /**
      * @return An object which defines the position of the rule.
      * 
      */
     public List<GetNetworkFirewallPolicyDecryptionRulePosition> positions() {
-        return this.positions;
+        return this.positions == null ? List.of() : this.positions;
     }
-    public String priorityOrder() {
-        return this.priorityOrder;
+    public Optional<String> priorityOrder() {
+        return Optional.ofNullable(this.priorityOrder);
     }
     /**
      * @return The name of a mapped secret. Its `type` must match that of the specified decryption profile.
      * 
      */
-    public String secret() {
-        return this.secret;
+    public Optional<String> secret() {
+        return Optional.ofNullable(this.secret);
     }
 
     public static Builder builder() {
@@ -124,16 +126,16 @@ public final class GetNetworkFirewallPolicyDecryptionRuleResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String action;
-        private List<GetNetworkFirewallPolicyDecryptionRuleCondition> conditions;
-        private String decryptionProfile;
-        private String id;
+        private @Nullable String action;
+        private @Nullable List<GetNetworkFirewallPolicyDecryptionRuleCondition> conditions;
+        private @Nullable String decryptionProfile;
+        private @Nullable String id;
         private String name;
         private String networkFirewallPolicyId;
-        private String parentResourceId;
-        private List<GetNetworkFirewallPolicyDecryptionRulePosition> positions;
-        private String priorityOrder;
-        private String secret;
+        private @Nullable String parentResourceId;
+        private @Nullable List<GetNetworkFirewallPolicyDecryptionRulePosition> positions;
+        private @Nullable String priorityOrder;
+        private @Nullable String secret;
         public Builder() {}
         public Builder(GetNetworkFirewallPolicyDecryptionRuleResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -150,26 +152,26 @@ public final class GetNetworkFirewallPolicyDecryptionRuleResult {
         }
 
         @CustomType.Setter
-        public Builder action(String action) {
-            this.action = Objects.requireNonNull(action);
+        public Builder action(@Nullable String action) {
+            this.action = action;
             return this;
         }
         @CustomType.Setter
-        public Builder conditions(List<GetNetworkFirewallPolicyDecryptionRuleCondition> conditions) {
-            this.conditions = Objects.requireNonNull(conditions);
+        public Builder conditions(@Nullable List<GetNetworkFirewallPolicyDecryptionRuleCondition> conditions) {
+            this.conditions = conditions;
             return this;
         }
         public Builder conditions(GetNetworkFirewallPolicyDecryptionRuleCondition... conditions) {
             return conditions(List.of(conditions));
         }
         @CustomType.Setter
-        public Builder decryptionProfile(String decryptionProfile) {
-            this.decryptionProfile = Objects.requireNonNull(decryptionProfile);
+        public Builder decryptionProfile(@Nullable String decryptionProfile) {
+            this.decryptionProfile = decryptionProfile;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -183,26 +185,26 @@ public final class GetNetworkFirewallPolicyDecryptionRuleResult {
             return this;
         }
         @CustomType.Setter
-        public Builder parentResourceId(String parentResourceId) {
-            this.parentResourceId = Objects.requireNonNull(parentResourceId);
+        public Builder parentResourceId(@Nullable String parentResourceId) {
+            this.parentResourceId = parentResourceId;
             return this;
         }
         @CustomType.Setter
-        public Builder positions(List<GetNetworkFirewallPolicyDecryptionRulePosition> positions) {
-            this.positions = Objects.requireNonNull(positions);
+        public Builder positions(@Nullable List<GetNetworkFirewallPolicyDecryptionRulePosition> positions) {
+            this.positions = positions;
             return this;
         }
         public Builder positions(GetNetworkFirewallPolicyDecryptionRulePosition... positions) {
             return positions(List.of(positions));
         }
         @CustomType.Setter
-        public Builder priorityOrder(String priorityOrder) {
-            this.priorityOrder = Objects.requireNonNull(priorityOrder);
+        public Builder priorityOrder(@Nullable String priorityOrder) {
+            this.priorityOrder = priorityOrder;
             return this;
         }
         @CustomType.Setter
-        public Builder secret(String secret) {
-            this.secret = Objects.requireNonNull(secret);
+        public Builder secret(@Nullable String secret) {
+            this.secret = secret;
             return this;
         }
         public GetNetworkFirewallPolicyDecryptionRuleResult build() {

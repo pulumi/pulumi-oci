@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Dynamic Resource Group resource in Oracle Cloud Infrastructure Identity Domains service.
@@ -78,44 +77,44 @@ type LookupDomainsDynamicResourceGroupResult struct {
 	Attributes    *string  `pulumi:"attributes"`
 	Authorization *string  `pulumi:"authorization"`
 	// Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
-	CompartmentOcid string `pulumi:"compartmentOcid"`
+	CompartmentOcid *string `pulumi:"compartmentOcid"`
 	// A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
-	DeleteInProgress bool `pulumi:"deleteInProgress"`
+	DeleteInProgress *bool `pulumi:"deleteInProgress"`
 	// text that explains the purpose of this Dynamic Resource Group
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// User-friendly, mutable identifier
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
-	DomainOcid string `pulumi:"domainOcid"`
+	DomainOcid *string `pulumi:"domainOcid"`
 	// A list of appRoles that are currently granted to this Dynamic Resource Group.  The Identity service will assert these AppRoles for any resource that satisfies the matching-rule of this DynamicResourceGroup.
 	DynamicGroupAppRoles   []GetDomainsDynamicResourceGroupDynamicGroupAppRole `pulumi:"dynamicGroupAppRoles"`
 	DynamicResourceGroupId string                                              `pulumi:"dynamicResourceGroupId"`
 	// Grants assigned to group
 	Grants []GetDomainsDynamicResourceGroupGrant `pulumi:"grants"`
 	// Unique identifier for the SCIM Resource as defined by the Service Provider. Each representation of the Resource MUST include a non-empty id value. This identifier MUST be unique across the Service Provider's entire set of Resources. It MUST be a stable, non-reassignable identifier that does not change when the same Resource is returned in subsequent requests. The value of the id attribute is always issued by the Service Provider and MUST never be specified by the Service Consumer. bulkId: is a reserved keyword and MUST NOT be used in the unique identifier.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The User or App who created the Resource
 	IdcsCreatedBies []GetDomainsDynamicResourceGroupIdcsCreatedBy `pulumi:"idcsCreatedBies"`
 	IdcsEndpoint    string                                        `pulumi:"idcsEndpoint"`
 	// The User or App who modified the Resource
 	IdcsLastModifiedBies []GetDomainsDynamicResourceGroupIdcsLastModifiedBy `pulumi:"idcsLastModifiedBies"`
 	// The release number when the resource was upgraded.
-	IdcsLastUpgradedInRelease string `pulumi:"idcsLastUpgradedInRelease"`
+	IdcsLastUpgradedInRelease *string `pulumi:"idcsLastUpgradedInRelease"`
 	// Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
 	IdcsPreventedOperations []string `pulumi:"idcsPreventedOperations"`
 	// Store as a string the matching-rule for this Dynamic Resource Group. This may match any number of Apps in this Domain, as well as matching any number of Oracle Cloud Infrastructure resources that are not in any Domain but that are in the Oracle Cloud Infrastructure Compartment that contains this Domain.
-	MatchingRule string `pulumi:"matchingRule"`
+	MatchingRule *string `pulumi:"matchingRule"`
 	// A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
 	Metas []GetDomainsDynamicResourceGroupMeta `pulumi:"metas"`
 	// Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
-	Ocid                      string  `pulumi:"ocid"`
+	Ocid                      *string `pulumi:"ocid"`
 	ResourceTypeSchemaVersion *string `pulumi:"resourceTypeSchemaVersion"`
 	// REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
 	Schemas []string `pulumi:"schemas"`
 	// A list of tags on this resource.
 	Tags []GetDomainsDynamicResourceGroupTag `pulumi:"tags"`
 	// Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
-	TenancyOcid string `pulumi:"tenancyOcid"`
+	TenancyOcid *string `pulumi:"tenancyOcid"`
 	// Oracle Cloud Infrastructure Tags.
 	UrnietfparamsscimschemasoracleidcsextensionOciTags []GetDomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTag `pulumi:"urnietfparamsscimschemasoracleidcsextensionOciTags"`
 }
@@ -168,12 +167,6 @@ func (o LookupDomainsDynamicResourceGroupResultOutput) ToLookupDomainsDynamicRes
 	return o
 }
 
-func (o LookupDomainsDynamicResourceGroupResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupDomainsDynamicResourceGroupResult] {
-	return pulumix.Output[LookupDomainsDynamicResourceGroupResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o LookupDomainsDynamicResourceGroupResultOutput) AttributeSets() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v LookupDomainsDynamicResourceGroupResult) []string { return v.AttributeSets }).(pulumi.StringArrayOutput)
 }
@@ -187,28 +180,28 @@ func (o LookupDomainsDynamicResourceGroupResultOutput) Authorization() pulumi.St
 }
 
 // Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
-func (o LookupDomainsDynamicResourceGroupResultOutput) CompartmentOcid() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsDynamicResourceGroupResult) string { return v.CompartmentOcid }).(pulumi.StringOutput)
+func (o LookupDomainsDynamicResourceGroupResultOutput) CompartmentOcid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsDynamicResourceGroupResult) *string { return v.CompartmentOcid }).(pulumi.StringPtrOutput)
 }
 
 // A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
-func (o LookupDomainsDynamicResourceGroupResultOutput) DeleteInProgress() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupDomainsDynamicResourceGroupResult) bool { return v.DeleteInProgress }).(pulumi.BoolOutput)
+func (o LookupDomainsDynamicResourceGroupResultOutput) DeleteInProgress() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupDomainsDynamicResourceGroupResult) *bool { return v.DeleteInProgress }).(pulumi.BoolPtrOutput)
 }
 
 // text that explains the purpose of this Dynamic Resource Group
-func (o LookupDomainsDynamicResourceGroupResultOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsDynamicResourceGroupResult) string { return v.Description }).(pulumi.StringOutput)
+func (o LookupDomainsDynamicResourceGroupResultOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsDynamicResourceGroupResult) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // User-friendly, mutable identifier
-func (o LookupDomainsDynamicResourceGroupResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsDynamicResourceGroupResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupDomainsDynamicResourceGroupResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsDynamicResourceGroupResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
-func (o LookupDomainsDynamicResourceGroupResultOutput) DomainOcid() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsDynamicResourceGroupResult) string { return v.DomainOcid }).(pulumi.StringOutput)
+func (o LookupDomainsDynamicResourceGroupResultOutput) DomainOcid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsDynamicResourceGroupResult) *string { return v.DomainOcid }).(pulumi.StringPtrOutput)
 }
 
 // A list of appRoles that are currently granted to this Dynamic Resource Group.  The Identity service will assert these AppRoles for any resource that satisfies the matching-rule of this DynamicResourceGroup.
@@ -228,8 +221,8 @@ func (o LookupDomainsDynamicResourceGroupResultOutput) Grants() GetDomainsDynami
 }
 
 // Unique identifier for the SCIM Resource as defined by the Service Provider. Each representation of the Resource MUST include a non-empty id value. This identifier MUST be unique across the Service Provider's entire set of Resources. It MUST be a stable, non-reassignable identifier that does not change when the same Resource is returned in subsequent requests. The value of the id attribute is always issued by the Service Provider and MUST never be specified by the Service Consumer. bulkId: is a reserved keyword and MUST NOT be used in the unique identifier.
-func (o LookupDomainsDynamicResourceGroupResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsDynamicResourceGroupResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupDomainsDynamicResourceGroupResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsDynamicResourceGroupResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The User or App who created the Resource
@@ -251,8 +244,8 @@ func (o LookupDomainsDynamicResourceGroupResultOutput) IdcsLastModifiedBies() Ge
 }
 
 // The release number when the resource was upgraded.
-func (o LookupDomainsDynamicResourceGroupResultOutput) IdcsLastUpgradedInRelease() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsDynamicResourceGroupResult) string { return v.IdcsLastUpgradedInRelease }).(pulumi.StringOutput)
+func (o LookupDomainsDynamicResourceGroupResultOutput) IdcsLastUpgradedInRelease() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsDynamicResourceGroupResult) *string { return v.IdcsLastUpgradedInRelease }).(pulumi.StringPtrOutput)
 }
 
 // Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
@@ -261,8 +254,8 @@ func (o LookupDomainsDynamicResourceGroupResultOutput) IdcsPreventedOperations()
 }
 
 // Store as a string the matching-rule for this Dynamic Resource Group. This may match any number of Apps in this Domain, as well as matching any number of Oracle Cloud Infrastructure resources that are not in any Domain but that are in the Oracle Cloud Infrastructure Compartment that contains this Domain.
-func (o LookupDomainsDynamicResourceGroupResultOutput) MatchingRule() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsDynamicResourceGroupResult) string { return v.MatchingRule }).(pulumi.StringOutput)
+func (o LookupDomainsDynamicResourceGroupResultOutput) MatchingRule() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsDynamicResourceGroupResult) *string { return v.MatchingRule }).(pulumi.StringPtrOutput)
 }
 
 // A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
@@ -271,8 +264,8 @@ func (o LookupDomainsDynamicResourceGroupResultOutput) Metas() GetDomainsDynamic
 }
 
 // Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
-func (o LookupDomainsDynamicResourceGroupResultOutput) Ocid() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsDynamicResourceGroupResult) string { return v.Ocid }).(pulumi.StringOutput)
+func (o LookupDomainsDynamicResourceGroupResultOutput) Ocid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsDynamicResourceGroupResult) *string { return v.Ocid }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupDomainsDynamicResourceGroupResultOutput) ResourceTypeSchemaVersion() pulumi.StringPtrOutput {
@@ -290,8 +283,8 @@ func (o LookupDomainsDynamicResourceGroupResultOutput) Tags() GetDomainsDynamicR
 }
 
 // Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
-func (o LookupDomainsDynamicResourceGroupResultOutput) TenancyOcid() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsDynamicResourceGroupResult) string { return v.TenancyOcid }).(pulumi.StringOutput)
+func (o LookupDomainsDynamicResourceGroupResultOutput) TenancyOcid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsDynamicResourceGroupResult) *string { return v.TenancyOcid }).(pulumi.StringPtrOutput)
 }
 
 // Oracle Cloud Infrastructure Tags.

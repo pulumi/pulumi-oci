@@ -16,77 +16,77 @@ namespace Pulumi.Oci.Core.Outputs
         /// <summary>
         /// Phase two authentication algorithm proposed during tunnel negotiation.
         /// </summary>
-        public readonly string CustomAuthenticationAlgorithm;
+        public readonly string? CustomAuthenticationAlgorithm;
         /// <summary>
         /// The proposed custom phase two encryption algorithm.
         /// </summary>
-        public readonly string CustomEncryptionAlgorithm;
+        public readonly string? CustomEncryptionAlgorithm;
         /// <summary>
         /// The proposed Diffie-Hellman group.
         /// </summary>
-        public readonly string DhGroup;
+        public readonly string? DhGroup;
         /// <summary>
         /// Indicates whether custom phase two configuration is enabled. If this option is not enabled, default settings are proposed.
         /// </summary>
-        public readonly bool IsCustomPhaseTwoConfig;
+        public readonly bool? IsCustomPhaseTwoConfig;
         /// <summary>
         /// Indicates that ESP phase two is established.
         /// </summary>
-        public readonly bool IsEspEstablished;
+        public readonly bool? IsEspEstablished;
         /// <summary>
         /// Indicates that PFS (perfect forward secrecy) is enabled.
         /// </summary>
-        public readonly bool IsPfsEnabled;
+        public readonly bool? IsPfsEnabled;
         /// <summary>
         /// The total configured lifetime of the IKE security association.
         /// </summary>
-        public readonly int Lifetime;
+        public readonly int? Lifetime;
         /// <summary>
         /// The negotiated phase two authentication algorithm.
         /// </summary>
-        public readonly string NegotiatedAuthenticationAlgorithm;
+        public readonly string? NegotiatedAuthenticationAlgorithm;
         /// <summary>
         /// The negotiated Diffie-Hellman group.
         /// </summary>
-        public readonly string NegotiatedDhGroup;
+        public readonly string? NegotiatedDhGroup;
         /// <summary>
         /// The negotiated encryption algorithm.
         /// </summary>
-        public readonly string NegotiatedEncryptionAlgorithm;
+        public readonly string? NegotiatedEncryptionAlgorithm;
         /// <summary>
         /// The remaining lifetime before the key is refreshed.
         /// </summary>
-        public readonly string RemainingLifetime;
+        public readonly string? RemainingLifetime;
         /// <summary>
         /// The date and time the remaining lifetime was last retrieved, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
-        public readonly string RemainingLifetimeLastRetrieved;
+        public readonly string? RemainingLifetimeLastRetrieved;
 
         [OutputConstructor]
         private GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetailResult(
-            string customAuthenticationAlgorithm,
+            string? customAuthenticationAlgorithm,
 
-            string customEncryptionAlgorithm,
+            string? customEncryptionAlgorithm,
 
-            string dhGroup,
+            string? dhGroup,
 
-            bool isCustomPhaseTwoConfig,
+            bool? isCustomPhaseTwoConfig,
 
-            bool isEspEstablished,
+            bool? isEspEstablished,
 
-            bool isPfsEnabled,
+            bool? isPfsEnabled,
 
-            int lifetime,
+            int? lifetime,
 
-            string negotiatedAuthenticationAlgorithm,
+            string? negotiatedAuthenticationAlgorithm,
 
-            string negotiatedDhGroup,
+            string? negotiatedDhGroup,
 
-            string negotiatedEncryptionAlgorithm,
+            string? negotiatedEncryptionAlgorithm,
 
-            string remainingLifetime,
+            string? remainingLifetime,
 
-            string remainingLifetimeLastRetrieved)
+            string? remainingLifetimeLastRetrieved)
         {
             CustomAuthenticationAlgorithm = customAuthenticationAlgorithm;
             CustomEncryptionAlgorithm = customEncryptionAlgorithm;

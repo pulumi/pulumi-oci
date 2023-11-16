@@ -30,18 +30,6 @@ class FusionEnvironmentArgs:
                  rules: Optional[pulumi.Input[Sequence[pulumi.Input['FusionEnvironmentRuleArgs']]]] = None):
         """
         The set of arguments for constructing a FusionEnvironment resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The unique identifier (OCID) of the compartment where the Fusion Environment is located.
-        :param pulumi.Input['FusionEnvironmentCreateFusionEnvironmentAdminUserDetailsArgs'] create_fusion_environment_admin_user_details: The credentials for the Fusion Applications service administrator.
-        :param pulumi.Input[str] display_name: (Updatable) FusionEnvironment Identifier can be renamed.
-        :param pulumi.Input[str] fusion_environment_family_id: The unique identifier (OCID) of the Fusion Environment Family that the Fusion Environment belongs to.
-        :param pulumi.Input[str] fusion_environment_type: The type of environment. Valid values are Production, Test, or Development.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] additional_language_packs: (Updatable) Language packs.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] dns_prefix: DNS prefix.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] kms_key_id: (Updatable) byok kms keyId
-        :param pulumi.Input['FusionEnvironmentMaintenancePolicyArgs'] maintenance_policy: (Updatable) The policy that specifies the maintenance and upgrade preferences for an environment. For more information about the options, see [Understanding Environment Maintenance](https://docs.cloud.oracle.com/iaas/Content/fusion-applications/plan-environment-family.htm#about-env-maintenance).
-        :param pulumi.Input[Sequence[pulumi.Input['FusionEnvironmentRuleArgs']]] rules: (Updatable) Rules.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "create_fusion_environment_admin_user_details", create_fusion_environment_admin_user_details)
@@ -66,9 +54,6 @@ class FusionEnvironmentArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The unique identifier (OCID) of the compartment where the Fusion Environment is located.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -78,9 +63,6 @@ class FusionEnvironmentArgs:
     @property
     @pulumi.getter(name="createFusionEnvironmentAdminUserDetails")
     def create_fusion_environment_admin_user_details(self) -> pulumi.Input['FusionEnvironmentCreateFusionEnvironmentAdminUserDetailsArgs']:
-        """
-        The credentials for the Fusion Applications service administrator.
-        """
         return pulumi.get(self, "create_fusion_environment_admin_user_details")
 
     @create_fusion_environment_admin_user_details.setter
@@ -90,9 +72,6 @@ class FusionEnvironmentArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Input[str]:
-        """
-        (Updatable) FusionEnvironment Identifier can be renamed.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -102,9 +81,6 @@ class FusionEnvironmentArgs:
     @property
     @pulumi.getter(name="fusionEnvironmentFamilyId")
     def fusion_environment_family_id(self) -> pulumi.Input[str]:
-        """
-        The unique identifier (OCID) of the Fusion Environment Family that the Fusion Environment belongs to.
-        """
         return pulumi.get(self, "fusion_environment_family_id")
 
     @fusion_environment_family_id.setter
@@ -114,9 +90,6 @@ class FusionEnvironmentArgs:
     @property
     @pulumi.getter(name="fusionEnvironmentType")
     def fusion_environment_type(self) -> pulumi.Input[str]:
-        """
-        The type of environment. Valid values are Production, Test, or Development.
-        """
         return pulumi.get(self, "fusion_environment_type")
 
     @fusion_environment_type.setter
@@ -126,9 +99,6 @@ class FusionEnvironmentArgs:
     @property
     @pulumi.getter(name="additionalLanguagePacks")
     def additional_language_packs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) Language packs.
-        """
         return pulumi.get(self, "additional_language_packs")
 
     @additional_language_packs.setter
@@ -138,9 +108,6 @@ class FusionEnvironmentArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -150,9 +117,6 @@ class FusionEnvironmentArgs:
     @property
     @pulumi.getter(name="dnsPrefix")
     def dns_prefix(self) -> Optional[pulumi.Input[str]]:
-        """
-        DNS prefix.
-        """
         return pulumi.get(self, "dns_prefix")
 
     @dns_prefix.setter
@@ -162,9 +126,6 @@ class FusionEnvironmentArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -174,9 +135,6 @@ class FusionEnvironmentArgs:
     @property
     @pulumi.getter(name="kmsKeyId")
     def kms_key_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) byok kms keyId
-        """
         return pulumi.get(self, "kms_key_id")
 
     @kms_key_id.setter
@@ -186,9 +144,6 @@ class FusionEnvironmentArgs:
     @property
     @pulumi.getter(name="maintenancePolicy")
     def maintenance_policy(self) -> Optional[pulumi.Input['FusionEnvironmentMaintenancePolicyArgs']]:
-        """
-        (Updatable) The policy that specifies the maintenance and upgrade preferences for an environment. For more information about the options, see [Understanding Environment Maintenance](https://docs.cloud.oracle.com/iaas/Content/fusion-applications/plan-environment-family.htm#about-env-maintenance).
-        """
         return pulumi.get(self, "maintenance_policy")
 
     @maintenance_policy.setter
@@ -198,9 +153,6 @@ class FusionEnvironmentArgs:
     @property
     @pulumi.getter
     def rules(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['FusionEnvironmentRuleArgs']]]]:
-        """
-        (Updatable) Rules.
-        """
         return pulumi.get(self, "rules")
 
     @rules.setter
@@ -241,34 +193,6 @@ class _FusionEnvironmentState:
                  version: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering FusionEnvironment resources.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] additional_language_packs: (Updatable) Language packs.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] applied_patch_bundles: Patch bundle names
-        :param pulumi.Input[str] compartment_id: (Updatable) The unique identifier (OCID) of the compartment where the Fusion Environment is located.
-        :param pulumi.Input['FusionEnvironmentCreateFusionEnvironmentAdminUserDetailsArgs'] create_fusion_environment_admin_user_details: The credentials for the Fusion Applications service administrator.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] display_name: (Updatable) FusionEnvironment Identifier can be renamed.
-        :param pulumi.Input[str] dns_prefix: DNS prefix.
-        :param pulumi.Input[str] domain_id: The IDCS domain created for the fusion instance
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] fusion_environment_family_id: The unique identifier (OCID) of the Fusion Environment Family that the Fusion Environment belongs to.
-        :param pulumi.Input[str] fusion_environment_type: The type of environment. Valid values are Production, Test, or Development.
-        :param pulumi.Input[str] idcs_domain_url: The IDCS Domain URL
-        :param pulumi.Input[bool] is_break_glass_enabled: If it's true, then the Break Glass feature is enabled
-        :param pulumi.Input[str] kms_key_id: (Updatable) byok kms keyId
-        :param pulumi.Input[Sequence[pulumi.Input['FusionEnvironmentKmsKeyInfoArgs']]] kms_key_infos: BYOK key info
-        :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        :param pulumi.Input[str] lockbox_id: The lockbox Id of this fusion environment. If there's no lockbox id, this field will be null
-        :param pulumi.Input['FusionEnvironmentMaintenancePolicyArgs'] maintenance_policy: (Updatable) The policy that specifies the maintenance and upgrade preferences for an environment. For more information about the options, see [Understanding Environment Maintenance](https://docs.cloud.oracle.com/iaas/Content/fusion-applications/plan-environment-family.htm#about-env-maintenance).
-        :param pulumi.Input[str] public_url: Public URL
-        :param pulumi.Input[Sequence[pulumi.Input['FusionEnvironmentRefreshArgs']]] refreshes: Describes a refresh of a fusion environment
-        :param pulumi.Input[Sequence[pulumi.Input['FusionEnvironmentRuleArgs']]] rules: (Updatable) Rules.
-        :param pulumi.Input[str] state: The current state of the ServiceInstance.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] subscription_ids: List of subscription IDs.
-        :param pulumi.Input[str] system_name: Environment Specific Guid/ System Name
-        :param pulumi.Input[str] time_created: The time the the FusionEnvironment was created. An RFC3339 formatted datetime string
-        :param pulumi.Input[str] time_upcoming_maintenance: The next maintenance for this environment
-        :param pulumi.Input[str] time_updated: The time the FusionEnvironment was updated. An RFC3339 formatted datetime string
-        :param pulumi.Input[str] version: Version of Fusion Apps used by this environment
         """
         if additional_language_packs is not None:
             pulumi.set(__self__, "additional_language_packs", additional_language_packs)
@@ -330,9 +254,6 @@ class _FusionEnvironmentState:
     @property
     @pulumi.getter(name="additionalLanguagePacks")
     def additional_language_packs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) Language packs.
-        """
         return pulumi.get(self, "additional_language_packs")
 
     @additional_language_packs.setter
@@ -342,9 +263,6 @@ class _FusionEnvironmentState:
     @property
     @pulumi.getter(name="appliedPatchBundles")
     def applied_patch_bundles(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        Patch bundle names
-        """
         return pulumi.get(self, "applied_patch_bundles")
 
     @applied_patch_bundles.setter
@@ -354,9 +272,6 @@ class _FusionEnvironmentState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The unique identifier (OCID) of the compartment where the Fusion Environment is located.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -366,9 +281,6 @@ class _FusionEnvironmentState:
     @property
     @pulumi.getter(name="createFusionEnvironmentAdminUserDetails")
     def create_fusion_environment_admin_user_details(self) -> Optional[pulumi.Input['FusionEnvironmentCreateFusionEnvironmentAdminUserDetailsArgs']]:
-        """
-        The credentials for the Fusion Applications service administrator.
-        """
         return pulumi.get(self, "create_fusion_environment_admin_user_details")
 
     @create_fusion_environment_admin_user_details.setter
@@ -378,9 +290,6 @@ class _FusionEnvironmentState:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -390,9 +299,6 @@ class _FusionEnvironmentState:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) FusionEnvironment Identifier can be renamed.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -402,9 +308,6 @@ class _FusionEnvironmentState:
     @property
     @pulumi.getter(name="dnsPrefix")
     def dns_prefix(self) -> Optional[pulumi.Input[str]]:
-        """
-        DNS prefix.
-        """
         return pulumi.get(self, "dns_prefix")
 
     @dns_prefix.setter
@@ -414,9 +317,6 @@ class _FusionEnvironmentState:
     @property
     @pulumi.getter(name="domainId")
     def domain_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The IDCS domain created for the fusion instance
-        """
         return pulumi.get(self, "domain_id")
 
     @domain_id.setter
@@ -426,9 +326,6 @@ class _FusionEnvironmentState:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -438,9 +335,6 @@ class _FusionEnvironmentState:
     @property
     @pulumi.getter(name="fusionEnvironmentFamilyId")
     def fusion_environment_family_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The unique identifier (OCID) of the Fusion Environment Family that the Fusion Environment belongs to.
-        """
         return pulumi.get(self, "fusion_environment_family_id")
 
     @fusion_environment_family_id.setter
@@ -450,9 +344,6 @@ class _FusionEnvironmentState:
     @property
     @pulumi.getter(name="fusionEnvironmentType")
     def fusion_environment_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        The type of environment. Valid values are Production, Test, or Development.
-        """
         return pulumi.get(self, "fusion_environment_type")
 
     @fusion_environment_type.setter
@@ -462,9 +353,6 @@ class _FusionEnvironmentState:
     @property
     @pulumi.getter(name="idcsDomainUrl")
     def idcs_domain_url(self) -> Optional[pulumi.Input[str]]:
-        """
-        The IDCS Domain URL
-        """
         return pulumi.get(self, "idcs_domain_url")
 
     @idcs_domain_url.setter
@@ -474,9 +362,6 @@ class _FusionEnvironmentState:
     @property
     @pulumi.getter(name="isBreakGlassEnabled")
     def is_break_glass_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        If it's true, then the Break Glass feature is enabled
-        """
         return pulumi.get(self, "is_break_glass_enabled")
 
     @is_break_glass_enabled.setter
@@ -486,9 +371,6 @@ class _FusionEnvironmentState:
     @property
     @pulumi.getter(name="kmsKeyId")
     def kms_key_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) byok kms keyId
-        """
         return pulumi.get(self, "kms_key_id")
 
     @kms_key_id.setter
@@ -498,9 +380,6 @@ class _FusionEnvironmentState:
     @property
     @pulumi.getter(name="kmsKeyInfos")
     def kms_key_infos(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['FusionEnvironmentKmsKeyInfoArgs']]]]:
-        """
-        BYOK key info
-        """
         return pulumi.get(self, "kms_key_infos")
 
     @kms_key_infos.setter
@@ -510,9 +389,6 @@ class _FusionEnvironmentState:
     @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> Optional[pulumi.Input[str]]:
-        """
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
@@ -522,9 +398,6 @@ class _FusionEnvironmentState:
     @property
     @pulumi.getter(name="lockboxId")
     def lockbox_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The lockbox Id of this fusion environment. If there's no lockbox id, this field will be null
-        """
         return pulumi.get(self, "lockbox_id")
 
     @lockbox_id.setter
@@ -534,9 +407,6 @@ class _FusionEnvironmentState:
     @property
     @pulumi.getter(name="maintenancePolicy")
     def maintenance_policy(self) -> Optional[pulumi.Input['FusionEnvironmentMaintenancePolicyArgs']]:
-        """
-        (Updatable) The policy that specifies the maintenance and upgrade preferences for an environment. For more information about the options, see [Understanding Environment Maintenance](https://docs.cloud.oracle.com/iaas/Content/fusion-applications/plan-environment-family.htm#about-env-maintenance).
-        """
         return pulumi.get(self, "maintenance_policy")
 
     @maintenance_policy.setter
@@ -546,9 +416,6 @@ class _FusionEnvironmentState:
     @property
     @pulumi.getter(name="publicUrl")
     def public_url(self) -> Optional[pulumi.Input[str]]:
-        """
-        Public URL
-        """
         return pulumi.get(self, "public_url")
 
     @public_url.setter
@@ -558,9 +425,6 @@ class _FusionEnvironmentState:
     @property
     @pulumi.getter
     def refreshes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['FusionEnvironmentRefreshArgs']]]]:
-        """
-        Describes a refresh of a fusion environment
-        """
         return pulumi.get(self, "refreshes")
 
     @refreshes.setter
@@ -570,9 +434,6 @@ class _FusionEnvironmentState:
     @property
     @pulumi.getter
     def rules(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['FusionEnvironmentRuleArgs']]]]:
-        """
-        (Updatable) Rules.
-        """
         return pulumi.get(self, "rules")
 
     @rules.setter
@@ -582,9 +443,6 @@ class _FusionEnvironmentState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The current state of the ServiceInstance.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -594,9 +452,6 @@ class _FusionEnvironmentState:
     @property
     @pulumi.getter(name="subscriptionIds")
     def subscription_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        List of subscription IDs.
-        """
         return pulumi.get(self, "subscription_ids")
 
     @subscription_ids.setter
@@ -606,9 +461,6 @@ class _FusionEnvironmentState:
     @property
     @pulumi.getter(name="systemName")
     def system_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        Environment Specific Guid/ System Name
-        """
         return pulumi.get(self, "system_name")
 
     @system_name.setter
@@ -618,9 +470,6 @@ class _FusionEnvironmentState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The time the the FusionEnvironment was created. An RFC3339 formatted datetime string
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -630,9 +479,6 @@ class _FusionEnvironmentState:
     @property
     @pulumi.getter(name="timeUpcomingMaintenance")
     def time_upcoming_maintenance(self) -> Optional[pulumi.Input[str]]:
-        """
-        The next maintenance for this environment
-        """
         return pulumi.get(self, "time_upcoming_maintenance")
 
     @time_upcoming_maintenance.setter
@@ -642,9 +488,6 @@ class _FusionEnvironmentState:
     @property
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> Optional[pulumi.Input[str]]:
-        """
-        The time the FusionEnvironment was updated. An RFC3339 formatted datetime string
-        """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
@@ -654,9 +497,6 @@ class _FusionEnvironmentState:
     @property
     @pulumi.getter
     def version(self) -> Optional[pulumi.Input[str]]:
-        """
-        Version of Fusion Apps used by this environment
-        """
         return pulumi.get(self, "version")
 
     @version.setter
@@ -683,73 +523,9 @@ class FusionEnvironment(pulumi.CustomResource):
                  rules: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['FusionEnvironmentRuleArgs']]]]] = None,
                  __props__=None):
         """
-        This resource provides the Fusion Environment resource in Oracle Cloud Infrastructure Fusion Apps service.
-
-        Creates a new FusionEnvironment.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_fusion_environment = oci.fusion_apps.FusionEnvironment("testFusionEnvironment",
-            compartment_id=var["compartment_id"],
-            create_fusion_environment_admin_user_details=oci.fusion_apps.FusionEnvironmentCreateFusionEnvironmentAdminUserDetailsArgs(
-                email_address=var["fusion_environment_create_fusion_environment_admin_user_details_email_address"],
-                first_name=var["fusion_environment_create_fusion_environment_admin_user_details_first_name"],
-                last_name=var["fusion_environment_create_fusion_environment_admin_user_details_last_name"],
-                password=var["fusion_environment_create_fusion_environment_admin_user_details_password"],
-                username=var["fusion_environment_create_fusion_environment_admin_user_details_username"],
-            ),
-            display_name=var["fusion_environment_display_name"],
-            fusion_environment_family_id=oci_fusion_apps_fusion_environment_family["test_fusion_environment_family"]["id"],
-            fusion_environment_type=var["fusion_environment_fusion_environment_type"],
-            additional_language_packs=var["fusion_environment_additional_language_packs"],
-            defined_tags={
-                "foo-namespace.bar-key": "value",
-            },
-            dns_prefix=var["fusion_environment_dns_prefix"],
-            freeform_tags={
-                "bar-key": "value",
-            },
-            kms_key_id=oci_kms_key["test_key"]["id"],
-            maintenance_policy=oci.fusion_apps.FusionEnvironmentMaintenancePolicyArgs(
-                environment_maintenance_override=var["fusion_environment_maintenance_policy_environment_maintenance_override"],
-                monthly_patching_override=var["fusion_environment_maintenance_policy_monthly_patching_override"],
-            ),
-            rules=[oci.fusion_apps.FusionEnvironmentRuleArgs(
-                action=var["fusion_environment_rules_action"],
-                conditions=[oci.fusion_apps.FusionEnvironmentRuleConditionArgs(
-                    attribute_name=var["fusion_environment_rules_conditions_attribute_name"],
-                    attribute_value=var["fusion_environment_rules_conditions_attribute_value"],
-                )],
-                description=var["fusion_environment_rules_description"],
-            )])
-        ```
-
-        ## Import
-
-        FusionEnvironments can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:FusionApps/fusionEnvironment:FusionEnvironment test_fusion_environment "id"
-        ```
-
+        Create a FusionEnvironment resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] additional_language_packs: (Updatable) Language packs.
-        :param pulumi.Input[str] compartment_id: (Updatable) The unique identifier (OCID) of the compartment where the Fusion Environment is located.
-        :param pulumi.Input[pulumi.InputType['FusionEnvironmentCreateFusionEnvironmentAdminUserDetailsArgs']] create_fusion_environment_admin_user_details: The credentials for the Fusion Applications service administrator.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] display_name: (Updatable) FusionEnvironment Identifier can be renamed.
-        :param pulumi.Input[str] dns_prefix: DNS prefix.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] fusion_environment_family_id: The unique identifier (OCID) of the Fusion Environment Family that the Fusion Environment belongs to.
-        :param pulumi.Input[str] fusion_environment_type: The type of environment. Valid values are Production, Test, or Development.
-        :param pulumi.Input[str] kms_key_id: (Updatable) byok kms keyId
-        :param pulumi.Input[pulumi.InputType['FusionEnvironmentMaintenancePolicyArgs']] maintenance_policy: (Updatable) The policy that specifies the maintenance and upgrade preferences for an environment. For more information about the options, see [Understanding Environment Maintenance](https://docs.cloud.oracle.com/iaas/Content/fusion-applications/plan-environment-family.htm#about-env-maintenance).
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['FusionEnvironmentRuleArgs']]]] rules: (Updatable) Rules.
         """
         ...
     @overload
@@ -758,59 +534,7 @@ class FusionEnvironment(pulumi.CustomResource):
                  args: FusionEnvironmentArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Fusion Environment resource in Oracle Cloud Infrastructure Fusion Apps service.
-
-        Creates a new FusionEnvironment.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_fusion_environment = oci.fusion_apps.FusionEnvironment("testFusionEnvironment",
-            compartment_id=var["compartment_id"],
-            create_fusion_environment_admin_user_details=oci.fusion_apps.FusionEnvironmentCreateFusionEnvironmentAdminUserDetailsArgs(
-                email_address=var["fusion_environment_create_fusion_environment_admin_user_details_email_address"],
-                first_name=var["fusion_environment_create_fusion_environment_admin_user_details_first_name"],
-                last_name=var["fusion_environment_create_fusion_environment_admin_user_details_last_name"],
-                password=var["fusion_environment_create_fusion_environment_admin_user_details_password"],
-                username=var["fusion_environment_create_fusion_environment_admin_user_details_username"],
-            ),
-            display_name=var["fusion_environment_display_name"],
-            fusion_environment_family_id=oci_fusion_apps_fusion_environment_family["test_fusion_environment_family"]["id"],
-            fusion_environment_type=var["fusion_environment_fusion_environment_type"],
-            additional_language_packs=var["fusion_environment_additional_language_packs"],
-            defined_tags={
-                "foo-namespace.bar-key": "value",
-            },
-            dns_prefix=var["fusion_environment_dns_prefix"],
-            freeform_tags={
-                "bar-key": "value",
-            },
-            kms_key_id=oci_kms_key["test_key"]["id"],
-            maintenance_policy=oci.fusion_apps.FusionEnvironmentMaintenancePolicyArgs(
-                environment_maintenance_override=var["fusion_environment_maintenance_policy_environment_maintenance_override"],
-                monthly_patching_override=var["fusion_environment_maintenance_policy_monthly_patching_override"],
-            ),
-            rules=[oci.fusion_apps.FusionEnvironmentRuleArgs(
-                action=var["fusion_environment_rules_action"],
-                conditions=[oci.fusion_apps.FusionEnvironmentRuleConditionArgs(
-                    attribute_name=var["fusion_environment_rules_conditions_attribute_name"],
-                    attribute_value=var["fusion_environment_rules_conditions_attribute_value"],
-                )],
-                description=var["fusion_environment_rules_description"],
-            )])
-        ```
-
-        ## Import
-
-        FusionEnvironments can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:FusionApps/fusionEnvironment:FusionEnvironment test_fusion_environment "id"
-        ```
-
+        Create a FusionEnvironment resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param FusionEnvironmentArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -930,34 +654,6 @@ class FusionEnvironment(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] additional_language_packs: (Updatable) Language packs.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] applied_patch_bundles: Patch bundle names
-        :param pulumi.Input[str] compartment_id: (Updatable) The unique identifier (OCID) of the compartment where the Fusion Environment is located.
-        :param pulumi.Input[pulumi.InputType['FusionEnvironmentCreateFusionEnvironmentAdminUserDetailsArgs']] create_fusion_environment_admin_user_details: The credentials for the Fusion Applications service administrator.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] display_name: (Updatable) FusionEnvironment Identifier can be renamed.
-        :param pulumi.Input[str] dns_prefix: DNS prefix.
-        :param pulumi.Input[str] domain_id: The IDCS domain created for the fusion instance
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] fusion_environment_family_id: The unique identifier (OCID) of the Fusion Environment Family that the Fusion Environment belongs to.
-        :param pulumi.Input[str] fusion_environment_type: The type of environment. Valid values are Production, Test, or Development.
-        :param pulumi.Input[str] idcs_domain_url: The IDCS Domain URL
-        :param pulumi.Input[bool] is_break_glass_enabled: If it's true, then the Break Glass feature is enabled
-        :param pulumi.Input[str] kms_key_id: (Updatable) byok kms keyId
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['FusionEnvironmentKmsKeyInfoArgs']]]] kms_key_infos: BYOK key info
-        :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        :param pulumi.Input[str] lockbox_id: The lockbox Id of this fusion environment. If there's no lockbox id, this field will be null
-        :param pulumi.Input[pulumi.InputType['FusionEnvironmentMaintenancePolicyArgs']] maintenance_policy: (Updatable) The policy that specifies the maintenance and upgrade preferences for an environment. For more information about the options, see [Understanding Environment Maintenance](https://docs.cloud.oracle.com/iaas/Content/fusion-applications/plan-environment-family.htm#about-env-maintenance).
-        :param pulumi.Input[str] public_url: Public URL
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['FusionEnvironmentRefreshArgs']]]] refreshes: Describes a refresh of a fusion environment
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['FusionEnvironmentRuleArgs']]]] rules: (Updatable) Rules.
-        :param pulumi.Input[str] state: The current state of the ServiceInstance.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] subscription_ids: List of subscription IDs.
-        :param pulumi.Input[str] system_name: Environment Specific Guid/ System Name
-        :param pulumi.Input[str] time_created: The time the the FusionEnvironment was created. An RFC3339 formatted datetime string
-        :param pulumi.Input[str] time_upcoming_maintenance: The next maintenance for this environment
-        :param pulumi.Input[str] time_updated: The time the FusionEnvironment was updated. An RFC3339 formatted datetime string
-        :param pulumi.Input[str] version: Version of Fusion Apps used by this environment
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -995,225 +691,141 @@ class FusionEnvironment(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="additionalLanguagePacks")
-    def additional_language_packs(self) -> pulumi.Output[Sequence[str]]:
-        """
-        (Updatable) Language packs.
-        """
+    def additional_language_packs(self) -> pulumi.Output[Optional[Sequence[str]]]:
         return pulumi.get(self, "additional_language_packs")
 
     @property
     @pulumi.getter(name="appliedPatchBundles")
-    def applied_patch_bundles(self) -> pulumi.Output[Sequence[str]]:
-        """
-        Patch bundle names
-        """
+    def applied_patch_bundles(self) -> pulumi.Output[Optional[Sequence[str]]]:
         return pulumi.get(self, "applied_patch_bundles")
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The unique identifier (OCID) of the compartment where the Fusion Environment is located.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="createFusionEnvironmentAdminUserDetails")
     def create_fusion_environment_admin_user_details(self) -> pulumi.Output['outputs.FusionEnvironmentCreateFusionEnvironmentAdminUserDetails']:
-        """
-        The credentials for the Fusion Applications service administrator.
-        """
         return pulumi.get(self, "create_fusion_environment_admin_user_details")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Output[str]:
-        """
-        (Updatable) FusionEnvironment Identifier can be renamed.
-        """
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="dnsPrefix")
-    def dns_prefix(self) -> pulumi.Output[str]:
-        """
-        DNS prefix.
-        """
+    def dns_prefix(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "dns_prefix")
 
     @property
     @pulumi.getter(name="domainId")
-    def domain_id(self) -> pulumi.Output[str]:
-        """
-        The IDCS domain created for the fusion instance
-        """
+    def domain_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "domain_id")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="fusionEnvironmentFamilyId")
     def fusion_environment_family_id(self) -> pulumi.Output[str]:
-        """
-        The unique identifier (OCID) of the Fusion Environment Family that the Fusion Environment belongs to.
-        """
         return pulumi.get(self, "fusion_environment_family_id")
 
     @property
     @pulumi.getter(name="fusionEnvironmentType")
     def fusion_environment_type(self) -> pulumi.Output[str]:
-        """
-        The type of environment. Valid values are Production, Test, or Development.
-        """
         return pulumi.get(self, "fusion_environment_type")
 
     @property
     @pulumi.getter(name="idcsDomainUrl")
-    def idcs_domain_url(self) -> pulumi.Output[str]:
-        """
-        The IDCS Domain URL
-        """
+    def idcs_domain_url(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "idcs_domain_url")
 
     @property
     @pulumi.getter(name="isBreakGlassEnabled")
-    def is_break_glass_enabled(self) -> pulumi.Output[bool]:
-        """
-        If it's true, then the Break Glass feature is enabled
-        """
+    def is_break_glass_enabled(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "is_break_glass_enabled")
 
     @property
     @pulumi.getter(name="kmsKeyId")
-    def kms_key_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) byok kms keyId
-        """
+    def kms_key_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "kms_key_id")
 
     @property
     @pulumi.getter(name="kmsKeyInfos")
-    def kms_key_infos(self) -> pulumi.Output[Sequence['outputs.FusionEnvironmentKmsKeyInfo']]:
-        """
-        BYOK key info
-        """
+    def kms_key_infos(self) -> pulumi.Output[Optional[Sequence['outputs.FusionEnvironmentKmsKeyInfo']]]:
         return pulumi.get(self, "kms_key_infos")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> pulumi.Output[str]:
-        """
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        """
+    def lifecycle_details(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="lockboxId")
-    def lockbox_id(self) -> pulumi.Output[str]:
-        """
-        The lockbox Id of this fusion environment. If there's no lockbox id, this field will be null
-        """
+    def lockbox_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "lockbox_id")
 
     @property
     @pulumi.getter(name="maintenancePolicy")
-    def maintenance_policy(self) -> pulumi.Output['outputs.FusionEnvironmentMaintenancePolicy']:
-        """
-        (Updatable) The policy that specifies the maintenance and upgrade preferences for an environment. For more information about the options, see [Understanding Environment Maintenance](https://docs.cloud.oracle.com/iaas/Content/fusion-applications/plan-environment-family.htm#about-env-maintenance).
-        """
+    def maintenance_policy(self) -> pulumi.Output[Optional['outputs.FusionEnvironmentMaintenancePolicy']]:
         return pulumi.get(self, "maintenance_policy")
 
     @property
     @pulumi.getter(name="publicUrl")
-    def public_url(self) -> pulumi.Output[str]:
-        """
-        Public URL
-        """
+    def public_url(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "public_url")
 
     @property
     @pulumi.getter
-    def refreshes(self) -> pulumi.Output[Sequence['outputs.FusionEnvironmentRefresh']]:
-        """
-        Describes a refresh of a fusion environment
-        """
+    def refreshes(self) -> pulumi.Output[Optional[Sequence['outputs.FusionEnvironmentRefresh']]]:
         return pulumi.get(self, "refreshes")
 
     @property
     @pulumi.getter
-    def rules(self) -> pulumi.Output[Sequence['outputs.FusionEnvironmentRule']]:
-        """
-        (Updatable) Rules.
-        """
+    def rules(self) -> pulumi.Output[Optional[Sequence['outputs.FusionEnvironmentRule']]]:
         return pulumi.get(self, "rules")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        The current state of the ServiceInstance.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="subscriptionIds")
-    def subscription_ids(self) -> pulumi.Output[Sequence[str]]:
-        """
-        List of subscription IDs.
-        """
+    def subscription_ids(self) -> pulumi.Output[Optional[Sequence[str]]]:
         return pulumi.get(self, "subscription_ids")
 
     @property
     @pulumi.getter(name="systemName")
-    def system_name(self) -> pulumi.Output[str]:
-        """
-        Environment Specific Guid/ System Name
-        """
+    def system_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "system_name")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        The time the the FusionEnvironment was created. An RFC3339 formatted datetime string
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpcomingMaintenance")
-    def time_upcoming_maintenance(self) -> pulumi.Output[str]:
-        """
-        The next maintenance for this environment
-        """
+    def time_upcoming_maintenance(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_upcoming_maintenance")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> pulumi.Output[str]:
-        """
-        The time the FusionEnvironment was updated. An RFC3339 formatted datetime string
-        """
+    def time_updated(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_updated")
 
     @property
     @pulumi.getter
-    def version(self) -> pulumi.Output[str]:
-        """
-        Version of Fusion Apps used by this environment
-        """
+    def version(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "version")
 

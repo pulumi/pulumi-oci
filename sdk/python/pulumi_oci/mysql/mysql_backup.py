@@ -26,18 +26,6 @@ class MysqlBackupArgs:
                  retention_in_days: Optional[pulumi.Input[int]] = None):
         """
         The set of arguments for constructing a MysqlBackup resource.
-        :param pulumi.Input[str] db_system_id: The OCID of the DB System the Backup is associated with.
-        :param pulumi.Input[str] backup_type: The type of backup.
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment the backup exists in.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] description: (Updatable) A user-supplied description for the backup.
-        :param pulumi.Input[str] display_name: (Updatable) A user-supplied display name for the backup.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[int] retention_in_days: (Updatable) Number of days to retain this backup.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "db_system_id", db_system_id)
         if backup_type is not None:
@@ -58,9 +46,6 @@ class MysqlBackupArgs:
     @property
     @pulumi.getter(name="dbSystemId")
     def db_system_id(self) -> pulumi.Input[str]:
-        """
-        The OCID of the DB System the Backup is associated with.
-        """
         return pulumi.get(self, "db_system_id")
 
     @db_system_id.setter
@@ -70,9 +55,6 @@ class MysqlBackupArgs:
     @property
     @pulumi.getter(name="backupType")
     def backup_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        The type of backup.
-        """
         return pulumi.get(self, "backup_type")
 
     @backup_type.setter
@@ -82,9 +64,6 @@ class MysqlBackupArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The OCID of the compartment the backup exists in.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -94,9 +73,6 @@ class MysqlBackupArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -106,9 +82,6 @@ class MysqlBackupArgs:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A user-supplied description for the backup.
-        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -118,9 +91,6 @@ class MysqlBackupArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A user-supplied display name for the backup.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -130,9 +100,6 @@ class MysqlBackupArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -142,13 +109,6 @@ class MysqlBackupArgs:
     @property
     @pulumi.getter(name="retentionInDays")
     def retention_in_days(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) Number of days to retain this backup.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "retention_in_days")
 
     @retention_in_days.setter
@@ -179,28 +139,6 @@ class _MysqlBackupState:
                  time_updated: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering MysqlBackup resources.
-        :param pulumi.Input[int] backup_size_in_gbs: The size of the backup in base-2 (IEC) gibibytes. (GiB).
-        :param pulumi.Input[str] backup_type: The type of backup.
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment the backup exists in.
-        :param pulumi.Input[str] creation_type: Indicates how the backup was created: manually, automatic, or by an Operator.
-        :param pulumi.Input[int] data_storage_size_in_gb: Initial size of the data volume in GiBs that will be created and attached.
-        :param pulumi.Input[str] db_system_id: The OCID of the DB System the Backup is associated with.
-        :param pulumi.Input[Sequence[pulumi.Input['MysqlBackupDbSystemSnapshotArgs']]] db_system_snapshots: Snapshot of the DbSystem details at the time of the backup
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] description: (Updatable) A user-supplied description for the backup.
-        :param pulumi.Input[str] display_name: (Updatable) A user-supplied display name for the backup.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycleState.
-        :param pulumi.Input[str] mysql_version: The MySQL server version of the DB System used for backup.
-        :param pulumi.Input[int] retention_in_days: (Updatable) Number of days to retain this backup.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] shape_name: The shape of the DB System instance used for backup.
-        :param pulumi.Input[str] state: The state of the backup.
-        :param pulumi.Input[str] time_created: The time the backup record was created.
-        :param pulumi.Input[str] time_updated: The time at which the backup was updated.
         """
         if backup_size_in_gbs is not None:
             pulumi.set(__self__, "backup_size_in_gbs", backup_size_in_gbs)
@@ -242,9 +180,6 @@ class _MysqlBackupState:
     @property
     @pulumi.getter(name="backupSizeInGbs")
     def backup_size_in_gbs(self) -> Optional[pulumi.Input[int]]:
-        """
-        The size of the backup in base-2 (IEC) gibibytes. (GiB).
-        """
         return pulumi.get(self, "backup_size_in_gbs")
 
     @backup_size_in_gbs.setter
@@ -254,9 +189,6 @@ class _MysqlBackupState:
     @property
     @pulumi.getter(name="backupType")
     def backup_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        The type of backup.
-        """
         return pulumi.get(self, "backup_type")
 
     @backup_type.setter
@@ -266,9 +198,6 @@ class _MysqlBackupState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The OCID of the compartment the backup exists in.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -278,9 +207,6 @@ class _MysqlBackupState:
     @property
     @pulumi.getter(name="creationType")
     def creation_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        Indicates how the backup was created: manually, automatic, or by an Operator.
-        """
         return pulumi.get(self, "creation_type")
 
     @creation_type.setter
@@ -290,9 +216,6 @@ class _MysqlBackupState:
     @property
     @pulumi.getter(name="dataStorageSizeInGb")
     def data_storage_size_in_gb(self) -> Optional[pulumi.Input[int]]:
-        """
-        Initial size of the data volume in GiBs that will be created and attached.
-        """
         return pulumi.get(self, "data_storage_size_in_gb")
 
     @data_storage_size_in_gb.setter
@@ -302,9 +225,6 @@ class _MysqlBackupState:
     @property
     @pulumi.getter(name="dbSystemId")
     def db_system_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the DB System the Backup is associated with.
-        """
         return pulumi.get(self, "db_system_id")
 
     @db_system_id.setter
@@ -314,9 +234,6 @@ class _MysqlBackupState:
     @property
     @pulumi.getter(name="dbSystemSnapshots")
     def db_system_snapshots(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['MysqlBackupDbSystemSnapshotArgs']]]]:
-        """
-        Snapshot of the DbSystem details at the time of the backup
-        """
         return pulumi.get(self, "db_system_snapshots")
 
     @db_system_snapshots.setter
@@ -326,9 +243,6 @@ class _MysqlBackupState:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -338,9 +252,6 @@ class _MysqlBackupState:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A user-supplied description for the backup.
-        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -350,9 +261,6 @@ class _MysqlBackupState:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A user-supplied display name for the backup.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -362,9 +270,6 @@ class _MysqlBackupState:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -374,9 +279,6 @@ class _MysqlBackupState:
     @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> Optional[pulumi.Input[str]]:
-        """
-        Additional information about the current lifecycleState.
-        """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
@@ -386,9 +288,6 @@ class _MysqlBackupState:
     @property
     @pulumi.getter(name="mysqlVersion")
     def mysql_version(self) -> Optional[pulumi.Input[str]]:
-        """
-        The MySQL server version of the DB System used for backup.
-        """
         return pulumi.get(self, "mysql_version")
 
     @mysql_version.setter
@@ -398,13 +297,6 @@ class _MysqlBackupState:
     @property
     @pulumi.getter(name="retentionInDays")
     def retention_in_days(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) Number of days to retain this backup.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "retention_in_days")
 
     @retention_in_days.setter
@@ -414,9 +306,6 @@ class _MysqlBackupState:
     @property
     @pulumi.getter(name="shapeName")
     def shape_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The shape of the DB System instance used for backup.
-        """
         return pulumi.get(self, "shape_name")
 
     @shape_name.setter
@@ -426,9 +315,6 @@ class _MysqlBackupState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The state of the backup.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -438,9 +324,6 @@ class _MysqlBackupState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The time the backup record was created.
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -450,9 +333,6 @@ class _MysqlBackupState:
     @property
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> Optional[pulumi.Input[str]]:
-        """
-        The time at which the backup was updated.
-        """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
@@ -475,52 +355,9 @@ class MysqlBackup(pulumi.CustomResource):
                  retention_in_days: Optional[pulumi.Input[int]] = None,
                  __props__=None):
         """
-        This resource provides the Mysql Backup resource in Oracle Cloud Infrastructure MySQL Database service.
-
-        Create a backup of a DB System.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_mysql_backup = oci.mysql.MysqlBackup("testMysqlBackup",
-            db_system_id=oci_mysql_mysql_db_system["test_db_system"]["id"],
-            backup_type=var["mysql_backup_backup_type"],
-            defined_tags={
-                "foo-namespace.bar-key": "value",
-            },
-            description=var["mysql_backup_description"],
-            display_name=var["mysql_backup_display_name"],
-            freeform_tags={
-                "bar-key": "value",
-            },
-            retention_in_days=var["mysql_backup_retention_in_days"])
-        ```
-
-        ## Import
-
-        MysqlBackups can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Mysql/mysqlBackup:MysqlBackup test_mysql_backup "id"
-        ```
-
+        Create a MysqlBackup resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] backup_type: The type of backup.
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment the backup exists in.
-        :param pulumi.Input[str] db_system_id: The OCID of the DB System the Backup is associated with.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] description: (Updatable) A user-supplied description for the backup.
-        :param pulumi.Input[str] display_name: (Updatable) A user-supplied display name for the backup.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[int] retention_in_days: (Updatable) Number of days to retain this backup.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -529,38 +366,7 @@ class MysqlBackup(pulumi.CustomResource):
                  args: MysqlBackupArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Mysql Backup resource in Oracle Cloud Infrastructure MySQL Database service.
-
-        Create a backup of a DB System.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_mysql_backup = oci.mysql.MysqlBackup("testMysqlBackup",
-            db_system_id=oci_mysql_mysql_db_system["test_db_system"]["id"],
-            backup_type=var["mysql_backup_backup_type"],
-            defined_tags={
-                "foo-namespace.bar-key": "value",
-            },
-            description=var["mysql_backup_description"],
-            display_name=var["mysql_backup_display_name"],
-            freeform_tags={
-                "bar-key": "value",
-            },
-            retention_in_days=var["mysql_backup_retention_in_days"])
-        ```
-
-        ## Import
-
-        MysqlBackups can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Mysql/mysqlBackup:MysqlBackup test_mysql_backup "id"
-        ```
-
+        Create a MysqlBackup resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param MysqlBackupArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -648,28 +454,6 @@ class MysqlBackup(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[int] backup_size_in_gbs: The size of the backup in base-2 (IEC) gibibytes. (GiB).
-        :param pulumi.Input[str] backup_type: The type of backup.
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment the backup exists in.
-        :param pulumi.Input[str] creation_type: Indicates how the backup was created: manually, automatic, or by an Operator.
-        :param pulumi.Input[int] data_storage_size_in_gb: Initial size of the data volume in GiBs that will be created and attached.
-        :param pulumi.Input[str] db_system_id: The OCID of the DB System the Backup is associated with.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MysqlBackupDbSystemSnapshotArgs']]]] db_system_snapshots: Snapshot of the DbSystem details at the time of the backup
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] description: (Updatable) A user-supplied description for the backup.
-        :param pulumi.Input[str] display_name: (Updatable) A user-supplied display name for the backup.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycleState.
-        :param pulumi.Input[str] mysql_version: The MySQL server version of the DB System used for backup.
-        :param pulumi.Input[int] retention_in_days: (Updatable) Number of days to retain this backup.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] shape_name: The shape of the DB System instance used for backup.
-        :param pulumi.Input[str] state: The state of the backup.
-        :param pulumi.Input[str] time_created: The time the backup record was created.
-        :param pulumi.Input[str] time_updated: The time at which the backup was updated.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -697,149 +481,91 @@ class MysqlBackup(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="backupSizeInGbs")
-    def backup_size_in_gbs(self) -> pulumi.Output[int]:
-        """
-        The size of the backup in base-2 (IEC) gibibytes. (GiB).
-        """
+    def backup_size_in_gbs(self) -> pulumi.Output[Optional[int]]:
         return pulumi.get(self, "backup_size_in_gbs")
 
     @property
     @pulumi.getter(name="backupType")
-    def backup_type(self) -> pulumi.Output[str]:
-        """
-        The type of backup.
-        """
+    def backup_type(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "backup_type")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The OCID of the compartment the backup exists in.
-        """
+    def compartment_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="creationType")
-    def creation_type(self) -> pulumi.Output[str]:
-        """
-        Indicates how the backup was created: manually, automatic, or by an Operator.
-        """
+    def creation_type(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "creation_type")
 
     @property
     @pulumi.getter(name="dataStorageSizeInGb")
-    def data_storage_size_in_gb(self) -> pulumi.Output[int]:
-        """
-        Initial size of the data volume in GiBs that will be created and attached.
-        """
+    def data_storage_size_in_gb(self) -> pulumi.Output[Optional[int]]:
         return pulumi.get(self, "data_storage_size_in_gb")
 
     @property
     @pulumi.getter(name="dbSystemId")
     def db_system_id(self) -> pulumi.Output[str]:
-        """
-        The OCID of the DB System the Backup is associated with.
-        """
         return pulumi.get(self, "db_system_id")
 
     @property
     @pulumi.getter(name="dbSystemSnapshots")
-    def db_system_snapshots(self) -> pulumi.Output[Sequence['outputs.MysqlBackupDbSystemSnapshot']]:
-        """
-        Snapshot of the DbSystem details at the time of the backup
-        """
+    def db_system_snapshots(self) -> pulumi.Output[Optional[Sequence['outputs.MysqlBackupDbSystemSnapshot']]]:
         return pulumi.get(self, "db_system_snapshots")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def description(self) -> pulumi.Output[str]:
-        """
-        (Updatable) A user-supplied description for the backup.
-        """
+    def description(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> pulumi.Output[str]:
-        """
-        (Updatable) A user-supplied display name for the backup.
-        """
+    def display_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> pulumi.Output[str]:
-        """
-        Additional information about the current lifecycleState.
-        """
+    def lifecycle_details(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="mysqlVersion")
-    def mysql_version(self) -> pulumi.Output[str]:
-        """
-        The MySQL server version of the DB System used for backup.
-        """
+    def mysql_version(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "mysql_version")
 
     @property
     @pulumi.getter(name="retentionInDays")
-    def retention_in_days(self) -> pulumi.Output[int]:
-        """
-        (Updatable) Number of days to retain this backup.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
+    def retention_in_days(self) -> pulumi.Output[Optional[int]]:
         return pulumi.get(self, "retention_in_days")
 
     @property
     @pulumi.getter(name="shapeName")
-    def shape_name(self) -> pulumi.Output[str]:
-        """
-        The shape of the DB System instance used for backup.
-        """
+    def shape_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "shape_name")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        The state of the backup.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        The time the backup record was created.
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> pulumi.Output[str]:
-        """
-        The time at which the backup was updated.
-        """
+    def time_updated(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_updated")
 

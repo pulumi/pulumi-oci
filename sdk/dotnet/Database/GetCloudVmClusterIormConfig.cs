@@ -118,19 +118,19 @@ namespace Pulumi.Oci.Database
         /// An array of IORM settings for all the database in the cloud vm cluster.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetCloudVmClusterIormConfigDbPlanResult> DbPlans;
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Additional information about the current `lifecycleState`.
         /// </summary>
-        public readonly string LifecycleDetails;
+        public readonly string? LifecycleDetails;
         /// <summary>
         /// The current value for the IORM objective. The default is `AUTO`.
         /// </summary>
-        public readonly string Objective;
+        public readonly string? Objective;
         /// <summary>
         /// The current state of IORM configuration for the cloud vm cluster.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
 
         [OutputConstructor]
         private GetCloudVmClusterIormConfigResult(
@@ -138,13 +138,13 @@ namespace Pulumi.Oci.Database
 
             ImmutableArray<Outputs.GetCloudVmClusterIormConfigDbPlanResult> dbPlans,
 
-            string id,
+            string? id,
 
-            string lifecycleDetails,
+            string? lifecycleDetails,
 
-            string objective,
+            string? objective,
 
-            string state)
+            string? state)
         {
             CloudVmClusterId = cloudVmClusterId;
             DbPlans = dbPlans;

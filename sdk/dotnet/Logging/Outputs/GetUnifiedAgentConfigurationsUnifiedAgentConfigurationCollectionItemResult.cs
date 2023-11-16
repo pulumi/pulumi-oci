@@ -20,7 +20,7 @@ namespace Pulumi.Oci.Logging.Outputs
         /// <summary>
         /// State of unified agent service configuration.
         /// </summary>
-        public readonly string ConfigurationState;
+        public readonly string? ConfigurationState;
         /// <summary>
         /// Type of Unified Agent service configuration.
         /// </summary>
@@ -28,23 +28,23 @@ namespace Pulumi.Oci.Logging.Outputs
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// Description for this resource.
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// Resource name.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// The OCID of the resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Whether or not this resource is currently enabled.
         /// </summary>
@@ -52,41 +52,41 @@ namespace Pulumi.Oci.Logging.Outputs
         /// <summary>
         /// Lifecycle state of the log object
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// Time the resource was created.
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// Time the resource was last modified.
         /// </summary>
-        public readonly string TimeLastModified;
+        public readonly string? TimeLastModified;
 
         [OutputConstructor]
         private GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionItemResult(
             string compartmentId,
 
-            string configurationState,
+            string? configurationState,
 
             string configurationType,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string description,
+            string? description,
 
-            string displayName,
+            string? displayName,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string id,
+            string? id,
 
             bool isEnabled,
 
-            string state,
+            string? state,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeLastModified)
+            string? timeLastModified)
         {
             CompartmentId = compartmentId;
             ConfigurationState = configurationState;

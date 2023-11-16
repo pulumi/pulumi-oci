@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.GoldenGate.outputs.GetDeploymentTypesDeploymentTypeCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDeploymentTypesDeploymentTypeCollection {
@@ -14,7 +15,7 @@ public final class GetDeploymentTypesDeploymentTypeCollection {
      * @return Array of DeploymentTypeSummary
      * 
      */
-    private List<GetDeploymentTypesDeploymentTypeCollectionItem> items;
+    private @Nullable List<GetDeploymentTypesDeploymentTypeCollectionItem> items;
 
     private GetDeploymentTypesDeploymentTypeCollection() {}
     /**
@@ -22,7 +23,7 @@ public final class GetDeploymentTypesDeploymentTypeCollection {
      * 
      */
     public List<GetDeploymentTypesDeploymentTypeCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -34,7 +35,7 @@ public final class GetDeploymentTypesDeploymentTypeCollection {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetDeploymentTypesDeploymentTypeCollectionItem> items;
+        private @Nullable List<GetDeploymentTypesDeploymentTypeCollectionItem> items;
         public Builder() {}
         public Builder(GetDeploymentTypesDeploymentTypeCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -42,8 +43,8 @@ public final class GetDeploymentTypesDeploymentTypeCollection {
         }
 
         @CustomType.Setter
-        public Builder items(List<GetDeploymentTypesDeploymentTypeCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetDeploymentTypesDeploymentTypeCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetDeploymentTypesDeploymentTypeCollectionItem... items) {

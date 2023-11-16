@@ -124,7 +124,7 @@ namespace Pulumi.Oci.Logging
         /// <summary>
         /// The OCID of the compartment that the resource belongs to.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// Log object configuration.
         /// </summary>
@@ -132,23 +132,23 @@ namespace Pulumi.Oci.Logging
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// The user-friendly display name. This must be unique within the enclosing resource, and it's changeable. Avoid entering confidential information.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// The OCID of the resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Whether or not this resource is currently enabled.
         /// </summary>
-        public readonly bool IsEnabled;
+        public readonly bool? IsEnabled;
         /// <summary>
         /// Log group OCID.
         /// </summary>
@@ -157,59 +157,59 @@ namespace Pulumi.Oci.Logging
         /// <summary>
         /// The logType that the log object is for, whether custom or service.
         /// </summary>
-        public readonly string LogType;
+        public readonly string? LogType;
         /// <summary>
         /// Log retention duration in 30-day increments (30, 60, 90 and so on until 180).
         /// </summary>
-        public readonly int RetentionDuration;
+        public readonly int? RetentionDuration;
         /// <summary>
         /// The pipeline state.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// The OCID of the tenancy.
         /// </summary>
-        public readonly string TenancyId;
+        public readonly string? TenancyId;
         /// <summary>
         /// Time the resource was created.
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// Time the resource was last modified.
         /// </summary>
-        public readonly string TimeLastModified;
+        public readonly string? TimeLastModified;
 
         [OutputConstructor]
         private GetLogResult(
-            string compartmentId,
+            string? compartmentId,
 
             ImmutableArray<Outputs.GetLogConfigurationResult> configurations,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string displayName,
+            string? displayName,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string id,
+            string? id,
 
-            bool isEnabled,
+            bool? isEnabled,
 
             string logGroupId,
 
             string logId,
 
-            string logType,
+            string? logType,
 
-            int retentionDuration,
+            int? retentionDuration,
 
-            string state,
+            string? state,
 
-            string tenancyId,
+            string? tenancyId,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeLastModified)
+            string? timeLastModified)
         {
             CompartmentId = compartmentId;
             Configurations = configurations;

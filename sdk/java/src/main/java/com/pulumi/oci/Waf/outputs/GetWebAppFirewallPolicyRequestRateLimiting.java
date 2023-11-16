@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.Waf.outputs.GetWebAppFirewallPolicyRequestRateLimitingRule;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetWebAppFirewallPolicyRequestRateLimiting {
@@ -14,7 +15,7 @@ public final class GetWebAppFirewallPolicyRequestRateLimiting {
      * @return Ordered list of ProtectionRules. Rules are executed in order of appearance in this array. ProtectionRules in this array can only use protection capabilities of RESPONSE_PROTECTION_CAPABILITY type.
      * 
      */
-    private List<GetWebAppFirewallPolicyRequestRateLimitingRule> rules;
+    private @Nullable List<GetWebAppFirewallPolicyRequestRateLimitingRule> rules;
 
     private GetWebAppFirewallPolicyRequestRateLimiting() {}
     /**
@@ -22,7 +23,7 @@ public final class GetWebAppFirewallPolicyRequestRateLimiting {
      * 
      */
     public List<GetWebAppFirewallPolicyRequestRateLimitingRule> rules() {
-        return this.rules;
+        return this.rules == null ? List.of() : this.rules;
     }
 
     public static Builder builder() {
@@ -34,7 +35,7 @@ public final class GetWebAppFirewallPolicyRequestRateLimiting {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetWebAppFirewallPolicyRequestRateLimitingRule> rules;
+        private @Nullable List<GetWebAppFirewallPolicyRequestRateLimitingRule> rules;
         public Builder() {}
         public Builder(GetWebAppFirewallPolicyRequestRateLimiting defaults) {
     	      Objects.requireNonNull(defaults);
@@ -42,8 +43,8 @@ public final class GetWebAppFirewallPolicyRequestRateLimiting {
         }
 
         @CustomType.Setter
-        public Builder rules(List<GetWebAppFirewallPolicyRequestRateLimitingRule> rules) {
-            this.rules = Objects.requireNonNull(rules);
+        public Builder rules(@Nullable List<GetWebAppFirewallPolicyRequestRateLimitingRule> rules) {
+            this.rules = rules;
             return this;
         }
         public Builder rules(GetWebAppFirewallPolicyRequestRateLimitingRule... rules) {

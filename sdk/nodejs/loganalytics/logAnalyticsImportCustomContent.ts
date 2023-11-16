@@ -60,11 +60,11 @@ export class LogAnalyticsImportCustomContent extends pulumi.CustomResource {
     /**
      * LogAnalyticsImportCustomChangeList
      */
-    public /*out*/ readonly changeLists!: pulumi.Output<outputs.LogAnalytics.LogAnalyticsImportCustomContentChangeList[]>;
+    public /*out*/ readonly changeLists!: pulumi.Output<outputs.LogAnalytics.LogAnalyticsImportCustomContentChangeList[] | undefined>;
     /**
      * The content name.
      */
-    public /*out*/ readonly contentName!: pulumi.Output<string>;
+    public /*out*/ readonly contentName!: pulumi.Output<string | undefined>;
     /**
      * A value of `100-continue` requests preliminary verification of the request method, path, and headers before the request body is sent. If no error results from such verification, the server will send a 100 (Continue) interim response to indicate readiness for the request body. The only allowed value for this parameter is "100-Continue" (case-insensitive).
      *
@@ -72,11 +72,11 @@ export class LogAnalyticsImportCustomContent extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly expect!: pulumi.Output<string>;
+    public readonly expect!: pulumi.Output<string | undefined>;
     /**
      * The field names.
      */
-    public /*out*/ readonly fieldNames!: pulumi.Output<string[]>;
+    public /*out*/ readonly fieldNames!: pulumi.Output<string[] | undefined>;
     /**
      * Path to the file to upload which contains the custom content.
      */
@@ -84,7 +84,7 @@ export class LogAnalyticsImportCustomContent extends pulumi.CustomResource {
     /**
      * A flag indicating whether or not to overwrite existing content if a conflict is found during import content operation.
      */
-    public readonly isOverwrite!: pulumi.Output<boolean>;
+    public readonly isOverwrite!: pulumi.Output<boolean | undefined>;
     /**
      * The Logging Analytics namespace used for the request.
      */
@@ -92,11 +92,11 @@ export class LogAnalyticsImportCustomContent extends pulumi.CustomResource {
     /**
      * The parser names.
      */
-    public /*out*/ readonly parserNames!: pulumi.Output<string[]>;
+    public /*out*/ readonly parserNames!: pulumi.Output<string[] | undefined>;
     /**
      * The source names.
      */
-    public /*out*/ readonly sourceNames!: pulumi.Output<string[]>;
+    public /*out*/ readonly sourceNames!: pulumi.Output<string[] | undefined>;
 
     /**
      * Create a LogAnalyticsImportCustomContent resource with the given unique name, arguments, and options.

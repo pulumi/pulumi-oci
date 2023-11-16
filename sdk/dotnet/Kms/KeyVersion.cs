@@ -35,7 +35,7 @@ namespace Pulumi.Oci.Kms
         /// The OCID of the compartment that contains this key version.
         /// </summary>
         [Output("compartmentId")]
-        public Output<string> CompartmentId { get; private set; } = null!;
+        public Output<string?> CompartmentId { get; private set; } = null!;
 
         /// <summary>
         /// Key reference data to be returned to the customer as a response.
@@ -47,13 +47,13 @@ namespace Pulumi.Oci.Kms
         /// Key version ID associated with the external key.
         /// </summary>
         [Output("externalKeyVersionId")]
-        public Output<string> ExternalKeyVersionId { get; private set; } = null!;
+        public Output<string?> ExternalKeyVersionId { get; private set; } = null!;
 
         /// <summary>
         /// A Boolean value that indicates whether the KeyVersion belongs to primary Vault or replica Vault.
         /// </summary>
         [Output("isPrimary")]
-        public Output<bool> IsPrimary { get; private set; } = null!;
+        public Output<bool?> IsPrimary { get; private set; } = null!;
 
         /// <summary>
         /// The OCID of the key.
@@ -62,7 +62,7 @@ namespace Pulumi.Oci.Kms
         public Output<string> KeyId { get; private set; } = null!;
 
         [Output("keyVersionId")]
-        public Output<string> KeyVersionId { get; private set; } = null!;
+        public Output<string?> KeyVersionId { get; private set; } = null!;
 
         /// <summary>
         /// The service endpoint to perform management operations against. Management operations include 'Create,' 'Update,' 'List,' 'Get,' and 'Delete' operations. See Vault Management endpoint.
@@ -74,7 +74,7 @@ namespace Pulumi.Oci.Kms
         /// The public key in PEM format. (This value pertains only to RSA and ECDSA keys.)
         /// </summary>
         [Output("publicKey")]
-        public Output<string> PublicKey { get; private set; } = null!;
+        public Output<string?> PublicKey { get; private set; } = null!;
 
         /// <summary>
         /// KeyVersion replica details
@@ -83,25 +83,25 @@ namespace Pulumi.Oci.Kms
         public Output<ImmutableArray<Outputs.KeyVersionReplicaDetail>> ReplicaDetails { get; private set; } = null!;
 
         [Output("restoredFromKeyId")]
-        public Output<string> RestoredFromKeyId { get; private set; } = null!;
+        public Output<string?> RestoredFromKeyId { get; private set; } = null!;
 
         /// <summary>
         /// The OCID of the key version from which this key version was restored.
         /// </summary>
         [Output("restoredFromKeyVersionId")]
-        public Output<string> RestoredFromKeyVersionId { get; private set; } = null!;
+        public Output<string?> RestoredFromKeyVersionId { get; private set; } = null!;
 
         /// <summary>
         /// The key version's current lifecycle state.  Example: `ENABLED`
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// The date and time this key version was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: "2018-04-03T21:10:29.600Z"
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) An optional property for the deletion time of the key version, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
@@ -110,13 +110,13 @@ namespace Pulumi.Oci.Kms
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("timeOfDeletion")]
-        public Output<string> TimeOfDeletion { get; private set; } = null!;
+        public Output<string?> TimeOfDeletion { get; private set; } = null!;
 
         /// <summary>
         /// The OCID of the vault that contains this key version.
         /// </summary>
         [Output("vaultId")]
-        public Output<string> VaultId { get; private set; } = null!;
+        public Output<string?> VaultId { get; private set; } = null!;
 
 
         /// <summary>

@@ -85,106 +85,67 @@ class GetSensitiveTypeResult:
 
     @property
     @pulumi.getter(name="commentPattern")
-    def comment_pattern(self) -> str:
-        """
-        A regular expression to be used by data discovery for matching column comments.
-        """
+    def comment_pattern(self) -> Optional[str]:
         return pulumi.get(self, "comment_pattern")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The OCID of the compartment that contains the sensitive type.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="dataPattern")
-    def data_pattern(self) -> str:
-        """
-        A regular expression to be used by data discovery for matching column data values.
-        """
+    def data_pattern(self) -> Optional[str]:
         return pulumi.get(self, "data_pattern")
 
     @property
     @pulumi.getter(name="defaultMaskingFormatId")
-    def default_masking_format_id(self) -> str:
-        """
-        The OCID of the library masking format that should be used to mask the sensitive columns associated with the sensitive type.
-        """
+    def default_masking_format_id(self) -> Optional[str]:
         return pulumi.get(self, "default_masking_format_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        The description of the sensitive type.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        The display name of the sensitive type.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="entityType")
-    def entity_type(self) -> str:
-        """
-        The entity type. It can be either a sensitive type with regular expressions or a sensitive category used for grouping similar sensitive types.
-        """
+    def entity_type(self) -> Optional[str]:
         return pulumi.get(self, "entity_type")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The OCID of the sensitive type.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="namePattern")
-    def name_pattern(self) -> str:
-        """
-        A regular expression to be used by data discovery for matching column names.
-        """
+    def name_pattern(self) -> Optional[str]:
         return pulumi.get(self, "name_pattern")
 
     @property
     @pulumi.getter(name="parentCategoryId")
-    def parent_category_id(self) -> str:
-        """
-        The OCID of the parent sensitive category.
-        """
+    def parent_category_id(self) -> Optional[str]:
         return pulumi.get(self, "parent_category_id")
 
     @property
     @pulumi.getter(name="searchType")
-    def search_type(self) -> str:
-        """
-        The search type indicating how the column name, comment and data patterns should be used by data discovery. [Learn more](https://docs.oracle.com/en/cloud/paas/data-safe/udscs/sensitive-types.html#GUID-1D1AD98E-B93F-4FF2-80AE-CB7D8A14F6CC).
-        """
+    def search_type(self) -> Optional[str]:
         return pulumi.get(self, "search_type")
 
     @property
@@ -194,50 +155,32 @@ class GetSensitiveTypeResult:
 
     @property
     @pulumi.getter(name="shortName")
-    def short_name(self) -> str:
-        """
-        The short name of the sensitive type.
-        """
+    def short_name(self) -> Optional[str]:
         return pulumi.get(self, "short_name")
 
     @property
     @pulumi.getter
-    def source(self) -> str:
-        """
-        Specifies whether the sensitive type is user-defined or predefined.
-        """
+    def source(self) -> Optional[str]:
         return pulumi.get(self, "source")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the sensitive type.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the sensitive type was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The date and time the sensitive type was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
 
@@ -272,21 +215,7 @@ class AwaitableGetSensitiveTypeResult(GetSensitiveTypeResult):
 def get_sensitive_type(sensitive_type_id: Optional[str] = None,
                        opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetSensitiveTypeResult:
     """
-    This data source provides details about a specific Sensitive Type resource in Oracle Cloud Infrastructure Data Safe service.
-
-    Gets the details of the specified sensitive type.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_sensitive_type = oci.DataSafe.get_sensitive_type(sensitive_type_id=oci_data_safe_sensitive_type["test_sensitive_type"]["id"])
-    ```
-
-
-    :param str sensitive_type_id: The OCID of the sensitive type.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['sensitiveTypeId'] = sensitive_type_id
@@ -320,20 +249,6 @@ def get_sensitive_type(sensitive_type_id: Optional[str] = None,
 def get_sensitive_type_output(sensitive_type_id: Optional[pulumi.Input[str]] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSensitiveTypeResult]:
     """
-    This data source provides details about a specific Sensitive Type resource in Oracle Cloud Infrastructure Data Safe service.
-
-    Gets the details of the specified sensitive type.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_sensitive_type = oci.DataSafe.get_sensitive_type(sensitive_type_id=oci_data_safe_sensitive_type["test_sensitive_type"]["id"])
-    ```
-
-
-    :param str sensitive_type_id: The OCID of the sensitive type.
+    Use this data source to access information about an existing resource.
     """
     ...

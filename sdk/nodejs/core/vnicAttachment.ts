@@ -80,11 +80,11 @@ export class VnicAttachment extends pulumi.CustomResource {
     /**
      * The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
      */
-    public /*out*/ readonly availabilityDomain!: pulumi.Output<string>;
+    public /*out*/ readonly availabilityDomain!: pulumi.Output<string | undefined>;
     /**
      * The OCID of the compartment the VNIC attachment is in, which is the same compartment the instance is in.
      */
-    public /*out*/ readonly compartmentId!: pulumi.Output<string>;
+    public /*out*/ readonly compartmentId!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Contains properties for a VNIC. You use this object when creating the primary VNIC during instance launch or when creating a secondary VNIC. For more information about VNICs, see [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
      */
@@ -92,7 +92,7 @@ export class VnicAttachment extends pulumi.CustomResource {
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    public readonly displayName!: pulumi.Output<string | undefined>;
     /**
      * The OCID of the instance.
      */
@@ -104,35 +104,35 @@ export class VnicAttachment extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly nicIndex!: pulumi.Output<number>;
+    public readonly nicIndex!: pulumi.Output<number | undefined>;
     /**
      * The current state of the VNIC attachment.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create the VNIC in. When launching an instance, use this `subnetId` instead of the deprecated `subnetId` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/requests/LaunchInstanceDetails). At least one of them is required; if you provide both, the values must match.
      *
      * If you are an Oracle Cloud VMware Solution customer and creating a secondary VNIC in a VLAN instead of a subnet, provide a `vlanId` instead of a `subnetId`. If you provide both a `vlanId` and `subnetId`, the request fails.
      */
-    public /*out*/ readonly subnetId!: pulumi.Output<string>;
+    public /*out*/ readonly subnetId!: pulumi.Output<string | undefined>;
     /**
      * The date and time the VNIC attachment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * Provide this attribute only if you are an Oracle Cloud VMware Solution customer and creating a secondary VNIC in a VLAN. The value is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
      *
      * Provide a `vlanId` instead of a `subnetId`. If you provide both a `vlanId` and `subnetId`, the request fails.
      */
-    public /*out*/ readonly vlanId!: pulumi.Output<string>;
+    public /*out*/ readonly vlanId!: pulumi.Output<string | undefined>;
     /**
      * The Oracle-assigned VLAN tag of the attached VNIC. Available after the attachment process is complete.
      */
-    public /*out*/ readonly vlanTag!: pulumi.Output<number>;
+    public /*out*/ readonly vlanTag!: pulumi.Output<number | undefined>;
     /**
      * The OCID of the VNIC. Available after the attachment process is complete.
      */
-    public /*out*/ readonly vnicId!: pulumi.Output<string>;
+    public /*out*/ readonly vnicId!: pulumi.Output<string | undefined>;
 
     /**
      * Create a VnicAttachment resource with the given unique name, arguments, and options.

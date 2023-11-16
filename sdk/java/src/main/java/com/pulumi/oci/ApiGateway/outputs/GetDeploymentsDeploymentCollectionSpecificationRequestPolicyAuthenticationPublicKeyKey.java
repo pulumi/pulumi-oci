@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationPublicKeyKey {
@@ -14,111 +16,111 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyA
      * @return The algorithm intended for use with this key.
      * 
      */
-    private String alg;
+    private @Nullable String alg;
     /**
      * @return The base64 url encoded exponent of the RSA public key represented by this key.
      * 
      */
-    private String e;
+    private @Nullable String e;
     /**
      * @return The format of the public key.
      * 
      */
-    private String format;
+    private @Nullable String format;
     /**
      * @return Information around the values for selector of an authentication/ routing branch.
      * 
      */
-    private String key;
+    private @Nullable String key;
     /**
      * @return The operations for which this key is to be used.
      * 
      */
-    private List<String> keyOps;
+    private @Nullable List<String> keyOps;
     /**
      * @return A unique key ID. This key will be used to verify the signature of a JWT with matching &#34;kid&#34;.
      * 
      */
-    private String kid;
+    private @Nullable String kid;
     /**
      * @return The key type.
      * 
      */
-    private String kty;
+    private @Nullable String kty;
     /**
      * @return The base64 url encoded modulus of the RSA public key represented by this key.
      * 
      */
-    private String n;
+    private @Nullable String n;
     /**
      * @return The intended use of the public key.
      * 
      */
-    private String use;
+    private @Nullable String use;
 
     private GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationPublicKeyKey() {}
     /**
      * @return The algorithm intended for use with this key.
      * 
      */
-    public String alg() {
-        return this.alg;
+    public Optional<String> alg() {
+        return Optional.ofNullable(this.alg);
     }
     /**
      * @return The base64 url encoded exponent of the RSA public key represented by this key.
      * 
      */
-    public String e() {
-        return this.e;
+    public Optional<String> e() {
+        return Optional.ofNullable(this.e);
     }
     /**
      * @return The format of the public key.
      * 
      */
-    public String format() {
-        return this.format;
+    public Optional<String> format() {
+        return Optional.ofNullable(this.format);
     }
     /**
      * @return Information around the values for selector of an authentication/ routing branch.
      * 
      */
-    public String key() {
-        return this.key;
+    public Optional<String> key() {
+        return Optional.ofNullable(this.key);
     }
     /**
      * @return The operations for which this key is to be used.
      * 
      */
     public List<String> keyOps() {
-        return this.keyOps;
+        return this.keyOps == null ? List.of() : this.keyOps;
     }
     /**
      * @return A unique key ID. This key will be used to verify the signature of a JWT with matching &#34;kid&#34;.
      * 
      */
-    public String kid() {
-        return this.kid;
+    public Optional<String> kid() {
+        return Optional.ofNullable(this.kid);
     }
     /**
      * @return The key type.
      * 
      */
-    public String kty() {
-        return this.kty;
+    public Optional<String> kty() {
+        return Optional.ofNullable(this.kty);
     }
     /**
      * @return The base64 url encoded modulus of the RSA public key represented by this key.
      * 
      */
-    public String n() {
-        return this.n;
+    public Optional<String> n() {
+        return Optional.ofNullable(this.n);
     }
     /**
      * @return The intended use of the public key.
      * 
      */
-    public String use() {
-        return this.use;
+    public Optional<String> use() {
+        return Optional.ofNullable(this.use);
     }
 
     public static Builder builder() {
@@ -130,15 +132,15 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyA
     }
     @CustomType.Builder
     public static final class Builder {
-        private String alg;
-        private String e;
-        private String format;
-        private String key;
-        private List<String> keyOps;
-        private String kid;
-        private String kty;
-        private String n;
-        private String use;
+        private @Nullable String alg;
+        private @Nullable String e;
+        private @Nullable String format;
+        private @Nullable String key;
+        private @Nullable List<String> keyOps;
+        private @Nullable String kid;
+        private @Nullable String kty;
+        private @Nullable String n;
+        private @Nullable String use;
         public Builder() {}
         public Builder(GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationPublicKeyKey defaults) {
     	      Objects.requireNonNull(defaults);
@@ -154,51 +156,51 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyA
         }
 
         @CustomType.Setter
-        public Builder alg(String alg) {
-            this.alg = Objects.requireNonNull(alg);
+        public Builder alg(@Nullable String alg) {
+            this.alg = alg;
             return this;
         }
         @CustomType.Setter
-        public Builder e(String e) {
-            this.e = Objects.requireNonNull(e);
+        public Builder e(@Nullable String e) {
+            this.e = e;
             return this;
         }
         @CustomType.Setter
-        public Builder format(String format) {
-            this.format = Objects.requireNonNull(format);
+        public Builder format(@Nullable String format) {
+            this.format = format;
             return this;
         }
         @CustomType.Setter
-        public Builder key(String key) {
-            this.key = Objects.requireNonNull(key);
+        public Builder key(@Nullable String key) {
+            this.key = key;
             return this;
         }
         @CustomType.Setter
-        public Builder keyOps(List<String> keyOps) {
-            this.keyOps = Objects.requireNonNull(keyOps);
+        public Builder keyOps(@Nullable List<String> keyOps) {
+            this.keyOps = keyOps;
             return this;
         }
         public Builder keyOps(String... keyOps) {
             return keyOps(List.of(keyOps));
         }
         @CustomType.Setter
-        public Builder kid(String kid) {
-            this.kid = Objects.requireNonNull(kid);
+        public Builder kid(@Nullable String kid) {
+            this.kid = kid;
             return this;
         }
         @CustomType.Setter
-        public Builder kty(String kty) {
-            this.kty = Objects.requireNonNull(kty);
+        public Builder kty(@Nullable String kty) {
+            this.kty = kty;
             return this;
         }
         @CustomType.Setter
-        public Builder n(String n) {
-            this.n = Objects.requireNonNull(n);
+        public Builder n(@Nullable String n) {
+            this.n = n;
             return this;
         }
         @CustomType.Setter
-        public Builder use(String use) {
-            this.use = Objects.requireNonNull(use);
+        public Builder use(@Nullable String use) {
+            this.use = use;
             return this;
         }
         public GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationPublicKeyKey build() {

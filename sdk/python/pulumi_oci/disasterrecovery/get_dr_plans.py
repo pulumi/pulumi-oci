@@ -52,17 +52,11 @@ class GetDrPlansResult:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        The display name of the group.  Example: `DATABASE_SWITCHOVER`
-        """
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="drPlanCollections")
-    def dr_plan_collections(self) -> Sequence['outputs.GetDrPlansDrPlanCollectionResult']:
-        """
-        The list of dr_plan_collection.
-        """
+    def dr_plan_collections(self) -> Optional[Sequence['outputs.GetDrPlansDrPlanCollectionResult']]:
         return pulumi.get(self, "dr_plan_collections")
 
     @property
@@ -78,9 +72,6 @@ class GetDrPlansResult:
     @property
     @pulumi.getter(name="drProtectionGroupId")
     def dr_protection_group_id(self) -> str:
-        """
-        The OCID of the DR protection group to which this DR plan belongs.  Example: `ocid1.drplan.oc1..uniqueID`
-        """
         return pulumi.get(self, "dr_protection_group_id")
 
     @property
@@ -90,7 +81,7 @@ class GetDrPlansResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -99,9 +90,6 @@ class GetDrPlansResult:
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the DR plan.
-        """
         return pulumi.get(self, "state")
 
 
@@ -129,29 +117,7 @@ def get_dr_plans(display_name: Optional[str] = None,
                  state: Optional[str] = None,
                  opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDrPlansResult:
     """
-    This data source provides the list of Dr Plans in Oracle Cloud Infrastructure Disaster Recovery service.
-
-    Get a summary list of all DR plans for a DR protection group.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_dr_plans = oci.DisasterRecovery.get_dr_plans(dr_protection_group_id=oci_disaster_recovery_dr_protection_group["test_dr_protection_group"]["id"],
-        display_name=var["dr_plan_display_name"],
-        dr_plan_id=oci_disaster_recovery_dr_plan["test_dr_plan"]["id"],
-        dr_plan_type=var["dr_plan_dr_plan_type"],
-        state=var["dr_plan_state"])
-    ```
-
-
-    :param str display_name: A filter to return only resources that match the given display name.  Example: `MyResourceDisplayName`
-    :param str dr_plan_id: The OCID of the DR plan.  Example: `ocid1.drplan.oc1..uniqueID`
-    :param str dr_plan_type: The DR plan type.
-    :param str dr_protection_group_id: The OCID of the DR protection group. Mandatory query param.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
-    :param str state: A filter to return only DR plans that match the given lifecycle state.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['displayName'] = display_name
@@ -183,28 +149,6 @@ def get_dr_plans_output(display_name: Optional[pulumi.Input[Optional[str]]] = No
                         state: Optional[pulumi.Input[Optional[str]]] = None,
                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDrPlansResult]:
     """
-    This data source provides the list of Dr Plans in Oracle Cloud Infrastructure Disaster Recovery service.
-
-    Get a summary list of all DR plans for a DR protection group.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_dr_plans = oci.DisasterRecovery.get_dr_plans(dr_protection_group_id=oci_disaster_recovery_dr_protection_group["test_dr_protection_group"]["id"],
-        display_name=var["dr_plan_display_name"],
-        dr_plan_id=oci_disaster_recovery_dr_plan["test_dr_plan"]["id"],
-        dr_plan_type=var["dr_plan_dr_plan_type"],
-        state=var["dr_plan_state"])
-    ```
-
-
-    :param str display_name: A filter to return only resources that match the given display name.  Example: `MyResourceDisplayName`
-    :param str dr_plan_id: The OCID of the DR plan.  Example: `ocid1.drplan.oc1..uniqueID`
-    :param str dr_plan_type: The DR plan type.
-    :param str dr_protection_group_id: The OCID of the DR protection group. Mandatory query param.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
-    :param str state: A filter to return only DR plans that match the given lifecycle state.
+    Use this data source to access information about an existing resource.
     """
     ...

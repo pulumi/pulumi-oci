@@ -32,28 +32,28 @@ export class SqlFirewallPolicyManagement extends pulumi.CustomResource {
         return obj['__pulumiType'] === SqlFirewallPolicyManagement.__pulumiType;
     }
 
-    public readonly allowedClientIps!: pulumi.Output<string[]>;
-    public readonly allowedClientOsUsernames!: pulumi.Output<string[]>;
-    public readonly allowedClientPrograms!: pulumi.Output<string[]>;
-    public readonly compartmentId!: pulumi.Output<string>;
-    public readonly dbUserName!: pulumi.Output<string>;
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
-    public readonly description!: pulumi.Output<string>;
-    public readonly displayName!: pulumi.Output<string>;
-    public readonly enforcementScope!: pulumi.Output<string>;
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
-    public /*out*/ readonly securityPolicyId!: pulumi.Output<string>;
-    public readonly sqlFirewallPolicyId!: pulumi.Output<string>;
-    public /*out*/ readonly sqlLevel!: pulumi.Output<string>;
-    public readonly state!: pulumi.Output<string>;
-    public readonly status!: pulumi.Output<string>;
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any}>;
-    public readonly targetId!: pulumi.Output<string>;
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
-    public readonly violationAction!: pulumi.Output<string>;
-    public readonly violationAudit!: pulumi.Output<string>;
+    public readonly allowedClientIps!: pulumi.Output<string[] | undefined>;
+    public readonly allowedClientOsUsernames!: pulumi.Output<string[] | undefined>;
+    public readonly allowedClientPrograms!: pulumi.Output<string[] | undefined>;
+    public readonly compartmentId!: pulumi.Output<string | undefined>;
+    public readonly dbUserName!: pulumi.Output<string | undefined>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
+    public readonly description!: pulumi.Output<string | undefined>;
+    public readonly displayName!: pulumi.Output<string | undefined>;
+    public readonly enforcementScope!: pulumi.Output<string | undefined>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
+    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string | undefined>;
+    public /*out*/ readonly securityPolicyId!: pulumi.Output<string | undefined>;
+    public readonly sqlFirewallPolicyId!: pulumi.Output<string | undefined>;
+    public /*out*/ readonly sqlLevel!: pulumi.Output<string | undefined>;
+    public readonly state!: pulumi.Output<string | undefined>;
+    public readonly status!: pulumi.Output<string | undefined>;
+    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any} | undefined>;
+    public readonly targetId!: pulumi.Output<string | undefined>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
+    public /*out*/ readonly timeUpdated!: pulumi.Output<string | undefined>;
+    public readonly violationAction!: pulumi.Output<string | undefined>;
+    public readonly violationAudit!: pulumi.Output<string | undefined>;
 
     /**
      * Create a SqlFirewallPolicyManagement resource with the given unique name, arguments, and options.

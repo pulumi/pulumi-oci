@@ -13,6 +13,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetImageResult {
@@ -20,90 +22,90 @@ public final class GetImageResult {
      * @return Oracle Cloud Agent features supported on the image.
      * 
      */
-    private List<GetImageAgentFeature> agentFeatures;
+    private @Nullable List<GetImageAgentFeature> agentFeatures;
     /**
      * @return The OCID of the image originally used to launch the instance.
      * 
      */
-    private String baseImageId;
+    private @Nullable String baseImageId;
     /**
      * @return The size of the internal storage for this image that is subject to billing (1 GB = 1,073,741,824 bytes).  Example: `100`
      * 
      */
-    private String billableSizeInGbs;
+    private @Nullable String billableSizeInGbs;
     /**
      * @return The OCID of the compartment containing the instance you want to use as the basis for the image.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return Whether instances launched with this image can be used to create new images. For example, you cannot create an image of an Oracle Database instance.  Example: `true`
      * 
      */
-    private Boolean createImageAllowed;
+    private @Nullable Boolean createImageAllowed;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return A user-friendly name for the image. It does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return The OCID of the image.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private String imageId;
-    private List<GetImageImageSourceDetail> imageSourceDetails;
-    private String instanceId;
+    private @Nullable List<GetImageImageSourceDetail> imageSourceDetails;
+    private @Nullable String instanceId;
     /**
      * @return Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
      * 
      */
-    private String launchMode;
+    private @Nullable String launchMode;
     /**
      * @return Options for tuning the compatibility and performance of VM shapes. The values that you specify override any default values.
      * 
      */
-    private List<GetImageLaunchOption> launchOptions;
+    private @Nullable List<GetImageLaunchOption> launchOptions;
     /**
      * @return The listing type of the image. The default value is &#34;NONE&#34;.
      * 
      */
-    private String listingType;
+    private @Nullable String listingType;
     /**
      * @return The image&#39;s operating system.  Example: `Oracle Linux`
      * 
      */
-    private String operatingSystem;
+    private @Nullable String operatingSystem;
     /**
      * @return The image&#39;s operating system version.  Example: `7.2`
      * 
      */
-    private String operatingSystemVersion;
+    private @Nullable String operatingSystemVersion;
     /**
      * @return The boot volume size for an instance launched from this image (1 MB = 1,048,576 bytes). Note this is not the same as the size of the image when it was exported or the actual size of the image.  Example: `47694`
      * 
      */
-    private String sizeInMbs;
+    private @Nullable String sizeInMbs;
     /**
      * @return The current state of the image.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return The date and time the image was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
 
     private GetImageResult() {}
     /**
@@ -111,128 +113,128 @@ public final class GetImageResult {
      * 
      */
     public List<GetImageAgentFeature> agentFeatures() {
-        return this.agentFeatures;
+        return this.agentFeatures == null ? List.of() : this.agentFeatures;
     }
     /**
      * @return The OCID of the image originally used to launch the instance.
      * 
      */
-    public String baseImageId() {
-        return this.baseImageId;
+    public Optional<String> baseImageId() {
+        return Optional.ofNullable(this.baseImageId);
     }
     /**
      * @return The size of the internal storage for this image that is subject to billing (1 GB = 1,073,741,824 bytes).  Example: `100`
      * 
      */
-    public String billableSizeInGbs() {
-        return this.billableSizeInGbs;
+    public Optional<String> billableSizeInGbs() {
+        return Optional.ofNullable(this.billableSizeInGbs);
     }
     /**
      * @return The OCID of the compartment containing the instance you want to use as the basis for the image.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return Whether instances launched with this image can be used to create new images. For example, you cannot create an image of an Oracle Database instance.  Example: `true`
      * 
      */
-    public Boolean createImageAllowed() {
-        return this.createImageAllowed;
+    public Optional<Boolean> createImageAllowed() {
+        return Optional.ofNullable(this.createImageAllowed);
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return A user-friendly name for the image. It does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return The OCID of the image.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public String imageId() {
         return this.imageId;
     }
     public List<GetImageImageSourceDetail> imageSourceDetails() {
-        return this.imageSourceDetails;
+        return this.imageSourceDetails == null ? List.of() : this.imageSourceDetails;
     }
-    public String instanceId() {
-        return this.instanceId;
+    public Optional<String> instanceId() {
+        return Optional.ofNullable(this.instanceId);
     }
     /**
      * @return Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
      * 
      */
-    public String launchMode() {
-        return this.launchMode;
+    public Optional<String> launchMode() {
+        return Optional.ofNullable(this.launchMode);
     }
     /**
      * @return Options for tuning the compatibility and performance of VM shapes. The values that you specify override any default values.
      * 
      */
     public List<GetImageLaunchOption> launchOptions() {
-        return this.launchOptions;
+        return this.launchOptions == null ? List.of() : this.launchOptions;
     }
     /**
      * @return The listing type of the image. The default value is &#34;NONE&#34;.
      * 
      */
-    public String listingType() {
-        return this.listingType;
+    public Optional<String> listingType() {
+        return Optional.ofNullable(this.listingType);
     }
     /**
      * @return The image&#39;s operating system.  Example: `Oracle Linux`
      * 
      */
-    public String operatingSystem() {
-        return this.operatingSystem;
+    public Optional<String> operatingSystem() {
+        return Optional.ofNullable(this.operatingSystem);
     }
     /**
      * @return The image&#39;s operating system version.  Example: `7.2`
      * 
      */
-    public String operatingSystemVersion() {
-        return this.operatingSystemVersion;
+    public Optional<String> operatingSystemVersion() {
+        return Optional.ofNullable(this.operatingSystemVersion);
     }
     /**
      * @return The boot volume size for an instance launched from this image (1 MB = 1,048,576 bytes). Note this is not the same as the size of the image when it was exported or the actual size of the image.  Example: `47694`
      * 
      */
-    public String sizeInMbs() {
-        return this.sizeInMbs;
+    public Optional<String> sizeInMbs() {
+        return Optional.ofNullable(this.sizeInMbs);
     }
     /**
      * @return The current state of the image.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return The date and time the image was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
 
     public static Builder builder() {
@@ -244,26 +246,26 @@ public final class GetImageResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetImageAgentFeature> agentFeatures;
-        private String baseImageId;
-        private String billableSizeInGbs;
-        private String compartmentId;
-        private Boolean createImageAllowed;
-        private Map<String,Object> definedTags;
-        private String displayName;
-        private Map<String,Object> freeformTags;
-        private String id;
+        private @Nullable List<GetImageAgentFeature> agentFeatures;
+        private @Nullable String baseImageId;
+        private @Nullable String billableSizeInGbs;
+        private @Nullable String compartmentId;
+        private @Nullable Boolean createImageAllowed;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String displayName;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String id;
         private String imageId;
-        private List<GetImageImageSourceDetail> imageSourceDetails;
-        private String instanceId;
-        private String launchMode;
-        private List<GetImageLaunchOption> launchOptions;
-        private String listingType;
-        private String operatingSystem;
-        private String operatingSystemVersion;
-        private String sizeInMbs;
-        private String state;
-        private String timeCreated;
+        private @Nullable List<GetImageImageSourceDetail> imageSourceDetails;
+        private @Nullable String instanceId;
+        private @Nullable String launchMode;
+        private @Nullable List<GetImageLaunchOption> launchOptions;
+        private @Nullable String listingType;
+        private @Nullable String operatingSystem;
+        private @Nullable String operatingSystemVersion;
+        private @Nullable String sizeInMbs;
+        private @Nullable String state;
+        private @Nullable String timeCreated;
         public Builder() {}
         public Builder(GetImageResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -290,51 +292,51 @@ public final class GetImageResult {
         }
 
         @CustomType.Setter
-        public Builder agentFeatures(List<GetImageAgentFeature> agentFeatures) {
-            this.agentFeatures = Objects.requireNonNull(agentFeatures);
+        public Builder agentFeatures(@Nullable List<GetImageAgentFeature> agentFeatures) {
+            this.agentFeatures = agentFeatures;
             return this;
         }
         public Builder agentFeatures(GetImageAgentFeature... agentFeatures) {
             return agentFeatures(List.of(agentFeatures));
         }
         @CustomType.Setter
-        public Builder baseImageId(String baseImageId) {
-            this.baseImageId = Objects.requireNonNull(baseImageId);
+        public Builder baseImageId(@Nullable String baseImageId) {
+            this.baseImageId = baseImageId;
             return this;
         }
         @CustomType.Setter
-        public Builder billableSizeInGbs(String billableSizeInGbs) {
-            this.billableSizeInGbs = Objects.requireNonNull(billableSizeInGbs);
+        public Builder billableSizeInGbs(@Nullable String billableSizeInGbs) {
+            this.billableSizeInGbs = billableSizeInGbs;
             return this;
         }
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder createImageAllowed(Boolean createImageAllowed) {
-            this.createImageAllowed = Objects.requireNonNull(createImageAllowed);
+        public Builder createImageAllowed(@Nullable Boolean createImageAllowed) {
+            this.createImageAllowed = createImageAllowed;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -343,59 +345,59 @@ public final class GetImageResult {
             return this;
         }
         @CustomType.Setter
-        public Builder imageSourceDetails(List<GetImageImageSourceDetail> imageSourceDetails) {
-            this.imageSourceDetails = Objects.requireNonNull(imageSourceDetails);
+        public Builder imageSourceDetails(@Nullable List<GetImageImageSourceDetail> imageSourceDetails) {
+            this.imageSourceDetails = imageSourceDetails;
             return this;
         }
         public Builder imageSourceDetails(GetImageImageSourceDetail... imageSourceDetails) {
             return imageSourceDetails(List.of(imageSourceDetails));
         }
         @CustomType.Setter
-        public Builder instanceId(String instanceId) {
-            this.instanceId = Objects.requireNonNull(instanceId);
+        public Builder instanceId(@Nullable String instanceId) {
+            this.instanceId = instanceId;
             return this;
         }
         @CustomType.Setter
-        public Builder launchMode(String launchMode) {
-            this.launchMode = Objects.requireNonNull(launchMode);
+        public Builder launchMode(@Nullable String launchMode) {
+            this.launchMode = launchMode;
             return this;
         }
         @CustomType.Setter
-        public Builder launchOptions(List<GetImageLaunchOption> launchOptions) {
-            this.launchOptions = Objects.requireNonNull(launchOptions);
+        public Builder launchOptions(@Nullable List<GetImageLaunchOption> launchOptions) {
+            this.launchOptions = launchOptions;
             return this;
         }
         public Builder launchOptions(GetImageLaunchOption... launchOptions) {
             return launchOptions(List.of(launchOptions));
         }
         @CustomType.Setter
-        public Builder listingType(String listingType) {
-            this.listingType = Objects.requireNonNull(listingType);
+        public Builder listingType(@Nullable String listingType) {
+            this.listingType = listingType;
             return this;
         }
         @CustomType.Setter
-        public Builder operatingSystem(String operatingSystem) {
-            this.operatingSystem = Objects.requireNonNull(operatingSystem);
+        public Builder operatingSystem(@Nullable String operatingSystem) {
+            this.operatingSystem = operatingSystem;
             return this;
         }
         @CustomType.Setter
-        public Builder operatingSystemVersion(String operatingSystemVersion) {
-            this.operatingSystemVersion = Objects.requireNonNull(operatingSystemVersion);
+        public Builder operatingSystemVersion(@Nullable String operatingSystemVersion) {
+            this.operatingSystemVersion = operatingSystemVersion;
             return this;
         }
         @CustomType.Setter
-        public Builder sizeInMbs(String sizeInMbs) {
-            this.sizeInMbs = Objects.requireNonNull(sizeInMbs);
+        public Builder sizeInMbs(@Nullable String sizeInMbs) {
+            this.sizeInMbs = sizeInMbs;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         public GetImageResult build() {

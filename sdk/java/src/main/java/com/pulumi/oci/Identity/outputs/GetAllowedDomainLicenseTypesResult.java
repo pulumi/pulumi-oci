@@ -18,14 +18,14 @@ public final class GetAllowedDomainLicenseTypesResult {
      * @return The list of allowed_domain_license_types.
      * 
      */
-    private List<GetAllowedDomainLicenseTypesAllowedDomainLicenseType> allowedDomainLicenseTypes;
+    private @Nullable List<GetAllowedDomainLicenseTypesAllowedDomainLicenseType> allowedDomainLicenseTypes;
     private @Nullable String currentLicenseTypeName;
     private @Nullable List<GetAllowedDomainLicenseTypesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
 
     private GetAllowedDomainLicenseTypesResult() {}
     /**
@@ -33,7 +33,7 @@ public final class GetAllowedDomainLicenseTypesResult {
      * 
      */
     public List<GetAllowedDomainLicenseTypesAllowedDomainLicenseType> allowedDomainLicenseTypes() {
-        return this.allowedDomainLicenseTypes;
+        return this.allowedDomainLicenseTypes == null ? List.of() : this.allowedDomainLicenseTypes;
     }
     public Optional<String> currentLicenseTypeName() {
         return Optional.ofNullable(this.currentLicenseTypeName);
@@ -45,8 +45,8 @@ public final class GetAllowedDomainLicenseTypesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
 
     public static Builder builder() {
@@ -58,10 +58,10 @@ public final class GetAllowedDomainLicenseTypesResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetAllowedDomainLicenseTypesAllowedDomainLicenseType> allowedDomainLicenseTypes;
+        private @Nullable List<GetAllowedDomainLicenseTypesAllowedDomainLicenseType> allowedDomainLicenseTypes;
         private @Nullable String currentLicenseTypeName;
         private @Nullable List<GetAllowedDomainLicenseTypesFilter> filters;
-        private String id;
+        private @Nullable String id;
         public Builder() {}
         public Builder(GetAllowedDomainLicenseTypesResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -72,8 +72,8 @@ public final class GetAllowedDomainLicenseTypesResult {
         }
 
         @CustomType.Setter
-        public Builder allowedDomainLicenseTypes(List<GetAllowedDomainLicenseTypesAllowedDomainLicenseType> allowedDomainLicenseTypes) {
-            this.allowedDomainLicenseTypes = Objects.requireNonNull(allowedDomainLicenseTypes);
+        public Builder allowedDomainLicenseTypes(@Nullable List<GetAllowedDomainLicenseTypesAllowedDomainLicenseType> allowedDomainLicenseTypes) {
+            this.allowedDomainLicenseTypes = allowedDomainLicenseTypes;
             return this;
         }
         public Builder allowedDomainLicenseTypes(GetAllowedDomainLicenseTypesAllowedDomainLicenseType... allowedDomainLicenseTypes) {
@@ -93,8 +93,8 @@ public final class GetAllowedDomainLicenseTypesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         public GetAllowedDomainLicenseTypesResult build() {

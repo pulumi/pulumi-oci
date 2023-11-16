@@ -51,11 +51,11 @@ export interface GetInstancePoolLoadBalancerAttachmentResult {
     /**
      * The name of the backend set on the load balancer.
      */
-    readonly backendSetName: string;
+    readonly backendSetName?: string;
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance pool of the load balancer attachment.
      */
@@ -64,19 +64,19 @@ export interface GetInstancePoolLoadBalancerAttachmentResult {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer attached to the instance pool.
      */
-    readonly loadBalancerId: string;
+    readonly loadBalancerId?: string;
     /**
      * The port value used for the backends.
      */
-    readonly port: number;
+    readonly port?: number;
     /**
      * The status of the interaction between the instance pool and the load balancer.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * Indicates which VNIC on each instance in the instance pool should be used to associate with the load balancer. Possible values are "PrimaryVnic" or the displayName of one of the secondary VNICs on the instance configuration that is associated with the instance pool.
      */
-    readonly vnicSelection: string;
+    readonly vnicSelection?: string;
 }
 /**
  * This data source provides details about a specific Instance Pool Load Balancer Attachment resource in Oracle Cloud Infrastructure Core service.

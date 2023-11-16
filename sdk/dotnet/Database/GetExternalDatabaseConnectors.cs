@@ -185,7 +185,7 @@ namespace Pulumi.Oci.Database
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The current lifecycle state of the external database connector resource.
         /// </summary>
@@ -203,7 +203,7 @@ namespace Pulumi.Oci.Database
 
             ImmutableArray<Outputs.GetExternalDatabaseConnectorsFilterResult> filters,
 
-            string id,
+            string? id,
 
             string? state)
         {

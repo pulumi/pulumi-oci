@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Virtual Service Route Table resource in Oracle Cloud Infrastructure Service Mesh service.
@@ -60,34 +59,34 @@ type LookupVirtualServiceRouteTableArgs struct {
 // A collection of values returned by getVirtualServiceRouteTable.
 type LookupVirtualServiceRouteTableResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// Description of the resource. It can be changed after creation. Avoid entering confidential information.  Example: `This is my new resource`
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// Unique identifier that is immutable on creation.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// A user-friendly name. The name must be unique within the same virtual service and cannot be changed after creation. Avoid entering confidential information.  Example: `My unique resource name`
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// The priority of the route table. Lower value means higher priority. The routes are declared based on the priority.
-	Priority int `pulumi:"priority"`
+	Priority *int `pulumi:"priority"`
 	// The route rules for the virtual service.
 	RouteRules []GetVirtualServiceRouteTableRouteRule `pulumi:"routeRules"`
 	// The current state of the Resource.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The time when this resource was created in an RFC3339 formatted datetime string.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time when this resource was updated in an RFC3339 formatted datetime string.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 	// The OCID of the virtual service in which this virtual service route table is created.
-	VirtualServiceId           string `pulumi:"virtualServiceId"`
-	VirtualServiceRouteTableId string `pulumi:"virtualServiceRouteTableId"`
+	VirtualServiceId           *string `pulumi:"virtualServiceId"`
+	VirtualServiceRouteTableId string  `pulumi:"virtualServiceRouteTableId"`
 }
 
 func LookupVirtualServiceRouteTableOutput(ctx *pulumi.Context, args LookupVirtualServiceRouteTableOutputArgs, opts ...pulumi.InvokeOption) LookupVirtualServiceRouteTableResultOutput {
@@ -128,15 +127,9 @@ func (o LookupVirtualServiceRouteTableResultOutput) ToLookupVirtualServiceRouteT
 	return o
 }
 
-func (o LookupVirtualServiceRouteTableResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupVirtualServiceRouteTableResult] {
-	return pulumix.Output[LookupVirtualServiceRouteTableResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-func (o LookupVirtualServiceRouteTableResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupVirtualServiceRouteTableResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupVirtualServiceRouteTableResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupVirtualServiceRouteTableResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -145,8 +138,8 @@ func (o LookupVirtualServiceRouteTableResultOutput) DefinedTags() pulumi.MapOutp
 }
 
 // Description of the resource. It can be changed after creation. Avoid entering confidential information.  Example: `This is my new resource`
-func (o LookupVirtualServiceRouteTableResultOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupVirtualServiceRouteTableResult) string { return v.Description }).(pulumi.StringOutput)
+func (o LookupVirtualServiceRouteTableResultOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupVirtualServiceRouteTableResult) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -155,23 +148,23 @@ func (o LookupVirtualServiceRouteTableResultOutput) FreeformTags() pulumi.MapOut
 }
 
 // Unique identifier that is immutable on creation.
-func (o LookupVirtualServiceRouteTableResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupVirtualServiceRouteTableResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupVirtualServiceRouteTableResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupVirtualServiceRouteTableResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
-func (o LookupVirtualServiceRouteTableResultOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupVirtualServiceRouteTableResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o LookupVirtualServiceRouteTableResultOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupVirtualServiceRouteTableResult) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // A user-friendly name. The name must be unique within the same virtual service and cannot be changed after creation. Avoid entering confidential information.  Example: `My unique resource name`
-func (o LookupVirtualServiceRouteTableResultOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupVirtualServiceRouteTableResult) string { return v.Name }).(pulumi.StringOutput)
+func (o LookupVirtualServiceRouteTableResultOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupVirtualServiceRouteTableResult) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // The priority of the route table. Lower value means higher priority. The routes are declared based on the priority.
-func (o LookupVirtualServiceRouteTableResultOutput) Priority() pulumi.IntOutput {
-	return o.ApplyT(func(v LookupVirtualServiceRouteTableResult) int { return v.Priority }).(pulumi.IntOutput)
+func (o LookupVirtualServiceRouteTableResultOutput) Priority() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LookupVirtualServiceRouteTableResult) *int { return v.Priority }).(pulumi.IntPtrOutput)
 }
 
 // The route rules for the virtual service.
@@ -182,8 +175,8 @@ func (o LookupVirtualServiceRouteTableResultOutput) RouteRules() GetVirtualServi
 }
 
 // The current state of the Resource.
-func (o LookupVirtualServiceRouteTableResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupVirtualServiceRouteTableResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupVirtualServiceRouteTableResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupVirtualServiceRouteTableResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -192,18 +185,18 @@ func (o LookupVirtualServiceRouteTableResultOutput) SystemTags() pulumi.MapOutpu
 }
 
 // The time when this resource was created in an RFC3339 formatted datetime string.
-func (o LookupVirtualServiceRouteTableResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupVirtualServiceRouteTableResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupVirtualServiceRouteTableResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupVirtualServiceRouteTableResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time when this resource was updated in an RFC3339 formatted datetime string.
-func (o LookupVirtualServiceRouteTableResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupVirtualServiceRouteTableResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o LookupVirtualServiceRouteTableResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupVirtualServiceRouteTableResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the virtual service in which this virtual service route table is created.
-func (o LookupVirtualServiceRouteTableResultOutput) VirtualServiceId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupVirtualServiceRouteTableResult) string { return v.VirtualServiceId }).(pulumi.StringOutput)
+func (o LookupVirtualServiceRouteTableResultOutput) VirtualServiceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupVirtualServiceRouteTableResult) *string { return v.VirtualServiceId }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupVirtualServiceRouteTableResultOutput) VirtualServiceRouteTableId() pulumi.StringOutput {

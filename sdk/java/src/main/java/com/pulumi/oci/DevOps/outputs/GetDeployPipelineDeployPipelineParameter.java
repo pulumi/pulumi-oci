@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.DevOps.outputs.GetDeployPipelineDeployPipelineParameterItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDeployPipelineDeployPipelineParameter {
@@ -14,7 +15,7 @@ public final class GetDeployPipelineDeployPipelineParameter {
      * @return List of parameters defined for a deployment pipeline.
      * 
      */
-    private List<GetDeployPipelineDeployPipelineParameterItem> items;
+    private @Nullable List<GetDeployPipelineDeployPipelineParameterItem> items;
 
     private GetDeployPipelineDeployPipelineParameter() {}
     /**
@@ -22,7 +23,7 @@ public final class GetDeployPipelineDeployPipelineParameter {
      * 
      */
     public List<GetDeployPipelineDeployPipelineParameterItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -34,7 +35,7 @@ public final class GetDeployPipelineDeployPipelineParameter {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetDeployPipelineDeployPipelineParameterItem> items;
+        private @Nullable List<GetDeployPipelineDeployPipelineParameterItem> items;
         public Builder() {}
         public Builder(GetDeployPipelineDeployPipelineParameter defaults) {
     	      Objects.requireNonNull(defaults);
@@ -42,8 +43,8 @@ public final class GetDeployPipelineDeployPipelineParameter {
         }
 
         @CustomType.Setter
-        public Builder items(List<GetDeployPipelineDeployPipelineParameterItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetDeployPipelineDeployPipelineParameterItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetDeployPipelineDeployPipelineParameterItem... items) {

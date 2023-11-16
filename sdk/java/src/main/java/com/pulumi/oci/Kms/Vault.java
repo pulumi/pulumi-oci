@@ -111,28 +111,28 @@ public class Vault extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="cryptoEndpoint", refs={String.class}, tree="[0]")
-    private Output<String> cryptoEndpoint;
+    private Output</* @Nullable */ String> cryptoEndpoint;
 
     /**
      * @return The service endpoint to perform cryptographic operations against. Cryptographic operations include [Encrypt](https://docs.cloud.oracle.com/iaas/api/#/en/key/latest/EncryptedData/Encrypt), [Decrypt](https://docs.cloud.oracle.com/iaas/api/#/en/key/latest/DecryptedData/Decrypt), and [GenerateDataEncryptionKey](https://docs.cloud.oracle.com/iaas/api/#/en/key/latest/GeneratedKey/GenerateDataEncryptionKey) operations.
      * 
      */
-    public Output<String> cryptoEndpoint() {
-        return this.cryptoEndpoint;
+    public Output<Optional<String>> cryptoEndpoint() {
+        return Codegen.optional(this.cryptoEndpoint);
     }
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * (Updatable) A user-friendly name for the vault. It does not have to be unique, and it is changeable. Avoid entering confidential information.
@@ -153,84 +153,84 @@ public class Vault extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="externalKeyManagerMetadata", refs={VaultExternalKeyManagerMetadata.class}, tree="[0]")
-    private Output<VaultExternalKeyManagerMetadata> externalKeyManagerMetadata;
+    private Output</* @Nullable */ VaultExternalKeyManagerMetadata> externalKeyManagerMetadata;
 
     /**
      * @return Metadata required for accessing External Key manager
      * 
      */
-    public Output<VaultExternalKeyManagerMetadata> externalKeyManagerMetadata() {
-        return this.externalKeyManagerMetadata;
+    public Output<Optional<VaultExternalKeyManagerMetadata>> externalKeyManagerMetadata() {
+        return Codegen.optional(this.externalKeyManagerMetadata);
     }
     /**
      * Summary about metadata of external key manager to be returned to the customer as a response.
      * 
      */
     @Export(name="externalKeyManagerMetadataSummaries", refs={List.class,VaultExternalKeyManagerMetadataSummary.class}, tree="[0,1]")
-    private Output<List<VaultExternalKeyManagerMetadataSummary>> externalKeyManagerMetadataSummaries;
+    private Output</* @Nullable */ List<VaultExternalKeyManagerMetadataSummary>> externalKeyManagerMetadataSummaries;
 
     /**
      * @return Summary about metadata of external key manager to be returned to the customer as a response.
      * 
      */
-    public Output<List<VaultExternalKeyManagerMetadataSummary>> externalKeyManagerMetadataSummaries() {
-        return this.externalKeyManagerMetadataSummaries;
+    public Output<Optional<List<VaultExternalKeyManagerMetadataSummary>>> externalKeyManagerMetadataSummaries() {
+        return Codegen.optional(this.externalKeyManagerMetadataSummaries);
     }
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * A Boolean value that indicates whether the Vault is primary Vault or replica Vault.
      * 
      */
     @Export(name="isPrimary", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isPrimary;
+    private Output</* @Nullable */ Boolean> isPrimary;
 
     /**
      * @return A Boolean value that indicates whether the Vault is primary Vault or replica Vault.
      * 
      */
-    public Output<Boolean> isPrimary() {
-        return this.isPrimary;
+    public Output<Optional<Boolean>> isPrimary() {
+        return Codegen.optional(this.isPrimary);
     }
     /**
      * The service endpoint to perform management operations against. Management operations include &#34;Create,&#34; &#34;Update,&#34; &#34;List,&#34; &#34;Get,&#34; and &#34;Delete&#34; operations.
      * 
      */
     @Export(name="managementEndpoint", refs={String.class}, tree="[0]")
-    private Output<String> managementEndpoint;
+    private Output</* @Nullable */ String> managementEndpoint;
 
     /**
      * @return The service endpoint to perform management operations against. Management operations include &#34;Create,&#34; &#34;Update,&#34; &#34;List,&#34; &#34;Get,&#34; and &#34;Delete&#34; operations.
      * 
      */
-    public Output<String> managementEndpoint() {
-        return this.managementEndpoint;
+    public Output<Optional<String>> managementEndpoint() {
+        return Codegen.optional(this.managementEndpoint);
     }
     /**
      * Vault replica details
      * 
      */
     @Export(name="replicaDetails", refs={List.class,VaultReplicaDetail.class}, tree="[0,1]")
-    private Output<List<VaultReplicaDetail>> replicaDetails;
+    private Output</* @Nullable */ List<VaultReplicaDetail>> replicaDetails;
 
     /**
      * @return Vault replica details
      * 
      */
-    public Output<List<VaultReplicaDetail>> replicaDetails() {
-        return this.replicaDetails;
+    public Output<Optional<List<VaultReplicaDetail>>> replicaDetails() {
+        return Codegen.optional(this.replicaDetails);
     }
     /**
      * (Updatable) Details where vault was backed up.
@@ -271,42 +271,42 @@ public class Vault extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="restoredFromVaultId", refs={String.class}, tree="[0]")
-    private Output<String> restoredFromVaultId;
+    private Output</* @Nullable */ String> restoredFromVaultId;
 
     /**
      * @return The OCID of the vault from which this vault was restored, if it was restored from a backup file. If you restore a vault to the same region, the vault retains the same OCID that it had when you backed up the vault.
      * 
      */
-    public Output<String> restoredFromVaultId() {
-        return this.restoredFromVaultId;
+    public Output<Optional<String>> restoredFromVaultId() {
+        return Codegen.optional(this.restoredFromVaultId);
     }
     /**
      * The vault&#39;s current lifecycle state.  Example: `DELETED`
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The vault&#39;s current lifecycle state.  Example: `DELETED`
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * The date and time this vault was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-04-03T21:10:29.600Z`
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The date and time this vault was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-04-03T21:10:29.600Z`
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * (Updatable) An optional property for the deletion time of the vault, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
@@ -316,7 +316,7 @@ public class Vault extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="timeOfDeletion", refs={String.class}, tree="[0]")
-    private Output<String> timeOfDeletion;
+    private Output</* @Nullable */ String> timeOfDeletion;
 
     /**
      * @return (Updatable) An optional property for the deletion time of the vault, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
@@ -325,8 +325,8 @@ public class Vault extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Output<String> timeOfDeletion() {
-        return this.timeOfDeletion;
+    public Output<Optional<String>> timeOfDeletion() {
+        return Codegen.optional(this.timeOfDeletion);
     }
     /**
      * The type of vault to create. Each type of vault stores the key with different degrees of isolation and has different options and pricing.

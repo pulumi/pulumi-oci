@@ -8,6 +8,8 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetEventsAuditEventDataResponse {
@@ -15,27 +17,27 @@ public final class GetEventsAuditEventDataResponse {
      * @return The headers of the response.
      * 
      */
-    private Map<String,Object> headers;
+    private @Nullable Map<String,Object> headers;
     /**
      * @return A friendly description of what happened during the operation. Use this for troubleshooting.
      * 
      */
-    private String message;
+    private @Nullable String message;
     /**
      * @return This value is included for backward compatibility with the Audit version 1 schema, where  it contained metadata of interest from the response payload.
      * 
      */
-    private Map<String,Object> payload;
+    private @Nullable Map<String,Object> payload;
     /**
      * @return The time of the response to the audited request, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2019-09-18T00:10:59.278Z`
      * 
      */
-    private String responseTime;
+    private @Nullable String responseTime;
     /**
      * @return The status code of the response.  Example: `200`
      * 
      */
-    private String status;
+    private @Nullable String status;
 
     private GetEventsAuditEventDataResponse() {}
     /**
@@ -43,35 +45,35 @@ public final class GetEventsAuditEventDataResponse {
      * 
      */
     public Map<String,Object> headers() {
-        return this.headers;
+        return this.headers == null ? Map.of() : this.headers;
     }
     /**
      * @return A friendly description of what happened during the operation. Use this for troubleshooting.
      * 
      */
-    public String message() {
-        return this.message;
+    public Optional<String> message() {
+        return Optional.ofNullable(this.message);
     }
     /**
      * @return This value is included for backward compatibility with the Audit version 1 schema, where  it contained metadata of interest from the response payload.
      * 
      */
     public Map<String,Object> payload() {
-        return this.payload;
+        return this.payload == null ? Map.of() : this.payload;
     }
     /**
      * @return The time of the response to the audited request, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2019-09-18T00:10:59.278Z`
      * 
      */
-    public String responseTime() {
-        return this.responseTime;
+    public Optional<String> responseTime() {
+        return Optional.ofNullable(this.responseTime);
     }
     /**
      * @return The status code of the response.  Example: `200`
      * 
      */
-    public String status() {
-        return this.status;
+    public Optional<String> status() {
+        return Optional.ofNullable(this.status);
     }
 
     public static Builder builder() {
@@ -83,11 +85,11 @@ public final class GetEventsAuditEventDataResponse {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Map<String,Object> headers;
-        private String message;
-        private Map<String,Object> payload;
-        private String responseTime;
-        private String status;
+        private @Nullable Map<String,Object> headers;
+        private @Nullable String message;
+        private @Nullable Map<String,Object> payload;
+        private @Nullable String responseTime;
+        private @Nullable String status;
         public Builder() {}
         public Builder(GetEventsAuditEventDataResponse defaults) {
     	      Objects.requireNonNull(defaults);
@@ -99,28 +101,28 @@ public final class GetEventsAuditEventDataResponse {
         }
 
         @CustomType.Setter
-        public Builder headers(Map<String,Object> headers) {
-            this.headers = Objects.requireNonNull(headers);
+        public Builder headers(@Nullable Map<String,Object> headers) {
+            this.headers = headers;
             return this;
         }
         @CustomType.Setter
-        public Builder message(String message) {
-            this.message = Objects.requireNonNull(message);
+        public Builder message(@Nullable String message) {
+            this.message = message;
             return this;
         }
         @CustomType.Setter
-        public Builder payload(Map<String,Object> payload) {
-            this.payload = Objects.requireNonNull(payload);
+        public Builder payload(@Nullable Map<String,Object> payload) {
+            this.payload = payload;
             return this;
         }
         @CustomType.Setter
-        public Builder responseTime(String responseTime) {
-            this.responseTime = Objects.requireNonNull(responseTime);
+        public Builder responseTime(@Nullable String responseTime) {
+            this.responseTime = responseTime;
             return this;
         }
         @CustomType.Setter
-        public Builder status(String status) {
-            this.status = Objects.requireNonNull(status);
+        public Builder status(@Nullable String status) {
+            this.status = status;
             return this;
         }
         public GetEventsAuditEventDataResponse build() {

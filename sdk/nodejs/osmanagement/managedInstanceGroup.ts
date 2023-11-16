@@ -76,11 +76,11 @@ export class ManagedInstanceGroup extends pulumi.CustomResource {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) Information specified by the user about the managed instance group
      */
-    public readonly description!: pulumi.Output<string>;
+    public readonly description!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Managed Instance Group identifier
      */
@@ -88,12 +88,12 @@ export class ManagedInstanceGroup extends pulumi.CustomResource {
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
-    public /*out*/ readonly managedInstanceCount!: pulumi.Output<number>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
+    public /*out*/ readonly managedInstanceCount!: pulumi.Output<number | undefined>;
     /**
      * list of Managed Instances in the group
      */
-    public /*out*/ readonly managedInstances!: pulumi.Output<outputs.OsManagement.ManagedInstanceGroupManagedInstance[]>;
+    public /*out*/ readonly managedInstances!: pulumi.Output<outputs.OsManagement.ManagedInstanceGroupManagedInstance[] | undefined>;
     /**
      * The Operating System type of the managed instance(s) on which this scheduled job will operate. If not specified, this defaults to Linux. 
      *
@@ -101,11 +101,11 @@ export class ManagedInstanceGroup extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly osFamily!: pulumi.Output<string>;
+    public readonly osFamily!: pulumi.Output<string | undefined>;
     /**
      * The current state of the Software Source.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
 
     /**
      * Create a ManagedInstanceGroup resource with the given unique name, arguments, and options.

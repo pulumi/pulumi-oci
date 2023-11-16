@@ -8,6 +8,8 @@ import com.pulumi.oci.ContainerEngine.outputs.GetWorkRequestsWorkRequestResource
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetWorkRequestsWorkRequest {
@@ -15,99 +17,99 @@ public final class GetWorkRequestsWorkRequest {
      * @return The OCID of the compartment.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return The OCID of the work request.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The type of work the work request is doing.
      * 
      */
-    private String operationType;
+    private @Nullable String operationType;
     /**
      * @return The resources this work request affects.
      * 
      */
-    private List<GetWorkRequestsWorkRequestResource> resources;
+    private @Nullable List<GetWorkRequestsWorkRequestResource> resources;
     /**
      * @return A work request status to filter on. Can have multiple parameters of this name.
      * 
      */
-    private String status;
+    private @Nullable String status;
     /**
      * @return The time the work request was accepted.
      * 
      */
-    private String timeAccepted;
+    private @Nullable String timeAccepted;
     /**
      * @return The time the work request was finished.
      * 
      */
-    private String timeFinished;
+    private @Nullable String timeFinished;
     /**
      * @return The time the work request was started.
      * 
      */
-    private String timeStarted;
+    private @Nullable String timeStarted;
 
     private GetWorkRequestsWorkRequest() {}
     /**
      * @return The OCID of the compartment.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return The OCID of the work request.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The type of work the work request is doing.
      * 
      */
-    public String operationType() {
-        return this.operationType;
+    public Optional<String> operationType() {
+        return Optional.ofNullable(this.operationType);
     }
     /**
      * @return The resources this work request affects.
      * 
      */
     public List<GetWorkRequestsWorkRequestResource> resources() {
-        return this.resources;
+        return this.resources == null ? List.of() : this.resources;
     }
     /**
      * @return A work request status to filter on. Can have multiple parameters of this name.
      * 
      */
-    public String status() {
-        return this.status;
+    public Optional<String> status() {
+        return Optional.ofNullable(this.status);
     }
     /**
      * @return The time the work request was accepted.
      * 
      */
-    public String timeAccepted() {
-        return this.timeAccepted;
+    public Optional<String> timeAccepted() {
+        return Optional.ofNullable(this.timeAccepted);
     }
     /**
      * @return The time the work request was finished.
      * 
      */
-    public String timeFinished() {
-        return this.timeFinished;
+    public Optional<String> timeFinished() {
+        return Optional.ofNullable(this.timeFinished);
     }
     /**
      * @return The time the work request was started.
      * 
      */
-    public String timeStarted() {
-        return this.timeStarted;
+    public Optional<String> timeStarted() {
+        return Optional.ofNullable(this.timeStarted);
     }
 
     public static Builder builder() {
@@ -119,14 +121,14 @@ public final class GetWorkRequestsWorkRequest {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String compartmentId;
-        private String id;
-        private String operationType;
-        private List<GetWorkRequestsWorkRequestResource> resources;
-        private String status;
-        private String timeAccepted;
-        private String timeFinished;
-        private String timeStarted;
+        private @Nullable String compartmentId;
+        private @Nullable String id;
+        private @Nullable String operationType;
+        private @Nullable List<GetWorkRequestsWorkRequestResource> resources;
+        private @Nullable String status;
+        private @Nullable String timeAccepted;
+        private @Nullable String timeFinished;
+        private @Nullable String timeStarted;
         public Builder() {}
         public Builder(GetWorkRequestsWorkRequest defaults) {
     	      Objects.requireNonNull(defaults);
@@ -141,46 +143,46 @@ public final class GetWorkRequestsWorkRequest {
         }
 
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder operationType(String operationType) {
-            this.operationType = Objects.requireNonNull(operationType);
+        public Builder operationType(@Nullable String operationType) {
+            this.operationType = operationType;
             return this;
         }
         @CustomType.Setter
-        public Builder resources(List<GetWorkRequestsWorkRequestResource> resources) {
-            this.resources = Objects.requireNonNull(resources);
+        public Builder resources(@Nullable List<GetWorkRequestsWorkRequestResource> resources) {
+            this.resources = resources;
             return this;
         }
         public Builder resources(GetWorkRequestsWorkRequestResource... resources) {
             return resources(List.of(resources));
         }
         @CustomType.Setter
-        public Builder status(String status) {
-            this.status = Objects.requireNonNull(status);
+        public Builder status(@Nullable String status) {
+            this.status = status;
             return this;
         }
         @CustomType.Setter
-        public Builder timeAccepted(String timeAccepted) {
-            this.timeAccepted = Objects.requireNonNull(timeAccepted);
+        public Builder timeAccepted(@Nullable String timeAccepted) {
+            this.timeAccepted = timeAccepted;
             return this;
         }
         @CustomType.Setter
-        public Builder timeFinished(String timeFinished) {
-            this.timeFinished = Objects.requireNonNull(timeFinished);
+        public Builder timeFinished(@Nullable String timeFinished) {
+            this.timeFinished = timeFinished;
             return this;
         }
         @CustomType.Setter
-        public Builder timeStarted(String timeStarted) {
-            this.timeStarted = Objects.requireNonNull(timeStarted);
+        public Builder timeStarted(@Nullable String timeStarted) {
+            this.timeStarted = timeStarted;
             return this;
         }
         public GetWorkRequestsWorkRequest build() {

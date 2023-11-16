@@ -22,14 +22,6 @@ class DrgRouteDistributionStatementArgs:
                  priority: pulumi.Input[int]):
         """
         The set of arguments for constructing a DrgRouteDistributionStatement resource.
-        :param pulumi.Input[str] action: Accept: import/export the route "as is"
-        :param pulumi.Input[str] drg_route_distribution_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route distribution.
-        :param pulumi.Input['DrgRouteDistributionStatementMatchCriteriaArgs'] match_criteria: (Updatable) The action is applied only if all of the match criteria are met. MATCH_ALL match type implies any input is considered a match.
-        :param pulumi.Input[int] priority: (Updatable) This field is used to specify the priority of each statement in a route distribution. The priority will be represented as a number between 0 and 65535 where a lower number indicates a higher priority. When a route is processed, statements are applied in the order defined by their priority. The first matching rule dictates the action that will be taken on the route. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "action", action)
         pulumi.set(__self__, "drg_route_distribution_id", drg_route_distribution_id)
@@ -39,9 +31,6 @@ class DrgRouteDistributionStatementArgs:
     @property
     @pulumi.getter
     def action(self) -> pulumi.Input[str]:
-        """
-        Accept: import/export the route "as is"
-        """
         return pulumi.get(self, "action")
 
     @action.setter
@@ -51,9 +40,6 @@ class DrgRouteDistributionStatementArgs:
     @property
     @pulumi.getter(name="drgRouteDistributionId")
     def drg_route_distribution_id(self) -> pulumi.Input[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route distribution.
-        """
         return pulumi.get(self, "drg_route_distribution_id")
 
     @drg_route_distribution_id.setter
@@ -63,9 +49,6 @@ class DrgRouteDistributionStatementArgs:
     @property
     @pulumi.getter(name="matchCriteria")
     def match_criteria(self) -> pulumi.Input['DrgRouteDistributionStatementMatchCriteriaArgs']:
-        """
-        (Updatable) The action is applied only if all of the match criteria are met. MATCH_ALL match type implies any input is considered a match.
-        """
         return pulumi.get(self, "match_criteria")
 
     @match_criteria.setter
@@ -75,13 +58,6 @@ class DrgRouteDistributionStatementArgs:
     @property
     @pulumi.getter
     def priority(self) -> pulumi.Input[int]:
-        """
-        (Updatable) This field is used to specify the priority of each statement in a route distribution. The priority will be represented as a number between 0 and 65535 where a lower number indicates a higher priority. When a route is processed, statements are applied in the order defined by their priority. The first matching rule dictates the action that will be taken on the route. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "priority")
 
     @priority.setter
@@ -98,14 +74,6 @@ class _DrgRouteDistributionStatementState:
                  priority: Optional[pulumi.Input[int]] = None):
         """
         Input properties used for looking up and filtering DrgRouteDistributionStatement resources.
-        :param pulumi.Input[str] action: Accept: import/export the route "as is"
-        :param pulumi.Input[str] drg_route_distribution_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route distribution.
-        :param pulumi.Input['DrgRouteDistributionStatementMatchCriteriaArgs'] match_criteria: (Updatable) The action is applied only if all of the match criteria are met. MATCH_ALL match type implies any input is considered a match.
-        :param pulumi.Input[int] priority: (Updatable) This field is used to specify the priority of each statement in a route distribution. The priority will be represented as a number between 0 and 65535 where a lower number indicates a higher priority. When a route is processed, statements are applied in the order defined by their priority. The first matching rule dictates the action that will be taken on the route. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if action is not None:
             pulumi.set(__self__, "action", action)
@@ -119,9 +87,6 @@ class _DrgRouteDistributionStatementState:
     @property
     @pulumi.getter
     def action(self) -> Optional[pulumi.Input[str]]:
-        """
-        Accept: import/export the route "as is"
-        """
         return pulumi.get(self, "action")
 
     @action.setter
@@ -131,9 +96,6 @@ class _DrgRouteDistributionStatementState:
     @property
     @pulumi.getter(name="drgRouteDistributionId")
     def drg_route_distribution_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route distribution.
-        """
         return pulumi.get(self, "drg_route_distribution_id")
 
     @drg_route_distribution_id.setter
@@ -143,9 +105,6 @@ class _DrgRouteDistributionStatementState:
     @property
     @pulumi.getter(name="matchCriteria")
     def match_criteria(self) -> Optional[pulumi.Input['DrgRouteDistributionStatementMatchCriteriaArgs']]:
-        """
-        (Updatable) The action is applied only if all of the match criteria are met. MATCH_ALL match type implies any input is considered a match.
-        """
         return pulumi.get(self, "match_criteria")
 
     @match_criteria.setter
@@ -155,13 +114,6 @@ class _DrgRouteDistributionStatementState:
     @property
     @pulumi.getter
     def priority(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) This field is used to specify the priority of each statement in a route distribution. The priority will be represented as a number between 0 and 65535 where a lower number indicates a higher priority. When a route is processed, statements are applied in the order defined by their priority. The first matching rule dictates the action that will be taken on the route. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "priority")
 
     @priority.setter
@@ -180,45 +132,9 @@ class DrgRouteDistributionStatement(pulumi.CustomResource):
                  priority: Optional[pulumi.Input[int]] = None,
                  __props__=None):
         """
-        This resource provides the Drg Route Distribution Statement resource in Oracle Cloud Infrastructure Core service.
-
-        Adds one route distribution statement to the specified route distribution.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_drg_route_distribution_statement = oci.core.DrgRouteDistributionStatement("testDrgRouteDistributionStatement",
-            drg_route_distribution_id=oci_core_drg_route_distribution["test_drg_route_distribution"]["id"],
-            action=var["drg_route_distribution_statement_statements_action"],
-            match_criteria=oci.core.DrgRouteDistributionStatementMatchCriteriaArgs(
-                match_type=var["drg_route_distribution_statement_statements_match_criteria_match_type"],
-                attachment_type=var["drg_route_distribution_statement_statements_match_criteria_attachment_type"],
-                drg_attachment_id=oci_core_drg_attachment["test_drg_attachment"]["id"],
-            ),
-            priority=var["drg_route_distribution_statement_statements_priority"])
-        ```
-
-        ## Import
-
-        DrgRouteDistributionStatement can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Core/drgRouteDistributionStatement:DrgRouteDistributionStatement test_drg_route_distribution_statement "drgRouteDistributions/{drgRouteDistributionId}/statements/{id}"
-        ```
-
+        Create a DrgRouteDistributionStatement resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] action: Accept: import/export the route "as is"
-        :param pulumi.Input[str] drg_route_distribution_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route distribution.
-        :param pulumi.Input[pulumi.InputType['DrgRouteDistributionStatementMatchCriteriaArgs']] match_criteria: (Updatable) The action is applied only if all of the match criteria are met. MATCH_ALL match type implies any input is considered a match.
-        :param pulumi.Input[int] priority: (Updatable) This field is used to specify the priority of each statement in a route distribution. The priority will be represented as a number between 0 and 65535 where a lower number indicates a higher priority. When a route is processed, statements are applied in the order defined by their priority. The first matching rule dictates the action that will be taken on the route. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -227,35 +143,7 @@ class DrgRouteDistributionStatement(pulumi.CustomResource):
                  args: DrgRouteDistributionStatementArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Drg Route Distribution Statement resource in Oracle Cloud Infrastructure Core service.
-
-        Adds one route distribution statement to the specified route distribution.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_drg_route_distribution_statement = oci.core.DrgRouteDistributionStatement("testDrgRouteDistributionStatement",
-            drg_route_distribution_id=oci_core_drg_route_distribution["test_drg_route_distribution"]["id"],
-            action=var["drg_route_distribution_statement_statements_action"],
-            match_criteria=oci.core.DrgRouteDistributionStatementMatchCriteriaArgs(
-                match_type=var["drg_route_distribution_statement_statements_match_criteria_match_type"],
-                attachment_type=var["drg_route_distribution_statement_statements_match_criteria_attachment_type"],
-                drg_attachment_id=oci_core_drg_attachment["test_drg_attachment"]["id"],
-            ),
-            priority=var["drg_route_distribution_statement_statements_priority"])
-        ```
-
-        ## Import
-
-        DrgRouteDistributionStatement can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Core/drgRouteDistributionStatement:DrgRouteDistributionStatement test_drg_route_distribution_statement "drgRouteDistributions/{drgRouteDistributionId}/statements/{id}"
-        ```
-
+        Create a DrgRouteDistributionStatement resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param DrgRouteDistributionStatementArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -317,14 +205,6 @@ class DrgRouteDistributionStatement(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] action: Accept: import/export the route "as is"
-        :param pulumi.Input[str] drg_route_distribution_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route distribution.
-        :param pulumi.Input[pulumi.InputType['DrgRouteDistributionStatementMatchCriteriaArgs']] match_criteria: (Updatable) The action is applied only if all of the match criteria are met. MATCH_ALL match type implies any input is considered a match.
-        :param pulumi.Input[int] priority: (Updatable) This field is used to specify the priority of each statement in a route distribution. The priority will be represented as a number between 0 and 65535 where a lower number indicates a higher priority. When a route is processed, statements are applied in the order defined by their priority. The first matching rule dictates the action that will be taken on the route. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -339,36 +219,20 @@ class DrgRouteDistributionStatement(pulumi.CustomResource):
     @property
     @pulumi.getter
     def action(self) -> pulumi.Output[str]:
-        """
-        Accept: import/export the route "as is"
-        """
         return pulumi.get(self, "action")
 
     @property
     @pulumi.getter(name="drgRouteDistributionId")
     def drg_route_distribution_id(self) -> pulumi.Output[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route distribution.
-        """
         return pulumi.get(self, "drg_route_distribution_id")
 
     @property
     @pulumi.getter(name="matchCriteria")
     def match_criteria(self) -> pulumi.Output['outputs.DrgRouteDistributionStatementMatchCriteria']:
-        """
-        (Updatable) The action is applied only if all of the match criteria are met. MATCH_ALL match type implies any input is considered a match.
-        """
         return pulumi.get(self, "match_criteria")
 
     @property
     @pulumi.getter
     def priority(self) -> pulumi.Output[int]:
-        """
-        (Updatable) This field is used to specify the priority of each statement in a route distribution. The priority will be represented as a number between 0 and 65535 where a lower number indicates a higher priority. When a route is processed, statements are applied in the order defined by their priority. The first matching rule dictates the action that will be taken on the route. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "priority")
 

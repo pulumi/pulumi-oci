@@ -31,7 +31,7 @@ class GetProxyDetailResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -39,10 +39,7 @@ class GetProxyDetailResult:
 
     @property
     @pulumi.getter(name="proxyImage")
-    def proxy_image(self) -> str:
-        """
-        Proxy container image version to be deployed.
-        """
+    def proxy_image(self) -> Optional[str]:
         return pulumi.get(self, "proxy_image")
 
 
@@ -58,18 +55,7 @@ class AwaitableGetProxyDetailResult(GetProxyDetailResult):
 
 def get_proxy_detail(opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetProxyDetailResult:
     """
-    This data source provides details about a specific Proxy Detail resource in Oracle Cloud Infrastructure Service Mesh service.
-
-    Returns the attributes of the Proxy such as proxy image version.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_proxy_detail = oci.ServiceMesh.get_proxy_detail()
-    ```
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
@@ -83,17 +69,6 @@ def get_proxy_detail(opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGe
 @_utilities.lift_output_func(get_proxy_detail)
 def get_proxy_detail_output(opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetProxyDetailResult]:
     """
-    This data source provides details about a specific Proxy Detail resource in Oracle Cloud Infrastructure Service Mesh service.
-
-    Returns the attributes of the Proxy such as proxy image version.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_proxy_detail = oci.ServiceMesh.get_proxy_detail()
-    ```
+    Use this data source to access information about an existing resource.
     """
     ...

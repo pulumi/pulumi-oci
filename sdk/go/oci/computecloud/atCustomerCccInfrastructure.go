@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Ccc Infrastructure resource in Oracle Cloud Infrastructure Compute Cloud At Customer service.
@@ -69,17 +68,17 @@ type AtCustomerCccInfrastructure struct {
 	pulumi.CustomResourceState
 
 	// (Updatable) Schedule used for upgrades. If no schedule is associated with the infrastructure, it can be upgraded at any time.
-	CccUpgradeScheduleId pulumi.StringOutput `pulumi:"cccUpgradeScheduleId"`
+	CccUpgradeScheduleId pulumi.StringPtrOutput `pulumi:"cccUpgradeScheduleId"`
 	// (Updatable) The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the infrastructure.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) A message describing the current connection state in more detail.
-	ConnectionDetails pulumi.StringOutput `pulumi:"connectionDetails"`
+	ConnectionDetails pulumi.StringPtrOutput `pulumi:"connectionDetails"`
 	// (Updatable) The current connection state of the Compute Cloud@Customer infrastructure. This value will default to REJECT if the value is not provided. The only valid value at creation time is REJECT.
-	ConnectionState pulumi.StringOutput `pulumi:"connectionState"`
+	ConnectionState pulumi.StringPtrOutput `pulumi:"connectionState"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) A mutable client-meaningful text description of the Compute Cloud@Customer infrastructure. Avoid entering confidential information.
-	Description pulumi.StringOutput `pulumi:"description"`
+	Description pulumi.StringPtrOutput `pulumi:"description"`
 	// (Updatable) The name that will be used to display the Compute Cloud@Customer infrastructure in the Oracle Cloud Infrastructure console. Does not have to be unique and can be changed. Avoid entering confidential information.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -89,15 +88,15 @@ type AtCustomerCccInfrastructure struct {
 	// Configuration information for the Compute Cloud@Customer infrastructure. This  network configuration information cannot be updated and is retrieved from the data center. The information will only be available after the connectionState is transitioned to CONNECTED.
 	InfrastructureNetworkConfigurations AtCustomerCccInfrastructureInfrastructureNetworkConfigurationArrayOutput `pulumi:"infrastructureNetworkConfigurations"`
 	// A message describing the current lifecycle state in more detail. For example, this can be used to provide actionable information for a resource that is in a Failed state.
-	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrOutput `pulumi:"lifecycleDetails"`
 	// Fingerprint of a Compute Cloud@Customer infrastructure in a data center generated during the initial connection to this resource. The fingerprint should be verified by the administrator when changing the connectionState from REQUEST to READY.
-	ProvisioningFingerprint pulumi.StringOutput `pulumi:"provisioningFingerprint"`
+	ProvisioningFingerprint pulumi.StringPtrOutput `pulumi:"provisioningFingerprint"`
 	// Code that is required for service personnel to connect a Compute Cloud@Customer infrastructure in a data center to this resource. This code will only be available when the connectionState is REJECT (usually at create time of the Compute Cloud@Customer infrastructure).
-	ProvisioningPin pulumi.StringOutput `pulumi:"provisioningPin"`
+	ProvisioningPin pulumi.StringPtrOutput `pulumi:"provisioningPin"`
 	// The Compute Cloud@Customer infrastructure short name. This cannot be changed once created. The short name is used to refer to the infrastructure in several contexts and is unique.
-	ShortName pulumi.StringOutput `pulumi:"shortName"`
+	ShortName pulumi.StringPtrOutput `pulumi:"shortName"`
 	// The current state of the Compute Cloud@Customer infrastructure.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// (Updatable) Identifier for network subnet that will be used to communicate with Compute Cloud@Customer infrastructure.
 	//
 	// ** IMPORTANT **
@@ -106,9 +105,9 @@ type AtCustomerCccInfrastructure struct {
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
 	// Compute Cloud@Customer infrastructure creation date and time, using an RFC3339 formatted datetime string.
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// Compute Cloud@Customer infrastructure updated date and time, using an RFC3339 formatted datetime string.
-	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 	// Upgrade information that relates to a Compute Cloud@Customer infrastructure. This information cannot be updated.
 	UpgradeInformations AtCustomerCccInfrastructureUpgradeInformationArrayOutput `pulumi:"upgradeInformations"`
 }
@@ -319,12 +318,6 @@ func (i *AtCustomerCccInfrastructure) ToAtCustomerCccInfrastructureOutputWithCon
 	return pulumi.ToOutputWithContext(ctx, i).(AtCustomerCccInfrastructureOutput)
 }
 
-func (i *AtCustomerCccInfrastructure) ToOutput(ctx context.Context) pulumix.Output[*AtCustomerCccInfrastructure] {
-	return pulumix.Output[*AtCustomerCccInfrastructure]{
-		OutputState: i.ToAtCustomerCccInfrastructureOutputWithContext(ctx).OutputState,
-	}
-}
-
 // AtCustomerCccInfrastructureArrayInput is an input type that accepts AtCustomerCccInfrastructureArray and AtCustomerCccInfrastructureArrayOutput values.
 // You can construct a concrete instance of `AtCustomerCccInfrastructureArrayInput` via:
 //
@@ -348,12 +341,6 @@ func (i AtCustomerCccInfrastructureArray) ToAtCustomerCccInfrastructureArrayOutp
 
 func (i AtCustomerCccInfrastructureArray) ToAtCustomerCccInfrastructureArrayOutputWithContext(ctx context.Context) AtCustomerCccInfrastructureArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(AtCustomerCccInfrastructureArrayOutput)
-}
-
-func (i AtCustomerCccInfrastructureArray) ToOutput(ctx context.Context) pulumix.Output[[]*AtCustomerCccInfrastructure] {
-	return pulumix.Output[[]*AtCustomerCccInfrastructure]{
-		OutputState: i.ToAtCustomerCccInfrastructureArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // AtCustomerCccInfrastructureMapInput is an input type that accepts AtCustomerCccInfrastructureMap and AtCustomerCccInfrastructureMapOutput values.
@@ -381,12 +368,6 @@ func (i AtCustomerCccInfrastructureMap) ToAtCustomerCccInfrastructureMapOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(AtCustomerCccInfrastructureMapOutput)
 }
 
-func (i AtCustomerCccInfrastructureMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*AtCustomerCccInfrastructure] {
-	return pulumix.Output[map[string]*AtCustomerCccInfrastructure]{
-		OutputState: i.ToAtCustomerCccInfrastructureMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type AtCustomerCccInfrastructureOutput struct{ *pulumi.OutputState }
 
 func (AtCustomerCccInfrastructureOutput) ElementType() reflect.Type {
@@ -401,15 +382,9 @@ func (o AtCustomerCccInfrastructureOutput) ToAtCustomerCccInfrastructureOutputWi
 	return o
 }
 
-func (o AtCustomerCccInfrastructureOutput) ToOutput(ctx context.Context) pulumix.Output[*AtCustomerCccInfrastructure] {
-	return pulumix.Output[*AtCustomerCccInfrastructure]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) Schedule used for upgrades. If no schedule is associated with the infrastructure, it can be upgraded at any time.
-func (o AtCustomerCccInfrastructureOutput) CccUpgradeScheduleId() pulumi.StringOutput {
-	return o.ApplyT(func(v *AtCustomerCccInfrastructure) pulumi.StringOutput { return v.CccUpgradeScheduleId }).(pulumi.StringOutput)
+func (o AtCustomerCccInfrastructureOutput) CccUpgradeScheduleId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AtCustomerCccInfrastructure) pulumi.StringPtrOutput { return v.CccUpgradeScheduleId }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the infrastructure.
@@ -418,13 +393,13 @@ func (o AtCustomerCccInfrastructureOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // (Updatable) A message describing the current connection state in more detail.
-func (o AtCustomerCccInfrastructureOutput) ConnectionDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v *AtCustomerCccInfrastructure) pulumi.StringOutput { return v.ConnectionDetails }).(pulumi.StringOutput)
+func (o AtCustomerCccInfrastructureOutput) ConnectionDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AtCustomerCccInfrastructure) pulumi.StringPtrOutput { return v.ConnectionDetails }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The current connection state of the Compute Cloud@Customer infrastructure. This value will default to REJECT if the value is not provided. The only valid value at creation time is REJECT.
-func (o AtCustomerCccInfrastructureOutput) ConnectionState() pulumi.StringOutput {
-	return o.ApplyT(func(v *AtCustomerCccInfrastructure) pulumi.StringOutput { return v.ConnectionState }).(pulumi.StringOutput)
+func (o AtCustomerCccInfrastructureOutput) ConnectionState() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AtCustomerCccInfrastructure) pulumi.StringPtrOutput { return v.ConnectionState }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -433,8 +408,8 @@ func (o AtCustomerCccInfrastructureOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // (Updatable) A mutable client-meaningful text description of the Compute Cloud@Customer infrastructure. Avoid entering confidential information.
-func (o AtCustomerCccInfrastructureOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v *AtCustomerCccInfrastructure) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
+func (o AtCustomerCccInfrastructureOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AtCustomerCccInfrastructure) pulumi.StringPtrOutput { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The name that will be used to display the Compute Cloud@Customer infrastructure in the Oracle Cloud Infrastructure console. Does not have to be unique and can be changed. Avoid entering confidential information.
@@ -462,28 +437,28 @@ func (o AtCustomerCccInfrastructureOutput) InfrastructureNetworkConfigurations()
 }
 
 // A message describing the current lifecycle state in more detail. For example, this can be used to provide actionable information for a resource that is in a Failed state.
-func (o AtCustomerCccInfrastructureOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v *AtCustomerCccInfrastructure) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o AtCustomerCccInfrastructureOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AtCustomerCccInfrastructure) pulumi.StringPtrOutput { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // Fingerprint of a Compute Cloud@Customer infrastructure in a data center generated during the initial connection to this resource. The fingerprint should be verified by the administrator when changing the connectionState from REQUEST to READY.
-func (o AtCustomerCccInfrastructureOutput) ProvisioningFingerprint() pulumi.StringOutput {
-	return o.ApplyT(func(v *AtCustomerCccInfrastructure) pulumi.StringOutput { return v.ProvisioningFingerprint }).(pulumi.StringOutput)
+func (o AtCustomerCccInfrastructureOutput) ProvisioningFingerprint() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AtCustomerCccInfrastructure) pulumi.StringPtrOutput { return v.ProvisioningFingerprint }).(pulumi.StringPtrOutput)
 }
 
 // Code that is required for service personnel to connect a Compute Cloud@Customer infrastructure in a data center to this resource. This code will only be available when the connectionState is REJECT (usually at create time of the Compute Cloud@Customer infrastructure).
-func (o AtCustomerCccInfrastructureOutput) ProvisioningPin() pulumi.StringOutput {
-	return o.ApplyT(func(v *AtCustomerCccInfrastructure) pulumi.StringOutput { return v.ProvisioningPin }).(pulumi.StringOutput)
+func (o AtCustomerCccInfrastructureOutput) ProvisioningPin() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AtCustomerCccInfrastructure) pulumi.StringPtrOutput { return v.ProvisioningPin }).(pulumi.StringPtrOutput)
 }
 
 // The Compute Cloud@Customer infrastructure short name. This cannot be changed once created. The short name is used to refer to the infrastructure in several contexts and is unique.
-func (o AtCustomerCccInfrastructureOutput) ShortName() pulumi.StringOutput {
-	return o.ApplyT(func(v *AtCustomerCccInfrastructure) pulumi.StringOutput { return v.ShortName }).(pulumi.StringOutput)
+func (o AtCustomerCccInfrastructureOutput) ShortName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AtCustomerCccInfrastructure) pulumi.StringPtrOutput { return v.ShortName }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the Compute Cloud@Customer infrastructure.
-func (o AtCustomerCccInfrastructureOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *AtCustomerCccInfrastructure) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o AtCustomerCccInfrastructureOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AtCustomerCccInfrastructure) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Identifier for network subnet that will be used to communicate with Compute Cloud@Customer infrastructure.
@@ -500,13 +475,13 @@ func (o AtCustomerCccInfrastructureOutput) SystemTags() pulumi.MapOutput {
 }
 
 // Compute Cloud@Customer infrastructure creation date and time, using an RFC3339 formatted datetime string.
-func (o AtCustomerCccInfrastructureOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *AtCustomerCccInfrastructure) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o AtCustomerCccInfrastructureOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AtCustomerCccInfrastructure) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // Compute Cloud@Customer infrastructure updated date and time, using an RFC3339 formatted datetime string.
-func (o AtCustomerCccInfrastructureOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *AtCustomerCccInfrastructure) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o AtCustomerCccInfrastructureOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AtCustomerCccInfrastructure) pulumi.StringPtrOutput { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 // Upgrade information that relates to a Compute Cloud@Customer infrastructure. This information cannot be updated.
@@ -530,12 +505,6 @@ func (o AtCustomerCccInfrastructureArrayOutput) ToAtCustomerCccInfrastructureArr
 	return o
 }
 
-func (o AtCustomerCccInfrastructureArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*AtCustomerCccInfrastructure] {
-	return pulumix.Output[[]*AtCustomerCccInfrastructure]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o AtCustomerCccInfrastructureArrayOutput) Index(i pulumi.IntInput) AtCustomerCccInfrastructureOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *AtCustomerCccInfrastructure {
 		return vs[0].([]*AtCustomerCccInfrastructure)[vs[1].(int)]
@@ -554,12 +523,6 @@ func (o AtCustomerCccInfrastructureMapOutput) ToAtCustomerCccInfrastructureMapOu
 
 func (o AtCustomerCccInfrastructureMapOutput) ToAtCustomerCccInfrastructureMapOutputWithContext(ctx context.Context) AtCustomerCccInfrastructureMapOutput {
 	return o
-}
-
-func (o AtCustomerCccInfrastructureMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*AtCustomerCccInfrastructure] {
-	return pulumix.Output[map[string]*AtCustomerCccInfrastructure]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o AtCustomerCccInfrastructureMapOutput) MapIndex(k pulumi.StringInput) AtCustomerCccInfrastructureOutput {

@@ -188,7 +188,7 @@ namespace Pulumi.Oci.LogAnalytics
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         public readonly string? Level;
         /// <summary>
         /// The property name.
@@ -208,7 +208,7 @@ namespace Pulumi.Oci.LogAnalytics
 
             ImmutableArray<Outputs.GetNamespacePropertiesMetadataFilterResult> filters,
 
-            string id,
+            string? id,
 
             string? level,
 

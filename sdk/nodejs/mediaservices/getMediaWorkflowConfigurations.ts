@@ -81,7 +81,7 @@ export interface GetMediaWorkflowConfigurationsResult {
     /**
      * The list of media_workflow_configuration_collection.
      */
-    readonly mediaWorkflowConfigurationCollections: outputs.MediaServices.GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollection[];
+    readonly mediaWorkflowConfigurationCollections?: outputs.MediaServices.GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollection[];
     /**
      * The current state of the MediaWorkflowConfiguration.
      */

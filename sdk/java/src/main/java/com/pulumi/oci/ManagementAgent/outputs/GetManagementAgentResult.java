@@ -12,6 +12,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetManagementAgentResult {
@@ -19,235 +21,235 @@ public final class GetManagementAgentResult {
      * @return The current availability status of managementAgent
      * 
      */
-    private String availabilityStatus;
+    private @Nullable String availabilityStatus;
     /**
      * @return Compartment Identifier
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
-    private List<String> deployPluginsIds;
+    private @Nullable Map<String,Object> definedTags;
+    private @Nullable List<String> deployPluginsIds;
     /**
      * @return Management Agent Name
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return Management Agent host machine name
      * 
      */
-    private String host;
+    private @Nullable String host;
     /**
      * @return Host resource ocid
      * 
      */
-    private String hostId;
+    private @Nullable String hostId;
     /**
      * @return agent identifier
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return agent install key identifier
      * 
      */
-    private String installKeyId;
+    private @Nullable String installKeyId;
     /**
      * @return Path where Management Agent is installed
      * 
      */
-    private String installPath;
+    private @Nullable String installPath;
     /**
      * @return The install type, either AGENT or GATEWAY
      * 
      */
-    private String installType;
+    private @Nullable String installType;
     /**
      * @return true if the agent can be upgraded automatically; false if it must be upgraded manually. This flag is derived from the tenancy level auto upgrade preference.
      * 
      */
-    private Boolean isAgentAutoUpgradable;
+    private @Nullable Boolean isAgentAutoUpgradable;
     /**
      * @return true, if the agent image is manually downloaded and installed. false, if the agent is deployed as a plugin in Oracle Cloud Agent.
      * 
      */
-    private Boolean isCustomerDeployed;
+    private @Nullable Boolean isCustomerDeployed;
     /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
-    private String lifecycleDetails;
-    private String managedAgentId;
+    private @Nullable String lifecycleDetails;
+    private @Nullable String managedAgentId;
     private String managementAgentId;
     /**
      * @return Additional properties for this Management Agent
      * 
      */
-    private List<GetManagementAgentManagementAgentProperty> managementAgentProperties;
+    private @Nullable List<GetManagementAgentManagementAgentProperty> managementAgentProperties;
     /**
      * @return Platform Name
      * 
      */
-    private String platformName;
+    private @Nullable String platformName;
     /**
      * @return Platform Type
      * 
      */
-    private String platformType;
+    private @Nullable String platformType;
     /**
      * @return Platform Version
      * 
      */
-    private String platformVersion;
+    private @Nullable String platformVersion;
     /**
      * @return list of managementAgentPlugins associated with the agent
      * 
      */
-    private List<GetManagementAgentPluginList> pluginLists;
+    private @Nullable List<GetManagementAgentPluginList> pluginLists;
     /**
      * @return Version of the deployment artifact instantiated by this Management Agent. The format for Standalone resourceMode is YYMMDD.HHMM, and the format for other modes (whose artifacts are based upon Standalone but can advance independently) is YYMMDD.HHMM.VVVVVVVVVVVV. VVVVVVVVVVVV is always a numeric value between 000000000000 and 999999999999
      * 
      */
-    private String resourceArtifactVersion;
+    private @Nullable String resourceArtifactVersion;
     /**
      * @return The current state of managementAgent
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return The time the Management Agent was created. An RFC3339 formatted datetime string
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The time the Management Agent has last recorded its health status in telemetry. This value will be null if the agent has not recorded its health status in last 7 days. An RFC3339 formatted datetime string
      * 
      */
-    private String timeLastHeartbeat;
+    private @Nullable String timeLastHeartbeat;
     /**
      * @return The time the Management Agent was last updated. An RFC3339 formatted datetime string
      * 
      */
-    private String timeUpdated;
+    private @Nullable String timeUpdated;
     /**
      * @return Management Agent Version
      * 
      */
-    private String version;
+    private @Nullable String version;
 
     private GetManagementAgentResult() {}
     /**
      * @return The current availability status of managementAgent
      * 
      */
-    public String availabilityStatus() {
-        return this.availabilityStatus;
+    public Optional<String> availabilityStatus() {
+        return Optional.ofNullable(this.availabilityStatus);
     }
     /**
      * @return Compartment Identifier
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     public List<String> deployPluginsIds() {
-        return this.deployPluginsIds;
+        return this.deployPluginsIds == null ? List.of() : this.deployPluginsIds;
     }
     /**
      * @return Management Agent Name
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return Management Agent host machine name
      * 
      */
-    public String host() {
-        return this.host;
+    public Optional<String> host() {
+        return Optional.ofNullable(this.host);
     }
     /**
      * @return Host resource ocid
      * 
      */
-    public String hostId() {
-        return this.hostId;
+    public Optional<String> hostId() {
+        return Optional.ofNullable(this.hostId);
     }
     /**
      * @return agent identifier
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return agent install key identifier
      * 
      */
-    public String installKeyId() {
-        return this.installKeyId;
+    public Optional<String> installKeyId() {
+        return Optional.ofNullable(this.installKeyId);
     }
     /**
      * @return Path where Management Agent is installed
      * 
      */
-    public String installPath() {
-        return this.installPath;
+    public Optional<String> installPath() {
+        return Optional.ofNullable(this.installPath);
     }
     /**
      * @return The install type, either AGENT or GATEWAY
      * 
      */
-    public String installType() {
-        return this.installType;
+    public Optional<String> installType() {
+        return Optional.ofNullable(this.installType);
     }
     /**
      * @return true if the agent can be upgraded automatically; false if it must be upgraded manually. This flag is derived from the tenancy level auto upgrade preference.
      * 
      */
-    public Boolean isAgentAutoUpgradable() {
-        return this.isAgentAutoUpgradable;
+    public Optional<Boolean> isAgentAutoUpgradable() {
+        return Optional.ofNullable(this.isAgentAutoUpgradable);
     }
     /**
      * @return true, if the agent image is manually downloaded and installed. false, if the agent is deployed as a plugin in Oracle Cloud Agent.
      * 
      */
-    public Boolean isCustomerDeployed() {
-        return this.isCustomerDeployed;
+    public Optional<Boolean> isCustomerDeployed() {
+        return Optional.ofNullable(this.isCustomerDeployed);
     }
     /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
-    public String lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Optional<String> lifecycleDetails() {
+        return Optional.ofNullable(this.lifecycleDetails);
     }
-    public String managedAgentId() {
-        return this.managedAgentId;
+    public Optional<String> managedAgentId() {
+        return Optional.ofNullable(this.managedAgentId);
     }
     public String managementAgentId() {
         return this.managementAgentId;
@@ -257,77 +259,77 @@ public final class GetManagementAgentResult {
      * 
      */
     public List<GetManagementAgentManagementAgentProperty> managementAgentProperties() {
-        return this.managementAgentProperties;
+        return this.managementAgentProperties == null ? List.of() : this.managementAgentProperties;
     }
     /**
      * @return Platform Name
      * 
      */
-    public String platformName() {
-        return this.platformName;
+    public Optional<String> platformName() {
+        return Optional.ofNullable(this.platformName);
     }
     /**
      * @return Platform Type
      * 
      */
-    public String platformType() {
-        return this.platformType;
+    public Optional<String> platformType() {
+        return Optional.ofNullable(this.platformType);
     }
     /**
      * @return Platform Version
      * 
      */
-    public String platformVersion() {
-        return this.platformVersion;
+    public Optional<String> platformVersion() {
+        return Optional.ofNullable(this.platformVersion);
     }
     /**
      * @return list of managementAgentPlugins associated with the agent
      * 
      */
     public List<GetManagementAgentPluginList> pluginLists() {
-        return this.pluginLists;
+        return this.pluginLists == null ? List.of() : this.pluginLists;
     }
     /**
      * @return Version of the deployment artifact instantiated by this Management Agent. The format for Standalone resourceMode is YYMMDD.HHMM, and the format for other modes (whose artifacts are based upon Standalone but can advance independently) is YYMMDD.HHMM.VVVVVVVVVVVV. VVVVVVVVVVVV is always a numeric value between 000000000000 and 999999999999
      * 
      */
-    public String resourceArtifactVersion() {
-        return this.resourceArtifactVersion;
+    public Optional<String> resourceArtifactVersion() {
+        return Optional.ofNullable(this.resourceArtifactVersion);
     }
     /**
      * @return The current state of managementAgent
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return The time the Management Agent was created. An RFC3339 formatted datetime string
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return The time the Management Agent has last recorded its health status in telemetry. This value will be null if the agent has not recorded its health status in last 7 days. An RFC3339 formatted datetime string
      * 
      */
-    public String timeLastHeartbeat() {
-        return this.timeLastHeartbeat;
+    public Optional<String> timeLastHeartbeat() {
+        return Optional.ofNullable(this.timeLastHeartbeat);
     }
     /**
      * @return The time the Management Agent was last updated. An RFC3339 formatted datetime string
      * 
      */
-    public String timeUpdated() {
-        return this.timeUpdated;
+    public Optional<String> timeUpdated() {
+        return Optional.ofNullable(this.timeUpdated);
     }
     /**
      * @return Management Agent Version
      * 
      */
-    public String version() {
-        return this.version;
+    public Optional<String> version() {
+        return Optional.ofNullable(this.version);
     }
 
     public static Builder builder() {
@@ -339,34 +341,34 @@ public final class GetManagementAgentResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String availabilityStatus;
-        private String compartmentId;
-        private Map<String,Object> definedTags;
-        private List<String> deployPluginsIds;
-        private String displayName;
-        private Map<String,Object> freeformTags;
-        private String host;
-        private String hostId;
-        private String id;
-        private String installKeyId;
-        private String installPath;
-        private String installType;
-        private Boolean isAgentAutoUpgradable;
-        private Boolean isCustomerDeployed;
-        private String lifecycleDetails;
-        private String managedAgentId;
+        private @Nullable String availabilityStatus;
+        private @Nullable String compartmentId;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable List<String> deployPluginsIds;
+        private @Nullable String displayName;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String host;
+        private @Nullable String hostId;
+        private @Nullable String id;
+        private @Nullable String installKeyId;
+        private @Nullable String installPath;
+        private @Nullable String installType;
+        private @Nullable Boolean isAgentAutoUpgradable;
+        private @Nullable Boolean isCustomerDeployed;
+        private @Nullable String lifecycleDetails;
+        private @Nullable String managedAgentId;
         private String managementAgentId;
-        private List<GetManagementAgentManagementAgentProperty> managementAgentProperties;
-        private String platformName;
-        private String platformType;
-        private String platformVersion;
-        private List<GetManagementAgentPluginList> pluginLists;
-        private String resourceArtifactVersion;
-        private String state;
-        private String timeCreated;
-        private String timeLastHeartbeat;
-        private String timeUpdated;
-        private String version;
+        private @Nullable List<GetManagementAgentManagementAgentProperty> managementAgentProperties;
+        private @Nullable String platformName;
+        private @Nullable String platformType;
+        private @Nullable String platformVersion;
+        private @Nullable List<GetManagementAgentPluginList> pluginLists;
+        private @Nullable String resourceArtifactVersion;
+        private @Nullable String state;
+        private @Nullable String timeCreated;
+        private @Nullable String timeLastHeartbeat;
+        private @Nullable String timeUpdated;
+        private @Nullable String version;
         public Builder() {}
         public Builder(GetManagementAgentResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -401,86 +403,86 @@ public final class GetManagementAgentResult {
         }
 
         @CustomType.Setter
-        public Builder availabilityStatus(String availabilityStatus) {
-            this.availabilityStatus = Objects.requireNonNull(availabilityStatus);
+        public Builder availabilityStatus(@Nullable String availabilityStatus) {
+            this.availabilityStatus = availabilityStatus;
             return this;
         }
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder deployPluginsIds(List<String> deployPluginsIds) {
-            this.deployPluginsIds = Objects.requireNonNull(deployPluginsIds);
+        public Builder deployPluginsIds(@Nullable List<String> deployPluginsIds) {
+            this.deployPluginsIds = deployPluginsIds;
             return this;
         }
         public Builder deployPluginsIds(String... deployPluginsIds) {
             return deployPluginsIds(List.of(deployPluginsIds));
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder host(String host) {
-            this.host = Objects.requireNonNull(host);
+        public Builder host(@Nullable String host) {
+            this.host = host;
             return this;
         }
         @CustomType.Setter
-        public Builder hostId(String hostId) {
-            this.hostId = Objects.requireNonNull(hostId);
+        public Builder hostId(@Nullable String hostId) {
+            this.hostId = hostId;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder installKeyId(String installKeyId) {
-            this.installKeyId = Objects.requireNonNull(installKeyId);
+        public Builder installKeyId(@Nullable String installKeyId) {
+            this.installKeyId = installKeyId;
             return this;
         }
         @CustomType.Setter
-        public Builder installPath(String installPath) {
-            this.installPath = Objects.requireNonNull(installPath);
+        public Builder installPath(@Nullable String installPath) {
+            this.installPath = installPath;
             return this;
         }
         @CustomType.Setter
-        public Builder installType(String installType) {
-            this.installType = Objects.requireNonNull(installType);
+        public Builder installType(@Nullable String installType) {
+            this.installType = installType;
             return this;
         }
         @CustomType.Setter
-        public Builder isAgentAutoUpgradable(Boolean isAgentAutoUpgradable) {
-            this.isAgentAutoUpgradable = Objects.requireNonNull(isAgentAutoUpgradable);
+        public Builder isAgentAutoUpgradable(@Nullable Boolean isAgentAutoUpgradable) {
+            this.isAgentAutoUpgradable = isAgentAutoUpgradable;
             return this;
         }
         @CustomType.Setter
-        public Builder isCustomerDeployed(Boolean isCustomerDeployed) {
-            this.isCustomerDeployed = Objects.requireNonNull(isCustomerDeployed);
+        public Builder isCustomerDeployed(@Nullable Boolean isCustomerDeployed) {
+            this.isCustomerDeployed = isCustomerDeployed;
             return this;
         }
         @CustomType.Setter
-        public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+        public Builder lifecycleDetails(@Nullable String lifecycleDetails) {
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
-        public Builder managedAgentId(String managedAgentId) {
-            this.managedAgentId = Objects.requireNonNull(managedAgentId);
+        public Builder managedAgentId(@Nullable String managedAgentId) {
+            this.managedAgentId = managedAgentId;
             return this;
         }
         @CustomType.Setter
@@ -489,64 +491,64 @@ public final class GetManagementAgentResult {
             return this;
         }
         @CustomType.Setter
-        public Builder managementAgentProperties(List<GetManagementAgentManagementAgentProperty> managementAgentProperties) {
-            this.managementAgentProperties = Objects.requireNonNull(managementAgentProperties);
+        public Builder managementAgentProperties(@Nullable List<GetManagementAgentManagementAgentProperty> managementAgentProperties) {
+            this.managementAgentProperties = managementAgentProperties;
             return this;
         }
         public Builder managementAgentProperties(GetManagementAgentManagementAgentProperty... managementAgentProperties) {
             return managementAgentProperties(List.of(managementAgentProperties));
         }
         @CustomType.Setter
-        public Builder platformName(String platformName) {
-            this.platformName = Objects.requireNonNull(platformName);
+        public Builder platformName(@Nullable String platformName) {
+            this.platformName = platformName;
             return this;
         }
         @CustomType.Setter
-        public Builder platformType(String platformType) {
-            this.platformType = Objects.requireNonNull(platformType);
+        public Builder platformType(@Nullable String platformType) {
+            this.platformType = platformType;
             return this;
         }
         @CustomType.Setter
-        public Builder platformVersion(String platformVersion) {
-            this.platformVersion = Objects.requireNonNull(platformVersion);
+        public Builder platformVersion(@Nullable String platformVersion) {
+            this.platformVersion = platformVersion;
             return this;
         }
         @CustomType.Setter
-        public Builder pluginLists(List<GetManagementAgentPluginList> pluginLists) {
-            this.pluginLists = Objects.requireNonNull(pluginLists);
+        public Builder pluginLists(@Nullable List<GetManagementAgentPluginList> pluginLists) {
+            this.pluginLists = pluginLists;
             return this;
         }
         public Builder pluginLists(GetManagementAgentPluginList... pluginLists) {
             return pluginLists(List.of(pluginLists));
         }
         @CustomType.Setter
-        public Builder resourceArtifactVersion(String resourceArtifactVersion) {
-            this.resourceArtifactVersion = Objects.requireNonNull(resourceArtifactVersion);
+        public Builder resourceArtifactVersion(@Nullable String resourceArtifactVersion) {
+            this.resourceArtifactVersion = resourceArtifactVersion;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeLastHeartbeat(String timeLastHeartbeat) {
-            this.timeLastHeartbeat = Objects.requireNonNull(timeLastHeartbeat);
+        public Builder timeLastHeartbeat(@Nullable String timeLastHeartbeat) {
+            this.timeLastHeartbeat = timeLastHeartbeat;
             return this;
         }
         @CustomType.Setter
-        public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+        public Builder timeUpdated(@Nullable String timeUpdated) {
+            this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter
-        public Builder version(String version) {
-            this.version = Objects.requireNonNull(version);
+        public Builder version(@Nullable String version) {
+            this.version = version;
             return this;
         }
         public GetManagementAgentResult build() {

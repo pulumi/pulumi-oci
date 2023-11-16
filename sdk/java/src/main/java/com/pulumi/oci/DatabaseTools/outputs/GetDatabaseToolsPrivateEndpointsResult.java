@@ -23,7 +23,7 @@ public final class GetDatabaseToolsPrivateEndpointsResult {
      * @return The list of database_tools_private_endpoint_collection.
      * 
      */
-    private List<GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollection> databaseToolsPrivateEndpointCollections;
+    private @Nullable List<GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollection> databaseToolsPrivateEndpointCollections;
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
@@ -39,7 +39,7 @@ public final class GetDatabaseToolsPrivateEndpointsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The current state of the Database Tools private endpoint.
      * 
@@ -64,7 +64,7 @@ public final class GetDatabaseToolsPrivateEndpointsResult {
      * 
      */
     public List<GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollection> databaseToolsPrivateEndpointCollections() {
-        return this.databaseToolsPrivateEndpointCollections;
+        return this.databaseToolsPrivateEndpointCollections == null ? List.of() : this.databaseToolsPrivateEndpointCollections;
     }
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
@@ -87,8 +87,8 @@ public final class GetDatabaseToolsPrivateEndpointsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The current state of the Database Tools private endpoint.
@@ -115,11 +115,11 @@ public final class GetDatabaseToolsPrivateEndpointsResult {
     @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
-        private List<GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollection> databaseToolsPrivateEndpointCollections;
+        private @Nullable List<GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollection> databaseToolsPrivateEndpointCollections;
         private @Nullable String displayName;
         private @Nullable String endpointServiceId;
         private @Nullable List<GetDatabaseToolsPrivateEndpointsFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String state;
         private @Nullable String subnetId;
         public Builder() {}
@@ -141,8 +141,8 @@ public final class GetDatabaseToolsPrivateEndpointsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder databaseToolsPrivateEndpointCollections(List<GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollection> databaseToolsPrivateEndpointCollections) {
-            this.databaseToolsPrivateEndpointCollections = Objects.requireNonNull(databaseToolsPrivateEndpointCollections);
+        public Builder databaseToolsPrivateEndpointCollections(@Nullable List<GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollection> databaseToolsPrivateEndpointCollections) {
+            this.databaseToolsPrivateEndpointCollections = databaseToolsPrivateEndpointCollections;
             return this;
         }
         public Builder databaseToolsPrivateEndpointCollections(GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollection... databaseToolsPrivateEndpointCollections) {
@@ -167,8 +167,8 @@ public final class GetDatabaseToolsPrivateEndpointsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

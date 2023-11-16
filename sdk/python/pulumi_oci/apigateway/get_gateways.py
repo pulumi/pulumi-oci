@@ -49,25 +49,16 @@ class GetGatewaysResult:
     @property
     @pulumi.getter(name="certificateId")
     def certificate_id(self) -> Optional[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
-        """
         return pulumi.get(self, "certificate_id")
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the resource is created.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -77,15 +68,12 @@ class GetGatewaysResult:
 
     @property
     @pulumi.getter(name="gatewayCollections")
-    def gateway_collections(self) -> Sequence['outputs.GetGatewaysGatewayCollectionResult']:
-        """
-        The list of gateway_collection.
-        """
+    def gateway_collections(self) -> Optional[Sequence['outputs.GetGatewaysGatewayCollectionResult']]:
         return pulumi.get(self, "gateway_collections")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -94,9 +82,6 @@ class GetGatewaysResult:
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the gateway.
-        """
         return pulumi.get(self, "state")
 
 
@@ -122,27 +107,7 @@ def get_gateways(certificate_id: Optional[str] = None,
                  state: Optional[str] = None,
                  opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetGatewaysResult:
     """
-    This data source provides the list of Gateways in Oracle Cloud Infrastructure API Gateway service.
-
-    Returns a list of gateways.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_gateways = oci.ApiGateway.get_gateways(compartment_id=var["compartment_id"],
-        certificate_id=var["oci_apigateway_certificate"]["test_certificate"]["id"],
-        display_name=var["gateway_display_name"],
-        state=var["gateway_state"])
-    ```
-
-
-    :param str certificate_id: Filter gateways by the certificate ocid.
-    :param str compartment_id: The ocid of the compartment in which to list resources.
-    :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
-    :param str state: A filter to return only resources that match the given lifecycle state.  Example: `SUCCEEDED`
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['certificateId'] = certificate_id
@@ -171,26 +136,6 @@ def get_gateways_output(certificate_id: Optional[pulumi.Input[Optional[str]]] = 
                         state: Optional[pulumi.Input[Optional[str]]] = None,
                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetGatewaysResult]:
     """
-    This data source provides the list of Gateways in Oracle Cloud Infrastructure API Gateway service.
-
-    Returns a list of gateways.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_gateways = oci.ApiGateway.get_gateways(compartment_id=var["compartment_id"],
-        certificate_id=var["oci_apigateway_certificate"]["test_certificate"]["id"],
-        display_name=var["gateway_display_name"],
-        state=var["gateway_state"])
-    ```
-
-
-    :param str certificate_id: Filter gateways by the certificate ocid.
-    :param str compartment_id: The ocid of the compartment in which to list resources.
-    :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
-    :param str state: A filter to return only resources that match the given lifecycle state.  Example: `SUCCEEDED`
+    Use this data source to access information about an existing resource.
     """
     ...

@@ -16,15 +16,15 @@ namespace Pulumi.Oci.MediaServices.Outputs
         /// <summary>
         /// Description of this workflow's processing and how that processing can be customized by specifying parameter values.
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// A filter to return only the resources with their system defined, unique name matching the given name.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// Data specifiying how this task is to be run. The data is a JSON object that must conform to the JSON Schema specified by the parameters of the MediaWorkflowTaskDeclaration this task references. The parameters may contain values or references to other parameters.
         /// </summary>
-        public readonly string Parameters;
+        public readonly string? Parameters;
         /// <summary>
         /// The processing to be done in this workflow. Each key of the MediaWorkflowTasks in this array is unique within the array. The order of the items is preserved from the order of the tasks array in CreateMediaWorkflowDetails or UpdateMediaWorkflowDetails.
         /// </summary>
@@ -32,11 +32,11 @@ namespace Pulumi.Oci.MediaServices.Outputs
 
         [OutputConstructor]
         private GetSystemMediaWorkflowItemResult(
-            string description,
+            string? description,
 
-            string name,
+            string? name,
 
-            string parameters,
+            string? parameters,
 
             ImmutableArray<Outputs.GetSystemMediaWorkflowItemTaskResult> tasks)
         {

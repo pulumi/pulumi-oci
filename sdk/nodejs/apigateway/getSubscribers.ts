@@ -70,7 +70,7 @@ export interface GetSubscribersResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The current state of the subscriber.
      */
@@ -78,7 +78,7 @@ export interface GetSubscribersResult {
     /**
      * The list of subscriber_collection.
      */
-    readonly subscriberCollections: outputs.ApiGateway.GetSubscribersSubscriberCollection[];
+    readonly subscriberCollections?: outputs.ApiGateway.GetSubscribersSubscriberCollection[];
 }
 /**
  * This data source provides the list of Subscribers in Oracle Cloud Infrastructure API Gateway service.

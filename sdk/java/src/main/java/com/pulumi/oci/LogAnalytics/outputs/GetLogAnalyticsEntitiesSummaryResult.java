@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetLogAnalyticsEntitiesSummaryResult {
@@ -14,7 +16,7 @@ public final class GetLogAnalyticsEntitiesSummaryResult {
      * @return Total number of ACTIVE entities
      * 
      */
-    private Integer activeEntitiesCount;
+    private @Nullable Integer activeEntitiesCount;
     /**
      * @return Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
@@ -24,17 +26,17 @@ public final class GetLogAnalyticsEntitiesSummaryResult {
      * @return Entities with log collection enabled
      * 
      */
-    private Integer entitiesWithHasLogsCollectedCount;
+    private @Nullable Integer entitiesWithHasLogsCollectedCount;
     /**
      * @return Entities with management agent
      * 
      */
-    private Integer entitiesWithManagementAgentCount;
+    private @Nullable Integer entitiesWithManagementAgentCount;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private String namespace;
 
     private GetLogAnalyticsEntitiesSummaryResult() {}
@@ -42,8 +44,8 @@ public final class GetLogAnalyticsEntitiesSummaryResult {
      * @return Total number of ACTIVE entities
      * 
      */
-    public Integer activeEntitiesCount() {
-        return this.activeEntitiesCount;
+    public Optional<Integer> activeEntitiesCount() {
+        return Optional.ofNullable(this.activeEntitiesCount);
     }
     /**
      * @return Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -56,22 +58,22 @@ public final class GetLogAnalyticsEntitiesSummaryResult {
      * @return Entities with log collection enabled
      * 
      */
-    public Integer entitiesWithHasLogsCollectedCount() {
-        return this.entitiesWithHasLogsCollectedCount;
+    public Optional<Integer> entitiesWithHasLogsCollectedCount() {
+        return Optional.ofNullable(this.entitiesWithHasLogsCollectedCount);
     }
     /**
      * @return Entities with management agent
      * 
      */
-    public Integer entitiesWithManagementAgentCount() {
-        return this.entitiesWithManagementAgentCount;
+    public Optional<Integer> entitiesWithManagementAgentCount() {
+        return Optional.ofNullable(this.entitiesWithManagementAgentCount);
     }
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public String namespace() {
         return this.namespace;
@@ -86,11 +88,11 @@ public final class GetLogAnalyticsEntitiesSummaryResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Integer activeEntitiesCount;
+        private @Nullable Integer activeEntitiesCount;
         private String compartmentId;
-        private Integer entitiesWithHasLogsCollectedCount;
-        private Integer entitiesWithManagementAgentCount;
-        private String id;
+        private @Nullable Integer entitiesWithHasLogsCollectedCount;
+        private @Nullable Integer entitiesWithManagementAgentCount;
+        private @Nullable String id;
         private String namespace;
         public Builder() {}
         public Builder(GetLogAnalyticsEntitiesSummaryResult defaults) {
@@ -104,8 +106,8 @@ public final class GetLogAnalyticsEntitiesSummaryResult {
         }
 
         @CustomType.Setter
-        public Builder activeEntitiesCount(Integer activeEntitiesCount) {
-            this.activeEntitiesCount = Objects.requireNonNull(activeEntitiesCount);
+        public Builder activeEntitiesCount(@Nullable Integer activeEntitiesCount) {
+            this.activeEntitiesCount = activeEntitiesCount;
             return this;
         }
         @CustomType.Setter
@@ -114,18 +116,18 @@ public final class GetLogAnalyticsEntitiesSummaryResult {
             return this;
         }
         @CustomType.Setter
-        public Builder entitiesWithHasLogsCollectedCount(Integer entitiesWithHasLogsCollectedCount) {
-            this.entitiesWithHasLogsCollectedCount = Objects.requireNonNull(entitiesWithHasLogsCollectedCount);
+        public Builder entitiesWithHasLogsCollectedCount(@Nullable Integer entitiesWithHasLogsCollectedCount) {
+            this.entitiesWithHasLogsCollectedCount = entitiesWithHasLogsCollectedCount;
             return this;
         }
         @CustomType.Setter
-        public Builder entitiesWithManagementAgentCount(Integer entitiesWithManagementAgentCount) {
-            this.entitiesWithManagementAgentCount = Objects.requireNonNull(entitiesWithManagementAgentCount);
+        public Builder entitiesWithManagementAgentCount(@Nullable Integer entitiesWithManagementAgentCount) {
+            this.entitiesWithManagementAgentCount = entitiesWithManagementAgentCount;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

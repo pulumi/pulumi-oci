@@ -13,6 +13,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetPoolsPoolCollectionItem {
@@ -20,195 +22,195 @@ public final class GetPoolsPoolCollectionItem {
      * @return The OCID of the compartment.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return List of PoolConfig items.
      * 
      */
-    private List<GetPoolsPoolCollectionItemConfiguration> configurations;
+    private @Nullable List<GetPoolsPoolCollectionItemConfiguration> configurations;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return A user-friendly description. Avoid entering confidential information.
      * 
      */
-    private String description;
+    private @Nullable String description;
     /**
      * @return The query parameter for the Spark application name.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return The OCID of a pool. Unique Id to indentify a dataflow pool resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Optional timeout value in minutes used to auto stop Pools. A Pool will be auto stopped after inactivity for this amount of time period. If value not set, pool will not be auto stopped auto.
      * 
      */
-    private Integer idleTimeoutInMinutes;
+    private @Nullable Integer idleTimeoutInMinutes;
     /**
      * @return The detailed messages about the lifecycle state.
      * 
      */
-    private String lifecycleDetails;
+    private @Nullable String lifecycleDetails;
     /**
      * @return The OCID of the user who created the resource.
      * 
      */
-    private String ownerPrincipalId;
+    private @Nullable String ownerPrincipalId;
     /**
      * @return The username of the user who created the resource.  If the username of the owner does not exist, `null` will be returned and the caller should refer to the ownerPrincipalId value instead.
      * 
      */
-    private String ownerUserName;
+    private @Nullable String ownerUserName;
     /**
      * @return A collection of metrics related to a particular pool.
      * 
      */
-    private List<GetPoolsPoolCollectionItemPoolMetric> poolMetrics;
+    private @Nullable List<GetPoolsPoolCollectionItemPoolMetric> poolMetrics;
     /**
      * @return A list of schedules for pool to auto start and stop.
      * 
      */
-    private List<GetPoolsPoolCollectionItemSchedule> schedules;
+    private @Nullable List<GetPoolsPoolCollectionItemSchedule> schedules;
     /**
      * @return The LifecycleState of the pool.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The date and time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
      * 
      */
-    private String timeUpdated;
+    private @Nullable String timeUpdated;
 
     private GetPoolsPoolCollectionItem() {}
     /**
      * @return The OCID of the compartment.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return List of PoolConfig items.
      * 
      */
     public List<GetPoolsPoolCollectionItemConfiguration> configurations() {
-        return this.configurations;
+        return this.configurations == null ? List.of() : this.configurations;
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return A user-friendly description. Avoid entering confidential information.
      * 
      */
-    public String description() {
-        return this.description;
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
     /**
      * @return The query parameter for the Spark application name.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return The OCID of a pool. Unique Id to indentify a dataflow pool resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Optional timeout value in minutes used to auto stop Pools. A Pool will be auto stopped after inactivity for this amount of time period. If value not set, pool will not be auto stopped auto.
      * 
      */
-    public Integer idleTimeoutInMinutes() {
-        return this.idleTimeoutInMinutes;
+    public Optional<Integer> idleTimeoutInMinutes() {
+        return Optional.ofNullable(this.idleTimeoutInMinutes);
     }
     /**
      * @return The detailed messages about the lifecycle state.
      * 
      */
-    public String lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Optional<String> lifecycleDetails() {
+        return Optional.ofNullable(this.lifecycleDetails);
     }
     /**
      * @return The OCID of the user who created the resource.
      * 
      */
-    public String ownerPrincipalId() {
-        return this.ownerPrincipalId;
+    public Optional<String> ownerPrincipalId() {
+        return Optional.ofNullable(this.ownerPrincipalId);
     }
     /**
      * @return The username of the user who created the resource.  If the username of the owner does not exist, `null` will be returned and the caller should refer to the ownerPrincipalId value instead.
      * 
      */
-    public String ownerUserName() {
-        return this.ownerUserName;
+    public Optional<String> ownerUserName() {
+        return Optional.ofNullable(this.ownerUserName);
     }
     /**
      * @return A collection of metrics related to a particular pool.
      * 
      */
     public List<GetPoolsPoolCollectionItemPoolMetric> poolMetrics() {
-        return this.poolMetrics;
+        return this.poolMetrics == null ? List.of() : this.poolMetrics;
     }
     /**
      * @return A list of schedules for pool to auto start and stop.
      * 
      */
     public List<GetPoolsPoolCollectionItemSchedule> schedules() {
-        return this.schedules;
+        return this.schedules == null ? List.of() : this.schedules;
     }
     /**
      * @return The LifecycleState of the pool.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return The date and time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
      * 
      */
-    public String timeUpdated() {
-        return this.timeUpdated;
+    public Optional<String> timeUpdated() {
+        return Optional.ofNullable(this.timeUpdated);
     }
 
     public static Builder builder() {
@@ -220,22 +222,22 @@ public final class GetPoolsPoolCollectionItem {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String compartmentId;
-        private List<GetPoolsPoolCollectionItemConfiguration> configurations;
-        private Map<String,Object> definedTags;
-        private String description;
-        private String displayName;
-        private Map<String,Object> freeformTags;
-        private String id;
-        private Integer idleTimeoutInMinutes;
-        private String lifecycleDetails;
-        private String ownerPrincipalId;
-        private String ownerUserName;
-        private List<GetPoolsPoolCollectionItemPoolMetric> poolMetrics;
-        private List<GetPoolsPoolCollectionItemSchedule> schedules;
-        private String state;
-        private String timeCreated;
-        private String timeUpdated;
+        private @Nullable String compartmentId;
+        private @Nullable List<GetPoolsPoolCollectionItemConfiguration> configurations;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String description;
+        private @Nullable String displayName;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String id;
+        private @Nullable Integer idleTimeoutInMinutes;
+        private @Nullable String lifecycleDetails;
+        private @Nullable String ownerPrincipalId;
+        private @Nullable String ownerUserName;
+        private @Nullable List<GetPoolsPoolCollectionItemPoolMetric> poolMetrics;
+        private @Nullable List<GetPoolsPoolCollectionItemSchedule> schedules;
+        private @Nullable String state;
+        private @Nullable String timeCreated;
+        private @Nullable String timeUpdated;
         public Builder() {}
         public Builder(GetPoolsPoolCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -258,92 +260,92 @@ public final class GetPoolsPoolCollectionItem {
         }
 
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder configurations(List<GetPoolsPoolCollectionItemConfiguration> configurations) {
-            this.configurations = Objects.requireNonNull(configurations);
+        public Builder configurations(@Nullable List<GetPoolsPoolCollectionItemConfiguration> configurations) {
+            this.configurations = configurations;
             return this;
         }
         public Builder configurations(GetPoolsPoolCollectionItemConfiguration... configurations) {
             return configurations(List.of(configurations));
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+        public Builder description(@Nullable String description) {
+            this.description = description;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder idleTimeoutInMinutes(Integer idleTimeoutInMinutes) {
-            this.idleTimeoutInMinutes = Objects.requireNonNull(idleTimeoutInMinutes);
+        public Builder idleTimeoutInMinutes(@Nullable Integer idleTimeoutInMinutes) {
+            this.idleTimeoutInMinutes = idleTimeoutInMinutes;
             return this;
         }
         @CustomType.Setter
-        public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+        public Builder lifecycleDetails(@Nullable String lifecycleDetails) {
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
-        public Builder ownerPrincipalId(String ownerPrincipalId) {
-            this.ownerPrincipalId = Objects.requireNonNull(ownerPrincipalId);
+        public Builder ownerPrincipalId(@Nullable String ownerPrincipalId) {
+            this.ownerPrincipalId = ownerPrincipalId;
             return this;
         }
         @CustomType.Setter
-        public Builder ownerUserName(String ownerUserName) {
-            this.ownerUserName = Objects.requireNonNull(ownerUserName);
+        public Builder ownerUserName(@Nullable String ownerUserName) {
+            this.ownerUserName = ownerUserName;
             return this;
         }
         @CustomType.Setter
-        public Builder poolMetrics(List<GetPoolsPoolCollectionItemPoolMetric> poolMetrics) {
-            this.poolMetrics = Objects.requireNonNull(poolMetrics);
+        public Builder poolMetrics(@Nullable List<GetPoolsPoolCollectionItemPoolMetric> poolMetrics) {
+            this.poolMetrics = poolMetrics;
             return this;
         }
         public Builder poolMetrics(GetPoolsPoolCollectionItemPoolMetric... poolMetrics) {
             return poolMetrics(List.of(poolMetrics));
         }
         @CustomType.Setter
-        public Builder schedules(List<GetPoolsPoolCollectionItemSchedule> schedules) {
-            this.schedules = Objects.requireNonNull(schedules);
+        public Builder schedules(@Nullable List<GetPoolsPoolCollectionItemSchedule> schedules) {
+            this.schedules = schedules;
             return this;
         }
         public Builder schedules(GetPoolsPoolCollectionItemSchedule... schedules) {
             return schedules(List.of(schedules));
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+        public Builder timeUpdated(@Nullable String timeUpdated) {
+            this.timeUpdated = timeUpdated;
             return this;
         }
         public GetPoolsPoolCollectionItem build() {

@@ -75,62 +75,41 @@ class GetByoipRangeResult:
     @property
     @pulumi.getter(name="byoipRangeId")
     def byoip_range_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `ByoipRange` resource to which the CIDR block belongs.
-        """
         return pulumi.get(self, "byoip_range_id")
 
     @property
     @pulumi.getter(name="byoipRangeVcnIpv6allocations")
-    def byoip_range_vcn_ipv6allocations(self) -> Sequence['outputs.GetByoipRangeByoipRangeVcnIpv6allocationResult']:
-        """
-        A list of `ByoipRangeVcnIpv6AllocationSummary` objects.
-        """
+    def byoip_range_vcn_ipv6allocations(self) -> Optional[Sequence['outputs.GetByoipRangeByoipRangeVcnIpv6allocationResult']]:
         return pulumi.get(self, "byoip_range_vcn_ipv6allocations")
 
     @property
     @pulumi.getter(name="cidrBlock")
-    def cidr_block(self) -> str:
-        """
-        The public IPv4 CIDR block being imported from on-premises to the Oracle cloud.
-        """
+    def cidr_block(self) -> Optional[str]:
         return pulumi.get(self, "cidr_block")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the BYOIP CIDR block.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -138,66 +117,42 @@ class GetByoipRangeResult:
 
     @property
     @pulumi.getter(name="ipv6cidrBlock")
-    def ipv6cidr_block(self) -> str:
-        """
-        The IPv6 prefix being imported to the Oracle cloud. This prefix must be /48 or larger, and can be subdivided into sub-ranges used across multiple VCNs. A BYOIPv6 prefix can be also assigned across multiple VCNs, and each VCN must be /64 or larger. You may specify a ULA or private IPv6 prefix of /64 or larger to use in the VCN. IPv6-enabled subnets will remain a fixed /64 in size.
-        """
+    def ipv6cidr_block(self) -> Optional[str]:
         return pulumi.get(self, "ipv6cidr_block")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        The `ByoipRange` resource's current status.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The `ByoipRange` resource's current state.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeAdvertised")
-    def time_advertised(self) -> str:
-        """
-        The date and time the `ByoipRange` resource was advertised to the internet by BGP, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-        """
+    def time_advertised(self) -> Optional[str]:
         return pulumi.get(self, "time_advertised")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the `ByoipRange` resource was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeValidated")
-    def time_validated(self) -> str:
-        """
-        The date and time the `ByoipRange` resource was validated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-        """
+    def time_validated(self) -> Optional[str]:
         return pulumi.get(self, "time_validated")
 
     @property
     @pulumi.getter(name="timeWithdrawn")
-    def time_withdrawn(self) -> str:
-        """
-        The date and time the `ByoipRange` resource was withdrawn from advertisement by BGP to the internet, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-        """
+    def time_withdrawn(self) -> Optional[str]:
         return pulumi.get(self, "time_withdrawn")
 
     @property
     @pulumi.getter(name="validationToken")
-    def validation_token(self) -> str:
-        """
-        The validation token is an internally-generated ASCII string used in the validation process. See [Importing a CIDR block](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/BYOIP.htm#import_cidr) for details.
-        """
+    def validation_token(self) -> Optional[str]:
         return pulumi.get(self, "validation_token")
 
 
@@ -228,21 +183,7 @@ class AwaitableGetByoipRangeResult(GetByoipRangeResult):
 def get_byoip_range(byoip_range_id: Optional[str] = None,
                     opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetByoipRangeResult:
     """
-    This data source provides details about a specific Byoip Range resource in Oracle Cloud Infrastructure Core service.
-
-    Gets the `ByoipRange` resource. You must specify the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_byoip_range = oci.Core.get_byoip_range(byoip_range_id=oci_core_byoip_range["test_byoip_range"]["id"])
-    ```
-
-
-    :param str byoip_range_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `ByoipRange` resource containing the BYOIP CIDR block.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['byoipRangeId'] = byoip_range_id
@@ -272,20 +213,6 @@ def get_byoip_range(byoip_range_id: Optional[str] = None,
 def get_byoip_range_output(byoip_range_id: Optional[pulumi.Input[str]] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetByoipRangeResult]:
     """
-    This data source provides details about a specific Byoip Range resource in Oracle Cloud Infrastructure Core service.
-
-    Gets the `ByoipRange` resource. You must specify the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_byoip_range = oci.Core.get_byoip_range(byoip_range_id=oci_core_byoip_range["test_byoip_range"]["id"])
-    ```
-
-
-    :param str byoip_range_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `ByoipRange` resource containing the BYOIP CIDR block.
+    Use this data source to access information about an existing resource.
     """
     ...

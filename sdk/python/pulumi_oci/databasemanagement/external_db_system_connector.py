@@ -23,15 +23,6 @@ class ExternalDbSystemConnectorArgs:
                  display_name: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a ExternalDbSystemConnector resource.
-        :param pulumi.Input[str] connector_type: (Updatable) The type of connector.
-        :param pulumi.Input[str] external_db_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] agent_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used for the external DB system connector.
-        :param pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemConnectorConnectionInfoArgs']]] connection_infos: The connection details required to connect to an external DB system component.
-        :param pulumi.Input[str] display_name: The user-friendly name for the external connector. The name does not have to be unique.
         """
         pulumi.set(__self__, "connector_type", connector_type)
         pulumi.set(__self__, "external_db_system_id", external_db_system_id)
@@ -45,9 +36,6 @@ class ExternalDbSystemConnectorArgs:
     @property
     @pulumi.getter(name="connectorType")
     def connector_type(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The type of connector.
-        """
         return pulumi.get(self, "connector_type")
 
     @connector_type.setter
@@ -57,13 +45,6 @@ class ExternalDbSystemConnectorArgs:
     @property
     @pulumi.getter(name="externalDbSystemId")
     def external_db_system_id(self) -> pulumi.Input[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "external_db_system_id")
 
     @external_db_system_id.setter
@@ -73,9 +54,6 @@ class ExternalDbSystemConnectorArgs:
     @property
     @pulumi.getter(name="agentId")
     def agent_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used for the external DB system connector.
-        """
         return pulumi.get(self, "agent_id")
 
     @agent_id.setter
@@ -85,9 +63,6 @@ class ExternalDbSystemConnectorArgs:
     @property
     @pulumi.getter(name="connectionInfos")
     def connection_infos(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemConnectorConnectionInfoArgs']]]]:
-        """
-        The connection details required to connect to an external DB system component.
-        """
         return pulumi.get(self, "connection_infos")
 
     @connection_infos.setter
@@ -97,9 +72,6 @@ class ExternalDbSystemConnectorArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The user-friendly name for the external connector. The name does not have to be unique.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -125,23 +97,6 @@ class _ExternalDbSystemConnectorState:
                  time_updated: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering ExternalDbSystemConnector resources.
-        :param pulumi.Input[str] agent_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used for the external DB system connector.
-        :param pulumi.Input[str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param pulumi.Input[str] connection_failure_message: The error message indicating the reason for connection failure or `null` if the connection was successful.
-        :param pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemConnectorConnectionInfoArgs']]] connection_infos: The connection details required to connect to an external DB system component.
-        :param pulumi.Input[str] connection_status: The status of connectivity to the external DB system component.
-        :param pulumi.Input[str] connector_type: (Updatable) The type of connector.
-        :param pulumi.Input[str] display_name: The user-friendly name for the external connector. The name does not have to be unique.
-        :param pulumi.Input[str] external_db_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycle state.
-        :param pulumi.Input[str] state: The current lifecycle state of the external DB system connector.
-        :param pulumi.Input[str] time_connection_status_last_updated: The date and time the connectionStatus of the external DB system connector was last updated.
-        :param pulumi.Input[str] time_created: The date and time the external DB system connector was created.
-        :param pulumi.Input[str] time_updated: The date and time the external DB system connector was last updated.
         """
         if agent_id is not None:
             pulumi.set(__self__, "agent_id", agent_id)
@@ -173,9 +128,6 @@ class _ExternalDbSystemConnectorState:
     @property
     @pulumi.getter(name="agentId")
     def agent_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used for the external DB system connector.
-        """
         return pulumi.get(self, "agent_id")
 
     @agent_id.setter
@@ -185,9 +137,6 @@ class _ExternalDbSystemConnectorState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -197,9 +146,6 @@ class _ExternalDbSystemConnectorState:
     @property
     @pulumi.getter(name="connectionFailureMessage")
     def connection_failure_message(self) -> Optional[pulumi.Input[str]]:
-        """
-        The error message indicating the reason for connection failure or `null` if the connection was successful.
-        """
         return pulumi.get(self, "connection_failure_message")
 
     @connection_failure_message.setter
@@ -209,9 +155,6 @@ class _ExternalDbSystemConnectorState:
     @property
     @pulumi.getter(name="connectionInfos")
     def connection_infos(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemConnectorConnectionInfoArgs']]]]:
-        """
-        The connection details required to connect to an external DB system component.
-        """
         return pulumi.get(self, "connection_infos")
 
     @connection_infos.setter
@@ -221,9 +164,6 @@ class _ExternalDbSystemConnectorState:
     @property
     @pulumi.getter(name="connectionStatus")
     def connection_status(self) -> Optional[pulumi.Input[str]]:
-        """
-        The status of connectivity to the external DB system component.
-        """
         return pulumi.get(self, "connection_status")
 
     @connection_status.setter
@@ -233,9 +173,6 @@ class _ExternalDbSystemConnectorState:
     @property
     @pulumi.getter(name="connectorType")
     def connector_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The type of connector.
-        """
         return pulumi.get(self, "connector_type")
 
     @connector_type.setter
@@ -245,9 +182,6 @@ class _ExternalDbSystemConnectorState:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The user-friendly name for the external connector. The name does not have to be unique.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -257,13 +191,6 @@ class _ExternalDbSystemConnectorState:
     @property
     @pulumi.getter(name="externalDbSystemId")
     def external_db_system_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "external_db_system_id")
 
     @external_db_system_id.setter
@@ -273,9 +200,6 @@ class _ExternalDbSystemConnectorState:
     @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> Optional[pulumi.Input[str]]:
-        """
-        Additional information about the current lifecycle state.
-        """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
@@ -285,9 +209,6 @@ class _ExternalDbSystemConnectorState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The current lifecycle state of the external DB system connector.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -297,9 +218,6 @@ class _ExternalDbSystemConnectorState:
     @property
     @pulumi.getter(name="timeConnectionStatusLastUpdated")
     def time_connection_status_last_updated(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time the connectionStatus of the external DB system connector was last updated.
-        """
         return pulumi.get(self, "time_connection_status_last_updated")
 
     @time_connection_status_last_updated.setter
@@ -309,9 +227,6 @@ class _ExternalDbSystemConnectorState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time the external DB system connector was created.
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -321,9 +236,6 @@ class _ExternalDbSystemConnectorState:
     @property
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time the external DB system connector was last updated.
-        """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
@@ -343,41 +255,9 @@ class ExternalDbSystemConnector(pulumi.CustomResource):
                  external_db_system_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the External Db System Connector resource in Oracle Cloud Infrastructure Database Management service.
-
-        Creates a new external connector.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_external_db_system_connector = oci.database_management.ExternalDbSystemConnector("testExternalDbSystemConnector",
-            connector_type=var["external_db_system_connector_connector_type"],
-            external_db_system_id=oci_database_management_external_db_system["test_external_db_system"]["id"],
-            display_name=var["external_db_system_connector_display_name"])
-        ```
-
-        ## Import
-
-        ExternalDbSystemConnectors can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:DatabaseManagement/externalDbSystemConnector:ExternalDbSystemConnector test_external_db_system_connector "id"
-        ```
-
+        Create a ExternalDbSystemConnector resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] agent_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used for the external DB system connector.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ExternalDbSystemConnectorConnectionInfoArgs']]]] connection_infos: The connection details required to connect to an external DB system component.
-        :param pulumi.Input[str] connector_type: (Updatable) The type of connector.
-        :param pulumi.Input[str] display_name: The user-friendly name for the external connector. The name does not have to be unique.
-        :param pulumi.Input[str] external_db_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -386,30 +266,7 @@ class ExternalDbSystemConnector(pulumi.CustomResource):
                  args: ExternalDbSystemConnectorArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the External Db System Connector resource in Oracle Cloud Infrastructure Database Management service.
-
-        Creates a new external connector.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_external_db_system_connector = oci.database_management.ExternalDbSystemConnector("testExternalDbSystemConnector",
-            connector_type=var["external_db_system_connector_connector_type"],
-            external_db_system_id=oci_database_management_external_db_system["test_external_db_system"]["id"],
-            display_name=var["external_db_system_connector_display_name"])
-        ```
-
-        ## Import
-
-        ExternalDbSystemConnectors can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:DatabaseManagement/externalDbSystemConnector:ExternalDbSystemConnector test_external_db_system_connector "id"
-        ```
-
+        Create a ExternalDbSystemConnector resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param ExternalDbSystemConnectorArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -486,23 +343,6 @@ class ExternalDbSystemConnector(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] agent_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used for the external DB system connector.
-        :param pulumi.Input[str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param pulumi.Input[str] connection_failure_message: The error message indicating the reason for connection failure or `null` if the connection was successful.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ExternalDbSystemConnectorConnectionInfoArgs']]]] connection_infos: The connection details required to connect to an external DB system component.
-        :param pulumi.Input[str] connection_status: The status of connectivity to the external DB system component.
-        :param pulumi.Input[str] connector_type: (Updatable) The type of connector.
-        :param pulumi.Input[str] display_name: The user-friendly name for the external connector. The name does not have to be unique.
-        :param pulumi.Input[str] external_db_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycle state.
-        :param pulumi.Input[str] state: The current lifecycle state of the external DB system connector.
-        :param pulumi.Input[str] time_connection_status_last_updated: The date and time the connectionStatus of the external DB system connector was last updated.
-        :param pulumi.Input[str] time_created: The date and time the external DB system connector was created.
-        :param pulumi.Input[str] time_updated: The date and time the external DB system connector was last updated.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -525,109 +365,66 @@ class ExternalDbSystemConnector(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="agentId")
-    def agent_id(self) -> pulumi.Output[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used for the external DB system connector.
-        """
+    def agent_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "agent_id")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> pulumi.Output[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
+    def compartment_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="connectionFailureMessage")
-    def connection_failure_message(self) -> pulumi.Output[str]:
-        """
-        The error message indicating the reason for connection failure or `null` if the connection was successful.
-        """
+    def connection_failure_message(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "connection_failure_message")
 
     @property
     @pulumi.getter(name="connectionInfos")
-    def connection_infos(self) -> pulumi.Output[Sequence['outputs.ExternalDbSystemConnectorConnectionInfo']]:
-        """
-        The connection details required to connect to an external DB system component.
-        """
+    def connection_infos(self) -> pulumi.Output[Optional[Sequence['outputs.ExternalDbSystemConnectorConnectionInfo']]]:
         return pulumi.get(self, "connection_infos")
 
     @property
     @pulumi.getter(name="connectionStatus")
-    def connection_status(self) -> pulumi.Output[str]:
-        """
-        The status of connectivity to the external DB system component.
-        """
+    def connection_status(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "connection_status")
 
     @property
     @pulumi.getter(name="connectorType")
     def connector_type(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The type of connector.
-        """
         return pulumi.get(self, "connector_type")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> pulumi.Output[str]:
-        """
-        The user-friendly name for the external connector. The name does not have to be unique.
-        """
+    def display_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="externalDbSystemId")
     def external_db_system_id(self) -> pulumi.Output[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "external_db_system_id")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> pulumi.Output[str]:
-        """
-        Additional information about the current lifecycle state.
-        """
+    def lifecycle_details(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        The current lifecycle state of the external DB system connector.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeConnectionStatusLastUpdated")
-    def time_connection_status_last_updated(self) -> pulumi.Output[str]:
-        """
-        The date and time the connectionStatus of the external DB system connector was last updated.
-        """
+    def time_connection_status_last_updated(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_connection_status_last_updated")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        The date and time the external DB system connector was created.
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> pulumi.Output[str]:
-        """
-        The date and time the external DB system connector was last updated.
-        """
+    def time_updated(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_updated")
 

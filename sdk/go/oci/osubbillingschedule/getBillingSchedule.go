@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Billing Schedules in Oracle Cloud Infrastructure Osub Billing Schedule service.
@@ -75,7 +74,7 @@ type GetBillingScheduleResult struct {
 	CompartmentId    string                              `pulumi:"compartmentId"`
 	Filters          []GetBillingScheduleFilter          `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id                  string  `pulumi:"id"`
+	Id                  *string `pulumi:"id"`
 	SubscribedServiceId *string `pulumi:"subscribedServiceId"`
 	SubscriptionId      string  `pulumi:"subscriptionId"`
 	XOneOriginRegion    *string `pulumi:"xOneOriginRegion"`
@@ -126,12 +125,6 @@ func (o GetBillingScheduleResultOutput) ToGetBillingScheduleResultOutputWithCont
 	return o
 }
 
-func (o GetBillingScheduleResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetBillingScheduleResult] {
-	return pulumix.Output[GetBillingScheduleResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The list of billing_schedules.
 func (o GetBillingScheduleResultOutput) BillingSchedules() GetBillingScheduleBillingScheduleArrayOutput {
 	return o.ApplyT(func(v GetBillingScheduleResult) []GetBillingScheduleBillingSchedule { return v.BillingSchedules }).(GetBillingScheduleBillingScheduleArrayOutput)
@@ -146,8 +139,8 @@ func (o GetBillingScheduleResultOutput) Filters() GetBillingScheduleFilterArrayO
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetBillingScheduleResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBillingScheduleResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetBillingScheduleResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBillingScheduleResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetBillingScheduleResultOutput) SubscribedServiceId() pulumi.StringPtrOutput {

@@ -52,19 +52,19 @@ export interface GetCompartmentResult {
     /**
      * The OCID of the parent compartment containing the compartment.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * The description you assign to the compartment. Does not have to be unique, and it's changeable.
      */
-    readonly description: string;
+    readonly description?: string;
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * The OCID of the compartment.
      */
@@ -72,23 +72,23 @@ export interface GetCompartmentResult {
     /**
      * The detailed status of INACTIVE lifecycleState.
      */
-    readonly inactiveState: string;
+    readonly inactiveState?: string;
     /**
      * Indicates whether or not the compartment is accessible for the user making the request. Returns true when the user has INSPECT permissions directly on a resource in the compartment or indirectly (permissions can be on a resource in a subcompartment).
      */
-    readonly isAccessible: boolean;
+    readonly isAccessible?: boolean;
     /**
      * The name you assign to the compartment during creation. The name must be unique across all compartments in the parent. Avoid entering confidential information.
      */
-    readonly name: string;
+    readonly name?: string;
     /**
      * The compartment's current state.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * Date and time the compartment was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
 }
 /**
  * This data source provides details about a specific Compartment resource in Oracle Cloud Infrastructure Identity service.

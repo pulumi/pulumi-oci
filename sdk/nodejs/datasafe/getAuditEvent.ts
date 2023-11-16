@@ -85,11 +85,11 @@ export interface GetAuditEventResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Array of audit event summary.
      */
-    readonly items: outputs.DataSafe.GetAuditEventItem[];
+    readonly items?: outputs.DataSafe.GetAuditEventItem[];
     readonly scimQuery?: string;
 }
 /**

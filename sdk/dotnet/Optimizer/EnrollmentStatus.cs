@@ -29,7 +29,7 @@ namespace Pulumi.Oci.Optimizer
         /// The OCID of the compartment.
         /// </summary>
         [Output("compartmentId")]
-        public Output<string> CompartmentId { get; private set; } = null!;
+        public Output<string?> CompartmentId { get; private set; } = null!;
 
         /// <summary>
         /// The unique OCID associated with the enrollment status.
@@ -41,7 +41,7 @@ namespace Pulumi.Oci.Optimizer
         /// The enrollment status' current state.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The Cloud Advisor enrollment status.
@@ -57,19 +57,19 @@ namespace Pulumi.Oci.Optimizer
         /// The reason for the enrollment status of the tenancy.
         /// </summary>
         [Output("statusReason")]
-        public Output<string> StatusReason { get; private set; } = null!;
+        public Output<string?> StatusReason { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the enrollment status was created, in the format defined by RFC3339.
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the enrollment status was last updated, in the format defined by RFC3339.
         /// </summary>
         [Output("timeUpdated")]
-        public Output<string> TimeUpdated { get; private set; } = null!;
+        public Output<string?> TimeUpdated { get; private set; } = null!;
 
 
         /// <summary>

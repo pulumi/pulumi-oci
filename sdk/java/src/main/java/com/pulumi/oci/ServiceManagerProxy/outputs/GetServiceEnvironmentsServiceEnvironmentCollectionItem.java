@@ -11,6 +11,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetServiceEnvironmentsServiceEnvironmentCollectionItem {
@@ -18,95 +20,95 @@ public final class GetServiceEnvironmentsServiceEnvironmentCollectionItem {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the compartment.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return The URL for the console.
      * 
      */
-    private String consoleUrl;
-    private Map<String,Object> definedTags;
-    private Map<String,Object> freeformTags;
+    private @Nullable String consoleUrl;
+    private @Nullable Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return Unqiue identifier for the entitlement related to the environment.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Details for a service definition.
      * 
      */
-    private List<GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceDefinition> serviceDefinitions;
+    private @Nullable List<GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceDefinition> serviceDefinitions;
     /**
      * @return Array of service environment end points.
      * 
      */
-    private List<GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceEnvironmentEndpoint> serviceEnvironmentEndpoints;
+    private @Nullable List<GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceEnvironmentEndpoint> serviceEnvironmentEndpoints;
     /**
      * @return Status of the entitlement registration for the service.
      * 
      */
-    private String status;
+    private @Nullable String status;
     /**
      * @return The unique subscription ID associated with the service environment ID.
      * 
      */
-    private String subscriptionId;
+    private @Nullable String subscriptionId;
 
     private GetServiceEnvironmentsServiceEnvironmentCollectionItem() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the compartment.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return The URL for the console.
      * 
      */
-    public String consoleUrl() {
-        return this.consoleUrl;
+    public Optional<String> consoleUrl() {
+        return Optional.ofNullable(this.consoleUrl);
     }
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return Unqiue identifier for the entitlement related to the environment.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Details for a service definition.
      * 
      */
     public List<GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceDefinition> serviceDefinitions() {
-        return this.serviceDefinitions;
+        return this.serviceDefinitions == null ? List.of() : this.serviceDefinitions;
     }
     /**
      * @return Array of service environment end points.
      * 
      */
     public List<GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceEnvironmentEndpoint> serviceEnvironmentEndpoints() {
-        return this.serviceEnvironmentEndpoints;
+        return this.serviceEnvironmentEndpoints == null ? List.of() : this.serviceEnvironmentEndpoints;
     }
     /**
      * @return Status of the entitlement registration for the service.
      * 
      */
-    public String status() {
-        return this.status;
+    public Optional<String> status() {
+        return Optional.ofNullable(this.status);
     }
     /**
      * @return The unique subscription ID associated with the service environment ID.
      * 
      */
-    public String subscriptionId() {
-        return this.subscriptionId;
+    public Optional<String> subscriptionId() {
+        return Optional.ofNullable(this.subscriptionId);
     }
 
     public static Builder builder() {
@@ -118,15 +120,15 @@ public final class GetServiceEnvironmentsServiceEnvironmentCollectionItem {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String compartmentId;
-        private String consoleUrl;
-        private Map<String,Object> definedTags;
-        private Map<String,Object> freeformTags;
-        private String id;
-        private List<GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceDefinition> serviceDefinitions;
-        private List<GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceEnvironmentEndpoint> serviceEnvironmentEndpoints;
-        private String status;
-        private String subscriptionId;
+        private @Nullable String compartmentId;
+        private @Nullable String consoleUrl;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String id;
+        private @Nullable List<GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceDefinition> serviceDefinitions;
+        private @Nullable List<GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceEnvironmentEndpoint> serviceEnvironmentEndpoints;
+        private @Nullable String status;
+        private @Nullable String subscriptionId;
         public Builder() {}
         public Builder(GetServiceEnvironmentsServiceEnvironmentCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -142,54 +144,54 @@ public final class GetServiceEnvironmentsServiceEnvironmentCollectionItem {
         }
 
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder consoleUrl(String consoleUrl) {
-            this.consoleUrl = Objects.requireNonNull(consoleUrl);
+        public Builder consoleUrl(@Nullable String consoleUrl) {
+            this.consoleUrl = consoleUrl;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder serviceDefinitions(List<GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceDefinition> serviceDefinitions) {
-            this.serviceDefinitions = Objects.requireNonNull(serviceDefinitions);
+        public Builder serviceDefinitions(@Nullable List<GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceDefinition> serviceDefinitions) {
+            this.serviceDefinitions = serviceDefinitions;
             return this;
         }
         public Builder serviceDefinitions(GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceDefinition... serviceDefinitions) {
             return serviceDefinitions(List.of(serviceDefinitions));
         }
         @CustomType.Setter
-        public Builder serviceEnvironmentEndpoints(List<GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceEnvironmentEndpoint> serviceEnvironmentEndpoints) {
-            this.serviceEnvironmentEndpoints = Objects.requireNonNull(serviceEnvironmentEndpoints);
+        public Builder serviceEnvironmentEndpoints(@Nullable List<GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceEnvironmentEndpoint> serviceEnvironmentEndpoints) {
+            this.serviceEnvironmentEndpoints = serviceEnvironmentEndpoints;
             return this;
         }
         public Builder serviceEnvironmentEndpoints(GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceEnvironmentEndpoint... serviceEnvironmentEndpoints) {
             return serviceEnvironmentEndpoints(List.of(serviceEnvironmentEndpoints));
         }
         @CustomType.Setter
-        public Builder status(String status) {
-            this.status = Objects.requireNonNull(status);
+        public Builder status(@Nullable String status) {
+            this.status = status;
             return this;
         }
         @CustomType.Setter
-        public Builder subscriptionId(String subscriptionId) {
-            this.subscriptionId = Objects.requireNonNull(subscriptionId);
+        public Builder subscriptionId(@Nullable String subscriptionId) {
+            this.subscriptionId = subscriptionId;
             return this;
         }
         public GetServiceEnvironmentsServiceEnvironmentCollectionItem build() {

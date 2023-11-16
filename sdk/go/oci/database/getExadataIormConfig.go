@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Exadata Iorm Config resource in Oracle Cloud Infrastructure Database service.
@@ -70,13 +69,13 @@ type LookupExadataIormConfigResult struct {
 	// An array of IORM settings for all the database in the Exadata DB system.
 	DbPlans    []GetExadataIormConfigDbPlan `pulumi:"dbPlans"`
 	DbSystemId string                       `pulumi:"dbSystemId"`
-	Id         string                       `pulumi:"id"`
+	Id         *string                      `pulumi:"id"`
 	// Additional information about the current `lifecycleState`.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// The current value for the IORM objective. The default is `AUTO`.
-	Objective string `pulumi:"objective"`
+	Objective *string `pulumi:"objective"`
 	// The current state of IORM configuration for the Exadata DB system.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 }
 
 func LookupExadataIormConfigOutput(ctx *pulumi.Context, args LookupExadataIormConfigOutputArgs, opts ...pulumi.InvokeOption) LookupExadataIormConfigResultOutput {
@@ -117,12 +116,6 @@ func (o LookupExadataIormConfigResultOutput) ToLookupExadataIormConfigResultOutp
 	return o
 }
 
-func (o LookupExadataIormConfigResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupExadataIormConfigResult] {
-	return pulumix.Output[LookupExadataIormConfigResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // An array of IORM settings for all the database in the Exadata DB system.
 func (o LookupExadataIormConfigResultOutput) DbPlans() GetExadataIormConfigDbPlanArrayOutput {
 	return o.ApplyT(func(v LookupExadataIormConfigResult) []GetExadataIormConfigDbPlan { return v.DbPlans }).(GetExadataIormConfigDbPlanArrayOutput)
@@ -132,23 +125,23 @@ func (o LookupExadataIormConfigResultOutput) DbSystemId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupExadataIormConfigResult) string { return v.DbSystemId }).(pulumi.StringOutput)
 }
 
-func (o LookupExadataIormConfigResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupExadataIormConfigResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupExadataIormConfigResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupExadataIormConfigResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Additional information about the current `lifecycleState`.
-func (o LookupExadataIormConfigResultOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupExadataIormConfigResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o LookupExadataIormConfigResultOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupExadataIormConfigResult) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // The current value for the IORM objective. The default is `AUTO`.
-func (o LookupExadataIormConfigResultOutput) Objective() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupExadataIormConfigResult) string { return v.Objective }).(pulumi.StringOutput)
+func (o LookupExadataIormConfigResultOutput) Objective() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupExadataIormConfigResult) *string { return v.Objective }).(pulumi.StringPtrOutput)
 }
 
 // The current state of IORM configuration for the Exadata DB system.
-func (o LookupExadataIormConfigResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupExadataIormConfigResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupExadataIormConfigResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupExadataIormConfigResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 func init() {

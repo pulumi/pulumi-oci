@@ -9,22 +9,24 @@ import com.pulumi.oci.DataSafe.outputs.GetUserAssessmentComparisonSummaryCurrent
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetUserAssessmentComparisonSummary {
-    private List<GetUserAssessmentComparisonSummaryBaseline> baselines;
-    private List<GetUserAssessmentComparisonSummaryCurrent> currents;
-    private String status;
+    private @Nullable List<GetUserAssessmentComparisonSummaryBaseline> baselines;
+    private @Nullable List<GetUserAssessmentComparisonSummaryCurrent> currents;
+    private @Nullable String status;
 
     private GetUserAssessmentComparisonSummary() {}
     public List<GetUserAssessmentComparisonSummaryBaseline> baselines() {
-        return this.baselines;
+        return this.baselines == null ? List.of() : this.baselines;
     }
     public List<GetUserAssessmentComparisonSummaryCurrent> currents() {
-        return this.currents;
+        return this.currents == null ? List.of() : this.currents;
     }
-    public String status() {
-        return this.status;
+    public Optional<String> status() {
+        return Optional.ofNullable(this.status);
     }
 
     public static Builder builder() {
@@ -36,9 +38,9 @@ public final class GetUserAssessmentComparisonSummary {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetUserAssessmentComparisonSummaryBaseline> baselines;
-        private List<GetUserAssessmentComparisonSummaryCurrent> currents;
-        private String status;
+        private @Nullable List<GetUserAssessmentComparisonSummaryBaseline> baselines;
+        private @Nullable List<GetUserAssessmentComparisonSummaryCurrent> currents;
+        private @Nullable String status;
         public Builder() {}
         public Builder(GetUserAssessmentComparisonSummary defaults) {
     	      Objects.requireNonNull(defaults);
@@ -48,24 +50,24 @@ public final class GetUserAssessmentComparisonSummary {
         }
 
         @CustomType.Setter
-        public Builder baselines(List<GetUserAssessmentComparisonSummaryBaseline> baselines) {
-            this.baselines = Objects.requireNonNull(baselines);
+        public Builder baselines(@Nullable List<GetUserAssessmentComparisonSummaryBaseline> baselines) {
+            this.baselines = baselines;
             return this;
         }
         public Builder baselines(GetUserAssessmentComparisonSummaryBaseline... baselines) {
             return baselines(List.of(baselines));
         }
         @CustomType.Setter
-        public Builder currents(List<GetUserAssessmentComparisonSummaryCurrent> currents) {
-            this.currents = Objects.requireNonNull(currents);
+        public Builder currents(@Nullable List<GetUserAssessmentComparisonSummaryCurrent> currents) {
+            this.currents = currents;
             return this;
         }
         public Builder currents(GetUserAssessmentComparisonSummaryCurrent... currents) {
             return currents(List.of(currents));
         }
         @CustomType.Setter
-        public Builder status(String status) {
-            this.status = Objects.requireNonNull(status);
+        public Builder status(@Nullable String status) {
+            this.status = status;
             return this;
         }
         public GetUserAssessmentComparisonSummary build() {

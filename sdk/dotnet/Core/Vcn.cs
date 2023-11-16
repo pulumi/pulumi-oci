@@ -121,7 +121,7 @@ namespace Pulumi.Oci.Core
         /// **Deprecated.** Do *not* set this value. Use `cidr_blocks` instead. Example: `10.0.0.0/16`
         /// </summary>
         [Output("cidrBlock")]
-        public Output<string> CidrBlock { get; private set; } = null!;
+        public Output<string?> CidrBlock { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The list of one or more IPv4 CIDR blocks for the VCN that meet the following criteria:
@@ -143,31 +143,31 @@ namespace Pulumi.Oci.Core
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the VCN's default set of DHCP options.
         /// </summary>
         [Output("defaultDhcpOptionsId")]
-        public Output<string> DefaultDhcpOptionsId { get; private set; } = null!;
+        public Output<string?> DefaultDhcpOptionsId { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the VCN's default route table.
         /// </summary>
         [Output("defaultRouteTableId")]
-        public Output<string> DefaultRouteTableId { get; private set; } = null!;
+        public Output<string?> DefaultRouteTableId { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the VCN's default security list.
         /// </summary>
         [Output("defaultSecurityListId")]
-        public Output<string> DefaultSecurityListId { get; private set; } = null!;
+        public Output<string?> DefaultSecurityListId { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         /// </summary>
         [Output("displayName")]
-        public Output<string> DisplayName { get; private set; } = null!;
+        public Output<string?> DisplayName { get; private set; } = null!;
 
         /// <summary>
         /// A DNS label for the VCN, used in conjunction with the VNIC's hostname and subnet's DNS label to form a fully qualified domain name (FQDN) for each VNIC within this subnet (for example, `bminstance1.subnet123.vcn1.oraclevcn.com`). Not required to be unique, but it's a best practice to set unique DNS labels for VCNs in your tenancy. Must be an alphanumeric string that begins with a letter. The value cannot be changed.
@@ -178,13 +178,13 @@ namespace Pulumi.Oci.Core
         /// Example: `vcn1`
         /// </summary>
         [Output("dnsLabel")]
-        public Output<string> DnsLabel { get; private set; } = null!;
+        public Output<string?> DnsLabel { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// For an IPv6-enabled VCN, this is the list of IPv6 prefixes for the VCN's IP address space. The prefixes are provided by Oracle and the sizes are always /56.
@@ -207,7 +207,7 @@ namespace Pulumi.Oci.Core
         /// Whether IPv6 is enabled for the VCN. Default is `false`. If enabled, Oracle will assign the VCN a IPv6 /56 CIDR block. You may skip having Oracle allocate the VCN a IPv6 /56 CIDR block by setting isOracleGuaAllocationEnabled to `false`. For important details about IPv6 addressing in a VCN, see [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).  Example: `true`
         /// </summary>
         [Output("isIpv6enabled")]
-        public Output<bool> IsIpv6enabled { get; private set; } = null!;
+        public Output<bool?> IsIpv6enabled { get; private set; } = null!;
 
         /// <summary>
         /// Specifies whether to skip Oracle allocated IPv6 GUA. By default, Oracle will allocate one GUA of /56 size for an IPv6 enabled VCN. 
@@ -217,25 +217,25 @@ namespace Pulumi.Oci.Core
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("isOracleGuaAllocationEnabled")]
-        public Output<bool> IsOracleGuaAllocationEnabled { get; private set; } = null!;
+        public Output<bool?> IsOracleGuaAllocationEnabled { get; private set; } = null!;
 
         /// <summary>
         /// The VCN's current state.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the VCN was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// The VCN's domain name, which consists of the VCN's DNS label, and the `oraclevcn.com` domain.
         /// </summary>
         [Output("vcnDomainName")]
-        public Output<string> VcnDomainName { get; private set; } = null!;
+        public Output<string?> VcnDomainName { get; private set; } = null!;
 
 
         /// <summary>

@@ -142,7 +142,7 @@ namespace Pulumi.Oci.NetworkFirewall
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         public readonly string NetworkFirewallPolicyId;
         /// <summary>
         /// The list of service_summary_collection.
@@ -155,7 +155,7 @@ namespace Pulumi.Oci.NetworkFirewall
 
             ImmutableArray<Outputs.GetNetworkFirewallPolicyServicesFilterResult> filters,
 
-            string id,
+            string? id,
 
             string networkFirewallPolicyId,
 

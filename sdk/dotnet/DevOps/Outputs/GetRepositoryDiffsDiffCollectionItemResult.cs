@@ -16,56 +16,56 @@ namespace Pulumi.Oci.DevOps.Outputs
         /// <summary>
         /// Indicates whether the changed file contains conflicts.
         /// </summary>
-        public readonly bool AreConflictsInFile;
+        public readonly bool? AreConflictsInFile;
         /// <summary>
         /// List of changed section in the file.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetRepositoryDiffsDiffCollectionItemChangeResult> Changes;
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// Indicates whether the file is binary.
         /// </summary>
-        public readonly bool IsBinary;
+        public readonly bool? IsBinary;
         /// <summary>
         /// Indicates whether the file is large.
         /// </summary>
-        public readonly bool IsLarge;
+        public readonly bool? IsLarge;
         /// <summary>
         /// The ID of the changed object on the target version.
         /// </summary>
-        public readonly string NewId;
+        public readonly string? NewId;
         /// <summary>
         /// The path on the target version to the changed object.
         /// </summary>
-        public readonly string NewPath;
+        public readonly string? NewPath;
         /// <summary>
         /// The ID of the changed object on the base version.
         /// </summary>
-        public readonly string OldId;
+        public readonly string? OldId;
         /// <summary>
         /// The path on the base version to the changed object.
         /// </summary>
-        public readonly string OldPath;
+        public readonly string? OldPath;
 
         [OutputConstructor]
         private GetRepositoryDiffsDiffCollectionItemResult(
-            bool areConflictsInFile,
+            bool? areConflictsInFile,
 
             ImmutableArray<Outputs.GetRepositoryDiffsDiffCollectionItemChangeResult> changes,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            bool isBinary,
+            bool? isBinary,
 
-            bool isLarge,
+            bool? isLarge,
 
-            string newId,
+            string? newId,
 
-            string newPath,
+            string? newPath,
 
-            string oldId,
+            string? oldId,
 
-            string oldPath)
+            string? oldPath)
         {
             AreConflictsInFile = areConflictsInFile;
             Changes = changes;

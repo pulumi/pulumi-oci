@@ -135,7 +135,7 @@ namespace Pulumi.Oci.Database
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
 
         [OutputConstructor]
         private GetDbNodeConsoleConnectionsResult(
@@ -145,7 +145,7 @@ namespace Pulumi.Oci.Database
 
             ImmutableArray<Outputs.GetDbNodeConsoleConnectionsFilterResult> filters,
 
-            string id)
+            string? id)
         {
             ConsoleConnections = consoleConnections;
             DbNodeId = dbNodeId;

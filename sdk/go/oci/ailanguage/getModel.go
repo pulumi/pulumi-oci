@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Model resource in Oracle Cloud Infrastructure Ai Language service.
@@ -34,13 +33,13 @@ type LookupModelArgs struct {
 // A collection of values returned by getModel.
 type LookupModelResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)  for the model's compartment.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A short description of the Model.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// A user-friendly display name for the resource. It does not have to be unique and can be modified. Avoid entering confidential information.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// model training results of different models
 	EvaluationResults []GetModelEvaluationResult `pulumi:"evaluationResults"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -48,25 +47,25 @@ type LookupModelResult struct {
 	// Unique identifier model OCID of a model that is immutable on creation
 	Id string `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in failed state.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// Possible model types
 	ModelDetails []GetModelModelDetail `pulumi:"modelDetails"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model.
-	ProjectId string `pulumi:"projectId"`
+	ProjectId *string `pulumi:"projectId"`
 	// The state of the model.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// Possible strategy as testing and validation(optional) dataset.
 	TestStrategies []GetModelTestStrategy `pulumi:"testStrategies"`
 	// The time the the model was created. An RFC3339 formatted datetime string.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time the model was updated. An RFC3339 formatted datetime string.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 	// Possible data set type
 	TrainingDatasets []GetModelTrainingDataset `pulumi:"trainingDatasets"`
 	// For pre trained models this will identify model type version used for model creation For custom identifying the model by model id is difficult. This param provides ease of use for end customer. <<service>>::<<service-name>>_<<model-type-version>>::<<custom model on which this training has to be done>> ex: ai-lang::NER_V1::CUSTOM-V0
-	Version string `pulumi:"version"`
+	Version *string `pulumi:"version"`
 }
 
 func LookupModelOutput(ctx *pulumi.Context, args LookupModelOutputArgs, opts ...pulumi.InvokeOption) LookupModelResultOutput {
@@ -107,15 +106,9 @@ func (o LookupModelResultOutput) ToLookupModelResultOutputWithContext(ctx contex
 	return o
 }
 
-func (o LookupModelResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupModelResult] {
-	return pulumix.Output[LookupModelResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)  for the model's compartment.
-func (o LookupModelResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupModelResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupModelResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupModelResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -124,13 +117,13 @@ func (o LookupModelResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // A short description of the Model.
-func (o LookupModelResultOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupModelResult) string { return v.Description }).(pulumi.StringOutput)
+func (o LookupModelResultOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupModelResult) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // A user-friendly display name for the resource. It does not have to be unique and can be modified. Avoid entering confidential information.
-func (o LookupModelResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupModelResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupModelResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupModelResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // model training results of different models
@@ -149,8 +142,8 @@ func (o LookupModelResultOutput) Id() pulumi.StringOutput {
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in failed state.
-func (o LookupModelResultOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupModelResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o LookupModelResultOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupModelResult) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // Possible model types
@@ -159,13 +152,13 @@ func (o LookupModelResultOutput) ModelDetails() GetModelModelDetailArrayOutput {
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model.
-func (o LookupModelResultOutput) ProjectId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupModelResult) string { return v.ProjectId }).(pulumi.StringOutput)
+func (o LookupModelResultOutput) ProjectId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupModelResult) *string { return v.ProjectId }).(pulumi.StringPtrOutput)
 }
 
 // The state of the model.
-func (o LookupModelResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupModelResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupModelResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupModelResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -179,13 +172,13 @@ func (o LookupModelResultOutput) TestStrategies() GetModelTestStrategyArrayOutpu
 }
 
 // The time the the model was created. An RFC3339 formatted datetime string.
-func (o LookupModelResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupModelResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupModelResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupModelResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time the model was updated. An RFC3339 formatted datetime string.
-func (o LookupModelResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupModelResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o LookupModelResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupModelResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 // Possible data set type
@@ -194,8 +187,8 @@ func (o LookupModelResultOutput) TrainingDatasets() GetModelTrainingDatasetArray
 }
 
 // For pre trained models this will identify model type version used for model creation For custom identifying the model by model id is difficult. This param provides ease of use for end customer. <<service>>::<<service-name>>_<<model-type-version>>::<<custom model on which this training has to be done>> ex: ai-lang::NER_V1::CUSTOM-V0
-func (o LookupModelResultOutput) Version() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupModelResult) string { return v.Version }).(pulumi.StringOutput)
+func (o LookupModelResultOutput) Version() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupModelResult) *string { return v.Version }).(pulumi.StringPtrOutput)
 }
 
 func init() {

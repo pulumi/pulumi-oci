@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemFamilyMaintenancePolicy {
@@ -14,39 +16,39 @@ public final class GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollection
      * @return Option to upgrade both production and non-production environments at the same time. When set to PROD both types of environnments are upgraded on the production schedule. When set to NON_PROD both types of environments are upgraded on the non-production schedule.
      * 
      */
-    private String concurrentMaintenance;
+    private @Nullable String concurrentMaintenance;
     /**
      * @return When True, monthly patching is enabled for the environment family.
      * 
      */
-    private Boolean isMonthlyPatchingEnabled;
+    private @Nullable Boolean isMonthlyPatchingEnabled;
     /**
      * @return The quarterly maintenance month group schedule of the Fusion environment family.
      * 
      */
-    private String quarterlyUpgradeBeginTimes;
+    private @Nullable String quarterlyUpgradeBeginTimes;
 
     private GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemFamilyMaintenancePolicy() {}
     /**
      * @return Option to upgrade both production and non-production environments at the same time. When set to PROD both types of environnments are upgraded on the production schedule. When set to NON_PROD both types of environments are upgraded on the non-production schedule.
      * 
      */
-    public String concurrentMaintenance() {
-        return this.concurrentMaintenance;
+    public Optional<String> concurrentMaintenance() {
+        return Optional.ofNullable(this.concurrentMaintenance);
     }
     /**
      * @return When True, monthly patching is enabled for the environment family.
      * 
      */
-    public Boolean isMonthlyPatchingEnabled() {
-        return this.isMonthlyPatchingEnabled;
+    public Optional<Boolean> isMonthlyPatchingEnabled() {
+        return Optional.ofNullable(this.isMonthlyPatchingEnabled);
     }
     /**
      * @return The quarterly maintenance month group schedule of the Fusion environment family.
      * 
      */
-    public String quarterlyUpgradeBeginTimes() {
-        return this.quarterlyUpgradeBeginTimes;
+    public Optional<String> quarterlyUpgradeBeginTimes() {
+        return Optional.ofNullable(this.quarterlyUpgradeBeginTimes);
     }
 
     public static Builder builder() {
@@ -58,9 +60,9 @@ public final class GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollection
     }
     @CustomType.Builder
     public static final class Builder {
-        private String concurrentMaintenance;
-        private Boolean isMonthlyPatchingEnabled;
-        private String quarterlyUpgradeBeginTimes;
+        private @Nullable String concurrentMaintenance;
+        private @Nullable Boolean isMonthlyPatchingEnabled;
+        private @Nullable String quarterlyUpgradeBeginTimes;
         public Builder() {}
         public Builder(GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemFamilyMaintenancePolicy defaults) {
     	      Objects.requireNonNull(defaults);
@@ -70,18 +72,18 @@ public final class GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollection
         }
 
         @CustomType.Setter
-        public Builder concurrentMaintenance(String concurrentMaintenance) {
-            this.concurrentMaintenance = Objects.requireNonNull(concurrentMaintenance);
+        public Builder concurrentMaintenance(@Nullable String concurrentMaintenance) {
+            this.concurrentMaintenance = concurrentMaintenance;
             return this;
         }
         @CustomType.Setter
-        public Builder isMonthlyPatchingEnabled(Boolean isMonthlyPatchingEnabled) {
-            this.isMonthlyPatchingEnabled = Objects.requireNonNull(isMonthlyPatchingEnabled);
+        public Builder isMonthlyPatchingEnabled(@Nullable Boolean isMonthlyPatchingEnabled) {
+            this.isMonthlyPatchingEnabled = isMonthlyPatchingEnabled;
             return this;
         }
         @CustomType.Setter
-        public Builder quarterlyUpgradeBeginTimes(String quarterlyUpgradeBeginTimes) {
-            this.quarterlyUpgradeBeginTimes = Objects.requireNonNull(quarterlyUpgradeBeginTimes);
+        public Builder quarterlyUpgradeBeginTimes(@Nullable String quarterlyUpgradeBeginTimes) {
+            this.quarterlyUpgradeBeginTimes = quarterlyUpgradeBeginTimes;
             return this;
         }
         public GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemFamilyMaintenancePolicy build() {

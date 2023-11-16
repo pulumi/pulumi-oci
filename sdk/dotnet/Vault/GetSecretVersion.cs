@@ -124,15 +124,15 @@ namespace Pulumi.Oci.Vault
         /// <summary>
         /// The content type of the secret version's secret contents.
         /// </summary>
-        public readonly string ContentType;
+        public readonly string? ContentType;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The name of the secret version. A name is unique across versions of a secret.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// The OCID of the secret.
         /// </summary>
@@ -145,27 +145,27 @@ namespace Pulumi.Oci.Vault
         /// <summary>
         /// A optional property indicating when the secret version was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// An optional property indicating when the current secret version will expire, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
         /// </summary>
-        public readonly string TimeOfCurrentVersionExpiry;
+        public readonly string? TimeOfCurrentVersionExpiry;
         /// <summary>
         /// An optional property indicating when to delete the secret version, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
         /// </summary>
-        public readonly string TimeOfDeletion;
+        public readonly string? TimeOfDeletion;
         /// <summary>
         /// The version number of the secret.
         /// </summary>
-        public readonly string VersionNumber;
+        public readonly string? VersionNumber;
 
         [OutputConstructor]
         private GetSecretVersionResult(
-            string contentType,
+            string? contentType,
 
-            string id,
+            string? id,
 
-            string name,
+            string? name,
 
             string secretId,
 
@@ -173,13 +173,13 @@ namespace Pulumi.Oci.Vault
 
             ImmutableArray<string> stages,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeOfCurrentVersionExpiry,
+            string? timeOfCurrentVersionExpiry,
 
-            string timeOfDeletion,
+            string? timeOfDeletion,
 
-            string versionNumber)
+            string? versionNumber)
         {
             ContentType = contentType;
             Id = id;

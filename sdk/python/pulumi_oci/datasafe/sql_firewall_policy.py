@@ -29,23 +29,6 @@ class SqlFirewallPolicyArgs:
                  violation_audit: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a SqlFirewallPolicy resource.
-        :param pulumi.Input[str] sql_firewall_policy_id: The OCID of the SQL firewall policy resource.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] allowed_client_ips: (Updatable) List of allowed ip addresses for the SQL firewall policy.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] allowed_client_os_usernames: (Updatable) List of allowed operating system user names for the SQL firewall policy.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] allowed_client_programs: (Updatable) List of allowed client programs for the SQL firewall policy.
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment containing the SQL firewall policy.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] description: (Updatable) The description of the SQL firewall policy.
-        :param pulumi.Input[str] display_name: (Updatable) The display name of the SQL firewall policy. The name does not have to be unique, and it is changeable.
-        :param pulumi.Input[str] enforcement_scope: (Updatable) Specifies the SQL firewall policy enforcement option.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] status: (Updatable) Specifies whether the SQL firewall policy is enabled or disabled.
-        :param pulumi.Input[str] violation_action: (Updatable) Specifies the SQL firewall action based on detection of SQL firewall violations.
-        :param pulumi.Input[str] violation_audit: (Updatable) Specifies whether a unified audit policy should be enabled for auditing the SQL firewall policy violations.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "sql_firewall_policy_id", sql_firewall_policy_id)
         if allowed_client_ips is not None:
@@ -76,9 +59,6 @@ class SqlFirewallPolicyArgs:
     @property
     @pulumi.getter(name="sqlFirewallPolicyId")
     def sql_firewall_policy_id(self) -> pulumi.Input[str]:
-        """
-        The OCID of the SQL firewall policy resource.
-        """
         return pulumi.get(self, "sql_firewall_policy_id")
 
     @sql_firewall_policy_id.setter
@@ -88,9 +68,6 @@ class SqlFirewallPolicyArgs:
     @property
     @pulumi.getter(name="allowedClientIps")
     def allowed_client_ips(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) List of allowed ip addresses for the SQL firewall policy.
-        """
         return pulumi.get(self, "allowed_client_ips")
 
     @allowed_client_ips.setter
@@ -100,9 +77,6 @@ class SqlFirewallPolicyArgs:
     @property
     @pulumi.getter(name="allowedClientOsUsernames")
     def allowed_client_os_usernames(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) List of allowed operating system user names for the SQL firewall policy.
-        """
         return pulumi.get(self, "allowed_client_os_usernames")
 
     @allowed_client_os_usernames.setter
@@ -112,9 +86,6 @@ class SqlFirewallPolicyArgs:
     @property
     @pulumi.getter(name="allowedClientPrograms")
     def allowed_client_programs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) List of allowed client programs for the SQL firewall policy.
-        """
         return pulumi.get(self, "allowed_client_programs")
 
     @allowed_client_programs.setter
@@ -124,9 +95,6 @@ class SqlFirewallPolicyArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The OCID of the compartment containing the SQL firewall policy.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -136,9 +104,6 @@ class SqlFirewallPolicyArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -148,9 +113,6 @@ class SqlFirewallPolicyArgs:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The description of the SQL firewall policy.
-        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -160,9 +122,6 @@ class SqlFirewallPolicyArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The display name of the SQL firewall policy. The name does not have to be unique, and it is changeable.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -172,9 +131,6 @@ class SqlFirewallPolicyArgs:
     @property
     @pulumi.getter(name="enforcementScope")
     def enforcement_scope(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Specifies the SQL firewall policy enforcement option.
-        """
         return pulumi.get(self, "enforcement_scope")
 
     @enforcement_scope.setter
@@ -184,9 +140,6 @@ class SqlFirewallPolicyArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -196,9 +149,6 @@ class SqlFirewallPolicyArgs:
     @property
     @pulumi.getter
     def status(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Specifies whether the SQL firewall policy is enabled or disabled.
-        """
         return pulumi.get(self, "status")
 
     @status.setter
@@ -208,9 +158,6 @@ class SqlFirewallPolicyArgs:
     @property
     @pulumi.getter(name="violationAction")
     def violation_action(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Specifies the SQL firewall action based on detection of SQL firewall violations.
-        """
         return pulumi.get(self, "violation_action")
 
     @violation_action.setter
@@ -220,13 +167,6 @@ class SqlFirewallPolicyArgs:
     @property
     @pulumi.getter(name="violationAudit")
     def violation_audit(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Specifies whether a unified audit policy should be enabled for auditing the SQL firewall policy violations.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "violation_audit")
 
     @violation_audit.setter
@@ -260,31 +200,6 @@ class _SqlFirewallPolicyState:
                  violation_audit: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering SqlFirewallPolicy resources.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] allowed_client_ips: (Updatable) List of allowed ip addresses for the SQL firewall policy.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] allowed_client_os_usernames: (Updatable) List of allowed operating system user names for the SQL firewall policy.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] allowed_client_programs: (Updatable) List of allowed client programs for the SQL firewall policy.
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment containing the SQL firewall policy.
-        :param pulumi.Input[str] db_user_name: The database user name.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] description: (Updatable) The description of the SQL firewall policy.
-        :param pulumi.Input[str] display_name: (Updatable) The display name of the SQL firewall policy. The name does not have to be unique, and it is changeable.
-        :param pulumi.Input[str] enforcement_scope: (Updatable) Specifies the SQL firewall policy enforcement option.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] lifecycle_details: Details about the current state of the SQL firewall policy in Data Safe.
-        :param pulumi.Input[str] security_policy_id: The OCID of the security policy corresponding to the SQL firewall policy.
-        :param pulumi.Input[str] sql_firewall_policy_id: The OCID of the SQL firewall policy resource.
-        :param pulumi.Input[str] sql_level: Specifies the level of SQL included for this SQL firewall policy. USER_ISSUED_SQL - User issued SQL statements only. ALL_SQL - Includes all SQL statements including SQL statement issued inside PL/SQL units.
-        :param pulumi.Input[str] state: The current state of the SQL firewall policy.
-        :param pulumi.Input[str] status: (Updatable) Specifies whether the SQL firewall policy is enabled or disabled.
-        :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[str] time_created: The time that the SQL firewall policy was created, in the format defined by RFC3339.
-        :param pulumi.Input[str] time_updated: The date and time the SQL firewall policy was last updated, in the format defined by RFC3339.
-        :param pulumi.Input[str] violation_action: (Updatable) Specifies the SQL firewall action based on detection of SQL firewall violations.
-        :param pulumi.Input[str] violation_audit: (Updatable) Specifies whether a unified audit policy should be enabled for auditing the SQL firewall policy violations.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if allowed_client_ips is not None:
             pulumi.set(__self__, "allowed_client_ips", allowed_client_ips)
@@ -332,9 +247,6 @@ class _SqlFirewallPolicyState:
     @property
     @pulumi.getter(name="allowedClientIps")
     def allowed_client_ips(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) List of allowed ip addresses for the SQL firewall policy.
-        """
         return pulumi.get(self, "allowed_client_ips")
 
     @allowed_client_ips.setter
@@ -344,9 +256,6 @@ class _SqlFirewallPolicyState:
     @property
     @pulumi.getter(name="allowedClientOsUsernames")
     def allowed_client_os_usernames(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) List of allowed operating system user names for the SQL firewall policy.
-        """
         return pulumi.get(self, "allowed_client_os_usernames")
 
     @allowed_client_os_usernames.setter
@@ -356,9 +265,6 @@ class _SqlFirewallPolicyState:
     @property
     @pulumi.getter(name="allowedClientPrograms")
     def allowed_client_programs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) List of allowed client programs for the SQL firewall policy.
-        """
         return pulumi.get(self, "allowed_client_programs")
 
     @allowed_client_programs.setter
@@ -368,9 +274,6 @@ class _SqlFirewallPolicyState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The OCID of the compartment containing the SQL firewall policy.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -380,9 +283,6 @@ class _SqlFirewallPolicyState:
     @property
     @pulumi.getter(name="dbUserName")
     def db_user_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The database user name.
-        """
         return pulumi.get(self, "db_user_name")
 
     @db_user_name.setter
@@ -392,9 +292,6 @@ class _SqlFirewallPolicyState:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -404,9 +301,6 @@ class _SqlFirewallPolicyState:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The description of the SQL firewall policy.
-        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -416,9 +310,6 @@ class _SqlFirewallPolicyState:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The display name of the SQL firewall policy. The name does not have to be unique, and it is changeable.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -428,9 +319,6 @@ class _SqlFirewallPolicyState:
     @property
     @pulumi.getter(name="enforcementScope")
     def enforcement_scope(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Specifies the SQL firewall policy enforcement option.
-        """
         return pulumi.get(self, "enforcement_scope")
 
     @enforcement_scope.setter
@@ -440,9 +328,6 @@ class _SqlFirewallPolicyState:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -452,9 +337,6 @@ class _SqlFirewallPolicyState:
     @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> Optional[pulumi.Input[str]]:
-        """
-        Details about the current state of the SQL firewall policy in Data Safe.
-        """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
@@ -464,9 +346,6 @@ class _SqlFirewallPolicyState:
     @property
     @pulumi.getter(name="securityPolicyId")
     def security_policy_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the security policy corresponding to the SQL firewall policy.
-        """
         return pulumi.get(self, "security_policy_id")
 
     @security_policy_id.setter
@@ -476,9 +355,6 @@ class _SqlFirewallPolicyState:
     @property
     @pulumi.getter(name="sqlFirewallPolicyId")
     def sql_firewall_policy_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the SQL firewall policy resource.
-        """
         return pulumi.get(self, "sql_firewall_policy_id")
 
     @sql_firewall_policy_id.setter
@@ -488,9 +364,6 @@ class _SqlFirewallPolicyState:
     @property
     @pulumi.getter(name="sqlLevel")
     def sql_level(self) -> Optional[pulumi.Input[str]]:
-        """
-        Specifies the level of SQL included for this SQL firewall policy. USER_ISSUED_SQL - User issued SQL statements only. ALL_SQL - Includes all SQL statements including SQL statement issued inside PL/SQL units.
-        """
         return pulumi.get(self, "sql_level")
 
     @sql_level.setter
@@ -500,9 +373,6 @@ class _SqlFirewallPolicyState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The current state of the SQL firewall policy.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -512,9 +382,6 @@ class _SqlFirewallPolicyState:
     @property
     @pulumi.getter
     def status(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Specifies whether the SQL firewall policy is enabled or disabled.
-        """
         return pulumi.get(self, "status")
 
     @status.setter
@@ -524,9 +391,6 @@ class _SqlFirewallPolicyState:
     @property
     @pulumi.getter(name="systemTags")
     def system_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
@@ -536,9 +400,6 @@ class _SqlFirewallPolicyState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The time that the SQL firewall policy was created, in the format defined by RFC3339.
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -548,9 +409,6 @@ class _SqlFirewallPolicyState:
     @property
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time the SQL firewall policy was last updated, in the format defined by RFC3339.
-        """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
@@ -560,9 +418,6 @@ class _SqlFirewallPolicyState:
     @property
     @pulumi.getter(name="violationAction")
     def violation_action(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Specifies the SQL firewall action based on detection of SQL firewall violations.
-        """
         return pulumi.get(self, "violation_action")
 
     @violation_action.setter
@@ -572,13 +427,6 @@ class _SqlFirewallPolicyState:
     @property
     @pulumi.getter(name="violationAudit")
     def violation_audit(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Specifies whether a unified audit policy should be enabled for auditing the SQL firewall policy violations.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "violation_audit")
 
     @violation_audit.setter
@@ -606,37 +454,9 @@ class SqlFirewallPolicy(pulumi.CustomResource):
                  violation_audit: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Sql Firewall Policy resource in Oracle Cloud Infrastructure Data Safe service.
-
-        Updates the SQL firewall policy.
-
-        ## Import
-
-        SqlFirewallPolicies can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:DataSafe/sqlFirewallPolicy:SqlFirewallPolicy test_sql_firewall_policy "id"
-        ```
-
+        Create a SqlFirewallPolicy resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] allowed_client_ips: (Updatable) List of allowed ip addresses for the SQL firewall policy.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] allowed_client_os_usernames: (Updatable) List of allowed operating system user names for the SQL firewall policy.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] allowed_client_programs: (Updatable) List of allowed client programs for the SQL firewall policy.
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment containing the SQL firewall policy.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] description: (Updatable) The description of the SQL firewall policy.
-        :param pulumi.Input[str] display_name: (Updatable) The display name of the SQL firewall policy. The name does not have to be unique, and it is changeable.
-        :param pulumi.Input[str] enforcement_scope: (Updatable) Specifies the SQL firewall policy enforcement option.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] sql_firewall_policy_id: The OCID of the SQL firewall policy resource.
-        :param pulumi.Input[str] status: (Updatable) Specifies whether the SQL firewall policy is enabled or disabled.
-        :param pulumi.Input[str] violation_action: (Updatable) Specifies the SQL firewall action based on detection of SQL firewall violations.
-        :param pulumi.Input[str] violation_audit: (Updatable) Specifies whether a unified audit policy should be enabled for auditing the SQL firewall policy violations.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -645,18 +465,7 @@ class SqlFirewallPolicy(pulumi.CustomResource):
                  args: SqlFirewallPolicyArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Sql Firewall Policy resource in Oracle Cloud Infrastructure Data Safe service.
-
-        Updates the SQL firewall policy.
-
-        ## Import
-
-        SqlFirewallPolicies can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:DataSafe/sqlFirewallPolicy:SqlFirewallPolicy test_sql_firewall_policy "id"
-        ```
-
+        Create a SqlFirewallPolicy resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param SqlFirewallPolicyArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -755,31 +564,6 @@ class SqlFirewallPolicy(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] allowed_client_ips: (Updatable) List of allowed ip addresses for the SQL firewall policy.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] allowed_client_os_usernames: (Updatable) List of allowed operating system user names for the SQL firewall policy.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] allowed_client_programs: (Updatable) List of allowed client programs for the SQL firewall policy.
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment containing the SQL firewall policy.
-        :param pulumi.Input[str] db_user_name: The database user name.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] description: (Updatable) The description of the SQL firewall policy.
-        :param pulumi.Input[str] display_name: (Updatable) The display name of the SQL firewall policy. The name does not have to be unique, and it is changeable.
-        :param pulumi.Input[str] enforcement_scope: (Updatable) Specifies the SQL firewall policy enforcement option.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] lifecycle_details: Details about the current state of the SQL firewall policy in Data Safe.
-        :param pulumi.Input[str] security_policy_id: The OCID of the security policy corresponding to the SQL firewall policy.
-        :param pulumi.Input[str] sql_firewall_policy_id: The OCID of the SQL firewall policy resource.
-        :param pulumi.Input[str] sql_level: Specifies the level of SQL included for this SQL firewall policy. USER_ISSUED_SQL - User issued SQL statements only. ALL_SQL - Includes all SQL statements including SQL statement issued inside PL/SQL units.
-        :param pulumi.Input[str] state: The current state of the SQL firewall policy.
-        :param pulumi.Input[str] status: (Updatable) Specifies whether the SQL firewall policy is enabled or disabled.
-        :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[str] time_created: The time that the SQL firewall policy was created, in the format defined by RFC3339.
-        :param pulumi.Input[str] time_updated: The date and time the SQL firewall policy was last updated, in the format defined by RFC3339.
-        :param pulumi.Input[str] violation_action: (Updatable) Specifies the SQL firewall action based on detection of SQL firewall violations.
-        :param pulumi.Input[str] violation_audit: (Updatable) Specifies whether a unified audit policy should be enabled for auditing the SQL firewall policy violations.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -810,173 +594,106 @@ class SqlFirewallPolicy(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="allowedClientIps")
-    def allowed_client_ips(self) -> pulumi.Output[Sequence[str]]:
-        """
-        (Updatable) List of allowed ip addresses for the SQL firewall policy.
-        """
+    def allowed_client_ips(self) -> pulumi.Output[Optional[Sequence[str]]]:
         return pulumi.get(self, "allowed_client_ips")
 
     @property
     @pulumi.getter(name="allowedClientOsUsernames")
-    def allowed_client_os_usernames(self) -> pulumi.Output[Sequence[str]]:
-        """
-        (Updatable) List of allowed operating system user names for the SQL firewall policy.
-        """
+    def allowed_client_os_usernames(self) -> pulumi.Output[Optional[Sequence[str]]]:
         return pulumi.get(self, "allowed_client_os_usernames")
 
     @property
     @pulumi.getter(name="allowedClientPrograms")
-    def allowed_client_programs(self) -> pulumi.Output[Sequence[str]]:
-        """
-        (Updatable) List of allowed client programs for the SQL firewall policy.
-        """
+    def allowed_client_programs(self) -> pulumi.Output[Optional[Sequence[str]]]:
         return pulumi.get(self, "allowed_client_programs")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The OCID of the compartment containing the SQL firewall policy.
-        """
+    def compartment_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="dbUserName")
-    def db_user_name(self) -> pulumi.Output[str]:
-        """
-        The database user name.
-        """
+    def db_user_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "db_user_name")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def description(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The description of the SQL firewall policy.
-        """
+    def description(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The display name of the SQL firewall policy. The name does not have to be unique, and it is changeable.
-        """
+    def display_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="enforcementScope")
-    def enforcement_scope(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Specifies the SQL firewall policy enforcement option.
-        """
+    def enforcement_scope(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "enforcement_scope")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> pulumi.Output[str]:
-        """
-        Details about the current state of the SQL firewall policy in Data Safe.
-        """
+    def lifecycle_details(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="securityPolicyId")
-    def security_policy_id(self) -> pulumi.Output[str]:
-        """
-        The OCID of the security policy corresponding to the SQL firewall policy.
-        """
+    def security_policy_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "security_policy_id")
 
     @property
     @pulumi.getter(name="sqlFirewallPolicyId")
     def sql_firewall_policy_id(self) -> pulumi.Output[str]:
-        """
-        The OCID of the SQL firewall policy resource.
-        """
         return pulumi.get(self, "sql_firewall_policy_id")
 
     @property
     @pulumi.getter(name="sqlLevel")
-    def sql_level(self) -> pulumi.Output[str]:
-        """
-        Specifies the level of SQL included for this SQL firewall policy. USER_ISSUED_SQL - User issued SQL statements only. ALL_SQL - Includes all SQL statements including SQL statement issued inside PL/SQL units.
-        """
+    def sql_level(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "sql_level")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        The current state of the SQL firewall policy.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter
-    def status(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Specifies whether the SQL firewall policy is enabled or disabled.
-        """
+    def status(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "status")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        The time that the SQL firewall policy was created, in the format defined by RFC3339.
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> pulumi.Output[str]:
-        """
-        The date and time the SQL firewall policy was last updated, in the format defined by RFC3339.
-        """
+    def time_updated(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_updated")
 
     @property
     @pulumi.getter(name="violationAction")
-    def violation_action(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Specifies the SQL firewall action based on detection of SQL firewall violations.
-        """
+    def violation_action(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "violation_action")
 
     @property
     @pulumi.getter(name="violationAudit")
-    def violation_audit(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Specifies whether a unified audit policy should be enabled for auditing the SQL firewall policy violations.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
+    def violation_audit(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "violation_audit")
 

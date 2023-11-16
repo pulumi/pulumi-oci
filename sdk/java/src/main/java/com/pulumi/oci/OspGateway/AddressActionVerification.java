@@ -13,6 +13,7 @@ import com.pulumi.oci.OspGateway.outputs.AddressActionVerificationAddress;
 import com.pulumi.oci.Utilities;
 import java.lang.String;
 import java.util.List;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -93,56 +94,56 @@ public class AddressActionVerification extends com.pulumi.resources.CustomResour
      * 
      */
     @Export(name="addressKey", refs={String.class}, tree="[0]")
-    private Output<String> addressKey;
+    private Output</* @Nullable */ String> addressKey;
 
     /**
      * @return Address identifier.
      * 
      */
-    public Output<String> addressKey() {
-        return this.addressKey;
+    public Output<Optional<String>> addressKey() {
+        return Codegen.optional(this.addressKey);
     }
     /**
      * Address details model.
      * 
      */
     @Export(name="addresses", refs={List.class,AddressActionVerificationAddress.class}, tree="[0,1]")
-    private Output<List<AddressActionVerificationAddress>> addresses;
+    private Output</* @Nullable */ List<AddressActionVerificationAddress>> addresses;
 
     /**
      * @return Address details model.
      * 
      */
-    public Output<List<AddressActionVerificationAddress>> addresses() {
-        return this.addresses;
+    public Output<Optional<List<AddressActionVerificationAddress>>> addresses() {
+        return Codegen.optional(this.addresses);
     }
     /**
      * Name of the city.
      * 
      */
     @Export(name="city", refs={String.class}, tree="[0]")
-    private Output<String> city;
+    private Output</* @Nullable */ String> city;
 
     /**
      * @return Name of the city.
      * 
      */
-    public Output<String> city() {
-        return this.city;
+    public Output<Optional<String>> city() {
+        return Codegen.optional(this.city);
     }
     /**
      * Name of the customer company.
      * 
      */
     @Export(name="companyName", refs={String.class}, tree="[0]")
-    private Output<String> companyName;
+    private Output</* @Nullable */ String> companyName;
 
     /**
      * @return Name of the customer company.
      * 
      */
-    public Output<String> companyName() {
-        return this.companyName;
+    public Output<Optional<String>> companyName() {
+        return Codegen.optional(this.companyName);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -163,210 +164,210 @@ public class AddressActionVerification extends com.pulumi.resources.CustomResour
      * 
      */
     @Export(name="contributorClass", refs={String.class}, tree="[0]")
-    private Output<String> contributorClass;
+    private Output</* @Nullable */ String> contributorClass;
 
     /**
      * @return Contributor class of the customer company.
      * 
      */
-    public Output<String> contributorClass() {
-        return this.contributorClass;
+    public Output<Optional<String>> contributorClass() {
+        return Codegen.optional(this.contributorClass);
     }
     /**
      * Country of the address.
      * 
      */
     @Export(name="country", refs={String.class}, tree="[0]")
-    private Output<String> country;
+    private Output</* @Nullable */ String> country;
 
     /**
      * @return Country of the address.
      * 
      */
-    public Output<String> country() {
-        return this.country;
+    public Output<Optional<String>> country() {
+        return Codegen.optional(this.country);
     }
     /**
      * County of the address.
      * 
      */
     @Export(name="county", refs={String.class}, tree="[0]")
-    private Output<String> county;
+    private Output</* @Nullable */ String> county;
 
     /**
      * @return County of the address.
      * 
      */
-    public Output<String> county() {
-        return this.county;
+    public Output<Optional<String>> county() {
+        return Codegen.optional(this.county);
     }
     /**
      * Department name of the customer company.
      * 
      */
     @Export(name="departmentName", refs={String.class}, tree="[0]")
-    private Output<String> departmentName;
+    private Output</* @Nullable */ String> departmentName;
 
     /**
      * @return Department name of the customer company.
      * 
      */
-    public Output<String> departmentName() {
-        return this.departmentName;
+    public Output<Optional<String>> departmentName() {
+        return Codegen.optional(this.departmentName);
     }
     /**
      * Contact person email address.
      * 
      */
     @Export(name="emailAddress", refs={String.class}, tree="[0]")
-    private Output<String> emailAddress;
+    private Output</* @Nullable */ String> emailAddress;
 
     /**
      * @return Contact person email address.
      * 
      */
-    public Output<String> emailAddress() {
-        return this.emailAddress;
+    public Output<Optional<String>> emailAddress() {
+        return Codegen.optional(this.emailAddress);
     }
     /**
      * First name of the contact person.
      * 
      */
     @Export(name="firstName", refs={String.class}, tree="[0]")
-    private Output<String> firstName;
+    private Output</* @Nullable */ String> firstName;
 
     /**
      * @return First name of the contact person.
      * 
      */
-    public Output<String> firstName() {
-        return this.firstName;
+    public Output<Optional<String>> firstName() {
+        return Codegen.optional(this.firstName);
     }
     /**
      * Internal number of the customer company.
      * 
      */
     @Export(name="internalNumber", refs={String.class}, tree="[0]")
-    private Output<String> internalNumber;
+    private Output</* @Nullable */ String> internalNumber;
 
     /**
      * @return Internal number of the customer company.
      * 
      */
-    public Output<String> internalNumber() {
-        return this.internalNumber;
+    public Output<Optional<String>> internalNumber() {
+        return Codegen.optional(this.internalNumber);
     }
     /**
      * Job title of the contact person.
      * 
      */
     @Export(name="jobTitle", refs={String.class}, tree="[0]")
-    private Output<String> jobTitle;
+    private Output</* @Nullable */ String> jobTitle;
 
     /**
      * @return Job title of the contact person.
      * 
      */
-    public Output<String> jobTitle() {
-        return this.jobTitle;
+    public Output<Optional<String>> jobTitle() {
+        return Codegen.optional(this.jobTitle);
     }
     /**
      * Last name of the contact person.
      * 
      */
     @Export(name="lastName", refs={String.class}, tree="[0]")
-    private Output<String> lastName;
+    private Output</* @Nullable */ String> lastName;
 
     /**
      * @return Last name of the contact person.
      * 
      */
-    public Output<String> lastName() {
-        return this.lastName;
+    public Output<Optional<String>> lastName() {
+        return Codegen.optional(this.lastName);
     }
     /**
      * Address line 1.
      * 
      */
     @Export(name="line1", refs={String.class}, tree="[0]")
-    private Output<String> line1;
+    private Output</* @Nullable */ String> line1;
 
     /**
      * @return Address line 1.
      * 
      */
-    public Output<String> line1() {
-        return this.line1;
+    public Output<Optional<String>> line1() {
+        return Codegen.optional(this.line1);
     }
     /**
      * Address line 2.
      * 
      */
     @Export(name="line2", refs={String.class}, tree="[0]")
-    private Output<String> line2;
+    private Output</* @Nullable */ String> line2;
 
     /**
      * @return Address line 2.
      * 
      */
-    public Output<String> line2() {
-        return this.line2;
+    public Output<Optional<String>> line2() {
+        return Codegen.optional(this.line2);
     }
     /**
      * Address line 3.
      * 
      */
     @Export(name="line3", refs={String.class}, tree="[0]")
-    private Output<String> line3;
+    private Output</* @Nullable */ String> line3;
 
     /**
      * @return Address line 3.
      * 
      */
-    public Output<String> line3() {
-        return this.line3;
+    public Output<Optional<String>> line3() {
+        return Codegen.optional(this.line3);
     }
     /**
      * Address line 4.
      * 
      */
     @Export(name="line4", refs={String.class}, tree="[0]")
-    private Output<String> line4;
+    private Output</* @Nullable */ String> line4;
 
     /**
      * @return Address line 4.
      * 
      */
-    public Output<String> line4() {
-        return this.line4;
+    public Output<Optional<String>> line4() {
+        return Codegen.optional(this.line4);
     }
     /**
      * Middle name of the contact person.
      * 
      */
     @Export(name="middleName", refs={String.class}, tree="[0]")
-    private Output<String> middleName;
+    private Output</* @Nullable */ String> middleName;
 
     /**
      * @return Middle name of the contact person.
      * 
      */
-    public Output<String> middleName() {
-        return this.middleName;
+    public Output<Optional<String>> middleName() {
+        return Codegen.optional(this.middleName);
     }
     /**
      * Municipal Inscription.
      * 
      */
     @Export(name="municipalInscription", refs={String.class}, tree="[0]")
-    private Output<String> municipalInscription;
+    private Output</* @Nullable */ String> municipalInscription;
 
     /**
      * @return Municipal Inscription.
      * 
      */
-    public Output<String> municipalInscription() {
-        return this.municipalInscription;
+    public Output<Optional<String>> municipalInscription() {
+        return Codegen.optional(this.municipalInscription);
     }
     /**
      * The home region&#39;s public name of the logged in user.
@@ -387,112 +388,112 @@ public class AddressActionVerification extends com.pulumi.resources.CustomResour
      * 
      */
     @Export(name="phoneCountryCode", refs={String.class}, tree="[0]")
-    private Output<String> phoneCountryCode;
+    private Output</* @Nullable */ String> phoneCountryCode;
 
     /**
      * @return Phone country code of the contact person.
      * 
      */
-    public Output<String> phoneCountryCode() {
-        return this.phoneCountryCode;
+    public Output<Optional<String>> phoneCountryCode() {
+        return Codegen.optional(this.phoneCountryCode);
     }
     /**
      * Phone number of the contact person.
      * 
      */
     @Export(name="phoneNumber", refs={String.class}, tree="[0]")
-    private Output<String> phoneNumber;
+    private Output</* @Nullable */ String> phoneNumber;
 
     /**
      * @return Phone number of the contact person.
      * 
      */
-    public Output<String> phoneNumber() {
-        return this.phoneNumber;
+    public Output<Optional<String>> phoneNumber() {
+        return Codegen.optional(this.phoneNumber);
     }
     /**
      * Post code of the address.
      * 
      */
     @Export(name="postalCode", refs={String.class}, tree="[0]")
-    private Output<String> postalCode;
+    private Output</* @Nullable */ String> postalCode;
 
     /**
      * @return Post code of the address.
      * 
      */
-    public Output<String> postalCode() {
-        return this.postalCode;
+    public Output<Optional<String>> postalCode() {
+        return Codegen.optional(this.postalCode);
     }
     /**
      * Province of the address.
      * 
      */
     @Export(name="province", refs={String.class}, tree="[0]")
-    private Output<String> province;
+    private Output</* @Nullable */ String> province;
 
     /**
      * @return Province of the address.
      * 
      */
-    public Output<String> province() {
-        return this.province;
+    public Output<Optional<String>> province() {
+        return Codegen.optional(this.province);
     }
     /**
      * Address quality type.
      * 
      */
     @Export(name="quality", refs={String.class}, tree="[0]")
-    private Output<String> quality;
+    private Output</* @Nullable */ String> quality;
 
     /**
      * @return Address quality type.
      * 
      */
-    public Output<String> quality() {
-        return this.quality;
+    public Output<Optional<String>> quality() {
+        return Codegen.optional(this.quality);
     }
     /**
      * State of the address.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return State of the address.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * State Inscription.
      * 
      */
     @Export(name="stateInscription", refs={String.class}, tree="[0]")
-    private Output<String> stateInscription;
+    private Output</* @Nullable */ String> stateInscription;
 
     /**
      * @return State Inscription.
      * 
      */
-    public Output<String> stateInscription() {
-        return this.stateInscription;
+    public Output<Optional<String>> stateInscription() {
+        return Codegen.optional(this.stateInscription);
     }
     /**
      * Street name of the address.
      * 
      */
     @Export(name="streetName", refs={String.class}, tree="[0]")
-    private Output<String> streetName;
+    private Output</* @Nullable */ String> streetName;
 
     /**
      * @return Street name of the address.
      * 
      */
-    public Output<String> streetName() {
-        return this.streetName;
+    public Output<Optional<String>> streetName() {
+        return Codegen.optional(this.streetName);
     }
     /**
      * Street number of the address.
@@ -502,7 +503,7 @@ public class AddressActionVerification extends com.pulumi.resources.CustomResour
      * 
      */
     @Export(name="streetNumber", refs={String.class}, tree="[0]")
-    private Output<String> streetNumber;
+    private Output</* @Nullable */ String> streetNumber;
 
     /**
      * @return Street number of the address.
@@ -511,22 +512,22 @@ public class AddressActionVerification extends com.pulumi.resources.CustomResour
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Output<String> streetNumber() {
-        return this.streetNumber;
+    public Output<Optional<String>> streetNumber() {
+        return Codegen.optional(this.streetNumber);
     }
     /**
      * Address verification code.
      * 
      */
     @Export(name="verificationCode", refs={String.class}, tree="[0]")
-    private Output<String> verificationCode;
+    private Output</* @Nullable */ String> verificationCode;
 
     /**
      * @return Address verification code.
      * 
      */
-    public Output<String> verificationCode() {
-        return this.verificationCode;
+    public Output<Optional<String>> verificationCode() {
+        return Codegen.optional(this.verificationCode);
     }
 
     /**

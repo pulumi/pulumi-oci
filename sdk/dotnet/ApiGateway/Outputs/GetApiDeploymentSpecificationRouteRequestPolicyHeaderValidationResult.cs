@@ -17,13 +17,13 @@ namespace Pulumi.Oci.ApiGateway.Outputs
         /// <summary>
         /// Validation behavior mode.
         /// </summary>
-        public readonly string ValidationMode;
+        public readonly string? ValidationMode;
 
         [OutputConstructor]
         private GetApiDeploymentSpecificationRouteRequestPolicyHeaderValidationResult(
             ImmutableArray<Outputs.GetApiDeploymentSpecificationRouteRequestPolicyHeaderValidationHeaderResult> headers,
 
-            string validationMode)
+            string? validationMode)
         {
             Headers = headers;
             ValidationMode = validationMode;

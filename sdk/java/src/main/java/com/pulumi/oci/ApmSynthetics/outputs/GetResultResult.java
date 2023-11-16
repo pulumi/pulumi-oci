@@ -8,6 +8,8 @@ import com.pulumi.oci.ApmSynthetics.outputs.GetResultResultDataSet;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetResultResult {
@@ -21,7 +23,7 @@ public final class GetResultResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the monitor.
      * 
@@ -36,7 +38,7 @@ public final class GetResultResult {
      * @return Monitor result data set.
      * 
      */
-    private List<GetResultResultDataSet> resultDataSets;
+    private @Nullable List<GetResultResultDataSet> resultDataSets;
     /**
      * @return Type of result. Example: HAR, Screenshot, Log or Network.
      * 
@@ -63,8 +65,8 @@ public final class GetResultResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the monitor.
@@ -85,7 +87,7 @@ public final class GetResultResult {
      * 
      */
     public List<GetResultResultDataSet> resultDataSets() {
-        return this.resultDataSets;
+        return this.resultDataSets == null ? List.of() : this.resultDataSets;
     }
     /**
      * @return Type of result. Example: HAR, Screenshot, Log or Network.
@@ -113,10 +115,10 @@ public final class GetResultResult {
     public static final class Builder {
         private String apmDomainId;
         private String executionTime;
-        private String id;
+        private @Nullable String id;
         private String monitorId;
         private String resultContentType;
-        private List<GetResultResultDataSet> resultDataSets;
+        private @Nullable List<GetResultResultDataSet> resultDataSets;
         private String resultType;
         private String vantagePoint;
         public Builder() {}
@@ -143,8 +145,8 @@ public final class GetResultResult {
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -158,8 +160,8 @@ public final class GetResultResult {
             return this;
         }
         @CustomType.Setter
-        public Builder resultDataSets(List<GetResultResultDataSet> resultDataSets) {
-            this.resultDataSets = Objects.requireNonNull(resultDataSets);
+        public Builder resultDataSets(@Nullable List<GetResultResultDataSet> resultDataSets) {
+            this.resultDataSets = resultDataSets;
             return this;
         }
         public Builder resultDataSets(GetResultResultDataSet... resultDataSets) {

@@ -16,47 +16,47 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// <summary>
         /// A filter to return roles based on authentication type.
         /// </summary>
-        public readonly string AuthenticationType;
+        public readonly string? AuthenticationType;
         /// <summary>
         /// Is the role common.
         /// </summary>
-        public readonly bool IsCommon;
+        public readonly bool? IsCommon;
         /// <summary>
         /// Is the role implicit.
         /// </summary>
-        public readonly bool IsImplicit;
+        public readonly bool? IsImplicit;
         /// <summary>
         /// Is the role inherited.
         /// </summary>
-        public readonly bool IsInherited;
+        public readonly bool? IsInherited;
         /// <summary>
         /// A filter to return roles based on whether they are maintained by oracle or not.
         /// </summary>
-        public readonly bool IsOracleMaintained;
+        public readonly bool? IsOracleMaintained;
         /// <summary>
         /// Is password required.
         /// </summary>
-        public readonly bool IsPasswordRequired;
+        public readonly bool? IsPasswordRequired;
         /// <summary>
         /// A filter to return only a specific role based on role name.
         /// </summary>
-        public readonly string RoleName;
+        public readonly string? RoleName;
 
         [OutputConstructor]
         private GetTargetDatabaseRolesRoleResult(
-            string authenticationType,
+            string? authenticationType,
 
-            bool isCommon,
+            bool? isCommon,
 
-            bool isImplicit,
+            bool? isImplicit,
 
-            bool isInherited,
+            bool? isInherited,
 
-            bool isOracleMaintained,
+            bool? isOracleMaintained,
 
-            bool isPasswordRequired,
+            bool? isPasswordRequired,
 
-            string roleName)
+            string? roleName)
         {
             AuthenticationType = authenticationType;
             IsCommon = isCommon;

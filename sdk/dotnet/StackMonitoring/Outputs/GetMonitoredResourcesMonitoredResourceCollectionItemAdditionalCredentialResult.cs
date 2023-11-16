@@ -19,19 +19,19 @@ namespace Pulumi.Oci.StackMonitoring.Outputs
         /// * PLAINTEXT - The credential properties will have credentials in plain text format.
         /// * ENCRYPTED - The credential properties will have credentials stored in vault in encrypted format using KMS client which uses master key for encryption. The same master key will be used to decrypt the credentials before passing on to the management agent.
         /// </summary>
-        public readonly string CredentialType;
+        public readonly string? CredentialType;
         /// <summary>
         /// The user-specified textual description of the credential.
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// The master key should be created in Oracle Cloud Infrastructure Vault owned by the client of this API.  The user should have permission to access the vault key.
         /// </summary>
-        public readonly string KeyId;
+        public readonly string? KeyId;
         /// <summary>
         /// A filter to return resources that match exact resource name.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// List of monitored resource properties.
         /// </summary>
@@ -39,27 +39,27 @@ namespace Pulumi.Oci.StackMonitoring.Outputs
         /// <summary>
         /// The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
         /// </summary>
-        public readonly string Source;
+        public readonly string? Source;
         /// <summary>
         /// Monitored Resource Type.
         /// </summary>
-        public readonly string Type;
+        public readonly string? Type;
 
         [OutputConstructor]
         private GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialResult(
-            string credentialType,
+            string? credentialType,
 
-            string description,
+            string? description,
 
-            string keyId,
+            string? keyId,
 
-            string name,
+            string? name,
 
             ImmutableArray<Outputs.GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialPropertyResult> properties,
 
-            string source,
+            string? source,
 
-            string type)
+            string? type)
         {
             CredentialType = credentialType;
             Description = description;

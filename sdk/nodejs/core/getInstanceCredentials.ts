@@ -46,16 +46,16 @@ export interface GetInstanceCredentialsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly instanceId: string;
     /**
      * The password for the username.
      */
-    readonly password: string;
+    readonly password?: string;
     /**
      * The username.
      */
-    readonly username: string;
+    readonly username?: string;
 }
 /**
  * This data source provides details about a specific Instance Credential resource in Oracle Cloud Infrastructure Core service.

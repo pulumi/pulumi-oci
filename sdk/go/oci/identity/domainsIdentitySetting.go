@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Identity Setting resource in Oracle Cloud Infrastructure Identity Domains service.
@@ -46,7 +45,7 @@ type DomainsIdentitySetting struct {
 	// * returned: default
 	// * type: string
 	// * uniqueness: none
-	CompartmentOcid pulumi.StringOutput `pulumi:"compartmentOcid"`
+	CompartmentOcid pulumi.StringPtrOutput `pulumi:"compartmentOcid"`
 	// (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
 	//
 	// **SCIM++ Properties:**
@@ -58,7 +57,7 @@ type DomainsIdentitySetting struct {
 	// * returned: default
 	// * type: boolean
 	// * uniqueness: none
-	DeleteInProgress pulumi.BoolOutput `pulumi:"deleteInProgress"`
+	DeleteInProgress pulumi.BoolPtrOutput `pulumi:"deleteInProgress"`
 	// (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
 	//
 	// **SCIM++ Properties:**
@@ -70,7 +69,7 @@ type DomainsIdentitySetting struct {
 	// * returned: default
 	// * type: string
 	// * uniqueness: none
-	DomainOcid pulumi.StringOutput `pulumi:"domainOcid"`
+	DomainOcid pulumi.StringPtrOutput `pulumi:"domainOcid"`
 	// (Updatable) Indicates whether to show the 'user-is-locked' message during authentication if the user is already locked. The default value is false, which tells the system to show a generic 'authentication-failure' message. This is the most secure behavior. If the option is set to true, the system shows a more detailed 'error-message' that says the user is locked. This is more helpful but is less secure, for example, because the difference in error-messages could be used to determine which usernames exist and which do not.
 	//
 	// **Added In:** 19.2.1
@@ -83,7 +82,7 @@ type DomainsIdentitySetting struct {
 	// * returned: default
 	// * type: boolean
 	// * uniqueness: none
-	EmitLockedMessageWhenUserIsLocked pulumi.BoolOutput `pulumi:"emitLockedMessageWhenUserIsLocked"`
+	EmitLockedMessageWhenUserIsLocked pulumi.BoolPtrOutput `pulumi:"emitLockedMessageWhenUserIsLocked"`
 	// (Updatable) An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer's tenant.
 	//
 	// **SCIM++ Properties:**
@@ -94,7 +93,7 @@ type DomainsIdentitySetting struct {
 	// * returned: default
 	// * type: string
 	// * uniqueness: none
-	ExternalId pulumi.StringOutput `pulumi:"externalId"`
+	ExternalId pulumi.StringPtrOutput `pulumi:"externalId"`
 	// (Updatable) The User or App who created the Resource
 	//
 	// **SCIM++ Properties:**
@@ -128,7 +127,7 @@ type DomainsIdentitySetting struct {
 	// * returned: request
 	// * type: string
 	// * uniqueness: none
-	IdcsLastUpgradedInRelease pulumi.StringOutput `pulumi:"idcsLastUpgradedInRelease"`
+	IdcsLastUpgradedInRelease pulumi.StringPtrOutput `pulumi:"idcsLastUpgradedInRelease"`
 	// (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
 	//
 	// **SCIM++ Properties:**
@@ -164,7 +163,7 @@ type DomainsIdentitySetting struct {
 	// * required: false
 	// * type: complex
 	// * uniqueness: none
-	MyProfile DomainsIdentitySettingMyProfileOutput `pulumi:"myProfile"`
+	MyProfile DomainsIdentitySettingMyProfilePtrOutput `pulumi:"myProfile"`
 	// (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
 	//
 	// **SCIM++ Properties:**
@@ -176,7 +175,7 @@ type DomainsIdentitySetting struct {
 	// * returned: default
 	// * type: string
 	// * uniqueness: global
-	Ocid pulumi.StringOutput `pulumi:"ocid"`
+	Ocid pulumi.StringPtrOutput `pulumi:"ocid"`
 	// (Updatable) A list of Posix Gid settings.
 	//
 	// **Added In:** 17.4.6
@@ -187,7 +186,7 @@ type DomainsIdentitySetting struct {
 	// * required: false
 	// * type: complex
 	// * uniqueness: none
-	PosixGid DomainsIdentitySettingPosixGidOutput `pulumi:"posixGid"`
+	PosixGid DomainsIdentitySettingPosixGidPtrOutput `pulumi:"posixGid"`
 	// (Updatable) A list of Posix Uid settings.
 	//
 	// **Added In:** 17.4.6
@@ -198,7 +197,7 @@ type DomainsIdentitySetting struct {
 	// * required: false
 	// * type: complex
 	// * uniqueness: none
-	PosixUid DomainsIdentitySettingPosixUidOutput `pulumi:"posixUid"`
+	PosixUid DomainsIdentitySettingPosixUidPtrOutput `pulumi:"posixUid"`
 	// (Updatable) Indicates whether the primary email is required.
 	//
 	// **Added In:** 19.1.4
@@ -211,7 +210,7 @@ type DomainsIdentitySetting struct {
 	// * returned: default
 	// * type: boolean
 	// * uniqueness: none
-	PrimaryEmailRequired pulumi.BoolOutput `pulumi:"primaryEmailRequired"`
+	PrimaryEmailRequired pulumi.BoolPtrOutput `pulumi:"primaryEmailRequired"`
 	// (Updatable) Indicates whether to remove non-RFC5322 compliant emails before creating a user.
 	//
 	// **Added In:** 2106170416
@@ -224,7 +223,7 @@ type DomainsIdentitySetting struct {
 	// * returned: default
 	// * type: boolean
 	// * uniqueness: none
-	RemoveInvalidEmails pulumi.BoolOutput `pulumi:"removeInvalidEmails"`
+	RemoveInvalidEmails pulumi.BoolPtrOutput `pulumi:"removeInvalidEmails"`
 	// (Updatable) An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
 	ResourceTypeSchemaVersion pulumi.StringPtrOutput `pulumi:"resourceTypeSchemaVersion"`
 	// (Updatable) **Added In:** 2302092332
@@ -237,7 +236,7 @@ type DomainsIdentitySetting struct {
 	// * returned: default
 	// * type: boolean
 	// * uniqueness: none Determines the PasswordAuthenticator API response when a user is both 'locked' and 'inactive.' If false (default), a 'locked' message is shown. If true, an 'inactive' message is shown.
-	ReturnInactiveOverLockedMessage pulumi.BoolOutput `pulumi:"returnInactiveOverLockedMessage"`
+	ReturnInactiveOverLockedMessage pulumi.BoolPtrOutput `pulumi:"returnInactiveOverLockedMessage"`
 	// (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
 	//
 	// **SCIM++ Properties:**
@@ -273,7 +272,7 @@ type DomainsIdentitySetting struct {
 	// * returned: default
 	// * type: string
 	// * uniqueness: none
-	TenancyOcid pulumi.StringOutput `pulumi:"tenancyOcid"`
+	TenancyOcid pulumi.StringPtrOutput `pulumi:"tenancyOcid"`
 	// (Updatable) A list of tokens and their expiry length.
 	//
 	// **SCIM++ Properties:**
@@ -297,7 +296,7 @@ type DomainsIdentitySetting struct {
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	UserAllowedToSetRecoveryEmail pulumi.BoolOutput `pulumi:"userAllowedToSetRecoveryEmail"`
+	UserAllowedToSetRecoveryEmail pulumi.BoolPtrOutput `pulumi:"userAllowedToSetRecoveryEmail"`
 }
 
 // NewDomainsIdentitySetting registers a new resource with the given unique name, arguments, and options.
@@ -1222,12 +1221,6 @@ func (i *DomainsIdentitySetting) ToDomainsIdentitySettingOutputWithContext(ctx c
 	return pulumi.ToOutputWithContext(ctx, i).(DomainsIdentitySettingOutput)
 }
 
-func (i *DomainsIdentitySetting) ToOutput(ctx context.Context) pulumix.Output[*DomainsIdentitySetting] {
-	return pulumix.Output[*DomainsIdentitySetting]{
-		OutputState: i.ToDomainsIdentitySettingOutputWithContext(ctx).OutputState,
-	}
-}
-
 // DomainsIdentitySettingArrayInput is an input type that accepts DomainsIdentitySettingArray and DomainsIdentitySettingArrayOutput values.
 // You can construct a concrete instance of `DomainsIdentitySettingArrayInput` via:
 //
@@ -1251,12 +1244,6 @@ func (i DomainsIdentitySettingArray) ToDomainsIdentitySettingArrayOutput() Domai
 
 func (i DomainsIdentitySettingArray) ToDomainsIdentitySettingArrayOutputWithContext(ctx context.Context) DomainsIdentitySettingArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(DomainsIdentitySettingArrayOutput)
-}
-
-func (i DomainsIdentitySettingArray) ToOutput(ctx context.Context) pulumix.Output[[]*DomainsIdentitySetting] {
-	return pulumix.Output[[]*DomainsIdentitySetting]{
-		OutputState: i.ToDomainsIdentitySettingArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // DomainsIdentitySettingMapInput is an input type that accepts DomainsIdentitySettingMap and DomainsIdentitySettingMapOutput values.
@@ -1284,12 +1271,6 @@ func (i DomainsIdentitySettingMap) ToDomainsIdentitySettingMapOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(DomainsIdentitySettingMapOutput)
 }
 
-func (i DomainsIdentitySettingMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*DomainsIdentitySetting] {
-	return pulumix.Output[map[string]*DomainsIdentitySetting]{
-		OutputState: i.ToDomainsIdentitySettingMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DomainsIdentitySettingOutput struct{ *pulumi.OutputState }
 
 func (DomainsIdentitySettingOutput) ElementType() reflect.Type {
@@ -1302,12 +1283,6 @@ func (o DomainsIdentitySettingOutput) ToDomainsIdentitySettingOutput() DomainsId
 
 func (o DomainsIdentitySettingOutput) ToDomainsIdentitySettingOutputWithContext(ctx context.Context) DomainsIdentitySettingOutput {
 	return o
-}
-
-func (o DomainsIdentitySettingOutput) ToOutput(ctx context.Context) pulumix.Output[*DomainsIdentitySetting] {
-	return pulumix.Output[*DomainsIdentitySetting]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
@@ -1336,8 +1311,8 @@ func (o DomainsIdentitySettingOutput) Authorization() pulumi.StringPtrOutput {
 // * returned: default
 // * type: string
 // * uniqueness: none
-func (o DomainsIdentitySettingOutput) CompartmentOcid() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsIdentitySetting) pulumi.StringOutput { return v.CompartmentOcid }).(pulumi.StringOutput)
+func (o DomainsIdentitySettingOutput) CompartmentOcid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsIdentitySetting) pulumi.StringPtrOutput { return v.CompartmentOcid }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
@@ -1351,8 +1326,8 @@ func (o DomainsIdentitySettingOutput) CompartmentOcid() pulumi.StringOutput {
 // * returned: default
 // * type: boolean
 // * uniqueness: none
-func (o DomainsIdentitySettingOutput) DeleteInProgress() pulumi.BoolOutput {
-	return o.ApplyT(func(v *DomainsIdentitySetting) pulumi.BoolOutput { return v.DeleteInProgress }).(pulumi.BoolOutput)
+func (o DomainsIdentitySettingOutput) DeleteInProgress() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DomainsIdentitySetting) pulumi.BoolPtrOutput { return v.DeleteInProgress }).(pulumi.BoolPtrOutput)
 }
 
 // (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
@@ -1366,8 +1341,8 @@ func (o DomainsIdentitySettingOutput) DeleteInProgress() pulumi.BoolOutput {
 // * returned: default
 // * type: string
 // * uniqueness: none
-func (o DomainsIdentitySettingOutput) DomainOcid() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsIdentitySetting) pulumi.StringOutput { return v.DomainOcid }).(pulumi.StringOutput)
+func (o DomainsIdentitySettingOutput) DomainOcid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsIdentitySetting) pulumi.StringPtrOutput { return v.DomainOcid }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Indicates whether to show the 'user-is-locked' message during authentication if the user is already locked. The default value is false, which tells the system to show a generic 'authentication-failure' message. This is the most secure behavior. If the option is set to true, the system shows a more detailed 'error-message' that says the user is locked. This is more helpful but is less secure, for example, because the difference in error-messages could be used to determine which usernames exist and which do not.
@@ -1382,8 +1357,8 @@ func (o DomainsIdentitySettingOutput) DomainOcid() pulumi.StringOutput {
 // * returned: default
 // * type: boolean
 // * uniqueness: none
-func (o DomainsIdentitySettingOutput) EmitLockedMessageWhenUserIsLocked() pulumi.BoolOutput {
-	return o.ApplyT(func(v *DomainsIdentitySetting) pulumi.BoolOutput { return v.EmitLockedMessageWhenUserIsLocked }).(pulumi.BoolOutput)
+func (o DomainsIdentitySettingOutput) EmitLockedMessageWhenUserIsLocked() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DomainsIdentitySetting) pulumi.BoolPtrOutput { return v.EmitLockedMessageWhenUserIsLocked }).(pulumi.BoolPtrOutput)
 }
 
 // (Updatable) An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer's tenant.
@@ -1396,8 +1371,8 @@ func (o DomainsIdentitySettingOutput) EmitLockedMessageWhenUserIsLocked() pulumi
 // * returned: default
 // * type: string
 // * uniqueness: none
-func (o DomainsIdentitySettingOutput) ExternalId() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsIdentitySetting) pulumi.StringOutput { return v.ExternalId }).(pulumi.StringOutput)
+func (o DomainsIdentitySettingOutput) ExternalId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsIdentitySetting) pulumi.StringPtrOutput { return v.ExternalId }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The User or App who created the Resource
@@ -1446,8 +1421,8 @@ func (o DomainsIdentitySettingOutput) IdcsLastModifiedBies() DomainsIdentitySett
 // * returned: request
 // * type: string
 // * uniqueness: none
-func (o DomainsIdentitySettingOutput) IdcsLastUpgradedInRelease() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsIdentitySetting) pulumi.StringOutput { return v.IdcsLastUpgradedInRelease }).(pulumi.StringOutput)
+func (o DomainsIdentitySettingOutput) IdcsLastUpgradedInRelease() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsIdentitySetting) pulumi.StringPtrOutput { return v.IdcsLastUpgradedInRelease }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
@@ -1494,8 +1469,8 @@ func (o DomainsIdentitySettingOutput) Metas() DomainsIdentitySettingMetaArrayOut
 // * required: false
 // * type: complex
 // * uniqueness: none
-func (o DomainsIdentitySettingOutput) MyProfile() DomainsIdentitySettingMyProfileOutput {
-	return o.ApplyT(func(v *DomainsIdentitySetting) DomainsIdentitySettingMyProfileOutput { return v.MyProfile }).(DomainsIdentitySettingMyProfileOutput)
+func (o DomainsIdentitySettingOutput) MyProfile() DomainsIdentitySettingMyProfilePtrOutput {
+	return o.ApplyT(func(v *DomainsIdentitySetting) DomainsIdentitySettingMyProfilePtrOutput { return v.MyProfile }).(DomainsIdentitySettingMyProfilePtrOutput)
 }
 
 // (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
@@ -1509,8 +1484,8 @@ func (o DomainsIdentitySettingOutput) MyProfile() DomainsIdentitySettingMyProfil
 // * returned: default
 // * type: string
 // * uniqueness: global
-func (o DomainsIdentitySettingOutput) Ocid() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsIdentitySetting) pulumi.StringOutput { return v.Ocid }).(pulumi.StringOutput)
+func (o DomainsIdentitySettingOutput) Ocid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsIdentitySetting) pulumi.StringPtrOutput { return v.Ocid }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) A list of Posix Gid settings.
@@ -1523,8 +1498,8 @@ func (o DomainsIdentitySettingOutput) Ocid() pulumi.StringOutput {
 // * required: false
 // * type: complex
 // * uniqueness: none
-func (o DomainsIdentitySettingOutput) PosixGid() DomainsIdentitySettingPosixGidOutput {
-	return o.ApplyT(func(v *DomainsIdentitySetting) DomainsIdentitySettingPosixGidOutput { return v.PosixGid }).(DomainsIdentitySettingPosixGidOutput)
+func (o DomainsIdentitySettingOutput) PosixGid() DomainsIdentitySettingPosixGidPtrOutput {
+	return o.ApplyT(func(v *DomainsIdentitySetting) DomainsIdentitySettingPosixGidPtrOutput { return v.PosixGid }).(DomainsIdentitySettingPosixGidPtrOutput)
 }
 
 // (Updatable) A list of Posix Uid settings.
@@ -1537,8 +1512,8 @@ func (o DomainsIdentitySettingOutput) PosixGid() DomainsIdentitySettingPosixGidO
 // * required: false
 // * type: complex
 // * uniqueness: none
-func (o DomainsIdentitySettingOutput) PosixUid() DomainsIdentitySettingPosixUidOutput {
-	return o.ApplyT(func(v *DomainsIdentitySetting) DomainsIdentitySettingPosixUidOutput { return v.PosixUid }).(DomainsIdentitySettingPosixUidOutput)
+func (o DomainsIdentitySettingOutput) PosixUid() DomainsIdentitySettingPosixUidPtrOutput {
+	return o.ApplyT(func(v *DomainsIdentitySetting) DomainsIdentitySettingPosixUidPtrOutput { return v.PosixUid }).(DomainsIdentitySettingPosixUidPtrOutput)
 }
 
 // (Updatable) Indicates whether the primary email is required.
@@ -1553,8 +1528,8 @@ func (o DomainsIdentitySettingOutput) PosixUid() DomainsIdentitySettingPosixUidO
 // * returned: default
 // * type: boolean
 // * uniqueness: none
-func (o DomainsIdentitySettingOutput) PrimaryEmailRequired() pulumi.BoolOutput {
-	return o.ApplyT(func(v *DomainsIdentitySetting) pulumi.BoolOutput { return v.PrimaryEmailRequired }).(pulumi.BoolOutput)
+func (o DomainsIdentitySettingOutput) PrimaryEmailRequired() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DomainsIdentitySetting) pulumi.BoolPtrOutput { return v.PrimaryEmailRequired }).(pulumi.BoolPtrOutput)
 }
 
 // (Updatable) Indicates whether to remove non-RFC5322 compliant emails before creating a user.
@@ -1569,8 +1544,8 @@ func (o DomainsIdentitySettingOutput) PrimaryEmailRequired() pulumi.BoolOutput {
 // * returned: default
 // * type: boolean
 // * uniqueness: none
-func (o DomainsIdentitySettingOutput) RemoveInvalidEmails() pulumi.BoolOutput {
-	return o.ApplyT(func(v *DomainsIdentitySetting) pulumi.BoolOutput { return v.RemoveInvalidEmails }).(pulumi.BoolOutput)
+func (o DomainsIdentitySettingOutput) RemoveInvalidEmails() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DomainsIdentitySetting) pulumi.BoolPtrOutput { return v.RemoveInvalidEmails }).(pulumi.BoolPtrOutput)
 }
 
 // (Updatable) An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
@@ -1588,8 +1563,8 @@ func (o DomainsIdentitySettingOutput) ResourceTypeSchemaVersion() pulumi.StringP
 // * returned: default
 // * type: boolean
 // * uniqueness: none Determines the PasswordAuthenticator API response when a user is both 'locked' and 'inactive.' If false (default), a 'locked' message is shown. If true, an 'inactive' message is shown.
-func (o DomainsIdentitySettingOutput) ReturnInactiveOverLockedMessage() pulumi.BoolOutput {
-	return o.ApplyT(func(v *DomainsIdentitySetting) pulumi.BoolOutput { return v.ReturnInactiveOverLockedMessage }).(pulumi.BoolOutput)
+func (o DomainsIdentitySettingOutput) ReturnInactiveOverLockedMessage() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DomainsIdentitySetting) pulumi.BoolPtrOutput { return v.ReturnInactiveOverLockedMessage }).(pulumi.BoolPtrOutput)
 }
 
 // (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
@@ -1633,8 +1608,8 @@ func (o DomainsIdentitySettingOutput) Tags() DomainsIdentitySettingTagArrayOutpu
 // * returned: default
 // * type: string
 // * uniqueness: none
-func (o DomainsIdentitySettingOutput) TenancyOcid() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsIdentitySetting) pulumi.StringOutput { return v.TenancyOcid }).(pulumi.StringOutput)
+func (o DomainsIdentitySettingOutput) TenancyOcid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsIdentitySetting) pulumi.StringPtrOutput { return v.TenancyOcid }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) A list of tokens and their expiry length.
@@ -1663,8 +1638,8 @@ func (o DomainsIdentitySettingOutput) Tokens() DomainsIdentitySettingTokenArrayO
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-func (o DomainsIdentitySettingOutput) UserAllowedToSetRecoveryEmail() pulumi.BoolOutput {
-	return o.ApplyT(func(v *DomainsIdentitySetting) pulumi.BoolOutput { return v.UserAllowedToSetRecoveryEmail }).(pulumi.BoolOutput)
+func (o DomainsIdentitySettingOutput) UserAllowedToSetRecoveryEmail() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DomainsIdentitySetting) pulumi.BoolPtrOutput { return v.UserAllowedToSetRecoveryEmail }).(pulumi.BoolPtrOutput)
 }
 
 type DomainsIdentitySettingArrayOutput struct{ *pulumi.OutputState }
@@ -1679,12 +1654,6 @@ func (o DomainsIdentitySettingArrayOutput) ToDomainsIdentitySettingArrayOutput()
 
 func (o DomainsIdentitySettingArrayOutput) ToDomainsIdentitySettingArrayOutputWithContext(ctx context.Context) DomainsIdentitySettingArrayOutput {
 	return o
-}
-
-func (o DomainsIdentitySettingArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*DomainsIdentitySetting] {
-	return pulumix.Output[[]*DomainsIdentitySetting]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DomainsIdentitySettingArrayOutput) Index(i pulumi.IntInput) DomainsIdentitySettingOutput {
@@ -1705,12 +1674,6 @@ func (o DomainsIdentitySettingMapOutput) ToDomainsIdentitySettingMapOutput() Dom
 
 func (o DomainsIdentitySettingMapOutput) ToDomainsIdentitySettingMapOutputWithContext(ctx context.Context) DomainsIdentitySettingMapOutput {
 	return o
-}
-
-func (o DomainsIdentitySettingMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*DomainsIdentitySetting] {
-	return pulumix.Output[map[string]*DomainsIdentitySetting]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DomainsIdentitySettingMapOutput) MapIndex(k pulumi.StringInput) DomainsIdentitySettingOutput {

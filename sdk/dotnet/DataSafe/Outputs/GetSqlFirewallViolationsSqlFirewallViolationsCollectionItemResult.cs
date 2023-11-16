@@ -16,107 +16,107 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// <summary>
         /// The IP address of the host machine from which the session was generated.
         /// </summary>
-        public readonly string ClientIp;
+        public readonly string? ClientIp;
         /// <summary>
         /// The name of the operating system user for the database session.
         /// </summary>
-        public readonly string ClientOsUserName;
+        public readonly string? ClientOsUserName;
         /// <summary>
         /// The application from which the SQL violation was generated. Examples include SQL Plus or SQL Developer.
         /// </summary>
-        public readonly string ClientProgram;
+        public readonly string? ClientProgram;
         /// <summary>
         /// A filter to return only resources that match the specified compartment OCID.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// The name of the user that SQL was executed as.
         /// </summary>
-        public readonly string CurrentDbUserName;
+        public readonly string? CurrentDbUserName;
         /// <summary>
         /// The name of the database user.
         /// </summary>
-        public readonly string DbUserName;
+        public readonly string? DbUserName;
         /// <summary>
         /// The OCID of the SQL violation.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The name of the action executed by the user on the target database. For example, ALTER, CREATE, DROP.
         /// </summary>
-        public readonly string Operation;
+        public readonly string? Operation;
         /// <summary>
         /// The time of the SQL violation occurrence in the target database.
         /// </summary>
-        public readonly string OperationTime;
+        public readonly string? OperationTime;
         /// <summary>
         /// The objects accessed by the SQL.
         /// </summary>
-        public readonly string SqlAccessedObjects;
+        public readonly string? SqlAccessedObjects;
         /// <summary>
         /// Specifies the level of SQL for this violation. USER_ISSUED_SQL - User issued SQL statements only. ALL_SQL - Includes all SQL statements including SQL statement issued inside PL/SQL units.
         /// </summary>
-        public readonly string SqlLevel;
+        public readonly string? SqlLevel;
         /// <summary>
         /// The SQL text caught by the firewall.
         /// </summary>
-        public readonly string SqlText;
+        public readonly string? SqlText;
         /// <summary>
         /// The OCID of the target database.
         /// </summary>
-        public readonly string TargetId;
+        public readonly string? TargetId;
         /// <summary>
         /// The name of the target database.
         /// </summary>
-        public readonly string TargetName;
+        public readonly string? TargetName;
         /// <summary>
         /// The timestamp when this SQL violation was collected from the target database by Data Safe.
         /// </summary>
-        public readonly string TimeCollected;
+        public readonly string? TimeCollected;
         /// <summary>
         /// The action taken for this SQL violation.
         /// </summary>
-        public readonly string ViolationAction;
+        public readonly string? ViolationAction;
         /// <summary>
         /// Indicates whether SQL or context violation.
         /// </summary>
-        public readonly string ViolationCause;
+        public readonly string? ViolationCause;
 
         [OutputConstructor]
         private GetSqlFirewallViolationsSqlFirewallViolationsCollectionItemResult(
-            string clientIp,
+            string? clientIp,
 
-            string clientOsUserName,
+            string? clientOsUserName,
 
-            string clientProgram,
+            string? clientProgram,
 
-            string compartmentId,
+            string? compartmentId,
 
-            string currentDbUserName,
+            string? currentDbUserName,
 
-            string dbUserName,
+            string? dbUserName,
 
-            string id,
+            string? id,
 
-            string operation,
+            string? operation,
 
-            string operationTime,
+            string? operationTime,
 
-            string sqlAccessedObjects,
+            string? sqlAccessedObjects,
 
-            string sqlLevel,
+            string? sqlLevel,
 
-            string sqlText,
+            string? sqlText,
 
-            string targetId,
+            string? targetId,
 
-            string targetName,
+            string? targetName,
 
-            string timeCollected,
+            string? timeCollected,
 
-            string violationAction,
+            string? violationAction,
 
-            string violationCause)
+            string? violationCause)
         {
             ClientIp = clientIp;
             ClientOsUserName = clientOsUserName;

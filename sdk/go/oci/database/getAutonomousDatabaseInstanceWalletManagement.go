@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Autonomous Database Instance Wallet Management resource in Oracle Cloud Infrastructure Database service.
@@ -60,15 +59,15 @@ type LookupAutonomousDatabaseInstanceWalletManagementArgs struct {
 // A collection of values returned by getAutonomousDatabaseInstanceWalletManagement.
 type LookupAutonomousDatabaseInstanceWalletManagementResult struct {
 	// The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-	AutonomousDatabaseId string `pulumi:"autonomousDatabaseId"`
-	GracePeriod          int    `pulumi:"gracePeriod"`
-	Id                   string `pulumi:"id"`
+	AutonomousDatabaseId string  `pulumi:"autonomousDatabaseId"`
+	GracePeriod          *int    `pulumi:"gracePeriod"`
+	Id                   *string `pulumi:"id"`
 	// Indicates whether to rotate the wallet or not. If `false`, the wallet will not be rotated. The default is `false`.
-	ShouldRotate bool `pulumi:"shouldRotate"`
+	ShouldRotate *bool `pulumi:"shouldRotate"`
 	// The current lifecycle state of the Autonomous Database wallet.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The date and time the wallet was last rotated.
-	TimeRotated string `pulumi:"timeRotated"`
+	TimeRotated *string `pulumi:"timeRotated"`
 }
 
 func LookupAutonomousDatabaseInstanceWalletManagementOutput(ctx *pulumi.Context, args LookupAutonomousDatabaseInstanceWalletManagementOutputArgs, opts ...pulumi.InvokeOption) LookupAutonomousDatabaseInstanceWalletManagementResultOutput {
@@ -109,38 +108,32 @@ func (o LookupAutonomousDatabaseInstanceWalletManagementResultOutput) ToLookupAu
 	return o
 }
 
-func (o LookupAutonomousDatabaseInstanceWalletManagementResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupAutonomousDatabaseInstanceWalletManagementResult] {
-	return pulumix.Output[LookupAutonomousDatabaseInstanceWalletManagementResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 func (o LookupAutonomousDatabaseInstanceWalletManagementResultOutput) AutonomousDatabaseId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAutonomousDatabaseInstanceWalletManagementResult) string { return v.AutonomousDatabaseId }).(pulumi.StringOutput)
 }
 
-func (o LookupAutonomousDatabaseInstanceWalletManagementResultOutput) GracePeriod() pulumi.IntOutput {
-	return o.ApplyT(func(v LookupAutonomousDatabaseInstanceWalletManagementResult) int { return v.GracePeriod }).(pulumi.IntOutput)
+func (o LookupAutonomousDatabaseInstanceWalletManagementResultOutput) GracePeriod() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseInstanceWalletManagementResult) *int { return v.GracePeriod }).(pulumi.IntPtrOutput)
 }
 
-func (o LookupAutonomousDatabaseInstanceWalletManagementResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAutonomousDatabaseInstanceWalletManagementResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupAutonomousDatabaseInstanceWalletManagementResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseInstanceWalletManagementResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Indicates whether to rotate the wallet or not. If `false`, the wallet will not be rotated. The default is `false`.
-func (o LookupAutonomousDatabaseInstanceWalletManagementResultOutput) ShouldRotate() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupAutonomousDatabaseInstanceWalletManagementResult) bool { return v.ShouldRotate }).(pulumi.BoolOutput)
+func (o LookupAutonomousDatabaseInstanceWalletManagementResultOutput) ShouldRotate() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseInstanceWalletManagementResult) *bool { return v.ShouldRotate }).(pulumi.BoolPtrOutput)
 }
 
 // The current lifecycle state of the Autonomous Database wallet.
-func (o LookupAutonomousDatabaseInstanceWalletManagementResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAutonomousDatabaseInstanceWalletManagementResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupAutonomousDatabaseInstanceWalletManagementResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseInstanceWalletManagementResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the wallet was last rotated.
-func (o LookupAutonomousDatabaseInstanceWalletManagementResultOutput) TimeRotated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAutonomousDatabaseInstanceWalletManagementResult) string { return v.TimeRotated }).(pulumi.StringOutput)
+func (o LookupAutonomousDatabaseInstanceWalletManagementResultOutput) TimeRotated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseInstanceWalletManagementResult) *string { return v.TimeRotated }).(pulumi.StringPtrOutput)
 }
 
 func init() {

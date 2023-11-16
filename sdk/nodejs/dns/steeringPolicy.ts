@@ -94,7 +94,7 @@ export class SteeringPolicy extends pulumi.CustomResource {
     /**
      * The set of all answers that can potentially issue from the steering policy.
      */
-    public readonly answers!: pulumi.Output<outputs.Dns.SteeringPolicyAnswer[]>;
+    public readonly answers!: pulumi.Output<outputs.Dns.SteeringPolicyAnswer[] | undefined>;
     /**
      * (Updatable) The OCID of the compartment containing the steering policy.
      */
@@ -102,7 +102,7 @@ export class SteeringPolicy extends pulumi.CustomResource {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) A user-friendly name for the steering policy. Does not have to be unique and can be changed. Avoid entering confidential information.
      */
@@ -110,27 +110,27 @@ export class SteeringPolicy extends pulumi.CustomResource {
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) The OCID of the health check monitor providing health data about the answers of the steering policy. A steering policy answer with `rdata` matching a monitored endpoint will use the health data of that endpoint. A steering policy answer with `rdata` not matching any monitored endpoint will be assumed healthy.
      *
      * **Note:** To use the Health Check monitoring feature in a steering policy, a monitor must be created using the Health Checks service first. For more information on how to create a monitor, please see [Managing Health Checks](https://docs.cloud.oracle.com/iaas/Content/HealthChecks/Tasks/managinghealthchecks.htm).
      */
-    public readonly healthCheckMonitorId!: pulumi.Output<string>;
+    public readonly healthCheckMonitorId!: pulumi.Output<string | undefined>;
     /**
      * The series of rules that will be processed in sequence to reduce the pool of answers to a response for any given request.
      *
      * The first rule receives a shuffled list of all answers, and every other rule receives the list of answers emitted by the one preceding it. The last rule populates the response.
      */
-    public readonly rules!: pulumi.Output<outputs.Dns.SteeringPolicyRule[]>;
+    public readonly rules!: pulumi.Output<outputs.Dns.SteeringPolicyRule[] | undefined>;
     /**
      * The canonical absolute URL of the resource.
      */
-    public /*out*/ readonly self!: pulumi.Output<string>;
+    public /*out*/ readonly self!: pulumi.Output<string | undefined>;
     /**
      * The current state of the resource.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) A set of predefined rules based on the desired purpose of the steering policy. Each template utilizes Traffic Management's rules in a different order to produce the desired results when answering DNS queries.
      *
@@ -146,7 +146,7 @@ export class SteeringPolicy extends pulumi.CustomResource {
     /**
      * The date and time the resource was created, expressed in RFC 3339 timestamp format.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The Time To Live (TTL) for responses from the steering policy, in seconds. If not specified during creation, a value of 30 seconds will be used. 
      *
@@ -154,7 +154,7 @@ export class SteeringPolicy extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly ttl!: pulumi.Output<number>;
+    public readonly ttl!: pulumi.Output<number | undefined>;
 
     /**
      * Create a SteeringPolicy resource with the given unique name, arguments, and options.

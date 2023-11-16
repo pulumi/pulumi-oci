@@ -6,6 +6,8 @@ package com.pulumi.oci.Identity.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetIdentityProviderGroupsIdentityProviderGroup {
@@ -13,87 +15,87 @@ public final class GetIdentityProviderGroupsIdentityProviderGroup {
      * @return Display name of the group
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return Identifier of the group in the identity provider
      * 
      */
-    private String externalIdentifier;
+    private @Nullable String externalIdentifier;
     /**
      * @return The OCID of the `IdentityProviderGroup`.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The OCID of the identity provider.
      * 
      */
-    private String identityProviderId;
+    private @Nullable String identityProviderId;
     /**
      * @return A filter to only return resources that match the given name exactly.
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return Date and time the `IdentityProviderGroup` was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return Date and time the `IdentityProviderGroup` was last modified, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    private String timeModified;
+    private @Nullable String timeModified;
 
     private GetIdentityProviderGroupsIdentityProviderGroup() {}
     /**
      * @return Display name of the group
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return Identifier of the group in the identity provider
      * 
      */
-    public String externalIdentifier() {
-        return this.externalIdentifier;
+    public Optional<String> externalIdentifier() {
+        return Optional.ofNullable(this.externalIdentifier);
     }
     /**
      * @return The OCID of the `IdentityProviderGroup`.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The OCID of the identity provider.
      * 
      */
-    public String identityProviderId() {
-        return this.identityProviderId;
+    public Optional<String> identityProviderId() {
+        return Optional.ofNullable(this.identityProviderId);
     }
     /**
      * @return A filter to only return resources that match the given name exactly.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return Date and time the `IdentityProviderGroup` was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return Date and time the `IdentityProviderGroup` was last modified, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    public String timeModified() {
-        return this.timeModified;
+    public Optional<String> timeModified() {
+        return Optional.ofNullable(this.timeModified);
     }
 
     public static Builder builder() {
@@ -105,13 +107,13 @@ public final class GetIdentityProviderGroupsIdentityProviderGroup {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String displayName;
-        private String externalIdentifier;
-        private String id;
-        private String identityProviderId;
-        private String name;
-        private String timeCreated;
-        private String timeModified;
+        private @Nullable String displayName;
+        private @Nullable String externalIdentifier;
+        private @Nullable String id;
+        private @Nullable String identityProviderId;
+        private @Nullable String name;
+        private @Nullable String timeCreated;
+        private @Nullable String timeModified;
         public Builder() {}
         public Builder(GetIdentityProviderGroupsIdentityProviderGroup defaults) {
     	      Objects.requireNonNull(defaults);
@@ -125,38 +127,38 @@ public final class GetIdentityProviderGroupsIdentityProviderGroup {
         }
 
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder externalIdentifier(String externalIdentifier) {
-            this.externalIdentifier = Objects.requireNonNull(externalIdentifier);
+        public Builder externalIdentifier(@Nullable String externalIdentifier) {
+            this.externalIdentifier = externalIdentifier;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder identityProviderId(String identityProviderId) {
-            this.identityProviderId = Objects.requireNonNull(identityProviderId);
+        public Builder identityProviderId(@Nullable String identityProviderId) {
+            this.identityProviderId = identityProviderId;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeModified(String timeModified) {
-            this.timeModified = Objects.requireNonNull(timeModified);
+        public Builder timeModified(@Nullable String timeModified) {
+            this.timeModified = timeModified;
             return this;
         }
         public GetIdentityProviderGroupsIdentityProviderGroup build() {

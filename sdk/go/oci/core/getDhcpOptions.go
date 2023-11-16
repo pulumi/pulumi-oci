@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Dhcp Options in Oracle Cloud Infrastructure Core service.
@@ -78,7 +77,7 @@ type LookupDhcpOptionsResult struct {
 	DisplayName *string                `pulumi:"displayName"`
 	Filters     []GetDhcpOptionsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The collection of individual DHCP options.
 	Options []GetDhcpOptionsOption `pulumi:"options"`
 	// The current state of the set of DHCP options.
@@ -132,12 +131,6 @@ func (o LookupDhcpOptionsResultOutput) ToLookupDhcpOptionsResultOutputWithContex
 	return o
 }
 
-func (o LookupDhcpOptionsResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupDhcpOptionsResult] {
-	return pulumix.Output[LookupDhcpOptionsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the set of DHCP options.
 func (o LookupDhcpOptionsResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDhcpOptionsResult) string { return v.CompartmentId }).(pulumi.StringOutput)
@@ -153,8 +146,8 @@ func (o LookupDhcpOptionsResultOutput) Filters() GetDhcpOptionsFilterArrayOutput
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o LookupDhcpOptionsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDhcpOptionsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupDhcpOptionsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDhcpOptionsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The collection of individual DHCP options.

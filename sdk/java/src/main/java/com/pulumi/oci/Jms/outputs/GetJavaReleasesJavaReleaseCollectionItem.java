@@ -10,6 +10,8 @@ import com.pulumi.oci.Jms.outputs.GetJavaReleasesJavaReleaseCollectionItemLicens
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetJavaReleasesJavaReleaseCollectionItem {
@@ -17,62 +19,62 @@ public final class GetJavaReleasesJavaReleaseCollectionItem {
      * @return Artifact content types for the Java version.
      * 
      */
-    private List<String> artifactContentTypes;
+    private @Nullable List<String> artifactContentTypes;
     /**
      * @return List of Java artifacts.
      * 
      */
-    private List<GetJavaReleasesJavaReleaseCollectionItemArtifact> artifacts;
+    private @Nullable List<GetJavaReleasesJavaReleaseCollectionItemArtifact> artifacts;
     /**
      * @return Metadata associated with a specific Java release family. A Java release family is typically a major version in the Java version identifier.
      * 
      */
-    private List<GetJavaReleasesJavaReleaseCollectionItemFamilyDetail> familyDetails;
+    private @Nullable List<GetJavaReleasesJavaReleaseCollectionItemFamilyDetail> familyDetails;
     /**
      * @return The version identifier for the Java family.
      * 
      */
-    private String familyVersion;
+    private @Nullable String familyVersion;
     /**
      * @return Information about a license type for Java.
      * 
      */
-    private List<GetJavaReleasesJavaReleaseCollectionItemLicenseDetail> licenseDetails;
+    private @Nullable List<GetJavaReleasesJavaReleaseCollectionItemLicenseDetail> licenseDetails;
     /**
      * @return Java license type.
      * 
      */
-    private String licenseType;
+    private @Nullable String licenseType;
     /**
      * @return Parent Java release version identifier. This is applicable for BPR releases.
      * 
      */
-    private String parentReleaseVersion;
+    private @Nullable String parentReleaseVersion;
     /**
      * @return The release date of the Java version (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      * 
      */
-    private String releaseDate;
+    private @Nullable String releaseDate;
     /**
      * @return Release notes associated with the Java version.
      * 
      */
-    private String releaseNotesUrl;
+    private @Nullable String releaseNotesUrl;
     /**
      * @return Java release type.
      * 
      */
-    private String releaseType;
+    private @Nullable String releaseType;
     /**
      * @return Unique Java release version identifier
      * 
      */
-    private String releaseVersion;
+    private @Nullable String releaseVersion;
     /**
      * @return The security status of the Java version.
      * 
      */
-    private String securityStatus;
+    private @Nullable String securityStatus;
 
     private GetJavaReleasesJavaReleaseCollectionItem() {}
     /**
@@ -80,84 +82,84 @@ public final class GetJavaReleasesJavaReleaseCollectionItem {
      * 
      */
     public List<String> artifactContentTypes() {
-        return this.artifactContentTypes;
+        return this.artifactContentTypes == null ? List.of() : this.artifactContentTypes;
     }
     /**
      * @return List of Java artifacts.
      * 
      */
     public List<GetJavaReleasesJavaReleaseCollectionItemArtifact> artifacts() {
-        return this.artifacts;
+        return this.artifacts == null ? List.of() : this.artifacts;
     }
     /**
      * @return Metadata associated with a specific Java release family. A Java release family is typically a major version in the Java version identifier.
      * 
      */
     public List<GetJavaReleasesJavaReleaseCollectionItemFamilyDetail> familyDetails() {
-        return this.familyDetails;
+        return this.familyDetails == null ? List.of() : this.familyDetails;
     }
     /**
      * @return The version identifier for the Java family.
      * 
      */
-    public String familyVersion() {
-        return this.familyVersion;
+    public Optional<String> familyVersion() {
+        return Optional.ofNullable(this.familyVersion);
     }
     /**
      * @return Information about a license type for Java.
      * 
      */
     public List<GetJavaReleasesJavaReleaseCollectionItemLicenseDetail> licenseDetails() {
-        return this.licenseDetails;
+        return this.licenseDetails == null ? List.of() : this.licenseDetails;
     }
     /**
      * @return Java license type.
      * 
      */
-    public String licenseType() {
-        return this.licenseType;
+    public Optional<String> licenseType() {
+        return Optional.ofNullable(this.licenseType);
     }
     /**
      * @return Parent Java release version identifier. This is applicable for BPR releases.
      * 
      */
-    public String parentReleaseVersion() {
-        return this.parentReleaseVersion;
+    public Optional<String> parentReleaseVersion() {
+        return Optional.ofNullable(this.parentReleaseVersion);
     }
     /**
      * @return The release date of the Java version (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      * 
      */
-    public String releaseDate() {
-        return this.releaseDate;
+    public Optional<String> releaseDate() {
+        return Optional.ofNullable(this.releaseDate);
     }
     /**
      * @return Release notes associated with the Java version.
      * 
      */
-    public String releaseNotesUrl() {
-        return this.releaseNotesUrl;
+    public Optional<String> releaseNotesUrl() {
+        return Optional.ofNullable(this.releaseNotesUrl);
     }
     /**
      * @return Java release type.
      * 
      */
-    public String releaseType() {
-        return this.releaseType;
+    public Optional<String> releaseType() {
+        return Optional.ofNullable(this.releaseType);
     }
     /**
      * @return Unique Java release version identifier
      * 
      */
-    public String releaseVersion() {
-        return this.releaseVersion;
+    public Optional<String> releaseVersion() {
+        return Optional.ofNullable(this.releaseVersion);
     }
     /**
      * @return The security status of the Java version.
      * 
      */
-    public String securityStatus() {
-        return this.securityStatus;
+    public Optional<String> securityStatus() {
+        return Optional.ofNullable(this.securityStatus);
     }
 
     public static Builder builder() {
@@ -169,18 +171,18 @@ public final class GetJavaReleasesJavaReleaseCollectionItem {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<String> artifactContentTypes;
-        private List<GetJavaReleasesJavaReleaseCollectionItemArtifact> artifacts;
-        private List<GetJavaReleasesJavaReleaseCollectionItemFamilyDetail> familyDetails;
-        private String familyVersion;
-        private List<GetJavaReleasesJavaReleaseCollectionItemLicenseDetail> licenseDetails;
-        private String licenseType;
-        private String parentReleaseVersion;
-        private String releaseDate;
-        private String releaseNotesUrl;
-        private String releaseType;
-        private String releaseVersion;
-        private String securityStatus;
+        private @Nullable List<String> artifactContentTypes;
+        private @Nullable List<GetJavaReleasesJavaReleaseCollectionItemArtifact> artifacts;
+        private @Nullable List<GetJavaReleasesJavaReleaseCollectionItemFamilyDetail> familyDetails;
+        private @Nullable String familyVersion;
+        private @Nullable List<GetJavaReleasesJavaReleaseCollectionItemLicenseDetail> licenseDetails;
+        private @Nullable String licenseType;
+        private @Nullable String parentReleaseVersion;
+        private @Nullable String releaseDate;
+        private @Nullable String releaseNotesUrl;
+        private @Nullable String releaseType;
+        private @Nullable String releaseVersion;
+        private @Nullable String securityStatus;
         public Builder() {}
         public Builder(GetJavaReleasesJavaReleaseCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -199,75 +201,75 @@ public final class GetJavaReleasesJavaReleaseCollectionItem {
         }
 
         @CustomType.Setter
-        public Builder artifactContentTypes(List<String> artifactContentTypes) {
-            this.artifactContentTypes = Objects.requireNonNull(artifactContentTypes);
+        public Builder artifactContentTypes(@Nullable List<String> artifactContentTypes) {
+            this.artifactContentTypes = artifactContentTypes;
             return this;
         }
         public Builder artifactContentTypes(String... artifactContentTypes) {
             return artifactContentTypes(List.of(artifactContentTypes));
         }
         @CustomType.Setter
-        public Builder artifacts(List<GetJavaReleasesJavaReleaseCollectionItemArtifact> artifacts) {
-            this.artifacts = Objects.requireNonNull(artifacts);
+        public Builder artifacts(@Nullable List<GetJavaReleasesJavaReleaseCollectionItemArtifact> artifacts) {
+            this.artifacts = artifacts;
             return this;
         }
         public Builder artifacts(GetJavaReleasesJavaReleaseCollectionItemArtifact... artifacts) {
             return artifacts(List.of(artifacts));
         }
         @CustomType.Setter
-        public Builder familyDetails(List<GetJavaReleasesJavaReleaseCollectionItemFamilyDetail> familyDetails) {
-            this.familyDetails = Objects.requireNonNull(familyDetails);
+        public Builder familyDetails(@Nullable List<GetJavaReleasesJavaReleaseCollectionItemFamilyDetail> familyDetails) {
+            this.familyDetails = familyDetails;
             return this;
         }
         public Builder familyDetails(GetJavaReleasesJavaReleaseCollectionItemFamilyDetail... familyDetails) {
             return familyDetails(List.of(familyDetails));
         }
         @CustomType.Setter
-        public Builder familyVersion(String familyVersion) {
-            this.familyVersion = Objects.requireNonNull(familyVersion);
+        public Builder familyVersion(@Nullable String familyVersion) {
+            this.familyVersion = familyVersion;
             return this;
         }
         @CustomType.Setter
-        public Builder licenseDetails(List<GetJavaReleasesJavaReleaseCollectionItemLicenseDetail> licenseDetails) {
-            this.licenseDetails = Objects.requireNonNull(licenseDetails);
+        public Builder licenseDetails(@Nullable List<GetJavaReleasesJavaReleaseCollectionItemLicenseDetail> licenseDetails) {
+            this.licenseDetails = licenseDetails;
             return this;
         }
         public Builder licenseDetails(GetJavaReleasesJavaReleaseCollectionItemLicenseDetail... licenseDetails) {
             return licenseDetails(List.of(licenseDetails));
         }
         @CustomType.Setter
-        public Builder licenseType(String licenseType) {
-            this.licenseType = Objects.requireNonNull(licenseType);
+        public Builder licenseType(@Nullable String licenseType) {
+            this.licenseType = licenseType;
             return this;
         }
         @CustomType.Setter
-        public Builder parentReleaseVersion(String parentReleaseVersion) {
-            this.parentReleaseVersion = Objects.requireNonNull(parentReleaseVersion);
+        public Builder parentReleaseVersion(@Nullable String parentReleaseVersion) {
+            this.parentReleaseVersion = parentReleaseVersion;
             return this;
         }
         @CustomType.Setter
-        public Builder releaseDate(String releaseDate) {
-            this.releaseDate = Objects.requireNonNull(releaseDate);
+        public Builder releaseDate(@Nullable String releaseDate) {
+            this.releaseDate = releaseDate;
             return this;
         }
         @CustomType.Setter
-        public Builder releaseNotesUrl(String releaseNotesUrl) {
-            this.releaseNotesUrl = Objects.requireNonNull(releaseNotesUrl);
+        public Builder releaseNotesUrl(@Nullable String releaseNotesUrl) {
+            this.releaseNotesUrl = releaseNotesUrl;
             return this;
         }
         @CustomType.Setter
-        public Builder releaseType(String releaseType) {
-            this.releaseType = Objects.requireNonNull(releaseType);
+        public Builder releaseType(@Nullable String releaseType) {
+            this.releaseType = releaseType;
             return this;
         }
         @CustomType.Setter
-        public Builder releaseVersion(String releaseVersion) {
-            this.releaseVersion = Objects.requireNonNull(releaseVersion);
+        public Builder releaseVersion(@Nullable String releaseVersion) {
+            this.releaseVersion = releaseVersion;
             return this;
         }
         @CustomType.Setter
-        public Builder securityStatus(String securityStatus) {
-            this.securityStatus = Objects.requireNonNull(securityStatus);
+        public Builder securityStatus(@Nullable String securityStatus) {
+            this.securityStatus = securityStatus;
             return this;
         }
         public GetJavaReleasesJavaReleaseCollectionItem build() {

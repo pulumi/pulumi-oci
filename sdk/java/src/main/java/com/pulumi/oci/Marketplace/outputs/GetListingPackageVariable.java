@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetListingPackageVariable {
@@ -14,75 +16,75 @@ public final class GetListingPackageVariable {
      * @return The data type of the variable.
      * 
      */
-    private String dataType;
+    private @Nullable String dataType;
     /**
      * @return The variable&#39;s default value.
      * 
      */
-    private String defaultValue;
+    private @Nullable String defaultValue;
     /**
      * @return A description of the variable.
      * 
      */
-    private String description;
+    private @Nullable String description;
     /**
      * @return A brief textual description that helps to explain the variable.
      * 
      */
-    private String hintMessage;
+    private @Nullable String hintMessage;
     /**
      * @return Whether the variable is mandatory.
      * 
      */
-    private Boolean isMandatory;
+    private @Nullable Boolean isMandatory;
     /**
      * @return The name of the variable.
      * 
      */
-    private String name;
+    private @Nullable String name;
 
     private GetListingPackageVariable() {}
     /**
      * @return The data type of the variable.
      * 
      */
-    public String dataType() {
-        return this.dataType;
+    public Optional<String> dataType() {
+        return Optional.ofNullable(this.dataType);
     }
     /**
      * @return The variable&#39;s default value.
      * 
      */
-    public String defaultValue() {
-        return this.defaultValue;
+    public Optional<String> defaultValue() {
+        return Optional.ofNullable(this.defaultValue);
     }
     /**
      * @return A description of the variable.
      * 
      */
-    public String description() {
-        return this.description;
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
     /**
      * @return A brief textual description that helps to explain the variable.
      * 
      */
-    public String hintMessage() {
-        return this.hintMessage;
+    public Optional<String> hintMessage() {
+        return Optional.ofNullable(this.hintMessage);
     }
     /**
      * @return Whether the variable is mandatory.
      * 
      */
-    public Boolean isMandatory() {
-        return this.isMandatory;
+    public Optional<Boolean> isMandatory() {
+        return Optional.ofNullable(this.isMandatory);
     }
     /**
      * @return The name of the variable.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
 
     public static Builder builder() {
@@ -94,12 +96,12 @@ public final class GetListingPackageVariable {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String dataType;
-        private String defaultValue;
-        private String description;
-        private String hintMessage;
-        private Boolean isMandatory;
-        private String name;
+        private @Nullable String dataType;
+        private @Nullable String defaultValue;
+        private @Nullable String description;
+        private @Nullable String hintMessage;
+        private @Nullable Boolean isMandatory;
+        private @Nullable String name;
         public Builder() {}
         public Builder(GetListingPackageVariable defaults) {
     	      Objects.requireNonNull(defaults);
@@ -112,33 +114,33 @@ public final class GetListingPackageVariable {
         }
 
         @CustomType.Setter
-        public Builder dataType(String dataType) {
-            this.dataType = Objects.requireNonNull(dataType);
+        public Builder dataType(@Nullable String dataType) {
+            this.dataType = dataType;
             return this;
         }
         @CustomType.Setter
-        public Builder defaultValue(String defaultValue) {
-            this.defaultValue = Objects.requireNonNull(defaultValue);
+        public Builder defaultValue(@Nullable String defaultValue) {
+            this.defaultValue = defaultValue;
             return this;
         }
         @CustomType.Setter
-        public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+        public Builder description(@Nullable String description) {
+            this.description = description;
             return this;
         }
         @CustomType.Setter
-        public Builder hintMessage(String hintMessage) {
-            this.hintMessage = Objects.requireNonNull(hintMessage);
+        public Builder hintMessage(@Nullable String hintMessage) {
+            this.hintMessage = hintMessage;
             return this;
         }
         @CustomType.Setter
-        public Builder isMandatory(Boolean isMandatory) {
-            this.isMandatory = Objects.requireNonNull(isMandatory);
+        public Builder isMandatory(@Nullable Boolean isMandatory) {
+            this.isMandatory = isMandatory;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         public GetListingPackageVariable build() {

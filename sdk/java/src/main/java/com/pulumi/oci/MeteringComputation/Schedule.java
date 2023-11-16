@@ -15,6 +15,7 @@ import com.pulumi.oci.Utilities;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -117,42 +118,42 @@ public class Schedule extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * (Updatable) The description of the schedule.
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
-    private Output<String> description;
+    private Output</* @Nullable */ String> description;
 
     /**
      * @return (Updatable) The description of the schedule.
      * 
      */
-    public Output<String> description() {
-        return this.description;
+    public Output<Optional<String>> description() {
+        return Codegen.optional(this.description);
     }
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * The unique name of the user-created schedule.
@@ -173,28 +174,28 @@ public class Schedule extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="outputFileFormat", refs={String.class}, tree="[0]")
-    private Output<String> outputFileFormat;
+    private Output</* @Nullable */ String> outputFileFormat;
 
     /**
      * @return (Updatable) Specifies supported output file format.
      * 
      */
-    public Output<String> outputFileFormat() {
-        return this.outputFileFormat;
+    public Output<Optional<String>> outputFileFormat() {
+        return Codegen.optional(this.outputFileFormat);
     }
     /**
      * The query properties.
      * 
      */
     @Export(name="queryProperties", refs={ScheduleQueryProperties.class}, tree="[0]")
-    private Output<ScheduleQueryProperties> queryProperties;
+    private Output</* @Nullable */ ScheduleQueryProperties> queryProperties;
 
     /**
      * @return The query properties.
      * 
      */
-    public Output<ScheduleQueryProperties> queryProperties() {
-        return this.queryProperties;
+    public Output<Optional<ScheduleQueryProperties>> queryProperties() {
+        return Codegen.optional(this.queryProperties);
     }
     /**
      * (Updatable) The location where usage or cost CSVs will be uploaded defined by `locationType`, which corresponds with type-specific characteristics.
@@ -215,14 +216,14 @@ public class Schedule extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="savedReportId", refs={String.class}, tree="[0]")
-    private Output<String> savedReportId;
+    private Output</* @Nullable */ String> savedReportId;
 
     /**
      * @return The saved report id which can also be used to generate query.
      * 
      */
-    public Output<String> savedReportId() {
-        return this.savedReportId;
+    public Output<Optional<String>> savedReportId() {
+        return Codegen.optional(this.savedReportId);
     }
     /**
      * Specifies the frequency according to when the schedule will be run,  in the x-obmcs-recurring-time format described in [RFC 5545 section 3.3.10](https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10). Supported values are : ONE_TIME, DAILY, WEEKLY and MONTHLY.
@@ -243,56 +244,56 @@ public class Schedule extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The schedule lifecycle state.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
     @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> systemTags;
+    private Output</* @Nullable */ Map<String,Object>> systemTags;
 
     /**
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    public Output<Map<String,Object>> systemTags() {
-        return this.systemTags;
+    public Output<Optional<Map<String,Object>>> systemTags() {
+        return Codegen.optional(this.systemTags);
     }
     /**
      * The date and time the schedule was created.
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The date and time the schedule was created.
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * The date and time of the next job execution.
      * 
      */
     @Export(name="timeNextRun", refs={String.class}, tree="[0]")
-    private Output<String> timeNextRun;
+    private Output</* @Nullable */ String> timeNextRun;
 
     /**
      * @return The date and time of the next job execution.
      * 
      */
-    public Output<String> timeNextRun() {
-        return this.timeNextRun;
+    public Output<Optional<String>> timeNextRun() {
+        return Codegen.optional(this.timeNextRun);
     }
     /**
      * The date and time of the first time job execution.

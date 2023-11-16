@@ -48,19 +48,19 @@ export interface GetAutonomousExadataInfrastructureOcpuResult {
     /**
      * The number of consumed OCPUs, by database workload type.
      */
-    readonly byWorkloadTypes: outputs.Database.GetAutonomousExadataInfrastructureOcpuByWorkloadType[];
+    readonly byWorkloadTypes?: outputs.Database.GetAutonomousExadataInfrastructureOcpuByWorkloadType[];
     /**
      * The total number of consumed OCPUs in the Autonomous Exadata Infrastructure instance.
      */
-    readonly consumedCpu: number;
+    readonly consumedCpu?: number;
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The total number of OCPUs in the Autonomous Exadata Infrastructure instance.
      */
-    readonly totalCpu: number;
+    readonly totalCpu?: number;
 }
 /**
  * This data source provides details about a specific Autonomous Exadata Infrastructure Ocpu resource in Oracle Cloud Infrastructure Database service.

@@ -261,7 +261,7 @@ namespace Pulumi.Oci.DataSafe
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Indicates whether the discovery result has been processed. You can update this attribute using the PatchDiscoveryJobResults operation to track whether the discovery result has already been processed and applied to the sensitive data model.
         /// </summary>
@@ -291,7 +291,7 @@ namespace Pulumi.Oci.DataSafe
 
             ImmutableArray<Outputs.GetDiscoveryJobsResultsFilterResult> filters,
 
-            string id,
+            string? id,
 
             bool? isResultApplied,
 

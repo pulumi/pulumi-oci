@@ -52,17 +52,11 @@ class GetDrPlanExecutionsResult:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        The display name of the step execution.  Example: `DATABASE_SWITCHOVER`
-        """
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="drPlanExecutionCollections")
-    def dr_plan_execution_collections(self) -> Sequence['outputs.GetDrPlanExecutionsDrPlanExecutionCollectionResult']:
-        """
-        The list of dr_plan_execution_collection.
-        """
+    def dr_plan_execution_collections(self) -> Optional[Sequence['outputs.GetDrPlanExecutionsDrPlanExecutionCollectionResult']]:
         return pulumi.get(self, "dr_plan_execution_collections")
 
     @property
@@ -78,9 +72,6 @@ class GetDrPlanExecutionsResult:
     @property
     @pulumi.getter(name="drProtectionGroupId")
     def dr_protection_group_id(self) -> str:
-        """
-        The OCID of the DR protection group to which this DR plan execution belongs.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
-        """
         return pulumi.get(self, "dr_protection_group_id")
 
     @property
@@ -90,7 +81,7 @@ class GetDrPlanExecutionsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -99,9 +90,6 @@ class GetDrPlanExecutionsResult:
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the DR plan execution.
-        """
         return pulumi.get(self, "state")
 
 
@@ -129,29 +117,7 @@ def get_dr_plan_executions(display_name: Optional[str] = None,
                            state: Optional[str] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDrPlanExecutionsResult:
     """
-    This data source provides the list of Dr Plan Executions in Oracle Cloud Infrastructure Disaster Recovery service.
-
-    Get a summary list of all DR plan executions for a DR protection group.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_dr_plan_executions = oci.DisasterRecovery.get_dr_plan_executions(dr_protection_group_id=oci_disaster_recovery_dr_protection_group["test_dr_protection_group"]["id"],
-        display_name=var["dr_plan_execution_display_name"],
-        dr_plan_execution_id=oci_disaster_recovery_dr_plan_execution["test_dr_plan_execution"]["id"],
-        dr_plan_execution_type=var["dr_plan_execution_dr_plan_execution_type"],
-        state=var["dr_plan_execution_state"])
-    ```
-
-
-    :param str display_name: A filter to return only resources that match the given display name.  Example: `MyResourceDisplayName`
-    :param str dr_plan_execution_id: The OCID of the DR plan execution.  Example: `ocid1.drplanexecution.oc1..uniqueID`
-    :param str dr_plan_execution_type: The DR plan execution type.
-    :param str dr_protection_group_id: The OCID of the DR protection group. Mandatory query param.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
-    :param str state: A filter to return only DR plan executions that match the given lifecycle state.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['displayName'] = display_name
@@ -183,28 +149,6 @@ def get_dr_plan_executions_output(display_name: Optional[pulumi.Input[Optional[s
                                   state: Optional[pulumi.Input[Optional[str]]] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDrPlanExecutionsResult]:
     """
-    This data source provides the list of Dr Plan Executions in Oracle Cloud Infrastructure Disaster Recovery service.
-
-    Get a summary list of all DR plan executions for a DR protection group.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_dr_plan_executions = oci.DisasterRecovery.get_dr_plan_executions(dr_protection_group_id=oci_disaster_recovery_dr_protection_group["test_dr_protection_group"]["id"],
-        display_name=var["dr_plan_execution_display_name"],
-        dr_plan_execution_id=oci_disaster_recovery_dr_plan_execution["test_dr_plan_execution"]["id"],
-        dr_plan_execution_type=var["dr_plan_execution_dr_plan_execution_type"],
-        state=var["dr_plan_execution_state"])
-    ```
-
-
-    :param str display_name: A filter to return only resources that match the given display name.  Example: `MyResourceDisplayName`
-    :param str dr_plan_execution_id: The OCID of the DR plan execution.  Example: `ocid1.drplanexecution.oc1..uniqueID`
-    :param str dr_plan_execution_type: The DR plan execution type.
-    :param str dr_protection_group_id: The OCID of the DR protection group. Mandatory query param.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
-    :param str state: A filter to return only DR plan executions that match the given lifecycle state.
+    Use this data source to access information about an existing resource.
     """
     ...

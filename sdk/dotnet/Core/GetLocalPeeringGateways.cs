@@ -147,7 +147,7 @@ namespace Pulumi.Oci.Core
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The list of local_peering_gateways.
         /// </summary>
@@ -163,7 +163,7 @@ namespace Pulumi.Oci.Core
 
             ImmutableArray<Outputs.GetLocalPeeringGatewaysFilterResult> filters,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetLocalPeeringGatewaysLocalPeeringGatewayResult> localPeeringGateways,
 

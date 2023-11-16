@@ -11,6 +11,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetExadataInsightMemberVmClusterDetailMemberDatabaseDetail {
@@ -18,95 +20,95 @@ public final class GetExadataInsightMemberVmClusterDetailMemberDatabaseDetail {
      * @return Compartment identifier of the Exadata insight resource
      * 
      */
-    private String compartmentId;
-    private List<GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetail> connectionDetails;
-    private List<GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetail> credentialDetails;
-    private String databaseId;
-    private String databaseResourceType;
-    private String dbmPrivateEndpointId;
+    private @Nullable String compartmentId;
+    private @Nullable List<GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetail> connectionDetails;
+    private @Nullable List<GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetail> credentialDetails;
+    private @Nullable String databaseId;
+    private @Nullable String databaseResourceType;
+    private @Nullable String dbmPrivateEndpointId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
-    private String deploymentType;
+    private @Nullable Map<String,Object> definedTags;
+    private @Nullable String deploymentType;
     /**
      * @return Source of the Exadata system.
      * 
      */
-    private String entitySource;
+    private @Nullable String entitySource;
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
-    private String opsiPrivateEndpointId;
-    private String serviceName;
+    private @Nullable Map<String,Object> freeformTags;
+    private @Nullable String opsiPrivateEndpointId;
+    private @Nullable String serviceName;
     /**
      * @return System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    private Map<String,Object> systemTags;
+    private @Nullable Map<String,Object> systemTags;
 
     private GetExadataInsightMemberVmClusterDetailMemberDatabaseDetail() {}
     /**
      * @return Compartment identifier of the Exadata insight resource
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     public List<GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetail> connectionDetails() {
-        return this.connectionDetails;
+        return this.connectionDetails == null ? List.of() : this.connectionDetails;
     }
     public List<GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetail> credentialDetails() {
-        return this.credentialDetails;
+        return this.credentialDetails == null ? List.of() : this.credentialDetails;
     }
-    public String databaseId() {
-        return this.databaseId;
+    public Optional<String> databaseId() {
+        return Optional.ofNullable(this.databaseId);
     }
-    public String databaseResourceType() {
-        return this.databaseResourceType;
+    public Optional<String> databaseResourceType() {
+        return Optional.ofNullable(this.databaseResourceType);
     }
-    public String dbmPrivateEndpointId() {
-        return this.dbmPrivateEndpointId;
+    public Optional<String> dbmPrivateEndpointId() {
+        return Optional.ofNullable(this.dbmPrivateEndpointId);
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
-    public String deploymentType() {
-        return this.deploymentType;
+    public Optional<String> deploymentType() {
+        return Optional.ofNullable(this.deploymentType);
     }
     /**
      * @return Source of the Exadata system.
      * 
      */
-    public String entitySource() {
-        return this.entitySource;
+    public Optional<String> entitySource() {
+        return Optional.ofNullable(this.entitySource);
     }
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
-    public String opsiPrivateEndpointId() {
-        return this.opsiPrivateEndpointId;
+    public Optional<String> opsiPrivateEndpointId() {
+        return Optional.ofNullable(this.opsiPrivateEndpointId);
     }
-    public String serviceName() {
-        return this.serviceName;
+    public Optional<String> serviceName() {
+        return Optional.ofNullable(this.serviceName);
     }
     /**
      * @return System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
     public Map<String,Object> systemTags() {
-        return this.systemTags;
+        return this.systemTags == null ? Map.of() : this.systemTags;
     }
 
     public static Builder builder() {
@@ -118,19 +120,19 @@ public final class GetExadataInsightMemberVmClusterDetailMemberDatabaseDetail {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String compartmentId;
-        private List<GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetail> connectionDetails;
-        private List<GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetail> credentialDetails;
-        private String databaseId;
-        private String databaseResourceType;
-        private String dbmPrivateEndpointId;
-        private Map<String,Object> definedTags;
-        private String deploymentType;
-        private String entitySource;
-        private Map<String,Object> freeformTags;
-        private String opsiPrivateEndpointId;
-        private String serviceName;
-        private Map<String,Object> systemTags;
+        private @Nullable String compartmentId;
+        private @Nullable List<GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetail> connectionDetails;
+        private @Nullable List<GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetail> credentialDetails;
+        private @Nullable String databaseId;
+        private @Nullable String databaseResourceType;
+        private @Nullable String dbmPrivateEndpointId;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String deploymentType;
+        private @Nullable String entitySource;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String opsiPrivateEndpointId;
+        private @Nullable String serviceName;
+        private @Nullable Map<String,Object> systemTags;
         public Builder() {}
         public Builder(GetExadataInsightMemberVmClusterDetailMemberDatabaseDetail defaults) {
     	      Objects.requireNonNull(defaults);
@@ -150,74 +152,74 @@ public final class GetExadataInsightMemberVmClusterDetailMemberDatabaseDetail {
         }
 
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder connectionDetails(List<GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetail> connectionDetails) {
-            this.connectionDetails = Objects.requireNonNull(connectionDetails);
+        public Builder connectionDetails(@Nullable List<GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetail> connectionDetails) {
+            this.connectionDetails = connectionDetails;
             return this;
         }
         public Builder connectionDetails(GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetail... connectionDetails) {
             return connectionDetails(List.of(connectionDetails));
         }
         @CustomType.Setter
-        public Builder credentialDetails(List<GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetail> credentialDetails) {
-            this.credentialDetails = Objects.requireNonNull(credentialDetails);
+        public Builder credentialDetails(@Nullable List<GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetail> credentialDetails) {
+            this.credentialDetails = credentialDetails;
             return this;
         }
         public Builder credentialDetails(GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetail... credentialDetails) {
             return credentialDetails(List.of(credentialDetails));
         }
         @CustomType.Setter
-        public Builder databaseId(String databaseId) {
-            this.databaseId = Objects.requireNonNull(databaseId);
+        public Builder databaseId(@Nullable String databaseId) {
+            this.databaseId = databaseId;
             return this;
         }
         @CustomType.Setter
-        public Builder databaseResourceType(String databaseResourceType) {
-            this.databaseResourceType = Objects.requireNonNull(databaseResourceType);
+        public Builder databaseResourceType(@Nullable String databaseResourceType) {
+            this.databaseResourceType = databaseResourceType;
             return this;
         }
         @CustomType.Setter
-        public Builder dbmPrivateEndpointId(String dbmPrivateEndpointId) {
-            this.dbmPrivateEndpointId = Objects.requireNonNull(dbmPrivateEndpointId);
+        public Builder dbmPrivateEndpointId(@Nullable String dbmPrivateEndpointId) {
+            this.dbmPrivateEndpointId = dbmPrivateEndpointId;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder deploymentType(String deploymentType) {
-            this.deploymentType = Objects.requireNonNull(deploymentType);
+        public Builder deploymentType(@Nullable String deploymentType) {
+            this.deploymentType = deploymentType;
             return this;
         }
         @CustomType.Setter
-        public Builder entitySource(String entitySource) {
-            this.entitySource = Objects.requireNonNull(entitySource);
+        public Builder entitySource(@Nullable String entitySource) {
+            this.entitySource = entitySource;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder opsiPrivateEndpointId(String opsiPrivateEndpointId) {
-            this.opsiPrivateEndpointId = Objects.requireNonNull(opsiPrivateEndpointId);
+        public Builder opsiPrivateEndpointId(@Nullable String opsiPrivateEndpointId) {
+            this.opsiPrivateEndpointId = opsiPrivateEndpointId;
             return this;
         }
         @CustomType.Setter
-        public Builder serviceName(String serviceName) {
-            this.serviceName = Objects.requireNonNull(serviceName);
+        public Builder serviceName(@Nullable String serviceName) {
+            this.serviceName = serviceName;
             return this;
         }
         @CustomType.Setter
-        public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+        public Builder systemTags(@Nullable Map<String,Object> systemTags) {
+            this.systemTags = systemTags;
             return this;
         }
         public GetExadataInsightMemberVmClusterDetailMemberDatabaseDetail build() {

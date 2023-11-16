@@ -73,7 +73,7 @@ export interface GetBootVolumeBackupsResult {
     /**
      * The list of boot_volume_backups.
      */
-    readonly bootVolumeBackups: outputs.Core.GetBootVolumeBackupsBootVolumeBackup[];
+    readonly bootVolumeBackups?: outputs.Core.GetBootVolumeBackupsBootVolumeBackup[];
     /**
      * The OCID of the boot volume.
      */
@@ -90,7 +90,7 @@ export interface GetBootVolumeBackupsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The OCID of the source boot volume backup.
      */

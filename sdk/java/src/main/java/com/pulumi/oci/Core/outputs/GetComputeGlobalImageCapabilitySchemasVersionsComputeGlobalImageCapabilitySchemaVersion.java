@@ -8,6 +8,8 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetComputeGlobalImageCapabilitySchemasVersionsComputeGlobalImageCapabilitySchemaVersion {
@@ -15,63 +17,63 @@ public final class GetComputeGlobalImageCapabilitySchemasVersionsComputeGlobalIm
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute global image capability schema
      * 
      */
-    private String computeGlobalImageCapabilitySchemaId;
+    private @Nullable String computeGlobalImageCapabilitySchemaId;
     /**
      * @return A filter to return only resources that match the given display name exactly.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return The name of the compute global image capability schema version
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return The map of each capability name to its ImageCapabilityDescriptor.
      * 
      */
-    private Map<String,Object> schemaData;
+    private @Nullable Map<String,Object> schemaData;
     /**
      * @return The date and time the compute global image capability schema version was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
 
     private GetComputeGlobalImageCapabilitySchemasVersionsComputeGlobalImageCapabilitySchemaVersion() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute global image capability schema
      * 
      */
-    public String computeGlobalImageCapabilitySchemaId() {
-        return this.computeGlobalImageCapabilitySchemaId;
+    public Optional<String> computeGlobalImageCapabilitySchemaId() {
+        return Optional.ofNullable(this.computeGlobalImageCapabilitySchemaId);
     }
     /**
      * @return A filter to return only resources that match the given display name exactly.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return The name of the compute global image capability schema version
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return The map of each capability name to its ImageCapabilityDescriptor.
      * 
      */
     public Map<String,Object> schemaData() {
-        return this.schemaData;
+        return this.schemaData == null ? Map.of() : this.schemaData;
     }
     /**
      * @return The date and time the compute global image capability schema version was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
 
     public static Builder builder() {
@@ -83,11 +85,11 @@ public final class GetComputeGlobalImageCapabilitySchemasVersionsComputeGlobalIm
     }
     @CustomType.Builder
     public static final class Builder {
-        private String computeGlobalImageCapabilitySchemaId;
-        private String displayName;
-        private String name;
-        private Map<String,Object> schemaData;
-        private String timeCreated;
+        private @Nullable String computeGlobalImageCapabilitySchemaId;
+        private @Nullable String displayName;
+        private @Nullable String name;
+        private @Nullable Map<String,Object> schemaData;
+        private @Nullable String timeCreated;
         public Builder() {}
         public Builder(GetComputeGlobalImageCapabilitySchemasVersionsComputeGlobalImageCapabilitySchemaVersion defaults) {
     	      Objects.requireNonNull(defaults);
@@ -99,28 +101,28 @@ public final class GetComputeGlobalImageCapabilitySchemasVersionsComputeGlobalIm
         }
 
         @CustomType.Setter
-        public Builder computeGlobalImageCapabilitySchemaId(String computeGlobalImageCapabilitySchemaId) {
-            this.computeGlobalImageCapabilitySchemaId = Objects.requireNonNull(computeGlobalImageCapabilitySchemaId);
+        public Builder computeGlobalImageCapabilitySchemaId(@Nullable String computeGlobalImageCapabilitySchemaId) {
+            this.computeGlobalImageCapabilitySchemaId = computeGlobalImageCapabilitySchemaId;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder schemaData(Map<String,Object> schemaData) {
-            this.schemaData = Objects.requireNonNull(schemaData);
+        public Builder schemaData(@Nullable Map<String,Object> schemaData) {
+            this.schemaData = schemaData;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         public GetComputeGlobalImageCapabilitySchemasVersionsComputeGlobalImageCapabilitySchemaVersion build() {

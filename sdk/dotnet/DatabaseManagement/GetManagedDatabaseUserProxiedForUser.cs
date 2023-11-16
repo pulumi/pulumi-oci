@@ -136,7 +136,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// An array of user resources.
         /// </summary>
@@ -150,7 +150,7 @@ namespace Pulumi.Oci.DatabaseManagement
 
         [OutputConstructor]
         private GetManagedDatabaseUserProxiedForUserResult(
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetManagedDatabaseUserProxiedForUserItemResult> items,
 

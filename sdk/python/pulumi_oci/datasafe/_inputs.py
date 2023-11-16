@@ -107,12 +107,6 @@ class AuditPolicyAuditConditionArgs:
                  enable_conditions: Optional[pulumi.Input[Sequence[pulumi.Input['AuditPolicyAuditConditionEnableConditionArgs']]]] = None,
                  is_data_safe_service_account_audited: Optional[pulumi.Input[bool]] = None,
                  is_priv_users_managed_by_data_safe: Optional[pulumi.Input[bool]] = None):
-        """
-        :param pulumi.Input[str] audit_policy_name: Indicates the audit policy name. Refer to the [documentation](https://docs.oracle.com/en/cloud/paas/data-safe/udscs/audit-policies.html#GUID-361A9A9A-7C21-4F5A-8945-9B3A0C472827) for seeded audit policy names. For custom policies, refer to the user-defined policy name created in the target database.
-        :param pulumi.Input[Sequence[pulumi.Input['AuditPolicyAuditConditionEnableConditionArgs']]] enable_conditions: Indicates the users/roles in the target database for which the audit policy is enforced, and the success/failure event condition to generate the audit event..
-        :param pulumi.Input[bool] is_data_safe_service_account_audited: Indicates whether the Data Safe user activity on the target database will be audited by the policy.
-        :param pulumi.Input[bool] is_priv_users_managed_by_data_safe: Indicates whether the privileged user list is managed by Data Safe.
-        """
         if audit_policy_name is not None:
             pulumi.set(__self__, "audit_policy_name", audit_policy_name)
         if enable_conditions is not None:
@@ -125,9 +119,6 @@ class AuditPolicyAuditConditionArgs:
     @property
     @pulumi.getter(name="auditPolicyName")
     def audit_policy_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        Indicates the audit policy name. Refer to the [documentation](https://docs.oracle.com/en/cloud/paas/data-safe/udscs/audit-policies.html#GUID-361A9A9A-7C21-4F5A-8945-9B3A0C472827) for seeded audit policy names. For custom policies, refer to the user-defined policy name created in the target database.
-        """
         return pulumi.get(self, "audit_policy_name")
 
     @audit_policy_name.setter
@@ -137,9 +128,6 @@ class AuditPolicyAuditConditionArgs:
     @property
     @pulumi.getter(name="enableConditions")
     def enable_conditions(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AuditPolicyAuditConditionEnableConditionArgs']]]]:
-        """
-        Indicates the users/roles in the target database for which the audit policy is enforced, and the success/failure event condition to generate the audit event..
-        """
         return pulumi.get(self, "enable_conditions")
 
     @enable_conditions.setter
@@ -149,9 +137,6 @@ class AuditPolicyAuditConditionArgs:
     @property
     @pulumi.getter(name="isDataSafeServiceAccountAudited")
     def is_data_safe_service_account_audited(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Indicates whether the Data Safe user activity on the target database will be audited by the policy.
-        """
         return pulumi.get(self, "is_data_safe_service_account_audited")
 
     @is_data_safe_service_account_audited.setter
@@ -161,9 +146,6 @@ class AuditPolicyAuditConditionArgs:
     @property
     @pulumi.getter(name="isPrivUsersManagedByDataSafe")
     def is_priv_users_managed_by_data_safe(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Indicates whether the privileged user list is managed by Data Safe.
-        """
         return pulumi.get(self, "is_priv_users_managed_by_data_safe")
 
     @is_priv_users_managed_by_data_safe.setter
@@ -178,12 +160,6 @@ class AuditPolicyAuditConditionEnableConditionArgs:
                  entity_selection: Optional[pulumi.Input[str]] = None,
                  entity_type: Optional[pulumi.Input[str]] = None,
                  operation_status: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] entity_names: List of users or roles that the policy must be enabled for.
-        :param pulumi.Input[str] entity_selection: The entity include or exclude selection.
-        :param pulumi.Input[str] entity_type: The entity type that the policy must be enabled for.
-        :param pulumi.Input[str] operation_status: The operation status that the policy must be enabled for.
-        """
         if entity_names is not None:
             pulumi.set(__self__, "entity_names", entity_names)
         if entity_selection is not None:
@@ -196,9 +172,6 @@ class AuditPolicyAuditConditionEnableConditionArgs:
     @property
     @pulumi.getter(name="entityNames")
     def entity_names(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        List of users or roles that the policy must be enabled for.
-        """
         return pulumi.get(self, "entity_names")
 
     @entity_names.setter
@@ -208,9 +181,6 @@ class AuditPolicyAuditConditionEnableConditionArgs:
     @property
     @pulumi.getter(name="entitySelection")
     def entity_selection(self) -> Optional[pulumi.Input[str]]:
-        """
-        The entity include or exclude selection.
-        """
         return pulumi.get(self, "entity_selection")
 
     @entity_selection.setter
@@ -220,9 +190,6 @@ class AuditPolicyAuditConditionEnableConditionArgs:
     @property
     @pulumi.getter(name="entityType")
     def entity_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        The entity type that the policy must be enabled for.
-        """
         return pulumi.get(self, "entity_type")
 
     @entity_type.setter
@@ -232,9 +199,6 @@ class AuditPolicyAuditConditionEnableConditionArgs:
     @property
     @pulumi.getter(name="operationStatus")
     def operation_status(self) -> Optional[pulumi.Input[str]]:
-        """
-        The operation status that the policy must be enabled for.
-        """
         return pulumi.get(self, "operation_status")
 
     @operation_status.setter
@@ -256,19 +220,6 @@ class AuditPolicyAuditSpecificationArgs:
                  is_seeded_in_target: Optional[pulumi.Input[bool]] = None,
                  is_view_only: Optional[pulumi.Input[bool]] = None,
                  partially_enabled_msg: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] audit_policy_category: The category to which the audit policy belongs.
-        :param pulumi.Input[str] audit_policy_name: Indicates the audit policy name. Refer to the [documentation](https://docs.oracle.com/en/cloud/paas/data-safe/udscs/audit-policies.html#GUID-361A9A9A-7C21-4F5A-8945-9B3A0C472827) for seeded audit policy names. For custom policies, refer to the user-defined policy name created in the target database.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] database_policy_names: Indicates the names of corresponding database policy ( or policies) in the target database.
-        :param pulumi.Input[str] enable_status: Indicates whether the policy has been enabled, disabled or partially enabled in the target database. The status is PARTIALLY_ENABLED if any of the constituent database audit policies is not enabled.
-        :param pulumi.Input[str] enabled_entities: Indicates on whom the audit policy is enabled.
-        :param pulumi.Input[bool] is_created: Indicates whether the policy is already created on the target database.
-        :param pulumi.Input[bool] is_enabled_for_all_users: Indicates whether the policy by default is enabled for all users with no flexibility to alter the enablement conditions.
-        :param pulumi.Input[bool] is_seeded_in_data_safe: Indicates whether the audit policy is one of the seeded policies provided by Oracle Data Safe.
-        :param pulumi.Input[bool] is_seeded_in_target: Indicates whether the audit policy is one of the predefined policies provided by Oracle Database.
-        :param pulumi.Input[bool] is_view_only: Indicates whether the audit policy is available for provisioning/ de-provisioning from Oracle Data Safe, or is only available for displaying the current provisioning status from the target.
-        :param pulumi.Input[str] partially_enabled_msg: Provides information about the policy that has been only partially enabled.
-        """
         if audit_policy_category is not None:
             pulumi.set(__self__, "audit_policy_category", audit_policy_category)
         if audit_policy_name is not None:
@@ -295,9 +246,6 @@ class AuditPolicyAuditSpecificationArgs:
     @property
     @pulumi.getter(name="auditPolicyCategory")
     def audit_policy_category(self) -> Optional[pulumi.Input[str]]:
-        """
-        The category to which the audit policy belongs.
-        """
         return pulumi.get(self, "audit_policy_category")
 
     @audit_policy_category.setter
@@ -307,9 +255,6 @@ class AuditPolicyAuditSpecificationArgs:
     @property
     @pulumi.getter(name="auditPolicyName")
     def audit_policy_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        Indicates the audit policy name. Refer to the [documentation](https://docs.oracle.com/en/cloud/paas/data-safe/udscs/audit-policies.html#GUID-361A9A9A-7C21-4F5A-8945-9B3A0C472827) for seeded audit policy names. For custom policies, refer to the user-defined policy name created in the target database.
-        """
         return pulumi.get(self, "audit_policy_name")
 
     @audit_policy_name.setter
@@ -319,9 +264,6 @@ class AuditPolicyAuditSpecificationArgs:
     @property
     @pulumi.getter(name="databasePolicyNames")
     def database_policy_names(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        Indicates the names of corresponding database policy ( or policies) in the target database.
-        """
         return pulumi.get(self, "database_policy_names")
 
     @database_policy_names.setter
@@ -331,9 +273,6 @@ class AuditPolicyAuditSpecificationArgs:
     @property
     @pulumi.getter(name="enableStatus")
     def enable_status(self) -> Optional[pulumi.Input[str]]:
-        """
-        Indicates whether the policy has been enabled, disabled or partially enabled in the target database. The status is PARTIALLY_ENABLED if any of the constituent database audit policies is not enabled.
-        """
         return pulumi.get(self, "enable_status")
 
     @enable_status.setter
@@ -343,9 +282,6 @@ class AuditPolicyAuditSpecificationArgs:
     @property
     @pulumi.getter(name="enabledEntities")
     def enabled_entities(self) -> Optional[pulumi.Input[str]]:
-        """
-        Indicates on whom the audit policy is enabled.
-        """
         return pulumi.get(self, "enabled_entities")
 
     @enabled_entities.setter
@@ -355,9 +291,6 @@ class AuditPolicyAuditSpecificationArgs:
     @property
     @pulumi.getter(name="isCreated")
     def is_created(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Indicates whether the policy is already created on the target database.
-        """
         return pulumi.get(self, "is_created")
 
     @is_created.setter
@@ -367,9 +300,6 @@ class AuditPolicyAuditSpecificationArgs:
     @property
     @pulumi.getter(name="isEnabledForAllUsers")
     def is_enabled_for_all_users(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Indicates whether the policy by default is enabled for all users with no flexibility to alter the enablement conditions.
-        """
         return pulumi.get(self, "is_enabled_for_all_users")
 
     @is_enabled_for_all_users.setter
@@ -379,9 +309,6 @@ class AuditPolicyAuditSpecificationArgs:
     @property
     @pulumi.getter(name="isSeededInDataSafe")
     def is_seeded_in_data_safe(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Indicates whether the audit policy is one of the seeded policies provided by Oracle Data Safe.
-        """
         return pulumi.get(self, "is_seeded_in_data_safe")
 
     @is_seeded_in_data_safe.setter
@@ -391,9 +318,6 @@ class AuditPolicyAuditSpecificationArgs:
     @property
     @pulumi.getter(name="isSeededInTarget")
     def is_seeded_in_target(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Indicates whether the audit policy is one of the predefined policies provided by Oracle Database.
-        """
         return pulumi.get(self, "is_seeded_in_target")
 
     @is_seeded_in_target.setter
@@ -403,9 +327,6 @@ class AuditPolicyAuditSpecificationArgs:
     @property
     @pulumi.getter(name="isViewOnly")
     def is_view_only(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Indicates whether the audit policy is available for provisioning/ de-provisioning from Oracle Data Safe, or is only available for displaying the current provisioning status from the target.
-        """
         return pulumi.get(self, "is_view_only")
 
     @is_view_only.setter
@@ -415,9 +336,6 @@ class AuditPolicyAuditSpecificationArgs:
     @property
     @pulumi.getter(name="partiallyEnabledMsg")
     def partially_enabled_msg(self) -> Optional[pulumi.Input[str]]:
-        """
-        Provides information about the policy that has been only partially enabled.
-        """
         return pulumi.get(self, "partially_enabled_msg")
 
     @partially_enabled_msg.setter
@@ -447,27 +365,6 @@ class AuditProfileAuditTrailArgs:
                  time_updated: Optional[pulumi.Input[str]] = None,
                  trail_location: Optional[pulumi.Input[str]] = None,
                  work_request_id: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] audit_collection_start_time: The date from which the audit trail must start collecting data, in the format defined by RFC3339.
-        :param pulumi.Input[str] audit_profile_id: The OCID of the audit.
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment that contains the audit.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] description: (Updatable) The description of the audit profile.
-        :param pulumi.Input[str] display_name: (Updatable) The display name of the audit profile. The name does not have to be unique, and it's changeable.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] id: The OCID of the audit profile.
-        :param pulumi.Input[bool] is_auto_purge_enabled: Indicates if auto purge is enabled on the target database, which helps delete audit data in the target database every seven days so that the database's audit trail does not become too large.
-        :param pulumi.Input[str] lifecycle_details: Details about the current state of the audit profile in Data Safe.
-        :param pulumi.Input[str] state: The current state of the audit profile.
-        :param pulumi.Input[str] status: The current sub-state of the audit trail.
-        :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[str] target_id: The OCID of the Data Safe target for which the audit profile is created.
-        :param pulumi.Input[str] time_created: The date and time the audit profile was created, in the format defined by RFC3339.
-        :param pulumi.Input[str] time_last_collected: The date and time until when the audit events were collected from the target database by the Data Safe audit trail  collection process, in the format defined by RFC3339.
-        :param pulumi.Input[str] time_updated: The date and time the audit profile was updated, in the format defined by RFC3339.
-        :param pulumi.Input[str] trail_location: An audit trail location represents the source of audit records that provides documentary evidence of the sequence of activities in the target database.
-        :param pulumi.Input[str] work_request_id: The OCID of the workrequest for audit trail which collects audit records.
-        """
         if audit_collection_start_time is not None:
             pulumi.set(__self__, "audit_collection_start_time", audit_collection_start_time)
         if audit_profile_id is not None:
@@ -510,9 +407,6 @@ class AuditProfileAuditTrailArgs:
     @property
     @pulumi.getter(name="auditCollectionStartTime")
     def audit_collection_start_time(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date from which the audit trail must start collecting data, in the format defined by RFC3339.
-        """
         return pulumi.get(self, "audit_collection_start_time")
 
     @audit_collection_start_time.setter
@@ -522,9 +416,6 @@ class AuditProfileAuditTrailArgs:
     @property
     @pulumi.getter(name="auditProfileId")
     def audit_profile_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the audit.
-        """
         return pulumi.get(self, "audit_profile_id")
 
     @audit_profile_id.setter
@@ -534,9 +425,6 @@ class AuditProfileAuditTrailArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The OCID of the compartment that contains the audit.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -546,9 +434,6 @@ class AuditProfileAuditTrailArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -558,9 +443,6 @@ class AuditProfileAuditTrailArgs:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The description of the audit profile.
-        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -570,9 +452,6 @@ class AuditProfileAuditTrailArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The display name of the audit profile. The name does not have to be unique, and it's changeable.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -582,9 +461,6 @@ class AuditProfileAuditTrailArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -594,9 +470,6 @@ class AuditProfileAuditTrailArgs:
     @property
     @pulumi.getter
     def id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the audit profile.
-        """
         return pulumi.get(self, "id")
 
     @id.setter
@@ -606,9 +479,6 @@ class AuditProfileAuditTrailArgs:
     @property
     @pulumi.getter(name="isAutoPurgeEnabled")
     def is_auto_purge_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Indicates if auto purge is enabled on the target database, which helps delete audit data in the target database every seven days so that the database's audit trail does not become too large.
-        """
         return pulumi.get(self, "is_auto_purge_enabled")
 
     @is_auto_purge_enabled.setter
@@ -618,9 +488,6 @@ class AuditProfileAuditTrailArgs:
     @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> Optional[pulumi.Input[str]]:
-        """
-        Details about the current state of the audit profile in Data Safe.
-        """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
@@ -630,9 +497,6 @@ class AuditProfileAuditTrailArgs:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The current state of the audit profile.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -642,9 +506,6 @@ class AuditProfileAuditTrailArgs:
     @property
     @pulumi.getter
     def status(self) -> Optional[pulumi.Input[str]]:
-        """
-        The current sub-state of the audit trail.
-        """
         return pulumi.get(self, "status")
 
     @status.setter
@@ -654,9 +515,6 @@ class AuditProfileAuditTrailArgs:
     @property
     @pulumi.getter(name="systemTags")
     def system_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
@@ -666,9 +524,6 @@ class AuditProfileAuditTrailArgs:
     @property
     @pulumi.getter(name="targetId")
     def target_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the Data Safe target for which the audit profile is created.
-        """
         return pulumi.get(self, "target_id")
 
     @target_id.setter
@@ -678,9 +533,6 @@ class AuditProfileAuditTrailArgs:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time the audit profile was created, in the format defined by RFC3339.
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -690,9 +542,6 @@ class AuditProfileAuditTrailArgs:
     @property
     @pulumi.getter(name="timeLastCollected")
     def time_last_collected(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time until when the audit events were collected from the target database by the Data Safe audit trail  collection process, in the format defined by RFC3339.
-        """
         return pulumi.get(self, "time_last_collected")
 
     @time_last_collected.setter
@@ -702,9 +551,6 @@ class AuditProfileAuditTrailArgs:
     @property
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time the audit profile was updated, in the format defined by RFC3339.
-        """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
@@ -714,9 +560,6 @@ class AuditProfileAuditTrailArgs:
     @property
     @pulumi.getter(name="trailLocation")
     def trail_location(self) -> Optional[pulumi.Input[str]]:
-        """
-        An audit trail location represents the source of audit records that provides documentary evidence of the sequence of activities in the target database.
-        """
         return pulumi.get(self, "trail_location")
 
     @trail_location.setter
@@ -726,9 +569,6 @@ class AuditProfileAuditTrailArgs:
     @property
     @pulumi.getter(name="workRequestId")
     def work_request_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the workrequest for audit trail which collects audit records.
-        """
         return pulumi.get(self, "work_request_id")
 
     @work_request_id.setter
@@ -742,11 +582,6 @@ class DataSafeConfigurationGlobalSettingArgs:
                  is_paid_usage: Optional[pulumi.Input[bool]] = None,
                  offline_retention_period: Optional[pulumi.Input[int]] = None,
                  online_retention_period: Optional[pulumi.Input[int]] = None):
-        """
-        :param pulumi.Input[bool] is_paid_usage: The paid usage option chosen by the customer admin.
-        :param pulumi.Input[int] offline_retention_period: The offline retention period in months.
-        :param pulumi.Input[int] online_retention_period: The online retention period in months.
-        """
         if is_paid_usage is not None:
             pulumi.set(__self__, "is_paid_usage", is_paid_usage)
         if offline_retention_period is not None:
@@ -757,9 +592,6 @@ class DataSafeConfigurationGlobalSettingArgs:
     @property
     @pulumi.getter(name="isPaidUsage")
     def is_paid_usage(self) -> Optional[pulumi.Input[bool]]:
-        """
-        The paid usage option chosen by the customer admin.
-        """
         return pulumi.get(self, "is_paid_usage")
 
     @is_paid_usage.setter
@@ -769,9 +601,6 @@ class DataSafeConfigurationGlobalSettingArgs:
     @property
     @pulumi.getter(name="offlineRetentionPeriod")
     def offline_retention_period(self) -> Optional[pulumi.Input[int]]:
-        """
-        The offline retention period in months.
-        """
         return pulumi.get(self, "offline_retention_period")
 
     @offline_retention_period.setter
@@ -781,9 +610,6 @@ class DataSafeConfigurationGlobalSettingArgs:
     @property
     @pulumi.getter(name="onlineRetentionPeriod")
     def online_retention_period(self) -> Optional[pulumi.Input[int]]:
-        """
-        The online retention period in months.
-        """
         return pulumi.get(self, "online_retention_period")
 
     @online_retention_period.setter
@@ -851,12 +677,6 @@ class DatabaseSecurityConfigSqlFirewallConfigArgs:
                  status: Optional[pulumi.Input[str]] = None,
                  time_status_updated: Optional[pulumi.Input[str]] = None,
                  violation_log_auto_purge: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] exclude_job: (Updatable) Specifies whether the firewall should include or exclude the database internal job activities.
-        :param pulumi.Input[str] status: (Updatable) Specifies whether the firewall is enabled or disabled on the target database.
-        :param pulumi.Input[str] time_status_updated: The most recent time when the firewall status is updated, in the format defined by RFC3339.
-        :param pulumi.Input[str] violation_log_auto_purge: (Updatable) Specifies whether Data Safe should automatically purge the violation logs  from the database after collecting the violation logs and persisting on Data Safe.
-        """
         if exclude_job is not None:
             pulumi.set(__self__, "exclude_job", exclude_job)
         if status is not None:
@@ -869,9 +689,6 @@ class DatabaseSecurityConfigSqlFirewallConfigArgs:
     @property
     @pulumi.getter(name="excludeJob")
     def exclude_job(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Specifies whether the firewall should include or exclude the database internal job activities.
-        """
         return pulumi.get(self, "exclude_job")
 
     @exclude_job.setter
@@ -881,9 +698,6 @@ class DatabaseSecurityConfigSqlFirewallConfigArgs:
     @property
     @pulumi.getter
     def status(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Specifies whether the firewall is enabled or disabled on the target database.
-        """
         return pulumi.get(self, "status")
 
     @status.setter
@@ -893,9 +707,6 @@ class DatabaseSecurityConfigSqlFirewallConfigArgs:
     @property
     @pulumi.getter(name="timeStatusUpdated")
     def time_status_updated(self) -> Optional[pulumi.Input[str]]:
-        """
-        The most recent time when the firewall status is updated, in the format defined by RFC3339.
-        """
         return pulumi.get(self, "time_status_updated")
 
     @time_status_updated.setter
@@ -905,9 +716,6 @@ class DatabaseSecurityConfigSqlFirewallConfigArgs:
     @property
     @pulumi.getter(name="violationLogAutoPurge")
     def violation_log_auto_purge(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Specifies whether Data Safe should automatically purge the violation logs  from the database after collecting the violation logs and persisting on Data Safe.
-        """
         return pulumi.get(self, "violation_log_auto_purge")
 
     @violation_log_auto_purge.setter
@@ -920,10 +728,6 @@ class DiscoveryJobsResultModifiedAttributeArgs:
     def __init__(__self__, *,
                  app_defined_child_column_keys: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  db_defined_child_column_keys: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
-        """
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] app_defined_child_column_keys: Unique keys identifying the columns that are application-level (non-dictionary) children of the sensitive column.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] db_defined_child_column_keys: Unique keys identifying the columns that are database-level (dictionary-defined) children of the sensitive column.
-        """
         if app_defined_child_column_keys is not None:
             pulumi.set(__self__, "app_defined_child_column_keys", app_defined_child_column_keys)
         if db_defined_child_column_keys is not None:
@@ -932,9 +736,6 @@ class DiscoveryJobsResultModifiedAttributeArgs:
     @property
     @pulumi.getter(name="appDefinedChildColumnKeys")
     def app_defined_child_column_keys(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        Unique keys identifying the columns that are application-level (non-dictionary) children of the sensitive column.
-        """
         return pulumi.get(self, "app_defined_child_column_keys")
 
     @app_defined_child_column_keys.setter
@@ -944,9 +745,6 @@ class DiscoveryJobsResultModifiedAttributeArgs:
     @property
     @pulumi.getter(name="dbDefinedChildColumnKeys")
     def db_defined_child_column_keys(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        Unique keys identifying the columns that are database-level (dictionary-defined) children of the sensitive column.
-        """
         return pulumi.get(self, "db_defined_child_column_keys")
 
     @db_defined_child_column_keys.setter
@@ -980,35 +778,6 @@ class LibraryMasingFormatFormatEntryArgs:
                  start_value: Optional[pulumi.Input[float]] = None,
                  table_name: Optional[pulumi.Input[str]] = None,
                  user_defined_function: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] type: (Updatable) The type of the format entry.
-        :param pulumi.Input[str] column_name: (Updatable) The name of the substitution column.
-        :param pulumi.Input[str] description: (Updatable) The description of the format entry.
-        :param pulumi.Input[str] end_date: (Updatable) The upper bound of the range within which all the original column values fall. The end date must be greater than or equal to the start date.
-        :param pulumi.Input[int] end_length: (Updatable) The maximum number of characters the generated strings should have. It can  be any integer greater than zero, but it must be greater than or equal to  the start length.
-        :param pulumi.Input[float] end_value: (Updatable) The upper bound of the range within which random decimal numbers should be generated. It must be greater than or equal to the start value. It supports  input of double type.
-        :param pulumi.Input[float] fixed_number: (Updatable) The constant number to be used for masking.
-        :param pulumi.Input[str] fixed_string: (Updatable) The constant string to be used for masking.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] grouping_columns: (Updatable) One or more reference columns to be used to group column values so that they can be shuffled within their own group. The grouping columns and  the column to be masked must belong to the same table.
-        :param pulumi.Input[int] length: (Updatable) The number of characters that should be there in the substring. It should be an integer and greater than zero.
-        :param pulumi.Input[str] library_masking_format_id: (Updatable) The OCID of the library masking format.
-        :param pulumi.Input[str] post_processing_function: (Updatable) The post processing function in SCHEMA_NAME.PACKAGE_NAME.FUNCTION_NAME format. It can be a standalone or packaged function, so PACKAGE_NAME is optional.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] random_lists: (Updatable) A comma-separated list of values to be used to replace column values. The list can be of strings, numbers, or dates. The data type of each value in the list must be compatible with the data type of the column. The number of entries in the list cannot be more than 999.
-        :param pulumi.Input[str] regular_expression: (Updatable) The regular expression to be used for masking. For data with characters in the ASCII character set, providing a regular expression is optional. However, it  is required if the data contains multi-byte characters. If not provided, an  error is returned when a multi-byte character is found.
-               
-               In the case of ASCII characters, if a regular expression is not provided,  Deterministic Encryption can encrypt variable-length column values while  preserving their original format.
-               
-               If a regular expression is provided, the column values in all the rows must match  the regular expression. Deterministic Encryption supports a subset of the regular  expression language. It supports encryption of fixed-length strings, and does not  support * or + syntax of regular expressions. The encrypted values also match the  regular expression, which helps to ensure that the original format is preserved.  If an original value does not match the regular expression, Deterministic Encryption  might not produce a one-to-one mapping. All non-confirming values are mapped to a  single encrypted value, thereby producing a many-to-one mapping.
-        :param pulumi.Input[str] replace_with: (Updatable) The value that should be used to replace the data matching the regular  expression. It can be a fixed string, fixed number, null value, or  SQL expression.
-        :param pulumi.Input[str] schema_name: (Updatable) The name of the schema that contains the substitution column.
-        :param pulumi.Input[str] sql_expression: (Updatable) The SQL expression to be used to generate the masked values. It can  consist of one or more values, operators, and SQL functions that  evaluate to a value. It can also contain substitution columns from  the same table. Specify the substitution columns within percent (%)  symbols.
-        :param pulumi.Input[str] start_date: (Updatable) The lower bound of the range within which all the original column values fall. The start date must be less than or equal to the end date.
-        :param pulumi.Input[int] start_length: (Updatable) The minimum number of characters the generated strings should have. It can  be any integer greater than zero, but it must be less than or equal to the  end length.
-        :param pulumi.Input[int] start_position: (Updatable) The starting position in the original string from where the substring should be extracted. It can be either a positive or a negative integer. If It's negative, the counting starts from the end of the string.
-        :param pulumi.Input[float] start_value: (Updatable) The lower bound of the range within which random decimal numbers should  be generated. It must be less than or equal to the end value. It supports  input of double type.
-        :param pulumi.Input[str] table_name: (Updatable) The name of the table that contains the substitution column.
-        :param pulumi.Input[str] user_defined_function: (Updatable) The user-defined function in SCHEMA_NAME.PACKAGE_NAME.FUNCTION_NAME format.  It can be a standalone or packaged function, so PACKAGE_NAME is optional.
-        """
         pulumi.set(__self__, "type", type)
         if column_name is not None:
             pulumi.set(__self__, "column_name", column_name)
@@ -1058,9 +827,6 @@ class LibraryMasingFormatFormatEntryArgs:
     @property
     @pulumi.getter
     def type(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The type of the format entry.
-        """
         return pulumi.get(self, "type")
 
     @type.setter
@@ -1070,9 +836,6 @@ class LibraryMasingFormatFormatEntryArgs:
     @property
     @pulumi.getter(name="columnName")
     def column_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The name of the substitution column.
-        """
         return pulumi.get(self, "column_name")
 
     @column_name.setter
@@ -1082,9 +845,6 @@ class LibraryMasingFormatFormatEntryArgs:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The description of the format entry.
-        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -1094,9 +854,6 @@ class LibraryMasingFormatFormatEntryArgs:
     @property
     @pulumi.getter(name="endDate")
     def end_date(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The upper bound of the range within which all the original column values fall. The end date must be greater than or equal to the start date.
-        """
         return pulumi.get(self, "end_date")
 
     @end_date.setter
@@ -1106,9 +863,6 @@ class LibraryMasingFormatFormatEntryArgs:
     @property
     @pulumi.getter(name="endLength")
     def end_length(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) The maximum number of characters the generated strings should have. It can  be any integer greater than zero, but it must be greater than or equal to  the start length.
-        """
         return pulumi.get(self, "end_length")
 
     @end_length.setter
@@ -1118,9 +872,6 @@ class LibraryMasingFormatFormatEntryArgs:
     @property
     @pulumi.getter(name="endValue")
     def end_value(self) -> Optional[pulumi.Input[float]]:
-        """
-        (Updatable) The upper bound of the range within which random decimal numbers should be generated. It must be greater than or equal to the start value. It supports  input of double type.
-        """
         return pulumi.get(self, "end_value")
 
     @end_value.setter
@@ -1130,9 +881,6 @@ class LibraryMasingFormatFormatEntryArgs:
     @property
     @pulumi.getter(name="fixedNumber")
     def fixed_number(self) -> Optional[pulumi.Input[float]]:
-        """
-        (Updatable) The constant number to be used for masking.
-        """
         return pulumi.get(self, "fixed_number")
 
     @fixed_number.setter
@@ -1142,9 +890,6 @@ class LibraryMasingFormatFormatEntryArgs:
     @property
     @pulumi.getter(name="fixedString")
     def fixed_string(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The constant string to be used for masking.
-        """
         return pulumi.get(self, "fixed_string")
 
     @fixed_string.setter
@@ -1154,9 +899,6 @@ class LibraryMasingFormatFormatEntryArgs:
     @property
     @pulumi.getter(name="groupingColumns")
     def grouping_columns(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) One or more reference columns to be used to group column values so that they can be shuffled within their own group. The grouping columns and  the column to be masked must belong to the same table.
-        """
         return pulumi.get(self, "grouping_columns")
 
     @grouping_columns.setter
@@ -1166,9 +908,6 @@ class LibraryMasingFormatFormatEntryArgs:
     @property
     @pulumi.getter
     def length(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) The number of characters that should be there in the substring. It should be an integer and greater than zero.
-        """
         return pulumi.get(self, "length")
 
     @length.setter
@@ -1178,9 +917,6 @@ class LibraryMasingFormatFormatEntryArgs:
     @property
     @pulumi.getter(name="libraryMaskingFormatId")
     def library_masking_format_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The OCID of the library masking format.
-        """
         return pulumi.get(self, "library_masking_format_id")
 
     @library_masking_format_id.setter
@@ -1190,9 +926,6 @@ class LibraryMasingFormatFormatEntryArgs:
     @property
     @pulumi.getter(name="postProcessingFunction")
     def post_processing_function(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The post processing function in SCHEMA_NAME.PACKAGE_NAME.FUNCTION_NAME format. It can be a standalone or packaged function, so PACKAGE_NAME is optional.
-        """
         return pulumi.get(self, "post_processing_function")
 
     @post_processing_function.setter
@@ -1202,9 +935,6 @@ class LibraryMasingFormatFormatEntryArgs:
     @property
     @pulumi.getter(name="randomLists")
     def random_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) A comma-separated list of values to be used to replace column values. The list can be of strings, numbers, or dates. The data type of each value in the list must be compatible with the data type of the column. The number of entries in the list cannot be more than 999.
-        """
         return pulumi.get(self, "random_lists")
 
     @random_lists.setter
@@ -1214,13 +944,6 @@ class LibraryMasingFormatFormatEntryArgs:
     @property
     @pulumi.getter(name="regularExpression")
     def regular_expression(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The regular expression to be used for masking. For data with characters in the ASCII character set, providing a regular expression is optional. However, it  is required if the data contains multi-byte characters. If not provided, an  error is returned when a multi-byte character is found.
-
-        In the case of ASCII characters, if a regular expression is not provided,  Deterministic Encryption can encrypt variable-length column values while  preserving their original format.
-
-        If a regular expression is provided, the column values in all the rows must match  the regular expression. Deterministic Encryption supports a subset of the regular  expression language. It supports encryption of fixed-length strings, and does not  support * or + syntax of regular expressions. The encrypted values also match the  regular expression, which helps to ensure that the original format is preserved.  If an original value does not match the regular expression, Deterministic Encryption  might not produce a one-to-one mapping. All non-confirming values are mapped to a  single encrypted value, thereby producing a many-to-one mapping.
-        """
         return pulumi.get(self, "regular_expression")
 
     @regular_expression.setter
@@ -1230,9 +953,6 @@ class LibraryMasingFormatFormatEntryArgs:
     @property
     @pulumi.getter(name="replaceWith")
     def replace_with(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The value that should be used to replace the data matching the regular  expression. It can be a fixed string, fixed number, null value, or  SQL expression.
-        """
         return pulumi.get(self, "replace_with")
 
     @replace_with.setter
@@ -1242,9 +962,6 @@ class LibraryMasingFormatFormatEntryArgs:
     @property
     @pulumi.getter(name="schemaName")
     def schema_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The name of the schema that contains the substitution column.
-        """
         return pulumi.get(self, "schema_name")
 
     @schema_name.setter
@@ -1254,9 +971,6 @@ class LibraryMasingFormatFormatEntryArgs:
     @property
     @pulumi.getter(name="sqlExpression")
     def sql_expression(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The SQL expression to be used to generate the masked values. It can  consist of one or more values, operators, and SQL functions that  evaluate to a value. It can also contain substitution columns from  the same table. Specify the substitution columns within percent (%)  symbols.
-        """
         return pulumi.get(self, "sql_expression")
 
     @sql_expression.setter
@@ -1266,9 +980,6 @@ class LibraryMasingFormatFormatEntryArgs:
     @property
     @pulumi.getter(name="startDate")
     def start_date(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The lower bound of the range within which all the original column values fall. The start date must be less than or equal to the end date.
-        """
         return pulumi.get(self, "start_date")
 
     @start_date.setter
@@ -1278,9 +989,6 @@ class LibraryMasingFormatFormatEntryArgs:
     @property
     @pulumi.getter(name="startLength")
     def start_length(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) The minimum number of characters the generated strings should have. It can  be any integer greater than zero, but it must be less than or equal to the  end length.
-        """
         return pulumi.get(self, "start_length")
 
     @start_length.setter
@@ -1290,9 +998,6 @@ class LibraryMasingFormatFormatEntryArgs:
     @property
     @pulumi.getter(name="startPosition")
     def start_position(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) The starting position in the original string from where the substring should be extracted. It can be either a positive or a negative integer. If It's negative, the counting starts from the end of the string.
-        """
         return pulumi.get(self, "start_position")
 
     @start_position.setter
@@ -1302,9 +1007,6 @@ class LibraryMasingFormatFormatEntryArgs:
     @property
     @pulumi.getter(name="startValue")
     def start_value(self) -> Optional[pulumi.Input[float]]:
-        """
-        (Updatable) The lower bound of the range within which random decimal numbers should  be generated. It must be less than or equal to the end value. It supports  input of double type.
-        """
         return pulumi.get(self, "start_value")
 
     @start_value.setter
@@ -1314,9 +1016,6 @@ class LibraryMasingFormatFormatEntryArgs:
     @property
     @pulumi.getter(name="tableName")
     def table_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The name of the table that contains the substitution column.
-        """
         return pulumi.get(self, "table_name")
 
     @table_name.setter
@@ -1326,9 +1025,6 @@ class LibraryMasingFormatFormatEntryArgs:
     @property
     @pulumi.getter(name="userDefinedFunction")
     def user_defined_function(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The user-defined function in SCHEMA_NAME.PACKAGE_NAME.FUNCTION_NAME format.  It can be a standalone or packaged function, so PACKAGE_NAME is optional.
-        """
         return pulumi.get(self, "user_defined_function")
 
     @user_defined_function.setter
@@ -1342,11 +1038,6 @@ class MaskingPoliciesMaskingColumnMaskingFormatArgs:
                  format_entries: pulumi.Input[Sequence[pulumi.Input['MaskingPoliciesMaskingColumnMaskingFormatFormatEntryArgs']]],
                  condition: Optional[pulumi.Input[str]] = None,
                  description: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[Sequence[pulumi.Input['MaskingPoliciesMaskingColumnMaskingFormatFormatEntryArgs']]] format_entries: (Updatable) An array of format entries. The combined output of all the format entries is  used for masking the column data values.
-        :param pulumi.Input[str] condition: (Updatable) A condition that must be true for applying the masking format. It can be any valid  SQL construct that can be used in a SQL predicate. It enables you to do  <a href="https://docs.oracle.com/en/cloud/paas/data-safe/udscs/conditional-masking.html">conditional masking</a>  so that you can mask the column data values differently using different masking  formats and the associated conditions.
-        :param pulumi.Input[str] description: (Updatable) The description of the format entry.
-        """
         pulumi.set(__self__, "format_entries", format_entries)
         if condition is not None:
             pulumi.set(__self__, "condition", condition)
@@ -1356,9 +1047,6 @@ class MaskingPoliciesMaskingColumnMaskingFormatArgs:
     @property
     @pulumi.getter(name="formatEntries")
     def format_entries(self) -> pulumi.Input[Sequence[pulumi.Input['MaskingPoliciesMaskingColumnMaskingFormatFormatEntryArgs']]]:
-        """
-        (Updatable) An array of format entries. The combined output of all the format entries is  used for masking the column data values.
-        """
         return pulumi.get(self, "format_entries")
 
     @format_entries.setter
@@ -1368,9 +1056,6 @@ class MaskingPoliciesMaskingColumnMaskingFormatArgs:
     @property
     @pulumi.getter
     def condition(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A condition that must be true for applying the masking format. It can be any valid  SQL construct that can be used in a SQL predicate. It enables you to do  <a href="https://docs.oracle.com/en/cloud/paas/data-safe/udscs/conditional-masking.html">conditional masking</a>  so that you can mask the column data values differently using different masking  formats and the associated conditions.
-        """
         return pulumi.get(self, "condition")
 
     @condition.setter
@@ -1380,9 +1065,6 @@ class MaskingPoliciesMaskingColumnMaskingFormatArgs:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The description of the format entry.
-        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -1416,35 +1098,6 @@ class MaskingPoliciesMaskingColumnMaskingFormatFormatEntryArgs:
                  start_value: Optional[pulumi.Input[float]] = None,
                  table_name: Optional[pulumi.Input[str]] = None,
                  user_defined_function: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] type: (Updatable) The type of the format entry.
-        :param pulumi.Input[str] column_name: (Updatable) The name of the substitution column.
-        :param pulumi.Input[str] description: (Updatable) The description of the format entry.
-        :param pulumi.Input[str] end_date: (Updatable) The upper bound of the range within which all the original column values fall. The end date must be greater than or equal to the start date.
-        :param pulumi.Input[int] end_length: (Updatable) The maximum number of characters the generated strings should have. It can  be any integer greater than zero, but it must be greater than or equal to  the start length.
-        :param pulumi.Input[float] end_value: (Updatable) The upper bound of the range within which random decimal numbers should be generated. It must be greater than or equal to the start value. It supports  input of double type.
-        :param pulumi.Input[float] fixed_number: (Updatable) The constant number to be used for masking.
-        :param pulumi.Input[str] fixed_string: (Updatable) The constant string to be used for masking.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] grouping_columns: (Updatable) One or more reference columns to be used to group column values so that they can be shuffled within their own group. The grouping columns and  the column to be masked must belong to the same table.
-        :param pulumi.Input[int] length: (Updatable) The number of characters that should be there in the substring. It should be an integer and greater than zero.
-        :param pulumi.Input[str] library_masking_format_id: (Updatable) The OCID of the library masking format.
-        :param pulumi.Input[str] post_processing_function: (Updatable) The post processing function in SCHEMA_NAME.PACKAGE_NAME.FUNCTION_NAME format. It can be a standalone or packaged function, so PACKAGE_NAME is optional.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] random_lists: (Updatable) A comma-separated list of values to be used to replace column values. The list can be of strings, numbers, or dates. The data type of each value in the list must be compatible with the data type of the column. The number of entries in the list cannot be more than 999.
-        :param pulumi.Input[str] regular_expression: (Updatable) The regular expression to be used for masking. For data with characters in the ASCII character set, providing a regular expression is optional. However, it  is required if the data contains multi-byte characters. If not provided, an  error is returned when a multi-byte character is found.
-               
-               In the case of ASCII characters, if a regular expression is not provided,  Deterministic Encryption can encrypt variable-length column values while  preserving their original format.
-               
-               If a regular expression is provided, the column values in all the rows must match  the regular expression. Deterministic Encryption supports a subset of the regular  expression language. It supports encryption of fixed-length strings, and does not  support * or + syntax of regular expressions. The encrypted values also match the  regular expression, which helps to ensure that the original format is preserved.  If an original value does not match the regular expression, Deterministic Encryption  might not produce a one-to-one mapping. All non-confirming values are mapped to a  single encrypted value, thereby producing a many-to-one mapping.
-        :param pulumi.Input[str] replace_with: (Updatable) The value that should be used to replace the data matching the regular  expression. It can be a fixed string, fixed number, null value, or  SQL expression.
-        :param pulumi.Input[str] schema_name: The name of the schema that contains the database column. This attribute cannot be updated for an existing masking column.
-        :param pulumi.Input[str] sql_expression: (Updatable) The SQL expression to be used to generate the masked values. It can  consist of one or more values, operators, and SQL functions that  evaluate to a value. It can also contain substitution columns from  the same table. Specify the substitution columns within percent (%)  symbols.
-        :param pulumi.Input[str] start_date: (Updatable) The lower bound of the range within which all the original column values fall. The start date must be less than or equal to the end date.
-        :param pulumi.Input[int] start_length: (Updatable) The minimum number of characters the generated strings should have. It can  be any integer greater than zero, but it must be less than or equal to the  end length.
-        :param pulumi.Input[int] start_position: (Updatable) The starting position in the original string from where the substring should be extracted. It can be either a positive or a negative integer. If It's negative, the counting starts from the end of the string.
-        :param pulumi.Input[float] start_value: (Updatable) The lower bound of the range within which random decimal numbers should  be generated. It must be less than or equal to the end value. It supports  input of double type.
-        :param pulumi.Input[str] table_name: (Updatable) The name of the table that contains the substitution column.
-        :param pulumi.Input[str] user_defined_function: (Updatable) The user-defined function in SCHEMA_NAME.PACKAGE_NAME.FUNCTION_NAME format.  It can be a standalone or packaged function, so PACKAGE_NAME is optional.
-        """
         pulumi.set(__self__, "type", type)
         if column_name is not None:
             pulumi.set(__self__, "column_name", column_name)
@@ -1494,9 +1147,6 @@ class MaskingPoliciesMaskingColumnMaskingFormatFormatEntryArgs:
     @property
     @pulumi.getter
     def type(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The type of the format entry.
-        """
         return pulumi.get(self, "type")
 
     @type.setter
@@ -1506,9 +1156,6 @@ class MaskingPoliciesMaskingColumnMaskingFormatFormatEntryArgs:
     @property
     @pulumi.getter(name="columnName")
     def column_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The name of the substitution column.
-        """
         return pulumi.get(self, "column_name")
 
     @column_name.setter
@@ -1518,9 +1165,6 @@ class MaskingPoliciesMaskingColumnMaskingFormatFormatEntryArgs:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The description of the format entry.
-        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -1530,9 +1174,6 @@ class MaskingPoliciesMaskingColumnMaskingFormatFormatEntryArgs:
     @property
     @pulumi.getter(name="endDate")
     def end_date(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The upper bound of the range within which all the original column values fall. The end date must be greater than or equal to the start date.
-        """
         return pulumi.get(self, "end_date")
 
     @end_date.setter
@@ -1542,9 +1183,6 @@ class MaskingPoliciesMaskingColumnMaskingFormatFormatEntryArgs:
     @property
     @pulumi.getter(name="endLength")
     def end_length(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) The maximum number of characters the generated strings should have. It can  be any integer greater than zero, but it must be greater than or equal to  the start length.
-        """
         return pulumi.get(self, "end_length")
 
     @end_length.setter
@@ -1554,9 +1192,6 @@ class MaskingPoliciesMaskingColumnMaskingFormatFormatEntryArgs:
     @property
     @pulumi.getter(name="endValue")
     def end_value(self) -> Optional[pulumi.Input[float]]:
-        """
-        (Updatable) The upper bound of the range within which random decimal numbers should be generated. It must be greater than or equal to the start value. It supports  input of double type.
-        """
         return pulumi.get(self, "end_value")
 
     @end_value.setter
@@ -1566,9 +1201,6 @@ class MaskingPoliciesMaskingColumnMaskingFormatFormatEntryArgs:
     @property
     @pulumi.getter(name="fixedNumber")
     def fixed_number(self) -> Optional[pulumi.Input[float]]:
-        """
-        (Updatable) The constant number to be used for masking.
-        """
         return pulumi.get(self, "fixed_number")
 
     @fixed_number.setter
@@ -1578,9 +1210,6 @@ class MaskingPoliciesMaskingColumnMaskingFormatFormatEntryArgs:
     @property
     @pulumi.getter(name="fixedString")
     def fixed_string(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The constant string to be used for masking.
-        """
         return pulumi.get(self, "fixed_string")
 
     @fixed_string.setter
@@ -1590,9 +1219,6 @@ class MaskingPoliciesMaskingColumnMaskingFormatFormatEntryArgs:
     @property
     @pulumi.getter(name="groupingColumns")
     def grouping_columns(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) One or more reference columns to be used to group column values so that they can be shuffled within their own group. The grouping columns and  the column to be masked must belong to the same table.
-        """
         return pulumi.get(self, "grouping_columns")
 
     @grouping_columns.setter
@@ -1602,9 +1228,6 @@ class MaskingPoliciesMaskingColumnMaskingFormatFormatEntryArgs:
     @property
     @pulumi.getter
     def length(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) The number of characters that should be there in the substring. It should be an integer and greater than zero.
-        """
         return pulumi.get(self, "length")
 
     @length.setter
@@ -1614,9 +1237,6 @@ class MaskingPoliciesMaskingColumnMaskingFormatFormatEntryArgs:
     @property
     @pulumi.getter(name="libraryMaskingFormatId")
     def library_masking_format_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The OCID of the library masking format.
-        """
         return pulumi.get(self, "library_masking_format_id")
 
     @library_masking_format_id.setter
@@ -1626,9 +1246,6 @@ class MaskingPoliciesMaskingColumnMaskingFormatFormatEntryArgs:
     @property
     @pulumi.getter(name="postProcessingFunction")
     def post_processing_function(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The post processing function in SCHEMA_NAME.PACKAGE_NAME.FUNCTION_NAME format. It can be a standalone or packaged function, so PACKAGE_NAME is optional.
-        """
         return pulumi.get(self, "post_processing_function")
 
     @post_processing_function.setter
@@ -1638,9 +1255,6 @@ class MaskingPoliciesMaskingColumnMaskingFormatFormatEntryArgs:
     @property
     @pulumi.getter(name="randomLists")
     def random_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) A comma-separated list of values to be used to replace column values. The list can be of strings, numbers, or dates. The data type of each value in the list must be compatible with the data type of the column. The number of entries in the list cannot be more than 999.
-        """
         return pulumi.get(self, "random_lists")
 
     @random_lists.setter
@@ -1650,13 +1264,6 @@ class MaskingPoliciesMaskingColumnMaskingFormatFormatEntryArgs:
     @property
     @pulumi.getter(name="regularExpression")
     def regular_expression(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The regular expression to be used for masking. For data with characters in the ASCII character set, providing a regular expression is optional. However, it  is required if the data contains multi-byte characters. If not provided, an  error is returned when a multi-byte character is found.
-
-        In the case of ASCII characters, if a regular expression is not provided,  Deterministic Encryption can encrypt variable-length column values while  preserving their original format.
-
-        If a regular expression is provided, the column values in all the rows must match  the regular expression. Deterministic Encryption supports a subset of the regular  expression language. It supports encryption of fixed-length strings, and does not  support * or + syntax of regular expressions. The encrypted values also match the  regular expression, which helps to ensure that the original format is preserved.  If an original value does not match the regular expression, Deterministic Encryption  might not produce a one-to-one mapping. All non-confirming values are mapped to a  single encrypted value, thereby producing a many-to-one mapping.
-        """
         return pulumi.get(self, "regular_expression")
 
     @regular_expression.setter
@@ -1666,9 +1273,6 @@ class MaskingPoliciesMaskingColumnMaskingFormatFormatEntryArgs:
     @property
     @pulumi.getter(name="replaceWith")
     def replace_with(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The value that should be used to replace the data matching the regular  expression. It can be a fixed string, fixed number, null value, or  SQL expression.
-        """
         return pulumi.get(self, "replace_with")
 
     @replace_with.setter
@@ -1678,9 +1282,6 @@ class MaskingPoliciesMaskingColumnMaskingFormatFormatEntryArgs:
     @property
     @pulumi.getter(name="schemaName")
     def schema_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The name of the schema that contains the database column. This attribute cannot be updated for an existing masking column.
-        """
         return pulumi.get(self, "schema_name")
 
     @schema_name.setter
@@ -1690,9 +1291,6 @@ class MaskingPoliciesMaskingColumnMaskingFormatFormatEntryArgs:
     @property
     @pulumi.getter(name="sqlExpression")
     def sql_expression(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The SQL expression to be used to generate the masked values. It can  consist of one or more values, operators, and SQL functions that  evaluate to a value. It can also contain substitution columns from  the same table. Specify the substitution columns within percent (%)  symbols.
-        """
         return pulumi.get(self, "sql_expression")
 
     @sql_expression.setter
@@ -1702,9 +1300,6 @@ class MaskingPoliciesMaskingColumnMaskingFormatFormatEntryArgs:
     @property
     @pulumi.getter(name="startDate")
     def start_date(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The lower bound of the range within which all the original column values fall. The start date must be less than or equal to the end date.
-        """
         return pulumi.get(self, "start_date")
 
     @start_date.setter
@@ -1714,9 +1309,6 @@ class MaskingPoliciesMaskingColumnMaskingFormatFormatEntryArgs:
     @property
     @pulumi.getter(name="startLength")
     def start_length(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) The minimum number of characters the generated strings should have. It can  be any integer greater than zero, but it must be less than or equal to the  end length.
-        """
         return pulumi.get(self, "start_length")
 
     @start_length.setter
@@ -1726,9 +1318,6 @@ class MaskingPoliciesMaskingColumnMaskingFormatFormatEntryArgs:
     @property
     @pulumi.getter(name="startPosition")
     def start_position(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) The starting position in the original string from where the substring should be extracted. It can be either a positive or a negative integer. If It's negative, the counting starts from the end of the string.
-        """
         return pulumi.get(self, "start_position")
 
     @start_position.setter
@@ -1738,9 +1327,6 @@ class MaskingPoliciesMaskingColumnMaskingFormatFormatEntryArgs:
     @property
     @pulumi.getter(name="startValue")
     def start_value(self) -> Optional[pulumi.Input[float]]:
-        """
-        (Updatable) The lower bound of the range within which random decimal numbers should  be generated. It must be less than or equal to the end value. It supports  input of double type.
-        """
         return pulumi.get(self, "start_value")
 
     @start_value.setter
@@ -1750,9 +1336,6 @@ class MaskingPoliciesMaskingColumnMaskingFormatFormatEntryArgs:
     @property
     @pulumi.getter(name="tableName")
     def table_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The name of the table that contains the substitution column.
-        """
         return pulumi.get(self, "table_name")
 
     @table_name.setter
@@ -1762,9 +1345,6 @@ class MaskingPoliciesMaskingColumnMaskingFormatFormatEntryArgs:
     @property
     @pulumi.getter(name="userDefinedFunction")
     def user_defined_function(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The user-defined function in SCHEMA_NAME.PACKAGE_NAME.FUNCTION_NAME format.  It can be a standalone or packaged function, so PACKAGE_NAME is optional.
-        """
         return pulumi.get(self, "user_defined_function")
 
     @user_defined_function.setter
@@ -1778,11 +1358,6 @@ class MaskingPolicyColumnSourceArgs:
                  column_source: pulumi.Input[str],
                  sensitive_data_model_id: Optional[pulumi.Input[str]] = None,
                  target_id: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] column_source: (Updatable) The source of masking columns.
-        :param pulumi.Input[str] sensitive_data_model_id: (Updatable) The OCID of the sensitive data model to be associated as the column source with the masking policy.
-        :param pulumi.Input[str] target_id: (Updatable) The OCID of the target database to be associated as the column source with the masking policy.
-        """
         pulumi.set(__self__, "column_source", column_source)
         if sensitive_data_model_id is not None:
             pulumi.set(__self__, "sensitive_data_model_id", sensitive_data_model_id)
@@ -1792,9 +1367,6 @@ class MaskingPolicyColumnSourceArgs:
     @property
     @pulumi.getter(name="columnSource")
     def column_source(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The source of masking columns.
-        """
         return pulumi.get(self, "column_source")
 
     @column_source.setter
@@ -1804,9 +1376,6 @@ class MaskingPolicyColumnSourceArgs:
     @property
     @pulumi.getter(name="sensitiveDataModelId")
     def sensitive_data_model_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The OCID of the sensitive data model to be associated as the column source with the masking policy.
-        """
         return pulumi.get(self, "sensitive_data_model_id")
 
     @sensitive_data_model_id.setter
@@ -1816,9 +1385,6 @@ class MaskingPolicyColumnSourceArgs:
     @property
     @pulumi.getter(name="targetId")
     def target_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The OCID of the target database to be associated as the column source with the masking policy.
-        """
         return pulumi.get(self, "target_id")
 
     @target_id.setter
@@ -1834,13 +1400,6 @@ class ReportDefinitionColumnFilterArgs:
                  is_enabled: pulumi.Input[bool],
                  is_hidden: pulumi.Input[bool],
                  operator: pulumi.Input[str]):
-        """
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] expressions: (Updatable) An array of expressions based on the operator type. A filter may have one or more expressions.
-        :param pulumi.Input[str] field_name: (Updatable) Name of the column that must be sorted.
-        :param pulumi.Input[bool] is_enabled: (Updatable) Indicates whether the filter is enabled. Values can either be 'true' or 'false'.
-        :param pulumi.Input[bool] is_hidden: (Updatable) Indicates if the summary is hidden. Values can either be 'true' or 'false'.
-        :param pulumi.Input[str] operator: (Updatable) Specifies the type of operator that must be applied for example in, eq etc.
-        """
         pulumi.set(__self__, "expressions", expressions)
         pulumi.set(__self__, "field_name", field_name)
         pulumi.set(__self__, "is_enabled", is_enabled)
@@ -1850,9 +1409,6 @@ class ReportDefinitionColumnFilterArgs:
     @property
     @pulumi.getter
     def expressions(self) -> pulumi.Input[Sequence[pulumi.Input[str]]]:
-        """
-        (Updatable) An array of expressions based on the operator type. A filter may have one or more expressions.
-        """
         return pulumi.get(self, "expressions")
 
     @expressions.setter
@@ -1862,9 +1418,6 @@ class ReportDefinitionColumnFilterArgs:
     @property
     @pulumi.getter(name="fieldName")
     def field_name(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Name of the column that must be sorted.
-        """
         return pulumi.get(self, "field_name")
 
     @field_name.setter
@@ -1874,9 +1427,6 @@ class ReportDefinitionColumnFilterArgs:
     @property
     @pulumi.getter(name="isEnabled")
     def is_enabled(self) -> pulumi.Input[bool]:
-        """
-        (Updatable) Indicates whether the filter is enabled. Values can either be 'true' or 'false'.
-        """
         return pulumi.get(self, "is_enabled")
 
     @is_enabled.setter
@@ -1886,9 +1436,6 @@ class ReportDefinitionColumnFilterArgs:
     @property
     @pulumi.getter(name="isHidden")
     def is_hidden(self) -> pulumi.Input[bool]:
-        """
-        (Updatable) Indicates if the summary is hidden. Values can either be 'true' or 'false'.
-        """
         return pulumi.get(self, "is_hidden")
 
     @is_hidden.setter
@@ -1898,9 +1445,6 @@ class ReportDefinitionColumnFilterArgs:
     @property
     @pulumi.getter
     def operator(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Specifies the type of operator that must be applied for example in, eq etc.
-        """
         return pulumi.get(self, "operator")
 
     @operator.setter
@@ -1916,13 +1460,6 @@ class ReportDefinitionColumnInfoArgs:
                  field_name: pulumi.Input[str],
                  is_hidden: pulumi.Input[bool],
                  data_type: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] display_name: (Updatable) Specifies the name of the report definition.
-        :param pulumi.Input[int] display_order: (Updatable) Specifies the order in which the summary must be displayed.
-        :param pulumi.Input[str] field_name: (Updatable) Name of the column that must be sorted.
-        :param pulumi.Input[bool] is_hidden: (Updatable) Indicates if the summary is hidden. Values can either be 'true' or 'false'.
-        :param pulumi.Input[str] data_type: (Updatable) Specifies the data type of the column.
-        """
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "display_order", display_order)
         pulumi.set(__self__, "field_name", field_name)
@@ -1933,9 +1470,6 @@ class ReportDefinitionColumnInfoArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Specifies the name of the report definition.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -1945,9 +1479,6 @@ class ReportDefinitionColumnInfoArgs:
     @property
     @pulumi.getter(name="displayOrder")
     def display_order(self) -> pulumi.Input[int]:
-        """
-        (Updatable) Specifies the order in which the summary must be displayed.
-        """
         return pulumi.get(self, "display_order")
 
     @display_order.setter
@@ -1957,9 +1488,6 @@ class ReportDefinitionColumnInfoArgs:
     @property
     @pulumi.getter(name="fieldName")
     def field_name(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Name of the column that must be sorted.
-        """
         return pulumi.get(self, "field_name")
 
     @field_name.setter
@@ -1969,9 +1497,6 @@ class ReportDefinitionColumnInfoArgs:
     @property
     @pulumi.getter(name="isHidden")
     def is_hidden(self) -> pulumi.Input[bool]:
-        """
-        (Updatable) Indicates if the summary is hidden. Values can either be 'true' or 'false'.
-        """
         return pulumi.get(self, "is_hidden")
 
     @is_hidden.setter
@@ -1981,9 +1506,6 @@ class ReportDefinitionColumnInfoArgs:
     @property
     @pulumi.getter(name="dataType")
     def data_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Specifies the data type of the column.
-        """
         return pulumi.get(self, "data_type")
 
     @data_type.setter
@@ -1997,11 +1519,6 @@ class ReportDefinitionColumnSortingArgs:
                  field_name: pulumi.Input[str],
                  is_ascending: pulumi.Input[bool],
                  sorting_order: pulumi.Input[int]):
-        """
-        :param pulumi.Input[str] field_name: (Updatable) Name of the column that must be sorted.
-        :param pulumi.Input[bool] is_ascending: (Updatable) Indicates if the column must be sorted in ascending order. Values can either be 'true' or 'false'.
-        :param pulumi.Input[int] sorting_order: (Updatable) Indicates the order at which column must be sorted.
-        """
         pulumi.set(__self__, "field_name", field_name)
         pulumi.set(__self__, "is_ascending", is_ascending)
         pulumi.set(__self__, "sorting_order", sorting_order)
@@ -2009,9 +1526,6 @@ class ReportDefinitionColumnSortingArgs:
     @property
     @pulumi.getter(name="fieldName")
     def field_name(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Name of the column that must be sorted.
-        """
         return pulumi.get(self, "field_name")
 
     @field_name.setter
@@ -2021,9 +1535,6 @@ class ReportDefinitionColumnSortingArgs:
     @property
     @pulumi.getter(name="isAscending")
     def is_ascending(self) -> pulumi.Input[bool]:
-        """
-        (Updatable) Indicates if the column must be sorted in ascending order. Values can either be 'true' or 'false'.
-        """
         return pulumi.get(self, "is_ascending")
 
     @is_ascending.setter
@@ -2033,9 +1544,6 @@ class ReportDefinitionColumnSortingArgs:
     @property
     @pulumi.getter(name="sortingOrder")
     def sorting_order(self) -> pulumi.Input[int]:
-        """
-        (Updatable) Indicates the order at which column must be sorted.
-        """
         return pulumi.get(self, "sorting_order")
 
     @sorting_order.setter
@@ -2052,18 +1560,6 @@ class ReportDefinitionSummaryArgs:
                  group_by_field_name: Optional[pulumi.Input[str]] = None,
                  is_hidden: Optional[pulumi.Input[bool]] = None,
                  scim_filter: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[int] display_order: (Updatable) Specifies the order in which the summary must be displayed.
-        :param pulumi.Input[str] name: (Updatable) Name of the report summary.
-        :param pulumi.Input[str] count_of: (Updatable) Name of the key or count of object.
-        :param pulumi.Input[str] group_by_field_name: (Updatable) A comma-delimited string that specifies the names of the fields by which the records must be aggregated to get the summary.
-        :param pulumi.Input[bool] is_hidden: (Updatable) Indicates if the summary is hidden. Values can either be 'true' or 'false'.
-        :param pulumi.Input[str] scim_filter: (Updatable) Additional scim filters used to get the specific summary.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         pulumi.set(__self__, "display_order", display_order)
         pulumi.set(__self__, "name", name)
         if count_of is not None:
@@ -2078,9 +1574,6 @@ class ReportDefinitionSummaryArgs:
     @property
     @pulumi.getter(name="displayOrder")
     def display_order(self) -> pulumi.Input[int]:
-        """
-        (Updatable) Specifies the order in which the summary must be displayed.
-        """
         return pulumi.get(self, "display_order")
 
     @display_order.setter
@@ -2090,9 +1583,6 @@ class ReportDefinitionSummaryArgs:
     @property
     @pulumi.getter
     def name(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Name of the report summary.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -2102,9 +1592,6 @@ class ReportDefinitionSummaryArgs:
     @property
     @pulumi.getter(name="countOf")
     def count_of(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Name of the key or count of object.
-        """
         return pulumi.get(self, "count_of")
 
     @count_of.setter
@@ -2114,9 +1601,6 @@ class ReportDefinitionSummaryArgs:
     @property
     @pulumi.getter(name="groupByFieldName")
     def group_by_field_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A comma-delimited string that specifies the names of the fields by which the records must be aggregated to get the summary.
-        """
         return pulumi.get(self, "group_by_field_name")
 
     @group_by_field_name.setter
@@ -2126,9 +1610,6 @@ class ReportDefinitionSummaryArgs:
     @property
     @pulumi.getter(name="isHidden")
     def is_hidden(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Indicates if the summary is hidden. Values can either be 'true' or 'false'.
-        """
         return pulumi.get(self, "is_hidden")
 
     @is_hidden.setter
@@ -2138,13 +1619,6 @@ class ReportDefinitionSummaryArgs:
     @property
     @pulumi.getter(name="scimFilter")
     def scim_filter(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Additional scim filters used to get the specific summary.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "scim_filter")
 
     @scim_filter.setter
@@ -2162,15 +1636,6 @@ class SecurityAssessmentStatisticArgs:
                  medium_risks: Optional[pulumi.Input[Sequence[pulumi.Input['SecurityAssessmentStatisticMediumRiskArgs']]]] = None,
                  passes: Optional[pulumi.Input[Sequence[pulumi.Input['SecurityAssessmentStatisticPassArgs']]]] = None,
                  targets_count: Optional[pulumi.Input[int]] = None):
-        """
-        :param pulumi.Input[Sequence[pulumi.Input['SecurityAssessmentStatisticAdvisoryArgs']]] advisories: Statistics showing the number of findings with a particular risk level for each category.
-        :param pulumi.Input[Sequence[pulumi.Input['SecurityAssessmentStatisticEvaluateArgs']]] evaluates: Statistics showing the number of findings with a particular risk level for each category.
-        :param pulumi.Input[Sequence[pulumi.Input['SecurityAssessmentStatisticHighRiskArgs']]] high_risks: Statistics showing the number of findings with a particular risk level for each category.
-        :param pulumi.Input[Sequence[pulumi.Input['SecurityAssessmentStatisticLowRiskArgs']]] low_risks: Statistics showing the number of findings with a particular risk level for each category.
-        :param pulumi.Input[Sequence[pulumi.Input['SecurityAssessmentStatisticMediumRiskArgs']]] medium_risks: Statistics showing the number of findings with a particular risk level for each category.
-        :param pulumi.Input[Sequence[pulumi.Input['SecurityAssessmentStatisticPassArgs']]] passes: Statistics showing the number of findings with a particular risk level for each category.
-        :param pulumi.Input[int] targets_count: The total number of targets in this security assessment.
-        """
         if advisories is not None:
             pulumi.set(__self__, "advisories", advisories)
         if evaluates is not None:
@@ -2189,9 +1654,6 @@ class SecurityAssessmentStatisticArgs:
     @property
     @pulumi.getter
     def advisories(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['SecurityAssessmentStatisticAdvisoryArgs']]]]:
-        """
-        Statistics showing the number of findings with a particular risk level for each category.
-        """
         return pulumi.get(self, "advisories")
 
     @advisories.setter
@@ -2201,9 +1663,6 @@ class SecurityAssessmentStatisticArgs:
     @property
     @pulumi.getter
     def evaluates(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['SecurityAssessmentStatisticEvaluateArgs']]]]:
-        """
-        Statistics showing the number of findings with a particular risk level for each category.
-        """
         return pulumi.get(self, "evaluates")
 
     @evaluates.setter
@@ -2213,9 +1672,6 @@ class SecurityAssessmentStatisticArgs:
     @property
     @pulumi.getter(name="highRisks")
     def high_risks(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['SecurityAssessmentStatisticHighRiskArgs']]]]:
-        """
-        Statistics showing the number of findings with a particular risk level for each category.
-        """
         return pulumi.get(self, "high_risks")
 
     @high_risks.setter
@@ -2225,9 +1681,6 @@ class SecurityAssessmentStatisticArgs:
     @property
     @pulumi.getter(name="lowRisks")
     def low_risks(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['SecurityAssessmentStatisticLowRiskArgs']]]]:
-        """
-        Statistics showing the number of findings with a particular risk level for each category.
-        """
         return pulumi.get(self, "low_risks")
 
     @low_risks.setter
@@ -2237,9 +1690,6 @@ class SecurityAssessmentStatisticArgs:
     @property
     @pulumi.getter(name="mediumRisks")
     def medium_risks(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['SecurityAssessmentStatisticMediumRiskArgs']]]]:
-        """
-        Statistics showing the number of findings with a particular risk level for each category.
-        """
         return pulumi.get(self, "medium_risks")
 
     @medium_risks.setter
@@ -2249,9 +1699,6 @@ class SecurityAssessmentStatisticArgs:
     @property
     @pulumi.getter
     def passes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['SecurityAssessmentStatisticPassArgs']]]]:
-        """
-        Statistics showing the number of findings with a particular risk level for each category.
-        """
         return pulumi.get(self, "passes")
 
     @passes.setter
@@ -2261,9 +1708,6 @@ class SecurityAssessmentStatisticArgs:
     @property
     @pulumi.getter(name="targetsCount")
     def targets_count(self) -> Optional[pulumi.Input[int]]:
-        """
-        The total number of targets in this security assessment.
-        """
         return pulumi.get(self, "targets_count")
 
     @targets_count.setter
@@ -2282,16 +1726,6 @@ class SecurityAssessmentStatisticAdvisoryArgs:
                  privileges_and_roles_findings_count: Optional[pulumi.Input[int]] = None,
                  targets_count: Optional[pulumi.Input[int]] = None,
                  user_accounts_findings_count: Optional[pulumi.Input[int]] = None):
-        """
-        :param pulumi.Input[int] auditing_findings_count: The number of findings in the Auditing category.
-        :param pulumi.Input[int] authorization_control_findings_count: The number of findings in the Authorization Control category.
-        :param pulumi.Input[int] data_encryption_findings_count: The number of findings in the Data Encryption category.
-        :param pulumi.Input[int] db_configuration_findings_count: The number of findings in the Database Configuration category.
-        :param pulumi.Input[int] fine_grained_access_control_findings_count: The number of findings in the Fine-Grained Access Control category.
-        :param pulumi.Input[int] privileges_and_roles_findings_count: The number of findings in the Privileges and Roles category.
-        :param pulumi.Input[int] targets_count: The total number of targets in this security assessment.
-        :param pulumi.Input[int] user_accounts_findings_count: The number of findings in the User Accounts category.
-        """
         if auditing_findings_count is not None:
             pulumi.set(__self__, "auditing_findings_count", auditing_findings_count)
         if authorization_control_findings_count is not None:
@@ -2312,9 +1746,6 @@ class SecurityAssessmentStatisticAdvisoryArgs:
     @property
     @pulumi.getter(name="auditingFindingsCount")
     def auditing_findings_count(self) -> Optional[pulumi.Input[int]]:
-        """
-        The number of findings in the Auditing category.
-        """
         return pulumi.get(self, "auditing_findings_count")
 
     @auditing_findings_count.setter
@@ -2324,9 +1755,6 @@ class SecurityAssessmentStatisticAdvisoryArgs:
     @property
     @pulumi.getter(name="authorizationControlFindingsCount")
     def authorization_control_findings_count(self) -> Optional[pulumi.Input[int]]:
-        """
-        The number of findings in the Authorization Control category.
-        """
         return pulumi.get(self, "authorization_control_findings_count")
 
     @authorization_control_findings_count.setter
@@ -2336,9 +1764,6 @@ class SecurityAssessmentStatisticAdvisoryArgs:
     @property
     @pulumi.getter(name="dataEncryptionFindingsCount")
     def data_encryption_findings_count(self) -> Optional[pulumi.Input[int]]:
-        """
-        The number of findings in the Data Encryption category.
-        """
         return pulumi.get(self, "data_encryption_findings_count")
 
     @data_encryption_findings_count.setter
@@ -2348,9 +1773,6 @@ class SecurityAssessmentStatisticAdvisoryArgs:
     @property
     @pulumi.getter(name="dbConfigurationFindingsCount")
     def db_configuration_findings_count(self) -> Optional[pulumi.Input[int]]:
-        """
-        The number of findings in the Database Configuration category.
-        """
         return pulumi.get(self, "db_configuration_findings_count")
 
     @db_configuration_findings_count.setter
@@ -2360,9 +1782,6 @@ class SecurityAssessmentStatisticAdvisoryArgs:
     @property
     @pulumi.getter(name="fineGrainedAccessControlFindingsCount")
     def fine_grained_access_control_findings_count(self) -> Optional[pulumi.Input[int]]:
-        """
-        The number of findings in the Fine-Grained Access Control category.
-        """
         return pulumi.get(self, "fine_grained_access_control_findings_count")
 
     @fine_grained_access_control_findings_count.setter
@@ -2372,9 +1791,6 @@ class SecurityAssessmentStatisticAdvisoryArgs:
     @property
     @pulumi.getter(name="privilegesAndRolesFindingsCount")
     def privileges_and_roles_findings_count(self) -> Optional[pulumi.Input[int]]:
-        """
-        The number of findings in the Privileges and Roles category.
-        """
         return pulumi.get(self, "privileges_and_roles_findings_count")
 
     @privileges_and_roles_findings_count.setter
@@ -2384,9 +1800,6 @@ class SecurityAssessmentStatisticAdvisoryArgs:
     @property
     @pulumi.getter(name="targetsCount")
     def targets_count(self) -> Optional[pulumi.Input[int]]:
-        """
-        The total number of targets in this security assessment.
-        """
         return pulumi.get(self, "targets_count")
 
     @targets_count.setter
@@ -2396,9 +1809,6 @@ class SecurityAssessmentStatisticAdvisoryArgs:
     @property
     @pulumi.getter(name="userAccountsFindingsCount")
     def user_accounts_findings_count(self) -> Optional[pulumi.Input[int]]:
-        """
-        The number of findings in the User Accounts category.
-        """
         return pulumi.get(self, "user_accounts_findings_count")
 
     @user_accounts_findings_count.setter
@@ -2417,16 +1827,6 @@ class SecurityAssessmentStatisticEvaluateArgs:
                  privileges_and_roles_findings_count: Optional[pulumi.Input[int]] = None,
                  targets_count: Optional[pulumi.Input[int]] = None,
                  user_accounts_findings_count: Optional[pulumi.Input[int]] = None):
-        """
-        :param pulumi.Input[int] auditing_findings_count: The number of findings in the Auditing category.
-        :param pulumi.Input[int] authorization_control_findings_count: The number of findings in the Authorization Control category.
-        :param pulumi.Input[int] data_encryption_findings_count: The number of findings in the Data Encryption category.
-        :param pulumi.Input[int] db_configuration_findings_count: The number of findings in the Database Configuration category.
-        :param pulumi.Input[int] fine_grained_access_control_findings_count: The number of findings in the Fine-Grained Access Control category.
-        :param pulumi.Input[int] privileges_and_roles_findings_count: The number of findings in the Privileges and Roles category.
-        :param pulumi.Input[int] targets_count: The total number of targets in this security assessment.
-        :param pulumi.Input[int] user_accounts_findings_count: The number of findings in the User Accounts category.
-        """
         if auditing_findings_count is not None:
             pulumi.set(__self__, "auditing_findings_count", auditing_findings_count)
         if authorization_control_findings_count is not None:
@@ -2447,9 +1847,6 @@ class SecurityAssessmentStatisticEvaluateArgs:
     @property
     @pulumi.getter(name="auditingFindingsCount")
     def auditing_findings_count(self) -> Optional[pulumi.Input[int]]:
-        """
-        The number of findings in the Auditing category.
-        """
         return pulumi.get(self, "auditing_findings_count")
 
     @auditing_findings_count.setter
@@ -2459,9 +1856,6 @@ class SecurityAssessmentStatisticEvaluateArgs:
     @property
     @pulumi.getter(name="authorizationControlFindingsCount")
     def authorization_control_findings_count(self) -> Optional[pulumi.Input[int]]:
-        """
-        The number of findings in the Authorization Control category.
-        """
         return pulumi.get(self, "authorization_control_findings_count")
 
     @authorization_control_findings_count.setter
@@ -2471,9 +1865,6 @@ class SecurityAssessmentStatisticEvaluateArgs:
     @property
     @pulumi.getter(name="dataEncryptionFindingsCount")
     def data_encryption_findings_count(self) -> Optional[pulumi.Input[int]]:
-        """
-        The number of findings in the Data Encryption category.
-        """
         return pulumi.get(self, "data_encryption_findings_count")
 
     @data_encryption_findings_count.setter
@@ -2483,9 +1874,6 @@ class SecurityAssessmentStatisticEvaluateArgs:
     @property
     @pulumi.getter(name="dbConfigurationFindingsCount")
     def db_configuration_findings_count(self) -> Optional[pulumi.Input[int]]:
-        """
-        The number of findings in the Database Configuration category.
-        """
         return pulumi.get(self, "db_configuration_findings_count")
 
     @db_configuration_findings_count.setter
@@ -2495,9 +1883,6 @@ class SecurityAssessmentStatisticEvaluateArgs:
     @property
     @pulumi.getter(name="fineGrainedAccessControlFindingsCount")
     def fine_grained_access_control_findings_count(self) -> Optional[pulumi.Input[int]]:
-        """
-        The number of findings in the Fine-Grained Access Control category.
-        """
         return pulumi.get(self, "fine_grained_access_control_findings_count")
 
     @fine_grained_access_control_findings_count.setter
@@ -2507,9 +1892,6 @@ class SecurityAssessmentStatisticEvaluateArgs:
     @property
     @pulumi.getter(name="privilegesAndRolesFindingsCount")
     def privileges_and_roles_findings_count(self) -> Optional[pulumi.Input[int]]:
-        """
-        The number of findings in the Privileges and Roles category.
-        """
         return pulumi.get(self, "privileges_and_roles_findings_count")
 
     @privileges_and_roles_findings_count.setter
@@ -2519,9 +1901,6 @@ class SecurityAssessmentStatisticEvaluateArgs:
     @property
     @pulumi.getter(name="targetsCount")
     def targets_count(self) -> Optional[pulumi.Input[int]]:
-        """
-        The total number of targets in this security assessment.
-        """
         return pulumi.get(self, "targets_count")
 
     @targets_count.setter
@@ -2531,9 +1910,6 @@ class SecurityAssessmentStatisticEvaluateArgs:
     @property
     @pulumi.getter(name="userAccountsFindingsCount")
     def user_accounts_findings_count(self) -> Optional[pulumi.Input[int]]:
-        """
-        The number of findings in the User Accounts category.
-        """
         return pulumi.get(self, "user_accounts_findings_count")
 
     @user_accounts_findings_count.setter
@@ -2552,16 +1928,6 @@ class SecurityAssessmentStatisticHighRiskArgs:
                  privileges_and_roles_findings_count: Optional[pulumi.Input[int]] = None,
                  targets_count: Optional[pulumi.Input[int]] = None,
                  user_accounts_findings_count: Optional[pulumi.Input[int]] = None):
-        """
-        :param pulumi.Input[int] auditing_findings_count: The number of findings in the Auditing category.
-        :param pulumi.Input[int] authorization_control_findings_count: The number of findings in the Authorization Control category.
-        :param pulumi.Input[int] data_encryption_findings_count: The number of findings in the Data Encryption category.
-        :param pulumi.Input[int] db_configuration_findings_count: The number of findings in the Database Configuration category.
-        :param pulumi.Input[int] fine_grained_access_control_findings_count: The number of findings in the Fine-Grained Access Control category.
-        :param pulumi.Input[int] privileges_and_roles_findings_count: The number of findings in the Privileges and Roles category.
-        :param pulumi.Input[int] targets_count: The total number of targets in this security assessment.
-        :param pulumi.Input[int] user_accounts_findings_count: The number of findings in the User Accounts category.
-        """
         if auditing_findings_count is not None:
             pulumi.set(__self__, "auditing_findings_count", auditing_findings_count)
         if authorization_control_findings_count is not None:
@@ -2582,9 +1948,6 @@ class SecurityAssessmentStatisticHighRiskArgs:
     @property
     @pulumi.getter(name="auditingFindingsCount")
     def auditing_findings_count(self) -> Optional[pulumi.Input[int]]:
-        """
-        The number of findings in the Auditing category.
-        """
         return pulumi.get(self, "auditing_findings_count")
 
     @auditing_findings_count.setter
@@ -2594,9 +1957,6 @@ class SecurityAssessmentStatisticHighRiskArgs:
     @property
     @pulumi.getter(name="authorizationControlFindingsCount")
     def authorization_control_findings_count(self) -> Optional[pulumi.Input[int]]:
-        """
-        The number of findings in the Authorization Control category.
-        """
         return pulumi.get(self, "authorization_control_findings_count")
 
     @authorization_control_findings_count.setter
@@ -2606,9 +1966,6 @@ class SecurityAssessmentStatisticHighRiskArgs:
     @property
     @pulumi.getter(name="dataEncryptionFindingsCount")
     def data_encryption_findings_count(self) -> Optional[pulumi.Input[int]]:
-        """
-        The number of findings in the Data Encryption category.
-        """
         return pulumi.get(self, "data_encryption_findings_count")
 
     @data_encryption_findings_count.setter
@@ -2618,9 +1975,6 @@ class SecurityAssessmentStatisticHighRiskArgs:
     @property
     @pulumi.getter(name="dbConfigurationFindingsCount")
     def db_configuration_findings_count(self) -> Optional[pulumi.Input[int]]:
-        """
-        The number of findings in the Database Configuration category.
-        """
         return pulumi.get(self, "db_configuration_findings_count")
 
     @db_configuration_findings_count.setter
@@ -2630,9 +1984,6 @@ class SecurityAssessmentStatisticHighRiskArgs:
     @property
     @pulumi.getter(name="fineGrainedAccessControlFindingsCount")
     def fine_grained_access_control_findings_count(self) -> Optional[pulumi.Input[int]]:
-        """
-        The number of findings in the Fine-Grained Access Control category.
-        """
         return pulumi.get(self, "fine_grained_access_control_findings_count")
 
     @fine_grained_access_control_findings_count.setter
@@ -2642,9 +1993,6 @@ class SecurityAssessmentStatisticHighRiskArgs:
     @property
     @pulumi.getter(name="privilegesAndRolesFindingsCount")
     def privileges_and_roles_findings_count(self) -> Optional[pulumi.Input[int]]:
-        """
-        The number of findings in the Privileges and Roles category.
-        """
         return pulumi.get(self, "privileges_and_roles_findings_count")
 
     @privileges_and_roles_findings_count.setter
@@ -2654,9 +2002,6 @@ class SecurityAssessmentStatisticHighRiskArgs:
     @property
     @pulumi.getter(name="targetsCount")
     def targets_count(self) -> Optional[pulumi.Input[int]]:
-        """
-        The total number of targets in this security assessment.
-        """
         return pulumi.get(self, "targets_count")
 
     @targets_count.setter
@@ -2666,9 +2011,6 @@ class SecurityAssessmentStatisticHighRiskArgs:
     @property
     @pulumi.getter(name="userAccountsFindingsCount")
     def user_accounts_findings_count(self) -> Optional[pulumi.Input[int]]:
-        """
-        The number of findings in the User Accounts category.
-        """
         return pulumi.get(self, "user_accounts_findings_count")
 
     @user_accounts_findings_count.setter
@@ -2687,16 +2029,6 @@ class SecurityAssessmentStatisticLowRiskArgs:
                  privileges_and_roles_findings_count: Optional[pulumi.Input[int]] = None,
                  targets_count: Optional[pulumi.Input[int]] = None,
                  user_accounts_findings_count: Optional[pulumi.Input[int]] = None):
-        """
-        :param pulumi.Input[int] auditing_findings_count: The number of findings in the Auditing category.
-        :param pulumi.Input[int] authorization_control_findings_count: The number of findings in the Authorization Control category.
-        :param pulumi.Input[int] data_encryption_findings_count: The number of findings in the Data Encryption category.
-        :param pulumi.Input[int] db_configuration_findings_count: The number of findings in the Database Configuration category.
-        :param pulumi.Input[int] fine_grained_access_control_findings_count: The number of findings in the Fine-Grained Access Control category.
-        :param pulumi.Input[int] privileges_and_roles_findings_count: The number of findings in the Privileges and Roles category.
-        :param pulumi.Input[int] targets_count: The total number of targets in this security assessment.
-        :param pulumi.Input[int] user_accounts_findings_count: The number of findings in the User Accounts category.
-        """
         if auditing_findings_count is not None:
             pulumi.set(__self__, "auditing_findings_count", auditing_findings_count)
         if authorization_control_findings_count is not None:
@@ -2717,9 +2049,6 @@ class SecurityAssessmentStatisticLowRiskArgs:
     @property
     @pulumi.getter(name="auditingFindingsCount")
     def auditing_findings_count(self) -> Optional[pulumi.Input[int]]:
-        """
-        The number of findings in the Auditing category.
-        """
         return pulumi.get(self, "auditing_findings_count")
 
     @auditing_findings_count.setter
@@ -2729,9 +2058,6 @@ class SecurityAssessmentStatisticLowRiskArgs:
     @property
     @pulumi.getter(name="authorizationControlFindingsCount")
     def authorization_control_findings_count(self) -> Optional[pulumi.Input[int]]:
-        """
-        The number of findings in the Authorization Control category.
-        """
         return pulumi.get(self, "authorization_control_findings_count")
 
     @authorization_control_findings_count.setter
@@ -2741,9 +2067,6 @@ class SecurityAssessmentStatisticLowRiskArgs:
     @property
     @pulumi.getter(name="dataEncryptionFindingsCount")
     def data_encryption_findings_count(self) -> Optional[pulumi.Input[int]]:
-        """
-        The number of findings in the Data Encryption category.
-        """
         return pulumi.get(self, "data_encryption_findings_count")
 
     @data_encryption_findings_count.setter
@@ -2753,9 +2076,6 @@ class SecurityAssessmentStatisticLowRiskArgs:
     @property
     @pulumi.getter(name="dbConfigurationFindingsCount")
     def db_configuration_findings_count(self) -> Optional[pulumi.Input[int]]:
-        """
-        The number of findings in the Database Configuration category.
-        """
         return pulumi.get(self, "db_configuration_findings_count")
 
     @db_configuration_findings_count.setter
@@ -2765,9 +2085,6 @@ class SecurityAssessmentStatisticLowRiskArgs:
     @property
     @pulumi.getter(name="fineGrainedAccessControlFindingsCount")
     def fine_grained_access_control_findings_count(self) -> Optional[pulumi.Input[int]]:
-        """
-        The number of findings in the Fine-Grained Access Control category.
-        """
         return pulumi.get(self, "fine_grained_access_control_findings_count")
 
     @fine_grained_access_control_findings_count.setter
@@ -2777,9 +2094,6 @@ class SecurityAssessmentStatisticLowRiskArgs:
     @property
     @pulumi.getter(name="privilegesAndRolesFindingsCount")
     def privileges_and_roles_findings_count(self) -> Optional[pulumi.Input[int]]:
-        """
-        The number of findings in the Privileges and Roles category.
-        """
         return pulumi.get(self, "privileges_and_roles_findings_count")
 
     @privileges_and_roles_findings_count.setter
@@ -2789,9 +2103,6 @@ class SecurityAssessmentStatisticLowRiskArgs:
     @property
     @pulumi.getter(name="targetsCount")
     def targets_count(self) -> Optional[pulumi.Input[int]]:
-        """
-        The total number of targets in this security assessment.
-        """
         return pulumi.get(self, "targets_count")
 
     @targets_count.setter
@@ -2801,9 +2112,6 @@ class SecurityAssessmentStatisticLowRiskArgs:
     @property
     @pulumi.getter(name="userAccountsFindingsCount")
     def user_accounts_findings_count(self) -> Optional[pulumi.Input[int]]:
-        """
-        The number of findings in the User Accounts category.
-        """
         return pulumi.get(self, "user_accounts_findings_count")
 
     @user_accounts_findings_count.setter
@@ -2822,16 +2130,6 @@ class SecurityAssessmentStatisticMediumRiskArgs:
                  privileges_and_roles_findings_count: Optional[pulumi.Input[int]] = None,
                  targets_count: Optional[pulumi.Input[int]] = None,
                  user_accounts_findings_count: Optional[pulumi.Input[int]] = None):
-        """
-        :param pulumi.Input[int] auditing_findings_count: The number of findings in the Auditing category.
-        :param pulumi.Input[int] authorization_control_findings_count: The number of findings in the Authorization Control category.
-        :param pulumi.Input[int] data_encryption_findings_count: The number of findings in the Data Encryption category.
-        :param pulumi.Input[int] db_configuration_findings_count: The number of findings in the Database Configuration category.
-        :param pulumi.Input[int] fine_grained_access_control_findings_count: The number of findings in the Fine-Grained Access Control category.
-        :param pulumi.Input[int] privileges_and_roles_findings_count: The number of findings in the Privileges and Roles category.
-        :param pulumi.Input[int] targets_count: The total number of targets in this security assessment.
-        :param pulumi.Input[int] user_accounts_findings_count: The number of findings in the User Accounts category.
-        """
         if auditing_findings_count is not None:
             pulumi.set(__self__, "auditing_findings_count", auditing_findings_count)
         if authorization_control_findings_count is not None:
@@ -2852,9 +2150,6 @@ class SecurityAssessmentStatisticMediumRiskArgs:
     @property
     @pulumi.getter(name="auditingFindingsCount")
     def auditing_findings_count(self) -> Optional[pulumi.Input[int]]:
-        """
-        The number of findings in the Auditing category.
-        """
         return pulumi.get(self, "auditing_findings_count")
 
     @auditing_findings_count.setter
@@ -2864,9 +2159,6 @@ class SecurityAssessmentStatisticMediumRiskArgs:
     @property
     @pulumi.getter(name="authorizationControlFindingsCount")
     def authorization_control_findings_count(self) -> Optional[pulumi.Input[int]]:
-        """
-        The number of findings in the Authorization Control category.
-        """
         return pulumi.get(self, "authorization_control_findings_count")
 
     @authorization_control_findings_count.setter
@@ -2876,9 +2168,6 @@ class SecurityAssessmentStatisticMediumRiskArgs:
     @property
     @pulumi.getter(name="dataEncryptionFindingsCount")
     def data_encryption_findings_count(self) -> Optional[pulumi.Input[int]]:
-        """
-        The number of findings in the Data Encryption category.
-        """
         return pulumi.get(self, "data_encryption_findings_count")
 
     @data_encryption_findings_count.setter
@@ -2888,9 +2177,6 @@ class SecurityAssessmentStatisticMediumRiskArgs:
     @property
     @pulumi.getter(name="dbConfigurationFindingsCount")
     def db_configuration_findings_count(self) -> Optional[pulumi.Input[int]]:
-        """
-        The number of findings in the Database Configuration category.
-        """
         return pulumi.get(self, "db_configuration_findings_count")
 
     @db_configuration_findings_count.setter
@@ -2900,9 +2186,6 @@ class SecurityAssessmentStatisticMediumRiskArgs:
     @property
     @pulumi.getter(name="fineGrainedAccessControlFindingsCount")
     def fine_grained_access_control_findings_count(self) -> Optional[pulumi.Input[int]]:
-        """
-        The number of findings in the Fine-Grained Access Control category.
-        """
         return pulumi.get(self, "fine_grained_access_control_findings_count")
 
     @fine_grained_access_control_findings_count.setter
@@ -2912,9 +2195,6 @@ class SecurityAssessmentStatisticMediumRiskArgs:
     @property
     @pulumi.getter(name="privilegesAndRolesFindingsCount")
     def privileges_and_roles_findings_count(self) -> Optional[pulumi.Input[int]]:
-        """
-        The number of findings in the Privileges and Roles category.
-        """
         return pulumi.get(self, "privileges_and_roles_findings_count")
 
     @privileges_and_roles_findings_count.setter
@@ -2924,9 +2204,6 @@ class SecurityAssessmentStatisticMediumRiskArgs:
     @property
     @pulumi.getter(name="targetsCount")
     def targets_count(self) -> Optional[pulumi.Input[int]]:
-        """
-        The total number of targets in this security assessment.
-        """
         return pulumi.get(self, "targets_count")
 
     @targets_count.setter
@@ -2936,9 +2213,6 @@ class SecurityAssessmentStatisticMediumRiskArgs:
     @property
     @pulumi.getter(name="userAccountsFindingsCount")
     def user_accounts_findings_count(self) -> Optional[pulumi.Input[int]]:
-        """
-        The number of findings in the User Accounts category.
-        """
         return pulumi.get(self, "user_accounts_findings_count")
 
     @user_accounts_findings_count.setter
@@ -2957,16 +2231,6 @@ class SecurityAssessmentStatisticPassArgs:
                  privileges_and_roles_findings_count: Optional[pulumi.Input[int]] = None,
                  targets_count: Optional[pulumi.Input[int]] = None,
                  user_accounts_findings_count: Optional[pulumi.Input[int]] = None):
-        """
-        :param pulumi.Input[int] auditing_findings_count: The number of findings in the Auditing category.
-        :param pulumi.Input[int] authorization_control_findings_count: The number of findings in the Authorization Control category.
-        :param pulumi.Input[int] data_encryption_findings_count: The number of findings in the Data Encryption category.
-        :param pulumi.Input[int] db_configuration_findings_count: The number of findings in the Database Configuration category.
-        :param pulumi.Input[int] fine_grained_access_control_findings_count: The number of findings in the Fine-Grained Access Control category.
-        :param pulumi.Input[int] privileges_and_roles_findings_count: The number of findings in the Privileges and Roles category.
-        :param pulumi.Input[int] targets_count: The total number of targets in this security assessment.
-        :param pulumi.Input[int] user_accounts_findings_count: The number of findings in the User Accounts category.
-        """
         if auditing_findings_count is not None:
             pulumi.set(__self__, "auditing_findings_count", auditing_findings_count)
         if authorization_control_findings_count is not None:
@@ -2987,9 +2251,6 @@ class SecurityAssessmentStatisticPassArgs:
     @property
     @pulumi.getter(name="auditingFindingsCount")
     def auditing_findings_count(self) -> Optional[pulumi.Input[int]]:
-        """
-        The number of findings in the Auditing category.
-        """
         return pulumi.get(self, "auditing_findings_count")
 
     @auditing_findings_count.setter
@@ -2999,9 +2260,6 @@ class SecurityAssessmentStatisticPassArgs:
     @property
     @pulumi.getter(name="authorizationControlFindingsCount")
     def authorization_control_findings_count(self) -> Optional[pulumi.Input[int]]:
-        """
-        The number of findings in the Authorization Control category.
-        """
         return pulumi.get(self, "authorization_control_findings_count")
 
     @authorization_control_findings_count.setter
@@ -3011,9 +2269,6 @@ class SecurityAssessmentStatisticPassArgs:
     @property
     @pulumi.getter(name="dataEncryptionFindingsCount")
     def data_encryption_findings_count(self) -> Optional[pulumi.Input[int]]:
-        """
-        The number of findings in the Data Encryption category.
-        """
         return pulumi.get(self, "data_encryption_findings_count")
 
     @data_encryption_findings_count.setter
@@ -3023,9 +2278,6 @@ class SecurityAssessmentStatisticPassArgs:
     @property
     @pulumi.getter(name="dbConfigurationFindingsCount")
     def db_configuration_findings_count(self) -> Optional[pulumi.Input[int]]:
-        """
-        The number of findings in the Database Configuration category.
-        """
         return pulumi.get(self, "db_configuration_findings_count")
 
     @db_configuration_findings_count.setter
@@ -3035,9 +2287,6 @@ class SecurityAssessmentStatisticPassArgs:
     @property
     @pulumi.getter(name="fineGrainedAccessControlFindingsCount")
     def fine_grained_access_control_findings_count(self) -> Optional[pulumi.Input[int]]:
-        """
-        The number of findings in the Fine-Grained Access Control category.
-        """
         return pulumi.get(self, "fine_grained_access_control_findings_count")
 
     @fine_grained_access_control_findings_count.setter
@@ -3047,9 +2296,6 @@ class SecurityAssessmentStatisticPassArgs:
     @property
     @pulumi.getter(name="privilegesAndRolesFindingsCount")
     def privileges_and_roles_findings_count(self) -> Optional[pulumi.Input[int]]:
-        """
-        The number of findings in the Privileges and Roles category.
-        """
         return pulumi.get(self, "privileges_and_roles_findings_count")
 
     @privileges_and_roles_findings_count.setter
@@ -3059,9 +2305,6 @@ class SecurityAssessmentStatisticPassArgs:
     @property
     @pulumi.getter(name="targetsCount")
     def targets_count(self) -> Optional[pulumi.Input[int]]:
-        """
-        The total number of targets in this security assessment.
-        """
         return pulumi.get(self, "targets_count")
 
     @targets_count.setter
@@ -3071,9 +2314,6 @@ class SecurityAssessmentStatisticPassArgs:
     @property
     @pulumi.getter(name="userAccountsFindingsCount")
     def user_accounts_findings_count(self) -> Optional[pulumi.Input[int]]:
-        """
-        The number of findings in the User Accounts category.
-        """
         return pulumi.get(self, "user_accounts_findings_count")
 
     @user_accounts_findings_count.setter
@@ -3087,13 +2327,6 @@ class TargetDatabaseConnectionOptionArgs:
                  connection_type: pulumi.Input[str],
                  datasafe_private_endpoint_id: Optional[pulumi.Input[str]] = None,
                  on_prem_connector_id: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] connection_type: (Updatable) The connection type used to connect to the database. Allowed values:
-               * PRIVATE_ENDPOINT - Represents connection through private endpoint in Data Safe.
-               * ONPREM_CONNECTOR - Represents connection through on-premises connector in Data Safe.
-        :param pulumi.Input[str] datasafe_private_endpoint_id: (Updatable) The OCID of the Data Safe private endpoint.
-        :param pulumi.Input[str] on_prem_connector_id: (Updatable) The OCID of the on-premises connector.
-        """
         pulumi.set(__self__, "connection_type", connection_type)
         if datasafe_private_endpoint_id is not None:
             pulumi.set(__self__, "datasafe_private_endpoint_id", datasafe_private_endpoint_id)
@@ -3103,11 +2336,6 @@ class TargetDatabaseConnectionOptionArgs:
     @property
     @pulumi.getter(name="connectionType")
     def connection_type(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The connection type used to connect to the database. Allowed values:
-        * PRIVATE_ENDPOINT - Represents connection through private endpoint in Data Safe.
-        * ONPREM_CONNECTOR - Represents connection through on-premises connector in Data Safe.
-        """
         return pulumi.get(self, "connection_type")
 
     @connection_type.setter
@@ -3117,9 +2345,6 @@ class TargetDatabaseConnectionOptionArgs:
     @property
     @pulumi.getter(name="datasafePrivateEndpointId")
     def datasafe_private_endpoint_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The OCID of the Data Safe private endpoint.
-        """
         return pulumi.get(self, "datasafe_private_endpoint_id")
 
     @datasafe_private_endpoint_id.setter
@@ -3129,9 +2354,6 @@ class TargetDatabaseConnectionOptionArgs:
     @property
     @pulumi.getter(name="onPremConnectorId")
     def on_prem_connector_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The OCID of the on-premises connector.
-        """
         return pulumi.get(self, "on_prem_connector_id")
 
     @on_prem_connector_id.setter
@@ -3144,19 +2366,12 @@ class TargetDatabaseCredentialsArgs:
     def __init__(__self__, *,
                  password: pulumi.Input[str],
                  user_name: pulumi.Input[str]):
-        """
-        :param pulumi.Input[str] password: (Updatable) The password of the database user.
-        :param pulumi.Input[str] user_name: (Updatable) The database user name.
-        """
         pulumi.set(__self__, "password", password)
         pulumi.set(__self__, "user_name", user_name)
 
     @property
     @pulumi.getter
     def password(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The password of the database user.
-        """
         return pulumi.get(self, "password")
 
     @password.setter
@@ -3166,9 +2381,6 @@ class TargetDatabaseCredentialsArgs:
     @property
     @pulumi.getter(name="userName")
     def user_name(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The database user name.
-        """
         return pulumi.get(self, "user_name")
 
     @user_name.setter
@@ -3188,17 +2400,6 @@ class TargetDatabaseDatabaseDetailsArgs:
                  listener_port: Optional[pulumi.Input[int]] = None,
                  service_name: Optional[pulumi.Input[str]] = None,
                  vm_cluster_id: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] database_type: (Updatable) The database type.
-        :param pulumi.Input[str] infrastructure_type: (Updatable) The infrastructure type the database is running on.
-        :param pulumi.Input[str] autonomous_database_id: (Updatable) The OCID of the Autonomous Database registered as a target database in Data Safe.
-        :param pulumi.Input[str] db_system_id: (Updatable) The OCID of the cloud database registered as a target database in Data Safe.
-        :param pulumi.Input[str] instance_id: (Updatable) The OCID of the compute instance on which the database is running.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] ip_addresses: (Updatable) The list of database host IP Addresses. Fully qualified domain names can be used if connectionType is 'ONPREM_CONNECTOR'.
-        :param pulumi.Input[int] listener_port: (Updatable) The port number of the database listener.
-        :param pulumi.Input[str] service_name: (Updatable) The service name of the database registered as target database.
-        :param pulumi.Input[str] vm_cluster_id: (Updatable) The OCID of the VM cluster in which the database is running.
-        """
         pulumi.set(__self__, "database_type", database_type)
         pulumi.set(__self__, "infrastructure_type", infrastructure_type)
         if autonomous_database_id is not None:
@@ -3219,9 +2420,6 @@ class TargetDatabaseDatabaseDetailsArgs:
     @property
     @pulumi.getter(name="databaseType")
     def database_type(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The database type.
-        """
         return pulumi.get(self, "database_type")
 
     @database_type.setter
@@ -3231,9 +2429,6 @@ class TargetDatabaseDatabaseDetailsArgs:
     @property
     @pulumi.getter(name="infrastructureType")
     def infrastructure_type(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The infrastructure type the database is running on.
-        """
         return pulumi.get(self, "infrastructure_type")
 
     @infrastructure_type.setter
@@ -3243,9 +2438,6 @@ class TargetDatabaseDatabaseDetailsArgs:
     @property
     @pulumi.getter(name="autonomousDatabaseId")
     def autonomous_database_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The OCID of the Autonomous Database registered as a target database in Data Safe.
-        """
         return pulumi.get(self, "autonomous_database_id")
 
     @autonomous_database_id.setter
@@ -3255,9 +2447,6 @@ class TargetDatabaseDatabaseDetailsArgs:
     @property
     @pulumi.getter(name="dbSystemId")
     def db_system_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The OCID of the cloud database registered as a target database in Data Safe.
-        """
         return pulumi.get(self, "db_system_id")
 
     @db_system_id.setter
@@ -3267,9 +2456,6 @@ class TargetDatabaseDatabaseDetailsArgs:
     @property
     @pulumi.getter(name="instanceId")
     def instance_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The OCID of the compute instance on which the database is running.
-        """
         return pulumi.get(self, "instance_id")
 
     @instance_id.setter
@@ -3279,9 +2465,6 @@ class TargetDatabaseDatabaseDetailsArgs:
     @property
     @pulumi.getter(name="ipAddresses")
     def ip_addresses(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) The list of database host IP Addresses. Fully qualified domain names can be used if connectionType is 'ONPREM_CONNECTOR'.
-        """
         return pulumi.get(self, "ip_addresses")
 
     @ip_addresses.setter
@@ -3291,9 +2474,6 @@ class TargetDatabaseDatabaseDetailsArgs:
     @property
     @pulumi.getter(name="listenerPort")
     def listener_port(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) The port number of the database listener.
-        """
         return pulumi.get(self, "listener_port")
 
     @listener_port.setter
@@ -3303,9 +2483,6 @@ class TargetDatabaseDatabaseDetailsArgs:
     @property
     @pulumi.getter(name="serviceName")
     def service_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The service name of the database registered as target database.
-        """
         return pulumi.get(self, "service_name")
 
     @service_name.setter
@@ -3315,9 +2492,6 @@ class TargetDatabaseDatabaseDetailsArgs:
     @property
     @pulumi.getter(name="vmClusterId")
     def vm_cluster_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The OCID of the VM cluster in which the database is running.
-        """
         return pulumi.get(self, "vm_cluster_id")
 
     @vm_cluster_id.setter
@@ -3333,17 +2507,6 @@ class TargetDatabaseTlsConfigArgs:
                  key_store_content: Optional[pulumi.Input[str]] = None,
                  store_password: Optional[pulumi.Input[str]] = None,
                  trust_store_content: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] status: (Updatable) Status to represent whether the database connection is TLS enabled or not.
-        :param pulumi.Input[str] certificate_store_type: (Updatable) The format of the certificate store.
-        :param pulumi.Input[str] key_store_content: (Updatable) Base64 encoded string of key store file content.
-        :param pulumi.Input[str] store_password: (Updatable) The password to read the trust store and key store files, if they are password protected.
-        :param pulumi.Input[str] trust_store_content: (Updatable) Base64 encoded string of trust store file content.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         pulumi.set(__self__, "status", status)
         if certificate_store_type is not None:
             pulumi.set(__self__, "certificate_store_type", certificate_store_type)
@@ -3357,9 +2520,6 @@ class TargetDatabaseTlsConfigArgs:
     @property
     @pulumi.getter
     def status(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Status to represent whether the database connection is TLS enabled or not.
-        """
         return pulumi.get(self, "status")
 
     @status.setter
@@ -3369,9 +2529,6 @@ class TargetDatabaseTlsConfigArgs:
     @property
     @pulumi.getter(name="certificateStoreType")
     def certificate_store_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The format of the certificate store.
-        """
         return pulumi.get(self, "certificate_store_type")
 
     @certificate_store_type.setter
@@ -3381,9 +2538,6 @@ class TargetDatabaseTlsConfigArgs:
     @property
     @pulumi.getter(name="keyStoreContent")
     def key_store_content(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Base64 encoded string of key store file content.
-        """
         return pulumi.get(self, "key_store_content")
 
     @key_store_content.setter
@@ -3393,9 +2547,6 @@ class TargetDatabaseTlsConfigArgs:
     @property
     @pulumi.getter(name="storePassword")
     def store_password(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The password to read the trust store and key store files, if they are password protected.
-        """
         return pulumi.get(self, "store_password")
 
     @store_password.setter
@@ -3405,13 +2556,6 @@ class TargetDatabaseTlsConfigArgs:
     @property
     @pulumi.getter(name="trustStoreContent")
     def trust_store_content(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Base64 encoded string of trust store file content.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "trust_store_content")
 
     @trust_store_content.setter
@@ -3425,13 +2569,6 @@ class UserAssessmentIgnoredTargetArgs:
                  lifecycle_state: Optional[pulumi.Input[str]] = None,
                  target_id: Optional[pulumi.Input[str]] = None,
                  user_assessment_id: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] target_id: The OCID of the target database on which the user assessment is to be run.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         if lifecycle_state is not None:
             pulumi.set(__self__, "lifecycle_state", lifecycle_state)
         if target_id is not None:
@@ -3451,13 +2588,6 @@ class UserAssessmentIgnoredTargetArgs:
     @property
     @pulumi.getter(name="targetId")
     def target_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the target database on which the user assessment is to be run.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "target_id")
 
     @target_id.setter
@@ -4416,9 +3546,6 @@ class GetReportDefinitionsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: Name of the report summary.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -4427,9 +3554,6 @@ class GetReportDefinitionsFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        Name of the report summary.
-        """
         return pulumi.get(self, "name")
 
     @name.setter

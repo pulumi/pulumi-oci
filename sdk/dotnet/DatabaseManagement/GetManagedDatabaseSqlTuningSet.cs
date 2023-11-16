@@ -138,7 +138,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The details in the SQL tuning set summary.
         /// </summary>
@@ -155,7 +155,7 @@ namespace Pulumi.Oci.DatabaseManagement
 
         [OutputConstructor]
         private GetManagedDatabaseSqlTuningSetResult(
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetManagedDatabaseSqlTuningSetItemResult> items,
 

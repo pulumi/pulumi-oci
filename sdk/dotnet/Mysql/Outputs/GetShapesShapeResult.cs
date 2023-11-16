@@ -16,7 +16,7 @@ namespace Pulumi.Oci.Mysql.Outputs
         /// <summary>
         /// The number of CPU Cores the Instance provides. These are "OCPU"s.
         /// </summary>
-        public readonly int CpuCoreCount;
+        public readonly int? CpuCoreCount;
         /// <summary>
         /// Return shapes that are supported by the service feature.
         /// </summary>
@@ -24,21 +24,21 @@ namespace Pulumi.Oci.Mysql.Outputs
         /// <summary>
         /// The amount of RAM the Instance provides. This is an IEC base-2 number.
         /// </summary>
-        public readonly int MemorySizeInGbs;
+        public readonly int? MemorySizeInGbs;
         /// <summary>
         /// Name
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
 
         [OutputConstructor]
         private GetShapesShapeResult(
-            int cpuCoreCount,
+            int? cpuCoreCount,
 
             ImmutableArray<string> isSupportedFors,
 
-            int memorySizeInGbs,
+            int? memorySizeInGbs,
 
-            string name)
+            string? name)
         {
             CpuCoreCount = cpuCoreCount;
             IsSupportedFors = isSupportedFors;

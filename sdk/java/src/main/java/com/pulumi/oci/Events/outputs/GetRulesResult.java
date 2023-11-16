@@ -29,12 +29,12 @@ public final class GetRulesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The list of rules.
      * 
      */
-    private List<GetRulesRule> rules;
+    private @Nullable List<GetRulesRule> rules;
     /**
      * @return The current state of the rule.
      * 
@@ -63,15 +63,15 @@ public final class GetRulesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The list of rules.
      * 
      */
     public List<GetRulesRule> rules() {
-        return this.rules;
+        return this.rules == null ? List.of() : this.rules;
     }
     /**
      * @return The current state of the rule.
@@ -93,8 +93,8 @@ public final class GetRulesResult {
         private String compartmentId;
         private @Nullable String displayName;
         private @Nullable List<GetRulesFilter> filters;
-        private String id;
-        private List<GetRulesRule> rules;
+        private @Nullable String id;
+        private @Nullable List<GetRulesRule> rules;
         private @Nullable String state;
         public Builder() {}
         public Builder(GetRulesResult defaults) {
@@ -126,13 +126,13 @@ public final class GetRulesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder rules(List<GetRulesRule> rules) {
-            this.rules = Objects.requireNonNull(rules);
+        public Builder rules(@Nullable List<GetRulesRule> rules) {
+            this.rules = rules;
             return this;
         }
         public Builder rules(GetRulesRule... rules) {

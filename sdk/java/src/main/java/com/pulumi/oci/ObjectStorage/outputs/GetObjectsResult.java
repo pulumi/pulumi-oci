@@ -22,15 +22,15 @@ public final class GetObjectsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private String namespace;
     /**
      * @return The list of list_objects.
      * 
      */
-    private List<GetObjectsObject> objects;
+    private @Nullable List<GetObjectsObject> objects;
     private @Nullable String prefix;
-    private List<String> prefixes;
+    private @Nullable List<String> prefixes;
     private @Nullable String start;
     private @Nullable String startAfter;
 
@@ -51,8 +51,8 @@ public final class GetObjectsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public String namespace() {
         return this.namespace;
@@ -62,13 +62,13 @@ public final class GetObjectsResult {
      * 
      */
     public List<GetObjectsObject> objects() {
-        return this.objects;
+        return this.objects == null ? List.of() : this.objects;
     }
     public Optional<String> prefix() {
         return Optional.ofNullable(this.prefix);
     }
     public List<String> prefixes() {
-        return this.prefixes;
+        return this.prefixes == null ? List.of() : this.prefixes;
     }
     public Optional<String> start() {
         return Optional.ofNullable(this.start);
@@ -90,11 +90,11 @@ public final class GetObjectsResult {
         private @Nullable String delimiter;
         private @Nullable String end;
         private @Nullable List<GetObjectsFilter> filters;
-        private String id;
+        private @Nullable String id;
         private String namespace;
-        private List<GetObjectsObject> objects;
+        private @Nullable List<GetObjectsObject> objects;
         private @Nullable String prefix;
-        private List<String> prefixes;
+        private @Nullable List<String> prefixes;
         private @Nullable String start;
         private @Nullable String startAfter;
         public Builder() {}
@@ -137,8 +137,8 @@ public final class GetObjectsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -147,8 +147,8 @@ public final class GetObjectsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder objects(List<GetObjectsObject> objects) {
-            this.objects = Objects.requireNonNull(objects);
+        public Builder objects(@Nullable List<GetObjectsObject> objects) {
+            this.objects = objects;
             return this;
         }
         public Builder objects(GetObjectsObject... objects) {
@@ -160,8 +160,8 @@ public final class GetObjectsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder prefixes(List<String> prefixes) {
-            this.prefixes = Objects.requireNonNull(prefixes);
+        public Builder prefixes(@Nullable List<String> prefixes) {
+            this.prefixes = prefixes;
             return this;
         }
         public Builder prefixes(String... prefixes) {

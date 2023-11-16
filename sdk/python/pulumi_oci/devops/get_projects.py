@@ -46,9 +46,6 @@ class GetProjectsResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The OCID of the compartment where the project is created.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
@@ -59,33 +56,21 @@ class GetProjectsResult:
     @property
     @pulumi.getter
     def id(self) -> Optional[str]:
-        """
-        Unique identifier that is immutable on creation.
-        """
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter
     def name(self) -> Optional[str]:
-        """
-        Project name (case-sensitive).
-        """
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="projectCollections")
-    def project_collections(self) -> Sequence['outputs.GetProjectsProjectCollectionResult']:
-        """
-        The list of project_collection.
-        """
+    def project_collections(self) -> Optional[Sequence['outputs.GetProjectsProjectCollectionResult']]:
         return pulumi.get(self, "project_collections")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the project.
-        """
         return pulumi.get(self, "state")
 
 
@@ -110,27 +95,7 @@ def get_projects(compartment_id: Optional[str] = None,
                  state: Optional[str] = None,
                  opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetProjectsResult:
     """
-    This data source provides the list of Projects in Oracle Cloud Infrastructure Devops service.
-
-    Returns a list of projects.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_projects = oci.DevOps.get_projects(compartment_id=var["compartment_id"],
-        id=var["project_id"],
-        name=var["project_name"],
-        state=var["project_state"])
-    ```
-
-
-    :param str compartment_id: The OCID of the compartment in which to list resources.
-    :param str id: Unique identifier or OCID for listing a single resource by ID.
-    :param str name: A filter to return only resources that match the entire name given.
-    :param str state: A filter to return only Projects that matches the given lifecycleState.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -158,26 +123,6 @@ def get_projects_output(compartment_id: Optional[pulumi.Input[str]] = None,
                         state: Optional[pulumi.Input[Optional[str]]] = None,
                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetProjectsResult]:
     """
-    This data source provides the list of Projects in Oracle Cloud Infrastructure Devops service.
-
-    Returns a list of projects.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_projects = oci.DevOps.get_projects(compartment_id=var["compartment_id"],
-        id=var["project_id"],
-        name=var["project_name"],
-        state=var["project_state"])
-    ```
-
-
-    :param str compartment_id: The OCID of the compartment in which to list resources.
-    :param str id: Unique identifier or OCID for listing a single resource by ID.
-    :param str name: A filter to return only resources that match the entire name given.
-    :param str state: A filter to return only Projects that matches the given lifecycleState.
+    Use this data source to access information about an existing resource.
     """
     ...

@@ -9,6 +9,7 @@ import com.pulumi.oci.Ocvp.outputs.GetSupportedVmwareSoftwareVersionsItem;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 @CustomType
@@ -19,12 +20,12 @@ public final class GetSupportedVmwareSoftwareVersionsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return A list of the supported versions of bundled VMware software.
      * 
      */
-    private List<GetSupportedVmwareSoftwareVersionsItem> items;
+    private @Nullable List<GetSupportedVmwareSoftwareVersionsItem> items;
 
     private GetSupportedVmwareSoftwareVersionsResult() {}
     public String compartmentId() {
@@ -37,15 +38,15 @@ public final class GetSupportedVmwareSoftwareVersionsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return A list of the supported versions of bundled VMware software.
      * 
      */
     public List<GetSupportedVmwareSoftwareVersionsItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -59,8 +60,8 @@ public final class GetSupportedVmwareSoftwareVersionsResult {
     public static final class Builder {
         private String compartmentId;
         private @Nullable List<GetSupportedVmwareSoftwareVersionsFilter> filters;
-        private String id;
-        private List<GetSupportedVmwareSoftwareVersionsItem> items;
+        private @Nullable String id;
+        private @Nullable List<GetSupportedVmwareSoftwareVersionsItem> items;
         public Builder() {}
         public Builder(GetSupportedVmwareSoftwareVersionsResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -84,13 +85,13 @@ public final class GetSupportedVmwareSoftwareVersionsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder items(List<GetSupportedVmwareSoftwareVersionsItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetSupportedVmwareSoftwareVersionsItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetSupportedVmwareSoftwareVersionsItem... items) {

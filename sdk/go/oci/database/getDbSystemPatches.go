@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Db System Patches in Oracle Cloud Infrastructure Database service.
@@ -63,7 +62,7 @@ type GetDbSystemPatchesResult struct {
 	DbSystemId string                     `pulumi:"dbSystemId"`
 	Filters    []GetDbSystemPatchesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The list of patches.
 	Patches []GetDbSystemPatchesPatch `pulumi:"patches"`
 }
@@ -107,12 +106,6 @@ func (o GetDbSystemPatchesResultOutput) ToGetDbSystemPatchesResultOutputWithCont
 	return o
 }
 
-func (o GetDbSystemPatchesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDbSystemPatchesResult] {
-	return pulumix.Output[GetDbSystemPatchesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDbSystemPatchesResultOutput) DbSystemId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDbSystemPatchesResult) string { return v.DbSystemId }).(pulumi.StringOutput)
 }
@@ -122,8 +115,8 @@ func (o GetDbSystemPatchesResultOutput) Filters() GetDbSystemPatchesFilterArrayO
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetDbSystemPatchesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDbSystemPatchesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetDbSystemPatchesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDbSystemPatchesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The list of patches.

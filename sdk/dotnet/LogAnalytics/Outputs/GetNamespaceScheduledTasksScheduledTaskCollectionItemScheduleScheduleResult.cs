@@ -16,41 +16,41 @@ namespace Pulumi.Oci.LogAnalytics.Outputs
         /// <summary>
         /// Value in cron format.
         /// </summary>
-        public readonly string Expression;
+        public readonly string? Expression;
         /// <summary>
         /// Schedule misfire retry policy.
         /// </summary>
-        public readonly string MisfirePolicy;
+        public readonly string? MisfirePolicy;
         /// <summary>
         /// Recurring interval in ISO 8601 extended format as described in https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. P14D (not P2W). The value must be at least 5 minutes (PT5M) and at most 3 weeks (P21D or PT30240M).
         /// </summary>
-        public readonly string RecurringInterval;
+        public readonly string? RecurringInterval;
         /// <summary>
         /// Number of times (0-based) to execute until auto-stop. Default value -1 will execute indefinitely. Value 0 will execute once.
         /// </summary>
-        public readonly int RepeatCount;
+        public readonly int? RepeatCount;
         /// <summary>
         /// Time zone, by default UTC.
         /// </summary>
-        public readonly string TimeZone;
+        public readonly string? TimeZone;
         /// <summary>
         /// Schedule type discriminator.
         /// </summary>
-        public readonly string Type;
+        public readonly string? Type;
 
         [OutputConstructor]
         private GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleScheduleResult(
-            string expression,
+            string? expression,
 
-            string misfirePolicy,
+            string? misfirePolicy,
 
-            string recurringInterval,
+            string? recurringInterval,
 
-            int repeatCount,
+            int? repeatCount,
 
-            string timeZone,
+            string? timeZone,
 
-            string type)
+            string? type)
         {
             Expression = expression;
             MisfirePolicy = misfirePolicy;

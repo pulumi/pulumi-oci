@@ -27,19 +27,6 @@ class MediaWorkflowJobArgs:
                  parameters: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a MediaWorkflowJob resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) ID of the compartment in which the job should be created.
-        :param pulumi.Input[str] workflow_identifier_type: Discriminate identification of a workflow by name versus a workflow by ID.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] display_name: (Updatable) Name of the Media Workflow Job. Does not have to be unique. Avoid entering confidential information.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] media_workflow_configuration_ids: Configurations to be applied to this run of the workflow.
-        :param pulumi.Input[str] media_workflow_id: OCID of the MediaWorkflow that should be run.
-        :param pulumi.Input[str] media_workflow_name: Name of the system MediaWorkflow that should be run.
-        :param pulumi.Input[str] parameters: Parameters that override parameters specified in MediaWorkflowTaskDeclarations, the MediaWorkflow, the MediaWorkflow's MediaWorkflowConfigurations and the MediaWorkflowConfigurations of this MediaWorkflowJob. The parameters are given as JSON. The top level and 2nd level elements must be JSON objects (vs arrays, scalars, etc). The top level keys refer to a task's key and the 2nd level keys refer to a parameter's name.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "workflow_identifier_type", workflow_identifier_type)
@@ -61,9 +48,6 @@ class MediaWorkflowJobArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
-        """
-        (Updatable) ID of the compartment in which the job should be created.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -73,13 +57,6 @@ class MediaWorkflowJobArgs:
     @property
     @pulumi.getter(name="workflowIdentifierType")
     def workflow_identifier_type(self) -> pulumi.Input[str]:
-        """
-        Discriminate identification of a workflow by name versus a workflow by ID.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "workflow_identifier_type")
 
     @workflow_identifier_type.setter
@@ -89,9 +66,6 @@ class MediaWorkflowJobArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -101,9 +75,6 @@ class MediaWorkflowJobArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Name of the Media Workflow Job. Does not have to be unique. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -113,9 +84,6 @@ class MediaWorkflowJobArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -125,9 +93,6 @@ class MediaWorkflowJobArgs:
     @property
     @pulumi.getter(name="mediaWorkflowConfigurationIds")
     def media_workflow_configuration_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        Configurations to be applied to this run of the workflow.
-        """
         return pulumi.get(self, "media_workflow_configuration_ids")
 
     @media_workflow_configuration_ids.setter
@@ -137,9 +102,6 @@ class MediaWorkflowJobArgs:
     @property
     @pulumi.getter(name="mediaWorkflowId")
     def media_workflow_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        OCID of the MediaWorkflow that should be run.
-        """
         return pulumi.get(self, "media_workflow_id")
 
     @media_workflow_id.setter
@@ -149,9 +111,6 @@ class MediaWorkflowJobArgs:
     @property
     @pulumi.getter(name="mediaWorkflowName")
     def media_workflow_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        Name of the system MediaWorkflow that should be run.
-        """
         return pulumi.get(self, "media_workflow_name")
 
     @media_workflow_name.setter
@@ -161,9 +120,6 @@ class MediaWorkflowJobArgs:
     @property
     @pulumi.getter
     def parameters(self) -> Optional[pulumi.Input[str]]:
-        """
-        Parameters that override parameters specified in MediaWorkflowTaskDeclarations, the MediaWorkflow, the MediaWorkflow's MediaWorkflowConfigurations and the MediaWorkflowConfigurations of this MediaWorkflowJob. The parameters are given as JSON. The top level and 2nd level elements must be JSON objects (vs arrays, scalars, etc). The top level keys refer to a task's key and the 2nd level keys refer to a parameter's name.
-        """
         return pulumi.get(self, "parameters")
 
     @parameters.setter
@@ -195,29 +151,6 @@ class _MediaWorkflowJobState:
                  workflow_identifier_type: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering MediaWorkflowJob resources.
-        :param pulumi.Input[str] compartment_id: (Updatable) ID of the compartment in which the job should be created.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] display_name: (Updatable) Name of the Media Workflow Job. Does not have to be unique. Avoid entering confidential information.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] lifecycle_details: The lifecycle details of MediaWorkflowJob task.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] media_workflow_configuration_ids: Configurations to be applied to this run of the workflow.
-        :param pulumi.Input[str] media_workflow_id: OCID of the MediaWorkflow that should be run.
-        :param pulumi.Input[str] media_workflow_name: Name of the system MediaWorkflow that should be run.
-        :param pulumi.Input[Sequence[pulumi.Input['MediaWorkflowJobOutputArgs']]] outputs: A list of JobOutput for the workflowJob.
-        :param pulumi.Input[str] parameters: Parameters that override parameters specified in MediaWorkflowTaskDeclarations, the MediaWorkflow, the MediaWorkflow's MediaWorkflowConfigurations and the MediaWorkflowConfigurations of this MediaWorkflowJob. The parameters are given as JSON. The top level and 2nd level elements must be JSON objects (vs arrays, scalars, etc). The top level keys refer to a task's key and the 2nd level keys refer to a parameter's name.
-        :param pulumi.Input[str] runnable: A JSON representation of the job as it will be run by the system. All the task declarations, configurations and parameters are merged. Parameter values are all fully resolved.
-        :param pulumi.Input[str] state: The current state of the MediaWorkflowJob task.
-        :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[Sequence[pulumi.Input['MediaWorkflowJobTaskLifecycleStateArgs']]] task_lifecycle_states: Status of each task.
-        :param pulumi.Input[str] time_created: Creation time of the job. An RFC3339 formatted datetime string.
-        :param pulumi.Input[str] time_ended: Time when the job finished. An RFC3339 formatted datetime string.
-        :param pulumi.Input[str] time_started: Time when the job started to execute. An RFC3339 formatted datetime string.
-        :param pulumi.Input[str] time_updated: Updated time of the job. An RFC3339 formatted datetime string.
-        :param pulumi.Input[str] workflow_identifier_type: Discriminate identification of a workflow by name versus a workflow by ID.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
@@ -261,9 +194,6 @@ class _MediaWorkflowJobState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) ID of the compartment in which the job should be created.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -273,9 +203,6 @@ class _MediaWorkflowJobState:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -285,9 +212,6 @@ class _MediaWorkflowJobState:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Name of the Media Workflow Job. Does not have to be unique. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -297,9 +221,6 @@ class _MediaWorkflowJobState:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -309,9 +230,6 @@ class _MediaWorkflowJobState:
     @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> Optional[pulumi.Input[str]]:
-        """
-        The lifecycle details of MediaWorkflowJob task.
-        """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
@@ -321,9 +239,6 @@ class _MediaWorkflowJobState:
     @property
     @pulumi.getter(name="mediaWorkflowConfigurationIds")
     def media_workflow_configuration_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        Configurations to be applied to this run of the workflow.
-        """
         return pulumi.get(self, "media_workflow_configuration_ids")
 
     @media_workflow_configuration_ids.setter
@@ -333,9 +248,6 @@ class _MediaWorkflowJobState:
     @property
     @pulumi.getter(name="mediaWorkflowId")
     def media_workflow_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        OCID of the MediaWorkflow that should be run.
-        """
         return pulumi.get(self, "media_workflow_id")
 
     @media_workflow_id.setter
@@ -345,9 +257,6 @@ class _MediaWorkflowJobState:
     @property
     @pulumi.getter(name="mediaWorkflowName")
     def media_workflow_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        Name of the system MediaWorkflow that should be run.
-        """
         return pulumi.get(self, "media_workflow_name")
 
     @media_workflow_name.setter
@@ -357,9 +266,6 @@ class _MediaWorkflowJobState:
     @property
     @pulumi.getter
     def outputs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['MediaWorkflowJobOutputArgs']]]]:
-        """
-        A list of JobOutput for the workflowJob.
-        """
         return pulumi.get(self, "outputs")
 
     @outputs.setter
@@ -369,9 +275,6 @@ class _MediaWorkflowJobState:
     @property
     @pulumi.getter
     def parameters(self) -> Optional[pulumi.Input[str]]:
-        """
-        Parameters that override parameters specified in MediaWorkflowTaskDeclarations, the MediaWorkflow, the MediaWorkflow's MediaWorkflowConfigurations and the MediaWorkflowConfigurations of this MediaWorkflowJob. The parameters are given as JSON. The top level and 2nd level elements must be JSON objects (vs arrays, scalars, etc). The top level keys refer to a task's key and the 2nd level keys refer to a parameter's name.
-        """
         return pulumi.get(self, "parameters")
 
     @parameters.setter
@@ -381,9 +284,6 @@ class _MediaWorkflowJobState:
     @property
     @pulumi.getter
     def runnable(self) -> Optional[pulumi.Input[str]]:
-        """
-        A JSON representation of the job as it will be run by the system. All the task declarations, configurations and parameters are merged. Parameter values are all fully resolved.
-        """
         return pulumi.get(self, "runnable")
 
     @runnable.setter
@@ -393,9 +293,6 @@ class _MediaWorkflowJobState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The current state of the MediaWorkflowJob task.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -405,9 +302,6 @@ class _MediaWorkflowJobState:
     @property
     @pulumi.getter(name="systemTags")
     def system_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
@@ -417,9 +311,6 @@ class _MediaWorkflowJobState:
     @property
     @pulumi.getter(name="taskLifecycleStates")
     def task_lifecycle_states(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['MediaWorkflowJobTaskLifecycleStateArgs']]]]:
-        """
-        Status of each task.
-        """
         return pulumi.get(self, "task_lifecycle_states")
 
     @task_lifecycle_states.setter
@@ -429,9 +320,6 @@ class _MediaWorkflowJobState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        Creation time of the job. An RFC3339 formatted datetime string.
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -441,9 +329,6 @@ class _MediaWorkflowJobState:
     @property
     @pulumi.getter(name="timeEnded")
     def time_ended(self) -> Optional[pulumi.Input[str]]:
-        """
-        Time when the job finished. An RFC3339 formatted datetime string.
-        """
         return pulumi.get(self, "time_ended")
 
     @time_ended.setter
@@ -453,9 +338,6 @@ class _MediaWorkflowJobState:
     @property
     @pulumi.getter(name="timeStarted")
     def time_started(self) -> Optional[pulumi.Input[str]]:
-        """
-        Time when the job started to execute. An RFC3339 formatted datetime string.
-        """
         return pulumi.get(self, "time_started")
 
     @time_started.setter
@@ -465,9 +347,6 @@ class _MediaWorkflowJobState:
     @property
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> Optional[pulumi.Input[str]]:
-        """
-        Updated time of the job. An RFC3339 formatted datetime string.
-        """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
@@ -477,13 +356,6 @@ class _MediaWorkflowJobState:
     @property
     @pulumi.getter(name="workflowIdentifierType")
     def workflow_identifier_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        Discriminate identification of a workflow by name versus a workflow by ID.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "workflow_identifier_type")
 
     @workflow_identifier_type.setter
@@ -507,55 +379,9 @@ class MediaWorkflowJob(pulumi.CustomResource):
                  workflow_identifier_type: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Media Workflow Job resource in Oracle Cloud Infrastructure Media Services service.
-
-        Run the MediaWorkflow according to the given mediaWorkflow definition and configuration.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_media_workflow_job = oci.media_services.MediaWorkflowJob("testMediaWorkflowJob",
-            compartment_id=var["compartment_id"],
-            workflow_identifier_type=var["media_workflow_job_workflow_identifier_type"],
-            defined_tags={
-                "foo-namespace.bar-key": "value",
-            },
-            display_name=var["media_workflow_job_display_name"],
-            freeform_tags={
-                "bar-key": "value",
-            },
-            media_workflow_configuration_ids=var["media_workflow_job_media_workflow_configuration_ids"],
-            media_workflow_id=oci_media_services_media_workflow["test_media_workflow"]["id"],
-            media_workflow_name=oci_media_services_media_workflow["test_media_workflow"]["name"],
-            parameters=var["media_workflow_job_parameters"])
-        ```
-
-        ## Import
-
-        MediaWorkflowJobs can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:MediaServices/mediaWorkflowJob:MediaWorkflowJob test_media_workflow_job "id"
-        ```
-
+        Create a MediaWorkflowJob resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) ID of the compartment in which the job should be created.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] display_name: (Updatable) Name of the Media Workflow Job. Does not have to be unique. Avoid entering confidential information.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] media_workflow_configuration_ids: Configurations to be applied to this run of the workflow.
-        :param pulumi.Input[str] media_workflow_id: OCID of the MediaWorkflow that should be run.
-        :param pulumi.Input[str] media_workflow_name: Name of the system MediaWorkflow that should be run.
-        :param pulumi.Input[str] parameters: Parameters that override parameters specified in MediaWorkflowTaskDeclarations, the MediaWorkflow, the MediaWorkflow's MediaWorkflowConfigurations and the MediaWorkflowConfigurations of this MediaWorkflowJob. The parameters are given as JSON. The top level and 2nd level elements must be JSON objects (vs arrays, scalars, etc). The top level keys refer to a task's key and the 2nd level keys refer to a parameter's name.
-        :param pulumi.Input[str] workflow_identifier_type: Discriminate identification of a workflow by name versus a workflow by ID.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -564,40 +390,7 @@ class MediaWorkflowJob(pulumi.CustomResource):
                  args: MediaWorkflowJobArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Media Workflow Job resource in Oracle Cloud Infrastructure Media Services service.
-
-        Run the MediaWorkflow according to the given mediaWorkflow definition and configuration.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_media_workflow_job = oci.media_services.MediaWorkflowJob("testMediaWorkflowJob",
-            compartment_id=var["compartment_id"],
-            workflow_identifier_type=var["media_workflow_job_workflow_identifier_type"],
-            defined_tags={
-                "foo-namespace.bar-key": "value",
-            },
-            display_name=var["media_workflow_job_display_name"],
-            freeform_tags={
-                "bar-key": "value",
-            },
-            media_workflow_configuration_ids=var["media_workflow_job_media_workflow_configuration_ids"],
-            media_workflow_id=oci_media_services_media_workflow["test_media_workflow"]["id"],
-            media_workflow_name=oci_media_services_media_workflow["test_media_workflow"]["name"],
-            parameters=var["media_workflow_job_parameters"])
-        ```
-
-        ## Import
-
-        MediaWorkflowJobs can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:MediaServices/mediaWorkflowJob:MediaWorkflowJob test_media_workflow_job "id"
-        ```
-
+        Create a MediaWorkflowJob resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param MediaWorkflowJobArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -690,29 +483,6 @@ class MediaWorkflowJob(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) ID of the compartment in which the job should be created.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] display_name: (Updatable) Name of the Media Workflow Job. Does not have to be unique. Avoid entering confidential information.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] lifecycle_details: The lifecycle details of MediaWorkflowJob task.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] media_workflow_configuration_ids: Configurations to be applied to this run of the workflow.
-        :param pulumi.Input[str] media_workflow_id: OCID of the MediaWorkflow that should be run.
-        :param pulumi.Input[str] media_workflow_name: Name of the system MediaWorkflow that should be run.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MediaWorkflowJobOutputArgs']]]] outputs: A list of JobOutput for the workflowJob.
-        :param pulumi.Input[str] parameters: Parameters that override parameters specified in MediaWorkflowTaskDeclarations, the MediaWorkflow, the MediaWorkflow's MediaWorkflowConfigurations and the MediaWorkflowConfigurations of this MediaWorkflowJob. The parameters are given as JSON. The top level and 2nd level elements must be JSON objects (vs arrays, scalars, etc). The top level keys refer to a task's key and the 2nd level keys refer to a parameter's name.
-        :param pulumi.Input[str] runnable: A JSON representation of the job as it will be run by the system. All the task declarations, configurations and parameters are merged. Parameter values are all fully resolved.
-        :param pulumi.Input[str] state: The current state of the MediaWorkflowJob task.
-        :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MediaWorkflowJobTaskLifecycleStateArgs']]]] task_lifecycle_states: Status of each task.
-        :param pulumi.Input[str] time_created: Creation time of the job. An RFC3339 formatted datetime string.
-        :param pulumi.Input[str] time_ended: Time when the job finished. An RFC3339 formatted datetime string.
-        :param pulumi.Input[str] time_started: Time when the job started to execute. An RFC3339 formatted datetime string.
-        :param pulumi.Input[str] time_updated: Updated time of the job. An RFC3339 formatted datetime string.
-        :param pulumi.Input[str] workflow_identifier_type: Discriminate identification of a workflow by name versus a workflow by ID.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -742,156 +512,95 @@ class MediaWorkflowJob(pulumi.CustomResource):
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) ID of the compartment in which the job should be created.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Name of the Media Workflow Job. Does not have to be unique. Avoid entering confidential information.
-        """
+    def display_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> pulumi.Output[str]:
-        """
-        The lifecycle details of MediaWorkflowJob task.
-        """
+    def lifecycle_details(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="mediaWorkflowConfigurationIds")
-    def media_workflow_configuration_ids(self) -> pulumi.Output[Sequence[str]]:
-        """
-        Configurations to be applied to this run of the workflow.
-        """
+    def media_workflow_configuration_ids(self) -> pulumi.Output[Optional[Sequence[str]]]:
         return pulumi.get(self, "media_workflow_configuration_ids")
 
     @property
     @pulumi.getter(name="mediaWorkflowId")
-    def media_workflow_id(self) -> pulumi.Output[str]:
-        """
-        OCID of the MediaWorkflow that should be run.
-        """
+    def media_workflow_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "media_workflow_id")
 
     @property
     @pulumi.getter(name="mediaWorkflowName")
-    def media_workflow_name(self) -> pulumi.Output[str]:
-        """
-        Name of the system MediaWorkflow that should be run.
-        """
+    def media_workflow_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "media_workflow_name")
 
     @property
     @pulumi.getter
-    def outputs(self) -> pulumi.Output[Sequence['outputs.MediaWorkflowJobOutput']]:
-        """
-        A list of JobOutput for the workflowJob.
-        """
+    def outputs(self) -> pulumi.Output[Optional[Sequence['outputs.MediaWorkflowJobOutput']]]:
         return pulumi.get(self, "outputs")
 
     @property
     @pulumi.getter
-    def parameters(self) -> pulumi.Output[str]:
-        """
-        Parameters that override parameters specified in MediaWorkflowTaskDeclarations, the MediaWorkflow, the MediaWorkflow's MediaWorkflowConfigurations and the MediaWorkflowConfigurations of this MediaWorkflowJob. The parameters are given as JSON. The top level and 2nd level elements must be JSON objects (vs arrays, scalars, etc). The top level keys refer to a task's key and the 2nd level keys refer to a parameter's name.
-        """
+    def parameters(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "parameters")
 
     @property
     @pulumi.getter
-    def runnable(self) -> pulumi.Output[str]:
-        """
-        A JSON representation of the job as it will be run by the system. All the task declarations, configurations and parameters are merged. Parameter values are all fully resolved.
-        """
+    def runnable(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "runnable")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        The current state of the MediaWorkflowJob task.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="taskLifecycleStates")
-    def task_lifecycle_states(self) -> pulumi.Output[Sequence['outputs.MediaWorkflowJobTaskLifecycleState']]:
-        """
-        Status of each task.
-        """
+    def task_lifecycle_states(self) -> pulumi.Output[Optional[Sequence['outputs.MediaWorkflowJobTaskLifecycleState']]]:
         return pulumi.get(self, "task_lifecycle_states")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        Creation time of the job. An RFC3339 formatted datetime string.
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeEnded")
-    def time_ended(self) -> pulumi.Output[str]:
-        """
-        Time when the job finished. An RFC3339 formatted datetime string.
-        """
+    def time_ended(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_ended")
 
     @property
     @pulumi.getter(name="timeStarted")
-    def time_started(self) -> pulumi.Output[str]:
-        """
-        Time when the job started to execute. An RFC3339 formatted datetime string.
-        """
+    def time_started(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_started")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> pulumi.Output[str]:
-        """
-        Updated time of the job. An RFC3339 formatted datetime string.
-        """
+    def time_updated(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_updated")
 
     @property
     @pulumi.getter(name="workflowIdentifierType")
     def workflow_identifier_type(self) -> pulumi.Output[str]:
-        """
-        Discriminate identification of a workflow by name versus a workflow by ID.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "workflow_identifier_type")
 

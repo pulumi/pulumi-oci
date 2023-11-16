@@ -31,23 +31,6 @@ class DrgAttachmentManagementArgs:
                  vcn_id: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a DrgAttachmentManagement resource.
-        :param pulumi.Input[str] attachment_type: The type for the network resource attached to the DRG.
-        :param pulumi.Input[str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param pulumi.Input[str] drg_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[str] drg_route_table_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG route table assigned to the DRG attachment.
-        :param pulumi.Input[str] export_drg_route_distribution_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the export route distribution used to specify how routes in the assigned DRG route table are advertised to the attachment. If this value is null, no routes are advertised through this attachment.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input['DrgAttachmentManagementNetworkDetailsArgs'] network_details: (Updatable)
-        :param pulumi.Input[str] network_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource (virtual circuit, VCN, IPSec tunnel, or remote peering connection) attached to the DRG.
-        :param pulumi.Input[bool] remove_export_drg_route_distribution_trigger: (Updatable) An optional property when set to true during update disables the export of route Distribution by setting export_drg_route_distribution_id to null.
-        :param pulumi.Input[str] route_table_id: The OCID of the route table the DRG attachment is using.
-               
-               For information about why you would associate a route table with a DRG attachment, see:
-               * [Transit Routing: Access to Multiple VCNs in Same Region](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm)
-               * [Transit Routing: Private Access to Oracle Services](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitroutingoracleservices.htm) This field is deprecated. Instead, use the `networkDetails` field to view the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the attached resource.
-        :param pulumi.Input[str] vcn_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
         """
         pulumi.set(__self__, "attachment_type", attachment_type)
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -76,9 +59,6 @@ class DrgAttachmentManagementArgs:
     @property
     @pulumi.getter(name="attachmentType")
     def attachment_type(self) -> pulumi.Input[str]:
-        """
-        The type for the network resource attached to the DRG.
-        """
         return pulumi.get(self, "attachment_type")
 
     @attachment_type.setter
@@ -88,9 +68,6 @@ class DrgAttachmentManagementArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -100,9 +77,6 @@ class DrgAttachmentManagementArgs:
     @property
     @pulumi.getter(name="drgId")
     def drg_id(self) -> pulumi.Input[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
-        """
         return pulumi.get(self, "drg_id")
 
     @drg_id.setter
@@ -112,9 +86,6 @@ class DrgAttachmentManagementArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -124,9 +95,6 @@ class DrgAttachmentManagementArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -136,9 +104,6 @@ class DrgAttachmentManagementArgs:
     @property
     @pulumi.getter(name="drgRouteTableId")
     def drg_route_table_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG route table assigned to the DRG attachment.
-        """
         return pulumi.get(self, "drg_route_table_id")
 
     @drg_route_table_id.setter
@@ -148,9 +113,6 @@ class DrgAttachmentManagementArgs:
     @property
     @pulumi.getter(name="exportDrgRouteDistributionId")
     def export_drg_route_distribution_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the export route distribution used to specify how routes in the assigned DRG route table are advertised to the attachment. If this value is null, no routes are advertised through this attachment.
-        """
         return pulumi.get(self, "export_drg_route_distribution_id")
 
     @export_drg_route_distribution_id.setter
@@ -160,9 +122,6 @@ class DrgAttachmentManagementArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -172,9 +131,6 @@ class DrgAttachmentManagementArgs:
     @property
     @pulumi.getter(name="networkDetails")
     def network_details(self) -> Optional[pulumi.Input['DrgAttachmentManagementNetworkDetailsArgs']]:
-        """
-        (Updatable)
-        """
         return pulumi.get(self, "network_details")
 
     @network_details.setter
@@ -184,9 +140,6 @@ class DrgAttachmentManagementArgs:
     @property
     @pulumi.getter(name="networkId")
     def network_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource (virtual circuit, VCN, IPSec tunnel, or remote peering connection) attached to the DRG.
-        """
         return pulumi.get(self, "network_id")
 
     @network_id.setter
@@ -196,9 +149,6 @@ class DrgAttachmentManagementArgs:
     @property
     @pulumi.getter(name="removeExportDrgRouteDistributionTrigger")
     def remove_export_drg_route_distribution_trigger(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) An optional property when set to true during update disables the export of route Distribution by setting export_drg_route_distribution_id to null.
-        """
         return pulumi.get(self, "remove_export_drg_route_distribution_trigger")
 
     @remove_export_drg_route_distribution_trigger.setter
@@ -208,13 +158,6 @@ class DrgAttachmentManagementArgs:
     @property
     @pulumi.getter(name="routeTableId")
     def route_table_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the route table the DRG attachment is using.
-
-        For information about why you would associate a route table with a DRG attachment, see:
-        * [Transit Routing: Access to Multiple VCNs in Same Region](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm)
-        * [Transit Routing: Private Access to Oracle Services](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitroutingoracleservices.htm) This field is deprecated. Instead, use the `networkDetails` field to view the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the attached resource.
-        """
         return pulumi.get(self, "route_table_id")
 
     @route_table_id.setter
@@ -224,9 +167,6 @@ class DrgAttachmentManagementArgs:
     @property
     @pulumi.getter(name="vcnId")
     def vcn_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
-        """
         return pulumi.get(self, "vcn_id")
 
     @vcn_id.setter
@@ -255,26 +195,6 @@ class _DrgAttachmentManagementState:
                  vcn_id: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering DrgAttachmentManagement resources.
-        :param pulumi.Input[str] attachment_type: The type for the network resource attached to the DRG.
-        :param pulumi.Input[str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[str] drg_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
-        :param pulumi.Input[str] drg_route_table_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG route table assigned to the DRG attachment.
-        :param pulumi.Input[str] export_drg_route_distribution_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the export route distribution used to specify how routes in the assigned DRG route table are advertised to the attachment. If this value is null, no routes are advertised through this attachment.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[bool] is_cross_tenancy: Indicates whether the DRG attachment and attached network live in a different tenancy than the DRG.  Example: `false`
-        :param pulumi.Input['DrgAttachmentManagementNetworkDetailsArgs'] network_details: (Updatable)
-        :param pulumi.Input[str] network_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource (virtual circuit, VCN, IPSec tunnel, or remote peering connection) attached to the DRG.
-        :param pulumi.Input[bool] remove_export_drg_route_distribution_trigger: (Updatable) An optional property when set to true during update disables the export of route Distribution by setting export_drg_route_distribution_id to null.
-        :param pulumi.Input[str] route_table_id: The OCID of the route table the DRG attachment is using.
-               
-               For information about why you would associate a route table with a DRG attachment, see:
-               * [Transit Routing: Access to Multiple VCNs in Same Region](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm)
-               * [Transit Routing: Private Access to Oracle Services](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitroutingoracleservices.htm) This field is deprecated. Instead, use the `networkDetails` field to view the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the attached resource.
-        :param pulumi.Input[str] state: A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
-        :param pulumi.Input[str] time_created: The date and time the DRG attachment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-        :param pulumi.Input[str] vcn_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
         """
         if attachment_type is not None:
             pulumi.set(__self__, "attachment_type", attachment_type)
@@ -312,9 +232,6 @@ class _DrgAttachmentManagementState:
     @property
     @pulumi.getter(name="attachmentType")
     def attachment_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        The type for the network resource attached to the DRG.
-        """
         return pulumi.get(self, "attachment_type")
 
     @attachment_type.setter
@@ -324,9 +241,6 @@ class _DrgAttachmentManagementState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -336,9 +250,6 @@ class _DrgAttachmentManagementState:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -348,9 +259,6 @@ class _DrgAttachmentManagementState:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -360,9 +268,6 @@ class _DrgAttachmentManagementState:
     @property
     @pulumi.getter(name="drgId")
     def drg_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
-        """
         return pulumi.get(self, "drg_id")
 
     @drg_id.setter
@@ -372,9 +277,6 @@ class _DrgAttachmentManagementState:
     @property
     @pulumi.getter(name="drgRouteTableId")
     def drg_route_table_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG route table assigned to the DRG attachment.
-        """
         return pulumi.get(self, "drg_route_table_id")
 
     @drg_route_table_id.setter
@@ -384,9 +286,6 @@ class _DrgAttachmentManagementState:
     @property
     @pulumi.getter(name="exportDrgRouteDistributionId")
     def export_drg_route_distribution_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the export route distribution used to specify how routes in the assigned DRG route table are advertised to the attachment. If this value is null, no routes are advertised through this attachment.
-        """
         return pulumi.get(self, "export_drg_route_distribution_id")
 
     @export_drg_route_distribution_id.setter
@@ -396,9 +295,6 @@ class _DrgAttachmentManagementState:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -408,9 +304,6 @@ class _DrgAttachmentManagementState:
     @property
     @pulumi.getter(name="isCrossTenancy")
     def is_cross_tenancy(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Indicates whether the DRG attachment and attached network live in a different tenancy than the DRG.  Example: `false`
-        """
         return pulumi.get(self, "is_cross_tenancy")
 
     @is_cross_tenancy.setter
@@ -420,9 +313,6 @@ class _DrgAttachmentManagementState:
     @property
     @pulumi.getter(name="networkDetails")
     def network_details(self) -> Optional[pulumi.Input['DrgAttachmentManagementNetworkDetailsArgs']]:
-        """
-        (Updatable)
-        """
         return pulumi.get(self, "network_details")
 
     @network_details.setter
@@ -432,9 +322,6 @@ class _DrgAttachmentManagementState:
     @property
     @pulumi.getter(name="networkId")
     def network_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource (virtual circuit, VCN, IPSec tunnel, or remote peering connection) attached to the DRG.
-        """
         return pulumi.get(self, "network_id")
 
     @network_id.setter
@@ -444,9 +331,6 @@ class _DrgAttachmentManagementState:
     @property
     @pulumi.getter(name="removeExportDrgRouteDistributionTrigger")
     def remove_export_drg_route_distribution_trigger(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) An optional property when set to true during update disables the export of route Distribution by setting export_drg_route_distribution_id to null.
-        """
         return pulumi.get(self, "remove_export_drg_route_distribution_trigger")
 
     @remove_export_drg_route_distribution_trigger.setter
@@ -456,13 +340,6 @@ class _DrgAttachmentManagementState:
     @property
     @pulumi.getter(name="routeTableId")
     def route_table_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the route table the DRG attachment is using.
-
-        For information about why you would associate a route table with a DRG attachment, see:
-        * [Transit Routing: Access to Multiple VCNs in Same Region](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm)
-        * [Transit Routing: Private Access to Oracle Services](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitroutingoracleservices.htm) This field is deprecated. Instead, use the `networkDetails` field to view the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the attached resource.
-        """
         return pulumi.get(self, "route_table_id")
 
     @route_table_id.setter
@@ -472,9 +349,6 @@ class _DrgAttachmentManagementState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -484,9 +358,6 @@ class _DrgAttachmentManagementState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time the DRG attachment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -496,9 +367,6 @@ class _DrgAttachmentManagementState:
     @property
     @pulumi.getter(name="vcnId")
     def vcn_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
-        """
         return pulumi.get(self, "vcn_id")
 
     @vcn_id.setter
@@ -526,54 +394,9 @@ class DrgAttachmentManagement(pulumi.CustomResource):
                  vcn_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Drg Attachment Management resource in Oracle Cloud Infrastructure Core service.
-
-        This can be used to update the Drg Attachments of the following types -
-        "IPSEC_TUNNEL",
-        "REMOTE_PEERING_CONNECTION",
-        "VIRTUAL_CIRCUIT",
-
-        DRG Attachments for virtual circuits, IPSec tunnels, and remote peering connections are created (and deleted) automatically on your behalf when you create (or delete) the network object. Hence, this management resource is used to update these types of autogenerated DRG Attachments.
-        The user cannot create DRG attachments of these types as needed.
-
-        For the purposes of access control, the DRG attachment is automatically placed into the currently selected compartment.
-        For more information about compartments and access control, see
-        [Overview of the IAM Service](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm).
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_drg_rpc_attachment = oci.core.DrgAttachmentManagement("testDrgRpcAttachment",
-            attachment_type="REMOTE_PEERING_CONNECTION",
-            compartment_id=var["compartment_ocid"],
-            network_id=oci_core_remote_peering_connection["test_rpc"]["id"],
-            drg_id=oci_core_drg["test_drg"]["id"],
-            display_name="MyTestDrgAttachmentForRpc",
-            drg_route_table_id=oci_core_drg_route_table["test_drg_route_table"]["id"])
-        ```
-
+        Create a DrgAttachmentManagement resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] attachment_type: The type for the network resource attached to the DRG.
-        :param pulumi.Input[str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[str] drg_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
-        :param pulumi.Input[str] drg_route_table_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG route table assigned to the DRG attachment.
-        :param pulumi.Input[str] export_drg_route_distribution_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the export route distribution used to specify how routes in the assigned DRG route table are advertised to the attachment. If this value is null, no routes are advertised through this attachment.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[pulumi.InputType['DrgAttachmentManagementNetworkDetailsArgs']] network_details: (Updatable)
-        :param pulumi.Input[str] network_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource (virtual circuit, VCN, IPSec tunnel, or remote peering connection) attached to the DRG.
-        :param pulumi.Input[bool] remove_export_drg_route_distribution_trigger: (Updatable) An optional property when set to true during update disables the export of route Distribution by setting export_drg_route_distribution_id to null.
-        :param pulumi.Input[str] route_table_id: The OCID of the route table the DRG attachment is using.
-               
-               For information about why you would associate a route table with a DRG attachment, see:
-               * [Transit Routing: Access to Multiple VCNs in Same Region](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm)
-               * [Transit Routing: Private Access to Oracle Services](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitroutingoracleservices.htm) This field is deprecated. Instead, use the `networkDetails` field to view the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the attached resource.
-        :param pulumi.Input[str] vcn_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
         """
         ...
     @overload
@@ -582,35 +405,7 @@ class DrgAttachmentManagement(pulumi.CustomResource):
                  args: DrgAttachmentManagementArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Drg Attachment Management resource in Oracle Cloud Infrastructure Core service.
-
-        This can be used to update the Drg Attachments of the following types -
-        "IPSEC_TUNNEL",
-        "REMOTE_PEERING_CONNECTION",
-        "VIRTUAL_CIRCUIT",
-
-        DRG Attachments for virtual circuits, IPSec tunnels, and remote peering connections are created (and deleted) automatically on your behalf when you create (or delete) the network object. Hence, this management resource is used to update these types of autogenerated DRG Attachments.
-        The user cannot create DRG attachments of these types as needed.
-
-        For the purposes of access control, the DRG attachment is automatically placed into the currently selected compartment.
-        For more information about compartments and access control, see
-        [Overview of the IAM Service](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm).
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_drg_rpc_attachment = oci.core.DrgAttachmentManagement("testDrgRpcAttachment",
-            attachment_type="REMOTE_PEERING_CONNECTION",
-            compartment_id=var["compartment_ocid"],
-            network_id=oci_core_remote_peering_connection["test_rpc"]["id"],
-            drg_id=oci_core_drg["test_drg"]["id"],
-            display_name="MyTestDrgAttachmentForRpc",
-            drg_route_table_id=oci_core_drg_route_table["test_drg_route_table"]["id"])
-        ```
-
+        Create a DrgAttachmentManagement resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param DrgAttachmentManagementArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -703,26 +498,6 @@ class DrgAttachmentManagement(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] attachment_type: The type for the network resource attached to the DRG.
-        :param pulumi.Input[str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[str] drg_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
-        :param pulumi.Input[str] drg_route_table_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG route table assigned to the DRG attachment.
-        :param pulumi.Input[str] export_drg_route_distribution_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the export route distribution used to specify how routes in the assigned DRG route table are advertised to the attachment. If this value is null, no routes are advertised through this attachment.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[bool] is_cross_tenancy: Indicates whether the DRG attachment and attached network live in a different tenancy than the DRG.  Example: `false`
-        :param pulumi.Input[pulumi.InputType['DrgAttachmentManagementNetworkDetailsArgs']] network_details: (Updatable)
-        :param pulumi.Input[str] network_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource (virtual circuit, VCN, IPSec tunnel, or remote peering connection) attached to the DRG.
-        :param pulumi.Input[bool] remove_export_drg_route_distribution_trigger: (Updatable) An optional property when set to true during update disables the export of route Distribution by setting export_drg_route_distribution_id to null.
-        :param pulumi.Input[str] route_table_id: The OCID of the route table the DRG attachment is using.
-               
-               For information about why you would associate a route table with a DRG attachment, see:
-               * [Transit Routing: Access to Multiple VCNs in Same Region](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm)
-               * [Transit Routing: Private Access to Oracle Services](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitroutingoracleservices.htm) This field is deprecated. Instead, use the `networkDetails` field to view the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the attached resource.
-        :param pulumi.Input[str] state: A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
-        :param pulumi.Input[str] time_created: The date and time the DRG attachment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-        :param pulumi.Input[str] vcn_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -749,132 +524,80 @@ class DrgAttachmentManagement(pulumi.CustomResource):
     @property
     @pulumi.getter(name="attachmentType")
     def attachment_type(self) -> pulumi.Output[str]:
-        """
-        The type for the network resource attached to the DRG.
-        """
         return pulumi.get(self, "attachment_type")
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> pulumi.Output[str]:
-        """
-        (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
+    def display_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="drgId")
     def drg_id(self) -> pulumi.Output[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
-        """
         return pulumi.get(self, "drg_id")
 
     @property
     @pulumi.getter(name="drgRouteTableId")
-    def drg_route_table_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG route table assigned to the DRG attachment.
-        """
+    def drg_route_table_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "drg_route_table_id")
 
     @property
     @pulumi.getter(name="exportDrgRouteDistributionId")
-    def export_drg_route_distribution_id(self) -> pulumi.Output[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the export route distribution used to specify how routes in the assigned DRG route table are advertised to the attachment. If this value is null, no routes are advertised through this attachment.
-        """
+    def export_drg_route_distribution_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "export_drg_route_distribution_id")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="isCrossTenancy")
-    def is_cross_tenancy(self) -> pulumi.Output[bool]:
-        """
-        Indicates whether the DRG attachment and attached network live in a different tenancy than the DRG.  Example: `false`
-        """
+    def is_cross_tenancy(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "is_cross_tenancy")
 
     @property
     @pulumi.getter(name="networkDetails")
-    def network_details(self) -> pulumi.Output['outputs.DrgAttachmentManagementNetworkDetails']:
-        """
-        (Updatable)
-        """
+    def network_details(self) -> pulumi.Output[Optional['outputs.DrgAttachmentManagementNetworkDetails']]:
         return pulumi.get(self, "network_details")
 
     @property
     @pulumi.getter(name="networkId")
     def network_id(self) -> pulumi.Output[Optional[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource (virtual circuit, VCN, IPSec tunnel, or remote peering connection) attached to the DRG.
-        """
         return pulumi.get(self, "network_id")
 
     @property
     @pulumi.getter(name="removeExportDrgRouteDistributionTrigger")
     def remove_export_drg_route_distribution_trigger(self) -> pulumi.Output[Optional[bool]]:
-        """
-        (Updatable) An optional property when set to true during update disables the export of route Distribution by setting export_drg_route_distribution_id to null.
-        """
         return pulumi.get(self, "remove_export_drg_route_distribution_trigger")
 
     @property
     @pulumi.getter(name="routeTableId")
-    def route_table_id(self) -> pulumi.Output[str]:
-        """
-        The OCID of the route table the DRG attachment is using.
-
-        For information about why you would associate a route table with a DRG attachment, see:
-        * [Transit Routing: Access to Multiple VCNs in Same Region](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm)
-        * [Transit Routing: Private Access to Oracle Services](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitroutingoracleservices.htm) This field is deprecated. Instead, use the `networkDetails` field to view the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the attached resource.
-        """
+    def route_table_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "route_table_id")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        The date and time the DRG attachment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="vcnId")
-    def vcn_id(self) -> pulumi.Output[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
-        """
+    def vcn_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "vcn_id")
 

@@ -8,6 +8,8 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetPublicIpsPublicIp {
@@ -15,183 +17,183 @@ public final class GetPublicIpsPublicIp {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the entity the public IP is assigned to, or in the process of being assigned to.
      * 
      */
-    private String assignedEntityId;
+    private @Nullable String assignedEntityId;
     /**
      * @return The type of entity the public IP is assigned to, or in the process of being assigned to.
      * 
      */
-    private String assignedEntityType;
+    private @Nullable String assignedEntityType;
     /**
      * @return The name of the availability domain.  Example: `Uocm:PHX-AD-1`
      * 
      */
-    private String availabilityDomain;
+    private @Nullable String availabilityDomain;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return The public IP&#39;s Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The public IP address of the `publicIp` object.  Example: `203.0.113.2`
      * 
      */
-    private String ipAddress;
+    private @Nullable String ipAddress;
     /**
      * @return A filter to return only public IPs that match given lifetime.
      * 
      */
-    private String lifetime;
+    private @Nullable String lifetime;
     /**
      * @return Deprecated. Use `assignedEntityId` instead.
      * 
      */
-    private String privateIpId;
+    private @Nullable String privateIpId;
     /**
      * @return A filter to return only resources that belong to the given public IP pool.
      * 
      */
-    private String publicIpPoolId;
+    private @Nullable String publicIpPoolId;
     /**
      * @return Whether the public IP is regional or specific to a particular availability domain.
      * 
      */
-    private String scope;
+    private @Nullable String scope;
     /**
      * @return The public IP&#39;s current state.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return The date and time the public IP was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
 
     private GetPublicIpsPublicIp() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the entity the public IP is assigned to, or in the process of being assigned to.
      * 
      */
-    public String assignedEntityId() {
-        return this.assignedEntityId;
+    public Optional<String> assignedEntityId() {
+        return Optional.ofNullable(this.assignedEntityId);
     }
     /**
      * @return The type of entity the public IP is assigned to, or in the process of being assigned to.
      * 
      */
-    public String assignedEntityType() {
-        return this.assignedEntityType;
+    public Optional<String> assignedEntityType() {
+        return Optional.ofNullable(this.assignedEntityType);
     }
     /**
      * @return The name of the availability domain.  Example: `Uocm:PHX-AD-1`
      * 
      */
-    public String availabilityDomain() {
-        return this.availabilityDomain;
+    public Optional<String> availabilityDomain() {
+        return Optional.ofNullable(this.availabilityDomain);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return The public IP&#39;s Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The public IP address of the `publicIp` object.  Example: `203.0.113.2`
      * 
      */
-    public String ipAddress() {
-        return this.ipAddress;
+    public Optional<String> ipAddress() {
+        return Optional.ofNullable(this.ipAddress);
     }
     /**
      * @return A filter to return only public IPs that match given lifetime.
      * 
      */
-    public String lifetime() {
-        return this.lifetime;
+    public Optional<String> lifetime() {
+        return Optional.ofNullable(this.lifetime);
     }
     /**
      * @return Deprecated. Use `assignedEntityId` instead.
      * 
      */
-    public String privateIpId() {
-        return this.privateIpId;
+    public Optional<String> privateIpId() {
+        return Optional.ofNullable(this.privateIpId);
     }
     /**
      * @return A filter to return only resources that belong to the given public IP pool.
      * 
      */
-    public String publicIpPoolId() {
-        return this.publicIpPoolId;
+    public Optional<String> publicIpPoolId() {
+        return Optional.ofNullable(this.publicIpPoolId);
     }
     /**
      * @return Whether the public IP is regional or specific to a particular availability domain.
      * 
      */
-    public String scope() {
-        return this.scope;
+    public Optional<String> scope() {
+        return Optional.ofNullable(this.scope);
     }
     /**
      * @return The public IP&#39;s current state.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return The date and time the public IP was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
 
     public static Builder builder() {
@@ -203,21 +205,21 @@ public final class GetPublicIpsPublicIp {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String assignedEntityId;
-        private String assignedEntityType;
-        private String availabilityDomain;
-        private String compartmentId;
-        private Map<String,Object> definedTags;
-        private String displayName;
-        private Map<String,Object> freeformTags;
-        private String id;
-        private String ipAddress;
-        private String lifetime;
-        private String privateIpId;
-        private String publicIpPoolId;
-        private String scope;
-        private String state;
-        private String timeCreated;
+        private @Nullable String assignedEntityId;
+        private @Nullable String assignedEntityType;
+        private @Nullable String availabilityDomain;
+        private @Nullable String compartmentId;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String displayName;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String id;
+        private @Nullable String ipAddress;
+        private @Nullable String lifetime;
+        private @Nullable String privateIpId;
+        private @Nullable String publicIpPoolId;
+        private @Nullable String scope;
+        private @Nullable String state;
+        private @Nullable String timeCreated;
         public Builder() {}
         public Builder(GetPublicIpsPublicIp defaults) {
     	      Objects.requireNonNull(defaults);
@@ -239,78 +241,78 @@ public final class GetPublicIpsPublicIp {
         }
 
         @CustomType.Setter
-        public Builder assignedEntityId(String assignedEntityId) {
-            this.assignedEntityId = Objects.requireNonNull(assignedEntityId);
+        public Builder assignedEntityId(@Nullable String assignedEntityId) {
+            this.assignedEntityId = assignedEntityId;
             return this;
         }
         @CustomType.Setter
-        public Builder assignedEntityType(String assignedEntityType) {
-            this.assignedEntityType = Objects.requireNonNull(assignedEntityType);
+        public Builder assignedEntityType(@Nullable String assignedEntityType) {
+            this.assignedEntityType = assignedEntityType;
             return this;
         }
         @CustomType.Setter
-        public Builder availabilityDomain(String availabilityDomain) {
-            this.availabilityDomain = Objects.requireNonNull(availabilityDomain);
+        public Builder availabilityDomain(@Nullable String availabilityDomain) {
+            this.availabilityDomain = availabilityDomain;
             return this;
         }
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder ipAddress(String ipAddress) {
-            this.ipAddress = Objects.requireNonNull(ipAddress);
+        public Builder ipAddress(@Nullable String ipAddress) {
+            this.ipAddress = ipAddress;
             return this;
         }
         @CustomType.Setter
-        public Builder lifetime(String lifetime) {
-            this.lifetime = Objects.requireNonNull(lifetime);
+        public Builder lifetime(@Nullable String lifetime) {
+            this.lifetime = lifetime;
             return this;
         }
         @CustomType.Setter
-        public Builder privateIpId(String privateIpId) {
-            this.privateIpId = Objects.requireNonNull(privateIpId);
+        public Builder privateIpId(@Nullable String privateIpId) {
+            this.privateIpId = privateIpId;
             return this;
         }
         @CustomType.Setter
-        public Builder publicIpPoolId(String publicIpPoolId) {
-            this.publicIpPoolId = Objects.requireNonNull(publicIpPoolId);
+        public Builder publicIpPoolId(@Nullable String publicIpPoolId) {
+            this.publicIpPoolId = publicIpPoolId;
             return this;
         }
         @CustomType.Setter
-        public Builder scope(String scope) {
-            this.scope = Objects.requireNonNull(scope);
+        public Builder scope(@Nullable String scope) {
+            this.scope = scope;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         public GetPublicIpsPublicIp build() {

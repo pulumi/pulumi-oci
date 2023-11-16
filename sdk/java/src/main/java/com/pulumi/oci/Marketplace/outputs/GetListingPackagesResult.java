@@ -20,7 +20,7 @@ public final class GetListingPackagesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The ID of the listing that the specified package belongs to.
      * 
@@ -30,7 +30,7 @@ public final class GetListingPackagesResult {
      * @return The list of listing_packages.
      * 
      */
-    private List<GetListingPackagesListingPackage> listingPackages;
+    private @Nullable List<GetListingPackagesListingPackage> listingPackages;
     /**
      * @return The specified package&#39;s type.
      * 
@@ -49,8 +49,8 @@ public final class GetListingPackagesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The ID of the listing that the specified package belongs to.
@@ -64,7 +64,7 @@ public final class GetListingPackagesResult {
      * 
      */
     public List<GetListingPackagesListingPackage> listingPackages() {
-        return this.listingPackages;
+        return this.listingPackages == null ? List.of() : this.listingPackages;
     }
     /**
      * @return The specified package&#39;s type.
@@ -88,9 +88,9 @@ public final class GetListingPackagesResult {
     public static final class Builder {
         private @Nullable String compartmentId;
         private @Nullable List<GetListingPackagesFilter> filters;
-        private String id;
+        private @Nullable String id;
         private String listingId;
-        private List<GetListingPackagesListingPackage> listingPackages;
+        private @Nullable List<GetListingPackagesListingPackage> listingPackages;
         private @Nullable String packageType;
         private @Nullable String packageVersion;
         public Builder() {}
@@ -119,8 +119,8 @@ public final class GetListingPackagesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -129,8 +129,8 @@ public final class GetListingPackagesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder listingPackages(List<GetListingPackagesListingPackage> listingPackages) {
-            this.listingPackages = Objects.requireNonNull(listingPackages);
+        public Builder listingPackages(@Nullable List<GetListingPackagesListingPackage> listingPackages) {
+            this.listingPackages = listingPackages;
             return this;
         }
         public Builder listingPackages(GetListingPackagesListingPackage... listingPackages) {

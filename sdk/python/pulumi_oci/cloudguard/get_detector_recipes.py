@@ -60,9 +60,6 @@ class GetDetectorRecipesResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        compartmentId of detector recipe
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
@@ -72,18 +69,12 @@ class GetDetectorRecipesResult:
 
     @property
     @pulumi.getter(name="detectorRecipeCollections")
-    def detector_recipe_collections(self) -> Sequence['outputs.GetDetectorRecipesDetectorRecipeCollectionResult']:
-        """
-        The list of detector_recipe_collection.
-        """
+    def detector_recipe_collections(self) -> Optional[Sequence['outputs.GetDetectorRecipesDetectorRecipeCollectionResult']]:
         return pulumi.get(self, "detector_recipe_collections")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        The display name of entity
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -93,7 +84,7 @@ class GetDetectorRecipesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -107,9 +98,6 @@ class GetDetectorRecipesResult:
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the resource.
-        """
         return pulumi.get(self, "state")
 
 
@@ -139,45 +127,7 @@ def get_detector_recipes(access_level: Optional[str] = None,
                          state: Optional[str] = None,
                          opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDetectorRecipesResult:
     """
-    This data source provides the list of Detector Recipes in Oracle Cloud Infrastructure Cloud Guard service.
-
-    Returns a list of all Detector Recipes in a compartment
-
-    The ListDetectorRecipes operation returns only the detector recipes in `compartmentId` passed.
-    The list does not include any subcompartments of the compartmentId passed.
-
-    The parameter `accessLevel` specifies whether to return only those compartments for which the
-    requestor has INSPECT permissions on at least one resource directly
-    or indirectly (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
-    Principal doesn't have access to even one of the child compartments. This is valid only when
-    `compartmentIdInSubtree` is set to `true`.
-
-    The parameter `compartmentIdInSubtree` applies when you perform ListDetectorRecipes on the
-    `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
-    To get a full list of all compartments and subcompartments in the tenancy (root compartment),
-    set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_detector_recipes = oci.CloudGuard.get_detector_recipes(compartment_id=var["compartment_id"],
-        access_level=var["detector_recipe_access_level"],
-        compartment_id_in_subtree=var["detector_recipe_compartment_id_in_subtree"],
-        display_name=var["detector_recipe_display_name"],
-        resource_metadata_only=var["detector_recipe_resource_metadata_only"],
-        state=var["detector_recipe_state"])
-    ```
-
-
-    :param str access_level: Valid values are `RESTRICTED` and `ACCESSIBLE`. Default is `RESTRICTED`. Setting this to `ACCESSIBLE` returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to `RESTRICTED` permissions are checked and no partial results are displayed.
-    :param str compartment_id: The ID of the compartment in which to list resources.
-    :param bool compartment_id_in_subtree: Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned depending on the the setting of `accessLevel`.
-    :param str display_name: A filter to return only resources that match the entire display name given.
-    :param bool resource_metadata_only: Default is false. When set to true, the list of all Oracle Managed Resources Metadata supported by Cloud Guard are returned.
-    :param str state: The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['accessLevel'] = access_level
@@ -212,44 +162,6 @@ def get_detector_recipes_output(access_level: Optional[pulumi.Input[Optional[str
                                 state: Optional[pulumi.Input[Optional[str]]] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDetectorRecipesResult]:
     """
-    This data source provides the list of Detector Recipes in Oracle Cloud Infrastructure Cloud Guard service.
-
-    Returns a list of all Detector Recipes in a compartment
-
-    The ListDetectorRecipes operation returns only the detector recipes in `compartmentId` passed.
-    The list does not include any subcompartments of the compartmentId passed.
-
-    The parameter `accessLevel` specifies whether to return only those compartments for which the
-    requestor has INSPECT permissions on at least one resource directly
-    or indirectly (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
-    Principal doesn't have access to even one of the child compartments. This is valid only when
-    `compartmentIdInSubtree` is set to `true`.
-
-    The parameter `compartmentIdInSubtree` applies when you perform ListDetectorRecipes on the
-    `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
-    To get a full list of all compartments and subcompartments in the tenancy (root compartment),
-    set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_detector_recipes = oci.CloudGuard.get_detector_recipes(compartment_id=var["compartment_id"],
-        access_level=var["detector_recipe_access_level"],
-        compartment_id_in_subtree=var["detector_recipe_compartment_id_in_subtree"],
-        display_name=var["detector_recipe_display_name"],
-        resource_metadata_only=var["detector_recipe_resource_metadata_only"],
-        state=var["detector_recipe_state"])
-    ```
-
-
-    :param str access_level: Valid values are `RESTRICTED` and `ACCESSIBLE`. Default is `RESTRICTED`. Setting this to `ACCESSIBLE` returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to `RESTRICTED` permissions are checked and no partial results are displayed.
-    :param str compartment_id: The ID of the compartment in which to list resources.
-    :param bool compartment_id_in_subtree: Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned depending on the the setting of `accessLevel`.
-    :param str display_name: A filter to return only resources that match the entire display name given.
-    :param bool resource_metadata_only: Default is false. When set to true, the list of all Oracle Managed Resources Metadata supported by Cloud Guard are returned.
-    :param str state: The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+    Use this data source to access information about an existing resource.
     """
     ...

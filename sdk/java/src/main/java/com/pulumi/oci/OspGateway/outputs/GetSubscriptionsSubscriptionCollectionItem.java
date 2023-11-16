@@ -13,6 +13,8 @@ import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetSubscriptionsSubscriptionCollectionItem {
@@ -20,291 +22,291 @@ public final class GetSubscriptionsSubscriptionCollectionItem {
      * @return Account type.
      * 
      */
-    private String accountType;
+    private @Nullable String accountType;
     /**
      * @return Bill to customer Account id.
      * 
      */
-    private String billToCustAccountId;
+    private @Nullable String billToCustAccountId;
     /**
      * @return Address details model.
      * 
      */
-    private List<GetSubscriptionsSubscriptionCollectionItemBillingAddress> billingAddresses;
+    private @Nullable List<GetSubscriptionsSubscriptionCollectionItemBillingAddress> billingAddresses;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return Currency code
      * 
      */
-    private String currencyCode;
-    private String email;
+    private @Nullable String currencyCode;
+    private @Nullable String email;
     /**
      * @return GSI Subscription external code.
      * 
      */
-    private String gsiOrgCode;
+    private @Nullable String gsiOrgCode;
     /**
      * @return Subscription id identifier (OCID).
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Payment intension.
      * 
      */
-    private Boolean isIntentToPay;
+    private @Nullable Boolean isIntentToPay;
     /**
      * @return Language short code (en, de, hu, etc)
      * 
      */
-    private String languageCode;
+    private @Nullable String languageCode;
     /**
      * @return GSI organization external identifier.
      * 
      */
-    private String organizationId;
+    private @Nullable String organizationId;
     /**
      * @return The home region&#39;s public name of the logged in user.
      * 
      */
-    private String ospHomeRegion;
+    private @Nullable String ospHomeRegion;
     /**
      * @return Payment gateway details.
      * 
      */
-    private List<GetSubscriptionsSubscriptionCollectionItemPaymentGateway> paymentGateways;
+    private @Nullable List<GetSubscriptionsSubscriptionCollectionItemPaymentGateway> paymentGateways;
     /**
      * @return Payment option list of a subscription.
      * 
      */
-    private List<GetSubscriptionsSubscriptionCollectionItemPaymentOption> paymentOptions;
+    private @Nullable List<GetSubscriptionsSubscriptionCollectionItemPaymentOption> paymentOptions;
     /**
      * @return Subscription plan type.
      * 
      */
-    private String planType;
+    private @Nullable String planType;
     /**
      * @return Ship to customer account role.
      * 
      */
-    private String shipToCustAcctRoleId;
+    private @Nullable String shipToCustAcctRoleId;
     /**
      * @return Ship to customer account site address id.
      * 
      */
-    private String shipToCustAcctSiteId;
-    private String subscriptionId;
+    private @Nullable String shipToCustAcctSiteId;
+    private @Nullable String subscriptionId;
     /**
      * @return Subscription plan number.
      * 
      */
-    private String subscriptionPlanNumber;
-    private List<GetSubscriptionsSubscriptionCollectionItemSubscription> subscriptions;
+    private @Nullable String subscriptionPlanNumber;
+    private @Nullable List<GetSubscriptionsSubscriptionCollectionItemSubscription> subscriptions;
     /**
      * @return Tax details.
      * 
      */
-    private List<GetSubscriptionsSubscriptionCollectionItemTaxInfo> taxInfos;
+    private @Nullable List<GetSubscriptionsSubscriptionCollectionItemTaxInfo> taxInfos;
     /**
      * @return Date of upgrade/conversion when account type changed from PERSONAL to CORPORATE
      * 
      */
-    private String timePersonalToCorporateConv;
+    private @Nullable String timePersonalToCorporateConv;
     /**
      * @return Date of upgrade/conversion when planType changed from FREE_TIER to PAYG
      * 
      */
-    private String timePlanUpgrade;
+    private @Nullable String timePlanUpgrade;
     /**
      * @return Start date of the subscription.
      * 
      */
-    private String timeStart;
+    private @Nullable String timeStart;
     /**
      * @return Status of the upgrade.
      * 
      */
-    private String upgradeState;
+    private @Nullable String upgradeState;
     /**
      * @return This field is used to describe the Upgrade State in case of error (E.g. Upgrade failure caused by interfacing Tax details- TaxError)
      * 
      */
-    private String upgradeStateDetails;
+    private @Nullable String upgradeStateDetails;
 
     private GetSubscriptionsSubscriptionCollectionItem() {}
     /**
      * @return Account type.
      * 
      */
-    public String accountType() {
-        return this.accountType;
+    public Optional<String> accountType() {
+        return Optional.ofNullable(this.accountType);
     }
     /**
      * @return Bill to customer Account id.
      * 
      */
-    public String billToCustAccountId() {
-        return this.billToCustAccountId;
+    public Optional<String> billToCustAccountId() {
+        return Optional.ofNullable(this.billToCustAccountId);
     }
     /**
      * @return Address details model.
      * 
      */
     public List<GetSubscriptionsSubscriptionCollectionItemBillingAddress> billingAddresses() {
-        return this.billingAddresses;
+        return this.billingAddresses == null ? List.of() : this.billingAddresses;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return Currency code
      * 
      */
-    public String currencyCode() {
-        return this.currencyCode;
+    public Optional<String> currencyCode() {
+        return Optional.ofNullable(this.currencyCode);
     }
-    public String email() {
-        return this.email;
+    public Optional<String> email() {
+        return Optional.ofNullable(this.email);
     }
     /**
      * @return GSI Subscription external code.
      * 
      */
-    public String gsiOrgCode() {
-        return this.gsiOrgCode;
+    public Optional<String> gsiOrgCode() {
+        return Optional.ofNullable(this.gsiOrgCode);
     }
     /**
      * @return Subscription id identifier (OCID).
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Payment intension.
      * 
      */
-    public Boolean isIntentToPay() {
-        return this.isIntentToPay;
+    public Optional<Boolean> isIntentToPay() {
+        return Optional.ofNullable(this.isIntentToPay);
     }
     /**
      * @return Language short code (en, de, hu, etc)
      * 
      */
-    public String languageCode() {
-        return this.languageCode;
+    public Optional<String> languageCode() {
+        return Optional.ofNullable(this.languageCode);
     }
     /**
      * @return GSI organization external identifier.
      * 
      */
-    public String organizationId() {
-        return this.organizationId;
+    public Optional<String> organizationId() {
+        return Optional.ofNullable(this.organizationId);
     }
     /**
      * @return The home region&#39;s public name of the logged in user.
      * 
      */
-    public String ospHomeRegion() {
-        return this.ospHomeRegion;
+    public Optional<String> ospHomeRegion() {
+        return Optional.ofNullable(this.ospHomeRegion);
     }
     /**
      * @return Payment gateway details.
      * 
      */
     public List<GetSubscriptionsSubscriptionCollectionItemPaymentGateway> paymentGateways() {
-        return this.paymentGateways;
+        return this.paymentGateways == null ? List.of() : this.paymentGateways;
     }
     /**
      * @return Payment option list of a subscription.
      * 
      */
     public List<GetSubscriptionsSubscriptionCollectionItemPaymentOption> paymentOptions() {
-        return this.paymentOptions;
+        return this.paymentOptions == null ? List.of() : this.paymentOptions;
     }
     /**
      * @return Subscription plan type.
      * 
      */
-    public String planType() {
-        return this.planType;
+    public Optional<String> planType() {
+        return Optional.ofNullable(this.planType);
     }
     /**
      * @return Ship to customer account role.
      * 
      */
-    public String shipToCustAcctRoleId() {
-        return this.shipToCustAcctRoleId;
+    public Optional<String> shipToCustAcctRoleId() {
+        return Optional.ofNullable(this.shipToCustAcctRoleId);
     }
     /**
      * @return Ship to customer account site address id.
      * 
      */
-    public String shipToCustAcctSiteId() {
-        return this.shipToCustAcctSiteId;
+    public Optional<String> shipToCustAcctSiteId() {
+        return Optional.ofNullable(this.shipToCustAcctSiteId);
     }
-    public String subscriptionId() {
-        return this.subscriptionId;
+    public Optional<String> subscriptionId() {
+        return Optional.ofNullable(this.subscriptionId);
     }
     /**
      * @return Subscription plan number.
      * 
      */
-    public String subscriptionPlanNumber() {
-        return this.subscriptionPlanNumber;
+    public Optional<String> subscriptionPlanNumber() {
+        return Optional.ofNullable(this.subscriptionPlanNumber);
     }
     public List<GetSubscriptionsSubscriptionCollectionItemSubscription> subscriptions() {
-        return this.subscriptions;
+        return this.subscriptions == null ? List.of() : this.subscriptions;
     }
     /**
      * @return Tax details.
      * 
      */
     public List<GetSubscriptionsSubscriptionCollectionItemTaxInfo> taxInfos() {
-        return this.taxInfos;
+        return this.taxInfos == null ? List.of() : this.taxInfos;
     }
     /**
      * @return Date of upgrade/conversion when account type changed from PERSONAL to CORPORATE
      * 
      */
-    public String timePersonalToCorporateConv() {
-        return this.timePersonalToCorporateConv;
+    public Optional<String> timePersonalToCorporateConv() {
+        return Optional.ofNullable(this.timePersonalToCorporateConv);
     }
     /**
      * @return Date of upgrade/conversion when planType changed from FREE_TIER to PAYG
      * 
      */
-    public String timePlanUpgrade() {
-        return this.timePlanUpgrade;
+    public Optional<String> timePlanUpgrade() {
+        return Optional.ofNullable(this.timePlanUpgrade);
     }
     /**
      * @return Start date of the subscription.
      * 
      */
-    public String timeStart() {
-        return this.timeStart;
+    public Optional<String> timeStart() {
+        return Optional.ofNullable(this.timeStart);
     }
     /**
      * @return Status of the upgrade.
      * 
      */
-    public String upgradeState() {
-        return this.upgradeState;
+    public Optional<String> upgradeState() {
+        return Optional.ofNullable(this.upgradeState);
     }
     /**
      * @return This field is used to describe the Upgrade State in case of error (E.g. Upgrade failure caused by interfacing Tax details- TaxError)
      * 
      */
-    public String upgradeStateDetails() {
-        return this.upgradeStateDetails;
+    public Optional<String> upgradeStateDetails() {
+        return Optional.ofNullable(this.upgradeStateDetails);
     }
 
     public static Builder builder() {
@@ -316,32 +318,32 @@ public final class GetSubscriptionsSubscriptionCollectionItem {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String accountType;
-        private String billToCustAccountId;
-        private List<GetSubscriptionsSubscriptionCollectionItemBillingAddress> billingAddresses;
-        private String compartmentId;
-        private String currencyCode;
-        private String email;
-        private String gsiOrgCode;
-        private String id;
-        private Boolean isIntentToPay;
-        private String languageCode;
-        private String organizationId;
-        private String ospHomeRegion;
-        private List<GetSubscriptionsSubscriptionCollectionItemPaymentGateway> paymentGateways;
-        private List<GetSubscriptionsSubscriptionCollectionItemPaymentOption> paymentOptions;
-        private String planType;
-        private String shipToCustAcctRoleId;
-        private String shipToCustAcctSiteId;
-        private String subscriptionId;
-        private String subscriptionPlanNumber;
-        private List<GetSubscriptionsSubscriptionCollectionItemSubscription> subscriptions;
-        private List<GetSubscriptionsSubscriptionCollectionItemTaxInfo> taxInfos;
-        private String timePersonalToCorporateConv;
-        private String timePlanUpgrade;
-        private String timeStart;
-        private String upgradeState;
-        private String upgradeStateDetails;
+        private @Nullable String accountType;
+        private @Nullable String billToCustAccountId;
+        private @Nullable List<GetSubscriptionsSubscriptionCollectionItemBillingAddress> billingAddresses;
+        private @Nullable String compartmentId;
+        private @Nullable String currencyCode;
+        private @Nullable String email;
+        private @Nullable String gsiOrgCode;
+        private @Nullable String id;
+        private @Nullable Boolean isIntentToPay;
+        private @Nullable String languageCode;
+        private @Nullable String organizationId;
+        private @Nullable String ospHomeRegion;
+        private @Nullable List<GetSubscriptionsSubscriptionCollectionItemPaymentGateway> paymentGateways;
+        private @Nullable List<GetSubscriptionsSubscriptionCollectionItemPaymentOption> paymentOptions;
+        private @Nullable String planType;
+        private @Nullable String shipToCustAcctRoleId;
+        private @Nullable String shipToCustAcctSiteId;
+        private @Nullable String subscriptionId;
+        private @Nullable String subscriptionPlanNumber;
+        private @Nullable List<GetSubscriptionsSubscriptionCollectionItemSubscription> subscriptions;
+        private @Nullable List<GetSubscriptionsSubscriptionCollectionItemTaxInfo> taxInfos;
+        private @Nullable String timePersonalToCorporateConv;
+        private @Nullable String timePlanUpgrade;
+        private @Nullable String timeStart;
+        private @Nullable String upgradeState;
+        private @Nullable String upgradeStateDetails;
         public Builder() {}
         public Builder(GetSubscriptionsSubscriptionCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -374,148 +376,148 @@ public final class GetSubscriptionsSubscriptionCollectionItem {
         }
 
         @CustomType.Setter
-        public Builder accountType(String accountType) {
-            this.accountType = Objects.requireNonNull(accountType);
+        public Builder accountType(@Nullable String accountType) {
+            this.accountType = accountType;
             return this;
         }
         @CustomType.Setter
-        public Builder billToCustAccountId(String billToCustAccountId) {
-            this.billToCustAccountId = Objects.requireNonNull(billToCustAccountId);
+        public Builder billToCustAccountId(@Nullable String billToCustAccountId) {
+            this.billToCustAccountId = billToCustAccountId;
             return this;
         }
         @CustomType.Setter
-        public Builder billingAddresses(List<GetSubscriptionsSubscriptionCollectionItemBillingAddress> billingAddresses) {
-            this.billingAddresses = Objects.requireNonNull(billingAddresses);
+        public Builder billingAddresses(@Nullable List<GetSubscriptionsSubscriptionCollectionItemBillingAddress> billingAddresses) {
+            this.billingAddresses = billingAddresses;
             return this;
         }
         public Builder billingAddresses(GetSubscriptionsSubscriptionCollectionItemBillingAddress... billingAddresses) {
             return billingAddresses(List.of(billingAddresses));
         }
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder currencyCode(String currencyCode) {
-            this.currencyCode = Objects.requireNonNull(currencyCode);
+        public Builder currencyCode(@Nullable String currencyCode) {
+            this.currencyCode = currencyCode;
             return this;
         }
         @CustomType.Setter
-        public Builder email(String email) {
-            this.email = Objects.requireNonNull(email);
+        public Builder email(@Nullable String email) {
+            this.email = email;
             return this;
         }
         @CustomType.Setter
-        public Builder gsiOrgCode(String gsiOrgCode) {
-            this.gsiOrgCode = Objects.requireNonNull(gsiOrgCode);
+        public Builder gsiOrgCode(@Nullable String gsiOrgCode) {
+            this.gsiOrgCode = gsiOrgCode;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder isIntentToPay(Boolean isIntentToPay) {
-            this.isIntentToPay = Objects.requireNonNull(isIntentToPay);
+        public Builder isIntentToPay(@Nullable Boolean isIntentToPay) {
+            this.isIntentToPay = isIntentToPay;
             return this;
         }
         @CustomType.Setter
-        public Builder languageCode(String languageCode) {
-            this.languageCode = Objects.requireNonNull(languageCode);
+        public Builder languageCode(@Nullable String languageCode) {
+            this.languageCode = languageCode;
             return this;
         }
         @CustomType.Setter
-        public Builder organizationId(String organizationId) {
-            this.organizationId = Objects.requireNonNull(organizationId);
+        public Builder organizationId(@Nullable String organizationId) {
+            this.organizationId = organizationId;
             return this;
         }
         @CustomType.Setter
-        public Builder ospHomeRegion(String ospHomeRegion) {
-            this.ospHomeRegion = Objects.requireNonNull(ospHomeRegion);
+        public Builder ospHomeRegion(@Nullable String ospHomeRegion) {
+            this.ospHomeRegion = ospHomeRegion;
             return this;
         }
         @CustomType.Setter
-        public Builder paymentGateways(List<GetSubscriptionsSubscriptionCollectionItemPaymentGateway> paymentGateways) {
-            this.paymentGateways = Objects.requireNonNull(paymentGateways);
+        public Builder paymentGateways(@Nullable List<GetSubscriptionsSubscriptionCollectionItemPaymentGateway> paymentGateways) {
+            this.paymentGateways = paymentGateways;
             return this;
         }
         public Builder paymentGateways(GetSubscriptionsSubscriptionCollectionItemPaymentGateway... paymentGateways) {
             return paymentGateways(List.of(paymentGateways));
         }
         @CustomType.Setter
-        public Builder paymentOptions(List<GetSubscriptionsSubscriptionCollectionItemPaymentOption> paymentOptions) {
-            this.paymentOptions = Objects.requireNonNull(paymentOptions);
+        public Builder paymentOptions(@Nullable List<GetSubscriptionsSubscriptionCollectionItemPaymentOption> paymentOptions) {
+            this.paymentOptions = paymentOptions;
             return this;
         }
         public Builder paymentOptions(GetSubscriptionsSubscriptionCollectionItemPaymentOption... paymentOptions) {
             return paymentOptions(List.of(paymentOptions));
         }
         @CustomType.Setter
-        public Builder planType(String planType) {
-            this.planType = Objects.requireNonNull(planType);
+        public Builder planType(@Nullable String planType) {
+            this.planType = planType;
             return this;
         }
         @CustomType.Setter
-        public Builder shipToCustAcctRoleId(String shipToCustAcctRoleId) {
-            this.shipToCustAcctRoleId = Objects.requireNonNull(shipToCustAcctRoleId);
+        public Builder shipToCustAcctRoleId(@Nullable String shipToCustAcctRoleId) {
+            this.shipToCustAcctRoleId = shipToCustAcctRoleId;
             return this;
         }
         @CustomType.Setter
-        public Builder shipToCustAcctSiteId(String shipToCustAcctSiteId) {
-            this.shipToCustAcctSiteId = Objects.requireNonNull(shipToCustAcctSiteId);
+        public Builder shipToCustAcctSiteId(@Nullable String shipToCustAcctSiteId) {
+            this.shipToCustAcctSiteId = shipToCustAcctSiteId;
             return this;
         }
         @CustomType.Setter
-        public Builder subscriptionId(String subscriptionId) {
-            this.subscriptionId = Objects.requireNonNull(subscriptionId);
+        public Builder subscriptionId(@Nullable String subscriptionId) {
+            this.subscriptionId = subscriptionId;
             return this;
         }
         @CustomType.Setter
-        public Builder subscriptionPlanNumber(String subscriptionPlanNumber) {
-            this.subscriptionPlanNumber = Objects.requireNonNull(subscriptionPlanNumber);
+        public Builder subscriptionPlanNumber(@Nullable String subscriptionPlanNumber) {
+            this.subscriptionPlanNumber = subscriptionPlanNumber;
             return this;
         }
         @CustomType.Setter
-        public Builder subscriptions(List<GetSubscriptionsSubscriptionCollectionItemSubscription> subscriptions) {
-            this.subscriptions = Objects.requireNonNull(subscriptions);
+        public Builder subscriptions(@Nullable List<GetSubscriptionsSubscriptionCollectionItemSubscription> subscriptions) {
+            this.subscriptions = subscriptions;
             return this;
         }
         public Builder subscriptions(GetSubscriptionsSubscriptionCollectionItemSubscription... subscriptions) {
             return subscriptions(List.of(subscriptions));
         }
         @CustomType.Setter
-        public Builder taxInfos(List<GetSubscriptionsSubscriptionCollectionItemTaxInfo> taxInfos) {
-            this.taxInfos = Objects.requireNonNull(taxInfos);
+        public Builder taxInfos(@Nullable List<GetSubscriptionsSubscriptionCollectionItemTaxInfo> taxInfos) {
+            this.taxInfos = taxInfos;
             return this;
         }
         public Builder taxInfos(GetSubscriptionsSubscriptionCollectionItemTaxInfo... taxInfos) {
             return taxInfos(List.of(taxInfos));
         }
         @CustomType.Setter
-        public Builder timePersonalToCorporateConv(String timePersonalToCorporateConv) {
-            this.timePersonalToCorporateConv = Objects.requireNonNull(timePersonalToCorporateConv);
+        public Builder timePersonalToCorporateConv(@Nullable String timePersonalToCorporateConv) {
+            this.timePersonalToCorporateConv = timePersonalToCorporateConv;
             return this;
         }
         @CustomType.Setter
-        public Builder timePlanUpgrade(String timePlanUpgrade) {
-            this.timePlanUpgrade = Objects.requireNonNull(timePlanUpgrade);
+        public Builder timePlanUpgrade(@Nullable String timePlanUpgrade) {
+            this.timePlanUpgrade = timePlanUpgrade;
             return this;
         }
         @CustomType.Setter
-        public Builder timeStart(String timeStart) {
-            this.timeStart = Objects.requireNonNull(timeStart);
+        public Builder timeStart(@Nullable String timeStart) {
+            this.timeStart = timeStart;
             return this;
         }
         @CustomType.Setter
-        public Builder upgradeState(String upgradeState) {
-            this.upgradeState = Objects.requireNonNull(upgradeState);
+        public Builder upgradeState(@Nullable String upgradeState) {
+            this.upgradeState = upgradeState;
             return this;
         }
         @CustomType.Setter
-        public Builder upgradeStateDetails(String upgradeStateDetails) {
-            this.upgradeStateDetails = Objects.requireNonNull(upgradeStateDetails);
+        public Builder upgradeStateDetails(@Nullable String upgradeStateDetails) {
+            this.upgradeStateDetails = upgradeStateDetails;
             return this;
         }
         public GetSubscriptionsSubscriptionCollectionItem build() {

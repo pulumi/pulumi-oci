@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.CertificatesManagement.outputs.GetCertificateVersionsCertificateVersionCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetCertificateVersionsCertificateVersionCollection {
@@ -14,7 +15,7 @@ public final class GetCertificateVersionsCertificateVersionCollection {
      * @return A list of certificate version summary objects.
      * 
      */
-    private List<GetCertificateVersionsCertificateVersionCollectionItem> items;
+    private @Nullable List<GetCertificateVersionsCertificateVersionCollectionItem> items;
 
     private GetCertificateVersionsCertificateVersionCollection() {}
     /**
@@ -22,7 +23,7 @@ public final class GetCertificateVersionsCertificateVersionCollection {
      * 
      */
     public List<GetCertificateVersionsCertificateVersionCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -34,7 +35,7 @@ public final class GetCertificateVersionsCertificateVersionCollection {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetCertificateVersionsCertificateVersionCollectionItem> items;
+        private @Nullable List<GetCertificateVersionsCertificateVersionCollectionItem> items;
         public Builder() {}
         public Builder(GetCertificateVersionsCertificateVersionCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -42,8 +43,8 @@ public final class GetCertificateVersionsCertificateVersionCollection {
         }
 
         @CustomType.Setter
-        public Builder items(List<GetCertificateVersionsCertificateVersionCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetCertificateVersionsCertificateVersionCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetCertificateVersionsCertificateVersionCollectionItem... items) {

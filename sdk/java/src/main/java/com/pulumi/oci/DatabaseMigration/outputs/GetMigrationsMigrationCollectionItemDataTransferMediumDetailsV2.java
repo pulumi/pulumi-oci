@@ -8,50 +8,52 @@ import com.pulumi.oci.DatabaseMigration.outputs.GetMigrationsMigrationCollection
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2 {
-    private String accessKeyId;
+    private @Nullable String accessKeyId;
     /**
      * @return Name of directory object in database
      * 
      */
-    private String name;
-    private List<GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2ObjectStorageBucket> objectStorageBuckets;
-    private String region;
-    private String secretAccessKey;
+    private @Nullable String name;
+    private @Nullable List<GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2ObjectStorageBucket> objectStorageBuckets;
+    private @Nullable String region;
+    private @Nullable String secretAccessKey;
     /**
      * @return Migration type.
      * 
      */
-    private String type;
+    private @Nullable String type;
 
     private GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2() {}
-    public String accessKeyId() {
-        return this.accessKeyId;
+    public Optional<String> accessKeyId() {
+        return Optional.ofNullable(this.accessKeyId);
     }
     /**
      * @return Name of directory object in database
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     public List<GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2ObjectStorageBucket> objectStorageBuckets() {
-        return this.objectStorageBuckets;
+        return this.objectStorageBuckets == null ? List.of() : this.objectStorageBuckets;
     }
-    public String region() {
-        return this.region;
+    public Optional<String> region() {
+        return Optional.ofNullable(this.region);
     }
-    public String secretAccessKey() {
-        return this.secretAccessKey;
+    public Optional<String> secretAccessKey() {
+        return Optional.ofNullable(this.secretAccessKey);
     }
     /**
      * @return Migration type.
      * 
      */
-    public String type() {
-        return this.type;
+    public Optional<String> type() {
+        return Optional.ofNullable(this.type);
     }
 
     public static Builder builder() {
@@ -63,12 +65,12 @@ public final class GetMigrationsMigrationCollectionItemDataTransferMediumDetails
     }
     @CustomType.Builder
     public static final class Builder {
-        private String accessKeyId;
-        private String name;
-        private List<GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2ObjectStorageBucket> objectStorageBuckets;
-        private String region;
-        private String secretAccessKey;
-        private String type;
+        private @Nullable String accessKeyId;
+        private @Nullable String name;
+        private @Nullable List<GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2ObjectStorageBucket> objectStorageBuckets;
+        private @Nullable String region;
+        private @Nullable String secretAccessKey;
+        private @Nullable String type;
         public Builder() {}
         public Builder(GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2 defaults) {
     	      Objects.requireNonNull(defaults);
@@ -81,36 +83,36 @@ public final class GetMigrationsMigrationCollectionItemDataTransferMediumDetails
         }
 
         @CustomType.Setter
-        public Builder accessKeyId(String accessKeyId) {
-            this.accessKeyId = Objects.requireNonNull(accessKeyId);
+        public Builder accessKeyId(@Nullable String accessKeyId) {
+            this.accessKeyId = accessKeyId;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder objectStorageBuckets(List<GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2ObjectStorageBucket> objectStorageBuckets) {
-            this.objectStorageBuckets = Objects.requireNonNull(objectStorageBuckets);
+        public Builder objectStorageBuckets(@Nullable List<GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2ObjectStorageBucket> objectStorageBuckets) {
+            this.objectStorageBuckets = objectStorageBuckets;
             return this;
         }
         public Builder objectStorageBuckets(GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2ObjectStorageBucket... objectStorageBuckets) {
             return objectStorageBuckets(List.of(objectStorageBuckets));
         }
         @CustomType.Setter
-        public Builder region(String region) {
-            this.region = Objects.requireNonNull(region);
+        public Builder region(@Nullable String region) {
+            this.region = region;
             return this;
         }
         @CustomType.Setter
-        public Builder secretAccessKey(String secretAccessKey) {
-            this.secretAccessKey = Objects.requireNonNull(secretAccessKey);
+        public Builder secretAccessKey(@Nullable String secretAccessKey) {
+            this.secretAccessKey = secretAccessKey;
             return this;
         }
         @CustomType.Setter
-        public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+        public Builder type(@Nullable String type) {
+            this.type = type;
             return this;
         }
         public GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2 build() {

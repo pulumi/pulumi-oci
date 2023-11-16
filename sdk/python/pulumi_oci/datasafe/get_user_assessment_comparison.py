@@ -49,7 +49,7 @@ class GetUserAssessmentComparisonResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -57,26 +57,17 @@ class GetUserAssessmentComparisonResult:
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the user assessment comparison.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter
-    def summaries(self) -> Sequence['outputs.GetUserAssessmentComparisonSummaryResult']:
-        """
-        List containing maps as values. Example: `{"Operations": [ {"CostCenter": "42"} ] }`
-        """
+    def summaries(self) -> Optional[Sequence['outputs.GetUserAssessmentComparisonSummaryResult']]:
         return pulumi.get(self, "summaries")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the user assessment comparison was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
@@ -103,23 +94,7 @@ def get_user_assessment_comparison(comparison_user_assessment_id: Optional[str] 
                                    user_assessment_id: Optional[str] = None,
                                    opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetUserAssessmentComparisonResult:
     """
-    This data source provides details about a specific User Assessment Comparison resource in Oracle Cloud Infrastructure Data Safe service.
-
-    Gets the details of the comparison report for the user assessments submitted for comparison.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_user_assessment_comparison = oci.DataSafe.get_user_assessment_comparison(comparison_user_assessment_id=oci_data_safe_user_assessment["test_user_assessment"]["id"],
-        user_assessment_id=oci_data_safe_user_assessment["test_user_assessment"]["id"])
-    ```
-
-
-    :param str comparison_user_assessment_id: The OCID of the baseline user assessment.
-    :param str user_assessment_id: The OCID of the user assessment.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['comparisonUserAssessmentId'] = comparison_user_assessment_id
@@ -141,22 +116,6 @@ def get_user_assessment_comparison_output(comparison_user_assessment_id: Optiona
                                           user_assessment_id: Optional[pulumi.Input[str]] = None,
                                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetUserAssessmentComparisonResult]:
     """
-    This data source provides details about a specific User Assessment Comparison resource in Oracle Cloud Infrastructure Data Safe service.
-
-    Gets the details of the comparison report for the user assessments submitted for comparison.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_user_assessment_comparison = oci.DataSafe.get_user_assessment_comparison(comparison_user_assessment_id=oci_data_safe_user_assessment["test_user_assessment"]["id"],
-        user_assessment_id=oci_data_safe_user_assessment["test_user_assessment"]["id"])
-    ```
-
-
-    :param str comparison_user_assessment_id: The OCID of the baseline user assessment.
-    :param str user_assessment_id: The OCID of the user assessment.
+    Use this data source to access information about an existing resource.
     """
     ...

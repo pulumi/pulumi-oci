@@ -51,36 +51,36 @@ export interface GetVmClusterPatchResult {
     /**
      * Actions that can possibly be performed using this patch.
      */
-    readonly availableActions: string[];
+    readonly availableActions?: string[];
     /**
      * The text describing this patch package.
      */
-    readonly description: string;
+    readonly description?: string;
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Action that is currently being performed or was completed last.
      */
-    readonly lastAction: string;
+    readonly lastAction?: string;
     /**
      * A descriptive text associated with the lifecycleState. Typically can contain additional displayable text.
      */
-    readonly lifecycleDetails: string;
+    readonly lifecycleDetails?: string;
     readonly patchId: string;
     /**
      * The current state of the patch as a result of lastAction.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * The date and time that the patch was released.
      */
-    readonly timeReleased: string;
+    readonly timeReleased?: string;
     /**
      * The version of this patch package.
      */
-    readonly version: string;
+    readonly version?: string;
     readonly vmClusterId: string;
 }
 /**

@@ -124,11 +124,11 @@ namespace Pulumi.Oci.Database
         /// <summary>
         /// The lag time between updates to the primary Autonomous Container Database and application of the redo data on the standby Autonomous Container Database, as computed by the reporting database.  Example: `9 seconds`
         /// </summary>
-        public readonly string ApplyLag;
+        public readonly string? ApplyLag;
         /// <summary>
         /// The rate at which redo logs are synchronized between the associated Autonomous Container Databases.  Example: `180 Mb per second`
         /// </summary>
-        public readonly string ApplyRate;
+        public readonly string? ApplyRate;
         public readonly string AutonomousContainerDatabaseDataguardAssociationId;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Container Database that has a relationship with the peer Autonomous Container Database.
@@ -137,103 +137,103 @@ namespace Pulumi.Oci.Database
         /// <summary>
         /// The lag time for my preference based on data loss tolerance in seconds.
         /// </summary>
-        public readonly int FastStartFailOverLagLimitInSeconds;
+        public readonly int? FastStartFailOverLagLimitInSeconds;
         /// <summary>
         /// The OCID of the Autonomous Data Guard created for a given Autonomous Container Database.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Output DataType: boolean. Example : is_automatic_failover_enabled = true.
         /// </summary>
-        public readonly bool IsAutomaticFailoverEnabled;
+        public readonly bool? IsAutomaticFailoverEnabled;
         /// <summary>
         /// Additional information about the current lifecycleState, if available.
         /// </summary>
-        public readonly string LifecycleDetails;
+        public readonly string? LifecycleDetails;
         /// <summary>
         /// The OCID of the peer Autonomous Container Database-Autonomous Data Guard association.
         /// </summary>
-        public readonly string PeerAutonomousContainerDatabaseDataguardAssociationId;
+        public readonly string? PeerAutonomousContainerDatabaseDataguardAssociationId;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer Autonomous Container Database.
         /// </summary>
-        public readonly string PeerAutonomousContainerDatabaseId;
+        public readonly string? PeerAutonomousContainerDatabaseId;
         /// <summary>
         /// The current state of Autonomous Data Guard.
         /// </summary>
-        public readonly string PeerLifecycleState;
+        public readonly string? PeerLifecycleState;
         /// <summary>
         /// The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
         /// </summary>
-        public readonly string PeerRole;
+        public readonly string? PeerRole;
         /// <summary>
         /// The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
         /// </summary>
-        public readonly string ProtectionMode;
+        public readonly string? ProtectionMode;
         /// <summary>
         /// The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
         /// </summary>
-        public readonly string Role;
+        public readonly string? Role;
         /// <summary>
         /// The current state of Autonomous Data Guard.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// The date and time the Autonomous DataGuard association was created.
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The date and time when the last role change action happened.
         /// </summary>
-        public readonly string TimeLastRoleChanged;
+        public readonly string? TimeLastRoleChanged;
         /// <summary>
         /// The date and time of the last update to the apply lag, apply rate, and transport lag values.
         /// </summary>
-        public readonly string TimeLastSynced;
+        public readonly string? TimeLastSynced;
         /// <summary>
         /// The approximate number of seconds of redo data not yet available on the standby Autonomous Container Database, as computed by the reporting database.  Example: `7 seconds`
         /// </summary>
-        public readonly string TransportLag;
+        public readonly string? TransportLag;
 
         [OutputConstructor]
         private GetAutonomousContainerDatabaseDataguardAssociationResult(
-            string applyLag,
+            string? applyLag,
 
-            string applyRate,
+            string? applyRate,
 
             string autonomousContainerDatabaseDataguardAssociationId,
 
             string autonomousContainerDatabaseId,
 
-            int fastStartFailOverLagLimitInSeconds,
+            int? fastStartFailOverLagLimitInSeconds,
 
-            string id,
+            string? id,
 
-            bool isAutomaticFailoverEnabled,
+            bool? isAutomaticFailoverEnabled,
 
-            string lifecycleDetails,
+            string? lifecycleDetails,
 
-            string peerAutonomousContainerDatabaseDataguardAssociationId,
+            string? peerAutonomousContainerDatabaseDataguardAssociationId,
 
-            string peerAutonomousContainerDatabaseId,
+            string? peerAutonomousContainerDatabaseId,
 
-            string peerLifecycleState,
+            string? peerLifecycleState,
 
-            string peerRole,
+            string? peerRole,
 
-            string protectionMode,
+            string? protectionMode,
 
-            string role,
+            string? role,
 
-            string state,
+            string? state,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeLastRoleChanged,
+            string? timeLastRoleChanged,
 
-            string timeLastSynced,
+            string? timeLastSynced,
 
-            string transportLag)
+            string? transportLag)
         {
             ApplyLag = applyLag;
             ApplyRate = applyRate;

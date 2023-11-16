@@ -57,55 +57,55 @@ namespace Pulumi.Oci.NetworkFirewall
         /// (Updatable) Whether to block sessions if the server's certificate uses extensions other than key usage and/or extended key usage.
         /// </summary>
         [Output("areCertificateExtensionsRestricted")]
-        public Output<bool> AreCertificateExtensionsRestricted { get; private set; } = null!;
+        public Output<bool?> AreCertificateExtensionsRestricted { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Whether to automatically append SAN to impersonating certificate if server certificate is missing SAN.
         /// </summary>
         [Output("isAutoIncludeAltName")]
-        public Output<bool> IsAutoIncludeAltName { get; private set; } = null!;
+        public Output<bool?> IsAutoIncludeAltName { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Whether to block sessions if server's certificate is expired.
         /// </summary>
         [Output("isExpiredCertificateBlocked")]
-        public Output<bool> IsExpiredCertificateBlocked { get; private set; } = null!;
+        public Output<bool?> IsExpiredCertificateBlocked { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Whether to block sessions if the firewall is temporarily unable to decrypt their traffic.
         /// </summary>
         [Output("isOutOfCapacityBlocked")]
-        public Output<bool> IsOutOfCapacityBlocked { get; private set; } = null!;
+        public Output<bool?> IsOutOfCapacityBlocked { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Whether to block sessions if the revocation status check for server's certificate does not succeed within the maximum allowed time (defaulting to 5 seconds).
         /// </summary>
         [Output("isRevocationStatusTimeoutBlocked")]
-        public Output<bool> IsRevocationStatusTimeoutBlocked { get; private set; } = null!;
+        public Output<bool?> IsRevocationStatusTimeoutBlocked { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Whether to block sessions if the revocation status check for server's certificate results in "unknown".
         /// </summary>
         [Output("isUnknownRevocationStatusBlocked")]
-        public Output<bool> IsUnknownRevocationStatusBlocked { get; private set; } = null!;
+        public Output<bool?> IsUnknownRevocationStatusBlocked { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Whether to block sessions if SSL cipher suite is not supported.
         /// </summary>
         [Output("isUnsupportedCipherBlocked")]
-        public Output<bool> IsUnsupportedCipherBlocked { get; private set; } = null!;
+        public Output<bool?> IsUnsupportedCipherBlocked { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Whether to block sessions if SSL version is not supported.
         /// </summary>
         [Output("isUnsupportedVersionBlocked")]
-        public Output<bool> IsUnsupportedVersionBlocked { get; private set; } = null!;
+        public Output<bool?> IsUnsupportedVersionBlocked { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Whether to block sessions if server's certificate is issued by an untrusted certificate authority (CA).
         /// </summary>
         [Output("isUntrustedIssuerBlocked")]
-        public Output<bool> IsUntrustedIssuerBlocked { get; private set; } = null!;
+        public Output<bool?> IsUntrustedIssuerBlocked { get; private set; } = null!;
 
         /// <summary>
         /// Name of the decryption profile.
@@ -127,7 +127,7 @@ namespace Pulumi.Oci.NetworkFirewall
         /// OCID of the Network Firewall Policy this decryption profile belongs to.
         /// </summary>
         [Output("parentResourceId")]
-        public Output<string> ParentResourceId { get; private set; } = null!;
+        public Output<string?> ParentResourceId { get; private set; } = null!;
 
         /// <summary>
         /// Describes the type of decryption profile. The accepted values are - * SSL_FORWARD_PROXY * SSL_INBOUND_INSPECTION

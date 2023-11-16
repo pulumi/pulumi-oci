@@ -60,11 +60,11 @@ export interface GetConsoleHistoryDataResult {
     /**
      * The console history data.
      */
-    readonly data: string;
+    readonly data?: string;
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly length?: number;
     readonly offset?: number;
 }

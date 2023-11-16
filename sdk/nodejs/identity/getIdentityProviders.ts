@@ -77,11 +77,11 @@ export interface GetIdentityProvidersResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The list of identity_providers.
      */
-    readonly identityProviders: outputs.Identity.GetIdentityProvidersIdentityProvider[];
+    readonly identityProviders?: outputs.Identity.GetIdentityProvidersIdentityProvider[];
     /**
      * The name you assign to the `IdentityProvider` during creation. The name must be unique across all `IdentityProvider` objects in the tenancy and cannot be changed. This is the name federated users see when choosing which identity provider to use when signing in to the Oracle Cloud Infrastructure Console.
      */

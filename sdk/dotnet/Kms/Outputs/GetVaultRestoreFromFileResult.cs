@@ -16,23 +16,23 @@ namespace Pulumi.Oci.Kms.Outputs
         /// <summary>
         /// content length of vault's backup binary file
         /// </summary>
-        public readonly string ContentLength;
+        public readonly string? ContentLength;
         /// <summary>
         /// content md5 hashed value of vault's backup file
         /// </summary>
-        public readonly string ContentMd5;
+        public readonly string? ContentMd5;
         /// <summary>
         /// Vault backup file content
         /// </summary>
-        public readonly string RestoreVaultFromFileDetails;
+        public readonly string? RestoreVaultFromFileDetails;
 
         [OutputConstructor]
         private GetVaultRestoreFromFileResult(
-            string contentLength,
+            string? contentLength,
 
-            string contentMd5,
+            string? contentMd5,
 
-            string restoreVaultFromFileDetails)
+            string? restoreVaultFromFileDetails)
         {
             ContentLength = contentLength;
             ContentMd5 = contentMd5;

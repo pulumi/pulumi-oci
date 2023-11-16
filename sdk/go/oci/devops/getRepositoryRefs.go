@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Repository Refs in Oracle Cloud Infrastructure Devops service.
@@ -73,7 +72,7 @@ type GetRepositoryRefsResult struct {
 	CommitId *string                   `pulumi:"commitId"`
 	Filters  []GetRepositoryRefsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Unique reference name inside a repository.
 	RefName *string `pulumi:"refName"`
 	// The type of reference (BRANCH or TAG).
@@ -129,12 +128,6 @@ func (o GetRepositoryRefsResultOutput) ToGetRepositoryRefsResultOutputWithContex
 	return o
 }
 
-func (o GetRepositoryRefsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetRepositoryRefsResult] {
-	return pulumix.Output[GetRepositoryRefsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Commit ID pointed to by the new branch.
 func (o GetRepositoryRefsResultOutput) CommitId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetRepositoryRefsResult) *string { return v.CommitId }).(pulumi.StringPtrOutput)
@@ -145,8 +138,8 @@ func (o GetRepositoryRefsResultOutput) Filters() GetRepositoryRefsFilterArrayOut
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetRepositoryRefsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRepositoryRefsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetRepositoryRefsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRepositoryRefsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Unique reference name inside a repository.

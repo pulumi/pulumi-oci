@@ -6,6 +6,8 @@ package com.pulumi.oci.DataFlow.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetPrivateEndpointScanDetail {
@@ -13,27 +15,27 @@ public final class GetPrivateEndpointScanDetail {
      * @return A fully-qualified domain name (FQDN).
      * 
      */
-    private String fqdn;
+    private @Nullable String fqdn;
     /**
      * @return The port number of the FQDN
      * 
      */
-    private String port;
+    private @Nullable String port;
 
     private GetPrivateEndpointScanDetail() {}
     /**
      * @return A fully-qualified domain name (FQDN).
      * 
      */
-    public String fqdn() {
-        return this.fqdn;
+    public Optional<String> fqdn() {
+        return Optional.ofNullable(this.fqdn);
     }
     /**
      * @return The port number of the FQDN
      * 
      */
-    public String port() {
-        return this.port;
+    public Optional<String> port() {
+        return Optional.ofNullable(this.port);
     }
 
     public static Builder builder() {
@@ -45,8 +47,8 @@ public final class GetPrivateEndpointScanDetail {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String fqdn;
-        private String port;
+        private @Nullable String fqdn;
+        private @Nullable String port;
         public Builder() {}
         public Builder(GetPrivateEndpointScanDetail defaults) {
     	      Objects.requireNonNull(defaults);
@@ -55,13 +57,13 @@ public final class GetPrivateEndpointScanDetail {
         }
 
         @CustomType.Setter
-        public Builder fqdn(String fqdn) {
-            this.fqdn = Objects.requireNonNull(fqdn);
+        public Builder fqdn(@Nullable String fqdn) {
+            this.fqdn = fqdn;
             return this;
         }
         @CustomType.Setter
-        public Builder port(String port) {
-            this.port = Objects.requireNonNull(port);
+        public Builder port(@Nullable String port) {
+            this.port = port;
             return this;
         }
         public GetPrivateEndpointScanDetail build() {

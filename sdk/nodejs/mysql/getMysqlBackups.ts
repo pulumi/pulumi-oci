@@ -80,7 +80,7 @@ export interface GetMysqlBackupsResult {
     /**
      * The list of backups.
      */
-    readonly backups: outputs.Mysql.GetMysqlBackupsBackup[];
+    readonly backups?: outputs.Mysql.GetMysqlBackupsBackup[];
     /**
      * The OCID of the compartment the DB System belongs in.
      */
@@ -101,7 +101,7 @@ export interface GetMysqlBackupsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The state of the backup.
      */

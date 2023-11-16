@@ -44,11 +44,11 @@ export interface GetMigrationObjectTypesResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The list of migration_object_type_summary_collection.
      */
-    readonly migrationObjectTypeSummaryCollections: outputs.DatabaseMigration.GetMigrationObjectTypesMigrationObjectTypeSummaryCollection[];
+    readonly migrationObjectTypeSummaryCollections?: outputs.DatabaseMigration.GetMigrationObjectTypesMigrationObjectTypeSummaryCollection[];
 }
 /**
  * This data source provides the list of Migration Object Types in Oracle Cloud Infrastructure Database Migration service.

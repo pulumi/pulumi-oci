@@ -6,6 +6,8 @@ package com.pulumi.oci.Marketplace.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetPublicationsPublicationSupportedOperatingSystem {
@@ -13,15 +15,15 @@ public final class GetPublicationsPublicationSupportedOperatingSystem {
      * @return The name of the publication.
      * 
      */
-    private String name;
+    private @Nullable String name;
 
     private GetPublicationsPublicationSupportedOperatingSystem() {}
     /**
      * @return The name of the publication.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
 
     public static Builder builder() {
@@ -33,7 +35,7 @@ public final class GetPublicationsPublicationSupportedOperatingSystem {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String name;
+        private @Nullable String name;
         public Builder() {}
         public Builder(GetPublicationsPublicationSupportedOperatingSystem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -41,8 +43,8 @@ public final class GetPublicationsPublicationSupportedOperatingSystem {
         }
 
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         public GetPublicationsPublicationSupportedOperatingSystem build() {

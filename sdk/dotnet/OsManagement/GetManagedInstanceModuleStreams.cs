@@ -236,7 +236,7 @@ namespace Pulumi.Oci.OsManagement
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         public readonly string ManagedInstanceId;
         /// <summary>
         /// The name of the module that contains the stream profile
@@ -258,7 +258,7 @@ namespace Pulumi.Oci.OsManagement
 
             ImmutableArray<Outputs.GetManagedInstanceModuleStreamsFilterResult> filters,
 
-            string id,
+            string? id,
 
             string managedInstanceId,
 

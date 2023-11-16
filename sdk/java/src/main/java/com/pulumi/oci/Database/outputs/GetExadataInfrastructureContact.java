@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetExadataInfrastructureContact {
@@ -14,63 +16,63 @@ public final class GetExadataInfrastructureContact {
      * @return The email for the Exadata Infrastructure contact.
      * 
      */
-    private String email;
+    private @Nullable String email;
     /**
      * @return If `true`, this Exadata Infrastructure contact is a valid My Oracle Support (MOS) contact. If `false`, this Exadata Infrastructure contact is not a valid MOS contact.
      * 
      */
-    private Boolean isContactMosValidated;
+    private @Nullable Boolean isContactMosValidated;
     /**
      * @return If `true`, this Exadata Infrastructure contact is a primary contact. If `false`, this Exadata Infrastructure is a secondary contact.
      * 
      */
-    private Boolean isPrimary;
+    private @Nullable Boolean isPrimary;
     /**
      * @return Name of the month of the year.
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return The phone number for the Exadata Infrastructure contact.
      * 
      */
-    private String phoneNumber;
+    private @Nullable String phoneNumber;
 
     private GetExadataInfrastructureContact() {}
     /**
      * @return The email for the Exadata Infrastructure contact.
      * 
      */
-    public String email() {
-        return this.email;
+    public Optional<String> email() {
+        return Optional.ofNullable(this.email);
     }
     /**
      * @return If `true`, this Exadata Infrastructure contact is a valid My Oracle Support (MOS) contact. If `false`, this Exadata Infrastructure contact is not a valid MOS contact.
      * 
      */
-    public Boolean isContactMosValidated() {
-        return this.isContactMosValidated;
+    public Optional<Boolean> isContactMosValidated() {
+        return Optional.ofNullable(this.isContactMosValidated);
     }
     /**
      * @return If `true`, this Exadata Infrastructure contact is a primary contact. If `false`, this Exadata Infrastructure is a secondary contact.
      * 
      */
-    public Boolean isPrimary() {
-        return this.isPrimary;
+    public Optional<Boolean> isPrimary() {
+        return Optional.ofNullable(this.isPrimary);
     }
     /**
      * @return Name of the month of the year.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return The phone number for the Exadata Infrastructure contact.
      * 
      */
-    public String phoneNumber() {
-        return this.phoneNumber;
+    public Optional<String> phoneNumber() {
+        return Optional.ofNullable(this.phoneNumber);
     }
 
     public static Builder builder() {
@@ -82,11 +84,11 @@ public final class GetExadataInfrastructureContact {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String email;
-        private Boolean isContactMosValidated;
-        private Boolean isPrimary;
-        private String name;
-        private String phoneNumber;
+        private @Nullable String email;
+        private @Nullable Boolean isContactMosValidated;
+        private @Nullable Boolean isPrimary;
+        private @Nullable String name;
+        private @Nullable String phoneNumber;
         public Builder() {}
         public Builder(GetExadataInfrastructureContact defaults) {
     	      Objects.requireNonNull(defaults);
@@ -98,28 +100,28 @@ public final class GetExadataInfrastructureContact {
         }
 
         @CustomType.Setter
-        public Builder email(String email) {
-            this.email = Objects.requireNonNull(email);
+        public Builder email(@Nullable String email) {
+            this.email = email;
             return this;
         }
         @CustomType.Setter
-        public Builder isContactMosValidated(Boolean isContactMosValidated) {
-            this.isContactMosValidated = Objects.requireNonNull(isContactMosValidated);
+        public Builder isContactMosValidated(@Nullable Boolean isContactMosValidated) {
+            this.isContactMosValidated = isContactMosValidated;
             return this;
         }
         @CustomType.Setter
-        public Builder isPrimary(Boolean isPrimary) {
-            this.isPrimary = Objects.requireNonNull(isPrimary);
+        public Builder isPrimary(@Nullable Boolean isPrimary) {
+            this.isPrimary = isPrimary;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder phoneNumber(String phoneNumber) {
-            this.phoneNumber = Objects.requireNonNull(phoneNumber);
+        public Builder phoneNumber(@Nullable String phoneNumber) {
+            this.phoneNumber = phoneNumber;
             return this;
         }
         public GetExadataInfrastructureContact build() {

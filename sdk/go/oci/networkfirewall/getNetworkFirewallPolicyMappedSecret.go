@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Network Firewall Policy Mapped Secret resource in Oracle Cloud Infrastructure Network Firewall service.
@@ -35,20 +34,20 @@ type LookupNetworkFirewallPolicyMappedSecretArgs struct {
 
 // A collection of values returned by getNetworkFirewallPolicyMappedSecret.
 type LookupNetworkFirewallPolicyMappedSecretResult struct {
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Name of the secret.
 	Name                    string `pulumi:"name"`
 	NetworkFirewallPolicyId string `pulumi:"networkFirewallPolicyId"`
 	// OCID of the Network Firewall Policy this Mapped Secret belongs to.
-	ParentResourceId string `pulumi:"parentResourceId"`
+	ParentResourceId *string `pulumi:"parentResourceId"`
 	// Source of the secrets, where the secrets are stored.
-	Source string `pulumi:"source"`
+	Source *string `pulumi:"source"`
 	// Type of the secrets mapped based on the policy.
-	Type string `pulumi:"type"`
+	Type *string `pulumi:"type"`
 	// OCID for the Vault Secret to be used.
-	VaultSecretId string `pulumi:"vaultSecretId"`
+	VaultSecretId *string `pulumi:"vaultSecretId"`
 	// Version number of the secret to be used.
-	VersionNumber int `pulumi:"versionNumber"`
+	VersionNumber *int `pulumi:"versionNumber"`
 }
 
 func LookupNetworkFirewallPolicyMappedSecretOutput(ctx *pulumi.Context, args LookupNetworkFirewallPolicyMappedSecretOutputArgs, opts ...pulumi.InvokeOption) LookupNetworkFirewallPolicyMappedSecretResultOutput {
@@ -91,14 +90,8 @@ func (o LookupNetworkFirewallPolicyMappedSecretResultOutput) ToLookupNetworkFire
 	return o
 }
 
-func (o LookupNetworkFirewallPolicyMappedSecretResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupNetworkFirewallPolicyMappedSecretResult] {
-	return pulumix.Output[LookupNetworkFirewallPolicyMappedSecretResult]{
-		OutputState: o.OutputState,
-	}
-}
-
-func (o LookupNetworkFirewallPolicyMappedSecretResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupNetworkFirewallPolicyMappedSecretResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupNetworkFirewallPolicyMappedSecretResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupNetworkFirewallPolicyMappedSecretResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Name of the secret.
@@ -111,28 +104,28 @@ func (o LookupNetworkFirewallPolicyMappedSecretResultOutput) NetworkFirewallPoli
 }
 
 // OCID of the Network Firewall Policy this Mapped Secret belongs to.
-func (o LookupNetworkFirewallPolicyMappedSecretResultOutput) ParentResourceId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupNetworkFirewallPolicyMappedSecretResult) string { return v.ParentResourceId }).(pulumi.StringOutput)
+func (o LookupNetworkFirewallPolicyMappedSecretResultOutput) ParentResourceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupNetworkFirewallPolicyMappedSecretResult) *string { return v.ParentResourceId }).(pulumi.StringPtrOutput)
 }
 
 // Source of the secrets, where the secrets are stored.
-func (o LookupNetworkFirewallPolicyMappedSecretResultOutput) Source() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupNetworkFirewallPolicyMappedSecretResult) string { return v.Source }).(pulumi.StringOutput)
+func (o LookupNetworkFirewallPolicyMappedSecretResultOutput) Source() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupNetworkFirewallPolicyMappedSecretResult) *string { return v.Source }).(pulumi.StringPtrOutput)
 }
 
 // Type of the secrets mapped based on the policy.
-func (o LookupNetworkFirewallPolicyMappedSecretResultOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupNetworkFirewallPolicyMappedSecretResult) string { return v.Type }).(pulumi.StringOutput)
+func (o LookupNetworkFirewallPolicyMappedSecretResultOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupNetworkFirewallPolicyMappedSecretResult) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
 
 // OCID for the Vault Secret to be used.
-func (o LookupNetworkFirewallPolicyMappedSecretResultOutput) VaultSecretId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupNetworkFirewallPolicyMappedSecretResult) string { return v.VaultSecretId }).(pulumi.StringOutput)
+func (o LookupNetworkFirewallPolicyMappedSecretResultOutput) VaultSecretId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupNetworkFirewallPolicyMappedSecretResult) *string { return v.VaultSecretId }).(pulumi.StringPtrOutput)
 }
 
 // Version number of the secret to be used.
-func (o LookupNetworkFirewallPolicyMappedSecretResultOutput) VersionNumber() pulumi.IntOutput {
-	return o.ApplyT(func(v LookupNetworkFirewallPolicyMappedSecretResult) int { return v.VersionNumber }).(pulumi.IntOutput)
+func (o LookupNetworkFirewallPolicyMappedSecretResultOutput) VersionNumber() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LookupNetworkFirewallPolicyMappedSecretResult) *int { return v.VersionNumber }).(pulumi.IntPtrOutput)
 }
 
 func init() {

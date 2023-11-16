@@ -315,7 +315,7 @@ namespace Pulumi.Oci.DataSafe
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The OCID of the security policy corresponding to the SQL firewall policy.
         /// </summary>
@@ -350,7 +350,7 @@ namespace Pulumi.Oci.DataSafe
 
             ImmutableArray<Outputs.GetSqlFirewallPoliciesFilterResult> filters,
 
-            string id,
+            string? id,
 
             string? securityPolicyId,
 

@@ -15,6 +15,7 @@ import java.lang.Integer;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -121,98 +122,98 @@ public class Vtap extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
     @Export(name="displayName", refs={String.class}, tree="[0]")
-    private Output<String> displayName;
+    private Output</* @Nullable */ String> displayName;
 
     /**
      * @return (Updatable) A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    public Output<String> displayName() {
-        return this.displayName;
+    public Output<Optional<String>> displayName() {
+        return Codegen.optional(this.displayName);
     }
     /**
      * (Updatable) Defines an encapsulation header type for the VTAP&#39;s mirrored traffic.
      * 
      */
     @Export(name="encapsulationProtocol", refs={String.class}, tree="[0]")
-    private Output<String> encapsulationProtocol;
+    private Output</* @Nullable */ String> encapsulationProtocol;
 
     /**
      * @return (Updatable) Defines an encapsulation header type for the VTAP&#39;s mirrored traffic.
      * 
      */
-    public Output<String> encapsulationProtocol() {
-        return this.encapsulationProtocol;
+    public Output<Optional<String>> encapsulationProtocol() {
+        return Codegen.optional(this.encapsulationProtocol);
     }
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * (Updatable) Used to start or stop a `Vtap` resource.
      * 
      */
     @Export(name="isVtapEnabled", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isVtapEnabled;
+    private Output</* @Nullable */ Boolean> isVtapEnabled;
 
     /**
      * @return (Updatable) Used to start or stop a `Vtap` resource.
      * 
      */
-    public Output<Boolean> isVtapEnabled() {
-        return this.isVtapEnabled;
+    public Output<Optional<Boolean>> isVtapEnabled() {
+        return Codegen.optional(this.isVtapEnabled);
     }
     /**
      * The VTAP&#39;s current running state.
      * 
      */
     @Export(name="lifecycleStateDetails", refs={String.class}, tree="[0]")
-    private Output<String> lifecycleStateDetails;
+    private Output</* @Nullable */ String> lifecycleStateDetails;
 
     /**
      * @return The VTAP&#39;s current running state.
      * 
      */
-    public Output<String> lifecycleStateDetails() {
-        return this.lifecycleStateDetails;
+    public Output<Optional<String>> lifecycleStateDetails() {
+        return Codegen.optional(this.lifecycleStateDetails);
     }
     /**
      * (Updatable) The maximum size of the packets to be included in the filter.
      * 
      */
     @Export(name="maxPacketSize", refs={Integer.class}, tree="[0]")
-    private Output<Integer> maxPacketSize;
+    private Output</* @Nullable */ Integer> maxPacketSize;
 
     /**
      * @return (Updatable) The maximum size of the packets to be included in the filter.
      * 
      */
-    public Output<Integer> maxPacketSize() {
-        return this.maxPacketSize;
+    public Output<Optional<Integer>> maxPacketSize() {
+        return Codegen.optional(this.maxPacketSize);
     }
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source point where packets are captured.
@@ -233,126 +234,126 @@ public class Vtap extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="sourcePrivateEndpointIp", refs={String.class}, tree="[0]")
-    private Output<String> sourcePrivateEndpointIp;
+    private Output</* @Nullable */ String> sourcePrivateEndpointIp;
 
     /**
      * @return (Updatable) The IP Address of the source private endpoint.
      * 
      */
-    public Output<String> sourcePrivateEndpointIp() {
-        return this.sourcePrivateEndpointIp;
+    public Output<Optional<String>> sourcePrivateEndpointIp() {
+        return Codegen.optional(this.sourcePrivateEndpointIp);
     }
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet that source private endpoint belongs to.
      * 
      */
     @Export(name="sourcePrivateEndpointSubnetId", refs={String.class}, tree="[0]")
-    private Output<String> sourcePrivateEndpointSubnetId;
+    private Output</* @Nullable */ String> sourcePrivateEndpointSubnetId;
 
     /**
      * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet that source private endpoint belongs to.
      * 
      */
-    public Output<String> sourcePrivateEndpointSubnetId() {
-        return this.sourcePrivateEndpointSubnetId;
+    public Output<Optional<String>> sourcePrivateEndpointSubnetId() {
+        return Codegen.optional(this.sourcePrivateEndpointSubnetId);
     }
     /**
      * (Updatable) The source type for the VTAP.
      * 
      */
     @Export(name="sourceType", refs={String.class}, tree="[0]")
-    private Output<String> sourceType;
+    private Output</* @Nullable */ String> sourceType;
 
     /**
      * @return (Updatable) The source type for the VTAP.
      * 
      */
-    public Output<String> sourceType() {
-        return this.sourceType;
+    public Output<Optional<String>> sourceType() {
+        return Codegen.optional(this.sourceType);
     }
     /**
      * The VTAP&#39;s administrative lifecycle state.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The VTAP&#39;s administrative lifecycle state.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the destination resource where mirrored packets are sent.
      * 
      */
     @Export(name="targetId", refs={String.class}, tree="[0]")
-    private Output<String> targetId;
+    private Output</* @Nullable */ String> targetId;
 
     /**
      * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the destination resource where mirrored packets are sent.
      * 
      */
-    public Output<String> targetId() {
-        return this.targetId;
+    public Output<Optional<String>> targetId() {
+        return Codegen.optional(this.targetId);
     }
     /**
      * (Updatable) The IP address of the destination resource where mirrored packets are sent.
      * 
      */
     @Export(name="targetIp", refs={String.class}, tree="[0]")
-    private Output<String> targetIp;
+    private Output</* @Nullable */ String> targetIp;
 
     /**
      * @return (Updatable) The IP address of the destination resource where mirrored packets are sent.
      * 
      */
-    public Output<String> targetIp() {
-        return this.targetIp;
+    public Output<Optional<String>> targetIp() {
+        return Codegen.optional(this.targetIp);
     }
     /**
      * (Updatable) The target type for the VTAP.
      * 
      */
     @Export(name="targetType", refs={String.class}, tree="[0]")
-    private Output<String> targetType;
+    private Output</* @Nullable */ String> targetType;
 
     /**
      * @return (Updatable) The target type for the VTAP.
      * 
      */
-    public Output<String> targetType() {
-        return this.targetType;
+    public Output<Optional<String>> targetType() {
+        return Codegen.optional(this.targetType);
     }
     /**
      * The date and time the VTAP was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2020-08-25T21:10:29.600Z`
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The date and time the VTAP was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2020-08-25T21:10:29.600Z`
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * (Updatable) Used to control the priority of traffic. It is an optional field. If it not passed, the value is DEFAULT
      * 
      */
     @Export(name="trafficMode", refs={String.class}, tree="[0]")
-    private Output<String> trafficMode;
+    private Output</* @Nullable */ String> trafficMode;
 
     /**
      * @return (Updatable) Used to control the priority of traffic. It is an optional field. If it not passed, the value is DEFAULT
      * 
      */
-    public Output<String> trafficMode() {
-        return this.trafficMode;
+    public Output<Optional<String>> trafficMode() {
+        return Codegen.optional(this.trafficMode);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN containing the `Vtap` resource.
@@ -376,7 +377,7 @@ public class Vtap extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="vxlanNetworkIdentifier", refs={String.class}, tree="[0]")
-    private Output<String> vxlanNetworkIdentifier;
+    private Output</* @Nullable */ String> vxlanNetworkIdentifier;
 
     /**
      * @return (Updatable) The virtual extensible LAN (VXLAN) network identifier (or VXLAN segment ID) that uniquely identifies the VXLAN.
@@ -385,8 +386,8 @@ public class Vtap extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Output<String> vxlanNetworkIdentifier() {
-        return this.vxlanNetworkIdentifier;
+    public Output<Optional<String>> vxlanNetworkIdentifier() {
+        return Codegen.optional(this.vxlanNetworkIdentifier);
     }
 
     /**

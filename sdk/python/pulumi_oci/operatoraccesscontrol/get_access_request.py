@@ -121,10 +121,7 @@ class GetAccessRequestResult:
 
     @property
     @pulumi.getter(name="accessReasonSummary")
-    def access_reason_summary(self) -> str:
-        """
-        Summary comment by the operator creating the access request.
-        """
+    def access_reason_summary(self) -> Optional[str]:
         return pulumi.get(self, "access_reason_summary")
 
     @property
@@ -134,79 +131,52 @@ class GetAccessRequestResult:
 
     @property
     @pulumi.getter(name="actionRequestsLists")
-    def action_requests_lists(self) -> Sequence[str]:
-        """
-        List of operator actions for which approval is sought by the operator user.
-        """
+    def action_requests_lists(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "action_requests_lists")
 
     @property
     @pulumi.getter(name="approverComment")
-    def approver_comment(self) -> str:
-        """
-        The last recent Comment entered by the approver of the request.
-        """
+    def approver_comment(self) -> Optional[str]:
         return pulumi.get(self, "approver_comment")
 
     @property
     @pulumi.getter(name="auditTypes")
-    def audit_types(self) -> Sequence[str]:
-        """
-        Specifies the type of auditing to be enabled. There are two levels of auditing: command-level and keystroke-level.  By default, auditing is enabled at the command level i.e., each command issued by the operator is audited. When keystroke-level is chosen,  in addition to command level logging, key strokes are also logged.
-        """
+    def audit_types(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "audit_types")
 
     @property
     @pulumi.getter(name="closureComment")
-    def closure_comment(self) -> str:
-        """
-        The comment entered by the operator while closing the request.
-        """
+    def closure_comment(self) -> Optional[str]:
         return pulumi.get(self, "closure_comment")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The OCID of the compartment that contains the access request.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace.
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def duration(self) -> int:
-        """
-        Duration in hours for which access is sought on the target resource.
-        """
+    def duration(self) -> Optional[int]:
         return pulumi.get(self, "duration")
 
     @property
     @pulumi.getter(name="extendDuration")
-    def extend_duration(self) -> int:
-        """
-        Duration in hours for which extension access is sought on the target resource.
-        """
+    def extend_duration(self) -> Optional[int]:
         return pulumi.get(self, "extend_duration")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -214,162 +184,102 @@ class GetAccessRequestResult:
 
     @property
     @pulumi.getter(name="isAutoApproved")
-    def is_auto_approved(self) -> bool:
-        """
-        Whether the access request was automatically approved.
-        """
+    def is_auto_approved(self) -> Optional[bool]:
         return pulumi.get(self, "is_auto_approved")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        more in detail about the lifeCycleState.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="opctlAdditionalMessage")
-    def opctl_additional_message(self) -> str:
-        """
-        Additional message specific to the access request that can be specified by the approver at the time of approval.
-        """
+    def opctl_additional_message(self) -> Optional[str]:
         return pulumi.get(self, "opctl_additional_message")
 
     @property
     @pulumi.getter(name="opctlId")
-    def opctl_id(self) -> str:
-        """
-        The OCID of the operator control governing the target resource.
-        """
+    def opctl_id(self) -> Optional[str]:
         return pulumi.get(self, "opctl_id")
 
     @property
     @pulumi.getter(name="opctlName")
-    def opctl_name(self) -> str:
-        """
-        Name of the Operator control governing the target resource.
-        """
+    def opctl_name(self) -> Optional[str]:
         return pulumi.get(self, "opctl_name")
 
     @property
     @pulumi.getter(name="operatorId")
-    def operator_id(self) -> str:
-        """
-        A unique identifier associated with the operator who raised the request. This identifier can not be used directly to identify the operator. You need to provide this identifier if you would like Oracle to provide additional information about the operator action within Oracle tenancy.
-        """
+    def operator_id(self) -> Optional[str]:
         return pulumi.get(self, "operator_id")
 
     @property
     @pulumi.getter
-    def reason(self) -> str:
-        """
-        Summary reason for which the operator is requesting access on the target resource.
-        """
+    def reason(self) -> Optional[str]:
         return pulumi.get(self, "reason")
 
     @property
     @pulumi.getter(name="requestId")
-    def request_id(self) -> str:
-        """
-        This is an automatic identifier generated by the system which is easier for human comprehension.
-        """
+    def request_id(self) -> Optional[str]:
         return pulumi.get(self, "request_id")
 
     @property
     @pulumi.getter(name="resourceId")
-    def resource_id(self) -> str:
-        """
-        The OCID of the target resource associated with the access request. The operator raises an access request to get approval to  access the target resource.
-        """
+    def resource_id(self) -> Optional[str]:
         return pulumi.get(self, "resource_id")
 
     @property
     @pulumi.getter(name="resourceName")
-    def resource_name(self) -> str:
-        """
-        The name of the target resource.
-        """
+    def resource_name(self) -> Optional[str]:
         return pulumi.get(self, "resource_name")
 
     @property
     @pulumi.getter(name="resourceType")
-    def resource_type(self) -> str:
-        """
-        resourceType for which the AccessRequest is applicable
-        """
+    def resource_type(self) -> Optional[str]:
         return pulumi.get(self, "resource_type")
 
     @property
     @pulumi.getter
-    def severity(self) -> str:
-        """
-        Priority assigned to the access request by the operator
-        """
+    def severity(self) -> Optional[str]:
         return pulumi.get(self, "severity")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the AccessRequest.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="subResourceLists")
-    def sub_resource_lists(self) -> Sequence[str]:
-        """
-        The subresources requested for approval.
-        """
+    def sub_resource_lists(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "sub_resource_lists")
 
     @property
     @pulumi.getter(name="systemMessage")
-    def system_message(self) -> str:
-        """
-        System message that will be displayed to the operator at login to the target resource.
-        """
+    def system_message(self) -> Optional[str]:
         return pulumi.get(self, "system_message")
 
     @property
     @pulumi.getter(name="timeOfCreation")
-    def time_of_creation(self) -> str:
-        """
-        Time when the access request was created in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format. Example: '2020-05-22T21:10:29.600Z'
-        """
+    def time_of_creation(self) -> Optional[str]:
         return pulumi.get(self, "time_of_creation")
 
     @property
     @pulumi.getter(name="timeOfModification")
-    def time_of_modification(self) -> str:
-        """
-        Time when the access request was last modified in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format. Example: '2020-05-22T21:10:29.600Z'
-        """
+    def time_of_modification(self) -> Optional[str]:
         return pulumi.get(self, "time_of_modification")
 
     @property
     @pulumi.getter(name="timeOfUserCreation")
-    def time_of_user_creation(self) -> str:
-        """
-        The time when access request is scheduled to be approved in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.Example: '2020-05-22T21:10:29.600Z'
-        """
+    def time_of_user_creation(self) -> Optional[str]:
         return pulumi.get(self, "time_of_user_creation")
 
     @property
     @pulumi.getter(name="userId")
-    def user_id(self) -> str:
-        """
-        The OCID of the user that last modified the access request.
-        """
+    def user_id(self) -> Optional[str]:
         return pulumi.get(self, "user_id")
 
     @property
     @pulumi.getter(name="workflowIds")
-    def workflow_ids(self) -> Sequence[str]:
-        """
-        The OCID of the workflow associated with the access request. This is needed if you want to contact Oracle Support for a stuck access request or for an access request that encounters an internal error.
-        """
+    def workflow_ids(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "workflow_ids")
 
 
@@ -416,21 +326,7 @@ class AwaitableGetAccessRequestResult(GetAccessRequestResult):
 def get_access_request(access_request_id: Optional[str] = None,
                        opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAccessRequestResult:
     """
-    This data source provides details about a specific Access Request resource in Oracle Cloud Infrastructure Operator Access Control service.
-
-    Gets details of an access request.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_access_request = oci.OperatorAccessControl.get_access_request(access_request_id=oci_operator_access_control_access_request["test_access_request"]["id"])
-    ```
-
-
-    :param str access_request_id: unique AccessRequest identifier
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['accessRequestId'] = access_request_id
@@ -476,20 +372,6 @@ def get_access_request(access_request_id: Optional[str] = None,
 def get_access_request_output(access_request_id: Optional[pulumi.Input[str]] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAccessRequestResult]:
     """
-    This data source provides details about a specific Access Request resource in Oracle Cloud Infrastructure Operator Access Control service.
-
-    Gets details of an access request.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_access_request = oci.OperatorAccessControl.get_access_request(access_request_id=oci_operator_access_control_access_request["test_access_request"]["id"])
-    ```
-
-
-    :param str access_request_id: unique AccessRequest identifier
+    Use this data source to access information about an existing resource.
     """
     ...

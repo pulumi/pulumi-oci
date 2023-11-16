@@ -45,26 +45,17 @@ class GetAlertRulesResult:
 
     @property
     @pulumi.getter(name="alertRules")
-    def alert_rules(self) -> Sequence['outputs.GetAlertRulesAlertRuleResult']:
-        """
-        The list of alert_rules.
-        """
+    def alert_rules(self) -> Optional[Sequence['outputs.GetAlertRulesAlertRuleResult']]:
         return pulumi.get(self, "alert_rules")
 
     @property
     @pulumi.getter(name="budgetId")
     def budget_id(self) -> str:
-        """
-        The OCID of the budget.
-        """
         return pulumi.get(self, "budget_id")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        The name of the alert rule. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -74,7 +65,7 @@ class GetAlertRulesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -83,9 +74,6 @@ class GetAlertRulesResult:
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the alert rule.
-        """
         return pulumi.get(self, "state")
 
 
@@ -109,25 +97,7 @@ def get_alert_rules(budget_id: Optional[str] = None,
                     state: Optional[str] = None,
                     opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAlertRulesResult:
     """
-    This data source provides the list of Alert Rules in Oracle Cloud Infrastructure Budget service.
-
-    Returns a list of Alert Rules for a specified budget.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_alert_rules = oci.Budget.get_alert_rules(budget_id=oci_budget_budget["test_budget"]["id"],
-        display_name=var["alert_rule_display_name"],
-        state=var["alert_rule_state"])
-    ```
-
-
-    :param str budget_id: The unique budget OCID.
-    :param str display_name: A user-friendly name. This does not have to be unique, and it's changeable.  Example: `My new resource`
-    :param str state: The current state of the resource to filter by.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['budgetId'] = budget_id
@@ -153,24 +123,6 @@ def get_alert_rules_output(budget_id: Optional[pulumi.Input[str]] = None,
                            state: Optional[pulumi.Input[Optional[str]]] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAlertRulesResult]:
     """
-    This data source provides the list of Alert Rules in Oracle Cloud Infrastructure Budget service.
-
-    Returns a list of Alert Rules for a specified budget.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_alert_rules = oci.Budget.get_alert_rules(budget_id=oci_budget_budget["test_budget"]["id"],
-        display_name=var["alert_rule_display_name"],
-        state=var["alert_rule_state"])
-    ```
-
-
-    :param str budget_id: The unique budget OCID.
-    :param str display_name: A user-friendly name. This does not have to be unique, and it's changeable.  Example: `My new resource`
-    :param str state: The current state of the resource to filter by.
+    Use this data source to access information about an existing resource.
     """
     ...

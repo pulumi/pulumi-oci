@@ -8,6 +8,8 @@ import com.pulumi.oci.DataSafe.outputs.GetSqlFirewallAllowedSqlAnalyticsSqlFirew
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItem {
@@ -15,12 +17,12 @@ public final class GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyti
      * @return The dimensions available for SQL firewall allow SQL analytics.
      * 
      */
-    private List<GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimension> dimensions;
+    private @Nullable List<GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimension> dimensions;
     /**
      * @return The total count of the aggregated metric.
      * 
      */
-    private String sqlFirewallAllowedSqlAnalyticCount;
+    private @Nullable String sqlFirewallAllowedSqlAnalyticCount;
 
     private GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItem() {}
     /**
@@ -28,14 +30,14 @@ public final class GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyti
      * 
      */
     public List<GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimension> dimensions() {
-        return this.dimensions;
+        return this.dimensions == null ? List.of() : this.dimensions;
     }
     /**
      * @return The total count of the aggregated metric.
      * 
      */
-    public String sqlFirewallAllowedSqlAnalyticCount() {
-        return this.sqlFirewallAllowedSqlAnalyticCount;
+    public Optional<String> sqlFirewallAllowedSqlAnalyticCount() {
+        return Optional.ofNullable(this.sqlFirewallAllowedSqlAnalyticCount);
     }
 
     public static Builder builder() {
@@ -47,8 +49,8 @@ public final class GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyti
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimension> dimensions;
-        private String sqlFirewallAllowedSqlAnalyticCount;
+        private @Nullable List<GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimension> dimensions;
+        private @Nullable String sqlFirewallAllowedSqlAnalyticCount;
         public Builder() {}
         public Builder(GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -57,16 +59,16 @@ public final class GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyti
         }
 
         @CustomType.Setter
-        public Builder dimensions(List<GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimension> dimensions) {
-            this.dimensions = Objects.requireNonNull(dimensions);
+        public Builder dimensions(@Nullable List<GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimension> dimensions) {
+            this.dimensions = dimensions;
             return this;
         }
         public Builder dimensions(GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimension... dimensions) {
             return dimensions(List.of(dimensions));
         }
         @CustomType.Setter
-        public Builder sqlFirewallAllowedSqlAnalyticCount(String sqlFirewallAllowedSqlAnalyticCount) {
-            this.sqlFirewallAllowedSqlAnalyticCount = Objects.requireNonNull(sqlFirewallAllowedSqlAnalyticCount);
+        public Builder sqlFirewallAllowedSqlAnalyticCount(@Nullable String sqlFirewallAllowedSqlAnalyticCount) {
+            this.sqlFirewallAllowedSqlAnalyticCount = sqlFirewallAllowedSqlAnalyticCount;
             return this;
         }
         public GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItem build() {

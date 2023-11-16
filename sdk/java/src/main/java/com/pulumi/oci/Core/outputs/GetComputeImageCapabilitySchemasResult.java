@@ -23,7 +23,7 @@ public final class GetComputeImageCapabilitySchemasResult {
      * @return The list of compute_image_capability_schemas.
      * 
      */
-    private List<GetComputeImageCapabilitySchemasComputeImageCapabilitySchema> computeImageCapabilitySchemas;
+    private @Nullable List<GetComputeImageCapabilitySchemasComputeImageCapabilitySchema> computeImageCapabilitySchemas;
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
@@ -34,7 +34,7 @@ public final class GetComputeImageCapabilitySchemasResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The OCID of the image associated with this compute image capability schema
      * 
@@ -54,7 +54,7 @@ public final class GetComputeImageCapabilitySchemasResult {
      * 
      */
     public List<GetComputeImageCapabilitySchemasComputeImageCapabilitySchema> computeImageCapabilitySchemas() {
-        return this.computeImageCapabilitySchemas;
+        return this.computeImageCapabilitySchemas == null ? List.of() : this.computeImageCapabilitySchemas;
     }
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
@@ -70,8 +70,8 @@ public final class GetComputeImageCapabilitySchemasResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The OCID of the image associated with this compute image capability schema
@@ -91,10 +91,10 @@ public final class GetComputeImageCapabilitySchemasResult {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable String compartmentId;
-        private List<GetComputeImageCapabilitySchemasComputeImageCapabilitySchema> computeImageCapabilitySchemas;
+        private @Nullable List<GetComputeImageCapabilitySchemasComputeImageCapabilitySchema> computeImageCapabilitySchemas;
         private @Nullable String displayName;
         private @Nullable List<GetComputeImageCapabilitySchemasFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String imageId;
         public Builder() {}
         public Builder(GetComputeImageCapabilitySchemasResult defaults) {
@@ -113,8 +113,8 @@ public final class GetComputeImageCapabilitySchemasResult {
             return this;
         }
         @CustomType.Setter
-        public Builder computeImageCapabilitySchemas(List<GetComputeImageCapabilitySchemasComputeImageCapabilitySchema> computeImageCapabilitySchemas) {
-            this.computeImageCapabilitySchemas = Objects.requireNonNull(computeImageCapabilitySchemas);
+        public Builder computeImageCapabilitySchemas(@Nullable List<GetComputeImageCapabilitySchemasComputeImageCapabilitySchema> computeImageCapabilitySchemas) {
+            this.computeImageCapabilitySchemas = computeImageCapabilitySchemas;
             return this;
         }
         public Builder computeImageCapabilitySchemas(GetComputeImageCapabilitySchemasComputeImageCapabilitySchema... computeImageCapabilitySchemas) {
@@ -134,8 +134,8 @@ public final class GetComputeImageCapabilitySchemasResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

@@ -26,22 +26,6 @@ class TagArgs:
                  validator: Optional[pulumi.Input['TagValidatorArgs']] = None):
         """
         The set of arguments for constructing a Tag resource.
-        :param pulumi.Input[str] description: (Updatable) The description you assign to the tag during creation.
-        :param pulumi.Input[str] tag_namespace_id: The OCID of the tag namespace.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[bool] is_cost_tracking: (Updatable) Indicates whether the tag is enabled for cost tracking.
-        :param pulumi.Input[bool] is_retired: (Updatable) Indicates whether the tag is retired. See [Retiring Key Definitions and Namespace Definitions](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/taggingoverview.htm#Retiring).
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] name: The name you assign to the tag during creation. This is the tag key definition. The name must be unique within the tag namespace and cannot be changed.
-        :param pulumi.Input['TagValidatorArgs'] validator: (Updatable) Validates a definedTag value. Each validator performs validation steps in addition to the standard validation for definedTag values. For more information, see [Limits on Tags](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/taggingoverview.htm#Limits).
-               
-               If you define a validator after a value has been set for a defined tag, then any updates that attempt to change the value must pass the additional validation defined by the current rule. Previously set values (even those that would fail the current validation) are not updated. You can still update other attributes to resources that contain a non-valid defined tag.
-               
-               To clear the validator call UpdateTag with [DefaultTagDefinitionValidator](https://docs.cloud.oracle.com/iaas/api/#/en/identity/latest/datatypes/DefaultTagDefinitionValidator).
         """
         pulumi.set(__self__, "description", description)
         pulumi.set(__self__, "tag_namespace_id", tag_namespace_id)
@@ -61,9 +45,6 @@ class TagArgs:
     @property
     @pulumi.getter
     def description(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The description you assign to the tag during creation.
-        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -73,9 +54,6 @@ class TagArgs:
     @property
     @pulumi.getter(name="tagNamespaceId")
     def tag_namespace_id(self) -> pulumi.Input[str]:
-        """
-        The OCID of the tag namespace.
-        """
         return pulumi.get(self, "tag_namespace_id")
 
     @tag_namespace_id.setter
@@ -85,9 +63,6 @@ class TagArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -97,9 +72,6 @@ class TagArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -109,9 +81,6 @@ class TagArgs:
     @property
     @pulumi.getter(name="isCostTracking")
     def is_cost_tracking(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Indicates whether the tag is enabled for cost tracking.
-        """
         return pulumi.get(self, "is_cost_tracking")
 
     @is_cost_tracking.setter
@@ -121,13 +90,6 @@ class TagArgs:
     @property
     @pulumi.getter(name="isRetired")
     def is_retired(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Indicates whether the tag is retired. See [Retiring Key Definitions and Namespace Definitions](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/taggingoverview.htm#Retiring).
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "is_retired")
 
     @is_retired.setter
@@ -137,9 +99,6 @@ class TagArgs:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The name you assign to the tag during creation. This is the tag key definition. The name must be unique within the tag namespace and cannot be changed.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -149,13 +108,6 @@ class TagArgs:
     @property
     @pulumi.getter
     def validator(self) -> Optional[pulumi.Input['TagValidatorArgs']]:
-        """
-        (Updatable) Validates a definedTag value. Each validator performs validation steps in addition to the standard validation for definedTag values. For more information, see [Limits on Tags](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/taggingoverview.htm#Limits).
-
-        If you define a validator after a value has been set for a defined tag, then any updates that attempt to change the value must pass the additional validation defined by the current rule. Previously set values (even those that would fail the current validation) are not updated. You can still update other attributes to resources that contain a non-valid defined tag.
-
-        To clear the validator call UpdateTag with [DefaultTagDefinitionValidator](https://docs.cloud.oracle.com/iaas/api/#/en/identity/latest/datatypes/DefaultTagDefinitionValidator).
-        """
         return pulumi.get(self, "validator")
 
     @validator.setter
@@ -178,24 +130,6 @@ class _TagState:
                  validator: Optional[pulumi.Input['TagValidatorArgs']] = None):
         """
         Input properties used for looking up and filtering Tag resources.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] description: (Updatable) The description you assign to the tag during creation.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[bool] is_cost_tracking: (Updatable) Indicates whether the tag is enabled for cost tracking.
-        :param pulumi.Input[bool] is_retired: (Updatable) Indicates whether the tag is retired. See [Retiring Key Definitions and Namespace Definitions](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/taggingoverview.htm#Retiring).
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] name: The name you assign to the tag during creation. This is the tag key definition. The name must be unique within the tag namespace and cannot be changed.
-        :param pulumi.Input[str] state: The tag's current state. After creating a tag, make sure its `lifecycleState` is ACTIVE before using it. After retiring a tag, make sure its `lifecycleState` is INACTIVE before using it. If you delete a tag, you cannot delete another tag until the deleted tag's `lifecycleState` changes from DELETING to DELETED.
-        :param pulumi.Input[str] tag_namespace_id: The OCID of the tag namespace.
-        :param pulumi.Input[str] time_created: Date and time the tag was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
-        :param pulumi.Input['TagValidatorArgs'] validator: (Updatable) Validates a definedTag value. Each validator performs validation steps in addition to the standard validation for definedTag values. For more information, see [Limits on Tags](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/taggingoverview.htm#Limits).
-               
-               If you define a validator after a value has been set for a defined tag, then any updates that attempt to change the value must pass the additional validation defined by the current rule. Previously set values (even those that would fail the current validation) are not updated. You can still update other attributes to resources that contain a non-valid defined tag.
-               
-               To clear the validator call UpdateTag with [DefaultTagDefinitionValidator](https://docs.cloud.oracle.com/iaas/api/#/en/identity/latest/datatypes/DefaultTagDefinitionValidator).
         """
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
@@ -221,9 +155,6 @@ class _TagState:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -233,9 +164,6 @@ class _TagState:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The description you assign to the tag during creation.
-        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -245,9 +173,6 @@ class _TagState:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -257,9 +182,6 @@ class _TagState:
     @property
     @pulumi.getter(name="isCostTracking")
     def is_cost_tracking(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Indicates whether the tag is enabled for cost tracking.
-        """
         return pulumi.get(self, "is_cost_tracking")
 
     @is_cost_tracking.setter
@@ -269,13 +191,6 @@ class _TagState:
     @property
     @pulumi.getter(name="isRetired")
     def is_retired(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Indicates whether the tag is retired. See [Retiring Key Definitions and Namespace Definitions](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/taggingoverview.htm#Retiring).
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "is_retired")
 
     @is_retired.setter
@@ -285,9 +200,6 @@ class _TagState:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The name you assign to the tag during creation. This is the tag key definition. The name must be unique within the tag namespace and cannot be changed.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -297,9 +209,6 @@ class _TagState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The tag's current state. After creating a tag, make sure its `lifecycleState` is ACTIVE before using it. After retiring a tag, make sure its `lifecycleState` is INACTIVE before using it. If you delete a tag, you cannot delete another tag until the deleted tag's `lifecycleState` changes from DELETING to DELETED.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -309,9 +218,6 @@ class _TagState:
     @property
     @pulumi.getter(name="tagNamespaceId")
     def tag_namespace_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the tag namespace.
-        """
         return pulumi.get(self, "tag_namespace_id")
 
     @tag_namespace_id.setter
@@ -321,9 +227,6 @@ class _TagState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        Date and time the tag was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -333,13 +236,6 @@ class _TagState:
     @property
     @pulumi.getter
     def validator(self) -> Optional[pulumi.Input['TagValidatorArgs']]:
-        """
-        (Updatable) Validates a definedTag value. Each validator performs validation steps in addition to the standard validation for definedTag values. For more information, see [Limits on Tags](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/taggingoverview.htm#Limits).
-
-        If you define a validator after a value has been set for a defined tag, then any updates that attempt to change the value must pass the additional validation defined by the current rule. Previously set values (even those that would fail the current validation) are not updated. You can still update other attributes to resources that contain a non-valid defined tag.
-
-        To clear the validator call UpdateTag with [DefaultTagDefinitionValidator](https://docs.cloud.oracle.com/iaas/api/#/en/identity/latest/datatypes/DefaultTagDefinitionValidator).
-        """
         return pulumi.get(self, "validator")
 
     @validator.setter
@@ -362,80 +258,9 @@ class Tag(pulumi.CustomResource):
                  validator: Optional[pulumi.Input[pulumi.InputType['TagValidatorArgs']]] = None,
                  __props__=None):
         """
-        This resource provides the Tag resource in Oracle Cloud Infrastructure Identity service.
-
-        Creates a new tag in the specified tag namespace.
-
-        The tag requires either the OCID or the name of the tag namespace that will contain this
-        tag definition.
-
-        You must specify a *name* for the tag, which must be unique across all tags in the tag namespace
-        and cannot be changed. The name can contain any ASCII character except the space (_) or period (.) characters.
-        Names are case insensitive. That means, for example, "myTag" and "mytag" are not allowed in the same namespace.
-        If you specify a name that's already in use in the tag namespace, a 409 error is returned.
-
-        The tag must have a *description*. It does not have to be unique, and you can change it with
-        [UpdateTag](https://docs.cloud.oracle.com/iaas/api/#/en/identity/latest/Tag/UpdateTag).
-
-        The tag must have a value type, which is specified with a validator. Tags can use either a
-        static value or a list of possible values. Static values are entered by a user applying the tag
-        to a resource. Lists are created by you and the user must apply a value from the list. Lists
-        are validiated.
-
-        * If no `validator` is set, the user applying the tag to a resource can type in a static
-          value or leave the tag value empty.
-        * If a `validator` is set, the user applying the tag to a resource must select from a list
-          of values that you supply with [EnumTagDefinitionValidator](https://docs.cloud.oracle.com/iaas/api/#/en/identity/latest/datatypes/EnumTagDefinitionValidator).
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_tag = oci.identity.Tag("testTag",
-            description=var["tag_description"],
-            tag_namespace_id=oci_identity_tag_namespace["test_tag_namespace"]["id"],
-            defined_tags={
-                "Operations.CostCenter": "42",
-            },
-            freeform_tags={
-                "Department": "Finance",
-            },
-            is_cost_tracking=var["tag_is_cost_tracking"],
-            validator=oci.identity.TagValidatorArgs(
-                validator_type=var["tag_validator_validator_type"],
-                values=var["tag_validator_values"],
-            ),
-            is_retired=False)
-        ```
-
-        ## Import
-
-        Tags can be imported using the `tagNamespaceId` and `tagName`, e.g.
-
-        ```sh
-         $ pulumi import oci:Identity/tag:Tag test_tag "tagNamespaces/{tagNamespaceId}/tags/{tagName}"
-        ```
-
+        Create a Tag resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] description: (Updatable) The description you assign to the tag during creation.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[bool] is_cost_tracking: (Updatable) Indicates whether the tag is enabled for cost tracking.
-        :param pulumi.Input[bool] is_retired: (Updatable) Indicates whether the tag is retired. See [Retiring Key Definitions and Namespace Definitions](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/taggingoverview.htm#Retiring).
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] name: The name you assign to the tag during creation. This is the tag key definition. The name must be unique within the tag namespace and cannot be changed.
-        :param pulumi.Input[str] tag_namespace_id: The OCID of the tag namespace.
-        :param pulumi.Input[pulumi.InputType['TagValidatorArgs']] validator: (Updatable) Validates a definedTag value. Each validator performs validation steps in addition to the standard validation for definedTag values. For more information, see [Limits on Tags](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/taggingoverview.htm#Limits).
-               
-               If you define a validator after a value has been set for a defined tag, then any updates that attempt to change the value must pass the additional validation defined by the current rule. Previously set values (even those that would fail the current validation) are not updated. You can still update other attributes to resources that contain a non-valid defined tag.
-               
-               To clear the validator call UpdateTag with [DefaultTagDefinitionValidator](https://docs.cloud.oracle.com/iaas/api/#/en/identity/latest/datatypes/DefaultTagDefinitionValidator).
         """
         ...
     @overload
@@ -444,62 +269,7 @@ class Tag(pulumi.CustomResource):
                  args: TagArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Tag resource in Oracle Cloud Infrastructure Identity service.
-
-        Creates a new tag in the specified tag namespace.
-
-        The tag requires either the OCID or the name of the tag namespace that will contain this
-        tag definition.
-
-        You must specify a *name* for the tag, which must be unique across all tags in the tag namespace
-        and cannot be changed. The name can contain any ASCII character except the space (_) or period (.) characters.
-        Names are case insensitive. That means, for example, "myTag" and "mytag" are not allowed in the same namespace.
-        If you specify a name that's already in use in the tag namespace, a 409 error is returned.
-
-        The tag must have a *description*. It does not have to be unique, and you can change it with
-        [UpdateTag](https://docs.cloud.oracle.com/iaas/api/#/en/identity/latest/Tag/UpdateTag).
-
-        The tag must have a value type, which is specified with a validator. Tags can use either a
-        static value or a list of possible values. Static values are entered by a user applying the tag
-        to a resource. Lists are created by you and the user must apply a value from the list. Lists
-        are validiated.
-
-        * If no `validator` is set, the user applying the tag to a resource can type in a static
-          value or leave the tag value empty.
-        * If a `validator` is set, the user applying the tag to a resource must select from a list
-          of values that you supply with [EnumTagDefinitionValidator](https://docs.cloud.oracle.com/iaas/api/#/en/identity/latest/datatypes/EnumTagDefinitionValidator).
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_tag = oci.identity.Tag("testTag",
-            description=var["tag_description"],
-            tag_namespace_id=oci_identity_tag_namespace["test_tag_namespace"]["id"],
-            defined_tags={
-                "Operations.CostCenter": "42",
-            },
-            freeform_tags={
-                "Department": "Finance",
-            },
-            is_cost_tracking=var["tag_is_cost_tracking"],
-            validator=oci.identity.TagValidatorArgs(
-                validator_type=var["tag_validator_validator_type"],
-                values=var["tag_validator_values"],
-            ),
-            is_retired=False)
-        ```
-
-        ## Import
-
-        Tags can be imported using the `tagNamespaceId` and `tagName`, e.g.
-
-        ```sh
-         $ pulumi import oci:Identity/tag:Tag test_tag "tagNamespaces/{tagNamespaceId}/tags/{tagName}"
-        ```
-
+        Create a Tag resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param TagArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -573,24 +343,6 @@ class Tag(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] description: (Updatable) The description you assign to the tag during creation.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[bool] is_cost_tracking: (Updatable) Indicates whether the tag is enabled for cost tracking.
-        :param pulumi.Input[bool] is_retired: (Updatable) Indicates whether the tag is retired. See [Retiring Key Definitions and Namespace Definitions](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/taggingoverview.htm#Retiring).
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] name: The name you assign to the tag during creation. This is the tag key definition. The name must be unique within the tag namespace and cannot be changed.
-        :param pulumi.Input[str] state: The tag's current state. After creating a tag, make sure its `lifecycleState` is ACTIVE before using it. After retiring a tag, make sure its `lifecycleState` is INACTIVE before using it. If you delete a tag, you cannot delete another tag until the deleted tag's `lifecycleState` changes from DELETING to DELETED.
-        :param pulumi.Input[str] tag_namespace_id: The OCID of the tag namespace.
-        :param pulumi.Input[str] time_created: Date and time the tag was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
-        :param pulumi.Input[pulumi.InputType['TagValidatorArgs']] validator: (Updatable) Validates a definedTag value. Each validator performs validation steps in addition to the standard validation for definedTag values. For more information, see [Limits on Tags](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/taggingoverview.htm#Limits).
-               
-               If you define a validator after a value has been set for a defined tag, then any updates that attempt to change the value must pass the additional validation defined by the current rule. Previously set values (even those that would fail the current validation) are not updated. You can still update other attributes to resources that contain a non-valid defined tag.
-               
-               To clear the validator call UpdateTag with [DefaultTagDefinitionValidator](https://docs.cloud.oracle.com/iaas/api/#/en/identity/latest/datatypes/DefaultTagDefinitionValidator).
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -610,89 +362,51 @@ class Tag(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
     def description(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The description you assign to the tag during creation.
-        """
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="isCostTracking")
-    def is_cost_tracking(self) -> pulumi.Output[bool]:
-        """
-        (Updatable) Indicates whether the tag is enabled for cost tracking.
-        """
+    def is_cost_tracking(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "is_cost_tracking")
 
     @property
     @pulumi.getter(name="isRetired")
-    def is_retired(self) -> pulumi.Output[bool]:
-        """
-        (Updatable) Indicates whether the tag is retired. See [Retiring Key Definitions and Namespace Definitions](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/taggingoverview.htm#Retiring).
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
+    def is_retired(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "is_retired")
 
     @property
     @pulumi.getter
     def name(self) -> pulumi.Output[str]:
-        """
-        The name you assign to the tag during creation. This is the tag key definition. The name must be unique within the tag namespace and cannot be changed.
-        """
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        The tag's current state. After creating a tag, make sure its `lifecycleState` is ACTIVE before using it. After retiring a tag, make sure its `lifecycleState` is INACTIVE before using it. If you delete a tag, you cannot delete another tag until the deleted tag's `lifecycleState` changes from DELETING to DELETED.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="tagNamespaceId")
     def tag_namespace_id(self) -> pulumi.Output[str]:
-        """
-        The OCID of the tag namespace.
-        """
         return pulumi.get(self, "tag_namespace_id")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        Date and time the tag was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter
     def validator(self) -> pulumi.Output[Optional['outputs.TagValidator']]:
-        """
-        (Updatable) Validates a definedTag value. Each validator performs validation steps in addition to the standard validation for definedTag values. For more information, see [Limits on Tags](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/taggingoverview.htm#Limits).
-
-        If you define a validator after a value has been set for a defined tag, then any updates that attempt to change the value must pass the additional validation defined by the current rule. Previously set values (even those that would fail the current validation) are not updated. You can still update other attributes to resources that contain a non-valid defined tag.
-
-        To clear the validator call UpdateTag with [DefaultTagDefinitionValidator](https://docs.cloud.oracle.com/iaas/api/#/en/identity/latest/datatypes/DefaultTagDefinitionValidator).
-        """
         return pulumi.get(self, "validator")
 

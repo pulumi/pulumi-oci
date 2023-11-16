@@ -40,7 +40,7 @@ public final class GetModelsResult {
      * @return The list of models.
      * 
      */
-    private List<GetModelsModel> models;
+    private @Nullable List<GetModelsModel> models;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project associated with the model.
      * 
@@ -93,7 +93,7 @@ public final class GetModelsResult {
      * 
      */
     public List<GetModelsModel> models() {
-        return this.models;
+        return this.models == null ? List.of() : this.models;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project associated with the model.
@@ -128,7 +128,7 @@ public final class GetModelsResult {
         private @Nullable List<GetModelsFilter> filters;
         private @Nullable String id;
         private String modelVersionSetName;
-        private List<GetModelsModel> models;
+        private @Nullable List<GetModelsModel> models;
         private @Nullable String projectId;
         private @Nullable String state;
         private String versionLabel;
@@ -181,8 +181,8 @@ public final class GetModelsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder models(List<GetModelsModel> models) {
-            this.models = Objects.requireNonNull(models);
+        public Builder models(@Nullable List<GetModelsModel> models) {
+            this.models = models;
             return this;
         }
         public Builder models(GetModelsModel... models) {

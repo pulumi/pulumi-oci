@@ -16,23 +16,23 @@ namespace Pulumi.Oci.Core.Outputs
         /// <summary>
         /// The default number of VNIC attachments allowed per OCPU.
         /// </summary>
-        public readonly double DefaultPerOcpu;
+        public readonly double? DefaultPerOcpu;
         /// <summary>
         /// The maximum allowed percentage of cores enabled.
         /// </summary>
-        public readonly double Max;
+        public readonly double? Max;
         /// <summary>
         /// The minimum allowed percentage of cores enabled.
         /// </summary>
-        public readonly int Min;
+        public readonly int? Min;
 
         [OutputConstructor]
         private GetShapesShapeMaxVnicAttachmentOptionResult(
-            double defaultPerOcpu,
+            double? defaultPerOcpu,
 
-            double max,
+            double? max,
 
-            int min)
+            int? min)
         {
             DefaultPerOcpu = defaultPerOcpu;
             Max = max;

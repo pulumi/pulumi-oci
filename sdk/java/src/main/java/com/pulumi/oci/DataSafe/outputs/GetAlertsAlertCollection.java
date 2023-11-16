@@ -7,14 +7,15 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.DataSafe.outputs.GetAlertsAlertCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAlertsAlertCollection {
-    private List<GetAlertsAlertCollectionItem> items;
+    private @Nullable List<GetAlertsAlertCollectionItem> items;
 
     private GetAlertsAlertCollection() {}
     public List<GetAlertsAlertCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -26,7 +27,7 @@ public final class GetAlertsAlertCollection {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetAlertsAlertCollectionItem> items;
+        private @Nullable List<GetAlertsAlertCollectionItem> items;
         public Builder() {}
         public Builder(GetAlertsAlertCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -34,8 +35,8 @@ public final class GetAlertsAlertCollection {
         }
 
         @CustomType.Setter
-        public Builder items(List<GetAlertsAlertCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetAlertsAlertCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetAlertsAlertCollectionItem... items) {

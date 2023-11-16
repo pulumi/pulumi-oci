@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Vm Cluster Patch History Entry resource in Oracle Cloud Infrastructure Database service.
@@ -63,21 +62,21 @@ type GetVmClusterPatchHistoryEntryArgs struct {
 // A collection of values returned by getVmClusterPatchHistoryEntry.
 type GetVmClusterPatchHistoryEntryResult struct {
 	// The action being performed or was completed.
-	Action string `pulumi:"action"`
+	Action *string `pulumi:"action"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// A descriptive text associated with the lifecycleState. Typically contains additional displayable text.
-	LifecycleDetails    string `pulumi:"lifecycleDetails"`
-	PatchHistoryEntryId string `pulumi:"patchHistoryEntryId"`
+	LifecycleDetails    *string `pulumi:"lifecycleDetails"`
+	PatchHistoryEntryId string  `pulumi:"patchHistoryEntryId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the patch.
-	PatchId string `pulumi:"patchId"`
+	PatchId *string `pulumi:"patchId"`
 	// The current state of the action.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The date and time when the patch action completed
-	TimeEnded string `pulumi:"timeEnded"`
+	TimeEnded *string `pulumi:"timeEnded"`
 	// The date and time when the patch action started.
-	TimeStarted string `pulumi:"timeStarted"`
-	VmClusterId string `pulumi:"vmClusterId"`
+	TimeStarted *string `pulumi:"timeStarted"`
+	VmClusterId string  `pulumi:"vmClusterId"`
 }
 
 func GetVmClusterPatchHistoryEntryOutput(ctx *pulumi.Context, args GetVmClusterPatchHistoryEntryOutputArgs, opts ...pulumi.InvokeOption) GetVmClusterPatchHistoryEntryResultOutput {
@@ -120,25 +119,19 @@ func (o GetVmClusterPatchHistoryEntryResultOutput) ToGetVmClusterPatchHistoryEnt
 	return o
 }
 
-func (o GetVmClusterPatchHistoryEntryResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetVmClusterPatchHistoryEntryResult] {
-	return pulumix.Output[GetVmClusterPatchHistoryEntryResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The action being performed or was completed.
-func (o GetVmClusterPatchHistoryEntryResultOutput) Action() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVmClusterPatchHistoryEntryResult) string { return v.Action }).(pulumi.StringOutput)
+func (o GetVmClusterPatchHistoryEntryResultOutput) Action() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVmClusterPatchHistoryEntryResult) *string { return v.Action }).(pulumi.StringPtrOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetVmClusterPatchHistoryEntryResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVmClusterPatchHistoryEntryResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetVmClusterPatchHistoryEntryResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVmClusterPatchHistoryEntryResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // A descriptive text associated with the lifecycleState. Typically contains additional displayable text.
-func (o GetVmClusterPatchHistoryEntryResultOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVmClusterPatchHistoryEntryResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o GetVmClusterPatchHistoryEntryResultOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVmClusterPatchHistoryEntryResult) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 func (o GetVmClusterPatchHistoryEntryResultOutput) PatchHistoryEntryId() pulumi.StringOutput {
@@ -146,23 +139,23 @@ func (o GetVmClusterPatchHistoryEntryResultOutput) PatchHistoryEntryId() pulumi.
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the patch.
-func (o GetVmClusterPatchHistoryEntryResultOutput) PatchId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVmClusterPatchHistoryEntryResult) string { return v.PatchId }).(pulumi.StringOutput)
+func (o GetVmClusterPatchHistoryEntryResultOutput) PatchId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVmClusterPatchHistoryEntryResult) *string { return v.PatchId }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the action.
-func (o GetVmClusterPatchHistoryEntryResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVmClusterPatchHistoryEntryResult) string { return v.State }).(pulumi.StringOutput)
+func (o GetVmClusterPatchHistoryEntryResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVmClusterPatchHistoryEntryResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time when the patch action completed
-func (o GetVmClusterPatchHistoryEntryResultOutput) TimeEnded() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVmClusterPatchHistoryEntryResult) string { return v.TimeEnded }).(pulumi.StringOutput)
+func (o GetVmClusterPatchHistoryEntryResultOutput) TimeEnded() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVmClusterPatchHistoryEntryResult) *string { return v.TimeEnded }).(pulumi.StringPtrOutput)
 }
 
 // The date and time when the patch action started.
-func (o GetVmClusterPatchHistoryEntryResultOutput) TimeStarted() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVmClusterPatchHistoryEntryResult) string { return v.TimeStarted }).(pulumi.StringOutput)
+func (o GetVmClusterPatchHistoryEntryResultOutput) TimeStarted() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVmClusterPatchHistoryEntryResult) *string { return v.TimeStarted }).(pulumi.StringPtrOutput)
 }
 
 func (o GetVmClusterPatchHistoryEntryResultOutput) VmClusterId() pulumi.StringOutput {

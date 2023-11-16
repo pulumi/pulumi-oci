@@ -16,23 +16,23 @@ namespace Pulumi.Oci.CloudBridge.Outputs
         /// <summary>
         /// Data center name.
         /// </summary>
-        public readonly string DataCenter;
+        public readonly string? DataCenter;
         /// <summary>
         /// vCenter unique key.
         /// </summary>
-        public readonly string VcenterKey;
+        public readonly string? VcenterKey;
         /// <summary>
         /// Dot-separated version string.
         /// </summary>
-        public readonly string VcenterVersion;
+        public readonly string? VcenterVersion;
 
         [OutputConstructor]
         private GetAssetsAssetCollectionItemVmwareVcenterResult(
-            string dataCenter,
+            string? dataCenter,
 
-            string vcenterKey,
+            string? vcenterKey,
 
-            string vcenterVersion)
+            string? vcenterVersion)
         {
             DataCenter = dataCenter;
             VcenterKey = vcenterKey;

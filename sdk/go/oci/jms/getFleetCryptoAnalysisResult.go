@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Fleet Crypto Analysis Result resource in Oracle Cloud Infrastructure Jms service.
@@ -63,40 +62,40 @@ type GetFleetCryptoAnalysisResultArgs struct {
 // A collection of values returned by getFleetCryptoAnalysisResult.
 type GetFleetCryptoAnalysisResultResult struct {
 	// The result aggregation mode
-	AggregationMode string `pulumi:"aggregationMode"`
+	AggregationMode *string `pulumi:"aggregationMode"`
 	// The Object Storage bucket name of this analysis result.
-	Bucket                 string `pulumi:"bucket"`
-	CryptoAnalysisResultId string `pulumi:"cryptoAnalysisResultId"`
+	Bucket                 *string `pulumi:"bucket"`
+	CryptoAnalysisResultId string  `pulumi:"cryptoAnalysisResultId"`
 	// The Crypto Roadmap version used to perform the analysis.
-	CryptoRoadmapVersion string `pulumi:"cryptoRoadmapVersion"`
+	CryptoRoadmapVersion *string `pulumi:"cryptoRoadmapVersion"`
 	// Total number of findings with the analysis.
-	FindingCount int `pulumi:"findingCount"`
+	FindingCount *int `pulumi:"findingCount"`
 	// The fleet OCID.
 	FleetId string `pulumi:"fleetId"`
 	// The hostname of the managed instance.
-	HostName string `pulumi:"hostName"`
+	HostName *string `pulumi:"hostName"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The managed instance OCID.
-	ManagedInstanceId string `pulumi:"managedInstanceId"`
+	ManagedInstanceId *string `pulumi:"managedInstanceId"`
 	// The Object Storage namespace of this analysis result.
-	Namespace string `pulumi:"namespace"`
+	Namespace *string `pulumi:"namespace"`
 	// Total number of non-compliant findings with the analysis. A non-compliant finding means the application won't work properly with the changes introduced by the Crypto Roadmap version used by the analysis.
-	NonCompliantFindingCount int `pulumi:"nonCompliantFindingCount"`
+	NonCompliantFindingCount *int `pulumi:"nonCompliantFindingCount"`
 	// The Object Storage object name of this analysis result.
-	Object string `pulumi:"object"`
+	Object *string `pulumi:"object"`
 	// Total number of summarized events. Summarized events are deduplicated events of interest.
-	SummarizedEventCount int `pulumi:"summarizedEventCount"`
+	SummarizedEventCount *int `pulumi:"summarizedEventCount"`
 	// The time the result is compiled.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// Time of the first event in the analysis.
-	TimeFirstEvent string `pulumi:"timeFirstEvent"`
+	TimeFirstEvent *string `pulumi:"timeFirstEvent"`
 	// Time of the last event in the analysis.
-	TimeLastEvent string `pulumi:"timeLastEvent"`
+	TimeLastEvent *string `pulumi:"timeLastEvent"`
 	// Total number of events in the analysis.
-	TotalEventCount int `pulumi:"totalEventCount"`
+	TotalEventCount *int `pulumi:"totalEventCount"`
 	// The OCID of the work request to start the analysis.
-	WorkRequestId string `pulumi:"workRequestId"`
+	WorkRequestId *string `pulumi:"workRequestId"`
 }
 
 func GetFleetCryptoAnalysisResultOutput(ctx *pulumi.Context, args GetFleetCryptoAnalysisResultOutputArgs, opts ...pulumi.InvokeOption) GetFleetCryptoAnalysisResultResultOutput {
@@ -139,20 +138,14 @@ func (o GetFleetCryptoAnalysisResultResultOutput) ToGetFleetCryptoAnalysisResult
 	return o
 }
 
-func (o GetFleetCryptoAnalysisResultResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetFleetCryptoAnalysisResultResult] {
-	return pulumix.Output[GetFleetCryptoAnalysisResultResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The result aggregation mode
-func (o GetFleetCryptoAnalysisResultResultOutput) AggregationMode() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFleetCryptoAnalysisResultResult) string { return v.AggregationMode }).(pulumi.StringOutput)
+func (o GetFleetCryptoAnalysisResultResultOutput) AggregationMode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFleetCryptoAnalysisResultResult) *string { return v.AggregationMode }).(pulumi.StringPtrOutput)
 }
 
 // The Object Storage bucket name of this analysis result.
-func (o GetFleetCryptoAnalysisResultResultOutput) Bucket() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFleetCryptoAnalysisResultResult) string { return v.Bucket }).(pulumi.StringOutput)
+func (o GetFleetCryptoAnalysisResultResultOutput) Bucket() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFleetCryptoAnalysisResultResult) *string { return v.Bucket }).(pulumi.StringPtrOutput)
 }
 
 func (o GetFleetCryptoAnalysisResultResultOutput) CryptoAnalysisResultId() pulumi.StringOutput {
@@ -160,13 +153,13 @@ func (o GetFleetCryptoAnalysisResultResultOutput) CryptoAnalysisResultId() pulum
 }
 
 // The Crypto Roadmap version used to perform the analysis.
-func (o GetFleetCryptoAnalysisResultResultOutput) CryptoRoadmapVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFleetCryptoAnalysisResultResult) string { return v.CryptoRoadmapVersion }).(pulumi.StringOutput)
+func (o GetFleetCryptoAnalysisResultResultOutput) CryptoRoadmapVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFleetCryptoAnalysisResultResult) *string { return v.CryptoRoadmapVersion }).(pulumi.StringPtrOutput)
 }
 
 // Total number of findings with the analysis.
-func (o GetFleetCryptoAnalysisResultResultOutput) FindingCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetFleetCryptoAnalysisResultResult) int { return v.FindingCount }).(pulumi.IntOutput)
+func (o GetFleetCryptoAnalysisResultResultOutput) FindingCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetFleetCryptoAnalysisResultResult) *int { return v.FindingCount }).(pulumi.IntPtrOutput)
 }
 
 // The fleet OCID.
@@ -175,63 +168,63 @@ func (o GetFleetCryptoAnalysisResultResultOutput) FleetId() pulumi.StringOutput 
 }
 
 // The hostname of the managed instance.
-func (o GetFleetCryptoAnalysisResultResultOutput) HostName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFleetCryptoAnalysisResultResult) string { return v.HostName }).(pulumi.StringOutput)
+func (o GetFleetCryptoAnalysisResultResultOutput) HostName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFleetCryptoAnalysisResultResult) *string { return v.HostName }).(pulumi.StringPtrOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetFleetCryptoAnalysisResultResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFleetCryptoAnalysisResultResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetFleetCryptoAnalysisResultResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFleetCryptoAnalysisResultResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The managed instance OCID.
-func (o GetFleetCryptoAnalysisResultResultOutput) ManagedInstanceId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFleetCryptoAnalysisResultResult) string { return v.ManagedInstanceId }).(pulumi.StringOutput)
+func (o GetFleetCryptoAnalysisResultResultOutput) ManagedInstanceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFleetCryptoAnalysisResultResult) *string { return v.ManagedInstanceId }).(pulumi.StringPtrOutput)
 }
 
 // The Object Storage namespace of this analysis result.
-func (o GetFleetCryptoAnalysisResultResultOutput) Namespace() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFleetCryptoAnalysisResultResult) string { return v.Namespace }).(pulumi.StringOutput)
+func (o GetFleetCryptoAnalysisResultResultOutput) Namespace() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFleetCryptoAnalysisResultResult) *string { return v.Namespace }).(pulumi.StringPtrOutput)
 }
 
 // Total number of non-compliant findings with the analysis. A non-compliant finding means the application won't work properly with the changes introduced by the Crypto Roadmap version used by the analysis.
-func (o GetFleetCryptoAnalysisResultResultOutput) NonCompliantFindingCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetFleetCryptoAnalysisResultResult) int { return v.NonCompliantFindingCount }).(pulumi.IntOutput)
+func (o GetFleetCryptoAnalysisResultResultOutput) NonCompliantFindingCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetFleetCryptoAnalysisResultResult) *int { return v.NonCompliantFindingCount }).(pulumi.IntPtrOutput)
 }
 
 // The Object Storage object name of this analysis result.
-func (o GetFleetCryptoAnalysisResultResultOutput) Object() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFleetCryptoAnalysisResultResult) string { return v.Object }).(pulumi.StringOutput)
+func (o GetFleetCryptoAnalysisResultResultOutput) Object() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFleetCryptoAnalysisResultResult) *string { return v.Object }).(pulumi.StringPtrOutput)
 }
 
 // Total number of summarized events. Summarized events are deduplicated events of interest.
-func (o GetFleetCryptoAnalysisResultResultOutput) SummarizedEventCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetFleetCryptoAnalysisResultResult) int { return v.SummarizedEventCount }).(pulumi.IntOutput)
+func (o GetFleetCryptoAnalysisResultResultOutput) SummarizedEventCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetFleetCryptoAnalysisResultResult) *int { return v.SummarizedEventCount }).(pulumi.IntPtrOutput)
 }
 
 // The time the result is compiled.
-func (o GetFleetCryptoAnalysisResultResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFleetCryptoAnalysisResultResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetFleetCryptoAnalysisResultResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFleetCryptoAnalysisResultResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // Time of the first event in the analysis.
-func (o GetFleetCryptoAnalysisResultResultOutput) TimeFirstEvent() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFleetCryptoAnalysisResultResult) string { return v.TimeFirstEvent }).(pulumi.StringOutput)
+func (o GetFleetCryptoAnalysisResultResultOutput) TimeFirstEvent() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFleetCryptoAnalysisResultResult) *string { return v.TimeFirstEvent }).(pulumi.StringPtrOutput)
 }
 
 // Time of the last event in the analysis.
-func (o GetFleetCryptoAnalysisResultResultOutput) TimeLastEvent() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFleetCryptoAnalysisResultResult) string { return v.TimeLastEvent }).(pulumi.StringOutput)
+func (o GetFleetCryptoAnalysisResultResultOutput) TimeLastEvent() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFleetCryptoAnalysisResultResult) *string { return v.TimeLastEvent }).(pulumi.StringPtrOutput)
 }
 
 // Total number of events in the analysis.
-func (o GetFleetCryptoAnalysisResultResultOutput) TotalEventCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetFleetCryptoAnalysisResultResult) int { return v.TotalEventCount }).(pulumi.IntOutput)
+func (o GetFleetCryptoAnalysisResultResultOutput) TotalEventCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetFleetCryptoAnalysisResultResult) *int { return v.TotalEventCount }).(pulumi.IntPtrOutput)
 }
 
 // The OCID of the work request to start the analysis.
-func (o GetFleetCryptoAnalysisResultResultOutput) WorkRequestId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFleetCryptoAnalysisResultResult) string { return v.WorkRequestId }).(pulumi.StringOutput)
+func (o GetFleetCryptoAnalysisResultResultOutput) WorkRequestId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFleetCryptoAnalysisResultResult) *string { return v.WorkRequestId }).(pulumi.StringPtrOutput)
 }
 
 func init() {

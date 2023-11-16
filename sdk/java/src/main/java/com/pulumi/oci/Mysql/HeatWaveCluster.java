@@ -15,6 +15,7 @@ import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -71,14 +72,14 @@ public class HeatWaveCluster extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="clusterNodes", refs={List.class,HeatWaveClusterClusterNode.class}, tree="[0,1]")
-    private Output<List<HeatWaveClusterClusterNode>> clusterNodes;
+    private Output</* @Nullable */ List<HeatWaveClusterClusterNode>> clusterNodes;
 
     /**
      * @return A HeatWave node is a compute host that is part of a HeatWave cluster.
      * 
      */
-    public Output<List<HeatWaveClusterClusterNode>> clusterNodes() {
-        return this.clusterNodes;
+    public Output<Optional<List<HeatWaveClusterClusterNode>>> clusterNodes() {
+        return Codegen.optional(this.clusterNodes);
     }
     /**
      * (Updatable) A change to the number of nodes in the HeatWave cluster will result in the entire cluster being torn down and re-created with the new cluster of nodes. This may result in a significant downtime for the analytics capability while the HeatWave cluster is re-provisioned.
@@ -113,28 +114,28 @@ public class HeatWaveCluster extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="isLakehouseEnabled", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isLakehouseEnabled;
+    private Output</* @Nullable */ Boolean> isLakehouseEnabled;
 
     /**
      * @return (Updatable) Enable/disable Lakehouse for the HeatWave cluster.
      * 
      */
-    public Output<Boolean> isLakehouseEnabled() {
-        return this.isLakehouseEnabled;
+    public Output<Optional<Boolean>> isLakehouseEnabled() {
+        return Codegen.optional(this.isLakehouseEnabled);
     }
     /**
      * Additional information about the current lifecycleState.
      * 
      */
     @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
-    private Output<String> lifecycleDetails;
+    private Output</* @Nullable */ String> lifecycleDetails;
 
     /**
      * @return Additional information about the current lifecycleState.
      * 
      */
-    public Output<String> lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Output<Optional<String>> lifecycleDetails() {
+        return Codegen.optional(this.lifecycleDetails);
     }
     /**
      * (Updatable) A change to the shape of the nodes in the HeatWave cluster will result in the entire cluster being torn down and re-created with Compute instances of the new Shape. This may result in significant downtime for the analytics capability while the HeatWave cluster is re-provisioned.
@@ -158,7 +159,7 @@ public class HeatWaveCluster extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return (Updatable) The target state for the HeatWave cluster. Could be set to `ACTIVE` or `INACTIVE`.
@@ -167,36 +168,36 @@ public class HeatWaveCluster extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * The date and time the HeatWave cluster was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The date and time the HeatWave cluster was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * The time the HeatWave cluster was last updated, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      * 
      */
     @Export(name="timeUpdated", refs={String.class}, tree="[0]")
-    private Output<String> timeUpdated;
+    private Output</* @Nullable */ String> timeUpdated;
 
     /**
      * @return The time the HeatWave cluster was last updated, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      * 
      */
-    public Output<String> timeUpdated() {
-        return this.timeUpdated;
+    public Output<Optional<String>> timeUpdated() {
+        return Codegen.optional(this.timeUpdated);
     }
 
     /**

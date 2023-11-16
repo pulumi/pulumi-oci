@@ -40,19 +40,19 @@ namespace Pulumi.Oci.Kms
         /// The OCID of the key version used in cryptographic operations. During key rotation, the service might be in a transitional state where this or a newer key version are used intermittently. The `currentKeyVersion` property is updated when the service is guaranteed to use the new key version for all subsequent encryption operations.
         /// </summary>
         [Output("currentKeyVersion")]
-        public Output<string> CurrentKeyVersion { get; private set; } = null!;
+        public Output<string?> CurrentKeyVersion { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Desired state of the key. Possible values : `ENABLED` or `DISABLED`
         /// </summary>
         [Output("desiredState")]
-        public Output<string> DesiredState { get; private set; } = null!;
+        public Output<string?> DesiredState { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) A user-friendly name for the key. It does not have to be unique, and it is changeable. Avoid entering confidential information.
@@ -64,7 +64,7 @@ namespace Pulumi.Oci.Kms
         /// A reference to the key on external key manager.
         /// </summary>
         [Output("externalKeyReference")]
-        public Output<Outputs.KeyExternalKeyReference> ExternalKeyReference { get; private set; } = null!;
+        public Output<Outputs.KeyExternalKeyReference?> ExternalKeyReference { get; private set; } = null!;
 
         /// <summary>
         /// Key reference data to be returned to the customer as a response.
@@ -76,13 +76,13 @@ namespace Pulumi.Oci.Kms
         /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// A Boolean value that indicates whether the Key belongs to primary Vault or replica vault.
         /// </summary>
         [Output("isPrimary")]
-        public Output<bool> IsPrimary { get; private set; } = null!;
+        public Output<bool?> IsPrimary { get; private set; } = null!;
 
         /// <summary>
         /// The cryptographic properties of a key.
@@ -100,7 +100,7 @@ namespace Pulumi.Oci.Kms
         /// The key's protection mode indicates how the key persists and where cryptographic operations that use the key are performed. A protection mode of `HSM` means that the key persists on a hardware security module (HSM) and all cryptographic operations are performed inside the HSM. A protection mode of `SOFTWARE` means that the key persists on the server, protected by the vault's RSA wrapping key which persists on the HSM. All cryptographic operations that use a key with a protection mode of `SOFTWARE` are performed on the server. By default, a key's protection mode is set to `HSM`. You can't change a key's protection mode after the key is created or imported. A protection mode of `EXTERNAL` mean that the key persists on the customer's external key manager which is hosted externally outside of oracle. Oracle only hold a reference to that key. All cryptographic operations that use a key with a protection mode of `EXTERNAL` are performed by external key manager.
         /// </summary>
         [Output("protectionMode")]
-        public Output<string> ProtectionMode { get; private set; } = null!;
+        public Output<string?> ProtectionMode { get; private set; } = null!;
 
         /// <summary>
         /// Key replica details
@@ -130,19 +130,19 @@ namespace Pulumi.Oci.Kms
         /// The OCID of the key from which this key was restored.
         /// </summary>
         [Output("restoredFromKeyId")]
-        public Output<string> RestoredFromKeyId { get; private set; } = null!;
+        public Output<string?> RestoredFromKeyId { get; private set; } = null!;
 
         /// <summary>
         /// The key's current lifecycle state.  Example: `ENABLED`
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the key was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-04-03T21:10:29.600Z`
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) An optional property for the deletion time of the key, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
@@ -151,13 +151,13 @@ namespace Pulumi.Oci.Kms
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("timeOfDeletion")]
-        public Output<string> TimeOfDeletion { get; private set; } = null!;
+        public Output<string?> TimeOfDeletion { get; private set; } = null!;
 
         /// <summary>
         /// The OCID of the vault that contains this key.
         /// </summary>
         [Output("vaultId")]
-        public Output<string> VaultId { get; private set; } = null!;
+        public Output<string?> VaultId { get; private set; } = null!;
 
 
         /// <summary>

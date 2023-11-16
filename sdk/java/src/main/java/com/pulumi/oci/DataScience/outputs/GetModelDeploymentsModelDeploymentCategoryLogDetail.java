@@ -8,6 +8,7 @@ import com.pulumi.oci.DataScience.outputs.GetModelDeploymentsModelDeploymentCate
 import com.pulumi.oci.DataScience.outputs.GetModelDeploymentsModelDeploymentCategoryLogDetailPredict;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetModelDeploymentsModelDeploymentCategoryLogDetail {
@@ -15,12 +16,12 @@ public final class GetModelDeploymentsModelDeploymentCategoryLogDetail {
      * @return The log details.
      * 
      */
-    private List<GetModelDeploymentsModelDeploymentCategoryLogDetailAccess> accesses;
+    private @Nullable List<GetModelDeploymentsModelDeploymentCategoryLogDetailAccess> accesses;
     /**
      * @return The log details.
      * 
      */
-    private List<GetModelDeploymentsModelDeploymentCategoryLogDetailPredict> predicts;
+    private @Nullable List<GetModelDeploymentsModelDeploymentCategoryLogDetailPredict> predicts;
 
     private GetModelDeploymentsModelDeploymentCategoryLogDetail() {}
     /**
@@ -28,14 +29,14 @@ public final class GetModelDeploymentsModelDeploymentCategoryLogDetail {
      * 
      */
     public List<GetModelDeploymentsModelDeploymentCategoryLogDetailAccess> accesses() {
-        return this.accesses;
+        return this.accesses == null ? List.of() : this.accesses;
     }
     /**
      * @return The log details.
      * 
      */
     public List<GetModelDeploymentsModelDeploymentCategoryLogDetailPredict> predicts() {
-        return this.predicts;
+        return this.predicts == null ? List.of() : this.predicts;
     }
 
     public static Builder builder() {
@@ -47,8 +48,8 @@ public final class GetModelDeploymentsModelDeploymentCategoryLogDetail {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetModelDeploymentsModelDeploymentCategoryLogDetailAccess> accesses;
-        private List<GetModelDeploymentsModelDeploymentCategoryLogDetailPredict> predicts;
+        private @Nullable List<GetModelDeploymentsModelDeploymentCategoryLogDetailAccess> accesses;
+        private @Nullable List<GetModelDeploymentsModelDeploymentCategoryLogDetailPredict> predicts;
         public Builder() {}
         public Builder(GetModelDeploymentsModelDeploymentCategoryLogDetail defaults) {
     	      Objects.requireNonNull(defaults);
@@ -57,16 +58,16 @@ public final class GetModelDeploymentsModelDeploymentCategoryLogDetail {
         }
 
         @CustomType.Setter
-        public Builder accesses(List<GetModelDeploymentsModelDeploymentCategoryLogDetailAccess> accesses) {
-            this.accesses = Objects.requireNonNull(accesses);
+        public Builder accesses(@Nullable List<GetModelDeploymentsModelDeploymentCategoryLogDetailAccess> accesses) {
+            this.accesses = accesses;
             return this;
         }
         public Builder accesses(GetModelDeploymentsModelDeploymentCategoryLogDetailAccess... accesses) {
             return accesses(List.of(accesses));
         }
         @CustomType.Setter
-        public Builder predicts(List<GetModelDeploymentsModelDeploymentCategoryLogDetailPredict> predicts) {
-            this.predicts = Objects.requireNonNull(predicts);
+        public Builder predicts(@Nullable List<GetModelDeploymentsModelDeploymentCategoryLogDetailPredict> predicts) {
+            this.predicts = predicts;
             return this;
         }
         public Builder predicts(GetModelDeploymentsModelDeploymentCategoryLogDetailPredict... predicts) {

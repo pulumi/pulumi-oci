@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Deploy Stage resource in Oracle Cloud Infrastructure Devops service.
@@ -30,31 +29,31 @@ type DeployStage struct {
 	pulumi.CustomResourceState
 
 	// (Updatable) Specifies the approval policy.
-	ApprovalPolicy DeployStageApprovalPolicyOutput `pulumi:"approvalPolicy"`
+	ApprovalPolicy DeployStageApprovalPolicyPtrOutput `pulumi:"approvalPolicy"`
 	// (Updatable) Disable pre/post upgrade hooks. Set to false by default.
-	AreHooksEnabled pulumi.BoolOutput `pulumi:"areHooksEnabled"`
+	AreHooksEnabled pulumi.BoolPtrOutput `pulumi:"areHooksEnabled"`
 	// (Updatable) Collection of backend environment IP addresses.
-	BlueBackendIps DeployStageBlueBackendIpsOutput `pulumi:"blueBackendIps"`
+	BlueBackendIps DeployStageBlueBackendIpsPtrOutput `pulumi:"blueBackendIps"`
 	// Specifies the required blue green release strategy for OKE deployment.
-	BlueGreenStrategy DeployStageBlueGreenStrategyOutput `pulumi:"blueGreenStrategy"`
+	BlueGreenStrategy DeployStageBlueGreenStrategyPtrOutput `pulumi:"blueGreenStrategy"`
 	// Specifies the required canary release strategy for OKE deployment.
-	CanaryStrategy DeployStageCanaryStrategyOutput `pulumi:"canaryStrategy"`
+	CanaryStrategy DeployStageCanaryStrategyPtrOutput `pulumi:"canaryStrategy"`
 	// (Updatable) The OCID of the artifact that contains the command specification.
-	CommandSpecDeployArtifactId pulumi.StringOutput `pulumi:"commandSpecDeployArtifactId"`
+	CommandSpecDeployArtifactId pulumi.StringPtrOutput `pulumi:"commandSpecDeployArtifactId"`
 	// (Updatable) The OCID of the compartment where the ContainerInstance will be created.
-	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrOutput `pulumi:"compartmentId"`
 	// The OCID of the upstream compute instance group blue-green deployment stage in this pipeline.
-	ComputeInstanceGroupBlueGreenDeploymentDeployStageId pulumi.StringOutput `pulumi:"computeInstanceGroupBlueGreenDeploymentDeployStageId"`
+	ComputeInstanceGroupBlueGreenDeploymentDeployStageId pulumi.StringPtrOutput `pulumi:"computeInstanceGroupBlueGreenDeploymentDeployStageId"`
 	// A compute instance group canary stage OCID for load balancer.
-	ComputeInstanceGroupCanaryDeployStageId pulumi.StringOutput `pulumi:"computeInstanceGroupCanaryDeployStageId"`
+	ComputeInstanceGroupCanaryDeployStageId pulumi.StringPtrOutput `pulumi:"computeInstanceGroupCanaryDeployStageId"`
 	// (Updatable) A compute instance group canary traffic shift stage OCID for load balancer.
-	ComputeInstanceGroupCanaryTrafficShiftDeployStageId pulumi.StringOutput `pulumi:"computeInstanceGroupCanaryTrafficShiftDeployStageId"`
+	ComputeInstanceGroupCanaryTrafficShiftDeployStageId pulumi.StringPtrOutput `pulumi:"computeInstanceGroupCanaryTrafficShiftDeployStageId"`
 	// (Updatable) A compute instance group environment OCID for rolling deployment.
-	ComputeInstanceGroupDeployEnvironmentId pulumi.StringOutput `pulumi:"computeInstanceGroupDeployEnvironmentId"`
+	ComputeInstanceGroupDeployEnvironmentId pulumi.StringPtrOutput `pulumi:"computeInstanceGroupDeployEnvironmentId"`
 	// (Updatable) User provided key and value pair configuration, which is assigned through constants or parameter.
 	Config pulumi.MapOutput `pulumi:"config"`
 	// (Updatable) Specifies the container configuration.
-	ContainerConfig DeployStageContainerConfigOutput `pulumi:"containerConfig"`
+	ContainerConfig DeployStageContainerConfigPtrOutput `pulumi:"containerConfig"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) Optional artifact OCID. The artifact will be included in the body for the function invocation during the stage's execution. If the DeployArtifact.argumentSubstituitionMode is set to SUBSTITUTE_PLACEHOLDERS, then the pipeline parameter values will be used to replace the placeholders in the artifact content.
@@ -62,9 +61,9 @@ type DeployStage struct {
 	// (Updatable) The list of file artifact OCIDs to deploy.
 	DeployArtifactIds pulumi.StringArrayOutput `pulumi:"deployArtifactIds"`
 	// First compute instance group environment OCID for deployment.
-	DeployEnvironmentIdA pulumi.StringOutput `pulumi:"deployEnvironmentIdA"`
+	DeployEnvironmentIdA pulumi.StringPtrOutput `pulumi:"deployEnvironmentIdA"`
 	// Second compute instance group environment OCID for deployment.
-	DeployEnvironmentIdB pulumi.StringOutput `pulumi:"deployEnvironmentIdB"`
+	DeployEnvironmentIdB pulumi.StringPtrOutput `pulumi:"deployEnvironmentIdB"`
 	// The OCID of a pipeline.
 	DeployPipelineId pulumi.StringOutput `pulumi:"deployPipelineId"`
 	// (Updatable) Collection containing the predecessors of a stage.
@@ -72,97 +71,97 @@ type DeployStage struct {
 	// (Updatable) Deployment stage type.
 	DeployStageType pulumi.StringOutput `pulumi:"deployStageType"`
 	// (Updatable) The OCID of the artifact that contains the deployment specification.
-	DeploymentSpecDeployArtifactId pulumi.StringOutput `pulumi:"deploymentSpecDeployArtifactId"`
+	DeploymentSpecDeployArtifactId pulumi.StringPtrOutput `pulumi:"deploymentSpecDeployArtifactId"`
 	// (Updatable) Optional description about the deployment stage.
-	Description pulumi.StringOutput `pulumi:"description"`
+	Description pulumi.StringPtrOutput `pulumi:"description"`
 	// (Updatable) Deployment stage display name, which can be renamed and is not necessarily unique. Avoid entering confidential information.
-	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrOutput `pulumi:"displayName"`
 	// (Updatable) A Docker image artifact OCID.
-	DockerImageDeployArtifactId pulumi.StringOutput `pulumi:"dockerImageDeployArtifactId"`
+	DockerImageDeployArtifactId pulumi.StringPtrOutput `pulumi:"dockerImageDeployArtifactId"`
 	// (Updatable) Specifies a failure policy for a compute instance group rolling deployment stage.
-	FailurePolicy DeployStageFailurePolicyOutput `pulumi:"failurePolicy"`
+	FailurePolicy DeployStageFailurePolicyPtrOutput `pulumi:"failurePolicy"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// (Updatable) Function environment OCID.
-	FunctionDeployEnvironmentId pulumi.StringOutput `pulumi:"functionDeployEnvironmentId"`
+	FunctionDeployEnvironmentId pulumi.StringPtrOutput `pulumi:"functionDeployEnvironmentId"`
 	// (Updatable) Timeout for execution of the Function. Value in seconds.
-	FunctionTimeoutInSeconds pulumi.IntOutput `pulumi:"functionTimeoutInSeconds"`
+	FunctionTimeoutInSeconds pulumi.IntPtrOutput `pulumi:"functionTimeoutInSeconds"`
 	// (Updatable) Collection of backend environment IP addresses.
-	GreenBackendIps DeployStageGreenBackendIpsOutput `pulumi:"greenBackendIps"`
+	GreenBackendIps DeployStageGreenBackendIpsPtrOutput `pulumi:"greenBackendIps"`
 	// (Updatable) Helm chart artifact OCID.
-	HelmChartDeployArtifactId pulumi.StringOutput `pulumi:"helmChartDeployArtifactId"`
+	HelmChartDeployArtifactId pulumi.StringPtrOutput `pulumi:"helmChartDeployArtifactId"`
 	// (Updatable) A boolean flag specifies whether this stage executes asynchronously.
-	IsAsync pulumi.BoolOutput `pulumi:"isAsync"`
+	IsAsync pulumi.BoolPtrOutput `pulumi:"isAsync"`
 	// (Updatable) Enables helm --debug option to stream output to tf stdout. Set to false by default.
-	IsDebugEnabled pulumi.BoolOutput `pulumi:"isDebugEnabled"`
+	IsDebugEnabled pulumi.BoolPtrOutput `pulumi:"isDebugEnabled"`
 	// (Updatable) Force resource update through delete; or if required, recreate. Set to false by default.
-	IsForceEnabled pulumi.BoolOutput `pulumi:"isForceEnabled"`
+	IsForceEnabled pulumi.BoolPtrOutput `pulumi:"isForceEnabled"`
 	// (Updatable) A boolean flag specifies whether the invoked function should be validated.
-	IsValidationEnabled pulumi.BoolOutput `pulumi:"isValidationEnabled"`
+	IsValidationEnabled pulumi.BoolPtrOutput `pulumi:"isValidationEnabled"`
 	// (Updatable) List of Kubernetes manifest artifact OCIDs.
 	KubernetesManifestDeployArtifactIds pulumi.StringArrayOutput `pulumi:"kubernetesManifestDeployArtifactIds"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrOutput `pulumi:"lifecycleDetails"`
 	// (Updatable) Specifies config for load balancer traffic shift stages. The Load Balancer specified here should be an Application Load Balancer type. Network Load Balancers are not supported.
-	LoadBalancerConfig DeployStageLoadBalancerConfigOutput `pulumi:"loadBalancerConfig"`
+	LoadBalancerConfig DeployStageLoadBalancerConfigPtrOutput `pulumi:"loadBalancerConfig"`
 	// (Updatable) Limit the maximum number of revisions saved per release. Use 0 for no limit. Set to 10 by default
-	MaxHistory pulumi.IntOutput `pulumi:"maxHistory"`
+	MaxHistory pulumi.IntPtrOutput `pulumi:"maxHistory"`
 	// (Updatable) Maximum usable memory for the Function (in MB).
-	MaxMemoryInMbs pulumi.StringOutput `pulumi:"maxMemoryInMbs"`
+	MaxMemoryInMbs pulumi.StringPtrOutput `pulumi:"maxMemoryInMbs"`
 	// (Updatable) Default namespace to be used for Kubernetes deployment when not specified in the manifest.
-	Namespace pulumi.StringOutput `pulumi:"namespace"`
+	Namespace pulumi.StringPtrOutput `pulumi:"namespace"`
 	// The OCID of the upstream OKE blue-green deployment stage in this pipeline.
-	OkeBlueGreenDeployStageId pulumi.StringOutput `pulumi:"okeBlueGreenDeployStageId"`
+	OkeBlueGreenDeployStageId pulumi.StringPtrOutput `pulumi:"okeBlueGreenDeployStageId"`
 	// The OCID of an upstream OKE canary deployment stage in this pipeline.
-	OkeCanaryDeployStageId pulumi.StringOutput `pulumi:"okeCanaryDeployStageId"`
+	OkeCanaryDeployStageId pulumi.StringPtrOutput `pulumi:"okeCanaryDeployStageId"`
 	// The OCID of an upstream OKE canary deployment traffic shift stage in this pipeline.
-	OkeCanaryTrafficShiftDeployStageId pulumi.StringOutput `pulumi:"okeCanaryTrafficShiftDeployStageId"`
+	OkeCanaryTrafficShiftDeployStageId pulumi.StringPtrOutput `pulumi:"okeCanaryTrafficShiftDeployStageId"`
 	// (Updatable) Kubernetes cluster environment OCID for deployment.
-	OkeClusterDeployEnvironmentId pulumi.StringOutput `pulumi:"okeClusterDeployEnvironmentId"`
+	OkeClusterDeployEnvironmentId pulumi.StringPtrOutput `pulumi:"okeClusterDeployEnvironmentId"`
 	// Specifies configuration for load balancer traffic shift stages. The load balancer specified here should be an Application load balancer type. Network load balancers are not supported.
-	ProductionLoadBalancerConfig DeployStageProductionLoadBalancerConfigOutput `pulumi:"productionLoadBalancerConfig"`
+	ProductionLoadBalancerConfig DeployStageProductionLoadBalancerConfigPtrOutput `pulumi:"productionLoadBalancerConfig"`
 	// The OCID of a project.
-	ProjectId pulumi.StringOutput `pulumi:"projectId"`
+	ProjectId pulumi.StringPtrOutput `pulumi:"projectId"`
 	// (Updatable) Default name of the chart instance. Must be unique within a Kubernetes namespace.
-	ReleaseName pulumi.StringOutput `pulumi:"releaseName"`
+	ReleaseName pulumi.StringPtrOutput `pulumi:"releaseName"`
 	// (Updatable) Specifies the rollback policy. This is initiated on the failure of certain stage types.
-	RollbackPolicy DeployStageRollbackPolicyOutput `pulumi:"rollbackPolicy"`
+	RollbackPolicy DeployStageRollbackPolicyPtrOutput `pulumi:"rollbackPolicy"`
 	// (Updatable) Description of rollout policy for load balancer traffic shift stage.
-	RolloutPolicy DeployStageRolloutPolicyOutput `pulumi:"rolloutPolicy"`
+	RolloutPolicy DeployStageRolloutPolicyPtrOutput `pulumi:"rolloutPolicy"`
 	// (Updatable) Specifies the name and value pairs to set helm values.
-	SetString DeployStageSetStringOutput `pulumi:"setString"`
+	SetString DeployStageSetStringPtrOutput `pulumi:"setString"`
 	// (Updatable) Specifies the name and value pairs to set helm values.
-	SetValues DeployStageSetValuesOutput `pulumi:"setValues"`
+	SetValues DeployStageSetValuesPtrOutput `pulumi:"setValues"`
 	// (Updatable) Allow deletion of new resources created during when an upgrade fails. Set to false by default.
-	ShouldCleanupOnFail pulumi.BoolOutput `pulumi:"shouldCleanupOnFail"`
+	ShouldCleanupOnFail pulumi.BoolPtrOutput `pulumi:"shouldCleanupOnFail"`
 	// (Updatable) Does not wait until all the resources are in a ready state to mark the release as successful if set to true. Set to false by default.
-	ShouldNotWait pulumi.BoolOutput `pulumi:"shouldNotWait"`
+	ShouldNotWait pulumi.BoolPtrOutput `pulumi:"shouldNotWait"`
 	// (Updatable) During upgrade, reset the values to the ones built into the chart. It overrides shouldReuseValues. Set to false by default.
-	ShouldResetValues pulumi.BoolOutput `pulumi:"shouldResetValues"`
+	ShouldResetValues pulumi.BoolPtrOutput `pulumi:"shouldResetValues"`
 	// (Updatable) During upgrade, reuse the values of the last release and merge overrides from the command line. Set to false by default.
-	ShouldReuseValues pulumi.BoolOutput `pulumi:"shouldReuseValues"`
+	ShouldReuseValues pulumi.BoolPtrOutput `pulumi:"shouldReuseValues"`
 	// (Updatable) If set, no CRDs are installed. By default, CRDs are installed only if they are not present already. Set to false by default.
-	ShouldSkipCrds pulumi.BoolOutput `pulumi:"shouldSkipCrds"`
+	ShouldSkipCrds pulumi.BoolPtrOutput `pulumi:"shouldSkipCrds"`
 	// (Updatable) If set, renders subchart notes along with the parent. Set to false by default.
-	ShouldSkipRenderSubchartNotes pulumi.BoolOutput `pulumi:"shouldSkipRenderSubchartNotes"`
+	ShouldSkipRenderSubchartNotes pulumi.BoolPtrOutput `pulumi:"shouldSkipRenderSubchartNotes"`
 	// The current state of the deployment stage.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
 	// (Updatable) Specifies configuration for load balancer traffic shift stages. The load balancer specified here should be an Application load balancer type. Network load balancers are not supported.
-	TestLoadBalancerConfig DeployStageTestLoadBalancerConfigOutput `pulumi:"testLoadBalancerConfig"`
+	TestLoadBalancerConfig DeployStageTestLoadBalancerConfigPtrOutput `pulumi:"testLoadBalancerConfig"`
 	// Time the deployment stage was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// Time the deployment stage was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
-	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 	// (Updatable) Time to wait for execution of a Shell/Helm stage. Defaults to 36000 seconds for Shell and 300 seconds for Helm Stage
-	TimeoutInSeconds pulumi.IntOutput `pulumi:"timeoutInSeconds"`
+	TimeoutInSeconds pulumi.IntPtrOutput `pulumi:"timeoutInSeconds"`
 	// (Updatable) Specifies the target or destination backend set.
-	TrafficShiftTarget pulumi.StringOutput `pulumi:"trafficShiftTarget"`
+	TrafficShiftTarget pulumi.StringPtrOutput `pulumi:"trafficShiftTarget"`
 	// (Updatable) List of values.yaml file artifact OCIDs.
 	ValuesArtifactIds pulumi.StringArrayOutput `pulumi:"valuesArtifactIds"`
 	// (Updatable) Specifies wait criteria for the Wait stage.
-	WaitCriteria DeployStageWaitCriteriaOutput `pulumi:"waitCriteria"`
+	WaitCriteria DeployStageWaitCriteriaPtrOutput `pulumi:"waitCriteria"`
 }
 
 // NewDeployStage registers a new resource with the given unique name, arguments, and options.
@@ -751,12 +750,6 @@ func (i *DeployStage) ToDeployStageOutputWithContext(ctx context.Context) Deploy
 	return pulumi.ToOutputWithContext(ctx, i).(DeployStageOutput)
 }
 
-func (i *DeployStage) ToOutput(ctx context.Context) pulumix.Output[*DeployStage] {
-	return pulumix.Output[*DeployStage]{
-		OutputState: i.ToDeployStageOutputWithContext(ctx).OutputState,
-	}
-}
-
 // DeployStageArrayInput is an input type that accepts DeployStageArray and DeployStageArrayOutput values.
 // You can construct a concrete instance of `DeployStageArrayInput` via:
 //
@@ -780,12 +773,6 @@ func (i DeployStageArray) ToDeployStageArrayOutput() DeployStageArrayOutput {
 
 func (i DeployStageArray) ToDeployStageArrayOutputWithContext(ctx context.Context) DeployStageArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(DeployStageArrayOutput)
-}
-
-func (i DeployStageArray) ToOutput(ctx context.Context) pulumix.Output[[]*DeployStage] {
-	return pulumix.Output[[]*DeployStage]{
-		OutputState: i.ToDeployStageArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // DeployStageMapInput is an input type that accepts DeployStageMap and DeployStageMapOutput values.
@@ -813,12 +800,6 @@ func (i DeployStageMap) ToDeployStageMapOutputWithContext(ctx context.Context) D
 	return pulumi.ToOutputWithContext(ctx, i).(DeployStageMapOutput)
 }
 
-func (i DeployStageMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*DeployStage] {
-	return pulumix.Output[map[string]*DeployStage]{
-		OutputState: i.ToDeployStageMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DeployStageOutput struct{ *pulumi.OutputState }
 
 func (DeployStageOutput) ElementType() reflect.Type {
@@ -833,67 +814,63 @@ func (o DeployStageOutput) ToDeployStageOutputWithContext(ctx context.Context) D
 	return o
 }
 
-func (o DeployStageOutput) ToOutput(ctx context.Context) pulumix.Output[*DeployStage] {
-	return pulumix.Output[*DeployStage]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) Specifies the approval policy.
-func (o DeployStageOutput) ApprovalPolicy() DeployStageApprovalPolicyOutput {
-	return o.ApplyT(func(v *DeployStage) DeployStageApprovalPolicyOutput { return v.ApprovalPolicy }).(DeployStageApprovalPolicyOutput)
+func (o DeployStageOutput) ApprovalPolicy() DeployStageApprovalPolicyPtrOutput {
+	return o.ApplyT(func(v *DeployStage) DeployStageApprovalPolicyPtrOutput { return v.ApprovalPolicy }).(DeployStageApprovalPolicyPtrOutput)
 }
 
 // (Updatable) Disable pre/post upgrade hooks. Set to false by default.
-func (o DeployStageOutput) AreHooksEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v *DeployStage) pulumi.BoolOutput { return v.AreHooksEnabled }).(pulumi.BoolOutput)
+func (o DeployStageOutput) AreHooksEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DeployStage) pulumi.BoolPtrOutput { return v.AreHooksEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // (Updatable) Collection of backend environment IP addresses.
-func (o DeployStageOutput) BlueBackendIps() DeployStageBlueBackendIpsOutput {
-	return o.ApplyT(func(v *DeployStage) DeployStageBlueBackendIpsOutput { return v.BlueBackendIps }).(DeployStageBlueBackendIpsOutput)
+func (o DeployStageOutput) BlueBackendIps() DeployStageBlueBackendIpsPtrOutput {
+	return o.ApplyT(func(v *DeployStage) DeployStageBlueBackendIpsPtrOutput { return v.BlueBackendIps }).(DeployStageBlueBackendIpsPtrOutput)
 }
 
 // Specifies the required blue green release strategy for OKE deployment.
-func (o DeployStageOutput) BlueGreenStrategy() DeployStageBlueGreenStrategyOutput {
-	return o.ApplyT(func(v *DeployStage) DeployStageBlueGreenStrategyOutput { return v.BlueGreenStrategy }).(DeployStageBlueGreenStrategyOutput)
+func (o DeployStageOutput) BlueGreenStrategy() DeployStageBlueGreenStrategyPtrOutput {
+	return o.ApplyT(func(v *DeployStage) DeployStageBlueGreenStrategyPtrOutput { return v.BlueGreenStrategy }).(DeployStageBlueGreenStrategyPtrOutput)
 }
 
 // Specifies the required canary release strategy for OKE deployment.
-func (o DeployStageOutput) CanaryStrategy() DeployStageCanaryStrategyOutput {
-	return o.ApplyT(func(v *DeployStage) DeployStageCanaryStrategyOutput { return v.CanaryStrategy }).(DeployStageCanaryStrategyOutput)
+func (o DeployStageOutput) CanaryStrategy() DeployStageCanaryStrategyPtrOutput {
+	return o.ApplyT(func(v *DeployStage) DeployStageCanaryStrategyPtrOutput { return v.CanaryStrategy }).(DeployStageCanaryStrategyPtrOutput)
 }
 
 // (Updatable) The OCID of the artifact that contains the command specification.
-func (o DeployStageOutput) CommandSpecDeployArtifactId() pulumi.StringOutput {
-	return o.ApplyT(func(v *DeployStage) pulumi.StringOutput { return v.CommandSpecDeployArtifactId }).(pulumi.StringOutput)
+func (o DeployStageOutput) CommandSpecDeployArtifactId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DeployStage) pulumi.StringPtrOutput { return v.CommandSpecDeployArtifactId }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The OCID of the compartment where the ContainerInstance will be created.
-func (o DeployStageOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v *DeployStage) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
+func (o DeployStageOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DeployStage) pulumi.StringPtrOutput { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the upstream compute instance group blue-green deployment stage in this pipeline.
-func (o DeployStageOutput) ComputeInstanceGroupBlueGreenDeploymentDeployStageId() pulumi.StringOutput {
-	return o.ApplyT(func(v *DeployStage) pulumi.StringOutput {
+func (o DeployStageOutput) ComputeInstanceGroupBlueGreenDeploymentDeployStageId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DeployStage) pulumi.StringPtrOutput {
 		return v.ComputeInstanceGroupBlueGreenDeploymentDeployStageId
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // A compute instance group canary stage OCID for load balancer.
-func (o DeployStageOutput) ComputeInstanceGroupCanaryDeployStageId() pulumi.StringOutput {
-	return o.ApplyT(func(v *DeployStage) pulumi.StringOutput { return v.ComputeInstanceGroupCanaryDeployStageId }).(pulumi.StringOutput)
+func (o DeployStageOutput) ComputeInstanceGroupCanaryDeployStageId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DeployStage) pulumi.StringPtrOutput { return v.ComputeInstanceGroupCanaryDeployStageId }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) A compute instance group canary traffic shift stage OCID for load balancer.
-func (o DeployStageOutput) ComputeInstanceGroupCanaryTrafficShiftDeployStageId() pulumi.StringOutput {
-	return o.ApplyT(func(v *DeployStage) pulumi.StringOutput { return v.ComputeInstanceGroupCanaryTrafficShiftDeployStageId }).(pulumi.StringOutput)
+func (o DeployStageOutput) ComputeInstanceGroupCanaryTrafficShiftDeployStageId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DeployStage) pulumi.StringPtrOutput {
+		return v.ComputeInstanceGroupCanaryTrafficShiftDeployStageId
+	}).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) A compute instance group environment OCID for rolling deployment.
-func (o DeployStageOutput) ComputeInstanceGroupDeployEnvironmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v *DeployStage) pulumi.StringOutput { return v.ComputeInstanceGroupDeployEnvironmentId }).(pulumi.StringOutput)
+func (o DeployStageOutput) ComputeInstanceGroupDeployEnvironmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DeployStage) pulumi.StringPtrOutput { return v.ComputeInstanceGroupDeployEnvironmentId }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) User provided key and value pair configuration, which is assigned through constants or parameter.
@@ -902,8 +879,8 @@ func (o DeployStageOutput) Config() pulumi.MapOutput {
 }
 
 // (Updatable) Specifies the container configuration.
-func (o DeployStageOutput) ContainerConfig() DeployStageContainerConfigOutput {
-	return o.ApplyT(func(v *DeployStage) DeployStageContainerConfigOutput { return v.ContainerConfig }).(DeployStageContainerConfigOutput)
+func (o DeployStageOutput) ContainerConfig() DeployStageContainerConfigPtrOutput {
+	return o.ApplyT(func(v *DeployStage) DeployStageContainerConfigPtrOutput { return v.ContainerConfig }).(DeployStageContainerConfigPtrOutput)
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
@@ -922,13 +899,13 @@ func (o DeployStageOutput) DeployArtifactIds() pulumi.StringArrayOutput {
 }
 
 // First compute instance group environment OCID for deployment.
-func (o DeployStageOutput) DeployEnvironmentIdA() pulumi.StringOutput {
-	return o.ApplyT(func(v *DeployStage) pulumi.StringOutput { return v.DeployEnvironmentIdA }).(pulumi.StringOutput)
+func (o DeployStageOutput) DeployEnvironmentIdA() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DeployStage) pulumi.StringPtrOutput { return v.DeployEnvironmentIdA }).(pulumi.StringPtrOutput)
 }
 
 // Second compute instance group environment OCID for deployment.
-func (o DeployStageOutput) DeployEnvironmentIdB() pulumi.StringOutput {
-	return o.ApplyT(func(v *DeployStage) pulumi.StringOutput { return v.DeployEnvironmentIdB }).(pulumi.StringOutput)
+func (o DeployStageOutput) DeployEnvironmentIdB() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DeployStage) pulumi.StringPtrOutput { return v.DeployEnvironmentIdB }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of a pipeline.
@@ -949,28 +926,28 @@ func (o DeployStageOutput) DeployStageType() pulumi.StringOutput {
 }
 
 // (Updatable) The OCID of the artifact that contains the deployment specification.
-func (o DeployStageOutput) DeploymentSpecDeployArtifactId() pulumi.StringOutput {
-	return o.ApplyT(func(v *DeployStage) pulumi.StringOutput { return v.DeploymentSpecDeployArtifactId }).(pulumi.StringOutput)
+func (o DeployStageOutput) DeploymentSpecDeployArtifactId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DeployStage) pulumi.StringPtrOutput { return v.DeploymentSpecDeployArtifactId }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Optional description about the deployment stage.
-func (o DeployStageOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v *DeployStage) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
+func (o DeployStageOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DeployStage) pulumi.StringPtrOutput { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Deployment stage display name, which can be renamed and is not necessarily unique. Avoid entering confidential information.
-func (o DeployStageOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v *DeployStage) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+func (o DeployStageOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DeployStage) pulumi.StringPtrOutput { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) A Docker image artifact OCID.
-func (o DeployStageOutput) DockerImageDeployArtifactId() pulumi.StringOutput {
-	return o.ApplyT(func(v *DeployStage) pulumi.StringOutput { return v.DockerImageDeployArtifactId }).(pulumi.StringOutput)
+func (o DeployStageOutput) DockerImageDeployArtifactId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DeployStage) pulumi.StringPtrOutput { return v.DockerImageDeployArtifactId }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Specifies a failure policy for a compute instance group rolling deployment stage.
-func (o DeployStageOutput) FailurePolicy() DeployStageFailurePolicyOutput {
-	return o.ApplyT(func(v *DeployStage) DeployStageFailurePolicyOutput { return v.FailurePolicy }).(DeployStageFailurePolicyOutput)
+func (o DeployStageOutput) FailurePolicy() DeployStageFailurePolicyPtrOutput {
+	return o.ApplyT(func(v *DeployStage) DeployStageFailurePolicyPtrOutput { return v.FailurePolicy }).(DeployStageFailurePolicyPtrOutput)
 }
 
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
@@ -979,43 +956,43 @@ func (o DeployStageOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // (Updatable) Function environment OCID.
-func (o DeployStageOutput) FunctionDeployEnvironmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v *DeployStage) pulumi.StringOutput { return v.FunctionDeployEnvironmentId }).(pulumi.StringOutput)
+func (o DeployStageOutput) FunctionDeployEnvironmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DeployStage) pulumi.StringPtrOutput { return v.FunctionDeployEnvironmentId }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Timeout for execution of the Function. Value in seconds.
-func (o DeployStageOutput) FunctionTimeoutInSeconds() pulumi.IntOutput {
-	return o.ApplyT(func(v *DeployStage) pulumi.IntOutput { return v.FunctionTimeoutInSeconds }).(pulumi.IntOutput)
+func (o DeployStageOutput) FunctionTimeoutInSeconds() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *DeployStage) pulumi.IntPtrOutput { return v.FunctionTimeoutInSeconds }).(pulumi.IntPtrOutput)
 }
 
 // (Updatable) Collection of backend environment IP addresses.
-func (o DeployStageOutput) GreenBackendIps() DeployStageGreenBackendIpsOutput {
-	return o.ApplyT(func(v *DeployStage) DeployStageGreenBackendIpsOutput { return v.GreenBackendIps }).(DeployStageGreenBackendIpsOutput)
+func (o DeployStageOutput) GreenBackendIps() DeployStageGreenBackendIpsPtrOutput {
+	return o.ApplyT(func(v *DeployStage) DeployStageGreenBackendIpsPtrOutput { return v.GreenBackendIps }).(DeployStageGreenBackendIpsPtrOutput)
 }
 
 // (Updatable) Helm chart artifact OCID.
-func (o DeployStageOutput) HelmChartDeployArtifactId() pulumi.StringOutput {
-	return o.ApplyT(func(v *DeployStage) pulumi.StringOutput { return v.HelmChartDeployArtifactId }).(pulumi.StringOutput)
+func (o DeployStageOutput) HelmChartDeployArtifactId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DeployStage) pulumi.StringPtrOutput { return v.HelmChartDeployArtifactId }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) A boolean flag specifies whether this stage executes asynchronously.
-func (o DeployStageOutput) IsAsync() pulumi.BoolOutput {
-	return o.ApplyT(func(v *DeployStage) pulumi.BoolOutput { return v.IsAsync }).(pulumi.BoolOutput)
+func (o DeployStageOutput) IsAsync() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DeployStage) pulumi.BoolPtrOutput { return v.IsAsync }).(pulumi.BoolPtrOutput)
 }
 
 // (Updatable) Enables helm --debug option to stream output to tf stdout. Set to false by default.
-func (o DeployStageOutput) IsDebugEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v *DeployStage) pulumi.BoolOutput { return v.IsDebugEnabled }).(pulumi.BoolOutput)
+func (o DeployStageOutput) IsDebugEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DeployStage) pulumi.BoolPtrOutput { return v.IsDebugEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // (Updatable) Force resource update through delete; or if required, recreate. Set to false by default.
-func (o DeployStageOutput) IsForceEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v *DeployStage) pulumi.BoolOutput { return v.IsForceEnabled }).(pulumi.BoolOutput)
+func (o DeployStageOutput) IsForceEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DeployStage) pulumi.BoolPtrOutput { return v.IsForceEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // (Updatable) A boolean flag specifies whether the invoked function should be validated.
-func (o DeployStageOutput) IsValidationEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v *DeployStage) pulumi.BoolOutput { return v.IsValidationEnabled }).(pulumi.BoolOutput)
+func (o DeployStageOutput) IsValidationEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DeployStage) pulumi.BoolPtrOutput { return v.IsValidationEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // (Updatable) List of Kubernetes manifest artifact OCIDs.
@@ -1024,120 +1001,120 @@ func (o DeployStageOutput) KubernetesManifestDeployArtifactIds() pulumi.StringAr
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-func (o DeployStageOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v *DeployStage) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o DeployStageOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DeployStage) pulumi.StringPtrOutput { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Specifies config for load balancer traffic shift stages. The Load Balancer specified here should be an Application Load Balancer type. Network Load Balancers are not supported.
-func (o DeployStageOutput) LoadBalancerConfig() DeployStageLoadBalancerConfigOutput {
-	return o.ApplyT(func(v *DeployStage) DeployStageLoadBalancerConfigOutput { return v.LoadBalancerConfig }).(DeployStageLoadBalancerConfigOutput)
+func (o DeployStageOutput) LoadBalancerConfig() DeployStageLoadBalancerConfigPtrOutput {
+	return o.ApplyT(func(v *DeployStage) DeployStageLoadBalancerConfigPtrOutput { return v.LoadBalancerConfig }).(DeployStageLoadBalancerConfigPtrOutput)
 }
 
 // (Updatable) Limit the maximum number of revisions saved per release. Use 0 for no limit. Set to 10 by default
-func (o DeployStageOutput) MaxHistory() pulumi.IntOutput {
-	return o.ApplyT(func(v *DeployStage) pulumi.IntOutput { return v.MaxHistory }).(pulumi.IntOutput)
+func (o DeployStageOutput) MaxHistory() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *DeployStage) pulumi.IntPtrOutput { return v.MaxHistory }).(pulumi.IntPtrOutput)
 }
 
 // (Updatable) Maximum usable memory for the Function (in MB).
-func (o DeployStageOutput) MaxMemoryInMbs() pulumi.StringOutput {
-	return o.ApplyT(func(v *DeployStage) pulumi.StringOutput { return v.MaxMemoryInMbs }).(pulumi.StringOutput)
+func (o DeployStageOutput) MaxMemoryInMbs() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DeployStage) pulumi.StringPtrOutput { return v.MaxMemoryInMbs }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Default namespace to be used for Kubernetes deployment when not specified in the manifest.
-func (o DeployStageOutput) Namespace() pulumi.StringOutput {
-	return o.ApplyT(func(v *DeployStage) pulumi.StringOutput { return v.Namespace }).(pulumi.StringOutput)
+func (o DeployStageOutput) Namespace() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DeployStage) pulumi.StringPtrOutput { return v.Namespace }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the upstream OKE blue-green deployment stage in this pipeline.
-func (o DeployStageOutput) OkeBlueGreenDeployStageId() pulumi.StringOutput {
-	return o.ApplyT(func(v *DeployStage) pulumi.StringOutput { return v.OkeBlueGreenDeployStageId }).(pulumi.StringOutput)
+func (o DeployStageOutput) OkeBlueGreenDeployStageId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DeployStage) pulumi.StringPtrOutput { return v.OkeBlueGreenDeployStageId }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of an upstream OKE canary deployment stage in this pipeline.
-func (o DeployStageOutput) OkeCanaryDeployStageId() pulumi.StringOutput {
-	return o.ApplyT(func(v *DeployStage) pulumi.StringOutput { return v.OkeCanaryDeployStageId }).(pulumi.StringOutput)
+func (o DeployStageOutput) OkeCanaryDeployStageId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DeployStage) pulumi.StringPtrOutput { return v.OkeCanaryDeployStageId }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of an upstream OKE canary deployment traffic shift stage in this pipeline.
-func (o DeployStageOutput) OkeCanaryTrafficShiftDeployStageId() pulumi.StringOutput {
-	return o.ApplyT(func(v *DeployStage) pulumi.StringOutput { return v.OkeCanaryTrafficShiftDeployStageId }).(pulumi.StringOutput)
+func (o DeployStageOutput) OkeCanaryTrafficShiftDeployStageId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DeployStage) pulumi.StringPtrOutput { return v.OkeCanaryTrafficShiftDeployStageId }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Kubernetes cluster environment OCID for deployment.
-func (o DeployStageOutput) OkeClusterDeployEnvironmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v *DeployStage) pulumi.StringOutput { return v.OkeClusterDeployEnvironmentId }).(pulumi.StringOutput)
+func (o DeployStageOutput) OkeClusterDeployEnvironmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DeployStage) pulumi.StringPtrOutput { return v.OkeClusterDeployEnvironmentId }).(pulumi.StringPtrOutput)
 }
 
 // Specifies configuration for load balancer traffic shift stages. The load balancer specified here should be an Application load balancer type. Network load balancers are not supported.
-func (o DeployStageOutput) ProductionLoadBalancerConfig() DeployStageProductionLoadBalancerConfigOutput {
-	return o.ApplyT(func(v *DeployStage) DeployStageProductionLoadBalancerConfigOutput {
+func (o DeployStageOutput) ProductionLoadBalancerConfig() DeployStageProductionLoadBalancerConfigPtrOutput {
+	return o.ApplyT(func(v *DeployStage) DeployStageProductionLoadBalancerConfigPtrOutput {
 		return v.ProductionLoadBalancerConfig
-	}).(DeployStageProductionLoadBalancerConfigOutput)
+	}).(DeployStageProductionLoadBalancerConfigPtrOutput)
 }
 
 // The OCID of a project.
-func (o DeployStageOutput) ProjectId() pulumi.StringOutput {
-	return o.ApplyT(func(v *DeployStage) pulumi.StringOutput { return v.ProjectId }).(pulumi.StringOutput)
+func (o DeployStageOutput) ProjectId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DeployStage) pulumi.StringPtrOutput { return v.ProjectId }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Default name of the chart instance. Must be unique within a Kubernetes namespace.
-func (o DeployStageOutput) ReleaseName() pulumi.StringOutput {
-	return o.ApplyT(func(v *DeployStage) pulumi.StringOutput { return v.ReleaseName }).(pulumi.StringOutput)
+func (o DeployStageOutput) ReleaseName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DeployStage) pulumi.StringPtrOutput { return v.ReleaseName }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Specifies the rollback policy. This is initiated on the failure of certain stage types.
-func (o DeployStageOutput) RollbackPolicy() DeployStageRollbackPolicyOutput {
-	return o.ApplyT(func(v *DeployStage) DeployStageRollbackPolicyOutput { return v.RollbackPolicy }).(DeployStageRollbackPolicyOutput)
+func (o DeployStageOutput) RollbackPolicy() DeployStageRollbackPolicyPtrOutput {
+	return o.ApplyT(func(v *DeployStage) DeployStageRollbackPolicyPtrOutput { return v.RollbackPolicy }).(DeployStageRollbackPolicyPtrOutput)
 }
 
 // (Updatable) Description of rollout policy for load balancer traffic shift stage.
-func (o DeployStageOutput) RolloutPolicy() DeployStageRolloutPolicyOutput {
-	return o.ApplyT(func(v *DeployStage) DeployStageRolloutPolicyOutput { return v.RolloutPolicy }).(DeployStageRolloutPolicyOutput)
+func (o DeployStageOutput) RolloutPolicy() DeployStageRolloutPolicyPtrOutput {
+	return o.ApplyT(func(v *DeployStage) DeployStageRolloutPolicyPtrOutput { return v.RolloutPolicy }).(DeployStageRolloutPolicyPtrOutput)
 }
 
 // (Updatable) Specifies the name and value pairs to set helm values.
-func (o DeployStageOutput) SetString() DeployStageSetStringOutput {
-	return o.ApplyT(func(v *DeployStage) DeployStageSetStringOutput { return v.SetString }).(DeployStageSetStringOutput)
+func (o DeployStageOutput) SetString() DeployStageSetStringPtrOutput {
+	return o.ApplyT(func(v *DeployStage) DeployStageSetStringPtrOutput { return v.SetString }).(DeployStageSetStringPtrOutput)
 }
 
 // (Updatable) Specifies the name and value pairs to set helm values.
-func (o DeployStageOutput) SetValues() DeployStageSetValuesOutput {
-	return o.ApplyT(func(v *DeployStage) DeployStageSetValuesOutput { return v.SetValues }).(DeployStageSetValuesOutput)
+func (o DeployStageOutput) SetValues() DeployStageSetValuesPtrOutput {
+	return o.ApplyT(func(v *DeployStage) DeployStageSetValuesPtrOutput { return v.SetValues }).(DeployStageSetValuesPtrOutput)
 }
 
 // (Updatable) Allow deletion of new resources created during when an upgrade fails. Set to false by default.
-func (o DeployStageOutput) ShouldCleanupOnFail() pulumi.BoolOutput {
-	return o.ApplyT(func(v *DeployStage) pulumi.BoolOutput { return v.ShouldCleanupOnFail }).(pulumi.BoolOutput)
+func (o DeployStageOutput) ShouldCleanupOnFail() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DeployStage) pulumi.BoolPtrOutput { return v.ShouldCleanupOnFail }).(pulumi.BoolPtrOutput)
 }
 
 // (Updatable) Does not wait until all the resources are in a ready state to mark the release as successful if set to true. Set to false by default.
-func (o DeployStageOutput) ShouldNotWait() pulumi.BoolOutput {
-	return o.ApplyT(func(v *DeployStage) pulumi.BoolOutput { return v.ShouldNotWait }).(pulumi.BoolOutput)
+func (o DeployStageOutput) ShouldNotWait() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DeployStage) pulumi.BoolPtrOutput { return v.ShouldNotWait }).(pulumi.BoolPtrOutput)
 }
 
 // (Updatable) During upgrade, reset the values to the ones built into the chart. It overrides shouldReuseValues. Set to false by default.
-func (o DeployStageOutput) ShouldResetValues() pulumi.BoolOutput {
-	return o.ApplyT(func(v *DeployStage) pulumi.BoolOutput { return v.ShouldResetValues }).(pulumi.BoolOutput)
+func (o DeployStageOutput) ShouldResetValues() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DeployStage) pulumi.BoolPtrOutput { return v.ShouldResetValues }).(pulumi.BoolPtrOutput)
 }
 
 // (Updatable) During upgrade, reuse the values of the last release and merge overrides from the command line. Set to false by default.
-func (o DeployStageOutput) ShouldReuseValues() pulumi.BoolOutput {
-	return o.ApplyT(func(v *DeployStage) pulumi.BoolOutput { return v.ShouldReuseValues }).(pulumi.BoolOutput)
+func (o DeployStageOutput) ShouldReuseValues() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DeployStage) pulumi.BoolPtrOutput { return v.ShouldReuseValues }).(pulumi.BoolPtrOutput)
 }
 
 // (Updatable) If set, no CRDs are installed. By default, CRDs are installed only if they are not present already. Set to false by default.
-func (o DeployStageOutput) ShouldSkipCrds() pulumi.BoolOutput {
-	return o.ApplyT(func(v *DeployStage) pulumi.BoolOutput { return v.ShouldSkipCrds }).(pulumi.BoolOutput)
+func (o DeployStageOutput) ShouldSkipCrds() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DeployStage) pulumi.BoolPtrOutput { return v.ShouldSkipCrds }).(pulumi.BoolPtrOutput)
 }
 
 // (Updatable) If set, renders subchart notes along with the parent. Set to false by default.
-func (o DeployStageOutput) ShouldSkipRenderSubchartNotes() pulumi.BoolOutput {
-	return o.ApplyT(func(v *DeployStage) pulumi.BoolOutput { return v.ShouldSkipRenderSubchartNotes }).(pulumi.BoolOutput)
+func (o DeployStageOutput) ShouldSkipRenderSubchartNotes() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DeployStage) pulumi.BoolPtrOutput { return v.ShouldSkipRenderSubchartNotes }).(pulumi.BoolPtrOutput)
 }
 
 // The current state of the deployment stage.
-func (o DeployStageOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *DeployStage) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o DeployStageOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DeployStage) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -1146,28 +1123,28 @@ func (o DeployStageOutput) SystemTags() pulumi.MapOutput {
 }
 
 // (Updatable) Specifies configuration for load balancer traffic shift stages. The load balancer specified here should be an Application load balancer type. Network load balancers are not supported.
-func (o DeployStageOutput) TestLoadBalancerConfig() DeployStageTestLoadBalancerConfigOutput {
-	return o.ApplyT(func(v *DeployStage) DeployStageTestLoadBalancerConfigOutput { return v.TestLoadBalancerConfig }).(DeployStageTestLoadBalancerConfigOutput)
+func (o DeployStageOutput) TestLoadBalancerConfig() DeployStageTestLoadBalancerConfigPtrOutput {
+	return o.ApplyT(func(v *DeployStage) DeployStageTestLoadBalancerConfigPtrOutput { return v.TestLoadBalancerConfig }).(DeployStageTestLoadBalancerConfigPtrOutput)
 }
 
 // Time the deployment stage was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
-func (o DeployStageOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *DeployStage) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o DeployStageOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DeployStage) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // Time the deployment stage was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
-func (o DeployStageOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *DeployStage) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o DeployStageOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DeployStage) pulumi.StringPtrOutput { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Time to wait for execution of a Shell/Helm stage. Defaults to 36000 seconds for Shell and 300 seconds for Helm Stage
-func (o DeployStageOutput) TimeoutInSeconds() pulumi.IntOutput {
-	return o.ApplyT(func(v *DeployStage) pulumi.IntOutput { return v.TimeoutInSeconds }).(pulumi.IntOutput)
+func (o DeployStageOutput) TimeoutInSeconds() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *DeployStage) pulumi.IntPtrOutput { return v.TimeoutInSeconds }).(pulumi.IntPtrOutput)
 }
 
 // (Updatable) Specifies the target or destination backend set.
-func (o DeployStageOutput) TrafficShiftTarget() pulumi.StringOutput {
-	return o.ApplyT(func(v *DeployStage) pulumi.StringOutput { return v.TrafficShiftTarget }).(pulumi.StringOutput)
+func (o DeployStageOutput) TrafficShiftTarget() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DeployStage) pulumi.StringPtrOutput { return v.TrafficShiftTarget }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) List of values.yaml file artifact OCIDs.
@@ -1176,8 +1153,8 @@ func (o DeployStageOutput) ValuesArtifactIds() pulumi.StringArrayOutput {
 }
 
 // (Updatable) Specifies wait criteria for the Wait stage.
-func (o DeployStageOutput) WaitCriteria() DeployStageWaitCriteriaOutput {
-	return o.ApplyT(func(v *DeployStage) DeployStageWaitCriteriaOutput { return v.WaitCriteria }).(DeployStageWaitCriteriaOutput)
+func (o DeployStageOutput) WaitCriteria() DeployStageWaitCriteriaPtrOutput {
+	return o.ApplyT(func(v *DeployStage) DeployStageWaitCriteriaPtrOutput { return v.WaitCriteria }).(DeployStageWaitCriteriaPtrOutput)
 }
 
 type DeployStageArrayOutput struct{ *pulumi.OutputState }
@@ -1192,12 +1169,6 @@ func (o DeployStageArrayOutput) ToDeployStageArrayOutput() DeployStageArrayOutpu
 
 func (o DeployStageArrayOutput) ToDeployStageArrayOutputWithContext(ctx context.Context) DeployStageArrayOutput {
 	return o
-}
-
-func (o DeployStageArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*DeployStage] {
-	return pulumix.Output[[]*DeployStage]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DeployStageArrayOutput) Index(i pulumi.IntInput) DeployStageOutput {
@@ -1218,12 +1189,6 @@ func (o DeployStageMapOutput) ToDeployStageMapOutput() DeployStageMapOutput {
 
 func (o DeployStageMapOutput) ToDeployStageMapOutputWithContext(ctx context.Context) DeployStageMapOutput {
 	return o
-}
-
-func (o DeployStageMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*DeployStage] {
-	return pulumix.Output[map[string]*DeployStage]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DeployStageMapOutput) MapIndex(k pulumi.StringInput) DeployStageOutput {

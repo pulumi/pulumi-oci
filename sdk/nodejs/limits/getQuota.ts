@@ -47,45 +47,45 @@ export interface GetQuotaResult {
     /**
      * The OCID of the compartment containing the resource this quota applies to.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * The description you assign to the quota.
      */
-    readonly description: string;
+    readonly description?: string;
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * The OCID of the quota.
      */
-    readonly id: string;
-    readonly isLockOverride: boolean;
+    readonly id?: string;
+    readonly isLockOverride?: boolean;
     /**
      * Locks associated with this resource.
      */
-    readonly locks: outputs.Limits.GetQuotaLock[];
+    readonly locks?: outputs.Limits.GetQuotaLock[];
     /**
      * The name you assign to the quota during creation. The name must be unique across all quotas in the tenancy and cannot be changed.
      */
-    readonly name: string;
+    readonly name?: string;
     readonly quotaId: string;
     /**
      * The quota's current state.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * An array of one or more quota statements written in the declarative quota statement language.
      */
-    readonly statements: string[];
+    readonly statements?: string[];
     /**
      * Date and time the quota was created, in the format defined by RFC 3339. Example: `2016-08-25T21:10:29.600Z`
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
 }
 /**
  * This data source provides details about a specific Quota resource in Oracle Cloud Infrastructure Limits service.

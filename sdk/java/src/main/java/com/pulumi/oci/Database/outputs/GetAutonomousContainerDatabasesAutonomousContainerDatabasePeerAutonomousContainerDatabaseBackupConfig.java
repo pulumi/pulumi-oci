@@ -8,6 +8,8 @@ import com.pulumi.oci.Database.outputs.GetAutonomousContainerDatabasesAutonomous
 import java.lang.Integer;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAutonomousContainerDatabasesAutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfig {
@@ -15,12 +17,12 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabasePee
      * @return Backup destination details.
      * 
      */
-    private List<GetAutonomousContainerDatabasesAutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetail> backupDestinationDetails;
+    private @Nullable List<GetAutonomousContainerDatabasesAutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetail> backupDestinationDetails;
     /**
      * @return Number of days between the current and the earliest point of recoverability covered by automatic backups. This value applies to automatic backups. After a new automatic backup has been created, Oracle removes old automatic backups that are created before the window. When the value is updated, it is applied to all existing automatic backups.
      * 
      */
-    private Integer recoveryWindowInDays;
+    private @Nullable Integer recoveryWindowInDays;
 
     private GetAutonomousContainerDatabasesAutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfig() {}
     /**
@@ -28,14 +30,14 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabasePee
      * 
      */
     public List<GetAutonomousContainerDatabasesAutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetail> backupDestinationDetails() {
-        return this.backupDestinationDetails;
+        return this.backupDestinationDetails == null ? List.of() : this.backupDestinationDetails;
     }
     /**
      * @return Number of days between the current and the earliest point of recoverability covered by automatic backups. This value applies to automatic backups. After a new automatic backup has been created, Oracle removes old automatic backups that are created before the window. When the value is updated, it is applied to all existing automatic backups.
      * 
      */
-    public Integer recoveryWindowInDays() {
-        return this.recoveryWindowInDays;
+    public Optional<Integer> recoveryWindowInDays() {
+        return Optional.ofNullable(this.recoveryWindowInDays);
     }
 
     public static Builder builder() {
@@ -47,8 +49,8 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabasePee
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetAutonomousContainerDatabasesAutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetail> backupDestinationDetails;
-        private Integer recoveryWindowInDays;
+        private @Nullable List<GetAutonomousContainerDatabasesAutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetail> backupDestinationDetails;
+        private @Nullable Integer recoveryWindowInDays;
         public Builder() {}
         public Builder(GetAutonomousContainerDatabasesAutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfig defaults) {
     	      Objects.requireNonNull(defaults);
@@ -57,16 +59,16 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabasePee
         }
 
         @CustomType.Setter
-        public Builder backupDestinationDetails(List<GetAutonomousContainerDatabasesAutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetail> backupDestinationDetails) {
-            this.backupDestinationDetails = Objects.requireNonNull(backupDestinationDetails);
+        public Builder backupDestinationDetails(@Nullable List<GetAutonomousContainerDatabasesAutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetail> backupDestinationDetails) {
+            this.backupDestinationDetails = backupDestinationDetails;
             return this;
         }
         public Builder backupDestinationDetails(GetAutonomousContainerDatabasesAutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetail... backupDestinationDetails) {
             return backupDestinationDetails(List.of(backupDestinationDetails));
         }
         @CustomType.Setter
-        public Builder recoveryWindowInDays(Integer recoveryWindowInDays) {
-            this.recoveryWindowInDays = Objects.requireNonNull(recoveryWindowInDays);
+        public Builder recoveryWindowInDays(@Nullable Integer recoveryWindowInDays) {
+            this.recoveryWindowInDays = recoveryWindowInDays;
             return this;
         }
         public GetAutonomousContainerDatabasesAutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfig build() {

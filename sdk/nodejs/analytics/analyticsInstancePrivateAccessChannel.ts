@@ -83,19 +83,19 @@ export class AnalyticsInstancePrivateAccessChannel extends pulumi.CustomResource
     /**
      * The list of IP addresses from the customer subnet connected to private access channel, used as a source Ip by Private Access Channel for network traffic from the AnalyticsInstance to Private Sources.
      */
-    public /*out*/ readonly egressSourceIpAddresses!: pulumi.Output<string[]>;
+    public /*out*/ readonly egressSourceIpAddresses!: pulumi.Output<string[] | undefined>;
     /**
      * IP Address of the Private Access channel.
      */
-    public /*out*/ readonly ipAddress!: pulumi.Output<string>;
+    public /*out*/ readonly ipAddress!: pulumi.Output<string | undefined>;
     /**
      * Private Access Channel unique identifier key.
      */
-    public /*out*/ readonly key!: pulumi.Output<string>;
+    public /*out*/ readonly key!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Network Security Group OCIDs for an Analytics instance.
      */
-    public readonly networkSecurityGroupIds!: pulumi.Output<string[]>;
+    public readonly networkSecurityGroupIds!: pulumi.Output<string[] | undefined>;
     /**
      * (Updatable) List of Private Source DNS zones registered with Private Access Channel, where datasource hostnames from these dns zones / domains will be resolved in the peered VCN for access from Analytics Instance. Min of 1 is required and Max of 30 Private Source DNS zones can be registered.
      */
@@ -103,7 +103,7 @@ export class AnalyticsInstancePrivateAccessChannel extends pulumi.CustomResource
     /**
      * (Updatable) List of Private Source DB SCAN hosts registered with Private Access Channel for access from Analytics Instance.
      */
-    public readonly privateSourceScanHosts!: pulumi.Output<outputs.Analytics.AnalyticsInstancePrivateAccessChannelPrivateSourceScanHost[]>;
+    public readonly privateSourceScanHosts!: pulumi.Output<outputs.Analytics.AnalyticsInstancePrivateAccessChannelPrivateSourceScanHost[] | undefined>;
     /**
      * (Updatable) OCID of the customer subnet connected to private access channel.
      */

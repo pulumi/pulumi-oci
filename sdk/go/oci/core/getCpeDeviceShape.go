@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Cpe Device Shape resource in Oracle Cloud Infrastructure Core service.
@@ -72,14 +71,14 @@ type GetCpeDeviceShapeResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the CPE device shape. This value uniquely identifies the type of CPE device.
 	CpeDeviceShapeId string `pulumi:"cpeDeviceShapeId"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// For certain CPE devices types, the customer can provide answers to questions that are specific to the device type. This attribute contains a list of those questions. The Networking service merges the answers with other information and renders a set of CPE configuration content. To provide the answers, use [UpdateTunnelCpeDeviceConfig](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/TunnelCpeDeviceConfig/UpdateTunnelCpeDeviceConfig).
 	Parameters []GetCpeDeviceShapeParameter `pulumi:"parameters"`
 	// A template of CPE device configuration information that will be merged with the customer's answers to the questions to render the final CPE device configuration content. Also see:
 	// * [GetCpeDeviceConfigContent](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Cpe/GetCpeDeviceConfigContent)
 	// * [GetIpsecCpeDeviceConfigContent](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IPSecConnection/GetIpsecCpeDeviceConfigContent)
 	// * [GetTunnelCpeDeviceConfigContent](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/TunnelCpeDeviceConfig/GetTunnelCpeDeviceConfigContent)
-	Template string `pulumi:"template"`
+	Template *string `pulumi:"template"`
 }
 
 func GetCpeDeviceShapeOutput(ctx *pulumi.Context, args GetCpeDeviceShapeOutputArgs, opts ...pulumi.InvokeOption) GetCpeDeviceShapeResultOutput {
@@ -120,12 +119,6 @@ func (o GetCpeDeviceShapeResultOutput) ToGetCpeDeviceShapeResultOutputWithContex
 	return o
 }
 
-func (o GetCpeDeviceShapeResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetCpeDeviceShapeResult] {
-	return pulumix.Output[GetCpeDeviceShapeResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Basic information about a particular CPE device type.
 func (o GetCpeDeviceShapeResultOutput) CpeDeviceInfos() GetCpeDeviceShapeCpeDeviceInfoArrayOutput {
 	return o.ApplyT(func(v GetCpeDeviceShapeResult) []GetCpeDeviceShapeCpeDeviceInfo { return v.CpeDeviceInfos }).(GetCpeDeviceShapeCpeDeviceInfoArrayOutput)
@@ -137,8 +130,8 @@ func (o GetCpeDeviceShapeResultOutput) CpeDeviceShapeId() pulumi.StringOutput {
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetCpeDeviceShapeResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCpeDeviceShapeResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetCpeDeviceShapeResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCpeDeviceShapeResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // For certain CPE devices types, the customer can provide answers to questions that are specific to the device type. This attribute contains a list of those questions. The Networking service merges the answers with other information and renders a set of CPE configuration content. To provide the answers, use [UpdateTunnelCpeDeviceConfig](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/TunnelCpeDeviceConfig/UpdateTunnelCpeDeviceConfig).
@@ -150,8 +143,8 @@ func (o GetCpeDeviceShapeResultOutput) Parameters() GetCpeDeviceShapeParameterAr
 // * [GetCpeDeviceConfigContent](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Cpe/GetCpeDeviceConfigContent)
 // * [GetIpsecCpeDeviceConfigContent](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IPSecConnection/GetIpsecCpeDeviceConfigContent)
 // * [GetTunnelCpeDeviceConfigContent](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/TunnelCpeDeviceConfig/GetTunnelCpeDeviceConfigContent)
-func (o GetCpeDeviceShapeResultOutput) Template() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCpeDeviceShapeResult) string { return v.Template }).(pulumi.StringOutput)
+func (o GetCpeDeviceShapeResultOutput) Template() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCpeDeviceShapeResult) *string { return v.Template }).(pulumi.StringPtrOutput)
 }
 
 func init() {

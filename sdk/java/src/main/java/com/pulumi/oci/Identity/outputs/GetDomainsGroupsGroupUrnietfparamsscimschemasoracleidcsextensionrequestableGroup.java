@@ -6,6 +6,8 @@ package com.pulumi.oci.Identity.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.Boolean;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDomainsGroupsGroupUrnietfparamsscimschemasoracleidcsextensionrequestableGroup {
@@ -13,15 +15,15 @@ public final class GetDomainsGroupsGroupUrnietfparamsscimschemasoracleidcsextens
      * @return Flag controlling whether group membership can be request by user through self service console.
      * 
      */
-    private Boolean requestable;
+    private @Nullable Boolean requestable;
 
     private GetDomainsGroupsGroupUrnietfparamsscimschemasoracleidcsextensionrequestableGroup() {}
     /**
      * @return Flag controlling whether group membership can be request by user through self service console.
      * 
      */
-    public Boolean requestable() {
-        return this.requestable;
+    public Optional<Boolean> requestable() {
+        return Optional.ofNullable(this.requestable);
     }
 
     public static Builder builder() {
@@ -33,7 +35,7 @@ public final class GetDomainsGroupsGroupUrnietfparamsscimschemasoracleidcsextens
     }
     @CustomType.Builder
     public static final class Builder {
-        private Boolean requestable;
+        private @Nullable Boolean requestable;
         public Builder() {}
         public Builder(GetDomainsGroupsGroupUrnietfparamsscimschemasoracleidcsextensionrequestableGroup defaults) {
     	      Objects.requireNonNull(defaults);
@@ -41,8 +43,8 @@ public final class GetDomainsGroupsGroupUrnietfparamsscimschemasoracleidcsextens
         }
 
         @CustomType.Setter
-        public Builder requestable(Boolean requestable) {
-            this.requestable = Objects.requireNonNull(requestable);
+        public Builder requestable(@Nullable Boolean requestable) {
+            this.requestable = requestable;
             return this;
         }
         public GetDomainsGroupsGroupUrnietfparamsscimschemasoracleidcsextensionrequestableGroup build() {

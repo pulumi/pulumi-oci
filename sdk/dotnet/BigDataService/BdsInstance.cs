@@ -29,7 +29,7 @@ namespace Pulumi.Oci.BigDataService
         /// (Updatable) Pre-authenticated URL of the script in Object Store that is downloaded and executed.
         /// </summary>
         [Output("bootstrapScriptUrl")]
-        public Output<string> BootstrapScriptUrl { get; private set; } = null!;
+        public Output<string?> BootstrapScriptUrl { get; private set; } = null!;
 
         /// <summary>
         /// The information about added Cloud SQL capability
@@ -53,7 +53,7 @@ namespace Pulumi.Oci.BigDataService
         /// Profile of the Big Data Service cluster.
         /// </summary>
         [Output("clusterProfile")]
-        public Output<string> ClusterProfile { get; private set; } = null!;
+        public Output<string?> ClusterProfile { get; private set; } = null!;
 
         /// <summary>
         /// The SSH public key used to authenticate the cluster connection.
@@ -80,13 +80,13 @@ namespace Pulumi.Oci.BigDataService
         /// The user who created the cluster.
         /// </summary>
         [Output("createdBy")]
-        public Output<string> CreatedBy { get; private set; } = null!;
+        public Output<string?> CreatedBy { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Name of the BDS instance
@@ -101,13 +101,13 @@ namespace Pulumi.Oci.BigDataService
         /// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Boolean flag specifying whether we configure Cloud SQL or not
         /// </summary>
         [Output("isCloudSqlConfigured")]
-        public Output<bool> IsCloudSqlConfigured { get; private set; } = null!;
+        public Output<bool?> IsCloudSqlConfigured { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) When setting state as `INACTIVE` for stopping a cluster, setting this flag to true forcefully stops the bds instance.
@@ -143,13 +143,13 @@ namespace Pulumi.Oci.BigDataService
         /// The user-defined kerberos realm name.
         /// </summary>
         [Output("kerberosRealmName")]
-        public Output<string> KerberosRealmName { get; private set; } = null!;
+        public Output<string?> KerberosRealmName { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The OCID of the Key Management master encryption key.
         /// </summary>
         [Output("kmsKeyId")]
-        public Output<string> KmsKeyId { get; private set; } = null!;
+        public Output<string?> KmsKeyId { get; private set; } = null!;
 
         /// <summary>
         /// The master node in the BDS instance
@@ -161,7 +161,7 @@ namespace Pulumi.Oci.BigDataService
         /// Additional configuration of the user's network.
         /// </summary>
         [Output("networkConfig")]
-        public Output<Outputs.BdsInstanceNetworkConfig> NetworkConfig { get; private set; } = null!;
+        public Output<Outputs.BdsInstanceNetworkConfig?> NetworkConfig { get; private set; } = null!;
 
         /// <summary>
         /// The list of nodes in the Big Data Service cluster.
@@ -173,13 +173,13 @@ namespace Pulumi.Oci.BigDataService
         /// The amount of worker nodes should be created
         /// </summary>
         [Output("numberOfNodes")]
-        public Output<int> NumberOfNodes { get; private set; } = null!;
+        public Output<int?> NumberOfNodes { get; private set; } = null!;
 
         /// <summary>
         /// Number of nodes that require a maintenance reboot
         /// </summary>
         [Output("numberOfNodesRequiringMaintenanceReboot")]
-        public Output<int> NumberOfNodesRequiringMaintenanceReboot { get; private set; } = null!;
+        public Output<int?> NumberOfNodesRequiringMaintenanceReboot { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The version of the patch to be upated.
@@ -191,19 +191,19 @@ namespace Pulumi.Oci.BigDataService
         /// (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// The time the BDS instance was created. An RFC3339 formatted datetime string
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// The time the BDS instance was updated. An RFC3339 formatted datetime string
         /// </summary>
         [Output("timeUpdated")]
-        public Output<string> TimeUpdated { get; private set; } = null!;
+        public Output<string?> TimeUpdated { get; private set; } = null!;
 
         /// <summary>
         /// The utility node in the BDS instance

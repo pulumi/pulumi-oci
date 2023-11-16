@@ -9,6 +9,8 @@ import com.pulumi.oci.DatabaseMigration.outputs.GetMigrationGoldenGateServiceDet
 import java.lang.Integer;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetMigrationGoldenGateServiceDetailSetting {
@@ -16,39 +18,39 @@ public final class GetMigrationGoldenGateServiceDetailSetting {
      * @return ODMS will monitor GoldenGate end-to-end latency until the lag time is lower than the specified value in seconds.
      * 
      */
-    private Integer acceptableLag;
+    private @Nullable Integer acceptableLag;
     /**
      * @return Parameters for Extract processes.
      * 
      */
-    private List<GetMigrationGoldenGateServiceDetailSettingExtract> extracts;
+    private @Nullable List<GetMigrationGoldenGateServiceDetailSettingExtract> extracts;
     /**
      * @return Parameters for Replicat processes.
      * 
      */
-    private List<GetMigrationGoldenGateServiceDetailSettingReplicat> replicats;
+    private @Nullable List<GetMigrationGoldenGateServiceDetailSettingReplicat> replicats;
 
     private GetMigrationGoldenGateServiceDetailSetting() {}
     /**
      * @return ODMS will monitor GoldenGate end-to-end latency until the lag time is lower than the specified value in seconds.
      * 
      */
-    public Integer acceptableLag() {
-        return this.acceptableLag;
+    public Optional<Integer> acceptableLag() {
+        return Optional.ofNullable(this.acceptableLag);
     }
     /**
      * @return Parameters for Extract processes.
      * 
      */
     public List<GetMigrationGoldenGateServiceDetailSettingExtract> extracts() {
-        return this.extracts;
+        return this.extracts == null ? List.of() : this.extracts;
     }
     /**
      * @return Parameters for Replicat processes.
      * 
      */
     public List<GetMigrationGoldenGateServiceDetailSettingReplicat> replicats() {
-        return this.replicats;
+        return this.replicats == null ? List.of() : this.replicats;
     }
 
     public static Builder builder() {
@@ -60,9 +62,9 @@ public final class GetMigrationGoldenGateServiceDetailSetting {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Integer acceptableLag;
-        private List<GetMigrationGoldenGateServiceDetailSettingExtract> extracts;
-        private List<GetMigrationGoldenGateServiceDetailSettingReplicat> replicats;
+        private @Nullable Integer acceptableLag;
+        private @Nullable List<GetMigrationGoldenGateServiceDetailSettingExtract> extracts;
+        private @Nullable List<GetMigrationGoldenGateServiceDetailSettingReplicat> replicats;
         public Builder() {}
         public Builder(GetMigrationGoldenGateServiceDetailSetting defaults) {
     	      Objects.requireNonNull(defaults);
@@ -72,21 +74,21 @@ public final class GetMigrationGoldenGateServiceDetailSetting {
         }
 
         @CustomType.Setter
-        public Builder acceptableLag(Integer acceptableLag) {
-            this.acceptableLag = Objects.requireNonNull(acceptableLag);
+        public Builder acceptableLag(@Nullable Integer acceptableLag) {
+            this.acceptableLag = acceptableLag;
             return this;
         }
         @CustomType.Setter
-        public Builder extracts(List<GetMigrationGoldenGateServiceDetailSettingExtract> extracts) {
-            this.extracts = Objects.requireNonNull(extracts);
+        public Builder extracts(@Nullable List<GetMigrationGoldenGateServiceDetailSettingExtract> extracts) {
+            this.extracts = extracts;
             return this;
         }
         public Builder extracts(GetMigrationGoldenGateServiceDetailSettingExtract... extracts) {
             return extracts(List.of(extracts));
         }
         @CustomType.Setter
-        public Builder replicats(List<GetMigrationGoldenGateServiceDetailSettingReplicat> replicats) {
-            this.replicats = Objects.requireNonNull(replicats);
+        public Builder replicats(@Nullable List<GetMigrationGoldenGateServiceDetailSettingReplicat> replicats) {
+            this.replicats = replicats;
             return this;
         }
         public Builder replicats(GetMigrationGoldenGateServiceDetailSettingReplicat... replicats) {

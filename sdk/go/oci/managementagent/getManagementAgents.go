@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Management Agents in Oracle Cloud Infrastructure Management Agent service.
@@ -111,7 +110,7 @@ type GetManagementAgentsResult struct {
 	// Host resource ocid
 	HostId *string `pulumi:"hostId"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The install type, either AGENT or GATEWAY
 	InstallType *string `pulumi:"installType"`
 	// true, if the agent image is manually downloaded and installed. false, if the agent is deployed as a plugin in Oracle Cloud Agent.
@@ -191,12 +190,6 @@ func (o GetManagementAgentsResultOutput) ToGetManagementAgentsResultOutputWithCo
 	return o
 }
 
-func (o GetManagementAgentsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagementAgentsResult] {
-	return pulumix.Output[GetManagementAgentsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetManagementAgentsResultOutput) AccessLevel() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetManagementAgentsResult) *string { return v.AccessLevel }).(pulumi.StringPtrOutput)
 }
@@ -234,8 +227,8 @@ func (o GetManagementAgentsResultOutput) HostId() pulumi.StringPtrOutput {
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetManagementAgentsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagementAgentsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetManagementAgentsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagementAgentsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The install type, either AGENT or GATEWAY

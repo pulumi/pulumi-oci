@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Db System Patch History Entries in Oracle Cloud Infrastructure Database service.
@@ -63,7 +62,7 @@ type GetDbSystemHistoryEntriesResult struct {
 	DbSystemId string                            `pulumi:"dbSystemId"`
 	Filters    []GetDbSystemHistoryEntriesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The list of patch_history_entries.
 	PatchHistoryEntries []GetDbSystemHistoryEntriesPatchHistoryEntry `pulumi:"patchHistoryEntries"`
 }
@@ -107,12 +106,6 @@ func (o GetDbSystemHistoryEntriesResultOutput) ToGetDbSystemHistoryEntriesResult
 	return o
 }
 
-func (o GetDbSystemHistoryEntriesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDbSystemHistoryEntriesResult] {
-	return pulumix.Output[GetDbSystemHistoryEntriesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDbSystemHistoryEntriesResultOutput) DbSystemId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDbSystemHistoryEntriesResult) string { return v.DbSystemId }).(pulumi.StringOutput)
 }
@@ -122,8 +115,8 @@ func (o GetDbSystemHistoryEntriesResultOutput) Filters() GetDbSystemHistoryEntri
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetDbSystemHistoryEntriesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDbSystemHistoryEntriesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetDbSystemHistoryEntriesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDbSystemHistoryEntriesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The list of patch_history_entries.

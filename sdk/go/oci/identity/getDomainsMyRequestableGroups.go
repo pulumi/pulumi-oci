@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of My Requestable Groups in Oracle Cloud Infrastructure Identity Domains service.
@@ -80,10 +79,10 @@ type GetDomainsMyRequestableGroupsResult struct {
 	Authorization *string `pulumi:"authorization"`
 	CompartmentId *string `pulumi:"compartmentId"`
 	// The provider-assigned unique ID for this managed resource.
-	Id           string `pulumi:"id"`
-	IdcsEndpoint string `pulumi:"idcsEndpoint"`
+	Id           *string `pulumi:"id"`
+	IdcsEndpoint string  `pulumi:"idcsEndpoint"`
 	// The number of resources returned in a list response page. REQUIRED when partial results returned due to pagination.
-	ItemsPerPage             int     `pulumi:"itemsPerPage"`
+	ItemsPerPage             *int    `pulumi:"itemsPerPage"`
 	MyRequestableGroupCount  *int    `pulumi:"myRequestableGroupCount"`
 	MyRequestableGroupFilter *string `pulumi:"myRequestableGroupFilter"`
 	// The list of my_requestable_groups.
@@ -96,7 +95,7 @@ type GetDomainsMyRequestableGroupsResult struct {
 	// The 1-based index of the first result in the current set of list results.  REQUIRED when partial results returned due to pagination.
 	StartIndex *int `pulumi:"startIndex"`
 	// The total number of results returned by the list or query operation.  The value may be larger than the number of resources returned such as when returning a single page of results where multiple pages are available. REQUIRED.
-	TotalResults int `pulumi:"totalResults"`
+	TotalResults *int `pulumi:"totalResults"`
 }
 
 func GetDomainsMyRequestableGroupsOutput(ctx *pulumi.Context, args GetDomainsMyRequestableGroupsOutputArgs, opts ...pulumi.InvokeOption) GetDomainsMyRequestableGroupsResultOutput {
@@ -150,12 +149,6 @@ func (o GetDomainsMyRequestableGroupsResultOutput) ToGetDomainsMyRequestableGrou
 	return o
 }
 
-func (o GetDomainsMyRequestableGroupsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDomainsMyRequestableGroupsResult] {
-	return pulumix.Output[GetDomainsMyRequestableGroupsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDomainsMyRequestableGroupsResultOutput) Authorization() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetDomainsMyRequestableGroupsResult) *string { return v.Authorization }).(pulumi.StringPtrOutput)
 }
@@ -165,8 +158,8 @@ func (o GetDomainsMyRequestableGroupsResultOutput) CompartmentId() pulumi.String
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetDomainsMyRequestableGroupsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDomainsMyRequestableGroupsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetDomainsMyRequestableGroupsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDomainsMyRequestableGroupsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetDomainsMyRequestableGroupsResultOutput) IdcsEndpoint() pulumi.StringOutput {
@@ -174,8 +167,8 @@ func (o GetDomainsMyRequestableGroupsResultOutput) IdcsEndpoint() pulumi.StringO
 }
 
 // The number of resources returned in a list response page. REQUIRED when partial results returned due to pagination.
-func (o GetDomainsMyRequestableGroupsResultOutput) ItemsPerPage() pulumi.IntOutput {
-	return o.ApplyT(func(v GetDomainsMyRequestableGroupsResult) int { return v.ItemsPerPage }).(pulumi.IntOutput)
+func (o GetDomainsMyRequestableGroupsResultOutput) ItemsPerPage() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetDomainsMyRequestableGroupsResult) *int { return v.ItemsPerPage }).(pulumi.IntPtrOutput)
 }
 
 func (o GetDomainsMyRequestableGroupsResultOutput) MyRequestableGroupCount() pulumi.IntPtrOutput {
@@ -216,8 +209,8 @@ func (o GetDomainsMyRequestableGroupsResultOutput) StartIndex() pulumi.IntPtrOut
 }
 
 // The total number of results returned by the list or query operation.  The value may be larger than the number of resources returned such as when returning a single page of results where multiple pages are available. REQUIRED.
-func (o GetDomainsMyRequestableGroupsResultOutput) TotalResults() pulumi.IntOutput {
-	return o.ApplyT(func(v GetDomainsMyRequestableGroupsResult) int { return v.TotalResults }).(pulumi.IntOutput)
+func (o GetDomainsMyRequestableGroupsResultOutput) TotalResults() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetDomainsMyRequestableGroupsResult) *int { return v.TotalResults }).(pulumi.IntPtrOutput)
 }
 
 func init() {

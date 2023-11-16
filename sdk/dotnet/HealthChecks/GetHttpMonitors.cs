@@ -171,7 +171,7 @@ namespace Pulumi.Oci.HealthChecks
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
 
         [OutputConstructor]
         private GetHttpMonitorsResult(
@@ -185,7 +185,7 @@ namespace Pulumi.Oci.HealthChecks
 
             ImmutableArray<Outputs.GetHttpMonitorsHttpMonitorResult> httpMonitors,
 
-            string id)
+            string? id)
         {
             CompartmentId = compartmentId;
             DisplayName = displayName;

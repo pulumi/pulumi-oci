@@ -16,59 +16,59 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// <summary>
         /// Indicates how the object privilege was granted. Possible values: YES if the role is granted commonly (CONTAINER=ALL is used) NO if the role is granted locally (CONTAINER=ALL is not used)
         /// </summary>
-        public readonly string Common;
+        public readonly string? Common;
         /// <summary>
         /// Indicates whether the privilege is granted with the GRANT OPTION (YES) or not (NO).
         /// </summary>
-        public readonly string GrantOption;
+        public readonly string? GrantOption;
         /// <summary>
         /// The name of the user who granted the object privilege.
         /// </summary>
-        public readonly string Grantor;
+        public readonly string? Grantor;
         /// <summary>
         /// Indicates whether the privilege is granted with the HIERARCHY OPTION (YES) or not (NO).
         /// </summary>
-        public readonly string Hierarchy;
+        public readonly string? Hierarchy;
         /// <summary>
         /// Indicates whether the granted privilege is inherited from another container (YES) or not (NO).
         /// </summary>
-        public readonly string Inherited;
+        public readonly string? Inherited;
         /// <summary>
         /// A filter to return only resources that match the entire name.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// The name of the object. The object can be any object, including tables, packages, indexes, sequences, and so on.
         /// </summary>
-        public readonly string Object;
+        public readonly string? Object;
         /// <summary>
         /// The owner of the object.
         /// </summary>
-        public readonly string Owner;
+        public readonly string? Owner;
         /// <summary>
         /// The type of object.
         /// </summary>
-        public readonly string SchemaType;
+        public readonly string? SchemaType;
 
         [OutputConstructor]
         private GetManagedDatabaseUserObjectPrivilegesObjectPrivilegeCollectionItemResult(
-            string common,
+            string? common,
 
-            string grantOption,
+            string? grantOption,
 
-            string grantor,
+            string? grantor,
 
-            string hierarchy,
+            string? hierarchy,
 
-            string inherited,
+            string? inherited,
 
-            string name,
+            string? name,
 
-            string @object,
+            string? @object,
 
-            string owner,
+            string? owner,
 
-            string schemaType)
+            string? schemaType)
         {
             Common = common;
             GrantOption = grantOption;

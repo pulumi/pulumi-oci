@@ -62,7 +62,7 @@ export interface GetVmClusterUpdatesResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The current state of the maintenance update. Dependent on value of `lastAction`.
      */
@@ -75,7 +75,7 @@ export interface GetVmClusterUpdatesResult {
     /**
      * The list of vm_cluster_updates.
      */
-    readonly vmClusterUpdates: outputs.Database.GetVmClusterUpdatesVmClusterUpdate[];
+    readonly vmClusterUpdates?: outputs.Database.GetVmClusterUpdatesVmClusterUpdate[];
 }
 /**
  * This data source provides the list of Vm Cluster Updates in Oracle Cloud Infrastructure Database service.

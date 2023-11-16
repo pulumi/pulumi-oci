@@ -7,14 +7,15 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.LogAnalytics.outputs.GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollection {
-    private List<GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionItem> items;
+    private @Nullable List<GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionItem> items;
 
     private GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollection() {}
     public List<GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -26,7 +27,7 @@ public final class GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollection
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionItem> items;
+        private @Nullable List<GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionItem> items;
         public Builder() {}
         public Builder(GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -34,8 +35,8 @@ public final class GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollection
         }
 
         @CustomType.Setter
-        public Builder items(List<GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionItem... items) {

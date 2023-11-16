@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Managed Instance Group resource in Oracle Cloud Infrastructure Os Management Hub service.
@@ -77,31 +76,31 @@ type ManagedInstanceGroup struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) Details about the managed instance group.
-	Description pulumi.StringOutput `pulumi:"description"`
+	Description pulumi.StringPtrOutput `pulumi:"description"`
 	// (Updatable) A user-friendly name for the managed instance group. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// The number of Managed Instances in the managed instance group.
-	ManagedInstanceCount pulumi.IntOutput `pulumi:"managedInstanceCount"`
+	ManagedInstanceCount pulumi.IntPtrOutput `pulumi:"managedInstanceCount"`
 	// The list of managed instance OCIDs to be added to the managed instance group.
 	ManagedInstanceIds pulumi.StringArrayOutput `pulumi:"managedInstanceIds"`
 	// The operating system type of the managed instance(s) that this managed instance group will contain.
 	OsFamily pulumi.StringOutput `pulumi:"osFamily"`
 	// The number of scheduled jobs pending against the managed instance group.
-	PendingJobCount pulumi.IntOutput `pulumi:"pendingJobCount"`
+	PendingJobCount pulumi.IntPtrOutput `pulumi:"pendingJobCount"`
 	// The list of software source OCIDs available to the managed instances in the managed instance group.
 	SoftwareSourceIds pulumi.StringArrayOutput `pulumi:"softwareSourceIds"`
 	// The list of software sources that the managed instance group will use.
 	SoftwareSources ManagedInstanceGroupSoftwareSourceArrayOutput `pulumi:"softwareSources"`
 	// The current state of the managed instance group.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
 	// The time the managed instance group was created. An RFC3339 formatted datetime string.
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The time the managed instance group was last modified. An RFC3339 formatted datetime string.
-	TimeModified pulumi.StringOutput `pulumi:"timeModified"`
+	TimeModified pulumi.StringPtrOutput `pulumi:"timeModified"`
 	// The software source vendor name.
 	//
 	// ** IMPORTANT **
@@ -316,12 +315,6 @@ func (i *ManagedInstanceGroup) ToManagedInstanceGroupOutputWithContext(ctx conte
 	return pulumi.ToOutputWithContext(ctx, i).(ManagedInstanceGroupOutput)
 }
 
-func (i *ManagedInstanceGroup) ToOutput(ctx context.Context) pulumix.Output[*ManagedInstanceGroup] {
-	return pulumix.Output[*ManagedInstanceGroup]{
-		OutputState: i.ToManagedInstanceGroupOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ManagedInstanceGroupArrayInput is an input type that accepts ManagedInstanceGroupArray and ManagedInstanceGroupArrayOutput values.
 // You can construct a concrete instance of `ManagedInstanceGroupArrayInput` via:
 //
@@ -345,12 +338,6 @@ func (i ManagedInstanceGroupArray) ToManagedInstanceGroupArrayOutput() ManagedIn
 
 func (i ManagedInstanceGroupArray) ToManagedInstanceGroupArrayOutputWithContext(ctx context.Context) ManagedInstanceGroupArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ManagedInstanceGroupArrayOutput)
-}
-
-func (i ManagedInstanceGroupArray) ToOutput(ctx context.Context) pulumix.Output[[]*ManagedInstanceGroup] {
-	return pulumix.Output[[]*ManagedInstanceGroup]{
-		OutputState: i.ToManagedInstanceGroupArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // ManagedInstanceGroupMapInput is an input type that accepts ManagedInstanceGroupMap and ManagedInstanceGroupMapOutput values.
@@ -378,12 +365,6 @@ func (i ManagedInstanceGroupMap) ToManagedInstanceGroupMapOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(ManagedInstanceGroupMapOutput)
 }
 
-func (i ManagedInstanceGroupMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*ManagedInstanceGroup] {
-	return pulumix.Output[map[string]*ManagedInstanceGroup]{
-		OutputState: i.ToManagedInstanceGroupMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ManagedInstanceGroupOutput struct{ *pulumi.OutputState }
 
 func (ManagedInstanceGroupOutput) ElementType() reflect.Type {
@@ -396,12 +377,6 @@ func (o ManagedInstanceGroupOutput) ToManagedInstanceGroupOutput() ManagedInstan
 
 func (o ManagedInstanceGroupOutput) ToManagedInstanceGroupOutputWithContext(ctx context.Context) ManagedInstanceGroupOutput {
 	return o
-}
-
-func (o ManagedInstanceGroupOutput) ToOutput(ctx context.Context) pulumix.Output[*ManagedInstanceGroup] {
-	return pulumix.Output[*ManagedInstanceGroup]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The CPU architecture type of the managed instance(s) that this managed instance group will contain.
@@ -420,8 +395,8 @@ func (o ManagedInstanceGroupOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // (Updatable) Details about the managed instance group.
-func (o ManagedInstanceGroupOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v *ManagedInstanceGroup) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
+func (o ManagedInstanceGroupOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ManagedInstanceGroup) pulumi.StringPtrOutput { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) A user-friendly name for the managed instance group. Does not have to be unique, and it's changeable. Avoid entering confidential information.
@@ -435,8 +410,8 @@ func (o ManagedInstanceGroupOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The number of Managed Instances in the managed instance group.
-func (o ManagedInstanceGroupOutput) ManagedInstanceCount() pulumi.IntOutput {
-	return o.ApplyT(func(v *ManagedInstanceGroup) pulumi.IntOutput { return v.ManagedInstanceCount }).(pulumi.IntOutput)
+func (o ManagedInstanceGroupOutput) ManagedInstanceCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *ManagedInstanceGroup) pulumi.IntPtrOutput { return v.ManagedInstanceCount }).(pulumi.IntPtrOutput)
 }
 
 // The list of managed instance OCIDs to be added to the managed instance group.
@@ -450,8 +425,8 @@ func (o ManagedInstanceGroupOutput) OsFamily() pulumi.StringOutput {
 }
 
 // The number of scheduled jobs pending against the managed instance group.
-func (o ManagedInstanceGroupOutput) PendingJobCount() pulumi.IntOutput {
-	return o.ApplyT(func(v *ManagedInstanceGroup) pulumi.IntOutput { return v.PendingJobCount }).(pulumi.IntOutput)
+func (o ManagedInstanceGroupOutput) PendingJobCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *ManagedInstanceGroup) pulumi.IntPtrOutput { return v.PendingJobCount }).(pulumi.IntPtrOutput)
 }
 
 // The list of software source OCIDs available to the managed instances in the managed instance group.
@@ -465,8 +440,8 @@ func (o ManagedInstanceGroupOutput) SoftwareSources() ManagedInstanceGroupSoftwa
 }
 
 // The current state of the managed instance group.
-func (o ManagedInstanceGroupOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *ManagedInstanceGroup) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o ManagedInstanceGroupOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ManagedInstanceGroup) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -475,13 +450,13 @@ func (o ManagedInstanceGroupOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The time the managed instance group was created. An RFC3339 formatted datetime string.
-func (o ManagedInstanceGroupOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *ManagedInstanceGroup) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o ManagedInstanceGroupOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ManagedInstanceGroup) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time the managed instance group was last modified. An RFC3339 formatted datetime string.
-func (o ManagedInstanceGroupOutput) TimeModified() pulumi.StringOutput {
-	return o.ApplyT(func(v *ManagedInstanceGroup) pulumi.StringOutput { return v.TimeModified }).(pulumi.StringOutput)
+func (o ManagedInstanceGroupOutput) TimeModified() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ManagedInstanceGroup) pulumi.StringPtrOutput { return v.TimeModified }).(pulumi.StringPtrOutput)
 }
 
 // The software source vendor name.
@@ -506,12 +481,6 @@ func (o ManagedInstanceGroupArrayOutput) ToManagedInstanceGroupArrayOutputWithCo
 	return o
 }
 
-func (o ManagedInstanceGroupArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*ManagedInstanceGroup] {
-	return pulumix.Output[[]*ManagedInstanceGroup]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o ManagedInstanceGroupArrayOutput) Index(i pulumi.IntInput) ManagedInstanceGroupOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *ManagedInstanceGroup {
 		return vs[0].([]*ManagedInstanceGroup)[vs[1].(int)]
@@ -530,12 +499,6 @@ func (o ManagedInstanceGroupMapOutput) ToManagedInstanceGroupMapOutput() Managed
 
 func (o ManagedInstanceGroupMapOutput) ToManagedInstanceGroupMapOutputWithContext(ctx context.Context) ManagedInstanceGroupMapOutput {
 	return o
-}
-
-func (o ManagedInstanceGroupMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*ManagedInstanceGroup] {
-	return pulumix.Output[map[string]*ManagedInstanceGroup]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ManagedInstanceGroupMapOutput) MapIndex(k pulumi.StringInput) ManagedInstanceGroupOutput {

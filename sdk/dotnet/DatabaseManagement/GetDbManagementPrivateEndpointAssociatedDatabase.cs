@@ -127,7 +127,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// A list of databases using a Database Management private endpoint.
         /// </summary>
@@ -139,7 +139,7 @@ namespace Pulumi.Oci.DatabaseManagement
 
             string dbManagementPrivateEndpointId,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetDbManagementPrivateEndpointAssociatedDatabaseItemResult> items)
         {

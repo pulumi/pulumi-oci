@@ -82,7 +82,7 @@ export interface GetResultResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the monitor.
      */
@@ -94,7 +94,7 @@ export interface GetResultResult {
     /**
      * Monitor result data set.
      */
-    readonly resultDataSets: outputs.ApmSynthetics.GetResultResultDataSet[];
+    readonly resultDataSets?: outputs.ApmSynthetics.GetResultResultDataSet[];
     /**
      * Type of result. Example: HAR, Screenshot, Log or Network.
      */

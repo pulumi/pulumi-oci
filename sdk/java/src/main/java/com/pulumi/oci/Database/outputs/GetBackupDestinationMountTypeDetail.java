@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetBackupDestinationMountTypeDetail {
@@ -14,43 +16,43 @@ public final class GetBackupDestinationMountTypeDetail {
      * @return The local directory path on each VM cluster node where the NFS server location is mounted. The local directory path and the NFS server location must each be the same across all of the VM cluster nodes. Ensure that the NFS mount is maintained continuously on all of the VM cluster nodes.
      * 
      */
-    private String localMountPointPath;
-    private String mountType;
+    private @Nullable String localMountPointPath;
+    private @Nullable String mountType;
     /**
      * @return Specifies the directory on which to mount the file system
      * 
      */
-    private String nfsServerExport;
+    private @Nullable String nfsServerExport;
     /**
      * @return Host names or IP addresses for NFS Auto mount.
      * 
      */
-    private List<String> nfsServers;
+    private @Nullable List<String> nfsServers;
 
     private GetBackupDestinationMountTypeDetail() {}
     /**
      * @return The local directory path on each VM cluster node where the NFS server location is mounted. The local directory path and the NFS server location must each be the same across all of the VM cluster nodes. Ensure that the NFS mount is maintained continuously on all of the VM cluster nodes.
      * 
      */
-    public String localMountPointPath() {
-        return this.localMountPointPath;
+    public Optional<String> localMountPointPath() {
+        return Optional.ofNullable(this.localMountPointPath);
     }
-    public String mountType() {
-        return this.mountType;
+    public Optional<String> mountType() {
+        return Optional.ofNullable(this.mountType);
     }
     /**
      * @return Specifies the directory on which to mount the file system
      * 
      */
-    public String nfsServerExport() {
-        return this.nfsServerExport;
+    public Optional<String> nfsServerExport() {
+        return Optional.ofNullable(this.nfsServerExport);
     }
     /**
      * @return Host names or IP addresses for NFS Auto mount.
      * 
      */
     public List<String> nfsServers() {
-        return this.nfsServers;
+        return this.nfsServers == null ? List.of() : this.nfsServers;
     }
 
     public static Builder builder() {
@@ -62,10 +64,10 @@ public final class GetBackupDestinationMountTypeDetail {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String localMountPointPath;
-        private String mountType;
-        private String nfsServerExport;
-        private List<String> nfsServers;
+        private @Nullable String localMountPointPath;
+        private @Nullable String mountType;
+        private @Nullable String nfsServerExport;
+        private @Nullable List<String> nfsServers;
         public Builder() {}
         public Builder(GetBackupDestinationMountTypeDetail defaults) {
     	      Objects.requireNonNull(defaults);
@@ -76,23 +78,23 @@ public final class GetBackupDestinationMountTypeDetail {
         }
 
         @CustomType.Setter
-        public Builder localMountPointPath(String localMountPointPath) {
-            this.localMountPointPath = Objects.requireNonNull(localMountPointPath);
+        public Builder localMountPointPath(@Nullable String localMountPointPath) {
+            this.localMountPointPath = localMountPointPath;
             return this;
         }
         @CustomType.Setter
-        public Builder mountType(String mountType) {
-            this.mountType = Objects.requireNonNull(mountType);
+        public Builder mountType(@Nullable String mountType) {
+            this.mountType = mountType;
             return this;
         }
         @CustomType.Setter
-        public Builder nfsServerExport(String nfsServerExport) {
-            this.nfsServerExport = Objects.requireNonNull(nfsServerExport);
+        public Builder nfsServerExport(@Nullable String nfsServerExport) {
+            this.nfsServerExport = nfsServerExport;
             return this;
         }
         @CustomType.Setter
-        public Builder nfsServers(List<String> nfsServers) {
-            this.nfsServers = Objects.requireNonNull(nfsServers);
+        public Builder nfsServers(@Nullable List<String> nfsServers) {
+            this.nfsServers = nfsServers;
             return this;
         }
         public Builder nfsServers(String... nfsServers) {

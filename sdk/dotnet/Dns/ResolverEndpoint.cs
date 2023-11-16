@@ -60,19 +60,19 @@ namespace Pulumi.Oci.Dns
         /// The OCID of the owning compartment. This will match the resolver that the resolver endpoint is under and will be updated if the resolver's compartment is changed.
         /// </summary>
         [Output("compartmentId")]
-        public Output<string> CompartmentId { get; private set; } = null!;
+        public Output<string?> CompartmentId { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The type of resolver endpoint. VNIC is currently the only supported type.
         /// </summary>
         [Output("endpointType")]
-        public Output<string> EndpointType { get; private set; } = null!;
+        public Output<string?> EndpointType { get; private set; } = null!;
 
         /// <summary>
         /// An IP address from which forwarded queries may be sent. For VNIC endpoints, this IP address must be part of the subnet and will be assigned by the system if unspecified when isForwarding is true.
         /// </summary>
         [Output("forwardingAddress")]
-        public Output<string> ForwardingAddress { get; private set; } = null!;
+        public Output<string?> ForwardingAddress { get; private set; } = null!;
 
         /// <summary>
         /// A Boolean flag indicating whether or not the resolver endpoint is for forwarding.
@@ -90,7 +90,7 @@ namespace Pulumi.Oci.Dns
         /// An IP address to listen to queries on. For VNIC endpoints this IP address must be part of the subnet and will be assigned by the system if unspecified when isListening is true.
         /// </summary>
         [Output("listeningAddress")]
-        public Output<string> ListeningAddress { get; private set; } = null!;
+        public Output<string?> ListeningAddress { get; private set; } = null!;
 
         /// <summary>
         /// The name of the resolver endpoint. Must be unique, case-insensitive, within the resolver.
@@ -120,13 +120,13 @@ namespace Pulumi.Oci.Dns
         /// The canonical absolute URL of the resource.
         /// </summary>
         [Output("self")]
-        public Output<string> Self { get; private set; } = null!;
+        public Output<string?> Self { get; private set; } = null!;
 
         /// <summary>
         /// The current state of the resource.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// The OCID of a subnet. Must be part of the VCN that the resolver is attached to.
@@ -142,13 +142,13 @@ namespace Pulumi.Oci.Dns
         /// The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the resource was last updated in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
         /// </summary>
         [Output("timeUpdated")]
-        public Output<string> TimeUpdated { get; private set; } = null!;
+        public Output<string?> TimeUpdated { get; private set; } = null!;
 
 
         /// <summary>

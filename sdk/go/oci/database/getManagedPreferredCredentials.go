@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Managed Database Preferred Credentials in Oracle Cloud Infrastructure Database Management service.
@@ -62,8 +61,8 @@ type GetManagedPreferredCredentialsArgs struct {
 type GetManagedPreferredCredentialsResult struct {
 	Filters []GetManagedPreferredCredentialsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id                string `pulumi:"id"`
-	ManagedDatabaseId string `pulumi:"managedDatabaseId"`
+	Id                *string `pulumi:"id"`
+	ManagedDatabaseId string  `pulumi:"managedDatabaseId"`
 	// The list of preferred_credential_collection.
 	PreferredCredentialCollections []GetManagedPreferredCredentialsPreferredCredentialCollection `pulumi:"preferredCredentialCollections"`
 }
@@ -107,19 +106,13 @@ func (o GetManagedPreferredCredentialsResultOutput) ToGetManagedPreferredCredent
 	return o
 }
 
-func (o GetManagedPreferredCredentialsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagedPreferredCredentialsResult] {
-	return pulumix.Output[GetManagedPreferredCredentialsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetManagedPreferredCredentialsResultOutput) Filters() GetManagedPreferredCredentialsFilterArrayOutput {
 	return o.ApplyT(func(v GetManagedPreferredCredentialsResult) []GetManagedPreferredCredentialsFilter { return v.Filters }).(GetManagedPreferredCredentialsFilterArrayOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetManagedPreferredCredentialsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedPreferredCredentialsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetManagedPreferredCredentialsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedPreferredCredentialsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetManagedPreferredCredentialsResultOutput) ManagedDatabaseId() pulumi.StringOutput {

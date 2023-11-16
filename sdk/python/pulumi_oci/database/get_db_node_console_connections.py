@@ -39,18 +39,12 @@ class GetDbNodeConsoleConnectionsResult:
 
     @property
     @pulumi.getter(name="consoleConnections")
-    def console_connections(self) -> Sequence['outputs.GetDbNodeConsoleConnectionsConsoleConnectionResult']:
-        """
-        The list of console_connections.
-        """
+    def console_connections(self) -> Optional[Sequence['outputs.GetDbNodeConsoleConnectionsConsoleConnectionResult']]:
         return pulumi.get(self, "console_connections")
 
     @property
     @pulumi.getter(name="dbNodeId")
     def db_node_id(self) -> str:
-        """
-        The OCID of the database node.
-        """
         return pulumi.get(self, "db_node_id")
 
     @property
@@ -60,7 +54,7 @@ class GetDbNodeConsoleConnectionsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -83,21 +77,7 @@ def get_db_node_console_connections(db_node_id: Optional[str] = None,
                                     filters: Optional[Sequence[pulumi.InputType['GetDbNodeConsoleConnectionsFilterArgs']]] = None,
                                     opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDbNodeConsoleConnectionsResult:
     """
-    This data source provides the list of Db Node Console Connections in Oracle Cloud Infrastructure Database service.
-
-    Lists the console connections for the specified database node.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_db_node_console_connections = oci.Database.get_db_node_console_connections(db_node_id=oci_database_db_node["test_db_node"]["id"])
-    ```
-
-
-    :param str db_node_id: The database node [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['dbNodeId'] = db_node_id
@@ -117,20 +97,6 @@ def get_db_node_console_connections_output(db_node_id: Optional[pulumi.Input[str
                                            filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetDbNodeConsoleConnectionsFilterArgs']]]]] = None,
                                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDbNodeConsoleConnectionsResult]:
     """
-    This data source provides the list of Db Node Console Connections in Oracle Cloud Infrastructure Database service.
-
-    Lists the console connections for the specified database node.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_db_node_console_connections = oci.Database.get_db_node_console_connections(db_node_id=oci_database_db_node["test_db_node"]["id"])
-    ```
-
-
-    :param str db_node_id: The database node [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+    Use this data source to access information about an existing resource.
     """
     ...

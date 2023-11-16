@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Group resource in Oracle Cloud Infrastructure Identity Domains service.
@@ -78,25 +77,25 @@ type LookupDomainsGroupResult struct {
 	Attributes    *string  `pulumi:"attributes"`
 	Authorization *string  `pulumi:"authorization"`
 	// Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
-	CompartmentOcid string `pulumi:"compartmentOcid"`
+	CompartmentOcid *string `pulumi:"compartmentOcid"`
 	// A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
-	DeleteInProgress bool `pulumi:"deleteInProgress"`
+	DeleteInProgress *bool `pulumi:"deleteInProgress"`
 	// The Group display name.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
-	DomainOcid string `pulumi:"domainOcid"`
+	DomainOcid *string `pulumi:"domainOcid"`
 	// An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer's tenant.
-	ExternalId string `pulumi:"externalId"`
-	GroupId    string `pulumi:"groupId"`
+	ExternalId *string `pulumi:"externalId"`
+	GroupId    string  `pulumi:"groupId"`
 	// Unique identifier for the SCIM Resource as defined by the Service Provider. Each representation of the Resource MUST include a non-empty id value. This identifier MUST be unique across the Service Provider's entire set of Resources. It MUST be a stable, non-reassignable identifier that does not change when the same Resource is returned in subsequent requests. The value of the id attribute is always issued by the Service Provider and MUST never be specified by the Service Consumer. bulkId: is a reserved keyword and MUST NOT be used in the unique identifier.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The User or App who created the Resource
 	IdcsCreatedBies []GetDomainsGroupIdcsCreatedBy `pulumi:"idcsCreatedBies"`
 	IdcsEndpoint    string                         `pulumi:"idcsEndpoint"`
 	// The User or App who modified the Resource
 	IdcsLastModifiedBies []GetDomainsGroupIdcsLastModifiedBy `pulumi:"idcsLastModifiedBies"`
 	// The release number when the resource was upgraded.
-	IdcsLastUpgradedInRelease string `pulumi:"idcsLastUpgradedInRelease"`
+	IdcsLastUpgradedInRelease *string `pulumi:"idcsLastUpgradedInRelease"`
 	// Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
 	IdcsPreventedOperations []string `pulumi:"idcsPreventedOperations"`
 	// The group members. <b>Important:</b> When requesting group members, a maximum of 10,000 members can be returned in a single request. If the response contains more than 10,000 members, the request will fail. Use 'startIndex' and 'count' to return members in pages instead of in a single response, for example: #attributes=members[startIndex=1%26count=10]. This REST API is SCIM compliant.
@@ -104,16 +103,16 @@ type LookupDomainsGroupResult struct {
 	// A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
 	Metas []GetDomainsGroupMeta `pulumi:"metas"`
 	// A human readable name for the group as defined by the Service Consumer.
-	NonUniqueDisplayName string `pulumi:"nonUniqueDisplayName"`
+	NonUniqueDisplayName *string `pulumi:"nonUniqueDisplayName"`
 	// Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
-	Ocid                      string  `pulumi:"ocid"`
+	Ocid                      *string `pulumi:"ocid"`
 	ResourceTypeSchemaVersion *string `pulumi:"resourceTypeSchemaVersion"`
 	// REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
 	Schemas []string `pulumi:"schemas"`
 	// A list of tags on this resource.
 	Tags []GetDomainsGroupTag `pulumi:"tags"`
 	// Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
-	TenancyOcid string `pulumi:"tenancyOcid"`
+	TenancyOcid *string `pulumi:"tenancyOcid"`
 	// Oracle Cloud Infrastructure Tags.
 	UrnietfparamsscimschemasoracleidcsextensionOciTags []GetDomainsGroupUrnietfparamsscimschemasoracleidcsextensionOciTag `pulumi:"urnietfparamsscimschemasoracleidcsextensionOciTags"`
 	// Schema for Database Service  Resource
@@ -176,12 +175,6 @@ func (o LookupDomainsGroupResultOutput) ToLookupDomainsGroupResultOutputWithCont
 	return o
 }
 
-func (o LookupDomainsGroupResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupDomainsGroupResult] {
-	return pulumix.Output[LookupDomainsGroupResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o LookupDomainsGroupResultOutput) AttributeSets() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v LookupDomainsGroupResult) []string { return v.AttributeSets }).(pulumi.StringArrayOutput)
 }
@@ -195,28 +188,28 @@ func (o LookupDomainsGroupResultOutput) Authorization() pulumi.StringPtrOutput {
 }
 
 // Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
-func (o LookupDomainsGroupResultOutput) CompartmentOcid() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsGroupResult) string { return v.CompartmentOcid }).(pulumi.StringOutput)
+func (o LookupDomainsGroupResultOutput) CompartmentOcid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsGroupResult) *string { return v.CompartmentOcid }).(pulumi.StringPtrOutput)
 }
 
 // A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
-func (o LookupDomainsGroupResultOutput) DeleteInProgress() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupDomainsGroupResult) bool { return v.DeleteInProgress }).(pulumi.BoolOutput)
+func (o LookupDomainsGroupResultOutput) DeleteInProgress() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupDomainsGroupResult) *bool { return v.DeleteInProgress }).(pulumi.BoolPtrOutput)
 }
 
 // The Group display name.
-func (o LookupDomainsGroupResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsGroupResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupDomainsGroupResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsGroupResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
-func (o LookupDomainsGroupResultOutput) DomainOcid() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsGroupResult) string { return v.DomainOcid }).(pulumi.StringOutput)
+func (o LookupDomainsGroupResultOutput) DomainOcid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsGroupResult) *string { return v.DomainOcid }).(pulumi.StringPtrOutput)
 }
 
 // An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer's tenant.
-func (o LookupDomainsGroupResultOutput) ExternalId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsGroupResult) string { return v.ExternalId }).(pulumi.StringOutput)
+func (o LookupDomainsGroupResultOutput) ExternalId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsGroupResult) *string { return v.ExternalId }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupDomainsGroupResultOutput) GroupId() pulumi.StringOutput {
@@ -224,8 +217,8 @@ func (o LookupDomainsGroupResultOutput) GroupId() pulumi.StringOutput {
 }
 
 // Unique identifier for the SCIM Resource as defined by the Service Provider. Each representation of the Resource MUST include a non-empty id value. This identifier MUST be unique across the Service Provider's entire set of Resources. It MUST be a stable, non-reassignable identifier that does not change when the same Resource is returned in subsequent requests. The value of the id attribute is always issued by the Service Provider and MUST never be specified by the Service Consumer. bulkId: is a reserved keyword and MUST NOT be used in the unique identifier.
-func (o LookupDomainsGroupResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsGroupResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupDomainsGroupResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsGroupResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The User or App who created the Resource
@@ -243,8 +236,8 @@ func (o LookupDomainsGroupResultOutput) IdcsLastModifiedBies() GetDomainsGroupId
 }
 
 // The release number when the resource was upgraded.
-func (o LookupDomainsGroupResultOutput) IdcsLastUpgradedInRelease() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsGroupResult) string { return v.IdcsLastUpgradedInRelease }).(pulumi.StringOutput)
+func (o LookupDomainsGroupResultOutput) IdcsLastUpgradedInRelease() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsGroupResult) *string { return v.IdcsLastUpgradedInRelease }).(pulumi.StringPtrOutput)
 }
 
 // Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
@@ -263,13 +256,13 @@ func (o LookupDomainsGroupResultOutput) Metas() GetDomainsGroupMetaArrayOutput {
 }
 
 // A human readable name for the group as defined by the Service Consumer.
-func (o LookupDomainsGroupResultOutput) NonUniqueDisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsGroupResult) string { return v.NonUniqueDisplayName }).(pulumi.StringOutput)
+func (o LookupDomainsGroupResultOutput) NonUniqueDisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsGroupResult) *string { return v.NonUniqueDisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
-func (o LookupDomainsGroupResultOutput) Ocid() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsGroupResult) string { return v.Ocid }).(pulumi.StringOutput)
+func (o LookupDomainsGroupResultOutput) Ocid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsGroupResult) *string { return v.Ocid }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupDomainsGroupResultOutput) ResourceTypeSchemaVersion() pulumi.StringPtrOutput {
@@ -287,8 +280,8 @@ func (o LookupDomainsGroupResultOutput) Tags() GetDomainsGroupTagArrayOutput {
 }
 
 // Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
-func (o LookupDomainsGroupResultOutput) TenancyOcid() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsGroupResult) string { return v.TenancyOcid }).(pulumi.StringOutput)
+func (o LookupDomainsGroupResultOutput) TenancyOcid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsGroupResult) *string { return v.TenancyOcid }).(pulumi.StringPtrOutput)
 }
 
 // Oracle Cloud Infrastructure Tags.

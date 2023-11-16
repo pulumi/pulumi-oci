@@ -110,19 +110,19 @@ namespace Pulumi.Oci.Dns
         /// <summary>
         /// The OCID of the compartment containing the steering policy attachment.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// A user-friendly name for the steering policy attachment. Does not have to be unique and can be changed. Avoid entering confidential information.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// The attached domain within the attached zone.
         /// </summary>
-        public readonly string DomainName;
+        public readonly string? DomainName;
         /// <summary>
         /// The OCID of the resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The record types covered by the attachment at the domain. The set of record types is determined by aggregating the record types from the answers defined in the steering policy.
         /// </summary>
@@ -130,48 +130,48 @@ namespace Pulumi.Oci.Dns
         /// <summary>
         /// The canonical absolute URL of the resource.
         /// </summary>
-        public readonly string Self;
+        public readonly string? Self;
         /// <summary>
         /// The current state of the resource.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         public readonly string SteeringPolicyAttachmentId;
         /// <summary>
         /// The OCID of the attached steering policy.
         /// </summary>
-        public readonly string SteeringPolicyId;
+        public readonly string? SteeringPolicyId;
         /// <summary>
         /// The date and time the resource was created, expressed in RFC 3339 timestamp format.
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The OCID of the attached zone.
         /// </summary>
-        public readonly string ZoneId;
+        public readonly string? ZoneId;
 
         [OutputConstructor]
         private GetSteeringPolicyAttachmentResult(
-            string compartmentId,
+            string? compartmentId,
 
-            string displayName,
+            string? displayName,
 
-            string domainName,
+            string? domainName,
 
-            string id,
+            string? id,
 
             ImmutableArray<string> rtypes,
 
-            string self,
+            string? self,
 
-            string state,
+            string? state,
 
             string steeringPolicyAttachmentId,
 
-            string steeringPolicyId,
+            string? steeringPolicyId,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string zoneId)
+            string? zoneId)
         {
             CompartmentId = compartmentId;
             DisplayName = displayName;

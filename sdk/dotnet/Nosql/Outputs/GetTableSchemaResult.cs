@@ -32,7 +32,7 @@ namespace Pulumi.Oci.Nosql.Outputs
         /// <summary>
         /// The default Time-to-Live for the table, in days.
         /// </summary>
-        public readonly int Ttl;
+        public readonly int? Ttl;
 
         [OutputConstructor]
         private GetTableSchemaResult(
@@ -44,7 +44,7 @@ namespace Pulumi.Oci.Nosql.Outputs
 
             ImmutableArray<string> shardKeys,
 
-            int ttl)
+            int? ttl)
         {
             Columns = columns;
             Identities = identities;

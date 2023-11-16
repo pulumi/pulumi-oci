@@ -21,15 +21,6 @@ class NetworkFirewallPolicyApplicationArgs:
                  name: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a NetworkFirewallPolicyApplication resource.
-        :param pulumi.Input[int] icmp_type: (Updatable) The value of the ICMP/IMCP_V6 message Type field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
-        :param pulumi.Input[str] network_firewall_policy_id: Unique Network Firewall Policy identifier
-        :param pulumi.Input[str] type: Describes the type of application. The accepted values are - * ICMP * ICMP_V6
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[int] icmp_code: (Updatable) The value of the ICMP/ICMP_V6 message Code (subtype) field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
-        :param pulumi.Input[str] name: Name of the application
         """
         pulumi.set(__self__, "icmp_type", icmp_type)
         pulumi.set(__self__, "network_firewall_policy_id", network_firewall_policy_id)
@@ -42,9 +33,6 @@ class NetworkFirewallPolicyApplicationArgs:
     @property
     @pulumi.getter(name="icmpType")
     def icmp_type(self) -> pulumi.Input[int]:
-        """
-        (Updatable) The value of the ICMP/IMCP_V6 message Type field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
-        """
         return pulumi.get(self, "icmp_type")
 
     @icmp_type.setter
@@ -54,9 +42,6 @@ class NetworkFirewallPolicyApplicationArgs:
     @property
     @pulumi.getter(name="networkFirewallPolicyId")
     def network_firewall_policy_id(self) -> pulumi.Input[str]:
-        """
-        Unique Network Firewall Policy identifier
-        """
         return pulumi.get(self, "network_firewall_policy_id")
 
     @network_firewall_policy_id.setter
@@ -66,13 +51,6 @@ class NetworkFirewallPolicyApplicationArgs:
     @property
     @pulumi.getter
     def type(self) -> pulumi.Input[str]:
-        """
-        Describes the type of application. The accepted values are - * ICMP * ICMP_V6
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "type")
 
     @type.setter
@@ -82,9 +60,6 @@ class NetworkFirewallPolicyApplicationArgs:
     @property
     @pulumi.getter(name="icmpCode")
     def icmp_code(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) The value of the ICMP/ICMP_V6 message Code (subtype) field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
-        """
         return pulumi.get(self, "icmp_code")
 
     @icmp_code.setter
@@ -94,9 +69,6 @@ class NetworkFirewallPolicyApplicationArgs:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        Name of the application
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -115,16 +87,6 @@ class _NetworkFirewallPolicyApplicationState:
                  type: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering NetworkFirewallPolicyApplication resources.
-        :param pulumi.Input[int] icmp_code: (Updatable) The value of the ICMP/ICMP_V6 message Code (subtype) field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
-        :param pulumi.Input[int] icmp_type: (Updatable) The value of the ICMP/IMCP_V6 message Type field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
-        :param pulumi.Input[str] name: Name of the application
-        :param pulumi.Input[str] network_firewall_policy_id: Unique Network Firewall Policy identifier
-        :param pulumi.Input[str] parent_resource_id: OCID of the Network Firewall Policy this application belongs to.
-        :param pulumi.Input[str] type: Describes the type of application. The accepted values are - * ICMP * ICMP_V6
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if icmp_code is not None:
             pulumi.set(__self__, "icmp_code", icmp_code)
@@ -142,9 +104,6 @@ class _NetworkFirewallPolicyApplicationState:
     @property
     @pulumi.getter(name="icmpCode")
     def icmp_code(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) The value of the ICMP/ICMP_V6 message Code (subtype) field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
-        """
         return pulumi.get(self, "icmp_code")
 
     @icmp_code.setter
@@ -154,9 +113,6 @@ class _NetworkFirewallPolicyApplicationState:
     @property
     @pulumi.getter(name="icmpType")
     def icmp_type(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) The value of the ICMP/IMCP_V6 message Type field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
-        """
         return pulumi.get(self, "icmp_type")
 
     @icmp_type.setter
@@ -166,9 +122,6 @@ class _NetworkFirewallPolicyApplicationState:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        Name of the application
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -178,9 +131,6 @@ class _NetworkFirewallPolicyApplicationState:
     @property
     @pulumi.getter(name="networkFirewallPolicyId")
     def network_firewall_policy_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        Unique Network Firewall Policy identifier
-        """
         return pulumi.get(self, "network_firewall_policy_id")
 
     @network_firewall_policy_id.setter
@@ -190,9 +140,6 @@ class _NetworkFirewallPolicyApplicationState:
     @property
     @pulumi.getter(name="parentResourceId")
     def parent_resource_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        OCID of the Network Firewall Policy this application belongs to.
-        """
         return pulumi.get(self, "parent_resource_id")
 
     @parent_resource_id.setter
@@ -202,13 +149,6 @@ class _NetworkFirewallPolicyApplicationState:
     @property
     @pulumi.getter
     def type(self) -> Optional[pulumi.Input[str]]:
-        """
-        Describes the type of application. The accepted values are - * ICMP * ICMP_V6
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "type")
 
     @type.setter
@@ -228,42 +168,9 @@ class NetworkFirewallPolicyApplication(pulumi.CustomResource):
                  type: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Network Firewall Policy Application resource in Oracle Cloud Infrastructure Network Firewall service.
-
-        Creates a new Application inside the Network Firewall Policy.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_network_firewall_policy_application = oci.network_firewall.NetworkFirewallPolicyApplication("testNetworkFirewallPolicyApplication",
-            icmp_type=var["network_firewall_policy_application_icmp_type"],
-            network_firewall_policy_id=oci_network_firewall_network_firewall_policy["test_network_firewall_policy"]["id"],
-            type=var["network_firewall_policy_application_type"],
-            icmp_code=var["network_firewall_policy_application_icmp_code"])
-        ```
-
-        ## Import
-
-        NetworkFirewallPolicyApplications can be imported using the `name`, e.g.
-
-        ```sh
-         $ pulumi import oci:NetworkFirewall/networkFirewallPolicyApplication:NetworkFirewallPolicyApplication test_network_firewall_policy_application "networkFirewallPolicies/{networkFirewallPolicyId}/applications/{applicationName}"
-        ```
-
+        Create a NetworkFirewallPolicyApplication resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[int] icmp_code: (Updatable) The value of the ICMP/ICMP_V6 message Code (subtype) field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
-        :param pulumi.Input[int] icmp_type: (Updatable) The value of the ICMP/IMCP_V6 message Type field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
-        :param pulumi.Input[str] name: Name of the application
-        :param pulumi.Input[str] network_firewall_policy_id: Unique Network Firewall Policy identifier
-        :param pulumi.Input[str] type: Describes the type of application. The accepted values are - * ICMP * ICMP_V6
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -272,31 +179,7 @@ class NetworkFirewallPolicyApplication(pulumi.CustomResource):
                  args: NetworkFirewallPolicyApplicationArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Network Firewall Policy Application resource in Oracle Cloud Infrastructure Network Firewall service.
-
-        Creates a new Application inside the Network Firewall Policy.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_network_firewall_policy_application = oci.network_firewall.NetworkFirewallPolicyApplication("testNetworkFirewallPolicyApplication",
-            icmp_type=var["network_firewall_policy_application_icmp_type"],
-            network_firewall_policy_id=oci_network_firewall_network_firewall_policy["test_network_firewall_policy"]["id"],
-            type=var["network_firewall_policy_application_type"],
-            icmp_code=var["network_firewall_policy_application_icmp_code"])
-        ```
-
-        ## Import
-
-        NetworkFirewallPolicyApplications can be imported using the `name`, e.g.
-
-        ```sh
-         $ pulumi import oci:NetworkFirewall/networkFirewallPolicyApplication:NetworkFirewallPolicyApplication test_network_firewall_policy_application "networkFirewallPolicies/{networkFirewallPolicyId}/applications/{applicationName}"
-        ```
-
+        Create a NetworkFirewallPolicyApplication resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param NetworkFirewallPolicyApplicationArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -361,16 +244,6 @@ class NetworkFirewallPolicyApplication(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[int] icmp_code: (Updatable) The value of the ICMP/ICMP_V6 message Code (subtype) field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
-        :param pulumi.Input[int] icmp_type: (Updatable) The value of the ICMP/IMCP_V6 message Type field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
-        :param pulumi.Input[str] name: Name of the application
-        :param pulumi.Input[str] network_firewall_policy_id: Unique Network Firewall Policy identifier
-        :param pulumi.Input[str] parent_resource_id: OCID of the Network Firewall Policy this application belongs to.
-        :param pulumi.Input[str] type: Describes the type of application. The accepted values are - * ICMP * ICMP_V6
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -386,53 +259,31 @@ class NetworkFirewallPolicyApplication(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="icmpCode")
-    def icmp_code(self) -> pulumi.Output[int]:
-        """
-        (Updatable) The value of the ICMP/ICMP_V6 message Code (subtype) field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
-        """
+    def icmp_code(self) -> pulumi.Output[Optional[int]]:
         return pulumi.get(self, "icmp_code")
 
     @property
     @pulumi.getter(name="icmpType")
     def icmp_type(self) -> pulumi.Output[int]:
-        """
-        (Updatable) The value of the ICMP/IMCP_V6 message Type field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
-        """
         return pulumi.get(self, "icmp_type")
 
     @property
     @pulumi.getter
     def name(self) -> pulumi.Output[str]:
-        """
-        Name of the application
-        """
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="networkFirewallPolicyId")
     def network_firewall_policy_id(self) -> pulumi.Output[str]:
-        """
-        Unique Network Firewall Policy identifier
-        """
         return pulumi.get(self, "network_firewall_policy_id")
 
     @property
     @pulumi.getter(name="parentResourceId")
-    def parent_resource_id(self) -> pulumi.Output[str]:
-        """
-        OCID of the Network Firewall Policy this application belongs to.
-        """
+    def parent_resource_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "parent_resource_id")
 
     @property
     @pulumi.getter
     def type(self) -> pulumi.Output[str]:
-        """
-        Describes the type of application. The accepted values are - * ICMP * ICMP_V6
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "type")
 

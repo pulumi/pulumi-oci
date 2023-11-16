@@ -169,7 +169,7 @@ namespace Pulumi.Oci.OneSubsription
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         public readonly string InvoiceLineId;
         /// <summary>
         /// The list of invoiceline_computed_usages.
@@ -184,7 +184,7 @@ namespace Pulumi.Oci.OneSubsription
 
             ImmutableArray<Outputs.GetInvoiceLineComputedUsagesFilterResult> filters,
 
-            string id,
+            string? id,
 
             string invoiceLineId,
 

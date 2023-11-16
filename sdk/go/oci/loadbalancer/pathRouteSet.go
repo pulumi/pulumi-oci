@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Path Route Set resource in Oracle Cloud Infrastructure Load Balancer service.
@@ -71,7 +70,7 @@ type PathRouteSet struct {
 	Name pulumi.StringOutput `pulumi:"name"`
 	// (Updatable) The set of path route rules.
 	PathRoutes PathRouteSetPathRouteArrayOutput `pulumi:"pathRoutes"`
-	State      pulumi.StringOutput              `pulumi:"state"`
+	State      pulumi.StringPtrOutput           `pulumi:"state"`
 }
 
 // NewPathRouteSet registers a new resource with the given unique name, arguments, and options.
@@ -175,12 +174,6 @@ func (i *PathRouteSet) ToPathRouteSetOutputWithContext(ctx context.Context) Path
 	return pulumi.ToOutputWithContext(ctx, i).(PathRouteSetOutput)
 }
 
-func (i *PathRouteSet) ToOutput(ctx context.Context) pulumix.Output[*PathRouteSet] {
-	return pulumix.Output[*PathRouteSet]{
-		OutputState: i.ToPathRouteSetOutputWithContext(ctx).OutputState,
-	}
-}
-
 // PathRouteSetArrayInput is an input type that accepts PathRouteSetArray and PathRouteSetArrayOutput values.
 // You can construct a concrete instance of `PathRouteSetArrayInput` via:
 //
@@ -204,12 +197,6 @@ func (i PathRouteSetArray) ToPathRouteSetArrayOutput() PathRouteSetArrayOutput {
 
 func (i PathRouteSetArray) ToPathRouteSetArrayOutputWithContext(ctx context.Context) PathRouteSetArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(PathRouteSetArrayOutput)
-}
-
-func (i PathRouteSetArray) ToOutput(ctx context.Context) pulumix.Output[[]*PathRouteSet] {
-	return pulumix.Output[[]*PathRouteSet]{
-		OutputState: i.ToPathRouteSetArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // PathRouteSetMapInput is an input type that accepts PathRouteSetMap and PathRouteSetMapOutput values.
@@ -237,12 +224,6 @@ func (i PathRouteSetMap) ToPathRouteSetMapOutputWithContext(ctx context.Context)
 	return pulumi.ToOutputWithContext(ctx, i).(PathRouteSetMapOutput)
 }
 
-func (i PathRouteSetMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*PathRouteSet] {
-	return pulumix.Output[map[string]*PathRouteSet]{
-		OutputState: i.ToPathRouteSetMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type PathRouteSetOutput struct{ *pulumi.OutputState }
 
 func (PathRouteSetOutput) ElementType() reflect.Type {
@@ -255,12 +236,6 @@ func (o PathRouteSetOutput) ToPathRouteSetOutput() PathRouteSetOutput {
 
 func (o PathRouteSetOutput) ToPathRouteSetOutputWithContext(ctx context.Context) PathRouteSetOutput {
 	return o
-}
-
-func (o PathRouteSetOutput) ToOutput(ctx context.Context) pulumix.Output[*PathRouteSet] {
-	return pulumix.Output[*PathRouteSet]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer to add the path route set to.
@@ -278,8 +253,8 @@ func (o PathRouteSetOutput) PathRoutes() PathRouteSetPathRouteArrayOutput {
 	return o.ApplyT(func(v *PathRouteSet) PathRouteSetPathRouteArrayOutput { return v.PathRoutes }).(PathRouteSetPathRouteArrayOutput)
 }
 
-func (o PathRouteSetOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *PathRouteSet) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o PathRouteSetOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *PathRouteSet) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 type PathRouteSetArrayOutput struct{ *pulumi.OutputState }
@@ -294,12 +269,6 @@ func (o PathRouteSetArrayOutput) ToPathRouteSetArrayOutput() PathRouteSetArrayOu
 
 func (o PathRouteSetArrayOutput) ToPathRouteSetArrayOutputWithContext(ctx context.Context) PathRouteSetArrayOutput {
 	return o
-}
-
-func (o PathRouteSetArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*PathRouteSet] {
-	return pulumix.Output[[]*PathRouteSet]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o PathRouteSetArrayOutput) Index(i pulumi.IntInput) PathRouteSetOutput {
@@ -320,12 +289,6 @@ func (o PathRouteSetMapOutput) ToPathRouteSetMapOutput() PathRouteSetMapOutput {
 
 func (o PathRouteSetMapOutput) ToPathRouteSetMapOutputWithContext(ctx context.Context) PathRouteSetMapOutput {
 	return o
-}
-
-func (o PathRouteSetMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*PathRouteSet] {
-	return pulumix.Output[map[string]*PathRouteSet]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o PathRouteSetMapOutput) MapIndex(k pulumi.StringInput) PathRouteSetOutput {

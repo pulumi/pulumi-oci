@@ -27,19 +27,6 @@ class OdaInstanceArgs:
                  state: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a OdaInstance resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) Identifier of the compartment.
-        :param pulumi.Input[str] shape_name: Shape or size of the instance.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] description: (Updatable) Description of the Digital Assistant instance.
-        :param pulumi.Input[str] display_name: (Updatable) User-friendly name for the instance. Avoid entering confidential information. You can change this value anytime.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] identity_domain: If isRoleBasedAccess is set to true, this property specifies the identity domain that is to be used to implement this type of authorzation. Digital Assistant will create an Identity Application instance and Application Roles within this identity domain. The caller may then perform and user roll mappings they like to grant access to users within the identity domain.
-        :param pulumi.Input[bool] is_role_based_access: Should this Digital Assistant instance use role-based authorization via an identity domain (true) or use the default policy-based authorization via IAM policies (false)
-        :param pulumi.Input[str] state: The current state of the Digital Assistant instance.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "shape_name", shape_name)
@@ -61,9 +48,6 @@ class OdaInstanceArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Identifier of the compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -73,13 +57,6 @@ class OdaInstanceArgs:
     @property
     @pulumi.getter(name="shapeName")
     def shape_name(self) -> pulumi.Input[str]:
-        """
-        Shape or size of the instance.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "shape_name")
 
     @shape_name.setter
@@ -89,9 +66,6 @@ class OdaInstanceArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -101,9 +75,6 @@ class OdaInstanceArgs:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Description of the Digital Assistant instance.
-        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -113,9 +84,6 @@ class OdaInstanceArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) User-friendly name for the instance. Avoid entering confidential information. You can change this value anytime.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -125,9 +93,6 @@ class OdaInstanceArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Example: `{"bar-key": "value"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -137,9 +102,6 @@ class OdaInstanceArgs:
     @property
     @pulumi.getter(name="identityDomain")
     def identity_domain(self) -> Optional[pulumi.Input[str]]:
-        """
-        If isRoleBasedAccess is set to true, this property specifies the identity domain that is to be used to implement this type of authorzation. Digital Assistant will create an Identity Application instance and Application Roles within this identity domain. The caller may then perform and user roll mappings they like to grant access to users within the identity domain.
-        """
         return pulumi.get(self, "identity_domain")
 
     @identity_domain.setter
@@ -149,9 +111,6 @@ class OdaInstanceArgs:
     @property
     @pulumi.getter(name="isRoleBasedAccess")
     def is_role_based_access(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Should this Digital Assistant instance use role-based authorization via an identity domain (true) or use the default policy-based authorization via IAM policies (false)
-        """
         return pulumi.get(self, "is_role_based_access")
 
     @is_role_based_access.setter
@@ -161,9 +120,6 @@ class OdaInstanceArgs:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The current state of the Digital Assistant instance.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -198,32 +154,6 @@ class _OdaInstanceState:
                  web_app_url: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering OdaInstance resources.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] attachment_ids: A list of attachment identifiers for this instance (if any). Use GetOdaInstanceAttachment to get the details of the attachments.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] attachment_types: A list of attachment types for this instance (if any). Use attachmentIds to get the details of the attachments.
-        :param pulumi.Input[str] compartment_id: (Updatable) Identifier of the compartment.
-        :param pulumi.Input[str] connector_url: URL for the connector's endpoint.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] description: (Updatable) Description of the Digital Assistant instance.
-        :param pulumi.Input[str] display_name: (Updatable) User-friendly name for the instance. Avoid entering confidential information. You can change this value anytime.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] identity_app_console_url: If isRoleBasedAccess is set to true, this property specifies the URL for the administration console used to manage the Identity Application instance Digital Assistant has created inside the user-specified identity domain.
-        :param pulumi.Input[str] identity_app_guid: If isRoleBasedAccess is set to true, this property specifies the GUID of the Identity Application instance Digital Assistant has created inside the user-specified identity domain. This identity application instance may be used to host user roll mappings to grant access to this Digital Assistant instance for users within the identity domain.
-        :param pulumi.Input[str] identity_domain: If isRoleBasedAccess is set to true, this property specifies the identity domain that is to be used to implement this type of authorzation. Digital Assistant will create an Identity Application instance and Application Roles within this identity domain. The caller may then perform and user roll mappings they like to grant access to users within the identity domain.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] imported_package_ids: A list of package ids imported into this instance (if any). Use GetImportedPackage to get the details of the imported packages.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] imported_package_names: A list of package names imported into this instance (if any). Use importedPackageIds field to get the details of the imported packages.
-        :param pulumi.Input[bool] is_role_based_access: Should this Digital Assistant instance use role-based authorization via an identity domain (true) or use the default policy-based authorization via IAM policies (false)
-        :param pulumi.Input[str] lifecycle_sub_state: The current sub-state of the Digital Assistant instance.
-        :param pulumi.Input[Sequence[pulumi.Input['OdaInstanceRestrictedOperationArgs']]] restricted_operations: A list of restricted operations (across all attachments) for this instance (if any). Use GetOdaInstanceAttachment to get the details of the attachments.
-        :param pulumi.Input[str] shape_name: Shape or size of the instance.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] state: The current state of the Digital Assistant instance.
-        :param pulumi.Input[str] state_message: A message that describes the current state in more detail. For example, actionable information about an instance that's in the `FAILED` state.
-        :param pulumi.Input[str] time_created: When the Digital Assistant instance was created. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
-        :param pulumi.Input[str] time_updated: When the Digital Assistance instance was last updated. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
-        :param pulumi.Input[str] web_app_url: URL for the Digital Assistant web application that's associated with the instance.
         """
         if attachment_ids is not None:
             pulumi.set(__self__, "attachment_ids", attachment_ids)
@@ -273,9 +203,6 @@ class _OdaInstanceState:
     @property
     @pulumi.getter(name="attachmentIds")
     def attachment_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        A list of attachment identifiers for this instance (if any). Use GetOdaInstanceAttachment to get the details of the attachments.
-        """
         return pulumi.get(self, "attachment_ids")
 
     @attachment_ids.setter
@@ -285,9 +212,6 @@ class _OdaInstanceState:
     @property
     @pulumi.getter(name="attachmentTypes")
     def attachment_types(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        A list of attachment types for this instance (if any). Use attachmentIds to get the details of the attachments.
-        """
         return pulumi.get(self, "attachment_types")
 
     @attachment_types.setter
@@ -297,9 +221,6 @@ class _OdaInstanceState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Identifier of the compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -309,9 +230,6 @@ class _OdaInstanceState:
     @property
     @pulumi.getter(name="connectorUrl")
     def connector_url(self) -> Optional[pulumi.Input[str]]:
-        """
-        URL for the connector's endpoint.
-        """
         return pulumi.get(self, "connector_url")
 
     @connector_url.setter
@@ -321,9 +239,6 @@ class _OdaInstanceState:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -333,9 +248,6 @@ class _OdaInstanceState:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Description of the Digital Assistant instance.
-        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -345,9 +257,6 @@ class _OdaInstanceState:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) User-friendly name for the instance. Avoid entering confidential information. You can change this value anytime.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -357,9 +266,6 @@ class _OdaInstanceState:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Example: `{"bar-key": "value"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -369,9 +275,6 @@ class _OdaInstanceState:
     @property
     @pulumi.getter(name="identityAppConsoleUrl")
     def identity_app_console_url(self) -> Optional[pulumi.Input[str]]:
-        """
-        If isRoleBasedAccess is set to true, this property specifies the URL for the administration console used to manage the Identity Application instance Digital Assistant has created inside the user-specified identity domain.
-        """
         return pulumi.get(self, "identity_app_console_url")
 
     @identity_app_console_url.setter
@@ -381,9 +284,6 @@ class _OdaInstanceState:
     @property
     @pulumi.getter(name="identityAppGuid")
     def identity_app_guid(self) -> Optional[pulumi.Input[str]]:
-        """
-        If isRoleBasedAccess is set to true, this property specifies the GUID of the Identity Application instance Digital Assistant has created inside the user-specified identity domain. This identity application instance may be used to host user roll mappings to grant access to this Digital Assistant instance for users within the identity domain.
-        """
         return pulumi.get(self, "identity_app_guid")
 
     @identity_app_guid.setter
@@ -393,9 +293,6 @@ class _OdaInstanceState:
     @property
     @pulumi.getter(name="identityDomain")
     def identity_domain(self) -> Optional[pulumi.Input[str]]:
-        """
-        If isRoleBasedAccess is set to true, this property specifies the identity domain that is to be used to implement this type of authorzation. Digital Assistant will create an Identity Application instance and Application Roles within this identity domain. The caller may then perform and user roll mappings they like to grant access to users within the identity domain.
-        """
         return pulumi.get(self, "identity_domain")
 
     @identity_domain.setter
@@ -405,9 +302,6 @@ class _OdaInstanceState:
     @property
     @pulumi.getter(name="importedPackageIds")
     def imported_package_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        A list of package ids imported into this instance (if any). Use GetImportedPackage to get the details of the imported packages.
-        """
         return pulumi.get(self, "imported_package_ids")
 
     @imported_package_ids.setter
@@ -417,9 +311,6 @@ class _OdaInstanceState:
     @property
     @pulumi.getter(name="importedPackageNames")
     def imported_package_names(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        A list of package names imported into this instance (if any). Use importedPackageIds field to get the details of the imported packages.
-        """
         return pulumi.get(self, "imported_package_names")
 
     @imported_package_names.setter
@@ -429,9 +320,6 @@ class _OdaInstanceState:
     @property
     @pulumi.getter(name="isRoleBasedAccess")
     def is_role_based_access(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Should this Digital Assistant instance use role-based authorization via an identity domain (true) or use the default policy-based authorization via IAM policies (false)
-        """
         return pulumi.get(self, "is_role_based_access")
 
     @is_role_based_access.setter
@@ -441,9 +329,6 @@ class _OdaInstanceState:
     @property
     @pulumi.getter(name="lifecycleSubState")
     def lifecycle_sub_state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The current sub-state of the Digital Assistant instance.
-        """
         return pulumi.get(self, "lifecycle_sub_state")
 
     @lifecycle_sub_state.setter
@@ -453,9 +338,6 @@ class _OdaInstanceState:
     @property
     @pulumi.getter(name="restrictedOperations")
     def restricted_operations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['OdaInstanceRestrictedOperationArgs']]]]:
-        """
-        A list of restricted operations (across all attachments) for this instance (if any). Use GetOdaInstanceAttachment to get the details of the attachments.
-        """
         return pulumi.get(self, "restricted_operations")
 
     @restricted_operations.setter
@@ -465,13 +347,6 @@ class _OdaInstanceState:
     @property
     @pulumi.getter(name="shapeName")
     def shape_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        Shape or size of the instance.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "shape_name")
 
     @shape_name.setter
@@ -481,9 +356,6 @@ class _OdaInstanceState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The current state of the Digital Assistant instance.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -493,9 +365,6 @@ class _OdaInstanceState:
     @property
     @pulumi.getter(name="stateMessage")
     def state_message(self) -> Optional[pulumi.Input[str]]:
-        """
-        A message that describes the current state in more detail. For example, actionable information about an instance that's in the `FAILED` state.
-        """
         return pulumi.get(self, "state_message")
 
     @state_message.setter
@@ -505,9 +374,6 @@ class _OdaInstanceState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        When the Digital Assistant instance was created. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -517,9 +383,6 @@ class _OdaInstanceState:
     @property
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> Optional[pulumi.Input[str]]:
-        """
-        When the Digital Assistance instance was last updated. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
-        """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
@@ -529,9 +392,6 @@ class _OdaInstanceState:
     @property
     @pulumi.getter(name="webAppUrl")
     def web_app_url(self) -> Optional[pulumi.Input[str]]:
-        """
-        URL for the Digital Assistant web application that's associated with the instance.
-        """
         return pulumi.get(self, "web_app_url")
 
     @web_app_url.setter
@@ -555,57 +415,9 @@ class OdaInstance(pulumi.CustomResource):
                  state: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Oda Instance resource in Oracle Cloud Infrastructure Digital Assistant service.
-
-        Starts an asynchronous job to create a Digital Assistant instance.
-
-        To monitor the status of the job, take the `opc-work-request-id` response
-        header value and use it to call `GET /workRequests/{workRequestId}`.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_oda_instance = oci.oda.OdaInstance("testOdaInstance",
-            compartment_id=var["compartment_id"],
-            shape_name="DEVELOPMENT",
-            defined_tags={
-                "foo-namespace.bar-key": "value",
-            },
-            description=var["oda_instance_description"],
-            display_name=var["oda_instance_display_name"],
-            freeform_tags={
-                "bar-key": "value",
-            },
-            identity_domain=var["oda_instance_identity_domain"],
-            is_role_based_access=var["oda_instance_is_role_based_access"])
-        ```
-
-        ## Import
-
-        OdaInstances can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Oda/odaInstance:OdaInstance test_oda_instance "id"
-        ```
-
+        Create a OdaInstance resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) Identifier of the compartment.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] description: (Updatable) Description of the Digital Assistant instance.
-        :param pulumi.Input[str] display_name: (Updatable) User-friendly name for the instance. Avoid entering confidential information. You can change this value anytime.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] identity_domain: If isRoleBasedAccess is set to true, this property specifies the identity domain that is to be used to implement this type of authorzation. Digital Assistant will create an Identity Application instance and Application Roles within this identity domain. The caller may then perform and user roll mappings they like to grant access to users within the identity domain.
-        :param pulumi.Input[bool] is_role_based_access: Should this Digital Assistant instance use role-based authorization via an identity domain (true) or use the default policy-based authorization via IAM policies (false)
-        :param pulumi.Input[str] shape_name: Shape or size of the instance.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] state: The current state of the Digital Assistant instance.
         """
         ...
     @overload
@@ -614,42 +426,7 @@ class OdaInstance(pulumi.CustomResource):
                  args: OdaInstanceArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Oda Instance resource in Oracle Cloud Infrastructure Digital Assistant service.
-
-        Starts an asynchronous job to create a Digital Assistant instance.
-
-        To monitor the status of the job, take the `opc-work-request-id` response
-        header value and use it to call `GET /workRequests/{workRequestId}`.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_oda_instance = oci.oda.OdaInstance("testOdaInstance",
-            compartment_id=var["compartment_id"],
-            shape_name="DEVELOPMENT",
-            defined_tags={
-                "foo-namespace.bar-key": "value",
-            },
-            description=var["oda_instance_description"],
-            display_name=var["oda_instance_display_name"],
-            freeform_tags={
-                "bar-key": "value",
-            },
-            identity_domain=var["oda_instance_identity_domain"],
-            is_role_based_access=var["oda_instance_is_role_based_access"])
-        ```
-
-        ## Import
-
-        OdaInstances can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Oda/odaInstance:OdaInstance test_oda_instance "id"
-        ```
-
+        Create a OdaInstance resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param OdaInstanceArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -748,32 +525,6 @@ class OdaInstance(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] attachment_ids: A list of attachment identifiers for this instance (if any). Use GetOdaInstanceAttachment to get the details of the attachments.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] attachment_types: A list of attachment types for this instance (if any). Use attachmentIds to get the details of the attachments.
-        :param pulumi.Input[str] compartment_id: (Updatable) Identifier of the compartment.
-        :param pulumi.Input[str] connector_url: URL for the connector's endpoint.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] description: (Updatable) Description of the Digital Assistant instance.
-        :param pulumi.Input[str] display_name: (Updatable) User-friendly name for the instance. Avoid entering confidential information. You can change this value anytime.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] identity_app_console_url: If isRoleBasedAccess is set to true, this property specifies the URL for the administration console used to manage the Identity Application instance Digital Assistant has created inside the user-specified identity domain.
-        :param pulumi.Input[str] identity_app_guid: If isRoleBasedAccess is set to true, this property specifies the GUID of the Identity Application instance Digital Assistant has created inside the user-specified identity domain. This identity application instance may be used to host user roll mappings to grant access to this Digital Assistant instance for users within the identity domain.
-        :param pulumi.Input[str] identity_domain: If isRoleBasedAccess is set to true, this property specifies the identity domain that is to be used to implement this type of authorzation. Digital Assistant will create an Identity Application instance and Application Roles within this identity domain. The caller may then perform and user roll mappings they like to grant access to users within the identity domain.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] imported_package_ids: A list of package ids imported into this instance (if any). Use GetImportedPackage to get the details of the imported packages.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] imported_package_names: A list of package names imported into this instance (if any). Use importedPackageIds field to get the details of the imported packages.
-        :param pulumi.Input[bool] is_role_based_access: Should this Digital Assistant instance use role-based authorization via an identity domain (true) or use the default policy-based authorization via IAM policies (false)
-        :param pulumi.Input[str] lifecycle_sub_state: The current sub-state of the Digital Assistant instance.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['OdaInstanceRestrictedOperationArgs']]]] restricted_operations: A list of restricted operations (across all attachments) for this instance (if any). Use GetOdaInstanceAttachment to get the details of the attachments.
-        :param pulumi.Input[str] shape_name: Shape or size of the instance.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] state: The current state of the Digital Assistant instance.
-        :param pulumi.Input[str] state_message: A message that describes the current state in more detail. For example, actionable information about an instance that's in the `FAILED` state.
-        :param pulumi.Input[str] time_created: When the Digital Assistant instance was created. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
-        :param pulumi.Input[str] time_updated: When the Digital Assistance instance was last updated. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
-        :param pulumi.Input[str] web_app_url: URL for the Digital Assistant web application that's associated with the instance.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -805,181 +556,111 @@ class OdaInstance(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="attachmentIds")
-    def attachment_ids(self) -> pulumi.Output[Sequence[str]]:
-        """
-        A list of attachment identifiers for this instance (if any). Use GetOdaInstanceAttachment to get the details of the attachments.
-        """
+    def attachment_ids(self) -> pulumi.Output[Optional[Sequence[str]]]:
         return pulumi.get(self, "attachment_ids")
 
     @property
     @pulumi.getter(name="attachmentTypes")
-    def attachment_types(self) -> pulumi.Output[Sequence[str]]:
-        """
-        A list of attachment types for this instance (if any). Use attachmentIds to get the details of the attachments.
-        """
+    def attachment_types(self) -> pulumi.Output[Optional[Sequence[str]]]:
         return pulumi.get(self, "attachment_types")
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Identifier of the compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="connectorUrl")
-    def connector_url(self) -> pulumi.Output[str]:
-        """
-        URL for the connector's endpoint.
-        """
+    def connector_url(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "connector_url")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
     def description(self) -> pulumi.Output[Optional[str]]:
-        """
-        (Updatable) Description of the Digital Assistant instance.
-        """
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> pulumi.Output[str]:
-        """
-        (Updatable) User-friendly name for the instance. Avoid entering confidential information. You can change this value anytime.
-        """
+    def display_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="identityAppConsoleUrl")
-    def identity_app_console_url(self) -> pulumi.Output[str]:
-        """
-        If isRoleBasedAccess is set to true, this property specifies the URL for the administration console used to manage the Identity Application instance Digital Assistant has created inside the user-specified identity domain.
-        """
+    def identity_app_console_url(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "identity_app_console_url")
 
     @property
     @pulumi.getter(name="identityAppGuid")
-    def identity_app_guid(self) -> pulumi.Output[str]:
-        """
-        If isRoleBasedAccess is set to true, this property specifies the GUID of the Identity Application instance Digital Assistant has created inside the user-specified identity domain. This identity application instance may be used to host user roll mappings to grant access to this Digital Assistant instance for users within the identity domain.
-        """
+    def identity_app_guid(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "identity_app_guid")
 
     @property
     @pulumi.getter(name="identityDomain")
-    def identity_domain(self) -> pulumi.Output[str]:
-        """
-        If isRoleBasedAccess is set to true, this property specifies the identity domain that is to be used to implement this type of authorzation. Digital Assistant will create an Identity Application instance and Application Roles within this identity domain. The caller may then perform and user roll mappings they like to grant access to users within the identity domain.
-        """
+    def identity_domain(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "identity_domain")
 
     @property
     @pulumi.getter(name="importedPackageIds")
-    def imported_package_ids(self) -> pulumi.Output[Sequence[str]]:
-        """
-        A list of package ids imported into this instance (if any). Use GetImportedPackage to get the details of the imported packages.
-        """
+    def imported_package_ids(self) -> pulumi.Output[Optional[Sequence[str]]]:
         return pulumi.get(self, "imported_package_ids")
 
     @property
     @pulumi.getter(name="importedPackageNames")
-    def imported_package_names(self) -> pulumi.Output[Sequence[str]]:
-        """
-        A list of package names imported into this instance (if any). Use importedPackageIds field to get the details of the imported packages.
-        """
+    def imported_package_names(self) -> pulumi.Output[Optional[Sequence[str]]]:
         return pulumi.get(self, "imported_package_names")
 
     @property
     @pulumi.getter(name="isRoleBasedAccess")
-    def is_role_based_access(self) -> pulumi.Output[bool]:
-        """
-        Should this Digital Assistant instance use role-based authorization via an identity domain (true) or use the default policy-based authorization via IAM policies (false)
-        """
+    def is_role_based_access(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "is_role_based_access")
 
     @property
     @pulumi.getter(name="lifecycleSubState")
-    def lifecycle_sub_state(self) -> pulumi.Output[str]:
-        """
-        The current sub-state of the Digital Assistant instance.
-        """
+    def lifecycle_sub_state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "lifecycle_sub_state")
 
     @property
     @pulumi.getter(name="restrictedOperations")
-    def restricted_operations(self) -> pulumi.Output[Sequence['outputs.OdaInstanceRestrictedOperation']]:
-        """
-        A list of restricted operations (across all attachments) for this instance (if any). Use GetOdaInstanceAttachment to get the details of the attachments.
-        """
+    def restricted_operations(self) -> pulumi.Output[Optional[Sequence['outputs.OdaInstanceRestrictedOperation']]]:
         return pulumi.get(self, "restricted_operations")
 
     @property
     @pulumi.getter(name="shapeName")
     def shape_name(self) -> pulumi.Output[str]:
-        """
-        Shape or size of the instance.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "shape_name")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        The current state of the Digital Assistant instance.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="stateMessage")
-    def state_message(self) -> pulumi.Output[str]:
-        """
-        A message that describes the current state in more detail. For example, actionable information about an instance that's in the `FAILED` state.
-        """
+    def state_message(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state_message")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        When the Digital Assistant instance was created. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> pulumi.Output[str]:
-        """
-        When the Digital Assistance instance was last updated. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
-        """
+    def time_updated(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_updated")
 
     @property
     @pulumi.getter(name="webAppUrl")
-    def web_app_url(self) -> pulumi.Output[str]:
-        """
-        URL for the Digital Assistant web application that's associated with the instance.
-        """
+    def web_app_url(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "web_app_url")
 

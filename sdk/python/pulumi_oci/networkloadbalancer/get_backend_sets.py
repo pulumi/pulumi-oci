@@ -39,10 +39,7 @@ class GetBackendSetsResult:
 
     @property
     @pulumi.getter(name="backendSetCollections")
-    def backend_set_collections(self) -> Sequence['outputs.GetBackendSetsBackendSetCollectionResult']:
-        """
-        The list of backend_set_collection.
-        """
+    def backend_set_collections(self) -> Optional[Sequence['outputs.GetBackendSetsBackendSetCollectionResult']]:
         return pulumi.get(self, "backend_set_collections")
 
     @property
@@ -52,7 +49,7 @@ class GetBackendSetsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -80,21 +77,7 @@ def get_backend_sets(filters: Optional[Sequence[pulumi.InputType['GetBackendSets
                      network_load_balancer_id: Optional[str] = None,
                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetBackendSetsResult:
     """
-    This data source provides the list of Backend Sets in Oracle Cloud Infrastructure Network Load Balancer service.
-
-    Lists all backend sets associated with a given network load balancer.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_backend_sets = oci.NetworkLoadBalancer.get_backend_sets(network_load_balancer_id=oci_network_load_balancer_network_load_balancer["test_network_load_balancer"]["id"])
-    ```
-
-
-    :param str network_load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network load balancer to update.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['filters'] = filters
@@ -114,20 +97,6 @@ def get_backend_sets_output(filters: Optional[pulumi.Input[Optional[Sequence[pul
                             network_load_balancer_id: Optional[pulumi.Input[str]] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetBackendSetsResult]:
     """
-    This data source provides the list of Backend Sets in Oracle Cloud Infrastructure Network Load Balancer service.
-
-    Lists all backend sets associated with a given network load balancer.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_backend_sets = oci.NetworkLoadBalancer.get_backend_sets(network_load_balancer_id=oci_network_load_balancer_network_load_balancer["test_network_load_balancer"]["id"])
-    ```
-
-
-    :param str network_load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network load balancer to update.
+    Use this data source to access information about an existing resource.
     """
     ...

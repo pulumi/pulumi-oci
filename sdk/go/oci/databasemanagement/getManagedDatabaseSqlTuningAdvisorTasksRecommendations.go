@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Managed Database Sql Tuning Advisor Tasks Recommendations in Oracle Cloud Infrastructure Database Management service.
@@ -73,9 +72,9 @@ type GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsResult struct {
 	ExecutionId string                                                         `pulumi:"executionId"`
 	Filters     []GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id                string `pulumi:"id"`
-	ManagedDatabaseId string `pulumi:"managedDatabaseId"`
-	SqlObjectId       string `pulumi:"sqlObjectId"`
+	Id                *string `pulumi:"id"`
+	ManagedDatabaseId string  `pulumi:"managedDatabaseId"`
+	SqlObjectId       string  `pulumi:"sqlObjectId"`
 	// The unique identifier of the task. This is not the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	SqlTuningAdvisorTaskId string `pulumi:"sqlTuningAdvisorTaskId"`
 	// The list of sql_tuning_advisor_task_recommendation_collection.
@@ -127,12 +126,6 @@ func (o GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsResultOutput) ToGe
 	return o
 }
 
-func (o GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsResult] {
-	return pulumix.Output[GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsResultOutput) ExecutionId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsResult) string { return v.ExecutionId }).(pulumi.StringOutput)
 }
@@ -144,8 +137,8 @@ func (o GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsResultOutput) Filt
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsResultOutput) ManagedDatabaseId() pulumi.StringOutput {

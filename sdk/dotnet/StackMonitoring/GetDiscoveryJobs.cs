@@ -149,7 +149,7 @@ namespace Pulumi.Oci.StackMonitoring
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         public readonly string? Name;
 
         [OutputConstructor]
@@ -160,7 +160,7 @@ namespace Pulumi.Oci.StackMonitoring
 
             ImmutableArray<Outputs.GetDiscoveryJobsFilterResult> filters,
 
-            string id,
+            string? id,
 
             string? name)
         {

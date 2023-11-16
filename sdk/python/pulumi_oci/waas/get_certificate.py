@@ -89,10 +89,7 @@ class GetCertificateResult:
 
     @property
     @pulumi.getter(name="certificateData")
-    def certificate_data(self) -> str:
-        """
-        The data of the SSL certificate.
-        """
+    def certificate_data(self) -> Optional[str]:
         return pulumi.get(self, "certificate_data")
 
     @property
@@ -102,148 +99,97 @@ class GetCertificateResult:
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SSL certificate's compartment.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        The user-friendly name of the SSL certificate.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter
-    def extensions(self) -> Sequence['outputs.GetCertificateExtensionResult']:
-        """
-        Additional attributes associated with users or public keys for managing relationships between Certificate Authorities.
-        """
+    def extensions(self) -> Optional[Sequence['outputs.GetCertificateExtensionResult']]:
         return pulumi.get(self, "extensions")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SSL certificate.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="isTrustVerificationDisabled")
-    def is_trust_verification_disabled(self) -> bool:
-        """
-        This indicates whether trust verification was disabled during the creation of SSL certificate. If `true` SSL certificate trust verification was disabled and this SSL certificate is most likely self-signed.
-        """
+    def is_trust_verification_disabled(self) -> Optional[bool]:
         return pulumi.get(self, "is_trust_verification_disabled")
 
     @property
     @pulumi.getter(name="issuedBy")
-    def issued_by(self) -> str:
+    def issued_by(self) -> Optional[str]:
         return pulumi.get(self, "issued_by")
 
     @property
     @pulumi.getter(name="issuerNames")
-    def issuer_names(self) -> Sequence['outputs.GetCertificateIssuerNameResult']:
-        """
-        The issuer of the certificate.
-        """
+    def issuer_names(self) -> Optional[Sequence['outputs.GetCertificateIssuerNameResult']]:
         return pulumi.get(self, "issuer_names")
 
     @property
     @pulumi.getter(name="privateKeyData")
-    def private_key_data(self) -> str:
+    def private_key_data(self) -> Optional[str]:
         return pulumi.get(self, "private_key_data")
 
     @property
     @pulumi.getter(name="publicKeyInfos")
-    def public_key_infos(self) -> Sequence['outputs.GetCertificatePublicKeyInfoResult']:
-        """
-        Information about the public key and the algorithm used by the public key.
-        """
+    def public_key_infos(self) -> Optional[Sequence['outputs.GetCertificatePublicKeyInfoResult']]:
         return pulumi.get(self, "public_key_infos")
 
     @property
     @pulumi.getter(name="serialNumber")
-    def serial_number(self) -> str:
-        """
-        A unique, positive integer assigned by the Certificate Authority (CA). The issuer name and serial number identify a unique certificate.
-        """
+    def serial_number(self) -> Optional[str]:
         return pulumi.get(self, "serial_number")
 
     @property
     @pulumi.getter(name="signatureAlgorithm")
-    def signature_algorithm(self) -> str:
-        """
-        The identifier for the cryptographic algorithm used by the Certificate Authority (CA) to sign this certificate.
-        """
+    def signature_algorithm(self) -> Optional[str]:
         return pulumi.get(self, "signature_algorithm")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current lifecycle state of the SSL certificate.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="subjectNames")
-    def subject_names(self) -> Sequence['outputs.GetCertificateSubjectNameResult']:
-        """
-        The entity to be secured by the certificate.
-        """
+    def subject_names(self) -> Optional[Sequence['outputs.GetCertificateSubjectNameResult']]:
         return pulumi.get(self, "subject_names")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the certificate was created, expressed in RFC 3339 timestamp format.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeNotValidAfter")
-    def time_not_valid_after(self) -> str:
-        """
-        The date and time the certificate will expire, expressed in RFC 3339 timestamp format.
-        """
+    def time_not_valid_after(self) -> Optional[str]:
         return pulumi.get(self, "time_not_valid_after")
 
     @property
     @pulumi.getter(name="timeNotValidBefore")
-    def time_not_valid_before(self) -> str:
-        """
-        The date and time the certificate will become valid, expressed in RFC 3339 timestamp format.
-        """
+    def time_not_valid_before(self) -> Optional[str]:
         return pulumi.get(self, "time_not_valid_before")
 
     @property
     @pulumi.getter
-    def version(self) -> int:
-        """
-        The version of the encoded certificate.
-        """
+    def version(self) -> Optional[int]:
         return pulumi.get(self, "version")
 
 
@@ -279,21 +225,7 @@ class AwaitableGetCertificateResult(GetCertificateResult):
 def get_certificate(certificate_id: Optional[str] = None,
                     opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetCertificateResult:
     """
-    This data source provides details about a specific Certificate resource in Oracle Cloud Infrastructure Web Application Acceleration and Security service.
-
-    Gets the details of an SSL certificate.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_certificate = oci.Waas.get_certificate(certificate_id=oci_waas_certificate["test_certificate"]["id"])
-    ```
-
-
-    :param str certificate_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SSL certificate used in the WAAS policy. This number is generated when the certificate is added to the policy.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['certificateId'] = certificate_id
@@ -328,20 +260,6 @@ def get_certificate(certificate_id: Optional[str] = None,
 def get_certificate_output(certificate_id: Optional[pulumi.Input[str]] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCertificateResult]:
     """
-    This data source provides details about a specific Certificate resource in Oracle Cloud Infrastructure Web Application Acceleration and Security service.
-
-    Gets the details of an SSL certificate.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_certificate = oci.Waas.get_certificate(certificate_id=oci_waas_certificate["test_certificate"]["id"])
-    ```
-
-
-    :param str certificate_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SSL certificate used in the WAAS policy. This number is generated when the certificate is added to the policy.
+    Use this data source to access information about an existing resource.
     """
     ...

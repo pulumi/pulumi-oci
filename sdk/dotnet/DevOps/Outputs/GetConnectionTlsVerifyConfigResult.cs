@@ -16,17 +16,17 @@ namespace Pulumi.Oci.DevOps.Outputs
         /// <summary>
         /// The OCID of Oracle Cloud Infrastructure certificate service CA bundle.
         /// </summary>
-        public readonly string CaCertificateBundleId;
+        public readonly string? CaCertificateBundleId;
         /// <summary>
         /// The type of TLS verification.
         /// </summary>
-        public readonly string TlsVerifyMode;
+        public readonly string? TlsVerifyMode;
 
         [OutputConstructor]
         private GetConnectionTlsVerifyConfigResult(
-            string caCertificateBundleId,
+            string? caCertificateBundleId,
 
-            string tlsVerifyMode)
+            string? tlsVerifyMode)
         {
             CaCertificateBundleId = caCertificateBundleId;
             TlsVerifyMode = tlsVerifyMode;

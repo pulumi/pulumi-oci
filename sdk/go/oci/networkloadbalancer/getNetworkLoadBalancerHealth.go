@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Network Load Balancer Health resource in Oracle Cloud Infrastructure Network Load Balancer service.
@@ -62,8 +61,8 @@ type GetNetworkLoadBalancerHealthResult struct {
 	// A list of backend sets that are currently in the `CRITICAL` health state. The list identifies each backend set by the user-friendly name you assigned when you created the backend set.  Example: `exampleBackendSet`
 	CriticalStateBackendSetNames []string `pulumi:"criticalStateBackendSetNames"`
 	// The provider-assigned unique ID for this managed resource.
-	Id                    string `pulumi:"id"`
-	NetworkLoadBalancerId string `pulumi:"networkLoadBalancerId"`
+	Id                    *string `pulumi:"id"`
+	NetworkLoadBalancerId string  `pulumi:"networkLoadBalancerId"`
 	// The overall health status of the network load balancer.
 	// *  **OK:** All backend sets associated with the network load balancer return a status of `OK`.
 	// *  **WARNING:** At least one of the backend sets associated with the network load balancer returns a status of `WARNING`, no backend sets return a status of `CRITICAL`, and the network load balancer life cycle state is `ACTIVE`.
@@ -73,9 +72,9 @@ type GetNetworkLoadBalancerHealthResult struct {
 	// *  No backend sets are defined for the network load balancer.
 	// *  More than half of the backend sets associated with the network load balancer return a status of `UNKNOWN`, none of the backend sets return a status of `WARNING` or `CRITICAL`, and the network load balancer life cycle state is `ACTIVE`.
 	// *  The system could not retrieve metrics for any reason.
-	Status string `pulumi:"status"`
+	Status *string `pulumi:"status"`
 	// The total number of backend sets associated with this network load balancer.  Example: `4`
-	TotalBackendSetCount int `pulumi:"totalBackendSetCount"`
+	TotalBackendSetCount *int `pulumi:"totalBackendSetCount"`
 	// A list of backend sets that are currently in the `UNKNOWN` health state. The list identifies each backend set by the user-friendly name you assigned when you created the backend set.  Example: `exampleBackendSet2`
 	UnknownStateBackendSetNames []string `pulumi:"unknownStateBackendSetNames"`
 	// A list of backend sets that are currently in the `WARNING` health state. The list identifies each backend set by the user-friendly name you assigned when you created the backend set.  Example: `exampleBackendSet3`
@@ -120,20 +119,14 @@ func (o GetNetworkLoadBalancerHealthResultOutput) ToGetNetworkLoadBalancerHealth
 	return o
 }
 
-func (o GetNetworkLoadBalancerHealthResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetNetworkLoadBalancerHealthResult] {
-	return pulumix.Output[GetNetworkLoadBalancerHealthResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // A list of backend sets that are currently in the `CRITICAL` health state. The list identifies each backend set by the user-friendly name you assigned when you created the backend set.  Example: `exampleBackendSet`
 func (o GetNetworkLoadBalancerHealthResultOutput) CriticalStateBackendSetNames() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetNetworkLoadBalancerHealthResult) []string { return v.CriticalStateBackendSetNames }).(pulumi.StringArrayOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetNetworkLoadBalancerHealthResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNetworkLoadBalancerHealthResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetNetworkLoadBalancerHealthResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNetworkLoadBalancerHealthResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetNetworkLoadBalancerHealthResultOutput) NetworkLoadBalancerId() pulumi.StringOutput {
@@ -149,13 +142,13 @@ func (o GetNetworkLoadBalancerHealthResultOutput) NetworkLoadBalancerId() pulumi
 // *  No backend sets are defined for the network load balancer.
 // *  More than half of the backend sets associated with the network load balancer return a status of `UNKNOWN`, none of the backend sets return a status of `WARNING` or `CRITICAL`, and the network load balancer life cycle state is `ACTIVE`.
 // *  The system could not retrieve metrics for any reason.
-func (o GetNetworkLoadBalancerHealthResultOutput) Status() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNetworkLoadBalancerHealthResult) string { return v.Status }).(pulumi.StringOutput)
+func (o GetNetworkLoadBalancerHealthResultOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNetworkLoadBalancerHealthResult) *string { return v.Status }).(pulumi.StringPtrOutput)
 }
 
 // The total number of backend sets associated with this network load balancer.  Example: `4`
-func (o GetNetworkLoadBalancerHealthResultOutput) TotalBackendSetCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetNetworkLoadBalancerHealthResult) int { return v.TotalBackendSetCount }).(pulumi.IntOutput)
+func (o GetNetworkLoadBalancerHealthResultOutput) TotalBackendSetCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetNetworkLoadBalancerHealthResult) *int { return v.TotalBackendSetCount }).(pulumi.IntPtrOutput)
 }
 
 // A list of backend sets that are currently in the `UNKNOWN` health state. The list identifies each backend set by the user-friendly name you assigned when you created the backend set.  Example: `exampleBackendSet2`

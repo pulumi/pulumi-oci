@@ -12,6 +12,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetRedisClustersRedisClusterCollectionItem {
@@ -19,231 +21,231 @@ public final class GetRedisClustersRedisClusterCollectionItem {
      * @return The ID of the compartment in which to list resources.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return A filter to return only resources that match the entire display name given.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the Redis cluster.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return A message describing the current state in more detail. For example, the message might provide actionable information for a resource in `FAILED` state.
      * 
      */
-    private String lifecycleDetails;
+    private @Nullable String lifecycleDetails;
     /**
      * @return The collection of Redis cluster nodes.
      * 
      */
-    private List<GetRedisClustersRedisClusterCollectionItemNodeCollection> nodeCollections;
+    private @Nullable List<GetRedisClustersRedisClusterCollectionItemNodeCollection> nodeCollections;
     /**
      * @return The number of nodes in the Redis cluster.
      * 
      */
-    private Integer nodeCount;
+    private @Nullable Integer nodeCount;
     /**
      * @return The amount of memory allocated to the Redis cluster&#39;s nodes, in gigabytes.
      * 
      */
-    private Double nodeMemoryInGbs;
+    private @Nullable Double nodeMemoryInGbs;
     /**
      * @return The private IP address of the API endpoint for the Redis cluster&#39;s primary node.
      * 
      */
-    private String primaryEndpointIpAddress;
+    private @Nullable String primaryEndpointIpAddress;
     /**
      * @return The fully qualified domain name (FQDN) of the API endpoint for the Redis cluster&#39;s primary node.
      * 
      */
-    private String primaryFqdn;
+    private @Nullable String primaryFqdn;
     /**
      * @return The private IP address of the API endpoint for the Redis cluster&#39;s replica nodes.
      * 
      */
-    private String replicasEndpointIpAddress;
+    private @Nullable String replicasEndpointIpAddress;
     /**
      * @return The fully qualified domain name (FQDN) of the API endpoint for the Redis cluster&#39;s replica nodes.
      * 
      */
-    private String replicasFqdn;
+    private @Nullable String replicasFqdn;
     /**
      * @return The Redis version that the cluster is running.
      * 
      */
-    private String softwareVersion;
+    private @Nullable String softwareVersion;
     /**
      * @return A filter to return only resources their lifecycleState matches the given lifecycleState.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the Redis cluster&#39;s subnet.
      * 
      */
-    private String subnetId;
+    private @Nullable String subnetId;
     /**
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    private Map<String,Object> systemTags;
+    private @Nullable Map<String,Object> systemTags;
     /**
      * @return The date and time the Redis cluster was created. An [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The date and time the Redis cluster was updated. An [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
      * 
      */
-    private String timeUpdated;
+    private @Nullable String timeUpdated;
 
     private GetRedisClustersRedisClusterCollectionItem() {}
     /**
      * @return The ID of the compartment in which to list resources.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return A filter to return only resources that match the entire display name given.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the Redis cluster.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return A message describing the current state in more detail. For example, the message might provide actionable information for a resource in `FAILED` state.
      * 
      */
-    public String lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Optional<String> lifecycleDetails() {
+        return Optional.ofNullable(this.lifecycleDetails);
     }
     /**
      * @return The collection of Redis cluster nodes.
      * 
      */
     public List<GetRedisClustersRedisClusterCollectionItemNodeCollection> nodeCollections() {
-        return this.nodeCollections;
+        return this.nodeCollections == null ? List.of() : this.nodeCollections;
     }
     /**
      * @return The number of nodes in the Redis cluster.
      * 
      */
-    public Integer nodeCount() {
-        return this.nodeCount;
+    public Optional<Integer> nodeCount() {
+        return Optional.ofNullable(this.nodeCount);
     }
     /**
      * @return The amount of memory allocated to the Redis cluster&#39;s nodes, in gigabytes.
      * 
      */
-    public Double nodeMemoryInGbs() {
-        return this.nodeMemoryInGbs;
+    public Optional<Double> nodeMemoryInGbs() {
+        return Optional.ofNullable(this.nodeMemoryInGbs);
     }
     /**
      * @return The private IP address of the API endpoint for the Redis cluster&#39;s primary node.
      * 
      */
-    public String primaryEndpointIpAddress() {
-        return this.primaryEndpointIpAddress;
+    public Optional<String> primaryEndpointIpAddress() {
+        return Optional.ofNullable(this.primaryEndpointIpAddress);
     }
     /**
      * @return The fully qualified domain name (FQDN) of the API endpoint for the Redis cluster&#39;s primary node.
      * 
      */
-    public String primaryFqdn() {
-        return this.primaryFqdn;
+    public Optional<String> primaryFqdn() {
+        return Optional.ofNullable(this.primaryFqdn);
     }
     /**
      * @return The private IP address of the API endpoint for the Redis cluster&#39;s replica nodes.
      * 
      */
-    public String replicasEndpointIpAddress() {
-        return this.replicasEndpointIpAddress;
+    public Optional<String> replicasEndpointIpAddress() {
+        return Optional.ofNullable(this.replicasEndpointIpAddress);
     }
     /**
      * @return The fully qualified domain name (FQDN) of the API endpoint for the Redis cluster&#39;s replica nodes.
      * 
      */
-    public String replicasFqdn() {
-        return this.replicasFqdn;
+    public Optional<String> replicasFqdn() {
+        return Optional.ofNullable(this.replicasFqdn);
     }
     /**
      * @return The Redis version that the cluster is running.
      * 
      */
-    public String softwareVersion() {
-        return this.softwareVersion;
+    public Optional<String> softwareVersion() {
+        return Optional.ofNullable(this.softwareVersion);
     }
     /**
      * @return A filter to return only resources their lifecycleState matches the given lifecycleState.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the Redis cluster&#39;s subnet.
      * 
      */
-    public String subnetId() {
-        return this.subnetId;
+    public Optional<String> subnetId() {
+        return Optional.ofNullable(this.subnetId);
     }
     /**
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
     public Map<String,Object> systemTags() {
-        return this.systemTags;
+        return this.systemTags == null ? Map.of() : this.systemTags;
     }
     /**
      * @return The date and time the Redis cluster was created. An [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return The date and time the Redis cluster was updated. An [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
      * 
      */
-    public String timeUpdated() {
-        return this.timeUpdated;
+    public Optional<String> timeUpdated() {
+        return Optional.ofNullable(this.timeUpdated);
     }
 
     public static Builder builder() {
@@ -255,25 +257,25 @@ public final class GetRedisClustersRedisClusterCollectionItem {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String compartmentId;
-        private Map<String,Object> definedTags;
-        private String displayName;
-        private Map<String,Object> freeformTags;
-        private String id;
-        private String lifecycleDetails;
-        private List<GetRedisClustersRedisClusterCollectionItemNodeCollection> nodeCollections;
-        private Integer nodeCount;
-        private Double nodeMemoryInGbs;
-        private String primaryEndpointIpAddress;
-        private String primaryFqdn;
-        private String replicasEndpointIpAddress;
-        private String replicasFqdn;
-        private String softwareVersion;
-        private String state;
-        private String subnetId;
-        private Map<String,Object> systemTags;
-        private String timeCreated;
-        private String timeUpdated;
+        private @Nullable String compartmentId;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String displayName;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String id;
+        private @Nullable String lifecycleDetails;
+        private @Nullable List<GetRedisClustersRedisClusterCollectionItemNodeCollection> nodeCollections;
+        private @Nullable Integer nodeCount;
+        private @Nullable Double nodeMemoryInGbs;
+        private @Nullable String primaryEndpointIpAddress;
+        private @Nullable String primaryFqdn;
+        private @Nullable String replicasEndpointIpAddress;
+        private @Nullable String replicasFqdn;
+        private @Nullable String softwareVersion;
+        private @Nullable String state;
+        private @Nullable String subnetId;
+        private @Nullable Map<String,Object> systemTags;
+        private @Nullable String timeCreated;
+        private @Nullable String timeUpdated;
         public Builder() {}
         public Builder(GetRedisClustersRedisClusterCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -299,101 +301,101 @@ public final class GetRedisClustersRedisClusterCollectionItem {
         }
 
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+        public Builder lifecycleDetails(@Nullable String lifecycleDetails) {
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
-        public Builder nodeCollections(List<GetRedisClustersRedisClusterCollectionItemNodeCollection> nodeCollections) {
-            this.nodeCollections = Objects.requireNonNull(nodeCollections);
+        public Builder nodeCollections(@Nullable List<GetRedisClustersRedisClusterCollectionItemNodeCollection> nodeCollections) {
+            this.nodeCollections = nodeCollections;
             return this;
         }
         public Builder nodeCollections(GetRedisClustersRedisClusterCollectionItemNodeCollection... nodeCollections) {
             return nodeCollections(List.of(nodeCollections));
         }
         @CustomType.Setter
-        public Builder nodeCount(Integer nodeCount) {
-            this.nodeCount = Objects.requireNonNull(nodeCount);
+        public Builder nodeCount(@Nullable Integer nodeCount) {
+            this.nodeCount = nodeCount;
             return this;
         }
         @CustomType.Setter
-        public Builder nodeMemoryInGbs(Double nodeMemoryInGbs) {
-            this.nodeMemoryInGbs = Objects.requireNonNull(nodeMemoryInGbs);
+        public Builder nodeMemoryInGbs(@Nullable Double nodeMemoryInGbs) {
+            this.nodeMemoryInGbs = nodeMemoryInGbs;
             return this;
         }
         @CustomType.Setter
-        public Builder primaryEndpointIpAddress(String primaryEndpointIpAddress) {
-            this.primaryEndpointIpAddress = Objects.requireNonNull(primaryEndpointIpAddress);
+        public Builder primaryEndpointIpAddress(@Nullable String primaryEndpointIpAddress) {
+            this.primaryEndpointIpAddress = primaryEndpointIpAddress;
             return this;
         }
         @CustomType.Setter
-        public Builder primaryFqdn(String primaryFqdn) {
-            this.primaryFqdn = Objects.requireNonNull(primaryFqdn);
+        public Builder primaryFqdn(@Nullable String primaryFqdn) {
+            this.primaryFqdn = primaryFqdn;
             return this;
         }
         @CustomType.Setter
-        public Builder replicasEndpointIpAddress(String replicasEndpointIpAddress) {
-            this.replicasEndpointIpAddress = Objects.requireNonNull(replicasEndpointIpAddress);
+        public Builder replicasEndpointIpAddress(@Nullable String replicasEndpointIpAddress) {
+            this.replicasEndpointIpAddress = replicasEndpointIpAddress;
             return this;
         }
         @CustomType.Setter
-        public Builder replicasFqdn(String replicasFqdn) {
-            this.replicasFqdn = Objects.requireNonNull(replicasFqdn);
+        public Builder replicasFqdn(@Nullable String replicasFqdn) {
+            this.replicasFqdn = replicasFqdn;
             return this;
         }
         @CustomType.Setter
-        public Builder softwareVersion(String softwareVersion) {
-            this.softwareVersion = Objects.requireNonNull(softwareVersion);
+        public Builder softwareVersion(@Nullable String softwareVersion) {
+            this.softwareVersion = softwareVersion;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder subnetId(String subnetId) {
-            this.subnetId = Objects.requireNonNull(subnetId);
+        public Builder subnetId(@Nullable String subnetId) {
+            this.subnetId = subnetId;
             return this;
         }
         @CustomType.Setter
-        public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+        public Builder systemTags(@Nullable Map<String,Object> systemTags) {
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+        public Builder timeUpdated(@Nullable String timeUpdated) {
+            this.timeUpdated = timeUpdated;
             return this;
         }
         public GetRedisClustersRedisClusterCollectionItem build() {

@@ -52,9 +52,6 @@ class GetNamespacePropertiesMetadataResult:
     @property
     @pulumi.getter
     def constraints(self) -> Optional[str]:
-        """
-        A string representation of constraints that apply at this level. For example, a property defined at SOURCE level could further be applicable only for SOURCE_TYPE:database_sql.
-        """
         return pulumi.get(self, "constraints")
 
     @property
@@ -69,7 +66,7 @@ class GetNamespacePropertiesMetadataResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -83,9 +80,6 @@ class GetNamespacePropertiesMetadataResult:
     @property
     @pulumi.getter
     def name(self) -> Optional[str]:
-        """
-        The property name.
-        """
         return pulumi.get(self, "name")
 
     @property
@@ -95,10 +89,7 @@ class GetNamespacePropertiesMetadataResult:
 
     @property
     @pulumi.getter(name="propertyMetadataSummaryCollections")
-    def property_metadata_summary_collections(self) -> Sequence['outputs.GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionResult']:
-        """
-        The list of property_metadata_summary_collection.
-        """
+    def property_metadata_summary_collections(self) -> Optional[Sequence['outputs.GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionResult']]:
         return pulumi.get(self, "property_metadata_summary_collections")
 
 
@@ -126,29 +117,7 @@ def get_namespace_properties_metadata(constraints: Optional[str] = None,
                                       namespace: Optional[str] = None,
                                       opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetNamespacePropertiesMetadataResult:
     """
-    This data source provides the list of Namespace Properties Metadata in Oracle Cloud Infrastructure Log Analytics service.
-
-    Returns a list of properties along with their metadata.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_namespace_properties_metadata = oci.LogAnalytics.get_namespace_properties_metadata(namespace=var["namespace_properties_metadata_namespace"],
-        constraints=var["namespace_properties_metadata_constraints"],
-        display_text=var["namespace_properties_metadata_display_text"],
-        level=var["namespace_properties_metadata_level"],
-        name=var["namespace_properties_metadata_name"])
-    ```
-
-
-    :param str constraints: The constraints that apply to the properties at a certain level.
-    :param str display_text: The property display text used for filtering. Only properties matching the specified display name or description will be returned.
-    :param str level: The level for which applicable properties are to be listed.
-    :param str name: The property name used for filtering.
-    :param str namespace: The Logging Analytics namespace used for the request.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['constraints'] = constraints
@@ -180,28 +149,6 @@ def get_namespace_properties_metadata_output(constraints: Optional[pulumi.Input[
                                              namespace: Optional[pulumi.Input[str]] = None,
                                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNamespacePropertiesMetadataResult]:
     """
-    This data source provides the list of Namespace Properties Metadata in Oracle Cloud Infrastructure Log Analytics service.
-
-    Returns a list of properties along with their metadata.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_namespace_properties_metadata = oci.LogAnalytics.get_namespace_properties_metadata(namespace=var["namespace_properties_metadata_namespace"],
-        constraints=var["namespace_properties_metadata_constraints"],
-        display_text=var["namespace_properties_metadata_display_text"],
-        level=var["namespace_properties_metadata_level"],
-        name=var["namespace_properties_metadata_name"])
-    ```
-
-
-    :param str constraints: The constraints that apply to the properties at a certain level.
-    :param str display_text: The property display text used for filtering. Only properties matching the specified display name or description will be returned.
-    :param str level: The level for which applicable properties are to be listed.
-    :param str name: The property name used for filtering.
-    :param str namespace: The Logging Analytics namespace used for the request.
+    Use this data source to access information about an existing resource.
     """
     ...

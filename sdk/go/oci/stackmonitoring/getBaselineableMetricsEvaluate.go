@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Baselineable Metrics Evaluate resource in Oracle Cloud Infrastructure Stack Monitoring service.
@@ -85,7 +84,7 @@ type GetBaselineableMetricsEvaluateResult struct {
 	// list of anomaly data points for the metric
 	DataPoints []GetBaselineableMetricsEvaluateDataPoint `pulumi:"dataPoints"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// List of Metric data
 	Items []GetBaselineableMetricsEvaluateItem `pulumi:"items"`
 	// OCID of the resource
@@ -134,12 +133,6 @@ func (o GetBaselineableMetricsEvaluateResultOutput) ToGetBaselineableMetricsEval
 	return o
 }
 
-func (o GetBaselineableMetricsEvaluateResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetBaselineableMetricsEvaluateResult] {
-	return pulumix.Output[GetBaselineableMetricsEvaluateResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetBaselineableMetricsEvaluateResultOutput) BaselineableMetricId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetBaselineableMetricsEvaluateResult) string { return v.BaselineableMetricId }).(pulumi.StringOutput)
 }
@@ -152,8 +145,8 @@ func (o GetBaselineableMetricsEvaluateResultOutput) DataPoints() GetBaselineable
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetBaselineableMetricsEvaluateResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBaselineableMetricsEvaluateResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetBaselineableMetricsEvaluateResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBaselineableMetricsEvaluateResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // List of Metric data

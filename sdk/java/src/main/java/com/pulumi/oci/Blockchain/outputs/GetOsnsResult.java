@@ -21,12 +21,12 @@ public final class GetOsnsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The list of osn_collection.
      * 
      */
-    private List<GetOsnsOsnCollection> osnCollections;
+    private @Nullable List<GetOsnsOsnCollection> osnCollections;
 
     private GetOsnsResult() {}
     public String blockchainPlatformId() {
@@ -42,15 +42,15 @@ public final class GetOsnsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The list of osn_collection.
      * 
      */
     public List<GetOsnsOsnCollection> osnCollections() {
-        return this.osnCollections;
+        return this.osnCollections == null ? List.of() : this.osnCollections;
     }
 
     public static Builder builder() {
@@ -65,8 +65,8 @@ public final class GetOsnsResult {
         private String blockchainPlatformId;
         private @Nullable String displayName;
         private @Nullable List<GetOsnsFilter> filters;
-        private String id;
-        private List<GetOsnsOsnCollection> osnCollections;
+        private @Nullable String id;
+        private @Nullable List<GetOsnsOsnCollection> osnCollections;
         public Builder() {}
         public Builder(GetOsnsResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -96,13 +96,13 @@ public final class GetOsnsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder osnCollections(List<GetOsnsOsnCollection> osnCollections) {
-            this.osnCollections = Objects.requireNonNull(osnCollections);
+        public Builder osnCollections(@Nullable List<GetOsnsOsnCollection> osnCollections) {
+            this.osnCollections = osnCollections;
             return this;
         }
         public Builder osnCollections(GetOsnsOsnCollection... osnCollections) {

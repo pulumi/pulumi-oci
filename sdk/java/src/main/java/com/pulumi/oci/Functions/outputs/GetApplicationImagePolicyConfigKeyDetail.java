@@ -6,6 +6,8 @@ package com.pulumi.oci.Functions.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetApplicationImagePolicyConfigKeyDetail {
@@ -13,15 +15,15 @@ public final class GetApplicationImagePolicyConfigKeyDetail {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of the KMS key that will be used to verify the image signature.
      * 
      */
-    private String kmsKeyId;
+    private @Nullable String kmsKeyId;
 
     private GetApplicationImagePolicyConfigKeyDetail() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of the KMS key that will be used to verify the image signature.
      * 
      */
-    public String kmsKeyId() {
-        return this.kmsKeyId;
+    public Optional<String> kmsKeyId() {
+        return Optional.ofNullable(this.kmsKeyId);
     }
 
     public static Builder builder() {
@@ -33,7 +35,7 @@ public final class GetApplicationImagePolicyConfigKeyDetail {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String kmsKeyId;
+        private @Nullable String kmsKeyId;
         public Builder() {}
         public Builder(GetApplicationImagePolicyConfigKeyDetail defaults) {
     	      Objects.requireNonNull(defaults);
@@ -41,8 +43,8 @@ public final class GetApplicationImagePolicyConfigKeyDetail {
         }
 
         @CustomType.Setter
-        public Builder kmsKeyId(String kmsKeyId) {
-            this.kmsKeyId = Objects.requireNonNull(kmsKeyId);
+        public Builder kmsKeyId(@Nullable String kmsKeyId) {
+            this.kmsKeyId = kmsKeyId;
             return this;
         }
         public GetApplicationImagePolicyConfigKeyDetail build() {

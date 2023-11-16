@@ -63,7 +63,7 @@ class GetRecommendationStrategiesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -72,9 +72,6 @@ class GetRecommendationStrategiesResult:
     @property
     @pulumi.getter
     def name(self) -> Optional[str]:
-        """
-        The name of the strategy parameter.
-        """
         return pulumi.get(self, "name")
 
     @property
@@ -84,10 +81,7 @@ class GetRecommendationStrategiesResult:
 
     @property
     @pulumi.getter(name="recommendationStrategyCollections")
-    def recommendation_strategy_collections(self) -> Sequence['outputs.GetRecommendationStrategiesRecommendationStrategyCollectionResult']:
-        """
-        The list of recommendation_strategy_collection.
-        """
+    def recommendation_strategy_collections(self) -> Optional[Sequence['outputs.GetRecommendationStrategiesRecommendationStrategyCollectionResult']]:
         return pulumi.get(self, "recommendation_strategy_collections")
 
 
@@ -113,29 +107,7 @@ def get_recommendation_strategies(compartment_id: Optional[str] = None,
                                   recommendation_name: Optional[str] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetRecommendationStrategiesResult:
     """
-    This data source provides the list of Recommendation Strategies in Oracle Cloud Infrastructure Optimizer service.
-
-    Lists the existing strategies.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_recommendation_strategies = oci.Optimizer.get_recommendation_strategies(compartment_id=var["compartment_id"],
-        compartment_id_in_subtree=var["recommendation_strategy_compartment_id_in_subtree"],
-        name=var["recommendation_strategy_name"],
-        recommendation_name=oci_optimizer_recommendation["test_recommendation"]["name"])
-    ```
-
-
-    :param str compartment_id: The OCID of the compartment.
-    :param bool compartment_id_in_subtree: When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned depending on the the setting of `accessLevel`.
-           
-           Can only be set to true when performing ListCompartments on the tenancy (root compartment).
-    :param str name: Optional. A filter that returns results that match the name specified.
-    :param str recommendation_name: Optional. A filter that returns results that match the recommendation name specified.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -164,28 +136,6 @@ def get_recommendation_strategies_output(compartment_id: Optional[pulumi.Input[s
                                          recommendation_name: Optional[pulumi.Input[Optional[str]]] = None,
                                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetRecommendationStrategiesResult]:
     """
-    This data source provides the list of Recommendation Strategies in Oracle Cloud Infrastructure Optimizer service.
-
-    Lists the existing strategies.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_recommendation_strategies = oci.Optimizer.get_recommendation_strategies(compartment_id=var["compartment_id"],
-        compartment_id_in_subtree=var["recommendation_strategy_compartment_id_in_subtree"],
-        name=var["recommendation_strategy_name"],
-        recommendation_name=oci_optimizer_recommendation["test_recommendation"]["name"])
-    ```
-
-
-    :param str compartment_id: The OCID of the compartment.
-    :param bool compartment_id_in_subtree: When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned depending on the the setting of `accessLevel`.
-           
-           Can only be set to true when performing ListCompartments on the tenancy (root compartment).
-    :param str name: Optional. A filter that returns results that match the name specified.
-    :param str recommendation_name: Optional. A filter that returns results that match the recommendation name specified.
+    Use this data source to access information about an existing resource.
     """
     ...

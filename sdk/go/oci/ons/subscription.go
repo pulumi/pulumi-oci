@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Subscription resource in Oracle Cloud Infrastructure Notifications service.
@@ -71,17 +70,17 @@ type Subscription struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for the subscription.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// The time when this suscription was created.
-	CreatedTime pulumi.StringOutput `pulumi:"createdTime"`
+	CreatedTime pulumi.StringPtrOutput `pulumi:"createdTime"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// The delivery policy of the subscription. Stored as a JSON string.
-	DeliveryPolicy pulumi.StringOutput `pulumi:"deliveryPolicy"`
+	DeliveryPolicy pulumi.StringPtrOutput `pulumi:"deliveryPolicy"`
 	// A locator that corresponds to the subscription protocol. For example, an email address for a subscription that uses the `EMAIL` protocol, or a URL for a subscription that uses an HTTP-based protocol. HTTP-based protocols use URL endpoints that begin with "http:" or "https:". A URL cannot exceed 512 characters. Avoid entering confidential information.
 	//
 	// For protocol-specific endpoint formats and steps to get or create endpoints, see [To create a subscription](https://docs.cloud.oracle.com/iaas/Content/Notification/Tasks/managingtopicsandsubscriptions.htm#createSub).
 	Endpoint pulumi.StringOutput `pulumi:"endpoint"`
 	// For optimistic concurrency control. See `if-match`.
-	Etag pulumi.StringOutput `pulumi:"etag"`
+	Etag pulumi.StringPtrOutput `pulumi:"etag"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// The protocol used for the subscription.
@@ -89,7 +88,7 @@ type Subscription struct {
 	// Allowed values:
 	Protocol pulumi.StringOutput `pulumi:"protocol"`
 	// The lifecycle state of the subscription. The status of a new subscription is PENDING; when confirmed, the subscription status changes to ACTIVE.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic for the subscription.
 	//
 	// ** IMPORTANT **
@@ -274,12 +273,6 @@ func (i *Subscription) ToSubscriptionOutputWithContext(ctx context.Context) Subs
 	return pulumi.ToOutputWithContext(ctx, i).(SubscriptionOutput)
 }
 
-func (i *Subscription) ToOutput(ctx context.Context) pulumix.Output[*Subscription] {
-	return pulumix.Output[*Subscription]{
-		OutputState: i.ToSubscriptionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // SubscriptionArrayInput is an input type that accepts SubscriptionArray and SubscriptionArrayOutput values.
 // You can construct a concrete instance of `SubscriptionArrayInput` via:
 //
@@ -303,12 +296,6 @@ func (i SubscriptionArray) ToSubscriptionArrayOutput() SubscriptionArrayOutput {
 
 func (i SubscriptionArray) ToSubscriptionArrayOutputWithContext(ctx context.Context) SubscriptionArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(SubscriptionArrayOutput)
-}
-
-func (i SubscriptionArray) ToOutput(ctx context.Context) pulumix.Output[[]*Subscription] {
-	return pulumix.Output[[]*Subscription]{
-		OutputState: i.ToSubscriptionArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // SubscriptionMapInput is an input type that accepts SubscriptionMap and SubscriptionMapOutput values.
@@ -336,12 +323,6 @@ func (i SubscriptionMap) ToSubscriptionMapOutputWithContext(ctx context.Context)
 	return pulumi.ToOutputWithContext(ctx, i).(SubscriptionMapOutput)
 }
 
-func (i SubscriptionMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*Subscription] {
-	return pulumix.Output[map[string]*Subscription]{
-		OutputState: i.ToSubscriptionMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type SubscriptionOutput struct{ *pulumi.OutputState }
 
 func (SubscriptionOutput) ElementType() reflect.Type {
@@ -356,20 +337,14 @@ func (o SubscriptionOutput) ToSubscriptionOutputWithContext(ctx context.Context)
 	return o
 }
 
-func (o SubscriptionOutput) ToOutput(ctx context.Context) pulumix.Output[*Subscription] {
-	return pulumix.Output[*Subscription]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for the subscription.
 func (o SubscriptionOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Subscription) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
 // The time when this suscription was created.
-func (o SubscriptionOutput) CreatedTime() pulumi.StringOutput {
-	return o.ApplyT(func(v *Subscription) pulumi.StringOutput { return v.CreatedTime }).(pulumi.StringOutput)
+func (o SubscriptionOutput) CreatedTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Subscription) pulumi.StringPtrOutput { return v.CreatedTime }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -378,8 +353,8 @@ func (o SubscriptionOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // The delivery policy of the subscription. Stored as a JSON string.
-func (o SubscriptionOutput) DeliveryPolicy() pulumi.StringOutput {
-	return o.ApplyT(func(v *Subscription) pulumi.StringOutput { return v.DeliveryPolicy }).(pulumi.StringOutput)
+func (o SubscriptionOutput) DeliveryPolicy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Subscription) pulumi.StringPtrOutput { return v.DeliveryPolicy }).(pulumi.StringPtrOutput)
 }
 
 // A locator that corresponds to the subscription protocol. For example, an email address for a subscription that uses the `EMAIL` protocol, or a URL for a subscription that uses an HTTP-based protocol. HTTP-based protocols use URL endpoints that begin with "http:" or "https:". A URL cannot exceed 512 characters. Avoid entering confidential information.
@@ -390,8 +365,8 @@ func (o SubscriptionOutput) Endpoint() pulumi.StringOutput {
 }
 
 // For optimistic concurrency control. See `if-match`.
-func (o SubscriptionOutput) Etag() pulumi.StringOutput {
-	return o.ApplyT(func(v *Subscription) pulumi.StringOutput { return v.Etag }).(pulumi.StringOutput)
+func (o SubscriptionOutput) Etag() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Subscription) pulumi.StringPtrOutput { return v.Etag }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -407,8 +382,8 @@ func (o SubscriptionOutput) Protocol() pulumi.StringOutput {
 }
 
 // The lifecycle state of the subscription. The status of a new subscription is PENDING; when confirmed, the subscription status changes to ACTIVE.
-func (o SubscriptionOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *Subscription) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o SubscriptionOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Subscription) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic for the subscription.
@@ -433,12 +408,6 @@ func (o SubscriptionArrayOutput) ToSubscriptionArrayOutputWithContext(ctx contex
 	return o
 }
 
-func (o SubscriptionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*Subscription] {
-	return pulumix.Output[[]*Subscription]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o SubscriptionArrayOutput) Index(i pulumi.IntInput) SubscriptionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *Subscription {
 		return vs[0].([]*Subscription)[vs[1].(int)]
@@ -457,12 +426,6 @@ func (o SubscriptionMapOutput) ToSubscriptionMapOutput() SubscriptionMapOutput {
 
 func (o SubscriptionMapOutput) ToSubscriptionMapOutputWithContext(ctx context.Context) SubscriptionMapOutput {
 	return o
-}
-
-func (o SubscriptionMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*Subscription] {
-	return pulumix.Output[map[string]*Subscription]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o SubscriptionMapOutput) MapIndex(k pulumi.StringInput) SubscriptionOutput {

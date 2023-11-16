@@ -18,6 +18,7 @@ import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -41,182 +42,182 @@ public class ManagedInstance extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="autonomouses", refs={List.class,ManagedInstanceAutonomouse.class}, tree="[0,1]")
-    private Output<List<ManagedInstanceAutonomouse>> autonomouses;
+    private Output</* @Nullable */ List<ManagedInstanceAutonomouse>> autonomouses;
 
     /**
      * @return if present, indicates the Managed Instance is an autonomous instance. Holds all the Autonomous specific information
      * 
      */
-    public Output<List<ManagedInstanceAutonomouse>> autonomouses() {
-        return this.autonomouses;
+    public Output<Optional<List<ManagedInstanceAutonomouse>>> autonomouses() {
+        return Codegen.optional(this.autonomouses);
     }
     /**
      * Number of bug fix type updates available to be installed
      * 
      */
     @Export(name="bugUpdatesAvailable", refs={Integer.class}, tree="[0]")
-    private Output<Integer> bugUpdatesAvailable;
+    private Output</* @Nullable */ Integer> bugUpdatesAvailable;
 
     /**
      * @return Number of bug fix type updates available to be installed
      * 
      */
-    public Output<Integer> bugUpdatesAvailable() {
-        return this.bugUpdatesAvailable;
+    public Output<Optional<Integer>> bugUpdatesAvailable() {
+        return Codegen.optional(this.bugUpdatesAvailable);
     }
     /**
      * list of child Software Sources attached to the Managed Instance
      * 
      */
     @Export(name="childSoftwareSources", refs={List.class,ManagedInstanceChildSoftwareSource.class}, tree="[0,1]")
-    private Output<List<ManagedInstanceChildSoftwareSource>> childSoftwareSources;
+    private Output</* @Nullable */ List<ManagedInstanceChildSoftwareSource>> childSoftwareSources;
 
     /**
      * @return list of child Software Sources attached to the Managed Instance
      * 
      */
-    public Output<List<ManagedInstanceChildSoftwareSource>> childSoftwareSources() {
-        return this.childSoftwareSources;
+    public Output<Optional<List<ManagedInstanceChildSoftwareSource>>> childSoftwareSources() {
+        return Codegen.optional(this.childSoftwareSources);
     }
     /**
      * OCID for the Compartment
      * 
      */
     @Export(name="compartmentId", refs={String.class}, tree="[0]")
-    private Output<String> compartmentId;
+    private Output</* @Nullable */ String> compartmentId;
 
     /**
      * @return OCID for the Compartment
      * 
      */
-    public Output<String> compartmentId() {
-        return this.compartmentId;
+    public Output<Optional<String>> compartmentId() {
+        return Codegen.optional(this.compartmentId);
     }
     /**
      * Information specified by the user about the managed instance
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
-    private Output<String> description;
+    private Output</* @Nullable */ String> description;
 
     /**
      * @return Information specified by the user about the managed instance
      * 
      */
-    public Output<String> description() {
-        return this.description;
+    public Output<Optional<String>> description() {
+        return Codegen.optional(this.description);
     }
     /**
      * User friendly name
      * 
      */
     @Export(name="displayName", refs={String.class}, tree="[0]")
-    private Output<String> displayName;
+    private Output</* @Nullable */ String> displayName;
 
     /**
      * @return User friendly name
      * 
      */
-    public Output<String> displayName() {
-        return this.displayName;
+    public Output<Optional<String>> displayName() {
+        return Codegen.optional(this.displayName);
     }
     /**
      * Number of enhancement type updates available to be installed
      * 
      */
     @Export(name="enhancementUpdatesAvailable", refs={Integer.class}, tree="[0]")
-    private Output<Integer> enhancementUpdatesAvailable;
+    private Output</* @Nullable */ Integer> enhancementUpdatesAvailable;
 
     /**
      * @return Number of enhancement type updates available to be installed
      * 
      */
-    public Output<Integer> enhancementUpdatesAvailable() {
-        return this.enhancementUpdatesAvailable;
+    public Output<Optional<Integer>> enhancementUpdatesAvailable() {
+        return Codegen.optional(this.enhancementUpdatesAvailable);
     }
     /**
      * (Updatable) True if user allow data collection for this instance
      * 
      */
     @Export(name="isDataCollectionAuthorized", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isDataCollectionAuthorized;
+    private Output</* @Nullable */ Boolean> isDataCollectionAuthorized;
 
     /**
      * @return (Updatable) True if user allow data collection for this instance
      * 
      */
-    public Output<Boolean> isDataCollectionAuthorized() {
-        return this.isDataCollectionAuthorized;
+    public Output<Optional<Boolean>> isDataCollectionAuthorized() {
+        return Codegen.optional(this.isDataCollectionAuthorized);
     }
     /**
      * Indicates whether a reboot is required to complete installation of updates.
      * 
      */
     @Export(name="isRebootRequired", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isRebootRequired;
+    private Output</* @Nullable */ Boolean> isRebootRequired;
 
     /**
      * @return Indicates whether a reboot is required to complete installation of updates.
      * 
      */
-    public Output<Boolean> isRebootRequired() {
-        return this.isRebootRequired;
+    public Output<Optional<Boolean>> isRebootRequired() {
+        return Codegen.optional(this.isRebootRequired);
     }
     /**
      * The ksplice effective kernel version
      * 
      */
     @Export(name="kspliceEffectiveKernelVersion", refs={String.class}, tree="[0]")
-    private Output<String> kspliceEffectiveKernelVersion;
+    private Output</* @Nullable */ String> kspliceEffectiveKernelVersion;
 
     /**
      * @return The ksplice effective kernel version
      * 
      */
-    public Output<String> kspliceEffectiveKernelVersion() {
-        return this.kspliceEffectiveKernelVersion;
+    public Output<Optional<String>> kspliceEffectiveKernelVersion() {
+        return Codegen.optional(this.kspliceEffectiveKernelVersion);
     }
     /**
      * Time at which the instance last booted
      * 
      */
     @Export(name="lastBoot", refs={String.class}, tree="[0]")
-    private Output<String> lastBoot;
+    private Output</* @Nullable */ String> lastBoot;
 
     /**
      * @return Time at which the instance last booted
      * 
      */
-    public Output<String> lastBoot() {
-        return this.lastBoot;
+    public Output<Optional<String>> lastBoot() {
+        return Codegen.optional(this.lastBoot);
     }
     /**
      * Time at which the instance last checked in
      * 
      */
     @Export(name="lastCheckin", refs={String.class}, tree="[0]")
-    private Output<String> lastCheckin;
+    private Output</* @Nullable */ String> lastCheckin;
 
     /**
      * @return Time at which the instance last checked in
      * 
      */
-    public Output<String> lastCheckin() {
-        return this.lastCheckin;
+    public Output<Optional<String>> lastCheckin() {
+        return Codegen.optional(this.lastCheckin);
     }
     /**
      * The ids of the managed instance groups of which this instance is a member.
      * 
      */
     @Export(name="managedInstanceGroups", refs={List.class,ManagedInstanceManagedInstanceGroup.class}, tree="[0,1]")
-    private Output<List<ManagedInstanceManagedInstanceGroup>> managedInstanceGroups;
+    private Output</* @Nullable */ List<ManagedInstanceManagedInstanceGroup>> managedInstanceGroups;
 
     /**
      * @return The ids of the managed instance groups of which this instance is a member.
      * 
      */
-    public Output<List<ManagedInstanceManagedInstanceGroup>> managedInstanceGroups() {
-        return this.managedInstanceGroups;
+    public Output<Optional<List<ManagedInstanceManagedInstanceGroup>>> managedInstanceGroups() {
+        return Codegen.optional(this.managedInstanceGroups);
     }
     /**
      * OCID for the managed instance
@@ -240,7 +241,7 @@ public class ManagedInstance extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="notificationTopicId", refs={String.class}, tree="[0]")
-    private Output<String> notificationTopicId;
+    private Output</* @Nullable */ String> notificationTopicId;
 
     /**
      * @return (Updatable) OCID of the ONS topic used to send notification to users
@@ -249,162 +250,162 @@ public class ManagedInstance extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Output<String> notificationTopicId() {
-        return this.notificationTopicId;
+    public Output<Optional<String>> notificationTopicId() {
+        return Codegen.optional(this.notificationTopicId);
     }
     /**
      * The Operating System type of the managed instance.
      * 
      */
     @Export(name="osFamily", refs={String.class}, tree="[0]")
-    private Output<String> osFamily;
+    private Output</* @Nullable */ String> osFamily;
 
     /**
      * @return The Operating System type of the managed instance.
      * 
      */
-    public Output<String> osFamily() {
-        return this.osFamily;
+    public Output<Optional<String>> osFamily() {
+        return Codegen.optional(this.osFamily);
     }
     /**
      * Operating System Kernel Version
      * 
      */
     @Export(name="osKernelVersion", refs={String.class}, tree="[0]")
-    private Output<String> osKernelVersion;
+    private Output</* @Nullable */ String> osKernelVersion;
 
     /**
      * @return Operating System Kernel Version
      * 
      */
-    public Output<String> osKernelVersion() {
-        return this.osKernelVersion;
+    public Output<Optional<String>> osKernelVersion() {
+        return Codegen.optional(this.osKernelVersion);
     }
     /**
      * Operating System Name
      * 
      */
     @Export(name="osName", refs={String.class}, tree="[0]")
-    private Output<String> osName;
+    private Output</* @Nullable */ String> osName;
 
     /**
      * @return Operating System Name
      * 
      */
-    public Output<String> osName() {
-        return this.osName;
+    public Output<Optional<String>> osName() {
+        return Codegen.optional(this.osName);
     }
     /**
      * Operating System Version
      * 
      */
     @Export(name="osVersion", refs={String.class}, tree="[0]")
-    private Output<String> osVersion;
+    private Output</* @Nullable */ String> osVersion;
 
     /**
      * @return Operating System Version
      * 
      */
-    public Output<String> osVersion() {
-        return this.osVersion;
+    public Output<Optional<String>> osVersion() {
+        return Codegen.optional(this.osVersion);
     }
     /**
      * Number of non-classified updates available to be installed
      * 
      */
     @Export(name="otherUpdatesAvailable", refs={Integer.class}, tree="[0]")
-    private Output<Integer> otherUpdatesAvailable;
+    private Output</* @Nullable */ Integer> otherUpdatesAvailable;
 
     /**
      * @return Number of non-classified updates available to be installed
      * 
      */
-    public Output<Integer> otherUpdatesAvailable() {
-        return this.otherUpdatesAvailable;
+    public Output<Optional<Integer>> otherUpdatesAvailable() {
+        return Codegen.optional(this.otherUpdatesAvailable);
     }
     /**
      * the parent (base) Software Source attached to the Managed Instance
      * 
      */
     @Export(name="parentSoftwareSources", refs={List.class,ManagedInstanceParentSoftwareSource.class}, tree="[0,1]")
-    private Output<List<ManagedInstanceParentSoftwareSource>> parentSoftwareSources;
+    private Output</* @Nullable */ List<ManagedInstanceParentSoftwareSource>> parentSoftwareSources;
 
     /**
      * @return the parent (base) Software Source attached to the Managed Instance
      * 
      */
-    public Output<List<ManagedInstanceParentSoftwareSource>> parentSoftwareSources() {
-        return this.parentSoftwareSources;
+    public Output<Optional<List<ManagedInstanceParentSoftwareSource>>> parentSoftwareSources() {
+        return Codegen.optional(this.parentSoftwareSources);
     }
     /**
      * Number of scheduled jobs associated with this instance
      * 
      */
     @Export(name="scheduledJobCount", refs={Integer.class}, tree="[0]")
-    private Output<Integer> scheduledJobCount;
+    private Output</* @Nullable */ Integer> scheduledJobCount;
 
     /**
      * @return Number of scheduled jobs associated with this instance
      * 
      */
-    public Output<Integer> scheduledJobCount() {
-        return this.scheduledJobCount;
+    public Output<Optional<Integer>> scheduledJobCount() {
+        return Codegen.optional(this.scheduledJobCount);
     }
     /**
      * Number of security type updates available to be installed
      * 
      */
     @Export(name="securityUpdatesAvailable", refs={Integer.class}, tree="[0]")
-    private Output<Integer> securityUpdatesAvailable;
+    private Output</* @Nullable */ Integer> securityUpdatesAvailable;
 
     /**
      * @return Number of security type updates available to be installed
      * 
      */
-    public Output<Integer> securityUpdatesAvailable() {
-        return this.securityUpdatesAvailable;
+    public Output<Optional<Integer>> securityUpdatesAvailable() {
+        return Codegen.optional(this.securityUpdatesAvailable);
     }
     /**
      * status of the managed instance.
      * 
      */
     @Export(name="status", refs={String.class}, tree="[0]")
-    private Output<String> status;
+    private Output</* @Nullable */ String> status;
 
     /**
      * @return status of the managed instance.
      * 
      */
-    public Output<String> status() {
-        return this.status;
+    public Output<Optional<String>> status() {
+        return Codegen.optional(this.status);
     }
     /**
      * Number of updates available to be installed
      * 
      */
     @Export(name="updatesAvailable", refs={Integer.class}, tree="[0]")
-    private Output<Integer> updatesAvailable;
+    private Output</* @Nullable */ Integer> updatesAvailable;
 
     /**
      * @return Number of updates available to be installed
      * 
      */
-    public Output<Integer> updatesAvailable() {
-        return this.updatesAvailable;
+    public Output<Optional<Integer>> updatesAvailable() {
+        return Codegen.optional(this.updatesAvailable);
     }
     /**
      * Number of work requests associated with this instance
      * 
      */
     @Export(name="workRequestCount", refs={Integer.class}, tree="[0]")
-    private Output<Integer> workRequestCount;
+    private Output</* @Nullable */ Integer> workRequestCount;
 
     /**
      * @return Number of work requests associated with this instance
      * 
      */
-    public Output<Integer> workRequestCount() {
-        return this.workRequestCount;
+    public Output<Optional<Integer>> workRequestCount() {
+        return Codegen.optional(this.workRequestCount);
     }
 
     /**

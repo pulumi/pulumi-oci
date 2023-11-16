@@ -62,12 +62,12 @@ export interface GetNamespaceStorageOverlappingRecallsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly namespace: string;
     /**
      * The list of overlapping_recall_collection.
      */
-    readonly overlappingRecallCollections: outputs.LogAnalytics.GetNamespaceStorageOverlappingRecallsOverlappingRecallCollection[];
+    readonly overlappingRecallCollections?: outputs.LogAnalytics.GetNamespaceStorageOverlappingRecallsOverlappingRecallCollection[];
     /**
      * This is the end of the time range of the archival data
      */

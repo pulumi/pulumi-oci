@@ -20,7 +20,7 @@ namespace Pulumi.Oci.OsManagement.Outputs
         /// <summary>
         /// Number of bug fix type updates available to be installed
         /// </summary>
-        public readonly int BugUpdatesAvailable;
+        public readonly int? BugUpdatesAvailable;
         /// <summary>
         /// list of child Software Sources attached to the Managed Instance
         /// </summary>
@@ -28,72 +28,72 @@ namespace Pulumi.Oci.OsManagement.Outputs
         /// <summary>
         /// The ID of the compartment in which to list resources.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// Information specified by the user about the managed instance
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// Number of enhancement type updates available to be installed
         /// </summary>
-        public readonly int EnhancementUpdatesAvailable;
+        public readonly int? EnhancementUpdatesAvailable;
         /// <summary>
         /// software source identifier
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// True if user allow data collection for this instance
         /// </summary>
-        public readonly bool IsDataCollectionAuthorized;
+        public readonly bool? IsDataCollectionAuthorized;
         /// <summary>
         /// Indicates whether a reboot is required to complete installation of updates.
         /// </summary>
-        public readonly bool IsRebootRequired;
+        public readonly bool? IsRebootRequired;
         /// <summary>
         /// The ksplice effective kernel version
         /// </summary>
-        public readonly string KspliceEffectiveKernelVersion;
+        public readonly string? KspliceEffectiveKernelVersion;
         /// <summary>
         /// Time at which the instance last booted
         /// </summary>
-        public readonly string LastBoot;
+        public readonly string? LastBoot;
         /// <summary>
         /// Time at which the instance last checked in
         /// </summary>
-        public readonly string LastCheckin;
+        public readonly string? LastCheckin;
         /// <summary>
         /// The ids of the managed instance groups of which this instance is a member.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetManagedInstancesManagedInstanceManagedInstanceGroupResult> ManagedInstanceGroups;
-        public readonly string ManagedInstanceId;
+        public readonly string? ManagedInstanceId;
         /// <summary>
         /// OCID of the ONS topic used to send notification to users
         /// </summary>
-        public readonly string NotificationTopicId;
+        public readonly string? NotificationTopicId;
         /// <summary>
         /// The OS family for which to list resources.
         /// </summary>
-        public readonly string OsFamily;
+        public readonly string? OsFamily;
         /// <summary>
         /// Operating System Kernel Version
         /// </summary>
-        public readonly string OsKernelVersion;
+        public readonly string? OsKernelVersion;
         /// <summary>
         /// Operating System Name
         /// </summary>
-        public readonly string OsName;
+        public readonly string? OsName;
         /// <summary>
         /// Operating System Version
         /// </summary>
-        public readonly string OsVersion;
+        public readonly string? OsVersion;
         /// <summary>
         /// Number of non-classified updates available to be installed
         /// </summary>
-        public readonly int OtherUpdatesAvailable;
+        public readonly int? OtherUpdatesAvailable;
         /// <summary>
         /// the parent (base) Software Source attached to the Managed Instance
         /// </summary>
@@ -101,79 +101,79 @@ namespace Pulumi.Oci.OsManagement.Outputs
         /// <summary>
         /// Number of scheduled jobs associated with this instance
         /// </summary>
-        public readonly int ScheduledJobCount;
+        public readonly int? ScheduledJobCount;
         /// <summary>
         /// Number of security type updates available to be installed
         /// </summary>
-        public readonly int SecurityUpdatesAvailable;
+        public readonly int? SecurityUpdatesAvailable;
         /// <summary>
         /// status of the managed instance.
         /// </summary>
-        public readonly string Status;
+        public readonly string? Status;
         /// <summary>
         /// Number of updates available to be installed
         /// </summary>
-        public readonly int UpdatesAvailable;
+        public readonly int? UpdatesAvailable;
         /// <summary>
         /// Number of work requests associated with this instance
         /// </summary>
-        public readonly int WorkRequestCount;
+        public readonly int? WorkRequestCount;
 
         [OutputConstructor]
         private GetManagedInstancesManagedInstanceResult(
             ImmutableArray<Outputs.GetManagedInstancesManagedInstanceAutonomouseResult> autonomouses,
 
-            int bugUpdatesAvailable,
+            int? bugUpdatesAvailable,
 
             ImmutableArray<Outputs.GetManagedInstancesManagedInstanceChildSoftwareSourceResult> childSoftwareSources,
 
-            string compartmentId,
+            string? compartmentId,
 
-            string description,
+            string? description,
 
-            string displayName,
+            string? displayName,
 
-            int enhancementUpdatesAvailable,
+            int? enhancementUpdatesAvailable,
 
-            string id,
+            string? id,
 
-            bool isDataCollectionAuthorized,
+            bool? isDataCollectionAuthorized,
 
-            bool isRebootRequired,
+            bool? isRebootRequired,
 
-            string kspliceEffectiveKernelVersion,
+            string? kspliceEffectiveKernelVersion,
 
-            string lastBoot,
+            string? lastBoot,
 
-            string lastCheckin,
+            string? lastCheckin,
 
             ImmutableArray<Outputs.GetManagedInstancesManagedInstanceManagedInstanceGroupResult> managedInstanceGroups,
 
-            string managedInstanceId,
+            string? managedInstanceId,
 
-            string notificationTopicId,
+            string? notificationTopicId,
 
-            string osFamily,
+            string? osFamily,
 
-            string osKernelVersion,
+            string? osKernelVersion,
 
-            string osName,
+            string? osName,
 
-            string osVersion,
+            string? osVersion,
 
-            int otherUpdatesAvailable,
+            int? otherUpdatesAvailable,
 
             ImmutableArray<Outputs.GetManagedInstancesManagedInstanceParentSoftwareSourceResult> parentSoftwareSources,
 
-            int scheduledJobCount,
+            int? scheduledJobCount,
 
-            int securityUpdatesAvailable,
+            int? securityUpdatesAvailable,
 
-            string status,
+            string? status,
 
-            int updatesAvailable,
+            int? updatesAvailable,
 
-            int workRequestCount)
+            int? workRequestCount)
         {
             Autonomouses = autonomouses;
             BugUpdatesAvailable = bugUpdatesAvailable;

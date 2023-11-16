@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAnalyticsInstanceNetworkEndpointDetailWhitelistedVcn {
@@ -14,27 +16,27 @@ public final class GetAnalyticsInstanceNetworkEndpointDetailWhitelistedVcn {
      * @return The Virtual Cloud Network OCID.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Source IP addresses or IP address ranges in ingress rules.
      * 
      */
-    private List<String> whitelistedIps;
+    private @Nullable List<String> whitelistedIps;
 
     private GetAnalyticsInstanceNetworkEndpointDetailWhitelistedVcn() {}
     /**
      * @return The Virtual Cloud Network OCID.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Source IP addresses or IP address ranges in ingress rules.
      * 
      */
     public List<String> whitelistedIps() {
-        return this.whitelistedIps;
+        return this.whitelistedIps == null ? List.of() : this.whitelistedIps;
     }
 
     public static Builder builder() {
@@ -46,8 +48,8 @@ public final class GetAnalyticsInstanceNetworkEndpointDetailWhitelistedVcn {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String id;
-        private List<String> whitelistedIps;
+        private @Nullable String id;
+        private @Nullable List<String> whitelistedIps;
         public Builder() {}
         public Builder(GetAnalyticsInstanceNetworkEndpointDetailWhitelistedVcn defaults) {
     	      Objects.requireNonNull(defaults);
@@ -56,13 +58,13 @@ public final class GetAnalyticsInstanceNetworkEndpointDetailWhitelistedVcn {
         }
 
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder whitelistedIps(List<String> whitelistedIps) {
-            this.whitelistedIps = Objects.requireNonNull(whitelistedIps);
+        public Builder whitelistedIps(@Nullable List<String> whitelistedIps) {
+            this.whitelistedIps = whitelistedIps;
             return this;
         }
         public Builder whitelistedIps(String... whitelistedIps) {

@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Stream Pool resource in Oracle Cloud Infrastructure Streaming service.
@@ -78,27 +77,27 @@ type StreamPool struct {
 	// (Updatable) The OCID of the compartment that contains the stream.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) The OCID of the custom encryption key to be used or deleted if currently being used.
-	CustomEncryptionKey StreamPoolCustomEncryptionKeyOutput `pulumi:"customEncryptionKey"`
+	CustomEncryptionKey StreamPoolCustomEncryptionKeyPtrOutput `pulumi:"customEncryptionKey"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// The FQDN used to access the streams inside the stream pool (same FQDN as the messagesEndpoint attribute of a [Stream](https://docs.cloud.oracle.com/iaas/api/#/en/streaming/20180418/Stream) object). If the stream pool is private, the FQDN is customized and can only be accessed from inside the associated subnetId, otherwise the FQDN is publicly resolvable. Depending on which protocol you attempt to use, you need to either prepend https or append the Kafka port.
-	EndpointFqdn pulumi.StringOutput `pulumi:"endpointFqdn"`
+	EndpointFqdn pulumi.StringPtrOutput `pulumi:"endpointFqdn"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair that is applied with no predefined name, type, or namespace. Exists for cross-compatibility only. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// True if the stream pool is private, false otherwise. The associated endpoint and subnetId of a private stream pool can be retrieved through the [GetStreamPool](https://docs.cloud.oracle.com/iaas/api/#/en/streaming/20180418/StreamPool/GetStreamPool) API.
-	IsPrivate pulumi.BoolOutput `pulumi:"isPrivate"`
+	IsPrivate pulumi.BoolPtrOutput `pulumi:"isPrivate"`
 	// (Updatable) Settings for the Kafka compatibility layer.
-	KafkaSettings StreamPoolKafkaSettingsOutput `pulumi:"kafkaSettings"`
+	KafkaSettings StreamPoolKafkaSettingsPtrOutput `pulumi:"kafkaSettings"`
 	// Any additional details about the current state of the stream.
-	LifecycleStateDetails pulumi.StringOutput `pulumi:"lifecycleStateDetails"`
+	LifecycleStateDetails pulumi.StringPtrOutput `pulumi:"lifecycleStateDetails"`
 	// (Updatable) The name of the stream pool. Avoid entering confidential information.  Example: `MyStreamPool`
 	Name pulumi.StringOutput `pulumi:"name"`
 	// Optional parameters if a private stream pool is requested.
-	PrivateEndpointSettings StreamPoolPrivateEndpointSettingsOutput `pulumi:"privateEndpointSettings"`
+	PrivateEndpointSettings StreamPoolPrivateEndpointSettingsPtrOutput `pulumi:"privateEndpointSettings"`
 	// The current state of the stream pool.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// The date and time the stream pool was created, expressed in in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2018-04-20T00:00:07.405Z`
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 }
 
 // NewStreamPool registers a new resource with the given unique name, arguments, and options.
@@ -249,12 +248,6 @@ func (i *StreamPool) ToStreamPoolOutputWithContext(ctx context.Context) StreamPo
 	return pulumi.ToOutputWithContext(ctx, i).(StreamPoolOutput)
 }
 
-func (i *StreamPool) ToOutput(ctx context.Context) pulumix.Output[*StreamPool] {
-	return pulumix.Output[*StreamPool]{
-		OutputState: i.ToStreamPoolOutputWithContext(ctx).OutputState,
-	}
-}
-
 // StreamPoolArrayInput is an input type that accepts StreamPoolArray and StreamPoolArrayOutput values.
 // You can construct a concrete instance of `StreamPoolArrayInput` via:
 //
@@ -278,12 +271,6 @@ func (i StreamPoolArray) ToStreamPoolArrayOutput() StreamPoolArrayOutput {
 
 func (i StreamPoolArray) ToStreamPoolArrayOutputWithContext(ctx context.Context) StreamPoolArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(StreamPoolArrayOutput)
-}
-
-func (i StreamPoolArray) ToOutput(ctx context.Context) pulumix.Output[[]*StreamPool] {
-	return pulumix.Output[[]*StreamPool]{
-		OutputState: i.ToStreamPoolArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // StreamPoolMapInput is an input type that accepts StreamPoolMap and StreamPoolMapOutput values.
@@ -311,12 +298,6 @@ func (i StreamPoolMap) ToStreamPoolMapOutputWithContext(ctx context.Context) Str
 	return pulumi.ToOutputWithContext(ctx, i).(StreamPoolMapOutput)
 }
 
-func (i StreamPoolMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*StreamPool] {
-	return pulumix.Output[map[string]*StreamPool]{
-		OutputState: i.ToStreamPoolMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type StreamPoolOutput struct{ *pulumi.OutputState }
 
 func (StreamPoolOutput) ElementType() reflect.Type {
@@ -331,20 +312,14 @@ func (o StreamPoolOutput) ToStreamPoolOutputWithContext(ctx context.Context) Str
 	return o
 }
 
-func (o StreamPoolOutput) ToOutput(ctx context.Context) pulumix.Output[*StreamPool] {
-	return pulumix.Output[*StreamPool]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) The OCID of the compartment that contains the stream.
 func (o StreamPoolOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *StreamPool) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
 // (Updatable) The OCID of the custom encryption key to be used or deleted if currently being used.
-func (o StreamPoolOutput) CustomEncryptionKey() StreamPoolCustomEncryptionKeyOutput {
-	return o.ApplyT(func(v *StreamPool) StreamPoolCustomEncryptionKeyOutput { return v.CustomEncryptionKey }).(StreamPoolCustomEncryptionKeyOutput)
+func (o StreamPoolOutput) CustomEncryptionKey() StreamPoolCustomEncryptionKeyPtrOutput {
+	return o.ApplyT(func(v *StreamPool) StreamPoolCustomEncryptionKeyPtrOutput { return v.CustomEncryptionKey }).(StreamPoolCustomEncryptionKeyPtrOutput)
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -353,8 +328,8 @@ func (o StreamPoolOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // The FQDN used to access the streams inside the stream pool (same FQDN as the messagesEndpoint attribute of a [Stream](https://docs.cloud.oracle.com/iaas/api/#/en/streaming/20180418/Stream) object). If the stream pool is private, the FQDN is customized and can only be accessed from inside the associated subnetId, otherwise the FQDN is publicly resolvable. Depending on which protocol you attempt to use, you need to either prepend https or append the Kafka port.
-func (o StreamPoolOutput) EndpointFqdn() pulumi.StringOutput {
-	return o.ApplyT(func(v *StreamPool) pulumi.StringOutput { return v.EndpointFqdn }).(pulumi.StringOutput)
+func (o StreamPoolOutput) EndpointFqdn() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *StreamPool) pulumi.StringPtrOutput { return v.EndpointFqdn }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair that is applied with no predefined name, type, or namespace. Exists for cross-compatibility only. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -363,18 +338,18 @@ func (o StreamPoolOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // True if the stream pool is private, false otherwise. The associated endpoint and subnetId of a private stream pool can be retrieved through the [GetStreamPool](https://docs.cloud.oracle.com/iaas/api/#/en/streaming/20180418/StreamPool/GetStreamPool) API.
-func (o StreamPoolOutput) IsPrivate() pulumi.BoolOutput {
-	return o.ApplyT(func(v *StreamPool) pulumi.BoolOutput { return v.IsPrivate }).(pulumi.BoolOutput)
+func (o StreamPoolOutput) IsPrivate() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *StreamPool) pulumi.BoolPtrOutput { return v.IsPrivate }).(pulumi.BoolPtrOutput)
 }
 
 // (Updatable) Settings for the Kafka compatibility layer.
-func (o StreamPoolOutput) KafkaSettings() StreamPoolKafkaSettingsOutput {
-	return o.ApplyT(func(v *StreamPool) StreamPoolKafkaSettingsOutput { return v.KafkaSettings }).(StreamPoolKafkaSettingsOutput)
+func (o StreamPoolOutput) KafkaSettings() StreamPoolKafkaSettingsPtrOutput {
+	return o.ApplyT(func(v *StreamPool) StreamPoolKafkaSettingsPtrOutput { return v.KafkaSettings }).(StreamPoolKafkaSettingsPtrOutput)
 }
 
 // Any additional details about the current state of the stream.
-func (o StreamPoolOutput) LifecycleStateDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v *StreamPool) pulumi.StringOutput { return v.LifecycleStateDetails }).(pulumi.StringOutput)
+func (o StreamPoolOutput) LifecycleStateDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *StreamPool) pulumi.StringPtrOutput { return v.LifecycleStateDetails }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The name of the stream pool. Avoid entering confidential information.  Example: `MyStreamPool`
@@ -383,18 +358,18 @@ func (o StreamPoolOutput) Name() pulumi.StringOutput {
 }
 
 // Optional parameters if a private stream pool is requested.
-func (o StreamPoolOutput) PrivateEndpointSettings() StreamPoolPrivateEndpointSettingsOutput {
-	return o.ApplyT(func(v *StreamPool) StreamPoolPrivateEndpointSettingsOutput { return v.PrivateEndpointSettings }).(StreamPoolPrivateEndpointSettingsOutput)
+func (o StreamPoolOutput) PrivateEndpointSettings() StreamPoolPrivateEndpointSettingsPtrOutput {
+	return o.ApplyT(func(v *StreamPool) StreamPoolPrivateEndpointSettingsPtrOutput { return v.PrivateEndpointSettings }).(StreamPoolPrivateEndpointSettingsPtrOutput)
 }
 
 // The current state of the stream pool.
-func (o StreamPoolOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *StreamPool) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o StreamPoolOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *StreamPool) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the stream pool was created, expressed in in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2018-04-20T00:00:07.405Z`
-func (o StreamPoolOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *StreamPool) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o StreamPoolOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *StreamPool) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 type StreamPoolArrayOutput struct{ *pulumi.OutputState }
@@ -409,12 +384,6 @@ func (o StreamPoolArrayOutput) ToStreamPoolArrayOutput() StreamPoolArrayOutput {
 
 func (o StreamPoolArrayOutput) ToStreamPoolArrayOutputWithContext(ctx context.Context) StreamPoolArrayOutput {
 	return o
-}
-
-func (o StreamPoolArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*StreamPool] {
-	return pulumix.Output[[]*StreamPool]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o StreamPoolArrayOutput) Index(i pulumi.IntInput) StreamPoolOutput {
@@ -435,12 +404,6 @@ func (o StreamPoolMapOutput) ToStreamPoolMapOutput() StreamPoolMapOutput {
 
 func (o StreamPoolMapOutput) ToStreamPoolMapOutputWithContext(ctx context.Context) StreamPoolMapOutput {
 	return o
-}
-
-func (o StreamPoolMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*StreamPool] {
-	return pulumix.Output[map[string]*StreamPool]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o StreamPoolMapOutput) MapIndex(k pulumi.StringInput) StreamPoolOutput {

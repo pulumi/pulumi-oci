@@ -97,14 +97,14 @@ public class NetworkLoadBalancer extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * (Updatable) Network load balancer identifier, which can be renamed.
@@ -125,42 +125,42 @@ public class NetworkLoadBalancer extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * An array of IP addresses.
      * 
      */
     @Export(name="ipAddresses", refs={List.class,NetworkLoadBalancerIpAddress.class}, tree="[0,1]")
-    private Output<List<NetworkLoadBalancerIpAddress>> ipAddresses;
+    private Output</* @Nullable */ List<NetworkLoadBalancerIpAddress>> ipAddresses;
 
     /**
      * @return An array of IP addresses.
      * 
      */
-    public Output<List<NetworkLoadBalancerIpAddress>> ipAddresses() {
-        return this.ipAddresses;
+    public Output<Optional<List<NetworkLoadBalancerIpAddress>>> ipAddresses() {
+        return Codegen.optional(this.ipAddresses);
     }
     /**
      * (Updatable) This parameter can be enabled only if backends are compute OCIDs. When enabled, the skipSourceDestinationCheck parameter is automatically enabled on the load balancer VNIC, and packets are sent to the backend with the entire IP header intact.
      * 
      */
     @Export(name="isPreserveSourceDestination", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isPreserveSourceDestination;
+    private Output</* @Nullable */ Boolean> isPreserveSourceDestination;
 
     /**
      * @return (Updatable) This parameter can be enabled only if backends are compute OCIDs. When enabled, the skipSourceDestinationCheck parameter is automatically enabled on the load balancer VNIC, and packets are sent to the backend with the entire IP header intact.
      * 
      */
-    public Output<Boolean> isPreserveSourceDestination() {
-        return this.isPreserveSourceDestination;
+    public Output<Optional<Boolean>> isPreserveSourceDestination() {
+        return Codegen.optional(this.isPreserveSourceDestination);
     }
     /**
      * Whether the network load balancer has a virtual cloud network-local (private) IP address.
@@ -175,7 +175,7 @@ public class NetworkLoadBalancer extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="isPrivate", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isPrivate;
+    private Output</* @Nullable */ Boolean> isPrivate;
 
     /**
      * @return Whether the network load balancer has a virtual cloud network-local (private) IP address.
@@ -189,22 +189,22 @@ public class NetworkLoadBalancer extends com.pulumi.resources.CustomResource {
      * Example: `true`
      * 
      */
-    public Output<Boolean> isPrivate() {
-        return this.isPrivate;
+    public Output<Optional<Boolean>> isPrivate() {
+        return Codegen.optional(this.isPrivate);
     }
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
     @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
-    private Output<String> lifecycleDetails;
+    private Output</* @Nullable */ String> lifecycleDetails;
 
     /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
-    public Output<String> lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Output<Optional<String>> lifecycleDetails() {
+        return Codegen.optional(this.lifecycleDetails);
     }
     /**
      * (Updatable) An array of network security groups [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the network load balancer.
@@ -241,42 +241,42 @@ public class NetworkLoadBalancer extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="nlbIpVersion", refs={String.class}, tree="[0]")
-    private Output<String> nlbIpVersion;
+    private Output</* @Nullable */ String> nlbIpVersion;
 
     /**
      * @return (Updatable) IP version associated with the NLB.
      * 
      */
-    public Output<String> nlbIpVersion() {
-        return this.nlbIpVersion;
+    public Output<Optional<String>> nlbIpVersion() {
+        return Codegen.optional(this.nlbIpVersion);
     }
     /**
      * An array of reserved Ips.
      * 
      */
     @Export(name="reservedIps", refs={List.class,NetworkLoadBalancerReservedIp.class}, tree="[0,1]")
-    private Output<List<NetworkLoadBalancerReservedIp>> reservedIps;
+    private Output</* @Nullable */ List<NetworkLoadBalancerReservedIp>> reservedIps;
 
     /**
      * @return An array of reserved Ips.
      * 
      */
-    public Output<List<NetworkLoadBalancerReservedIp>> reservedIps() {
-        return this.reservedIps;
+    public Output<Optional<List<NetworkLoadBalancerReservedIp>>> reservedIps() {
+        return Codegen.optional(this.reservedIps);
     }
     /**
      * The current state of the network load balancer.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The current state of the network load balancer.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * The subnet in which the network load balancer is spawned [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -303,42 +303,42 @@ public class NetworkLoadBalancer extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> systemTags;
+    private Output</* @Nullable */ Map<String,Object>> systemTags;
 
     /**
      * @return Key-value pair representing system tags&#39; keys and values scoped to a namespace. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Output<Map<String,Object>> systemTags() {
-        return this.systemTags;
+    public Output<Optional<Map<String,Object>>> systemTags() {
+        return Codegen.optional(this.systemTags);
     }
     /**
      * The date and time the network load balancer was created, in the format defined by RFC3339.  Example: `2020-05-01T21:10:29.600Z`
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The date and time the network load balancer was created, in the format defined by RFC3339.  Example: `2020-05-01T21:10:29.600Z`
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * The time the network load balancer was updated. An RFC3339 formatted date-time string.  Example: `2020-05-01T22:10:29.600Z`
      * 
      */
     @Export(name="timeUpdated", refs={String.class}, tree="[0]")
-    private Output<String> timeUpdated;
+    private Output</* @Nullable */ String> timeUpdated;
 
     /**
      * @return The time the network load balancer was updated. An RFC3339 formatted date-time string.  Example: `2020-05-01T22:10:29.600Z`
      * 
      */
-    public Output<String> timeUpdated() {
-        return this.timeUpdated;
+    public Output<Optional<String>> timeUpdated() {
+        return Codegen.optional(this.timeUpdated);
     }
 
     /**

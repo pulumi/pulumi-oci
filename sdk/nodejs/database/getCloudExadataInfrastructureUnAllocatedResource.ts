@@ -53,11 +53,11 @@ export interface GetCloudExadataInfrastructureUnAllocatedResourceResult {
     /**
      * The list of Cloud Autonomous VM Clusters on the Infrastructure and their associated unallocated resources details.
      */
-    readonly cloudAutonomousVmClusters: outputs.Database.GetCloudExadataInfrastructureUnAllocatedResourceCloudAutonomousVmCluster[];
+    readonly cloudAutonomousVmClusters?: outputs.Database.GetCloudExadataInfrastructureUnAllocatedResourceCloudAutonomousVmCluster[];
     /**
      * The user-friendly name for the Cloud Exadata infrastructure. The name does not need to be unique.
      */
-    readonly cloudExadataInfrastructureDisplayName: string;
+    readonly cloudExadataInfrastructureDisplayName?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cloud Exadata infrastructure.
      */
@@ -66,23 +66,23 @@ export interface GetCloudExadataInfrastructureUnAllocatedResourceResult {
     /**
      * Total unallocated exadata storage in the infrastructure in TBs.
      */
-    readonly exadataStorageInTbs: number;
+    readonly exadataStorageInTbs?: number;
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The minimum amount of unallocated storage available across all nodes in the infrastructure.
      */
-    readonly localStorageInGbs: number;
+    readonly localStorageInGbs?: number;
     /**
      * The minimum amount of unallocated memory available across all nodes in the infrastructure.
      */
-    readonly memoryInGbs: number;
+    readonly memoryInGbs?: number;
     /**
      * The minimum amount of unallocated ocpus available across all nodes in the infrastructure.
      */
-    readonly ocpus: number;
+    readonly ocpus?: number;
 }
 /**
  * This data source provides details about a specific Cloud Exadata Infrastructure Un Allocated Resource resource in Oracle Cloud Infrastructure Database service.

@@ -6,6 +6,8 @@ package com.pulumi.oci.ManagementAgent.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetManagementAgentImagesManagementAgentImageImageObjectStorageDetail {
@@ -13,63 +15,63 @@ public final class GetManagementAgentImagesManagementAgentImageImageObjectStorag
      * @return Object content SHA256 Hash
      * 
      */
-    private String checksum;
+    private @Nullable String checksum;
     /**
      * @return Objectstorage object name reference providing the original location of this object
      * 
      */
-    private String object;
+    private @Nullable String object;
     /**
      * @return Objectstorage bucket reference providing the original location of this object
      * 
      */
-    private String objectBucket;
+    private @Nullable String objectBucket;
     /**
      * @return Objectstorage namespace reference providing the original location of this object
      * 
      */
-    private String objectNamespace;
+    private @Nullable String objectNamespace;
     /**
      * @return Object storage URL for download
      * 
      */
-    private String objectUrl;
+    private @Nullable String objectUrl;
 
     private GetManagementAgentImagesManagementAgentImageImageObjectStorageDetail() {}
     /**
      * @return Object content SHA256 Hash
      * 
      */
-    public String checksum() {
-        return this.checksum;
+    public Optional<String> checksum() {
+        return Optional.ofNullable(this.checksum);
     }
     /**
      * @return Objectstorage object name reference providing the original location of this object
      * 
      */
-    public String object() {
-        return this.object;
+    public Optional<String> object() {
+        return Optional.ofNullable(this.object);
     }
     /**
      * @return Objectstorage bucket reference providing the original location of this object
      * 
      */
-    public String objectBucket() {
-        return this.objectBucket;
+    public Optional<String> objectBucket() {
+        return Optional.ofNullable(this.objectBucket);
     }
     /**
      * @return Objectstorage namespace reference providing the original location of this object
      * 
      */
-    public String objectNamespace() {
-        return this.objectNamespace;
+    public Optional<String> objectNamespace() {
+        return Optional.ofNullable(this.objectNamespace);
     }
     /**
      * @return Object storage URL for download
      * 
      */
-    public String objectUrl() {
-        return this.objectUrl;
+    public Optional<String> objectUrl() {
+        return Optional.ofNullable(this.objectUrl);
     }
 
     public static Builder builder() {
@@ -81,11 +83,11 @@ public final class GetManagementAgentImagesManagementAgentImageImageObjectStorag
     }
     @CustomType.Builder
     public static final class Builder {
-        private String checksum;
-        private String object;
-        private String objectBucket;
-        private String objectNamespace;
-        private String objectUrl;
+        private @Nullable String checksum;
+        private @Nullable String object;
+        private @Nullable String objectBucket;
+        private @Nullable String objectNamespace;
+        private @Nullable String objectUrl;
         public Builder() {}
         public Builder(GetManagementAgentImagesManagementAgentImageImageObjectStorageDetail defaults) {
     	      Objects.requireNonNull(defaults);
@@ -97,28 +99,28 @@ public final class GetManagementAgentImagesManagementAgentImageImageObjectStorag
         }
 
         @CustomType.Setter
-        public Builder checksum(String checksum) {
-            this.checksum = Objects.requireNonNull(checksum);
+        public Builder checksum(@Nullable String checksum) {
+            this.checksum = checksum;
             return this;
         }
         @CustomType.Setter
-        public Builder object(String object) {
-            this.object = Objects.requireNonNull(object);
+        public Builder object(@Nullable String object) {
+            this.object = object;
             return this;
         }
         @CustomType.Setter
-        public Builder objectBucket(String objectBucket) {
-            this.objectBucket = Objects.requireNonNull(objectBucket);
+        public Builder objectBucket(@Nullable String objectBucket) {
+            this.objectBucket = objectBucket;
             return this;
         }
         @CustomType.Setter
-        public Builder objectNamespace(String objectNamespace) {
-            this.objectNamespace = Objects.requireNonNull(objectNamespace);
+        public Builder objectNamespace(@Nullable String objectNamespace) {
+            this.objectNamespace = objectNamespace;
             return this;
         }
         @CustomType.Setter
-        public Builder objectUrl(String objectUrl) {
-            this.objectUrl = Objects.requireNonNull(objectUrl);
+        public Builder objectUrl(@Nullable String objectUrl) {
+            this.objectUrl = objectUrl;
             return this;
         }
         public GetManagementAgentImagesManagementAgentImageImageObjectStorageDetail build() {

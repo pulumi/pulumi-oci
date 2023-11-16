@@ -52,17 +52,11 @@ class GetProtectedDatabasesResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The OCID of the compartment that contains the protected database.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        The protected database name. You can change the displayName. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -73,41 +67,26 @@ class GetProtectedDatabasesResult:
     @property
     @pulumi.getter
     def id(self) -> Optional[str]:
-        """
-        The OCID of the protected database.
-        """
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="protectedDatabaseCollections")
-    def protected_database_collections(self) -> Sequence['outputs.GetProtectedDatabasesProtectedDatabaseCollectionResult']:
-        """
-        The list of protected_database_collection.
-        """
+    def protected_database_collections(self) -> Optional[Sequence['outputs.GetProtectedDatabasesProtectedDatabaseCollectionResult']]:
         return pulumi.get(self, "protected_database_collections")
 
     @property
     @pulumi.getter(name="protectionPolicyId")
     def protection_policy_id(self) -> Optional[str]:
-        """
-        The OCID of the protection policy associated with the protected database.
-        """
         return pulumi.get(self, "protection_policy_id")
 
     @property
     @pulumi.getter(name="recoveryServiceSubnetId")
     def recovery_service_subnet_id(self) -> Optional[str]:
-        """
-        Recovery Service Subnet Identifier.
-        """
         return pulumi.get(self, "recovery_service_subnet_id")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the Protected Database.
-        """
         return pulumi.get(self, "state")
 
 
@@ -136,31 +115,7 @@ def get_protected_databases(compartment_id: Optional[str] = None,
                             state: Optional[str] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetProtectedDatabasesResult:
     """
-    This data source provides the list of Protected Databases in Oracle Cloud Infrastructure Recovery service.
-
-    Lists the protected databases based on the specified parameters.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_protected_databases = oci.RecoveryMod.get_protected_databases(compartment_id=var["compartment_id"],
-        display_name=var["protected_database_display_name"],
-        id=var["protected_database_id"],
-        protection_policy_id=oci_recovery_protection_policy["test_protection_policy"]["id"],
-        recovery_service_subnet_id=oci_recovery_recovery_service_subnet["test_recovery_service_subnet"]["id"],
-        state=var["protected_database_state"])
-    ```
-
-
-    :param str compartment_id: The compartment OCID.
-    :param str display_name: A filter to return only resources that match the entire 'displayname' given.
-    :param str id: The protected database OCID.
-    :param str protection_policy_id: The protection policy OCID.
-    :param str recovery_service_subnet_id: The recovery service subnet OCID.
-    :param str state: A filter to return only the resources that match the specified lifecycle state.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -194,30 +149,6 @@ def get_protected_databases_output(compartment_id: Optional[pulumi.Input[str]] =
                                    state: Optional[pulumi.Input[Optional[str]]] = None,
                                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetProtectedDatabasesResult]:
     """
-    This data source provides the list of Protected Databases in Oracle Cloud Infrastructure Recovery service.
-
-    Lists the protected databases based on the specified parameters.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_protected_databases = oci.RecoveryMod.get_protected_databases(compartment_id=var["compartment_id"],
-        display_name=var["protected_database_display_name"],
-        id=var["protected_database_id"],
-        protection_policy_id=oci_recovery_protection_policy["test_protection_policy"]["id"],
-        recovery_service_subnet_id=oci_recovery_recovery_service_subnet["test_recovery_service_subnet"]["id"],
-        state=var["protected_database_state"])
-    ```
-
-
-    :param str compartment_id: The compartment OCID.
-    :param str display_name: A filter to return only resources that match the entire 'displayname' given.
-    :param str id: The protected database OCID.
-    :param str protection_policy_id: The protection policy OCID.
-    :param str recovery_service_subnet_id: The recovery service subnet OCID.
-    :param str state: A filter to return only the resources that match the specified lifecycle state.
+    Use this data source to access information about an existing resource.
     """
     ...

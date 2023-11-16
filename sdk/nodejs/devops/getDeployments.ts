@@ -100,7 +100,7 @@ export interface GetDeploymentsResult {
     /**
      * The list of deployment_collection.
      */
-    readonly deploymentCollections: outputs.DevOps.GetDeploymentsDeploymentCollection[];
+    readonly deploymentCollections?: outputs.DevOps.GetDeploymentsDeploymentCollection[];
     /**
      * Deployment identifier which can be renamed and is not necessarily unique. Avoid entering confidential information.
      */

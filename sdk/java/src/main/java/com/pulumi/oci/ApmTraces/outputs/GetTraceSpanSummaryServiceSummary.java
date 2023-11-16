@@ -6,6 +6,8 @@ package com.pulumi.oci.ApmTraces.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetTraceSpanSummaryServiceSummary {
@@ -13,39 +15,39 @@ public final class GetTraceSpanSummaryServiceSummary {
      * @return Number of spans with errors for serviceName in the trace.
      * 
      */
-    private String errorSpans;
+    private @Nullable String errorSpans;
     /**
      * @return Name associated with the service.
      * 
      */
-    private String spanServiceName;
+    private @Nullable String spanServiceName;
     /**
      * @return Number of spans for serviceName in the trace.
      * 
      */
-    private String totalSpans;
+    private @Nullable String totalSpans;
 
     private GetTraceSpanSummaryServiceSummary() {}
     /**
      * @return Number of spans with errors for serviceName in the trace.
      * 
      */
-    public String errorSpans() {
-        return this.errorSpans;
+    public Optional<String> errorSpans() {
+        return Optional.ofNullable(this.errorSpans);
     }
     /**
      * @return Name associated with the service.
      * 
      */
-    public String spanServiceName() {
-        return this.spanServiceName;
+    public Optional<String> spanServiceName() {
+        return Optional.ofNullable(this.spanServiceName);
     }
     /**
      * @return Number of spans for serviceName in the trace.
      * 
      */
-    public String totalSpans() {
-        return this.totalSpans;
+    public Optional<String> totalSpans() {
+        return Optional.ofNullable(this.totalSpans);
     }
 
     public static Builder builder() {
@@ -57,9 +59,9 @@ public final class GetTraceSpanSummaryServiceSummary {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String errorSpans;
-        private String spanServiceName;
-        private String totalSpans;
+        private @Nullable String errorSpans;
+        private @Nullable String spanServiceName;
+        private @Nullable String totalSpans;
         public Builder() {}
         public Builder(GetTraceSpanSummaryServiceSummary defaults) {
     	      Objects.requireNonNull(defaults);
@@ -69,18 +71,18 @@ public final class GetTraceSpanSummaryServiceSummary {
         }
 
         @CustomType.Setter
-        public Builder errorSpans(String errorSpans) {
-            this.errorSpans = Objects.requireNonNull(errorSpans);
+        public Builder errorSpans(@Nullable String errorSpans) {
+            this.errorSpans = errorSpans;
             return this;
         }
         @CustomType.Setter
-        public Builder spanServiceName(String spanServiceName) {
-            this.spanServiceName = Objects.requireNonNull(spanServiceName);
+        public Builder spanServiceName(@Nullable String spanServiceName) {
+            this.spanServiceName = spanServiceName;
             return this;
         }
         @CustomType.Setter
-        public Builder totalSpans(String totalSpans) {
-            this.totalSpans = Objects.requireNonNull(totalSpans);
+        public Builder totalSpans(@Nullable String totalSpans) {
+            this.totalSpans = totalSpans;
             return this;
         }
         public GetTraceSpanSummaryServiceSummary build() {

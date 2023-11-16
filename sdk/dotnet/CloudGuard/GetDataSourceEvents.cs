@@ -149,7 +149,7 @@ namespace Pulumi.Oci.CloudGuard
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Data source event region
         /// </summary>
@@ -163,7 +163,7 @@ namespace Pulumi.Oci.CloudGuard
 
             ImmutableArray<Outputs.GetDataSourceEventsFilterResult> filters,
 
-            string id,
+            string? id,
 
             string? region)
         {

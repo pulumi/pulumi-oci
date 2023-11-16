@@ -16,7 +16,7 @@ namespace Pulumi.Oci.ServiceMesh.Outputs
         /// <summary>
         /// Action for the traffic between the source and the destination.
         /// </summary>
-        public readonly string Action;
+        public readonly string? Action;
         /// <summary>
         /// Target of the access policy. This can either be the source or the destination of the traffic.
         /// </summary>
@@ -28,7 +28,7 @@ namespace Pulumi.Oci.ServiceMesh.Outputs
 
         [OutputConstructor]
         private GetAccessPolicyRuleResult(
-            string action,
+            string? action,
 
             ImmutableArray<Outputs.GetAccessPolicyRuleDestinationResult> destinations,
 

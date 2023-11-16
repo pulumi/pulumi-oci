@@ -16,17 +16,17 @@ namespace Pulumi.Oci.BigDataService.Outputs
         /// <summary>
         /// The CIDR IP address block of the VCN.
         /// </summary>
-        public readonly string CidrBlock;
+        public readonly string? CidrBlock;
         /// <summary>
         /// A boolean flag whether to configure a NAT gateway.
         /// </summary>
-        public readonly bool IsNatGatewayRequired;
+        public readonly bool? IsNatGatewayRequired;
 
         [OutputConstructor]
         private GetBdsInstancesBdsInstanceNetworkConfigResult(
-            string cidrBlock,
+            string? cidrBlock,
 
-            bool isNatGatewayRequired)
+            bool? isNatGatewayRequired)
         {
             CidrBlock = cidrBlock;
             IsNatGatewayRequired = isNatGatewayRequired;

@@ -16,23 +16,23 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
         /// <summary>
         /// A short error code that defines the upstream error, meant for programmatic parsing. See [API Errors](https://docs.cloud.oracle.com/iaas/Content/API/References/apierrors.htm).
         /// </summary>
-        public readonly string Code;
+        public readonly string? Code;
         /// <summary>
         /// A human-readable error string of the upstream error.
         /// </summary>
-        public readonly string Message;
+        public readonly string? Message;
         /// <summary>
         /// The status of the HTTP response encountered in the upstream error.
         /// </summary>
-        public readonly string Status;
+        public readonly string? Status;
 
         [OutputConstructor]
         private GetAddonAddonErrorResult(
-            string code,
+            string? code,
 
-            string message,
+            string? message,
 
-            string status)
+            string? status)
         {
             Code = code;
             Message = message;

@@ -11,6 +11,8 @@ import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetInstallationSiteItem {
@@ -18,123 +20,123 @@ public final class GetInstallationSiteItem {
      * @return The approximate count of applications running on this installation
      * 
      */
-    private Integer approximateApplicationCount;
+    private @Nullable Integer approximateApplicationCount;
     /**
      * @return The list of operations that are blocklisted.
      * 
      */
-    private List<GetInstallationSiteItemBlocklist> blocklists;
+    private @Nullable List<GetInstallationSiteItemBlocklist> blocklists;
     /**
      * @return The unique identifier for the installation of Java Runtime at a specific path on a specific operating system.
      * 
      */
-    private String installationKey;
+    private @Nullable String installationKey;
     /**
      * @return The essential properties to identify a Java Runtime.
      * 
      */
-    private List<GetInstallationSiteItemJre> jres;
+    private @Nullable List<GetInstallationSiteItemJre> jres;
     /**
      * @return The Fleet-unique identifier of the related managed instance.
      * 
      */
-    private String managedInstanceId;
+    private @Nullable String managedInstanceId;
     /**
      * @return Operating System of the platform on which the Java Runtime was reported.
      * 
      */
-    private List<GetInstallationSiteItemOperatingSystem> operatingSystems;
+    private @Nullable List<GetInstallationSiteItemOperatingSystem> operatingSystems;
     /**
      * @return The file system path of the installation.
      * 
      */
-    private String path;
+    private @Nullable String path;
     /**
      * @return The security status of the Java Runtime.
      * 
      */
-    private String securityStatus;
+    private @Nullable String securityStatus;
     /**
      * @return The lifecycle state of the installation site.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return The date and time the resource was _last_ reported to JMS. This is potentially _after_ the specified time period provided by the filters. For example, a resource can be last reported to JMS before the start of a specified time period, if it is also reported during the time period.
      * 
      */
-    private String timeLastSeen;
+    private @Nullable String timeLastSeen;
 
     private GetInstallationSiteItem() {}
     /**
      * @return The approximate count of applications running on this installation
      * 
      */
-    public Integer approximateApplicationCount() {
-        return this.approximateApplicationCount;
+    public Optional<Integer> approximateApplicationCount() {
+        return Optional.ofNullable(this.approximateApplicationCount);
     }
     /**
      * @return The list of operations that are blocklisted.
      * 
      */
     public List<GetInstallationSiteItemBlocklist> blocklists() {
-        return this.blocklists;
+        return this.blocklists == null ? List.of() : this.blocklists;
     }
     /**
      * @return The unique identifier for the installation of Java Runtime at a specific path on a specific operating system.
      * 
      */
-    public String installationKey() {
-        return this.installationKey;
+    public Optional<String> installationKey() {
+        return Optional.ofNullable(this.installationKey);
     }
     /**
      * @return The essential properties to identify a Java Runtime.
      * 
      */
     public List<GetInstallationSiteItemJre> jres() {
-        return this.jres;
+        return this.jres == null ? List.of() : this.jres;
     }
     /**
      * @return The Fleet-unique identifier of the related managed instance.
      * 
      */
-    public String managedInstanceId() {
-        return this.managedInstanceId;
+    public Optional<String> managedInstanceId() {
+        return Optional.ofNullable(this.managedInstanceId);
     }
     /**
      * @return Operating System of the platform on which the Java Runtime was reported.
      * 
      */
     public List<GetInstallationSiteItemOperatingSystem> operatingSystems() {
-        return this.operatingSystems;
+        return this.operatingSystems == null ? List.of() : this.operatingSystems;
     }
     /**
      * @return The file system path of the installation.
      * 
      */
-    public String path() {
-        return this.path;
+    public Optional<String> path() {
+        return Optional.ofNullable(this.path);
     }
     /**
      * @return The security status of the Java Runtime.
      * 
      */
-    public String securityStatus() {
-        return this.securityStatus;
+    public Optional<String> securityStatus() {
+        return Optional.ofNullable(this.securityStatus);
     }
     /**
      * @return The lifecycle state of the installation site.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return The date and time the resource was _last_ reported to JMS. This is potentially _after_ the specified time period provided by the filters. For example, a resource can be last reported to JMS before the start of a specified time period, if it is also reported during the time period.
      * 
      */
-    public String timeLastSeen() {
-        return this.timeLastSeen;
+    public Optional<String> timeLastSeen() {
+        return Optional.ofNullable(this.timeLastSeen);
     }
 
     public static Builder builder() {
@@ -146,16 +148,16 @@ public final class GetInstallationSiteItem {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Integer approximateApplicationCount;
-        private List<GetInstallationSiteItemBlocklist> blocklists;
-        private String installationKey;
-        private List<GetInstallationSiteItemJre> jres;
-        private String managedInstanceId;
-        private List<GetInstallationSiteItemOperatingSystem> operatingSystems;
-        private String path;
-        private String securityStatus;
-        private String state;
-        private String timeLastSeen;
+        private @Nullable Integer approximateApplicationCount;
+        private @Nullable List<GetInstallationSiteItemBlocklist> blocklists;
+        private @Nullable String installationKey;
+        private @Nullable List<GetInstallationSiteItemJre> jres;
+        private @Nullable String managedInstanceId;
+        private @Nullable List<GetInstallationSiteItemOperatingSystem> operatingSystems;
+        private @Nullable String path;
+        private @Nullable String securityStatus;
+        private @Nullable String state;
+        private @Nullable String timeLastSeen;
         public Builder() {}
         public Builder(GetInstallationSiteItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -172,62 +174,62 @@ public final class GetInstallationSiteItem {
         }
 
         @CustomType.Setter
-        public Builder approximateApplicationCount(Integer approximateApplicationCount) {
-            this.approximateApplicationCount = Objects.requireNonNull(approximateApplicationCount);
+        public Builder approximateApplicationCount(@Nullable Integer approximateApplicationCount) {
+            this.approximateApplicationCount = approximateApplicationCount;
             return this;
         }
         @CustomType.Setter
-        public Builder blocklists(List<GetInstallationSiteItemBlocklist> blocklists) {
-            this.blocklists = Objects.requireNonNull(blocklists);
+        public Builder blocklists(@Nullable List<GetInstallationSiteItemBlocklist> blocklists) {
+            this.blocklists = blocklists;
             return this;
         }
         public Builder blocklists(GetInstallationSiteItemBlocklist... blocklists) {
             return blocklists(List.of(blocklists));
         }
         @CustomType.Setter
-        public Builder installationKey(String installationKey) {
-            this.installationKey = Objects.requireNonNull(installationKey);
+        public Builder installationKey(@Nullable String installationKey) {
+            this.installationKey = installationKey;
             return this;
         }
         @CustomType.Setter
-        public Builder jres(List<GetInstallationSiteItemJre> jres) {
-            this.jres = Objects.requireNonNull(jres);
+        public Builder jres(@Nullable List<GetInstallationSiteItemJre> jres) {
+            this.jres = jres;
             return this;
         }
         public Builder jres(GetInstallationSiteItemJre... jres) {
             return jres(List.of(jres));
         }
         @CustomType.Setter
-        public Builder managedInstanceId(String managedInstanceId) {
-            this.managedInstanceId = Objects.requireNonNull(managedInstanceId);
+        public Builder managedInstanceId(@Nullable String managedInstanceId) {
+            this.managedInstanceId = managedInstanceId;
             return this;
         }
         @CustomType.Setter
-        public Builder operatingSystems(List<GetInstallationSiteItemOperatingSystem> operatingSystems) {
-            this.operatingSystems = Objects.requireNonNull(operatingSystems);
+        public Builder operatingSystems(@Nullable List<GetInstallationSiteItemOperatingSystem> operatingSystems) {
+            this.operatingSystems = operatingSystems;
             return this;
         }
         public Builder operatingSystems(GetInstallationSiteItemOperatingSystem... operatingSystems) {
             return operatingSystems(List.of(operatingSystems));
         }
         @CustomType.Setter
-        public Builder path(String path) {
-            this.path = Objects.requireNonNull(path);
+        public Builder path(@Nullable String path) {
+            this.path = path;
             return this;
         }
         @CustomType.Setter
-        public Builder securityStatus(String securityStatus) {
-            this.securityStatus = Objects.requireNonNull(securityStatus);
+        public Builder securityStatus(@Nullable String securityStatus) {
+            this.securityStatus = securityStatus;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder timeLastSeen(String timeLastSeen) {
-            this.timeLastSeen = Objects.requireNonNull(timeLastSeen);
+        public Builder timeLastSeen(@Nullable String timeLastSeen) {
+            this.timeLastSeen = timeLastSeen;
             return this;
         }
         public GetInstallationSiteItem build() {

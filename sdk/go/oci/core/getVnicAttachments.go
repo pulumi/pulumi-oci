@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Vnic Attachments in Oracle Cloud Infrastructure Core service.
@@ -77,7 +76,7 @@ type GetVnicAttachmentsResult struct {
 	CompartmentId string                     `pulumi:"compartmentId"`
 	Filters       []GetVnicAttachmentsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The OCID of the instance.
 	InstanceId *string `pulumi:"instanceId"`
 	// The list of vnic_attachments.
@@ -131,12 +130,6 @@ func (o GetVnicAttachmentsResultOutput) ToGetVnicAttachmentsResultOutputWithCont
 	return o
 }
 
-func (o GetVnicAttachmentsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetVnicAttachmentsResult] {
-	return pulumix.Output[GetVnicAttachmentsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
 func (o GetVnicAttachmentsResultOutput) AvailabilityDomain() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetVnicAttachmentsResult) *string { return v.AvailabilityDomain }).(pulumi.StringPtrOutput)
@@ -152,8 +145,8 @@ func (o GetVnicAttachmentsResultOutput) Filters() GetVnicAttachmentsFilterArrayO
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetVnicAttachmentsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVnicAttachmentsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetVnicAttachmentsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVnicAttachmentsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the instance.

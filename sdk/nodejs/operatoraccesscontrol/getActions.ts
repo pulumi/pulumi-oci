@@ -69,7 +69,7 @@ export interface GetActionsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Name of the property
      */
@@ -77,7 +77,7 @@ export interface GetActionsResult {
     /**
      * The list of operator_action_collection.
      */
-    readonly operatorActionCollections: outputs.OperatorAccessControl.GetActionsOperatorActionCollection[];
+    readonly operatorActionCollections?: outputs.OperatorAccessControl.GetActionsOperatorActionCollection[];
     /**
      * resourceType for which the OperatorAction is applicable
      */

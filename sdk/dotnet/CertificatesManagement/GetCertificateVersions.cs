@@ -151,7 +151,7 @@ namespace Pulumi.Oci.CertificatesManagement
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The version number of the certificate.
         /// </summary>
@@ -165,7 +165,7 @@ namespace Pulumi.Oci.CertificatesManagement
 
             ImmutableArray<Outputs.GetCertificateVersionsFilterResult> filters,
 
-            string id,
+            string? id,
 
             string? versionNumber)
         {

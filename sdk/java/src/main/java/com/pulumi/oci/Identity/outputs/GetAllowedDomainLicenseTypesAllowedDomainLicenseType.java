@@ -6,6 +6,8 @@ package com.pulumi.oci.Identity.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAllowedDomainLicenseTypesAllowedDomainLicenseType {
@@ -13,39 +15,39 @@ public final class GetAllowedDomainLicenseTypesAllowedDomainLicenseType {
      * @return The license type description.
      * 
      */
-    private String description;
+    private @Nullable String description;
     /**
      * @return The license type identifier.  Example: &#34;oracle-apps-premium&#34;
      * 
      */
-    private String licenseType;
+    private @Nullable String licenseType;
     /**
      * @return The license type name.  Example: &#34;Oracle Apps Premium&#34;
      * 
      */
-    private String name;
+    private @Nullable String name;
 
     private GetAllowedDomainLicenseTypesAllowedDomainLicenseType() {}
     /**
      * @return The license type description.
      * 
      */
-    public String description() {
-        return this.description;
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
     /**
      * @return The license type identifier.  Example: &#34;oracle-apps-premium&#34;
      * 
      */
-    public String licenseType() {
-        return this.licenseType;
+    public Optional<String> licenseType() {
+        return Optional.ofNullable(this.licenseType);
     }
     /**
      * @return The license type name.  Example: &#34;Oracle Apps Premium&#34;
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
 
     public static Builder builder() {
@@ -57,9 +59,9 @@ public final class GetAllowedDomainLicenseTypesAllowedDomainLicenseType {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String description;
-        private String licenseType;
-        private String name;
+        private @Nullable String description;
+        private @Nullable String licenseType;
+        private @Nullable String name;
         public Builder() {}
         public Builder(GetAllowedDomainLicenseTypesAllowedDomainLicenseType defaults) {
     	      Objects.requireNonNull(defaults);
@@ -69,18 +71,18 @@ public final class GetAllowedDomainLicenseTypesAllowedDomainLicenseType {
         }
 
         @CustomType.Setter
-        public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+        public Builder description(@Nullable String description) {
+            this.description = description;
             return this;
         }
         @CustomType.Setter
-        public Builder licenseType(String licenseType) {
-            this.licenseType = Objects.requireNonNull(licenseType);
+        public Builder licenseType(@Nullable String licenseType) {
+            this.licenseType = licenseType;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         public GetAllowedDomainLicenseTypesAllowedDomainLicenseType build() {

@@ -20,27 +20,27 @@ namespace Pulumi.Oci.Dns.Outputs
         /// <summary>
         /// The OCID of the compartment the resource belongs to.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// The displayName of a resource.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// Search by health check monitor OCID. Will match any resource whose health check monitor ID matches the provided value.
         /// </summary>
-        public readonly string HealthCheckMonitorId;
+        public readonly string? HealthCheckMonitorId;
         /// <summary>
         /// The OCID of a resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The series of rules that will be processed in sequence to reduce the pool of answers to a response for any given request.
         /// </summary>
@@ -48,51 +48,51 @@ namespace Pulumi.Oci.Dns.Outputs
         /// <summary>
         /// The canonical absolute URL of the resource.
         /// </summary>
-        public readonly string Self;
+        public readonly string? Self;
         /// <summary>
         /// The state of a resource.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// Search by steering template type. Will match any resource whose template type matches the provided value.
         /// </summary>
-        public readonly string Template;
+        public readonly string? Template;
         /// <summary>
         /// The date and time the resource was created, expressed in RFC 3339 timestamp format.
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The Time To Live (TTL) for responses from the steering policy, in seconds. If not specified during creation, a value of 30 seconds will be used.
         /// </summary>
-        public readonly int Ttl;
+        public readonly int? Ttl;
 
         [OutputConstructor]
         private GetSteeringPoliciesSteeringPolicyResult(
             ImmutableArray<Outputs.GetSteeringPoliciesSteeringPolicyAnswerResult> answers,
 
-            string compartmentId,
+            string? compartmentId,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string displayName,
+            string? displayName,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string healthCheckMonitorId,
+            string? healthCheckMonitorId,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetSteeringPoliciesSteeringPolicyRuleResult> rules,
 
-            string self,
+            string? self,
 
-            string state,
+            string? state,
 
-            string template,
+            string? template,
 
-            string timeCreated,
+            string? timeCreated,
 
-            int ttl)
+            int? ttl)
         {
             Answers = answers;
             CompartmentId = compartmentId;

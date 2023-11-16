@@ -11,6 +11,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetComputeCapacityReservationsComputeCapacityReservation {
@@ -18,159 +20,159 @@ public final class GetComputeCapacityReservationsComputeCapacityReservation {
      * @return The name of the availability domain.  Example: `Uocm:PHX-AD-1`
      * 
      */
-    private String availabilityDomain;
+    private @Nullable String availabilityDomain;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return A filter to return only resources that match the given display name exactly.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute capacity reservation.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The capacity configurations for the capacity reservation.
      * 
      */
-    private List<GetComputeCapacityReservationsComputeCapacityReservationInstanceReservationConfig> instanceReservationConfigs;
+    private @Nullable List<GetComputeCapacityReservationsComputeCapacityReservationInstanceReservationConfig> instanceReservationConfigs;
     /**
      * @return Whether this capacity reservation is the default. For more information, see [Capacity Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default).
      * 
      */
-    private Boolean isDefaultReservation;
+    private @Nullable Boolean isDefaultReservation;
     /**
      * @return The number of instances for which capacity will be held with this compute capacity reservation. This number is the sum of the values of the `reservedCount` fields for all of the instance capacity configurations under this reservation. The purpose of this field is to calculate the percentage usage of the reservation.
      * 
      */
-    private String reservedInstanceCount;
+    private @Nullable String reservedInstanceCount;
     /**
      * @return A filter to only return resources that match the given lifecycle state.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return The date and time the compute capacity reservation was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The date and time the compute capacity reservation was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    private String timeUpdated;
+    private @Nullable String timeUpdated;
     /**
      * @return The total number of instances currently consuming space in this compute capacity reservation. This number is the sum of the values of the `usedCount` fields for all of the instance capacity configurations under this reservation. The purpose of this field is to calculate the percentage usage of the reservation.
      * 
      */
-    private String usedInstanceCount;
+    private @Nullable String usedInstanceCount;
 
     private GetComputeCapacityReservationsComputeCapacityReservation() {}
     /**
      * @return The name of the availability domain.  Example: `Uocm:PHX-AD-1`
      * 
      */
-    public String availabilityDomain() {
-        return this.availabilityDomain;
+    public Optional<String> availabilityDomain() {
+        return Optional.ofNullable(this.availabilityDomain);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return A filter to return only resources that match the given display name exactly.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute capacity reservation.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The capacity configurations for the capacity reservation.
      * 
      */
     public List<GetComputeCapacityReservationsComputeCapacityReservationInstanceReservationConfig> instanceReservationConfigs() {
-        return this.instanceReservationConfigs;
+        return this.instanceReservationConfigs == null ? List.of() : this.instanceReservationConfigs;
     }
     /**
      * @return Whether this capacity reservation is the default. For more information, see [Capacity Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default).
      * 
      */
-    public Boolean isDefaultReservation() {
-        return this.isDefaultReservation;
+    public Optional<Boolean> isDefaultReservation() {
+        return Optional.ofNullable(this.isDefaultReservation);
     }
     /**
      * @return The number of instances for which capacity will be held with this compute capacity reservation. This number is the sum of the values of the `reservedCount` fields for all of the instance capacity configurations under this reservation. The purpose of this field is to calculate the percentage usage of the reservation.
      * 
      */
-    public String reservedInstanceCount() {
-        return this.reservedInstanceCount;
+    public Optional<String> reservedInstanceCount() {
+        return Optional.ofNullable(this.reservedInstanceCount);
     }
     /**
      * @return A filter to only return resources that match the given lifecycle state.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return The date and time the compute capacity reservation was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return The date and time the compute capacity reservation was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    public String timeUpdated() {
-        return this.timeUpdated;
+    public Optional<String> timeUpdated() {
+        return Optional.ofNullable(this.timeUpdated);
     }
     /**
      * @return The total number of instances currently consuming space in this compute capacity reservation. This number is the sum of the values of the `usedCount` fields for all of the instance capacity configurations under this reservation. The purpose of this field is to calculate the percentage usage of the reservation.
      * 
      */
-    public String usedInstanceCount() {
-        return this.usedInstanceCount;
+    public Optional<String> usedInstanceCount() {
+        return Optional.ofNullable(this.usedInstanceCount);
     }
 
     public static Builder builder() {
@@ -182,19 +184,19 @@ public final class GetComputeCapacityReservationsComputeCapacityReservation {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String availabilityDomain;
-        private String compartmentId;
-        private Map<String,Object> definedTags;
-        private String displayName;
-        private Map<String,Object> freeformTags;
-        private String id;
-        private List<GetComputeCapacityReservationsComputeCapacityReservationInstanceReservationConfig> instanceReservationConfigs;
-        private Boolean isDefaultReservation;
-        private String reservedInstanceCount;
-        private String state;
-        private String timeCreated;
-        private String timeUpdated;
-        private String usedInstanceCount;
+        private @Nullable String availabilityDomain;
+        private @Nullable String compartmentId;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String displayName;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String id;
+        private @Nullable List<GetComputeCapacityReservationsComputeCapacityReservationInstanceReservationConfig> instanceReservationConfigs;
+        private @Nullable Boolean isDefaultReservation;
+        private @Nullable String reservedInstanceCount;
+        private @Nullable String state;
+        private @Nullable String timeCreated;
+        private @Nullable String timeUpdated;
+        private @Nullable String usedInstanceCount;
         public Builder() {}
         public Builder(GetComputeCapacityReservationsComputeCapacityReservation defaults) {
     	      Objects.requireNonNull(defaults);
@@ -214,71 +216,71 @@ public final class GetComputeCapacityReservationsComputeCapacityReservation {
         }
 
         @CustomType.Setter
-        public Builder availabilityDomain(String availabilityDomain) {
-            this.availabilityDomain = Objects.requireNonNull(availabilityDomain);
+        public Builder availabilityDomain(@Nullable String availabilityDomain) {
+            this.availabilityDomain = availabilityDomain;
             return this;
         }
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder instanceReservationConfigs(List<GetComputeCapacityReservationsComputeCapacityReservationInstanceReservationConfig> instanceReservationConfigs) {
-            this.instanceReservationConfigs = Objects.requireNonNull(instanceReservationConfigs);
+        public Builder instanceReservationConfigs(@Nullable List<GetComputeCapacityReservationsComputeCapacityReservationInstanceReservationConfig> instanceReservationConfigs) {
+            this.instanceReservationConfigs = instanceReservationConfigs;
             return this;
         }
         public Builder instanceReservationConfigs(GetComputeCapacityReservationsComputeCapacityReservationInstanceReservationConfig... instanceReservationConfigs) {
             return instanceReservationConfigs(List.of(instanceReservationConfigs));
         }
         @CustomType.Setter
-        public Builder isDefaultReservation(Boolean isDefaultReservation) {
-            this.isDefaultReservation = Objects.requireNonNull(isDefaultReservation);
+        public Builder isDefaultReservation(@Nullable Boolean isDefaultReservation) {
+            this.isDefaultReservation = isDefaultReservation;
             return this;
         }
         @CustomType.Setter
-        public Builder reservedInstanceCount(String reservedInstanceCount) {
-            this.reservedInstanceCount = Objects.requireNonNull(reservedInstanceCount);
+        public Builder reservedInstanceCount(@Nullable String reservedInstanceCount) {
+            this.reservedInstanceCount = reservedInstanceCount;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+        public Builder timeUpdated(@Nullable String timeUpdated) {
+            this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter
-        public Builder usedInstanceCount(String usedInstanceCount) {
-            this.usedInstanceCount = Objects.requireNonNull(usedInstanceCount);
+        public Builder usedInstanceCount(@Nullable String usedInstanceCount) {
+            this.usedInstanceCount = usedInstanceCount;
             return this;
         }
         public GetComputeCapacityReservationsComputeCapacityReservation build() {

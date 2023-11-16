@@ -22,9 +22,6 @@ class GetDkimsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: A filter to only return resources that match the given name exactly.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -33,9 +30,6 @@ class GetDkimsFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        A filter to only return resources that match the given name exactly.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -67,9 +61,6 @@ class GetEmailDomainsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: A filter to only return resources that match the given name exactly.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -78,9 +69,6 @@ class GetEmailDomainsFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        A filter to only return resources that match the given name exactly.
-        """
         return pulumi.get(self, "name")
 
     @name.setter

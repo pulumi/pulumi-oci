@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Autonomous Database Backup resource in Oracle Cloud Infrastructure Database service.
@@ -61,50 +60,50 @@ type LookupAutonomousDatabaseBackupArgs struct {
 type LookupAutonomousDatabaseBackupResult struct {
 	AutonomousDatabaseBackupId string `pulumi:"autonomousDatabaseBackupId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database.
-	AutonomousDatabaseId string `pulumi:"autonomousDatabaseId"`
+	AutonomousDatabaseId *string `pulumi:"autonomousDatabaseId"`
 	// Backup destination details
 	BackupDestinationDetails []GetAutonomousDatabaseBackupBackupDestinationDetail `pulumi:"backupDestinationDetails"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// The size of the database in terabytes at the time the backup was taken.
-	DatabaseSizeInTbs float64 `pulumi:"databaseSizeInTbs"`
+	DatabaseSizeInTbs *float64 `pulumi:"databaseSizeInTbs"`
 	// A valid Oracle Database version for Autonomous Database.
-	DbVersion string `pulumi:"dbVersion"`
+	DbVersion *string `pulumi:"dbVersion"`
 	// The user-friendly name for the backup. The name does not have to be unique.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database backup.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Indicates whether the backup is user-initiated or automatic.
-	IsAutomatic      bool `pulumi:"isAutomatic"`
-	IsLongTermBackup bool `pulumi:"isLongTermBackup"`
+	IsAutomatic      *bool `pulumi:"isAutomatic"`
+	IsLongTermBackup *bool `pulumi:"isLongTermBackup"`
 	// Indicates whether the backup can be used to restore the associated Autonomous Database.
-	IsRestorable bool `pulumi:"isRestorable"`
+	IsRestorable *bool `pulumi:"isRestorable"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
-	KeyStoreId string `pulumi:"keyStoreId"`
+	KeyStoreId *string `pulumi:"keyStoreId"`
 	// The wallet name for Oracle Key Vault.
-	KeyStoreWalletName string `pulumi:"keyStoreWalletName"`
+	KeyStoreWalletName *string `pulumi:"keyStoreWalletName"`
 	// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
-	KmsKeyId string `pulumi:"kmsKeyId"`
+	KmsKeyId *string `pulumi:"kmsKeyId"`
 	// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
-	KmsKeyVersionId string `pulumi:"kmsKeyVersionId"`
+	KmsKeyVersionId *string `pulumi:"kmsKeyVersionId"`
 	// Additional information about the current lifecycle state.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// Retention period, in days, for long-term backups
-	RetentionPeriodInDays int `pulumi:"retentionPeriodInDays"`
+	RetentionPeriodInDays *int `pulumi:"retentionPeriodInDays"`
 	// The backup size in terrabytes (TB).
-	SizeInTbs float64 `pulumi:"sizeInTbs"`
+	SizeInTbs *float64 `pulumi:"sizeInTbs"`
 	// The current state of the backup.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// Timestamp until when the backup will be available
-	TimeAvailableTill string `pulumi:"timeAvailableTill"`
+	TimeAvailableTill *string `pulumi:"timeAvailableTill"`
 	// The date and time the backup completed.
-	TimeEnded string `pulumi:"timeEnded"`
+	TimeEnded *string `pulumi:"timeEnded"`
 	// The date and time the backup started.
-	TimeStarted string `pulumi:"timeStarted"`
+	TimeStarted *string `pulumi:"timeStarted"`
 	// The type of backup.
-	Type string `pulumi:"type"`
+	Type *string `pulumi:"type"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
-	VaultId string `pulumi:"vaultId"`
+	VaultId *string `pulumi:"vaultId"`
 }
 
 func LookupAutonomousDatabaseBackupOutput(ctx *pulumi.Context, args LookupAutonomousDatabaseBackupOutputArgs, opts ...pulumi.InvokeOption) LookupAutonomousDatabaseBackupResultOutput {
@@ -145,19 +144,13 @@ func (o LookupAutonomousDatabaseBackupResultOutput) ToLookupAutonomousDatabaseBa
 	return o
 }
 
-func (o LookupAutonomousDatabaseBackupResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupAutonomousDatabaseBackupResult] {
-	return pulumix.Output[LookupAutonomousDatabaseBackupResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o LookupAutonomousDatabaseBackupResultOutput) AutonomousDatabaseBackupId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAutonomousDatabaseBackupResult) string { return v.AutonomousDatabaseBackupId }).(pulumi.StringOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database.
-func (o LookupAutonomousDatabaseBackupResultOutput) AutonomousDatabaseId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAutonomousDatabaseBackupResult) string { return v.AutonomousDatabaseId }).(pulumi.StringOutput)
+func (o LookupAutonomousDatabaseBackupResultOutput) AutonomousDatabaseId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseBackupResult) *string { return v.AutonomousDatabaseId }).(pulumi.StringPtrOutput)
 }
 
 // Backup destination details
@@ -168,107 +161,107 @@ func (o LookupAutonomousDatabaseBackupResultOutput) BackupDestinationDetails() G
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-func (o LookupAutonomousDatabaseBackupResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAutonomousDatabaseBackupResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupAutonomousDatabaseBackupResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseBackupResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // The size of the database in terabytes at the time the backup was taken.
-func (o LookupAutonomousDatabaseBackupResultOutput) DatabaseSizeInTbs() pulumi.Float64Output {
-	return o.ApplyT(func(v LookupAutonomousDatabaseBackupResult) float64 { return v.DatabaseSizeInTbs }).(pulumi.Float64Output)
+func (o LookupAutonomousDatabaseBackupResultOutput) DatabaseSizeInTbs() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseBackupResult) *float64 { return v.DatabaseSizeInTbs }).(pulumi.Float64PtrOutput)
 }
 
 // A valid Oracle Database version for Autonomous Database.
-func (o LookupAutonomousDatabaseBackupResultOutput) DbVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAutonomousDatabaseBackupResult) string { return v.DbVersion }).(pulumi.StringOutput)
+func (o LookupAutonomousDatabaseBackupResultOutput) DbVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseBackupResult) *string { return v.DbVersion }).(pulumi.StringPtrOutput)
 }
 
 // The user-friendly name for the backup. The name does not have to be unique.
-func (o LookupAutonomousDatabaseBackupResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAutonomousDatabaseBackupResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupAutonomousDatabaseBackupResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseBackupResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database backup.
-func (o LookupAutonomousDatabaseBackupResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAutonomousDatabaseBackupResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupAutonomousDatabaseBackupResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseBackupResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Indicates whether the backup is user-initiated or automatic.
-func (o LookupAutonomousDatabaseBackupResultOutput) IsAutomatic() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupAutonomousDatabaseBackupResult) bool { return v.IsAutomatic }).(pulumi.BoolOutput)
+func (o LookupAutonomousDatabaseBackupResultOutput) IsAutomatic() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseBackupResult) *bool { return v.IsAutomatic }).(pulumi.BoolPtrOutput)
 }
 
-func (o LookupAutonomousDatabaseBackupResultOutput) IsLongTermBackup() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupAutonomousDatabaseBackupResult) bool { return v.IsLongTermBackup }).(pulumi.BoolOutput)
+func (o LookupAutonomousDatabaseBackupResultOutput) IsLongTermBackup() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseBackupResult) *bool { return v.IsLongTermBackup }).(pulumi.BoolPtrOutput)
 }
 
 // Indicates whether the backup can be used to restore the associated Autonomous Database.
-func (o LookupAutonomousDatabaseBackupResultOutput) IsRestorable() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupAutonomousDatabaseBackupResult) bool { return v.IsRestorable }).(pulumi.BoolOutput)
+func (o LookupAutonomousDatabaseBackupResultOutput) IsRestorable() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseBackupResult) *bool { return v.IsRestorable }).(pulumi.BoolPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
-func (o LookupAutonomousDatabaseBackupResultOutput) KeyStoreId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAutonomousDatabaseBackupResult) string { return v.KeyStoreId }).(pulumi.StringOutput)
+func (o LookupAutonomousDatabaseBackupResultOutput) KeyStoreId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseBackupResult) *string { return v.KeyStoreId }).(pulumi.StringPtrOutput)
 }
 
 // The wallet name for Oracle Key Vault.
-func (o LookupAutonomousDatabaseBackupResultOutput) KeyStoreWalletName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAutonomousDatabaseBackupResult) string { return v.KeyStoreWalletName }).(pulumi.StringOutput)
+func (o LookupAutonomousDatabaseBackupResultOutput) KeyStoreWalletName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseBackupResult) *string { return v.KeyStoreWalletName }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
-func (o LookupAutonomousDatabaseBackupResultOutput) KmsKeyId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAutonomousDatabaseBackupResult) string { return v.KmsKeyId }).(pulumi.StringOutput)
+func (o LookupAutonomousDatabaseBackupResultOutput) KmsKeyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseBackupResult) *string { return v.KmsKeyId }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
-func (o LookupAutonomousDatabaseBackupResultOutput) KmsKeyVersionId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAutonomousDatabaseBackupResult) string { return v.KmsKeyVersionId }).(pulumi.StringOutput)
+func (o LookupAutonomousDatabaseBackupResultOutput) KmsKeyVersionId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseBackupResult) *string { return v.KmsKeyVersionId }).(pulumi.StringPtrOutput)
 }
 
 // Additional information about the current lifecycle state.
-func (o LookupAutonomousDatabaseBackupResultOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAutonomousDatabaseBackupResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o LookupAutonomousDatabaseBackupResultOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseBackupResult) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // Retention period, in days, for long-term backups
-func (o LookupAutonomousDatabaseBackupResultOutput) RetentionPeriodInDays() pulumi.IntOutput {
-	return o.ApplyT(func(v LookupAutonomousDatabaseBackupResult) int { return v.RetentionPeriodInDays }).(pulumi.IntOutput)
+func (o LookupAutonomousDatabaseBackupResultOutput) RetentionPeriodInDays() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseBackupResult) *int { return v.RetentionPeriodInDays }).(pulumi.IntPtrOutput)
 }
 
 // The backup size in terrabytes (TB).
-func (o LookupAutonomousDatabaseBackupResultOutput) SizeInTbs() pulumi.Float64Output {
-	return o.ApplyT(func(v LookupAutonomousDatabaseBackupResult) float64 { return v.SizeInTbs }).(pulumi.Float64Output)
+func (o LookupAutonomousDatabaseBackupResultOutput) SizeInTbs() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseBackupResult) *float64 { return v.SizeInTbs }).(pulumi.Float64PtrOutput)
 }
 
 // The current state of the backup.
-func (o LookupAutonomousDatabaseBackupResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAutonomousDatabaseBackupResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupAutonomousDatabaseBackupResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseBackupResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Timestamp until when the backup will be available
-func (o LookupAutonomousDatabaseBackupResultOutput) TimeAvailableTill() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAutonomousDatabaseBackupResult) string { return v.TimeAvailableTill }).(pulumi.StringOutput)
+func (o LookupAutonomousDatabaseBackupResultOutput) TimeAvailableTill() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseBackupResult) *string { return v.TimeAvailableTill }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the backup completed.
-func (o LookupAutonomousDatabaseBackupResultOutput) TimeEnded() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAutonomousDatabaseBackupResult) string { return v.TimeEnded }).(pulumi.StringOutput)
+func (o LookupAutonomousDatabaseBackupResultOutput) TimeEnded() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseBackupResult) *string { return v.TimeEnded }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the backup started.
-func (o LookupAutonomousDatabaseBackupResultOutput) TimeStarted() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAutonomousDatabaseBackupResult) string { return v.TimeStarted }).(pulumi.StringOutput)
+func (o LookupAutonomousDatabaseBackupResultOutput) TimeStarted() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseBackupResult) *string { return v.TimeStarted }).(pulumi.StringPtrOutput)
 }
 
 // The type of backup.
-func (o LookupAutonomousDatabaseBackupResultOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAutonomousDatabaseBackupResult) string { return v.Type }).(pulumi.StringOutput)
+func (o LookupAutonomousDatabaseBackupResultOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseBackupResult) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
-func (o LookupAutonomousDatabaseBackupResultOutput) VaultId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAutonomousDatabaseBackupResult) string { return v.VaultId }).(pulumi.StringOutput)
+func (o LookupAutonomousDatabaseBackupResultOutput) VaultId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseBackupResult) *string { return v.VaultId }).(pulumi.StringPtrOutput)
 }
 
 func init() {

@@ -8,6 +8,8 @@ import com.pulumi.oci.AiLanguage.outputs.GetModelsModelCollectionItemTestStrateg
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetModelsModelCollectionItemTestStrategyValidationDataset {
@@ -15,39 +17,39 @@ public final class GetModelsModelCollectionItemTestStrategyValidationDataset {
      * @return Data Science Labelling Service OCID
      * 
      */
-    private String datasetId;
+    private @Nullable String datasetId;
     /**
      * @return Possible data sets
      * 
      */
-    private String datasetType;
+    private @Nullable String datasetType;
     /**
      * @return Possible object storage location types
      * 
      */
-    private List<GetModelsModelCollectionItemTestStrategyValidationDatasetLocationDetail> locationDetails;
+    private @Nullable List<GetModelsModelCollectionItemTestStrategyValidationDatasetLocationDetail> locationDetails;
 
     private GetModelsModelCollectionItemTestStrategyValidationDataset() {}
     /**
      * @return Data Science Labelling Service OCID
      * 
      */
-    public String datasetId() {
-        return this.datasetId;
+    public Optional<String> datasetId() {
+        return Optional.ofNullable(this.datasetId);
     }
     /**
      * @return Possible data sets
      * 
      */
-    public String datasetType() {
-        return this.datasetType;
+    public Optional<String> datasetType() {
+        return Optional.ofNullable(this.datasetType);
     }
     /**
      * @return Possible object storage location types
      * 
      */
     public List<GetModelsModelCollectionItemTestStrategyValidationDatasetLocationDetail> locationDetails() {
-        return this.locationDetails;
+        return this.locationDetails == null ? List.of() : this.locationDetails;
     }
 
     public static Builder builder() {
@@ -59,9 +61,9 @@ public final class GetModelsModelCollectionItemTestStrategyValidationDataset {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String datasetId;
-        private String datasetType;
-        private List<GetModelsModelCollectionItemTestStrategyValidationDatasetLocationDetail> locationDetails;
+        private @Nullable String datasetId;
+        private @Nullable String datasetType;
+        private @Nullable List<GetModelsModelCollectionItemTestStrategyValidationDatasetLocationDetail> locationDetails;
         public Builder() {}
         public Builder(GetModelsModelCollectionItemTestStrategyValidationDataset defaults) {
     	      Objects.requireNonNull(defaults);
@@ -71,18 +73,18 @@ public final class GetModelsModelCollectionItemTestStrategyValidationDataset {
         }
 
         @CustomType.Setter
-        public Builder datasetId(String datasetId) {
-            this.datasetId = Objects.requireNonNull(datasetId);
+        public Builder datasetId(@Nullable String datasetId) {
+            this.datasetId = datasetId;
             return this;
         }
         @CustomType.Setter
-        public Builder datasetType(String datasetType) {
-            this.datasetType = Objects.requireNonNull(datasetType);
+        public Builder datasetType(@Nullable String datasetType) {
+            this.datasetType = datasetType;
             return this;
         }
         @CustomType.Setter
-        public Builder locationDetails(List<GetModelsModelCollectionItemTestStrategyValidationDatasetLocationDetail> locationDetails) {
-            this.locationDetails = Objects.requireNonNull(locationDetails);
+        public Builder locationDetails(@Nullable List<GetModelsModelCollectionItemTestStrategyValidationDatasetLocationDetail> locationDetails) {
+            this.locationDetails = locationDetails;
             return this;
         }
         public Builder locationDetails(GetModelsModelCollectionItemTestStrategyValidationDatasetLocationDetail... locationDetails) {

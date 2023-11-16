@@ -120,7 +120,7 @@ export interface GetDatabaseSecurityConfigsResult {
     /**
      * The list of database_security_config_collection.
      */
-    readonly databaseSecurityConfigCollections: outputs.DataSafe.GetDatabaseSecurityConfigsDatabaseSecurityConfigCollection[];
+    readonly databaseSecurityConfigCollections?: outputs.DataSafe.GetDatabaseSecurityConfigsDatabaseSecurityConfigCollection[];
     readonly databaseSecurityConfigId?: string;
     /**
      * The display name of the database security config.
@@ -130,7 +130,7 @@ export interface GetDatabaseSecurityConfigsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The current state of the database security config.
      */

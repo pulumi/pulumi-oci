@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDeploymentVersionsDeploymentVersionCollectionItem {
@@ -14,75 +16,75 @@ public final class GetDeploymentVersionsDeploymentVersionCollectionItem {
      * @return The type of deployment, the value determines the exact &#39;type&#39; of the service executed in the deployment. Default value is DATABASE_ORACLE.
      * 
      */
-    private String deploymentType;
+    private @Nullable String deploymentType;
     /**
      * @return Indicates if OGG release contains security fix.
      * 
      */
-    private Boolean isSecurityFix;
+    private @Nullable Boolean isSecurityFix;
     /**
      * @return Version of OGG
      * 
      */
-    private String oggVersion;
+    private @Nullable String oggVersion;
     /**
      * @return The type of release.
      * 
      */
-    private String releaseType;
+    private @Nullable String releaseType;
     /**
      * @return The time the resource was released. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      * 
      */
-    private String timeReleased;
+    private @Nullable String timeReleased;
     /**
      * @return The time until OGG version is supported. After this date has passed OGG version will not be available anymore. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      * 
      */
-    private String timeSupportedUntil;
+    private @Nullable String timeSupportedUntil;
 
     private GetDeploymentVersionsDeploymentVersionCollectionItem() {}
     /**
      * @return The type of deployment, the value determines the exact &#39;type&#39; of the service executed in the deployment. Default value is DATABASE_ORACLE.
      * 
      */
-    public String deploymentType() {
-        return this.deploymentType;
+    public Optional<String> deploymentType() {
+        return Optional.ofNullable(this.deploymentType);
     }
     /**
      * @return Indicates if OGG release contains security fix.
      * 
      */
-    public Boolean isSecurityFix() {
-        return this.isSecurityFix;
+    public Optional<Boolean> isSecurityFix() {
+        return Optional.ofNullable(this.isSecurityFix);
     }
     /**
      * @return Version of OGG
      * 
      */
-    public String oggVersion() {
-        return this.oggVersion;
+    public Optional<String> oggVersion() {
+        return Optional.ofNullable(this.oggVersion);
     }
     /**
      * @return The type of release.
      * 
      */
-    public String releaseType() {
-        return this.releaseType;
+    public Optional<String> releaseType() {
+        return Optional.ofNullable(this.releaseType);
     }
     /**
      * @return The time the resource was released. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      * 
      */
-    public String timeReleased() {
-        return this.timeReleased;
+    public Optional<String> timeReleased() {
+        return Optional.ofNullable(this.timeReleased);
     }
     /**
      * @return The time until OGG version is supported. After this date has passed OGG version will not be available anymore. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      * 
      */
-    public String timeSupportedUntil() {
-        return this.timeSupportedUntil;
+    public Optional<String> timeSupportedUntil() {
+        return Optional.ofNullable(this.timeSupportedUntil);
     }
 
     public static Builder builder() {
@@ -94,12 +96,12 @@ public final class GetDeploymentVersionsDeploymentVersionCollectionItem {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String deploymentType;
-        private Boolean isSecurityFix;
-        private String oggVersion;
-        private String releaseType;
-        private String timeReleased;
-        private String timeSupportedUntil;
+        private @Nullable String deploymentType;
+        private @Nullable Boolean isSecurityFix;
+        private @Nullable String oggVersion;
+        private @Nullable String releaseType;
+        private @Nullable String timeReleased;
+        private @Nullable String timeSupportedUntil;
         public Builder() {}
         public Builder(GetDeploymentVersionsDeploymentVersionCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -112,33 +114,33 @@ public final class GetDeploymentVersionsDeploymentVersionCollectionItem {
         }
 
         @CustomType.Setter
-        public Builder deploymentType(String deploymentType) {
-            this.deploymentType = Objects.requireNonNull(deploymentType);
+        public Builder deploymentType(@Nullable String deploymentType) {
+            this.deploymentType = deploymentType;
             return this;
         }
         @CustomType.Setter
-        public Builder isSecurityFix(Boolean isSecurityFix) {
-            this.isSecurityFix = Objects.requireNonNull(isSecurityFix);
+        public Builder isSecurityFix(@Nullable Boolean isSecurityFix) {
+            this.isSecurityFix = isSecurityFix;
             return this;
         }
         @CustomType.Setter
-        public Builder oggVersion(String oggVersion) {
-            this.oggVersion = Objects.requireNonNull(oggVersion);
+        public Builder oggVersion(@Nullable String oggVersion) {
+            this.oggVersion = oggVersion;
             return this;
         }
         @CustomType.Setter
-        public Builder releaseType(String releaseType) {
-            this.releaseType = Objects.requireNonNull(releaseType);
+        public Builder releaseType(@Nullable String releaseType) {
+            this.releaseType = releaseType;
             return this;
         }
         @CustomType.Setter
-        public Builder timeReleased(String timeReleased) {
-            this.timeReleased = Objects.requireNonNull(timeReleased);
+        public Builder timeReleased(@Nullable String timeReleased) {
+            this.timeReleased = timeReleased;
             return this;
         }
         @CustomType.Setter
-        public Builder timeSupportedUntil(String timeSupportedUntil) {
-            this.timeSupportedUntil = Objects.requireNonNull(timeSupportedUntil);
+        public Builder timeSupportedUntil(@Nullable String timeSupportedUntil) {
+            this.timeSupportedUntil = timeSupportedUntil;
             return this;
         }
         public GetDeploymentVersionsDeploymentVersionCollectionItem build() {

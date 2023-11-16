@@ -20,19 +20,19 @@ namespace Pulumi.Oci.LoadBalancer.Outputs
         /// <summary>
         /// A routing rule to evaluate defined conditions against the incoming HTTP request and perform an action.
         /// </summary>
-        public readonly string Condition;
+        public readonly string? Condition;
         /// <summary>
         /// A unique name for the routing policy rule. Avoid entering confidential information.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
 
         [OutputConstructor]
         private GetLoadBalancerRoutingPolicyRuleResult(
             ImmutableArray<Outputs.GetLoadBalancerRoutingPolicyRuleActionResult> actions,
 
-            string condition,
+            string? condition,
 
-            string name)
+            string? name)
         {
             Actions = actions;
             Condition = condition;

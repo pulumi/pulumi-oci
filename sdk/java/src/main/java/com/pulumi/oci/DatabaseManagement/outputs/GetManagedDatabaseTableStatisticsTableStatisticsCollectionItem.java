@@ -8,6 +8,8 @@ import java.lang.Double;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetManagedDatabaseTableStatisticsTableStatisticsCollectionItem {
@@ -15,39 +17,39 @@ public final class GetManagedDatabaseTableStatisticsTableStatisticsCollectionIte
      * @return The number of objects aggregated by status category.
      * 
      */
-    private Integer count;
+    private @Nullable Integer count;
     /**
      * @return The percentage of objects with a particular status.
      * 
      */
-    private Double percentage;
+    private @Nullable Double percentage;
     /**
      * @return The valid status categories of table statistics.
      * 
      */
-    private String type;
+    private @Nullable String type;
 
     private GetManagedDatabaseTableStatisticsTableStatisticsCollectionItem() {}
     /**
      * @return The number of objects aggregated by status category.
      * 
      */
-    public Integer count() {
-        return this.count;
+    public Optional<Integer> count() {
+        return Optional.ofNullable(this.count);
     }
     /**
      * @return The percentage of objects with a particular status.
      * 
      */
-    public Double percentage() {
-        return this.percentage;
+    public Optional<Double> percentage() {
+        return Optional.ofNullable(this.percentage);
     }
     /**
      * @return The valid status categories of table statistics.
      * 
      */
-    public String type() {
-        return this.type;
+    public Optional<String> type() {
+        return Optional.ofNullable(this.type);
     }
 
     public static Builder builder() {
@@ -59,9 +61,9 @@ public final class GetManagedDatabaseTableStatisticsTableStatisticsCollectionIte
     }
     @CustomType.Builder
     public static final class Builder {
-        private Integer count;
-        private Double percentage;
-        private String type;
+        private @Nullable Integer count;
+        private @Nullable Double percentage;
+        private @Nullable String type;
         public Builder() {}
         public Builder(GetManagedDatabaseTableStatisticsTableStatisticsCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -71,18 +73,18 @@ public final class GetManagedDatabaseTableStatisticsTableStatisticsCollectionIte
         }
 
         @CustomType.Setter
-        public Builder count(Integer count) {
-            this.count = Objects.requireNonNull(count);
+        public Builder count(@Nullable Integer count) {
+            this.count = count;
             return this;
         }
         @CustomType.Setter
-        public Builder percentage(Double percentage) {
-            this.percentage = Objects.requireNonNull(percentage);
+        public Builder percentage(@Nullable Double percentage) {
+            this.percentage = percentage;
             return this;
         }
         @CustomType.Setter
-        public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+        public Builder type(@Nullable String type) {
+            this.type = type;
             return this;
         }
         public GetManagedDatabaseTableStatisticsTableStatisticsCollectionItem build() {

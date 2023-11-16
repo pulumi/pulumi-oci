@@ -13,17 +13,17 @@ namespace Pulumi.Oci.AiAnomalyDetection.Outputs
     [OutputType]
     public sealed class GetDetectAnomalyJobInputDetailResult
     {
-        public readonly string Content;
-        public readonly string ContentType;
+        public readonly string? Content;
+        public readonly string? ContentType;
         public readonly ImmutableArray<Outputs.GetDetectAnomalyJobInputDetailDataResult> Datas;
         /// <summary>
         /// The type of input location Allowed values are:
         /// </summary>
-        public readonly string InputType;
+        public readonly string? InputType;
         /// <summary>
         /// Inline input details.
         /// </summary>
-        public readonly string Message;
+        public readonly string? Message;
         /// <summary>
         /// List of ObjectLocations.
         /// </summary>
@@ -32,15 +32,15 @@ namespace Pulumi.Oci.AiAnomalyDetection.Outputs
 
         [OutputConstructor]
         private GetDetectAnomalyJobInputDetailResult(
-            string content,
+            string? content,
 
-            string contentType,
+            string? contentType,
 
             ImmutableArray<Outputs.GetDetectAnomalyJobInputDetailDataResult> datas,
 
-            string inputType,
+            string? inputType,
 
-            string message,
+            string? message,
 
             ImmutableArray<Outputs.GetDetectAnomalyJobInputDetailObjectLocationResult> objectLocations,
 

@@ -58,9 +58,6 @@ class GetMetricsResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the resources monitored by the metric.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
@@ -85,7 +82,7 @@ class GetMetricsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -93,34 +90,22 @@ class GetMetricsResult:
 
     @property
     @pulumi.getter
-    def metrics(self) -> Sequence['outputs.GetMetricsMetricResult']:
-        """
-        The list of metrics.
-        """
+    def metrics(self) -> Optional[Sequence['outputs.GetMetricsMetricResult']]:
         return pulumi.get(self, "metrics")
 
     @property
     @pulumi.getter
     def name(self) -> Optional[str]:
-        """
-        The name of the metric.  Example: `CpuUtilization`
-        """
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
     def namespace(self) -> Optional[str]:
-        """
-        The source service or application emitting the metric.  Example: `oci_computeagent`
-        """
         return pulumi.get(self, "namespace")
 
     @property
     @pulumi.getter(name="resourceGroup")
     def resource_group(self) -> Optional[str]:
-        """
-        Resource group provided with the posted metric. A resource group is a custom string that you can match when retrieving custom metrics. Only one resource group can be applied per metric. A valid resourceGroup value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).  Example: `frontend-fleet`
-        """
         return pulumi.get(self, "resource_group")
 
 
@@ -152,43 +137,7 @@ def get_metrics(compartment_id: Optional[str] = None,
                 resource_group: Optional[str] = None,
                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetMetricsResult:
     """
-    This data source provides the list of Metrics in Oracle Cloud Infrastructure Monitoring service.
-
-    Returns metric definitions that match the criteria specified in the request. Compartment OCID required.
-    For more information, see
-    [Listing Metric Definitions](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/list-metric.htm).
-    For information about metrics, see
-    [Metrics Overview](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#MetricsOverview).
-    For important limits information, see
-    [Limits on Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits).
-
-    Transactions Per Second (TPS) per-tenancy limit for this operation: 10.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_metrics = oci.Monitoring.get_metrics(compartment_id=var["compartment_id"],
-        compartment_id_in_subtree=var["metric_compartment_id_in_subtree"],
-        dimension_filters=var["metric_dimension_filters"],
-        group_bies=var["metric_group_by"],
-        name=var["metric_name"],
-        namespace=var["metric_namespace"],
-        resource_group=var["metric_resource_group"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the resources monitored by the metric that you are searching for. Use tenancyId to search in the root compartment.  Example: `ocid1.compartment.oc1..exampleuniqueID`
-    :param bool compartment_id_in_subtree: When true, returns resources from all compartments and subcompartments. The parameter can only be set to true when compartmentId is the tenancy OCID (the tenancy is the root compartment). A true value requires the user to have tenancy-level permissions. If this requirement is not met, then the call is rejected. When false, returns resources from only the compartment specified in compartmentId. Default is false.
-    :param Mapping[str, Any] dimension_filters: Qualifiers that you want to use when searching for metric definitions. Available dimensions vary by metric namespace. Each dimension takes the form of a key-value pair.  Example: `"resourceId": "ocid1.instance.region1.phx.exampleuniqueID"`
-    :param Sequence[str] group_bies: Group metrics by these fields in the response. For example, to list all metric namespaces available in a compartment, groupBy the "namespace" field. Supported fields: namespace, name, resourceGroup. If `groupBy` is used, then `dimensionFilters` is ignored.
-           
-           Example - group by namespace: `[ "namespace" ]`
-    :param str name: The metric name to use when searching for metric definitions.  Example: `CpuUtilization`
-    :param str namespace: The source service or application to use when searching for metric definitions.  Example: `oci_computeagent`
-    :param str resource_group: Resource group that you want to match. A null value returns only metric data that has no resource groups. The specified resource group must exist in the definition of the posted metric. Only one resource group can be applied per metric. A valid resourceGroup value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).  Example: `frontend-fleet`
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -226,42 +175,6 @@ def get_metrics_output(compartment_id: Optional[pulumi.Input[str]] = None,
                        resource_group: Optional[pulumi.Input[Optional[str]]] = None,
                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetMetricsResult]:
     """
-    This data source provides the list of Metrics in Oracle Cloud Infrastructure Monitoring service.
-
-    Returns metric definitions that match the criteria specified in the request. Compartment OCID required.
-    For more information, see
-    [Listing Metric Definitions](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/list-metric.htm).
-    For information about metrics, see
-    [Metrics Overview](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#MetricsOverview).
-    For important limits information, see
-    [Limits on Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits).
-
-    Transactions Per Second (TPS) per-tenancy limit for this operation: 10.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_metrics = oci.Monitoring.get_metrics(compartment_id=var["compartment_id"],
-        compartment_id_in_subtree=var["metric_compartment_id_in_subtree"],
-        dimension_filters=var["metric_dimension_filters"],
-        group_bies=var["metric_group_by"],
-        name=var["metric_name"],
-        namespace=var["metric_namespace"],
-        resource_group=var["metric_resource_group"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the resources monitored by the metric that you are searching for. Use tenancyId to search in the root compartment.  Example: `ocid1.compartment.oc1..exampleuniqueID`
-    :param bool compartment_id_in_subtree: When true, returns resources from all compartments and subcompartments. The parameter can only be set to true when compartmentId is the tenancy OCID (the tenancy is the root compartment). A true value requires the user to have tenancy-level permissions. If this requirement is not met, then the call is rejected. When false, returns resources from only the compartment specified in compartmentId. Default is false.
-    :param Mapping[str, Any] dimension_filters: Qualifiers that you want to use when searching for metric definitions. Available dimensions vary by metric namespace. Each dimension takes the form of a key-value pair.  Example: `"resourceId": "ocid1.instance.region1.phx.exampleuniqueID"`
-    :param Sequence[str] group_bies: Group metrics by these fields in the response. For example, to list all metric namespaces available in a compartment, groupBy the "namespace" field. Supported fields: namespace, name, resourceGroup. If `groupBy` is used, then `dimensionFilters` is ignored.
-           
-           Example - group by namespace: `[ "namespace" ]`
-    :param str name: The metric name to use when searching for metric definitions.  Example: `CpuUtilization`
-    :param str namespace: The source service or application to use when searching for metric definitions.  Example: `oci_computeagent`
-    :param str resource_group: Resource group that you want to match. A null value returns only metric data that has no resource groups. The specified resource group must exist in the definition of the posted metric. Only one resource group can be applied per metric. A valid resourceGroup value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).  Example: `frontend-fleet`
+    Use this data source to access information about an existing resource.
     """
     ...

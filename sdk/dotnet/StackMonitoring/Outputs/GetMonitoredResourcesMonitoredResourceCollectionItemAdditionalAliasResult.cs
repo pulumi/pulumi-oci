@@ -20,19 +20,19 @@ namespace Pulumi.Oci.StackMonitoring.Outputs
         /// <summary>
         /// A filter to return resources that match exact resource name.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
         /// </summary>
-        public readonly string Source;
+        public readonly string? Source;
 
         [OutputConstructor]
         private GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasResult(
             ImmutableArray<Outputs.GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasCredentialResult> credentials,
 
-            string name,
+            string? name,
 
-            string source)
+            string? source)
         {
             Credentials = credentials;
             Name = name;

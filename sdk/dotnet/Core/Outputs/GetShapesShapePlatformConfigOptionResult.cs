@@ -52,7 +52,7 @@ namespace Pulumi.Oci.Core.Outputs
         /// <summary>
         /// The type of platform being configured. (Supported types=[INTEL_VM, AMD_MILAN_BM, AMD_ROME_BM, AMD_ROME_BM_GPU, INTEL_ICELAKE_BM, INTEL_SKYLAKE_BM])
         /// </summary>
-        public readonly string Type;
+        public readonly string? Type;
         /// <summary>
         /// Configuration options for the virtualization instructions.
         /// </summary>
@@ -78,7 +78,7 @@ namespace Pulumi.Oci.Core.Outputs
 
             ImmutableArray<Outputs.GetShapesShapePlatformConfigOptionTrustedPlatformModuleOptionResult> trustedPlatformModuleOptions,
 
-            string type,
+            string? type,
 
             ImmutableArray<Outputs.GetShapesShapePlatformConfigOptionVirtualInstructionsOptionResult> virtualInstructionsOptions)
         {

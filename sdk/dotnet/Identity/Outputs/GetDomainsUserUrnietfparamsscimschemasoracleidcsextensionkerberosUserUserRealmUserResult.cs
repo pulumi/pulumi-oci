@@ -16,29 +16,29 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// Principal Name of the KerberosRealmUser associated with the Oracle Identity Cloud Service User.
         /// </summary>
-        public readonly string PrincipalName;
+        public readonly string? PrincipalName;
         /// <summary>
         /// Realm Name for the KerberosRealmUser associated with the Oracle Identity Cloud Service User.
         /// </summary>
-        public readonly string RealmName;
+        public readonly string? RealmName;
         /// <summary>
         /// User Token URI
         /// </summary>
-        public readonly string Ref;
+        public readonly string? Ref;
         /// <summary>
         /// The value of a X509 certificate.
         /// </summary>
-        public readonly string Value;
+        public readonly string? Value;
 
         [OutputConstructor]
         private GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUserResult(
-            string principalName,
+            string? principalName,
 
-            string realmName,
+            string? realmName,
 
-            string @ref,
+            string? @ref,
 
-            string value)
+            string? value)
         {
             PrincipalName = principalName;
             RealmName = realmName;

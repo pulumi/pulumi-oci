@@ -16,23 +16,23 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
         /// <summary>
         /// A filter to return only resources that match the given display name.  Example: `MyResourceDisplayName`
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// The total duration in seconds taken to complete the step execution.  Example: `35`
         /// </summary>
-        public readonly int ExecutionDurationInSec;
+        public readonly int? ExecutionDurationInSec;
         /// <summary>
         /// The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..uniqueID`
         /// </summary>
-        public readonly string GroupId;
+        public readonly string? GroupId;
         /// <summary>
         /// The status of the step execution.
         /// </summary>
-        public readonly string Status;
+        public readonly string? Status;
         /// <summary>
         /// Additional details on the step execution status.  Example: `This step failed to complete due to a timeout`
         /// </summary>
-        public readonly string StatusDetails;
+        public readonly string? StatusDetails;
         /// <summary>
         /// A list of step executions in the group.
         /// </summary>
@@ -40,35 +40,35 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
         /// <summary>
         /// The date and time at which DR plan execution succeeded, failed, was paused, or was canceled. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
         /// </summary>
-        public readonly string TimeEnded;
+        public readonly string? TimeEnded;
         /// <summary>
         /// The date and time at which DR plan execution began. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
         /// </summary>
-        public readonly string TimeStarted;
+        public readonly string? TimeStarted;
         /// <summary>
         /// The group type.  Example: `BUILT_IN`
         /// </summary>
-        public readonly string Type;
+        public readonly string? Type;
 
         [OutputConstructor]
         private GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionResult(
-            string displayName,
+            string? displayName,
 
-            int executionDurationInSec,
+            int? executionDurationInSec,
 
-            string groupId,
+            string? groupId,
 
-            string status,
+            string? status,
 
-            string statusDetails,
+            string? statusDetails,
 
             ImmutableArray<Outputs.GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionResult> stepExecutions,
 
-            string timeEnded,
+            string? timeEnded,
 
-            string timeStarted,
+            string? timeStarted,
 
-            string type)
+            string? type)
         {
             DisplayName = displayName;
             ExecutionDurationInSec = executionDurationInSec;

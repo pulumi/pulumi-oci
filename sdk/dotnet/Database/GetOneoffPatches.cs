@@ -163,7 +163,7 @@ namespace Pulumi.Oci.Database
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The list of oneoff_patches.
         /// </summary>
@@ -181,7 +181,7 @@ namespace Pulumi.Oci.Database
 
             ImmutableArray<Outputs.GetOneoffPatchesFilterResult> filters,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetOneoffPatchesOneoffPatchResult> oneoffPatches,
 

@@ -6,6 +6,8 @@ package com.pulumi.oci.DisasterRecovery.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetail {
@@ -13,15 +15,15 @@ public final class GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetai
      * @return The OCID of the reference compute instance from which to obtain the attachment details for the volume. This reference compute instance is from the peer DR protection group.  Example: `ocid1.instance.oc1..uniqueID`
      * 
      */
-    private String volumeAttachmentReferenceInstanceId;
+    private @Nullable String volumeAttachmentReferenceInstanceId;
 
     private GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetail() {}
     /**
      * @return The OCID of the reference compute instance from which to obtain the attachment details for the volume. This reference compute instance is from the peer DR protection group.  Example: `ocid1.instance.oc1..uniqueID`
      * 
      */
-    public String volumeAttachmentReferenceInstanceId() {
-        return this.volumeAttachmentReferenceInstanceId;
+    public Optional<String> volumeAttachmentReferenceInstanceId() {
+        return Optional.ofNullable(this.volumeAttachmentReferenceInstanceId);
     }
 
     public static Builder builder() {
@@ -33,7 +35,7 @@ public final class GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetai
     }
     @CustomType.Builder
     public static final class Builder {
-        private String volumeAttachmentReferenceInstanceId;
+        private @Nullable String volumeAttachmentReferenceInstanceId;
         public Builder() {}
         public Builder(GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetail defaults) {
     	      Objects.requireNonNull(defaults);
@@ -41,8 +43,8 @@ public final class GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetai
         }
 
         @CustomType.Setter
-        public Builder volumeAttachmentReferenceInstanceId(String volumeAttachmentReferenceInstanceId) {
-            this.volumeAttachmentReferenceInstanceId = Objects.requireNonNull(volumeAttachmentReferenceInstanceId);
+        public Builder volumeAttachmentReferenceInstanceId(@Nullable String volumeAttachmentReferenceInstanceId) {
+            this.volumeAttachmentReferenceInstanceId = volumeAttachmentReferenceInstanceId;
             return this;
         }
         public GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetail build() {

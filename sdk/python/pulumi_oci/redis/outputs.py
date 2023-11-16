@@ -26,18 +26,12 @@ __all__ = [
 class RedisClusterNodeCollection(dict):
     def __init__(__self__, *,
                  items: Optional[Sequence['outputs.RedisClusterNodeCollectionItem']] = None):
-        """
-        :param Sequence['RedisClusterNodeCollectionItemArgs'] items: Collection of node objects.
-        """
         if items is not None:
             pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
     def items(self) -> Optional[Sequence['outputs.RedisClusterNodeCollectionItem']]:
-        """
-        Collection of node objects.
-        """
         return pulumi.get(self, "items")
 
 
@@ -68,11 +62,6 @@ class RedisClusterNodeCollectionItem(dict):
                  display_name: Optional[str] = None,
                  private_endpoint_fqdn: Optional[str] = None,
                  private_endpoint_ip_address: Optional[str] = None):
-        """
-        :param str display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param str private_endpoint_fqdn: The fully qualified domain name (FQDN) of the API endpoint to access a specific node.
-        :param str private_endpoint_ip_address: The private IP address of the API endpoint to access a specific node.
-        """
         if display_name is not None:
             pulumi.set(__self__, "display_name", display_name)
         if private_endpoint_fqdn is not None:
@@ -83,83 +72,58 @@ class RedisClusterNodeCollectionItem(dict):
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="privateEndpointFqdn")
     def private_endpoint_fqdn(self) -> Optional[str]:
-        """
-        The fully qualified domain name (FQDN) of the API endpoint to access a specific node.
-        """
         return pulumi.get(self, "private_endpoint_fqdn")
 
     @property
     @pulumi.getter(name="privateEndpointIpAddress")
     def private_endpoint_ip_address(self) -> Optional[str]:
-        """
-        The private IP address of the API endpoint to access a specific node.
-        """
         return pulumi.get(self, "private_endpoint_ip_address")
 
 
 @pulumi.output_type
 class GetRedisClusterNodeCollectionResult(dict):
     def __init__(__self__, *,
-                 items: Sequence['outputs.GetRedisClusterNodeCollectionItemResult']):
-        """
-        :param Sequence['GetRedisClusterNodeCollectionItemArgs'] items: Collection of node objects.
-        """
-        pulumi.set(__self__, "items", items)
+                 items: Optional[Sequence['outputs.GetRedisClusterNodeCollectionItemResult']] = None):
+        if items is not None:
+            pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetRedisClusterNodeCollectionItemResult']:
-        """
-        Collection of node objects.
-        """
+    def items(self) -> Optional[Sequence['outputs.GetRedisClusterNodeCollectionItemResult']]:
         return pulumi.get(self, "items")
 
 
 @pulumi.output_type
 class GetRedisClusterNodeCollectionItemResult(dict):
     def __init__(__self__, *,
-                 display_name: str,
-                 private_endpoint_fqdn: str,
-                 private_endpoint_ip_address: str):
-        """
-        :param str display_name: A user-friendly name of a Redis cluster node.
-        :param str private_endpoint_fqdn: The fully qualified domain name (FQDN) of the API endpoint to access a specific node.
-        :param str private_endpoint_ip_address: The private IP address of the API endpoint to access a specific node.
-        """
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "private_endpoint_fqdn", private_endpoint_fqdn)
-        pulumi.set(__self__, "private_endpoint_ip_address", private_endpoint_ip_address)
+                 display_name: Optional[str] = None,
+                 private_endpoint_fqdn: Optional[str] = None,
+                 private_endpoint_ip_address: Optional[str] = None):
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if private_endpoint_fqdn is not None:
+            pulumi.set(__self__, "private_endpoint_fqdn", private_endpoint_fqdn)
+        if private_endpoint_ip_address is not None:
+            pulumi.set(__self__, "private_endpoint_ip_address", private_endpoint_ip_address)
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A user-friendly name of a Redis cluster node.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="privateEndpointFqdn")
-    def private_endpoint_fqdn(self) -> str:
-        """
-        The fully qualified domain name (FQDN) of the API endpoint to access a specific node.
-        """
+    def private_endpoint_fqdn(self) -> Optional[str]:
         return pulumi.get(self, "private_endpoint_fqdn")
 
     @property
     @pulumi.getter(name="privateEndpointIpAddress")
-    def private_endpoint_ip_address(self) -> str:
-        """
-        The private IP address of the API endpoint to access a specific node.
-        """
+    def private_endpoint_ip_address(self) -> Optional[str]:
         return pulumi.get(self, "private_endpoint_ip_address")
 
 
@@ -193,292 +157,212 @@ class GetRedisClustersFilterResult(dict):
 @pulumi.output_type
 class GetRedisClustersRedisClusterCollectionResult(dict):
     def __init__(__self__, *,
-                 items: Sequence['outputs.GetRedisClustersRedisClusterCollectionItemResult']):
-        """
-        :param Sequence['GetRedisClustersRedisClusterCollectionItemArgs'] items: Collection of node objects.
-        """
-        pulumi.set(__self__, "items", items)
+                 items: Optional[Sequence['outputs.GetRedisClustersRedisClusterCollectionItemResult']] = None):
+        if items is not None:
+            pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetRedisClustersRedisClusterCollectionItemResult']:
-        """
-        Collection of node objects.
-        """
+    def items(self) -> Optional[Sequence['outputs.GetRedisClustersRedisClusterCollectionItemResult']]:
         return pulumi.get(self, "items")
 
 
 @pulumi.output_type
 class GetRedisClustersRedisClusterCollectionItemResult(dict):
     def __init__(__self__, *,
-                 compartment_id: str,
-                 defined_tags: Mapping[str, Any],
-                 display_name: str,
-                 freeform_tags: Mapping[str, Any],
-                 id: str,
-                 lifecycle_details: str,
-                 node_collections: Sequence['outputs.GetRedisClustersRedisClusterCollectionItemNodeCollectionResult'],
-                 node_count: int,
-                 node_memory_in_gbs: float,
-                 primary_endpoint_ip_address: str,
-                 primary_fqdn: str,
-                 replicas_endpoint_ip_address: str,
-                 replicas_fqdn: str,
-                 software_version: str,
-                 state: str,
-                 subnet_id: str,
-                 system_tags: Mapping[str, Any],
-                 time_created: str,
-                 time_updated: str):
-        """
-        :param str compartment_id: The ID of the compartment in which to list resources.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param str display_name: A filter to return only resources that match the entire display name given.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the Redis cluster.
-        :param str lifecycle_details: A message describing the current state in more detail. For example, the message might provide actionable information for a resource in `FAILED` state.
-        :param Sequence['GetRedisClustersRedisClusterCollectionItemNodeCollectionArgs'] node_collections: The collection of Redis cluster nodes.
-        :param int node_count: The number of nodes in the Redis cluster.
-        :param float node_memory_in_gbs: The amount of memory allocated to the Redis cluster's nodes, in gigabytes.
-        :param str primary_endpoint_ip_address: The private IP address of the API endpoint for the Redis cluster's primary node.
-        :param str primary_fqdn: The fully qualified domain name (FQDN) of the API endpoint for the Redis cluster's primary node.
-        :param str replicas_endpoint_ip_address: The private IP address of the API endpoint for the Redis cluster's replica nodes.
-        :param str replicas_fqdn: The fully qualified domain name (FQDN) of the API endpoint for the Redis cluster's replica nodes.
-        :param str software_version: The Redis version that the cluster is running.
-        :param str state: A filter to return only resources their lifecycleState matches the given lifecycleState.
-        :param str subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the Redis cluster's subnet.
-        :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param str time_created: The date and time the Redis cluster was created. An [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
-        :param str time_updated: The date and time the Redis cluster was updated. An [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
-        """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "node_collections", node_collections)
-        pulumi.set(__self__, "node_count", node_count)
-        pulumi.set(__self__, "node_memory_in_gbs", node_memory_in_gbs)
-        pulumi.set(__self__, "primary_endpoint_ip_address", primary_endpoint_ip_address)
-        pulumi.set(__self__, "primary_fqdn", primary_fqdn)
-        pulumi.set(__self__, "replicas_endpoint_ip_address", replicas_endpoint_ip_address)
-        pulumi.set(__self__, "replicas_fqdn", replicas_fqdn)
-        pulumi.set(__self__, "software_version", software_version)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "subnet_id", subnet_id)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+                 compartment_id: Optional[str] = None,
+                 defined_tags: Optional[Mapping[str, Any]] = None,
+                 display_name: Optional[str] = None,
+                 freeform_tags: Optional[Mapping[str, Any]] = None,
+                 id: Optional[str] = None,
+                 lifecycle_details: Optional[str] = None,
+                 node_collections: Optional[Sequence['outputs.GetRedisClustersRedisClusterCollectionItemNodeCollectionResult']] = None,
+                 node_count: Optional[int] = None,
+                 node_memory_in_gbs: Optional[float] = None,
+                 primary_endpoint_ip_address: Optional[str] = None,
+                 primary_fqdn: Optional[str] = None,
+                 replicas_endpoint_ip_address: Optional[str] = None,
+                 replicas_fqdn: Optional[str] = None,
+                 software_version: Optional[str] = None,
+                 state: Optional[str] = None,
+                 subnet_id: Optional[str] = None,
+                 system_tags: Optional[Mapping[str, Any]] = None,
+                 time_created: Optional[str] = None,
+                 time_updated: Optional[str] = None):
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if lifecycle_details is not None:
+            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if node_collections is not None:
+            pulumi.set(__self__, "node_collections", node_collections)
+        if node_count is not None:
+            pulumi.set(__self__, "node_count", node_count)
+        if node_memory_in_gbs is not None:
+            pulumi.set(__self__, "node_memory_in_gbs", node_memory_in_gbs)
+        if primary_endpoint_ip_address is not None:
+            pulumi.set(__self__, "primary_endpoint_ip_address", primary_endpoint_ip_address)
+        if primary_fqdn is not None:
+            pulumi.set(__self__, "primary_fqdn", primary_fqdn)
+        if replicas_endpoint_ip_address is not None:
+            pulumi.set(__self__, "replicas_endpoint_ip_address", replicas_endpoint_ip_address)
+        if replicas_fqdn is not None:
+            pulumi.set(__self__, "replicas_fqdn", replicas_fqdn)
+        if software_version is not None:
+            pulumi.set(__self__, "software_version", software_version)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if subnet_id is not None:
+            pulumi.set(__self__, "subnet_id", subnet_id)
+        if system_tags is not None:
+            pulumi.set(__self__, "system_tags", system_tags)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if time_updated is not None:
+            pulumi.set(__self__, "time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The ID of the compartment in which to list resources.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A filter to return only resources that match the entire display name given.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the Redis cluster.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        A message describing the current state in more detail. For example, the message might provide actionable information for a resource in `FAILED` state.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="nodeCollections")
-    def node_collections(self) -> Sequence['outputs.GetRedisClustersRedisClusterCollectionItemNodeCollectionResult']:
-        """
-        The collection of Redis cluster nodes.
-        """
+    def node_collections(self) -> Optional[Sequence['outputs.GetRedisClustersRedisClusterCollectionItemNodeCollectionResult']]:
         return pulumi.get(self, "node_collections")
 
     @property
     @pulumi.getter(name="nodeCount")
-    def node_count(self) -> int:
-        """
-        The number of nodes in the Redis cluster.
-        """
+    def node_count(self) -> Optional[int]:
         return pulumi.get(self, "node_count")
 
     @property
     @pulumi.getter(name="nodeMemoryInGbs")
-    def node_memory_in_gbs(self) -> float:
-        """
-        The amount of memory allocated to the Redis cluster's nodes, in gigabytes.
-        """
+    def node_memory_in_gbs(self) -> Optional[float]:
         return pulumi.get(self, "node_memory_in_gbs")
 
     @property
     @pulumi.getter(name="primaryEndpointIpAddress")
-    def primary_endpoint_ip_address(self) -> str:
-        """
-        The private IP address of the API endpoint for the Redis cluster's primary node.
-        """
+    def primary_endpoint_ip_address(self) -> Optional[str]:
         return pulumi.get(self, "primary_endpoint_ip_address")
 
     @property
     @pulumi.getter(name="primaryFqdn")
-    def primary_fqdn(self) -> str:
-        """
-        The fully qualified domain name (FQDN) of the API endpoint for the Redis cluster's primary node.
-        """
+    def primary_fqdn(self) -> Optional[str]:
         return pulumi.get(self, "primary_fqdn")
 
     @property
     @pulumi.getter(name="replicasEndpointIpAddress")
-    def replicas_endpoint_ip_address(self) -> str:
-        """
-        The private IP address of the API endpoint for the Redis cluster's replica nodes.
-        """
+    def replicas_endpoint_ip_address(self) -> Optional[str]:
         return pulumi.get(self, "replicas_endpoint_ip_address")
 
     @property
     @pulumi.getter(name="replicasFqdn")
-    def replicas_fqdn(self) -> str:
-        """
-        The fully qualified domain name (FQDN) of the API endpoint for the Redis cluster's replica nodes.
-        """
+    def replicas_fqdn(self) -> Optional[str]:
         return pulumi.get(self, "replicas_fqdn")
 
     @property
     @pulumi.getter(name="softwareVersion")
-    def software_version(self) -> str:
-        """
-        The Redis version that the cluster is running.
-        """
+    def software_version(self) -> Optional[str]:
         return pulumi.get(self, "software_version")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        A filter to return only resources their lifecycleState matches the given lifecycleState.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="subnetId")
-    def subnet_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the Redis cluster's subnet.
-        """
+    def subnet_id(self) -> Optional[str]:
         return pulumi.get(self, "subnet_id")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the Redis cluster was created. An [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The date and time the Redis cluster was updated. An [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
 
 @pulumi.output_type
 class GetRedisClustersRedisClusterCollectionItemNodeCollectionResult(dict):
     def __init__(__self__, *,
-                 items: Sequence['outputs.GetRedisClustersRedisClusterCollectionItemNodeCollectionItemResult']):
-        """
-        :param Sequence['GetRedisClustersRedisClusterCollectionItemNodeCollectionItemArgs'] items: Collection of node objects.
-        """
-        pulumi.set(__self__, "items", items)
+                 items: Optional[Sequence['outputs.GetRedisClustersRedisClusterCollectionItemNodeCollectionItemResult']] = None):
+        if items is not None:
+            pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetRedisClustersRedisClusterCollectionItemNodeCollectionItemResult']:
-        """
-        Collection of node objects.
-        """
+    def items(self) -> Optional[Sequence['outputs.GetRedisClustersRedisClusterCollectionItemNodeCollectionItemResult']]:
         return pulumi.get(self, "items")
 
 
 @pulumi.output_type
 class GetRedisClustersRedisClusterCollectionItemNodeCollectionItemResult(dict):
     def __init__(__self__, *,
-                 display_name: str,
-                 private_endpoint_fqdn: str,
-                 private_endpoint_ip_address: str):
-        """
-        :param str display_name: A filter to return only resources that match the entire display name given.
-        :param str private_endpoint_fqdn: The fully qualified domain name (FQDN) of the API endpoint to access a specific node.
-        :param str private_endpoint_ip_address: The private IP address of the API endpoint to access a specific node.
-        """
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "private_endpoint_fqdn", private_endpoint_fqdn)
-        pulumi.set(__self__, "private_endpoint_ip_address", private_endpoint_ip_address)
+                 display_name: Optional[str] = None,
+                 private_endpoint_fqdn: Optional[str] = None,
+                 private_endpoint_ip_address: Optional[str] = None):
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if private_endpoint_fqdn is not None:
+            pulumi.set(__self__, "private_endpoint_fqdn", private_endpoint_fqdn)
+        if private_endpoint_ip_address is not None:
+            pulumi.set(__self__, "private_endpoint_ip_address", private_endpoint_ip_address)
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A filter to return only resources that match the entire display name given.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="privateEndpointFqdn")
-    def private_endpoint_fqdn(self) -> str:
-        """
-        The fully qualified domain name (FQDN) of the API endpoint to access a specific node.
-        """
+    def private_endpoint_fqdn(self) -> Optional[str]:
         return pulumi.get(self, "private_endpoint_fqdn")
 
     @property
     @pulumi.getter(name="privateEndpointIpAddress")
-    def private_endpoint_ip_address(self) -> str:
-        """
-        The private IP address of the API endpoint to access a specific node.
-        """
+    def private_endpoint_ip_address(self) -> Optional[str]:
         return pulumi.get(self, "private_endpoint_ip_address")
 
 

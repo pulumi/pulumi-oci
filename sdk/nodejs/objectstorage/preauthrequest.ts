@@ -68,7 +68,7 @@ export class Preauthrequest extends pulumi.CustomResource {
     /**
      * The URI to embed in the URL `https://objectstorage.${var.region}.oraclecloud.com{var.access_uri}` when using the pre-authenticated request.
      */
-    public /*out*/ readonly accessUri!: pulumi.Output<string>;
+    public /*out*/ readonly accessUri!: pulumi.Output<string | undefined>;
     /**
      * The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
      */
@@ -76,11 +76,11 @@ export class Preauthrequest extends pulumi.CustomResource {
     /**
      * Specifies whether a list operation is allowed on a PAR with accessType "AnyObjectRead" or "AnyObjectReadWrite". Deny: Prevents the user from performing a list operation. ListObjects: Authorizes the user to perform a list operation.
      */
-    public readonly bucketListingAction!: pulumi.Output<string>;
+    public readonly bucketListingAction!: pulumi.Output<string | undefined>;
     /**
      * The full Path for the object.
      */
-    public /*out*/ readonly fullPath!: pulumi.Output<string>;
+    public /*out*/ readonly fullPath!: pulumi.Output<string | undefined>;
     /**
      * A user-specified name for the pre-authenticated request. Names can be helpful in managing pre-authenticated requests. Avoid entering confidential information.
      */
@@ -94,19 +94,19 @@ export class Preauthrequest extends pulumi.CustomResource {
      *
      * @deprecated The 'object' field has been deprecated. Please use 'object_name' instead.
      */
-    public readonly object!: pulumi.Output<string>;
+    public readonly object!: pulumi.Output<string | undefined>;
     /**
      * The name of the object that is being granted access to by the pre-authenticated request. Avoid entering confidential information. The object name can be null and if so, the pre-authenticated request grants access to the entire bucket if the access type allows that. The object name can be a prefix as well, in that case pre-authenticated request grants access to all the objects within the bucket starting with that prefix provided that we have the correct access type.
      */
-    public readonly objectName!: pulumi.Output<string>;
+    public readonly objectName!: pulumi.Output<string | undefined>;
     /**
      * The unique identifier for the pre-authenticated request. This can be used to manage operations against the pre-authenticated request, such as GET or DELETE.
      */
-    public /*out*/ readonly parId!: pulumi.Output<string>;
+    public /*out*/ readonly parId!: pulumi.Output<string | undefined>;
     /**
      * The date when the pre-authenticated request was created as per specification [RFC 3339](https://tools.ietf.org/html/rfc3339).
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * The expiration date for the pre-authenticated request as per [RFC 3339](https://tools.ietf.org/html/rfc3339). After this date the pre-authenticated request will no longer be valid. 
      *

@@ -16,23 +16,23 @@ namespace Pulumi.Oci.Optimizer.Outputs
         /// <summary>
         /// Text describing the recommended action.
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// The status of the resource action.
         /// </summary>
-        public readonly string Type;
+        public readonly string? Type;
         /// <summary>
         /// The URL path to documentation that explains how to perform the action.
         /// </summary>
-        public readonly string Url;
+        public readonly string? Url;
 
         [OutputConstructor]
         private GetHistoriesHistoryCollectionItemActionResult(
-            string description,
+            string? description,
 
-            string type,
+            string? type,
 
-            string url)
+            string? url)
         {
             Description = description;
             Type = type;

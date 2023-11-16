@@ -6,6 +6,8 @@ package com.pulumi.oci.NetworkFirewall.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetNetworkFirewallPolicyUrlListUrl {
@@ -13,29 +15,29 @@ public final class GetNetworkFirewallPolicyUrlListUrl {
      * @return A string consisting of a concatenation of optional host component and optional path component. The host component may start with `*.` to match the case-insensitive domain and all its subdomains. The path component must start with a `/`, and may end with `*` to match all paths of which it is a case-sensitive prefix. A missing host component matches all request domains, and a missing path component matches all request paths. An empty value matches all requests.
      * 
      */
-    private String pattern;
+    private @Nullable String pattern;
     /**
      * @return The type of pattern.
      * * SIMPLE - A simple pattern with optional subdomain and/or path suffix wildcards.
      * 
      */
-    private String type;
+    private @Nullable String type;
 
     private GetNetworkFirewallPolicyUrlListUrl() {}
     /**
      * @return A string consisting of a concatenation of optional host component and optional path component. The host component may start with `*.` to match the case-insensitive domain and all its subdomains. The path component must start with a `/`, and may end with `*` to match all paths of which it is a case-sensitive prefix. A missing host component matches all request domains, and a missing path component matches all request paths. An empty value matches all requests.
      * 
      */
-    public String pattern() {
-        return this.pattern;
+    public Optional<String> pattern() {
+        return Optional.ofNullable(this.pattern);
     }
     /**
      * @return The type of pattern.
      * * SIMPLE - A simple pattern with optional subdomain and/or path suffix wildcards.
      * 
      */
-    public String type() {
-        return this.type;
+    public Optional<String> type() {
+        return Optional.ofNullable(this.type);
     }
 
     public static Builder builder() {
@@ -47,8 +49,8 @@ public final class GetNetworkFirewallPolicyUrlListUrl {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String pattern;
-        private String type;
+        private @Nullable String pattern;
+        private @Nullable String type;
         public Builder() {}
         public Builder(GetNetworkFirewallPolicyUrlListUrl defaults) {
     	      Objects.requireNonNull(defaults);
@@ -57,13 +59,13 @@ public final class GetNetworkFirewallPolicyUrlListUrl {
         }
 
         @CustomType.Setter
-        public Builder pattern(String pattern) {
-            this.pattern = Objects.requireNonNull(pattern);
+        public Builder pattern(@Nullable String pattern) {
+            this.pattern = pattern;
             return this;
         }
         @CustomType.Setter
-        public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+        public Builder type(@Nullable String type) {
+            this.type = type;
             return this;
         }
         public GetNetworkFirewallPolicyUrlListUrl build() {

@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Local Peering Gateway resource in Oracle Cloud Infrastructure Core service.
@@ -70,31 +69,31 @@ type LocalPeeringGateway struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrOutput `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// Whether the VCN at the other end of the peering is in a different tenancy.  Example: `false`
-	IsCrossTenancyPeering pulumi.BoolOutput `pulumi:"isCrossTenancyPeering"`
+	IsCrossTenancyPeering pulumi.BoolPtrOutput `pulumi:"isCrossTenancyPeering"`
 	// The smallest aggregate CIDR that contains all the CIDR routes advertised by the VCN at the other end of the peering from this LPG. See `peerAdvertisedCidrDetails` for the individual CIDRs. The value is `null` if the LPG is not peered.  Example: `192.168.0.0/16`, or if aggregated with `172.16.0.0/24` then `128.0.0.0/1`
-	PeerAdvertisedCidr pulumi.StringOutput `pulumi:"peerAdvertisedCidr"`
+	PeerAdvertisedCidr pulumi.StringPtrOutput `pulumi:"peerAdvertisedCidr"`
 	// The specific ranges of IP addresses available on or via the VCN at the other end of the peering from this LPG. The value is `null` if the LPG is not peered. You can use these as destination CIDRs for route rules to route a subnet's traffic to this LPG.  Example: [`192.168.0.0/16`, `172.16.0.0/24`]
 	PeerAdvertisedCidrDetails pulumi.StringArrayOutput `pulumi:"peerAdvertisedCidrDetails"`
 	// The OCID of the LPG you want to peer with. Specifying a peerId connects this local peering gateway (LPG) to another one in the same region. This operation must be called by the VCN administrator who is designated as the *requestor* in the peering relationship. The *acceptor* must implement an Identity and Access Management (IAM) policy that gives the requestor permission to connect to LPGs in the acceptor's compartment. Without that permission, this operation will fail. For more information, see [VCN Peering](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/VCNpeering.htm).
-	PeerId pulumi.StringOutput `pulumi:"peerId"`
+	PeerId pulumi.StringPtrOutput `pulumi:"peerId"`
 	// Whether the LPG is peered with another LPG. `NEW` means the LPG has not yet been peered. `PENDING` means the peering is being established. `REVOKED` means the LPG at the other end of the peering has been deleted.
-	PeeringStatus pulumi.StringOutput `pulumi:"peeringStatus"`
+	PeeringStatus pulumi.StringPtrOutput `pulumi:"peeringStatus"`
 	// Additional information regarding the peering status, if applicable.
-	PeeringStatusDetails pulumi.StringOutput `pulumi:"peeringStatusDetails"`
+	PeeringStatusDetails pulumi.StringPtrOutput `pulumi:"peeringStatusDetails"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the LPG will use.
 	//
 	// If you don't specify a route table here, the LPG is created without an associated route table. The Networking service does NOT automatically associate the attached VCN's default route table with the LPG.
 	//
 	// For information about why you would associate a route table with an LPG, see [Transit Routing: Access to Multiple VCNs in Same Region](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm).
-	RouteTableId pulumi.StringOutput `pulumi:"routeTableId"`
+	RouteTableId pulumi.StringPtrOutput `pulumi:"routeTableId"`
 	// The LPG's current lifecycle state.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// The date and time the LPG was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN the LPG belongs to.
 	//
 	// ** IMPORTANT **
@@ -289,12 +288,6 @@ func (i *LocalPeeringGateway) ToLocalPeeringGatewayOutputWithContext(ctx context
 	return pulumi.ToOutputWithContext(ctx, i).(LocalPeeringGatewayOutput)
 }
 
-func (i *LocalPeeringGateway) ToOutput(ctx context.Context) pulumix.Output[*LocalPeeringGateway] {
-	return pulumix.Output[*LocalPeeringGateway]{
-		OutputState: i.ToLocalPeeringGatewayOutputWithContext(ctx).OutputState,
-	}
-}
-
 // LocalPeeringGatewayArrayInput is an input type that accepts LocalPeeringGatewayArray and LocalPeeringGatewayArrayOutput values.
 // You can construct a concrete instance of `LocalPeeringGatewayArrayInput` via:
 //
@@ -318,12 +311,6 @@ func (i LocalPeeringGatewayArray) ToLocalPeeringGatewayArrayOutput() LocalPeerin
 
 func (i LocalPeeringGatewayArray) ToLocalPeeringGatewayArrayOutputWithContext(ctx context.Context) LocalPeeringGatewayArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(LocalPeeringGatewayArrayOutput)
-}
-
-func (i LocalPeeringGatewayArray) ToOutput(ctx context.Context) pulumix.Output[[]*LocalPeeringGateway] {
-	return pulumix.Output[[]*LocalPeeringGateway]{
-		OutputState: i.ToLocalPeeringGatewayArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // LocalPeeringGatewayMapInput is an input type that accepts LocalPeeringGatewayMap and LocalPeeringGatewayMapOutput values.
@@ -351,12 +338,6 @@ func (i LocalPeeringGatewayMap) ToLocalPeeringGatewayMapOutputWithContext(ctx co
 	return pulumi.ToOutputWithContext(ctx, i).(LocalPeeringGatewayMapOutput)
 }
 
-func (i LocalPeeringGatewayMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*LocalPeeringGateway] {
-	return pulumix.Output[map[string]*LocalPeeringGateway]{
-		OutputState: i.ToLocalPeeringGatewayMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type LocalPeeringGatewayOutput struct{ *pulumi.OutputState }
 
 func (LocalPeeringGatewayOutput) ElementType() reflect.Type {
@@ -371,12 +352,6 @@ func (o LocalPeeringGatewayOutput) ToLocalPeeringGatewayOutputWithContext(ctx co
 	return o
 }
 
-func (o LocalPeeringGatewayOutput) ToOutput(ctx context.Context) pulumix.Output[*LocalPeeringGateway] {
-	return pulumix.Output[*LocalPeeringGateway]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the local peering gateway (LPG).
 func (o LocalPeeringGatewayOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *LocalPeeringGateway) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
@@ -388,8 +363,8 @@ func (o LocalPeeringGatewayOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-func (o LocalPeeringGatewayOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v *LocalPeeringGateway) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+func (o LocalPeeringGatewayOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *LocalPeeringGateway) pulumi.StringPtrOutput { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -398,13 +373,13 @@ func (o LocalPeeringGatewayOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // Whether the VCN at the other end of the peering is in a different tenancy.  Example: `false`
-func (o LocalPeeringGatewayOutput) IsCrossTenancyPeering() pulumi.BoolOutput {
-	return o.ApplyT(func(v *LocalPeeringGateway) pulumi.BoolOutput { return v.IsCrossTenancyPeering }).(pulumi.BoolOutput)
+func (o LocalPeeringGatewayOutput) IsCrossTenancyPeering() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *LocalPeeringGateway) pulumi.BoolPtrOutput { return v.IsCrossTenancyPeering }).(pulumi.BoolPtrOutput)
 }
 
 // The smallest aggregate CIDR that contains all the CIDR routes advertised by the VCN at the other end of the peering from this LPG. See `peerAdvertisedCidrDetails` for the individual CIDRs. The value is `null` if the LPG is not peered.  Example: `192.168.0.0/16`, or if aggregated with `172.16.0.0/24` then `128.0.0.0/1`
-func (o LocalPeeringGatewayOutput) PeerAdvertisedCidr() pulumi.StringOutput {
-	return o.ApplyT(func(v *LocalPeeringGateway) pulumi.StringOutput { return v.PeerAdvertisedCidr }).(pulumi.StringOutput)
+func (o LocalPeeringGatewayOutput) PeerAdvertisedCidr() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *LocalPeeringGateway) pulumi.StringPtrOutput { return v.PeerAdvertisedCidr }).(pulumi.StringPtrOutput)
 }
 
 // The specific ranges of IP addresses available on or via the VCN at the other end of the peering from this LPG. The value is `null` if the LPG is not peered. You can use these as destination CIDRs for route rules to route a subnet's traffic to this LPG.  Example: [`192.168.0.0/16`, `172.16.0.0/24`]
@@ -413,18 +388,18 @@ func (o LocalPeeringGatewayOutput) PeerAdvertisedCidrDetails() pulumi.StringArra
 }
 
 // The OCID of the LPG you want to peer with. Specifying a peerId connects this local peering gateway (LPG) to another one in the same region. This operation must be called by the VCN administrator who is designated as the *requestor* in the peering relationship. The *acceptor* must implement an Identity and Access Management (IAM) policy that gives the requestor permission to connect to LPGs in the acceptor's compartment. Without that permission, this operation will fail. For more information, see [VCN Peering](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/VCNpeering.htm).
-func (o LocalPeeringGatewayOutput) PeerId() pulumi.StringOutput {
-	return o.ApplyT(func(v *LocalPeeringGateway) pulumi.StringOutput { return v.PeerId }).(pulumi.StringOutput)
+func (o LocalPeeringGatewayOutput) PeerId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *LocalPeeringGateway) pulumi.StringPtrOutput { return v.PeerId }).(pulumi.StringPtrOutput)
 }
 
 // Whether the LPG is peered with another LPG. `NEW` means the LPG has not yet been peered. `PENDING` means the peering is being established. `REVOKED` means the LPG at the other end of the peering has been deleted.
-func (o LocalPeeringGatewayOutput) PeeringStatus() pulumi.StringOutput {
-	return o.ApplyT(func(v *LocalPeeringGateway) pulumi.StringOutput { return v.PeeringStatus }).(pulumi.StringOutput)
+func (o LocalPeeringGatewayOutput) PeeringStatus() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *LocalPeeringGateway) pulumi.StringPtrOutput { return v.PeeringStatus }).(pulumi.StringPtrOutput)
 }
 
 // Additional information regarding the peering status, if applicable.
-func (o LocalPeeringGatewayOutput) PeeringStatusDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v *LocalPeeringGateway) pulumi.StringOutput { return v.PeeringStatusDetails }).(pulumi.StringOutput)
+func (o LocalPeeringGatewayOutput) PeeringStatusDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *LocalPeeringGateway) pulumi.StringPtrOutput { return v.PeeringStatusDetails }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the LPG will use.
@@ -432,18 +407,18 @@ func (o LocalPeeringGatewayOutput) PeeringStatusDetails() pulumi.StringOutput {
 // If you don't specify a route table here, the LPG is created without an associated route table. The Networking service does NOT automatically associate the attached VCN's default route table with the LPG.
 //
 // For information about why you would associate a route table with an LPG, see [Transit Routing: Access to Multiple VCNs in Same Region](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm).
-func (o LocalPeeringGatewayOutput) RouteTableId() pulumi.StringOutput {
-	return o.ApplyT(func(v *LocalPeeringGateway) pulumi.StringOutput { return v.RouteTableId }).(pulumi.StringOutput)
+func (o LocalPeeringGatewayOutput) RouteTableId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *LocalPeeringGateway) pulumi.StringPtrOutput { return v.RouteTableId }).(pulumi.StringPtrOutput)
 }
 
 // The LPG's current lifecycle state.
-func (o LocalPeeringGatewayOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *LocalPeeringGateway) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o LocalPeeringGatewayOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *LocalPeeringGateway) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the LPG was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-func (o LocalPeeringGatewayOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *LocalPeeringGateway) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LocalPeeringGatewayOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *LocalPeeringGateway) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN the LPG belongs to.
@@ -468,12 +443,6 @@ func (o LocalPeeringGatewayArrayOutput) ToLocalPeeringGatewayArrayOutputWithCont
 	return o
 }
 
-func (o LocalPeeringGatewayArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*LocalPeeringGateway] {
-	return pulumix.Output[[]*LocalPeeringGateway]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o LocalPeeringGatewayArrayOutput) Index(i pulumi.IntInput) LocalPeeringGatewayOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *LocalPeeringGateway {
 		return vs[0].([]*LocalPeeringGateway)[vs[1].(int)]
@@ -492,12 +461,6 @@ func (o LocalPeeringGatewayMapOutput) ToLocalPeeringGatewayMapOutput() LocalPeer
 
 func (o LocalPeeringGatewayMapOutput) ToLocalPeeringGatewayMapOutputWithContext(ctx context.Context) LocalPeeringGatewayMapOutput {
 	return o
-}
-
-func (o LocalPeeringGatewayMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*LocalPeeringGateway] {
-	return pulumix.Output[map[string]*LocalPeeringGateway]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o LocalPeeringGatewayMapOutput) MapIndex(k pulumi.StringInput) LocalPeeringGatewayOutput {

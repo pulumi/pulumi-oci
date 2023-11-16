@@ -14,6 +14,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetRemediationRecipesRemediationRecipeCollectionItem {
@@ -21,183 +23,183 @@ public final class GetRemediationRecipesRemediationRecipeCollectionItem {
      * @return A filter to return only resources that belong to the specified compartment identifier. Required only if the id query param is not specified.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return A configuration to define the constraints when detecting vulnerable dependencies.
      * 
      */
-    private List<GetRemediationRecipesRemediationRecipeCollectionItemDetectConfiguration> detectConfigurations;
+    private @Nullable List<GetRemediationRecipesRemediationRecipeCollectionItemDetectConfiguration> detectConfigurations;
     /**
      * @return A filter to return only resources that match the entire display name given.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return A filter to return only resources that match the specified identifier. Required only if the compartmentId query parameter is not specified.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Boolean indicating if a run should be automatically triggered once the Knowledge Base contents are updated.
      * 
      */
-    private Boolean isRunTriggeredOnKbChange;
+    private @Nullable Boolean isRunTriggeredOnKbChange;
     /**
      * @return The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the knowledge base.
      * 
      */
-    private String knowledgeBaseId;
+    private @Nullable String knowledgeBaseId;
     /**
      * @return A network configuration defines the required network characteristics for an ADM remediation recipe. A network configuration is required if the build service is one of: GitHub Actions, GitLab Pipeline, or Jenkins Pipeline.
      * 
      */
-    private List<GetRemediationRecipesRemediationRecipeCollectionItemNetworkConfiguration> networkConfigurations;
+    private @Nullable List<GetRemediationRecipesRemediationRecipeCollectionItemNetworkConfiguration> networkConfigurations;
     /**
      * @return A configuration for the Source Code Management tool/platform used by a remediation recipe.
      * 
      */
-    private List<GetRemediationRecipesRemediationRecipeCollectionItemScmConfiguration> scmConfigurations;
+    private @Nullable List<GetRemediationRecipesRemediationRecipeCollectionItemScmConfiguration> scmConfigurations;
     /**
      * @return A filter to return only Remediation Recipes that match the specified lifecycleState.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    private Map<String,Object> systemTags;
+    private @Nullable Map<String,Object> systemTags;
     /**
      * @return The creation date and time of the Remediation Recipe (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The date and time the Remediation Recipe was last updated (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      * 
      */
-    private String timeUpdated;
+    private @Nullable String timeUpdated;
     /**
      * @return The Verify stage configuration specifies a build service to run a pipeline for the recommended code changes. The build pipeline will be initiated to ensure that there is no breaking change after the dependency versions have been updated in source to avoid vulnerabilities.
      * 
      */
-    private List<GetRemediationRecipesRemediationRecipeCollectionItemVerifyConfiguration> verifyConfigurations;
+    private @Nullable List<GetRemediationRecipesRemediationRecipeCollectionItemVerifyConfiguration> verifyConfigurations;
 
     private GetRemediationRecipesRemediationRecipeCollectionItem() {}
     /**
      * @return A filter to return only resources that belong to the specified compartment identifier. Required only if the id query param is not specified.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return A configuration to define the constraints when detecting vulnerable dependencies.
      * 
      */
     public List<GetRemediationRecipesRemediationRecipeCollectionItemDetectConfiguration> detectConfigurations() {
-        return this.detectConfigurations;
+        return this.detectConfigurations == null ? List.of() : this.detectConfigurations;
     }
     /**
      * @return A filter to return only resources that match the entire display name given.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return A filter to return only resources that match the specified identifier. Required only if the compartmentId query parameter is not specified.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Boolean indicating if a run should be automatically triggered once the Knowledge Base contents are updated.
      * 
      */
-    public Boolean isRunTriggeredOnKbChange() {
-        return this.isRunTriggeredOnKbChange;
+    public Optional<Boolean> isRunTriggeredOnKbChange() {
+        return Optional.ofNullable(this.isRunTriggeredOnKbChange);
     }
     /**
      * @return The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the knowledge base.
      * 
      */
-    public String knowledgeBaseId() {
-        return this.knowledgeBaseId;
+    public Optional<String> knowledgeBaseId() {
+        return Optional.ofNullable(this.knowledgeBaseId);
     }
     /**
      * @return A network configuration defines the required network characteristics for an ADM remediation recipe. A network configuration is required if the build service is one of: GitHub Actions, GitLab Pipeline, or Jenkins Pipeline.
      * 
      */
     public List<GetRemediationRecipesRemediationRecipeCollectionItemNetworkConfiguration> networkConfigurations() {
-        return this.networkConfigurations;
+        return this.networkConfigurations == null ? List.of() : this.networkConfigurations;
     }
     /**
      * @return A configuration for the Source Code Management tool/platform used by a remediation recipe.
      * 
      */
     public List<GetRemediationRecipesRemediationRecipeCollectionItemScmConfiguration> scmConfigurations() {
-        return this.scmConfigurations;
+        return this.scmConfigurations == null ? List.of() : this.scmConfigurations;
     }
     /**
      * @return A filter to return only Remediation Recipes that match the specified lifecycleState.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
     public Map<String,Object> systemTags() {
-        return this.systemTags;
+        return this.systemTags == null ? Map.of() : this.systemTags;
     }
     /**
      * @return The creation date and time of the Remediation Recipe (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return The date and time the Remediation Recipe was last updated (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      * 
      */
-    public String timeUpdated() {
-        return this.timeUpdated;
+    public Optional<String> timeUpdated() {
+        return Optional.ofNullable(this.timeUpdated);
     }
     /**
      * @return The Verify stage configuration specifies a build service to run a pipeline for the recommended code changes. The build pipeline will be initiated to ensure that there is no breaking change after the dependency versions have been updated in source to avoid vulnerabilities.
      * 
      */
     public List<GetRemediationRecipesRemediationRecipeCollectionItemVerifyConfiguration> verifyConfigurations() {
-        return this.verifyConfigurations;
+        return this.verifyConfigurations == null ? List.of() : this.verifyConfigurations;
     }
 
     public static Builder builder() {
@@ -209,21 +211,21 @@ public final class GetRemediationRecipesRemediationRecipeCollectionItem {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String compartmentId;
-        private Map<String,Object> definedTags;
-        private List<GetRemediationRecipesRemediationRecipeCollectionItemDetectConfiguration> detectConfigurations;
-        private String displayName;
-        private Map<String,Object> freeformTags;
-        private String id;
-        private Boolean isRunTriggeredOnKbChange;
-        private String knowledgeBaseId;
-        private List<GetRemediationRecipesRemediationRecipeCollectionItemNetworkConfiguration> networkConfigurations;
-        private List<GetRemediationRecipesRemediationRecipeCollectionItemScmConfiguration> scmConfigurations;
-        private String state;
-        private Map<String,Object> systemTags;
-        private String timeCreated;
-        private String timeUpdated;
-        private List<GetRemediationRecipesRemediationRecipeCollectionItemVerifyConfiguration> verifyConfigurations;
+        private @Nullable String compartmentId;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable List<GetRemediationRecipesRemediationRecipeCollectionItemDetectConfiguration> detectConfigurations;
+        private @Nullable String displayName;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String id;
+        private @Nullable Boolean isRunTriggeredOnKbChange;
+        private @Nullable String knowledgeBaseId;
+        private @Nullable List<GetRemediationRecipesRemediationRecipeCollectionItemNetworkConfiguration> networkConfigurations;
+        private @Nullable List<GetRemediationRecipesRemediationRecipeCollectionItemScmConfiguration> scmConfigurations;
+        private @Nullable String state;
+        private @Nullable Map<String,Object> systemTags;
+        private @Nullable String timeCreated;
+        private @Nullable String timeUpdated;
+        private @Nullable List<GetRemediationRecipesRemediationRecipeCollectionItemVerifyConfiguration> verifyConfigurations;
         public Builder() {}
         public Builder(GetRemediationRecipesRemediationRecipeCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -245,87 +247,87 @@ public final class GetRemediationRecipesRemediationRecipeCollectionItem {
         }
 
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder detectConfigurations(List<GetRemediationRecipesRemediationRecipeCollectionItemDetectConfiguration> detectConfigurations) {
-            this.detectConfigurations = Objects.requireNonNull(detectConfigurations);
+        public Builder detectConfigurations(@Nullable List<GetRemediationRecipesRemediationRecipeCollectionItemDetectConfiguration> detectConfigurations) {
+            this.detectConfigurations = detectConfigurations;
             return this;
         }
         public Builder detectConfigurations(GetRemediationRecipesRemediationRecipeCollectionItemDetectConfiguration... detectConfigurations) {
             return detectConfigurations(List.of(detectConfigurations));
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder isRunTriggeredOnKbChange(Boolean isRunTriggeredOnKbChange) {
-            this.isRunTriggeredOnKbChange = Objects.requireNonNull(isRunTriggeredOnKbChange);
+        public Builder isRunTriggeredOnKbChange(@Nullable Boolean isRunTriggeredOnKbChange) {
+            this.isRunTriggeredOnKbChange = isRunTriggeredOnKbChange;
             return this;
         }
         @CustomType.Setter
-        public Builder knowledgeBaseId(String knowledgeBaseId) {
-            this.knowledgeBaseId = Objects.requireNonNull(knowledgeBaseId);
+        public Builder knowledgeBaseId(@Nullable String knowledgeBaseId) {
+            this.knowledgeBaseId = knowledgeBaseId;
             return this;
         }
         @CustomType.Setter
-        public Builder networkConfigurations(List<GetRemediationRecipesRemediationRecipeCollectionItemNetworkConfiguration> networkConfigurations) {
-            this.networkConfigurations = Objects.requireNonNull(networkConfigurations);
+        public Builder networkConfigurations(@Nullable List<GetRemediationRecipesRemediationRecipeCollectionItemNetworkConfiguration> networkConfigurations) {
+            this.networkConfigurations = networkConfigurations;
             return this;
         }
         public Builder networkConfigurations(GetRemediationRecipesRemediationRecipeCollectionItemNetworkConfiguration... networkConfigurations) {
             return networkConfigurations(List.of(networkConfigurations));
         }
         @CustomType.Setter
-        public Builder scmConfigurations(List<GetRemediationRecipesRemediationRecipeCollectionItemScmConfiguration> scmConfigurations) {
-            this.scmConfigurations = Objects.requireNonNull(scmConfigurations);
+        public Builder scmConfigurations(@Nullable List<GetRemediationRecipesRemediationRecipeCollectionItemScmConfiguration> scmConfigurations) {
+            this.scmConfigurations = scmConfigurations;
             return this;
         }
         public Builder scmConfigurations(GetRemediationRecipesRemediationRecipeCollectionItemScmConfiguration... scmConfigurations) {
             return scmConfigurations(List.of(scmConfigurations));
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+        public Builder systemTags(@Nullable Map<String,Object> systemTags) {
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+        public Builder timeUpdated(@Nullable String timeUpdated) {
+            this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter
-        public Builder verifyConfigurations(List<GetRemediationRecipesRemediationRecipeCollectionItemVerifyConfiguration> verifyConfigurations) {
-            this.verifyConfigurations = Objects.requireNonNull(verifyConfigurations);
+        public Builder verifyConfigurations(@Nullable List<GetRemediationRecipesRemediationRecipeCollectionItemVerifyConfiguration> verifyConfigurations) {
+            this.verifyConfigurations = verifyConfigurations;
             return this;
         }
         public Builder verifyConfigurations(GetRemediationRecipesRemediationRecipeCollectionItemVerifyConfiguration... verifyConfigurations) {

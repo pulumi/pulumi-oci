@@ -45,48 +45,48 @@ export interface GetDbManagementPrivateEndpointResult {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     readonly dbManagementPrivateEndpointId: string;
     /**
      * The description of the Database Management private endpoint.
      */
-    readonly description: string;
+    readonly description?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Management private endpoint.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Specifies whether the Database Management private endpoint can be used for Oracle Databases in a cluster.
      */
-    readonly isCluster: boolean;
+    readonly isCluster?: boolean;
     /**
      * The display name of the Database Management private endpoint.
      */
-    readonly name: string;
+    readonly name?: string;
     /**
      * The OCIDs of the Network Security Groups to which the Database Management private endpoint belongs.
      */
-    readonly nsgIds: string[];
+    readonly nsgIds?: string[];
     /**
      * The IP addresses assigned to the Database Management private endpoint.
      */
-    readonly privateIp: string;
+    readonly privateIp?: string;
     /**
      * The current lifecycle state of the Database Management private endpoint.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet.
      */
-    readonly subnetId: string;
+    readonly subnetId?: string;
     /**
      * The date and time the Database Managament private endpoint was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
      */
-    readonly vcnId: string;
+    readonly vcnId?: string;
 }
 /**
  * This data source provides details about a specific Db Management Private Endpoint resource in Oracle Cloud Infrastructure Database Management service.

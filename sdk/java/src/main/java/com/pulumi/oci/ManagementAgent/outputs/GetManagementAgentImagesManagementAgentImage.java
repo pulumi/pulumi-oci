@@ -9,6 +9,8 @@ import java.lang.Double;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetManagementAgentImagesManagementAgentImage {
@@ -16,135 +18,135 @@ public final class GetManagementAgentImagesManagementAgentImage {
      * @return Object content SHA256 Hash
      * 
      */
-    private String checksum;
+    private @Nullable String checksum;
     /**
      * @return Agent image resource id
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Details of the Objectstorage object
      * 
      */
-    private List<GetManagementAgentImagesManagementAgentImageImageObjectStorageDetail> imageObjectStorageDetails;
+    private @Nullable List<GetManagementAgentImagesManagementAgentImageImageObjectStorageDetail> imageObjectStorageDetails;
     /**
      * @return Object storage URL for download
      * 
      */
-    private String objectUrl;
+    private @Nullable String objectUrl;
     /**
      * @return The installation package target architecture type
      * 
      */
-    private String packageArchitectureType;
+    private @Nullable String packageArchitectureType;
     /**
      * @return The installation package type
      * 
      */
-    private String packageType;
+    private @Nullable String packageType;
     /**
      * @return Agent image platform display name
      * 
      */
-    private String platformName;
+    private @Nullable String platformName;
     /**
      * @return Agent image platform type
      * 
      */
-    private String platformType;
+    private @Nullable String platformType;
     /**
      * @return Agent image size in bytes
      * 
      */
-    private Double size;
+    private @Nullable Double size;
     /**
      * @return Filter to return only Management Agents in the particular lifecycle state.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return Agent image version
      * 
      */
-    private String version;
+    private @Nullable String version;
 
     private GetManagementAgentImagesManagementAgentImage() {}
     /**
      * @return Object content SHA256 Hash
      * 
      */
-    public String checksum() {
-        return this.checksum;
+    public Optional<String> checksum() {
+        return Optional.ofNullable(this.checksum);
     }
     /**
      * @return Agent image resource id
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Details of the Objectstorage object
      * 
      */
     public List<GetManagementAgentImagesManagementAgentImageImageObjectStorageDetail> imageObjectStorageDetails() {
-        return this.imageObjectStorageDetails;
+        return this.imageObjectStorageDetails == null ? List.of() : this.imageObjectStorageDetails;
     }
     /**
      * @return Object storage URL for download
      * 
      */
-    public String objectUrl() {
-        return this.objectUrl;
+    public Optional<String> objectUrl() {
+        return Optional.ofNullable(this.objectUrl);
     }
     /**
      * @return The installation package target architecture type
      * 
      */
-    public String packageArchitectureType() {
-        return this.packageArchitectureType;
+    public Optional<String> packageArchitectureType() {
+        return Optional.ofNullable(this.packageArchitectureType);
     }
     /**
      * @return The installation package type
      * 
      */
-    public String packageType() {
-        return this.packageType;
+    public Optional<String> packageType() {
+        return Optional.ofNullable(this.packageType);
     }
     /**
      * @return Agent image platform display name
      * 
      */
-    public String platformName() {
-        return this.platformName;
+    public Optional<String> platformName() {
+        return Optional.ofNullable(this.platformName);
     }
     /**
      * @return Agent image platform type
      * 
      */
-    public String platformType() {
-        return this.platformType;
+    public Optional<String> platformType() {
+        return Optional.ofNullable(this.platformType);
     }
     /**
      * @return Agent image size in bytes
      * 
      */
-    public Double size() {
-        return this.size;
+    public Optional<Double> size() {
+        return Optional.ofNullable(this.size);
     }
     /**
      * @return Filter to return only Management Agents in the particular lifecycle state.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return Agent image version
      * 
      */
-    public String version() {
-        return this.version;
+    public Optional<String> version() {
+        return Optional.ofNullable(this.version);
     }
 
     public static Builder builder() {
@@ -156,17 +158,17 @@ public final class GetManagementAgentImagesManagementAgentImage {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String checksum;
-        private String id;
-        private List<GetManagementAgentImagesManagementAgentImageImageObjectStorageDetail> imageObjectStorageDetails;
-        private String objectUrl;
-        private String packageArchitectureType;
-        private String packageType;
-        private String platformName;
-        private String platformType;
-        private Double size;
-        private String state;
-        private String version;
+        private @Nullable String checksum;
+        private @Nullable String id;
+        private @Nullable List<GetManagementAgentImagesManagementAgentImageImageObjectStorageDetail> imageObjectStorageDetails;
+        private @Nullable String objectUrl;
+        private @Nullable String packageArchitectureType;
+        private @Nullable String packageType;
+        private @Nullable String platformName;
+        private @Nullable String platformType;
+        private @Nullable Double size;
+        private @Nullable String state;
+        private @Nullable String version;
         public Builder() {}
         public Builder(GetManagementAgentImagesManagementAgentImage defaults) {
     	      Objects.requireNonNull(defaults);
@@ -184,61 +186,61 @@ public final class GetManagementAgentImagesManagementAgentImage {
         }
 
         @CustomType.Setter
-        public Builder checksum(String checksum) {
-            this.checksum = Objects.requireNonNull(checksum);
+        public Builder checksum(@Nullable String checksum) {
+            this.checksum = checksum;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder imageObjectStorageDetails(List<GetManagementAgentImagesManagementAgentImageImageObjectStorageDetail> imageObjectStorageDetails) {
-            this.imageObjectStorageDetails = Objects.requireNonNull(imageObjectStorageDetails);
+        public Builder imageObjectStorageDetails(@Nullable List<GetManagementAgentImagesManagementAgentImageImageObjectStorageDetail> imageObjectStorageDetails) {
+            this.imageObjectStorageDetails = imageObjectStorageDetails;
             return this;
         }
         public Builder imageObjectStorageDetails(GetManagementAgentImagesManagementAgentImageImageObjectStorageDetail... imageObjectStorageDetails) {
             return imageObjectStorageDetails(List.of(imageObjectStorageDetails));
         }
         @CustomType.Setter
-        public Builder objectUrl(String objectUrl) {
-            this.objectUrl = Objects.requireNonNull(objectUrl);
+        public Builder objectUrl(@Nullable String objectUrl) {
+            this.objectUrl = objectUrl;
             return this;
         }
         @CustomType.Setter
-        public Builder packageArchitectureType(String packageArchitectureType) {
-            this.packageArchitectureType = Objects.requireNonNull(packageArchitectureType);
+        public Builder packageArchitectureType(@Nullable String packageArchitectureType) {
+            this.packageArchitectureType = packageArchitectureType;
             return this;
         }
         @CustomType.Setter
-        public Builder packageType(String packageType) {
-            this.packageType = Objects.requireNonNull(packageType);
+        public Builder packageType(@Nullable String packageType) {
+            this.packageType = packageType;
             return this;
         }
         @CustomType.Setter
-        public Builder platformName(String platformName) {
-            this.platformName = Objects.requireNonNull(platformName);
+        public Builder platformName(@Nullable String platformName) {
+            this.platformName = platformName;
             return this;
         }
         @CustomType.Setter
-        public Builder platformType(String platformType) {
-            this.platformType = Objects.requireNonNull(platformType);
+        public Builder platformType(@Nullable String platformType) {
+            this.platformType = platformType;
             return this;
         }
         @CustomType.Setter
-        public Builder size(Double size) {
-            this.size = Objects.requireNonNull(size);
+        public Builder size(@Nullable Double size) {
+            this.size = size;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder version(String version) {
-            this.version = Objects.requireNonNull(version);
+        public Builder version(@Nullable String version) {
+            this.version = version;
             return this;
         }
         public GetManagementAgentImagesManagementAgentImage build() {

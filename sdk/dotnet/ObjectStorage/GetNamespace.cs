@@ -123,19 +123,19 @@ namespace Pulumi.Oci.ObjectStorage
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// (Computed) The name of the user's namespace.
         /// </summary>
-        public readonly string Namespace;
+        public readonly string? Namespace;
 
         [OutputConstructor]
         private GetNamespaceResult(
             string? compartmentId,
 
-            string id,
+            string? id,
 
-            string @namespace)
+            string? @namespace)
         {
             CompartmentId = compartmentId;
             Id = id;

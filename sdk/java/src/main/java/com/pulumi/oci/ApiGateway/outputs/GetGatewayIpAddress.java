@@ -6,6 +6,8 @@ package com.pulumi.oci.ApiGateway.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetGatewayIpAddress {
@@ -13,15 +15,15 @@ public final class GetGatewayIpAddress {
      * @return An IP address.
      * 
      */
-    private String ipAddress;
+    private @Nullable String ipAddress;
 
     private GetGatewayIpAddress() {}
     /**
      * @return An IP address.
      * 
      */
-    public String ipAddress() {
-        return this.ipAddress;
+    public Optional<String> ipAddress() {
+        return Optional.ofNullable(this.ipAddress);
     }
 
     public static Builder builder() {
@@ -33,7 +35,7 @@ public final class GetGatewayIpAddress {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String ipAddress;
+        private @Nullable String ipAddress;
         public Builder() {}
         public Builder(GetGatewayIpAddress defaults) {
     	      Objects.requireNonNull(defaults);
@@ -41,8 +43,8 @@ public final class GetGatewayIpAddress {
         }
 
         @CustomType.Setter
-        public Builder ipAddress(String ipAddress) {
-            this.ipAddress = Objects.requireNonNull(ipAddress);
+        public Builder ipAddress(@Nullable String ipAddress) {
+            this.ipAddress = ipAddress;
             return this;
         }
         public GetGatewayIpAddress build() {

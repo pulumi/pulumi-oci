@@ -52,17 +52,11 @@ class GetFleetCryptoAnalysisResultsResult:
     @property
     @pulumi.getter(name="aggregationMode")
     def aggregation_mode(self) -> Optional[str]:
-        """
-        The result aggregation mode
-        """
         return pulumi.get(self, "aggregation_mode")
 
     @property
     @pulumi.getter(name="cryptoAnalysisResultCollections")
-    def crypto_analysis_result_collections(self) -> Sequence['outputs.GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionResult']:
-        """
-        The list of crypto_analysis_result_collection.
-        """
+    def crypto_analysis_result_collections(self) -> Optional[Sequence['outputs.GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionResult']]:
         return pulumi.get(self, "crypto_analysis_result_collections")
 
     @property
@@ -73,14 +67,11 @@ class GetFleetCryptoAnalysisResultsResult:
     @property
     @pulumi.getter(name="fleetId")
     def fleet_id(self) -> str:
-        """
-        The fleet OCID.
-        """
         return pulumi.get(self, "fleet_id")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -89,9 +80,6 @@ class GetFleetCryptoAnalysisResultsResult:
     @property
     @pulumi.getter(name="managedInstanceId")
     def managed_instance_id(self) -> Optional[str]:
-        """
-        The managed instance OCID.
-        """
         return pulumi.get(self, "managed_instance_id")
 
     @property
@@ -129,29 +117,7 @@ def get_fleet_crypto_analysis_results(aggregation_mode: Optional[str] = None,
                                       time_start: Optional[str] = None,
                                       opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetFleetCryptoAnalysisResultsResult:
     """
-    This data source provides the list of Fleet Crypto Analysis Results in Oracle Cloud Infrastructure Jms service.
-
-    Lists the results of a Crypto event analysis.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_fleet_crypto_analysis_results = oci.Jms.get_fleet_crypto_analysis_results(fleet_id=oci_jms_fleet["test_fleet"]["id"],
-        aggregation_mode=var["fleet_crypto_analysis_result_aggregation_mode"],
-        managed_instance_id=oci_osmanagement_managed_instance["test_managed_instance"]["id"],
-        time_end=var["fleet_crypto_analysis_result_time_end"],
-        time_start=var["fleet_crypto_analysis_result_time_start"])
-    ```
-
-
-    :param str aggregation_mode: The aggregation mode of the crypto event analysis result.
-    :param str fleet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
-    :param str managed_instance_id: The Fleet-unique identifier of the related managed instance.
-    :param str time_end: The end of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-    :param str time_start: The start of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['aggregationMode'] = aggregation_mode
@@ -183,28 +149,6 @@ def get_fleet_crypto_analysis_results_output(aggregation_mode: Optional[pulumi.I
                                              time_start: Optional[pulumi.Input[Optional[str]]] = None,
                                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetFleetCryptoAnalysisResultsResult]:
     """
-    This data source provides the list of Fleet Crypto Analysis Results in Oracle Cloud Infrastructure Jms service.
-
-    Lists the results of a Crypto event analysis.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_fleet_crypto_analysis_results = oci.Jms.get_fleet_crypto_analysis_results(fleet_id=oci_jms_fleet["test_fleet"]["id"],
-        aggregation_mode=var["fleet_crypto_analysis_result_aggregation_mode"],
-        managed_instance_id=oci_osmanagement_managed_instance["test_managed_instance"]["id"],
-        time_end=var["fleet_crypto_analysis_result_time_end"],
-        time_start=var["fleet_crypto_analysis_result_time_start"])
-    ```
-
-
-    :param str aggregation_mode: The aggregation mode of the crypto event analysis result.
-    :param str fleet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
-    :param str managed_instance_id: The Fleet-unique identifier of the related managed instance.
-    :param str time_end: The end of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-    :param str time_start: The start of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+    Use this data source to access information about an existing resource.
     """
     ...

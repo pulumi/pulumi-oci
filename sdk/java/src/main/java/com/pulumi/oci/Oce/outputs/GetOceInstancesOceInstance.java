@@ -9,6 +9,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetOceInstancesOceInstance {
@@ -16,133 +18,133 @@ public final class GetOceInstancesOceInstance {
      * @return a list of add-on features for the ocm instance
      * 
      */
-    private List<String> addOnFeatures;
+    private @Nullable List<String> addOnFeatures;
     /**
      * @return Admin Email for Notification
      * 
      */
-    private String adminEmail;
+    private @Nullable String adminEmail;
     /**
      * @return The ID of the compartment in which to list resources.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return OceInstance description, can be updated
      * 
      */
-    private String description;
+    private @Nullable String description;
     /**
      * @return disaster recovery paired ragion name
      * 
      */
-    private String drRegion;
+    private @Nullable String drRegion;
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return Unique GUID identifier that is immutable on creation
      * 
      */
-    private String guid;
+    private @Nullable String guid;
     /**
      * @return Unique identifier that is immutable on creation
      * 
      */
-    private String id;
-    private String idcsAccessToken;
+    private @Nullable String id;
+    private @Nullable String idcsAccessToken;
     /**
      * @return IDCS Tenancy Identifier
      * 
      */
-    private String idcsTenancy;
+    private @Nullable String idcsTenancy;
     /**
      * @return Flag indicating whether the instance access is private or public
      * 
      */
-    private String instanceAccessType;
+    private @Nullable String instanceAccessType;
     /**
      * @return Flag indicating whether the instance license is new cloud or bring your own license
      * 
      */
-    private String instanceLicenseType;
+    private @Nullable String instanceLicenseType;
     /**
      * @return Instance type based on its usage
      * 
      */
-    private String instanceUsageType;
+    private @Nullable String instanceUsageType;
     /**
      * @return Details of the current state of the instance lifecycle
      * 
      */
-    private String lifecycleDetails;
+    private @Nullable String lifecycleDetails;
     /**
      * @return OceInstance Name
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return Object Storage Namespace of tenancy
      * 
      */
-    private String objectStorageNamespace;
+    private @Nullable String objectStorageNamespace;
     /**
      * @return SERVICE data. Example: `{&#34;service&#34;: {&#34;IDCS&#34;: &#34;value&#34;}}`
      * 
      */
-    private Map<String,Object> service;
+    private @Nullable Map<String,Object> service;
     /**
      * @return Filter results on lifecycleState.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return An message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
-    private String stateMessage;
+    private @Nullable String stateMessage;
     /**
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    private Map<String,Object> systemTags;
+    private @Nullable Map<String,Object> systemTags;
     /**
      * @return The ID of the tenancy in which to list resources.
      * 
      */
-    private String tenancyId;
+    private @Nullable String tenancyId;
     /**
      * @return Tenancy Name
      * 
      */
-    private String tenancyName;
+    private @Nullable String tenancyName;
     /**
      * @return The time the the OceInstance was created. An RFC3339 formatted datetime string
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The time the OceInstance was updated. An RFC3339 formatted datetime string
      * 
      */
-    private String timeUpdated;
+    private @Nullable String timeUpdated;
     /**
      * @return Upgrade schedule type representing service to be upgraded immediately whenever latest version is released or delay upgrade of the service to previous released version
      * 
      */
-    private String upgradeSchedule;
+    private @Nullable String upgradeSchedule;
     /**
      * @return Web Application Firewall(WAF) primary domain
      * 
      */
-    private String wafPrimaryDomain;
+    private @Nullable String wafPrimaryDomain;
 
     private GetOceInstancesOceInstance() {}
     /**
@@ -150,185 +152,185 @@ public final class GetOceInstancesOceInstance {
      * 
      */
     public List<String> addOnFeatures() {
-        return this.addOnFeatures;
+        return this.addOnFeatures == null ? List.of() : this.addOnFeatures;
     }
     /**
      * @return Admin Email for Notification
      * 
      */
-    public String adminEmail() {
-        return this.adminEmail;
+    public Optional<String> adminEmail() {
+        return Optional.ofNullable(this.adminEmail);
     }
     /**
      * @return The ID of the compartment in which to list resources.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return OceInstance description, can be updated
      * 
      */
-    public String description() {
-        return this.description;
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
     /**
      * @return disaster recovery paired ragion name
      * 
      */
-    public String drRegion() {
-        return this.drRegion;
+    public Optional<String> drRegion() {
+        return Optional.ofNullable(this.drRegion);
     }
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return Unique GUID identifier that is immutable on creation
      * 
      */
-    public String guid() {
-        return this.guid;
+    public Optional<String> guid() {
+        return Optional.ofNullable(this.guid);
     }
     /**
      * @return Unique identifier that is immutable on creation
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
-    public String idcsAccessToken() {
-        return this.idcsAccessToken;
+    public Optional<String> idcsAccessToken() {
+        return Optional.ofNullable(this.idcsAccessToken);
     }
     /**
      * @return IDCS Tenancy Identifier
      * 
      */
-    public String idcsTenancy() {
-        return this.idcsTenancy;
+    public Optional<String> idcsTenancy() {
+        return Optional.ofNullable(this.idcsTenancy);
     }
     /**
      * @return Flag indicating whether the instance access is private or public
      * 
      */
-    public String instanceAccessType() {
-        return this.instanceAccessType;
+    public Optional<String> instanceAccessType() {
+        return Optional.ofNullable(this.instanceAccessType);
     }
     /**
      * @return Flag indicating whether the instance license is new cloud or bring your own license
      * 
      */
-    public String instanceLicenseType() {
-        return this.instanceLicenseType;
+    public Optional<String> instanceLicenseType() {
+        return Optional.ofNullable(this.instanceLicenseType);
     }
     /**
      * @return Instance type based on its usage
      * 
      */
-    public String instanceUsageType() {
-        return this.instanceUsageType;
+    public Optional<String> instanceUsageType() {
+        return Optional.ofNullable(this.instanceUsageType);
     }
     /**
      * @return Details of the current state of the instance lifecycle
      * 
      */
-    public String lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Optional<String> lifecycleDetails() {
+        return Optional.ofNullable(this.lifecycleDetails);
     }
     /**
      * @return OceInstance Name
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return Object Storage Namespace of tenancy
      * 
      */
-    public String objectStorageNamespace() {
-        return this.objectStorageNamespace;
+    public Optional<String> objectStorageNamespace() {
+        return Optional.ofNullable(this.objectStorageNamespace);
     }
     /**
      * @return SERVICE data. Example: `{&#34;service&#34;: {&#34;IDCS&#34;: &#34;value&#34;}}`
      * 
      */
     public Map<String,Object> service() {
-        return this.service;
+        return this.service == null ? Map.of() : this.service;
     }
     /**
      * @return Filter results on lifecycleState.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return An message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
-    public String stateMessage() {
-        return this.stateMessage;
+    public Optional<String> stateMessage() {
+        return Optional.ofNullable(this.stateMessage);
     }
     /**
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
     public Map<String,Object> systemTags() {
-        return this.systemTags;
+        return this.systemTags == null ? Map.of() : this.systemTags;
     }
     /**
      * @return The ID of the tenancy in which to list resources.
      * 
      */
-    public String tenancyId() {
-        return this.tenancyId;
+    public Optional<String> tenancyId() {
+        return Optional.ofNullable(this.tenancyId);
     }
     /**
      * @return Tenancy Name
      * 
      */
-    public String tenancyName() {
-        return this.tenancyName;
+    public Optional<String> tenancyName() {
+        return Optional.ofNullable(this.tenancyName);
     }
     /**
      * @return The time the the OceInstance was created. An RFC3339 formatted datetime string
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return The time the OceInstance was updated. An RFC3339 formatted datetime string
      * 
      */
-    public String timeUpdated() {
-        return this.timeUpdated;
+    public Optional<String> timeUpdated() {
+        return Optional.ofNullable(this.timeUpdated);
     }
     /**
      * @return Upgrade schedule type representing service to be upgraded immediately whenever latest version is released or delay upgrade of the service to previous released version
      * 
      */
-    public String upgradeSchedule() {
-        return this.upgradeSchedule;
+    public Optional<String> upgradeSchedule() {
+        return Optional.ofNullable(this.upgradeSchedule);
     }
     /**
      * @return Web Application Firewall(WAF) primary domain
      * 
      */
-    public String wafPrimaryDomain() {
-        return this.wafPrimaryDomain;
+    public Optional<String> wafPrimaryDomain() {
+        return Optional.ofNullable(this.wafPrimaryDomain);
     }
 
     public static Builder builder() {
@@ -340,33 +342,33 @@ public final class GetOceInstancesOceInstance {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<String> addOnFeatures;
-        private String adminEmail;
-        private String compartmentId;
-        private Map<String,Object> definedTags;
-        private String description;
-        private String drRegion;
-        private Map<String,Object> freeformTags;
-        private String guid;
-        private String id;
-        private String idcsAccessToken;
-        private String idcsTenancy;
-        private String instanceAccessType;
-        private String instanceLicenseType;
-        private String instanceUsageType;
-        private String lifecycleDetails;
-        private String name;
-        private String objectStorageNamespace;
-        private Map<String,Object> service;
-        private String state;
-        private String stateMessage;
-        private Map<String,Object> systemTags;
-        private String tenancyId;
-        private String tenancyName;
-        private String timeCreated;
-        private String timeUpdated;
-        private String upgradeSchedule;
-        private String wafPrimaryDomain;
+        private @Nullable List<String> addOnFeatures;
+        private @Nullable String adminEmail;
+        private @Nullable String compartmentId;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String description;
+        private @Nullable String drRegion;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String guid;
+        private @Nullable String id;
+        private @Nullable String idcsAccessToken;
+        private @Nullable String idcsTenancy;
+        private @Nullable String instanceAccessType;
+        private @Nullable String instanceLicenseType;
+        private @Nullable String instanceUsageType;
+        private @Nullable String lifecycleDetails;
+        private @Nullable String name;
+        private @Nullable String objectStorageNamespace;
+        private @Nullable Map<String,Object> service;
+        private @Nullable String state;
+        private @Nullable String stateMessage;
+        private @Nullable Map<String,Object> systemTags;
+        private @Nullable String tenancyId;
+        private @Nullable String tenancyName;
+        private @Nullable String timeCreated;
+        private @Nullable String timeUpdated;
+        private @Nullable String upgradeSchedule;
+        private @Nullable String wafPrimaryDomain;
         public Builder() {}
         public Builder(GetOceInstancesOceInstance defaults) {
     	      Objects.requireNonNull(defaults);
@@ -400,141 +402,141 @@ public final class GetOceInstancesOceInstance {
         }
 
         @CustomType.Setter
-        public Builder addOnFeatures(List<String> addOnFeatures) {
-            this.addOnFeatures = Objects.requireNonNull(addOnFeatures);
+        public Builder addOnFeatures(@Nullable List<String> addOnFeatures) {
+            this.addOnFeatures = addOnFeatures;
             return this;
         }
         public Builder addOnFeatures(String... addOnFeatures) {
             return addOnFeatures(List.of(addOnFeatures));
         }
         @CustomType.Setter
-        public Builder adminEmail(String adminEmail) {
-            this.adminEmail = Objects.requireNonNull(adminEmail);
+        public Builder adminEmail(@Nullable String adminEmail) {
+            this.adminEmail = adminEmail;
             return this;
         }
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+        public Builder description(@Nullable String description) {
+            this.description = description;
             return this;
         }
         @CustomType.Setter
-        public Builder drRegion(String drRegion) {
-            this.drRegion = Objects.requireNonNull(drRegion);
+        public Builder drRegion(@Nullable String drRegion) {
+            this.drRegion = drRegion;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder guid(String guid) {
-            this.guid = Objects.requireNonNull(guid);
+        public Builder guid(@Nullable String guid) {
+            this.guid = guid;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder idcsAccessToken(String idcsAccessToken) {
-            this.idcsAccessToken = Objects.requireNonNull(idcsAccessToken);
+        public Builder idcsAccessToken(@Nullable String idcsAccessToken) {
+            this.idcsAccessToken = idcsAccessToken;
             return this;
         }
         @CustomType.Setter
-        public Builder idcsTenancy(String idcsTenancy) {
-            this.idcsTenancy = Objects.requireNonNull(idcsTenancy);
+        public Builder idcsTenancy(@Nullable String idcsTenancy) {
+            this.idcsTenancy = idcsTenancy;
             return this;
         }
         @CustomType.Setter
-        public Builder instanceAccessType(String instanceAccessType) {
-            this.instanceAccessType = Objects.requireNonNull(instanceAccessType);
+        public Builder instanceAccessType(@Nullable String instanceAccessType) {
+            this.instanceAccessType = instanceAccessType;
             return this;
         }
         @CustomType.Setter
-        public Builder instanceLicenseType(String instanceLicenseType) {
-            this.instanceLicenseType = Objects.requireNonNull(instanceLicenseType);
+        public Builder instanceLicenseType(@Nullable String instanceLicenseType) {
+            this.instanceLicenseType = instanceLicenseType;
             return this;
         }
         @CustomType.Setter
-        public Builder instanceUsageType(String instanceUsageType) {
-            this.instanceUsageType = Objects.requireNonNull(instanceUsageType);
+        public Builder instanceUsageType(@Nullable String instanceUsageType) {
+            this.instanceUsageType = instanceUsageType;
             return this;
         }
         @CustomType.Setter
-        public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+        public Builder lifecycleDetails(@Nullable String lifecycleDetails) {
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder objectStorageNamespace(String objectStorageNamespace) {
-            this.objectStorageNamespace = Objects.requireNonNull(objectStorageNamespace);
+        public Builder objectStorageNamespace(@Nullable String objectStorageNamespace) {
+            this.objectStorageNamespace = objectStorageNamespace;
             return this;
         }
         @CustomType.Setter
-        public Builder service(Map<String,Object> service) {
-            this.service = Objects.requireNonNull(service);
+        public Builder service(@Nullable Map<String,Object> service) {
+            this.service = service;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder stateMessage(String stateMessage) {
-            this.stateMessage = Objects.requireNonNull(stateMessage);
+        public Builder stateMessage(@Nullable String stateMessage) {
+            this.stateMessage = stateMessage;
             return this;
         }
         @CustomType.Setter
-        public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+        public Builder systemTags(@Nullable Map<String,Object> systemTags) {
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
-        public Builder tenancyId(String tenancyId) {
-            this.tenancyId = Objects.requireNonNull(tenancyId);
+        public Builder tenancyId(@Nullable String tenancyId) {
+            this.tenancyId = tenancyId;
             return this;
         }
         @CustomType.Setter
-        public Builder tenancyName(String tenancyName) {
-            this.tenancyName = Objects.requireNonNull(tenancyName);
+        public Builder tenancyName(@Nullable String tenancyName) {
+            this.tenancyName = tenancyName;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+        public Builder timeUpdated(@Nullable String timeUpdated) {
+            this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter
-        public Builder upgradeSchedule(String upgradeSchedule) {
-            this.upgradeSchedule = Objects.requireNonNull(upgradeSchedule);
+        public Builder upgradeSchedule(@Nullable String upgradeSchedule) {
+            this.upgradeSchedule = upgradeSchedule;
             return this;
         }
         @CustomType.Setter
-        public Builder wafPrimaryDomain(String wafPrimaryDomain) {
-            this.wafPrimaryDomain = Objects.requireNonNull(wafPrimaryDomain);
+        public Builder wafPrimaryDomain(@Nullable String wafPrimaryDomain) {
+            this.wafPrimaryDomain = wafPrimaryDomain;
             return this;
         }
         public GetOceInstancesOceInstance build() {

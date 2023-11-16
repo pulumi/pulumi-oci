@@ -16,35 +16,35 @@ namespace Pulumi.Oci.Database.Outputs
         /// <summary>
         /// The email for the Exadata Infrastructure contact.
         /// </summary>
-        public readonly string Email;
+        public readonly string? Email;
         /// <summary>
         /// If `true`, this Exadata Infrastructure contact is a valid My Oracle Support (MOS) contact. If `false`, this Exadata Infrastructure contact is not a valid MOS contact.
         /// </summary>
-        public readonly bool IsContactMosValidated;
+        public readonly bool? IsContactMosValidated;
         /// <summary>
         /// If `true`, this Exadata Infrastructure contact is a primary contact. If `false`, this Exadata Infrastructure is a secondary contact.
         /// </summary>
-        public readonly bool IsPrimary;
+        public readonly bool? IsPrimary;
         /// <summary>
         /// Name of the month of the year.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// The phone number for the Exadata Infrastructure contact.
         /// </summary>
-        public readonly string PhoneNumber;
+        public readonly string? PhoneNumber;
 
         [OutputConstructor]
         private GetExadataInfrastructureContactResult(
-            string email,
+            string? email,
 
-            bool isContactMosValidated,
+            bool? isContactMosValidated,
 
-            bool isPrimary,
+            bool? isPrimary,
 
-            string name,
+            string? name,
 
-            string phoneNumber)
+            string? phoneNumber)
         {
             Email = email;
             IsContactMosValidated = isContactMosValidated;

@@ -16,29 +16,29 @@ namespace Pulumi.Oci.DataScience.Outputs
         /// <summary>
         /// The number of cores associated with this job run shape.
         /// </summary>
-        public readonly int CoreCount;
+        public readonly int? CoreCount;
         /// <summary>
         /// The number of cores associated with this job shape.
         /// </summary>
-        public readonly int MemoryInGbs;
+        public readonly int? MemoryInGbs;
         /// <summary>
         /// The name of the job shape.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// The family that the compute shape belongs to.
         /// </summary>
-        public readonly string ShapeSeries;
+        public readonly string? ShapeSeries;
 
         [OutputConstructor]
         private GetJobShapesJobShapeResult(
-            int coreCount,
+            int? coreCount,
 
-            int memoryInGbs,
+            int? memoryInGbs,
 
-            string name,
+            string? name,
 
-            string shapeSeries)
+            string? shapeSeries)
         {
             CoreCount = coreCount;
             MemoryInGbs = memoryInGbs;

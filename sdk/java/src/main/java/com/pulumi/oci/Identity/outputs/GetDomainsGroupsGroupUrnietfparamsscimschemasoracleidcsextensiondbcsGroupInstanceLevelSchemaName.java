@@ -6,6 +6,8 @@ package com.pulumi.oci.Identity.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDomainsGroupsGroupUrnietfparamsscimschemasoracleidcsextensiondbcsGroupInstanceLevelSchemaName {
@@ -13,27 +15,27 @@ public final class GetDomainsGroupsGroupUrnietfparamsscimschemasoracleidcsextens
      * @return App Id of DBCS App instance
      * 
      */
-    private String dbInstanceId;
+    private @Nullable String dbInstanceId;
     /**
      * @return The DBCS schema-name granted to this Group for the DB instance that &#39;dbInstanceId&#39; specifies.
      * 
      */
-    private String schemaName;
+    private @Nullable String schemaName;
 
     private GetDomainsGroupsGroupUrnietfparamsscimschemasoracleidcsextensiondbcsGroupInstanceLevelSchemaName() {}
     /**
      * @return App Id of DBCS App instance
      * 
      */
-    public String dbInstanceId() {
-        return this.dbInstanceId;
+    public Optional<String> dbInstanceId() {
+        return Optional.ofNullable(this.dbInstanceId);
     }
     /**
      * @return The DBCS schema-name granted to this Group for the DB instance that &#39;dbInstanceId&#39; specifies.
      * 
      */
-    public String schemaName() {
-        return this.schemaName;
+    public Optional<String> schemaName() {
+        return Optional.ofNullable(this.schemaName);
     }
 
     public static Builder builder() {
@@ -45,8 +47,8 @@ public final class GetDomainsGroupsGroupUrnietfparamsscimschemasoracleidcsextens
     }
     @CustomType.Builder
     public static final class Builder {
-        private String dbInstanceId;
-        private String schemaName;
+        private @Nullable String dbInstanceId;
+        private @Nullable String schemaName;
         public Builder() {}
         public Builder(GetDomainsGroupsGroupUrnietfparamsscimschemasoracleidcsextensiondbcsGroupInstanceLevelSchemaName defaults) {
     	      Objects.requireNonNull(defaults);
@@ -55,13 +57,13 @@ public final class GetDomainsGroupsGroupUrnietfparamsscimschemasoracleidcsextens
         }
 
         @CustomType.Setter
-        public Builder dbInstanceId(String dbInstanceId) {
-            this.dbInstanceId = Objects.requireNonNull(dbInstanceId);
+        public Builder dbInstanceId(@Nullable String dbInstanceId) {
+            this.dbInstanceId = dbInstanceId;
             return this;
         }
         @CustomType.Setter
-        public Builder schemaName(String schemaName) {
-            this.schemaName = Objects.requireNonNull(schemaName);
+        public Builder schemaName(@Nullable String schemaName) {
+            this.schemaName = schemaName;
             return this;
         }
         public GetDomainsGroupsGroupUrnietfparamsscimschemasoracleidcsextensiondbcsGroupInstanceLevelSchemaName build() {

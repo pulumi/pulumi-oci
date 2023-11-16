@@ -8,6 +8,8 @@ import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetNetworkFirewallPolicyAddressListResult {
@@ -15,8 +17,8 @@ public final class GetNetworkFirewallPolicyAddressListResult {
      * @return List of addresses.
      * 
      */
-    private List<String> addresses;
-    private String id;
+    private @Nullable List<String> addresses;
+    private @Nullable String id;
     /**
      * @return Unique name to identify the group of addresses to be used in the policy rules.
      * 
@@ -27,17 +29,17 @@ public final class GetNetworkFirewallPolicyAddressListResult {
      * @return OCID of the Network Firewall Policy this Address List belongs to.
      * 
      */
-    private String parentResourceId;
+    private @Nullable String parentResourceId;
     /**
      * @return Count of total Addresses in the AddressList
      * 
      */
-    private Integer totalAddresses;
+    private @Nullable Integer totalAddresses;
     /**
      * @return Type of address List.
      * 
      */
-    private String type;
+    private @Nullable String type;
 
     private GetNetworkFirewallPolicyAddressListResult() {}
     /**
@@ -45,10 +47,10 @@ public final class GetNetworkFirewallPolicyAddressListResult {
      * 
      */
     public List<String> addresses() {
-        return this.addresses;
+        return this.addresses == null ? List.of() : this.addresses;
     }
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Unique name to identify the group of addresses to be used in the policy rules.
@@ -64,22 +66,22 @@ public final class GetNetworkFirewallPolicyAddressListResult {
      * @return OCID of the Network Firewall Policy this Address List belongs to.
      * 
      */
-    public String parentResourceId() {
-        return this.parentResourceId;
+    public Optional<String> parentResourceId() {
+        return Optional.ofNullable(this.parentResourceId);
     }
     /**
      * @return Count of total Addresses in the AddressList
      * 
      */
-    public Integer totalAddresses() {
-        return this.totalAddresses;
+    public Optional<Integer> totalAddresses() {
+        return Optional.ofNullable(this.totalAddresses);
     }
     /**
      * @return Type of address List.
      * 
      */
-    public String type() {
-        return this.type;
+    public Optional<String> type() {
+        return Optional.ofNullable(this.type);
     }
 
     public static Builder builder() {
@@ -91,13 +93,13 @@ public final class GetNetworkFirewallPolicyAddressListResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<String> addresses;
-        private String id;
+        private @Nullable List<String> addresses;
+        private @Nullable String id;
         private String name;
         private String networkFirewallPolicyId;
-        private String parentResourceId;
-        private Integer totalAddresses;
-        private String type;
+        private @Nullable String parentResourceId;
+        private @Nullable Integer totalAddresses;
+        private @Nullable String type;
         public Builder() {}
         public Builder(GetNetworkFirewallPolicyAddressListResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -111,16 +113,16 @@ public final class GetNetworkFirewallPolicyAddressListResult {
         }
 
         @CustomType.Setter
-        public Builder addresses(List<String> addresses) {
-            this.addresses = Objects.requireNonNull(addresses);
+        public Builder addresses(@Nullable List<String> addresses) {
+            this.addresses = addresses;
             return this;
         }
         public Builder addresses(String... addresses) {
             return addresses(List.of(addresses));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -134,18 +136,18 @@ public final class GetNetworkFirewallPolicyAddressListResult {
             return this;
         }
         @CustomType.Setter
-        public Builder parentResourceId(String parentResourceId) {
-            this.parentResourceId = Objects.requireNonNull(parentResourceId);
+        public Builder parentResourceId(@Nullable String parentResourceId) {
+            this.parentResourceId = parentResourceId;
             return this;
         }
         @CustomType.Setter
-        public Builder totalAddresses(Integer totalAddresses) {
-            this.totalAddresses = Objects.requireNonNull(totalAddresses);
+        public Builder totalAddresses(@Nullable Integer totalAddresses) {
+            this.totalAddresses = totalAddresses;
             return this;
         }
         @CustomType.Setter
-        public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+        public Builder type(@Nullable String type) {
+            this.type = type;
             return this;
         }
         public GetNetworkFirewallPolicyAddressListResult build() {

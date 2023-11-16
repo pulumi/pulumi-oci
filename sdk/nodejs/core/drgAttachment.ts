@@ -60,15 +60,15 @@ export class DrgAttachment extends pulumi.CustomResource {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the DRG attachment.
      */
-    public /*out*/ readonly compartmentId!: pulumi.Output<string>;
+    public /*out*/ readonly compartmentId!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    public readonly displayName!: pulumi.Output<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
      */
@@ -78,24 +78,24 @@ export class DrgAttachment extends pulumi.CustomResource {
      *
      * The DRG route table manages traffic inside the DRG.
      */
-    public readonly drgRouteTableId!: pulumi.Output<string>;
+    public readonly drgRouteTableId!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the export route distribution used to specify how routes in the assigned DRG route table are advertised to the attachment. If this value is null, no routes are advertised through this attachment.
      * This field cannot be set by the user while creating the resource and gets a default value on creation. This can be only be updated to its default value. If this fields needs to be set to null, removeExportDrgRouteDistributionTrigger needs to be used.
      */
-    public readonly exportDrgRouteDistributionId!: pulumi.Output<string>;
+    public readonly exportDrgRouteDistributionId!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * Indicates whether the DRG attachment and attached network live in a different tenancy than the DRG.  Example: `false`
      */
-    public /*out*/ readonly isCrossTenancy!: pulumi.Output<boolean>;
+    public /*out*/ readonly isCrossTenancy!: pulumi.Output<boolean | undefined>;
     /**
      * (Updatable)
      */
-    public readonly networkDetails!: pulumi.Output<outputs.Core.DrgAttachmentNetworkDetails>;
+    public readonly networkDetails!: pulumi.Output<outputs.Core.DrgAttachmentNetworkDetails | undefined>;
     /**
      * (Updatable) An optional property when set to true during update disables the export of route Distribution by setting exportDrgRouteDistributionId to null.
      *
@@ -111,19 +111,19 @@ export class DrgAttachment extends pulumi.CustomResource {
      * * [Transit Routing: Private Access to Oracle Services](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitroutingoracleservices.htm)
      * This field is deprecated. Instead, use the networkDetails field to specify the VCN route table for this attachment.
      */
-    public readonly routeTableId!: pulumi.Output<string>;
+    public readonly routeTableId!: pulumi.Output<string | undefined>;
     /**
      * The DRG attachment's current state.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * The date and time the DRG attachment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * (Optional) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN. This field is deprecated. Instead, use the `networkDetails` field to specify the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the attached resource.
      */
-    public readonly vcnId!: pulumi.Output<string>;
+    public readonly vcnId!: pulumi.Output<string | undefined>;
 
     /**
      * Create a DrgAttachment resource with the given unique name, arguments, and options.

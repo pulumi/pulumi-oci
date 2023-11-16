@@ -70,11 +70,11 @@ export interface GetMetastoresResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The list of metastores.
      */
-    readonly metastores: outputs.DataCatalog.GetMetastoresMetastore[];
+    readonly metastores?: outputs.DataCatalog.GetMetastoresMetastore[];
     /**
      * The current state of the metastore.
      */

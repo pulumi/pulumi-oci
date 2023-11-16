@@ -6,6 +6,8 @@ package com.pulumi.oci.Kms.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetKeysKeyExternalKeyReferenceDetail {
@@ -13,27 +15,27 @@ public final class GetKeysKeyExternalKeyReferenceDetail {
      * @return ExternalKeyId refers to the globally unique key Id associated with the key created in external vault in CTM.
      * 
      */
-    private String externalKeyId;
+    private @Nullable String externalKeyId;
     /**
      * @return Key version ID associated with the external key.
      * 
      */
-    private String externalKeyVersionId;
+    private @Nullable String externalKeyVersionId;
 
     private GetKeysKeyExternalKeyReferenceDetail() {}
     /**
      * @return ExternalKeyId refers to the globally unique key Id associated with the key created in external vault in CTM.
      * 
      */
-    public String externalKeyId() {
-        return this.externalKeyId;
+    public Optional<String> externalKeyId() {
+        return Optional.ofNullable(this.externalKeyId);
     }
     /**
      * @return Key version ID associated with the external key.
      * 
      */
-    public String externalKeyVersionId() {
-        return this.externalKeyVersionId;
+    public Optional<String> externalKeyVersionId() {
+        return Optional.ofNullable(this.externalKeyVersionId);
     }
 
     public static Builder builder() {
@@ -45,8 +47,8 @@ public final class GetKeysKeyExternalKeyReferenceDetail {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String externalKeyId;
-        private String externalKeyVersionId;
+        private @Nullable String externalKeyId;
+        private @Nullable String externalKeyVersionId;
         public Builder() {}
         public Builder(GetKeysKeyExternalKeyReferenceDetail defaults) {
     	      Objects.requireNonNull(defaults);
@@ -55,13 +57,13 @@ public final class GetKeysKeyExternalKeyReferenceDetail {
         }
 
         @CustomType.Setter
-        public Builder externalKeyId(String externalKeyId) {
-            this.externalKeyId = Objects.requireNonNull(externalKeyId);
+        public Builder externalKeyId(@Nullable String externalKeyId) {
+            this.externalKeyId = externalKeyId;
             return this;
         }
         @CustomType.Setter
-        public Builder externalKeyVersionId(String externalKeyVersionId) {
-            this.externalKeyVersionId = Objects.requireNonNull(externalKeyVersionId);
+        public Builder externalKeyVersionId(@Nullable String externalKeyVersionId) {
+            this.externalKeyVersionId = externalKeyVersionId;
             return this;
         }
         public GetKeysKeyExternalKeyReferenceDetail build() {

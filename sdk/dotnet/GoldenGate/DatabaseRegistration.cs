@@ -83,25 +83,25 @@ namespace Pulumi.Oci.GoldenGate
         /// (Updatable) Connect descriptor or Easy Connect Naming method used to connect to a database.
         /// </summary>
         [Output("connectionString")]
-        public Output<string> ConnectionString { get; private set; } = null!;
+        public Output<string?> ConnectionString { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database being referenced.
         /// </summary>
         [Output("databaseId")]
-        public Output<string> DatabaseId { get; private set; } = null!;
+        public Output<string?> DatabaseId { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Metadata about this specific object.
         /// </summary>
         [Output("description")]
-        public Output<string> Description { get; private set; } = null!;
+        public Output<string?> Description { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) An object's Display Name.
@@ -119,25 +119,25 @@ namespace Pulumi.Oci.GoldenGate
         /// (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// The private IP address in the customer's VCN of the customer's endpoint, typically a database.
         /// </summary>
         [Output("ipAddress")]
-        public Output<string> IpAddress { get; private set; } = null!;
+        public Output<string?> IpAddress { get; private set; } = null!;
 
         /// <summary>
         /// Refers to the customer's master key OCID.  If provided, it references a key to manage secrets. Customers must add policies to permit GoldenGate to use this key.
         /// </summary>
         [Output("keyId")]
-        public Output<string> KeyId { get; private set; } = null!;
+        public Output<string?> KeyId { get; private set; } = null!;
 
         /// <summary>
         /// Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
         /// </summary>
         [Output("lifecycleDetails")]
-        public Output<string> LifecycleDetails { get; private set; } = null!;
+        public Output<string?> LifecycleDetails { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The password Oracle GoldenGate uses to connect the associated system of the given technology. It must conform to the specific security requirements including length, case sensitivity, and so on.
@@ -149,55 +149,55 @@ namespace Pulumi.Oci.GoldenGate
         /// A Private Endpoint IP address created in the customer's subnet.  A customer database can expect network traffic initiated by GoldenGate Service from this IP address.  It can also send network traffic to this IP address, typically in response to requests from GoldenGate Service.  The customer may use this IP address in Security Lists or Network Security Groups (NSG) as needed.
         /// </summary>
         [Output("rcePrivateIp")]
-        public Output<string> RcePrivateIp { get; private set; } = null!;
+        public Output<string?> RcePrivateIp { get; private set; } = null!;
 
         /// <summary>
         /// The OCID of the compartment where the GoldenGate Secret will be created.  If provided, it references a key to manage secrets. Customers must add policies to permit GoldenGate to use this key.
         /// </summary>
         [Output("secretCompartmentId")]
-        public Output<string> SecretCompartmentId { get; private set; } = null!;
+        public Output<string?> SecretCompartmentId { get; private set; } = null!;
 
         /// <summary>
         /// The OCID of the customer's GoldenGate Service Secret.  If provided, it references a key that customers will be required to ensure the policies are established  to permit GoldenGate to use this Secret.
         /// </summary>
         [Output("secretId")]
-        public Output<string> SecretId { get; private set; } = null!;
+        public Output<string?> SecretId { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The mode of the database connection session to be established by the data client. 'REDIRECT' - for a RAC database, 'DIRECT' - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
         /// </summary>
         [Output("sessionMode")]
-        public Output<string> SessionMode { get; private set; } = null!;
+        public Output<string?> SessionMode { get; private set; } = null!;
 
         /// <summary>
         /// Possible lifecycle states.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet being referenced.
         /// </summary>
         [Output("subnetId")]
-        public Output<string> SubnetId { get; private set; } = null!;
+        public Output<string?> SubnetId { get; private set; } = null!;
 
         /// <summary>
         /// The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
         /// </summary>
         [Output("systemTags")]
-        public Output<ImmutableDictionary<string, object>> SystemTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> SystemTags { get; private set; } = null!;
 
         /// <summary>
         /// The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         /// </summary>
         [Output("timeUpdated")]
-        public Output<string> TimeUpdated { get; private set; } = null!;
+        public Output<string?> TimeUpdated { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The username Oracle GoldenGate uses to connect the associated system of the given technology. This username must already exist and be available by the system/application to be connected to and must conform to the case sensitivty requirments defined in it.
@@ -209,7 +209,7 @@ namespace Pulumi.Oci.GoldenGate
         /// Refers to the customer's vault OCID.  If provided, it references a vault where GoldenGate can manage secrets. Customers must add policies to permit GoldenGate to manage secrets contained within this vault.
         /// </summary>
         [Output("vaultId")]
-        public Output<string> VaultId { get; private set; } = null!;
+        public Output<string?> VaultId { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database.  This attribute is expected to be base64 encoded. 
@@ -219,7 +219,7 @@ namespace Pulumi.Oci.GoldenGate
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("wallet")]
-        public Output<string> Wallet { get; private set; } = null!;
+        public Output<string?> Wallet { get; private set; } = null!;
 
 
         /// <summary>

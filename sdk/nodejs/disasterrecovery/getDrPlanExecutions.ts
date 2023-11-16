@@ -77,7 +77,7 @@ export interface GetDrPlanExecutionsResult {
     /**
      * The list of dr_plan_execution_collection.
      */
-    readonly drPlanExecutionCollections: outputs.DisasterRecovery.GetDrPlanExecutionsDrPlanExecutionCollection[];
+    readonly drPlanExecutionCollections?: outputs.DisasterRecovery.GetDrPlanExecutionsDrPlanExecutionCollection[];
     readonly drPlanExecutionId?: string;
     readonly drPlanExecutionType?: string;
     /**
@@ -88,7 +88,7 @@ export interface GetDrPlanExecutionsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The current state of the DR plan execution.
      */

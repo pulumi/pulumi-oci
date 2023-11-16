@@ -52,7 +52,7 @@ class GetNodePoolOptionResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -60,18 +60,12 @@ class GetNodePoolOptionResult:
 
     @property
     @pulumi.getter
-    def images(self) -> Sequence[str]:
-        """
-        Deprecated. See sources. When creating a node pool, only image names contained in this property can be passed to the `node_image_name` property.
-        """
+    def images(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "images")
 
     @property
     @pulumi.getter(name="kubernetesVersions")
-    def kubernetes_versions(self) -> Sequence[str]:
-        """
-        Available Kubernetes versions.
-        """
+    def kubernetes_versions(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "kubernetes_versions")
 
     @property
@@ -81,18 +75,12 @@ class GetNodePoolOptionResult:
 
     @property
     @pulumi.getter
-    def shapes(self) -> Sequence[str]:
-        """
-        Available shapes for nodes.
-        """
+    def shapes(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "shapes")
 
     @property
     @pulumi.getter
-    def sources(self) -> Sequence['outputs.GetNodePoolOptionSourceResult']:
-        """
-        Available source of the node.
-        """
+    def sources(self) -> Optional[Sequence['outputs.GetNodePoolOptionSourceResult']]:
         return pulumi.get(self, "sources")
 
 
@@ -115,23 +103,7 @@ def get_node_pool_option(compartment_id: Optional[str] = None,
                          node_pool_option_id: Optional[str] = None,
                          opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetNodePoolOptionResult:
     """
-    This data source provides details about a specific Node Pool Option resource in Oracle Cloud Infrastructure Container Engine service.
-
-    Get options available for node pools.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_node_pool_option = oci.ContainerEngine.get_node_pool_option(node_pool_option_id=oci_containerengine_node_pool_option["test_node_pool_option"]["id"],
-        compartment_id=var["compartment_id"])
-    ```
-
-
-    :param str compartment_id: The OCID of the compartment.
-    :param str node_pool_option_id: The id of the option set to retrieve. Use "all" get all options, or use a cluster ID to get options specific to the provided cluster.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -154,22 +126,6 @@ def get_node_pool_option_output(compartment_id: Optional[pulumi.Input[Optional[s
                                 node_pool_option_id: Optional[pulumi.Input[str]] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNodePoolOptionResult]:
     """
-    This data source provides details about a specific Node Pool Option resource in Oracle Cloud Infrastructure Container Engine service.
-
-    Get options available for node pools.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_node_pool_option = oci.ContainerEngine.get_node_pool_option(node_pool_option_id=oci_containerengine_node_pool_option["test_node_pool_option"]["id"],
-        compartment_id=var["compartment_id"])
-    ```
-
-
-    :param str compartment_id: The OCID of the compartment.
-    :param str node_pool_option_id: The id of the option set to retrieve. Use "all" get all options, or use a cluster ID to get options specific to the provided cluster.
+    Use this data source to access information about an existing resource.
     """
     ...

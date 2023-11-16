@@ -16,17 +16,17 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// Key or name of the tag.
         /// </summary>
-        public readonly string Key;
+        public readonly string? Key;
         /// <summary>
         /// The SCIM ID of the user for whom the trust-token was issued.
         /// </summary>
-        public readonly string Value;
+        public readonly string? Value;
 
         [OutputConstructor]
         private GetDomainsMyTrustedUserAgentsMyTrustedUserAgentTagResult(
-            string key,
+            string? key,
 
-            string value)
+            string? value)
         {
             Key = key;
             Value = value;

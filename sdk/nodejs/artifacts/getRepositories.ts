@@ -90,7 +90,7 @@ export interface GetRepositoriesResult {
     /**
      * The list of repository_collection.
      */
-    readonly repositoryCollections: outputs.Artifacts.GetRepositoriesRepositoryCollection[];
+    readonly repositoryCollections?: outputs.Artifacts.GetRepositoriesRepositoryCollection[];
     /**
      * The current state of the repository.
      */

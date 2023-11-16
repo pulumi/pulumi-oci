@@ -29,12 +29,12 @@ public final class GetJavaFamiliesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The list of java_family_collection.
      * 
      */
-    private List<GetJavaFamiliesJavaFamilyCollection> javaFamilyCollections;
+    private @Nullable List<GetJavaFamiliesJavaFamilyCollection> javaFamilyCollections;
 
     private GetJavaFamiliesResult() {}
     /**
@@ -58,15 +58,15 @@ public final class GetJavaFamiliesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The list of java_family_collection.
      * 
      */
     public List<GetJavaFamiliesJavaFamilyCollection> javaFamilyCollections() {
-        return this.javaFamilyCollections;
+        return this.javaFamilyCollections == null ? List.of() : this.javaFamilyCollections;
     }
 
     public static Builder builder() {
@@ -81,8 +81,8 @@ public final class GetJavaFamiliesResult {
         private @Nullable String displayName;
         private @Nullable String familyVersion;
         private @Nullable List<GetJavaFamiliesFilter> filters;
-        private String id;
-        private List<GetJavaFamiliesJavaFamilyCollection> javaFamilyCollections;
+        private @Nullable String id;
+        private @Nullable List<GetJavaFamiliesJavaFamilyCollection> javaFamilyCollections;
         public Builder() {}
         public Builder(GetJavaFamiliesResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -112,13 +112,13 @@ public final class GetJavaFamiliesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder javaFamilyCollections(List<GetJavaFamiliesJavaFamilyCollection> javaFamilyCollections) {
-            this.javaFamilyCollections = Objects.requireNonNull(javaFamilyCollections);
+        public Builder javaFamilyCollections(@Nullable List<GetJavaFamiliesJavaFamilyCollection> javaFamilyCollections) {
+            this.javaFamilyCollections = javaFamilyCollections;
             return this;
         }
         public Builder javaFamilyCollections(GetJavaFamiliesJavaFamilyCollection... javaFamilyCollections) {

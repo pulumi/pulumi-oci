@@ -16,17 +16,17 @@ namespace Pulumi.Oci.Core.Outputs
         /// <summary>
         /// A description of the location.
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// The name of the location.  Example: `CyrusOne, Chandler, AZ`
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
 
         [OutputConstructor]
         private GetCrossConnectLocationsCrossConnectLocationResult(
-            string description,
+            string? description,
 
-            string name)
+            string? name)
         {
             Description = description;
             Name = name;

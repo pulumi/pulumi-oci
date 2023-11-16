@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Db Systems Upgrade resource in Oracle Cloud Infrastructure Database service.
@@ -56,23 +55,23 @@ type DbSystemsUpgrade struct {
 	// The operating system upgrade action.
 	Action pulumi.StringOutput `pulumi:"action"`
 	// The name of the availability domain that the DB system is located in.
-	AvailabilityDomain pulumi.StringOutput `pulumi:"availabilityDomain"`
+	AvailabilityDomain pulumi.StringPtrOutput `pulumi:"availabilityDomain"`
 	// A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
 	BackupNetworkNsgIds pulumi.StringArrayOutput `pulumi:"backupNetworkNsgIds"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup network subnet the DB system is associated with. Applicable only to Exadata DB systems.
-	BackupSubnetId pulumi.StringOutput `pulumi:"backupSubnetId"`
+	BackupSubnetId pulumi.StringPtrOutput `pulumi:"backupSubnetId"`
 	// The cluster name for Exadata and 2-node RAC virtual machine DB systems. The cluster name must begin with an alphabetic character, and may contain hyphens (-). Underscores (_) are not permitted. The cluster name can be no longer than 11 characters and is not case sensitive.
-	ClusterName pulumi.StringOutput `pulumi:"clusterName"`
+	ClusterName pulumi.StringPtrOutput `pulumi:"clusterName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrOutput `pulumi:"compartmentId"`
 	// The number of CPU cores enabled on the DB system.
-	CpuCoreCount pulumi.IntOutput `pulumi:"cpuCoreCount"`
+	CpuCoreCount pulumi.IntPtrOutput `pulumi:"cpuCoreCount"`
 	// The percentage assigned to DATA storage (user data and database files). The remaining percentage is assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). Accepted values are 40 and 80. The default is 80 percent assigned to DATA storage. Not applicable for virtual machine DB systems.
-	DataStoragePercentage pulumi.IntOutput `pulumi:"dataStoragePercentage"`
+	DataStoragePercentage pulumi.IntPtrOutput `pulumi:"dataStoragePercentage"`
 	// The data storage size, in gigabytes, that is currently available to the DB system. Applies only for virtual machine DB systems.
-	DataStorageSizeInGb pulumi.IntOutput `pulumi:"dataStorageSizeInGb"`
+	DataStorageSizeInGb pulumi.IntPtrOutput `pulumi:"dataStorageSizeInGb"`
 	// The Oracle Database edition that applies to all the databases on the DB system.
-	DatabaseEdition pulumi.StringOutput `pulumi:"databaseEdition"`
+	DatabaseEdition pulumi.StringPtrOutput `pulumi:"databaseEdition"`
 	// The DB system [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	DbSystemId pulumi.StringOutput `pulumi:"dbSystemId"`
 	// The DB system options.
@@ -80,83 +79,83 @@ type DbSystemsUpgrade struct {
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// The type of redundancy configured for the DB system. NORMAL is 2-way redundancy. HIGH is 3-way redundancy.
-	DiskRedundancy pulumi.StringOutput `pulumi:"diskRedundancy"`
+	DiskRedundancy pulumi.StringPtrOutput `pulumi:"diskRedundancy"`
 	// The user-friendly name for the DB system. The name does not have to be unique.
-	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrOutput `pulumi:"displayName"`
 	// The domain name for the DB system.
-	Domain pulumi.StringOutput `pulumi:"domain"`
+	Domain pulumi.StringPtrOutput `pulumi:"domain"`
 	// List of the Fault Domains in which this DB system is provisioned.
 	FaultDomains pulumi.StringArrayOutput `pulumi:"faultDomains"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// The hostname for the DB system.
-	Hostname pulumi.StringOutput `pulumi:"hostname"`
+	Hostname pulumi.StringPtrOutput `pulumi:"hostname"`
 	// The IORM settings of the Exadata DB system.
 	IormConfigCaches DbSystemsUpgradeIormConfigCachArrayOutput `pulumi:"iormConfigCaches"`
 	// If true, rollback time is updated even if operating system upgrade history contains errors.
-	IsSnapshotRetentionDaysForceUpdated pulumi.BoolOutput `pulumi:"isSnapshotRetentionDaysForceUpdated"`
+	IsSnapshotRetentionDaysForceUpdated pulumi.BoolPtrOutput `pulumi:"isSnapshotRetentionDaysForceUpdated"`
 	// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
-	KmsKeyId pulumi.StringOutput `pulumi:"kmsKeyId"`
+	KmsKeyId pulumi.StringPtrOutput `pulumi:"kmsKeyId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
-	LastMaintenanceRunId pulumi.StringOutput `pulumi:"lastMaintenanceRunId"`
+	LastMaintenanceRunId pulumi.StringPtrOutput `pulumi:"lastMaintenanceRunId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last patch history. This value is updated as soon as a patch operation starts.
-	LastPatchHistoryEntryId pulumi.StringOutput `pulumi:"lastPatchHistoryEntryId"`
+	LastPatchHistoryEntryId pulumi.StringPtrOutput `pulumi:"lastPatchHistoryEntryId"`
 	// The Oracle license model that applies to all the databases on the DB system. The default is LICENSE_INCLUDED.
-	LicenseModel pulumi.StringOutput `pulumi:"licenseModel"`
+	LicenseModel pulumi.StringPtrOutput `pulumi:"licenseModel"`
 	// Additional information about the current lifecycle state.
-	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrOutput `pulumi:"lifecycleDetails"`
 	// The port number configured for the listener on the DB system.
-	ListenerPort pulumi.IntOutput `pulumi:"listenerPort"`
+	ListenerPort pulumi.IntPtrOutput `pulumi:"listenerPort"`
 	// The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
 	MaintenanceWindows DbSystemsUpgradeMaintenanceWindowArrayOutput `pulumi:"maintenanceWindows"`
 	// A valid Oracle Grid Infrastructure (GI) software version.
-	NewGiVersion pulumi.StringOutput `pulumi:"newGiVersion"`
+	NewGiVersion pulumi.StringPtrOutput `pulumi:"newGiVersion"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
-	NextMaintenanceRunId pulumi.StringOutput `pulumi:"nextMaintenanceRunId"`
+	NextMaintenanceRunId pulumi.StringPtrOutput `pulumi:"nextMaintenanceRunId"`
 	// The number of nodes in the DB system. For RAC DB systems, the value is greater than 1.
-	NodeCount pulumi.IntOutput `pulumi:"nodeCount"`
+	NodeCount pulumi.IntPtrOutput `pulumi:"nodeCount"`
 	// A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that this resource belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
 	// * Autonomous Databases with private access require at least 1 Network Security Group (NSG). The nsgIds array cannot be empty.
 	NsgIds pulumi.StringArrayOutput `pulumi:"nsgIds"`
 	// The point in time for a cloned database system when the data disks were cloned from the source database system, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-	PointInTimeDataDiskCloneTimestamp pulumi.StringOutput `pulumi:"pointInTimeDataDiskCloneTimestamp"`
+	PointInTimeDataDiskCloneTimestamp pulumi.StringPtrOutput `pulumi:"pointInTimeDataDiskCloneTimestamp"`
 	// The RECO/REDO storage size, in gigabytes, that is currently allocated to the DB system. Applies only for virtual machine DB systems.
-	RecoStorageSizeInGb pulumi.IntOutput `pulumi:"recoStorageSizeInGb"`
+	RecoStorageSizeInGb pulumi.IntPtrOutput `pulumi:"recoStorageSizeInGb"`
 	// The FQDN of the DNS record for the SCAN IP addresses that are associated with the DB system.
-	ScanDnsName pulumi.StringOutput `pulumi:"scanDnsName"`
+	ScanDnsName pulumi.StringPtrOutput `pulumi:"scanDnsName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DNS record for the SCAN IP addresses that are associated with the DB system.
-	ScanDnsRecordId pulumi.StringOutput `pulumi:"scanDnsRecordId"`
+	ScanDnsRecordId pulumi.StringPtrOutput `pulumi:"scanDnsRecordId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IP addresses associated with the DB system. SCAN IP addresses are typically used for load balancing and are not assigned to any interface. Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
 	ScanIpIds pulumi.StringArrayOutput `pulumi:"scanIpIds"`
 	// The shape of the DB system. The shape determines resources to allocate to the DB system.
 	// * For virtual machine shapes, the number of CPU cores and memory
 	// * For bare metal and Exadata shapes, the number of CPU cores, storage, and memory
-	Shape pulumi.StringOutput `pulumi:"shape"`
+	Shape pulumi.StringPtrOutput `pulumi:"shape"`
 	// The retention period, in days, for the snapshot that allows you to perform a rollback of the upgrade operation. After this number of days passes, you cannot roll back the upgrade.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	SnapshotRetentionPeriodInDays pulumi.IntOutput `pulumi:"snapshotRetentionPeriodInDays"`
+	SnapshotRetentionPeriodInDays pulumi.IntPtrOutput `pulumi:"snapshotRetentionPeriodInDays"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
-	SourceDbSystemId pulumi.StringOutput `pulumi:"sourceDbSystemId"`
+	SourceDbSystemId pulumi.StringPtrOutput `pulumi:"sourceDbSystemId"`
 	// True, if Sparse Diskgroup is configured for Exadata dbsystem, False, if Sparse diskgroup was not configured.
-	SparseDiskgroup pulumi.BoolOutput `pulumi:"sparseDiskgroup"`
+	SparseDiskgroup pulumi.BoolPtrOutput `pulumi:"sparseDiskgroup"`
 	// The public key portion of one or more key pairs used for SSH access to the DB system.
 	SshPublicKeys pulumi.StringArrayOutput `pulumi:"sshPublicKeys"`
 	// The current state of the DB system.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the DB system is associated with.
-	SubnetId pulumi.StringOutput `pulumi:"subnetId"`
+	SubnetId pulumi.StringPtrOutput `pulumi:"subnetId"`
 	// The date and time the DB system was created.
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The time zone of the DB system. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
-	TimeZone pulumi.StringOutput `pulumi:"timeZone"`
+	TimeZone pulumi.StringPtrOutput `pulumi:"timeZone"`
 	// The Oracle Database version of the DB system.
-	Version pulumi.StringOutput `pulumi:"version"`
+	Version pulumi.StringPtrOutput `pulumi:"version"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) addresses associated with the DB system. The Cluster Ready Services (CRS) creates and maintains one VIP address for each node in the DB system to enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
 	VipIds pulumi.StringArrayOutput `pulumi:"vipIds"`
 	// The OCID of the zone the DB system is associated with.
-	ZoneId pulumi.StringOutput `pulumi:"zoneId"`
+	ZoneId pulumi.StringPtrOutput `pulumi:"zoneId"`
 }
 
 // NewDbSystemsUpgrade registers a new resource with the given unique name, arguments, and options.
@@ -468,12 +467,6 @@ func (i *DbSystemsUpgrade) ToDbSystemsUpgradeOutputWithContext(ctx context.Conte
 	return pulumi.ToOutputWithContext(ctx, i).(DbSystemsUpgradeOutput)
 }
 
-func (i *DbSystemsUpgrade) ToOutput(ctx context.Context) pulumix.Output[*DbSystemsUpgrade] {
-	return pulumix.Output[*DbSystemsUpgrade]{
-		OutputState: i.ToDbSystemsUpgradeOutputWithContext(ctx).OutputState,
-	}
-}
-
 // DbSystemsUpgradeArrayInput is an input type that accepts DbSystemsUpgradeArray and DbSystemsUpgradeArrayOutput values.
 // You can construct a concrete instance of `DbSystemsUpgradeArrayInput` via:
 //
@@ -497,12 +490,6 @@ func (i DbSystemsUpgradeArray) ToDbSystemsUpgradeArrayOutput() DbSystemsUpgradeA
 
 func (i DbSystemsUpgradeArray) ToDbSystemsUpgradeArrayOutputWithContext(ctx context.Context) DbSystemsUpgradeArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(DbSystemsUpgradeArrayOutput)
-}
-
-func (i DbSystemsUpgradeArray) ToOutput(ctx context.Context) pulumix.Output[[]*DbSystemsUpgrade] {
-	return pulumix.Output[[]*DbSystemsUpgrade]{
-		OutputState: i.ToDbSystemsUpgradeArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // DbSystemsUpgradeMapInput is an input type that accepts DbSystemsUpgradeMap and DbSystemsUpgradeMapOutput values.
@@ -530,12 +517,6 @@ func (i DbSystemsUpgradeMap) ToDbSystemsUpgradeMapOutputWithContext(ctx context.
 	return pulumi.ToOutputWithContext(ctx, i).(DbSystemsUpgradeMapOutput)
 }
 
-func (i DbSystemsUpgradeMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*DbSystemsUpgrade] {
-	return pulumix.Output[map[string]*DbSystemsUpgrade]{
-		OutputState: i.ToDbSystemsUpgradeMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DbSystemsUpgradeOutput struct{ *pulumi.OutputState }
 
 func (DbSystemsUpgradeOutput) ElementType() reflect.Type {
@@ -550,20 +531,14 @@ func (o DbSystemsUpgradeOutput) ToDbSystemsUpgradeOutputWithContext(ctx context.
 	return o
 }
 
-func (o DbSystemsUpgradeOutput) ToOutput(ctx context.Context) pulumix.Output[*DbSystemsUpgrade] {
-	return pulumix.Output[*DbSystemsUpgrade]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The operating system upgrade action.
 func (o DbSystemsUpgradeOutput) Action() pulumi.StringOutput {
 	return o.ApplyT(func(v *DbSystemsUpgrade) pulumi.StringOutput { return v.Action }).(pulumi.StringOutput)
 }
 
 // The name of the availability domain that the DB system is located in.
-func (o DbSystemsUpgradeOutput) AvailabilityDomain() pulumi.StringOutput {
-	return o.ApplyT(func(v *DbSystemsUpgrade) pulumi.StringOutput { return v.AvailabilityDomain }).(pulumi.StringOutput)
+func (o DbSystemsUpgradeOutput) AvailabilityDomain() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DbSystemsUpgrade) pulumi.StringPtrOutput { return v.AvailabilityDomain }).(pulumi.StringPtrOutput)
 }
 
 // A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
@@ -572,38 +547,38 @@ func (o DbSystemsUpgradeOutput) BackupNetworkNsgIds() pulumi.StringArrayOutput {
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup network subnet the DB system is associated with. Applicable only to Exadata DB systems.
-func (o DbSystemsUpgradeOutput) BackupSubnetId() pulumi.StringOutput {
-	return o.ApplyT(func(v *DbSystemsUpgrade) pulumi.StringOutput { return v.BackupSubnetId }).(pulumi.StringOutput)
+func (o DbSystemsUpgradeOutput) BackupSubnetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DbSystemsUpgrade) pulumi.StringPtrOutput { return v.BackupSubnetId }).(pulumi.StringPtrOutput)
 }
 
 // The cluster name for Exadata and 2-node RAC virtual machine DB systems. The cluster name must begin with an alphabetic character, and may contain hyphens (-). Underscores (_) are not permitted. The cluster name can be no longer than 11 characters and is not case sensitive.
-func (o DbSystemsUpgradeOutput) ClusterName() pulumi.StringOutput {
-	return o.ApplyT(func(v *DbSystemsUpgrade) pulumi.StringOutput { return v.ClusterName }).(pulumi.StringOutput)
+func (o DbSystemsUpgradeOutput) ClusterName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DbSystemsUpgrade) pulumi.StringPtrOutput { return v.ClusterName }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-func (o DbSystemsUpgradeOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v *DbSystemsUpgrade) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
+func (o DbSystemsUpgradeOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DbSystemsUpgrade) pulumi.StringPtrOutput { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // The number of CPU cores enabled on the DB system.
-func (o DbSystemsUpgradeOutput) CpuCoreCount() pulumi.IntOutput {
-	return o.ApplyT(func(v *DbSystemsUpgrade) pulumi.IntOutput { return v.CpuCoreCount }).(pulumi.IntOutput)
+func (o DbSystemsUpgradeOutput) CpuCoreCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *DbSystemsUpgrade) pulumi.IntPtrOutput { return v.CpuCoreCount }).(pulumi.IntPtrOutput)
 }
 
 // The percentage assigned to DATA storage (user data and database files). The remaining percentage is assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). Accepted values are 40 and 80. The default is 80 percent assigned to DATA storage. Not applicable for virtual machine DB systems.
-func (o DbSystemsUpgradeOutput) DataStoragePercentage() pulumi.IntOutput {
-	return o.ApplyT(func(v *DbSystemsUpgrade) pulumi.IntOutput { return v.DataStoragePercentage }).(pulumi.IntOutput)
+func (o DbSystemsUpgradeOutput) DataStoragePercentage() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *DbSystemsUpgrade) pulumi.IntPtrOutput { return v.DataStoragePercentage }).(pulumi.IntPtrOutput)
 }
 
 // The data storage size, in gigabytes, that is currently available to the DB system. Applies only for virtual machine DB systems.
-func (o DbSystemsUpgradeOutput) DataStorageSizeInGb() pulumi.IntOutput {
-	return o.ApplyT(func(v *DbSystemsUpgrade) pulumi.IntOutput { return v.DataStorageSizeInGb }).(pulumi.IntOutput)
+func (o DbSystemsUpgradeOutput) DataStorageSizeInGb() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *DbSystemsUpgrade) pulumi.IntPtrOutput { return v.DataStorageSizeInGb }).(pulumi.IntPtrOutput)
 }
 
 // The Oracle Database edition that applies to all the databases on the DB system.
-func (o DbSystemsUpgradeOutput) DatabaseEdition() pulumi.StringOutput {
-	return o.ApplyT(func(v *DbSystemsUpgrade) pulumi.StringOutput { return v.DatabaseEdition }).(pulumi.StringOutput)
+func (o DbSystemsUpgradeOutput) DatabaseEdition() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DbSystemsUpgrade) pulumi.StringPtrOutput { return v.DatabaseEdition }).(pulumi.StringPtrOutput)
 }
 
 // The DB system [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -622,18 +597,18 @@ func (o DbSystemsUpgradeOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // The type of redundancy configured for the DB system. NORMAL is 2-way redundancy. HIGH is 3-way redundancy.
-func (o DbSystemsUpgradeOutput) DiskRedundancy() pulumi.StringOutput {
-	return o.ApplyT(func(v *DbSystemsUpgrade) pulumi.StringOutput { return v.DiskRedundancy }).(pulumi.StringOutput)
+func (o DbSystemsUpgradeOutput) DiskRedundancy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DbSystemsUpgrade) pulumi.StringPtrOutput { return v.DiskRedundancy }).(pulumi.StringPtrOutput)
 }
 
 // The user-friendly name for the DB system. The name does not have to be unique.
-func (o DbSystemsUpgradeOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v *DbSystemsUpgrade) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+func (o DbSystemsUpgradeOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DbSystemsUpgrade) pulumi.StringPtrOutput { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // The domain name for the DB system.
-func (o DbSystemsUpgradeOutput) Domain() pulumi.StringOutput {
-	return o.ApplyT(func(v *DbSystemsUpgrade) pulumi.StringOutput { return v.Domain }).(pulumi.StringOutput)
+func (o DbSystemsUpgradeOutput) Domain() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DbSystemsUpgrade) pulumi.StringPtrOutput { return v.Domain }).(pulumi.StringPtrOutput)
 }
 
 // List of the Fault Domains in which this DB system is provisioned.
@@ -647,8 +622,8 @@ func (o DbSystemsUpgradeOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The hostname for the DB system.
-func (o DbSystemsUpgradeOutput) Hostname() pulumi.StringOutput {
-	return o.ApplyT(func(v *DbSystemsUpgrade) pulumi.StringOutput { return v.Hostname }).(pulumi.StringOutput)
+func (o DbSystemsUpgradeOutput) Hostname() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DbSystemsUpgrade) pulumi.StringPtrOutput { return v.Hostname }).(pulumi.StringPtrOutput)
 }
 
 // The IORM settings of the Exadata DB system.
@@ -657,38 +632,38 @@ func (o DbSystemsUpgradeOutput) IormConfigCaches() DbSystemsUpgradeIormConfigCac
 }
 
 // If true, rollback time is updated even if operating system upgrade history contains errors.
-func (o DbSystemsUpgradeOutput) IsSnapshotRetentionDaysForceUpdated() pulumi.BoolOutput {
-	return o.ApplyT(func(v *DbSystemsUpgrade) pulumi.BoolOutput { return v.IsSnapshotRetentionDaysForceUpdated }).(pulumi.BoolOutput)
+func (o DbSystemsUpgradeOutput) IsSnapshotRetentionDaysForceUpdated() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DbSystemsUpgrade) pulumi.BoolPtrOutput { return v.IsSnapshotRetentionDaysForceUpdated }).(pulumi.BoolPtrOutput)
 }
 
 // The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
-func (o DbSystemsUpgradeOutput) KmsKeyId() pulumi.StringOutput {
-	return o.ApplyT(func(v *DbSystemsUpgrade) pulumi.StringOutput { return v.KmsKeyId }).(pulumi.StringOutput)
+func (o DbSystemsUpgradeOutput) KmsKeyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DbSystemsUpgrade) pulumi.StringPtrOutput { return v.KmsKeyId }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
-func (o DbSystemsUpgradeOutput) LastMaintenanceRunId() pulumi.StringOutput {
-	return o.ApplyT(func(v *DbSystemsUpgrade) pulumi.StringOutput { return v.LastMaintenanceRunId }).(pulumi.StringOutput)
+func (o DbSystemsUpgradeOutput) LastMaintenanceRunId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DbSystemsUpgrade) pulumi.StringPtrOutput { return v.LastMaintenanceRunId }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last patch history. This value is updated as soon as a patch operation starts.
-func (o DbSystemsUpgradeOutput) LastPatchHistoryEntryId() pulumi.StringOutput {
-	return o.ApplyT(func(v *DbSystemsUpgrade) pulumi.StringOutput { return v.LastPatchHistoryEntryId }).(pulumi.StringOutput)
+func (o DbSystemsUpgradeOutput) LastPatchHistoryEntryId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DbSystemsUpgrade) pulumi.StringPtrOutput { return v.LastPatchHistoryEntryId }).(pulumi.StringPtrOutput)
 }
 
 // The Oracle license model that applies to all the databases on the DB system. The default is LICENSE_INCLUDED.
-func (o DbSystemsUpgradeOutput) LicenseModel() pulumi.StringOutput {
-	return o.ApplyT(func(v *DbSystemsUpgrade) pulumi.StringOutput { return v.LicenseModel }).(pulumi.StringOutput)
+func (o DbSystemsUpgradeOutput) LicenseModel() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DbSystemsUpgrade) pulumi.StringPtrOutput { return v.LicenseModel }).(pulumi.StringPtrOutput)
 }
 
 // Additional information about the current lifecycle state.
-func (o DbSystemsUpgradeOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v *DbSystemsUpgrade) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o DbSystemsUpgradeOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DbSystemsUpgrade) pulumi.StringPtrOutput { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // The port number configured for the listener on the DB system.
-func (o DbSystemsUpgradeOutput) ListenerPort() pulumi.IntOutput {
-	return o.ApplyT(func(v *DbSystemsUpgrade) pulumi.IntOutput { return v.ListenerPort }).(pulumi.IntOutput)
+func (o DbSystemsUpgradeOutput) ListenerPort() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *DbSystemsUpgrade) pulumi.IntPtrOutput { return v.ListenerPort }).(pulumi.IntPtrOutput)
 }
 
 // The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
@@ -697,18 +672,18 @@ func (o DbSystemsUpgradeOutput) MaintenanceWindows() DbSystemsUpgradeMaintenance
 }
 
 // A valid Oracle Grid Infrastructure (GI) software version.
-func (o DbSystemsUpgradeOutput) NewGiVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v *DbSystemsUpgrade) pulumi.StringOutput { return v.NewGiVersion }).(pulumi.StringOutput)
+func (o DbSystemsUpgradeOutput) NewGiVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DbSystemsUpgrade) pulumi.StringPtrOutput { return v.NewGiVersion }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
-func (o DbSystemsUpgradeOutput) NextMaintenanceRunId() pulumi.StringOutput {
-	return o.ApplyT(func(v *DbSystemsUpgrade) pulumi.StringOutput { return v.NextMaintenanceRunId }).(pulumi.StringOutput)
+func (o DbSystemsUpgradeOutput) NextMaintenanceRunId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DbSystemsUpgrade) pulumi.StringPtrOutput { return v.NextMaintenanceRunId }).(pulumi.StringPtrOutput)
 }
 
 // The number of nodes in the DB system. For RAC DB systems, the value is greater than 1.
-func (o DbSystemsUpgradeOutput) NodeCount() pulumi.IntOutput {
-	return o.ApplyT(func(v *DbSystemsUpgrade) pulumi.IntOutput { return v.NodeCount }).(pulumi.IntOutput)
+func (o DbSystemsUpgradeOutput) NodeCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *DbSystemsUpgrade) pulumi.IntPtrOutput { return v.NodeCount }).(pulumi.IntPtrOutput)
 }
 
 // A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that this resource belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
@@ -718,23 +693,23 @@ func (o DbSystemsUpgradeOutput) NsgIds() pulumi.StringArrayOutput {
 }
 
 // The point in time for a cloned database system when the data disks were cloned from the source database system, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-func (o DbSystemsUpgradeOutput) PointInTimeDataDiskCloneTimestamp() pulumi.StringOutput {
-	return o.ApplyT(func(v *DbSystemsUpgrade) pulumi.StringOutput { return v.PointInTimeDataDiskCloneTimestamp }).(pulumi.StringOutput)
+func (o DbSystemsUpgradeOutput) PointInTimeDataDiskCloneTimestamp() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DbSystemsUpgrade) pulumi.StringPtrOutput { return v.PointInTimeDataDiskCloneTimestamp }).(pulumi.StringPtrOutput)
 }
 
 // The RECO/REDO storage size, in gigabytes, that is currently allocated to the DB system. Applies only for virtual machine DB systems.
-func (o DbSystemsUpgradeOutput) RecoStorageSizeInGb() pulumi.IntOutput {
-	return o.ApplyT(func(v *DbSystemsUpgrade) pulumi.IntOutput { return v.RecoStorageSizeInGb }).(pulumi.IntOutput)
+func (o DbSystemsUpgradeOutput) RecoStorageSizeInGb() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *DbSystemsUpgrade) pulumi.IntPtrOutput { return v.RecoStorageSizeInGb }).(pulumi.IntPtrOutput)
 }
 
 // The FQDN of the DNS record for the SCAN IP addresses that are associated with the DB system.
-func (o DbSystemsUpgradeOutput) ScanDnsName() pulumi.StringOutput {
-	return o.ApplyT(func(v *DbSystemsUpgrade) pulumi.StringOutput { return v.ScanDnsName }).(pulumi.StringOutput)
+func (o DbSystemsUpgradeOutput) ScanDnsName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DbSystemsUpgrade) pulumi.StringPtrOutput { return v.ScanDnsName }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DNS record for the SCAN IP addresses that are associated with the DB system.
-func (o DbSystemsUpgradeOutput) ScanDnsRecordId() pulumi.StringOutput {
-	return o.ApplyT(func(v *DbSystemsUpgrade) pulumi.StringOutput { return v.ScanDnsRecordId }).(pulumi.StringOutput)
+func (o DbSystemsUpgradeOutput) ScanDnsRecordId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DbSystemsUpgrade) pulumi.StringPtrOutput { return v.ScanDnsRecordId }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IP addresses associated with the DB system. SCAN IP addresses are typically used for load balancing and are not assigned to any interface. Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
@@ -745,26 +720,26 @@ func (o DbSystemsUpgradeOutput) ScanIpIds() pulumi.StringArrayOutput {
 // The shape of the DB system. The shape determines resources to allocate to the DB system.
 // * For virtual machine shapes, the number of CPU cores and memory
 // * For bare metal and Exadata shapes, the number of CPU cores, storage, and memory
-func (o DbSystemsUpgradeOutput) Shape() pulumi.StringOutput {
-	return o.ApplyT(func(v *DbSystemsUpgrade) pulumi.StringOutput { return v.Shape }).(pulumi.StringOutput)
+func (o DbSystemsUpgradeOutput) Shape() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DbSystemsUpgrade) pulumi.StringPtrOutput { return v.Shape }).(pulumi.StringPtrOutput)
 }
 
 // The retention period, in days, for the snapshot that allows you to perform a rollback of the upgrade operation. After this number of days passes, you cannot roll back the upgrade.
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-func (o DbSystemsUpgradeOutput) SnapshotRetentionPeriodInDays() pulumi.IntOutput {
-	return o.ApplyT(func(v *DbSystemsUpgrade) pulumi.IntOutput { return v.SnapshotRetentionPeriodInDays }).(pulumi.IntOutput)
+func (o DbSystemsUpgradeOutput) SnapshotRetentionPeriodInDays() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *DbSystemsUpgrade) pulumi.IntPtrOutput { return v.SnapshotRetentionPeriodInDays }).(pulumi.IntPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
-func (o DbSystemsUpgradeOutput) SourceDbSystemId() pulumi.StringOutput {
-	return o.ApplyT(func(v *DbSystemsUpgrade) pulumi.StringOutput { return v.SourceDbSystemId }).(pulumi.StringOutput)
+func (o DbSystemsUpgradeOutput) SourceDbSystemId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DbSystemsUpgrade) pulumi.StringPtrOutput { return v.SourceDbSystemId }).(pulumi.StringPtrOutput)
 }
 
 // True, if Sparse Diskgroup is configured for Exadata dbsystem, False, if Sparse diskgroup was not configured.
-func (o DbSystemsUpgradeOutput) SparseDiskgroup() pulumi.BoolOutput {
-	return o.ApplyT(func(v *DbSystemsUpgrade) pulumi.BoolOutput { return v.SparseDiskgroup }).(pulumi.BoolOutput)
+func (o DbSystemsUpgradeOutput) SparseDiskgroup() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DbSystemsUpgrade) pulumi.BoolPtrOutput { return v.SparseDiskgroup }).(pulumi.BoolPtrOutput)
 }
 
 // The public key portion of one or more key pairs used for SSH access to the DB system.
@@ -773,28 +748,28 @@ func (o DbSystemsUpgradeOutput) SshPublicKeys() pulumi.StringArrayOutput {
 }
 
 // The current state of the DB system.
-func (o DbSystemsUpgradeOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *DbSystemsUpgrade) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o DbSystemsUpgradeOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DbSystemsUpgrade) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the DB system is associated with.
-func (o DbSystemsUpgradeOutput) SubnetId() pulumi.StringOutput {
-	return o.ApplyT(func(v *DbSystemsUpgrade) pulumi.StringOutput { return v.SubnetId }).(pulumi.StringOutput)
+func (o DbSystemsUpgradeOutput) SubnetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DbSystemsUpgrade) pulumi.StringPtrOutput { return v.SubnetId }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the DB system was created.
-func (o DbSystemsUpgradeOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *DbSystemsUpgrade) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o DbSystemsUpgradeOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DbSystemsUpgrade) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time zone of the DB system. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
-func (o DbSystemsUpgradeOutput) TimeZone() pulumi.StringOutput {
-	return o.ApplyT(func(v *DbSystemsUpgrade) pulumi.StringOutput { return v.TimeZone }).(pulumi.StringOutput)
+func (o DbSystemsUpgradeOutput) TimeZone() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DbSystemsUpgrade) pulumi.StringPtrOutput { return v.TimeZone }).(pulumi.StringPtrOutput)
 }
 
 // The Oracle Database version of the DB system.
-func (o DbSystemsUpgradeOutput) Version() pulumi.StringOutput {
-	return o.ApplyT(func(v *DbSystemsUpgrade) pulumi.StringOutput { return v.Version }).(pulumi.StringOutput)
+func (o DbSystemsUpgradeOutput) Version() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DbSystemsUpgrade) pulumi.StringPtrOutput { return v.Version }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) addresses associated with the DB system. The Cluster Ready Services (CRS) creates and maintains one VIP address for each node in the DB system to enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
@@ -803,8 +778,8 @@ func (o DbSystemsUpgradeOutput) VipIds() pulumi.StringArrayOutput {
 }
 
 // The OCID of the zone the DB system is associated with.
-func (o DbSystemsUpgradeOutput) ZoneId() pulumi.StringOutput {
-	return o.ApplyT(func(v *DbSystemsUpgrade) pulumi.StringOutput { return v.ZoneId }).(pulumi.StringOutput)
+func (o DbSystemsUpgradeOutput) ZoneId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DbSystemsUpgrade) pulumi.StringPtrOutput { return v.ZoneId }).(pulumi.StringPtrOutput)
 }
 
 type DbSystemsUpgradeArrayOutput struct{ *pulumi.OutputState }
@@ -819,12 +794,6 @@ func (o DbSystemsUpgradeArrayOutput) ToDbSystemsUpgradeArrayOutput() DbSystemsUp
 
 func (o DbSystemsUpgradeArrayOutput) ToDbSystemsUpgradeArrayOutputWithContext(ctx context.Context) DbSystemsUpgradeArrayOutput {
 	return o
-}
-
-func (o DbSystemsUpgradeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*DbSystemsUpgrade] {
-	return pulumix.Output[[]*DbSystemsUpgrade]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DbSystemsUpgradeArrayOutput) Index(i pulumi.IntInput) DbSystemsUpgradeOutput {
@@ -845,12 +814,6 @@ func (o DbSystemsUpgradeMapOutput) ToDbSystemsUpgradeMapOutput() DbSystemsUpgrad
 
 func (o DbSystemsUpgradeMapOutput) ToDbSystemsUpgradeMapOutputWithContext(ctx context.Context) DbSystemsUpgradeMapOutput {
 	return o
-}
-
-func (o DbSystemsUpgradeMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*DbSystemsUpgrade] {
-	return pulumix.Output[map[string]*DbSystemsUpgrade]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DbSystemsUpgradeMapOutput) MapIndex(k pulumi.StringInput) DbSystemsUpgradeOutput {

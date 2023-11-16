@@ -96,13 +96,13 @@ namespace Pulumi.Oci.Ocvp
         /// (**Deprecated**) The number of actual ESXi hosts in the SDDC on the cloud. This attribute will be different when esxi Host is added to an existing SDDC.
         /// </summary>
         [Output("actualEsxiHostsCount")]
-        public Output<int> ActualEsxiHostsCount { get; private set; } = null!;
+        public Output<int?> ActualEsxiHostsCount { get; private set; } = null!;
 
         /// <summary>
         /// (Optional) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
         /// </summary>
         [Output("capacityReservationId")]
-        public Output<string> CapacityReservationId { get; private set; } = null!;
+        public Output<string?> CapacityReservationId { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the SDDC.
@@ -126,13 +126,13 @@ namespace Pulumi.Oci.Ocvp
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) A descriptive name for the SDDC. SDDC name requirements are 1-16 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region. Avoid entering confidential information.
         /// </summary>
         [Output("displayName")]
-        public Output<string> DisplayName { get; private set; } = null!;
+        public Output<string?> DisplayName { get; private set; } = null!;
 
         /// <summary>
         /// (Required) The number of ESXi hosts to create in the SDDC. You can add more hosts later (see [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost)). Creating a SDDC with a ESXi host count of 1 will be considered a single ESXi host SDDC.
@@ -146,7 +146,7 @@ namespace Pulumi.Oci.Ocvp
         /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The action to be performed upon HCX licenses. "UPGRADE" will upgrade the SDDC from HCX Advanced to HCX Enterprise. "DOWNGRADE" will downgrade the SDDC from HCX Enterprise to HCX Advanced after current HCX Enterprise billing cycle end date. "CANCEL_DOWNGRADE" will cancel the pending downgrade of HCX licenses. The action will only be performed when its value is changed. This field can also be used to enable HCX Enterprise during SDDC creation. If "UPGRADE" is set during SDDC creation, the SDDC will be created with HCX Enterprise enable. Supported actions during update: UPGRADE, DOWNGRADE, CANCEL_DOWNGRADE. Supported actions during creation: UPGRADE.
@@ -158,19 +158,19 @@ namespace Pulumi.Oci.Ocvp
         /// The FQDN for HCX Manager.  Example: `hcx-my-sddc.sddc.us-phoenix-1.oraclecloud.com`
         /// </summary>
         [Output("hcxFqdn")]
-        public Output<string> HcxFqdn { get; private set; } = null!;
+        public Output<string?> HcxFqdn { get; private set; } = null!;
 
         /// <summary>
         /// (**Deprecated**) The SDDC includes an administrator username and initial password for HCX Manager. Make sure to change this initial HCX Manager password to a different value.
         /// </summary>
         [Output("hcxInitialPassword")]
-        public Output<string> HcxInitialPassword { get; private set; } = null!;
+        public Output<string?> HcxInitialPassword { get; private set; } = null!;
 
         /// <summary>
         /// (**Deprecated**) The activation keys to use on the on-premises HCX Enterprise appliances you site pair with HCX Manager in your VMware Solution. The number of keys provided depends on the HCX license type. HCX Advanced provides 3 activation keys. HCX Enterprise provides 10 activation keys.
         /// </summary>
         [Output("hcxOnPremKey")]
-        public Output<string> HcxOnPremKey { get; private set; } = null!;
+        public Output<string?> HcxOnPremKey { get; private set; } = null!;
 
         /// <summary>
         /// The activation licenses to use on the on-premises HCX Enterprise appliance you site pair with HCX Manager in your VMware Solution.
@@ -182,31 +182,31 @@ namespace Pulumi.Oci.Ocvp
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `PrivateIp` object that is the virtual IP (VIP) for HCX Manager. For information about `PrivateIp` objects, see the Core Services API.
         /// </summary>
         [Output("hcxPrivateIpId")]
-        public Output<string> HcxPrivateIpId { get; private set; } = null!;
+        public Output<string?> HcxPrivateIpId { get; private set; } = null!;
 
         /// <summary>
         /// (Optional) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the HCX component of the VMware environment. This value is required only when `isHcxEnabled` is true.
         /// </summary>
         [Output("hcxVlanId")]
-        public Output<string> HcxVlanId { get; private set; } = null!;
+        public Output<string?> HcxVlanId { get; private set; } = null!;
 
         /// <summary>
         /// (Optional) The initial OCPU count of the SDDC's ESXi hosts.
         /// </summary>
         [Output("initialHostOcpuCount")]
-        public Output<double> InitialHostOcpuCount { get; private set; } = null!;
+        public Output<double?> InitialHostOcpuCount { get; private set; } = null!;
 
         /// <summary>
         /// (Optional) The initial compute shape of the SDDC's ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
         /// </summary>
         [Output("initialHostShapeName")]
-        public Output<string> InitialHostShapeName { get; private set; } = null!;
+        public Output<string?> InitialHostShapeName { get; private set; } = null!;
 
         /// <summary>
         /// (Optional) The billing option selected during SDDC creation. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
         /// </summary>
         [Output("initialSku")]
-        public Output<string> InitialSku { get; private set; } = null!;
+        public Output<string?> InitialSku { get; private set; } = null!;
 
         /// <summary>
         /// A prefix used in the name of each ESXi host and Compute instance in the SDDC. If this isn't set, the SDDC's `displayName` is used as the prefix.
@@ -214,37 +214,37 @@ namespace Pulumi.Oci.Ocvp
         /// For example, if the value is `mySDDC`, the ESXi hosts are named `mySDDC-1`, `mySDDC-2`, and so on.
         /// </summary>
         [Output("instanceDisplayNamePrefix")]
-        public Output<string> InstanceDisplayNamePrefix { get; private set; } = null!;
+        public Output<string?> InstanceDisplayNamePrefix { get; private set; } = null!;
 
         /// <summary>
         /// (Optional) For SDDC with dense compute shapes, this parameter indicates whether to enable HCX Advanced for this SDDC. For SDDC with standard compute shapes, this parameter is equivalent to `isHcxEnterpriseEnabled`.
         /// </summary>
         [Output("isHcxEnabled")]
-        public Output<bool> IsHcxEnabled { get; private set; } = null!;
+        public Output<bool?> IsHcxEnabled { get; private set; } = null!;
 
         /// <summary>
         /// (**Deprecated**) Indicates whether HCX Enterprise is enabled for this SDDC.
         /// </summary>
         [Output("isHcxEnterpriseEnabled")]
-        public Output<bool> IsHcxEnterpriseEnabled { get; private set; } = null!;
+        public Output<bool?> IsHcxEnterpriseEnabled { get; private set; } = null!;
 
         /// <summary>
         /// Indicates whether SDDC is pending downgrade from HCX Enterprise to HCX Advanced.
         /// </summary>
         [Output("isHcxPendingDowngrade")]
-        public Output<bool> IsHcxPendingDowngrade { get; private set; } = null!;
+        public Output<bool?> IsHcxPendingDowngrade { get; private set; } = null!;
 
         /// <summary>
         /// (Optional) Indicates whether shielded instance is enabled for this SDDC.
         /// </summary>
         [Output("isShieldedInstanceEnabled")]
-        public Output<bool> IsShieldedInstanceEnabled { get; private set; } = null!;
+        public Output<bool?> IsShieldedInstanceEnabled { get; private set; } = null!;
 
         /// <summary>
         /// Indicates whether this SDDC is designated for only single ESXi host.
         /// </summary>
         [Output("isSingleHostSddc")]
-        public Output<bool> IsSingleHostSddc { get; private set; } = null!;
+        public Output<bool?> IsSingleHostSddc { get; private set; } = null!;
 
         /// <summary>
         /// (Required) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the NSX Edge Uplink 1 component of the VMware environment.
@@ -264,7 +264,7 @@ namespace Pulumi.Oci.Ocvp
         /// (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `PrivateIp` object that is the virtual IP (VIP) for the NSX Edge Uplink. Use this OCID as the route target for route table rules when setting up connectivity between the SDDC and other networks. For information about `PrivateIp` objects, see the Core Services API.
         /// </summary>
         [Output("nsxEdgeUplinkIpId")]
-        public Output<string> NsxEdgeUplinkIpId { get; private set; } = null!;
+        public Output<string?> NsxEdgeUplinkIpId { get; private set; } = null!;
 
         /// <summary>
         /// (Required) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the NSX Edge VTEP component of the VMware environment.
@@ -276,31 +276,31 @@ namespace Pulumi.Oci.Ocvp
         /// The FQDN for NSX Manager.  Example: `nsx-my-sddc.sddc.us-phoenix-1.oraclecloud.com`
         /// </summary>
         [Output("nsxManagerFqdn")]
-        public Output<string> NsxManagerFqdn { get; private set; } = null!;
+        public Output<string?> NsxManagerFqdn { get; private set; } = null!;
 
         /// <summary>
         /// (**Deprecated**) The SDDC includes an administrator username and initial password for NSX Manager. Make sure to change this initial NSX Manager password to a different value.
         /// </summary>
         [Output("nsxManagerInitialPassword")]
-        public Output<string> NsxManagerInitialPassword { get; private set; } = null!;
+        public Output<string?> NsxManagerInitialPassword { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `PrivateIp` object that is the virtual IP (VIP) for NSX Manager. For information about `PrivateIp` objects, see the Core Services API.
         /// </summary>
         [Output("nsxManagerPrivateIpId")]
-        public Output<string> NsxManagerPrivateIpId { get; private set; } = null!;
+        public Output<string?> NsxManagerPrivateIpId { get; private set; } = null!;
 
         /// <summary>
         /// The SDDC includes an administrator username and initial password for NSX Manager. You can change this initial username to a different value in NSX Manager.
         /// </summary>
         [Output("nsxManagerUsername")]
-        public Output<string> NsxManagerUsername { get; private set; } = null!;
+        public Output<string?> NsxManagerUsername { get; private set; } = null!;
 
         /// <summary>
         /// (**Deprecated**) The VMware NSX overlay workload segment to host your application. Connect to workload portgroup in vCenter to access this overlay segment.
         /// </summary>
         [Output("nsxOverlaySegmentName")]
-        public Output<string> NsxOverlaySegmentName { get; private set; } = null!;
+        public Output<string?> NsxOverlaySegmentName { get; private set; } = null!;
 
         /// <summary>
         /// (Required) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the NSX VTEP component of the VMware environment.
@@ -318,7 +318,7 @@ namespace Pulumi.Oci.Ocvp
         /// (Optional) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the Provisioning component of the VMware environment.
         /// </summary>
         [Output("provisioningVlanId")]
-        public Output<string> ProvisioningVlanId { get; private set; } = null!;
+        public Output<string?> ProvisioningVlanId { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) HCX on-premise licenses status will be refreshed whenever the value of this field is changed.
@@ -330,7 +330,7 @@ namespace Pulumi.Oci.Ocvp
         /// (Optional) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vSphere Replication component of the VMware environment.
         /// </summary>
         [Output("replicationVlanId")]
-        public Output<string> ReplicationVlanId { get; private set; } = null!;
+        public Output<string?> ReplicationVlanId { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The HCX on-premise licenses to be reserved when downgrade from HCX Enterprise to HCX Advanced. It should not be provided during resource creation. It is required and can only be set when the hcx_action is "DOWNGRADE". Its value can only be changed when hcx_action is updated.
@@ -348,31 +348,31 @@ namespace Pulumi.Oci.Ocvp
         /// The current state of the SDDC.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the SDDC was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// The date and time current HCX Enterprise billing cycle ends, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
         [Output("timeHcxBillingCycleEnd")]
-        public Output<string> TimeHcxBillingCycleEnd { get; private set; } = null!;
+        public Output<string?> TimeHcxBillingCycleEnd { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the SDDC's HCX on-premise license status was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
         [Output("timeHcxLicenseStatusUpdated")]
-        public Output<string> TimeHcxLicenseStatusUpdated { get; private set; } = null!;
+        public Output<string?> TimeHcxLicenseStatusUpdated { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the SDDC was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         /// </summary>
         [Output("timeUpdated")]
-        public Output<string> TimeUpdated { get; private set; } = null!;
+        public Output<string?> TimeUpdated { get; private set; } = null!;
 
         /// <summary>
         /// (**Deprecated**) The vSphere licenses to use when upgrading the SDDC.
@@ -384,25 +384,25 @@ namespace Pulumi.Oci.Ocvp
         /// The FQDN for vCenter.  Example: `vcenter-my-sddc.sddc.us-phoenix-1.oraclecloud.com`
         /// </summary>
         [Output("vcenterFqdn")]
-        public Output<string> VcenterFqdn { get; private set; } = null!;
+        public Output<string?> VcenterFqdn { get; private set; } = null!;
 
         /// <summary>
         /// (**Deprecated**) The SDDC includes an administrator username and initial password for vCenter. Make sure to change this initial vCenter password to a different value.
         /// </summary>
         [Output("vcenterInitialPassword")]
-        public Output<string> VcenterInitialPassword { get; private set; } = null!;
+        public Output<string?> VcenterInitialPassword { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `PrivateIp` object that is the virtual IP (VIP) for vCenter. For information about `PrivateIp` objects, see the Core Services API.
         /// </summary>
         [Output("vcenterPrivateIpId")]
-        public Output<string> VcenterPrivateIpId { get; private set; } = null!;
+        public Output<string?> VcenterPrivateIpId { get; private set; } = null!;
 
         /// <summary>
         /// The SDDC includes an administrator username and initial password for vCenter. You can change this initial username to a different value in vCenter.
         /// </summary>
         [Output("vcenterUsername")]
-        public Output<string> VcenterUsername { get; private set; } = null!;
+        public Output<string?> VcenterUsername { get; private set; } = null!;
 
         /// <summary>
         /// (Required) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the vMotion component of the VMware environment.
@@ -426,7 +426,7 @@ namespace Pulumi.Oci.Ocvp
         /// (**Deprecated**) The link to guidance for upgrading vSphere.
         /// </summary>
         [Output("vsphereUpgradeGuide")]
-        public Output<string> VsphereUpgradeGuide { get; private set; } = null!;
+        public Output<string?> VsphereUpgradeGuide { get; private set; } = null!;
 
         /// <summary>
         /// (**Deprecated**) The links to binary objects needed to upgrade vSphere.
@@ -448,7 +448,7 @@ namespace Pulumi.Oci.Ocvp
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("workloadNetworkCidr")]
-        public Output<string> WorkloadNetworkCidr { get; private set; } = null!;
+        public Output<string?> WorkloadNetworkCidr { get; private set; } = null!;
 
 
         /// <summary>

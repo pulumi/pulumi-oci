@@ -151,7 +151,7 @@ namespace Pulumi.Oci.Core
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The list of remote_peering_connections.
         /// </summary>
@@ -165,7 +165,7 @@ namespace Pulumi.Oci.Core
 
             ImmutableArray<Outputs.GetRemotePeeringConnectionsFilterResult> filters,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetRemotePeeringConnectionsRemotePeeringConnectionResult> remotePeeringConnections)
         {

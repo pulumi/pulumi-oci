@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserApplicableAuthenticationTargetApp {
@@ -14,63 +16,63 @@ public final class GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuser
      * @return A human readable name, primarily used for display purposes.
      * 
      */
-    private String display;
+    private @Nullable String display;
     /**
      * @return User Token URI
      * 
      */
-    private String ref;
+    private @Nullable String ref;
     /**
      * @return Timeout interval for Synchronization TargetAction in milliseconds
      * 
      */
-    private Integer targetRequestTimeout;
+    private @Nullable Integer targetRequestTimeout;
     /**
      * @return A label indicating the attribute&#39;s function.
      * 
      */
-    private String type;
+    private @Nullable String type;
     /**
      * @return The value of a X509 certificate.
      * 
      */
-    private String value;
+    private @Nullable String value;
 
     private GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserApplicableAuthenticationTargetApp() {}
     /**
      * @return A human readable name, primarily used for display purposes.
      * 
      */
-    public String display() {
-        return this.display;
+    public Optional<String> display() {
+        return Optional.ofNullable(this.display);
     }
     /**
      * @return User Token URI
      * 
      */
-    public String ref() {
-        return this.ref;
+    public Optional<String> ref() {
+        return Optional.ofNullable(this.ref);
     }
     /**
      * @return Timeout interval for Synchronization TargetAction in milliseconds
      * 
      */
-    public Integer targetRequestTimeout() {
-        return this.targetRequestTimeout;
+    public Optional<Integer> targetRequestTimeout() {
+        return Optional.ofNullable(this.targetRequestTimeout);
     }
     /**
      * @return A label indicating the attribute&#39;s function.
      * 
      */
-    public String type() {
-        return this.type;
+    public Optional<String> type() {
+        return Optional.ofNullable(this.type);
     }
     /**
      * @return The value of a X509 certificate.
      * 
      */
-    public String value() {
-        return this.value;
+    public Optional<String> value() {
+        return Optional.ofNullable(this.value);
     }
 
     public static Builder builder() {
@@ -82,11 +84,11 @@ public final class GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuser
     }
     @CustomType.Builder
     public static final class Builder {
-        private String display;
-        private String ref;
-        private Integer targetRequestTimeout;
-        private String type;
-        private String value;
+        private @Nullable String display;
+        private @Nullable String ref;
+        private @Nullable Integer targetRequestTimeout;
+        private @Nullable String type;
+        private @Nullable String value;
         public Builder() {}
         public Builder(GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserApplicableAuthenticationTargetApp defaults) {
     	      Objects.requireNonNull(defaults);
@@ -98,28 +100,28 @@ public final class GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuser
         }
 
         @CustomType.Setter
-        public Builder display(String display) {
-            this.display = Objects.requireNonNull(display);
+        public Builder display(@Nullable String display) {
+            this.display = display;
             return this;
         }
         @CustomType.Setter
-        public Builder ref(String ref) {
-            this.ref = Objects.requireNonNull(ref);
+        public Builder ref(@Nullable String ref) {
+            this.ref = ref;
             return this;
         }
         @CustomType.Setter
-        public Builder targetRequestTimeout(Integer targetRequestTimeout) {
-            this.targetRequestTimeout = Objects.requireNonNull(targetRequestTimeout);
+        public Builder targetRequestTimeout(@Nullable Integer targetRequestTimeout) {
+            this.targetRequestTimeout = targetRequestTimeout;
             return this;
         }
         @CustomType.Setter
-        public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+        public Builder type(@Nullable String type) {
+            this.type = type;
             return this;
         }
         @CustomType.Setter
-        public Builder value(String value) {
-            this.value = Objects.requireNonNull(value);
+        public Builder value(@Nullable String value) {
+            this.value = value;
             return this;
         }
         public GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserApplicableAuthenticationTargetApp build() {

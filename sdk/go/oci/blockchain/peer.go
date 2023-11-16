@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Peer resource in Oracle Cloud Infrastructure Blockchain service.
@@ -64,22 +63,22 @@ type Peer struct {
 	// Availability Domain to place new peer
 	Ad pulumi.StringOutput `pulumi:"ad"`
 	// peer alias
-	Alias pulumi.StringOutput `pulumi:"alias"`
+	Alias pulumi.StringPtrOutput `pulumi:"alias"`
 	// Unique service identifier.
 	BlockchainPlatformId pulumi.StringOutput `pulumi:"blockchainPlatformId"`
 	// Host on which the Peer exists
-	Host pulumi.StringOutput `pulumi:"host"`
+	Host pulumi.StringPtrOutput `pulumi:"host"`
 	// (Updatable) OCPU allocation parameter
 	OcpuAllocationParam PeerOcpuAllocationParamOutput `pulumi:"ocpuAllocationParam"`
 	// peer identifier
-	PeerKey pulumi.StringOutput `pulumi:"peerKey"`
+	PeerKey pulumi.StringPtrOutput `pulumi:"peerKey"`
 	// Peer role
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Role pulumi.StringOutput `pulumi:"role"`
 	// The current state of the peer.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 }
 
 // NewPeer registers a new resource with the given unique name, arguments, and options.
@@ -227,12 +226,6 @@ func (i *Peer) ToPeerOutputWithContext(ctx context.Context) PeerOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(PeerOutput)
 }
 
-func (i *Peer) ToOutput(ctx context.Context) pulumix.Output[*Peer] {
-	return pulumix.Output[*Peer]{
-		OutputState: i.ToPeerOutputWithContext(ctx).OutputState,
-	}
-}
-
 // PeerArrayInput is an input type that accepts PeerArray and PeerArrayOutput values.
 // You can construct a concrete instance of `PeerArrayInput` via:
 //
@@ -256,12 +249,6 @@ func (i PeerArray) ToPeerArrayOutput() PeerArrayOutput {
 
 func (i PeerArray) ToPeerArrayOutputWithContext(ctx context.Context) PeerArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(PeerArrayOutput)
-}
-
-func (i PeerArray) ToOutput(ctx context.Context) pulumix.Output[[]*Peer] {
-	return pulumix.Output[[]*Peer]{
-		OutputState: i.ToPeerArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // PeerMapInput is an input type that accepts PeerMap and PeerMapOutput values.
@@ -289,12 +276,6 @@ func (i PeerMap) ToPeerMapOutputWithContext(ctx context.Context) PeerMapOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(PeerMapOutput)
 }
 
-func (i PeerMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*Peer] {
-	return pulumix.Output[map[string]*Peer]{
-		OutputState: i.ToPeerMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type PeerOutput struct{ *pulumi.OutputState }
 
 func (PeerOutput) ElementType() reflect.Type {
@@ -309,20 +290,14 @@ func (o PeerOutput) ToPeerOutputWithContext(ctx context.Context) PeerOutput {
 	return o
 }
 
-func (o PeerOutput) ToOutput(ctx context.Context) pulumix.Output[*Peer] {
-	return pulumix.Output[*Peer]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Availability Domain to place new peer
 func (o PeerOutput) Ad() pulumi.StringOutput {
 	return o.ApplyT(func(v *Peer) pulumi.StringOutput { return v.Ad }).(pulumi.StringOutput)
 }
 
 // peer alias
-func (o PeerOutput) Alias() pulumi.StringOutput {
-	return o.ApplyT(func(v *Peer) pulumi.StringOutput { return v.Alias }).(pulumi.StringOutput)
+func (o PeerOutput) Alias() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Peer) pulumi.StringPtrOutput { return v.Alias }).(pulumi.StringPtrOutput)
 }
 
 // Unique service identifier.
@@ -331,8 +306,8 @@ func (o PeerOutput) BlockchainPlatformId() pulumi.StringOutput {
 }
 
 // Host on which the Peer exists
-func (o PeerOutput) Host() pulumi.StringOutput {
-	return o.ApplyT(func(v *Peer) pulumi.StringOutput { return v.Host }).(pulumi.StringOutput)
+func (o PeerOutput) Host() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Peer) pulumi.StringPtrOutput { return v.Host }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) OCPU allocation parameter
@@ -341,8 +316,8 @@ func (o PeerOutput) OcpuAllocationParam() PeerOcpuAllocationParamOutput {
 }
 
 // peer identifier
-func (o PeerOutput) PeerKey() pulumi.StringOutput {
-	return o.ApplyT(func(v *Peer) pulumi.StringOutput { return v.PeerKey }).(pulumi.StringOutput)
+func (o PeerOutput) PeerKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Peer) pulumi.StringPtrOutput { return v.PeerKey }).(pulumi.StringPtrOutput)
 }
 
 // Peer role
@@ -354,8 +329,8 @@ func (o PeerOutput) Role() pulumi.StringOutput {
 }
 
 // The current state of the peer.
-func (o PeerOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *Peer) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o PeerOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Peer) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 type PeerArrayOutput struct{ *pulumi.OutputState }
@@ -370,12 +345,6 @@ func (o PeerArrayOutput) ToPeerArrayOutput() PeerArrayOutput {
 
 func (o PeerArrayOutput) ToPeerArrayOutputWithContext(ctx context.Context) PeerArrayOutput {
 	return o
-}
-
-func (o PeerArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*Peer] {
-	return pulumix.Output[[]*Peer]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o PeerArrayOutput) Index(i pulumi.IntInput) PeerOutput {
@@ -396,12 +365,6 @@ func (o PeerMapOutput) ToPeerMapOutput() PeerMapOutput {
 
 func (o PeerMapOutput) ToPeerMapOutputWithContext(ctx context.Context) PeerMapOutput {
 	return o
-}
-
-func (o PeerMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*Peer] {
-	return pulumix.Output[map[string]*Peer]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o PeerMapOutput) MapIndex(k pulumi.StringInput) PeerOutput {

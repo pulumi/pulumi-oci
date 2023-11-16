@@ -6,6 +6,8 @@ package com.pulumi.oci.DatabaseManagement.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDbManagementPrivateEndpointAssociatedDatabasesAssociatedDatabaseCollectionItem {
@@ -13,51 +15,51 @@ public final class GetDbManagementPrivateEndpointAssociatedDatabasesAssociatedDa
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The name of the database.
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return The time when Database Management was enabled for the database.
      * 
      */
-    private String timeRegistered;
+    private @Nullable String timeRegistered;
 
     private GetDbManagementPrivateEndpointAssociatedDatabasesAssociatedDatabaseCollectionItem() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The name of the database.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return The time when Database Management was enabled for the database.
      * 
      */
-    public String timeRegistered() {
-        return this.timeRegistered;
+    public Optional<String> timeRegistered() {
+        return Optional.ofNullable(this.timeRegistered);
     }
 
     public static Builder builder() {
@@ -69,10 +71,10 @@ public final class GetDbManagementPrivateEndpointAssociatedDatabasesAssociatedDa
     }
     @CustomType.Builder
     public static final class Builder {
-        private String compartmentId;
-        private String id;
-        private String name;
-        private String timeRegistered;
+        private @Nullable String compartmentId;
+        private @Nullable String id;
+        private @Nullable String name;
+        private @Nullable String timeRegistered;
         public Builder() {}
         public Builder(GetDbManagementPrivateEndpointAssociatedDatabasesAssociatedDatabaseCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -83,23 +85,23 @@ public final class GetDbManagementPrivateEndpointAssociatedDatabasesAssociatedDa
         }
 
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder timeRegistered(String timeRegistered) {
-            this.timeRegistered = Objects.requireNonNull(timeRegistered);
+        public Builder timeRegistered(@Nullable String timeRegistered) {
+            this.timeRegistered = timeRegistered;
             return this;
         }
         public GetDbManagementPrivateEndpointAssociatedDatabasesAssociatedDatabaseCollectionItem build() {

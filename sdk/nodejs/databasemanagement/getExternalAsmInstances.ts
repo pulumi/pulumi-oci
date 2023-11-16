@@ -74,12 +74,12 @@ export interface GetExternalAsmInstancesResult {
     /**
      * The list of external_asm_instance_collection.
      */
-    readonly externalAsmInstanceCollections: outputs.DatabaseManagement.GetExternalAsmInstancesExternalAsmInstanceCollection[];
+    readonly externalAsmInstanceCollections?: outputs.DatabaseManagement.GetExternalAsmInstancesExternalAsmInstanceCollection[];
     readonly filters?: outputs.DatabaseManagement.GetExternalAsmInstancesFilter[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
 }
 /**
  * This data source provides the list of External Asm Instances in Oracle Cloud Infrastructure Database Management service.

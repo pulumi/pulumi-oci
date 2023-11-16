@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 func GetMigrateToNativeVcnStatus(ctx *pulumi.Context, args *GetMigrateToNativeVcnStatusArgs, opts ...pulumi.InvokeOption) (*GetMigrateToNativeVcnStatusResult, error) {
@@ -31,9 +30,9 @@ type GetMigrateToNativeVcnStatusArgs struct {
 type GetMigrateToNativeVcnStatusResult struct {
 	ClusterId string `pulumi:"clusterId"`
 	// The provider-assigned unique ID for this managed resource.
-	Id                        string `pulumi:"id"`
-	State                     string `pulumi:"state"`
-	TimeDecommissionScheduled string `pulumi:"timeDecommissionScheduled"`
+	Id                        *string `pulumi:"id"`
+	State                     *string `pulumi:"state"`
+	TimeDecommissionScheduled *string `pulumi:"timeDecommissionScheduled"`
 }
 
 func GetMigrateToNativeVcnStatusOutput(ctx *pulumi.Context, args GetMigrateToNativeVcnStatusOutputArgs, opts ...pulumi.InvokeOption) GetMigrateToNativeVcnStatusResultOutput {
@@ -73,27 +72,21 @@ func (o GetMigrateToNativeVcnStatusResultOutput) ToGetMigrateToNativeVcnStatusRe
 	return o
 }
 
-func (o GetMigrateToNativeVcnStatusResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetMigrateToNativeVcnStatusResult] {
-	return pulumix.Output[GetMigrateToNativeVcnStatusResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetMigrateToNativeVcnStatusResultOutput) ClusterId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMigrateToNativeVcnStatusResult) string { return v.ClusterId }).(pulumi.StringOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetMigrateToNativeVcnStatusResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMigrateToNativeVcnStatusResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetMigrateToNativeVcnStatusResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMigrateToNativeVcnStatusResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
-func (o GetMigrateToNativeVcnStatusResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMigrateToNativeVcnStatusResult) string { return v.State }).(pulumi.StringOutput)
+func (o GetMigrateToNativeVcnStatusResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMigrateToNativeVcnStatusResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
-func (o GetMigrateToNativeVcnStatusResultOutput) TimeDecommissionScheduled() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMigrateToNativeVcnStatusResult) string { return v.TimeDecommissionScheduled }).(pulumi.StringOutput)
+func (o GetMigrateToNativeVcnStatusResultOutput) TimeDecommissionScheduled() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMigrateToNativeVcnStatusResult) *string { return v.TimeDecommissionScheduled }).(pulumi.StringPtrOutput)
 }
 
 func init() {

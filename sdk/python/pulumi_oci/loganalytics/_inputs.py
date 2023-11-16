@@ -44,17 +44,6 @@ class LogAnalyticsImportCustomContentChangeListArgs:
                  updated_field_display_names: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  updated_parser_names: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  updated_source_names: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
-        """
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] conflict_field_display_names: A list of field display names with conflicts.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] conflict_parser_names: A list of parser names with conflicts.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] conflict_source_names: A list of source names with conflicts.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] created_field_display_names: An array of created field display names.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] created_parser_names: An array of created parser names.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] created_source_names: An array of created source names.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] updated_field_display_names: An array of updated field display names.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] updated_parser_names: An array of updated parser names.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] updated_source_names: An array of updated source names.
-        """
         if conflict_field_display_names is not None:
             pulumi.set(__self__, "conflict_field_display_names", conflict_field_display_names)
         if conflict_parser_names is not None:
@@ -77,9 +66,6 @@ class LogAnalyticsImportCustomContentChangeListArgs:
     @property
     @pulumi.getter(name="conflictFieldDisplayNames")
     def conflict_field_display_names(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        A list of field display names with conflicts.
-        """
         return pulumi.get(self, "conflict_field_display_names")
 
     @conflict_field_display_names.setter
@@ -89,9 +75,6 @@ class LogAnalyticsImportCustomContentChangeListArgs:
     @property
     @pulumi.getter(name="conflictParserNames")
     def conflict_parser_names(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        A list of parser names with conflicts.
-        """
         return pulumi.get(self, "conflict_parser_names")
 
     @conflict_parser_names.setter
@@ -101,9 +84,6 @@ class LogAnalyticsImportCustomContentChangeListArgs:
     @property
     @pulumi.getter(name="conflictSourceNames")
     def conflict_source_names(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        A list of source names with conflicts.
-        """
         return pulumi.get(self, "conflict_source_names")
 
     @conflict_source_names.setter
@@ -113,9 +93,6 @@ class LogAnalyticsImportCustomContentChangeListArgs:
     @property
     @pulumi.getter(name="createdFieldDisplayNames")
     def created_field_display_names(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        An array of created field display names.
-        """
         return pulumi.get(self, "created_field_display_names")
 
     @created_field_display_names.setter
@@ -125,9 +102,6 @@ class LogAnalyticsImportCustomContentChangeListArgs:
     @property
     @pulumi.getter(name="createdParserNames")
     def created_parser_names(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        An array of created parser names.
-        """
         return pulumi.get(self, "created_parser_names")
 
     @created_parser_names.setter
@@ -137,9 +111,6 @@ class LogAnalyticsImportCustomContentChangeListArgs:
     @property
     @pulumi.getter(name="createdSourceNames")
     def created_source_names(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        An array of created source names.
-        """
         return pulumi.get(self, "created_source_names")
 
     @created_source_names.setter
@@ -149,9 +120,6 @@ class LogAnalyticsImportCustomContentChangeListArgs:
     @property
     @pulumi.getter(name="updatedFieldDisplayNames")
     def updated_field_display_names(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        An array of updated field display names.
-        """
         return pulumi.get(self, "updated_field_display_names")
 
     @updated_field_display_names.setter
@@ -161,9 +129,6 @@ class LogAnalyticsImportCustomContentChangeListArgs:
     @property
     @pulumi.getter(name="updatedParserNames")
     def updated_parser_names(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        An array of updated parser names.
-        """
         return pulumi.get(self, "updated_parser_names")
 
     @updated_parser_names.setter
@@ -173,9 +138,6 @@ class LogAnalyticsImportCustomContentChangeListArgs:
     @property
     @pulumi.getter(name="updatedSourceNames")
     def updated_source_names(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        An array of updated source names.
-        """
         return pulumi.get(self, "updated_source_names")
 
     @updated_source_names.setter
@@ -241,10 +203,6 @@ class LogAnalyticsPreferencesManagementItemArgs:
     def __init__(__self__, *,
                  name: Optional[pulumi.Input[str]] = None,
                  value: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] name: The preference name.
-        :param pulumi.Input[str] value: The preference value.
-        """
         if name is not None:
             pulumi.set(__self__, "name", name)
         if value is not None:
@@ -253,9 +211,6 @@ class LogAnalyticsPreferencesManagementItemArgs:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The preference name.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -265,9 +220,6 @@ class LogAnalyticsPreferencesManagementItemArgs:
     @property
     @pulumi.getter
     def value(self) -> Optional[pulumi.Input[str]]:
-        """
-        The preference value.
-        """
         return pulumi.get(self, "value")
 
     @value.setter
@@ -284,18 +236,6 @@ class NamespaceIngestTimeRuleActionArgs:
                  type: pulumi.Input[str],
                  dimensions: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  resource_group: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param pulumi.Input[str] metric_name: (Updatable) The metric name of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
-        :param pulumi.Input[str] namespace: The Logging Analytics namespace used for the request. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] type: (Updatable) Discriminator.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] dimensions: (Updatable) Additional dimensions to publish for the extracted metric. A valid list contains the source field names whose values are to be published as dimensions. The source name itself is specified using a special macro SOURCE_NAME
-        :param pulumi.Input[str] resource_group: (Updatable) The resourceGroup of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
-        """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "metric_name", metric_name)
         pulumi.set(__self__, "namespace", namespace)
@@ -308,9 +248,6 @@ class NamespaceIngestTimeRuleActionArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -320,9 +257,6 @@ class NamespaceIngestTimeRuleActionArgs:
     @property
     @pulumi.getter(name="metricName")
     def metric_name(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The metric name of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
-        """
         return pulumi.get(self, "metric_name")
 
     @metric_name.setter
@@ -332,13 +266,6 @@ class NamespaceIngestTimeRuleActionArgs:
     @property
     @pulumi.getter
     def namespace(self) -> pulumi.Input[str]:
-        """
-        The Logging Analytics namespace used for the request. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "namespace")
 
     @namespace.setter
@@ -348,9 +275,6 @@ class NamespaceIngestTimeRuleActionArgs:
     @property
     @pulumi.getter
     def type(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Discriminator.
-        """
         return pulumi.get(self, "type")
 
     @type.setter
@@ -360,9 +284,6 @@ class NamespaceIngestTimeRuleActionArgs:
     @property
     @pulumi.getter
     def dimensions(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) Additional dimensions to publish for the extracted metric. A valid list contains the source field names whose values are to be published as dimensions. The source name itself is specified using a special macro SOURCE_NAME
-        """
         return pulumi.get(self, "dimensions")
 
     @dimensions.setter
@@ -372,9 +293,6 @@ class NamespaceIngestTimeRuleActionArgs:
     @property
     @pulumi.getter(name="resourceGroup")
     def resource_group(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The resourceGroup of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
-        """
         return pulumi.get(self, "resource_group")
 
     @resource_group.setter
@@ -390,13 +308,6 @@ class NamespaceIngestTimeRuleConditionsArgs:
                  field_value: pulumi.Input[str],
                  kind: pulumi.Input[str],
                  additional_conditions: Optional[pulumi.Input[Sequence[pulumi.Input['NamespaceIngestTimeRuleConditionsAdditionalConditionArgs']]]] = None):
-        """
-        :param pulumi.Input[str] field_name: (Updatable) The field name to be evaluated.
-        :param pulumi.Input[str] field_operator: (Updatable) The operator to be used for evaluating the field.
-        :param pulumi.Input[str] field_value: (Updatable) The field value to be evaluated.
-        :param pulumi.Input[str] kind: (Updatable) Discriminator.
-        :param pulumi.Input[Sequence[pulumi.Input['NamespaceIngestTimeRuleConditionsAdditionalConditionArgs']]] additional_conditions: (Updatable) Optional additional condition(s) to be evaluated.
-        """
         pulumi.set(__self__, "field_name", field_name)
         pulumi.set(__self__, "field_operator", field_operator)
         pulumi.set(__self__, "field_value", field_value)
@@ -407,9 +318,6 @@ class NamespaceIngestTimeRuleConditionsArgs:
     @property
     @pulumi.getter(name="fieldName")
     def field_name(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The field name to be evaluated.
-        """
         return pulumi.get(self, "field_name")
 
     @field_name.setter
@@ -419,9 +327,6 @@ class NamespaceIngestTimeRuleConditionsArgs:
     @property
     @pulumi.getter(name="fieldOperator")
     def field_operator(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The operator to be used for evaluating the field.
-        """
         return pulumi.get(self, "field_operator")
 
     @field_operator.setter
@@ -431,9 +336,6 @@ class NamespaceIngestTimeRuleConditionsArgs:
     @property
     @pulumi.getter(name="fieldValue")
     def field_value(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The field value to be evaluated.
-        """
         return pulumi.get(self, "field_value")
 
     @field_value.setter
@@ -443,9 +345,6 @@ class NamespaceIngestTimeRuleConditionsArgs:
     @property
     @pulumi.getter
     def kind(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Discriminator.
-        """
         return pulumi.get(self, "kind")
 
     @kind.setter
@@ -455,9 +354,6 @@ class NamespaceIngestTimeRuleConditionsArgs:
     @property
     @pulumi.getter(name="additionalConditions")
     def additional_conditions(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NamespaceIngestTimeRuleConditionsAdditionalConditionArgs']]]]:
-        """
-        (Updatable) Optional additional condition(s) to be evaluated.
-        """
         return pulumi.get(self, "additional_conditions")
 
     @additional_conditions.setter
@@ -471,11 +367,6 @@ class NamespaceIngestTimeRuleConditionsAdditionalConditionArgs:
                  condition_field: pulumi.Input[str],
                  condition_operator: pulumi.Input[str],
                  condition_value: pulumi.Input[str]):
-        """
-        :param pulumi.Input[str] condition_field: (Updatable) The additional field name to be evaluated.
-        :param pulumi.Input[str] condition_operator: (Updatable) The operator to be used for evaluating the additional field.
-        :param pulumi.Input[str] condition_value: (Updatable) The additional field value to be evaluated.
-        """
         pulumi.set(__self__, "condition_field", condition_field)
         pulumi.set(__self__, "condition_operator", condition_operator)
         pulumi.set(__self__, "condition_value", condition_value)
@@ -483,9 +374,6 @@ class NamespaceIngestTimeRuleConditionsAdditionalConditionArgs:
     @property
     @pulumi.getter(name="conditionField")
     def condition_field(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The additional field name to be evaluated.
-        """
         return pulumi.get(self, "condition_field")
 
     @condition_field.setter
@@ -495,9 +383,6 @@ class NamespaceIngestTimeRuleConditionsAdditionalConditionArgs:
     @property
     @pulumi.getter(name="conditionOperator")
     def condition_operator(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The operator to be used for evaluating the additional field.
-        """
         return pulumi.get(self, "condition_operator")
 
     @condition_operator.setter
@@ -507,9 +392,6 @@ class NamespaceIngestTimeRuleConditionsAdditionalConditionArgs:
     @property
     @pulumi.getter(name="conditionValue")
     def condition_value(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The additional field value to be evaluated.
-        """
         return pulumi.get(self, "condition_value")
 
     @condition_value.setter
@@ -528,16 +410,6 @@ class NamespaceScheduledTaskActionArgs:
                  purge_duration: Optional[pulumi.Input[str]] = None,
                  query_string: Optional[pulumi.Input[str]] = None,
                  saved_search_id: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] type: (Updatable) Schedule type discriminator.
-        :param pulumi.Input[bool] compartment_id_in_subtree: if true, purge child compartments data
-        :param pulumi.Input[str] data_type: the type of the log data to be purged
-        :param pulumi.Input['NamespaceScheduledTaskActionMetricExtractionArgs'] metric_extraction: Specify metric extraction for SAVED_SEARCH scheduled task execution to post to Oracle Cloud Infrastructure Monitoring.
-        :param pulumi.Input[str] purge_compartment_id: the compartment OCID under which the data will be purged
-        :param pulumi.Input[str] purge_duration: The duration of data to be retained, which is used to calculate the timeDataEnded when the task fires. The value should be negative. Purge duration in ISO 8601 extended format as described in https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. -P365D (not -P1Y) or -P14D (not -P2W).
-        :param pulumi.Input[str] query_string: Purge query string.
-        :param pulumi.Input[str] saved_search_id: The ManagementSavedSearch id [OCID] to be accelerated.
-        """
         pulumi.set(__self__, "type", type)
         if compartment_id_in_subtree is not None:
             pulumi.set(__self__, "compartment_id_in_subtree", compartment_id_in_subtree)
@@ -557,9 +429,6 @@ class NamespaceScheduledTaskActionArgs:
     @property
     @pulumi.getter
     def type(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Schedule type discriminator.
-        """
         return pulumi.get(self, "type")
 
     @type.setter
@@ -569,9 +438,6 @@ class NamespaceScheduledTaskActionArgs:
     @property
     @pulumi.getter(name="compartmentIdInSubtree")
     def compartment_id_in_subtree(self) -> Optional[pulumi.Input[bool]]:
-        """
-        if true, purge child compartments data
-        """
         return pulumi.get(self, "compartment_id_in_subtree")
 
     @compartment_id_in_subtree.setter
@@ -581,9 +447,6 @@ class NamespaceScheduledTaskActionArgs:
     @property
     @pulumi.getter(name="dataType")
     def data_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        the type of the log data to be purged
-        """
         return pulumi.get(self, "data_type")
 
     @data_type.setter
@@ -593,9 +456,6 @@ class NamespaceScheduledTaskActionArgs:
     @property
     @pulumi.getter(name="metricExtraction")
     def metric_extraction(self) -> Optional[pulumi.Input['NamespaceScheduledTaskActionMetricExtractionArgs']]:
-        """
-        Specify metric extraction for SAVED_SEARCH scheduled task execution to post to Oracle Cloud Infrastructure Monitoring.
-        """
         return pulumi.get(self, "metric_extraction")
 
     @metric_extraction.setter
@@ -605,9 +465,6 @@ class NamespaceScheduledTaskActionArgs:
     @property
     @pulumi.getter(name="purgeCompartmentId")
     def purge_compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        the compartment OCID under which the data will be purged
-        """
         return pulumi.get(self, "purge_compartment_id")
 
     @purge_compartment_id.setter
@@ -617,9 +474,6 @@ class NamespaceScheduledTaskActionArgs:
     @property
     @pulumi.getter(name="purgeDuration")
     def purge_duration(self) -> Optional[pulumi.Input[str]]:
-        """
-        The duration of data to be retained, which is used to calculate the timeDataEnded when the task fires. The value should be negative. Purge duration in ISO 8601 extended format as described in https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. -P365D (not -P1Y) or -P14D (not -P2W).
-        """
         return pulumi.get(self, "purge_duration")
 
     @purge_duration.setter
@@ -629,9 +483,6 @@ class NamespaceScheduledTaskActionArgs:
     @property
     @pulumi.getter(name="queryString")
     def query_string(self) -> Optional[pulumi.Input[str]]:
-        """
-        Purge query string.
-        """
         return pulumi.get(self, "query_string")
 
     @query_string.setter
@@ -641,9 +492,6 @@ class NamespaceScheduledTaskActionArgs:
     @property
     @pulumi.getter(name="savedSearchId")
     def saved_search_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The ManagementSavedSearch id [OCID] to be accelerated.
-        """
         return pulumi.get(self, "saved_search_id")
 
     @saved_search_id.setter
@@ -658,12 +506,6 @@ class NamespaceScheduledTaskActionMetricExtractionArgs:
                  metric_name: Optional[pulumi.Input[str]] = None,
                  namespace: Optional[pulumi.Input[str]] = None,
                  resource_group: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param pulumi.Input[str] metric_name: The metric name of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
-        :param pulumi.Input[str] namespace: The Logging Analytics namespace used for the request.
-        :param pulumi.Input[str] resource_group: The resource group of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
-        """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
         if metric_name is not None:
@@ -676,9 +518,6 @@ class NamespaceScheduledTaskActionMetricExtractionArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -688,9 +527,6 @@ class NamespaceScheduledTaskActionMetricExtractionArgs:
     @property
     @pulumi.getter(name="metricName")
     def metric_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The metric name of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
-        """
         return pulumi.get(self, "metric_name")
 
     @metric_name.setter
@@ -700,9 +536,6 @@ class NamespaceScheduledTaskActionMetricExtractionArgs:
     @property
     @pulumi.getter
     def namespace(self) -> Optional[pulumi.Input[str]]:
-        """
-        The Logging Analytics namespace used for the request.
-        """
         return pulumi.get(self, "namespace")
 
     @namespace.setter
@@ -712,9 +545,6 @@ class NamespaceScheduledTaskActionMetricExtractionArgs:
     @property
     @pulumi.getter(name="resourceGroup")
     def resource_group(self) -> Optional[pulumi.Input[str]]:
-        """
-        The resource group of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
-        """
         return pulumi.get(self, "resource_group")
 
     @resource_group.setter
@@ -747,14 +577,6 @@ class NamespaceScheduledTaskSchedulesScheduleArgs:
                  recurring_interval: Optional[pulumi.Input[str]] = None,
                  repeat_count: Optional[pulumi.Input[int]] = None,
                  time_zone: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] type: (Updatable) Schedule type discriminator.
-        :param pulumi.Input[str] expression: (Updatable) Value in cron format.
-        :param pulumi.Input[str] misfire_policy: (Updatable) Schedule misfire retry policy.
-        :param pulumi.Input[str] recurring_interval: (Updatable) Recurring interval in ISO 8601 extended format as described in https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. P14D (not P2W). The value must be at least 5 minutes (PT5M) and at most 3 weeks (P21D or PT30240M).
-        :param pulumi.Input[int] repeat_count: (Updatable) Number of times (0-based) to execute until auto-stop. Default value -1 will execute indefinitely. Value 0 will execute once.
-        :param pulumi.Input[str] time_zone: (Updatable) Time zone, by default UTC.
-        """
         pulumi.set(__self__, "type", type)
         if expression is not None:
             pulumi.set(__self__, "expression", expression)
@@ -770,9 +592,6 @@ class NamespaceScheduledTaskSchedulesScheduleArgs:
     @property
     @pulumi.getter
     def type(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Schedule type discriminator.
-        """
         return pulumi.get(self, "type")
 
     @type.setter
@@ -782,9 +601,6 @@ class NamespaceScheduledTaskSchedulesScheduleArgs:
     @property
     @pulumi.getter
     def expression(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Value in cron format.
-        """
         return pulumi.get(self, "expression")
 
     @expression.setter
@@ -794,9 +610,6 @@ class NamespaceScheduledTaskSchedulesScheduleArgs:
     @property
     @pulumi.getter(name="misfirePolicy")
     def misfire_policy(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Schedule misfire retry policy.
-        """
         return pulumi.get(self, "misfire_policy")
 
     @misfire_policy.setter
@@ -806,9 +619,6 @@ class NamespaceScheduledTaskSchedulesScheduleArgs:
     @property
     @pulumi.getter(name="recurringInterval")
     def recurring_interval(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Recurring interval in ISO 8601 extended format as described in https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. P14D (not P2W). The value must be at least 5 minutes (PT5M) and at most 3 weeks (P21D or PT30240M).
-        """
         return pulumi.get(self, "recurring_interval")
 
     @recurring_interval.setter
@@ -818,9 +628,6 @@ class NamespaceScheduledTaskSchedulesScheduleArgs:
     @property
     @pulumi.getter(name="repeatCount")
     def repeat_count(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) Number of times (0-based) to execute until auto-stop. Default value -1 will execute indefinitely. Value 0 will execute once.
-        """
         return pulumi.get(self, "repeat_count")
 
     @repeat_count.setter
@@ -830,9 +637,6 @@ class NamespaceScheduledTaskSchedulesScheduleArgs:
     @property
     @pulumi.getter(name="timeZone")
     def time_zone(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Time zone, by default UTC.
-        """
         return pulumi.get(self, "time_zone")
 
     @time_zone.setter
@@ -846,9 +650,6 @@ class GetLogAnalyticsEntitiesFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: A filter to return only log analytics entities whose name matches the entire name given. The match is case-insensitive.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -857,9 +658,6 @@ class GetLogAnalyticsEntitiesFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        A filter to return only log analytics entities whose name matches the entire name given. The match is case-insensitive.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -930,9 +728,6 @@ class GetLogAnalyticsObjectCollectionRulesFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: A filter to return rules only matching with this name.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -941,9 +736,6 @@ class GetLogAnalyticsObjectCollectionRulesFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        A filter to return rules only matching with this name.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -975,9 +767,6 @@ class GetNamespaceEffectivePropertiesFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: The property name used for filtering.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -986,9 +775,6 @@ class GetNamespaceEffectivePropertiesFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        The property name used for filtering.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -1059,9 +845,6 @@ class GetNamespacePropertiesMetadataFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: The property name used for filtering.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -1070,9 +853,6 @@ class GetNamespacePropertiesMetadataFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        The property name used for filtering.
-        """
         return pulumi.get(self, "name")
 
     @name.setter

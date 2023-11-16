@@ -8,6 +8,8 @@ import com.pulumi.oci.Sch.outputs.GetServiceConnectorsServiceConnectorCollection
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSource {
@@ -15,27 +17,27 @@ public final class GetServiceConnectorsServiceConnectorCollectionItemSourceMonit
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for this request.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return Discriminator for namespaces in the compartment-specific list.
      * 
      */
-    private List<GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetail> namespaceDetails;
+    private @Nullable List<GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetail> namespaceDetails;
 
     private GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSource() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for this request.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return Discriminator for namespaces in the compartment-specific list.
      * 
      */
     public List<GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetail> namespaceDetails() {
-        return this.namespaceDetails;
+        return this.namespaceDetails == null ? List.of() : this.namespaceDetails;
     }
 
     public static Builder builder() {
@@ -47,8 +49,8 @@ public final class GetServiceConnectorsServiceConnectorCollectionItemSourceMonit
     }
     @CustomType.Builder
     public static final class Builder {
-        private String compartmentId;
-        private List<GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetail> namespaceDetails;
+        private @Nullable String compartmentId;
+        private @Nullable List<GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetail> namespaceDetails;
         public Builder() {}
         public Builder(GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSource defaults) {
     	      Objects.requireNonNull(defaults);
@@ -57,13 +59,13 @@ public final class GetServiceConnectorsServiceConnectorCollectionItemSourceMonit
         }
 
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder namespaceDetails(List<GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetail> namespaceDetails) {
-            this.namespaceDetails = Objects.requireNonNull(namespaceDetails);
+        public Builder namespaceDetails(@Nullable List<GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetail> namespaceDetails) {
+            this.namespaceDetails = namespaceDetails;
             return this;
         }
         public Builder namespaceDetails(GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetail... namespaceDetails) {

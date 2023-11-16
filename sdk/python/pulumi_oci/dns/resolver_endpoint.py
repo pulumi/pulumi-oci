@@ -26,20 +26,6 @@ class ResolverEndpointInitArgs:
                  scope: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a ResolverEndpoint resource.
-        :param pulumi.Input[bool] is_forwarding: A Boolean flag indicating whether or not the resolver endpoint is for forwarding.
-        :param pulumi.Input[bool] is_listening: A Boolean flag indicating whether or not the resolver endpoint is for listening.
-        :param pulumi.Input[str] resolver_id: The OCID of the target resolver.
-        :param pulumi.Input[str] subnet_id: The OCID of a subnet. Must be part of the VCN that the resolver is attached to.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] endpoint_type: (Updatable) The type of resolver endpoint. VNIC is currently the only supported type.
-        :param pulumi.Input[str] forwarding_address: An IP address from which forwarded queries may be sent. For VNIC endpoints, this IP address must be part of the subnet and will be assigned by the system if unspecified when isForwarding is true.
-        :param pulumi.Input[str] listening_address: An IP address to listen to queries on. For VNIC endpoints this IP address must be part of the subnet and will be assigned by the system if unspecified when isListening is true.
-        :param pulumi.Input[str] name: The name of the resolver endpoint. Must be unique, case-insensitive, within the resolver.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: An array of network security group OCIDs for the resolver endpoint. These must be part of the VCN that the resolver endpoint is a part of.
-        :param pulumi.Input[str] scope: Value must be `PRIVATE` when creating private name resolver endpoints.
         """
         pulumi.set(__self__, "is_forwarding", is_forwarding)
         pulumi.set(__self__, "is_listening", is_listening)
@@ -61,9 +47,6 @@ class ResolverEndpointInitArgs:
     @property
     @pulumi.getter(name="isForwarding")
     def is_forwarding(self) -> pulumi.Input[bool]:
-        """
-        A Boolean flag indicating whether or not the resolver endpoint is for forwarding.
-        """
         return pulumi.get(self, "is_forwarding")
 
     @is_forwarding.setter
@@ -73,9 +56,6 @@ class ResolverEndpointInitArgs:
     @property
     @pulumi.getter(name="isListening")
     def is_listening(self) -> pulumi.Input[bool]:
-        """
-        A Boolean flag indicating whether or not the resolver endpoint is for listening.
-        """
         return pulumi.get(self, "is_listening")
 
     @is_listening.setter
@@ -85,9 +65,6 @@ class ResolverEndpointInitArgs:
     @property
     @pulumi.getter(name="resolverId")
     def resolver_id(self) -> pulumi.Input[str]:
-        """
-        The OCID of the target resolver.
-        """
         return pulumi.get(self, "resolver_id")
 
     @resolver_id.setter
@@ -97,13 +74,6 @@ class ResolverEndpointInitArgs:
     @property
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> pulumi.Input[str]:
-        """
-        The OCID of a subnet. Must be part of the VCN that the resolver is attached to.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "subnet_id")
 
     @subnet_id.setter
@@ -113,9 +83,6 @@ class ResolverEndpointInitArgs:
     @property
     @pulumi.getter(name="endpointType")
     def endpoint_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The type of resolver endpoint. VNIC is currently the only supported type.
-        """
         return pulumi.get(self, "endpoint_type")
 
     @endpoint_type.setter
@@ -125,9 +92,6 @@ class ResolverEndpointInitArgs:
     @property
     @pulumi.getter(name="forwardingAddress")
     def forwarding_address(self) -> Optional[pulumi.Input[str]]:
-        """
-        An IP address from which forwarded queries may be sent. For VNIC endpoints, this IP address must be part of the subnet and will be assigned by the system if unspecified when isForwarding is true.
-        """
         return pulumi.get(self, "forwarding_address")
 
     @forwarding_address.setter
@@ -137,9 +101,6 @@ class ResolverEndpointInitArgs:
     @property
     @pulumi.getter(name="listeningAddress")
     def listening_address(self) -> Optional[pulumi.Input[str]]:
-        """
-        An IP address to listen to queries on. For VNIC endpoints this IP address must be part of the subnet and will be assigned by the system if unspecified when isListening is true.
-        """
         return pulumi.get(self, "listening_address")
 
     @listening_address.setter
@@ -149,9 +110,6 @@ class ResolverEndpointInitArgs:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The name of the resolver endpoint. Must be unique, case-insensitive, within the resolver.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -161,9 +119,6 @@ class ResolverEndpointInitArgs:
     @property
     @pulumi.getter(name="nsgIds")
     def nsg_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        An array of network security group OCIDs for the resolver endpoint. These must be part of the VCN that the resolver endpoint is a part of.
-        """
         return pulumi.get(self, "nsg_ids")
 
     @nsg_ids.setter
@@ -173,9 +128,6 @@ class ResolverEndpointInitArgs:
     @property
     @pulumi.getter
     def scope(self) -> Optional[pulumi.Input[str]]:
-        """
-        Value must be `PRIVATE` when creating private name resolver endpoints.
-        """
         return pulumi.get(self, "scope")
 
     @scope.setter
@@ -203,25 +155,6 @@ class _ResolverEndpointState:
                  time_updated: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering ResolverEndpoint resources.
-        :param pulumi.Input[str] compartment_id: The OCID of the owning compartment. This will match the resolver that the resolver endpoint is under and will be updated if the resolver's compartment is changed.
-        :param pulumi.Input[str] endpoint_type: (Updatable) The type of resolver endpoint. VNIC is currently the only supported type.
-        :param pulumi.Input[str] forwarding_address: An IP address from which forwarded queries may be sent. For VNIC endpoints, this IP address must be part of the subnet and will be assigned by the system if unspecified when isForwarding is true.
-        :param pulumi.Input[bool] is_forwarding: A Boolean flag indicating whether or not the resolver endpoint is for forwarding.
-        :param pulumi.Input[bool] is_listening: A Boolean flag indicating whether or not the resolver endpoint is for listening.
-        :param pulumi.Input[str] listening_address: An IP address to listen to queries on. For VNIC endpoints this IP address must be part of the subnet and will be assigned by the system if unspecified when isListening is true.
-        :param pulumi.Input[str] name: The name of the resolver endpoint. Must be unique, case-insensitive, within the resolver.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: An array of network security group OCIDs for the resolver endpoint. These must be part of the VCN that the resolver endpoint is a part of.
-        :param pulumi.Input[str] resolver_id: The OCID of the target resolver.
-        :param pulumi.Input[str] scope: Value must be `PRIVATE` when creating private name resolver endpoints.
-        :param pulumi.Input[str] self: The canonical absolute URL of the resource.
-        :param pulumi.Input[str] state: The current state of the resource.
-        :param pulumi.Input[str] subnet_id: The OCID of a subnet. Must be part of the VCN that the resolver is attached to.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] time_created: The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
-        :param pulumi.Input[str] time_updated: The date and time the resource was last updated in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
         """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
@@ -257,9 +190,6 @@ class _ResolverEndpointState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the owning compartment. This will match the resolver that the resolver endpoint is under and will be updated if the resolver's compartment is changed.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -269,9 +199,6 @@ class _ResolverEndpointState:
     @property
     @pulumi.getter(name="endpointType")
     def endpoint_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The type of resolver endpoint. VNIC is currently the only supported type.
-        """
         return pulumi.get(self, "endpoint_type")
 
     @endpoint_type.setter
@@ -281,9 +208,6 @@ class _ResolverEndpointState:
     @property
     @pulumi.getter(name="forwardingAddress")
     def forwarding_address(self) -> Optional[pulumi.Input[str]]:
-        """
-        An IP address from which forwarded queries may be sent. For VNIC endpoints, this IP address must be part of the subnet and will be assigned by the system if unspecified when isForwarding is true.
-        """
         return pulumi.get(self, "forwarding_address")
 
     @forwarding_address.setter
@@ -293,9 +217,6 @@ class _ResolverEndpointState:
     @property
     @pulumi.getter(name="isForwarding")
     def is_forwarding(self) -> Optional[pulumi.Input[bool]]:
-        """
-        A Boolean flag indicating whether or not the resolver endpoint is for forwarding.
-        """
         return pulumi.get(self, "is_forwarding")
 
     @is_forwarding.setter
@@ -305,9 +226,6 @@ class _ResolverEndpointState:
     @property
     @pulumi.getter(name="isListening")
     def is_listening(self) -> Optional[pulumi.Input[bool]]:
-        """
-        A Boolean flag indicating whether or not the resolver endpoint is for listening.
-        """
         return pulumi.get(self, "is_listening")
 
     @is_listening.setter
@@ -317,9 +235,6 @@ class _ResolverEndpointState:
     @property
     @pulumi.getter(name="listeningAddress")
     def listening_address(self) -> Optional[pulumi.Input[str]]:
-        """
-        An IP address to listen to queries on. For VNIC endpoints this IP address must be part of the subnet and will be assigned by the system if unspecified when isListening is true.
-        """
         return pulumi.get(self, "listening_address")
 
     @listening_address.setter
@@ -329,9 +244,6 @@ class _ResolverEndpointState:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The name of the resolver endpoint. Must be unique, case-insensitive, within the resolver.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -341,9 +253,6 @@ class _ResolverEndpointState:
     @property
     @pulumi.getter(name="nsgIds")
     def nsg_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        An array of network security group OCIDs for the resolver endpoint. These must be part of the VCN that the resolver endpoint is a part of.
-        """
         return pulumi.get(self, "nsg_ids")
 
     @nsg_ids.setter
@@ -353,9 +262,6 @@ class _ResolverEndpointState:
     @property
     @pulumi.getter(name="resolverId")
     def resolver_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the target resolver.
-        """
         return pulumi.get(self, "resolver_id")
 
     @resolver_id.setter
@@ -365,9 +271,6 @@ class _ResolverEndpointState:
     @property
     @pulumi.getter
     def scope(self) -> Optional[pulumi.Input[str]]:
-        """
-        Value must be `PRIVATE` when creating private name resolver endpoints.
-        """
         return pulumi.get(self, "scope")
 
     @scope.setter
@@ -377,9 +280,6 @@ class _ResolverEndpointState:
     @property
     @pulumi.getter
     def self(self) -> Optional[pulumi.Input[str]]:
-        """
-        The canonical absolute URL of the resource.
-        """
         return pulumi.get(self, "self")
 
     @self.setter
@@ -389,9 +289,6 @@ class _ResolverEndpointState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The current state of the resource.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -401,13 +298,6 @@ class _ResolverEndpointState:
     @property
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of a subnet. Must be part of the VCN that the resolver is attached to.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "subnet_id")
 
     @subnet_id.setter
@@ -417,9 +307,6 @@ class _ResolverEndpointState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -429,9 +316,6 @@ class _ResolverEndpointState:
     @property
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time the resource was last updated in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
-        """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
@@ -456,57 +340,9 @@ class ResolverEndpoint(pulumi.CustomResource):
                  subnet_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Resolver Endpoint resource in Oracle Cloud Infrastructure DNS service.
-
-        Creates a new resolver endpoint. Requires a `PRIVATE` scope query parameter.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_resolver_endpoint = oci.dns.ResolverEndpoint("testResolverEndpoint",
-            is_forwarding=var["resolver_endpoint_is_forwarding"],
-            is_listening=var["resolver_endpoint_is_listening"],
-            resolver_id=oci_dns_resolver["test_resolver"]["id"],
-            subnet_id=oci_core_subnet["test_subnet"]["id"],
-            scope="PRIVATE",
-            endpoint_type=var["resolver_endpoint_endpoint_type"],
-            forwarding_address=var["resolver_endpoint_forwarding_address"],
-            listening_address=var["resolver_endpoint_listening_address"],
-            nsg_ids=var["resolver_endpoint_nsg_ids"])
-        ```
-
-        ## Import
-
-        For legacy ResolverEndpoints created without `scope`, these ResolverEndpoints can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Dns/resolverEndpoint:ResolverEndpoint test_resolver_endpoint "resolverId/{resolverId}/name/{resolverEndpointName}"
-        ```
-         For ResolverEndpoints created using `scope`, these ResolverEndpoints can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Dns/resolverEndpoint:ResolverEndpoint test_resolver_endpoint "resolverId/{resolverId}/name/{name}/scope/{scope}"
-        ```
-
+        Create a ResolverEndpoint resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] endpoint_type: (Updatable) The type of resolver endpoint. VNIC is currently the only supported type.
-        :param pulumi.Input[str] forwarding_address: An IP address from which forwarded queries may be sent. For VNIC endpoints, this IP address must be part of the subnet and will be assigned by the system if unspecified when isForwarding is true.
-        :param pulumi.Input[bool] is_forwarding: A Boolean flag indicating whether or not the resolver endpoint is for forwarding.
-        :param pulumi.Input[bool] is_listening: A Boolean flag indicating whether or not the resolver endpoint is for listening.
-        :param pulumi.Input[str] listening_address: An IP address to listen to queries on. For VNIC endpoints this IP address must be part of the subnet and will be assigned by the system if unspecified when isListening is true.
-        :param pulumi.Input[str] name: The name of the resolver endpoint. Must be unique, case-insensitive, within the resolver.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: An array of network security group OCIDs for the resolver endpoint. These must be part of the VCN that the resolver endpoint is a part of.
-        :param pulumi.Input[str] resolver_id: The OCID of the target resolver.
-        :param pulumi.Input[str] scope: Value must be `PRIVATE` when creating private name resolver endpoints.
-        :param pulumi.Input[str] subnet_id: The OCID of a subnet. Must be part of the VCN that the resolver is attached to.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -515,41 +351,7 @@ class ResolverEndpoint(pulumi.CustomResource):
                  args: ResolverEndpointInitArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Resolver Endpoint resource in Oracle Cloud Infrastructure DNS service.
-
-        Creates a new resolver endpoint. Requires a `PRIVATE` scope query parameter.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_resolver_endpoint = oci.dns.ResolverEndpoint("testResolverEndpoint",
-            is_forwarding=var["resolver_endpoint_is_forwarding"],
-            is_listening=var["resolver_endpoint_is_listening"],
-            resolver_id=oci_dns_resolver["test_resolver"]["id"],
-            subnet_id=oci_core_subnet["test_subnet"]["id"],
-            scope="PRIVATE",
-            endpoint_type=var["resolver_endpoint_endpoint_type"],
-            forwarding_address=var["resolver_endpoint_forwarding_address"],
-            listening_address=var["resolver_endpoint_listening_address"],
-            nsg_ids=var["resolver_endpoint_nsg_ids"])
-        ```
-
-        ## Import
-
-        For legacy ResolverEndpoints created without `scope`, these ResolverEndpoints can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Dns/resolverEndpoint:ResolverEndpoint test_resolver_endpoint "resolverId/{resolverId}/name/{resolverEndpointName}"
-        ```
-         For ResolverEndpoints created using `scope`, these ResolverEndpoints can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Dns/resolverEndpoint:ResolverEndpoint test_resolver_endpoint "resolverId/{resolverId}/name/{name}/scope/{scope}"
-        ```
-
+        Create a ResolverEndpoint resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param ResolverEndpointInitArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -639,25 +441,6 @@ class ResolverEndpoint(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: The OCID of the owning compartment. This will match the resolver that the resolver endpoint is under and will be updated if the resolver's compartment is changed.
-        :param pulumi.Input[str] endpoint_type: (Updatable) The type of resolver endpoint. VNIC is currently the only supported type.
-        :param pulumi.Input[str] forwarding_address: An IP address from which forwarded queries may be sent. For VNIC endpoints, this IP address must be part of the subnet and will be assigned by the system if unspecified when isForwarding is true.
-        :param pulumi.Input[bool] is_forwarding: A Boolean flag indicating whether or not the resolver endpoint is for forwarding.
-        :param pulumi.Input[bool] is_listening: A Boolean flag indicating whether or not the resolver endpoint is for listening.
-        :param pulumi.Input[str] listening_address: An IP address to listen to queries on. For VNIC endpoints this IP address must be part of the subnet and will be assigned by the system if unspecified when isListening is true.
-        :param pulumi.Input[str] name: The name of the resolver endpoint. Must be unique, case-insensitive, within the resolver.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: An array of network security group OCIDs for the resolver endpoint. These must be part of the VCN that the resolver endpoint is a part of.
-        :param pulumi.Input[str] resolver_id: The OCID of the target resolver.
-        :param pulumi.Input[str] scope: Value must be `PRIVATE` when creating private name resolver endpoints.
-        :param pulumi.Input[str] self: The canonical absolute URL of the resource.
-        :param pulumi.Input[str] state: The current state of the resource.
-        :param pulumi.Input[str] subnet_id: The OCID of a subnet. Must be part of the VCN that the resolver is attached to.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] time_created: The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
-        :param pulumi.Input[str] time_updated: The date and time the resource was last updated in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -682,125 +465,76 @@ class ResolverEndpoint(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> pulumi.Output[str]:
-        """
-        The OCID of the owning compartment. This will match the resolver that the resolver endpoint is under and will be updated if the resolver's compartment is changed.
-        """
+    def compartment_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="endpointType")
-    def endpoint_type(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The type of resolver endpoint. VNIC is currently the only supported type.
-        """
+    def endpoint_type(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "endpoint_type")
 
     @property
     @pulumi.getter(name="forwardingAddress")
-    def forwarding_address(self) -> pulumi.Output[str]:
-        """
-        An IP address from which forwarded queries may be sent. For VNIC endpoints, this IP address must be part of the subnet and will be assigned by the system if unspecified when isForwarding is true.
-        """
+    def forwarding_address(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "forwarding_address")
 
     @property
     @pulumi.getter(name="isForwarding")
     def is_forwarding(self) -> pulumi.Output[bool]:
-        """
-        A Boolean flag indicating whether or not the resolver endpoint is for forwarding.
-        """
         return pulumi.get(self, "is_forwarding")
 
     @property
     @pulumi.getter(name="isListening")
     def is_listening(self) -> pulumi.Output[bool]:
-        """
-        A Boolean flag indicating whether or not the resolver endpoint is for listening.
-        """
         return pulumi.get(self, "is_listening")
 
     @property
     @pulumi.getter(name="listeningAddress")
-    def listening_address(self) -> pulumi.Output[str]:
-        """
-        An IP address to listen to queries on. For VNIC endpoints this IP address must be part of the subnet and will be assigned by the system if unspecified when isListening is true.
-        """
+    def listening_address(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "listening_address")
 
     @property
     @pulumi.getter
     def name(self) -> pulumi.Output[str]:
-        """
-        The name of the resolver endpoint. Must be unique, case-insensitive, within the resolver.
-        """
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="nsgIds")
     def nsg_ids(self) -> pulumi.Output[Optional[Sequence[str]]]:
-        """
-        An array of network security group OCIDs for the resolver endpoint. These must be part of the VCN that the resolver endpoint is a part of.
-        """
         return pulumi.get(self, "nsg_ids")
 
     @property
     @pulumi.getter(name="resolverId")
     def resolver_id(self) -> pulumi.Output[str]:
-        """
-        The OCID of the target resolver.
-        """
         return pulumi.get(self, "resolver_id")
 
     @property
     @pulumi.getter
     def scope(self) -> pulumi.Output[Optional[str]]:
-        """
-        Value must be `PRIVATE` when creating private name resolver endpoints.
-        """
         return pulumi.get(self, "scope")
 
     @property
     @pulumi.getter
-    def self(self) -> pulumi.Output[str]:
-        """
-        The canonical absolute URL of the resource.
-        """
+    def self(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "self")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        The current state of the resource.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> pulumi.Output[str]:
-        """
-        The OCID of a subnet. Must be part of the VCN that the resolver is attached to.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "subnet_id")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> pulumi.Output[str]:
-        """
-        The date and time the resource was last updated in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
-        """
+    def time_updated(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_updated")
 

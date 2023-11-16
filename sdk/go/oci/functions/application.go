@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // ## Example Usage
@@ -88,23 +87,23 @@ type Application struct {
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// (Updatable) Define the image signature verification policy for an application.
-	ImagePolicyConfig ApplicationImagePolicyConfigOutput `pulumi:"imagePolicyConfig"`
+	ImagePolicyConfig ApplicationImagePolicyConfigPtrOutput `pulumi:"imagePolicyConfig"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of the Network Security Groups to add the application to.
 	NetworkSecurityGroupIds pulumi.StringArrayOutput `pulumi:"networkSecurityGroupIds"`
 	// Valid values are `GENERIC_X86`, `GENERIC_ARM` and `GENERIC_X86_ARM`. Default is `GENERIC_X86`. Setting this to `GENERIC_X86`, will run the functions in the application on X86 processor architecture. Setting this to `GENERIC_ARM`, will run the functions in the application on ARM processor architecture. When set to `GENERIC_X86_ARM`, functions in the application are run on either X86 or ARM processor architecture. Accepted values are: `GENERIC_X86`, `GENERIC_ARM`, `GENERIC_X86_ARM`
-	Shape pulumi.StringOutput `pulumi:"shape"`
+	Shape pulumi.StringPtrOutput `pulumi:"shape"`
 	// The current state of the application.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of the subnets in which to run functions in the application.
 	SubnetIds pulumi.StringArrayOutput `pulumi:"subnetIds"`
 	// (Updatable) A syslog URL to which to send all function logs. Supports tcp, udp, and tcp+tls. The syslog URL must be reachable from all of the subnets configured for the application. Note: If you enable the Oracle Cloud Infrastructure Logging service for this application, the syslogUrl value is ignored. Function logs are sent to the Oracle Cloud Infrastructure Logging service, and not to the syslog URL.  Example: `tcp://logserver.myserver:1234`
-	SyslogUrl pulumi.StringOutput `pulumi:"syslogUrl"`
+	SyslogUrl pulumi.StringPtrOutput `pulumi:"syslogUrl"`
 	// The time the application was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-09-12T22:47:12.613Z`
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The time the application was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-09-12T22:47:12.613Z`
-	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 	// (Updatable) Define the tracing configuration for an application.
-	TraceConfig ApplicationTraceConfigOutput `pulumi:"traceConfig"`
+	TraceConfig ApplicationTraceConfigPtrOutput `pulumi:"traceConfig"`
 }
 
 // NewApplication registers a new resource with the given unique name, arguments, and options.
@@ -293,12 +292,6 @@ func (i *Application) ToApplicationOutputWithContext(ctx context.Context) Applic
 	return pulumi.ToOutputWithContext(ctx, i).(ApplicationOutput)
 }
 
-func (i *Application) ToOutput(ctx context.Context) pulumix.Output[*Application] {
-	return pulumix.Output[*Application]{
-		OutputState: i.ToApplicationOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ApplicationArrayInput is an input type that accepts ApplicationArray and ApplicationArrayOutput values.
 // You can construct a concrete instance of `ApplicationArrayInput` via:
 //
@@ -322,12 +315,6 @@ func (i ApplicationArray) ToApplicationArrayOutput() ApplicationArrayOutput {
 
 func (i ApplicationArray) ToApplicationArrayOutputWithContext(ctx context.Context) ApplicationArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ApplicationArrayOutput)
-}
-
-func (i ApplicationArray) ToOutput(ctx context.Context) pulumix.Output[[]*Application] {
-	return pulumix.Output[[]*Application]{
-		OutputState: i.ToApplicationArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // ApplicationMapInput is an input type that accepts ApplicationMap and ApplicationMapOutput values.
@@ -355,12 +342,6 @@ func (i ApplicationMap) ToApplicationMapOutputWithContext(ctx context.Context) A
 	return pulumi.ToOutputWithContext(ctx, i).(ApplicationMapOutput)
 }
 
-func (i ApplicationMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*Application] {
-	return pulumix.Output[map[string]*Application]{
-		OutputState: i.ToApplicationMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ApplicationOutput struct{ *pulumi.OutputState }
 
 func (ApplicationOutput) ElementType() reflect.Type {
@@ -373,12 +354,6 @@ func (o ApplicationOutput) ToApplicationOutput() ApplicationOutput {
 
 func (o ApplicationOutput) ToApplicationOutputWithContext(ctx context.Context) ApplicationOutput {
 	return o
-}
-
-func (o ApplicationOutput) ToOutput(ctx context.Context) pulumix.Output[*Application] {
-	return pulumix.Output[*Application]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The OCID of the compartment to create the application within.
@@ -409,8 +384,8 @@ func (o ApplicationOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // (Updatable) Define the image signature verification policy for an application.
-func (o ApplicationOutput) ImagePolicyConfig() ApplicationImagePolicyConfigOutput {
-	return o.ApplyT(func(v *Application) ApplicationImagePolicyConfigOutput { return v.ImagePolicyConfig }).(ApplicationImagePolicyConfigOutput)
+func (o ApplicationOutput) ImagePolicyConfig() ApplicationImagePolicyConfigPtrOutput {
+	return o.ApplyT(func(v *Application) ApplicationImagePolicyConfigPtrOutput { return v.ImagePolicyConfig }).(ApplicationImagePolicyConfigPtrOutput)
 }
 
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of the Network Security Groups to add the application to.
@@ -419,13 +394,13 @@ func (o ApplicationOutput) NetworkSecurityGroupIds() pulumi.StringArrayOutput {
 }
 
 // Valid values are `GENERIC_X86`, `GENERIC_ARM` and `GENERIC_X86_ARM`. Default is `GENERIC_X86`. Setting this to `GENERIC_X86`, will run the functions in the application on X86 processor architecture. Setting this to `GENERIC_ARM`, will run the functions in the application on ARM processor architecture. When set to `GENERIC_X86_ARM`, functions in the application are run on either X86 or ARM processor architecture. Accepted values are: `GENERIC_X86`, `GENERIC_ARM`, `GENERIC_X86_ARM`
-func (o ApplicationOutput) Shape() pulumi.StringOutput {
-	return o.ApplyT(func(v *Application) pulumi.StringOutput { return v.Shape }).(pulumi.StringOutput)
+func (o ApplicationOutput) Shape() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Application) pulumi.StringPtrOutput { return v.Shape }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the application.
-func (o ApplicationOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *Application) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o ApplicationOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Application) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of the subnets in which to run functions in the application.
@@ -434,23 +409,23 @@ func (o ApplicationOutput) SubnetIds() pulumi.StringArrayOutput {
 }
 
 // (Updatable) A syslog URL to which to send all function logs. Supports tcp, udp, and tcp+tls. The syslog URL must be reachable from all of the subnets configured for the application. Note: If you enable the Oracle Cloud Infrastructure Logging service for this application, the syslogUrl value is ignored. Function logs are sent to the Oracle Cloud Infrastructure Logging service, and not to the syslog URL.  Example: `tcp://logserver.myserver:1234`
-func (o ApplicationOutput) SyslogUrl() pulumi.StringOutput {
-	return o.ApplyT(func(v *Application) pulumi.StringOutput { return v.SyslogUrl }).(pulumi.StringOutput)
+func (o ApplicationOutput) SyslogUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Application) pulumi.StringPtrOutput { return v.SyslogUrl }).(pulumi.StringPtrOutput)
 }
 
 // The time the application was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-09-12T22:47:12.613Z`
-func (o ApplicationOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *Application) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o ApplicationOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Application) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time the application was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-09-12T22:47:12.613Z`
-func (o ApplicationOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *Application) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o ApplicationOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Application) pulumi.StringPtrOutput { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Define the tracing configuration for an application.
-func (o ApplicationOutput) TraceConfig() ApplicationTraceConfigOutput {
-	return o.ApplyT(func(v *Application) ApplicationTraceConfigOutput { return v.TraceConfig }).(ApplicationTraceConfigOutput)
+func (o ApplicationOutput) TraceConfig() ApplicationTraceConfigPtrOutput {
+	return o.ApplyT(func(v *Application) ApplicationTraceConfigPtrOutput { return v.TraceConfig }).(ApplicationTraceConfigPtrOutput)
 }
 
 type ApplicationArrayOutput struct{ *pulumi.OutputState }
@@ -465,12 +440,6 @@ func (o ApplicationArrayOutput) ToApplicationArrayOutput() ApplicationArrayOutpu
 
 func (o ApplicationArrayOutput) ToApplicationArrayOutputWithContext(ctx context.Context) ApplicationArrayOutput {
 	return o
-}
-
-func (o ApplicationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*Application] {
-	return pulumix.Output[[]*Application]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ApplicationArrayOutput) Index(i pulumi.IntInput) ApplicationOutput {
@@ -491,12 +460,6 @@ func (o ApplicationMapOutput) ToApplicationMapOutput() ApplicationMapOutput {
 
 func (o ApplicationMapOutput) ToApplicationMapOutputWithContext(ctx context.Context) ApplicationMapOutput {
 	return o
-}
-
-func (o ApplicationMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*Application] {
-	return pulumix.Output[map[string]*Application]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ApplicationMapOutput) MapIndex(k pulumi.StringInput) ApplicationOutput {

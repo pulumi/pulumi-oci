@@ -16,17 +16,17 @@ namespace Pulumi.Oci.Functions.Outputs
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the PbfListing this function is sourced from.
         /// </summary>
-        public readonly string PbfListingId;
+        public readonly string? PbfListingId;
         /// <summary>
         /// Type of the Function Source. Possible values: PRE_BUILT_FUNCTIONS.
         /// </summary>
-        public readonly string SourceType;
+        public readonly string? SourceType;
 
         [OutputConstructor]
         private GetFunctionsFunctionSourceDetailResult(
-            string pbfListingId,
+            string? pbfListingId,
 
-            string sourceType)
+            string? sourceType)
         {
             PbfListingId = pbfListingId;
             SourceType = sourceType;

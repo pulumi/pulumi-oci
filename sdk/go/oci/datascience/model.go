@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Model resource in Oracle Cloud Infrastructure Data Science service.
@@ -83,18 +82,18 @@ type Model struct {
 	pulumi.CustomResourceState
 
 	// This allows to specify a filename during upload. This file name is used to dispose of the file contents while downloading the file. Example: `attachment; filename=model-artifact.zip`
-	ArtifactContentDisposition pulumi.StringOutput `pulumi:"artifactContentDisposition"`
+	ArtifactContentDisposition pulumi.StringPtrOutput `pulumi:"artifactContentDisposition"`
 	// The content length of the model_artifact.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	ArtifactContentLength pulumi.StringOutput `pulumi:"artifactContentLength"`
-	ArtifactContentMd5    pulumi.StringOutput `pulumi:"artifactContentMd5"`
-	ArtifactLastModified  pulumi.StringOutput `pulumi:"artifactLastModified"`
+	ArtifactContentLength pulumi.StringOutput    `pulumi:"artifactContentLength"`
+	ArtifactContentMd5    pulumi.StringPtrOutput `pulumi:"artifactContentMd5"`
+	ArtifactLastModified  pulumi.StringPtrOutput `pulumi:"artifactLastModified"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the model in.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the model.
-	CreatedBy pulumi.StringOutput `pulumi:"createdBy"`
+	CreatedBy pulumi.StringPtrOutput `pulumi:"createdBy"`
 	// (Updatable) An array of custom metadata details for the model.
 	CustomMetadataLists ModelCustomMetadataListArrayOutput `pulumi:"customMetadataLists"`
 	// (Updatable) An array of defined metadata details for the model.
@@ -102,24 +101,24 @@ type Model struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) A short description of the model.
-	Description pulumi.StringOutput `pulumi:"description"`
+	Description pulumi.StringPtrOutput `pulumi:"description"`
 	// (Updatable) A user-friendly display name for the resource. It does not have to be unique and can be modified. Avoid entering confidential information. Example: `My Model`
-	DisplayName pulumi.StringOutput `pulumi:"displayName"`
-	EmptyModel  pulumi.BoolOutput   `pulumi:"emptyModel"`
+	DisplayName pulumi.StringPtrOutput `pulumi:"displayName"`
+	EmptyModel  pulumi.BoolPtrOutput   `pulumi:"emptyModel"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// Input schema file content in String format
-	InputSchema pulumi.StringOutput `pulumi:"inputSchema"`
+	InputSchema pulumi.StringPtrOutput `pulumi:"inputSchema"`
 	// The model artifact to upload. It is a ZIP archive of the files necessary to run the model. This can be done in a separate step or using cli/sdk. The Model will remain in "Creating" state until its artifact is uploaded.
 	ModelArtifact pulumi.StringOutput `pulumi:"modelArtifact"`
 	// Output schema file content in String format
-	OutputSchema pulumi.StringOutput `pulumi:"outputSchema"`
+	OutputSchema pulumi.StringPtrOutput `pulumi:"outputSchema"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model.
 	ProjectId pulumi.StringOutput `pulumi:"projectId"`
 	// The state of the model.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 }
 
 // NewModel registers a new resource with the given unique name, arguments, and options.
@@ -341,12 +340,6 @@ func (i *Model) ToModelOutputWithContext(ctx context.Context) ModelOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ModelOutput)
 }
 
-func (i *Model) ToOutput(ctx context.Context) pulumix.Output[*Model] {
-	return pulumix.Output[*Model]{
-		OutputState: i.ToModelOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ModelArrayInput is an input type that accepts ModelArray and ModelArrayOutput values.
 // You can construct a concrete instance of `ModelArrayInput` via:
 //
@@ -370,12 +363,6 @@ func (i ModelArray) ToModelArrayOutput() ModelArrayOutput {
 
 func (i ModelArray) ToModelArrayOutputWithContext(ctx context.Context) ModelArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ModelArrayOutput)
-}
-
-func (i ModelArray) ToOutput(ctx context.Context) pulumix.Output[[]*Model] {
-	return pulumix.Output[[]*Model]{
-		OutputState: i.ToModelArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // ModelMapInput is an input type that accepts ModelMap and ModelMapOutput values.
@@ -403,12 +390,6 @@ func (i ModelMap) ToModelMapOutputWithContext(ctx context.Context) ModelMapOutpu
 	return pulumi.ToOutputWithContext(ctx, i).(ModelMapOutput)
 }
 
-func (i ModelMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*Model] {
-	return pulumix.Output[map[string]*Model]{
-		OutputState: i.ToModelMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ModelOutput struct{ *pulumi.OutputState }
 
 func (ModelOutput) ElementType() reflect.Type {
@@ -423,15 +404,9 @@ func (o ModelOutput) ToModelOutputWithContext(ctx context.Context) ModelOutput {
 	return o
 }
 
-func (o ModelOutput) ToOutput(ctx context.Context) pulumix.Output[*Model] {
-	return pulumix.Output[*Model]{
-		OutputState: o.OutputState,
-	}
-}
-
 // This allows to specify a filename during upload. This file name is used to dispose of the file contents while downloading the file. Example: `attachment; filename=model-artifact.zip`
-func (o ModelOutput) ArtifactContentDisposition() pulumi.StringOutput {
-	return o.ApplyT(func(v *Model) pulumi.StringOutput { return v.ArtifactContentDisposition }).(pulumi.StringOutput)
+func (o ModelOutput) ArtifactContentDisposition() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Model) pulumi.StringPtrOutput { return v.ArtifactContentDisposition }).(pulumi.StringPtrOutput)
 }
 
 // The content length of the model_artifact.
@@ -442,12 +417,12 @@ func (o ModelOutput) ArtifactContentLength() pulumi.StringOutput {
 	return o.ApplyT(func(v *Model) pulumi.StringOutput { return v.ArtifactContentLength }).(pulumi.StringOutput)
 }
 
-func (o ModelOutput) ArtifactContentMd5() pulumi.StringOutput {
-	return o.ApplyT(func(v *Model) pulumi.StringOutput { return v.ArtifactContentMd5 }).(pulumi.StringOutput)
+func (o ModelOutput) ArtifactContentMd5() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Model) pulumi.StringPtrOutput { return v.ArtifactContentMd5 }).(pulumi.StringPtrOutput)
 }
 
-func (o ModelOutput) ArtifactLastModified() pulumi.StringOutput {
-	return o.ApplyT(func(v *Model) pulumi.StringOutput { return v.ArtifactLastModified }).(pulumi.StringOutput)
+func (o ModelOutput) ArtifactLastModified() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Model) pulumi.StringPtrOutput { return v.ArtifactLastModified }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the model in.
@@ -456,8 +431,8 @@ func (o ModelOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the model.
-func (o ModelOutput) CreatedBy() pulumi.StringOutput {
-	return o.ApplyT(func(v *Model) pulumi.StringOutput { return v.CreatedBy }).(pulumi.StringOutput)
+func (o ModelOutput) CreatedBy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Model) pulumi.StringPtrOutput { return v.CreatedBy }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) An array of custom metadata details for the model.
@@ -476,17 +451,17 @@ func (o ModelOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // (Updatable) A short description of the model.
-func (o ModelOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v *Model) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
+func (o ModelOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Model) pulumi.StringPtrOutput { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) A user-friendly display name for the resource. It does not have to be unique and can be modified. Avoid entering confidential information. Example: `My Model`
-func (o ModelOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v *Model) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+func (o ModelOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Model) pulumi.StringPtrOutput { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
-func (o ModelOutput) EmptyModel() pulumi.BoolOutput {
-	return o.ApplyT(func(v *Model) pulumi.BoolOutput { return v.EmptyModel }).(pulumi.BoolOutput)
+func (o ModelOutput) EmptyModel() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *Model) pulumi.BoolPtrOutput { return v.EmptyModel }).(pulumi.BoolPtrOutput)
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -495,8 +470,8 @@ func (o ModelOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // Input schema file content in String format
-func (o ModelOutput) InputSchema() pulumi.StringOutput {
-	return o.ApplyT(func(v *Model) pulumi.StringOutput { return v.InputSchema }).(pulumi.StringOutput)
+func (o ModelOutput) InputSchema() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Model) pulumi.StringPtrOutput { return v.InputSchema }).(pulumi.StringPtrOutput)
 }
 
 // The model artifact to upload. It is a ZIP archive of the files necessary to run the model. This can be done in a separate step or using cli/sdk. The Model will remain in "Creating" state until its artifact is uploaded.
@@ -505,8 +480,8 @@ func (o ModelOutput) ModelArtifact() pulumi.StringOutput {
 }
 
 // Output schema file content in String format
-func (o ModelOutput) OutputSchema() pulumi.StringOutput {
-	return o.ApplyT(func(v *Model) pulumi.StringOutput { return v.OutputSchema }).(pulumi.StringOutput)
+func (o ModelOutput) OutputSchema() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Model) pulumi.StringPtrOutput { return v.OutputSchema }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model.
@@ -515,13 +490,13 @@ func (o ModelOutput) ProjectId() pulumi.StringOutput {
 }
 
 // The state of the model.
-func (o ModelOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *Model) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o ModelOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Model) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
-func (o ModelOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *Model) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o ModelOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Model) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 type ModelArrayOutput struct{ *pulumi.OutputState }
@@ -536,12 +511,6 @@ func (o ModelArrayOutput) ToModelArrayOutput() ModelArrayOutput {
 
 func (o ModelArrayOutput) ToModelArrayOutputWithContext(ctx context.Context) ModelArrayOutput {
 	return o
-}
-
-func (o ModelArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*Model] {
-	return pulumix.Output[[]*Model]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ModelArrayOutput) Index(i pulumi.IntInput) ModelOutput {
@@ -562,12 +531,6 @@ func (o ModelMapOutput) ToModelMapOutput() ModelMapOutput {
 
 func (o ModelMapOutput) ToModelMapOutputWithContext(ctx context.Context) ModelMapOutput {
 	return o
-}
-
-func (o ModelMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*Model] {
-	return pulumix.Output[map[string]*Model]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ModelMapOutput) MapIndex(k pulumi.StringInput) ModelOutput {

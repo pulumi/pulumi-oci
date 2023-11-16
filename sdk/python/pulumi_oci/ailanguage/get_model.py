@@ -77,138 +77,87 @@ class GetModelResult:
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)  for the model's compartment.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        A short description of the Model.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A user-friendly display name for the resource. It does not have to be unique and can be modified. Avoid entering confidential information.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="evaluationResults")
-    def evaluation_results(self) -> Sequence['outputs.GetModelEvaluationResultResult']:
-        """
-        model training results of different models
-        """
+    def evaluation_results(self) -> Optional[Sequence['outputs.GetModelEvaluationResultResult']]:
         return pulumi.get(self, "evaluation_results")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
     def id(self) -> str:
-        """
-        Unique identifier model OCID of a model that is immutable on creation
-        """
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in failed state.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="modelDetails")
-    def model_details(self) -> Sequence['outputs.GetModelModelDetailResult']:
-        """
-        Possible model types
-        """
+    def model_details(self) -> Optional[Sequence['outputs.GetModelModelDetailResult']]:
         return pulumi.get(self, "model_details")
 
     @property
     @pulumi.getter(name="projectId")
-    def project_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model.
-        """
+    def project_id(self) -> Optional[str]:
         return pulumi.get(self, "project_id")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The state of the model.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="testStrategies")
-    def test_strategies(self) -> Sequence['outputs.GetModelTestStrategyResult']:
-        """
-        Possible strategy as testing and validation(optional) dataset.
-        """
+    def test_strategies(self) -> Optional[Sequence['outputs.GetModelTestStrategyResult']]:
         return pulumi.get(self, "test_strategies")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The time the the model was created. An RFC3339 formatted datetime string.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The time the model was updated. An RFC3339 formatted datetime string.
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
     @property
     @pulumi.getter(name="trainingDatasets")
-    def training_datasets(self) -> Sequence['outputs.GetModelTrainingDatasetResult']:
-        """
-        Possible data set type
-        """
+    def training_datasets(self) -> Optional[Sequence['outputs.GetModelTrainingDatasetResult']]:
         return pulumi.get(self, "training_datasets")
 
     @property
     @pulumi.getter
-    def version(self) -> str:
-        """
-        For pre trained models this will identify model type version used for model creation For custom identifying the model by model id is difficult. This param provides ease of use for end customer. <<service>>::<<service-name>>_<<model-type-version>>::<<custom model on which this training has to be done>> ex: ai-lang::NER_V1::CUSTOM-V0
-        """
+    def version(self) -> Optional[str]:
         return pulumi.get(self, "version")
 
 
@@ -240,12 +189,7 @@ class AwaitableGetModelResult(GetModelResult):
 def get_model(id: Optional[str] = None,
               opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetModelResult:
     """
-    This data source provides details about a specific Model resource in Oracle Cloud Infrastructure Ai Language service.
-
-    Gets a model by identifier
-
-
-    :param str id: Unique identifier model OCID of a model that is immutable on creation
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['id'] = id
@@ -276,11 +220,6 @@ def get_model(id: Optional[str] = None,
 def get_model_output(id: Optional[pulumi.Input[str]] = None,
                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetModelResult]:
     """
-    This data source provides details about a specific Model resource in Oracle Cloud Infrastructure Ai Language service.
-
-    Gets a model by identifier
-
-
-    :param str id: Unique identifier model OCID of a model that is immutable on creation
+    Use this data source to access information about an existing resource.
     """
     ...

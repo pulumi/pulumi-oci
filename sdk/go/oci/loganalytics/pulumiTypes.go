@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 var _ = internal.GetEnvOrDefault
@@ -79,12 +78,6 @@ func (i LogAnalyticsImportCustomContentChangeListArgs) ToLogAnalyticsImportCusto
 	return pulumi.ToOutputWithContext(ctx, i).(LogAnalyticsImportCustomContentChangeListOutput)
 }
 
-func (i LogAnalyticsImportCustomContentChangeListArgs) ToOutput(ctx context.Context) pulumix.Output[LogAnalyticsImportCustomContentChangeList] {
-	return pulumix.Output[LogAnalyticsImportCustomContentChangeList]{
-		OutputState: i.ToLogAnalyticsImportCustomContentChangeListOutputWithContext(ctx).OutputState,
-	}
-}
-
 // LogAnalyticsImportCustomContentChangeListArrayInput is an input type that accepts LogAnalyticsImportCustomContentChangeListArray and LogAnalyticsImportCustomContentChangeListArrayOutput values.
 // You can construct a concrete instance of `LogAnalyticsImportCustomContentChangeListArrayInput` via:
 //
@@ -110,12 +103,6 @@ func (i LogAnalyticsImportCustomContentChangeListArray) ToLogAnalyticsImportCust
 	return pulumi.ToOutputWithContext(ctx, i).(LogAnalyticsImportCustomContentChangeListArrayOutput)
 }
 
-func (i LogAnalyticsImportCustomContentChangeListArray) ToOutput(ctx context.Context) pulumix.Output[[]LogAnalyticsImportCustomContentChangeList] {
-	return pulumix.Output[[]LogAnalyticsImportCustomContentChangeList]{
-		OutputState: i.ToLogAnalyticsImportCustomContentChangeListArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type LogAnalyticsImportCustomContentChangeListOutput struct{ *pulumi.OutputState }
 
 func (LogAnalyticsImportCustomContentChangeListOutput) ElementType() reflect.Type {
@@ -128,12 +115,6 @@ func (o LogAnalyticsImportCustomContentChangeListOutput) ToLogAnalyticsImportCus
 
 func (o LogAnalyticsImportCustomContentChangeListOutput) ToLogAnalyticsImportCustomContentChangeListOutputWithContext(ctx context.Context) LogAnalyticsImportCustomContentChangeListOutput {
 	return o
-}
-
-func (o LogAnalyticsImportCustomContentChangeListOutput) ToOutput(ctx context.Context) pulumix.Output[LogAnalyticsImportCustomContentChangeList] {
-	return pulumix.Output[LogAnalyticsImportCustomContentChangeList]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A list of field display names with conflicts.
@@ -195,12 +176,6 @@ func (o LogAnalyticsImportCustomContentChangeListArrayOutput) ToLogAnalyticsImpo
 	return o
 }
 
-func (o LogAnalyticsImportCustomContentChangeListArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]LogAnalyticsImportCustomContentChangeList] {
-	return pulumix.Output[[]LogAnalyticsImportCustomContentChangeList]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o LogAnalyticsImportCustomContentChangeListArrayOutput) Index(i pulumi.IntInput) LogAnalyticsImportCustomContentChangeListOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) LogAnalyticsImportCustomContentChangeList {
 		return vs[0].([]LogAnalyticsImportCustomContentChangeList)[vs[1].(int)]
@@ -244,12 +219,6 @@ func (i LogAnalyticsObjectCollectionRuleOverrideArgs) ToLogAnalyticsObjectCollec
 	return pulumi.ToOutputWithContext(ctx, i).(LogAnalyticsObjectCollectionRuleOverrideOutput)
 }
 
-func (i LogAnalyticsObjectCollectionRuleOverrideArgs) ToOutput(ctx context.Context) pulumix.Output[LogAnalyticsObjectCollectionRuleOverride] {
-	return pulumix.Output[LogAnalyticsObjectCollectionRuleOverride]{
-		OutputState: i.ToLogAnalyticsObjectCollectionRuleOverrideOutputWithContext(ctx).OutputState,
-	}
-}
-
 // LogAnalyticsObjectCollectionRuleOverrideArrayInput is an input type that accepts LogAnalyticsObjectCollectionRuleOverrideArray and LogAnalyticsObjectCollectionRuleOverrideArrayOutput values.
 // You can construct a concrete instance of `LogAnalyticsObjectCollectionRuleOverrideArrayInput` via:
 //
@@ -275,12 +244,6 @@ func (i LogAnalyticsObjectCollectionRuleOverrideArray) ToLogAnalyticsObjectColle
 	return pulumi.ToOutputWithContext(ctx, i).(LogAnalyticsObjectCollectionRuleOverrideArrayOutput)
 }
 
-func (i LogAnalyticsObjectCollectionRuleOverrideArray) ToOutput(ctx context.Context) pulumix.Output[[]LogAnalyticsObjectCollectionRuleOverride] {
-	return pulumix.Output[[]LogAnalyticsObjectCollectionRuleOverride]{
-		OutputState: i.ToLogAnalyticsObjectCollectionRuleOverrideArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type LogAnalyticsObjectCollectionRuleOverrideOutput struct{ *pulumi.OutputState }
 
 func (LogAnalyticsObjectCollectionRuleOverrideOutput) ElementType() reflect.Type {
@@ -293,12 +256,6 @@ func (o LogAnalyticsObjectCollectionRuleOverrideOutput) ToLogAnalyticsObjectColl
 
 func (o LogAnalyticsObjectCollectionRuleOverrideOutput) ToLogAnalyticsObjectCollectionRuleOverrideOutputWithContext(ctx context.Context) LogAnalyticsObjectCollectionRuleOverrideOutput {
 	return o
-}
-
-func (o LogAnalyticsObjectCollectionRuleOverrideOutput) ToOutput(ctx context.Context) pulumix.Output[LogAnalyticsObjectCollectionRuleOverride] {
-	return pulumix.Output[LogAnalyticsObjectCollectionRuleOverride]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o LogAnalyticsObjectCollectionRuleOverrideOutput) MatchType() pulumi.StringPtrOutput {
@@ -329,12 +286,6 @@ func (o LogAnalyticsObjectCollectionRuleOverrideArrayOutput) ToLogAnalyticsObjec
 
 func (o LogAnalyticsObjectCollectionRuleOverrideArrayOutput) ToLogAnalyticsObjectCollectionRuleOverrideArrayOutputWithContext(ctx context.Context) LogAnalyticsObjectCollectionRuleOverrideArrayOutput {
 	return o
-}
-
-func (o LogAnalyticsObjectCollectionRuleOverrideArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]LogAnalyticsObjectCollectionRuleOverride] {
-	return pulumix.Output[[]LogAnalyticsObjectCollectionRuleOverride]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o LogAnalyticsObjectCollectionRuleOverrideArrayOutput) Index(i pulumi.IntInput) LogAnalyticsObjectCollectionRuleOverrideOutput {
@@ -380,12 +331,6 @@ func (i LogAnalyticsPreferencesManagementItemArgs) ToLogAnalyticsPreferencesMana
 	return pulumi.ToOutputWithContext(ctx, i).(LogAnalyticsPreferencesManagementItemOutput)
 }
 
-func (i LogAnalyticsPreferencesManagementItemArgs) ToOutput(ctx context.Context) pulumix.Output[LogAnalyticsPreferencesManagementItem] {
-	return pulumix.Output[LogAnalyticsPreferencesManagementItem]{
-		OutputState: i.ToLogAnalyticsPreferencesManagementItemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // LogAnalyticsPreferencesManagementItemArrayInput is an input type that accepts LogAnalyticsPreferencesManagementItemArray and LogAnalyticsPreferencesManagementItemArrayOutput values.
 // You can construct a concrete instance of `LogAnalyticsPreferencesManagementItemArrayInput` via:
 //
@@ -411,12 +356,6 @@ func (i LogAnalyticsPreferencesManagementItemArray) ToLogAnalyticsPreferencesMan
 	return pulumi.ToOutputWithContext(ctx, i).(LogAnalyticsPreferencesManagementItemArrayOutput)
 }
 
-func (i LogAnalyticsPreferencesManagementItemArray) ToOutput(ctx context.Context) pulumix.Output[[]LogAnalyticsPreferencesManagementItem] {
-	return pulumix.Output[[]LogAnalyticsPreferencesManagementItem]{
-		OutputState: i.ToLogAnalyticsPreferencesManagementItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type LogAnalyticsPreferencesManagementItemOutput struct{ *pulumi.OutputState }
 
 func (LogAnalyticsPreferencesManagementItemOutput) ElementType() reflect.Type {
@@ -429,12 +368,6 @@ func (o LogAnalyticsPreferencesManagementItemOutput) ToLogAnalyticsPreferencesMa
 
 func (o LogAnalyticsPreferencesManagementItemOutput) ToLogAnalyticsPreferencesManagementItemOutputWithContext(ctx context.Context) LogAnalyticsPreferencesManagementItemOutput {
 	return o
-}
-
-func (o LogAnalyticsPreferencesManagementItemOutput) ToOutput(ctx context.Context) pulumix.Output[LogAnalyticsPreferencesManagementItem] {
-	return pulumix.Output[LogAnalyticsPreferencesManagementItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The preference name.
@@ -459,12 +392,6 @@ func (o LogAnalyticsPreferencesManagementItemArrayOutput) ToLogAnalyticsPreferen
 
 func (o LogAnalyticsPreferencesManagementItemArrayOutput) ToLogAnalyticsPreferencesManagementItemArrayOutputWithContext(ctx context.Context) LogAnalyticsPreferencesManagementItemArrayOutput {
 	return o
-}
-
-func (o LogAnalyticsPreferencesManagementItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]LogAnalyticsPreferencesManagementItem] {
-	return pulumix.Output[[]LogAnalyticsPreferencesManagementItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o LogAnalyticsPreferencesManagementItemArrayOutput) Index(i pulumi.IntInput) LogAnalyticsPreferencesManagementItemOutput {
@@ -532,12 +459,6 @@ func (i NamespaceIngestTimeRuleActionArgs) ToNamespaceIngestTimeRuleActionOutput
 	return pulumi.ToOutputWithContext(ctx, i).(NamespaceIngestTimeRuleActionOutput)
 }
 
-func (i NamespaceIngestTimeRuleActionArgs) ToOutput(ctx context.Context) pulumix.Output[NamespaceIngestTimeRuleAction] {
-	return pulumix.Output[NamespaceIngestTimeRuleAction]{
-		OutputState: i.ToNamespaceIngestTimeRuleActionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // NamespaceIngestTimeRuleActionArrayInput is an input type that accepts NamespaceIngestTimeRuleActionArray and NamespaceIngestTimeRuleActionArrayOutput values.
 // You can construct a concrete instance of `NamespaceIngestTimeRuleActionArrayInput` via:
 //
@@ -563,12 +484,6 @@ func (i NamespaceIngestTimeRuleActionArray) ToNamespaceIngestTimeRuleActionArray
 	return pulumi.ToOutputWithContext(ctx, i).(NamespaceIngestTimeRuleActionArrayOutput)
 }
 
-func (i NamespaceIngestTimeRuleActionArray) ToOutput(ctx context.Context) pulumix.Output[[]NamespaceIngestTimeRuleAction] {
-	return pulumix.Output[[]NamespaceIngestTimeRuleAction]{
-		OutputState: i.ToNamespaceIngestTimeRuleActionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type NamespaceIngestTimeRuleActionOutput struct{ *pulumi.OutputState }
 
 func (NamespaceIngestTimeRuleActionOutput) ElementType() reflect.Type {
@@ -581,12 +496,6 @@ func (o NamespaceIngestTimeRuleActionOutput) ToNamespaceIngestTimeRuleActionOutp
 
 func (o NamespaceIngestTimeRuleActionOutput) ToNamespaceIngestTimeRuleActionOutputWithContext(ctx context.Context) NamespaceIngestTimeRuleActionOutput {
 	return o
-}
-
-func (o NamespaceIngestTimeRuleActionOutput) ToOutput(ctx context.Context) pulumix.Output[NamespaceIngestTimeRuleAction] {
-	return pulumix.Output[NamespaceIngestTimeRuleAction]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -634,12 +543,6 @@ func (o NamespaceIngestTimeRuleActionArrayOutput) ToNamespaceIngestTimeRuleActio
 
 func (o NamespaceIngestTimeRuleActionArrayOutput) ToNamespaceIngestTimeRuleActionArrayOutputWithContext(ctx context.Context) NamespaceIngestTimeRuleActionArrayOutput {
 	return o
-}
-
-func (o NamespaceIngestTimeRuleActionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]NamespaceIngestTimeRuleAction] {
-	return pulumix.Output[[]NamespaceIngestTimeRuleAction]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o NamespaceIngestTimeRuleActionArrayOutput) Index(i pulumi.IntInput) NamespaceIngestTimeRuleActionOutput {
@@ -697,12 +600,6 @@ func (i NamespaceIngestTimeRuleConditionsArgs) ToNamespaceIngestTimeRuleConditio
 	return pulumi.ToOutputWithContext(ctx, i).(NamespaceIngestTimeRuleConditionsOutput)
 }
 
-func (i NamespaceIngestTimeRuleConditionsArgs) ToOutput(ctx context.Context) pulumix.Output[NamespaceIngestTimeRuleConditions] {
-	return pulumix.Output[NamespaceIngestTimeRuleConditions]{
-		OutputState: i.ToNamespaceIngestTimeRuleConditionsOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i NamespaceIngestTimeRuleConditionsArgs) ToNamespaceIngestTimeRuleConditionsPtrOutput() NamespaceIngestTimeRuleConditionsPtrOutput {
 	return i.ToNamespaceIngestTimeRuleConditionsPtrOutputWithContext(context.Background())
 }
@@ -744,12 +641,6 @@ func (i *namespaceIngestTimeRuleConditionsPtrType) ToNamespaceIngestTimeRuleCond
 	return pulumi.ToOutputWithContext(ctx, i).(NamespaceIngestTimeRuleConditionsPtrOutput)
 }
 
-func (i *namespaceIngestTimeRuleConditionsPtrType) ToOutput(ctx context.Context) pulumix.Output[*NamespaceIngestTimeRuleConditions] {
-	return pulumix.Output[*NamespaceIngestTimeRuleConditions]{
-		OutputState: i.ToNamespaceIngestTimeRuleConditionsPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type NamespaceIngestTimeRuleConditionsOutput struct{ *pulumi.OutputState }
 
 func (NamespaceIngestTimeRuleConditionsOutput) ElementType() reflect.Type {
@@ -772,12 +663,6 @@ func (o NamespaceIngestTimeRuleConditionsOutput) ToNamespaceIngestTimeRuleCondit
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v NamespaceIngestTimeRuleConditions) *NamespaceIngestTimeRuleConditions {
 		return &v
 	}).(NamespaceIngestTimeRuleConditionsPtrOutput)
-}
-
-func (o NamespaceIngestTimeRuleConditionsOutput) ToOutput(ctx context.Context) pulumix.Output[NamespaceIngestTimeRuleConditions] {
-	return pulumix.Output[NamespaceIngestTimeRuleConditions]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Optional additional condition(s) to be evaluated.
@@ -819,12 +704,6 @@ func (o NamespaceIngestTimeRuleConditionsPtrOutput) ToNamespaceIngestTimeRuleCon
 
 func (o NamespaceIngestTimeRuleConditionsPtrOutput) ToNamespaceIngestTimeRuleConditionsPtrOutputWithContext(ctx context.Context) NamespaceIngestTimeRuleConditionsPtrOutput {
 	return o
-}
-
-func (o NamespaceIngestTimeRuleConditionsPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*NamespaceIngestTimeRuleConditions] {
-	return pulumix.Output[*NamespaceIngestTimeRuleConditions]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o NamespaceIngestTimeRuleConditionsPtrOutput) Elem() NamespaceIngestTimeRuleConditionsOutput {
@@ -928,12 +807,6 @@ func (i NamespaceIngestTimeRuleConditionsAdditionalConditionArgs) ToNamespaceIng
 	return pulumi.ToOutputWithContext(ctx, i).(NamespaceIngestTimeRuleConditionsAdditionalConditionOutput)
 }
 
-func (i NamespaceIngestTimeRuleConditionsAdditionalConditionArgs) ToOutput(ctx context.Context) pulumix.Output[NamespaceIngestTimeRuleConditionsAdditionalCondition] {
-	return pulumix.Output[NamespaceIngestTimeRuleConditionsAdditionalCondition]{
-		OutputState: i.ToNamespaceIngestTimeRuleConditionsAdditionalConditionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // NamespaceIngestTimeRuleConditionsAdditionalConditionArrayInput is an input type that accepts NamespaceIngestTimeRuleConditionsAdditionalConditionArray and NamespaceIngestTimeRuleConditionsAdditionalConditionArrayOutput values.
 // You can construct a concrete instance of `NamespaceIngestTimeRuleConditionsAdditionalConditionArrayInput` via:
 //
@@ -959,12 +832,6 @@ func (i NamespaceIngestTimeRuleConditionsAdditionalConditionArray) ToNamespaceIn
 	return pulumi.ToOutputWithContext(ctx, i).(NamespaceIngestTimeRuleConditionsAdditionalConditionArrayOutput)
 }
 
-func (i NamespaceIngestTimeRuleConditionsAdditionalConditionArray) ToOutput(ctx context.Context) pulumix.Output[[]NamespaceIngestTimeRuleConditionsAdditionalCondition] {
-	return pulumix.Output[[]NamespaceIngestTimeRuleConditionsAdditionalCondition]{
-		OutputState: i.ToNamespaceIngestTimeRuleConditionsAdditionalConditionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type NamespaceIngestTimeRuleConditionsAdditionalConditionOutput struct{ *pulumi.OutputState }
 
 func (NamespaceIngestTimeRuleConditionsAdditionalConditionOutput) ElementType() reflect.Type {
@@ -977,12 +844,6 @@ func (o NamespaceIngestTimeRuleConditionsAdditionalConditionOutput) ToNamespaceI
 
 func (o NamespaceIngestTimeRuleConditionsAdditionalConditionOutput) ToNamespaceIngestTimeRuleConditionsAdditionalConditionOutputWithContext(ctx context.Context) NamespaceIngestTimeRuleConditionsAdditionalConditionOutput {
 	return o
-}
-
-func (o NamespaceIngestTimeRuleConditionsAdditionalConditionOutput) ToOutput(ctx context.Context) pulumix.Output[NamespaceIngestTimeRuleConditionsAdditionalCondition] {
-	return pulumix.Output[NamespaceIngestTimeRuleConditionsAdditionalCondition]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The additional field name to be evaluated.
@@ -1012,12 +873,6 @@ func (o NamespaceIngestTimeRuleConditionsAdditionalConditionArrayOutput) ToNames
 
 func (o NamespaceIngestTimeRuleConditionsAdditionalConditionArrayOutput) ToNamespaceIngestTimeRuleConditionsAdditionalConditionArrayOutputWithContext(ctx context.Context) NamespaceIngestTimeRuleConditionsAdditionalConditionArrayOutput {
 	return o
-}
-
-func (o NamespaceIngestTimeRuleConditionsAdditionalConditionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]NamespaceIngestTimeRuleConditionsAdditionalCondition] {
-	return pulumix.Output[[]NamespaceIngestTimeRuleConditionsAdditionalCondition]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o NamespaceIngestTimeRuleConditionsAdditionalConditionArrayOutput) Index(i pulumi.IntInput) NamespaceIngestTimeRuleConditionsAdditionalConditionOutput {
@@ -1087,12 +942,6 @@ func (i NamespaceScheduledTaskActionArgs) ToNamespaceScheduledTaskActionOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(NamespaceScheduledTaskActionOutput)
 }
 
-func (i NamespaceScheduledTaskActionArgs) ToOutput(ctx context.Context) pulumix.Output[NamespaceScheduledTaskAction] {
-	return pulumix.Output[NamespaceScheduledTaskAction]{
-		OutputState: i.ToNamespaceScheduledTaskActionOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i NamespaceScheduledTaskActionArgs) ToNamespaceScheduledTaskActionPtrOutput() NamespaceScheduledTaskActionPtrOutput {
 	return i.ToNamespaceScheduledTaskActionPtrOutputWithContext(context.Background())
 }
@@ -1134,12 +983,6 @@ func (i *namespaceScheduledTaskActionPtrType) ToNamespaceScheduledTaskActionPtrO
 	return pulumi.ToOutputWithContext(ctx, i).(NamespaceScheduledTaskActionPtrOutput)
 }
 
-func (i *namespaceScheduledTaskActionPtrType) ToOutput(ctx context.Context) pulumix.Output[*NamespaceScheduledTaskAction] {
-	return pulumix.Output[*NamespaceScheduledTaskAction]{
-		OutputState: i.ToNamespaceScheduledTaskActionPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type NamespaceScheduledTaskActionOutput struct{ *pulumi.OutputState }
 
 func (NamespaceScheduledTaskActionOutput) ElementType() reflect.Type {
@@ -1162,12 +1005,6 @@ func (o NamespaceScheduledTaskActionOutput) ToNamespaceScheduledTaskActionPtrOut
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v NamespaceScheduledTaskAction) *NamespaceScheduledTaskAction {
 		return &v
 	}).(NamespaceScheduledTaskActionPtrOutput)
-}
-
-func (o NamespaceScheduledTaskActionOutput) ToOutput(ctx context.Context) pulumix.Output[NamespaceScheduledTaskAction] {
-	return pulumix.Output[NamespaceScheduledTaskAction]{
-		OutputState: o.OutputState,
-	}
 }
 
 // if true, purge child compartments data
@@ -1224,12 +1061,6 @@ func (o NamespaceScheduledTaskActionPtrOutput) ToNamespaceScheduledTaskActionPtr
 
 func (o NamespaceScheduledTaskActionPtrOutput) ToNamespaceScheduledTaskActionPtrOutputWithContext(ctx context.Context) NamespaceScheduledTaskActionPtrOutput {
 	return o
-}
-
-func (o NamespaceScheduledTaskActionPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*NamespaceScheduledTaskAction] {
-	return pulumix.Output[*NamespaceScheduledTaskAction]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o NamespaceScheduledTaskActionPtrOutput) Elem() NamespaceScheduledTaskActionOutput {
@@ -1367,12 +1198,6 @@ func (i NamespaceScheduledTaskActionMetricExtractionArgs) ToNamespaceScheduledTa
 	return pulumi.ToOutputWithContext(ctx, i).(NamespaceScheduledTaskActionMetricExtractionOutput)
 }
 
-func (i NamespaceScheduledTaskActionMetricExtractionArgs) ToOutput(ctx context.Context) pulumix.Output[NamespaceScheduledTaskActionMetricExtraction] {
-	return pulumix.Output[NamespaceScheduledTaskActionMetricExtraction]{
-		OutputState: i.ToNamespaceScheduledTaskActionMetricExtractionOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i NamespaceScheduledTaskActionMetricExtractionArgs) ToNamespaceScheduledTaskActionMetricExtractionPtrOutput() NamespaceScheduledTaskActionMetricExtractionPtrOutput {
 	return i.ToNamespaceScheduledTaskActionMetricExtractionPtrOutputWithContext(context.Background())
 }
@@ -1414,12 +1239,6 @@ func (i *namespaceScheduledTaskActionMetricExtractionPtrType) ToNamespaceSchedul
 	return pulumi.ToOutputWithContext(ctx, i).(NamespaceScheduledTaskActionMetricExtractionPtrOutput)
 }
 
-func (i *namespaceScheduledTaskActionMetricExtractionPtrType) ToOutput(ctx context.Context) pulumix.Output[*NamespaceScheduledTaskActionMetricExtraction] {
-	return pulumix.Output[*NamespaceScheduledTaskActionMetricExtraction]{
-		OutputState: i.ToNamespaceScheduledTaskActionMetricExtractionPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type NamespaceScheduledTaskActionMetricExtractionOutput struct{ *pulumi.OutputState }
 
 func (NamespaceScheduledTaskActionMetricExtractionOutput) ElementType() reflect.Type {
@@ -1442,12 +1261,6 @@ func (o NamespaceScheduledTaskActionMetricExtractionOutput) ToNamespaceScheduled
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v NamespaceScheduledTaskActionMetricExtraction) *NamespaceScheduledTaskActionMetricExtraction {
 		return &v
 	}).(NamespaceScheduledTaskActionMetricExtractionPtrOutput)
-}
-
-func (o NamespaceScheduledTaskActionMetricExtractionOutput) ToOutput(ctx context.Context) pulumix.Output[NamespaceScheduledTaskActionMetricExtraction] {
-	return pulumix.Output[NamespaceScheduledTaskActionMetricExtraction]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -1482,12 +1295,6 @@ func (o NamespaceScheduledTaskActionMetricExtractionPtrOutput) ToNamespaceSchedu
 
 func (o NamespaceScheduledTaskActionMetricExtractionPtrOutput) ToNamespaceScheduledTaskActionMetricExtractionPtrOutputWithContext(ctx context.Context) NamespaceScheduledTaskActionMetricExtractionPtrOutput {
 	return o
-}
-
-func (o NamespaceScheduledTaskActionMetricExtractionPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*NamespaceScheduledTaskActionMetricExtraction] {
-	return pulumix.Output[*NamespaceScheduledTaskActionMetricExtraction]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o NamespaceScheduledTaskActionMetricExtractionPtrOutput) Elem() NamespaceScheduledTaskActionMetricExtractionOutput {
@@ -1571,12 +1378,6 @@ func (i NamespaceScheduledTaskSchedulesArgs) ToNamespaceScheduledTaskSchedulesOu
 	return pulumi.ToOutputWithContext(ctx, i).(NamespaceScheduledTaskSchedulesOutput)
 }
 
-func (i NamespaceScheduledTaskSchedulesArgs) ToOutput(ctx context.Context) pulumix.Output[NamespaceScheduledTaskSchedules] {
-	return pulumix.Output[NamespaceScheduledTaskSchedules]{
-		OutputState: i.ToNamespaceScheduledTaskSchedulesOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i NamespaceScheduledTaskSchedulesArgs) ToNamespaceScheduledTaskSchedulesPtrOutput() NamespaceScheduledTaskSchedulesPtrOutput {
 	return i.ToNamespaceScheduledTaskSchedulesPtrOutputWithContext(context.Background())
 }
@@ -1618,12 +1419,6 @@ func (i *namespaceScheduledTaskSchedulesPtrType) ToNamespaceScheduledTaskSchedul
 	return pulumi.ToOutputWithContext(ctx, i).(NamespaceScheduledTaskSchedulesPtrOutput)
 }
 
-func (i *namespaceScheduledTaskSchedulesPtrType) ToOutput(ctx context.Context) pulumix.Output[*NamespaceScheduledTaskSchedules] {
-	return pulumix.Output[*NamespaceScheduledTaskSchedules]{
-		OutputState: i.ToNamespaceScheduledTaskSchedulesPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type NamespaceScheduledTaskSchedulesOutput struct{ *pulumi.OutputState }
 
 func (NamespaceScheduledTaskSchedulesOutput) ElementType() reflect.Type {
@@ -1648,12 +1443,6 @@ func (o NamespaceScheduledTaskSchedulesOutput) ToNamespaceScheduledTaskSchedules
 	}).(NamespaceScheduledTaskSchedulesPtrOutput)
 }
 
-func (o NamespaceScheduledTaskSchedulesOutput) ToOutput(ctx context.Context) pulumix.Output[NamespaceScheduledTaskSchedules] {
-	return pulumix.Output[NamespaceScheduledTaskSchedules]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o NamespaceScheduledTaskSchedulesOutput) Schedules() NamespaceScheduledTaskSchedulesScheduleArrayOutput {
 	return o.ApplyT(func(v NamespaceScheduledTaskSchedules) []NamespaceScheduledTaskSchedulesSchedule { return v.Schedules }).(NamespaceScheduledTaskSchedulesScheduleArrayOutput)
 }
@@ -1670,12 +1459,6 @@ func (o NamespaceScheduledTaskSchedulesPtrOutput) ToNamespaceScheduledTaskSchedu
 
 func (o NamespaceScheduledTaskSchedulesPtrOutput) ToNamespaceScheduledTaskSchedulesPtrOutputWithContext(ctx context.Context) NamespaceScheduledTaskSchedulesPtrOutput {
 	return o
-}
-
-func (o NamespaceScheduledTaskSchedulesPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*NamespaceScheduledTaskSchedules] {
-	return pulumix.Output[*NamespaceScheduledTaskSchedules]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o NamespaceScheduledTaskSchedulesPtrOutput) Elem() NamespaceScheduledTaskSchedulesOutput {
@@ -1750,12 +1533,6 @@ func (i NamespaceScheduledTaskSchedulesScheduleArgs) ToNamespaceScheduledTaskSch
 	return pulumi.ToOutputWithContext(ctx, i).(NamespaceScheduledTaskSchedulesScheduleOutput)
 }
 
-func (i NamespaceScheduledTaskSchedulesScheduleArgs) ToOutput(ctx context.Context) pulumix.Output[NamespaceScheduledTaskSchedulesSchedule] {
-	return pulumix.Output[NamespaceScheduledTaskSchedulesSchedule]{
-		OutputState: i.ToNamespaceScheduledTaskSchedulesScheduleOutputWithContext(ctx).OutputState,
-	}
-}
-
 // NamespaceScheduledTaskSchedulesScheduleArrayInput is an input type that accepts NamespaceScheduledTaskSchedulesScheduleArray and NamespaceScheduledTaskSchedulesScheduleArrayOutput values.
 // You can construct a concrete instance of `NamespaceScheduledTaskSchedulesScheduleArrayInput` via:
 //
@@ -1781,12 +1558,6 @@ func (i NamespaceScheduledTaskSchedulesScheduleArray) ToNamespaceScheduledTaskSc
 	return pulumi.ToOutputWithContext(ctx, i).(NamespaceScheduledTaskSchedulesScheduleArrayOutput)
 }
 
-func (i NamespaceScheduledTaskSchedulesScheduleArray) ToOutput(ctx context.Context) pulumix.Output[[]NamespaceScheduledTaskSchedulesSchedule] {
-	return pulumix.Output[[]NamespaceScheduledTaskSchedulesSchedule]{
-		OutputState: i.ToNamespaceScheduledTaskSchedulesScheduleArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type NamespaceScheduledTaskSchedulesScheduleOutput struct{ *pulumi.OutputState }
 
 func (NamespaceScheduledTaskSchedulesScheduleOutput) ElementType() reflect.Type {
@@ -1799,12 +1570,6 @@ func (o NamespaceScheduledTaskSchedulesScheduleOutput) ToNamespaceScheduledTaskS
 
 func (o NamespaceScheduledTaskSchedulesScheduleOutput) ToNamespaceScheduledTaskSchedulesScheduleOutputWithContext(ctx context.Context) NamespaceScheduledTaskSchedulesScheduleOutput {
 	return o
-}
-
-func (o NamespaceScheduledTaskSchedulesScheduleOutput) ToOutput(ctx context.Context) pulumix.Output[NamespaceScheduledTaskSchedulesSchedule] {
-	return pulumix.Output[NamespaceScheduledTaskSchedulesSchedule]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Value in cron format.
@@ -1851,12 +1616,6 @@ func (o NamespaceScheduledTaskSchedulesScheduleArrayOutput) ToNamespaceScheduled
 	return o
 }
 
-func (o NamespaceScheduledTaskSchedulesScheduleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]NamespaceScheduledTaskSchedulesSchedule] {
-	return pulumix.Output[[]NamespaceScheduledTaskSchedulesSchedule]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o NamespaceScheduledTaskSchedulesScheduleArrayOutput) Index(i pulumi.IntInput) NamespaceScheduledTaskSchedulesScheduleOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) NamespaceScheduledTaskSchedulesSchedule {
 		return vs[0].([]NamespaceScheduledTaskSchedulesSchedule)[vs[1].(int)]
@@ -1865,15 +1624,15 @@ func (o NamespaceScheduledTaskSchedulesScheduleArrayOutput) Index(i pulumi.IntIn
 
 type GetLogAnalyticsCategoriesListItem struct {
 	// The category description.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// The category display name.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// The system flag. A value of false denotes a user-created category. A value of true denotes an Oracle-defined category.
-	IsSystem bool `pulumi:"isSystem"`
+	IsSystem *bool `pulumi:"isSystem"`
 	// A filter to return only log analytics category whose name matches the entire name given. The match is case-insensitive.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// The category type. Values include "PRODUCT", "TIER", "VENDOR" and "GENERIC".
-	Type string `pulumi:"type"`
+	Type *string `pulumi:"type"`
 }
 
 // GetLogAnalyticsCategoriesListItemInput is an input type that accepts GetLogAnalyticsCategoriesListItemArgs and GetLogAnalyticsCategoriesListItemOutput values.
@@ -1889,15 +1648,15 @@ type GetLogAnalyticsCategoriesListItemInput interface {
 
 type GetLogAnalyticsCategoriesListItemArgs struct {
 	// The category description.
-	Description pulumi.StringInput `pulumi:"description"`
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// The category display name.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// The system flag. A value of false denotes a user-created category. A value of true denotes an Oracle-defined category.
-	IsSystem pulumi.BoolInput `pulumi:"isSystem"`
+	IsSystem pulumi.BoolPtrInput `pulumi:"isSystem"`
 	// A filter to return only log analytics category whose name matches the entire name given. The match is case-insensitive.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// The category type. Values include "PRODUCT", "TIER", "VENDOR" and "GENERIC".
-	Type pulumi.StringInput `pulumi:"type"`
+	Type pulumi.StringPtrInput `pulumi:"type"`
 }
 
 func (GetLogAnalyticsCategoriesListItemArgs) ElementType() reflect.Type {
@@ -1910,12 +1669,6 @@ func (i GetLogAnalyticsCategoriesListItemArgs) ToGetLogAnalyticsCategoriesListIt
 
 func (i GetLogAnalyticsCategoriesListItemArgs) ToGetLogAnalyticsCategoriesListItemOutputWithContext(ctx context.Context) GetLogAnalyticsCategoriesListItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetLogAnalyticsCategoriesListItemOutput)
-}
-
-func (i GetLogAnalyticsCategoriesListItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetLogAnalyticsCategoriesListItem] {
-	return pulumix.Output[GetLogAnalyticsCategoriesListItem]{
-		OutputState: i.ToGetLogAnalyticsCategoriesListItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetLogAnalyticsCategoriesListItemArrayInput is an input type that accepts GetLogAnalyticsCategoriesListItemArray and GetLogAnalyticsCategoriesListItemArrayOutput values.
@@ -1943,12 +1696,6 @@ func (i GetLogAnalyticsCategoriesListItemArray) ToGetLogAnalyticsCategoriesListI
 	return pulumi.ToOutputWithContext(ctx, i).(GetLogAnalyticsCategoriesListItemArrayOutput)
 }
 
-func (i GetLogAnalyticsCategoriesListItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetLogAnalyticsCategoriesListItem] {
-	return pulumix.Output[[]GetLogAnalyticsCategoriesListItem]{
-		OutputState: i.ToGetLogAnalyticsCategoriesListItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetLogAnalyticsCategoriesListItemOutput struct{ *pulumi.OutputState }
 
 func (GetLogAnalyticsCategoriesListItemOutput) ElementType() reflect.Type {
@@ -1963,35 +1710,29 @@ func (o GetLogAnalyticsCategoriesListItemOutput) ToGetLogAnalyticsCategoriesList
 	return o
 }
 
-func (o GetLogAnalyticsCategoriesListItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetLogAnalyticsCategoriesListItem] {
-	return pulumix.Output[GetLogAnalyticsCategoriesListItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The category description.
-func (o GetLogAnalyticsCategoriesListItemOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLogAnalyticsCategoriesListItem) string { return v.Description }).(pulumi.StringOutput)
+func (o GetLogAnalyticsCategoriesListItemOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLogAnalyticsCategoriesListItem) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // The category display name.
-func (o GetLogAnalyticsCategoriesListItemOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLogAnalyticsCategoriesListItem) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetLogAnalyticsCategoriesListItemOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLogAnalyticsCategoriesListItem) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // The system flag. A value of false denotes a user-created category. A value of true denotes an Oracle-defined category.
-func (o GetLogAnalyticsCategoriesListItemOutput) IsSystem() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetLogAnalyticsCategoriesListItem) bool { return v.IsSystem }).(pulumi.BoolOutput)
+func (o GetLogAnalyticsCategoriesListItemOutput) IsSystem() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetLogAnalyticsCategoriesListItem) *bool { return v.IsSystem }).(pulumi.BoolPtrOutput)
 }
 
 // A filter to return only log analytics category whose name matches the entire name given. The match is case-insensitive.
-func (o GetLogAnalyticsCategoriesListItemOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLogAnalyticsCategoriesListItem) string { return v.Name }).(pulumi.StringOutput)
+func (o GetLogAnalyticsCategoriesListItemOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLogAnalyticsCategoriesListItem) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // The category type. Values include "PRODUCT", "TIER", "VENDOR" and "GENERIC".
-func (o GetLogAnalyticsCategoriesListItemOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLogAnalyticsCategoriesListItem) string { return v.Type }).(pulumi.StringOutput)
+func (o GetLogAnalyticsCategoriesListItemOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLogAnalyticsCategoriesListItem) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
 
 type GetLogAnalyticsCategoriesListItemArrayOutput struct{ *pulumi.OutputState }
@@ -2006,12 +1747,6 @@ func (o GetLogAnalyticsCategoriesListItemArrayOutput) ToGetLogAnalyticsCategorie
 
 func (o GetLogAnalyticsCategoriesListItemArrayOutput) ToGetLogAnalyticsCategoriesListItemArrayOutputWithContext(ctx context.Context) GetLogAnalyticsCategoriesListItemArrayOutput {
 	return o
-}
-
-func (o GetLogAnalyticsCategoriesListItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetLogAnalyticsCategoriesListItem] {
-	return pulumix.Output[[]GetLogAnalyticsCategoriesListItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetLogAnalyticsCategoriesListItemArrayOutput) Index(i pulumi.IntInput) GetLogAnalyticsCategoriesListItemOutput {
@@ -2057,12 +1792,6 @@ func (i GetLogAnalyticsEntitiesFilterArgs) ToGetLogAnalyticsEntitiesFilterOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetLogAnalyticsEntitiesFilterOutput)
 }
 
-func (i GetLogAnalyticsEntitiesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetLogAnalyticsEntitiesFilter] {
-	return pulumix.Output[GetLogAnalyticsEntitiesFilter]{
-		OutputState: i.ToGetLogAnalyticsEntitiesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetLogAnalyticsEntitiesFilterArrayInput is an input type that accepts GetLogAnalyticsEntitiesFilterArray and GetLogAnalyticsEntitiesFilterArrayOutput values.
 // You can construct a concrete instance of `GetLogAnalyticsEntitiesFilterArrayInput` via:
 //
@@ -2088,12 +1817,6 @@ func (i GetLogAnalyticsEntitiesFilterArray) ToGetLogAnalyticsEntitiesFilterArray
 	return pulumi.ToOutputWithContext(ctx, i).(GetLogAnalyticsEntitiesFilterArrayOutput)
 }
 
-func (i GetLogAnalyticsEntitiesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetLogAnalyticsEntitiesFilter] {
-	return pulumix.Output[[]GetLogAnalyticsEntitiesFilter]{
-		OutputState: i.ToGetLogAnalyticsEntitiesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetLogAnalyticsEntitiesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetLogAnalyticsEntitiesFilterOutput) ElementType() reflect.Type {
@@ -2106,12 +1829,6 @@ func (o GetLogAnalyticsEntitiesFilterOutput) ToGetLogAnalyticsEntitiesFilterOutp
 
 func (o GetLogAnalyticsEntitiesFilterOutput) ToGetLogAnalyticsEntitiesFilterOutputWithContext(ctx context.Context) GetLogAnalyticsEntitiesFilterOutput {
 	return o
-}
-
-func (o GetLogAnalyticsEntitiesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetLogAnalyticsEntitiesFilter] {
-	return pulumix.Output[GetLogAnalyticsEntitiesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A filter to return only log analytics entities whose name matches the entire name given. The match is case-insensitive.
@@ -2139,12 +1856,6 @@ func (o GetLogAnalyticsEntitiesFilterArrayOutput) ToGetLogAnalyticsEntitiesFilte
 
 func (o GetLogAnalyticsEntitiesFilterArrayOutput) ToGetLogAnalyticsEntitiesFilterArrayOutputWithContext(ctx context.Context) GetLogAnalyticsEntitiesFilterArrayOutput {
 	return o
-}
-
-func (o GetLogAnalyticsEntitiesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetLogAnalyticsEntitiesFilter] {
-	return pulumix.Output[[]GetLogAnalyticsEntitiesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetLogAnalyticsEntitiesFilterArrayOutput) Index(i pulumi.IntInput) GetLogAnalyticsEntitiesFilterOutput {
@@ -2184,12 +1895,6 @@ func (i GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionArgs) ToGetLogAnalyti
 	return pulumi.ToOutputWithContext(ctx, i).(GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionOutput)
 }
 
-func (i GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetLogAnalyticsEntitiesLogAnalyticsEntityCollection] {
-	return pulumix.Output[GetLogAnalyticsEntitiesLogAnalyticsEntityCollection]{
-		OutputState: i.ToGetLogAnalyticsEntitiesLogAnalyticsEntityCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionArrayInput is an input type that accepts GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionArray and GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionArrayOutput values.
 // You can construct a concrete instance of `GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionArrayInput` via:
 //
@@ -2215,12 +1920,6 @@ func (i GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionArray) ToGetLogAnalyt
 	return pulumi.ToOutputWithContext(ctx, i).(GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionArrayOutput)
 }
 
-func (i GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetLogAnalyticsEntitiesLogAnalyticsEntityCollection] {
-	return pulumix.Output[[]GetLogAnalyticsEntitiesLogAnalyticsEntityCollection]{
-		OutputState: i.ToGetLogAnalyticsEntitiesLogAnalyticsEntityCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionOutput) ElementType() reflect.Type {
@@ -2233,12 +1932,6 @@ func (o GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionOutput) ToGetLogAnaly
 
 func (o GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionOutput) ToGetLogAnalyticsEntitiesLogAnalyticsEntityCollectionOutputWithContext(ctx context.Context) GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionOutput {
 	return o
-}
-
-func (o GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetLogAnalyticsEntitiesLogAnalyticsEntityCollection] {
-	return pulumix.Output[GetLogAnalyticsEntitiesLogAnalyticsEntityCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionOutput) Items() GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemArrayOutput {
@@ -2261,12 +1954,6 @@ func (o GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionArrayOutput) ToGetLog
 	return o
 }
 
-func (o GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetLogAnalyticsEntitiesLogAnalyticsEntityCollection] {
-	return pulumix.Output[[]GetLogAnalyticsEntitiesLogAnalyticsEntityCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionArrayOutput) Index(i pulumi.IntInput) GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetLogAnalyticsEntitiesLogAnalyticsEntityCollection {
 		return vs[0].([]GetLogAnalyticsEntitiesLogAnalyticsEntityCollection)[vs[1].(int)]
@@ -2275,47 +1962,47 @@ func (o GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionArrayOutput) Index(i 
 
 type GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItem struct {
 	// The Boolean flag to indicate if logs are collected for an entity for log analytics usage.
-	AreLogsCollected bool `pulumi:"areLogsCollected"`
+	AreLogsCollected *bool `pulumi:"areLogsCollected"`
 	// A filter to return only log analytics entities whose cloudResourceId matches the cloudResourceId given.
-	CloudResourceId string `pulumi:"cloudResourceId"`
+	CloudResourceId *string `pulumi:"cloudResourceId"`
 	// The ID of the compartment in which to list resources.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// Internal name for the log analytics entity type.
-	EntityTypeInternalName string `pulumi:"entityTypeInternalName"`
+	EntityTypeInternalName *string `pulumi:"entityTypeInternalName"`
 	// A filter to return only log analytics entities whose entityTypeName matches the entire log analytics entity type name of one of the entityTypeNames given in the list. The match is case-insensitive.
-	EntityTypeName string `pulumi:"entityTypeName"`
+	EntityTypeName *string `pulumi:"entityTypeName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// A filter to return only log analytics entities whose hostname matches the entire hostname given.
-	Hostname string `pulumi:"hostname"`
+	Hostname *string `pulumi:"hostname"`
 	// The log analytics entity OCID. This ID is a reference used by log analytics features and it represents a resource that is provisioned and managed by the customer on their premises or on the cloud.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// lifecycleDetails has additional information regarding substeps such as management agent plugin deployment.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// Management agent (management-agents resource kind) compartment OCID
-	ManagementAgentCompartmentId string `pulumi:"managementAgentCompartmentId"`
+	ManagementAgentCompartmentId *string `pulumi:"managementAgentCompartmentId"`
 	// Management agent (management-agents resource kind) display name
-	ManagementAgentDisplayName string `pulumi:"managementAgentDisplayName"`
+	ManagementAgentDisplayName *string `pulumi:"managementAgentDisplayName"`
 	// The OCID of the Management Agent.
-	ManagementAgentId string `pulumi:"managementAgentId"`
+	ManagementAgentId *string `pulumi:"managementAgentId"`
 	// A filter to return only log analytics entities whose name matches the entire name given. The match is case-insensitive.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// The Logging Analytics namespace used for the request.
-	Namespace string `pulumi:"namespace"`
+	Namespace *string `pulumi:"namespace"`
 	// The name/value pairs for parameter values to be used in file patterns specified in log sources.
 	Properties map[string]interface{} `pulumi:"properties"`
 	// A filter to return only log analytics entities whose sourceId matches the sourceId given.
-	SourceId string `pulumi:"sourceId"`
+	SourceId *string `pulumi:"sourceId"`
 	// A filter to return only those log analytics entities with the specified lifecycle state. The state value is case-insensitive.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The date and time the resource was created, in the format defined by RFC3339.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The date and time the resource was last updated, in the format defined by RFC3339.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 	// The timezone region of the log analytics entity.
-	TimezoneRegion string `pulumi:"timezoneRegion"`
+	TimezoneRegion *string `pulumi:"timezoneRegion"`
 }
 
 // GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemInput is an input type that accepts GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemArgs and GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemOutput values.
@@ -2331,47 +2018,47 @@ type GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemInput interface {
 
 type GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemArgs struct {
 	// The Boolean flag to indicate if logs are collected for an entity for log analytics usage.
-	AreLogsCollected pulumi.BoolInput `pulumi:"areLogsCollected"`
+	AreLogsCollected pulumi.BoolPtrInput `pulumi:"areLogsCollected"`
 	// A filter to return only log analytics entities whose cloudResourceId matches the cloudResourceId given.
-	CloudResourceId pulumi.StringInput `pulumi:"cloudResourceId"`
+	CloudResourceId pulumi.StringPtrInput `pulumi:"cloudResourceId"`
 	// The ID of the compartment in which to list resources.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// Internal name for the log analytics entity type.
-	EntityTypeInternalName pulumi.StringInput `pulumi:"entityTypeInternalName"`
+	EntityTypeInternalName pulumi.StringPtrInput `pulumi:"entityTypeInternalName"`
 	// A filter to return only log analytics entities whose entityTypeName matches the entire log analytics entity type name of one of the entityTypeNames given in the list. The match is case-insensitive.
-	EntityTypeName pulumi.StringInput `pulumi:"entityTypeName"`
+	EntityTypeName pulumi.StringPtrInput `pulumi:"entityTypeName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// A filter to return only log analytics entities whose hostname matches the entire hostname given.
-	Hostname pulumi.StringInput `pulumi:"hostname"`
+	Hostname pulumi.StringPtrInput `pulumi:"hostname"`
 	// The log analytics entity OCID. This ID is a reference used by log analytics features and it represents a resource that is provisioned and managed by the customer on their premises or on the cloud.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// lifecycleDetails has additional information regarding substeps such as management agent plugin deployment.
-	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrInput `pulumi:"lifecycleDetails"`
 	// Management agent (management-agents resource kind) compartment OCID
-	ManagementAgentCompartmentId pulumi.StringInput `pulumi:"managementAgentCompartmentId"`
+	ManagementAgentCompartmentId pulumi.StringPtrInput `pulumi:"managementAgentCompartmentId"`
 	// Management agent (management-agents resource kind) display name
-	ManagementAgentDisplayName pulumi.StringInput `pulumi:"managementAgentDisplayName"`
+	ManagementAgentDisplayName pulumi.StringPtrInput `pulumi:"managementAgentDisplayName"`
 	// The OCID of the Management Agent.
-	ManagementAgentId pulumi.StringInput `pulumi:"managementAgentId"`
+	ManagementAgentId pulumi.StringPtrInput `pulumi:"managementAgentId"`
 	// A filter to return only log analytics entities whose name matches the entire name given. The match is case-insensitive.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// The Logging Analytics namespace used for the request.
-	Namespace pulumi.StringInput `pulumi:"namespace"`
+	Namespace pulumi.StringPtrInput `pulumi:"namespace"`
 	// The name/value pairs for parameter values to be used in file patterns specified in log sources.
 	Properties pulumi.MapInput `pulumi:"properties"`
 	// A filter to return only log analytics entities whose sourceId matches the sourceId given.
-	SourceId pulumi.StringInput `pulumi:"sourceId"`
+	SourceId pulumi.StringPtrInput `pulumi:"sourceId"`
 	// A filter to return only those log analytics entities with the specified lifecycle state. The state value is case-insensitive.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// The date and time the resource was created, in the format defined by RFC3339.
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// The date and time the resource was last updated, in the format defined by RFC3339.
-	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
 	// The timezone region of the log analytics entity.
-	TimezoneRegion pulumi.StringInput `pulumi:"timezoneRegion"`
+	TimezoneRegion pulumi.StringPtrInput `pulumi:"timezoneRegion"`
 }
 
 func (GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemArgs) ElementType() reflect.Type {
@@ -2384,12 +2071,6 @@ func (i GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemArgs) ToGetLogAna
 
 func (i GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemArgs) ToGetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemOutputWithContext(ctx context.Context) GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemOutput)
-}
-
-func (i GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItem] {
-	return pulumix.Output[GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItem]{
-		OutputState: i.ToGetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemArrayInput is an input type that accepts GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemArray and GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemArrayOutput values.
@@ -2417,12 +2098,6 @@ func (i GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemArray) ToGetLogAn
 	return pulumi.ToOutputWithContext(ctx, i).(GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemArrayOutput)
 }
 
-func (i GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItem] {
-	return pulumix.Output[[]GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItem]{
-		OutputState: i.ToGetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemOutput) ElementType() reflect.Type {
@@ -2437,25 +2112,19 @@ func (o GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemOutput) ToGetLogA
 	return o
 }
 
-func (o GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItem] {
-	return pulumix.Output[GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The Boolean flag to indicate if logs are collected for an entity for log analytics usage.
-func (o GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemOutput) AreLogsCollected() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItem) bool { return v.AreLogsCollected }).(pulumi.BoolOutput)
+func (o GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemOutput) AreLogsCollected() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItem) *bool { return v.AreLogsCollected }).(pulumi.BoolPtrOutput)
 }
 
 // A filter to return only log analytics entities whose cloudResourceId matches the cloudResourceId given.
-func (o GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemOutput) CloudResourceId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItem) string { return v.CloudResourceId }).(pulumi.StringOutput)
+func (o GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemOutput) CloudResourceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItem) *string { return v.CloudResourceId }).(pulumi.StringPtrOutput)
 }
 
 // The ID of the compartment in which to list resources.
-func (o GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItem) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -2466,15 +2135,15 @@ func (o GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemOutput) DefinedTa
 }
 
 // Internal name for the log analytics entity type.
-func (o GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemOutput) EntityTypeInternalName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItem) string {
+func (o GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemOutput) EntityTypeInternalName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItem) *string {
 		return v.EntityTypeInternalName
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // A filter to return only log analytics entities whose entityTypeName matches the entire log analytics entity type name of one of the entityTypeNames given in the list. The match is case-insensitive.
-func (o GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemOutput) EntityTypeName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItem) string { return v.EntityTypeName }).(pulumi.StringOutput)
+func (o GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemOutput) EntityTypeName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItem) *string { return v.EntityTypeName }).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -2485,47 +2154,47 @@ func (o GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemOutput) FreeformT
 }
 
 // A filter to return only log analytics entities whose hostname matches the entire hostname given.
-func (o GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemOutput) Hostname() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItem) string { return v.Hostname }).(pulumi.StringOutput)
+func (o GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemOutput) Hostname() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItem) *string { return v.Hostname }).(pulumi.StringPtrOutput)
 }
 
 // The log analytics entity OCID. This ID is a reference used by log analytics features and it represents a resource that is provisioned and managed by the customer on their premises or on the cloud.
-func (o GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+func (o GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItem) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // lifecycleDetails has additional information regarding substeps such as management agent plugin deployment.
-func (o GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItem) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // Management agent (management-agents resource kind) compartment OCID
-func (o GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemOutput) ManagementAgentCompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItem) string {
+func (o GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemOutput) ManagementAgentCompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItem) *string {
 		return v.ManagementAgentCompartmentId
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Management agent (management-agents resource kind) display name
-func (o GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemOutput) ManagementAgentDisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItem) string {
+func (o GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemOutput) ManagementAgentDisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItem) *string {
 		return v.ManagementAgentDisplayName
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the Management Agent.
-func (o GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemOutput) ManagementAgentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItem) string { return v.ManagementAgentId }).(pulumi.StringOutput)
+func (o GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemOutput) ManagementAgentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItem) *string { return v.ManagementAgentId }).(pulumi.StringPtrOutput)
 }
 
 // A filter to return only log analytics entities whose name matches the entire name given. The match is case-insensitive.
-func (o GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItem) string { return v.Name }).(pulumi.StringOutput)
+func (o GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItem) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // The Logging Analytics namespace used for the request.
-func (o GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemOutput) Namespace() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItem) string { return v.Namespace }).(pulumi.StringOutput)
+func (o GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemOutput) Namespace() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItem) *string { return v.Namespace }).(pulumi.StringPtrOutput)
 }
 
 // The name/value pairs for parameter values to be used in file patterns specified in log sources.
@@ -2536,28 +2205,28 @@ func (o GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemOutput) Propertie
 }
 
 // A filter to return only log analytics entities whose sourceId matches the sourceId given.
-func (o GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemOutput) SourceId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItem) string { return v.SourceId }).(pulumi.StringOutput)
+func (o GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemOutput) SourceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItem) *string { return v.SourceId }).(pulumi.StringPtrOutput)
 }
 
 // A filter to return only those log analytics entities with the specified lifecycle state. The state value is case-insensitive.
-func (o GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItem) string { return v.State }).(pulumi.StringOutput)
+func (o GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItem) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the resource was created, in the format defined by RFC3339.
-func (o GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItem) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the resource was last updated, in the format defined by RFC3339.
-func (o GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItem) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 // The timezone region of the log analytics entity.
-func (o GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemOutput) TimezoneRegion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItem) string { return v.TimezoneRegion }).(pulumi.StringOutput)
+func (o GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemOutput) TimezoneRegion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItem) *string { return v.TimezoneRegion }).(pulumi.StringPtrOutput)
 }
 
 type GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -2572,12 +2241,6 @@ func (o GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemArrayOutput) ToGe
 
 func (o GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemArrayOutput) ToGetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemArrayOutputWithContext(ctx context.Context) GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemArrayOutput {
 	return o
-}
-
-func (o GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItem] {
-	return pulumix.Output[[]GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemArrayOutput) Index(i pulumi.IntInput) GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemOutput {
@@ -2623,12 +2286,6 @@ func (i GetLogAnalyticsEntityTopologyItemArgs) ToGetLogAnalyticsEntityTopologyIt
 	return pulumi.ToOutputWithContext(ctx, i).(GetLogAnalyticsEntityTopologyItemOutput)
 }
 
-func (i GetLogAnalyticsEntityTopologyItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetLogAnalyticsEntityTopologyItem] {
-	return pulumix.Output[GetLogAnalyticsEntityTopologyItem]{
-		OutputState: i.ToGetLogAnalyticsEntityTopologyItemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetLogAnalyticsEntityTopologyItemArrayInput is an input type that accepts GetLogAnalyticsEntityTopologyItemArray and GetLogAnalyticsEntityTopologyItemArrayOutput values.
 // You can construct a concrete instance of `GetLogAnalyticsEntityTopologyItemArrayInput` via:
 //
@@ -2654,12 +2311,6 @@ func (i GetLogAnalyticsEntityTopologyItemArray) ToGetLogAnalyticsEntityTopologyI
 	return pulumi.ToOutputWithContext(ctx, i).(GetLogAnalyticsEntityTopologyItemArrayOutput)
 }
 
-func (i GetLogAnalyticsEntityTopologyItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetLogAnalyticsEntityTopologyItem] {
-	return pulumix.Output[[]GetLogAnalyticsEntityTopologyItem]{
-		OutputState: i.ToGetLogAnalyticsEntityTopologyItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetLogAnalyticsEntityTopologyItemOutput struct{ *pulumi.OutputState }
 
 func (GetLogAnalyticsEntityTopologyItemOutput) ElementType() reflect.Type {
@@ -2672,12 +2323,6 @@ func (o GetLogAnalyticsEntityTopologyItemOutput) ToGetLogAnalyticsEntityTopology
 
 func (o GetLogAnalyticsEntityTopologyItemOutput) ToGetLogAnalyticsEntityTopologyItemOutputWithContext(ctx context.Context) GetLogAnalyticsEntityTopologyItemOutput {
 	return o
-}
-
-func (o GetLogAnalyticsEntityTopologyItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetLogAnalyticsEntityTopologyItem] {
-	return pulumix.Output[GetLogAnalyticsEntityTopologyItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Collection of log analytics entity relationship links.
@@ -2702,12 +2347,6 @@ func (o GetLogAnalyticsEntityTopologyItemArrayOutput) ToGetLogAnalyticsEntityTop
 
 func (o GetLogAnalyticsEntityTopologyItemArrayOutput) ToGetLogAnalyticsEntityTopologyItemArrayOutputWithContext(ctx context.Context) GetLogAnalyticsEntityTopologyItemArrayOutput {
 	return o
-}
-
-func (o GetLogAnalyticsEntityTopologyItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetLogAnalyticsEntityTopologyItem] {
-	return pulumix.Output[[]GetLogAnalyticsEntityTopologyItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetLogAnalyticsEntityTopologyItemArrayOutput) Index(i pulumi.IntInput) GetLogAnalyticsEntityTopologyItemOutput {
@@ -2749,12 +2388,6 @@ func (i GetLogAnalyticsEntityTopologyItemLinkArgs) ToGetLogAnalyticsEntityTopolo
 	return pulumi.ToOutputWithContext(ctx, i).(GetLogAnalyticsEntityTopologyItemLinkOutput)
 }
 
-func (i GetLogAnalyticsEntityTopologyItemLinkArgs) ToOutput(ctx context.Context) pulumix.Output[GetLogAnalyticsEntityTopologyItemLink] {
-	return pulumix.Output[GetLogAnalyticsEntityTopologyItemLink]{
-		OutputState: i.ToGetLogAnalyticsEntityTopologyItemLinkOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetLogAnalyticsEntityTopologyItemLinkArrayInput is an input type that accepts GetLogAnalyticsEntityTopologyItemLinkArray and GetLogAnalyticsEntityTopologyItemLinkArrayOutput values.
 // You can construct a concrete instance of `GetLogAnalyticsEntityTopologyItemLinkArrayInput` via:
 //
@@ -2780,12 +2413,6 @@ func (i GetLogAnalyticsEntityTopologyItemLinkArray) ToGetLogAnalyticsEntityTopol
 	return pulumi.ToOutputWithContext(ctx, i).(GetLogAnalyticsEntityTopologyItemLinkArrayOutput)
 }
 
-func (i GetLogAnalyticsEntityTopologyItemLinkArray) ToOutput(ctx context.Context) pulumix.Output[[]GetLogAnalyticsEntityTopologyItemLink] {
-	return pulumix.Output[[]GetLogAnalyticsEntityTopologyItemLink]{
-		OutputState: i.ToGetLogAnalyticsEntityTopologyItemLinkArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetLogAnalyticsEntityTopologyItemLinkOutput struct{ *pulumi.OutputState }
 
 func (GetLogAnalyticsEntityTopologyItemLinkOutput) ElementType() reflect.Type {
@@ -2798,12 +2425,6 @@ func (o GetLogAnalyticsEntityTopologyItemLinkOutput) ToGetLogAnalyticsEntityTopo
 
 func (o GetLogAnalyticsEntityTopologyItemLinkOutput) ToGetLogAnalyticsEntityTopologyItemLinkOutputWithContext(ctx context.Context) GetLogAnalyticsEntityTopologyItemLinkOutput {
 	return o
-}
-
-func (o GetLogAnalyticsEntityTopologyItemLinkOutput) ToOutput(ctx context.Context) pulumix.Output[GetLogAnalyticsEntityTopologyItemLink] {
-	return pulumix.Output[GetLogAnalyticsEntityTopologyItemLink]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Array of log analytics entity summary.
@@ -2827,12 +2448,6 @@ func (o GetLogAnalyticsEntityTopologyItemLinkArrayOutput) ToGetLogAnalyticsEntit
 	return o
 }
 
-func (o GetLogAnalyticsEntityTopologyItemLinkArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetLogAnalyticsEntityTopologyItemLink] {
-	return pulumix.Output[[]GetLogAnalyticsEntityTopologyItemLink]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetLogAnalyticsEntityTopologyItemLinkArrayOutput) Index(i pulumi.IntInput) GetLogAnalyticsEntityTopologyItemLinkOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetLogAnalyticsEntityTopologyItemLink {
 		return vs[0].([]GetLogAnalyticsEntityTopologyItemLink)[vs[1].(int)]
@@ -2841,9 +2456,9 @@ func (o GetLogAnalyticsEntityTopologyItemLinkArrayOutput) Index(i pulumi.IntInpu
 
 type GetLogAnalyticsEntityTopologyItemLinkItem struct {
 	// The log analytics entity OCID. This ID is a reference used by log analytics features and it represents a resource that is provisioned and managed by the customer on their premises or on the cloud.
-	DestinationEntityId string `pulumi:"destinationEntityId"`
+	DestinationEntityId *string `pulumi:"destinationEntityId"`
 	// The log analytics entity OCID. This ID is a reference used by log analytics features and it represents a resource that is provisioned and managed by the customer on their premises or on the cloud.
-	SourceEntityId string `pulumi:"sourceEntityId"`
+	SourceEntityId *string `pulumi:"sourceEntityId"`
 }
 
 // GetLogAnalyticsEntityTopologyItemLinkItemInput is an input type that accepts GetLogAnalyticsEntityTopologyItemLinkItemArgs and GetLogAnalyticsEntityTopologyItemLinkItemOutput values.
@@ -2859,9 +2474,9 @@ type GetLogAnalyticsEntityTopologyItemLinkItemInput interface {
 
 type GetLogAnalyticsEntityTopologyItemLinkItemArgs struct {
 	// The log analytics entity OCID. This ID is a reference used by log analytics features and it represents a resource that is provisioned and managed by the customer on their premises or on the cloud.
-	DestinationEntityId pulumi.StringInput `pulumi:"destinationEntityId"`
+	DestinationEntityId pulumi.StringPtrInput `pulumi:"destinationEntityId"`
 	// The log analytics entity OCID. This ID is a reference used by log analytics features and it represents a resource that is provisioned and managed by the customer on their premises or on the cloud.
-	SourceEntityId pulumi.StringInput `pulumi:"sourceEntityId"`
+	SourceEntityId pulumi.StringPtrInput `pulumi:"sourceEntityId"`
 }
 
 func (GetLogAnalyticsEntityTopologyItemLinkItemArgs) ElementType() reflect.Type {
@@ -2874,12 +2489,6 @@ func (i GetLogAnalyticsEntityTopologyItemLinkItemArgs) ToGetLogAnalyticsEntityTo
 
 func (i GetLogAnalyticsEntityTopologyItemLinkItemArgs) ToGetLogAnalyticsEntityTopologyItemLinkItemOutputWithContext(ctx context.Context) GetLogAnalyticsEntityTopologyItemLinkItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetLogAnalyticsEntityTopologyItemLinkItemOutput)
-}
-
-func (i GetLogAnalyticsEntityTopologyItemLinkItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetLogAnalyticsEntityTopologyItemLinkItem] {
-	return pulumix.Output[GetLogAnalyticsEntityTopologyItemLinkItem]{
-		OutputState: i.ToGetLogAnalyticsEntityTopologyItemLinkItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetLogAnalyticsEntityTopologyItemLinkItemArrayInput is an input type that accepts GetLogAnalyticsEntityTopologyItemLinkItemArray and GetLogAnalyticsEntityTopologyItemLinkItemArrayOutput values.
@@ -2907,12 +2516,6 @@ func (i GetLogAnalyticsEntityTopologyItemLinkItemArray) ToGetLogAnalyticsEntityT
 	return pulumi.ToOutputWithContext(ctx, i).(GetLogAnalyticsEntityTopologyItemLinkItemArrayOutput)
 }
 
-func (i GetLogAnalyticsEntityTopologyItemLinkItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetLogAnalyticsEntityTopologyItemLinkItem] {
-	return pulumix.Output[[]GetLogAnalyticsEntityTopologyItemLinkItem]{
-		OutputState: i.ToGetLogAnalyticsEntityTopologyItemLinkItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetLogAnalyticsEntityTopologyItemLinkItemOutput struct{ *pulumi.OutputState }
 
 func (GetLogAnalyticsEntityTopologyItemLinkItemOutput) ElementType() reflect.Type {
@@ -2927,20 +2530,14 @@ func (o GetLogAnalyticsEntityTopologyItemLinkItemOutput) ToGetLogAnalyticsEntity
 	return o
 }
 
-func (o GetLogAnalyticsEntityTopologyItemLinkItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetLogAnalyticsEntityTopologyItemLinkItem] {
-	return pulumix.Output[GetLogAnalyticsEntityTopologyItemLinkItem]{
-		OutputState: o.OutputState,
-	}
+// The log analytics entity OCID. This ID is a reference used by log analytics features and it represents a resource that is provisioned and managed by the customer on their premises or on the cloud.
+func (o GetLogAnalyticsEntityTopologyItemLinkItemOutput) DestinationEntityId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLogAnalyticsEntityTopologyItemLinkItem) *string { return v.DestinationEntityId }).(pulumi.StringPtrOutput)
 }
 
 // The log analytics entity OCID. This ID is a reference used by log analytics features and it represents a resource that is provisioned and managed by the customer on their premises or on the cloud.
-func (o GetLogAnalyticsEntityTopologyItemLinkItemOutput) DestinationEntityId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLogAnalyticsEntityTopologyItemLinkItem) string { return v.DestinationEntityId }).(pulumi.StringOutput)
-}
-
-// The log analytics entity OCID. This ID is a reference used by log analytics features and it represents a resource that is provisioned and managed by the customer on their premises or on the cloud.
-func (o GetLogAnalyticsEntityTopologyItemLinkItemOutput) SourceEntityId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLogAnalyticsEntityTopologyItemLinkItem) string { return v.SourceEntityId }).(pulumi.StringOutput)
+func (o GetLogAnalyticsEntityTopologyItemLinkItemOutput) SourceEntityId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLogAnalyticsEntityTopologyItemLinkItem) *string { return v.SourceEntityId }).(pulumi.StringPtrOutput)
 }
 
 type GetLogAnalyticsEntityTopologyItemLinkItemArrayOutput struct{ *pulumi.OutputState }
@@ -2955,12 +2552,6 @@ func (o GetLogAnalyticsEntityTopologyItemLinkItemArrayOutput) ToGetLogAnalyticsE
 
 func (o GetLogAnalyticsEntityTopologyItemLinkItemArrayOutput) ToGetLogAnalyticsEntityTopologyItemLinkItemArrayOutputWithContext(ctx context.Context) GetLogAnalyticsEntityTopologyItemLinkItemArrayOutput {
 	return o
-}
-
-func (o GetLogAnalyticsEntityTopologyItemLinkItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetLogAnalyticsEntityTopologyItemLinkItem] {
-	return pulumix.Output[[]GetLogAnalyticsEntityTopologyItemLinkItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetLogAnalyticsEntityTopologyItemLinkItemArrayOutput) Index(i pulumi.IntInput) GetLogAnalyticsEntityTopologyItemLinkItemOutput {
@@ -3002,12 +2593,6 @@ func (i GetLogAnalyticsEntityTopologyItemNodeArgs) ToGetLogAnalyticsEntityTopolo
 	return pulumi.ToOutputWithContext(ctx, i).(GetLogAnalyticsEntityTopologyItemNodeOutput)
 }
 
-func (i GetLogAnalyticsEntityTopologyItemNodeArgs) ToOutput(ctx context.Context) pulumix.Output[GetLogAnalyticsEntityTopologyItemNode] {
-	return pulumix.Output[GetLogAnalyticsEntityTopologyItemNode]{
-		OutputState: i.ToGetLogAnalyticsEntityTopologyItemNodeOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetLogAnalyticsEntityTopologyItemNodeArrayInput is an input type that accepts GetLogAnalyticsEntityTopologyItemNodeArray and GetLogAnalyticsEntityTopologyItemNodeArrayOutput values.
 // You can construct a concrete instance of `GetLogAnalyticsEntityTopologyItemNodeArrayInput` via:
 //
@@ -3033,12 +2618,6 @@ func (i GetLogAnalyticsEntityTopologyItemNodeArray) ToGetLogAnalyticsEntityTopol
 	return pulumi.ToOutputWithContext(ctx, i).(GetLogAnalyticsEntityTopologyItemNodeArrayOutput)
 }
 
-func (i GetLogAnalyticsEntityTopologyItemNodeArray) ToOutput(ctx context.Context) pulumix.Output[[]GetLogAnalyticsEntityTopologyItemNode] {
-	return pulumix.Output[[]GetLogAnalyticsEntityTopologyItemNode]{
-		OutputState: i.ToGetLogAnalyticsEntityTopologyItemNodeArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetLogAnalyticsEntityTopologyItemNodeOutput struct{ *pulumi.OutputState }
 
 func (GetLogAnalyticsEntityTopologyItemNodeOutput) ElementType() reflect.Type {
@@ -3051,12 +2630,6 @@ func (o GetLogAnalyticsEntityTopologyItemNodeOutput) ToGetLogAnalyticsEntityTopo
 
 func (o GetLogAnalyticsEntityTopologyItemNodeOutput) ToGetLogAnalyticsEntityTopologyItemNodeOutputWithContext(ctx context.Context) GetLogAnalyticsEntityTopologyItemNodeOutput {
 	return o
-}
-
-func (o GetLogAnalyticsEntityTopologyItemNodeOutput) ToOutput(ctx context.Context) pulumix.Output[GetLogAnalyticsEntityTopologyItemNode] {
-	return pulumix.Output[GetLogAnalyticsEntityTopologyItemNode]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Array of log analytics entity summary.
@@ -3080,12 +2653,6 @@ func (o GetLogAnalyticsEntityTopologyItemNodeArrayOutput) ToGetLogAnalyticsEntit
 	return o
 }
 
-func (o GetLogAnalyticsEntityTopologyItemNodeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetLogAnalyticsEntityTopologyItemNode] {
-	return pulumix.Output[[]GetLogAnalyticsEntityTopologyItemNode]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetLogAnalyticsEntityTopologyItemNodeArrayOutput) Index(i pulumi.IntInput) GetLogAnalyticsEntityTopologyItemNodeOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetLogAnalyticsEntityTopologyItemNode {
 		return vs[0].([]GetLogAnalyticsEntityTopologyItemNode)[vs[1].(int)]
@@ -3094,37 +2661,37 @@ func (o GetLogAnalyticsEntityTopologyItemNodeArrayOutput) Index(i pulumi.IntInpu
 
 type GetLogAnalyticsEntityTopologyItemNodeItem struct {
 	// The Boolean flag to indicate if logs are collected for an entity for log analytics usage.
-	AreLogsCollected bool `pulumi:"areLogsCollected"`
+	AreLogsCollected *bool `pulumi:"areLogsCollected"`
 	// The OCID of the Cloud resource which this entity is a representation of. This may be blank when the entity represents a non-cloud resource that the customer may have on their premises.
-	CloudResourceId string `pulumi:"cloudResourceId"`
+	CloudResourceId *string `pulumi:"cloudResourceId"`
 	// Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// Internal name for the log analytics entity type.
-	EntityTypeInternalName string `pulumi:"entityTypeInternalName"`
+	EntityTypeInternalName *string `pulumi:"entityTypeInternalName"`
 	// Log analytics entity type name.
-	EntityTypeName string `pulumi:"entityTypeName"`
+	EntityTypeName *string `pulumi:"entityTypeName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The log analytics entity OCID. This ID is a reference used by log analytics features and it represents a resource that is provisioned and managed by the customer on their premises or on the cloud.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// lifecycleDetails has additional information regarding substeps such as management agent plugin deployment.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// The OCID of the Management Agent.
-	ManagementAgentId string `pulumi:"managementAgentId"`
+	ManagementAgentId *string `pulumi:"managementAgentId"`
 	// Log analytics entity name.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// This indicates the type of source. It is primarily for Enterprise Manager Repository ID.
-	SourceId string `pulumi:"sourceId"`
+	SourceId *string `pulumi:"sourceId"`
 	// A filter to return only those log analytics entities with the specified lifecycle state. The state value is case-insensitive.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The date and time the resource was created, in the format defined by RFC3339.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The date and time the resource was last updated, in the format defined by RFC3339.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 	// The timezone region of the log analytics entity.
-	TimezoneRegion string `pulumi:"timezoneRegion"`
+	TimezoneRegion *string `pulumi:"timezoneRegion"`
 }
 
 // GetLogAnalyticsEntityTopologyItemNodeItemInput is an input type that accepts GetLogAnalyticsEntityTopologyItemNodeItemArgs and GetLogAnalyticsEntityTopologyItemNodeItemOutput values.
@@ -3140,37 +2707,37 @@ type GetLogAnalyticsEntityTopologyItemNodeItemInput interface {
 
 type GetLogAnalyticsEntityTopologyItemNodeItemArgs struct {
 	// The Boolean flag to indicate if logs are collected for an entity for log analytics usage.
-	AreLogsCollected pulumi.BoolInput `pulumi:"areLogsCollected"`
+	AreLogsCollected pulumi.BoolPtrInput `pulumi:"areLogsCollected"`
 	// The OCID of the Cloud resource which this entity is a representation of. This may be blank when the entity represents a non-cloud resource that the customer may have on their premises.
-	CloudResourceId pulumi.StringInput `pulumi:"cloudResourceId"`
+	CloudResourceId pulumi.StringPtrInput `pulumi:"cloudResourceId"`
 	// Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// Internal name for the log analytics entity type.
-	EntityTypeInternalName pulumi.StringInput `pulumi:"entityTypeInternalName"`
+	EntityTypeInternalName pulumi.StringPtrInput `pulumi:"entityTypeInternalName"`
 	// Log analytics entity type name.
-	EntityTypeName pulumi.StringInput `pulumi:"entityTypeName"`
+	EntityTypeName pulumi.StringPtrInput `pulumi:"entityTypeName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// The log analytics entity OCID. This ID is a reference used by log analytics features and it represents a resource that is provisioned and managed by the customer on their premises or on the cloud.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// lifecycleDetails has additional information regarding substeps such as management agent plugin deployment.
-	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrInput `pulumi:"lifecycleDetails"`
 	// The OCID of the Management Agent.
-	ManagementAgentId pulumi.StringInput `pulumi:"managementAgentId"`
+	ManagementAgentId pulumi.StringPtrInput `pulumi:"managementAgentId"`
 	// Log analytics entity name.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// This indicates the type of source. It is primarily for Enterprise Manager Repository ID.
-	SourceId pulumi.StringInput `pulumi:"sourceId"`
+	SourceId pulumi.StringPtrInput `pulumi:"sourceId"`
 	// A filter to return only those log analytics entities with the specified lifecycle state. The state value is case-insensitive.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// The date and time the resource was created, in the format defined by RFC3339.
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// The date and time the resource was last updated, in the format defined by RFC3339.
-	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
 	// The timezone region of the log analytics entity.
-	TimezoneRegion pulumi.StringInput `pulumi:"timezoneRegion"`
+	TimezoneRegion pulumi.StringPtrInput `pulumi:"timezoneRegion"`
 }
 
 func (GetLogAnalyticsEntityTopologyItemNodeItemArgs) ElementType() reflect.Type {
@@ -3183,12 +2750,6 @@ func (i GetLogAnalyticsEntityTopologyItemNodeItemArgs) ToGetLogAnalyticsEntityTo
 
 func (i GetLogAnalyticsEntityTopologyItemNodeItemArgs) ToGetLogAnalyticsEntityTopologyItemNodeItemOutputWithContext(ctx context.Context) GetLogAnalyticsEntityTopologyItemNodeItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetLogAnalyticsEntityTopologyItemNodeItemOutput)
-}
-
-func (i GetLogAnalyticsEntityTopologyItemNodeItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetLogAnalyticsEntityTopologyItemNodeItem] {
-	return pulumix.Output[GetLogAnalyticsEntityTopologyItemNodeItem]{
-		OutputState: i.ToGetLogAnalyticsEntityTopologyItemNodeItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetLogAnalyticsEntityTopologyItemNodeItemArrayInput is an input type that accepts GetLogAnalyticsEntityTopologyItemNodeItemArray and GetLogAnalyticsEntityTopologyItemNodeItemArrayOutput values.
@@ -3216,12 +2777,6 @@ func (i GetLogAnalyticsEntityTopologyItemNodeItemArray) ToGetLogAnalyticsEntityT
 	return pulumi.ToOutputWithContext(ctx, i).(GetLogAnalyticsEntityTopologyItemNodeItemArrayOutput)
 }
 
-func (i GetLogAnalyticsEntityTopologyItemNodeItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetLogAnalyticsEntityTopologyItemNodeItem] {
-	return pulumix.Output[[]GetLogAnalyticsEntityTopologyItemNodeItem]{
-		OutputState: i.ToGetLogAnalyticsEntityTopologyItemNodeItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetLogAnalyticsEntityTopologyItemNodeItemOutput struct{ *pulumi.OutputState }
 
 func (GetLogAnalyticsEntityTopologyItemNodeItemOutput) ElementType() reflect.Type {
@@ -3236,25 +2791,19 @@ func (o GetLogAnalyticsEntityTopologyItemNodeItemOutput) ToGetLogAnalyticsEntity
 	return o
 }
 
-func (o GetLogAnalyticsEntityTopologyItemNodeItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetLogAnalyticsEntityTopologyItemNodeItem] {
-	return pulumix.Output[GetLogAnalyticsEntityTopologyItemNodeItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The Boolean flag to indicate if logs are collected for an entity for log analytics usage.
-func (o GetLogAnalyticsEntityTopologyItemNodeItemOutput) AreLogsCollected() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetLogAnalyticsEntityTopologyItemNodeItem) bool { return v.AreLogsCollected }).(pulumi.BoolOutput)
+func (o GetLogAnalyticsEntityTopologyItemNodeItemOutput) AreLogsCollected() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetLogAnalyticsEntityTopologyItemNodeItem) *bool { return v.AreLogsCollected }).(pulumi.BoolPtrOutput)
 }
 
 // The OCID of the Cloud resource which this entity is a representation of. This may be blank when the entity represents a non-cloud resource that the customer may have on their premises.
-func (o GetLogAnalyticsEntityTopologyItemNodeItemOutput) CloudResourceId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLogAnalyticsEntityTopologyItemNodeItem) string { return v.CloudResourceId }).(pulumi.StringOutput)
+func (o GetLogAnalyticsEntityTopologyItemNodeItemOutput) CloudResourceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLogAnalyticsEntityTopologyItemNodeItem) *string { return v.CloudResourceId }).(pulumi.StringPtrOutput)
 }
 
 // Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-func (o GetLogAnalyticsEntityTopologyItemNodeItemOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLogAnalyticsEntityTopologyItemNodeItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetLogAnalyticsEntityTopologyItemNodeItemOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLogAnalyticsEntityTopologyItemNodeItem) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -3263,13 +2812,13 @@ func (o GetLogAnalyticsEntityTopologyItemNodeItemOutput) DefinedTags() pulumi.Ma
 }
 
 // Internal name for the log analytics entity type.
-func (o GetLogAnalyticsEntityTopologyItemNodeItemOutput) EntityTypeInternalName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLogAnalyticsEntityTopologyItemNodeItem) string { return v.EntityTypeInternalName }).(pulumi.StringOutput)
+func (o GetLogAnalyticsEntityTopologyItemNodeItemOutput) EntityTypeInternalName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLogAnalyticsEntityTopologyItemNodeItem) *string { return v.EntityTypeInternalName }).(pulumi.StringPtrOutput)
 }
 
 // Log analytics entity type name.
-func (o GetLogAnalyticsEntityTopologyItemNodeItemOutput) EntityTypeName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLogAnalyticsEntityTopologyItemNodeItem) string { return v.EntityTypeName }).(pulumi.StringOutput)
+func (o GetLogAnalyticsEntityTopologyItemNodeItemOutput) EntityTypeName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLogAnalyticsEntityTopologyItemNodeItem) *string { return v.EntityTypeName }).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -3278,48 +2827,48 @@ func (o GetLogAnalyticsEntityTopologyItemNodeItemOutput) FreeformTags() pulumi.M
 }
 
 // The log analytics entity OCID. This ID is a reference used by log analytics features and it represents a resource that is provisioned and managed by the customer on their premises or on the cloud.
-func (o GetLogAnalyticsEntityTopologyItemNodeItemOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLogAnalyticsEntityTopologyItemNodeItem) string { return v.Id }).(pulumi.StringOutput)
+func (o GetLogAnalyticsEntityTopologyItemNodeItemOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLogAnalyticsEntityTopologyItemNodeItem) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // lifecycleDetails has additional information regarding substeps such as management agent plugin deployment.
-func (o GetLogAnalyticsEntityTopologyItemNodeItemOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLogAnalyticsEntityTopologyItemNodeItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o GetLogAnalyticsEntityTopologyItemNodeItemOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLogAnalyticsEntityTopologyItemNodeItem) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the Management Agent.
-func (o GetLogAnalyticsEntityTopologyItemNodeItemOutput) ManagementAgentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLogAnalyticsEntityTopologyItemNodeItem) string { return v.ManagementAgentId }).(pulumi.StringOutput)
+func (o GetLogAnalyticsEntityTopologyItemNodeItemOutput) ManagementAgentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLogAnalyticsEntityTopologyItemNodeItem) *string { return v.ManagementAgentId }).(pulumi.StringPtrOutput)
 }
 
 // Log analytics entity name.
-func (o GetLogAnalyticsEntityTopologyItemNodeItemOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLogAnalyticsEntityTopologyItemNodeItem) string { return v.Name }).(pulumi.StringOutput)
+func (o GetLogAnalyticsEntityTopologyItemNodeItemOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLogAnalyticsEntityTopologyItemNodeItem) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // This indicates the type of source. It is primarily for Enterprise Manager Repository ID.
-func (o GetLogAnalyticsEntityTopologyItemNodeItemOutput) SourceId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLogAnalyticsEntityTopologyItemNodeItem) string { return v.SourceId }).(pulumi.StringOutput)
+func (o GetLogAnalyticsEntityTopologyItemNodeItemOutput) SourceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLogAnalyticsEntityTopologyItemNodeItem) *string { return v.SourceId }).(pulumi.StringPtrOutput)
 }
 
 // A filter to return only those log analytics entities with the specified lifecycle state. The state value is case-insensitive.
-func (o GetLogAnalyticsEntityTopologyItemNodeItemOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLogAnalyticsEntityTopologyItemNodeItem) string { return v.State }).(pulumi.StringOutput)
+func (o GetLogAnalyticsEntityTopologyItemNodeItemOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLogAnalyticsEntityTopologyItemNodeItem) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the resource was created, in the format defined by RFC3339.
-func (o GetLogAnalyticsEntityTopologyItemNodeItemOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLogAnalyticsEntityTopologyItemNodeItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetLogAnalyticsEntityTopologyItemNodeItemOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLogAnalyticsEntityTopologyItemNodeItem) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the resource was last updated, in the format defined by RFC3339.
-func (o GetLogAnalyticsEntityTopologyItemNodeItemOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLogAnalyticsEntityTopologyItemNodeItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o GetLogAnalyticsEntityTopologyItemNodeItemOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLogAnalyticsEntityTopologyItemNodeItem) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 // The timezone region of the log analytics entity.
-func (o GetLogAnalyticsEntityTopologyItemNodeItemOutput) TimezoneRegion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLogAnalyticsEntityTopologyItemNodeItem) string { return v.TimezoneRegion }).(pulumi.StringOutput)
+func (o GetLogAnalyticsEntityTopologyItemNodeItemOutput) TimezoneRegion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLogAnalyticsEntityTopologyItemNodeItem) *string { return v.TimezoneRegion }).(pulumi.StringPtrOutput)
 }
 
 type GetLogAnalyticsEntityTopologyItemNodeItemArrayOutput struct{ *pulumi.OutputState }
@@ -3334,12 +2883,6 @@ func (o GetLogAnalyticsEntityTopologyItemNodeItemArrayOutput) ToGetLogAnalyticsE
 
 func (o GetLogAnalyticsEntityTopologyItemNodeItemArrayOutput) ToGetLogAnalyticsEntityTopologyItemNodeItemArrayOutputWithContext(ctx context.Context) GetLogAnalyticsEntityTopologyItemNodeItemArrayOutput {
 	return o
-}
-
-func (o GetLogAnalyticsEntityTopologyItemNodeItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetLogAnalyticsEntityTopologyItemNodeItem] {
-	return pulumix.Output[[]GetLogAnalyticsEntityTopologyItemNodeItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetLogAnalyticsEntityTopologyItemNodeItemArrayOutput) Index(i pulumi.IntInput) GetLogAnalyticsEntityTopologyItemNodeItemOutput {
@@ -3383,12 +2926,6 @@ func (i GetLogAnalyticsLogGroupsFilterArgs) ToGetLogAnalyticsLogGroupsFilterOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetLogAnalyticsLogGroupsFilterOutput)
 }
 
-func (i GetLogAnalyticsLogGroupsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetLogAnalyticsLogGroupsFilter] {
-	return pulumix.Output[GetLogAnalyticsLogGroupsFilter]{
-		OutputState: i.ToGetLogAnalyticsLogGroupsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetLogAnalyticsLogGroupsFilterArrayInput is an input type that accepts GetLogAnalyticsLogGroupsFilterArray and GetLogAnalyticsLogGroupsFilterArrayOutput values.
 // You can construct a concrete instance of `GetLogAnalyticsLogGroupsFilterArrayInput` via:
 //
@@ -3414,12 +2951,6 @@ func (i GetLogAnalyticsLogGroupsFilterArray) ToGetLogAnalyticsLogGroupsFilterArr
 	return pulumi.ToOutputWithContext(ctx, i).(GetLogAnalyticsLogGroupsFilterArrayOutput)
 }
 
-func (i GetLogAnalyticsLogGroupsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetLogAnalyticsLogGroupsFilter] {
-	return pulumix.Output[[]GetLogAnalyticsLogGroupsFilter]{
-		OutputState: i.ToGetLogAnalyticsLogGroupsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetLogAnalyticsLogGroupsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetLogAnalyticsLogGroupsFilterOutput) ElementType() reflect.Type {
@@ -3432,12 +2963,6 @@ func (o GetLogAnalyticsLogGroupsFilterOutput) ToGetLogAnalyticsLogGroupsFilterOu
 
 func (o GetLogAnalyticsLogGroupsFilterOutput) ToGetLogAnalyticsLogGroupsFilterOutputWithContext(ctx context.Context) GetLogAnalyticsLogGroupsFilterOutput {
 	return o
-}
-
-func (o GetLogAnalyticsLogGroupsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetLogAnalyticsLogGroupsFilter] {
-	return pulumix.Output[GetLogAnalyticsLogGroupsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetLogAnalyticsLogGroupsFilterOutput) Name() pulumi.StringOutput {
@@ -3464,12 +2989,6 @@ func (o GetLogAnalyticsLogGroupsFilterArrayOutput) ToGetLogAnalyticsLogGroupsFil
 
 func (o GetLogAnalyticsLogGroupsFilterArrayOutput) ToGetLogAnalyticsLogGroupsFilterArrayOutputWithContext(ctx context.Context) GetLogAnalyticsLogGroupsFilterArrayOutput {
 	return o
-}
-
-func (o GetLogAnalyticsLogGroupsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetLogAnalyticsLogGroupsFilter] {
-	return pulumix.Output[[]GetLogAnalyticsLogGroupsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetLogAnalyticsLogGroupsFilterArrayOutput) Index(i pulumi.IntInput) GetLogAnalyticsLogGroupsFilterOutput {
@@ -3509,12 +3028,6 @@ func (i GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionArgs) ToGet
 	return pulumi.ToOutputWithContext(ctx, i).(GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionOutput)
 }
 
-func (i GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollection] {
-	return pulumix.Output[GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollection]{
-		OutputState: i.ToGetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionArrayInput is an input type that accepts GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionArray and GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionArrayOutput values.
 // You can construct a concrete instance of `GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionArrayInput` via:
 //
@@ -3540,12 +3053,6 @@ func (i GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionArray) ToGe
 	return pulumi.ToOutputWithContext(ctx, i).(GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionArrayOutput)
 }
 
-func (i GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollection] {
-	return pulumix.Output[[]GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollection]{
-		OutputState: i.ToGetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionOutput) ElementType() reflect.Type {
@@ -3558,12 +3065,6 @@ func (o GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionOutput) ToG
 
 func (o GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionOutput) ToGetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionOutputWithContext(ctx context.Context) GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionOutput {
 	return o
-}
-
-func (o GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollection] {
-	return pulumix.Output[GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionOutput) Items() GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionItemArrayOutput {
@@ -3586,12 +3087,6 @@ func (o GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionArrayOutput
 	return o
 }
 
-func (o GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollection] {
-	return pulumix.Output[[]GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionArrayOutput) Index(i pulumi.IntInput) GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollection {
 		return vs[0].([]GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollection)[vs[1].(int)]
@@ -3600,23 +3095,23 @@ func (o GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionArrayOutput
 
 type GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionItem struct {
 	// The ID of the compartment in which to list resources.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// Description for this resource.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// A filter to return only log analytics log groups whose displayName matches the entire display name given. The match is case-insensitive.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The log analytics entity OCID. This ID is a reference used by log analytics features and it represents a resource that is provisioned and managed by the customer on their premises or on the cloud.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The Logging Analytics namespace used for the request.
-	Namespace string `pulumi:"namespace"`
+	Namespace *string `pulumi:"namespace"`
 	// The date and time the resource was created, in the format defined by RFC3339.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The date and time the resource was last updated, in the format defined by RFC3339.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 // GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionItemInput is an input type that accepts GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionItemArgs and GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionItemOutput values.
@@ -3632,23 +3127,23 @@ type GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionItemInput inte
 
 type GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionItemArgs struct {
 	// The ID of the compartment in which to list resources.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// Description for this resource.
-	Description pulumi.StringInput `pulumi:"description"`
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// A filter to return only log analytics log groups whose displayName matches the entire display name given. The match is case-insensitive.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// The log analytics entity OCID. This ID is a reference used by log analytics features and it represents a resource that is provisioned and managed by the customer on their premises or on the cloud.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// The Logging Analytics namespace used for the request.
-	Namespace pulumi.StringInput `pulumi:"namespace"`
+	Namespace pulumi.StringPtrInput `pulumi:"namespace"`
 	// The date and time the resource was created, in the format defined by RFC3339.
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// The date and time the resource was last updated, in the format defined by RFC3339.
-	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
 }
 
 func (GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionItemArgs) ElementType() reflect.Type {
@@ -3661,12 +3156,6 @@ func (i GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionItemArgs) T
 
 func (i GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionItemArgs) ToGetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionItemOutputWithContext(ctx context.Context) GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionItemOutput)
-}
-
-func (i GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionItem] {
-	return pulumix.Output[GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionItem]{
-		OutputState: i.ToGetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionItemArrayInput is an input type that accepts GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionItemArray and GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionItemArrayOutput values.
@@ -3694,12 +3183,6 @@ func (i GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionItemArray) 
 	return pulumi.ToOutputWithContext(ctx, i).(GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionItemArrayOutput)
 }
 
-func (i GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionItem] {
-	return pulumix.Output[[]GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionItem]{
-		OutputState: i.ToGetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionItemOutput) ElementType() reflect.Type {
@@ -3714,17 +3197,11 @@ func (o GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionItemOutput)
 	return o
 }
 
-func (o GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionItem] {
-	return pulumix.Output[GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The ID of the compartment in which to list resources.
-func (o GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionItemOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionItem) string {
+func (o GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionItemOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionItem) *string {
 		return v.CompartmentId
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -3735,13 +3212,17 @@ func (o GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionItemOutput)
 }
 
 // Description for this resource.
-func (o GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionItemOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionItem) string { return v.Description }).(pulumi.StringOutput)
+func (o GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionItemOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionItem) *string {
+		return v.Description
+	}).(pulumi.StringPtrOutput)
 }
 
 // A filter to return only log analytics log groups whose displayName matches the entire display name given. The match is case-insensitive.
-func (o GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionItemOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionItemOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionItem) *string {
+		return v.DisplayName
+	}).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -3752,23 +3233,27 @@ func (o GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionItemOutput)
 }
 
 // The log analytics entity OCID. This ID is a reference used by log analytics features and it represents a resource that is provisioned and managed by the customer on their premises or on the cloud.
-func (o GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionItemOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+func (o GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionItemOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionItem) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The Logging Analytics namespace used for the request.
-func (o GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionItemOutput) Namespace() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionItem) string { return v.Namespace }).(pulumi.StringOutput)
+func (o GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionItemOutput) Namespace() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionItem) *string { return v.Namespace }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the resource was created, in the format defined by RFC3339.
-func (o GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionItemOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionItemOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionItem) *string {
+		return v.TimeCreated
+	}).(pulumi.StringPtrOutput)
 }
 
 // The date and time the resource was last updated, in the format defined by RFC3339.
-func (o GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionItemOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionItem) *string {
+		return v.TimeUpdated
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -3785,12 +3270,6 @@ func (o GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionItemArrayOu
 	return o
 }
 
-func (o GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionItem] {
-	return pulumix.Output[[]GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionItemArrayOutput) Index(i pulumi.IntInput) GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionItem {
 		return vs[0].([]GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionItem)[vs[1].(int)]
@@ -3798,10 +3277,10 @@ func (o GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionItemArrayOu
 }
 
 type GetLogAnalyticsObjectCollectionRuleOverride struct {
-	MatchType     string `pulumi:"matchType"`
-	MatchValue    string `pulumi:"matchValue"`
-	PropertyName  string `pulumi:"propertyName"`
-	PropertyValue string `pulumi:"propertyValue"`
+	MatchType     *string `pulumi:"matchType"`
+	MatchValue    *string `pulumi:"matchValue"`
+	PropertyName  *string `pulumi:"propertyName"`
+	PropertyValue *string `pulumi:"propertyValue"`
 }
 
 // GetLogAnalyticsObjectCollectionRuleOverrideInput is an input type that accepts GetLogAnalyticsObjectCollectionRuleOverrideArgs and GetLogAnalyticsObjectCollectionRuleOverrideOutput values.
@@ -3816,10 +3295,10 @@ type GetLogAnalyticsObjectCollectionRuleOverrideInput interface {
 }
 
 type GetLogAnalyticsObjectCollectionRuleOverrideArgs struct {
-	MatchType     pulumi.StringInput `pulumi:"matchType"`
-	MatchValue    pulumi.StringInput `pulumi:"matchValue"`
-	PropertyName  pulumi.StringInput `pulumi:"propertyName"`
-	PropertyValue pulumi.StringInput `pulumi:"propertyValue"`
+	MatchType     pulumi.StringPtrInput `pulumi:"matchType"`
+	MatchValue    pulumi.StringPtrInput `pulumi:"matchValue"`
+	PropertyName  pulumi.StringPtrInput `pulumi:"propertyName"`
+	PropertyValue pulumi.StringPtrInput `pulumi:"propertyValue"`
 }
 
 func (GetLogAnalyticsObjectCollectionRuleOverrideArgs) ElementType() reflect.Type {
@@ -3832,12 +3311,6 @@ func (i GetLogAnalyticsObjectCollectionRuleOverrideArgs) ToGetLogAnalyticsObject
 
 func (i GetLogAnalyticsObjectCollectionRuleOverrideArgs) ToGetLogAnalyticsObjectCollectionRuleOverrideOutputWithContext(ctx context.Context) GetLogAnalyticsObjectCollectionRuleOverrideOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetLogAnalyticsObjectCollectionRuleOverrideOutput)
-}
-
-func (i GetLogAnalyticsObjectCollectionRuleOverrideArgs) ToOutput(ctx context.Context) pulumix.Output[GetLogAnalyticsObjectCollectionRuleOverride] {
-	return pulumix.Output[GetLogAnalyticsObjectCollectionRuleOverride]{
-		OutputState: i.ToGetLogAnalyticsObjectCollectionRuleOverrideOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetLogAnalyticsObjectCollectionRuleOverrideArrayInput is an input type that accepts GetLogAnalyticsObjectCollectionRuleOverrideArray and GetLogAnalyticsObjectCollectionRuleOverrideArrayOutput values.
@@ -3865,12 +3338,6 @@ func (i GetLogAnalyticsObjectCollectionRuleOverrideArray) ToGetLogAnalyticsObjec
 	return pulumi.ToOutputWithContext(ctx, i).(GetLogAnalyticsObjectCollectionRuleOverrideArrayOutput)
 }
 
-func (i GetLogAnalyticsObjectCollectionRuleOverrideArray) ToOutput(ctx context.Context) pulumix.Output[[]GetLogAnalyticsObjectCollectionRuleOverride] {
-	return pulumix.Output[[]GetLogAnalyticsObjectCollectionRuleOverride]{
-		OutputState: i.ToGetLogAnalyticsObjectCollectionRuleOverrideArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetLogAnalyticsObjectCollectionRuleOverrideOutput struct{ *pulumi.OutputState }
 
 func (GetLogAnalyticsObjectCollectionRuleOverrideOutput) ElementType() reflect.Type {
@@ -3885,26 +3352,20 @@ func (o GetLogAnalyticsObjectCollectionRuleOverrideOutput) ToGetLogAnalyticsObje
 	return o
 }
 
-func (o GetLogAnalyticsObjectCollectionRuleOverrideOutput) ToOutput(ctx context.Context) pulumix.Output[GetLogAnalyticsObjectCollectionRuleOverride] {
-	return pulumix.Output[GetLogAnalyticsObjectCollectionRuleOverride]{
-		OutputState: o.OutputState,
-	}
+func (o GetLogAnalyticsObjectCollectionRuleOverrideOutput) MatchType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLogAnalyticsObjectCollectionRuleOverride) *string { return v.MatchType }).(pulumi.StringPtrOutput)
 }
 
-func (o GetLogAnalyticsObjectCollectionRuleOverrideOutput) MatchType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLogAnalyticsObjectCollectionRuleOverride) string { return v.MatchType }).(pulumi.StringOutput)
+func (o GetLogAnalyticsObjectCollectionRuleOverrideOutput) MatchValue() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLogAnalyticsObjectCollectionRuleOverride) *string { return v.MatchValue }).(pulumi.StringPtrOutput)
 }
 
-func (o GetLogAnalyticsObjectCollectionRuleOverrideOutput) MatchValue() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLogAnalyticsObjectCollectionRuleOverride) string { return v.MatchValue }).(pulumi.StringOutput)
+func (o GetLogAnalyticsObjectCollectionRuleOverrideOutput) PropertyName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLogAnalyticsObjectCollectionRuleOverride) *string { return v.PropertyName }).(pulumi.StringPtrOutput)
 }
 
-func (o GetLogAnalyticsObjectCollectionRuleOverrideOutput) PropertyName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLogAnalyticsObjectCollectionRuleOverride) string { return v.PropertyName }).(pulumi.StringOutput)
-}
-
-func (o GetLogAnalyticsObjectCollectionRuleOverrideOutput) PropertyValue() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLogAnalyticsObjectCollectionRuleOverride) string { return v.PropertyValue }).(pulumi.StringOutput)
+func (o GetLogAnalyticsObjectCollectionRuleOverrideOutput) PropertyValue() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLogAnalyticsObjectCollectionRuleOverride) *string { return v.PropertyValue }).(pulumi.StringPtrOutput)
 }
 
 type GetLogAnalyticsObjectCollectionRuleOverrideArrayOutput struct{ *pulumi.OutputState }
@@ -3919,12 +3380,6 @@ func (o GetLogAnalyticsObjectCollectionRuleOverrideArrayOutput) ToGetLogAnalytic
 
 func (o GetLogAnalyticsObjectCollectionRuleOverrideArrayOutput) ToGetLogAnalyticsObjectCollectionRuleOverrideArrayOutputWithContext(ctx context.Context) GetLogAnalyticsObjectCollectionRuleOverrideArrayOutput {
 	return o
-}
-
-func (o GetLogAnalyticsObjectCollectionRuleOverrideArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetLogAnalyticsObjectCollectionRuleOverride] {
-	return pulumix.Output[[]GetLogAnalyticsObjectCollectionRuleOverride]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetLogAnalyticsObjectCollectionRuleOverrideArrayOutput) Index(i pulumi.IntInput) GetLogAnalyticsObjectCollectionRuleOverrideOutput {
@@ -3970,12 +3425,6 @@ func (i GetLogAnalyticsObjectCollectionRulesFilterArgs) ToGetLogAnalyticsObjectC
 	return pulumi.ToOutputWithContext(ctx, i).(GetLogAnalyticsObjectCollectionRulesFilterOutput)
 }
 
-func (i GetLogAnalyticsObjectCollectionRulesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetLogAnalyticsObjectCollectionRulesFilter] {
-	return pulumix.Output[GetLogAnalyticsObjectCollectionRulesFilter]{
-		OutputState: i.ToGetLogAnalyticsObjectCollectionRulesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetLogAnalyticsObjectCollectionRulesFilterArrayInput is an input type that accepts GetLogAnalyticsObjectCollectionRulesFilterArray and GetLogAnalyticsObjectCollectionRulesFilterArrayOutput values.
 // You can construct a concrete instance of `GetLogAnalyticsObjectCollectionRulesFilterArrayInput` via:
 //
@@ -4001,12 +3450,6 @@ func (i GetLogAnalyticsObjectCollectionRulesFilterArray) ToGetLogAnalyticsObject
 	return pulumi.ToOutputWithContext(ctx, i).(GetLogAnalyticsObjectCollectionRulesFilterArrayOutput)
 }
 
-func (i GetLogAnalyticsObjectCollectionRulesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetLogAnalyticsObjectCollectionRulesFilter] {
-	return pulumix.Output[[]GetLogAnalyticsObjectCollectionRulesFilter]{
-		OutputState: i.ToGetLogAnalyticsObjectCollectionRulesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetLogAnalyticsObjectCollectionRulesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetLogAnalyticsObjectCollectionRulesFilterOutput) ElementType() reflect.Type {
@@ -4019,12 +3462,6 @@ func (o GetLogAnalyticsObjectCollectionRulesFilterOutput) ToGetLogAnalyticsObjec
 
 func (o GetLogAnalyticsObjectCollectionRulesFilterOutput) ToGetLogAnalyticsObjectCollectionRulesFilterOutputWithContext(ctx context.Context) GetLogAnalyticsObjectCollectionRulesFilterOutput {
 	return o
-}
-
-func (o GetLogAnalyticsObjectCollectionRulesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetLogAnalyticsObjectCollectionRulesFilter] {
-	return pulumix.Output[GetLogAnalyticsObjectCollectionRulesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A filter to return rules only matching with this name.
@@ -4052,12 +3489,6 @@ func (o GetLogAnalyticsObjectCollectionRulesFilterArrayOutput) ToGetLogAnalytics
 
 func (o GetLogAnalyticsObjectCollectionRulesFilterArrayOutput) ToGetLogAnalyticsObjectCollectionRulesFilterArrayOutputWithContext(ctx context.Context) GetLogAnalyticsObjectCollectionRulesFilterArrayOutput {
 	return o
-}
-
-func (o GetLogAnalyticsObjectCollectionRulesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetLogAnalyticsObjectCollectionRulesFilter] {
-	return pulumix.Output[[]GetLogAnalyticsObjectCollectionRulesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetLogAnalyticsObjectCollectionRulesFilterArrayOutput) Index(i pulumi.IntInput) GetLogAnalyticsObjectCollectionRulesFilterOutput {
@@ -4097,12 +3528,6 @@ func (i GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleColl
 	return pulumi.ToOutputWithContext(ctx, i).(GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionOutput)
 }
 
-func (i GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollection] {
-	return pulumix.Output[GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollection]{
-		OutputState: i.ToGetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionArrayInput is an input type that accepts GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionArray and GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionArrayOutput values.
 // You can construct a concrete instance of `GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionArrayInput` via:
 //
@@ -4128,12 +3553,6 @@ func (i GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleColl
 	return pulumi.ToOutputWithContext(ctx, i).(GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionArrayOutput)
 }
 
-func (i GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollection] {
-	return pulumix.Output[[]GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollection]{
-		OutputState: i.ToGetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionOutput) ElementType() reflect.Type {
@@ -4146,12 +3565,6 @@ func (o GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleColl
 
 func (o GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionOutput) ToGetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionOutputWithContext(ctx context.Context) GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionOutput {
 	return o
-}
-
-func (o GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollection] {
-	return pulumix.Output[GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionOutput) Items() GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemArrayOutput {
@@ -4174,12 +3587,6 @@ func (o GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleColl
 	return o
 }
 
-func (o GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollection] {
-	return pulumix.Output[[]GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionArrayOutput) Index(i pulumi.IntInput) GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollection {
 		return vs[0].([]GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollection)[vs[1].(int)]
@@ -4188,59 +3595,59 @@ func (o GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleColl
 
 type GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItem struct {
 	// An optional character encoding to aid in detecting the character encoding of the contents of the objects while processing. It is recommended to set this value as ISO_8589_1 when configuring content of the objects having more numeric characters, and very few alphabets. For e.g. this applies when configuring VCN Flow Logs.
-	CharEncoding string `pulumi:"charEncoding"`
+	CharEncoding *string `pulumi:"charEncoding"`
 	// The type of collection. Supported collection types: LIVE, HISTORIC, HISTORIC_LIVE
-	CollectionType string `pulumi:"collectionType"`
+	CollectionType *string `pulumi:"collectionType"`
 	// The ID of the compartment in which to list resources.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A string that describes the details of the rule. It does not have to be unique, and can be changed. Avoid entering confidential information.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// Logging Analytics entity OCID to associate the processed logs with.
-	EntityId string `pulumi:"entityId"`
+	EntityId *string `pulumi:"entityId"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this rule.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Whether or not this rule is currently enabled.
-	IsEnabled bool `pulumi:"isEnabled"`
+	IsEnabled *bool `pulumi:"isEnabled"`
 	// A detailed status of the life cycle state.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// Logging Analytics Log group OCID to associate the processed logs with.
-	LogGroupId string `pulumi:"logGroupId"`
+	LogGroupId *string `pulumi:"logGroupId"`
 	// The logSet to be associated with the processed logs. The logSet feature can be used by customers with high volume of data  and this feature has to be enabled for a given tenancy prior to its usage. When logSetExtRegex value is provided, it will take precedence over this logSet value and logSet will be computed dynamically  using logSetKey and logSetExtRegex.
-	LogSet string `pulumi:"logSet"`
+	LogSet *string `pulumi:"logSet"`
 	// The regex to be applied against given logSetKey. Regex has to be in string escaped format.
-	LogSetExtRegex string `pulumi:"logSetExtRegex"`
+	LogSetExtRegex *string `pulumi:"logSetExtRegex"`
 	// An optional parameter to indicate from where the logSet to be extracted using logSetExtRegex. Default value is OBJECT_PATH (e.g. /n/<namespace>/b/<bucketname>/o/<objectname>).
-	LogSetKey string `pulumi:"logSetKey"`
+	LogSetKey *string `pulumi:"logSetKey"`
 	// Name of the Logging Analytics Source to use for the processing.
-	LogSourceName string `pulumi:"logSourceName"`
+	LogSourceName *string `pulumi:"logSourceName"`
 	// A filter to return rules only matching with this name.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// The Logging Analytics namespace used for the request.
-	Namespace string `pulumi:"namespace"`
+	Namespace *string `pulumi:"namespace"`
 	// When the filters are provided, only the objects matching the filters are picked up for processing. The matchType supported is exact match and accommodates wildcard "*". For more information on filters, see [Event Filters](https://docs.oracle.com/en-us/iaas/Content/Events/Concepts/filterevents.htm).
 	ObjectNameFilters []string `pulumi:"objectNameFilters"`
 	// Name of the Object Storage bucket.
-	OsBucketName string `pulumi:"osBucketName"`
+	OsBucketName *string `pulumi:"osBucketName"`
 	// Object Storage namespace.
-	OsNamespace string `pulumi:"osNamespace"`
+	OsNamespace *string `pulumi:"osNamespace"`
 	// Use this to override some property values which are defined at bucket level to the scope of object. Supported propeties for override are, logSourceName, charEncoding. Supported matchType for override are "contains".
 	Overrides []GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOverride `pulumi:"overrides"`
 	// The oldest time of the file in the bucket to consider for collection. Accepted values are: BEGINNING or CURRENT_TIME or RFC3339 formatted datetime string. When collectionType is LIVE, specifying pollSince value other than CURRENT_TIME will result in error.
-	PollSince string `pulumi:"pollSince"`
+	PollSince *string `pulumi:"pollSince"`
 	// The oldest time of the file in the bucket to consider for collection. Accepted values are: CURRENT_TIME or RFC3339 formatted datetime string. When collectionType is LIVE, specifying pollTill will result in error.
-	PollTill string `pulumi:"pollTill"`
+	PollTill *string `pulumi:"pollTill"`
 	// Lifecycle state filter.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The time when this rule was created. An RFC3339 formatted datetime string.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time when this rule was last updated. An RFC3339 formatted datetime string.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 	// Timezone to be used when processing log entries whose timestamps do not include an explicit timezone.  When this property is not specified, the timezone of the entity specified is used.  If the entity is also not specified or do not have a valid timezone then UTC is used.
-	Timezone string `pulumi:"timezone"`
+	Timezone *string `pulumi:"timezone"`
 }
 
 // GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemInput is an input type that accepts GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemArgs and GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOutput values.
@@ -4256,59 +3663,59 @@ type GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollect
 
 type GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemArgs struct {
 	// An optional character encoding to aid in detecting the character encoding of the contents of the objects while processing. It is recommended to set this value as ISO_8589_1 when configuring content of the objects having more numeric characters, and very few alphabets. For e.g. this applies when configuring VCN Flow Logs.
-	CharEncoding pulumi.StringInput `pulumi:"charEncoding"`
+	CharEncoding pulumi.StringPtrInput `pulumi:"charEncoding"`
 	// The type of collection. Supported collection types: LIVE, HISTORIC, HISTORIC_LIVE
-	CollectionType pulumi.StringInput `pulumi:"collectionType"`
+	CollectionType pulumi.StringPtrInput `pulumi:"collectionType"`
 	// The ID of the compartment in which to list resources.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// A string that describes the details of the rule. It does not have to be unique, and can be changed. Avoid entering confidential information.
-	Description pulumi.StringInput `pulumi:"description"`
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// Logging Analytics entity OCID to associate the processed logs with.
-	EntityId pulumi.StringInput `pulumi:"entityId"`
+	EntityId pulumi.StringPtrInput `pulumi:"entityId"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this rule.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// Whether or not this rule is currently enabled.
-	IsEnabled pulumi.BoolInput `pulumi:"isEnabled"`
+	IsEnabled pulumi.BoolPtrInput `pulumi:"isEnabled"`
 	// A detailed status of the life cycle state.
-	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrInput `pulumi:"lifecycleDetails"`
 	// Logging Analytics Log group OCID to associate the processed logs with.
-	LogGroupId pulumi.StringInput `pulumi:"logGroupId"`
+	LogGroupId pulumi.StringPtrInput `pulumi:"logGroupId"`
 	// The logSet to be associated with the processed logs. The logSet feature can be used by customers with high volume of data  and this feature has to be enabled for a given tenancy prior to its usage. When logSetExtRegex value is provided, it will take precedence over this logSet value and logSet will be computed dynamically  using logSetKey and logSetExtRegex.
-	LogSet pulumi.StringInput `pulumi:"logSet"`
+	LogSet pulumi.StringPtrInput `pulumi:"logSet"`
 	// The regex to be applied against given logSetKey. Regex has to be in string escaped format.
-	LogSetExtRegex pulumi.StringInput `pulumi:"logSetExtRegex"`
+	LogSetExtRegex pulumi.StringPtrInput `pulumi:"logSetExtRegex"`
 	// An optional parameter to indicate from where the logSet to be extracted using logSetExtRegex. Default value is OBJECT_PATH (e.g. /n/<namespace>/b/<bucketname>/o/<objectname>).
-	LogSetKey pulumi.StringInput `pulumi:"logSetKey"`
+	LogSetKey pulumi.StringPtrInput `pulumi:"logSetKey"`
 	// Name of the Logging Analytics Source to use for the processing.
-	LogSourceName pulumi.StringInput `pulumi:"logSourceName"`
+	LogSourceName pulumi.StringPtrInput `pulumi:"logSourceName"`
 	// A filter to return rules only matching with this name.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// The Logging Analytics namespace used for the request.
-	Namespace pulumi.StringInput `pulumi:"namespace"`
+	Namespace pulumi.StringPtrInput `pulumi:"namespace"`
 	// When the filters are provided, only the objects matching the filters are picked up for processing. The matchType supported is exact match and accommodates wildcard "*". For more information on filters, see [Event Filters](https://docs.oracle.com/en-us/iaas/Content/Events/Concepts/filterevents.htm).
 	ObjectNameFilters pulumi.StringArrayInput `pulumi:"objectNameFilters"`
 	// Name of the Object Storage bucket.
-	OsBucketName pulumi.StringInput `pulumi:"osBucketName"`
+	OsBucketName pulumi.StringPtrInput `pulumi:"osBucketName"`
 	// Object Storage namespace.
-	OsNamespace pulumi.StringInput `pulumi:"osNamespace"`
+	OsNamespace pulumi.StringPtrInput `pulumi:"osNamespace"`
 	// Use this to override some property values which are defined at bucket level to the scope of object. Supported propeties for override are, logSourceName, charEncoding. Supported matchType for override are "contains".
 	Overrides GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOverrideArrayInput `pulumi:"overrides"`
 	// The oldest time of the file in the bucket to consider for collection. Accepted values are: BEGINNING or CURRENT_TIME or RFC3339 formatted datetime string. When collectionType is LIVE, specifying pollSince value other than CURRENT_TIME will result in error.
-	PollSince pulumi.StringInput `pulumi:"pollSince"`
+	PollSince pulumi.StringPtrInput `pulumi:"pollSince"`
 	// The oldest time of the file in the bucket to consider for collection. Accepted values are: CURRENT_TIME or RFC3339 formatted datetime string. When collectionType is LIVE, specifying pollTill will result in error.
-	PollTill pulumi.StringInput `pulumi:"pollTill"`
+	PollTill pulumi.StringPtrInput `pulumi:"pollTill"`
 	// Lifecycle state filter.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// The time when this rule was created. An RFC3339 formatted datetime string.
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// The time when this rule was last updated. An RFC3339 formatted datetime string.
-	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
 	// Timezone to be used when processing log entries whose timestamps do not include an explicit timezone.  When this property is not specified, the timezone of the entity specified is used.  If the entity is also not specified or do not have a valid timezone then UTC is used.
-	Timezone pulumi.StringInput `pulumi:"timezone"`
+	Timezone pulumi.StringPtrInput `pulumi:"timezone"`
 }
 
 func (GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemArgs) ElementType() reflect.Type {
@@ -4321,12 +3728,6 @@ func (i GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleColl
 
 func (i GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemArgs) ToGetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOutputWithContext(ctx context.Context) GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOutput)
-}
-
-func (i GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItem] {
-	return pulumix.Output[GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItem]{
-		OutputState: i.ToGetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemArrayInput is an input type that accepts GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemArray and GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemArrayOutput values.
@@ -4354,12 +3755,6 @@ func (i GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleColl
 	return pulumi.ToOutputWithContext(ctx, i).(GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemArrayOutput)
 }
 
-func (i GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItem] {
-	return pulumix.Output[[]GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItem]{
-		OutputState: i.ToGetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOutput) ElementType() reflect.Type {
@@ -4374,31 +3769,25 @@ func (o GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleColl
 	return o
 }
 
-func (o GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItem] {
-	return pulumix.Output[GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // An optional character encoding to aid in detecting the character encoding of the contents of the objects while processing. It is recommended to set this value as ISO_8589_1 when configuring content of the objects having more numeric characters, and very few alphabets. For e.g. this applies when configuring VCN Flow Logs.
-func (o GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOutput) CharEncoding() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItem) string {
+func (o GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOutput) CharEncoding() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItem) *string {
 		return v.CharEncoding
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The type of collection. Supported collection types: LIVE, HISTORIC, HISTORIC_LIVE
-func (o GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOutput) CollectionType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItem) string {
+func (o GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOutput) CollectionType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItem) *string {
 		return v.CollectionType
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The ID of the compartment in which to list resources.
-func (o GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItem) string {
+func (o GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItem) *string {
 		return v.CompartmentId
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -4409,17 +3798,17 @@ func (o GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleColl
 }
 
 // A string that describes the details of the rule. It does not have to be unique, and can be changed. Avoid entering confidential information.
-func (o GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItem) string {
+func (o GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItem) *string {
 		return v.Description
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Logging Analytics entity OCID to associate the processed logs with.
-func (o GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOutput) EntityId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItem) string {
+func (o GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOutput) EntityId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItem) *string {
 		return v.EntityId
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -4430,73 +3819,73 @@ func (o GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleColl
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this rule.
-func (o GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItem) string {
+func (o GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItem) *string {
 		return v.Id
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Whether or not this rule is currently enabled.
-func (o GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOutput) IsEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItem) bool {
+func (o GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOutput) IsEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItem) *bool {
 		return v.IsEnabled
-	}).(pulumi.BoolOutput)
+	}).(pulumi.BoolPtrOutput)
 }
 
 // A detailed status of the life cycle state.
-func (o GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItem) string {
+func (o GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItem) *string {
 		return v.LifecycleDetails
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Logging Analytics Log group OCID to associate the processed logs with.
-func (o GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOutput) LogGroupId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItem) string {
+func (o GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOutput) LogGroupId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItem) *string {
 		return v.LogGroupId
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The logSet to be associated with the processed logs. The logSet feature can be used by customers with high volume of data  and this feature has to be enabled for a given tenancy prior to its usage. When logSetExtRegex value is provided, it will take precedence over this logSet value and logSet will be computed dynamically  using logSetKey and logSetExtRegex.
-func (o GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOutput) LogSet() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItem) string {
+func (o GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOutput) LogSet() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItem) *string {
 		return v.LogSet
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The regex to be applied against given logSetKey. Regex has to be in string escaped format.
-func (o GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOutput) LogSetExtRegex() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItem) string {
+func (o GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOutput) LogSetExtRegex() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItem) *string {
 		return v.LogSetExtRegex
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // An optional parameter to indicate from where the logSet to be extracted using logSetExtRegex. Default value is OBJECT_PATH (e.g. /n/<namespace>/b/<bucketname>/o/<objectname>).
-func (o GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOutput) LogSetKey() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItem) string {
+func (o GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOutput) LogSetKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItem) *string {
 		return v.LogSetKey
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Name of the Logging Analytics Source to use for the processing.
-func (o GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOutput) LogSourceName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItem) string {
+func (o GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOutput) LogSourceName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItem) *string {
 		return v.LogSourceName
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // A filter to return rules only matching with this name.
-func (o GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItem) string {
+func (o GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItem) *string {
 		return v.Name
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The Logging Analytics namespace used for the request.
-func (o GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOutput) Namespace() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItem) string {
+func (o GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOutput) Namespace() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItem) *string {
 		return v.Namespace
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // When the filters are provided, only the objects matching the filters are picked up for processing. The matchType supported is exact match and accommodates wildcard "*". For more information on filters, see [Event Filters](https://docs.oracle.com/en-us/iaas/Content/Events/Concepts/filterevents.htm).
@@ -4507,17 +3896,17 @@ func (o GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleColl
 }
 
 // Name of the Object Storage bucket.
-func (o GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOutput) OsBucketName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItem) string {
+func (o GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOutput) OsBucketName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItem) *string {
 		return v.OsBucketName
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Object Storage namespace.
-func (o GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOutput) OsNamespace() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItem) string {
+func (o GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOutput) OsNamespace() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItem) *string {
 		return v.OsNamespace
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Use this to override some property values which are defined at bucket level to the scope of object. Supported propeties for override are, logSourceName, charEncoding. Supported matchType for override are "contains".
@@ -4528,45 +3917,45 @@ func (o GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleColl
 }
 
 // The oldest time of the file in the bucket to consider for collection. Accepted values are: BEGINNING or CURRENT_TIME or RFC3339 formatted datetime string. When collectionType is LIVE, specifying pollSince value other than CURRENT_TIME will result in error.
-func (o GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOutput) PollSince() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItem) string {
+func (o GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOutput) PollSince() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItem) *string {
 		return v.PollSince
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The oldest time of the file in the bucket to consider for collection. Accepted values are: CURRENT_TIME or RFC3339 formatted datetime string. When collectionType is LIVE, specifying pollTill will result in error.
-func (o GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOutput) PollTill() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItem) string {
+func (o GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOutput) PollTill() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItem) *string {
 		return v.PollTill
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Lifecycle state filter.
-func (o GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItem) string {
+func (o GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItem) *string {
 		return v.State
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The time when this rule was created. An RFC3339 formatted datetime string.
-func (o GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItem) string {
+func (o GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItem) *string {
 		return v.TimeCreated
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The time when this rule was last updated. An RFC3339 formatted datetime string.
-func (o GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItem) string {
+func (o GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItem) *string {
 		return v.TimeUpdated
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Timezone to be used when processing log entries whose timestamps do not include an explicit timezone.  When this property is not specified, the timezone of the entity specified is used.  If the entity is also not specified or do not have a valid timezone then UTC is used.
-func (o GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOutput) Timezone() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItem) string {
+func (o GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOutput) Timezone() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItem) *string {
 		return v.Timezone
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -4583,12 +3972,6 @@ func (o GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleColl
 	return o
 }
 
-func (o GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItem] {
-	return pulumix.Output[[]GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemArrayOutput) Index(i pulumi.IntInput) GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItem {
 		return vs[0].([]GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItem)[vs[1].(int)]
@@ -4596,10 +3979,10 @@ func (o GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleColl
 }
 
 type GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOverride struct {
-	MatchType     string `pulumi:"matchType"`
-	MatchValue    string `pulumi:"matchValue"`
-	PropertyName  string `pulumi:"propertyName"`
-	PropertyValue string `pulumi:"propertyValue"`
+	MatchType     *string `pulumi:"matchType"`
+	MatchValue    *string `pulumi:"matchValue"`
+	PropertyName  *string `pulumi:"propertyName"`
+	PropertyValue *string `pulumi:"propertyValue"`
 }
 
 // GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOverrideInput is an input type that accepts GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOverrideArgs and GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOverrideOutput values.
@@ -4614,10 +3997,10 @@ type GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollect
 }
 
 type GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOverrideArgs struct {
-	MatchType     pulumi.StringInput `pulumi:"matchType"`
-	MatchValue    pulumi.StringInput `pulumi:"matchValue"`
-	PropertyName  pulumi.StringInput `pulumi:"propertyName"`
-	PropertyValue pulumi.StringInput `pulumi:"propertyValue"`
+	MatchType     pulumi.StringPtrInput `pulumi:"matchType"`
+	MatchValue    pulumi.StringPtrInput `pulumi:"matchValue"`
+	PropertyName  pulumi.StringPtrInput `pulumi:"propertyName"`
+	PropertyValue pulumi.StringPtrInput `pulumi:"propertyValue"`
 }
 
 func (GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOverrideArgs) ElementType() reflect.Type {
@@ -4630,12 +4013,6 @@ func (i GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleColl
 
 func (i GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOverrideArgs) ToGetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOverrideOutputWithContext(ctx context.Context) GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOverrideOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOverrideOutput)
-}
-
-func (i GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOverrideArgs) ToOutput(ctx context.Context) pulumix.Output[GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOverride] {
-	return pulumix.Output[GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOverride]{
-		OutputState: i.ToGetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOverrideOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOverrideArrayInput is an input type that accepts GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOverrideArray and GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOverrideArrayOutput values.
@@ -4663,12 +4040,6 @@ func (i GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleColl
 	return pulumi.ToOutputWithContext(ctx, i).(GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOverrideArrayOutput)
 }
 
-func (i GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOverrideArray) ToOutput(ctx context.Context) pulumix.Output[[]GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOverride] {
-	return pulumix.Output[[]GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOverride]{
-		OutputState: i.ToGetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOverrideArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOverrideOutput struct{ *pulumi.OutputState }
 
 func (GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOverrideOutput) ElementType() reflect.Type {
@@ -4683,34 +4054,28 @@ func (o GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleColl
 	return o
 }
 
-func (o GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOverrideOutput) ToOutput(ctx context.Context) pulumix.Output[GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOverride] {
-	return pulumix.Output[GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOverride]{
-		OutputState: o.OutputState,
-	}
-}
-
-func (o GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOverrideOutput) MatchType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOverride) string {
+func (o GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOverrideOutput) MatchType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOverride) *string {
 		return v.MatchType
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
-func (o GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOverrideOutput) MatchValue() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOverride) string {
+func (o GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOverrideOutput) MatchValue() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOverride) *string {
 		return v.MatchValue
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
-func (o GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOverrideOutput) PropertyName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOverride) string {
+func (o GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOverrideOutput) PropertyName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOverride) *string {
 		return v.PropertyName
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
-func (o GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOverrideOutput) PropertyValue() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOverride) string {
+func (o GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOverrideOutput) PropertyValue() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOverride) *string {
 		return v.PropertyValue
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOverrideArrayOutput struct{ *pulumi.OutputState }
@@ -4727,12 +4092,6 @@ func (o GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleColl
 	return o
 }
 
-func (o GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOverrideArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOverride] {
-	return pulumix.Output[[]GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOverride]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOverrideArrayOutput) Index(i pulumi.IntInput) GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOverrideOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOverride {
 		return vs[0].([]GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOverride)[vs[1].(int)]
@@ -4741,9 +4100,9 @@ func (o GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleColl
 
 type GetLogAnalyticsPreferenceItem struct {
 	// The preference name.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// The preference value.
-	Value string `pulumi:"value"`
+	Value *string `pulumi:"value"`
 }
 
 // GetLogAnalyticsPreferenceItemInput is an input type that accepts GetLogAnalyticsPreferenceItemArgs and GetLogAnalyticsPreferenceItemOutput values.
@@ -4759,9 +4118,9 @@ type GetLogAnalyticsPreferenceItemInput interface {
 
 type GetLogAnalyticsPreferenceItemArgs struct {
 	// The preference name.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// The preference value.
-	Value pulumi.StringInput `pulumi:"value"`
+	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
 func (GetLogAnalyticsPreferenceItemArgs) ElementType() reflect.Type {
@@ -4774,12 +4133,6 @@ func (i GetLogAnalyticsPreferenceItemArgs) ToGetLogAnalyticsPreferenceItemOutput
 
 func (i GetLogAnalyticsPreferenceItemArgs) ToGetLogAnalyticsPreferenceItemOutputWithContext(ctx context.Context) GetLogAnalyticsPreferenceItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetLogAnalyticsPreferenceItemOutput)
-}
-
-func (i GetLogAnalyticsPreferenceItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetLogAnalyticsPreferenceItem] {
-	return pulumix.Output[GetLogAnalyticsPreferenceItem]{
-		OutputState: i.ToGetLogAnalyticsPreferenceItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetLogAnalyticsPreferenceItemArrayInput is an input type that accepts GetLogAnalyticsPreferenceItemArray and GetLogAnalyticsPreferenceItemArrayOutput values.
@@ -4807,12 +4160,6 @@ func (i GetLogAnalyticsPreferenceItemArray) ToGetLogAnalyticsPreferenceItemArray
 	return pulumi.ToOutputWithContext(ctx, i).(GetLogAnalyticsPreferenceItemArrayOutput)
 }
 
-func (i GetLogAnalyticsPreferenceItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetLogAnalyticsPreferenceItem] {
-	return pulumix.Output[[]GetLogAnalyticsPreferenceItem]{
-		OutputState: i.ToGetLogAnalyticsPreferenceItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetLogAnalyticsPreferenceItemOutput struct{ *pulumi.OutputState }
 
 func (GetLogAnalyticsPreferenceItemOutput) ElementType() reflect.Type {
@@ -4827,20 +4174,14 @@ func (o GetLogAnalyticsPreferenceItemOutput) ToGetLogAnalyticsPreferenceItemOutp
 	return o
 }
 
-func (o GetLogAnalyticsPreferenceItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetLogAnalyticsPreferenceItem] {
-	return pulumix.Output[GetLogAnalyticsPreferenceItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The preference name.
-func (o GetLogAnalyticsPreferenceItemOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLogAnalyticsPreferenceItem) string { return v.Name }).(pulumi.StringOutput)
+func (o GetLogAnalyticsPreferenceItemOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLogAnalyticsPreferenceItem) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // The preference value.
-func (o GetLogAnalyticsPreferenceItemOutput) Value() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLogAnalyticsPreferenceItem) string { return v.Value }).(pulumi.StringOutput)
+func (o GetLogAnalyticsPreferenceItemOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLogAnalyticsPreferenceItem) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
 
 type GetLogAnalyticsPreferenceItemArrayOutput struct{ *pulumi.OutputState }
@@ -4857,12 +4198,6 @@ func (o GetLogAnalyticsPreferenceItemArrayOutput) ToGetLogAnalyticsPreferenceIte
 	return o
 }
 
-func (o GetLogAnalyticsPreferenceItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetLogAnalyticsPreferenceItem] {
-	return pulumix.Output[[]GetLogAnalyticsPreferenceItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetLogAnalyticsPreferenceItemArrayOutput) Index(i pulumi.IntInput) GetLogAnalyticsPreferenceItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetLogAnalyticsPreferenceItem {
 		return vs[0].([]GetLogAnalyticsPreferenceItem)[vs[1].(int)]
@@ -4871,15 +4206,15 @@ func (o GetLogAnalyticsPreferenceItemArrayOutput) Index(i pulumi.IntInput) GetLo
 
 type GetLogAnalyticsResourceCategoriesListCategory struct {
 	// The category description.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// The category display name.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// The system flag. A value of false denotes a user-created category assignment. A value of true denotes an Oracle-defined category assignment.
-	IsSystem bool `pulumi:"isSystem"`
+	IsSystem *bool `pulumi:"isSystem"`
 	// The unique name that identifies the category.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// The category type. Values include "PRODUCT", "TIER", "VENDOR" and "GENERIC".
-	Type string `pulumi:"type"`
+	Type *string `pulumi:"type"`
 }
 
 // GetLogAnalyticsResourceCategoriesListCategoryInput is an input type that accepts GetLogAnalyticsResourceCategoriesListCategoryArgs and GetLogAnalyticsResourceCategoriesListCategoryOutput values.
@@ -4895,15 +4230,15 @@ type GetLogAnalyticsResourceCategoriesListCategoryInput interface {
 
 type GetLogAnalyticsResourceCategoriesListCategoryArgs struct {
 	// The category description.
-	Description pulumi.StringInput `pulumi:"description"`
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// The category display name.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// The system flag. A value of false denotes a user-created category assignment. A value of true denotes an Oracle-defined category assignment.
-	IsSystem pulumi.BoolInput `pulumi:"isSystem"`
+	IsSystem pulumi.BoolPtrInput `pulumi:"isSystem"`
 	// The unique name that identifies the category.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// The category type. Values include "PRODUCT", "TIER", "VENDOR" and "GENERIC".
-	Type pulumi.StringInput `pulumi:"type"`
+	Type pulumi.StringPtrInput `pulumi:"type"`
 }
 
 func (GetLogAnalyticsResourceCategoriesListCategoryArgs) ElementType() reflect.Type {
@@ -4916,12 +4251,6 @@ func (i GetLogAnalyticsResourceCategoriesListCategoryArgs) ToGetLogAnalyticsReso
 
 func (i GetLogAnalyticsResourceCategoriesListCategoryArgs) ToGetLogAnalyticsResourceCategoriesListCategoryOutputWithContext(ctx context.Context) GetLogAnalyticsResourceCategoriesListCategoryOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetLogAnalyticsResourceCategoriesListCategoryOutput)
-}
-
-func (i GetLogAnalyticsResourceCategoriesListCategoryArgs) ToOutput(ctx context.Context) pulumix.Output[GetLogAnalyticsResourceCategoriesListCategory] {
-	return pulumix.Output[GetLogAnalyticsResourceCategoriesListCategory]{
-		OutputState: i.ToGetLogAnalyticsResourceCategoriesListCategoryOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetLogAnalyticsResourceCategoriesListCategoryArrayInput is an input type that accepts GetLogAnalyticsResourceCategoriesListCategoryArray and GetLogAnalyticsResourceCategoriesListCategoryArrayOutput values.
@@ -4949,12 +4278,6 @@ func (i GetLogAnalyticsResourceCategoriesListCategoryArray) ToGetLogAnalyticsRes
 	return pulumi.ToOutputWithContext(ctx, i).(GetLogAnalyticsResourceCategoriesListCategoryArrayOutput)
 }
 
-func (i GetLogAnalyticsResourceCategoriesListCategoryArray) ToOutput(ctx context.Context) pulumix.Output[[]GetLogAnalyticsResourceCategoriesListCategory] {
-	return pulumix.Output[[]GetLogAnalyticsResourceCategoriesListCategory]{
-		OutputState: i.ToGetLogAnalyticsResourceCategoriesListCategoryArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetLogAnalyticsResourceCategoriesListCategoryOutput struct{ *pulumi.OutputState }
 
 func (GetLogAnalyticsResourceCategoriesListCategoryOutput) ElementType() reflect.Type {
@@ -4969,35 +4292,29 @@ func (o GetLogAnalyticsResourceCategoriesListCategoryOutput) ToGetLogAnalyticsRe
 	return o
 }
 
-func (o GetLogAnalyticsResourceCategoriesListCategoryOutput) ToOutput(ctx context.Context) pulumix.Output[GetLogAnalyticsResourceCategoriesListCategory] {
-	return pulumix.Output[GetLogAnalyticsResourceCategoriesListCategory]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The category description.
-func (o GetLogAnalyticsResourceCategoriesListCategoryOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLogAnalyticsResourceCategoriesListCategory) string { return v.Description }).(pulumi.StringOutput)
+func (o GetLogAnalyticsResourceCategoriesListCategoryOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLogAnalyticsResourceCategoriesListCategory) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // The category display name.
-func (o GetLogAnalyticsResourceCategoriesListCategoryOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLogAnalyticsResourceCategoriesListCategory) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetLogAnalyticsResourceCategoriesListCategoryOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLogAnalyticsResourceCategoriesListCategory) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // The system flag. A value of false denotes a user-created category assignment. A value of true denotes an Oracle-defined category assignment.
-func (o GetLogAnalyticsResourceCategoriesListCategoryOutput) IsSystem() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetLogAnalyticsResourceCategoriesListCategory) bool { return v.IsSystem }).(pulumi.BoolOutput)
+func (o GetLogAnalyticsResourceCategoriesListCategoryOutput) IsSystem() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetLogAnalyticsResourceCategoriesListCategory) *bool { return v.IsSystem }).(pulumi.BoolPtrOutput)
 }
 
 // The unique name that identifies the category.
-func (o GetLogAnalyticsResourceCategoriesListCategoryOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLogAnalyticsResourceCategoriesListCategory) string { return v.Name }).(pulumi.StringOutput)
+func (o GetLogAnalyticsResourceCategoriesListCategoryOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLogAnalyticsResourceCategoriesListCategory) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // The category type. Values include "PRODUCT", "TIER", "VENDOR" and "GENERIC".
-func (o GetLogAnalyticsResourceCategoriesListCategoryOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLogAnalyticsResourceCategoriesListCategory) string { return v.Type }).(pulumi.StringOutput)
+func (o GetLogAnalyticsResourceCategoriesListCategoryOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLogAnalyticsResourceCategoriesListCategory) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
 
 type GetLogAnalyticsResourceCategoriesListCategoryArrayOutput struct{ *pulumi.OutputState }
@@ -5014,12 +4331,6 @@ func (o GetLogAnalyticsResourceCategoriesListCategoryArrayOutput) ToGetLogAnalyt
 	return o
 }
 
-func (o GetLogAnalyticsResourceCategoriesListCategoryArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetLogAnalyticsResourceCategoriesListCategory] {
-	return pulumix.Output[[]GetLogAnalyticsResourceCategoriesListCategory]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetLogAnalyticsResourceCategoriesListCategoryArrayOutput) Index(i pulumi.IntInput) GetLogAnalyticsResourceCategoriesListCategoryOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetLogAnalyticsResourceCategoriesListCategory {
 		return vs[0].([]GetLogAnalyticsResourceCategoriesListCategory)[vs[1].(int)]
@@ -5028,13 +4339,13 @@ func (o GetLogAnalyticsResourceCategoriesListCategoryArrayOutput) Index(i pulumi
 
 type GetLogAnalyticsResourceCategoriesListItem struct {
 	// The category name to which this resource belongs.
-	CategoryName string `pulumi:"categoryName"`
+	CategoryName *string `pulumi:"categoryName"`
 	// The system flag. A value of false denotes a user-created category assignment. A value of true denotes an Oracle-defined category assignment.
-	IsSystem bool `pulumi:"isSystem"`
+	IsSystem *bool `pulumi:"isSystem"`
 	// The unique identifier of the resource, usually a name or ocid.
-	ResourceId string `pulumi:"resourceId"`
+	ResourceId *string `pulumi:"resourceId"`
 	// The resource type.
-	ResourceType string `pulumi:"resourceType"`
+	ResourceType *string `pulumi:"resourceType"`
 }
 
 // GetLogAnalyticsResourceCategoriesListItemInput is an input type that accepts GetLogAnalyticsResourceCategoriesListItemArgs and GetLogAnalyticsResourceCategoriesListItemOutput values.
@@ -5050,13 +4361,13 @@ type GetLogAnalyticsResourceCategoriesListItemInput interface {
 
 type GetLogAnalyticsResourceCategoriesListItemArgs struct {
 	// The category name to which this resource belongs.
-	CategoryName pulumi.StringInput `pulumi:"categoryName"`
+	CategoryName pulumi.StringPtrInput `pulumi:"categoryName"`
 	// The system flag. A value of false denotes a user-created category assignment. A value of true denotes an Oracle-defined category assignment.
-	IsSystem pulumi.BoolInput `pulumi:"isSystem"`
+	IsSystem pulumi.BoolPtrInput `pulumi:"isSystem"`
 	// The unique identifier of the resource, usually a name or ocid.
-	ResourceId pulumi.StringInput `pulumi:"resourceId"`
+	ResourceId pulumi.StringPtrInput `pulumi:"resourceId"`
 	// The resource type.
-	ResourceType pulumi.StringInput `pulumi:"resourceType"`
+	ResourceType pulumi.StringPtrInput `pulumi:"resourceType"`
 }
 
 func (GetLogAnalyticsResourceCategoriesListItemArgs) ElementType() reflect.Type {
@@ -5069,12 +4380,6 @@ func (i GetLogAnalyticsResourceCategoriesListItemArgs) ToGetLogAnalyticsResource
 
 func (i GetLogAnalyticsResourceCategoriesListItemArgs) ToGetLogAnalyticsResourceCategoriesListItemOutputWithContext(ctx context.Context) GetLogAnalyticsResourceCategoriesListItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetLogAnalyticsResourceCategoriesListItemOutput)
-}
-
-func (i GetLogAnalyticsResourceCategoriesListItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetLogAnalyticsResourceCategoriesListItem] {
-	return pulumix.Output[GetLogAnalyticsResourceCategoriesListItem]{
-		OutputState: i.ToGetLogAnalyticsResourceCategoriesListItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetLogAnalyticsResourceCategoriesListItemArrayInput is an input type that accepts GetLogAnalyticsResourceCategoriesListItemArray and GetLogAnalyticsResourceCategoriesListItemArrayOutput values.
@@ -5102,12 +4407,6 @@ func (i GetLogAnalyticsResourceCategoriesListItemArray) ToGetLogAnalyticsResourc
 	return pulumi.ToOutputWithContext(ctx, i).(GetLogAnalyticsResourceCategoriesListItemArrayOutput)
 }
 
-func (i GetLogAnalyticsResourceCategoriesListItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetLogAnalyticsResourceCategoriesListItem] {
-	return pulumix.Output[[]GetLogAnalyticsResourceCategoriesListItem]{
-		OutputState: i.ToGetLogAnalyticsResourceCategoriesListItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetLogAnalyticsResourceCategoriesListItemOutput struct{ *pulumi.OutputState }
 
 func (GetLogAnalyticsResourceCategoriesListItemOutput) ElementType() reflect.Type {
@@ -5122,30 +4421,24 @@ func (o GetLogAnalyticsResourceCategoriesListItemOutput) ToGetLogAnalyticsResour
 	return o
 }
 
-func (o GetLogAnalyticsResourceCategoriesListItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetLogAnalyticsResourceCategoriesListItem] {
-	return pulumix.Output[GetLogAnalyticsResourceCategoriesListItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The category name to which this resource belongs.
-func (o GetLogAnalyticsResourceCategoriesListItemOutput) CategoryName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLogAnalyticsResourceCategoriesListItem) string { return v.CategoryName }).(pulumi.StringOutput)
+func (o GetLogAnalyticsResourceCategoriesListItemOutput) CategoryName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLogAnalyticsResourceCategoriesListItem) *string { return v.CategoryName }).(pulumi.StringPtrOutput)
 }
 
 // The system flag. A value of false denotes a user-created category assignment. A value of true denotes an Oracle-defined category assignment.
-func (o GetLogAnalyticsResourceCategoriesListItemOutput) IsSystem() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetLogAnalyticsResourceCategoriesListItem) bool { return v.IsSystem }).(pulumi.BoolOutput)
+func (o GetLogAnalyticsResourceCategoriesListItemOutput) IsSystem() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetLogAnalyticsResourceCategoriesListItem) *bool { return v.IsSystem }).(pulumi.BoolPtrOutput)
 }
 
 // The unique identifier of the resource, usually a name or ocid.
-func (o GetLogAnalyticsResourceCategoriesListItemOutput) ResourceId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLogAnalyticsResourceCategoriesListItem) string { return v.ResourceId }).(pulumi.StringOutput)
+func (o GetLogAnalyticsResourceCategoriesListItemOutput) ResourceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLogAnalyticsResourceCategoriesListItem) *string { return v.ResourceId }).(pulumi.StringPtrOutput)
 }
 
 // The resource type.
-func (o GetLogAnalyticsResourceCategoriesListItemOutput) ResourceType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLogAnalyticsResourceCategoriesListItem) string { return v.ResourceType }).(pulumi.StringOutput)
+func (o GetLogAnalyticsResourceCategoriesListItemOutput) ResourceType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLogAnalyticsResourceCategoriesListItem) *string { return v.ResourceType }).(pulumi.StringPtrOutput)
 }
 
 type GetLogAnalyticsResourceCategoriesListItemArrayOutput struct{ *pulumi.OutputState }
@@ -5160,12 +4453,6 @@ func (o GetLogAnalyticsResourceCategoriesListItemArrayOutput) ToGetLogAnalyticsR
 
 func (o GetLogAnalyticsResourceCategoriesListItemArrayOutput) ToGetLogAnalyticsResourceCategoriesListItemArrayOutputWithContext(ctx context.Context) GetLogAnalyticsResourceCategoriesListItemArrayOutput {
 	return o
-}
-
-func (o GetLogAnalyticsResourceCategoriesListItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetLogAnalyticsResourceCategoriesListItem] {
-	return pulumix.Output[[]GetLogAnalyticsResourceCategoriesListItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetLogAnalyticsResourceCategoriesListItemArrayOutput) Index(i pulumi.IntInput) GetLogAnalyticsResourceCategoriesListItemOutput {
@@ -5207,12 +4494,6 @@ func (i GetNamespaceEffectivePropertiesEffectivePropertyCollectionArgs) ToGetNam
 	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceEffectivePropertiesEffectivePropertyCollectionOutput)
 }
 
-func (i GetNamespaceEffectivePropertiesEffectivePropertyCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetNamespaceEffectivePropertiesEffectivePropertyCollection] {
-	return pulumix.Output[GetNamespaceEffectivePropertiesEffectivePropertyCollection]{
-		OutputState: i.ToGetNamespaceEffectivePropertiesEffectivePropertyCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetNamespaceEffectivePropertiesEffectivePropertyCollectionArrayInput is an input type that accepts GetNamespaceEffectivePropertiesEffectivePropertyCollectionArray and GetNamespaceEffectivePropertiesEffectivePropertyCollectionArrayOutput values.
 // You can construct a concrete instance of `GetNamespaceEffectivePropertiesEffectivePropertyCollectionArrayInput` via:
 //
@@ -5238,12 +4519,6 @@ func (i GetNamespaceEffectivePropertiesEffectivePropertyCollectionArray) ToGetNa
 	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceEffectivePropertiesEffectivePropertyCollectionArrayOutput)
 }
 
-func (i GetNamespaceEffectivePropertiesEffectivePropertyCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNamespaceEffectivePropertiesEffectivePropertyCollection] {
-	return pulumix.Output[[]GetNamespaceEffectivePropertiesEffectivePropertyCollection]{
-		OutputState: i.ToGetNamespaceEffectivePropertiesEffectivePropertyCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetNamespaceEffectivePropertiesEffectivePropertyCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetNamespaceEffectivePropertiesEffectivePropertyCollectionOutput) ElementType() reflect.Type {
@@ -5256,12 +4531,6 @@ func (o GetNamespaceEffectivePropertiesEffectivePropertyCollectionOutput) ToGetN
 
 func (o GetNamespaceEffectivePropertiesEffectivePropertyCollectionOutput) ToGetNamespaceEffectivePropertiesEffectivePropertyCollectionOutputWithContext(ctx context.Context) GetNamespaceEffectivePropertiesEffectivePropertyCollectionOutput {
 	return o
-}
-
-func (o GetNamespaceEffectivePropertiesEffectivePropertyCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetNamespaceEffectivePropertiesEffectivePropertyCollection] {
-	return pulumix.Output[GetNamespaceEffectivePropertiesEffectivePropertyCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A list of properties and their effective values.
@@ -5285,12 +4554,6 @@ func (o GetNamespaceEffectivePropertiesEffectivePropertyCollectionArrayOutput) T
 	return o
 }
 
-func (o GetNamespaceEffectivePropertiesEffectivePropertyCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNamespaceEffectivePropertiesEffectivePropertyCollection] {
-	return pulumix.Output[[]GetNamespaceEffectivePropertiesEffectivePropertyCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetNamespaceEffectivePropertiesEffectivePropertyCollectionArrayOutput) Index(i pulumi.IntInput) GetNamespaceEffectivePropertiesEffectivePropertyCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNamespaceEffectivePropertiesEffectivePropertyCollection {
 		return vs[0].([]GetNamespaceEffectivePropertiesEffectivePropertyCollection)[vs[1].(int)]
@@ -5299,13 +4562,13 @@ func (o GetNamespaceEffectivePropertiesEffectivePropertyCollectionArrayOutput) I
 
 type GetNamespaceEffectivePropertiesEffectivePropertyCollectionItem struct {
 	// The effective level of the property value.
-	EffectiveLevel string `pulumi:"effectiveLevel"`
+	EffectiveLevel *string `pulumi:"effectiveLevel"`
 	// The property name used for filtering.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// A list of pattern level override values for the property.
 	Patterns []GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPattern `pulumi:"patterns"`
 	// The effective value of the property. This is determined by considering the value set at the most effective level.
-	Value string `pulumi:"value"`
+	Value *string `pulumi:"value"`
 }
 
 // GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemInput is an input type that accepts GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemArgs and GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemOutput values.
@@ -5321,13 +4584,13 @@ type GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemInput interfa
 
 type GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemArgs struct {
 	// The effective level of the property value.
-	EffectiveLevel pulumi.StringInput `pulumi:"effectiveLevel"`
+	EffectiveLevel pulumi.StringPtrInput `pulumi:"effectiveLevel"`
 	// The property name used for filtering.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// A list of pattern level override values for the property.
 	Patterns GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPatternArrayInput `pulumi:"patterns"`
 	// The effective value of the property. This is determined by considering the value set at the most effective level.
-	Value pulumi.StringInput `pulumi:"value"`
+	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
 func (GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemArgs) ElementType() reflect.Type {
@@ -5340,12 +4603,6 @@ func (i GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemArgs) ToGe
 
 func (i GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemArgs) ToGetNamespaceEffectivePropertiesEffectivePropertyCollectionItemOutputWithContext(ctx context.Context) GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemOutput)
-}
-
-func (i GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetNamespaceEffectivePropertiesEffectivePropertyCollectionItem] {
-	return pulumix.Output[GetNamespaceEffectivePropertiesEffectivePropertyCollectionItem]{
-		OutputState: i.ToGetNamespaceEffectivePropertiesEffectivePropertyCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemArrayInput is an input type that accepts GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemArray and GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemArrayOutput values.
@@ -5373,12 +4630,6 @@ func (i GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemArray) ToG
 	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemArrayOutput)
 }
 
-func (i GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNamespaceEffectivePropertiesEffectivePropertyCollectionItem] {
-	return pulumix.Output[[]GetNamespaceEffectivePropertiesEffectivePropertyCollectionItem]{
-		OutputState: i.ToGetNamespaceEffectivePropertiesEffectivePropertyCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemOutput) ElementType() reflect.Type {
@@ -5393,20 +4644,16 @@ func (o GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemOutput) To
 	return o
 }
 
-func (o GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetNamespaceEffectivePropertiesEffectivePropertyCollectionItem] {
-	return pulumix.Output[GetNamespaceEffectivePropertiesEffectivePropertyCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The effective level of the property value.
-func (o GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemOutput) EffectiveLevel() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNamespaceEffectivePropertiesEffectivePropertyCollectionItem) string { return v.EffectiveLevel }).(pulumi.StringOutput)
+func (o GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemOutput) EffectiveLevel() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNamespaceEffectivePropertiesEffectivePropertyCollectionItem) *string {
+		return v.EffectiveLevel
+	}).(pulumi.StringPtrOutput)
 }
 
 // The property name used for filtering.
-func (o GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNamespaceEffectivePropertiesEffectivePropertyCollectionItem) string { return v.Name }).(pulumi.StringOutput)
+func (o GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNamespaceEffectivePropertiesEffectivePropertyCollectionItem) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // A list of pattern level override values for the property.
@@ -5417,8 +4664,8 @@ func (o GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemOutput) Pa
 }
 
 // The effective value of the property. This is determined by considering the value set at the most effective level.
-func (o GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemOutput) Value() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNamespaceEffectivePropertiesEffectivePropertyCollectionItem) string { return v.Value }).(pulumi.StringOutput)
+func (o GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNamespaceEffectivePropertiesEffectivePropertyCollectionItem) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
 
 type GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -5435,12 +4682,6 @@ func (o GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemArrayOutpu
 	return o
 }
 
-func (o GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNamespaceEffectivePropertiesEffectivePropertyCollectionItem] {
-	return pulumix.Output[[]GetNamespaceEffectivePropertiesEffectivePropertyCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemArrayOutput) Index(i pulumi.IntInput) GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNamespaceEffectivePropertiesEffectivePropertyCollectionItem {
 		return vs[0].([]GetNamespaceEffectivePropertiesEffectivePropertyCollectionItem)[vs[1].(int)]
@@ -5449,11 +4690,11 @@ func (o GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemArrayOutpu
 
 type GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPattern struct {
 	// The effective level of the property value.
-	EffectiveLevel string `pulumi:"effectiveLevel"`
+	EffectiveLevel *string `pulumi:"effectiveLevel"`
 	// The pattern id.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The effective value of the property. This is determined by considering the value set at the most effective level.
-	Value string `pulumi:"value"`
+	Value *string `pulumi:"value"`
 }
 
 // GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPatternInput is an input type that accepts GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPatternArgs and GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPatternOutput values.
@@ -5469,11 +4710,11 @@ type GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPatternInput 
 
 type GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPatternArgs struct {
 	// The effective level of the property value.
-	EffectiveLevel pulumi.StringInput `pulumi:"effectiveLevel"`
+	EffectiveLevel pulumi.StringPtrInput `pulumi:"effectiveLevel"`
 	// The pattern id.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// The effective value of the property. This is determined by considering the value set at the most effective level.
-	Value pulumi.StringInput `pulumi:"value"`
+	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
 func (GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPatternArgs) ElementType() reflect.Type {
@@ -5486,12 +4727,6 @@ func (i GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPatternArg
 
 func (i GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPatternArgs) ToGetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPatternOutputWithContext(ctx context.Context) GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPatternOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPatternOutput)
-}
-
-func (i GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPatternArgs) ToOutput(ctx context.Context) pulumix.Output[GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPattern] {
-	return pulumix.Output[GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPattern]{
-		OutputState: i.ToGetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPatternOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPatternArrayInput is an input type that accepts GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPatternArray and GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPatternArrayOutput values.
@@ -5519,12 +4754,6 @@ func (i GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPatternArr
 	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPatternArrayOutput)
 }
 
-func (i GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPatternArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPattern] {
-	return pulumix.Output[[]GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPattern]{
-		OutputState: i.ToGetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPatternArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPatternOutput struct{ *pulumi.OutputState }
 
 func (GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPatternOutput) ElementType() reflect.Type {
@@ -5539,27 +4768,21 @@ func (o GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPatternOut
 	return o
 }
 
-func (o GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPatternOutput) ToOutput(ctx context.Context) pulumix.Output[GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPattern] {
-	return pulumix.Output[GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPattern]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The effective level of the property value.
-func (o GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPatternOutput) EffectiveLevel() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPattern) string {
+func (o GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPatternOutput) EffectiveLevel() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPattern) *string {
 		return v.EffectiveLevel
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The pattern id.
-func (o GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPatternOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPattern) string { return v.Id }).(pulumi.StringOutput)
+func (o GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPatternOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPattern) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The effective value of the property. This is determined by considering the value set at the most effective level.
-func (o GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPatternOutput) Value() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPattern) string { return v.Value }).(pulumi.StringOutput)
+func (o GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPatternOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPattern) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
 
 type GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPatternArrayOutput struct{ *pulumi.OutputState }
@@ -5574,12 +4797,6 @@ func (o GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPatternArr
 
 func (o GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPatternArrayOutput) ToGetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPatternArrayOutputWithContext(ctx context.Context) GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPatternArrayOutput {
 	return o
-}
-
-func (o GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPatternArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPattern] {
-	return pulumix.Output[[]GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPattern]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPatternArrayOutput) Index(i pulumi.IntInput) GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPatternOutput {
@@ -5625,12 +4842,6 @@ func (i GetNamespaceEffectivePropertiesFilterArgs) ToGetNamespaceEffectiveProper
 	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceEffectivePropertiesFilterOutput)
 }
 
-func (i GetNamespaceEffectivePropertiesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetNamespaceEffectivePropertiesFilter] {
-	return pulumix.Output[GetNamespaceEffectivePropertiesFilter]{
-		OutputState: i.ToGetNamespaceEffectivePropertiesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetNamespaceEffectivePropertiesFilterArrayInput is an input type that accepts GetNamespaceEffectivePropertiesFilterArray and GetNamespaceEffectivePropertiesFilterArrayOutput values.
 // You can construct a concrete instance of `GetNamespaceEffectivePropertiesFilterArrayInput` via:
 //
@@ -5656,12 +4867,6 @@ func (i GetNamespaceEffectivePropertiesFilterArray) ToGetNamespaceEffectivePrope
 	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceEffectivePropertiesFilterArrayOutput)
 }
 
-func (i GetNamespaceEffectivePropertiesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNamespaceEffectivePropertiesFilter] {
-	return pulumix.Output[[]GetNamespaceEffectivePropertiesFilter]{
-		OutputState: i.ToGetNamespaceEffectivePropertiesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetNamespaceEffectivePropertiesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetNamespaceEffectivePropertiesFilterOutput) ElementType() reflect.Type {
@@ -5674,12 +4879,6 @@ func (o GetNamespaceEffectivePropertiesFilterOutput) ToGetNamespaceEffectiveProp
 
 func (o GetNamespaceEffectivePropertiesFilterOutput) ToGetNamespaceEffectivePropertiesFilterOutputWithContext(ctx context.Context) GetNamespaceEffectivePropertiesFilterOutput {
 	return o
-}
-
-func (o GetNamespaceEffectivePropertiesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetNamespaceEffectivePropertiesFilter] {
-	return pulumix.Output[GetNamespaceEffectivePropertiesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The property name used for filtering.
@@ -5709,12 +4908,6 @@ func (o GetNamespaceEffectivePropertiesFilterArrayOutput) ToGetNamespaceEffectiv
 	return o
 }
 
-func (o GetNamespaceEffectivePropertiesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNamespaceEffectivePropertiesFilter] {
-	return pulumix.Output[[]GetNamespaceEffectivePropertiesFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetNamespaceEffectivePropertiesFilterArrayOutput) Index(i pulumi.IntInput) GetNamespaceEffectivePropertiesFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNamespaceEffectivePropertiesFilter {
 		return vs[0].([]GetNamespaceEffectivePropertiesFilter)[vs[1].(int)]
@@ -5723,17 +4916,17 @@ func (o GetNamespaceEffectivePropertiesFilterArrayOutput) Index(i pulumi.IntInpu
 
 type GetNamespaceIngestTimeRuleAction struct {
 	// Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Additional dimensions to publish for the extracted metric. A valid list contains the source field names whose values are to be published as dimensions. The source name itself is specified using a special macro SOURCE_NAME
 	Dimensions []string `pulumi:"dimensions"`
 	// The metric name of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
-	MetricName string `pulumi:"metricName"`
+	MetricName *string `pulumi:"metricName"`
 	// The Logging Analytics namespace used for the request.
-	Namespace string `pulumi:"namespace"`
+	Namespace *string `pulumi:"namespace"`
 	// The resourceGroup of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
-	ResourceGroup string `pulumi:"resourceGroup"`
+	ResourceGroup *string `pulumi:"resourceGroup"`
 	// Discriminator.
-	Type string `pulumi:"type"`
+	Type *string `pulumi:"type"`
 }
 
 // GetNamespaceIngestTimeRuleActionInput is an input type that accepts GetNamespaceIngestTimeRuleActionArgs and GetNamespaceIngestTimeRuleActionOutput values.
@@ -5749,17 +4942,17 @@ type GetNamespaceIngestTimeRuleActionInput interface {
 
 type GetNamespaceIngestTimeRuleActionArgs struct {
 	// Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// Additional dimensions to publish for the extracted metric. A valid list contains the source field names whose values are to be published as dimensions. The source name itself is specified using a special macro SOURCE_NAME
 	Dimensions pulumi.StringArrayInput `pulumi:"dimensions"`
 	// The metric name of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
-	MetricName pulumi.StringInput `pulumi:"metricName"`
+	MetricName pulumi.StringPtrInput `pulumi:"metricName"`
 	// The Logging Analytics namespace used for the request.
-	Namespace pulumi.StringInput `pulumi:"namespace"`
+	Namespace pulumi.StringPtrInput `pulumi:"namespace"`
 	// The resourceGroup of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
-	ResourceGroup pulumi.StringInput `pulumi:"resourceGroup"`
+	ResourceGroup pulumi.StringPtrInput `pulumi:"resourceGroup"`
 	// Discriminator.
-	Type pulumi.StringInput `pulumi:"type"`
+	Type pulumi.StringPtrInput `pulumi:"type"`
 }
 
 func (GetNamespaceIngestTimeRuleActionArgs) ElementType() reflect.Type {
@@ -5772,12 +4965,6 @@ func (i GetNamespaceIngestTimeRuleActionArgs) ToGetNamespaceIngestTimeRuleAction
 
 func (i GetNamespaceIngestTimeRuleActionArgs) ToGetNamespaceIngestTimeRuleActionOutputWithContext(ctx context.Context) GetNamespaceIngestTimeRuleActionOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceIngestTimeRuleActionOutput)
-}
-
-func (i GetNamespaceIngestTimeRuleActionArgs) ToOutput(ctx context.Context) pulumix.Output[GetNamespaceIngestTimeRuleAction] {
-	return pulumix.Output[GetNamespaceIngestTimeRuleAction]{
-		OutputState: i.ToGetNamespaceIngestTimeRuleActionOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetNamespaceIngestTimeRuleActionArrayInput is an input type that accepts GetNamespaceIngestTimeRuleActionArray and GetNamespaceIngestTimeRuleActionArrayOutput values.
@@ -5805,12 +4992,6 @@ func (i GetNamespaceIngestTimeRuleActionArray) ToGetNamespaceIngestTimeRuleActio
 	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceIngestTimeRuleActionArrayOutput)
 }
 
-func (i GetNamespaceIngestTimeRuleActionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNamespaceIngestTimeRuleAction] {
-	return pulumix.Output[[]GetNamespaceIngestTimeRuleAction]{
-		OutputState: i.ToGetNamespaceIngestTimeRuleActionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetNamespaceIngestTimeRuleActionOutput struct{ *pulumi.OutputState }
 
 func (GetNamespaceIngestTimeRuleActionOutput) ElementType() reflect.Type {
@@ -5825,15 +5006,9 @@ func (o GetNamespaceIngestTimeRuleActionOutput) ToGetNamespaceIngestTimeRuleActi
 	return o
 }
 
-func (o GetNamespaceIngestTimeRuleActionOutput) ToOutput(ctx context.Context) pulumix.Output[GetNamespaceIngestTimeRuleAction] {
-	return pulumix.Output[GetNamespaceIngestTimeRuleAction]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-func (o GetNamespaceIngestTimeRuleActionOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNamespaceIngestTimeRuleAction) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetNamespaceIngestTimeRuleActionOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNamespaceIngestTimeRuleAction) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Additional dimensions to publish for the extracted metric. A valid list contains the source field names whose values are to be published as dimensions. The source name itself is specified using a special macro SOURCE_NAME
@@ -5842,23 +5017,23 @@ func (o GetNamespaceIngestTimeRuleActionOutput) Dimensions() pulumi.StringArrayO
 }
 
 // The metric name of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
-func (o GetNamespaceIngestTimeRuleActionOutput) MetricName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNamespaceIngestTimeRuleAction) string { return v.MetricName }).(pulumi.StringOutput)
+func (o GetNamespaceIngestTimeRuleActionOutput) MetricName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNamespaceIngestTimeRuleAction) *string { return v.MetricName }).(pulumi.StringPtrOutput)
 }
 
 // The Logging Analytics namespace used for the request.
-func (o GetNamespaceIngestTimeRuleActionOutput) Namespace() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNamespaceIngestTimeRuleAction) string { return v.Namespace }).(pulumi.StringOutput)
+func (o GetNamespaceIngestTimeRuleActionOutput) Namespace() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNamespaceIngestTimeRuleAction) *string { return v.Namespace }).(pulumi.StringPtrOutput)
 }
 
 // The resourceGroup of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
-func (o GetNamespaceIngestTimeRuleActionOutput) ResourceGroup() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNamespaceIngestTimeRuleAction) string { return v.ResourceGroup }).(pulumi.StringOutput)
+func (o GetNamespaceIngestTimeRuleActionOutput) ResourceGroup() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNamespaceIngestTimeRuleAction) *string { return v.ResourceGroup }).(pulumi.StringPtrOutput)
 }
 
 // Discriminator.
-func (o GetNamespaceIngestTimeRuleActionOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNamespaceIngestTimeRuleAction) string { return v.Type }).(pulumi.StringOutput)
+func (o GetNamespaceIngestTimeRuleActionOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNamespaceIngestTimeRuleAction) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
 
 type GetNamespaceIngestTimeRuleActionArrayOutput struct{ *pulumi.OutputState }
@@ -5875,12 +5050,6 @@ func (o GetNamespaceIngestTimeRuleActionArrayOutput) ToGetNamespaceIngestTimeRul
 	return o
 }
 
-func (o GetNamespaceIngestTimeRuleActionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNamespaceIngestTimeRuleAction] {
-	return pulumix.Output[[]GetNamespaceIngestTimeRuleAction]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetNamespaceIngestTimeRuleActionArrayOutput) Index(i pulumi.IntInput) GetNamespaceIngestTimeRuleActionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNamespaceIngestTimeRuleAction {
 		return vs[0].([]GetNamespaceIngestTimeRuleAction)[vs[1].(int)]
@@ -5891,13 +5060,13 @@ type GetNamespaceIngestTimeRuleCondition struct {
 	// Optional additional condition(s) to be evaluated.
 	AdditionalConditions []GetNamespaceIngestTimeRuleConditionAdditionalCondition `pulumi:"additionalConditions"`
 	// The field name to be evaluated.
-	FieldName string `pulumi:"fieldName"`
+	FieldName *string `pulumi:"fieldName"`
 	// The operator to be used for evaluating the field.
-	FieldOperator string `pulumi:"fieldOperator"`
+	FieldOperator *string `pulumi:"fieldOperator"`
 	// The field value to be evaluated.
-	FieldValue string `pulumi:"fieldValue"`
+	FieldValue *string `pulumi:"fieldValue"`
 	// Discriminator.
-	Kind string `pulumi:"kind"`
+	Kind *string `pulumi:"kind"`
 }
 
 // GetNamespaceIngestTimeRuleConditionInput is an input type that accepts GetNamespaceIngestTimeRuleConditionArgs and GetNamespaceIngestTimeRuleConditionOutput values.
@@ -5915,13 +5084,13 @@ type GetNamespaceIngestTimeRuleConditionArgs struct {
 	// Optional additional condition(s) to be evaluated.
 	AdditionalConditions GetNamespaceIngestTimeRuleConditionAdditionalConditionArrayInput `pulumi:"additionalConditions"`
 	// The field name to be evaluated.
-	FieldName pulumi.StringInput `pulumi:"fieldName"`
+	FieldName pulumi.StringPtrInput `pulumi:"fieldName"`
 	// The operator to be used for evaluating the field.
-	FieldOperator pulumi.StringInput `pulumi:"fieldOperator"`
+	FieldOperator pulumi.StringPtrInput `pulumi:"fieldOperator"`
 	// The field value to be evaluated.
-	FieldValue pulumi.StringInput `pulumi:"fieldValue"`
+	FieldValue pulumi.StringPtrInput `pulumi:"fieldValue"`
 	// Discriminator.
-	Kind pulumi.StringInput `pulumi:"kind"`
+	Kind pulumi.StringPtrInput `pulumi:"kind"`
 }
 
 func (GetNamespaceIngestTimeRuleConditionArgs) ElementType() reflect.Type {
@@ -5934,12 +5103,6 @@ func (i GetNamespaceIngestTimeRuleConditionArgs) ToGetNamespaceIngestTimeRuleCon
 
 func (i GetNamespaceIngestTimeRuleConditionArgs) ToGetNamespaceIngestTimeRuleConditionOutputWithContext(ctx context.Context) GetNamespaceIngestTimeRuleConditionOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceIngestTimeRuleConditionOutput)
-}
-
-func (i GetNamespaceIngestTimeRuleConditionArgs) ToOutput(ctx context.Context) pulumix.Output[GetNamespaceIngestTimeRuleCondition] {
-	return pulumix.Output[GetNamespaceIngestTimeRuleCondition]{
-		OutputState: i.ToGetNamespaceIngestTimeRuleConditionOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetNamespaceIngestTimeRuleConditionArrayInput is an input type that accepts GetNamespaceIngestTimeRuleConditionArray and GetNamespaceIngestTimeRuleConditionArrayOutput values.
@@ -5967,12 +5130,6 @@ func (i GetNamespaceIngestTimeRuleConditionArray) ToGetNamespaceIngestTimeRuleCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceIngestTimeRuleConditionArrayOutput)
 }
 
-func (i GetNamespaceIngestTimeRuleConditionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNamespaceIngestTimeRuleCondition] {
-	return pulumix.Output[[]GetNamespaceIngestTimeRuleCondition]{
-		OutputState: i.ToGetNamespaceIngestTimeRuleConditionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetNamespaceIngestTimeRuleConditionOutput struct{ *pulumi.OutputState }
 
 func (GetNamespaceIngestTimeRuleConditionOutput) ElementType() reflect.Type {
@@ -5987,12 +5144,6 @@ func (o GetNamespaceIngestTimeRuleConditionOutput) ToGetNamespaceIngestTimeRuleC
 	return o
 }
 
-func (o GetNamespaceIngestTimeRuleConditionOutput) ToOutput(ctx context.Context) pulumix.Output[GetNamespaceIngestTimeRuleCondition] {
-	return pulumix.Output[GetNamespaceIngestTimeRuleCondition]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Optional additional condition(s) to be evaluated.
 func (o GetNamespaceIngestTimeRuleConditionOutput) AdditionalConditions() GetNamespaceIngestTimeRuleConditionAdditionalConditionArrayOutput {
 	return o.ApplyT(func(v GetNamespaceIngestTimeRuleCondition) []GetNamespaceIngestTimeRuleConditionAdditionalCondition {
@@ -6001,23 +5152,23 @@ func (o GetNamespaceIngestTimeRuleConditionOutput) AdditionalConditions() GetNam
 }
 
 // The field name to be evaluated.
-func (o GetNamespaceIngestTimeRuleConditionOutput) FieldName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNamespaceIngestTimeRuleCondition) string { return v.FieldName }).(pulumi.StringOutput)
+func (o GetNamespaceIngestTimeRuleConditionOutput) FieldName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNamespaceIngestTimeRuleCondition) *string { return v.FieldName }).(pulumi.StringPtrOutput)
 }
 
 // The operator to be used for evaluating the field.
-func (o GetNamespaceIngestTimeRuleConditionOutput) FieldOperator() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNamespaceIngestTimeRuleCondition) string { return v.FieldOperator }).(pulumi.StringOutput)
+func (o GetNamespaceIngestTimeRuleConditionOutput) FieldOperator() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNamespaceIngestTimeRuleCondition) *string { return v.FieldOperator }).(pulumi.StringPtrOutput)
 }
 
 // The field value to be evaluated.
-func (o GetNamespaceIngestTimeRuleConditionOutput) FieldValue() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNamespaceIngestTimeRuleCondition) string { return v.FieldValue }).(pulumi.StringOutput)
+func (o GetNamespaceIngestTimeRuleConditionOutput) FieldValue() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNamespaceIngestTimeRuleCondition) *string { return v.FieldValue }).(pulumi.StringPtrOutput)
 }
 
 // Discriminator.
-func (o GetNamespaceIngestTimeRuleConditionOutput) Kind() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNamespaceIngestTimeRuleCondition) string { return v.Kind }).(pulumi.StringOutput)
+func (o GetNamespaceIngestTimeRuleConditionOutput) Kind() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNamespaceIngestTimeRuleCondition) *string { return v.Kind }).(pulumi.StringPtrOutput)
 }
 
 type GetNamespaceIngestTimeRuleConditionArrayOutput struct{ *pulumi.OutputState }
@@ -6034,12 +5185,6 @@ func (o GetNamespaceIngestTimeRuleConditionArrayOutput) ToGetNamespaceIngestTime
 	return o
 }
 
-func (o GetNamespaceIngestTimeRuleConditionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNamespaceIngestTimeRuleCondition] {
-	return pulumix.Output[[]GetNamespaceIngestTimeRuleCondition]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetNamespaceIngestTimeRuleConditionArrayOutput) Index(i pulumi.IntInput) GetNamespaceIngestTimeRuleConditionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNamespaceIngestTimeRuleCondition {
 		return vs[0].([]GetNamespaceIngestTimeRuleCondition)[vs[1].(int)]
@@ -6048,11 +5193,11 @@ func (o GetNamespaceIngestTimeRuleConditionArrayOutput) Index(i pulumi.IntInput)
 
 type GetNamespaceIngestTimeRuleConditionAdditionalCondition struct {
 	// The additional field name to be evaluated.
-	ConditionField string `pulumi:"conditionField"`
+	ConditionField *string `pulumi:"conditionField"`
 	// The operator to be used for evaluating the additional field.
-	ConditionOperator string `pulumi:"conditionOperator"`
+	ConditionOperator *string `pulumi:"conditionOperator"`
 	// The additional field value to be evaluated.
-	ConditionValue string `pulumi:"conditionValue"`
+	ConditionValue *string `pulumi:"conditionValue"`
 }
 
 // GetNamespaceIngestTimeRuleConditionAdditionalConditionInput is an input type that accepts GetNamespaceIngestTimeRuleConditionAdditionalConditionArgs and GetNamespaceIngestTimeRuleConditionAdditionalConditionOutput values.
@@ -6068,11 +5213,11 @@ type GetNamespaceIngestTimeRuleConditionAdditionalConditionInput interface {
 
 type GetNamespaceIngestTimeRuleConditionAdditionalConditionArgs struct {
 	// The additional field name to be evaluated.
-	ConditionField pulumi.StringInput `pulumi:"conditionField"`
+	ConditionField pulumi.StringPtrInput `pulumi:"conditionField"`
 	// The operator to be used for evaluating the additional field.
-	ConditionOperator pulumi.StringInput `pulumi:"conditionOperator"`
+	ConditionOperator pulumi.StringPtrInput `pulumi:"conditionOperator"`
 	// The additional field value to be evaluated.
-	ConditionValue pulumi.StringInput `pulumi:"conditionValue"`
+	ConditionValue pulumi.StringPtrInput `pulumi:"conditionValue"`
 }
 
 func (GetNamespaceIngestTimeRuleConditionAdditionalConditionArgs) ElementType() reflect.Type {
@@ -6085,12 +5230,6 @@ func (i GetNamespaceIngestTimeRuleConditionAdditionalConditionArgs) ToGetNamespa
 
 func (i GetNamespaceIngestTimeRuleConditionAdditionalConditionArgs) ToGetNamespaceIngestTimeRuleConditionAdditionalConditionOutputWithContext(ctx context.Context) GetNamespaceIngestTimeRuleConditionAdditionalConditionOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceIngestTimeRuleConditionAdditionalConditionOutput)
-}
-
-func (i GetNamespaceIngestTimeRuleConditionAdditionalConditionArgs) ToOutput(ctx context.Context) pulumix.Output[GetNamespaceIngestTimeRuleConditionAdditionalCondition] {
-	return pulumix.Output[GetNamespaceIngestTimeRuleConditionAdditionalCondition]{
-		OutputState: i.ToGetNamespaceIngestTimeRuleConditionAdditionalConditionOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetNamespaceIngestTimeRuleConditionAdditionalConditionArrayInput is an input type that accepts GetNamespaceIngestTimeRuleConditionAdditionalConditionArray and GetNamespaceIngestTimeRuleConditionAdditionalConditionArrayOutput values.
@@ -6118,12 +5257,6 @@ func (i GetNamespaceIngestTimeRuleConditionAdditionalConditionArray) ToGetNamesp
 	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceIngestTimeRuleConditionAdditionalConditionArrayOutput)
 }
 
-func (i GetNamespaceIngestTimeRuleConditionAdditionalConditionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNamespaceIngestTimeRuleConditionAdditionalCondition] {
-	return pulumix.Output[[]GetNamespaceIngestTimeRuleConditionAdditionalCondition]{
-		OutputState: i.ToGetNamespaceIngestTimeRuleConditionAdditionalConditionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetNamespaceIngestTimeRuleConditionAdditionalConditionOutput struct{ *pulumi.OutputState }
 
 func (GetNamespaceIngestTimeRuleConditionAdditionalConditionOutput) ElementType() reflect.Type {
@@ -6138,25 +5271,19 @@ func (o GetNamespaceIngestTimeRuleConditionAdditionalConditionOutput) ToGetNames
 	return o
 }
 
-func (o GetNamespaceIngestTimeRuleConditionAdditionalConditionOutput) ToOutput(ctx context.Context) pulumix.Output[GetNamespaceIngestTimeRuleConditionAdditionalCondition] {
-	return pulumix.Output[GetNamespaceIngestTimeRuleConditionAdditionalCondition]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The additional field name to be evaluated.
-func (o GetNamespaceIngestTimeRuleConditionAdditionalConditionOutput) ConditionField() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNamespaceIngestTimeRuleConditionAdditionalCondition) string { return v.ConditionField }).(pulumi.StringOutput)
+func (o GetNamespaceIngestTimeRuleConditionAdditionalConditionOutput) ConditionField() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNamespaceIngestTimeRuleConditionAdditionalCondition) *string { return v.ConditionField }).(pulumi.StringPtrOutput)
 }
 
 // The operator to be used for evaluating the additional field.
-func (o GetNamespaceIngestTimeRuleConditionAdditionalConditionOutput) ConditionOperator() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNamespaceIngestTimeRuleConditionAdditionalCondition) string { return v.ConditionOperator }).(pulumi.StringOutput)
+func (o GetNamespaceIngestTimeRuleConditionAdditionalConditionOutput) ConditionOperator() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNamespaceIngestTimeRuleConditionAdditionalCondition) *string { return v.ConditionOperator }).(pulumi.StringPtrOutput)
 }
 
 // The additional field value to be evaluated.
-func (o GetNamespaceIngestTimeRuleConditionAdditionalConditionOutput) ConditionValue() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNamespaceIngestTimeRuleConditionAdditionalCondition) string { return v.ConditionValue }).(pulumi.StringOutput)
+func (o GetNamespaceIngestTimeRuleConditionAdditionalConditionOutput) ConditionValue() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNamespaceIngestTimeRuleConditionAdditionalCondition) *string { return v.ConditionValue }).(pulumi.StringPtrOutput)
 }
 
 type GetNamespaceIngestTimeRuleConditionAdditionalConditionArrayOutput struct{ *pulumi.OutputState }
@@ -6171,12 +5298,6 @@ func (o GetNamespaceIngestTimeRuleConditionAdditionalConditionArrayOutput) ToGet
 
 func (o GetNamespaceIngestTimeRuleConditionAdditionalConditionArrayOutput) ToGetNamespaceIngestTimeRuleConditionAdditionalConditionArrayOutputWithContext(ctx context.Context) GetNamespaceIngestTimeRuleConditionAdditionalConditionArrayOutput {
 	return o
-}
-
-func (o GetNamespaceIngestTimeRuleConditionAdditionalConditionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNamespaceIngestTimeRuleConditionAdditionalCondition] {
-	return pulumix.Output[[]GetNamespaceIngestTimeRuleConditionAdditionalCondition]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetNamespaceIngestTimeRuleConditionAdditionalConditionArrayOutput) Index(i pulumi.IntInput) GetNamespaceIngestTimeRuleConditionAdditionalConditionOutput {
@@ -6220,12 +5341,6 @@ func (i GetNamespaceIngestTimeRulesFilterArgs) ToGetNamespaceIngestTimeRulesFilt
 	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceIngestTimeRulesFilterOutput)
 }
 
-func (i GetNamespaceIngestTimeRulesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetNamespaceIngestTimeRulesFilter] {
-	return pulumix.Output[GetNamespaceIngestTimeRulesFilter]{
-		OutputState: i.ToGetNamespaceIngestTimeRulesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetNamespaceIngestTimeRulesFilterArrayInput is an input type that accepts GetNamespaceIngestTimeRulesFilterArray and GetNamespaceIngestTimeRulesFilterArrayOutput values.
 // You can construct a concrete instance of `GetNamespaceIngestTimeRulesFilterArrayInput` via:
 //
@@ -6251,12 +5366,6 @@ func (i GetNamespaceIngestTimeRulesFilterArray) ToGetNamespaceIngestTimeRulesFil
 	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceIngestTimeRulesFilterArrayOutput)
 }
 
-func (i GetNamespaceIngestTimeRulesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNamespaceIngestTimeRulesFilter] {
-	return pulumix.Output[[]GetNamespaceIngestTimeRulesFilter]{
-		OutputState: i.ToGetNamespaceIngestTimeRulesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetNamespaceIngestTimeRulesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetNamespaceIngestTimeRulesFilterOutput) ElementType() reflect.Type {
@@ -6269,12 +5378,6 @@ func (o GetNamespaceIngestTimeRulesFilterOutput) ToGetNamespaceIngestTimeRulesFi
 
 func (o GetNamespaceIngestTimeRulesFilterOutput) ToGetNamespaceIngestTimeRulesFilterOutputWithContext(ctx context.Context) GetNamespaceIngestTimeRulesFilterOutput {
 	return o
-}
-
-func (o GetNamespaceIngestTimeRulesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetNamespaceIngestTimeRulesFilter] {
-	return pulumix.Output[GetNamespaceIngestTimeRulesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetNamespaceIngestTimeRulesFilterOutput) Name() pulumi.StringOutput {
@@ -6301,12 +5404,6 @@ func (o GetNamespaceIngestTimeRulesFilterArrayOutput) ToGetNamespaceIngestTimeRu
 
 func (o GetNamespaceIngestTimeRulesFilterArrayOutput) ToGetNamespaceIngestTimeRulesFilterArrayOutputWithContext(ctx context.Context) GetNamespaceIngestTimeRulesFilterArrayOutput {
 	return o
-}
-
-func (o GetNamespaceIngestTimeRulesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNamespaceIngestTimeRulesFilter] {
-	return pulumix.Output[[]GetNamespaceIngestTimeRulesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetNamespaceIngestTimeRulesFilterArrayOutput) Index(i pulumi.IntInput) GetNamespaceIngestTimeRulesFilterOutput {
@@ -6346,12 +5443,6 @@ func (i GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionArgs) ToGetNam
 	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionOutput)
 }
 
-func (i GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollection] {
-	return pulumix.Output[GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollection]{
-		OutputState: i.ToGetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionArrayInput is an input type that accepts GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionArray and GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionArrayOutput values.
 // You can construct a concrete instance of `GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionArrayInput` via:
 //
@@ -6377,12 +5468,6 @@ func (i GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionArray) ToGetNa
 	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionArrayOutput)
 }
 
-func (i GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollection] {
-	return pulumix.Output[[]GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollection]{
-		OutputState: i.ToGetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionOutput) ElementType() reflect.Type {
@@ -6395,12 +5480,6 @@ func (o GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionOutput) ToGetN
 
 func (o GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionOutput) ToGetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionOutputWithContext(ctx context.Context) GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionOutput {
 	return o
-}
-
-func (o GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollection] {
-	return pulumix.Output[GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionOutput) Items() GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemArrayOutput {
@@ -6423,12 +5502,6 @@ func (o GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionArrayOutput) T
 	return o
 }
 
-func (o GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollection] {
-	return pulumix.Output[[]GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionArrayOutput) Index(i pulumi.IntInput) GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollection {
 		return vs[0].([]GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollection)[vs[1].(int)]
@@ -6437,31 +5510,31 @@ func (o GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionArrayOutput) I
 
 type GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItem struct {
 	// The ID of the compartment in which to list resources.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// The ingest time rule condition kind used for filtering. Only rules with conditions of the specified kind will be returned.
-	ConditionKind string `pulumi:"conditionKind"`
+	ConditionKind *string `pulumi:"conditionKind"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// Description for this resource.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// A filter to return rules whose displayName matches in whole or in part the specified value. The match is case-insensitive.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// The field name used for filtering. Only rules using the specified field name will be returned.
-	FieldName string `pulumi:"fieldName"`
+	FieldName *string `pulumi:"fieldName"`
 	// The field value used for filtering. Only rules using the specified field value will be returned.
-	FieldValue string `pulumi:"fieldValue"`
+	FieldValue *string `pulumi:"fieldValue"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The log analytics entity OCID. This ID is a reference used by log analytics features and it represents a resource that is provisioned and managed by the customer on their premises or on the cloud.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// A flag indicating whether or not the ingest time rule is enabled.
-	IsEnabled bool `pulumi:"isEnabled"`
+	IsEnabled *bool `pulumi:"isEnabled"`
 	// The rule lifecycle state used for filtering. Currently supported values are ACTIVE and DELETED.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The date and time the resource was created, in the format defined by RFC3339.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The date and time the resource was last updated, in the format defined by RFC3339.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 // GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemInput is an input type that accepts GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemArgs and GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemOutput values.
@@ -6477,31 +5550,31 @@ type GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemInput interfa
 
 type GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemArgs struct {
 	// The ID of the compartment in which to list resources.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// The ingest time rule condition kind used for filtering. Only rules with conditions of the specified kind will be returned.
-	ConditionKind pulumi.StringInput `pulumi:"conditionKind"`
+	ConditionKind pulumi.StringPtrInput `pulumi:"conditionKind"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// Description for this resource.
-	Description pulumi.StringInput `pulumi:"description"`
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// A filter to return rules whose displayName matches in whole or in part the specified value. The match is case-insensitive.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// The field name used for filtering. Only rules using the specified field name will be returned.
-	FieldName pulumi.StringInput `pulumi:"fieldName"`
+	FieldName pulumi.StringPtrInput `pulumi:"fieldName"`
 	// The field value used for filtering. Only rules using the specified field value will be returned.
-	FieldValue pulumi.StringInput `pulumi:"fieldValue"`
+	FieldValue pulumi.StringPtrInput `pulumi:"fieldValue"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// The log analytics entity OCID. This ID is a reference used by log analytics features and it represents a resource that is provisioned and managed by the customer on their premises or on the cloud.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// A flag indicating whether or not the ingest time rule is enabled.
-	IsEnabled pulumi.BoolInput `pulumi:"isEnabled"`
+	IsEnabled pulumi.BoolPtrInput `pulumi:"isEnabled"`
 	// The rule lifecycle state used for filtering. Currently supported values are ACTIVE and DELETED.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// The date and time the resource was created, in the format defined by RFC3339.
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// The date and time the resource was last updated, in the format defined by RFC3339.
-	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
 }
 
 func (GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemArgs) ElementType() reflect.Type {
@@ -6514,12 +5587,6 @@ func (i GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemArgs) ToGe
 
 func (i GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemArgs) ToGetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemOutputWithContext(ctx context.Context) GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemOutput)
-}
-
-func (i GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItem] {
-	return pulumix.Output[GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItem]{
-		OutputState: i.ToGetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemArrayInput is an input type that accepts GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemArray and GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemArrayOutput values.
@@ -6547,12 +5614,6 @@ func (i GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemArray) ToG
 	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemArrayOutput)
 }
 
-func (i GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItem] {
-	return pulumix.Output[[]GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItem]{
-		OutputState: i.ToGetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemOutput) ElementType() reflect.Type {
@@ -6567,20 +5628,14 @@ func (o GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemOutput) To
 	return o
 }
 
-func (o GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItem] {
-	return pulumix.Output[GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The ID of the compartment in which to list resources.
-func (o GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItem) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // The ingest time rule condition kind used for filtering. Only rules with conditions of the specified kind will be returned.
-func (o GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemOutput) ConditionKind() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItem) string { return v.ConditionKind }).(pulumi.StringOutput)
+func (o GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemOutput) ConditionKind() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItem) *string { return v.ConditionKind }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -6591,23 +5646,23 @@ func (o GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemOutput) De
 }
 
 // Description for this resource.
-func (o GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItem) string { return v.Description }).(pulumi.StringOutput)
+func (o GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItem) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // A filter to return rules whose displayName matches in whole or in part the specified value. The match is case-insensitive.
-func (o GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItem) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // The field name used for filtering. Only rules using the specified field name will be returned.
-func (o GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemOutput) FieldName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItem) string { return v.FieldName }).(pulumi.StringOutput)
+func (o GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemOutput) FieldName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItem) *string { return v.FieldName }).(pulumi.StringPtrOutput)
 }
 
 // The field value used for filtering. Only rules using the specified field value will be returned.
-func (o GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemOutput) FieldValue() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItem) string { return v.FieldValue }).(pulumi.StringOutput)
+func (o GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemOutput) FieldValue() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItem) *string { return v.FieldValue }).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -6618,28 +5673,28 @@ func (o GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemOutput) Fr
 }
 
 // The log analytics entity OCID. This ID is a reference used by log analytics features and it represents a resource that is provisioned and managed by the customer on their premises or on the cloud.
-func (o GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+func (o GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItem) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // A flag indicating whether or not the ingest time rule is enabled.
-func (o GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemOutput) IsEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItem) bool { return v.IsEnabled }).(pulumi.BoolOutput)
+func (o GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemOutput) IsEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItem) *bool { return v.IsEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // The rule lifecycle state used for filtering. Currently supported values are ACTIVE and DELETED.
-func (o GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItem) string { return v.State }).(pulumi.StringOutput)
+func (o GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItem) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the resource was created, in the format defined by RFC3339.
-func (o GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItem) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the resource was last updated, in the format defined by RFC3339.
-func (o GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItem) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -6654,12 +5709,6 @@ func (o GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemArrayOutpu
 
 func (o GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemArrayOutput) ToGetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemArrayOutputWithContext(ctx context.Context) GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemArrayOutput {
 	return o
-}
-
-func (o GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItem] {
-	return pulumix.Output[[]GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemArrayOutput) Index(i pulumi.IntInput) GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemOutput {
@@ -6705,12 +5754,6 @@ func (i GetNamespacePropertiesMetadataFilterArgs) ToGetNamespacePropertiesMetada
 	return pulumi.ToOutputWithContext(ctx, i).(GetNamespacePropertiesMetadataFilterOutput)
 }
 
-func (i GetNamespacePropertiesMetadataFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetNamespacePropertiesMetadataFilter] {
-	return pulumix.Output[GetNamespacePropertiesMetadataFilter]{
-		OutputState: i.ToGetNamespacePropertiesMetadataFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetNamespacePropertiesMetadataFilterArrayInput is an input type that accepts GetNamespacePropertiesMetadataFilterArray and GetNamespacePropertiesMetadataFilterArrayOutput values.
 // You can construct a concrete instance of `GetNamespacePropertiesMetadataFilterArrayInput` via:
 //
@@ -6736,12 +5779,6 @@ func (i GetNamespacePropertiesMetadataFilterArray) ToGetNamespacePropertiesMetad
 	return pulumi.ToOutputWithContext(ctx, i).(GetNamespacePropertiesMetadataFilterArrayOutput)
 }
 
-func (i GetNamespacePropertiesMetadataFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNamespacePropertiesMetadataFilter] {
-	return pulumix.Output[[]GetNamespacePropertiesMetadataFilter]{
-		OutputState: i.ToGetNamespacePropertiesMetadataFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetNamespacePropertiesMetadataFilterOutput struct{ *pulumi.OutputState }
 
 func (GetNamespacePropertiesMetadataFilterOutput) ElementType() reflect.Type {
@@ -6754,12 +5791,6 @@ func (o GetNamespacePropertiesMetadataFilterOutput) ToGetNamespacePropertiesMeta
 
 func (o GetNamespacePropertiesMetadataFilterOutput) ToGetNamespacePropertiesMetadataFilterOutputWithContext(ctx context.Context) GetNamespacePropertiesMetadataFilterOutput {
 	return o
-}
-
-func (o GetNamespacePropertiesMetadataFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetNamespacePropertiesMetadataFilter] {
-	return pulumix.Output[GetNamespacePropertiesMetadataFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The property name used for filtering.
@@ -6787,12 +5818,6 @@ func (o GetNamespacePropertiesMetadataFilterArrayOutput) ToGetNamespacePropertie
 
 func (o GetNamespacePropertiesMetadataFilterArrayOutput) ToGetNamespacePropertiesMetadataFilterArrayOutputWithContext(ctx context.Context) GetNamespacePropertiesMetadataFilterArrayOutput {
 	return o
-}
-
-func (o GetNamespacePropertiesMetadataFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNamespacePropertiesMetadataFilter] {
-	return pulumix.Output[[]GetNamespacePropertiesMetadataFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetNamespacePropertiesMetadataFilterArrayOutput) Index(i pulumi.IntInput) GetNamespacePropertiesMetadataFilterOutput {
@@ -6834,12 +5859,6 @@ func (i GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionArgs) ToG
 	return pulumi.ToOutputWithContext(ctx, i).(GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionOutput)
 }
 
-func (i GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetNamespacePropertiesMetadataPropertyMetadataSummaryCollection] {
-	return pulumix.Output[GetNamespacePropertiesMetadataPropertyMetadataSummaryCollection]{
-		OutputState: i.ToGetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionArrayInput is an input type that accepts GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionArray and GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionArrayOutput values.
 // You can construct a concrete instance of `GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionArrayInput` via:
 //
@@ -6865,12 +5884,6 @@ func (i GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionArray) To
 	return pulumi.ToOutputWithContext(ctx, i).(GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionArrayOutput)
 }
 
-func (i GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNamespacePropertiesMetadataPropertyMetadataSummaryCollection] {
-	return pulumix.Output[[]GetNamespacePropertiesMetadataPropertyMetadataSummaryCollection]{
-		OutputState: i.ToGetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionOutput) ElementType() reflect.Type {
@@ -6883,12 +5896,6 @@ func (o GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionOutput) T
 
 func (o GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionOutput) ToGetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionOutputWithContext(ctx context.Context) GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionOutput {
 	return o
-}
-
-func (o GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetNamespacePropertiesMetadataPropertyMetadataSummaryCollection] {
-	return pulumix.Output[GetNamespacePropertiesMetadataPropertyMetadataSummaryCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 // An array of properties along with their metadata summary.
@@ -6912,12 +5919,6 @@ func (o GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionArrayOutp
 	return o
 }
 
-func (o GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNamespacePropertiesMetadataPropertyMetadataSummaryCollection] {
-	return pulumix.Output[[]GetNamespacePropertiesMetadataPropertyMetadataSummaryCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionArrayOutput) Index(i pulumi.IntInput) GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNamespacePropertiesMetadataPropertyMetadataSummaryCollection {
 		return vs[0].([]GetNamespacePropertiesMetadataPropertyMetadataSummaryCollection)[vs[1].(int)]
@@ -6926,15 +5927,15 @@ func (o GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionArrayOutp
 
 type GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItem struct {
 	// The default property value.
-	DefaultValue string `pulumi:"defaultValue"`
+	DefaultValue *string `pulumi:"defaultValue"`
 	// The property description.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// The property display name.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// A list of levels at which the property could be defined.
 	Levels []GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevel `pulumi:"levels"`
 	// The property name used for filtering.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 }
 
 // GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemInput is an input type that accepts GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemArgs and GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemOutput values.
@@ -6950,15 +5951,15 @@ type GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemInput in
 
 type GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemArgs struct {
 	// The default property value.
-	DefaultValue pulumi.StringInput `pulumi:"defaultValue"`
+	DefaultValue pulumi.StringPtrInput `pulumi:"defaultValue"`
 	// The property description.
-	Description pulumi.StringInput `pulumi:"description"`
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// The property display name.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// A list of levels at which the property could be defined.
 	Levels GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevelArrayInput `pulumi:"levels"`
 	// The property name used for filtering.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 }
 
 func (GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemArgs) ElementType() reflect.Type {
@@ -6971,12 +5972,6 @@ func (i GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemArgs)
 
 func (i GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemArgs) ToGetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemOutputWithContext(ctx context.Context) GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemOutput)
-}
-
-func (i GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItem] {
-	return pulumix.Output[GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItem]{
-		OutputState: i.ToGetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemArrayInput is an input type that accepts GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemArray and GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemArrayOutput values.
@@ -7004,12 +5999,6 @@ func (i GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemArray
 	return pulumi.ToOutputWithContext(ctx, i).(GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemArrayOutput)
 }
 
-func (i GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItem] {
-	return pulumix.Output[[]GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItem]{
-		OutputState: i.ToGetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemOutput) ElementType() reflect.Type {
@@ -7024,31 +6013,25 @@ func (o GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemOutpu
 	return o
 }
 
-func (o GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItem] {
-	return pulumix.Output[GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The default property value.
-func (o GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemOutput) DefaultValue() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItem) string {
+func (o GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemOutput) DefaultValue() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItem) *string {
 		return v.DefaultValue
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The property description.
-func (o GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItem) string {
+func (o GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItem) *string {
 		return v.Description
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The property display name.
-func (o GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItem) string {
+func (o GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItem) *string {
 		return v.DisplayName
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // A list of levels at which the property could be defined.
@@ -7059,8 +6042,8 @@ func (o GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemOutpu
 }
 
 // The property name used for filtering.
-func (o GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItem) string { return v.Name }).(pulumi.StringOutput)
+func (o GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItem) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 type GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -7077,12 +6060,6 @@ func (o GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemArray
 	return o
 }
 
-func (o GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItem] {
-	return pulumix.Output[[]GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemArrayOutput) Index(i pulumi.IntInput) GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItem {
 		return vs[0].([]GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItem)[vs[1].(int)]
@@ -7091,9 +6068,9 @@ func (o GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemArray
 
 type GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevel struct {
 	// The constraints that apply to the properties at a certain level.
-	Constraints string `pulumi:"constraints"`
+	Constraints *string `pulumi:"constraints"`
 	// The property name used for filtering.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 }
 
 // GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevelInput is an input type that accepts GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevelArgs and GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevelOutput values.
@@ -7109,9 +6086,9 @@ type GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevelInp
 
 type GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevelArgs struct {
 	// The constraints that apply to the properties at a certain level.
-	Constraints pulumi.StringInput `pulumi:"constraints"`
+	Constraints pulumi.StringPtrInput `pulumi:"constraints"`
 	// The property name used for filtering.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 }
 
 func (GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevelArgs) ElementType() reflect.Type {
@@ -7124,12 +6101,6 @@ func (i GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevel
 
 func (i GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevelArgs) ToGetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevelOutputWithContext(ctx context.Context) GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevelOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevelOutput)
-}
-
-func (i GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevelArgs) ToOutput(ctx context.Context) pulumix.Output[GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevel] {
-	return pulumix.Output[GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevel]{
-		OutputState: i.ToGetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevelOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevelArrayInput is an input type that accepts GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevelArray and GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevelArrayOutput values.
@@ -7157,12 +6128,6 @@ func (i GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevel
 	return pulumi.ToOutputWithContext(ctx, i).(GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevelArrayOutput)
 }
 
-func (i GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevelArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevel] {
-	return pulumix.Output[[]GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevel]{
-		OutputState: i.ToGetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevelArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevelOutput struct{ *pulumi.OutputState }
 
 func (GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevelOutput) ElementType() reflect.Type {
@@ -7177,22 +6142,18 @@ func (o GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevel
 	return o
 }
 
-func (o GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevelOutput) ToOutput(ctx context.Context) pulumix.Output[GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevel] {
-	return pulumix.Output[GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevel]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The constraints that apply to the properties at a certain level.
-func (o GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevelOutput) Constraints() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevel) string {
+func (o GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevelOutput) Constraints() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevel) *string {
 		return v.Constraints
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The property name used for filtering.
-func (o GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevelOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevel) string { return v.Name }).(pulumi.StringOutput)
+func (o GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevelOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevel) *string {
+		return v.Name
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevelArrayOutput struct{ *pulumi.OutputState }
@@ -7207,12 +6168,6 @@ func (o GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevel
 
 func (o GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevelArrayOutput) ToGetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevelArrayOutputWithContext(ctx context.Context) GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevelArrayOutput {
 	return o
-}
-
-func (o GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevelArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevel] {
-	return pulumix.Output[[]GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevel]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevelArrayOutput) Index(i pulumi.IntInput) GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevelOutput {
@@ -7256,12 +6211,6 @@ func (i GetNamespaceRulesFilterArgs) ToGetNamespaceRulesFilterOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceRulesFilterOutput)
 }
 
-func (i GetNamespaceRulesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetNamespaceRulesFilter] {
-	return pulumix.Output[GetNamespaceRulesFilter]{
-		OutputState: i.ToGetNamespaceRulesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetNamespaceRulesFilterArrayInput is an input type that accepts GetNamespaceRulesFilterArray and GetNamespaceRulesFilterArrayOutput values.
 // You can construct a concrete instance of `GetNamespaceRulesFilterArrayInput` via:
 //
@@ -7287,12 +6236,6 @@ func (i GetNamespaceRulesFilterArray) ToGetNamespaceRulesFilterArrayOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceRulesFilterArrayOutput)
 }
 
-func (i GetNamespaceRulesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNamespaceRulesFilter] {
-	return pulumix.Output[[]GetNamespaceRulesFilter]{
-		OutputState: i.ToGetNamespaceRulesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetNamespaceRulesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetNamespaceRulesFilterOutput) ElementType() reflect.Type {
@@ -7305,12 +6248,6 @@ func (o GetNamespaceRulesFilterOutput) ToGetNamespaceRulesFilterOutput() GetName
 
 func (o GetNamespaceRulesFilterOutput) ToGetNamespaceRulesFilterOutputWithContext(ctx context.Context) GetNamespaceRulesFilterOutput {
 	return o
-}
-
-func (o GetNamespaceRulesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetNamespaceRulesFilter] {
-	return pulumix.Output[GetNamespaceRulesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetNamespaceRulesFilterOutput) Name() pulumi.StringOutput {
@@ -7337,12 +6274,6 @@ func (o GetNamespaceRulesFilterArrayOutput) ToGetNamespaceRulesFilterArrayOutput
 
 func (o GetNamespaceRulesFilterArrayOutput) ToGetNamespaceRulesFilterArrayOutputWithContext(ctx context.Context) GetNamespaceRulesFilterArrayOutput {
 	return o
-}
-
-func (o GetNamespaceRulesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNamespaceRulesFilter] {
-	return pulumix.Output[[]GetNamespaceRulesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetNamespaceRulesFilterArrayOutput) Index(i pulumi.IntInput) GetNamespaceRulesFilterOutput {
@@ -7384,12 +6315,6 @@ func (i GetNamespaceRulesRuleSummaryCollectionArgs) ToGetNamespaceRulesRuleSumma
 	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceRulesRuleSummaryCollectionOutput)
 }
 
-func (i GetNamespaceRulesRuleSummaryCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetNamespaceRulesRuleSummaryCollection] {
-	return pulumix.Output[GetNamespaceRulesRuleSummaryCollection]{
-		OutputState: i.ToGetNamespaceRulesRuleSummaryCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetNamespaceRulesRuleSummaryCollectionArrayInput is an input type that accepts GetNamespaceRulesRuleSummaryCollectionArray and GetNamespaceRulesRuleSummaryCollectionArrayOutput values.
 // You can construct a concrete instance of `GetNamespaceRulesRuleSummaryCollectionArrayInput` via:
 //
@@ -7415,12 +6340,6 @@ func (i GetNamespaceRulesRuleSummaryCollectionArray) ToGetNamespaceRulesRuleSumm
 	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceRulesRuleSummaryCollectionArrayOutput)
 }
 
-func (i GetNamespaceRulesRuleSummaryCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNamespaceRulesRuleSummaryCollection] {
-	return pulumix.Output[[]GetNamespaceRulesRuleSummaryCollection]{
-		OutputState: i.ToGetNamespaceRulesRuleSummaryCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetNamespaceRulesRuleSummaryCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetNamespaceRulesRuleSummaryCollectionOutput) ElementType() reflect.Type {
@@ -7433,12 +6352,6 @@ func (o GetNamespaceRulesRuleSummaryCollectionOutput) ToGetNamespaceRulesRuleSum
 
 func (o GetNamespaceRulesRuleSummaryCollectionOutput) ToGetNamespaceRulesRuleSummaryCollectionOutputWithContext(ctx context.Context) GetNamespaceRulesRuleSummaryCollectionOutput {
 	return o
-}
-
-func (o GetNamespaceRulesRuleSummaryCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetNamespaceRulesRuleSummaryCollection] {
-	return pulumix.Output[GetNamespaceRulesRuleSummaryCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 // An array of rule summary objects.
@@ -7462,12 +6375,6 @@ func (o GetNamespaceRulesRuleSummaryCollectionArrayOutput) ToGetNamespaceRulesRu
 	return o
 }
 
-func (o GetNamespaceRulesRuleSummaryCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNamespaceRulesRuleSummaryCollection] {
-	return pulumix.Output[[]GetNamespaceRulesRuleSummaryCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetNamespaceRulesRuleSummaryCollectionArrayOutput) Index(i pulumi.IntInput) GetNamespaceRulesRuleSummaryCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNamespaceRulesRuleSummaryCollection {
 		return vs[0].([]GetNamespaceRulesRuleSummaryCollection)[vs[1].(int)]
@@ -7476,31 +6383,31 @@ func (o GetNamespaceRulesRuleSummaryCollectionArrayOutput) Index(i pulumi.IntInp
 
 type GetNamespaceRulesRuleSummaryCollectionItem struct {
 	// The ID of the compartment in which to list resources.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// Description for this resource.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// A filter to return rules whose displayName matches in whole or in part the specified value. The match is case-insensitive.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The log analytics entity OCID. This ID is a reference used by log analytics features and it represents a resource that is provisioned and managed by the customer on their premises or on the cloud.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// A flag indicating whether or not the ingest time rule or scheduled task is enabled.
-	IsEnabled bool `pulumi:"isEnabled"`
+	IsEnabled *bool `pulumi:"isEnabled"`
 	// The rule kind used for filtering. Only rules of the specified kind will be returned.
-	Kind string `pulumi:"kind"`
+	Kind *string `pulumi:"kind"`
 	// The most recent task execution status.
-	LastExecutionStatus string `pulumi:"lastExecutionStatus"`
+	LastExecutionStatus *string `pulumi:"lastExecutionStatus"`
 	// The rule lifecycle state used for filtering. Currently supported values are ACTIVE and DELETED.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The date and time the resource was created, in the format defined by RFC3339.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The date and time the scheduled task last executed, in the format defined by RFC3339.
-	TimeLastExecuted string `pulumi:"timeLastExecuted"`
+	TimeLastExecuted *string `pulumi:"timeLastExecuted"`
 	// The date and time the resource was last updated, in the format defined by RFC3339.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 // GetNamespaceRulesRuleSummaryCollectionItemInput is an input type that accepts GetNamespaceRulesRuleSummaryCollectionItemArgs and GetNamespaceRulesRuleSummaryCollectionItemOutput values.
@@ -7516,31 +6423,31 @@ type GetNamespaceRulesRuleSummaryCollectionItemInput interface {
 
 type GetNamespaceRulesRuleSummaryCollectionItemArgs struct {
 	// The ID of the compartment in which to list resources.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// Description for this resource.
-	Description pulumi.StringInput `pulumi:"description"`
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// A filter to return rules whose displayName matches in whole or in part the specified value. The match is case-insensitive.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// The log analytics entity OCID. This ID is a reference used by log analytics features and it represents a resource that is provisioned and managed by the customer on their premises or on the cloud.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// A flag indicating whether or not the ingest time rule or scheduled task is enabled.
-	IsEnabled pulumi.BoolInput `pulumi:"isEnabled"`
+	IsEnabled pulumi.BoolPtrInput `pulumi:"isEnabled"`
 	// The rule kind used for filtering. Only rules of the specified kind will be returned.
-	Kind pulumi.StringInput `pulumi:"kind"`
+	Kind pulumi.StringPtrInput `pulumi:"kind"`
 	// The most recent task execution status.
-	LastExecutionStatus pulumi.StringInput `pulumi:"lastExecutionStatus"`
+	LastExecutionStatus pulumi.StringPtrInput `pulumi:"lastExecutionStatus"`
 	// The rule lifecycle state used for filtering. Currently supported values are ACTIVE and DELETED.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// The date and time the resource was created, in the format defined by RFC3339.
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// The date and time the scheduled task last executed, in the format defined by RFC3339.
-	TimeLastExecuted pulumi.StringInput `pulumi:"timeLastExecuted"`
+	TimeLastExecuted pulumi.StringPtrInput `pulumi:"timeLastExecuted"`
 	// The date and time the resource was last updated, in the format defined by RFC3339.
-	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
 }
 
 func (GetNamespaceRulesRuleSummaryCollectionItemArgs) ElementType() reflect.Type {
@@ -7553,12 +6460,6 @@ func (i GetNamespaceRulesRuleSummaryCollectionItemArgs) ToGetNamespaceRulesRuleS
 
 func (i GetNamespaceRulesRuleSummaryCollectionItemArgs) ToGetNamespaceRulesRuleSummaryCollectionItemOutputWithContext(ctx context.Context) GetNamespaceRulesRuleSummaryCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceRulesRuleSummaryCollectionItemOutput)
-}
-
-func (i GetNamespaceRulesRuleSummaryCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetNamespaceRulesRuleSummaryCollectionItem] {
-	return pulumix.Output[GetNamespaceRulesRuleSummaryCollectionItem]{
-		OutputState: i.ToGetNamespaceRulesRuleSummaryCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetNamespaceRulesRuleSummaryCollectionItemArrayInput is an input type that accepts GetNamespaceRulesRuleSummaryCollectionItemArray and GetNamespaceRulesRuleSummaryCollectionItemArrayOutput values.
@@ -7586,12 +6487,6 @@ func (i GetNamespaceRulesRuleSummaryCollectionItemArray) ToGetNamespaceRulesRule
 	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceRulesRuleSummaryCollectionItemArrayOutput)
 }
 
-func (i GetNamespaceRulesRuleSummaryCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNamespaceRulesRuleSummaryCollectionItem] {
-	return pulumix.Output[[]GetNamespaceRulesRuleSummaryCollectionItem]{
-		OutputState: i.ToGetNamespaceRulesRuleSummaryCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetNamespaceRulesRuleSummaryCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetNamespaceRulesRuleSummaryCollectionItemOutput) ElementType() reflect.Type {
@@ -7606,15 +6501,9 @@ func (o GetNamespaceRulesRuleSummaryCollectionItemOutput) ToGetNamespaceRulesRul
 	return o
 }
 
-func (o GetNamespaceRulesRuleSummaryCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetNamespaceRulesRuleSummaryCollectionItem] {
-	return pulumix.Output[GetNamespaceRulesRuleSummaryCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The ID of the compartment in which to list resources.
-func (o GetNamespaceRulesRuleSummaryCollectionItemOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNamespaceRulesRuleSummaryCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetNamespaceRulesRuleSummaryCollectionItemOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNamespaceRulesRuleSummaryCollectionItem) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -7623,13 +6512,13 @@ func (o GetNamespaceRulesRuleSummaryCollectionItemOutput) DefinedTags() pulumi.M
 }
 
 // Description for this resource.
-func (o GetNamespaceRulesRuleSummaryCollectionItemOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNamespaceRulesRuleSummaryCollectionItem) string { return v.Description }).(pulumi.StringOutput)
+func (o GetNamespaceRulesRuleSummaryCollectionItemOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNamespaceRulesRuleSummaryCollectionItem) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // A filter to return rules whose displayName matches in whole or in part the specified value. The match is case-insensitive.
-func (o GetNamespaceRulesRuleSummaryCollectionItemOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNamespaceRulesRuleSummaryCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetNamespaceRulesRuleSummaryCollectionItemOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNamespaceRulesRuleSummaryCollectionItem) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -7638,43 +6527,43 @@ func (o GetNamespaceRulesRuleSummaryCollectionItemOutput) FreeformTags() pulumi.
 }
 
 // The log analytics entity OCID. This ID is a reference used by log analytics features and it represents a resource that is provisioned and managed by the customer on their premises or on the cloud.
-func (o GetNamespaceRulesRuleSummaryCollectionItemOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNamespaceRulesRuleSummaryCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+func (o GetNamespaceRulesRuleSummaryCollectionItemOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNamespaceRulesRuleSummaryCollectionItem) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // A flag indicating whether or not the ingest time rule or scheduled task is enabled.
-func (o GetNamespaceRulesRuleSummaryCollectionItemOutput) IsEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetNamespaceRulesRuleSummaryCollectionItem) bool { return v.IsEnabled }).(pulumi.BoolOutput)
+func (o GetNamespaceRulesRuleSummaryCollectionItemOutput) IsEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetNamespaceRulesRuleSummaryCollectionItem) *bool { return v.IsEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // The rule kind used for filtering. Only rules of the specified kind will be returned.
-func (o GetNamespaceRulesRuleSummaryCollectionItemOutput) Kind() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNamespaceRulesRuleSummaryCollectionItem) string { return v.Kind }).(pulumi.StringOutput)
+func (o GetNamespaceRulesRuleSummaryCollectionItemOutput) Kind() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNamespaceRulesRuleSummaryCollectionItem) *string { return v.Kind }).(pulumi.StringPtrOutput)
 }
 
 // The most recent task execution status.
-func (o GetNamespaceRulesRuleSummaryCollectionItemOutput) LastExecutionStatus() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNamespaceRulesRuleSummaryCollectionItem) string { return v.LastExecutionStatus }).(pulumi.StringOutput)
+func (o GetNamespaceRulesRuleSummaryCollectionItemOutput) LastExecutionStatus() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNamespaceRulesRuleSummaryCollectionItem) *string { return v.LastExecutionStatus }).(pulumi.StringPtrOutput)
 }
 
 // The rule lifecycle state used for filtering. Currently supported values are ACTIVE and DELETED.
-func (o GetNamespaceRulesRuleSummaryCollectionItemOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNamespaceRulesRuleSummaryCollectionItem) string { return v.State }).(pulumi.StringOutput)
+func (o GetNamespaceRulesRuleSummaryCollectionItemOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNamespaceRulesRuleSummaryCollectionItem) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the resource was created, in the format defined by RFC3339.
-func (o GetNamespaceRulesRuleSummaryCollectionItemOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNamespaceRulesRuleSummaryCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetNamespaceRulesRuleSummaryCollectionItemOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNamespaceRulesRuleSummaryCollectionItem) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the scheduled task last executed, in the format defined by RFC3339.
-func (o GetNamespaceRulesRuleSummaryCollectionItemOutput) TimeLastExecuted() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNamespaceRulesRuleSummaryCollectionItem) string { return v.TimeLastExecuted }).(pulumi.StringOutput)
+func (o GetNamespaceRulesRuleSummaryCollectionItemOutput) TimeLastExecuted() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNamespaceRulesRuleSummaryCollectionItem) *string { return v.TimeLastExecuted }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the resource was last updated, in the format defined by RFC3339.
-func (o GetNamespaceRulesRuleSummaryCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNamespaceRulesRuleSummaryCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o GetNamespaceRulesRuleSummaryCollectionItemOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNamespaceRulesRuleSummaryCollectionItem) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type GetNamespaceRulesRuleSummaryCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -7691,12 +6580,6 @@ func (o GetNamespaceRulesRuleSummaryCollectionItemArrayOutput) ToGetNamespaceRul
 	return o
 }
 
-func (o GetNamespaceRulesRuleSummaryCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNamespaceRulesRuleSummaryCollectionItem] {
-	return pulumix.Output[[]GetNamespaceRulesRuleSummaryCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetNamespaceRulesRuleSummaryCollectionItemArrayOutput) Index(i pulumi.IntInput) GetNamespaceRulesRuleSummaryCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNamespaceRulesRuleSummaryCollectionItem {
 		return vs[0].([]GetNamespaceRulesRuleSummaryCollectionItem)[vs[1].(int)]
@@ -7705,21 +6588,21 @@ func (o GetNamespaceRulesRuleSummaryCollectionItemArrayOutput) Index(i pulumi.In
 
 type GetNamespaceScheduledTaskAction struct {
 	// if true, purge child compartments data
-	CompartmentIdInSubtree bool `pulumi:"compartmentIdInSubtree"`
+	CompartmentIdInSubtree *bool `pulumi:"compartmentIdInSubtree"`
 	// the type of the log data to be purged
-	DataType string `pulumi:"dataType"`
+	DataType *string `pulumi:"dataType"`
 	// Specify metric extraction for SAVED_SEARCH scheduled task execution to post to Oracle Cloud Infrastructure Monitoring.
 	MetricExtractions []GetNamespaceScheduledTaskActionMetricExtraction `pulumi:"metricExtractions"`
 	// the compartment OCID under which the data will be purged
-	PurgeCompartmentId string `pulumi:"purgeCompartmentId"`
+	PurgeCompartmentId *string `pulumi:"purgeCompartmentId"`
 	// The duration of data to be retained, which is used to calculate the timeDataEnded when the task fires. The value should be negative. Purge duration in ISO 8601 extended format as described in https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. -P365D (not -P1Y) or -P14D (not -P2W).
-	PurgeDuration string `pulumi:"purgeDuration"`
+	PurgeDuration *string `pulumi:"purgeDuration"`
 	// Purge query string.
-	QueryString string `pulumi:"queryString"`
+	QueryString *string `pulumi:"queryString"`
 	// The ManagementSavedSearch id [OCID] utilized in the action.
-	SavedSearchId string `pulumi:"savedSearchId"`
+	SavedSearchId *string `pulumi:"savedSearchId"`
 	// Schedule type discriminator.
-	Type string `pulumi:"type"`
+	Type *string `pulumi:"type"`
 }
 
 // GetNamespaceScheduledTaskActionInput is an input type that accepts GetNamespaceScheduledTaskActionArgs and GetNamespaceScheduledTaskActionOutput values.
@@ -7735,21 +6618,21 @@ type GetNamespaceScheduledTaskActionInput interface {
 
 type GetNamespaceScheduledTaskActionArgs struct {
 	// if true, purge child compartments data
-	CompartmentIdInSubtree pulumi.BoolInput `pulumi:"compartmentIdInSubtree"`
+	CompartmentIdInSubtree pulumi.BoolPtrInput `pulumi:"compartmentIdInSubtree"`
 	// the type of the log data to be purged
-	DataType pulumi.StringInput `pulumi:"dataType"`
+	DataType pulumi.StringPtrInput `pulumi:"dataType"`
 	// Specify metric extraction for SAVED_SEARCH scheduled task execution to post to Oracle Cloud Infrastructure Monitoring.
 	MetricExtractions GetNamespaceScheduledTaskActionMetricExtractionArrayInput `pulumi:"metricExtractions"`
 	// the compartment OCID under which the data will be purged
-	PurgeCompartmentId pulumi.StringInput `pulumi:"purgeCompartmentId"`
+	PurgeCompartmentId pulumi.StringPtrInput `pulumi:"purgeCompartmentId"`
 	// The duration of data to be retained, which is used to calculate the timeDataEnded when the task fires. The value should be negative. Purge duration in ISO 8601 extended format as described in https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. -P365D (not -P1Y) or -P14D (not -P2W).
-	PurgeDuration pulumi.StringInput `pulumi:"purgeDuration"`
+	PurgeDuration pulumi.StringPtrInput `pulumi:"purgeDuration"`
 	// Purge query string.
-	QueryString pulumi.StringInput `pulumi:"queryString"`
+	QueryString pulumi.StringPtrInput `pulumi:"queryString"`
 	// The ManagementSavedSearch id [OCID] utilized in the action.
-	SavedSearchId pulumi.StringInput `pulumi:"savedSearchId"`
+	SavedSearchId pulumi.StringPtrInput `pulumi:"savedSearchId"`
 	// Schedule type discriminator.
-	Type pulumi.StringInput `pulumi:"type"`
+	Type pulumi.StringPtrInput `pulumi:"type"`
 }
 
 func (GetNamespaceScheduledTaskActionArgs) ElementType() reflect.Type {
@@ -7762,12 +6645,6 @@ func (i GetNamespaceScheduledTaskActionArgs) ToGetNamespaceScheduledTaskActionOu
 
 func (i GetNamespaceScheduledTaskActionArgs) ToGetNamespaceScheduledTaskActionOutputWithContext(ctx context.Context) GetNamespaceScheduledTaskActionOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceScheduledTaskActionOutput)
-}
-
-func (i GetNamespaceScheduledTaskActionArgs) ToOutput(ctx context.Context) pulumix.Output[GetNamespaceScheduledTaskAction] {
-	return pulumix.Output[GetNamespaceScheduledTaskAction]{
-		OutputState: i.ToGetNamespaceScheduledTaskActionOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetNamespaceScheduledTaskActionArrayInput is an input type that accepts GetNamespaceScheduledTaskActionArray and GetNamespaceScheduledTaskActionArrayOutput values.
@@ -7795,12 +6672,6 @@ func (i GetNamespaceScheduledTaskActionArray) ToGetNamespaceScheduledTaskActionA
 	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceScheduledTaskActionArrayOutput)
 }
 
-func (i GetNamespaceScheduledTaskActionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNamespaceScheduledTaskAction] {
-	return pulumix.Output[[]GetNamespaceScheduledTaskAction]{
-		OutputState: i.ToGetNamespaceScheduledTaskActionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetNamespaceScheduledTaskActionOutput struct{ *pulumi.OutputState }
 
 func (GetNamespaceScheduledTaskActionOutput) ElementType() reflect.Type {
@@ -7815,20 +6686,14 @@ func (o GetNamespaceScheduledTaskActionOutput) ToGetNamespaceScheduledTaskAction
 	return o
 }
 
-func (o GetNamespaceScheduledTaskActionOutput) ToOutput(ctx context.Context) pulumix.Output[GetNamespaceScheduledTaskAction] {
-	return pulumix.Output[GetNamespaceScheduledTaskAction]{
-		OutputState: o.OutputState,
-	}
-}
-
 // if true, purge child compartments data
-func (o GetNamespaceScheduledTaskActionOutput) CompartmentIdInSubtree() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetNamespaceScheduledTaskAction) bool { return v.CompartmentIdInSubtree }).(pulumi.BoolOutput)
+func (o GetNamespaceScheduledTaskActionOutput) CompartmentIdInSubtree() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetNamespaceScheduledTaskAction) *bool { return v.CompartmentIdInSubtree }).(pulumi.BoolPtrOutput)
 }
 
 // the type of the log data to be purged
-func (o GetNamespaceScheduledTaskActionOutput) DataType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNamespaceScheduledTaskAction) string { return v.DataType }).(pulumi.StringOutput)
+func (o GetNamespaceScheduledTaskActionOutput) DataType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNamespaceScheduledTaskAction) *string { return v.DataType }).(pulumi.StringPtrOutput)
 }
 
 // Specify metric extraction for SAVED_SEARCH scheduled task execution to post to Oracle Cloud Infrastructure Monitoring.
@@ -7839,28 +6704,28 @@ func (o GetNamespaceScheduledTaskActionOutput) MetricExtractions() GetNamespaceS
 }
 
 // the compartment OCID under which the data will be purged
-func (o GetNamespaceScheduledTaskActionOutput) PurgeCompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNamespaceScheduledTaskAction) string { return v.PurgeCompartmentId }).(pulumi.StringOutput)
+func (o GetNamespaceScheduledTaskActionOutput) PurgeCompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNamespaceScheduledTaskAction) *string { return v.PurgeCompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // The duration of data to be retained, which is used to calculate the timeDataEnded when the task fires. The value should be negative. Purge duration in ISO 8601 extended format as described in https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. -P365D (not -P1Y) or -P14D (not -P2W).
-func (o GetNamespaceScheduledTaskActionOutput) PurgeDuration() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNamespaceScheduledTaskAction) string { return v.PurgeDuration }).(pulumi.StringOutput)
+func (o GetNamespaceScheduledTaskActionOutput) PurgeDuration() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNamespaceScheduledTaskAction) *string { return v.PurgeDuration }).(pulumi.StringPtrOutput)
 }
 
 // Purge query string.
-func (o GetNamespaceScheduledTaskActionOutput) QueryString() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNamespaceScheduledTaskAction) string { return v.QueryString }).(pulumi.StringOutput)
+func (o GetNamespaceScheduledTaskActionOutput) QueryString() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNamespaceScheduledTaskAction) *string { return v.QueryString }).(pulumi.StringPtrOutput)
 }
 
 // The ManagementSavedSearch id [OCID] utilized in the action.
-func (o GetNamespaceScheduledTaskActionOutput) SavedSearchId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNamespaceScheduledTaskAction) string { return v.SavedSearchId }).(pulumi.StringOutput)
+func (o GetNamespaceScheduledTaskActionOutput) SavedSearchId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNamespaceScheduledTaskAction) *string { return v.SavedSearchId }).(pulumi.StringPtrOutput)
 }
 
 // Schedule type discriminator.
-func (o GetNamespaceScheduledTaskActionOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNamespaceScheduledTaskAction) string { return v.Type }).(pulumi.StringOutput)
+func (o GetNamespaceScheduledTaskActionOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNamespaceScheduledTaskAction) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
 
 type GetNamespaceScheduledTaskActionArrayOutput struct{ *pulumi.OutputState }
@@ -7877,12 +6742,6 @@ func (o GetNamespaceScheduledTaskActionArrayOutput) ToGetNamespaceScheduledTaskA
 	return o
 }
 
-func (o GetNamespaceScheduledTaskActionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNamespaceScheduledTaskAction] {
-	return pulumix.Output[[]GetNamespaceScheduledTaskAction]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetNamespaceScheduledTaskActionArrayOutput) Index(i pulumi.IntInput) GetNamespaceScheduledTaskActionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNamespaceScheduledTaskAction {
 		return vs[0].([]GetNamespaceScheduledTaskAction)[vs[1].(int)]
@@ -7891,13 +6750,13 @@ func (o GetNamespaceScheduledTaskActionArrayOutput) Index(i pulumi.IntInput) Get
 
 type GetNamespaceScheduledTaskActionMetricExtraction struct {
 	// Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// The metric name of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
-	MetricName string `pulumi:"metricName"`
+	MetricName *string `pulumi:"metricName"`
 	// The Logging Analytics namespace used for the request.
-	Namespace string `pulumi:"namespace"`
+	Namespace *string `pulumi:"namespace"`
 	// The resource group of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
-	ResourceGroup string `pulumi:"resourceGroup"`
+	ResourceGroup *string `pulumi:"resourceGroup"`
 }
 
 // GetNamespaceScheduledTaskActionMetricExtractionInput is an input type that accepts GetNamespaceScheduledTaskActionMetricExtractionArgs and GetNamespaceScheduledTaskActionMetricExtractionOutput values.
@@ -7913,13 +6772,13 @@ type GetNamespaceScheduledTaskActionMetricExtractionInput interface {
 
 type GetNamespaceScheduledTaskActionMetricExtractionArgs struct {
 	// Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// The metric name of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
-	MetricName pulumi.StringInput `pulumi:"metricName"`
+	MetricName pulumi.StringPtrInput `pulumi:"metricName"`
 	// The Logging Analytics namespace used for the request.
-	Namespace pulumi.StringInput `pulumi:"namespace"`
+	Namespace pulumi.StringPtrInput `pulumi:"namespace"`
 	// The resource group of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
-	ResourceGroup pulumi.StringInput `pulumi:"resourceGroup"`
+	ResourceGroup pulumi.StringPtrInput `pulumi:"resourceGroup"`
 }
 
 func (GetNamespaceScheduledTaskActionMetricExtractionArgs) ElementType() reflect.Type {
@@ -7932,12 +6791,6 @@ func (i GetNamespaceScheduledTaskActionMetricExtractionArgs) ToGetNamespaceSched
 
 func (i GetNamespaceScheduledTaskActionMetricExtractionArgs) ToGetNamespaceScheduledTaskActionMetricExtractionOutputWithContext(ctx context.Context) GetNamespaceScheduledTaskActionMetricExtractionOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceScheduledTaskActionMetricExtractionOutput)
-}
-
-func (i GetNamespaceScheduledTaskActionMetricExtractionArgs) ToOutput(ctx context.Context) pulumix.Output[GetNamespaceScheduledTaskActionMetricExtraction] {
-	return pulumix.Output[GetNamespaceScheduledTaskActionMetricExtraction]{
-		OutputState: i.ToGetNamespaceScheduledTaskActionMetricExtractionOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetNamespaceScheduledTaskActionMetricExtractionArrayInput is an input type that accepts GetNamespaceScheduledTaskActionMetricExtractionArray and GetNamespaceScheduledTaskActionMetricExtractionArrayOutput values.
@@ -7965,12 +6818,6 @@ func (i GetNamespaceScheduledTaskActionMetricExtractionArray) ToGetNamespaceSche
 	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceScheduledTaskActionMetricExtractionArrayOutput)
 }
 
-func (i GetNamespaceScheduledTaskActionMetricExtractionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNamespaceScheduledTaskActionMetricExtraction] {
-	return pulumix.Output[[]GetNamespaceScheduledTaskActionMetricExtraction]{
-		OutputState: i.ToGetNamespaceScheduledTaskActionMetricExtractionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetNamespaceScheduledTaskActionMetricExtractionOutput struct{ *pulumi.OutputState }
 
 func (GetNamespaceScheduledTaskActionMetricExtractionOutput) ElementType() reflect.Type {
@@ -7985,30 +6832,24 @@ func (o GetNamespaceScheduledTaskActionMetricExtractionOutput) ToGetNamespaceSch
 	return o
 }
 
-func (o GetNamespaceScheduledTaskActionMetricExtractionOutput) ToOutput(ctx context.Context) pulumix.Output[GetNamespaceScheduledTaskActionMetricExtraction] {
-	return pulumix.Output[GetNamespaceScheduledTaskActionMetricExtraction]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-func (o GetNamespaceScheduledTaskActionMetricExtractionOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNamespaceScheduledTaskActionMetricExtraction) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetNamespaceScheduledTaskActionMetricExtractionOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNamespaceScheduledTaskActionMetricExtraction) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // The metric name of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
-func (o GetNamespaceScheduledTaskActionMetricExtractionOutput) MetricName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNamespaceScheduledTaskActionMetricExtraction) string { return v.MetricName }).(pulumi.StringOutput)
+func (o GetNamespaceScheduledTaskActionMetricExtractionOutput) MetricName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNamespaceScheduledTaskActionMetricExtraction) *string { return v.MetricName }).(pulumi.StringPtrOutput)
 }
 
 // The Logging Analytics namespace used for the request.
-func (o GetNamespaceScheduledTaskActionMetricExtractionOutput) Namespace() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNamespaceScheduledTaskActionMetricExtraction) string { return v.Namespace }).(pulumi.StringOutput)
+func (o GetNamespaceScheduledTaskActionMetricExtractionOutput) Namespace() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNamespaceScheduledTaskActionMetricExtraction) *string { return v.Namespace }).(pulumi.StringPtrOutput)
 }
 
 // The resource group of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
-func (o GetNamespaceScheduledTaskActionMetricExtractionOutput) ResourceGroup() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNamespaceScheduledTaskActionMetricExtraction) string { return v.ResourceGroup }).(pulumi.StringOutput)
+func (o GetNamespaceScheduledTaskActionMetricExtractionOutput) ResourceGroup() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNamespaceScheduledTaskActionMetricExtraction) *string { return v.ResourceGroup }).(pulumi.StringPtrOutput)
 }
 
 type GetNamespaceScheduledTaskActionMetricExtractionArrayOutput struct{ *pulumi.OutputState }
@@ -8023,12 +6864,6 @@ func (o GetNamespaceScheduledTaskActionMetricExtractionArrayOutput) ToGetNamespa
 
 func (o GetNamespaceScheduledTaskActionMetricExtractionArrayOutput) ToGetNamespaceScheduledTaskActionMetricExtractionArrayOutputWithContext(ctx context.Context) GetNamespaceScheduledTaskActionMetricExtractionArrayOutput {
 	return o
-}
-
-func (o GetNamespaceScheduledTaskActionMetricExtractionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNamespaceScheduledTaskActionMetricExtraction] {
-	return pulumix.Output[[]GetNamespaceScheduledTaskActionMetricExtraction]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetNamespaceScheduledTaskActionMetricExtractionArrayOutput) Index(i pulumi.IntInput) GetNamespaceScheduledTaskActionMetricExtractionOutput {
@@ -8068,12 +6903,6 @@ func (i GetNamespaceScheduledTaskScheduleArgs) ToGetNamespaceScheduledTaskSchedu
 	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceScheduledTaskScheduleOutput)
 }
 
-func (i GetNamespaceScheduledTaskScheduleArgs) ToOutput(ctx context.Context) pulumix.Output[GetNamespaceScheduledTaskSchedule] {
-	return pulumix.Output[GetNamespaceScheduledTaskSchedule]{
-		OutputState: i.ToGetNamespaceScheduledTaskScheduleOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetNamespaceScheduledTaskScheduleArrayInput is an input type that accepts GetNamespaceScheduledTaskScheduleArray and GetNamespaceScheduledTaskScheduleArrayOutput values.
 // You can construct a concrete instance of `GetNamespaceScheduledTaskScheduleArrayInput` via:
 //
@@ -8099,12 +6928,6 @@ func (i GetNamespaceScheduledTaskScheduleArray) ToGetNamespaceScheduledTaskSched
 	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceScheduledTaskScheduleArrayOutput)
 }
 
-func (i GetNamespaceScheduledTaskScheduleArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNamespaceScheduledTaskSchedule] {
-	return pulumix.Output[[]GetNamespaceScheduledTaskSchedule]{
-		OutputState: i.ToGetNamespaceScheduledTaskScheduleArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetNamespaceScheduledTaskScheduleOutput struct{ *pulumi.OutputState }
 
 func (GetNamespaceScheduledTaskScheduleOutput) ElementType() reflect.Type {
@@ -8117,12 +6940,6 @@ func (o GetNamespaceScheduledTaskScheduleOutput) ToGetNamespaceScheduledTaskSche
 
 func (o GetNamespaceScheduledTaskScheduleOutput) ToGetNamespaceScheduledTaskScheduleOutputWithContext(ctx context.Context) GetNamespaceScheduledTaskScheduleOutput {
 	return o
-}
-
-func (o GetNamespaceScheduledTaskScheduleOutput) ToOutput(ctx context.Context) pulumix.Output[GetNamespaceScheduledTaskSchedule] {
-	return pulumix.Output[GetNamespaceScheduledTaskSchedule]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetNamespaceScheduledTaskScheduleOutput) Schedules() GetNamespaceScheduledTaskScheduleScheduleArrayOutput {
@@ -8145,12 +6962,6 @@ func (o GetNamespaceScheduledTaskScheduleArrayOutput) ToGetNamespaceScheduledTas
 	return o
 }
 
-func (o GetNamespaceScheduledTaskScheduleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNamespaceScheduledTaskSchedule] {
-	return pulumix.Output[[]GetNamespaceScheduledTaskSchedule]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetNamespaceScheduledTaskScheduleArrayOutput) Index(i pulumi.IntInput) GetNamespaceScheduledTaskScheduleOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNamespaceScheduledTaskSchedule {
 		return vs[0].([]GetNamespaceScheduledTaskSchedule)[vs[1].(int)]
@@ -8159,17 +6970,17 @@ func (o GetNamespaceScheduledTaskScheduleArrayOutput) Index(i pulumi.IntInput) G
 
 type GetNamespaceScheduledTaskScheduleSchedule struct {
 	// Value in cron format.
-	Expression string `pulumi:"expression"`
+	Expression *string `pulumi:"expression"`
 	// Schedule misfire retry policy.
-	MisfirePolicy string `pulumi:"misfirePolicy"`
+	MisfirePolicy *string `pulumi:"misfirePolicy"`
 	// Recurring interval in ISO 8601 extended format as described in https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. P14D (not P2W). The value must be at least 5 minutes (PT5M) and at most 3 weeks (P21D or PT30240M).
-	RecurringInterval string `pulumi:"recurringInterval"`
+	RecurringInterval *string `pulumi:"recurringInterval"`
 	// Number of times (0-based) to execute until auto-stop. Default value -1 will execute indefinitely. Value 0 will execute once.
-	RepeatCount int `pulumi:"repeatCount"`
+	RepeatCount *int `pulumi:"repeatCount"`
 	// Time zone, by default UTC.
-	TimeZone string `pulumi:"timeZone"`
+	TimeZone *string `pulumi:"timeZone"`
 	// Schedule type discriminator.
-	Type string `pulumi:"type"`
+	Type *string `pulumi:"type"`
 }
 
 // GetNamespaceScheduledTaskScheduleScheduleInput is an input type that accepts GetNamespaceScheduledTaskScheduleScheduleArgs and GetNamespaceScheduledTaskScheduleScheduleOutput values.
@@ -8185,17 +6996,17 @@ type GetNamespaceScheduledTaskScheduleScheduleInput interface {
 
 type GetNamespaceScheduledTaskScheduleScheduleArgs struct {
 	// Value in cron format.
-	Expression pulumi.StringInput `pulumi:"expression"`
+	Expression pulumi.StringPtrInput `pulumi:"expression"`
 	// Schedule misfire retry policy.
-	MisfirePolicy pulumi.StringInput `pulumi:"misfirePolicy"`
+	MisfirePolicy pulumi.StringPtrInput `pulumi:"misfirePolicy"`
 	// Recurring interval in ISO 8601 extended format as described in https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. P14D (not P2W). The value must be at least 5 minutes (PT5M) and at most 3 weeks (P21D or PT30240M).
-	RecurringInterval pulumi.StringInput `pulumi:"recurringInterval"`
+	RecurringInterval pulumi.StringPtrInput `pulumi:"recurringInterval"`
 	// Number of times (0-based) to execute until auto-stop. Default value -1 will execute indefinitely. Value 0 will execute once.
-	RepeatCount pulumi.IntInput `pulumi:"repeatCount"`
+	RepeatCount pulumi.IntPtrInput `pulumi:"repeatCount"`
 	// Time zone, by default UTC.
-	TimeZone pulumi.StringInput `pulumi:"timeZone"`
+	TimeZone pulumi.StringPtrInput `pulumi:"timeZone"`
 	// Schedule type discriminator.
-	Type pulumi.StringInput `pulumi:"type"`
+	Type pulumi.StringPtrInput `pulumi:"type"`
 }
 
 func (GetNamespaceScheduledTaskScheduleScheduleArgs) ElementType() reflect.Type {
@@ -8208,12 +7019,6 @@ func (i GetNamespaceScheduledTaskScheduleScheduleArgs) ToGetNamespaceScheduledTa
 
 func (i GetNamespaceScheduledTaskScheduleScheduleArgs) ToGetNamespaceScheduledTaskScheduleScheduleOutputWithContext(ctx context.Context) GetNamespaceScheduledTaskScheduleScheduleOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceScheduledTaskScheduleScheduleOutput)
-}
-
-func (i GetNamespaceScheduledTaskScheduleScheduleArgs) ToOutput(ctx context.Context) pulumix.Output[GetNamespaceScheduledTaskScheduleSchedule] {
-	return pulumix.Output[GetNamespaceScheduledTaskScheduleSchedule]{
-		OutputState: i.ToGetNamespaceScheduledTaskScheduleScheduleOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetNamespaceScheduledTaskScheduleScheduleArrayInput is an input type that accepts GetNamespaceScheduledTaskScheduleScheduleArray and GetNamespaceScheduledTaskScheduleScheduleArrayOutput values.
@@ -8241,12 +7046,6 @@ func (i GetNamespaceScheduledTaskScheduleScheduleArray) ToGetNamespaceScheduledT
 	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceScheduledTaskScheduleScheduleArrayOutput)
 }
 
-func (i GetNamespaceScheduledTaskScheduleScheduleArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNamespaceScheduledTaskScheduleSchedule] {
-	return pulumix.Output[[]GetNamespaceScheduledTaskScheduleSchedule]{
-		OutputState: i.ToGetNamespaceScheduledTaskScheduleScheduleArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetNamespaceScheduledTaskScheduleScheduleOutput struct{ *pulumi.OutputState }
 
 func (GetNamespaceScheduledTaskScheduleScheduleOutput) ElementType() reflect.Type {
@@ -8261,40 +7060,34 @@ func (o GetNamespaceScheduledTaskScheduleScheduleOutput) ToGetNamespaceScheduled
 	return o
 }
 
-func (o GetNamespaceScheduledTaskScheduleScheduleOutput) ToOutput(ctx context.Context) pulumix.Output[GetNamespaceScheduledTaskScheduleSchedule] {
-	return pulumix.Output[GetNamespaceScheduledTaskScheduleSchedule]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Value in cron format.
-func (o GetNamespaceScheduledTaskScheduleScheduleOutput) Expression() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNamespaceScheduledTaskScheduleSchedule) string { return v.Expression }).(pulumi.StringOutput)
+func (o GetNamespaceScheduledTaskScheduleScheduleOutput) Expression() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNamespaceScheduledTaskScheduleSchedule) *string { return v.Expression }).(pulumi.StringPtrOutput)
 }
 
 // Schedule misfire retry policy.
-func (o GetNamespaceScheduledTaskScheduleScheduleOutput) MisfirePolicy() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNamespaceScheduledTaskScheduleSchedule) string { return v.MisfirePolicy }).(pulumi.StringOutput)
+func (o GetNamespaceScheduledTaskScheduleScheduleOutput) MisfirePolicy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNamespaceScheduledTaskScheduleSchedule) *string { return v.MisfirePolicy }).(pulumi.StringPtrOutput)
 }
 
 // Recurring interval in ISO 8601 extended format as described in https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. P14D (not P2W). The value must be at least 5 minutes (PT5M) and at most 3 weeks (P21D or PT30240M).
-func (o GetNamespaceScheduledTaskScheduleScheduleOutput) RecurringInterval() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNamespaceScheduledTaskScheduleSchedule) string { return v.RecurringInterval }).(pulumi.StringOutput)
+func (o GetNamespaceScheduledTaskScheduleScheduleOutput) RecurringInterval() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNamespaceScheduledTaskScheduleSchedule) *string { return v.RecurringInterval }).(pulumi.StringPtrOutput)
 }
 
 // Number of times (0-based) to execute until auto-stop. Default value -1 will execute indefinitely. Value 0 will execute once.
-func (o GetNamespaceScheduledTaskScheduleScheduleOutput) RepeatCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetNamespaceScheduledTaskScheduleSchedule) int { return v.RepeatCount }).(pulumi.IntOutput)
+func (o GetNamespaceScheduledTaskScheduleScheduleOutput) RepeatCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetNamespaceScheduledTaskScheduleSchedule) *int { return v.RepeatCount }).(pulumi.IntPtrOutput)
 }
 
 // Time zone, by default UTC.
-func (o GetNamespaceScheduledTaskScheduleScheduleOutput) TimeZone() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNamespaceScheduledTaskScheduleSchedule) string { return v.TimeZone }).(pulumi.StringOutput)
+func (o GetNamespaceScheduledTaskScheduleScheduleOutput) TimeZone() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNamespaceScheduledTaskScheduleSchedule) *string { return v.TimeZone }).(pulumi.StringPtrOutput)
 }
 
 // Schedule type discriminator.
-func (o GetNamespaceScheduledTaskScheduleScheduleOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNamespaceScheduledTaskScheduleSchedule) string { return v.Type }).(pulumi.StringOutput)
+func (o GetNamespaceScheduledTaskScheduleScheduleOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNamespaceScheduledTaskScheduleSchedule) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
 
 type GetNamespaceScheduledTaskScheduleScheduleArrayOutput struct{ *pulumi.OutputState }
@@ -8309,12 +7102,6 @@ func (o GetNamespaceScheduledTaskScheduleScheduleArrayOutput) ToGetNamespaceSche
 
 func (o GetNamespaceScheduledTaskScheduleScheduleArrayOutput) ToGetNamespaceScheduledTaskScheduleScheduleArrayOutputWithContext(ctx context.Context) GetNamespaceScheduledTaskScheduleScheduleArrayOutput {
 	return o
-}
-
-func (o GetNamespaceScheduledTaskScheduleScheduleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNamespaceScheduledTaskScheduleSchedule] {
-	return pulumix.Output[[]GetNamespaceScheduledTaskScheduleSchedule]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetNamespaceScheduledTaskScheduleScheduleArrayOutput) Index(i pulumi.IntInput) GetNamespaceScheduledTaskScheduleScheduleOutput {
@@ -8358,12 +7145,6 @@ func (i GetNamespaceScheduledTasksFilterArgs) ToGetNamespaceScheduledTasksFilter
 	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceScheduledTasksFilterOutput)
 }
 
-func (i GetNamespaceScheduledTasksFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetNamespaceScheduledTasksFilter] {
-	return pulumix.Output[GetNamespaceScheduledTasksFilter]{
-		OutputState: i.ToGetNamespaceScheduledTasksFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetNamespaceScheduledTasksFilterArrayInput is an input type that accepts GetNamespaceScheduledTasksFilterArray and GetNamespaceScheduledTasksFilterArrayOutput values.
 // You can construct a concrete instance of `GetNamespaceScheduledTasksFilterArrayInput` via:
 //
@@ -8389,12 +7170,6 @@ func (i GetNamespaceScheduledTasksFilterArray) ToGetNamespaceScheduledTasksFilte
 	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceScheduledTasksFilterArrayOutput)
 }
 
-func (i GetNamespaceScheduledTasksFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNamespaceScheduledTasksFilter] {
-	return pulumix.Output[[]GetNamespaceScheduledTasksFilter]{
-		OutputState: i.ToGetNamespaceScheduledTasksFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetNamespaceScheduledTasksFilterOutput struct{ *pulumi.OutputState }
 
 func (GetNamespaceScheduledTasksFilterOutput) ElementType() reflect.Type {
@@ -8407,12 +7182,6 @@ func (o GetNamespaceScheduledTasksFilterOutput) ToGetNamespaceScheduledTasksFilt
 
 func (o GetNamespaceScheduledTasksFilterOutput) ToGetNamespaceScheduledTasksFilterOutputWithContext(ctx context.Context) GetNamespaceScheduledTasksFilterOutput {
 	return o
-}
-
-func (o GetNamespaceScheduledTasksFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetNamespaceScheduledTasksFilter] {
-	return pulumix.Output[GetNamespaceScheduledTasksFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetNamespaceScheduledTasksFilterOutput) Name() pulumi.StringOutput {
@@ -8439,12 +7208,6 @@ func (o GetNamespaceScheduledTasksFilterArrayOutput) ToGetNamespaceScheduledTask
 
 func (o GetNamespaceScheduledTasksFilterArrayOutput) ToGetNamespaceScheduledTasksFilterArrayOutputWithContext(ctx context.Context) GetNamespaceScheduledTasksFilterArrayOutput {
 	return o
-}
-
-func (o GetNamespaceScheduledTasksFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNamespaceScheduledTasksFilter] {
-	return pulumix.Output[[]GetNamespaceScheduledTasksFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetNamespaceScheduledTasksFilterArrayOutput) Index(i pulumi.IntInput) GetNamespaceScheduledTasksFilterOutput {
@@ -8484,12 +7247,6 @@ func (i GetNamespaceScheduledTasksScheduledTaskCollectionArgs) ToGetNamespaceSch
 	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceScheduledTasksScheduledTaskCollectionOutput)
 }
 
-func (i GetNamespaceScheduledTasksScheduledTaskCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetNamespaceScheduledTasksScheduledTaskCollection] {
-	return pulumix.Output[GetNamespaceScheduledTasksScheduledTaskCollection]{
-		OutputState: i.ToGetNamespaceScheduledTasksScheduledTaskCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetNamespaceScheduledTasksScheduledTaskCollectionArrayInput is an input type that accepts GetNamespaceScheduledTasksScheduledTaskCollectionArray and GetNamespaceScheduledTasksScheduledTaskCollectionArrayOutput values.
 // You can construct a concrete instance of `GetNamespaceScheduledTasksScheduledTaskCollectionArrayInput` via:
 //
@@ -8515,12 +7272,6 @@ func (i GetNamespaceScheduledTasksScheduledTaskCollectionArray) ToGetNamespaceSc
 	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceScheduledTasksScheduledTaskCollectionArrayOutput)
 }
 
-func (i GetNamespaceScheduledTasksScheduledTaskCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNamespaceScheduledTasksScheduledTaskCollection] {
-	return pulumix.Output[[]GetNamespaceScheduledTasksScheduledTaskCollection]{
-		OutputState: i.ToGetNamespaceScheduledTasksScheduledTaskCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetNamespaceScheduledTasksScheduledTaskCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetNamespaceScheduledTasksScheduledTaskCollectionOutput) ElementType() reflect.Type {
@@ -8533,12 +7284,6 @@ func (o GetNamespaceScheduledTasksScheduledTaskCollectionOutput) ToGetNamespaceS
 
 func (o GetNamespaceScheduledTasksScheduledTaskCollectionOutput) ToGetNamespaceScheduledTasksScheduledTaskCollectionOutputWithContext(ctx context.Context) GetNamespaceScheduledTasksScheduledTaskCollectionOutput {
 	return o
-}
-
-func (o GetNamespaceScheduledTasksScheduledTaskCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetNamespaceScheduledTasksScheduledTaskCollection] {
-	return pulumix.Output[GetNamespaceScheduledTasksScheduledTaskCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetNamespaceScheduledTasksScheduledTaskCollectionOutput) Items() GetNamespaceScheduledTasksScheduledTaskCollectionItemArrayOutput {
@@ -8561,12 +7306,6 @@ func (o GetNamespaceScheduledTasksScheduledTaskCollectionArrayOutput) ToGetNames
 	return o
 }
 
-func (o GetNamespaceScheduledTasksScheduledTaskCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNamespaceScheduledTasksScheduledTaskCollection] {
-	return pulumix.Output[[]GetNamespaceScheduledTasksScheduledTaskCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetNamespaceScheduledTasksScheduledTaskCollectionArrayOutput) Index(i pulumi.IntInput) GetNamespaceScheduledTasksScheduledTaskCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNamespaceScheduledTasksScheduledTaskCollection {
 		return vs[0].([]GetNamespaceScheduledTasksScheduledTaskCollection)[vs[1].(int)]
@@ -8577,37 +7316,37 @@ type GetNamespaceScheduledTasksScheduledTaskCollectionItem struct {
 	// Action for scheduled task.
 	Actions []GetNamespaceScheduledTasksScheduledTaskCollectionItemAction `pulumi:"actions"`
 	// The ID of the compartment in which to list resources.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A filter to return only resources that match the given display name exactly.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the data plane resource.
-	Id   string `pulumi:"id"`
-	Kind string `pulumi:"kind"`
+	Id   *string `pulumi:"id"`
+	Kind *string `pulumi:"kind"`
 	// The Logging Analytics namespace used for the request.
-	Namespace string `pulumi:"namespace"`
+	Namespace *string `pulumi:"namespace"`
 	// Number of execution occurrences.
-	NumOccurrences string `pulumi:"numOccurrences"`
+	NumOccurrences *string `pulumi:"numOccurrences"`
 	// The ManagementSavedSearch id [OCID] utilized in the action.
-	SavedSearchId   string `pulumi:"savedSearchId"`
-	ScheduledTaskId string `pulumi:"scheduledTaskId"`
+	SavedSearchId   *string `pulumi:"savedSearchId"`
+	ScheduledTaskId *string `pulumi:"scheduledTaskId"`
 	// Schedules.
 	Schedules []GetNamespaceScheduledTasksScheduledTaskCollectionItemSchedule `pulumi:"schedules"`
 	// The current state of the scheduled task.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// Status of the scheduled task. - PURGE_RESOURCE_NOT_FOUND
-	TaskStatus string `pulumi:"taskStatus"`
+	TaskStatus *string `pulumi:"taskStatus"`
 	// Required parameter to specify schedule task type.
-	TaskType string `pulumi:"taskType"`
+	TaskType *string `pulumi:"taskType"`
 	// The date and time the scheduled task was created, in the format defined by RFC3339.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The date and time the scheduled task was last updated, in the format defined by RFC3339.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 	// most recent Work Request Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the asynchronous request.
-	WorkRequestId string `pulumi:"workRequestId"`
+	WorkRequestId *string `pulumi:"workRequestId"`
 }
 
 // GetNamespaceScheduledTasksScheduledTaskCollectionItemInput is an input type that accepts GetNamespaceScheduledTasksScheduledTaskCollectionItemArgs and GetNamespaceScheduledTasksScheduledTaskCollectionItemOutput values.
@@ -8625,37 +7364,37 @@ type GetNamespaceScheduledTasksScheduledTaskCollectionItemArgs struct {
 	// Action for scheduled task.
 	Actions GetNamespaceScheduledTasksScheduledTaskCollectionItemActionArrayInput `pulumi:"actions"`
 	// The ID of the compartment in which to list resources.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// A filter to return only resources that match the given display name exactly.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the data plane resource.
-	Id   pulumi.StringInput `pulumi:"id"`
-	Kind pulumi.StringInput `pulumi:"kind"`
+	Id   pulumi.StringPtrInput `pulumi:"id"`
+	Kind pulumi.StringPtrInput `pulumi:"kind"`
 	// The Logging Analytics namespace used for the request.
-	Namespace pulumi.StringInput `pulumi:"namespace"`
+	Namespace pulumi.StringPtrInput `pulumi:"namespace"`
 	// Number of execution occurrences.
-	NumOccurrences pulumi.StringInput `pulumi:"numOccurrences"`
+	NumOccurrences pulumi.StringPtrInput `pulumi:"numOccurrences"`
 	// The ManagementSavedSearch id [OCID] utilized in the action.
-	SavedSearchId   pulumi.StringInput `pulumi:"savedSearchId"`
-	ScheduledTaskId pulumi.StringInput `pulumi:"scheduledTaskId"`
+	SavedSearchId   pulumi.StringPtrInput `pulumi:"savedSearchId"`
+	ScheduledTaskId pulumi.StringPtrInput `pulumi:"scheduledTaskId"`
 	// Schedules.
 	Schedules GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleArrayInput `pulumi:"schedules"`
 	// The current state of the scheduled task.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// Status of the scheduled task. - PURGE_RESOURCE_NOT_FOUND
-	TaskStatus pulumi.StringInput `pulumi:"taskStatus"`
+	TaskStatus pulumi.StringPtrInput `pulumi:"taskStatus"`
 	// Required parameter to specify schedule task type.
-	TaskType pulumi.StringInput `pulumi:"taskType"`
+	TaskType pulumi.StringPtrInput `pulumi:"taskType"`
 	// The date and time the scheduled task was created, in the format defined by RFC3339.
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// The date and time the scheduled task was last updated, in the format defined by RFC3339.
-	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
 	// most recent Work Request Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the asynchronous request.
-	WorkRequestId pulumi.StringInput `pulumi:"workRequestId"`
+	WorkRequestId pulumi.StringPtrInput `pulumi:"workRequestId"`
 }
 
 func (GetNamespaceScheduledTasksScheduledTaskCollectionItemArgs) ElementType() reflect.Type {
@@ -8668,12 +7407,6 @@ func (i GetNamespaceScheduledTasksScheduledTaskCollectionItemArgs) ToGetNamespac
 
 func (i GetNamespaceScheduledTasksScheduledTaskCollectionItemArgs) ToGetNamespaceScheduledTasksScheduledTaskCollectionItemOutputWithContext(ctx context.Context) GetNamespaceScheduledTasksScheduledTaskCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceScheduledTasksScheduledTaskCollectionItemOutput)
-}
-
-func (i GetNamespaceScheduledTasksScheduledTaskCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetNamespaceScheduledTasksScheduledTaskCollectionItem] {
-	return pulumix.Output[GetNamespaceScheduledTasksScheduledTaskCollectionItem]{
-		OutputState: i.ToGetNamespaceScheduledTasksScheduledTaskCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetNamespaceScheduledTasksScheduledTaskCollectionItemArrayInput is an input type that accepts GetNamespaceScheduledTasksScheduledTaskCollectionItemArray and GetNamespaceScheduledTasksScheduledTaskCollectionItemArrayOutput values.
@@ -8701,12 +7434,6 @@ func (i GetNamespaceScheduledTasksScheduledTaskCollectionItemArray) ToGetNamespa
 	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceScheduledTasksScheduledTaskCollectionItemArrayOutput)
 }
 
-func (i GetNamespaceScheduledTasksScheduledTaskCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNamespaceScheduledTasksScheduledTaskCollectionItem] {
-	return pulumix.Output[[]GetNamespaceScheduledTasksScheduledTaskCollectionItem]{
-		OutputState: i.ToGetNamespaceScheduledTasksScheduledTaskCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetNamespaceScheduledTasksScheduledTaskCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetNamespaceScheduledTasksScheduledTaskCollectionItemOutput) ElementType() reflect.Type {
@@ -8721,12 +7448,6 @@ func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemOutput) ToGetNamesp
 	return o
 }
 
-func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetNamespaceScheduledTasksScheduledTaskCollectionItem] {
-	return pulumix.Output[GetNamespaceScheduledTasksScheduledTaskCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Action for scheduled task.
 func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemOutput) Actions() GetNamespaceScheduledTasksScheduledTaskCollectionItemActionArrayOutput {
 	return o.ApplyT(func(v GetNamespaceScheduledTasksScheduledTaskCollectionItem) []GetNamespaceScheduledTasksScheduledTaskCollectionItemAction {
@@ -8735,8 +7456,8 @@ func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemOutput) Actions() G
 }
 
 // The ID of the compartment in which to list resources.
-func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNamespaceScheduledTasksScheduledTaskCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNamespaceScheduledTasksScheduledTaskCollectionItem) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -8747,8 +7468,8 @@ func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemOutput) DefinedTags
 }
 
 // A filter to return only resources that match the given display name exactly.
-func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNamespaceScheduledTasksScheduledTaskCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNamespaceScheduledTasksScheduledTaskCollectionItem) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -8759,31 +7480,31 @@ func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemOutput) FreeformTag
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the data plane resource.
-func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNamespaceScheduledTasksScheduledTaskCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNamespaceScheduledTasksScheduledTaskCollectionItem) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
-func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemOutput) Kind() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNamespaceScheduledTasksScheduledTaskCollectionItem) string { return v.Kind }).(pulumi.StringOutput)
+func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemOutput) Kind() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNamespaceScheduledTasksScheduledTaskCollectionItem) *string { return v.Kind }).(pulumi.StringPtrOutput)
 }
 
 // The Logging Analytics namespace used for the request.
-func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemOutput) Namespace() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNamespaceScheduledTasksScheduledTaskCollectionItem) string { return v.Namespace }).(pulumi.StringOutput)
+func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemOutput) Namespace() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNamespaceScheduledTasksScheduledTaskCollectionItem) *string { return v.Namespace }).(pulumi.StringPtrOutput)
 }
 
 // Number of execution occurrences.
-func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemOutput) NumOccurrences() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNamespaceScheduledTasksScheduledTaskCollectionItem) string { return v.NumOccurrences }).(pulumi.StringOutput)
+func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemOutput) NumOccurrences() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNamespaceScheduledTasksScheduledTaskCollectionItem) *string { return v.NumOccurrences }).(pulumi.StringPtrOutput)
 }
 
 // The ManagementSavedSearch id [OCID] utilized in the action.
-func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemOutput) SavedSearchId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNamespaceScheduledTasksScheduledTaskCollectionItem) string { return v.SavedSearchId }).(pulumi.StringOutput)
+func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemOutput) SavedSearchId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNamespaceScheduledTasksScheduledTaskCollectionItem) *string { return v.SavedSearchId }).(pulumi.StringPtrOutput)
 }
 
-func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemOutput) ScheduledTaskId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNamespaceScheduledTasksScheduledTaskCollectionItem) string { return v.ScheduledTaskId }).(pulumi.StringOutput)
+func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemOutput) ScheduledTaskId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNamespaceScheduledTasksScheduledTaskCollectionItem) *string { return v.ScheduledTaskId }).(pulumi.StringPtrOutput)
 }
 
 // Schedules.
@@ -8794,33 +7515,33 @@ func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemOutput) Schedules()
 }
 
 // The current state of the scheduled task.
-func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNamespaceScheduledTasksScheduledTaskCollectionItem) string { return v.State }).(pulumi.StringOutput)
+func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNamespaceScheduledTasksScheduledTaskCollectionItem) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Status of the scheduled task. - PURGE_RESOURCE_NOT_FOUND
-func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemOutput) TaskStatus() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNamespaceScheduledTasksScheduledTaskCollectionItem) string { return v.TaskStatus }).(pulumi.StringOutput)
+func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemOutput) TaskStatus() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNamespaceScheduledTasksScheduledTaskCollectionItem) *string { return v.TaskStatus }).(pulumi.StringPtrOutput)
 }
 
 // Required parameter to specify schedule task type.
-func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemOutput) TaskType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNamespaceScheduledTasksScheduledTaskCollectionItem) string { return v.TaskType }).(pulumi.StringOutput)
+func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemOutput) TaskType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNamespaceScheduledTasksScheduledTaskCollectionItem) *string { return v.TaskType }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the scheduled task was created, in the format defined by RFC3339.
-func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNamespaceScheduledTasksScheduledTaskCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNamespaceScheduledTasksScheduledTaskCollectionItem) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the scheduled task was last updated, in the format defined by RFC3339.
-func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNamespaceScheduledTasksScheduledTaskCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNamespaceScheduledTasksScheduledTaskCollectionItem) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 // most recent Work Request Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the asynchronous request.
-func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemOutput) WorkRequestId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNamespaceScheduledTasksScheduledTaskCollectionItem) string { return v.WorkRequestId }).(pulumi.StringOutput)
+func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemOutput) WorkRequestId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNamespaceScheduledTasksScheduledTaskCollectionItem) *string { return v.WorkRequestId }).(pulumi.StringPtrOutput)
 }
 
 type GetNamespaceScheduledTasksScheduledTaskCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -8837,12 +7558,6 @@ func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemArrayOutput) ToGetN
 	return o
 }
 
-func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNamespaceScheduledTasksScheduledTaskCollectionItem] {
-	return pulumix.Output[[]GetNamespaceScheduledTasksScheduledTaskCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemArrayOutput) Index(i pulumi.IntInput) GetNamespaceScheduledTasksScheduledTaskCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNamespaceScheduledTasksScheduledTaskCollectionItem {
 		return vs[0].([]GetNamespaceScheduledTasksScheduledTaskCollectionItem)[vs[1].(int)]
@@ -8851,20 +7566,20 @@ func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemArrayOutput) Index(
 
 type GetNamespaceScheduledTasksScheduledTaskCollectionItemAction struct {
 	// if true, purge child compartments data
-	CompartmentIdInSubtree bool `pulumi:"compartmentIdInSubtree"`
+	CompartmentIdInSubtree *bool `pulumi:"compartmentIdInSubtree"`
 	// the type of the log data to be purged
-	DataType          string                                                                        `pulumi:"dataType"`
+	DataType          *string                                                                       `pulumi:"dataType"`
 	MetricExtractions []GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtraction `pulumi:"metricExtractions"`
 	// the compartment OCID under which the data will be purged
-	PurgeCompartmentId string `pulumi:"purgeCompartmentId"`
+	PurgeCompartmentId *string `pulumi:"purgeCompartmentId"`
 	// The duration of data to be retained, which is used to calculate the timeDataEnded when the task fires. The value should be negative. Purge duration in ISO 8601 extended format as described in https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. -P365D (not -P1Y) or -P14D (not -P2W).
-	PurgeDuration string `pulumi:"purgeDuration"`
+	PurgeDuration *string `pulumi:"purgeDuration"`
 	// Purge query string.
-	QueryString string `pulumi:"queryString"`
+	QueryString *string `pulumi:"queryString"`
 	// The ManagementSavedSearch id [OCID] utilized in the action.
-	SavedSearchId string `pulumi:"savedSearchId"`
+	SavedSearchId *string `pulumi:"savedSearchId"`
 	// Schedule type discriminator.
-	Type string `pulumi:"type"`
+	Type *string `pulumi:"type"`
 }
 
 // GetNamespaceScheduledTasksScheduledTaskCollectionItemActionInput is an input type that accepts GetNamespaceScheduledTasksScheduledTaskCollectionItemActionArgs and GetNamespaceScheduledTasksScheduledTaskCollectionItemActionOutput values.
@@ -8880,20 +7595,20 @@ type GetNamespaceScheduledTasksScheduledTaskCollectionItemActionInput interface 
 
 type GetNamespaceScheduledTasksScheduledTaskCollectionItemActionArgs struct {
 	// if true, purge child compartments data
-	CompartmentIdInSubtree pulumi.BoolInput `pulumi:"compartmentIdInSubtree"`
+	CompartmentIdInSubtree pulumi.BoolPtrInput `pulumi:"compartmentIdInSubtree"`
 	// the type of the log data to be purged
-	DataType          pulumi.StringInput                                                                    `pulumi:"dataType"`
+	DataType          pulumi.StringPtrInput                                                                 `pulumi:"dataType"`
 	MetricExtractions GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionArrayInput `pulumi:"metricExtractions"`
 	// the compartment OCID under which the data will be purged
-	PurgeCompartmentId pulumi.StringInput `pulumi:"purgeCompartmentId"`
+	PurgeCompartmentId pulumi.StringPtrInput `pulumi:"purgeCompartmentId"`
 	// The duration of data to be retained, which is used to calculate the timeDataEnded when the task fires. The value should be negative. Purge duration in ISO 8601 extended format as described in https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. -P365D (not -P1Y) or -P14D (not -P2W).
-	PurgeDuration pulumi.StringInput `pulumi:"purgeDuration"`
+	PurgeDuration pulumi.StringPtrInput `pulumi:"purgeDuration"`
 	// Purge query string.
-	QueryString pulumi.StringInput `pulumi:"queryString"`
+	QueryString pulumi.StringPtrInput `pulumi:"queryString"`
 	// The ManagementSavedSearch id [OCID] utilized in the action.
-	SavedSearchId pulumi.StringInput `pulumi:"savedSearchId"`
+	SavedSearchId pulumi.StringPtrInput `pulumi:"savedSearchId"`
 	// Schedule type discriminator.
-	Type pulumi.StringInput `pulumi:"type"`
+	Type pulumi.StringPtrInput `pulumi:"type"`
 }
 
 func (GetNamespaceScheduledTasksScheduledTaskCollectionItemActionArgs) ElementType() reflect.Type {
@@ -8906,12 +7621,6 @@ func (i GetNamespaceScheduledTasksScheduledTaskCollectionItemActionArgs) ToGetNa
 
 func (i GetNamespaceScheduledTasksScheduledTaskCollectionItemActionArgs) ToGetNamespaceScheduledTasksScheduledTaskCollectionItemActionOutputWithContext(ctx context.Context) GetNamespaceScheduledTasksScheduledTaskCollectionItemActionOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceScheduledTasksScheduledTaskCollectionItemActionOutput)
-}
-
-func (i GetNamespaceScheduledTasksScheduledTaskCollectionItemActionArgs) ToOutput(ctx context.Context) pulumix.Output[GetNamespaceScheduledTasksScheduledTaskCollectionItemAction] {
-	return pulumix.Output[GetNamespaceScheduledTasksScheduledTaskCollectionItemAction]{
-		OutputState: i.ToGetNamespaceScheduledTasksScheduledTaskCollectionItemActionOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetNamespaceScheduledTasksScheduledTaskCollectionItemActionArrayInput is an input type that accepts GetNamespaceScheduledTasksScheduledTaskCollectionItemActionArray and GetNamespaceScheduledTasksScheduledTaskCollectionItemActionArrayOutput values.
@@ -8939,12 +7648,6 @@ func (i GetNamespaceScheduledTasksScheduledTaskCollectionItemActionArray) ToGetN
 	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceScheduledTasksScheduledTaskCollectionItemActionArrayOutput)
 }
 
-func (i GetNamespaceScheduledTasksScheduledTaskCollectionItemActionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNamespaceScheduledTasksScheduledTaskCollectionItemAction] {
-	return pulumix.Output[[]GetNamespaceScheduledTasksScheduledTaskCollectionItemAction]{
-		OutputState: i.ToGetNamespaceScheduledTasksScheduledTaskCollectionItemActionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetNamespaceScheduledTasksScheduledTaskCollectionItemActionOutput struct{ *pulumi.OutputState }
 
 func (GetNamespaceScheduledTasksScheduledTaskCollectionItemActionOutput) ElementType() reflect.Type {
@@ -8959,22 +7662,16 @@ func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemActionOutput) ToGet
 	return o
 }
 
-func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemActionOutput) ToOutput(ctx context.Context) pulumix.Output[GetNamespaceScheduledTasksScheduledTaskCollectionItemAction] {
-	return pulumix.Output[GetNamespaceScheduledTasksScheduledTaskCollectionItemAction]{
-		OutputState: o.OutputState,
-	}
-}
-
 // if true, purge child compartments data
-func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemActionOutput) CompartmentIdInSubtree() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetNamespaceScheduledTasksScheduledTaskCollectionItemAction) bool {
+func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemActionOutput) CompartmentIdInSubtree() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetNamespaceScheduledTasksScheduledTaskCollectionItemAction) *bool {
 		return v.CompartmentIdInSubtree
-	}).(pulumi.BoolOutput)
+	}).(pulumi.BoolPtrOutput)
 }
 
 // the type of the log data to be purged
-func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemActionOutput) DataType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNamespaceScheduledTasksScheduledTaskCollectionItemAction) string { return v.DataType }).(pulumi.StringOutput)
+func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemActionOutput) DataType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNamespaceScheduledTasksScheduledTaskCollectionItemAction) *string { return v.DataType }).(pulumi.StringPtrOutput)
 }
 
 func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemActionOutput) MetricExtractions() GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionArrayOutput {
@@ -8984,30 +7681,30 @@ func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemActionOutput) Metri
 }
 
 // the compartment OCID under which the data will be purged
-func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemActionOutput) PurgeCompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNamespaceScheduledTasksScheduledTaskCollectionItemAction) string {
+func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemActionOutput) PurgeCompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNamespaceScheduledTasksScheduledTaskCollectionItemAction) *string {
 		return v.PurgeCompartmentId
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The duration of data to be retained, which is used to calculate the timeDataEnded when the task fires. The value should be negative. Purge duration in ISO 8601 extended format as described in https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. -P365D (not -P1Y) or -P14D (not -P2W).
-func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemActionOutput) PurgeDuration() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNamespaceScheduledTasksScheduledTaskCollectionItemAction) string { return v.PurgeDuration }).(pulumi.StringOutput)
+func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemActionOutput) PurgeDuration() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNamespaceScheduledTasksScheduledTaskCollectionItemAction) *string { return v.PurgeDuration }).(pulumi.StringPtrOutput)
 }
 
 // Purge query string.
-func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemActionOutput) QueryString() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNamespaceScheduledTasksScheduledTaskCollectionItemAction) string { return v.QueryString }).(pulumi.StringOutput)
+func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemActionOutput) QueryString() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNamespaceScheduledTasksScheduledTaskCollectionItemAction) *string { return v.QueryString }).(pulumi.StringPtrOutput)
 }
 
 // The ManagementSavedSearch id [OCID] utilized in the action.
-func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemActionOutput) SavedSearchId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNamespaceScheduledTasksScheduledTaskCollectionItemAction) string { return v.SavedSearchId }).(pulumi.StringOutput)
+func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemActionOutput) SavedSearchId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNamespaceScheduledTasksScheduledTaskCollectionItemAction) *string { return v.SavedSearchId }).(pulumi.StringPtrOutput)
 }
 
 // Schedule type discriminator.
-func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemActionOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNamespaceScheduledTasksScheduledTaskCollectionItemAction) string { return v.Type }).(pulumi.StringOutput)
+func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemActionOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNamespaceScheduledTasksScheduledTaskCollectionItemAction) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
 
 type GetNamespaceScheduledTasksScheduledTaskCollectionItemActionArrayOutput struct{ *pulumi.OutputState }
@@ -9024,12 +7721,6 @@ func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemActionArrayOutput) 
 	return o
 }
 
-func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemActionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNamespaceScheduledTasksScheduledTaskCollectionItemAction] {
-	return pulumix.Output[[]GetNamespaceScheduledTasksScheduledTaskCollectionItemAction]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemActionArrayOutput) Index(i pulumi.IntInput) GetNamespaceScheduledTasksScheduledTaskCollectionItemActionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNamespaceScheduledTasksScheduledTaskCollectionItemAction {
 		return vs[0].([]GetNamespaceScheduledTasksScheduledTaskCollectionItemAction)[vs[1].(int)]
@@ -9038,11 +7729,11 @@ func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemActionArrayOutput) 
 
 type GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtraction struct {
 	// The ID of the compartment in which to list resources.
-	CompartmentId string `pulumi:"compartmentId"`
-	MetricName    string `pulumi:"metricName"`
+	CompartmentId *string `pulumi:"compartmentId"`
+	MetricName    *string `pulumi:"metricName"`
 	// The Logging Analytics namespace used for the request.
-	Namespace     string `pulumi:"namespace"`
-	ResourceGroup string `pulumi:"resourceGroup"`
+	Namespace     *string `pulumi:"namespace"`
+	ResourceGroup *string `pulumi:"resourceGroup"`
 }
 
 // GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionInput is an input type that accepts GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionArgs and GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionOutput values.
@@ -9058,11 +7749,11 @@ type GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtraction
 
 type GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionArgs struct {
 	// The ID of the compartment in which to list resources.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
-	MetricName    pulumi.StringInput `pulumi:"metricName"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
+	MetricName    pulumi.StringPtrInput `pulumi:"metricName"`
 	// The Logging Analytics namespace used for the request.
-	Namespace     pulumi.StringInput `pulumi:"namespace"`
-	ResourceGroup pulumi.StringInput `pulumi:"resourceGroup"`
+	Namespace     pulumi.StringPtrInput `pulumi:"namespace"`
+	ResourceGroup pulumi.StringPtrInput `pulumi:"resourceGroup"`
 }
 
 func (GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionArgs) ElementType() reflect.Type {
@@ -9075,12 +7766,6 @@ func (i GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtract
 
 func (i GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionArgs) ToGetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionOutputWithContext(ctx context.Context) GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionOutput)
-}
-
-func (i GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionArgs) ToOutput(ctx context.Context) pulumix.Output[GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtraction] {
-	return pulumix.Output[GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtraction]{
-		OutputState: i.ToGetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionArrayInput is an input type that accepts GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionArray and GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionArrayOutput values.
@@ -9108,12 +7793,6 @@ func (i GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtract
 	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionArrayOutput)
 }
 
-func (i GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtraction] {
-	return pulumix.Output[[]GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtraction]{
-		OutputState: i.ToGetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionOutput struct{ *pulumi.OutputState }
 
 func (GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionOutput) ElementType() reflect.Type {
@@ -9128,36 +7807,30 @@ func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtract
 	return o
 }
 
-func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionOutput) ToOutput(ctx context.Context) pulumix.Output[GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtraction] {
-	return pulumix.Output[GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtraction]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The ID of the compartment in which to list resources.
-func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtraction) string {
+func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtraction) *string {
 		return v.CompartmentId
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
-func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionOutput) MetricName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtraction) string {
+func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionOutput) MetricName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtraction) *string {
 		return v.MetricName
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The Logging Analytics namespace used for the request.
-func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionOutput) Namespace() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtraction) string {
+func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionOutput) Namespace() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtraction) *string {
 		return v.Namespace
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
-func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionOutput) ResourceGroup() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtraction) string {
+func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionOutput) ResourceGroup() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtraction) *string {
 		return v.ResourceGroup
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionArrayOutput struct{ *pulumi.OutputState }
@@ -9172,12 +7845,6 @@ func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtract
 
 func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionArrayOutput) ToGetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionArrayOutputWithContext(ctx context.Context) GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionArrayOutput {
 	return o
-}
-
-func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtraction] {
-	return pulumix.Output[[]GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtraction]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionArrayOutput) Index(i pulumi.IntInput) GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionOutput {
@@ -9217,12 +7884,6 @@ func (i GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleArgs) ToGet
 	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleOutput)
 }
 
-func (i GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleArgs) ToOutput(ctx context.Context) pulumix.Output[GetNamespaceScheduledTasksScheduledTaskCollectionItemSchedule] {
-	return pulumix.Output[GetNamespaceScheduledTasksScheduledTaskCollectionItemSchedule]{
-		OutputState: i.ToGetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleArrayInput is an input type that accepts GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleArray and GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleArrayOutput values.
 // You can construct a concrete instance of `GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleArrayInput` via:
 //
@@ -9248,12 +7909,6 @@ func (i GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleArray) ToGe
 	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleArrayOutput)
 }
 
-func (i GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNamespaceScheduledTasksScheduledTaskCollectionItemSchedule] {
-	return pulumix.Output[[]GetNamespaceScheduledTasksScheduledTaskCollectionItemSchedule]{
-		OutputState: i.ToGetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleOutput struct{ *pulumi.OutputState }
 
 func (GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleOutput) ElementType() reflect.Type {
@@ -9266,12 +7921,6 @@ func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleOutput) ToG
 
 func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleOutput) ToGetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleOutputWithContext(ctx context.Context) GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleOutput {
 	return o
-}
-
-func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleOutput) ToOutput(ctx context.Context) pulumix.Output[GetNamespaceScheduledTasksScheduledTaskCollectionItemSchedule] {
-	return pulumix.Output[GetNamespaceScheduledTasksScheduledTaskCollectionItemSchedule]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleOutput) Schedules() GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleScheduleArrayOutput {
@@ -9294,12 +7943,6 @@ func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleArrayOutput
 	return o
 }
 
-func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNamespaceScheduledTasksScheduledTaskCollectionItemSchedule] {
-	return pulumix.Output[[]GetNamespaceScheduledTasksScheduledTaskCollectionItemSchedule]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleArrayOutput) Index(i pulumi.IntInput) GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNamespaceScheduledTasksScheduledTaskCollectionItemSchedule {
 		return vs[0].([]GetNamespaceScheduledTasksScheduledTaskCollectionItemSchedule)[vs[1].(int)]
@@ -9308,17 +7951,17 @@ func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleArrayOutput
 
 type GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleSchedule struct {
 	// Value in cron format.
-	Expression string `pulumi:"expression"`
+	Expression *string `pulumi:"expression"`
 	// Schedule misfire retry policy.
-	MisfirePolicy string `pulumi:"misfirePolicy"`
+	MisfirePolicy *string `pulumi:"misfirePolicy"`
 	// Recurring interval in ISO 8601 extended format as described in https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. P14D (not P2W). The value must be at least 5 minutes (PT5M) and at most 3 weeks (P21D or PT30240M).
-	RecurringInterval string `pulumi:"recurringInterval"`
+	RecurringInterval *string `pulumi:"recurringInterval"`
 	// Number of times (0-based) to execute until auto-stop. Default value -1 will execute indefinitely. Value 0 will execute once.
-	RepeatCount int `pulumi:"repeatCount"`
+	RepeatCount *int `pulumi:"repeatCount"`
 	// Time zone, by default UTC.
-	TimeZone string `pulumi:"timeZone"`
+	TimeZone *string `pulumi:"timeZone"`
 	// Schedule type discriminator.
-	Type string `pulumi:"type"`
+	Type *string `pulumi:"type"`
 }
 
 // GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleScheduleInput is an input type that accepts GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleScheduleArgs and GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleScheduleOutput values.
@@ -9334,17 +7977,17 @@ type GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleScheduleInput 
 
 type GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleScheduleArgs struct {
 	// Value in cron format.
-	Expression pulumi.StringInput `pulumi:"expression"`
+	Expression pulumi.StringPtrInput `pulumi:"expression"`
 	// Schedule misfire retry policy.
-	MisfirePolicy pulumi.StringInput `pulumi:"misfirePolicy"`
+	MisfirePolicy pulumi.StringPtrInput `pulumi:"misfirePolicy"`
 	// Recurring interval in ISO 8601 extended format as described in https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. P14D (not P2W). The value must be at least 5 minutes (PT5M) and at most 3 weeks (P21D or PT30240M).
-	RecurringInterval pulumi.StringInput `pulumi:"recurringInterval"`
+	RecurringInterval pulumi.StringPtrInput `pulumi:"recurringInterval"`
 	// Number of times (0-based) to execute until auto-stop. Default value -1 will execute indefinitely. Value 0 will execute once.
-	RepeatCount pulumi.IntInput `pulumi:"repeatCount"`
+	RepeatCount pulumi.IntPtrInput `pulumi:"repeatCount"`
 	// Time zone, by default UTC.
-	TimeZone pulumi.StringInput `pulumi:"timeZone"`
+	TimeZone pulumi.StringPtrInput `pulumi:"timeZone"`
 	// Schedule type discriminator.
-	Type pulumi.StringInput `pulumi:"type"`
+	Type pulumi.StringPtrInput `pulumi:"type"`
 }
 
 func (GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleScheduleArgs) ElementType() reflect.Type {
@@ -9357,12 +8000,6 @@ func (i GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleScheduleArg
 
 func (i GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleScheduleArgs) ToGetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleScheduleOutputWithContext(ctx context.Context) GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleScheduleOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleScheduleOutput)
-}
-
-func (i GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleScheduleArgs) ToOutput(ctx context.Context) pulumix.Output[GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleSchedule] {
-	return pulumix.Output[GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleSchedule]{
-		OutputState: i.ToGetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleScheduleOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleScheduleArrayInput is an input type that accepts GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleScheduleArray and GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleScheduleArrayOutput values.
@@ -9390,12 +8027,6 @@ func (i GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleScheduleArr
 	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleScheduleArrayOutput)
 }
 
-func (i GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleScheduleArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleSchedule] {
-	return pulumix.Output[[]GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleSchedule]{
-		OutputState: i.ToGetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleScheduleArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleScheduleOutput struct{ *pulumi.OutputState }
 
 func (GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleScheduleOutput) ElementType() reflect.Type {
@@ -9410,50 +8041,44 @@ func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleScheduleOut
 	return o
 }
 
-func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleScheduleOutput) ToOutput(ctx context.Context) pulumix.Output[GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleSchedule] {
-	return pulumix.Output[GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleSchedule]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Value in cron format.
-func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleScheduleOutput) Expression() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleSchedule) string {
+func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleScheduleOutput) Expression() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleSchedule) *string {
 		return v.Expression
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Schedule misfire retry policy.
-func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleScheduleOutput) MisfirePolicy() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleSchedule) string {
+func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleScheduleOutput) MisfirePolicy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleSchedule) *string {
 		return v.MisfirePolicy
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Recurring interval in ISO 8601 extended format as described in https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. P14D (not P2W). The value must be at least 5 minutes (PT5M) and at most 3 weeks (P21D or PT30240M).
-func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleScheduleOutput) RecurringInterval() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleSchedule) string {
+func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleScheduleOutput) RecurringInterval() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleSchedule) *string {
 		return v.RecurringInterval
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Number of times (0-based) to execute until auto-stop. Default value -1 will execute indefinitely. Value 0 will execute once.
-func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleScheduleOutput) RepeatCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleSchedule) int {
+func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleScheduleOutput) RepeatCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleSchedule) *int {
 		return v.RepeatCount
-	}).(pulumi.IntOutput)
+	}).(pulumi.IntPtrOutput)
 }
 
 // Time zone, by default UTC.
-func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleScheduleOutput) TimeZone() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleSchedule) string {
+func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleScheduleOutput) TimeZone() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleSchedule) *string {
 		return v.TimeZone
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Schedule type discriminator.
-func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleScheduleOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleSchedule) string { return v.Type }).(pulumi.StringOutput)
+func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleScheduleOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleSchedule) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
 
 type GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleScheduleArrayOutput struct{ *pulumi.OutputState }
@@ -9470,12 +8095,6 @@ func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleScheduleArr
 	return o
 }
 
-func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleScheduleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleSchedule] {
-	return pulumix.Output[[]GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleSchedule]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleScheduleArrayOutput) Index(i pulumi.IntInput) GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleScheduleOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleSchedule {
 		return vs[0].([]GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleSchedule)[vs[1].(int)]
@@ -9484,11 +8103,11 @@ func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleScheduleArr
 
 type GetNamespaceStorageEncryptionKeyInfoItem struct {
 	// This is the key OCID of the encryption key (null if Oracle-managed).
-	KeyId string `pulumi:"keyId"`
+	KeyId *string `pulumi:"keyId"`
 	// This is the source of the encryption key.
-	KeySource string `pulumi:"keySource"`
+	KeySource *string `pulumi:"keySource"`
 	// This is the type of data to be encrypted. It can be either active or archival.
-	KeyType string `pulumi:"keyType"`
+	KeyType *string `pulumi:"keyType"`
 }
 
 // GetNamespaceStorageEncryptionKeyInfoItemInput is an input type that accepts GetNamespaceStorageEncryptionKeyInfoItemArgs and GetNamespaceStorageEncryptionKeyInfoItemOutput values.
@@ -9504,11 +8123,11 @@ type GetNamespaceStorageEncryptionKeyInfoItemInput interface {
 
 type GetNamespaceStorageEncryptionKeyInfoItemArgs struct {
 	// This is the key OCID of the encryption key (null if Oracle-managed).
-	KeyId pulumi.StringInput `pulumi:"keyId"`
+	KeyId pulumi.StringPtrInput `pulumi:"keyId"`
 	// This is the source of the encryption key.
-	KeySource pulumi.StringInput `pulumi:"keySource"`
+	KeySource pulumi.StringPtrInput `pulumi:"keySource"`
 	// This is the type of data to be encrypted. It can be either active or archival.
-	KeyType pulumi.StringInput `pulumi:"keyType"`
+	KeyType pulumi.StringPtrInput `pulumi:"keyType"`
 }
 
 func (GetNamespaceStorageEncryptionKeyInfoItemArgs) ElementType() reflect.Type {
@@ -9521,12 +8140,6 @@ func (i GetNamespaceStorageEncryptionKeyInfoItemArgs) ToGetNamespaceStorageEncry
 
 func (i GetNamespaceStorageEncryptionKeyInfoItemArgs) ToGetNamespaceStorageEncryptionKeyInfoItemOutputWithContext(ctx context.Context) GetNamespaceStorageEncryptionKeyInfoItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceStorageEncryptionKeyInfoItemOutput)
-}
-
-func (i GetNamespaceStorageEncryptionKeyInfoItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetNamespaceStorageEncryptionKeyInfoItem] {
-	return pulumix.Output[GetNamespaceStorageEncryptionKeyInfoItem]{
-		OutputState: i.ToGetNamespaceStorageEncryptionKeyInfoItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetNamespaceStorageEncryptionKeyInfoItemArrayInput is an input type that accepts GetNamespaceStorageEncryptionKeyInfoItemArray and GetNamespaceStorageEncryptionKeyInfoItemArrayOutput values.
@@ -9554,12 +8167,6 @@ func (i GetNamespaceStorageEncryptionKeyInfoItemArray) ToGetNamespaceStorageEncr
 	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceStorageEncryptionKeyInfoItemArrayOutput)
 }
 
-func (i GetNamespaceStorageEncryptionKeyInfoItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNamespaceStorageEncryptionKeyInfoItem] {
-	return pulumix.Output[[]GetNamespaceStorageEncryptionKeyInfoItem]{
-		OutputState: i.ToGetNamespaceStorageEncryptionKeyInfoItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetNamespaceStorageEncryptionKeyInfoItemOutput struct{ *pulumi.OutputState }
 
 func (GetNamespaceStorageEncryptionKeyInfoItemOutput) ElementType() reflect.Type {
@@ -9574,25 +8181,19 @@ func (o GetNamespaceStorageEncryptionKeyInfoItemOutput) ToGetNamespaceStorageEnc
 	return o
 }
 
-func (o GetNamespaceStorageEncryptionKeyInfoItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetNamespaceStorageEncryptionKeyInfoItem] {
-	return pulumix.Output[GetNamespaceStorageEncryptionKeyInfoItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // This is the key OCID of the encryption key (null if Oracle-managed).
-func (o GetNamespaceStorageEncryptionKeyInfoItemOutput) KeyId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNamespaceStorageEncryptionKeyInfoItem) string { return v.KeyId }).(pulumi.StringOutput)
+func (o GetNamespaceStorageEncryptionKeyInfoItemOutput) KeyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNamespaceStorageEncryptionKeyInfoItem) *string { return v.KeyId }).(pulumi.StringPtrOutput)
 }
 
 // This is the source of the encryption key.
-func (o GetNamespaceStorageEncryptionKeyInfoItemOutput) KeySource() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNamespaceStorageEncryptionKeyInfoItem) string { return v.KeySource }).(pulumi.StringOutput)
+func (o GetNamespaceStorageEncryptionKeyInfoItemOutput) KeySource() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNamespaceStorageEncryptionKeyInfoItem) *string { return v.KeySource }).(pulumi.StringPtrOutput)
 }
 
 // This is the type of data to be encrypted. It can be either active or archival.
-func (o GetNamespaceStorageEncryptionKeyInfoItemOutput) KeyType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNamespaceStorageEncryptionKeyInfoItem) string { return v.KeyType }).(pulumi.StringOutput)
+func (o GetNamespaceStorageEncryptionKeyInfoItemOutput) KeyType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNamespaceStorageEncryptionKeyInfoItem) *string { return v.KeyType }).(pulumi.StringPtrOutput)
 }
 
 type GetNamespaceStorageEncryptionKeyInfoItemArrayOutput struct{ *pulumi.OutputState }
@@ -9607,12 +8208,6 @@ func (o GetNamespaceStorageEncryptionKeyInfoItemArrayOutput) ToGetNamespaceStora
 
 func (o GetNamespaceStorageEncryptionKeyInfoItemArrayOutput) ToGetNamespaceStorageEncryptionKeyInfoItemArrayOutputWithContext(ctx context.Context) GetNamespaceStorageEncryptionKeyInfoItemArrayOutput {
 	return o
-}
-
-func (o GetNamespaceStorageEncryptionKeyInfoItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNamespaceStorageEncryptionKeyInfoItem] {
-	return pulumix.Output[[]GetNamespaceStorageEncryptionKeyInfoItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetNamespaceStorageEncryptionKeyInfoItemArrayOutput) Index(i pulumi.IntInput) GetNamespaceStorageEncryptionKeyInfoItemOutput {
@@ -9656,12 +8251,6 @@ func (i GetNamespaceStorageOverlappingRecallsFilterArgs) ToGetNamespaceStorageOv
 	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceStorageOverlappingRecallsFilterOutput)
 }
 
-func (i GetNamespaceStorageOverlappingRecallsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetNamespaceStorageOverlappingRecallsFilter] {
-	return pulumix.Output[GetNamespaceStorageOverlappingRecallsFilter]{
-		OutputState: i.ToGetNamespaceStorageOverlappingRecallsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetNamespaceStorageOverlappingRecallsFilterArrayInput is an input type that accepts GetNamespaceStorageOverlappingRecallsFilterArray and GetNamespaceStorageOverlappingRecallsFilterArrayOutput values.
 // You can construct a concrete instance of `GetNamespaceStorageOverlappingRecallsFilterArrayInput` via:
 //
@@ -9687,12 +8276,6 @@ func (i GetNamespaceStorageOverlappingRecallsFilterArray) ToGetNamespaceStorageO
 	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceStorageOverlappingRecallsFilterArrayOutput)
 }
 
-func (i GetNamespaceStorageOverlappingRecallsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNamespaceStorageOverlappingRecallsFilter] {
-	return pulumix.Output[[]GetNamespaceStorageOverlappingRecallsFilter]{
-		OutputState: i.ToGetNamespaceStorageOverlappingRecallsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetNamespaceStorageOverlappingRecallsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetNamespaceStorageOverlappingRecallsFilterOutput) ElementType() reflect.Type {
@@ -9705,12 +8288,6 @@ func (o GetNamespaceStorageOverlappingRecallsFilterOutput) ToGetNamespaceStorage
 
 func (o GetNamespaceStorageOverlappingRecallsFilterOutput) ToGetNamespaceStorageOverlappingRecallsFilterOutputWithContext(ctx context.Context) GetNamespaceStorageOverlappingRecallsFilterOutput {
 	return o
-}
-
-func (o GetNamespaceStorageOverlappingRecallsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetNamespaceStorageOverlappingRecallsFilter] {
-	return pulumix.Output[GetNamespaceStorageOverlappingRecallsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetNamespaceStorageOverlappingRecallsFilterOutput) Name() pulumi.StringOutput {
@@ -9737,12 +8314,6 @@ func (o GetNamespaceStorageOverlappingRecallsFilterArrayOutput) ToGetNamespaceSt
 
 func (o GetNamespaceStorageOverlappingRecallsFilterArrayOutput) ToGetNamespaceStorageOverlappingRecallsFilterArrayOutputWithContext(ctx context.Context) GetNamespaceStorageOverlappingRecallsFilterArrayOutput {
 	return o
-}
-
-func (o GetNamespaceStorageOverlappingRecallsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNamespaceStorageOverlappingRecallsFilter] {
-	return pulumix.Output[[]GetNamespaceStorageOverlappingRecallsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetNamespaceStorageOverlappingRecallsFilterArrayOutput) Index(i pulumi.IntInput) GetNamespaceStorageOverlappingRecallsFilterOutput {
@@ -9784,12 +8355,6 @@ func (i GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionArgs) To
 	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionOutput)
 }
 
-func (i GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetNamespaceStorageOverlappingRecallsOverlappingRecallCollection] {
-	return pulumix.Output[GetNamespaceStorageOverlappingRecallsOverlappingRecallCollection]{
-		OutputState: i.ToGetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionArrayInput is an input type that accepts GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionArray and GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionArrayOutput values.
 // You can construct a concrete instance of `GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionArrayInput` via:
 //
@@ -9815,12 +8380,6 @@ func (i GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionArray) T
 	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionArrayOutput)
 }
 
-func (i GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNamespaceStorageOverlappingRecallsOverlappingRecallCollection] {
-	return pulumix.Output[[]GetNamespaceStorageOverlappingRecallsOverlappingRecallCollection]{
-		OutputState: i.ToGetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionOutput) ElementType() reflect.Type {
@@ -9833,12 +8392,6 @@ func (o GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionOutput) 
 
 func (o GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionOutput) ToGetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionOutputWithContext(ctx context.Context) GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionOutput {
 	return o
-}
-
-func (o GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetNamespaceStorageOverlappingRecallsOverlappingRecallCollection] {
-	return pulumix.Output[GetNamespaceStorageOverlappingRecallsOverlappingRecallCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 // This is the array of overlapping recall requests
@@ -9862,12 +8415,6 @@ func (o GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionArrayOut
 	return o
 }
 
-func (o GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNamespaceStorageOverlappingRecallsOverlappingRecallCollection] {
-	return pulumix.Output[[]GetNamespaceStorageOverlappingRecallsOverlappingRecallCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionArrayOutput) Index(i pulumi.IntInput) GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNamespaceStorageOverlappingRecallsOverlappingRecallCollection {
 		return vs[0].([]GetNamespaceStorageOverlappingRecallsOverlappingRecallCollection)[vs[1].(int)]
@@ -9876,21 +8423,21 @@ func (o GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionArrayOut
 
 type GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItem struct {
 	// This is the user who initiated the recall request
-	CreatedBy string `pulumi:"createdBy"`
+	CreatedBy *string `pulumi:"createdBy"`
 	// This is the list of logsets associated with this recall
-	LogSets string `pulumi:"logSets"`
+	LogSets *string `pulumi:"logSets"`
 	// This is the purpose of the recall
-	Purpose string `pulumi:"purpose"`
+	Purpose *string `pulumi:"purpose"`
 	// This is the query associated with the recall
-	QueryString string `pulumi:"queryString"`
+	QueryString *string `pulumi:"queryString"`
 	// This is the status of the recall
-	Status string `pulumi:"status"`
+	Status *string `pulumi:"status"`
 	// This is the end of the time range for recalled data
-	TimeDataEnded string `pulumi:"timeDataEnded"`
+	TimeDataEnded *string `pulumi:"timeDataEnded"`
 	// This is the start of the time range for recalled data
-	TimeDataStarted string `pulumi:"timeDataStarted"`
+	TimeDataStarted *string `pulumi:"timeDataStarted"`
 	// This is the time when the recall operation was started for this recall request
-	TimeStarted string `pulumi:"timeStarted"`
+	TimeStarted *string `pulumi:"timeStarted"`
 }
 
 // GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemInput is an input type that accepts GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemArgs and GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemOutput values.
@@ -9906,21 +8453,21 @@ type GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemInput i
 
 type GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemArgs struct {
 	// This is the user who initiated the recall request
-	CreatedBy pulumi.StringInput `pulumi:"createdBy"`
+	CreatedBy pulumi.StringPtrInput `pulumi:"createdBy"`
 	// This is the list of logsets associated with this recall
-	LogSets pulumi.StringInput `pulumi:"logSets"`
+	LogSets pulumi.StringPtrInput `pulumi:"logSets"`
 	// This is the purpose of the recall
-	Purpose pulumi.StringInput `pulumi:"purpose"`
+	Purpose pulumi.StringPtrInput `pulumi:"purpose"`
 	// This is the query associated with the recall
-	QueryString pulumi.StringInput `pulumi:"queryString"`
+	QueryString pulumi.StringPtrInput `pulumi:"queryString"`
 	// This is the status of the recall
-	Status pulumi.StringInput `pulumi:"status"`
+	Status pulumi.StringPtrInput `pulumi:"status"`
 	// This is the end of the time range for recalled data
-	TimeDataEnded pulumi.StringInput `pulumi:"timeDataEnded"`
+	TimeDataEnded pulumi.StringPtrInput `pulumi:"timeDataEnded"`
 	// This is the start of the time range for recalled data
-	TimeDataStarted pulumi.StringInput `pulumi:"timeDataStarted"`
+	TimeDataStarted pulumi.StringPtrInput `pulumi:"timeDataStarted"`
 	// This is the time when the recall operation was started for this recall request
-	TimeStarted pulumi.StringInput `pulumi:"timeStarted"`
+	TimeStarted pulumi.StringPtrInput `pulumi:"timeStarted"`
 }
 
 func (GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemArgs) ElementType() reflect.Type {
@@ -9933,12 +8480,6 @@ func (i GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemArgs
 
 func (i GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemArgs) ToGetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemOutputWithContext(ctx context.Context) GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemOutput)
-}
-
-func (i GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItem] {
-	return pulumix.Output[GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItem]{
-		OutputState: i.ToGetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemArrayInput is an input type that accepts GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemArray and GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemArrayOutput values.
@@ -9966,12 +8507,6 @@ func (i GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemArra
 	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemArrayOutput)
 }
 
-func (i GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItem] {
-	return pulumix.Output[[]GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItem]{
-		OutputState: i.ToGetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemOutput) ElementType() reflect.Type {
@@ -9986,60 +8521,54 @@ func (o GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemOutp
 	return o
 }
 
-func (o GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItem] {
-	return pulumix.Output[GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // This is the user who initiated the recall request
-func (o GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemOutput) CreatedBy() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItem) string {
+func (o GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemOutput) CreatedBy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItem) *string {
 		return v.CreatedBy
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // This is the list of logsets associated with this recall
-func (o GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemOutput) LogSets() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItem) string { return v.LogSets }).(pulumi.StringOutput)
+func (o GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemOutput) LogSets() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItem) *string { return v.LogSets }).(pulumi.StringPtrOutput)
 }
 
 // This is the purpose of the recall
-func (o GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemOutput) Purpose() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItem) string { return v.Purpose }).(pulumi.StringOutput)
+func (o GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemOutput) Purpose() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItem) *string { return v.Purpose }).(pulumi.StringPtrOutput)
 }
 
 // This is the query associated with the recall
-func (o GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemOutput) QueryString() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItem) string {
+func (o GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemOutput) QueryString() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItem) *string {
 		return v.QueryString
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // This is the status of the recall
-func (o GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemOutput) Status() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItem) string { return v.Status }).(pulumi.StringOutput)
+func (o GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItem) *string { return v.Status }).(pulumi.StringPtrOutput)
 }
 
 // This is the end of the time range for recalled data
-func (o GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemOutput) TimeDataEnded() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItem) string {
+func (o GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemOutput) TimeDataEnded() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItem) *string {
 		return v.TimeDataEnded
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // This is the start of the time range for recalled data
-func (o GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemOutput) TimeDataStarted() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItem) string {
+func (o GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemOutput) TimeDataStarted() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItem) *string {
 		return v.TimeDataStarted
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // This is the time when the recall operation was started for this recall request
-func (o GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemOutput) TimeStarted() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItem) string {
+func (o GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemOutput) TimeStarted() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItem) *string {
 		return v.TimeStarted
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -10054,12 +8583,6 @@ func (o GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemArra
 
 func (o GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemArrayOutput) ToGetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemArrayOutputWithContext(ctx context.Context) GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemArrayOutput {
 	return o
-}
-
-func (o GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItem] {
-	return pulumix.Output[[]GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemArrayOutput) Index(i pulumi.IntInput) GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemOutput {
@@ -10103,12 +8626,6 @@ func (i GetNamespacesFilterArgs) ToGetNamespacesFilterOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(GetNamespacesFilterOutput)
 }
 
-func (i GetNamespacesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetNamespacesFilter] {
-	return pulumix.Output[GetNamespacesFilter]{
-		OutputState: i.ToGetNamespacesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetNamespacesFilterArrayInput is an input type that accepts GetNamespacesFilterArray and GetNamespacesFilterArrayOutput values.
 // You can construct a concrete instance of `GetNamespacesFilterArrayInput` via:
 //
@@ -10134,12 +8651,6 @@ func (i GetNamespacesFilterArray) ToGetNamespacesFilterArrayOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(GetNamespacesFilterArrayOutput)
 }
 
-func (i GetNamespacesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNamespacesFilter] {
-	return pulumix.Output[[]GetNamespacesFilter]{
-		OutputState: i.ToGetNamespacesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetNamespacesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetNamespacesFilterOutput) ElementType() reflect.Type {
@@ -10152,12 +8663,6 @@ func (o GetNamespacesFilterOutput) ToGetNamespacesFilterOutput() GetNamespacesFi
 
 func (o GetNamespacesFilterOutput) ToGetNamespacesFilterOutputWithContext(ctx context.Context) GetNamespacesFilterOutput {
 	return o
-}
-
-func (o GetNamespacesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetNamespacesFilter] {
-	return pulumix.Output[GetNamespacesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetNamespacesFilterOutput) Name() pulumi.StringOutput {
@@ -10184,12 +8689,6 @@ func (o GetNamespacesFilterArrayOutput) ToGetNamespacesFilterArrayOutput() GetNa
 
 func (o GetNamespacesFilterArrayOutput) ToGetNamespacesFilterArrayOutputWithContext(ctx context.Context) GetNamespacesFilterArrayOutput {
 	return o
-}
-
-func (o GetNamespacesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNamespacesFilter] {
-	return pulumix.Output[[]GetNamespacesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetNamespacesFilterArrayOutput) Index(i pulumi.IntInput) GetNamespacesFilterOutput {
@@ -10229,12 +8728,6 @@ func (i GetNamespacesNamespaceCollectionArgs) ToGetNamespacesNamespaceCollection
 	return pulumi.ToOutputWithContext(ctx, i).(GetNamespacesNamespaceCollectionOutput)
 }
 
-func (i GetNamespacesNamespaceCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetNamespacesNamespaceCollection] {
-	return pulumix.Output[GetNamespacesNamespaceCollection]{
-		OutputState: i.ToGetNamespacesNamespaceCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetNamespacesNamespaceCollectionArrayInput is an input type that accepts GetNamespacesNamespaceCollectionArray and GetNamespacesNamespaceCollectionArrayOutput values.
 // You can construct a concrete instance of `GetNamespacesNamespaceCollectionArrayInput` via:
 //
@@ -10260,12 +8753,6 @@ func (i GetNamespacesNamespaceCollectionArray) ToGetNamespacesNamespaceCollectio
 	return pulumi.ToOutputWithContext(ctx, i).(GetNamespacesNamespaceCollectionArrayOutput)
 }
 
-func (i GetNamespacesNamespaceCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNamespacesNamespaceCollection] {
-	return pulumix.Output[[]GetNamespacesNamespaceCollection]{
-		OutputState: i.ToGetNamespacesNamespaceCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetNamespacesNamespaceCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetNamespacesNamespaceCollectionOutput) ElementType() reflect.Type {
@@ -10278,12 +8765,6 @@ func (o GetNamespacesNamespaceCollectionOutput) ToGetNamespacesNamespaceCollecti
 
 func (o GetNamespacesNamespaceCollectionOutput) ToGetNamespacesNamespaceCollectionOutputWithContext(ctx context.Context) GetNamespacesNamespaceCollectionOutput {
 	return o
-}
-
-func (o GetNamespacesNamespaceCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetNamespacesNamespaceCollection] {
-	return pulumix.Output[GetNamespacesNamespaceCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetNamespacesNamespaceCollectionOutput) Items() GetNamespacesNamespaceCollectionItemArrayOutput {
@@ -10304,12 +8785,6 @@ func (o GetNamespacesNamespaceCollectionArrayOutput) ToGetNamespacesNamespaceCol
 	return o
 }
 
-func (o GetNamespacesNamespaceCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNamespacesNamespaceCollection] {
-	return pulumix.Output[[]GetNamespacesNamespaceCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetNamespacesNamespaceCollectionArrayOutput) Index(i pulumi.IntInput) GetNamespacesNamespaceCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNamespacesNamespaceCollection {
 		return vs[0].([]GetNamespacesNamespaceCollection)[vs[1].(int)]
@@ -10318,11 +8793,11 @@ func (o GetNamespacesNamespaceCollectionArrayOutput) Index(i pulumi.IntInput) Ge
 
 type GetNamespacesNamespaceCollectionItem struct {
 	// The ID of the compartment in which to list resources.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// This indicates if the tenancy is onboarded to Logging Analytics
-	IsOnboarded bool `pulumi:"isOnboarded"`
+	IsOnboarded *bool `pulumi:"isOnboarded"`
 	// This is the namespace name of a tenancy
-	Namespace string `pulumi:"namespace"`
+	Namespace *string `pulumi:"namespace"`
 }
 
 // GetNamespacesNamespaceCollectionItemInput is an input type that accepts GetNamespacesNamespaceCollectionItemArgs and GetNamespacesNamespaceCollectionItemOutput values.
@@ -10338,11 +8813,11 @@ type GetNamespacesNamespaceCollectionItemInput interface {
 
 type GetNamespacesNamespaceCollectionItemArgs struct {
 	// The ID of the compartment in which to list resources.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// This indicates if the tenancy is onboarded to Logging Analytics
-	IsOnboarded pulumi.BoolInput `pulumi:"isOnboarded"`
+	IsOnboarded pulumi.BoolPtrInput `pulumi:"isOnboarded"`
 	// This is the namespace name of a tenancy
-	Namespace pulumi.StringInput `pulumi:"namespace"`
+	Namespace pulumi.StringPtrInput `pulumi:"namespace"`
 }
 
 func (GetNamespacesNamespaceCollectionItemArgs) ElementType() reflect.Type {
@@ -10355,12 +8830,6 @@ func (i GetNamespacesNamespaceCollectionItemArgs) ToGetNamespacesNamespaceCollec
 
 func (i GetNamespacesNamespaceCollectionItemArgs) ToGetNamespacesNamespaceCollectionItemOutputWithContext(ctx context.Context) GetNamespacesNamespaceCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetNamespacesNamespaceCollectionItemOutput)
-}
-
-func (i GetNamespacesNamespaceCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetNamespacesNamespaceCollectionItem] {
-	return pulumix.Output[GetNamespacesNamespaceCollectionItem]{
-		OutputState: i.ToGetNamespacesNamespaceCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetNamespacesNamespaceCollectionItemArrayInput is an input type that accepts GetNamespacesNamespaceCollectionItemArray and GetNamespacesNamespaceCollectionItemArrayOutput values.
@@ -10388,12 +8857,6 @@ func (i GetNamespacesNamespaceCollectionItemArray) ToGetNamespacesNamespaceColle
 	return pulumi.ToOutputWithContext(ctx, i).(GetNamespacesNamespaceCollectionItemArrayOutput)
 }
 
-func (i GetNamespacesNamespaceCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNamespacesNamespaceCollectionItem] {
-	return pulumix.Output[[]GetNamespacesNamespaceCollectionItem]{
-		OutputState: i.ToGetNamespacesNamespaceCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetNamespacesNamespaceCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetNamespacesNamespaceCollectionItemOutput) ElementType() reflect.Type {
@@ -10408,25 +8871,19 @@ func (o GetNamespacesNamespaceCollectionItemOutput) ToGetNamespacesNamespaceColl
 	return o
 }
 
-func (o GetNamespacesNamespaceCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetNamespacesNamespaceCollectionItem] {
-	return pulumix.Output[GetNamespacesNamespaceCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The ID of the compartment in which to list resources.
-func (o GetNamespacesNamespaceCollectionItemOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNamespacesNamespaceCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetNamespacesNamespaceCollectionItemOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNamespacesNamespaceCollectionItem) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // This indicates if the tenancy is onboarded to Logging Analytics
-func (o GetNamespacesNamespaceCollectionItemOutput) IsOnboarded() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetNamespacesNamespaceCollectionItem) bool { return v.IsOnboarded }).(pulumi.BoolOutput)
+func (o GetNamespacesNamespaceCollectionItemOutput) IsOnboarded() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetNamespacesNamespaceCollectionItem) *bool { return v.IsOnboarded }).(pulumi.BoolPtrOutput)
 }
 
 // This is the namespace name of a tenancy
-func (o GetNamespacesNamespaceCollectionItemOutput) Namespace() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNamespacesNamespaceCollectionItem) string { return v.Namespace }).(pulumi.StringOutput)
+func (o GetNamespacesNamespaceCollectionItemOutput) Namespace() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNamespacesNamespaceCollectionItem) *string { return v.Namespace }).(pulumi.StringPtrOutput)
 }
 
 type GetNamespacesNamespaceCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -10441,12 +8898,6 @@ func (o GetNamespacesNamespaceCollectionItemArrayOutput) ToGetNamespacesNamespac
 
 func (o GetNamespacesNamespaceCollectionItemArrayOutput) ToGetNamespacesNamespaceCollectionItemArrayOutputWithContext(ctx context.Context) GetNamespacesNamespaceCollectionItemArrayOutput {
 	return o
-}
-
-func (o GetNamespacesNamespaceCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNamespacesNamespaceCollectionItem] {
-	return pulumix.Output[[]GetNamespacesNamespaceCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetNamespacesNamespaceCollectionItemArrayOutput) Index(i pulumi.IntInput) GetNamespacesNamespaceCollectionItemOutput {

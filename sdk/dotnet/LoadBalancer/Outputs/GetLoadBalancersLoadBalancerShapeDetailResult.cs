@@ -16,17 +16,17 @@ namespace Pulumi.Oci.LoadBalancer.Outputs
         /// <summary>
         /// Bandwidth in Mbps that determines the maximum bandwidth (ingress plus egress) that the load balancer can achieve. This bandwidth cannot be always guaranteed. For a guaranteed bandwidth use the minimumBandwidthInMbps parameter.
         /// </summary>
-        public readonly int MaximumBandwidthInMbps;
+        public readonly int? MaximumBandwidthInMbps;
         /// <summary>
         /// Bandwidth in Mbps that determines the total pre-provisioned bandwidth (ingress plus egress). The values must be between 0 and the maximumBandwidthInMbps in multiples of 10. The current allowed maximum value is defined in [Service Limits](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/servicelimits.htm).  Example: `150`
         /// </summary>
-        public readonly int MinimumBandwidthInMbps;
+        public readonly int? MinimumBandwidthInMbps;
 
         [OutputConstructor]
         private GetLoadBalancersLoadBalancerShapeDetailResult(
-            int maximumBandwidthInMbps,
+            int? maximumBandwidthInMbps,
 
-            int minimumBandwidthInMbps)
+            int? minimumBandwidthInMbps)
         {
             MaximumBandwidthInMbps = maximumBandwidthInMbps;
             MinimumBandwidthInMbps = minimumBandwidthInMbps;

@@ -16,17 +16,17 @@ namespace Pulumi.Oci.DataFlow.Outputs
         /// <summary>
         /// The log group id for where log objects will be for Data Flow Runs.
         /// </summary>
-        public readonly string LogGroupId;
+        public readonly string? LogGroupId;
         /// <summary>
         /// The log id of the log object the Application Logs of Data Flow Run will be shipped to.
         /// </summary>
-        public readonly string LogId;
+        public readonly string? LogId;
 
         [OutputConstructor]
         private GetInvokeRunsRunApplicationLogConfigResult(
-            string logGroupId,
+            string? logGroupId,
 
-            string logId)
+            string? logId)
         {
             LogGroupId = logGroupId;
             LogId = logId;

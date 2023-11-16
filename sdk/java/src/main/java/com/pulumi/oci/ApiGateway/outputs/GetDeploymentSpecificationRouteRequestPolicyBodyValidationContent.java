@@ -6,6 +6,8 @@ package com.pulumi.oci.ApiGateway.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDeploymentSpecificationRouteRequestPolicyBodyValidationContent {
@@ -13,27 +15,27 @@ public final class GetDeploymentSpecificationRouteRequestPolicyBodyValidationCon
      * @return The media type is a [media type range](https://tools.ietf.org/html/rfc7231#appendix-D) subset restricted to the following schema
      * 
      */
-    private String mediaType;
+    private @Nullable String mediaType;
     /**
      * @return Validation type defines the content validation method.
      * 
      */
-    private String validationType;
+    private @Nullable String validationType;
 
     private GetDeploymentSpecificationRouteRequestPolicyBodyValidationContent() {}
     /**
      * @return The media type is a [media type range](https://tools.ietf.org/html/rfc7231#appendix-D) subset restricted to the following schema
      * 
      */
-    public String mediaType() {
-        return this.mediaType;
+    public Optional<String> mediaType() {
+        return Optional.ofNullable(this.mediaType);
     }
     /**
      * @return Validation type defines the content validation method.
      * 
      */
-    public String validationType() {
-        return this.validationType;
+    public Optional<String> validationType() {
+        return Optional.ofNullable(this.validationType);
     }
 
     public static Builder builder() {
@@ -45,8 +47,8 @@ public final class GetDeploymentSpecificationRouteRequestPolicyBodyValidationCon
     }
     @CustomType.Builder
     public static final class Builder {
-        private String mediaType;
-        private String validationType;
+        private @Nullable String mediaType;
+        private @Nullable String validationType;
         public Builder() {}
         public Builder(GetDeploymentSpecificationRouteRequestPolicyBodyValidationContent defaults) {
     	      Objects.requireNonNull(defaults);
@@ -55,13 +57,13 @@ public final class GetDeploymentSpecificationRouteRequestPolicyBodyValidationCon
         }
 
         @CustomType.Setter
-        public Builder mediaType(String mediaType) {
-            this.mediaType = Objects.requireNonNull(mediaType);
+        public Builder mediaType(@Nullable String mediaType) {
+            this.mediaType = mediaType;
             return this;
         }
         @CustomType.Setter
-        public Builder validationType(String validationType) {
-            this.validationType = Objects.requireNonNull(validationType);
+        public Builder validationType(@Nullable String validationType) {
+            this.validationType = validationType;
             return this;
         }
         public GetDeploymentSpecificationRouteRequestPolicyBodyValidationContent build() {

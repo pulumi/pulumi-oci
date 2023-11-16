@@ -8,6 +8,8 @@ import com.pulumi.oci.NetworkLoadBalancer.outputs.GetBackendHealthHealthCheckRes
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetBackendHealthResult {
@@ -17,12 +19,12 @@ public final class GetBackendHealthResult {
      * @return A list of the most recent health check results returned for the specified backend server.
      * 
      */
-    private List<GetBackendHealthHealthCheckResult> healthCheckResults;
+    private @Nullable List<GetBackendHealthHealthCheckResult> healthCheckResults;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private String networkLoadBalancerId;
     /**
      * @return The general health status of the specified backend server.
@@ -33,7 +35,7 @@ public final class GetBackendHealthResult {
      * *   or the system is unable to retrieve metrics at this time.
      * 
      */
-    private String status;
+    private @Nullable String status;
 
     private GetBackendHealthResult() {}
     public String backendName() {
@@ -47,14 +49,14 @@ public final class GetBackendHealthResult {
      * 
      */
     public List<GetBackendHealthHealthCheckResult> healthCheckResults() {
-        return this.healthCheckResults;
+        return this.healthCheckResults == null ? List.of() : this.healthCheckResults;
     }
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public String networkLoadBalancerId() {
         return this.networkLoadBalancerId;
@@ -68,8 +70,8 @@ public final class GetBackendHealthResult {
      * *   or the system is unable to retrieve metrics at this time.
      * 
      */
-    public String status() {
-        return this.status;
+    public Optional<String> status() {
+        return Optional.ofNullable(this.status);
     }
 
     public static Builder builder() {
@@ -83,10 +85,10 @@ public final class GetBackendHealthResult {
     public static final class Builder {
         private String backendName;
         private String backendSetName;
-        private List<GetBackendHealthHealthCheckResult> healthCheckResults;
-        private String id;
+        private @Nullable List<GetBackendHealthHealthCheckResult> healthCheckResults;
+        private @Nullable String id;
         private String networkLoadBalancerId;
-        private String status;
+        private @Nullable String status;
         public Builder() {}
         public Builder(GetBackendHealthResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -109,16 +111,16 @@ public final class GetBackendHealthResult {
             return this;
         }
         @CustomType.Setter
-        public Builder healthCheckResults(List<GetBackendHealthHealthCheckResult> healthCheckResults) {
-            this.healthCheckResults = Objects.requireNonNull(healthCheckResults);
+        public Builder healthCheckResults(@Nullable List<GetBackendHealthHealthCheckResult> healthCheckResults) {
+            this.healthCheckResults = healthCheckResults;
             return this;
         }
         public Builder healthCheckResults(GetBackendHealthHealthCheckResult... healthCheckResults) {
             return healthCheckResults(List.of(healthCheckResults));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -127,8 +129,8 @@ public final class GetBackendHealthResult {
             return this;
         }
         @CustomType.Setter
-        public Builder status(String status) {
-            this.status = Objects.requireNonNull(status);
+        public Builder status(@Nullable String status) {
+            this.status = status;
             return this;
         }
         public GetBackendHealthResult build() {

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 var _ = internal.GetEnvOrDefault
@@ -49,12 +48,6 @@ func (i ApplicationApplicationLogConfigArgs) ToApplicationApplicationLogConfigOu
 
 func (i ApplicationApplicationLogConfigArgs) ToApplicationApplicationLogConfigOutputWithContext(ctx context.Context) ApplicationApplicationLogConfigOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ApplicationApplicationLogConfigOutput)
-}
-
-func (i ApplicationApplicationLogConfigArgs) ToOutput(ctx context.Context) pulumix.Output[ApplicationApplicationLogConfig] {
-	return pulumix.Output[ApplicationApplicationLogConfig]{
-		OutputState: i.ToApplicationApplicationLogConfigOutputWithContext(ctx).OutputState,
-	}
 }
 
 func (i ApplicationApplicationLogConfigArgs) ToApplicationApplicationLogConfigPtrOutput() ApplicationApplicationLogConfigPtrOutput {
@@ -98,12 +91,6 @@ func (i *applicationApplicationLogConfigPtrType) ToApplicationApplicationLogConf
 	return pulumi.ToOutputWithContext(ctx, i).(ApplicationApplicationLogConfigPtrOutput)
 }
 
-func (i *applicationApplicationLogConfigPtrType) ToOutput(ctx context.Context) pulumix.Output[*ApplicationApplicationLogConfig] {
-	return pulumix.Output[*ApplicationApplicationLogConfig]{
-		OutputState: i.ToApplicationApplicationLogConfigPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ApplicationApplicationLogConfigOutput struct{ *pulumi.OutputState }
 
 func (ApplicationApplicationLogConfigOutput) ElementType() reflect.Type {
@@ -128,12 +115,6 @@ func (o ApplicationApplicationLogConfigOutput) ToApplicationApplicationLogConfig
 	}).(ApplicationApplicationLogConfigPtrOutput)
 }
 
-func (o ApplicationApplicationLogConfigOutput) ToOutput(ctx context.Context) pulumix.Output[ApplicationApplicationLogConfig] {
-	return pulumix.Output[ApplicationApplicationLogConfig]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) The log group id for where log objects will be for Data Flow Runs.
 func (o ApplicationApplicationLogConfigOutput) LogGroupId() pulumi.StringOutput {
 	return o.ApplyT(func(v ApplicationApplicationLogConfig) string { return v.LogGroupId }).(pulumi.StringOutput)
@@ -156,12 +137,6 @@ func (o ApplicationApplicationLogConfigPtrOutput) ToApplicationApplicationLogCon
 
 func (o ApplicationApplicationLogConfigPtrOutput) ToApplicationApplicationLogConfigPtrOutputWithContext(ctx context.Context) ApplicationApplicationLogConfigPtrOutput {
 	return o
-}
-
-func (o ApplicationApplicationLogConfigPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*ApplicationApplicationLogConfig] {
-	return pulumix.Output[*ApplicationApplicationLogConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ApplicationApplicationLogConfigPtrOutput) Elem() ApplicationApplicationLogConfigOutput {
@@ -231,12 +206,6 @@ func (i ApplicationDriverShapeConfigArgs) ToApplicationDriverShapeConfigOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(ApplicationDriverShapeConfigOutput)
 }
 
-func (i ApplicationDriverShapeConfigArgs) ToOutput(ctx context.Context) pulumix.Output[ApplicationDriverShapeConfig] {
-	return pulumix.Output[ApplicationDriverShapeConfig]{
-		OutputState: i.ToApplicationDriverShapeConfigOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i ApplicationDriverShapeConfigArgs) ToApplicationDriverShapeConfigPtrOutput() ApplicationDriverShapeConfigPtrOutput {
 	return i.ToApplicationDriverShapeConfigPtrOutputWithContext(context.Background())
 }
@@ -278,12 +247,6 @@ func (i *applicationDriverShapeConfigPtrType) ToApplicationDriverShapeConfigPtrO
 	return pulumi.ToOutputWithContext(ctx, i).(ApplicationDriverShapeConfigPtrOutput)
 }
 
-func (i *applicationDriverShapeConfigPtrType) ToOutput(ctx context.Context) pulumix.Output[*ApplicationDriverShapeConfig] {
-	return pulumix.Output[*ApplicationDriverShapeConfig]{
-		OutputState: i.ToApplicationDriverShapeConfigPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ApplicationDriverShapeConfigOutput struct{ *pulumi.OutputState }
 
 func (ApplicationDriverShapeConfigOutput) ElementType() reflect.Type {
@@ -308,12 +271,6 @@ func (o ApplicationDriverShapeConfigOutput) ToApplicationDriverShapeConfigPtrOut
 	}).(ApplicationDriverShapeConfigPtrOutput)
 }
 
-func (o ApplicationDriverShapeConfigOutput) ToOutput(ctx context.Context) pulumix.Output[ApplicationDriverShapeConfig] {
-	return pulumix.Output[ApplicationDriverShapeConfig]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) The amount of memory used for the driver or executors.
 func (o ApplicationDriverShapeConfigOutput) MemoryInGbs() pulumi.Float64PtrOutput {
 	return o.ApplyT(func(v ApplicationDriverShapeConfig) *float64 { return v.MemoryInGbs }).(pulumi.Float64PtrOutput)
@@ -336,12 +293,6 @@ func (o ApplicationDriverShapeConfigPtrOutput) ToApplicationDriverShapeConfigPtr
 
 func (o ApplicationDriverShapeConfigPtrOutput) ToApplicationDriverShapeConfigPtrOutputWithContext(ctx context.Context) ApplicationDriverShapeConfigPtrOutput {
 	return o
-}
-
-func (o ApplicationDriverShapeConfigPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*ApplicationDriverShapeConfig] {
-	return pulumix.Output[*ApplicationDriverShapeConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ApplicationDriverShapeConfigPtrOutput) Elem() ApplicationDriverShapeConfigOutput {
@@ -411,12 +362,6 @@ func (i ApplicationExecutorShapeConfigArgs) ToApplicationExecutorShapeConfigOutp
 	return pulumi.ToOutputWithContext(ctx, i).(ApplicationExecutorShapeConfigOutput)
 }
 
-func (i ApplicationExecutorShapeConfigArgs) ToOutput(ctx context.Context) pulumix.Output[ApplicationExecutorShapeConfig] {
-	return pulumix.Output[ApplicationExecutorShapeConfig]{
-		OutputState: i.ToApplicationExecutorShapeConfigOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i ApplicationExecutorShapeConfigArgs) ToApplicationExecutorShapeConfigPtrOutput() ApplicationExecutorShapeConfigPtrOutput {
 	return i.ToApplicationExecutorShapeConfigPtrOutputWithContext(context.Background())
 }
@@ -458,12 +403,6 @@ func (i *applicationExecutorShapeConfigPtrType) ToApplicationExecutorShapeConfig
 	return pulumi.ToOutputWithContext(ctx, i).(ApplicationExecutorShapeConfigPtrOutput)
 }
 
-func (i *applicationExecutorShapeConfigPtrType) ToOutput(ctx context.Context) pulumix.Output[*ApplicationExecutorShapeConfig] {
-	return pulumix.Output[*ApplicationExecutorShapeConfig]{
-		OutputState: i.ToApplicationExecutorShapeConfigPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ApplicationExecutorShapeConfigOutput struct{ *pulumi.OutputState }
 
 func (ApplicationExecutorShapeConfigOutput) ElementType() reflect.Type {
@@ -488,12 +427,6 @@ func (o ApplicationExecutorShapeConfigOutput) ToApplicationExecutorShapeConfigPt
 	}).(ApplicationExecutorShapeConfigPtrOutput)
 }
 
-func (o ApplicationExecutorShapeConfigOutput) ToOutput(ctx context.Context) pulumix.Output[ApplicationExecutorShapeConfig] {
-	return pulumix.Output[ApplicationExecutorShapeConfig]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) The amount of memory used for the driver or executors.
 func (o ApplicationExecutorShapeConfigOutput) MemoryInGbs() pulumi.Float64PtrOutput {
 	return o.ApplyT(func(v ApplicationExecutorShapeConfig) *float64 { return v.MemoryInGbs }).(pulumi.Float64PtrOutput)
@@ -516,12 +449,6 @@ func (o ApplicationExecutorShapeConfigPtrOutput) ToApplicationExecutorShapeConfi
 
 func (o ApplicationExecutorShapeConfigPtrOutput) ToApplicationExecutorShapeConfigPtrOutputWithContext(ctx context.Context) ApplicationExecutorShapeConfigPtrOutput {
 	return o
-}
-
-func (o ApplicationExecutorShapeConfigPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*ApplicationExecutorShapeConfig] {
-	return pulumix.Output[*ApplicationExecutorShapeConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ApplicationExecutorShapeConfigPtrOutput) Elem() ApplicationExecutorShapeConfigOutput {
@@ -591,12 +518,6 @@ func (i ApplicationParameterArgs) ToApplicationParameterOutputWithContext(ctx co
 	return pulumi.ToOutputWithContext(ctx, i).(ApplicationParameterOutput)
 }
 
-func (i ApplicationParameterArgs) ToOutput(ctx context.Context) pulumix.Output[ApplicationParameter] {
-	return pulumix.Output[ApplicationParameter]{
-		OutputState: i.ToApplicationParameterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ApplicationParameterArrayInput is an input type that accepts ApplicationParameterArray and ApplicationParameterArrayOutput values.
 // You can construct a concrete instance of `ApplicationParameterArrayInput` via:
 //
@@ -622,12 +543,6 @@ func (i ApplicationParameterArray) ToApplicationParameterArrayOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(ApplicationParameterArrayOutput)
 }
 
-func (i ApplicationParameterArray) ToOutput(ctx context.Context) pulumix.Output[[]ApplicationParameter] {
-	return pulumix.Output[[]ApplicationParameter]{
-		OutputState: i.ToApplicationParameterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ApplicationParameterOutput struct{ *pulumi.OutputState }
 
 func (ApplicationParameterOutput) ElementType() reflect.Type {
@@ -640,12 +555,6 @@ func (o ApplicationParameterOutput) ToApplicationParameterOutput() ApplicationPa
 
 func (o ApplicationParameterOutput) ToApplicationParameterOutputWithContext(ctx context.Context) ApplicationParameterOutput {
 	return o
-}
-
-func (o ApplicationParameterOutput) ToOutput(ctx context.Context) pulumix.Output[ApplicationParameter] {
-	return pulumix.Output[ApplicationParameter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The name of the parameter.  It must be a string of one or more word characters (a-z, A-Z, 0-9, _). Examples: "iterations", "inputFile"
@@ -670,12 +579,6 @@ func (o ApplicationParameterArrayOutput) ToApplicationParameterArrayOutput() App
 
 func (o ApplicationParameterArrayOutput) ToApplicationParameterArrayOutputWithContext(ctx context.Context) ApplicationParameterArrayOutput {
 	return o
-}
-
-func (o ApplicationParameterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]ApplicationParameter] {
-	return pulumix.Output[[]ApplicationParameter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ApplicationParameterArrayOutput) Index(i pulumi.IntInput) ApplicationParameterOutput {
@@ -721,12 +624,6 @@ func (i InvokeRunApplicationLogConfigArgs) ToInvokeRunApplicationLogConfigOutput
 	return pulumi.ToOutputWithContext(ctx, i).(InvokeRunApplicationLogConfigOutput)
 }
 
-func (i InvokeRunApplicationLogConfigArgs) ToOutput(ctx context.Context) pulumix.Output[InvokeRunApplicationLogConfig] {
-	return pulumix.Output[InvokeRunApplicationLogConfig]{
-		OutputState: i.ToInvokeRunApplicationLogConfigOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i InvokeRunApplicationLogConfigArgs) ToInvokeRunApplicationLogConfigPtrOutput() InvokeRunApplicationLogConfigPtrOutput {
 	return i.ToInvokeRunApplicationLogConfigPtrOutputWithContext(context.Background())
 }
@@ -768,12 +665,6 @@ func (i *invokeRunApplicationLogConfigPtrType) ToInvokeRunApplicationLogConfigPt
 	return pulumi.ToOutputWithContext(ctx, i).(InvokeRunApplicationLogConfigPtrOutput)
 }
 
-func (i *invokeRunApplicationLogConfigPtrType) ToOutput(ctx context.Context) pulumix.Output[*InvokeRunApplicationLogConfig] {
-	return pulumix.Output[*InvokeRunApplicationLogConfig]{
-		OutputState: i.ToInvokeRunApplicationLogConfigPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type InvokeRunApplicationLogConfigOutput struct{ *pulumi.OutputState }
 
 func (InvokeRunApplicationLogConfigOutput) ElementType() reflect.Type {
@@ -798,12 +689,6 @@ func (o InvokeRunApplicationLogConfigOutput) ToInvokeRunApplicationLogConfigPtrO
 	}).(InvokeRunApplicationLogConfigPtrOutput)
 }
 
-func (o InvokeRunApplicationLogConfigOutput) ToOutput(ctx context.Context) pulumix.Output[InvokeRunApplicationLogConfig] {
-	return pulumix.Output[InvokeRunApplicationLogConfig]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The log group id for where log objects will be for Data Flow Runs.
 func (o InvokeRunApplicationLogConfigOutput) LogGroupId() pulumi.StringOutput {
 	return o.ApplyT(func(v InvokeRunApplicationLogConfig) string { return v.LogGroupId }).(pulumi.StringOutput)
@@ -826,12 +711,6 @@ func (o InvokeRunApplicationLogConfigPtrOutput) ToInvokeRunApplicationLogConfigP
 
 func (o InvokeRunApplicationLogConfigPtrOutput) ToInvokeRunApplicationLogConfigPtrOutputWithContext(ctx context.Context) InvokeRunApplicationLogConfigPtrOutput {
 	return o
-}
-
-func (o InvokeRunApplicationLogConfigPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*InvokeRunApplicationLogConfig] {
-	return pulumix.Output[*InvokeRunApplicationLogConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o InvokeRunApplicationLogConfigPtrOutput) Elem() InvokeRunApplicationLogConfigOutput {
@@ -901,12 +780,6 @@ func (i InvokeRunDriverShapeConfigArgs) ToInvokeRunDriverShapeConfigOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(InvokeRunDriverShapeConfigOutput)
 }
 
-func (i InvokeRunDriverShapeConfigArgs) ToOutput(ctx context.Context) pulumix.Output[InvokeRunDriverShapeConfig] {
-	return pulumix.Output[InvokeRunDriverShapeConfig]{
-		OutputState: i.ToInvokeRunDriverShapeConfigOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i InvokeRunDriverShapeConfigArgs) ToInvokeRunDriverShapeConfigPtrOutput() InvokeRunDriverShapeConfigPtrOutput {
 	return i.ToInvokeRunDriverShapeConfigPtrOutputWithContext(context.Background())
 }
@@ -948,12 +821,6 @@ func (i *invokeRunDriverShapeConfigPtrType) ToInvokeRunDriverShapeConfigPtrOutpu
 	return pulumi.ToOutputWithContext(ctx, i).(InvokeRunDriverShapeConfigPtrOutput)
 }
 
-func (i *invokeRunDriverShapeConfigPtrType) ToOutput(ctx context.Context) pulumix.Output[*InvokeRunDriverShapeConfig] {
-	return pulumix.Output[*InvokeRunDriverShapeConfig]{
-		OutputState: i.ToInvokeRunDriverShapeConfigPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type InvokeRunDriverShapeConfigOutput struct{ *pulumi.OutputState }
 
 func (InvokeRunDriverShapeConfigOutput) ElementType() reflect.Type {
@@ -978,12 +845,6 @@ func (o InvokeRunDriverShapeConfigOutput) ToInvokeRunDriverShapeConfigPtrOutputW
 	}).(InvokeRunDriverShapeConfigPtrOutput)
 }
 
-func (o InvokeRunDriverShapeConfigOutput) ToOutput(ctx context.Context) pulumix.Output[InvokeRunDriverShapeConfig] {
-	return pulumix.Output[InvokeRunDriverShapeConfig]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The amount of memory used for the driver or executors.
 func (o InvokeRunDriverShapeConfigOutput) MemoryInGbs() pulumi.Float64PtrOutput {
 	return o.ApplyT(func(v InvokeRunDriverShapeConfig) *float64 { return v.MemoryInGbs }).(pulumi.Float64PtrOutput)
@@ -1006,12 +867,6 @@ func (o InvokeRunDriverShapeConfigPtrOutput) ToInvokeRunDriverShapeConfigPtrOutp
 
 func (o InvokeRunDriverShapeConfigPtrOutput) ToInvokeRunDriverShapeConfigPtrOutputWithContext(ctx context.Context) InvokeRunDriverShapeConfigPtrOutput {
 	return o
-}
-
-func (o InvokeRunDriverShapeConfigPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*InvokeRunDriverShapeConfig] {
-	return pulumix.Output[*InvokeRunDriverShapeConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o InvokeRunDriverShapeConfigPtrOutput) Elem() InvokeRunDriverShapeConfigOutput {
@@ -1081,12 +936,6 @@ func (i InvokeRunExecutorShapeConfigArgs) ToInvokeRunExecutorShapeConfigOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(InvokeRunExecutorShapeConfigOutput)
 }
 
-func (i InvokeRunExecutorShapeConfigArgs) ToOutput(ctx context.Context) pulumix.Output[InvokeRunExecutorShapeConfig] {
-	return pulumix.Output[InvokeRunExecutorShapeConfig]{
-		OutputState: i.ToInvokeRunExecutorShapeConfigOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i InvokeRunExecutorShapeConfigArgs) ToInvokeRunExecutorShapeConfigPtrOutput() InvokeRunExecutorShapeConfigPtrOutput {
 	return i.ToInvokeRunExecutorShapeConfigPtrOutputWithContext(context.Background())
 }
@@ -1128,12 +977,6 @@ func (i *invokeRunExecutorShapeConfigPtrType) ToInvokeRunExecutorShapeConfigPtrO
 	return pulumi.ToOutputWithContext(ctx, i).(InvokeRunExecutorShapeConfigPtrOutput)
 }
 
-func (i *invokeRunExecutorShapeConfigPtrType) ToOutput(ctx context.Context) pulumix.Output[*InvokeRunExecutorShapeConfig] {
-	return pulumix.Output[*InvokeRunExecutorShapeConfig]{
-		OutputState: i.ToInvokeRunExecutorShapeConfigPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type InvokeRunExecutorShapeConfigOutput struct{ *pulumi.OutputState }
 
 func (InvokeRunExecutorShapeConfigOutput) ElementType() reflect.Type {
@@ -1158,12 +1001,6 @@ func (o InvokeRunExecutorShapeConfigOutput) ToInvokeRunExecutorShapeConfigPtrOut
 	}).(InvokeRunExecutorShapeConfigPtrOutput)
 }
 
-func (o InvokeRunExecutorShapeConfigOutput) ToOutput(ctx context.Context) pulumix.Output[InvokeRunExecutorShapeConfig] {
-	return pulumix.Output[InvokeRunExecutorShapeConfig]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The amount of memory used for the driver or executors.
 func (o InvokeRunExecutorShapeConfigOutput) MemoryInGbs() pulumi.Float64PtrOutput {
 	return o.ApplyT(func(v InvokeRunExecutorShapeConfig) *float64 { return v.MemoryInGbs }).(pulumi.Float64PtrOutput)
@@ -1186,12 +1023,6 @@ func (o InvokeRunExecutorShapeConfigPtrOutput) ToInvokeRunExecutorShapeConfigPtr
 
 func (o InvokeRunExecutorShapeConfigPtrOutput) ToInvokeRunExecutorShapeConfigPtrOutputWithContext(ctx context.Context) InvokeRunExecutorShapeConfigPtrOutput {
 	return o
-}
-
-func (o InvokeRunExecutorShapeConfigPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*InvokeRunExecutorShapeConfig] {
-	return pulumix.Output[*InvokeRunExecutorShapeConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o InvokeRunExecutorShapeConfigPtrOutput) Elem() InvokeRunExecutorShapeConfigOutput {
@@ -1261,12 +1092,6 @@ func (i InvokeRunParameterArgs) ToInvokeRunParameterOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(InvokeRunParameterOutput)
 }
 
-func (i InvokeRunParameterArgs) ToOutput(ctx context.Context) pulumix.Output[InvokeRunParameter] {
-	return pulumix.Output[InvokeRunParameter]{
-		OutputState: i.ToInvokeRunParameterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // InvokeRunParameterArrayInput is an input type that accepts InvokeRunParameterArray and InvokeRunParameterArrayOutput values.
 // You can construct a concrete instance of `InvokeRunParameterArrayInput` via:
 //
@@ -1292,12 +1117,6 @@ func (i InvokeRunParameterArray) ToInvokeRunParameterArrayOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(InvokeRunParameterArrayOutput)
 }
 
-func (i InvokeRunParameterArray) ToOutput(ctx context.Context) pulumix.Output[[]InvokeRunParameter] {
-	return pulumix.Output[[]InvokeRunParameter]{
-		OutputState: i.ToInvokeRunParameterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type InvokeRunParameterOutput struct{ *pulumi.OutputState }
 
 func (InvokeRunParameterOutput) ElementType() reflect.Type {
@@ -1310,12 +1129,6 @@ func (o InvokeRunParameterOutput) ToInvokeRunParameterOutput() InvokeRunParamete
 
 func (o InvokeRunParameterOutput) ToInvokeRunParameterOutputWithContext(ctx context.Context) InvokeRunParameterOutput {
 	return o
-}
-
-func (o InvokeRunParameterOutput) ToOutput(ctx context.Context) pulumix.Output[InvokeRunParameter] {
-	return pulumix.Output[InvokeRunParameter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The name of the parameter.  It must be a string of one or more word characters (a-z, A-Z, 0-9, _). Examples: "iterations", "inputFile"
@@ -1340,12 +1153,6 @@ func (o InvokeRunParameterArrayOutput) ToInvokeRunParameterArrayOutput() InvokeR
 
 func (o InvokeRunParameterArrayOutput) ToInvokeRunParameterArrayOutputWithContext(ctx context.Context) InvokeRunParameterArrayOutput {
 	return o
-}
-
-func (o InvokeRunParameterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]InvokeRunParameter] {
-	return pulumix.Output[[]InvokeRunParameter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o InvokeRunParameterArrayOutput) Index(i pulumi.IntInput) InvokeRunParameterOutput {
@@ -1399,12 +1206,6 @@ func (i PoolConfigurationArgs) ToPoolConfigurationOutputWithContext(ctx context.
 	return pulumi.ToOutputWithContext(ctx, i).(PoolConfigurationOutput)
 }
 
-func (i PoolConfigurationArgs) ToOutput(ctx context.Context) pulumix.Output[PoolConfiguration] {
-	return pulumix.Output[PoolConfiguration]{
-		OutputState: i.ToPoolConfigurationOutputWithContext(ctx).OutputState,
-	}
-}
-
 // PoolConfigurationArrayInput is an input type that accepts PoolConfigurationArray and PoolConfigurationArrayOutput values.
 // You can construct a concrete instance of `PoolConfigurationArrayInput` via:
 //
@@ -1430,12 +1231,6 @@ func (i PoolConfigurationArray) ToPoolConfigurationArrayOutputWithContext(ctx co
 	return pulumi.ToOutputWithContext(ctx, i).(PoolConfigurationArrayOutput)
 }
 
-func (i PoolConfigurationArray) ToOutput(ctx context.Context) pulumix.Output[[]PoolConfiguration] {
-	return pulumix.Output[[]PoolConfiguration]{
-		OutputState: i.ToPoolConfigurationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type PoolConfigurationOutput struct{ *pulumi.OutputState }
 
 func (PoolConfigurationOutput) ElementType() reflect.Type {
@@ -1448,12 +1243,6 @@ func (o PoolConfigurationOutput) ToPoolConfigurationOutput() PoolConfigurationOu
 
 func (o PoolConfigurationOutput) ToPoolConfigurationOutputWithContext(ctx context.Context) PoolConfigurationOutput {
 	return o
-}
-
-func (o PoolConfigurationOutput) ToOutput(ctx context.Context) pulumix.Output[PoolConfiguration] {
-	return pulumix.Output[PoolConfiguration]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Maximum number of compute instances in the pool for a given compute shape.
@@ -1488,12 +1277,6 @@ func (o PoolConfigurationArrayOutput) ToPoolConfigurationArrayOutput() PoolConfi
 
 func (o PoolConfigurationArrayOutput) ToPoolConfigurationArrayOutputWithContext(ctx context.Context) PoolConfigurationArrayOutput {
 	return o
-}
-
-func (o PoolConfigurationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]PoolConfiguration] {
-	return pulumix.Output[[]PoolConfiguration]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o PoolConfigurationArrayOutput) Index(i pulumi.IntInput) PoolConfigurationOutput {
@@ -1539,12 +1322,6 @@ func (i PoolConfigurationShapeConfigArgs) ToPoolConfigurationShapeConfigOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(PoolConfigurationShapeConfigOutput)
 }
 
-func (i PoolConfigurationShapeConfigArgs) ToOutput(ctx context.Context) pulumix.Output[PoolConfigurationShapeConfig] {
-	return pulumix.Output[PoolConfigurationShapeConfig]{
-		OutputState: i.ToPoolConfigurationShapeConfigOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i PoolConfigurationShapeConfigArgs) ToPoolConfigurationShapeConfigPtrOutput() PoolConfigurationShapeConfigPtrOutput {
 	return i.ToPoolConfigurationShapeConfigPtrOutputWithContext(context.Background())
 }
@@ -1586,12 +1363,6 @@ func (i *poolConfigurationShapeConfigPtrType) ToPoolConfigurationShapeConfigPtrO
 	return pulumi.ToOutputWithContext(ctx, i).(PoolConfigurationShapeConfigPtrOutput)
 }
 
-func (i *poolConfigurationShapeConfigPtrType) ToOutput(ctx context.Context) pulumix.Output[*PoolConfigurationShapeConfig] {
-	return pulumix.Output[*PoolConfigurationShapeConfig]{
-		OutputState: i.ToPoolConfigurationShapeConfigPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type PoolConfigurationShapeConfigOutput struct{ *pulumi.OutputState }
 
 func (PoolConfigurationShapeConfigOutput) ElementType() reflect.Type {
@@ -1616,12 +1387,6 @@ func (o PoolConfigurationShapeConfigOutput) ToPoolConfigurationShapeConfigPtrOut
 	}).(PoolConfigurationShapeConfigPtrOutput)
 }
 
-func (o PoolConfigurationShapeConfigOutput) ToOutput(ctx context.Context) pulumix.Output[PoolConfigurationShapeConfig] {
-	return pulumix.Output[PoolConfigurationShapeConfig]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) The amount of memory used for the driver or executors.
 func (o PoolConfigurationShapeConfigOutput) MemoryInGbs() pulumi.Float64PtrOutput {
 	return o.ApplyT(func(v PoolConfigurationShapeConfig) *float64 { return v.MemoryInGbs }).(pulumi.Float64PtrOutput)
@@ -1644,12 +1409,6 @@ func (o PoolConfigurationShapeConfigPtrOutput) ToPoolConfigurationShapeConfigPtr
 
 func (o PoolConfigurationShapeConfigPtrOutput) ToPoolConfigurationShapeConfigPtrOutputWithContext(ctx context.Context) PoolConfigurationShapeConfigPtrOutput {
 	return o
-}
-
-func (o PoolConfigurationShapeConfigPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*PoolConfigurationShapeConfig] {
-	return pulumix.Output[*PoolConfigurationShapeConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o PoolConfigurationShapeConfigPtrOutput) Elem() PoolConfigurationShapeConfigOutput {
@@ -1735,12 +1494,6 @@ func (i PoolPoolMetricArgs) ToPoolPoolMetricOutputWithContext(ctx context.Contex
 	return pulumi.ToOutputWithContext(ctx, i).(PoolPoolMetricOutput)
 }
 
-func (i PoolPoolMetricArgs) ToOutput(ctx context.Context) pulumix.Output[PoolPoolMetric] {
-	return pulumix.Output[PoolPoolMetric]{
-		OutputState: i.ToPoolPoolMetricOutputWithContext(ctx).OutputState,
-	}
-}
-
 // PoolPoolMetricArrayInput is an input type that accepts PoolPoolMetricArray and PoolPoolMetricArrayOutput values.
 // You can construct a concrete instance of `PoolPoolMetricArrayInput` via:
 //
@@ -1766,12 +1519,6 @@ func (i PoolPoolMetricArray) ToPoolPoolMetricArrayOutputWithContext(ctx context.
 	return pulumi.ToOutputWithContext(ctx, i).(PoolPoolMetricArrayOutput)
 }
 
-func (i PoolPoolMetricArray) ToOutput(ctx context.Context) pulumix.Output[[]PoolPoolMetric] {
-	return pulumix.Output[[]PoolPoolMetric]{
-		OutputState: i.ToPoolPoolMetricArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type PoolPoolMetricOutput struct{ *pulumi.OutputState }
 
 func (PoolPoolMetricOutput) ElementType() reflect.Type {
@@ -1784,12 +1531,6 @@ func (o PoolPoolMetricOutput) ToPoolPoolMetricOutput() PoolPoolMetricOutput {
 
 func (o PoolPoolMetricOutput) ToPoolPoolMetricOutputWithContext(ctx context.Context) PoolPoolMetricOutput {
 	return o
-}
-
-func (o PoolPoolMetricOutput) ToOutput(ctx context.Context) pulumix.Output[PoolPoolMetric] {
-	return pulumix.Output[PoolPoolMetric]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The number of runs that are currently running that are using this pool.
@@ -1836,12 +1577,6 @@ func (o PoolPoolMetricArrayOutput) ToPoolPoolMetricArrayOutputWithContext(ctx co
 	return o
 }
 
-func (o PoolPoolMetricArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]PoolPoolMetric] {
-	return pulumix.Output[[]PoolPoolMetric]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o PoolPoolMetricArrayOutput) Index(i pulumi.IntInput) PoolPoolMetricOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) PoolPoolMetric {
 		return vs[0].([]PoolPoolMetric)[vs[1].(int)]
@@ -1885,12 +1620,6 @@ func (i PoolPoolMetricActivelyUsedNodeCountArgs) ToPoolPoolMetricActivelyUsedNod
 	return pulumi.ToOutputWithContext(ctx, i).(PoolPoolMetricActivelyUsedNodeCountOutput)
 }
 
-func (i PoolPoolMetricActivelyUsedNodeCountArgs) ToOutput(ctx context.Context) pulumix.Output[PoolPoolMetricActivelyUsedNodeCount] {
-	return pulumix.Output[PoolPoolMetricActivelyUsedNodeCount]{
-		OutputState: i.ToPoolPoolMetricActivelyUsedNodeCountOutputWithContext(ctx).OutputState,
-	}
-}
-
 // PoolPoolMetricActivelyUsedNodeCountArrayInput is an input type that accepts PoolPoolMetricActivelyUsedNodeCountArray and PoolPoolMetricActivelyUsedNodeCountArrayOutput values.
 // You can construct a concrete instance of `PoolPoolMetricActivelyUsedNodeCountArrayInput` via:
 //
@@ -1916,12 +1645,6 @@ func (i PoolPoolMetricActivelyUsedNodeCountArray) ToPoolPoolMetricActivelyUsedNo
 	return pulumi.ToOutputWithContext(ctx, i).(PoolPoolMetricActivelyUsedNodeCountArrayOutput)
 }
 
-func (i PoolPoolMetricActivelyUsedNodeCountArray) ToOutput(ctx context.Context) pulumix.Output[[]PoolPoolMetricActivelyUsedNodeCount] {
-	return pulumix.Output[[]PoolPoolMetricActivelyUsedNodeCount]{
-		OutputState: i.ToPoolPoolMetricActivelyUsedNodeCountArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type PoolPoolMetricActivelyUsedNodeCountOutput struct{ *pulumi.OutputState }
 
 func (PoolPoolMetricActivelyUsedNodeCountOutput) ElementType() reflect.Type {
@@ -1934,12 +1657,6 @@ func (o PoolPoolMetricActivelyUsedNodeCountOutput) ToPoolPoolMetricActivelyUsedN
 
 func (o PoolPoolMetricActivelyUsedNodeCountOutput) ToPoolPoolMetricActivelyUsedNodeCountOutputWithContext(ctx context.Context) PoolPoolMetricActivelyUsedNodeCountOutput {
 	return o
-}
-
-func (o PoolPoolMetricActivelyUsedNodeCountOutput) ToOutput(ctx context.Context) pulumix.Output[PoolPoolMetricActivelyUsedNodeCount] {
-	return pulumix.Output[PoolPoolMetricActivelyUsedNodeCount]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The compute shape of the nodes that the count is for.
@@ -1964,12 +1681,6 @@ func (o PoolPoolMetricActivelyUsedNodeCountArrayOutput) ToPoolPoolMetricActively
 
 func (o PoolPoolMetricActivelyUsedNodeCountArrayOutput) ToPoolPoolMetricActivelyUsedNodeCountArrayOutputWithContext(ctx context.Context) PoolPoolMetricActivelyUsedNodeCountArrayOutput {
 	return o
-}
-
-func (o PoolPoolMetricActivelyUsedNodeCountArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]PoolPoolMetricActivelyUsedNodeCount] {
-	return pulumix.Output[[]PoolPoolMetricActivelyUsedNodeCount]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o PoolPoolMetricActivelyUsedNodeCountArrayOutput) Index(i pulumi.IntInput) PoolPoolMetricActivelyUsedNodeCountOutput {
@@ -2019,12 +1730,6 @@ func (i PoolScheduleArgs) ToPoolScheduleOutputWithContext(ctx context.Context) P
 	return pulumi.ToOutputWithContext(ctx, i).(PoolScheduleOutput)
 }
 
-func (i PoolScheduleArgs) ToOutput(ctx context.Context) pulumix.Output[PoolSchedule] {
-	return pulumix.Output[PoolSchedule]{
-		OutputState: i.ToPoolScheduleOutputWithContext(ctx).OutputState,
-	}
-}
-
 // PoolScheduleArrayInput is an input type that accepts PoolScheduleArray and PoolScheduleArrayOutput values.
 // You can construct a concrete instance of `PoolScheduleArrayInput` via:
 //
@@ -2050,12 +1755,6 @@ func (i PoolScheduleArray) ToPoolScheduleArrayOutputWithContext(ctx context.Cont
 	return pulumi.ToOutputWithContext(ctx, i).(PoolScheduleArrayOutput)
 }
 
-func (i PoolScheduleArray) ToOutput(ctx context.Context) pulumix.Output[[]PoolSchedule] {
-	return pulumix.Output[[]PoolSchedule]{
-		OutputState: i.ToPoolScheduleArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type PoolScheduleOutput struct{ *pulumi.OutputState }
 
 func (PoolScheduleOutput) ElementType() reflect.Type {
@@ -2068,12 +1767,6 @@ func (o PoolScheduleOutput) ToPoolScheduleOutput() PoolScheduleOutput {
 
 func (o PoolScheduleOutput) ToPoolScheduleOutputWithContext(ctx context.Context) PoolScheduleOutput {
 	return o
-}
-
-func (o PoolScheduleOutput) ToOutput(ctx context.Context) pulumix.Output[PoolSchedule] {
-	return pulumix.Output[PoolSchedule]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Day of the week SUN-SAT
@@ -2103,12 +1796,6 @@ func (o PoolScheduleArrayOutput) ToPoolScheduleArrayOutput() PoolScheduleArrayOu
 
 func (o PoolScheduleArrayOutput) ToPoolScheduleArrayOutputWithContext(ctx context.Context) PoolScheduleArrayOutput {
 	return o
-}
-
-func (o PoolScheduleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]PoolSchedule] {
-	return pulumix.Output[[]PoolSchedule]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o PoolScheduleArrayOutput) Index(i pulumi.IntInput) PoolScheduleOutput {
@@ -2154,12 +1841,6 @@ func (i PrivateEndpointScanDetailArgs) ToPrivateEndpointScanDetailOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(PrivateEndpointScanDetailOutput)
 }
 
-func (i PrivateEndpointScanDetailArgs) ToOutput(ctx context.Context) pulumix.Output[PrivateEndpointScanDetail] {
-	return pulumix.Output[PrivateEndpointScanDetail]{
-		OutputState: i.ToPrivateEndpointScanDetailOutputWithContext(ctx).OutputState,
-	}
-}
-
 // PrivateEndpointScanDetailArrayInput is an input type that accepts PrivateEndpointScanDetailArray and PrivateEndpointScanDetailArrayOutput values.
 // You can construct a concrete instance of `PrivateEndpointScanDetailArrayInput` via:
 //
@@ -2185,12 +1866,6 @@ func (i PrivateEndpointScanDetailArray) ToPrivateEndpointScanDetailArrayOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(PrivateEndpointScanDetailArrayOutput)
 }
 
-func (i PrivateEndpointScanDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]PrivateEndpointScanDetail] {
-	return pulumix.Output[[]PrivateEndpointScanDetail]{
-		OutputState: i.ToPrivateEndpointScanDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type PrivateEndpointScanDetailOutput struct{ *pulumi.OutputState }
 
 func (PrivateEndpointScanDetailOutput) ElementType() reflect.Type {
@@ -2203,12 +1878,6 @@ func (o PrivateEndpointScanDetailOutput) ToPrivateEndpointScanDetailOutput() Pri
 
 func (o PrivateEndpointScanDetailOutput) ToPrivateEndpointScanDetailOutputWithContext(ctx context.Context) PrivateEndpointScanDetailOutput {
 	return o
-}
-
-func (o PrivateEndpointScanDetailOutput) ToOutput(ctx context.Context) pulumix.Output[PrivateEndpointScanDetail] {
-	return pulumix.Output[PrivateEndpointScanDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) A fully-qualified domain name (FQDN).
@@ -2233,12 +1902,6 @@ func (o PrivateEndpointScanDetailArrayOutput) ToPrivateEndpointScanDetailArrayOu
 
 func (o PrivateEndpointScanDetailArrayOutput) ToPrivateEndpointScanDetailArrayOutputWithContext(ctx context.Context) PrivateEndpointScanDetailArrayOutput {
 	return o
-}
-
-func (o PrivateEndpointScanDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]PrivateEndpointScanDetail] {
-	return pulumix.Output[[]PrivateEndpointScanDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o PrivateEndpointScanDetailArrayOutput) Index(i pulumi.IntInput) PrivateEndpointScanDetailOutput {
@@ -2296,12 +1959,6 @@ func (i RunStatementOutputTypeArgs) ToRunStatementOutputTypeOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(RunStatementOutputTypeOutput)
 }
 
-func (i RunStatementOutputTypeArgs) ToOutput(ctx context.Context) pulumix.Output[RunStatementOutputType] {
-	return pulumix.Output[RunStatementOutputType]{
-		OutputState: i.ToRunStatementOutputTypeOutputWithContext(ctx).OutputState,
-	}
-}
-
 // RunStatementOutputTypeArrayInput is an input type that accepts RunStatementOutputTypeArray and RunStatementOutputTypeArrayOutput values.
 // You can construct a concrete instance of `RunStatementOutputTypeArrayInput` via:
 //
@@ -2327,12 +1984,6 @@ func (i RunStatementOutputTypeArray) ToRunStatementOutputTypeArrayOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(RunStatementOutputTypeArrayOutput)
 }
 
-func (i RunStatementOutputTypeArray) ToOutput(ctx context.Context) pulumix.Output[[]RunStatementOutputType] {
-	return pulumix.Output[[]RunStatementOutputType]{
-		OutputState: i.ToRunStatementOutputTypeArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type RunStatementOutputTypeOutput struct{ *pulumi.OutputState }
 
 func (RunStatementOutputTypeOutput) ElementType() reflect.Type {
@@ -2345,12 +1996,6 @@ func (o RunStatementOutputTypeOutput) ToRunStatementOutputTypeOutput() RunStatem
 
 func (o RunStatementOutputTypeOutput) ToRunStatementOutputTypeOutputWithContext(ctx context.Context) RunStatementOutputTypeOutput {
 	return o
-}
-
-func (o RunStatementOutputTypeOutput) ToOutput(ctx context.Context) pulumix.Output[RunStatementOutputType] {
-	return pulumix.Output[RunStatementOutputType]{
-		OutputState: o.OutputState,
-	}
 }
 
 // An object representing execution output of a statement.
@@ -2390,12 +2035,6 @@ func (o RunStatementOutputTypeArrayOutput) ToRunStatementOutputTypeArrayOutput()
 
 func (o RunStatementOutputTypeArrayOutput) ToRunStatementOutputTypeArrayOutputWithContext(ctx context.Context) RunStatementOutputTypeArrayOutput {
 	return o
-}
-
-func (o RunStatementOutputTypeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]RunStatementOutputType] {
-	return pulumix.Output[[]RunStatementOutputType]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o RunStatementOutputTypeArrayOutput) Index(i pulumi.IntInput) RunStatementOutputTypeOutput {
@@ -2441,12 +2080,6 @@ func (i RunStatementOutputDataArgs) ToRunStatementOutputDataOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(RunStatementOutputDataOutput)
 }
 
-func (i RunStatementOutputDataArgs) ToOutput(ctx context.Context) pulumix.Output[RunStatementOutputData] {
-	return pulumix.Output[RunStatementOutputData]{
-		OutputState: i.ToRunStatementOutputDataOutputWithContext(ctx).OutputState,
-	}
-}
-
 // RunStatementOutputDataArrayInput is an input type that accepts RunStatementOutputDataArray and RunStatementOutputDataArrayOutput values.
 // You can construct a concrete instance of `RunStatementOutputDataArrayInput` via:
 //
@@ -2472,12 +2105,6 @@ func (i RunStatementOutputDataArray) ToRunStatementOutputDataArrayOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(RunStatementOutputDataArrayOutput)
 }
 
-func (i RunStatementOutputDataArray) ToOutput(ctx context.Context) pulumix.Output[[]RunStatementOutputData] {
-	return pulumix.Output[[]RunStatementOutputData]{
-		OutputState: i.ToRunStatementOutputDataArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type RunStatementOutputDataOutput struct{ *pulumi.OutputState }
 
 func (RunStatementOutputDataOutput) ElementType() reflect.Type {
@@ -2490,12 +2117,6 @@ func (o RunStatementOutputDataOutput) ToRunStatementOutputDataOutput() RunStatem
 
 func (o RunStatementOutputDataOutput) ToRunStatementOutputDataOutputWithContext(ctx context.Context) RunStatementOutputDataOutput {
 	return o
-}
-
-func (o RunStatementOutputDataOutput) ToOutput(ctx context.Context) pulumix.Output[RunStatementOutputData] {
-	return pulumix.Output[RunStatementOutputData]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The type of the `StatementOutputData` like `TEXT_PLAIN`, `TEXT_HTML` or `IMAGE_PNG`.
@@ -2520,12 +2141,6 @@ func (o RunStatementOutputDataArrayOutput) ToRunStatementOutputDataArrayOutput()
 
 func (o RunStatementOutputDataArrayOutput) ToRunStatementOutputDataArrayOutputWithContext(ctx context.Context) RunStatementOutputDataArrayOutput {
 	return o
-}
-
-func (o RunStatementOutputDataArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]RunStatementOutputData] {
-	return pulumix.Output[[]RunStatementOutputData]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o RunStatementOutputDataArrayOutput) Index(i pulumi.IntInput) RunStatementOutputDataOutput {
@@ -2571,12 +2186,6 @@ func (i SqlEndpointDriverShapeConfigArgs) ToSqlEndpointDriverShapeConfigOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(SqlEndpointDriverShapeConfigOutput)
 }
 
-func (i SqlEndpointDriverShapeConfigArgs) ToOutput(ctx context.Context) pulumix.Output[SqlEndpointDriverShapeConfig] {
-	return pulumix.Output[SqlEndpointDriverShapeConfig]{
-		OutputState: i.ToSqlEndpointDriverShapeConfigOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i SqlEndpointDriverShapeConfigArgs) ToSqlEndpointDriverShapeConfigPtrOutput() SqlEndpointDriverShapeConfigPtrOutput {
 	return i.ToSqlEndpointDriverShapeConfigPtrOutputWithContext(context.Background())
 }
@@ -2618,12 +2227,6 @@ func (i *sqlEndpointDriverShapeConfigPtrType) ToSqlEndpointDriverShapeConfigPtrO
 	return pulumi.ToOutputWithContext(ctx, i).(SqlEndpointDriverShapeConfigPtrOutput)
 }
 
-func (i *sqlEndpointDriverShapeConfigPtrType) ToOutput(ctx context.Context) pulumix.Output[*SqlEndpointDriverShapeConfig] {
-	return pulumix.Output[*SqlEndpointDriverShapeConfig]{
-		OutputState: i.ToSqlEndpointDriverShapeConfigPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type SqlEndpointDriverShapeConfigOutput struct{ *pulumi.OutputState }
 
 func (SqlEndpointDriverShapeConfigOutput) ElementType() reflect.Type {
@@ -2648,12 +2251,6 @@ func (o SqlEndpointDriverShapeConfigOutput) ToSqlEndpointDriverShapeConfigPtrOut
 	}).(SqlEndpointDriverShapeConfigPtrOutput)
 }
 
-func (o SqlEndpointDriverShapeConfigOutput) ToOutput(ctx context.Context) pulumix.Output[SqlEndpointDriverShapeConfig] {
-	return pulumix.Output[SqlEndpointDriverShapeConfig]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The amount of memory used for the driver or executors.
 func (o SqlEndpointDriverShapeConfigOutput) MemoryInGbs() pulumi.Float64PtrOutput {
 	return o.ApplyT(func(v SqlEndpointDriverShapeConfig) *float64 { return v.MemoryInGbs }).(pulumi.Float64PtrOutput)
@@ -2676,12 +2273,6 @@ func (o SqlEndpointDriverShapeConfigPtrOutput) ToSqlEndpointDriverShapeConfigPtr
 
 func (o SqlEndpointDriverShapeConfigPtrOutput) ToSqlEndpointDriverShapeConfigPtrOutputWithContext(ctx context.Context) SqlEndpointDriverShapeConfigPtrOutput {
 	return o
-}
-
-func (o SqlEndpointDriverShapeConfigPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*SqlEndpointDriverShapeConfig] {
-	return pulumix.Output[*SqlEndpointDriverShapeConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o SqlEndpointDriverShapeConfigPtrOutput) Elem() SqlEndpointDriverShapeConfigOutput {
@@ -2751,12 +2342,6 @@ func (i SqlEndpointExecutorShapeConfigArgs) ToSqlEndpointExecutorShapeConfigOutp
 	return pulumi.ToOutputWithContext(ctx, i).(SqlEndpointExecutorShapeConfigOutput)
 }
 
-func (i SqlEndpointExecutorShapeConfigArgs) ToOutput(ctx context.Context) pulumix.Output[SqlEndpointExecutorShapeConfig] {
-	return pulumix.Output[SqlEndpointExecutorShapeConfig]{
-		OutputState: i.ToSqlEndpointExecutorShapeConfigOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i SqlEndpointExecutorShapeConfigArgs) ToSqlEndpointExecutorShapeConfigPtrOutput() SqlEndpointExecutorShapeConfigPtrOutput {
 	return i.ToSqlEndpointExecutorShapeConfigPtrOutputWithContext(context.Background())
 }
@@ -2798,12 +2383,6 @@ func (i *sqlEndpointExecutorShapeConfigPtrType) ToSqlEndpointExecutorShapeConfig
 	return pulumi.ToOutputWithContext(ctx, i).(SqlEndpointExecutorShapeConfigPtrOutput)
 }
 
-func (i *sqlEndpointExecutorShapeConfigPtrType) ToOutput(ctx context.Context) pulumix.Output[*SqlEndpointExecutorShapeConfig] {
-	return pulumix.Output[*SqlEndpointExecutorShapeConfig]{
-		OutputState: i.ToSqlEndpointExecutorShapeConfigPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type SqlEndpointExecutorShapeConfigOutput struct{ *pulumi.OutputState }
 
 func (SqlEndpointExecutorShapeConfigOutput) ElementType() reflect.Type {
@@ -2828,12 +2407,6 @@ func (o SqlEndpointExecutorShapeConfigOutput) ToSqlEndpointExecutorShapeConfigPt
 	}).(SqlEndpointExecutorShapeConfigPtrOutput)
 }
 
-func (o SqlEndpointExecutorShapeConfigOutput) ToOutput(ctx context.Context) pulumix.Output[SqlEndpointExecutorShapeConfig] {
-	return pulumix.Output[SqlEndpointExecutorShapeConfig]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The amount of memory used for the driver or executors.
 func (o SqlEndpointExecutorShapeConfigOutput) MemoryInGbs() pulumi.Float64PtrOutput {
 	return o.ApplyT(func(v SqlEndpointExecutorShapeConfig) *float64 { return v.MemoryInGbs }).(pulumi.Float64PtrOutput)
@@ -2856,12 +2429,6 @@ func (o SqlEndpointExecutorShapeConfigPtrOutput) ToSqlEndpointExecutorShapeConfi
 
 func (o SqlEndpointExecutorShapeConfigPtrOutput) ToSqlEndpointExecutorShapeConfigPtrOutputWithContext(ctx context.Context) SqlEndpointExecutorShapeConfigPtrOutput {
 	return o
-}
-
-func (o SqlEndpointExecutorShapeConfigPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*SqlEndpointExecutorShapeConfig] {
-	return pulumix.Output[*SqlEndpointExecutorShapeConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o SqlEndpointExecutorShapeConfigPtrOutput) Elem() SqlEndpointExecutorShapeConfigOutput {
@@ -2951,12 +2518,6 @@ func (i SqlEndpointNetworkConfigurationArgs) ToSqlEndpointNetworkConfigurationOu
 	return pulumi.ToOutputWithContext(ctx, i).(SqlEndpointNetworkConfigurationOutput)
 }
 
-func (i SqlEndpointNetworkConfigurationArgs) ToOutput(ctx context.Context) pulumix.Output[SqlEndpointNetworkConfiguration] {
-	return pulumix.Output[SqlEndpointNetworkConfiguration]{
-		OutputState: i.ToSqlEndpointNetworkConfigurationOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i SqlEndpointNetworkConfigurationArgs) ToSqlEndpointNetworkConfigurationPtrOutput() SqlEndpointNetworkConfigurationPtrOutput {
 	return i.ToSqlEndpointNetworkConfigurationPtrOutputWithContext(context.Background())
 }
@@ -2998,12 +2559,6 @@ func (i *sqlEndpointNetworkConfigurationPtrType) ToSqlEndpointNetworkConfigurati
 	return pulumi.ToOutputWithContext(ctx, i).(SqlEndpointNetworkConfigurationPtrOutput)
 }
 
-func (i *sqlEndpointNetworkConfigurationPtrType) ToOutput(ctx context.Context) pulumix.Output[*SqlEndpointNetworkConfiguration] {
-	return pulumix.Output[*SqlEndpointNetworkConfiguration]{
-		OutputState: i.ToSqlEndpointNetworkConfigurationPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type SqlEndpointNetworkConfigurationOutput struct{ *pulumi.OutputState }
 
 func (SqlEndpointNetworkConfigurationOutput) ElementType() reflect.Type {
@@ -3026,12 +2581,6 @@ func (o SqlEndpointNetworkConfigurationOutput) ToSqlEndpointNetworkConfiguration
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v SqlEndpointNetworkConfiguration) *SqlEndpointNetworkConfiguration {
 		return &v
 	}).(SqlEndpointNetworkConfigurationPtrOutput)
-}
-
-func (o SqlEndpointNetworkConfigurationOutput) ToOutput(ctx context.Context) pulumix.Output[SqlEndpointNetworkConfiguration] {
-	return pulumix.Output[SqlEndpointNetworkConfiguration]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A list of SecureAccessControlRule's to which access is limited to
@@ -3083,12 +2632,6 @@ func (o SqlEndpointNetworkConfigurationPtrOutput) ToSqlEndpointNetworkConfigurat
 
 func (o SqlEndpointNetworkConfigurationPtrOutput) ToSqlEndpointNetworkConfigurationPtrOutputWithContext(ctx context.Context) SqlEndpointNetworkConfigurationPtrOutput {
 	return o
-}
-
-func (o SqlEndpointNetworkConfigurationPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*SqlEndpointNetworkConfiguration] {
-	return pulumix.Output[*SqlEndpointNetworkConfiguration]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o SqlEndpointNetworkConfigurationPtrOutput) Elem() SqlEndpointNetworkConfigurationOutput {
@@ -3212,12 +2755,6 @@ func (i SqlEndpointNetworkConfigurationAccessControlRuleArgs) ToSqlEndpointNetwo
 	return pulumi.ToOutputWithContext(ctx, i).(SqlEndpointNetworkConfigurationAccessControlRuleOutput)
 }
 
-func (i SqlEndpointNetworkConfigurationAccessControlRuleArgs) ToOutput(ctx context.Context) pulumix.Output[SqlEndpointNetworkConfigurationAccessControlRule] {
-	return pulumix.Output[SqlEndpointNetworkConfigurationAccessControlRule]{
-		OutputState: i.ToSqlEndpointNetworkConfigurationAccessControlRuleOutputWithContext(ctx).OutputState,
-	}
-}
-
 // SqlEndpointNetworkConfigurationAccessControlRuleArrayInput is an input type that accepts SqlEndpointNetworkConfigurationAccessControlRuleArray and SqlEndpointNetworkConfigurationAccessControlRuleArrayOutput values.
 // You can construct a concrete instance of `SqlEndpointNetworkConfigurationAccessControlRuleArrayInput` via:
 //
@@ -3243,12 +2780,6 @@ func (i SqlEndpointNetworkConfigurationAccessControlRuleArray) ToSqlEndpointNetw
 	return pulumi.ToOutputWithContext(ctx, i).(SqlEndpointNetworkConfigurationAccessControlRuleArrayOutput)
 }
 
-func (i SqlEndpointNetworkConfigurationAccessControlRuleArray) ToOutput(ctx context.Context) pulumix.Output[[]SqlEndpointNetworkConfigurationAccessControlRule] {
-	return pulumix.Output[[]SqlEndpointNetworkConfigurationAccessControlRule]{
-		OutputState: i.ToSqlEndpointNetworkConfigurationAccessControlRuleArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type SqlEndpointNetworkConfigurationAccessControlRuleOutput struct{ *pulumi.OutputState }
 
 func (SqlEndpointNetworkConfigurationAccessControlRuleOutput) ElementType() reflect.Type {
@@ -3261,12 +2792,6 @@ func (o SqlEndpointNetworkConfigurationAccessControlRuleOutput) ToSqlEndpointNet
 
 func (o SqlEndpointNetworkConfigurationAccessControlRuleOutput) ToSqlEndpointNetworkConfigurationAccessControlRuleOutputWithContext(ctx context.Context) SqlEndpointNetworkConfigurationAccessControlRuleOutput {
 	return o
-}
-
-func (o SqlEndpointNetworkConfigurationAccessControlRuleOutput) ToOutput(ctx context.Context) pulumix.Output[SqlEndpointNetworkConfigurationAccessControlRule] {
-	return pulumix.Output[SqlEndpointNetworkConfigurationAccessControlRule]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The type of IP notation.
@@ -3298,12 +2823,6 @@ func (o SqlEndpointNetworkConfigurationAccessControlRuleArrayOutput) ToSqlEndpoi
 	return o
 }
 
-func (o SqlEndpointNetworkConfigurationAccessControlRuleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]SqlEndpointNetworkConfigurationAccessControlRule] {
-	return pulumix.Output[[]SqlEndpointNetworkConfigurationAccessControlRule]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o SqlEndpointNetworkConfigurationAccessControlRuleArrayOutput) Index(i pulumi.IntInput) SqlEndpointNetworkConfigurationAccessControlRuleOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) SqlEndpointNetworkConfigurationAccessControlRule {
 		return vs[0].([]SqlEndpointNetworkConfigurationAccessControlRule)[vs[1].(int)]
@@ -3312,9 +2831,9 @@ func (o SqlEndpointNetworkConfigurationAccessControlRuleArrayOutput) Index(i pul
 
 type GetApplicationApplicationLogConfig struct {
 	// The log group id for where log objects will be for Data Flow Runs.
-	LogGroupId string `pulumi:"logGroupId"`
+	LogGroupId *string `pulumi:"logGroupId"`
 	// The log id of the log object the Application Logs of Data Flow Run will be shipped to.
-	LogId string `pulumi:"logId"`
+	LogId *string `pulumi:"logId"`
 }
 
 // GetApplicationApplicationLogConfigInput is an input type that accepts GetApplicationApplicationLogConfigArgs and GetApplicationApplicationLogConfigOutput values.
@@ -3330,9 +2849,9 @@ type GetApplicationApplicationLogConfigInput interface {
 
 type GetApplicationApplicationLogConfigArgs struct {
 	// The log group id for where log objects will be for Data Flow Runs.
-	LogGroupId pulumi.StringInput `pulumi:"logGroupId"`
+	LogGroupId pulumi.StringPtrInput `pulumi:"logGroupId"`
 	// The log id of the log object the Application Logs of Data Flow Run will be shipped to.
-	LogId pulumi.StringInput `pulumi:"logId"`
+	LogId pulumi.StringPtrInput `pulumi:"logId"`
 }
 
 func (GetApplicationApplicationLogConfigArgs) ElementType() reflect.Type {
@@ -3345,12 +2864,6 @@ func (i GetApplicationApplicationLogConfigArgs) ToGetApplicationApplicationLogCo
 
 func (i GetApplicationApplicationLogConfigArgs) ToGetApplicationApplicationLogConfigOutputWithContext(ctx context.Context) GetApplicationApplicationLogConfigOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetApplicationApplicationLogConfigOutput)
-}
-
-func (i GetApplicationApplicationLogConfigArgs) ToOutput(ctx context.Context) pulumix.Output[GetApplicationApplicationLogConfig] {
-	return pulumix.Output[GetApplicationApplicationLogConfig]{
-		OutputState: i.ToGetApplicationApplicationLogConfigOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetApplicationApplicationLogConfigArrayInput is an input type that accepts GetApplicationApplicationLogConfigArray and GetApplicationApplicationLogConfigArrayOutput values.
@@ -3378,12 +2891,6 @@ func (i GetApplicationApplicationLogConfigArray) ToGetApplicationApplicationLogC
 	return pulumi.ToOutputWithContext(ctx, i).(GetApplicationApplicationLogConfigArrayOutput)
 }
 
-func (i GetApplicationApplicationLogConfigArray) ToOutput(ctx context.Context) pulumix.Output[[]GetApplicationApplicationLogConfig] {
-	return pulumix.Output[[]GetApplicationApplicationLogConfig]{
-		OutputState: i.ToGetApplicationApplicationLogConfigArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetApplicationApplicationLogConfigOutput struct{ *pulumi.OutputState }
 
 func (GetApplicationApplicationLogConfigOutput) ElementType() reflect.Type {
@@ -3398,20 +2905,14 @@ func (o GetApplicationApplicationLogConfigOutput) ToGetApplicationApplicationLog
 	return o
 }
 
-func (o GetApplicationApplicationLogConfigOutput) ToOutput(ctx context.Context) pulumix.Output[GetApplicationApplicationLogConfig] {
-	return pulumix.Output[GetApplicationApplicationLogConfig]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The log group id for where log objects will be for Data Flow Runs.
-func (o GetApplicationApplicationLogConfigOutput) LogGroupId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetApplicationApplicationLogConfig) string { return v.LogGroupId }).(pulumi.StringOutput)
+func (o GetApplicationApplicationLogConfigOutput) LogGroupId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetApplicationApplicationLogConfig) *string { return v.LogGroupId }).(pulumi.StringPtrOutput)
 }
 
 // The log id of the log object the Application Logs of Data Flow Run will be shipped to.
-func (o GetApplicationApplicationLogConfigOutput) LogId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetApplicationApplicationLogConfig) string { return v.LogId }).(pulumi.StringOutput)
+func (o GetApplicationApplicationLogConfigOutput) LogId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetApplicationApplicationLogConfig) *string { return v.LogId }).(pulumi.StringPtrOutput)
 }
 
 type GetApplicationApplicationLogConfigArrayOutput struct{ *pulumi.OutputState }
@@ -3428,12 +2929,6 @@ func (o GetApplicationApplicationLogConfigArrayOutput) ToGetApplicationApplicati
 	return o
 }
 
-func (o GetApplicationApplicationLogConfigArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetApplicationApplicationLogConfig] {
-	return pulumix.Output[[]GetApplicationApplicationLogConfig]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetApplicationApplicationLogConfigArrayOutput) Index(i pulumi.IntInput) GetApplicationApplicationLogConfigOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetApplicationApplicationLogConfig {
 		return vs[0].([]GetApplicationApplicationLogConfig)[vs[1].(int)]
@@ -3442,9 +2937,9 @@ func (o GetApplicationApplicationLogConfigArrayOutput) Index(i pulumi.IntInput) 
 
 type GetApplicationDriverShapeConfig struct {
 	// The amount of memory used for the driver or executors.
-	MemoryInGbs float64 `pulumi:"memoryInGbs"`
+	MemoryInGbs *float64 `pulumi:"memoryInGbs"`
 	// The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
-	Ocpus float64 `pulumi:"ocpus"`
+	Ocpus *float64 `pulumi:"ocpus"`
 }
 
 // GetApplicationDriverShapeConfigInput is an input type that accepts GetApplicationDriverShapeConfigArgs and GetApplicationDriverShapeConfigOutput values.
@@ -3460,9 +2955,9 @@ type GetApplicationDriverShapeConfigInput interface {
 
 type GetApplicationDriverShapeConfigArgs struct {
 	// The amount of memory used for the driver or executors.
-	MemoryInGbs pulumi.Float64Input `pulumi:"memoryInGbs"`
+	MemoryInGbs pulumi.Float64PtrInput `pulumi:"memoryInGbs"`
 	// The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
-	Ocpus pulumi.Float64Input `pulumi:"ocpus"`
+	Ocpus pulumi.Float64PtrInput `pulumi:"ocpus"`
 }
 
 func (GetApplicationDriverShapeConfigArgs) ElementType() reflect.Type {
@@ -3475,12 +2970,6 @@ func (i GetApplicationDriverShapeConfigArgs) ToGetApplicationDriverShapeConfigOu
 
 func (i GetApplicationDriverShapeConfigArgs) ToGetApplicationDriverShapeConfigOutputWithContext(ctx context.Context) GetApplicationDriverShapeConfigOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetApplicationDriverShapeConfigOutput)
-}
-
-func (i GetApplicationDriverShapeConfigArgs) ToOutput(ctx context.Context) pulumix.Output[GetApplicationDriverShapeConfig] {
-	return pulumix.Output[GetApplicationDriverShapeConfig]{
-		OutputState: i.ToGetApplicationDriverShapeConfigOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetApplicationDriverShapeConfigArrayInput is an input type that accepts GetApplicationDriverShapeConfigArray and GetApplicationDriverShapeConfigArrayOutput values.
@@ -3508,12 +2997,6 @@ func (i GetApplicationDriverShapeConfigArray) ToGetApplicationDriverShapeConfigA
 	return pulumi.ToOutputWithContext(ctx, i).(GetApplicationDriverShapeConfigArrayOutput)
 }
 
-func (i GetApplicationDriverShapeConfigArray) ToOutput(ctx context.Context) pulumix.Output[[]GetApplicationDriverShapeConfig] {
-	return pulumix.Output[[]GetApplicationDriverShapeConfig]{
-		OutputState: i.ToGetApplicationDriverShapeConfigArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetApplicationDriverShapeConfigOutput struct{ *pulumi.OutputState }
 
 func (GetApplicationDriverShapeConfigOutput) ElementType() reflect.Type {
@@ -3528,20 +3011,14 @@ func (o GetApplicationDriverShapeConfigOutput) ToGetApplicationDriverShapeConfig
 	return o
 }
 
-func (o GetApplicationDriverShapeConfigOutput) ToOutput(ctx context.Context) pulumix.Output[GetApplicationDriverShapeConfig] {
-	return pulumix.Output[GetApplicationDriverShapeConfig]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The amount of memory used for the driver or executors.
-func (o GetApplicationDriverShapeConfigOutput) MemoryInGbs() pulumi.Float64Output {
-	return o.ApplyT(func(v GetApplicationDriverShapeConfig) float64 { return v.MemoryInGbs }).(pulumi.Float64Output)
+func (o GetApplicationDriverShapeConfigOutput) MemoryInGbs() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetApplicationDriverShapeConfig) *float64 { return v.MemoryInGbs }).(pulumi.Float64PtrOutput)
 }
 
 // The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
-func (o GetApplicationDriverShapeConfigOutput) Ocpus() pulumi.Float64Output {
-	return o.ApplyT(func(v GetApplicationDriverShapeConfig) float64 { return v.Ocpus }).(pulumi.Float64Output)
+func (o GetApplicationDriverShapeConfigOutput) Ocpus() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetApplicationDriverShapeConfig) *float64 { return v.Ocpus }).(pulumi.Float64PtrOutput)
 }
 
 type GetApplicationDriverShapeConfigArrayOutput struct{ *pulumi.OutputState }
@@ -3558,12 +3035,6 @@ func (o GetApplicationDriverShapeConfigArrayOutput) ToGetApplicationDriverShapeC
 	return o
 }
 
-func (o GetApplicationDriverShapeConfigArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetApplicationDriverShapeConfig] {
-	return pulumix.Output[[]GetApplicationDriverShapeConfig]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetApplicationDriverShapeConfigArrayOutput) Index(i pulumi.IntInput) GetApplicationDriverShapeConfigOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetApplicationDriverShapeConfig {
 		return vs[0].([]GetApplicationDriverShapeConfig)[vs[1].(int)]
@@ -3572,9 +3043,9 @@ func (o GetApplicationDriverShapeConfigArrayOutput) Index(i pulumi.IntInput) Get
 
 type GetApplicationExecutorShapeConfig struct {
 	// The amount of memory used for the driver or executors.
-	MemoryInGbs float64 `pulumi:"memoryInGbs"`
+	MemoryInGbs *float64 `pulumi:"memoryInGbs"`
 	// The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
-	Ocpus float64 `pulumi:"ocpus"`
+	Ocpus *float64 `pulumi:"ocpus"`
 }
 
 // GetApplicationExecutorShapeConfigInput is an input type that accepts GetApplicationExecutorShapeConfigArgs and GetApplicationExecutorShapeConfigOutput values.
@@ -3590,9 +3061,9 @@ type GetApplicationExecutorShapeConfigInput interface {
 
 type GetApplicationExecutorShapeConfigArgs struct {
 	// The amount of memory used for the driver or executors.
-	MemoryInGbs pulumi.Float64Input `pulumi:"memoryInGbs"`
+	MemoryInGbs pulumi.Float64PtrInput `pulumi:"memoryInGbs"`
 	// The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
-	Ocpus pulumi.Float64Input `pulumi:"ocpus"`
+	Ocpus pulumi.Float64PtrInput `pulumi:"ocpus"`
 }
 
 func (GetApplicationExecutorShapeConfigArgs) ElementType() reflect.Type {
@@ -3605,12 +3076,6 @@ func (i GetApplicationExecutorShapeConfigArgs) ToGetApplicationExecutorShapeConf
 
 func (i GetApplicationExecutorShapeConfigArgs) ToGetApplicationExecutorShapeConfigOutputWithContext(ctx context.Context) GetApplicationExecutorShapeConfigOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetApplicationExecutorShapeConfigOutput)
-}
-
-func (i GetApplicationExecutorShapeConfigArgs) ToOutput(ctx context.Context) pulumix.Output[GetApplicationExecutorShapeConfig] {
-	return pulumix.Output[GetApplicationExecutorShapeConfig]{
-		OutputState: i.ToGetApplicationExecutorShapeConfigOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetApplicationExecutorShapeConfigArrayInput is an input type that accepts GetApplicationExecutorShapeConfigArray and GetApplicationExecutorShapeConfigArrayOutput values.
@@ -3638,12 +3103,6 @@ func (i GetApplicationExecutorShapeConfigArray) ToGetApplicationExecutorShapeCon
 	return pulumi.ToOutputWithContext(ctx, i).(GetApplicationExecutorShapeConfigArrayOutput)
 }
 
-func (i GetApplicationExecutorShapeConfigArray) ToOutput(ctx context.Context) pulumix.Output[[]GetApplicationExecutorShapeConfig] {
-	return pulumix.Output[[]GetApplicationExecutorShapeConfig]{
-		OutputState: i.ToGetApplicationExecutorShapeConfigArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetApplicationExecutorShapeConfigOutput struct{ *pulumi.OutputState }
 
 func (GetApplicationExecutorShapeConfigOutput) ElementType() reflect.Type {
@@ -3658,20 +3117,14 @@ func (o GetApplicationExecutorShapeConfigOutput) ToGetApplicationExecutorShapeCo
 	return o
 }
 
-func (o GetApplicationExecutorShapeConfigOutput) ToOutput(ctx context.Context) pulumix.Output[GetApplicationExecutorShapeConfig] {
-	return pulumix.Output[GetApplicationExecutorShapeConfig]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The amount of memory used for the driver or executors.
-func (o GetApplicationExecutorShapeConfigOutput) MemoryInGbs() pulumi.Float64Output {
-	return o.ApplyT(func(v GetApplicationExecutorShapeConfig) float64 { return v.MemoryInGbs }).(pulumi.Float64Output)
+func (o GetApplicationExecutorShapeConfigOutput) MemoryInGbs() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetApplicationExecutorShapeConfig) *float64 { return v.MemoryInGbs }).(pulumi.Float64PtrOutput)
 }
 
 // The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
-func (o GetApplicationExecutorShapeConfigOutput) Ocpus() pulumi.Float64Output {
-	return o.ApplyT(func(v GetApplicationExecutorShapeConfig) float64 { return v.Ocpus }).(pulumi.Float64Output)
+func (o GetApplicationExecutorShapeConfigOutput) Ocpus() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetApplicationExecutorShapeConfig) *float64 { return v.Ocpus }).(pulumi.Float64PtrOutput)
 }
 
 type GetApplicationExecutorShapeConfigArrayOutput struct{ *pulumi.OutputState }
@@ -3688,12 +3141,6 @@ func (o GetApplicationExecutorShapeConfigArrayOutput) ToGetApplicationExecutorSh
 	return o
 }
 
-func (o GetApplicationExecutorShapeConfigArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetApplicationExecutorShapeConfig] {
-	return pulumix.Output[[]GetApplicationExecutorShapeConfig]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetApplicationExecutorShapeConfigArrayOutput) Index(i pulumi.IntInput) GetApplicationExecutorShapeConfigOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetApplicationExecutorShapeConfig {
 		return vs[0].([]GetApplicationExecutorShapeConfig)[vs[1].(int)]
@@ -3702,9 +3149,9 @@ func (o GetApplicationExecutorShapeConfigArrayOutput) Index(i pulumi.IntInput) G
 
 type GetApplicationParameter struct {
 	// The name of the parameter.  It must be a string of one or more word characters (a-z, A-Z, 0-9, _). Examples: "iterations", "inputFile"
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// The value of the parameter. It must be a string of 0 or more characters of any kind. Examples: "" (empty string), "10", "mydata.xml", "${x}"
-	Value string `pulumi:"value"`
+	Value *string `pulumi:"value"`
 }
 
 // GetApplicationParameterInput is an input type that accepts GetApplicationParameterArgs and GetApplicationParameterOutput values.
@@ -3720,9 +3167,9 @@ type GetApplicationParameterInput interface {
 
 type GetApplicationParameterArgs struct {
 	// The name of the parameter.  It must be a string of one or more word characters (a-z, A-Z, 0-9, _). Examples: "iterations", "inputFile"
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// The value of the parameter. It must be a string of 0 or more characters of any kind. Examples: "" (empty string), "10", "mydata.xml", "${x}"
-	Value pulumi.StringInput `pulumi:"value"`
+	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
 func (GetApplicationParameterArgs) ElementType() reflect.Type {
@@ -3735,12 +3182,6 @@ func (i GetApplicationParameterArgs) ToGetApplicationParameterOutput() GetApplic
 
 func (i GetApplicationParameterArgs) ToGetApplicationParameterOutputWithContext(ctx context.Context) GetApplicationParameterOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetApplicationParameterOutput)
-}
-
-func (i GetApplicationParameterArgs) ToOutput(ctx context.Context) pulumix.Output[GetApplicationParameter] {
-	return pulumix.Output[GetApplicationParameter]{
-		OutputState: i.ToGetApplicationParameterOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetApplicationParameterArrayInput is an input type that accepts GetApplicationParameterArray and GetApplicationParameterArrayOutput values.
@@ -3768,12 +3209,6 @@ func (i GetApplicationParameterArray) ToGetApplicationParameterArrayOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetApplicationParameterArrayOutput)
 }
 
-func (i GetApplicationParameterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetApplicationParameter] {
-	return pulumix.Output[[]GetApplicationParameter]{
-		OutputState: i.ToGetApplicationParameterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetApplicationParameterOutput struct{ *pulumi.OutputState }
 
 func (GetApplicationParameterOutput) ElementType() reflect.Type {
@@ -3788,20 +3223,14 @@ func (o GetApplicationParameterOutput) ToGetApplicationParameterOutputWithContex
 	return o
 }
 
-func (o GetApplicationParameterOutput) ToOutput(ctx context.Context) pulumix.Output[GetApplicationParameter] {
-	return pulumix.Output[GetApplicationParameter]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The name of the parameter.  It must be a string of one or more word characters (a-z, A-Z, 0-9, _). Examples: "iterations", "inputFile"
-func (o GetApplicationParameterOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetApplicationParameter) string { return v.Name }).(pulumi.StringOutput)
+func (o GetApplicationParameterOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetApplicationParameter) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // The value of the parameter. It must be a string of 0 or more characters of any kind. Examples: "" (empty string), "10", "mydata.xml", "${x}"
-func (o GetApplicationParameterOutput) Value() pulumi.StringOutput {
-	return o.ApplyT(func(v GetApplicationParameter) string { return v.Value }).(pulumi.StringOutput)
+func (o GetApplicationParameterOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetApplicationParameter) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
 
 type GetApplicationParameterArrayOutput struct{ *pulumi.OutputState }
@@ -3818,12 +3247,6 @@ func (o GetApplicationParameterArrayOutput) ToGetApplicationParameterArrayOutput
 	return o
 }
 
-func (o GetApplicationParameterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetApplicationParameter] {
-	return pulumix.Output[[]GetApplicationParameter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetApplicationParameterArrayOutput) Index(i pulumi.IntInput) GetApplicationParameterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetApplicationParameter {
 		return vs[0].([]GetApplicationParameter)[vs[1].(int)]
@@ -3834,71 +3257,71 @@ type GetApplicationsApplication struct {
 	// Logging details of Application logs for Data Flow Run.
 	ApplicationLogConfigs []GetApplicationsApplicationApplicationLogConfig `pulumi:"applicationLogConfigs"`
 	// A comma separated list of one or more archive files as Oracle Cloud Infrastructure URIs. For example, ``oci://path/to/a.zip,oci://path/to/b.zip``. An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution of a Python, Java, or Scala application. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
-	ArchiveUri string `pulumi:"archiveUri"`
+	ArchiveUri *string `pulumi:"archiveUri"`
 	// The arguments passed to the running application as command line arguments.  An argument is either a plain text or a placeholder. Placeholders are replaced using values from the parameters map.  Each placeholder specified must be represented in the parameters map else the request (POST or PUT) will fail with a HTTP 400 status code.  Placeholders are specified as `Service Api Spec`, where `name` is the name of the parameter. Example:  `[ "--input", "${input_file}", "--name", "John Doe" ]` If "inputFile" has a value of "mydata.xml", then the value above will be translated to `--input mydata.xml --name "John Doe"`
 	Arguments []string `pulumi:"arguments"`
 	// The class for the application.
-	ClassName string `pulumi:"className"`
+	ClassName *string `pulumi:"className"`
 	// The OCID of the compartment.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
 	Configuration map[string]interface{} `pulumi:"configuration"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A user-friendly description.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// The query parameter for the Spark application name.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// The VM shape for the driver. Sets the driver cores and memory.
-	DriverShape string `pulumi:"driverShape"`
+	DriverShape *string `pulumi:"driverShape"`
 	// This is used to configure the shape of the driver or executor if a flexible shape is used.
 	DriverShapeConfigs []GetApplicationsApplicationDriverShapeConfig `pulumi:"driverShapeConfigs"`
 	// The input used for spark-submit command. For more details see https://spark.apache.org/docs/latest/submitting-applications.html#launching-applications-with-spark-submit. Supported options include ``--class``, ``--file``, ``--jars``, ``--conf``, ``--py-files``, and main application file with arguments. Example: ``--jars oci://path/to/a.jar,oci://path/to/b.jar --files oci://path/to/a.json,oci://path/to/b.csv --py-files oci://path/to/a.py,oci://path/to/b.py --conf spark.sql.crossJoin.enabled=true --class org.apache.spark.examples.SparkPi oci://path/to/main.jar 10`` Note: If execute is specified together with applicationId, className, configuration, fileUri, language, arguments, parameters during application create/update, or run create/submit, Data Flow service will use derived information from execute input only.
-	Execute string `pulumi:"execute"`
+	Execute *string `pulumi:"execute"`
 	// The VM shape for the executors. Sets the executor cores and memory.
-	ExecutorShape string `pulumi:"executorShape"`
+	ExecutorShape *string `pulumi:"executorShape"`
 	// This is used to configure the shape of the driver or executor if a flexible shape is used.
 	ExecutorShapeConfigs []GetApplicationsApplicationExecutorShapeConfig `pulumi:"executorShapeConfigs"`
 	// An Oracle Cloud Infrastructure URI of the file containing the application to execute. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
-	FileUri string `pulumi:"fileUri"`
+	FileUri *string `pulumi:"fileUri"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The application ID.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The timeout value in minutes used to manage Runs. A Run would be stopped after inactivity for this amount of time period. Note: This parameter is currently only applicable for Runs of type `SESSION`. Default value is 2880 minutes (2 days)
-	IdleTimeoutInMinutes string `pulumi:"idleTimeoutInMinutes"`
+	IdleTimeoutInMinutes *string `pulumi:"idleTimeoutInMinutes"`
 	// The Spark language.
-	Language string `pulumi:"language"`
+	Language *string `pulumi:"language"`
 	// An Oracle Cloud Infrastructure URI of the bucket where the Spark job logs are to be uploaded. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
-	LogsBucketUri string `pulumi:"logsBucketUri"`
+	LogsBucketUri *string `pulumi:"logsBucketUri"`
 	// The maximum duration in minutes for which an Application should run. Data Flow Run would be terminated once it reaches this duration from the time it transitions to `IN_PROGRESS` state.
-	MaxDurationInMinutes string `pulumi:"maxDurationInMinutes"`
+	MaxDurationInMinutes *string `pulumi:"maxDurationInMinutes"`
 	// The OCID of Oracle Cloud Infrastructure Hive Metastore.
-	MetastoreId string `pulumi:"metastoreId"`
+	MetastoreId *string `pulumi:"metastoreId"`
 	// The number of executor VMs requested.
-	NumExecutors int `pulumi:"numExecutors"`
+	NumExecutors *int `pulumi:"numExecutors"`
 	// The OCID of the user who created the resource.
-	OwnerPrincipalId string `pulumi:"ownerPrincipalId"`
+	OwnerPrincipalId *string `pulumi:"ownerPrincipalId"`
 	// The username of the user who created the resource.  If the username of the owner does not exist, `null` will be returned and the caller should refer to the ownerPrincipalId value instead.
-	OwnerUserName string `pulumi:"ownerUserName"`
+	OwnerUserName *string `pulumi:"ownerUserName"`
 	// An array of name/value pairs used to fill placeholders found in properties like `Application.arguments`.  The name must be a string of one or more word characters (a-z, A-Z, 0-9, _).  The value can be a string of 0 or more characters of any kind. Example:  [ { name: "iterations", value: "10"}, { name: "inputFile", value: "mydata.xml" }, { name: "variableX", value: "${x}"} ]
 	Parameters []GetApplicationsApplicationParameter `pulumi:"parameters"`
 	// The OCID of a pool. Unique Id to indentify a dataflow pool resource.
-	PoolId string `pulumi:"poolId"`
+	PoolId *string `pulumi:"poolId"`
 	// The OCID of a private endpoint.
-	PrivateEndpointId string `pulumi:"privateEndpointId"`
+	PrivateEndpointId *string `pulumi:"privateEndpointId"`
 	// The Spark version utilized to run the application.
-	SparkVersion string `pulumi:"sparkVersion"`
+	SparkVersion *string `pulumi:"sparkVersion"`
 	// The current state of this application.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The date and time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 	// The Spark application processing type.
-	Type string `pulumi:"type"`
+	Type *string `pulumi:"type"`
 	// An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory for BATCH SQL runs. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
-	WarehouseBucketUri string `pulumi:"warehouseBucketUri"`
+	WarehouseBucketUri *string `pulumi:"warehouseBucketUri"`
 }
 
 // GetApplicationsApplicationInput is an input type that accepts GetApplicationsApplicationArgs and GetApplicationsApplicationOutput values.
@@ -3916,71 +3339,71 @@ type GetApplicationsApplicationArgs struct {
 	// Logging details of Application logs for Data Flow Run.
 	ApplicationLogConfigs GetApplicationsApplicationApplicationLogConfigArrayInput `pulumi:"applicationLogConfigs"`
 	// A comma separated list of one or more archive files as Oracle Cloud Infrastructure URIs. For example, ``oci://path/to/a.zip,oci://path/to/b.zip``. An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution of a Python, Java, or Scala application. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
-	ArchiveUri pulumi.StringInput `pulumi:"archiveUri"`
+	ArchiveUri pulumi.StringPtrInput `pulumi:"archiveUri"`
 	// The arguments passed to the running application as command line arguments.  An argument is either a plain text or a placeholder. Placeholders are replaced using values from the parameters map.  Each placeholder specified must be represented in the parameters map else the request (POST or PUT) will fail with a HTTP 400 status code.  Placeholders are specified as `Service Api Spec`, where `name` is the name of the parameter. Example:  `[ "--input", "${input_file}", "--name", "John Doe" ]` If "inputFile" has a value of "mydata.xml", then the value above will be translated to `--input mydata.xml --name "John Doe"`
 	Arguments pulumi.StringArrayInput `pulumi:"arguments"`
 	// The class for the application.
-	ClassName pulumi.StringInput `pulumi:"className"`
+	ClassName pulumi.StringPtrInput `pulumi:"className"`
 	// The OCID of the compartment.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
 	Configuration pulumi.MapInput `pulumi:"configuration"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// A user-friendly description.
-	Description pulumi.StringInput `pulumi:"description"`
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// The query parameter for the Spark application name.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// The VM shape for the driver. Sets the driver cores and memory.
-	DriverShape pulumi.StringInput `pulumi:"driverShape"`
+	DriverShape pulumi.StringPtrInput `pulumi:"driverShape"`
 	// This is used to configure the shape of the driver or executor if a flexible shape is used.
 	DriverShapeConfigs GetApplicationsApplicationDriverShapeConfigArrayInput `pulumi:"driverShapeConfigs"`
 	// The input used for spark-submit command. For more details see https://spark.apache.org/docs/latest/submitting-applications.html#launching-applications-with-spark-submit. Supported options include ``--class``, ``--file``, ``--jars``, ``--conf``, ``--py-files``, and main application file with arguments. Example: ``--jars oci://path/to/a.jar,oci://path/to/b.jar --files oci://path/to/a.json,oci://path/to/b.csv --py-files oci://path/to/a.py,oci://path/to/b.py --conf spark.sql.crossJoin.enabled=true --class org.apache.spark.examples.SparkPi oci://path/to/main.jar 10`` Note: If execute is specified together with applicationId, className, configuration, fileUri, language, arguments, parameters during application create/update, or run create/submit, Data Flow service will use derived information from execute input only.
-	Execute pulumi.StringInput `pulumi:"execute"`
+	Execute pulumi.StringPtrInput `pulumi:"execute"`
 	// The VM shape for the executors. Sets the executor cores and memory.
-	ExecutorShape pulumi.StringInput `pulumi:"executorShape"`
+	ExecutorShape pulumi.StringPtrInput `pulumi:"executorShape"`
 	// This is used to configure the shape of the driver or executor if a flexible shape is used.
 	ExecutorShapeConfigs GetApplicationsApplicationExecutorShapeConfigArrayInput `pulumi:"executorShapeConfigs"`
 	// An Oracle Cloud Infrastructure URI of the file containing the application to execute. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
-	FileUri pulumi.StringInput `pulumi:"fileUri"`
+	FileUri pulumi.StringPtrInput `pulumi:"fileUri"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// The application ID.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// The timeout value in minutes used to manage Runs. A Run would be stopped after inactivity for this amount of time period. Note: This parameter is currently only applicable for Runs of type `SESSION`. Default value is 2880 minutes (2 days)
-	IdleTimeoutInMinutes pulumi.StringInput `pulumi:"idleTimeoutInMinutes"`
+	IdleTimeoutInMinutes pulumi.StringPtrInput `pulumi:"idleTimeoutInMinutes"`
 	// The Spark language.
-	Language pulumi.StringInput `pulumi:"language"`
+	Language pulumi.StringPtrInput `pulumi:"language"`
 	// An Oracle Cloud Infrastructure URI of the bucket where the Spark job logs are to be uploaded. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
-	LogsBucketUri pulumi.StringInput `pulumi:"logsBucketUri"`
+	LogsBucketUri pulumi.StringPtrInput `pulumi:"logsBucketUri"`
 	// The maximum duration in minutes for which an Application should run. Data Flow Run would be terminated once it reaches this duration from the time it transitions to `IN_PROGRESS` state.
-	MaxDurationInMinutes pulumi.StringInput `pulumi:"maxDurationInMinutes"`
+	MaxDurationInMinutes pulumi.StringPtrInput `pulumi:"maxDurationInMinutes"`
 	// The OCID of Oracle Cloud Infrastructure Hive Metastore.
-	MetastoreId pulumi.StringInput `pulumi:"metastoreId"`
+	MetastoreId pulumi.StringPtrInput `pulumi:"metastoreId"`
 	// The number of executor VMs requested.
-	NumExecutors pulumi.IntInput `pulumi:"numExecutors"`
+	NumExecutors pulumi.IntPtrInput `pulumi:"numExecutors"`
 	// The OCID of the user who created the resource.
-	OwnerPrincipalId pulumi.StringInput `pulumi:"ownerPrincipalId"`
+	OwnerPrincipalId pulumi.StringPtrInput `pulumi:"ownerPrincipalId"`
 	// The username of the user who created the resource.  If the username of the owner does not exist, `null` will be returned and the caller should refer to the ownerPrincipalId value instead.
-	OwnerUserName pulumi.StringInput `pulumi:"ownerUserName"`
+	OwnerUserName pulumi.StringPtrInput `pulumi:"ownerUserName"`
 	// An array of name/value pairs used to fill placeholders found in properties like `Application.arguments`.  The name must be a string of one or more word characters (a-z, A-Z, 0-9, _).  The value can be a string of 0 or more characters of any kind. Example:  [ { name: "iterations", value: "10"}, { name: "inputFile", value: "mydata.xml" }, { name: "variableX", value: "${x}"} ]
 	Parameters GetApplicationsApplicationParameterArrayInput `pulumi:"parameters"`
 	// The OCID of a pool. Unique Id to indentify a dataflow pool resource.
-	PoolId pulumi.StringInput `pulumi:"poolId"`
+	PoolId pulumi.StringPtrInput `pulumi:"poolId"`
 	// The OCID of a private endpoint.
-	PrivateEndpointId pulumi.StringInput `pulumi:"privateEndpointId"`
+	PrivateEndpointId pulumi.StringPtrInput `pulumi:"privateEndpointId"`
 	// The Spark version utilized to run the application.
-	SparkVersion pulumi.StringInput `pulumi:"sparkVersion"`
+	SparkVersion pulumi.StringPtrInput `pulumi:"sparkVersion"`
 	// The current state of this application.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// The date and time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
-	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
 	// The Spark application processing type.
-	Type pulumi.StringInput `pulumi:"type"`
+	Type pulumi.StringPtrInput `pulumi:"type"`
 	// An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory for BATCH SQL runs. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
-	WarehouseBucketUri pulumi.StringInput `pulumi:"warehouseBucketUri"`
+	WarehouseBucketUri pulumi.StringPtrInput `pulumi:"warehouseBucketUri"`
 }
 
 func (GetApplicationsApplicationArgs) ElementType() reflect.Type {
@@ -3993,12 +3416,6 @@ func (i GetApplicationsApplicationArgs) ToGetApplicationsApplicationOutput() Get
 
 func (i GetApplicationsApplicationArgs) ToGetApplicationsApplicationOutputWithContext(ctx context.Context) GetApplicationsApplicationOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetApplicationsApplicationOutput)
-}
-
-func (i GetApplicationsApplicationArgs) ToOutput(ctx context.Context) pulumix.Output[GetApplicationsApplication] {
-	return pulumix.Output[GetApplicationsApplication]{
-		OutputState: i.ToGetApplicationsApplicationOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetApplicationsApplicationArrayInput is an input type that accepts GetApplicationsApplicationArray and GetApplicationsApplicationArrayOutput values.
@@ -4026,12 +3443,6 @@ func (i GetApplicationsApplicationArray) ToGetApplicationsApplicationArrayOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetApplicationsApplicationArrayOutput)
 }
 
-func (i GetApplicationsApplicationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetApplicationsApplication] {
-	return pulumix.Output[[]GetApplicationsApplication]{
-		OutputState: i.ToGetApplicationsApplicationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetApplicationsApplicationOutput struct{ *pulumi.OutputState }
 
 func (GetApplicationsApplicationOutput) ElementType() reflect.Type {
@@ -4046,12 +3457,6 @@ func (o GetApplicationsApplicationOutput) ToGetApplicationsApplicationOutputWith
 	return o
 }
 
-func (o GetApplicationsApplicationOutput) ToOutput(ctx context.Context) pulumix.Output[GetApplicationsApplication] {
-	return pulumix.Output[GetApplicationsApplication]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Logging details of Application logs for Data Flow Run.
 func (o GetApplicationsApplicationOutput) ApplicationLogConfigs() GetApplicationsApplicationApplicationLogConfigArrayOutput {
 	return o.ApplyT(func(v GetApplicationsApplication) []GetApplicationsApplicationApplicationLogConfig {
@@ -4060,8 +3465,8 @@ func (o GetApplicationsApplicationOutput) ApplicationLogConfigs() GetApplication
 }
 
 // A comma separated list of one or more archive files as Oracle Cloud Infrastructure URIs. For example, “oci://path/to/a.zip,oci://path/to/b.zip“. An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution of a Python, Java, or Scala application. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
-func (o GetApplicationsApplicationOutput) ArchiveUri() pulumi.StringOutput {
-	return o.ApplyT(func(v GetApplicationsApplication) string { return v.ArchiveUri }).(pulumi.StringOutput)
+func (o GetApplicationsApplicationOutput) ArchiveUri() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetApplicationsApplication) *string { return v.ArchiveUri }).(pulumi.StringPtrOutput)
 }
 
 // The arguments passed to the running application as command line arguments.  An argument is either a plain text or a placeholder. Placeholders are replaced using values from the parameters map.  Each placeholder specified must be represented in the parameters map else the request (POST or PUT) will fail with a HTTP 400 status code.  Placeholders are specified as `Service Api Spec`, where `name` is the name of the parameter. Example:  `[ "--input", "${input_file}", "--name", "John Doe" ]` If "inputFile" has a value of "mydata.xml", then the value above will be translated to `--input mydata.xml --name "John Doe"`
@@ -4070,13 +3475,13 @@ func (o GetApplicationsApplicationOutput) Arguments() pulumi.StringArrayOutput {
 }
 
 // The class for the application.
-func (o GetApplicationsApplicationOutput) ClassName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetApplicationsApplication) string { return v.ClassName }).(pulumi.StringOutput)
+func (o GetApplicationsApplicationOutput) ClassName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetApplicationsApplication) *string { return v.ClassName }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the compartment.
-func (o GetApplicationsApplicationOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetApplicationsApplication) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetApplicationsApplicationOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetApplicationsApplication) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
@@ -4090,18 +3495,18 @@ func (o GetApplicationsApplicationOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // A user-friendly description.
-func (o GetApplicationsApplicationOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetApplicationsApplication) string { return v.Description }).(pulumi.StringOutput)
+func (o GetApplicationsApplicationOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetApplicationsApplication) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // The query parameter for the Spark application name.
-func (o GetApplicationsApplicationOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetApplicationsApplication) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetApplicationsApplicationOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetApplicationsApplication) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // The VM shape for the driver. Sets the driver cores and memory.
-func (o GetApplicationsApplicationOutput) DriverShape() pulumi.StringOutput {
-	return o.ApplyT(func(v GetApplicationsApplication) string { return v.DriverShape }).(pulumi.StringOutput)
+func (o GetApplicationsApplicationOutput) DriverShape() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetApplicationsApplication) *string { return v.DriverShape }).(pulumi.StringPtrOutput)
 }
 
 // This is used to configure the shape of the driver or executor if a flexible shape is used.
@@ -4112,13 +3517,13 @@ func (o GetApplicationsApplicationOutput) DriverShapeConfigs() GetApplicationsAp
 }
 
 // The input used for spark-submit command. For more details see https://spark.apache.org/docs/latest/submitting-applications.html#launching-applications-with-spark-submit. Supported options include “--class“, “--file“, “--jars“, “--conf“, “--py-files“, and main application file with arguments. Example: “--jars oci://path/to/a.jar,oci://path/to/b.jar --files oci://path/to/a.json,oci://path/to/b.csv --py-files oci://path/to/a.py,oci://path/to/b.py --conf spark.sql.crossJoin.enabled=true --class org.apache.spark.examples.SparkPi oci://path/to/main.jar 10“ Note: If execute is specified together with applicationId, className, configuration, fileUri, language, arguments, parameters during application create/update, or run create/submit, Data Flow service will use derived information from execute input only.
-func (o GetApplicationsApplicationOutput) Execute() pulumi.StringOutput {
-	return o.ApplyT(func(v GetApplicationsApplication) string { return v.Execute }).(pulumi.StringOutput)
+func (o GetApplicationsApplicationOutput) Execute() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetApplicationsApplication) *string { return v.Execute }).(pulumi.StringPtrOutput)
 }
 
 // The VM shape for the executors. Sets the executor cores and memory.
-func (o GetApplicationsApplicationOutput) ExecutorShape() pulumi.StringOutput {
-	return o.ApplyT(func(v GetApplicationsApplication) string { return v.ExecutorShape }).(pulumi.StringOutput)
+func (o GetApplicationsApplicationOutput) ExecutorShape() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetApplicationsApplication) *string { return v.ExecutorShape }).(pulumi.StringPtrOutput)
 }
 
 // This is used to configure the shape of the driver or executor if a flexible shape is used.
@@ -4129,8 +3534,8 @@ func (o GetApplicationsApplicationOutput) ExecutorShapeConfigs() GetApplications
 }
 
 // An Oracle Cloud Infrastructure URI of the file containing the application to execute. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
-func (o GetApplicationsApplicationOutput) FileUri() pulumi.StringOutput {
-	return o.ApplyT(func(v GetApplicationsApplication) string { return v.FileUri }).(pulumi.StringOutput)
+func (o GetApplicationsApplicationOutput) FileUri() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetApplicationsApplication) *string { return v.FileUri }).(pulumi.StringPtrOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -4139,48 +3544,48 @@ func (o GetApplicationsApplicationOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The application ID.
-func (o GetApplicationsApplicationOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetApplicationsApplication) string { return v.Id }).(pulumi.StringOutput)
+func (o GetApplicationsApplicationOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetApplicationsApplication) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The timeout value in minutes used to manage Runs. A Run would be stopped after inactivity for this amount of time period. Note: This parameter is currently only applicable for Runs of type `SESSION`. Default value is 2880 minutes (2 days)
-func (o GetApplicationsApplicationOutput) IdleTimeoutInMinutes() pulumi.StringOutput {
-	return o.ApplyT(func(v GetApplicationsApplication) string { return v.IdleTimeoutInMinutes }).(pulumi.StringOutput)
+func (o GetApplicationsApplicationOutput) IdleTimeoutInMinutes() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetApplicationsApplication) *string { return v.IdleTimeoutInMinutes }).(pulumi.StringPtrOutput)
 }
 
 // The Spark language.
-func (o GetApplicationsApplicationOutput) Language() pulumi.StringOutput {
-	return o.ApplyT(func(v GetApplicationsApplication) string { return v.Language }).(pulumi.StringOutput)
+func (o GetApplicationsApplicationOutput) Language() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetApplicationsApplication) *string { return v.Language }).(pulumi.StringPtrOutput)
 }
 
 // An Oracle Cloud Infrastructure URI of the bucket where the Spark job logs are to be uploaded. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
-func (o GetApplicationsApplicationOutput) LogsBucketUri() pulumi.StringOutput {
-	return o.ApplyT(func(v GetApplicationsApplication) string { return v.LogsBucketUri }).(pulumi.StringOutput)
+func (o GetApplicationsApplicationOutput) LogsBucketUri() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetApplicationsApplication) *string { return v.LogsBucketUri }).(pulumi.StringPtrOutput)
 }
 
 // The maximum duration in minutes for which an Application should run. Data Flow Run would be terminated once it reaches this duration from the time it transitions to `IN_PROGRESS` state.
-func (o GetApplicationsApplicationOutput) MaxDurationInMinutes() pulumi.StringOutput {
-	return o.ApplyT(func(v GetApplicationsApplication) string { return v.MaxDurationInMinutes }).(pulumi.StringOutput)
+func (o GetApplicationsApplicationOutput) MaxDurationInMinutes() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetApplicationsApplication) *string { return v.MaxDurationInMinutes }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of Oracle Cloud Infrastructure Hive Metastore.
-func (o GetApplicationsApplicationOutput) MetastoreId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetApplicationsApplication) string { return v.MetastoreId }).(pulumi.StringOutput)
+func (o GetApplicationsApplicationOutput) MetastoreId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetApplicationsApplication) *string { return v.MetastoreId }).(pulumi.StringPtrOutput)
 }
 
 // The number of executor VMs requested.
-func (o GetApplicationsApplicationOutput) NumExecutors() pulumi.IntOutput {
-	return o.ApplyT(func(v GetApplicationsApplication) int { return v.NumExecutors }).(pulumi.IntOutput)
+func (o GetApplicationsApplicationOutput) NumExecutors() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetApplicationsApplication) *int { return v.NumExecutors }).(pulumi.IntPtrOutput)
 }
 
 // The OCID of the user who created the resource.
-func (o GetApplicationsApplicationOutput) OwnerPrincipalId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetApplicationsApplication) string { return v.OwnerPrincipalId }).(pulumi.StringOutput)
+func (o GetApplicationsApplicationOutput) OwnerPrincipalId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetApplicationsApplication) *string { return v.OwnerPrincipalId }).(pulumi.StringPtrOutput)
 }
 
 // The username of the user who created the resource.  If the username of the owner does not exist, `null` will be returned and the caller should refer to the ownerPrincipalId value instead.
-func (o GetApplicationsApplicationOutput) OwnerUserName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetApplicationsApplication) string { return v.OwnerUserName }).(pulumi.StringOutput)
+func (o GetApplicationsApplicationOutput) OwnerUserName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetApplicationsApplication) *string { return v.OwnerUserName }).(pulumi.StringPtrOutput)
 }
 
 // An array of name/value pairs used to fill placeholders found in properties like `Application.arguments`.  The name must be a string of one or more word characters (a-z, A-Z, 0-9, _).  The value can be a string of 0 or more characters of any kind. Example:  [ { name: "iterations", value: "10"}, { name: "inputFile", value: "mydata.xml" }, { name: "variableX", value: "${x}"} ]
@@ -4189,43 +3594,43 @@ func (o GetApplicationsApplicationOutput) Parameters() GetApplicationsApplicatio
 }
 
 // The OCID of a pool. Unique Id to indentify a dataflow pool resource.
-func (o GetApplicationsApplicationOutput) PoolId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetApplicationsApplication) string { return v.PoolId }).(pulumi.StringOutput)
+func (o GetApplicationsApplicationOutput) PoolId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetApplicationsApplication) *string { return v.PoolId }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of a private endpoint.
-func (o GetApplicationsApplicationOutput) PrivateEndpointId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetApplicationsApplication) string { return v.PrivateEndpointId }).(pulumi.StringOutput)
+func (o GetApplicationsApplicationOutput) PrivateEndpointId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetApplicationsApplication) *string { return v.PrivateEndpointId }).(pulumi.StringPtrOutput)
 }
 
 // The Spark version utilized to run the application.
-func (o GetApplicationsApplicationOutput) SparkVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetApplicationsApplication) string { return v.SparkVersion }).(pulumi.StringOutput)
+func (o GetApplicationsApplicationOutput) SparkVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetApplicationsApplication) *string { return v.SparkVersion }).(pulumi.StringPtrOutput)
 }
 
 // The current state of this application.
-func (o GetApplicationsApplicationOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetApplicationsApplication) string { return v.State }).(pulumi.StringOutput)
+func (o GetApplicationsApplicationOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetApplicationsApplication) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
-func (o GetApplicationsApplicationOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetApplicationsApplication) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetApplicationsApplicationOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetApplicationsApplication) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
-func (o GetApplicationsApplicationOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetApplicationsApplication) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o GetApplicationsApplicationOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetApplicationsApplication) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 // The Spark application processing type.
-func (o GetApplicationsApplicationOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v GetApplicationsApplication) string { return v.Type }).(pulumi.StringOutput)
+func (o GetApplicationsApplicationOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetApplicationsApplication) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
 
 // An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory for BATCH SQL runs. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
-func (o GetApplicationsApplicationOutput) WarehouseBucketUri() pulumi.StringOutput {
-	return o.ApplyT(func(v GetApplicationsApplication) string { return v.WarehouseBucketUri }).(pulumi.StringOutput)
+func (o GetApplicationsApplicationOutput) WarehouseBucketUri() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetApplicationsApplication) *string { return v.WarehouseBucketUri }).(pulumi.StringPtrOutput)
 }
 
 type GetApplicationsApplicationArrayOutput struct{ *pulumi.OutputState }
@@ -4242,12 +3647,6 @@ func (o GetApplicationsApplicationArrayOutput) ToGetApplicationsApplicationArray
 	return o
 }
 
-func (o GetApplicationsApplicationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetApplicationsApplication] {
-	return pulumix.Output[[]GetApplicationsApplication]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetApplicationsApplicationArrayOutput) Index(i pulumi.IntInput) GetApplicationsApplicationOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetApplicationsApplication {
 		return vs[0].([]GetApplicationsApplication)[vs[1].(int)]
@@ -4256,9 +3655,9 @@ func (o GetApplicationsApplicationArrayOutput) Index(i pulumi.IntInput) GetAppli
 
 type GetApplicationsApplicationApplicationLogConfig struct {
 	// The log group id for where log objects will be for Data Flow Runs.
-	LogGroupId string `pulumi:"logGroupId"`
+	LogGroupId *string `pulumi:"logGroupId"`
 	// The log id of the log object the Application Logs of Data Flow Run will be shipped to.
-	LogId string `pulumi:"logId"`
+	LogId *string `pulumi:"logId"`
 }
 
 // GetApplicationsApplicationApplicationLogConfigInput is an input type that accepts GetApplicationsApplicationApplicationLogConfigArgs and GetApplicationsApplicationApplicationLogConfigOutput values.
@@ -4274,9 +3673,9 @@ type GetApplicationsApplicationApplicationLogConfigInput interface {
 
 type GetApplicationsApplicationApplicationLogConfigArgs struct {
 	// The log group id for where log objects will be for Data Flow Runs.
-	LogGroupId pulumi.StringInput `pulumi:"logGroupId"`
+	LogGroupId pulumi.StringPtrInput `pulumi:"logGroupId"`
 	// The log id of the log object the Application Logs of Data Flow Run will be shipped to.
-	LogId pulumi.StringInput `pulumi:"logId"`
+	LogId pulumi.StringPtrInput `pulumi:"logId"`
 }
 
 func (GetApplicationsApplicationApplicationLogConfigArgs) ElementType() reflect.Type {
@@ -4289,12 +3688,6 @@ func (i GetApplicationsApplicationApplicationLogConfigArgs) ToGetApplicationsApp
 
 func (i GetApplicationsApplicationApplicationLogConfigArgs) ToGetApplicationsApplicationApplicationLogConfigOutputWithContext(ctx context.Context) GetApplicationsApplicationApplicationLogConfigOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetApplicationsApplicationApplicationLogConfigOutput)
-}
-
-func (i GetApplicationsApplicationApplicationLogConfigArgs) ToOutput(ctx context.Context) pulumix.Output[GetApplicationsApplicationApplicationLogConfig] {
-	return pulumix.Output[GetApplicationsApplicationApplicationLogConfig]{
-		OutputState: i.ToGetApplicationsApplicationApplicationLogConfigOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetApplicationsApplicationApplicationLogConfigArrayInput is an input type that accepts GetApplicationsApplicationApplicationLogConfigArray and GetApplicationsApplicationApplicationLogConfigArrayOutput values.
@@ -4322,12 +3715,6 @@ func (i GetApplicationsApplicationApplicationLogConfigArray) ToGetApplicationsAp
 	return pulumi.ToOutputWithContext(ctx, i).(GetApplicationsApplicationApplicationLogConfigArrayOutput)
 }
 
-func (i GetApplicationsApplicationApplicationLogConfigArray) ToOutput(ctx context.Context) pulumix.Output[[]GetApplicationsApplicationApplicationLogConfig] {
-	return pulumix.Output[[]GetApplicationsApplicationApplicationLogConfig]{
-		OutputState: i.ToGetApplicationsApplicationApplicationLogConfigArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetApplicationsApplicationApplicationLogConfigOutput struct{ *pulumi.OutputState }
 
 func (GetApplicationsApplicationApplicationLogConfigOutput) ElementType() reflect.Type {
@@ -4342,20 +3729,14 @@ func (o GetApplicationsApplicationApplicationLogConfigOutput) ToGetApplicationsA
 	return o
 }
 
-func (o GetApplicationsApplicationApplicationLogConfigOutput) ToOutput(ctx context.Context) pulumix.Output[GetApplicationsApplicationApplicationLogConfig] {
-	return pulumix.Output[GetApplicationsApplicationApplicationLogConfig]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The log group id for where log objects will be for Data Flow Runs.
-func (o GetApplicationsApplicationApplicationLogConfigOutput) LogGroupId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetApplicationsApplicationApplicationLogConfig) string { return v.LogGroupId }).(pulumi.StringOutput)
+func (o GetApplicationsApplicationApplicationLogConfigOutput) LogGroupId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetApplicationsApplicationApplicationLogConfig) *string { return v.LogGroupId }).(pulumi.StringPtrOutput)
 }
 
 // The log id of the log object the Application Logs of Data Flow Run will be shipped to.
-func (o GetApplicationsApplicationApplicationLogConfigOutput) LogId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetApplicationsApplicationApplicationLogConfig) string { return v.LogId }).(pulumi.StringOutput)
+func (o GetApplicationsApplicationApplicationLogConfigOutput) LogId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetApplicationsApplicationApplicationLogConfig) *string { return v.LogId }).(pulumi.StringPtrOutput)
 }
 
 type GetApplicationsApplicationApplicationLogConfigArrayOutput struct{ *pulumi.OutputState }
@@ -4372,12 +3753,6 @@ func (o GetApplicationsApplicationApplicationLogConfigArrayOutput) ToGetApplicat
 	return o
 }
 
-func (o GetApplicationsApplicationApplicationLogConfigArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetApplicationsApplicationApplicationLogConfig] {
-	return pulumix.Output[[]GetApplicationsApplicationApplicationLogConfig]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetApplicationsApplicationApplicationLogConfigArrayOutput) Index(i pulumi.IntInput) GetApplicationsApplicationApplicationLogConfigOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetApplicationsApplicationApplicationLogConfig {
 		return vs[0].([]GetApplicationsApplicationApplicationLogConfig)[vs[1].(int)]
@@ -4386,9 +3761,9 @@ func (o GetApplicationsApplicationApplicationLogConfigArrayOutput) Index(i pulum
 
 type GetApplicationsApplicationDriverShapeConfig struct {
 	// The amount of memory used for the driver or executors.
-	MemoryInGbs float64 `pulumi:"memoryInGbs"`
+	MemoryInGbs *float64 `pulumi:"memoryInGbs"`
 	// The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
-	Ocpus float64 `pulumi:"ocpus"`
+	Ocpus *float64 `pulumi:"ocpus"`
 }
 
 // GetApplicationsApplicationDriverShapeConfigInput is an input type that accepts GetApplicationsApplicationDriverShapeConfigArgs and GetApplicationsApplicationDriverShapeConfigOutput values.
@@ -4404,9 +3779,9 @@ type GetApplicationsApplicationDriverShapeConfigInput interface {
 
 type GetApplicationsApplicationDriverShapeConfigArgs struct {
 	// The amount of memory used for the driver or executors.
-	MemoryInGbs pulumi.Float64Input `pulumi:"memoryInGbs"`
+	MemoryInGbs pulumi.Float64PtrInput `pulumi:"memoryInGbs"`
 	// The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
-	Ocpus pulumi.Float64Input `pulumi:"ocpus"`
+	Ocpus pulumi.Float64PtrInput `pulumi:"ocpus"`
 }
 
 func (GetApplicationsApplicationDriverShapeConfigArgs) ElementType() reflect.Type {
@@ -4419,12 +3794,6 @@ func (i GetApplicationsApplicationDriverShapeConfigArgs) ToGetApplicationsApplic
 
 func (i GetApplicationsApplicationDriverShapeConfigArgs) ToGetApplicationsApplicationDriverShapeConfigOutputWithContext(ctx context.Context) GetApplicationsApplicationDriverShapeConfigOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetApplicationsApplicationDriverShapeConfigOutput)
-}
-
-func (i GetApplicationsApplicationDriverShapeConfigArgs) ToOutput(ctx context.Context) pulumix.Output[GetApplicationsApplicationDriverShapeConfig] {
-	return pulumix.Output[GetApplicationsApplicationDriverShapeConfig]{
-		OutputState: i.ToGetApplicationsApplicationDriverShapeConfigOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetApplicationsApplicationDriverShapeConfigArrayInput is an input type that accepts GetApplicationsApplicationDriverShapeConfigArray and GetApplicationsApplicationDriverShapeConfigArrayOutput values.
@@ -4452,12 +3821,6 @@ func (i GetApplicationsApplicationDriverShapeConfigArray) ToGetApplicationsAppli
 	return pulumi.ToOutputWithContext(ctx, i).(GetApplicationsApplicationDriverShapeConfigArrayOutput)
 }
 
-func (i GetApplicationsApplicationDriverShapeConfigArray) ToOutput(ctx context.Context) pulumix.Output[[]GetApplicationsApplicationDriverShapeConfig] {
-	return pulumix.Output[[]GetApplicationsApplicationDriverShapeConfig]{
-		OutputState: i.ToGetApplicationsApplicationDriverShapeConfigArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetApplicationsApplicationDriverShapeConfigOutput struct{ *pulumi.OutputState }
 
 func (GetApplicationsApplicationDriverShapeConfigOutput) ElementType() reflect.Type {
@@ -4472,20 +3835,14 @@ func (o GetApplicationsApplicationDriverShapeConfigOutput) ToGetApplicationsAppl
 	return o
 }
 
-func (o GetApplicationsApplicationDriverShapeConfigOutput) ToOutput(ctx context.Context) pulumix.Output[GetApplicationsApplicationDriverShapeConfig] {
-	return pulumix.Output[GetApplicationsApplicationDriverShapeConfig]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The amount of memory used for the driver or executors.
-func (o GetApplicationsApplicationDriverShapeConfigOutput) MemoryInGbs() pulumi.Float64Output {
-	return o.ApplyT(func(v GetApplicationsApplicationDriverShapeConfig) float64 { return v.MemoryInGbs }).(pulumi.Float64Output)
+func (o GetApplicationsApplicationDriverShapeConfigOutput) MemoryInGbs() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetApplicationsApplicationDriverShapeConfig) *float64 { return v.MemoryInGbs }).(pulumi.Float64PtrOutput)
 }
 
 // The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
-func (o GetApplicationsApplicationDriverShapeConfigOutput) Ocpus() pulumi.Float64Output {
-	return o.ApplyT(func(v GetApplicationsApplicationDriverShapeConfig) float64 { return v.Ocpus }).(pulumi.Float64Output)
+func (o GetApplicationsApplicationDriverShapeConfigOutput) Ocpus() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetApplicationsApplicationDriverShapeConfig) *float64 { return v.Ocpus }).(pulumi.Float64PtrOutput)
 }
 
 type GetApplicationsApplicationDriverShapeConfigArrayOutput struct{ *pulumi.OutputState }
@@ -4502,12 +3859,6 @@ func (o GetApplicationsApplicationDriverShapeConfigArrayOutput) ToGetApplication
 	return o
 }
 
-func (o GetApplicationsApplicationDriverShapeConfigArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetApplicationsApplicationDriverShapeConfig] {
-	return pulumix.Output[[]GetApplicationsApplicationDriverShapeConfig]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetApplicationsApplicationDriverShapeConfigArrayOutput) Index(i pulumi.IntInput) GetApplicationsApplicationDriverShapeConfigOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetApplicationsApplicationDriverShapeConfig {
 		return vs[0].([]GetApplicationsApplicationDriverShapeConfig)[vs[1].(int)]
@@ -4516,9 +3867,9 @@ func (o GetApplicationsApplicationDriverShapeConfigArrayOutput) Index(i pulumi.I
 
 type GetApplicationsApplicationExecutorShapeConfig struct {
 	// The amount of memory used for the driver or executors.
-	MemoryInGbs float64 `pulumi:"memoryInGbs"`
+	MemoryInGbs *float64 `pulumi:"memoryInGbs"`
 	// The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
-	Ocpus float64 `pulumi:"ocpus"`
+	Ocpus *float64 `pulumi:"ocpus"`
 }
 
 // GetApplicationsApplicationExecutorShapeConfigInput is an input type that accepts GetApplicationsApplicationExecutorShapeConfigArgs and GetApplicationsApplicationExecutorShapeConfigOutput values.
@@ -4534,9 +3885,9 @@ type GetApplicationsApplicationExecutorShapeConfigInput interface {
 
 type GetApplicationsApplicationExecutorShapeConfigArgs struct {
 	// The amount of memory used for the driver or executors.
-	MemoryInGbs pulumi.Float64Input `pulumi:"memoryInGbs"`
+	MemoryInGbs pulumi.Float64PtrInput `pulumi:"memoryInGbs"`
 	// The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
-	Ocpus pulumi.Float64Input `pulumi:"ocpus"`
+	Ocpus pulumi.Float64PtrInput `pulumi:"ocpus"`
 }
 
 func (GetApplicationsApplicationExecutorShapeConfigArgs) ElementType() reflect.Type {
@@ -4549,12 +3900,6 @@ func (i GetApplicationsApplicationExecutorShapeConfigArgs) ToGetApplicationsAppl
 
 func (i GetApplicationsApplicationExecutorShapeConfigArgs) ToGetApplicationsApplicationExecutorShapeConfigOutputWithContext(ctx context.Context) GetApplicationsApplicationExecutorShapeConfigOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetApplicationsApplicationExecutorShapeConfigOutput)
-}
-
-func (i GetApplicationsApplicationExecutorShapeConfigArgs) ToOutput(ctx context.Context) pulumix.Output[GetApplicationsApplicationExecutorShapeConfig] {
-	return pulumix.Output[GetApplicationsApplicationExecutorShapeConfig]{
-		OutputState: i.ToGetApplicationsApplicationExecutorShapeConfigOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetApplicationsApplicationExecutorShapeConfigArrayInput is an input type that accepts GetApplicationsApplicationExecutorShapeConfigArray and GetApplicationsApplicationExecutorShapeConfigArrayOutput values.
@@ -4582,12 +3927,6 @@ func (i GetApplicationsApplicationExecutorShapeConfigArray) ToGetApplicationsApp
 	return pulumi.ToOutputWithContext(ctx, i).(GetApplicationsApplicationExecutorShapeConfigArrayOutput)
 }
 
-func (i GetApplicationsApplicationExecutorShapeConfigArray) ToOutput(ctx context.Context) pulumix.Output[[]GetApplicationsApplicationExecutorShapeConfig] {
-	return pulumix.Output[[]GetApplicationsApplicationExecutorShapeConfig]{
-		OutputState: i.ToGetApplicationsApplicationExecutorShapeConfigArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetApplicationsApplicationExecutorShapeConfigOutput struct{ *pulumi.OutputState }
 
 func (GetApplicationsApplicationExecutorShapeConfigOutput) ElementType() reflect.Type {
@@ -4602,20 +3941,14 @@ func (o GetApplicationsApplicationExecutorShapeConfigOutput) ToGetApplicationsAp
 	return o
 }
 
-func (o GetApplicationsApplicationExecutorShapeConfigOutput) ToOutput(ctx context.Context) pulumix.Output[GetApplicationsApplicationExecutorShapeConfig] {
-	return pulumix.Output[GetApplicationsApplicationExecutorShapeConfig]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The amount of memory used for the driver or executors.
-func (o GetApplicationsApplicationExecutorShapeConfigOutput) MemoryInGbs() pulumi.Float64Output {
-	return o.ApplyT(func(v GetApplicationsApplicationExecutorShapeConfig) float64 { return v.MemoryInGbs }).(pulumi.Float64Output)
+func (o GetApplicationsApplicationExecutorShapeConfigOutput) MemoryInGbs() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetApplicationsApplicationExecutorShapeConfig) *float64 { return v.MemoryInGbs }).(pulumi.Float64PtrOutput)
 }
 
 // The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
-func (o GetApplicationsApplicationExecutorShapeConfigOutput) Ocpus() pulumi.Float64Output {
-	return o.ApplyT(func(v GetApplicationsApplicationExecutorShapeConfig) float64 { return v.Ocpus }).(pulumi.Float64Output)
+func (o GetApplicationsApplicationExecutorShapeConfigOutput) Ocpus() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetApplicationsApplicationExecutorShapeConfig) *float64 { return v.Ocpus }).(pulumi.Float64PtrOutput)
 }
 
 type GetApplicationsApplicationExecutorShapeConfigArrayOutput struct{ *pulumi.OutputState }
@@ -4632,12 +3965,6 @@ func (o GetApplicationsApplicationExecutorShapeConfigArrayOutput) ToGetApplicati
 	return o
 }
 
-func (o GetApplicationsApplicationExecutorShapeConfigArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetApplicationsApplicationExecutorShapeConfig] {
-	return pulumix.Output[[]GetApplicationsApplicationExecutorShapeConfig]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetApplicationsApplicationExecutorShapeConfigArrayOutput) Index(i pulumi.IntInput) GetApplicationsApplicationExecutorShapeConfigOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetApplicationsApplicationExecutorShapeConfig {
 		return vs[0].([]GetApplicationsApplicationExecutorShapeConfig)[vs[1].(int)]
@@ -4646,9 +3973,9 @@ func (o GetApplicationsApplicationExecutorShapeConfigArrayOutput) Index(i pulumi
 
 type GetApplicationsApplicationParameter struct {
 	// The name of the parameter.  It must be a string of one or more word characters (a-z, A-Z, 0-9, _). Examples: "iterations", "inputFile"
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// The value of the parameter. It must be a string of 0 or more characters of any kind. Examples: "" (empty string), "10", "mydata.xml", "${x}"
-	Value string `pulumi:"value"`
+	Value *string `pulumi:"value"`
 }
 
 // GetApplicationsApplicationParameterInput is an input type that accepts GetApplicationsApplicationParameterArgs and GetApplicationsApplicationParameterOutput values.
@@ -4664,9 +3991,9 @@ type GetApplicationsApplicationParameterInput interface {
 
 type GetApplicationsApplicationParameterArgs struct {
 	// The name of the parameter.  It must be a string of one or more word characters (a-z, A-Z, 0-9, _). Examples: "iterations", "inputFile"
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// The value of the parameter. It must be a string of 0 or more characters of any kind. Examples: "" (empty string), "10", "mydata.xml", "${x}"
-	Value pulumi.StringInput `pulumi:"value"`
+	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
 func (GetApplicationsApplicationParameterArgs) ElementType() reflect.Type {
@@ -4679,12 +4006,6 @@ func (i GetApplicationsApplicationParameterArgs) ToGetApplicationsApplicationPar
 
 func (i GetApplicationsApplicationParameterArgs) ToGetApplicationsApplicationParameterOutputWithContext(ctx context.Context) GetApplicationsApplicationParameterOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetApplicationsApplicationParameterOutput)
-}
-
-func (i GetApplicationsApplicationParameterArgs) ToOutput(ctx context.Context) pulumix.Output[GetApplicationsApplicationParameter] {
-	return pulumix.Output[GetApplicationsApplicationParameter]{
-		OutputState: i.ToGetApplicationsApplicationParameterOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetApplicationsApplicationParameterArrayInput is an input type that accepts GetApplicationsApplicationParameterArray and GetApplicationsApplicationParameterArrayOutput values.
@@ -4712,12 +4033,6 @@ func (i GetApplicationsApplicationParameterArray) ToGetApplicationsApplicationPa
 	return pulumi.ToOutputWithContext(ctx, i).(GetApplicationsApplicationParameterArrayOutput)
 }
 
-func (i GetApplicationsApplicationParameterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetApplicationsApplicationParameter] {
-	return pulumix.Output[[]GetApplicationsApplicationParameter]{
-		OutputState: i.ToGetApplicationsApplicationParameterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetApplicationsApplicationParameterOutput struct{ *pulumi.OutputState }
 
 func (GetApplicationsApplicationParameterOutput) ElementType() reflect.Type {
@@ -4732,20 +4047,14 @@ func (o GetApplicationsApplicationParameterOutput) ToGetApplicationsApplicationP
 	return o
 }
 
-func (o GetApplicationsApplicationParameterOutput) ToOutput(ctx context.Context) pulumix.Output[GetApplicationsApplicationParameter] {
-	return pulumix.Output[GetApplicationsApplicationParameter]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The name of the parameter.  It must be a string of one or more word characters (a-z, A-Z, 0-9, _). Examples: "iterations", "inputFile"
-func (o GetApplicationsApplicationParameterOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetApplicationsApplicationParameter) string { return v.Name }).(pulumi.StringOutput)
+func (o GetApplicationsApplicationParameterOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetApplicationsApplicationParameter) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // The value of the parameter. It must be a string of 0 or more characters of any kind. Examples: "" (empty string), "10", "mydata.xml", "${x}"
-func (o GetApplicationsApplicationParameterOutput) Value() pulumi.StringOutput {
-	return o.ApplyT(func(v GetApplicationsApplicationParameter) string { return v.Value }).(pulumi.StringOutput)
+func (o GetApplicationsApplicationParameterOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetApplicationsApplicationParameter) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
 
 type GetApplicationsApplicationParameterArrayOutput struct{ *pulumi.OutputState }
@@ -4760,12 +4069,6 @@ func (o GetApplicationsApplicationParameterArrayOutput) ToGetApplicationsApplica
 
 func (o GetApplicationsApplicationParameterArrayOutput) ToGetApplicationsApplicationParameterArrayOutputWithContext(ctx context.Context) GetApplicationsApplicationParameterArrayOutput {
 	return o
-}
-
-func (o GetApplicationsApplicationParameterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetApplicationsApplicationParameter] {
-	return pulumix.Output[[]GetApplicationsApplicationParameter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetApplicationsApplicationParameterArrayOutput) Index(i pulumi.IntInput) GetApplicationsApplicationParameterOutput {
@@ -4811,12 +4114,6 @@ func (i GetApplicationsFilterArgs) ToGetApplicationsFilterOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(GetApplicationsFilterOutput)
 }
 
-func (i GetApplicationsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetApplicationsFilter] {
-	return pulumix.Output[GetApplicationsFilter]{
-		OutputState: i.ToGetApplicationsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetApplicationsFilterArrayInput is an input type that accepts GetApplicationsFilterArray and GetApplicationsFilterArrayOutput values.
 // You can construct a concrete instance of `GetApplicationsFilterArrayInput` via:
 //
@@ -4842,12 +4139,6 @@ func (i GetApplicationsFilterArray) ToGetApplicationsFilterArrayOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetApplicationsFilterArrayOutput)
 }
 
-func (i GetApplicationsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetApplicationsFilter] {
-	return pulumix.Output[[]GetApplicationsFilter]{
-		OutputState: i.ToGetApplicationsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetApplicationsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetApplicationsFilterOutput) ElementType() reflect.Type {
@@ -4860,12 +4151,6 @@ func (o GetApplicationsFilterOutput) ToGetApplicationsFilterOutput() GetApplicat
 
 func (o GetApplicationsFilterOutput) ToGetApplicationsFilterOutputWithContext(ctx context.Context) GetApplicationsFilterOutput {
 	return o
-}
-
-func (o GetApplicationsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetApplicationsFilter] {
-	return pulumix.Output[GetApplicationsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The name of the parameter.  It must be a string of one or more word characters (a-z, A-Z, 0-9, _). Examples: "iterations", "inputFile"
@@ -4895,12 +4180,6 @@ func (o GetApplicationsFilterArrayOutput) ToGetApplicationsFilterArrayOutputWith
 	return o
 }
 
-func (o GetApplicationsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetApplicationsFilter] {
-	return pulumix.Output[[]GetApplicationsFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetApplicationsFilterArrayOutput) Index(i pulumi.IntInput) GetApplicationsFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetApplicationsFilter {
 		return vs[0].([]GetApplicationsFilter)[vs[1].(int)]
@@ -4909,9 +4188,9 @@ func (o GetApplicationsFilterArrayOutput) Index(i pulumi.IntInput) GetApplicatio
 
 type GetInvokeRunApplicationLogConfig struct {
 	// The log group id for where log objects will be for Data Flow Runs.
-	LogGroupId string `pulumi:"logGroupId"`
+	LogGroupId *string `pulumi:"logGroupId"`
 	// The log id of the log object the Application Logs of Data Flow Run will be shipped to.
-	LogId string `pulumi:"logId"`
+	LogId *string `pulumi:"logId"`
 }
 
 // GetInvokeRunApplicationLogConfigInput is an input type that accepts GetInvokeRunApplicationLogConfigArgs and GetInvokeRunApplicationLogConfigOutput values.
@@ -4927,9 +4206,9 @@ type GetInvokeRunApplicationLogConfigInput interface {
 
 type GetInvokeRunApplicationLogConfigArgs struct {
 	// The log group id for where log objects will be for Data Flow Runs.
-	LogGroupId pulumi.StringInput `pulumi:"logGroupId"`
+	LogGroupId pulumi.StringPtrInput `pulumi:"logGroupId"`
 	// The log id of the log object the Application Logs of Data Flow Run will be shipped to.
-	LogId pulumi.StringInput `pulumi:"logId"`
+	LogId pulumi.StringPtrInput `pulumi:"logId"`
 }
 
 func (GetInvokeRunApplicationLogConfigArgs) ElementType() reflect.Type {
@@ -4942,12 +4221,6 @@ func (i GetInvokeRunApplicationLogConfigArgs) ToGetInvokeRunApplicationLogConfig
 
 func (i GetInvokeRunApplicationLogConfigArgs) ToGetInvokeRunApplicationLogConfigOutputWithContext(ctx context.Context) GetInvokeRunApplicationLogConfigOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetInvokeRunApplicationLogConfigOutput)
-}
-
-func (i GetInvokeRunApplicationLogConfigArgs) ToOutput(ctx context.Context) pulumix.Output[GetInvokeRunApplicationLogConfig] {
-	return pulumix.Output[GetInvokeRunApplicationLogConfig]{
-		OutputState: i.ToGetInvokeRunApplicationLogConfigOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetInvokeRunApplicationLogConfigArrayInput is an input type that accepts GetInvokeRunApplicationLogConfigArray and GetInvokeRunApplicationLogConfigArrayOutput values.
@@ -4975,12 +4248,6 @@ func (i GetInvokeRunApplicationLogConfigArray) ToGetInvokeRunApplicationLogConfi
 	return pulumi.ToOutputWithContext(ctx, i).(GetInvokeRunApplicationLogConfigArrayOutput)
 }
 
-func (i GetInvokeRunApplicationLogConfigArray) ToOutput(ctx context.Context) pulumix.Output[[]GetInvokeRunApplicationLogConfig] {
-	return pulumix.Output[[]GetInvokeRunApplicationLogConfig]{
-		OutputState: i.ToGetInvokeRunApplicationLogConfigArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetInvokeRunApplicationLogConfigOutput struct{ *pulumi.OutputState }
 
 func (GetInvokeRunApplicationLogConfigOutput) ElementType() reflect.Type {
@@ -4995,20 +4262,14 @@ func (o GetInvokeRunApplicationLogConfigOutput) ToGetInvokeRunApplicationLogConf
 	return o
 }
 
-func (o GetInvokeRunApplicationLogConfigOutput) ToOutput(ctx context.Context) pulumix.Output[GetInvokeRunApplicationLogConfig] {
-	return pulumix.Output[GetInvokeRunApplicationLogConfig]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The log group id for where log objects will be for Data Flow Runs.
-func (o GetInvokeRunApplicationLogConfigOutput) LogGroupId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvokeRunApplicationLogConfig) string { return v.LogGroupId }).(pulumi.StringOutput)
+func (o GetInvokeRunApplicationLogConfigOutput) LogGroupId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvokeRunApplicationLogConfig) *string { return v.LogGroupId }).(pulumi.StringPtrOutput)
 }
 
 // The log id of the log object the Application Logs of Data Flow Run will be shipped to.
-func (o GetInvokeRunApplicationLogConfigOutput) LogId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvokeRunApplicationLogConfig) string { return v.LogId }).(pulumi.StringOutput)
+func (o GetInvokeRunApplicationLogConfigOutput) LogId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvokeRunApplicationLogConfig) *string { return v.LogId }).(pulumi.StringPtrOutput)
 }
 
 type GetInvokeRunApplicationLogConfigArrayOutput struct{ *pulumi.OutputState }
@@ -5025,12 +4286,6 @@ func (o GetInvokeRunApplicationLogConfigArrayOutput) ToGetInvokeRunApplicationLo
 	return o
 }
 
-func (o GetInvokeRunApplicationLogConfigArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetInvokeRunApplicationLogConfig] {
-	return pulumix.Output[[]GetInvokeRunApplicationLogConfig]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetInvokeRunApplicationLogConfigArrayOutput) Index(i pulumi.IntInput) GetInvokeRunApplicationLogConfigOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInvokeRunApplicationLogConfig {
 		return vs[0].([]GetInvokeRunApplicationLogConfig)[vs[1].(int)]
@@ -5039,9 +4294,9 @@ func (o GetInvokeRunApplicationLogConfigArrayOutput) Index(i pulumi.IntInput) Ge
 
 type GetInvokeRunDriverShapeConfig struct {
 	// The amount of memory used for the driver or executors.
-	MemoryInGbs float64 `pulumi:"memoryInGbs"`
+	MemoryInGbs *float64 `pulumi:"memoryInGbs"`
 	// The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
-	Ocpus float64 `pulumi:"ocpus"`
+	Ocpus *float64 `pulumi:"ocpus"`
 }
 
 // GetInvokeRunDriverShapeConfigInput is an input type that accepts GetInvokeRunDriverShapeConfigArgs and GetInvokeRunDriverShapeConfigOutput values.
@@ -5057,9 +4312,9 @@ type GetInvokeRunDriverShapeConfigInput interface {
 
 type GetInvokeRunDriverShapeConfigArgs struct {
 	// The amount of memory used for the driver or executors.
-	MemoryInGbs pulumi.Float64Input `pulumi:"memoryInGbs"`
+	MemoryInGbs pulumi.Float64PtrInput `pulumi:"memoryInGbs"`
 	// The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
-	Ocpus pulumi.Float64Input `pulumi:"ocpus"`
+	Ocpus pulumi.Float64PtrInput `pulumi:"ocpus"`
 }
 
 func (GetInvokeRunDriverShapeConfigArgs) ElementType() reflect.Type {
@@ -5072,12 +4327,6 @@ func (i GetInvokeRunDriverShapeConfigArgs) ToGetInvokeRunDriverShapeConfigOutput
 
 func (i GetInvokeRunDriverShapeConfigArgs) ToGetInvokeRunDriverShapeConfigOutputWithContext(ctx context.Context) GetInvokeRunDriverShapeConfigOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetInvokeRunDriverShapeConfigOutput)
-}
-
-func (i GetInvokeRunDriverShapeConfigArgs) ToOutput(ctx context.Context) pulumix.Output[GetInvokeRunDriverShapeConfig] {
-	return pulumix.Output[GetInvokeRunDriverShapeConfig]{
-		OutputState: i.ToGetInvokeRunDriverShapeConfigOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetInvokeRunDriverShapeConfigArrayInput is an input type that accepts GetInvokeRunDriverShapeConfigArray and GetInvokeRunDriverShapeConfigArrayOutput values.
@@ -5105,12 +4354,6 @@ func (i GetInvokeRunDriverShapeConfigArray) ToGetInvokeRunDriverShapeConfigArray
 	return pulumi.ToOutputWithContext(ctx, i).(GetInvokeRunDriverShapeConfigArrayOutput)
 }
 
-func (i GetInvokeRunDriverShapeConfigArray) ToOutput(ctx context.Context) pulumix.Output[[]GetInvokeRunDriverShapeConfig] {
-	return pulumix.Output[[]GetInvokeRunDriverShapeConfig]{
-		OutputState: i.ToGetInvokeRunDriverShapeConfigArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetInvokeRunDriverShapeConfigOutput struct{ *pulumi.OutputState }
 
 func (GetInvokeRunDriverShapeConfigOutput) ElementType() reflect.Type {
@@ -5125,20 +4368,14 @@ func (o GetInvokeRunDriverShapeConfigOutput) ToGetInvokeRunDriverShapeConfigOutp
 	return o
 }
 
-func (o GetInvokeRunDriverShapeConfigOutput) ToOutput(ctx context.Context) pulumix.Output[GetInvokeRunDriverShapeConfig] {
-	return pulumix.Output[GetInvokeRunDriverShapeConfig]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The amount of memory used for the driver or executors.
-func (o GetInvokeRunDriverShapeConfigOutput) MemoryInGbs() pulumi.Float64Output {
-	return o.ApplyT(func(v GetInvokeRunDriverShapeConfig) float64 { return v.MemoryInGbs }).(pulumi.Float64Output)
+func (o GetInvokeRunDriverShapeConfigOutput) MemoryInGbs() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetInvokeRunDriverShapeConfig) *float64 { return v.MemoryInGbs }).(pulumi.Float64PtrOutput)
 }
 
 // The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
-func (o GetInvokeRunDriverShapeConfigOutput) Ocpus() pulumi.Float64Output {
-	return o.ApplyT(func(v GetInvokeRunDriverShapeConfig) float64 { return v.Ocpus }).(pulumi.Float64Output)
+func (o GetInvokeRunDriverShapeConfigOutput) Ocpus() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetInvokeRunDriverShapeConfig) *float64 { return v.Ocpus }).(pulumi.Float64PtrOutput)
 }
 
 type GetInvokeRunDriverShapeConfigArrayOutput struct{ *pulumi.OutputState }
@@ -5155,12 +4392,6 @@ func (o GetInvokeRunDriverShapeConfigArrayOutput) ToGetInvokeRunDriverShapeConfi
 	return o
 }
 
-func (o GetInvokeRunDriverShapeConfigArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetInvokeRunDriverShapeConfig] {
-	return pulumix.Output[[]GetInvokeRunDriverShapeConfig]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetInvokeRunDriverShapeConfigArrayOutput) Index(i pulumi.IntInput) GetInvokeRunDriverShapeConfigOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInvokeRunDriverShapeConfig {
 		return vs[0].([]GetInvokeRunDriverShapeConfig)[vs[1].(int)]
@@ -5169,9 +4400,9 @@ func (o GetInvokeRunDriverShapeConfigArrayOutput) Index(i pulumi.IntInput) GetIn
 
 type GetInvokeRunExecutorShapeConfig struct {
 	// The amount of memory used for the driver or executors.
-	MemoryInGbs float64 `pulumi:"memoryInGbs"`
+	MemoryInGbs *float64 `pulumi:"memoryInGbs"`
 	// The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
-	Ocpus float64 `pulumi:"ocpus"`
+	Ocpus *float64 `pulumi:"ocpus"`
 }
 
 // GetInvokeRunExecutorShapeConfigInput is an input type that accepts GetInvokeRunExecutorShapeConfigArgs and GetInvokeRunExecutorShapeConfigOutput values.
@@ -5187,9 +4418,9 @@ type GetInvokeRunExecutorShapeConfigInput interface {
 
 type GetInvokeRunExecutorShapeConfigArgs struct {
 	// The amount of memory used for the driver or executors.
-	MemoryInGbs pulumi.Float64Input `pulumi:"memoryInGbs"`
+	MemoryInGbs pulumi.Float64PtrInput `pulumi:"memoryInGbs"`
 	// The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
-	Ocpus pulumi.Float64Input `pulumi:"ocpus"`
+	Ocpus pulumi.Float64PtrInput `pulumi:"ocpus"`
 }
 
 func (GetInvokeRunExecutorShapeConfigArgs) ElementType() reflect.Type {
@@ -5202,12 +4433,6 @@ func (i GetInvokeRunExecutorShapeConfigArgs) ToGetInvokeRunExecutorShapeConfigOu
 
 func (i GetInvokeRunExecutorShapeConfigArgs) ToGetInvokeRunExecutorShapeConfigOutputWithContext(ctx context.Context) GetInvokeRunExecutorShapeConfigOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetInvokeRunExecutorShapeConfigOutput)
-}
-
-func (i GetInvokeRunExecutorShapeConfigArgs) ToOutput(ctx context.Context) pulumix.Output[GetInvokeRunExecutorShapeConfig] {
-	return pulumix.Output[GetInvokeRunExecutorShapeConfig]{
-		OutputState: i.ToGetInvokeRunExecutorShapeConfigOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetInvokeRunExecutorShapeConfigArrayInput is an input type that accepts GetInvokeRunExecutorShapeConfigArray and GetInvokeRunExecutorShapeConfigArrayOutput values.
@@ -5235,12 +4460,6 @@ func (i GetInvokeRunExecutorShapeConfigArray) ToGetInvokeRunExecutorShapeConfigA
 	return pulumi.ToOutputWithContext(ctx, i).(GetInvokeRunExecutorShapeConfigArrayOutput)
 }
 
-func (i GetInvokeRunExecutorShapeConfigArray) ToOutput(ctx context.Context) pulumix.Output[[]GetInvokeRunExecutorShapeConfig] {
-	return pulumix.Output[[]GetInvokeRunExecutorShapeConfig]{
-		OutputState: i.ToGetInvokeRunExecutorShapeConfigArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetInvokeRunExecutorShapeConfigOutput struct{ *pulumi.OutputState }
 
 func (GetInvokeRunExecutorShapeConfigOutput) ElementType() reflect.Type {
@@ -5255,20 +4474,14 @@ func (o GetInvokeRunExecutorShapeConfigOutput) ToGetInvokeRunExecutorShapeConfig
 	return o
 }
 
-func (o GetInvokeRunExecutorShapeConfigOutput) ToOutput(ctx context.Context) pulumix.Output[GetInvokeRunExecutorShapeConfig] {
-	return pulumix.Output[GetInvokeRunExecutorShapeConfig]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The amount of memory used for the driver or executors.
-func (o GetInvokeRunExecutorShapeConfigOutput) MemoryInGbs() pulumi.Float64Output {
-	return o.ApplyT(func(v GetInvokeRunExecutorShapeConfig) float64 { return v.MemoryInGbs }).(pulumi.Float64Output)
+func (o GetInvokeRunExecutorShapeConfigOutput) MemoryInGbs() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetInvokeRunExecutorShapeConfig) *float64 { return v.MemoryInGbs }).(pulumi.Float64PtrOutput)
 }
 
 // The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
-func (o GetInvokeRunExecutorShapeConfigOutput) Ocpus() pulumi.Float64Output {
-	return o.ApplyT(func(v GetInvokeRunExecutorShapeConfig) float64 { return v.Ocpus }).(pulumi.Float64Output)
+func (o GetInvokeRunExecutorShapeConfigOutput) Ocpus() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetInvokeRunExecutorShapeConfig) *float64 { return v.Ocpus }).(pulumi.Float64PtrOutput)
 }
 
 type GetInvokeRunExecutorShapeConfigArrayOutput struct{ *pulumi.OutputState }
@@ -5285,12 +4498,6 @@ func (o GetInvokeRunExecutorShapeConfigArrayOutput) ToGetInvokeRunExecutorShapeC
 	return o
 }
 
-func (o GetInvokeRunExecutorShapeConfigArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetInvokeRunExecutorShapeConfig] {
-	return pulumix.Output[[]GetInvokeRunExecutorShapeConfig]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetInvokeRunExecutorShapeConfigArrayOutput) Index(i pulumi.IntInput) GetInvokeRunExecutorShapeConfigOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInvokeRunExecutorShapeConfig {
 		return vs[0].([]GetInvokeRunExecutorShapeConfig)[vs[1].(int)]
@@ -5299,9 +4506,9 @@ func (o GetInvokeRunExecutorShapeConfigArrayOutput) Index(i pulumi.IntInput) Get
 
 type GetInvokeRunParameter struct {
 	// The name of the parameter.  It must be a string of one or more word characters (a-z, A-Z, 0-9, _). Examples: "iterations", "inputFile"
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// The value of the parameter. It must be a string of 0 or more characters of any kind. Examples: "" (empty string), "10", "mydata.xml", "${x}"
-	Value string `pulumi:"value"`
+	Value *string `pulumi:"value"`
 }
 
 // GetInvokeRunParameterInput is an input type that accepts GetInvokeRunParameterArgs and GetInvokeRunParameterOutput values.
@@ -5317,9 +4524,9 @@ type GetInvokeRunParameterInput interface {
 
 type GetInvokeRunParameterArgs struct {
 	// The name of the parameter.  It must be a string of one or more word characters (a-z, A-Z, 0-9, _). Examples: "iterations", "inputFile"
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// The value of the parameter. It must be a string of 0 or more characters of any kind. Examples: "" (empty string), "10", "mydata.xml", "${x}"
-	Value pulumi.StringInput `pulumi:"value"`
+	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
 func (GetInvokeRunParameterArgs) ElementType() reflect.Type {
@@ -5332,12 +4539,6 @@ func (i GetInvokeRunParameterArgs) ToGetInvokeRunParameterOutput() GetInvokeRunP
 
 func (i GetInvokeRunParameterArgs) ToGetInvokeRunParameterOutputWithContext(ctx context.Context) GetInvokeRunParameterOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetInvokeRunParameterOutput)
-}
-
-func (i GetInvokeRunParameterArgs) ToOutput(ctx context.Context) pulumix.Output[GetInvokeRunParameter] {
-	return pulumix.Output[GetInvokeRunParameter]{
-		OutputState: i.ToGetInvokeRunParameterOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetInvokeRunParameterArrayInput is an input type that accepts GetInvokeRunParameterArray and GetInvokeRunParameterArrayOutput values.
@@ -5365,12 +4566,6 @@ func (i GetInvokeRunParameterArray) ToGetInvokeRunParameterArrayOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetInvokeRunParameterArrayOutput)
 }
 
-func (i GetInvokeRunParameterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetInvokeRunParameter] {
-	return pulumix.Output[[]GetInvokeRunParameter]{
-		OutputState: i.ToGetInvokeRunParameterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetInvokeRunParameterOutput struct{ *pulumi.OutputState }
 
 func (GetInvokeRunParameterOutput) ElementType() reflect.Type {
@@ -5385,20 +4580,14 @@ func (o GetInvokeRunParameterOutput) ToGetInvokeRunParameterOutputWithContext(ct
 	return o
 }
 
-func (o GetInvokeRunParameterOutput) ToOutput(ctx context.Context) pulumix.Output[GetInvokeRunParameter] {
-	return pulumix.Output[GetInvokeRunParameter]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The name of the parameter.  It must be a string of one or more word characters (a-z, A-Z, 0-9, _). Examples: "iterations", "inputFile"
-func (o GetInvokeRunParameterOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvokeRunParameter) string { return v.Name }).(pulumi.StringOutput)
+func (o GetInvokeRunParameterOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvokeRunParameter) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // The value of the parameter. It must be a string of 0 or more characters of any kind. Examples: "" (empty string), "10", "mydata.xml", "${x}"
-func (o GetInvokeRunParameterOutput) Value() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvokeRunParameter) string { return v.Value }).(pulumi.StringOutput)
+func (o GetInvokeRunParameterOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvokeRunParameter) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
 
 type GetInvokeRunParameterArrayOutput struct{ *pulumi.OutputState }
@@ -5413,12 +4602,6 @@ func (o GetInvokeRunParameterArrayOutput) ToGetInvokeRunParameterArrayOutput() G
 
 func (o GetInvokeRunParameterArrayOutput) ToGetInvokeRunParameterArrayOutputWithContext(ctx context.Context) GetInvokeRunParameterArrayOutput {
 	return o
-}
-
-func (o GetInvokeRunParameterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetInvokeRunParameter] {
-	return pulumix.Output[[]GetInvokeRunParameter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetInvokeRunParameterArrayOutput) Index(i pulumi.IntInput) GetInvokeRunParameterOutput {
@@ -5464,12 +4647,6 @@ func (i GetInvokeRunsFilterArgs) ToGetInvokeRunsFilterOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(GetInvokeRunsFilterOutput)
 }
 
-func (i GetInvokeRunsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetInvokeRunsFilter] {
-	return pulumix.Output[GetInvokeRunsFilter]{
-		OutputState: i.ToGetInvokeRunsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetInvokeRunsFilterArrayInput is an input type that accepts GetInvokeRunsFilterArray and GetInvokeRunsFilterArrayOutput values.
 // You can construct a concrete instance of `GetInvokeRunsFilterArrayInput` via:
 //
@@ -5495,12 +4672,6 @@ func (i GetInvokeRunsFilterArray) ToGetInvokeRunsFilterArrayOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(GetInvokeRunsFilterArrayOutput)
 }
 
-func (i GetInvokeRunsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetInvokeRunsFilter] {
-	return pulumix.Output[[]GetInvokeRunsFilter]{
-		OutputState: i.ToGetInvokeRunsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetInvokeRunsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetInvokeRunsFilterOutput) ElementType() reflect.Type {
@@ -5513,12 +4684,6 @@ func (o GetInvokeRunsFilterOutput) ToGetInvokeRunsFilterOutput() GetInvokeRunsFi
 
 func (o GetInvokeRunsFilterOutput) ToGetInvokeRunsFilterOutputWithContext(ctx context.Context) GetInvokeRunsFilterOutput {
 	return o
-}
-
-func (o GetInvokeRunsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetInvokeRunsFilter] {
-	return pulumix.Output[GetInvokeRunsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The name of the parameter.  It must be a string of one or more word characters (a-z, A-Z, 0-9, _). Examples: "iterations", "inputFile"
@@ -5548,12 +4713,6 @@ func (o GetInvokeRunsFilterArrayOutput) ToGetInvokeRunsFilterArrayOutputWithCont
 	return o
 }
 
-func (o GetInvokeRunsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetInvokeRunsFilter] {
-	return pulumix.Output[[]GetInvokeRunsFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetInvokeRunsFilterArrayOutput) Index(i pulumi.IntInput) GetInvokeRunsFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInvokeRunsFilter {
 		return vs[0].([]GetInvokeRunsFilter)[vs[1].(int)]
@@ -5562,94 +4721,94 @@ func (o GetInvokeRunsFilterArrayOutput) Index(i pulumi.IntInput) GetInvokeRunsFi
 
 type GetInvokeRunsRun struct {
 	// The ID of the application.
-	ApplicationId string `pulumi:"applicationId"`
+	ApplicationId *string `pulumi:"applicationId"`
 	// Logging details of Application logs for Data Flow Run.
 	ApplicationLogConfigs []GetInvokeRunsRunApplicationLogConfig `pulumi:"applicationLogConfigs"`
 	// A comma separated list of one or more archive files as Oracle Cloud Infrastructure URIs. For example, ``oci://path/to/a.zip,oci://path/to/b.zip``. An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution of a Python, Java, or Scala application. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
-	ArchiveUri string `pulumi:"archiveUri"`
+	ArchiveUri *string `pulumi:"archiveUri"`
 	// The arguments passed to the running application as command line arguments.  An argument is either a plain text or a placeholder. Placeholders are replaced using values from the parameters map.  Each placeholder specified must be represented in the parameters map else the request (POST or PUT) will fail with a HTTP 400 status code.  Placeholders are specified as `Service Api Spec`, where `name` is the name of the parameter. Example:  `[ "--input", "${input_file}", "--name", "John Doe" ]` If "inputFile" has a value of "mydata.xml", then the value above will be translated to `--input mydata.xml --name "John Doe"`
 	Arguments    []string `pulumi:"arguments"`
-	Asynchronous bool     `pulumi:"asynchronous"`
+	Asynchronous *bool    `pulumi:"asynchronous"`
 	// The class for the application.
-	ClassName string `pulumi:"className"`
+	ClassName *string `pulumi:"className"`
 	// The OCID of the compartment.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
 	Configuration map[string]interface{} `pulumi:"configuration"`
 	// The data read by the run in bytes.
-	DataReadInBytes string `pulumi:"dataReadInBytes"`
+	DataReadInBytes *string `pulumi:"dataReadInBytes"`
 	// The data written by the run in bytes.
-	DataWrittenInBytes string `pulumi:"dataWrittenInBytes"`
+	DataWrittenInBytes *string `pulumi:"dataWrittenInBytes"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The query parameter for the Spark application name.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// The VM shape for the driver. Sets the driver cores and memory.
-	DriverShape string `pulumi:"driverShape"`
+	DriverShape *string `pulumi:"driverShape"`
 	// This is used to configure the shape of the driver or executor if a flexible shape is used.
 	DriverShapeConfigs []GetInvokeRunsRunDriverShapeConfig `pulumi:"driverShapeConfigs"`
 	// The input used for spark-submit command. For more details see https://spark.apache.org/docs/latest/submitting-applications.html#launching-applications-with-spark-submit. Supported options include ``--class``, ``--file``, ``--jars``, ``--conf``, ``--py-files``, and main application file with arguments. Example: ``--jars oci://path/to/a.jar,oci://path/to/b.jar --files oci://path/to/a.json,oci://path/to/b.csv --py-files oci://path/to/a.py,oci://path/to/b.py --conf spark.sql.crossJoin.enabled=true --class org.apache.spark.examples.SparkPi oci://path/to/main.jar 10`` Note: If execute is specified together with applicationId, className, configuration, fileUri, language, arguments, parameters during application create/update, or run create/submit, Data Flow service will use derived information from execute input only.
-	Execute string `pulumi:"execute"`
+	Execute *string `pulumi:"execute"`
 	// The VM shape for the executors. Sets the executor cores and memory.
-	ExecutorShape string `pulumi:"executorShape"`
+	ExecutorShape *string `pulumi:"executorShape"`
 	// This is used to configure the shape of the driver or executor if a flexible shape is used.
 	ExecutorShapeConfigs []GetInvokeRunsRunExecutorShapeConfig `pulumi:"executorShapeConfigs"`
 	// An Oracle Cloud Infrastructure URI of the file containing the application to execute. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
-	FileUri string `pulumi:"fileUri"`
+	FileUri *string `pulumi:"fileUri"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The ID of a run.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The timeout value in minutes used to manage Runs. A Run would be stopped after inactivity for this amount of time period. Note: This parameter is currently only applicable for Runs of type `SESSION`. Default value is 2880 minutes (2 days)
-	IdleTimeoutInMinutes string `pulumi:"idleTimeoutInMinutes"`
+	IdleTimeoutInMinutes *string `pulumi:"idleTimeoutInMinutes"`
 	// The Spark language.
-	Language string `pulumi:"language"`
+	Language *string `pulumi:"language"`
 	// The detailed messages about the lifecycle state.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// An Oracle Cloud Infrastructure URI of the bucket where the Spark job logs are to be uploaded. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
-	LogsBucketUri string `pulumi:"logsBucketUri"`
+	LogsBucketUri *string `pulumi:"logsBucketUri"`
 	// The maximum duration in minutes for which an Application should run. Data Flow Run would be terminated once it reaches this duration from the time it transitions to `IN_PROGRESS` state.
-	MaxDurationInMinutes string `pulumi:"maxDurationInMinutes"`
+	MaxDurationInMinutes *string `pulumi:"maxDurationInMinutes"`
 	// The OCID of Oracle Cloud Infrastructure Hive Metastore.
-	MetastoreId string `pulumi:"metastoreId"`
+	MetastoreId *string `pulumi:"metastoreId"`
 	// The number of executor VMs requested.
-	NumExecutors int `pulumi:"numExecutors"`
+	NumExecutors *int `pulumi:"numExecutors"`
 	// Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
-	OpcRequestId string `pulumi:"opcRequestId"`
+	OpcRequestId *string `pulumi:"opcRequestId"`
 	// The OCID of the user who created the resource.
-	OwnerPrincipalId string `pulumi:"ownerPrincipalId"`
+	OwnerPrincipalId *string `pulumi:"ownerPrincipalId"`
 	// The username of the user who created the resource.  If the username of the owner does not exist, `null` will be returned and the caller should refer to the ownerPrincipalId value instead.
-	OwnerUserName string `pulumi:"ownerUserName"`
+	OwnerUserName *string `pulumi:"ownerUserName"`
 	// An array of name/value pairs used to fill placeholders found in properties like `Application.arguments`.  The name must be a string of one or more word characters (a-z, A-Z, 0-9, _).  The value can be a string of 0 or more characters of any kind. Example:  [ { name: "iterations", value: "10"}, { name: "inputFile", value: "mydata.xml" }, { name: "variableX", value: "${x}"} ]
 	Parameters []GetInvokeRunsRunParameter `pulumi:"parameters"`
 	// The ID of the pool.
-	PoolId string `pulumi:"poolId"`
+	PoolId *string `pulumi:"poolId"`
 	// An array of DNS zone names. Example: `[ "app.examplecorp.com", "app.examplecorp2.com" ]`
 	PrivateEndpointDnsZones []string `pulumi:"privateEndpointDnsZones"`
 	// The OCID of a private endpoint.
-	PrivateEndpointId string `pulumi:"privateEndpointId"`
+	PrivateEndpointId *string `pulumi:"privateEndpointId"`
 	// The maximum number of hosts to be accessed through the private endpoint. This value is used to calculate the relevant CIDR block and should be a multiple of 256.  If the value is not a multiple of 256, it is rounded up to the next multiple of 256. For example, 300 is rounded up to 512.
-	PrivateEndpointMaxHostCount int `pulumi:"privateEndpointMaxHostCount"`
+	PrivateEndpointMaxHostCount *int `pulumi:"privateEndpointMaxHostCount"`
 	// An array of network security group OCIDs.
 	PrivateEndpointNsgIds []string `pulumi:"privateEndpointNsgIds"`
 	// The OCID of a subnet.
-	PrivateEndpointSubnetId string `pulumi:"privateEndpointSubnetId"`
+	PrivateEndpointSubnetId *string `pulumi:"privateEndpointSubnetId"`
 	// The duration of the run in milliseconds.
-	RunDurationInMilliseconds string `pulumi:"runDurationInMilliseconds"`
+	RunDurationInMilliseconds *string `pulumi:"runDurationInMilliseconds"`
 	// The Spark version utilized to run the application.
-	SparkVersion string `pulumi:"sparkVersion"`
+	SparkVersion *string `pulumi:"sparkVersion"`
 	// The LifecycleState of the run.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The date and time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 	// The total number of oCPU requested by the run.
-	TotalOcpu int `pulumi:"totalOcpu"`
+	TotalOcpu *int `pulumi:"totalOcpu"`
 	// The Spark application processing type.
-	Type string `pulumi:"type"`
+	Type *string `pulumi:"type"`
 	// An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory for BATCH SQL runs. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
-	WarehouseBucketUri string `pulumi:"warehouseBucketUri"`
+	WarehouseBucketUri *string `pulumi:"warehouseBucketUri"`
 }
 
 // GetInvokeRunsRunInput is an input type that accepts GetInvokeRunsRunArgs and GetInvokeRunsRunOutput values.
@@ -5665,94 +4824,94 @@ type GetInvokeRunsRunInput interface {
 
 type GetInvokeRunsRunArgs struct {
 	// The ID of the application.
-	ApplicationId pulumi.StringInput `pulumi:"applicationId"`
+	ApplicationId pulumi.StringPtrInput `pulumi:"applicationId"`
 	// Logging details of Application logs for Data Flow Run.
 	ApplicationLogConfigs GetInvokeRunsRunApplicationLogConfigArrayInput `pulumi:"applicationLogConfigs"`
 	// A comma separated list of one or more archive files as Oracle Cloud Infrastructure URIs. For example, ``oci://path/to/a.zip,oci://path/to/b.zip``. An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution of a Python, Java, or Scala application. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
-	ArchiveUri pulumi.StringInput `pulumi:"archiveUri"`
+	ArchiveUri pulumi.StringPtrInput `pulumi:"archiveUri"`
 	// The arguments passed to the running application as command line arguments.  An argument is either a plain text or a placeholder. Placeholders are replaced using values from the parameters map.  Each placeholder specified must be represented in the parameters map else the request (POST or PUT) will fail with a HTTP 400 status code.  Placeholders are specified as `Service Api Spec`, where `name` is the name of the parameter. Example:  `[ "--input", "${input_file}", "--name", "John Doe" ]` If "inputFile" has a value of "mydata.xml", then the value above will be translated to `--input mydata.xml --name "John Doe"`
 	Arguments    pulumi.StringArrayInput `pulumi:"arguments"`
-	Asynchronous pulumi.BoolInput        `pulumi:"asynchronous"`
+	Asynchronous pulumi.BoolPtrInput     `pulumi:"asynchronous"`
 	// The class for the application.
-	ClassName pulumi.StringInput `pulumi:"className"`
+	ClassName pulumi.StringPtrInput `pulumi:"className"`
 	// The OCID of the compartment.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
 	Configuration pulumi.MapInput `pulumi:"configuration"`
 	// The data read by the run in bytes.
-	DataReadInBytes pulumi.StringInput `pulumi:"dataReadInBytes"`
+	DataReadInBytes pulumi.StringPtrInput `pulumi:"dataReadInBytes"`
 	// The data written by the run in bytes.
-	DataWrittenInBytes pulumi.StringInput `pulumi:"dataWrittenInBytes"`
+	DataWrittenInBytes pulumi.StringPtrInput `pulumi:"dataWrittenInBytes"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// The query parameter for the Spark application name.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// The VM shape for the driver. Sets the driver cores and memory.
-	DriverShape pulumi.StringInput `pulumi:"driverShape"`
+	DriverShape pulumi.StringPtrInput `pulumi:"driverShape"`
 	// This is used to configure the shape of the driver or executor if a flexible shape is used.
 	DriverShapeConfigs GetInvokeRunsRunDriverShapeConfigArrayInput `pulumi:"driverShapeConfigs"`
 	// The input used for spark-submit command. For more details see https://spark.apache.org/docs/latest/submitting-applications.html#launching-applications-with-spark-submit. Supported options include ``--class``, ``--file``, ``--jars``, ``--conf``, ``--py-files``, and main application file with arguments. Example: ``--jars oci://path/to/a.jar,oci://path/to/b.jar --files oci://path/to/a.json,oci://path/to/b.csv --py-files oci://path/to/a.py,oci://path/to/b.py --conf spark.sql.crossJoin.enabled=true --class org.apache.spark.examples.SparkPi oci://path/to/main.jar 10`` Note: If execute is specified together with applicationId, className, configuration, fileUri, language, arguments, parameters during application create/update, or run create/submit, Data Flow service will use derived information from execute input only.
-	Execute pulumi.StringInput `pulumi:"execute"`
+	Execute pulumi.StringPtrInput `pulumi:"execute"`
 	// The VM shape for the executors. Sets the executor cores and memory.
-	ExecutorShape pulumi.StringInput `pulumi:"executorShape"`
+	ExecutorShape pulumi.StringPtrInput `pulumi:"executorShape"`
 	// This is used to configure the shape of the driver or executor if a flexible shape is used.
 	ExecutorShapeConfigs GetInvokeRunsRunExecutorShapeConfigArrayInput `pulumi:"executorShapeConfigs"`
 	// An Oracle Cloud Infrastructure URI of the file containing the application to execute. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
-	FileUri pulumi.StringInput `pulumi:"fileUri"`
+	FileUri pulumi.StringPtrInput `pulumi:"fileUri"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// The ID of a run.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// The timeout value in minutes used to manage Runs. A Run would be stopped after inactivity for this amount of time period. Note: This parameter is currently only applicable for Runs of type `SESSION`. Default value is 2880 minutes (2 days)
-	IdleTimeoutInMinutes pulumi.StringInput `pulumi:"idleTimeoutInMinutes"`
+	IdleTimeoutInMinutes pulumi.StringPtrInput `pulumi:"idleTimeoutInMinutes"`
 	// The Spark language.
-	Language pulumi.StringInput `pulumi:"language"`
+	Language pulumi.StringPtrInput `pulumi:"language"`
 	// The detailed messages about the lifecycle state.
-	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrInput `pulumi:"lifecycleDetails"`
 	// An Oracle Cloud Infrastructure URI of the bucket where the Spark job logs are to be uploaded. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
-	LogsBucketUri pulumi.StringInput `pulumi:"logsBucketUri"`
+	LogsBucketUri pulumi.StringPtrInput `pulumi:"logsBucketUri"`
 	// The maximum duration in minutes for which an Application should run. Data Flow Run would be terminated once it reaches this duration from the time it transitions to `IN_PROGRESS` state.
-	MaxDurationInMinutes pulumi.StringInput `pulumi:"maxDurationInMinutes"`
+	MaxDurationInMinutes pulumi.StringPtrInput `pulumi:"maxDurationInMinutes"`
 	// The OCID of Oracle Cloud Infrastructure Hive Metastore.
-	MetastoreId pulumi.StringInput `pulumi:"metastoreId"`
+	MetastoreId pulumi.StringPtrInput `pulumi:"metastoreId"`
 	// The number of executor VMs requested.
-	NumExecutors pulumi.IntInput `pulumi:"numExecutors"`
+	NumExecutors pulumi.IntPtrInput `pulumi:"numExecutors"`
 	// Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
-	OpcRequestId pulumi.StringInput `pulumi:"opcRequestId"`
+	OpcRequestId pulumi.StringPtrInput `pulumi:"opcRequestId"`
 	// The OCID of the user who created the resource.
-	OwnerPrincipalId pulumi.StringInput `pulumi:"ownerPrincipalId"`
+	OwnerPrincipalId pulumi.StringPtrInput `pulumi:"ownerPrincipalId"`
 	// The username of the user who created the resource.  If the username of the owner does not exist, `null` will be returned and the caller should refer to the ownerPrincipalId value instead.
-	OwnerUserName pulumi.StringInput `pulumi:"ownerUserName"`
+	OwnerUserName pulumi.StringPtrInput `pulumi:"ownerUserName"`
 	// An array of name/value pairs used to fill placeholders found in properties like `Application.arguments`.  The name must be a string of one or more word characters (a-z, A-Z, 0-9, _).  The value can be a string of 0 or more characters of any kind. Example:  [ { name: "iterations", value: "10"}, { name: "inputFile", value: "mydata.xml" }, { name: "variableX", value: "${x}"} ]
 	Parameters GetInvokeRunsRunParameterArrayInput `pulumi:"parameters"`
 	// The ID of the pool.
-	PoolId pulumi.StringInput `pulumi:"poolId"`
+	PoolId pulumi.StringPtrInput `pulumi:"poolId"`
 	// An array of DNS zone names. Example: `[ "app.examplecorp.com", "app.examplecorp2.com" ]`
 	PrivateEndpointDnsZones pulumi.StringArrayInput `pulumi:"privateEndpointDnsZones"`
 	// The OCID of a private endpoint.
-	PrivateEndpointId pulumi.StringInput `pulumi:"privateEndpointId"`
+	PrivateEndpointId pulumi.StringPtrInput `pulumi:"privateEndpointId"`
 	// The maximum number of hosts to be accessed through the private endpoint. This value is used to calculate the relevant CIDR block and should be a multiple of 256.  If the value is not a multiple of 256, it is rounded up to the next multiple of 256. For example, 300 is rounded up to 512.
-	PrivateEndpointMaxHostCount pulumi.IntInput `pulumi:"privateEndpointMaxHostCount"`
+	PrivateEndpointMaxHostCount pulumi.IntPtrInput `pulumi:"privateEndpointMaxHostCount"`
 	// An array of network security group OCIDs.
 	PrivateEndpointNsgIds pulumi.StringArrayInput `pulumi:"privateEndpointNsgIds"`
 	// The OCID of a subnet.
-	PrivateEndpointSubnetId pulumi.StringInput `pulumi:"privateEndpointSubnetId"`
+	PrivateEndpointSubnetId pulumi.StringPtrInput `pulumi:"privateEndpointSubnetId"`
 	// The duration of the run in milliseconds.
-	RunDurationInMilliseconds pulumi.StringInput `pulumi:"runDurationInMilliseconds"`
+	RunDurationInMilliseconds pulumi.StringPtrInput `pulumi:"runDurationInMilliseconds"`
 	// The Spark version utilized to run the application.
-	SparkVersion pulumi.StringInput `pulumi:"sparkVersion"`
+	SparkVersion pulumi.StringPtrInput `pulumi:"sparkVersion"`
 	// The LifecycleState of the run.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// The date and time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
-	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
 	// The total number of oCPU requested by the run.
-	TotalOcpu pulumi.IntInput `pulumi:"totalOcpu"`
+	TotalOcpu pulumi.IntPtrInput `pulumi:"totalOcpu"`
 	// The Spark application processing type.
-	Type pulumi.StringInput `pulumi:"type"`
+	Type pulumi.StringPtrInput `pulumi:"type"`
 	// An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory for BATCH SQL runs. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
-	WarehouseBucketUri pulumi.StringInput `pulumi:"warehouseBucketUri"`
+	WarehouseBucketUri pulumi.StringPtrInput `pulumi:"warehouseBucketUri"`
 }
 
 func (GetInvokeRunsRunArgs) ElementType() reflect.Type {
@@ -5765,12 +4924,6 @@ func (i GetInvokeRunsRunArgs) ToGetInvokeRunsRunOutput() GetInvokeRunsRunOutput 
 
 func (i GetInvokeRunsRunArgs) ToGetInvokeRunsRunOutputWithContext(ctx context.Context) GetInvokeRunsRunOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetInvokeRunsRunOutput)
-}
-
-func (i GetInvokeRunsRunArgs) ToOutput(ctx context.Context) pulumix.Output[GetInvokeRunsRun] {
-	return pulumix.Output[GetInvokeRunsRun]{
-		OutputState: i.ToGetInvokeRunsRunOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetInvokeRunsRunArrayInput is an input type that accepts GetInvokeRunsRunArray and GetInvokeRunsRunArrayOutput values.
@@ -5798,12 +4951,6 @@ func (i GetInvokeRunsRunArray) ToGetInvokeRunsRunArrayOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(GetInvokeRunsRunArrayOutput)
 }
 
-func (i GetInvokeRunsRunArray) ToOutput(ctx context.Context) pulumix.Output[[]GetInvokeRunsRun] {
-	return pulumix.Output[[]GetInvokeRunsRun]{
-		OutputState: i.ToGetInvokeRunsRunArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetInvokeRunsRunOutput struct{ *pulumi.OutputState }
 
 func (GetInvokeRunsRunOutput) ElementType() reflect.Type {
@@ -5818,15 +4965,9 @@ func (o GetInvokeRunsRunOutput) ToGetInvokeRunsRunOutputWithContext(ctx context.
 	return o
 }
 
-func (o GetInvokeRunsRunOutput) ToOutput(ctx context.Context) pulumix.Output[GetInvokeRunsRun] {
-	return pulumix.Output[GetInvokeRunsRun]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The ID of the application.
-func (o GetInvokeRunsRunOutput) ApplicationId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvokeRunsRun) string { return v.ApplicationId }).(pulumi.StringOutput)
+func (o GetInvokeRunsRunOutput) ApplicationId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvokeRunsRun) *string { return v.ApplicationId }).(pulumi.StringPtrOutput)
 }
 
 // Logging details of Application logs for Data Flow Run.
@@ -5835,8 +4976,8 @@ func (o GetInvokeRunsRunOutput) ApplicationLogConfigs() GetInvokeRunsRunApplicat
 }
 
 // A comma separated list of one or more archive files as Oracle Cloud Infrastructure URIs. For example, “oci://path/to/a.zip,oci://path/to/b.zip“. An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution of a Python, Java, or Scala application. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
-func (o GetInvokeRunsRunOutput) ArchiveUri() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvokeRunsRun) string { return v.ArchiveUri }).(pulumi.StringOutput)
+func (o GetInvokeRunsRunOutput) ArchiveUri() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvokeRunsRun) *string { return v.ArchiveUri }).(pulumi.StringPtrOutput)
 }
 
 // The arguments passed to the running application as command line arguments.  An argument is either a plain text or a placeholder. Placeholders are replaced using values from the parameters map.  Each placeholder specified must be represented in the parameters map else the request (POST or PUT) will fail with a HTTP 400 status code.  Placeholders are specified as `Service Api Spec`, where `name` is the name of the parameter. Example:  `[ "--input", "${input_file}", "--name", "John Doe" ]` If "inputFile" has a value of "mydata.xml", then the value above will be translated to `--input mydata.xml --name "John Doe"`
@@ -5844,18 +4985,18 @@ func (o GetInvokeRunsRunOutput) Arguments() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetInvokeRunsRun) []string { return v.Arguments }).(pulumi.StringArrayOutput)
 }
 
-func (o GetInvokeRunsRunOutput) Asynchronous() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetInvokeRunsRun) bool { return v.Asynchronous }).(pulumi.BoolOutput)
+func (o GetInvokeRunsRunOutput) Asynchronous() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetInvokeRunsRun) *bool { return v.Asynchronous }).(pulumi.BoolPtrOutput)
 }
 
 // The class for the application.
-func (o GetInvokeRunsRunOutput) ClassName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvokeRunsRun) string { return v.ClassName }).(pulumi.StringOutput)
+func (o GetInvokeRunsRunOutput) ClassName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvokeRunsRun) *string { return v.ClassName }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the compartment.
-func (o GetInvokeRunsRunOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvokeRunsRun) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetInvokeRunsRunOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvokeRunsRun) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
@@ -5864,13 +5005,13 @@ func (o GetInvokeRunsRunOutput) Configuration() pulumi.MapOutput {
 }
 
 // The data read by the run in bytes.
-func (o GetInvokeRunsRunOutput) DataReadInBytes() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvokeRunsRun) string { return v.DataReadInBytes }).(pulumi.StringOutput)
+func (o GetInvokeRunsRunOutput) DataReadInBytes() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvokeRunsRun) *string { return v.DataReadInBytes }).(pulumi.StringPtrOutput)
 }
 
 // The data written by the run in bytes.
-func (o GetInvokeRunsRunOutput) DataWrittenInBytes() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvokeRunsRun) string { return v.DataWrittenInBytes }).(pulumi.StringOutput)
+func (o GetInvokeRunsRunOutput) DataWrittenInBytes() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvokeRunsRun) *string { return v.DataWrittenInBytes }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -5879,13 +5020,13 @@ func (o GetInvokeRunsRunOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // The query parameter for the Spark application name.
-func (o GetInvokeRunsRunOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvokeRunsRun) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetInvokeRunsRunOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvokeRunsRun) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // The VM shape for the driver. Sets the driver cores and memory.
-func (o GetInvokeRunsRunOutput) DriverShape() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvokeRunsRun) string { return v.DriverShape }).(pulumi.StringOutput)
+func (o GetInvokeRunsRunOutput) DriverShape() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvokeRunsRun) *string { return v.DriverShape }).(pulumi.StringPtrOutput)
 }
 
 // This is used to configure the shape of the driver or executor if a flexible shape is used.
@@ -5894,13 +5035,13 @@ func (o GetInvokeRunsRunOutput) DriverShapeConfigs() GetInvokeRunsRunDriverShape
 }
 
 // The input used for spark-submit command. For more details see https://spark.apache.org/docs/latest/submitting-applications.html#launching-applications-with-spark-submit. Supported options include “--class“, “--file“, “--jars“, “--conf“, “--py-files“, and main application file with arguments. Example: “--jars oci://path/to/a.jar,oci://path/to/b.jar --files oci://path/to/a.json,oci://path/to/b.csv --py-files oci://path/to/a.py,oci://path/to/b.py --conf spark.sql.crossJoin.enabled=true --class org.apache.spark.examples.SparkPi oci://path/to/main.jar 10“ Note: If execute is specified together with applicationId, className, configuration, fileUri, language, arguments, parameters during application create/update, or run create/submit, Data Flow service will use derived information from execute input only.
-func (o GetInvokeRunsRunOutput) Execute() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvokeRunsRun) string { return v.Execute }).(pulumi.StringOutput)
+func (o GetInvokeRunsRunOutput) Execute() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvokeRunsRun) *string { return v.Execute }).(pulumi.StringPtrOutput)
 }
 
 // The VM shape for the executors. Sets the executor cores and memory.
-func (o GetInvokeRunsRunOutput) ExecutorShape() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvokeRunsRun) string { return v.ExecutorShape }).(pulumi.StringOutput)
+func (o GetInvokeRunsRunOutput) ExecutorShape() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvokeRunsRun) *string { return v.ExecutorShape }).(pulumi.StringPtrOutput)
 }
 
 // This is used to configure the shape of the driver or executor if a flexible shape is used.
@@ -5909,8 +5050,8 @@ func (o GetInvokeRunsRunOutput) ExecutorShapeConfigs() GetInvokeRunsRunExecutorS
 }
 
 // An Oracle Cloud Infrastructure URI of the file containing the application to execute. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
-func (o GetInvokeRunsRunOutput) FileUri() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvokeRunsRun) string { return v.FileUri }).(pulumi.StringOutput)
+func (o GetInvokeRunsRunOutput) FileUri() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvokeRunsRun) *string { return v.FileUri }).(pulumi.StringPtrOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -5919,58 +5060,58 @@ func (o GetInvokeRunsRunOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The ID of a run.
-func (o GetInvokeRunsRunOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvokeRunsRun) string { return v.Id }).(pulumi.StringOutput)
+func (o GetInvokeRunsRunOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvokeRunsRun) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The timeout value in minutes used to manage Runs. A Run would be stopped after inactivity for this amount of time period. Note: This parameter is currently only applicable for Runs of type `SESSION`. Default value is 2880 minutes (2 days)
-func (o GetInvokeRunsRunOutput) IdleTimeoutInMinutes() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvokeRunsRun) string { return v.IdleTimeoutInMinutes }).(pulumi.StringOutput)
+func (o GetInvokeRunsRunOutput) IdleTimeoutInMinutes() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvokeRunsRun) *string { return v.IdleTimeoutInMinutes }).(pulumi.StringPtrOutput)
 }
 
 // The Spark language.
-func (o GetInvokeRunsRunOutput) Language() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvokeRunsRun) string { return v.Language }).(pulumi.StringOutput)
+func (o GetInvokeRunsRunOutput) Language() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvokeRunsRun) *string { return v.Language }).(pulumi.StringPtrOutput)
 }
 
 // The detailed messages about the lifecycle state.
-func (o GetInvokeRunsRunOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvokeRunsRun) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o GetInvokeRunsRunOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvokeRunsRun) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // An Oracle Cloud Infrastructure URI of the bucket where the Spark job logs are to be uploaded. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
-func (o GetInvokeRunsRunOutput) LogsBucketUri() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvokeRunsRun) string { return v.LogsBucketUri }).(pulumi.StringOutput)
+func (o GetInvokeRunsRunOutput) LogsBucketUri() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvokeRunsRun) *string { return v.LogsBucketUri }).(pulumi.StringPtrOutput)
 }
 
 // The maximum duration in minutes for which an Application should run. Data Flow Run would be terminated once it reaches this duration from the time it transitions to `IN_PROGRESS` state.
-func (o GetInvokeRunsRunOutput) MaxDurationInMinutes() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvokeRunsRun) string { return v.MaxDurationInMinutes }).(pulumi.StringOutput)
+func (o GetInvokeRunsRunOutput) MaxDurationInMinutes() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvokeRunsRun) *string { return v.MaxDurationInMinutes }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of Oracle Cloud Infrastructure Hive Metastore.
-func (o GetInvokeRunsRunOutput) MetastoreId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvokeRunsRun) string { return v.MetastoreId }).(pulumi.StringOutput)
+func (o GetInvokeRunsRunOutput) MetastoreId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvokeRunsRun) *string { return v.MetastoreId }).(pulumi.StringPtrOutput)
 }
 
 // The number of executor VMs requested.
-func (o GetInvokeRunsRunOutput) NumExecutors() pulumi.IntOutput {
-	return o.ApplyT(func(v GetInvokeRunsRun) int { return v.NumExecutors }).(pulumi.IntOutput)
+func (o GetInvokeRunsRunOutput) NumExecutors() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetInvokeRunsRun) *int { return v.NumExecutors }).(pulumi.IntPtrOutput)
 }
 
 // Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
-func (o GetInvokeRunsRunOutput) OpcRequestId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvokeRunsRun) string { return v.OpcRequestId }).(pulumi.StringOutput)
+func (o GetInvokeRunsRunOutput) OpcRequestId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvokeRunsRun) *string { return v.OpcRequestId }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the user who created the resource.
-func (o GetInvokeRunsRunOutput) OwnerPrincipalId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvokeRunsRun) string { return v.OwnerPrincipalId }).(pulumi.StringOutput)
+func (o GetInvokeRunsRunOutput) OwnerPrincipalId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvokeRunsRun) *string { return v.OwnerPrincipalId }).(pulumi.StringPtrOutput)
 }
 
 // The username of the user who created the resource.  If the username of the owner does not exist, `null` will be returned and the caller should refer to the ownerPrincipalId value instead.
-func (o GetInvokeRunsRunOutput) OwnerUserName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvokeRunsRun) string { return v.OwnerUserName }).(pulumi.StringOutput)
+func (o GetInvokeRunsRunOutput) OwnerUserName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvokeRunsRun) *string { return v.OwnerUserName }).(pulumi.StringPtrOutput)
 }
 
 // An array of name/value pairs used to fill placeholders found in properties like `Application.arguments`.  The name must be a string of one or more word characters (a-z, A-Z, 0-9, _).  The value can be a string of 0 or more characters of any kind. Example:  [ { name: "iterations", value: "10"}, { name: "inputFile", value: "mydata.xml" }, { name: "variableX", value: "${x}"} ]
@@ -5979,8 +5120,8 @@ func (o GetInvokeRunsRunOutput) Parameters() GetInvokeRunsRunParameterArrayOutpu
 }
 
 // The ID of the pool.
-func (o GetInvokeRunsRunOutput) PoolId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvokeRunsRun) string { return v.PoolId }).(pulumi.StringOutput)
+func (o GetInvokeRunsRunOutput) PoolId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvokeRunsRun) *string { return v.PoolId }).(pulumi.StringPtrOutput)
 }
 
 // An array of DNS zone names. Example: `[ "app.examplecorp.com", "app.examplecorp2.com" ]`
@@ -5989,13 +5130,13 @@ func (o GetInvokeRunsRunOutput) PrivateEndpointDnsZones() pulumi.StringArrayOutp
 }
 
 // The OCID of a private endpoint.
-func (o GetInvokeRunsRunOutput) PrivateEndpointId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvokeRunsRun) string { return v.PrivateEndpointId }).(pulumi.StringOutput)
+func (o GetInvokeRunsRunOutput) PrivateEndpointId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvokeRunsRun) *string { return v.PrivateEndpointId }).(pulumi.StringPtrOutput)
 }
 
 // The maximum number of hosts to be accessed through the private endpoint. This value is used to calculate the relevant CIDR block and should be a multiple of 256.  If the value is not a multiple of 256, it is rounded up to the next multiple of 256. For example, 300 is rounded up to 512.
-func (o GetInvokeRunsRunOutput) PrivateEndpointMaxHostCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetInvokeRunsRun) int { return v.PrivateEndpointMaxHostCount }).(pulumi.IntOutput)
+func (o GetInvokeRunsRunOutput) PrivateEndpointMaxHostCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetInvokeRunsRun) *int { return v.PrivateEndpointMaxHostCount }).(pulumi.IntPtrOutput)
 }
 
 // An array of network security group OCIDs.
@@ -6004,48 +5145,48 @@ func (o GetInvokeRunsRunOutput) PrivateEndpointNsgIds() pulumi.StringArrayOutput
 }
 
 // The OCID of a subnet.
-func (o GetInvokeRunsRunOutput) PrivateEndpointSubnetId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvokeRunsRun) string { return v.PrivateEndpointSubnetId }).(pulumi.StringOutput)
+func (o GetInvokeRunsRunOutput) PrivateEndpointSubnetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvokeRunsRun) *string { return v.PrivateEndpointSubnetId }).(pulumi.StringPtrOutput)
 }
 
 // The duration of the run in milliseconds.
-func (o GetInvokeRunsRunOutput) RunDurationInMilliseconds() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvokeRunsRun) string { return v.RunDurationInMilliseconds }).(pulumi.StringOutput)
+func (o GetInvokeRunsRunOutput) RunDurationInMilliseconds() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvokeRunsRun) *string { return v.RunDurationInMilliseconds }).(pulumi.StringPtrOutput)
 }
 
 // The Spark version utilized to run the application.
-func (o GetInvokeRunsRunOutput) SparkVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvokeRunsRun) string { return v.SparkVersion }).(pulumi.StringOutput)
+func (o GetInvokeRunsRunOutput) SparkVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvokeRunsRun) *string { return v.SparkVersion }).(pulumi.StringPtrOutput)
 }
 
 // The LifecycleState of the run.
-func (o GetInvokeRunsRunOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvokeRunsRun) string { return v.State }).(pulumi.StringOutput)
+func (o GetInvokeRunsRunOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvokeRunsRun) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
-func (o GetInvokeRunsRunOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvokeRunsRun) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetInvokeRunsRunOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvokeRunsRun) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
-func (o GetInvokeRunsRunOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvokeRunsRun) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o GetInvokeRunsRunOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvokeRunsRun) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 // The total number of oCPU requested by the run.
-func (o GetInvokeRunsRunOutput) TotalOcpu() pulumi.IntOutput {
-	return o.ApplyT(func(v GetInvokeRunsRun) int { return v.TotalOcpu }).(pulumi.IntOutput)
+func (o GetInvokeRunsRunOutput) TotalOcpu() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetInvokeRunsRun) *int { return v.TotalOcpu }).(pulumi.IntPtrOutput)
 }
 
 // The Spark application processing type.
-func (o GetInvokeRunsRunOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvokeRunsRun) string { return v.Type }).(pulumi.StringOutput)
+func (o GetInvokeRunsRunOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvokeRunsRun) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
 
 // An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory for BATCH SQL runs. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
-func (o GetInvokeRunsRunOutput) WarehouseBucketUri() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvokeRunsRun) string { return v.WarehouseBucketUri }).(pulumi.StringOutput)
+func (o GetInvokeRunsRunOutput) WarehouseBucketUri() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvokeRunsRun) *string { return v.WarehouseBucketUri }).(pulumi.StringPtrOutput)
 }
 
 type GetInvokeRunsRunArrayOutput struct{ *pulumi.OutputState }
@@ -6062,12 +5203,6 @@ func (o GetInvokeRunsRunArrayOutput) ToGetInvokeRunsRunArrayOutputWithContext(ct
 	return o
 }
 
-func (o GetInvokeRunsRunArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetInvokeRunsRun] {
-	return pulumix.Output[[]GetInvokeRunsRun]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetInvokeRunsRunArrayOutput) Index(i pulumi.IntInput) GetInvokeRunsRunOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInvokeRunsRun {
 		return vs[0].([]GetInvokeRunsRun)[vs[1].(int)]
@@ -6076,9 +5211,9 @@ func (o GetInvokeRunsRunArrayOutput) Index(i pulumi.IntInput) GetInvokeRunsRunOu
 
 type GetInvokeRunsRunApplicationLogConfig struct {
 	// The log group id for where log objects will be for Data Flow Runs.
-	LogGroupId string `pulumi:"logGroupId"`
+	LogGroupId *string `pulumi:"logGroupId"`
 	// The log id of the log object the Application Logs of Data Flow Run will be shipped to.
-	LogId string `pulumi:"logId"`
+	LogId *string `pulumi:"logId"`
 }
 
 // GetInvokeRunsRunApplicationLogConfigInput is an input type that accepts GetInvokeRunsRunApplicationLogConfigArgs and GetInvokeRunsRunApplicationLogConfigOutput values.
@@ -6094,9 +5229,9 @@ type GetInvokeRunsRunApplicationLogConfigInput interface {
 
 type GetInvokeRunsRunApplicationLogConfigArgs struct {
 	// The log group id for where log objects will be for Data Flow Runs.
-	LogGroupId pulumi.StringInput `pulumi:"logGroupId"`
+	LogGroupId pulumi.StringPtrInput `pulumi:"logGroupId"`
 	// The log id of the log object the Application Logs of Data Flow Run will be shipped to.
-	LogId pulumi.StringInput `pulumi:"logId"`
+	LogId pulumi.StringPtrInput `pulumi:"logId"`
 }
 
 func (GetInvokeRunsRunApplicationLogConfigArgs) ElementType() reflect.Type {
@@ -6109,12 +5244,6 @@ func (i GetInvokeRunsRunApplicationLogConfigArgs) ToGetInvokeRunsRunApplicationL
 
 func (i GetInvokeRunsRunApplicationLogConfigArgs) ToGetInvokeRunsRunApplicationLogConfigOutputWithContext(ctx context.Context) GetInvokeRunsRunApplicationLogConfigOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetInvokeRunsRunApplicationLogConfigOutput)
-}
-
-func (i GetInvokeRunsRunApplicationLogConfigArgs) ToOutput(ctx context.Context) pulumix.Output[GetInvokeRunsRunApplicationLogConfig] {
-	return pulumix.Output[GetInvokeRunsRunApplicationLogConfig]{
-		OutputState: i.ToGetInvokeRunsRunApplicationLogConfigOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetInvokeRunsRunApplicationLogConfigArrayInput is an input type that accepts GetInvokeRunsRunApplicationLogConfigArray and GetInvokeRunsRunApplicationLogConfigArrayOutput values.
@@ -6142,12 +5271,6 @@ func (i GetInvokeRunsRunApplicationLogConfigArray) ToGetInvokeRunsRunApplication
 	return pulumi.ToOutputWithContext(ctx, i).(GetInvokeRunsRunApplicationLogConfigArrayOutput)
 }
 
-func (i GetInvokeRunsRunApplicationLogConfigArray) ToOutput(ctx context.Context) pulumix.Output[[]GetInvokeRunsRunApplicationLogConfig] {
-	return pulumix.Output[[]GetInvokeRunsRunApplicationLogConfig]{
-		OutputState: i.ToGetInvokeRunsRunApplicationLogConfigArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetInvokeRunsRunApplicationLogConfigOutput struct{ *pulumi.OutputState }
 
 func (GetInvokeRunsRunApplicationLogConfigOutput) ElementType() reflect.Type {
@@ -6162,20 +5285,14 @@ func (o GetInvokeRunsRunApplicationLogConfigOutput) ToGetInvokeRunsRunApplicatio
 	return o
 }
 
-func (o GetInvokeRunsRunApplicationLogConfigOutput) ToOutput(ctx context.Context) pulumix.Output[GetInvokeRunsRunApplicationLogConfig] {
-	return pulumix.Output[GetInvokeRunsRunApplicationLogConfig]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The log group id for where log objects will be for Data Flow Runs.
-func (o GetInvokeRunsRunApplicationLogConfigOutput) LogGroupId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvokeRunsRunApplicationLogConfig) string { return v.LogGroupId }).(pulumi.StringOutput)
+func (o GetInvokeRunsRunApplicationLogConfigOutput) LogGroupId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvokeRunsRunApplicationLogConfig) *string { return v.LogGroupId }).(pulumi.StringPtrOutput)
 }
 
 // The log id of the log object the Application Logs of Data Flow Run will be shipped to.
-func (o GetInvokeRunsRunApplicationLogConfigOutput) LogId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvokeRunsRunApplicationLogConfig) string { return v.LogId }).(pulumi.StringOutput)
+func (o GetInvokeRunsRunApplicationLogConfigOutput) LogId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvokeRunsRunApplicationLogConfig) *string { return v.LogId }).(pulumi.StringPtrOutput)
 }
 
 type GetInvokeRunsRunApplicationLogConfigArrayOutput struct{ *pulumi.OutputState }
@@ -6192,12 +5309,6 @@ func (o GetInvokeRunsRunApplicationLogConfigArrayOutput) ToGetInvokeRunsRunAppli
 	return o
 }
 
-func (o GetInvokeRunsRunApplicationLogConfigArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetInvokeRunsRunApplicationLogConfig] {
-	return pulumix.Output[[]GetInvokeRunsRunApplicationLogConfig]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetInvokeRunsRunApplicationLogConfigArrayOutput) Index(i pulumi.IntInput) GetInvokeRunsRunApplicationLogConfigOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInvokeRunsRunApplicationLogConfig {
 		return vs[0].([]GetInvokeRunsRunApplicationLogConfig)[vs[1].(int)]
@@ -6206,9 +5317,9 @@ func (o GetInvokeRunsRunApplicationLogConfigArrayOutput) Index(i pulumi.IntInput
 
 type GetInvokeRunsRunDriverShapeConfig struct {
 	// The amount of memory used for the driver or executors.
-	MemoryInGbs float64 `pulumi:"memoryInGbs"`
+	MemoryInGbs *float64 `pulumi:"memoryInGbs"`
 	// The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
-	Ocpus float64 `pulumi:"ocpus"`
+	Ocpus *float64 `pulumi:"ocpus"`
 }
 
 // GetInvokeRunsRunDriverShapeConfigInput is an input type that accepts GetInvokeRunsRunDriverShapeConfigArgs and GetInvokeRunsRunDriverShapeConfigOutput values.
@@ -6224,9 +5335,9 @@ type GetInvokeRunsRunDriverShapeConfigInput interface {
 
 type GetInvokeRunsRunDriverShapeConfigArgs struct {
 	// The amount of memory used for the driver or executors.
-	MemoryInGbs pulumi.Float64Input `pulumi:"memoryInGbs"`
+	MemoryInGbs pulumi.Float64PtrInput `pulumi:"memoryInGbs"`
 	// The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
-	Ocpus pulumi.Float64Input `pulumi:"ocpus"`
+	Ocpus pulumi.Float64PtrInput `pulumi:"ocpus"`
 }
 
 func (GetInvokeRunsRunDriverShapeConfigArgs) ElementType() reflect.Type {
@@ -6239,12 +5350,6 @@ func (i GetInvokeRunsRunDriverShapeConfigArgs) ToGetInvokeRunsRunDriverShapeConf
 
 func (i GetInvokeRunsRunDriverShapeConfigArgs) ToGetInvokeRunsRunDriverShapeConfigOutputWithContext(ctx context.Context) GetInvokeRunsRunDriverShapeConfigOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetInvokeRunsRunDriverShapeConfigOutput)
-}
-
-func (i GetInvokeRunsRunDriverShapeConfigArgs) ToOutput(ctx context.Context) pulumix.Output[GetInvokeRunsRunDriverShapeConfig] {
-	return pulumix.Output[GetInvokeRunsRunDriverShapeConfig]{
-		OutputState: i.ToGetInvokeRunsRunDriverShapeConfigOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetInvokeRunsRunDriverShapeConfigArrayInput is an input type that accepts GetInvokeRunsRunDriverShapeConfigArray and GetInvokeRunsRunDriverShapeConfigArrayOutput values.
@@ -6272,12 +5377,6 @@ func (i GetInvokeRunsRunDriverShapeConfigArray) ToGetInvokeRunsRunDriverShapeCon
 	return pulumi.ToOutputWithContext(ctx, i).(GetInvokeRunsRunDriverShapeConfigArrayOutput)
 }
 
-func (i GetInvokeRunsRunDriverShapeConfigArray) ToOutput(ctx context.Context) pulumix.Output[[]GetInvokeRunsRunDriverShapeConfig] {
-	return pulumix.Output[[]GetInvokeRunsRunDriverShapeConfig]{
-		OutputState: i.ToGetInvokeRunsRunDriverShapeConfigArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetInvokeRunsRunDriverShapeConfigOutput struct{ *pulumi.OutputState }
 
 func (GetInvokeRunsRunDriverShapeConfigOutput) ElementType() reflect.Type {
@@ -6292,20 +5391,14 @@ func (o GetInvokeRunsRunDriverShapeConfigOutput) ToGetInvokeRunsRunDriverShapeCo
 	return o
 }
 
-func (o GetInvokeRunsRunDriverShapeConfigOutput) ToOutput(ctx context.Context) pulumix.Output[GetInvokeRunsRunDriverShapeConfig] {
-	return pulumix.Output[GetInvokeRunsRunDriverShapeConfig]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The amount of memory used for the driver or executors.
-func (o GetInvokeRunsRunDriverShapeConfigOutput) MemoryInGbs() pulumi.Float64Output {
-	return o.ApplyT(func(v GetInvokeRunsRunDriverShapeConfig) float64 { return v.MemoryInGbs }).(pulumi.Float64Output)
+func (o GetInvokeRunsRunDriverShapeConfigOutput) MemoryInGbs() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetInvokeRunsRunDriverShapeConfig) *float64 { return v.MemoryInGbs }).(pulumi.Float64PtrOutput)
 }
 
 // The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
-func (o GetInvokeRunsRunDriverShapeConfigOutput) Ocpus() pulumi.Float64Output {
-	return o.ApplyT(func(v GetInvokeRunsRunDriverShapeConfig) float64 { return v.Ocpus }).(pulumi.Float64Output)
+func (o GetInvokeRunsRunDriverShapeConfigOutput) Ocpus() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetInvokeRunsRunDriverShapeConfig) *float64 { return v.Ocpus }).(pulumi.Float64PtrOutput)
 }
 
 type GetInvokeRunsRunDriverShapeConfigArrayOutput struct{ *pulumi.OutputState }
@@ -6322,12 +5415,6 @@ func (o GetInvokeRunsRunDriverShapeConfigArrayOutput) ToGetInvokeRunsRunDriverSh
 	return o
 }
 
-func (o GetInvokeRunsRunDriverShapeConfigArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetInvokeRunsRunDriverShapeConfig] {
-	return pulumix.Output[[]GetInvokeRunsRunDriverShapeConfig]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetInvokeRunsRunDriverShapeConfigArrayOutput) Index(i pulumi.IntInput) GetInvokeRunsRunDriverShapeConfigOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInvokeRunsRunDriverShapeConfig {
 		return vs[0].([]GetInvokeRunsRunDriverShapeConfig)[vs[1].(int)]
@@ -6336,9 +5423,9 @@ func (o GetInvokeRunsRunDriverShapeConfigArrayOutput) Index(i pulumi.IntInput) G
 
 type GetInvokeRunsRunExecutorShapeConfig struct {
 	// The amount of memory used for the driver or executors.
-	MemoryInGbs float64 `pulumi:"memoryInGbs"`
+	MemoryInGbs *float64 `pulumi:"memoryInGbs"`
 	// The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
-	Ocpus float64 `pulumi:"ocpus"`
+	Ocpus *float64 `pulumi:"ocpus"`
 }
 
 // GetInvokeRunsRunExecutorShapeConfigInput is an input type that accepts GetInvokeRunsRunExecutorShapeConfigArgs and GetInvokeRunsRunExecutorShapeConfigOutput values.
@@ -6354,9 +5441,9 @@ type GetInvokeRunsRunExecutorShapeConfigInput interface {
 
 type GetInvokeRunsRunExecutorShapeConfigArgs struct {
 	// The amount of memory used for the driver or executors.
-	MemoryInGbs pulumi.Float64Input `pulumi:"memoryInGbs"`
+	MemoryInGbs pulumi.Float64PtrInput `pulumi:"memoryInGbs"`
 	// The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
-	Ocpus pulumi.Float64Input `pulumi:"ocpus"`
+	Ocpus pulumi.Float64PtrInput `pulumi:"ocpus"`
 }
 
 func (GetInvokeRunsRunExecutorShapeConfigArgs) ElementType() reflect.Type {
@@ -6369,12 +5456,6 @@ func (i GetInvokeRunsRunExecutorShapeConfigArgs) ToGetInvokeRunsRunExecutorShape
 
 func (i GetInvokeRunsRunExecutorShapeConfigArgs) ToGetInvokeRunsRunExecutorShapeConfigOutputWithContext(ctx context.Context) GetInvokeRunsRunExecutorShapeConfigOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetInvokeRunsRunExecutorShapeConfigOutput)
-}
-
-func (i GetInvokeRunsRunExecutorShapeConfigArgs) ToOutput(ctx context.Context) pulumix.Output[GetInvokeRunsRunExecutorShapeConfig] {
-	return pulumix.Output[GetInvokeRunsRunExecutorShapeConfig]{
-		OutputState: i.ToGetInvokeRunsRunExecutorShapeConfigOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetInvokeRunsRunExecutorShapeConfigArrayInput is an input type that accepts GetInvokeRunsRunExecutorShapeConfigArray and GetInvokeRunsRunExecutorShapeConfigArrayOutput values.
@@ -6402,12 +5483,6 @@ func (i GetInvokeRunsRunExecutorShapeConfigArray) ToGetInvokeRunsRunExecutorShap
 	return pulumi.ToOutputWithContext(ctx, i).(GetInvokeRunsRunExecutorShapeConfigArrayOutput)
 }
 
-func (i GetInvokeRunsRunExecutorShapeConfigArray) ToOutput(ctx context.Context) pulumix.Output[[]GetInvokeRunsRunExecutorShapeConfig] {
-	return pulumix.Output[[]GetInvokeRunsRunExecutorShapeConfig]{
-		OutputState: i.ToGetInvokeRunsRunExecutorShapeConfigArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetInvokeRunsRunExecutorShapeConfigOutput struct{ *pulumi.OutputState }
 
 func (GetInvokeRunsRunExecutorShapeConfigOutput) ElementType() reflect.Type {
@@ -6422,20 +5497,14 @@ func (o GetInvokeRunsRunExecutorShapeConfigOutput) ToGetInvokeRunsRunExecutorSha
 	return o
 }
 
-func (o GetInvokeRunsRunExecutorShapeConfigOutput) ToOutput(ctx context.Context) pulumix.Output[GetInvokeRunsRunExecutorShapeConfig] {
-	return pulumix.Output[GetInvokeRunsRunExecutorShapeConfig]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The amount of memory used for the driver or executors.
-func (o GetInvokeRunsRunExecutorShapeConfigOutput) MemoryInGbs() pulumi.Float64Output {
-	return o.ApplyT(func(v GetInvokeRunsRunExecutorShapeConfig) float64 { return v.MemoryInGbs }).(pulumi.Float64Output)
+func (o GetInvokeRunsRunExecutorShapeConfigOutput) MemoryInGbs() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetInvokeRunsRunExecutorShapeConfig) *float64 { return v.MemoryInGbs }).(pulumi.Float64PtrOutput)
 }
 
 // The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
-func (o GetInvokeRunsRunExecutorShapeConfigOutput) Ocpus() pulumi.Float64Output {
-	return o.ApplyT(func(v GetInvokeRunsRunExecutorShapeConfig) float64 { return v.Ocpus }).(pulumi.Float64Output)
+func (o GetInvokeRunsRunExecutorShapeConfigOutput) Ocpus() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetInvokeRunsRunExecutorShapeConfig) *float64 { return v.Ocpus }).(pulumi.Float64PtrOutput)
 }
 
 type GetInvokeRunsRunExecutorShapeConfigArrayOutput struct{ *pulumi.OutputState }
@@ -6452,12 +5521,6 @@ func (o GetInvokeRunsRunExecutorShapeConfigArrayOutput) ToGetInvokeRunsRunExecut
 	return o
 }
 
-func (o GetInvokeRunsRunExecutorShapeConfigArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetInvokeRunsRunExecutorShapeConfig] {
-	return pulumix.Output[[]GetInvokeRunsRunExecutorShapeConfig]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetInvokeRunsRunExecutorShapeConfigArrayOutput) Index(i pulumi.IntInput) GetInvokeRunsRunExecutorShapeConfigOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInvokeRunsRunExecutorShapeConfig {
 		return vs[0].([]GetInvokeRunsRunExecutorShapeConfig)[vs[1].(int)]
@@ -6466,9 +5529,9 @@ func (o GetInvokeRunsRunExecutorShapeConfigArrayOutput) Index(i pulumi.IntInput)
 
 type GetInvokeRunsRunParameter struct {
 	// The name of the parameter.  It must be a string of one or more word characters (a-z, A-Z, 0-9, _). Examples: "iterations", "inputFile"
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// The value of the parameter. It must be a string of 0 or more characters of any kind. Examples: "" (empty string), "10", "mydata.xml", "${x}"
-	Value string `pulumi:"value"`
+	Value *string `pulumi:"value"`
 }
 
 // GetInvokeRunsRunParameterInput is an input type that accepts GetInvokeRunsRunParameterArgs and GetInvokeRunsRunParameterOutput values.
@@ -6484,9 +5547,9 @@ type GetInvokeRunsRunParameterInput interface {
 
 type GetInvokeRunsRunParameterArgs struct {
 	// The name of the parameter.  It must be a string of one or more word characters (a-z, A-Z, 0-9, _). Examples: "iterations", "inputFile"
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// The value of the parameter. It must be a string of 0 or more characters of any kind. Examples: "" (empty string), "10", "mydata.xml", "${x}"
-	Value pulumi.StringInput `pulumi:"value"`
+	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
 func (GetInvokeRunsRunParameterArgs) ElementType() reflect.Type {
@@ -6499,12 +5562,6 @@ func (i GetInvokeRunsRunParameterArgs) ToGetInvokeRunsRunParameterOutput() GetIn
 
 func (i GetInvokeRunsRunParameterArgs) ToGetInvokeRunsRunParameterOutputWithContext(ctx context.Context) GetInvokeRunsRunParameterOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetInvokeRunsRunParameterOutput)
-}
-
-func (i GetInvokeRunsRunParameterArgs) ToOutput(ctx context.Context) pulumix.Output[GetInvokeRunsRunParameter] {
-	return pulumix.Output[GetInvokeRunsRunParameter]{
-		OutputState: i.ToGetInvokeRunsRunParameterOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetInvokeRunsRunParameterArrayInput is an input type that accepts GetInvokeRunsRunParameterArray and GetInvokeRunsRunParameterArrayOutput values.
@@ -6532,12 +5589,6 @@ func (i GetInvokeRunsRunParameterArray) ToGetInvokeRunsRunParameterArrayOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetInvokeRunsRunParameterArrayOutput)
 }
 
-func (i GetInvokeRunsRunParameterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetInvokeRunsRunParameter] {
-	return pulumix.Output[[]GetInvokeRunsRunParameter]{
-		OutputState: i.ToGetInvokeRunsRunParameterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetInvokeRunsRunParameterOutput struct{ *pulumi.OutputState }
 
 func (GetInvokeRunsRunParameterOutput) ElementType() reflect.Type {
@@ -6552,20 +5603,14 @@ func (o GetInvokeRunsRunParameterOutput) ToGetInvokeRunsRunParameterOutputWithCo
 	return o
 }
 
-func (o GetInvokeRunsRunParameterOutput) ToOutput(ctx context.Context) pulumix.Output[GetInvokeRunsRunParameter] {
-	return pulumix.Output[GetInvokeRunsRunParameter]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The name of the parameter.  It must be a string of one or more word characters (a-z, A-Z, 0-9, _). Examples: "iterations", "inputFile"
-func (o GetInvokeRunsRunParameterOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvokeRunsRunParameter) string { return v.Name }).(pulumi.StringOutput)
+func (o GetInvokeRunsRunParameterOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvokeRunsRunParameter) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // The value of the parameter. It must be a string of 0 or more characters of any kind. Examples: "" (empty string), "10", "mydata.xml", "${x}"
-func (o GetInvokeRunsRunParameterOutput) Value() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvokeRunsRunParameter) string { return v.Value }).(pulumi.StringOutput)
+func (o GetInvokeRunsRunParameterOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvokeRunsRunParameter) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
 
 type GetInvokeRunsRunParameterArrayOutput struct{ *pulumi.OutputState }
@@ -6582,12 +5627,6 @@ func (o GetInvokeRunsRunParameterArrayOutput) ToGetInvokeRunsRunParameterArrayOu
 	return o
 }
 
-func (o GetInvokeRunsRunParameterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetInvokeRunsRunParameter] {
-	return pulumix.Output[[]GetInvokeRunsRunParameter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetInvokeRunsRunParameterArrayOutput) Index(i pulumi.IntInput) GetInvokeRunsRunParameterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInvokeRunsRunParameter {
 		return vs[0].([]GetInvokeRunsRunParameter)[vs[1].(int)]
@@ -6596,11 +5635,11 @@ func (o GetInvokeRunsRunParameterArrayOutput) Index(i pulumi.IntInput) GetInvoke
 
 type GetPoolConfiguration struct {
 	// Maximum number of compute instances in the pool for a given compute shape.
-	Max int `pulumi:"max"`
+	Max *int `pulumi:"max"`
 	// Minimum number of compute instances in the pool for a given compute shape.
-	Min int `pulumi:"min"`
+	Min *int `pulumi:"min"`
 	// The compute shape of the resources you would like to provision.
-	Shape string `pulumi:"shape"`
+	Shape *string `pulumi:"shape"`
 	// This is used to configure the shape of the driver or executor if a flexible shape is used.
 	ShapeConfigs []GetPoolConfigurationShapeConfig `pulumi:"shapeConfigs"`
 }
@@ -6618,11 +5657,11 @@ type GetPoolConfigurationInput interface {
 
 type GetPoolConfigurationArgs struct {
 	// Maximum number of compute instances in the pool for a given compute shape.
-	Max pulumi.IntInput `pulumi:"max"`
+	Max pulumi.IntPtrInput `pulumi:"max"`
 	// Minimum number of compute instances in the pool for a given compute shape.
-	Min pulumi.IntInput `pulumi:"min"`
+	Min pulumi.IntPtrInput `pulumi:"min"`
 	// The compute shape of the resources you would like to provision.
-	Shape pulumi.StringInput `pulumi:"shape"`
+	Shape pulumi.StringPtrInput `pulumi:"shape"`
 	// This is used to configure the shape of the driver or executor if a flexible shape is used.
 	ShapeConfigs GetPoolConfigurationShapeConfigArrayInput `pulumi:"shapeConfigs"`
 }
@@ -6637,12 +5676,6 @@ func (i GetPoolConfigurationArgs) ToGetPoolConfigurationOutput() GetPoolConfigur
 
 func (i GetPoolConfigurationArgs) ToGetPoolConfigurationOutputWithContext(ctx context.Context) GetPoolConfigurationOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetPoolConfigurationOutput)
-}
-
-func (i GetPoolConfigurationArgs) ToOutput(ctx context.Context) pulumix.Output[GetPoolConfiguration] {
-	return pulumix.Output[GetPoolConfiguration]{
-		OutputState: i.ToGetPoolConfigurationOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetPoolConfigurationArrayInput is an input type that accepts GetPoolConfigurationArray and GetPoolConfigurationArrayOutput values.
@@ -6670,12 +5703,6 @@ func (i GetPoolConfigurationArray) ToGetPoolConfigurationArrayOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(GetPoolConfigurationArrayOutput)
 }
 
-func (i GetPoolConfigurationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetPoolConfiguration] {
-	return pulumix.Output[[]GetPoolConfiguration]{
-		OutputState: i.ToGetPoolConfigurationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetPoolConfigurationOutput struct{ *pulumi.OutputState }
 
 func (GetPoolConfigurationOutput) ElementType() reflect.Type {
@@ -6690,25 +5717,19 @@ func (o GetPoolConfigurationOutput) ToGetPoolConfigurationOutputWithContext(ctx 
 	return o
 }
 
-func (o GetPoolConfigurationOutput) ToOutput(ctx context.Context) pulumix.Output[GetPoolConfiguration] {
-	return pulumix.Output[GetPoolConfiguration]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Maximum number of compute instances in the pool for a given compute shape.
-func (o GetPoolConfigurationOutput) Max() pulumi.IntOutput {
-	return o.ApplyT(func(v GetPoolConfiguration) int { return v.Max }).(pulumi.IntOutput)
+func (o GetPoolConfigurationOutput) Max() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetPoolConfiguration) *int { return v.Max }).(pulumi.IntPtrOutput)
 }
 
 // Minimum number of compute instances in the pool for a given compute shape.
-func (o GetPoolConfigurationOutput) Min() pulumi.IntOutput {
-	return o.ApplyT(func(v GetPoolConfiguration) int { return v.Min }).(pulumi.IntOutput)
+func (o GetPoolConfigurationOutput) Min() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetPoolConfiguration) *int { return v.Min }).(pulumi.IntPtrOutput)
 }
 
 // The compute shape of the resources you would like to provision.
-func (o GetPoolConfigurationOutput) Shape() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPoolConfiguration) string { return v.Shape }).(pulumi.StringOutput)
+func (o GetPoolConfigurationOutput) Shape() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetPoolConfiguration) *string { return v.Shape }).(pulumi.StringPtrOutput)
 }
 
 // This is used to configure the shape of the driver or executor if a flexible shape is used.
@@ -6730,12 +5751,6 @@ func (o GetPoolConfigurationArrayOutput) ToGetPoolConfigurationArrayOutputWithCo
 	return o
 }
 
-func (o GetPoolConfigurationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetPoolConfiguration] {
-	return pulumix.Output[[]GetPoolConfiguration]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetPoolConfigurationArrayOutput) Index(i pulumi.IntInput) GetPoolConfigurationOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPoolConfiguration {
 		return vs[0].([]GetPoolConfiguration)[vs[1].(int)]
@@ -6744,9 +5759,9 @@ func (o GetPoolConfigurationArrayOutput) Index(i pulumi.IntInput) GetPoolConfigu
 
 type GetPoolConfigurationShapeConfig struct {
 	// The amount of memory used for the driver or executors.
-	MemoryInGbs float64 `pulumi:"memoryInGbs"`
+	MemoryInGbs *float64 `pulumi:"memoryInGbs"`
 	// The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
-	Ocpus float64 `pulumi:"ocpus"`
+	Ocpus *float64 `pulumi:"ocpus"`
 }
 
 // GetPoolConfigurationShapeConfigInput is an input type that accepts GetPoolConfigurationShapeConfigArgs and GetPoolConfigurationShapeConfigOutput values.
@@ -6762,9 +5777,9 @@ type GetPoolConfigurationShapeConfigInput interface {
 
 type GetPoolConfigurationShapeConfigArgs struct {
 	// The amount of memory used for the driver or executors.
-	MemoryInGbs pulumi.Float64Input `pulumi:"memoryInGbs"`
+	MemoryInGbs pulumi.Float64PtrInput `pulumi:"memoryInGbs"`
 	// The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
-	Ocpus pulumi.Float64Input `pulumi:"ocpus"`
+	Ocpus pulumi.Float64PtrInput `pulumi:"ocpus"`
 }
 
 func (GetPoolConfigurationShapeConfigArgs) ElementType() reflect.Type {
@@ -6777,12 +5792,6 @@ func (i GetPoolConfigurationShapeConfigArgs) ToGetPoolConfigurationShapeConfigOu
 
 func (i GetPoolConfigurationShapeConfigArgs) ToGetPoolConfigurationShapeConfigOutputWithContext(ctx context.Context) GetPoolConfigurationShapeConfigOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetPoolConfigurationShapeConfigOutput)
-}
-
-func (i GetPoolConfigurationShapeConfigArgs) ToOutput(ctx context.Context) pulumix.Output[GetPoolConfigurationShapeConfig] {
-	return pulumix.Output[GetPoolConfigurationShapeConfig]{
-		OutputState: i.ToGetPoolConfigurationShapeConfigOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetPoolConfigurationShapeConfigArrayInput is an input type that accepts GetPoolConfigurationShapeConfigArray and GetPoolConfigurationShapeConfigArrayOutput values.
@@ -6810,12 +5819,6 @@ func (i GetPoolConfigurationShapeConfigArray) ToGetPoolConfigurationShapeConfigA
 	return pulumi.ToOutputWithContext(ctx, i).(GetPoolConfigurationShapeConfigArrayOutput)
 }
 
-func (i GetPoolConfigurationShapeConfigArray) ToOutput(ctx context.Context) pulumix.Output[[]GetPoolConfigurationShapeConfig] {
-	return pulumix.Output[[]GetPoolConfigurationShapeConfig]{
-		OutputState: i.ToGetPoolConfigurationShapeConfigArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetPoolConfigurationShapeConfigOutput struct{ *pulumi.OutputState }
 
 func (GetPoolConfigurationShapeConfigOutput) ElementType() reflect.Type {
@@ -6830,20 +5833,14 @@ func (o GetPoolConfigurationShapeConfigOutput) ToGetPoolConfigurationShapeConfig
 	return o
 }
 
-func (o GetPoolConfigurationShapeConfigOutput) ToOutput(ctx context.Context) pulumix.Output[GetPoolConfigurationShapeConfig] {
-	return pulumix.Output[GetPoolConfigurationShapeConfig]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The amount of memory used for the driver or executors.
-func (o GetPoolConfigurationShapeConfigOutput) MemoryInGbs() pulumi.Float64Output {
-	return o.ApplyT(func(v GetPoolConfigurationShapeConfig) float64 { return v.MemoryInGbs }).(pulumi.Float64Output)
+func (o GetPoolConfigurationShapeConfigOutput) MemoryInGbs() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetPoolConfigurationShapeConfig) *float64 { return v.MemoryInGbs }).(pulumi.Float64PtrOutput)
 }
 
 // The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
-func (o GetPoolConfigurationShapeConfigOutput) Ocpus() pulumi.Float64Output {
-	return o.ApplyT(func(v GetPoolConfigurationShapeConfig) float64 { return v.Ocpus }).(pulumi.Float64Output)
+func (o GetPoolConfigurationShapeConfigOutput) Ocpus() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetPoolConfigurationShapeConfig) *float64 { return v.Ocpus }).(pulumi.Float64PtrOutput)
 }
 
 type GetPoolConfigurationShapeConfigArrayOutput struct{ *pulumi.OutputState }
@@ -6860,12 +5857,6 @@ func (o GetPoolConfigurationShapeConfigArrayOutput) ToGetPoolConfigurationShapeC
 	return o
 }
 
-func (o GetPoolConfigurationShapeConfigArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetPoolConfigurationShapeConfig] {
-	return pulumix.Output[[]GetPoolConfigurationShapeConfig]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetPoolConfigurationShapeConfigArrayOutput) Index(i pulumi.IntInput) GetPoolConfigurationShapeConfigOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPoolConfigurationShapeConfig {
 		return vs[0].([]GetPoolConfigurationShapeConfig)[vs[1].(int)]
@@ -6874,17 +5865,17 @@ func (o GetPoolConfigurationShapeConfigArrayOutput) Index(i pulumi.IntInput) Get
 
 type GetPoolPoolMetric struct {
 	// The number of runs that are currently running that are using this pool.
-	ActiveRunsCount string `pulumi:"activeRunsCount"`
+	ActiveRunsCount *string `pulumi:"activeRunsCount"`
 	// A count of the nodes that are currently being used for each shape in this pool.
 	ActivelyUsedNodeCounts []GetPoolPoolMetricActivelyUsedNodeCount `pulumi:"activelyUsedNodeCounts"`
 	// The last time the mertics were updated for this.
-	TimeLastMetricsUpdated string `pulumi:"timeLastMetricsUpdated"`
+	TimeLastMetricsUpdated *string `pulumi:"timeLastMetricsUpdated"`
 	// The last time this pool was started.
-	TimeLastStarted string `pulumi:"timeLastStarted"`
+	TimeLastStarted *string `pulumi:"timeLastStarted"`
 	// The last time this pool was stopped.
-	TimeLastStopped string `pulumi:"timeLastStopped"`
+	TimeLastStopped *string `pulumi:"timeLastStopped"`
 	// The last time a run used this pool.
-	TimeLastUsed string `pulumi:"timeLastUsed"`
+	TimeLastUsed *string `pulumi:"timeLastUsed"`
 }
 
 // GetPoolPoolMetricInput is an input type that accepts GetPoolPoolMetricArgs and GetPoolPoolMetricOutput values.
@@ -6900,17 +5891,17 @@ type GetPoolPoolMetricInput interface {
 
 type GetPoolPoolMetricArgs struct {
 	// The number of runs that are currently running that are using this pool.
-	ActiveRunsCount pulumi.StringInput `pulumi:"activeRunsCount"`
+	ActiveRunsCount pulumi.StringPtrInput `pulumi:"activeRunsCount"`
 	// A count of the nodes that are currently being used for each shape in this pool.
 	ActivelyUsedNodeCounts GetPoolPoolMetricActivelyUsedNodeCountArrayInput `pulumi:"activelyUsedNodeCounts"`
 	// The last time the mertics were updated for this.
-	TimeLastMetricsUpdated pulumi.StringInput `pulumi:"timeLastMetricsUpdated"`
+	TimeLastMetricsUpdated pulumi.StringPtrInput `pulumi:"timeLastMetricsUpdated"`
 	// The last time this pool was started.
-	TimeLastStarted pulumi.StringInput `pulumi:"timeLastStarted"`
+	TimeLastStarted pulumi.StringPtrInput `pulumi:"timeLastStarted"`
 	// The last time this pool was stopped.
-	TimeLastStopped pulumi.StringInput `pulumi:"timeLastStopped"`
+	TimeLastStopped pulumi.StringPtrInput `pulumi:"timeLastStopped"`
 	// The last time a run used this pool.
-	TimeLastUsed pulumi.StringInput `pulumi:"timeLastUsed"`
+	TimeLastUsed pulumi.StringPtrInput `pulumi:"timeLastUsed"`
 }
 
 func (GetPoolPoolMetricArgs) ElementType() reflect.Type {
@@ -6923,12 +5914,6 @@ func (i GetPoolPoolMetricArgs) ToGetPoolPoolMetricOutput() GetPoolPoolMetricOutp
 
 func (i GetPoolPoolMetricArgs) ToGetPoolPoolMetricOutputWithContext(ctx context.Context) GetPoolPoolMetricOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetPoolPoolMetricOutput)
-}
-
-func (i GetPoolPoolMetricArgs) ToOutput(ctx context.Context) pulumix.Output[GetPoolPoolMetric] {
-	return pulumix.Output[GetPoolPoolMetric]{
-		OutputState: i.ToGetPoolPoolMetricOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetPoolPoolMetricArrayInput is an input type that accepts GetPoolPoolMetricArray and GetPoolPoolMetricArrayOutput values.
@@ -6956,12 +5941,6 @@ func (i GetPoolPoolMetricArray) ToGetPoolPoolMetricArrayOutputWithContext(ctx co
 	return pulumi.ToOutputWithContext(ctx, i).(GetPoolPoolMetricArrayOutput)
 }
 
-func (i GetPoolPoolMetricArray) ToOutput(ctx context.Context) pulumix.Output[[]GetPoolPoolMetric] {
-	return pulumix.Output[[]GetPoolPoolMetric]{
-		OutputState: i.ToGetPoolPoolMetricArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetPoolPoolMetricOutput struct{ *pulumi.OutputState }
 
 func (GetPoolPoolMetricOutput) ElementType() reflect.Type {
@@ -6976,15 +5955,9 @@ func (o GetPoolPoolMetricOutput) ToGetPoolPoolMetricOutputWithContext(ctx contex
 	return o
 }
 
-func (o GetPoolPoolMetricOutput) ToOutput(ctx context.Context) pulumix.Output[GetPoolPoolMetric] {
-	return pulumix.Output[GetPoolPoolMetric]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The number of runs that are currently running that are using this pool.
-func (o GetPoolPoolMetricOutput) ActiveRunsCount() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPoolPoolMetric) string { return v.ActiveRunsCount }).(pulumi.StringOutput)
+func (o GetPoolPoolMetricOutput) ActiveRunsCount() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetPoolPoolMetric) *string { return v.ActiveRunsCount }).(pulumi.StringPtrOutput)
 }
 
 // A count of the nodes that are currently being used for each shape in this pool.
@@ -6993,23 +5966,23 @@ func (o GetPoolPoolMetricOutput) ActivelyUsedNodeCounts() GetPoolPoolMetricActiv
 }
 
 // The last time the mertics were updated for this.
-func (o GetPoolPoolMetricOutput) TimeLastMetricsUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPoolPoolMetric) string { return v.TimeLastMetricsUpdated }).(pulumi.StringOutput)
+func (o GetPoolPoolMetricOutput) TimeLastMetricsUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetPoolPoolMetric) *string { return v.TimeLastMetricsUpdated }).(pulumi.StringPtrOutput)
 }
 
 // The last time this pool was started.
-func (o GetPoolPoolMetricOutput) TimeLastStarted() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPoolPoolMetric) string { return v.TimeLastStarted }).(pulumi.StringOutput)
+func (o GetPoolPoolMetricOutput) TimeLastStarted() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetPoolPoolMetric) *string { return v.TimeLastStarted }).(pulumi.StringPtrOutput)
 }
 
 // The last time this pool was stopped.
-func (o GetPoolPoolMetricOutput) TimeLastStopped() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPoolPoolMetric) string { return v.TimeLastStopped }).(pulumi.StringOutput)
+func (o GetPoolPoolMetricOutput) TimeLastStopped() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetPoolPoolMetric) *string { return v.TimeLastStopped }).(pulumi.StringPtrOutput)
 }
 
 // The last time a run used this pool.
-func (o GetPoolPoolMetricOutput) TimeLastUsed() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPoolPoolMetric) string { return v.TimeLastUsed }).(pulumi.StringOutput)
+func (o GetPoolPoolMetricOutput) TimeLastUsed() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetPoolPoolMetric) *string { return v.TimeLastUsed }).(pulumi.StringPtrOutput)
 }
 
 type GetPoolPoolMetricArrayOutput struct{ *pulumi.OutputState }
@@ -7026,12 +5999,6 @@ func (o GetPoolPoolMetricArrayOutput) ToGetPoolPoolMetricArrayOutputWithContext(
 	return o
 }
 
-func (o GetPoolPoolMetricArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetPoolPoolMetric] {
-	return pulumix.Output[[]GetPoolPoolMetric]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetPoolPoolMetricArrayOutput) Index(i pulumi.IntInput) GetPoolPoolMetricOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPoolPoolMetric {
 		return vs[0].([]GetPoolPoolMetric)[vs[1].(int)]
@@ -7040,9 +6007,9 @@ func (o GetPoolPoolMetricArrayOutput) Index(i pulumi.IntInput) GetPoolPoolMetric
 
 type GetPoolPoolMetricActivelyUsedNodeCount struct {
 	// The compute shape of the nodes that the count is for.
-	LogicalShape string `pulumi:"logicalShape"`
+	LogicalShape *string `pulumi:"logicalShape"`
 	// The node count of this compute shape.
-	PoolCount int `pulumi:"poolCount"`
+	PoolCount *int `pulumi:"poolCount"`
 }
 
 // GetPoolPoolMetricActivelyUsedNodeCountInput is an input type that accepts GetPoolPoolMetricActivelyUsedNodeCountArgs and GetPoolPoolMetricActivelyUsedNodeCountOutput values.
@@ -7058,9 +6025,9 @@ type GetPoolPoolMetricActivelyUsedNodeCountInput interface {
 
 type GetPoolPoolMetricActivelyUsedNodeCountArgs struct {
 	// The compute shape of the nodes that the count is for.
-	LogicalShape pulumi.StringInput `pulumi:"logicalShape"`
+	LogicalShape pulumi.StringPtrInput `pulumi:"logicalShape"`
 	// The node count of this compute shape.
-	PoolCount pulumi.IntInput `pulumi:"poolCount"`
+	PoolCount pulumi.IntPtrInput `pulumi:"poolCount"`
 }
 
 func (GetPoolPoolMetricActivelyUsedNodeCountArgs) ElementType() reflect.Type {
@@ -7073,12 +6040,6 @@ func (i GetPoolPoolMetricActivelyUsedNodeCountArgs) ToGetPoolPoolMetricActivelyU
 
 func (i GetPoolPoolMetricActivelyUsedNodeCountArgs) ToGetPoolPoolMetricActivelyUsedNodeCountOutputWithContext(ctx context.Context) GetPoolPoolMetricActivelyUsedNodeCountOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetPoolPoolMetricActivelyUsedNodeCountOutput)
-}
-
-func (i GetPoolPoolMetricActivelyUsedNodeCountArgs) ToOutput(ctx context.Context) pulumix.Output[GetPoolPoolMetricActivelyUsedNodeCount] {
-	return pulumix.Output[GetPoolPoolMetricActivelyUsedNodeCount]{
-		OutputState: i.ToGetPoolPoolMetricActivelyUsedNodeCountOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetPoolPoolMetricActivelyUsedNodeCountArrayInput is an input type that accepts GetPoolPoolMetricActivelyUsedNodeCountArray and GetPoolPoolMetricActivelyUsedNodeCountArrayOutput values.
@@ -7106,12 +6067,6 @@ func (i GetPoolPoolMetricActivelyUsedNodeCountArray) ToGetPoolPoolMetricActively
 	return pulumi.ToOutputWithContext(ctx, i).(GetPoolPoolMetricActivelyUsedNodeCountArrayOutput)
 }
 
-func (i GetPoolPoolMetricActivelyUsedNodeCountArray) ToOutput(ctx context.Context) pulumix.Output[[]GetPoolPoolMetricActivelyUsedNodeCount] {
-	return pulumix.Output[[]GetPoolPoolMetricActivelyUsedNodeCount]{
-		OutputState: i.ToGetPoolPoolMetricActivelyUsedNodeCountArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetPoolPoolMetricActivelyUsedNodeCountOutput struct{ *pulumi.OutputState }
 
 func (GetPoolPoolMetricActivelyUsedNodeCountOutput) ElementType() reflect.Type {
@@ -7126,20 +6081,14 @@ func (o GetPoolPoolMetricActivelyUsedNodeCountOutput) ToGetPoolPoolMetricActivel
 	return o
 }
 
-func (o GetPoolPoolMetricActivelyUsedNodeCountOutput) ToOutput(ctx context.Context) pulumix.Output[GetPoolPoolMetricActivelyUsedNodeCount] {
-	return pulumix.Output[GetPoolPoolMetricActivelyUsedNodeCount]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The compute shape of the nodes that the count is for.
-func (o GetPoolPoolMetricActivelyUsedNodeCountOutput) LogicalShape() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPoolPoolMetricActivelyUsedNodeCount) string { return v.LogicalShape }).(pulumi.StringOutput)
+func (o GetPoolPoolMetricActivelyUsedNodeCountOutput) LogicalShape() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetPoolPoolMetricActivelyUsedNodeCount) *string { return v.LogicalShape }).(pulumi.StringPtrOutput)
 }
 
 // The node count of this compute shape.
-func (o GetPoolPoolMetricActivelyUsedNodeCountOutput) PoolCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetPoolPoolMetricActivelyUsedNodeCount) int { return v.PoolCount }).(pulumi.IntOutput)
+func (o GetPoolPoolMetricActivelyUsedNodeCountOutput) PoolCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetPoolPoolMetricActivelyUsedNodeCount) *int { return v.PoolCount }).(pulumi.IntPtrOutput)
 }
 
 type GetPoolPoolMetricActivelyUsedNodeCountArrayOutput struct{ *pulumi.OutputState }
@@ -7156,12 +6105,6 @@ func (o GetPoolPoolMetricActivelyUsedNodeCountArrayOutput) ToGetPoolPoolMetricAc
 	return o
 }
 
-func (o GetPoolPoolMetricActivelyUsedNodeCountArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetPoolPoolMetricActivelyUsedNodeCount] {
-	return pulumix.Output[[]GetPoolPoolMetricActivelyUsedNodeCount]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetPoolPoolMetricActivelyUsedNodeCountArrayOutput) Index(i pulumi.IntInput) GetPoolPoolMetricActivelyUsedNodeCountOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPoolPoolMetricActivelyUsedNodeCount {
 		return vs[0].([]GetPoolPoolMetricActivelyUsedNodeCount)[vs[1].(int)]
@@ -7170,11 +6113,11 @@ func (o GetPoolPoolMetricActivelyUsedNodeCountArrayOutput) Index(i pulumi.IntInp
 
 type GetPoolSchedule struct {
 	// Day of the week SUN-SAT
-	DayOfWeek string `pulumi:"dayOfWeek"`
+	DayOfWeek *string `pulumi:"dayOfWeek"`
 	// Hour of the day to start or stop pool.
-	StartTime int `pulumi:"startTime"`
+	StartTime *int `pulumi:"startTime"`
 	// Hour of the day to stop the pool.
-	StopTime int `pulumi:"stopTime"`
+	StopTime *int `pulumi:"stopTime"`
 }
 
 // GetPoolScheduleInput is an input type that accepts GetPoolScheduleArgs and GetPoolScheduleOutput values.
@@ -7190,11 +6133,11 @@ type GetPoolScheduleInput interface {
 
 type GetPoolScheduleArgs struct {
 	// Day of the week SUN-SAT
-	DayOfWeek pulumi.StringInput `pulumi:"dayOfWeek"`
+	DayOfWeek pulumi.StringPtrInput `pulumi:"dayOfWeek"`
 	// Hour of the day to start or stop pool.
-	StartTime pulumi.IntInput `pulumi:"startTime"`
+	StartTime pulumi.IntPtrInput `pulumi:"startTime"`
 	// Hour of the day to stop the pool.
-	StopTime pulumi.IntInput `pulumi:"stopTime"`
+	StopTime pulumi.IntPtrInput `pulumi:"stopTime"`
 }
 
 func (GetPoolScheduleArgs) ElementType() reflect.Type {
@@ -7207,12 +6150,6 @@ func (i GetPoolScheduleArgs) ToGetPoolScheduleOutput() GetPoolScheduleOutput {
 
 func (i GetPoolScheduleArgs) ToGetPoolScheduleOutputWithContext(ctx context.Context) GetPoolScheduleOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetPoolScheduleOutput)
-}
-
-func (i GetPoolScheduleArgs) ToOutput(ctx context.Context) pulumix.Output[GetPoolSchedule] {
-	return pulumix.Output[GetPoolSchedule]{
-		OutputState: i.ToGetPoolScheduleOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetPoolScheduleArrayInput is an input type that accepts GetPoolScheduleArray and GetPoolScheduleArrayOutput values.
@@ -7240,12 +6177,6 @@ func (i GetPoolScheduleArray) ToGetPoolScheduleArrayOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(GetPoolScheduleArrayOutput)
 }
 
-func (i GetPoolScheduleArray) ToOutput(ctx context.Context) pulumix.Output[[]GetPoolSchedule] {
-	return pulumix.Output[[]GetPoolSchedule]{
-		OutputState: i.ToGetPoolScheduleArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetPoolScheduleOutput struct{ *pulumi.OutputState }
 
 func (GetPoolScheduleOutput) ElementType() reflect.Type {
@@ -7260,25 +6191,19 @@ func (o GetPoolScheduleOutput) ToGetPoolScheduleOutputWithContext(ctx context.Co
 	return o
 }
 
-func (o GetPoolScheduleOutput) ToOutput(ctx context.Context) pulumix.Output[GetPoolSchedule] {
-	return pulumix.Output[GetPoolSchedule]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Day of the week SUN-SAT
-func (o GetPoolScheduleOutput) DayOfWeek() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPoolSchedule) string { return v.DayOfWeek }).(pulumi.StringOutput)
+func (o GetPoolScheduleOutput) DayOfWeek() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetPoolSchedule) *string { return v.DayOfWeek }).(pulumi.StringPtrOutput)
 }
 
 // Hour of the day to start or stop pool.
-func (o GetPoolScheduleOutput) StartTime() pulumi.IntOutput {
-	return o.ApplyT(func(v GetPoolSchedule) int { return v.StartTime }).(pulumi.IntOutput)
+func (o GetPoolScheduleOutput) StartTime() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetPoolSchedule) *int { return v.StartTime }).(pulumi.IntPtrOutput)
 }
 
 // Hour of the day to stop the pool.
-func (o GetPoolScheduleOutput) StopTime() pulumi.IntOutput {
-	return o.ApplyT(func(v GetPoolSchedule) int { return v.StopTime }).(pulumi.IntOutput)
+func (o GetPoolScheduleOutput) StopTime() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetPoolSchedule) *int { return v.StopTime }).(pulumi.IntPtrOutput)
 }
 
 type GetPoolScheduleArrayOutput struct{ *pulumi.OutputState }
@@ -7293,12 +6218,6 @@ func (o GetPoolScheduleArrayOutput) ToGetPoolScheduleArrayOutput() GetPoolSchedu
 
 func (o GetPoolScheduleArrayOutput) ToGetPoolScheduleArrayOutputWithContext(ctx context.Context) GetPoolScheduleArrayOutput {
 	return o
-}
-
-func (o GetPoolScheduleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetPoolSchedule] {
-	return pulumix.Output[[]GetPoolSchedule]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetPoolScheduleArrayOutput) Index(i pulumi.IntInput) GetPoolScheduleOutput {
@@ -7342,12 +6261,6 @@ func (i GetPoolsFilterArgs) ToGetPoolsFilterOutputWithContext(ctx context.Contex
 	return pulumi.ToOutputWithContext(ctx, i).(GetPoolsFilterOutput)
 }
 
-func (i GetPoolsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetPoolsFilter] {
-	return pulumix.Output[GetPoolsFilter]{
-		OutputState: i.ToGetPoolsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetPoolsFilterArrayInput is an input type that accepts GetPoolsFilterArray and GetPoolsFilterArrayOutput values.
 // You can construct a concrete instance of `GetPoolsFilterArrayInput` via:
 //
@@ -7373,12 +6286,6 @@ func (i GetPoolsFilterArray) ToGetPoolsFilterArrayOutputWithContext(ctx context.
 	return pulumi.ToOutputWithContext(ctx, i).(GetPoolsFilterArrayOutput)
 }
 
-func (i GetPoolsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetPoolsFilter] {
-	return pulumix.Output[[]GetPoolsFilter]{
-		OutputState: i.ToGetPoolsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetPoolsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetPoolsFilterOutput) ElementType() reflect.Type {
@@ -7391,12 +6298,6 @@ func (o GetPoolsFilterOutput) ToGetPoolsFilterOutput() GetPoolsFilterOutput {
 
 func (o GetPoolsFilterOutput) ToGetPoolsFilterOutputWithContext(ctx context.Context) GetPoolsFilterOutput {
 	return o
-}
-
-func (o GetPoolsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetPoolsFilter] {
-	return pulumix.Output[GetPoolsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetPoolsFilterOutput) Name() pulumi.StringOutput {
@@ -7423,12 +6324,6 @@ func (o GetPoolsFilterArrayOutput) ToGetPoolsFilterArrayOutput() GetPoolsFilterA
 
 func (o GetPoolsFilterArrayOutput) ToGetPoolsFilterArrayOutputWithContext(ctx context.Context) GetPoolsFilterArrayOutput {
 	return o
-}
-
-func (o GetPoolsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetPoolsFilter] {
-	return pulumix.Output[[]GetPoolsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetPoolsFilterArrayOutput) Index(i pulumi.IntInput) GetPoolsFilterOutput {
@@ -7468,12 +6363,6 @@ func (i GetPoolsPoolCollectionArgs) ToGetPoolsPoolCollectionOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(GetPoolsPoolCollectionOutput)
 }
 
-func (i GetPoolsPoolCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetPoolsPoolCollection] {
-	return pulumix.Output[GetPoolsPoolCollection]{
-		OutputState: i.ToGetPoolsPoolCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetPoolsPoolCollectionArrayInput is an input type that accepts GetPoolsPoolCollectionArray and GetPoolsPoolCollectionArrayOutput values.
 // You can construct a concrete instance of `GetPoolsPoolCollectionArrayInput` via:
 //
@@ -7499,12 +6388,6 @@ func (i GetPoolsPoolCollectionArray) ToGetPoolsPoolCollectionArrayOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetPoolsPoolCollectionArrayOutput)
 }
 
-func (i GetPoolsPoolCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetPoolsPoolCollection] {
-	return pulumix.Output[[]GetPoolsPoolCollection]{
-		OutputState: i.ToGetPoolsPoolCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetPoolsPoolCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetPoolsPoolCollectionOutput) ElementType() reflect.Type {
@@ -7517,12 +6400,6 @@ func (o GetPoolsPoolCollectionOutput) ToGetPoolsPoolCollectionOutput() GetPoolsP
 
 func (o GetPoolsPoolCollectionOutput) ToGetPoolsPoolCollectionOutputWithContext(ctx context.Context) GetPoolsPoolCollectionOutput {
 	return o
-}
-
-func (o GetPoolsPoolCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetPoolsPoolCollection] {
-	return pulumix.Output[GetPoolsPoolCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetPoolsPoolCollectionOutput) Items() GetPoolsPoolCollectionItemArrayOutput {
@@ -7543,12 +6420,6 @@ func (o GetPoolsPoolCollectionArrayOutput) ToGetPoolsPoolCollectionArrayOutputWi
 	return o
 }
 
-func (o GetPoolsPoolCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetPoolsPoolCollection] {
-	return pulumix.Output[[]GetPoolsPoolCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetPoolsPoolCollectionArrayOutput) Index(i pulumi.IntInput) GetPoolsPoolCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPoolsPoolCollection {
 		return vs[0].([]GetPoolsPoolCollection)[vs[1].(int)]
@@ -7557,37 +6428,37 @@ func (o GetPoolsPoolCollectionArrayOutput) Index(i pulumi.IntInput) GetPoolsPool
 
 type GetPoolsPoolCollectionItem struct {
 	// The OCID of the compartment.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// List of PoolConfig items.
 	Configurations []GetPoolsPoolCollectionItemConfiguration `pulumi:"configurations"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A user-friendly description. Avoid entering confidential information.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// The query parameter for the Spark application name.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The OCID of a pool. Unique Id to indentify a dataflow pool resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Optional timeout value in minutes used to auto stop Pools. A Pool will be auto stopped after inactivity for this amount of time period. If value not set, pool will not be auto stopped auto.
-	IdleTimeoutInMinutes int `pulumi:"idleTimeoutInMinutes"`
+	IdleTimeoutInMinutes *int `pulumi:"idleTimeoutInMinutes"`
 	// The detailed messages about the lifecycle state.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// The OCID of the user who created the resource.
-	OwnerPrincipalId string `pulumi:"ownerPrincipalId"`
+	OwnerPrincipalId *string `pulumi:"ownerPrincipalId"`
 	// The username of the user who created the resource.  If the username of the owner does not exist, `null` will be returned and the caller should refer to the ownerPrincipalId value instead.
-	OwnerUserName string `pulumi:"ownerUserName"`
+	OwnerUserName *string `pulumi:"ownerUserName"`
 	// A collection of metrics related to a particular pool.
 	PoolMetrics []GetPoolsPoolCollectionItemPoolMetric `pulumi:"poolMetrics"`
 	// A list of schedules for pool to auto start and stop.
 	Schedules []GetPoolsPoolCollectionItemSchedule `pulumi:"schedules"`
 	// The LifecycleState of the pool.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The date and time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 // GetPoolsPoolCollectionItemInput is an input type that accepts GetPoolsPoolCollectionItemArgs and GetPoolsPoolCollectionItemOutput values.
@@ -7603,37 +6474,37 @@ type GetPoolsPoolCollectionItemInput interface {
 
 type GetPoolsPoolCollectionItemArgs struct {
 	// The OCID of the compartment.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// List of PoolConfig items.
 	Configurations GetPoolsPoolCollectionItemConfigurationArrayInput `pulumi:"configurations"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// A user-friendly description. Avoid entering confidential information.
-	Description pulumi.StringInput `pulumi:"description"`
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// The query parameter for the Spark application name.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// The OCID of a pool. Unique Id to indentify a dataflow pool resource.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// Optional timeout value in minutes used to auto stop Pools. A Pool will be auto stopped after inactivity for this amount of time period. If value not set, pool will not be auto stopped auto.
-	IdleTimeoutInMinutes pulumi.IntInput `pulumi:"idleTimeoutInMinutes"`
+	IdleTimeoutInMinutes pulumi.IntPtrInput `pulumi:"idleTimeoutInMinutes"`
 	// The detailed messages about the lifecycle state.
-	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrInput `pulumi:"lifecycleDetails"`
 	// The OCID of the user who created the resource.
-	OwnerPrincipalId pulumi.StringInput `pulumi:"ownerPrincipalId"`
+	OwnerPrincipalId pulumi.StringPtrInput `pulumi:"ownerPrincipalId"`
 	// The username of the user who created the resource.  If the username of the owner does not exist, `null` will be returned and the caller should refer to the ownerPrincipalId value instead.
-	OwnerUserName pulumi.StringInput `pulumi:"ownerUserName"`
+	OwnerUserName pulumi.StringPtrInput `pulumi:"ownerUserName"`
 	// A collection of metrics related to a particular pool.
 	PoolMetrics GetPoolsPoolCollectionItemPoolMetricArrayInput `pulumi:"poolMetrics"`
 	// A list of schedules for pool to auto start and stop.
 	Schedules GetPoolsPoolCollectionItemScheduleArrayInput `pulumi:"schedules"`
 	// The LifecycleState of the pool.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// The date and time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
-	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
 }
 
 func (GetPoolsPoolCollectionItemArgs) ElementType() reflect.Type {
@@ -7646,12 +6517,6 @@ func (i GetPoolsPoolCollectionItemArgs) ToGetPoolsPoolCollectionItemOutput() Get
 
 func (i GetPoolsPoolCollectionItemArgs) ToGetPoolsPoolCollectionItemOutputWithContext(ctx context.Context) GetPoolsPoolCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetPoolsPoolCollectionItemOutput)
-}
-
-func (i GetPoolsPoolCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetPoolsPoolCollectionItem] {
-	return pulumix.Output[GetPoolsPoolCollectionItem]{
-		OutputState: i.ToGetPoolsPoolCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetPoolsPoolCollectionItemArrayInput is an input type that accepts GetPoolsPoolCollectionItemArray and GetPoolsPoolCollectionItemArrayOutput values.
@@ -7679,12 +6544,6 @@ func (i GetPoolsPoolCollectionItemArray) ToGetPoolsPoolCollectionItemArrayOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetPoolsPoolCollectionItemArrayOutput)
 }
 
-func (i GetPoolsPoolCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetPoolsPoolCollectionItem] {
-	return pulumix.Output[[]GetPoolsPoolCollectionItem]{
-		OutputState: i.ToGetPoolsPoolCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetPoolsPoolCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetPoolsPoolCollectionItemOutput) ElementType() reflect.Type {
@@ -7699,15 +6558,9 @@ func (o GetPoolsPoolCollectionItemOutput) ToGetPoolsPoolCollectionItemOutputWith
 	return o
 }
 
-func (o GetPoolsPoolCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetPoolsPoolCollectionItem] {
-	return pulumix.Output[GetPoolsPoolCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the compartment.
-func (o GetPoolsPoolCollectionItemOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPoolsPoolCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetPoolsPoolCollectionItemOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetPoolsPoolCollectionItem) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // List of PoolConfig items.
@@ -7721,13 +6574,13 @@ func (o GetPoolsPoolCollectionItemOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // A user-friendly description. Avoid entering confidential information.
-func (o GetPoolsPoolCollectionItemOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPoolsPoolCollectionItem) string { return v.Description }).(pulumi.StringOutput)
+func (o GetPoolsPoolCollectionItemOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetPoolsPoolCollectionItem) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // The query parameter for the Spark application name.
-func (o GetPoolsPoolCollectionItemOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPoolsPoolCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetPoolsPoolCollectionItemOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetPoolsPoolCollectionItem) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -7736,28 +6589,28 @@ func (o GetPoolsPoolCollectionItemOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The OCID of a pool. Unique Id to indentify a dataflow pool resource.
-func (o GetPoolsPoolCollectionItemOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPoolsPoolCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+func (o GetPoolsPoolCollectionItemOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetPoolsPoolCollectionItem) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Optional timeout value in minutes used to auto stop Pools. A Pool will be auto stopped after inactivity for this amount of time period. If value not set, pool will not be auto stopped auto.
-func (o GetPoolsPoolCollectionItemOutput) IdleTimeoutInMinutes() pulumi.IntOutput {
-	return o.ApplyT(func(v GetPoolsPoolCollectionItem) int { return v.IdleTimeoutInMinutes }).(pulumi.IntOutput)
+func (o GetPoolsPoolCollectionItemOutput) IdleTimeoutInMinutes() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetPoolsPoolCollectionItem) *int { return v.IdleTimeoutInMinutes }).(pulumi.IntPtrOutput)
 }
 
 // The detailed messages about the lifecycle state.
-func (o GetPoolsPoolCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPoolsPoolCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o GetPoolsPoolCollectionItemOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetPoolsPoolCollectionItem) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the user who created the resource.
-func (o GetPoolsPoolCollectionItemOutput) OwnerPrincipalId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPoolsPoolCollectionItem) string { return v.OwnerPrincipalId }).(pulumi.StringOutput)
+func (o GetPoolsPoolCollectionItemOutput) OwnerPrincipalId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetPoolsPoolCollectionItem) *string { return v.OwnerPrincipalId }).(pulumi.StringPtrOutput)
 }
 
 // The username of the user who created the resource.  If the username of the owner does not exist, `null` will be returned and the caller should refer to the ownerPrincipalId value instead.
-func (o GetPoolsPoolCollectionItemOutput) OwnerUserName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPoolsPoolCollectionItem) string { return v.OwnerUserName }).(pulumi.StringOutput)
+func (o GetPoolsPoolCollectionItemOutput) OwnerUserName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetPoolsPoolCollectionItem) *string { return v.OwnerUserName }).(pulumi.StringPtrOutput)
 }
 
 // A collection of metrics related to a particular pool.
@@ -7771,18 +6624,18 @@ func (o GetPoolsPoolCollectionItemOutput) Schedules() GetPoolsPoolCollectionItem
 }
 
 // The LifecycleState of the pool.
-func (o GetPoolsPoolCollectionItemOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPoolsPoolCollectionItem) string { return v.State }).(pulumi.StringOutput)
+func (o GetPoolsPoolCollectionItemOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetPoolsPoolCollectionItem) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
-func (o GetPoolsPoolCollectionItemOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPoolsPoolCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetPoolsPoolCollectionItemOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetPoolsPoolCollectionItem) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
-func (o GetPoolsPoolCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPoolsPoolCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o GetPoolsPoolCollectionItemOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetPoolsPoolCollectionItem) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type GetPoolsPoolCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -7799,12 +6652,6 @@ func (o GetPoolsPoolCollectionItemArrayOutput) ToGetPoolsPoolCollectionItemArray
 	return o
 }
 
-func (o GetPoolsPoolCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetPoolsPoolCollectionItem] {
-	return pulumix.Output[[]GetPoolsPoolCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetPoolsPoolCollectionItemArrayOutput) Index(i pulumi.IntInput) GetPoolsPoolCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPoolsPoolCollectionItem {
 		return vs[0].([]GetPoolsPoolCollectionItem)[vs[1].(int)]
@@ -7813,11 +6660,11 @@ func (o GetPoolsPoolCollectionItemArrayOutput) Index(i pulumi.IntInput) GetPools
 
 type GetPoolsPoolCollectionItemConfiguration struct {
 	// Maximum number of compute instances in the pool for a given compute shape.
-	Max int `pulumi:"max"`
+	Max *int `pulumi:"max"`
 	// Minimum number of compute instances in the pool for a given compute shape.
-	Min int `pulumi:"min"`
+	Min *int `pulumi:"min"`
 	// The compute shape of the resources you would like to provision.
-	Shape string `pulumi:"shape"`
+	Shape *string `pulumi:"shape"`
 	// This is used to configure the shape of the driver or executor if a flexible shape is used.
 	ShapeConfigs []GetPoolsPoolCollectionItemConfigurationShapeConfig `pulumi:"shapeConfigs"`
 }
@@ -7835,11 +6682,11 @@ type GetPoolsPoolCollectionItemConfigurationInput interface {
 
 type GetPoolsPoolCollectionItemConfigurationArgs struct {
 	// Maximum number of compute instances in the pool for a given compute shape.
-	Max pulumi.IntInput `pulumi:"max"`
+	Max pulumi.IntPtrInput `pulumi:"max"`
 	// Minimum number of compute instances in the pool for a given compute shape.
-	Min pulumi.IntInput `pulumi:"min"`
+	Min pulumi.IntPtrInput `pulumi:"min"`
 	// The compute shape of the resources you would like to provision.
-	Shape pulumi.StringInput `pulumi:"shape"`
+	Shape pulumi.StringPtrInput `pulumi:"shape"`
 	// This is used to configure the shape of the driver or executor if a flexible shape is used.
 	ShapeConfigs GetPoolsPoolCollectionItemConfigurationShapeConfigArrayInput `pulumi:"shapeConfigs"`
 }
@@ -7854,12 +6701,6 @@ func (i GetPoolsPoolCollectionItemConfigurationArgs) ToGetPoolsPoolCollectionIte
 
 func (i GetPoolsPoolCollectionItemConfigurationArgs) ToGetPoolsPoolCollectionItemConfigurationOutputWithContext(ctx context.Context) GetPoolsPoolCollectionItemConfigurationOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetPoolsPoolCollectionItemConfigurationOutput)
-}
-
-func (i GetPoolsPoolCollectionItemConfigurationArgs) ToOutput(ctx context.Context) pulumix.Output[GetPoolsPoolCollectionItemConfiguration] {
-	return pulumix.Output[GetPoolsPoolCollectionItemConfiguration]{
-		OutputState: i.ToGetPoolsPoolCollectionItemConfigurationOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetPoolsPoolCollectionItemConfigurationArrayInput is an input type that accepts GetPoolsPoolCollectionItemConfigurationArray and GetPoolsPoolCollectionItemConfigurationArrayOutput values.
@@ -7887,12 +6728,6 @@ func (i GetPoolsPoolCollectionItemConfigurationArray) ToGetPoolsPoolCollectionIt
 	return pulumi.ToOutputWithContext(ctx, i).(GetPoolsPoolCollectionItemConfigurationArrayOutput)
 }
 
-func (i GetPoolsPoolCollectionItemConfigurationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetPoolsPoolCollectionItemConfiguration] {
-	return pulumix.Output[[]GetPoolsPoolCollectionItemConfiguration]{
-		OutputState: i.ToGetPoolsPoolCollectionItemConfigurationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetPoolsPoolCollectionItemConfigurationOutput struct{ *pulumi.OutputState }
 
 func (GetPoolsPoolCollectionItemConfigurationOutput) ElementType() reflect.Type {
@@ -7907,25 +6742,19 @@ func (o GetPoolsPoolCollectionItemConfigurationOutput) ToGetPoolsPoolCollectionI
 	return o
 }
 
-func (o GetPoolsPoolCollectionItemConfigurationOutput) ToOutput(ctx context.Context) pulumix.Output[GetPoolsPoolCollectionItemConfiguration] {
-	return pulumix.Output[GetPoolsPoolCollectionItemConfiguration]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Maximum number of compute instances in the pool for a given compute shape.
-func (o GetPoolsPoolCollectionItemConfigurationOutput) Max() pulumi.IntOutput {
-	return o.ApplyT(func(v GetPoolsPoolCollectionItemConfiguration) int { return v.Max }).(pulumi.IntOutput)
+func (o GetPoolsPoolCollectionItemConfigurationOutput) Max() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetPoolsPoolCollectionItemConfiguration) *int { return v.Max }).(pulumi.IntPtrOutput)
 }
 
 // Minimum number of compute instances in the pool for a given compute shape.
-func (o GetPoolsPoolCollectionItemConfigurationOutput) Min() pulumi.IntOutput {
-	return o.ApplyT(func(v GetPoolsPoolCollectionItemConfiguration) int { return v.Min }).(pulumi.IntOutput)
+func (o GetPoolsPoolCollectionItemConfigurationOutput) Min() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetPoolsPoolCollectionItemConfiguration) *int { return v.Min }).(pulumi.IntPtrOutput)
 }
 
 // The compute shape of the resources you would like to provision.
-func (o GetPoolsPoolCollectionItemConfigurationOutput) Shape() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPoolsPoolCollectionItemConfiguration) string { return v.Shape }).(pulumi.StringOutput)
+func (o GetPoolsPoolCollectionItemConfigurationOutput) Shape() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetPoolsPoolCollectionItemConfiguration) *string { return v.Shape }).(pulumi.StringPtrOutput)
 }
 
 // This is used to configure the shape of the driver or executor if a flexible shape is used.
@@ -7949,12 +6778,6 @@ func (o GetPoolsPoolCollectionItemConfigurationArrayOutput) ToGetPoolsPoolCollec
 	return o
 }
 
-func (o GetPoolsPoolCollectionItemConfigurationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetPoolsPoolCollectionItemConfiguration] {
-	return pulumix.Output[[]GetPoolsPoolCollectionItemConfiguration]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetPoolsPoolCollectionItemConfigurationArrayOutput) Index(i pulumi.IntInput) GetPoolsPoolCollectionItemConfigurationOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPoolsPoolCollectionItemConfiguration {
 		return vs[0].([]GetPoolsPoolCollectionItemConfiguration)[vs[1].(int)]
@@ -7963,9 +6786,9 @@ func (o GetPoolsPoolCollectionItemConfigurationArrayOutput) Index(i pulumi.IntIn
 
 type GetPoolsPoolCollectionItemConfigurationShapeConfig struct {
 	// The amount of memory used for the driver or executors.
-	MemoryInGbs float64 `pulumi:"memoryInGbs"`
+	MemoryInGbs *float64 `pulumi:"memoryInGbs"`
 	// The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
-	Ocpus float64 `pulumi:"ocpus"`
+	Ocpus *float64 `pulumi:"ocpus"`
 }
 
 // GetPoolsPoolCollectionItemConfigurationShapeConfigInput is an input type that accepts GetPoolsPoolCollectionItemConfigurationShapeConfigArgs and GetPoolsPoolCollectionItemConfigurationShapeConfigOutput values.
@@ -7981,9 +6804,9 @@ type GetPoolsPoolCollectionItemConfigurationShapeConfigInput interface {
 
 type GetPoolsPoolCollectionItemConfigurationShapeConfigArgs struct {
 	// The amount of memory used for the driver or executors.
-	MemoryInGbs pulumi.Float64Input `pulumi:"memoryInGbs"`
+	MemoryInGbs pulumi.Float64PtrInput `pulumi:"memoryInGbs"`
 	// The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
-	Ocpus pulumi.Float64Input `pulumi:"ocpus"`
+	Ocpus pulumi.Float64PtrInput `pulumi:"ocpus"`
 }
 
 func (GetPoolsPoolCollectionItemConfigurationShapeConfigArgs) ElementType() reflect.Type {
@@ -7996,12 +6819,6 @@ func (i GetPoolsPoolCollectionItemConfigurationShapeConfigArgs) ToGetPoolsPoolCo
 
 func (i GetPoolsPoolCollectionItemConfigurationShapeConfigArgs) ToGetPoolsPoolCollectionItemConfigurationShapeConfigOutputWithContext(ctx context.Context) GetPoolsPoolCollectionItemConfigurationShapeConfigOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetPoolsPoolCollectionItemConfigurationShapeConfigOutput)
-}
-
-func (i GetPoolsPoolCollectionItemConfigurationShapeConfigArgs) ToOutput(ctx context.Context) pulumix.Output[GetPoolsPoolCollectionItemConfigurationShapeConfig] {
-	return pulumix.Output[GetPoolsPoolCollectionItemConfigurationShapeConfig]{
-		OutputState: i.ToGetPoolsPoolCollectionItemConfigurationShapeConfigOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetPoolsPoolCollectionItemConfigurationShapeConfigArrayInput is an input type that accepts GetPoolsPoolCollectionItemConfigurationShapeConfigArray and GetPoolsPoolCollectionItemConfigurationShapeConfigArrayOutput values.
@@ -8029,12 +6846,6 @@ func (i GetPoolsPoolCollectionItemConfigurationShapeConfigArray) ToGetPoolsPoolC
 	return pulumi.ToOutputWithContext(ctx, i).(GetPoolsPoolCollectionItemConfigurationShapeConfigArrayOutput)
 }
 
-func (i GetPoolsPoolCollectionItemConfigurationShapeConfigArray) ToOutput(ctx context.Context) pulumix.Output[[]GetPoolsPoolCollectionItemConfigurationShapeConfig] {
-	return pulumix.Output[[]GetPoolsPoolCollectionItemConfigurationShapeConfig]{
-		OutputState: i.ToGetPoolsPoolCollectionItemConfigurationShapeConfigArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetPoolsPoolCollectionItemConfigurationShapeConfigOutput struct{ *pulumi.OutputState }
 
 func (GetPoolsPoolCollectionItemConfigurationShapeConfigOutput) ElementType() reflect.Type {
@@ -8049,20 +6860,14 @@ func (o GetPoolsPoolCollectionItemConfigurationShapeConfigOutput) ToGetPoolsPool
 	return o
 }
 
-func (o GetPoolsPoolCollectionItemConfigurationShapeConfigOutput) ToOutput(ctx context.Context) pulumix.Output[GetPoolsPoolCollectionItemConfigurationShapeConfig] {
-	return pulumix.Output[GetPoolsPoolCollectionItemConfigurationShapeConfig]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The amount of memory used for the driver or executors.
-func (o GetPoolsPoolCollectionItemConfigurationShapeConfigOutput) MemoryInGbs() pulumi.Float64Output {
-	return o.ApplyT(func(v GetPoolsPoolCollectionItemConfigurationShapeConfig) float64 { return v.MemoryInGbs }).(pulumi.Float64Output)
+func (o GetPoolsPoolCollectionItemConfigurationShapeConfigOutput) MemoryInGbs() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetPoolsPoolCollectionItemConfigurationShapeConfig) *float64 { return v.MemoryInGbs }).(pulumi.Float64PtrOutput)
 }
 
 // The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
-func (o GetPoolsPoolCollectionItemConfigurationShapeConfigOutput) Ocpus() pulumi.Float64Output {
-	return o.ApplyT(func(v GetPoolsPoolCollectionItemConfigurationShapeConfig) float64 { return v.Ocpus }).(pulumi.Float64Output)
+func (o GetPoolsPoolCollectionItemConfigurationShapeConfigOutput) Ocpus() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetPoolsPoolCollectionItemConfigurationShapeConfig) *float64 { return v.Ocpus }).(pulumi.Float64PtrOutput)
 }
 
 type GetPoolsPoolCollectionItemConfigurationShapeConfigArrayOutput struct{ *pulumi.OutputState }
@@ -8079,12 +6884,6 @@ func (o GetPoolsPoolCollectionItemConfigurationShapeConfigArrayOutput) ToGetPool
 	return o
 }
 
-func (o GetPoolsPoolCollectionItemConfigurationShapeConfigArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetPoolsPoolCollectionItemConfigurationShapeConfig] {
-	return pulumix.Output[[]GetPoolsPoolCollectionItemConfigurationShapeConfig]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetPoolsPoolCollectionItemConfigurationShapeConfigArrayOutput) Index(i pulumi.IntInput) GetPoolsPoolCollectionItemConfigurationShapeConfigOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPoolsPoolCollectionItemConfigurationShapeConfig {
 		return vs[0].([]GetPoolsPoolCollectionItemConfigurationShapeConfig)[vs[1].(int)]
@@ -8093,17 +6892,17 @@ func (o GetPoolsPoolCollectionItemConfigurationShapeConfigArrayOutput) Index(i p
 
 type GetPoolsPoolCollectionItemPoolMetric struct {
 	// The number of runs that are currently running that are using this pool.
-	ActiveRunsCount string `pulumi:"activeRunsCount"`
+	ActiveRunsCount *string `pulumi:"activeRunsCount"`
 	// A count of the nodes that are currently being used for each shape in this pool.
 	ActivelyUsedNodeCounts []GetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCount `pulumi:"activelyUsedNodeCounts"`
 	// The last time the mertics were updated for this.
-	TimeLastMetricsUpdated string `pulumi:"timeLastMetricsUpdated"`
+	TimeLastMetricsUpdated *string `pulumi:"timeLastMetricsUpdated"`
 	// The last time this pool was started.
-	TimeLastStarted string `pulumi:"timeLastStarted"`
+	TimeLastStarted *string `pulumi:"timeLastStarted"`
 	// The last time this pool was stopped.
-	TimeLastStopped string `pulumi:"timeLastStopped"`
+	TimeLastStopped *string `pulumi:"timeLastStopped"`
 	// The last time a run used this pool.
-	TimeLastUsed string `pulumi:"timeLastUsed"`
+	TimeLastUsed *string `pulumi:"timeLastUsed"`
 }
 
 // GetPoolsPoolCollectionItemPoolMetricInput is an input type that accepts GetPoolsPoolCollectionItemPoolMetricArgs and GetPoolsPoolCollectionItemPoolMetricOutput values.
@@ -8119,17 +6918,17 @@ type GetPoolsPoolCollectionItemPoolMetricInput interface {
 
 type GetPoolsPoolCollectionItemPoolMetricArgs struct {
 	// The number of runs that are currently running that are using this pool.
-	ActiveRunsCount pulumi.StringInput `pulumi:"activeRunsCount"`
+	ActiveRunsCount pulumi.StringPtrInput `pulumi:"activeRunsCount"`
 	// A count of the nodes that are currently being used for each shape in this pool.
 	ActivelyUsedNodeCounts GetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCountArrayInput `pulumi:"activelyUsedNodeCounts"`
 	// The last time the mertics were updated for this.
-	TimeLastMetricsUpdated pulumi.StringInput `pulumi:"timeLastMetricsUpdated"`
+	TimeLastMetricsUpdated pulumi.StringPtrInput `pulumi:"timeLastMetricsUpdated"`
 	// The last time this pool was started.
-	TimeLastStarted pulumi.StringInput `pulumi:"timeLastStarted"`
+	TimeLastStarted pulumi.StringPtrInput `pulumi:"timeLastStarted"`
 	// The last time this pool was stopped.
-	TimeLastStopped pulumi.StringInput `pulumi:"timeLastStopped"`
+	TimeLastStopped pulumi.StringPtrInput `pulumi:"timeLastStopped"`
 	// The last time a run used this pool.
-	TimeLastUsed pulumi.StringInput `pulumi:"timeLastUsed"`
+	TimeLastUsed pulumi.StringPtrInput `pulumi:"timeLastUsed"`
 }
 
 func (GetPoolsPoolCollectionItemPoolMetricArgs) ElementType() reflect.Type {
@@ -8142,12 +6941,6 @@ func (i GetPoolsPoolCollectionItemPoolMetricArgs) ToGetPoolsPoolCollectionItemPo
 
 func (i GetPoolsPoolCollectionItemPoolMetricArgs) ToGetPoolsPoolCollectionItemPoolMetricOutputWithContext(ctx context.Context) GetPoolsPoolCollectionItemPoolMetricOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetPoolsPoolCollectionItemPoolMetricOutput)
-}
-
-func (i GetPoolsPoolCollectionItemPoolMetricArgs) ToOutput(ctx context.Context) pulumix.Output[GetPoolsPoolCollectionItemPoolMetric] {
-	return pulumix.Output[GetPoolsPoolCollectionItemPoolMetric]{
-		OutputState: i.ToGetPoolsPoolCollectionItemPoolMetricOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetPoolsPoolCollectionItemPoolMetricArrayInput is an input type that accepts GetPoolsPoolCollectionItemPoolMetricArray and GetPoolsPoolCollectionItemPoolMetricArrayOutput values.
@@ -8175,12 +6968,6 @@ func (i GetPoolsPoolCollectionItemPoolMetricArray) ToGetPoolsPoolCollectionItemP
 	return pulumi.ToOutputWithContext(ctx, i).(GetPoolsPoolCollectionItemPoolMetricArrayOutput)
 }
 
-func (i GetPoolsPoolCollectionItemPoolMetricArray) ToOutput(ctx context.Context) pulumix.Output[[]GetPoolsPoolCollectionItemPoolMetric] {
-	return pulumix.Output[[]GetPoolsPoolCollectionItemPoolMetric]{
-		OutputState: i.ToGetPoolsPoolCollectionItemPoolMetricArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetPoolsPoolCollectionItemPoolMetricOutput struct{ *pulumi.OutputState }
 
 func (GetPoolsPoolCollectionItemPoolMetricOutput) ElementType() reflect.Type {
@@ -8195,15 +6982,9 @@ func (o GetPoolsPoolCollectionItemPoolMetricOutput) ToGetPoolsPoolCollectionItem
 	return o
 }
 
-func (o GetPoolsPoolCollectionItemPoolMetricOutput) ToOutput(ctx context.Context) pulumix.Output[GetPoolsPoolCollectionItemPoolMetric] {
-	return pulumix.Output[GetPoolsPoolCollectionItemPoolMetric]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The number of runs that are currently running that are using this pool.
-func (o GetPoolsPoolCollectionItemPoolMetricOutput) ActiveRunsCount() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPoolsPoolCollectionItemPoolMetric) string { return v.ActiveRunsCount }).(pulumi.StringOutput)
+func (o GetPoolsPoolCollectionItemPoolMetricOutput) ActiveRunsCount() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetPoolsPoolCollectionItemPoolMetric) *string { return v.ActiveRunsCount }).(pulumi.StringPtrOutput)
 }
 
 // A count of the nodes that are currently being used for each shape in this pool.
@@ -8214,23 +6995,23 @@ func (o GetPoolsPoolCollectionItemPoolMetricOutput) ActivelyUsedNodeCounts() Get
 }
 
 // The last time the mertics were updated for this.
-func (o GetPoolsPoolCollectionItemPoolMetricOutput) TimeLastMetricsUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPoolsPoolCollectionItemPoolMetric) string { return v.TimeLastMetricsUpdated }).(pulumi.StringOutput)
+func (o GetPoolsPoolCollectionItemPoolMetricOutput) TimeLastMetricsUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetPoolsPoolCollectionItemPoolMetric) *string { return v.TimeLastMetricsUpdated }).(pulumi.StringPtrOutput)
 }
 
 // The last time this pool was started.
-func (o GetPoolsPoolCollectionItemPoolMetricOutput) TimeLastStarted() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPoolsPoolCollectionItemPoolMetric) string { return v.TimeLastStarted }).(pulumi.StringOutput)
+func (o GetPoolsPoolCollectionItemPoolMetricOutput) TimeLastStarted() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetPoolsPoolCollectionItemPoolMetric) *string { return v.TimeLastStarted }).(pulumi.StringPtrOutput)
 }
 
 // The last time this pool was stopped.
-func (o GetPoolsPoolCollectionItemPoolMetricOutput) TimeLastStopped() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPoolsPoolCollectionItemPoolMetric) string { return v.TimeLastStopped }).(pulumi.StringOutput)
+func (o GetPoolsPoolCollectionItemPoolMetricOutput) TimeLastStopped() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetPoolsPoolCollectionItemPoolMetric) *string { return v.TimeLastStopped }).(pulumi.StringPtrOutput)
 }
 
 // The last time a run used this pool.
-func (o GetPoolsPoolCollectionItemPoolMetricOutput) TimeLastUsed() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPoolsPoolCollectionItemPoolMetric) string { return v.TimeLastUsed }).(pulumi.StringOutput)
+func (o GetPoolsPoolCollectionItemPoolMetricOutput) TimeLastUsed() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetPoolsPoolCollectionItemPoolMetric) *string { return v.TimeLastUsed }).(pulumi.StringPtrOutput)
 }
 
 type GetPoolsPoolCollectionItemPoolMetricArrayOutput struct{ *pulumi.OutputState }
@@ -8247,12 +7028,6 @@ func (o GetPoolsPoolCollectionItemPoolMetricArrayOutput) ToGetPoolsPoolCollectio
 	return o
 }
 
-func (o GetPoolsPoolCollectionItemPoolMetricArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetPoolsPoolCollectionItemPoolMetric] {
-	return pulumix.Output[[]GetPoolsPoolCollectionItemPoolMetric]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetPoolsPoolCollectionItemPoolMetricArrayOutput) Index(i pulumi.IntInput) GetPoolsPoolCollectionItemPoolMetricOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPoolsPoolCollectionItemPoolMetric {
 		return vs[0].([]GetPoolsPoolCollectionItemPoolMetric)[vs[1].(int)]
@@ -8261,9 +7036,9 @@ func (o GetPoolsPoolCollectionItemPoolMetricArrayOutput) Index(i pulumi.IntInput
 
 type GetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCount struct {
 	// The compute shape of the nodes that the count is for.
-	LogicalShape string `pulumi:"logicalShape"`
+	LogicalShape *string `pulumi:"logicalShape"`
 	// The node count of this compute shape.
-	PoolCount int `pulumi:"poolCount"`
+	PoolCount *int `pulumi:"poolCount"`
 }
 
 // GetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCountInput is an input type that accepts GetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCountArgs and GetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCountOutput values.
@@ -8279,9 +7054,9 @@ type GetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCountInput interface {
 
 type GetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCountArgs struct {
 	// The compute shape of the nodes that the count is for.
-	LogicalShape pulumi.StringInput `pulumi:"logicalShape"`
+	LogicalShape pulumi.StringPtrInput `pulumi:"logicalShape"`
 	// The node count of this compute shape.
-	PoolCount pulumi.IntInput `pulumi:"poolCount"`
+	PoolCount pulumi.IntPtrInput `pulumi:"poolCount"`
 }
 
 func (GetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCountArgs) ElementType() reflect.Type {
@@ -8294,12 +7069,6 @@ func (i GetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCountArgs) ToGetPool
 
 func (i GetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCountArgs) ToGetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCountOutputWithContext(ctx context.Context) GetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCountOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCountOutput)
-}
-
-func (i GetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCountArgs) ToOutput(ctx context.Context) pulumix.Output[GetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCount] {
-	return pulumix.Output[GetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCount]{
-		OutputState: i.ToGetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCountOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCountArrayInput is an input type that accepts GetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCountArray and GetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCountArrayOutput values.
@@ -8327,12 +7096,6 @@ func (i GetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCountArray) ToGetPoo
 	return pulumi.ToOutputWithContext(ctx, i).(GetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCountArrayOutput)
 }
 
-func (i GetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCountArray) ToOutput(ctx context.Context) pulumix.Output[[]GetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCount] {
-	return pulumix.Output[[]GetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCount]{
-		OutputState: i.ToGetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCountArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCountOutput struct{ *pulumi.OutputState }
 
 func (GetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCountOutput) ElementType() reflect.Type {
@@ -8347,20 +7110,14 @@ func (o GetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCountOutput) ToGetPo
 	return o
 }
 
-func (o GetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCountOutput) ToOutput(ctx context.Context) pulumix.Output[GetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCount] {
-	return pulumix.Output[GetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCount]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The compute shape of the nodes that the count is for.
-func (o GetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCountOutput) LogicalShape() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCount) string { return v.LogicalShape }).(pulumi.StringOutput)
+func (o GetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCountOutput) LogicalShape() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCount) *string { return v.LogicalShape }).(pulumi.StringPtrOutput)
 }
 
 // The node count of this compute shape.
-func (o GetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCountOutput) PoolCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCount) int { return v.PoolCount }).(pulumi.IntOutput)
+func (o GetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCountOutput) PoolCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCount) *int { return v.PoolCount }).(pulumi.IntPtrOutput)
 }
 
 type GetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCountArrayOutput struct{ *pulumi.OutputState }
@@ -8377,12 +7134,6 @@ func (o GetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCountArrayOutput) To
 	return o
 }
 
-func (o GetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCountArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCount] {
-	return pulumix.Output[[]GetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCount]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCountArrayOutput) Index(i pulumi.IntInput) GetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCountOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCount {
 		return vs[0].([]GetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCount)[vs[1].(int)]
@@ -8391,11 +7142,11 @@ func (o GetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCountArrayOutput) In
 
 type GetPoolsPoolCollectionItemSchedule struct {
 	// Day of the week SUN-SAT
-	DayOfWeek string `pulumi:"dayOfWeek"`
+	DayOfWeek *string `pulumi:"dayOfWeek"`
 	// Hour of the day to start or stop pool.
-	StartTime int `pulumi:"startTime"`
+	StartTime *int `pulumi:"startTime"`
 	// Hour of the day to stop the pool.
-	StopTime int `pulumi:"stopTime"`
+	StopTime *int `pulumi:"stopTime"`
 }
 
 // GetPoolsPoolCollectionItemScheduleInput is an input type that accepts GetPoolsPoolCollectionItemScheduleArgs and GetPoolsPoolCollectionItemScheduleOutput values.
@@ -8411,11 +7162,11 @@ type GetPoolsPoolCollectionItemScheduleInput interface {
 
 type GetPoolsPoolCollectionItemScheduleArgs struct {
 	// Day of the week SUN-SAT
-	DayOfWeek pulumi.StringInput `pulumi:"dayOfWeek"`
+	DayOfWeek pulumi.StringPtrInput `pulumi:"dayOfWeek"`
 	// Hour of the day to start or stop pool.
-	StartTime pulumi.IntInput `pulumi:"startTime"`
+	StartTime pulumi.IntPtrInput `pulumi:"startTime"`
 	// Hour of the day to stop the pool.
-	StopTime pulumi.IntInput `pulumi:"stopTime"`
+	StopTime pulumi.IntPtrInput `pulumi:"stopTime"`
 }
 
 func (GetPoolsPoolCollectionItemScheduleArgs) ElementType() reflect.Type {
@@ -8428,12 +7179,6 @@ func (i GetPoolsPoolCollectionItemScheduleArgs) ToGetPoolsPoolCollectionItemSche
 
 func (i GetPoolsPoolCollectionItemScheduleArgs) ToGetPoolsPoolCollectionItemScheduleOutputWithContext(ctx context.Context) GetPoolsPoolCollectionItemScheduleOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetPoolsPoolCollectionItemScheduleOutput)
-}
-
-func (i GetPoolsPoolCollectionItemScheduleArgs) ToOutput(ctx context.Context) pulumix.Output[GetPoolsPoolCollectionItemSchedule] {
-	return pulumix.Output[GetPoolsPoolCollectionItemSchedule]{
-		OutputState: i.ToGetPoolsPoolCollectionItemScheduleOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetPoolsPoolCollectionItemScheduleArrayInput is an input type that accepts GetPoolsPoolCollectionItemScheduleArray and GetPoolsPoolCollectionItemScheduleArrayOutput values.
@@ -8461,12 +7206,6 @@ func (i GetPoolsPoolCollectionItemScheduleArray) ToGetPoolsPoolCollectionItemSch
 	return pulumi.ToOutputWithContext(ctx, i).(GetPoolsPoolCollectionItemScheduleArrayOutput)
 }
 
-func (i GetPoolsPoolCollectionItemScheduleArray) ToOutput(ctx context.Context) pulumix.Output[[]GetPoolsPoolCollectionItemSchedule] {
-	return pulumix.Output[[]GetPoolsPoolCollectionItemSchedule]{
-		OutputState: i.ToGetPoolsPoolCollectionItemScheduleArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetPoolsPoolCollectionItemScheduleOutput struct{ *pulumi.OutputState }
 
 func (GetPoolsPoolCollectionItemScheduleOutput) ElementType() reflect.Type {
@@ -8481,25 +7220,19 @@ func (o GetPoolsPoolCollectionItemScheduleOutput) ToGetPoolsPoolCollectionItemSc
 	return o
 }
 
-func (o GetPoolsPoolCollectionItemScheduleOutput) ToOutput(ctx context.Context) pulumix.Output[GetPoolsPoolCollectionItemSchedule] {
-	return pulumix.Output[GetPoolsPoolCollectionItemSchedule]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Day of the week SUN-SAT
-func (o GetPoolsPoolCollectionItemScheduleOutput) DayOfWeek() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPoolsPoolCollectionItemSchedule) string { return v.DayOfWeek }).(pulumi.StringOutput)
+func (o GetPoolsPoolCollectionItemScheduleOutput) DayOfWeek() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetPoolsPoolCollectionItemSchedule) *string { return v.DayOfWeek }).(pulumi.StringPtrOutput)
 }
 
 // Hour of the day to start or stop pool.
-func (o GetPoolsPoolCollectionItemScheduleOutput) StartTime() pulumi.IntOutput {
-	return o.ApplyT(func(v GetPoolsPoolCollectionItemSchedule) int { return v.StartTime }).(pulumi.IntOutput)
+func (o GetPoolsPoolCollectionItemScheduleOutput) StartTime() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetPoolsPoolCollectionItemSchedule) *int { return v.StartTime }).(pulumi.IntPtrOutput)
 }
 
 // Hour of the day to stop the pool.
-func (o GetPoolsPoolCollectionItemScheduleOutput) StopTime() pulumi.IntOutput {
-	return o.ApplyT(func(v GetPoolsPoolCollectionItemSchedule) int { return v.StopTime }).(pulumi.IntOutput)
+func (o GetPoolsPoolCollectionItemScheduleOutput) StopTime() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetPoolsPoolCollectionItemSchedule) *int { return v.StopTime }).(pulumi.IntPtrOutput)
 }
 
 type GetPoolsPoolCollectionItemScheduleArrayOutput struct{ *pulumi.OutputState }
@@ -8516,12 +7249,6 @@ func (o GetPoolsPoolCollectionItemScheduleArrayOutput) ToGetPoolsPoolCollectionI
 	return o
 }
 
-func (o GetPoolsPoolCollectionItemScheduleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetPoolsPoolCollectionItemSchedule] {
-	return pulumix.Output[[]GetPoolsPoolCollectionItemSchedule]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetPoolsPoolCollectionItemScheduleArrayOutput) Index(i pulumi.IntInput) GetPoolsPoolCollectionItemScheduleOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPoolsPoolCollectionItemSchedule {
 		return vs[0].([]GetPoolsPoolCollectionItemSchedule)[vs[1].(int)]
@@ -8530,9 +7257,9 @@ func (o GetPoolsPoolCollectionItemScheduleArrayOutput) Index(i pulumi.IntInput) 
 
 type GetPrivateEndpointScanDetail struct {
 	// A fully-qualified domain name (FQDN).
-	Fqdn string `pulumi:"fqdn"`
+	Fqdn *string `pulumi:"fqdn"`
 	// The port number of the FQDN
-	Port string `pulumi:"port"`
+	Port *string `pulumi:"port"`
 }
 
 // GetPrivateEndpointScanDetailInput is an input type that accepts GetPrivateEndpointScanDetailArgs and GetPrivateEndpointScanDetailOutput values.
@@ -8548,9 +7275,9 @@ type GetPrivateEndpointScanDetailInput interface {
 
 type GetPrivateEndpointScanDetailArgs struct {
 	// A fully-qualified domain name (FQDN).
-	Fqdn pulumi.StringInput `pulumi:"fqdn"`
+	Fqdn pulumi.StringPtrInput `pulumi:"fqdn"`
 	// The port number of the FQDN
-	Port pulumi.StringInput `pulumi:"port"`
+	Port pulumi.StringPtrInput `pulumi:"port"`
 }
 
 func (GetPrivateEndpointScanDetailArgs) ElementType() reflect.Type {
@@ -8563,12 +7290,6 @@ func (i GetPrivateEndpointScanDetailArgs) ToGetPrivateEndpointScanDetailOutput()
 
 func (i GetPrivateEndpointScanDetailArgs) ToGetPrivateEndpointScanDetailOutputWithContext(ctx context.Context) GetPrivateEndpointScanDetailOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetPrivateEndpointScanDetailOutput)
-}
-
-func (i GetPrivateEndpointScanDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetPrivateEndpointScanDetail] {
-	return pulumix.Output[GetPrivateEndpointScanDetail]{
-		OutputState: i.ToGetPrivateEndpointScanDetailOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetPrivateEndpointScanDetailArrayInput is an input type that accepts GetPrivateEndpointScanDetailArray and GetPrivateEndpointScanDetailArrayOutput values.
@@ -8596,12 +7317,6 @@ func (i GetPrivateEndpointScanDetailArray) ToGetPrivateEndpointScanDetailArrayOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetPrivateEndpointScanDetailArrayOutput)
 }
 
-func (i GetPrivateEndpointScanDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetPrivateEndpointScanDetail] {
-	return pulumix.Output[[]GetPrivateEndpointScanDetail]{
-		OutputState: i.ToGetPrivateEndpointScanDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetPrivateEndpointScanDetailOutput struct{ *pulumi.OutputState }
 
 func (GetPrivateEndpointScanDetailOutput) ElementType() reflect.Type {
@@ -8616,20 +7331,14 @@ func (o GetPrivateEndpointScanDetailOutput) ToGetPrivateEndpointScanDetailOutput
 	return o
 }
 
-func (o GetPrivateEndpointScanDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetPrivateEndpointScanDetail] {
-	return pulumix.Output[GetPrivateEndpointScanDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 // A fully-qualified domain name (FQDN).
-func (o GetPrivateEndpointScanDetailOutput) Fqdn() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPrivateEndpointScanDetail) string { return v.Fqdn }).(pulumi.StringOutput)
+func (o GetPrivateEndpointScanDetailOutput) Fqdn() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetPrivateEndpointScanDetail) *string { return v.Fqdn }).(pulumi.StringPtrOutput)
 }
 
 // The port number of the FQDN
-func (o GetPrivateEndpointScanDetailOutput) Port() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPrivateEndpointScanDetail) string { return v.Port }).(pulumi.StringOutput)
+func (o GetPrivateEndpointScanDetailOutput) Port() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetPrivateEndpointScanDetail) *string { return v.Port }).(pulumi.StringPtrOutput)
 }
 
 type GetPrivateEndpointScanDetailArrayOutput struct{ *pulumi.OutputState }
@@ -8644,12 +7353,6 @@ func (o GetPrivateEndpointScanDetailArrayOutput) ToGetPrivateEndpointScanDetailA
 
 func (o GetPrivateEndpointScanDetailArrayOutput) ToGetPrivateEndpointScanDetailArrayOutputWithContext(ctx context.Context) GetPrivateEndpointScanDetailArrayOutput {
 	return o
-}
-
-func (o GetPrivateEndpointScanDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetPrivateEndpointScanDetail] {
-	return pulumix.Output[[]GetPrivateEndpointScanDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetPrivateEndpointScanDetailArrayOutput) Index(i pulumi.IntInput) GetPrivateEndpointScanDetailOutput {
@@ -8693,12 +7396,6 @@ func (i GetPrivateEndpointsFilterArgs) ToGetPrivateEndpointsFilterOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetPrivateEndpointsFilterOutput)
 }
 
-func (i GetPrivateEndpointsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetPrivateEndpointsFilter] {
-	return pulumix.Output[GetPrivateEndpointsFilter]{
-		OutputState: i.ToGetPrivateEndpointsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetPrivateEndpointsFilterArrayInput is an input type that accepts GetPrivateEndpointsFilterArray and GetPrivateEndpointsFilterArrayOutput values.
 // You can construct a concrete instance of `GetPrivateEndpointsFilterArrayInput` via:
 //
@@ -8724,12 +7421,6 @@ func (i GetPrivateEndpointsFilterArray) ToGetPrivateEndpointsFilterArrayOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetPrivateEndpointsFilterArrayOutput)
 }
 
-func (i GetPrivateEndpointsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetPrivateEndpointsFilter] {
-	return pulumix.Output[[]GetPrivateEndpointsFilter]{
-		OutputState: i.ToGetPrivateEndpointsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetPrivateEndpointsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetPrivateEndpointsFilterOutput) ElementType() reflect.Type {
@@ -8742,12 +7433,6 @@ func (o GetPrivateEndpointsFilterOutput) ToGetPrivateEndpointsFilterOutput() Get
 
 func (o GetPrivateEndpointsFilterOutput) ToGetPrivateEndpointsFilterOutputWithContext(ctx context.Context) GetPrivateEndpointsFilterOutput {
 	return o
-}
-
-func (o GetPrivateEndpointsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetPrivateEndpointsFilter] {
-	return pulumix.Output[GetPrivateEndpointsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetPrivateEndpointsFilterOutput) Name() pulumi.StringOutput {
@@ -8774,12 +7459,6 @@ func (o GetPrivateEndpointsFilterArrayOutput) ToGetPrivateEndpointsFilterArrayOu
 
 func (o GetPrivateEndpointsFilterArrayOutput) ToGetPrivateEndpointsFilterArrayOutputWithContext(ctx context.Context) GetPrivateEndpointsFilterArrayOutput {
 	return o
-}
-
-func (o GetPrivateEndpointsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetPrivateEndpointsFilter] {
-	return pulumix.Output[[]GetPrivateEndpointsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetPrivateEndpointsFilterArrayOutput) Index(i pulumi.IntInput) GetPrivateEndpointsFilterOutput {
@@ -8819,12 +7498,6 @@ func (i GetPrivateEndpointsPrivateEndpointCollectionArgs) ToGetPrivateEndpointsP
 	return pulumi.ToOutputWithContext(ctx, i).(GetPrivateEndpointsPrivateEndpointCollectionOutput)
 }
 
-func (i GetPrivateEndpointsPrivateEndpointCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetPrivateEndpointsPrivateEndpointCollection] {
-	return pulumix.Output[GetPrivateEndpointsPrivateEndpointCollection]{
-		OutputState: i.ToGetPrivateEndpointsPrivateEndpointCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetPrivateEndpointsPrivateEndpointCollectionArrayInput is an input type that accepts GetPrivateEndpointsPrivateEndpointCollectionArray and GetPrivateEndpointsPrivateEndpointCollectionArrayOutput values.
 // You can construct a concrete instance of `GetPrivateEndpointsPrivateEndpointCollectionArrayInput` via:
 //
@@ -8850,12 +7523,6 @@ func (i GetPrivateEndpointsPrivateEndpointCollectionArray) ToGetPrivateEndpoints
 	return pulumi.ToOutputWithContext(ctx, i).(GetPrivateEndpointsPrivateEndpointCollectionArrayOutput)
 }
 
-func (i GetPrivateEndpointsPrivateEndpointCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetPrivateEndpointsPrivateEndpointCollection] {
-	return pulumix.Output[[]GetPrivateEndpointsPrivateEndpointCollection]{
-		OutputState: i.ToGetPrivateEndpointsPrivateEndpointCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetPrivateEndpointsPrivateEndpointCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetPrivateEndpointsPrivateEndpointCollectionOutput) ElementType() reflect.Type {
@@ -8868,12 +7535,6 @@ func (o GetPrivateEndpointsPrivateEndpointCollectionOutput) ToGetPrivateEndpoint
 
 func (o GetPrivateEndpointsPrivateEndpointCollectionOutput) ToGetPrivateEndpointsPrivateEndpointCollectionOutputWithContext(ctx context.Context) GetPrivateEndpointsPrivateEndpointCollectionOutput {
 	return o
-}
-
-func (o GetPrivateEndpointsPrivateEndpointCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetPrivateEndpointsPrivateEndpointCollection] {
-	return pulumix.Output[GetPrivateEndpointsPrivateEndpointCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetPrivateEndpointsPrivateEndpointCollectionOutput) Items() GetPrivateEndpointsPrivateEndpointCollectionItemArrayOutput {
@@ -8896,12 +7557,6 @@ func (o GetPrivateEndpointsPrivateEndpointCollectionArrayOutput) ToGetPrivateEnd
 	return o
 }
 
-func (o GetPrivateEndpointsPrivateEndpointCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetPrivateEndpointsPrivateEndpointCollection] {
-	return pulumix.Output[[]GetPrivateEndpointsPrivateEndpointCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetPrivateEndpointsPrivateEndpointCollectionArrayOutput) Index(i pulumi.IntInput) GetPrivateEndpointsPrivateEndpointCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPrivateEndpointsPrivateEndpointCollection {
 		return vs[0].([]GetPrivateEndpointsPrivateEndpointCollection)[vs[1].(int)]
@@ -8910,39 +7565,39 @@ func (o GetPrivateEndpointsPrivateEndpointCollectionArrayOutput) Index(i pulumi.
 
 type GetPrivateEndpointsPrivateEndpointCollectionItem struct {
 	// The OCID of the compartment.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A user-friendly description. Avoid entering confidential information.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// The query parameter for the Spark application name. Note: At a time only one optional filter can be used with `compartmentId` to get the list of Private Endpoint resources.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// An array of DNS zone names. Example: `[ "app.examplecorp.com", "app.examplecorp2.com" ]`
 	DnsZones []string `pulumi:"dnsZones"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The OCID of a private endpoint.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The detailed messages about the lifecycle state.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// The maximum number of hosts to be accessed through the private endpoint. This value is used to calculate the relevant CIDR block and should be a multiple of 256.  If the value is not a multiple of 256, it is rounded up to the next multiple of 256. For example, 300 is rounded up to 512.
-	MaxHostCount int `pulumi:"maxHostCount"`
+	MaxHostCount *int `pulumi:"maxHostCount"`
 	// An array of network security group OCIDs.
 	NsgIds []string `pulumi:"nsgIds"`
 	// The OCID of the user who created the resource.
-	OwnerPrincipalId string `pulumi:"ownerPrincipalId"`
+	OwnerPrincipalId *string `pulumi:"ownerPrincipalId"`
 	// The username of the user who created the resource.  If the username of the owner does not exist, `null` will be returned and the caller should refer to the ownerPrincipalId value instead.
-	OwnerUserName string `pulumi:"ownerUserName"`
+	OwnerUserName *string `pulumi:"ownerUserName"`
 	// An array of fqdn/port pairs used to create private endpoint. Each object is a simple key-value pair with FQDN as key and port number as value. [ { fqdn: "scan1.oracle.com", port: "1521"}, { fqdn: "scan2.oracle.com", port: "1521" } ]
 	ScanDetails []GetPrivateEndpointsPrivateEndpointCollectionItemScanDetail `pulumi:"scanDetails"`
 	// The LifecycleState of the private endpoint.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The OCID of a subnet.
-	SubnetId string `pulumi:"subnetId"`
+	SubnetId *string `pulumi:"subnetId"`
 	// The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The date and time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 // GetPrivateEndpointsPrivateEndpointCollectionItemInput is an input type that accepts GetPrivateEndpointsPrivateEndpointCollectionItemArgs and GetPrivateEndpointsPrivateEndpointCollectionItemOutput values.
@@ -8958,39 +7613,39 @@ type GetPrivateEndpointsPrivateEndpointCollectionItemInput interface {
 
 type GetPrivateEndpointsPrivateEndpointCollectionItemArgs struct {
 	// The OCID of the compartment.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// A user-friendly description. Avoid entering confidential information.
-	Description pulumi.StringInput `pulumi:"description"`
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// The query parameter for the Spark application name. Note: At a time only one optional filter can be used with `compartmentId` to get the list of Private Endpoint resources.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// An array of DNS zone names. Example: `[ "app.examplecorp.com", "app.examplecorp2.com" ]`
 	DnsZones pulumi.StringArrayInput `pulumi:"dnsZones"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// The OCID of a private endpoint.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// The detailed messages about the lifecycle state.
-	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrInput `pulumi:"lifecycleDetails"`
 	// The maximum number of hosts to be accessed through the private endpoint. This value is used to calculate the relevant CIDR block and should be a multiple of 256.  If the value is not a multiple of 256, it is rounded up to the next multiple of 256. For example, 300 is rounded up to 512.
-	MaxHostCount pulumi.IntInput `pulumi:"maxHostCount"`
+	MaxHostCount pulumi.IntPtrInput `pulumi:"maxHostCount"`
 	// An array of network security group OCIDs.
 	NsgIds pulumi.StringArrayInput `pulumi:"nsgIds"`
 	// The OCID of the user who created the resource.
-	OwnerPrincipalId pulumi.StringInput `pulumi:"ownerPrincipalId"`
+	OwnerPrincipalId pulumi.StringPtrInput `pulumi:"ownerPrincipalId"`
 	// The username of the user who created the resource.  If the username of the owner does not exist, `null` will be returned and the caller should refer to the ownerPrincipalId value instead.
-	OwnerUserName pulumi.StringInput `pulumi:"ownerUserName"`
+	OwnerUserName pulumi.StringPtrInput `pulumi:"ownerUserName"`
 	// An array of fqdn/port pairs used to create private endpoint. Each object is a simple key-value pair with FQDN as key and port number as value. [ { fqdn: "scan1.oracle.com", port: "1521"}, { fqdn: "scan2.oracle.com", port: "1521" } ]
 	ScanDetails GetPrivateEndpointsPrivateEndpointCollectionItemScanDetailArrayInput `pulumi:"scanDetails"`
 	// The LifecycleState of the private endpoint.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// The OCID of a subnet.
-	SubnetId pulumi.StringInput `pulumi:"subnetId"`
+	SubnetId pulumi.StringPtrInput `pulumi:"subnetId"`
 	// The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// The date and time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
-	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
 }
 
 func (GetPrivateEndpointsPrivateEndpointCollectionItemArgs) ElementType() reflect.Type {
@@ -9003,12 +7658,6 @@ func (i GetPrivateEndpointsPrivateEndpointCollectionItemArgs) ToGetPrivateEndpoi
 
 func (i GetPrivateEndpointsPrivateEndpointCollectionItemArgs) ToGetPrivateEndpointsPrivateEndpointCollectionItemOutputWithContext(ctx context.Context) GetPrivateEndpointsPrivateEndpointCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetPrivateEndpointsPrivateEndpointCollectionItemOutput)
-}
-
-func (i GetPrivateEndpointsPrivateEndpointCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetPrivateEndpointsPrivateEndpointCollectionItem] {
-	return pulumix.Output[GetPrivateEndpointsPrivateEndpointCollectionItem]{
-		OutputState: i.ToGetPrivateEndpointsPrivateEndpointCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetPrivateEndpointsPrivateEndpointCollectionItemArrayInput is an input type that accepts GetPrivateEndpointsPrivateEndpointCollectionItemArray and GetPrivateEndpointsPrivateEndpointCollectionItemArrayOutput values.
@@ -9036,12 +7685,6 @@ func (i GetPrivateEndpointsPrivateEndpointCollectionItemArray) ToGetPrivateEndpo
 	return pulumi.ToOutputWithContext(ctx, i).(GetPrivateEndpointsPrivateEndpointCollectionItemArrayOutput)
 }
 
-func (i GetPrivateEndpointsPrivateEndpointCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetPrivateEndpointsPrivateEndpointCollectionItem] {
-	return pulumix.Output[[]GetPrivateEndpointsPrivateEndpointCollectionItem]{
-		OutputState: i.ToGetPrivateEndpointsPrivateEndpointCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetPrivateEndpointsPrivateEndpointCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetPrivateEndpointsPrivateEndpointCollectionItemOutput) ElementType() reflect.Type {
@@ -9056,15 +7699,9 @@ func (o GetPrivateEndpointsPrivateEndpointCollectionItemOutput) ToGetPrivateEndp
 	return o
 }
 
-func (o GetPrivateEndpointsPrivateEndpointCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetPrivateEndpointsPrivateEndpointCollectionItem] {
-	return pulumix.Output[GetPrivateEndpointsPrivateEndpointCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the compartment.
-func (o GetPrivateEndpointsPrivateEndpointCollectionItemOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPrivateEndpointsPrivateEndpointCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetPrivateEndpointsPrivateEndpointCollectionItemOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetPrivateEndpointsPrivateEndpointCollectionItem) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -9073,13 +7710,13 @@ func (o GetPrivateEndpointsPrivateEndpointCollectionItemOutput) DefinedTags() pu
 }
 
 // A user-friendly description. Avoid entering confidential information.
-func (o GetPrivateEndpointsPrivateEndpointCollectionItemOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPrivateEndpointsPrivateEndpointCollectionItem) string { return v.Description }).(pulumi.StringOutput)
+func (o GetPrivateEndpointsPrivateEndpointCollectionItemOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetPrivateEndpointsPrivateEndpointCollectionItem) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // The query parameter for the Spark application name. Note: At a time only one optional filter can be used with `compartmentId` to get the list of Private Endpoint resources.
-func (o GetPrivateEndpointsPrivateEndpointCollectionItemOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPrivateEndpointsPrivateEndpointCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetPrivateEndpointsPrivateEndpointCollectionItemOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetPrivateEndpointsPrivateEndpointCollectionItem) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // An array of DNS zone names. Example: `[ "app.examplecorp.com", "app.examplecorp2.com" ]`
@@ -9093,18 +7730,18 @@ func (o GetPrivateEndpointsPrivateEndpointCollectionItemOutput) FreeformTags() p
 }
 
 // The OCID of a private endpoint.
-func (o GetPrivateEndpointsPrivateEndpointCollectionItemOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPrivateEndpointsPrivateEndpointCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+func (o GetPrivateEndpointsPrivateEndpointCollectionItemOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetPrivateEndpointsPrivateEndpointCollectionItem) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The detailed messages about the lifecycle state.
-func (o GetPrivateEndpointsPrivateEndpointCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPrivateEndpointsPrivateEndpointCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o GetPrivateEndpointsPrivateEndpointCollectionItemOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetPrivateEndpointsPrivateEndpointCollectionItem) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // The maximum number of hosts to be accessed through the private endpoint. This value is used to calculate the relevant CIDR block and should be a multiple of 256.  If the value is not a multiple of 256, it is rounded up to the next multiple of 256. For example, 300 is rounded up to 512.
-func (o GetPrivateEndpointsPrivateEndpointCollectionItemOutput) MaxHostCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetPrivateEndpointsPrivateEndpointCollectionItem) int { return v.MaxHostCount }).(pulumi.IntOutput)
+func (o GetPrivateEndpointsPrivateEndpointCollectionItemOutput) MaxHostCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetPrivateEndpointsPrivateEndpointCollectionItem) *int { return v.MaxHostCount }).(pulumi.IntPtrOutput)
 }
 
 // An array of network security group OCIDs.
@@ -9113,13 +7750,13 @@ func (o GetPrivateEndpointsPrivateEndpointCollectionItemOutput) NsgIds() pulumi.
 }
 
 // The OCID of the user who created the resource.
-func (o GetPrivateEndpointsPrivateEndpointCollectionItemOutput) OwnerPrincipalId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPrivateEndpointsPrivateEndpointCollectionItem) string { return v.OwnerPrincipalId }).(pulumi.StringOutput)
+func (o GetPrivateEndpointsPrivateEndpointCollectionItemOutput) OwnerPrincipalId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetPrivateEndpointsPrivateEndpointCollectionItem) *string { return v.OwnerPrincipalId }).(pulumi.StringPtrOutput)
 }
 
 // The username of the user who created the resource.  If the username of the owner does not exist, `null` will be returned and the caller should refer to the ownerPrincipalId value instead.
-func (o GetPrivateEndpointsPrivateEndpointCollectionItemOutput) OwnerUserName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPrivateEndpointsPrivateEndpointCollectionItem) string { return v.OwnerUserName }).(pulumi.StringOutput)
+func (o GetPrivateEndpointsPrivateEndpointCollectionItemOutput) OwnerUserName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetPrivateEndpointsPrivateEndpointCollectionItem) *string { return v.OwnerUserName }).(pulumi.StringPtrOutput)
 }
 
 // An array of fqdn/port pairs used to create private endpoint. Each object is a simple key-value pair with FQDN as key and port number as value. [ { fqdn: "scan1.oracle.com", port: "1521"}, { fqdn: "scan2.oracle.com", port: "1521" } ]
@@ -9130,23 +7767,23 @@ func (o GetPrivateEndpointsPrivateEndpointCollectionItemOutput) ScanDetails() Ge
 }
 
 // The LifecycleState of the private endpoint.
-func (o GetPrivateEndpointsPrivateEndpointCollectionItemOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPrivateEndpointsPrivateEndpointCollectionItem) string { return v.State }).(pulumi.StringOutput)
+func (o GetPrivateEndpointsPrivateEndpointCollectionItemOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetPrivateEndpointsPrivateEndpointCollectionItem) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of a subnet.
-func (o GetPrivateEndpointsPrivateEndpointCollectionItemOutput) SubnetId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPrivateEndpointsPrivateEndpointCollectionItem) string { return v.SubnetId }).(pulumi.StringOutput)
+func (o GetPrivateEndpointsPrivateEndpointCollectionItemOutput) SubnetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetPrivateEndpointsPrivateEndpointCollectionItem) *string { return v.SubnetId }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
-func (o GetPrivateEndpointsPrivateEndpointCollectionItemOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPrivateEndpointsPrivateEndpointCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetPrivateEndpointsPrivateEndpointCollectionItemOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetPrivateEndpointsPrivateEndpointCollectionItem) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
-func (o GetPrivateEndpointsPrivateEndpointCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPrivateEndpointsPrivateEndpointCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o GetPrivateEndpointsPrivateEndpointCollectionItemOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetPrivateEndpointsPrivateEndpointCollectionItem) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type GetPrivateEndpointsPrivateEndpointCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -9163,12 +7800,6 @@ func (o GetPrivateEndpointsPrivateEndpointCollectionItemArrayOutput) ToGetPrivat
 	return o
 }
 
-func (o GetPrivateEndpointsPrivateEndpointCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetPrivateEndpointsPrivateEndpointCollectionItem] {
-	return pulumix.Output[[]GetPrivateEndpointsPrivateEndpointCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetPrivateEndpointsPrivateEndpointCollectionItemArrayOutput) Index(i pulumi.IntInput) GetPrivateEndpointsPrivateEndpointCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPrivateEndpointsPrivateEndpointCollectionItem {
 		return vs[0].([]GetPrivateEndpointsPrivateEndpointCollectionItem)[vs[1].(int)]
@@ -9177,9 +7808,9 @@ func (o GetPrivateEndpointsPrivateEndpointCollectionItemArrayOutput) Index(i pul
 
 type GetPrivateEndpointsPrivateEndpointCollectionItemScanDetail struct {
 	// A fully-qualified domain name (FQDN).
-	Fqdn string `pulumi:"fqdn"`
+	Fqdn *string `pulumi:"fqdn"`
 	// The port number of the FQDN
-	Port string `pulumi:"port"`
+	Port *string `pulumi:"port"`
 }
 
 // GetPrivateEndpointsPrivateEndpointCollectionItemScanDetailInput is an input type that accepts GetPrivateEndpointsPrivateEndpointCollectionItemScanDetailArgs and GetPrivateEndpointsPrivateEndpointCollectionItemScanDetailOutput values.
@@ -9195,9 +7826,9 @@ type GetPrivateEndpointsPrivateEndpointCollectionItemScanDetailInput interface {
 
 type GetPrivateEndpointsPrivateEndpointCollectionItemScanDetailArgs struct {
 	// A fully-qualified domain name (FQDN).
-	Fqdn pulumi.StringInput `pulumi:"fqdn"`
+	Fqdn pulumi.StringPtrInput `pulumi:"fqdn"`
 	// The port number of the FQDN
-	Port pulumi.StringInput `pulumi:"port"`
+	Port pulumi.StringPtrInput `pulumi:"port"`
 }
 
 func (GetPrivateEndpointsPrivateEndpointCollectionItemScanDetailArgs) ElementType() reflect.Type {
@@ -9210,12 +7841,6 @@ func (i GetPrivateEndpointsPrivateEndpointCollectionItemScanDetailArgs) ToGetPri
 
 func (i GetPrivateEndpointsPrivateEndpointCollectionItemScanDetailArgs) ToGetPrivateEndpointsPrivateEndpointCollectionItemScanDetailOutputWithContext(ctx context.Context) GetPrivateEndpointsPrivateEndpointCollectionItemScanDetailOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetPrivateEndpointsPrivateEndpointCollectionItemScanDetailOutput)
-}
-
-func (i GetPrivateEndpointsPrivateEndpointCollectionItemScanDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetPrivateEndpointsPrivateEndpointCollectionItemScanDetail] {
-	return pulumix.Output[GetPrivateEndpointsPrivateEndpointCollectionItemScanDetail]{
-		OutputState: i.ToGetPrivateEndpointsPrivateEndpointCollectionItemScanDetailOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetPrivateEndpointsPrivateEndpointCollectionItemScanDetailArrayInput is an input type that accepts GetPrivateEndpointsPrivateEndpointCollectionItemScanDetailArray and GetPrivateEndpointsPrivateEndpointCollectionItemScanDetailArrayOutput values.
@@ -9243,12 +7868,6 @@ func (i GetPrivateEndpointsPrivateEndpointCollectionItemScanDetailArray) ToGetPr
 	return pulumi.ToOutputWithContext(ctx, i).(GetPrivateEndpointsPrivateEndpointCollectionItemScanDetailArrayOutput)
 }
 
-func (i GetPrivateEndpointsPrivateEndpointCollectionItemScanDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetPrivateEndpointsPrivateEndpointCollectionItemScanDetail] {
-	return pulumix.Output[[]GetPrivateEndpointsPrivateEndpointCollectionItemScanDetail]{
-		OutputState: i.ToGetPrivateEndpointsPrivateEndpointCollectionItemScanDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetPrivateEndpointsPrivateEndpointCollectionItemScanDetailOutput struct{ *pulumi.OutputState }
 
 func (GetPrivateEndpointsPrivateEndpointCollectionItemScanDetailOutput) ElementType() reflect.Type {
@@ -9263,20 +7882,14 @@ func (o GetPrivateEndpointsPrivateEndpointCollectionItemScanDetailOutput) ToGetP
 	return o
 }
 
-func (o GetPrivateEndpointsPrivateEndpointCollectionItemScanDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetPrivateEndpointsPrivateEndpointCollectionItemScanDetail] {
-	return pulumix.Output[GetPrivateEndpointsPrivateEndpointCollectionItemScanDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 // A fully-qualified domain name (FQDN).
-func (o GetPrivateEndpointsPrivateEndpointCollectionItemScanDetailOutput) Fqdn() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPrivateEndpointsPrivateEndpointCollectionItemScanDetail) string { return v.Fqdn }).(pulumi.StringOutput)
+func (o GetPrivateEndpointsPrivateEndpointCollectionItemScanDetailOutput) Fqdn() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetPrivateEndpointsPrivateEndpointCollectionItemScanDetail) *string { return v.Fqdn }).(pulumi.StringPtrOutput)
 }
 
 // The port number of the FQDN
-func (o GetPrivateEndpointsPrivateEndpointCollectionItemScanDetailOutput) Port() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPrivateEndpointsPrivateEndpointCollectionItemScanDetail) string { return v.Port }).(pulumi.StringOutput)
+func (o GetPrivateEndpointsPrivateEndpointCollectionItemScanDetailOutput) Port() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetPrivateEndpointsPrivateEndpointCollectionItemScanDetail) *string { return v.Port }).(pulumi.StringPtrOutput)
 }
 
 type GetPrivateEndpointsPrivateEndpointCollectionItemScanDetailArrayOutput struct{ *pulumi.OutputState }
@@ -9291,12 +7904,6 @@ func (o GetPrivateEndpointsPrivateEndpointCollectionItemScanDetailArrayOutput) T
 
 func (o GetPrivateEndpointsPrivateEndpointCollectionItemScanDetailArrayOutput) ToGetPrivateEndpointsPrivateEndpointCollectionItemScanDetailArrayOutputWithContext(ctx context.Context) GetPrivateEndpointsPrivateEndpointCollectionItemScanDetailArrayOutput {
 	return o
-}
-
-func (o GetPrivateEndpointsPrivateEndpointCollectionItemScanDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetPrivateEndpointsPrivateEndpointCollectionItemScanDetail] {
-	return pulumix.Output[[]GetPrivateEndpointsPrivateEndpointCollectionItemScanDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetPrivateEndpointsPrivateEndpointCollectionItemScanDetailArrayOutput) Index(i pulumi.IntInput) GetPrivateEndpointsPrivateEndpointCollectionItemScanDetailOutput {
@@ -9340,12 +7947,6 @@ func (i GetRunLogsFilterArgs) ToGetRunLogsFilterOutputWithContext(ctx context.Co
 	return pulumi.ToOutputWithContext(ctx, i).(GetRunLogsFilterOutput)
 }
 
-func (i GetRunLogsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetRunLogsFilter] {
-	return pulumix.Output[GetRunLogsFilter]{
-		OutputState: i.ToGetRunLogsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetRunLogsFilterArrayInput is an input type that accepts GetRunLogsFilterArray and GetRunLogsFilterArrayOutput values.
 // You can construct a concrete instance of `GetRunLogsFilterArrayInput` via:
 //
@@ -9371,12 +7972,6 @@ func (i GetRunLogsFilterArray) ToGetRunLogsFilterArrayOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(GetRunLogsFilterArrayOutput)
 }
 
-func (i GetRunLogsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetRunLogsFilter] {
-	return pulumix.Output[[]GetRunLogsFilter]{
-		OutputState: i.ToGetRunLogsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetRunLogsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetRunLogsFilterOutput) ElementType() reflect.Type {
@@ -9389,12 +7984,6 @@ func (o GetRunLogsFilterOutput) ToGetRunLogsFilterOutput() GetRunLogsFilterOutpu
 
 func (o GetRunLogsFilterOutput) ToGetRunLogsFilterOutputWithContext(ctx context.Context) GetRunLogsFilterOutput {
 	return o
-}
-
-func (o GetRunLogsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetRunLogsFilter] {
-	return pulumix.Output[GetRunLogsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetRunLogsFilterOutput) Name() pulumi.StringOutput {
@@ -9423,12 +8012,6 @@ func (o GetRunLogsFilterArrayOutput) ToGetRunLogsFilterArrayOutputWithContext(ct
 	return o
 }
 
-func (o GetRunLogsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetRunLogsFilter] {
-	return pulumix.Output[[]GetRunLogsFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetRunLogsFilterArrayOutput) Index(i pulumi.IntInput) GetRunLogsFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRunLogsFilter {
 		return vs[0].([]GetRunLogsFilter)[vs[1].(int)]
@@ -9436,13 +8019,13 @@ func (o GetRunLogsFilterArrayOutput) Index(i pulumi.IntInput) GetRunLogsFilterOu
 }
 
 type GetRunLogsRunLog struct {
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// The unique ID for the run
-	RunId       string `pulumi:"runId"`
-	SizeInBytes string `pulumi:"sizeInBytes"`
-	Source      string `pulumi:"source"`
-	TimeCreated string `pulumi:"timeCreated"`
-	Type        string `pulumi:"type"`
+	RunId       *string `pulumi:"runId"`
+	SizeInBytes *string `pulumi:"sizeInBytes"`
+	Source      *string `pulumi:"source"`
+	TimeCreated *string `pulumi:"timeCreated"`
+	Type        *string `pulumi:"type"`
 }
 
 // GetRunLogsRunLogInput is an input type that accepts GetRunLogsRunLogArgs and GetRunLogsRunLogOutput values.
@@ -9457,13 +8040,13 @@ type GetRunLogsRunLogInput interface {
 }
 
 type GetRunLogsRunLogArgs struct {
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// The unique ID for the run
-	RunId       pulumi.StringInput `pulumi:"runId"`
-	SizeInBytes pulumi.StringInput `pulumi:"sizeInBytes"`
-	Source      pulumi.StringInput `pulumi:"source"`
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
-	Type        pulumi.StringInput `pulumi:"type"`
+	RunId       pulumi.StringPtrInput `pulumi:"runId"`
+	SizeInBytes pulumi.StringPtrInput `pulumi:"sizeInBytes"`
+	Source      pulumi.StringPtrInput `pulumi:"source"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
+	Type        pulumi.StringPtrInput `pulumi:"type"`
 }
 
 func (GetRunLogsRunLogArgs) ElementType() reflect.Type {
@@ -9476,12 +8059,6 @@ func (i GetRunLogsRunLogArgs) ToGetRunLogsRunLogOutput() GetRunLogsRunLogOutput 
 
 func (i GetRunLogsRunLogArgs) ToGetRunLogsRunLogOutputWithContext(ctx context.Context) GetRunLogsRunLogOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetRunLogsRunLogOutput)
-}
-
-func (i GetRunLogsRunLogArgs) ToOutput(ctx context.Context) pulumix.Output[GetRunLogsRunLog] {
-	return pulumix.Output[GetRunLogsRunLog]{
-		OutputState: i.ToGetRunLogsRunLogOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetRunLogsRunLogArrayInput is an input type that accepts GetRunLogsRunLogArray and GetRunLogsRunLogArrayOutput values.
@@ -9509,12 +8086,6 @@ func (i GetRunLogsRunLogArray) ToGetRunLogsRunLogArrayOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(GetRunLogsRunLogArrayOutput)
 }
 
-func (i GetRunLogsRunLogArray) ToOutput(ctx context.Context) pulumix.Output[[]GetRunLogsRunLog] {
-	return pulumix.Output[[]GetRunLogsRunLog]{
-		OutputState: i.ToGetRunLogsRunLogArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetRunLogsRunLogOutput struct{ *pulumi.OutputState }
 
 func (GetRunLogsRunLogOutput) ElementType() reflect.Type {
@@ -9529,35 +8100,29 @@ func (o GetRunLogsRunLogOutput) ToGetRunLogsRunLogOutputWithContext(ctx context.
 	return o
 }
 
-func (o GetRunLogsRunLogOutput) ToOutput(ctx context.Context) pulumix.Output[GetRunLogsRunLog] {
-	return pulumix.Output[GetRunLogsRunLog]{
-		OutputState: o.OutputState,
-	}
-}
-
-func (o GetRunLogsRunLogOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRunLogsRunLog) string { return v.Name }).(pulumi.StringOutput)
+func (o GetRunLogsRunLogOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRunLogsRunLog) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // The unique ID for the run
-func (o GetRunLogsRunLogOutput) RunId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRunLogsRunLog) string { return v.RunId }).(pulumi.StringOutput)
+func (o GetRunLogsRunLogOutput) RunId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRunLogsRunLog) *string { return v.RunId }).(pulumi.StringPtrOutput)
 }
 
-func (o GetRunLogsRunLogOutput) SizeInBytes() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRunLogsRunLog) string { return v.SizeInBytes }).(pulumi.StringOutput)
+func (o GetRunLogsRunLogOutput) SizeInBytes() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRunLogsRunLog) *string { return v.SizeInBytes }).(pulumi.StringPtrOutput)
 }
 
-func (o GetRunLogsRunLogOutput) Source() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRunLogsRunLog) string { return v.Source }).(pulumi.StringOutput)
+func (o GetRunLogsRunLogOutput) Source() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRunLogsRunLog) *string { return v.Source }).(pulumi.StringPtrOutput)
 }
 
-func (o GetRunLogsRunLogOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRunLogsRunLog) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetRunLogsRunLogOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRunLogsRunLog) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
-func (o GetRunLogsRunLogOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRunLogsRunLog) string { return v.Type }).(pulumi.StringOutput)
+func (o GetRunLogsRunLogOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRunLogsRunLog) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
 
 type GetRunLogsRunLogArrayOutput struct{ *pulumi.OutputState }
@@ -9574,12 +8139,6 @@ func (o GetRunLogsRunLogArrayOutput) ToGetRunLogsRunLogArrayOutputWithContext(ct
 	return o
 }
 
-func (o GetRunLogsRunLogArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetRunLogsRunLog] {
-	return pulumix.Output[[]GetRunLogsRunLog]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetRunLogsRunLogArrayOutput) Index(i pulumi.IntInput) GetRunLogsRunLogOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRunLogsRunLog {
 		return vs[0].([]GetRunLogsRunLog)[vs[1].(int)]
@@ -9590,11 +8149,11 @@ type GetRunStatementOutput struct {
 	// An object representing execution output of a statement.
 	Datas []GetRunStatementOutputData `pulumi:"datas"`
 	// The name of the error in the statement output.
-	ErrorName string `pulumi:"errorName"`
+	ErrorName *string `pulumi:"errorName"`
 	// The value of the error in the statement output.
-	ErrorValue string `pulumi:"errorValue"`
+	ErrorValue *string `pulumi:"errorValue"`
 	// Status of the statement output.
-	Status string `pulumi:"status"`
+	Status *string `pulumi:"status"`
 	// The traceback of the statement output.
 	Tracebacks []string `pulumi:"tracebacks"`
 }
@@ -9614,11 +8173,11 @@ type GetRunStatementOutputArgs struct {
 	// An object representing execution output of a statement.
 	Datas GetRunStatementOutputDataArrayInput `pulumi:"datas"`
 	// The name of the error in the statement output.
-	ErrorName pulumi.StringInput `pulumi:"errorName"`
+	ErrorName pulumi.StringPtrInput `pulumi:"errorName"`
 	// The value of the error in the statement output.
-	ErrorValue pulumi.StringInput `pulumi:"errorValue"`
+	ErrorValue pulumi.StringPtrInput `pulumi:"errorValue"`
 	// Status of the statement output.
-	Status pulumi.StringInput `pulumi:"status"`
+	Status pulumi.StringPtrInput `pulumi:"status"`
 	// The traceback of the statement output.
 	Tracebacks pulumi.StringArrayInput `pulumi:"tracebacks"`
 }
@@ -9633,12 +8192,6 @@ func (i GetRunStatementOutputArgs) ToGetRunStatementOutputOutput() GetRunStateme
 
 func (i GetRunStatementOutputArgs) ToGetRunStatementOutputOutputWithContext(ctx context.Context) GetRunStatementOutputOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetRunStatementOutputOutput)
-}
-
-func (i GetRunStatementOutputArgs) ToOutput(ctx context.Context) pulumix.Output[GetRunStatementOutput] {
-	return pulumix.Output[GetRunStatementOutput]{
-		OutputState: i.ToGetRunStatementOutputOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetRunStatementOutputArrayInput is an input type that accepts GetRunStatementOutputArray and GetRunStatementOutputArrayOutput values.
@@ -9666,12 +8219,6 @@ func (i GetRunStatementOutputArray) ToGetRunStatementOutputArrayOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetRunStatementOutputArrayOutput)
 }
 
-func (i GetRunStatementOutputArray) ToOutput(ctx context.Context) pulumix.Output[[]GetRunStatementOutput] {
-	return pulumix.Output[[]GetRunStatementOutput]{
-		OutputState: i.ToGetRunStatementOutputArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetRunStatementOutputOutput struct{ *pulumi.OutputState }
 
 func (GetRunStatementOutputOutput) ElementType() reflect.Type {
@@ -9686,30 +8233,24 @@ func (o GetRunStatementOutputOutput) ToGetRunStatementOutputOutputWithContext(ct
 	return o
 }
 
-func (o GetRunStatementOutputOutput) ToOutput(ctx context.Context) pulumix.Output[GetRunStatementOutput] {
-	return pulumix.Output[GetRunStatementOutput]{
-		OutputState: o.OutputState,
-	}
-}
-
 // An object representing execution output of a statement.
 func (o GetRunStatementOutputOutput) Datas() GetRunStatementOutputDataArrayOutput {
 	return o.ApplyT(func(v GetRunStatementOutput) []GetRunStatementOutputData { return v.Datas }).(GetRunStatementOutputDataArrayOutput)
 }
 
 // The name of the error in the statement output.
-func (o GetRunStatementOutputOutput) ErrorName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRunStatementOutput) string { return v.ErrorName }).(pulumi.StringOutput)
+func (o GetRunStatementOutputOutput) ErrorName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRunStatementOutput) *string { return v.ErrorName }).(pulumi.StringPtrOutput)
 }
 
 // The value of the error in the statement output.
-func (o GetRunStatementOutputOutput) ErrorValue() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRunStatementOutput) string { return v.ErrorValue }).(pulumi.StringOutput)
+func (o GetRunStatementOutputOutput) ErrorValue() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRunStatementOutput) *string { return v.ErrorValue }).(pulumi.StringPtrOutput)
 }
 
 // Status of the statement output.
-func (o GetRunStatementOutputOutput) Status() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRunStatementOutput) string { return v.Status }).(pulumi.StringOutput)
+func (o GetRunStatementOutputOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRunStatementOutput) *string { return v.Status }).(pulumi.StringPtrOutput)
 }
 
 // The traceback of the statement output.
@@ -9731,12 +8272,6 @@ func (o GetRunStatementOutputArrayOutput) ToGetRunStatementOutputArrayOutputWith
 	return o
 }
 
-func (o GetRunStatementOutputArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetRunStatementOutput] {
-	return pulumix.Output[[]GetRunStatementOutput]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetRunStatementOutputArrayOutput) Index(i pulumi.IntInput) GetRunStatementOutputOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRunStatementOutput {
 		return vs[0].([]GetRunStatementOutput)[vs[1].(int)]
@@ -9745,9 +8280,9 @@ func (o GetRunStatementOutputArrayOutput) Index(i pulumi.IntInput) GetRunStateme
 
 type GetRunStatementOutputData struct {
 	// The type of the `StatementOutputData` like `TEXT_PLAIN`, `TEXT_HTML` or `IMAGE_PNG`.
-	Type string `pulumi:"type"`
+	Type *string `pulumi:"type"`
 	// The statement code execution output in html format.
-	Value string `pulumi:"value"`
+	Value *string `pulumi:"value"`
 }
 
 // GetRunStatementOutputDataInput is an input type that accepts GetRunStatementOutputDataArgs and GetRunStatementOutputDataOutput values.
@@ -9763,9 +8298,9 @@ type GetRunStatementOutputDataInput interface {
 
 type GetRunStatementOutputDataArgs struct {
 	// The type of the `StatementOutputData` like `TEXT_PLAIN`, `TEXT_HTML` or `IMAGE_PNG`.
-	Type pulumi.StringInput `pulumi:"type"`
+	Type pulumi.StringPtrInput `pulumi:"type"`
 	// The statement code execution output in html format.
-	Value pulumi.StringInput `pulumi:"value"`
+	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
 func (GetRunStatementOutputDataArgs) ElementType() reflect.Type {
@@ -9778,12 +8313,6 @@ func (i GetRunStatementOutputDataArgs) ToGetRunStatementOutputDataOutput() GetRu
 
 func (i GetRunStatementOutputDataArgs) ToGetRunStatementOutputDataOutputWithContext(ctx context.Context) GetRunStatementOutputDataOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetRunStatementOutputDataOutput)
-}
-
-func (i GetRunStatementOutputDataArgs) ToOutput(ctx context.Context) pulumix.Output[GetRunStatementOutputData] {
-	return pulumix.Output[GetRunStatementOutputData]{
-		OutputState: i.ToGetRunStatementOutputDataOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetRunStatementOutputDataArrayInput is an input type that accepts GetRunStatementOutputDataArray and GetRunStatementOutputDataArrayOutput values.
@@ -9811,12 +8340,6 @@ func (i GetRunStatementOutputDataArray) ToGetRunStatementOutputDataArrayOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetRunStatementOutputDataArrayOutput)
 }
 
-func (i GetRunStatementOutputDataArray) ToOutput(ctx context.Context) pulumix.Output[[]GetRunStatementOutputData] {
-	return pulumix.Output[[]GetRunStatementOutputData]{
-		OutputState: i.ToGetRunStatementOutputDataArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetRunStatementOutputDataOutput struct{ *pulumi.OutputState }
 
 func (GetRunStatementOutputDataOutput) ElementType() reflect.Type {
@@ -9831,20 +8354,14 @@ func (o GetRunStatementOutputDataOutput) ToGetRunStatementOutputDataOutputWithCo
 	return o
 }
 
-func (o GetRunStatementOutputDataOutput) ToOutput(ctx context.Context) pulumix.Output[GetRunStatementOutputData] {
-	return pulumix.Output[GetRunStatementOutputData]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The type of the `StatementOutputData` like `TEXT_PLAIN`, `TEXT_HTML` or `IMAGE_PNG`.
-func (o GetRunStatementOutputDataOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRunStatementOutputData) string { return v.Type }).(pulumi.StringOutput)
+func (o GetRunStatementOutputDataOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRunStatementOutputData) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
 
 // The statement code execution output in html format.
-func (o GetRunStatementOutputDataOutput) Value() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRunStatementOutputData) string { return v.Value }).(pulumi.StringOutput)
+func (o GetRunStatementOutputDataOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRunStatementOutputData) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
 
 type GetRunStatementOutputDataArrayOutput struct{ *pulumi.OutputState }
@@ -9859,12 +8376,6 @@ func (o GetRunStatementOutputDataArrayOutput) ToGetRunStatementOutputDataArrayOu
 
 func (o GetRunStatementOutputDataArrayOutput) ToGetRunStatementOutputDataArrayOutputWithContext(ctx context.Context) GetRunStatementOutputDataArrayOutput {
 	return o
-}
-
-func (o GetRunStatementOutputDataArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetRunStatementOutputData] {
-	return pulumix.Output[[]GetRunStatementOutputData]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetRunStatementOutputDataArrayOutput) Index(i pulumi.IntInput) GetRunStatementOutputDataOutput {
@@ -9908,12 +8419,6 @@ func (i GetRunStatementsFilterArgs) ToGetRunStatementsFilterOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(GetRunStatementsFilterOutput)
 }
 
-func (i GetRunStatementsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetRunStatementsFilter] {
-	return pulumix.Output[GetRunStatementsFilter]{
-		OutputState: i.ToGetRunStatementsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetRunStatementsFilterArrayInput is an input type that accepts GetRunStatementsFilterArray and GetRunStatementsFilterArrayOutput values.
 // You can construct a concrete instance of `GetRunStatementsFilterArrayInput` via:
 //
@@ -9939,12 +8444,6 @@ func (i GetRunStatementsFilterArray) ToGetRunStatementsFilterArrayOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetRunStatementsFilterArrayOutput)
 }
 
-func (i GetRunStatementsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetRunStatementsFilter] {
-	return pulumix.Output[[]GetRunStatementsFilter]{
-		OutputState: i.ToGetRunStatementsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetRunStatementsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetRunStatementsFilterOutput) ElementType() reflect.Type {
@@ -9957,12 +8456,6 @@ func (o GetRunStatementsFilterOutput) ToGetRunStatementsFilterOutput() GetRunSta
 
 func (o GetRunStatementsFilterOutput) ToGetRunStatementsFilterOutputWithContext(ctx context.Context) GetRunStatementsFilterOutput {
 	return o
-}
-
-func (o GetRunStatementsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetRunStatementsFilter] {
-	return pulumix.Output[GetRunStatementsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetRunStatementsFilterOutput) Name() pulumi.StringOutput {
@@ -9989,12 +8482,6 @@ func (o GetRunStatementsFilterArrayOutput) ToGetRunStatementsFilterArrayOutput()
 
 func (o GetRunStatementsFilterArrayOutput) ToGetRunStatementsFilterArrayOutputWithContext(ctx context.Context) GetRunStatementsFilterArrayOutput {
 	return o
-}
-
-func (o GetRunStatementsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetRunStatementsFilter] {
-	return pulumix.Output[[]GetRunStatementsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetRunStatementsFilterArrayOutput) Index(i pulumi.IntInput) GetRunStatementsFilterOutput {
@@ -10034,12 +8521,6 @@ func (i GetRunStatementsStatementCollectionArgs) ToGetRunStatementsStatementColl
 	return pulumi.ToOutputWithContext(ctx, i).(GetRunStatementsStatementCollectionOutput)
 }
 
-func (i GetRunStatementsStatementCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetRunStatementsStatementCollection] {
-	return pulumix.Output[GetRunStatementsStatementCollection]{
-		OutputState: i.ToGetRunStatementsStatementCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetRunStatementsStatementCollectionArrayInput is an input type that accepts GetRunStatementsStatementCollectionArray and GetRunStatementsStatementCollectionArrayOutput values.
 // You can construct a concrete instance of `GetRunStatementsStatementCollectionArrayInput` via:
 //
@@ -10065,12 +8546,6 @@ func (i GetRunStatementsStatementCollectionArray) ToGetRunStatementsStatementCol
 	return pulumi.ToOutputWithContext(ctx, i).(GetRunStatementsStatementCollectionArrayOutput)
 }
 
-func (i GetRunStatementsStatementCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetRunStatementsStatementCollection] {
-	return pulumix.Output[[]GetRunStatementsStatementCollection]{
-		OutputState: i.ToGetRunStatementsStatementCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetRunStatementsStatementCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetRunStatementsStatementCollectionOutput) ElementType() reflect.Type {
@@ -10083,12 +8558,6 @@ func (o GetRunStatementsStatementCollectionOutput) ToGetRunStatementsStatementCo
 
 func (o GetRunStatementsStatementCollectionOutput) ToGetRunStatementsStatementCollectionOutputWithContext(ctx context.Context) GetRunStatementsStatementCollectionOutput {
 	return o
-}
-
-func (o GetRunStatementsStatementCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetRunStatementsStatementCollection] {
-	return pulumix.Output[GetRunStatementsStatementCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetRunStatementsStatementCollectionOutput) Items() GetRunStatementsStatementCollectionItemArrayOutput {
@@ -10109,12 +8578,6 @@ func (o GetRunStatementsStatementCollectionArrayOutput) ToGetRunStatementsStatem
 	return o
 }
 
-func (o GetRunStatementsStatementCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetRunStatementsStatementCollection] {
-	return pulumix.Output[[]GetRunStatementsStatementCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetRunStatementsStatementCollectionArrayOutput) Index(i pulumi.IntInput) GetRunStatementsStatementCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRunStatementsStatementCollection {
 		return vs[0].([]GetRunStatementsStatementCollection)[vs[1].(int)]
@@ -10123,21 +8586,21 @@ func (o GetRunStatementsStatementCollectionArrayOutput) Index(i pulumi.IntInput)
 
 type GetRunStatementsStatementCollectionItem struct {
 	// The statement code to execute. Example: `println(sc.version)`
-	Code string `pulumi:"code"`
+	Code *string `pulumi:"code"`
 	// The statement ID.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The execution output of a statement.
 	Outputs []GetRunStatementsStatementCollectionItemOutputType `pulumi:"outputs"`
 	// The execution progress.
-	Progress float64 `pulumi:"progress"`
+	Progress *float64 `pulumi:"progress"`
 	// The unique ID for the run
-	RunId string `pulumi:"runId"`
+	RunId *string `pulumi:"runId"`
 	// The LifecycleState of the statement.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The date and time a statement execution was completed, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2022-05-31T21:10:29.600Z`
-	TimeCompleted string `pulumi:"timeCompleted"`
+	TimeCompleted *string `pulumi:"timeCompleted"`
 	// The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 }
 
 // GetRunStatementsStatementCollectionItemInput is an input type that accepts GetRunStatementsStatementCollectionItemArgs and GetRunStatementsStatementCollectionItemOutput values.
@@ -10153,21 +8616,21 @@ type GetRunStatementsStatementCollectionItemInput interface {
 
 type GetRunStatementsStatementCollectionItemArgs struct {
 	// The statement code to execute. Example: `println(sc.version)`
-	Code pulumi.StringInput `pulumi:"code"`
+	Code pulumi.StringPtrInput `pulumi:"code"`
 	// The statement ID.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// The execution output of a statement.
 	Outputs GetRunStatementsStatementCollectionItemOutputTypeArrayInput `pulumi:"outputs"`
 	// The execution progress.
-	Progress pulumi.Float64Input `pulumi:"progress"`
+	Progress pulumi.Float64PtrInput `pulumi:"progress"`
 	// The unique ID for the run
-	RunId pulumi.StringInput `pulumi:"runId"`
+	RunId pulumi.StringPtrInput `pulumi:"runId"`
 	// The LifecycleState of the statement.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// The date and time a statement execution was completed, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2022-05-31T21:10:29.600Z`
-	TimeCompleted pulumi.StringInput `pulumi:"timeCompleted"`
+	TimeCompleted pulumi.StringPtrInput `pulumi:"timeCompleted"`
 	// The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 }
 
 func (GetRunStatementsStatementCollectionItemArgs) ElementType() reflect.Type {
@@ -10180,12 +8643,6 @@ func (i GetRunStatementsStatementCollectionItemArgs) ToGetRunStatementsStatement
 
 func (i GetRunStatementsStatementCollectionItemArgs) ToGetRunStatementsStatementCollectionItemOutputWithContext(ctx context.Context) GetRunStatementsStatementCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetRunStatementsStatementCollectionItemOutput)
-}
-
-func (i GetRunStatementsStatementCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetRunStatementsStatementCollectionItem] {
-	return pulumix.Output[GetRunStatementsStatementCollectionItem]{
-		OutputState: i.ToGetRunStatementsStatementCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetRunStatementsStatementCollectionItemArrayInput is an input type that accepts GetRunStatementsStatementCollectionItemArray and GetRunStatementsStatementCollectionItemArrayOutput values.
@@ -10213,12 +8670,6 @@ func (i GetRunStatementsStatementCollectionItemArray) ToGetRunStatementsStatemen
 	return pulumi.ToOutputWithContext(ctx, i).(GetRunStatementsStatementCollectionItemArrayOutput)
 }
 
-func (i GetRunStatementsStatementCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetRunStatementsStatementCollectionItem] {
-	return pulumix.Output[[]GetRunStatementsStatementCollectionItem]{
-		OutputState: i.ToGetRunStatementsStatementCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetRunStatementsStatementCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetRunStatementsStatementCollectionItemOutput) ElementType() reflect.Type {
@@ -10233,20 +8684,14 @@ func (o GetRunStatementsStatementCollectionItemOutput) ToGetRunStatementsStateme
 	return o
 }
 
-func (o GetRunStatementsStatementCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetRunStatementsStatementCollectionItem] {
-	return pulumix.Output[GetRunStatementsStatementCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The statement code to execute. Example: `println(sc.version)`
-func (o GetRunStatementsStatementCollectionItemOutput) Code() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRunStatementsStatementCollectionItem) string { return v.Code }).(pulumi.StringOutput)
+func (o GetRunStatementsStatementCollectionItemOutput) Code() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRunStatementsStatementCollectionItem) *string { return v.Code }).(pulumi.StringPtrOutput)
 }
 
 // The statement ID.
-func (o GetRunStatementsStatementCollectionItemOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRunStatementsStatementCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+func (o GetRunStatementsStatementCollectionItemOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRunStatementsStatementCollectionItem) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The execution output of a statement.
@@ -10257,28 +8702,28 @@ func (o GetRunStatementsStatementCollectionItemOutput) Outputs() GetRunStatement
 }
 
 // The execution progress.
-func (o GetRunStatementsStatementCollectionItemOutput) Progress() pulumi.Float64Output {
-	return o.ApplyT(func(v GetRunStatementsStatementCollectionItem) float64 { return v.Progress }).(pulumi.Float64Output)
+func (o GetRunStatementsStatementCollectionItemOutput) Progress() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetRunStatementsStatementCollectionItem) *float64 { return v.Progress }).(pulumi.Float64PtrOutput)
 }
 
 // The unique ID for the run
-func (o GetRunStatementsStatementCollectionItemOutput) RunId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRunStatementsStatementCollectionItem) string { return v.RunId }).(pulumi.StringOutput)
+func (o GetRunStatementsStatementCollectionItemOutput) RunId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRunStatementsStatementCollectionItem) *string { return v.RunId }).(pulumi.StringPtrOutput)
 }
 
 // The LifecycleState of the statement.
-func (o GetRunStatementsStatementCollectionItemOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRunStatementsStatementCollectionItem) string { return v.State }).(pulumi.StringOutput)
+func (o GetRunStatementsStatementCollectionItemOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRunStatementsStatementCollectionItem) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time a statement execution was completed, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2022-05-31T21:10:29.600Z`
-func (o GetRunStatementsStatementCollectionItemOutput) TimeCompleted() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRunStatementsStatementCollectionItem) string { return v.TimeCompleted }).(pulumi.StringOutput)
+func (o GetRunStatementsStatementCollectionItemOutput) TimeCompleted() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRunStatementsStatementCollectionItem) *string { return v.TimeCompleted }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
-func (o GetRunStatementsStatementCollectionItemOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRunStatementsStatementCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetRunStatementsStatementCollectionItemOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRunStatementsStatementCollectionItem) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 type GetRunStatementsStatementCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -10295,12 +8740,6 @@ func (o GetRunStatementsStatementCollectionItemArrayOutput) ToGetRunStatementsSt
 	return o
 }
 
-func (o GetRunStatementsStatementCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetRunStatementsStatementCollectionItem] {
-	return pulumix.Output[[]GetRunStatementsStatementCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetRunStatementsStatementCollectionItemArrayOutput) Index(i pulumi.IntInput) GetRunStatementsStatementCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRunStatementsStatementCollectionItem {
 		return vs[0].([]GetRunStatementsStatementCollectionItem)[vs[1].(int)]
@@ -10311,11 +8750,11 @@ type GetRunStatementsStatementCollectionItemOutputType struct {
 	// An object representing execution output of a statement.
 	Datas []GetRunStatementsStatementCollectionItemOutputData `pulumi:"datas"`
 	// The name of the error in the statement output.
-	ErrorName string `pulumi:"errorName"`
+	ErrorName *string `pulumi:"errorName"`
 	// The value of the error in the statement output.
-	ErrorValue string `pulumi:"errorValue"`
+	ErrorValue *string `pulumi:"errorValue"`
 	// Status of the statement output.
-	Status string `pulumi:"status"`
+	Status *string `pulumi:"status"`
 	// The traceback of the statement output.
 	Tracebacks []string `pulumi:"tracebacks"`
 }
@@ -10335,11 +8774,11 @@ type GetRunStatementsStatementCollectionItemOutputTypeArgs struct {
 	// An object representing execution output of a statement.
 	Datas GetRunStatementsStatementCollectionItemOutputDataArrayInput `pulumi:"datas"`
 	// The name of the error in the statement output.
-	ErrorName pulumi.StringInput `pulumi:"errorName"`
+	ErrorName pulumi.StringPtrInput `pulumi:"errorName"`
 	// The value of the error in the statement output.
-	ErrorValue pulumi.StringInput `pulumi:"errorValue"`
+	ErrorValue pulumi.StringPtrInput `pulumi:"errorValue"`
 	// Status of the statement output.
-	Status pulumi.StringInput `pulumi:"status"`
+	Status pulumi.StringPtrInput `pulumi:"status"`
 	// The traceback of the statement output.
 	Tracebacks pulumi.StringArrayInput `pulumi:"tracebacks"`
 }
@@ -10354,12 +8793,6 @@ func (i GetRunStatementsStatementCollectionItemOutputTypeArgs) ToGetRunStatement
 
 func (i GetRunStatementsStatementCollectionItemOutputTypeArgs) ToGetRunStatementsStatementCollectionItemOutputTypeOutputWithContext(ctx context.Context) GetRunStatementsStatementCollectionItemOutputTypeOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetRunStatementsStatementCollectionItemOutputTypeOutput)
-}
-
-func (i GetRunStatementsStatementCollectionItemOutputTypeArgs) ToOutput(ctx context.Context) pulumix.Output[GetRunStatementsStatementCollectionItemOutputType] {
-	return pulumix.Output[GetRunStatementsStatementCollectionItemOutputType]{
-		OutputState: i.ToGetRunStatementsStatementCollectionItemOutputTypeOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetRunStatementsStatementCollectionItemOutputTypeArrayInput is an input type that accepts GetRunStatementsStatementCollectionItemOutputTypeArray and GetRunStatementsStatementCollectionItemOutputTypeArrayOutput values.
@@ -10387,12 +8820,6 @@ func (i GetRunStatementsStatementCollectionItemOutputTypeArray) ToGetRunStatemen
 	return pulumi.ToOutputWithContext(ctx, i).(GetRunStatementsStatementCollectionItemOutputTypeArrayOutput)
 }
 
-func (i GetRunStatementsStatementCollectionItemOutputTypeArray) ToOutput(ctx context.Context) pulumix.Output[[]GetRunStatementsStatementCollectionItemOutputType] {
-	return pulumix.Output[[]GetRunStatementsStatementCollectionItemOutputType]{
-		OutputState: i.ToGetRunStatementsStatementCollectionItemOutputTypeArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetRunStatementsStatementCollectionItemOutputTypeOutput struct{ *pulumi.OutputState }
 
 func (GetRunStatementsStatementCollectionItemOutputTypeOutput) ElementType() reflect.Type {
@@ -10407,12 +8834,6 @@ func (o GetRunStatementsStatementCollectionItemOutputTypeOutput) ToGetRunStateme
 	return o
 }
 
-func (o GetRunStatementsStatementCollectionItemOutputTypeOutput) ToOutput(ctx context.Context) pulumix.Output[GetRunStatementsStatementCollectionItemOutputType] {
-	return pulumix.Output[GetRunStatementsStatementCollectionItemOutputType]{
-		OutputState: o.OutputState,
-	}
-}
-
 // An object representing execution output of a statement.
 func (o GetRunStatementsStatementCollectionItemOutputTypeOutput) Datas() GetRunStatementsStatementCollectionItemOutputDataArrayOutput {
 	return o.ApplyT(func(v GetRunStatementsStatementCollectionItemOutputType) []GetRunStatementsStatementCollectionItemOutputData {
@@ -10421,18 +8842,18 @@ func (o GetRunStatementsStatementCollectionItemOutputTypeOutput) Datas() GetRunS
 }
 
 // The name of the error in the statement output.
-func (o GetRunStatementsStatementCollectionItemOutputTypeOutput) ErrorName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRunStatementsStatementCollectionItemOutputType) string { return v.ErrorName }).(pulumi.StringOutput)
+func (o GetRunStatementsStatementCollectionItemOutputTypeOutput) ErrorName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRunStatementsStatementCollectionItemOutputType) *string { return v.ErrorName }).(pulumi.StringPtrOutput)
 }
 
 // The value of the error in the statement output.
-func (o GetRunStatementsStatementCollectionItemOutputTypeOutput) ErrorValue() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRunStatementsStatementCollectionItemOutputType) string { return v.ErrorValue }).(pulumi.StringOutput)
+func (o GetRunStatementsStatementCollectionItemOutputTypeOutput) ErrorValue() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRunStatementsStatementCollectionItemOutputType) *string { return v.ErrorValue }).(pulumi.StringPtrOutput)
 }
 
 // Status of the statement output.
-func (o GetRunStatementsStatementCollectionItemOutputTypeOutput) Status() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRunStatementsStatementCollectionItemOutputType) string { return v.Status }).(pulumi.StringOutput)
+func (o GetRunStatementsStatementCollectionItemOutputTypeOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRunStatementsStatementCollectionItemOutputType) *string { return v.Status }).(pulumi.StringPtrOutput)
 }
 
 // The traceback of the statement output.
@@ -10454,12 +8875,6 @@ func (o GetRunStatementsStatementCollectionItemOutputTypeArrayOutput) ToGetRunSt
 	return o
 }
 
-func (o GetRunStatementsStatementCollectionItemOutputTypeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetRunStatementsStatementCollectionItemOutputType] {
-	return pulumix.Output[[]GetRunStatementsStatementCollectionItemOutputType]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetRunStatementsStatementCollectionItemOutputTypeArrayOutput) Index(i pulumi.IntInput) GetRunStatementsStatementCollectionItemOutputTypeOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRunStatementsStatementCollectionItemOutputType {
 		return vs[0].([]GetRunStatementsStatementCollectionItemOutputType)[vs[1].(int)]
@@ -10468,9 +8883,9 @@ func (o GetRunStatementsStatementCollectionItemOutputTypeArrayOutput) Index(i pu
 
 type GetRunStatementsStatementCollectionItemOutputData struct {
 	// The type of the `StatementOutputData` like `TEXT_PLAIN`, `TEXT_HTML` or `IMAGE_PNG`.
-	Type string `pulumi:"type"`
+	Type *string `pulumi:"type"`
 	// The statement code execution output in html format.
-	Value string `pulumi:"value"`
+	Value *string `pulumi:"value"`
 }
 
 // GetRunStatementsStatementCollectionItemOutputDataInput is an input type that accepts GetRunStatementsStatementCollectionItemOutputDataArgs and GetRunStatementsStatementCollectionItemOutputDataOutput values.
@@ -10486,9 +8901,9 @@ type GetRunStatementsStatementCollectionItemOutputDataInput interface {
 
 type GetRunStatementsStatementCollectionItemOutputDataArgs struct {
 	// The type of the `StatementOutputData` like `TEXT_PLAIN`, `TEXT_HTML` or `IMAGE_PNG`.
-	Type pulumi.StringInput `pulumi:"type"`
+	Type pulumi.StringPtrInput `pulumi:"type"`
 	// The statement code execution output in html format.
-	Value pulumi.StringInput `pulumi:"value"`
+	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
 func (GetRunStatementsStatementCollectionItemOutputDataArgs) ElementType() reflect.Type {
@@ -10501,12 +8916,6 @@ func (i GetRunStatementsStatementCollectionItemOutputDataArgs) ToGetRunStatement
 
 func (i GetRunStatementsStatementCollectionItemOutputDataArgs) ToGetRunStatementsStatementCollectionItemOutputDataOutputWithContext(ctx context.Context) GetRunStatementsStatementCollectionItemOutputDataOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetRunStatementsStatementCollectionItemOutputDataOutput)
-}
-
-func (i GetRunStatementsStatementCollectionItemOutputDataArgs) ToOutput(ctx context.Context) pulumix.Output[GetRunStatementsStatementCollectionItemOutputData] {
-	return pulumix.Output[GetRunStatementsStatementCollectionItemOutputData]{
-		OutputState: i.ToGetRunStatementsStatementCollectionItemOutputDataOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetRunStatementsStatementCollectionItemOutputDataArrayInput is an input type that accepts GetRunStatementsStatementCollectionItemOutputDataArray and GetRunStatementsStatementCollectionItemOutputDataArrayOutput values.
@@ -10534,12 +8943,6 @@ func (i GetRunStatementsStatementCollectionItemOutputDataArray) ToGetRunStatemen
 	return pulumi.ToOutputWithContext(ctx, i).(GetRunStatementsStatementCollectionItemOutputDataArrayOutput)
 }
 
-func (i GetRunStatementsStatementCollectionItemOutputDataArray) ToOutput(ctx context.Context) pulumix.Output[[]GetRunStatementsStatementCollectionItemOutputData] {
-	return pulumix.Output[[]GetRunStatementsStatementCollectionItemOutputData]{
-		OutputState: i.ToGetRunStatementsStatementCollectionItemOutputDataArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetRunStatementsStatementCollectionItemOutputDataOutput struct{ *pulumi.OutputState }
 
 func (GetRunStatementsStatementCollectionItemOutputDataOutput) ElementType() reflect.Type {
@@ -10554,20 +8957,14 @@ func (o GetRunStatementsStatementCollectionItemOutputDataOutput) ToGetRunStateme
 	return o
 }
 
-func (o GetRunStatementsStatementCollectionItemOutputDataOutput) ToOutput(ctx context.Context) pulumix.Output[GetRunStatementsStatementCollectionItemOutputData] {
-	return pulumix.Output[GetRunStatementsStatementCollectionItemOutputData]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The type of the `StatementOutputData` like `TEXT_PLAIN`, `TEXT_HTML` or `IMAGE_PNG`.
-func (o GetRunStatementsStatementCollectionItemOutputDataOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRunStatementsStatementCollectionItemOutputData) string { return v.Type }).(pulumi.StringOutput)
+func (o GetRunStatementsStatementCollectionItemOutputDataOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRunStatementsStatementCollectionItemOutputData) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
 
 // The statement code execution output in html format.
-func (o GetRunStatementsStatementCollectionItemOutputDataOutput) Value() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRunStatementsStatementCollectionItemOutputData) string { return v.Value }).(pulumi.StringOutput)
+func (o GetRunStatementsStatementCollectionItemOutputDataOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRunStatementsStatementCollectionItemOutputData) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
 
 type GetRunStatementsStatementCollectionItemOutputDataArrayOutput struct{ *pulumi.OutputState }
@@ -10584,12 +8981,6 @@ func (o GetRunStatementsStatementCollectionItemOutputDataArrayOutput) ToGetRunSt
 	return o
 }
 
-func (o GetRunStatementsStatementCollectionItemOutputDataArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetRunStatementsStatementCollectionItemOutputData] {
-	return pulumix.Output[[]GetRunStatementsStatementCollectionItemOutputData]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetRunStatementsStatementCollectionItemOutputDataArrayOutput) Index(i pulumi.IntInput) GetRunStatementsStatementCollectionItemOutputDataOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRunStatementsStatementCollectionItemOutputData {
 		return vs[0].([]GetRunStatementsStatementCollectionItemOutputData)[vs[1].(int)]
@@ -10598,9 +8989,9 @@ func (o GetRunStatementsStatementCollectionItemOutputDataArrayOutput) Index(i pu
 
 type GetSqlEndpointDriverShapeConfig struct {
 	// The amount of memory used for the driver or executors.
-	MemoryInGbs float64 `pulumi:"memoryInGbs"`
+	MemoryInGbs *float64 `pulumi:"memoryInGbs"`
 	// The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
-	Ocpus float64 `pulumi:"ocpus"`
+	Ocpus *float64 `pulumi:"ocpus"`
 }
 
 // GetSqlEndpointDriverShapeConfigInput is an input type that accepts GetSqlEndpointDriverShapeConfigArgs and GetSqlEndpointDriverShapeConfigOutput values.
@@ -10616,9 +9007,9 @@ type GetSqlEndpointDriverShapeConfigInput interface {
 
 type GetSqlEndpointDriverShapeConfigArgs struct {
 	// The amount of memory used for the driver or executors.
-	MemoryInGbs pulumi.Float64Input `pulumi:"memoryInGbs"`
+	MemoryInGbs pulumi.Float64PtrInput `pulumi:"memoryInGbs"`
 	// The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
-	Ocpus pulumi.Float64Input `pulumi:"ocpus"`
+	Ocpus pulumi.Float64PtrInput `pulumi:"ocpus"`
 }
 
 func (GetSqlEndpointDriverShapeConfigArgs) ElementType() reflect.Type {
@@ -10631,12 +9022,6 @@ func (i GetSqlEndpointDriverShapeConfigArgs) ToGetSqlEndpointDriverShapeConfigOu
 
 func (i GetSqlEndpointDriverShapeConfigArgs) ToGetSqlEndpointDriverShapeConfigOutputWithContext(ctx context.Context) GetSqlEndpointDriverShapeConfigOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSqlEndpointDriverShapeConfigOutput)
-}
-
-func (i GetSqlEndpointDriverShapeConfigArgs) ToOutput(ctx context.Context) pulumix.Output[GetSqlEndpointDriverShapeConfig] {
-	return pulumix.Output[GetSqlEndpointDriverShapeConfig]{
-		OutputState: i.ToGetSqlEndpointDriverShapeConfigOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSqlEndpointDriverShapeConfigArrayInput is an input type that accepts GetSqlEndpointDriverShapeConfigArray and GetSqlEndpointDriverShapeConfigArrayOutput values.
@@ -10664,12 +9049,6 @@ func (i GetSqlEndpointDriverShapeConfigArray) ToGetSqlEndpointDriverShapeConfigA
 	return pulumi.ToOutputWithContext(ctx, i).(GetSqlEndpointDriverShapeConfigArrayOutput)
 }
 
-func (i GetSqlEndpointDriverShapeConfigArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSqlEndpointDriverShapeConfig] {
-	return pulumix.Output[[]GetSqlEndpointDriverShapeConfig]{
-		OutputState: i.ToGetSqlEndpointDriverShapeConfigArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSqlEndpointDriverShapeConfigOutput struct{ *pulumi.OutputState }
 
 func (GetSqlEndpointDriverShapeConfigOutput) ElementType() reflect.Type {
@@ -10684,20 +9063,14 @@ func (o GetSqlEndpointDriverShapeConfigOutput) ToGetSqlEndpointDriverShapeConfig
 	return o
 }
 
-func (o GetSqlEndpointDriverShapeConfigOutput) ToOutput(ctx context.Context) pulumix.Output[GetSqlEndpointDriverShapeConfig] {
-	return pulumix.Output[GetSqlEndpointDriverShapeConfig]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The amount of memory used for the driver or executors.
-func (o GetSqlEndpointDriverShapeConfigOutput) MemoryInGbs() pulumi.Float64Output {
-	return o.ApplyT(func(v GetSqlEndpointDriverShapeConfig) float64 { return v.MemoryInGbs }).(pulumi.Float64Output)
+func (o GetSqlEndpointDriverShapeConfigOutput) MemoryInGbs() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetSqlEndpointDriverShapeConfig) *float64 { return v.MemoryInGbs }).(pulumi.Float64PtrOutput)
 }
 
 // The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
-func (o GetSqlEndpointDriverShapeConfigOutput) Ocpus() pulumi.Float64Output {
-	return o.ApplyT(func(v GetSqlEndpointDriverShapeConfig) float64 { return v.Ocpus }).(pulumi.Float64Output)
+func (o GetSqlEndpointDriverShapeConfigOutput) Ocpus() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetSqlEndpointDriverShapeConfig) *float64 { return v.Ocpus }).(pulumi.Float64PtrOutput)
 }
 
 type GetSqlEndpointDriverShapeConfigArrayOutput struct{ *pulumi.OutputState }
@@ -10714,12 +9087,6 @@ func (o GetSqlEndpointDriverShapeConfigArrayOutput) ToGetSqlEndpointDriverShapeC
 	return o
 }
 
-func (o GetSqlEndpointDriverShapeConfigArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSqlEndpointDriverShapeConfig] {
-	return pulumix.Output[[]GetSqlEndpointDriverShapeConfig]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSqlEndpointDriverShapeConfigArrayOutput) Index(i pulumi.IntInput) GetSqlEndpointDriverShapeConfigOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSqlEndpointDriverShapeConfig {
 		return vs[0].([]GetSqlEndpointDriverShapeConfig)[vs[1].(int)]
@@ -10728,9 +9095,9 @@ func (o GetSqlEndpointDriverShapeConfigArrayOutput) Index(i pulumi.IntInput) Get
 
 type GetSqlEndpointExecutorShapeConfig struct {
 	// The amount of memory used for the driver or executors.
-	MemoryInGbs float64 `pulumi:"memoryInGbs"`
+	MemoryInGbs *float64 `pulumi:"memoryInGbs"`
 	// The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
-	Ocpus float64 `pulumi:"ocpus"`
+	Ocpus *float64 `pulumi:"ocpus"`
 }
 
 // GetSqlEndpointExecutorShapeConfigInput is an input type that accepts GetSqlEndpointExecutorShapeConfigArgs and GetSqlEndpointExecutorShapeConfigOutput values.
@@ -10746,9 +9113,9 @@ type GetSqlEndpointExecutorShapeConfigInput interface {
 
 type GetSqlEndpointExecutorShapeConfigArgs struct {
 	// The amount of memory used for the driver or executors.
-	MemoryInGbs pulumi.Float64Input `pulumi:"memoryInGbs"`
+	MemoryInGbs pulumi.Float64PtrInput `pulumi:"memoryInGbs"`
 	// The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
-	Ocpus pulumi.Float64Input `pulumi:"ocpus"`
+	Ocpus pulumi.Float64PtrInput `pulumi:"ocpus"`
 }
 
 func (GetSqlEndpointExecutorShapeConfigArgs) ElementType() reflect.Type {
@@ -10761,12 +9128,6 @@ func (i GetSqlEndpointExecutorShapeConfigArgs) ToGetSqlEndpointExecutorShapeConf
 
 func (i GetSqlEndpointExecutorShapeConfigArgs) ToGetSqlEndpointExecutorShapeConfigOutputWithContext(ctx context.Context) GetSqlEndpointExecutorShapeConfigOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSqlEndpointExecutorShapeConfigOutput)
-}
-
-func (i GetSqlEndpointExecutorShapeConfigArgs) ToOutput(ctx context.Context) pulumix.Output[GetSqlEndpointExecutorShapeConfig] {
-	return pulumix.Output[GetSqlEndpointExecutorShapeConfig]{
-		OutputState: i.ToGetSqlEndpointExecutorShapeConfigOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSqlEndpointExecutorShapeConfigArrayInput is an input type that accepts GetSqlEndpointExecutorShapeConfigArray and GetSqlEndpointExecutorShapeConfigArrayOutput values.
@@ -10794,12 +9155,6 @@ func (i GetSqlEndpointExecutorShapeConfigArray) ToGetSqlEndpointExecutorShapeCon
 	return pulumi.ToOutputWithContext(ctx, i).(GetSqlEndpointExecutorShapeConfigArrayOutput)
 }
 
-func (i GetSqlEndpointExecutorShapeConfigArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSqlEndpointExecutorShapeConfig] {
-	return pulumix.Output[[]GetSqlEndpointExecutorShapeConfig]{
-		OutputState: i.ToGetSqlEndpointExecutorShapeConfigArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSqlEndpointExecutorShapeConfigOutput struct{ *pulumi.OutputState }
 
 func (GetSqlEndpointExecutorShapeConfigOutput) ElementType() reflect.Type {
@@ -10814,20 +9169,14 @@ func (o GetSqlEndpointExecutorShapeConfigOutput) ToGetSqlEndpointExecutorShapeCo
 	return o
 }
 
-func (o GetSqlEndpointExecutorShapeConfigOutput) ToOutput(ctx context.Context) pulumix.Output[GetSqlEndpointExecutorShapeConfig] {
-	return pulumix.Output[GetSqlEndpointExecutorShapeConfig]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The amount of memory used for the driver or executors.
-func (o GetSqlEndpointExecutorShapeConfigOutput) MemoryInGbs() pulumi.Float64Output {
-	return o.ApplyT(func(v GetSqlEndpointExecutorShapeConfig) float64 { return v.MemoryInGbs }).(pulumi.Float64Output)
+func (o GetSqlEndpointExecutorShapeConfigOutput) MemoryInGbs() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetSqlEndpointExecutorShapeConfig) *float64 { return v.MemoryInGbs }).(pulumi.Float64PtrOutput)
 }
 
 // The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
-func (o GetSqlEndpointExecutorShapeConfigOutput) Ocpus() pulumi.Float64Output {
-	return o.ApplyT(func(v GetSqlEndpointExecutorShapeConfig) float64 { return v.Ocpus }).(pulumi.Float64Output)
+func (o GetSqlEndpointExecutorShapeConfigOutput) Ocpus() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetSqlEndpointExecutorShapeConfig) *float64 { return v.Ocpus }).(pulumi.Float64PtrOutput)
 }
 
 type GetSqlEndpointExecutorShapeConfigArrayOutput struct{ *pulumi.OutputState }
@@ -10844,12 +9193,6 @@ func (o GetSqlEndpointExecutorShapeConfigArrayOutput) ToGetSqlEndpointExecutorSh
 	return o
 }
 
-func (o GetSqlEndpointExecutorShapeConfigArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSqlEndpointExecutorShapeConfig] {
-	return pulumix.Output[[]GetSqlEndpointExecutorShapeConfig]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSqlEndpointExecutorShapeConfigArrayOutput) Index(i pulumi.IntInput) GetSqlEndpointExecutorShapeConfigOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSqlEndpointExecutorShapeConfig {
 		return vs[0].([]GetSqlEndpointExecutorShapeConfig)[vs[1].(int)]
@@ -10860,17 +9203,17 @@ type GetSqlEndpointNetworkConfiguration struct {
 	// A list of SecureAccessControlRule's to which access is limited to
 	AccessControlRules []GetSqlEndpointNetworkConfigurationAccessControlRule `pulumi:"accessControlRules"`
 	// The host name prefix.
-	HostNamePrefix string `pulumi:"hostNamePrefix"`
+	HostNamePrefix *string `pulumi:"hostNamePrefix"`
 	// The type of network configuration.
-	NetworkType string `pulumi:"networkType"`
+	NetworkType *string `pulumi:"networkType"`
 	// Ip Address of private endpoint
-	PrivateEndpointIp string `pulumi:"privateEndpointIp"`
+	PrivateEndpointIp *string `pulumi:"privateEndpointIp"`
 	// Ip Address of public endpoint
-	PublicEndpointIp string `pulumi:"publicEndpointIp"`
+	PublicEndpointIp *string `pulumi:"publicEndpointIp"`
 	// The VCN Subnet OCID.
-	SubnetId string `pulumi:"subnetId"`
+	SubnetId *string `pulumi:"subnetId"`
 	// The VCN OCID.
-	VcnId string `pulumi:"vcnId"`
+	VcnId *string `pulumi:"vcnId"`
 }
 
 // GetSqlEndpointNetworkConfigurationInput is an input type that accepts GetSqlEndpointNetworkConfigurationArgs and GetSqlEndpointNetworkConfigurationOutput values.
@@ -10888,17 +9231,17 @@ type GetSqlEndpointNetworkConfigurationArgs struct {
 	// A list of SecureAccessControlRule's to which access is limited to
 	AccessControlRules GetSqlEndpointNetworkConfigurationAccessControlRuleArrayInput `pulumi:"accessControlRules"`
 	// The host name prefix.
-	HostNamePrefix pulumi.StringInput `pulumi:"hostNamePrefix"`
+	HostNamePrefix pulumi.StringPtrInput `pulumi:"hostNamePrefix"`
 	// The type of network configuration.
-	NetworkType pulumi.StringInput `pulumi:"networkType"`
+	NetworkType pulumi.StringPtrInput `pulumi:"networkType"`
 	// Ip Address of private endpoint
-	PrivateEndpointIp pulumi.StringInput `pulumi:"privateEndpointIp"`
+	PrivateEndpointIp pulumi.StringPtrInput `pulumi:"privateEndpointIp"`
 	// Ip Address of public endpoint
-	PublicEndpointIp pulumi.StringInput `pulumi:"publicEndpointIp"`
+	PublicEndpointIp pulumi.StringPtrInput `pulumi:"publicEndpointIp"`
 	// The VCN Subnet OCID.
-	SubnetId pulumi.StringInput `pulumi:"subnetId"`
+	SubnetId pulumi.StringPtrInput `pulumi:"subnetId"`
 	// The VCN OCID.
-	VcnId pulumi.StringInput `pulumi:"vcnId"`
+	VcnId pulumi.StringPtrInput `pulumi:"vcnId"`
 }
 
 func (GetSqlEndpointNetworkConfigurationArgs) ElementType() reflect.Type {
@@ -10911,12 +9254,6 @@ func (i GetSqlEndpointNetworkConfigurationArgs) ToGetSqlEndpointNetworkConfigura
 
 func (i GetSqlEndpointNetworkConfigurationArgs) ToGetSqlEndpointNetworkConfigurationOutputWithContext(ctx context.Context) GetSqlEndpointNetworkConfigurationOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSqlEndpointNetworkConfigurationOutput)
-}
-
-func (i GetSqlEndpointNetworkConfigurationArgs) ToOutput(ctx context.Context) pulumix.Output[GetSqlEndpointNetworkConfiguration] {
-	return pulumix.Output[GetSqlEndpointNetworkConfiguration]{
-		OutputState: i.ToGetSqlEndpointNetworkConfigurationOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSqlEndpointNetworkConfigurationArrayInput is an input type that accepts GetSqlEndpointNetworkConfigurationArray and GetSqlEndpointNetworkConfigurationArrayOutput values.
@@ -10944,12 +9281,6 @@ func (i GetSqlEndpointNetworkConfigurationArray) ToGetSqlEndpointNetworkConfigur
 	return pulumi.ToOutputWithContext(ctx, i).(GetSqlEndpointNetworkConfigurationArrayOutput)
 }
 
-func (i GetSqlEndpointNetworkConfigurationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSqlEndpointNetworkConfiguration] {
-	return pulumix.Output[[]GetSqlEndpointNetworkConfiguration]{
-		OutputState: i.ToGetSqlEndpointNetworkConfigurationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSqlEndpointNetworkConfigurationOutput struct{ *pulumi.OutputState }
 
 func (GetSqlEndpointNetworkConfigurationOutput) ElementType() reflect.Type {
@@ -10964,12 +9295,6 @@ func (o GetSqlEndpointNetworkConfigurationOutput) ToGetSqlEndpointNetworkConfigu
 	return o
 }
 
-func (o GetSqlEndpointNetworkConfigurationOutput) ToOutput(ctx context.Context) pulumix.Output[GetSqlEndpointNetworkConfiguration] {
-	return pulumix.Output[GetSqlEndpointNetworkConfiguration]{
-		OutputState: o.OutputState,
-	}
-}
-
 // A list of SecureAccessControlRule's to which access is limited to
 func (o GetSqlEndpointNetworkConfigurationOutput) AccessControlRules() GetSqlEndpointNetworkConfigurationAccessControlRuleArrayOutput {
 	return o.ApplyT(func(v GetSqlEndpointNetworkConfiguration) []GetSqlEndpointNetworkConfigurationAccessControlRule {
@@ -10978,33 +9303,33 @@ func (o GetSqlEndpointNetworkConfigurationOutput) AccessControlRules() GetSqlEnd
 }
 
 // The host name prefix.
-func (o GetSqlEndpointNetworkConfigurationOutput) HostNamePrefix() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSqlEndpointNetworkConfiguration) string { return v.HostNamePrefix }).(pulumi.StringOutput)
+func (o GetSqlEndpointNetworkConfigurationOutput) HostNamePrefix() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSqlEndpointNetworkConfiguration) *string { return v.HostNamePrefix }).(pulumi.StringPtrOutput)
 }
 
 // The type of network configuration.
-func (o GetSqlEndpointNetworkConfigurationOutput) NetworkType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSqlEndpointNetworkConfiguration) string { return v.NetworkType }).(pulumi.StringOutput)
+func (o GetSqlEndpointNetworkConfigurationOutput) NetworkType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSqlEndpointNetworkConfiguration) *string { return v.NetworkType }).(pulumi.StringPtrOutput)
 }
 
 // Ip Address of private endpoint
-func (o GetSqlEndpointNetworkConfigurationOutput) PrivateEndpointIp() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSqlEndpointNetworkConfiguration) string { return v.PrivateEndpointIp }).(pulumi.StringOutput)
+func (o GetSqlEndpointNetworkConfigurationOutput) PrivateEndpointIp() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSqlEndpointNetworkConfiguration) *string { return v.PrivateEndpointIp }).(pulumi.StringPtrOutput)
 }
 
 // Ip Address of public endpoint
-func (o GetSqlEndpointNetworkConfigurationOutput) PublicEndpointIp() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSqlEndpointNetworkConfiguration) string { return v.PublicEndpointIp }).(pulumi.StringOutput)
+func (o GetSqlEndpointNetworkConfigurationOutput) PublicEndpointIp() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSqlEndpointNetworkConfiguration) *string { return v.PublicEndpointIp }).(pulumi.StringPtrOutput)
 }
 
 // The VCN Subnet OCID.
-func (o GetSqlEndpointNetworkConfigurationOutput) SubnetId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSqlEndpointNetworkConfiguration) string { return v.SubnetId }).(pulumi.StringOutput)
+func (o GetSqlEndpointNetworkConfigurationOutput) SubnetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSqlEndpointNetworkConfiguration) *string { return v.SubnetId }).(pulumi.StringPtrOutput)
 }
 
 // The VCN OCID.
-func (o GetSqlEndpointNetworkConfigurationOutput) VcnId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSqlEndpointNetworkConfiguration) string { return v.VcnId }).(pulumi.StringOutput)
+func (o GetSqlEndpointNetworkConfigurationOutput) VcnId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSqlEndpointNetworkConfiguration) *string { return v.VcnId }).(pulumi.StringPtrOutput)
 }
 
 type GetSqlEndpointNetworkConfigurationArrayOutput struct{ *pulumi.OutputState }
@@ -11021,12 +9346,6 @@ func (o GetSqlEndpointNetworkConfigurationArrayOutput) ToGetSqlEndpointNetworkCo
 	return o
 }
 
-func (o GetSqlEndpointNetworkConfigurationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSqlEndpointNetworkConfiguration] {
-	return pulumix.Output[[]GetSqlEndpointNetworkConfiguration]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSqlEndpointNetworkConfigurationArrayOutput) Index(i pulumi.IntInput) GetSqlEndpointNetworkConfigurationOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSqlEndpointNetworkConfiguration {
 		return vs[0].([]GetSqlEndpointNetworkConfiguration)[vs[1].(int)]
@@ -11035,11 +9354,11 @@ func (o GetSqlEndpointNetworkConfigurationArrayOutput) Index(i pulumi.IntInput) 
 
 type GetSqlEndpointNetworkConfigurationAccessControlRule struct {
 	// The type of IP notation.
-	IpNotation string `pulumi:"ipNotation"`
+	IpNotation *string `pulumi:"ipNotation"`
 	// The associated value of the selected IP notation.
-	Value string `pulumi:"value"`
+	Value *string `pulumi:"value"`
 	// A comma-separated IP or CIDR address for VCN OCID IP notation selection.
-	VcnIps string `pulumi:"vcnIps"`
+	VcnIps *string `pulumi:"vcnIps"`
 }
 
 // GetSqlEndpointNetworkConfigurationAccessControlRuleInput is an input type that accepts GetSqlEndpointNetworkConfigurationAccessControlRuleArgs and GetSqlEndpointNetworkConfigurationAccessControlRuleOutput values.
@@ -11055,11 +9374,11 @@ type GetSqlEndpointNetworkConfigurationAccessControlRuleInput interface {
 
 type GetSqlEndpointNetworkConfigurationAccessControlRuleArgs struct {
 	// The type of IP notation.
-	IpNotation pulumi.StringInput `pulumi:"ipNotation"`
+	IpNotation pulumi.StringPtrInput `pulumi:"ipNotation"`
 	// The associated value of the selected IP notation.
-	Value pulumi.StringInput `pulumi:"value"`
+	Value pulumi.StringPtrInput `pulumi:"value"`
 	// A comma-separated IP or CIDR address for VCN OCID IP notation selection.
-	VcnIps pulumi.StringInput `pulumi:"vcnIps"`
+	VcnIps pulumi.StringPtrInput `pulumi:"vcnIps"`
 }
 
 func (GetSqlEndpointNetworkConfigurationAccessControlRuleArgs) ElementType() reflect.Type {
@@ -11072,12 +9391,6 @@ func (i GetSqlEndpointNetworkConfigurationAccessControlRuleArgs) ToGetSqlEndpoin
 
 func (i GetSqlEndpointNetworkConfigurationAccessControlRuleArgs) ToGetSqlEndpointNetworkConfigurationAccessControlRuleOutputWithContext(ctx context.Context) GetSqlEndpointNetworkConfigurationAccessControlRuleOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSqlEndpointNetworkConfigurationAccessControlRuleOutput)
-}
-
-func (i GetSqlEndpointNetworkConfigurationAccessControlRuleArgs) ToOutput(ctx context.Context) pulumix.Output[GetSqlEndpointNetworkConfigurationAccessControlRule] {
-	return pulumix.Output[GetSqlEndpointNetworkConfigurationAccessControlRule]{
-		OutputState: i.ToGetSqlEndpointNetworkConfigurationAccessControlRuleOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSqlEndpointNetworkConfigurationAccessControlRuleArrayInput is an input type that accepts GetSqlEndpointNetworkConfigurationAccessControlRuleArray and GetSqlEndpointNetworkConfigurationAccessControlRuleArrayOutput values.
@@ -11105,12 +9418,6 @@ func (i GetSqlEndpointNetworkConfigurationAccessControlRuleArray) ToGetSqlEndpoi
 	return pulumi.ToOutputWithContext(ctx, i).(GetSqlEndpointNetworkConfigurationAccessControlRuleArrayOutput)
 }
 
-func (i GetSqlEndpointNetworkConfigurationAccessControlRuleArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSqlEndpointNetworkConfigurationAccessControlRule] {
-	return pulumix.Output[[]GetSqlEndpointNetworkConfigurationAccessControlRule]{
-		OutputState: i.ToGetSqlEndpointNetworkConfigurationAccessControlRuleArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSqlEndpointNetworkConfigurationAccessControlRuleOutput struct{ *pulumi.OutputState }
 
 func (GetSqlEndpointNetworkConfigurationAccessControlRuleOutput) ElementType() reflect.Type {
@@ -11125,25 +9432,19 @@ func (o GetSqlEndpointNetworkConfigurationAccessControlRuleOutput) ToGetSqlEndpo
 	return o
 }
 
-func (o GetSqlEndpointNetworkConfigurationAccessControlRuleOutput) ToOutput(ctx context.Context) pulumix.Output[GetSqlEndpointNetworkConfigurationAccessControlRule] {
-	return pulumix.Output[GetSqlEndpointNetworkConfigurationAccessControlRule]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The type of IP notation.
-func (o GetSqlEndpointNetworkConfigurationAccessControlRuleOutput) IpNotation() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSqlEndpointNetworkConfigurationAccessControlRule) string { return v.IpNotation }).(pulumi.StringOutput)
+func (o GetSqlEndpointNetworkConfigurationAccessControlRuleOutput) IpNotation() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSqlEndpointNetworkConfigurationAccessControlRule) *string { return v.IpNotation }).(pulumi.StringPtrOutput)
 }
 
 // The associated value of the selected IP notation.
-func (o GetSqlEndpointNetworkConfigurationAccessControlRuleOutput) Value() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSqlEndpointNetworkConfigurationAccessControlRule) string { return v.Value }).(pulumi.StringOutput)
+func (o GetSqlEndpointNetworkConfigurationAccessControlRuleOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSqlEndpointNetworkConfigurationAccessControlRule) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
 
 // A comma-separated IP or CIDR address for VCN OCID IP notation selection.
-func (o GetSqlEndpointNetworkConfigurationAccessControlRuleOutput) VcnIps() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSqlEndpointNetworkConfigurationAccessControlRule) string { return v.VcnIps }).(pulumi.StringOutput)
+func (o GetSqlEndpointNetworkConfigurationAccessControlRuleOutput) VcnIps() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSqlEndpointNetworkConfigurationAccessControlRule) *string { return v.VcnIps }).(pulumi.StringPtrOutput)
 }
 
 type GetSqlEndpointNetworkConfigurationAccessControlRuleArrayOutput struct{ *pulumi.OutputState }
@@ -11158,12 +9459,6 @@ func (o GetSqlEndpointNetworkConfigurationAccessControlRuleArrayOutput) ToGetSql
 
 func (o GetSqlEndpointNetworkConfigurationAccessControlRuleArrayOutput) ToGetSqlEndpointNetworkConfigurationAccessControlRuleArrayOutputWithContext(ctx context.Context) GetSqlEndpointNetworkConfigurationAccessControlRuleArrayOutput {
 	return o
-}
-
-func (o GetSqlEndpointNetworkConfigurationAccessControlRuleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSqlEndpointNetworkConfigurationAccessControlRule] {
-	return pulumix.Output[[]GetSqlEndpointNetworkConfigurationAccessControlRule]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetSqlEndpointNetworkConfigurationAccessControlRuleArrayOutput) Index(i pulumi.IntInput) GetSqlEndpointNetworkConfigurationAccessControlRuleOutput {
@@ -11207,12 +9502,6 @@ func (i GetSqlEndpointsFilterArgs) ToGetSqlEndpointsFilterOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(GetSqlEndpointsFilterOutput)
 }
 
-func (i GetSqlEndpointsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetSqlEndpointsFilter] {
-	return pulumix.Output[GetSqlEndpointsFilter]{
-		OutputState: i.ToGetSqlEndpointsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetSqlEndpointsFilterArrayInput is an input type that accepts GetSqlEndpointsFilterArray and GetSqlEndpointsFilterArrayOutput values.
 // You can construct a concrete instance of `GetSqlEndpointsFilterArrayInput` via:
 //
@@ -11238,12 +9527,6 @@ func (i GetSqlEndpointsFilterArray) ToGetSqlEndpointsFilterArrayOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetSqlEndpointsFilterArrayOutput)
 }
 
-func (i GetSqlEndpointsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSqlEndpointsFilter] {
-	return pulumix.Output[[]GetSqlEndpointsFilter]{
-		OutputState: i.ToGetSqlEndpointsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSqlEndpointsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetSqlEndpointsFilterOutput) ElementType() reflect.Type {
@@ -11256,12 +9539,6 @@ func (o GetSqlEndpointsFilterOutput) ToGetSqlEndpointsFilterOutput() GetSqlEndpo
 
 func (o GetSqlEndpointsFilterOutput) ToGetSqlEndpointsFilterOutputWithContext(ctx context.Context) GetSqlEndpointsFilterOutput {
 	return o
-}
-
-func (o GetSqlEndpointsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetSqlEndpointsFilter] {
-	return pulumix.Output[GetSqlEndpointsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetSqlEndpointsFilterOutput) Name() pulumi.StringOutput {
@@ -11288,12 +9565,6 @@ func (o GetSqlEndpointsFilterArrayOutput) ToGetSqlEndpointsFilterArrayOutput() G
 
 func (o GetSqlEndpointsFilterArrayOutput) ToGetSqlEndpointsFilterArrayOutputWithContext(ctx context.Context) GetSqlEndpointsFilterArrayOutput {
 	return o
-}
-
-func (o GetSqlEndpointsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSqlEndpointsFilter] {
-	return pulumix.Output[[]GetSqlEndpointsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetSqlEndpointsFilterArrayOutput) Index(i pulumi.IntInput) GetSqlEndpointsFilterOutput {
@@ -11333,12 +9604,6 @@ func (i GetSqlEndpointsSqlEndpointCollectionArgs) ToGetSqlEndpointsSqlEndpointCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetSqlEndpointsSqlEndpointCollectionOutput)
 }
 
-func (i GetSqlEndpointsSqlEndpointCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetSqlEndpointsSqlEndpointCollection] {
-	return pulumix.Output[GetSqlEndpointsSqlEndpointCollection]{
-		OutputState: i.ToGetSqlEndpointsSqlEndpointCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetSqlEndpointsSqlEndpointCollectionArrayInput is an input type that accepts GetSqlEndpointsSqlEndpointCollectionArray and GetSqlEndpointsSqlEndpointCollectionArrayOutput values.
 // You can construct a concrete instance of `GetSqlEndpointsSqlEndpointCollectionArrayInput` via:
 //
@@ -11364,12 +9629,6 @@ func (i GetSqlEndpointsSqlEndpointCollectionArray) ToGetSqlEndpointsSqlEndpointC
 	return pulumi.ToOutputWithContext(ctx, i).(GetSqlEndpointsSqlEndpointCollectionArrayOutput)
 }
 
-func (i GetSqlEndpointsSqlEndpointCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSqlEndpointsSqlEndpointCollection] {
-	return pulumix.Output[[]GetSqlEndpointsSqlEndpointCollection]{
-		OutputState: i.ToGetSqlEndpointsSqlEndpointCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSqlEndpointsSqlEndpointCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetSqlEndpointsSqlEndpointCollectionOutput) ElementType() reflect.Type {
@@ -11382,12 +9641,6 @@ func (o GetSqlEndpointsSqlEndpointCollectionOutput) ToGetSqlEndpointsSqlEndpoint
 
 func (o GetSqlEndpointsSqlEndpointCollectionOutput) ToGetSqlEndpointsSqlEndpointCollectionOutputWithContext(ctx context.Context) GetSqlEndpointsSqlEndpointCollectionOutput {
 	return o
-}
-
-func (o GetSqlEndpointsSqlEndpointCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetSqlEndpointsSqlEndpointCollection] {
-	return pulumix.Output[GetSqlEndpointsSqlEndpointCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetSqlEndpointsSqlEndpointCollectionOutput) Items() GetSqlEndpointsSqlEndpointCollectionItemArrayOutput {
@@ -11410,12 +9663,6 @@ func (o GetSqlEndpointsSqlEndpointCollectionArrayOutput) ToGetSqlEndpointsSqlEnd
 	return o
 }
 
-func (o GetSqlEndpointsSqlEndpointCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSqlEndpointsSqlEndpointCollection] {
-	return pulumix.Output[[]GetSqlEndpointsSqlEndpointCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSqlEndpointsSqlEndpointCollectionArrayOutput) Index(i pulumi.IntInput) GetSqlEndpointsSqlEndpointCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSqlEndpointsSqlEndpointCollection {
 		return vs[0].([]GetSqlEndpointsSqlEndpointCollection)[vs[1].(int)]
@@ -11424,55 +9671,55 @@ func (o GetSqlEndpointsSqlEndpointCollectionArrayOutput) Index(i pulumi.IntInput
 
 type GetSqlEndpointsSqlEndpointCollectionItem struct {
 	// The OCID of the compartment in which to query resources.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The description of the SQL Endpoint.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// The query parameter for the Spark application name.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// The shape of the SQL Endpoint driver instance.
-	DriverShape string `pulumi:"driverShape"`
+	DriverShape *string `pulumi:"driverShape"`
 	// This is used to configure the shape of the driver or executor if a flexible shape is used.
 	DriverShapeConfigs []GetSqlEndpointsSqlEndpointCollectionItemDriverShapeConfig `pulumi:"driverShapeConfigs"`
 	// The shape of the SQL Endpoint executor instance.
-	ExecutorShape string `pulumi:"executorShape"`
+	ExecutorShape *string `pulumi:"executorShape"`
 	// This is used to configure the shape of the driver or executor if a flexible shape is used.
 	ExecutorShapeConfigs []GetSqlEndpointsSqlEndpointCollectionItemExecutorShapeConfig `pulumi:"executorShapeConfigs"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The provision identifier that is immutable on creation.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The JDBC URL field. For example, jdbc:spark://{serviceFQDN}:443/default;SparkServerType=DFI
-	JdbcEndpointUrl string `pulumi:"jdbcEndpointUrl"`
+	JdbcEndpointUrl *string `pulumi:"jdbcEndpointUrl"`
 	// The OCID of Oracle Cloud Infrastructure Lake.
-	LakeId string `pulumi:"lakeId"`
+	LakeId *string `pulumi:"lakeId"`
 	// This token is used by Splat, and indicates that the service accepts the request, and that the request is currently being processed.
-	LastAcceptedRequestToken string `pulumi:"lastAcceptedRequestToken"`
+	LastAcceptedRequestToken *string `pulumi:"lastAcceptedRequestToken"`
 	// The maximum number of executors.
-	MaxExecutorCount int `pulumi:"maxExecutorCount"`
+	MaxExecutorCount *int `pulumi:"maxExecutorCount"`
 	// The OCID of Oracle Cloud Infrastructure Hive Metastore.
-	MetastoreId string `pulumi:"metastoreId"`
+	MetastoreId *string `pulumi:"metastoreId"`
 	// The minimum number of executors.
-	MinExecutorCount int `pulumi:"minExecutorCount"`
+	MinExecutorCount *int `pulumi:"minExecutorCount"`
 	// The network configuration of a SQL Endpoint.
 	NetworkConfigurations []GetSqlEndpointsSqlEndpointCollectionItemNetworkConfiguration `pulumi:"networkConfigurations"`
 	// The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
 	SparkAdvancedConfigurations map[string]interface{} `pulumi:"sparkAdvancedConfigurations"`
 	// The version of SQL Endpoint.
-	SqlEndpointVersion string `pulumi:"sqlEndpointVersion"`
+	SqlEndpointVersion *string `pulumi:"sqlEndpointVersion"`
 	// A filter to return only those resources whose sqlEndpointLifecycleState matches the given sqlEndpointLifecycleState.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// A message describing the reason why the resource is in it's current state. Helps bubble up errors in state changes. For example, it can be used to provide actionable information for a resource in the Failed state.
-	StateMessage string `pulumi:"stateMessage"`
+	StateMessage *string `pulumi:"stateMessage"`
 	// The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The time the Sql Endpoint was created. An RFC3339 formatted datetime string.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time the Sql Endpoint was updated. An RFC3339 formatted datetime string.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 	// The warehouse bucket URI. It is a Oracle Cloud Infrastructure Object Storage bucket URI as defined here https://docs.oracle.com/en/cloud/paas/atp-cloud/atpud/object-storage-uris.html
-	WarehouseBucketUri string `pulumi:"warehouseBucketUri"`
+	WarehouseBucketUri *string `pulumi:"warehouseBucketUri"`
 }
 
 // GetSqlEndpointsSqlEndpointCollectionItemInput is an input type that accepts GetSqlEndpointsSqlEndpointCollectionItemArgs and GetSqlEndpointsSqlEndpointCollectionItemOutput values.
@@ -11488,55 +9735,55 @@ type GetSqlEndpointsSqlEndpointCollectionItemInput interface {
 
 type GetSqlEndpointsSqlEndpointCollectionItemArgs struct {
 	// The OCID of the compartment in which to query resources.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// The description of the SQL Endpoint.
-	Description pulumi.StringInput `pulumi:"description"`
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// The query parameter for the Spark application name.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// The shape of the SQL Endpoint driver instance.
-	DriverShape pulumi.StringInput `pulumi:"driverShape"`
+	DriverShape pulumi.StringPtrInput `pulumi:"driverShape"`
 	// This is used to configure the shape of the driver or executor if a flexible shape is used.
 	DriverShapeConfigs GetSqlEndpointsSqlEndpointCollectionItemDriverShapeConfigArrayInput `pulumi:"driverShapeConfigs"`
 	// The shape of the SQL Endpoint executor instance.
-	ExecutorShape pulumi.StringInput `pulumi:"executorShape"`
+	ExecutorShape pulumi.StringPtrInput `pulumi:"executorShape"`
 	// This is used to configure the shape of the driver or executor if a flexible shape is used.
 	ExecutorShapeConfigs GetSqlEndpointsSqlEndpointCollectionItemExecutorShapeConfigArrayInput `pulumi:"executorShapeConfigs"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// The provision identifier that is immutable on creation.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// The JDBC URL field. For example, jdbc:spark://{serviceFQDN}:443/default;SparkServerType=DFI
-	JdbcEndpointUrl pulumi.StringInput `pulumi:"jdbcEndpointUrl"`
+	JdbcEndpointUrl pulumi.StringPtrInput `pulumi:"jdbcEndpointUrl"`
 	// The OCID of Oracle Cloud Infrastructure Lake.
-	LakeId pulumi.StringInput `pulumi:"lakeId"`
+	LakeId pulumi.StringPtrInput `pulumi:"lakeId"`
 	// This token is used by Splat, and indicates that the service accepts the request, and that the request is currently being processed.
-	LastAcceptedRequestToken pulumi.StringInput `pulumi:"lastAcceptedRequestToken"`
+	LastAcceptedRequestToken pulumi.StringPtrInput `pulumi:"lastAcceptedRequestToken"`
 	// The maximum number of executors.
-	MaxExecutorCount pulumi.IntInput `pulumi:"maxExecutorCount"`
+	MaxExecutorCount pulumi.IntPtrInput `pulumi:"maxExecutorCount"`
 	// The OCID of Oracle Cloud Infrastructure Hive Metastore.
-	MetastoreId pulumi.StringInput `pulumi:"metastoreId"`
+	MetastoreId pulumi.StringPtrInput `pulumi:"metastoreId"`
 	// The minimum number of executors.
-	MinExecutorCount pulumi.IntInput `pulumi:"minExecutorCount"`
+	MinExecutorCount pulumi.IntPtrInput `pulumi:"minExecutorCount"`
 	// The network configuration of a SQL Endpoint.
 	NetworkConfigurations GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationArrayInput `pulumi:"networkConfigurations"`
 	// The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
 	SparkAdvancedConfigurations pulumi.MapInput `pulumi:"sparkAdvancedConfigurations"`
 	// The version of SQL Endpoint.
-	SqlEndpointVersion pulumi.StringInput `pulumi:"sqlEndpointVersion"`
+	SqlEndpointVersion pulumi.StringPtrInput `pulumi:"sqlEndpointVersion"`
 	// A filter to return only those resources whose sqlEndpointLifecycleState matches the given sqlEndpointLifecycleState.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// A message describing the reason why the resource is in it's current state. Helps bubble up errors in state changes. For example, it can be used to provide actionable information for a resource in the Failed state.
-	StateMessage pulumi.StringInput `pulumi:"stateMessage"`
+	StateMessage pulumi.StringPtrInput `pulumi:"stateMessage"`
 	// The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
 	SystemTags pulumi.MapInput `pulumi:"systemTags"`
 	// The time the Sql Endpoint was created. An RFC3339 formatted datetime string.
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// The time the Sql Endpoint was updated. An RFC3339 formatted datetime string.
-	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
 	// The warehouse bucket URI. It is a Oracle Cloud Infrastructure Object Storage bucket URI as defined here https://docs.oracle.com/en/cloud/paas/atp-cloud/atpud/object-storage-uris.html
-	WarehouseBucketUri pulumi.StringInput `pulumi:"warehouseBucketUri"`
+	WarehouseBucketUri pulumi.StringPtrInput `pulumi:"warehouseBucketUri"`
 }
 
 func (GetSqlEndpointsSqlEndpointCollectionItemArgs) ElementType() reflect.Type {
@@ -11549,12 +9796,6 @@ func (i GetSqlEndpointsSqlEndpointCollectionItemArgs) ToGetSqlEndpointsSqlEndpoi
 
 func (i GetSqlEndpointsSqlEndpointCollectionItemArgs) ToGetSqlEndpointsSqlEndpointCollectionItemOutputWithContext(ctx context.Context) GetSqlEndpointsSqlEndpointCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSqlEndpointsSqlEndpointCollectionItemOutput)
-}
-
-func (i GetSqlEndpointsSqlEndpointCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetSqlEndpointsSqlEndpointCollectionItem] {
-	return pulumix.Output[GetSqlEndpointsSqlEndpointCollectionItem]{
-		OutputState: i.ToGetSqlEndpointsSqlEndpointCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSqlEndpointsSqlEndpointCollectionItemArrayInput is an input type that accepts GetSqlEndpointsSqlEndpointCollectionItemArray and GetSqlEndpointsSqlEndpointCollectionItemArrayOutput values.
@@ -11582,12 +9823,6 @@ func (i GetSqlEndpointsSqlEndpointCollectionItemArray) ToGetSqlEndpointsSqlEndpo
 	return pulumi.ToOutputWithContext(ctx, i).(GetSqlEndpointsSqlEndpointCollectionItemArrayOutput)
 }
 
-func (i GetSqlEndpointsSqlEndpointCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSqlEndpointsSqlEndpointCollectionItem] {
-	return pulumix.Output[[]GetSqlEndpointsSqlEndpointCollectionItem]{
-		OutputState: i.ToGetSqlEndpointsSqlEndpointCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSqlEndpointsSqlEndpointCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetSqlEndpointsSqlEndpointCollectionItemOutput) ElementType() reflect.Type {
@@ -11602,15 +9837,9 @@ func (o GetSqlEndpointsSqlEndpointCollectionItemOutput) ToGetSqlEndpointsSqlEndp
 	return o
 }
 
-func (o GetSqlEndpointsSqlEndpointCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetSqlEndpointsSqlEndpointCollectionItem] {
-	return pulumix.Output[GetSqlEndpointsSqlEndpointCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the compartment in which to query resources.
-func (o GetSqlEndpointsSqlEndpointCollectionItemOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSqlEndpointsSqlEndpointCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetSqlEndpointsSqlEndpointCollectionItemOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSqlEndpointsSqlEndpointCollectionItem) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -11619,18 +9848,18 @@ func (o GetSqlEndpointsSqlEndpointCollectionItemOutput) DefinedTags() pulumi.Map
 }
 
 // The description of the SQL Endpoint.
-func (o GetSqlEndpointsSqlEndpointCollectionItemOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSqlEndpointsSqlEndpointCollectionItem) string { return v.Description }).(pulumi.StringOutput)
+func (o GetSqlEndpointsSqlEndpointCollectionItemOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSqlEndpointsSqlEndpointCollectionItem) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // The query parameter for the Spark application name.
-func (o GetSqlEndpointsSqlEndpointCollectionItemOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSqlEndpointsSqlEndpointCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetSqlEndpointsSqlEndpointCollectionItemOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSqlEndpointsSqlEndpointCollectionItem) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // The shape of the SQL Endpoint driver instance.
-func (o GetSqlEndpointsSqlEndpointCollectionItemOutput) DriverShape() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSqlEndpointsSqlEndpointCollectionItem) string { return v.DriverShape }).(pulumi.StringOutput)
+func (o GetSqlEndpointsSqlEndpointCollectionItemOutput) DriverShape() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSqlEndpointsSqlEndpointCollectionItem) *string { return v.DriverShape }).(pulumi.StringPtrOutput)
 }
 
 // This is used to configure the shape of the driver or executor if a flexible shape is used.
@@ -11641,8 +9870,8 @@ func (o GetSqlEndpointsSqlEndpointCollectionItemOutput) DriverShapeConfigs() Get
 }
 
 // The shape of the SQL Endpoint executor instance.
-func (o GetSqlEndpointsSqlEndpointCollectionItemOutput) ExecutorShape() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSqlEndpointsSqlEndpointCollectionItem) string { return v.ExecutorShape }).(pulumi.StringOutput)
+func (o GetSqlEndpointsSqlEndpointCollectionItemOutput) ExecutorShape() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSqlEndpointsSqlEndpointCollectionItem) *string { return v.ExecutorShape }).(pulumi.StringPtrOutput)
 }
 
 // This is used to configure the shape of the driver or executor if a flexible shape is used.
@@ -11658,38 +9887,38 @@ func (o GetSqlEndpointsSqlEndpointCollectionItemOutput) FreeformTags() pulumi.Ma
 }
 
 // The provision identifier that is immutable on creation.
-func (o GetSqlEndpointsSqlEndpointCollectionItemOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSqlEndpointsSqlEndpointCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+func (o GetSqlEndpointsSqlEndpointCollectionItemOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSqlEndpointsSqlEndpointCollectionItem) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The JDBC URL field. For example, jdbc:spark://{serviceFQDN}:443/default;SparkServerType=DFI
-func (o GetSqlEndpointsSqlEndpointCollectionItemOutput) JdbcEndpointUrl() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSqlEndpointsSqlEndpointCollectionItem) string { return v.JdbcEndpointUrl }).(pulumi.StringOutput)
+func (o GetSqlEndpointsSqlEndpointCollectionItemOutput) JdbcEndpointUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSqlEndpointsSqlEndpointCollectionItem) *string { return v.JdbcEndpointUrl }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of Oracle Cloud Infrastructure Lake.
-func (o GetSqlEndpointsSqlEndpointCollectionItemOutput) LakeId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSqlEndpointsSqlEndpointCollectionItem) string { return v.LakeId }).(pulumi.StringOutput)
+func (o GetSqlEndpointsSqlEndpointCollectionItemOutput) LakeId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSqlEndpointsSqlEndpointCollectionItem) *string { return v.LakeId }).(pulumi.StringPtrOutput)
 }
 
 // This token is used by Splat, and indicates that the service accepts the request, and that the request is currently being processed.
-func (o GetSqlEndpointsSqlEndpointCollectionItemOutput) LastAcceptedRequestToken() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSqlEndpointsSqlEndpointCollectionItem) string { return v.LastAcceptedRequestToken }).(pulumi.StringOutput)
+func (o GetSqlEndpointsSqlEndpointCollectionItemOutput) LastAcceptedRequestToken() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSqlEndpointsSqlEndpointCollectionItem) *string { return v.LastAcceptedRequestToken }).(pulumi.StringPtrOutput)
 }
 
 // The maximum number of executors.
-func (o GetSqlEndpointsSqlEndpointCollectionItemOutput) MaxExecutorCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetSqlEndpointsSqlEndpointCollectionItem) int { return v.MaxExecutorCount }).(pulumi.IntOutput)
+func (o GetSqlEndpointsSqlEndpointCollectionItemOutput) MaxExecutorCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetSqlEndpointsSqlEndpointCollectionItem) *int { return v.MaxExecutorCount }).(pulumi.IntPtrOutput)
 }
 
 // The OCID of Oracle Cloud Infrastructure Hive Metastore.
-func (o GetSqlEndpointsSqlEndpointCollectionItemOutput) MetastoreId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSqlEndpointsSqlEndpointCollectionItem) string { return v.MetastoreId }).(pulumi.StringOutput)
+func (o GetSqlEndpointsSqlEndpointCollectionItemOutput) MetastoreId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSqlEndpointsSqlEndpointCollectionItem) *string { return v.MetastoreId }).(pulumi.StringPtrOutput)
 }
 
 // The minimum number of executors.
-func (o GetSqlEndpointsSqlEndpointCollectionItemOutput) MinExecutorCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetSqlEndpointsSqlEndpointCollectionItem) int { return v.MinExecutorCount }).(pulumi.IntOutput)
+func (o GetSqlEndpointsSqlEndpointCollectionItemOutput) MinExecutorCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetSqlEndpointsSqlEndpointCollectionItem) *int { return v.MinExecutorCount }).(pulumi.IntPtrOutput)
 }
 
 // The network configuration of a SQL Endpoint.
@@ -11707,18 +9936,18 @@ func (o GetSqlEndpointsSqlEndpointCollectionItemOutput) SparkAdvancedConfigurati
 }
 
 // The version of SQL Endpoint.
-func (o GetSqlEndpointsSqlEndpointCollectionItemOutput) SqlEndpointVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSqlEndpointsSqlEndpointCollectionItem) string { return v.SqlEndpointVersion }).(pulumi.StringOutput)
+func (o GetSqlEndpointsSqlEndpointCollectionItemOutput) SqlEndpointVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSqlEndpointsSqlEndpointCollectionItem) *string { return v.SqlEndpointVersion }).(pulumi.StringPtrOutput)
 }
 
 // A filter to return only those resources whose sqlEndpointLifecycleState matches the given sqlEndpointLifecycleState.
-func (o GetSqlEndpointsSqlEndpointCollectionItemOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSqlEndpointsSqlEndpointCollectionItem) string { return v.State }).(pulumi.StringOutput)
+func (o GetSqlEndpointsSqlEndpointCollectionItemOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSqlEndpointsSqlEndpointCollectionItem) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // A message describing the reason why the resource is in it's current state. Helps bubble up errors in state changes. For example, it can be used to provide actionable information for a resource in the Failed state.
-func (o GetSqlEndpointsSqlEndpointCollectionItemOutput) StateMessage() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSqlEndpointsSqlEndpointCollectionItem) string { return v.StateMessage }).(pulumi.StringOutput)
+func (o GetSqlEndpointsSqlEndpointCollectionItemOutput) StateMessage() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSqlEndpointsSqlEndpointCollectionItem) *string { return v.StateMessage }).(pulumi.StringPtrOutput)
 }
 
 // The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
@@ -11727,18 +9956,18 @@ func (o GetSqlEndpointsSqlEndpointCollectionItemOutput) SystemTags() pulumi.MapO
 }
 
 // The time the Sql Endpoint was created. An RFC3339 formatted datetime string.
-func (o GetSqlEndpointsSqlEndpointCollectionItemOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSqlEndpointsSqlEndpointCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetSqlEndpointsSqlEndpointCollectionItemOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSqlEndpointsSqlEndpointCollectionItem) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time the Sql Endpoint was updated. An RFC3339 formatted datetime string.
-func (o GetSqlEndpointsSqlEndpointCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSqlEndpointsSqlEndpointCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o GetSqlEndpointsSqlEndpointCollectionItemOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSqlEndpointsSqlEndpointCollectionItem) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 // The warehouse bucket URI. It is a Oracle Cloud Infrastructure Object Storage bucket URI as defined here https://docs.oracle.com/en/cloud/paas/atp-cloud/atpud/object-storage-uris.html
-func (o GetSqlEndpointsSqlEndpointCollectionItemOutput) WarehouseBucketUri() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSqlEndpointsSqlEndpointCollectionItem) string { return v.WarehouseBucketUri }).(pulumi.StringOutput)
+func (o GetSqlEndpointsSqlEndpointCollectionItemOutput) WarehouseBucketUri() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSqlEndpointsSqlEndpointCollectionItem) *string { return v.WarehouseBucketUri }).(pulumi.StringPtrOutput)
 }
 
 type GetSqlEndpointsSqlEndpointCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -11755,12 +9984,6 @@ func (o GetSqlEndpointsSqlEndpointCollectionItemArrayOutput) ToGetSqlEndpointsSq
 	return o
 }
 
-func (o GetSqlEndpointsSqlEndpointCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSqlEndpointsSqlEndpointCollectionItem] {
-	return pulumix.Output[[]GetSqlEndpointsSqlEndpointCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSqlEndpointsSqlEndpointCollectionItemArrayOutput) Index(i pulumi.IntInput) GetSqlEndpointsSqlEndpointCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSqlEndpointsSqlEndpointCollectionItem {
 		return vs[0].([]GetSqlEndpointsSqlEndpointCollectionItem)[vs[1].(int)]
@@ -11769,9 +9992,9 @@ func (o GetSqlEndpointsSqlEndpointCollectionItemArrayOutput) Index(i pulumi.IntI
 
 type GetSqlEndpointsSqlEndpointCollectionItemDriverShapeConfig struct {
 	// The amount of memory used for the driver or executors.
-	MemoryInGbs float64 `pulumi:"memoryInGbs"`
+	MemoryInGbs *float64 `pulumi:"memoryInGbs"`
 	// The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
-	Ocpus float64 `pulumi:"ocpus"`
+	Ocpus *float64 `pulumi:"ocpus"`
 }
 
 // GetSqlEndpointsSqlEndpointCollectionItemDriverShapeConfigInput is an input type that accepts GetSqlEndpointsSqlEndpointCollectionItemDriverShapeConfigArgs and GetSqlEndpointsSqlEndpointCollectionItemDriverShapeConfigOutput values.
@@ -11787,9 +10010,9 @@ type GetSqlEndpointsSqlEndpointCollectionItemDriverShapeConfigInput interface {
 
 type GetSqlEndpointsSqlEndpointCollectionItemDriverShapeConfigArgs struct {
 	// The amount of memory used for the driver or executors.
-	MemoryInGbs pulumi.Float64Input `pulumi:"memoryInGbs"`
+	MemoryInGbs pulumi.Float64PtrInput `pulumi:"memoryInGbs"`
 	// The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
-	Ocpus pulumi.Float64Input `pulumi:"ocpus"`
+	Ocpus pulumi.Float64PtrInput `pulumi:"ocpus"`
 }
 
 func (GetSqlEndpointsSqlEndpointCollectionItemDriverShapeConfigArgs) ElementType() reflect.Type {
@@ -11802,12 +10025,6 @@ func (i GetSqlEndpointsSqlEndpointCollectionItemDriverShapeConfigArgs) ToGetSqlE
 
 func (i GetSqlEndpointsSqlEndpointCollectionItemDriverShapeConfigArgs) ToGetSqlEndpointsSqlEndpointCollectionItemDriverShapeConfigOutputWithContext(ctx context.Context) GetSqlEndpointsSqlEndpointCollectionItemDriverShapeConfigOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSqlEndpointsSqlEndpointCollectionItemDriverShapeConfigOutput)
-}
-
-func (i GetSqlEndpointsSqlEndpointCollectionItemDriverShapeConfigArgs) ToOutput(ctx context.Context) pulumix.Output[GetSqlEndpointsSqlEndpointCollectionItemDriverShapeConfig] {
-	return pulumix.Output[GetSqlEndpointsSqlEndpointCollectionItemDriverShapeConfig]{
-		OutputState: i.ToGetSqlEndpointsSqlEndpointCollectionItemDriverShapeConfigOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSqlEndpointsSqlEndpointCollectionItemDriverShapeConfigArrayInput is an input type that accepts GetSqlEndpointsSqlEndpointCollectionItemDriverShapeConfigArray and GetSqlEndpointsSqlEndpointCollectionItemDriverShapeConfigArrayOutput values.
@@ -11835,12 +10052,6 @@ func (i GetSqlEndpointsSqlEndpointCollectionItemDriverShapeConfigArray) ToGetSql
 	return pulumi.ToOutputWithContext(ctx, i).(GetSqlEndpointsSqlEndpointCollectionItemDriverShapeConfigArrayOutput)
 }
 
-func (i GetSqlEndpointsSqlEndpointCollectionItemDriverShapeConfigArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSqlEndpointsSqlEndpointCollectionItemDriverShapeConfig] {
-	return pulumix.Output[[]GetSqlEndpointsSqlEndpointCollectionItemDriverShapeConfig]{
-		OutputState: i.ToGetSqlEndpointsSqlEndpointCollectionItemDriverShapeConfigArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSqlEndpointsSqlEndpointCollectionItemDriverShapeConfigOutput struct{ *pulumi.OutputState }
 
 func (GetSqlEndpointsSqlEndpointCollectionItemDriverShapeConfigOutput) ElementType() reflect.Type {
@@ -11855,20 +10066,14 @@ func (o GetSqlEndpointsSqlEndpointCollectionItemDriverShapeConfigOutput) ToGetSq
 	return o
 }
 
-func (o GetSqlEndpointsSqlEndpointCollectionItemDriverShapeConfigOutput) ToOutput(ctx context.Context) pulumix.Output[GetSqlEndpointsSqlEndpointCollectionItemDriverShapeConfig] {
-	return pulumix.Output[GetSqlEndpointsSqlEndpointCollectionItemDriverShapeConfig]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The amount of memory used for the driver or executors.
-func (o GetSqlEndpointsSqlEndpointCollectionItemDriverShapeConfigOutput) MemoryInGbs() pulumi.Float64Output {
-	return o.ApplyT(func(v GetSqlEndpointsSqlEndpointCollectionItemDriverShapeConfig) float64 { return v.MemoryInGbs }).(pulumi.Float64Output)
+func (o GetSqlEndpointsSqlEndpointCollectionItemDriverShapeConfigOutput) MemoryInGbs() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetSqlEndpointsSqlEndpointCollectionItemDriverShapeConfig) *float64 { return v.MemoryInGbs }).(pulumi.Float64PtrOutput)
 }
 
 // The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
-func (o GetSqlEndpointsSqlEndpointCollectionItemDriverShapeConfigOutput) Ocpus() pulumi.Float64Output {
-	return o.ApplyT(func(v GetSqlEndpointsSqlEndpointCollectionItemDriverShapeConfig) float64 { return v.Ocpus }).(pulumi.Float64Output)
+func (o GetSqlEndpointsSqlEndpointCollectionItemDriverShapeConfigOutput) Ocpus() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetSqlEndpointsSqlEndpointCollectionItemDriverShapeConfig) *float64 { return v.Ocpus }).(pulumi.Float64PtrOutput)
 }
 
 type GetSqlEndpointsSqlEndpointCollectionItemDriverShapeConfigArrayOutput struct{ *pulumi.OutputState }
@@ -11885,12 +10090,6 @@ func (o GetSqlEndpointsSqlEndpointCollectionItemDriverShapeConfigArrayOutput) To
 	return o
 }
 
-func (o GetSqlEndpointsSqlEndpointCollectionItemDriverShapeConfigArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSqlEndpointsSqlEndpointCollectionItemDriverShapeConfig] {
-	return pulumix.Output[[]GetSqlEndpointsSqlEndpointCollectionItemDriverShapeConfig]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSqlEndpointsSqlEndpointCollectionItemDriverShapeConfigArrayOutput) Index(i pulumi.IntInput) GetSqlEndpointsSqlEndpointCollectionItemDriverShapeConfigOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSqlEndpointsSqlEndpointCollectionItemDriverShapeConfig {
 		return vs[0].([]GetSqlEndpointsSqlEndpointCollectionItemDriverShapeConfig)[vs[1].(int)]
@@ -11899,9 +10098,9 @@ func (o GetSqlEndpointsSqlEndpointCollectionItemDriverShapeConfigArrayOutput) In
 
 type GetSqlEndpointsSqlEndpointCollectionItemExecutorShapeConfig struct {
 	// The amount of memory used for the driver or executors.
-	MemoryInGbs float64 `pulumi:"memoryInGbs"`
+	MemoryInGbs *float64 `pulumi:"memoryInGbs"`
 	// The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
-	Ocpus float64 `pulumi:"ocpus"`
+	Ocpus *float64 `pulumi:"ocpus"`
 }
 
 // GetSqlEndpointsSqlEndpointCollectionItemExecutorShapeConfigInput is an input type that accepts GetSqlEndpointsSqlEndpointCollectionItemExecutorShapeConfigArgs and GetSqlEndpointsSqlEndpointCollectionItemExecutorShapeConfigOutput values.
@@ -11917,9 +10116,9 @@ type GetSqlEndpointsSqlEndpointCollectionItemExecutorShapeConfigInput interface 
 
 type GetSqlEndpointsSqlEndpointCollectionItemExecutorShapeConfigArgs struct {
 	// The amount of memory used for the driver or executors.
-	MemoryInGbs pulumi.Float64Input `pulumi:"memoryInGbs"`
+	MemoryInGbs pulumi.Float64PtrInput `pulumi:"memoryInGbs"`
 	// The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
-	Ocpus pulumi.Float64Input `pulumi:"ocpus"`
+	Ocpus pulumi.Float64PtrInput `pulumi:"ocpus"`
 }
 
 func (GetSqlEndpointsSqlEndpointCollectionItemExecutorShapeConfigArgs) ElementType() reflect.Type {
@@ -11932,12 +10131,6 @@ func (i GetSqlEndpointsSqlEndpointCollectionItemExecutorShapeConfigArgs) ToGetSq
 
 func (i GetSqlEndpointsSqlEndpointCollectionItemExecutorShapeConfigArgs) ToGetSqlEndpointsSqlEndpointCollectionItemExecutorShapeConfigOutputWithContext(ctx context.Context) GetSqlEndpointsSqlEndpointCollectionItemExecutorShapeConfigOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSqlEndpointsSqlEndpointCollectionItemExecutorShapeConfigOutput)
-}
-
-func (i GetSqlEndpointsSqlEndpointCollectionItemExecutorShapeConfigArgs) ToOutput(ctx context.Context) pulumix.Output[GetSqlEndpointsSqlEndpointCollectionItemExecutorShapeConfig] {
-	return pulumix.Output[GetSqlEndpointsSqlEndpointCollectionItemExecutorShapeConfig]{
-		OutputState: i.ToGetSqlEndpointsSqlEndpointCollectionItemExecutorShapeConfigOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSqlEndpointsSqlEndpointCollectionItemExecutorShapeConfigArrayInput is an input type that accepts GetSqlEndpointsSqlEndpointCollectionItemExecutorShapeConfigArray and GetSqlEndpointsSqlEndpointCollectionItemExecutorShapeConfigArrayOutput values.
@@ -11965,12 +10158,6 @@ func (i GetSqlEndpointsSqlEndpointCollectionItemExecutorShapeConfigArray) ToGetS
 	return pulumi.ToOutputWithContext(ctx, i).(GetSqlEndpointsSqlEndpointCollectionItemExecutorShapeConfigArrayOutput)
 }
 
-func (i GetSqlEndpointsSqlEndpointCollectionItemExecutorShapeConfigArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSqlEndpointsSqlEndpointCollectionItemExecutorShapeConfig] {
-	return pulumix.Output[[]GetSqlEndpointsSqlEndpointCollectionItemExecutorShapeConfig]{
-		OutputState: i.ToGetSqlEndpointsSqlEndpointCollectionItemExecutorShapeConfigArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSqlEndpointsSqlEndpointCollectionItemExecutorShapeConfigOutput struct{ *pulumi.OutputState }
 
 func (GetSqlEndpointsSqlEndpointCollectionItemExecutorShapeConfigOutput) ElementType() reflect.Type {
@@ -11985,20 +10172,14 @@ func (o GetSqlEndpointsSqlEndpointCollectionItemExecutorShapeConfigOutput) ToGet
 	return o
 }
 
-func (o GetSqlEndpointsSqlEndpointCollectionItemExecutorShapeConfigOutput) ToOutput(ctx context.Context) pulumix.Output[GetSqlEndpointsSqlEndpointCollectionItemExecutorShapeConfig] {
-	return pulumix.Output[GetSqlEndpointsSqlEndpointCollectionItemExecutorShapeConfig]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The amount of memory used for the driver or executors.
-func (o GetSqlEndpointsSqlEndpointCollectionItemExecutorShapeConfigOutput) MemoryInGbs() pulumi.Float64Output {
-	return o.ApplyT(func(v GetSqlEndpointsSqlEndpointCollectionItemExecutorShapeConfig) float64 { return v.MemoryInGbs }).(pulumi.Float64Output)
+func (o GetSqlEndpointsSqlEndpointCollectionItemExecutorShapeConfigOutput) MemoryInGbs() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetSqlEndpointsSqlEndpointCollectionItemExecutorShapeConfig) *float64 { return v.MemoryInGbs }).(pulumi.Float64PtrOutput)
 }
 
 // The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
-func (o GetSqlEndpointsSqlEndpointCollectionItemExecutorShapeConfigOutput) Ocpus() pulumi.Float64Output {
-	return o.ApplyT(func(v GetSqlEndpointsSqlEndpointCollectionItemExecutorShapeConfig) float64 { return v.Ocpus }).(pulumi.Float64Output)
+func (o GetSqlEndpointsSqlEndpointCollectionItemExecutorShapeConfigOutput) Ocpus() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetSqlEndpointsSqlEndpointCollectionItemExecutorShapeConfig) *float64 { return v.Ocpus }).(pulumi.Float64PtrOutput)
 }
 
 type GetSqlEndpointsSqlEndpointCollectionItemExecutorShapeConfigArrayOutput struct{ *pulumi.OutputState }
@@ -12015,12 +10196,6 @@ func (o GetSqlEndpointsSqlEndpointCollectionItemExecutorShapeConfigArrayOutput) 
 	return o
 }
 
-func (o GetSqlEndpointsSqlEndpointCollectionItemExecutorShapeConfigArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSqlEndpointsSqlEndpointCollectionItemExecutorShapeConfig] {
-	return pulumix.Output[[]GetSqlEndpointsSqlEndpointCollectionItemExecutorShapeConfig]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSqlEndpointsSqlEndpointCollectionItemExecutorShapeConfigArrayOutput) Index(i pulumi.IntInput) GetSqlEndpointsSqlEndpointCollectionItemExecutorShapeConfigOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSqlEndpointsSqlEndpointCollectionItemExecutorShapeConfig {
 		return vs[0].([]GetSqlEndpointsSqlEndpointCollectionItemExecutorShapeConfig)[vs[1].(int)]
@@ -12031,17 +10206,17 @@ type GetSqlEndpointsSqlEndpointCollectionItemNetworkConfiguration struct {
 	// A list of SecureAccessControlRule's to which access is limited to
 	AccessControlRules []GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRule `pulumi:"accessControlRules"`
 	// The host name prefix.
-	HostNamePrefix string `pulumi:"hostNamePrefix"`
+	HostNamePrefix *string `pulumi:"hostNamePrefix"`
 	// The type of network configuration.
-	NetworkType string `pulumi:"networkType"`
+	NetworkType *string `pulumi:"networkType"`
 	// Ip Address of private endpoint
-	PrivateEndpointIp string `pulumi:"privateEndpointIp"`
+	PrivateEndpointIp *string `pulumi:"privateEndpointIp"`
 	// Ip Address of public endpoint
-	PublicEndpointIp string `pulumi:"publicEndpointIp"`
+	PublicEndpointIp *string `pulumi:"publicEndpointIp"`
 	// The VCN Subnet OCID.
-	SubnetId string `pulumi:"subnetId"`
+	SubnetId *string `pulumi:"subnetId"`
 	// The VCN OCID.
-	VcnId string `pulumi:"vcnId"`
+	VcnId *string `pulumi:"vcnId"`
 }
 
 // GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationInput is an input type that accepts GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationArgs and GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationOutput values.
@@ -12059,17 +10234,17 @@ type GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationArgs struct {
 	// A list of SecureAccessControlRule's to which access is limited to
 	AccessControlRules GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRuleArrayInput `pulumi:"accessControlRules"`
 	// The host name prefix.
-	HostNamePrefix pulumi.StringInput `pulumi:"hostNamePrefix"`
+	HostNamePrefix pulumi.StringPtrInput `pulumi:"hostNamePrefix"`
 	// The type of network configuration.
-	NetworkType pulumi.StringInput `pulumi:"networkType"`
+	NetworkType pulumi.StringPtrInput `pulumi:"networkType"`
 	// Ip Address of private endpoint
-	PrivateEndpointIp pulumi.StringInput `pulumi:"privateEndpointIp"`
+	PrivateEndpointIp pulumi.StringPtrInput `pulumi:"privateEndpointIp"`
 	// Ip Address of public endpoint
-	PublicEndpointIp pulumi.StringInput `pulumi:"publicEndpointIp"`
+	PublicEndpointIp pulumi.StringPtrInput `pulumi:"publicEndpointIp"`
 	// The VCN Subnet OCID.
-	SubnetId pulumi.StringInput `pulumi:"subnetId"`
+	SubnetId pulumi.StringPtrInput `pulumi:"subnetId"`
 	// The VCN OCID.
-	VcnId pulumi.StringInput `pulumi:"vcnId"`
+	VcnId pulumi.StringPtrInput `pulumi:"vcnId"`
 }
 
 func (GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationArgs) ElementType() reflect.Type {
@@ -12082,12 +10257,6 @@ func (i GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationArgs) ToGetS
 
 func (i GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationArgs) ToGetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationOutputWithContext(ctx context.Context) GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationOutput)
-}
-
-func (i GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationArgs) ToOutput(ctx context.Context) pulumix.Output[GetSqlEndpointsSqlEndpointCollectionItemNetworkConfiguration] {
-	return pulumix.Output[GetSqlEndpointsSqlEndpointCollectionItemNetworkConfiguration]{
-		OutputState: i.ToGetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationArrayInput is an input type that accepts GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationArray and GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationArrayOutput values.
@@ -12115,12 +10284,6 @@ func (i GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationArray) ToGet
 	return pulumi.ToOutputWithContext(ctx, i).(GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationArrayOutput)
 }
 
-func (i GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSqlEndpointsSqlEndpointCollectionItemNetworkConfiguration] {
-	return pulumix.Output[[]GetSqlEndpointsSqlEndpointCollectionItemNetworkConfiguration]{
-		OutputState: i.ToGetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationOutput struct{ *pulumi.OutputState }
 
 func (GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationOutput) ElementType() reflect.Type {
@@ -12135,12 +10298,6 @@ func (o GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationOutput) ToGe
 	return o
 }
 
-func (o GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationOutput) ToOutput(ctx context.Context) pulumix.Output[GetSqlEndpointsSqlEndpointCollectionItemNetworkConfiguration] {
-	return pulumix.Output[GetSqlEndpointsSqlEndpointCollectionItemNetworkConfiguration]{
-		OutputState: o.OutputState,
-	}
-}
-
 // A list of SecureAccessControlRule's to which access is limited to
 func (o GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationOutput) AccessControlRules() GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRuleArrayOutput {
 	return o.ApplyT(func(v GetSqlEndpointsSqlEndpointCollectionItemNetworkConfiguration) []GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRule {
@@ -12149,35 +10306,37 @@ func (o GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationOutput) Acce
 }
 
 // The host name prefix.
-func (o GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationOutput) HostNamePrefix() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSqlEndpointsSqlEndpointCollectionItemNetworkConfiguration) string { return v.HostNamePrefix }).(pulumi.StringOutput)
+func (o GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationOutput) HostNamePrefix() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSqlEndpointsSqlEndpointCollectionItemNetworkConfiguration) *string { return v.HostNamePrefix }).(pulumi.StringPtrOutput)
 }
 
 // The type of network configuration.
-func (o GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationOutput) NetworkType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSqlEndpointsSqlEndpointCollectionItemNetworkConfiguration) string { return v.NetworkType }).(pulumi.StringOutput)
+func (o GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationOutput) NetworkType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSqlEndpointsSqlEndpointCollectionItemNetworkConfiguration) *string { return v.NetworkType }).(pulumi.StringPtrOutput)
 }
 
 // Ip Address of private endpoint
-func (o GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationOutput) PrivateEndpointIp() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSqlEndpointsSqlEndpointCollectionItemNetworkConfiguration) string {
+func (o GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationOutput) PrivateEndpointIp() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSqlEndpointsSqlEndpointCollectionItemNetworkConfiguration) *string {
 		return v.PrivateEndpointIp
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Ip Address of public endpoint
-func (o GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationOutput) PublicEndpointIp() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSqlEndpointsSqlEndpointCollectionItemNetworkConfiguration) string { return v.PublicEndpointIp }).(pulumi.StringOutput)
+func (o GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationOutput) PublicEndpointIp() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSqlEndpointsSqlEndpointCollectionItemNetworkConfiguration) *string {
+		return v.PublicEndpointIp
+	}).(pulumi.StringPtrOutput)
 }
 
 // The VCN Subnet OCID.
-func (o GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationOutput) SubnetId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSqlEndpointsSqlEndpointCollectionItemNetworkConfiguration) string { return v.SubnetId }).(pulumi.StringOutput)
+func (o GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationOutput) SubnetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSqlEndpointsSqlEndpointCollectionItemNetworkConfiguration) *string { return v.SubnetId }).(pulumi.StringPtrOutput)
 }
 
 // The VCN OCID.
-func (o GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationOutput) VcnId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSqlEndpointsSqlEndpointCollectionItemNetworkConfiguration) string { return v.VcnId }).(pulumi.StringOutput)
+func (o GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationOutput) VcnId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSqlEndpointsSqlEndpointCollectionItemNetworkConfiguration) *string { return v.VcnId }).(pulumi.StringPtrOutput)
 }
 
 type GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationArrayOutput struct{ *pulumi.OutputState }
@@ -12194,12 +10353,6 @@ func (o GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationArrayOutput)
 	return o
 }
 
-func (o GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSqlEndpointsSqlEndpointCollectionItemNetworkConfiguration] {
-	return pulumix.Output[[]GetSqlEndpointsSqlEndpointCollectionItemNetworkConfiguration]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationArrayOutput) Index(i pulumi.IntInput) GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSqlEndpointsSqlEndpointCollectionItemNetworkConfiguration {
 		return vs[0].([]GetSqlEndpointsSqlEndpointCollectionItemNetworkConfiguration)[vs[1].(int)]
@@ -12208,11 +10361,11 @@ func (o GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationArrayOutput)
 
 type GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRule struct {
 	// The type of IP notation.
-	IpNotation string `pulumi:"ipNotation"`
+	IpNotation *string `pulumi:"ipNotation"`
 	// The associated value of the selected IP notation.
-	Value string `pulumi:"value"`
+	Value *string `pulumi:"value"`
 	// A comma-separated IP or CIDR address for VCN OCID IP notation selection.
-	VcnIps string `pulumi:"vcnIps"`
+	VcnIps *string `pulumi:"vcnIps"`
 }
 
 // GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRuleInput is an input type that accepts GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRuleArgs and GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRuleOutput values.
@@ -12228,11 +10381,11 @@ type GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRu
 
 type GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRuleArgs struct {
 	// The type of IP notation.
-	IpNotation pulumi.StringInput `pulumi:"ipNotation"`
+	IpNotation pulumi.StringPtrInput `pulumi:"ipNotation"`
 	// The associated value of the selected IP notation.
-	Value pulumi.StringInput `pulumi:"value"`
+	Value pulumi.StringPtrInput `pulumi:"value"`
 	// A comma-separated IP or CIDR address for VCN OCID IP notation selection.
-	VcnIps pulumi.StringInput `pulumi:"vcnIps"`
+	VcnIps pulumi.StringPtrInput `pulumi:"vcnIps"`
 }
 
 func (GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRuleArgs) ElementType() reflect.Type {
@@ -12245,12 +10398,6 @@ func (i GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessContro
 
 func (i GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRuleArgs) ToGetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRuleOutputWithContext(ctx context.Context) GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRuleOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRuleOutput)
-}
-
-func (i GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRuleArgs) ToOutput(ctx context.Context) pulumix.Output[GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRule] {
-	return pulumix.Output[GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRule]{
-		OutputState: i.ToGetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRuleOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRuleArrayInput is an input type that accepts GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRuleArray and GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRuleArrayOutput values.
@@ -12278,12 +10425,6 @@ func (i GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessContro
 	return pulumi.ToOutputWithContext(ctx, i).(GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRuleArrayOutput)
 }
 
-func (i GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRuleArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRule] {
-	return pulumix.Output[[]GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRule]{
-		OutputState: i.ToGetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRuleArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRuleOutput struct{ *pulumi.OutputState }
 
 func (GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRuleOutput) ElementType() reflect.Type {
@@ -12298,31 +10439,25 @@ func (o GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessContro
 	return o
 }
 
-func (o GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRuleOutput) ToOutput(ctx context.Context) pulumix.Output[GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRule] {
-	return pulumix.Output[GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRule]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The type of IP notation.
-func (o GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRuleOutput) IpNotation() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRule) string {
+func (o GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRuleOutput) IpNotation() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRule) *string {
 		return v.IpNotation
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The associated value of the selected IP notation.
-func (o GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRuleOutput) Value() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRule) string {
+func (o GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRuleOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRule) *string {
 		return v.Value
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // A comma-separated IP or CIDR address for VCN OCID IP notation selection.
-func (o GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRuleOutput) VcnIps() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRule) string {
+func (o GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRuleOutput) VcnIps() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRule) *string {
 		return v.VcnIps
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRuleArrayOutput struct{ *pulumi.OutputState }
@@ -12337,12 +10472,6 @@ func (o GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessContro
 
 func (o GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRuleArrayOutput) ToGetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRuleArrayOutputWithContext(ctx context.Context) GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRuleArrayOutput {
 	return o
-}
-
-func (o GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRuleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRule] {
-	return pulumix.Output[[]GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRule]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRuleArrayOutput) Index(i pulumi.IntInput) GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRuleOutput {

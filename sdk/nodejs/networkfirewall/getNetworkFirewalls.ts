@@ -96,7 +96,7 @@ export interface GetNetworkFirewallsResult {
     /**
      * The list of network_firewall_collection.
      */
-    readonly networkFirewallCollections: outputs.NetworkFirewall.GetNetworkFirewallsNetworkFirewallCollection[];
+    readonly networkFirewallCollections?: outputs.NetworkFirewall.GetNetworkFirewallsNetworkFirewallCollection[];
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Network Firewall Policy.
      */

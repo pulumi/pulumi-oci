@@ -8,6 +8,8 @@ import com.pulumi.oci.Kms.outputs.GetVaultsVaultExternalKeyManagerMetadataSummar
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetVaultsVaultExternalKeyManagerMetadataSummary {
@@ -15,51 +17,51 @@ public final class GetVaultsVaultExternalKeyManagerMetadataSummary {
      * @return URL of the vault on external key manager.
      * 
      */
-    private String externalVaultEndpointUrl;
+    private @Nullable String externalVaultEndpointUrl;
     /**
      * @return Summary about authorization to be returned to the customer as a response.
      * 
      */
-    private List<GetVaultsVaultExternalKeyManagerMetadataSummaryOauthMetadataSummary> oauthMetadataSummaries;
+    private @Nullable List<GetVaultsVaultExternalKeyManagerMetadataSummaryOauthMetadataSummary> oauthMetadataSummaries;
     /**
      * @return OCID of the private endpoint.
      * 
      */
-    private String privateEndpointId;
+    private @Nullable String privateEndpointId;
     /**
      * @return Vendor of the external key manager.
      * 
      */
-    private String vendor;
+    private @Nullable String vendor;
 
     private GetVaultsVaultExternalKeyManagerMetadataSummary() {}
     /**
      * @return URL of the vault on external key manager.
      * 
      */
-    public String externalVaultEndpointUrl() {
-        return this.externalVaultEndpointUrl;
+    public Optional<String> externalVaultEndpointUrl() {
+        return Optional.ofNullable(this.externalVaultEndpointUrl);
     }
     /**
      * @return Summary about authorization to be returned to the customer as a response.
      * 
      */
     public List<GetVaultsVaultExternalKeyManagerMetadataSummaryOauthMetadataSummary> oauthMetadataSummaries() {
-        return this.oauthMetadataSummaries;
+        return this.oauthMetadataSummaries == null ? List.of() : this.oauthMetadataSummaries;
     }
     /**
      * @return OCID of the private endpoint.
      * 
      */
-    public String privateEndpointId() {
-        return this.privateEndpointId;
+    public Optional<String> privateEndpointId() {
+        return Optional.ofNullable(this.privateEndpointId);
     }
     /**
      * @return Vendor of the external key manager.
      * 
      */
-    public String vendor() {
-        return this.vendor;
+    public Optional<String> vendor() {
+        return Optional.ofNullable(this.vendor);
     }
 
     public static Builder builder() {
@@ -71,10 +73,10 @@ public final class GetVaultsVaultExternalKeyManagerMetadataSummary {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String externalVaultEndpointUrl;
-        private List<GetVaultsVaultExternalKeyManagerMetadataSummaryOauthMetadataSummary> oauthMetadataSummaries;
-        private String privateEndpointId;
-        private String vendor;
+        private @Nullable String externalVaultEndpointUrl;
+        private @Nullable List<GetVaultsVaultExternalKeyManagerMetadataSummaryOauthMetadataSummary> oauthMetadataSummaries;
+        private @Nullable String privateEndpointId;
+        private @Nullable String vendor;
         public Builder() {}
         public Builder(GetVaultsVaultExternalKeyManagerMetadataSummary defaults) {
     	      Objects.requireNonNull(defaults);
@@ -85,26 +87,26 @@ public final class GetVaultsVaultExternalKeyManagerMetadataSummary {
         }
 
         @CustomType.Setter
-        public Builder externalVaultEndpointUrl(String externalVaultEndpointUrl) {
-            this.externalVaultEndpointUrl = Objects.requireNonNull(externalVaultEndpointUrl);
+        public Builder externalVaultEndpointUrl(@Nullable String externalVaultEndpointUrl) {
+            this.externalVaultEndpointUrl = externalVaultEndpointUrl;
             return this;
         }
         @CustomType.Setter
-        public Builder oauthMetadataSummaries(List<GetVaultsVaultExternalKeyManagerMetadataSummaryOauthMetadataSummary> oauthMetadataSummaries) {
-            this.oauthMetadataSummaries = Objects.requireNonNull(oauthMetadataSummaries);
+        public Builder oauthMetadataSummaries(@Nullable List<GetVaultsVaultExternalKeyManagerMetadataSummaryOauthMetadataSummary> oauthMetadataSummaries) {
+            this.oauthMetadataSummaries = oauthMetadataSummaries;
             return this;
         }
         public Builder oauthMetadataSummaries(GetVaultsVaultExternalKeyManagerMetadataSummaryOauthMetadataSummary... oauthMetadataSummaries) {
             return oauthMetadataSummaries(List.of(oauthMetadataSummaries));
         }
         @CustomType.Setter
-        public Builder privateEndpointId(String privateEndpointId) {
-            this.privateEndpointId = Objects.requireNonNull(privateEndpointId);
+        public Builder privateEndpointId(@Nullable String privateEndpointId) {
+            this.privateEndpointId = privateEndpointId;
             return this;
         }
         @CustomType.Setter
-        public Builder vendor(String vendor) {
-            this.vendor = Objects.requireNonNull(vendor);
+        public Builder vendor(@Nullable String vendor) {
+            this.vendor = vendor;
             return this;
         }
         public GetVaultsVaultExternalKeyManagerMetadataSummary build() {

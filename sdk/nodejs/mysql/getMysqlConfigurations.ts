@@ -91,7 +91,7 @@ export interface GetMysqlConfigurationsResult {
     /**
      * The list of configurations.
      */
-    readonly configurations: outputs.Mysql.GetMysqlConfigurationsConfiguration[];
+    readonly configurations?: outputs.Mysql.GetMysqlConfigurationsConfiguration[];
     /**
      * The display name of the Configuration.
      */
@@ -100,7 +100,7 @@ export interface GetMysqlConfigurationsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The name of the associated Shape.
      */

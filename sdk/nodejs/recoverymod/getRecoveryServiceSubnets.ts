@@ -92,7 +92,7 @@ export interface GetRecoveryServiceSubnetsResult {
     /**
      * The list of recovery_service_subnet_collection.
      */
-    readonly recoveryServiceSubnetCollections: outputs.RecoveryMod.GetRecoveryServiceSubnetsRecoveryServiceSubnetCollection[];
+    readonly recoveryServiceSubnetCollections?: outputs.RecoveryMod.GetRecoveryServiceSubnetsRecoveryServiceSubnetCollection[];
     /**
      * The current state of the recovery service subnet. Allowed values are:
      * * CREATING

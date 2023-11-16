@@ -174,7 +174,7 @@ export interface GetUserAssessmentProfilesResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly inactiveAccountTimeGreaterThanOrEqual?: string;
     readonly inactiveAccountTimeLessThan?: string;
     /**
@@ -194,7 +194,7 @@ export interface GetUserAssessmentProfilesResult {
     /**
      * The list of profiles.
      */
-    readonly profiles: outputs.DataSafe.GetUserAssessmentProfilesProfile[];
+    readonly profiles?: outputs.DataSafe.GetUserAssessmentProfilesProfile[];
     readonly sessionsPerUserGreaterThanOrEqual?: string;
     readonly sessionsPerUserLessThan?: string;
     /**

@@ -122,14 +122,14 @@ public class DbHome extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="compartmentId", refs={String.class}, tree="[0]")
-    private Output<String> compartmentId;
+    private Output</* @Nullable */ String> compartmentId;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    public Output<String> compartmentId() {
-        return this.compartmentId;
+    public Output<Optional<String>> compartmentId() {
+        return Codegen.optional(this.compartmentId);
     }
     /**
      * (Updatable) Details for creating a database.
@@ -138,7 +138,7 @@ public class DbHome extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="database", refs={DbHomeDatabase.class}, tree="[0]")
-    private Output<DbHomeDatabase> database;
+    private Output</* @Nullable */ DbHomeDatabase> database;
 
     /**
      * @return (Updatable) Details for creating a database.
@@ -146,50 +146,50 @@ public class DbHome extends com.pulumi.resources.CustomResource {
      * **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
      * 
      */
-    public Output<DbHomeDatabase> database() {
-        return this.database;
+    public Output<Optional<DbHomeDatabase>> database() {
+        return Codegen.optional(this.database);
     }
     /**
      * The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
      * 
      */
     @Export(name="databaseSoftwareImageId", refs={String.class}, tree="[0]")
-    private Output<String> databaseSoftwareImageId;
+    private Output</* @Nullable */ String> databaseSoftwareImageId;
 
     /**
      * @return The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
      * 
      */
-    public Output<String> databaseSoftwareImageId() {
-        return this.databaseSoftwareImageId;
+    public Output<Optional<String>> databaseSoftwareImageId() {
+        return Codegen.optional(this.databaseSoftwareImageId);
     }
     /**
      * The location of the Oracle Database Home.
      * 
      */
     @Export(name="dbHomeLocation", refs={String.class}, tree="[0]")
-    private Output<String> dbHomeLocation;
+    private Output</* @Nullable */ String> dbHomeLocation;
 
     /**
      * @return The location of the Oracle Database Home.
      * 
      */
-    public Output<String> dbHomeLocation() {
-        return this.dbHomeLocation;
+    public Output<Optional<String>> dbHomeLocation() {
+        return Codegen.optional(this.dbHomeLocation);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
      * 
      */
     @Export(name="dbSystemId", refs={String.class}, tree="[0]")
-    private Output<String> dbSystemId;
+    private Output</* @Nullable */ String> dbSystemId;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
      * 
      */
-    public Output<String> dbSystemId() {
-        return this.dbSystemId;
+    public Output<Optional<String>> dbSystemId() {
+        return Codegen.optional(this.dbSystemId);
     }
     /**
      * A valid Oracle Database version. For a list of supported versions, use the ListDbVersions operation.
@@ -198,7 +198,7 @@ public class DbHome extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="dbVersion", refs={String.class}, tree="[0]")
-    private Output<String> dbVersion;
+    private Output</* @Nullable */ String> dbVersion;
 
     /**
      * @return A valid Oracle Database version. For a list of supported versions, use the ListDbVersions operation.
@@ -206,36 +206,36 @@ public class DbHome extends com.pulumi.resources.CustomResource {
      * This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
      * 
      */
-    public Output<String> dbVersion() {
-        return this.dbVersion;
+    public Output<Optional<String>> dbVersion() {
+        return Codegen.optional(this.dbVersion);
     }
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * The user-provided name of the Database Home.
      * 
      */
     @Export(name="displayName", refs={String.class}, tree="[0]")
-    private Output<String> displayName;
+    private Output</* @Nullable */ String> displayName;
 
     /**
      * @return The user-provided name of the Database Home.
      * 
      */
-    public Output<String> displayName() {
-        return this.displayName;
+    public Output<Optional<String>> displayName() {
+        return Codegen.optional(this.displayName);
     }
     /**
      * Defaults to false. If omitted or set to false the provider will not delete databases removed from the Db Home configuration.
@@ -256,126 +256,126 @@ public class DbHome extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * If true, the customer acknowledges that the specified Oracle Database software is an older release that is not currently supported by OCI.
      * 
      */
     @Export(name="isDesupportedVersion", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isDesupportedVersion;
+    private Output</* @Nullable */ Boolean> isDesupportedVersion;
 
     /**
      * @return If true, the customer acknowledges that the specified Oracle Database software is an older release that is not currently supported by OCI.
      * 
      */
-    public Output<Boolean> isDesupportedVersion() {
-        return this.isDesupportedVersion;
+    public Output<Optional<Boolean>> isDesupportedVersion() {
+        return Codegen.optional(this.isDesupportedVersion);
     }
     /**
      * The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
      * 
      */
     @Export(name="kmsKeyId", refs={String.class}, tree="[0]")
-    private Output<String> kmsKeyId;
+    private Output</* @Nullable */ String> kmsKeyId;
 
     /**
      * @return The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
      * 
      */
-    public Output<String> kmsKeyId() {
-        return this.kmsKeyId;
+    public Output<Optional<String>> kmsKeyId() {
+        return Codegen.optional(this.kmsKeyId);
     }
     /**
      * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
      * 
      */
     @Export(name="kmsKeyVersionId", refs={String.class}, tree="[0]")
-    private Output<String> kmsKeyVersionId;
+    private Output</* @Nullable */ String> kmsKeyVersionId;
 
     /**
      * @return The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
      * 
      */
-    public Output<String> kmsKeyVersionId() {
-        return this.kmsKeyVersionId;
+    public Output<Optional<String>> kmsKeyVersionId() {
+        return Codegen.optional(this.kmsKeyVersionId);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last patch history. This value is updated as soon as a patch operation is started.
      * 
      */
     @Export(name="lastPatchHistoryEntryId", refs={String.class}, tree="[0]")
-    private Output<String> lastPatchHistoryEntryId;
+    private Output</* @Nullable */ String> lastPatchHistoryEntryId;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last patch history. This value is updated as soon as a patch operation is started.
      * 
      */
-    public Output<String> lastPatchHistoryEntryId() {
-        return this.lastPatchHistoryEntryId;
+    public Output<Optional<String>> lastPatchHistoryEntryId() {
+        return Codegen.optional(this.lastPatchHistoryEntryId);
     }
     /**
      * Additional information about the current lifecycle state.
      * 
      */
     @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
-    private Output<String> lifecycleDetails;
+    private Output</* @Nullable */ String> lifecycleDetails;
 
     /**
      * @return Additional information about the current lifecycle state.
      * 
      */
-    public Output<String> lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Output<Optional<String>> lifecycleDetails() {
+        return Codegen.optional(this.lifecycleDetails);
     }
     /**
      * The source of database: NONE for creating a new database. DB_BACKUP for creating a new database by restoring from a database backup. VM_CLUSTER_NEW for creating a database for VM Cluster.
      * 
      */
     @Export(name="source", refs={String.class}, tree="[0]")
-    private Output<String> source;
+    private Output</* @Nullable */ String> source;
 
     /**
      * @return The source of database: NONE for creating a new database. DB_BACKUP for creating a new database by restoring from a database backup. VM_CLUSTER_NEW for creating a database for VM Cluster.
      * 
      */
-    public Output<String> source() {
-        return this.source;
+    public Output<Optional<String>> source() {
+        return Codegen.optional(this.source);
     }
     /**
      * The current state of the Database Home.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The current state of the Database Home.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * The date and time the Database Home was created.
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The date and time the Database Home was created.
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
@@ -385,7 +385,7 @@ public class DbHome extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="vmClusterId", refs={String.class}, tree="[0]")
-    private Output<String> vmClusterId;
+    private Output</* @Nullable */ String> vmClusterId;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
@@ -394,8 +394,8 @@ public class DbHome extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Output<String> vmClusterId() {
-        return this.vmClusterId;
+    public Output<Optional<String>> vmClusterId() {
+        return Codegen.optional(this.vmClusterId);
     }
 
     /**

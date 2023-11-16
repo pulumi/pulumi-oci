@@ -8,6 +8,8 @@ import com.pulumi.oci.MediaServices.outputs.GetSystemMediaWorkflowItemTask;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetSystemMediaWorkflowItem {
@@ -15,51 +17,51 @@ public final class GetSystemMediaWorkflowItem {
      * @return Description of this workflow&#39;s processing and how that processing can be customized by specifying parameter values.
      * 
      */
-    private String description;
+    private @Nullable String description;
     /**
      * @return A filter to return only the resources with their system defined, unique name matching the given name.
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return Data specifiying how this task is to be run. The data is a JSON object that must conform to the JSON Schema specified by the parameters of the MediaWorkflowTaskDeclaration this task references. The parameters may contain values or references to other parameters.
      * 
      */
-    private String parameters;
+    private @Nullable String parameters;
     /**
      * @return The processing to be done in this workflow. Each key of the MediaWorkflowTasks in this array is unique within the array. The order of the items is preserved from the order of the tasks array in CreateMediaWorkflowDetails or UpdateMediaWorkflowDetails.
      * 
      */
-    private List<GetSystemMediaWorkflowItemTask> tasks;
+    private @Nullable List<GetSystemMediaWorkflowItemTask> tasks;
 
     private GetSystemMediaWorkflowItem() {}
     /**
      * @return Description of this workflow&#39;s processing and how that processing can be customized by specifying parameter values.
      * 
      */
-    public String description() {
-        return this.description;
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
     /**
      * @return A filter to return only the resources with their system defined, unique name matching the given name.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return Data specifiying how this task is to be run. The data is a JSON object that must conform to the JSON Schema specified by the parameters of the MediaWorkflowTaskDeclaration this task references. The parameters may contain values or references to other parameters.
      * 
      */
-    public String parameters() {
-        return this.parameters;
+    public Optional<String> parameters() {
+        return Optional.ofNullable(this.parameters);
     }
     /**
      * @return The processing to be done in this workflow. Each key of the MediaWorkflowTasks in this array is unique within the array. The order of the items is preserved from the order of the tasks array in CreateMediaWorkflowDetails or UpdateMediaWorkflowDetails.
      * 
      */
     public List<GetSystemMediaWorkflowItemTask> tasks() {
-        return this.tasks;
+        return this.tasks == null ? List.of() : this.tasks;
     }
 
     public static Builder builder() {
@@ -71,10 +73,10 @@ public final class GetSystemMediaWorkflowItem {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String description;
-        private String name;
-        private String parameters;
-        private List<GetSystemMediaWorkflowItemTask> tasks;
+        private @Nullable String description;
+        private @Nullable String name;
+        private @Nullable String parameters;
+        private @Nullable List<GetSystemMediaWorkflowItemTask> tasks;
         public Builder() {}
         public Builder(GetSystemMediaWorkflowItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -85,23 +87,23 @@ public final class GetSystemMediaWorkflowItem {
         }
 
         @CustomType.Setter
-        public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+        public Builder description(@Nullable String description) {
+            this.description = description;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder parameters(String parameters) {
-            this.parameters = Objects.requireNonNull(parameters);
+        public Builder parameters(@Nullable String parameters) {
+            this.parameters = parameters;
             return this;
         }
         @CustomType.Setter
-        public Builder tasks(List<GetSystemMediaWorkflowItemTask> tasks) {
-            this.tasks = Objects.requireNonNull(tasks);
+        public Builder tasks(@Nullable List<GetSystemMediaWorkflowItemTask> tasks) {
+            this.tasks = tasks;
             return this;
         }
         public Builder tasks(GetSystemMediaWorkflowItemTask... tasks) {

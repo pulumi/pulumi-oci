@@ -16,47 +16,47 @@ namespace Pulumi.Oci.Dns.Outputs
         /// <summary>
         /// The target fully-qualified domain name (FQDN) within the target zone.
         /// </summary>
-        public readonly string Domain;
+        public readonly string? Domain;
         /// <summary>
         /// A Boolean flag indicating whether or not parts of the record are unable to be explicitly managed.
         /// </summary>
-        public readonly bool IsProtected;
+        public readonly bool? IsProtected;
         /// <summary>
         /// The record's data, as whitespace-delimited tokens in type-specific presentation format. All RDATA is normalized and the returned presentation of your RDATA may differ from its initial input. For more information about RDATA, see [Supported DNS Resource Record Types](https://docs.cloud.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm)
         /// </summary>
-        public readonly string Rdata;
+        public readonly string? Rdata;
         /// <summary>
         /// A unique identifier for the record within its zone.
         /// </summary>
-        public readonly string RecordHash;
+        public readonly string? RecordHash;
         /// <summary>
         /// The latest version of the record's zone in which its RRSet differs from the preceding version.
         /// </summary>
-        public readonly string RrsetVersion;
+        public readonly string? RrsetVersion;
         /// <summary>
         /// The type of the target RRSet within the target zone.
         /// </summary>
-        public readonly string Rtype;
+        public readonly string? Rtype;
         /// <summary>
         /// The Time To Live for the record, in seconds.
         /// </summary>
-        public readonly int Ttl;
+        public readonly int? Ttl;
 
         [OutputConstructor]
         private GetRrsetItemResult(
-            string domain,
+            string? domain,
 
-            bool isProtected,
+            bool? isProtected,
 
-            string rdata,
+            string? rdata,
 
-            string recordHash,
+            string? recordHash,
 
-            string rrsetVersion,
+            string? rrsetVersion,
 
-            string rtype,
+            string? rtype,
 
-            int ttl)
+            int? ttl)
         {
             Domain = domain;
             IsProtected = isProtected;

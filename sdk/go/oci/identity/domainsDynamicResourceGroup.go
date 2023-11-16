@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Dynamic Resource Group resource in Oracle Cloud Infrastructure Identity Domains service.
@@ -46,7 +45,7 @@ type DomainsDynamicResourceGroup struct {
 	// * returned: default
 	// * type: string
 	// * uniqueness: none
-	CompartmentOcid pulumi.StringOutput `pulumi:"compartmentOcid"`
+	CompartmentOcid pulumi.StringPtrOutput `pulumi:"compartmentOcid"`
 	// (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
 	//
 	// **SCIM++ Properties:**
@@ -58,7 +57,7 @@ type DomainsDynamicResourceGroup struct {
 	// * returned: default
 	// * type: boolean
 	// * uniqueness: none
-	DeleteInProgress pulumi.BoolOutput `pulumi:"deleteInProgress"`
+	DeleteInProgress pulumi.BoolPtrOutput `pulumi:"deleteInProgress"`
 	// (Updatable) text that explains the purpose of this Dynamic Resource Group
 	//
 	// **SCIM++ Properties:**
@@ -72,7 +71,7 @@ type DomainsDynamicResourceGroup struct {
 	// * returned: always
 	// * type: string
 	// * uniqueness: none
-	Description pulumi.StringOutput `pulumi:"description"`
+	Description pulumi.StringPtrOutput `pulumi:"description"`
 	// (Updatable) User-friendly, mutable identifier
 	//
 	// **SCIM++ Properties:**
@@ -97,7 +96,7 @@ type DomainsDynamicResourceGroup struct {
 	// * returned: default
 	// * type: string
 	// * uniqueness: none
-	DomainOcid pulumi.StringOutput `pulumi:"domainOcid"`
+	DomainOcid pulumi.StringPtrOutput `pulumi:"domainOcid"`
 	// (Updatable) A list of appRoles that are currently granted to this Dynamic Resource Group.  The Identity service will assert these AppRoles for any resource that satisfies the matching-rule of this DynamicResourceGroup.
 	//
 	// **SCIM++ Properties:**
@@ -156,7 +155,7 @@ type DomainsDynamicResourceGroup struct {
 	// * returned: request
 	// * type: string
 	// * uniqueness: none
-	IdcsLastUpgradedInRelease pulumi.StringOutput `pulumi:"idcsLastUpgradedInRelease"`
+	IdcsLastUpgradedInRelease pulumi.StringPtrOutput `pulumi:"idcsLastUpgradedInRelease"`
 	// (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
 	//
 	// **SCIM++ Properties:**
@@ -202,7 +201,7 @@ type DomainsDynamicResourceGroup struct {
 	// * returned: default
 	// * type: string
 	// * uniqueness: global
-	Ocid pulumi.StringOutput `pulumi:"ocid"`
+	Ocid pulumi.StringPtrOutput `pulumi:"ocid"`
 	// (Updatable) An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
 	ResourceTypeSchemaVersion pulumi.StringPtrOutput `pulumi:"resourceTypeSchemaVersion"`
 	// (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
@@ -240,9 +239,9 @@ type DomainsDynamicResourceGroup struct {
 	// * returned: default
 	// * type: string
 	// * uniqueness: none
-	TenancyOcid pulumi.StringOutput `pulumi:"tenancyOcid"`
+	TenancyOcid pulumi.StringPtrOutput `pulumi:"tenancyOcid"`
 	// (Updatable) Oracle Cloud Infrastructure Tags.
-	UrnietfparamsscimschemasoracleidcsextensionOciTags DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsOutput `pulumi:"urnietfparamsscimschemasoracleidcsextensionOciTags"`
+	UrnietfparamsscimschemasoracleidcsextensionOciTags DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsPtrOutput `pulumi:"urnietfparamsscimschemasoracleidcsextensionOciTags"`
 }
 
 // NewDomainsDynamicResourceGroup registers a new resource with the given unique name, arguments, and options.
@@ -926,12 +925,6 @@ func (i *DomainsDynamicResourceGroup) ToDomainsDynamicResourceGroupOutputWithCon
 	return pulumi.ToOutputWithContext(ctx, i).(DomainsDynamicResourceGroupOutput)
 }
 
-func (i *DomainsDynamicResourceGroup) ToOutput(ctx context.Context) pulumix.Output[*DomainsDynamicResourceGroup] {
-	return pulumix.Output[*DomainsDynamicResourceGroup]{
-		OutputState: i.ToDomainsDynamicResourceGroupOutputWithContext(ctx).OutputState,
-	}
-}
-
 // DomainsDynamicResourceGroupArrayInput is an input type that accepts DomainsDynamicResourceGroupArray and DomainsDynamicResourceGroupArrayOutput values.
 // You can construct a concrete instance of `DomainsDynamicResourceGroupArrayInput` via:
 //
@@ -955,12 +948,6 @@ func (i DomainsDynamicResourceGroupArray) ToDomainsDynamicResourceGroupArrayOutp
 
 func (i DomainsDynamicResourceGroupArray) ToDomainsDynamicResourceGroupArrayOutputWithContext(ctx context.Context) DomainsDynamicResourceGroupArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(DomainsDynamicResourceGroupArrayOutput)
-}
-
-func (i DomainsDynamicResourceGroupArray) ToOutput(ctx context.Context) pulumix.Output[[]*DomainsDynamicResourceGroup] {
-	return pulumix.Output[[]*DomainsDynamicResourceGroup]{
-		OutputState: i.ToDomainsDynamicResourceGroupArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // DomainsDynamicResourceGroupMapInput is an input type that accepts DomainsDynamicResourceGroupMap and DomainsDynamicResourceGroupMapOutput values.
@@ -988,12 +975,6 @@ func (i DomainsDynamicResourceGroupMap) ToDomainsDynamicResourceGroupMapOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(DomainsDynamicResourceGroupMapOutput)
 }
 
-func (i DomainsDynamicResourceGroupMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*DomainsDynamicResourceGroup] {
-	return pulumix.Output[map[string]*DomainsDynamicResourceGroup]{
-		OutputState: i.ToDomainsDynamicResourceGroupMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DomainsDynamicResourceGroupOutput struct{ *pulumi.OutputState }
 
 func (DomainsDynamicResourceGroupOutput) ElementType() reflect.Type {
@@ -1006,12 +987,6 @@ func (o DomainsDynamicResourceGroupOutput) ToDomainsDynamicResourceGroupOutput()
 
 func (o DomainsDynamicResourceGroupOutput) ToDomainsDynamicResourceGroupOutputWithContext(ctx context.Context) DomainsDynamicResourceGroupOutput {
 	return o
-}
-
-func (o DomainsDynamicResourceGroupOutput) ToOutput(ctx context.Context) pulumix.Output[*DomainsDynamicResourceGroup] {
-	return pulumix.Output[*DomainsDynamicResourceGroup]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
@@ -1040,8 +1015,8 @@ func (o DomainsDynamicResourceGroupOutput) Authorization() pulumi.StringPtrOutpu
 // * returned: default
 // * type: string
 // * uniqueness: none
-func (o DomainsDynamicResourceGroupOutput) CompartmentOcid() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsDynamicResourceGroup) pulumi.StringOutput { return v.CompartmentOcid }).(pulumi.StringOutput)
+func (o DomainsDynamicResourceGroupOutput) CompartmentOcid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsDynamicResourceGroup) pulumi.StringPtrOutput { return v.CompartmentOcid }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
@@ -1055,8 +1030,8 @@ func (o DomainsDynamicResourceGroupOutput) CompartmentOcid() pulumi.StringOutput
 // * returned: default
 // * type: boolean
 // * uniqueness: none
-func (o DomainsDynamicResourceGroupOutput) DeleteInProgress() pulumi.BoolOutput {
-	return o.ApplyT(func(v *DomainsDynamicResourceGroup) pulumi.BoolOutput { return v.DeleteInProgress }).(pulumi.BoolOutput)
+func (o DomainsDynamicResourceGroupOutput) DeleteInProgress() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DomainsDynamicResourceGroup) pulumi.BoolPtrOutput { return v.DeleteInProgress }).(pulumi.BoolPtrOutput)
 }
 
 // (Updatable) text that explains the purpose of this Dynamic Resource Group
@@ -1072,8 +1047,8 @@ func (o DomainsDynamicResourceGroupOutput) DeleteInProgress() pulumi.BoolOutput 
 // * returned: always
 // * type: string
 // * uniqueness: none
-func (o DomainsDynamicResourceGroupOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsDynamicResourceGroup) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
+func (o DomainsDynamicResourceGroupOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsDynamicResourceGroup) pulumi.StringPtrOutput { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) User-friendly, mutable identifier
@@ -1103,8 +1078,8 @@ func (o DomainsDynamicResourceGroupOutput) DisplayName() pulumi.StringOutput {
 // * returned: default
 // * type: string
 // * uniqueness: none
-func (o DomainsDynamicResourceGroupOutput) DomainOcid() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsDynamicResourceGroup) pulumi.StringOutput { return v.DomainOcid }).(pulumi.StringOutput)
+func (o DomainsDynamicResourceGroupOutput) DomainOcid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsDynamicResourceGroup) pulumi.StringPtrOutput { return v.DomainOcid }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) A list of appRoles that are currently granted to this Dynamic Resource Group.  The Identity service will assert these AppRoles for any resource that satisfies the matching-rule of this DynamicResourceGroup.
@@ -1186,8 +1161,8 @@ func (o DomainsDynamicResourceGroupOutput) IdcsLastModifiedBies() DomainsDynamic
 // * returned: request
 // * type: string
 // * uniqueness: none
-func (o DomainsDynamicResourceGroupOutput) IdcsLastUpgradedInRelease() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsDynamicResourceGroup) pulumi.StringOutput { return v.IdcsLastUpgradedInRelease }).(pulumi.StringOutput)
+func (o DomainsDynamicResourceGroupOutput) IdcsLastUpgradedInRelease() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsDynamicResourceGroup) pulumi.StringPtrOutput { return v.IdcsLastUpgradedInRelease }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
@@ -1244,8 +1219,8 @@ func (o DomainsDynamicResourceGroupOutput) Metas() DomainsDynamicResourceGroupMe
 // * returned: default
 // * type: string
 // * uniqueness: global
-func (o DomainsDynamicResourceGroupOutput) Ocid() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsDynamicResourceGroup) pulumi.StringOutput { return v.Ocid }).(pulumi.StringOutput)
+func (o DomainsDynamicResourceGroupOutput) Ocid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsDynamicResourceGroup) pulumi.StringPtrOutput { return v.Ocid }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
@@ -1294,15 +1269,15 @@ func (o DomainsDynamicResourceGroupOutput) Tags() DomainsDynamicResourceGroupTag
 // * returned: default
 // * type: string
 // * uniqueness: none
-func (o DomainsDynamicResourceGroupOutput) TenancyOcid() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsDynamicResourceGroup) pulumi.StringOutput { return v.TenancyOcid }).(pulumi.StringOutput)
+func (o DomainsDynamicResourceGroupOutput) TenancyOcid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsDynamicResourceGroup) pulumi.StringPtrOutput { return v.TenancyOcid }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Oracle Cloud Infrastructure Tags.
-func (o DomainsDynamicResourceGroupOutput) UrnietfparamsscimschemasoracleidcsextensionOciTags() DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsOutput {
-	return o.ApplyT(func(v *DomainsDynamicResourceGroup) DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsOutput {
+func (o DomainsDynamicResourceGroupOutput) UrnietfparamsscimschemasoracleidcsextensionOciTags() DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsPtrOutput {
+	return o.ApplyT(func(v *DomainsDynamicResourceGroup) DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsPtrOutput {
 		return v.UrnietfparamsscimschemasoracleidcsextensionOciTags
-	}).(DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsOutput)
+	}).(DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsPtrOutput)
 }
 
 type DomainsDynamicResourceGroupArrayOutput struct{ *pulumi.OutputState }
@@ -1317,12 +1292,6 @@ func (o DomainsDynamicResourceGroupArrayOutput) ToDomainsDynamicResourceGroupArr
 
 func (o DomainsDynamicResourceGroupArrayOutput) ToDomainsDynamicResourceGroupArrayOutputWithContext(ctx context.Context) DomainsDynamicResourceGroupArrayOutput {
 	return o
-}
-
-func (o DomainsDynamicResourceGroupArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*DomainsDynamicResourceGroup] {
-	return pulumix.Output[[]*DomainsDynamicResourceGroup]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DomainsDynamicResourceGroupArrayOutput) Index(i pulumi.IntInput) DomainsDynamicResourceGroupOutput {
@@ -1343,12 +1312,6 @@ func (o DomainsDynamicResourceGroupMapOutput) ToDomainsDynamicResourceGroupMapOu
 
 func (o DomainsDynamicResourceGroupMapOutput) ToDomainsDynamicResourceGroupMapOutputWithContext(ctx context.Context) DomainsDynamicResourceGroupMapOutput {
 	return o
-}
-
-func (o DomainsDynamicResourceGroupMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*DomainsDynamicResourceGroup] {
-	return pulumix.Output[map[string]*DomainsDynamicResourceGroup]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DomainsDynamicResourceGroupMapOutput) MapIndex(k pulumi.StringInput) DomainsDynamicResourceGroupOutput {

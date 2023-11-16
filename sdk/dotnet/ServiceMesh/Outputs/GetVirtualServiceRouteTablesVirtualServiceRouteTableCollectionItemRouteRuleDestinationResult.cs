@@ -16,23 +16,23 @@ namespace Pulumi.Oci.ServiceMesh.Outputs
         /// <summary>
         /// Port on virtual deployment to target. If port is missing, the rule will target all ports on the virtual deployment.
         /// </summary>
-        public readonly int Port;
+        public readonly int? Port;
         /// <summary>
         /// The OCID of the virtual deployment where the request will be routed.
         /// </summary>
-        public readonly string VirtualDeploymentId;
+        public readonly string? VirtualDeploymentId;
         /// <summary>
         /// Weight of traffic target.
         /// </summary>
-        public readonly int Weight;
+        public readonly int? Weight;
 
         [OutputConstructor]
         private GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRuleDestinationResult(
-            int port,
+            int? port,
 
-            string virtualDeploymentId,
+            string? virtualDeploymentId,
 
-            int weight)
+            int? weight)
         {
             Port = port;
             VirtualDeploymentId = virtualDeploymentId;

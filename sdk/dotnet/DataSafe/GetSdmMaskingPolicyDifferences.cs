@@ -219,7 +219,7 @@ namespace Pulumi.Oci.DataSafe
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The OCID of the masking policy associated with the SDM masking policy difference.
         /// </summary>
@@ -249,7 +249,7 @@ namespace Pulumi.Oci.DataSafe
 
             ImmutableArray<Outputs.GetSdmMaskingPolicyDifferencesFilterResult> filters,
 
-            string id,
+            string? id,
 
             string? maskingPolicyId,
 

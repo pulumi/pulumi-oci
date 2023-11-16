@@ -24,7 +24,7 @@ namespace Pulumi.Oci.Logging.Outputs
         /// <summary>
         /// Type of the unified monitoring agent operational metrics source object.
         /// </summary>
-        public readonly string Type;
+        public readonly string? Type;
 
         [OutputConstructor]
         private GetUnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSourceResult(
@@ -32,7 +32,7 @@ namespace Pulumi.Oci.Logging.Outputs
 
             ImmutableArray<Outputs.GetUnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSourceRecordInputResult> recordInputs,
 
-            string type)
+            string? type)
         {
             Metrics = metrics;
             RecordInputs = recordInputs;

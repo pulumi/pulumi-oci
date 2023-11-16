@@ -12,106 +12,108 @@ import com.pulumi.oci.LoadBalancer.outputs.GetBackendSetsBackendsetSslConfigurat
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetBackendSetsBackendset {
-    private List<GetBackendSetsBackendsetBackend> backends;
+    private @Nullable List<GetBackendSetsBackendsetBackend> backends;
     /**
      * @return The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/editinghealthcheck.htm).
      * 
      */
-    private List<GetBackendSetsBackendsetHealthChecker> healthCheckers;
-    private String id;
+    private @Nullable List<GetBackendSetsBackendsetHealthChecker> healthCheckers;
+    private @Nullable String id;
     /**
      * @return The configuration details for implementing load balancer cookie session persistence (LB cookie stickiness).
      * 
      */
-    private List<GetBackendSetsBackendsetLbCookieSessionPersistenceConfiguration> lbCookieSessionPersistenceConfigurations;
+    private @Nullable List<GetBackendSetsBackendsetLbCookieSessionPersistenceConfiguration> lbCookieSessionPersistenceConfigurations;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer associated with the backend sets to retrieve.
      * 
      */
-    private String loadBalancerId;
+    private @Nullable String loadBalancerId;
     /**
      * @return A friendly name for the backend set. It must be unique and it cannot be changed.
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return The load balancer policy for the backend set. To get a list of available policies, use the [ListPolicies](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerPolicy/ListPolicies) operation.  Example: `LEAST_CONNECTIONS`
      * 
      */
-    private String policy;
+    private @Nullable String policy;
     /**
      * @return The configuration details for implementing session persistence based on a user-specified cookie name (application cookie stickiness).
      * 
      */
-    private List<GetBackendSetsBackendsetSessionPersistenceConfiguration> sessionPersistenceConfigurations;
+    private @Nullable List<GetBackendSetsBackendsetSessionPersistenceConfiguration> sessionPersistenceConfigurations;
     /**
      * @return A listener&#39;s SSL handling configuration.
      * 
      */
-    private List<GetBackendSetsBackendsetSslConfiguration> sslConfigurations;
-    private String state;
+    private @Nullable List<GetBackendSetsBackendsetSslConfiguration> sslConfigurations;
+    private @Nullable String state;
 
     private GetBackendSetsBackendset() {}
     public List<GetBackendSetsBackendsetBackend> backends() {
-        return this.backends;
+        return this.backends == null ? List.of() : this.backends;
     }
     /**
      * @return The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/editinghealthcheck.htm).
      * 
      */
     public List<GetBackendSetsBackendsetHealthChecker> healthCheckers() {
-        return this.healthCheckers;
+        return this.healthCheckers == null ? List.of() : this.healthCheckers;
     }
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The configuration details for implementing load balancer cookie session persistence (LB cookie stickiness).
      * 
      */
     public List<GetBackendSetsBackendsetLbCookieSessionPersistenceConfiguration> lbCookieSessionPersistenceConfigurations() {
-        return this.lbCookieSessionPersistenceConfigurations;
+        return this.lbCookieSessionPersistenceConfigurations == null ? List.of() : this.lbCookieSessionPersistenceConfigurations;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer associated with the backend sets to retrieve.
      * 
      */
-    public String loadBalancerId() {
-        return this.loadBalancerId;
+    public Optional<String> loadBalancerId() {
+        return Optional.ofNullable(this.loadBalancerId);
     }
     /**
      * @return A friendly name for the backend set. It must be unique and it cannot be changed.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return The load balancer policy for the backend set. To get a list of available policies, use the [ListPolicies](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerPolicy/ListPolicies) operation.  Example: `LEAST_CONNECTIONS`
      * 
      */
-    public String policy() {
-        return this.policy;
+    public Optional<String> policy() {
+        return Optional.ofNullable(this.policy);
     }
     /**
      * @return The configuration details for implementing session persistence based on a user-specified cookie name (application cookie stickiness).
      * 
      */
     public List<GetBackendSetsBackendsetSessionPersistenceConfiguration> sessionPersistenceConfigurations() {
-        return this.sessionPersistenceConfigurations;
+        return this.sessionPersistenceConfigurations == null ? List.of() : this.sessionPersistenceConfigurations;
     }
     /**
      * @return A listener&#39;s SSL handling configuration.
      * 
      */
     public List<GetBackendSetsBackendsetSslConfiguration> sslConfigurations() {
-        return this.sslConfigurations;
+        return this.sslConfigurations == null ? List.of() : this.sslConfigurations;
     }
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
 
     public static Builder builder() {
@@ -123,16 +125,16 @@ public final class GetBackendSetsBackendset {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetBackendSetsBackendsetBackend> backends;
-        private List<GetBackendSetsBackendsetHealthChecker> healthCheckers;
-        private String id;
-        private List<GetBackendSetsBackendsetLbCookieSessionPersistenceConfiguration> lbCookieSessionPersistenceConfigurations;
-        private String loadBalancerId;
-        private String name;
-        private String policy;
-        private List<GetBackendSetsBackendsetSessionPersistenceConfiguration> sessionPersistenceConfigurations;
-        private List<GetBackendSetsBackendsetSslConfiguration> sslConfigurations;
-        private String state;
+        private @Nullable List<GetBackendSetsBackendsetBackend> backends;
+        private @Nullable List<GetBackendSetsBackendsetHealthChecker> healthCheckers;
+        private @Nullable String id;
+        private @Nullable List<GetBackendSetsBackendsetLbCookieSessionPersistenceConfiguration> lbCookieSessionPersistenceConfigurations;
+        private @Nullable String loadBalancerId;
+        private @Nullable String name;
+        private @Nullable String policy;
+        private @Nullable List<GetBackendSetsBackendsetSessionPersistenceConfiguration> sessionPersistenceConfigurations;
+        private @Nullable List<GetBackendSetsBackendsetSslConfiguration> sslConfigurations;
+        private @Nullable String state;
         public Builder() {}
         public Builder(GetBackendSetsBackendset defaults) {
     	      Objects.requireNonNull(defaults);
@@ -149,68 +151,68 @@ public final class GetBackendSetsBackendset {
         }
 
         @CustomType.Setter
-        public Builder backends(List<GetBackendSetsBackendsetBackend> backends) {
-            this.backends = Objects.requireNonNull(backends);
+        public Builder backends(@Nullable List<GetBackendSetsBackendsetBackend> backends) {
+            this.backends = backends;
             return this;
         }
         public Builder backends(GetBackendSetsBackendsetBackend... backends) {
             return backends(List.of(backends));
         }
         @CustomType.Setter
-        public Builder healthCheckers(List<GetBackendSetsBackendsetHealthChecker> healthCheckers) {
-            this.healthCheckers = Objects.requireNonNull(healthCheckers);
+        public Builder healthCheckers(@Nullable List<GetBackendSetsBackendsetHealthChecker> healthCheckers) {
+            this.healthCheckers = healthCheckers;
             return this;
         }
         public Builder healthCheckers(GetBackendSetsBackendsetHealthChecker... healthCheckers) {
             return healthCheckers(List.of(healthCheckers));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder lbCookieSessionPersistenceConfigurations(List<GetBackendSetsBackendsetLbCookieSessionPersistenceConfiguration> lbCookieSessionPersistenceConfigurations) {
-            this.lbCookieSessionPersistenceConfigurations = Objects.requireNonNull(lbCookieSessionPersistenceConfigurations);
+        public Builder lbCookieSessionPersistenceConfigurations(@Nullable List<GetBackendSetsBackendsetLbCookieSessionPersistenceConfiguration> lbCookieSessionPersistenceConfigurations) {
+            this.lbCookieSessionPersistenceConfigurations = lbCookieSessionPersistenceConfigurations;
             return this;
         }
         public Builder lbCookieSessionPersistenceConfigurations(GetBackendSetsBackendsetLbCookieSessionPersistenceConfiguration... lbCookieSessionPersistenceConfigurations) {
             return lbCookieSessionPersistenceConfigurations(List.of(lbCookieSessionPersistenceConfigurations));
         }
         @CustomType.Setter
-        public Builder loadBalancerId(String loadBalancerId) {
-            this.loadBalancerId = Objects.requireNonNull(loadBalancerId);
+        public Builder loadBalancerId(@Nullable String loadBalancerId) {
+            this.loadBalancerId = loadBalancerId;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder policy(String policy) {
-            this.policy = Objects.requireNonNull(policy);
+        public Builder policy(@Nullable String policy) {
+            this.policy = policy;
             return this;
         }
         @CustomType.Setter
-        public Builder sessionPersistenceConfigurations(List<GetBackendSetsBackendsetSessionPersistenceConfiguration> sessionPersistenceConfigurations) {
-            this.sessionPersistenceConfigurations = Objects.requireNonNull(sessionPersistenceConfigurations);
+        public Builder sessionPersistenceConfigurations(@Nullable List<GetBackendSetsBackendsetSessionPersistenceConfiguration> sessionPersistenceConfigurations) {
+            this.sessionPersistenceConfigurations = sessionPersistenceConfigurations;
             return this;
         }
         public Builder sessionPersistenceConfigurations(GetBackendSetsBackendsetSessionPersistenceConfiguration... sessionPersistenceConfigurations) {
             return sessionPersistenceConfigurations(List.of(sessionPersistenceConfigurations));
         }
         @CustomType.Setter
-        public Builder sslConfigurations(List<GetBackendSetsBackendsetSslConfiguration> sslConfigurations) {
-            this.sslConfigurations = Objects.requireNonNull(sslConfigurations);
+        public Builder sslConfigurations(@Nullable List<GetBackendSetsBackendsetSslConfiguration> sslConfigurations) {
+            this.sslConfigurations = sslConfigurations;
             return this;
         }
         public Builder sslConfigurations(GetBackendSetsBackendsetSslConfiguration... sslConfigurations) {
             return sslConfigurations(List.of(sslConfigurations));
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         public GetBackendSetsBackendset build() {

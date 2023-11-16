@@ -14,6 +14,7 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -90,42 +91,42 @@ public class MigrationAsset extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="compartmentId", refs={String.class}, tree="[0]")
-    private Output<String> compartmentId;
+    private Output</* @Nullable */ String> compartmentId;
 
     /**
      * @return Compartment Identifier
      * 
      */
-    public Output<String> compartmentId() {
-        return this.compartmentId;
+    public Output<Optional<String>> compartmentId() {
+        return Codegen.optional(this.compartmentId);
     }
     /**
      * List of migration assets that depend on the asset.
      * 
      */
     @Export(name="dependedOnBies", refs={List.class,String.class}, tree="[0,1]")
-    private Output<List<String>> dependedOnBies;
+    private Output</* @Nullable */ List<String>> dependedOnBies;
 
     /**
      * @return List of migration assets that depend on the asset.
      * 
      */
-    public Output<List<String>> dependedOnBies() {
-        return this.dependedOnBies;
+    public Output<Optional<List<String>>> dependedOnBies() {
+        return Codegen.optional(this.dependedOnBies);
     }
     /**
      * (Updatable) A user-friendly name. If empty, then source asset name will be used. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
     @Export(name="displayName", refs={String.class}, tree="[0]")
-    private Output<String> displayName;
+    private Output</* @Nullable */ String> displayName;
 
     /**
      * @return (Updatable) A user-friendly name. If empty, then source asset name will be used. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    public Output<String> displayName() {
-        return this.displayName;
+    public Output<Optional<String>> displayName() {
+        return Codegen.optional(this.displayName);
     }
     /**
      * OCID of an asset for an inventory.
@@ -146,20 +147,20 @@ public class MigrationAsset extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
-    private Output<String> lifecycleDetails;
+    private Output</* @Nullable */ String> lifecycleDetails;
 
     /**
      * @return A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
      * 
      */
-    public Output<String> lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Output<Optional<String>> lifecycleDetails() {
+        return Codegen.optional(this.lifecycleDetails);
     }
     @Export(name="migrationAssetDependsOns", refs={List.class,String.class}, tree="[0,1]")
-    private Output<List<String>> migrationAssetDependsOns;
+    private Output</* @Nullable */ List<String>> migrationAssetDependsOns;
 
-    public Output<List<String>> migrationAssetDependsOns() {
-        return this.migrationAssetDependsOns;
+    public Output<Optional<List<String>>> migrationAssetDependsOns() {
+        return Codegen.optional(this.migrationAssetDependsOns);
     }
     /**
      * OCID of the associated migration.
@@ -180,28 +181,28 @@ public class MigrationAsset extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="notifications", refs={List.class,String.class}, tree="[0,1]")
-    private Output<List<String>> notifications;
+    private Output</* @Nullable */ List<String>> notifications;
 
     /**
      * @return List of notifications
      * 
      */
-    public Output<List<String>> notifications() {
-        return this.notifications;
+    public Output<Optional<List<String>>> notifications() {
+        return Codegen.optional(this.notifications);
     }
     /**
      * The parent snapshot of the migration asset to be used by the replication task.
      * 
      */
     @Export(name="parentSnapshot", refs={String.class}, tree="[0]")
-    private Output<String> parentSnapshot;
+    private Output</* @Nullable */ String> parentSnapshot;
 
     /**
      * @return The parent snapshot of the migration asset to be used by the replication task.
      * 
      */
-    public Output<String> parentSnapshot() {
-        return this.parentSnapshot;
+    public Output<Optional<String>> parentSnapshot() {
+        return Codegen.optional(this.parentSnapshot);
     }
     /**
      * Replication compartment identifier
@@ -222,14 +223,14 @@ public class MigrationAsset extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="replicationScheduleId", refs={String.class}, tree="[0]")
-    private Output<String> replicationScheduleId;
+    private Output</* @Nullable */ String> replicationScheduleId;
 
     /**
      * @return (Updatable) Replication schedule identifier
      * 
      */
-    public Output<String> replicationScheduleId() {
-        return this.replicationScheduleId;
+    public Output<Optional<String>> replicationScheduleId() {
+        return Codegen.optional(this.replicationScheduleId);
     }
     /**
      * Name of snapshot bucket
@@ -256,98 +257,98 @@ public class MigrationAsset extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="snapshots", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> snapshots;
+    private Output</* @Nullable */ Map<String,Object>> snapshots;
 
     /**
      * @return Key-value pair representing disks ID mapped to the OCIDs of replicated or hydration server volume snapshots. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Output<Map<String,Object>> snapshots() {
-        return this.snapshots;
+    public Output<Optional<Map<String,Object>>> snapshots() {
+        return Codegen.optional(this.snapshots);
     }
     /**
      * OCID that is referenced to an asset for an inventory.
      * 
      */
     @Export(name="sourceAssetId", refs={String.class}, tree="[0]")
-    private Output<String> sourceAssetId;
+    private Output</* @Nullable */ String> sourceAssetId;
 
     /**
      * @return OCID that is referenced to an asset for an inventory.
      * 
      */
-    public Output<String> sourceAssetId() {
-        return this.sourceAssetId;
+    public Output<Optional<String>> sourceAssetId() {
+        return Codegen.optional(this.sourceAssetId);
     }
     /**
      * The current state of the migration asset.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The current state of the migration asset.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * Tenancy identifier
      * 
      */
     @Export(name="tenancyId", refs={String.class}, tree="[0]")
-    private Output<String> tenancyId;
+    private Output</* @Nullable */ String> tenancyId;
 
     /**
      * @return Tenancy identifier
      * 
      */
-    public Output<String> tenancyId() {
-        return this.tenancyId;
+    public Output<Optional<String>> tenancyId() {
+        return Codegen.optional(this.tenancyId);
     }
     /**
      * The time when the migration asset was created. An RFC3339 formatted datetime string.
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The time when the migration asset was created. An RFC3339 formatted datetime string.
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * The time when the migration asset was updated. An RFC3339 formatted datetime string.
      * 
      */
     @Export(name="timeUpdated", refs={String.class}, tree="[0]")
-    private Output<String> timeUpdated;
+    private Output</* @Nullable */ String> timeUpdated;
 
     /**
      * @return The time when the migration asset was updated. An RFC3339 formatted datetime string.
      * 
      */
-    public Output<String> timeUpdated() {
-        return this.timeUpdated;
+    public Output<Optional<String>> timeUpdated() {
+        return Codegen.optional(this.timeUpdated);
     }
     /**
      * The type of asset referenced for inventory.
      * 
      */
     @Export(name="type", refs={String.class}, tree="[0]")
-    private Output<String> type;
+    private Output</* @Nullable */ String> type;
 
     /**
      * @return The type of asset referenced for inventory.
      * 
      */
-    public Output<String> type() {
-        return this.type;
+    public Output<Optional<String>> type() {
+        return Codegen.optional(this.type);
     }
 
     /**

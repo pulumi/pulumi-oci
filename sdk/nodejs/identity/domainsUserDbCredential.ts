@@ -72,7 +72,7 @@ export class DomainsUserDbCredential extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public /*out*/ readonly compartmentOcid!: pulumi.Output<string>;
+    public /*out*/ readonly compartmentOcid!: pulumi.Output<string | undefined>;
     /**
      * The user's database password.
      *
@@ -96,7 +96,7 @@ export class DomainsUserDbCredential extends pulumi.CustomResource {
      * * type: boolean
      * * uniqueness: none
      */
-    public /*out*/ readonly deleteInProgress!: pulumi.Output<boolean>;
+    public /*out*/ readonly deleteInProgress!: pulumi.Output<boolean | undefined>;
     /**
      * Description
      *
@@ -109,7 +109,7 @@ export class DomainsUserDbCredential extends pulumi.CustomResource {
      * * required: false
      * * returned: default
      */
-    public readonly description!: pulumi.Output<string>;
+    public readonly description!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
      *
@@ -123,7 +123,7 @@ export class DomainsUserDbCredential extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public /*out*/ readonly domainOcid!: pulumi.Output<string>;
+    public /*out*/ readonly domainOcid!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Indicates that the database password has expired.
      *
@@ -132,7 +132,7 @@ export class DomainsUserDbCredential extends pulumi.CustomResource {
      * * mutability: readOnly
      * * returned: default
      */
-    public /*out*/ readonly expired!: pulumi.Output<boolean>;
+    public /*out*/ readonly expired!: pulumi.Output<boolean | undefined>;
     /**
      * When the user credential expires.
      *
@@ -148,7 +148,7 @@ export class DomainsUserDbCredential extends pulumi.CustomResource {
      * * type: dateTime
      * * uniqueness: none
      */
-    public readonly expiresOn!: pulumi.Output<string>;
+    public readonly expiresOn!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The User or App who created the Resource
      *
@@ -160,7 +160,7 @@ export class DomainsUserDbCredential extends pulumi.CustomResource {
      * * returned: default
      * * type: complex
      */
-    public /*out*/ readonly idcsCreatedBies!: pulumi.Output<outputs.Identity.DomainsUserDbCredentialIdcsCreatedBy[]>;
+    public /*out*/ readonly idcsCreatedBies!: pulumi.Output<outputs.Identity.DomainsUserDbCredentialIdcsCreatedBy[] | undefined>;
     /**
      * The basic endpoint for the identity domain
      */
@@ -176,7 +176,7 @@ export class DomainsUserDbCredential extends pulumi.CustomResource {
      * * returned: default
      * * type: complex
      */
-    public /*out*/ readonly idcsLastModifiedBies!: pulumi.Output<outputs.Identity.DomainsUserDbCredentialIdcsLastModifiedBy[]>;
+    public /*out*/ readonly idcsLastModifiedBies!: pulumi.Output<outputs.Identity.DomainsUserDbCredentialIdcsLastModifiedBy[] | undefined>;
     /**
      * (Updatable) The release number when the resource was upgraded.
      *
@@ -190,7 +190,7 @@ export class DomainsUserDbCredential extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public /*out*/ readonly idcsLastUpgradedInRelease!: pulumi.Output<string>;
+    public /*out*/ readonly idcsLastUpgradedInRelease!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
      *
@@ -203,7 +203,7 @@ export class DomainsUserDbCredential extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public /*out*/ readonly idcsPreventedOperations!: pulumi.Output<string[]>;
+    public /*out*/ readonly idcsPreventedOperations!: pulumi.Output<string[] | undefined>;
     /**
      * (Updatable) A DateTime that specifies the date and time when the current database password was set.
      *
@@ -212,7 +212,7 @@ export class DomainsUserDbCredential extends pulumi.CustomResource {
      * * mutability: readOnly
      * * returned: default
      */
-    public /*out*/ readonly lastSetDate!: pulumi.Output<string>;
+    public /*out*/ readonly lastSetDate!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
      *
@@ -226,7 +226,7 @@ export class DomainsUserDbCredential extends pulumi.CustomResource {
      * * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
      * * type: complex
      */
-    public /*out*/ readonly metas!: pulumi.Output<outputs.Identity.DomainsUserDbCredentialMeta[]>;
+    public /*out*/ readonly metas!: pulumi.Output<outputs.Identity.DomainsUserDbCredentialMeta[] | undefined>;
     /**
      * (Updatable) The user's database password with mixed salt.
      *
@@ -236,7 +236,7 @@ export class DomainsUserDbCredential extends pulumi.CustomResource {
      * * returned: default
      * * required: false
      */
-    public /*out*/ readonly mixedDbPassword!: pulumi.Output<string>;
+    public /*out*/ readonly mixedDbPassword!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The mixed salt of the password.
      *
@@ -246,7 +246,7 @@ export class DomainsUserDbCredential extends pulumi.CustomResource {
      * * returned: default
      * * required: false
      */
-    public /*out*/ readonly mixedSalt!: pulumi.Output<string>;
+    public /*out*/ readonly mixedSalt!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The username.
      *
@@ -260,7 +260,7 @@ export class DomainsUserDbCredential extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public /*out*/ readonly name!: pulumi.Output<string>;
+    public /*out*/ readonly name!: pulumi.Output<string | undefined>;
     /**
      * The user's OCID.
      *
@@ -274,7 +274,7 @@ export class DomainsUserDbCredential extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly ocid!: pulumi.Output<string>;
+    public readonly ocid!: pulumi.Output<string | undefined>;
     /**
      * An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
      */
@@ -288,7 +288,7 @@ export class DomainsUserDbCredential extends pulumi.CustomResource {
      * * returned: default
      * * required: false
      */
-    public /*out*/ readonly salt!: pulumi.Output<string>;
+    public /*out*/ readonly salt!: pulumi.Output<string | undefined>;
     /**
      * REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
      *
@@ -318,7 +318,7 @@ export class DomainsUserDbCredential extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly status!: pulumi.Output<string>;
+    public readonly status!: pulumi.Output<string | undefined>;
     /**
      * A list of tags on this resource.
      *
@@ -332,7 +332,7 @@ export class DomainsUserDbCredential extends pulumi.CustomResource {
      * * type: complex
      * * uniqueness: none
      */
-    public readonly tags!: pulumi.Output<outputs.Identity.DomainsUserDbCredentialTag[]>;
+    public readonly tags!: pulumi.Output<outputs.Identity.DomainsUserDbCredentialTag[] | undefined>;
     /**
      * (Updatable) Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
      *
@@ -346,11 +346,11 @@ export class DomainsUserDbCredential extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public /*out*/ readonly tenancyOcid!: pulumi.Output<string>;
+    public /*out*/ readonly tenancyOcid!: pulumi.Output<string | undefined>;
     /**
      * Controls whether a user can update themselves or not via User related APIs
      */
-    public readonly urnietfparamsscimschemasoracleidcsextensionselfChangeUser!: pulumi.Output<outputs.Identity.DomainsUserDbCredentialUrnietfparamsscimschemasoracleidcsextensionselfChangeUser>;
+    public readonly urnietfparamsscimschemasoracleidcsextensionselfChangeUser!: pulumi.Output<outputs.Identity.DomainsUserDbCredentialUrnietfparamsscimschemasoracleidcsextensionselfChangeUser | undefined>;
     /**
      * The user linked to the database credential.
      *
@@ -365,7 +365,7 @@ export class DomainsUserDbCredential extends pulumi.CustomResource {
      * * type: complex
      * * uniqueness: none
      */
-    public readonly user!: pulumi.Output<outputs.Identity.DomainsUserDbCredentialUser>;
+    public readonly user!: pulumi.Output<outputs.Identity.DomainsUserDbCredentialUser | undefined>;
 
     /**
      * Create a DomainsUserDbCredential resource with the given unique name, arguments, and options.

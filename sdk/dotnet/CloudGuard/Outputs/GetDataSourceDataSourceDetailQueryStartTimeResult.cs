@@ -16,17 +16,17 @@ namespace Pulumi.Oci.CloudGuard.Outputs
         /// <summary>
         /// Time when the query can start, if not specified it can start immediately.
         /// </summary>
-        public readonly string QueryStartTime;
+        public readonly string? QueryStartTime;
         /// <summary>
         /// policy used for deciding the query start time
         /// </summary>
-        public readonly string StartPolicyType;
+        public readonly string? StartPolicyType;
 
         [OutputConstructor]
         private GetDataSourceDataSourceDetailQueryStartTimeResult(
-            string queryStartTime,
+            string? queryStartTime,
 
-            string startPolicyType)
+            string? startPolicyType)
         {
             QueryStartTime = queryStartTime;
             StartPolicyType = startPolicyType;

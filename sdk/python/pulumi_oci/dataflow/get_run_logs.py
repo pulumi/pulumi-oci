@@ -44,7 +44,7 @@ class GetRunLogsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -57,10 +57,7 @@ class GetRunLogsResult:
 
     @property
     @pulumi.getter(name="runLogs")
-    def run_logs(self) -> Sequence['outputs.GetRunLogsRunLogResult']:
-        """
-        The list of run_logs.
-        """
+    def run_logs(self) -> Optional[Sequence['outputs.GetRunLogsRunLogResult']]:
         return pulumi.get(self, "run_logs")
 
 
@@ -80,21 +77,7 @@ def get_run_logs(filters: Optional[Sequence[pulumi.InputType['GetRunLogsFilterAr
                  run_id: Optional[str] = None,
                  opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetRunLogsResult:
     """
-    This data source provides the list of Run Logs in Oracle Cloud Infrastructure Data Flow service.
-
-    Retrieves summaries of the run's logs.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_run_logs = oci.DataFlow.get_run_logs(run_id=oci_dataflow_run["test_run"]["id"])
-    ```
-
-
-    :param str run_id: The unique ID for the run
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['filters'] = filters
@@ -114,20 +97,6 @@ def get_run_logs_output(filters: Optional[pulumi.Input[Optional[Sequence[pulumi.
                         run_id: Optional[pulumi.Input[str]] = None,
                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetRunLogsResult]:
     """
-    This data source provides the list of Run Logs in Oracle Cloud Infrastructure Data Flow service.
-
-    Retrieves summaries of the run's logs.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_run_logs = oci.DataFlow.get_run_logs(run_id=oci_dataflow_run["test_run"]["id"])
-    ```
-
-
-    :param str run_id: The unique ID for the run
+    Use this data source to access information about an existing resource.
     """
     ...

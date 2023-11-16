@@ -61,58 +61,37 @@ class GetReplicationScheduleResult:
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the replication schedule exists.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A name of the replication schedule.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="executionRecurrences")
-    def execution_recurrences(self) -> str:
-        """
-        Recurrence specification for the replication schedule execution.
-        """
+    def execution_recurrences(self) -> Optional[str]:
         return pulumi.get(self, "execution_recurrences")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the replication schedule.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        The detailed state of the replication schedule.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
@@ -122,34 +101,22 @@ class GetReplicationScheduleResult:
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        Current state of the replication schedule.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The time when the replication schedule was created in RFC3339 format.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The time when the replication schedule was last updated in RFC3339 format.
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
 
@@ -176,21 +143,7 @@ class AwaitableGetReplicationScheduleResult(GetReplicationScheduleResult):
 def get_replication_schedule(replication_schedule_id: Optional[str] = None,
                              opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetReplicationScheduleResult:
     """
-    This data source provides details about a specific Replication Schedule resource in Oracle Cloud Infrastructure Cloud Migrations service.
-
-    Gets a replication schedule by identifier.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_replication_schedule = oci.CloudMigrations.get_replication_schedule(replication_schedule_id=oci_cloud_migrations_replication_schedule["test_replication_schedule"]["id"])
-    ```
-
-
-    :param str replication_schedule_id: Unique replication schedule identifier in path
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['replicationScheduleId'] = replication_schedule_id
@@ -216,20 +169,6 @@ def get_replication_schedule(replication_schedule_id: Optional[str] = None,
 def get_replication_schedule_output(replication_schedule_id: Optional[pulumi.Input[str]] = None,
                                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetReplicationScheduleResult]:
     """
-    This data source provides details about a specific Replication Schedule resource in Oracle Cloud Infrastructure Cloud Migrations service.
-
-    Gets a replication schedule by identifier.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_replication_schedule = oci.CloudMigrations.get_replication_schedule(replication_schedule_id=oci_cloud_migrations_replication_schedule["test_replication_schedule"]["id"])
-    ```
-
-
-    :param str replication_schedule_id: Unique replication schedule identifier in path
+    Use this data source to access information about an existing resource.
     """
     ...

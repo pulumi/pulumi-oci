@@ -16,17 +16,17 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
         /// <summary>
         /// The OCID of the destination mount target on which this file system export should be created.  Example: `ocid1.mounttarget.oc1..uniqueID`
         /// </summary>
-        public readonly string DestinationMountTargetId;
+        public readonly string? DestinationMountTargetId;
         /// <summary>
         /// The OCID of the export path.  Example: `ocid1.export.oc1..uniqueID`
         /// </summary>
-        public readonly string ExportId;
+        public readonly string? ExportId;
 
         [OutputConstructor]
         private GetDrProtectionGroupMemberExportMappingResult(
-            string destinationMountTargetId,
+            string? destinationMountTargetId,
 
-            string exportId)
+            string? exportId)
         {
             DestinationMountTargetId = destinationMountTargetId;
             ExportId = exportId;

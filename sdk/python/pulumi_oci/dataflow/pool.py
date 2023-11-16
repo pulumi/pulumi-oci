@@ -27,19 +27,6 @@ class PoolArgs:
                  state: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a Pool resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of a compartment.
-        :param pulumi.Input[Sequence[pulumi.Input['PoolConfigurationArgs']]] configurations: (Updatable) List of PoolConfig items.
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. It does not have to be unique. Avoid entering confidential information.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] description: (Updatable) A user-friendly description. Avoid entering confidential information.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[int] idle_timeout_in_minutes: (Updatable) Optional timeout value in minutes used to auto stop Pools. A Pool will be auto stopped after inactivity for this amount of time period. If value not set, pool will not be auto stopped auto.
-        :param pulumi.Input[Sequence[pulumi.Input['PoolScheduleArgs']]] schedules: (Updatable) A list of schedules for pool to auto start and stop.
-        :param pulumi.Input[str] state: (Updatable) The target state for the Pool. Could be set to `ACTIVE` or `DELETED`. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "configurations", configurations)
@@ -60,9 +47,6 @@ class PoolArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The OCID of a compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -72,9 +56,6 @@ class PoolArgs:
     @property
     @pulumi.getter
     def configurations(self) -> pulumi.Input[Sequence[pulumi.Input['PoolConfigurationArgs']]]:
-        """
-        (Updatable) List of PoolConfig items.
-        """
         return pulumi.get(self, "configurations")
 
     @configurations.setter
@@ -84,9 +65,6 @@ class PoolArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Input[str]:
-        """
-        (Updatable) A user-friendly name. It does not have to be unique. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -96,9 +74,6 @@ class PoolArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -108,9 +83,6 @@ class PoolArgs:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A user-friendly description. Avoid entering confidential information.
-        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -120,9 +92,6 @@ class PoolArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -132,9 +101,6 @@ class PoolArgs:
     @property
     @pulumi.getter(name="idleTimeoutInMinutes")
     def idle_timeout_in_minutes(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) Optional timeout value in minutes used to auto stop Pools. A Pool will be auto stopped after inactivity for this amount of time period. If value not set, pool will not be auto stopped auto.
-        """
         return pulumi.get(self, "idle_timeout_in_minutes")
 
     @idle_timeout_in_minutes.setter
@@ -144,9 +110,6 @@ class PoolArgs:
     @property
     @pulumi.getter
     def schedules(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PoolScheduleArgs']]]]:
-        """
-        (Updatable) A list of schedules for pool to auto start and stop.
-        """
         return pulumi.get(self, "schedules")
 
     @schedules.setter
@@ -156,13 +119,6 @@ class PoolArgs:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The target state for the Pool. Could be set to `ACTIVE` or `DELETED`. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -190,25 +146,6 @@ class _PoolState:
                  time_updated: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering Pool resources.
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of a compartment.
-        :param pulumi.Input[Sequence[pulumi.Input['PoolConfigurationArgs']]] configurations: (Updatable) List of PoolConfig items.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] description: (Updatable) A user-friendly description. Avoid entering confidential information.
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. It does not have to be unique. Avoid entering confidential information.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[int] idle_timeout_in_minutes: (Updatable) Optional timeout value in minutes used to auto stop Pools. A Pool will be auto stopped after inactivity for this amount of time period. If value not set, pool will not be auto stopped auto.
-        :param pulumi.Input[str] lifecycle_details: The detailed messages about the lifecycle state.
-        :param pulumi.Input[str] owner_principal_id: The OCID of the user who created the resource.
-        :param pulumi.Input[str] owner_user_name: The username of the user who created the resource.  If the username of the owner does not exist, `null` will be returned and the caller should refer to the ownerPrincipalId value instead.
-        :param pulumi.Input[Sequence[pulumi.Input['PoolPoolMetricArgs']]] pool_metrics: A collection of metrics related to a particular pool.
-        :param pulumi.Input[Sequence[pulumi.Input['PoolScheduleArgs']]] schedules: (Updatable) A list of schedules for pool to auto start and stop.
-        :param pulumi.Input[str] state: (Updatable) The target state for the Pool. Could be set to `ACTIVE` or `DELETED`. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] time_created: The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
-        :param pulumi.Input[str] time_updated: The date and time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
         """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
@@ -244,9 +181,6 @@ class _PoolState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The OCID of a compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -256,9 +190,6 @@ class _PoolState:
     @property
     @pulumi.getter
     def configurations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PoolConfigurationArgs']]]]:
-        """
-        (Updatable) List of PoolConfig items.
-        """
         return pulumi.get(self, "configurations")
 
     @configurations.setter
@@ -268,9 +199,6 @@ class _PoolState:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -280,9 +208,6 @@ class _PoolState:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A user-friendly description. Avoid entering confidential information.
-        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -292,9 +217,6 @@ class _PoolState:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A user-friendly name. It does not have to be unique. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -304,9 +226,6 @@ class _PoolState:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -316,9 +235,6 @@ class _PoolState:
     @property
     @pulumi.getter(name="idleTimeoutInMinutes")
     def idle_timeout_in_minutes(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) Optional timeout value in minutes used to auto stop Pools. A Pool will be auto stopped after inactivity for this amount of time period. If value not set, pool will not be auto stopped auto.
-        """
         return pulumi.get(self, "idle_timeout_in_minutes")
 
     @idle_timeout_in_minutes.setter
@@ -328,9 +244,6 @@ class _PoolState:
     @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> Optional[pulumi.Input[str]]:
-        """
-        The detailed messages about the lifecycle state.
-        """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
@@ -340,9 +253,6 @@ class _PoolState:
     @property
     @pulumi.getter(name="ownerPrincipalId")
     def owner_principal_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the user who created the resource.
-        """
         return pulumi.get(self, "owner_principal_id")
 
     @owner_principal_id.setter
@@ -352,9 +262,6 @@ class _PoolState:
     @property
     @pulumi.getter(name="ownerUserName")
     def owner_user_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The username of the user who created the resource.  If the username of the owner does not exist, `null` will be returned and the caller should refer to the ownerPrincipalId value instead.
-        """
         return pulumi.get(self, "owner_user_name")
 
     @owner_user_name.setter
@@ -364,9 +271,6 @@ class _PoolState:
     @property
     @pulumi.getter(name="poolMetrics")
     def pool_metrics(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PoolPoolMetricArgs']]]]:
-        """
-        A collection of metrics related to a particular pool.
-        """
         return pulumi.get(self, "pool_metrics")
 
     @pool_metrics.setter
@@ -376,9 +280,6 @@ class _PoolState:
     @property
     @pulumi.getter
     def schedules(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PoolScheduleArgs']]]]:
-        """
-        (Updatable) A list of schedules for pool to auto start and stop.
-        """
         return pulumi.get(self, "schedules")
 
     @schedules.setter
@@ -388,13 +289,6 @@ class _PoolState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The target state for the Pool. Could be set to `ACTIVE` or `DELETED`. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -404,9 +298,6 @@ class _PoolState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -416,9 +307,6 @@ class _PoolState:
     @property
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
-        """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
@@ -442,66 +330,9 @@ class Pool(pulumi.CustomResource):
                  state: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Pool resource in Oracle Cloud Infrastructure Data Flow service.
-
-        Create a pool to be used by dataflow runs or applications.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_pool = oci.data_flow.Pool("testPool",
-            compartment_id=var["compartment_id"],
-            configurations=[oci.data_flow.PoolConfigurationArgs(
-                max=var["pool_configurations_max"],
-                min=var["pool_configurations_min"],
-                shape=var["pool_configurations_shape"],
-                shape_config=oci.data_flow.PoolConfigurationShapeConfigArgs(
-                    memory_in_gbs=var["pool_configurations_shape_config_memory_in_gbs"],
-                    ocpus=var["pool_configurations_shape_config_ocpus"],
-                ),
-            )],
-            display_name=var["pool_display_name"],
-            defined_tags={
-                "Operations.CostCenter": "42",
-            },
-            description=var["pool_description"],
-            freeform_tags={
-                "Department": "Finance",
-            },
-            idle_timeout_in_minutes=var["pool_idle_timeout_in_minutes"],
-            schedules=[oci.data_flow.PoolScheduleArgs(
-                day_of_week=var["pool_schedules_day_of_week"],
-                start_time=var["pool_schedules_start_time"],
-                stop_time=var["pool_schedules_stop_time"],
-            )])
-        ```
-
-        ## Import
-
-        Pools can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:DataFlow/pool:Pool test_pool "id"
-        ```
-
+        Create a Pool resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of a compartment.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PoolConfigurationArgs']]]] configurations: (Updatable) List of PoolConfig items.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] description: (Updatable) A user-friendly description. Avoid entering confidential information.
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. It does not have to be unique. Avoid entering confidential information.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[int] idle_timeout_in_minutes: (Updatable) Optional timeout value in minutes used to auto stop Pools. A Pool will be auto stopped after inactivity for this amount of time period. If value not set, pool will not be auto stopped auto.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PoolScheduleArgs']]]] schedules: (Updatable) A list of schedules for pool to auto start and stop.
-        :param pulumi.Input[str] state: (Updatable) The target state for the Pool. Could be set to `ACTIVE` or `DELETED`. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -510,51 +341,7 @@ class Pool(pulumi.CustomResource):
                  args: PoolArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Pool resource in Oracle Cloud Infrastructure Data Flow service.
-
-        Create a pool to be used by dataflow runs or applications.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_pool = oci.data_flow.Pool("testPool",
-            compartment_id=var["compartment_id"],
-            configurations=[oci.data_flow.PoolConfigurationArgs(
-                max=var["pool_configurations_max"],
-                min=var["pool_configurations_min"],
-                shape=var["pool_configurations_shape"],
-                shape_config=oci.data_flow.PoolConfigurationShapeConfigArgs(
-                    memory_in_gbs=var["pool_configurations_shape_config_memory_in_gbs"],
-                    ocpus=var["pool_configurations_shape_config_ocpus"],
-                ),
-            )],
-            display_name=var["pool_display_name"],
-            defined_tags={
-                "Operations.CostCenter": "42",
-            },
-            description=var["pool_description"],
-            freeform_tags={
-                "Department": "Finance",
-            },
-            idle_timeout_in_minutes=var["pool_idle_timeout_in_minutes"],
-            schedules=[oci.data_flow.PoolScheduleArgs(
-                day_of_week=var["pool_schedules_day_of_week"],
-                start_time=var["pool_schedules_start_time"],
-                stop_time=var["pool_schedules_stop_time"],
-            )])
-        ```
-
-        ## Import
-
-        Pools can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:DataFlow/pool:Pool test_pool "id"
-        ```
-
+        Create a Pool resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param PoolArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -641,25 +428,6 @@ class Pool(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of a compartment.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PoolConfigurationArgs']]]] configurations: (Updatable) List of PoolConfig items.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] description: (Updatable) A user-friendly description. Avoid entering confidential information.
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. It does not have to be unique. Avoid entering confidential information.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[int] idle_timeout_in_minutes: (Updatable) Optional timeout value in minutes used to auto stop Pools. A Pool will be auto stopped after inactivity for this amount of time period. If value not set, pool will not be auto stopped auto.
-        :param pulumi.Input[str] lifecycle_details: The detailed messages about the lifecycle state.
-        :param pulumi.Input[str] owner_principal_id: The OCID of the user who created the resource.
-        :param pulumi.Input[str] owner_user_name: The username of the user who created the resource.  If the username of the owner does not exist, `null` will be returned and the caller should refer to the ownerPrincipalId value instead.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PoolPoolMetricArgs']]]] pool_metrics: A collection of metrics related to a particular pool.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PoolScheduleArgs']]]] schedules: (Updatable) A list of schedules for pool to auto start and stop.
-        :param pulumi.Input[str] state: (Updatable) The target state for the Pool. Could be set to `ACTIVE` or `DELETED`. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] time_created: The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
-        :param pulumi.Input[str] time_updated: The date and time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -685,124 +453,75 @@ class Pool(pulumi.CustomResource):
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The OCID of a compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter
     def configurations(self) -> pulumi.Output[Sequence['outputs.PoolConfiguration']]:
-        """
-        (Updatable) List of PoolConfig items.
-        """
         return pulumi.get(self, "configurations")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def description(self) -> pulumi.Output[str]:
-        """
-        (Updatable) A user-friendly description. Avoid entering confidential information.
-        """
+    def description(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Output[str]:
-        """
-        (Updatable) A user-friendly name. It does not have to be unique. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="idleTimeoutInMinutes")
-    def idle_timeout_in_minutes(self) -> pulumi.Output[int]:
-        """
-        (Updatable) Optional timeout value in minutes used to auto stop Pools. A Pool will be auto stopped after inactivity for this amount of time period. If value not set, pool will not be auto stopped auto.
-        """
+    def idle_timeout_in_minutes(self) -> pulumi.Output[Optional[int]]:
         return pulumi.get(self, "idle_timeout_in_minutes")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> pulumi.Output[str]:
-        """
-        The detailed messages about the lifecycle state.
-        """
+    def lifecycle_details(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="ownerPrincipalId")
-    def owner_principal_id(self) -> pulumi.Output[str]:
-        """
-        The OCID of the user who created the resource.
-        """
+    def owner_principal_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "owner_principal_id")
 
     @property
     @pulumi.getter(name="ownerUserName")
-    def owner_user_name(self) -> pulumi.Output[str]:
-        """
-        The username of the user who created the resource.  If the username of the owner does not exist, `null` will be returned and the caller should refer to the ownerPrincipalId value instead.
-        """
+    def owner_user_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "owner_user_name")
 
     @property
     @pulumi.getter(name="poolMetrics")
-    def pool_metrics(self) -> pulumi.Output[Sequence['outputs.PoolPoolMetric']]:
-        """
-        A collection of metrics related to a particular pool.
-        """
+    def pool_metrics(self) -> pulumi.Output[Optional[Sequence['outputs.PoolPoolMetric']]]:
         return pulumi.get(self, "pool_metrics")
 
     @property
     @pulumi.getter
-    def schedules(self) -> pulumi.Output[Sequence['outputs.PoolSchedule']]:
-        """
-        (Updatable) A list of schedules for pool to auto start and stop.
-        """
+    def schedules(self) -> pulumi.Output[Optional[Sequence['outputs.PoolSchedule']]]:
         return pulumi.get(self, "schedules")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The target state for the Pool. Could be set to `ACTIVE` or `DELETED`. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> pulumi.Output[str]:
-        """
-        The date and time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
-        """
+    def time_updated(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_updated")
 

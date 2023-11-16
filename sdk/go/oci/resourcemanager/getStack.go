@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Stack resource in Oracle Cloud Infrastructure Resource Manager service.
@@ -60,23 +59,23 @@ type GetStackArgs struct {
 // A collection of values returned by getStack.
 type GetStackResult struct {
 	// Unique identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) for the compartment where the stack is located.
-	CompartmentId string                 `pulumi:"compartmentId"`
+	CompartmentId *string                `pulumi:"compartmentId"`
 	ConfigSources []GetStackConfigSource `pulumi:"configSources"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// General description of the stack.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// Human-readable display name for the stack.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Free-form tags associated with this resource. Each tag is a key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The provider-assigned unique ID for this managed resource.
-	Id      string `pulumi:"id"`
-	StackId string `pulumi:"stackId"`
+	Id      *string `pulumi:"id"`
+	StackId string  `pulumi:"stackId"`
 	// The current lifecycle state of the stack.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The date and time at which the stack was created.
-	TimeCreated string                 `pulumi:"timeCreated"`
+	TimeCreated *string                `pulumi:"timeCreated"`
 	Variables   map[string]interface{} `pulumi:"variables"`
 }
 
@@ -118,15 +117,9 @@ func (o GetStackResultOutput) ToGetStackResultOutputWithContext(ctx context.Cont
 	return o
 }
 
-func (o GetStackResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetStackResult] {
-	return pulumix.Output[GetStackResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Unique identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) for the compartment where the stack is located.
-func (o GetStackResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetStackResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetStackResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetStackResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 func (o GetStackResultOutput) ConfigSources() GetStackConfigSourceArrayOutput {
@@ -139,13 +132,13 @@ func (o GetStackResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // General description of the stack.
-func (o GetStackResultOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetStackResult) string { return v.Description }).(pulumi.StringOutput)
+func (o GetStackResultOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetStackResult) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // Human-readable display name for the stack.
-func (o GetStackResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetStackResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetStackResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetStackResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Free-form tags associated with this resource. Each tag is a key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -154,8 +147,8 @@ func (o GetStackResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetStackResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetStackResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetStackResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetStackResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetStackResultOutput) StackId() pulumi.StringOutput {
@@ -163,13 +156,13 @@ func (o GetStackResultOutput) StackId() pulumi.StringOutput {
 }
 
 // The current lifecycle state of the stack.
-func (o GetStackResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetStackResult) string { return v.State }).(pulumi.StringOutput)
+func (o GetStackResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetStackResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time at which the stack was created.
-func (o GetStackResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetStackResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetStackResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetStackResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 func (o GetStackResultOutput) Variables() pulumi.MapOutput {

@@ -16,17 +16,17 @@ namespace Pulumi.Oci.ApmTraces.Outputs
         /// <summary>
         /// Name of the property.
         /// </summary>
-        public readonly string Key;
+        public readonly string? Key;
         /// <summary>
         /// Value of the property.
         /// </summary>
-        public readonly string Value;
+        public readonly string? Value;
 
         [OutputConstructor]
         private GetTraceSnapshotDataTraceSnapshotDetailResult(
-            string key,
+            string? key,
 
-            string value)
+            string? value)
         {
             Key = key;
             Value = value;

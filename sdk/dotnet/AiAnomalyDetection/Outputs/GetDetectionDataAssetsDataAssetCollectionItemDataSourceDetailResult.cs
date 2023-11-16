@@ -16,75 +16,75 @@ namespace Pulumi.Oci.AiAnomalyDetection.Outputs
         /// <summary>
         /// atp db password Secret Id
         /// </summary>
-        public readonly string AtpPasswordSecretId;
+        public readonly string? AtpPasswordSecretId;
         /// <summary>
         /// atp db user name
         /// </summary>
-        public readonly string AtpUserName;
+        public readonly string? AtpUserName;
         /// <summary>
         /// Bucket Name for influx connection
         /// </summary>
-        public readonly string Bucket;
+        public readonly string? Bucket;
         /// <summary>
         /// OCID of the secret containing the containers certificates of ATP wallet
         /// </summary>
-        public readonly string CwalletFileSecretId;
+        public readonly string? CwalletFileSecretId;
         /// <summary>
         /// Data source type where actually data asset is being stored
         /// </summary>
-        public readonly string DataSourceType;
+        public readonly string? DataSourceType;
         /// <summary>
         /// DB Name for influx connection
         /// </summary>
-        public readonly string DatabaseName;
+        public readonly string? DatabaseName;
         /// <summary>
         /// OCID of the secret containing the PDB'S certificates of ATP wallet
         /// </summary>
-        public readonly string EwalletFileSecretId;
+        public readonly string? EwalletFileSecretId;
         /// <summary>
         /// OCID of the secret containing Keystore.jks file of the ATP wallet
         /// </summary>
-        public readonly string KeyStoreFileSecretId;
+        public readonly string? KeyStoreFileSecretId;
         /// <summary>
         /// Measurement name for influx
         /// </summary>
-        public readonly string MeasurementName;
+        public readonly string? MeasurementName;
         /// <summary>
         /// Object storage namespace
         /// </summary>
-        public readonly string Namespace;
+        public readonly string? Namespace;
         /// <summary>
         /// File name
         /// </summary>
-        public readonly string Object;
+        public readonly string? Object;
         /// <summary>
         /// OCID of the secret that contains jdbc properties file of ATP wallet
         /// </summary>
-        public readonly string OjdbcFileSecretId;
+        public readonly string? OjdbcFileSecretId;
         /// <summary>
         /// Password Secret Id for the influx connection
         /// </summary>
-        public readonly string PasswordSecretId;
+        public readonly string? PasswordSecretId;
         /// <summary>
         /// atp database table name
         /// </summary>
-        public readonly string TableName;
+        public readonly string? TableName;
         /// <summary>
         /// OCID of the secret that contains the tnsnames file of ATP wallet
         /// </summary>
-        public readonly string TnsnamesFileSecretId;
+        public readonly string? TnsnamesFileSecretId;
         /// <summary>
         /// OCID of the secret containing truststore.jks file of the ATP wallet
         /// </summary>
-        public readonly string TruststoreFileSecretId;
+        public readonly string? TruststoreFileSecretId;
         /// <summary>
         /// public IP address and port to influx DB
         /// </summary>
-        public readonly string Url;
+        public readonly string? Url;
         /// <summary>
         /// Username for connection to Influx
         /// </summary>
-        public readonly string UserName;
+        public readonly string? UserName;
         /// <summary>
         /// Possible data sources
         /// </summary>
@@ -92,49 +92,49 @@ namespace Pulumi.Oci.AiAnomalyDetection.Outputs
         /// <summary>
         /// wallet password Secret ID in String format
         /// </summary>
-        public readonly string WalletPasswordSecretId;
+        public readonly string? WalletPasswordSecretId;
 
         [OutputConstructor]
         private GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailResult(
-            string atpPasswordSecretId,
+            string? atpPasswordSecretId,
 
-            string atpUserName,
+            string? atpUserName,
 
-            string bucket,
+            string? bucket,
 
-            string cwalletFileSecretId,
+            string? cwalletFileSecretId,
 
-            string dataSourceType,
+            string? dataSourceType,
 
-            string databaseName,
+            string? databaseName,
 
-            string ewalletFileSecretId,
+            string? ewalletFileSecretId,
 
-            string keyStoreFileSecretId,
+            string? keyStoreFileSecretId,
 
-            string measurementName,
+            string? measurementName,
 
-            string @namespace,
+            string? @namespace,
 
-            string @object,
+            string? @object,
 
-            string ojdbcFileSecretId,
+            string? ojdbcFileSecretId,
 
-            string passwordSecretId,
+            string? passwordSecretId,
 
-            string tableName,
+            string? tableName,
 
-            string tnsnamesFileSecretId,
+            string? tnsnamesFileSecretId,
 
-            string truststoreFileSecretId,
+            string? truststoreFileSecretId,
 
-            string url,
+            string? url,
 
-            string userName,
+            string? userName,
 
             ImmutableArray<Outputs.GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailVersionSpecificDetailResult> versionSpecificDetails,
 
-            string walletPasswordSecretId)
+            string? walletPasswordSecretId)
         {
             AtpPasswordSecretId = atpPasswordSecretId;
             AtpUserName = atpUserName;

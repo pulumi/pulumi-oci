@@ -111,7 +111,7 @@ export class LoadBalancer extends pulumi.CustomResource {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `exampleLoadBalancer`
      */
@@ -119,17 +119,17 @@ export class LoadBalancer extends pulumi.CustomResource {
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * An array of IP addresses.
      */
-    public /*out*/ readonly ipAddressDetails!: pulumi.Output<outputs.LoadBalancer.LoadBalancerIpAddressDetail[]>;
+    public /*out*/ readonly ipAddressDetails!: pulumi.Output<outputs.LoadBalancer.LoadBalancerIpAddressDetail[] | undefined>;
     /**
      * An array of IP addresses. Deprecated: use ipAddressDetails instead
      *
      * @deprecated The 'ip_addresses' field has been deprecated. Please use 'ip_address_details' instead.
      */
-    public /*out*/ readonly ipAddresses!: pulumi.Output<string[]>;
+    public /*out*/ readonly ipAddresses!: pulumi.Output<string[] | undefined>;
     /**
      * IPv6 is currently supported only in the Government Cloud. Whether the load balancer has an IPv4 or IPv6 IP address.
      *
@@ -139,7 +139,7 @@ export class LoadBalancer extends pulumi.CustomResource {
      *
      * Example: "ipMode":"IPV6"
      */
-    public readonly ipMode!: pulumi.Output<string>;
+    public readonly ipMode!: pulumi.Output<string | undefined>;
     /**
      * Whether the load balancer has a VCN-local (private) IP address.
      *
@@ -151,7 +151,7 @@ export class LoadBalancer extends pulumi.CustomResource {
      *
      * Example: `true`
      */
-    public readonly isPrivate!: pulumi.Output<boolean>;
+    public readonly isPrivate!: pulumi.Output<boolean | undefined>;
     /**
      * (Updatable) An array of NSG [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this load balancer.
      *
@@ -175,11 +175,11 @@ export class LoadBalancer extends pulumi.CustomResource {
     /**
      * (Updatable) The configuration details to create load balancer using Flexible shape. This is required only if shapeName is `Flexible`.
      */
-    public readonly shapeDetails!: pulumi.Output<outputs.LoadBalancer.LoadBalancerShapeDetails>;
+    public readonly shapeDetails!: pulumi.Output<outputs.LoadBalancer.LoadBalancerShapeDetails | undefined>;
     /**
      * The current state of the load balancer.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * An array of subnet [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *
@@ -191,11 +191,11 @@ export class LoadBalancer extends pulumi.CustomResource {
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any}>;
+    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * The date and time the load balancer was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
 
     /**
      * Create a LoadBalancer resource with the given unique name, arguments, and options.

@@ -77,34 +77,34 @@ export interface GetDomainsGrantResult {
     /**
      * Application-Entitlement-Collection that is being granted. Each Grant must grant either an App or an App-Entitlement-Collection.
      */
-    readonly appEntitlementCollections: outputs.Identity.GetDomainsGrantAppEntitlementCollection[];
+    readonly appEntitlementCollections?: outputs.Identity.GetDomainsGrantAppEntitlementCollection[];
     /**
      * Application that is being granted. Each Grant must grant either an App or an App-Entitlement-Collection.
      */
-    readonly apps: outputs.Identity.GetDomainsGrantApp[];
+    readonly apps?: outputs.Identity.GetDomainsGrantApp[];
     readonly attributeSets?: string[];
     readonly attributes?: string;
     readonly authorization?: string;
     /**
      * Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
      */
-    readonly compartmentOcid: string;
+    readonly compartmentOcid?: string;
     /**
      * Unique key of grant, composed by combining a subset of app, entitlement, grantee, grantor and grantMechanism.  Used to prevent duplicate Grants.
      */
-    readonly compositeKey: string;
+    readonly compositeKey?: string;
     /**
      * A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
      */
-    readonly deleteInProgress: boolean;
+    readonly deleteInProgress?: boolean;
     /**
      * Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
      */
-    readonly domainOcid: string;
+    readonly domainOcid?: string;
     /**
      * The entitlement or privilege that is being granted
      */
-    readonly entitlements: outputs.Identity.GetDomainsGrantEntitlement[];
+    readonly entitlements?: outputs.Identity.GetDomainsGrantEntitlement[];
     readonly grantId: string;
     /**
      * Each value of grantMechanism indicates how (or by what component) some App (or App-Entitlement) was granted. A customer or the UI should use only grantMechanism values that start with 'ADMINISTRATOR':
@@ -112,65 +112,65 @@ export interface GetDomainsGrantResult {
      * * 'ADMINISTRATOR_TO_GROUP' is for a grant to a specific Group, which results in indirect grants to Users who are members of that Group.
      * * 'ADMINISTRATOR_TO_APP' is for a grant to a specific App.  The grantee (client) App gains access to the granted (server) App.
      */
-    readonly grantMechanism: string;
+    readonly grantMechanism?: string;
     /**
      * Store granted attribute-values as a string in Javascript Object Notation (JSON) format.
      */
-    readonly grantedAttributeValuesJson: string;
+    readonly grantedAttributeValuesJson?: string;
     /**
      * Grantee beneficiary. The grantee may be a User, Group, App or DynamicResourceGroup.
      */
-    readonly grantees: outputs.Identity.GetDomainsGrantGrantee[];
+    readonly grantees?: outputs.Identity.GetDomainsGrantGrantee[];
     /**
      * User conferring the grant to the beneficiary
      */
-    readonly grantors: outputs.Identity.GetDomainsGrantGrantor[];
+    readonly grantors?: outputs.Identity.GetDomainsGrantGrantor[];
     /**
      * Unique identifier for the SCIM Resource as defined by the Service Provider. Each representation of the Resource MUST include a non-empty id value. This identifier MUST be unique across the Service Provider's entire set of Resources. It MUST be a stable, non-reassignable identifier that does not change when the same Resource is returned in subsequent requests. The value of the id attribute is always issued by the Service Provider and MUST never be specified by the Service Consumer. bulkId: is a reserved keyword and MUST NOT be used in the unique identifier.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The User or App who created the Resource
      */
-    readonly idcsCreatedBies: outputs.Identity.GetDomainsGrantIdcsCreatedBy[];
+    readonly idcsCreatedBies?: outputs.Identity.GetDomainsGrantIdcsCreatedBy[];
     readonly idcsEndpoint: string;
     /**
      * The User or App who modified the Resource
      */
-    readonly idcsLastModifiedBies: outputs.Identity.GetDomainsGrantIdcsLastModifiedBy[];
+    readonly idcsLastModifiedBies?: outputs.Identity.GetDomainsGrantIdcsLastModifiedBy[];
     /**
      * The release number when the resource was upgraded.
      */
-    readonly idcsLastUpgradedInRelease: string;
+    readonly idcsLastUpgradedInRelease?: string;
     /**
      * Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
      */
-    readonly idcsPreventedOperations: string[];
+    readonly idcsPreventedOperations?: string[];
     /**
      * If true, this Grant has been fulfilled successfully.
      */
-    readonly isFulfilled: boolean;
+    readonly isFulfilled?: boolean;
     /**
      * A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
      */
-    readonly metas: outputs.Identity.GetDomainsGrantMeta[];
+    readonly metas?: outputs.Identity.GetDomainsGrantMeta[];
     /**
      * Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
      */
-    readonly ocid: string;
+    readonly ocid?: string;
     readonly resourceTypeSchemaVersion?: string;
     /**
      * REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
      */
-    readonly schemas: string[];
+    readonly schemas?: string[];
     /**
      * A list of tags on this resource.
      */
-    readonly tags: outputs.Identity.GetDomainsGrantTag[];
+    readonly tags?: outputs.Identity.GetDomainsGrantTag[];
     /**
      * Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
      */
-    readonly tenancyOcid: string;
+    readonly tenancyOcid?: string;
 }
 /**
  * This data source provides details about a specific Grant resource in Oracle Cloud Infrastructure Identity Domains service.

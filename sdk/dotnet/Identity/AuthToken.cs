@@ -63,31 +63,31 @@ namespace Pulumi.Oci.Identity
         /// The detailed status of INACTIVE lifecycleState.
         /// </summary>
         [Output("inactiveState")]
-        public Output<string> InactiveState { get; private set; } = null!;
+        public Output<string?> InactiveState { get; private set; } = null!;
 
         /// <summary>
         /// The token's current state.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// Date and time the `AuthToken` object was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// Date and time when this auth token will expire, in the format defined by RFC3339. Null if it never expires.  Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
         [Output("timeExpires")]
-        public Output<string> TimeExpires { get; private set; } = null!;
+        public Output<string?> TimeExpires { get; private set; } = null!;
 
         /// <summary>
         /// The auth token. The value is available only in the response for `CreateAuthToken`, and not for `ListAuthTokens` or `UpdateAuthToken`.
         /// </summary>
         [Output("token")]
-        public Output<string> Token { get; private set; } = null!;
+        public Output<string?> Token { get; private set; } = null!;
 
         /// <summary>
         /// The OCID of the user.

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Identity Providers in Oracle Cloud Infrastructure Identity service.
@@ -78,7 +77,7 @@ type GetIdentityProvidersResult struct {
 	CompartmentId string                       `pulumi:"compartmentId"`
 	Filters       []GetIdentityProvidersFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The list of identity_providers.
 	IdentityProviders []GetIdentityProvidersIdentityProvider `pulumi:"identityProviders"`
 	// The name you assign to the `IdentityProvider` during creation. The name must be unique across all `IdentityProvider` objects in the tenancy and cannot be changed. This is the name federated users see when choosing which identity provider to use when signing in to the Oracle Cloud Infrastructure Console.
@@ -134,12 +133,6 @@ func (o GetIdentityProvidersResultOutput) ToGetIdentityProvidersResultOutputWith
 	return o
 }
 
-func (o GetIdentityProvidersResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetIdentityProvidersResult] {
-	return pulumix.Output[GetIdentityProvidersResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the tenancy containing the `IdentityProvider`.
 func (o GetIdentityProvidersResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetIdentityProvidersResult) string { return v.CompartmentId }).(pulumi.StringOutput)
@@ -150,8 +143,8 @@ func (o GetIdentityProvidersResultOutput) Filters() GetIdentityProvidersFilterAr
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetIdentityProvidersResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIdentityProvidersResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetIdentityProvidersResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetIdentityProvidersResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The list of identity_providers.

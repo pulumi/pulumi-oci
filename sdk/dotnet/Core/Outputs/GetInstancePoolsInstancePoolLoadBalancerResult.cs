@@ -16,47 +16,47 @@ namespace Pulumi.Oci.Core.Outputs
         /// <summary>
         /// The name of the backend set on the load balancer.
         /// </summary>
-        public readonly string BackendSetName;
+        public readonly string? BackendSetName;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer attachment.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance pool of the load balancer attachment.
         /// </summary>
-        public readonly string InstancePoolId;
+        public readonly string? InstancePoolId;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer attached to the instance pool.
         /// </summary>
-        public readonly string LoadBalancerId;
+        public readonly string? LoadBalancerId;
         /// <summary>
         /// The port value used for the backends.
         /// </summary>
-        public readonly int Port;
+        public readonly int? Port;
         /// <summary>
         /// A filter to only return resources that match the given lifecycle state. The state value is case-insensitive.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// Indicates which VNIC on each instance in the instance pool should be used to associate with the load balancer. Possible values are "PrimaryVnic" or the displayName of one of the secondary VNICs on the instance configuration that is associated with the instance pool.
         /// </summary>
-        public readonly string VnicSelection;
+        public readonly string? VnicSelection;
 
         [OutputConstructor]
         private GetInstancePoolsInstancePoolLoadBalancerResult(
-            string backendSetName,
+            string? backendSetName,
 
-            string id,
+            string? id,
 
-            string instancePoolId,
+            string? instancePoolId,
 
-            string loadBalancerId,
+            string? loadBalancerId,
 
-            int port,
+            int? port,
 
-            string state,
+            string? state,
 
-            string vnicSelection)
+            string? vnicSelection)
         {
             BackendSetName = backendSetName;
             Id = id;

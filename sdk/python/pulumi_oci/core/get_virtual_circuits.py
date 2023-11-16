@@ -46,17 +46,11 @@ class GetVirtualCircuitsResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The OCID of the compartment containing the virtual circuit.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -66,7 +60,7 @@ class GetVirtualCircuitsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -75,17 +69,11 @@ class GetVirtualCircuitsResult:
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The virtual circuit's current state. For information about the different states, see [FastConnect Overview](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm).
-        """
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="virtualCircuits")
-    def virtual_circuits(self) -> Sequence['outputs.GetVirtualCircuitsVirtualCircuitResult']:
-        """
-        The list of virtual_circuits.
-        """
+    def virtual_circuits(self) -> Optional[Sequence['outputs.GetVirtualCircuitsVirtualCircuitResult']]:
         return pulumi.get(self, "virtual_circuits")
 
 
@@ -109,25 +97,7 @@ def get_virtual_circuits(compartment_id: Optional[str] = None,
                          state: Optional[str] = None,
                          opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetVirtualCircuitsResult:
     """
-    This data source provides the list of Virtual Circuits in Oracle Cloud Infrastructure Core service.
-
-    Lists the virtual circuits in the specified compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_virtual_circuits = oci.Core.get_virtual_circuits(compartment_id=var["compartment_id"],
-        display_name=var["virtual_circuit_display_name"],
-        state=var["virtual_circuit_state"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param str display_name: A filter to return only resources that match the given display name exactly.
-    :param str state: A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -153,24 +123,6 @@ def get_virtual_circuits_output(compartment_id: Optional[pulumi.Input[str]] = No
                                 state: Optional[pulumi.Input[Optional[str]]] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetVirtualCircuitsResult]:
     """
-    This data source provides the list of Virtual Circuits in Oracle Cloud Infrastructure Core service.
-
-    Lists the virtual circuits in the specified compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_virtual_circuits = oci.Core.get_virtual_circuits(compartment_id=var["compartment_id"],
-        display_name=var["virtual_circuit_display_name"],
-        state=var["virtual_circuit_state"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param str display_name: A filter to return only resources that match the given display name exactly.
-    :param str state: A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
+    Use this data source to access information about an existing resource.
     """
     ...

@@ -73,7 +73,7 @@ export interface GetAccessPoliciesResult {
     /**
      * The list of access_policy_collection.
      */
-    readonly accessPolicyCollections: outputs.ServiceMesh.GetAccessPoliciesAccessPolicyCollection[];
+    readonly accessPolicyCollections?: outputs.ServiceMesh.GetAccessPoliciesAccessPolicyCollection[];
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */

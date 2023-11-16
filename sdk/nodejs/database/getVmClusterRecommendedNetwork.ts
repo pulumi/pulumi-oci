@@ -96,7 +96,7 @@ export interface GetVmClusterRecommendedNetworkResult {
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * The user-friendly name for the Exadata Cloud@Customer VM cluster network. The name does not need to be unique.
      */
@@ -104,26 +104,26 @@ export interface GetVmClusterRecommendedNetworkResult {
     /**
      * The list of DNS server IP addresses. Maximum of 3 allowed.
      */
-    readonly dns: string[];
+    readonly dns?: string[];
     readonly drScanListenerPortTcp?: number;
     /**
      * The SCAN details for DR network
      */
-    readonly drScans: outputs.Database.GetVmClusterRecommendedNetworkDrScan[];
+    readonly drScans?: outputs.Database.GetVmClusterRecommendedNetworkDrScan[];
     readonly exadataInfrastructureId: string;
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly networks: outputs.Database.GetVmClusterRecommendedNetworkNetwork[];
     /**
      * The list of NTP server IP addresses. Maximum of 3 allowed.
      */
-    readonly ntps: string[];
+    readonly ntps?: string[];
     /**
      * The SCAN TCPIP port. Default is 1521.
      */
@@ -135,11 +135,11 @@ export interface GetVmClusterRecommendedNetworkResult {
     /**
      * The SCAN details.
      */
-    readonly scans: outputs.Database.GetVmClusterRecommendedNetworkScan[];
+    readonly scans?: outputs.Database.GetVmClusterRecommendedNetworkScan[];
     /**
      * Details of the client and backup networks.
      */
-    readonly vmNetworks: outputs.Database.GetVmClusterRecommendedNetworkVmNetwork[];
+    readonly vmNetworks?: outputs.Database.GetVmClusterRecommendedNetworkVmNetwork[];
 }
 /**
  * This data source provides details about a specific Vm Cluster Recommended Network resource in Oracle Cloud Infrastructure Database service.

@@ -10,6 +10,8 @@ import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetail {
@@ -17,351 +19,351 @@ public final class GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMainte
      * @return The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return Extend current custom action timeout between the current database servers during waiting state, from 0 (zero) to 30 minutes.
      * 
      */
-    private Integer currentCustomActionTimeoutInMins;
+    private @Nullable Integer currentCustomActionTimeoutInMins;
     /**
      * @return The name of the current infrastruture component that is getting patched.
      * 
      */
-    private String currentPatchingComponent;
+    private @Nullable String currentPatchingComponent;
     /**
      * @return Determines the amount of time the system will wait before the start of each database server patching operation. Specify a number of minutes, from 15 to 120.
      * 
      */
-    private Integer customActionTimeoutInMins;
+    private @Nullable Integer customActionTimeoutInMins;
     /**
      * @return Description of the maintenance run.
      * 
      */
-    private String description;
+    private @Nullable String description;
     /**
      * @return The user-friendly name for the maintenance run.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return The estimated start time of the next infrastruture component patching operation.
      * 
      */
-    private String estimatedComponentPatchingStartTime;
+    private @Nullable String estimatedComponentPatchingStartTime;
     /**
      * @return The estimated total time required in minutes for all patching operations (database server, storage server, and network switch patching).
      * 
      */
-    private List<GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTime> estimatedPatchingTimes;
+    private @Nullable List<GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTime> estimatedPatchingTimes;
     /**
      * @return The OCID of the maintenance run.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return If true, enables the configuration of a custom action timeout (waiting period) between database servers patching operations.
      * 
      */
-    private Boolean isCustomActionTimeoutEnabled;
+    private @Nullable Boolean isCustomActionTimeoutEnabled;
     /**
      * @return Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
      * 
      */
-    private Boolean isDstFileUpdateEnabled;
+    private @Nullable Boolean isDstFileUpdateEnabled;
     /**
      * @return Additional information about the current lifecycle state.
      * 
      */
-    private String lifecycleDetails;
+    private @Nullable String lifecycleDetails;
     /**
      * @return Maintenance sub-type.
      * 
      */
-    private String maintenanceSubtype;
+    private @Nullable String maintenanceSubtype;
     /**
      * @return The maintenance type.
      * 
      */
-    private String maintenanceType;
+    private @Nullable String maintenanceType;
     /**
      * @return Contain the patch failure count.
      * 
      */
-    private Integer patchFailureCount;
+    private @Nullable Integer patchFailureCount;
     /**
      * @return The unique identifier of the patch. The identifier string includes the patch type, the Oracle Database version, and the patch creation date (using the format YYMMDD). For example, the identifier `ru_patch_19.9.0.0_201030` is used for an RU patch for Oracle Database 19.9.0.0 that was released October 30, 2020.
      * 
      */
-    private String patchId;
+    private @Nullable String patchId;
     /**
      * @return The time when the patching operation ended.
      * 
      */
-    private String patchingEndTime;
+    private @Nullable String patchingEndTime;
     /**
      * @return Cloud Exadata infrastructure node patching method, either &#34;ROLLING&#34; or &#34;NONROLLING&#34;. Default value is ROLLING.
      * 
      */
-    private String patchingMode;
+    private @Nullable String patchingMode;
     /**
      * @return The time when the patching operation started.
      * 
      */
-    private String patchingStartTime;
+    private @Nullable String patchingStartTime;
     /**
      * @return The status of the patching operation.
      * 
      */
-    private String patchingStatus;
+    private @Nullable String patchingStatus;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance run for the Autonomous Data Guard association&#39;s peer container database.
      * 
      */
-    private String peerMaintenanceRunId;
+    private @Nullable String peerMaintenanceRunId;
     /**
      * @return The state of the maintenance run history.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return The target software version for the database server patching operation.
      * 
      */
-    private String targetDbServerVersion;
+    private @Nullable String targetDbServerVersion;
     /**
      * @return The target resource ID.
      * 
      */
-    private String targetResourceId;
+    private @Nullable String targetResourceId;
     /**
      * @return The type of the target resource.
      * 
      */
-    private String targetResourceType;
+    private @Nullable String targetResourceType;
     /**
      * @return The target Cell version that is to be patched to.
      * 
      */
-    private String targetStorageServerVersion;
+    private @Nullable String targetStorageServerVersion;
     /**
      * @return The date and time the maintenance run was completed.
      * 
      */
-    private String timeEnded;
+    private @Nullable String timeEnded;
     /**
      * @return The date and time the maintenance run is scheduled to occur.
      * 
      */
-    private String timeScheduled;
+    private @Nullable String timeScheduled;
     /**
      * @return The date and time the maintenance run starts.
      * 
      */
-    private String timeStarted;
+    private @Nullable String timeStarted;
 
     private GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetail() {}
     /**
      * @return The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return Extend current custom action timeout between the current database servers during waiting state, from 0 (zero) to 30 minutes.
      * 
      */
-    public Integer currentCustomActionTimeoutInMins() {
-        return this.currentCustomActionTimeoutInMins;
+    public Optional<Integer> currentCustomActionTimeoutInMins() {
+        return Optional.ofNullable(this.currentCustomActionTimeoutInMins);
     }
     /**
      * @return The name of the current infrastruture component that is getting patched.
      * 
      */
-    public String currentPatchingComponent() {
-        return this.currentPatchingComponent;
+    public Optional<String> currentPatchingComponent() {
+        return Optional.ofNullable(this.currentPatchingComponent);
     }
     /**
      * @return Determines the amount of time the system will wait before the start of each database server patching operation. Specify a number of minutes, from 15 to 120.
      * 
      */
-    public Integer customActionTimeoutInMins() {
-        return this.customActionTimeoutInMins;
+    public Optional<Integer> customActionTimeoutInMins() {
+        return Optional.ofNullable(this.customActionTimeoutInMins);
     }
     /**
      * @return Description of the maintenance run.
      * 
      */
-    public String description() {
-        return this.description;
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
     /**
      * @return The user-friendly name for the maintenance run.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return The estimated start time of the next infrastruture component patching operation.
      * 
      */
-    public String estimatedComponentPatchingStartTime() {
-        return this.estimatedComponentPatchingStartTime;
+    public Optional<String> estimatedComponentPatchingStartTime() {
+        return Optional.ofNullable(this.estimatedComponentPatchingStartTime);
     }
     /**
      * @return The estimated total time required in minutes for all patching operations (database server, storage server, and network switch patching).
      * 
      */
     public List<GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTime> estimatedPatchingTimes() {
-        return this.estimatedPatchingTimes;
+        return this.estimatedPatchingTimes == null ? List.of() : this.estimatedPatchingTimes;
     }
     /**
      * @return The OCID of the maintenance run.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return If true, enables the configuration of a custom action timeout (waiting period) between database servers patching operations.
      * 
      */
-    public Boolean isCustomActionTimeoutEnabled() {
-        return this.isCustomActionTimeoutEnabled;
+    public Optional<Boolean> isCustomActionTimeoutEnabled() {
+        return Optional.ofNullable(this.isCustomActionTimeoutEnabled);
     }
     /**
      * @return Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
      * 
      */
-    public Boolean isDstFileUpdateEnabled() {
-        return this.isDstFileUpdateEnabled;
+    public Optional<Boolean> isDstFileUpdateEnabled() {
+        return Optional.ofNullable(this.isDstFileUpdateEnabled);
     }
     /**
      * @return Additional information about the current lifecycle state.
      * 
      */
-    public String lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Optional<String> lifecycleDetails() {
+        return Optional.ofNullable(this.lifecycleDetails);
     }
     /**
      * @return Maintenance sub-type.
      * 
      */
-    public String maintenanceSubtype() {
-        return this.maintenanceSubtype;
+    public Optional<String> maintenanceSubtype() {
+        return Optional.ofNullable(this.maintenanceSubtype);
     }
     /**
      * @return The maintenance type.
      * 
      */
-    public String maintenanceType() {
-        return this.maintenanceType;
+    public Optional<String> maintenanceType() {
+        return Optional.ofNullable(this.maintenanceType);
     }
     /**
      * @return Contain the patch failure count.
      * 
      */
-    public Integer patchFailureCount() {
-        return this.patchFailureCount;
+    public Optional<Integer> patchFailureCount() {
+        return Optional.ofNullable(this.patchFailureCount);
     }
     /**
      * @return The unique identifier of the patch. The identifier string includes the patch type, the Oracle Database version, and the patch creation date (using the format YYMMDD). For example, the identifier `ru_patch_19.9.0.0_201030` is used for an RU patch for Oracle Database 19.9.0.0 that was released October 30, 2020.
      * 
      */
-    public String patchId() {
-        return this.patchId;
+    public Optional<String> patchId() {
+        return Optional.ofNullable(this.patchId);
     }
     /**
      * @return The time when the patching operation ended.
      * 
      */
-    public String patchingEndTime() {
-        return this.patchingEndTime;
+    public Optional<String> patchingEndTime() {
+        return Optional.ofNullable(this.patchingEndTime);
     }
     /**
      * @return Cloud Exadata infrastructure node patching method, either &#34;ROLLING&#34; or &#34;NONROLLING&#34;. Default value is ROLLING.
      * 
      */
-    public String patchingMode() {
-        return this.patchingMode;
+    public Optional<String> patchingMode() {
+        return Optional.ofNullable(this.patchingMode);
     }
     /**
      * @return The time when the patching operation started.
      * 
      */
-    public String patchingStartTime() {
-        return this.patchingStartTime;
+    public Optional<String> patchingStartTime() {
+        return Optional.ofNullable(this.patchingStartTime);
     }
     /**
      * @return The status of the patching operation.
      * 
      */
-    public String patchingStatus() {
-        return this.patchingStatus;
+    public Optional<String> patchingStatus() {
+        return Optional.ofNullable(this.patchingStatus);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance run for the Autonomous Data Guard association&#39;s peer container database.
      * 
      */
-    public String peerMaintenanceRunId() {
-        return this.peerMaintenanceRunId;
+    public Optional<String> peerMaintenanceRunId() {
+        return Optional.ofNullable(this.peerMaintenanceRunId);
     }
     /**
      * @return The state of the maintenance run history.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return The target software version for the database server patching operation.
      * 
      */
-    public String targetDbServerVersion() {
-        return this.targetDbServerVersion;
+    public Optional<String> targetDbServerVersion() {
+        return Optional.ofNullable(this.targetDbServerVersion);
     }
     /**
      * @return The target resource ID.
      * 
      */
-    public String targetResourceId() {
-        return this.targetResourceId;
+    public Optional<String> targetResourceId() {
+        return Optional.ofNullable(this.targetResourceId);
     }
     /**
      * @return The type of the target resource.
      * 
      */
-    public String targetResourceType() {
-        return this.targetResourceType;
+    public Optional<String> targetResourceType() {
+        return Optional.ofNullable(this.targetResourceType);
     }
     /**
      * @return The target Cell version that is to be patched to.
      * 
      */
-    public String targetStorageServerVersion() {
-        return this.targetStorageServerVersion;
+    public Optional<String> targetStorageServerVersion() {
+        return Optional.ofNullable(this.targetStorageServerVersion);
     }
     /**
      * @return The date and time the maintenance run was completed.
      * 
      */
-    public String timeEnded() {
-        return this.timeEnded;
+    public Optional<String> timeEnded() {
+        return Optional.ofNullable(this.timeEnded);
     }
     /**
      * @return The date and time the maintenance run is scheduled to occur.
      * 
      */
-    public String timeScheduled() {
-        return this.timeScheduled;
+    public Optional<String> timeScheduled() {
+        return Optional.ofNullable(this.timeScheduled);
     }
     /**
      * @return The date and time the maintenance run starts.
      * 
      */
-    public String timeStarted() {
-        return this.timeStarted;
+    public Optional<String> timeStarted() {
+        return Optional.ofNullable(this.timeStarted);
     }
 
     public static Builder builder() {
@@ -373,35 +375,35 @@ public final class GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMainte
     }
     @CustomType.Builder
     public static final class Builder {
-        private String compartmentId;
-        private Integer currentCustomActionTimeoutInMins;
-        private String currentPatchingComponent;
-        private Integer customActionTimeoutInMins;
-        private String description;
-        private String displayName;
-        private String estimatedComponentPatchingStartTime;
-        private List<GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTime> estimatedPatchingTimes;
-        private String id;
-        private Boolean isCustomActionTimeoutEnabled;
-        private Boolean isDstFileUpdateEnabled;
-        private String lifecycleDetails;
-        private String maintenanceSubtype;
-        private String maintenanceType;
-        private Integer patchFailureCount;
-        private String patchId;
-        private String patchingEndTime;
-        private String patchingMode;
-        private String patchingStartTime;
-        private String patchingStatus;
-        private String peerMaintenanceRunId;
-        private String state;
-        private String targetDbServerVersion;
-        private String targetResourceId;
-        private String targetResourceType;
-        private String targetStorageServerVersion;
-        private String timeEnded;
-        private String timeScheduled;
-        private String timeStarted;
+        private @Nullable String compartmentId;
+        private @Nullable Integer currentCustomActionTimeoutInMins;
+        private @Nullable String currentPatchingComponent;
+        private @Nullable Integer customActionTimeoutInMins;
+        private @Nullable String description;
+        private @Nullable String displayName;
+        private @Nullable String estimatedComponentPatchingStartTime;
+        private @Nullable List<GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTime> estimatedPatchingTimes;
+        private @Nullable String id;
+        private @Nullable Boolean isCustomActionTimeoutEnabled;
+        private @Nullable Boolean isDstFileUpdateEnabled;
+        private @Nullable String lifecycleDetails;
+        private @Nullable String maintenanceSubtype;
+        private @Nullable String maintenanceType;
+        private @Nullable Integer patchFailureCount;
+        private @Nullable String patchId;
+        private @Nullable String patchingEndTime;
+        private @Nullable String patchingMode;
+        private @Nullable String patchingStartTime;
+        private @Nullable String patchingStatus;
+        private @Nullable String peerMaintenanceRunId;
+        private @Nullable String state;
+        private @Nullable String targetDbServerVersion;
+        private @Nullable String targetResourceId;
+        private @Nullable String targetResourceType;
+        private @Nullable String targetStorageServerVersion;
+        private @Nullable String timeEnded;
+        private @Nullable String timeScheduled;
+        private @Nullable String timeStarted;
         public Builder() {}
         public Builder(GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetail defaults) {
     	      Objects.requireNonNull(defaults);
@@ -437,151 +439,151 @@ public final class GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMainte
         }
 
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder currentCustomActionTimeoutInMins(Integer currentCustomActionTimeoutInMins) {
-            this.currentCustomActionTimeoutInMins = Objects.requireNonNull(currentCustomActionTimeoutInMins);
+        public Builder currentCustomActionTimeoutInMins(@Nullable Integer currentCustomActionTimeoutInMins) {
+            this.currentCustomActionTimeoutInMins = currentCustomActionTimeoutInMins;
             return this;
         }
         @CustomType.Setter
-        public Builder currentPatchingComponent(String currentPatchingComponent) {
-            this.currentPatchingComponent = Objects.requireNonNull(currentPatchingComponent);
+        public Builder currentPatchingComponent(@Nullable String currentPatchingComponent) {
+            this.currentPatchingComponent = currentPatchingComponent;
             return this;
         }
         @CustomType.Setter
-        public Builder customActionTimeoutInMins(Integer customActionTimeoutInMins) {
-            this.customActionTimeoutInMins = Objects.requireNonNull(customActionTimeoutInMins);
+        public Builder customActionTimeoutInMins(@Nullable Integer customActionTimeoutInMins) {
+            this.customActionTimeoutInMins = customActionTimeoutInMins;
             return this;
         }
         @CustomType.Setter
-        public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+        public Builder description(@Nullable String description) {
+            this.description = description;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder estimatedComponentPatchingStartTime(String estimatedComponentPatchingStartTime) {
-            this.estimatedComponentPatchingStartTime = Objects.requireNonNull(estimatedComponentPatchingStartTime);
+        public Builder estimatedComponentPatchingStartTime(@Nullable String estimatedComponentPatchingStartTime) {
+            this.estimatedComponentPatchingStartTime = estimatedComponentPatchingStartTime;
             return this;
         }
         @CustomType.Setter
-        public Builder estimatedPatchingTimes(List<GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTime> estimatedPatchingTimes) {
-            this.estimatedPatchingTimes = Objects.requireNonNull(estimatedPatchingTimes);
+        public Builder estimatedPatchingTimes(@Nullable List<GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTime> estimatedPatchingTimes) {
+            this.estimatedPatchingTimes = estimatedPatchingTimes;
             return this;
         }
         public Builder estimatedPatchingTimes(GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTime... estimatedPatchingTimes) {
             return estimatedPatchingTimes(List.of(estimatedPatchingTimes));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder isCustomActionTimeoutEnabled(Boolean isCustomActionTimeoutEnabled) {
-            this.isCustomActionTimeoutEnabled = Objects.requireNonNull(isCustomActionTimeoutEnabled);
+        public Builder isCustomActionTimeoutEnabled(@Nullable Boolean isCustomActionTimeoutEnabled) {
+            this.isCustomActionTimeoutEnabled = isCustomActionTimeoutEnabled;
             return this;
         }
         @CustomType.Setter
-        public Builder isDstFileUpdateEnabled(Boolean isDstFileUpdateEnabled) {
-            this.isDstFileUpdateEnabled = Objects.requireNonNull(isDstFileUpdateEnabled);
+        public Builder isDstFileUpdateEnabled(@Nullable Boolean isDstFileUpdateEnabled) {
+            this.isDstFileUpdateEnabled = isDstFileUpdateEnabled;
             return this;
         }
         @CustomType.Setter
-        public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+        public Builder lifecycleDetails(@Nullable String lifecycleDetails) {
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
-        public Builder maintenanceSubtype(String maintenanceSubtype) {
-            this.maintenanceSubtype = Objects.requireNonNull(maintenanceSubtype);
+        public Builder maintenanceSubtype(@Nullable String maintenanceSubtype) {
+            this.maintenanceSubtype = maintenanceSubtype;
             return this;
         }
         @CustomType.Setter
-        public Builder maintenanceType(String maintenanceType) {
-            this.maintenanceType = Objects.requireNonNull(maintenanceType);
+        public Builder maintenanceType(@Nullable String maintenanceType) {
+            this.maintenanceType = maintenanceType;
             return this;
         }
         @CustomType.Setter
-        public Builder patchFailureCount(Integer patchFailureCount) {
-            this.patchFailureCount = Objects.requireNonNull(patchFailureCount);
+        public Builder patchFailureCount(@Nullable Integer patchFailureCount) {
+            this.patchFailureCount = patchFailureCount;
             return this;
         }
         @CustomType.Setter
-        public Builder patchId(String patchId) {
-            this.patchId = Objects.requireNonNull(patchId);
+        public Builder patchId(@Nullable String patchId) {
+            this.patchId = patchId;
             return this;
         }
         @CustomType.Setter
-        public Builder patchingEndTime(String patchingEndTime) {
-            this.patchingEndTime = Objects.requireNonNull(patchingEndTime);
+        public Builder patchingEndTime(@Nullable String patchingEndTime) {
+            this.patchingEndTime = patchingEndTime;
             return this;
         }
         @CustomType.Setter
-        public Builder patchingMode(String patchingMode) {
-            this.patchingMode = Objects.requireNonNull(patchingMode);
+        public Builder patchingMode(@Nullable String patchingMode) {
+            this.patchingMode = patchingMode;
             return this;
         }
         @CustomType.Setter
-        public Builder patchingStartTime(String patchingStartTime) {
-            this.patchingStartTime = Objects.requireNonNull(patchingStartTime);
+        public Builder patchingStartTime(@Nullable String patchingStartTime) {
+            this.patchingStartTime = patchingStartTime;
             return this;
         }
         @CustomType.Setter
-        public Builder patchingStatus(String patchingStatus) {
-            this.patchingStatus = Objects.requireNonNull(patchingStatus);
+        public Builder patchingStatus(@Nullable String patchingStatus) {
+            this.patchingStatus = patchingStatus;
             return this;
         }
         @CustomType.Setter
-        public Builder peerMaintenanceRunId(String peerMaintenanceRunId) {
-            this.peerMaintenanceRunId = Objects.requireNonNull(peerMaintenanceRunId);
+        public Builder peerMaintenanceRunId(@Nullable String peerMaintenanceRunId) {
+            this.peerMaintenanceRunId = peerMaintenanceRunId;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder targetDbServerVersion(String targetDbServerVersion) {
-            this.targetDbServerVersion = Objects.requireNonNull(targetDbServerVersion);
+        public Builder targetDbServerVersion(@Nullable String targetDbServerVersion) {
+            this.targetDbServerVersion = targetDbServerVersion;
             return this;
         }
         @CustomType.Setter
-        public Builder targetResourceId(String targetResourceId) {
-            this.targetResourceId = Objects.requireNonNull(targetResourceId);
+        public Builder targetResourceId(@Nullable String targetResourceId) {
+            this.targetResourceId = targetResourceId;
             return this;
         }
         @CustomType.Setter
-        public Builder targetResourceType(String targetResourceType) {
-            this.targetResourceType = Objects.requireNonNull(targetResourceType);
+        public Builder targetResourceType(@Nullable String targetResourceType) {
+            this.targetResourceType = targetResourceType;
             return this;
         }
         @CustomType.Setter
-        public Builder targetStorageServerVersion(String targetStorageServerVersion) {
-            this.targetStorageServerVersion = Objects.requireNonNull(targetStorageServerVersion);
+        public Builder targetStorageServerVersion(@Nullable String targetStorageServerVersion) {
+            this.targetStorageServerVersion = targetStorageServerVersion;
             return this;
         }
         @CustomType.Setter
-        public Builder timeEnded(String timeEnded) {
-            this.timeEnded = Objects.requireNonNull(timeEnded);
+        public Builder timeEnded(@Nullable String timeEnded) {
+            this.timeEnded = timeEnded;
             return this;
         }
         @CustomType.Setter
-        public Builder timeScheduled(String timeScheduled) {
-            this.timeScheduled = Objects.requireNonNull(timeScheduled);
+        public Builder timeScheduled(@Nullable String timeScheduled) {
+            this.timeScheduled = timeScheduled;
             return this;
         }
         @CustomType.Setter
-        public Builder timeStarted(String timeStarted) {
-            this.timeStarted = Objects.requireNonNull(timeStarted);
+        public Builder timeStarted(@Nullable String timeStarted) {
+            this.timeStarted = timeStarted;
             return this;
         }
         public GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetail build() {

@@ -17,24 +17,12 @@ class ClusterCompleteCredentialRotationManagementArgs:
                  cluster_id: pulumi.Input[str]):
         """
         The set of arguments for constructing a ClusterCompleteCredentialRotationManagement resource.
-        :param pulumi.Input[str] cluster_id: The OCID of the cluster.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "cluster_id", cluster_id)
 
     @property
     @pulumi.getter(name="clusterId")
     def cluster_id(self) -> pulumi.Input[str]:
-        """
-        The OCID of the cluster.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "cluster_id")
 
     @cluster_id.setter
@@ -48,11 +36,6 @@ class _ClusterCompleteCredentialRotationManagementState:
                  cluster_id: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering ClusterCompleteCredentialRotationManagement resources.
-        :param pulumi.Input[str] cluster_id: The OCID of the cluster.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if cluster_id is not None:
             pulumi.set(__self__, "cluster_id", cluster_id)
@@ -60,13 +43,6 @@ class _ClusterCompleteCredentialRotationManagementState:
     @property
     @pulumi.getter(name="clusterId")
     def cluster_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the cluster.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "cluster_id")
 
     @cluster_id.setter
@@ -82,31 +58,9 @@ class ClusterCompleteCredentialRotationManagement(pulumi.CustomResource):
                  cluster_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Cluster Complete Credential Rotation Management resource in Oracle Cloud Infrastructure Container Engine service.
-
-        Complete cluster credential rotation. Retire old credentials from kubernetes components.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_cluster_complete_credential_rotation_management = oci.container_engine.ClusterCompleteCredentialRotationManagement("testClusterCompleteCredentialRotationManagement", cluster_id=oci_containerengine_cluster["test_cluster"]["id"],
-        opts=pulumi.ResourceOptions(depends_on=[oci_containerengine_cluster_start_credential_rotation_management["test_cluster_start_credential_rotation_management"]]))
-        ```
-
-        ## Import
-
-        Import is not supported for this resource.
-
+        Create a ClusterCompleteCredentialRotationManagement resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] cluster_id: The OCID of the cluster.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -115,24 +69,7 @@ class ClusterCompleteCredentialRotationManagement(pulumi.CustomResource):
                  args: ClusterCompleteCredentialRotationManagementArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Cluster Complete Credential Rotation Management resource in Oracle Cloud Infrastructure Container Engine service.
-
-        Complete cluster credential rotation. Retire old credentials from kubernetes components.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_cluster_complete_credential_rotation_management = oci.container_engine.ClusterCompleteCredentialRotationManagement("testClusterCompleteCredentialRotationManagement", cluster_id=oci_containerengine_cluster["test_cluster"]["id"],
-        opts=pulumi.ResourceOptions(depends_on=[oci_containerengine_cluster_start_credential_rotation_management["test_cluster_start_credential_rotation_management"]]))
-        ```
-
-        ## Import
-
-        Import is not supported for this resource.
-
+        Create a ClusterCompleteCredentialRotationManagement resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param ClusterCompleteCredentialRotationManagementArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -179,11 +116,6 @@ class ClusterCompleteCredentialRotationManagement(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] cluster_id: The OCID of the cluster.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -195,12 +127,5 @@ class ClusterCompleteCredentialRotationManagement(pulumi.CustomResource):
     @property
     @pulumi.getter(name="clusterId")
     def cluster_id(self) -> pulumi.Output[str]:
-        """
-        The OCID of the cluster.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "cluster_id")
 

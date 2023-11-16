@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Database Pdb Conversion History Entries in Oracle Cloud Infrastructure Database service.
@@ -69,7 +68,7 @@ type GetDatabasePdbConversionHistoryEntriesResult struct {
 	DatabaseId string                                         `pulumi:"databaseId"`
 	Filters    []GetDatabasePdbConversionHistoryEntriesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id                  string  `pulumi:"id"`
+	Id                  *string `pulumi:"id"`
 	PdbConversionAction *string `pulumi:"pdbConversionAction"`
 	// The list of pdb_conversion_history_entries.
 	PdbConversionHistoryEntries []GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntry `pulumi:"pdbConversionHistoryEntries"`
@@ -120,12 +119,6 @@ func (o GetDatabasePdbConversionHistoryEntriesResultOutput) ToGetDatabasePdbConv
 	return o
 }
 
-func (o GetDatabasePdbConversionHistoryEntriesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDatabasePdbConversionHistoryEntriesResult] {
-	return pulumix.Output[GetDatabasePdbConversionHistoryEntriesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDatabasePdbConversionHistoryEntriesResultOutput) DatabaseId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDatabasePdbConversionHistoryEntriesResult) string { return v.DatabaseId }).(pulumi.StringOutput)
 }
@@ -137,8 +130,8 @@ func (o GetDatabasePdbConversionHistoryEntriesResultOutput) Filters() GetDatabas
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetDatabasePdbConversionHistoryEntriesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDatabasePdbConversionHistoryEntriesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetDatabasePdbConversionHistoryEntriesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDatabasePdbConversionHistoryEntriesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetDatabasePdbConversionHistoryEntriesResultOutput) PdbConversionAction() pulumi.StringPtrOutput {

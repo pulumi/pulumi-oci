@@ -60,12 +60,12 @@ export interface GetProductLicensesResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly isCompartmentIdInSubtree?: boolean;
     /**
      * The list of product_license_collection.
      */
-    readonly productLicenseCollections: outputs.LicenseManager.GetProductLicensesProductLicenseCollection[];
+    readonly productLicenseCollections?: outputs.LicenseManager.GetProductLicensesProductLicenseCollection[];
 }
 /**
  * This data source provides the list of Product Licenses in Oracle Cloud Infrastructure License Manager service.

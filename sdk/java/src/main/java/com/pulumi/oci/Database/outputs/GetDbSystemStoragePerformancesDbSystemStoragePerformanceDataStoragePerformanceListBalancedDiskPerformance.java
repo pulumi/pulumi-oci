@@ -6,6 +6,8 @@ package com.pulumi.oci.Database.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.Double;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformance {
@@ -13,27 +15,27 @@ public final class GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataS
      * @return Disk IOPS in thousands.
      * 
      */
-    private Double diskIops;
+    private @Nullable Double diskIops;
     /**
      * @return Disk Throughput in Mbps.
      * 
      */
-    private Double diskThroughputInMbps;
+    private @Nullable Double diskThroughputInMbps;
 
     private GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformance() {}
     /**
      * @return Disk IOPS in thousands.
      * 
      */
-    public Double diskIops() {
-        return this.diskIops;
+    public Optional<Double> diskIops() {
+        return Optional.ofNullable(this.diskIops);
     }
     /**
      * @return Disk Throughput in Mbps.
      * 
      */
-    public Double diskThroughputInMbps() {
-        return this.diskThroughputInMbps;
+    public Optional<Double> diskThroughputInMbps() {
+        return Optional.ofNullable(this.diskThroughputInMbps);
     }
 
     public static Builder builder() {
@@ -45,8 +47,8 @@ public final class GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataS
     }
     @CustomType.Builder
     public static final class Builder {
-        private Double diskIops;
-        private Double diskThroughputInMbps;
+        private @Nullable Double diskIops;
+        private @Nullable Double diskThroughputInMbps;
         public Builder() {}
         public Builder(GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformance defaults) {
     	      Objects.requireNonNull(defaults);
@@ -55,13 +57,13 @@ public final class GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataS
         }
 
         @CustomType.Setter
-        public Builder diskIops(Double diskIops) {
-            this.diskIops = Objects.requireNonNull(diskIops);
+        public Builder diskIops(@Nullable Double diskIops) {
+            this.diskIops = diskIops;
             return this;
         }
         @CustomType.Setter
-        public Builder diskThroughputInMbps(Double diskThroughputInMbps) {
-            this.diskThroughputInMbps = Objects.requireNonNull(diskThroughputInMbps);
+        public Builder diskThroughputInMbps(@Nullable Double diskThroughputInMbps) {
+            this.diskThroughputInMbps = diskThroughputInMbps;
             return this;
         }
         public GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformance build() {

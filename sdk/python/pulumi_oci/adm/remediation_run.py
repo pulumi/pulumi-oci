@@ -23,15 +23,6 @@ class RemediationRunArgs:
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None):
         """
         The set of arguments for constructing a RemediationRun resource.
-        :param pulumi.Input[str] remediation_recipe_id: The Oracle Cloud identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Remediation Recipe.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] compartment_id: (Updatable) The compartment Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the remediation run.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] display_name: (Updatable) The name of the remediation run.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         pulumi.set(__self__, "remediation_recipe_id", remediation_recipe_id)
         if compartment_id is not None:
@@ -46,13 +37,6 @@ class RemediationRunArgs:
     @property
     @pulumi.getter(name="remediationRecipeId")
     def remediation_recipe_id(self) -> pulumi.Input[str]:
-        """
-        The Oracle Cloud identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Remediation Recipe.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "remediation_recipe_id")
 
     @remediation_recipe_id.setter
@@ -62,9 +46,6 @@ class RemediationRunArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The compartment Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the remediation run.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -74,9 +55,6 @@ class RemediationRunArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -86,9 +64,6 @@ class RemediationRunArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The name of the remediation run.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -98,9 +73,6 @@ class RemediationRunArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -127,24 +99,6 @@ class _RemediationRunState:
                  time_updated: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering RemediationRun resources.
-        :param pulumi.Input[str] compartment_id: (Updatable) The compartment Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the remediation run.
-        :param pulumi.Input[str] current_stage_type: The type of the current stage of the remediation run.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] display_name: (Updatable) The name of the remediation run.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] remediation_recipe_id: The Oracle Cloud identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Remediation Recipe.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] remediation_run_source: The source that triggered the Remediation Recipe.
-        :param pulumi.Input[Sequence[pulumi.Input['RemediationRunStageArgs']]] stages: The list of remediation run stage summaries.
-        :param pulumi.Input[str] state: The current lifecycle state of the remediation run.
-        :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[str] time_created: The creation date and time of the remediation run (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-        :param pulumi.Input[str] time_finished: The date and time of the finish of the remediation run (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-        :param pulumi.Input[str] time_started: The date and time of the start of the remediation run (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-        :param pulumi.Input[str] time_updated: The date and time the remediation run was last updated (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
         """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
@@ -178,9 +132,6 @@ class _RemediationRunState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The compartment Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the remediation run.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -190,9 +141,6 @@ class _RemediationRunState:
     @property
     @pulumi.getter(name="currentStageType")
     def current_stage_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        The type of the current stage of the remediation run.
-        """
         return pulumi.get(self, "current_stage_type")
 
     @current_stage_type.setter
@@ -202,9 +150,6 @@ class _RemediationRunState:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -214,9 +159,6 @@ class _RemediationRunState:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The name of the remediation run.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -226,9 +168,6 @@ class _RemediationRunState:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -238,13 +177,6 @@ class _RemediationRunState:
     @property
     @pulumi.getter(name="remediationRecipeId")
     def remediation_recipe_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The Oracle Cloud identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Remediation Recipe.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "remediation_recipe_id")
 
     @remediation_recipe_id.setter
@@ -254,9 +186,6 @@ class _RemediationRunState:
     @property
     @pulumi.getter(name="remediationRunSource")
     def remediation_run_source(self) -> Optional[pulumi.Input[str]]:
-        """
-        The source that triggered the Remediation Recipe.
-        """
         return pulumi.get(self, "remediation_run_source")
 
     @remediation_run_source.setter
@@ -266,9 +195,6 @@ class _RemediationRunState:
     @property
     @pulumi.getter
     def stages(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['RemediationRunStageArgs']]]]:
-        """
-        The list of remediation run stage summaries.
-        """
         return pulumi.get(self, "stages")
 
     @stages.setter
@@ -278,9 +204,6 @@ class _RemediationRunState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The current lifecycle state of the remediation run.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -290,9 +213,6 @@ class _RemediationRunState:
     @property
     @pulumi.getter(name="systemTags")
     def system_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
@@ -302,9 +222,6 @@ class _RemediationRunState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The creation date and time of the remediation run (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -314,9 +231,6 @@ class _RemediationRunState:
     @property
     @pulumi.getter(name="timeFinished")
     def time_finished(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time of the finish of the remediation run (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-        """
         return pulumi.get(self, "time_finished")
 
     @time_finished.setter
@@ -326,9 +240,6 @@ class _RemediationRunState:
     @property
     @pulumi.getter(name="timeStarted")
     def time_started(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time of the start of the remediation run (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-        """
         return pulumi.get(self, "time_started")
 
     @time_started.setter
@@ -338,9 +249,6 @@ class _RemediationRunState:
     @property
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time the remediation run was last updated (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-        """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
@@ -360,46 +268,9 @@ class RemediationRun(pulumi.CustomResource):
                  remediation_recipe_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Remediation Run resource in Oracle Cloud Infrastructure Adm service.
-
-        Creates a new remediation run.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_remediation_run = oci.adm.RemediationRun("testRemediationRun",
-            remediation_recipe_id=oci_adm_remediation_recipe["test_remediation_recipe"]["id"],
-            defined_tags={
-                "foo-namespace.bar-key": "value",
-            },
-            display_name=var["remediation_run_display_name"],
-            freeform_tags={
-                "bar-key": "value",
-            })
-        ```
-
-        ## Import
-
-        RemediationRuns can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Adm/remediationRun:RemediationRun test_remediation_run "id"
-        ```
-
+        Create a RemediationRun resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The compartment Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the remediation run.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] display_name: (Updatable) The name of the remediation run.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] remediation_recipe_id: The Oracle Cloud identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Remediation Recipe.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -408,35 +279,7 @@ class RemediationRun(pulumi.CustomResource):
                  args: RemediationRunArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Remediation Run resource in Oracle Cloud Infrastructure Adm service.
-
-        Creates a new remediation run.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_remediation_run = oci.adm.RemediationRun("testRemediationRun",
-            remediation_recipe_id=oci_adm_remediation_recipe["test_remediation_recipe"]["id"],
-            defined_tags={
-                "foo-namespace.bar-key": "value",
-            },
-            display_name=var["remediation_run_display_name"],
-            freeform_tags={
-                "bar-key": "value",
-            })
-        ```
-
-        ## Import
-
-        RemediationRuns can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Adm/remediationRun:RemediationRun test_remediation_run "id"
-        ```
-
+        Create a RemediationRun resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param RemediationRunArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -513,24 +356,6 @@ class RemediationRun(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The compartment Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the remediation run.
-        :param pulumi.Input[str] current_stage_type: The type of the current stage of the remediation run.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] display_name: (Updatable) The name of the remediation run.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] remediation_recipe_id: The Oracle Cloud identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Remediation Recipe.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] remediation_run_source: The source that triggered the Remediation Recipe.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['RemediationRunStageArgs']]]] stages: The list of remediation run stage summaries.
-        :param pulumi.Input[str] state: The current lifecycle state of the remediation run.
-        :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[str] time_created: The creation date and time of the remediation run (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-        :param pulumi.Input[str] time_finished: The date and time of the finish of the remediation run (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-        :param pulumi.Input[str] time_started: The date and time of the start of the remediation run (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-        :param pulumi.Input[str] time_updated: The date and time the remediation run was last updated (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -554,117 +379,71 @@ class RemediationRun(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The compartment Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the remediation run.
-        """
+    def compartment_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="currentStageType")
-    def current_stage_type(self) -> pulumi.Output[str]:
-        """
-        The type of the current stage of the remediation run.
-        """
+    def current_stage_type(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "current_stage_type")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The name of the remediation run.
-        """
+    def display_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="remediationRecipeId")
     def remediation_recipe_id(self) -> pulumi.Output[str]:
-        """
-        The Oracle Cloud identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Remediation Recipe.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "remediation_recipe_id")
 
     @property
     @pulumi.getter(name="remediationRunSource")
-    def remediation_run_source(self) -> pulumi.Output[str]:
-        """
-        The source that triggered the Remediation Recipe.
-        """
+    def remediation_run_source(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "remediation_run_source")
 
     @property
     @pulumi.getter
-    def stages(self) -> pulumi.Output[Sequence['outputs.RemediationRunStage']]:
-        """
-        The list of remediation run stage summaries.
-        """
+    def stages(self) -> pulumi.Output[Optional[Sequence['outputs.RemediationRunStage']]]:
         return pulumi.get(self, "stages")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        The current lifecycle state of the remediation run.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        The creation date and time of the remediation run (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeFinished")
-    def time_finished(self) -> pulumi.Output[str]:
-        """
-        The date and time of the finish of the remediation run (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-        """
+    def time_finished(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_finished")
 
     @property
     @pulumi.getter(name="timeStarted")
-    def time_started(self) -> pulumi.Output[str]:
-        """
-        The date and time of the start of the remediation run (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-        """
+    def time_started(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_started")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> pulumi.Output[str]:
-        """
-        The date and time the remediation run was last updated (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-        """
+    def time_updated(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_updated")
 

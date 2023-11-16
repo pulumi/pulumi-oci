@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.Blockchain.outputs.GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItemItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItem {
@@ -14,7 +15,7 @@ public final class GetBlockchainPlatformPatchesBlockchainPlatformPatchCollection
      * @return Collection of PatchSummary
      * 
      */
-    private List<GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItemItem> items;
+    private @Nullable List<GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItemItem> items;
 
     private GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItem() {}
     /**
@@ -22,7 +23,7 @@ public final class GetBlockchainPlatformPatchesBlockchainPlatformPatchCollection
      * 
      */
     public List<GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItemItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -34,7 +35,7 @@ public final class GetBlockchainPlatformPatchesBlockchainPlatformPatchCollection
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItemItem> items;
+        private @Nullable List<GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItemItem> items;
         public Builder() {}
         public Builder(GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -42,8 +43,8 @@ public final class GetBlockchainPlatformPatchesBlockchainPlatformPatchCollection
         }
 
         @CustomType.Setter
-        public Builder items(List<GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItemItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItemItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItemItem... items) {

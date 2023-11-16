@@ -46,9 +46,6 @@ class GetNotificationTopicsResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for the topic.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
@@ -64,25 +61,16 @@ class GetNotificationTopicsResult:
     @property
     @pulumi.getter
     def name(self) -> Optional[str]:
-        """
-        The name of the topic.
-        """
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="notificationTopics")
-    def notification_topics(self) -> Sequence['outputs.GetNotificationTopicsNotificationTopicResult']:
-        """
-        The list of notification_topics.
-        """
+    def notification_topics(self) -> Optional[Sequence['outputs.GetNotificationTopicsNotificationTopicResult']]:
         return pulumi.get(self, "notification_topics")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The lifecycle state of the topic.
-        """
         return pulumi.get(self, "state")
 
 
@@ -107,29 +95,7 @@ def get_notification_topics(compartment_id: Optional[str] = None,
                             state: Optional[str] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetNotificationTopicsResult:
     """
-    This data source provides the list of Notification Topics in Oracle Cloud Infrastructure Notifications service.
-
-    Lists topics in the specified compartment.
-
-    Transactions Per Minute (TPM) per-tenancy limit for this operation: 120.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_notification_topics = oci.Ons.get_notification_topics(compartment_id=var["compartment_id"],
-        id=var["notification_topic_id"],
-        name=var["notification_topic_name"],
-        state=var["notification_topic_state"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param str id: A filter to only return resources that match the given id exactly.
-    :param str name: A filter to only return resources that match the given name exactly.
-    :param str state: Filter returned list by specified lifecycle state. This parameter is case-insensitive.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -157,28 +123,6 @@ def get_notification_topics_output(compartment_id: Optional[pulumi.Input[str]] =
                                    state: Optional[pulumi.Input[Optional[str]]] = None,
                                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNotificationTopicsResult]:
     """
-    This data source provides the list of Notification Topics in Oracle Cloud Infrastructure Notifications service.
-
-    Lists topics in the specified compartment.
-
-    Transactions Per Minute (TPM) per-tenancy limit for this operation: 120.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_notification_topics = oci.Ons.get_notification_topics(compartment_id=var["compartment_id"],
-        id=var["notification_topic_id"],
-        name=var["notification_topic_name"],
-        state=var["notification_topic_state"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param str id: A filter to only return resources that match the given id exactly.
-    :param str name: A filter to only return resources that match the given name exactly.
-    :param str state: Filter returned list by specified lifecycle state. This parameter is case-insensitive.
+    Use this data source to access information about an existing resource.
     """
     ...

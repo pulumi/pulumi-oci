@@ -100,7 +100,7 @@ export interface GetJobRunsResult {
     /**
      * The list of job_runs.
      */
-    readonly jobRuns: outputs.DataScience.GetJobRunsJobRun[];
+    readonly jobRuns?: outputs.DataScience.GetJobRunsJobRun[];
     /**
      * The state of the job run.
      */

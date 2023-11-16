@@ -189,7 +189,7 @@ namespace Pulumi.Oci.Mysql
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// What service features the shape is supported for.
         /// </summary>
@@ -211,7 +211,7 @@ namespace Pulumi.Oci.Mysql
 
             ImmutableArray<Outputs.GetShapesFilterResult> filters,
 
-            string id,
+            string? id,
 
             ImmutableArray<string> isSupportedFors,
 

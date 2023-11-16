@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Deployment Upgrade resource in Oracle Cloud Infrastructure Golden Gate service.
@@ -60,66 +59,66 @@ type GetDeploymentUpgradeArgs struct {
 // A collection of values returned by getDeploymentUpgrade.
 type GetDeploymentUpgradeResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
-	DeploymentId        string `pulumi:"deploymentId"`
-	DeploymentUpgradeId string `pulumi:"deploymentUpgradeId"`
+	DeploymentId        *string `pulumi:"deploymentId"`
+	DeploymentUpgradeId string  `pulumi:"deploymentUpgradeId"`
 	// The type of the deployment upgrade: MANUAL or AUTOMATIC
-	DeploymentUpgradeType string `pulumi:"deploymentUpgradeType"`
+	DeploymentUpgradeType *string `pulumi:"deploymentUpgradeType"`
 	// Metadata about this specific object.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// An object's Display Name.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Indicates if cancel is allowed. Scheduled upgrade can be cancelled only if target version is not forced by service,  otherwise only reschedule allowed.
-	IsCancelAllowed bool `pulumi:"isCancelAllowed"`
+	IsCancelAllowed *bool `pulumi:"isCancelAllowed"`
 	// Indicates if reschedule is allowed. Upgrade can be rescheduled postponed until the end of the service defined auto-upgrade period.
-	IsRescheduleAllowed bool `pulumi:"isRescheduleAllowed"`
+	IsRescheduleAllowed *bool `pulumi:"isRescheduleAllowed"`
 	// Indicates if rollback is allowed. In practice only the last upgrade can be rolled back.
 	// * Manual upgrade is allowed to rollback only until the old version isn't deprecated yet.
 	// * Automatic upgrade by default is not allowed, unless a serious issue does not justify.
-	IsRollbackAllowed bool `pulumi:"isRollbackAllowed"`
+	IsRollbackAllowed *bool `pulumi:"isRollbackAllowed"`
 	// Indicates if OGG release contains security fix.
-	IsSecurityFix bool `pulumi:"isSecurityFix"`
+	IsSecurityFix *bool `pulumi:"isSecurityFix"`
 	// Indicates if upgrade notifications are snoozed or not.
-	IsSnoozed bool `pulumi:"isSnoozed"`
+	IsSnoozed *bool `pulumi:"isSnoozed"`
 	// Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// Possible GGS lifecycle sub-states.
-	LifecycleSubState string `pulumi:"lifecycleSubState"`
+	LifecycleSubState *string `pulumi:"lifecycleSubState"`
 	// Version of OGG
-	OggVersion string `pulumi:"oggVersion"`
+	OggVersion *string `pulumi:"oggVersion"`
 	// Version of OGG
-	PreviousOggVersion string `pulumi:"previousOggVersion"`
+	PreviousOggVersion *string `pulumi:"previousOggVersion"`
 	// The type of release.
-	ReleaseType string `pulumi:"releaseType"`
+	ReleaseType *string `pulumi:"releaseType"`
 	// Possible lifecycle states.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The date and time the request was finished. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-	TimeFinished string `pulumi:"timeFinished"`
+	TimeFinished *string `pulumi:"timeFinished"`
 	// The time until OGG version is supported. After this date has passed OGG version will not be available anymore. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-	TimeOggVersionSupportedUntil string `pulumi:"timeOggVersionSupportedUntil"`
+	TimeOggVersionSupportedUntil *string `pulumi:"timeOggVersionSupportedUntil"`
 	// The time the resource was released. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-	TimeReleased string `pulumi:"timeReleased"`
+	TimeReleased *string `pulumi:"timeReleased"`
 	// The time of upgrade schedule. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-	TimeSchedule string `pulumi:"timeSchedule"`
+	TimeSchedule *string `pulumi:"timeSchedule"`
 	// Indicates the latest time until the deployment upgrade could be rescheduled. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-	TimeScheduleMax string `pulumi:"timeScheduleMax"`
+	TimeScheduleMax *string `pulumi:"timeScheduleMax"`
 	// The time the upgrade notifications are snoozed until. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-	TimeSnoozedUntil string `pulumi:"timeSnoozedUntil"`
+	TimeSnoozedUntil *string `pulumi:"timeSnoozedUntil"`
 	// The date and time the request was started. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-	TimeStarted string `pulumi:"timeStarted"`
+	TimeStarted *string `pulumi:"timeStarted"`
 	// The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 func GetDeploymentUpgradeOutput(ctx *pulumi.Context, args GetDeploymentUpgradeOutputArgs, opts ...pulumi.InvokeOption) GetDeploymentUpgradeResultOutput {
@@ -160,15 +159,9 @@ func (o GetDeploymentUpgradeResultOutput) ToGetDeploymentUpgradeResultOutputWith
 	return o
 }
 
-func (o GetDeploymentUpgradeResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDeploymentUpgradeResult] {
-	return pulumix.Output[GetDeploymentUpgradeResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
-func (o GetDeploymentUpgradeResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDeploymentUpgradeResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetDeploymentUpgradeResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDeploymentUpgradeResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
@@ -177,8 +170,8 @@ func (o GetDeploymentUpgradeResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
-func (o GetDeploymentUpgradeResultOutput) DeploymentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDeploymentUpgradeResult) string { return v.DeploymentId }).(pulumi.StringOutput)
+func (o GetDeploymentUpgradeResultOutput) DeploymentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDeploymentUpgradeResult) *string { return v.DeploymentId }).(pulumi.StringPtrOutput)
 }
 
 func (o GetDeploymentUpgradeResultOutput) DeploymentUpgradeId() pulumi.StringOutput {
@@ -186,18 +179,18 @@ func (o GetDeploymentUpgradeResultOutput) DeploymentUpgradeId() pulumi.StringOut
 }
 
 // The type of the deployment upgrade: MANUAL or AUTOMATIC
-func (o GetDeploymentUpgradeResultOutput) DeploymentUpgradeType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDeploymentUpgradeResult) string { return v.DeploymentUpgradeType }).(pulumi.StringOutput)
+func (o GetDeploymentUpgradeResultOutput) DeploymentUpgradeType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDeploymentUpgradeResult) *string { return v.DeploymentUpgradeType }).(pulumi.StringPtrOutput)
 }
 
 // Metadata about this specific object.
-func (o GetDeploymentUpgradeResultOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDeploymentUpgradeResult) string { return v.Description }).(pulumi.StringOutput)
+func (o GetDeploymentUpgradeResultOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDeploymentUpgradeResult) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // An object's Display Name.
-func (o GetDeploymentUpgradeResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDeploymentUpgradeResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetDeploymentUpgradeResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDeploymentUpgradeResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
@@ -206,65 +199,65 @@ func (o GetDeploymentUpgradeResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetDeploymentUpgradeResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDeploymentUpgradeResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetDeploymentUpgradeResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDeploymentUpgradeResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Indicates if cancel is allowed. Scheduled upgrade can be cancelled only if target version is not forced by service,  otherwise only reschedule allowed.
-func (o GetDeploymentUpgradeResultOutput) IsCancelAllowed() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetDeploymentUpgradeResult) bool { return v.IsCancelAllowed }).(pulumi.BoolOutput)
+func (o GetDeploymentUpgradeResultOutput) IsCancelAllowed() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetDeploymentUpgradeResult) *bool { return v.IsCancelAllowed }).(pulumi.BoolPtrOutput)
 }
 
 // Indicates if reschedule is allowed. Upgrade can be rescheduled postponed until the end of the service defined auto-upgrade period.
-func (o GetDeploymentUpgradeResultOutput) IsRescheduleAllowed() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetDeploymentUpgradeResult) bool { return v.IsRescheduleAllowed }).(pulumi.BoolOutput)
+func (o GetDeploymentUpgradeResultOutput) IsRescheduleAllowed() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetDeploymentUpgradeResult) *bool { return v.IsRescheduleAllowed }).(pulumi.BoolPtrOutput)
 }
 
 // Indicates if rollback is allowed. In practice only the last upgrade can be rolled back.
 // * Manual upgrade is allowed to rollback only until the old version isn't deprecated yet.
 // * Automatic upgrade by default is not allowed, unless a serious issue does not justify.
-func (o GetDeploymentUpgradeResultOutput) IsRollbackAllowed() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetDeploymentUpgradeResult) bool { return v.IsRollbackAllowed }).(pulumi.BoolOutput)
+func (o GetDeploymentUpgradeResultOutput) IsRollbackAllowed() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetDeploymentUpgradeResult) *bool { return v.IsRollbackAllowed }).(pulumi.BoolPtrOutput)
 }
 
 // Indicates if OGG release contains security fix.
-func (o GetDeploymentUpgradeResultOutput) IsSecurityFix() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetDeploymentUpgradeResult) bool { return v.IsSecurityFix }).(pulumi.BoolOutput)
+func (o GetDeploymentUpgradeResultOutput) IsSecurityFix() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetDeploymentUpgradeResult) *bool { return v.IsSecurityFix }).(pulumi.BoolPtrOutput)
 }
 
 // Indicates if upgrade notifications are snoozed or not.
-func (o GetDeploymentUpgradeResultOutput) IsSnoozed() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetDeploymentUpgradeResult) bool { return v.IsSnoozed }).(pulumi.BoolOutput)
+func (o GetDeploymentUpgradeResultOutput) IsSnoozed() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetDeploymentUpgradeResult) *bool { return v.IsSnoozed }).(pulumi.BoolPtrOutput)
 }
 
 // Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
-func (o GetDeploymentUpgradeResultOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDeploymentUpgradeResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o GetDeploymentUpgradeResultOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDeploymentUpgradeResult) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // Possible GGS lifecycle sub-states.
-func (o GetDeploymentUpgradeResultOutput) LifecycleSubState() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDeploymentUpgradeResult) string { return v.LifecycleSubState }).(pulumi.StringOutput)
+func (o GetDeploymentUpgradeResultOutput) LifecycleSubState() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDeploymentUpgradeResult) *string { return v.LifecycleSubState }).(pulumi.StringPtrOutput)
 }
 
 // Version of OGG
-func (o GetDeploymentUpgradeResultOutput) OggVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDeploymentUpgradeResult) string { return v.OggVersion }).(pulumi.StringOutput)
+func (o GetDeploymentUpgradeResultOutput) OggVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDeploymentUpgradeResult) *string { return v.OggVersion }).(pulumi.StringPtrOutput)
 }
 
 // Version of OGG
-func (o GetDeploymentUpgradeResultOutput) PreviousOggVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDeploymentUpgradeResult) string { return v.PreviousOggVersion }).(pulumi.StringOutput)
+func (o GetDeploymentUpgradeResultOutput) PreviousOggVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDeploymentUpgradeResult) *string { return v.PreviousOggVersion }).(pulumi.StringPtrOutput)
 }
 
 // The type of release.
-func (o GetDeploymentUpgradeResultOutput) ReleaseType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDeploymentUpgradeResult) string { return v.ReleaseType }).(pulumi.StringOutput)
+func (o GetDeploymentUpgradeResultOutput) ReleaseType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDeploymentUpgradeResult) *string { return v.ReleaseType }).(pulumi.StringPtrOutput)
 }
 
 // Possible lifecycle states.
-func (o GetDeploymentUpgradeResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDeploymentUpgradeResult) string { return v.State }).(pulumi.StringOutput)
+func (o GetDeploymentUpgradeResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDeploymentUpgradeResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
@@ -273,48 +266,48 @@ func (o GetDeploymentUpgradeResultOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-func (o GetDeploymentUpgradeResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDeploymentUpgradeResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetDeploymentUpgradeResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDeploymentUpgradeResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the request was finished. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-func (o GetDeploymentUpgradeResultOutput) TimeFinished() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDeploymentUpgradeResult) string { return v.TimeFinished }).(pulumi.StringOutput)
+func (o GetDeploymentUpgradeResultOutput) TimeFinished() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDeploymentUpgradeResult) *string { return v.TimeFinished }).(pulumi.StringPtrOutput)
 }
 
 // The time until OGG version is supported. After this date has passed OGG version will not be available anymore. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-func (o GetDeploymentUpgradeResultOutput) TimeOggVersionSupportedUntil() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDeploymentUpgradeResult) string { return v.TimeOggVersionSupportedUntil }).(pulumi.StringOutput)
+func (o GetDeploymentUpgradeResultOutput) TimeOggVersionSupportedUntil() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDeploymentUpgradeResult) *string { return v.TimeOggVersionSupportedUntil }).(pulumi.StringPtrOutput)
 }
 
 // The time the resource was released. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-func (o GetDeploymentUpgradeResultOutput) TimeReleased() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDeploymentUpgradeResult) string { return v.TimeReleased }).(pulumi.StringOutput)
+func (o GetDeploymentUpgradeResultOutput) TimeReleased() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDeploymentUpgradeResult) *string { return v.TimeReleased }).(pulumi.StringPtrOutput)
 }
 
 // The time of upgrade schedule. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-func (o GetDeploymentUpgradeResultOutput) TimeSchedule() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDeploymentUpgradeResult) string { return v.TimeSchedule }).(pulumi.StringOutput)
+func (o GetDeploymentUpgradeResultOutput) TimeSchedule() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDeploymentUpgradeResult) *string { return v.TimeSchedule }).(pulumi.StringPtrOutput)
 }
 
 // Indicates the latest time until the deployment upgrade could be rescheduled. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-func (o GetDeploymentUpgradeResultOutput) TimeScheduleMax() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDeploymentUpgradeResult) string { return v.TimeScheduleMax }).(pulumi.StringOutput)
+func (o GetDeploymentUpgradeResultOutput) TimeScheduleMax() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDeploymentUpgradeResult) *string { return v.TimeScheduleMax }).(pulumi.StringPtrOutput)
 }
 
 // The time the upgrade notifications are snoozed until. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-func (o GetDeploymentUpgradeResultOutput) TimeSnoozedUntil() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDeploymentUpgradeResult) string { return v.TimeSnoozedUntil }).(pulumi.StringOutput)
+func (o GetDeploymentUpgradeResultOutput) TimeSnoozedUntil() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDeploymentUpgradeResult) *string { return v.TimeSnoozedUntil }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the request was started. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-func (o GetDeploymentUpgradeResultOutput) TimeStarted() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDeploymentUpgradeResult) string { return v.TimeStarted }).(pulumi.StringOutput)
+func (o GetDeploymentUpgradeResultOutput) TimeStarted() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDeploymentUpgradeResult) *string { return v.TimeStarted }).(pulumi.StringPtrOutput)
 }
 
 // The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-func (o GetDeploymentUpgradeResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDeploymentUpgradeResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o GetDeploymentUpgradeResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDeploymentUpgradeResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 func init() {

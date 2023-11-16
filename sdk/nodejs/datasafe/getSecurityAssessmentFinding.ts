@@ -41,11 +41,11 @@ export interface GetSecurityAssessmentFindingResult {
     readonly compartmentIdInSubtree?: boolean;
     readonly filters?: outputs.DataSafe.GetSecurityAssessmentFindingFilter[];
     readonly findingKey?: string;
-    readonly findings: outputs.DataSafe.GetSecurityAssessmentFindingFinding[];
+    readonly findings?: outputs.DataSafe.GetSecurityAssessmentFindingFinding[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly references?: string;
     readonly securityAssessmentId: string;
     readonly severity?: string;

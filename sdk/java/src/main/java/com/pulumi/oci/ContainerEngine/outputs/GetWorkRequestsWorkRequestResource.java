@@ -6,6 +6,8 @@ package com.pulumi.oci.ContainerEngine.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetWorkRequestsWorkRequestResource {
@@ -13,51 +15,51 @@ public final class GetWorkRequestsWorkRequestResource {
      * @return The way in which this resource was affected by the work tracked by the work request.
      * 
      */
-    private String actionType;
+    private @Nullable String actionType;
     /**
      * @return The resource type the work request affects.
      * 
      */
-    private String entityType;
+    private @Nullable String entityType;
     /**
      * @return The URI path on which the user can issue a GET request to access the resource metadata.
      * 
      */
-    private String entityUri;
+    private @Nullable String entityUri;
     /**
      * @return The OCID of the resource the work request affects.
      * 
      */
-    private String identifier;
+    private @Nullable String identifier;
 
     private GetWorkRequestsWorkRequestResource() {}
     /**
      * @return The way in which this resource was affected by the work tracked by the work request.
      * 
      */
-    public String actionType() {
-        return this.actionType;
+    public Optional<String> actionType() {
+        return Optional.ofNullable(this.actionType);
     }
     /**
      * @return The resource type the work request affects.
      * 
      */
-    public String entityType() {
-        return this.entityType;
+    public Optional<String> entityType() {
+        return Optional.ofNullable(this.entityType);
     }
     /**
      * @return The URI path on which the user can issue a GET request to access the resource metadata.
      * 
      */
-    public String entityUri() {
-        return this.entityUri;
+    public Optional<String> entityUri() {
+        return Optional.ofNullable(this.entityUri);
     }
     /**
      * @return The OCID of the resource the work request affects.
      * 
      */
-    public String identifier() {
-        return this.identifier;
+    public Optional<String> identifier() {
+        return Optional.ofNullable(this.identifier);
     }
 
     public static Builder builder() {
@@ -69,10 +71,10 @@ public final class GetWorkRequestsWorkRequestResource {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String actionType;
-        private String entityType;
-        private String entityUri;
-        private String identifier;
+        private @Nullable String actionType;
+        private @Nullable String entityType;
+        private @Nullable String entityUri;
+        private @Nullable String identifier;
         public Builder() {}
         public Builder(GetWorkRequestsWorkRequestResource defaults) {
     	      Objects.requireNonNull(defaults);
@@ -83,23 +85,23 @@ public final class GetWorkRequestsWorkRequestResource {
         }
 
         @CustomType.Setter
-        public Builder actionType(String actionType) {
-            this.actionType = Objects.requireNonNull(actionType);
+        public Builder actionType(@Nullable String actionType) {
+            this.actionType = actionType;
             return this;
         }
         @CustomType.Setter
-        public Builder entityType(String entityType) {
-            this.entityType = Objects.requireNonNull(entityType);
+        public Builder entityType(@Nullable String entityType) {
+            this.entityType = entityType;
             return this;
         }
         @CustomType.Setter
-        public Builder entityUri(String entityUri) {
-            this.entityUri = Objects.requireNonNull(entityUri);
+        public Builder entityUri(@Nullable String entityUri) {
+            this.entityUri = entityUri;
             return this;
         }
         @CustomType.Setter
-        public Builder identifier(String identifier) {
-            this.identifier = Objects.requireNonNull(identifier);
+        public Builder identifier(@Nullable String identifier) {
+            this.identifier = identifier;
             return this;
         }
         public GetWorkRequestsWorkRequestResource build() {

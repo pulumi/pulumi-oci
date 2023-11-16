@@ -42,7 +42,7 @@ class GetRepositoryArchiveContentResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -76,25 +76,7 @@ def get_repository_archive_content(format: Optional[str] = None,
                                    repository_id: Optional[str] = None,
                                    opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetRepositoryArchiveContentResult:
     """
-    This data source provides details about a specific Repository Archive Content resource in Oracle Cloud Infrastructure Devops service.
-
-    Returns the archived repository information.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_repository_archive_content = oci.DevOps.get_repository_archive_content(repository_id=oci_devops_repository["test_repository"]["id"],
-        format=var["repository_archive_content_format"],
-        ref_name=var["repository_archive_content_ref_name"])
-    ```
-
-
-    :param str format: The archive format query parameter for downloading repository endpoint.
-    :param str ref_name: A filter to return only resources that match the given reference name.
-    :param str repository_id: Unique repository identifier.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['format'] = format
@@ -116,24 +98,6 @@ def get_repository_archive_content_output(format: Optional[pulumi.Input[Optional
                                           repository_id: Optional[pulumi.Input[str]] = None,
                                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetRepositoryArchiveContentResult]:
     """
-    This data source provides details about a specific Repository Archive Content resource in Oracle Cloud Infrastructure Devops service.
-
-    Returns the archived repository information.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_repository_archive_content = oci.DevOps.get_repository_archive_content(repository_id=oci_devops_repository["test_repository"]["id"],
-        format=var["repository_archive_content_format"],
-        ref_name=var["repository_archive_content_ref_name"])
-    ```
-
-
-    :param str format: The archive format query parameter for downloading repository endpoint.
-    :param str ref_name: A filter to return only resources that match the given reference name.
-    :param str repository_id: Unique repository identifier.
+    Use this data source to access information about an existing resource.
     """
     ...

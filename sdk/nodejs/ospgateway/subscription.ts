@@ -50,15 +50,15 @@ export class Subscription extends pulumi.CustomResource {
     /**
      * (Updatable) Account type.
      */
-    public /*out*/ readonly accountType!: pulumi.Output<string>;
+    public /*out*/ readonly accountType!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Bill to customer Account id.
      */
-    public /*out*/ readonly billToCustAccountId!: pulumi.Output<string>;
+    public /*out*/ readonly billToCustAccountId!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Address details model.
      */
-    public /*out*/ readonly billingAddresses!: pulumi.Output<outputs.OspGateway.SubscriptionBillingAddress[]>;
+    public /*out*/ readonly billingAddresses!: pulumi.Output<outputs.OspGateway.SubscriptionBillingAddress[] | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
@@ -66,7 +66,7 @@ export class Subscription extends pulumi.CustomResource {
     /**
      * (Updatable) Currency code
      */
-    public /*out*/ readonly currencyCode!: pulumi.Output<string>;
+    public /*out*/ readonly currencyCode!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) User email
      */
@@ -74,19 +74,19 @@ export class Subscription extends pulumi.CustomResource {
     /**
      * (Updatable) GSI Subscription external code.
      */
-    public /*out*/ readonly gsiOrgCode!: pulumi.Output<string>;
+    public /*out*/ readonly gsiOrgCode!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Payment intension.
      */
-    public /*out*/ readonly isIntentToPay!: pulumi.Output<boolean>;
+    public /*out*/ readonly isIntentToPay!: pulumi.Output<boolean | undefined>;
     /**
      * (Updatable) Language short code (en, de, hu, etc)
      */
-    public /*out*/ readonly languageCode!: pulumi.Output<string>;
+    public /*out*/ readonly languageCode!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) GSI organization external identifier.
      */
-    public /*out*/ readonly organizationId!: pulumi.Output<string>;
+    public /*out*/ readonly organizationId!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The home region's public name of the logged in user.
      */
@@ -94,23 +94,23 @@ export class Subscription extends pulumi.CustomResource {
     /**
      * (Updatable) Payment gateway details.
      */
-    public /*out*/ readonly paymentGateways!: pulumi.Output<outputs.OspGateway.SubscriptionPaymentGateway[]>;
+    public /*out*/ readonly paymentGateways!: pulumi.Output<outputs.OspGateway.SubscriptionPaymentGateway[] | undefined>;
     /**
      * (Updatable) Payment option list of a subscription.
      */
-    public /*out*/ readonly paymentOptions!: pulumi.Output<outputs.OspGateway.SubscriptionPaymentOption[]>;
+    public /*out*/ readonly paymentOptions!: pulumi.Output<outputs.OspGateway.SubscriptionPaymentOption[] | undefined>;
     /**
      * (Updatable) Subscription plan type.
      */
-    public /*out*/ readonly planType!: pulumi.Output<string>;
+    public /*out*/ readonly planType!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Ship to customer account role.
      */
-    public /*out*/ readonly shipToCustAcctRoleId!: pulumi.Output<string>;
+    public /*out*/ readonly shipToCustAcctRoleId!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Ship to customer account site address id.
      */
-    public /*out*/ readonly shipToCustAcctSiteId!: pulumi.Output<string>;
+    public /*out*/ readonly shipToCustAcctSiteId!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Subscription details object which extends the SubscriptionSummary
      */
@@ -126,31 +126,31 @@ export class Subscription extends pulumi.CustomResource {
     /**
      * (Updatable) Subscription plan number.
      */
-    public /*out*/ readonly subscriptionPlanNumber!: pulumi.Output<string>;
+    public /*out*/ readonly subscriptionPlanNumber!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Tax details.
      */
-    public /*out*/ readonly taxInfos!: pulumi.Output<outputs.OspGateway.SubscriptionTaxInfo[]>;
+    public /*out*/ readonly taxInfos!: pulumi.Output<outputs.OspGateway.SubscriptionTaxInfo[] | undefined>;
     /**
      * (Updatable) Date of upgrade/conversion when account type changed from PERSONAL to CORPORATE
      */
-    public /*out*/ readonly timePersonalToCorporateConv!: pulumi.Output<string>;
+    public /*out*/ readonly timePersonalToCorporateConv!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Date of upgrade/conversion when planType changed from FREE_TIER to PAYG
      */
-    public /*out*/ readonly timePlanUpgrade!: pulumi.Output<string>;
+    public /*out*/ readonly timePlanUpgrade!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Start date of the subscription.
      */
-    public /*out*/ readonly timeStart!: pulumi.Output<string>;
+    public /*out*/ readonly timeStart!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Status of the upgrade.
      */
-    public /*out*/ readonly upgradeState!: pulumi.Output<string>;
+    public /*out*/ readonly upgradeState!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) This field is used to describe the Upgrade State in case of error (E.g. Upgrade failure caused by interfacing Tax details- TaxError)
      */
-    public /*out*/ readonly upgradeStateDetails!: pulumi.Output<string>;
+    public /*out*/ readonly upgradeStateDetails!: pulumi.Output<string | undefined>;
 
     /**
      * Create a Subscription resource with the given unique name, arguments, and options.

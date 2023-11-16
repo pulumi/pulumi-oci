@@ -46,118 +46,90 @@ class GetMonitoredInstancesFilterResult(dict):
 @pulumi.output_type
 class GetMonitoredInstancesMonitoredInstanceCollectionResult(dict):
     def __init__(__self__, *,
-                 items: Sequence['outputs.GetMonitoredInstancesMonitoredInstanceCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+                 items: Optional[Sequence['outputs.GetMonitoredInstancesMonitoredInstanceCollectionItemResult']] = None):
+        if items is not None:
+            pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetMonitoredInstancesMonitoredInstanceCollectionItemResult']:
+    def items(self) -> Optional[Sequence['outputs.GetMonitoredInstancesMonitoredInstanceCollectionItemResult']]:
         return pulumi.get(self, "items")
 
 
 @pulumi.output_type
 class GetMonitoredInstancesMonitoredInstanceCollectionItemResult(dict):
     def __init__(__self__, *,
-                 compartment_id: str,
-                 display_name: str,
-                 instance_id: str,
-                 lifecycle_details: str,
-                 management_agent_id: str,
-                 monitoring_state: str,
-                 state: str,
-                 time_created: str,
-                 time_updated: str):
-        """
-        :param str compartment_id: The ID of the compartment in which to list resources.
-        :param str display_name: A filter to return only resources that match the entire display name given.
-        :param str instance_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of monitored instance.
-        :param str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        :param str management_agent_id: Management Agent Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Used to invoke manage operations on Management Agent Cloud Service.
-        :param str monitoring_state: Monitoring status. Can be either enabled or disabled.
-        :param str state: The current state of the monitored instance.
-        :param str time_created: The time the MonitoredInstance was created. An RFC3339 formatted datetime string
-        :param str time_updated: The time the MonitoredInstance was updated. An RFC3339 formatted datetime string
-        """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "instance_id", instance_id)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "management_agent_id", management_agent_id)
-        pulumi.set(__self__, "monitoring_state", monitoring_state)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+                 compartment_id: Optional[str] = None,
+                 display_name: Optional[str] = None,
+                 instance_id: Optional[str] = None,
+                 lifecycle_details: Optional[str] = None,
+                 management_agent_id: Optional[str] = None,
+                 monitoring_state: Optional[str] = None,
+                 state: Optional[str] = None,
+                 time_created: Optional[str] = None,
+                 time_updated: Optional[str] = None):
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if instance_id is not None:
+            pulumi.set(__self__, "instance_id", instance_id)
+        if lifecycle_details is not None:
+            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if management_agent_id is not None:
+            pulumi.set(__self__, "management_agent_id", management_agent_id)
+        if monitoring_state is not None:
+            pulumi.set(__self__, "monitoring_state", monitoring_state)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if time_updated is not None:
+            pulumi.set(__self__, "time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The ID of the compartment in which to list resources.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A filter to return only resources that match the entire display name given.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="instanceId")
-    def instance_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of monitored instance.
-        """
+    def instance_id(self) -> Optional[str]:
         return pulumi.get(self, "instance_id")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="managementAgentId")
-    def management_agent_id(self) -> str:
-        """
-        Management Agent Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Used to invoke manage operations on Management Agent Cloud Service.
-        """
+    def management_agent_id(self) -> Optional[str]:
         return pulumi.get(self, "management_agent_id")
 
     @property
     @pulumi.getter(name="monitoringState")
-    def monitoring_state(self) -> str:
-        """
-        Monitoring status. Can be either enabled or disabled.
-        """
+    def monitoring_state(self) -> Optional[str]:
         return pulumi.get(self, "monitoring_state")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the monitored instance.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The time the MonitoredInstance was created. An RFC3339 formatted datetime string
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The time the MonitoredInstance was updated. An RFC3339 formatted datetime string
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
 

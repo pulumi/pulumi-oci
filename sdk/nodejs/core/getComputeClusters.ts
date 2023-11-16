@@ -70,7 +70,7 @@ export interface GetComputeClustersResult {
     /**
      * The list of compute_cluster_collection.
      */
-    readonly computeClusterCollections: outputs.Core.GetComputeClustersComputeClusterCollection[];
+    readonly computeClusterCollections?: outputs.Core.GetComputeClustersComputeClusterCollection[];
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
@@ -79,7 +79,7 @@ export interface GetComputeClustersResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
 }
 /**
  * This data source provides the list of Compute Clusters in Oracle Cloud Infrastructure Core service.

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 var _ = internal.GetEnvOrDefault
@@ -83,12 +82,6 @@ func (i BackendSetBackendArgs) ToBackendSetBackendOutputWithContext(ctx context.
 	return pulumi.ToOutputWithContext(ctx, i).(BackendSetBackendOutput)
 }
 
-func (i BackendSetBackendArgs) ToOutput(ctx context.Context) pulumix.Output[BackendSetBackend] {
-	return pulumix.Output[BackendSetBackend]{
-		OutputState: i.ToBackendSetBackendOutputWithContext(ctx).OutputState,
-	}
-}
-
 // BackendSetBackendArrayInput is an input type that accepts BackendSetBackendArray and BackendSetBackendArrayOutput values.
 // You can construct a concrete instance of `BackendSetBackendArrayInput` via:
 //
@@ -114,12 +107,6 @@ func (i BackendSetBackendArray) ToBackendSetBackendArrayOutputWithContext(ctx co
 	return pulumi.ToOutputWithContext(ctx, i).(BackendSetBackendArrayOutput)
 }
 
-func (i BackendSetBackendArray) ToOutput(ctx context.Context) pulumix.Output[[]BackendSetBackend] {
-	return pulumix.Output[[]BackendSetBackend]{
-		OutputState: i.ToBackendSetBackendArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type BackendSetBackendOutput struct{ *pulumi.OutputState }
 
 func (BackendSetBackendOutput) ElementType() reflect.Type {
@@ -132,12 +119,6 @@ func (o BackendSetBackendOutput) ToBackendSetBackendOutput() BackendSetBackendOu
 
 func (o BackendSetBackendOutput) ToBackendSetBackendOutputWithContext(ctx context.Context) BackendSetBackendOutput {
 	return o
-}
-
-func (o BackendSetBackendOutput) ToOutput(ctx context.Context) pulumix.Output[BackendSetBackend] {
-	return pulumix.Output[BackendSetBackend]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The IP address of the backend server. Example: `10.0.0.3`
@@ -196,12 +177,6 @@ func (o BackendSetBackendArrayOutput) ToBackendSetBackendArrayOutput() BackendSe
 
 func (o BackendSetBackendArrayOutput) ToBackendSetBackendArrayOutputWithContext(ctx context.Context) BackendSetBackendArrayOutput {
 	return o
-}
-
-func (o BackendSetBackendArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]BackendSetBackend] {
-	return pulumix.Output[[]BackendSetBackend]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o BackendSetBackendArrayOutput) Index(i pulumi.IntInput) BackendSetBackendOutput {
@@ -279,12 +254,6 @@ func (i BackendSetHealthCheckerArgs) ToBackendSetHealthCheckerOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(BackendSetHealthCheckerOutput)
 }
 
-func (i BackendSetHealthCheckerArgs) ToOutput(ctx context.Context) pulumix.Output[BackendSetHealthChecker] {
-	return pulumix.Output[BackendSetHealthChecker]{
-		OutputState: i.ToBackendSetHealthCheckerOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i BackendSetHealthCheckerArgs) ToBackendSetHealthCheckerPtrOutput() BackendSetHealthCheckerPtrOutput {
 	return i.ToBackendSetHealthCheckerPtrOutputWithContext(context.Background())
 }
@@ -326,12 +295,6 @@ func (i *backendSetHealthCheckerPtrType) ToBackendSetHealthCheckerPtrOutputWithC
 	return pulumi.ToOutputWithContext(ctx, i).(BackendSetHealthCheckerPtrOutput)
 }
 
-func (i *backendSetHealthCheckerPtrType) ToOutput(ctx context.Context) pulumix.Output[*BackendSetHealthChecker] {
-	return pulumix.Output[*BackendSetHealthChecker]{
-		OutputState: i.ToBackendSetHealthCheckerPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type BackendSetHealthCheckerOutput struct{ *pulumi.OutputState }
 
 func (BackendSetHealthCheckerOutput) ElementType() reflect.Type {
@@ -354,12 +317,6 @@ func (o BackendSetHealthCheckerOutput) ToBackendSetHealthCheckerPtrOutputWithCon
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v BackendSetHealthChecker) *BackendSetHealthChecker {
 		return &v
 	}).(BackendSetHealthCheckerPtrOutput)
-}
-
-func (o BackendSetHealthCheckerOutput) ToOutput(ctx context.Context) pulumix.Output[BackendSetHealthChecker] {
-	return pulumix.Output[BackendSetHealthChecker]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The interval between health checks, in milliseconds. The default value is 10000 (10 seconds).  Example: `10000`
@@ -424,12 +381,6 @@ func (o BackendSetHealthCheckerPtrOutput) ToBackendSetHealthCheckerPtrOutput() B
 
 func (o BackendSetHealthCheckerPtrOutput) ToBackendSetHealthCheckerPtrOutputWithContext(ctx context.Context) BackendSetHealthCheckerPtrOutput {
 	return o
-}
-
-func (o BackendSetHealthCheckerPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*BackendSetHealthChecker] {
-	return pulumix.Output[*BackendSetHealthChecker]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o BackendSetHealthCheckerPtrOutput) Elem() BackendSetHealthCheckerOutput {
@@ -587,12 +538,6 @@ func (i NetworkLoadBalancerIpAddressArgs) ToNetworkLoadBalancerIpAddressOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(NetworkLoadBalancerIpAddressOutput)
 }
 
-func (i NetworkLoadBalancerIpAddressArgs) ToOutput(ctx context.Context) pulumix.Output[NetworkLoadBalancerIpAddress] {
-	return pulumix.Output[NetworkLoadBalancerIpAddress]{
-		OutputState: i.ToNetworkLoadBalancerIpAddressOutputWithContext(ctx).OutputState,
-	}
-}
-
 // NetworkLoadBalancerIpAddressArrayInput is an input type that accepts NetworkLoadBalancerIpAddressArray and NetworkLoadBalancerIpAddressArrayOutput values.
 // You can construct a concrete instance of `NetworkLoadBalancerIpAddressArrayInput` via:
 //
@@ -618,12 +563,6 @@ func (i NetworkLoadBalancerIpAddressArray) ToNetworkLoadBalancerIpAddressArrayOu
 	return pulumi.ToOutputWithContext(ctx, i).(NetworkLoadBalancerIpAddressArrayOutput)
 }
 
-func (i NetworkLoadBalancerIpAddressArray) ToOutput(ctx context.Context) pulumix.Output[[]NetworkLoadBalancerIpAddress] {
-	return pulumix.Output[[]NetworkLoadBalancerIpAddress]{
-		OutputState: i.ToNetworkLoadBalancerIpAddressArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type NetworkLoadBalancerIpAddressOutput struct{ *pulumi.OutputState }
 
 func (NetworkLoadBalancerIpAddressOutput) ElementType() reflect.Type {
@@ -636,12 +575,6 @@ func (o NetworkLoadBalancerIpAddressOutput) ToNetworkLoadBalancerIpAddressOutput
 
 func (o NetworkLoadBalancerIpAddressOutput) ToNetworkLoadBalancerIpAddressOutputWithContext(ctx context.Context) NetworkLoadBalancerIpAddressOutput {
 	return o
-}
-
-func (o NetworkLoadBalancerIpAddressOutput) ToOutput(ctx context.Context) pulumix.Output[NetworkLoadBalancerIpAddress] {
-	return pulumix.Output[NetworkLoadBalancerIpAddress]{
-		OutputState: o.OutputState,
-	}
 }
 
 // An IP address.  Example: `192.168.0.3`
@@ -676,12 +609,6 @@ func (o NetworkLoadBalancerIpAddressArrayOutput) ToNetworkLoadBalancerIpAddressA
 
 func (o NetworkLoadBalancerIpAddressArrayOutput) ToNetworkLoadBalancerIpAddressArrayOutputWithContext(ctx context.Context) NetworkLoadBalancerIpAddressArrayOutput {
 	return o
-}
-
-func (o NetworkLoadBalancerIpAddressArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]NetworkLoadBalancerIpAddress] {
-	return pulumix.Output[[]NetworkLoadBalancerIpAddress]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o NetworkLoadBalancerIpAddressArrayOutput) Index(i pulumi.IntInput) NetworkLoadBalancerIpAddressOutput {
@@ -739,12 +666,6 @@ func (i NetworkLoadBalancerIpAddressReservedIpArgs) ToNetworkLoadBalancerIpAddre
 	return pulumi.ToOutputWithContext(ctx, i).(NetworkLoadBalancerIpAddressReservedIpOutput)
 }
 
-func (i NetworkLoadBalancerIpAddressReservedIpArgs) ToOutput(ctx context.Context) pulumix.Output[NetworkLoadBalancerIpAddressReservedIp] {
-	return pulumix.Output[NetworkLoadBalancerIpAddressReservedIp]{
-		OutputState: i.ToNetworkLoadBalancerIpAddressReservedIpOutputWithContext(ctx).OutputState,
-	}
-}
-
 // NetworkLoadBalancerIpAddressReservedIpArrayInput is an input type that accepts NetworkLoadBalancerIpAddressReservedIpArray and NetworkLoadBalancerIpAddressReservedIpArrayOutput values.
 // You can construct a concrete instance of `NetworkLoadBalancerIpAddressReservedIpArrayInput` via:
 //
@@ -770,12 +691,6 @@ func (i NetworkLoadBalancerIpAddressReservedIpArray) ToNetworkLoadBalancerIpAddr
 	return pulumi.ToOutputWithContext(ctx, i).(NetworkLoadBalancerIpAddressReservedIpArrayOutput)
 }
 
-func (i NetworkLoadBalancerIpAddressReservedIpArray) ToOutput(ctx context.Context) pulumix.Output[[]NetworkLoadBalancerIpAddressReservedIp] {
-	return pulumix.Output[[]NetworkLoadBalancerIpAddressReservedIp]{
-		OutputState: i.ToNetworkLoadBalancerIpAddressReservedIpArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type NetworkLoadBalancerIpAddressReservedIpOutput struct{ *pulumi.OutputState }
 
 func (NetworkLoadBalancerIpAddressReservedIpOutput) ElementType() reflect.Type {
@@ -788,12 +703,6 @@ func (o NetworkLoadBalancerIpAddressReservedIpOutput) ToNetworkLoadBalancerIpAdd
 
 func (o NetworkLoadBalancerIpAddressReservedIpOutput) ToNetworkLoadBalancerIpAddressReservedIpOutputWithContext(ctx context.Context) NetworkLoadBalancerIpAddressReservedIpOutput {
 	return o
-}
-
-func (o NetworkLoadBalancerIpAddressReservedIpOutput) ToOutput(ctx context.Context) pulumix.Output[NetworkLoadBalancerIpAddressReservedIp] {
-	return pulumix.Output[NetworkLoadBalancerIpAddressReservedIp]{
-		OutputState: o.OutputState,
-	}
 }
 
 // OCID of the reserved public IP address created with the virtual cloud network.
@@ -821,12 +730,6 @@ func (o NetworkLoadBalancerIpAddressReservedIpArrayOutput) ToNetworkLoadBalancer
 
 func (o NetworkLoadBalancerIpAddressReservedIpArrayOutput) ToNetworkLoadBalancerIpAddressReservedIpArrayOutputWithContext(ctx context.Context) NetworkLoadBalancerIpAddressReservedIpArrayOutput {
 	return o
-}
-
-func (o NetworkLoadBalancerIpAddressReservedIpArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]NetworkLoadBalancerIpAddressReservedIp] {
-	return pulumix.Output[[]NetworkLoadBalancerIpAddressReservedIp]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o NetworkLoadBalancerIpAddressReservedIpArrayOutput) Index(i pulumi.IntInput) NetworkLoadBalancerIpAddressReservedIpOutput {
@@ -884,12 +787,6 @@ func (i NetworkLoadBalancerReservedIpArgs) ToNetworkLoadBalancerReservedIpOutput
 	return pulumi.ToOutputWithContext(ctx, i).(NetworkLoadBalancerReservedIpOutput)
 }
 
-func (i NetworkLoadBalancerReservedIpArgs) ToOutput(ctx context.Context) pulumix.Output[NetworkLoadBalancerReservedIp] {
-	return pulumix.Output[NetworkLoadBalancerReservedIp]{
-		OutputState: i.ToNetworkLoadBalancerReservedIpOutputWithContext(ctx).OutputState,
-	}
-}
-
 // NetworkLoadBalancerReservedIpArrayInput is an input type that accepts NetworkLoadBalancerReservedIpArray and NetworkLoadBalancerReservedIpArrayOutput values.
 // You can construct a concrete instance of `NetworkLoadBalancerReservedIpArrayInput` via:
 //
@@ -915,12 +812,6 @@ func (i NetworkLoadBalancerReservedIpArray) ToNetworkLoadBalancerReservedIpArray
 	return pulumi.ToOutputWithContext(ctx, i).(NetworkLoadBalancerReservedIpArrayOutput)
 }
 
-func (i NetworkLoadBalancerReservedIpArray) ToOutput(ctx context.Context) pulumix.Output[[]NetworkLoadBalancerReservedIp] {
-	return pulumix.Output[[]NetworkLoadBalancerReservedIp]{
-		OutputState: i.ToNetworkLoadBalancerReservedIpArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type NetworkLoadBalancerReservedIpOutput struct{ *pulumi.OutputState }
 
 func (NetworkLoadBalancerReservedIpOutput) ElementType() reflect.Type {
@@ -933,12 +824,6 @@ func (o NetworkLoadBalancerReservedIpOutput) ToNetworkLoadBalancerReservedIpOutp
 
 func (o NetworkLoadBalancerReservedIpOutput) ToNetworkLoadBalancerReservedIpOutputWithContext(ctx context.Context) NetworkLoadBalancerReservedIpOutput {
 	return o
-}
-
-func (o NetworkLoadBalancerReservedIpOutput) ToOutput(ctx context.Context) pulumix.Output[NetworkLoadBalancerReservedIp] {
-	return pulumix.Output[NetworkLoadBalancerReservedIp]{
-		OutputState: o.OutputState,
-	}
 }
 
 // OCID of the reserved public IP address created with the virtual cloud network.
@@ -966,12 +851,6 @@ func (o NetworkLoadBalancerReservedIpArrayOutput) ToNetworkLoadBalancerReservedI
 
 func (o NetworkLoadBalancerReservedIpArrayOutput) ToNetworkLoadBalancerReservedIpArrayOutputWithContext(ctx context.Context) NetworkLoadBalancerReservedIpArrayOutput {
 	return o
-}
-
-func (o NetworkLoadBalancerReservedIpArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]NetworkLoadBalancerReservedIp] {
-	return pulumix.Output[[]NetworkLoadBalancerReservedIp]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o NetworkLoadBalancerReservedIpArrayOutput) Index(i pulumi.IntInput) NetworkLoadBalancerReservedIpOutput {
@@ -1049,12 +928,6 @@ func (i NetworkLoadBalancersBackendSetsUnifiedBackendArgs) ToNetworkLoadBalancer
 	return pulumi.ToOutputWithContext(ctx, i).(NetworkLoadBalancersBackendSetsUnifiedBackendOutput)
 }
 
-func (i NetworkLoadBalancersBackendSetsUnifiedBackendArgs) ToOutput(ctx context.Context) pulumix.Output[NetworkLoadBalancersBackendSetsUnifiedBackend] {
-	return pulumix.Output[NetworkLoadBalancersBackendSetsUnifiedBackend]{
-		OutputState: i.ToNetworkLoadBalancersBackendSetsUnifiedBackendOutputWithContext(ctx).OutputState,
-	}
-}
-
 // NetworkLoadBalancersBackendSetsUnifiedBackendArrayInput is an input type that accepts NetworkLoadBalancersBackendSetsUnifiedBackendArray and NetworkLoadBalancersBackendSetsUnifiedBackendArrayOutput values.
 // You can construct a concrete instance of `NetworkLoadBalancersBackendSetsUnifiedBackendArrayInput` via:
 //
@@ -1080,12 +953,6 @@ func (i NetworkLoadBalancersBackendSetsUnifiedBackendArray) ToNetworkLoadBalance
 	return pulumi.ToOutputWithContext(ctx, i).(NetworkLoadBalancersBackendSetsUnifiedBackendArrayOutput)
 }
 
-func (i NetworkLoadBalancersBackendSetsUnifiedBackendArray) ToOutput(ctx context.Context) pulumix.Output[[]NetworkLoadBalancersBackendSetsUnifiedBackend] {
-	return pulumix.Output[[]NetworkLoadBalancersBackendSetsUnifiedBackend]{
-		OutputState: i.ToNetworkLoadBalancersBackendSetsUnifiedBackendArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type NetworkLoadBalancersBackendSetsUnifiedBackendOutput struct{ *pulumi.OutputState }
 
 func (NetworkLoadBalancersBackendSetsUnifiedBackendOutput) ElementType() reflect.Type {
@@ -1098,12 +965,6 @@ func (o NetworkLoadBalancersBackendSetsUnifiedBackendOutput) ToNetworkLoadBalanc
 
 func (o NetworkLoadBalancersBackendSetsUnifiedBackendOutput) ToNetworkLoadBalancersBackendSetsUnifiedBackendOutputWithContext(ctx context.Context) NetworkLoadBalancersBackendSetsUnifiedBackendOutput {
 	return o
-}
-
-func (o NetworkLoadBalancersBackendSetsUnifiedBackendOutput) ToOutput(ctx context.Context) pulumix.Output[NetworkLoadBalancersBackendSetsUnifiedBackend] {
-	return pulumix.Output[NetworkLoadBalancersBackendSetsUnifiedBackend]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The IP address of the backend server.  Example: `10.0.0.3`
@@ -1162,12 +1023,6 @@ func (o NetworkLoadBalancersBackendSetsUnifiedBackendArrayOutput) ToNetworkLoadB
 
 func (o NetworkLoadBalancersBackendSetsUnifiedBackendArrayOutput) ToNetworkLoadBalancersBackendSetsUnifiedBackendArrayOutputWithContext(ctx context.Context) NetworkLoadBalancersBackendSetsUnifiedBackendArrayOutput {
 	return o
-}
-
-func (o NetworkLoadBalancersBackendSetsUnifiedBackendArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]NetworkLoadBalancersBackendSetsUnifiedBackend] {
-	return pulumix.Output[[]NetworkLoadBalancersBackendSetsUnifiedBackend]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o NetworkLoadBalancersBackendSetsUnifiedBackendArrayOutput) Index(i pulumi.IntInput) NetworkLoadBalancersBackendSetsUnifiedBackendOutput {
@@ -1245,12 +1100,6 @@ func (i NetworkLoadBalancersBackendSetsUnifiedHealthCheckerArgs) ToNetworkLoadBa
 	return pulumi.ToOutputWithContext(ctx, i).(NetworkLoadBalancersBackendSetsUnifiedHealthCheckerOutput)
 }
 
-func (i NetworkLoadBalancersBackendSetsUnifiedHealthCheckerArgs) ToOutput(ctx context.Context) pulumix.Output[NetworkLoadBalancersBackendSetsUnifiedHealthChecker] {
-	return pulumix.Output[NetworkLoadBalancersBackendSetsUnifiedHealthChecker]{
-		OutputState: i.ToNetworkLoadBalancersBackendSetsUnifiedHealthCheckerOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i NetworkLoadBalancersBackendSetsUnifiedHealthCheckerArgs) ToNetworkLoadBalancersBackendSetsUnifiedHealthCheckerPtrOutput() NetworkLoadBalancersBackendSetsUnifiedHealthCheckerPtrOutput {
 	return i.ToNetworkLoadBalancersBackendSetsUnifiedHealthCheckerPtrOutputWithContext(context.Background())
 }
@@ -1292,12 +1141,6 @@ func (i *networkLoadBalancersBackendSetsUnifiedHealthCheckerPtrType) ToNetworkLo
 	return pulumi.ToOutputWithContext(ctx, i).(NetworkLoadBalancersBackendSetsUnifiedHealthCheckerPtrOutput)
 }
 
-func (i *networkLoadBalancersBackendSetsUnifiedHealthCheckerPtrType) ToOutput(ctx context.Context) pulumix.Output[*NetworkLoadBalancersBackendSetsUnifiedHealthChecker] {
-	return pulumix.Output[*NetworkLoadBalancersBackendSetsUnifiedHealthChecker]{
-		OutputState: i.ToNetworkLoadBalancersBackendSetsUnifiedHealthCheckerPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type NetworkLoadBalancersBackendSetsUnifiedHealthCheckerOutput struct{ *pulumi.OutputState }
 
 func (NetworkLoadBalancersBackendSetsUnifiedHealthCheckerOutput) ElementType() reflect.Type {
@@ -1320,12 +1163,6 @@ func (o NetworkLoadBalancersBackendSetsUnifiedHealthCheckerOutput) ToNetworkLoad
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v NetworkLoadBalancersBackendSetsUnifiedHealthChecker) *NetworkLoadBalancersBackendSetsUnifiedHealthChecker {
 		return &v
 	}).(NetworkLoadBalancersBackendSetsUnifiedHealthCheckerPtrOutput)
-}
-
-func (o NetworkLoadBalancersBackendSetsUnifiedHealthCheckerOutput) ToOutput(ctx context.Context) pulumix.Output[NetworkLoadBalancersBackendSetsUnifiedHealthChecker] {
-	return pulumix.Output[NetworkLoadBalancersBackendSetsUnifiedHealthChecker]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The interval between health checks, in milliseconds. The default value is 10000 (10 seconds).  Example: `10000`
@@ -1390,12 +1227,6 @@ func (o NetworkLoadBalancersBackendSetsUnifiedHealthCheckerPtrOutput) ToNetworkL
 
 func (o NetworkLoadBalancersBackendSetsUnifiedHealthCheckerPtrOutput) ToNetworkLoadBalancersBackendSetsUnifiedHealthCheckerPtrOutputWithContext(ctx context.Context) NetworkLoadBalancersBackendSetsUnifiedHealthCheckerPtrOutput {
 	return o
-}
-
-func (o NetworkLoadBalancersBackendSetsUnifiedHealthCheckerPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*NetworkLoadBalancersBackendSetsUnifiedHealthChecker] {
-	return pulumix.Output[*NetworkLoadBalancersBackendSetsUnifiedHealthChecker]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o NetworkLoadBalancersBackendSetsUnifiedHealthCheckerPtrOutput) Elem() NetworkLoadBalancersBackendSetsUnifiedHealthCheckerOutput {
@@ -1510,9 +1341,9 @@ func (o NetworkLoadBalancersBackendSetsUnifiedHealthCheckerPtrOutput) UrlPath() 
 
 type GetBackendHealthHealthCheckResult struct {
 	// The result of the most recent health check.
-	HealthCheckStatus string `pulumi:"healthCheckStatus"`
+	HealthCheckStatus *string `pulumi:"healthCheckStatus"`
 	// The date and time the data was retrieved, in the format defined by RFC3339.  Example: `2020-05-01T18:28:11+00:00`
-	Timestamp string `pulumi:"timestamp"`
+	Timestamp *string `pulumi:"timestamp"`
 }
 
 // GetBackendHealthHealthCheckResultInput is an input type that accepts GetBackendHealthHealthCheckResultArgs and GetBackendHealthHealthCheckResultOutput values.
@@ -1528,9 +1359,9 @@ type GetBackendHealthHealthCheckResultInput interface {
 
 type GetBackendHealthHealthCheckResultArgs struct {
 	// The result of the most recent health check.
-	HealthCheckStatus pulumi.StringInput `pulumi:"healthCheckStatus"`
+	HealthCheckStatus pulumi.StringPtrInput `pulumi:"healthCheckStatus"`
 	// The date and time the data was retrieved, in the format defined by RFC3339.  Example: `2020-05-01T18:28:11+00:00`
-	Timestamp pulumi.StringInput `pulumi:"timestamp"`
+	Timestamp pulumi.StringPtrInput `pulumi:"timestamp"`
 }
 
 func (GetBackendHealthHealthCheckResultArgs) ElementType() reflect.Type {
@@ -1543,12 +1374,6 @@ func (i GetBackendHealthHealthCheckResultArgs) ToGetBackendHealthHealthCheckResu
 
 func (i GetBackendHealthHealthCheckResultArgs) ToGetBackendHealthHealthCheckResultOutputWithContext(ctx context.Context) GetBackendHealthHealthCheckResultOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetBackendHealthHealthCheckResultOutput)
-}
-
-func (i GetBackendHealthHealthCheckResultArgs) ToOutput(ctx context.Context) pulumix.Output[GetBackendHealthHealthCheckResult] {
-	return pulumix.Output[GetBackendHealthHealthCheckResult]{
-		OutputState: i.ToGetBackendHealthHealthCheckResultOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetBackendHealthHealthCheckResultArrayInput is an input type that accepts GetBackendHealthHealthCheckResultArray and GetBackendHealthHealthCheckResultArrayOutput values.
@@ -1576,12 +1401,6 @@ func (i GetBackendHealthHealthCheckResultArray) ToGetBackendHealthHealthCheckRes
 	return pulumi.ToOutputWithContext(ctx, i).(GetBackendHealthHealthCheckResultArrayOutput)
 }
 
-func (i GetBackendHealthHealthCheckResultArray) ToOutput(ctx context.Context) pulumix.Output[[]GetBackendHealthHealthCheckResult] {
-	return pulumix.Output[[]GetBackendHealthHealthCheckResult]{
-		OutputState: i.ToGetBackendHealthHealthCheckResultArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetBackendHealthHealthCheckResultOutput struct{ *pulumi.OutputState }
 
 func (GetBackendHealthHealthCheckResultOutput) ElementType() reflect.Type {
@@ -1596,20 +1415,14 @@ func (o GetBackendHealthHealthCheckResultOutput) ToGetBackendHealthHealthCheckRe
 	return o
 }
 
-func (o GetBackendHealthHealthCheckResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetBackendHealthHealthCheckResult] {
-	return pulumix.Output[GetBackendHealthHealthCheckResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The result of the most recent health check.
-func (o GetBackendHealthHealthCheckResultOutput) HealthCheckStatus() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBackendHealthHealthCheckResult) string { return v.HealthCheckStatus }).(pulumi.StringOutput)
+func (o GetBackendHealthHealthCheckResultOutput) HealthCheckStatus() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBackendHealthHealthCheckResult) *string { return v.HealthCheckStatus }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the data was retrieved, in the format defined by RFC3339.  Example: `2020-05-01T18:28:11+00:00`
-func (o GetBackendHealthHealthCheckResultOutput) Timestamp() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBackendHealthHealthCheckResult) string { return v.Timestamp }).(pulumi.StringOutput)
+func (o GetBackendHealthHealthCheckResultOutput) Timestamp() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBackendHealthHealthCheckResult) *string { return v.Timestamp }).(pulumi.StringPtrOutput)
 }
 
 type GetBackendHealthHealthCheckResultArrayOutput struct{ *pulumi.OutputState }
@@ -1626,12 +1439,6 @@ func (o GetBackendHealthHealthCheckResultArrayOutput) ToGetBackendHealthHealthCh
 	return o
 }
 
-func (o GetBackendHealthHealthCheckResultArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetBackendHealthHealthCheckResult] {
-	return pulumix.Output[[]GetBackendHealthHealthCheckResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetBackendHealthHealthCheckResultArrayOutput) Index(i pulumi.IntInput) GetBackendHealthHealthCheckResultOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBackendHealthHealthCheckResult {
 		return vs[0].([]GetBackendHealthHealthCheckResult)[vs[1].(int)]
@@ -1640,21 +1447,21 @@ func (o GetBackendHealthHealthCheckResultArrayOutput) Index(i pulumi.IntInput) G
 
 type GetBackendSetBackend struct {
 	// The IP address of the backend server. Example: `10.0.0.3`
-	IpAddress string `pulumi:"ipAddress"`
+	IpAddress *string `pulumi:"ipAddress"`
 	// Whether the network load balancer should treat this server as a backup unit. If `true`, then the network load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as "isBackup" fail the health check policy.  Example: `false`
-	IsBackup bool `pulumi:"isBackup"`
+	IsBackup *bool `pulumi:"isBackup"`
 	// Whether the network load balancer should drain this server. Servers marked "isDrain" receive no  incoming traffic.  Example: `false`
-	IsDrain bool `pulumi:"isDrain"`
+	IsDrain *bool `pulumi:"isDrain"`
 	// Whether the network load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
-	IsOffline bool `pulumi:"isOffline"`
+	IsOffline *bool `pulumi:"isOffline"`
 	// A user-friendly name for the backend set that must be unique and cannot be changed.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// The backend server port against which to run the health check. If the port is not specified, then the network load balancer uses the port information from the `Backend` object. The port must be specified if the backend port is 0.  Example: `8080`
-	Port int `pulumi:"port"`
+	Port *int `pulumi:"port"`
 	// The IP OCID/Instance OCID associated with the backend server. Example: `ocid1.privateip..oc1.<var>&lt;unique_ID&gt;</var>`
-	TargetId string `pulumi:"targetId"`
+	TargetId *string `pulumi:"targetId"`
 	// The network load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives three times the number of new connections as a server weighted '1'. For more information about load balancing policies, see [How Network Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm).  Example: `3`
-	Weight int `pulumi:"weight"`
+	Weight *int `pulumi:"weight"`
 }
 
 // GetBackendSetBackendInput is an input type that accepts GetBackendSetBackendArgs and GetBackendSetBackendOutput values.
@@ -1670,21 +1477,21 @@ type GetBackendSetBackendInput interface {
 
 type GetBackendSetBackendArgs struct {
 	// The IP address of the backend server. Example: `10.0.0.3`
-	IpAddress pulumi.StringInput `pulumi:"ipAddress"`
+	IpAddress pulumi.StringPtrInput `pulumi:"ipAddress"`
 	// Whether the network load balancer should treat this server as a backup unit. If `true`, then the network load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as "isBackup" fail the health check policy.  Example: `false`
-	IsBackup pulumi.BoolInput `pulumi:"isBackup"`
+	IsBackup pulumi.BoolPtrInput `pulumi:"isBackup"`
 	// Whether the network load balancer should drain this server. Servers marked "isDrain" receive no  incoming traffic.  Example: `false`
-	IsDrain pulumi.BoolInput `pulumi:"isDrain"`
+	IsDrain pulumi.BoolPtrInput `pulumi:"isDrain"`
 	// Whether the network load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
-	IsOffline pulumi.BoolInput `pulumi:"isOffline"`
+	IsOffline pulumi.BoolPtrInput `pulumi:"isOffline"`
 	// A user-friendly name for the backend set that must be unique and cannot be changed.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// The backend server port against which to run the health check. If the port is not specified, then the network load balancer uses the port information from the `Backend` object. The port must be specified if the backend port is 0.  Example: `8080`
-	Port pulumi.IntInput `pulumi:"port"`
+	Port pulumi.IntPtrInput `pulumi:"port"`
 	// The IP OCID/Instance OCID associated with the backend server. Example: `ocid1.privateip..oc1.<var>&lt;unique_ID&gt;</var>`
-	TargetId pulumi.StringInput `pulumi:"targetId"`
+	TargetId pulumi.StringPtrInput `pulumi:"targetId"`
 	// The network load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives three times the number of new connections as a server weighted '1'. For more information about load balancing policies, see [How Network Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm).  Example: `3`
-	Weight pulumi.IntInput `pulumi:"weight"`
+	Weight pulumi.IntPtrInput `pulumi:"weight"`
 }
 
 func (GetBackendSetBackendArgs) ElementType() reflect.Type {
@@ -1697,12 +1504,6 @@ func (i GetBackendSetBackendArgs) ToGetBackendSetBackendOutput() GetBackendSetBa
 
 func (i GetBackendSetBackendArgs) ToGetBackendSetBackendOutputWithContext(ctx context.Context) GetBackendSetBackendOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetBackendSetBackendOutput)
-}
-
-func (i GetBackendSetBackendArgs) ToOutput(ctx context.Context) pulumix.Output[GetBackendSetBackend] {
-	return pulumix.Output[GetBackendSetBackend]{
-		OutputState: i.ToGetBackendSetBackendOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetBackendSetBackendArrayInput is an input type that accepts GetBackendSetBackendArray and GetBackendSetBackendArrayOutput values.
@@ -1730,12 +1531,6 @@ func (i GetBackendSetBackendArray) ToGetBackendSetBackendArrayOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(GetBackendSetBackendArrayOutput)
 }
 
-func (i GetBackendSetBackendArray) ToOutput(ctx context.Context) pulumix.Output[[]GetBackendSetBackend] {
-	return pulumix.Output[[]GetBackendSetBackend]{
-		OutputState: i.ToGetBackendSetBackendArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetBackendSetBackendOutput struct{ *pulumi.OutputState }
 
 func (GetBackendSetBackendOutput) ElementType() reflect.Type {
@@ -1750,50 +1545,44 @@ func (o GetBackendSetBackendOutput) ToGetBackendSetBackendOutputWithContext(ctx 
 	return o
 }
 
-func (o GetBackendSetBackendOutput) ToOutput(ctx context.Context) pulumix.Output[GetBackendSetBackend] {
-	return pulumix.Output[GetBackendSetBackend]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The IP address of the backend server. Example: `10.0.0.3`
-func (o GetBackendSetBackendOutput) IpAddress() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBackendSetBackend) string { return v.IpAddress }).(pulumi.StringOutput)
+func (o GetBackendSetBackendOutput) IpAddress() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBackendSetBackend) *string { return v.IpAddress }).(pulumi.StringPtrOutput)
 }
 
 // Whether the network load balancer should treat this server as a backup unit. If `true`, then the network load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as "isBackup" fail the health check policy.  Example: `false`
-func (o GetBackendSetBackendOutput) IsBackup() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetBackendSetBackend) bool { return v.IsBackup }).(pulumi.BoolOutput)
+func (o GetBackendSetBackendOutput) IsBackup() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetBackendSetBackend) *bool { return v.IsBackup }).(pulumi.BoolPtrOutput)
 }
 
 // Whether the network load balancer should drain this server. Servers marked "isDrain" receive no  incoming traffic.  Example: `false`
-func (o GetBackendSetBackendOutput) IsDrain() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetBackendSetBackend) bool { return v.IsDrain }).(pulumi.BoolOutput)
+func (o GetBackendSetBackendOutput) IsDrain() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetBackendSetBackend) *bool { return v.IsDrain }).(pulumi.BoolPtrOutput)
 }
 
 // Whether the network load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
-func (o GetBackendSetBackendOutput) IsOffline() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetBackendSetBackend) bool { return v.IsOffline }).(pulumi.BoolOutput)
+func (o GetBackendSetBackendOutput) IsOffline() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetBackendSetBackend) *bool { return v.IsOffline }).(pulumi.BoolPtrOutput)
 }
 
 // A user-friendly name for the backend set that must be unique and cannot be changed.
-func (o GetBackendSetBackendOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBackendSetBackend) string { return v.Name }).(pulumi.StringOutput)
+func (o GetBackendSetBackendOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBackendSetBackend) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // The backend server port against which to run the health check. If the port is not specified, then the network load balancer uses the port information from the `Backend` object. The port must be specified if the backend port is 0.  Example: `8080`
-func (o GetBackendSetBackendOutput) Port() pulumi.IntOutput {
-	return o.ApplyT(func(v GetBackendSetBackend) int { return v.Port }).(pulumi.IntOutput)
+func (o GetBackendSetBackendOutput) Port() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetBackendSetBackend) *int { return v.Port }).(pulumi.IntPtrOutput)
 }
 
 // The IP OCID/Instance OCID associated with the backend server. Example: `ocid1.privateip..oc1.<var>&lt;unique_ID&gt;</var>`
-func (o GetBackendSetBackendOutput) TargetId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBackendSetBackend) string { return v.TargetId }).(pulumi.StringOutput)
+func (o GetBackendSetBackendOutput) TargetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBackendSetBackend) *string { return v.TargetId }).(pulumi.StringPtrOutput)
 }
 
 // The network load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives three times the number of new connections as a server weighted '1'. For more information about load balancing policies, see [How Network Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm).  Example: `3`
-func (o GetBackendSetBackendOutput) Weight() pulumi.IntOutput {
-	return o.ApplyT(func(v GetBackendSetBackend) int { return v.Weight }).(pulumi.IntOutput)
+func (o GetBackendSetBackendOutput) Weight() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetBackendSetBackend) *int { return v.Weight }).(pulumi.IntPtrOutput)
 }
 
 type GetBackendSetBackendArrayOutput struct{ *pulumi.OutputState }
@@ -1810,12 +1599,6 @@ func (o GetBackendSetBackendArrayOutput) ToGetBackendSetBackendArrayOutputWithCo
 	return o
 }
 
-func (o GetBackendSetBackendArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetBackendSetBackend] {
-	return pulumix.Output[[]GetBackendSetBackend]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetBackendSetBackendArrayOutput) Index(i pulumi.IntInput) GetBackendSetBackendOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBackendSetBackend {
 		return vs[0].([]GetBackendSetBackend)[vs[1].(int)]
@@ -1824,25 +1607,25 @@ func (o GetBackendSetBackendArrayOutput) Index(i pulumi.IntInput) GetBackendSetB
 
 type GetBackendSetHealthChecker struct {
 	// The interval between health checks, in milliseconds. The default value is 10000 (10 seconds).  Example: `10000`
-	IntervalInMillis int `pulumi:"intervalInMillis"`
+	IntervalInMillis *int `pulumi:"intervalInMillis"`
 	// The backend server port against which to run the health check. If the port is not specified, then the network load balancer uses the port information from the `Backend` object. The port must be specified if the backend port is 0.  Example: `8080`
-	Port int `pulumi:"port"`
+	Port *int `pulumi:"port"`
 	// The protocol the health check must use; either HTTP or HTTPS, or UDP or TCP.  Example: `HTTP`
-	Protocol string `pulumi:"protocol"`
+	Protocol *string `pulumi:"protocol"`
 	// Base64 encoded pattern to be sent as UDP or TCP health check probe.
-	RequestData string `pulumi:"requestData"`
+	RequestData *string `pulumi:"requestData"`
 	// A regular expression for parsing the response body from the backend server.  Example: `^((?!false).|\s)*$`
-	ResponseBodyRegex string `pulumi:"responseBodyRegex"`
+	ResponseBodyRegex *string `pulumi:"responseBodyRegex"`
 	// Base64 encoded pattern to be validated as UDP or TCP health check probe response.
-	ResponseData string `pulumi:"responseData"`
+	ResponseData *string `pulumi:"responseData"`
 	// The number of retries to attempt before a backend server is considered "unhealthy". This number also applies when recovering a server to the "healthy" state. The default value is 3.  Example: `3`
-	Retries int `pulumi:"retries"`
+	Retries *int `pulumi:"retries"`
 	// The status code a healthy backend server should return. If you configure the health check policy to use the HTTP protocol, then you can use common HTTP status codes such as "200".  Example: `200`
-	ReturnCode int `pulumi:"returnCode"`
+	ReturnCode *int `pulumi:"returnCode"`
 	// The maximum time, in milliseconds, to wait for a reply to a health check. A health check is successful only if a reply returns within this timeout period. The default value is 3000 (3 seconds).  Example: `3000`
-	TimeoutInMillis int `pulumi:"timeoutInMillis"`
+	TimeoutInMillis *int `pulumi:"timeoutInMillis"`
 	// The path against which to run the health check.  Example: `/healthcheck`
-	UrlPath string `pulumi:"urlPath"`
+	UrlPath *string `pulumi:"urlPath"`
 }
 
 // GetBackendSetHealthCheckerInput is an input type that accepts GetBackendSetHealthCheckerArgs and GetBackendSetHealthCheckerOutput values.
@@ -1858,25 +1641,25 @@ type GetBackendSetHealthCheckerInput interface {
 
 type GetBackendSetHealthCheckerArgs struct {
 	// The interval between health checks, in milliseconds. The default value is 10000 (10 seconds).  Example: `10000`
-	IntervalInMillis pulumi.IntInput `pulumi:"intervalInMillis"`
+	IntervalInMillis pulumi.IntPtrInput `pulumi:"intervalInMillis"`
 	// The backend server port against which to run the health check. If the port is not specified, then the network load balancer uses the port information from the `Backend` object. The port must be specified if the backend port is 0.  Example: `8080`
-	Port pulumi.IntInput `pulumi:"port"`
+	Port pulumi.IntPtrInput `pulumi:"port"`
 	// The protocol the health check must use; either HTTP or HTTPS, or UDP or TCP.  Example: `HTTP`
-	Protocol pulumi.StringInput `pulumi:"protocol"`
+	Protocol pulumi.StringPtrInput `pulumi:"protocol"`
 	// Base64 encoded pattern to be sent as UDP or TCP health check probe.
-	RequestData pulumi.StringInput `pulumi:"requestData"`
+	RequestData pulumi.StringPtrInput `pulumi:"requestData"`
 	// A regular expression for parsing the response body from the backend server.  Example: `^((?!false).|\s)*$`
-	ResponseBodyRegex pulumi.StringInput `pulumi:"responseBodyRegex"`
+	ResponseBodyRegex pulumi.StringPtrInput `pulumi:"responseBodyRegex"`
 	// Base64 encoded pattern to be validated as UDP or TCP health check probe response.
-	ResponseData pulumi.StringInput `pulumi:"responseData"`
+	ResponseData pulumi.StringPtrInput `pulumi:"responseData"`
 	// The number of retries to attempt before a backend server is considered "unhealthy". This number also applies when recovering a server to the "healthy" state. The default value is 3.  Example: `3`
-	Retries pulumi.IntInput `pulumi:"retries"`
+	Retries pulumi.IntPtrInput `pulumi:"retries"`
 	// The status code a healthy backend server should return. If you configure the health check policy to use the HTTP protocol, then you can use common HTTP status codes such as "200".  Example: `200`
-	ReturnCode pulumi.IntInput `pulumi:"returnCode"`
+	ReturnCode pulumi.IntPtrInput `pulumi:"returnCode"`
 	// The maximum time, in milliseconds, to wait for a reply to a health check. A health check is successful only if a reply returns within this timeout period. The default value is 3000 (3 seconds).  Example: `3000`
-	TimeoutInMillis pulumi.IntInput `pulumi:"timeoutInMillis"`
+	TimeoutInMillis pulumi.IntPtrInput `pulumi:"timeoutInMillis"`
 	// The path against which to run the health check.  Example: `/healthcheck`
-	UrlPath pulumi.StringInput `pulumi:"urlPath"`
+	UrlPath pulumi.StringPtrInput `pulumi:"urlPath"`
 }
 
 func (GetBackendSetHealthCheckerArgs) ElementType() reflect.Type {
@@ -1889,12 +1672,6 @@ func (i GetBackendSetHealthCheckerArgs) ToGetBackendSetHealthCheckerOutput() Get
 
 func (i GetBackendSetHealthCheckerArgs) ToGetBackendSetHealthCheckerOutputWithContext(ctx context.Context) GetBackendSetHealthCheckerOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetBackendSetHealthCheckerOutput)
-}
-
-func (i GetBackendSetHealthCheckerArgs) ToOutput(ctx context.Context) pulumix.Output[GetBackendSetHealthChecker] {
-	return pulumix.Output[GetBackendSetHealthChecker]{
-		OutputState: i.ToGetBackendSetHealthCheckerOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetBackendSetHealthCheckerArrayInput is an input type that accepts GetBackendSetHealthCheckerArray and GetBackendSetHealthCheckerArrayOutput values.
@@ -1922,12 +1699,6 @@ func (i GetBackendSetHealthCheckerArray) ToGetBackendSetHealthCheckerArrayOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetBackendSetHealthCheckerArrayOutput)
 }
 
-func (i GetBackendSetHealthCheckerArray) ToOutput(ctx context.Context) pulumix.Output[[]GetBackendSetHealthChecker] {
-	return pulumix.Output[[]GetBackendSetHealthChecker]{
-		OutputState: i.ToGetBackendSetHealthCheckerArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetBackendSetHealthCheckerOutput struct{ *pulumi.OutputState }
 
 func (GetBackendSetHealthCheckerOutput) ElementType() reflect.Type {
@@ -1942,60 +1713,54 @@ func (o GetBackendSetHealthCheckerOutput) ToGetBackendSetHealthCheckerOutputWith
 	return o
 }
 
-func (o GetBackendSetHealthCheckerOutput) ToOutput(ctx context.Context) pulumix.Output[GetBackendSetHealthChecker] {
-	return pulumix.Output[GetBackendSetHealthChecker]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The interval between health checks, in milliseconds. The default value is 10000 (10 seconds).  Example: `10000`
-func (o GetBackendSetHealthCheckerOutput) IntervalInMillis() pulumi.IntOutput {
-	return o.ApplyT(func(v GetBackendSetHealthChecker) int { return v.IntervalInMillis }).(pulumi.IntOutput)
+func (o GetBackendSetHealthCheckerOutput) IntervalInMillis() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetBackendSetHealthChecker) *int { return v.IntervalInMillis }).(pulumi.IntPtrOutput)
 }
 
 // The backend server port against which to run the health check. If the port is not specified, then the network load balancer uses the port information from the `Backend` object. The port must be specified if the backend port is 0.  Example: `8080`
-func (o GetBackendSetHealthCheckerOutput) Port() pulumi.IntOutput {
-	return o.ApplyT(func(v GetBackendSetHealthChecker) int { return v.Port }).(pulumi.IntOutput)
+func (o GetBackendSetHealthCheckerOutput) Port() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetBackendSetHealthChecker) *int { return v.Port }).(pulumi.IntPtrOutput)
 }
 
 // The protocol the health check must use; either HTTP or HTTPS, or UDP or TCP.  Example: `HTTP`
-func (o GetBackendSetHealthCheckerOutput) Protocol() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBackendSetHealthChecker) string { return v.Protocol }).(pulumi.StringOutput)
+func (o GetBackendSetHealthCheckerOutput) Protocol() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBackendSetHealthChecker) *string { return v.Protocol }).(pulumi.StringPtrOutput)
 }
 
 // Base64 encoded pattern to be sent as UDP or TCP health check probe.
-func (o GetBackendSetHealthCheckerOutput) RequestData() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBackendSetHealthChecker) string { return v.RequestData }).(pulumi.StringOutput)
+func (o GetBackendSetHealthCheckerOutput) RequestData() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBackendSetHealthChecker) *string { return v.RequestData }).(pulumi.StringPtrOutput)
 }
 
 // A regular expression for parsing the response body from the backend server.  Example: `^((?!false).|\s)*$`
-func (o GetBackendSetHealthCheckerOutput) ResponseBodyRegex() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBackendSetHealthChecker) string { return v.ResponseBodyRegex }).(pulumi.StringOutput)
+func (o GetBackendSetHealthCheckerOutput) ResponseBodyRegex() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBackendSetHealthChecker) *string { return v.ResponseBodyRegex }).(pulumi.StringPtrOutput)
 }
 
 // Base64 encoded pattern to be validated as UDP or TCP health check probe response.
-func (o GetBackendSetHealthCheckerOutput) ResponseData() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBackendSetHealthChecker) string { return v.ResponseData }).(pulumi.StringOutput)
+func (o GetBackendSetHealthCheckerOutput) ResponseData() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBackendSetHealthChecker) *string { return v.ResponseData }).(pulumi.StringPtrOutput)
 }
 
 // The number of retries to attempt before a backend server is considered "unhealthy". This number also applies when recovering a server to the "healthy" state. The default value is 3.  Example: `3`
-func (o GetBackendSetHealthCheckerOutput) Retries() pulumi.IntOutput {
-	return o.ApplyT(func(v GetBackendSetHealthChecker) int { return v.Retries }).(pulumi.IntOutput)
+func (o GetBackendSetHealthCheckerOutput) Retries() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetBackendSetHealthChecker) *int { return v.Retries }).(pulumi.IntPtrOutput)
 }
 
 // The status code a healthy backend server should return. If you configure the health check policy to use the HTTP protocol, then you can use common HTTP status codes such as "200".  Example: `200`
-func (o GetBackendSetHealthCheckerOutput) ReturnCode() pulumi.IntOutput {
-	return o.ApplyT(func(v GetBackendSetHealthChecker) int { return v.ReturnCode }).(pulumi.IntOutput)
+func (o GetBackendSetHealthCheckerOutput) ReturnCode() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetBackendSetHealthChecker) *int { return v.ReturnCode }).(pulumi.IntPtrOutput)
 }
 
 // The maximum time, in milliseconds, to wait for a reply to a health check. A health check is successful only if a reply returns within this timeout period. The default value is 3000 (3 seconds).  Example: `3000`
-func (o GetBackendSetHealthCheckerOutput) TimeoutInMillis() pulumi.IntOutput {
-	return o.ApplyT(func(v GetBackendSetHealthChecker) int { return v.TimeoutInMillis }).(pulumi.IntOutput)
+func (o GetBackendSetHealthCheckerOutput) TimeoutInMillis() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetBackendSetHealthChecker) *int { return v.TimeoutInMillis }).(pulumi.IntPtrOutput)
 }
 
 // The path against which to run the health check.  Example: `/healthcheck`
-func (o GetBackendSetHealthCheckerOutput) UrlPath() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBackendSetHealthChecker) string { return v.UrlPath }).(pulumi.StringOutput)
+func (o GetBackendSetHealthCheckerOutput) UrlPath() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBackendSetHealthChecker) *string { return v.UrlPath }).(pulumi.StringPtrOutput)
 }
 
 type GetBackendSetHealthCheckerArrayOutput struct{ *pulumi.OutputState }
@@ -2010,12 +1775,6 @@ func (o GetBackendSetHealthCheckerArrayOutput) ToGetBackendSetHealthCheckerArray
 
 func (o GetBackendSetHealthCheckerArrayOutput) ToGetBackendSetHealthCheckerArrayOutputWithContext(ctx context.Context) GetBackendSetHealthCheckerArrayOutput {
 	return o
-}
-
-func (o GetBackendSetHealthCheckerArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetBackendSetHealthChecker] {
-	return pulumix.Output[[]GetBackendSetHealthChecker]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetBackendSetHealthCheckerArrayOutput) Index(i pulumi.IntInput) GetBackendSetHealthCheckerOutput {
@@ -2055,12 +1814,6 @@ func (i GetBackendSetsBackendSetCollectionArgs) ToGetBackendSetsBackendSetCollec
 	return pulumi.ToOutputWithContext(ctx, i).(GetBackendSetsBackendSetCollectionOutput)
 }
 
-func (i GetBackendSetsBackendSetCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetBackendSetsBackendSetCollection] {
-	return pulumix.Output[GetBackendSetsBackendSetCollection]{
-		OutputState: i.ToGetBackendSetsBackendSetCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetBackendSetsBackendSetCollectionArrayInput is an input type that accepts GetBackendSetsBackendSetCollectionArray and GetBackendSetsBackendSetCollectionArrayOutput values.
 // You can construct a concrete instance of `GetBackendSetsBackendSetCollectionArrayInput` via:
 //
@@ -2086,12 +1839,6 @@ func (i GetBackendSetsBackendSetCollectionArray) ToGetBackendSetsBackendSetColle
 	return pulumi.ToOutputWithContext(ctx, i).(GetBackendSetsBackendSetCollectionArrayOutput)
 }
 
-func (i GetBackendSetsBackendSetCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetBackendSetsBackendSetCollection] {
-	return pulumix.Output[[]GetBackendSetsBackendSetCollection]{
-		OutputState: i.ToGetBackendSetsBackendSetCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetBackendSetsBackendSetCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetBackendSetsBackendSetCollectionOutput) ElementType() reflect.Type {
@@ -2104,12 +1851,6 @@ func (o GetBackendSetsBackendSetCollectionOutput) ToGetBackendSetsBackendSetColl
 
 func (o GetBackendSetsBackendSetCollectionOutput) ToGetBackendSetsBackendSetCollectionOutputWithContext(ctx context.Context) GetBackendSetsBackendSetCollectionOutput {
 	return o
-}
-
-func (o GetBackendSetsBackendSetCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetBackendSetsBackendSetCollection] {
-	return pulumix.Output[GetBackendSetsBackendSetCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetBackendSetsBackendSetCollectionOutput) Items() GetBackendSetsBackendSetCollectionItemArrayOutput {
@@ -2130,12 +1871,6 @@ func (o GetBackendSetsBackendSetCollectionArrayOutput) ToGetBackendSetsBackendSe
 	return o
 }
 
-func (o GetBackendSetsBackendSetCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetBackendSetsBackendSetCollection] {
-	return pulumix.Output[[]GetBackendSetsBackendSetCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetBackendSetsBackendSetCollectionArrayOutput) Index(i pulumi.IntInput) GetBackendSetsBackendSetCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBackendSetsBackendSetCollection {
 		return vs[0].([]GetBackendSetsBackendSetCollection)[vs[1].(int)]
@@ -2147,17 +1882,17 @@ type GetBackendSetsBackendSetCollectionItem struct {
 	Backends []GetBackendSetsBackendSetCollectionItemBackend `pulumi:"backends"`
 	// The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/editinghealthcheck.htm).
 	HealthCheckers []GetBackendSetsBackendSetCollectionItemHealthChecker `pulumi:"healthCheckers"`
-	Id             string                                                `pulumi:"id"`
+	Id             *string                                               `pulumi:"id"`
 	// IP version associated with the backend set.
-	IpVersion string `pulumi:"ipVersion"`
+	IpVersion *string `pulumi:"ipVersion"`
 	// If this parameter is enabled, then the network load balancer preserves the source IP of the packet when it is forwarded to backends. Backends see the original source IP. If the isPreserveSourceDestination parameter is enabled for the network load balancer resource, then this parameter cannot be disabled. The value is true by default.
-	IsPreserveSource bool `pulumi:"isPreserveSource"`
+	IsPreserveSource *bool `pulumi:"isPreserveSource"`
 	// A user-friendly name for the backend set that must be unique and cannot be changed.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network load balancer to update.
-	NetworkLoadBalancerId string `pulumi:"networkLoadBalancerId"`
+	NetworkLoadBalancerId *string `pulumi:"networkLoadBalancerId"`
 	// The network load balancer policy for the backend set.  Example: `FIVE_TUPLE`
-	Policy string `pulumi:"policy"`
+	Policy *string `pulumi:"policy"`
 }
 
 // GetBackendSetsBackendSetCollectionItemInput is an input type that accepts GetBackendSetsBackendSetCollectionItemArgs and GetBackendSetsBackendSetCollectionItemOutput values.
@@ -2176,17 +1911,17 @@ type GetBackendSetsBackendSetCollectionItemArgs struct {
 	Backends GetBackendSetsBackendSetCollectionItemBackendArrayInput `pulumi:"backends"`
 	// The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/editinghealthcheck.htm).
 	HealthCheckers GetBackendSetsBackendSetCollectionItemHealthCheckerArrayInput `pulumi:"healthCheckers"`
-	Id             pulumi.StringInput                                            `pulumi:"id"`
+	Id             pulumi.StringPtrInput                                         `pulumi:"id"`
 	// IP version associated with the backend set.
-	IpVersion pulumi.StringInput `pulumi:"ipVersion"`
+	IpVersion pulumi.StringPtrInput `pulumi:"ipVersion"`
 	// If this parameter is enabled, then the network load balancer preserves the source IP of the packet when it is forwarded to backends. Backends see the original source IP. If the isPreserveSourceDestination parameter is enabled for the network load balancer resource, then this parameter cannot be disabled. The value is true by default.
-	IsPreserveSource pulumi.BoolInput `pulumi:"isPreserveSource"`
+	IsPreserveSource pulumi.BoolPtrInput `pulumi:"isPreserveSource"`
 	// A user-friendly name for the backend set that must be unique and cannot be changed.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network load balancer to update.
-	NetworkLoadBalancerId pulumi.StringInput `pulumi:"networkLoadBalancerId"`
+	NetworkLoadBalancerId pulumi.StringPtrInput `pulumi:"networkLoadBalancerId"`
 	// The network load balancer policy for the backend set.  Example: `FIVE_TUPLE`
-	Policy pulumi.StringInput `pulumi:"policy"`
+	Policy pulumi.StringPtrInput `pulumi:"policy"`
 }
 
 func (GetBackendSetsBackendSetCollectionItemArgs) ElementType() reflect.Type {
@@ -2199,12 +1934,6 @@ func (i GetBackendSetsBackendSetCollectionItemArgs) ToGetBackendSetsBackendSetCo
 
 func (i GetBackendSetsBackendSetCollectionItemArgs) ToGetBackendSetsBackendSetCollectionItemOutputWithContext(ctx context.Context) GetBackendSetsBackendSetCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetBackendSetsBackendSetCollectionItemOutput)
-}
-
-func (i GetBackendSetsBackendSetCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetBackendSetsBackendSetCollectionItem] {
-	return pulumix.Output[GetBackendSetsBackendSetCollectionItem]{
-		OutputState: i.ToGetBackendSetsBackendSetCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetBackendSetsBackendSetCollectionItemArrayInput is an input type that accepts GetBackendSetsBackendSetCollectionItemArray and GetBackendSetsBackendSetCollectionItemArrayOutput values.
@@ -2232,12 +1961,6 @@ func (i GetBackendSetsBackendSetCollectionItemArray) ToGetBackendSetsBackendSetC
 	return pulumi.ToOutputWithContext(ctx, i).(GetBackendSetsBackendSetCollectionItemArrayOutput)
 }
 
-func (i GetBackendSetsBackendSetCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetBackendSetsBackendSetCollectionItem] {
-	return pulumix.Output[[]GetBackendSetsBackendSetCollectionItem]{
-		OutputState: i.ToGetBackendSetsBackendSetCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetBackendSetsBackendSetCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetBackendSetsBackendSetCollectionItemOutput) ElementType() reflect.Type {
@@ -2250,12 +1973,6 @@ func (o GetBackendSetsBackendSetCollectionItemOutput) ToGetBackendSetsBackendSet
 
 func (o GetBackendSetsBackendSetCollectionItemOutput) ToGetBackendSetsBackendSetCollectionItemOutputWithContext(ctx context.Context) GetBackendSetsBackendSetCollectionItemOutput {
 	return o
-}
-
-func (o GetBackendSetsBackendSetCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetBackendSetsBackendSetCollectionItem] {
-	return pulumix.Output[GetBackendSetsBackendSetCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Array of backends.
@@ -2272,33 +1989,33 @@ func (o GetBackendSetsBackendSetCollectionItemOutput) HealthCheckers() GetBacken
 	}).(GetBackendSetsBackendSetCollectionItemHealthCheckerArrayOutput)
 }
 
-func (o GetBackendSetsBackendSetCollectionItemOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBackendSetsBackendSetCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+func (o GetBackendSetsBackendSetCollectionItemOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBackendSetsBackendSetCollectionItem) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // IP version associated with the backend set.
-func (o GetBackendSetsBackendSetCollectionItemOutput) IpVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBackendSetsBackendSetCollectionItem) string { return v.IpVersion }).(pulumi.StringOutput)
+func (o GetBackendSetsBackendSetCollectionItemOutput) IpVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBackendSetsBackendSetCollectionItem) *string { return v.IpVersion }).(pulumi.StringPtrOutput)
 }
 
 // If this parameter is enabled, then the network load balancer preserves the source IP of the packet when it is forwarded to backends. Backends see the original source IP. If the isPreserveSourceDestination parameter is enabled for the network load balancer resource, then this parameter cannot be disabled. The value is true by default.
-func (o GetBackendSetsBackendSetCollectionItemOutput) IsPreserveSource() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetBackendSetsBackendSetCollectionItem) bool { return v.IsPreserveSource }).(pulumi.BoolOutput)
+func (o GetBackendSetsBackendSetCollectionItemOutput) IsPreserveSource() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetBackendSetsBackendSetCollectionItem) *bool { return v.IsPreserveSource }).(pulumi.BoolPtrOutput)
 }
 
 // A user-friendly name for the backend set that must be unique and cannot be changed.
-func (o GetBackendSetsBackendSetCollectionItemOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBackendSetsBackendSetCollectionItem) string { return v.Name }).(pulumi.StringOutput)
+func (o GetBackendSetsBackendSetCollectionItemOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBackendSetsBackendSetCollectionItem) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network load balancer to update.
-func (o GetBackendSetsBackendSetCollectionItemOutput) NetworkLoadBalancerId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBackendSetsBackendSetCollectionItem) string { return v.NetworkLoadBalancerId }).(pulumi.StringOutput)
+func (o GetBackendSetsBackendSetCollectionItemOutput) NetworkLoadBalancerId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBackendSetsBackendSetCollectionItem) *string { return v.NetworkLoadBalancerId }).(pulumi.StringPtrOutput)
 }
 
 // The network load balancer policy for the backend set.  Example: `FIVE_TUPLE`
-func (o GetBackendSetsBackendSetCollectionItemOutput) Policy() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBackendSetsBackendSetCollectionItem) string { return v.Policy }).(pulumi.StringOutput)
+func (o GetBackendSetsBackendSetCollectionItemOutput) Policy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBackendSetsBackendSetCollectionItem) *string { return v.Policy }).(pulumi.StringPtrOutput)
 }
 
 type GetBackendSetsBackendSetCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -2315,12 +2032,6 @@ func (o GetBackendSetsBackendSetCollectionItemArrayOutput) ToGetBackendSetsBacke
 	return o
 }
 
-func (o GetBackendSetsBackendSetCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetBackendSetsBackendSetCollectionItem] {
-	return pulumix.Output[[]GetBackendSetsBackendSetCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetBackendSetsBackendSetCollectionItemArrayOutput) Index(i pulumi.IntInput) GetBackendSetsBackendSetCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBackendSetsBackendSetCollectionItem {
 		return vs[0].([]GetBackendSetsBackendSetCollectionItem)[vs[1].(int)]
@@ -2329,21 +2040,21 @@ func (o GetBackendSetsBackendSetCollectionItemArrayOutput) Index(i pulumi.IntInp
 
 type GetBackendSetsBackendSetCollectionItemBackend struct {
 	// The IP address of the backend server. Example: `10.0.0.3`
-	IpAddress string `pulumi:"ipAddress"`
+	IpAddress *string `pulumi:"ipAddress"`
 	// Whether the network load balancer should treat this server as a backup unit. If `true`, then the network load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as "isBackup" fail the health check policy.  Example: `false`
-	IsBackup bool `pulumi:"isBackup"`
+	IsBackup *bool `pulumi:"isBackup"`
 	// Whether the network load balancer should drain this server. Servers marked "isDrain" receive no  incoming traffic.  Example: `false`
-	IsDrain bool `pulumi:"isDrain"`
+	IsDrain *bool `pulumi:"isDrain"`
 	// Whether the network load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
-	IsOffline bool `pulumi:"isOffline"`
+	IsOffline *bool `pulumi:"isOffline"`
 	// A user-friendly name for the backend set that must be unique and cannot be changed.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// The backend server port against which to run the health check. If the port is not specified, then the network load balancer uses the port information from the `Backend` object. The port must be specified if the backend port is 0.  Example: `8080`
-	Port int `pulumi:"port"`
+	Port *int `pulumi:"port"`
 	// The IP OCID/Instance OCID associated with the backend server. Example: `ocid1.privateip..oc1.<var>&lt;unique_ID&gt;</var>`
-	TargetId string `pulumi:"targetId"`
+	TargetId *string `pulumi:"targetId"`
 	// The network load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives three times the number of new connections as a server weighted '1'. For more information about load balancing policies, see [How Network Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm).  Example: `3`
-	Weight int `pulumi:"weight"`
+	Weight *int `pulumi:"weight"`
 }
 
 // GetBackendSetsBackendSetCollectionItemBackendInput is an input type that accepts GetBackendSetsBackendSetCollectionItemBackendArgs and GetBackendSetsBackendSetCollectionItemBackendOutput values.
@@ -2359,21 +2070,21 @@ type GetBackendSetsBackendSetCollectionItemBackendInput interface {
 
 type GetBackendSetsBackendSetCollectionItemBackendArgs struct {
 	// The IP address of the backend server. Example: `10.0.0.3`
-	IpAddress pulumi.StringInput `pulumi:"ipAddress"`
+	IpAddress pulumi.StringPtrInput `pulumi:"ipAddress"`
 	// Whether the network load balancer should treat this server as a backup unit. If `true`, then the network load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as "isBackup" fail the health check policy.  Example: `false`
-	IsBackup pulumi.BoolInput `pulumi:"isBackup"`
+	IsBackup pulumi.BoolPtrInput `pulumi:"isBackup"`
 	// Whether the network load balancer should drain this server. Servers marked "isDrain" receive no  incoming traffic.  Example: `false`
-	IsDrain pulumi.BoolInput `pulumi:"isDrain"`
+	IsDrain pulumi.BoolPtrInput `pulumi:"isDrain"`
 	// Whether the network load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
-	IsOffline pulumi.BoolInput `pulumi:"isOffline"`
+	IsOffline pulumi.BoolPtrInput `pulumi:"isOffline"`
 	// A user-friendly name for the backend set that must be unique and cannot be changed.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// The backend server port against which to run the health check. If the port is not specified, then the network load balancer uses the port information from the `Backend` object. The port must be specified if the backend port is 0.  Example: `8080`
-	Port pulumi.IntInput `pulumi:"port"`
+	Port pulumi.IntPtrInput `pulumi:"port"`
 	// The IP OCID/Instance OCID associated with the backend server. Example: `ocid1.privateip..oc1.<var>&lt;unique_ID&gt;</var>`
-	TargetId pulumi.StringInput `pulumi:"targetId"`
+	TargetId pulumi.StringPtrInput `pulumi:"targetId"`
 	// The network load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives three times the number of new connections as a server weighted '1'. For more information about load balancing policies, see [How Network Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm).  Example: `3`
-	Weight pulumi.IntInput `pulumi:"weight"`
+	Weight pulumi.IntPtrInput `pulumi:"weight"`
 }
 
 func (GetBackendSetsBackendSetCollectionItemBackendArgs) ElementType() reflect.Type {
@@ -2386,12 +2097,6 @@ func (i GetBackendSetsBackendSetCollectionItemBackendArgs) ToGetBackendSetsBacke
 
 func (i GetBackendSetsBackendSetCollectionItemBackendArgs) ToGetBackendSetsBackendSetCollectionItemBackendOutputWithContext(ctx context.Context) GetBackendSetsBackendSetCollectionItemBackendOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetBackendSetsBackendSetCollectionItemBackendOutput)
-}
-
-func (i GetBackendSetsBackendSetCollectionItemBackendArgs) ToOutput(ctx context.Context) pulumix.Output[GetBackendSetsBackendSetCollectionItemBackend] {
-	return pulumix.Output[GetBackendSetsBackendSetCollectionItemBackend]{
-		OutputState: i.ToGetBackendSetsBackendSetCollectionItemBackendOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetBackendSetsBackendSetCollectionItemBackendArrayInput is an input type that accepts GetBackendSetsBackendSetCollectionItemBackendArray and GetBackendSetsBackendSetCollectionItemBackendArrayOutput values.
@@ -2419,12 +2124,6 @@ func (i GetBackendSetsBackendSetCollectionItemBackendArray) ToGetBackendSetsBack
 	return pulumi.ToOutputWithContext(ctx, i).(GetBackendSetsBackendSetCollectionItemBackendArrayOutput)
 }
 
-func (i GetBackendSetsBackendSetCollectionItemBackendArray) ToOutput(ctx context.Context) pulumix.Output[[]GetBackendSetsBackendSetCollectionItemBackend] {
-	return pulumix.Output[[]GetBackendSetsBackendSetCollectionItemBackend]{
-		OutputState: i.ToGetBackendSetsBackendSetCollectionItemBackendArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetBackendSetsBackendSetCollectionItemBackendOutput struct{ *pulumi.OutputState }
 
 func (GetBackendSetsBackendSetCollectionItemBackendOutput) ElementType() reflect.Type {
@@ -2439,50 +2138,44 @@ func (o GetBackendSetsBackendSetCollectionItemBackendOutput) ToGetBackendSetsBac
 	return o
 }
 
-func (o GetBackendSetsBackendSetCollectionItemBackendOutput) ToOutput(ctx context.Context) pulumix.Output[GetBackendSetsBackendSetCollectionItemBackend] {
-	return pulumix.Output[GetBackendSetsBackendSetCollectionItemBackend]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The IP address of the backend server. Example: `10.0.0.3`
-func (o GetBackendSetsBackendSetCollectionItemBackendOutput) IpAddress() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBackendSetsBackendSetCollectionItemBackend) string { return v.IpAddress }).(pulumi.StringOutput)
+func (o GetBackendSetsBackendSetCollectionItemBackendOutput) IpAddress() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBackendSetsBackendSetCollectionItemBackend) *string { return v.IpAddress }).(pulumi.StringPtrOutput)
 }
 
 // Whether the network load balancer should treat this server as a backup unit. If `true`, then the network load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as "isBackup" fail the health check policy.  Example: `false`
-func (o GetBackendSetsBackendSetCollectionItemBackendOutput) IsBackup() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetBackendSetsBackendSetCollectionItemBackend) bool { return v.IsBackup }).(pulumi.BoolOutput)
+func (o GetBackendSetsBackendSetCollectionItemBackendOutput) IsBackup() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetBackendSetsBackendSetCollectionItemBackend) *bool { return v.IsBackup }).(pulumi.BoolPtrOutput)
 }
 
 // Whether the network load balancer should drain this server. Servers marked "isDrain" receive no  incoming traffic.  Example: `false`
-func (o GetBackendSetsBackendSetCollectionItemBackendOutput) IsDrain() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetBackendSetsBackendSetCollectionItemBackend) bool { return v.IsDrain }).(pulumi.BoolOutput)
+func (o GetBackendSetsBackendSetCollectionItemBackendOutput) IsDrain() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetBackendSetsBackendSetCollectionItemBackend) *bool { return v.IsDrain }).(pulumi.BoolPtrOutput)
 }
 
 // Whether the network load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
-func (o GetBackendSetsBackendSetCollectionItemBackendOutput) IsOffline() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetBackendSetsBackendSetCollectionItemBackend) bool { return v.IsOffline }).(pulumi.BoolOutput)
+func (o GetBackendSetsBackendSetCollectionItemBackendOutput) IsOffline() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetBackendSetsBackendSetCollectionItemBackend) *bool { return v.IsOffline }).(pulumi.BoolPtrOutput)
 }
 
 // A user-friendly name for the backend set that must be unique and cannot be changed.
-func (o GetBackendSetsBackendSetCollectionItemBackendOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBackendSetsBackendSetCollectionItemBackend) string { return v.Name }).(pulumi.StringOutput)
+func (o GetBackendSetsBackendSetCollectionItemBackendOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBackendSetsBackendSetCollectionItemBackend) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // The backend server port against which to run the health check. If the port is not specified, then the network load balancer uses the port information from the `Backend` object. The port must be specified if the backend port is 0.  Example: `8080`
-func (o GetBackendSetsBackendSetCollectionItemBackendOutput) Port() pulumi.IntOutput {
-	return o.ApplyT(func(v GetBackendSetsBackendSetCollectionItemBackend) int { return v.Port }).(pulumi.IntOutput)
+func (o GetBackendSetsBackendSetCollectionItemBackendOutput) Port() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetBackendSetsBackendSetCollectionItemBackend) *int { return v.Port }).(pulumi.IntPtrOutput)
 }
 
 // The IP OCID/Instance OCID associated with the backend server. Example: `ocid1.privateip..oc1.<var>&lt;unique_ID&gt;</var>`
-func (o GetBackendSetsBackendSetCollectionItemBackendOutput) TargetId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBackendSetsBackendSetCollectionItemBackend) string { return v.TargetId }).(pulumi.StringOutput)
+func (o GetBackendSetsBackendSetCollectionItemBackendOutput) TargetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBackendSetsBackendSetCollectionItemBackend) *string { return v.TargetId }).(pulumi.StringPtrOutput)
 }
 
 // The network load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives three times the number of new connections as a server weighted '1'. For more information about load balancing policies, see [How Network Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm).  Example: `3`
-func (o GetBackendSetsBackendSetCollectionItemBackendOutput) Weight() pulumi.IntOutput {
-	return o.ApplyT(func(v GetBackendSetsBackendSetCollectionItemBackend) int { return v.Weight }).(pulumi.IntOutput)
+func (o GetBackendSetsBackendSetCollectionItemBackendOutput) Weight() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetBackendSetsBackendSetCollectionItemBackend) *int { return v.Weight }).(pulumi.IntPtrOutput)
 }
 
 type GetBackendSetsBackendSetCollectionItemBackendArrayOutput struct{ *pulumi.OutputState }
@@ -2499,12 +2192,6 @@ func (o GetBackendSetsBackendSetCollectionItemBackendArrayOutput) ToGetBackendSe
 	return o
 }
 
-func (o GetBackendSetsBackendSetCollectionItemBackendArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetBackendSetsBackendSetCollectionItemBackend] {
-	return pulumix.Output[[]GetBackendSetsBackendSetCollectionItemBackend]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetBackendSetsBackendSetCollectionItemBackendArrayOutput) Index(i pulumi.IntInput) GetBackendSetsBackendSetCollectionItemBackendOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBackendSetsBackendSetCollectionItemBackend {
 		return vs[0].([]GetBackendSetsBackendSetCollectionItemBackend)[vs[1].(int)]
@@ -2513,25 +2200,25 @@ func (o GetBackendSetsBackendSetCollectionItemBackendArrayOutput) Index(i pulumi
 
 type GetBackendSetsBackendSetCollectionItemHealthChecker struct {
 	// The interval between health checks, in milliseconds. The default value is 10000 (10 seconds).  Example: `10000`
-	IntervalInMillis int `pulumi:"intervalInMillis"`
+	IntervalInMillis *int `pulumi:"intervalInMillis"`
 	// The backend server port against which to run the health check. If the port is not specified, then the network load balancer uses the port information from the `Backend` object. The port must be specified if the backend port is 0.  Example: `8080`
-	Port int `pulumi:"port"`
+	Port *int `pulumi:"port"`
 	// The protocol the health check must use; either HTTP or HTTPS, or UDP or TCP.  Example: `HTTP`
-	Protocol string `pulumi:"protocol"`
+	Protocol *string `pulumi:"protocol"`
 	// Base64 encoded pattern to be sent as UDP or TCP health check probe.
-	RequestData string `pulumi:"requestData"`
+	RequestData *string `pulumi:"requestData"`
 	// A regular expression for parsing the response body from the backend server.  Example: `^((?!false).|\s)*$`
-	ResponseBodyRegex string `pulumi:"responseBodyRegex"`
+	ResponseBodyRegex *string `pulumi:"responseBodyRegex"`
 	// Base64 encoded pattern to be validated as UDP or TCP health check probe response.
-	ResponseData string `pulumi:"responseData"`
+	ResponseData *string `pulumi:"responseData"`
 	// The number of retries to attempt before a backend server is considered "unhealthy". This number also applies when recovering a server to the "healthy" state. The default value is 3.  Example: `3`
-	Retries int `pulumi:"retries"`
+	Retries *int `pulumi:"retries"`
 	// The status code a healthy backend server should return. If you configure the health check policy to use the HTTP protocol, then you can use common HTTP status codes such as "200".  Example: `200`
-	ReturnCode int `pulumi:"returnCode"`
+	ReturnCode *int `pulumi:"returnCode"`
 	// The maximum time, in milliseconds, to wait for a reply to a health check. A health check is successful only if a reply returns within this timeout period. The default value is 3000 (3 seconds).  Example: `3000`
-	TimeoutInMillis int `pulumi:"timeoutInMillis"`
+	TimeoutInMillis *int `pulumi:"timeoutInMillis"`
 	// The path against which to run the health check.  Example: `/healthcheck`
-	UrlPath string `pulumi:"urlPath"`
+	UrlPath *string `pulumi:"urlPath"`
 }
 
 // GetBackendSetsBackendSetCollectionItemHealthCheckerInput is an input type that accepts GetBackendSetsBackendSetCollectionItemHealthCheckerArgs and GetBackendSetsBackendSetCollectionItemHealthCheckerOutput values.
@@ -2547,25 +2234,25 @@ type GetBackendSetsBackendSetCollectionItemHealthCheckerInput interface {
 
 type GetBackendSetsBackendSetCollectionItemHealthCheckerArgs struct {
 	// The interval between health checks, in milliseconds. The default value is 10000 (10 seconds).  Example: `10000`
-	IntervalInMillis pulumi.IntInput `pulumi:"intervalInMillis"`
+	IntervalInMillis pulumi.IntPtrInput `pulumi:"intervalInMillis"`
 	// The backend server port against which to run the health check. If the port is not specified, then the network load balancer uses the port information from the `Backend` object. The port must be specified if the backend port is 0.  Example: `8080`
-	Port pulumi.IntInput `pulumi:"port"`
+	Port pulumi.IntPtrInput `pulumi:"port"`
 	// The protocol the health check must use; either HTTP or HTTPS, or UDP or TCP.  Example: `HTTP`
-	Protocol pulumi.StringInput `pulumi:"protocol"`
+	Protocol pulumi.StringPtrInput `pulumi:"protocol"`
 	// Base64 encoded pattern to be sent as UDP or TCP health check probe.
-	RequestData pulumi.StringInput `pulumi:"requestData"`
+	RequestData pulumi.StringPtrInput `pulumi:"requestData"`
 	// A regular expression for parsing the response body from the backend server.  Example: `^((?!false).|\s)*$`
-	ResponseBodyRegex pulumi.StringInput `pulumi:"responseBodyRegex"`
+	ResponseBodyRegex pulumi.StringPtrInput `pulumi:"responseBodyRegex"`
 	// Base64 encoded pattern to be validated as UDP or TCP health check probe response.
-	ResponseData pulumi.StringInput `pulumi:"responseData"`
+	ResponseData pulumi.StringPtrInput `pulumi:"responseData"`
 	// The number of retries to attempt before a backend server is considered "unhealthy". This number also applies when recovering a server to the "healthy" state. The default value is 3.  Example: `3`
-	Retries pulumi.IntInput `pulumi:"retries"`
+	Retries pulumi.IntPtrInput `pulumi:"retries"`
 	// The status code a healthy backend server should return. If you configure the health check policy to use the HTTP protocol, then you can use common HTTP status codes such as "200".  Example: `200`
-	ReturnCode pulumi.IntInput `pulumi:"returnCode"`
+	ReturnCode pulumi.IntPtrInput `pulumi:"returnCode"`
 	// The maximum time, in milliseconds, to wait for a reply to a health check. A health check is successful only if a reply returns within this timeout period. The default value is 3000 (3 seconds).  Example: `3000`
-	TimeoutInMillis pulumi.IntInput `pulumi:"timeoutInMillis"`
+	TimeoutInMillis pulumi.IntPtrInput `pulumi:"timeoutInMillis"`
 	// The path against which to run the health check.  Example: `/healthcheck`
-	UrlPath pulumi.StringInput `pulumi:"urlPath"`
+	UrlPath pulumi.StringPtrInput `pulumi:"urlPath"`
 }
 
 func (GetBackendSetsBackendSetCollectionItemHealthCheckerArgs) ElementType() reflect.Type {
@@ -2578,12 +2265,6 @@ func (i GetBackendSetsBackendSetCollectionItemHealthCheckerArgs) ToGetBackendSet
 
 func (i GetBackendSetsBackendSetCollectionItemHealthCheckerArgs) ToGetBackendSetsBackendSetCollectionItemHealthCheckerOutputWithContext(ctx context.Context) GetBackendSetsBackendSetCollectionItemHealthCheckerOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetBackendSetsBackendSetCollectionItemHealthCheckerOutput)
-}
-
-func (i GetBackendSetsBackendSetCollectionItemHealthCheckerArgs) ToOutput(ctx context.Context) pulumix.Output[GetBackendSetsBackendSetCollectionItemHealthChecker] {
-	return pulumix.Output[GetBackendSetsBackendSetCollectionItemHealthChecker]{
-		OutputState: i.ToGetBackendSetsBackendSetCollectionItemHealthCheckerOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetBackendSetsBackendSetCollectionItemHealthCheckerArrayInput is an input type that accepts GetBackendSetsBackendSetCollectionItemHealthCheckerArray and GetBackendSetsBackendSetCollectionItemHealthCheckerArrayOutput values.
@@ -2611,12 +2292,6 @@ func (i GetBackendSetsBackendSetCollectionItemHealthCheckerArray) ToGetBackendSe
 	return pulumi.ToOutputWithContext(ctx, i).(GetBackendSetsBackendSetCollectionItemHealthCheckerArrayOutput)
 }
 
-func (i GetBackendSetsBackendSetCollectionItemHealthCheckerArray) ToOutput(ctx context.Context) pulumix.Output[[]GetBackendSetsBackendSetCollectionItemHealthChecker] {
-	return pulumix.Output[[]GetBackendSetsBackendSetCollectionItemHealthChecker]{
-		OutputState: i.ToGetBackendSetsBackendSetCollectionItemHealthCheckerArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetBackendSetsBackendSetCollectionItemHealthCheckerOutput struct{ *pulumi.OutputState }
 
 func (GetBackendSetsBackendSetCollectionItemHealthCheckerOutput) ElementType() reflect.Type {
@@ -2631,60 +2306,54 @@ func (o GetBackendSetsBackendSetCollectionItemHealthCheckerOutput) ToGetBackendS
 	return o
 }
 
-func (o GetBackendSetsBackendSetCollectionItemHealthCheckerOutput) ToOutput(ctx context.Context) pulumix.Output[GetBackendSetsBackendSetCollectionItemHealthChecker] {
-	return pulumix.Output[GetBackendSetsBackendSetCollectionItemHealthChecker]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The interval between health checks, in milliseconds. The default value is 10000 (10 seconds).  Example: `10000`
-func (o GetBackendSetsBackendSetCollectionItemHealthCheckerOutput) IntervalInMillis() pulumi.IntOutput {
-	return o.ApplyT(func(v GetBackendSetsBackendSetCollectionItemHealthChecker) int { return v.IntervalInMillis }).(pulumi.IntOutput)
+func (o GetBackendSetsBackendSetCollectionItemHealthCheckerOutput) IntervalInMillis() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetBackendSetsBackendSetCollectionItemHealthChecker) *int { return v.IntervalInMillis }).(pulumi.IntPtrOutput)
 }
 
 // The backend server port against which to run the health check. If the port is not specified, then the network load balancer uses the port information from the `Backend` object. The port must be specified if the backend port is 0.  Example: `8080`
-func (o GetBackendSetsBackendSetCollectionItemHealthCheckerOutput) Port() pulumi.IntOutput {
-	return o.ApplyT(func(v GetBackendSetsBackendSetCollectionItemHealthChecker) int { return v.Port }).(pulumi.IntOutput)
+func (o GetBackendSetsBackendSetCollectionItemHealthCheckerOutput) Port() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetBackendSetsBackendSetCollectionItemHealthChecker) *int { return v.Port }).(pulumi.IntPtrOutput)
 }
 
 // The protocol the health check must use; either HTTP or HTTPS, or UDP or TCP.  Example: `HTTP`
-func (o GetBackendSetsBackendSetCollectionItemHealthCheckerOutput) Protocol() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBackendSetsBackendSetCollectionItemHealthChecker) string { return v.Protocol }).(pulumi.StringOutput)
+func (o GetBackendSetsBackendSetCollectionItemHealthCheckerOutput) Protocol() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBackendSetsBackendSetCollectionItemHealthChecker) *string { return v.Protocol }).(pulumi.StringPtrOutput)
 }
 
 // Base64 encoded pattern to be sent as UDP or TCP health check probe.
-func (o GetBackendSetsBackendSetCollectionItemHealthCheckerOutput) RequestData() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBackendSetsBackendSetCollectionItemHealthChecker) string { return v.RequestData }).(pulumi.StringOutput)
+func (o GetBackendSetsBackendSetCollectionItemHealthCheckerOutput) RequestData() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBackendSetsBackendSetCollectionItemHealthChecker) *string { return v.RequestData }).(pulumi.StringPtrOutput)
 }
 
 // A regular expression for parsing the response body from the backend server.  Example: `^((?!false).|\s)*$`
-func (o GetBackendSetsBackendSetCollectionItemHealthCheckerOutput) ResponseBodyRegex() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBackendSetsBackendSetCollectionItemHealthChecker) string { return v.ResponseBodyRegex }).(pulumi.StringOutput)
+func (o GetBackendSetsBackendSetCollectionItemHealthCheckerOutput) ResponseBodyRegex() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBackendSetsBackendSetCollectionItemHealthChecker) *string { return v.ResponseBodyRegex }).(pulumi.StringPtrOutput)
 }
 
 // Base64 encoded pattern to be validated as UDP or TCP health check probe response.
-func (o GetBackendSetsBackendSetCollectionItemHealthCheckerOutput) ResponseData() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBackendSetsBackendSetCollectionItemHealthChecker) string { return v.ResponseData }).(pulumi.StringOutput)
+func (o GetBackendSetsBackendSetCollectionItemHealthCheckerOutput) ResponseData() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBackendSetsBackendSetCollectionItemHealthChecker) *string { return v.ResponseData }).(pulumi.StringPtrOutput)
 }
 
 // The number of retries to attempt before a backend server is considered "unhealthy". This number also applies when recovering a server to the "healthy" state. The default value is 3.  Example: `3`
-func (o GetBackendSetsBackendSetCollectionItemHealthCheckerOutput) Retries() pulumi.IntOutput {
-	return o.ApplyT(func(v GetBackendSetsBackendSetCollectionItemHealthChecker) int { return v.Retries }).(pulumi.IntOutput)
+func (o GetBackendSetsBackendSetCollectionItemHealthCheckerOutput) Retries() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetBackendSetsBackendSetCollectionItemHealthChecker) *int { return v.Retries }).(pulumi.IntPtrOutput)
 }
 
 // The status code a healthy backend server should return. If you configure the health check policy to use the HTTP protocol, then you can use common HTTP status codes such as "200".  Example: `200`
-func (o GetBackendSetsBackendSetCollectionItemHealthCheckerOutput) ReturnCode() pulumi.IntOutput {
-	return o.ApplyT(func(v GetBackendSetsBackendSetCollectionItemHealthChecker) int { return v.ReturnCode }).(pulumi.IntOutput)
+func (o GetBackendSetsBackendSetCollectionItemHealthCheckerOutput) ReturnCode() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetBackendSetsBackendSetCollectionItemHealthChecker) *int { return v.ReturnCode }).(pulumi.IntPtrOutput)
 }
 
 // The maximum time, in milliseconds, to wait for a reply to a health check. A health check is successful only if a reply returns within this timeout period. The default value is 3000 (3 seconds).  Example: `3000`
-func (o GetBackendSetsBackendSetCollectionItemHealthCheckerOutput) TimeoutInMillis() pulumi.IntOutput {
-	return o.ApplyT(func(v GetBackendSetsBackendSetCollectionItemHealthChecker) int { return v.TimeoutInMillis }).(pulumi.IntOutput)
+func (o GetBackendSetsBackendSetCollectionItemHealthCheckerOutput) TimeoutInMillis() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetBackendSetsBackendSetCollectionItemHealthChecker) *int { return v.TimeoutInMillis }).(pulumi.IntPtrOutput)
 }
 
 // The path against which to run the health check.  Example: `/healthcheck`
-func (o GetBackendSetsBackendSetCollectionItemHealthCheckerOutput) UrlPath() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBackendSetsBackendSetCollectionItemHealthChecker) string { return v.UrlPath }).(pulumi.StringOutput)
+func (o GetBackendSetsBackendSetCollectionItemHealthCheckerOutput) UrlPath() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBackendSetsBackendSetCollectionItemHealthChecker) *string { return v.UrlPath }).(pulumi.StringPtrOutput)
 }
 
 type GetBackendSetsBackendSetCollectionItemHealthCheckerArrayOutput struct{ *pulumi.OutputState }
@@ -2699,12 +2368,6 @@ func (o GetBackendSetsBackendSetCollectionItemHealthCheckerArrayOutput) ToGetBac
 
 func (o GetBackendSetsBackendSetCollectionItemHealthCheckerArrayOutput) ToGetBackendSetsBackendSetCollectionItemHealthCheckerArrayOutputWithContext(ctx context.Context) GetBackendSetsBackendSetCollectionItemHealthCheckerArrayOutput {
 	return o
-}
-
-func (o GetBackendSetsBackendSetCollectionItemHealthCheckerArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetBackendSetsBackendSetCollectionItemHealthChecker] {
-	return pulumix.Output[[]GetBackendSetsBackendSetCollectionItemHealthChecker]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetBackendSetsBackendSetCollectionItemHealthCheckerArrayOutput) Index(i pulumi.IntInput) GetBackendSetsBackendSetCollectionItemHealthCheckerOutput {
@@ -2750,12 +2413,6 @@ func (i GetBackendSetsFilterArgs) ToGetBackendSetsFilterOutputWithContext(ctx co
 	return pulumi.ToOutputWithContext(ctx, i).(GetBackendSetsFilterOutput)
 }
 
-func (i GetBackendSetsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetBackendSetsFilter] {
-	return pulumix.Output[GetBackendSetsFilter]{
-		OutputState: i.ToGetBackendSetsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetBackendSetsFilterArrayInput is an input type that accepts GetBackendSetsFilterArray and GetBackendSetsFilterArrayOutput values.
 // You can construct a concrete instance of `GetBackendSetsFilterArrayInput` via:
 //
@@ -2781,12 +2438,6 @@ func (i GetBackendSetsFilterArray) ToGetBackendSetsFilterArrayOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(GetBackendSetsFilterArrayOutput)
 }
 
-func (i GetBackendSetsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetBackendSetsFilter] {
-	return pulumix.Output[[]GetBackendSetsFilter]{
-		OutputState: i.ToGetBackendSetsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetBackendSetsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetBackendSetsFilterOutput) ElementType() reflect.Type {
@@ -2799,12 +2450,6 @@ func (o GetBackendSetsFilterOutput) ToGetBackendSetsFilterOutput() GetBackendSet
 
 func (o GetBackendSetsFilterOutput) ToGetBackendSetsFilterOutputWithContext(ctx context.Context) GetBackendSetsFilterOutput {
 	return o
-}
-
-func (o GetBackendSetsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetBackendSetsFilter] {
-	return pulumix.Output[GetBackendSetsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A user-friendly name for the backend set that must be unique and cannot be changed.
@@ -2832,12 +2477,6 @@ func (o GetBackendSetsFilterArrayOutput) ToGetBackendSetsFilterArrayOutput() Get
 
 func (o GetBackendSetsFilterArrayOutput) ToGetBackendSetsFilterArrayOutputWithContext(ctx context.Context) GetBackendSetsFilterArrayOutput {
 	return o
-}
-
-func (o GetBackendSetsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetBackendSetsFilter] {
-	return pulumix.Output[[]GetBackendSetsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetBackendSetsFilterArrayOutput) Index(i pulumi.IntInput) GetBackendSetsFilterOutput {
@@ -2877,12 +2516,6 @@ func (i GetBackendsBackendCollectionArgs) ToGetBackendsBackendCollectionOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetBackendsBackendCollectionOutput)
 }
 
-func (i GetBackendsBackendCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetBackendsBackendCollection] {
-	return pulumix.Output[GetBackendsBackendCollection]{
-		OutputState: i.ToGetBackendsBackendCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetBackendsBackendCollectionArrayInput is an input type that accepts GetBackendsBackendCollectionArray and GetBackendsBackendCollectionArrayOutput values.
 // You can construct a concrete instance of `GetBackendsBackendCollectionArrayInput` via:
 //
@@ -2908,12 +2541,6 @@ func (i GetBackendsBackendCollectionArray) ToGetBackendsBackendCollectionArrayOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetBackendsBackendCollectionArrayOutput)
 }
 
-func (i GetBackendsBackendCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetBackendsBackendCollection] {
-	return pulumix.Output[[]GetBackendsBackendCollection]{
-		OutputState: i.ToGetBackendsBackendCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetBackendsBackendCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetBackendsBackendCollectionOutput) ElementType() reflect.Type {
@@ -2926,12 +2553,6 @@ func (o GetBackendsBackendCollectionOutput) ToGetBackendsBackendCollectionOutput
 
 func (o GetBackendsBackendCollectionOutput) ToGetBackendsBackendCollectionOutputWithContext(ctx context.Context) GetBackendsBackendCollectionOutput {
 	return o
-}
-
-func (o GetBackendsBackendCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetBackendsBackendCollection] {
-	return pulumix.Output[GetBackendsBackendCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetBackendsBackendCollectionOutput) Items() GetBackendsBackendCollectionItemArrayOutput {
@@ -2952,12 +2573,6 @@ func (o GetBackendsBackendCollectionArrayOutput) ToGetBackendsBackendCollectionA
 	return o
 }
 
-func (o GetBackendsBackendCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetBackendsBackendCollection] {
-	return pulumix.Output[[]GetBackendsBackendCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetBackendsBackendCollectionArrayOutput) Index(i pulumi.IntInput) GetBackendsBackendCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBackendsBackendCollection {
 		return vs[0].([]GetBackendsBackendCollection)[vs[1].(int)]
@@ -2966,26 +2581,26 @@ func (o GetBackendsBackendCollectionArrayOutput) Index(i pulumi.IntInput) GetBac
 
 type GetBackendsBackendCollectionItem struct {
 	// The name of the backend set associated with the backend servers.  Example: `exampleBackendSet`
-	BackendSetName string `pulumi:"backendSetName"`
-	Id             string `pulumi:"id"`
+	BackendSetName *string `pulumi:"backendSetName"`
+	Id             *string `pulumi:"id"`
 	// The IP address of the backend server. Example: `10.0.0.3`
-	IpAddress string `pulumi:"ipAddress"`
+	IpAddress *string `pulumi:"ipAddress"`
 	// Whether the network load balancer should treat this server as a backup unit. If `true`, then the network load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as "isBackup" fail the health check policy.  Example: `false`
-	IsBackup bool `pulumi:"isBackup"`
+	IsBackup *bool `pulumi:"isBackup"`
 	// Whether the network load balancer should drain this server. Servers marked "isDrain" receive no incoming traffic.  Example: `false`
-	IsDrain bool `pulumi:"isDrain"`
+	IsDrain *bool `pulumi:"isDrain"`
 	// Whether the network load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
-	IsOffline bool `pulumi:"isOffline"`
+	IsOffline *bool `pulumi:"isOffline"`
 	// A read-only field showing the IP address/IP OCID and port that uniquely identify this backend server in the backend set.  Example: `10.0.0.3:8080`, or `ocid1.privateip..oc1.<var>&lt;unique_ID&gt;</var>:443` or `10.0.0.3:0`
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network load balancer to update.
-	NetworkLoadBalancerId string `pulumi:"networkLoadBalancerId"`
+	NetworkLoadBalancerId *string `pulumi:"networkLoadBalancerId"`
 	// The communication port for the backend server.  Example: `8080`
-	Port int `pulumi:"port"`
+	Port *int `pulumi:"port"`
 	// The IP OCID/Instance OCID associated with the backend server. Example: `ocid1.privateip..oc1.<var>&lt;unique_ID&gt;</var>`
-	TargetId string `pulumi:"targetId"`
+	TargetId *string `pulumi:"targetId"`
 	// The network load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives three times the number of new connections as a server weighted '1'. For more information about load balancing policies, see [How Network Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm).  Example: `3`
-	Weight int `pulumi:"weight"`
+	Weight *int `pulumi:"weight"`
 }
 
 // GetBackendsBackendCollectionItemInput is an input type that accepts GetBackendsBackendCollectionItemArgs and GetBackendsBackendCollectionItemOutput values.
@@ -3001,26 +2616,26 @@ type GetBackendsBackendCollectionItemInput interface {
 
 type GetBackendsBackendCollectionItemArgs struct {
 	// The name of the backend set associated with the backend servers.  Example: `exampleBackendSet`
-	BackendSetName pulumi.StringInput `pulumi:"backendSetName"`
-	Id             pulumi.StringInput `pulumi:"id"`
+	BackendSetName pulumi.StringPtrInput `pulumi:"backendSetName"`
+	Id             pulumi.StringPtrInput `pulumi:"id"`
 	// The IP address of the backend server. Example: `10.0.0.3`
-	IpAddress pulumi.StringInput `pulumi:"ipAddress"`
+	IpAddress pulumi.StringPtrInput `pulumi:"ipAddress"`
 	// Whether the network load balancer should treat this server as a backup unit. If `true`, then the network load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as "isBackup" fail the health check policy.  Example: `false`
-	IsBackup pulumi.BoolInput `pulumi:"isBackup"`
+	IsBackup pulumi.BoolPtrInput `pulumi:"isBackup"`
 	// Whether the network load balancer should drain this server. Servers marked "isDrain" receive no incoming traffic.  Example: `false`
-	IsDrain pulumi.BoolInput `pulumi:"isDrain"`
+	IsDrain pulumi.BoolPtrInput `pulumi:"isDrain"`
 	// Whether the network load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
-	IsOffline pulumi.BoolInput `pulumi:"isOffline"`
+	IsOffline pulumi.BoolPtrInput `pulumi:"isOffline"`
 	// A read-only field showing the IP address/IP OCID and port that uniquely identify this backend server in the backend set.  Example: `10.0.0.3:8080`, or `ocid1.privateip..oc1.<var>&lt;unique_ID&gt;</var>:443` or `10.0.0.3:0`
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network load balancer to update.
-	NetworkLoadBalancerId pulumi.StringInput `pulumi:"networkLoadBalancerId"`
+	NetworkLoadBalancerId pulumi.StringPtrInput `pulumi:"networkLoadBalancerId"`
 	// The communication port for the backend server.  Example: `8080`
-	Port pulumi.IntInput `pulumi:"port"`
+	Port pulumi.IntPtrInput `pulumi:"port"`
 	// The IP OCID/Instance OCID associated with the backend server. Example: `ocid1.privateip..oc1.<var>&lt;unique_ID&gt;</var>`
-	TargetId pulumi.StringInput `pulumi:"targetId"`
+	TargetId pulumi.StringPtrInput `pulumi:"targetId"`
 	// The network load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives three times the number of new connections as a server weighted '1'. For more information about load balancing policies, see [How Network Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm).  Example: `3`
-	Weight pulumi.IntInput `pulumi:"weight"`
+	Weight pulumi.IntPtrInput `pulumi:"weight"`
 }
 
 func (GetBackendsBackendCollectionItemArgs) ElementType() reflect.Type {
@@ -3033,12 +2648,6 @@ func (i GetBackendsBackendCollectionItemArgs) ToGetBackendsBackendCollectionItem
 
 func (i GetBackendsBackendCollectionItemArgs) ToGetBackendsBackendCollectionItemOutputWithContext(ctx context.Context) GetBackendsBackendCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetBackendsBackendCollectionItemOutput)
-}
-
-func (i GetBackendsBackendCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetBackendsBackendCollectionItem] {
-	return pulumix.Output[GetBackendsBackendCollectionItem]{
-		OutputState: i.ToGetBackendsBackendCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetBackendsBackendCollectionItemArrayInput is an input type that accepts GetBackendsBackendCollectionItemArray and GetBackendsBackendCollectionItemArrayOutput values.
@@ -3066,12 +2675,6 @@ func (i GetBackendsBackendCollectionItemArray) ToGetBackendsBackendCollectionIte
 	return pulumi.ToOutputWithContext(ctx, i).(GetBackendsBackendCollectionItemArrayOutput)
 }
 
-func (i GetBackendsBackendCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetBackendsBackendCollectionItem] {
-	return pulumix.Output[[]GetBackendsBackendCollectionItem]{
-		OutputState: i.ToGetBackendsBackendCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetBackendsBackendCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetBackendsBackendCollectionItemOutput) ElementType() reflect.Type {
@@ -3086,64 +2689,58 @@ func (o GetBackendsBackendCollectionItemOutput) ToGetBackendsBackendCollectionIt
 	return o
 }
 
-func (o GetBackendsBackendCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetBackendsBackendCollectionItem] {
-	return pulumix.Output[GetBackendsBackendCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The name of the backend set associated with the backend servers.  Example: `exampleBackendSet`
-func (o GetBackendsBackendCollectionItemOutput) BackendSetName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBackendsBackendCollectionItem) string { return v.BackendSetName }).(pulumi.StringOutput)
+func (o GetBackendsBackendCollectionItemOutput) BackendSetName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBackendsBackendCollectionItem) *string { return v.BackendSetName }).(pulumi.StringPtrOutput)
 }
 
-func (o GetBackendsBackendCollectionItemOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBackendsBackendCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+func (o GetBackendsBackendCollectionItemOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBackendsBackendCollectionItem) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The IP address of the backend server. Example: `10.0.0.3`
-func (o GetBackendsBackendCollectionItemOutput) IpAddress() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBackendsBackendCollectionItem) string { return v.IpAddress }).(pulumi.StringOutput)
+func (o GetBackendsBackendCollectionItemOutput) IpAddress() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBackendsBackendCollectionItem) *string { return v.IpAddress }).(pulumi.StringPtrOutput)
 }
 
 // Whether the network load balancer should treat this server as a backup unit. If `true`, then the network load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as "isBackup" fail the health check policy.  Example: `false`
-func (o GetBackendsBackendCollectionItemOutput) IsBackup() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetBackendsBackendCollectionItem) bool { return v.IsBackup }).(pulumi.BoolOutput)
+func (o GetBackendsBackendCollectionItemOutput) IsBackup() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetBackendsBackendCollectionItem) *bool { return v.IsBackup }).(pulumi.BoolPtrOutput)
 }
 
 // Whether the network load balancer should drain this server. Servers marked "isDrain" receive no incoming traffic.  Example: `false`
-func (o GetBackendsBackendCollectionItemOutput) IsDrain() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetBackendsBackendCollectionItem) bool { return v.IsDrain }).(pulumi.BoolOutput)
+func (o GetBackendsBackendCollectionItemOutput) IsDrain() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetBackendsBackendCollectionItem) *bool { return v.IsDrain }).(pulumi.BoolPtrOutput)
 }
 
 // Whether the network load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
-func (o GetBackendsBackendCollectionItemOutput) IsOffline() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetBackendsBackendCollectionItem) bool { return v.IsOffline }).(pulumi.BoolOutput)
+func (o GetBackendsBackendCollectionItemOutput) IsOffline() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetBackendsBackendCollectionItem) *bool { return v.IsOffline }).(pulumi.BoolPtrOutput)
 }
 
 // A read-only field showing the IP address/IP OCID and port that uniquely identify this backend server in the backend set.  Example: `10.0.0.3:8080`, or `ocid1.privateip..oc1.<var>&lt;unique_ID&gt;</var>:443` or `10.0.0.3:0`
-func (o GetBackendsBackendCollectionItemOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBackendsBackendCollectionItem) string { return v.Name }).(pulumi.StringOutput)
+func (o GetBackendsBackendCollectionItemOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBackendsBackendCollectionItem) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network load balancer to update.
-func (o GetBackendsBackendCollectionItemOutput) NetworkLoadBalancerId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBackendsBackendCollectionItem) string { return v.NetworkLoadBalancerId }).(pulumi.StringOutput)
+func (o GetBackendsBackendCollectionItemOutput) NetworkLoadBalancerId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBackendsBackendCollectionItem) *string { return v.NetworkLoadBalancerId }).(pulumi.StringPtrOutput)
 }
 
 // The communication port for the backend server.  Example: `8080`
-func (o GetBackendsBackendCollectionItemOutput) Port() pulumi.IntOutput {
-	return o.ApplyT(func(v GetBackendsBackendCollectionItem) int { return v.Port }).(pulumi.IntOutput)
+func (o GetBackendsBackendCollectionItemOutput) Port() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetBackendsBackendCollectionItem) *int { return v.Port }).(pulumi.IntPtrOutput)
 }
 
 // The IP OCID/Instance OCID associated with the backend server. Example: `ocid1.privateip..oc1.<var>&lt;unique_ID&gt;</var>`
-func (o GetBackendsBackendCollectionItemOutput) TargetId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBackendsBackendCollectionItem) string { return v.TargetId }).(pulumi.StringOutput)
+func (o GetBackendsBackendCollectionItemOutput) TargetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBackendsBackendCollectionItem) *string { return v.TargetId }).(pulumi.StringPtrOutput)
 }
 
 // The network load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives three times the number of new connections as a server weighted '1'. For more information about load balancing policies, see [How Network Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm).  Example: `3`
-func (o GetBackendsBackendCollectionItemOutput) Weight() pulumi.IntOutput {
-	return o.ApplyT(func(v GetBackendsBackendCollectionItem) int { return v.Weight }).(pulumi.IntOutput)
+func (o GetBackendsBackendCollectionItemOutput) Weight() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetBackendsBackendCollectionItem) *int { return v.Weight }).(pulumi.IntPtrOutput)
 }
 
 type GetBackendsBackendCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -3158,12 +2755,6 @@ func (o GetBackendsBackendCollectionItemArrayOutput) ToGetBackendsBackendCollect
 
 func (o GetBackendsBackendCollectionItemArrayOutput) ToGetBackendsBackendCollectionItemArrayOutputWithContext(ctx context.Context) GetBackendsBackendCollectionItemArrayOutput {
 	return o
-}
-
-func (o GetBackendsBackendCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetBackendsBackendCollectionItem] {
-	return pulumix.Output[[]GetBackendsBackendCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetBackendsBackendCollectionItemArrayOutput) Index(i pulumi.IntInput) GetBackendsBackendCollectionItemOutput {
@@ -3209,12 +2800,6 @@ func (i GetBackendsFilterArgs) ToGetBackendsFilterOutputWithContext(ctx context.
 	return pulumi.ToOutputWithContext(ctx, i).(GetBackendsFilterOutput)
 }
 
-func (i GetBackendsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetBackendsFilter] {
-	return pulumix.Output[GetBackendsFilter]{
-		OutputState: i.ToGetBackendsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetBackendsFilterArrayInput is an input type that accepts GetBackendsFilterArray and GetBackendsFilterArrayOutput values.
 // You can construct a concrete instance of `GetBackendsFilterArrayInput` via:
 //
@@ -3240,12 +2825,6 @@ func (i GetBackendsFilterArray) ToGetBackendsFilterArrayOutputWithContext(ctx co
 	return pulumi.ToOutputWithContext(ctx, i).(GetBackendsFilterArrayOutput)
 }
 
-func (i GetBackendsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetBackendsFilter] {
-	return pulumix.Output[[]GetBackendsFilter]{
-		OutputState: i.ToGetBackendsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetBackendsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetBackendsFilterOutput) ElementType() reflect.Type {
@@ -3258,12 +2837,6 @@ func (o GetBackendsFilterOutput) ToGetBackendsFilterOutput() GetBackendsFilterOu
 
 func (o GetBackendsFilterOutput) ToGetBackendsFilterOutputWithContext(ctx context.Context) GetBackendsFilterOutput {
 	return o
-}
-
-func (o GetBackendsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetBackendsFilter] {
-	return pulumix.Output[GetBackendsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A read-only field showing the IP address/IP OCID and port that uniquely identify this backend server in the backend set.  Example: `10.0.0.3:8080`, or `ocid1.privateip..oc1.<var>&lt;unique_ID&gt;</var>:443` or `10.0.0.3:0`
@@ -3291,12 +2864,6 @@ func (o GetBackendsFilterArrayOutput) ToGetBackendsFilterArrayOutput() GetBacken
 
 func (o GetBackendsFilterArrayOutput) ToGetBackendsFilterArrayOutputWithContext(ctx context.Context) GetBackendsFilterArrayOutput {
 	return o
-}
-
-func (o GetBackendsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetBackendsFilter] {
-	return pulumix.Output[[]GetBackendsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetBackendsFilterArrayOutput) Index(i pulumi.IntInput) GetBackendsFilterOutput {
@@ -3342,12 +2909,6 @@ func (i GetListenersFilterArgs) ToGetListenersFilterOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(GetListenersFilterOutput)
 }
 
-func (i GetListenersFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetListenersFilter] {
-	return pulumix.Output[GetListenersFilter]{
-		OutputState: i.ToGetListenersFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetListenersFilterArrayInput is an input type that accepts GetListenersFilterArray and GetListenersFilterArrayOutput values.
 // You can construct a concrete instance of `GetListenersFilterArrayInput` via:
 //
@@ -3373,12 +2934,6 @@ func (i GetListenersFilterArray) ToGetListenersFilterArrayOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(GetListenersFilterArrayOutput)
 }
 
-func (i GetListenersFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetListenersFilter] {
-	return pulumix.Output[[]GetListenersFilter]{
-		OutputState: i.ToGetListenersFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetListenersFilterOutput struct{ *pulumi.OutputState }
 
 func (GetListenersFilterOutput) ElementType() reflect.Type {
@@ -3391,12 +2946,6 @@ func (o GetListenersFilterOutput) ToGetListenersFilterOutput() GetListenersFilte
 
 func (o GetListenersFilterOutput) ToGetListenersFilterOutputWithContext(ctx context.Context) GetListenersFilterOutput {
 	return o
-}
-
-func (o GetListenersFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetListenersFilter] {
-	return pulumix.Output[GetListenersFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A friendly name for the listener. It must be unique and it cannot be changed.  Example: `exampleListener`
@@ -3424,12 +2973,6 @@ func (o GetListenersFilterArrayOutput) ToGetListenersFilterArrayOutput() GetList
 
 func (o GetListenersFilterArrayOutput) ToGetListenersFilterArrayOutputWithContext(ctx context.Context) GetListenersFilterArrayOutput {
 	return o
-}
-
-func (o GetListenersFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetListenersFilter] {
-	return pulumix.Output[[]GetListenersFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetListenersFilterArrayOutput) Index(i pulumi.IntInput) GetListenersFilterOutput {
@@ -3469,12 +3012,6 @@ func (i GetListenersListenerCollectionArgs) ToGetListenersListenerCollectionOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetListenersListenerCollectionOutput)
 }
 
-func (i GetListenersListenerCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetListenersListenerCollection] {
-	return pulumix.Output[GetListenersListenerCollection]{
-		OutputState: i.ToGetListenersListenerCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetListenersListenerCollectionArrayInput is an input type that accepts GetListenersListenerCollectionArray and GetListenersListenerCollectionArrayOutput values.
 // You can construct a concrete instance of `GetListenersListenerCollectionArrayInput` via:
 //
@@ -3500,12 +3037,6 @@ func (i GetListenersListenerCollectionArray) ToGetListenersListenerCollectionArr
 	return pulumi.ToOutputWithContext(ctx, i).(GetListenersListenerCollectionArrayOutput)
 }
 
-func (i GetListenersListenerCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetListenersListenerCollection] {
-	return pulumix.Output[[]GetListenersListenerCollection]{
-		OutputState: i.ToGetListenersListenerCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetListenersListenerCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetListenersListenerCollectionOutput) ElementType() reflect.Type {
@@ -3518,12 +3049,6 @@ func (o GetListenersListenerCollectionOutput) ToGetListenersListenerCollectionOu
 
 func (o GetListenersListenerCollectionOutput) ToGetListenersListenerCollectionOutputWithContext(ctx context.Context) GetListenersListenerCollectionOutput {
 	return o
-}
-
-func (o GetListenersListenerCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetListenersListenerCollection] {
-	return pulumix.Output[GetListenersListenerCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetListenersListenerCollectionOutput) Items() GetListenersListenerCollectionItemArrayOutput {
@@ -3544,12 +3069,6 @@ func (o GetListenersListenerCollectionArrayOutput) ToGetListenersListenerCollect
 	return o
 }
 
-func (o GetListenersListenerCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetListenersListenerCollection] {
-	return pulumix.Output[[]GetListenersListenerCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetListenersListenerCollectionArrayOutput) Index(i pulumi.IntInput) GetListenersListenerCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetListenersListenerCollection {
 		return vs[0].([]GetListenersListenerCollection)[vs[1].(int)]
@@ -3558,18 +3077,18 @@ func (o GetListenersListenerCollectionArrayOutput) Index(i pulumi.IntInput) GetL
 
 type GetListenersListenerCollectionItem struct {
 	// The name of the associated backend set.  Example: `exampleBackendSet`
-	DefaultBackendSetName string `pulumi:"defaultBackendSetName"`
-	Id                    string `pulumi:"id"`
+	DefaultBackendSetName *string `pulumi:"defaultBackendSetName"`
+	Id                    *string `pulumi:"id"`
 	// IP version associated with the listener.
-	IpVersion string `pulumi:"ipVersion"`
+	IpVersion *string `pulumi:"ipVersion"`
 	// A friendly name for the listener. It must be unique and it cannot be changed.  Example: `exampleListener`
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network load balancer to update.
-	NetworkLoadBalancerId string `pulumi:"networkLoadBalancerId"`
+	NetworkLoadBalancerId *string `pulumi:"networkLoadBalancerId"`
 	// The communication port for the listener.  Example: `80`
-	Port int `pulumi:"port"`
+	Port *int `pulumi:"port"`
 	// The protocol on which the listener accepts connection requests. For public network load balancers, ANY protocol refers to TCP/UDP. For private network load balancers, ANY protocol refers to TCP/UDP/ICMP (note that ICMP requires isPreserveSourceDestination to be set to true). To get a list of valid protocols, use the [ListNetworkLoadBalancersProtocols](https://docs.cloud.oracle.com/iaas/api/#/en/NetworkLoadBalancer/20200501/networkLoadBalancerProtocol/ListNetworkLoadBalancersProtocols) operation.  Example: `TCP`
-	Protocol string `pulumi:"protocol"`
+	Protocol *string `pulumi:"protocol"`
 }
 
 // GetListenersListenerCollectionItemInput is an input type that accepts GetListenersListenerCollectionItemArgs and GetListenersListenerCollectionItemOutput values.
@@ -3585,18 +3104,18 @@ type GetListenersListenerCollectionItemInput interface {
 
 type GetListenersListenerCollectionItemArgs struct {
 	// The name of the associated backend set.  Example: `exampleBackendSet`
-	DefaultBackendSetName pulumi.StringInput `pulumi:"defaultBackendSetName"`
-	Id                    pulumi.StringInput `pulumi:"id"`
+	DefaultBackendSetName pulumi.StringPtrInput `pulumi:"defaultBackendSetName"`
+	Id                    pulumi.StringPtrInput `pulumi:"id"`
 	// IP version associated with the listener.
-	IpVersion pulumi.StringInput `pulumi:"ipVersion"`
+	IpVersion pulumi.StringPtrInput `pulumi:"ipVersion"`
 	// A friendly name for the listener. It must be unique and it cannot be changed.  Example: `exampleListener`
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network load balancer to update.
-	NetworkLoadBalancerId pulumi.StringInput `pulumi:"networkLoadBalancerId"`
+	NetworkLoadBalancerId pulumi.StringPtrInput `pulumi:"networkLoadBalancerId"`
 	// The communication port for the listener.  Example: `80`
-	Port pulumi.IntInput `pulumi:"port"`
+	Port pulumi.IntPtrInput `pulumi:"port"`
 	// The protocol on which the listener accepts connection requests. For public network load balancers, ANY protocol refers to TCP/UDP. For private network load balancers, ANY protocol refers to TCP/UDP/ICMP (note that ICMP requires isPreserveSourceDestination to be set to true). To get a list of valid protocols, use the [ListNetworkLoadBalancersProtocols](https://docs.cloud.oracle.com/iaas/api/#/en/NetworkLoadBalancer/20200501/networkLoadBalancerProtocol/ListNetworkLoadBalancersProtocols) operation.  Example: `TCP`
-	Protocol pulumi.StringInput `pulumi:"protocol"`
+	Protocol pulumi.StringPtrInput `pulumi:"protocol"`
 }
 
 func (GetListenersListenerCollectionItemArgs) ElementType() reflect.Type {
@@ -3609,12 +3128,6 @@ func (i GetListenersListenerCollectionItemArgs) ToGetListenersListenerCollection
 
 func (i GetListenersListenerCollectionItemArgs) ToGetListenersListenerCollectionItemOutputWithContext(ctx context.Context) GetListenersListenerCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetListenersListenerCollectionItemOutput)
-}
-
-func (i GetListenersListenerCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetListenersListenerCollectionItem] {
-	return pulumix.Output[GetListenersListenerCollectionItem]{
-		OutputState: i.ToGetListenersListenerCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetListenersListenerCollectionItemArrayInput is an input type that accepts GetListenersListenerCollectionItemArray and GetListenersListenerCollectionItemArrayOutput values.
@@ -3642,12 +3155,6 @@ func (i GetListenersListenerCollectionItemArray) ToGetListenersListenerCollectio
 	return pulumi.ToOutputWithContext(ctx, i).(GetListenersListenerCollectionItemArrayOutput)
 }
 
-func (i GetListenersListenerCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetListenersListenerCollectionItem] {
-	return pulumix.Output[[]GetListenersListenerCollectionItem]{
-		OutputState: i.ToGetListenersListenerCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetListenersListenerCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetListenersListenerCollectionItemOutput) ElementType() reflect.Type {
@@ -3662,44 +3169,38 @@ func (o GetListenersListenerCollectionItemOutput) ToGetListenersListenerCollecti
 	return o
 }
 
-func (o GetListenersListenerCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetListenersListenerCollectionItem] {
-	return pulumix.Output[GetListenersListenerCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The name of the associated backend set.  Example: `exampleBackendSet`
-func (o GetListenersListenerCollectionItemOutput) DefaultBackendSetName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetListenersListenerCollectionItem) string { return v.DefaultBackendSetName }).(pulumi.StringOutput)
+func (o GetListenersListenerCollectionItemOutput) DefaultBackendSetName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetListenersListenerCollectionItem) *string { return v.DefaultBackendSetName }).(pulumi.StringPtrOutput)
 }
 
-func (o GetListenersListenerCollectionItemOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetListenersListenerCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+func (o GetListenersListenerCollectionItemOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetListenersListenerCollectionItem) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // IP version associated with the listener.
-func (o GetListenersListenerCollectionItemOutput) IpVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetListenersListenerCollectionItem) string { return v.IpVersion }).(pulumi.StringOutput)
+func (o GetListenersListenerCollectionItemOutput) IpVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetListenersListenerCollectionItem) *string { return v.IpVersion }).(pulumi.StringPtrOutput)
 }
 
 // A friendly name for the listener. It must be unique and it cannot be changed.  Example: `exampleListener`
-func (o GetListenersListenerCollectionItemOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetListenersListenerCollectionItem) string { return v.Name }).(pulumi.StringOutput)
+func (o GetListenersListenerCollectionItemOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetListenersListenerCollectionItem) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network load balancer to update.
-func (o GetListenersListenerCollectionItemOutput) NetworkLoadBalancerId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetListenersListenerCollectionItem) string { return v.NetworkLoadBalancerId }).(pulumi.StringOutput)
+func (o GetListenersListenerCollectionItemOutput) NetworkLoadBalancerId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetListenersListenerCollectionItem) *string { return v.NetworkLoadBalancerId }).(pulumi.StringPtrOutput)
 }
 
 // The communication port for the listener.  Example: `80`
-func (o GetListenersListenerCollectionItemOutput) Port() pulumi.IntOutput {
-	return o.ApplyT(func(v GetListenersListenerCollectionItem) int { return v.Port }).(pulumi.IntOutput)
+func (o GetListenersListenerCollectionItemOutput) Port() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetListenersListenerCollectionItem) *int { return v.Port }).(pulumi.IntPtrOutput)
 }
 
 // The protocol on which the listener accepts connection requests. For public network load balancers, ANY protocol refers to TCP/UDP. For private network load balancers, ANY protocol refers to TCP/UDP/ICMP (note that ICMP requires isPreserveSourceDestination to be set to true). To get a list of valid protocols, use the [ListNetworkLoadBalancersProtocols](https://docs.cloud.oracle.com/iaas/api/#/en/NetworkLoadBalancer/20200501/networkLoadBalancerProtocol/ListNetworkLoadBalancersProtocols) operation.  Example: `TCP`
-func (o GetListenersListenerCollectionItemOutput) Protocol() pulumi.StringOutput {
-	return o.ApplyT(func(v GetListenersListenerCollectionItem) string { return v.Protocol }).(pulumi.StringOutput)
+func (o GetListenersListenerCollectionItemOutput) Protocol() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetListenersListenerCollectionItem) *string { return v.Protocol }).(pulumi.StringPtrOutput)
 }
 
 type GetListenersListenerCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -3716,12 +3217,6 @@ func (o GetListenersListenerCollectionItemArrayOutput) ToGetListenersListenerCol
 	return o
 }
 
-func (o GetListenersListenerCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetListenersListenerCollectionItem] {
-	return pulumix.Output[[]GetListenersListenerCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetListenersListenerCollectionItemArrayOutput) Index(i pulumi.IntInput) GetListenersListenerCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetListenersListenerCollectionItem {
 		return vs[0].([]GetListenersListenerCollectionItem)[vs[1].(int)]
@@ -3730,11 +3225,11 @@ func (o GetListenersListenerCollectionItemArrayOutput) Index(i pulumi.IntInput) 
 
 type GetNetworkLoadBalancerIpAddress struct {
 	// An IP address.  Example: `192.168.0.3`
-	IpAddress string `pulumi:"ipAddress"`
+	IpAddress *string `pulumi:"ipAddress"`
 	// IP version associated with this IP address.
-	IpVersion string `pulumi:"ipVersion"`
+	IpVersion *string `pulumi:"ipVersion"`
 	// Whether the IP address is public or private.
-	IsPublic bool `pulumi:"isPublic"`
+	IsPublic *bool `pulumi:"isPublic"`
 	// An object representing a reserved IP address to be attached or that is already attached to a network load balancer.
 	ReservedIps []GetNetworkLoadBalancerIpAddressReservedIp `pulumi:"reservedIps"`
 }
@@ -3752,11 +3247,11 @@ type GetNetworkLoadBalancerIpAddressInput interface {
 
 type GetNetworkLoadBalancerIpAddressArgs struct {
 	// An IP address.  Example: `192.168.0.3`
-	IpAddress pulumi.StringInput `pulumi:"ipAddress"`
+	IpAddress pulumi.StringPtrInput `pulumi:"ipAddress"`
 	// IP version associated with this IP address.
-	IpVersion pulumi.StringInput `pulumi:"ipVersion"`
+	IpVersion pulumi.StringPtrInput `pulumi:"ipVersion"`
 	// Whether the IP address is public or private.
-	IsPublic pulumi.BoolInput `pulumi:"isPublic"`
+	IsPublic pulumi.BoolPtrInput `pulumi:"isPublic"`
 	// An object representing a reserved IP address to be attached or that is already attached to a network load balancer.
 	ReservedIps GetNetworkLoadBalancerIpAddressReservedIpArrayInput `pulumi:"reservedIps"`
 }
@@ -3771,12 +3266,6 @@ func (i GetNetworkLoadBalancerIpAddressArgs) ToGetNetworkLoadBalancerIpAddressOu
 
 func (i GetNetworkLoadBalancerIpAddressArgs) ToGetNetworkLoadBalancerIpAddressOutputWithContext(ctx context.Context) GetNetworkLoadBalancerIpAddressOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkLoadBalancerIpAddressOutput)
-}
-
-func (i GetNetworkLoadBalancerIpAddressArgs) ToOutput(ctx context.Context) pulumix.Output[GetNetworkLoadBalancerIpAddress] {
-	return pulumix.Output[GetNetworkLoadBalancerIpAddress]{
-		OutputState: i.ToGetNetworkLoadBalancerIpAddressOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetNetworkLoadBalancerIpAddressArrayInput is an input type that accepts GetNetworkLoadBalancerIpAddressArray and GetNetworkLoadBalancerIpAddressArrayOutput values.
@@ -3804,12 +3293,6 @@ func (i GetNetworkLoadBalancerIpAddressArray) ToGetNetworkLoadBalancerIpAddressA
 	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkLoadBalancerIpAddressArrayOutput)
 }
 
-func (i GetNetworkLoadBalancerIpAddressArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNetworkLoadBalancerIpAddress] {
-	return pulumix.Output[[]GetNetworkLoadBalancerIpAddress]{
-		OutputState: i.ToGetNetworkLoadBalancerIpAddressArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetNetworkLoadBalancerIpAddressOutput struct{ *pulumi.OutputState }
 
 func (GetNetworkLoadBalancerIpAddressOutput) ElementType() reflect.Type {
@@ -3824,25 +3307,19 @@ func (o GetNetworkLoadBalancerIpAddressOutput) ToGetNetworkLoadBalancerIpAddress
 	return o
 }
 
-func (o GetNetworkLoadBalancerIpAddressOutput) ToOutput(ctx context.Context) pulumix.Output[GetNetworkLoadBalancerIpAddress] {
-	return pulumix.Output[GetNetworkLoadBalancerIpAddress]{
-		OutputState: o.OutputState,
-	}
-}
-
 // An IP address.  Example: `192.168.0.3`
-func (o GetNetworkLoadBalancerIpAddressOutput) IpAddress() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNetworkLoadBalancerIpAddress) string { return v.IpAddress }).(pulumi.StringOutput)
+func (o GetNetworkLoadBalancerIpAddressOutput) IpAddress() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNetworkLoadBalancerIpAddress) *string { return v.IpAddress }).(pulumi.StringPtrOutput)
 }
 
 // IP version associated with this IP address.
-func (o GetNetworkLoadBalancerIpAddressOutput) IpVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNetworkLoadBalancerIpAddress) string { return v.IpVersion }).(pulumi.StringOutput)
+func (o GetNetworkLoadBalancerIpAddressOutput) IpVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNetworkLoadBalancerIpAddress) *string { return v.IpVersion }).(pulumi.StringPtrOutput)
 }
 
 // Whether the IP address is public or private.
-func (o GetNetworkLoadBalancerIpAddressOutput) IsPublic() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetNetworkLoadBalancerIpAddress) bool { return v.IsPublic }).(pulumi.BoolOutput)
+func (o GetNetworkLoadBalancerIpAddressOutput) IsPublic() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetNetworkLoadBalancerIpAddress) *bool { return v.IsPublic }).(pulumi.BoolPtrOutput)
 }
 
 // An object representing a reserved IP address to be attached or that is already attached to a network load balancer.
@@ -3866,12 +3343,6 @@ func (o GetNetworkLoadBalancerIpAddressArrayOutput) ToGetNetworkLoadBalancerIpAd
 	return o
 }
 
-func (o GetNetworkLoadBalancerIpAddressArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNetworkLoadBalancerIpAddress] {
-	return pulumix.Output[[]GetNetworkLoadBalancerIpAddress]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetNetworkLoadBalancerIpAddressArrayOutput) Index(i pulumi.IntInput) GetNetworkLoadBalancerIpAddressOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNetworkLoadBalancerIpAddress {
 		return vs[0].([]GetNetworkLoadBalancerIpAddress)[vs[1].(int)]
@@ -3880,7 +3351,7 @@ func (o GetNetworkLoadBalancerIpAddressArrayOutput) Index(i pulumi.IntInput) Get
 
 type GetNetworkLoadBalancerIpAddressReservedIp struct {
 	// OCID of the reserved public IP address created with the virtual cloud network.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 }
 
 // GetNetworkLoadBalancerIpAddressReservedIpInput is an input type that accepts GetNetworkLoadBalancerIpAddressReservedIpArgs and GetNetworkLoadBalancerIpAddressReservedIpOutput values.
@@ -3896,7 +3367,7 @@ type GetNetworkLoadBalancerIpAddressReservedIpInput interface {
 
 type GetNetworkLoadBalancerIpAddressReservedIpArgs struct {
 	// OCID of the reserved public IP address created with the virtual cloud network.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 }
 
 func (GetNetworkLoadBalancerIpAddressReservedIpArgs) ElementType() reflect.Type {
@@ -3909,12 +3380,6 @@ func (i GetNetworkLoadBalancerIpAddressReservedIpArgs) ToGetNetworkLoadBalancerI
 
 func (i GetNetworkLoadBalancerIpAddressReservedIpArgs) ToGetNetworkLoadBalancerIpAddressReservedIpOutputWithContext(ctx context.Context) GetNetworkLoadBalancerIpAddressReservedIpOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkLoadBalancerIpAddressReservedIpOutput)
-}
-
-func (i GetNetworkLoadBalancerIpAddressReservedIpArgs) ToOutput(ctx context.Context) pulumix.Output[GetNetworkLoadBalancerIpAddressReservedIp] {
-	return pulumix.Output[GetNetworkLoadBalancerIpAddressReservedIp]{
-		OutputState: i.ToGetNetworkLoadBalancerIpAddressReservedIpOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetNetworkLoadBalancerIpAddressReservedIpArrayInput is an input type that accepts GetNetworkLoadBalancerIpAddressReservedIpArray and GetNetworkLoadBalancerIpAddressReservedIpArrayOutput values.
@@ -3942,12 +3407,6 @@ func (i GetNetworkLoadBalancerIpAddressReservedIpArray) ToGetNetworkLoadBalancer
 	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkLoadBalancerIpAddressReservedIpArrayOutput)
 }
 
-func (i GetNetworkLoadBalancerIpAddressReservedIpArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNetworkLoadBalancerIpAddressReservedIp] {
-	return pulumix.Output[[]GetNetworkLoadBalancerIpAddressReservedIp]{
-		OutputState: i.ToGetNetworkLoadBalancerIpAddressReservedIpArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetNetworkLoadBalancerIpAddressReservedIpOutput struct{ *pulumi.OutputState }
 
 func (GetNetworkLoadBalancerIpAddressReservedIpOutput) ElementType() reflect.Type {
@@ -3962,15 +3421,9 @@ func (o GetNetworkLoadBalancerIpAddressReservedIpOutput) ToGetNetworkLoadBalance
 	return o
 }
 
-func (o GetNetworkLoadBalancerIpAddressReservedIpOutput) ToOutput(ctx context.Context) pulumix.Output[GetNetworkLoadBalancerIpAddressReservedIp] {
-	return pulumix.Output[GetNetworkLoadBalancerIpAddressReservedIp]{
-		OutputState: o.OutputState,
-	}
-}
-
 // OCID of the reserved public IP address created with the virtual cloud network.
-func (o GetNetworkLoadBalancerIpAddressReservedIpOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNetworkLoadBalancerIpAddressReservedIp) string { return v.Id }).(pulumi.StringOutput)
+func (o GetNetworkLoadBalancerIpAddressReservedIpOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNetworkLoadBalancerIpAddressReservedIp) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 type GetNetworkLoadBalancerIpAddressReservedIpArrayOutput struct{ *pulumi.OutputState }
@@ -3987,12 +3440,6 @@ func (o GetNetworkLoadBalancerIpAddressReservedIpArrayOutput) ToGetNetworkLoadBa
 	return o
 }
 
-func (o GetNetworkLoadBalancerIpAddressReservedIpArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNetworkLoadBalancerIpAddressReservedIp] {
-	return pulumix.Output[[]GetNetworkLoadBalancerIpAddressReservedIp]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetNetworkLoadBalancerIpAddressReservedIpArrayOutput) Index(i pulumi.IntInput) GetNetworkLoadBalancerIpAddressReservedIpOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNetworkLoadBalancerIpAddressReservedIp {
 		return vs[0].([]GetNetworkLoadBalancerIpAddressReservedIp)[vs[1].(int)]
@@ -4001,7 +3448,7 @@ func (o GetNetworkLoadBalancerIpAddressReservedIpArrayOutput) Index(i pulumi.Int
 
 type GetNetworkLoadBalancerReservedIp struct {
 	// OCID of the reserved public IP address created with the virtual cloud network.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 }
 
 // GetNetworkLoadBalancerReservedIpInput is an input type that accepts GetNetworkLoadBalancerReservedIpArgs and GetNetworkLoadBalancerReservedIpOutput values.
@@ -4017,7 +3464,7 @@ type GetNetworkLoadBalancerReservedIpInput interface {
 
 type GetNetworkLoadBalancerReservedIpArgs struct {
 	// OCID of the reserved public IP address created with the virtual cloud network.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 }
 
 func (GetNetworkLoadBalancerReservedIpArgs) ElementType() reflect.Type {
@@ -4030,12 +3477,6 @@ func (i GetNetworkLoadBalancerReservedIpArgs) ToGetNetworkLoadBalancerReservedIp
 
 func (i GetNetworkLoadBalancerReservedIpArgs) ToGetNetworkLoadBalancerReservedIpOutputWithContext(ctx context.Context) GetNetworkLoadBalancerReservedIpOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkLoadBalancerReservedIpOutput)
-}
-
-func (i GetNetworkLoadBalancerReservedIpArgs) ToOutput(ctx context.Context) pulumix.Output[GetNetworkLoadBalancerReservedIp] {
-	return pulumix.Output[GetNetworkLoadBalancerReservedIp]{
-		OutputState: i.ToGetNetworkLoadBalancerReservedIpOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetNetworkLoadBalancerReservedIpArrayInput is an input type that accepts GetNetworkLoadBalancerReservedIpArray and GetNetworkLoadBalancerReservedIpArrayOutput values.
@@ -4063,12 +3504,6 @@ func (i GetNetworkLoadBalancerReservedIpArray) ToGetNetworkLoadBalancerReservedI
 	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkLoadBalancerReservedIpArrayOutput)
 }
 
-func (i GetNetworkLoadBalancerReservedIpArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNetworkLoadBalancerReservedIp] {
-	return pulumix.Output[[]GetNetworkLoadBalancerReservedIp]{
-		OutputState: i.ToGetNetworkLoadBalancerReservedIpArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetNetworkLoadBalancerReservedIpOutput struct{ *pulumi.OutputState }
 
 func (GetNetworkLoadBalancerReservedIpOutput) ElementType() reflect.Type {
@@ -4083,15 +3518,9 @@ func (o GetNetworkLoadBalancerReservedIpOutput) ToGetNetworkLoadBalancerReserved
 	return o
 }
 
-func (o GetNetworkLoadBalancerReservedIpOutput) ToOutput(ctx context.Context) pulumix.Output[GetNetworkLoadBalancerReservedIp] {
-	return pulumix.Output[GetNetworkLoadBalancerReservedIp]{
-		OutputState: o.OutputState,
-	}
-}
-
 // OCID of the reserved public IP address created with the virtual cloud network.
-func (o GetNetworkLoadBalancerReservedIpOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNetworkLoadBalancerReservedIp) string { return v.Id }).(pulumi.StringOutput)
+func (o GetNetworkLoadBalancerReservedIpOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNetworkLoadBalancerReservedIp) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 type GetNetworkLoadBalancerReservedIpArrayOutput struct{ *pulumi.OutputState }
@@ -4106,12 +3535,6 @@ func (o GetNetworkLoadBalancerReservedIpArrayOutput) ToGetNetworkLoadBalancerRes
 
 func (o GetNetworkLoadBalancerReservedIpArrayOutput) ToGetNetworkLoadBalancerReservedIpArrayOutputWithContext(ctx context.Context) GetNetworkLoadBalancerReservedIpArrayOutput {
 	return o
-}
-
-func (o GetNetworkLoadBalancerReservedIpArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNetworkLoadBalancerReservedIp] {
-	return pulumix.Output[[]GetNetworkLoadBalancerReservedIp]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetNetworkLoadBalancerReservedIpArrayOutput) Index(i pulumi.IntInput) GetNetworkLoadBalancerReservedIpOutput {
@@ -4155,12 +3578,6 @@ func (i GetNetworkLoadBalancersFilterArgs) ToGetNetworkLoadBalancersFilterOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkLoadBalancersFilterOutput)
 }
 
-func (i GetNetworkLoadBalancersFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetNetworkLoadBalancersFilter] {
-	return pulumix.Output[GetNetworkLoadBalancersFilter]{
-		OutputState: i.ToGetNetworkLoadBalancersFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetNetworkLoadBalancersFilterArrayInput is an input type that accepts GetNetworkLoadBalancersFilterArray and GetNetworkLoadBalancersFilterArrayOutput values.
 // You can construct a concrete instance of `GetNetworkLoadBalancersFilterArrayInput` via:
 //
@@ -4186,12 +3603,6 @@ func (i GetNetworkLoadBalancersFilterArray) ToGetNetworkLoadBalancersFilterArray
 	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkLoadBalancersFilterArrayOutput)
 }
 
-func (i GetNetworkLoadBalancersFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNetworkLoadBalancersFilter] {
-	return pulumix.Output[[]GetNetworkLoadBalancersFilter]{
-		OutputState: i.ToGetNetworkLoadBalancersFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetNetworkLoadBalancersFilterOutput struct{ *pulumi.OutputState }
 
 func (GetNetworkLoadBalancersFilterOutput) ElementType() reflect.Type {
@@ -4204,12 +3615,6 @@ func (o GetNetworkLoadBalancersFilterOutput) ToGetNetworkLoadBalancersFilterOutp
 
 func (o GetNetworkLoadBalancersFilterOutput) ToGetNetworkLoadBalancersFilterOutputWithContext(ctx context.Context) GetNetworkLoadBalancersFilterOutput {
 	return o
-}
-
-func (o GetNetworkLoadBalancersFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetNetworkLoadBalancersFilter] {
-	return pulumix.Output[GetNetworkLoadBalancersFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetNetworkLoadBalancersFilterOutput) Name() pulumi.StringOutput {
@@ -4236,12 +3641,6 @@ func (o GetNetworkLoadBalancersFilterArrayOutput) ToGetNetworkLoadBalancersFilte
 
 func (o GetNetworkLoadBalancersFilterArrayOutput) ToGetNetworkLoadBalancersFilterArrayOutputWithContext(ctx context.Context) GetNetworkLoadBalancersFilterArrayOutput {
 	return o
-}
-
-func (o GetNetworkLoadBalancersFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNetworkLoadBalancersFilter] {
-	return pulumix.Output[[]GetNetworkLoadBalancersFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetNetworkLoadBalancersFilterArrayOutput) Index(i pulumi.IntInput) GetNetworkLoadBalancersFilterOutput {
@@ -4281,12 +3680,6 @@ func (i GetNetworkLoadBalancersNetworkLoadBalancerCollectionArgs) ToGetNetworkLo
 	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkLoadBalancersNetworkLoadBalancerCollectionOutput)
 }
 
-func (i GetNetworkLoadBalancersNetworkLoadBalancerCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetNetworkLoadBalancersNetworkLoadBalancerCollection] {
-	return pulumix.Output[GetNetworkLoadBalancersNetworkLoadBalancerCollection]{
-		OutputState: i.ToGetNetworkLoadBalancersNetworkLoadBalancerCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetNetworkLoadBalancersNetworkLoadBalancerCollectionArrayInput is an input type that accepts GetNetworkLoadBalancersNetworkLoadBalancerCollectionArray and GetNetworkLoadBalancersNetworkLoadBalancerCollectionArrayOutput values.
 // You can construct a concrete instance of `GetNetworkLoadBalancersNetworkLoadBalancerCollectionArrayInput` via:
 //
@@ -4312,12 +3705,6 @@ func (i GetNetworkLoadBalancersNetworkLoadBalancerCollectionArray) ToGetNetworkL
 	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkLoadBalancersNetworkLoadBalancerCollectionArrayOutput)
 }
 
-func (i GetNetworkLoadBalancersNetworkLoadBalancerCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNetworkLoadBalancersNetworkLoadBalancerCollection] {
-	return pulumix.Output[[]GetNetworkLoadBalancersNetworkLoadBalancerCollection]{
-		OutputState: i.ToGetNetworkLoadBalancersNetworkLoadBalancerCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetNetworkLoadBalancersNetworkLoadBalancerCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetNetworkLoadBalancersNetworkLoadBalancerCollectionOutput) ElementType() reflect.Type {
@@ -4330,12 +3717,6 @@ func (o GetNetworkLoadBalancersNetworkLoadBalancerCollectionOutput) ToGetNetwork
 
 func (o GetNetworkLoadBalancersNetworkLoadBalancerCollectionOutput) ToGetNetworkLoadBalancersNetworkLoadBalancerCollectionOutputWithContext(ctx context.Context) GetNetworkLoadBalancersNetworkLoadBalancerCollectionOutput {
 	return o
-}
-
-func (o GetNetworkLoadBalancersNetworkLoadBalancerCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetNetworkLoadBalancersNetworkLoadBalancerCollection] {
-	return pulumix.Output[GetNetworkLoadBalancersNetworkLoadBalancerCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetNetworkLoadBalancersNetworkLoadBalancerCollectionOutput) Items() GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemArrayOutput {
@@ -4358,12 +3739,6 @@ func (o GetNetworkLoadBalancersNetworkLoadBalancerCollectionArrayOutput) ToGetNe
 	return o
 }
 
-func (o GetNetworkLoadBalancersNetworkLoadBalancerCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNetworkLoadBalancersNetworkLoadBalancerCollection] {
-	return pulumix.Output[[]GetNetworkLoadBalancersNetworkLoadBalancerCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetNetworkLoadBalancersNetworkLoadBalancerCollectionArrayOutput) Index(i pulumi.IntInput) GetNetworkLoadBalancersNetworkLoadBalancerCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNetworkLoadBalancersNetworkLoadBalancerCollection {
 		return vs[0].([]GetNetworkLoadBalancersNetworkLoadBalancerCollection)[vs[1].(int)]
@@ -4372,38 +3747,38 @@ func (o GetNetworkLoadBalancersNetworkLoadBalancerCollectionArrayOutput) Index(i
 
 type GetNetworkLoadBalancersNetworkLoadBalancerCollectionItem struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the network load balancers to list.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A filter to return only resources that match the entire display name given.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// OCID of the reserved public IP address created with the virtual cloud network.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// An array of IP addresses.
 	IpAddresses []GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddress `pulumi:"ipAddresses"`
 	// When enabled, the skipSourceDestinationCheck parameter is automatically enabled on the load balancer VNIC. Packets are sent to the backend set without any changes to the source and destination IP.
-	IsPreserveSourceDestination bool `pulumi:"isPreserveSourceDestination"`
+	IsPreserveSourceDestination *bool `pulumi:"isPreserveSourceDestination"`
 	// Whether the network load balancer has a virtual cloud network-local (private) IP address.
-	IsPrivate bool `pulumi:"isPrivate"`
+	IsPrivate *bool `pulumi:"isPrivate"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// An array of network security groups [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the network load balancer.
 	NetworkSecurityGroupIds []string `pulumi:"networkSecurityGroupIds"`
 	// IP version associated with the NLB.
-	NlbIpVersion string                                                               `pulumi:"nlbIpVersion"`
+	NlbIpVersion *string                                                              `pulumi:"nlbIpVersion"`
 	ReservedIps  []GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemReservedIp `pulumi:"reservedIps"`
 	// A filter to return only resources that match the given lifecycle state.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The subnet in which the network load balancer is spawned [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)."
-	SubnetId string `pulumi:"subnetId"`
+	SubnetId *string `pulumi:"subnetId"`
 	// Key-value pair representing system tags' keys and values scoped to a namespace. Example: `{"bar-key": "value"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The date and time the network load balancer was created, in the format defined by RFC3339.  Example: `2020-05-01T21:10:29.600Z`
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time the network load balancer was updated. An RFC3339 formatted date-time string.  Example: `2020-05-01T22:10:29.600Z`
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 // GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemInput is an input type that accepts GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemArgs and GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemOutput values.
@@ -4419,38 +3794,38 @@ type GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemInput interface {
 
 type GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the network load balancers to list.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// A filter to return only resources that match the entire display name given.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// OCID of the reserved public IP address created with the virtual cloud network.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// An array of IP addresses.
 	IpAddresses GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddressArrayInput `pulumi:"ipAddresses"`
 	// When enabled, the skipSourceDestinationCheck parameter is automatically enabled on the load balancer VNIC. Packets are sent to the backend set without any changes to the source and destination IP.
-	IsPreserveSourceDestination pulumi.BoolInput `pulumi:"isPreserveSourceDestination"`
+	IsPreserveSourceDestination pulumi.BoolPtrInput `pulumi:"isPreserveSourceDestination"`
 	// Whether the network load balancer has a virtual cloud network-local (private) IP address.
-	IsPrivate pulumi.BoolInput `pulumi:"isPrivate"`
+	IsPrivate pulumi.BoolPtrInput `pulumi:"isPrivate"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrInput `pulumi:"lifecycleDetails"`
 	// An array of network security groups [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the network load balancer.
 	NetworkSecurityGroupIds pulumi.StringArrayInput `pulumi:"networkSecurityGroupIds"`
 	// IP version associated with the NLB.
-	NlbIpVersion pulumi.StringInput                                                           `pulumi:"nlbIpVersion"`
+	NlbIpVersion pulumi.StringPtrInput                                                        `pulumi:"nlbIpVersion"`
 	ReservedIps  GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemReservedIpArrayInput `pulumi:"reservedIps"`
 	// A filter to return only resources that match the given lifecycle state.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// The subnet in which the network load balancer is spawned [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)."
-	SubnetId pulumi.StringInput `pulumi:"subnetId"`
+	SubnetId pulumi.StringPtrInput `pulumi:"subnetId"`
 	// Key-value pair representing system tags' keys and values scoped to a namespace. Example: `{"bar-key": "value"}`
 	SystemTags pulumi.MapInput `pulumi:"systemTags"`
 	// The date and time the network load balancer was created, in the format defined by RFC3339.  Example: `2020-05-01T21:10:29.600Z`
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// The time the network load balancer was updated. An RFC3339 formatted date-time string.  Example: `2020-05-01T22:10:29.600Z`
-	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
 }
 
 func (GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemArgs) ElementType() reflect.Type {
@@ -4463,12 +3838,6 @@ func (i GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemArgs) ToGetNetwo
 
 func (i GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemArgs) ToGetNetworkLoadBalancersNetworkLoadBalancerCollectionItemOutputWithContext(ctx context.Context) GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemOutput)
-}
-
-func (i GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetNetworkLoadBalancersNetworkLoadBalancerCollectionItem] {
-	return pulumix.Output[GetNetworkLoadBalancersNetworkLoadBalancerCollectionItem]{
-		OutputState: i.ToGetNetworkLoadBalancersNetworkLoadBalancerCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemArrayInput is an input type that accepts GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemArray and GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemArrayOutput values.
@@ -4496,12 +3865,6 @@ func (i GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemArray) ToGetNetw
 	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemArrayOutput)
 }
 
-func (i GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNetworkLoadBalancersNetworkLoadBalancerCollectionItem] {
-	return pulumix.Output[[]GetNetworkLoadBalancersNetworkLoadBalancerCollectionItem]{
-		OutputState: i.ToGetNetworkLoadBalancersNetworkLoadBalancerCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemOutput) ElementType() reflect.Type {
@@ -4516,15 +3879,9 @@ func (o GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemOutput) ToGetNet
 	return o
 }
 
-func (o GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetNetworkLoadBalancersNetworkLoadBalancerCollectionItem] {
-	return pulumix.Output[GetNetworkLoadBalancersNetworkLoadBalancerCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the network load balancers to list.
-func (o GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNetworkLoadBalancersNetworkLoadBalancerCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNetworkLoadBalancersNetworkLoadBalancerCollectionItem) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -4535,8 +3892,8 @@ func (o GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemOutput) DefinedT
 }
 
 // A filter to return only resources that match the entire display name given.
-func (o GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNetworkLoadBalancersNetworkLoadBalancerCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNetworkLoadBalancersNetworkLoadBalancerCollectionItem) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -4547,8 +3904,8 @@ func (o GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemOutput) Freeform
 }
 
 // OCID of the reserved public IP address created with the virtual cloud network.
-func (o GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNetworkLoadBalancersNetworkLoadBalancerCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+func (o GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNetworkLoadBalancersNetworkLoadBalancerCollectionItem) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // An array of IP addresses.
@@ -4559,20 +3916,20 @@ func (o GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemOutput) IpAddres
 }
 
 // When enabled, the skipSourceDestinationCheck parameter is automatically enabled on the load balancer VNIC. Packets are sent to the backend set without any changes to the source and destination IP.
-func (o GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemOutput) IsPreserveSourceDestination() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetNetworkLoadBalancersNetworkLoadBalancerCollectionItem) bool {
+func (o GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemOutput) IsPreserveSourceDestination() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetNetworkLoadBalancersNetworkLoadBalancerCollectionItem) *bool {
 		return v.IsPreserveSourceDestination
-	}).(pulumi.BoolOutput)
+	}).(pulumi.BoolPtrOutput)
 }
 
 // Whether the network load balancer has a virtual cloud network-local (private) IP address.
-func (o GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemOutput) IsPrivate() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetNetworkLoadBalancersNetworkLoadBalancerCollectionItem) bool { return v.IsPrivate }).(pulumi.BoolOutput)
+func (o GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemOutput) IsPrivate() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetNetworkLoadBalancersNetworkLoadBalancerCollectionItem) *bool { return v.IsPrivate }).(pulumi.BoolPtrOutput)
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-func (o GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNetworkLoadBalancersNetworkLoadBalancerCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNetworkLoadBalancersNetworkLoadBalancerCollectionItem) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // An array of network security groups [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the network load balancer.
@@ -4583,8 +3940,8 @@ func (o GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemOutput) NetworkS
 }
 
 // IP version associated with the NLB.
-func (o GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemOutput) NlbIpVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNetworkLoadBalancersNetworkLoadBalancerCollectionItem) string { return v.NlbIpVersion }).(pulumi.StringOutput)
+func (o GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemOutput) NlbIpVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNetworkLoadBalancersNetworkLoadBalancerCollectionItem) *string { return v.NlbIpVersion }).(pulumi.StringPtrOutput)
 }
 
 func (o GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemOutput) ReservedIps() GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemReservedIpArrayOutput {
@@ -4594,13 +3951,13 @@ func (o GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemOutput) Reserved
 }
 
 // A filter to return only resources that match the given lifecycle state.
-func (o GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNetworkLoadBalancersNetworkLoadBalancerCollectionItem) string { return v.State }).(pulumi.StringOutput)
+func (o GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNetworkLoadBalancersNetworkLoadBalancerCollectionItem) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The subnet in which the network load balancer is spawned [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)."
-func (o GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemOutput) SubnetId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNetworkLoadBalancersNetworkLoadBalancerCollectionItem) string { return v.SubnetId }).(pulumi.StringOutput)
+func (o GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemOutput) SubnetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNetworkLoadBalancersNetworkLoadBalancerCollectionItem) *string { return v.SubnetId }).(pulumi.StringPtrOutput)
 }
 
 // Key-value pair representing system tags' keys and values scoped to a namespace. Example: `{"bar-key": "value"}`
@@ -4611,13 +3968,13 @@ func (o GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemOutput) SystemTa
 }
 
 // The date and time the network load balancer was created, in the format defined by RFC3339.  Example: `2020-05-01T21:10:29.600Z`
-func (o GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNetworkLoadBalancersNetworkLoadBalancerCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNetworkLoadBalancersNetworkLoadBalancerCollectionItem) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time the network load balancer was updated. An RFC3339 formatted date-time string.  Example: `2020-05-01T22:10:29.600Z`
-func (o GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNetworkLoadBalancersNetworkLoadBalancerCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNetworkLoadBalancersNetworkLoadBalancerCollectionItem) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -4634,12 +3991,6 @@ func (o GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemArrayOutput) ToG
 	return o
 }
 
-func (o GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNetworkLoadBalancersNetworkLoadBalancerCollectionItem] {
-	return pulumix.Output[[]GetNetworkLoadBalancersNetworkLoadBalancerCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemArrayOutput) Index(i pulumi.IntInput) GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNetworkLoadBalancersNetworkLoadBalancerCollectionItem {
 		return vs[0].([]GetNetworkLoadBalancersNetworkLoadBalancerCollectionItem)[vs[1].(int)]
@@ -4648,12 +3999,12 @@ func (o GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemArrayOutput) Ind
 
 type GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddress struct {
 	// An IP address.  Example: `192.168.0.3`
-	IpAddress string `pulumi:"ipAddress"`
+	IpAddress *string `pulumi:"ipAddress"`
 	// IP version associated with this IP address.
-	IpVersion string `pulumi:"ipVersion"`
+	IpVersion *string `pulumi:"ipVersion"`
 	// Whether the IP address is public or private.
 	// If "true", then the IP address is public and accessible from the internet.
-	IsPublic bool `pulumi:"isPublic"`
+	IsPublic *bool `pulumi:"isPublic"`
 	// An object representing a reserved IP address to be attached or that is already attached to a network load balancer.
 	ReservedIps []GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddressReservedIp `pulumi:"reservedIps"`
 }
@@ -4671,12 +4022,12 @@ type GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddressInput inte
 
 type GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddressArgs struct {
 	// An IP address.  Example: `192.168.0.3`
-	IpAddress pulumi.StringInput `pulumi:"ipAddress"`
+	IpAddress pulumi.StringPtrInput `pulumi:"ipAddress"`
 	// IP version associated with this IP address.
-	IpVersion pulumi.StringInput `pulumi:"ipVersion"`
+	IpVersion pulumi.StringPtrInput `pulumi:"ipVersion"`
 	// Whether the IP address is public or private.
 	// If "true", then the IP address is public and accessible from the internet.
-	IsPublic pulumi.BoolInput `pulumi:"isPublic"`
+	IsPublic pulumi.BoolPtrInput `pulumi:"isPublic"`
 	// An object representing a reserved IP address to be attached or that is already attached to a network load balancer.
 	ReservedIps GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddressReservedIpArrayInput `pulumi:"reservedIps"`
 }
@@ -4691,12 +4042,6 @@ func (i GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddressArgs) T
 
 func (i GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddressArgs) ToGetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddressOutputWithContext(ctx context.Context) GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddressOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddressOutput)
-}
-
-func (i GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddressArgs) ToOutput(ctx context.Context) pulumix.Output[GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddress] {
-	return pulumix.Output[GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddress]{
-		OutputState: i.ToGetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddressOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddressArrayInput is an input type that accepts GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddressArray and GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddressArrayOutput values.
@@ -4724,12 +4069,6 @@ func (i GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddressArray) 
 	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddressArrayOutput)
 }
 
-func (i GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddressArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddress] {
-	return pulumix.Output[[]GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddress]{
-		OutputState: i.ToGetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddressArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddressOutput struct{ *pulumi.OutputState }
 
 func (GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddressOutput) ElementType() reflect.Type {
@@ -4744,26 +4083,20 @@ func (o GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddressOutput)
 	return o
 }
 
-func (o GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddressOutput) ToOutput(ctx context.Context) pulumix.Output[GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddress] {
-	return pulumix.Output[GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddress]{
-		OutputState: o.OutputState,
-	}
-}
-
 // An IP address.  Example: `192.168.0.3`
-func (o GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddressOutput) IpAddress() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddress) string { return v.IpAddress }).(pulumi.StringOutput)
+func (o GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddressOutput) IpAddress() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddress) *string { return v.IpAddress }).(pulumi.StringPtrOutput)
 }
 
 // IP version associated with this IP address.
-func (o GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddressOutput) IpVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddress) string { return v.IpVersion }).(pulumi.StringOutput)
+func (o GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddressOutput) IpVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddress) *string { return v.IpVersion }).(pulumi.StringPtrOutput)
 }
 
 // Whether the IP address is public or private.
 // If "true", then the IP address is public and accessible from the internet.
-func (o GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddressOutput) IsPublic() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddress) bool { return v.IsPublic }).(pulumi.BoolOutput)
+func (o GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddressOutput) IsPublic() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddress) *bool { return v.IsPublic }).(pulumi.BoolPtrOutput)
 }
 
 // An object representing a reserved IP address to be attached or that is already attached to a network load balancer.
@@ -4787,12 +4120,6 @@ func (o GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddressArrayOu
 	return o
 }
 
-func (o GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddressArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddress] {
-	return pulumix.Output[[]GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddress]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddressArrayOutput) Index(i pulumi.IntInput) GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddressOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddress {
 		return vs[0].([]GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddress)[vs[1].(int)]
@@ -4801,7 +4128,7 @@ func (o GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddressArrayOu
 
 type GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddressReservedIp struct {
 	// OCID of the reserved public IP address created with the virtual cloud network.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 }
 
 // GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddressReservedIpInput is an input type that accepts GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddressReservedIpArgs and GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddressReservedIpOutput values.
@@ -4817,7 +4144,7 @@ type GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddressReservedIp
 
 type GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddressReservedIpArgs struct {
 	// OCID of the reserved public IP address created with the virtual cloud network.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 }
 
 func (GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddressReservedIpArgs) ElementType() reflect.Type {
@@ -4830,12 +4157,6 @@ func (i GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddressReserve
 
 func (i GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddressReservedIpArgs) ToGetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddressReservedIpOutputWithContext(ctx context.Context) GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddressReservedIpOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddressReservedIpOutput)
-}
-
-func (i GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddressReservedIpArgs) ToOutput(ctx context.Context) pulumix.Output[GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddressReservedIp] {
-	return pulumix.Output[GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddressReservedIp]{
-		OutputState: i.ToGetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddressReservedIpOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddressReservedIpArrayInput is an input type that accepts GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddressReservedIpArray and GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddressReservedIpArrayOutput values.
@@ -4863,12 +4184,6 @@ func (i GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddressReserve
 	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddressReservedIpArrayOutput)
 }
 
-func (i GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddressReservedIpArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddressReservedIp] {
-	return pulumix.Output[[]GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddressReservedIp]{
-		OutputState: i.ToGetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddressReservedIpArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddressReservedIpOutput struct{ *pulumi.OutputState }
 
 func (GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddressReservedIpOutput) ElementType() reflect.Type {
@@ -4883,17 +4198,11 @@ func (o GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddressReserve
 	return o
 }
 
-func (o GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddressReservedIpOutput) ToOutput(ctx context.Context) pulumix.Output[GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddressReservedIp] {
-	return pulumix.Output[GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddressReservedIp]{
-		OutputState: o.OutputState,
-	}
-}
-
 // OCID of the reserved public IP address created with the virtual cloud network.
-func (o GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddressReservedIpOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddressReservedIp) string {
+func (o GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddressReservedIpOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddressReservedIp) *string {
 		return v.Id
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddressReservedIpArrayOutput struct{ *pulumi.OutputState }
@@ -4910,12 +4219,6 @@ func (o GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddressReserve
 	return o
 }
 
-func (o GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddressReservedIpArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddressReservedIp] {
-	return pulumix.Output[[]GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddressReservedIp]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddressReservedIpArrayOutput) Index(i pulumi.IntInput) GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddressReservedIpOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddressReservedIp {
 		return vs[0].([]GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddressReservedIp)[vs[1].(int)]
@@ -4924,7 +4227,7 @@ func (o GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddressReserve
 
 type GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemReservedIp struct {
 	// OCID of the reserved public IP address created with the virtual cloud network.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 }
 
 // GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemReservedIpInput is an input type that accepts GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemReservedIpArgs and GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemReservedIpOutput values.
@@ -4940,7 +4243,7 @@ type GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemReservedIpInput int
 
 type GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemReservedIpArgs struct {
 	// OCID of the reserved public IP address created with the virtual cloud network.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 }
 
 func (GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemReservedIpArgs) ElementType() reflect.Type {
@@ -4953,12 +4256,6 @@ func (i GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemReservedIpArgs) 
 
 func (i GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemReservedIpArgs) ToGetNetworkLoadBalancersNetworkLoadBalancerCollectionItemReservedIpOutputWithContext(ctx context.Context) GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemReservedIpOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemReservedIpOutput)
-}
-
-func (i GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemReservedIpArgs) ToOutput(ctx context.Context) pulumix.Output[GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemReservedIp] {
-	return pulumix.Output[GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemReservedIp]{
-		OutputState: i.ToGetNetworkLoadBalancersNetworkLoadBalancerCollectionItemReservedIpOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemReservedIpArrayInput is an input type that accepts GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemReservedIpArray and GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemReservedIpArrayOutput values.
@@ -4986,12 +4283,6 @@ func (i GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemReservedIpArray)
 	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemReservedIpArrayOutput)
 }
 
-func (i GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemReservedIpArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemReservedIp] {
-	return pulumix.Output[[]GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemReservedIp]{
-		OutputState: i.ToGetNetworkLoadBalancersNetworkLoadBalancerCollectionItemReservedIpArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemReservedIpOutput struct{ *pulumi.OutputState }
 
 func (GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemReservedIpOutput) ElementType() reflect.Type {
@@ -5006,15 +4297,9 @@ func (o GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemReservedIpOutput
 	return o
 }
 
-func (o GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemReservedIpOutput) ToOutput(ctx context.Context) pulumix.Output[GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemReservedIp] {
-	return pulumix.Output[GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemReservedIp]{
-		OutputState: o.OutputState,
-	}
-}
-
 // OCID of the reserved public IP address created with the virtual cloud network.
-func (o GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemReservedIpOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemReservedIp) string { return v.Id }).(pulumi.StringOutput)
+func (o GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemReservedIpOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemReservedIp) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 type GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemReservedIpArrayOutput struct{ *pulumi.OutputState }
@@ -5029,12 +4314,6 @@ func (o GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemReservedIpArrayO
 
 func (o GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemReservedIpArrayOutput) ToGetNetworkLoadBalancersNetworkLoadBalancerCollectionItemReservedIpArrayOutputWithContext(ctx context.Context) GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemReservedIpArrayOutput {
 	return o
-}
-
-func (o GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemReservedIpArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemReservedIp] {
-	return pulumix.Output[[]GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemReservedIp]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemReservedIpArrayOutput) Index(i pulumi.IntInput) GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemReservedIpOutput {
@@ -5078,12 +4357,6 @@ func (i GetNetworkLoadBalancersPoliciesFilterArgs) ToGetNetworkLoadBalancersPoli
 	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkLoadBalancersPoliciesFilterOutput)
 }
 
-func (i GetNetworkLoadBalancersPoliciesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetNetworkLoadBalancersPoliciesFilter] {
-	return pulumix.Output[GetNetworkLoadBalancersPoliciesFilter]{
-		OutputState: i.ToGetNetworkLoadBalancersPoliciesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetNetworkLoadBalancersPoliciesFilterArrayInput is an input type that accepts GetNetworkLoadBalancersPoliciesFilterArray and GetNetworkLoadBalancersPoliciesFilterArrayOutput values.
 // You can construct a concrete instance of `GetNetworkLoadBalancersPoliciesFilterArrayInput` via:
 //
@@ -5109,12 +4382,6 @@ func (i GetNetworkLoadBalancersPoliciesFilterArray) ToGetNetworkLoadBalancersPol
 	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkLoadBalancersPoliciesFilterArrayOutput)
 }
 
-func (i GetNetworkLoadBalancersPoliciesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNetworkLoadBalancersPoliciesFilter] {
-	return pulumix.Output[[]GetNetworkLoadBalancersPoliciesFilter]{
-		OutputState: i.ToGetNetworkLoadBalancersPoliciesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetNetworkLoadBalancersPoliciesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetNetworkLoadBalancersPoliciesFilterOutput) ElementType() reflect.Type {
@@ -5127,12 +4394,6 @@ func (o GetNetworkLoadBalancersPoliciesFilterOutput) ToGetNetworkLoadBalancersPo
 
 func (o GetNetworkLoadBalancersPoliciesFilterOutput) ToGetNetworkLoadBalancersPoliciesFilterOutputWithContext(ctx context.Context) GetNetworkLoadBalancersPoliciesFilterOutput {
 	return o
-}
-
-func (o GetNetworkLoadBalancersPoliciesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetNetworkLoadBalancersPoliciesFilter] {
-	return pulumix.Output[GetNetworkLoadBalancersPoliciesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetNetworkLoadBalancersPoliciesFilterOutput) Name() pulumi.StringOutput {
@@ -5159,12 +4420,6 @@ func (o GetNetworkLoadBalancersPoliciesFilterArrayOutput) ToGetNetworkLoadBalanc
 
 func (o GetNetworkLoadBalancersPoliciesFilterArrayOutput) ToGetNetworkLoadBalancersPoliciesFilterArrayOutputWithContext(ctx context.Context) GetNetworkLoadBalancersPoliciesFilterArrayOutput {
 	return o
-}
-
-func (o GetNetworkLoadBalancersPoliciesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNetworkLoadBalancersPoliciesFilter] {
-	return pulumix.Output[[]GetNetworkLoadBalancersPoliciesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetNetworkLoadBalancersPoliciesFilterArrayOutput) Index(i pulumi.IntInput) GetNetworkLoadBalancersPoliciesFilterOutput {
@@ -5206,12 +4461,6 @@ func (i GetNetworkLoadBalancersPoliciesNetworkLoadBalancersPolicyCollectionArgs)
 	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkLoadBalancersPoliciesNetworkLoadBalancersPolicyCollectionOutput)
 }
 
-func (i GetNetworkLoadBalancersPoliciesNetworkLoadBalancersPolicyCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetNetworkLoadBalancersPoliciesNetworkLoadBalancersPolicyCollection] {
-	return pulumix.Output[GetNetworkLoadBalancersPoliciesNetworkLoadBalancersPolicyCollection]{
-		OutputState: i.ToGetNetworkLoadBalancersPoliciesNetworkLoadBalancersPolicyCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetNetworkLoadBalancersPoliciesNetworkLoadBalancersPolicyCollectionArrayInput is an input type that accepts GetNetworkLoadBalancersPoliciesNetworkLoadBalancersPolicyCollectionArray and GetNetworkLoadBalancersPoliciesNetworkLoadBalancersPolicyCollectionArrayOutput values.
 // You can construct a concrete instance of `GetNetworkLoadBalancersPoliciesNetworkLoadBalancersPolicyCollectionArrayInput` via:
 //
@@ -5237,12 +4486,6 @@ func (i GetNetworkLoadBalancersPoliciesNetworkLoadBalancersPolicyCollectionArray
 	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkLoadBalancersPoliciesNetworkLoadBalancersPolicyCollectionArrayOutput)
 }
 
-func (i GetNetworkLoadBalancersPoliciesNetworkLoadBalancersPolicyCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNetworkLoadBalancersPoliciesNetworkLoadBalancersPolicyCollection] {
-	return pulumix.Output[[]GetNetworkLoadBalancersPoliciesNetworkLoadBalancersPolicyCollection]{
-		OutputState: i.ToGetNetworkLoadBalancersPoliciesNetworkLoadBalancersPolicyCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetNetworkLoadBalancersPoliciesNetworkLoadBalancersPolicyCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetNetworkLoadBalancersPoliciesNetworkLoadBalancersPolicyCollectionOutput) ElementType() reflect.Type {
@@ -5255,12 +4498,6 @@ func (o GetNetworkLoadBalancersPoliciesNetworkLoadBalancersPolicyCollectionOutpu
 
 func (o GetNetworkLoadBalancersPoliciesNetworkLoadBalancersPolicyCollectionOutput) ToGetNetworkLoadBalancersPoliciesNetworkLoadBalancersPolicyCollectionOutputWithContext(ctx context.Context) GetNetworkLoadBalancersPoliciesNetworkLoadBalancersPolicyCollectionOutput {
 	return o
-}
-
-func (o GetNetworkLoadBalancersPoliciesNetworkLoadBalancersPolicyCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetNetworkLoadBalancersPoliciesNetworkLoadBalancersPolicyCollection] {
-	return pulumix.Output[GetNetworkLoadBalancersPoliciesNetworkLoadBalancersPolicyCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Array of NetworkLoadBalancersPolicySummary objects.
@@ -5280,12 +4517,6 @@ func (o GetNetworkLoadBalancersPoliciesNetworkLoadBalancersPolicyCollectionArray
 
 func (o GetNetworkLoadBalancersPoliciesNetworkLoadBalancersPolicyCollectionArrayOutput) ToGetNetworkLoadBalancersPoliciesNetworkLoadBalancersPolicyCollectionArrayOutputWithContext(ctx context.Context) GetNetworkLoadBalancersPoliciesNetworkLoadBalancersPolicyCollectionArrayOutput {
 	return o
-}
-
-func (o GetNetworkLoadBalancersPoliciesNetworkLoadBalancersPolicyCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNetworkLoadBalancersPoliciesNetworkLoadBalancersPolicyCollection] {
-	return pulumix.Output[[]GetNetworkLoadBalancersPoliciesNetworkLoadBalancersPolicyCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetNetworkLoadBalancersPoliciesNetworkLoadBalancersPolicyCollectionArrayOutput) Index(i pulumi.IntInput) GetNetworkLoadBalancersPoliciesNetworkLoadBalancersPolicyCollectionOutput {
@@ -5329,12 +4560,6 @@ func (i GetNetworkLoadBalancersProtocolsFilterArgs) ToGetNetworkLoadBalancersPro
 	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkLoadBalancersProtocolsFilterOutput)
 }
 
-func (i GetNetworkLoadBalancersProtocolsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetNetworkLoadBalancersProtocolsFilter] {
-	return pulumix.Output[GetNetworkLoadBalancersProtocolsFilter]{
-		OutputState: i.ToGetNetworkLoadBalancersProtocolsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetNetworkLoadBalancersProtocolsFilterArrayInput is an input type that accepts GetNetworkLoadBalancersProtocolsFilterArray and GetNetworkLoadBalancersProtocolsFilterArrayOutput values.
 // You can construct a concrete instance of `GetNetworkLoadBalancersProtocolsFilterArrayInput` via:
 //
@@ -5360,12 +4585,6 @@ func (i GetNetworkLoadBalancersProtocolsFilterArray) ToGetNetworkLoadBalancersPr
 	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkLoadBalancersProtocolsFilterArrayOutput)
 }
 
-func (i GetNetworkLoadBalancersProtocolsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNetworkLoadBalancersProtocolsFilter] {
-	return pulumix.Output[[]GetNetworkLoadBalancersProtocolsFilter]{
-		OutputState: i.ToGetNetworkLoadBalancersProtocolsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetNetworkLoadBalancersProtocolsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetNetworkLoadBalancersProtocolsFilterOutput) ElementType() reflect.Type {
@@ -5378,12 +4597,6 @@ func (o GetNetworkLoadBalancersProtocolsFilterOutput) ToGetNetworkLoadBalancersP
 
 func (o GetNetworkLoadBalancersProtocolsFilterOutput) ToGetNetworkLoadBalancersProtocolsFilterOutputWithContext(ctx context.Context) GetNetworkLoadBalancersProtocolsFilterOutput {
 	return o
-}
-
-func (o GetNetworkLoadBalancersProtocolsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetNetworkLoadBalancersProtocolsFilter] {
-	return pulumix.Output[GetNetworkLoadBalancersProtocolsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetNetworkLoadBalancersProtocolsFilterOutput) Name() pulumi.StringOutput {
@@ -5410,12 +4623,6 @@ func (o GetNetworkLoadBalancersProtocolsFilterArrayOutput) ToGetNetworkLoadBalan
 
 func (o GetNetworkLoadBalancersProtocolsFilterArrayOutput) ToGetNetworkLoadBalancersProtocolsFilterArrayOutputWithContext(ctx context.Context) GetNetworkLoadBalancersProtocolsFilterArrayOutput {
 	return o
-}
-
-func (o GetNetworkLoadBalancersProtocolsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNetworkLoadBalancersProtocolsFilter] {
-	return pulumix.Output[[]GetNetworkLoadBalancersProtocolsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetNetworkLoadBalancersProtocolsFilterArrayOutput) Index(i pulumi.IntInput) GetNetworkLoadBalancersProtocolsFilterOutput {
@@ -5457,12 +4664,6 @@ func (i GetNetworkLoadBalancersProtocolsNetworkLoadBalancersProtocolCollectionAr
 	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkLoadBalancersProtocolsNetworkLoadBalancersProtocolCollectionOutput)
 }
 
-func (i GetNetworkLoadBalancersProtocolsNetworkLoadBalancersProtocolCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetNetworkLoadBalancersProtocolsNetworkLoadBalancersProtocolCollection] {
-	return pulumix.Output[GetNetworkLoadBalancersProtocolsNetworkLoadBalancersProtocolCollection]{
-		OutputState: i.ToGetNetworkLoadBalancersProtocolsNetworkLoadBalancersProtocolCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetNetworkLoadBalancersProtocolsNetworkLoadBalancersProtocolCollectionArrayInput is an input type that accepts GetNetworkLoadBalancersProtocolsNetworkLoadBalancersProtocolCollectionArray and GetNetworkLoadBalancersProtocolsNetworkLoadBalancersProtocolCollectionArrayOutput values.
 // You can construct a concrete instance of `GetNetworkLoadBalancersProtocolsNetworkLoadBalancersProtocolCollectionArrayInput` via:
 //
@@ -5488,12 +4689,6 @@ func (i GetNetworkLoadBalancersProtocolsNetworkLoadBalancersProtocolCollectionAr
 	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkLoadBalancersProtocolsNetworkLoadBalancersProtocolCollectionArrayOutput)
 }
 
-func (i GetNetworkLoadBalancersProtocolsNetworkLoadBalancersProtocolCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNetworkLoadBalancersProtocolsNetworkLoadBalancersProtocolCollection] {
-	return pulumix.Output[[]GetNetworkLoadBalancersProtocolsNetworkLoadBalancersProtocolCollection]{
-		OutputState: i.ToGetNetworkLoadBalancersProtocolsNetworkLoadBalancersProtocolCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetNetworkLoadBalancersProtocolsNetworkLoadBalancersProtocolCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetNetworkLoadBalancersProtocolsNetworkLoadBalancersProtocolCollectionOutput) ElementType() reflect.Type {
@@ -5506,12 +4701,6 @@ func (o GetNetworkLoadBalancersProtocolsNetworkLoadBalancersProtocolCollectionOu
 
 func (o GetNetworkLoadBalancersProtocolsNetworkLoadBalancersProtocolCollectionOutput) ToGetNetworkLoadBalancersProtocolsNetworkLoadBalancersProtocolCollectionOutputWithContext(ctx context.Context) GetNetworkLoadBalancersProtocolsNetworkLoadBalancersProtocolCollectionOutput {
 	return o
-}
-
-func (o GetNetworkLoadBalancersProtocolsNetworkLoadBalancersProtocolCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetNetworkLoadBalancersProtocolsNetworkLoadBalancersProtocolCollection] {
-	return pulumix.Output[GetNetworkLoadBalancersProtocolsNetworkLoadBalancersProtocolCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Array of NetworkLoadBalancersProtocolSummary objects.
@@ -5533,12 +4722,6 @@ func (o GetNetworkLoadBalancersProtocolsNetworkLoadBalancersProtocolCollectionAr
 
 func (o GetNetworkLoadBalancersProtocolsNetworkLoadBalancersProtocolCollectionArrayOutput) ToGetNetworkLoadBalancersProtocolsNetworkLoadBalancersProtocolCollectionArrayOutputWithContext(ctx context.Context) GetNetworkLoadBalancersProtocolsNetworkLoadBalancersProtocolCollectionArrayOutput {
 	return o
-}
-
-func (o GetNetworkLoadBalancersProtocolsNetworkLoadBalancersProtocolCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNetworkLoadBalancersProtocolsNetworkLoadBalancersProtocolCollection] {
-	return pulumix.Output[[]GetNetworkLoadBalancersProtocolsNetworkLoadBalancersProtocolCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetNetworkLoadBalancersProtocolsNetworkLoadBalancersProtocolCollectionArrayOutput) Index(i pulumi.IntInput) GetNetworkLoadBalancersProtocolsNetworkLoadBalancersProtocolCollectionOutput {

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Fusion Environment Service Attachment resource in Oracle Cloud Infrastructure Fusion Apps service.
@@ -63,31 +62,31 @@ type GetFusionEnvironmentServiceAttachmentArgs struct {
 // A collection of values returned by getFusionEnvironmentServiceAttachment.
 type GetFusionEnvironmentServiceAttachmentResult struct {
 	// Compartment Identifier
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// Service Attachment Display name, can be renamed
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags        map[string]interface{} `pulumi:"freeformTags"`
 	FusionEnvironmentId string                 `pulumi:"fusionEnvironmentId"`
 	// Unique identifier that is immutable on creation
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Whether this service is provisioned due to the customer being subscribed to a specific SKU
-	IsSkuBased          bool   `pulumi:"isSkuBased"`
+	IsSkuBased          *bool  `pulumi:"isSkuBased"`
 	ServiceAttachmentId string `pulumi:"serviceAttachmentId"`
 	// The ID of the service instance created that can be used to identify this on the service control plane
-	ServiceInstanceId string `pulumi:"serviceInstanceId"`
+	ServiceInstanceId *string `pulumi:"serviceInstanceId"`
 	// Type of the serviceInstance.
-	ServiceInstanceType string `pulumi:"serviceInstanceType"`
+	ServiceInstanceType *string `pulumi:"serviceInstanceType"`
 	// Public URL
-	ServiceUrl string `pulumi:"serviceUrl"`
+	ServiceUrl *string `pulumi:"serviceUrl"`
 	// The current state of the ServiceInstance.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The time the the ServiceInstance was created. An RFC3339 formatted datetime string
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time the ServiceInstance was updated. An RFC3339 formatted datetime string
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 func GetFusionEnvironmentServiceAttachmentOutput(ctx *pulumi.Context, args GetFusionEnvironmentServiceAttachmentOutputArgs, opts ...pulumi.InvokeOption) GetFusionEnvironmentServiceAttachmentResultOutput {
@@ -130,15 +129,9 @@ func (o GetFusionEnvironmentServiceAttachmentResultOutput) ToGetFusionEnvironmen
 	return o
 }
 
-func (o GetFusionEnvironmentServiceAttachmentResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetFusionEnvironmentServiceAttachmentResult] {
-	return pulumix.Output[GetFusionEnvironmentServiceAttachmentResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Compartment Identifier
-func (o GetFusionEnvironmentServiceAttachmentResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentServiceAttachmentResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetFusionEnvironmentServiceAttachmentResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentServiceAttachmentResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -147,8 +140,8 @@ func (o GetFusionEnvironmentServiceAttachmentResultOutput) DefinedTags() pulumi.
 }
 
 // Service Attachment Display name, can be renamed
-func (o GetFusionEnvironmentServiceAttachmentResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentServiceAttachmentResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetFusionEnvironmentServiceAttachmentResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentServiceAttachmentResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -161,13 +154,13 @@ func (o GetFusionEnvironmentServiceAttachmentResultOutput) FusionEnvironmentId()
 }
 
 // Unique identifier that is immutable on creation
-func (o GetFusionEnvironmentServiceAttachmentResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentServiceAttachmentResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetFusionEnvironmentServiceAttachmentResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentServiceAttachmentResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Whether this service is provisioned due to the customer being subscribed to a specific SKU
-func (o GetFusionEnvironmentServiceAttachmentResultOutput) IsSkuBased() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentServiceAttachmentResult) bool { return v.IsSkuBased }).(pulumi.BoolOutput)
+func (o GetFusionEnvironmentServiceAttachmentResultOutput) IsSkuBased() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentServiceAttachmentResult) *bool { return v.IsSkuBased }).(pulumi.BoolPtrOutput)
 }
 
 func (o GetFusionEnvironmentServiceAttachmentResultOutput) ServiceAttachmentId() pulumi.StringOutput {
@@ -175,33 +168,33 @@ func (o GetFusionEnvironmentServiceAttachmentResultOutput) ServiceAttachmentId()
 }
 
 // The ID of the service instance created that can be used to identify this on the service control plane
-func (o GetFusionEnvironmentServiceAttachmentResultOutput) ServiceInstanceId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentServiceAttachmentResult) string { return v.ServiceInstanceId }).(pulumi.StringOutput)
+func (o GetFusionEnvironmentServiceAttachmentResultOutput) ServiceInstanceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentServiceAttachmentResult) *string { return v.ServiceInstanceId }).(pulumi.StringPtrOutput)
 }
 
 // Type of the serviceInstance.
-func (o GetFusionEnvironmentServiceAttachmentResultOutput) ServiceInstanceType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentServiceAttachmentResult) string { return v.ServiceInstanceType }).(pulumi.StringOutput)
+func (o GetFusionEnvironmentServiceAttachmentResultOutput) ServiceInstanceType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentServiceAttachmentResult) *string { return v.ServiceInstanceType }).(pulumi.StringPtrOutput)
 }
 
 // Public URL
-func (o GetFusionEnvironmentServiceAttachmentResultOutput) ServiceUrl() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentServiceAttachmentResult) string { return v.ServiceUrl }).(pulumi.StringOutput)
+func (o GetFusionEnvironmentServiceAttachmentResultOutput) ServiceUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentServiceAttachmentResult) *string { return v.ServiceUrl }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the ServiceInstance.
-func (o GetFusionEnvironmentServiceAttachmentResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentServiceAttachmentResult) string { return v.State }).(pulumi.StringOutput)
+func (o GetFusionEnvironmentServiceAttachmentResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentServiceAttachmentResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The time the the ServiceInstance was created. An RFC3339 formatted datetime string
-func (o GetFusionEnvironmentServiceAttachmentResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentServiceAttachmentResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetFusionEnvironmentServiceAttachmentResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentServiceAttachmentResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time the ServiceInstance was updated. An RFC3339 formatted datetime string
-func (o GetFusionEnvironmentServiceAttachmentResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentServiceAttachmentResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o GetFusionEnvironmentServiceAttachmentResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentServiceAttachmentResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 func init() {

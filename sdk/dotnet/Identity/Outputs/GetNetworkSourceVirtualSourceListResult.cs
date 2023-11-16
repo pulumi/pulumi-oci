@@ -14,13 +14,13 @@ namespace Pulumi.Oci.Identity.Outputs
     public sealed class GetNetworkSourceVirtualSourceListResult
     {
         public readonly ImmutableArray<string> IpRanges;
-        public readonly string VcnId;
+        public readonly string? VcnId;
 
         [OutputConstructor]
         private GetNetworkSourceVirtualSourceListResult(
             ImmutableArray<string> ipRanges,
 
-            string vcnId)
+            string? vcnId)
         {
             IpRanges = ipRanges;
             VcnId = vcnId;

@@ -75,12 +75,12 @@ export interface GetConsoleHistoriesResult {
     /**
      * The list of console_histories.
      */
-    readonly consoleHistories: outputs.Core.GetConsoleHistoriesConsoleHistory[];
+    readonly consoleHistories?: outputs.Core.GetConsoleHistoriesConsoleHistory[];
     readonly filters?: outputs.Core.GetConsoleHistoriesFilter[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The OCID of the instance this console history was fetched from.
      */

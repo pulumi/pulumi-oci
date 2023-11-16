@@ -72,7 +72,7 @@ class GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -80,10 +80,7 @@ class GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportResult:
 
     @property
     @pulumi.getter(name="indexFindings")
-    def index_findings(self) -> Sequence['outputs.GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportIndexFindingResult']:
-        """
-        The list of object findings related to indexes.
-        """
+    def index_findings(self) -> Optional[Sequence['outputs.GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportIndexFindingResult']]:
         return pulumi.get(self, "index_findings")
 
     @property
@@ -93,10 +90,7 @@ class GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportResult:
 
     @property
     @pulumi.getter(name="objectStatFindings")
-    def object_stat_findings(self) -> Sequence['outputs.GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportObjectStatFindingResult']:
-        """
-        The list of object findings related to statistics.
-        """
+    def object_stat_findings(self) -> Optional[Sequence['outputs.GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportObjectStatFindingResult']]:
         return pulumi.get(self, "object_stat_findings")
 
     @property
@@ -111,18 +105,12 @@ class GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportResult:
 
     @property
     @pulumi.getter
-    def statistics(self) -> Sequence['outputs.GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticResult']:
-        """
-        The number of distinct SQL statements with stale or missing optimizer statistics recommendations.
-        """
+    def statistics(self) -> Optional[Sequence['outputs.GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticResult']]:
         return pulumi.get(self, "statistics")
 
     @property
     @pulumi.getter(name="taskInfos")
-    def task_infos(self) -> Sequence['outputs.GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportTaskInfoResult']:
-        """
-        The general information regarding the SQL Tuning Advisor task.
-        """
+    def task_infos(self) -> Optional[Sequence['outputs.GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportTaskInfoResult']]:
         return pulumi.get(self, "task_infos")
 
     @property
@@ -165,33 +153,7 @@ def get_managed_database_sql_tuning_advisor_tasks_summary_report(begin_exec_id_g
                                                                  time_less_than_or_equal_to: Optional[str] = None,
                                                                  opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetManagedDatabaseSqlTuningAdvisorTasksSummaryReportResult:
     """
-    This data source provides details about a specific Managed Database Sql Tuning Advisor Tasks Summary Report resource in Oracle Cloud Infrastructure Database Management service.
-
-    Gets the summary report for the specified SQL Tuning Advisor task.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_managed_database_sql_tuning_advisor_tasks_summary_report = oci.DatabaseManagement.get_managed_database_sql_tuning_advisor_tasks_summary_report(managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"],
-        sql_tuning_advisor_task_id=oci_database_management_sql_tuning_advisor_task["test_sql_tuning_advisor_task"]["id"],
-        begin_exec_id_greater_than_or_equal_to=var["managed_database_sql_tuning_advisor_tasks_summary_report_begin_exec_id_greater_than_or_equal_to"],
-        end_exec_id_less_than_or_equal_to=var["managed_database_sql_tuning_advisor_tasks_summary_report_end_exec_id_less_than_or_equal_to"],
-        search_period=var["managed_database_sql_tuning_advisor_tasks_summary_report_search_period"],
-        time_greater_than_or_equal_to=var["managed_database_sql_tuning_advisor_tasks_summary_report_time_greater_than_or_equal_to"],
-        time_less_than_or_equal_to=var["managed_database_sql_tuning_advisor_tasks_summary_report_time_less_than_or_equal_to"])
-    ```
-
-
-    :param str begin_exec_id_greater_than_or_equal_to: The optional greater than or equal to filter on the execution ID related to a specific SQL Tuning Advisor task. This is applicable only for Auto SQL Tuning tasks.
-    :param str end_exec_id_less_than_or_equal_to: The optional less than or equal to query parameter to filter on the execution ID related to a specific SQL Tuning Advisor task. This is applicable only for Auto SQL Tuning tasks.
-    :param str managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
-    :param str search_period: How far back the API will search for begin and end exec id. Unused if neither exec ids nor time filter query params are supplied. This is applicable only for Auto SQL Tuning tasks.
-    :param str sql_tuning_advisor_task_id: The SQL tuning task identifier. This is not the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param str time_greater_than_or_equal_to: The optional greater than or equal to query parameter to filter the timestamp. This is applicable only for Auto SQL Tuning tasks.
-    :param str time_less_than_or_equal_to: The optional less than or equal to query parameter to filter the timestamp. This is applicable only for Auto SQL Tuning tasks.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['beginExecIdGreaterThanOrEqualTo'] = begin_exec_id_greater_than_or_equal_to
@@ -229,32 +191,6 @@ def get_managed_database_sql_tuning_advisor_tasks_summary_report_output(begin_ex
                                                                         time_less_than_or_equal_to: Optional[pulumi.Input[Optional[str]]] = None,
                                                                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportResult]:
     """
-    This data source provides details about a specific Managed Database Sql Tuning Advisor Tasks Summary Report resource in Oracle Cloud Infrastructure Database Management service.
-
-    Gets the summary report for the specified SQL Tuning Advisor task.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_managed_database_sql_tuning_advisor_tasks_summary_report = oci.DatabaseManagement.get_managed_database_sql_tuning_advisor_tasks_summary_report(managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"],
-        sql_tuning_advisor_task_id=oci_database_management_sql_tuning_advisor_task["test_sql_tuning_advisor_task"]["id"],
-        begin_exec_id_greater_than_or_equal_to=var["managed_database_sql_tuning_advisor_tasks_summary_report_begin_exec_id_greater_than_or_equal_to"],
-        end_exec_id_less_than_or_equal_to=var["managed_database_sql_tuning_advisor_tasks_summary_report_end_exec_id_less_than_or_equal_to"],
-        search_period=var["managed_database_sql_tuning_advisor_tasks_summary_report_search_period"],
-        time_greater_than_or_equal_to=var["managed_database_sql_tuning_advisor_tasks_summary_report_time_greater_than_or_equal_to"],
-        time_less_than_or_equal_to=var["managed_database_sql_tuning_advisor_tasks_summary_report_time_less_than_or_equal_to"])
-    ```
-
-
-    :param str begin_exec_id_greater_than_or_equal_to: The optional greater than or equal to filter on the execution ID related to a specific SQL Tuning Advisor task. This is applicable only for Auto SQL Tuning tasks.
-    :param str end_exec_id_less_than_or_equal_to: The optional less than or equal to query parameter to filter on the execution ID related to a specific SQL Tuning Advisor task. This is applicable only for Auto SQL Tuning tasks.
-    :param str managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
-    :param str search_period: How far back the API will search for begin and end exec id. Unused if neither exec ids nor time filter query params are supplied. This is applicable only for Auto SQL Tuning tasks.
-    :param str sql_tuning_advisor_task_id: The SQL tuning task identifier. This is not the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param str time_greater_than_or_equal_to: The optional greater than or equal to query parameter to filter the timestamp. This is applicable only for Auto SQL Tuning tasks.
-    :param str time_less_than_or_equal_to: The optional less than or equal to query parameter to filter the timestamp. This is applicable only for Auto SQL Tuning tasks.
+    Use this data source to access information about an existing resource.
     """
     ...

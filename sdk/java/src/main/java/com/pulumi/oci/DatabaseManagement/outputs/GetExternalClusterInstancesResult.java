@@ -33,13 +33,13 @@ public final class GetExternalClusterInstancesResult {
      * @return The list of external_cluster_instance_collection.
      * 
      */
-    private List<GetExternalClusterInstancesExternalClusterInstanceCollection> externalClusterInstanceCollections;
+    private @Nullable List<GetExternalClusterInstancesExternalClusterInstanceCollection> externalClusterInstanceCollections;
     private @Nullable List<GetExternalClusterInstancesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
 
     private GetExternalClusterInstancesResult() {}
     /**
@@ -68,7 +68,7 @@ public final class GetExternalClusterInstancesResult {
      * 
      */
     public List<GetExternalClusterInstancesExternalClusterInstanceCollection> externalClusterInstanceCollections() {
-        return this.externalClusterInstanceCollections;
+        return this.externalClusterInstanceCollections == null ? List.of() : this.externalClusterInstanceCollections;
     }
     public List<GetExternalClusterInstancesFilter> filters() {
         return this.filters == null ? List.of() : this.filters;
@@ -77,8 +77,8 @@ public final class GetExternalClusterInstancesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
 
     public static Builder builder() {
@@ -93,9 +93,9 @@ public final class GetExternalClusterInstancesResult {
         private @Nullable String compartmentId;
         private @Nullable String displayName;
         private @Nullable String externalClusterId;
-        private List<GetExternalClusterInstancesExternalClusterInstanceCollection> externalClusterInstanceCollections;
+        private @Nullable List<GetExternalClusterInstancesExternalClusterInstanceCollection> externalClusterInstanceCollections;
         private @Nullable List<GetExternalClusterInstancesFilter> filters;
-        private String id;
+        private @Nullable String id;
         public Builder() {}
         public Builder(GetExternalClusterInstancesResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -123,8 +123,8 @@ public final class GetExternalClusterInstancesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder externalClusterInstanceCollections(List<GetExternalClusterInstancesExternalClusterInstanceCollection> externalClusterInstanceCollections) {
-            this.externalClusterInstanceCollections = Objects.requireNonNull(externalClusterInstanceCollections);
+        public Builder externalClusterInstanceCollections(@Nullable List<GetExternalClusterInstancesExternalClusterInstanceCollection> externalClusterInstanceCollections) {
+            this.externalClusterInstanceCollections = externalClusterInstanceCollections;
             return this;
         }
         public Builder externalClusterInstanceCollections(GetExternalClusterInstancesExternalClusterInstanceCollection... externalClusterInstanceCollections) {
@@ -139,8 +139,8 @@ public final class GetExternalClusterInstancesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         public GetExternalClusterInstancesResult build() {

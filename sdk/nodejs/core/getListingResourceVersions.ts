@@ -27,12 +27,12 @@ export interface GetListingResourceVersionsArgs {
  * A collection of values returned by getListingResourceVersions.
  */
 export interface GetListingResourceVersionsResult {
-    readonly appCatalogListingResourceVersions: outputs.Core.GetListingResourceVersionsAppCatalogListingResourceVersion[];
+    readonly appCatalogListingResourceVersions?: outputs.Core.GetListingResourceVersionsAppCatalogListingResourceVersion[];
     readonly filters?: outputs.Core.GetListingResourceVersionsFilter[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly listingId: string;
 }
 export function getListingResourceVersionsOutput(args: GetListingResourceVersionsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetListingResourceVersionsResult> {

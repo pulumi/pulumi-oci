@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Encrypted Data resource in Oracle Cloud Infrastructure Kms service.
@@ -59,15 +58,15 @@ type EncryptedData struct {
 	// Information that can be used to provide an encryption context for the encrypted data. The length of the string representation of the associated data must be fewer than 4096 characters.
 	AssociatedData pulumi.MapOutput `pulumi:"associatedData"`
 	// The encrypted data.
-	Ciphertext pulumi.StringOutput `pulumi:"ciphertext"`
+	Ciphertext pulumi.StringPtrOutput `pulumi:"ciphertext"`
 	// The service endpoint to perform cryptographic operations against. Cryptographic operations include 'Encrypt,' 'Decrypt,' and 'GenerateDataEncryptionKey' operations. see Vault Crypto endpoint.
 	CryptoEndpoint pulumi.StringOutput `pulumi:"cryptoEndpoint"`
 	// The encryption algorithm to use to encrypt and decrypt data with a customer-managed key. `AES_256_GCM` indicates that the key is a symmetric key that uses the Advanced Encryption Standard (AES) algorithm and that the mode of encryption is the Galois/Counter Mode (GCM). `RSA_OAEP_SHA_1` indicates that the key is an asymmetric key that uses the RSA encryption algorithm and uses Optimal Asymmetric Encryption Padding (OAEP). `RSA_OAEP_SHA_256` indicates that the key is an asymmetric key that uses the RSA encryption algorithm with a SHA-256 hash and uses OAEP.
-	EncryptionAlgorithm pulumi.StringOutput `pulumi:"encryptionAlgorithm"`
+	EncryptionAlgorithm pulumi.StringPtrOutput `pulumi:"encryptionAlgorithm"`
 	// The OCID of the key to encrypt with.
 	KeyId pulumi.StringOutput `pulumi:"keyId"`
 	// The OCID of the key version used to encrypt the ciphertext.
-	KeyVersionId pulumi.StringOutput `pulumi:"keyVersionId"`
+	KeyVersionId pulumi.StringPtrOutput `pulumi:"keyVersionId"`
 	// Information that provides context for audit logging. You can provide this additional data as key-value pairs to include in the audit logs when audit logging is enabled.
 	LoggingContext pulumi.MapOutput `pulumi:"loggingContext"`
 	// The plaintext data to encrypt.
@@ -227,12 +226,6 @@ func (i *EncryptedData) ToEncryptedDataOutputWithContext(ctx context.Context) En
 	return pulumi.ToOutputWithContext(ctx, i).(EncryptedDataOutput)
 }
 
-func (i *EncryptedData) ToOutput(ctx context.Context) pulumix.Output[*EncryptedData] {
-	return pulumix.Output[*EncryptedData]{
-		OutputState: i.ToEncryptedDataOutputWithContext(ctx).OutputState,
-	}
-}
-
 // EncryptedDataArrayInput is an input type that accepts EncryptedDataArray and EncryptedDataArrayOutput values.
 // You can construct a concrete instance of `EncryptedDataArrayInput` via:
 //
@@ -256,12 +249,6 @@ func (i EncryptedDataArray) ToEncryptedDataArrayOutput() EncryptedDataArrayOutpu
 
 func (i EncryptedDataArray) ToEncryptedDataArrayOutputWithContext(ctx context.Context) EncryptedDataArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(EncryptedDataArrayOutput)
-}
-
-func (i EncryptedDataArray) ToOutput(ctx context.Context) pulumix.Output[[]*EncryptedData] {
-	return pulumix.Output[[]*EncryptedData]{
-		OutputState: i.ToEncryptedDataArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // EncryptedDataMapInput is an input type that accepts EncryptedDataMap and EncryptedDataMapOutput values.
@@ -289,12 +276,6 @@ func (i EncryptedDataMap) ToEncryptedDataMapOutputWithContext(ctx context.Contex
 	return pulumi.ToOutputWithContext(ctx, i).(EncryptedDataMapOutput)
 }
 
-func (i EncryptedDataMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*EncryptedData] {
-	return pulumix.Output[map[string]*EncryptedData]{
-		OutputState: i.ToEncryptedDataMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type EncryptedDataOutput struct{ *pulumi.OutputState }
 
 func (EncryptedDataOutput) ElementType() reflect.Type {
@@ -309,20 +290,14 @@ func (o EncryptedDataOutput) ToEncryptedDataOutputWithContext(ctx context.Contex
 	return o
 }
 
-func (o EncryptedDataOutput) ToOutput(ctx context.Context) pulumix.Output[*EncryptedData] {
-	return pulumix.Output[*EncryptedData]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Information that can be used to provide an encryption context for the encrypted data. The length of the string representation of the associated data must be fewer than 4096 characters.
 func (o EncryptedDataOutput) AssociatedData() pulumi.MapOutput {
 	return o.ApplyT(func(v *EncryptedData) pulumi.MapOutput { return v.AssociatedData }).(pulumi.MapOutput)
 }
 
 // The encrypted data.
-func (o EncryptedDataOutput) Ciphertext() pulumi.StringOutput {
-	return o.ApplyT(func(v *EncryptedData) pulumi.StringOutput { return v.Ciphertext }).(pulumi.StringOutput)
+func (o EncryptedDataOutput) Ciphertext() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *EncryptedData) pulumi.StringPtrOutput { return v.Ciphertext }).(pulumi.StringPtrOutput)
 }
 
 // The service endpoint to perform cryptographic operations against. Cryptographic operations include 'Encrypt,' 'Decrypt,' and 'GenerateDataEncryptionKey' operations. see Vault Crypto endpoint.
@@ -331,8 +306,8 @@ func (o EncryptedDataOutput) CryptoEndpoint() pulumi.StringOutput {
 }
 
 // The encryption algorithm to use to encrypt and decrypt data with a customer-managed key. `AES_256_GCM` indicates that the key is a symmetric key that uses the Advanced Encryption Standard (AES) algorithm and that the mode of encryption is the Galois/Counter Mode (GCM). `RSA_OAEP_SHA_1` indicates that the key is an asymmetric key that uses the RSA encryption algorithm and uses Optimal Asymmetric Encryption Padding (OAEP). `RSA_OAEP_SHA_256` indicates that the key is an asymmetric key that uses the RSA encryption algorithm with a SHA-256 hash and uses OAEP.
-func (o EncryptedDataOutput) EncryptionAlgorithm() pulumi.StringOutput {
-	return o.ApplyT(func(v *EncryptedData) pulumi.StringOutput { return v.EncryptionAlgorithm }).(pulumi.StringOutput)
+func (o EncryptedDataOutput) EncryptionAlgorithm() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *EncryptedData) pulumi.StringPtrOutput { return v.EncryptionAlgorithm }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the key to encrypt with.
@@ -341,8 +316,8 @@ func (o EncryptedDataOutput) KeyId() pulumi.StringOutput {
 }
 
 // The OCID of the key version used to encrypt the ciphertext.
-func (o EncryptedDataOutput) KeyVersionId() pulumi.StringOutput {
-	return o.ApplyT(func(v *EncryptedData) pulumi.StringOutput { return v.KeyVersionId }).(pulumi.StringOutput)
+func (o EncryptedDataOutput) KeyVersionId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *EncryptedData) pulumi.StringPtrOutput { return v.KeyVersionId }).(pulumi.StringPtrOutput)
 }
 
 // Information that provides context for audit logging. You can provide this additional data as key-value pairs to include in the audit logs when audit logging is enabled.
@@ -372,12 +347,6 @@ func (o EncryptedDataArrayOutput) ToEncryptedDataArrayOutputWithContext(ctx cont
 	return o
 }
 
-func (o EncryptedDataArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*EncryptedData] {
-	return pulumix.Output[[]*EncryptedData]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o EncryptedDataArrayOutput) Index(i pulumi.IntInput) EncryptedDataOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *EncryptedData {
 		return vs[0].([]*EncryptedData)[vs[1].(int)]
@@ -396,12 +365,6 @@ func (o EncryptedDataMapOutput) ToEncryptedDataMapOutput() EncryptedDataMapOutpu
 
 func (o EncryptedDataMapOutput) ToEncryptedDataMapOutputWithContext(ctx context.Context) EncryptedDataMapOutput {
 	return o
-}
-
-func (o EncryptedDataMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*EncryptedData] {
-	return pulumix.Output[map[string]*EncryptedData]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o EncryptedDataMapOutput) MapIndex(k pulumi.StringInput) EncryptedDataOutput {

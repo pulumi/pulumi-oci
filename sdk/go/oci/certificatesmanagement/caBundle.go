@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Ca Bundle resource in Oracle Cloud Infrastructure Certificates Management service.
@@ -70,20 +69,20 @@ type CaBundle struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) A brief description of the CA bundle.
-	Description pulumi.StringOutput `pulumi:"description"`
+	Description pulumi.StringPtrOutput `pulumi:"description"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// Additional information about the current lifecycle state of the CA bundle.
-	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrOutput `pulumi:"lifecycleDetails"`
 	// A user-friendly name for the CA bundle. Names are unique within a compartment. Avoid entering confidential information. Valid characters include uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Name pulumi.StringOutput `pulumi:"name"`
 	// The current lifecycle state of the CA bundle.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// A property indicating when the CA bundle was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 }
 
 // NewCaBundle registers a new resource with the given unique name, arguments, and options.
@@ -233,12 +232,6 @@ func (i *CaBundle) ToCaBundleOutputWithContext(ctx context.Context) CaBundleOutp
 	return pulumi.ToOutputWithContext(ctx, i).(CaBundleOutput)
 }
 
-func (i *CaBundle) ToOutput(ctx context.Context) pulumix.Output[*CaBundle] {
-	return pulumix.Output[*CaBundle]{
-		OutputState: i.ToCaBundleOutputWithContext(ctx).OutputState,
-	}
-}
-
 // CaBundleArrayInput is an input type that accepts CaBundleArray and CaBundleArrayOutput values.
 // You can construct a concrete instance of `CaBundleArrayInput` via:
 //
@@ -262,12 +255,6 @@ func (i CaBundleArray) ToCaBundleArrayOutput() CaBundleArrayOutput {
 
 func (i CaBundleArray) ToCaBundleArrayOutputWithContext(ctx context.Context) CaBundleArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(CaBundleArrayOutput)
-}
-
-func (i CaBundleArray) ToOutput(ctx context.Context) pulumix.Output[[]*CaBundle] {
-	return pulumix.Output[[]*CaBundle]{
-		OutputState: i.ToCaBundleArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // CaBundleMapInput is an input type that accepts CaBundleMap and CaBundleMapOutput values.
@@ -295,12 +282,6 @@ func (i CaBundleMap) ToCaBundleMapOutputWithContext(ctx context.Context) CaBundl
 	return pulumi.ToOutputWithContext(ctx, i).(CaBundleMapOutput)
 }
 
-func (i CaBundleMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*CaBundle] {
-	return pulumix.Output[map[string]*CaBundle]{
-		OutputState: i.ToCaBundleMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type CaBundleOutput struct{ *pulumi.OutputState }
 
 func (CaBundleOutput) ElementType() reflect.Type {
@@ -313,12 +294,6 @@ func (o CaBundleOutput) ToCaBundleOutput() CaBundleOutput {
 
 func (o CaBundleOutput) ToCaBundleOutputWithContext(ctx context.Context) CaBundleOutput {
 	return o
-}
-
-func (o CaBundleOutput) ToOutput(ctx context.Context) pulumix.Output[*CaBundle] {
-	return pulumix.Output[*CaBundle]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Certificates (in PEM format) to include in the CA bundle.
@@ -337,8 +312,8 @@ func (o CaBundleOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // (Updatable) A brief description of the CA bundle.
-func (o CaBundleOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v *CaBundle) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
+func (o CaBundleOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CaBundle) pulumi.StringPtrOutput { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -347,8 +322,8 @@ func (o CaBundleOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // Additional information about the current lifecycle state of the CA bundle.
-func (o CaBundleOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v *CaBundle) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o CaBundleOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CaBundle) pulumi.StringPtrOutput { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // A user-friendly name for the CA bundle. Names are unique within a compartment. Avoid entering confidential information. Valid characters include uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
@@ -360,13 +335,13 @@ func (o CaBundleOutput) Name() pulumi.StringOutput {
 }
 
 // The current lifecycle state of the CA bundle.
-func (o CaBundleOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *CaBundle) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o CaBundleOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CaBundle) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // A property indicating when the CA bundle was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-func (o CaBundleOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *CaBundle) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o CaBundleOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CaBundle) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 type CaBundleArrayOutput struct{ *pulumi.OutputState }
@@ -381,12 +356,6 @@ func (o CaBundleArrayOutput) ToCaBundleArrayOutput() CaBundleArrayOutput {
 
 func (o CaBundleArrayOutput) ToCaBundleArrayOutputWithContext(ctx context.Context) CaBundleArrayOutput {
 	return o
-}
-
-func (o CaBundleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*CaBundle] {
-	return pulumix.Output[[]*CaBundle]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o CaBundleArrayOutput) Index(i pulumi.IntInput) CaBundleOutput {
@@ -407,12 +376,6 @@ func (o CaBundleMapOutput) ToCaBundleMapOutput() CaBundleMapOutput {
 
 func (o CaBundleMapOutput) ToCaBundleMapOutputWithContext(ctx context.Context) CaBundleMapOutput {
 	return o
-}
-
-func (o CaBundleMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*CaBundle] {
-	return pulumix.Output[map[string]*CaBundle]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o CaBundleMapOutput) MapIndex(k pulumi.StringInput) CaBundleOutput {

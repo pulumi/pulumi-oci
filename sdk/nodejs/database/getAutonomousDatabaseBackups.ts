@@ -74,7 +74,7 @@ export interface GetAutonomousDatabaseBackupsResult {
     /**
      * The list of autonomous_database_backups.
      */
-    readonly autonomousDatabaseBackups: outputs.Database.GetAutonomousDatabaseBackupsAutonomousDatabaseBackup[];
+    readonly autonomousDatabaseBackups?: outputs.Database.GetAutonomousDatabaseBackupsAutonomousDatabaseBackup[];
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database.
      */
@@ -91,7 +91,7 @@ export interface GetAutonomousDatabaseBackupsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The current state of the backup.
      */

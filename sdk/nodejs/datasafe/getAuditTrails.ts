@@ -105,7 +105,7 @@ export interface GetAuditTrailsResult {
     /**
      * The list of audit_trail_collection.
      */
-    readonly auditTrailCollections: outputs.DataSafe.GetAuditTrailsAuditTrailCollection[];
+    readonly auditTrailCollections?: outputs.DataSafe.GetAuditTrailsAuditTrailCollection[];
     readonly auditTrailId?: string;
     /**
      * The OCID of the compartment that contains the audit trail and is the same as the compartment of the audit profile resource.
@@ -120,7 +120,7 @@ export interface GetAuditTrailsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The current state of the audit trail.
      */

@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Http Probe resource in Oracle Cloud Infrastructure Health Checks service.
@@ -73,23 +72,23 @@ type HttpProbe struct {
 	// *Note:* Monitors and probes do not support the use of the `Authorization` HTTP header.
 	Headers pulumi.MapOutput `pulumi:"headers"`
 	// The region where updates must be made and where results must be fetched from.
-	HomeRegion pulumi.StringOutput `pulumi:"homeRegion"`
+	HomeRegion pulumi.StringPtrOutput `pulumi:"homeRegion"`
 	// The supported HTTP methods available for probes.
-	Method pulumi.StringOutput `pulumi:"method"`
+	Method pulumi.StringPtrOutput `pulumi:"method"`
 	// The optional URL path to probe, including query parameters.
-	Path pulumi.StringOutput `pulumi:"path"`
+	Path pulumi.StringPtrOutput `pulumi:"path"`
 	// The port on which to probe endpoints. If unspecified, probes will use the default port of their protocol.
-	Port pulumi.IntOutput `pulumi:"port"`
+	Port pulumi.IntPtrOutput `pulumi:"port"`
 	// The supported protocols available for HTTP probes.
 	Protocol pulumi.StringOutput `pulumi:"protocol"`
 	// A URL for fetching the probe results.
-	ResultsUrl pulumi.StringOutput `pulumi:"resultsUrl"`
+	ResultsUrl pulumi.StringPtrOutput `pulumi:"resultsUrl"`
 	// A list of targets (hostnames or IP addresses) of the probe.
 	Targets pulumi.StringArrayOutput `pulumi:"targets"`
 	// The RFC 3339-formatted creation date and time of the probe.
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The probe timeout in seconds. Valid values: 10, 20, 30, and 60. The probe timeout must be less than or equal to `intervalInSeconds` for monitors.
-	TimeoutInSeconds pulumi.IntOutput `pulumi:"timeoutInSeconds"`
+	TimeoutInSeconds pulumi.IntPtrOutput `pulumi:"timeoutInSeconds"`
 	// A list of names of vantage points from which to execute the probe.
 	//
 	// ** IMPORTANT **
@@ -279,12 +278,6 @@ func (i *HttpProbe) ToHttpProbeOutputWithContext(ctx context.Context) HttpProbeO
 	return pulumi.ToOutputWithContext(ctx, i).(HttpProbeOutput)
 }
 
-func (i *HttpProbe) ToOutput(ctx context.Context) pulumix.Output[*HttpProbe] {
-	return pulumix.Output[*HttpProbe]{
-		OutputState: i.ToHttpProbeOutputWithContext(ctx).OutputState,
-	}
-}
-
 // HttpProbeArrayInput is an input type that accepts HttpProbeArray and HttpProbeArrayOutput values.
 // You can construct a concrete instance of `HttpProbeArrayInput` via:
 //
@@ -308,12 +301,6 @@ func (i HttpProbeArray) ToHttpProbeArrayOutput() HttpProbeArrayOutput {
 
 func (i HttpProbeArray) ToHttpProbeArrayOutputWithContext(ctx context.Context) HttpProbeArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(HttpProbeArrayOutput)
-}
-
-func (i HttpProbeArray) ToOutput(ctx context.Context) pulumix.Output[[]*HttpProbe] {
-	return pulumix.Output[[]*HttpProbe]{
-		OutputState: i.ToHttpProbeArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // HttpProbeMapInput is an input type that accepts HttpProbeMap and HttpProbeMapOutput values.
@@ -341,12 +328,6 @@ func (i HttpProbeMap) ToHttpProbeMapOutputWithContext(ctx context.Context) HttpP
 	return pulumi.ToOutputWithContext(ctx, i).(HttpProbeMapOutput)
 }
 
-func (i HttpProbeMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*HttpProbe] {
-	return pulumix.Output[map[string]*HttpProbe]{
-		OutputState: i.ToHttpProbeMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type HttpProbeOutput struct{ *pulumi.OutputState }
 
 func (HttpProbeOutput) ElementType() reflect.Type {
@@ -359,12 +340,6 @@ func (o HttpProbeOutput) ToHttpProbeOutput() HttpProbeOutput {
 
 func (o HttpProbeOutput) ToHttpProbeOutputWithContext(ctx context.Context) HttpProbeOutput {
 	return o
-}
-
-func (o HttpProbeOutput) ToOutput(ctx context.Context) pulumix.Output[*HttpProbe] {
-	return pulumix.Output[*HttpProbe]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The OCID of the compartment.
@@ -380,23 +355,23 @@ func (o HttpProbeOutput) Headers() pulumi.MapOutput {
 }
 
 // The region where updates must be made and where results must be fetched from.
-func (o HttpProbeOutput) HomeRegion() pulumi.StringOutput {
-	return o.ApplyT(func(v *HttpProbe) pulumi.StringOutput { return v.HomeRegion }).(pulumi.StringOutput)
+func (o HttpProbeOutput) HomeRegion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *HttpProbe) pulumi.StringPtrOutput { return v.HomeRegion }).(pulumi.StringPtrOutput)
 }
 
 // The supported HTTP methods available for probes.
-func (o HttpProbeOutput) Method() pulumi.StringOutput {
-	return o.ApplyT(func(v *HttpProbe) pulumi.StringOutput { return v.Method }).(pulumi.StringOutput)
+func (o HttpProbeOutput) Method() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *HttpProbe) pulumi.StringPtrOutput { return v.Method }).(pulumi.StringPtrOutput)
 }
 
 // The optional URL path to probe, including query parameters.
-func (o HttpProbeOutput) Path() pulumi.StringOutput {
-	return o.ApplyT(func(v *HttpProbe) pulumi.StringOutput { return v.Path }).(pulumi.StringOutput)
+func (o HttpProbeOutput) Path() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *HttpProbe) pulumi.StringPtrOutput { return v.Path }).(pulumi.StringPtrOutput)
 }
 
 // The port on which to probe endpoints. If unspecified, probes will use the default port of their protocol.
-func (o HttpProbeOutput) Port() pulumi.IntOutput {
-	return o.ApplyT(func(v *HttpProbe) pulumi.IntOutput { return v.Port }).(pulumi.IntOutput)
+func (o HttpProbeOutput) Port() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *HttpProbe) pulumi.IntPtrOutput { return v.Port }).(pulumi.IntPtrOutput)
 }
 
 // The supported protocols available for HTTP probes.
@@ -405,8 +380,8 @@ func (o HttpProbeOutput) Protocol() pulumi.StringOutput {
 }
 
 // A URL for fetching the probe results.
-func (o HttpProbeOutput) ResultsUrl() pulumi.StringOutput {
-	return o.ApplyT(func(v *HttpProbe) pulumi.StringOutput { return v.ResultsUrl }).(pulumi.StringOutput)
+func (o HttpProbeOutput) ResultsUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *HttpProbe) pulumi.StringPtrOutput { return v.ResultsUrl }).(pulumi.StringPtrOutput)
 }
 
 // A list of targets (hostnames or IP addresses) of the probe.
@@ -415,13 +390,13 @@ func (o HttpProbeOutput) Targets() pulumi.StringArrayOutput {
 }
 
 // The RFC 3339-formatted creation date and time of the probe.
-func (o HttpProbeOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *HttpProbe) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o HttpProbeOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *HttpProbe) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The probe timeout in seconds. Valid values: 10, 20, 30, and 60. The probe timeout must be less than or equal to `intervalInSeconds` for monitors.
-func (o HttpProbeOutput) TimeoutInSeconds() pulumi.IntOutput {
-	return o.ApplyT(func(v *HttpProbe) pulumi.IntOutput { return v.TimeoutInSeconds }).(pulumi.IntOutput)
+func (o HttpProbeOutput) TimeoutInSeconds() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *HttpProbe) pulumi.IntPtrOutput { return v.TimeoutInSeconds }).(pulumi.IntPtrOutput)
 }
 
 // A list of names of vantage points from which to execute the probe.
@@ -446,12 +421,6 @@ func (o HttpProbeArrayOutput) ToHttpProbeArrayOutputWithContext(ctx context.Cont
 	return o
 }
 
-func (o HttpProbeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*HttpProbe] {
-	return pulumix.Output[[]*HttpProbe]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o HttpProbeArrayOutput) Index(i pulumi.IntInput) HttpProbeOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *HttpProbe {
 		return vs[0].([]*HttpProbe)[vs[1].(int)]
@@ -470,12 +439,6 @@ func (o HttpProbeMapOutput) ToHttpProbeMapOutput() HttpProbeMapOutput {
 
 func (o HttpProbeMapOutput) ToHttpProbeMapOutputWithContext(ctx context.Context) HttpProbeMapOutput {
 	return o
-}
-
-func (o HttpProbeMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*HttpProbe] {
-	return pulumix.Output[map[string]*HttpProbe]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o HttpProbeMapOutput) MapIndex(k pulumi.StringInput) HttpProbeOutput {

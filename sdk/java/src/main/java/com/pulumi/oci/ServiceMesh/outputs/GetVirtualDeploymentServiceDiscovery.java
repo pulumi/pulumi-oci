@@ -6,6 +6,8 @@ package com.pulumi.oci.ServiceMesh.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetVirtualDeploymentServiceDiscovery {
@@ -13,27 +15,27 @@ public final class GetVirtualDeploymentServiceDiscovery {
      * @return The hostname of the virtual deployments.
      * 
      */
-    private String hostname;
+    private @Nullable String hostname;
     /**
      * @return Type of service discovery.
      * 
      */
-    private String type;
+    private @Nullable String type;
 
     private GetVirtualDeploymentServiceDiscovery() {}
     /**
      * @return The hostname of the virtual deployments.
      * 
      */
-    public String hostname() {
-        return this.hostname;
+    public Optional<String> hostname() {
+        return Optional.ofNullable(this.hostname);
     }
     /**
      * @return Type of service discovery.
      * 
      */
-    public String type() {
-        return this.type;
+    public Optional<String> type() {
+        return Optional.ofNullable(this.type);
     }
 
     public static Builder builder() {
@@ -45,8 +47,8 @@ public final class GetVirtualDeploymentServiceDiscovery {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String hostname;
-        private String type;
+        private @Nullable String hostname;
+        private @Nullable String type;
         public Builder() {}
         public Builder(GetVirtualDeploymentServiceDiscovery defaults) {
     	      Objects.requireNonNull(defaults);
@@ -55,13 +57,13 @@ public final class GetVirtualDeploymentServiceDiscovery {
         }
 
         @CustomType.Setter
-        public Builder hostname(String hostname) {
-            this.hostname = Objects.requireNonNull(hostname);
+        public Builder hostname(@Nullable String hostname) {
+            this.hostname = hostname;
             return this;
         }
         @CustomType.Setter
-        public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+        public Builder type(@Nullable String type) {
+            this.type = type;
             return this;
         }
         public GetVirtualDeploymentServiceDiscovery build() {

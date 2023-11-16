@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 var _ = internal.GetEnvOrDefault
@@ -67,12 +66,6 @@ func (i BucketRetentionRuleArgs) ToBucketRetentionRuleOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(BucketRetentionRuleOutput)
 }
 
-func (i BucketRetentionRuleArgs) ToOutput(ctx context.Context) pulumix.Output[BucketRetentionRule] {
-	return pulumix.Output[BucketRetentionRule]{
-		OutputState: i.ToBucketRetentionRuleOutputWithContext(ctx).OutputState,
-	}
-}
-
 // BucketRetentionRuleArrayInput is an input type that accepts BucketRetentionRuleArray and BucketRetentionRuleArrayOutput values.
 // You can construct a concrete instance of `BucketRetentionRuleArrayInput` via:
 //
@@ -98,12 +91,6 @@ func (i BucketRetentionRuleArray) ToBucketRetentionRuleArrayOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(BucketRetentionRuleArrayOutput)
 }
 
-func (i BucketRetentionRuleArray) ToOutput(ctx context.Context) pulumix.Output[[]BucketRetentionRule] {
-	return pulumix.Output[[]BucketRetentionRule]{
-		OutputState: i.ToBucketRetentionRuleArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type BucketRetentionRuleOutput struct{ *pulumi.OutputState }
 
 func (BucketRetentionRuleOutput) ElementType() reflect.Type {
@@ -116,12 +103,6 @@ func (o BucketRetentionRuleOutput) ToBucketRetentionRuleOutput() BucketRetention
 
 func (o BucketRetentionRuleOutput) ToBucketRetentionRuleOutputWithContext(ctx context.Context) BucketRetentionRuleOutput {
 	return o
-}
-
-func (o BucketRetentionRuleOutput) ToOutput(ctx context.Context) pulumix.Output[BucketRetentionRule] {
-	return pulumix.Output[BucketRetentionRule]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A user-specified name for the retention rule. Names can be helpful in identifying retention rules. The name should be unique. This attribute is a forcenew attribute
@@ -168,12 +149,6 @@ func (o BucketRetentionRuleArrayOutput) ToBucketRetentionRuleArrayOutputWithCont
 	return o
 }
 
-func (o BucketRetentionRuleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]BucketRetentionRule] {
-	return pulumix.Output[[]BucketRetentionRule]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o BucketRetentionRuleArrayOutput) Index(i pulumi.IntInput) BucketRetentionRuleOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) BucketRetentionRule {
 		return vs[0].([]BucketRetentionRule)[vs[1].(int)]
@@ -217,12 +192,6 @@ func (i BucketRetentionRuleDurationArgs) ToBucketRetentionRuleDurationOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(BucketRetentionRuleDurationOutput)
 }
 
-func (i BucketRetentionRuleDurationArgs) ToOutput(ctx context.Context) pulumix.Output[BucketRetentionRuleDuration] {
-	return pulumix.Output[BucketRetentionRuleDuration]{
-		OutputState: i.ToBucketRetentionRuleDurationOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i BucketRetentionRuleDurationArgs) ToBucketRetentionRuleDurationPtrOutput() BucketRetentionRuleDurationPtrOutput {
 	return i.ToBucketRetentionRuleDurationPtrOutputWithContext(context.Background())
 }
@@ -264,12 +233,6 @@ func (i *bucketRetentionRuleDurationPtrType) ToBucketRetentionRuleDurationPtrOut
 	return pulumi.ToOutputWithContext(ctx, i).(BucketRetentionRuleDurationPtrOutput)
 }
 
-func (i *bucketRetentionRuleDurationPtrType) ToOutput(ctx context.Context) pulumix.Output[*BucketRetentionRuleDuration] {
-	return pulumix.Output[*BucketRetentionRuleDuration]{
-		OutputState: i.ToBucketRetentionRuleDurationPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type BucketRetentionRuleDurationOutput struct{ *pulumi.OutputState }
 
 func (BucketRetentionRuleDurationOutput) ElementType() reflect.Type {
@@ -294,12 +257,6 @@ func (o BucketRetentionRuleDurationOutput) ToBucketRetentionRuleDurationPtrOutpu
 	}).(BucketRetentionRuleDurationPtrOutput)
 }
 
-func (o BucketRetentionRuleDurationOutput) ToOutput(ctx context.Context) pulumix.Output[BucketRetentionRuleDuration] {
-	return pulumix.Output[BucketRetentionRuleDuration]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) The timeAmount is interpreted in units defined by the timeUnit parameter, and is calculated in relation to each object's Last-Modified timestamp.
 func (o BucketRetentionRuleDurationOutput) TimeAmount() pulumi.StringOutput {
 	return o.ApplyT(func(v BucketRetentionRuleDuration) string { return v.TimeAmount }).(pulumi.StringOutput)
@@ -322,12 +279,6 @@ func (o BucketRetentionRuleDurationPtrOutput) ToBucketRetentionRuleDurationPtrOu
 
 func (o BucketRetentionRuleDurationPtrOutput) ToBucketRetentionRuleDurationPtrOutputWithContext(ctx context.Context) BucketRetentionRuleDurationPtrOutput {
 	return o
-}
-
-func (o BucketRetentionRuleDurationPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*BucketRetentionRuleDuration] {
-	return pulumix.Output[*BucketRetentionRuleDuration]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o BucketRetentionRuleDurationPtrOutput) Elem() BucketRetentionRuleDurationOutput {
@@ -423,12 +374,6 @@ func (i ObjectLifecyclePolicyRuleArgs) ToObjectLifecyclePolicyRuleOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(ObjectLifecyclePolicyRuleOutput)
 }
 
-func (i ObjectLifecyclePolicyRuleArgs) ToOutput(ctx context.Context) pulumix.Output[ObjectLifecyclePolicyRule] {
-	return pulumix.Output[ObjectLifecyclePolicyRule]{
-		OutputState: i.ToObjectLifecyclePolicyRuleOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ObjectLifecyclePolicyRuleArrayInput is an input type that accepts ObjectLifecyclePolicyRuleArray and ObjectLifecyclePolicyRuleArrayOutput values.
 // You can construct a concrete instance of `ObjectLifecyclePolicyRuleArrayInput` via:
 //
@@ -454,12 +399,6 @@ func (i ObjectLifecyclePolicyRuleArray) ToObjectLifecyclePolicyRuleArrayOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(ObjectLifecyclePolicyRuleArrayOutput)
 }
 
-func (i ObjectLifecyclePolicyRuleArray) ToOutput(ctx context.Context) pulumix.Output[[]ObjectLifecyclePolicyRule] {
-	return pulumix.Output[[]ObjectLifecyclePolicyRule]{
-		OutputState: i.ToObjectLifecyclePolicyRuleArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ObjectLifecyclePolicyRuleOutput struct{ *pulumi.OutputState }
 
 func (ObjectLifecyclePolicyRuleOutput) ElementType() reflect.Type {
@@ -472,12 +411,6 @@ func (o ObjectLifecyclePolicyRuleOutput) ToObjectLifecyclePolicyRuleOutput() Obj
 
 func (o ObjectLifecyclePolicyRuleOutput) ToObjectLifecyclePolicyRuleOutputWithContext(ctx context.Context) ObjectLifecyclePolicyRuleOutput {
 	return o
-}
-
-func (o ObjectLifecyclePolicyRuleOutput) ToOutput(ctx context.Context) pulumix.Output[ObjectLifecyclePolicyRule] {
-	return pulumix.Output[ObjectLifecyclePolicyRule]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The action of the object lifecycle policy rule. Rules using the action 'ARCHIVE' move objects from Standard and InfrequentAccess storage tiers into the [Archive storage tier](https://docs.cloud.oracle.com/iaas/Content/Archive/Concepts/archivestorageoverview.htm). Rules using the action 'INFREQUENT_ACCESS' move objects from Standard storage tier into the Infrequent Access Storage tier. Objects that are already in InfrequentAccess tier or in Archive tier are left untouched. Rules using the action 'DELETE' permanently delete objects from buckets. Rules using 'ABORT' abort the uncommitted multipart-uploads and permanently delete their parts from buckets.
@@ -532,12 +465,6 @@ func (o ObjectLifecyclePolicyRuleArrayOutput) ToObjectLifecyclePolicyRuleArrayOu
 
 func (o ObjectLifecyclePolicyRuleArrayOutput) ToObjectLifecyclePolicyRuleArrayOutputWithContext(ctx context.Context) ObjectLifecyclePolicyRuleArrayOutput {
 	return o
-}
-
-func (o ObjectLifecyclePolicyRuleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]ObjectLifecyclePolicyRule] {
-	return pulumix.Output[[]ObjectLifecyclePolicyRule]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ObjectLifecyclePolicyRuleArrayOutput) Index(i pulumi.IntInput) ObjectLifecyclePolicyRuleOutput {
@@ -607,12 +534,6 @@ func (i ObjectLifecyclePolicyRuleObjectNameFilterArgs) ToObjectLifecyclePolicyRu
 	return pulumi.ToOutputWithContext(ctx, i).(ObjectLifecyclePolicyRuleObjectNameFilterOutput)
 }
 
-func (i ObjectLifecyclePolicyRuleObjectNameFilterArgs) ToOutput(ctx context.Context) pulumix.Output[ObjectLifecyclePolicyRuleObjectNameFilter] {
-	return pulumix.Output[ObjectLifecyclePolicyRuleObjectNameFilter]{
-		OutputState: i.ToObjectLifecyclePolicyRuleObjectNameFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i ObjectLifecyclePolicyRuleObjectNameFilterArgs) ToObjectLifecyclePolicyRuleObjectNameFilterPtrOutput() ObjectLifecyclePolicyRuleObjectNameFilterPtrOutput {
 	return i.ToObjectLifecyclePolicyRuleObjectNameFilterPtrOutputWithContext(context.Background())
 }
@@ -654,12 +575,6 @@ func (i *objectLifecyclePolicyRuleObjectNameFilterPtrType) ToObjectLifecyclePoli
 	return pulumi.ToOutputWithContext(ctx, i).(ObjectLifecyclePolicyRuleObjectNameFilterPtrOutput)
 }
 
-func (i *objectLifecyclePolicyRuleObjectNameFilterPtrType) ToOutput(ctx context.Context) pulumix.Output[*ObjectLifecyclePolicyRuleObjectNameFilter] {
-	return pulumix.Output[*ObjectLifecyclePolicyRuleObjectNameFilter]{
-		OutputState: i.ToObjectLifecyclePolicyRuleObjectNameFilterPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ObjectLifecyclePolicyRuleObjectNameFilterOutput struct{ *pulumi.OutputState }
 
 func (ObjectLifecyclePolicyRuleObjectNameFilterOutput) ElementType() reflect.Type {
@@ -682,12 +597,6 @@ func (o ObjectLifecyclePolicyRuleObjectNameFilterOutput) ToObjectLifecyclePolicy
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v ObjectLifecyclePolicyRuleObjectNameFilter) *ObjectLifecyclePolicyRuleObjectNameFilter {
 		return &v
 	}).(ObjectLifecyclePolicyRuleObjectNameFilterPtrOutput)
-}
-
-func (o ObjectLifecyclePolicyRuleObjectNameFilterOutput) ToOutput(ctx context.Context) pulumix.Output[ObjectLifecyclePolicyRuleObjectNameFilter] {
-	return pulumix.Output[ObjectLifecyclePolicyRuleObjectNameFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) An array of glob patterns to match the object names to exclude. An empty array is ignored. Exclusion patterns take precedence over inclusion patterns. A Glob pattern is a sequence of characters to match text. Any character that appears in the pattern, other than the special pattern characters described below, matches itself. Glob patterns must be between 1 and 1024 characters.
@@ -727,12 +636,6 @@ func (o ObjectLifecyclePolicyRuleObjectNameFilterPtrOutput) ToObjectLifecyclePol
 
 func (o ObjectLifecyclePolicyRuleObjectNameFilterPtrOutput) ToObjectLifecyclePolicyRuleObjectNameFilterPtrOutputWithContext(ctx context.Context) ObjectLifecyclePolicyRuleObjectNameFilterPtrOutput {
 	return o
-}
-
-func (o ObjectLifecyclePolicyRuleObjectNameFilterPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*ObjectLifecyclePolicyRuleObjectNameFilter] {
-	return pulumix.Output[*ObjectLifecyclePolicyRuleObjectNameFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ObjectLifecyclePolicyRuleObjectNameFilterPtrOutput) Elem() ObjectLifecyclePolicyRuleObjectNameFilterOutput {
@@ -852,12 +755,6 @@ func (i StorageObjectSourceUriDetailsArgs) ToStorageObjectSourceUriDetailsOutput
 	return pulumi.ToOutputWithContext(ctx, i).(StorageObjectSourceUriDetailsOutput)
 }
 
-func (i StorageObjectSourceUriDetailsArgs) ToOutput(ctx context.Context) pulumix.Output[StorageObjectSourceUriDetails] {
-	return pulumix.Output[StorageObjectSourceUriDetails]{
-		OutputState: i.ToStorageObjectSourceUriDetailsOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i StorageObjectSourceUriDetailsArgs) ToStorageObjectSourceUriDetailsPtrOutput() StorageObjectSourceUriDetailsPtrOutput {
 	return i.ToStorageObjectSourceUriDetailsPtrOutputWithContext(context.Background())
 }
@@ -899,12 +796,6 @@ func (i *storageObjectSourceUriDetailsPtrType) ToStorageObjectSourceUriDetailsPt
 	return pulumi.ToOutputWithContext(ctx, i).(StorageObjectSourceUriDetailsPtrOutput)
 }
 
-func (i *storageObjectSourceUriDetailsPtrType) ToOutput(ctx context.Context) pulumix.Output[*StorageObjectSourceUriDetails] {
-	return pulumix.Output[*StorageObjectSourceUriDetails]{
-		OutputState: i.ToStorageObjectSourceUriDetailsPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type StorageObjectSourceUriDetailsOutput struct{ *pulumi.OutputState }
 
 func (StorageObjectSourceUriDetailsOutput) ElementType() reflect.Type {
@@ -927,12 +818,6 @@ func (o StorageObjectSourceUriDetailsOutput) ToStorageObjectSourceUriDetailsPtrO
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v StorageObjectSourceUriDetails) *StorageObjectSourceUriDetails {
 		return &v
 	}).(StorageObjectSourceUriDetailsPtrOutput)
-}
-
-func (o StorageObjectSourceUriDetailsOutput) ToOutput(ctx context.Context) pulumix.Output[StorageObjectSourceUriDetails] {
-	return pulumix.Output[StorageObjectSourceUriDetails]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The name of the bucket for the source object.
@@ -990,12 +875,6 @@ func (o StorageObjectSourceUriDetailsPtrOutput) ToStorageObjectSourceUriDetailsP
 
 func (o StorageObjectSourceUriDetailsPtrOutput) ToStorageObjectSourceUriDetailsPtrOutputWithContext(ctx context.Context) StorageObjectSourceUriDetailsPtrOutput {
 	return o
-}
-
-func (o StorageObjectSourceUriDetailsPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*StorageObjectSourceUriDetails] {
-	return pulumix.Output[*StorageObjectSourceUriDetails]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o StorageObjectSourceUriDetailsPtrOutput) Elem() StorageObjectSourceUriDetailsOutput {
@@ -1093,16 +972,16 @@ func (o StorageObjectSourceUriDetailsPtrOutput) SourceVersionId() pulumi.StringP
 
 type GetBucketRetentionRule struct {
 	// User specified name for the retention rule.
-	DisplayName string                           `pulumi:"displayName"`
+	DisplayName *string                          `pulumi:"displayName"`
 	Durations   []GetBucketRetentionRuleDuration `pulumi:"durations"`
 	// Unique identifier for the retention rule.
-	RetentionRuleId string `pulumi:"retentionRuleId"`
+	RetentionRuleId *string `pulumi:"retentionRuleId"`
 	// The date and time the bucket was created, as described in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-14.29).
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The date and time that the retention rule was modified as per [RFC3339](https://tools.ietf.org/html/rfc3339).
-	TimeModified string `pulumi:"timeModified"`
+	TimeModified *string `pulumi:"timeModified"`
 	// The date and time as per [RFC 3339](https://tools.ietf.org/html/rfc3339) after which this rule becomes locked. and can only be deleted by deleting the bucket.
-	TimeRuleLocked string `pulumi:"timeRuleLocked"`
+	TimeRuleLocked *string `pulumi:"timeRuleLocked"`
 }
 
 // GetBucketRetentionRuleInput is an input type that accepts GetBucketRetentionRuleArgs and GetBucketRetentionRuleOutput values.
@@ -1118,16 +997,16 @@ type GetBucketRetentionRuleInput interface {
 
 type GetBucketRetentionRuleArgs struct {
 	// User specified name for the retention rule.
-	DisplayName pulumi.StringInput                       `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput                    `pulumi:"displayName"`
 	Durations   GetBucketRetentionRuleDurationArrayInput `pulumi:"durations"`
 	// Unique identifier for the retention rule.
-	RetentionRuleId pulumi.StringInput `pulumi:"retentionRuleId"`
+	RetentionRuleId pulumi.StringPtrInput `pulumi:"retentionRuleId"`
 	// The date and time the bucket was created, as described in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-14.29).
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// The date and time that the retention rule was modified as per [RFC3339](https://tools.ietf.org/html/rfc3339).
-	TimeModified pulumi.StringInput `pulumi:"timeModified"`
+	TimeModified pulumi.StringPtrInput `pulumi:"timeModified"`
 	// The date and time as per [RFC 3339](https://tools.ietf.org/html/rfc3339) after which this rule becomes locked. and can only be deleted by deleting the bucket.
-	TimeRuleLocked pulumi.StringInput `pulumi:"timeRuleLocked"`
+	TimeRuleLocked pulumi.StringPtrInput `pulumi:"timeRuleLocked"`
 }
 
 func (GetBucketRetentionRuleArgs) ElementType() reflect.Type {
@@ -1140,12 +1019,6 @@ func (i GetBucketRetentionRuleArgs) ToGetBucketRetentionRuleOutput() GetBucketRe
 
 func (i GetBucketRetentionRuleArgs) ToGetBucketRetentionRuleOutputWithContext(ctx context.Context) GetBucketRetentionRuleOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetBucketRetentionRuleOutput)
-}
-
-func (i GetBucketRetentionRuleArgs) ToOutput(ctx context.Context) pulumix.Output[GetBucketRetentionRule] {
-	return pulumix.Output[GetBucketRetentionRule]{
-		OutputState: i.ToGetBucketRetentionRuleOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetBucketRetentionRuleArrayInput is an input type that accepts GetBucketRetentionRuleArray and GetBucketRetentionRuleArrayOutput values.
@@ -1173,12 +1046,6 @@ func (i GetBucketRetentionRuleArray) ToGetBucketRetentionRuleArrayOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetBucketRetentionRuleArrayOutput)
 }
 
-func (i GetBucketRetentionRuleArray) ToOutput(ctx context.Context) pulumix.Output[[]GetBucketRetentionRule] {
-	return pulumix.Output[[]GetBucketRetentionRule]{
-		OutputState: i.ToGetBucketRetentionRuleArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetBucketRetentionRuleOutput struct{ *pulumi.OutputState }
 
 func (GetBucketRetentionRuleOutput) ElementType() reflect.Type {
@@ -1193,15 +1060,9 @@ func (o GetBucketRetentionRuleOutput) ToGetBucketRetentionRuleOutputWithContext(
 	return o
 }
 
-func (o GetBucketRetentionRuleOutput) ToOutput(ctx context.Context) pulumix.Output[GetBucketRetentionRule] {
-	return pulumix.Output[GetBucketRetentionRule]{
-		OutputState: o.OutputState,
-	}
-}
-
 // User specified name for the retention rule.
-func (o GetBucketRetentionRuleOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBucketRetentionRule) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetBucketRetentionRuleOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBucketRetentionRule) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 func (o GetBucketRetentionRuleOutput) Durations() GetBucketRetentionRuleDurationArrayOutput {
@@ -1209,23 +1070,23 @@ func (o GetBucketRetentionRuleOutput) Durations() GetBucketRetentionRuleDuration
 }
 
 // Unique identifier for the retention rule.
-func (o GetBucketRetentionRuleOutput) RetentionRuleId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBucketRetentionRule) string { return v.RetentionRuleId }).(pulumi.StringOutput)
+func (o GetBucketRetentionRuleOutput) RetentionRuleId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBucketRetentionRule) *string { return v.RetentionRuleId }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the bucket was created, as described in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-14.29).
-func (o GetBucketRetentionRuleOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBucketRetentionRule) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetBucketRetentionRuleOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBucketRetentionRule) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time that the retention rule was modified as per [RFC3339](https://tools.ietf.org/html/rfc3339).
-func (o GetBucketRetentionRuleOutput) TimeModified() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBucketRetentionRule) string { return v.TimeModified }).(pulumi.StringOutput)
+func (o GetBucketRetentionRuleOutput) TimeModified() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBucketRetentionRule) *string { return v.TimeModified }).(pulumi.StringPtrOutput)
 }
 
 // The date and time as per [RFC 3339](https://tools.ietf.org/html/rfc3339) after which this rule becomes locked. and can only be deleted by deleting the bucket.
-func (o GetBucketRetentionRuleOutput) TimeRuleLocked() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBucketRetentionRule) string { return v.TimeRuleLocked }).(pulumi.StringOutput)
+func (o GetBucketRetentionRuleOutput) TimeRuleLocked() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBucketRetentionRule) *string { return v.TimeRuleLocked }).(pulumi.StringPtrOutput)
 }
 
 type GetBucketRetentionRuleArrayOutput struct{ *pulumi.OutputState }
@@ -1242,12 +1103,6 @@ func (o GetBucketRetentionRuleArrayOutput) ToGetBucketRetentionRuleArrayOutputWi
 	return o
 }
 
-func (o GetBucketRetentionRuleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetBucketRetentionRule] {
-	return pulumix.Output[[]GetBucketRetentionRule]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetBucketRetentionRuleArrayOutput) Index(i pulumi.IntInput) GetBucketRetentionRuleOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBucketRetentionRule {
 		return vs[0].([]GetBucketRetentionRule)[vs[1].(int)]
@@ -1256,9 +1111,9 @@ func (o GetBucketRetentionRuleArrayOutput) Index(i pulumi.IntInput) GetBucketRet
 
 type GetBucketRetentionRuleDuration struct {
 	// The timeAmount is interpreted in units defined by the timeUnit parameter, and is calculated in relation to each object's Last-Modified timestamp.
-	TimeAmount string `pulumi:"timeAmount"`
+	TimeAmount *string `pulumi:"timeAmount"`
 	// The unit that should be used to interpret timeAmount.
-	TimeUnit string `pulumi:"timeUnit"`
+	TimeUnit *string `pulumi:"timeUnit"`
 }
 
 // GetBucketRetentionRuleDurationInput is an input type that accepts GetBucketRetentionRuleDurationArgs and GetBucketRetentionRuleDurationOutput values.
@@ -1274,9 +1129,9 @@ type GetBucketRetentionRuleDurationInput interface {
 
 type GetBucketRetentionRuleDurationArgs struct {
 	// The timeAmount is interpreted in units defined by the timeUnit parameter, and is calculated in relation to each object's Last-Modified timestamp.
-	TimeAmount pulumi.StringInput `pulumi:"timeAmount"`
+	TimeAmount pulumi.StringPtrInput `pulumi:"timeAmount"`
 	// The unit that should be used to interpret timeAmount.
-	TimeUnit pulumi.StringInput `pulumi:"timeUnit"`
+	TimeUnit pulumi.StringPtrInput `pulumi:"timeUnit"`
 }
 
 func (GetBucketRetentionRuleDurationArgs) ElementType() reflect.Type {
@@ -1289,12 +1144,6 @@ func (i GetBucketRetentionRuleDurationArgs) ToGetBucketRetentionRuleDurationOutp
 
 func (i GetBucketRetentionRuleDurationArgs) ToGetBucketRetentionRuleDurationOutputWithContext(ctx context.Context) GetBucketRetentionRuleDurationOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetBucketRetentionRuleDurationOutput)
-}
-
-func (i GetBucketRetentionRuleDurationArgs) ToOutput(ctx context.Context) pulumix.Output[GetBucketRetentionRuleDuration] {
-	return pulumix.Output[GetBucketRetentionRuleDuration]{
-		OutputState: i.ToGetBucketRetentionRuleDurationOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetBucketRetentionRuleDurationArrayInput is an input type that accepts GetBucketRetentionRuleDurationArray and GetBucketRetentionRuleDurationArrayOutput values.
@@ -1322,12 +1171,6 @@ func (i GetBucketRetentionRuleDurationArray) ToGetBucketRetentionRuleDurationArr
 	return pulumi.ToOutputWithContext(ctx, i).(GetBucketRetentionRuleDurationArrayOutput)
 }
 
-func (i GetBucketRetentionRuleDurationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetBucketRetentionRuleDuration] {
-	return pulumix.Output[[]GetBucketRetentionRuleDuration]{
-		OutputState: i.ToGetBucketRetentionRuleDurationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetBucketRetentionRuleDurationOutput struct{ *pulumi.OutputState }
 
 func (GetBucketRetentionRuleDurationOutput) ElementType() reflect.Type {
@@ -1342,20 +1185,14 @@ func (o GetBucketRetentionRuleDurationOutput) ToGetBucketRetentionRuleDurationOu
 	return o
 }
 
-func (o GetBucketRetentionRuleDurationOutput) ToOutput(ctx context.Context) pulumix.Output[GetBucketRetentionRuleDuration] {
-	return pulumix.Output[GetBucketRetentionRuleDuration]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The timeAmount is interpreted in units defined by the timeUnit parameter, and is calculated in relation to each object's Last-Modified timestamp.
-func (o GetBucketRetentionRuleDurationOutput) TimeAmount() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBucketRetentionRuleDuration) string { return v.TimeAmount }).(pulumi.StringOutput)
+func (o GetBucketRetentionRuleDurationOutput) TimeAmount() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBucketRetentionRuleDuration) *string { return v.TimeAmount }).(pulumi.StringPtrOutput)
 }
 
 // The unit that should be used to interpret timeAmount.
-func (o GetBucketRetentionRuleDurationOutput) TimeUnit() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBucketRetentionRuleDuration) string { return v.TimeUnit }).(pulumi.StringOutput)
+func (o GetBucketRetentionRuleDurationOutput) TimeUnit() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBucketRetentionRuleDuration) *string { return v.TimeUnit }).(pulumi.StringPtrOutput)
 }
 
 type GetBucketRetentionRuleDurationArrayOutput struct{ *pulumi.OutputState }
@@ -1372,12 +1209,6 @@ func (o GetBucketRetentionRuleDurationArrayOutput) ToGetBucketRetentionRuleDurat
 	return o
 }
 
-func (o GetBucketRetentionRuleDurationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetBucketRetentionRuleDuration] {
-	return pulumix.Output[[]GetBucketRetentionRuleDuration]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetBucketRetentionRuleDurationArrayOutput) Index(i pulumi.IntInput) GetBucketRetentionRuleDurationOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBucketRetentionRuleDuration {
 		return vs[0].([]GetBucketRetentionRuleDuration)[vs[1].(int)]
@@ -1386,48 +1217,48 @@ func (o GetBucketRetentionRuleDurationArrayOutput) Index(i pulumi.IntInput) GetB
 
 type GetBucketSummariesBucketSummary struct {
 	// The type of public access enabled on this bucket. A bucket is set to `NoPublicAccess` by default, which only allows an authenticated caller to access the bucket and its contents. When `ObjectRead` is enabled on the bucket, public access is allowed for the `GetObject`, `HeadObject`, and `ListObjects` operations. When `ObjectReadWithoutList` is enabled on the bucket, public access is allowed for the `GetObject` and `HeadObject` operations.
-	AccessType string `pulumi:"accessType"`
+	AccessType *string `pulumi:"accessType"`
 	// The approximate number of objects in the bucket. Count statistics are reported periodically. You will see a lag between what is displayed and the actual object count.
-	ApproximateCount string `pulumi:"approximateCount"`
+	ApproximateCount *string `pulumi:"approximateCount"`
 	// The approximate total size in bytes of all objects in the bucket. Size statistics are reported periodically. You will see a lag between what is displayed and the actual size of the bucket.
-	ApproximateSize string `pulumi:"approximateSize"`
+	ApproximateSize *string `pulumi:"approximateSize"`
 	// The auto tiering status on the bucket. A bucket is created with auto tiering `Disabled` by default. For auto tiering `InfrequentAccess`, objects are transitioned automatically between the 'Standard' and 'InfrequentAccess' tiers based on the access pattern of the objects.
-	AutoTiering string `pulumi:"autoTiering"`
-	BucketId    string `pulumi:"bucketId"`
+	AutoTiering *string `pulumi:"autoTiering"`
+	BucketId    *string `pulumi:"bucketId"`
 	// The ID of the compartment in which to list buckets.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the bucket.
-	CreatedBy string `pulumi:"createdBy"`
+	CreatedBy *string `pulumi:"createdBy"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The entity tag (ETag) for the bucket.
-	Etag string `pulumi:"etag"`
+	Etag *string `pulumi:"etag"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
-	Id           string                 `pulumi:"id"`
+	Id           *string                `pulumi:"id"`
 	// Whether or not this bucket is read only. By default, `isReadOnly` is set to `false`. This will be set to 'true' when this bucket is configured as a destination in a replication policy.
-	IsReadOnly bool `pulumi:"isReadOnly"`
+	IsReadOnly *bool `pulumi:"isReadOnly"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a master encryption key used to call the Key Management service to generate a data encryption key or to encrypt or decrypt a data encryption key.
-	KmsKeyId string `pulumi:"kmsKeyId"`
+	KmsKeyId *string `pulumi:"kmsKeyId"`
 	// Arbitrary string keys and values for user-defined metadata.
 	Metadata map[string]interface{} `pulumi:"metadata"`
 	// The name of the bucket. Avoid entering confidential information. Example: my-new-bucket1
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// The Object Storage namespace used for the request.
-	Namespace string `pulumi:"namespace"`
+	Namespace *string `pulumi:"namespace"`
 	// Whether or not events are emitted for object state changes in this bucket. By default, `objectEventsEnabled` is set to `false`. Set `objectEventsEnabled` to `true` to emit events for object state changes. For more information about events, see [Overview of Events](https://docs.cloud.oracle.com/iaas/Content/Events/Concepts/eventsoverview.htm).
-	ObjectEventsEnabled bool `pulumi:"objectEventsEnabled"`
+	ObjectEventsEnabled *bool `pulumi:"objectEventsEnabled"`
 	// The entity tag (ETag) for the live object lifecycle policy on the bucket.
-	ObjectLifecyclePolicyEtag string `pulumi:"objectLifecyclePolicyEtag"`
+	ObjectLifecyclePolicyEtag *string `pulumi:"objectLifecyclePolicyEtag"`
 	// Whether or not this bucket is a replication source. By default, `replicationEnabled` is set to `false`. This will be set to 'true' when you create a replication policy for the bucket.
-	ReplicationEnabled bool                                           `pulumi:"replicationEnabled"`
+	ReplicationEnabled *bool                                          `pulumi:"replicationEnabled"`
 	RetentionRules     []GetBucketSummariesBucketSummaryRetentionRule `pulumi:"retentionRules"`
 	// The storage tier type assigned to the bucket. A bucket is set to `Standard` tier by default, which means objects uploaded or copied to the bucket will be in the standard storage tier. When the `Archive` tier type is set explicitly for a bucket, objects uploaded or copied to the bucket will be stored in archive storage. The `storageTier` property is immutable after bucket is created.
-	StorageTier string `pulumi:"storageTier"`
+	StorageTier *string `pulumi:"storageTier"`
 	// The date and time the bucket was created, as described in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-14.29).
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The versioning status on the bucket. A bucket is created with versioning `Disabled` by default. For versioning `Enabled`, objects are protected from overwrites and deletes, by maintaining their version history. When versioning is `Suspended`, the previous versions will still remain but new versions will no longer be created when overwitten or deleted.
-	Versioning string `pulumi:"versioning"`
+	Versioning *string `pulumi:"versioning"`
 }
 
 // GetBucketSummariesBucketSummaryInput is an input type that accepts GetBucketSummariesBucketSummaryArgs and GetBucketSummariesBucketSummaryOutput values.
@@ -1443,48 +1274,48 @@ type GetBucketSummariesBucketSummaryInput interface {
 
 type GetBucketSummariesBucketSummaryArgs struct {
 	// The type of public access enabled on this bucket. A bucket is set to `NoPublicAccess` by default, which only allows an authenticated caller to access the bucket and its contents. When `ObjectRead` is enabled on the bucket, public access is allowed for the `GetObject`, `HeadObject`, and `ListObjects` operations. When `ObjectReadWithoutList` is enabled on the bucket, public access is allowed for the `GetObject` and `HeadObject` operations.
-	AccessType pulumi.StringInput `pulumi:"accessType"`
+	AccessType pulumi.StringPtrInput `pulumi:"accessType"`
 	// The approximate number of objects in the bucket. Count statistics are reported periodically. You will see a lag between what is displayed and the actual object count.
-	ApproximateCount pulumi.StringInput `pulumi:"approximateCount"`
+	ApproximateCount pulumi.StringPtrInput `pulumi:"approximateCount"`
 	// The approximate total size in bytes of all objects in the bucket. Size statistics are reported periodically. You will see a lag between what is displayed and the actual size of the bucket.
-	ApproximateSize pulumi.StringInput `pulumi:"approximateSize"`
+	ApproximateSize pulumi.StringPtrInput `pulumi:"approximateSize"`
 	// The auto tiering status on the bucket. A bucket is created with auto tiering `Disabled` by default. For auto tiering `InfrequentAccess`, objects are transitioned automatically between the 'Standard' and 'InfrequentAccess' tiers based on the access pattern of the objects.
-	AutoTiering pulumi.StringInput `pulumi:"autoTiering"`
-	BucketId    pulumi.StringInput `pulumi:"bucketId"`
+	AutoTiering pulumi.StringPtrInput `pulumi:"autoTiering"`
+	BucketId    pulumi.StringPtrInput `pulumi:"bucketId"`
 	// The ID of the compartment in which to list buckets.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the bucket.
-	CreatedBy pulumi.StringInput `pulumi:"createdBy"`
+	CreatedBy pulumi.StringPtrInput `pulumi:"createdBy"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// The entity tag (ETag) for the bucket.
-	Etag pulumi.StringInput `pulumi:"etag"`
+	Etag pulumi.StringPtrInput `pulumi:"etag"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput    `pulumi:"freeformTags"`
-	Id           pulumi.StringInput `pulumi:"id"`
+	FreeformTags pulumi.MapInput       `pulumi:"freeformTags"`
+	Id           pulumi.StringPtrInput `pulumi:"id"`
 	// Whether or not this bucket is read only. By default, `isReadOnly` is set to `false`. This will be set to 'true' when this bucket is configured as a destination in a replication policy.
-	IsReadOnly pulumi.BoolInput `pulumi:"isReadOnly"`
+	IsReadOnly pulumi.BoolPtrInput `pulumi:"isReadOnly"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a master encryption key used to call the Key Management service to generate a data encryption key or to encrypt or decrypt a data encryption key.
-	KmsKeyId pulumi.StringInput `pulumi:"kmsKeyId"`
+	KmsKeyId pulumi.StringPtrInput `pulumi:"kmsKeyId"`
 	// Arbitrary string keys and values for user-defined metadata.
 	Metadata pulumi.MapInput `pulumi:"metadata"`
 	// The name of the bucket. Avoid entering confidential information. Example: my-new-bucket1
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// The Object Storage namespace used for the request.
-	Namespace pulumi.StringInput `pulumi:"namespace"`
+	Namespace pulumi.StringPtrInput `pulumi:"namespace"`
 	// Whether or not events are emitted for object state changes in this bucket. By default, `objectEventsEnabled` is set to `false`. Set `objectEventsEnabled` to `true` to emit events for object state changes. For more information about events, see [Overview of Events](https://docs.cloud.oracle.com/iaas/Content/Events/Concepts/eventsoverview.htm).
-	ObjectEventsEnabled pulumi.BoolInput `pulumi:"objectEventsEnabled"`
+	ObjectEventsEnabled pulumi.BoolPtrInput `pulumi:"objectEventsEnabled"`
 	// The entity tag (ETag) for the live object lifecycle policy on the bucket.
-	ObjectLifecyclePolicyEtag pulumi.StringInput `pulumi:"objectLifecyclePolicyEtag"`
+	ObjectLifecyclePolicyEtag pulumi.StringPtrInput `pulumi:"objectLifecyclePolicyEtag"`
 	// Whether or not this bucket is a replication source. By default, `replicationEnabled` is set to `false`. This will be set to 'true' when you create a replication policy for the bucket.
-	ReplicationEnabled pulumi.BoolInput                                       `pulumi:"replicationEnabled"`
+	ReplicationEnabled pulumi.BoolPtrInput                                    `pulumi:"replicationEnabled"`
 	RetentionRules     GetBucketSummariesBucketSummaryRetentionRuleArrayInput `pulumi:"retentionRules"`
 	// The storage tier type assigned to the bucket. A bucket is set to `Standard` tier by default, which means objects uploaded or copied to the bucket will be in the standard storage tier. When the `Archive` tier type is set explicitly for a bucket, objects uploaded or copied to the bucket will be stored in archive storage. The `storageTier` property is immutable after bucket is created.
-	StorageTier pulumi.StringInput `pulumi:"storageTier"`
+	StorageTier pulumi.StringPtrInput `pulumi:"storageTier"`
 	// The date and time the bucket was created, as described in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-14.29).
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// The versioning status on the bucket. A bucket is created with versioning `Disabled` by default. For versioning `Enabled`, objects are protected from overwrites and deletes, by maintaining their version history. When versioning is `Suspended`, the previous versions will still remain but new versions will no longer be created when overwitten or deleted.
-	Versioning pulumi.StringInput `pulumi:"versioning"`
+	Versioning pulumi.StringPtrInput `pulumi:"versioning"`
 }
 
 func (GetBucketSummariesBucketSummaryArgs) ElementType() reflect.Type {
@@ -1497,12 +1328,6 @@ func (i GetBucketSummariesBucketSummaryArgs) ToGetBucketSummariesBucketSummaryOu
 
 func (i GetBucketSummariesBucketSummaryArgs) ToGetBucketSummariesBucketSummaryOutputWithContext(ctx context.Context) GetBucketSummariesBucketSummaryOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetBucketSummariesBucketSummaryOutput)
-}
-
-func (i GetBucketSummariesBucketSummaryArgs) ToOutput(ctx context.Context) pulumix.Output[GetBucketSummariesBucketSummary] {
-	return pulumix.Output[GetBucketSummariesBucketSummary]{
-		OutputState: i.ToGetBucketSummariesBucketSummaryOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetBucketSummariesBucketSummaryArrayInput is an input type that accepts GetBucketSummariesBucketSummaryArray and GetBucketSummariesBucketSummaryArrayOutput values.
@@ -1530,12 +1355,6 @@ func (i GetBucketSummariesBucketSummaryArray) ToGetBucketSummariesBucketSummaryA
 	return pulumi.ToOutputWithContext(ctx, i).(GetBucketSummariesBucketSummaryArrayOutput)
 }
 
-func (i GetBucketSummariesBucketSummaryArray) ToOutput(ctx context.Context) pulumix.Output[[]GetBucketSummariesBucketSummary] {
-	return pulumix.Output[[]GetBucketSummariesBucketSummary]{
-		OutputState: i.ToGetBucketSummariesBucketSummaryArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetBucketSummariesBucketSummaryOutput struct{ *pulumi.OutputState }
 
 func (GetBucketSummariesBucketSummaryOutput) ElementType() reflect.Type {
@@ -1550,44 +1369,38 @@ func (o GetBucketSummariesBucketSummaryOutput) ToGetBucketSummariesBucketSummary
 	return o
 }
 
-func (o GetBucketSummariesBucketSummaryOutput) ToOutput(ctx context.Context) pulumix.Output[GetBucketSummariesBucketSummary] {
-	return pulumix.Output[GetBucketSummariesBucketSummary]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The type of public access enabled on this bucket. A bucket is set to `NoPublicAccess` by default, which only allows an authenticated caller to access the bucket and its contents. When `ObjectRead` is enabled on the bucket, public access is allowed for the `GetObject`, `HeadObject`, and `ListObjects` operations. When `ObjectReadWithoutList` is enabled on the bucket, public access is allowed for the `GetObject` and `HeadObject` operations.
-func (o GetBucketSummariesBucketSummaryOutput) AccessType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBucketSummariesBucketSummary) string { return v.AccessType }).(pulumi.StringOutput)
+func (o GetBucketSummariesBucketSummaryOutput) AccessType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBucketSummariesBucketSummary) *string { return v.AccessType }).(pulumi.StringPtrOutput)
 }
 
 // The approximate number of objects in the bucket. Count statistics are reported periodically. You will see a lag between what is displayed and the actual object count.
-func (o GetBucketSummariesBucketSummaryOutput) ApproximateCount() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBucketSummariesBucketSummary) string { return v.ApproximateCount }).(pulumi.StringOutput)
+func (o GetBucketSummariesBucketSummaryOutput) ApproximateCount() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBucketSummariesBucketSummary) *string { return v.ApproximateCount }).(pulumi.StringPtrOutput)
 }
 
 // The approximate total size in bytes of all objects in the bucket. Size statistics are reported periodically. You will see a lag between what is displayed and the actual size of the bucket.
-func (o GetBucketSummariesBucketSummaryOutput) ApproximateSize() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBucketSummariesBucketSummary) string { return v.ApproximateSize }).(pulumi.StringOutput)
+func (o GetBucketSummariesBucketSummaryOutput) ApproximateSize() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBucketSummariesBucketSummary) *string { return v.ApproximateSize }).(pulumi.StringPtrOutput)
 }
 
 // The auto tiering status on the bucket. A bucket is created with auto tiering `Disabled` by default. For auto tiering `InfrequentAccess`, objects are transitioned automatically between the 'Standard' and 'InfrequentAccess' tiers based on the access pattern of the objects.
-func (o GetBucketSummariesBucketSummaryOutput) AutoTiering() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBucketSummariesBucketSummary) string { return v.AutoTiering }).(pulumi.StringOutput)
+func (o GetBucketSummariesBucketSummaryOutput) AutoTiering() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBucketSummariesBucketSummary) *string { return v.AutoTiering }).(pulumi.StringPtrOutput)
 }
 
-func (o GetBucketSummariesBucketSummaryOutput) BucketId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBucketSummariesBucketSummary) string { return v.BucketId }).(pulumi.StringOutput)
+func (o GetBucketSummariesBucketSummaryOutput) BucketId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBucketSummariesBucketSummary) *string { return v.BucketId }).(pulumi.StringPtrOutput)
 }
 
 // The ID of the compartment in which to list buckets.
-func (o GetBucketSummariesBucketSummaryOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBucketSummariesBucketSummary) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetBucketSummariesBucketSummaryOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBucketSummariesBucketSummary) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the bucket.
-func (o GetBucketSummariesBucketSummaryOutput) CreatedBy() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBucketSummariesBucketSummary) string { return v.CreatedBy }).(pulumi.StringOutput)
+func (o GetBucketSummariesBucketSummaryOutput) CreatedBy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBucketSummariesBucketSummary) *string { return v.CreatedBy }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -1596,8 +1409,8 @@ func (o GetBucketSummariesBucketSummaryOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // The entity tag (ETag) for the bucket.
-func (o GetBucketSummariesBucketSummaryOutput) Etag() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBucketSummariesBucketSummary) string { return v.Etag }).(pulumi.StringOutput)
+func (o GetBucketSummariesBucketSummaryOutput) Etag() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBucketSummariesBucketSummary) *string { return v.Etag }).(pulumi.StringPtrOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -1605,18 +1418,18 @@ func (o GetBucketSummariesBucketSummaryOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v GetBucketSummariesBucketSummary) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
 }
 
-func (o GetBucketSummariesBucketSummaryOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBucketSummariesBucketSummary) string { return v.Id }).(pulumi.StringOutput)
+func (o GetBucketSummariesBucketSummaryOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBucketSummariesBucketSummary) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Whether or not this bucket is read only. By default, `isReadOnly` is set to `false`. This will be set to 'true' when this bucket is configured as a destination in a replication policy.
-func (o GetBucketSummariesBucketSummaryOutput) IsReadOnly() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetBucketSummariesBucketSummary) bool { return v.IsReadOnly }).(pulumi.BoolOutput)
+func (o GetBucketSummariesBucketSummaryOutput) IsReadOnly() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetBucketSummariesBucketSummary) *bool { return v.IsReadOnly }).(pulumi.BoolPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a master encryption key used to call the Key Management service to generate a data encryption key or to encrypt or decrypt a data encryption key.
-func (o GetBucketSummariesBucketSummaryOutput) KmsKeyId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBucketSummariesBucketSummary) string { return v.KmsKeyId }).(pulumi.StringOutput)
+func (o GetBucketSummariesBucketSummaryOutput) KmsKeyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBucketSummariesBucketSummary) *string { return v.KmsKeyId }).(pulumi.StringPtrOutput)
 }
 
 // Arbitrary string keys and values for user-defined metadata.
@@ -1625,28 +1438,28 @@ func (o GetBucketSummariesBucketSummaryOutput) Metadata() pulumi.MapOutput {
 }
 
 // The name of the bucket. Avoid entering confidential information. Example: my-new-bucket1
-func (o GetBucketSummariesBucketSummaryOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBucketSummariesBucketSummary) string { return v.Name }).(pulumi.StringOutput)
+func (o GetBucketSummariesBucketSummaryOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBucketSummariesBucketSummary) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // The Object Storage namespace used for the request.
-func (o GetBucketSummariesBucketSummaryOutput) Namespace() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBucketSummariesBucketSummary) string { return v.Namespace }).(pulumi.StringOutput)
+func (o GetBucketSummariesBucketSummaryOutput) Namespace() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBucketSummariesBucketSummary) *string { return v.Namespace }).(pulumi.StringPtrOutput)
 }
 
 // Whether or not events are emitted for object state changes in this bucket. By default, `objectEventsEnabled` is set to `false`. Set `objectEventsEnabled` to `true` to emit events for object state changes. For more information about events, see [Overview of Events](https://docs.cloud.oracle.com/iaas/Content/Events/Concepts/eventsoverview.htm).
-func (o GetBucketSummariesBucketSummaryOutput) ObjectEventsEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetBucketSummariesBucketSummary) bool { return v.ObjectEventsEnabled }).(pulumi.BoolOutput)
+func (o GetBucketSummariesBucketSummaryOutput) ObjectEventsEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetBucketSummariesBucketSummary) *bool { return v.ObjectEventsEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // The entity tag (ETag) for the live object lifecycle policy on the bucket.
-func (o GetBucketSummariesBucketSummaryOutput) ObjectLifecyclePolicyEtag() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBucketSummariesBucketSummary) string { return v.ObjectLifecyclePolicyEtag }).(pulumi.StringOutput)
+func (o GetBucketSummariesBucketSummaryOutput) ObjectLifecyclePolicyEtag() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBucketSummariesBucketSummary) *string { return v.ObjectLifecyclePolicyEtag }).(pulumi.StringPtrOutput)
 }
 
 // Whether or not this bucket is a replication source. By default, `replicationEnabled` is set to `false`. This will be set to 'true' when you create a replication policy for the bucket.
-func (o GetBucketSummariesBucketSummaryOutput) ReplicationEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetBucketSummariesBucketSummary) bool { return v.ReplicationEnabled }).(pulumi.BoolOutput)
+func (o GetBucketSummariesBucketSummaryOutput) ReplicationEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetBucketSummariesBucketSummary) *bool { return v.ReplicationEnabled }).(pulumi.BoolPtrOutput)
 }
 
 func (o GetBucketSummariesBucketSummaryOutput) RetentionRules() GetBucketSummariesBucketSummaryRetentionRuleArrayOutput {
@@ -1656,18 +1469,18 @@ func (o GetBucketSummariesBucketSummaryOutput) RetentionRules() GetBucketSummari
 }
 
 // The storage tier type assigned to the bucket. A bucket is set to `Standard` tier by default, which means objects uploaded or copied to the bucket will be in the standard storage tier. When the `Archive` tier type is set explicitly for a bucket, objects uploaded or copied to the bucket will be stored in archive storage. The `storageTier` property is immutable after bucket is created.
-func (o GetBucketSummariesBucketSummaryOutput) StorageTier() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBucketSummariesBucketSummary) string { return v.StorageTier }).(pulumi.StringOutput)
+func (o GetBucketSummariesBucketSummaryOutput) StorageTier() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBucketSummariesBucketSummary) *string { return v.StorageTier }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the bucket was created, as described in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-14.29).
-func (o GetBucketSummariesBucketSummaryOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBucketSummariesBucketSummary) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetBucketSummariesBucketSummaryOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBucketSummariesBucketSummary) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The versioning status on the bucket. A bucket is created with versioning `Disabled` by default. For versioning `Enabled`, objects are protected from overwrites and deletes, by maintaining their version history. When versioning is `Suspended`, the previous versions will still remain but new versions will no longer be created when overwitten or deleted.
-func (o GetBucketSummariesBucketSummaryOutput) Versioning() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBucketSummariesBucketSummary) string { return v.Versioning }).(pulumi.StringOutput)
+func (o GetBucketSummariesBucketSummaryOutput) Versioning() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBucketSummariesBucketSummary) *string { return v.Versioning }).(pulumi.StringPtrOutput)
 }
 
 type GetBucketSummariesBucketSummaryArrayOutput struct{ *pulumi.OutputState }
@@ -1684,12 +1497,6 @@ func (o GetBucketSummariesBucketSummaryArrayOutput) ToGetBucketSummariesBucketSu
 	return o
 }
 
-func (o GetBucketSummariesBucketSummaryArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetBucketSummariesBucketSummary] {
-	return pulumix.Output[[]GetBucketSummariesBucketSummary]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetBucketSummariesBucketSummaryArrayOutput) Index(i pulumi.IntInput) GetBucketSummariesBucketSummaryOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBucketSummariesBucketSummary {
 		return vs[0].([]GetBucketSummariesBucketSummary)[vs[1].(int)]
@@ -1697,13 +1504,13 @@ func (o GetBucketSummariesBucketSummaryArrayOutput) Index(i pulumi.IntInput) Get
 }
 
 type GetBucketSummariesBucketSummaryRetentionRule struct {
-	DisplayName     string                                                 `pulumi:"displayName"`
+	DisplayName     *string                                                `pulumi:"displayName"`
 	Durations       []GetBucketSummariesBucketSummaryRetentionRuleDuration `pulumi:"durations"`
-	RetentionRuleId string                                                 `pulumi:"retentionRuleId"`
+	RetentionRuleId *string                                                `pulumi:"retentionRuleId"`
 	// The date and time the bucket was created, as described in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-14.29).
-	TimeCreated    string `pulumi:"timeCreated"`
-	TimeModified   string `pulumi:"timeModified"`
-	TimeRuleLocked string `pulumi:"timeRuleLocked"`
+	TimeCreated    *string `pulumi:"timeCreated"`
+	TimeModified   *string `pulumi:"timeModified"`
+	TimeRuleLocked *string `pulumi:"timeRuleLocked"`
 }
 
 // GetBucketSummariesBucketSummaryRetentionRuleInput is an input type that accepts GetBucketSummariesBucketSummaryRetentionRuleArgs and GetBucketSummariesBucketSummaryRetentionRuleOutput values.
@@ -1718,13 +1525,13 @@ type GetBucketSummariesBucketSummaryRetentionRuleInput interface {
 }
 
 type GetBucketSummariesBucketSummaryRetentionRuleArgs struct {
-	DisplayName     pulumi.StringInput                                             `pulumi:"displayName"`
+	DisplayName     pulumi.StringPtrInput                                          `pulumi:"displayName"`
 	Durations       GetBucketSummariesBucketSummaryRetentionRuleDurationArrayInput `pulumi:"durations"`
-	RetentionRuleId pulumi.StringInput                                             `pulumi:"retentionRuleId"`
+	RetentionRuleId pulumi.StringPtrInput                                          `pulumi:"retentionRuleId"`
 	// The date and time the bucket was created, as described in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-14.29).
-	TimeCreated    pulumi.StringInput `pulumi:"timeCreated"`
-	TimeModified   pulumi.StringInput `pulumi:"timeModified"`
-	TimeRuleLocked pulumi.StringInput `pulumi:"timeRuleLocked"`
+	TimeCreated    pulumi.StringPtrInput `pulumi:"timeCreated"`
+	TimeModified   pulumi.StringPtrInput `pulumi:"timeModified"`
+	TimeRuleLocked pulumi.StringPtrInput `pulumi:"timeRuleLocked"`
 }
 
 func (GetBucketSummariesBucketSummaryRetentionRuleArgs) ElementType() reflect.Type {
@@ -1737,12 +1544,6 @@ func (i GetBucketSummariesBucketSummaryRetentionRuleArgs) ToGetBucketSummariesBu
 
 func (i GetBucketSummariesBucketSummaryRetentionRuleArgs) ToGetBucketSummariesBucketSummaryRetentionRuleOutputWithContext(ctx context.Context) GetBucketSummariesBucketSummaryRetentionRuleOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetBucketSummariesBucketSummaryRetentionRuleOutput)
-}
-
-func (i GetBucketSummariesBucketSummaryRetentionRuleArgs) ToOutput(ctx context.Context) pulumix.Output[GetBucketSummariesBucketSummaryRetentionRule] {
-	return pulumix.Output[GetBucketSummariesBucketSummaryRetentionRule]{
-		OutputState: i.ToGetBucketSummariesBucketSummaryRetentionRuleOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetBucketSummariesBucketSummaryRetentionRuleArrayInput is an input type that accepts GetBucketSummariesBucketSummaryRetentionRuleArray and GetBucketSummariesBucketSummaryRetentionRuleArrayOutput values.
@@ -1770,12 +1571,6 @@ func (i GetBucketSummariesBucketSummaryRetentionRuleArray) ToGetBucketSummariesB
 	return pulumi.ToOutputWithContext(ctx, i).(GetBucketSummariesBucketSummaryRetentionRuleArrayOutput)
 }
 
-func (i GetBucketSummariesBucketSummaryRetentionRuleArray) ToOutput(ctx context.Context) pulumix.Output[[]GetBucketSummariesBucketSummaryRetentionRule] {
-	return pulumix.Output[[]GetBucketSummariesBucketSummaryRetentionRule]{
-		OutputState: i.ToGetBucketSummariesBucketSummaryRetentionRuleArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetBucketSummariesBucketSummaryRetentionRuleOutput struct{ *pulumi.OutputState }
 
 func (GetBucketSummariesBucketSummaryRetentionRuleOutput) ElementType() reflect.Type {
@@ -1790,14 +1585,8 @@ func (o GetBucketSummariesBucketSummaryRetentionRuleOutput) ToGetBucketSummaries
 	return o
 }
 
-func (o GetBucketSummariesBucketSummaryRetentionRuleOutput) ToOutput(ctx context.Context) pulumix.Output[GetBucketSummariesBucketSummaryRetentionRule] {
-	return pulumix.Output[GetBucketSummariesBucketSummaryRetentionRule]{
-		OutputState: o.OutputState,
-	}
-}
-
-func (o GetBucketSummariesBucketSummaryRetentionRuleOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBucketSummariesBucketSummaryRetentionRule) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetBucketSummariesBucketSummaryRetentionRuleOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBucketSummariesBucketSummaryRetentionRule) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 func (o GetBucketSummariesBucketSummaryRetentionRuleOutput) Durations() GetBucketSummariesBucketSummaryRetentionRuleDurationArrayOutput {
@@ -1806,21 +1595,21 @@ func (o GetBucketSummariesBucketSummaryRetentionRuleOutput) Durations() GetBucke
 	}).(GetBucketSummariesBucketSummaryRetentionRuleDurationArrayOutput)
 }
 
-func (o GetBucketSummariesBucketSummaryRetentionRuleOutput) RetentionRuleId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBucketSummariesBucketSummaryRetentionRule) string { return v.RetentionRuleId }).(pulumi.StringOutput)
+func (o GetBucketSummariesBucketSummaryRetentionRuleOutput) RetentionRuleId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBucketSummariesBucketSummaryRetentionRule) *string { return v.RetentionRuleId }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the bucket was created, as described in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-14.29).
-func (o GetBucketSummariesBucketSummaryRetentionRuleOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBucketSummariesBucketSummaryRetentionRule) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetBucketSummariesBucketSummaryRetentionRuleOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBucketSummariesBucketSummaryRetentionRule) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
-func (o GetBucketSummariesBucketSummaryRetentionRuleOutput) TimeModified() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBucketSummariesBucketSummaryRetentionRule) string { return v.TimeModified }).(pulumi.StringOutput)
+func (o GetBucketSummariesBucketSummaryRetentionRuleOutput) TimeModified() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBucketSummariesBucketSummaryRetentionRule) *string { return v.TimeModified }).(pulumi.StringPtrOutput)
 }
 
-func (o GetBucketSummariesBucketSummaryRetentionRuleOutput) TimeRuleLocked() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBucketSummariesBucketSummaryRetentionRule) string { return v.TimeRuleLocked }).(pulumi.StringOutput)
+func (o GetBucketSummariesBucketSummaryRetentionRuleOutput) TimeRuleLocked() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBucketSummariesBucketSummaryRetentionRule) *string { return v.TimeRuleLocked }).(pulumi.StringPtrOutput)
 }
 
 type GetBucketSummariesBucketSummaryRetentionRuleArrayOutput struct{ *pulumi.OutputState }
@@ -1837,12 +1626,6 @@ func (o GetBucketSummariesBucketSummaryRetentionRuleArrayOutput) ToGetBucketSumm
 	return o
 }
 
-func (o GetBucketSummariesBucketSummaryRetentionRuleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetBucketSummariesBucketSummaryRetentionRule] {
-	return pulumix.Output[[]GetBucketSummariesBucketSummaryRetentionRule]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetBucketSummariesBucketSummaryRetentionRuleArrayOutput) Index(i pulumi.IntInput) GetBucketSummariesBucketSummaryRetentionRuleOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBucketSummariesBucketSummaryRetentionRule {
 		return vs[0].([]GetBucketSummariesBucketSummaryRetentionRule)[vs[1].(int)]
@@ -1850,8 +1633,8 @@ func (o GetBucketSummariesBucketSummaryRetentionRuleArrayOutput) Index(i pulumi.
 }
 
 type GetBucketSummariesBucketSummaryRetentionRuleDuration struct {
-	TimeAmount string `pulumi:"timeAmount"`
-	TimeUnit   string `pulumi:"timeUnit"`
+	TimeAmount *string `pulumi:"timeAmount"`
+	TimeUnit   *string `pulumi:"timeUnit"`
 }
 
 // GetBucketSummariesBucketSummaryRetentionRuleDurationInput is an input type that accepts GetBucketSummariesBucketSummaryRetentionRuleDurationArgs and GetBucketSummariesBucketSummaryRetentionRuleDurationOutput values.
@@ -1866,8 +1649,8 @@ type GetBucketSummariesBucketSummaryRetentionRuleDurationInput interface {
 }
 
 type GetBucketSummariesBucketSummaryRetentionRuleDurationArgs struct {
-	TimeAmount pulumi.StringInput `pulumi:"timeAmount"`
-	TimeUnit   pulumi.StringInput `pulumi:"timeUnit"`
+	TimeAmount pulumi.StringPtrInput `pulumi:"timeAmount"`
+	TimeUnit   pulumi.StringPtrInput `pulumi:"timeUnit"`
 }
 
 func (GetBucketSummariesBucketSummaryRetentionRuleDurationArgs) ElementType() reflect.Type {
@@ -1880,12 +1663,6 @@ func (i GetBucketSummariesBucketSummaryRetentionRuleDurationArgs) ToGetBucketSum
 
 func (i GetBucketSummariesBucketSummaryRetentionRuleDurationArgs) ToGetBucketSummariesBucketSummaryRetentionRuleDurationOutputWithContext(ctx context.Context) GetBucketSummariesBucketSummaryRetentionRuleDurationOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetBucketSummariesBucketSummaryRetentionRuleDurationOutput)
-}
-
-func (i GetBucketSummariesBucketSummaryRetentionRuleDurationArgs) ToOutput(ctx context.Context) pulumix.Output[GetBucketSummariesBucketSummaryRetentionRuleDuration] {
-	return pulumix.Output[GetBucketSummariesBucketSummaryRetentionRuleDuration]{
-		OutputState: i.ToGetBucketSummariesBucketSummaryRetentionRuleDurationOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetBucketSummariesBucketSummaryRetentionRuleDurationArrayInput is an input type that accepts GetBucketSummariesBucketSummaryRetentionRuleDurationArray and GetBucketSummariesBucketSummaryRetentionRuleDurationArrayOutput values.
@@ -1913,12 +1690,6 @@ func (i GetBucketSummariesBucketSummaryRetentionRuleDurationArray) ToGetBucketSu
 	return pulumi.ToOutputWithContext(ctx, i).(GetBucketSummariesBucketSummaryRetentionRuleDurationArrayOutput)
 }
 
-func (i GetBucketSummariesBucketSummaryRetentionRuleDurationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetBucketSummariesBucketSummaryRetentionRuleDuration] {
-	return pulumix.Output[[]GetBucketSummariesBucketSummaryRetentionRuleDuration]{
-		OutputState: i.ToGetBucketSummariesBucketSummaryRetentionRuleDurationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetBucketSummariesBucketSummaryRetentionRuleDurationOutput struct{ *pulumi.OutputState }
 
 func (GetBucketSummariesBucketSummaryRetentionRuleDurationOutput) ElementType() reflect.Type {
@@ -1933,18 +1704,12 @@ func (o GetBucketSummariesBucketSummaryRetentionRuleDurationOutput) ToGetBucketS
 	return o
 }
 
-func (o GetBucketSummariesBucketSummaryRetentionRuleDurationOutput) ToOutput(ctx context.Context) pulumix.Output[GetBucketSummariesBucketSummaryRetentionRuleDuration] {
-	return pulumix.Output[GetBucketSummariesBucketSummaryRetentionRuleDuration]{
-		OutputState: o.OutputState,
-	}
+func (o GetBucketSummariesBucketSummaryRetentionRuleDurationOutput) TimeAmount() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBucketSummariesBucketSummaryRetentionRuleDuration) *string { return v.TimeAmount }).(pulumi.StringPtrOutput)
 }
 
-func (o GetBucketSummariesBucketSummaryRetentionRuleDurationOutput) TimeAmount() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBucketSummariesBucketSummaryRetentionRuleDuration) string { return v.TimeAmount }).(pulumi.StringOutput)
-}
-
-func (o GetBucketSummariesBucketSummaryRetentionRuleDurationOutput) TimeUnit() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBucketSummariesBucketSummaryRetentionRuleDuration) string { return v.TimeUnit }).(pulumi.StringOutput)
+func (o GetBucketSummariesBucketSummaryRetentionRuleDurationOutput) TimeUnit() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBucketSummariesBucketSummaryRetentionRuleDuration) *string { return v.TimeUnit }).(pulumi.StringPtrOutput)
 }
 
 type GetBucketSummariesBucketSummaryRetentionRuleDurationArrayOutput struct{ *pulumi.OutputState }
@@ -1959,12 +1724,6 @@ func (o GetBucketSummariesBucketSummaryRetentionRuleDurationArrayOutput) ToGetBu
 
 func (o GetBucketSummariesBucketSummaryRetentionRuleDurationArrayOutput) ToGetBucketSummariesBucketSummaryRetentionRuleDurationArrayOutputWithContext(ctx context.Context) GetBucketSummariesBucketSummaryRetentionRuleDurationArrayOutput {
 	return o
-}
-
-func (o GetBucketSummariesBucketSummaryRetentionRuleDurationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetBucketSummariesBucketSummaryRetentionRuleDuration] {
-	return pulumix.Output[[]GetBucketSummariesBucketSummaryRetentionRuleDuration]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetBucketSummariesBucketSummaryRetentionRuleDurationArrayOutput) Index(i pulumi.IntInput) GetBucketSummariesBucketSummaryRetentionRuleDurationOutput {
@@ -2010,12 +1769,6 @@ func (i GetBucketSummariesFilterArgs) ToGetBucketSummariesFilterOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetBucketSummariesFilterOutput)
 }
 
-func (i GetBucketSummariesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetBucketSummariesFilter] {
-	return pulumix.Output[GetBucketSummariesFilter]{
-		OutputState: i.ToGetBucketSummariesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetBucketSummariesFilterArrayInput is an input type that accepts GetBucketSummariesFilterArray and GetBucketSummariesFilterArrayOutput values.
 // You can construct a concrete instance of `GetBucketSummariesFilterArrayInput` via:
 //
@@ -2041,12 +1794,6 @@ func (i GetBucketSummariesFilterArray) ToGetBucketSummariesFilterArrayOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetBucketSummariesFilterArrayOutput)
 }
 
-func (i GetBucketSummariesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetBucketSummariesFilter] {
-	return pulumix.Output[[]GetBucketSummariesFilter]{
-		OutputState: i.ToGetBucketSummariesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetBucketSummariesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetBucketSummariesFilterOutput) ElementType() reflect.Type {
@@ -2059,12 +1806,6 @@ func (o GetBucketSummariesFilterOutput) ToGetBucketSummariesFilterOutput() GetBu
 
 func (o GetBucketSummariesFilterOutput) ToGetBucketSummariesFilterOutputWithContext(ctx context.Context) GetBucketSummariesFilterOutput {
 	return o
-}
-
-func (o GetBucketSummariesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetBucketSummariesFilter] {
-	return pulumix.Output[GetBucketSummariesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The name of the bucket. Avoid entering confidential information. Example: my-new-bucket1
@@ -2094,12 +1835,6 @@ func (o GetBucketSummariesFilterArrayOutput) ToGetBucketSummariesFilterArrayOutp
 	return o
 }
 
-func (o GetBucketSummariesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetBucketSummariesFilter] {
-	return pulumix.Output[[]GetBucketSummariesFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetBucketSummariesFilterArrayOutput) Index(i pulumi.IntInput) GetBucketSummariesFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBucketSummariesFilter {
 		return vs[0].([]GetBucketSummariesFilter)[vs[1].(int)]
@@ -2108,19 +1843,19 @@ func (o GetBucketSummariesFilterArrayOutput) Index(i pulumi.IntInput) GetBucketS
 
 type GetObjectLifecyclePolicyRule struct {
 	// The action of the object lifecycle policy rule. Rules using the action 'ARCHIVE' move objects from Standard and InfrequentAccess storage tiers into the [Archive storage tier](https://docs.cloud.oracle.com/iaas/Content/Archive/Concepts/archivestorageoverview.htm). Rules using the action 'INFREQUENT_ACCESS' move objects from Standard storage tier into the Infrequent Access Storage tier. Objects that are already in InfrequentAccess tier or in Archive tier are left untouched. Rules using the action 'DELETE' permanently delete objects from buckets. Rules using 'ABORT' abort the uncommitted multipart-uploads and permanently delete their parts from buckets.
-	Action string `pulumi:"action"`
+	Action *string `pulumi:"action"`
 	// A Boolean that determines whether this rule is currently enabled.
-	IsEnabled bool `pulumi:"isEnabled"`
+	IsEnabled *bool `pulumi:"isEnabled"`
 	// The name of the lifecycle rule to be applied.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// A filter that compares object names to a set of prefixes or patterns to determine if a rule applies to a given object. The filter can contain include glob patterns, exclude glob patterns and inclusion prefixes. The inclusion prefixes property is kept for backward compatibility. It is recommended to use inclusion patterns instead of prefixes. Exclusions take precedence over inclusions.
 	ObjectNameFilters []GetObjectLifecyclePolicyRuleObjectNameFilter `pulumi:"objectNameFilters"`
 	// The target of the object lifecycle policy rule. The values of target can be either "objects", "multipart-uploads" or "previous-object-versions". This field when declared as "objects" is used to specify ARCHIVE, INFREQUENT_ACCESS or DELETE rule for objects. This field when declared as "previous-object-versions" is used to specify ARCHIVE, INFREQUENT_ACCESS or DELETE rule for previous versions of existing objects. This field when declared as "multipart-uploads" is used to specify the ABORT (only) rule for uncommitted multipart-uploads.
-	Target string `pulumi:"target"`
+	Target *string `pulumi:"target"`
 	// Specifies the age of objects to apply the rule to. The timeAmount is interpreted in units defined by the timeUnit parameter, and is calculated in relation to each object's Last-Modified time.
-	TimeAmount string `pulumi:"timeAmount"`
+	TimeAmount *string `pulumi:"timeAmount"`
 	// The unit that should be used to interpret timeAmount.  Days are defined as starting and ending at midnight UTC. Years are defined as 365.2425 days long and likewise round up to the next midnight UTC.
-	TimeUnit string `pulumi:"timeUnit"`
+	TimeUnit *string `pulumi:"timeUnit"`
 }
 
 // GetObjectLifecyclePolicyRuleInput is an input type that accepts GetObjectLifecyclePolicyRuleArgs and GetObjectLifecyclePolicyRuleOutput values.
@@ -2136,19 +1871,19 @@ type GetObjectLifecyclePolicyRuleInput interface {
 
 type GetObjectLifecyclePolicyRuleArgs struct {
 	// The action of the object lifecycle policy rule. Rules using the action 'ARCHIVE' move objects from Standard and InfrequentAccess storage tiers into the [Archive storage tier](https://docs.cloud.oracle.com/iaas/Content/Archive/Concepts/archivestorageoverview.htm). Rules using the action 'INFREQUENT_ACCESS' move objects from Standard storage tier into the Infrequent Access Storage tier. Objects that are already in InfrequentAccess tier or in Archive tier are left untouched. Rules using the action 'DELETE' permanently delete objects from buckets. Rules using 'ABORT' abort the uncommitted multipart-uploads and permanently delete their parts from buckets.
-	Action pulumi.StringInput `pulumi:"action"`
+	Action pulumi.StringPtrInput `pulumi:"action"`
 	// A Boolean that determines whether this rule is currently enabled.
-	IsEnabled pulumi.BoolInput `pulumi:"isEnabled"`
+	IsEnabled pulumi.BoolPtrInput `pulumi:"isEnabled"`
 	// The name of the lifecycle rule to be applied.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// A filter that compares object names to a set of prefixes or patterns to determine if a rule applies to a given object. The filter can contain include glob patterns, exclude glob patterns and inclusion prefixes. The inclusion prefixes property is kept for backward compatibility. It is recommended to use inclusion patterns instead of prefixes. Exclusions take precedence over inclusions.
 	ObjectNameFilters GetObjectLifecyclePolicyRuleObjectNameFilterArrayInput `pulumi:"objectNameFilters"`
 	// The target of the object lifecycle policy rule. The values of target can be either "objects", "multipart-uploads" or "previous-object-versions". This field when declared as "objects" is used to specify ARCHIVE, INFREQUENT_ACCESS or DELETE rule for objects. This field when declared as "previous-object-versions" is used to specify ARCHIVE, INFREQUENT_ACCESS or DELETE rule for previous versions of existing objects. This field when declared as "multipart-uploads" is used to specify the ABORT (only) rule for uncommitted multipart-uploads.
-	Target pulumi.StringInput `pulumi:"target"`
+	Target pulumi.StringPtrInput `pulumi:"target"`
 	// Specifies the age of objects to apply the rule to. The timeAmount is interpreted in units defined by the timeUnit parameter, and is calculated in relation to each object's Last-Modified time.
-	TimeAmount pulumi.StringInput `pulumi:"timeAmount"`
+	TimeAmount pulumi.StringPtrInput `pulumi:"timeAmount"`
 	// The unit that should be used to interpret timeAmount.  Days are defined as starting and ending at midnight UTC. Years are defined as 365.2425 days long and likewise round up to the next midnight UTC.
-	TimeUnit pulumi.StringInput `pulumi:"timeUnit"`
+	TimeUnit pulumi.StringPtrInput `pulumi:"timeUnit"`
 }
 
 func (GetObjectLifecyclePolicyRuleArgs) ElementType() reflect.Type {
@@ -2161,12 +1896,6 @@ func (i GetObjectLifecyclePolicyRuleArgs) ToGetObjectLifecyclePolicyRuleOutput()
 
 func (i GetObjectLifecyclePolicyRuleArgs) ToGetObjectLifecyclePolicyRuleOutputWithContext(ctx context.Context) GetObjectLifecyclePolicyRuleOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetObjectLifecyclePolicyRuleOutput)
-}
-
-func (i GetObjectLifecyclePolicyRuleArgs) ToOutput(ctx context.Context) pulumix.Output[GetObjectLifecyclePolicyRule] {
-	return pulumix.Output[GetObjectLifecyclePolicyRule]{
-		OutputState: i.ToGetObjectLifecyclePolicyRuleOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetObjectLifecyclePolicyRuleArrayInput is an input type that accepts GetObjectLifecyclePolicyRuleArray and GetObjectLifecyclePolicyRuleArrayOutput values.
@@ -2194,12 +1923,6 @@ func (i GetObjectLifecyclePolicyRuleArray) ToGetObjectLifecyclePolicyRuleArrayOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetObjectLifecyclePolicyRuleArrayOutput)
 }
 
-func (i GetObjectLifecyclePolicyRuleArray) ToOutput(ctx context.Context) pulumix.Output[[]GetObjectLifecyclePolicyRule] {
-	return pulumix.Output[[]GetObjectLifecyclePolicyRule]{
-		OutputState: i.ToGetObjectLifecyclePolicyRuleArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetObjectLifecyclePolicyRuleOutput struct{ *pulumi.OutputState }
 
 func (GetObjectLifecyclePolicyRuleOutput) ElementType() reflect.Type {
@@ -2214,25 +1937,19 @@ func (o GetObjectLifecyclePolicyRuleOutput) ToGetObjectLifecyclePolicyRuleOutput
 	return o
 }
 
-func (o GetObjectLifecyclePolicyRuleOutput) ToOutput(ctx context.Context) pulumix.Output[GetObjectLifecyclePolicyRule] {
-	return pulumix.Output[GetObjectLifecyclePolicyRule]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The action of the object lifecycle policy rule. Rules using the action 'ARCHIVE' move objects from Standard and InfrequentAccess storage tiers into the [Archive storage tier](https://docs.cloud.oracle.com/iaas/Content/Archive/Concepts/archivestorageoverview.htm). Rules using the action 'INFREQUENT_ACCESS' move objects from Standard storage tier into the Infrequent Access Storage tier. Objects that are already in InfrequentAccess tier or in Archive tier are left untouched. Rules using the action 'DELETE' permanently delete objects from buckets. Rules using 'ABORT' abort the uncommitted multipart-uploads and permanently delete their parts from buckets.
-func (o GetObjectLifecyclePolicyRuleOutput) Action() pulumi.StringOutput {
-	return o.ApplyT(func(v GetObjectLifecyclePolicyRule) string { return v.Action }).(pulumi.StringOutput)
+func (o GetObjectLifecyclePolicyRuleOutput) Action() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetObjectLifecyclePolicyRule) *string { return v.Action }).(pulumi.StringPtrOutput)
 }
 
 // A Boolean that determines whether this rule is currently enabled.
-func (o GetObjectLifecyclePolicyRuleOutput) IsEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetObjectLifecyclePolicyRule) bool { return v.IsEnabled }).(pulumi.BoolOutput)
+func (o GetObjectLifecyclePolicyRuleOutput) IsEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetObjectLifecyclePolicyRule) *bool { return v.IsEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // The name of the lifecycle rule to be applied.
-func (o GetObjectLifecyclePolicyRuleOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetObjectLifecyclePolicyRule) string { return v.Name }).(pulumi.StringOutput)
+func (o GetObjectLifecyclePolicyRuleOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetObjectLifecyclePolicyRule) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // A filter that compares object names to a set of prefixes or patterns to determine if a rule applies to a given object. The filter can contain include glob patterns, exclude glob patterns and inclusion prefixes. The inclusion prefixes property is kept for backward compatibility. It is recommended to use inclusion patterns instead of prefixes. Exclusions take precedence over inclusions.
@@ -2243,18 +1960,18 @@ func (o GetObjectLifecyclePolicyRuleOutput) ObjectNameFilters() GetObjectLifecyc
 }
 
 // The target of the object lifecycle policy rule. The values of target can be either "objects", "multipart-uploads" or "previous-object-versions". This field when declared as "objects" is used to specify ARCHIVE, INFREQUENT_ACCESS or DELETE rule for objects. This field when declared as "previous-object-versions" is used to specify ARCHIVE, INFREQUENT_ACCESS or DELETE rule for previous versions of existing objects. This field when declared as "multipart-uploads" is used to specify the ABORT (only) rule for uncommitted multipart-uploads.
-func (o GetObjectLifecyclePolicyRuleOutput) Target() pulumi.StringOutput {
-	return o.ApplyT(func(v GetObjectLifecyclePolicyRule) string { return v.Target }).(pulumi.StringOutput)
+func (o GetObjectLifecyclePolicyRuleOutput) Target() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetObjectLifecyclePolicyRule) *string { return v.Target }).(pulumi.StringPtrOutput)
 }
 
 // Specifies the age of objects to apply the rule to. The timeAmount is interpreted in units defined by the timeUnit parameter, and is calculated in relation to each object's Last-Modified time.
-func (o GetObjectLifecyclePolicyRuleOutput) TimeAmount() pulumi.StringOutput {
-	return o.ApplyT(func(v GetObjectLifecyclePolicyRule) string { return v.TimeAmount }).(pulumi.StringOutput)
+func (o GetObjectLifecyclePolicyRuleOutput) TimeAmount() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetObjectLifecyclePolicyRule) *string { return v.TimeAmount }).(pulumi.StringPtrOutput)
 }
 
 // The unit that should be used to interpret timeAmount.  Days are defined as starting and ending at midnight UTC. Years are defined as 365.2425 days long and likewise round up to the next midnight UTC.
-func (o GetObjectLifecyclePolicyRuleOutput) TimeUnit() pulumi.StringOutput {
-	return o.ApplyT(func(v GetObjectLifecyclePolicyRule) string { return v.TimeUnit }).(pulumi.StringOutput)
+func (o GetObjectLifecyclePolicyRuleOutput) TimeUnit() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetObjectLifecyclePolicyRule) *string { return v.TimeUnit }).(pulumi.StringPtrOutput)
 }
 
 type GetObjectLifecyclePolicyRuleArrayOutput struct{ *pulumi.OutputState }
@@ -2269,12 +1986,6 @@ func (o GetObjectLifecyclePolicyRuleArrayOutput) ToGetObjectLifecyclePolicyRuleA
 
 func (o GetObjectLifecyclePolicyRuleArrayOutput) ToGetObjectLifecyclePolicyRuleArrayOutputWithContext(ctx context.Context) GetObjectLifecyclePolicyRuleArrayOutput {
 	return o
-}
-
-func (o GetObjectLifecyclePolicyRuleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetObjectLifecyclePolicyRule] {
-	return pulumix.Output[[]GetObjectLifecyclePolicyRule]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetObjectLifecyclePolicyRuleArrayOutput) Index(i pulumi.IntInput) GetObjectLifecyclePolicyRuleOutput {
@@ -2324,12 +2035,6 @@ func (i GetObjectLifecyclePolicyRuleObjectNameFilterArgs) ToGetObjectLifecyclePo
 	return pulumi.ToOutputWithContext(ctx, i).(GetObjectLifecyclePolicyRuleObjectNameFilterOutput)
 }
 
-func (i GetObjectLifecyclePolicyRuleObjectNameFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetObjectLifecyclePolicyRuleObjectNameFilter] {
-	return pulumix.Output[GetObjectLifecyclePolicyRuleObjectNameFilter]{
-		OutputState: i.ToGetObjectLifecyclePolicyRuleObjectNameFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetObjectLifecyclePolicyRuleObjectNameFilterArrayInput is an input type that accepts GetObjectLifecyclePolicyRuleObjectNameFilterArray and GetObjectLifecyclePolicyRuleObjectNameFilterArrayOutput values.
 // You can construct a concrete instance of `GetObjectLifecyclePolicyRuleObjectNameFilterArrayInput` via:
 //
@@ -2355,12 +2060,6 @@ func (i GetObjectLifecyclePolicyRuleObjectNameFilterArray) ToGetObjectLifecycleP
 	return pulumi.ToOutputWithContext(ctx, i).(GetObjectLifecyclePolicyRuleObjectNameFilterArrayOutput)
 }
 
-func (i GetObjectLifecyclePolicyRuleObjectNameFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetObjectLifecyclePolicyRuleObjectNameFilter] {
-	return pulumix.Output[[]GetObjectLifecyclePolicyRuleObjectNameFilter]{
-		OutputState: i.ToGetObjectLifecyclePolicyRuleObjectNameFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetObjectLifecyclePolicyRuleObjectNameFilterOutput struct{ *pulumi.OutputState }
 
 func (GetObjectLifecyclePolicyRuleObjectNameFilterOutput) ElementType() reflect.Type {
@@ -2373,12 +2072,6 @@ func (o GetObjectLifecyclePolicyRuleObjectNameFilterOutput) ToGetObjectLifecycle
 
 func (o GetObjectLifecyclePolicyRuleObjectNameFilterOutput) ToGetObjectLifecyclePolicyRuleObjectNameFilterOutputWithContext(ctx context.Context) GetObjectLifecyclePolicyRuleObjectNameFilterOutput {
 	return o
-}
-
-func (o GetObjectLifecyclePolicyRuleObjectNameFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetObjectLifecyclePolicyRuleObjectNameFilter] {
-	return pulumix.Output[GetObjectLifecyclePolicyRuleObjectNameFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // An array of glob patterns to match the object names to exclude. An empty array is ignored. Exclusion patterns take precedence over inclusion patterns. A Glob pattern is a sequence of characters to match text. Any character that appears in the pattern, other than the special pattern characters described below, matches itself. Glob patterns must be between 1 and 1024 characters.
@@ -2408,12 +2101,6 @@ func (o GetObjectLifecyclePolicyRuleObjectNameFilterArrayOutput) ToGetObjectLife
 
 func (o GetObjectLifecyclePolicyRuleObjectNameFilterArrayOutput) ToGetObjectLifecyclePolicyRuleObjectNameFilterArrayOutputWithContext(ctx context.Context) GetObjectLifecyclePolicyRuleObjectNameFilterArrayOutput {
 	return o
-}
-
-func (o GetObjectLifecyclePolicyRuleObjectNameFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetObjectLifecyclePolicyRuleObjectNameFilter] {
-	return pulumix.Output[[]GetObjectLifecyclePolicyRuleObjectNameFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetObjectLifecyclePolicyRuleObjectNameFilterArrayOutput) Index(i pulumi.IntInput) GetObjectLifecyclePolicyRuleObjectNameFilterOutput {
@@ -2459,12 +2146,6 @@ func (i GetObjectVersionsFilterArgs) ToGetObjectVersionsFilterOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(GetObjectVersionsFilterOutput)
 }
 
-func (i GetObjectVersionsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetObjectVersionsFilter] {
-	return pulumix.Output[GetObjectVersionsFilter]{
-		OutputState: i.ToGetObjectVersionsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetObjectVersionsFilterArrayInput is an input type that accepts GetObjectVersionsFilterArray and GetObjectVersionsFilterArrayOutput values.
 // You can construct a concrete instance of `GetObjectVersionsFilterArrayInput` via:
 //
@@ -2490,12 +2171,6 @@ func (i GetObjectVersionsFilterArray) ToGetObjectVersionsFilterArrayOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetObjectVersionsFilterArrayOutput)
 }
 
-func (i GetObjectVersionsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetObjectVersionsFilter] {
-	return pulumix.Output[[]GetObjectVersionsFilter]{
-		OutputState: i.ToGetObjectVersionsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetObjectVersionsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetObjectVersionsFilterOutput) ElementType() reflect.Type {
@@ -2508,12 +2183,6 @@ func (o GetObjectVersionsFilterOutput) ToGetObjectVersionsFilterOutput() GetObje
 
 func (o GetObjectVersionsFilterOutput) ToGetObjectVersionsFilterOutputWithContext(ctx context.Context) GetObjectVersionsFilterOutput {
 	return o
-}
-
-func (o GetObjectVersionsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetObjectVersionsFilter] {
-	return pulumix.Output[GetObjectVersionsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The name of the object. Avoid entering confidential information. Example: test/object1.log
@@ -2543,12 +2212,6 @@ func (o GetObjectVersionsFilterArrayOutput) ToGetObjectVersionsFilterArrayOutput
 	return o
 }
 
-func (o GetObjectVersionsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetObjectVersionsFilter] {
-	return pulumix.Output[[]GetObjectVersionsFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetObjectVersionsFilterArrayOutput) Index(i pulumi.IntInput) GetObjectVersionsFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetObjectVersionsFilter {
 		return vs[0].([]GetObjectVersionsFilter)[vs[1].(int)]
@@ -2557,25 +2220,25 @@ func (o GetObjectVersionsFilterArrayOutput) Index(i pulumi.IntInput) GetObjectVe
 
 type GetObjectVersionsItem struct {
 	// Archival state of an object. This field is set only for objects in Archive tier.
-	ArchivalState string `pulumi:"archivalState"`
+	ArchivalState *string `pulumi:"archivalState"`
 	// The current entity tag (ETag) for the object.
-	Etag string `pulumi:"etag"`
+	Etag *string `pulumi:"etag"`
 	// This flag will indicate if the version is deleted or not.
-	IsDeleteMarker bool `pulumi:"isDeleteMarker"`
+	IsDeleteMarker *bool `pulumi:"isDeleteMarker"`
 	// Base64-encoded MD5 hash of the object data.
-	Md5 string `pulumi:"md5"`
+	Md5 *string `pulumi:"md5"`
 	// The name of the object. Avoid entering confidential information. Example: test/object1.log
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// Size of the object in bytes.
-	Size string `pulumi:"size"`
+	Size *string `pulumi:"size"`
 	// The storage tier that the object is stored in.
-	StorageTier string `pulumi:"storageTier"`
+	StorageTier *string `pulumi:"storageTier"`
 	// The date and time the object was created, as described in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-14.29).
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The date and time the object was modified, as described in [RFC 2616](https://tools.ietf.org/rfc/rfc2616#section-14.29).
-	TimeModified string `pulumi:"timeModified"`
+	TimeModified *string `pulumi:"timeModified"`
 	// VersionId of the object.
-	VersionId string `pulumi:"versionId"`
+	VersionId *string `pulumi:"versionId"`
 }
 
 // GetObjectVersionsItemInput is an input type that accepts GetObjectVersionsItemArgs and GetObjectVersionsItemOutput values.
@@ -2591,25 +2254,25 @@ type GetObjectVersionsItemInput interface {
 
 type GetObjectVersionsItemArgs struct {
 	// Archival state of an object. This field is set only for objects in Archive tier.
-	ArchivalState pulumi.StringInput `pulumi:"archivalState"`
+	ArchivalState pulumi.StringPtrInput `pulumi:"archivalState"`
 	// The current entity tag (ETag) for the object.
-	Etag pulumi.StringInput `pulumi:"etag"`
+	Etag pulumi.StringPtrInput `pulumi:"etag"`
 	// This flag will indicate if the version is deleted or not.
-	IsDeleteMarker pulumi.BoolInput `pulumi:"isDeleteMarker"`
+	IsDeleteMarker pulumi.BoolPtrInput `pulumi:"isDeleteMarker"`
 	// Base64-encoded MD5 hash of the object data.
-	Md5 pulumi.StringInput `pulumi:"md5"`
+	Md5 pulumi.StringPtrInput `pulumi:"md5"`
 	// The name of the object. Avoid entering confidential information. Example: test/object1.log
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// Size of the object in bytes.
-	Size pulumi.StringInput `pulumi:"size"`
+	Size pulumi.StringPtrInput `pulumi:"size"`
 	// The storage tier that the object is stored in.
-	StorageTier pulumi.StringInput `pulumi:"storageTier"`
+	StorageTier pulumi.StringPtrInput `pulumi:"storageTier"`
 	// The date and time the object was created, as described in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-14.29).
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// The date and time the object was modified, as described in [RFC 2616](https://tools.ietf.org/rfc/rfc2616#section-14.29).
-	TimeModified pulumi.StringInput `pulumi:"timeModified"`
+	TimeModified pulumi.StringPtrInput `pulumi:"timeModified"`
 	// VersionId of the object.
-	VersionId pulumi.StringInput `pulumi:"versionId"`
+	VersionId pulumi.StringPtrInput `pulumi:"versionId"`
 }
 
 func (GetObjectVersionsItemArgs) ElementType() reflect.Type {
@@ -2622,12 +2285,6 @@ func (i GetObjectVersionsItemArgs) ToGetObjectVersionsItemOutput() GetObjectVers
 
 func (i GetObjectVersionsItemArgs) ToGetObjectVersionsItemOutputWithContext(ctx context.Context) GetObjectVersionsItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetObjectVersionsItemOutput)
-}
-
-func (i GetObjectVersionsItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetObjectVersionsItem] {
-	return pulumix.Output[GetObjectVersionsItem]{
-		OutputState: i.ToGetObjectVersionsItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetObjectVersionsItemArrayInput is an input type that accepts GetObjectVersionsItemArray and GetObjectVersionsItemArrayOutput values.
@@ -2655,12 +2312,6 @@ func (i GetObjectVersionsItemArray) ToGetObjectVersionsItemArrayOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetObjectVersionsItemArrayOutput)
 }
 
-func (i GetObjectVersionsItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetObjectVersionsItem] {
-	return pulumix.Output[[]GetObjectVersionsItem]{
-		OutputState: i.ToGetObjectVersionsItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetObjectVersionsItemOutput struct{ *pulumi.OutputState }
 
 func (GetObjectVersionsItemOutput) ElementType() reflect.Type {
@@ -2675,60 +2326,54 @@ func (o GetObjectVersionsItemOutput) ToGetObjectVersionsItemOutputWithContext(ct
 	return o
 }
 
-func (o GetObjectVersionsItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetObjectVersionsItem] {
-	return pulumix.Output[GetObjectVersionsItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Archival state of an object. This field is set only for objects in Archive tier.
-func (o GetObjectVersionsItemOutput) ArchivalState() pulumi.StringOutput {
-	return o.ApplyT(func(v GetObjectVersionsItem) string { return v.ArchivalState }).(pulumi.StringOutput)
+func (o GetObjectVersionsItemOutput) ArchivalState() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetObjectVersionsItem) *string { return v.ArchivalState }).(pulumi.StringPtrOutput)
 }
 
 // The current entity tag (ETag) for the object.
-func (o GetObjectVersionsItemOutput) Etag() pulumi.StringOutput {
-	return o.ApplyT(func(v GetObjectVersionsItem) string { return v.Etag }).(pulumi.StringOutput)
+func (o GetObjectVersionsItemOutput) Etag() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetObjectVersionsItem) *string { return v.Etag }).(pulumi.StringPtrOutput)
 }
 
 // This flag will indicate if the version is deleted or not.
-func (o GetObjectVersionsItemOutput) IsDeleteMarker() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetObjectVersionsItem) bool { return v.IsDeleteMarker }).(pulumi.BoolOutput)
+func (o GetObjectVersionsItemOutput) IsDeleteMarker() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetObjectVersionsItem) *bool { return v.IsDeleteMarker }).(pulumi.BoolPtrOutput)
 }
 
 // Base64-encoded MD5 hash of the object data.
-func (o GetObjectVersionsItemOutput) Md5() pulumi.StringOutput {
-	return o.ApplyT(func(v GetObjectVersionsItem) string { return v.Md5 }).(pulumi.StringOutput)
+func (o GetObjectVersionsItemOutput) Md5() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetObjectVersionsItem) *string { return v.Md5 }).(pulumi.StringPtrOutput)
 }
 
 // The name of the object. Avoid entering confidential information. Example: test/object1.log
-func (o GetObjectVersionsItemOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetObjectVersionsItem) string { return v.Name }).(pulumi.StringOutput)
+func (o GetObjectVersionsItemOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetObjectVersionsItem) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // Size of the object in bytes.
-func (o GetObjectVersionsItemOutput) Size() pulumi.StringOutput {
-	return o.ApplyT(func(v GetObjectVersionsItem) string { return v.Size }).(pulumi.StringOutput)
+func (o GetObjectVersionsItemOutput) Size() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetObjectVersionsItem) *string { return v.Size }).(pulumi.StringPtrOutput)
 }
 
 // The storage tier that the object is stored in.
-func (o GetObjectVersionsItemOutput) StorageTier() pulumi.StringOutput {
-	return o.ApplyT(func(v GetObjectVersionsItem) string { return v.StorageTier }).(pulumi.StringOutput)
+func (o GetObjectVersionsItemOutput) StorageTier() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetObjectVersionsItem) *string { return v.StorageTier }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the object was created, as described in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-14.29).
-func (o GetObjectVersionsItemOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetObjectVersionsItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetObjectVersionsItemOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetObjectVersionsItem) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the object was modified, as described in [RFC 2616](https://tools.ietf.org/rfc/rfc2616#section-14.29).
-func (o GetObjectVersionsItemOutput) TimeModified() pulumi.StringOutput {
-	return o.ApplyT(func(v GetObjectVersionsItem) string { return v.TimeModified }).(pulumi.StringOutput)
+func (o GetObjectVersionsItemOutput) TimeModified() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetObjectVersionsItem) *string { return v.TimeModified }).(pulumi.StringPtrOutput)
 }
 
 // VersionId of the object.
-func (o GetObjectVersionsItemOutput) VersionId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetObjectVersionsItem) string { return v.VersionId }).(pulumi.StringOutput)
+func (o GetObjectVersionsItemOutput) VersionId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetObjectVersionsItem) *string { return v.VersionId }).(pulumi.StringPtrOutput)
 }
 
 type GetObjectVersionsItemArrayOutput struct{ *pulumi.OutputState }
@@ -2743,12 +2388,6 @@ func (o GetObjectVersionsItemArrayOutput) ToGetObjectVersionsItemArrayOutput() G
 
 func (o GetObjectVersionsItemArrayOutput) ToGetObjectVersionsItemArrayOutputWithContext(ctx context.Context) GetObjectVersionsItemArrayOutput {
 	return o
-}
-
-func (o GetObjectVersionsItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetObjectVersionsItem] {
-	return pulumix.Output[[]GetObjectVersionsItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetObjectVersionsItemArrayOutput) Index(i pulumi.IntInput) GetObjectVersionsItemOutput {
@@ -2794,12 +2433,6 @@ func (i GetObjectsFilterArgs) ToGetObjectsFilterOutputWithContext(ctx context.Co
 	return pulumi.ToOutputWithContext(ctx, i).(GetObjectsFilterOutput)
 }
 
-func (i GetObjectsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetObjectsFilter] {
-	return pulumix.Output[GetObjectsFilter]{
-		OutputState: i.ToGetObjectsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetObjectsFilterArrayInput is an input type that accepts GetObjectsFilterArray and GetObjectsFilterArrayOutput values.
 // You can construct a concrete instance of `GetObjectsFilterArrayInput` via:
 //
@@ -2825,12 +2458,6 @@ func (i GetObjectsFilterArray) ToGetObjectsFilterArrayOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(GetObjectsFilterArrayOutput)
 }
 
-func (i GetObjectsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetObjectsFilter] {
-	return pulumix.Output[[]GetObjectsFilter]{
-		OutputState: i.ToGetObjectsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetObjectsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetObjectsFilterOutput) ElementType() reflect.Type {
@@ -2843,12 +2470,6 @@ func (o GetObjectsFilterOutput) ToGetObjectsFilterOutput() GetObjectsFilterOutpu
 
 func (o GetObjectsFilterOutput) ToGetObjectsFilterOutputWithContext(ctx context.Context) GetObjectsFilterOutput {
 	return o
-}
-
-func (o GetObjectsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetObjectsFilter] {
-	return pulumix.Output[GetObjectsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The name of the object.
@@ -2878,12 +2499,6 @@ func (o GetObjectsFilterArrayOutput) ToGetObjectsFilterArrayOutputWithContext(ct
 	return o
 }
 
-func (o GetObjectsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetObjectsFilter] {
-	return pulumix.Output[[]GetObjectsFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetObjectsFilterArrayOutput) Index(i pulumi.IntInput) GetObjectsFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetObjectsFilter {
 		return vs[0].([]GetObjectsFilter)[vs[1].(int)]
@@ -2891,22 +2506,22 @@ func (o GetObjectsFilterArrayOutput) Index(i pulumi.IntInput) GetObjectsFilterOu
 }
 
 type GetObjectsObject struct {
-	ArchivalState string `pulumi:"archivalState"`
+	ArchivalState *string `pulumi:"archivalState"`
 	// The current entity tag (ETag) for the object.
-	Etag string `pulumi:"etag"`
+	Etag *string `pulumi:"etag"`
 	// Base64-encoded MD5 hash of the object data.
-	Md5 string `pulumi:"md5"`
+	Md5 *string `pulumi:"md5"`
 	// The name of the object.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// Size of the object in bytes.
-	Size string `pulumi:"size"`
+	Size *string `pulumi:"size"`
 	// The storage tier that the object is stored in.
 	// * `archival-state` - Archival state of an object. This field is set only for objects in Archive tier.
-	StorageTier string `pulumi:"storageTier"`
+	StorageTier *string `pulumi:"storageTier"`
 	// The date and time the object was created, as described in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-14.29).
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The date and time the object was modified, as described in [RFC 2616](https://tools.ietf.org/rfc/rfc2616#section-14.29).
-	TimeModified string `pulumi:"timeModified"`
+	TimeModified *string `pulumi:"timeModified"`
 }
 
 // GetObjectsObjectInput is an input type that accepts GetObjectsObjectArgs and GetObjectsObjectOutput values.
@@ -2921,22 +2536,22 @@ type GetObjectsObjectInput interface {
 }
 
 type GetObjectsObjectArgs struct {
-	ArchivalState pulumi.StringInput `pulumi:"archivalState"`
+	ArchivalState pulumi.StringPtrInput `pulumi:"archivalState"`
 	// The current entity tag (ETag) for the object.
-	Etag pulumi.StringInput `pulumi:"etag"`
+	Etag pulumi.StringPtrInput `pulumi:"etag"`
 	// Base64-encoded MD5 hash of the object data.
-	Md5 pulumi.StringInput `pulumi:"md5"`
+	Md5 pulumi.StringPtrInput `pulumi:"md5"`
 	// The name of the object.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// Size of the object in bytes.
-	Size pulumi.StringInput `pulumi:"size"`
+	Size pulumi.StringPtrInput `pulumi:"size"`
 	// The storage tier that the object is stored in.
 	// * `archival-state` - Archival state of an object. This field is set only for objects in Archive tier.
-	StorageTier pulumi.StringInput `pulumi:"storageTier"`
+	StorageTier pulumi.StringPtrInput `pulumi:"storageTier"`
 	// The date and time the object was created, as described in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-14.29).
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// The date and time the object was modified, as described in [RFC 2616](https://tools.ietf.org/rfc/rfc2616#section-14.29).
-	TimeModified pulumi.StringInput `pulumi:"timeModified"`
+	TimeModified pulumi.StringPtrInput `pulumi:"timeModified"`
 }
 
 func (GetObjectsObjectArgs) ElementType() reflect.Type {
@@ -2949,12 +2564,6 @@ func (i GetObjectsObjectArgs) ToGetObjectsObjectOutput() GetObjectsObjectOutput 
 
 func (i GetObjectsObjectArgs) ToGetObjectsObjectOutputWithContext(ctx context.Context) GetObjectsObjectOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetObjectsObjectOutput)
-}
-
-func (i GetObjectsObjectArgs) ToOutput(ctx context.Context) pulumix.Output[GetObjectsObject] {
-	return pulumix.Output[GetObjectsObject]{
-		OutputState: i.ToGetObjectsObjectOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetObjectsObjectArrayInput is an input type that accepts GetObjectsObjectArray and GetObjectsObjectArrayOutput values.
@@ -2982,12 +2591,6 @@ func (i GetObjectsObjectArray) ToGetObjectsObjectArrayOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(GetObjectsObjectArrayOutput)
 }
 
-func (i GetObjectsObjectArray) ToOutput(ctx context.Context) pulumix.Output[[]GetObjectsObject] {
-	return pulumix.Output[[]GetObjectsObject]{
-		OutputState: i.ToGetObjectsObjectArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetObjectsObjectOutput struct{ *pulumi.OutputState }
 
 func (GetObjectsObjectOutput) ElementType() reflect.Type {
@@ -3002,50 +2605,44 @@ func (o GetObjectsObjectOutput) ToGetObjectsObjectOutputWithContext(ctx context.
 	return o
 }
 
-func (o GetObjectsObjectOutput) ToOutput(ctx context.Context) pulumix.Output[GetObjectsObject] {
-	return pulumix.Output[GetObjectsObject]{
-		OutputState: o.OutputState,
-	}
-}
-
-func (o GetObjectsObjectOutput) ArchivalState() pulumi.StringOutput {
-	return o.ApplyT(func(v GetObjectsObject) string { return v.ArchivalState }).(pulumi.StringOutput)
+func (o GetObjectsObjectOutput) ArchivalState() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetObjectsObject) *string { return v.ArchivalState }).(pulumi.StringPtrOutput)
 }
 
 // The current entity tag (ETag) for the object.
-func (o GetObjectsObjectOutput) Etag() pulumi.StringOutput {
-	return o.ApplyT(func(v GetObjectsObject) string { return v.Etag }).(pulumi.StringOutput)
+func (o GetObjectsObjectOutput) Etag() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetObjectsObject) *string { return v.Etag }).(pulumi.StringPtrOutput)
 }
 
 // Base64-encoded MD5 hash of the object data.
-func (o GetObjectsObjectOutput) Md5() pulumi.StringOutput {
-	return o.ApplyT(func(v GetObjectsObject) string { return v.Md5 }).(pulumi.StringOutput)
+func (o GetObjectsObjectOutput) Md5() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetObjectsObject) *string { return v.Md5 }).(pulumi.StringPtrOutput)
 }
 
 // The name of the object.
-func (o GetObjectsObjectOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetObjectsObject) string { return v.Name }).(pulumi.StringOutput)
+func (o GetObjectsObjectOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetObjectsObject) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // Size of the object in bytes.
-func (o GetObjectsObjectOutput) Size() pulumi.StringOutput {
-	return o.ApplyT(func(v GetObjectsObject) string { return v.Size }).(pulumi.StringOutput)
+func (o GetObjectsObjectOutput) Size() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetObjectsObject) *string { return v.Size }).(pulumi.StringPtrOutput)
 }
 
 // The storage tier that the object is stored in.
 // * `archival-state` - Archival state of an object. This field is set only for objects in Archive tier.
-func (o GetObjectsObjectOutput) StorageTier() pulumi.StringOutput {
-	return o.ApplyT(func(v GetObjectsObject) string { return v.StorageTier }).(pulumi.StringOutput)
+func (o GetObjectsObjectOutput) StorageTier() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetObjectsObject) *string { return v.StorageTier }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the object was created, as described in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-14.29).
-func (o GetObjectsObjectOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetObjectsObject) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetObjectsObjectOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetObjectsObject) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the object was modified, as described in [RFC 2616](https://tools.ietf.org/rfc/rfc2616#section-14.29).
-func (o GetObjectsObjectOutput) TimeModified() pulumi.StringOutput {
-	return o.ApplyT(func(v GetObjectsObject) string { return v.TimeModified }).(pulumi.StringOutput)
+func (o GetObjectsObjectOutput) TimeModified() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetObjectsObject) *string { return v.TimeModified }).(pulumi.StringPtrOutput)
 }
 
 type GetObjectsObjectArrayOutput struct{ *pulumi.OutputState }
@@ -3060,12 +2657,6 @@ func (o GetObjectsObjectArrayOutput) ToGetObjectsObjectArrayOutput() GetObjectsO
 
 func (o GetObjectsObjectArrayOutput) ToGetObjectsObjectArrayOutputWithContext(ctx context.Context) GetObjectsObjectArrayOutput {
 	return o
-}
-
-func (o GetObjectsObjectArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetObjectsObject] {
-	return pulumix.Output[[]GetObjectsObject]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetObjectsObjectArrayOutput) Index(i pulumi.IntInput) GetObjectsObjectOutput {
@@ -3111,12 +2702,6 @@ func (i GetPreauthrequestsFilterArgs) ToGetPreauthrequestsFilterOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetPreauthrequestsFilterOutput)
 }
 
-func (i GetPreauthrequestsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetPreauthrequestsFilter] {
-	return pulumix.Output[GetPreauthrequestsFilter]{
-		OutputState: i.ToGetPreauthrequestsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetPreauthrequestsFilterArrayInput is an input type that accepts GetPreauthrequestsFilterArray and GetPreauthrequestsFilterArrayOutput values.
 // You can construct a concrete instance of `GetPreauthrequestsFilterArrayInput` via:
 //
@@ -3142,12 +2727,6 @@ func (i GetPreauthrequestsFilterArray) ToGetPreauthrequestsFilterArrayOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetPreauthrequestsFilterArrayOutput)
 }
 
-func (i GetPreauthrequestsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetPreauthrequestsFilter] {
-	return pulumix.Output[[]GetPreauthrequestsFilter]{
-		OutputState: i.ToGetPreauthrequestsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetPreauthrequestsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetPreauthrequestsFilterOutput) ElementType() reflect.Type {
@@ -3160,12 +2739,6 @@ func (o GetPreauthrequestsFilterOutput) ToGetPreauthrequestsFilterOutput() GetPr
 
 func (o GetPreauthrequestsFilterOutput) ToGetPreauthrequestsFilterOutputWithContext(ctx context.Context) GetPreauthrequestsFilterOutput {
 	return o
-}
-
-func (o GetPreauthrequestsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetPreauthrequestsFilter] {
-	return pulumix.Output[GetPreauthrequestsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The user-provided name of the pre-authenticated request.
@@ -3195,12 +2768,6 @@ func (o GetPreauthrequestsFilterArrayOutput) ToGetPreauthrequestsFilterArrayOutp
 	return o
 }
 
-func (o GetPreauthrequestsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetPreauthrequestsFilter] {
-	return pulumix.Output[[]GetPreauthrequestsFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetPreauthrequestsFilterArrayOutput) Index(i pulumi.IntInput) GetPreauthrequestsFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPreauthrequestsFilter {
 		return vs[0].([]GetPreauthrequestsFilter)[vs[1].(int)]
@@ -3209,31 +2776,31 @@ func (o GetPreauthrequestsFilterArrayOutput) Index(i pulumi.IntInput) GetPreauth
 
 type GetPreauthrequestsPreauthenticatedRequest struct {
 	// The operation that can be performed on this resource.
-	AccessType string `pulumi:"accessType"`
+	AccessType *string `pulumi:"accessType"`
 	// The URI to embed in the URL when using the pre-authenticated request.
-	AccessUri string `pulumi:"accessUri"`
+	AccessUri *string `pulumi:"accessUri"`
 	// The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
-	Bucket string `pulumi:"bucket"`
+	Bucket *string `pulumi:"bucket"`
 	// Specifies whether a list operation is allowed on a PAR with accessType "AnyObjectRead" or "AnyObjectReadWrite". Deny: Prevents the user from performing a list operation. ListObjects: Authorizes the user to perform a list operation.
-	BucketListingAction string `pulumi:"bucketListingAction"`
-	FullPath            string `pulumi:"fullPath"`
+	BucketListingAction *string `pulumi:"bucketListingAction"`
+	FullPath            *string `pulumi:"fullPath"`
 	// The unique identifier to use when directly addressing the pre-authenticated request.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The user-provided name of the pre-authenticated request.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// The Object Storage namespace used for the request.
-	Namespace string `pulumi:"namespace"`
+	Namespace *string `pulumi:"namespace"`
 	// Deprecated. Instead use `objectName`.The name of the object that is being granted access to by the pre-authenticated request. Avoid entering confidential information. The object name can be null and if so, the pre-authenticated request grants access to the entire bucket. Example: test/object1.log
 	//
 	// Deprecated: The 'object' field has been deprecated. Please use 'object_name' instead.
-	Object string `pulumi:"object"`
+	Object *string `pulumi:"object"`
 	// The name of the object that is being granted access to by the pre-authenticated request. Avoid entering confidential information. The object name can be null and if so, the pre-authenticated request grants access to the entire bucket. Example: test/object1.log
-	ObjectName string `pulumi:"objectName"`
-	ParId      string `pulumi:"parId"`
+	ObjectName *string `pulumi:"objectName"`
+	ParId      *string `pulumi:"parId"`
 	// The date when the pre-authenticated request was created as per specification [RFC 3339](https://tools.ietf.org/html/rfc3339).
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The expiration date for the pre-authenticated request as per [RFC 3339](https://tools.ietf.org/html/rfc3339). After this date the pre-authenticated request will no longer be valid.
-	TimeExpires string `pulumi:"timeExpires"`
+	TimeExpires *string `pulumi:"timeExpires"`
 }
 
 // GetPreauthrequestsPreauthenticatedRequestInput is an input type that accepts GetPreauthrequestsPreauthenticatedRequestArgs and GetPreauthrequestsPreauthenticatedRequestOutput values.
@@ -3249,31 +2816,31 @@ type GetPreauthrequestsPreauthenticatedRequestInput interface {
 
 type GetPreauthrequestsPreauthenticatedRequestArgs struct {
 	// The operation that can be performed on this resource.
-	AccessType pulumi.StringInput `pulumi:"accessType"`
+	AccessType pulumi.StringPtrInput `pulumi:"accessType"`
 	// The URI to embed in the URL when using the pre-authenticated request.
-	AccessUri pulumi.StringInput `pulumi:"accessUri"`
+	AccessUri pulumi.StringPtrInput `pulumi:"accessUri"`
 	// The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
-	Bucket pulumi.StringInput `pulumi:"bucket"`
+	Bucket pulumi.StringPtrInput `pulumi:"bucket"`
 	// Specifies whether a list operation is allowed on a PAR with accessType "AnyObjectRead" or "AnyObjectReadWrite". Deny: Prevents the user from performing a list operation. ListObjects: Authorizes the user to perform a list operation.
-	BucketListingAction pulumi.StringInput `pulumi:"bucketListingAction"`
-	FullPath            pulumi.StringInput `pulumi:"fullPath"`
+	BucketListingAction pulumi.StringPtrInput `pulumi:"bucketListingAction"`
+	FullPath            pulumi.StringPtrInput `pulumi:"fullPath"`
 	// The unique identifier to use when directly addressing the pre-authenticated request.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// The user-provided name of the pre-authenticated request.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// The Object Storage namespace used for the request.
-	Namespace pulumi.StringInput `pulumi:"namespace"`
+	Namespace pulumi.StringPtrInput `pulumi:"namespace"`
 	// Deprecated. Instead use `objectName`.The name of the object that is being granted access to by the pre-authenticated request. Avoid entering confidential information. The object name can be null and if so, the pre-authenticated request grants access to the entire bucket. Example: test/object1.log
 	//
 	// Deprecated: The 'object' field has been deprecated. Please use 'object_name' instead.
-	Object pulumi.StringInput `pulumi:"object"`
+	Object pulumi.StringPtrInput `pulumi:"object"`
 	// The name of the object that is being granted access to by the pre-authenticated request. Avoid entering confidential information. The object name can be null and if so, the pre-authenticated request grants access to the entire bucket. Example: test/object1.log
-	ObjectName pulumi.StringInput `pulumi:"objectName"`
-	ParId      pulumi.StringInput `pulumi:"parId"`
+	ObjectName pulumi.StringPtrInput `pulumi:"objectName"`
+	ParId      pulumi.StringPtrInput `pulumi:"parId"`
 	// The date when the pre-authenticated request was created as per specification [RFC 3339](https://tools.ietf.org/html/rfc3339).
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// The expiration date for the pre-authenticated request as per [RFC 3339](https://tools.ietf.org/html/rfc3339). After this date the pre-authenticated request will no longer be valid.
-	TimeExpires pulumi.StringInput `pulumi:"timeExpires"`
+	TimeExpires pulumi.StringPtrInput `pulumi:"timeExpires"`
 }
 
 func (GetPreauthrequestsPreauthenticatedRequestArgs) ElementType() reflect.Type {
@@ -3286,12 +2853,6 @@ func (i GetPreauthrequestsPreauthenticatedRequestArgs) ToGetPreauthrequestsPreau
 
 func (i GetPreauthrequestsPreauthenticatedRequestArgs) ToGetPreauthrequestsPreauthenticatedRequestOutputWithContext(ctx context.Context) GetPreauthrequestsPreauthenticatedRequestOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetPreauthrequestsPreauthenticatedRequestOutput)
-}
-
-func (i GetPreauthrequestsPreauthenticatedRequestArgs) ToOutput(ctx context.Context) pulumix.Output[GetPreauthrequestsPreauthenticatedRequest] {
-	return pulumix.Output[GetPreauthrequestsPreauthenticatedRequest]{
-		OutputState: i.ToGetPreauthrequestsPreauthenticatedRequestOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetPreauthrequestsPreauthenticatedRequestArrayInput is an input type that accepts GetPreauthrequestsPreauthenticatedRequestArray and GetPreauthrequestsPreauthenticatedRequestArrayOutput values.
@@ -3319,12 +2880,6 @@ func (i GetPreauthrequestsPreauthenticatedRequestArray) ToGetPreauthrequestsPrea
 	return pulumi.ToOutputWithContext(ctx, i).(GetPreauthrequestsPreauthenticatedRequestArrayOutput)
 }
 
-func (i GetPreauthrequestsPreauthenticatedRequestArray) ToOutput(ctx context.Context) pulumix.Output[[]GetPreauthrequestsPreauthenticatedRequest] {
-	return pulumix.Output[[]GetPreauthrequestsPreauthenticatedRequest]{
-		OutputState: i.ToGetPreauthrequestsPreauthenticatedRequestArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetPreauthrequestsPreauthenticatedRequestOutput struct{ *pulumi.OutputState }
 
 func (GetPreauthrequestsPreauthenticatedRequestOutput) ElementType() reflect.Type {
@@ -3339,75 +2894,69 @@ func (o GetPreauthrequestsPreauthenticatedRequestOutput) ToGetPreauthrequestsPre
 	return o
 }
 
-func (o GetPreauthrequestsPreauthenticatedRequestOutput) ToOutput(ctx context.Context) pulumix.Output[GetPreauthrequestsPreauthenticatedRequest] {
-	return pulumix.Output[GetPreauthrequestsPreauthenticatedRequest]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The operation that can be performed on this resource.
-func (o GetPreauthrequestsPreauthenticatedRequestOutput) AccessType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPreauthrequestsPreauthenticatedRequest) string { return v.AccessType }).(pulumi.StringOutput)
+func (o GetPreauthrequestsPreauthenticatedRequestOutput) AccessType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetPreauthrequestsPreauthenticatedRequest) *string { return v.AccessType }).(pulumi.StringPtrOutput)
 }
 
 // The URI to embed in the URL when using the pre-authenticated request.
-func (o GetPreauthrequestsPreauthenticatedRequestOutput) AccessUri() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPreauthrequestsPreauthenticatedRequest) string { return v.AccessUri }).(pulumi.StringOutput)
+func (o GetPreauthrequestsPreauthenticatedRequestOutput) AccessUri() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetPreauthrequestsPreauthenticatedRequest) *string { return v.AccessUri }).(pulumi.StringPtrOutput)
 }
 
 // The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
-func (o GetPreauthrequestsPreauthenticatedRequestOutput) Bucket() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPreauthrequestsPreauthenticatedRequest) string { return v.Bucket }).(pulumi.StringOutput)
+func (o GetPreauthrequestsPreauthenticatedRequestOutput) Bucket() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetPreauthrequestsPreauthenticatedRequest) *string { return v.Bucket }).(pulumi.StringPtrOutput)
 }
 
 // Specifies whether a list operation is allowed on a PAR with accessType "AnyObjectRead" or "AnyObjectReadWrite". Deny: Prevents the user from performing a list operation. ListObjects: Authorizes the user to perform a list operation.
-func (o GetPreauthrequestsPreauthenticatedRequestOutput) BucketListingAction() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPreauthrequestsPreauthenticatedRequest) string { return v.BucketListingAction }).(pulumi.StringOutput)
+func (o GetPreauthrequestsPreauthenticatedRequestOutput) BucketListingAction() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetPreauthrequestsPreauthenticatedRequest) *string { return v.BucketListingAction }).(pulumi.StringPtrOutput)
 }
 
-func (o GetPreauthrequestsPreauthenticatedRequestOutput) FullPath() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPreauthrequestsPreauthenticatedRequest) string { return v.FullPath }).(pulumi.StringOutput)
+func (o GetPreauthrequestsPreauthenticatedRequestOutput) FullPath() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetPreauthrequestsPreauthenticatedRequest) *string { return v.FullPath }).(pulumi.StringPtrOutput)
 }
 
 // The unique identifier to use when directly addressing the pre-authenticated request.
-func (o GetPreauthrequestsPreauthenticatedRequestOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPreauthrequestsPreauthenticatedRequest) string { return v.Id }).(pulumi.StringOutput)
+func (o GetPreauthrequestsPreauthenticatedRequestOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetPreauthrequestsPreauthenticatedRequest) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The user-provided name of the pre-authenticated request.
-func (o GetPreauthrequestsPreauthenticatedRequestOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPreauthrequestsPreauthenticatedRequest) string { return v.Name }).(pulumi.StringOutput)
+func (o GetPreauthrequestsPreauthenticatedRequestOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetPreauthrequestsPreauthenticatedRequest) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // The Object Storage namespace used for the request.
-func (o GetPreauthrequestsPreauthenticatedRequestOutput) Namespace() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPreauthrequestsPreauthenticatedRequest) string { return v.Namespace }).(pulumi.StringOutput)
+func (o GetPreauthrequestsPreauthenticatedRequestOutput) Namespace() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetPreauthrequestsPreauthenticatedRequest) *string { return v.Namespace }).(pulumi.StringPtrOutput)
 }
 
 // Deprecated. Instead use `objectName`.The name of the object that is being granted access to by the pre-authenticated request. Avoid entering confidential information. The object name can be null and if so, the pre-authenticated request grants access to the entire bucket. Example: test/object1.log
 //
 // Deprecated: The 'object' field has been deprecated. Please use 'object_name' instead.
-func (o GetPreauthrequestsPreauthenticatedRequestOutput) Object() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPreauthrequestsPreauthenticatedRequest) string { return v.Object }).(pulumi.StringOutput)
+func (o GetPreauthrequestsPreauthenticatedRequestOutput) Object() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetPreauthrequestsPreauthenticatedRequest) *string { return v.Object }).(pulumi.StringPtrOutput)
 }
 
 // The name of the object that is being granted access to by the pre-authenticated request. Avoid entering confidential information. The object name can be null and if so, the pre-authenticated request grants access to the entire bucket. Example: test/object1.log
-func (o GetPreauthrequestsPreauthenticatedRequestOutput) ObjectName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPreauthrequestsPreauthenticatedRequest) string { return v.ObjectName }).(pulumi.StringOutput)
+func (o GetPreauthrequestsPreauthenticatedRequestOutput) ObjectName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetPreauthrequestsPreauthenticatedRequest) *string { return v.ObjectName }).(pulumi.StringPtrOutput)
 }
 
-func (o GetPreauthrequestsPreauthenticatedRequestOutput) ParId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPreauthrequestsPreauthenticatedRequest) string { return v.ParId }).(pulumi.StringOutput)
+func (o GetPreauthrequestsPreauthenticatedRequestOutput) ParId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetPreauthrequestsPreauthenticatedRequest) *string { return v.ParId }).(pulumi.StringPtrOutput)
 }
 
 // The date when the pre-authenticated request was created as per specification [RFC 3339](https://tools.ietf.org/html/rfc3339).
-func (o GetPreauthrequestsPreauthenticatedRequestOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPreauthrequestsPreauthenticatedRequest) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetPreauthrequestsPreauthenticatedRequestOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetPreauthrequestsPreauthenticatedRequest) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The expiration date for the pre-authenticated request as per [RFC 3339](https://tools.ietf.org/html/rfc3339). After this date the pre-authenticated request will no longer be valid.
-func (o GetPreauthrequestsPreauthenticatedRequestOutput) TimeExpires() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPreauthrequestsPreauthenticatedRequest) string { return v.TimeExpires }).(pulumi.StringOutput)
+func (o GetPreauthrequestsPreauthenticatedRequestOutput) TimeExpires() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetPreauthrequestsPreauthenticatedRequest) *string { return v.TimeExpires }).(pulumi.StringPtrOutput)
 }
 
 type GetPreauthrequestsPreauthenticatedRequestArrayOutput struct{ *pulumi.OutputState }
@@ -3422,12 +2971,6 @@ func (o GetPreauthrequestsPreauthenticatedRequestArrayOutput) ToGetPreauthreques
 
 func (o GetPreauthrequestsPreauthenticatedRequestArrayOutput) ToGetPreauthrequestsPreauthenticatedRequestArrayOutputWithContext(ctx context.Context) GetPreauthrequestsPreauthenticatedRequestArrayOutput {
 	return o
-}
-
-func (o GetPreauthrequestsPreauthenticatedRequestArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetPreauthrequestsPreauthenticatedRequest] {
-	return pulumix.Output[[]GetPreauthrequestsPreauthenticatedRequest]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetPreauthrequestsPreauthenticatedRequestArrayOutput) Index(i pulumi.IntInput) GetPreauthrequestsPreauthenticatedRequestOutput {
@@ -3473,12 +3016,6 @@ func (i GetReplicationPoliciesFilterArgs) ToGetReplicationPoliciesFilterOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetReplicationPoliciesFilterOutput)
 }
 
-func (i GetReplicationPoliciesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetReplicationPoliciesFilter] {
-	return pulumix.Output[GetReplicationPoliciesFilter]{
-		OutputState: i.ToGetReplicationPoliciesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetReplicationPoliciesFilterArrayInput is an input type that accepts GetReplicationPoliciesFilterArray and GetReplicationPoliciesFilterArrayOutput values.
 // You can construct a concrete instance of `GetReplicationPoliciesFilterArrayInput` via:
 //
@@ -3504,12 +3041,6 @@ func (i GetReplicationPoliciesFilterArray) ToGetReplicationPoliciesFilterArrayOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetReplicationPoliciesFilterArrayOutput)
 }
 
-func (i GetReplicationPoliciesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetReplicationPoliciesFilter] {
-	return pulumix.Output[[]GetReplicationPoliciesFilter]{
-		OutputState: i.ToGetReplicationPoliciesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetReplicationPoliciesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetReplicationPoliciesFilterOutput) ElementType() reflect.Type {
@@ -3522,12 +3053,6 @@ func (o GetReplicationPoliciesFilterOutput) ToGetReplicationPoliciesFilterOutput
 
 func (o GetReplicationPoliciesFilterOutput) ToGetReplicationPoliciesFilterOutputWithContext(ctx context.Context) GetReplicationPoliciesFilterOutput {
 	return o
-}
-
-func (o GetReplicationPoliciesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetReplicationPoliciesFilter] {
-	return pulumix.Output[GetReplicationPoliciesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The name of the policy.
@@ -3557,12 +3082,6 @@ func (o GetReplicationPoliciesFilterArrayOutput) ToGetReplicationPoliciesFilterA
 	return o
 }
 
-func (o GetReplicationPoliciesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetReplicationPoliciesFilter] {
-	return pulumix.Output[[]GetReplicationPoliciesFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetReplicationPoliciesFilterArrayOutput) Index(i pulumi.IntInput) GetReplicationPoliciesFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetReplicationPoliciesFilter {
 		return vs[0].([]GetReplicationPoliciesFilter)[vs[1].(int)]
@@ -3571,27 +3090,27 @@ func (o GetReplicationPoliciesFilterArrayOutput) Index(i pulumi.IntInput) GetRep
 
 type GetReplicationPoliciesReplicationPolicy struct {
 	// The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
-	Bucket string `pulumi:"bucket"`
+	Bucket *string `pulumi:"bucket"`
 	// Deprecated: The 'delete_object_in_destination_bucket' field has been deprecated. It is no longer supported.
-	DeleteObjectInDestinationBucket string `pulumi:"deleteObjectInDestinationBucket"`
+	DeleteObjectInDestinationBucket *string `pulumi:"deleteObjectInDestinationBucket"`
 	// The bucket to replicate to in the destination region. Replication policy creation does not automatically create a destination bucket. Create the destination bucket before creating the policy.
-	DestinationBucketName string `pulumi:"destinationBucketName"`
+	DestinationBucketName *string `pulumi:"destinationBucketName"`
 	// The destination region to replicate to, for example "us-ashburn-1".
-	DestinationRegionName string `pulumi:"destinationRegionName"`
+	DestinationRegionName *string `pulumi:"destinationRegionName"`
 	// The id of the replication policy.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The name of the policy.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// The Object Storage namespace used for the request.
-	Namespace string `pulumi:"namespace"`
+	Namespace *string `pulumi:"namespace"`
 	// The replication status of the policy. If the status is CLIENT_ERROR, once the user fixes the issue described in the status message, the status will become ACTIVE.
-	Status string `pulumi:"status"`
+	Status *string `pulumi:"status"`
 	// A human-readable description of the status.
-	StatusMessage string `pulumi:"statusMessage"`
+	StatusMessage *string `pulumi:"statusMessage"`
 	// The date when the replication policy was created as per [RFC 3339](https://tools.ietf.org/html/rfc3339).
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// Changes made to the source bucket before this time has been replicated.
-	TimeLastSync string `pulumi:"timeLastSync"`
+	TimeLastSync *string `pulumi:"timeLastSync"`
 }
 
 // GetReplicationPoliciesReplicationPolicyInput is an input type that accepts GetReplicationPoliciesReplicationPolicyArgs and GetReplicationPoliciesReplicationPolicyOutput values.
@@ -3607,27 +3126,27 @@ type GetReplicationPoliciesReplicationPolicyInput interface {
 
 type GetReplicationPoliciesReplicationPolicyArgs struct {
 	// The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
-	Bucket pulumi.StringInput `pulumi:"bucket"`
+	Bucket pulumi.StringPtrInput `pulumi:"bucket"`
 	// Deprecated: The 'delete_object_in_destination_bucket' field has been deprecated. It is no longer supported.
-	DeleteObjectInDestinationBucket pulumi.StringInput `pulumi:"deleteObjectInDestinationBucket"`
+	DeleteObjectInDestinationBucket pulumi.StringPtrInput `pulumi:"deleteObjectInDestinationBucket"`
 	// The bucket to replicate to in the destination region. Replication policy creation does not automatically create a destination bucket. Create the destination bucket before creating the policy.
-	DestinationBucketName pulumi.StringInput `pulumi:"destinationBucketName"`
+	DestinationBucketName pulumi.StringPtrInput `pulumi:"destinationBucketName"`
 	// The destination region to replicate to, for example "us-ashburn-1".
-	DestinationRegionName pulumi.StringInput `pulumi:"destinationRegionName"`
+	DestinationRegionName pulumi.StringPtrInput `pulumi:"destinationRegionName"`
 	// The id of the replication policy.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// The name of the policy.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// The Object Storage namespace used for the request.
-	Namespace pulumi.StringInput `pulumi:"namespace"`
+	Namespace pulumi.StringPtrInput `pulumi:"namespace"`
 	// The replication status of the policy. If the status is CLIENT_ERROR, once the user fixes the issue described in the status message, the status will become ACTIVE.
-	Status pulumi.StringInput `pulumi:"status"`
+	Status pulumi.StringPtrInput `pulumi:"status"`
 	// A human-readable description of the status.
-	StatusMessage pulumi.StringInput `pulumi:"statusMessage"`
+	StatusMessage pulumi.StringPtrInput `pulumi:"statusMessage"`
 	// The date when the replication policy was created as per [RFC 3339](https://tools.ietf.org/html/rfc3339).
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// Changes made to the source bucket before this time has been replicated.
-	TimeLastSync pulumi.StringInput `pulumi:"timeLastSync"`
+	TimeLastSync pulumi.StringPtrInput `pulumi:"timeLastSync"`
 }
 
 func (GetReplicationPoliciesReplicationPolicyArgs) ElementType() reflect.Type {
@@ -3640,12 +3159,6 @@ func (i GetReplicationPoliciesReplicationPolicyArgs) ToGetReplicationPoliciesRep
 
 func (i GetReplicationPoliciesReplicationPolicyArgs) ToGetReplicationPoliciesReplicationPolicyOutputWithContext(ctx context.Context) GetReplicationPoliciesReplicationPolicyOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetReplicationPoliciesReplicationPolicyOutput)
-}
-
-func (i GetReplicationPoliciesReplicationPolicyArgs) ToOutput(ctx context.Context) pulumix.Output[GetReplicationPoliciesReplicationPolicy] {
-	return pulumix.Output[GetReplicationPoliciesReplicationPolicy]{
-		OutputState: i.ToGetReplicationPoliciesReplicationPolicyOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetReplicationPoliciesReplicationPolicyArrayInput is an input type that accepts GetReplicationPoliciesReplicationPolicyArray and GetReplicationPoliciesReplicationPolicyArrayOutput values.
@@ -3673,12 +3186,6 @@ func (i GetReplicationPoliciesReplicationPolicyArray) ToGetReplicationPoliciesRe
 	return pulumi.ToOutputWithContext(ctx, i).(GetReplicationPoliciesReplicationPolicyArrayOutput)
 }
 
-func (i GetReplicationPoliciesReplicationPolicyArray) ToOutput(ctx context.Context) pulumix.Output[[]GetReplicationPoliciesReplicationPolicy] {
-	return pulumix.Output[[]GetReplicationPoliciesReplicationPolicy]{
-		OutputState: i.ToGetReplicationPoliciesReplicationPolicyArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetReplicationPoliciesReplicationPolicyOutput struct{ *pulumi.OutputState }
 
 func (GetReplicationPoliciesReplicationPolicyOutput) ElementType() reflect.Type {
@@ -3693,65 +3200,59 @@ func (o GetReplicationPoliciesReplicationPolicyOutput) ToGetReplicationPoliciesR
 	return o
 }
 
-func (o GetReplicationPoliciesReplicationPolicyOutput) ToOutput(ctx context.Context) pulumix.Output[GetReplicationPoliciesReplicationPolicy] {
-	return pulumix.Output[GetReplicationPoliciesReplicationPolicy]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
-func (o GetReplicationPoliciesReplicationPolicyOutput) Bucket() pulumi.StringOutput {
-	return o.ApplyT(func(v GetReplicationPoliciesReplicationPolicy) string { return v.Bucket }).(pulumi.StringOutput)
+func (o GetReplicationPoliciesReplicationPolicyOutput) Bucket() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetReplicationPoliciesReplicationPolicy) *string { return v.Bucket }).(pulumi.StringPtrOutput)
 }
 
 // Deprecated: The 'delete_object_in_destination_bucket' field has been deprecated. It is no longer supported.
-func (o GetReplicationPoliciesReplicationPolicyOutput) DeleteObjectInDestinationBucket() pulumi.StringOutput {
-	return o.ApplyT(func(v GetReplicationPoliciesReplicationPolicy) string { return v.DeleteObjectInDestinationBucket }).(pulumi.StringOutput)
+func (o GetReplicationPoliciesReplicationPolicyOutput) DeleteObjectInDestinationBucket() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetReplicationPoliciesReplicationPolicy) *string { return v.DeleteObjectInDestinationBucket }).(pulumi.StringPtrOutput)
 }
 
 // The bucket to replicate to in the destination region. Replication policy creation does not automatically create a destination bucket. Create the destination bucket before creating the policy.
-func (o GetReplicationPoliciesReplicationPolicyOutput) DestinationBucketName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetReplicationPoliciesReplicationPolicy) string { return v.DestinationBucketName }).(pulumi.StringOutput)
+func (o GetReplicationPoliciesReplicationPolicyOutput) DestinationBucketName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetReplicationPoliciesReplicationPolicy) *string { return v.DestinationBucketName }).(pulumi.StringPtrOutput)
 }
 
 // The destination region to replicate to, for example "us-ashburn-1".
-func (o GetReplicationPoliciesReplicationPolicyOutput) DestinationRegionName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetReplicationPoliciesReplicationPolicy) string { return v.DestinationRegionName }).(pulumi.StringOutput)
+func (o GetReplicationPoliciesReplicationPolicyOutput) DestinationRegionName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetReplicationPoliciesReplicationPolicy) *string { return v.DestinationRegionName }).(pulumi.StringPtrOutput)
 }
 
 // The id of the replication policy.
-func (o GetReplicationPoliciesReplicationPolicyOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetReplicationPoliciesReplicationPolicy) string { return v.Id }).(pulumi.StringOutput)
+func (o GetReplicationPoliciesReplicationPolicyOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetReplicationPoliciesReplicationPolicy) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The name of the policy.
-func (o GetReplicationPoliciesReplicationPolicyOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetReplicationPoliciesReplicationPolicy) string { return v.Name }).(pulumi.StringOutput)
+func (o GetReplicationPoliciesReplicationPolicyOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetReplicationPoliciesReplicationPolicy) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // The Object Storage namespace used for the request.
-func (o GetReplicationPoliciesReplicationPolicyOutput) Namespace() pulumi.StringOutput {
-	return o.ApplyT(func(v GetReplicationPoliciesReplicationPolicy) string { return v.Namespace }).(pulumi.StringOutput)
+func (o GetReplicationPoliciesReplicationPolicyOutput) Namespace() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetReplicationPoliciesReplicationPolicy) *string { return v.Namespace }).(pulumi.StringPtrOutput)
 }
 
 // The replication status of the policy. If the status is CLIENT_ERROR, once the user fixes the issue described in the status message, the status will become ACTIVE.
-func (o GetReplicationPoliciesReplicationPolicyOutput) Status() pulumi.StringOutput {
-	return o.ApplyT(func(v GetReplicationPoliciesReplicationPolicy) string { return v.Status }).(pulumi.StringOutput)
+func (o GetReplicationPoliciesReplicationPolicyOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetReplicationPoliciesReplicationPolicy) *string { return v.Status }).(pulumi.StringPtrOutput)
 }
 
 // A human-readable description of the status.
-func (o GetReplicationPoliciesReplicationPolicyOutput) StatusMessage() pulumi.StringOutput {
-	return o.ApplyT(func(v GetReplicationPoliciesReplicationPolicy) string { return v.StatusMessage }).(pulumi.StringOutput)
+func (o GetReplicationPoliciesReplicationPolicyOutput) StatusMessage() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetReplicationPoliciesReplicationPolicy) *string { return v.StatusMessage }).(pulumi.StringPtrOutput)
 }
 
 // The date when the replication policy was created as per [RFC 3339](https://tools.ietf.org/html/rfc3339).
-func (o GetReplicationPoliciesReplicationPolicyOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetReplicationPoliciesReplicationPolicy) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetReplicationPoliciesReplicationPolicyOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetReplicationPoliciesReplicationPolicy) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // Changes made to the source bucket before this time has been replicated.
-func (o GetReplicationPoliciesReplicationPolicyOutput) TimeLastSync() pulumi.StringOutput {
-	return o.ApplyT(func(v GetReplicationPoliciesReplicationPolicy) string { return v.TimeLastSync }).(pulumi.StringOutput)
+func (o GetReplicationPoliciesReplicationPolicyOutput) TimeLastSync() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetReplicationPoliciesReplicationPolicy) *string { return v.TimeLastSync }).(pulumi.StringPtrOutput)
 }
 
 type GetReplicationPoliciesReplicationPolicyArrayOutput struct{ *pulumi.OutputState }
@@ -3766,12 +3267,6 @@ func (o GetReplicationPoliciesReplicationPolicyArrayOutput) ToGetReplicationPoli
 
 func (o GetReplicationPoliciesReplicationPolicyArrayOutput) ToGetReplicationPoliciesReplicationPolicyArrayOutputWithContext(ctx context.Context) GetReplicationPoliciesReplicationPolicyArrayOutput {
 	return o
-}
-
-func (o GetReplicationPoliciesReplicationPolicyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetReplicationPoliciesReplicationPolicy] {
-	return pulumix.Output[[]GetReplicationPoliciesReplicationPolicy]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetReplicationPoliciesReplicationPolicyArrayOutput) Index(i pulumi.IntInput) GetReplicationPoliciesReplicationPolicyOutput {
@@ -3815,12 +3310,6 @@ func (i GetReplicationSourcesFilterArgs) ToGetReplicationSourcesFilterOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetReplicationSourcesFilterOutput)
 }
 
-func (i GetReplicationSourcesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetReplicationSourcesFilter] {
-	return pulumix.Output[GetReplicationSourcesFilter]{
-		OutputState: i.ToGetReplicationSourcesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetReplicationSourcesFilterArrayInput is an input type that accepts GetReplicationSourcesFilterArray and GetReplicationSourcesFilterArrayOutput values.
 // You can construct a concrete instance of `GetReplicationSourcesFilterArrayInput` via:
 //
@@ -3846,12 +3335,6 @@ func (i GetReplicationSourcesFilterArray) ToGetReplicationSourcesFilterArrayOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetReplicationSourcesFilterArrayOutput)
 }
 
-func (i GetReplicationSourcesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetReplicationSourcesFilter] {
-	return pulumix.Output[[]GetReplicationSourcesFilter]{
-		OutputState: i.ToGetReplicationSourcesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetReplicationSourcesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetReplicationSourcesFilterOutput) ElementType() reflect.Type {
@@ -3864,12 +3347,6 @@ func (o GetReplicationSourcesFilterOutput) ToGetReplicationSourcesFilterOutput()
 
 func (o GetReplicationSourcesFilterOutput) ToGetReplicationSourcesFilterOutputWithContext(ctx context.Context) GetReplicationSourcesFilterOutput {
 	return o
-}
-
-func (o GetReplicationSourcesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetReplicationSourcesFilter] {
-	return pulumix.Output[GetReplicationSourcesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetReplicationSourcesFilterOutput) Name() pulumi.StringOutput {
@@ -3898,12 +3375,6 @@ func (o GetReplicationSourcesFilterArrayOutput) ToGetReplicationSourcesFilterArr
 	return o
 }
 
-func (o GetReplicationSourcesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetReplicationSourcesFilter] {
-	return pulumix.Output[[]GetReplicationSourcesFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetReplicationSourcesFilterArrayOutput) Index(i pulumi.IntInput) GetReplicationSourcesFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetReplicationSourcesFilter {
 		return vs[0].([]GetReplicationSourcesFilter)[vs[1].(int)]
@@ -3912,11 +3383,11 @@ func (o GetReplicationSourcesFilterArrayOutput) Index(i pulumi.IntInput) GetRepl
 
 type GetReplicationSourcesReplicationSource struct {
 	// The name of the policy.
-	PolicyName string `pulumi:"policyName"`
+	PolicyName *string `pulumi:"policyName"`
 	// The source bucket replicating data from.
-	SourceBucketName string `pulumi:"sourceBucketName"`
+	SourceBucketName *string `pulumi:"sourceBucketName"`
 	// The source region replicating data from, for example "us-ashburn-1".
-	SourceRegionName string `pulumi:"sourceRegionName"`
+	SourceRegionName *string `pulumi:"sourceRegionName"`
 }
 
 // GetReplicationSourcesReplicationSourceInput is an input type that accepts GetReplicationSourcesReplicationSourceArgs and GetReplicationSourcesReplicationSourceOutput values.
@@ -3932,11 +3403,11 @@ type GetReplicationSourcesReplicationSourceInput interface {
 
 type GetReplicationSourcesReplicationSourceArgs struct {
 	// The name of the policy.
-	PolicyName pulumi.StringInput `pulumi:"policyName"`
+	PolicyName pulumi.StringPtrInput `pulumi:"policyName"`
 	// The source bucket replicating data from.
-	SourceBucketName pulumi.StringInput `pulumi:"sourceBucketName"`
+	SourceBucketName pulumi.StringPtrInput `pulumi:"sourceBucketName"`
 	// The source region replicating data from, for example "us-ashburn-1".
-	SourceRegionName pulumi.StringInput `pulumi:"sourceRegionName"`
+	SourceRegionName pulumi.StringPtrInput `pulumi:"sourceRegionName"`
 }
 
 func (GetReplicationSourcesReplicationSourceArgs) ElementType() reflect.Type {
@@ -3949,12 +3420,6 @@ func (i GetReplicationSourcesReplicationSourceArgs) ToGetReplicationSourcesRepli
 
 func (i GetReplicationSourcesReplicationSourceArgs) ToGetReplicationSourcesReplicationSourceOutputWithContext(ctx context.Context) GetReplicationSourcesReplicationSourceOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetReplicationSourcesReplicationSourceOutput)
-}
-
-func (i GetReplicationSourcesReplicationSourceArgs) ToOutput(ctx context.Context) pulumix.Output[GetReplicationSourcesReplicationSource] {
-	return pulumix.Output[GetReplicationSourcesReplicationSource]{
-		OutputState: i.ToGetReplicationSourcesReplicationSourceOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetReplicationSourcesReplicationSourceArrayInput is an input type that accepts GetReplicationSourcesReplicationSourceArray and GetReplicationSourcesReplicationSourceArrayOutput values.
@@ -3982,12 +3447,6 @@ func (i GetReplicationSourcesReplicationSourceArray) ToGetReplicationSourcesRepl
 	return pulumi.ToOutputWithContext(ctx, i).(GetReplicationSourcesReplicationSourceArrayOutput)
 }
 
-func (i GetReplicationSourcesReplicationSourceArray) ToOutput(ctx context.Context) pulumix.Output[[]GetReplicationSourcesReplicationSource] {
-	return pulumix.Output[[]GetReplicationSourcesReplicationSource]{
-		OutputState: i.ToGetReplicationSourcesReplicationSourceArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetReplicationSourcesReplicationSourceOutput struct{ *pulumi.OutputState }
 
 func (GetReplicationSourcesReplicationSourceOutput) ElementType() reflect.Type {
@@ -4002,25 +3461,19 @@ func (o GetReplicationSourcesReplicationSourceOutput) ToGetReplicationSourcesRep
 	return o
 }
 
-func (o GetReplicationSourcesReplicationSourceOutput) ToOutput(ctx context.Context) pulumix.Output[GetReplicationSourcesReplicationSource] {
-	return pulumix.Output[GetReplicationSourcesReplicationSource]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The name of the policy.
-func (o GetReplicationSourcesReplicationSourceOutput) PolicyName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetReplicationSourcesReplicationSource) string { return v.PolicyName }).(pulumi.StringOutput)
+func (o GetReplicationSourcesReplicationSourceOutput) PolicyName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetReplicationSourcesReplicationSource) *string { return v.PolicyName }).(pulumi.StringPtrOutput)
 }
 
 // The source bucket replicating data from.
-func (o GetReplicationSourcesReplicationSourceOutput) SourceBucketName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetReplicationSourcesReplicationSource) string { return v.SourceBucketName }).(pulumi.StringOutput)
+func (o GetReplicationSourcesReplicationSourceOutput) SourceBucketName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetReplicationSourcesReplicationSource) *string { return v.SourceBucketName }).(pulumi.StringPtrOutput)
 }
 
 // The source region replicating data from, for example "us-ashburn-1".
-func (o GetReplicationSourcesReplicationSourceOutput) SourceRegionName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetReplicationSourcesReplicationSource) string { return v.SourceRegionName }).(pulumi.StringOutput)
+func (o GetReplicationSourcesReplicationSourceOutput) SourceRegionName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetReplicationSourcesReplicationSource) *string { return v.SourceRegionName }).(pulumi.StringPtrOutput)
 }
 
 type GetReplicationSourcesReplicationSourceArrayOutput struct{ *pulumi.OutputState }
@@ -4035,12 +3488,6 @@ func (o GetReplicationSourcesReplicationSourceArrayOutput) ToGetReplicationSourc
 
 func (o GetReplicationSourcesReplicationSourceArrayOutput) ToGetReplicationSourcesReplicationSourceArrayOutputWithContext(ctx context.Context) GetReplicationSourcesReplicationSourceArrayOutput {
 	return o
-}
-
-func (o GetReplicationSourcesReplicationSourceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetReplicationSourcesReplicationSource] {
-	return pulumix.Output[[]GetReplicationSourcesReplicationSource]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetReplicationSourcesReplicationSourceArrayOutput) Index(i pulumi.IntInput) GetReplicationSourcesReplicationSourceOutput {

@@ -6,6 +6,8 @@ package com.pulumi.oci.OspGateway.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetSubscriptionsSubscriptionCollectionItemSubscriptionTaxInfo {
@@ -13,63 +15,63 @@ public final class GetSubscriptionsSubscriptionCollectionItemSubscriptionTaxInfo
      * @return Tax exemption reason code.
      * 
      */
-    private String noTaxReasonCode;
+    private @Nullable String noTaxReasonCode;
     /**
      * @return Tax exemption reason description.
      * 
      */
-    private String noTaxReasonCodeDetails;
+    private @Nullable String noTaxReasonCodeDetails;
     /**
      * @return Brazilian companies&#39; CNPJ number.
      * 
      */
-    private String taxCnpj;
+    private @Nullable String taxCnpj;
     /**
      * @return Tay payer identifier.
      * 
      */
-    private String taxPayerId;
+    private @Nullable String taxPayerId;
     /**
      * @return Tax registration number.
      * 
      */
-    private String taxRegNumber;
+    private @Nullable String taxRegNumber;
 
     private GetSubscriptionsSubscriptionCollectionItemSubscriptionTaxInfo() {}
     /**
      * @return Tax exemption reason code.
      * 
      */
-    public String noTaxReasonCode() {
-        return this.noTaxReasonCode;
+    public Optional<String> noTaxReasonCode() {
+        return Optional.ofNullable(this.noTaxReasonCode);
     }
     /**
      * @return Tax exemption reason description.
      * 
      */
-    public String noTaxReasonCodeDetails() {
-        return this.noTaxReasonCodeDetails;
+    public Optional<String> noTaxReasonCodeDetails() {
+        return Optional.ofNullable(this.noTaxReasonCodeDetails);
     }
     /**
      * @return Brazilian companies&#39; CNPJ number.
      * 
      */
-    public String taxCnpj() {
-        return this.taxCnpj;
+    public Optional<String> taxCnpj() {
+        return Optional.ofNullable(this.taxCnpj);
     }
     /**
      * @return Tay payer identifier.
      * 
      */
-    public String taxPayerId() {
-        return this.taxPayerId;
+    public Optional<String> taxPayerId() {
+        return Optional.ofNullable(this.taxPayerId);
     }
     /**
      * @return Tax registration number.
      * 
      */
-    public String taxRegNumber() {
-        return this.taxRegNumber;
+    public Optional<String> taxRegNumber() {
+        return Optional.ofNullable(this.taxRegNumber);
     }
 
     public static Builder builder() {
@@ -81,11 +83,11 @@ public final class GetSubscriptionsSubscriptionCollectionItemSubscriptionTaxInfo
     }
     @CustomType.Builder
     public static final class Builder {
-        private String noTaxReasonCode;
-        private String noTaxReasonCodeDetails;
-        private String taxCnpj;
-        private String taxPayerId;
-        private String taxRegNumber;
+        private @Nullable String noTaxReasonCode;
+        private @Nullable String noTaxReasonCodeDetails;
+        private @Nullable String taxCnpj;
+        private @Nullable String taxPayerId;
+        private @Nullable String taxRegNumber;
         public Builder() {}
         public Builder(GetSubscriptionsSubscriptionCollectionItemSubscriptionTaxInfo defaults) {
     	      Objects.requireNonNull(defaults);
@@ -97,28 +99,28 @@ public final class GetSubscriptionsSubscriptionCollectionItemSubscriptionTaxInfo
         }
 
         @CustomType.Setter
-        public Builder noTaxReasonCode(String noTaxReasonCode) {
-            this.noTaxReasonCode = Objects.requireNonNull(noTaxReasonCode);
+        public Builder noTaxReasonCode(@Nullable String noTaxReasonCode) {
+            this.noTaxReasonCode = noTaxReasonCode;
             return this;
         }
         @CustomType.Setter
-        public Builder noTaxReasonCodeDetails(String noTaxReasonCodeDetails) {
-            this.noTaxReasonCodeDetails = Objects.requireNonNull(noTaxReasonCodeDetails);
+        public Builder noTaxReasonCodeDetails(@Nullable String noTaxReasonCodeDetails) {
+            this.noTaxReasonCodeDetails = noTaxReasonCodeDetails;
             return this;
         }
         @CustomType.Setter
-        public Builder taxCnpj(String taxCnpj) {
-            this.taxCnpj = Objects.requireNonNull(taxCnpj);
+        public Builder taxCnpj(@Nullable String taxCnpj) {
+            this.taxCnpj = taxCnpj;
             return this;
         }
         @CustomType.Setter
-        public Builder taxPayerId(String taxPayerId) {
-            this.taxPayerId = Objects.requireNonNull(taxPayerId);
+        public Builder taxPayerId(@Nullable String taxPayerId) {
+            this.taxPayerId = taxPayerId;
             return this;
         }
         @CustomType.Setter
-        public Builder taxRegNumber(String taxRegNumber) {
-            this.taxRegNumber = Objects.requireNonNull(taxRegNumber);
+        public Builder taxRegNumber(@Nullable String taxRegNumber) {
+            this.taxRegNumber = taxRegNumber;
             return this;
         }
         public GetSubscriptionsSubscriptionCollectionItemSubscriptionTaxInfo build() {

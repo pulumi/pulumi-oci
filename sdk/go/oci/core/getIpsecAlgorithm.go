@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Ipsec Algorithm resource in Oracle Cloud Infrastructure Core service.
@@ -60,7 +59,7 @@ type GetIpsecAlgorithmResult struct {
 	// Default phase two parameters.
 	DefaultPhaseTwoParameters []GetIpsecAlgorithmDefaultPhaseTwoParameter `pulumi:"defaultPhaseTwoParameters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 }
 
 func GetIpsecAlgorithmOutput(ctx *pulumi.Context, opts ...pulumi.InvokeOption) GetIpsecAlgorithmResultOutput {
@@ -87,12 +86,6 @@ func (o GetIpsecAlgorithmResultOutput) ToGetIpsecAlgorithmResultOutput() GetIpse
 
 func (o GetIpsecAlgorithmResultOutput) ToGetIpsecAlgorithmResultOutputWithContext(ctx context.Context) GetIpsecAlgorithmResultOutput {
 	return o
-}
-
-func (o GetIpsecAlgorithmResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetIpsecAlgorithmResult] {
-	return pulumix.Output[GetIpsecAlgorithmResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Allowed phase one parameters.
@@ -124,8 +117,8 @@ func (o GetIpsecAlgorithmResultOutput) DefaultPhaseTwoParameters() GetIpsecAlgor
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetIpsecAlgorithmResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIpsecAlgorithmResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetIpsecAlgorithmResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetIpsecAlgorithmResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func init() {

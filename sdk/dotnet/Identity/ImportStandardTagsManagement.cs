@@ -62,7 +62,7 @@ namespace Pulumi.Oci.Identity
         public Output<string> StandardTagNamespaceName { get; private set; } = null!;
 
         [Output("workRequestId")]
-        public Output<string> WorkRequestId { get; private set; } = null!;
+        public Output<string?> WorkRequestId { get; private set; } = null!;
 
 
         /// <summary>

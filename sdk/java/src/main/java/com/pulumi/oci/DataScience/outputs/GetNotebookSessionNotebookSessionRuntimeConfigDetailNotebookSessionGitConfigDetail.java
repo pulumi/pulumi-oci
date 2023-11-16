@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.DataScience.outputs.GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollection;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetail {
@@ -14,7 +15,7 @@ public final class GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookS
      * @return A collection of Git repository configurations.
      * 
      */
-    private List<GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollection> notebookSessionGitRepoConfigCollections;
+    private @Nullable List<GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollection> notebookSessionGitRepoConfigCollections;
 
     private GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetail() {}
     /**
@@ -22,7 +23,7 @@ public final class GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookS
      * 
      */
     public List<GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollection> notebookSessionGitRepoConfigCollections() {
-        return this.notebookSessionGitRepoConfigCollections;
+        return this.notebookSessionGitRepoConfigCollections == null ? List.of() : this.notebookSessionGitRepoConfigCollections;
     }
 
     public static Builder builder() {
@@ -34,7 +35,7 @@ public final class GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookS
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollection> notebookSessionGitRepoConfigCollections;
+        private @Nullable List<GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollection> notebookSessionGitRepoConfigCollections;
         public Builder() {}
         public Builder(GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetail defaults) {
     	      Objects.requireNonNull(defaults);
@@ -42,8 +43,8 @@ public final class GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookS
         }
 
         @CustomType.Setter
-        public Builder notebookSessionGitRepoConfigCollections(List<GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollection> notebookSessionGitRepoConfigCollections) {
-            this.notebookSessionGitRepoConfigCollections = Objects.requireNonNull(notebookSessionGitRepoConfigCollections);
+        public Builder notebookSessionGitRepoConfigCollections(@Nullable List<GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollection> notebookSessionGitRepoConfigCollections) {
+            this.notebookSessionGitRepoConfigCollections = notebookSessionGitRepoConfigCollections;
             return this;
         }
         public Builder notebookSessionGitRepoConfigCollections(GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollection... notebookSessionGitRepoConfigCollections) {

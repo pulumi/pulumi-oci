@@ -20,35 +20,35 @@ namespace Pulumi.Oci.Database.Outputs
         /// * AJD - indicates an Autonomous JSON Database
         /// * APEX - indicates an Autonomous Database with the Oracle APEX Application Development workload type.
         /// </summary>
-        public readonly string DbWorkload;
+        public readonly string? DbWorkload;
         /// <summary>
         /// A URL that points to a detailed description of the preview version.
         /// </summary>
-        public readonly string Details;
+        public readonly string? Details;
         /// <summary>
         /// The date and time when the preview version availability begins.
         /// </summary>
-        public readonly string TimePreviewBegin;
+        public readonly string? TimePreviewBegin;
         /// <summary>
         /// The date and time when the preview version availability ends.
         /// </summary>
-        public readonly string TimePreviewEnd;
+        public readonly string? TimePreviewEnd;
         /// <summary>
         /// A valid Autonomous Database preview version.
         /// </summary>
-        public readonly string Version;
+        public readonly string? Version;
 
         [OutputConstructor]
         private GetAutonomousDbPreviewVersionsAutonomousDbPreviewVersionResult(
-            string dbWorkload,
+            string? dbWorkload,
 
-            string details,
+            string? details,
 
-            string timePreviewBegin,
+            string? timePreviewBegin,
 
-            string timePreviewEnd,
+            string? timePreviewEnd,
 
-            string version)
+            string? version)
         {
             DbWorkload = dbWorkload;
             Details = details;

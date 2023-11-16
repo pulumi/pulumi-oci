@@ -8,6 +8,8 @@ import com.pulumi.oci.Core.outputs.GetCpeDeviceShapesCpeDeviceShapeCpeDeviceInfo
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetCpeDeviceShapesCpeDeviceShape {
@@ -15,12 +17,12 @@ public final class GetCpeDeviceShapesCpeDeviceShape {
      * @return Basic information about a particular CPE device type.
      * 
      */
-    private List<GetCpeDeviceShapesCpeDeviceShapeCpeDeviceInfo> cpeDeviceInfos;
+    private @Nullable List<GetCpeDeviceShapesCpeDeviceShapeCpeDeviceInfo> cpeDeviceInfos;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the CPE device shape. This value uniquely identifies the type of CPE device.
      * 
      */
-    private String cpeDeviceShapeId;
+    private @Nullable String cpeDeviceShapeId;
     /**
      * @return A template of CPE device configuration information that will be merged with the customer&#39;s answers to the questions to render the final CPE device configuration content. Also see:
      * * [GetCpeDeviceConfigContent](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Cpe/GetCpeDeviceConfigContent)
@@ -28,7 +30,7 @@ public final class GetCpeDeviceShapesCpeDeviceShape {
      * * [GetTunnelCpeDeviceConfigContent](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/TunnelCpeDeviceConfig/GetTunnelCpeDeviceConfigContent)
      * 
      */
-    private String template;
+    private @Nullable String template;
 
     private GetCpeDeviceShapesCpeDeviceShape() {}
     /**
@@ -36,14 +38,14 @@ public final class GetCpeDeviceShapesCpeDeviceShape {
      * 
      */
     public List<GetCpeDeviceShapesCpeDeviceShapeCpeDeviceInfo> cpeDeviceInfos() {
-        return this.cpeDeviceInfos;
+        return this.cpeDeviceInfos == null ? List.of() : this.cpeDeviceInfos;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the CPE device shape. This value uniquely identifies the type of CPE device.
      * 
      */
-    public String cpeDeviceShapeId() {
-        return this.cpeDeviceShapeId;
+    public Optional<String> cpeDeviceShapeId() {
+        return Optional.ofNullable(this.cpeDeviceShapeId);
     }
     /**
      * @return A template of CPE device configuration information that will be merged with the customer&#39;s answers to the questions to render the final CPE device configuration content. Also see:
@@ -52,8 +54,8 @@ public final class GetCpeDeviceShapesCpeDeviceShape {
      * * [GetTunnelCpeDeviceConfigContent](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/TunnelCpeDeviceConfig/GetTunnelCpeDeviceConfigContent)
      * 
      */
-    public String template() {
-        return this.template;
+    public Optional<String> template() {
+        return Optional.ofNullable(this.template);
     }
 
     public static Builder builder() {
@@ -65,9 +67,9 @@ public final class GetCpeDeviceShapesCpeDeviceShape {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetCpeDeviceShapesCpeDeviceShapeCpeDeviceInfo> cpeDeviceInfos;
-        private String cpeDeviceShapeId;
-        private String template;
+        private @Nullable List<GetCpeDeviceShapesCpeDeviceShapeCpeDeviceInfo> cpeDeviceInfos;
+        private @Nullable String cpeDeviceShapeId;
+        private @Nullable String template;
         public Builder() {}
         public Builder(GetCpeDeviceShapesCpeDeviceShape defaults) {
     	      Objects.requireNonNull(defaults);
@@ -77,21 +79,21 @@ public final class GetCpeDeviceShapesCpeDeviceShape {
         }
 
         @CustomType.Setter
-        public Builder cpeDeviceInfos(List<GetCpeDeviceShapesCpeDeviceShapeCpeDeviceInfo> cpeDeviceInfos) {
-            this.cpeDeviceInfos = Objects.requireNonNull(cpeDeviceInfos);
+        public Builder cpeDeviceInfos(@Nullable List<GetCpeDeviceShapesCpeDeviceShapeCpeDeviceInfo> cpeDeviceInfos) {
+            this.cpeDeviceInfos = cpeDeviceInfos;
             return this;
         }
         public Builder cpeDeviceInfos(GetCpeDeviceShapesCpeDeviceShapeCpeDeviceInfo... cpeDeviceInfos) {
             return cpeDeviceInfos(List.of(cpeDeviceInfos));
         }
         @CustomType.Setter
-        public Builder cpeDeviceShapeId(String cpeDeviceShapeId) {
-            this.cpeDeviceShapeId = Objects.requireNonNull(cpeDeviceShapeId);
+        public Builder cpeDeviceShapeId(@Nullable String cpeDeviceShapeId) {
+            this.cpeDeviceShapeId = cpeDeviceShapeId;
             return this;
         }
         @CustomType.Setter
-        public Builder template(String template) {
-            this.template = Objects.requireNonNull(template);
+        public Builder template(@Nullable String template) {
+            this.template = template;
             return this;
         }
         public GetCpeDeviceShapesCpeDeviceShape build() {

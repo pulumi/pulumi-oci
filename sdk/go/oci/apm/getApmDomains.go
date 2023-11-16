@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Apm Domains in Oracle Cloud Infrastructure Apm service.
@@ -74,7 +73,7 @@ type GetApmDomainsResult struct {
 	DisplayName *string               `pulumi:"displayName"`
 	Filters     []GetApmDomainsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The current lifecycle state of the APM domain.
 	State *string `pulumi:"state"`
 }
@@ -122,12 +121,6 @@ func (o GetApmDomainsResultOutput) ToGetApmDomainsResultOutputWithContext(ctx co
 	return o
 }
 
-func (o GetApmDomainsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetApmDomainsResult] {
-	return pulumix.Output[GetApmDomainsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The list of apm_domains.
 func (o GetApmDomainsResultOutput) ApmDomains() GetApmDomainsApmDomainArrayOutput {
 	return o.ApplyT(func(v GetApmDomainsResult) []GetApmDomainsApmDomain { return v.ApmDomains }).(GetApmDomainsApmDomainArrayOutput)
@@ -148,8 +141,8 @@ func (o GetApmDomainsResultOutput) Filters() GetApmDomainsFilterArrayOutput {
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetApmDomainsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetApmDomainsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetApmDomainsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetApmDomainsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The current lifecycle state of the APM domain.

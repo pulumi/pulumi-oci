@@ -9,6 +9,8 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetOperationsInsightsWarehouseResult {
@@ -16,159 +18,159 @@ public final class GetOperationsInsightsWarehouseResult {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return Number of OCPUs allocated to OPSI Warehouse ADW.
      * 
      */
-    private Double cpuAllocated;
+    private @Nullable Double cpuAllocated;
     /**
      * @return Number of OCPUs used by OPSI Warehouse ADW. Can be fractional.
      * 
      */
-    private Double cpuUsed;
+    private @Nullable Double cpuUsed;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return User-friedly name of Operations Insights Warehouse that does not have to be unique.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return OCID of the dynamic group created for the warehouse
      * 
      */
-    private String dynamicGroupId;
+    private @Nullable String dynamicGroupId;
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return OPSI Warehouse OCID
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
-    private String lifecycleDetails;
+    private @Nullable String lifecycleDetails;
     /**
      * @return Tenancy Identifier of Operations Insights service
      * 
      */
-    private String operationsInsightsTenancyId;
+    private @Nullable String operationsInsightsTenancyId;
     private String operationsInsightsWarehouseId;
     /**
      * @return Possible lifecycle states
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return Storage allocated to OPSI Warehouse ADW.
      * 
      */
-    private Double storageAllocatedInGbs;
+    private @Nullable Double storageAllocatedInGbs;
     /**
      * @return Storage by OPSI Warehouse ADW in GB.
      * 
      */
-    private Double storageUsedInGbs;
+    private @Nullable Double storageUsedInGbs;
     /**
      * @return System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    private Map<String,Object> systemTags;
+    private @Nullable Map<String,Object> systemTags;
     /**
      * @return The time at which the resource was first created. An RFC3339 formatted datetime string
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The time at which the ADW wallet was last rotated for the Operations Insights Warehouse. An RFC3339 formatted datetime string
      * 
      */
-    private String timeLastWalletRotated;
+    private @Nullable String timeLastWalletRotated;
     /**
      * @return The time at which the resource was last updated. An RFC3339 formatted datetime string
      * 
      */
-    private String timeUpdated;
+    private @Nullable String timeUpdated;
 
     private GetOperationsInsightsWarehouseResult() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return Number of OCPUs allocated to OPSI Warehouse ADW.
      * 
      */
-    public Double cpuAllocated() {
-        return this.cpuAllocated;
+    public Optional<Double> cpuAllocated() {
+        return Optional.ofNullable(this.cpuAllocated);
     }
     /**
      * @return Number of OCPUs used by OPSI Warehouse ADW. Can be fractional.
      * 
      */
-    public Double cpuUsed() {
-        return this.cpuUsed;
+    public Optional<Double> cpuUsed() {
+        return Optional.ofNullable(this.cpuUsed);
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return User-friedly name of Operations Insights Warehouse that does not have to be unique.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return OCID of the dynamic group created for the warehouse
      * 
      */
-    public String dynamicGroupId() {
-        return this.dynamicGroupId;
+    public Optional<String> dynamicGroupId() {
+        return Optional.ofNullable(this.dynamicGroupId);
     }
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return OPSI Warehouse OCID
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
-    public String lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Optional<String> lifecycleDetails() {
+        return Optional.ofNullable(this.lifecycleDetails);
     }
     /**
      * @return Tenancy Identifier of Operations Insights service
      * 
      */
-    public String operationsInsightsTenancyId() {
-        return this.operationsInsightsTenancyId;
+    public Optional<String> operationsInsightsTenancyId() {
+        return Optional.ofNullable(this.operationsInsightsTenancyId);
     }
     public String operationsInsightsWarehouseId() {
         return this.operationsInsightsWarehouseId;
@@ -177,50 +179,50 @@ public final class GetOperationsInsightsWarehouseResult {
      * @return Possible lifecycle states
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return Storage allocated to OPSI Warehouse ADW.
      * 
      */
-    public Double storageAllocatedInGbs() {
-        return this.storageAllocatedInGbs;
+    public Optional<Double> storageAllocatedInGbs() {
+        return Optional.ofNullable(this.storageAllocatedInGbs);
     }
     /**
      * @return Storage by OPSI Warehouse ADW in GB.
      * 
      */
-    public Double storageUsedInGbs() {
-        return this.storageUsedInGbs;
+    public Optional<Double> storageUsedInGbs() {
+        return Optional.ofNullable(this.storageUsedInGbs);
     }
     /**
      * @return System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
     public Map<String,Object> systemTags() {
-        return this.systemTags;
+        return this.systemTags == null ? Map.of() : this.systemTags;
     }
     /**
      * @return The time at which the resource was first created. An RFC3339 formatted datetime string
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return The time at which the ADW wallet was last rotated for the Operations Insights Warehouse. An RFC3339 formatted datetime string
      * 
      */
-    public String timeLastWalletRotated() {
-        return this.timeLastWalletRotated;
+    public Optional<String> timeLastWalletRotated() {
+        return Optional.ofNullable(this.timeLastWalletRotated);
     }
     /**
      * @return The time at which the resource was last updated. An RFC3339 formatted datetime string
      * 
      */
-    public String timeUpdated() {
-        return this.timeUpdated;
+    public Optional<String> timeUpdated() {
+        return Optional.ofNullable(this.timeUpdated);
     }
 
     public static Builder builder() {
@@ -232,24 +234,24 @@ public final class GetOperationsInsightsWarehouseResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String compartmentId;
-        private Double cpuAllocated;
-        private Double cpuUsed;
-        private Map<String,Object> definedTags;
-        private String displayName;
-        private String dynamicGroupId;
-        private Map<String,Object> freeformTags;
-        private String id;
-        private String lifecycleDetails;
-        private String operationsInsightsTenancyId;
+        private @Nullable String compartmentId;
+        private @Nullable Double cpuAllocated;
+        private @Nullable Double cpuUsed;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String displayName;
+        private @Nullable String dynamicGroupId;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String id;
+        private @Nullable String lifecycleDetails;
+        private @Nullable String operationsInsightsTenancyId;
         private String operationsInsightsWarehouseId;
-        private String state;
-        private Double storageAllocatedInGbs;
-        private Double storageUsedInGbs;
-        private Map<String,Object> systemTags;
-        private String timeCreated;
-        private String timeLastWalletRotated;
-        private String timeUpdated;
+        private @Nullable String state;
+        private @Nullable Double storageAllocatedInGbs;
+        private @Nullable Double storageUsedInGbs;
+        private @Nullable Map<String,Object> systemTags;
+        private @Nullable String timeCreated;
+        private @Nullable String timeLastWalletRotated;
+        private @Nullable String timeUpdated;
         public Builder() {}
         public Builder(GetOperationsInsightsWarehouseResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -274,53 +276,53 @@ public final class GetOperationsInsightsWarehouseResult {
         }
 
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder cpuAllocated(Double cpuAllocated) {
-            this.cpuAllocated = Objects.requireNonNull(cpuAllocated);
+        public Builder cpuAllocated(@Nullable Double cpuAllocated) {
+            this.cpuAllocated = cpuAllocated;
             return this;
         }
         @CustomType.Setter
-        public Builder cpuUsed(Double cpuUsed) {
-            this.cpuUsed = Objects.requireNonNull(cpuUsed);
+        public Builder cpuUsed(@Nullable Double cpuUsed) {
+            this.cpuUsed = cpuUsed;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder dynamicGroupId(String dynamicGroupId) {
-            this.dynamicGroupId = Objects.requireNonNull(dynamicGroupId);
+        public Builder dynamicGroupId(@Nullable String dynamicGroupId) {
+            this.dynamicGroupId = dynamicGroupId;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+        public Builder lifecycleDetails(@Nullable String lifecycleDetails) {
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
-        public Builder operationsInsightsTenancyId(String operationsInsightsTenancyId) {
-            this.operationsInsightsTenancyId = Objects.requireNonNull(operationsInsightsTenancyId);
+        public Builder operationsInsightsTenancyId(@Nullable String operationsInsightsTenancyId) {
+            this.operationsInsightsTenancyId = operationsInsightsTenancyId;
             return this;
         }
         @CustomType.Setter
@@ -329,38 +331,38 @@ public final class GetOperationsInsightsWarehouseResult {
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder storageAllocatedInGbs(Double storageAllocatedInGbs) {
-            this.storageAllocatedInGbs = Objects.requireNonNull(storageAllocatedInGbs);
+        public Builder storageAllocatedInGbs(@Nullable Double storageAllocatedInGbs) {
+            this.storageAllocatedInGbs = storageAllocatedInGbs;
             return this;
         }
         @CustomType.Setter
-        public Builder storageUsedInGbs(Double storageUsedInGbs) {
-            this.storageUsedInGbs = Objects.requireNonNull(storageUsedInGbs);
+        public Builder storageUsedInGbs(@Nullable Double storageUsedInGbs) {
+            this.storageUsedInGbs = storageUsedInGbs;
             return this;
         }
         @CustomType.Setter
-        public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+        public Builder systemTags(@Nullable Map<String,Object> systemTags) {
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeLastWalletRotated(String timeLastWalletRotated) {
-            this.timeLastWalletRotated = Objects.requireNonNull(timeLastWalletRotated);
+        public Builder timeLastWalletRotated(@Nullable String timeLastWalletRotated) {
+            this.timeLastWalletRotated = timeLastWalletRotated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+        public Builder timeUpdated(@Nullable String timeUpdated) {
+            this.timeUpdated = timeUpdated;
             return this;
         }
         public GetOperationsInsightsWarehouseResult build() {

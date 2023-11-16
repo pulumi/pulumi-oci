@@ -73,23 +73,23 @@ export class AuthToken extends pulumi.CustomResource {
     /**
      * The detailed status of INACTIVE lifecycleState.
      */
-    public /*out*/ readonly inactiveState!: pulumi.Output<string>;
+    public /*out*/ readonly inactiveState!: pulumi.Output<string | undefined>;
     /**
      * The token's current state.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * Date and time the `AuthToken` object was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * Date and time when this auth token will expire, in the format defined by RFC3339. Null if it never expires.  Example: `2016-08-25T21:10:29.600Z`
      */
-    public /*out*/ readonly timeExpires!: pulumi.Output<string>;
+    public /*out*/ readonly timeExpires!: pulumi.Output<string | undefined>;
     /**
      * The auth token. The value is available only in the response for `CreateAuthToken`, and not for `ListAuthTokens` or `UpdateAuthToken`.
      */
-    public /*out*/ readonly token!: pulumi.Output<string>;
+    public /*out*/ readonly token!: pulumi.Output<string | undefined>;
     /**
      * The OCID of the user.
      *

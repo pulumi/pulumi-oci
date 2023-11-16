@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Rule Sets in Oracle Cloud Infrastructure Load Balancer service.
@@ -62,8 +61,8 @@ type GetRuleSetsArgs struct {
 type GetRuleSetsResult struct {
 	Filters []GetRuleSetsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id             string `pulumi:"id"`
-	LoadBalancerId string `pulumi:"loadBalancerId"`
+	Id             *string `pulumi:"id"`
+	LoadBalancerId string  `pulumi:"loadBalancerId"`
 	// The list of rule_sets.
 	RuleSets []GetRuleSetsRuleSet `pulumi:"ruleSets"`
 }
@@ -107,19 +106,13 @@ func (o GetRuleSetsResultOutput) ToGetRuleSetsResultOutputWithContext(ctx contex
 	return o
 }
 
-func (o GetRuleSetsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetRuleSetsResult] {
-	return pulumix.Output[GetRuleSetsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetRuleSetsResultOutput) Filters() GetRuleSetsFilterArrayOutput {
 	return o.ApplyT(func(v GetRuleSetsResult) []GetRuleSetsFilter { return v.Filters }).(GetRuleSetsFilterArrayOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetRuleSetsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRuleSetsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetRuleSetsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRuleSetsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetRuleSetsResultOutput) LoadBalancerId() pulumi.StringOutput {

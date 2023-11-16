@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 var _ = internal.GetEnvOrDefault
@@ -51,12 +50,6 @@ func (i ConfigDimensionArgs) ToConfigDimensionOutputWithContext(ctx context.Cont
 	return pulumi.ToOutputWithContext(ctx, i).(ConfigDimensionOutput)
 }
 
-func (i ConfigDimensionArgs) ToOutput(ctx context.Context) pulumix.Output[ConfigDimension] {
-	return pulumix.Output[ConfigDimension]{
-		OutputState: i.ToConfigDimensionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ConfigDimensionArrayInput is an input type that accepts ConfigDimensionArray and ConfigDimensionArrayOutput values.
 // You can construct a concrete instance of `ConfigDimensionArrayInput` via:
 //
@@ -82,12 +75,6 @@ func (i ConfigDimensionArray) ToConfigDimensionArrayOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(ConfigDimensionArrayOutput)
 }
 
-func (i ConfigDimensionArray) ToOutput(ctx context.Context) pulumix.Output[[]ConfigDimension] {
-	return pulumix.Output[[]ConfigDimension]{
-		OutputState: i.ToConfigDimensionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ConfigDimensionOutput struct{ *pulumi.OutputState }
 
 func (ConfigDimensionOutput) ElementType() reflect.Type {
@@ -100,12 +87,6 @@ func (o ConfigDimensionOutput) ToConfigDimensionOutput() ConfigDimensionOutput {
 
 func (o ConfigDimensionOutput) ToConfigDimensionOutputWithContext(ctx context.Context) ConfigDimensionOutput {
 	return o
-}
-
-func (o ConfigDimensionOutput) ToOutput(ctx context.Context) pulumix.Output[ConfigDimension] {
-	return pulumix.Output[ConfigDimension]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The name of the metric. This must be a known metric name.
@@ -130,12 +111,6 @@ func (o ConfigDimensionArrayOutput) ToConfigDimensionArrayOutput() ConfigDimensi
 
 func (o ConfigDimensionArrayOutput) ToConfigDimensionArrayOutputWithContext(ctx context.Context) ConfigDimensionArrayOutput {
 	return o
-}
-
-func (o ConfigDimensionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]ConfigDimension] {
-	return pulumix.Output[[]ConfigDimension]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ConfigDimensionArrayOutput) Index(i pulumi.IntInput) ConfigDimensionOutput {
@@ -189,12 +164,6 @@ func (i ConfigInUseByArgs) ToConfigInUseByOutputWithContext(ctx context.Context)
 	return pulumi.ToOutputWithContext(ctx, i).(ConfigInUseByOutput)
 }
 
-func (i ConfigInUseByArgs) ToOutput(ctx context.Context) pulumix.Output[ConfigInUseBy] {
-	return pulumix.Output[ConfigInUseBy]{
-		OutputState: i.ToConfigInUseByOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ConfigInUseByArrayInput is an input type that accepts ConfigInUseByArray and ConfigInUseByArrayOutput values.
 // You can construct a concrete instance of `ConfigInUseByArrayInput` via:
 //
@@ -220,12 +189,6 @@ func (i ConfigInUseByArray) ToConfigInUseByArrayOutputWithContext(ctx context.Co
 	return pulumi.ToOutputWithContext(ctx, i).(ConfigInUseByArrayOutput)
 }
 
-func (i ConfigInUseByArray) ToOutput(ctx context.Context) pulumix.Output[[]ConfigInUseBy] {
-	return pulumix.Output[[]ConfigInUseBy]{
-		OutputState: i.ToConfigInUseByArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ConfigInUseByOutput struct{ *pulumi.OutputState }
 
 func (ConfigInUseByOutput) ElementType() reflect.Type {
@@ -238,12 +201,6 @@ func (o ConfigInUseByOutput) ToConfigInUseByOutput() ConfigInUseByOutput {
 
 func (o ConfigInUseByOutput) ToConfigInUseByOutputWithContext(ctx context.Context) ConfigInUseByOutput {
 	return o
-}
-
-func (o ConfigInUseByOutput) ToOutput(ctx context.Context) pulumix.Output[ConfigInUseBy] {
-	return pulumix.Output[ConfigInUseBy]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The type of configuration item.
@@ -278,12 +235,6 @@ func (o ConfigInUseByArrayOutput) ToConfigInUseByArrayOutput() ConfigInUseByArra
 
 func (o ConfigInUseByArrayOutput) ToConfigInUseByArrayOutputWithContext(ctx context.Context) ConfigInUseByArrayOutput {
 	return o
-}
-
-func (o ConfigInUseByArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]ConfigInUseBy] {
-	return pulumix.Output[[]ConfigInUseBy]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ConfigInUseByArrayOutput) Index(i pulumi.IntInput) ConfigInUseByOutput {
@@ -337,12 +288,6 @@ func (i ConfigMetricArgs) ToConfigMetricOutputWithContext(ctx context.Context) C
 	return pulumi.ToOutputWithContext(ctx, i).(ConfigMetricOutput)
 }
 
-func (i ConfigMetricArgs) ToOutput(ctx context.Context) pulumix.Output[ConfigMetric] {
-	return pulumix.Output[ConfigMetric]{
-		OutputState: i.ToConfigMetricOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ConfigMetricArrayInput is an input type that accepts ConfigMetricArray and ConfigMetricArrayOutput values.
 // You can construct a concrete instance of `ConfigMetricArrayInput` via:
 //
@@ -368,12 +313,6 @@ func (i ConfigMetricArray) ToConfigMetricArrayOutputWithContext(ctx context.Cont
 	return pulumi.ToOutputWithContext(ctx, i).(ConfigMetricArrayOutput)
 }
 
-func (i ConfigMetricArray) ToOutput(ctx context.Context) pulumix.Output[[]ConfigMetric] {
-	return pulumix.Output[[]ConfigMetric]{
-		OutputState: i.ToConfigMetricArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ConfigMetricOutput struct{ *pulumi.OutputState }
 
 func (ConfigMetricOutput) ElementType() reflect.Type {
@@ -386,12 +325,6 @@ func (o ConfigMetricOutput) ToConfigMetricOutput() ConfigMetricOutput {
 
 func (o ConfigMetricOutput) ToConfigMetricOutputWithContext(ctx context.Context) ConfigMetricOutput {
 	return o
-}
-
-func (o ConfigMetricOutput) ToOutput(ctx context.Context) pulumix.Output[ConfigMetric] {
-	return pulumix.Output[ConfigMetric]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) A description of the metric.
@@ -426,12 +359,6 @@ func (o ConfigMetricArrayOutput) ToConfigMetricArrayOutput() ConfigMetricArrayOu
 
 func (o ConfigMetricArrayOutput) ToConfigMetricArrayOutputWithContext(ctx context.Context) ConfigMetricArrayOutput {
 	return o
-}
-
-func (o ConfigMetricArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]ConfigMetric] {
-	return pulumix.Output[[]ConfigMetric]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ConfigMetricArrayOutput) Index(i pulumi.IntInput) ConfigMetricOutput {
@@ -503,12 +430,6 @@ func (i ConfigRuleArgs) ToConfigRuleOutputWithContext(ctx context.Context) Confi
 	return pulumi.ToOutputWithContext(ctx, i).(ConfigRuleOutput)
 }
 
-func (i ConfigRuleArgs) ToOutput(ctx context.Context) pulumix.Output[ConfigRule] {
-	return pulumix.Output[ConfigRule]{
-		OutputState: i.ToConfigRuleOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ConfigRuleArrayInput is an input type that accepts ConfigRuleArray and ConfigRuleArrayOutput values.
 // You can construct a concrete instance of `ConfigRuleArrayInput` via:
 //
@@ -534,12 +455,6 @@ func (i ConfigRuleArray) ToConfigRuleArrayOutputWithContext(ctx context.Context)
 	return pulumi.ToOutputWithContext(ctx, i).(ConfigRuleArrayOutput)
 }
 
-func (i ConfigRuleArray) ToOutput(ctx context.Context) pulumix.Output[[]ConfigRule] {
-	return pulumix.Output[[]ConfigRule]{
-		OutputState: i.ToConfigRuleArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ConfigRuleOutput struct{ *pulumi.OutputState }
 
 func (ConfigRuleOutput) ElementType() reflect.Type {
@@ -552,12 +467,6 @@ func (o ConfigRuleOutput) ToConfigRuleOutput() ConfigRuleOutput {
 
 func (o ConfigRuleOutput) ToConfigRuleOutputWithContext(ctx context.Context) ConfigRuleOutput {
 	return o
-}
-
-func (o ConfigRuleOutput) ToOutput(ctx context.Context) pulumix.Output[ConfigRule] {
-	return pulumix.Output[ConfigRule]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The name by which a configuration entity is displayed to the end user.
@@ -612,12 +521,6 @@ func (o ConfigRuleArrayOutput) ToConfigRuleArrayOutputWithContext(ctx context.Co
 	return o
 }
 
-func (o ConfigRuleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]ConfigRule] {
-	return pulumix.Output[[]ConfigRule]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o ConfigRuleArrayOutput) Index(i pulumi.IntInput) ConfigRuleOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ConfigRule {
 		return vs[0].([]ConfigRule)[vs[1].(int)]
@@ -626,9 +529,9 @@ func (o ConfigRuleArrayOutput) Index(i pulumi.IntInput) ConfigRuleOutput {
 
 type GetConfigDimension struct {
 	// The name of the metric. This must be a known metric name.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// This must not be set.
-	ValueSource string `pulumi:"valueSource"`
+	ValueSource *string `pulumi:"valueSource"`
 }
 
 // GetConfigDimensionInput is an input type that accepts GetConfigDimensionArgs and GetConfigDimensionOutput values.
@@ -644,9 +547,9 @@ type GetConfigDimensionInput interface {
 
 type GetConfigDimensionArgs struct {
 	// The name of the metric. This must be a known metric name.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// This must not be set.
-	ValueSource pulumi.StringInput `pulumi:"valueSource"`
+	ValueSource pulumi.StringPtrInput `pulumi:"valueSource"`
 }
 
 func (GetConfigDimensionArgs) ElementType() reflect.Type {
@@ -659,12 +562,6 @@ func (i GetConfigDimensionArgs) ToGetConfigDimensionOutput() GetConfigDimensionO
 
 func (i GetConfigDimensionArgs) ToGetConfigDimensionOutputWithContext(ctx context.Context) GetConfigDimensionOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetConfigDimensionOutput)
-}
-
-func (i GetConfigDimensionArgs) ToOutput(ctx context.Context) pulumix.Output[GetConfigDimension] {
-	return pulumix.Output[GetConfigDimension]{
-		OutputState: i.ToGetConfigDimensionOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetConfigDimensionArrayInput is an input type that accepts GetConfigDimensionArray and GetConfigDimensionArrayOutput values.
@@ -692,12 +589,6 @@ func (i GetConfigDimensionArray) ToGetConfigDimensionArrayOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(GetConfigDimensionArrayOutput)
 }
 
-func (i GetConfigDimensionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetConfigDimension] {
-	return pulumix.Output[[]GetConfigDimension]{
-		OutputState: i.ToGetConfigDimensionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetConfigDimensionOutput struct{ *pulumi.OutputState }
 
 func (GetConfigDimensionOutput) ElementType() reflect.Type {
@@ -712,20 +603,14 @@ func (o GetConfigDimensionOutput) ToGetConfigDimensionOutputWithContext(ctx cont
 	return o
 }
 
-func (o GetConfigDimensionOutput) ToOutput(ctx context.Context) pulumix.Output[GetConfigDimension] {
-	return pulumix.Output[GetConfigDimension]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The name of the metric. This must be a known metric name.
-func (o GetConfigDimensionOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetConfigDimension) string { return v.Name }).(pulumi.StringOutput)
+func (o GetConfigDimensionOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetConfigDimension) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // This must not be set.
-func (o GetConfigDimensionOutput) ValueSource() pulumi.StringOutput {
-	return o.ApplyT(func(v GetConfigDimension) string { return v.ValueSource }).(pulumi.StringOutput)
+func (o GetConfigDimensionOutput) ValueSource() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetConfigDimension) *string { return v.ValueSource }).(pulumi.StringPtrOutput)
 }
 
 type GetConfigDimensionArrayOutput struct{ *pulumi.OutputState }
@@ -742,12 +627,6 @@ func (o GetConfigDimensionArrayOutput) ToGetConfigDimensionArrayOutputWithContex
 	return o
 }
 
-func (o GetConfigDimensionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetConfigDimension] {
-	return pulumix.Output[[]GetConfigDimension]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetConfigDimensionArrayOutput) Index(i pulumi.IntInput) GetConfigDimensionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetConfigDimension {
 		return vs[0].([]GetConfigDimension)[vs[1].(int)]
@@ -756,13 +635,13 @@ func (o GetConfigDimensionArrayOutput) Index(i pulumi.IntInput) GetConfigDimensi
 
 type GetConfigInUseBy struct {
 	// The type of configuration item.
-	ConfigType string `pulumi:"configType"`
+	ConfigType *string `pulumi:"configType"`
 	// The name by which a configuration entity is displayed to the end user.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration item. An OCID is generated when the item is created.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// A string that specifies the group that an OPTIONS item belongs to.
-	OptionsGroup string `pulumi:"optionsGroup"`
+	OptionsGroup *string `pulumi:"optionsGroup"`
 }
 
 // GetConfigInUseByInput is an input type that accepts GetConfigInUseByArgs and GetConfigInUseByOutput values.
@@ -778,13 +657,13 @@ type GetConfigInUseByInput interface {
 
 type GetConfigInUseByArgs struct {
 	// The type of configuration item.
-	ConfigType pulumi.StringInput `pulumi:"configType"`
+	ConfigType pulumi.StringPtrInput `pulumi:"configType"`
 	// The name by which a configuration entity is displayed to the end user.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration item. An OCID is generated when the item is created.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// A string that specifies the group that an OPTIONS item belongs to.
-	OptionsGroup pulumi.StringInput `pulumi:"optionsGroup"`
+	OptionsGroup pulumi.StringPtrInput `pulumi:"optionsGroup"`
 }
 
 func (GetConfigInUseByArgs) ElementType() reflect.Type {
@@ -797,12 +676,6 @@ func (i GetConfigInUseByArgs) ToGetConfigInUseByOutput() GetConfigInUseByOutput 
 
 func (i GetConfigInUseByArgs) ToGetConfigInUseByOutputWithContext(ctx context.Context) GetConfigInUseByOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetConfigInUseByOutput)
-}
-
-func (i GetConfigInUseByArgs) ToOutput(ctx context.Context) pulumix.Output[GetConfigInUseBy] {
-	return pulumix.Output[GetConfigInUseBy]{
-		OutputState: i.ToGetConfigInUseByOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetConfigInUseByArrayInput is an input type that accepts GetConfigInUseByArray and GetConfigInUseByArrayOutput values.
@@ -830,12 +703,6 @@ func (i GetConfigInUseByArray) ToGetConfigInUseByArrayOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(GetConfigInUseByArrayOutput)
 }
 
-func (i GetConfigInUseByArray) ToOutput(ctx context.Context) pulumix.Output[[]GetConfigInUseBy] {
-	return pulumix.Output[[]GetConfigInUseBy]{
-		OutputState: i.ToGetConfigInUseByArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetConfigInUseByOutput struct{ *pulumi.OutputState }
 
 func (GetConfigInUseByOutput) ElementType() reflect.Type {
@@ -850,30 +717,24 @@ func (o GetConfigInUseByOutput) ToGetConfigInUseByOutputWithContext(ctx context.
 	return o
 }
 
-func (o GetConfigInUseByOutput) ToOutput(ctx context.Context) pulumix.Output[GetConfigInUseBy] {
-	return pulumix.Output[GetConfigInUseBy]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The type of configuration item.
-func (o GetConfigInUseByOutput) ConfigType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetConfigInUseBy) string { return v.ConfigType }).(pulumi.StringOutput)
+func (o GetConfigInUseByOutput) ConfigType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetConfigInUseBy) *string { return v.ConfigType }).(pulumi.StringPtrOutput)
 }
 
 // The name by which a configuration entity is displayed to the end user.
-func (o GetConfigInUseByOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetConfigInUseBy) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetConfigInUseByOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetConfigInUseBy) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration item. An OCID is generated when the item is created.
-func (o GetConfigInUseByOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetConfigInUseBy) string { return v.Id }).(pulumi.StringOutput)
+func (o GetConfigInUseByOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetConfigInUseBy) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // A string that specifies the group that an OPTIONS item belongs to.
-func (o GetConfigInUseByOutput) OptionsGroup() pulumi.StringOutput {
-	return o.ApplyT(func(v GetConfigInUseBy) string { return v.OptionsGroup }).(pulumi.StringOutput)
+func (o GetConfigInUseByOutput) OptionsGroup() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetConfigInUseBy) *string { return v.OptionsGroup }).(pulumi.StringPtrOutput)
 }
 
 type GetConfigInUseByArrayOutput struct{ *pulumi.OutputState }
@@ -890,12 +751,6 @@ func (o GetConfigInUseByArrayOutput) ToGetConfigInUseByArrayOutputWithContext(ct
 	return o
 }
 
-func (o GetConfigInUseByArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetConfigInUseBy] {
-	return pulumix.Output[[]GetConfigInUseBy]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetConfigInUseByArrayOutput) Index(i pulumi.IntInput) GetConfigInUseByOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetConfigInUseBy {
 		return vs[0].([]GetConfigInUseBy)[vs[1].(int)]
@@ -904,13 +759,13 @@ func (o GetConfigInUseByArrayOutput) Index(i pulumi.IntInput) GetConfigInUseByOu
 
 type GetConfigMetric struct {
 	// A description of the metric.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// The name of the metric. This must be a known metric name.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// The unit of the metric.
-	Unit string `pulumi:"unit"`
+	Unit *string `pulumi:"unit"`
 	// This must not be set.
-	ValueSource string `pulumi:"valueSource"`
+	ValueSource *string `pulumi:"valueSource"`
 }
 
 // GetConfigMetricInput is an input type that accepts GetConfigMetricArgs and GetConfigMetricOutput values.
@@ -926,13 +781,13 @@ type GetConfigMetricInput interface {
 
 type GetConfigMetricArgs struct {
 	// A description of the metric.
-	Description pulumi.StringInput `pulumi:"description"`
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// The name of the metric. This must be a known metric name.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// The unit of the metric.
-	Unit pulumi.StringInput `pulumi:"unit"`
+	Unit pulumi.StringPtrInput `pulumi:"unit"`
 	// This must not be set.
-	ValueSource pulumi.StringInput `pulumi:"valueSource"`
+	ValueSource pulumi.StringPtrInput `pulumi:"valueSource"`
 }
 
 func (GetConfigMetricArgs) ElementType() reflect.Type {
@@ -945,12 +800,6 @@ func (i GetConfigMetricArgs) ToGetConfigMetricOutput() GetConfigMetricOutput {
 
 func (i GetConfigMetricArgs) ToGetConfigMetricOutputWithContext(ctx context.Context) GetConfigMetricOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetConfigMetricOutput)
-}
-
-func (i GetConfigMetricArgs) ToOutput(ctx context.Context) pulumix.Output[GetConfigMetric] {
-	return pulumix.Output[GetConfigMetric]{
-		OutputState: i.ToGetConfigMetricOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetConfigMetricArrayInput is an input type that accepts GetConfigMetricArray and GetConfigMetricArrayOutput values.
@@ -978,12 +827,6 @@ func (i GetConfigMetricArray) ToGetConfigMetricArrayOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(GetConfigMetricArrayOutput)
 }
 
-func (i GetConfigMetricArray) ToOutput(ctx context.Context) pulumix.Output[[]GetConfigMetric] {
-	return pulumix.Output[[]GetConfigMetric]{
-		OutputState: i.ToGetConfigMetricArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetConfigMetricOutput struct{ *pulumi.OutputState }
 
 func (GetConfigMetricOutput) ElementType() reflect.Type {
@@ -998,30 +841,24 @@ func (o GetConfigMetricOutput) ToGetConfigMetricOutputWithContext(ctx context.Co
 	return o
 }
 
-func (o GetConfigMetricOutput) ToOutput(ctx context.Context) pulumix.Output[GetConfigMetric] {
-	return pulumix.Output[GetConfigMetric]{
-		OutputState: o.OutputState,
-	}
-}
-
 // A description of the metric.
-func (o GetConfigMetricOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetConfigMetric) string { return v.Description }).(pulumi.StringOutput)
+func (o GetConfigMetricOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetConfigMetric) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // The name of the metric. This must be a known metric name.
-func (o GetConfigMetricOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetConfigMetric) string { return v.Name }).(pulumi.StringOutput)
+func (o GetConfigMetricOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetConfigMetric) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // The unit of the metric.
-func (o GetConfigMetricOutput) Unit() pulumi.StringOutput {
-	return o.ApplyT(func(v GetConfigMetric) string { return v.Unit }).(pulumi.StringOutput)
+func (o GetConfigMetricOutput) Unit() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetConfigMetric) *string { return v.Unit }).(pulumi.StringPtrOutput)
 }
 
 // This must not be set.
-func (o GetConfigMetricOutput) ValueSource() pulumi.StringOutput {
-	return o.ApplyT(func(v GetConfigMetric) string { return v.ValueSource }).(pulumi.StringOutput)
+func (o GetConfigMetricOutput) ValueSource() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetConfigMetric) *string { return v.ValueSource }).(pulumi.StringPtrOutput)
 }
 
 type GetConfigMetricArrayOutput struct{ *pulumi.OutputState }
@@ -1038,12 +875,6 @@ func (o GetConfigMetricArrayOutput) ToGetConfigMetricArrayOutputWithContext(ctx 
 	return o
 }
 
-func (o GetConfigMetricArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetConfigMetric] {
-	return pulumix.Output[[]GetConfigMetric]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetConfigMetricArrayOutput) Index(i pulumi.IntInput) GetConfigMetricOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetConfigMetric {
 		return vs[0].([]GetConfigMetric)[vs[1].(int)]
@@ -1052,19 +883,19 @@ func (o GetConfigMetricArrayOutput) Index(i pulumi.IntInput) GetConfigMetricOutp
 
 type GetConfigRule struct {
 	// The name by which a configuration entity is displayed to the end user.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// The string that defines the Span Filter expression.
-	FilterText string `pulumi:"filterText"`
+	FilterText *string `pulumi:"filterText"`
 	// Specifies whether an Apdex score should be computed for error spans. Setting it to "true" means that the Apdex score is computed in the usual way. Setting it to "false" skips the Apdex computation and sets the Apdex score to "frustrating" regardless of the configured thresholds. The default is "false".
-	IsApplyToErrorSpans bool `pulumi:"isApplyToErrorSpans"`
+	IsApplyToErrorSpans *bool `pulumi:"isApplyToErrorSpans"`
 	// Specifies whether the Apdex score should be computed for spans matching the rule. This can be used to disable Apdex score for spans that do not need or require it. The default is "true".
-	IsEnabled bool `pulumi:"isEnabled"`
+	IsEnabled *bool `pulumi:"isEnabled"`
 	// The priority controls the order in which multiple rules in a rule set are applied. Lower values indicate higher priorities. Rules with higher priority are applied first, and once a match is found, the rest of the rules are ignored. Rules within the same rule set cannot have the same priority.
-	Priority int `pulumi:"priority"`
+	Priority *int `pulumi:"priority"`
 	// The maximum response time in milliseconds that is considered "satisfactory" for the end user.
-	SatisfiedResponseTime int `pulumi:"satisfiedResponseTime"`
+	SatisfiedResponseTime *int `pulumi:"satisfiedResponseTime"`
 	// The maximum response time in milliseconds that is considered "tolerable" for the end user. A response time beyond this threshold is considered "frustrating". This value cannot be lower than "satisfiedResponseTime".
-	ToleratingResponseTime int `pulumi:"toleratingResponseTime"`
+	ToleratingResponseTime *int `pulumi:"toleratingResponseTime"`
 }
 
 // GetConfigRuleInput is an input type that accepts GetConfigRuleArgs and GetConfigRuleOutput values.
@@ -1080,19 +911,19 @@ type GetConfigRuleInput interface {
 
 type GetConfigRuleArgs struct {
 	// The name by which a configuration entity is displayed to the end user.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// The string that defines the Span Filter expression.
-	FilterText pulumi.StringInput `pulumi:"filterText"`
+	FilterText pulumi.StringPtrInput `pulumi:"filterText"`
 	// Specifies whether an Apdex score should be computed for error spans. Setting it to "true" means that the Apdex score is computed in the usual way. Setting it to "false" skips the Apdex computation and sets the Apdex score to "frustrating" regardless of the configured thresholds. The default is "false".
-	IsApplyToErrorSpans pulumi.BoolInput `pulumi:"isApplyToErrorSpans"`
+	IsApplyToErrorSpans pulumi.BoolPtrInput `pulumi:"isApplyToErrorSpans"`
 	// Specifies whether the Apdex score should be computed for spans matching the rule. This can be used to disable Apdex score for spans that do not need or require it. The default is "true".
-	IsEnabled pulumi.BoolInput `pulumi:"isEnabled"`
+	IsEnabled pulumi.BoolPtrInput `pulumi:"isEnabled"`
 	// The priority controls the order in which multiple rules in a rule set are applied. Lower values indicate higher priorities. Rules with higher priority are applied first, and once a match is found, the rest of the rules are ignored. Rules within the same rule set cannot have the same priority.
-	Priority pulumi.IntInput `pulumi:"priority"`
+	Priority pulumi.IntPtrInput `pulumi:"priority"`
 	// The maximum response time in milliseconds that is considered "satisfactory" for the end user.
-	SatisfiedResponseTime pulumi.IntInput `pulumi:"satisfiedResponseTime"`
+	SatisfiedResponseTime pulumi.IntPtrInput `pulumi:"satisfiedResponseTime"`
 	// The maximum response time in milliseconds that is considered "tolerable" for the end user. A response time beyond this threshold is considered "frustrating". This value cannot be lower than "satisfiedResponseTime".
-	ToleratingResponseTime pulumi.IntInput `pulumi:"toleratingResponseTime"`
+	ToleratingResponseTime pulumi.IntPtrInput `pulumi:"toleratingResponseTime"`
 }
 
 func (GetConfigRuleArgs) ElementType() reflect.Type {
@@ -1105,12 +936,6 @@ func (i GetConfigRuleArgs) ToGetConfigRuleOutput() GetConfigRuleOutput {
 
 func (i GetConfigRuleArgs) ToGetConfigRuleOutputWithContext(ctx context.Context) GetConfigRuleOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetConfigRuleOutput)
-}
-
-func (i GetConfigRuleArgs) ToOutput(ctx context.Context) pulumix.Output[GetConfigRule] {
-	return pulumix.Output[GetConfigRule]{
-		OutputState: i.ToGetConfigRuleOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetConfigRuleArrayInput is an input type that accepts GetConfigRuleArray and GetConfigRuleArrayOutput values.
@@ -1138,12 +963,6 @@ func (i GetConfigRuleArray) ToGetConfigRuleArrayOutputWithContext(ctx context.Co
 	return pulumi.ToOutputWithContext(ctx, i).(GetConfigRuleArrayOutput)
 }
 
-func (i GetConfigRuleArray) ToOutput(ctx context.Context) pulumix.Output[[]GetConfigRule] {
-	return pulumix.Output[[]GetConfigRule]{
-		OutputState: i.ToGetConfigRuleArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetConfigRuleOutput struct{ *pulumi.OutputState }
 
 func (GetConfigRuleOutput) ElementType() reflect.Type {
@@ -1158,45 +977,39 @@ func (o GetConfigRuleOutput) ToGetConfigRuleOutputWithContext(ctx context.Contex
 	return o
 }
 
-func (o GetConfigRuleOutput) ToOutput(ctx context.Context) pulumix.Output[GetConfigRule] {
-	return pulumix.Output[GetConfigRule]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The name by which a configuration entity is displayed to the end user.
-func (o GetConfigRuleOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetConfigRule) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetConfigRuleOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetConfigRule) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // The string that defines the Span Filter expression.
-func (o GetConfigRuleOutput) FilterText() pulumi.StringOutput {
-	return o.ApplyT(func(v GetConfigRule) string { return v.FilterText }).(pulumi.StringOutput)
+func (o GetConfigRuleOutput) FilterText() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetConfigRule) *string { return v.FilterText }).(pulumi.StringPtrOutput)
 }
 
 // Specifies whether an Apdex score should be computed for error spans. Setting it to "true" means that the Apdex score is computed in the usual way. Setting it to "false" skips the Apdex computation and sets the Apdex score to "frustrating" regardless of the configured thresholds. The default is "false".
-func (o GetConfigRuleOutput) IsApplyToErrorSpans() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetConfigRule) bool { return v.IsApplyToErrorSpans }).(pulumi.BoolOutput)
+func (o GetConfigRuleOutput) IsApplyToErrorSpans() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetConfigRule) *bool { return v.IsApplyToErrorSpans }).(pulumi.BoolPtrOutput)
 }
 
 // Specifies whether the Apdex score should be computed for spans matching the rule. This can be used to disable Apdex score for spans that do not need or require it. The default is "true".
-func (o GetConfigRuleOutput) IsEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetConfigRule) bool { return v.IsEnabled }).(pulumi.BoolOutput)
+func (o GetConfigRuleOutput) IsEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetConfigRule) *bool { return v.IsEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // The priority controls the order in which multiple rules in a rule set are applied. Lower values indicate higher priorities. Rules with higher priority are applied first, and once a match is found, the rest of the rules are ignored. Rules within the same rule set cannot have the same priority.
-func (o GetConfigRuleOutput) Priority() pulumi.IntOutput {
-	return o.ApplyT(func(v GetConfigRule) int { return v.Priority }).(pulumi.IntOutput)
+func (o GetConfigRuleOutput) Priority() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetConfigRule) *int { return v.Priority }).(pulumi.IntPtrOutput)
 }
 
 // The maximum response time in milliseconds that is considered "satisfactory" for the end user.
-func (o GetConfigRuleOutput) SatisfiedResponseTime() pulumi.IntOutput {
-	return o.ApplyT(func(v GetConfigRule) int { return v.SatisfiedResponseTime }).(pulumi.IntOutput)
+func (o GetConfigRuleOutput) SatisfiedResponseTime() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetConfigRule) *int { return v.SatisfiedResponseTime }).(pulumi.IntPtrOutput)
 }
 
 // The maximum response time in milliseconds that is considered "tolerable" for the end user. A response time beyond this threshold is considered "frustrating". This value cannot be lower than "satisfiedResponseTime".
-func (o GetConfigRuleOutput) ToleratingResponseTime() pulumi.IntOutput {
-	return o.ApplyT(func(v GetConfigRule) int { return v.ToleratingResponseTime }).(pulumi.IntOutput)
+func (o GetConfigRuleOutput) ToleratingResponseTime() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetConfigRule) *int { return v.ToleratingResponseTime }).(pulumi.IntPtrOutput)
 }
 
 type GetConfigRuleArrayOutput struct{ *pulumi.OutputState }
@@ -1211,12 +1024,6 @@ func (o GetConfigRuleArrayOutput) ToGetConfigRuleArrayOutput() GetConfigRuleArra
 
 func (o GetConfigRuleArrayOutput) ToGetConfigRuleArrayOutputWithContext(ctx context.Context) GetConfigRuleArrayOutput {
 	return o
-}
-
-func (o GetConfigRuleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetConfigRule] {
-	return pulumix.Output[[]GetConfigRule]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetConfigRuleArrayOutput) Index(i pulumi.IntInput) GetConfigRuleOutput {
@@ -1256,12 +1063,6 @@ func (i GetConfigsConfigCollectionArgs) ToGetConfigsConfigCollectionOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetConfigsConfigCollectionOutput)
 }
 
-func (i GetConfigsConfigCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetConfigsConfigCollection] {
-	return pulumix.Output[GetConfigsConfigCollection]{
-		OutputState: i.ToGetConfigsConfigCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetConfigsConfigCollectionArrayInput is an input type that accepts GetConfigsConfigCollectionArray and GetConfigsConfigCollectionArrayOutput values.
 // You can construct a concrete instance of `GetConfigsConfigCollectionArrayInput` via:
 //
@@ -1287,12 +1088,6 @@ func (i GetConfigsConfigCollectionArray) ToGetConfigsConfigCollectionArrayOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetConfigsConfigCollectionArrayOutput)
 }
 
-func (i GetConfigsConfigCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetConfigsConfigCollection] {
-	return pulumix.Output[[]GetConfigsConfigCollection]{
-		OutputState: i.ToGetConfigsConfigCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetConfigsConfigCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetConfigsConfigCollectionOutput) ElementType() reflect.Type {
@@ -1305,12 +1100,6 @@ func (o GetConfigsConfigCollectionOutput) ToGetConfigsConfigCollectionOutput() G
 
 func (o GetConfigsConfigCollectionOutput) ToGetConfigsConfigCollectionOutputWithContext(ctx context.Context) GetConfigsConfigCollectionOutput {
 	return o
-}
-
-func (o GetConfigsConfigCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetConfigsConfigCollection] {
-	return pulumix.Output[GetConfigsConfigCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetConfigsConfigCollectionOutput) Items() GetConfigsConfigCollectionItemArrayOutput {
@@ -1331,12 +1120,6 @@ func (o GetConfigsConfigCollectionArrayOutput) ToGetConfigsConfigCollectionArray
 	return o
 }
 
-func (o GetConfigsConfigCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetConfigsConfigCollection] {
-	return pulumix.Output[[]GetConfigsConfigCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetConfigsConfigCollectionArrayOutput) Index(i pulumi.IntInput) GetConfigsConfigCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetConfigsConfigCollection {
 		return vs[0].([]GetConfigsConfigCollection)[vs[1].(int)]
@@ -1345,47 +1128,47 @@ func (o GetConfigsConfigCollectionArrayOutput) Index(i pulumi.IntInput) GetConfi
 
 type GetConfigsConfigCollectionItem struct {
 	// The APM Domain ID the request is intended for.
-	ApmDomainId string `pulumi:"apmDomainId"`
+	ApmDomainId *string `pulumi:"apmDomainId"`
 	// A filter to match configuration items of a given type. Supported values are SPAN_FILTER, METRIC_GROUP, and APDEX.
-	ConfigType string `pulumi:"configType"`
+	ConfigType *string `pulumi:"configType"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a user.
-	CreatedBy string `pulumi:"createdBy"`
+	CreatedBy *string `pulumi:"createdBy"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A description of the metric.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// A list of dimensions for the metric. This variable should not be used.
 	Dimensions []GetConfigsConfigCollectionItemDimension `pulumi:"dimensions"`
 	// A filter to return resources that match the given display name.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// For optimistic concurrency control. See `if-match`.
-	Etag string `pulumi:"etag"`
+	Etag *string `pulumi:"etag"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Span Filter. The filterId is mandatory for the creation of MetricGroups. A filterId is generated when a Span Filter is created.
-	FilterId string `pulumi:"filterId"`
+	FilterId *string `pulumi:"filterId"`
 	// The string that defines the Span Filter expression.
-	FilterText string `pulumi:"filterText"`
+	FilterText *string `pulumi:"filterText"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// A string that specifies the group that an OPTIONS item belongs to.
-	Group string `pulumi:"group"`
+	Group *string `pulumi:"group"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration item. An OCID is generated when the item is created.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The list of configuration items that reference the span filter.
 	InUseBies []GetConfigsConfigCollectionItemInUseBy `pulumi:"inUseBies"`
 	// The list of metrics in this group.
 	Metrics []GetConfigsConfigCollectionItemMetric `pulumi:"metrics"`
 	// The namespace to which the metrics are published. It must be one of several predefined namespaces.
-	Namespace string `pulumi:"namespace"`
-	OpcDryRun string `pulumi:"opcDryRun"`
+	Namespace *string `pulumi:"namespace"`
+	OpcDryRun *string `pulumi:"opcDryRun"`
 	// The options are stored here as JSON.
-	Options string                               `pulumi:"options"`
+	Options *string                              `pulumi:"options"`
 	Rules   []GetConfigsConfigCollectionItemRule `pulumi:"rules"`
 	// The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a user.
-	UpdatedBy string `pulumi:"updatedBy"`
+	UpdatedBy *string `pulumi:"updatedBy"`
 }
 
 // GetConfigsConfigCollectionItemInput is an input type that accepts GetConfigsConfigCollectionItemArgs and GetConfigsConfigCollectionItemOutput values.
@@ -1401,47 +1184,47 @@ type GetConfigsConfigCollectionItemInput interface {
 
 type GetConfigsConfigCollectionItemArgs struct {
 	// The APM Domain ID the request is intended for.
-	ApmDomainId pulumi.StringInput `pulumi:"apmDomainId"`
+	ApmDomainId pulumi.StringPtrInput `pulumi:"apmDomainId"`
 	// A filter to match configuration items of a given type. Supported values are SPAN_FILTER, METRIC_GROUP, and APDEX.
-	ConfigType pulumi.StringInput `pulumi:"configType"`
+	ConfigType pulumi.StringPtrInput `pulumi:"configType"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a user.
-	CreatedBy pulumi.StringInput `pulumi:"createdBy"`
+	CreatedBy pulumi.StringPtrInput `pulumi:"createdBy"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// A description of the metric.
-	Description pulumi.StringInput `pulumi:"description"`
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// A list of dimensions for the metric. This variable should not be used.
 	Dimensions GetConfigsConfigCollectionItemDimensionArrayInput `pulumi:"dimensions"`
 	// A filter to return resources that match the given display name.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// For optimistic concurrency control. See `if-match`.
-	Etag pulumi.StringInput `pulumi:"etag"`
+	Etag pulumi.StringPtrInput `pulumi:"etag"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Span Filter. The filterId is mandatory for the creation of MetricGroups. A filterId is generated when a Span Filter is created.
-	FilterId pulumi.StringInput `pulumi:"filterId"`
+	FilterId pulumi.StringPtrInput `pulumi:"filterId"`
 	// The string that defines the Span Filter expression.
-	FilterText pulumi.StringInput `pulumi:"filterText"`
+	FilterText pulumi.StringPtrInput `pulumi:"filterText"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// A string that specifies the group that an OPTIONS item belongs to.
-	Group pulumi.StringInput `pulumi:"group"`
+	Group pulumi.StringPtrInput `pulumi:"group"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration item. An OCID is generated when the item is created.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// The list of configuration items that reference the span filter.
 	InUseBies GetConfigsConfigCollectionItemInUseByArrayInput `pulumi:"inUseBies"`
 	// The list of metrics in this group.
 	Metrics GetConfigsConfigCollectionItemMetricArrayInput `pulumi:"metrics"`
 	// The namespace to which the metrics are published. It must be one of several predefined namespaces.
-	Namespace pulumi.StringInput `pulumi:"namespace"`
-	OpcDryRun pulumi.StringInput `pulumi:"opcDryRun"`
+	Namespace pulumi.StringPtrInput `pulumi:"namespace"`
+	OpcDryRun pulumi.StringPtrInput `pulumi:"opcDryRun"`
 	// The options are stored here as JSON.
-	Options pulumi.StringInput                           `pulumi:"options"`
+	Options pulumi.StringPtrInput                        `pulumi:"options"`
 	Rules   GetConfigsConfigCollectionItemRuleArrayInput `pulumi:"rules"`
 	// The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
-	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a user.
-	UpdatedBy pulumi.StringInput `pulumi:"updatedBy"`
+	UpdatedBy pulumi.StringPtrInput `pulumi:"updatedBy"`
 }
 
 func (GetConfigsConfigCollectionItemArgs) ElementType() reflect.Type {
@@ -1454,12 +1237,6 @@ func (i GetConfigsConfigCollectionItemArgs) ToGetConfigsConfigCollectionItemOutp
 
 func (i GetConfigsConfigCollectionItemArgs) ToGetConfigsConfigCollectionItemOutputWithContext(ctx context.Context) GetConfigsConfigCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetConfigsConfigCollectionItemOutput)
-}
-
-func (i GetConfigsConfigCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetConfigsConfigCollectionItem] {
-	return pulumix.Output[GetConfigsConfigCollectionItem]{
-		OutputState: i.ToGetConfigsConfigCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetConfigsConfigCollectionItemArrayInput is an input type that accepts GetConfigsConfigCollectionItemArray and GetConfigsConfigCollectionItemArrayOutput values.
@@ -1487,12 +1264,6 @@ func (i GetConfigsConfigCollectionItemArray) ToGetConfigsConfigCollectionItemArr
 	return pulumi.ToOutputWithContext(ctx, i).(GetConfigsConfigCollectionItemArrayOutput)
 }
 
-func (i GetConfigsConfigCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetConfigsConfigCollectionItem] {
-	return pulumix.Output[[]GetConfigsConfigCollectionItem]{
-		OutputState: i.ToGetConfigsConfigCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetConfigsConfigCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetConfigsConfigCollectionItemOutput) ElementType() reflect.Type {
@@ -1507,25 +1278,19 @@ func (o GetConfigsConfigCollectionItemOutput) ToGetConfigsConfigCollectionItemOu
 	return o
 }
 
-func (o GetConfigsConfigCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetConfigsConfigCollectionItem] {
-	return pulumix.Output[GetConfigsConfigCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The APM Domain ID the request is intended for.
-func (o GetConfigsConfigCollectionItemOutput) ApmDomainId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetConfigsConfigCollectionItem) string { return v.ApmDomainId }).(pulumi.StringOutput)
+func (o GetConfigsConfigCollectionItemOutput) ApmDomainId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetConfigsConfigCollectionItem) *string { return v.ApmDomainId }).(pulumi.StringPtrOutput)
 }
 
 // A filter to match configuration items of a given type. Supported values are SPAN_FILTER, METRIC_GROUP, and APDEX.
-func (o GetConfigsConfigCollectionItemOutput) ConfigType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetConfigsConfigCollectionItem) string { return v.ConfigType }).(pulumi.StringOutput)
+func (o GetConfigsConfigCollectionItemOutput) ConfigType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetConfigsConfigCollectionItem) *string { return v.ConfigType }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a user.
-func (o GetConfigsConfigCollectionItemOutput) CreatedBy() pulumi.StringOutput {
-	return o.ApplyT(func(v GetConfigsConfigCollectionItem) string { return v.CreatedBy }).(pulumi.StringOutput)
+func (o GetConfigsConfigCollectionItemOutput) CreatedBy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetConfigsConfigCollectionItem) *string { return v.CreatedBy }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -1534,8 +1299,8 @@ func (o GetConfigsConfigCollectionItemOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // A description of the metric.
-func (o GetConfigsConfigCollectionItemOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetConfigsConfigCollectionItem) string { return v.Description }).(pulumi.StringOutput)
+func (o GetConfigsConfigCollectionItemOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetConfigsConfigCollectionItem) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // A list of dimensions for the metric. This variable should not be used.
@@ -1544,23 +1309,23 @@ func (o GetConfigsConfigCollectionItemOutput) Dimensions() GetConfigsConfigColle
 }
 
 // A filter to return resources that match the given display name.
-func (o GetConfigsConfigCollectionItemOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetConfigsConfigCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetConfigsConfigCollectionItemOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetConfigsConfigCollectionItem) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // For optimistic concurrency control. See `if-match`.
-func (o GetConfigsConfigCollectionItemOutput) Etag() pulumi.StringOutput {
-	return o.ApplyT(func(v GetConfigsConfigCollectionItem) string { return v.Etag }).(pulumi.StringOutput)
+func (o GetConfigsConfigCollectionItemOutput) Etag() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetConfigsConfigCollectionItem) *string { return v.Etag }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Span Filter. The filterId is mandatory for the creation of MetricGroups. A filterId is generated when a Span Filter is created.
-func (o GetConfigsConfigCollectionItemOutput) FilterId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetConfigsConfigCollectionItem) string { return v.FilterId }).(pulumi.StringOutput)
+func (o GetConfigsConfigCollectionItemOutput) FilterId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetConfigsConfigCollectionItem) *string { return v.FilterId }).(pulumi.StringPtrOutput)
 }
 
 // The string that defines the Span Filter expression.
-func (o GetConfigsConfigCollectionItemOutput) FilterText() pulumi.StringOutput {
-	return o.ApplyT(func(v GetConfigsConfigCollectionItem) string { return v.FilterText }).(pulumi.StringOutput)
+func (o GetConfigsConfigCollectionItemOutput) FilterText() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetConfigsConfigCollectionItem) *string { return v.FilterText }).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -1569,13 +1334,13 @@ func (o GetConfigsConfigCollectionItemOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // A string that specifies the group that an OPTIONS item belongs to.
-func (o GetConfigsConfigCollectionItemOutput) Group() pulumi.StringOutput {
-	return o.ApplyT(func(v GetConfigsConfigCollectionItem) string { return v.Group }).(pulumi.StringOutput)
+func (o GetConfigsConfigCollectionItemOutput) Group() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetConfigsConfigCollectionItem) *string { return v.Group }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration item. An OCID is generated when the item is created.
-func (o GetConfigsConfigCollectionItemOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetConfigsConfigCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+func (o GetConfigsConfigCollectionItemOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetConfigsConfigCollectionItem) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The list of configuration items that reference the span filter.
@@ -1589,17 +1354,17 @@ func (o GetConfigsConfigCollectionItemOutput) Metrics() GetConfigsConfigCollecti
 }
 
 // The namespace to which the metrics are published. It must be one of several predefined namespaces.
-func (o GetConfigsConfigCollectionItemOutput) Namespace() pulumi.StringOutput {
-	return o.ApplyT(func(v GetConfigsConfigCollectionItem) string { return v.Namespace }).(pulumi.StringOutput)
+func (o GetConfigsConfigCollectionItemOutput) Namespace() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetConfigsConfigCollectionItem) *string { return v.Namespace }).(pulumi.StringPtrOutput)
 }
 
-func (o GetConfigsConfigCollectionItemOutput) OpcDryRun() pulumi.StringOutput {
-	return o.ApplyT(func(v GetConfigsConfigCollectionItem) string { return v.OpcDryRun }).(pulumi.StringOutput)
+func (o GetConfigsConfigCollectionItemOutput) OpcDryRun() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetConfigsConfigCollectionItem) *string { return v.OpcDryRun }).(pulumi.StringPtrOutput)
 }
 
 // The options are stored here as JSON.
-func (o GetConfigsConfigCollectionItemOutput) Options() pulumi.StringOutput {
-	return o.ApplyT(func(v GetConfigsConfigCollectionItem) string { return v.Options }).(pulumi.StringOutput)
+func (o GetConfigsConfigCollectionItemOutput) Options() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetConfigsConfigCollectionItem) *string { return v.Options }).(pulumi.StringPtrOutput)
 }
 
 func (o GetConfigsConfigCollectionItemOutput) Rules() GetConfigsConfigCollectionItemRuleArrayOutput {
@@ -1607,18 +1372,18 @@ func (o GetConfigsConfigCollectionItemOutput) Rules() GetConfigsConfigCollection
 }
 
 // The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
-func (o GetConfigsConfigCollectionItemOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetConfigsConfigCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetConfigsConfigCollectionItemOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetConfigsConfigCollectionItem) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
-func (o GetConfigsConfigCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetConfigsConfigCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o GetConfigsConfigCollectionItemOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetConfigsConfigCollectionItem) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a user.
-func (o GetConfigsConfigCollectionItemOutput) UpdatedBy() pulumi.StringOutput {
-	return o.ApplyT(func(v GetConfigsConfigCollectionItem) string { return v.UpdatedBy }).(pulumi.StringOutput)
+func (o GetConfigsConfigCollectionItemOutput) UpdatedBy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetConfigsConfigCollectionItem) *string { return v.UpdatedBy }).(pulumi.StringPtrOutput)
 }
 
 type GetConfigsConfigCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -1635,12 +1400,6 @@ func (o GetConfigsConfigCollectionItemArrayOutput) ToGetConfigsConfigCollectionI
 	return o
 }
 
-func (o GetConfigsConfigCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetConfigsConfigCollectionItem] {
-	return pulumix.Output[[]GetConfigsConfigCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetConfigsConfigCollectionItemArrayOutput) Index(i pulumi.IntInput) GetConfigsConfigCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetConfigsConfigCollectionItem {
 		return vs[0].([]GetConfigsConfigCollectionItem)[vs[1].(int)]
@@ -1649,9 +1408,9 @@ func (o GetConfigsConfigCollectionItemArrayOutput) Index(i pulumi.IntInput) GetC
 
 type GetConfigsConfigCollectionItemDimension struct {
 	// The name of the metric. This must be a known metric name.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// This must not be set.
-	ValueSource string `pulumi:"valueSource"`
+	ValueSource *string `pulumi:"valueSource"`
 }
 
 // GetConfigsConfigCollectionItemDimensionInput is an input type that accepts GetConfigsConfigCollectionItemDimensionArgs and GetConfigsConfigCollectionItemDimensionOutput values.
@@ -1667,9 +1426,9 @@ type GetConfigsConfigCollectionItemDimensionInput interface {
 
 type GetConfigsConfigCollectionItemDimensionArgs struct {
 	// The name of the metric. This must be a known metric name.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// This must not be set.
-	ValueSource pulumi.StringInput `pulumi:"valueSource"`
+	ValueSource pulumi.StringPtrInput `pulumi:"valueSource"`
 }
 
 func (GetConfigsConfigCollectionItemDimensionArgs) ElementType() reflect.Type {
@@ -1682,12 +1441,6 @@ func (i GetConfigsConfigCollectionItemDimensionArgs) ToGetConfigsConfigCollectio
 
 func (i GetConfigsConfigCollectionItemDimensionArgs) ToGetConfigsConfigCollectionItemDimensionOutputWithContext(ctx context.Context) GetConfigsConfigCollectionItemDimensionOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetConfigsConfigCollectionItemDimensionOutput)
-}
-
-func (i GetConfigsConfigCollectionItemDimensionArgs) ToOutput(ctx context.Context) pulumix.Output[GetConfigsConfigCollectionItemDimension] {
-	return pulumix.Output[GetConfigsConfigCollectionItemDimension]{
-		OutputState: i.ToGetConfigsConfigCollectionItemDimensionOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetConfigsConfigCollectionItemDimensionArrayInput is an input type that accepts GetConfigsConfigCollectionItemDimensionArray and GetConfigsConfigCollectionItemDimensionArrayOutput values.
@@ -1715,12 +1468,6 @@ func (i GetConfigsConfigCollectionItemDimensionArray) ToGetConfigsConfigCollecti
 	return pulumi.ToOutputWithContext(ctx, i).(GetConfigsConfigCollectionItemDimensionArrayOutput)
 }
 
-func (i GetConfigsConfigCollectionItemDimensionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetConfigsConfigCollectionItemDimension] {
-	return pulumix.Output[[]GetConfigsConfigCollectionItemDimension]{
-		OutputState: i.ToGetConfigsConfigCollectionItemDimensionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetConfigsConfigCollectionItemDimensionOutput struct{ *pulumi.OutputState }
 
 func (GetConfigsConfigCollectionItemDimensionOutput) ElementType() reflect.Type {
@@ -1735,20 +1482,14 @@ func (o GetConfigsConfigCollectionItemDimensionOutput) ToGetConfigsConfigCollect
 	return o
 }
 
-func (o GetConfigsConfigCollectionItemDimensionOutput) ToOutput(ctx context.Context) pulumix.Output[GetConfigsConfigCollectionItemDimension] {
-	return pulumix.Output[GetConfigsConfigCollectionItemDimension]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The name of the metric. This must be a known metric name.
-func (o GetConfigsConfigCollectionItemDimensionOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetConfigsConfigCollectionItemDimension) string { return v.Name }).(pulumi.StringOutput)
+func (o GetConfigsConfigCollectionItemDimensionOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetConfigsConfigCollectionItemDimension) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // This must not be set.
-func (o GetConfigsConfigCollectionItemDimensionOutput) ValueSource() pulumi.StringOutput {
-	return o.ApplyT(func(v GetConfigsConfigCollectionItemDimension) string { return v.ValueSource }).(pulumi.StringOutput)
+func (o GetConfigsConfigCollectionItemDimensionOutput) ValueSource() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetConfigsConfigCollectionItemDimension) *string { return v.ValueSource }).(pulumi.StringPtrOutput)
 }
 
 type GetConfigsConfigCollectionItemDimensionArrayOutput struct{ *pulumi.OutputState }
@@ -1765,12 +1506,6 @@ func (o GetConfigsConfigCollectionItemDimensionArrayOutput) ToGetConfigsConfigCo
 	return o
 }
 
-func (o GetConfigsConfigCollectionItemDimensionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetConfigsConfigCollectionItemDimension] {
-	return pulumix.Output[[]GetConfigsConfigCollectionItemDimension]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetConfigsConfigCollectionItemDimensionArrayOutput) Index(i pulumi.IntInput) GetConfigsConfigCollectionItemDimensionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetConfigsConfigCollectionItemDimension {
 		return vs[0].([]GetConfigsConfigCollectionItemDimension)[vs[1].(int)]
@@ -1779,13 +1514,13 @@ func (o GetConfigsConfigCollectionItemDimensionArrayOutput) Index(i pulumi.IntIn
 
 type GetConfigsConfigCollectionItemInUseBy struct {
 	// A filter to match configuration items of a given type. Supported values are SPAN_FILTER, METRIC_GROUP, and APDEX.
-	ConfigType string `pulumi:"configType"`
+	ConfigType *string `pulumi:"configType"`
 	// A filter to return resources that match the given display name.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration item. An OCID is generated when the item is created.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// A filter to return OPTIONS resources that match the given group.
-	OptionsGroup string `pulumi:"optionsGroup"`
+	OptionsGroup *string `pulumi:"optionsGroup"`
 }
 
 // GetConfigsConfigCollectionItemInUseByInput is an input type that accepts GetConfigsConfigCollectionItemInUseByArgs and GetConfigsConfigCollectionItemInUseByOutput values.
@@ -1801,13 +1536,13 @@ type GetConfigsConfigCollectionItemInUseByInput interface {
 
 type GetConfigsConfigCollectionItemInUseByArgs struct {
 	// A filter to match configuration items of a given type. Supported values are SPAN_FILTER, METRIC_GROUP, and APDEX.
-	ConfigType pulumi.StringInput `pulumi:"configType"`
+	ConfigType pulumi.StringPtrInput `pulumi:"configType"`
 	// A filter to return resources that match the given display name.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration item. An OCID is generated when the item is created.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// A filter to return OPTIONS resources that match the given group.
-	OptionsGroup pulumi.StringInput `pulumi:"optionsGroup"`
+	OptionsGroup pulumi.StringPtrInput `pulumi:"optionsGroup"`
 }
 
 func (GetConfigsConfigCollectionItemInUseByArgs) ElementType() reflect.Type {
@@ -1820,12 +1555,6 @@ func (i GetConfigsConfigCollectionItemInUseByArgs) ToGetConfigsConfigCollectionI
 
 func (i GetConfigsConfigCollectionItemInUseByArgs) ToGetConfigsConfigCollectionItemInUseByOutputWithContext(ctx context.Context) GetConfigsConfigCollectionItemInUseByOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetConfigsConfigCollectionItemInUseByOutput)
-}
-
-func (i GetConfigsConfigCollectionItemInUseByArgs) ToOutput(ctx context.Context) pulumix.Output[GetConfigsConfigCollectionItemInUseBy] {
-	return pulumix.Output[GetConfigsConfigCollectionItemInUseBy]{
-		OutputState: i.ToGetConfigsConfigCollectionItemInUseByOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetConfigsConfigCollectionItemInUseByArrayInput is an input type that accepts GetConfigsConfigCollectionItemInUseByArray and GetConfigsConfigCollectionItemInUseByArrayOutput values.
@@ -1853,12 +1582,6 @@ func (i GetConfigsConfigCollectionItemInUseByArray) ToGetConfigsConfigCollection
 	return pulumi.ToOutputWithContext(ctx, i).(GetConfigsConfigCollectionItemInUseByArrayOutput)
 }
 
-func (i GetConfigsConfigCollectionItemInUseByArray) ToOutput(ctx context.Context) pulumix.Output[[]GetConfigsConfigCollectionItemInUseBy] {
-	return pulumix.Output[[]GetConfigsConfigCollectionItemInUseBy]{
-		OutputState: i.ToGetConfigsConfigCollectionItemInUseByArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetConfigsConfigCollectionItemInUseByOutput struct{ *pulumi.OutputState }
 
 func (GetConfigsConfigCollectionItemInUseByOutput) ElementType() reflect.Type {
@@ -1873,30 +1596,24 @@ func (o GetConfigsConfigCollectionItemInUseByOutput) ToGetConfigsConfigCollectio
 	return o
 }
 
-func (o GetConfigsConfigCollectionItemInUseByOutput) ToOutput(ctx context.Context) pulumix.Output[GetConfigsConfigCollectionItemInUseBy] {
-	return pulumix.Output[GetConfigsConfigCollectionItemInUseBy]{
-		OutputState: o.OutputState,
-	}
-}
-
 // A filter to match configuration items of a given type. Supported values are SPAN_FILTER, METRIC_GROUP, and APDEX.
-func (o GetConfigsConfigCollectionItemInUseByOutput) ConfigType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetConfigsConfigCollectionItemInUseBy) string { return v.ConfigType }).(pulumi.StringOutput)
+func (o GetConfigsConfigCollectionItemInUseByOutput) ConfigType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetConfigsConfigCollectionItemInUseBy) *string { return v.ConfigType }).(pulumi.StringPtrOutput)
 }
 
 // A filter to return resources that match the given display name.
-func (o GetConfigsConfigCollectionItemInUseByOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetConfigsConfigCollectionItemInUseBy) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetConfigsConfigCollectionItemInUseByOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetConfigsConfigCollectionItemInUseBy) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration item. An OCID is generated when the item is created.
-func (o GetConfigsConfigCollectionItemInUseByOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetConfigsConfigCollectionItemInUseBy) string { return v.Id }).(pulumi.StringOutput)
+func (o GetConfigsConfigCollectionItemInUseByOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetConfigsConfigCollectionItemInUseBy) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // A filter to return OPTIONS resources that match the given group.
-func (o GetConfigsConfigCollectionItemInUseByOutput) OptionsGroup() pulumi.StringOutput {
-	return o.ApplyT(func(v GetConfigsConfigCollectionItemInUseBy) string { return v.OptionsGroup }).(pulumi.StringOutput)
+func (o GetConfigsConfigCollectionItemInUseByOutput) OptionsGroup() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetConfigsConfigCollectionItemInUseBy) *string { return v.OptionsGroup }).(pulumi.StringPtrOutput)
 }
 
 type GetConfigsConfigCollectionItemInUseByArrayOutput struct{ *pulumi.OutputState }
@@ -1913,12 +1630,6 @@ func (o GetConfigsConfigCollectionItemInUseByArrayOutput) ToGetConfigsConfigColl
 	return o
 }
 
-func (o GetConfigsConfigCollectionItemInUseByArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetConfigsConfigCollectionItemInUseBy] {
-	return pulumix.Output[[]GetConfigsConfigCollectionItemInUseBy]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetConfigsConfigCollectionItemInUseByArrayOutput) Index(i pulumi.IntInput) GetConfigsConfigCollectionItemInUseByOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetConfigsConfigCollectionItemInUseBy {
 		return vs[0].([]GetConfigsConfigCollectionItemInUseBy)[vs[1].(int)]
@@ -1927,13 +1638,13 @@ func (o GetConfigsConfigCollectionItemInUseByArrayOutput) Index(i pulumi.IntInpu
 
 type GetConfigsConfigCollectionItemMetric struct {
 	// A description of the metric.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// The name of the metric. This must be a known metric name.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// The unit of the metric.
-	Unit string `pulumi:"unit"`
+	Unit *string `pulumi:"unit"`
 	// This must not be set.
-	ValueSource string `pulumi:"valueSource"`
+	ValueSource *string `pulumi:"valueSource"`
 }
 
 // GetConfigsConfigCollectionItemMetricInput is an input type that accepts GetConfigsConfigCollectionItemMetricArgs and GetConfigsConfigCollectionItemMetricOutput values.
@@ -1949,13 +1660,13 @@ type GetConfigsConfigCollectionItemMetricInput interface {
 
 type GetConfigsConfigCollectionItemMetricArgs struct {
 	// A description of the metric.
-	Description pulumi.StringInput `pulumi:"description"`
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// The name of the metric. This must be a known metric name.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// The unit of the metric.
-	Unit pulumi.StringInput `pulumi:"unit"`
+	Unit pulumi.StringPtrInput `pulumi:"unit"`
 	// This must not be set.
-	ValueSource pulumi.StringInput `pulumi:"valueSource"`
+	ValueSource pulumi.StringPtrInput `pulumi:"valueSource"`
 }
 
 func (GetConfigsConfigCollectionItemMetricArgs) ElementType() reflect.Type {
@@ -1968,12 +1679,6 @@ func (i GetConfigsConfigCollectionItemMetricArgs) ToGetConfigsConfigCollectionIt
 
 func (i GetConfigsConfigCollectionItemMetricArgs) ToGetConfigsConfigCollectionItemMetricOutputWithContext(ctx context.Context) GetConfigsConfigCollectionItemMetricOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetConfigsConfigCollectionItemMetricOutput)
-}
-
-func (i GetConfigsConfigCollectionItemMetricArgs) ToOutput(ctx context.Context) pulumix.Output[GetConfigsConfigCollectionItemMetric] {
-	return pulumix.Output[GetConfigsConfigCollectionItemMetric]{
-		OutputState: i.ToGetConfigsConfigCollectionItemMetricOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetConfigsConfigCollectionItemMetricArrayInput is an input type that accepts GetConfigsConfigCollectionItemMetricArray and GetConfigsConfigCollectionItemMetricArrayOutput values.
@@ -2001,12 +1706,6 @@ func (i GetConfigsConfigCollectionItemMetricArray) ToGetConfigsConfigCollectionI
 	return pulumi.ToOutputWithContext(ctx, i).(GetConfigsConfigCollectionItemMetricArrayOutput)
 }
 
-func (i GetConfigsConfigCollectionItemMetricArray) ToOutput(ctx context.Context) pulumix.Output[[]GetConfigsConfigCollectionItemMetric] {
-	return pulumix.Output[[]GetConfigsConfigCollectionItemMetric]{
-		OutputState: i.ToGetConfigsConfigCollectionItemMetricArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetConfigsConfigCollectionItemMetricOutput struct{ *pulumi.OutputState }
 
 func (GetConfigsConfigCollectionItemMetricOutput) ElementType() reflect.Type {
@@ -2021,30 +1720,24 @@ func (o GetConfigsConfigCollectionItemMetricOutput) ToGetConfigsConfigCollection
 	return o
 }
 
-func (o GetConfigsConfigCollectionItemMetricOutput) ToOutput(ctx context.Context) pulumix.Output[GetConfigsConfigCollectionItemMetric] {
-	return pulumix.Output[GetConfigsConfigCollectionItemMetric]{
-		OutputState: o.OutputState,
-	}
-}
-
 // A description of the metric.
-func (o GetConfigsConfigCollectionItemMetricOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetConfigsConfigCollectionItemMetric) string { return v.Description }).(pulumi.StringOutput)
+func (o GetConfigsConfigCollectionItemMetricOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetConfigsConfigCollectionItemMetric) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // The name of the metric. This must be a known metric name.
-func (o GetConfigsConfigCollectionItemMetricOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetConfigsConfigCollectionItemMetric) string { return v.Name }).(pulumi.StringOutput)
+func (o GetConfigsConfigCollectionItemMetricOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetConfigsConfigCollectionItemMetric) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // The unit of the metric.
-func (o GetConfigsConfigCollectionItemMetricOutput) Unit() pulumi.StringOutput {
-	return o.ApplyT(func(v GetConfigsConfigCollectionItemMetric) string { return v.Unit }).(pulumi.StringOutput)
+func (o GetConfigsConfigCollectionItemMetricOutput) Unit() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetConfigsConfigCollectionItemMetric) *string { return v.Unit }).(pulumi.StringPtrOutput)
 }
 
 // This must not be set.
-func (o GetConfigsConfigCollectionItemMetricOutput) ValueSource() pulumi.StringOutput {
-	return o.ApplyT(func(v GetConfigsConfigCollectionItemMetric) string { return v.ValueSource }).(pulumi.StringOutput)
+func (o GetConfigsConfigCollectionItemMetricOutput) ValueSource() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetConfigsConfigCollectionItemMetric) *string { return v.ValueSource }).(pulumi.StringPtrOutput)
 }
 
 type GetConfigsConfigCollectionItemMetricArrayOutput struct{ *pulumi.OutputState }
@@ -2061,12 +1754,6 @@ func (o GetConfigsConfigCollectionItemMetricArrayOutput) ToGetConfigsConfigColle
 	return o
 }
 
-func (o GetConfigsConfigCollectionItemMetricArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetConfigsConfigCollectionItemMetric] {
-	return pulumix.Output[[]GetConfigsConfigCollectionItemMetric]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetConfigsConfigCollectionItemMetricArrayOutput) Index(i pulumi.IntInput) GetConfigsConfigCollectionItemMetricOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetConfigsConfigCollectionItemMetric {
 		return vs[0].([]GetConfigsConfigCollectionItemMetric)[vs[1].(int)]
@@ -2075,19 +1762,19 @@ func (o GetConfigsConfigCollectionItemMetricArrayOutput) Index(i pulumi.IntInput
 
 type GetConfigsConfigCollectionItemRule struct {
 	// A filter to return resources that match the given display name.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// The string that defines the Span Filter expression.
-	FilterText string `pulumi:"filterText"`
+	FilterText *string `pulumi:"filterText"`
 	// Specifies whether an Apdex score should be computed for error spans. Setting it to "true" means that the Apdex score is computed in the usual way. Setting it to "false" skips the Apdex computation and sets the Apdex score to "frustrating" regardless of the configured thresholds. The default is "false".
-	IsApplyToErrorSpans bool `pulumi:"isApplyToErrorSpans"`
+	IsApplyToErrorSpans *bool `pulumi:"isApplyToErrorSpans"`
 	// Specifies whether the Apdex score should be computed for spans matching the rule. This can be used to disable Apdex score for spans that do not need or require it. The default is "true".
-	IsEnabled bool `pulumi:"isEnabled"`
+	IsEnabled *bool `pulumi:"isEnabled"`
 	// The priority controls the order in which multiple rules in a rule set are applied. Lower values indicate higher priorities. Rules with higher priority are applied first, and once a match is found, the rest of the rules are ignored. Rules within the same rule set cannot have the same priority.
-	Priority int `pulumi:"priority"`
+	Priority *int `pulumi:"priority"`
 	// The maximum response time in milliseconds that is considered "satisfactory" for the end user.
-	SatisfiedResponseTime int `pulumi:"satisfiedResponseTime"`
+	SatisfiedResponseTime *int `pulumi:"satisfiedResponseTime"`
 	// The maximum response time in milliseconds that is considered "tolerable" for the end user. A response time beyond this threshold is considered "frustrating". This value cannot be lower than "satisfiedResponseTime".
-	ToleratingResponseTime int `pulumi:"toleratingResponseTime"`
+	ToleratingResponseTime *int `pulumi:"toleratingResponseTime"`
 }
 
 // GetConfigsConfigCollectionItemRuleInput is an input type that accepts GetConfigsConfigCollectionItemRuleArgs and GetConfigsConfigCollectionItemRuleOutput values.
@@ -2103,19 +1790,19 @@ type GetConfigsConfigCollectionItemRuleInput interface {
 
 type GetConfigsConfigCollectionItemRuleArgs struct {
 	// A filter to return resources that match the given display name.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// The string that defines the Span Filter expression.
-	FilterText pulumi.StringInput `pulumi:"filterText"`
+	FilterText pulumi.StringPtrInput `pulumi:"filterText"`
 	// Specifies whether an Apdex score should be computed for error spans. Setting it to "true" means that the Apdex score is computed in the usual way. Setting it to "false" skips the Apdex computation and sets the Apdex score to "frustrating" regardless of the configured thresholds. The default is "false".
-	IsApplyToErrorSpans pulumi.BoolInput `pulumi:"isApplyToErrorSpans"`
+	IsApplyToErrorSpans pulumi.BoolPtrInput `pulumi:"isApplyToErrorSpans"`
 	// Specifies whether the Apdex score should be computed for spans matching the rule. This can be used to disable Apdex score for spans that do not need or require it. The default is "true".
-	IsEnabled pulumi.BoolInput `pulumi:"isEnabled"`
+	IsEnabled pulumi.BoolPtrInput `pulumi:"isEnabled"`
 	// The priority controls the order in which multiple rules in a rule set are applied. Lower values indicate higher priorities. Rules with higher priority are applied first, and once a match is found, the rest of the rules are ignored. Rules within the same rule set cannot have the same priority.
-	Priority pulumi.IntInput `pulumi:"priority"`
+	Priority pulumi.IntPtrInput `pulumi:"priority"`
 	// The maximum response time in milliseconds that is considered "satisfactory" for the end user.
-	SatisfiedResponseTime pulumi.IntInput `pulumi:"satisfiedResponseTime"`
+	SatisfiedResponseTime pulumi.IntPtrInput `pulumi:"satisfiedResponseTime"`
 	// The maximum response time in milliseconds that is considered "tolerable" for the end user. A response time beyond this threshold is considered "frustrating". This value cannot be lower than "satisfiedResponseTime".
-	ToleratingResponseTime pulumi.IntInput `pulumi:"toleratingResponseTime"`
+	ToleratingResponseTime pulumi.IntPtrInput `pulumi:"toleratingResponseTime"`
 }
 
 func (GetConfigsConfigCollectionItemRuleArgs) ElementType() reflect.Type {
@@ -2128,12 +1815,6 @@ func (i GetConfigsConfigCollectionItemRuleArgs) ToGetConfigsConfigCollectionItem
 
 func (i GetConfigsConfigCollectionItemRuleArgs) ToGetConfigsConfigCollectionItemRuleOutputWithContext(ctx context.Context) GetConfigsConfigCollectionItemRuleOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetConfigsConfigCollectionItemRuleOutput)
-}
-
-func (i GetConfigsConfigCollectionItemRuleArgs) ToOutput(ctx context.Context) pulumix.Output[GetConfigsConfigCollectionItemRule] {
-	return pulumix.Output[GetConfigsConfigCollectionItemRule]{
-		OutputState: i.ToGetConfigsConfigCollectionItemRuleOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetConfigsConfigCollectionItemRuleArrayInput is an input type that accepts GetConfigsConfigCollectionItemRuleArray and GetConfigsConfigCollectionItemRuleArrayOutput values.
@@ -2161,12 +1842,6 @@ func (i GetConfigsConfigCollectionItemRuleArray) ToGetConfigsConfigCollectionIte
 	return pulumi.ToOutputWithContext(ctx, i).(GetConfigsConfigCollectionItemRuleArrayOutput)
 }
 
-func (i GetConfigsConfigCollectionItemRuleArray) ToOutput(ctx context.Context) pulumix.Output[[]GetConfigsConfigCollectionItemRule] {
-	return pulumix.Output[[]GetConfigsConfigCollectionItemRule]{
-		OutputState: i.ToGetConfigsConfigCollectionItemRuleArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetConfigsConfigCollectionItemRuleOutput struct{ *pulumi.OutputState }
 
 func (GetConfigsConfigCollectionItemRuleOutput) ElementType() reflect.Type {
@@ -2181,45 +1856,39 @@ func (o GetConfigsConfigCollectionItemRuleOutput) ToGetConfigsConfigCollectionIt
 	return o
 }
 
-func (o GetConfigsConfigCollectionItemRuleOutput) ToOutput(ctx context.Context) pulumix.Output[GetConfigsConfigCollectionItemRule] {
-	return pulumix.Output[GetConfigsConfigCollectionItemRule]{
-		OutputState: o.OutputState,
-	}
-}
-
 // A filter to return resources that match the given display name.
-func (o GetConfigsConfigCollectionItemRuleOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetConfigsConfigCollectionItemRule) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetConfigsConfigCollectionItemRuleOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetConfigsConfigCollectionItemRule) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // The string that defines the Span Filter expression.
-func (o GetConfigsConfigCollectionItemRuleOutput) FilterText() pulumi.StringOutput {
-	return o.ApplyT(func(v GetConfigsConfigCollectionItemRule) string { return v.FilterText }).(pulumi.StringOutput)
+func (o GetConfigsConfigCollectionItemRuleOutput) FilterText() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetConfigsConfigCollectionItemRule) *string { return v.FilterText }).(pulumi.StringPtrOutput)
 }
 
 // Specifies whether an Apdex score should be computed for error spans. Setting it to "true" means that the Apdex score is computed in the usual way. Setting it to "false" skips the Apdex computation and sets the Apdex score to "frustrating" regardless of the configured thresholds. The default is "false".
-func (o GetConfigsConfigCollectionItemRuleOutput) IsApplyToErrorSpans() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetConfigsConfigCollectionItemRule) bool { return v.IsApplyToErrorSpans }).(pulumi.BoolOutput)
+func (o GetConfigsConfigCollectionItemRuleOutput) IsApplyToErrorSpans() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetConfigsConfigCollectionItemRule) *bool { return v.IsApplyToErrorSpans }).(pulumi.BoolPtrOutput)
 }
 
 // Specifies whether the Apdex score should be computed for spans matching the rule. This can be used to disable Apdex score for spans that do not need or require it. The default is "true".
-func (o GetConfigsConfigCollectionItemRuleOutput) IsEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetConfigsConfigCollectionItemRule) bool { return v.IsEnabled }).(pulumi.BoolOutput)
+func (o GetConfigsConfigCollectionItemRuleOutput) IsEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetConfigsConfigCollectionItemRule) *bool { return v.IsEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // The priority controls the order in which multiple rules in a rule set are applied. Lower values indicate higher priorities. Rules with higher priority are applied first, and once a match is found, the rest of the rules are ignored. Rules within the same rule set cannot have the same priority.
-func (o GetConfigsConfigCollectionItemRuleOutput) Priority() pulumi.IntOutput {
-	return o.ApplyT(func(v GetConfigsConfigCollectionItemRule) int { return v.Priority }).(pulumi.IntOutput)
+func (o GetConfigsConfigCollectionItemRuleOutput) Priority() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetConfigsConfigCollectionItemRule) *int { return v.Priority }).(pulumi.IntPtrOutput)
 }
 
 // The maximum response time in milliseconds that is considered "satisfactory" for the end user.
-func (o GetConfigsConfigCollectionItemRuleOutput) SatisfiedResponseTime() pulumi.IntOutput {
-	return o.ApplyT(func(v GetConfigsConfigCollectionItemRule) int { return v.SatisfiedResponseTime }).(pulumi.IntOutput)
+func (o GetConfigsConfigCollectionItemRuleOutput) SatisfiedResponseTime() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetConfigsConfigCollectionItemRule) *int { return v.SatisfiedResponseTime }).(pulumi.IntPtrOutput)
 }
 
 // The maximum response time in milliseconds that is considered "tolerable" for the end user. A response time beyond this threshold is considered "frustrating". This value cannot be lower than "satisfiedResponseTime".
-func (o GetConfigsConfigCollectionItemRuleOutput) ToleratingResponseTime() pulumi.IntOutput {
-	return o.ApplyT(func(v GetConfigsConfigCollectionItemRule) int { return v.ToleratingResponseTime }).(pulumi.IntOutput)
+func (o GetConfigsConfigCollectionItemRuleOutput) ToleratingResponseTime() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetConfigsConfigCollectionItemRule) *int { return v.ToleratingResponseTime }).(pulumi.IntPtrOutput)
 }
 
 type GetConfigsConfigCollectionItemRuleArrayOutput struct{ *pulumi.OutputState }
@@ -2234,12 +1903,6 @@ func (o GetConfigsConfigCollectionItemRuleArrayOutput) ToGetConfigsConfigCollect
 
 func (o GetConfigsConfigCollectionItemRuleArrayOutput) ToGetConfigsConfigCollectionItemRuleArrayOutputWithContext(ctx context.Context) GetConfigsConfigCollectionItemRuleArrayOutput {
 	return o
-}
-
-func (o GetConfigsConfigCollectionItemRuleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetConfigsConfigCollectionItemRule] {
-	return pulumix.Output[[]GetConfigsConfigCollectionItemRule]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetConfigsConfigCollectionItemRuleArrayOutput) Index(i pulumi.IntInput) GetConfigsConfigCollectionItemRuleOutput {
@@ -2285,12 +1948,6 @@ func (i GetConfigsFilterArgs) ToGetConfigsFilterOutputWithContext(ctx context.Co
 	return pulumi.ToOutputWithContext(ctx, i).(GetConfigsFilterOutput)
 }
 
-func (i GetConfigsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetConfigsFilter] {
-	return pulumix.Output[GetConfigsFilter]{
-		OutputState: i.ToGetConfigsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetConfigsFilterArrayInput is an input type that accepts GetConfigsFilterArray and GetConfigsFilterArrayOutput values.
 // You can construct a concrete instance of `GetConfigsFilterArrayInput` via:
 //
@@ -2316,12 +1973,6 @@ func (i GetConfigsFilterArray) ToGetConfigsFilterArrayOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(GetConfigsFilterArrayOutput)
 }
 
-func (i GetConfigsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetConfigsFilter] {
-	return pulumix.Output[[]GetConfigsFilter]{
-		OutputState: i.ToGetConfigsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetConfigsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetConfigsFilterOutput) ElementType() reflect.Type {
@@ -2334,12 +1985,6 @@ func (o GetConfigsFilterOutput) ToGetConfigsFilterOutput() GetConfigsFilterOutpu
 
 func (o GetConfigsFilterOutput) ToGetConfigsFilterOutputWithContext(ctx context.Context) GetConfigsFilterOutput {
 	return o
-}
-
-func (o GetConfigsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetConfigsFilter] {
-	return pulumix.Output[GetConfigsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The name of the metric. This must be a known metric name.
@@ -2367,12 +2012,6 @@ func (o GetConfigsFilterArrayOutput) ToGetConfigsFilterArrayOutput() GetConfigsF
 
 func (o GetConfigsFilterArrayOutput) ToGetConfigsFilterArrayOutputWithContext(ctx context.Context) GetConfigsFilterArrayOutput {
 	return o
-}
-
-func (o GetConfigsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetConfigsFilter] {
-	return pulumix.Output[[]GetConfigsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetConfigsFilterArrayOutput) Index(i pulumi.IntInput) GetConfigsFilterOutput {

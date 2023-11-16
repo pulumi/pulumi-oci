@@ -48,11 +48,11 @@ export class AuditTrail extends pulumi.CustomResource {
     /**
      * The date from which the audit trail must start collecting data, in the format defined by RFC3339.
      */
-    public /*out*/ readonly auditCollectionStartTime!: pulumi.Output<string>;
+    public /*out*/ readonly auditCollectionStartTime!: pulumi.Output<string | undefined>;
     /**
      * The OCID of the  parent audit.
      */
-    public /*out*/ readonly auditProfileId!: pulumi.Output<string>;
+    public /*out*/ readonly auditProfileId!: pulumi.Output<string | undefined>;
     /**
      * The OCID of the audit trail.
      */
@@ -60,31 +60,31 @@ export class AuditTrail extends pulumi.CustomResource {
     /**
      * The OCID of the compartment that contains the audit trail and is the same as the compartment of the audit profile resource.
      */
-    public /*out*/ readonly compartmentId!: pulumi.Output<string>;
+    public /*out*/ readonly compartmentId!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) The description of the audit trail.
      */
-    public readonly description!: pulumi.Output<string>;
+    public readonly description!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The display name of the audit trail. The name does not have to be unique, and it's changeable.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    public readonly displayName!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) Indicates if auto purge is enabled on the target database, which helps delete audit data in the target database every seven days so that the database's audit trail does not become too large.
      */
-    public readonly isAutoPurgeEnabled!: pulumi.Output<boolean>;
+    public readonly isAutoPurgeEnabled!: pulumi.Output<boolean | undefined>;
     /**
      * Details about the current state of the audit trail in Data Safe.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) An optional property when incremented triggers Resume. Could be set to any integer value.
      *
@@ -96,39 +96,39 @@ export class AuditTrail extends pulumi.CustomResource {
     /**
      * (Updatable) The target state for the Audit Trail. Could be set to `ACTIVE` or `INACTIVE`.
      */
-    public readonly state!: pulumi.Output<string>;
+    public readonly state!: pulumi.Output<string | undefined>;
     /**
      * The current sub-state of the audit trail.
      */
-    public /*out*/ readonly status!: pulumi.Output<string>;
+    public /*out*/ readonly status!: pulumi.Output<string | undefined>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any}>;
+    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * The OCID of the Data Safe target for which the audit trail is created.
      */
-    public /*out*/ readonly targetId!: pulumi.Output<string>;
+    public /*out*/ readonly targetId!: pulumi.Output<string | undefined>;
     /**
      * The date and time the audit trail was created, in the format defined by RFC3339.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * The date and time until when the audit events were collected from the target database by the Data Safe audit trail  collection process, in the format defined by RFC3339.
      */
-    public /*out*/ readonly timeLastCollected!: pulumi.Output<string>;
+    public /*out*/ readonly timeLastCollected!: pulumi.Output<string | undefined>;
     /**
      * The date and time the audit trail was updated, in the format defined by RFC3339.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    public /*out*/ readonly timeUpdated!: pulumi.Output<string | undefined>;
     /**
      * An audit trail location represents the source of audit records that provides documentary evidence of the sequence of activities in the target database.
      */
-    public /*out*/ readonly trailLocation!: pulumi.Output<string>;
+    public /*out*/ readonly trailLocation!: pulumi.Output<string | undefined>;
     /**
      * The OCID of the workrequest for audit trail which collects audit records.
      */
-    public /*out*/ readonly workRequestId!: pulumi.Output<string>;
+    public /*out*/ readonly workRequestId!: pulumi.Output<string | undefined>;
 
     /**
      * Create a AuditTrail resource with the given unique name, arguments, and options.

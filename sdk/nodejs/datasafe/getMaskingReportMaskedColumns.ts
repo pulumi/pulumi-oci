@@ -90,11 +90,11 @@ export interface GetMaskingReportMaskedColumnsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The list of masked_column_collection.
      */
-    readonly maskedColumnCollections: outputs.DataSafe.GetMaskingReportMaskedColumnsMaskedColumnCollection[];
+    readonly maskedColumnCollections?: outputs.DataSafe.GetMaskingReportMaskedColumnsMaskedColumnCollection[];
     /**
      * The masking group of the masked column.
      */

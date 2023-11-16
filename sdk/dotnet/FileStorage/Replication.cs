@@ -85,7 +85,7 @@ namespace Pulumi.Oci.FileStorage
         /// The availability domain the replication is in. The replication must be in the same availability domain as the source file system. Example: `Uocm:PHX-AD-1`
         /// </summary>
         [Output("availabilityDomain")]
-        public Output<string> AvailabilityDomain { get; private set; } = null!;
+        public Output<string?> AvailabilityDomain { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the replication.
@@ -97,61 +97,61 @@ namespace Pulumi.Oci.FileStorage
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// Percentage progress of the current replication cycle.
         /// </summary>
         [Output("deltaProgress")]
-        public Output<string> DeltaProgress { get; private set; } = null!;
+        public Output<string?> DeltaProgress { get; private set; } = null!;
 
         /// <summary>
         /// The current state of the snapshot during replication operations.
         /// </summary>
         [Output("deltaStatus")]
-        public Output<string> DeltaStatus { get; private set; } = null!;
+        public Output<string?> DeltaStatus { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information. An associated replication target will also created with the same `displayName`. Example: `My replication`
         /// </summary>
         [Output("displayName")]
-        public Output<string> DisplayName { get; private set; } = null!;
+        public Output<string?> DisplayName { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last snapshot that has been replicated completely. Empty if the copy of the initial snapshot is not complete.
         /// </summary>
         [Output("lastSnapshotId")]
-        public Output<string> LastSnapshotId { get; private set; } = null!;
+        public Output<string?> LastSnapshotId { get; private set; } = null!;
 
         /// <summary>
         /// Additional information about the current 'lifecycleState'.
         /// </summary>
         [Output("lifecycleDetails")]
-        public Output<string> LifecycleDetails { get; private set; } = null!;
+        public Output<string?> LifecycleDetails { get; private set; } = null!;
 
         /// <summary>
         /// The [`snapshotTime`](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Snapshot/snapshotTime) of the most recent recoverable replication snapshot in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. Example: `2021-04-04T20:01:29.100Z`
         /// </summary>
         [Output("recoveryPointTime")]
-        public Output<string> RecoveryPointTime { get; private set; } = null!;
+        public Output<string?> RecoveryPointTime { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Duration in minutes between replication snapshots.
         /// </summary>
         [Output("replicationInterval")]
-        public Output<string> ReplicationInterval { get; private set; } = null!;
+        public Output<string?> ReplicationInterval { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [`ReplicationTarget`](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/ReplicationTarget).
         /// </summary>
         [Output("replicationTargetId")]
-        public Output<string> ReplicationTargetId { get; private set; } = null!;
+        public Output<string?> ReplicationTargetId { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source file system.
@@ -163,7 +163,7 @@ namespace Pulumi.Oci.FileStorage
         /// The current state of this replication. This resource can be in a `FAILED` state if replication target is deleted instead of the replication resource.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target file system. 
@@ -179,7 +179,7 @@ namespace Pulumi.Oci.FileStorage
         /// The date and time the replication was created in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2021-01-04T20:01:29.100Z`
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
 
         /// <summary>

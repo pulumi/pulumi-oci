@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.DataIntegration.outputs.GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataCountStatisticObjectTypeCountList;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataCountStatistic {
@@ -14,7 +15,7 @@ public final class GetWorkspaceApplicationsApplicationSummaryCollectionItemMetad
      * @return The array of statistics.
      * 
      */
-    private List<GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataCountStatisticObjectTypeCountList> objectTypeCountLists;
+    private @Nullable List<GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataCountStatisticObjectTypeCountList> objectTypeCountLists;
 
     private GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataCountStatistic() {}
     /**
@@ -22,7 +23,7 @@ public final class GetWorkspaceApplicationsApplicationSummaryCollectionItemMetad
      * 
      */
     public List<GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataCountStatisticObjectTypeCountList> objectTypeCountLists() {
-        return this.objectTypeCountLists;
+        return this.objectTypeCountLists == null ? List.of() : this.objectTypeCountLists;
     }
 
     public static Builder builder() {
@@ -34,7 +35,7 @@ public final class GetWorkspaceApplicationsApplicationSummaryCollectionItemMetad
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataCountStatisticObjectTypeCountList> objectTypeCountLists;
+        private @Nullable List<GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataCountStatisticObjectTypeCountList> objectTypeCountLists;
         public Builder() {}
         public Builder(GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataCountStatistic defaults) {
     	      Objects.requireNonNull(defaults);
@@ -42,8 +43,8 @@ public final class GetWorkspaceApplicationsApplicationSummaryCollectionItemMetad
         }
 
         @CustomType.Setter
-        public Builder objectTypeCountLists(List<GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataCountStatisticObjectTypeCountList> objectTypeCountLists) {
-            this.objectTypeCountLists = Objects.requireNonNull(objectTypeCountLists);
+        public Builder objectTypeCountLists(@Nullable List<GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataCountStatisticObjectTypeCountList> objectTypeCountLists) {
+            this.objectTypeCountLists = objectTypeCountLists;
             return this;
         }
         public Builder objectTypeCountLists(GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataCountStatisticObjectTypeCountList... objectTypeCountLists) {

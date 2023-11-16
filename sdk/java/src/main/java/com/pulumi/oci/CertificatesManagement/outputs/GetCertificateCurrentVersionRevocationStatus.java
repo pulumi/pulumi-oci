@@ -6,6 +6,8 @@ package com.pulumi.oci.CertificatesManagement.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetCertificateCurrentVersionRevocationStatus {
@@ -13,27 +15,27 @@ public final class GetCertificateCurrentVersionRevocationStatus {
      * @return The reason the certificate or certificate authority (CA) was revoked.
      * 
      */
-    private String revocationReason;
+    private @Nullable String revocationReason;
     /**
      * @return The time when the entity was revoked, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
      * 
      */
-    private String timeOfRevocation;
+    private @Nullable String timeOfRevocation;
 
     private GetCertificateCurrentVersionRevocationStatus() {}
     /**
      * @return The reason the certificate or certificate authority (CA) was revoked.
      * 
      */
-    public String revocationReason() {
-        return this.revocationReason;
+    public Optional<String> revocationReason() {
+        return Optional.ofNullable(this.revocationReason);
     }
     /**
      * @return The time when the entity was revoked, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
      * 
      */
-    public String timeOfRevocation() {
-        return this.timeOfRevocation;
+    public Optional<String> timeOfRevocation() {
+        return Optional.ofNullable(this.timeOfRevocation);
     }
 
     public static Builder builder() {
@@ -45,8 +47,8 @@ public final class GetCertificateCurrentVersionRevocationStatus {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String revocationReason;
-        private String timeOfRevocation;
+        private @Nullable String revocationReason;
+        private @Nullable String timeOfRevocation;
         public Builder() {}
         public Builder(GetCertificateCurrentVersionRevocationStatus defaults) {
     	      Objects.requireNonNull(defaults);
@@ -55,13 +57,13 @@ public final class GetCertificateCurrentVersionRevocationStatus {
         }
 
         @CustomType.Setter
-        public Builder revocationReason(String revocationReason) {
-            this.revocationReason = Objects.requireNonNull(revocationReason);
+        public Builder revocationReason(@Nullable String revocationReason) {
+            this.revocationReason = revocationReason;
             return this;
         }
         @CustomType.Setter
-        public Builder timeOfRevocation(String timeOfRevocation) {
-            this.timeOfRevocation = Objects.requireNonNull(timeOfRevocation);
+        public Builder timeOfRevocation(@Nullable String timeOfRevocation) {
+            this.timeOfRevocation = timeOfRevocation;
             return this;
         }
         public GetCertificateCurrentVersionRevocationStatus build() {

@@ -17,14 +17,14 @@ public final class GetClusterKubeConfigResult {
      * @return content of the Kubeconfig YAML for the cluster.
      * 
      */
-    private String content;
+    private @Nullable String content;
     private @Nullable String endpoint;
     private @Nullable Integer expiration;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private @Nullable String tokenVersion;
 
     private GetClusterKubeConfigResult() {}
@@ -35,8 +35,8 @@ public final class GetClusterKubeConfigResult {
      * @return content of the Kubeconfig YAML for the cluster.
      * 
      */
-    public String content() {
-        return this.content;
+    public Optional<String> content() {
+        return Optional.ofNullable(this.content);
     }
     public Optional<String> endpoint() {
         return Optional.ofNullable(this.endpoint);
@@ -48,8 +48,8 @@ public final class GetClusterKubeConfigResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public Optional<String> tokenVersion() {
         return Optional.ofNullable(this.tokenVersion);
@@ -65,10 +65,10 @@ public final class GetClusterKubeConfigResult {
     @CustomType.Builder
     public static final class Builder {
         private String clusterId;
-        private String content;
+        private @Nullable String content;
         private @Nullable String endpoint;
         private @Nullable Integer expiration;
-        private String id;
+        private @Nullable String id;
         private @Nullable String tokenVersion;
         public Builder() {}
         public Builder(GetClusterKubeConfigResult defaults) {
@@ -87,8 +87,8 @@ public final class GetClusterKubeConfigResult {
             return this;
         }
         @CustomType.Setter
-        public Builder content(String content) {
-            this.content = Objects.requireNonNull(content);
+        public Builder content(@Nullable String content) {
+            this.content = content;
             return this;
         }
         @CustomType.Setter
@@ -102,8 +102,8 @@ public final class GetClusterKubeConfigResult {
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

@@ -16,29 +16,29 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// Display-name of the AppRole.
         /// </summary>
-        public readonly string Display;
+        public readonly string? Display;
         /// <summary>
         /// URI of the AppRole.
         /// </summary>
-        public readonly string Ref;
+        public readonly string? Ref;
         /// <summary>
         /// ID of the AppRole.
         /// </summary>
-        public readonly string Value;
+        public readonly string? Value;
         /// <summary>
         /// Unique well-known identifier used to reference connector bundle.
         /// </summary>
-        public readonly string WellKnownId;
+        public readonly string? WellKnownId;
 
         [OutputConstructor]
         private GetDomainsAppsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppFlatFileConnectorBundleResult(
-            string display,
+            string? display,
 
-            string @ref,
+            string? @ref,
 
-            string value,
+            string? value,
 
-            string wellKnownId)
+            string? wellKnownId)
         {
             Display = display;
             Ref = @ref;

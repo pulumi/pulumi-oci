@@ -19,13 +19,13 @@ public final class GetInstanceDevicesResult {
      * @return The list of devices.
      * 
      */
-    private List<GetInstanceDevicesDevice> devices;
+    private @Nullable List<GetInstanceDevicesDevice> devices;
     private @Nullable List<GetInstanceDevicesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private String instanceId;
     /**
      * @return The flag denoting whether device is available.
@@ -44,7 +44,7 @@ public final class GetInstanceDevicesResult {
      * 
      */
     public List<GetInstanceDevicesDevice> devices() {
-        return this.devices;
+        return this.devices == null ? List.of() : this.devices;
     }
     public List<GetInstanceDevicesFilter> filters() {
         return this.filters == null ? List.of() : this.filters;
@@ -53,8 +53,8 @@ public final class GetInstanceDevicesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public String instanceId() {
         return this.instanceId;
@@ -83,9 +83,9 @@ public final class GetInstanceDevicesResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetInstanceDevicesDevice> devices;
+        private @Nullable List<GetInstanceDevicesDevice> devices;
         private @Nullable List<GetInstanceDevicesFilter> filters;
-        private String id;
+        private @Nullable String id;
         private String instanceId;
         private @Nullable Boolean isAvailable;
         private @Nullable String name;
@@ -101,8 +101,8 @@ public final class GetInstanceDevicesResult {
         }
 
         @CustomType.Setter
-        public Builder devices(List<GetInstanceDevicesDevice> devices) {
-            this.devices = Objects.requireNonNull(devices);
+        public Builder devices(@Nullable List<GetInstanceDevicesDevice> devices) {
+            this.devices = devices;
             return this;
         }
         public Builder devices(GetInstanceDevicesDevice... devices) {
@@ -117,8 +117,8 @@ public final class GetInstanceDevicesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

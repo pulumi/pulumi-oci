@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Audit Profile Collected Audit Volumes in Oracle Cloud Infrastructure Data Safe service.
@@ -79,7 +78,7 @@ type GetAuditProfileCollectedAuditVolumesResult struct {
 	CollectedAuditVolumeCollections []GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollection `pulumi:"collectedAuditVolumeCollections"`
 	Filters                         []GetAuditProfileCollectedAuditVolumesFilter                         `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id                              string  `pulumi:"id"`
+	Id                              *string `pulumi:"id"`
 	MonthInConsiderationGreaterThan *string `pulumi:"monthInConsiderationGreaterThan"`
 	MonthInConsiderationLessThan    *string `pulumi:"monthInConsiderationLessThan"`
 	WorkRequestId                   string  `pulumi:"workRequestId"`
@@ -134,12 +133,6 @@ func (o GetAuditProfileCollectedAuditVolumesResultOutput) ToGetAuditProfileColle
 	return o
 }
 
-func (o GetAuditProfileCollectedAuditVolumesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetAuditProfileCollectedAuditVolumesResult] {
-	return pulumix.Output[GetAuditProfileCollectedAuditVolumesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the audit profile resource.
 func (o GetAuditProfileCollectedAuditVolumesResultOutput) AuditProfileId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAuditProfileCollectedAuditVolumesResult) string { return v.AuditProfileId }).(pulumi.StringOutput)
@@ -159,8 +152,8 @@ func (o GetAuditProfileCollectedAuditVolumesResultOutput) Filters() GetAuditProf
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetAuditProfileCollectedAuditVolumesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAuditProfileCollectedAuditVolumesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetAuditProfileCollectedAuditVolumesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAuditProfileCollectedAuditVolumesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetAuditProfileCollectedAuditVolumesResultOutput) MonthInConsiderationGreaterThan() pulumi.StringPtrOutput {

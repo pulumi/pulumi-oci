@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Sensitive Data Model resource in Oracle Cloud Infrastructure Data Safe service.
@@ -60,42 +59,42 @@ type LookupSensitiveDataModelArgs struct {
 // A collection of values returned by getSensitiveDataModel.
 type LookupSensitiveDataModelResult struct {
 	// The application suite name identifying a collection of applications. The default value is GENERIC. It's useful only if maintaining a sensitive data model for a suite of applications.
-	AppSuiteName string `pulumi:"appSuiteName"`
+	AppSuiteName *string `pulumi:"appSuiteName"`
 	// The OCID of the compartment that contains the sensitive data model.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The description of the sensitive data model.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// The display name of the sensitive data model.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The OCID of the sensitive data model.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Indicates if data discovery jobs should identify potential application-level (non-dictionary) referential relationships between columns. Note that data discovery automatically identifies and adds database-level (dictionary-defined) relationships. This option helps identify application-level relationships that are not defined in the database dictionary, which in turn, helps identify additional sensitive columns and preserve referential integrity during data masking. It's disabled by default and should be used only if there is a need to identify application-level relationships.
-	IsAppDefinedRelationDiscoveryEnabled bool `pulumi:"isAppDefinedRelationDiscoveryEnabled"`
+	IsAppDefinedRelationDiscoveryEnabled *bool `pulumi:"isAppDefinedRelationDiscoveryEnabled"`
 	// Indicates if all the schemas in the associated target database should be scanned by data discovery jobs. If it is set to true, sensitive data is discovered in all schemas (except for schemas maintained by Oracle).
-	IsIncludeAllSchemas bool `pulumi:"isIncludeAllSchemas"`
+	IsIncludeAllSchemas *bool `pulumi:"isIncludeAllSchemas"`
 	// Indicates if all the existing sensitive types should be used by data discovery jobs.If it's set to true, the sensitiveTypeIdsForDiscovery attribute is ignored and all sensitive types are used for data discovery.
-	IsIncludeAllSensitiveTypes bool `pulumi:"isIncludeAllSensitiveTypes"`
+	IsIncludeAllSensitiveTypes *bool `pulumi:"isIncludeAllSensitiveTypes"`
 	// Indicates if data discovery jobs should collect and store sample data values for the discovered columns. Sample data helps review the discovered columns and ensure that they actually contain sensitive data. As it collects original data from the target database, it's disabled by default and should be used only if it's acceptable to store sample data in Data Safe's repository in Oracle Cloud. Note that sample data values are not collected for columns with the following data types: LONG, LOB, RAW, XMLTYPE and BFILE.
-	IsSampleDataCollectionEnabled bool `pulumi:"isSampleDataCollectionEnabled"`
+	IsSampleDataCollectionEnabled *bool `pulumi:"isSampleDataCollectionEnabled"`
 	// The schemas to be scanned by data discovery jobs.
 	SchemasForDiscoveries []string `pulumi:"schemasForDiscoveries"`
 	SensitiveDataModelId  string   `pulumi:"sensitiveDataModelId"`
 	// The OCIDs of the sensitive types to be used by data discovery jobs.
 	SensitiveTypeIdsForDiscoveries []string `pulumi:"sensitiveTypeIdsForDiscoveries"`
 	// The current state of the sensitive data model.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The OCID of the reference target database associated with the sensitive data model. All operations such as performing data discovery and adding columns manually are done in the context of the associated target database.
-	TargetId string `pulumi:"targetId"`
+	TargetId *string `pulumi:"targetId"`
 	// The date and time the sensitive data model was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The date and time the sensitive data model was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 func LookupSensitiveDataModelOutput(ctx *pulumi.Context, args LookupSensitiveDataModelOutputArgs, opts ...pulumi.InvokeOption) LookupSensitiveDataModelResultOutput {
@@ -136,20 +135,14 @@ func (o LookupSensitiveDataModelResultOutput) ToLookupSensitiveDataModelResultOu
 	return o
 }
 
-func (o LookupSensitiveDataModelResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupSensitiveDataModelResult] {
-	return pulumix.Output[LookupSensitiveDataModelResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The application suite name identifying a collection of applications. The default value is GENERIC. It's useful only if maintaining a sensitive data model for a suite of applications.
-func (o LookupSensitiveDataModelResultOutput) AppSuiteName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSensitiveDataModelResult) string { return v.AppSuiteName }).(pulumi.StringOutput)
+func (o LookupSensitiveDataModelResultOutput) AppSuiteName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSensitiveDataModelResult) *string { return v.AppSuiteName }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the compartment that contains the sensitive data model.
-func (o LookupSensitiveDataModelResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSensitiveDataModelResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupSensitiveDataModelResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSensitiveDataModelResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
@@ -158,13 +151,13 @@ func (o LookupSensitiveDataModelResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // The description of the sensitive data model.
-func (o LookupSensitiveDataModelResultOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSensitiveDataModelResult) string { return v.Description }).(pulumi.StringOutput)
+func (o LookupSensitiveDataModelResultOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSensitiveDataModelResult) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // The display name of the sensitive data model.
-func (o LookupSensitiveDataModelResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSensitiveDataModelResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupSensitiveDataModelResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSensitiveDataModelResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
@@ -173,28 +166,28 @@ func (o LookupSensitiveDataModelResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The OCID of the sensitive data model.
-func (o LookupSensitiveDataModelResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSensitiveDataModelResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupSensitiveDataModelResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSensitiveDataModelResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Indicates if data discovery jobs should identify potential application-level (non-dictionary) referential relationships between columns. Note that data discovery automatically identifies and adds database-level (dictionary-defined) relationships. This option helps identify application-level relationships that are not defined in the database dictionary, which in turn, helps identify additional sensitive columns and preserve referential integrity during data masking. It's disabled by default and should be used only if there is a need to identify application-level relationships.
-func (o LookupSensitiveDataModelResultOutput) IsAppDefinedRelationDiscoveryEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupSensitiveDataModelResult) bool { return v.IsAppDefinedRelationDiscoveryEnabled }).(pulumi.BoolOutput)
+func (o LookupSensitiveDataModelResultOutput) IsAppDefinedRelationDiscoveryEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupSensitiveDataModelResult) *bool { return v.IsAppDefinedRelationDiscoveryEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // Indicates if all the schemas in the associated target database should be scanned by data discovery jobs. If it is set to true, sensitive data is discovered in all schemas (except for schemas maintained by Oracle).
-func (o LookupSensitiveDataModelResultOutput) IsIncludeAllSchemas() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupSensitiveDataModelResult) bool { return v.IsIncludeAllSchemas }).(pulumi.BoolOutput)
+func (o LookupSensitiveDataModelResultOutput) IsIncludeAllSchemas() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupSensitiveDataModelResult) *bool { return v.IsIncludeAllSchemas }).(pulumi.BoolPtrOutput)
 }
 
 // Indicates if all the existing sensitive types should be used by data discovery jobs.If it's set to true, the sensitiveTypeIdsForDiscovery attribute is ignored and all sensitive types are used for data discovery.
-func (o LookupSensitiveDataModelResultOutput) IsIncludeAllSensitiveTypes() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupSensitiveDataModelResult) bool { return v.IsIncludeAllSensitiveTypes }).(pulumi.BoolOutput)
+func (o LookupSensitiveDataModelResultOutput) IsIncludeAllSensitiveTypes() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupSensitiveDataModelResult) *bool { return v.IsIncludeAllSensitiveTypes }).(pulumi.BoolPtrOutput)
 }
 
 // Indicates if data discovery jobs should collect and store sample data values for the discovered columns. Sample data helps review the discovered columns and ensure that they actually contain sensitive data. As it collects original data from the target database, it's disabled by default and should be used only if it's acceptable to store sample data in Data Safe's repository in Oracle Cloud. Note that sample data values are not collected for columns with the following data types: LONG, LOB, RAW, XMLTYPE and BFILE.
-func (o LookupSensitiveDataModelResultOutput) IsSampleDataCollectionEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupSensitiveDataModelResult) bool { return v.IsSampleDataCollectionEnabled }).(pulumi.BoolOutput)
+func (o LookupSensitiveDataModelResultOutput) IsSampleDataCollectionEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupSensitiveDataModelResult) *bool { return v.IsSampleDataCollectionEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // The schemas to be scanned by data discovery jobs.
@@ -212,8 +205,8 @@ func (o LookupSensitiveDataModelResultOutput) SensitiveTypeIdsForDiscoveries() p
 }
 
 // The current state of the sensitive data model.
-func (o LookupSensitiveDataModelResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSensitiveDataModelResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupSensitiveDataModelResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSensitiveDataModelResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -222,18 +215,18 @@ func (o LookupSensitiveDataModelResultOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The OCID of the reference target database associated with the sensitive data model. All operations such as performing data discovery and adding columns manually are done in the context of the associated target database.
-func (o LookupSensitiveDataModelResultOutput) TargetId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSensitiveDataModelResult) string { return v.TargetId }).(pulumi.StringOutput)
+func (o LookupSensitiveDataModelResultOutput) TargetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSensitiveDataModelResult) *string { return v.TargetId }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the sensitive data model was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-func (o LookupSensitiveDataModelResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSensitiveDataModelResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupSensitiveDataModelResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSensitiveDataModelResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the sensitive data model was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-func (o LookupSensitiveDataModelResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSensitiveDataModelResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o LookupSensitiveDataModelResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSensitiveDataModelResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 func init() {

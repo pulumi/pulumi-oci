@@ -12,6 +12,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDataSourcesDataSourceCollectionItem {
@@ -19,171 +21,171 @@ public final class GetDataSourcesDataSourceCollectionItem {
      * @return The ID of the compartment in which to list resources.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return Details specific to the data source type.
      * 
      */
-    private List<GetDataSourcesDataSourceCollectionItemDataSourceDetail> dataSourceDetails;
+    private @Nullable List<GetDataSourcesDataSourceCollectionItemDataSourceDetail> dataSourceDetails;
     /**
      * @return Information about the detector recipe and rule attached
      * 
      */
-    private List<GetDataSourcesDataSourceCollectionItemDataSourceDetectorMappingInfo> dataSourceDetectorMappingInfos;
+    private @Nullable List<GetDataSourcesDataSourceCollectionItemDataSourceDetectorMappingInfo> dataSourceDetectorMappingInfos;
     /**
      * @return A filter to return only resources their feedProvider matches the given DataSourceFeedProvider.
      * 
      */
-    private String dataSourceFeedProvider;
+    private @Nullable String dataSourceFeedProvider;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return A filter to return only resources that match the entire display name given.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return Ocid for Data source
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Information about the region and status of query replication
      * 
      */
-    private List<GetDataSourcesDataSourceCollectionItemRegionStatusDetail> regionStatusDetails;
+    private @Nullable List<GetDataSourcesDataSourceCollectionItemRegionStatusDetail> regionStatusDetails;
     /**
      * @return The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return Status of data Source
      * 
      */
-    private String status;
+    private @Nullable String status;
     /**
      * @return System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    private Map<String,Object> systemTags;
+    private @Nullable Map<String,Object> systemTags;
     /**
      * @return The date and time the Data source was created. Format defined by RFC3339.
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The date and time the Data source was updated. Format defined by RFC3339.
      * 
      */
-    private String timeUpdated;
+    private @Nullable String timeUpdated;
 
     private GetDataSourcesDataSourceCollectionItem() {}
     /**
      * @return The ID of the compartment in which to list resources.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return Details specific to the data source type.
      * 
      */
     public List<GetDataSourcesDataSourceCollectionItemDataSourceDetail> dataSourceDetails() {
-        return this.dataSourceDetails;
+        return this.dataSourceDetails == null ? List.of() : this.dataSourceDetails;
     }
     /**
      * @return Information about the detector recipe and rule attached
      * 
      */
     public List<GetDataSourcesDataSourceCollectionItemDataSourceDetectorMappingInfo> dataSourceDetectorMappingInfos() {
-        return this.dataSourceDetectorMappingInfos;
+        return this.dataSourceDetectorMappingInfos == null ? List.of() : this.dataSourceDetectorMappingInfos;
     }
     /**
      * @return A filter to return only resources their feedProvider matches the given DataSourceFeedProvider.
      * 
      */
-    public String dataSourceFeedProvider() {
-        return this.dataSourceFeedProvider;
+    public Optional<String> dataSourceFeedProvider() {
+        return Optional.ofNullable(this.dataSourceFeedProvider);
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return A filter to return only resources that match the entire display name given.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return Ocid for Data source
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Information about the region and status of query replication
      * 
      */
     public List<GetDataSourcesDataSourceCollectionItemRegionStatusDetail> regionStatusDetails() {
-        return this.regionStatusDetails;
+        return this.regionStatusDetails == null ? List.of() : this.regionStatusDetails;
     }
     /**
      * @return The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return Status of data Source
      * 
      */
-    public String status() {
-        return this.status;
+    public Optional<String> status() {
+        return Optional.ofNullable(this.status);
     }
     /**
      * @return System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
     public Map<String,Object> systemTags() {
-        return this.systemTags;
+        return this.systemTags == null ? Map.of() : this.systemTags;
     }
     /**
      * @return The date and time the Data source was created. Format defined by RFC3339.
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return The date and time the Data source was updated. Format defined by RFC3339.
      * 
      */
-    public String timeUpdated() {
-        return this.timeUpdated;
+    public Optional<String> timeUpdated() {
+        return Optional.ofNullable(this.timeUpdated);
     }
 
     public static Builder builder() {
@@ -195,20 +197,20 @@ public final class GetDataSourcesDataSourceCollectionItem {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String compartmentId;
-        private List<GetDataSourcesDataSourceCollectionItemDataSourceDetail> dataSourceDetails;
-        private List<GetDataSourcesDataSourceCollectionItemDataSourceDetectorMappingInfo> dataSourceDetectorMappingInfos;
-        private String dataSourceFeedProvider;
-        private Map<String,Object> definedTags;
-        private String displayName;
-        private Map<String,Object> freeformTags;
-        private String id;
-        private List<GetDataSourcesDataSourceCollectionItemRegionStatusDetail> regionStatusDetails;
-        private String state;
-        private String status;
-        private Map<String,Object> systemTags;
-        private String timeCreated;
-        private String timeUpdated;
+        private @Nullable String compartmentId;
+        private @Nullable List<GetDataSourcesDataSourceCollectionItemDataSourceDetail> dataSourceDetails;
+        private @Nullable List<GetDataSourcesDataSourceCollectionItemDataSourceDetectorMappingInfo> dataSourceDetectorMappingInfos;
+        private @Nullable String dataSourceFeedProvider;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String displayName;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String id;
+        private @Nullable List<GetDataSourcesDataSourceCollectionItemRegionStatusDetail> regionStatusDetails;
+        private @Nullable String state;
+        private @Nullable String status;
+        private @Nullable Map<String,Object> systemTags;
+        private @Nullable String timeCreated;
+        private @Nullable String timeUpdated;
         public Builder() {}
         public Builder(GetDataSourcesDataSourceCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -229,82 +231,82 @@ public final class GetDataSourcesDataSourceCollectionItem {
         }
 
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder dataSourceDetails(List<GetDataSourcesDataSourceCollectionItemDataSourceDetail> dataSourceDetails) {
-            this.dataSourceDetails = Objects.requireNonNull(dataSourceDetails);
+        public Builder dataSourceDetails(@Nullable List<GetDataSourcesDataSourceCollectionItemDataSourceDetail> dataSourceDetails) {
+            this.dataSourceDetails = dataSourceDetails;
             return this;
         }
         public Builder dataSourceDetails(GetDataSourcesDataSourceCollectionItemDataSourceDetail... dataSourceDetails) {
             return dataSourceDetails(List.of(dataSourceDetails));
         }
         @CustomType.Setter
-        public Builder dataSourceDetectorMappingInfos(List<GetDataSourcesDataSourceCollectionItemDataSourceDetectorMappingInfo> dataSourceDetectorMappingInfos) {
-            this.dataSourceDetectorMappingInfos = Objects.requireNonNull(dataSourceDetectorMappingInfos);
+        public Builder dataSourceDetectorMappingInfos(@Nullable List<GetDataSourcesDataSourceCollectionItemDataSourceDetectorMappingInfo> dataSourceDetectorMappingInfos) {
+            this.dataSourceDetectorMappingInfos = dataSourceDetectorMappingInfos;
             return this;
         }
         public Builder dataSourceDetectorMappingInfos(GetDataSourcesDataSourceCollectionItemDataSourceDetectorMappingInfo... dataSourceDetectorMappingInfos) {
             return dataSourceDetectorMappingInfos(List.of(dataSourceDetectorMappingInfos));
         }
         @CustomType.Setter
-        public Builder dataSourceFeedProvider(String dataSourceFeedProvider) {
-            this.dataSourceFeedProvider = Objects.requireNonNull(dataSourceFeedProvider);
+        public Builder dataSourceFeedProvider(@Nullable String dataSourceFeedProvider) {
+            this.dataSourceFeedProvider = dataSourceFeedProvider;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder regionStatusDetails(List<GetDataSourcesDataSourceCollectionItemRegionStatusDetail> regionStatusDetails) {
-            this.regionStatusDetails = Objects.requireNonNull(regionStatusDetails);
+        public Builder regionStatusDetails(@Nullable List<GetDataSourcesDataSourceCollectionItemRegionStatusDetail> regionStatusDetails) {
+            this.regionStatusDetails = regionStatusDetails;
             return this;
         }
         public Builder regionStatusDetails(GetDataSourcesDataSourceCollectionItemRegionStatusDetail... regionStatusDetails) {
             return regionStatusDetails(List.of(regionStatusDetails));
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder status(String status) {
-            this.status = Objects.requireNonNull(status);
+        public Builder status(@Nullable String status) {
+            this.status = status;
             return this;
         }
         @CustomType.Setter
-        public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+        public Builder systemTags(@Nullable Map<String,Object> systemTags) {
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+        public Builder timeUpdated(@Nullable String timeUpdated) {
+            this.timeUpdated = timeUpdated;
             return this;
         }
         public GetDataSourcesDataSourceCollectionItem build() {

@@ -28,17 +28,17 @@ public final class GetDomainsAccountMgmtInfoResult {
      * @return Type of Account
      * 
      */
-    private String accountType;
+    private @Nullable String accountType;
     /**
      * @return If true, this App is able to participate in runtime services, such as automatic-login, OAuth, and SAML. If false, all runtime services are disabled for this App and only administrative operations can be performed.
      * 
      */
-    private Boolean active;
+    private @Nullable Boolean active;
     /**
      * @return Application on which the account is based
      * 
      */
-    private List<GetDomainsAccountMgmtInfoApp> apps;
+    private @Nullable List<GetDomainsAccountMgmtInfoApp> apps;
     private @Nullable List<String> attributeSets;
     private @Nullable String attributes;
     private @Nullable String authorization;
@@ -46,159 +46,159 @@ public final class GetDomainsAccountMgmtInfoResult {
      * @return Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
      * 
      */
-    private String compartmentOcid;
+    private @Nullable String compartmentOcid;
     /**
      * @return Unique key for this AccountMgmtInfo, which is used to prevent duplicate AccountMgmtInfo resources. Key is composed of a subset of app, owner and accountType.
      * 
      */
-    private String compositeKey;
+    private @Nullable String compositeKey;
     /**
      * @return A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
      * 
      */
-    private Boolean deleteInProgress;
+    private @Nullable Boolean deleteInProgress;
     /**
      * @return If true, a back-fill grant will not be created for a connected managed app as part of account creation.
      * 
      */
-    private Boolean doNotBackFillGrants;
+    private @Nullable Boolean doNotBackFillGrants;
     /**
      * @return If true, the operation will not be performed on the target
      * 
      */
-    private Boolean doNotPerformActionOnTarget;
+    private @Nullable Boolean doNotPerformActionOnTarget;
     /**
      * @return Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
      * 
      */
-    private String domainOcid;
+    private @Nullable String domainOcid;
     /**
      * @return If true, this account has been marked as a favorite of the User who owns it
      * 
      */
-    private Boolean favorite;
+    private @Nullable Boolean favorite;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The User or App who created the Resource
      * 
      */
-    private List<GetDomainsAccountMgmtInfoIdcsCreatedBy> idcsCreatedBies;
+    private @Nullable List<GetDomainsAccountMgmtInfoIdcsCreatedBy> idcsCreatedBies;
     private String idcsEndpoint;
     /**
      * @return The User or App who modified the Resource
      * 
      */
-    private List<GetDomainsAccountMgmtInfoIdcsLastModifiedBy> idcsLastModifiedBies;
+    private @Nullable List<GetDomainsAccountMgmtInfoIdcsLastModifiedBy> idcsLastModifiedBies;
     /**
      * @return The release number when the resource was upgraded.
      * 
      */
-    private String idcsLastUpgradedInRelease;
+    private @Nullable String idcsLastUpgradedInRelease;
     /**
      * @return Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
      * 
      */
-    private List<String> idcsPreventedOperations;
+    private @Nullable List<String> idcsPreventedOperations;
     /**
      * @return If true, indicates that this managed object is an account, which is an identity that represents a user in the context of a specific application
      * 
      */
-    private Boolean isAccount;
+    private @Nullable Boolean isAccount;
     /**
      * @return Last accessed timestamp of an application
      * 
      */
-    private String lastAccessed;
+    private @Nullable String lastAccessed;
     /**
      * @return Matching owning users of the account
      * 
      */
-    private List<GetDomainsAccountMgmtInfoMatchingOwner> matchingOwners;
+    private @Nullable List<GetDomainsAccountMgmtInfoMatchingOwner> matchingOwners;
     /**
      * @return A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
      * 
      */
-    private List<GetDomainsAccountMgmtInfoMeta> metas;
+    private @Nullable List<GetDomainsAccountMgmtInfoMeta> metas;
     /**
      * @return Name of the Account
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return Object-class of the Account
      * 
      */
-    private List<GetDomainsAccountMgmtInfoObjectClass> objectClasses;
+    private @Nullable List<GetDomainsAccountMgmtInfoObjectClass> objectClasses;
     /**
      * @return Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
      * 
      */
-    private String ocid;
+    private @Nullable String ocid;
     /**
      * @return The context in which the operation is performed on the account.
      * 
      */
-    private String operationContext;
+    private @Nullable String operationContext;
     /**
      * @return Owning user of the account
      * 
      */
-    private List<GetDomainsAccountMgmtInfoOwner> owners;
+    private @Nullable List<GetDomainsAccountMgmtInfoOwner> owners;
     /**
      * @return If true, then the response to the account creation operation on a connected managed app returns a preview of the account data that is evaluated by the attribute value generation policy. Note that an account will not be created on the target application when this attribute is set to true.
      * 
      */
-    private Boolean previewOnly;
+    private @Nullable Boolean previewOnly;
     private @Nullable String resourceTypeSchemaVersion;
     /**
      * @return Resource Type of the Account
      * 
      */
-    private List<GetDomainsAccountMgmtInfoResourceType> resourceTypes;
+    private @Nullable List<GetDomainsAccountMgmtInfoResourceType> resourceTypes;
     /**
      * @return REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \&#34;enterprise\&#34; extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
      * 
      */
-    private List<String> schemas;
+    private @Nullable List<String> schemas;
     /**
      * @return Last recorded sync response for the account
      * 
      */
-    private String syncResponse;
+    private @Nullable String syncResponse;
     /**
      * @return Last recorded sync situation for the account
      * 
      */
-    private String syncSituation;
+    private @Nullable String syncSituation;
     /**
      * @return Last sync timestamp of the account
      * 
      */
-    private String syncTimestamp;
+    private @Nullable String syncTimestamp;
     /**
      * @return A list of tags on this resource.
      * 
      */
-    private List<GetDomainsAccountMgmtInfoTag> tags;
+    private @Nullable List<GetDomainsAccountMgmtInfoTag> tags;
     /**
      * @return Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
      * 
      */
-    private String tenancyOcid;
+    private @Nullable String tenancyOcid;
     /**
      * @return Unique identifier of the Account
      * 
      */
-    private String uid;
+    private @Nullable String uid;
     /**
      * @return The UserWalletArtifact that contains the credentials that the system will use when performing Secure Form-Fill to log the user in to this application
      * 
      */
-    private List<GetDomainsAccountMgmtInfoUserWalletArtifact> userWalletArtifacts;
+    private @Nullable List<GetDomainsAccountMgmtInfoUserWalletArtifact> userWalletArtifacts;
 
     private GetDomainsAccountMgmtInfoResult() {}
     public String accountMgmtInfoId() {
@@ -208,22 +208,22 @@ public final class GetDomainsAccountMgmtInfoResult {
      * @return Type of Account
      * 
      */
-    public String accountType() {
-        return this.accountType;
+    public Optional<String> accountType() {
+        return Optional.ofNullable(this.accountType);
     }
     /**
      * @return If true, this App is able to participate in runtime services, such as automatic-login, OAuth, and SAML. If false, all runtime services are disabled for this App and only administrative operations can be performed.
      * 
      */
-    public Boolean active() {
-        return this.active;
+    public Optional<Boolean> active() {
+        return Optional.ofNullable(this.active);
     }
     /**
      * @return Application on which the account is based
      * 
      */
     public List<GetDomainsAccountMgmtInfoApp> apps() {
-        return this.apps;
+        return this.apps == null ? List.of() : this.apps;
     }
     public List<String> attributeSets() {
         return this.attributeSets == null ? List.of() : this.attributeSets;
@@ -238,64 +238,64 @@ public final class GetDomainsAccountMgmtInfoResult {
      * @return Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
      * 
      */
-    public String compartmentOcid() {
-        return this.compartmentOcid;
+    public Optional<String> compartmentOcid() {
+        return Optional.ofNullable(this.compartmentOcid);
     }
     /**
      * @return Unique key for this AccountMgmtInfo, which is used to prevent duplicate AccountMgmtInfo resources. Key is composed of a subset of app, owner and accountType.
      * 
      */
-    public String compositeKey() {
-        return this.compositeKey;
+    public Optional<String> compositeKey() {
+        return Optional.ofNullable(this.compositeKey);
     }
     /**
      * @return A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
      * 
      */
-    public Boolean deleteInProgress() {
-        return this.deleteInProgress;
+    public Optional<Boolean> deleteInProgress() {
+        return Optional.ofNullable(this.deleteInProgress);
     }
     /**
      * @return If true, a back-fill grant will not be created for a connected managed app as part of account creation.
      * 
      */
-    public Boolean doNotBackFillGrants() {
-        return this.doNotBackFillGrants;
+    public Optional<Boolean> doNotBackFillGrants() {
+        return Optional.ofNullable(this.doNotBackFillGrants);
     }
     /**
      * @return If true, the operation will not be performed on the target
      * 
      */
-    public Boolean doNotPerformActionOnTarget() {
-        return this.doNotPerformActionOnTarget;
+    public Optional<Boolean> doNotPerformActionOnTarget() {
+        return Optional.ofNullable(this.doNotPerformActionOnTarget);
     }
     /**
      * @return Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
      * 
      */
-    public String domainOcid() {
-        return this.domainOcid;
+    public Optional<String> domainOcid() {
+        return Optional.ofNullable(this.domainOcid);
     }
     /**
      * @return If true, this account has been marked as a favorite of the User who owns it
      * 
      */
-    public Boolean favorite() {
-        return this.favorite;
+    public Optional<Boolean> favorite() {
+        return Optional.ofNullable(this.favorite);
     }
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The User or App who created the Resource
      * 
      */
     public List<GetDomainsAccountMgmtInfoIdcsCreatedBy> idcsCreatedBies() {
-        return this.idcsCreatedBies;
+        return this.idcsCreatedBies == null ? List.of() : this.idcsCreatedBies;
     }
     public String idcsEndpoint() {
         return this.idcsEndpoint;
@@ -305,91 +305,91 @@ public final class GetDomainsAccountMgmtInfoResult {
      * 
      */
     public List<GetDomainsAccountMgmtInfoIdcsLastModifiedBy> idcsLastModifiedBies() {
-        return this.idcsLastModifiedBies;
+        return this.idcsLastModifiedBies == null ? List.of() : this.idcsLastModifiedBies;
     }
     /**
      * @return The release number when the resource was upgraded.
      * 
      */
-    public String idcsLastUpgradedInRelease() {
-        return this.idcsLastUpgradedInRelease;
+    public Optional<String> idcsLastUpgradedInRelease() {
+        return Optional.ofNullable(this.idcsLastUpgradedInRelease);
     }
     /**
      * @return Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
      * 
      */
     public List<String> idcsPreventedOperations() {
-        return this.idcsPreventedOperations;
+        return this.idcsPreventedOperations == null ? List.of() : this.idcsPreventedOperations;
     }
     /**
      * @return If true, indicates that this managed object is an account, which is an identity that represents a user in the context of a specific application
      * 
      */
-    public Boolean isAccount() {
-        return this.isAccount;
+    public Optional<Boolean> isAccount() {
+        return Optional.ofNullable(this.isAccount);
     }
     /**
      * @return Last accessed timestamp of an application
      * 
      */
-    public String lastAccessed() {
-        return this.lastAccessed;
+    public Optional<String> lastAccessed() {
+        return Optional.ofNullable(this.lastAccessed);
     }
     /**
      * @return Matching owning users of the account
      * 
      */
     public List<GetDomainsAccountMgmtInfoMatchingOwner> matchingOwners() {
-        return this.matchingOwners;
+        return this.matchingOwners == null ? List.of() : this.matchingOwners;
     }
     /**
      * @return A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
      * 
      */
     public List<GetDomainsAccountMgmtInfoMeta> metas() {
-        return this.metas;
+        return this.metas == null ? List.of() : this.metas;
     }
     /**
      * @return Name of the Account
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return Object-class of the Account
      * 
      */
     public List<GetDomainsAccountMgmtInfoObjectClass> objectClasses() {
-        return this.objectClasses;
+        return this.objectClasses == null ? List.of() : this.objectClasses;
     }
     /**
      * @return Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
      * 
      */
-    public String ocid() {
-        return this.ocid;
+    public Optional<String> ocid() {
+        return Optional.ofNullable(this.ocid);
     }
     /**
      * @return The context in which the operation is performed on the account.
      * 
      */
-    public String operationContext() {
-        return this.operationContext;
+    public Optional<String> operationContext() {
+        return Optional.ofNullable(this.operationContext);
     }
     /**
      * @return Owning user of the account
      * 
      */
     public List<GetDomainsAccountMgmtInfoOwner> owners() {
-        return this.owners;
+        return this.owners == null ? List.of() : this.owners;
     }
     /**
      * @return If true, then the response to the account creation operation on a connected managed app returns a preview of the account data that is evaluated by the attribute value generation policy. Note that an account will not be created on the target application when this attribute is set to true.
      * 
      */
-    public Boolean previewOnly() {
-        return this.previewOnly;
+    public Optional<Boolean> previewOnly() {
+        return Optional.ofNullable(this.previewOnly);
     }
     public Optional<String> resourceTypeSchemaVersion() {
         return Optional.ofNullable(this.resourceTypeSchemaVersion);
@@ -399,63 +399,63 @@ public final class GetDomainsAccountMgmtInfoResult {
      * 
      */
     public List<GetDomainsAccountMgmtInfoResourceType> resourceTypes() {
-        return this.resourceTypes;
+        return this.resourceTypes == null ? List.of() : this.resourceTypes;
     }
     /**
      * @return REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \&#34;enterprise\&#34; extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
      * 
      */
     public List<String> schemas() {
-        return this.schemas;
+        return this.schemas == null ? List.of() : this.schemas;
     }
     /**
      * @return Last recorded sync response for the account
      * 
      */
-    public String syncResponse() {
-        return this.syncResponse;
+    public Optional<String> syncResponse() {
+        return Optional.ofNullable(this.syncResponse);
     }
     /**
      * @return Last recorded sync situation for the account
      * 
      */
-    public String syncSituation() {
-        return this.syncSituation;
+    public Optional<String> syncSituation() {
+        return Optional.ofNullable(this.syncSituation);
     }
     /**
      * @return Last sync timestamp of the account
      * 
      */
-    public String syncTimestamp() {
-        return this.syncTimestamp;
+    public Optional<String> syncTimestamp() {
+        return Optional.ofNullable(this.syncTimestamp);
     }
     /**
      * @return A list of tags on this resource.
      * 
      */
     public List<GetDomainsAccountMgmtInfoTag> tags() {
-        return this.tags;
+        return this.tags == null ? List.of() : this.tags;
     }
     /**
      * @return Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
      * 
      */
-    public String tenancyOcid() {
-        return this.tenancyOcid;
+    public Optional<String> tenancyOcid() {
+        return Optional.ofNullable(this.tenancyOcid);
     }
     /**
      * @return Unique identifier of the Account
      * 
      */
-    public String uid() {
-        return this.uid;
+    public Optional<String> uid() {
+        return Optional.ofNullable(this.uid);
     }
     /**
      * @return The UserWalletArtifact that contains the credentials that the system will use when performing Secure Form-Fill to log the user in to this application
      * 
      */
     public List<GetDomainsAccountMgmtInfoUserWalletArtifact> userWalletArtifacts() {
-        return this.userWalletArtifacts;
+        return this.userWalletArtifacts == null ? List.of() : this.userWalletArtifacts;
     }
 
     public static Builder builder() {
@@ -468,45 +468,45 @@ public final class GetDomainsAccountMgmtInfoResult {
     @CustomType.Builder
     public static final class Builder {
         private String accountMgmtInfoId;
-        private String accountType;
-        private Boolean active;
-        private List<GetDomainsAccountMgmtInfoApp> apps;
+        private @Nullable String accountType;
+        private @Nullable Boolean active;
+        private @Nullable List<GetDomainsAccountMgmtInfoApp> apps;
         private @Nullable List<String> attributeSets;
         private @Nullable String attributes;
         private @Nullable String authorization;
-        private String compartmentOcid;
-        private String compositeKey;
-        private Boolean deleteInProgress;
-        private Boolean doNotBackFillGrants;
-        private Boolean doNotPerformActionOnTarget;
-        private String domainOcid;
-        private Boolean favorite;
-        private String id;
-        private List<GetDomainsAccountMgmtInfoIdcsCreatedBy> idcsCreatedBies;
+        private @Nullable String compartmentOcid;
+        private @Nullable String compositeKey;
+        private @Nullable Boolean deleteInProgress;
+        private @Nullable Boolean doNotBackFillGrants;
+        private @Nullable Boolean doNotPerformActionOnTarget;
+        private @Nullable String domainOcid;
+        private @Nullable Boolean favorite;
+        private @Nullable String id;
+        private @Nullable List<GetDomainsAccountMgmtInfoIdcsCreatedBy> idcsCreatedBies;
         private String idcsEndpoint;
-        private List<GetDomainsAccountMgmtInfoIdcsLastModifiedBy> idcsLastModifiedBies;
-        private String idcsLastUpgradedInRelease;
-        private List<String> idcsPreventedOperations;
-        private Boolean isAccount;
-        private String lastAccessed;
-        private List<GetDomainsAccountMgmtInfoMatchingOwner> matchingOwners;
-        private List<GetDomainsAccountMgmtInfoMeta> metas;
-        private String name;
-        private List<GetDomainsAccountMgmtInfoObjectClass> objectClasses;
-        private String ocid;
-        private String operationContext;
-        private List<GetDomainsAccountMgmtInfoOwner> owners;
-        private Boolean previewOnly;
+        private @Nullable List<GetDomainsAccountMgmtInfoIdcsLastModifiedBy> idcsLastModifiedBies;
+        private @Nullable String idcsLastUpgradedInRelease;
+        private @Nullable List<String> idcsPreventedOperations;
+        private @Nullable Boolean isAccount;
+        private @Nullable String lastAccessed;
+        private @Nullable List<GetDomainsAccountMgmtInfoMatchingOwner> matchingOwners;
+        private @Nullable List<GetDomainsAccountMgmtInfoMeta> metas;
+        private @Nullable String name;
+        private @Nullable List<GetDomainsAccountMgmtInfoObjectClass> objectClasses;
+        private @Nullable String ocid;
+        private @Nullable String operationContext;
+        private @Nullable List<GetDomainsAccountMgmtInfoOwner> owners;
+        private @Nullable Boolean previewOnly;
         private @Nullable String resourceTypeSchemaVersion;
-        private List<GetDomainsAccountMgmtInfoResourceType> resourceTypes;
-        private List<String> schemas;
-        private String syncResponse;
-        private String syncSituation;
-        private String syncTimestamp;
-        private List<GetDomainsAccountMgmtInfoTag> tags;
-        private String tenancyOcid;
-        private String uid;
-        private List<GetDomainsAccountMgmtInfoUserWalletArtifact> userWalletArtifacts;
+        private @Nullable List<GetDomainsAccountMgmtInfoResourceType> resourceTypes;
+        private @Nullable List<String> schemas;
+        private @Nullable String syncResponse;
+        private @Nullable String syncSituation;
+        private @Nullable String syncTimestamp;
+        private @Nullable List<GetDomainsAccountMgmtInfoTag> tags;
+        private @Nullable String tenancyOcid;
+        private @Nullable String uid;
+        private @Nullable List<GetDomainsAccountMgmtInfoUserWalletArtifact> userWalletArtifacts;
         public Builder() {}
         public Builder(GetDomainsAccountMgmtInfoResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -558,18 +558,18 @@ public final class GetDomainsAccountMgmtInfoResult {
             return this;
         }
         @CustomType.Setter
-        public Builder accountType(String accountType) {
-            this.accountType = Objects.requireNonNull(accountType);
+        public Builder accountType(@Nullable String accountType) {
+            this.accountType = accountType;
             return this;
         }
         @CustomType.Setter
-        public Builder active(Boolean active) {
-            this.active = Objects.requireNonNull(active);
+        public Builder active(@Nullable Boolean active) {
+            this.active = active;
             return this;
         }
         @CustomType.Setter
-        public Builder apps(List<GetDomainsAccountMgmtInfoApp> apps) {
-            this.apps = Objects.requireNonNull(apps);
+        public Builder apps(@Nullable List<GetDomainsAccountMgmtInfoApp> apps) {
+            this.apps = apps;
             return this;
         }
         public Builder apps(GetDomainsAccountMgmtInfoApp... apps) {
@@ -594,48 +594,48 @@ public final class GetDomainsAccountMgmtInfoResult {
             return this;
         }
         @CustomType.Setter
-        public Builder compartmentOcid(String compartmentOcid) {
-            this.compartmentOcid = Objects.requireNonNull(compartmentOcid);
+        public Builder compartmentOcid(@Nullable String compartmentOcid) {
+            this.compartmentOcid = compartmentOcid;
             return this;
         }
         @CustomType.Setter
-        public Builder compositeKey(String compositeKey) {
-            this.compositeKey = Objects.requireNonNull(compositeKey);
+        public Builder compositeKey(@Nullable String compositeKey) {
+            this.compositeKey = compositeKey;
             return this;
         }
         @CustomType.Setter
-        public Builder deleteInProgress(Boolean deleteInProgress) {
-            this.deleteInProgress = Objects.requireNonNull(deleteInProgress);
+        public Builder deleteInProgress(@Nullable Boolean deleteInProgress) {
+            this.deleteInProgress = deleteInProgress;
             return this;
         }
         @CustomType.Setter
-        public Builder doNotBackFillGrants(Boolean doNotBackFillGrants) {
-            this.doNotBackFillGrants = Objects.requireNonNull(doNotBackFillGrants);
+        public Builder doNotBackFillGrants(@Nullable Boolean doNotBackFillGrants) {
+            this.doNotBackFillGrants = doNotBackFillGrants;
             return this;
         }
         @CustomType.Setter
-        public Builder doNotPerformActionOnTarget(Boolean doNotPerformActionOnTarget) {
-            this.doNotPerformActionOnTarget = Objects.requireNonNull(doNotPerformActionOnTarget);
+        public Builder doNotPerformActionOnTarget(@Nullable Boolean doNotPerformActionOnTarget) {
+            this.doNotPerformActionOnTarget = doNotPerformActionOnTarget;
             return this;
         }
         @CustomType.Setter
-        public Builder domainOcid(String domainOcid) {
-            this.domainOcid = Objects.requireNonNull(domainOcid);
+        public Builder domainOcid(@Nullable String domainOcid) {
+            this.domainOcid = domainOcid;
             return this;
         }
         @CustomType.Setter
-        public Builder favorite(Boolean favorite) {
-            this.favorite = Objects.requireNonNull(favorite);
+        public Builder favorite(@Nullable Boolean favorite) {
+            this.favorite = favorite;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder idcsCreatedBies(List<GetDomainsAccountMgmtInfoIdcsCreatedBy> idcsCreatedBies) {
-            this.idcsCreatedBies = Objects.requireNonNull(idcsCreatedBies);
+        public Builder idcsCreatedBies(@Nullable List<GetDomainsAccountMgmtInfoIdcsCreatedBy> idcsCreatedBies) {
+            this.idcsCreatedBies = idcsCreatedBies;
             return this;
         }
         public Builder idcsCreatedBies(GetDomainsAccountMgmtInfoIdcsCreatedBy... idcsCreatedBies) {
@@ -647,86 +647,86 @@ public final class GetDomainsAccountMgmtInfoResult {
             return this;
         }
         @CustomType.Setter
-        public Builder idcsLastModifiedBies(List<GetDomainsAccountMgmtInfoIdcsLastModifiedBy> idcsLastModifiedBies) {
-            this.idcsLastModifiedBies = Objects.requireNonNull(idcsLastModifiedBies);
+        public Builder idcsLastModifiedBies(@Nullable List<GetDomainsAccountMgmtInfoIdcsLastModifiedBy> idcsLastModifiedBies) {
+            this.idcsLastModifiedBies = idcsLastModifiedBies;
             return this;
         }
         public Builder idcsLastModifiedBies(GetDomainsAccountMgmtInfoIdcsLastModifiedBy... idcsLastModifiedBies) {
             return idcsLastModifiedBies(List.of(idcsLastModifiedBies));
         }
         @CustomType.Setter
-        public Builder idcsLastUpgradedInRelease(String idcsLastUpgradedInRelease) {
-            this.idcsLastUpgradedInRelease = Objects.requireNonNull(idcsLastUpgradedInRelease);
+        public Builder idcsLastUpgradedInRelease(@Nullable String idcsLastUpgradedInRelease) {
+            this.idcsLastUpgradedInRelease = idcsLastUpgradedInRelease;
             return this;
         }
         @CustomType.Setter
-        public Builder idcsPreventedOperations(List<String> idcsPreventedOperations) {
-            this.idcsPreventedOperations = Objects.requireNonNull(idcsPreventedOperations);
+        public Builder idcsPreventedOperations(@Nullable List<String> idcsPreventedOperations) {
+            this.idcsPreventedOperations = idcsPreventedOperations;
             return this;
         }
         public Builder idcsPreventedOperations(String... idcsPreventedOperations) {
             return idcsPreventedOperations(List.of(idcsPreventedOperations));
         }
         @CustomType.Setter
-        public Builder isAccount(Boolean isAccount) {
-            this.isAccount = Objects.requireNonNull(isAccount);
+        public Builder isAccount(@Nullable Boolean isAccount) {
+            this.isAccount = isAccount;
             return this;
         }
         @CustomType.Setter
-        public Builder lastAccessed(String lastAccessed) {
-            this.lastAccessed = Objects.requireNonNull(lastAccessed);
+        public Builder lastAccessed(@Nullable String lastAccessed) {
+            this.lastAccessed = lastAccessed;
             return this;
         }
         @CustomType.Setter
-        public Builder matchingOwners(List<GetDomainsAccountMgmtInfoMatchingOwner> matchingOwners) {
-            this.matchingOwners = Objects.requireNonNull(matchingOwners);
+        public Builder matchingOwners(@Nullable List<GetDomainsAccountMgmtInfoMatchingOwner> matchingOwners) {
+            this.matchingOwners = matchingOwners;
             return this;
         }
         public Builder matchingOwners(GetDomainsAccountMgmtInfoMatchingOwner... matchingOwners) {
             return matchingOwners(List.of(matchingOwners));
         }
         @CustomType.Setter
-        public Builder metas(List<GetDomainsAccountMgmtInfoMeta> metas) {
-            this.metas = Objects.requireNonNull(metas);
+        public Builder metas(@Nullable List<GetDomainsAccountMgmtInfoMeta> metas) {
+            this.metas = metas;
             return this;
         }
         public Builder metas(GetDomainsAccountMgmtInfoMeta... metas) {
             return metas(List.of(metas));
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder objectClasses(List<GetDomainsAccountMgmtInfoObjectClass> objectClasses) {
-            this.objectClasses = Objects.requireNonNull(objectClasses);
+        public Builder objectClasses(@Nullable List<GetDomainsAccountMgmtInfoObjectClass> objectClasses) {
+            this.objectClasses = objectClasses;
             return this;
         }
         public Builder objectClasses(GetDomainsAccountMgmtInfoObjectClass... objectClasses) {
             return objectClasses(List.of(objectClasses));
         }
         @CustomType.Setter
-        public Builder ocid(String ocid) {
-            this.ocid = Objects.requireNonNull(ocid);
+        public Builder ocid(@Nullable String ocid) {
+            this.ocid = ocid;
             return this;
         }
         @CustomType.Setter
-        public Builder operationContext(String operationContext) {
-            this.operationContext = Objects.requireNonNull(operationContext);
+        public Builder operationContext(@Nullable String operationContext) {
+            this.operationContext = operationContext;
             return this;
         }
         @CustomType.Setter
-        public Builder owners(List<GetDomainsAccountMgmtInfoOwner> owners) {
-            this.owners = Objects.requireNonNull(owners);
+        public Builder owners(@Nullable List<GetDomainsAccountMgmtInfoOwner> owners) {
+            this.owners = owners;
             return this;
         }
         public Builder owners(GetDomainsAccountMgmtInfoOwner... owners) {
             return owners(List.of(owners));
         }
         @CustomType.Setter
-        public Builder previewOnly(Boolean previewOnly) {
-            this.previewOnly = Objects.requireNonNull(previewOnly);
+        public Builder previewOnly(@Nullable Boolean previewOnly) {
+            this.previewOnly = previewOnly;
             return this;
         }
         @CustomType.Setter
@@ -735,57 +735,57 @@ public final class GetDomainsAccountMgmtInfoResult {
             return this;
         }
         @CustomType.Setter
-        public Builder resourceTypes(List<GetDomainsAccountMgmtInfoResourceType> resourceTypes) {
-            this.resourceTypes = Objects.requireNonNull(resourceTypes);
+        public Builder resourceTypes(@Nullable List<GetDomainsAccountMgmtInfoResourceType> resourceTypes) {
+            this.resourceTypes = resourceTypes;
             return this;
         }
         public Builder resourceTypes(GetDomainsAccountMgmtInfoResourceType... resourceTypes) {
             return resourceTypes(List.of(resourceTypes));
         }
         @CustomType.Setter
-        public Builder schemas(List<String> schemas) {
-            this.schemas = Objects.requireNonNull(schemas);
+        public Builder schemas(@Nullable List<String> schemas) {
+            this.schemas = schemas;
             return this;
         }
         public Builder schemas(String... schemas) {
             return schemas(List.of(schemas));
         }
         @CustomType.Setter
-        public Builder syncResponse(String syncResponse) {
-            this.syncResponse = Objects.requireNonNull(syncResponse);
+        public Builder syncResponse(@Nullable String syncResponse) {
+            this.syncResponse = syncResponse;
             return this;
         }
         @CustomType.Setter
-        public Builder syncSituation(String syncSituation) {
-            this.syncSituation = Objects.requireNonNull(syncSituation);
+        public Builder syncSituation(@Nullable String syncSituation) {
+            this.syncSituation = syncSituation;
             return this;
         }
         @CustomType.Setter
-        public Builder syncTimestamp(String syncTimestamp) {
-            this.syncTimestamp = Objects.requireNonNull(syncTimestamp);
+        public Builder syncTimestamp(@Nullable String syncTimestamp) {
+            this.syncTimestamp = syncTimestamp;
             return this;
         }
         @CustomType.Setter
-        public Builder tags(List<GetDomainsAccountMgmtInfoTag> tags) {
-            this.tags = Objects.requireNonNull(tags);
+        public Builder tags(@Nullable List<GetDomainsAccountMgmtInfoTag> tags) {
+            this.tags = tags;
             return this;
         }
         public Builder tags(GetDomainsAccountMgmtInfoTag... tags) {
             return tags(List.of(tags));
         }
         @CustomType.Setter
-        public Builder tenancyOcid(String tenancyOcid) {
-            this.tenancyOcid = Objects.requireNonNull(tenancyOcid);
+        public Builder tenancyOcid(@Nullable String tenancyOcid) {
+            this.tenancyOcid = tenancyOcid;
             return this;
         }
         @CustomType.Setter
-        public Builder uid(String uid) {
-            this.uid = Objects.requireNonNull(uid);
+        public Builder uid(@Nullable String uid) {
+            this.uid = uid;
             return this;
         }
         @CustomType.Setter
-        public Builder userWalletArtifacts(List<GetDomainsAccountMgmtInfoUserWalletArtifact> userWalletArtifacts) {
-            this.userWalletArtifacts = Objects.requireNonNull(userWalletArtifacts);
+        public Builder userWalletArtifacts(@Nullable List<GetDomainsAccountMgmtInfoUserWalletArtifact> userWalletArtifacts) {
+            this.userWalletArtifacts = userWalletArtifacts;
             return this;
         }
         public Builder userWalletArtifacts(GetDomainsAccountMgmtInfoUserWalletArtifact... userWalletArtifacts) {

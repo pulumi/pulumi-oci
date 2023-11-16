@@ -9,6 +9,8 @@ import com.pulumi.oci.DisasterRecovery.outputs.GetDrProtectionGroupMemberFileSys
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDrProtectionGroupMemberFileSystemOperation {
@@ -16,63 +18,63 @@ public final class GetDrProtectionGroupMemberFileSystemOperation {
      * @return The export path of the file system.  Example: `/fs-export-path`
      * 
      */
-    private String exportPath;
+    private @Nullable String exportPath;
     /**
      * @return Mount details of a file system.
      * 
      */
-    private List<GetDrProtectionGroupMemberFileSystemOperationMountDetail> mountDetails;
+    private @Nullable List<GetDrProtectionGroupMemberFileSystemOperationMountDetail> mountDetails;
     /**
      * @return The physical mount point of the file system on a host.  Example: `/mnt/yourmountpoint`
      * 
      */
-    private String mountPoint;
+    private @Nullable String mountPoint;
     /**
      * @return The OCID of the mount target for this file system.  Example: `ocid1.mounttarget.oc1..uniqueID`
      * 
      */
-    private String mountTargetId;
+    private @Nullable String mountTargetId;
     /**
      * @return Unmount details for a file system.
      * 
      */
-    private List<GetDrProtectionGroupMemberFileSystemOperationUnmountDetail> unmountDetails;
+    private @Nullable List<GetDrProtectionGroupMemberFileSystemOperationUnmountDetail> unmountDetails;
 
     private GetDrProtectionGroupMemberFileSystemOperation() {}
     /**
      * @return The export path of the file system.  Example: `/fs-export-path`
      * 
      */
-    public String exportPath() {
-        return this.exportPath;
+    public Optional<String> exportPath() {
+        return Optional.ofNullable(this.exportPath);
     }
     /**
      * @return Mount details of a file system.
      * 
      */
     public List<GetDrProtectionGroupMemberFileSystemOperationMountDetail> mountDetails() {
-        return this.mountDetails;
+        return this.mountDetails == null ? List.of() : this.mountDetails;
     }
     /**
      * @return The physical mount point of the file system on a host.  Example: `/mnt/yourmountpoint`
      * 
      */
-    public String mountPoint() {
-        return this.mountPoint;
+    public Optional<String> mountPoint() {
+        return Optional.ofNullable(this.mountPoint);
     }
     /**
      * @return The OCID of the mount target for this file system.  Example: `ocid1.mounttarget.oc1..uniqueID`
      * 
      */
-    public String mountTargetId() {
-        return this.mountTargetId;
+    public Optional<String> mountTargetId() {
+        return Optional.ofNullable(this.mountTargetId);
     }
     /**
      * @return Unmount details for a file system.
      * 
      */
     public List<GetDrProtectionGroupMemberFileSystemOperationUnmountDetail> unmountDetails() {
-        return this.unmountDetails;
+        return this.unmountDetails == null ? List.of() : this.unmountDetails;
     }
 
     public static Builder builder() {
@@ -84,11 +86,11 @@ public final class GetDrProtectionGroupMemberFileSystemOperation {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String exportPath;
-        private List<GetDrProtectionGroupMemberFileSystemOperationMountDetail> mountDetails;
-        private String mountPoint;
-        private String mountTargetId;
-        private List<GetDrProtectionGroupMemberFileSystemOperationUnmountDetail> unmountDetails;
+        private @Nullable String exportPath;
+        private @Nullable List<GetDrProtectionGroupMemberFileSystemOperationMountDetail> mountDetails;
+        private @Nullable String mountPoint;
+        private @Nullable String mountTargetId;
+        private @Nullable List<GetDrProtectionGroupMemberFileSystemOperationUnmountDetail> unmountDetails;
         public Builder() {}
         public Builder(GetDrProtectionGroupMemberFileSystemOperation defaults) {
     	      Objects.requireNonNull(defaults);
@@ -100,31 +102,31 @@ public final class GetDrProtectionGroupMemberFileSystemOperation {
         }
 
         @CustomType.Setter
-        public Builder exportPath(String exportPath) {
-            this.exportPath = Objects.requireNonNull(exportPath);
+        public Builder exportPath(@Nullable String exportPath) {
+            this.exportPath = exportPath;
             return this;
         }
         @CustomType.Setter
-        public Builder mountDetails(List<GetDrProtectionGroupMemberFileSystemOperationMountDetail> mountDetails) {
-            this.mountDetails = Objects.requireNonNull(mountDetails);
+        public Builder mountDetails(@Nullable List<GetDrProtectionGroupMemberFileSystemOperationMountDetail> mountDetails) {
+            this.mountDetails = mountDetails;
             return this;
         }
         public Builder mountDetails(GetDrProtectionGroupMemberFileSystemOperationMountDetail... mountDetails) {
             return mountDetails(List.of(mountDetails));
         }
         @CustomType.Setter
-        public Builder mountPoint(String mountPoint) {
-            this.mountPoint = Objects.requireNonNull(mountPoint);
+        public Builder mountPoint(@Nullable String mountPoint) {
+            this.mountPoint = mountPoint;
             return this;
         }
         @CustomType.Setter
-        public Builder mountTargetId(String mountTargetId) {
-            this.mountTargetId = Objects.requireNonNull(mountTargetId);
+        public Builder mountTargetId(@Nullable String mountTargetId) {
+            this.mountTargetId = mountTargetId;
             return this;
         }
         @CustomType.Setter
-        public Builder unmountDetails(List<GetDrProtectionGroupMemberFileSystemOperationUnmountDetail> unmountDetails) {
-            this.unmountDetails = Objects.requireNonNull(unmountDetails);
+        public Builder unmountDetails(@Nullable List<GetDrProtectionGroupMemberFileSystemOperationUnmountDetail> unmountDetails) {
+            this.unmountDetails = unmountDetails;
             return this;
         }
         public Builder unmountDetails(GetDrProtectionGroupMemberFileSystemOperationUnmountDetail... unmountDetails) {

@@ -14,6 +14,7 @@ import com.pulumi.oci.Utilities;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -75,28 +76,28 @@ public class Index extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="compartmentId", refs={String.class}, tree="[0]")
-    private Output<String> compartmentId;
+    private Output</* @Nullable */ String> compartmentId;
 
     /**
      * @return The OCID of the table&#39;s compartment.  Required if the tableNameOrId path parameter is a table name. Optional if tableNameOrId is an OCID.  If tableNameOrId is an OCID, and compartmentId is supplied, the latter must match the identified table&#39;s compartmentId.
      * 
      */
-    public Output<String> compartmentId() {
-        return this.compartmentId;
+    public Output<Optional<String>> compartmentId() {
+        return Codegen.optional(this.compartmentId);
     }
     /**
      * If true, the operation completes successfully even when the index exists.  Otherwise, an attempt to create an index that already exists will return an error.
      * 
      */
     @Export(name="isIfNotExists", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isIfNotExists;
+    private Output</* @Nullable */ Boolean> isIfNotExists;
 
     /**
      * @return If true, the operation completes successfully even when the index exists.  Otherwise, an attempt to create an index that already exists will return an error.
      * 
      */
-    public Output<Boolean> isIfNotExists() {
-        return this.isIfNotExists;
+    public Output<Optional<Boolean>> isIfNotExists() {
+        return Codegen.optional(this.isIfNotExists);
     }
     /**
      * A set of keys for a secondary index.
@@ -117,14 +118,14 @@ public class Index extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
-    private Output<String> lifecycleDetails;
+    private Output</* @Nullable */ String> lifecycleDetails;
 
     /**
      * @return A message describing the current state in more detail.
      * 
      */
-    public Output<String> lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Output<Optional<String>> lifecycleDetails() {
+        return Codegen.optional(this.lifecycleDetails);
     }
     /**
      * Index name.
@@ -145,42 +146,42 @@ public class Index extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The state of an index.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * the OCID of the table to which this index belongs.
      * 
      */
     @Export(name="tableId", refs={String.class}, tree="[0]")
-    private Output<String> tableId;
+    private Output</* @Nullable */ String> tableId;
 
     /**
      * @return the OCID of the table to which this index belongs.
      * 
      */
-    public Output<String> tableId() {
-        return this.tableId;
+    public Output<Optional<String>> tableId() {
+        return Codegen.optional(this.tableId);
     }
     /**
      * The name of the table to which this index belongs.
      * 
      */
     @Export(name="tableName", refs={String.class}, tree="[0]")
-    private Output<String> tableName;
+    private Output</* @Nullable */ String> tableName;
 
     /**
      * @return The name of the table to which this index belongs.
      * 
      */
-    public Output<String> tableName() {
-        return this.tableName;
+    public Output<Optional<String>> tableName() {
+        return Codegen.optional(this.tableName);
     }
     /**
      * A table name within the compartment, or a table OCID.

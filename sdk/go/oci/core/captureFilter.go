@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Capture Filter resource in Oracle Cloud Infrastructure Core service.
@@ -145,7 +144,7 @@ type CaptureFilter struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrOutput `pulumi:"displayName"`
 	// Indicates which service will use this capture filter
 	FilterType pulumi.StringOutput `pulumi:"filterType"`
 	// (Updatable) The set of rules governing what traffic the Flow Log collects when creating a flow log capture filter.
@@ -153,9 +152,9 @@ type CaptureFilter struct {
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// The capture filter's current administrative state.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// The date and time the capture filter was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2021-08-25T21:10:29.600Z`
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// (Updatable) The set of rules governing what traffic a VTAP mirrors.
 	VtapCaptureFilterRules CaptureFilterVtapCaptureFilterRuleArrayOutput `pulumi:"vtapCaptureFilterRules"`
 }
@@ -299,12 +298,6 @@ func (i *CaptureFilter) ToCaptureFilterOutputWithContext(ctx context.Context) Ca
 	return pulumi.ToOutputWithContext(ctx, i).(CaptureFilterOutput)
 }
 
-func (i *CaptureFilter) ToOutput(ctx context.Context) pulumix.Output[*CaptureFilter] {
-	return pulumix.Output[*CaptureFilter]{
-		OutputState: i.ToCaptureFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // CaptureFilterArrayInput is an input type that accepts CaptureFilterArray and CaptureFilterArrayOutput values.
 // You can construct a concrete instance of `CaptureFilterArrayInput` via:
 //
@@ -328,12 +321,6 @@ func (i CaptureFilterArray) ToCaptureFilterArrayOutput() CaptureFilterArrayOutpu
 
 func (i CaptureFilterArray) ToCaptureFilterArrayOutputWithContext(ctx context.Context) CaptureFilterArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(CaptureFilterArrayOutput)
-}
-
-func (i CaptureFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]*CaptureFilter] {
-	return pulumix.Output[[]*CaptureFilter]{
-		OutputState: i.ToCaptureFilterArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // CaptureFilterMapInput is an input type that accepts CaptureFilterMap and CaptureFilterMapOutput values.
@@ -361,12 +348,6 @@ func (i CaptureFilterMap) ToCaptureFilterMapOutputWithContext(ctx context.Contex
 	return pulumi.ToOutputWithContext(ctx, i).(CaptureFilterMapOutput)
 }
 
-func (i CaptureFilterMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*CaptureFilter] {
-	return pulumix.Output[map[string]*CaptureFilter]{
-		OutputState: i.ToCaptureFilterMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type CaptureFilterOutput struct{ *pulumi.OutputState }
 
 func (CaptureFilterOutput) ElementType() reflect.Type {
@@ -381,12 +362,6 @@ func (o CaptureFilterOutput) ToCaptureFilterOutputWithContext(ctx context.Contex
 	return o
 }
 
-func (o CaptureFilterOutput) ToOutput(ctx context.Context) pulumix.Output[*CaptureFilter] {
-	return pulumix.Output[*CaptureFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the capture filter.
 func (o CaptureFilterOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *CaptureFilter) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
@@ -398,8 +373,8 @@ func (o CaptureFilterOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-func (o CaptureFilterOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v *CaptureFilter) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+func (o CaptureFilterOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CaptureFilter) pulumi.StringPtrOutput { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Indicates which service will use this capture filter
@@ -420,13 +395,13 @@ func (o CaptureFilterOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The capture filter's current administrative state.
-func (o CaptureFilterOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *CaptureFilter) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o CaptureFilterOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CaptureFilter) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the capture filter was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2021-08-25T21:10:29.600Z`
-func (o CaptureFilterOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *CaptureFilter) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o CaptureFilterOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CaptureFilter) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The set of rules governing what traffic a VTAP mirrors.
@@ -448,12 +423,6 @@ func (o CaptureFilterArrayOutput) ToCaptureFilterArrayOutputWithContext(ctx cont
 	return o
 }
 
-func (o CaptureFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*CaptureFilter] {
-	return pulumix.Output[[]*CaptureFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o CaptureFilterArrayOutput) Index(i pulumi.IntInput) CaptureFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *CaptureFilter {
 		return vs[0].([]*CaptureFilter)[vs[1].(int)]
@@ -472,12 +441,6 @@ func (o CaptureFilterMapOutput) ToCaptureFilterMapOutput() CaptureFilterMapOutpu
 
 func (o CaptureFilterMapOutput) ToCaptureFilterMapOutputWithContext(ctx context.Context) CaptureFilterMapOutput {
 	return o
-}
-
-func (o CaptureFilterMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*CaptureFilter] {
-	return pulumix.Output[map[string]*CaptureFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o CaptureFilterMapOutput) MapIndex(k pulumi.StringInput) CaptureFilterOutput {

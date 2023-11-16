@@ -6,6 +6,8 @@ package com.pulumi.oci.ServiceManagerProxy.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetServiceEnvironmentServiceEnvironmentEndpoint {
@@ -13,39 +15,39 @@ public final class GetServiceEnvironmentServiceEnvironmentEndpoint {
      * @return Description of the environment link
      * 
      */
-    private String description;
+    private @Nullable String description;
     /**
      * @return Service environment endpoint type.
      * 
      */
-    private String environmentType;
+    private @Nullable String environmentType;
     /**
      * @return Service environment instance URL.
      * 
      */
-    private String url;
+    private @Nullable String url;
 
     private GetServiceEnvironmentServiceEnvironmentEndpoint() {}
     /**
      * @return Description of the environment link
      * 
      */
-    public String description() {
-        return this.description;
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
     /**
      * @return Service environment endpoint type.
      * 
      */
-    public String environmentType() {
-        return this.environmentType;
+    public Optional<String> environmentType() {
+        return Optional.ofNullable(this.environmentType);
     }
     /**
      * @return Service environment instance URL.
      * 
      */
-    public String url() {
-        return this.url;
+    public Optional<String> url() {
+        return Optional.ofNullable(this.url);
     }
 
     public static Builder builder() {
@@ -57,9 +59,9 @@ public final class GetServiceEnvironmentServiceEnvironmentEndpoint {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String description;
-        private String environmentType;
-        private String url;
+        private @Nullable String description;
+        private @Nullable String environmentType;
+        private @Nullable String url;
         public Builder() {}
         public Builder(GetServiceEnvironmentServiceEnvironmentEndpoint defaults) {
     	      Objects.requireNonNull(defaults);
@@ -69,18 +71,18 @@ public final class GetServiceEnvironmentServiceEnvironmentEndpoint {
         }
 
         @CustomType.Setter
-        public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+        public Builder description(@Nullable String description) {
+            this.description = description;
             return this;
         }
         @CustomType.Setter
-        public Builder environmentType(String environmentType) {
-            this.environmentType = Objects.requireNonNull(environmentType);
+        public Builder environmentType(@Nullable String environmentType) {
+            this.environmentType = environmentType;
             return this;
         }
         @CustomType.Setter
-        public Builder url(String url) {
-            this.url = Objects.requireNonNull(url);
+        public Builder url(@Nullable String url) {
+            this.url = url;
             return this;
         }
         public GetServiceEnvironmentServiceEnvironmentEndpoint build() {

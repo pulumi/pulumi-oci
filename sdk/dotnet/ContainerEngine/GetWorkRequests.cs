@@ -198,7 +198,7 @@ namespace Pulumi.Oci.ContainerEngine
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         public readonly string? ResourceId;
         public readonly string? ResourceType;
         /// <summary>
@@ -218,7 +218,7 @@ namespace Pulumi.Oci.ContainerEngine
 
             ImmutableArray<Outputs.GetWorkRequestsFilterResult> filters,
 
-            string id,
+            string? id,
 
             string? resourceId,
 

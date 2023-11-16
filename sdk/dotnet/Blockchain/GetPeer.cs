@@ -122,17 +122,17 @@ namespace Pulumi.Oci.Blockchain
         /// <summary>
         /// Availability Domain of peer
         /// </summary>
-        public readonly string Ad;
+        public readonly string? Ad;
         /// <summary>
         /// peer alias
         /// </summary>
-        public readonly string Alias;
+        public readonly string? Alias;
         public readonly string BlockchainPlatformId;
         /// <summary>
         /// Host on which the Peer exists
         /// </summary>
-        public readonly string Host;
-        public readonly string Id;
+        public readonly string? Host;
+        public readonly string? Id;
         /// <summary>
         /// OCPU allocation parameter
         /// </summary>
@@ -141,37 +141,37 @@ namespace Pulumi.Oci.Blockchain
         /// <summary>
         /// peer identifier
         /// </summary>
-        public readonly string PeerKey;
+        public readonly string? PeerKey;
         /// <summary>
         /// Peer role
         /// </summary>
-        public readonly string Role;
+        public readonly string? Role;
         /// <summary>
         /// The current state of the peer.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
 
         [OutputConstructor]
         private GetPeerResult(
-            string ad,
+            string? ad,
 
-            string alias,
+            string? alias,
 
             string blockchainPlatformId,
 
-            string host,
+            string? host,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetPeerOcpuAllocationParamResult> ocpuAllocationParams,
 
             string peerId,
 
-            string peerKey,
+            string? peerKey,
 
-            string role,
+            string? role,
 
-            string state)
+            string? state)
         {
             Ad = ad;
             Alias = alias;

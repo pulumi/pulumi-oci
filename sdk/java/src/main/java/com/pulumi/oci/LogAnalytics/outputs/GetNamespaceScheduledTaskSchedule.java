@@ -7,14 +7,15 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.LogAnalytics.outputs.GetNamespaceScheduledTaskScheduleSchedule;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetNamespaceScheduledTaskSchedule {
-    private List<GetNamespaceScheduledTaskScheduleSchedule> schedules;
+    private @Nullable List<GetNamespaceScheduledTaskScheduleSchedule> schedules;
 
     private GetNamespaceScheduledTaskSchedule() {}
     public List<GetNamespaceScheduledTaskScheduleSchedule> schedules() {
-        return this.schedules;
+        return this.schedules == null ? List.of() : this.schedules;
     }
 
     public static Builder builder() {
@@ -26,7 +27,7 @@ public final class GetNamespaceScheduledTaskSchedule {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetNamespaceScheduledTaskScheduleSchedule> schedules;
+        private @Nullable List<GetNamespaceScheduledTaskScheduleSchedule> schedules;
         public Builder() {}
         public Builder(GetNamespaceScheduledTaskSchedule defaults) {
     	      Objects.requireNonNull(defaults);
@@ -34,8 +35,8 @@ public final class GetNamespaceScheduledTaskSchedule {
         }
 
         @CustomType.Setter
-        public Builder schedules(List<GetNamespaceScheduledTaskScheduleSchedule> schedules) {
-            this.schedules = Objects.requireNonNull(schedules);
+        public Builder schedules(@Nullable List<GetNamespaceScheduledTaskScheduleSchedule> schedules) {
+            this.schedules = schedules;
             return this;
         }
         public Builder schedules(GetNamespaceScheduledTaskScheduleSchedule... schedules) {

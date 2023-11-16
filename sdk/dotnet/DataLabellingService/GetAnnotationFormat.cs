@@ -109,7 +109,7 @@ namespace Pulumi.Oci.DataLabellingService
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// List of annotation formats.
         /// </summary>
@@ -119,7 +119,7 @@ namespace Pulumi.Oci.DataLabellingService
         private GetAnnotationFormatResult(
             string compartmentId,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetAnnotationFormatItemResult> items)
         {

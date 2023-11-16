@@ -72,12 +72,12 @@ export interface GetDrgRouteDistributionsResult {
     /**
      * The list of drg_route_distributions.
      */
-    readonly drgRouteDistributions: outputs.Core.GetDrgRouteDistributionsDrgRouteDistribution[];
+    readonly drgRouteDistributions?: outputs.Core.GetDrgRouteDistributionsDrgRouteDistribution[];
     readonly filters?: outputs.Core.GetDrgRouteDistributionsFilter[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The route distribution's current state.
      */

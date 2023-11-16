@@ -10,6 +10,8 @@ import com.pulumi.oci.StackMonitoring.outputs.GetDiscoveryJobDiscoveryDetailTag;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDiscoveryJobDiscoveryDetail {
@@ -17,87 +19,87 @@ public final class GetDiscoveryJobDiscoveryDetail {
      * @return The OCID of Management Agent
      * 
      */
-    private String agentId;
+    private @Nullable String agentId;
     /**
      * @return List of DiscoveryJOb Credential Details.
      * 
      */
-    private List<GetDiscoveryJobDiscoveryDetailCredential> credentials;
+    private @Nullable List<GetDiscoveryJobDiscoveryDetailCredential> credentials;
     /**
      * @return License edition of the monitored resource.
      * 
      */
-    private String license;
+    private @Nullable String license;
     /**
      * @return Property Details
      * 
      */
-    private List<GetDiscoveryJobDiscoveryDetailProperty> properties;
+    private @Nullable List<GetDiscoveryJobDiscoveryDetailProperty> properties;
     /**
      * @return The Name of resource type
      * 
      */
-    private String resourceName;
+    private @Nullable String resourceName;
     /**
      * @return Resource Type.
      * 
      */
-    private String resourceType;
+    private @Nullable String resourceType;
     /**
      * @return Property Details
      * 
      */
-    private List<GetDiscoveryJobDiscoveryDetailTag> tags;
+    private @Nullable List<GetDiscoveryJobDiscoveryDetailTag> tags;
 
     private GetDiscoveryJobDiscoveryDetail() {}
     /**
      * @return The OCID of Management Agent
      * 
      */
-    public String agentId() {
-        return this.agentId;
+    public Optional<String> agentId() {
+        return Optional.ofNullable(this.agentId);
     }
     /**
      * @return List of DiscoveryJOb Credential Details.
      * 
      */
     public List<GetDiscoveryJobDiscoveryDetailCredential> credentials() {
-        return this.credentials;
+        return this.credentials == null ? List.of() : this.credentials;
     }
     /**
      * @return License edition of the monitored resource.
      * 
      */
-    public String license() {
-        return this.license;
+    public Optional<String> license() {
+        return Optional.ofNullable(this.license);
     }
     /**
      * @return Property Details
      * 
      */
     public List<GetDiscoveryJobDiscoveryDetailProperty> properties() {
-        return this.properties;
+        return this.properties == null ? List.of() : this.properties;
     }
     /**
      * @return The Name of resource type
      * 
      */
-    public String resourceName() {
-        return this.resourceName;
+    public Optional<String> resourceName() {
+        return Optional.ofNullable(this.resourceName);
     }
     /**
      * @return Resource Type.
      * 
      */
-    public String resourceType() {
-        return this.resourceType;
+    public Optional<String> resourceType() {
+        return Optional.ofNullable(this.resourceType);
     }
     /**
      * @return Property Details
      * 
      */
     public List<GetDiscoveryJobDiscoveryDetailTag> tags() {
-        return this.tags;
+        return this.tags == null ? List.of() : this.tags;
     }
 
     public static Builder builder() {
@@ -109,13 +111,13 @@ public final class GetDiscoveryJobDiscoveryDetail {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String agentId;
-        private List<GetDiscoveryJobDiscoveryDetailCredential> credentials;
-        private String license;
-        private List<GetDiscoveryJobDiscoveryDetailProperty> properties;
-        private String resourceName;
-        private String resourceType;
-        private List<GetDiscoveryJobDiscoveryDetailTag> tags;
+        private @Nullable String agentId;
+        private @Nullable List<GetDiscoveryJobDiscoveryDetailCredential> credentials;
+        private @Nullable String license;
+        private @Nullable List<GetDiscoveryJobDiscoveryDetailProperty> properties;
+        private @Nullable String resourceName;
+        private @Nullable String resourceType;
+        private @Nullable List<GetDiscoveryJobDiscoveryDetailTag> tags;
         public Builder() {}
         public Builder(GetDiscoveryJobDiscoveryDetail defaults) {
     	      Objects.requireNonNull(defaults);
@@ -129,44 +131,44 @@ public final class GetDiscoveryJobDiscoveryDetail {
         }
 
         @CustomType.Setter
-        public Builder agentId(String agentId) {
-            this.agentId = Objects.requireNonNull(agentId);
+        public Builder agentId(@Nullable String agentId) {
+            this.agentId = agentId;
             return this;
         }
         @CustomType.Setter
-        public Builder credentials(List<GetDiscoveryJobDiscoveryDetailCredential> credentials) {
-            this.credentials = Objects.requireNonNull(credentials);
+        public Builder credentials(@Nullable List<GetDiscoveryJobDiscoveryDetailCredential> credentials) {
+            this.credentials = credentials;
             return this;
         }
         public Builder credentials(GetDiscoveryJobDiscoveryDetailCredential... credentials) {
             return credentials(List.of(credentials));
         }
         @CustomType.Setter
-        public Builder license(String license) {
-            this.license = Objects.requireNonNull(license);
+        public Builder license(@Nullable String license) {
+            this.license = license;
             return this;
         }
         @CustomType.Setter
-        public Builder properties(List<GetDiscoveryJobDiscoveryDetailProperty> properties) {
-            this.properties = Objects.requireNonNull(properties);
+        public Builder properties(@Nullable List<GetDiscoveryJobDiscoveryDetailProperty> properties) {
+            this.properties = properties;
             return this;
         }
         public Builder properties(GetDiscoveryJobDiscoveryDetailProperty... properties) {
             return properties(List.of(properties));
         }
         @CustomType.Setter
-        public Builder resourceName(String resourceName) {
-            this.resourceName = Objects.requireNonNull(resourceName);
+        public Builder resourceName(@Nullable String resourceName) {
+            this.resourceName = resourceName;
             return this;
         }
         @CustomType.Setter
-        public Builder resourceType(String resourceType) {
-            this.resourceType = Objects.requireNonNull(resourceType);
+        public Builder resourceType(@Nullable String resourceType) {
+            this.resourceType = resourceType;
             return this;
         }
         @CustomType.Setter
-        public Builder tags(List<GetDiscoveryJobDiscoveryDetailTag> tags) {
-            this.tags = Objects.requireNonNull(tags);
+        public Builder tags(@Nullable List<GetDiscoveryJobDiscoveryDetailTag> tags) {
+            this.tags = tags;
             return this;
         }
         public Builder tags(GetDiscoveryJobDiscoveryDetailTag... tags) {

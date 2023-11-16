@@ -6,6 +6,8 @@ package com.pulumi.oci.CertificatesManagement.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetCertificateAuthoritiesCertificateAuthorityCollectionItemSubject {
@@ -13,207 +15,207 @@ public final class GetCertificateAuthoritiesCertificateAuthorityCollectionItemSu
      * @return Common name or fully-qualified domain name (RDN CN).
      * 
      */
-    private String commonName;
+    private @Nullable String commonName;
     /**
      * @return Country name (RDN C).
      * 
      */
-    private String country;
+    private @Nullable String country;
     /**
      * @return Distinguished name qualifier(RDN DNQ).
      * 
      */
-    private String distinguishedNameQualifier;
+    private @Nullable String distinguishedNameQualifier;
     /**
      * @return Domain component (RDN DC).
      * 
      */
-    private String domainComponent;
+    private @Nullable String domainComponent;
     /**
      * @return Personal generational qualifier (for example, Sr., Jr. 3rd, or IV).
      * 
      */
-    private String generationQualifier;
+    private @Nullable String generationQualifier;
     /**
      * @return Personal given name (RDN G or GN).
      * 
      */
-    private String givenName;
+    private @Nullable String givenName;
     /**
      * @return Personal initials.
      * 
      */
-    private String initials;
+    private @Nullable String initials;
     /**
      * @return Locality (RDN L).
      * 
      */
-    private String localityName;
+    private @Nullable String localityName;
     /**
      * @return Organization (RDN O).
      * 
      */
-    private String organization;
+    private @Nullable String organization;
     /**
      * @return Organizational unit (RDN OU).
      * 
      */
-    private String organizationalUnit;
+    private @Nullable String organizationalUnit;
     /**
      * @return Subject pseudonym.
      * 
      */
-    private String pseudonym;
+    private @Nullable String pseudonym;
     /**
      * @return Unique subject identifier, which is not the same as the certificate serial number (RDN SERIALNUMBER).
      * 
      */
-    private String serialNumber;
+    private @Nullable String serialNumber;
     /**
      * @return State or province name (RDN ST or S).
      * 
      */
-    private String stateOrProvinceName;
+    private @Nullable String stateOrProvinceName;
     /**
      * @return Street address (RDN STREET).
      * 
      */
-    private String street;
+    private @Nullable String street;
     /**
      * @return Personal surname (RDN SN).
      * 
      */
-    private String surname;
+    private @Nullable String surname;
     /**
      * @return Title (RDN T or TITLE).
      * 
      */
-    private String title;
+    private @Nullable String title;
     /**
      * @return User ID (RDN UID).
      * 
      */
-    private String userId;
+    private @Nullable String userId;
 
     private GetCertificateAuthoritiesCertificateAuthorityCollectionItemSubject() {}
     /**
      * @return Common name or fully-qualified domain name (RDN CN).
      * 
      */
-    public String commonName() {
-        return this.commonName;
+    public Optional<String> commonName() {
+        return Optional.ofNullable(this.commonName);
     }
     /**
      * @return Country name (RDN C).
      * 
      */
-    public String country() {
-        return this.country;
+    public Optional<String> country() {
+        return Optional.ofNullable(this.country);
     }
     /**
      * @return Distinguished name qualifier(RDN DNQ).
      * 
      */
-    public String distinguishedNameQualifier() {
-        return this.distinguishedNameQualifier;
+    public Optional<String> distinguishedNameQualifier() {
+        return Optional.ofNullable(this.distinguishedNameQualifier);
     }
     /**
      * @return Domain component (RDN DC).
      * 
      */
-    public String domainComponent() {
-        return this.domainComponent;
+    public Optional<String> domainComponent() {
+        return Optional.ofNullable(this.domainComponent);
     }
     /**
      * @return Personal generational qualifier (for example, Sr., Jr. 3rd, or IV).
      * 
      */
-    public String generationQualifier() {
-        return this.generationQualifier;
+    public Optional<String> generationQualifier() {
+        return Optional.ofNullable(this.generationQualifier);
     }
     /**
      * @return Personal given name (RDN G or GN).
      * 
      */
-    public String givenName() {
-        return this.givenName;
+    public Optional<String> givenName() {
+        return Optional.ofNullable(this.givenName);
     }
     /**
      * @return Personal initials.
      * 
      */
-    public String initials() {
-        return this.initials;
+    public Optional<String> initials() {
+        return Optional.ofNullable(this.initials);
     }
     /**
      * @return Locality (RDN L).
      * 
      */
-    public String localityName() {
-        return this.localityName;
+    public Optional<String> localityName() {
+        return Optional.ofNullable(this.localityName);
     }
     /**
      * @return Organization (RDN O).
      * 
      */
-    public String organization() {
-        return this.organization;
+    public Optional<String> organization() {
+        return Optional.ofNullable(this.organization);
     }
     /**
      * @return Organizational unit (RDN OU).
      * 
      */
-    public String organizationalUnit() {
-        return this.organizationalUnit;
+    public Optional<String> organizationalUnit() {
+        return Optional.ofNullable(this.organizationalUnit);
     }
     /**
      * @return Subject pseudonym.
      * 
      */
-    public String pseudonym() {
-        return this.pseudonym;
+    public Optional<String> pseudonym() {
+        return Optional.ofNullable(this.pseudonym);
     }
     /**
      * @return Unique subject identifier, which is not the same as the certificate serial number (RDN SERIALNUMBER).
      * 
      */
-    public String serialNumber() {
-        return this.serialNumber;
+    public Optional<String> serialNumber() {
+        return Optional.ofNullable(this.serialNumber);
     }
     /**
      * @return State or province name (RDN ST or S).
      * 
      */
-    public String stateOrProvinceName() {
-        return this.stateOrProvinceName;
+    public Optional<String> stateOrProvinceName() {
+        return Optional.ofNullable(this.stateOrProvinceName);
     }
     /**
      * @return Street address (RDN STREET).
      * 
      */
-    public String street() {
-        return this.street;
+    public Optional<String> street() {
+        return Optional.ofNullable(this.street);
     }
     /**
      * @return Personal surname (RDN SN).
      * 
      */
-    public String surname() {
-        return this.surname;
+    public Optional<String> surname() {
+        return Optional.ofNullable(this.surname);
     }
     /**
      * @return Title (RDN T or TITLE).
      * 
      */
-    public String title() {
-        return this.title;
+    public Optional<String> title() {
+        return Optional.ofNullable(this.title);
     }
     /**
      * @return User ID (RDN UID).
      * 
      */
-    public String userId() {
-        return this.userId;
+    public Optional<String> userId() {
+        return Optional.ofNullable(this.userId);
     }
 
     public static Builder builder() {
@@ -225,23 +227,23 @@ public final class GetCertificateAuthoritiesCertificateAuthorityCollectionItemSu
     }
     @CustomType.Builder
     public static final class Builder {
-        private String commonName;
-        private String country;
-        private String distinguishedNameQualifier;
-        private String domainComponent;
-        private String generationQualifier;
-        private String givenName;
-        private String initials;
-        private String localityName;
-        private String organization;
-        private String organizationalUnit;
-        private String pseudonym;
-        private String serialNumber;
-        private String stateOrProvinceName;
-        private String street;
-        private String surname;
-        private String title;
-        private String userId;
+        private @Nullable String commonName;
+        private @Nullable String country;
+        private @Nullable String distinguishedNameQualifier;
+        private @Nullable String domainComponent;
+        private @Nullable String generationQualifier;
+        private @Nullable String givenName;
+        private @Nullable String initials;
+        private @Nullable String localityName;
+        private @Nullable String organization;
+        private @Nullable String organizationalUnit;
+        private @Nullable String pseudonym;
+        private @Nullable String serialNumber;
+        private @Nullable String stateOrProvinceName;
+        private @Nullable String street;
+        private @Nullable String surname;
+        private @Nullable String title;
+        private @Nullable String userId;
         public Builder() {}
         public Builder(GetCertificateAuthoritiesCertificateAuthorityCollectionItemSubject defaults) {
     	      Objects.requireNonNull(defaults);
@@ -265,88 +267,88 @@ public final class GetCertificateAuthoritiesCertificateAuthorityCollectionItemSu
         }
 
         @CustomType.Setter
-        public Builder commonName(String commonName) {
-            this.commonName = Objects.requireNonNull(commonName);
+        public Builder commonName(@Nullable String commonName) {
+            this.commonName = commonName;
             return this;
         }
         @CustomType.Setter
-        public Builder country(String country) {
-            this.country = Objects.requireNonNull(country);
+        public Builder country(@Nullable String country) {
+            this.country = country;
             return this;
         }
         @CustomType.Setter
-        public Builder distinguishedNameQualifier(String distinguishedNameQualifier) {
-            this.distinguishedNameQualifier = Objects.requireNonNull(distinguishedNameQualifier);
+        public Builder distinguishedNameQualifier(@Nullable String distinguishedNameQualifier) {
+            this.distinguishedNameQualifier = distinguishedNameQualifier;
             return this;
         }
         @CustomType.Setter
-        public Builder domainComponent(String domainComponent) {
-            this.domainComponent = Objects.requireNonNull(domainComponent);
+        public Builder domainComponent(@Nullable String domainComponent) {
+            this.domainComponent = domainComponent;
             return this;
         }
         @CustomType.Setter
-        public Builder generationQualifier(String generationQualifier) {
-            this.generationQualifier = Objects.requireNonNull(generationQualifier);
+        public Builder generationQualifier(@Nullable String generationQualifier) {
+            this.generationQualifier = generationQualifier;
             return this;
         }
         @CustomType.Setter
-        public Builder givenName(String givenName) {
-            this.givenName = Objects.requireNonNull(givenName);
+        public Builder givenName(@Nullable String givenName) {
+            this.givenName = givenName;
             return this;
         }
         @CustomType.Setter
-        public Builder initials(String initials) {
-            this.initials = Objects.requireNonNull(initials);
+        public Builder initials(@Nullable String initials) {
+            this.initials = initials;
             return this;
         }
         @CustomType.Setter
-        public Builder localityName(String localityName) {
-            this.localityName = Objects.requireNonNull(localityName);
+        public Builder localityName(@Nullable String localityName) {
+            this.localityName = localityName;
             return this;
         }
         @CustomType.Setter
-        public Builder organization(String organization) {
-            this.organization = Objects.requireNonNull(organization);
+        public Builder organization(@Nullable String organization) {
+            this.organization = organization;
             return this;
         }
         @CustomType.Setter
-        public Builder organizationalUnit(String organizationalUnit) {
-            this.organizationalUnit = Objects.requireNonNull(organizationalUnit);
+        public Builder organizationalUnit(@Nullable String organizationalUnit) {
+            this.organizationalUnit = organizationalUnit;
             return this;
         }
         @CustomType.Setter
-        public Builder pseudonym(String pseudonym) {
-            this.pseudonym = Objects.requireNonNull(pseudonym);
+        public Builder pseudonym(@Nullable String pseudonym) {
+            this.pseudonym = pseudonym;
             return this;
         }
         @CustomType.Setter
-        public Builder serialNumber(String serialNumber) {
-            this.serialNumber = Objects.requireNonNull(serialNumber);
+        public Builder serialNumber(@Nullable String serialNumber) {
+            this.serialNumber = serialNumber;
             return this;
         }
         @CustomType.Setter
-        public Builder stateOrProvinceName(String stateOrProvinceName) {
-            this.stateOrProvinceName = Objects.requireNonNull(stateOrProvinceName);
+        public Builder stateOrProvinceName(@Nullable String stateOrProvinceName) {
+            this.stateOrProvinceName = stateOrProvinceName;
             return this;
         }
         @CustomType.Setter
-        public Builder street(String street) {
-            this.street = Objects.requireNonNull(street);
+        public Builder street(@Nullable String street) {
+            this.street = street;
             return this;
         }
         @CustomType.Setter
-        public Builder surname(String surname) {
-            this.surname = Objects.requireNonNull(surname);
+        public Builder surname(@Nullable String surname) {
+            this.surname = surname;
             return this;
         }
         @CustomType.Setter
-        public Builder title(String title) {
-            this.title = Objects.requireNonNull(title);
+        public Builder title(@Nullable String title) {
+            this.title = title;
             return this;
         }
         @CustomType.Setter
-        public Builder userId(String userId) {
-            this.userId = Objects.requireNonNull(userId);
+        public Builder userId(@Nullable String userId) {
+            this.userId = userId;
             return this;
         }
         public GetCertificateAuthoritiesCertificateAuthorityCollectionItemSubject build() {

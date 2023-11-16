@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.Jms.outputs.GetAnnouncementsAnnouncementCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAnnouncementsAnnouncementCollection {
@@ -14,7 +15,7 @@ public final class GetAnnouncementsAnnouncementCollection {
      * @return List of AnnouncementSummary items
      * 
      */
-    private List<GetAnnouncementsAnnouncementCollectionItem> items;
+    private @Nullable List<GetAnnouncementsAnnouncementCollectionItem> items;
 
     private GetAnnouncementsAnnouncementCollection() {}
     /**
@@ -22,7 +23,7 @@ public final class GetAnnouncementsAnnouncementCollection {
      * 
      */
     public List<GetAnnouncementsAnnouncementCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -34,7 +35,7 @@ public final class GetAnnouncementsAnnouncementCollection {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetAnnouncementsAnnouncementCollectionItem> items;
+        private @Nullable List<GetAnnouncementsAnnouncementCollectionItem> items;
         public Builder() {}
         public Builder(GetAnnouncementsAnnouncementCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -42,8 +43,8 @@ public final class GetAnnouncementsAnnouncementCollection {
         }
 
         @CustomType.Setter
-        public Builder items(List<GetAnnouncementsAnnouncementCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetAnnouncementsAnnouncementCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetAnnouncementsAnnouncementCollectionItem... items) {

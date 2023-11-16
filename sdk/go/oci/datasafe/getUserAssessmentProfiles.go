@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of User Assessment Profiles in Oracle Cloud Infrastructure Data Safe service.
@@ -133,7 +132,7 @@ type GetUserAssessmentProfilesResult struct {
 	FailedLoginAttemptsLessThan           *string                           `pulumi:"failedLoginAttemptsLessThan"`
 	Filters                               []GetUserAssessmentProfilesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id                                    string  `pulumi:"id"`
+	Id                                    *string `pulumi:"id"`
 	InactiveAccountTimeGreaterThanOrEqual *string `pulumi:"inactiveAccountTimeGreaterThanOrEqual"`
 	InactiveAccountTimeLessThan           *string `pulumi:"inactiveAccountTimeLessThan"`
 	// Represents if the profile is created by user.
@@ -229,12 +228,6 @@ func (o GetUserAssessmentProfilesResultOutput) ToGetUserAssessmentProfilesResult
 	return o
 }
 
-func (o GetUserAssessmentProfilesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetUserAssessmentProfilesResult] {
-	return pulumix.Output[GetUserAssessmentProfilesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetUserAssessmentProfilesResultOutput) AccessLevel() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetUserAssessmentProfilesResult) *string { return v.AccessLevel }).(pulumi.StringPtrOutput)
 }
@@ -261,8 +254,8 @@ func (o GetUserAssessmentProfilesResultOutput) Filters() GetUserAssessmentProfil
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetUserAssessmentProfilesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetUserAssessmentProfilesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetUserAssessmentProfilesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetUserAssessmentProfilesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetUserAssessmentProfilesResultOutput) InactiveAccountTimeGreaterThanOrEqual() pulumi.StringPtrOutput {

@@ -67,25 +67,25 @@ namespace Pulumi.Oci.DataSafe
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Description of the security assessment.
         /// </summary>
         [Output("description")]
-        public Output<string> Description { get; private set; } = null!;
+        public Output<string?> Description { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The display name of the security assessment.
         /// </summary>
         [Output("displayName")]
-        public Output<string> DisplayName { get; private set; } = null!;
+        public Output<string?> DisplayName { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// List containing maps as values. Example: `{"Operations": [ {"CostCenter": "42"} ] }`
@@ -103,31 +103,31 @@ namespace Pulumi.Oci.DataSafe
         /// Indicates whether or not the security assessment is set as a baseline. This is applicable only for saved security assessments.
         /// </summary>
         [Output("isBaseline")]
-        public Output<bool> IsBaseline { get; private set; } = null!;
+        public Output<bool?> IsBaseline { get; private set; } = null!;
 
         /// <summary>
         /// Indicates whether or not the security assessment deviates from the baseline.
         /// </summary>
         [Output("isDeviatedFromBaseline")]
-        public Output<bool> IsDeviatedFromBaseline { get; private set; } = null!;
+        public Output<bool?> IsDeviatedFromBaseline { get; private set; } = null!;
 
         /// <summary>
         /// The OCID of the baseline against which the latest security assessment was compared.
         /// </summary>
         [Output("lastComparedBaselineId")]
-        public Output<string> LastComparedBaselineId { get; private set; } = null!;
+        public Output<string?> LastComparedBaselineId { get; private set; } = null!;
 
         /// <summary>
         /// Details about the current state of the security assessment.
         /// </summary>
         [Output("lifecycleDetails")]
-        public Output<string> LifecycleDetails { get; private set; } = null!;
+        public Output<string?> LifecycleDetails { get; private set; } = null!;
 
         /// <summary>
         /// The summary of findings for the security assessment.
         /// </summary>
         [Output("link")]
-        public Output<string> Link { get; private set; } = null!;
+        public Output<string?> Link { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) To schedule the assessment for running periodically, specify the schedule in this attribute. Create or schedule one assessment per compartment. If not defined, the assessment runs immediately. Format - &lt;version-string&gt;;&lt;version-specific-schedule&gt;
@@ -135,19 +135,19 @@ namespace Pulumi.Oci.DataSafe
         /// Allowed version strings - "v1" v1's version specific schedule -&lt;ss&gt; &lt;mm&gt; &lt;hh&gt; &lt;day-of-week&gt; &lt;day-of-month&gt; Each of the above fields potentially introduce constraints. A workrequest is created only when clock time satisfies all the constraints. Constraints introduced: 1. seconds = &lt;ss&gt; (So, the allowed range for &lt;ss&gt; is [0, 59]) 2. minutes = &lt;mm&gt; (So, the allowed range for &lt;mm&gt; is [0, 59]) 3. hours = &lt;hh&gt; (So, the allowed range for &lt;hh&gt; is [0, 23]) &lt;day-of-week&gt; can be either '*' (without quotes or a number between 1(Monday) and 7(Sunday)) 4. No constraint introduced when it is '*'. When not, day of week must equal the given value &lt;day-of-month&gt; can be either '*' (without quotes or a number between 1 and 28) 5. No constraint introduced when it is '*'. When not, day of month must equal the given value
         /// </summary>
         [Output("schedule")]
-        public Output<string> Schedule { get; private set; } = null!;
+        public Output<string?> Schedule { get; private set; } = null!;
 
         /// <summary>
         /// The OCID of the security assessment that is responsible for creating this scheduled save assessment.
         /// </summary>
         [Output("scheduleSecurityAssessmentId")]
-        public Output<string> ScheduleSecurityAssessmentId { get; private set; } = null!;
+        public Output<string?> ScheduleSecurityAssessmentId { get; private set; } = null!;
 
         /// <summary>
         /// The current state of the security assessment.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// Statistics showing the number of findings for each category grouped by risk levels for all the targets in the specified security assessment.
@@ -159,7 +159,7 @@ namespace Pulumi.Oci.DataSafe
         /// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
         [Output("systemTags")]
-        public Output<ImmutableDictionary<string, object>> SystemTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> SystemTags { get; private set; } = null!;
 
         /// <summary>
         /// The OCID of the target database on which security assessment is to be run.
@@ -181,37 +181,37 @@ namespace Pulumi.Oci.DataSafe
         /// The version of the target database.
         /// </summary>
         [Output("targetVersion")]
-        public Output<string> TargetVersion { get; private set; } = null!;
+        public Output<string?> TargetVersion { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the security assessment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the security assessment was last executed, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         /// </summary>
         [Output("timeLastAssessed")]
-        public Output<string> TimeLastAssessed { get; private set; } = null!;
+        public Output<string?> TimeLastAssessed { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the security assessment was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         /// </summary>
         [Output("timeUpdated")]
-        public Output<string> TimeUpdated { get; private set; } = null!;
+        public Output<string?> TimeUpdated { get; private set; } = null!;
 
         /// <summary>
         /// Indicates whether the security assessment was created by system or by a user.
         /// </summary>
         [Output("triggeredBy")]
-        public Output<string> TriggeredBy { get; private set; } = null!;
+        public Output<string?> TriggeredBy { get; private set; } = null!;
 
         /// <summary>
         /// The type of this security assessment. The possible types are:
         /// </summary>
         [Output("type")]
-        public Output<string> Type { get; private set; } = null!;
+        public Output<string?> Type { get; private set; } = null!;
 
 
         /// <summary>

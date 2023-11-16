@@ -8,6 +8,8 @@ import com.pulumi.oci.Functions.outputs.GetPbfListingVersionRequirementPolicy;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetPbfListingVersionRequirement {
@@ -15,27 +17,27 @@ public final class GetPbfListingVersionRequirement {
      * @return Minimum memory required by this PBF. The user should use memory greater than or equal to  this value while configuring the Function.
      * 
      */
-    private String minMemoryRequiredInMbs;
+    private @Nullable String minMemoryRequiredInMbs;
     /**
      * @return List of policies required for this PBF execution.
      * 
      */
-    private List<GetPbfListingVersionRequirementPolicy> policies;
+    private @Nullable List<GetPbfListingVersionRequirementPolicy> policies;
 
     private GetPbfListingVersionRequirement() {}
     /**
      * @return Minimum memory required by this PBF. The user should use memory greater than or equal to  this value while configuring the Function.
      * 
      */
-    public String minMemoryRequiredInMbs() {
-        return this.minMemoryRequiredInMbs;
+    public Optional<String> minMemoryRequiredInMbs() {
+        return Optional.ofNullable(this.minMemoryRequiredInMbs);
     }
     /**
      * @return List of policies required for this PBF execution.
      * 
      */
     public List<GetPbfListingVersionRequirementPolicy> policies() {
-        return this.policies;
+        return this.policies == null ? List.of() : this.policies;
     }
 
     public static Builder builder() {
@@ -47,8 +49,8 @@ public final class GetPbfListingVersionRequirement {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String minMemoryRequiredInMbs;
-        private List<GetPbfListingVersionRequirementPolicy> policies;
+        private @Nullable String minMemoryRequiredInMbs;
+        private @Nullable List<GetPbfListingVersionRequirementPolicy> policies;
         public Builder() {}
         public Builder(GetPbfListingVersionRequirement defaults) {
     	      Objects.requireNonNull(defaults);
@@ -57,13 +59,13 @@ public final class GetPbfListingVersionRequirement {
         }
 
         @CustomType.Setter
-        public Builder minMemoryRequiredInMbs(String minMemoryRequiredInMbs) {
-            this.minMemoryRequiredInMbs = Objects.requireNonNull(minMemoryRequiredInMbs);
+        public Builder minMemoryRequiredInMbs(@Nullable String minMemoryRequiredInMbs) {
+            this.minMemoryRequiredInMbs = minMemoryRequiredInMbs;
             return this;
         }
         @CustomType.Setter
-        public Builder policies(List<GetPbfListingVersionRequirementPolicy> policies) {
-            this.policies = Objects.requireNonNull(policies);
+        public Builder policies(@Nullable List<GetPbfListingVersionRequirementPolicy> policies) {
+            this.policies = policies;
             return this;
         }
         public Builder policies(GetPbfListingVersionRequirementPolicy... policies) {

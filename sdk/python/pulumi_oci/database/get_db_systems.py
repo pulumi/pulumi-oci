@@ -52,9 +52,6 @@ class GetDbSystemsResult:
     @property
     @pulumi.getter(name="availabilityDomain")
     def availability_domain(self) -> Optional[str]:
-        """
-        The name of the availability domain that the DB system is located in.
-        """
         return pulumi.get(self, "availability_domain")
 
     @property
@@ -65,25 +62,16 @@ class GetDbSystemsResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="dbSystems")
-    def db_systems(self) -> Sequence['outputs.GetDbSystemsDbSystemResult']:
-        """
-        The list of db_systems.
-        """
+    def db_systems(self) -> Optional[Sequence['outputs.GetDbSystemsDbSystemResult']]:
         return pulumi.get(self, "db_systems")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        The user-friendly name for the DB system. The name does not have to be unique.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -93,7 +81,7 @@ class GetDbSystemsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -102,9 +90,6 @@ class GetDbSystemsResult:
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the DB system.
-        """
         return pulumi.get(self, "state")
 
 
@@ -132,33 +117,7 @@ def get_db_systems(availability_domain: Optional[str] = None,
                    state: Optional[str] = None,
                    opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDbSystemsResult:
     """
-    This data source provides the list of Db Systems in Oracle Cloud Infrastructure Database service.
-
-    Lists the DB systems in the specified compartment. You can specify a `backupId` to list only the DB systems that support creating a database using this backup in this compartment.
-
-    **Note:** Deprecated for Exadata Cloud Service systems. Use the [new resource model APIs](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model) instead.
-
-    For Exadata Cloud Service instances, support for this API will end on May 15th, 2021. See [Switching an Exadata DB System to the New Resource Model and APIs](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem_topic-resource_model_conversion.htm) for details on converting existing Exadata DB systems to the new resource model.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_db_systems = oci.Database.get_db_systems(compartment_id=var["compartment_id"],
-        availability_domain=var["db_system_availability_domain"],
-        backup_id=oci_database_backup["test_backup"]["id"],
-        display_name=var["db_system_display_name"],
-        state=var["db_system_state"])
-    ```
-
-
-    :param str availability_domain: A filter to return only resources that match the given availability domain exactly.
-    :param str backup_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup. Specify a backupId to list only the DB systems or DB homes that support creating a database using this backup in this compartment.
-    :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param str display_name: A filter to return only resources that match the entire display name given. The match is not case sensitive.
-    :param str state: A filter to return only resources that match the given lifecycle state exactly.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['availabilityDomain'] = availability_domain
@@ -190,32 +149,6 @@ def get_db_systems_output(availability_domain: Optional[pulumi.Input[Optional[st
                           state: Optional[pulumi.Input[Optional[str]]] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDbSystemsResult]:
     """
-    This data source provides the list of Db Systems in Oracle Cloud Infrastructure Database service.
-
-    Lists the DB systems in the specified compartment. You can specify a `backupId` to list only the DB systems that support creating a database using this backup in this compartment.
-
-    **Note:** Deprecated for Exadata Cloud Service systems. Use the [new resource model APIs](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model) instead.
-
-    For Exadata Cloud Service instances, support for this API will end on May 15th, 2021. See [Switching an Exadata DB System to the New Resource Model and APIs](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem_topic-resource_model_conversion.htm) for details on converting existing Exadata DB systems to the new resource model.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_db_systems = oci.Database.get_db_systems(compartment_id=var["compartment_id"],
-        availability_domain=var["db_system_availability_domain"],
-        backup_id=oci_database_backup["test_backup"]["id"],
-        display_name=var["db_system_display_name"],
-        state=var["db_system_state"])
-    ```
-
-
-    :param str availability_domain: A filter to return only resources that match the given availability domain exactly.
-    :param str backup_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup. Specify a backupId to list only the DB systems or DB homes that support creating a database using this backup in this compartment.
-    :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param str display_name: A filter to return only resources that match the entire display name given. The match is not case sensitive.
-    :param str state: A filter to return only resources that match the given lifecycle state exactly.
+    Use this data source to access information about an existing resource.
     """
     ...

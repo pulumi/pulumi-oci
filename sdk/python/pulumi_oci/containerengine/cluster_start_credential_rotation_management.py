@@ -18,12 +18,6 @@ class ClusterStartCredentialRotationManagementArgs:
                  cluster_id: pulumi.Input[str]):
         """
         The set of arguments for constructing a ClusterStartCredentialRotationManagement resource.
-        :param pulumi.Input[str] auto_completion_delay_duration: The duration in days(in ISO 8601 notation eg. P5D) after which the old credentials should be retired. Maximum delay duration is 14 days.
-        :param pulumi.Input[str] cluster_id: The OCID of the cluster.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "auto_completion_delay_duration", auto_completion_delay_duration)
         pulumi.set(__self__, "cluster_id", cluster_id)
@@ -31,9 +25,6 @@ class ClusterStartCredentialRotationManagementArgs:
     @property
     @pulumi.getter(name="autoCompletionDelayDuration")
     def auto_completion_delay_duration(self) -> pulumi.Input[str]:
-        """
-        The duration in days(in ISO 8601 notation eg. P5D) after which the old credentials should be retired. Maximum delay duration is 14 days.
-        """
         return pulumi.get(self, "auto_completion_delay_duration")
 
     @auto_completion_delay_duration.setter
@@ -43,13 +34,6 @@ class ClusterStartCredentialRotationManagementArgs:
     @property
     @pulumi.getter(name="clusterId")
     def cluster_id(self) -> pulumi.Input[str]:
-        """
-        The OCID of the cluster.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "cluster_id")
 
     @cluster_id.setter
@@ -64,12 +48,6 @@ class _ClusterStartCredentialRotationManagementState:
                  cluster_id: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering ClusterStartCredentialRotationManagement resources.
-        :param pulumi.Input[str] auto_completion_delay_duration: The duration in days(in ISO 8601 notation eg. P5D) after which the old credentials should be retired. Maximum delay duration is 14 days.
-        :param pulumi.Input[str] cluster_id: The OCID of the cluster.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if auto_completion_delay_duration is not None:
             pulumi.set(__self__, "auto_completion_delay_duration", auto_completion_delay_duration)
@@ -79,9 +57,6 @@ class _ClusterStartCredentialRotationManagementState:
     @property
     @pulumi.getter(name="autoCompletionDelayDuration")
     def auto_completion_delay_duration(self) -> Optional[pulumi.Input[str]]:
-        """
-        The duration in days(in ISO 8601 notation eg. P5D) after which the old credentials should be retired. Maximum delay duration is 14 days.
-        """
         return pulumi.get(self, "auto_completion_delay_duration")
 
     @auto_completion_delay_duration.setter
@@ -91,13 +66,6 @@ class _ClusterStartCredentialRotationManagementState:
     @property
     @pulumi.getter(name="clusterId")
     def cluster_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the cluster.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "cluster_id")
 
     @cluster_id.setter
@@ -114,33 +82,9 @@ class ClusterStartCredentialRotationManagement(pulumi.CustomResource):
                  cluster_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Cluster Start Credential Rotation Management resource in Oracle Cloud Infrastructure Container Engine service.
-
-        Start cluster credential rotation by adding new credentials, old credentials will still work after this operation.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_cluster_start_credential_rotation_management = oci.container_engine.ClusterStartCredentialRotationManagement("testClusterStartCredentialRotationManagement",
-            auto_completion_delay_duration=var["cluster_start_credential_rotation_management_auto_completion_delay_duration"],
-            cluster_id=oci_containerengine_cluster["test_cluster"]["id"])
-        ```
-
-        ## Import
-
-        Import is not supported for this resource.
-
+        Create a ClusterStartCredentialRotationManagement resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] auto_completion_delay_duration: The duration in days(in ISO 8601 notation eg. P5D) after which the old credentials should be retired. Maximum delay duration is 14 days.
-        :param pulumi.Input[str] cluster_id: The OCID of the cluster.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -149,25 +93,7 @@ class ClusterStartCredentialRotationManagement(pulumi.CustomResource):
                  args: ClusterStartCredentialRotationManagementArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Cluster Start Credential Rotation Management resource in Oracle Cloud Infrastructure Container Engine service.
-
-        Start cluster credential rotation by adding new credentials, old credentials will still work after this operation.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_cluster_start_credential_rotation_management = oci.container_engine.ClusterStartCredentialRotationManagement("testClusterStartCredentialRotationManagement",
-            auto_completion_delay_duration=var["cluster_start_credential_rotation_management_auto_completion_delay_duration"],
-            cluster_id=oci_containerengine_cluster["test_cluster"]["id"])
-        ```
-
-        ## Import
-
-        Import is not supported for this resource.
-
+        Create a ClusterStartCredentialRotationManagement resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param ClusterStartCredentialRotationManagementArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -219,12 +145,6 @@ class ClusterStartCredentialRotationManagement(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] auto_completion_delay_duration: The duration in days(in ISO 8601 notation eg. P5D) after which the old credentials should be retired. Maximum delay duration is 14 days.
-        :param pulumi.Input[str] cluster_id: The OCID of the cluster.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -237,20 +157,10 @@ class ClusterStartCredentialRotationManagement(pulumi.CustomResource):
     @property
     @pulumi.getter(name="autoCompletionDelayDuration")
     def auto_completion_delay_duration(self) -> pulumi.Output[str]:
-        """
-        The duration in days(in ISO 8601 notation eg. P5D) after which the old credentials should be retired. Maximum delay duration is 14 days.
-        """
         return pulumi.get(self, "auto_completion_delay_duration")
 
     @property
     @pulumi.getter(name="clusterId")
     def cluster_id(self) -> pulumi.Output[str]:
-        """
-        The OCID of the cluster.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "cluster_id")
 

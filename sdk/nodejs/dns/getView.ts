@@ -54,44 +54,44 @@ export interface GetViewResult {
     /**
      * The OCID of the owning compartment.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * The display name of the view.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * The OCID of the view.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * A Boolean flag indicating whether or not parts of the resource are unable to be explicitly managed.
      */
-    readonly isProtected: boolean;
+    readonly isProtected?: boolean;
     readonly scope?: string;
     /**
      * The canonical absolute URL of the resource.
      */
-    readonly self: string;
+    readonly self?: string;
     /**
      * The current state of the resource.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The date and time the resource was last updated in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
      */
-    readonly timeUpdated: string;
+    readonly timeUpdated?: string;
     readonly viewId?: string;
 }
 /**

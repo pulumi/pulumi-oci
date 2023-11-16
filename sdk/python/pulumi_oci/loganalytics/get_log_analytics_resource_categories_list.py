@@ -47,15 +47,12 @@ class GetLogAnalyticsResourceCategoriesListResult:
 
     @property
     @pulumi.getter
-    def categories(self) -> Sequence['outputs.GetLogAnalyticsResourceCategoriesListCategoryResult']:
-        """
-        An array of categories. The array contents include detailed information about the distinct set of categories assigned to all the listed resources under items.
-        """
+    def categories(self) -> Optional[Sequence['outputs.GetLogAnalyticsResourceCategoriesListCategoryResult']]:
         return pulumi.get(self, "categories")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -63,10 +60,7 @@ class GetLogAnalyticsResourceCategoriesListResult:
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetLogAnalyticsResourceCategoriesListItemResult']:
-        """
-        A list of resources and their category assignments
-        """
+    def items(self) -> Optional[Sequence['outputs.GetLogAnalyticsResourceCategoriesListItemResult']]:
         return pulumi.get(self, "items")
 
     @property
@@ -111,27 +105,7 @@ def get_log_analytics_resource_categories_list(namespace: Optional[str] = None,
                                                resource_types: Optional[str] = None,
                                                opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetLogAnalyticsResourceCategoriesListResult:
     """
-    This data source provides details about Resource Categories in Oracle Cloud Infrastructure Log Analytics service.
-
-    Returns a list of resources and their category assignments.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_log_analytics_resource_categories_list = oci.LogAnalytics.get_log_analytics_resource_categories_list(namespace=var["log_analytics_resource_categories_list_namespace"],
-        resource_ids=var["log_analytics_resource_categories_list_resource_ids"],
-        resource_types=var["log_analytics_resource_categories_list_resource_types"],
-        resource_categories=var["log_analytics_resource_categories_list_resource_categories"])
-    ```
-
-
-    :param str namespace: The Logging Analytics namespace used for the request.
-    :param str resource_categories: A comma-separated list of category names used for filtering
-    :param str resource_ids: A comma-separated list of resource unique identifiers used for filtering. Only resources with matching unique identifiers will be returned.
-    :param str resource_types: A comma-separated list of resource types used for filtering. Only resources of the types specified will be returned. Examples include SOURCE, PARSER, LOOKUP, etc.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['namespace'] = namespace
@@ -158,26 +132,6 @@ def get_log_analytics_resource_categories_list_output(namespace: Optional[pulumi
                                                       resource_types: Optional[pulumi.Input[Optional[str]]] = None,
                                                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetLogAnalyticsResourceCategoriesListResult]:
     """
-    This data source provides details about Resource Categories in Oracle Cloud Infrastructure Log Analytics service.
-
-    Returns a list of resources and their category assignments.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_log_analytics_resource_categories_list = oci.LogAnalytics.get_log_analytics_resource_categories_list(namespace=var["log_analytics_resource_categories_list_namespace"],
-        resource_ids=var["log_analytics_resource_categories_list_resource_ids"],
-        resource_types=var["log_analytics_resource_categories_list_resource_types"],
-        resource_categories=var["log_analytics_resource_categories_list_resource_categories"])
-    ```
-
-
-    :param str namespace: The Logging Analytics namespace used for the request.
-    :param str resource_categories: A comma-separated list of category names used for filtering
-    :param str resource_ids: A comma-separated list of resource unique identifiers used for filtering. Only resources with matching unique identifiers will be returned.
-    :param str resource_types: A comma-separated list of resource types used for filtering. Only resources of the types specified will be returned. Examples include SOURCE, PARSER, LOOKUP, etc.
+    Use this data source to access information about an existing resource.
     """
     ...

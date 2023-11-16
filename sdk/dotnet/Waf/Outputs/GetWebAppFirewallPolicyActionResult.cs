@@ -20,7 +20,7 @@ namespace Pulumi.Oci.Waf.Outputs
         /// <summary>
         /// Response code.
         /// </summary>
-        public readonly int Code;
+        public readonly int? Code;
         /// <summary>
         /// Adds headers defined in this array for HTTP response.
         /// </summary>
@@ -28,23 +28,23 @@ namespace Pulumi.Oci.Waf.Outputs
         /// <summary>
         /// Rule name. Must be unique within the module.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// Type of WebAppFirewallPolicyRule.
         /// </summary>
-        public readonly string Type;
+        public readonly string? Type;
 
         [OutputConstructor]
         private GetWebAppFirewallPolicyActionResult(
             ImmutableArray<Outputs.GetWebAppFirewallPolicyActionBodyResult> bodies,
 
-            int code,
+            int? code,
 
             ImmutableArray<Outputs.GetWebAppFirewallPolicyActionHeaderResult> headers,
 
-            string name,
+            string? name,
 
-            string type)
+            string? type)
         {
             Bodies = bodies;
             Code = code;

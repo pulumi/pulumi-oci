@@ -16,29 +16,29 @@ namespace Pulumi.Oci.StackMonitoring.Outputs
         /// <summary>
         /// The OCID of Discovery job
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Log message
         /// </summary>
-        public readonly string LogMessage;
+        public readonly string? LogMessage;
         /// <summary>
         /// The log type like INFO, WARNING, ERROR, SUCCESS
         /// </summary>
-        public readonly string LogType;
+        public readonly string? LogType;
         /// <summary>
         /// Time the Job log was created
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
 
         [OutputConstructor]
         private GetDiscoveryJobLogsDiscoveryJobLogCollectionItemResult(
-            string id,
+            string? id,
 
-            string logMessage,
+            string? logMessage,
 
-            string logType,
+            string? logType,
 
-            string timeCreated)
+            string? timeCreated)
         {
             Id = id;
             LogMessage = logMessage;

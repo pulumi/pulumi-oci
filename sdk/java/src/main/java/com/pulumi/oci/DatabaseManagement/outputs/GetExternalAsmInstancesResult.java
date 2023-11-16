@@ -33,13 +33,13 @@ public final class GetExternalAsmInstancesResult {
      * @return The list of external_asm_instance_collection.
      * 
      */
-    private List<GetExternalAsmInstancesExternalAsmInstanceCollection> externalAsmInstanceCollections;
+    private @Nullable List<GetExternalAsmInstancesExternalAsmInstanceCollection> externalAsmInstanceCollections;
     private @Nullable List<GetExternalAsmInstancesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
 
     private GetExternalAsmInstancesResult() {}
     /**
@@ -68,7 +68,7 @@ public final class GetExternalAsmInstancesResult {
      * 
      */
     public List<GetExternalAsmInstancesExternalAsmInstanceCollection> externalAsmInstanceCollections() {
-        return this.externalAsmInstanceCollections;
+        return this.externalAsmInstanceCollections == null ? List.of() : this.externalAsmInstanceCollections;
     }
     public List<GetExternalAsmInstancesFilter> filters() {
         return this.filters == null ? List.of() : this.filters;
@@ -77,8 +77,8 @@ public final class GetExternalAsmInstancesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
 
     public static Builder builder() {
@@ -93,9 +93,9 @@ public final class GetExternalAsmInstancesResult {
         private @Nullable String compartmentId;
         private @Nullable String displayName;
         private @Nullable String externalAsmId;
-        private List<GetExternalAsmInstancesExternalAsmInstanceCollection> externalAsmInstanceCollections;
+        private @Nullable List<GetExternalAsmInstancesExternalAsmInstanceCollection> externalAsmInstanceCollections;
         private @Nullable List<GetExternalAsmInstancesFilter> filters;
-        private String id;
+        private @Nullable String id;
         public Builder() {}
         public Builder(GetExternalAsmInstancesResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -123,8 +123,8 @@ public final class GetExternalAsmInstancesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder externalAsmInstanceCollections(List<GetExternalAsmInstancesExternalAsmInstanceCollection> externalAsmInstanceCollections) {
-            this.externalAsmInstanceCollections = Objects.requireNonNull(externalAsmInstanceCollections);
+        public Builder externalAsmInstanceCollections(@Nullable List<GetExternalAsmInstancesExternalAsmInstanceCollection> externalAsmInstanceCollections) {
+            this.externalAsmInstanceCollections = externalAsmInstanceCollections;
             return this;
         }
         public Builder externalAsmInstanceCollections(GetExternalAsmInstancesExternalAsmInstanceCollection... externalAsmInstanceCollections) {
@@ -139,8 +139,8 @@ public final class GetExternalAsmInstancesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         public GetExternalAsmInstancesResult build() {

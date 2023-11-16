@@ -16,7 +16,7 @@ namespace Pulumi.Oci.CloudBridge.Outputs
         /// <summary>
         /// Cluster name.
         /// </summary>
-        public readonly string Cluster;
+        public readonly string? Cluster;
         /// <summary>
         /// Customer fields.
         /// </summary>
@@ -28,59 +28,59 @@ namespace Pulumi.Oci.CloudBridge.Outputs
         /// <summary>
         /// Fault tolerance bandwidth.
         /// </summary>
-        public readonly int FaultToleranceBandwidth;
+        public readonly int? FaultToleranceBandwidth;
         /// <summary>
         /// Fault tolerance to secondary latency.
         /// </summary>
-        public readonly int FaultToleranceSecondaryLatency;
+        public readonly int? FaultToleranceSecondaryLatency;
         /// <summary>
         /// Fault tolerance state.
         /// </summary>
-        public readonly string FaultToleranceState;
+        public readonly string? FaultToleranceState;
         /// <summary>
         /// vCenter-specific identifier of the virtual machine.
         /// </summary>
-        public readonly string InstanceUuid;
+        public readonly string? InstanceUuid;
         /// <summary>
         /// Indicates that change tracking is supported for virtual disks of this virtual machine. However, even if change tracking is supported, it might not be available for all disks of the virtual machine.
         /// </summary>
-        public readonly bool IsDisksCbtEnabled;
+        public readonly bool? IsDisksCbtEnabled;
         /// <summary>
         /// Whether changed block tracking for this VM's disk is active.
         /// </summary>
-        public readonly bool IsDisksUuidEnabled;
+        public readonly bool? IsDisksUuidEnabled;
         /// <summary>
         /// Path directory of the asset.
         /// </summary>
-        public readonly string Path;
+        public readonly string? Path;
         /// <summary>
         /// VMware tools status.
         /// </summary>
-        public readonly string VmwareToolsStatus;
+        public readonly string? VmwareToolsStatus;
 
         [OutputConstructor]
         private GetAssetVmwareVmResult(
-            string cluster,
+            string? cluster,
 
             ImmutableArray<string> customerFields,
 
             ImmutableArray<Outputs.GetAssetVmwareVmCustomerTagResult> customerTags,
 
-            int faultToleranceBandwidth,
+            int? faultToleranceBandwidth,
 
-            int faultToleranceSecondaryLatency,
+            int? faultToleranceSecondaryLatency,
 
-            string faultToleranceState,
+            string? faultToleranceState,
 
-            string instanceUuid,
+            string? instanceUuid,
 
-            bool isDisksCbtEnabled,
+            bool? isDisksCbtEnabled,
 
-            bool isDisksUuidEnabled,
+            bool? isDisksUuidEnabled,
 
-            string path,
+            string? path,
 
-            string vmwareToolsStatus)
+            string? vmwareToolsStatus)
         {
             Cluster = cluster;
             CustomerFields = customerFields;

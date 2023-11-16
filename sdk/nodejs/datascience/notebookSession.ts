@@ -111,43 +111,43 @@ export class NotebookSession extends pulumi.CustomResource {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the notebook session.
      */
-    public /*out*/ readonly createdBy!: pulumi.Output<string>;
+    public /*out*/ readonly createdBy!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) A user-friendly display name for the resource. It does not have to be unique and can be modified. Avoid entering confidential information. Example: `My NotebookSession`
      */
-    public readonly displayName!: pulumi.Output<string>;
+    public readonly displayName!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * Details about the state of the notebook session.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string | undefined>;
     /**
      * Details for the notebook session configuration.
      */
-    public readonly notebookSessionConfigDetails!: pulumi.Output<outputs.DataScience.NotebookSessionNotebookSessionConfigDetails>;
+    public readonly notebookSessionConfigDetails!: pulumi.Output<outputs.DataScience.NotebookSessionNotebookSessionConfigDetails | undefined>;
     /**
      * (Updatable) Details for the notebook session configuration.
      */
-    public readonly notebookSessionConfigurationDetails!: pulumi.Output<outputs.DataScience.NotebookSessionNotebookSessionConfigurationDetails>;
+    public readonly notebookSessionConfigurationDetails!: pulumi.Output<outputs.DataScience.NotebookSessionNotebookSessionConfigurationDetails | undefined>;
     /**
      * (Updatable) Notebook Session runtime configuration details.
      */
-    public readonly notebookSessionRuntimeConfigDetails!: pulumi.Output<outputs.DataScience.NotebookSessionNotebookSessionRuntimeConfigDetails>;
+    public readonly notebookSessionRuntimeConfigDetails!: pulumi.Output<outputs.DataScience.NotebookSessionNotebookSessionRuntimeConfigDetails | undefined>;
     /**
      * (Updatable) Collection of NotebookSessionStorageMountConfigurationDetails.
      */
-    public readonly notebookSessionStorageMountConfigurationDetailsLists!: pulumi.Output<outputs.DataScience.NotebookSessionNotebookSessionStorageMountConfigurationDetailsList[]>;
+    public readonly notebookSessionStorageMountConfigurationDetailsLists!: pulumi.Output<outputs.DataScience.NotebookSessionNotebookSessionStorageMountConfigurationDetailsList[] | undefined>;
     /**
      * The URL to interact with the notebook session.
      */
-    public /*out*/ readonly notebookSessionUrl!: pulumi.Output<string>;
+    public /*out*/ readonly notebookSessionUrl!: pulumi.Output<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the notebook session.
      *
@@ -159,11 +159,11 @@ export class NotebookSession extends pulumi.CustomResource {
     /**
      * The state of the notebook session.
      */
-    public readonly state!: pulumi.Output<string>;
+    public readonly state!: pulumi.Output<string | undefined>;
     /**
      * The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
 
     /**
      * Create a NotebookSession resource with the given unique name, arguments, and options.

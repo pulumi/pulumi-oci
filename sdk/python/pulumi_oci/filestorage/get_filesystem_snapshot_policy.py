@@ -59,34 +59,22 @@ class GetFilesystemSnapshotPolicyResult:
 
     @property
     @pulumi.getter(name="availabilityDomain")
-    def availability_domain(self) -> str:
-        """
-        The availability domain that the file system snapshot policy is in. May be unset using a blank or NULL value.  Example: `Uocm:PHX-AD-2`
-        """
+    def availability_domain(self) -> Optional[str]:
         return pulumi.get(self, "availability_domain")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the file system snapshot policy.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `My Filesystem Snapshot Policy`
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
@@ -96,50 +84,32 @@ class GetFilesystemSnapshotPolicyResult:
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system snapshot policy.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="policyPrefix")
-    def policy_prefix(self) -> str:
-        """
-        The prefix to apply to all snapshots created by this policy.  Example: `acme`
-        """
+    def policy_prefix(self) -> Optional[str]:
         return pulumi.get(self, "policy_prefix")
 
     @property
     @pulumi.getter
-    def schedules(self) -> Sequence['outputs.GetFilesystemSnapshotPolicyScheduleResult']:
-        """
-        The list of associated snapshot schedules. A maximum of 10 schedules can be associated with a policy.
-        """
+    def schedules(self) -> Optional[Sequence['outputs.GetFilesystemSnapshotPolicyScheduleResult']]:
         return pulumi.get(self, "schedules")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of this file system snapshot policy.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the file system snapshot policy was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
 
@@ -165,21 +135,7 @@ class AwaitableGetFilesystemSnapshotPolicyResult(GetFilesystemSnapshotPolicyResu
 def get_filesystem_snapshot_policy(filesystem_snapshot_policy_id: Optional[str] = None,
                                    opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetFilesystemSnapshotPolicyResult:
     """
-    This data source provides details about a specific Filesystem Snapshot Policy resource in Oracle Cloud Infrastructure File Storage service.
-
-    Gets the specified file system snapshot policy's information.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_filesystem_snapshot_policy = oci.FileStorage.get_filesystem_snapshot_policy(filesystem_snapshot_policy_id=oci_file_storage_filesystem_snapshot_policy["test_filesystem_snapshot_policy"]["id"])
-    ```
-
-
-    :param str filesystem_snapshot_policy_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system snapshot policy.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['filesystemSnapshotPolicyId'] = filesystem_snapshot_policy_id
@@ -204,20 +160,6 @@ def get_filesystem_snapshot_policy(filesystem_snapshot_policy_id: Optional[str] 
 def get_filesystem_snapshot_policy_output(filesystem_snapshot_policy_id: Optional[pulumi.Input[str]] = None,
                                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetFilesystemSnapshotPolicyResult]:
     """
-    This data source provides details about a specific Filesystem Snapshot Policy resource in Oracle Cloud Infrastructure File Storage service.
-
-    Gets the specified file system snapshot policy's information.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_filesystem_snapshot_policy = oci.FileStorage.get_filesystem_snapshot_policy(filesystem_snapshot_policy_id=oci_file_storage_filesystem_snapshot_policy["test_filesystem_snapshot_policy"]["id"])
-    ```
-
-
-    :param str filesystem_snapshot_policy_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system snapshot policy.
+    Use this data source to access information about an existing resource.
     """
     ...

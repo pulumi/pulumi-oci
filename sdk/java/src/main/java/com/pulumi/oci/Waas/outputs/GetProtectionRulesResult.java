@@ -9,6 +9,7 @@ import com.pulumi.oci.Waas.outputs.GetProtectionRulesProtectionRule;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 @CustomType
@@ -23,13 +24,13 @@ public final class GetProtectionRulesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private @Nullable List<String> modSecurityRuleIds;
     /**
      * @return The list of protection_rules.
      * 
      */
-    private List<GetProtectionRulesProtectionRule> protectionRules;
+    private @Nullable List<GetProtectionRulesProtectionRule> protectionRules;
     private String waasPolicyId;
 
     private GetProtectionRulesResult() {}
@@ -47,8 +48,8 @@ public final class GetProtectionRulesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public List<String> modSecurityRuleIds() {
         return this.modSecurityRuleIds == null ? List.of() : this.modSecurityRuleIds;
@@ -58,7 +59,7 @@ public final class GetProtectionRulesResult {
      * 
      */
     public List<GetProtectionRulesProtectionRule> protectionRules() {
-        return this.protectionRules;
+        return this.protectionRules == null ? List.of() : this.protectionRules;
     }
     public String waasPolicyId() {
         return this.waasPolicyId;
@@ -75,9 +76,9 @@ public final class GetProtectionRulesResult {
     public static final class Builder {
         private @Nullable List<String> actions;
         private @Nullable List<GetProtectionRulesFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable List<String> modSecurityRuleIds;
-        private List<GetProtectionRulesProtectionRule> protectionRules;
+        private @Nullable List<GetProtectionRulesProtectionRule> protectionRules;
         private String waasPolicyId;
         public Builder() {}
         public Builder(GetProtectionRulesResult defaults) {
@@ -107,8 +108,8 @@ public final class GetProtectionRulesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -120,8 +121,8 @@ public final class GetProtectionRulesResult {
             return modSecurityRuleIds(List.of(modSecurityRuleIds));
         }
         @CustomType.Setter
-        public Builder protectionRules(List<GetProtectionRulesProtectionRule> protectionRules) {
-            this.protectionRules = Objects.requireNonNull(protectionRules);
+        public Builder protectionRules(@Nullable List<GetProtectionRulesProtectionRule> protectionRules) {
+            this.protectionRules = protectionRules;
             return this;
         }
         public Builder protectionRules(GetProtectionRulesProtectionRule... protectionRules) {

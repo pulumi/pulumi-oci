@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Managed Database Optimizer Statistics Advisor Execution resource in Oracle Cloud Infrastructure Database Management service.
@@ -69,26 +68,26 @@ type GetManagedDatabaseOptimizerStatisticsAdvisorExecutionResult struct {
 	// The summary of the Managed Database resource.
 	Databases []GetManagedDatabaseOptimizerStatisticsAdvisorExecutionDatabase `pulumi:"databases"`
 	// The errors in the Optimizer Statistics Advisor execution, if any.
-	ErrorMessage string `pulumi:"errorMessage"`
+	ErrorMessage *string `pulumi:"errorMessage"`
 	// The name of the Optimizer Statistics Advisor execution.
 	ExecutionName string `pulumi:"executionName"`
 	// The list of findings for the rule.
-	Findings int `pulumi:"findings"`
+	Findings *int `pulumi:"findings"`
 	// The provider-assigned unique ID for this managed resource.
-	Id                string `pulumi:"id"`
-	ManagedDatabaseId string `pulumi:"managedDatabaseId"`
+	Id                *string `pulumi:"id"`
+	ManagedDatabaseId string  `pulumi:"managedDatabaseId"`
 	// A report that includes the rules, findings, recommendations, and actions discovered during the execution of the Optimizer Statistics Advisor.
 	Reports []GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReport `pulumi:"reports"`
 	// The status of the Optimizer Statistics Advisor execution.
-	Status string `pulumi:"status"`
+	Status *string `pulumi:"status"`
 	// The Optimizer Statistics Advisor execution status message, if any.
-	StatusMessage string `pulumi:"statusMessage"`
+	StatusMessage *string `pulumi:"statusMessage"`
 	// The name of the Optimizer Statistics Advisor task.
 	TaskName string `pulumi:"taskName"`
 	// The end time of the time range to retrieve the Optimizer Statistics Advisor execution of a Managed Database in UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
-	TimeEnd string `pulumi:"timeEnd"`
+	TimeEnd *string `pulumi:"timeEnd"`
 	// The start time of the time range to retrieve the Optimizer Statistics Advisor execution of a Managed Database in UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
-	TimeStart string `pulumi:"timeStart"`
+	TimeStart *string `pulumi:"timeStart"`
 }
 
 func GetManagedDatabaseOptimizerStatisticsAdvisorExecutionOutput(ctx *pulumi.Context, args GetManagedDatabaseOptimizerStatisticsAdvisorExecutionOutputArgs, opts ...pulumi.InvokeOption) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionResultOutput {
@@ -133,12 +132,6 @@ func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionResultOutput) ToGet
 	return o
 }
 
-func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagedDatabaseOptimizerStatisticsAdvisorExecutionResult] {
-	return pulumix.Output[GetManagedDatabaseOptimizerStatisticsAdvisorExecutionResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The summary of the Managed Database resource.
 func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionResultOutput) Databases() GetManagedDatabaseOptimizerStatisticsAdvisorExecutionDatabaseArrayOutput {
 	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsAdvisorExecutionResult) []GetManagedDatabaseOptimizerStatisticsAdvisorExecutionDatabase {
@@ -147,8 +140,8 @@ func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionResultOutput) Datab
 }
 
 // The errors in the Optimizer Statistics Advisor execution, if any.
-func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionResultOutput) ErrorMessage() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsAdvisorExecutionResult) string { return v.ErrorMessage }).(pulumi.StringOutput)
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionResultOutput) ErrorMessage() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsAdvisorExecutionResult) *string { return v.ErrorMessage }).(pulumi.StringPtrOutput)
 }
 
 // The name of the Optimizer Statistics Advisor execution.
@@ -157,13 +150,13 @@ func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionResultOutput) Execu
 }
 
 // The list of findings for the rule.
-func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionResultOutput) Findings() pulumi.IntOutput {
-	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsAdvisorExecutionResult) int { return v.Findings }).(pulumi.IntOutput)
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionResultOutput) Findings() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsAdvisorExecutionResult) *int { return v.Findings }).(pulumi.IntPtrOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsAdvisorExecutionResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsAdvisorExecutionResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionResultOutput) ManagedDatabaseId() pulumi.StringOutput {
@@ -178,13 +171,13 @@ func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionResultOutput) Repor
 }
 
 // The status of the Optimizer Statistics Advisor execution.
-func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionResultOutput) Status() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsAdvisorExecutionResult) string { return v.Status }).(pulumi.StringOutput)
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionResultOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsAdvisorExecutionResult) *string { return v.Status }).(pulumi.StringPtrOutput)
 }
 
 // The Optimizer Statistics Advisor execution status message, if any.
-func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionResultOutput) StatusMessage() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsAdvisorExecutionResult) string { return v.StatusMessage }).(pulumi.StringOutput)
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionResultOutput) StatusMessage() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsAdvisorExecutionResult) *string { return v.StatusMessage }).(pulumi.StringPtrOutput)
 }
 
 // The name of the Optimizer Statistics Advisor task.
@@ -193,13 +186,13 @@ func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionResultOutput) TaskN
 }
 
 // The end time of the time range to retrieve the Optimizer Statistics Advisor execution of a Managed Database in UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
-func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionResultOutput) TimeEnd() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsAdvisorExecutionResult) string { return v.TimeEnd }).(pulumi.StringOutput)
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionResultOutput) TimeEnd() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsAdvisorExecutionResult) *string { return v.TimeEnd }).(pulumi.StringPtrOutput)
 }
 
 // The start time of the time range to retrieve the Optimizer Statistics Advisor execution of a Managed Database in UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
-func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionResultOutput) TimeStart() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsAdvisorExecutionResult) string { return v.TimeStart }).(pulumi.StringOutput)
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionResultOutput) TimeStart() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsAdvisorExecutionResult) *string { return v.TimeStart }).(pulumi.StringPtrOutput)
 }
 
 func init() {

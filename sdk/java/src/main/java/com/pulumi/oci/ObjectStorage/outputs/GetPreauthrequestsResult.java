@@ -24,7 +24,7 @@ public final class GetPreauthrequestsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The Object Storage namespace used for the request.
      * 
@@ -35,7 +35,7 @@ public final class GetPreauthrequestsResult {
      * @return The list of preauthenticated_requests.
      * 
      */
-    private List<GetPreauthrequestsPreauthenticatedRequest> preauthenticatedRequests;
+    private @Nullable List<GetPreauthrequestsPreauthenticatedRequest> preauthenticatedRequests;
 
     private GetPreauthrequestsResult() {}
     /**
@@ -52,8 +52,8 @@ public final class GetPreauthrequestsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The Object Storage namespace used for the request.
@@ -70,7 +70,7 @@ public final class GetPreauthrequestsResult {
      * 
      */
     public List<GetPreauthrequestsPreauthenticatedRequest> preauthenticatedRequests() {
-        return this.preauthenticatedRequests;
+        return this.preauthenticatedRequests == null ? List.of() : this.preauthenticatedRequests;
     }
 
     public static Builder builder() {
@@ -84,10 +84,10 @@ public final class GetPreauthrequestsResult {
     public static final class Builder {
         private String bucket;
         private @Nullable List<GetPreauthrequestsFilter> filters;
-        private String id;
+        private @Nullable String id;
         private String namespace;
         private @Nullable String objectNamePrefix;
-        private List<GetPreauthrequestsPreauthenticatedRequest> preauthenticatedRequests;
+        private @Nullable List<GetPreauthrequestsPreauthenticatedRequest> preauthenticatedRequests;
         public Builder() {}
         public Builder(GetPreauthrequestsResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -113,8 +113,8 @@ public final class GetPreauthrequestsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -128,8 +128,8 @@ public final class GetPreauthrequestsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder preauthenticatedRequests(List<GetPreauthrequestsPreauthenticatedRequest> preauthenticatedRequests) {
-            this.preauthenticatedRequests = Objects.requireNonNull(preauthenticatedRequests);
+        public Builder preauthenticatedRequests(@Nullable List<GetPreauthrequestsPreauthenticatedRequest> preauthenticatedRequests) {
+            this.preauthenticatedRequests = preauthenticatedRequests;
             return this;
         }
         public Builder preauthenticatedRequests(GetPreauthrequestsPreauthenticatedRequest... preauthenticatedRequests) {

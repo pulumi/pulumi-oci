@@ -91,13 +91,13 @@ namespace Pulumi.Oci.DataSafe
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
 
         [OutputConstructor]
         private GetCompatibleFormatsForDataTypeResult(
             ImmutableArray<Outputs.GetCompatibleFormatsForDataTypeFormatsForDataTypeResult> formatsForDataTypes,
 
-            string id)
+            string? id)
         {
             FormatsForDataTypes = formatsForDataTypes;
             Id = id;

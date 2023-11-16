@@ -29,12 +29,12 @@ public final class GetOneoffPatchesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The list of oneoff_patches.
      * 
      */
-    private List<GetOneoffPatchesOneoffPatch> oneoffPatches;
+    private @Nullable List<GetOneoffPatchesOneoffPatch> oneoffPatches;
     /**
      * @return The current state of the one-off patch.
      * 
@@ -63,15 +63,15 @@ public final class GetOneoffPatchesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The list of oneoff_patches.
      * 
      */
     public List<GetOneoffPatchesOneoffPatch> oneoffPatches() {
-        return this.oneoffPatches;
+        return this.oneoffPatches == null ? List.of() : this.oneoffPatches;
     }
     /**
      * @return The current state of the one-off patch.
@@ -93,8 +93,8 @@ public final class GetOneoffPatchesResult {
         private String compartmentId;
         private @Nullable String displayName;
         private @Nullable List<GetOneoffPatchesFilter> filters;
-        private String id;
-        private List<GetOneoffPatchesOneoffPatch> oneoffPatches;
+        private @Nullable String id;
+        private @Nullable List<GetOneoffPatchesOneoffPatch> oneoffPatches;
         private @Nullable String state;
         public Builder() {}
         public Builder(GetOneoffPatchesResult defaults) {
@@ -126,13 +126,13 @@ public final class GetOneoffPatchesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder oneoffPatches(List<GetOneoffPatchesOneoffPatch> oneoffPatches) {
-            this.oneoffPatches = Objects.requireNonNull(oneoffPatches);
+        public Builder oneoffPatches(@Nullable List<GetOneoffPatchesOneoffPatch> oneoffPatches) {
+            this.oneoffPatches = oneoffPatches;
             return this;
         }
         public Builder oneoffPatches(GetOneoffPatchesOneoffPatch... oneoffPatches) {

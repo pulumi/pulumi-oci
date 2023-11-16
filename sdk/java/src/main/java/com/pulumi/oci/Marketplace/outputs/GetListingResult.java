@@ -29,154 +29,154 @@ public final class GetListingResult {
      * @return The model for upload data for images and icons.
      * 
      */
-    private List<GetListingBanner> banners;
+    private @Nullable List<GetListingBanner> banners;
     /**
      * @return Product categories that the listing belongs to.
      * 
      */
-    private List<String> categories;
+    private @Nullable List<String> categories;
     private @Nullable String compartmentId;
     /**
      * @return The list of compatible architectures supported by the listing
      * 
      */
-    private List<String> compatibleArchitectures;
+    private @Nullable List<String> compatibleArchitectures;
     /**
      * @return The default package version.
      * 
      */
-    private String defaultPackageVersion;
+    private @Nullable String defaultPackageVersion;
     /**
      * @return Links to additional documentation provided by the publisher specifically for the listing.
      * 
      */
-    private List<GetListingDocumentationLink> documentationLinks;
+    private @Nullable List<GetListingDocumentationLink> documentationLinks;
     /**
      * @return The model for upload data for images and icons.
      * 
      */
-    private List<GetListingIcon> icons;
+    private @Nullable List<GetListingIcon> icons;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Indicates whether the listing is included in Featured Listings.
      * 
      */
-    private Boolean isFeatured;
+    private @Nullable Boolean isFeatured;
     /**
      * @return Keywords associated with the listing.
      * 
      */
-    private String keywords;
+    private @Nullable String keywords;
     /**
      * @return Languages supported by the listing.
      * 
      */
-    private List<GetListingLanguage> languages;
+    private @Nullable List<GetListingLanguage> languages;
     /**
      * @return A description of the publisher&#39;s licensing model for the listing.
      * 
      */
-    private String licenseModelDescription;
+    private @Nullable String licenseModelDescription;
     /**
      * @return Reference links.
      * 
      */
-    private List<GetListingLink> links;
+    private @Nullable List<GetListingLink> links;
     private String listingId;
     /**
      * @return The publisher category to which the listing belongs. The publisher category informs where the listing appears for use.
      * 
      */
-    private String listingType;
+    private @Nullable String listingType;
     /**
      * @return A long description of the listing.
      * 
      */
-    private String longDescription;
+    private @Nullable String longDescription;
     /**
      * @return Text that describes the resource.
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return The listing&#39;s package type.
      * 
      */
-    private String packageType;
+    private @Nullable String packageType;
     /**
      * @return Summary details about the publisher of the listing.
      * 
      */
-    private List<GetListingPublisher> publishers;
+    private @Nullable List<GetListingPublisher> publishers;
     /**
      * @return The regions where the listing is eligible to be deployed.
      * 
      */
-    private List<GetListingRegion> regions;
+    private @Nullable List<GetListingRegion> regions;
     /**
      * @return Release notes for the listing.
      * 
      */
-    private String releaseNotes;
+    private @Nullable String releaseNotes;
     /**
      * @return Screenshots of the listing.
      * 
      */
-    private List<GetListingScreenshot> screenshots;
+    private @Nullable List<GetListingScreenshot> screenshots;
     /**
      * @return A short description of the listing.
      * 
      */
-    private String shortDescription;
+    private @Nullable String shortDescription;
     /**
      * @return Contact information to use to get support from the publisher for the listing.
      * 
      */
-    private List<GetListingSupportContact> supportContacts;
+    private @Nullable List<GetListingSupportContact> supportContacts;
     /**
      * @return Links to support resources for the listing.
      * 
      */
-    private List<GetListingSupportLink> supportLinks;
+    private @Nullable List<GetListingSupportLink> supportLinks;
     /**
      * @return The list of operating systems supported by the listing.
      * 
      */
-    private List<GetListingSupportedOperatingSystem> supportedOperatingSystems;
+    private @Nullable List<GetListingSupportedOperatingSystem> supportedOperatingSystems;
     /**
      * @return System requirements for the listing.
      * 
      */
-    private String systemRequirements;
+    private @Nullable String systemRequirements;
     /**
      * @return The tagline of the listing.
      * 
      */
-    private String tagline;
+    private @Nullable String tagline;
     /**
      * @return The release date of the listing.
      * 
      */
-    private String timeReleased;
+    private @Nullable String timeReleased;
     /**
      * @return Usage information for the listing.
      * 
      */
-    private String usageInformation;
+    private @Nullable String usageInformation;
     /**
      * @return The version of the listing.
      * 
      */
-    private String version;
+    private @Nullable String version;
     /**
      * @return Videos of the listing.
      * 
      */
-    private List<GetListingVideo> videos;
+    private @Nullable List<GetListingVideo> videos;
 
     private GetListingResult() {}
     /**
@@ -184,14 +184,14 @@ public final class GetListingResult {
      * 
      */
     public List<GetListingBanner> banners() {
-        return this.banners;
+        return this.banners == null ? List.of() : this.banners;
     }
     /**
      * @return Product categories that the listing belongs to.
      * 
      */
     public List<String> categories() {
-        return this.categories;
+        return this.categories == null ? List.of() : this.categories;
     }
     public Optional<String> compartmentId() {
         return Optional.ofNullable(this.compartmentId);
@@ -201,70 +201,70 @@ public final class GetListingResult {
      * 
      */
     public List<String> compatibleArchitectures() {
-        return this.compatibleArchitectures;
+        return this.compatibleArchitectures == null ? List.of() : this.compatibleArchitectures;
     }
     /**
      * @return The default package version.
      * 
      */
-    public String defaultPackageVersion() {
-        return this.defaultPackageVersion;
+    public Optional<String> defaultPackageVersion() {
+        return Optional.ofNullable(this.defaultPackageVersion);
     }
     /**
      * @return Links to additional documentation provided by the publisher specifically for the listing.
      * 
      */
     public List<GetListingDocumentationLink> documentationLinks() {
-        return this.documentationLinks;
+        return this.documentationLinks == null ? List.of() : this.documentationLinks;
     }
     /**
      * @return The model for upload data for images and icons.
      * 
      */
     public List<GetListingIcon> icons() {
-        return this.icons;
+        return this.icons == null ? List.of() : this.icons;
     }
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Indicates whether the listing is included in Featured Listings.
      * 
      */
-    public Boolean isFeatured() {
-        return this.isFeatured;
+    public Optional<Boolean> isFeatured() {
+        return Optional.ofNullable(this.isFeatured);
     }
     /**
      * @return Keywords associated with the listing.
      * 
      */
-    public String keywords() {
-        return this.keywords;
+    public Optional<String> keywords() {
+        return Optional.ofNullable(this.keywords);
     }
     /**
      * @return Languages supported by the listing.
      * 
      */
     public List<GetListingLanguage> languages() {
-        return this.languages;
+        return this.languages == null ? List.of() : this.languages;
     }
     /**
      * @return A description of the publisher&#39;s licensing model for the listing.
      * 
      */
-    public String licenseModelDescription() {
-        return this.licenseModelDescription;
+    public Optional<String> licenseModelDescription() {
+        return Optional.ofNullable(this.licenseModelDescription);
     }
     /**
      * @return Reference links.
      * 
      */
     public List<GetListingLink> links() {
-        return this.links;
+        return this.links == null ? List.of() : this.links;
     }
     public String listingId() {
         return this.listingId;
@@ -273,127 +273,127 @@ public final class GetListingResult {
      * @return The publisher category to which the listing belongs. The publisher category informs where the listing appears for use.
      * 
      */
-    public String listingType() {
-        return this.listingType;
+    public Optional<String> listingType() {
+        return Optional.ofNullable(this.listingType);
     }
     /**
      * @return A long description of the listing.
      * 
      */
-    public String longDescription() {
-        return this.longDescription;
+    public Optional<String> longDescription() {
+        return Optional.ofNullable(this.longDescription);
     }
     /**
      * @return Text that describes the resource.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return The listing&#39;s package type.
      * 
      */
-    public String packageType() {
-        return this.packageType;
+    public Optional<String> packageType() {
+        return Optional.ofNullable(this.packageType);
     }
     /**
      * @return Summary details about the publisher of the listing.
      * 
      */
     public List<GetListingPublisher> publishers() {
-        return this.publishers;
+        return this.publishers == null ? List.of() : this.publishers;
     }
     /**
      * @return The regions where the listing is eligible to be deployed.
      * 
      */
     public List<GetListingRegion> regions() {
-        return this.regions;
+        return this.regions == null ? List.of() : this.regions;
     }
     /**
      * @return Release notes for the listing.
      * 
      */
-    public String releaseNotes() {
-        return this.releaseNotes;
+    public Optional<String> releaseNotes() {
+        return Optional.ofNullable(this.releaseNotes);
     }
     /**
      * @return Screenshots of the listing.
      * 
      */
     public List<GetListingScreenshot> screenshots() {
-        return this.screenshots;
+        return this.screenshots == null ? List.of() : this.screenshots;
     }
     /**
      * @return A short description of the listing.
      * 
      */
-    public String shortDescription() {
-        return this.shortDescription;
+    public Optional<String> shortDescription() {
+        return Optional.ofNullable(this.shortDescription);
     }
     /**
      * @return Contact information to use to get support from the publisher for the listing.
      * 
      */
     public List<GetListingSupportContact> supportContacts() {
-        return this.supportContacts;
+        return this.supportContacts == null ? List.of() : this.supportContacts;
     }
     /**
      * @return Links to support resources for the listing.
      * 
      */
     public List<GetListingSupportLink> supportLinks() {
-        return this.supportLinks;
+        return this.supportLinks == null ? List.of() : this.supportLinks;
     }
     /**
      * @return The list of operating systems supported by the listing.
      * 
      */
     public List<GetListingSupportedOperatingSystem> supportedOperatingSystems() {
-        return this.supportedOperatingSystems;
+        return this.supportedOperatingSystems == null ? List.of() : this.supportedOperatingSystems;
     }
     /**
      * @return System requirements for the listing.
      * 
      */
-    public String systemRequirements() {
-        return this.systemRequirements;
+    public Optional<String> systemRequirements() {
+        return Optional.ofNullable(this.systemRequirements);
     }
     /**
      * @return The tagline of the listing.
      * 
      */
-    public String tagline() {
-        return this.tagline;
+    public Optional<String> tagline() {
+        return Optional.ofNullable(this.tagline);
     }
     /**
      * @return The release date of the listing.
      * 
      */
-    public String timeReleased() {
-        return this.timeReleased;
+    public Optional<String> timeReleased() {
+        return Optional.ofNullable(this.timeReleased);
     }
     /**
      * @return Usage information for the listing.
      * 
      */
-    public String usageInformation() {
-        return this.usageInformation;
+    public Optional<String> usageInformation() {
+        return Optional.ofNullable(this.usageInformation);
     }
     /**
      * @return The version of the listing.
      * 
      */
-    public String version() {
-        return this.version;
+    public Optional<String> version() {
+        return Optional.ofNullable(this.version);
     }
     /**
      * @return Videos of the listing.
      * 
      */
     public List<GetListingVideo> videos() {
-        return this.videos;
+        return this.videos == null ? List.of() : this.videos;
     }
 
     public static Builder builder() {
@@ -405,38 +405,38 @@ public final class GetListingResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetListingBanner> banners;
-        private List<String> categories;
+        private @Nullable List<GetListingBanner> banners;
+        private @Nullable List<String> categories;
         private @Nullable String compartmentId;
-        private List<String> compatibleArchitectures;
-        private String defaultPackageVersion;
-        private List<GetListingDocumentationLink> documentationLinks;
-        private List<GetListingIcon> icons;
-        private String id;
-        private Boolean isFeatured;
-        private String keywords;
-        private List<GetListingLanguage> languages;
-        private String licenseModelDescription;
-        private List<GetListingLink> links;
+        private @Nullable List<String> compatibleArchitectures;
+        private @Nullable String defaultPackageVersion;
+        private @Nullable List<GetListingDocumentationLink> documentationLinks;
+        private @Nullable List<GetListingIcon> icons;
+        private @Nullable String id;
+        private @Nullable Boolean isFeatured;
+        private @Nullable String keywords;
+        private @Nullable List<GetListingLanguage> languages;
+        private @Nullable String licenseModelDescription;
+        private @Nullable List<GetListingLink> links;
         private String listingId;
-        private String listingType;
-        private String longDescription;
-        private String name;
-        private String packageType;
-        private List<GetListingPublisher> publishers;
-        private List<GetListingRegion> regions;
-        private String releaseNotes;
-        private List<GetListingScreenshot> screenshots;
-        private String shortDescription;
-        private List<GetListingSupportContact> supportContacts;
-        private List<GetListingSupportLink> supportLinks;
-        private List<GetListingSupportedOperatingSystem> supportedOperatingSystems;
-        private String systemRequirements;
-        private String tagline;
-        private String timeReleased;
-        private String usageInformation;
-        private String version;
-        private List<GetListingVideo> videos;
+        private @Nullable String listingType;
+        private @Nullable String longDescription;
+        private @Nullable String name;
+        private @Nullable String packageType;
+        private @Nullable List<GetListingPublisher> publishers;
+        private @Nullable List<GetListingRegion> regions;
+        private @Nullable String releaseNotes;
+        private @Nullable List<GetListingScreenshot> screenshots;
+        private @Nullable String shortDescription;
+        private @Nullable List<GetListingSupportContact> supportContacts;
+        private @Nullable List<GetListingSupportLink> supportLinks;
+        private @Nullable List<GetListingSupportedOperatingSystem> supportedOperatingSystems;
+        private @Nullable String systemRequirements;
+        private @Nullable String tagline;
+        private @Nullable String timeReleased;
+        private @Nullable String usageInformation;
+        private @Nullable String version;
+        private @Nullable List<GetListingVideo> videos;
         public Builder() {}
         public Builder(GetListingResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -475,16 +475,16 @@ public final class GetListingResult {
         }
 
         @CustomType.Setter
-        public Builder banners(List<GetListingBanner> banners) {
-            this.banners = Objects.requireNonNull(banners);
+        public Builder banners(@Nullable List<GetListingBanner> banners) {
+            this.banners = banners;
             return this;
         }
         public Builder banners(GetListingBanner... banners) {
             return banners(List.of(banners));
         }
         @CustomType.Setter
-        public Builder categories(List<String> categories) {
-            this.categories = Objects.requireNonNull(categories);
+        public Builder categories(@Nullable List<String> categories) {
+            this.categories = categories;
             return this;
         }
         public Builder categories(String... categories) {
@@ -496,65 +496,65 @@ public final class GetListingResult {
             return this;
         }
         @CustomType.Setter
-        public Builder compatibleArchitectures(List<String> compatibleArchitectures) {
-            this.compatibleArchitectures = Objects.requireNonNull(compatibleArchitectures);
+        public Builder compatibleArchitectures(@Nullable List<String> compatibleArchitectures) {
+            this.compatibleArchitectures = compatibleArchitectures;
             return this;
         }
         public Builder compatibleArchitectures(String... compatibleArchitectures) {
             return compatibleArchitectures(List.of(compatibleArchitectures));
         }
         @CustomType.Setter
-        public Builder defaultPackageVersion(String defaultPackageVersion) {
-            this.defaultPackageVersion = Objects.requireNonNull(defaultPackageVersion);
+        public Builder defaultPackageVersion(@Nullable String defaultPackageVersion) {
+            this.defaultPackageVersion = defaultPackageVersion;
             return this;
         }
         @CustomType.Setter
-        public Builder documentationLinks(List<GetListingDocumentationLink> documentationLinks) {
-            this.documentationLinks = Objects.requireNonNull(documentationLinks);
+        public Builder documentationLinks(@Nullable List<GetListingDocumentationLink> documentationLinks) {
+            this.documentationLinks = documentationLinks;
             return this;
         }
         public Builder documentationLinks(GetListingDocumentationLink... documentationLinks) {
             return documentationLinks(List.of(documentationLinks));
         }
         @CustomType.Setter
-        public Builder icons(List<GetListingIcon> icons) {
-            this.icons = Objects.requireNonNull(icons);
+        public Builder icons(@Nullable List<GetListingIcon> icons) {
+            this.icons = icons;
             return this;
         }
         public Builder icons(GetListingIcon... icons) {
             return icons(List.of(icons));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder isFeatured(Boolean isFeatured) {
-            this.isFeatured = Objects.requireNonNull(isFeatured);
+        public Builder isFeatured(@Nullable Boolean isFeatured) {
+            this.isFeatured = isFeatured;
             return this;
         }
         @CustomType.Setter
-        public Builder keywords(String keywords) {
-            this.keywords = Objects.requireNonNull(keywords);
+        public Builder keywords(@Nullable String keywords) {
+            this.keywords = keywords;
             return this;
         }
         @CustomType.Setter
-        public Builder languages(List<GetListingLanguage> languages) {
-            this.languages = Objects.requireNonNull(languages);
+        public Builder languages(@Nullable List<GetListingLanguage> languages) {
+            this.languages = languages;
             return this;
         }
         public Builder languages(GetListingLanguage... languages) {
             return languages(List.of(languages));
         }
         @CustomType.Setter
-        public Builder licenseModelDescription(String licenseModelDescription) {
-            this.licenseModelDescription = Objects.requireNonNull(licenseModelDescription);
+        public Builder licenseModelDescription(@Nullable String licenseModelDescription) {
+            this.licenseModelDescription = licenseModelDescription;
             return this;
         }
         @CustomType.Setter
-        public Builder links(List<GetListingLink> links) {
-            this.links = Objects.requireNonNull(links);
+        public Builder links(@Nullable List<GetListingLink> links) {
+            this.links = links;
             return this;
         }
         public Builder links(GetListingLink... links) {
@@ -566,111 +566,111 @@ public final class GetListingResult {
             return this;
         }
         @CustomType.Setter
-        public Builder listingType(String listingType) {
-            this.listingType = Objects.requireNonNull(listingType);
+        public Builder listingType(@Nullable String listingType) {
+            this.listingType = listingType;
             return this;
         }
         @CustomType.Setter
-        public Builder longDescription(String longDescription) {
-            this.longDescription = Objects.requireNonNull(longDescription);
+        public Builder longDescription(@Nullable String longDescription) {
+            this.longDescription = longDescription;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder packageType(String packageType) {
-            this.packageType = Objects.requireNonNull(packageType);
+        public Builder packageType(@Nullable String packageType) {
+            this.packageType = packageType;
             return this;
         }
         @CustomType.Setter
-        public Builder publishers(List<GetListingPublisher> publishers) {
-            this.publishers = Objects.requireNonNull(publishers);
+        public Builder publishers(@Nullable List<GetListingPublisher> publishers) {
+            this.publishers = publishers;
             return this;
         }
         public Builder publishers(GetListingPublisher... publishers) {
             return publishers(List.of(publishers));
         }
         @CustomType.Setter
-        public Builder regions(List<GetListingRegion> regions) {
-            this.regions = Objects.requireNonNull(regions);
+        public Builder regions(@Nullable List<GetListingRegion> regions) {
+            this.regions = regions;
             return this;
         }
         public Builder regions(GetListingRegion... regions) {
             return regions(List.of(regions));
         }
         @CustomType.Setter
-        public Builder releaseNotes(String releaseNotes) {
-            this.releaseNotes = Objects.requireNonNull(releaseNotes);
+        public Builder releaseNotes(@Nullable String releaseNotes) {
+            this.releaseNotes = releaseNotes;
             return this;
         }
         @CustomType.Setter
-        public Builder screenshots(List<GetListingScreenshot> screenshots) {
-            this.screenshots = Objects.requireNonNull(screenshots);
+        public Builder screenshots(@Nullable List<GetListingScreenshot> screenshots) {
+            this.screenshots = screenshots;
             return this;
         }
         public Builder screenshots(GetListingScreenshot... screenshots) {
             return screenshots(List.of(screenshots));
         }
         @CustomType.Setter
-        public Builder shortDescription(String shortDescription) {
-            this.shortDescription = Objects.requireNonNull(shortDescription);
+        public Builder shortDescription(@Nullable String shortDescription) {
+            this.shortDescription = shortDescription;
             return this;
         }
         @CustomType.Setter
-        public Builder supportContacts(List<GetListingSupportContact> supportContacts) {
-            this.supportContacts = Objects.requireNonNull(supportContacts);
+        public Builder supportContacts(@Nullable List<GetListingSupportContact> supportContacts) {
+            this.supportContacts = supportContacts;
             return this;
         }
         public Builder supportContacts(GetListingSupportContact... supportContacts) {
             return supportContacts(List.of(supportContacts));
         }
         @CustomType.Setter
-        public Builder supportLinks(List<GetListingSupportLink> supportLinks) {
-            this.supportLinks = Objects.requireNonNull(supportLinks);
+        public Builder supportLinks(@Nullable List<GetListingSupportLink> supportLinks) {
+            this.supportLinks = supportLinks;
             return this;
         }
         public Builder supportLinks(GetListingSupportLink... supportLinks) {
             return supportLinks(List.of(supportLinks));
         }
         @CustomType.Setter
-        public Builder supportedOperatingSystems(List<GetListingSupportedOperatingSystem> supportedOperatingSystems) {
-            this.supportedOperatingSystems = Objects.requireNonNull(supportedOperatingSystems);
+        public Builder supportedOperatingSystems(@Nullable List<GetListingSupportedOperatingSystem> supportedOperatingSystems) {
+            this.supportedOperatingSystems = supportedOperatingSystems;
             return this;
         }
         public Builder supportedOperatingSystems(GetListingSupportedOperatingSystem... supportedOperatingSystems) {
             return supportedOperatingSystems(List.of(supportedOperatingSystems));
         }
         @CustomType.Setter
-        public Builder systemRequirements(String systemRequirements) {
-            this.systemRequirements = Objects.requireNonNull(systemRequirements);
+        public Builder systemRequirements(@Nullable String systemRequirements) {
+            this.systemRequirements = systemRequirements;
             return this;
         }
         @CustomType.Setter
-        public Builder tagline(String tagline) {
-            this.tagline = Objects.requireNonNull(tagline);
+        public Builder tagline(@Nullable String tagline) {
+            this.tagline = tagline;
             return this;
         }
         @CustomType.Setter
-        public Builder timeReleased(String timeReleased) {
-            this.timeReleased = Objects.requireNonNull(timeReleased);
+        public Builder timeReleased(@Nullable String timeReleased) {
+            this.timeReleased = timeReleased;
             return this;
         }
         @CustomType.Setter
-        public Builder usageInformation(String usageInformation) {
-            this.usageInformation = Objects.requireNonNull(usageInformation);
+        public Builder usageInformation(@Nullable String usageInformation) {
+            this.usageInformation = usageInformation;
             return this;
         }
         @CustomType.Setter
-        public Builder version(String version) {
-            this.version = Objects.requireNonNull(version);
+        public Builder version(@Nullable String version) {
+            this.version = version;
             return this;
         }
         @CustomType.Setter
-        public Builder videos(List<GetListingVideo> videos) {
-            this.videos = Objects.requireNonNull(videos);
+        public Builder videos(@Nullable List<GetListingVideo> videos) {
+            this.videos = videos;
             return this;
         }
         public Builder videos(GetListingVideo... videos) {

@@ -60,7 +60,7 @@ class GetShapesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -73,10 +73,7 @@ class GetShapesResult:
 
     @property
     @pulumi.getter
-    def shapes(self) -> Sequence['outputs.GetShapesShapeResult']:
-        """
-        The list of shapes.
-        """
+    def shapes(self) -> Optional[Sequence['outputs.GetShapesShapeResult']]:
         return pulumi.get(self, "shapes")
 
 
@@ -100,26 +97,7 @@ def get_shapes(availability_domain: Optional[str] = None,
                image_id: Optional[str] = None,
                opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetShapesResult:
     """
-    This data source provides the list of Shapes in Oracle Cloud Infrastructure Core service.
-
-    Lists the shapes that can be used to launch an instance within the specified compartment. You can
-    filter the list by compatibility with a specific image.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_shapes = oci.Core.get_shapes(compartment_id=var["compartment_id"],
-        availability_domain=var["shape_availability_domain"],
-        image_id=oci_core_image["test_image"]["id"])
-    ```
-
-
-    :param str availability_domain: The name of the availability domain.  Example: `Uocm:PHX-AD-1`
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param str image_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of an image.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['availabilityDomain'] = availability_domain
@@ -145,25 +123,6 @@ def get_shapes_output(availability_domain: Optional[pulumi.Input[Optional[str]]]
                       image_id: Optional[pulumi.Input[Optional[str]]] = None,
                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetShapesResult]:
     """
-    This data source provides the list of Shapes in Oracle Cloud Infrastructure Core service.
-
-    Lists the shapes that can be used to launch an instance within the specified compartment. You can
-    filter the list by compatibility with a specific image.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_shapes = oci.Core.get_shapes(compartment_id=var["compartment_id"],
-        availability_domain=var["shape_availability_domain"],
-        image_id=oci_core_image["test_image"]["id"])
-    ```
-
-
-    :param str availability_domain: The name of the availability domain.  Example: `Uocm:PHX-AD-1`
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param str image_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of an image.
+    Use this data source to access information about an existing resource.
     """
     ...

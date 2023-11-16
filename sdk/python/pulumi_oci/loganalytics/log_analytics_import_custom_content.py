@@ -22,14 +22,6 @@ class LogAnalyticsImportCustomContentArgs:
                  is_overwrite: Optional[pulumi.Input[bool]] = None):
         """
         The set of arguments for constructing a LogAnalyticsImportCustomContent resource.
-        :param pulumi.Input[str] import_custom_content_file: Path to the file to upload which contains the custom content.
-        :param pulumi.Input[str] namespace: The Logging Analytics namespace used for the request.
-        :param pulumi.Input[str] expect: A value of `100-continue` requests preliminary verification of the request method, path, and headers before the request body is sent. If no error results from such verification, the server will send a 100 (Continue) interim response to indicate readiness for the request body. The only allowed value for this parameter is "100-Continue" (case-insensitive).
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[bool] is_overwrite: A flag indicating whether or not to overwrite existing content if a conflict is found during import content operation.
         """
         pulumi.set(__self__, "import_custom_content_file", import_custom_content_file)
         pulumi.set(__self__, "namespace", namespace)
@@ -41,9 +33,6 @@ class LogAnalyticsImportCustomContentArgs:
     @property
     @pulumi.getter(name="importCustomContentFile")
     def import_custom_content_file(self) -> pulumi.Input[str]:
-        """
-        Path to the file to upload which contains the custom content.
-        """
         return pulumi.get(self, "import_custom_content_file")
 
     @import_custom_content_file.setter
@@ -53,9 +42,6 @@ class LogAnalyticsImportCustomContentArgs:
     @property
     @pulumi.getter
     def namespace(self) -> pulumi.Input[str]:
-        """
-        The Logging Analytics namespace used for the request.
-        """
         return pulumi.get(self, "namespace")
 
     @namespace.setter
@@ -65,13 +51,6 @@ class LogAnalyticsImportCustomContentArgs:
     @property
     @pulumi.getter
     def expect(self) -> Optional[pulumi.Input[str]]:
-        """
-        A value of `100-continue` requests preliminary verification of the request method, path, and headers before the request body is sent. If no error results from such verification, the server will send a 100 (Continue) interim response to indicate readiness for the request body. The only allowed value for this parameter is "100-Continue" (case-insensitive).
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "expect")
 
     @expect.setter
@@ -81,9 +60,6 @@ class LogAnalyticsImportCustomContentArgs:
     @property
     @pulumi.getter(name="isOverwrite")
     def is_overwrite(self) -> Optional[pulumi.Input[bool]]:
-        """
-        A flag indicating whether or not to overwrite existing content if a conflict is found during import content operation.
-        """
         return pulumi.get(self, "is_overwrite")
 
     @is_overwrite.setter
@@ -105,19 +81,6 @@ class _LogAnalyticsImportCustomContentState:
                  source_names: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
         """
         Input properties used for looking up and filtering LogAnalyticsImportCustomContent resources.
-        :param pulumi.Input[Sequence[pulumi.Input['LogAnalyticsImportCustomContentChangeListArgs']]] change_lists: LogAnalyticsImportCustomChangeList
-        :param pulumi.Input[str] content_name: The content name.
-        :param pulumi.Input[str] expect: A value of `100-continue` requests preliminary verification of the request method, path, and headers before the request body is sent. If no error results from such verification, the server will send a 100 (Continue) interim response to indicate readiness for the request body. The only allowed value for this parameter is "100-Continue" (case-insensitive).
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] field_names: The field names.
-        :param pulumi.Input[str] import_custom_content_file: Path to the file to upload which contains the custom content.
-        :param pulumi.Input[bool] is_overwrite: A flag indicating whether or not to overwrite existing content if a conflict is found during import content operation.
-        :param pulumi.Input[str] namespace: The Logging Analytics namespace used for the request.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] parser_names: The parser names.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] source_names: The source names.
         """
         if change_lists is not None:
             pulumi.set(__self__, "change_lists", change_lists)
@@ -141,9 +104,6 @@ class _LogAnalyticsImportCustomContentState:
     @property
     @pulumi.getter(name="changeLists")
     def change_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['LogAnalyticsImportCustomContentChangeListArgs']]]]:
-        """
-        LogAnalyticsImportCustomChangeList
-        """
         return pulumi.get(self, "change_lists")
 
     @change_lists.setter
@@ -153,9 +113,6 @@ class _LogAnalyticsImportCustomContentState:
     @property
     @pulumi.getter(name="contentName")
     def content_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The content name.
-        """
         return pulumi.get(self, "content_name")
 
     @content_name.setter
@@ -165,13 +122,6 @@ class _LogAnalyticsImportCustomContentState:
     @property
     @pulumi.getter
     def expect(self) -> Optional[pulumi.Input[str]]:
-        """
-        A value of `100-continue` requests preliminary verification of the request method, path, and headers before the request body is sent. If no error results from such verification, the server will send a 100 (Continue) interim response to indicate readiness for the request body. The only allowed value for this parameter is "100-Continue" (case-insensitive).
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "expect")
 
     @expect.setter
@@ -181,9 +131,6 @@ class _LogAnalyticsImportCustomContentState:
     @property
     @pulumi.getter(name="fieldNames")
     def field_names(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        The field names.
-        """
         return pulumi.get(self, "field_names")
 
     @field_names.setter
@@ -193,9 +140,6 @@ class _LogAnalyticsImportCustomContentState:
     @property
     @pulumi.getter(name="importCustomContentFile")
     def import_custom_content_file(self) -> Optional[pulumi.Input[str]]:
-        """
-        Path to the file to upload which contains the custom content.
-        """
         return pulumi.get(self, "import_custom_content_file")
 
     @import_custom_content_file.setter
@@ -205,9 +149,6 @@ class _LogAnalyticsImportCustomContentState:
     @property
     @pulumi.getter(name="isOverwrite")
     def is_overwrite(self) -> Optional[pulumi.Input[bool]]:
-        """
-        A flag indicating whether or not to overwrite existing content if a conflict is found during import content operation.
-        """
         return pulumi.get(self, "is_overwrite")
 
     @is_overwrite.setter
@@ -217,9 +158,6 @@ class _LogAnalyticsImportCustomContentState:
     @property
     @pulumi.getter
     def namespace(self) -> Optional[pulumi.Input[str]]:
-        """
-        The Logging Analytics namespace used for the request.
-        """
         return pulumi.get(self, "namespace")
 
     @namespace.setter
@@ -229,9 +167,6 @@ class _LogAnalyticsImportCustomContentState:
     @property
     @pulumi.getter(name="parserNames")
     def parser_names(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        The parser names.
-        """
         return pulumi.get(self, "parser_names")
 
     @parser_names.setter
@@ -241,9 +176,6 @@ class _LogAnalyticsImportCustomContentState:
     @property
     @pulumi.getter(name="sourceNames")
     def source_names(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        The source names.
-        """
         return pulumi.get(self, "source_names")
 
     @source_names.setter
@@ -262,37 +194,9 @@ class LogAnalyticsImportCustomContent(pulumi.CustomResource):
                  namespace: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Log Analytics Import Custom Content resource in Oracle Cloud Infrastructure Log Analytics service.
-
-        Imports the specified custom content from the input in zip format.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_log_analytics_import_custom_content = oci.log_analytics.LogAnalyticsImportCustomContent("testLogAnalyticsImportCustomContent",
-            import_custom_content_file=var["log_analytics_import_custom_content_import_custom_content_file"],
-            namespace=var["log_analytics_import_custom_content_namespace"],
-            expect=var["log_analytics_import_custom_content_expect"],
-            is_overwrite=var["log_analytics_import_custom_content_is_overwrite"])
-        ```
-
-        ## Import
-
-        Import is not supported for LogAnalyticsImportCustomContent
-
+        Create a LogAnalyticsImportCustomContent resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] expect: A value of `100-continue` requests preliminary verification of the request method, path, and headers before the request body is sent. If no error results from such verification, the server will send a 100 (Continue) interim response to indicate readiness for the request body. The only allowed value for this parameter is "100-Continue" (case-insensitive).
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] import_custom_content_file: Path to the file to upload which contains the custom content.
-        :param pulumi.Input[bool] is_overwrite: A flag indicating whether or not to overwrite existing content if a conflict is found during import content operation.
-        :param pulumi.Input[str] namespace: The Logging Analytics namespace used for the request.
         """
         ...
     @overload
@@ -301,27 +205,7 @@ class LogAnalyticsImportCustomContent(pulumi.CustomResource):
                  args: LogAnalyticsImportCustomContentArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Log Analytics Import Custom Content resource in Oracle Cloud Infrastructure Log Analytics service.
-
-        Imports the specified custom content from the input in zip format.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_log_analytics_import_custom_content = oci.log_analytics.LogAnalyticsImportCustomContent("testLogAnalyticsImportCustomContent",
-            import_custom_content_file=var["log_analytics_import_custom_content_import_custom_content_file"],
-            namespace=var["log_analytics_import_custom_content_namespace"],
-            expect=var["log_analytics_import_custom_content_expect"],
-            is_overwrite=var["log_analytics_import_custom_content_is_overwrite"])
-        ```
-
-        ## Import
-
-        Import is not supported for LogAnalyticsImportCustomContent
-
+        Create a LogAnalyticsImportCustomContent resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param LogAnalyticsImportCustomContentArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -389,19 +273,6 @@ class LogAnalyticsImportCustomContent(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['LogAnalyticsImportCustomContentChangeListArgs']]]] change_lists: LogAnalyticsImportCustomChangeList
-        :param pulumi.Input[str] content_name: The content name.
-        :param pulumi.Input[str] expect: A value of `100-continue` requests preliminary verification of the request method, path, and headers before the request body is sent. If no error results from such verification, the server will send a 100 (Continue) interim response to indicate readiness for the request body. The only allowed value for this parameter is "100-Continue" (case-insensitive).
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] field_names: The field names.
-        :param pulumi.Input[str] import_custom_content_file: Path to the file to upload which contains the custom content.
-        :param pulumi.Input[bool] is_overwrite: A flag indicating whether or not to overwrite existing content if a conflict is found during import content operation.
-        :param pulumi.Input[str] namespace: The Logging Analytics namespace used for the request.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] parser_names: The parser names.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] source_names: The source names.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -420,77 +291,46 @@ class LogAnalyticsImportCustomContent(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="changeLists")
-    def change_lists(self) -> pulumi.Output[Sequence['outputs.LogAnalyticsImportCustomContentChangeList']]:
-        """
-        LogAnalyticsImportCustomChangeList
-        """
+    def change_lists(self) -> pulumi.Output[Optional[Sequence['outputs.LogAnalyticsImportCustomContentChangeList']]]:
         return pulumi.get(self, "change_lists")
 
     @property
     @pulumi.getter(name="contentName")
-    def content_name(self) -> pulumi.Output[str]:
-        """
-        The content name.
-        """
+    def content_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "content_name")
 
     @property
     @pulumi.getter
-    def expect(self) -> pulumi.Output[str]:
-        """
-        A value of `100-continue` requests preliminary verification of the request method, path, and headers before the request body is sent. If no error results from such verification, the server will send a 100 (Continue) interim response to indicate readiness for the request body. The only allowed value for this parameter is "100-Continue" (case-insensitive).
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
+    def expect(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "expect")
 
     @property
     @pulumi.getter(name="fieldNames")
-    def field_names(self) -> pulumi.Output[Sequence[str]]:
-        """
-        The field names.
-        """
+    def field_names(self) -> pulumi.Output[Optional[Sequence[str]]]:
         return pulumi.get(self, "field_names")
 
     @property
     @pulumi.getter(name="importCustomContentFile")
     def import_custom_content_file(self) -> pulumi.Output[str]:
-        """
-        Path to the file to upload which contains the custom content.
-        """
         return pulumi.get(self, "import_custom_content_file")
 
     @property
     @pulumi.getter(name="isOverwrite")
-    def is_overwrite(self) -> pulumi.Output[bool]:
-        """
-        A flag indicating whether or not to overwrite existing content if a conflict is found during import content operation.
-        """
+    def is_overwrite(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "is_overwrite")
 
     @property
     @pulumi.getter
     def namespace(self) -> pulumi.Output[str]:
-        """
-        The Logging Analytics namespace used for the request.
-        """
         return pulumi.get(self, "namespace")
 
     @property
     @pulumi.getter(name="parserNames")
-    def parser_names(self) -> pulumi.Output[Sequence[str]]:
-        """
-        The parser names.
-        """
+    def parser_names(self) -> pulumi.Output[Optional[Sequence[str]]]:
         return pulumi.get(self, "parser_names")
 
     @property
     @pulumi.getter(name="sourceNames")
-    def source_names(self) -> pulumi.Output[Sequence[str]]:
-        """
-        The source names.
-        """
+    def source_names(self) -> pulumi.Output[Optional[Sequence[str]]]:
         return pulumi.get(self, "source_names")
 

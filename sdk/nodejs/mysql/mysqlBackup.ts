@@ -71,23 +71,23 @@ export class MysqlBackup extends pulumi.CustomResource {
     /**
      * The size of the backup in base-2 (IEC) gibibytes. (GiB).
      */
-    public /*out*/ readonly backupSizeInGbs!: pulumi.Output<number>;
+    public /*out*/ readonly backupSizeInGbs!: pulumi.Output<number | undefined>;
     /**
      * The type of backup.
      */
-    public readonly backupType!: pulumi.Output<string>;
+    public readonly backupType!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The OCID of the compartment the backup exists in.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    public readonly compartmentId!: pulumi.Output<string | undefined>;
     /**
      * Indicates how the backup was created: manually, automatic, or by an Operator.
      */
-    public /*out*/ readonly creationType!: pulumi.Output<string>;
+    public /*out*/ readonly creationType!: pulumi.Output<string | undefined>;
     /**
      * Initial size of the data volume in GiBs that will be created and attached.
      */
-    public /*out*/ readonly dataStorageSizeInGb!: pulumi.Output<number>;
+    public /*out*/ readonly dataStorageSizeInGb!: pulumi.Output<number | undefined>;
     /**
      * The OCID of the DB System the Backup is associated with.
      */
@@ -95,31 +95,31 @@ export class MysqlBackup extends pulumi.CustomResource {
     /**
      * Snapshot of the DbSystem details at the time of the backup
      */
-    public /*out*/ readonly dbSystemSnapshots!: pulumi.Output<outputs.Mysql.MysqlBackupDbSystemSnapshot[]>;
+    public /*out*/ readonly dbSystemSnapshots!: pulumi.Output<outputs.Mysql.MysqlBackupDbSystemSnapshot[] | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) A user-supplied description for the backup.
      */
-    public readonly description!: pulumi.Output<string>;
+    public readonly description!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) A user-supplied display name for the backup.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    public readonly displayName!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * Additional information about the current lifecycleState.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string | undefined>;
     /**
      * The MySQL server version of the DB System used for backup.
      */
-    public /*out*/ readonly mysqlVersion!: pulumi.Output<string>;
+    public /*out*/ readonly mysqlVersion!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Number of days to retain this backup.
      *
@@ -127,23 +127,23 @@ export class MysqlBackup extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly retentionInDays!: pulumi.Output<number>;
+    public readonly retentionInDays!: pulumi.Output<number | undefined>;
     /**
      * The shape of the DB System instance used for backup.
      */
-    public /*out*/ readonly shapeName!: pulumi.Output<string>;
+    public /*out*/ readonly shapeName!: pulumi.Output<string | undefined>;
     /**
      * The state of the backup.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * The time the backup record was created.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * The time at which the backup was updated.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    public /*out*/ readonly timeUpdated!: pulumi.Output<string | undefined>;
 
     /**
      * Create a MysqlBackup resource with the given unique name, arguments, and options.

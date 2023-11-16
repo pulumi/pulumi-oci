@@ -28,7 +28,7 @@ namespace Pulumi.Oci.Marketplace.Outputs
         /// <summary>
         /// The default package version.
         /// </summary>
-        public readonly string DefaultPackageVersion;
+        public readonly string? DefaultPackageVersion;
         /// <summary>
         /// Links to additional documentation provided by the publisher specifically for the listing.
         /// </summary>
@@ -40,23 +40,23 @@ namespace Pulumi.Oci.Marketplace.Outputs
         /// <summary>
         /// The unique identifier for the publisher.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Indicates whether to show only featured listings. If this is set to `false` or is omitted, then all listings will be returned.
         /// </summary>
-        public readonly bool IsFeatured;
+        public readonly bool? IsFeatured;
         /// <summary>
         /// The publisher category to which the listing belongs. The publisher category informs where the listing appears for use.
         /// </summary>
-        public readonly string ListingType;
+        public readonly string? ListingType;
         /// <summary>
         /// The name of the listing.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// A filter to return only packages that match the given package type exactly.
         /// </summary>
-        public readonly string PackageType;
+        public readonly string? PackageType;
         public readonly ImmutableArray<string> PricingTypes;
         /// <summary>
         /// Summary details about the publisher of the listing.
@@ -69,7 +69,7 @@ namespace Pulumi.Oci.Marketplace.Outputs
         /// <summary>
         /// A short description of the listing.
         /// </summary>
-        public readonly string ShortDescription;
+        public readonly string? ShortDescription;
         /// <summary>
         /// The list of operating systems supported by the listing.
         /// </summary>
@@ -83,21 +83,21 @@ namespace Pulumi.Oci.Marketplace.Outputs
 
             ImmutableArray<string> compatibleArchitectures,
 
-            string defaultPackageVersion,
+            string? defaultPackageVersion,
 
             ImmutableArray<Outputs.GetListingsListingDocumentationLinkResult> documentationLinks,
 
             ImmutableArray<Outputs.GetListingsListingIconResult> icons,
 
-            string id,
+            string? id,
 
-            bool isFeatured,
+            bool? isFeatured,
 
-            string listingType,
+            string? listingType,
 
-            string name,
+            string? name,
 
-            string packageType,
+            string? packageType,
 
             ImmutableArray<string> pricingTypes,
 
@@ -105,7 +105,7 @@ namespace Pulumi.Oci.Marketplace.Outputs
 
             ImmutableArray<Outputs.GetListingsListingRegionResult> regions,
 
-            string shortDescription,
+            string? shortDescription,
 
             ImmutableArray<Outputs.GetListingsListingSupportedOperatingSystemResult> supportedOperatingSystems)
         {

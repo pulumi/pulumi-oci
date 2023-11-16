@@ -24,12 +24,6 @@ class SessionArgs:
                  session_ttl_in_seconds: Optional[pulumi.Input[int]] = None):
         """
         The set of arguments for constructing a Session resource.
-        :param pulumi.Input[str] bastion_id: The unique identifier (OCID) of the bastion on which to create this session.
-        :param pulumi.Input['SessionKeyDetailsArgs'] key_details: Public key details for a bastion session.
-        :param pulumi.Input['SessionTargetResourceDetailsArgs'] target_resource_details: Details about a bastion session's target resource.
-        :param pulumi.Input[str] display_name: (Updatable) The name of the session.
-        :param pulumi.Input[str] key_type: The type of the key used to connect to the session. PUB is a standard public key in OpenSSH format.
-        :param pulumi.Input[int] session_ttl_in_seconds: The amount of time the session can remain active.
         """
         pulumi.set(__self__, "bastion_id", bastion_id)
         pulumi.set(__self__, "key_details", key_details)
@@ -44,9 +38,6 @@ class SessionArgs:
     @property
     @pulumi.getter(name="bastionId")
     def bastion_id(self) -> pulumi.Input[str]:
-        """
-        The unique identifier (OCID) of the bastion on which to create this session.
-        """
         return pulumi.get(self, "bastion_id")
 
     @bastion_id.setter
@@ -56,9 +47,6 @@ class SessionArgs:
     @property
     @pulumi.getter(name="keyDetails")
     def key_details(self) -> pulumi.Input['SessionKeyDetailsArgs']:
-        """
-        Public key details for a bastion session.
-        """
         return pulumi.get(self, "key_details")
 
     @key_details.setter
@@ -68,9 +56,6 @@ class SessionArgs:
     @property
     @pulumi.getter(name="targetResourceDetails")
     def target_resource_details(self) -> pulumi.Input['SessionTargetResourceDetailsArgs']:
-        """
-        Details about a bastion session's target resource.
-        """
         return pulumi.get(self, "target_resource_details")
 
     @target_resource_details.setter
@@ -80,9 +65,6 @@ class SessionArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The name of the session.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -92,9 +74,6 @@ class SessionArgs:
     @property
     @pulumi.getter(name="keyType")
     def key_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        The type of the key used to connect to the session. PUB is a standard public key in OpenSSH format.
-        """
         return pulumi.get(self, "key_type")
 
     @key_type.setter
@@ -104,9 +83,6 @@ class SessionArgs:
     @property
     @pulumi.getter(name="sessionTtlInSeconds")
     def session_ttl_in_seconds(self) -> Optional[pulumi.Input[int]]:
-        """
-        The amount of time the session can remain active.
-        """
         return pulumi.get(self, "session_ttl_in_seconds")
 
     @session_ttl_in_seconds.setter
@@ -133,20 +109,6 @@ class _SessionState:
                  time_updated: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering Session resources.
-        :param pulumi.Input[str] bastion_id: The unique identifier (OCID) of the bastion on which to create this session.
-        :param pulumi.Input[str] bastion_name: The name of the bastion that is hosting this session.
-        :param pulumi.Input[str] bastion_public_host_key_info: The public key of the bastion host. You can use this to verify that you're connecting to the correct bastion.
-        :param pulumi.Input[str] bastion_user_name: The username that the session uses to connect to the target resource.
-        :param pulumi.Input[str] display_name: (Updatable) The name of the session.
-        :param pulumi.Input['SessionKeyDetailsArgs'] key_details: Public key details for a bastion session.
-        :param pulumi.Input[str] key_type: The type of the key used to connect to the session. PUB is a standard public key in OpenSSH format.
-        :param pulumi.Input[str] lifecycle_details: A message describing the current session state in more detail.
-        :param pulumi.Input[int] session_ttl_in_seconds: The amount of time the session can remain active.
-        :param pulumi.Input[Mapping[str, Any]] ssh_metadata: The connection message for the session.
-        :param pulumi.Input[str] state: The current state of the session.
-        :param pulumi.Input['SessionTargetResourceDetailsArgs'] target_resource_details: Details about a bastion session's target resource.
-        :param pulumi.Input[str] time_created: The time the session was created. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
-        :param pulumi.Input[str] time_updated: The time the session was updated. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
         """
         if bastion_id is not None:
             pulumi.set(__self__, "bastion_id", bastion_id)
@@ -180,9 +142,6 @@ class _SessionState:
     @property
     @pulumi.getter(name="bastionId")
     def bastion_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The unique identifier (OCID) of the bastion on which to create this session.
-        """
         return pulumi.get(self, "bastion_id")
 
     @bastion_id.setter
@@ -192,9 +151,6 @@ class _SessionState:
     @property
     @pulumi.getter(name="bastionName")
     def bastion_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The name of the bastion that is hosting this session.
-        """
         return pulumi.get(self, "bastion_name")
 
     @bastion_name.setter
@@ -204,9 +160,6 @@ class _SessionState:
     @property
     @pulumi.getter(name="bastionPublicHostKeyInfo")
     def bastion_public_host_key_info(self) -> Optional[pulumi.Input[str]]:
-        """
-        The public key of the bastion host. You can use this to verify that you're connecting to the correct bastion.
-        """
         return pulumi.get(self, "bastion_public_host_key_info")
 
     @bastion_public_host_key_info.setter
@@ -216,9 +169,6 @@ class _SessionState:
     @property
     @pulumi.getter(name="bastionUserName")
     def bastion_user_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The username that the session uses to connect to the target resource.
-        """
         return pulumi.get(self, "bastion_user_name")
 
     @bastion_user_name.setter
@@ -228,9 +178,6 @@ class _SessionState:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The name of the session.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -240,9 +187,6 @@ class _SessionState:
     @property
     @pulumi.getter(name="keyDetails")
     def key_details(self) -> Optional[pulumi.Input['SessionKeyDetailsArgs']]:
-        """
-        Public key details for a bastion session.
-        """
         return pulumi.get(self, "key_details")
 
     @key_details.setter
@@ -252,9 +196,6 @@ class _SessionState:
     @property
     @pulumi.getter(name="keyType")
     def key_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        The type of the key used to connect to the session. PUB is a standard public key in OpenSSH format.
-        """
         return pulumi.get(self, "key_type")
 
     @key_type.setter
@@ -264,9 +205,6 @@ class _SessionState:
     @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> Optional[pulumi.Input[str]]:
-        """
-        A message describing the current session state in more detail.
-        """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
@@ -276,9 +214,6 @@ class _SessionState:
     @property
     @pulumi.getter(name="sessionTtlInSeconds")
     def session_ttl_in_seconds(self) -> Optional[pulumi.Input[int]]:
-        """
-        The amount of time the session can remain active.
-        """
         return pulumi.get(self, "session_ttl_in_seconds")
 
     @session_ttl_in_seconds.setter
@@ -288,9 +223,6 @@ class _SessionState:
     @property
     @pulumi.getter(name="sshMetadata")
     def ssh_metadata(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        The connection message for the session.
-        """
         return pulumi.get(self, "ssh_metadata")
 
     @ssh_metadata.setter
@@ -300,9 +232,6 @@ class _SessionState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The current state of the session.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -312,9 +241,6 @@ class _SessionState:
     @property
     @pulumi.getter(name="targetResourceDetails")
     def target_resource_details(self) -> Optional[pulumi.Input['SessionTargetResourceDetailsArgs']]:
-        """
-        Details about a bastion session's target resource.
-        """
         return pulumi.get(self, "target_resource_details")
 
     @target_resource_details.setter
@@ -324,9 +250,6 @@ class _SessionState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The time the session was created. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -336,9 +259,6 @@ class _SessionState:
     @property
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> Optional[pulumi.Input[str]]:
-        """
-        The time the session was updated. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
-        """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
@@ -359,50 +279,9 @@ class Session(pulumi.CustomResource):
                  target_resource_details: Optional[pulumi.Input[pulumi.InputType['SessionTargetResourceDetailsArgs']]] = None,
                  __props__=None):
         """
-        This resource provides the Session resource in Oracle Cloud Infrastructure Bastion service.
-
-        Creates a new session in a bastion. A bastion session lets authorized users connect to a target resource for a predetermined amount of time. The Bastion service recognizes two types of sessions, managed SSH sessions and SSH port forwarding sessions. Managed SSH sessions require that the target resource has an OpenSSH server and the Oracle Cloud Agent both running.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_session = oci.bastion.Session("testSession",
-            bastion_id=oci_bastion_bastion["test_bastion"]["id"],
-            key_details=oci.bastion.SessionKeyDetailsArgs(
-                public_key_content=var["session_key_details_public_key_content"],
-            ),
-            target_resource_details=oci.bastion.SessionTargetResourceDetailsArgs(
-                session_type=var["session_target_resource_details_session_type"],
-                target_resource_fqdn=var["session_target_resource_details_target_resource_fqdn"],
-                target_resource_id=oci_bastion_target_resource["test_target_resource"]["id"],
-                target_resource_operating_system_user_name=oci_identity_user["test_user"]["name"],
-                target_resource_port=var["session_target_resource_details_target_resource_port"],
-                target_resource_private_ip_address=var["session_target_resource_details_target_resource_private_ip_address"],
-            ),
-            display_name=var["session_display_name"],
-            key_type=var["session_key_type"],
-            session_ttl_in_seconds=var["session_session_ttl_in_seconds"])
-        ```
-
-        ## Import
-
-        Sessions can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Bastion/session:Session test_session "id"
-        ```
-
+        Create a Session resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] bastion_id: The unique identifier (OCID) of the bastion on which to create this session.
-        :param pulumi.Input[str] display_name: (Updatable) The name of the session.
-        :param pulumi.Input[pulumi.InputType['SessionKeyDetailsArgs']] key_details: Public key details for a bastion session.
-        :param pulumi.Input[str] key_type: The type of the key used to connect to the session. PUB is a standard public key in OpenSSH format.
-        :param pulumi.Input[int] session_ttl_in_seconds: The amount of time the session can remain active.
-        :param pulumi.Input[pulumi.InputType['SessionTargetResourceDetailsArgs']] target_resource_details: Details about a bastion session's target resource.
         """
         ...
     @overload
@@ -411,42 +290,7 @@ class Session(pulumi.CustomResource):
                  args: SessionArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Session resource in Oracle Cloud Infrastructure Bastion service.
-
-        Creates a new session in a bastion. A bastion session lets authorized users connect to a target resource for a predetermined amount of time. The Bastion service recognizes two types of sessions, managed SSH sessions and SSH port forwarding sessions. Managed SSH sessions require that the target resource has an OpenSSH server and the Oracle Cloud Agent both running.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_session = oci.bastion.Session("testSession",
-            bastion_id=oci_bastion_bastion["test_bastion"]["id"],
-            key_details=oci.bastion.SessionKeyDetailsArgs(
-                public_key_content=var["session_key_details_public_key_content"],
-            ),
-            target_resource_details=oci.bastion.SessionTargetResourceDetailsArgs(
-                session_type=var["session_target_resource_details_session_type"],
-                target_resource_fqdn=var["session_target_resource_details_target_resource_fqdn"],
-                target_resource_id=oci_bastion_target_resource["test_target_resource"]["id"],
-                target_resource_operating_system_user_name=oci_identity_user["test_user"]["name"],
-                target_resource_port=var["session_target_resource_details_target_resource_port"],
-                target_resource_private_ip_address=var["session_target_resource_details_target_resource_private_ip_address"],
-            ),
-            display_name=var["session_display_name"],
-            key_type=var["session_key_type"],
-            session_ttl_in_seconds=var["session_session_ttl_in_seconds"])
-        ```
-
-        ## Import
-
-        Sessions can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Bastion/session:Session test_session "id"
-        ```
-
+        Create a Session resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param SessionArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -528,20 +372,6 @@ class Session(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] bastion_id: The unique identifier (OCID) of the bastion on which to create this session.
-        :param pulumi.Input[str] bastion_name: The name of the bastion that is hosting this session.
-        :param pulumi.Input[str] bastion_public_host_key_info: The public key of the bastion host. You can use this to verify that you're connecting to the correct bastion.
-        :param pulumi.Input[str] bastion_user_name: The username that the session uses to connect to the target resource.
-        :param pulumi.Input[str] display_name: (Updatable) The name of the session.
-        :param pulumi.Input[pulumi.InputType['SessionKeyDetailsArgs']] key_details: Public key details for a bastion session.
-        :param pulumi.Input[str] key_type: The type of the key used to connect to the session. PUB is a standard public key in OpenSSH format.
-        :param pulumi.Input[str] lifecycle_details: A message describing the current session state in more detail.
-        :param pulumi.Input[int] session_ttl_in_seconds: The amount of time the session can remain active.
-        :param pulumi.Input[Mapping[str, Any]] ssh_metadata: The connection message for the session.
-        :param pulumi.Input[str] state: The current state of the session.
-        :param pulumi.Input[pulumi.InputType['SessionTargetResourceDetailsArgs']] target_resource_details: Details about a bastion session's target resource.
-        :param pulumi.Input[str] time_created: The time the session was created. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
-        :param pulumi.Input[str] time_updated: The time the session was updated. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -566,112 +396,70 @@ class Session(pulumi.CustomResource):
     @property
     @pulumi.getter(name="bastionId")
     def bastion_id(self) -> pulumi.Output[str]:
-        """
-        The unique identifier (OCID) of the bastion on which to create this session.
-        """
         return pulumi.get(self, "bastion_id")
 
     @property
     @pulumi.getter(name="bastionName")
-    def bastion_name(self) -> pulumi.Output[str]:
-        """
-        The name of the bastion that is hosting this session.
-        """
+    def bastion_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "bastion_name")
 
     @property
     @pulumi.getter(name="bastionPublicHostKeyInfo")
-    def bastion_public_host_key_info(self) -> pulumi.Output[str]:
-        """
-        The public key of the bastion host. You can use this to verify that you're connecting to the correct bastion.
-        """
+    def bastion_public_host_key_info(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "bastion_public_host_key_info")
 
     @property
     @pulumi.getter(name="bastionUserName")
-    def bastion_user_name(self) -> pulumi.Output[str]:
-        """
-        The username that the session uses to connect to the target resource.
-        """
+    def bastion_user_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "bastion_user_name")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The name of the session.
-        """
+    def display_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="keyDetails")
     def key_details(self) -> pulumi.Output['outputs.SessionKeyDetails']:
-        """
-        Public key details for a bastion session.
-        """
         return pulumi.get(self, "key_details")
 
     @property
     @pulumi.getter(name="keyType")
-    def key_type(self) -> pulumi.Output[str]:
-        """
-        The type of the key used to connect to the session. PUB is a standard public key in OpenSSH format.
-        """
+    def key_type(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "key_type")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> pulumi.Output[str]:
-        """
-        A message describing the current session state in more detail.
-        """
+    def lifecycle_details(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="sessionTtlInSeconds")
-    def session_ttl_in_seconds(self) -> pulumi.Output[int]:
-        """
-        The amount of time the session can remain active.
-        """
+    def session_ttl_in_seconds(self) -> pulumi.Output[Optional[int]]:
         return pulumi.get(self, "session_ttl_in_seconds")
 
     @property
     @pulumi.getter(name="sshMetadata")
-    def ssh_metadata(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        The connection message for the session.
-        """
+    def ssh_metadata(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "ssh_metadata")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        The current state of the session.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="targetResourceDetails")
     def target_resource_details(self) -> pulumi.Output['outputs.SessionTargetResourceDetails']:
-        """
-        Details about a bastion session's target resource.
-        """
         return pulumi.get(self, "target_resource_details")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        The time the session was created. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> pulumi.Output[str]:
-        """
-        The time the session was updated. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
-        """
+    def time_updated(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_updated")
 

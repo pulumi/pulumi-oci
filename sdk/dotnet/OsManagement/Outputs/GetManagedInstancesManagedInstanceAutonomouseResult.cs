@@ -16,10 +16,10 @@ namespace Pulumi.Oci.OsManagement.Outputs
         /// <summary>
         /// True if daily updates are enabled
         /// </summary>
-        public readonly bool IsAutoUpdateEnabled;
+        public readonly bool? IsAutoUpdateEnabled;
 
         [OutputConstructor]
-        private GetManagedInstancesManagedInstanceAutonomouseResult(bool isAutoUpdateEnabled)
+        private GetManagedInstancesManagedInstanceAutonomouseResult(bool? isAutoUpdateEnabled)
         {
             IsAutoUpdateEnabled = isAutoUpdateEnabled;
         }

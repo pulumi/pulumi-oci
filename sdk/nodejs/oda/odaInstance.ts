@@ -75,11 +75,11 @@ export class OdaInstance extends pulumi.CustomResource {
     /**
      * A list of attachment identifiers for this instance (if any). Use GetOdaInstanceAttachment to get the details of the attachments.
      */
-    public /*out*/ readonly attachmentIds!: pulumi.Output<string[]>;
+    public /*out*/ readonly attachmentIds!: pulumi.Output<string[] | undefined>;
     /**
      * A list of attachment types for this instance (if any). Use attachmentIds to get the details of the attachments.
      */
-    public /*out*/ readonly attachmentTypes!: pulumi.Output<string[]>;
+    public /*out*/ readonly attachmentTypes!: pulumi.Output<string[] | undefined>;
     /**
      * (Updatable) Identifier of the compartment.
      */
@@ -87,11 +87,11 @@ export class OdaInstance extends pulumi.CustomResource {
     /**
      * URL for the connector's endpoint.
      */
-    public /*out*/ readonly connectorUrl!: pulumi.Output<string>;
+    public /*out*/ readonly connectorUrl!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) Description of the Digital Assistant instance.
      */
@@ -99,43 +99,43 @@ export class OdaInstance extends pulumi.CustomResource {
     /**
      * (Updatable) User-friendly name for the instance. Avoid entering confidential information. You can change this value anytime.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    public readonly displayName!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * If isRoleBasedAccess is set to true, this property specifies the URL for the administration console used to manage the Identity Application instance Digital Assistant has created inside the user-specified identity domain.
      */
-    public /*out*/ readonly identityAppConsoleUrl!: pulumi.Output<string>;
+    public /*out*/ readonly identityAppConsoleUrl!: pulumi.Output<string | undefined>;
     /**
      * If isRoleBasedAccess is set to true, this property specifies the GUID of the Identity Application instance Digital Assistant has created inside the user-specified identity domain. This identity application instance may be used to host user roll mappings to grant access to this Digital Assistant instance for users within the identity domain.
      */
-    public /*out*/ readonly identityAppGuid!: pulumi.Output<string>;
+    public /*out*/ readonly identityAppGuid!: pulumi.Output<string | undefined>;
     /**
      * If isRoleBasedAccess is set to true, this property specifies the identity domain that is to be used to implement this type of authorzation. Digital Assistant will create an Identity Application instance and Application Roles within this identity domain. The caller may then perform and user roll mappings they like to grant access to users within the identity domain.
      */
-    public readonly identityDomain!: pulumi.Output<string>;
+    public readonly identityDomain!: pulumi.Output<string | undefined>;
     /**
      * A list of package ids imported into this instance (if any). Use GetImportedPackage to get the details of the imported packages.
      */
-    public /*out*/ readonly importedPackageIds!: pulumi.Output<string[]>;
+    public /*out*/ readonly importedPackageIds!: pulumi.Output<string[] | undefined>;
     /**
      * A list of package names imported into this instance (if any). Use importedPackageIds field to get the details of the imported packages.
      */
-    public /*out*/ readonly importedPackageNames!: pulumi.Output<string[]>;
+    public /*out*/ readonly importedPackageNames!: pulumi.Output<string[] | undefined>;
     /**
      * Should this Digital Assistant instance use role-based authorization via an identity domain (true) or use the default policy-based authorization via IAM policies (false)
      */
-    public readonly isRoleBasedAccess!: pulumi.Output<boolean>;
+    public readonly isRoleBasedAccess!: pulumi.Output<boolean | undefined>;
     /**
      * The current sub-state of the Digital Assistant instance.
      */
-    public /*out*/ readonly lifecycleSubState!: pulumi.Output<string>;
+    public /*out*/ readonly lifecycleSubState!: pulumi.Output<string | undefined>;
     /**
      * A list of restricted operations (across all attachments) for this instance (if any). Use GetOdaInstanceAttachment to get the details of the attachments.
      */
-    public /*out*/ readonly restrictedOperations!: pulumi.Output<outputs.Oda.OdaInstanceRestrictedOperation[]>;
+    public /*out*/ readonly restrictedOperations!: pulumi.Output<outputs.Oda.OdaInstanceRestrictedOperation[] | undefined>;
     /**
      * Shape or size of the instance.
      *
@@ -147,23 +147,23 @@ export class OdaInstance extends pulumi.CustomResource {
     /**
      * The current state of the Digital Assistant instance.
      */
-    public readonly state!: pulumi.Output<string>;
+    public readonly state!: pulumi.Output<string | undefined>;
     /**
      * A message that describes the current state in more detail. For example, actionable information about an instance that's in the `FAILED` state.
      */
-    public /*out*/ readonly stateMessage!: pulumi.Output<string>;
+    public /*out*/ readonly stateMessage!: pulumi.Output<string | undefined>;
     /**
      * When the Digital Assistant instance was created. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * When the Digital Assistance instance was last updated. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    public /*out*/ readonly timeUpdated!: pulumi.Output<string | undefined>;
     /**
      * URL for the Digital Assistant web application that's associated with the instance.
      */
-    public /*out*/ readonly webAppUrl!: pulumi.Output<string>;
+    public /*out*/ readonly webAppUrl!: pulumi.Output<string | undefined>;
 
     /**
      * Create a OdaInstance resource with the given unique name, arguments, and options.

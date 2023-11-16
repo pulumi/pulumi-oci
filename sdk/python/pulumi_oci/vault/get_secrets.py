@@ -49,9 +49,6 @@ class GetSecretsResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The OCID of the compartment where you want to create the secret.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
@@ -61,7 +58,7 @@ class GetSecretsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -74,26 +71,17 @@ class GetSecretsResult:
 
     @property
     @pulumi.getter
-    def secrets(self) -> Sequence['outputs.GetSecretsSecretResult']:
-        """
-        The list of secrets.
-        """
+    def secrets(self) -> Optional[Sequence['outputs.GetSecretsSecretResult']]:
         return pulumi.get(self, "secrets")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current lifecycle state of the secret.
-        """
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="vaultId")
     def vault_id(self) -> Optional[str]:
-        """
-        The OCID of the Vault in which the secret exists
-        """
         return pulumi.get(self, "vault_id")
 
 
@@ -119,27 +107,7 @@ def get_secrets(compartment_id: Optional[str] = None,
                 vault_id: Optional[str] = None,
                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetSecretsResult:
     """
-    This data source provides the list of Secrets in Oracle Cloud Infrastructure Vault service.
-
-    Lists all secrets in the specified vault and compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_secrets = oci.Vault.get_secrets(compartment_id=var["compartment_id"],
-        name=var["secret_name"],
-        state=var["secret_state"],
-        vault_id=oci_kms_vault["test_vault"]["id"])
-    ```
-
-
-    :param str compartment_id: The OCID of the compartment.
-    :param str name: The secret name.
-    :param str state: A filter that returns only resources that match the specified lifecycle state. The state value is case-insensitive.
-    :param str vault_id: The OCID of the vault.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -168,26 +136,6 @@ def get_secrets_output(compartment_id: Optional[pulumi.Input[str]] = None,
                        vault_id: Optional[pulumi.Input[Optional[str]]] = None,
                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSecretsResult]:
     """
-    This data source provides the list of Secrets in Oracle Cloud Infrastructure Vault service.
-
-    Lists all secrets in the specified vault and compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_secrets = oci.Vault.get_secrets(compartment_id=var["compartment_id"],
-        name=var["secret_name"],
-        state=var["secret_state"],
-        vault_id=oci_kms_vault["test_vault"]["id"])
-    ```
-
-
-    :param str compartment_id: The OCID of the compartment.
-    :param str name: The secret name.
-    :param str state: A filter that returns only resources that match the specified lifecycle state. The state value is case-insensitive.
-    :param str vault_id: The OCID of the vault.
+    Use this data source to access information about an existing resource.
     """
     ...

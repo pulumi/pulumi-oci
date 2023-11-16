@@ -22,7 +22,7 @@ public final class GetJobExecutionsStatusesResult {
      * @return The list of job_executions_status_summary_collection.
      * 
      */
-    private List<GetJobExecutionsStatusesJobExecutionsStatusSummaryCollection> jobExecutionsStatusSummaryCollections;
+    private @Nullable List<GetJobExecutionsStatusesJobExecutionsStatusSummaryCollection> jobExecutionsStatusSummaryCollections;
     private @Nullable String managedDatabaseGroupId;
     private @Nullable String managedDatabaseId;
     private @Nullable String name;
@@ -46,7 +46,7 @@ public final class GetJobExecutionsStatusesResult {
      * 
      */
     public List<GetJobExecutionsStatusesJobExecutionsStatusSummaryCollection> jobExecutionsStatusSummaryCollections() {
-        return this.jobExecutionsStatusSummaryCollections;
+        return this.jobExecutionsStatusSummaryCollections == null ? List.of() : this.jobExecutionsStatusSummaryCollections;
     }
     public Optional<String> managedDatabaseGroupId() {
         return Optional.ofNullable(this.managedDatabaseGroupId);
@@ -74,7 +74,7 @@ public final class GetJobExecutionsStatusesResult {
         private String endTime;
         private @Nullable List<GetJobExecutionsStatusesFilter> filters;
         private @Nullable String id;
-        private List<GetJobExecutionsStatusesJobExecutionsStatusSummaryCollection> jobExecutionsStatusSummaryCollections;
+        private @Nullable List<GetJobExecutionsStatusesJobExecutionsStatusSummaryCollection> jobExecutionsStatusSummaryCollections;
         private @Nullable String managedDatabaseGroupId;
         private @Nullable String managedDatabaseId;
         private @Nullable String name;
@@ -117,8 +117,8 @@ public final class GetJobExecutionsStatusesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder jobExecutionsStatusSummaryCollections(List<GetJobExecutionsStatusesJobExecutionsStatusSummaryCollection> jobExecutionsStatusSummaryCollections) {
-            this.jobExecutionsStatusSummaryCollections = Objects.requireNonNull(jobExecutionsStatusSummaryCollections);
+        public Builder jobExecutionsStatusSummaryCollections(@Nullable List<GetJobExecutionsStatusesJobExecutionsStatusSummaryCollection> jobExecutionsStatusSummaryCollections) {
+            this.jobExecutionsStatusSummaryCollections = jobExecutionsStatusSummaryCollections;
             return this;
         }
         public Builder jobExecutionsStatusSummaryCollections(GetJobExecutionsStatusesJobExecutionsStatusSummaryCollection... jobExecutionsStatusSummaryCollections) {

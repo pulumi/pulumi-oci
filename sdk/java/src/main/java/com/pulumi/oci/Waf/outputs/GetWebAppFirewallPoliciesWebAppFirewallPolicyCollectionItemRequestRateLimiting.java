@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.Waf.outputs.GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingRule;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimiting {
@@ -14,7 +15,7 @@ public final class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRe
      * @return Ordered list of ProtectionRules. Rules are executed in order of appearance in this array. ProtectionRules in this array can only use protection capabilities of RESPONSE_PROTECTION_CAPABILITY type.
      * 
      */
-    private List<GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingRule> rules;
+    private @Nullable List<GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingRule> rules;
 
     private GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimiting() {}
     /**
@@ -22,7 +23,7 @@ public final class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRe
      * 
      */
     public List<GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingRule> rules() {
-        return this.rules;
+        return this.rules == null ? List.of() : this.rules;
     }
 
     public static Builder builder() {
@@ -34,7 +35,7 @@ public final class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRe
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingRule> rules;
+        private @Nullable List<GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingRule> rules;
         public Builder() {}
         public Builder(GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimiting defaults) {
     	      Objects.requireNonNull(defaults);
@@ -42,8 +43,8 @@ public final class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRe
         }
 
         @CustomType.Setter
-        public Builder rules(List<GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingRule> rules) {
-            this.rules = Objects.requireNonNull(rules);
+        public Builder rules(@Nullable List<GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingRule> rules) {
+            this.rules = rules;
             return this;
         }
         public Builder rules(GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingRule... rules) {

@@ -16,23 +16,23 @@ namespace Pulumi.Oci.LogAnalytics.Outputs
         /// <summary>
         /// The additional field name to be evaluated.
         /// </summary>
-        public readonly string ConditionField;
+        public readonly string? ConditionField;
         /// <summary>
         /// The operator to be used for evaluating the additional field.
         /// </summary>
-        public readonly string ConditionOperator;
+        public readonly string? ConditionOperator;
         /// <summary>
         /// The additional field value to be evaluated.
         /// </summary>
-        public readonly string ConditionValue;
+        public readonly string? ConditionValue;
 
         [OutputConstructor]
         private GetNamespaceIngestTimeRuleConditionAdditionalConditionResult(
-            string conditionField,
+            string? conditionField,
 
-            string conditionOperator,
+            string? conditionOperator,
 
-            string conditionValue)
+            string? conditionValue)
         {
             ConditionField = conditionField;
             ConditionOperator = conditionOperator;

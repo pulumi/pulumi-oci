@@ -16,27 +16,27 @@ namespace Pulumi.Oci.Core.Outputs
         /// <summary>
         /// The availability domain the instance is running in.
         /// </summary>
-        public readonly string AvailabilityDomain;
+        public readonly string? AvailabilityDomain;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// A filter to return only resources that match the given display name exactly.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// The fault domain the instance is running in.
         /// </summary>
-        public readonly string FaultDomain;
+        public readonly string? FaultDomain;
         /// <summary>
         /// The OCID of the instance.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The OCID of the instance confgiuration used to create the instance.
         /// </summary>
-        public readonly string InstanceConfigurationId;
+        public readonly string? InstanceConfigurationId;
         /// <summary>
         /// The load balancer backends that are configured for the instance pool instance.
         /// </summary>
@@ -44,43 +44,43 @@ namespace Pulumi.Oci.Core.Outputs
         /// <summary>
         /// The region that contains the availability domain the instance is running in.
         /// </summary>
-        public readonly string Region;
+        public readonly string? Region;
         /// <summary>
         /// The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
         /// </summary>
-        public readonly string Shape;
+        public readonly string? Shape;
         /// <summary>
         /// The current state of the instance pool instance.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// The date and time the instance pool instance was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
 
         [OutputConstructor]
         private GetClusterNetworkInstancesInstanceResult(
-            string availabilityDomain,
+            string? availabilityDomain,
 
-            string compartmentId,
+            string? compartmentId,
 
-            string displayName,
+            string? displayName,
 
-            string faultDomain,
+            string? faultDomain,
 
-            string id,
+            string? id,
 
-            string instanceConfigurationId,
+            string? instanceConfigurationId,
 
             ImmutableArray<Outputs.GetClusterNetworkInstancesInstanceLoadBalancerBackendResult> loadBalancerBackends,
 
-            string region,
+            string? region,
 
-            string shape,
+            string? shape,
 
-            string state,
+            string? state,
 
-            string timeCreated)
+            string? timeCreated)
         {
             AvailabilityDomain = availabilityDomain;
             CompartmentId = compartmentId;

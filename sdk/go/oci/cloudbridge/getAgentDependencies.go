@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Agent Dependencies in Oracle Cloud Infrastructure Cloud Bridge service.
@@ -82,7 +81,7 @@ type GetAgentDependenciesResult struct {
 	EnvironmentId *string                      `pulumi:"environmentId"`
 	Filters       []GetAgentDependenciesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The current state of AgentDependency.
 	State *string `pulumi:"state"`
 }
@@ -134,12 +133,6 @@ func (o GetAgentDependenciesResultOutput) ToGetAgentDependenciesResultOutputWith
 	return o
 }
 
-func (o GetAgentDependenciesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetAgentDependenciesResult] {
-	return pulumix.Output[GetAgentDependenciesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The list of agent_dependency_collection.
 func (o GetAgentDependenciesResultOutput) AgentDependencyCollections() GetAgentDependenciesAgentDependencyCollectionArrayOutput {
 	return o.ApplyT(func(v GetAgentDependenciesResult) []GetAgentDependenciesAgentDependencyCollection {
@@ -170,8 +163,8 @@ func (o GetAgentDependenciesResultOutput) Filters() GetAgentDependenciesFilterAr
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetAgentDependenciesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAgentDependenciesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetAgentDependenciesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAgentDependenciesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The current state of AgentDependency.

@@ -16,65 +16,65 @@ namespace Pulumi.Oci.ObjectStorage.Outputs
         /// <summary>
         /// Archival state of an object. This field is set only for objects in Archive tier.
         /// </summary>
-        public readonly string ArchivalState;
+        public readonly string? ArchivalState;
         /// <summary>
         /// The current entity tag (ETag) for the object.
         /// </summary>
-        public readonly string Etag;
+        public readonly string? Etag;
         /// <summary>
         /// This flag will indicate if the version is deleted or not.
         /// </summary>
-        public readonly bool IsDeleteMarker;
+        public readonly bool? IsDeleteMarker;
         /// <summary>
         /// Base64-encoded MD5 hash of the object data.
         /// </summary>
-        public readonly string Md5;
+        public readonly string? Md5;
         /// <summary>
         /// The name of the object. Avoid entering confidential information. Example: test/object1.log
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// Size of the object in bytes.
         /// </summary>
-        public readonly string Size;
+        public readonly string? Size;
         /// <summary>
         /// The storage tier that the object is stored in.
         /// </summary>
-        public readonly string StorageTier;
+        public readonly string? StorageTier;
         /// <summary>
         /// The date and time the object was created, as described in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-14.29).
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The date and time the object was modified, as described in [RFC 2616](https://tools.ietf.org/rfc/rfc2616#section-14.29).
         /// </summary>
-        public readonly string TimeModified;
+        public readonly string? TimeModified;
         /// <summary>
         /// VersionId of the object.
         /// </summary>
-        public readonly string VersionId;
+        public readonly string? VersionId;
 
         [OutputConstructor]
         private GetObjectVersionsItemResult(
-            string archivalState,
+            string? archivalState,
 
-            string etag,
+            string? etag,
 
-            bool isDeleteMarker,
+            bool? isDeleteMarker,
 
-            string md5,
+            string? md5,
 
-            string name,
+            string? name,
 
-            string size,
+            string? size,
 
-            string storageTier,
+            string? storageTier,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeModified,
+            string? timeModified,
 
-            string versionId)
+            string? versionId)
         {
             ArchivalState = archivalState;
             Etag = etag;

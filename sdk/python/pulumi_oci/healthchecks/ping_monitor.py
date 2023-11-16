@@ -27,21 +27,6 @@ class PingMonitorArgs:
                  vantage_point_names: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
         """
         The set of arguments for constructing a PingMonitor resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment.
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly and mutable name suitable for display in a user interface.
-        :param pulumi.Input[int] interval_in_seconds: (Updatable) The monitor interval in seconds. Valid values: 10, 30, and 60.
-        :param pulumi.Input[str] protocol: (Updatable) The protocols for ping probes.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] targets: (Updatable) A list of targets (hostnames or IP addresses) of the probe.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[bool] is_enabled: (Updatable) Enables or disables the monitor. Set to 'true' to launch monitoring.
-        :param pulumi.Input[int] port: (Updatable) The port on which to probe endpoints. If unspecified, probes will use the default port of their protocol.
-        :param pulumi.Input[int] timeout_in_seconds: (Updatable) The probe timeout in seconds. Valid values: 10, 20, 30, and 60. The probe timeout must be less than or equal to `intervalInSeconds` for monitors.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] vantage_point_names: (Updatable) A list of names of vantage points from which to execute the probe.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "display_name", display_name)
@@ -64,9 +49,6 @@ class PingMonitorArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The OCID of the compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -76,9 +58,6 @@ class PingMonitorArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Input[str]:
-        """
-        (Updatable) A user-friendly and mutable name suitable for display in a user interface.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -88,9 +67,6 @@ class PingMonitorArgs:
     @property
     @pulumi.getter(name="intervalInSeconds")
     def interval_in_seconds(self) -> pulumi.Input[int]:
-        """
-        (Updatable) The monitor interval in seconds. Valid values: 10, 30, and 60.
-        """
         return pulumi.get(self, "interval_in_seconds")
 
     @interval_in_seconds.setter
@@ -100,9 +76,6 @@ class PingMonitorArgs:
     @property
     @pulumi.getter
     def protocol(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The protocols for ping probes.
-        """
         return pulumi.get(self, "protocol")
 
     @protocol.setter
@@ -112,9 +85,6 @@ class PingMonitorArgs:
     @property
     @pulumi.getter
     def targets(self) -> pulumi.Input[Sequence[pulumi.Input[str]]]:
-        """
-        (Updatable) A list of targets (hostnames or IP addresses) of the probe.
-        """
         return pulumi.get(self, "targets")
 
     @targets.setter
@@ -124,9 +94,6 @@ class PingMonitorArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -136,9 +103,6 @@ class PingMonitorArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -148,9 +112,6 @@ class PingMonitorArgs:
     @property
     @pulumi.getter(name="isEnabled")
     def is_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Enables or disables the monitor. Set to 'true' to launch monitoring.
-        """
         return pulumi.get(self, "is_enabled")
 
     @is_enabled.setter
@@ -160,9 +121,6 @@ class PingMonitorArgs:
     @property
     @pulumi.getter
     def port(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) The port on which to probe endpoints. If unspecified, probes will use the default port of their protocol.
-        """
         return pulumi.get(self, "port")
 
     @port.setter
@@ -172,9 +130,6 @@ class PingMonitorArgs:
     @property
     @pulumi.getter(name="timeoutInSeconds")
     def timeout_in_seconds(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) The probe timeout in seconds. Valid values: 10, 20, 30, and 60. The probe timeout must be less than or equal to `intervalInSeconds` for monitors.
-        """
         return pulumi.get(self, "timeout_in_seconds")
 
     @timeout_in_seconds.setter
@@ -184,13 +139,6 @@ class PingMonitorArgs:
     @property
     @pulumi.getter(name="vantagePointNames")
     def vantage_point_names(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) A list of names of vantage points from which to execute the probe.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "vantage_point_names")
 
     @vantage_point_names.setter
@@ -217,24 +165,6 @@ class _PingMonitorState:
                  vantage_point_names: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
         """
         Input properties used for looking up and filtering PingMonitor resources.
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly and mutable name suitable for display in a user interface.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] home_region: The region where updates must be made and where results must be fetched from.
-        :param pulumi.Input[int] interval_in_seconds: (Updatable) The monitor interval in seconds. Valid values: 10, 30, and 60.
-        :param pulumi.Input[bool] is_enabled: (Updatable) Enables or disables the monitor. Set to 'true' to launch monitoring.
-        :param pulumi.Input[int] port: (Updatable) The port on which to probe endpoints. If unspecified, probes will use the default port of their protocol.
-        :param pulumi.Input[str] protocol: (Updatable) The protocols for ping probes.
-        :param pulumi.Input[str] results_url: A URL for fetching the probe results.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] targets: (Updatable) A list of targets (hostnames or IP addresses) of the probe.
-        :param pulumi.Input[str] time_created: The RFC 3339-formatted creation date and time of the probe.
-        :param pulumi.Input[int] timeout_in_seconds: (Updatable) The probe timeout in seconds. Valid values: 10, 20, 30, and 60. The probe timeout must be less than or equal to `intervalInSeconds` for monitors.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] vantage_point_names: (Updatable) A list of names of vantage points from which to execute the probe.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
@@ -268,9 +198,6 @@ class _PingMonitorState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The OCID of the compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -280,9 +207,6 @@ class _PingMonitorState:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -292,9 +216,6 @@ class _PingMonitorState:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A user-friendly and mutable name suitable for display in a user interface.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -304,9 +225,6 @@ class _PingMonitorState:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -316,9 +234,6 @@ class _PingMonitorState:
     @property
     @pulumi.getter(name="homeRegion")
     def home_region(self) -> Optional[pulumi.Input[str]]:
-        """
-        The region where updates must be made and where results must be fetched from.
-        """
         return pulumi.get(self, "home_region")
 
     @home_region.setter
@@ -328,9 +243,6 @@ class _PingMonitorState:
     @property
     @pulumi.getter(name="intervalInSeconds")
     def interval_in_seconds(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) The monitor interval in seconds. Valid values: 10, 30, and 60.
-        """
         return pulumi.get(self, "interval_in_seconds")
 
     @interval_in_seconds.setter
@@ -340,9 +252,6 @@ class _PingMonitorState:
     @property
     @pulumi.getter(name="isEnabled")
     def is_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Enables or disables the monitor. Set to 'true' to launch monitoring.
-        """
         return pulumi.get(self, "is_enabled")
 
     @is_enabled.setter
@@ -352,9 +261,6 @@ class _PingMonitorState:
     @property
     @pulumi.getter
     def port(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) The port on which to probe endpoints. If unspecified, probes will use the default port of their protocol.
-        """
         return pulumi.get(self, "port")
 
     @port.setter
@@ -364,9 +270,6 @@ class _PingMonitorState:
     @property
     @pulumi.getter
     def protocol(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The protocols for ping probes.
-        """
         return pulumi.get(self, "protocol")
 
     @protocol.setter
@@ -376,9 +279,6 @@ class _PingMonitorState:
     @property
     @pulumi.getter(name="resultsUrl")
     def results_url(self) -> Optional[pulumi.Input[str]]:
-        """
-        A URL for fetching the probe results.
-        """
         return pulumi.get(self, "results_url")
 
     @results_url.setter
@@ -388,9 +288,6 @@ class _PingMonitorState:
     @property
     @pulumi.getter
     def targets(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) A list of targets (hostnames or IP addresses) of the probe.
-        """
         return pulumi.get(self, "targets")
 
     @targets.setter
@@ -400,9 +297,6 @@ class _PingMonitorState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The RFC 3339-formatted creation date and time of the probe.
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -412,9 +306,6 @@ class _PingMonitorState:
     @property
     @pulumi.getter(name="timeoutInSeconds")
     def timeout_in_seconds(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) The probe timeout in seconds. Valid values: 10, 20, 30, and 60. The probe timeout must be less than or equal to `intervalInSeconds` for monitors.
-        """
         return pulumi.get(self, "timeout_in_seconds")
 
     @timeout_in_seconds.setter
@@ -424,13 +315,6 @@ class _PingMonitorState:
     @property
     @pulumi.getter(name="vantagePointNames")
     def vantage_point_names(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) A list of names of vantage points from which to execute the probe.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "vantage_point_names")
 
     @vantage_point_names.setter
@@ -456,61 +340,9 @@ class PingMonitor(pulumi.CustomResource):
                  vantage_point_names: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  __props__=None):
         """
-        This resource provides the Ping Monitor resource in Oracle Cloud Infrastructure Health Checks service.
-
-        Creates a ping monitor. Vantage points will be automatically selected if not specified,
-        and probes will be initiated from each vantage point to each of the targets at the frequency
-        specified by `intervalInSeconds`.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_ping_monitor = oci.health_checks.PingMonitor("testPingMonitor",
-            compartment_id=var["compartment_id"],
-            display_name=var["ping_monitor_display_name"],
-            interval_in_seconds=var["ping_monitor_interval_in_seconds"],
-            protocol=var["ping_monitor_protocol"],
-            targets=var["ping_monitor_targets"],
-            defined_tags={
-                "Operations.CostCenter": "42",
-            },
-            freeform_tags={
-                "Department": "Finance",
-            },
-            is_enabled=var["ping_monitor_is_enabled"],
-            port=var["ping_monitor_port"],
-            timeout_in_seconds=var["ping_monitor_timeout_in_seconds"],
-            vantage_point_names=var["ping_monitor_vantage_point_names"])
-        ```
-
-        ## Import
-
-        PingMonitors can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:HealthChecks/pingMonitor:PingMonitor test_ping_monitor "id"
-        ```
-
+        Create a PingMonitor resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly and mutable name suitable for display in a user interface.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[int] interval_in_seconds: (Updatable) The monitor interval in seconds. Valid values: 10, 30, and 60.
-        :param pulumi.Input[bool] is_enabled: (Updatable) Enables or disables the monitor. Set to 'true' to launch monitoring.
-        :param pulumi.Input[int] port: (Updatable) The port on which to probe endpoints. If unspecified, probes will use the default port of their protocol.
-        :param pulumi.Input[str] protocol: (Updatable) The protocols for ping probes.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] targets: (Updatable) A list of targets (hostnames or IP addresses) of the probe.
-        :param pulumi.Input[int] timeout_in_seconds: (Updatable) The probe timeout in seconds. Valid values: 10, 20, 30, and 60. The probe timeout must be less than or equal to `intervalInSeconds` for monitors.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] vantage_point_names: (Updatable) A list of names of vantage points from which to execute the probe.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -519,44 +351,7 @@ class PingMonitor(pulumi.CustomResource):
                  args: PingMonitorArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Ping Monitor resource in Oracle Cloud Infrastructure Health Checks service.
-
-        Creates a ping monitor. Vantage points will be automatically selected if not specified,
-        and probes will be initiated from each vantage point to each of the targets at the frequency
-        specified by `intervalInSeconds`.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_ping_monitor = oci.health_checks.PingMonitor("testPingMonitor",
-            compartment_id=var["compartment_id"],
-            display_name=var["ping_monitor_display_name"],
-            interval_in_seconds=var["ping_monitor_interval_in_seconds"],
-            protocol=var["ping_monitor_protocol"],
-            targets=var["ping_monitor_targets"],
-            defined_tags={
-                "Operations.CostCenter": "42",
-            },
-            freeform_tags={
-                "Department": "Finance",
-            },
-            is_enabled=var["ping_monitor_is_enabled"],
-            port=var["ping_monitor_port"],
-            timeout_in_seconds=var["ping_monitor_timeout_in_seconds"],
-            vantage_point_names=var["ping_monitor_vantage_point_names"])
-        ```
-
-        ## Import
-
-        PingMonitors can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:HealthChecks/pingMonitor:PingMonitor test_ping_monitor "id"
-        ```
-
+        Create a PingMonitor resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param PingMonitorArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -647,24 +442,6 @@ class PingMonitor(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly and mutable name suitable for display in a user interface.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] home_region: The region where updates must be made and where results must be fetched from.
-        :param pulumi.Input[int] interval_in_seconds: (Updatable) The monitor interval in seconds. Valid values: 10, 30, and 60.
-        :param pulumi.Input[bool] is_enabled: (Updatable) Enables or disables the monitor. Set to 'true' to launch monitoring.
-        :param pulumi.Input[int] port: (Updatable) The port on which to probe endpoints. If unspecified, probes will use the default port of their protocol.
-        :param pulumi.Input[str] protocol: (Updatable) The protocols for ping probes.
-        :param pulumi.Input[str] results_url: A URL for fetching the probe results.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] targets: (Updatable) A list of targets (hostnames or IP addresses) of the probe.
-        :param pulumi.Input[str] time_created: The RFC 3339-formatted creation date and time of the probe.
-        :param pulumi.Input[int] timeout_in_seconds: (Updatable) The probe timeout in seconds. Valid values: 10, 20, 30, and 60. The probe timeout must be less than or equal to `intervalInSeconds` for monitors.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] vantage_point_names: (Updatable) A list of names of vantage points from which to execute the probe.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -689,116 +466,70 @@ class PingMonitor(pulumi.CustomResource):
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The OCID of the compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Output[str]:
-        """
-        (Updatable) A user-friendly and mutable name suitable for display in a user interface.
-        """
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="homeRegion")
-    def home_region(self) -> pulumi.Output[str]:
-        """
-        The region where updates must be made and where results must be fetched from.
-        """
+    def home_region(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "home_region")
 
     @property
     @pulumi.getter(name="intervalInSeconds")
     def interval_in_seconds(self) -> pulumi.Output[int]:
-        """
-        (Updatable) The monitor interval in seconds. Valid values: 10, 30, and 60.
-        """
         return pulumi.get(self, "interval_in_seconds")
 
     @property
     @pulumi.getter(name="isEnabled")
-    def is_enabled(self) -> pulumi.Output[bool]:
-        """
-        (Updatable) Enables or disables the monitor. Set to 'true' to launch monitoring.
-        """
+    def is_enabled(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "is_enabled")
 
     @property
     @pulumi.getter
-    def port(self) -> pulumi.Output[int]:
-        """
-        (Updatable) The port on which to probe endpoints. If unspecified, probes will use the default port of their protocol.
-        """
+    def port(self) -> pulumi.Output[Optional[int]]:
         return pulumi.get(self, "port")
 
     @property
     @pulumi.getter
     def protocol(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The protocols for ping probes.
-        """
         return pulumi.get(self, "protocol")
 
     @property
     @pulumi.getter(name="resultsUrl")
-    def results_url(self) -> pulumi.Output[str]:
-        """
-        A URL for fetching the probe results.
-        """
+    def results_url(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "results_url")
 
     @property
     @pulumi.getter
     def targets(self) -> pulumi.Output[Sequence[str]]:
-        """
-        (Updatable) A list of targets (hostnames or IP addresses) of the probe.
-        """
         return pulumi.get(self, "targets")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        The RFC 3339-formatted creation date and time of the probe.
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeoutInSeconds")
-    def timeout_in_seconds(self) -> pulumi.Output[int]:
-        """
-        (Updatable) The probe timeout in seconds. Valid values: 10, 20, 30, and 60. The probe timeout must be less than or equal to `intervalInSeconds` for monitors.
-        """
+    def timeout_in_seconds(self) -> pulumi.Output[Optional[int]]:
         return pulumi.get(self, "timeout_in_seconds")
 
     @property
     @pulumi.getter(name="vantagePointNames")
-    def vantage_point_names(self) -> pulumi.Output[Sequence[str]]:
-        """
-        (Updatable) A list of names of vantage points from which to execute the probe.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
+    def vantage_point_names(self) -> pulumi.Output[Optional[Sequence[str]]]:
         return pulumi.get(self, "vantage_point_names")
 

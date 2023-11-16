@@ -123,11 +123,11 @@ namespace Pulumi.Oci.DataSafe
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The current state of the user assessment comparison.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// List containing maps as values. Example: `{"Operations": [ {"CostCenter": "42"} ] }`
         /// </summary>
@@ -135,20 +135,20 @@ namespace Pulumi.Oci.DataSafe
         /// <summary>
         /// The date and time the user assessment comparison was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         public readonly string UserAssessmentId;
 
         [OutputConstructor]
         private GetUserAssessmentComparisonResult(
             string comparisonUserAssessmentId,
 
-            string id,
+            string? id,
 
-            string state,
+            string? state,
 
             ImmutableArray<Outputs.GetUserAssessmentComparisonSummaryResult> summaries,
 
-            string timeCreated,
+            string? timeCreated,
 
             string userAssessmentId)
         {

@@ -106,12 +106,12 @@ export interface GetExsiHostsResult {
     /**
      * The list of esxi_host_collection.
      */
-    readonly esxiHostCollections: outputs.Ocvp.GetExsiHostsEsxiHostCollection[];
+    readonly esxiHostCollections?: outputs.Ocvp.GetExsiHostsEsxiHostCollection[];
     readonly filters?: outputs.Ocvp.GetExsiHostsFilter[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly isBillingDonorsOnly?: boolean;
     readonly isSwapBillingOnly?: boolean;
     /**

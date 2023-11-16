@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Security Policy resource in Oracle Cloud Infrastructure Data Safe service.
@@ -30,30 +29,30 @@ type SecurityPolicy struct {
 	pulumi.CustomResourceState
 
 	// (Updatable) The OCID of the compartment containing the security policy.
-	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) The description of the security policy.
-	Description pulumi.StringOutput `pulumi:"description"`
+	Description pulumi.StringPtrOutput `pulumi:"description"`
 	// (Updatable) The display name of the security policy. The name does not have to be unique, and it is changeable.
-	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrOutput `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// Details about the current state of the security policy in Data Safe.
-	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrOutput `pulumi:"lifecycleDetails"`
 	// The OCID of the security policy resource.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SecurityPolicyId pulumi.StringOutput `pulumi:"securityPolicyId"`
 	// The current state of the security policy.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
 	// The time that the security policy was created, in the format defined by RFC3339.
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The last date and time the security policy was updated, in the format defined by RFC3339.
-	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 }
 
 // NewSecurityPolicy registers a new resource with the given unique name, arguments, and options.
@@ -208,12 +207,6 @@ func (i *SecurityPolicy) ToSecurityPolicyOutputWithContext(ctx context.Context) 
 	return pulumi.ToOutputWithContext(ctx, i).(SecurityPolicyOutput)
 }
 
-func (i *SecurityPolicy) ToOutput(ctx context.Context) pulumix.Output[*SecurityPolicy] {
-	return pulumix.Output[*SecurityPolicy]{
-		OutputState: i.ToSecurityPolicyOutputWithContext(ctx).OutputState,
-	}
-}
-
 // SecurityPolicyArrayInput is an input type that accepts SecurityPolicyArray and SecurityPolicyArrayOutput values.
 // You can construct a concrete instance of `SecurityPolicyArrayInput` via:
 //
@@ -237,12 +230,6 @@ func (i SecurityPolicyArray) ToSecurityPolicyArrayOutput() SecurityPolicyArrayOu
 
 func (i SecurityPolicyArray) ToSecurityPolicyArrayOutputWithContext(ctx context.Context) SecurityPolicyArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(SecurityPolicyArrayOutput)
-}
-
-func (i SecurityPolicyArray) ToOutput(ctx context.Context) pulumix.Output[[]*SecurityPolicy] {
-	return pulumix.Output[[]*SecurityPolicy]{
-		OutputState: i.ToSecurityPolicyArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // SecurityPolicyMapInput is an input type that accepts SecurityPolicyMap and SecurityPolicyMapOutput values.
@@ -270,12 +257,6 @@ func (i SecurityPolicyMap) ToSecurityPolicyMapOutputWithContext(ctx context.Cont
 	return pulumi.ToOutputWithContext(ctx, i).(SecurityPolicyMapOutput)
 }
 
-func (i SecurityPolicyMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*SecurityPolicy] {
-	return pulumix.Output[map[string]*SecurityPolicy]{
-		OutputState: i.ToSecurityPolicyMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type SecurityPolicyOutput struct{ *pulumi.OutputState }
 
 func (SecurityPolicyOutput) ElementType() reflect.Type {
@@ -290,15 +271,9 @@ func (o SecurityPolicyOutput) ToSecurityPolicyOutputWithContext(ctx context.Cont
 	return o
 }
 
-func (o SecurityPolicyOutput) ToOutput(ctx context.Context) pulumix.Output[*SecurityPolicy] {
-	return pulumix.Output[*SecurityPolicy]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) The OCID of the compartment containing the security policy.
-func (o SecurityPolicyOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v *SecurityPolicy) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
+func (o SecurityPolicyOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SecurityPolicy) pulumi.StringPtrOutput { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
@@ -307,13 +282,13 @@ func (o SecurityPolicyOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // (Updatable) The description of the security policy.
-func (o SecurityPolicyOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v *SecurityPolicy) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
+func (o SecurityPolicyOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SecurityPolicy) pulumi.StringPtrOutput { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The display name of the security policy. The name does not have to be unique, and it is changeable.
-func (o SecurityPolicyOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v *SecurityPolicy) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+func (o SecurityPolicyOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SecurityPolicy) pulumi.StringPtrOutput { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
@@ -322,8 +297,8 @@ func (o SecurityPolicyOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // Details about the current state of the security policy in Data Safe.
-func (o SecurityPolicyOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v *SecurityPolicy) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o SecurityPolicyOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SecurityPolicy) pulumi.StringPtrOutput { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the security policy resource.
@@ -335,8 +310,8 @@ func (o SecurityPolicyOutput) SecurityPolicyId() pulumi.StringOutput {
 }
 
 // The current state of the security policy.
-func (o SecurityPolicyOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *SecurityPolicy) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o SecurityPolicyOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SecurityPolicy) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -345,13 +320,13 @@ func (o SecurityPolicyOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The time that the security policy was created, in the format defined by RFC3339.
-func (o SecurityPolicyOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *SecurityPolicy) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o SecurityPolicyOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SecurityPolicy) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The last date and time the security policy was updated, in the format defined by RFC3339.
-func (o SecurityPolicyOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *SecurityPolicy) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o SecurityPolicyOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SecurityPolicy) pulumi.StringPtrOutput { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type SecurityPolicyArrayOutput struct{ *pulumi.OutputState }
@@ -366,12 +341,6 @@ func (o SecurityPolicyArrayOutput) ToSecurityPolicyArrayOutput() SecurityPolicyA
 
 func (o SecurityPolicyArrayOutput) ToSecurityPolicyArrayOutputWithContext(ctx context.Context) SecurityPolicyArrayOutput {
 	return o
-}
-
-func (o SecurityPolicyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*SecurityPolicy] {
-	return pulumix.Output[[]*SecurityPolicy]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o SecurityPolicyArrayOutput) Index(i pulumi.IntInput) SecurityPolicyOutput {
@@ -392,12 +361,6 @@ func (o SecurityPolicyMapOutput) ToSecurityPolicyMapOutput() SecurityPolicyMapOu
 
 func (o SecurityPolicyMapOutput) ToSecurityPolicyMapOutputWithContext(ctx context.Context) SecurityPolicyMapOutput {
 	return o
-}
-
-func (o SecurityPolicyMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*SecurityPolicy] {
-	return pulumix.Output[map[string]*SecurityPolicy]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o SecurityPolicyMapOutput) MapIndex(k pulumi.StringInput) SecurityPolicyOutput {

@@ -32,12 +32,12 @@ public final class GetSecurityPoliciesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The list of security_policy_collection.
      * 
      */
-    private List<GetSecurityPoliciesSecurityPolicyCollection> securityPolicyCollections;
+    private @Nullable List<GetSecurityPoliciesSecurityPolicyCollection> securityPolicyCollections;
     private @Nullable String securityPolicyId;
     /**
      * @return The current state of the security policy.
@@ -73,15 +73,15 @@ public final class GetSecurityPoliciesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The list of security_policy_collection.
      * 
      */
     public List<GetSecurityPoliciesSecurityPolicyCollection> securityPolicyCollections() {
-        return this.securityPolicyCollections;
+        return this.securityPolicyCollections == null ? List.of() : this.securityPolicyCollections;
     }
     public Optional<String> securityPolicyId() {
         return Optional.ofNullable(this.securityPolicyId);
@@ -108,8 +108,8 @@ public final class GetSecurityPoliciesResult {
         private @Nullable Boolean compartmentIdInSubtree;
         private @Nullable String displayName;
         private @Nullable List<GetSecurityPoliciesFilter> filters;
-        private String id;
-        private List<GetSecurityPoliciesSecurityPolicyCollection> securityPolicyCollections;
+        private @Nullable String id;
+        private @Nullable List<GetSecurityPoliciesSecurityPolicyCollection> securityPolicyCollections;
         private @Nullable String securityPolicyId;
         private @Nullable String state;
         public Builder() {}
@@ -155,13 +155,13 @@ public final class GetSecurityPoliciesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder securityPolicyCollections(List<GetSecurityPoliciesSecurityPolicyCollection> securityPolicyCollections) {
-            this.securityPolicyCollections = Objects.requireNonNull(securityPolicyCollections);
+        public Builder securityPolicyCollections(@Nullable List<GetSecurityPoliciesSecurityPolicyCollection> securityPolicyCollections) {
+            this.securityPolicyCollections = securityPolicyCollections;
             return this;
         }
         public Builder securityPolicyCollections(GetSecurityPoliciesSecurityPolicyCollection... securityPolicyCollections) {

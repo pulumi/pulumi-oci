@@ -16,17 +16,17 @@ namespace Pulumi.Oci.OneSubsription.Outputs
         /// <summary>
         /// Payment Term name
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// Organization ID
         /// </summary>
-        public readonly double Number;
+        public readonly double? Number;
 
         [OutputConstructor]
         private GetInvoicesInvoiceOrganizationResult(
-            string name,
+            string? name,
 
-            double number)
+            double? number)
         {
             Name = name;
             Number = number;

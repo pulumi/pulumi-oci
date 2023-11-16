@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimension {
@@ -14,57 +15,57 @@ public final class GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalytics
      * @return The IP address of the host from which the session was spawned.
      * 
      */
-    private List<String> clientIps;
+    private @Nullable List<String> clientIps;
     /**
      * @return The name of the operating system user for the database session.
      * 
      */
-    private List<String> clientOsUserNames;
+    private @Nullable List<String> clientOsUserNames;
     /**
      * @return The application from which the SQL violation was generated. Examples SQL Plus or SQL Developer.
      * 
      */
-    private List<String> clientPrograms;
+    private @Nullable List<String> clientPrograms;
     /**
      * @return The name of the database user.
      * 
      */
-    private List<String> dbUserNames;
+    private @Nullable List<String> dbUserNames;
     /**
      * @return The time of the SQL violation occurrence in the target database.
      * 
      */
-    private List<String> operationTimes;
+    private @Nullable List<String> operationTimes;
     /**
      * @return The name of the action executed by the user on the target database, for example, ALTER, CREATE, DROP.
      * 
      */
-    private List<String> operations;
+    private @Nullable List<String> operations;
     /**
      * @return Specifies the level of SQL included for this SQL firewall policy. USER_ISSUED_SQL - User issued SQL statements only. ALL_SQL - Includes all SQL statements including SQL statement issued inside PL/SQL units.
      * 
      */
-    private List<String> sqlLevels;
+    private @Nullable List<String> sqlLevels;
     /**
      * @return The OCID of the target database.
      * 
      */
-    private List<String> targetIds;
+    private @Nullable List<String> targetIds;
     /**
      * @return The name of the target database.
      * 
      */
-    private List<String> targetNames;
+    private @Nullable List<String> targetNames;
     /**
      * @return The action taken for this SQL violation.
      * 
      */
-    private List<String> violationActions;
+    private @Nullable List<String> violationActions;
     /**
      * @return Indicates whether SQL or context violation.
      * 
      */
-    private List<String> violationCauses;
+    private @Nullable List<String> violationCauses;
 
     private GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimension() {}
     /**
@@ -72,77 +73,77 @@ public final class GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalytics
      * 
      */
     public List<String> clientIps() {
-        return this.clientIps;
+        return this.clientIps == null ? List.of() : this.clientIps;
     }
     /**
      * @return The name of the operating system user for the database session.
      * 
      */
     public List<String> clientOsUserNames() {
-        return this.clientOsUserNames;
+        return this.clientOsUserNames == null ? List.of() : this.clientOsUserNames;
     }
     /**
      * @return The application from which the SQL violation was generated. Examples SQL Plus or SQL Developer.
      * 
      */
     public List<String> clientPrograms() {
-        return this.clientPrograms;
+        return this.clientPrograms == null ? List.of() : this.clientPrograms;
     }
     /**
      * @return The name of the database user.
      * 
      */
     public List<String> dbUserNames() {
-        return this.dbUserNames;
+        return this.dbUserNames == null ? List.of() : this.dbUserNames;
     }
     /**
      * @return The time of the SQL violation occurrence in the target database.
      * 
      */
     public List<String> operationTimes() {
-        return this.operationTimes;
+        return this.operationTimes == null ? List.of() : this.operationTimes;
     }
     /**
      * @return The name of the action executed by the user on the target database, for example, ALTER, CREATE, DROP.
      * 
      */
     public List<String> operations() {
-        return this.operations;
+        return this.operations == null ? List.of() : this.operations;
     }
     /**
      * @return Specifies the level of SQL included for this SQL firewall policy. USER_ISSUED_SQL - User issued SQL statements only. ALL_SQL - Includes all SQL statements including SQL statement issued inside PL/SQL units.
      * 
      */
     public List<String> sqlLevels() {
-        return this.sqlLevels;
+        return this.sqlLevels == null ? List.of() : this.sqlLevels;
     }
     /**
      * @return The OCID of the target database.
      * 
      */
     public List<String> targetIds() {
-        return this.targetIds;
+        return this.targetIds == null ? List.of() : this.targetIds;
     }
     /**
      * @return The name of the target database.
      * 
      */
     public List<String> targetNames() {
-        return this.targetNames;
+        return this.targetNames == null ? List.of() : this.targetNames;
     }
     /**
      * @return The action taken for this SQL violation.
      * 
      */
     public List<String> violationActions() {
-        return this.violationActions;
+        return this.violationActions == null ? List.of() : this.violationActions;
     }
     /**
      * @return Indicates whether SQL or context violation.
      * 
      */
     public List<String> violationCauses() {
-        return this.violationCauses;
+        return this.violationCauses == null ? List.of() : this.violationCauses;
     }
 
     public static Builder builder() {
@@ -154,17 +155,17 @@ public final class GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalytics
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<String> clientIps;
-        private List<String> clientOsUserNames;
-        private List<String> clientPrograms;
-        private List<String> dbUserNames;
-        private List<String> operationTimes;
-        private List<String> operations;
-        private List<String> sqlLevels;
-        private List<String> targetIds;
-        private List<String> targetNames;
-        private List<String> violationActions;
-        private List<String> violationCauses;
+        private @Nullable List<String> clientIps;
+        private @Nullable List<String> clientOsUserNames;
+        private @Nullable List<String> clientPrograms;
+        private @Nullable List<String> dbUserNames;
+        private @Nullable List<String> operationTimes;
+        private @Nullable List<String> operations;
+        private @Nullable List<String> sqlLevels;
+        private @Nullable List<String> targetIds;
+        private @Nullable List<String> targetNames;
+        private @Nullable List<String> violationActions;
+        private @Nullable List<String> violationCauses;
         public Builder() {}
         public Builder(GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimension defaults) {
     	      Objects.requireNonNull(defaults);
@@ -182,88 +183,88 @@ public final class GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalytics
         }
 
         @CustomType.Setter
-        public Builder clientIps(List<String> clientIps) {
-            this.clientIps = Objects.requireNonNull(clientIps);
+        public Builder clientIps(@Nullable List<String> clientIps) {
+            this.clientIps = clientIps;
             return this;
         }
         public Builder clientIps(String... clientIps) {
             return clientIps(List.of(clientIps));
         }
         @CustomType.Setter
-        public Builder clientOsUserNames(List<String> clientOsUserNames) {
-            this.clientOsUserNames = Objects.requireNonNull(clientOsUserNames);
+        public Builder clientOsUserNames(@Nullable List<String> clientOsUserNames) {
+            this.clientOsUserNames = clientOsUserNames;
             return this;
         }
         public Builder clientOsUserNames(String... clientOsUserNames) {
             return clientOsUserNames(List.of(clientOsUserNames));
         }
         @CustomType.Setter
-        public Builder clientPrograms(List<String> clientPrograms) {
-            this.clientPrograms = Objects.requireNonNull(clientPrograms);
+        public Builder clientPrograms(@Nullable List<String> clientPrograms) {
+            this.clientPrograms = clientPrograms;
             return this;
         }
         public Builder clientPrograms(String... clientPrograms) {
             return clientPrograms(List.of(clientPrograms));
         }
         @CustomType.Setter
-        public Builder dbUserNames(List<String> dbUserNames) {
-            this.dbUserNames = Objects.requireNonNull(dbUserNames);
+        public Builder dbUserNames(@Nullable List<String> dbUserNames) {
+            this.dbUserNames = dbUserNames;
             return this;
         }
         public Builder dbUserNames(String... dbUserNames) {
             return dbUserNames(List.of(dbUserNames));
         }
         @CustomType.Setter
-        public Builder operationTimes(List<String> operationTimes) {
-            this.operationTimes = Objects.requireNonNull(operationTimes);
+        public Builder operationTimes(@Nullable List<String> operationTimes) {
+            this.operationTimes = operationTimes;
             return this;
         }
         public Builder operationTimes(String... operationTimes) {
             return operationTimes(List.of(operationTimes));
         }
         @CustomType.Setter
-        public Builder operations(List<String> operations) {
-            this.operations = Objects.requireNonNull(operations);
+        public Builder operations(@Nullable List<String> operations) {
+            this.operations = operations;
             return this;
         }
         public Builder operations(String... operations) {
             return operations(List.of(operations));
         }
         @CustomType.Setter
-        public Builder sqlLevels(List<String> sqlLevels) {
-            this.sqlLevels = Objects.requireNonNull(sqlLevels);
+        public Builder sqlLevels(@Nullable List<String> sqlLevels) {
+            this.sqlLevels = sqlLevels;
             return this;
         }
         public Builder sqlLevels(String... sqlLevels) {
             return sqlLevels(List.of(sqlLevels));
         }
         @CustomType.Setter
-        public Builder targetIds(List<String> targetIds) {
-            this.targetIds = Objects.requireNonNull(targetIds);
+        public Builder targetIds(@Nullable List<String> targetIds) {
+            this.targetIds = targetIds;
             return this;
         }
         public Builder targetIds(String... targetIds) {
             return targetIds(List.of(targetIds));
         }
         @CustomType.Setter
-        public Builder targetNames(List<String> targetNames) {
-            this.targetNames = Objects.requireNonNull(targetNames);
+        public Builder targetNames(@Nullable List<String> targetNames) {
+            this.targetNames = targetNames;
             return this;
         }
         public Builder targetNames(String... targetNames) {
             return targetNames(List.of(targetNames));
         }
         @CustomType.Setter
-        public Builder violationActions(List<String> violationActions) {
-            this.violationActions = Objects.requireNonNull(violationActions);
+        public Builder violationActions(@Nullable List<String> violationActions) {
+            this.violationActions = violationActions;
             return this;
         }
         public Builder violationActions(String... violationActions) {
             return violationActions(List.of(violationActions));
         }
         @CustomType.Setter
-        public Builder violationCauses(List<String> violationCauses) {
-            this.violationCauses = Objects.requireNonNull(violationCauses);
+        public Builder violationCauses(@Nullable List<String> violationCauses) {
+            this.violationCauses = violationCauses;
             return this;
         }
         public Builder violationCauses(String... violationCauses) {

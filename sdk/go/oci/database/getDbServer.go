@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Db Server resource in Oracle Cloud Infrastructure Database service.
@@ -67,42 +66,42 @@ type GetDbServerResult struct {
 	// The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous VM Clusters associated with the Db server.
 	AutonomousVmClusterIds []string `pulumi:"autonomousVmClusterIds"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// The number of CPU cores enabled on the Db server.
-	CpuCoreCount int `pulumi:"cpuCoreCount"`
+	CpuCoreCount *int `pulumi:"cpuCoreCount"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Db nodes associated with the Db server.
 	DbNodeIds []string `pulumi:"dbNodeIds"`
 	// The allocated local node storage in GBs on the Db server.
-	DbNodeStorageSizeInGbs int    `pulumi:"dbNodeStorageSizeInGbs"`
+	DbNodeStorageSizeInGbs *int   `pulumi:"dbNodeStorageSizeInGbs"`
 	DbServerId             string `pulumi:"dbServerId"`
 	// The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
 	DbServerPatchingDetails []GetDbServerDbServerPatchingDetail `pulumi:"dbServerPatchingDetails"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The user-friendly name for the Db server. The name does not need to be unique.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
 	ExadataInfrastructureId string `pulumi:"exadataInfrastructureId"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Additional information about the current lifecycle state.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// The total number of CPU cores available.
-	MaxCpuCount int `pulumi:"maxCpuCount"`
+	MaxCpuCount *int `pulumi:"maxCpuCount"`
 	// The total local node storage available in GBs.
-	MaxDbNodeStorageInGbs int `pulumi:"maxDbNodeStorageInGbs"`
+	MaxDbNodeStorageInGbs *int `pulumi:"maxDbNodeStorageInGbs"`
 	// The total memory available in GBs.
-	MaxMemoryInGbs int `pulumi:"maxMemoryInGbs"`
+	MaxMemoryInGbs *int `pulumi:"maxMemoryInGbs"`
 	// The allocated memory in GBs on the Db server.
-	MemorySizeInGbs int `pulumi:"memorySizeInGbs"`
+	MemorySizeInGbs *int `pulumi:"memorySizeInGbs"`
 	// The shape of the Db server. The shape determines the amount of CPU, storage, and memory resources available.
-	Shape string `pulumi:"shape"`
+	Shape *string `pulumi:"shape"`
 	// The current state of the Db server.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The date and time that the Db Server was created.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Clusters associated with the Db server.
 	VmClusterIds []string `pulumi:"vmClusterIds"`
 }
@@ -147,12 +146,6 @@ func (o GetDbServerResultOutput) ToGetDbServerResultOutputWithContext(ctx contex
 	return o
 }
 
-func (o GetDbServerResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDbServerResult] {
-	return pulumix.Output[GetDbServerResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Virtual Machines associated with the Db server.
 func (o GetDbServerResultOutput) AutonomousVirtualMachineIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetDbServerResult) []string { return v.AutonomousVirtualMachineIds }).(pulumi.StringArrayOutput)
@@ -164,13 +157,13 @@ func (o GetDbServerResultOutput) AutonomousVmClusterIds() pulumi.StringArrayOutp
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-func (o GetDbServerResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDbServerResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetDbServerResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDbServerResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // The number of CPU cores enabled on the Db server.
-func (o GetDbServerResultOutput) CpuCoreCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetDbServerResult) int { return v.CpuCoreCount }).(pulumi.IntOutput)
+func (o GetDbServerResultOutput) CpuCoreCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetDbServerResult) *int { return v.CpuCoreCount }).(pulumi.IntPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Db nodes associated with the Db server.
@@ -179,8 +172,8 @@ func (o GetDbServerResultOutput) DbNodeIds() pulumi.StringArrayOutput {
 }
 
 // The allocated local node storage in GBs on the Db server.
-func (o GetDbServerResultOutput) DbNodeStorageSizeInGbs() pulumi.IntOutput {
-	return o.ApplyT(func(v GetDbServerResult) int { return v.DbNodeStorageSizeInGbs }).(pulumi.IntOutput)
+func (o GetDbServerResultOutput) DbNodeStorageSizeInGbs() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetDbServerResult) *int { return v.DbNodeStorageSizeInGbs }).(pulumi.IntPtrOutput)
 }
 
 func (o GetDbServerResultOutput) DbServerId() pulumi.StringOutput {
@@ -198,8 +191,8 @@ func (o GetDbServerResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // The user-friendly name for the Db server. The name does not need to be unique.
-func (o GetDbServerResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDbServerResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetDbServerResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDbServerResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
@@ -213,48 +206,48 @@ func (o GetDbServerResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetDbServerResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDbServerResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetDbServerResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDbServerResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Additional information about the current lifecycle state.
-func (o GetDbServerResultOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDbServerResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o GetDbServerResultOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDbServerResult) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // The total number of CPU cores available.
-func (o GetDbServerResultOutput) MaxCpuCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetDbServerResult) int { return v.MaxCpuCount }).(pulumi.IntOutput)
+func (o GetDbServerResultOutput) MaxCpuCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetDbServerResult) *int { return v.MaxCpuCount }).(pulumi.IntPtrOutput)
 }
 
 // The total local node storage available in GBs.
-func (o GetDbServerResultOutput) MaxDbNodeStorageInGbs() pulumi.IntOutput {
-	return o.ApplyT(func(v GetDbServerResult) int { return v.MaxDbNodeStorageInGbs }).(pulumi.IntOutput)
+func (o GetDbServerResultOutput) MaxDbNodeStorageInGbs() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetDbServerResult) *int { return v.MaxDbNodeStorageInGbs }).(pulumi.IntPtrOutput)
 }
 
 // The total memory available in GBs.
-func (o GetDbServerResultOutput) MaxMemoryInGbs() pulumi.IntOutput {
-	return o.ApplyT(func(v GetDbServerResult) int { return v.MaxMemoryInGbs }).(pulumi.IntOutput)
+func (o GetDbServerResultOutput) MaxMemoryInGbs() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetDbServerResult) *int { return v.MaxMemoryInGbs }).(pulumi.IntPtrOutput)
 }
 
 // The allocated memory in GBs on the Db server.
-func (o GetDbServerResultOutput) MemorySizeInGbs() pulumi.IntOutput {
-	return o.ApplyT(func(v GetDbServerResult) int { return v.MemorySizeInGbs }).(pulumi.IntOutput)
+func (o GetDbServerResultOutput) MemorySizeInGbs() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetDbServerResult) *int { return v.MemorySizeInGbs }).(pulumi.IntPtrOutput)
 }
 
 // The shape of the Db server. The shape determines the amount of CPU, storage, and memory resources available.
-func (o GetDbServerResultOutput) Shape() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDbServerResult) string { return v.Shape }).(pulumi.StringOutput)
+func (o GetDbServerResultOutput) Shape() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDbServerResult) *string { return v.Shape }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the Db server.
-func (o GetDbServerResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDbServerResult) string { return v.State }).(pulumi.StringOutput)
+func (o GetDbServerResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDbServerResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time that the Db Server was created.
-func (o GetDbServerResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDbServerResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetDbServerResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDbServerResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Clusters associated with the Db server.

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Pipeline resource in Oracle Cloud Infrastructure Data Science service.
@@ -60,42 +59,42 @@ type LookupPipelineArgs struct {
 // A collection of values returned by getPipeline.
 type LookupPipelineResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the pipeline.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// The configuration details of a pipeline.
 	ConfigurationDetails []GetPipelineConfigurationDetail `pulumi:"configurationDetails"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the pipeline.
-	CreatedBy string `pulumi:"createdBy"`
+	CreatedBy *string `pulumi:"createdBy"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags               map[string]interface{} `pulumi:"definedTags"`
-	DeleteRelatedPipelineRuns bool                   `pulumi:"deleteRelatedPipelineRuns"`
+	DeleteRelatedPipelineRuns *bool                  `pulumi:"deleteRelatedPipelineRuns"`
 	// A short description of the step.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// A user-friendly display name for the resource.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pipeline.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The infrastructure configuration details of a pipeline or a step.
 	InfrastructureConfigurationDetails []GetPipelineInfrastructureConfigurationDetail `pulumi:"infrastructureConfigurationDetails"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'Failed' state.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// The pipeline log configuration details.
 	LogConfigurationDetails []GetPipelineLogConfigurationDetail `pulumi:"logConfigurationDetails"`
 	PipelineId              string                              `pulumi:"pipelineId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the pipeline with.
-	ProjectId string `pulumi:"projectId"`
+	ProjectId *string `pulumi:"projectId"`
 	// The current state of the pipeline.
-	State         string                    `pulumi:"state"`
+	State         *string                   `pulumi:"state"`
 	StepArtifacts []GetPipelineStepArtifact `pulumi:"stepArtifacts"`
 	// Array of step details for each step.
 	StepDetails []GetPipelineStepDetail `pulumi:"stepDetails"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2020-08-06T21:10:29.41Z
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The date and time the resource was updated in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2020-08-06T21:10:29.41Z
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 func LookupPipelineOutput(ctx *pulumi.Context, args LookupPipelineOutputArgs, opts ...pulumi.InvokeOption) LookupPipelineResultOutput {
@@ -136,15 +135,9 @@ func (o LookupPipelineResultOutput) ToLookupPipelineResultOutputWithContext(ctx 
 	return o
 }
 
-func (o LookupPipelineResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupPipelineResult] {
-	return pulumix.Output[LookupPipelineResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the pipeline.
-func (o LookupPipelineResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupPipelineResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupPipelineResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupPipelineResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // The configuration details of a pipeline.
@@ -153,8 +146,8 @@ func (o LookupPipelineResultOutput) ConfigurationDetails() GetPipelineConfigurat
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the pipeline.
-func (o LookupPipelineResultOutput) CreatedBy() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupPipelineResult) string { return v.CreatedBy }).(pulumi.StringOutput)
+func (o LookupPipelineResultOutput) CreatedBy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupPipelineResult) *string { return v.CreatedBy }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -162,18 +155,18 @@ func (o LookupPipelineResultOutput) DefinedTags() pulumi.MapOutput {
 	return o.ApplyT(func(v LookupPipelineResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
 }
 
-func (o LookupPipelineResultOutput) DeleteRelatedPipelineRuns() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupPipelineResult) bool { return v.DeleteRelatedPipelineRuns }).(pulumi.BoolOutput)
+func (o LookupPipelineResultOutput) DeleteRelatedPipelineRuns() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupPipelineResult) *bool { return v.DeleteRelatedPipelineRuns }).(pulumi.BoolPtrOutput)
 }
 
 // A short description of the step.
-func (o LookupPipelineResultOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupPipelineResult) string { return v.Description }).(pulumi.StringOutput)
+func (o LookupPipelineResultOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupPipelineResult) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // A user-friendly display name for the resource.
-func (o LookupPipelineResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupPipelineResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupPipelineResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupPipelineResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -182,8 +175,8 @@ func (o LookupPipelineResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pipeline.
-func (o LookupPipelineResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupPipelineResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupPipelineResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupPipelineResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The infrastructure configuration details of a pipeline or a step.
@@ -194,8 +187,8 @@ func (o LookupPipelineResultOutput) InfrastructureConfigurationDetails() GetPipe
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'Failed' state.
-func (o LookupPipelineResultOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupPipelineResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o LookupPipelineResultOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupPipelineResult) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // The pipeline log configuration details.
@@ -208,13 +201,13 @@ func (o LookupPipelineResultOutput) PipelineId() pulumi.StringOutput {
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the pipeline with.
-func (o LookupPipelineResultOutput) ProjectId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupPipelineResult) string { return v.ProjectId }).(pulumi.StringOutput)
+func (o LookupPipelineResultOutput) ProjectId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupPipelineResult) *string { return v.ProjectId }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the pipeline.
-func (o LookupPipelineResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupPipelineResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupPipelineResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupPipelineResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupPipelineResultOutput) StepArtifacts() GetPipelineStepArtifactArrayOutput {
@@ -232,13 +225,13 @@ func (o LookupPipelineResultOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2020-08-06T21:10:29.41Z
-func (o LookupPipelineResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupPipelineResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupPipelineResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupPipelineResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the resource was updated in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2020-08-06T21:10:29.41Z
-func (o LookupPipelineResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupPipelineResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o LookupPipelineResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupPipelineResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 func init() {

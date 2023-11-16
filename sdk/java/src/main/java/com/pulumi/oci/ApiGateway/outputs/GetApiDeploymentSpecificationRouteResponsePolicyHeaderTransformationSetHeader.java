@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.ApiGateway.outputs.GetApiDeploymentSpecificationRouteResponsePolicyHeaderTransformationSetHeaderItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetApiDeploymentSpecificationRouteResponsePolicyHeaderTransformationSetHeader {
@@ -14,7 +15,7 @@ public final class GetApiDeploymentSpecificationRouteResponsePolicyHeaderTransfo
      * @return The list of headers.
      * 
      */
-    private List<GetApiDeploymentSpecificationRouteResponsePolicyHeaderTransformationSetHeaderItem> items;
+    private @Nullable List<GetApiDeploymentSpecificationRouteResponsePolicyHeaderTransformationSetHeaderItem> items;
 
     private GetApiDeploymentSpecificationRouteResponsePolicyHeaderTransformationSetHeader() {}
     /**
@@ -22,7 +23,7 @@ public final class GetApiDeploymentSpecificationRouteResponsePolicyHeaderTransfo
      * 
      */
     public List<GetApiDeploymentSpecificationRouteResponsePolicyHeaderTransformationSetHeaderItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -34,7 +35,7 @@ public final class GetApiDeploymentSpecificationRouteResponsePolicyHeaderTransfo
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetApiDeploymentSpecificationRouteResponsePolicyHeaderTransformationSetHeaderItem> items;
+        private @Nullable List<GetApiDeploymentSpecificationRouteResponsePolicyHeaderTransformationSetHeaderItem> items;
         public Builder() {}
         public Builder(GetApiDeploymentSpecificationRouteResponsePolicyHeaderTransformationSetHeader defaults) {
     	      Objects.requireNonNull(defaults);
@@ -42,8 +43,8 @@ public final class GetApiDeploymentSpecificationRouteResponsePolicyHeaderTransfo
         }
 
         @CustomType.Setter
-        public Builder items(List<GetApiDeploymentSpecificationRouteResponsePolicyHeaderTransformationSetHeaderItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetApiDeploymentSpecificationRouteResponsePolicyHeaderTransformationSetHeaderItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetApiDeploymentSpecificationRouteResponsePolicyHeaderTransformationSetHeaderItem... items) {

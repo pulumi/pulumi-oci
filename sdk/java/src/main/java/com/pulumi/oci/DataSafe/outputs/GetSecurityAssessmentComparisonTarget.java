@@ -14,6 +14,8 @@ import com.pulumi.oci.DataSafe.outputs.GetSecurityAssessmentComparisonTargetUser
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetSecurityAssessmentComparisonTarget {
@@ -21,47 +23,47 @@ public final class GetSecurityAssessmentComparisonTarget {
      * @return A comparison between findings belonging to Auditing category.
      * 
      */
-    private List<GetSecurityAssessmentComparisonTargetAuditing> auditings;
+    private @Nullable List<GetSecurityAssessmentComparisonTargetAuditing> auditings;
     /**
      * @return A comparison between findings belonging to Authorization Control category.
      * 
      */
-    private List<GetSecurityAssessmentComparisonTargetAuthorizationControl> authorizationControls;
+    private @Nullable List<GetSecurityAssessmentComparisonTargetAuthorizationControl> authorizationControls;
     /**
      * @return The OCID of the target that is used as a baseline in this comparison.
      * 
      */
-    private String baselineTargetId;
+    private @Nullable String baselineTargetId;
     /**
      * @return The OCID of the target to be compared against the baseline target.
      * 
      */
-    private String currentTargetId;
+    private @Nullable String currentTargetId;
     /**
      * @return Comparison between findings belonging to Data Encryption category.
      * 
      */
-    private List<GetSecurityAssessmentComparisonTargetDataEncryption> dataEncryptions;
+    private @Nullable List<GetSecurityAssessmentComparisonTargetDataEncryption> dataEncryptions;
     /**
      * @return Comparison between findings belonging to Database Configuration category.
      * 
      */
-    private List<GetSecurityAssessmentComparisonTargetDbConfiguration> dbConfigurations;
+    private @Nullable List<GetSecurityAssessmentComparisonTargetDbConfiguration> dbConfigurations;
     /**
      * @return Comparison between findings belonging to Fine-Grained Access Control category.
      * 
      */
-    private List<GetSecurityAssessmentComparisonTargetFineGrainedAccessControl> fineGrainedAccessControls;
+    private @Nullable List<GetSecurityAssessmentComparisonTargetFineGrainedAccessControl> fineGrainedAccessControls;
     /**
      * @return Comparison between findings belonging to Privileges and Roles category.
      * 
      */
-    private List<GetSecurityAssessmentComparisonTargetPrivilegesAndRole> privilegesAndRoles;
+    private @Nullable List<GetSecurityAssessmentComparisonTargetPrivilegesAndRole> privilegesAndRoles;
     /**
      * @return Comparison between findings belonging to User Accounts category.
      * 
      */
-    private List<GetSecurityAssessmentComparisonTargetUserAccount> userAccounts;
+    private @Nullable List<GetSecurityAssessmentComparisonTargetUserAccount> userAccounts;
 
     private GetSecurityAssessmentComparisonTarget() {}
     /**
@@ -69,63 +71,63 @@ public final class GetSecurityAssessmentComparisonTarget {
      * 
      */
     public List<GetSecurityAssessmentComparisonTargetAuditing> auditings() {
-        return this.auditings;
+        return this.auditings == null ? List.of() : this.auditings;
     }
     /**
      * @return A comparison between findings belonging to Authorization Control category.
      * 
      */
     public List<GetSecurityAssessmentComparisonTargetAuthorizationControl> authorizationControls() {
-        return this.authorizationControls;
+        return this.authorizationControls == null ? List.of() : this.authorizationControls;
     }
     /**
      * @return The OCID of the target that is used as a baseline in this comparison.
      * 
      */
-    public String baselineTargetId() {
-        return this.baselineTargetId;
+    public Optional<String> baselineTargetId() {
+        return Optional.ofNullable(this.baselineTargetId);
     }
     /**
      * @return The OCID of the target to be compared against the baseline target.
      * 
      */
-    public String currentTargetId() {
-        return this.currentTargetId;
+    public Optional<String> currentTargetId() {
+        return Optional.ofNullable(this.currentTargetId);
     }
     /**
      * @return Comparison between findings belonging to Data Encryption category.
      * 
      */
     public List<GetSecurityAssessmentComparisonTargetDataEncryption> dataEncryptions() {
-        return this.dataEncryptions;
+        return this.dataEncryptions == null ? List.of() : this.dataEncryptions;
     }
     /**
      * @return Comparison between findings belonging to Database Configuration category.
      * 
      */
     public List<GetSecurityAssessmentComparisonTargetDbConfiguration> dbConfigurations() {
-        return this.dbConfigurations;
+        return this.dbConfigurations == null ? List.of() : this.dbConfigurations;
     }
     /**
      * @return Comparison between findings belonging to Fine-Grained Access Control category.
      * 
      */
     public List<GetSecurityAssessmentComparisonTargetFineGrainedAccessControl> fineGrainedAccessControls() {
-        return this.fineGrainedAccessControls;
+        return this.fineGrainedAccessControls == null ? List.of() : this.fineGrainedAccessControls;
     }
     /**
      * @return Comparison between findings belonging to Privileges and Roles category.
      * 
      */
     public List<GetSecurityAssessmentComparisonTargetPrivilegesAndRole> privilegesAndRoles() {
-        return this.privilegesAndRoles;
+        return this.privilegesAndRoles == null ? List.of() : this.privilegesAndRoles;
     }
     /**
      * @return Comparison between findings belonging to User Accounts category.
      * 
      */
     public List<GetSecurityAssessmentComparisonTargetUserAccount> userAccounts() {
-        return this.userAccounts;
+        return this.userAccounts == null ? List.of() : this.userAccounts;
     }
 
     public static Builder builder() {
@@ -137,15 +139,15 @@ public final class GetSecurityAssessmentComparisonTarget {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetSecurityAssessmentComparisonTargetAuditing> auditings;
-        private List<GetSecurityAssessmentComparisonTargetAuthorizationControl> authorizationControls;
-        private String baselineTargetId;
-        private String currentTargetId;
-        private List<GetSecurityAssessmentComparisonTargetDataEncryption> dataEncryptions;
-        private List<GetSecurityAssessmentComparisonTargetDbConfiguration> dbConfigurations;
-        private List<GetSecurityAssessmentComparisonTargetFineGrainedAccessControl> fineGrainedAccessControls;
-        private List<GetSecurityAssessmentComparisonTargetPrivilegesAndRole> privilegesAndRoles;
-        private List<GetSecurityAssessmentComparisonTargetUserAccount> userAccounts;
+        private @Nullable List<GetSecurityAssessmentComparisonTargetAuditing> auditings;
+        private @Nullable List<GetSecurityAssessmentComparisonTargetAuthorizationControl> authorizationControls;
+        private @Nullable String baselineTargetId;
+        private @Nullable String currentTargetId;
+        private @Nullable List<GetSecurityAssessmentComparisonTargetDataEncryption> dataEncryptions;
+        private @Nullable List<GetSecurityAssessmentComparisonTargetDbConfiguration> dbConfigurations;
+        private @Nullable List<GetSecurityAssessmentComparisonTargetFineGrainedAccessControl> fineGrainedAccessControls;
+        private @Nullable List<GetSecurityAssessmentComparisonTargetPrivilegesAndRole> privilegesAndRoles;
+        private @Nullable List<GetSecurityAssessmentComparisonTargetUserAccount> userAccounts;
         public Builder() {}
         public Builder(GetSecurityAssessmentComparisonTarget defaults) {
     	      Objects.requireNonNull(defaults);
@@ -161,66 +163,66 @@ public final class GetSecurityAssessmentComparisonTarget {
         }
 
         @CustomType.Setter
-        public Builder auditings(List<GetSecurityAssessmentComparisonTargetAuditing> auditings) {
-            this.auditings = Objects.requireNonNull(auditings);
+        public Builder auditings(@Nullable List<GetSecurityAssessmentComparisonTargetAuditing> auditings) {
+            this.auditings = auditings;
             return this;
         }
         public Builder auditings(GetSecurityAssessmentComparisonTargetAuditing... auditings) {
             return auditings(List.of(auditings));
         }
         @CustomType.Setter
-        public Builder authorizationControls(List<GetSecurityAssessmentComparisonTargetAuthorizationControl> authorizationControls) {
-            this.authorizationControls = Objects.requireNonNull(authorizationControls);
+        public Builder authorizationControls(@Nullable List<GetSecurityAssessmentComparisonTargetAuthorizationControl> authorizationControls) {
+            this.authorizationControls = authorizationControls;
             return this;
         }
         public Builder authorizationControls(GetSecurityAssessmentComparisonTargetAuthorizationControl... authorizationControls) {
             return authorizationControls(List.of(authorizationControls));
         }
         @CustomType.Setter
-        public Builder baselineTargetId(String baselineTargetId) {
-            this.baselineTargetId = Objects.requireNonNull(baselineTargetId);
+        public Builder baselineTargetId(@Nullable String baselineTargetId) {
+            this.baselineTargetId = baselineTargetId;
             return this;
         }
         @CustomType.Setter
-        public Builder currentTargetId(String currentTargetId) {
-            this.currentTargetId = Objects.requireNonNull(currentTargetId);
+        public Builder currentTargetId(@Nullable String currentTargetId) {
+            this.currentTargetId = currentTargetId;
             return this;
         }
         @CustomType.Setter
-        public Builder dataEncryptions(List<GetSecurityAssessmentComparisonTargetDataEncryption> dataEncryptions) {
-            this.dataEncryptions = Objects.requireNonNull(dataEncryptions);
+        public Builder dataEncryptions(@Nullable List<GetSecurityAssessmentComparisonTargetDataEncryption> dataEncryptions) {
+            this.dataEncryptions = dataEncryptions;
             return this;
         }
         public Builder dataEncryptions(GetSecurityAssessmentComparisonTargetDataEncryption... dataEncryptions) {
             return dataEncryptions(List.of(dataEncryptions));
         }
         @CustomType.Setter
-        public Builder dbConfigurations(List<GetSecurityAssessmentComparisonTargetDbConfiguration> dbConfigurations) {
-            this.dbConfigurations = Objects.requireNonNull(dbConfigurations);
+        public Builder dbConfigurations(@Nullable List<GetSecurityAssessmentComparisonTargetDbConfiguration> dbConfigurations) {
+            this.dbConfigurations = dbConfigurations;
             return this;
         }
         public Builder dbConfigurations(GetSecurityAssessmentComparisonTargetDbConfiguration... dbConfigurations) {
             return dbConfigurations(List.of(dbConfigurations));
         }
         @CustomType.Setter
-        public Builder fineGrainedAccessControls(List<GetSecurityAssessmentComparisonTargetFineGrainedAccessControl> fineGrainedAccessControls) {
-            this.fineGrainedAccessControls = Objects.requireNonNull(fineGrainedAccessControls);
+        public Builder fineGrainedAccessControls(@Nullable List<GetSecurityAssessmentComparisonTargetFineGrainedAccessControl> fineGrainedAccessControls) {
+            this.fineGrainedAccessControls = fineGrainedAccessControls;
             return this;
         }
         public Builder fineGrainedAccessControls(GetSecurityAssessmentComparisonTargetFineGrainedAccessControl... fineGrainedAccessControls) {
             return fineGrainedAccessControls(List.of(fineGrainedAccessControls));
         }
         @CustomType.Setter
-        public Builder privilegesAndRoles(List<GetSecurityAssessmentComparisonTargetPrivilegesAndRole> privilegesAndRoles) {
-            this.privilegesAndRoles = Objects.requireNonNull(privilegesAndRoles);
+        public Builder privilegesAndRoles(@Nullable List<GetSecurityAssessmentComparisonTargetPrivilegesAndRole> privilegesAndRoles) {
+            this.privilegesAndRoles = privilegesAndRoles;
             return this;
         }
         public Builder privilegesAndRoles(GetSecurityAssessmentComparisonTargetPrivilegesAndRole... privilegesAndRoles) {
             return privilegesAndRoles(List.of(privilegesAndRoles));
         }
         @CustomType.Setter
-        public Builder userAccounts(List<GetSecurityAssessmentComparisonTargetUserAccount> userAccounts) {
-            this.userAccounts = Objects.requireNonNull(userAccounts);
+        public Builder userAccounts(@Nullable List<GetSecurityAssessmentComparisonTargetUserAccount> userAccounts) {
+            this.userAccounts = userAccounts;
             return this;
         }
         public Builder userAccounts(GetSecurityAssessmentComparisonTargetUserAccount... userAccounts) {

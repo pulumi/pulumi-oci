@@ -18,6 +18,7 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -104,28 +105,28 @@ public class ManagementStation extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * (Updatable) Details describing the Management Station config.
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
-    private Output<String> description;
+    private Output</* @Nullable */ String> description;
 
     /**
      * @return (Updatable) Details describing the Management Station config.
      * 
      */
-    public Output<String> description() {
-        return this.description;
+    public Output<Optional<String>> description() {
+        return Codegen.optional(this.description);
     }
     /**
      * (Updatable) Management Station name
@@ -146,14 +147,14 @@ public class ManagementStation extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * (Updatable) Name of the host
@@ -174,14 +175,14 @@ public class ManagementStation extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="managedInstanceId", refs={String.class}, tree="[0]")
-    private Output<String> managedInstanceId;
+    private Output</* @Nullable */ String> managedInstanceId;
 
     /**
      * @return OCID for the Instance associated with the Management Station.
      * 
      */
-    public Output<String> managedInstanceId() {
-        return this.managedInstanceId;
+    public Output<Optional<String>> managedInstanceId() {
+        return Codegen.optional(this.managedInstanceId);
     }
     /**
      * (Updatable) Information for creating a mirror configuration
@@ -202,70 +203,70 @@ public class ManagementStation extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="mirrorCapacity", refs={Integer.class}, tree="[0]")
-    private Output<Integer> mirrorCapacity;
+    private Output</* @Nullable */ Integer> mirrorCapacity;
 
     /**
      * @return A decimal number representing the mirror capacity
      * 
      */
-    public Output<Integer> mirrorCapacity() {
-        return this.mirrorCapacity;
+    public Output<Optional<Integer>> mirrorCapacity() {
+        return Codegen.optional(this.mirrorCapacity);
     }
     /**
      * Status summary of all repos
      * 
      */
     @Export(name="mirrorSyncStatuses", refs={List.class,ManagementStationMirrorSyncStatus.class}, tree="[0,1]")
-    private Output<List<ManagementStationMirrorSyncStatus>> mirrorSyncStatuses;
+    private Output</* @Nullable */ List<ManagementStationMirrorSyncStatus>> mirrorSyncStatuses;
 
     /**
      * @return Status summary of all repos
      * 
      */
-    public Output<List<ManagementStationMirrorSyncStatus>> mirrorSyncStatuses() {
-        return this.mirrorSyncStatuses;
+    public Output<Optional<List<ManagementStationMirrorSyncStatus>>> mirrorSyncStatuses() {
+        return Codegen.optional(this.mirrorSyncStatuses);
     }
     /**
      * A decimal number representing the completeness percentage
      * 
      */
     @Export(name="overallPercentage", refs={Integer.class}, tree="[0]")
-    private Output<Integer> overallPercentage;
+    private Output</* @Nullable */ Integer> overallPercentage;
 
     /**
      * @return A decimal number representing the completeness percentage
      * 
      */
-    public Output<Integer> overallPercentage() {
-        return this.overallPercentage;
+    public Output<Optional<Integer>> overallPercentage() {
+        return Codegen.optional(this.overallPercentage);
     }
     /**
      * Current state of the mirroring
      * 
      */
     @Export(name="overallState", refs={String.class}, tree="[0]")
-    private Output<String> overallState;
+    private Output</* @Nullable */ String> overallState;
 
     /**
      * @return Current state of the mirroring
      * 
      */
-    public Output<String> overallState() {
-        return this.overallState;
+    public Output<Optional<String>> overallState() {
+        return Codegen.optional(this.overallState);
     }
     /**
      * OCID of the Profile associated with the Station
      * 
      */
     @Export(name="profileId", refs={String.class}, tree="[0]")
-    private Output<String> profileId;
+    private Output</* @Nullable */ String> profileId;
 
     /**
      * @return OCID of the Profile associated with the Station
      * 
      */
-    public Output<String> profileId() {
-        return this.profileId;
+    public Output<Optional<String>> profileId() {
+        return Codegen.optional(this.profileId);
     }
     /**
      * (Updatable) Information for creating a proxy configuration
@@ -286,56 +287,56 @@ public class ManagementStation extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="scheduledJobId", refs={String.class}, tree="[0]")
-    private Output<String> scheduledJobId;
+    private Output</* @Nullable */ String> scheduledJobId;
 
     /**
      * @return OCID of the Scheduled Job for mirror sync
      * 
      */
-    public Output<String> scheduledJobId() {
-        return this.scheduledJobId;
+    public Output<Optional<String>> scheduledJobId() {
+        return Codegen.optional(this.scheduledJobId);
     }
     /**
      * The current state of the Management Station config.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The current state of the Management Station config.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
     @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> systemTags;
+    private Output</* @Nullable */ Map<String,Object>> systemTags;
 
     /**
      * @return System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    public Output<Map<String,Object>> systemTags() {
-        return this.systemTags;
+    public Output<Optional<Map<String,Object>>> systemTags() {
+        return Codegen.optional(this.systemTags);
     }
     /**
      * A decimal number representing the total of repos
      * 
      */
     @Export(name="totalMirrors", refs={Integer.class}, tree="[0]")
-    private Output<Integer> totalMirrors;
+    private Output</* @Nullable */ Integer> totalMirrors;
 
     /**
      * @return A decimal number representing the total of repos
      * 
      */
-    public Output<Integer> totalMirrors() {
-        return this.totalMirrors;
+    public Output<Optional<Integer>> totalMirrors() {
+        return Codegen.optional(this.totalMirrors);
     }
 
     /**

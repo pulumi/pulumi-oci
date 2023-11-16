@@ -12,6 +12,7 @@ import com.pulumi.oci.NetworkFirewall.inputs.NetworkFirewallPolicyMappedSecretSt
 import com.pulumi.oci.Utilities;
 import java.lang.Integer;
 import java.lang.String;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -97,14 +98,14 @@ public class NetworkFirewallPolicyMappedSecret extends com.pulumi.resources.Cust
      * 
      */
     @Export(name="parentResourceId", refs={String.class}, tree="[0]")
-    private Output<String> parentResourceId;
+    private Output</* @Nullable */ String> parentResourceId;
 
     /**
      * @return OCID of the Network Firewall Policy this Mapped Secret belongs to.
      * 
      */
-    public Output<String> parentResourceId() {
-        return this.parentResourceId;
+    public Output<Optional<String>> parentResourceId() {
+        return Codegen.optional(this.parentResourceId);
     }
     /**
      * Source of the secrets, where the secrets are stored. The only accepted value is `OCI_VAULT`

@@ -47,52 +47,52 @@ export interface GetNetworkSourceResult {
     /**
      * The OCID of the tenancy containing the network source. The tenancy is the root compartment.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * The description you assign to the network source. Does not have to be unique, and it's changeable.
      */
-    readonly description: string;
+    readonly description?: string;
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * The OCID of the network source.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The detailed status of INACTIVE lifecycleState.
      */
-    readonly inactiveState: string;
+    readonly inactiveState?: string;
     /**
      * The name you assign to the network source during creation. The name must be unique across the tenancy and cannot be changed.
      */
-    readonly name: string;
+    readonly name?: string;
     readonly networkSourceId: string;
     /**
      * A list of allowed public IP addresses and CIDR ranges.
      */
-    readonly publicSourceLists: string[];
+    readonly publicSourceLists?: string[];
     /**
      * A list of services allowed to make on-behalf-of requests. These requests can have different source IPs than those specified in the network source. Currently, only `all` and `none` are supported. The default is `all`.
      */
-    readonly services: string[];
+    readonly services?: string[];
     /**
      * The network source object's current state. After creating a network source, make sure its `lifecycleState` changes from CREATING to ACTIVE before using it.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * Date and time the group was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * A list of allowed VCN OCID and IP range pairs. Example:`"vcnId": "ocid1.vcn.oc1.iad.aaaaaaaaexampleuniqueID", "ipRanges": [ "129.213.39.0/24" ]`
      */
-    readonly virtualSourceLists: outputs.Identity.GetNetworkSourceVirtualSourceList[];
+    readonly virtualSourceLists?: outputs.Identity.GetNetworkSourceVirtualSourceList[];
 }
 /**
  * This data source provides details about a specific Network Source resource in Oracle Cloud Infrastructure Identity service.

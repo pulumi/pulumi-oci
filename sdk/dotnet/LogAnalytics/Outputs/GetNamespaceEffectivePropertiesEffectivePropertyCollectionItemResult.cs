@@ -16,11 +16,11 @@ namespace Pulumi.Oci.LogAnalytics.Outputs
         /// <summary>
         /// The effective level of the property value.
         /// </summary>
-        public readonly string EffectiveLevel;
+        public readonly string? EffectiveLevel;
         /// <summary>
         /// The property name used for filtering.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// A list of pattern level override values for the property.
         /// </summary>
@@ -28,17 +28,17 @@ namespace Pulumi.Oci.LogAnalytics.Outputs
         /// <summary>
         /// The effective value of the property. This is determined by considering the value set at the most effective level.
         /// </summary>
-        public readonly string Value;
+        public readonly string? Value;
 
         [OutputConstructor]
         private GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemResult(
-            string effectiveLevel,
+            string? effectiveLevel,
 
-            string name,
+            string? name,
 
             ImmutableArray<Outputs.GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPatternResult> patterns,
 
-            string value)
+            string? value)
         {
             EffectiveLevel = effectiveLevel;
             Name = name;

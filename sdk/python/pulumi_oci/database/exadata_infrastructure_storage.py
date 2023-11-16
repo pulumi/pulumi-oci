@@ -944,7 +944,7 @@ class ExadataInfrastructureStorage(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="activatedStorageCount")
-    def activated_storage_count(self) -> pulumi.Output[int]:
+    def activated_storage_count(self) -> pulumi.Output[Optional[int]]:
         return pulumi.get(self, "activated_storage_count")
 
     @property
@@ -954,7 +954,7 @@ class ExadataInfrastructureStorage(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="additionalStorageCount")
-    def additional_storage_count(self) -> pulumi.Output[int]:
+    def additional_storage_count(self) -> pulumi.Output[Optional[int]]:
         return pulumi.get(self, "additional_storage_count")
 
     @property
@@ -979,7 +979,7 @@ class ExadataInfrastructureStorage(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="computeCount")
-    def compute_count(self) -> pulumi.Output[int]:
+    def compute_count(self) -> pulumi.Output[Optional[int]]:
         return pulumi.get(self, "compute_count")
 
     @property
@@ -989,32 +989,32 @@ class ExadataInfrastructureStorage(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="corporateProxy")
-    def corporate_proxy(self) -> pulumi.Output[str]:
+    def corporate_proxy(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "corporate_proxy")
 
     @property
     @pulumi.getter(name="cpusEnabled")
-    def cpus_enabled(self) -> pulumi.Output[int]:
+    def cpus_enabled(self) -> pulumi.Output[Optional[int]]:
         return pulumi.get(self, "cpus_enabled")
 
     @property
     @pulumi.getter(name="csiNumber")
-    def csi_number(self) -> pulumi.Output[str]:
+    def csi_number(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "csi_number")
 
     @property
     @pulumi.getter(name="dataStorageSizeInTbs")
-    def data_storage_size_in_tbs(self) -> pulumi.Output[float]:
+    def data_storage_size_in_tbs(self) -> pulumi.Output[Optional[float]]:
         return pulumi.get(self, "data_storage_size_in_tbs")
 
     @property
     @pulumi.getter(name="dbNodeStorageSizeInGbs")
-    def db_node_storage_size_in_gbs(self) -> pulumi.Output[int]:
+    def db_node_storage_size_in_gbs(self) -> pulumi.Output[Optional[int]]:
         return pulumi.get(self, "db_node_storage_size_in_gbs")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
+    def defined_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "defined_tags")
 
     @property
@@ -1034,7 +1034,7 @@ class ExadataInfrastructureStorage(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
+    def freeform_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
@@ -1049,42 +1049,42 @@ class ExadataInfrastructureStorage(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> pulumi.Output[str]:
+    def lifecycle_details(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="maintenanceSloStatus")
-    def maintenance_slo_status(self) -> pulumi.Output[str]:
+    def maintenance_slo_status(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "maintenance_slo_status")
 
     @property
     @pulumi.getter(name="maintenanceWindow")
-    def maintenance_window(self) -> pulumi.Output['outputs.ExadataInfrastructureStorageMaintenanceWindow']:
+    def maintenance_window(self) -> pulumi.Output[Optional['outputs.ExadataInfrastructureStorageMaintenanceWindow']]:
         return pulumi.get(self, "maintenance_window")
 
     @property
     @pulumi.getter(name="maxCpuCount")
-    def max_cpu_count(self) -> pulumi.Output[int]:
+    def max_cpu_count(self) -> pulumi.Output[Optional[int]]:
         return pulumi.get(self, "max_cpu_count")
 
     @property
     @pulumi.getter(name="maxDataStorageInTbs")
-    def max_data_storage_in_tbs(self) -> pulumi.Output[float]:
+    def max_data_storage_in_tbs(self) -> pulumi.Output[Optional[float]]:
         return pulumi.get(self, "max_data_storage_in_tbs")
 
     @property
     @pulumi.getter(name="maxDbNodeStorageInGbs")
-    def max_db_node_storage_in_gbs(self) -> pulumi.Output[int]:
+    def max_db_node_storage_in_gbs(self) -> pulumi.Output[Optional[int]]:
         return pulumi.get(self, "max_db_node_storage_in_gbs")
 
     @property
     @pulumi.getter(name="maxMemoryInGbs")
-    def max_memory_in_gbs(self) -> pulumi.Output[int]:
+    def max_memory_in_gbs(self) -> pulumi.Output[Optional[int]]:
         return pulumi.get(self, "max_memory_in_gbs")
 
     @property
     @pulumi.getter(name="memorySizeInGbs")
-    def memory_size_in_gbs(self) -> pulumi.Output[int]:
+    def memory_size_in_gbs(self) -> pulumi.Output[Optional[int]]:
         return pulumi.get(self, "memory_size_in_gbs")
 
     @property
@@ -1104,17 +1104,17 @@ class ExadataInfrastructureStorage(pulumi.CustomResource):
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="storageCount")
-    def storage_count(self) -> pulumi.Output[int]:
+    def storage_count(self) -> pulumi.Output[Optional[int]]:
         return pulumi.get(self, "storage_count")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 
     @property

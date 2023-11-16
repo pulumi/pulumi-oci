@@ -92,90 +92,57 @@ class GetProductLicenseResult:
 
     @property
     @pulumi.getter(name="activeLicenseRecordCount")
-    def active_license_record_count(self) -> int:
-        """
-        The number of active license records associated with the product license.
-        """
+    def active_license_record_count(self) -> Optional[int]:
         return pulumi.get(self, "active_license_record_count")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) where the product license is created.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        License record name
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The image ID associated with the product license.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter
-    def images(self) -> Sequence['outputs.GetProductLicenseImageResult']:
-        """
-        The images associated with the product license.
-        """
+    def images(self) -> Optional[Sequence['outputs.GetProductLicenseImageResult']]:
         return pulumi.get(self, "images")
 
     @property
     @pulumi.getter(name="isOverSubscribed")
-    def is_over_subscribed(self) -> bool:
-        """
-        Specifies whether or not the product license is oversubscribed.
-        """
+    def is_over_subscribed(self) -> Optional[bool]:
         return pulumi.get(self, "is_over_subscribed")
 
     @property
     @pulumi.getter(name="isUnlimited")
-    def is_unlimited(self) -> bool:
-        """
-        Specifies if the license unit count is unlimited.
-        """
+    def is_unlimited(self) -> Optional[bool]:
         return pulumi.get(self, "is_unlimited")
 
     @property
     @pulumi.getter(name="isVendorOracle")
-    def is_vendor_oracle(self) -> bool:
-        """
-        Specifies whether the vendor is Oracle or a third party.
-        """
+    def is_vendor_oracle(self) -> Optional[bool]:
         return pulumi.get(self, "is_vendor_oracle")
 
     @property
     @pulumi.getter(name="licenseUnit")
-    def license_unit(self) -> str:
-        """
-        The product license unit.
-        """
+    def license_unit(self) -> Optional[str]:
         return pulumi.get(self, "license_unit")
 
     @property
@@ -185,82 +152,52 @@ class GetProductLicenseResult:
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current product license state.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter
-    def status(self) -> str:
-        """
-        The current product license status.
-        """
+    def status(self) -> Optional[str]:
         return pulumi.get(self, "status")
 
     @property
     @pulumi.getter(name="statusDescription")
-    def status_description(self) -> str:
-        """
-        Status description for the current product license status.
-        """
+    def status_description(self) -> Optional[str]:
         return pulumi.get(self, "status_description")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The time the product license was created. An [RFC 3339](https://tools.ietf.org/html/rfc3339)-formatted datetime string.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The time the product license was updated. An [RFC 3339](https://tools.ietf.org/html/rfc3339)-formatted datetime string.
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
     @property
     @pulumi.getter(name="totalActiveLicenseUnitCount")
-    def total_active_license_unit_count(self) -> int:
-        """
-        The total number of licenses available for the product license, calculated by adding up all the license counts for active license records associated with the product license.
-        """
+    def total_active_license_unit_count(self) -> Optional[int]:
         return pulumi.get(self, "total_active_license_unit_count")
 
     @property
     @pulumi.getter(name="totalLicenseRecordCount")
-    def total_license_record_count(self) -> int:
-        """
-        The number of license records associated with the product license.
-        """
+    def total_license_record_count(self) -> Optional[int]:
         return pulumi.get(self, "total_license_record_count")
 
     @property
     @pulumi.getter(name="totalLicenseUnitsConsumed")
-    def total_license_units_consumed(self) -> float:
-        """
-        The number of license units consumed. Updated after each allocation run.
-        """
+    def total_license_units_consumed(self) -> Optional[float]:
         return pulumi.get(self, "total_license_units_consumed")
 
     @property
     @pulumi.getter(name="vendorName")
-    def vendor_name(self) -> str:
-        """
-        The vendor of the ProductLicense
-        """
+    def vendor_name(self) -> Optional[str]:
         return pulumi.get(self, "vendor_name")
 
 
@@ -297,21 +234,7 @@ class AwaitableGetProductLicenseResult(GetProductLicenseResult):
 def get_product_license(product_license_id: Optional[str] = None,
                         opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetProductLicenseResult:
     """
-    This data source provides details about a specific Product License resource in Oracle Cloud Infrastructure License Manager service.
-
-    Retrieves product license details by product license ID in a given compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_product_license = oci.LicenseManager.get_product_license(product_license_id=oci_license_manager_product_license["test_product_license"]["id"])
-    ```
-
-
-    :param str product_license_id: Unique product license identifier.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['productLicenseId'] = product_license_id
@@ -347,20 +270,6 @@ def get_product_license(product_license_id: Optional[str] = None,
 def get_product_license_output(product_license_id: Optional[pulumi.Input[str]] = None,
                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetProductLicenseResult]:
     """
-    This data source provides details about a specific Product License resource in Oracle Cloud Infrastructure License Manager service.
-
-    Retrieves product license details by product license ID in a given compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_product_license = oci.LicenseManager.get_product_license(product_license_id=oci_license_manager_product_license["test_product_license"]["id"])
-    ```
-
-
-    :param str product_license_id: Unique product license identifier.
+    Use this data source to access information about an existing resource.
     """
     ...

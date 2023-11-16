@@ -53,25 +53,25 @@ namespace Pulumi.Oci.Identity
         /// The detailed status of INACTIVE lifecycleState.
         /// </summary>
         [Output("inactiveStatus")]
-        public Output<string> InactiveStatus { get; private set; } = null!;
+        public Output<string?> InactiveStatus { get; private set; } = null!;
 
         /// <summary>
         /// The user's password for the Console.
         /// </summary>
         [Output("password")]
-        public Output<string> Password { get; private set; } = null!;
+        public Output<string?> Password { get; private set; } = null!;
 
         /// <summary>
         /// The password's current state.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// Date and time the password was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// The OCID of the user.

@@ -16,17 +16,17 @@ namespace Pulumi.Oci.ComputeCloud.Outputs
         /// <summary>
         /// The uplink Hot Standby Router Protocol (HSRP) group value for the switch in the Compute Cloud@Customer infrastructure.
         /// </summary>
-        public readonly int UplinkHsrpGroup;
+        public readonly int? UplinkHsrpGroup;
         /// <summary>
         /// The virtual local area network (VLAN) identifier used to connect to the uplink (only access mode is supported).
         /// </summary>
-        public readonly int UplinkVlan;
+        public readonly int? UplinkVlan;
 
         [OutputConstructor]
         private GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStaticResult(
-            int uplinkHsrpGroup,
+            int? uplinkHsrpGroup,
 
-            int uplinkVlan)
+            int? uplinkVlan)
         {
             UplinkHsrpGroup = uplinkHsrpGroup;
             UplinkVlan = uplinkVlan;

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Catalog Types in Oracle Cloud Infrastructure Data Catalog service.
@@ -91,7 +90,7 @@ type GetCatalogTypesResult struct {
 	Fields           []string                `pulumi:"fields"`
 	Filters          []GetCatalogTypesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Indicates whether the type is approved for use as a classifying object.
 	IsApproved *string `pulumi:"isApproved"`
 	// Indicates whether the type is internal, making it unavailable for use by metadata elements.
@@ -163,12 +162,6 @@ func (o GetCatalogTypesResultOutput) ToGetCatalogTypesResultOutputWithContext(ct
 	return o
 }
 
-func (o GetCatalogTypesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetCatalogTypesResult] {
-	return pulumix.Output[GetCatalogTypesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The data catalog's OCID.
 func (o GetCatalogTypesResultOutput) CatalogId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetCatalogTypesResult) string { return v.CatalogId }).(pulumi.StringOutput)
@@ -188,8 +181,8 @@ func (o GetCatalogTypesResultOutput) Filters() GetCatalogTypesFilterArrayOutput 
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetCatalogTypesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCatalogTypesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetCatalogTypesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCatalogTypesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Indicates whether the type is approved for use as a classifying object.

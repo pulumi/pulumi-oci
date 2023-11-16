@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Fusion Environment Family resource in Oracle Cloud Infrastructure Fusion Apps service.
@@ -60,31 +59,31 @@ type GetFusionEnvironmentFamilyArgs struct {
 // A collection of values returned by getFusionEnvironmentFamily.
 type GetFusionEnvironmentFamilyResult struct {
 	// The OCID of the compartment where the environment family is located.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A friendly name for the environment family. The name must contain only letters, numbers, dashes, and underscores. Can be changed later.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// The policy that specifies the maintenance and upgrade preferences for an environment. For more information about the options, see [Understanding Environment Maintenance](https://docs.cloud.oracle.com/iaas/Content/fusion-applications/plan-environment-family.htm#about-env-maintenance).
 	FamilyMaintenancePolicies []GetFusionEnvironmentFamilyFamilyMaintenancePolicy `pulumi:"familyMaintenancePolicies"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags              map[string]interface{} `pulumi:"freeformTags"`
 	FusionEnvironmentFamilyId string                 `pulumi:"fusionEnvironmentFamilyId"`
 	// The unique identifier (OCID) of the environment family. Can't be changed after creation.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// When set to True, a subscription update is required for the environment family.
-	IsSubscriptionUpdateNeeded bool `pulumi:"isSubscriptionUpdateNeeded"`
+	IsSubscriptionUpdateNeeded *bool `pulumi:"isSubscriptionUpdateNeeded"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// The current state of the FusionEnvironmentFamily.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The list of the IDs of the applications subscriptions that are associated with the environment family.
 	SubscriptionIds []string `pulumi:"subscriptionIds"`
 	// Environment Specific Guid/ System Name
-	SystemName string `pulumi:"systemName"`
+	SystemName *string `pulumi:"systemName"`
 	// The time the the FusionEnvironmentFamily was created. An RFC3339 formatted datetime string.
-	TimeCreated string `pulumi:"timeCreated"`
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeCreated *string `pulumi:"timeCreated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 func GetFusionEnvironmentFamilyOutput(ctx *pulumi.Context, args GetFusionEnvironmentFamilyOutputArgs, opts ...pulumi.InvokeOption) GetFusionEnvironmentFamilyResultOutput {
@@ -125,15 +124,9 @@ func (o GetFusionEnvironmentFamilyResultOutput) ToGetFusionEnvironmentFamilyResu
 	return o
 }
 
-func (o GetFusionEnvironmentFamilyResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetFusionEnvironmentFamilyResult] {
-	return pulumix.Output[GetFusionEnvironmentFamilyResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the compartment where the environment family is located.
-func (o GetFusionEnvironmentFamilyResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentFamilyResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetFusionEnvironmentFamilyResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentFamilyResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -142,8 +135,8 @@ func (o GetFusionEnvironmentFamilyResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // A friendly name for the environment family. The name must contain only letters, numbers, dashes, and underscores. Can be changed later.
-func (o GetFusionEnvironmentFamilyResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentFamilyResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetFusionEnvironmentFamilyResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentFamilyResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // The policy that specifies the maintenance and upgrade preferences for an environment. For more information about the options, see [Understanding Environment Maintenance](https://docs.cloud.oracle.com/iaas/Content/fusion-applications/plan-environment-family.htm#about-env-maintenance).
@@ -163,23 +156,23 @@ func (o GetFusionEnvironmentFamilyResultOutput) FusionEnvironmentFamilyId() pulu
 }
 
 // The unique identifier (OCID) of the environment family. Can't be changed after creation.
-func (o GetFusionEnvironmentFamilyResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentFamilyResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetFusionEnvironmentFamilyResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentFamilyResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // When set to True, a subscription update is required for the environment family.
-func (o GetFusionEnvironmentFamilyResultOutput) IsSubscriptionUpdateNeeded() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentFamilyResult) bool { return v.IsSubscriptionUpdateNeeded }).(pulumi.BoolOutput)
+func (o GetFusionEnvironmentFamilyResultOutput) IsSubscriptionUpdateNeeded() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentFamilyResult) *bool { return v.IsSubscriptionUpdateNeeded }).(pulumi.BoolPtrOutput)
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-func (o GetFusionEnvironmentFamilyResultOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentFamilyResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o GetFusionEnvironmentFamilyResultOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentFamilyResult) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the FusionEnvironmentFamily.
-func (o GetFusionEnvironmentFamilyResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentFamilyResult) string { return v.State }).(pulumi.StringOutput)
+func (o GetFusionEnvironmentFamilyResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentFamilyResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The list of the IDs of the applications subscriptions that are associated with the environment family.
@@ -188,17 +181,17 @@ func (o GetFusionEnvironmentFamilyResultOutput) SubscriptionIds() pulumi.StringA
 }
 
 // Environment Specific Guid/ System Name
-func (o GetFusionEnvironmentFamilyResultOutput) SystemName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentFamilyResult) string { return v.SystemName }).(pulumi.StringOutput)
+func (o GetFusionEnvironmentFamilyResultOutput) SystemName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentFamilyResult) *string { return v.SystemName }).(pulumi.StringPtrOutput)
 }
 
 // The time the the FusionEnvironmentFamily was created. An RFC3339 formatted datetime string.
-func (o GetFusionEnvironmentFamilyResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentFamilyResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetFusionEnvironmentFamilyResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentFamilyResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
-func (o GetFusionEnvironmentFamilyResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentFamilyResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o GetFusionEnvironmentFamilyResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentFamilyResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 func init() {

@@ -16,32 +16,32 @@ namespace Pulumi.Oci.Database.Outputs
         /// <summary>
         /// (Updatable) The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// A valid Oracle Database version. To get a list of supported versions, use the [ListDbVersions](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/DbVersionSummary/ListDbVersions) operation.
         /// </summary>
-        public readonly string DbVersion;
+        public readonly string? DbVersion;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// A filter to return only resources that match the entire display name given. The match is not case sensitive.
         /// </summary>
-        public readonly string DisplayName;
-        public readonly int DownloadOneoffPatchTrigger;
+        public readonly string? DisplayName;
+        public readonly int? DownloadOneoffPatchTrigger;
         /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the one-off patch.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Detailed message for the lifecycle state.
         /// </summary>
-        public readonly string LifecycleDetails;
+        public readonly string? LifecycleDetails;
         /// <summary>
         /// List of one-off patches for Database Homes.
         /// </summary>
@@ -49,65 +49,65 @@ namespace Pulumi.Oci.Database.Outputs
         /// <summary>
         /// The PSU or PBP or Release Updates. To get a list of supported versions, use the [ListDbVersions](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/DbVersionSummary/ListDbVersions) operation.
         /// </summary>
-        public readonly string ReleaseUpdate;
+        public readonly string? ReleaseUpdate;
         /// <summary>
         /// SHA-256 checksum of the one-off patch.
         /// </summary>
-        public readonly string Sha256sum;
+        public readonly string? Sha256sum;
         /// <summary>
         /// The size of one-off patch in kilobytes.
         /// </summary>
-        public readonly double SizeInKbs;
+        public readonly double? SizeInKbs;
         /// <summary>
         /// A filter to return only resources that match the given lifecycle state exactly
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// The date and time one-off patch was created.
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The date and time until which the one-off patch will be available for download.
         /// </summary>
-        public readonly string TimeOfExpiration;
+        public readonly string? TimeOfExpiration;
         /// <summary>
         /// The date and time one-off patch was updated.
         /// </summary>
-        public readonly string TimeUpdated;
+        public readonly string? TimeUpdated;
 
         [OutputConstructor]
         private GetOneoffPatchesOneoffPatchResult(
-            string compartmentId,
+            string? compartmentId,
 
-            string dbVersion,
+            string? dbVersion,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string displayName,
+            string? displayName,
 
-            int downloadOneoffPatchTrigger,
+            int? downloadOneoffPatchTrigger,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string id,
+            string? id,
 
-            string lifecycleDetails,
+            string? lifecycleDetails,
 
             ImmutableArray<string> oneOffPatches,
 
-            string releaseUpdate,
+            string? releaseUpdate,
 
-            string sha256sum,
+            string? sha256sum,
 
-            double sizeInKbs,
+            double? sizeInKbs,
 
-            string state,
+            string? state,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeOfExpiration,
+            string? timeOfExpiration,
 
-            string timeUpdated)
+            string? timeUpdated)
         {
             CompartmentId = compartmentId;
             DbVersion = dbVersion;

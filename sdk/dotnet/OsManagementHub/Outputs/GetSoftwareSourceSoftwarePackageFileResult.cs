@@ -16,41 +16,41 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
         /// <summary>
         /// Checksum of the file.
         /// </summary>
-        public readonly string Checksum;
+        public readonly string? Checksum;
         /// <summary>
         /// Type of the checksum.
         /// </summary>
-        public readonly string ChecksumType;
+        public readonly string? ChecksumType;
         /// <summary>
         /// File path.
         /// </summary>
-        public readonly string Path;
+        public readonly string? Path;
         /// <summary>
         /// Size of the package in bytes.
         /// </summary>
-        public readonly string SizeInBytes;
+        public readonly string? SizeInBytes;
         /// <summary>
         /// The date and time of the last modification to this file, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
         /// </summary>
-        public readonly string TimeModified;
+        public readonly string? TimeModified;
         /// <summary>
         /// Type of the package.
         /// </summary>
-        public readonly string Type;
+        public readonly string? Type;
 
         [OutputConstructor]
         private GetSoftwareSourceSoftwarePackageFileResult(
-            string checksum,
+            string? checksum,
 
-            string checksumType,
+            string? checksumType,
 
-            string path,
+            string? path,
 
-            string sizeInBytes,
+            string? sizeInBytes,
 
-            string timeModified,
+            string? timeModified,
 
-            string type)
+            string? type)
         {
             Checksum = checksum;
             ChecksumType = checksumType;

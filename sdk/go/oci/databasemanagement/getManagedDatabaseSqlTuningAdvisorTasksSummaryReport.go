@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Managed Database Sql Tuning Advisor Tasks Summary Report resource in Oracle Cloud Infrastructure Database Management service.
@@ -80,7 +79,7 @@ type GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportResult struct {
 	BeginExecIdGreaterThanOrEqualTo *string `pulumi:"beginExecIdGreaterThanOrEqualTo"`
 	EndExecIdLessThanOrEqualTo      *string `pulumi:"endExecIdLessThanOrEqualTo"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The list of object findings related to indexes.
 	IndexFindings     []GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportIndexFinding `pulumi:"indexFindings"`
 	ManagedDatabaseId string                                                             `pulumi:"managedDatabaseId"`
@@ -146,12 +145,6 @@ func (o GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportResultOutput) ToGetM
 	return o
 }
 
-func (o GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportResult] {
-	return pulumix.Output[GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportResultOutput) BeginExecIdGreaterThanOrEqualTo() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportResult) *string {
 		return v.BeginExecIdGreaterThanOrEqualTo
@@ -165,8 +158,8 @@ func (o GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportResultOutput) EndExe
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The list of object findings related to indexes.

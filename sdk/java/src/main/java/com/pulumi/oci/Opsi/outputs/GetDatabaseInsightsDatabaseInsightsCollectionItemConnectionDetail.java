@@ -9,6 +9,8 @@ import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetail {
@@ -16,63 +18,63 @@ public final class GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDe
      * @return Name of the listener host that will be used to create the connect string to the database.
      * 
      */
-    private String hostName;
+    private @Nullable String hostName;
     /**
      * @return List of hosts and port for private endpoint accessed database resource.
      * 
      */
-    private List<GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailHost> hosts;
+    private @Nullable List<GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailHost> hosts;
     /**
      * @return Listener port number used for connection requests.
      * 
      */
-    private Integer port;
+    private @Nullable Integer port;
     /**
      * @return Protocol used for connection requests for private endpoint accssed database resource.
      * 
      */
-    private String protocol;
+    private @Nullable String protocol;
     /**
      * @return Database service name used for connection requests.
      * 
      */
-    private String serviceName;
+    private @Nullable String serviceName;
 
     private GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetail() {}
     /**
      * @return Name of the listener host that will be used to create the connect string to the database.
      * 
      */
-    public String hostName() {
-        return this.hostName;
+    public Optional<String> hostName() {
+        return Optional.ofNullable(this.hostName);
     }
     /**
      * @return List of hosts and port for private endpoint accessed database resource.
      * 
      */
     public List<GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailHost> hosts() {
-        return this.hosts;
+        return this.hosts == null ? List.of() : this.hosts;
     }
     /**
      * @return Listener port number used for connection requests.
      * 
      */
-    public Integer port() {
-        return this.port;
+    public Optional<Integer> port() {
+        return Optional.ofNullable(this.port);
     }
     /**
      * @return Protocol used for connection requests for private endpoint accssed database resource.
      * 
      */
-    public String protocol() {
-        return this.protocol;
+    public Optional<String> protocol() {
+        return Optional.ofNullable(this.protocol);
     }
     /**
      * @return Database service name used for connection requests.
      * 
      */
-    public String serviceName() {
-        return this.serviceName;
+    public Optional<String> serviceName() {
+        return Optional.ofNullable(this.serviceName);
     }
 
     public static Builder builder() {
@@ -84,11 +86,11 @@ public final class GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDe
     }
     @CustomType.Builder
     public static final class Builder {
-        private String hostName;
-        private List<GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailHost> hosts;
-        private Integer port;
-        private String protocol;
-        private String serviceName;
+        private @Nullable String hostName;
+        private @Nullable List<GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailHost> hosts;
+        private @Nullable Integer port;
+        private @Nullable String protocol;
+        private @Nullable String serviceName;
         public Builder() {}
         public Builder(GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetail defaults) {
     	      Objects.requireNonNull(defaults);
@@ -100,31 +102,31 @@ public final class GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDe
         }
 
         @CustomType.Setter
-        public Builder hostName(String hostName) {
-            this.hostName = Objects.requireNonNull(hostName);
+        public Builder hostName(@Nullable String hostName) {
+            this.hostName = hostName;
             return this;
         }
         @CustomType.Setter
-        public Builder hosts(List<GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailHost> hosts) {
-            this.hosts = Objects.requireNonNull(hosts);
+        public Builder hosts(@Nullable List<GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailHost> hosts) {
+            this.hosts = hosts;
             return this;
         }
         public Builder hosts(GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailHost... hosts) {
             return hosts(List.of(hosts));
         }
         @CustomType.Setter
-        public Builder port(Integer port) {
-            this.port = Objects.requireNonNull(port);
+        public Builder port(@Nullable Integer port) {
+            this.port = port;
             return this;
         }
         @CustomType.Setter
-        public Builder protocol(String protocol) {
-            this.protocol = Objects.requireNonNull(protocol);
+        public Builder protocol(@Nullable String protocol) {
+            this.protocol = protocol;
             return this;
         }
         @CustomType.Setter
-        public Builder serviceName(String serviceName) {
-            this.serviceName = Objects.requireNonNull(serviceName);
+        public Builder serviceName(@Nullable String serviceName) {
+            this.serviceName = serviceName;
             return this;
         }
         public GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetail build() {

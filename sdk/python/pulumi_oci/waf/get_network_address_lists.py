@@ -46,17 +46,11 @@ class GetNetworkAddressListsResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        NetworkAddressList display name, can be renamed.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -67,25 +61,16 @@ class GetNetworkAddressListsResult:
     @property
     @pulumi.getter
     def id(self) -> Optional[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the NetworkAddressList.
-        """
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="networkAddressListCollections")
-    def network_address_list_collections(self) -> Sequence['outputs.GetNetworkAddressListsNetworkAddressListCollectionResult']:
-        """
-        The list of network_address_list_collection.
-        """
+    def network_address_list_collections(self) -> Optional[Sequence['outputs.GetNetworkAddressListsNetworkAddressListCollectionResult']]:
         return pulumi.get(self, "network_address_list_collections")
 
     @property
     @pulumi.getter
     def states(self) -> Optional[Sequence[str]]:
-        """
-        The current state of the NetworkAddressList.
-        """
         return pulumi.get(self, "states")
 
 
@@ -110,27 +95,7 @@ def get_network_address_lists(compartment_id: Optional[str] = None,
                               states: Optional[Sequence[str]] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetNetworkAddressListsResult:
     """
-    This data source provides the list of Network Address Lists in Oracle Cloud Infrastructure Waf service.
-
-    Gets a list of all NetworkAddressLists in a compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_network_address_lists = oci.Waf.get_network_address_lists(compartment_id=var["compartment_id"],
-        display_name=var["network_address_list_display_name"],
-        id=var["network_address_list_id"],
-        states=var["network_address_list_state"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
-    :param str display_name: A filter to return only resources that match the entire display name given.
-    :param str id: A filter to return only the NetworkAddressList with the given [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param Sequence[str] states: A filter to return only resources that match the given lifecycleState.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -158,26 +123,6 @@ def get_network_address_lists_output(compartment_id: Optional[pulumi.Input[str]]
                                      states: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNetworkAddressListsResult]:
     """
-    This data source provides the list of Network Address Lists in Oracle Cloud Infrastructure Waf service.
-
-    Gets a list of all NetworkAddressLists in a compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_network_address_lists = oci.Waf.get_network_address_lists(compartment_id=var["compartment_id"],
-        display_name=var["network_address_list_display_name"],
-        id=var["network_address_list_id"],
-        states=var["network_address_list_state"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
-    :param str display_name: A filter to return only resources that match the entire display name given.
-    :param str id: A filter to return only the NetworkAddressList with the given [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param Sequence[str] states: A filter to return only resources that match the given lifecycleState.
+    Use this data source to access information about an existing resource.
     """
     ...

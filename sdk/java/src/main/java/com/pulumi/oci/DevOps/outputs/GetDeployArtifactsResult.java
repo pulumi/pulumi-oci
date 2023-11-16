@@ -23,7 +23,7 @@ public final class GetDeployArtifactsResult {
      * @return The list of deploy_artifact_collection.
      * 
      */
-    private List<GetDeployArtifactsDeployArtifactCollection> deployArtifactCollections;
+    private @Nullable List<GetDeployArtifactsDeployArtifactCollection> deployArtifactCollections;
     /**
      * @return Deployment artifact identifier, which can be renamed and is not necessarily unique. Avoid entering confidential information.
      * 
@@ -59,7 +59,7 @@ public final class GetDeployArtifactsResult {
      * 
      */
     public List<GetDeployArtifactsDeployArtifactCollection> deployArtifactCollections() {
-        return this.deployArtifactCollections;
+        return this.deployArtifactCollections == null ? List.of() : this.deployArtifactCollections;
     }
     /**
      * @return Deployment artifact identifier, which can be renamed and is not necessarily unique. Avoid entering confidential information.
@@ -103,7 +103,7 @@ public final class GetDeployArtifactsResult {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable String compartmentId;
-        private List<GetDeployArtifactsDeployArtifactCollection> deployArtifactCollections;
+        private @Nullable List<GetDeployArtifactsDeployArtifactCollection> deployArtifactCollections;
         private @Nullable String displayName;
         private @Nullable List<GetDeployArtifactsFilter> filters;
         private @Nullable String id;
@@ -127,8 +127,8 @@ public final class GetDeployArtifactsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder deployArtifactCollections(List<GetDeployArtifactsDeployArtifactCollection> deployArtifactCollections) {
-            this.deployArtifactCollections = Objects.requireNonNull(deployArtifactCollections);
+        public Builder deployArtifactCollections(@Nullable List<GetDeployArtifactsDeployArtifactCollection> deployArtifactCollections) {
+            this.deployArtifactCollections = deployArtifactCollections;
             return this;
         }
         public Builder deployArtifactCollections(GetDeployArtifactsDeployArtifactCollection... deployArtifactCollections) {

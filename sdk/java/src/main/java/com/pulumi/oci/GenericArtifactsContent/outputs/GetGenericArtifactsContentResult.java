@@ -6,6 +6,8 @@ package com.pulumi.oci.GenericArtifactsContent.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetGenericArtifactsContentResult {
@@ -14,7 +16,7 @@ public final class GetGenericArtifactsContentResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
 
     private GetGenericArtifactsContentResult() {}
     public String artifactId() {
@@ -24,8 +26,8 @@ public final class GetGenericArtifactsContentResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
 
     public static Builder builder() {
@@ -38,7 +40,7 @@ public final class GetGenericArtifactsContentResult {
     @CustomType.Builder
     public static final class Builder {
         private String artifactId;
-        private String id;
+        private @Nullable String id;
         public Builder() {}
         public Builder(GetGenericArtifactsContentResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -52,8 +54,8 @@ public final class GetGenericArtifactsContentResult {
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         public GetGenericArtifactsContentResult build() {

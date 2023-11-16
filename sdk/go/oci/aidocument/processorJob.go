@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Processor Job resource in Oracle Cloud Infrastructure Ai Document service.
@@ -90,25 +89,25 @@ type ProcessorJob struct {
 	// The compartment identifier.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// The display name of the processor job.
-	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrOutput `pulumi:"displayName"`
 	// The location of the inputs.
 	InputLocation ProcessorJobInputLocationOutput `pulumi:"inputLocation"`
 	// The detailed status of FAILED state.
-	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrOutput `pulumi:"lifecycleDetails"`
 	// The object storage location where to store analysis results.
 	OutputLocation ProcessorJobOutputLocationOutput `pulumi:"outputLocation"`
 	// How much progress the operation has made, compared to the total amount of work to be performed.
-	PercentComplete pulumi.Float64Output `pulumi:"percentComplete"`
+	PercentComplete pulumi.Float64PtrOutput `pulumi:"percentComplete"`
 	// The configuration of a processor.
 	ProcessorConfig ProcessorJobProcessorConfigOutput `pulumi:"processorConfig"`
 	// The current state of the processor job.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// The job acceptance time.
-	TimeAccepted pulumi.StringOutput `pulumi:"timeAccepted"`
+	TimeAccepted pulumi.StringPtrOutput `pulumi:"timeAccepted"`
 	// The job finish time.
-	TimeFinished pulumi.StringOutput `pulumi:"timeFinished"`
+	TimeFinished pulumi.StringPtrOutput `pulumi:"timeFinished"`
 	// The job start time.
-	TimeStarted pulumi.StringOutput `pulumi:"timeStarted"`
+	TimeStarted pulumi.StringPtrOutput `pulumi:"timeStarted"`
 }
 
 // NewProcessorJob registers a new resource with the given unique name, arguments, and options.
@@ -256,12 +255,6 @@ func (i *ProcessorJob) ToProcessorJobOutputWithContext(ctx context.Context) Proc
 	return pulumi.ToOutputWithContext(ctx, i).(ProcessorJobOutput)
 }
 
-func (i *ProcessorJob) ToOutput(ctx context.Context) pulumix.Output[*ProcessorJob] {
-	return pulumix.Output[*ProcessorJob]{
-		OutputState: i.ToProcessorJobOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ProcessorJobArrayInput is an input type that accepts ProcessorJobArray and ProcessorJobArrayOutput values.
 // You can construct a concrete instance of `ProcessorJobArrayInput` via:
 //
@@ -285,12 +278,6 @@ func (i ProcessorJobArray) ToProcessorJobArrayOutput() ProcessorJobArrayOutput {
 
 func (i ProcessorJobArray) ToProcessorJobArrayOutputWithContext(ctx context.Context) ProcessorJobArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ProcessorJobArrayOutput)
-}
-
-func (i ProcessorJobArray) ToOutput(ctx context.Context) pulumix.Output[[]*ProcessorJob] {
-	return pulumix.Output[[]*ProcessorJob]{
-		OutputState: i.ToProcessorJobArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // ProcessorJobMapInput is an input type that accepts ProcessorJobMap and ProcessorJobMapOutput values.
@@ -318,12 +305,6 @@ func (i ProcessorJobMap) ToProcessorJobMapOutputWithContext(ctx context.Context)
 	return pulumi.ToOutputWithContext(ctx, i).(ProcessorJobMapOutput)
 }
 
-func (i ProcessorJobMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*ProcessorJob] {
-	return pulumix.Output[map[string]*ProcessorJob]{
-		OutputState: i.ToProcessorJobMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ProcessorJobOutput struct{ *pulumi.OutputState }
 
 func (ProcessorJobOutput) ElementType() reflect.Type {
@@ -338,20 +319,14 @@ func (o ProcessorJobOutput) ToProcessorJobOutputWithContext(ctx context.Context)
 	return o
 }
 
-func (o ProcessorJobOutput) ToOutput(ctx context.Context) pulumix.Output[*ProcessorJob] {
-	return pulumix.Output[*ProcessorJob]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The compartment identifier.
 func (o ProcessorJobOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *ProcessorJob) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
 // The display name of the processor job.
-func (o ProcessorJobOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v *ProcessorJob) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+func (o ProcessorJobOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ProcessorJob) pulumi.StringPtrOutput { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // The location of the inputs.
@@ -360,8 +335,8 @@ func (o ProcessorJobOutput) InputLocation() ProcessorJobInputLocationOutput {
 }
 
 // The detailed status of FAILED state.
-func (o ProcessorJobOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v *ProcessorJob) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o ProcessorJobOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ProcessorJob) pulumi.StringPtrOutput { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // The object storage location where to store analysis results.
@@ -370,8 +345,8 @@ func (o ProcessorJobOutput) OutputLocation() ProcessorJobOutputLocationOutput {
 }
 
 // How much progress the operation has made, compared to the total amount of work to be performed.
-func (o ProcessorJobOutput) PercentComplete() pulumi.Float64Output {
-	return o.ApplyT(func(v *ProcessorJob) pulumi.Float64Output { return v.PercentComplete }).(pulumi.Float64Output)
+func (o ProcessorJobOutput) PercentComplete() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v *ProcessorJob) pulumi.Float64PtrOutput { return v.PercentComplete }).(pulumi.Float64PtrOutput)
 }
 
 // The configuration of a processor.
@@ -380,23 +355,23 @@ func (o ProcessorJobOutput) ProcessorConfig() ProcessorJobProcessorConfigOutput 
 }
 
 // The current state of the processor job.
-func (o ProcessorJobOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *ProcessorJob) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o ProcessorJobOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ProcessorJob) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The job acceptance time.
-func (o ProcessorJobOutput) TimeAccepted() pulumi.StringOutput {
-	return o.ApplyT(func(v *ProcessorJob) pulumi.StringOutput { return v.TimeAccepted }).(pulumi.StringOutput)
+func (o ProcessorJobOutput) TimeAccepted() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ProcessorJob) pulumi.StringPtrOutput { return v.TimeAccepted }).(pulumi.StringPtrOutput)
 }
 
 // The job finish time.
-func (o ProcessorJobOutput) TimeFinished() pulumi.StringOutput {
-	return o.ApplyT(func(v *ProcessorJob) pulumi.StringOutput { return v.TimeFinished }).(pulumi.StringOutput)
+func (o ProcessorJobOutput) TimeFinished() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ProcessorJob) pulumi.StringPtrOutput { return v.TimeFinished }).(pulumi.StringPtrOutput)
 }
 
 // The job start time.
-func (o ProcessorJobOutput) TimeStarted() pulumi.StringOutput {
-	return o.ApplyT(func(v *ProcessorJob) pulumi.StringOutput { return v.TimeStarted }).(pulumi.StringOutput)
+func (o ProcessorJobOutput) TimeStarted() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ProcessorJob) pulumi.StringPtrOutput { return v.TimeStarted }).(pulumi.StringPtrOutput)
 }
 
 type ProcessorJobArrayOutput struct{ *pulumi.OutputState }
@@ -411,12 +386,6 @@ func (o ProcessorJobArrayOutput) ToProcessorJobArrayOutput() ProcessorJobArrayOu
 
 func (o ProcessorJobArrayOutput) ToProcessorJobArrayOutputWithContext(ctx context.Context) ProcessorJobArrayOutput {
 	return o
-}
-
-func (o ProcessorJobArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*ProcessorJob] {
-	return pulumix.Output[[]*ProcessorJob]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ProcessorJobArrayOutput) Index(i pulumi.IntInput) ProcessorJobOutput {
@@ -437,12 +406,6 @@ func (o ProcessorJobMapOutput) ToProcessorJobMapOutput() ProcessorJobMapOutput {
 
 func (o ProcessorJobMapOutput) ToProcessorJobMapOutputWithContext(ctx context.Context) ProcessorJobMapOutput {
 	return o
-}
-
-func (o ProcessorJobMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*ProcessorJob] {
-	return pulumix.Output[map[string]*ProcessorJob]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ProcessorJobMapOutput) MapIndex(k pulumi.StringInput) ProcessorJobOutput {

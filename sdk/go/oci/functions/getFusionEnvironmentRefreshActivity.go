@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Fusion Environment Refresh Activity resource in Oracle Cloud Infrastructure Fusion Apps service.
@@ -63,31 +62,31 @@ type GetFusionEnvironmentRefreshActivityArgs struct {
 // A collection of values returned by getFusionEnvironmentRefreshActivity.
 type GetFusionEnvironmentRefreshActivityResult struct {
 	// A friendly name for the refresh activity. Can be changed later.
-	DisplayName         string `pulumi:"displayName"`
-	FusionEnvironmentId string `pulumi:"fusionEnvironmentId"`
+	DisplayName         *string `pulumi:"displayName"`
+	FusionEnvironmentId string  `pulumi:"fusionEnvironmentId"`
 	// The unique identifier (OCID) of the refresh activity. Can't be changed after creation.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-	LifecycleDetails  string `pulumi:"lifecycleDetails"`
-	RefreshActivityId string `pulumi:"refreshActivityId"`
+	LifecycleDetails  *string `pulumi:"lifecycleDetails"`
+	RefreshActivityId string  `pulumi:"refreshActivityId"`
 	// Details of refresh investigation information, each item represents a different issue.
 	RefreshIssueDetailsLists []GetFusionEnvironmentRefreshActivityRefreshIssueDetailsList `pulumi:"refreshIssueDetailsLists"`
 	// Service availability / impact during refresh activity execution up down
-	ServiceAvailability string `pulumi:"serviceAvailability"`
+	ServiceAvailability *string `pulumi:"serviceAvailability"`
 	// The OCID of the Fusion environment that is the source environment for the refresh.
-	SourceFusionEnvironmentId string `pulumi:"sourceFusionEnvironmentId"`
+	SourceFusionEnvironmentId *string `pulumi:"sourceFusionEnvironmentId"`
 	// The current state of the refreshActivity.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The time the refresh activity record was created. An RFC3339 formatted datetime string.
-	TimeAccepted string `pulumi:"timeAccepted"`
+	TimeAccepted *string `pulumi:"timeAccepted"`
 	// The time the refresh activity is scheduled to end. An RFC3339 formatted datetime string.
-	TimeExpectedFinish string `pulumi:"timeExpectedFinish"`
+	TimeExpectedFinish *string `pulumi:"timeExpectedFinish"`
 	// The time the refresh activity actually completed / cancelled / failed. An RFC3339 formatted datetime string.
-	TimeFinished string `pulumi:"timeFinished"`
+	TimeFinished *string `pulumi:"timeFinished"`
 	// The date and time of the most recent source environment backup used for the environment refresh.
-	TimeOfRestorationPoint string `pulumi:"timeOfRestorationPoint"`
+	TimeOfRestorationPoint *string `pulumi:"timeOfRestorationPoint"`
 	// The time the refresh activity record was updated. An RFC3339 formatted datetime string.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 func GetFusionEnvironmentRefreshActivityOutput(ctx *pulumi.Context, args GetFusionEnvironmentRefreshActivityOutputArgs, opts ...pulumi.InvokeOption) GetFusionEnvironmentRefreshActivityResultOutput {
@@ -130,15 +129,9 @@ func (o GetFusionEnvironmentRefreshActivityResultOutput) ToGetFusionEnvironmentR
 	return o
 }
 
-func (o GetFusionEnvironmentRefreshActivityResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetFusionEnvironmentRefreshActivityResult] {
-	return pulumix.Output[GetFusionEnvironmentRefreshActivityResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // A friendly name for the refresh activity. Can be changed later.
-func (o GetFusionEnvironmentRefreshActivityResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentRefreshActivityResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetFusionEnvironmentRefreshActivityResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentRefreshActivityResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 func (o GetFusionEnvironmentRefreshActivityResultOutput) FusionEnvironmentId() pulumi.StringOutput {
@@ -146,13 +139,13 @@ func (o GetFusionEnvironmentRefreshActivityResultOutput) FusionEnvironmentId() p
 }
 
 // The unique identifier (OCID) of the refresh activity. Can't be changed after creation.
-func (o GetFusionEnvironmentRefreshActivityResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentRefreshActivityResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetFusionEnvironmentRefreshActivityResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentRefreshActivityResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-func (o GetFusionEnvironmentRefreshActivityResultOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentRefreshActivityResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o GetFusionEnvironmentRefreshActivityResultOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentRefreshActivityResult) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 func (o GetFusionEnvironmentRefreshActivityResultOutput) RefreshActivityId() pulumi.StringOutput {
@@ -167,43 +160,43 @@ func (o GetFusionEnvironmentRefreshActivityResultOutput) RefreshIssueDetailsList
 }
 
 // Service availability / impact during refresh activity execution up down
-func (o GetFusionEnvironmentRefreshActivityResultOutput) ServiceAvailability() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentRefreshActivityResult) string { return v.ServiceAvailability }).(pulumi.StringOutput)
+func (o GetFusionEnvironmentRefreshActivityResultOutput) ServiceAvailability() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentRefreshActivityResult) *string { return v.ServiceAvailability }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the Fusion environment that is the source environment for the refresh.
-func (o GetFusionEnvironmentRefreshActivityResultOutput) SourceFusionEnvironmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentRefreshActivityResult) string { return v.SourceFusionEnvironmentId }).(pulumi.StringOutput)
+func (o GetFusionEnvironmentRefreshActivityResultOutput) SourceFusionEnvironmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentRefreshActivityResult) *string { return v.SourceFusionEnvironmentId }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the refreshActivity.
-func (o GetFusionEnvironmentRefreshActivityResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentRefreshActivityResult) string { return v.State }).(pulumi.StringOutput)
+func (o GetFusionEnvironmentRefreshActivityResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentRefreshActivityResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The time the refresh activity record was created. An RFC3339 formatted datetime string.
-func (o GetFusionEnvironmentRefreshActivityResultOutput) TimeAccepted() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentRefreshActivityResult) string { return v.TimeAccepted }).(pulumi.StringOutput)
+func (o GetFusionEnvironmentRefreshActivityResultOutput) TimeAccepted() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentRefreshActivityResult) *string { return v.TimeAccepted }).(pulumi.StringPtrOutput)
 }
 
 // The time the refresh activity is scheduled to end. An RFC3339 formatted datetime string.
-func (o GetFusionEnvironmentRefreshActivityResultOutput) TimeExpectedFinish() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentRefreshActivityResult) string { return v.TimeExpectedFinish }).(pulumi.StringOutput)
+func (o GetFusionEnvironmentRefreshActivityResultOutput) TimeExpectedFinish() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentRefreshActivityResult) *string { return v.TimeExpectedFinish }).(pulumi.StringPtrOutput)
 }
 
 // The time the refresh activity actually completed / cancelled / failed. An RFC3339 formatted datetime string.
-func (o GetFusionEnvironmentRefreshActivityResultOutput) TimeFinished() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentRefreshActivityResult) string { return v.TimeFinished }).(pulumi.StringOutput)
+func (o GetFusionEnvironmentRefreshActivityResultOutput) TimeFinished() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentRefreshActivityResult) *string { return v.TimeFinished }).(pulumi.StringPtrOutput)
 }
 
 // The date and time of the most recent source environment backup used for the environment refresh.
-func (o GetFusionEnvironmentRefreshActivityResultOutput) TimeOfRestorationPoint() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentRefreshActivityResult) string { return v.TimeOfRestorationPoint }).(pulumi.StringOutput)
+func (o GetFusionEnvironmentRefreshActivityResultOutput) TimeOfRestorationPoint() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentRefreshActivityResult) *string { return v.TimeOfRestorationPoint }).(pulumi.StringPtrOutput)
 }
 
 // The time the refresh activity record was updated. An RFC3339 formatted datetime string.
-func (o GetFusionEnvironmentRefreshActivityResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentRefreshActivityResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o GetFusionEnvironmentRefreshActivityResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentRefreshActivityResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 func init() {

@@ -79,7 +79,7 @@ export interface GetNotificationTopicsResult {
     /**
      * The list of notification_topics.
      */
-    readonly notificationTopics: outputs.Ons.GetNotificationTopicsNotificationTopic[];
+    readonly notificationTopics?: outputs.Ons.GetNotificationTopicsNotificationTopic[];
     /**
      * The lifecycle state of the topic.
      */

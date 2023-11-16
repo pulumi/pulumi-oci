@@ -54,24 +54,24 @@ export interface GetNodePoolOptionResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Deprecated. See sources. When creating a node pool, only image names contained in this property can be passed to the `nodeImageName` property.
      */
-    readonly images: string[];
+    readonly images?: string[];
     /**
      * Available Kubernetes versions.
      */
-    readonly kubernetesVersions: string[];
+    readonly kubernetesVersions?: string[];
     readonly nodePoolOptionId: string;
     /**
      * Available shapes for nodes.
      */
-    readonly shapes: string[];
+    readonly shapes?: string[];
     /**
      * Available source of the node.
      */
-    readonly sources: outputs.ContainerEngine.GetNodePoolOptionSource[];
+    readonly sources?: outputs.ContainerEngine.GetNodePoolOptionSource[];
 }
 /**
  * This data source provides details about a specific Node Pool Option resource in Oracle Cloud Infrastructure Container Engine service.

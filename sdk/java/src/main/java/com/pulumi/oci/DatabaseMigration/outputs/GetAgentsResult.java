@@ -18,7 +18,7 @@ public final class GetAgentsResult {
      * @return The list of agent_collection.
      * 
      */
-    private List<GetAgentsAgentCollection> agentCollections;
+    private @Nullable List<GetAgentsAgentCollection> agentCollections;
     /**
      * @return OCID of the compartment
      * 
@@ -34,7 +34,7 @@ public final class GetAgentsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The current state of the ODMS on-premises Agent.
      * 
@@ -47,7 +47,7 @@ public final class GetAgentsResult {
      * 
      */
     public List<GetAgentsAgentCollection> agentCollections() {
-        return this.agentCollections;
+        return this.agentCollections == null ? List.of() : this.agentCollections;
     }
     /**
      * @return OCID of the compartment
@@ -70,8 +70,8 @@ public final class GetAgentsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The current state of the ODMS on-premises Agent.
@@ -90,11 +90,11 @@ public final class GetAgentsResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetAgentsAgentCollection> agentCollections;
+        private @Nullable List<GetAgentsAgentCollection> agentCollections;
         private String compartmentId;
         private @Nullable String displayName;
         private @Nullable List<GetAgentsFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String state;
         public Builder() {}
         public Builder(GetAgentsResult defaults) {
@@ -108,8 +108,8 @@ public final class GetAgentsResult {
         }
 
         @CustomType.Setter
-        public Builder agentCollections(List<GetAgentsAgentCollection> agentCollections) {
-            this.agentCollections = Objects.requireNonNull(agentCollections);
+        public Builder agentCollections(@Nullable List<GetAgentsAgentCollection> agentCollections) {
+            this.agentCollections = agentCollections;
             return this;
         }
         public Builder agentCollections(GetAgentsAgentCollection... agentCollections) {
@@ -134,8 +134,8 @@ public final class GetAgentsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

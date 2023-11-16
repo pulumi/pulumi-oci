@@ -44,7 +44,7 @@ class GetVmClusterPatchesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -52,10 +52,7 @@ class GetVmClusterPatchesResult:
 
     @property
     @pulumi.getter
-    def patches(self) -> Sequence['outputs.GetVmClusterPatchesPatchResult']:
-        """
-        The list of patches.
-        """
+    def patches(self) -> Optional[Sequence['outputs.GetVmClusterPatchesPatchResult']]:
         return pulumi.get(self, "patches")
 
     @property
@@ -80,21 +77,7 @@ def get_vm_cluster_patches(filters: Optional[Sequence[pulumi.InputType['GetVmClu
                            vm_cluster_id: Optional[str] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetVmClusterPatchesResult:
     """
-    This data source provides the list of Vm Cluster Patches in Oracle Cloud Infrastructure Database service.
-
-    Lists the patches applicable to the specified VM cluster in an Exadata Cloud@Customer system.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_vm_cluster_patches = oci.Database.get_vm_cluster_patches(vm_cluster_id=oci_database_vm_cluster["test_vm_cluster"]["id"])
-    ```
-
-
-    :param str vm_cluster_id: The VM cluster [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['filters'] = filters
@@ -114,20 +97,6 @@ def get_vm_cluster_patches_output(filters: Optional[pulumi.Input[Optional[Sequen
                                   vm_cluster_id: Optional[pulumi.Input[str]] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetVmClusterPatchesResult]:
     """
-    This data source provides the list of Vm Cluster Patches in Oracle Cloud Infrastructure Database service.
-
-    Lists the patches applicable to the specified VM cluster in an Exadata Cloud@Customer system.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_vm_cluster_patches = oci.Database.get_vm_cluster_patches(vm_cluster_id=oci_database_vm_cluster["test_vm_cluster"]["id"])
-    ```
-
-
-    :param str vm_cluster_id: The VM cluster [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+    Use this data source to access information about an existing resource.
     """
     ...

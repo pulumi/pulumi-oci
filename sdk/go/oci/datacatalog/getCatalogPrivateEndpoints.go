@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Catalog Private Endpoints in Oracle Cloud Infrastructure Data Catalog service.
@@ -74,7 +73,7 @@ type GetCatalogPrivateEndpointsResult struct {
 	DisplayName *string                            `pulumi:"displayName"`
 	Filters     []GetCatalogPrivateEndpointsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The current state of the private endpoint resource.
 	State *string `pulumi:"state"`
 }
@@ -122,12 +121,6 @@ func (o GetCatalogPrivateEndpointsResultOutput) ToGetCatalogPrivateEndpointsResu
 	return o
 }
 
-func (o GetCatalogPrivateEndpointsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetCatalogPrivateEndpointsResult] {
-	return pulumix.Output[GetCatalogPrivateEndpointsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The list of catalog_private_endpoints.
 func (o GetCatalogPrivateEndpointsResultOutput) CatalogPrivateEndpoints() GetCatalogPrivateEndpointsCatalogPrivateEndpointArrayOutput {
 	return o.ApplyT(func(v GetCatalogPrivateEndpointsResult) []GetCatalogPrivateEndpointsCatalogPrivateEndpoint {
@@ -150,8 +143,8 @@ func (o GetCatalogPrivateEndpointsResultOutput) Filters() GetCatalogPrivateEndpo
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetCatalogPrivateEndpointsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCatalogPrivateEndpointsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetCatalogPrivateEndpointsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCatalogPrivateEndpointsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the private endpoint resource.

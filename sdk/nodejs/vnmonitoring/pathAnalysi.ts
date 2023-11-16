@@ -104,35 +104,35 @@ export class PathAnalysi extends pulumi.CustomResource {
     /**
      * The Cache-Control HTTP header holds directives (instructions) for caching in both requests and responses.
      */
-    public readonly cacheControl!: pulumi.Output<string>;
+    public readonly cacheControl!: pulumi.Output<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the compartment.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    public readonly compartmentId!: pulumi.Output<string | undefined>;
     /**
      * Information describing a source or destination in a `PathAnalyzerTest` resource.
      */
-    public readonly destinationEndpoint!: pulumi.Output<outputs.VnMonitoring.PathAnalysiDestinationEndpoint>;
+    public readonly destinationEndpoint!: pulumi.Output<outputs.VnMonitoring.PathAnalysiDestinationEndpoint | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `PathAnalyzerTest` resource.
      */
-    public readonly pathAnalyzerTestId!: pulumi.Output<string>;
+    public readonly pathAnalyzerTestId!: pulumi.Output<string | undefined>;
     /**
      * The IP protocol to used for the path analysis.
      */
-    public readonly protocol!: pulumi.Output<number>;
+    public readonly protocol!: pulumi.Output<number | undefined>;
     /**
      * Defines the IP protocol parameters for a `PathAnalyzerTest` resource.
      */
-    public readonly protocolParameters!: pulumi.Output<outputs.VnMonitoring.PathAnalysiProtocolParameters>;
+    public readonly protocolParameters!: pulumi.Output<outputs.VnMonitoring.PathAnalysiProtocolParameters | undefined>;
     /**
      * Defines the query options required for a `PathAnalyzerTest` resource.
      */
-    public readonly queryOptions!: pulumi.Output<outputs.VnMonitoring.PathAnalysiQueryOptions>;
+    public readonly queryOptions!: pulumi.Output<outputs.VnMonitoring.PathAnalysiQueryOptions | undefined>;
     /**
      * Information describing a source or destination in a `PathAnalyzerTest` resource.
      */
-    public readonly sourceEndpoint!: pulumi.Output<outputs.VnMonitoring.PathAnalysiSourceEndpoint>;
+    public readonly sourceEndpoint!: pulumi.Output<outputs.VnMonitoring.PathAnalysiSourceEndpoint | undefined>;
     /**
      * The type of the `PathAnalysis` query.
      *

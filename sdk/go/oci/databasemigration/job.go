@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Job resource in Oracle Cloud Infrastructure Database Migration service.
@@ -32,7 +31,7 @@ type Job struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) Name of the job.
-	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrOutput `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// The OCID of the job
@@ -41,21 +40,21 @@ type Job struct {
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	JobId pulumi.StringOutput `pulumi:"jobId"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrOutput `pulumi:"lifecycleDetails"`
 	// The OCID of the Migration that this job belongs to.
-	MigrationId pulumi.StringOutput `pulumi:"migrationId"`
+	MigrationId pulumi.StringPtrOutput `pulumi:"migrationId"`
 	// Percent progress of job phase.
 	Progresses JobProgressArrayOutput `pulumi:"progresses"`
 	// The current state of the migration job.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
 	// The time the Migration Job was created. An RFC3339 formatted datetime string
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The time the Migration Job was last updated. An RFC3339 formatted datetime string
-	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 	// Type of unsupported object
-	Type pulumi.StringOutput `pulumi:"type"`
+	Type pulumi.StringPtrOutput `pulumi:"type"`
 	// Database objects not supported.
 	UnsupportedObjects JobUnsupportedObjectArrayOutput `pulumi:"unsupportedObjects"`
 }
@@ -212,12 +211,6 @@ func (i *Job) ToJobOutputWithContext(ctx context.Context) JobOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(JobOutput)
 }
 
-func (i *Job) ToOutput(ctx context.Context) pulumix.Output[*Job] {
-	return pulumix.Output[*Job]{
-		OutputState: i.ToJobOutputWithContext(ctx).OutputState,
-	}
-}
-
 // JobArrayInput is an input type that accepts JobArray and JobArrayOutput values.
 // You can construct a concrete instance of `JobArrayInput` via:
 //
@@ -241,12 +234,6 @@ func (i JobArray) ToJobArrayOutput() JobArrayOutput {
 
 func (i JobArray) ToJobArrayOutputWithContext(ctx context.Context) JobArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(JobArrayOutput)
-}
-
-func (i JobArray) ToOutput(ctx context.Context) pulumix.Output[[]*Job] {
-	return pulumix.Output[[]*Job]{
-		OutputState: i.ToJobArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // JobMapInput is an input type that accepts JobMap and JobMapOutput values.
@@ -274,12 +261,6 @@ func (i JobMap) ToJobMapOutputWithContext(ctx context.Context) JobMapOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(JobMapOutput)
 }
 
-func (i JobMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*Job] {
-	return pulumix.Output[map[string]*Job]{
-		OutputState: i.ToJobMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type JobOutput struct{ *pulumi.OutputState }
 
 func (JobOutput) ElementType() reflect.Type {
@@ -294,20 +275,14 @@ func (o JobOutput) ToJobOutputWithContext(ctx context.Context) JobOutput {
 	return o
 }
 
-func (o JobOutput) ToOutput(ctx context.Context) pulumix.Output[*Job] {
-	return pulumix.Output[*Job]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 func (o JobOutput) DefinedTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *Job) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
 }
 
 // (Updatable) Name of the job.
-func (o JobOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v *Job) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+func (o JobOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Job) pulumi.StringPtrOutput { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -324,13 +299,13 @@ func (o JobOutput) JobId() pulumi.StringOutput {
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-func (o JobOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v *Job) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o JobOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Job) pulumi.StringPtrOutput { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the Migration that this job belongs to.
-func (o JobOutput) MigrationId() pulumi.StringOutput {
-	return o.ApplyT(func(v *Job) pulumi.StringOutput { return v.MigrationId }).(pulumi.StringOutput)
+func (o JobOutput) MigrationId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Job) pulumi.StringPtrOutput { return v.MigrationId }).(pulumi.StringPtrOutput)
 }
 
 // Percent progress of job phase.
@@ -339,8 +314,8 @@ func (o JobOutput) Progresses() JobProgressArrayOutput {
 }
 
 // The current state of the migration job.
-func (o JobOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *Job) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o JobOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Job) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -349,18 +324,18 @@ func (o JobOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The time the Migration Job was created. An RFC3339 formatted datetime string
-func (o JobOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *Job) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o JobOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Job) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time the Migration Job was last updated. An RFC3339 formatted datetime string
-func (o JobOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *Job) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o JobOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Job) pulumi.StringPtrOutput { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 // Type of unsupported object
-func (o JobOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v *Job) pulumi.StringOutput { return v.Type }).(pulumi.StringOutput)
+func (o JobOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Job) pulumi.StringPtrOutput { return v.Type }).(pulumi.StringPtrOutput)
 }
 
 // Database objects not supported.
@@ -382,12 +357,6 @@ func (o JobArrayOutput) ToJobArrayOutputWithContext(ctx context.Context) JobArra
 	return o
 }
 
-func (o JobArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*Job] {
-	return pulumix.Output[[]*Job]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o JobArrayOutput) Index(i pulumi.IntInput) JobOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *Job {
 		return vs[0].([]*Job)[vs[1].(int)]
@@ -406,12 +375,6 @@ func (o JobMapOutput) ToJobMapOutput() JobMapOutput {
 
 func (o JobMapOutput) ToJobMapOutputWithContext(ctx context.Context) JobMapOutput {
 	return o
-}
-
-func (o JobMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*Job] {
-	return pulumix.Output[map[string]*Job]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o JobMapOutput) MapIndex(k pulumi.StringInput) JobOutput {

@@ -55,39 +55,27 @@ class GetAppCatalogListingResourceVersionResult:
 
     @property
     @pulumi.getter(name="accessiblePorts")
-    def accessible_ports(self) -> Sequence[int]:
-        """
-        List of accessible ports for instances launched with this listing resource version.
-        """
+    def accessible_ports(self) -> Optional[Sequence[int]]:
         return pulumi.get(self, "accessible_ports")
 
     @property
     @pulumi.getter(name="allowedActions")
-    def allowed_actions(self) -> Sequence[str]:
-        """
-        Allowed actions for the listing resource.
-        """
+    def allowed_actions(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "allowed_actions")
 
     @property
     @pulumi.getter(name="availableRegions")
-    def available_regions(self) -> Sequence[str]:
-        """
-        List of regions that this listing resource version is available.
-        """
+    def available_regions(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "available_regions")
 
     @property
     @pulumi.getter(name="compatibleShapes")
-    def compatible_shapes(self) -> Sequence[str]:
-        """
-        Array of shapes compatible with this resource.
-        """
+    def compatible_shapes(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "compatible_shapes")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -96,25 +84,16 @@ class GetAppCatalogListingResourceVersionResult:
     @property
     @pulumi.getter(name="listingId")
     def listing_id(self) -> str:
-        """
-        The OCID of the listing this resource version belongs to.
-        """
         return pulumi.get(self, "listing_id")
 
     @property
     @pulumi.getter(name="listingResourceId")
-    def listing_resource_id(self) -> str:
-        """
-        OCID of the listing resource.
-        """
+    def listing_resource_id(self) -> Optional[str]:
         return pulumi.get(self, "listing_resource_id")
 
     @property
     @pulumi.getter(name="listingResourceVersion")
-    def listing_resource_version(self) -> str:
-        """
-        Resource Version.
-        """
+    def listing_resource_version(self) -> Optional[str]:
         return pulumi.get(self, "listing_resource_version")
 
     @property
@@ -124,10 +103,7 @@ class GetAppCatalogListingResourceVersionResult:
 
     @property
     @pulumi.getter(name="timePublished")
-    def time_published(self) -> str:
-        """
-        Date and time the listing resource version was published, in [RFC3339](https://tools.ietf.org/html/rfc3339) format. Example: `2018-03-20T12:32:53.532Z`
-        """
+    def time_published(self) -> Optional[str]:
         return pulumi.get(self, "time_published")
 
 
@@ -153,23 +129,7 @@ def get_app_catalog_listing_resource_version(listing_id: Optional[str] = None,
                                              resource_version: Optional[str] = None,
                                              opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAppCatalogListingResourceVersionResult:
     """
-    This data source provides details about a specific App Catalog Listing Resource Version resource in Oracle Cloud Infrastructure Core service.
-
-    Gets the specified listing resource version.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_app_catalog_listing_resource_version = oci.Core.get_app_catalog_listing_resource_version(listing_id=data["oci_core_app_catalog_listing"]["test_listing"]["id"],
-        resource_version=var["app_catalog_listing_resource_version_resource_version"])
-    ```
-
-
-    :param str listing_id: The OCID of the listing.
-    :param str resource_version: Listing Resource Version.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['listingId'] = listing_id
@@ -195,22 +155,6 @@ def get_app_catalog_listing_resource_version_output(listing_id: Optional[pulumi.
                                                     resource_version: Optional[pulumi.Input[str]] = None,
                                                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAppCatalogListingResourceVersionResult]:
     """
-    This data source provides details about a specific App Catalog Listing Resource Version resource in Oracle Cloud Infrastructure Core service.
-
-    Gets the specified listing resource version.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_app_catalog_listing_resource_version = oci.Core.get_app_catalog_listing_resource_version(listing_id=data["oci_core_app_catalog_listing"]["test_listing"]["id"],
-        resource_version=var["app_catalog_listing_resource_version_resource_version"])
-    ```
-
-
-    :param str listing_id: The OCID of the listing.
-    :param str resource_version: Listing Resource Version.
+    Use this data source to access information about an existing resource.
     """
     ...

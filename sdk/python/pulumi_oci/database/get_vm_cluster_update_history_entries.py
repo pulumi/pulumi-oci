@@ -50,7 +50,7 @@ class GetVmClusterUpdateHistoryEntriesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -59,17 +59,11 @@ class GetVmClusterUpdateHistoryEntriesResult:
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current lifecycle state of the maintenance update operation.
-        """
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="updateType")
     def update_type(self) -> Optional[str]:
-        """
-        The type of VM cluster maintenance update.
-        """
         return pulumi.get(self, "update_type")
 
     @property
@@ -79,10 +73,7 @@ class GetVmClusterUpdateHistoryEntriesResult:
 
     @property
     @pulumi.getter(name="vmClusterUpdateHistoryEntries")
-    def vm_cluster_update_history_entries(self) -> Sequence['outputs.GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryResult']:
-        """
-        The list of vm_cluster_update_history_entries.
-        """
+    def vm_cluster_update_history_entries(self) -> Optional[Sequence['outputs.GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryResult']]:
         return pulumi.get(self, "vm_cluster_update_history_entries")
 
 
@@ -106,25 +97,7 @@ def get_vm_cluster_update_history_entries(filters: Optional[Sequence[pulumi.Inpu
                                           vm_cluster_id: Optional[str] = None,
                                           opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetVmClusterUpdateHistoryEntriesResult:
     """
-    This data source provides the list of Vm Cluster Update History Entries in Oracle Cloud Infrastructure Database service.
-
-    Gets the history of the maintenance update actions performed on the specified VM cluster. Applies to Exadata Cloud@Customer instances only.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_vm_cluster_update_history_entries = oci.Database.get_vm_cluster_update_history_entries(vm_cluster_id=oci_database_vm_cluster["test_vm_cluster"]["id"],
-        state=var["vm_cluster_update_history_entry_state"],
-        update_type=var["vm_cluster_update_history_entry_update_type"])
-    ```
-
-
-    :param str state: A filter to return only resources that match the given lifecycle state exactly.
-    :param str update_type: A filter to return only resources that match the given update type exactly.
-    :param str vm_cluster_id: The VM cluster [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['filters'] = filters
@@ -150,24 +123,6 @@ def get_vm_cluster_update_history_entries_output(filters: Optional[pulumi.Input[
                                                  vm_cluster_id: Optional[pulumi.Input[str]] = None,
                                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetVmClusterUpdateHistoryEntriesResult]:
     """
-    This data source provides the list of Vm Cluster Update History Entries in Oracle Cloud Infrastructure Database service.
-
-    Gets the history of the maintenance update actions performed on the specified VM cluster. Applies to Exadata Cloud@Customer instances only.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_vm_cluster_update_history_entries = oci.Database.get_vm_cluster_update_history_entries(vm_cluster_id=oci_database_vm_cluster["test_vm_cluster"]["id"],
-        state=var["vm_cluster_update_history_entry_state"],
-        update_type=var["vm_cluster_update_history_entry_update_type"])
-    ```
-
-
-    :param str state: A filter to return only resources that match the given lifecycle state exactly.
-    :param str update_type: A filter to return only resources that match the given update type exactly.
-    :param str vm_cluster_id: The VM cluster [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+    Use this data source to access information about an existing resource.
     """
     ...

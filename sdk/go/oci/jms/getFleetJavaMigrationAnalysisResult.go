@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Fleet Java Migration Analysis Result resource in Oracle Cloud Infrastructure Jms service.
@@ -63,38 +62,38 @@ type GetFleetJavaMigrationAnalysisResultArgs struct {
 // A collection of values returned by getFleetJavaMigrationAnalysisResult.
 type GetFleetJavaMigrationAnalysisResultResult struct {
 	// Execution type of the application for an application type, such as WAR and EAR, that is deployed or installed.
-	ApplicationExecutionType string `pulumi:"applicationExecutionType"`
+	ApplicationExecutionType *string `pulumi:"applicationExecutionType"`
 	// The name of the application for which the Java migration analysis was performed.
-	ApplicationName string `pulumi:"applicationName"`
+	ApplicationName *string `pulumi:"applicationName"`
 	// The installation path of the application for which the Java migration analysis was performed.
-	ApplicationPath string `pulumi:"applicationPath"`
+	ApplicationPath *string `pulumi:"applicationPath"`
 	// The name of the object storage bucket that contains the results of the migration analysis.
-	Bucket string `pulumi:"bucket"`
+	Bucket *string `pulumi:"bucket"`
 	// The fleet OCID.
 	FleetId string `pulumi:"fleetId"`
 	// The hostname of the managed instance that hosts the application for which the Java migration analysis was performed.
-	HostName string `pulumi:"hostName"`
+	HostName *string `pulumi:"hostName"`
 	// The provider-assigned unique ID for this managed resource.
-	Id                            string `pulumi:"id"`
-	JavaMigrationAnalysisResultId string `pulumi:"javaMigrationAnalysisResultId"`
+	Id                            *string `pulumi:"id"`
+	JavaMigrationAnalysisResultId string  `pulumi:"javaMigrationAnalysisResultId"`
 	// The managed instance OCID.
-	ManagedInstanceId string `pulumi:"managedInstanceId"`
+	ManagedInstanceId *string `pulumi:"managedInstanceId"`
 	// Additional info reserved for future use.
-	Metadata string `pulumi:"metadata"`
+	Metadata *string `pulumi:"metadata"`
 	// The object storage namespace that contains the results of the migration analysis.
-	Namespace string `pulumi:"namespace"`
+	Namespace *string `pulumi:"namespace"`
 	// The names of the object storage objects that contain the results of the migration analysis.
 	ObjectLists []string `pulumi:"objectLists"`
 	// The directory path of the object storage bucket that contains the results of the migration analysis.
-	ObjectStorageUploadDirPath string `pulumi:"objectStorageUploadDirPath"`
+	ObjectStorageUploadDirPath *string `pulumi:"objectStorageUploadDirPath"`
 	// The source JDK version of the application that's currently running.
-	SourceJdkVersion string `pulumi:"sourceJdkVersion"`
+	SourceJdkVersion *string `pulumi:"sourceJdkVersion"`
 	// The target JDK version of the application to be migrated.
-	TargetJdkVersion string `pulumi:"targetJdkVersion"`
+	TargetJdkVersion *string `pulumi:"targetJdkVersion"`
 	// The time the result is compiled.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The OCID of the work request of this analysis.
-	WorkRequestId string `pulumi:"workRequestId"`
+	WorkRequestId *string `pulumi:"workRequestId"`
 }
 
 func GetFleetJavaMigrationAnalysisResultOutput(ctx *pulumi.Context, args GetFleetJavaMigrationAnalysisResultOutputArgs, opts ...pulumi.InvokeOption) GetFleetJavaMigrationAnalysisResultResultOutput {
@@ -137,30 +136,24 @@ func (o GetFleetJavaMigrationAnalysisResultResultOutput) ToGetFleetJavaMigration
 	return o
 }
 
-func (o GetFleetJavaMigrationAnalysisResultResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetFleetJavaMigrationAnalysisResultResult] {
-	return pulumix.Output[GetFleetJavaMigrationAnalysisResultResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Execution type of the application for an application type, such as WAR and EAR, that is deployed or installed.
-func (o GetFleetJavaMigrationAnalysisResultResultOutput) ApplicationExecutionType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFleetJavaMigrationAnalysisResultResult) string { return v.ApplicationExecutionType }).(pulumi.StringOutput)
+func (o GetFleetJavaMigrationAnalysisResultResultOutput) ApplicationExecutionType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFleetJavaMigrationAnalysisResultResult) *string { return v.ApplicationExecutionType }).(pulumi.StringPtrOutput)
 }
 
 // The name of the application for which the Java migration analysis was performed.
-func (o GetFleetJavaMigrationAnalysisResultResultOutput) ApplicationName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFleetJavaMigrationAnalysisResultResult) string { return v.ApplicationName }).(pulumi.StringOutput)
+func (o GetFleetJavaMigrationAnalysisResultResultOutput) ApplicationName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFleetJavaMigrationAnalysisResultResult) *string { return v.ApplicationName }).(pulumi.StringPtrOutput)
 }
 
 // The installation path of the application for which the Java migration analysis was performed.
-func (o GetFleetJavaMigrationAnalysisResultResultOutput) ApplicationPath() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFleetJavaMigrationAnalysisResultResult) string { return v.ApplicationPath }).(pulumi.StringOutput)
+func (o GetFleetJavaMigrationAnalysisResultResultOutput) ApplicationPath() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFleetJavaMigrationAnalysisResultResult) *string { return v.ApplicationPath }).(pulumi.StringPtrOutput)
 }
 
 // The name of the object storage bucket that contains the results of the migration analysis.
-func (o GetFleetJavaMigrationAnalysisResultResultOutput) Bucket() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFleetJavaMigrationAnalysisResultResult) string { return v.Bucket }).(pulumi.StringOutput)
+func (o GetFleetJavaMigrationAnalysisResultResultOutput) Bucket() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFleetJavaMigrationAnalysisResultResult) *string { return v.Bucket }).(pulumi.StringPtrOutput)
 }
 
 // The fleet OCID.
@@ -169,13 +162,13 @@ func (o GetFleetJavaMigrationAnalysisResultResultOutput) FleetId() pulumi.String
 }
 
 // The hostname of the managed instance that hosts the application for which the Java migration analysis was performed.
-func (o GetFleetJavaMigrationAnalysisResultResultOutput) HostName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFleetJavaMigrationAnalysisResultResult) string { return v.HostName }).(pulumi.StringOutput)
+func (o GetFleetJavaMigrationAnalysisResultResultOutput) HostName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFleetJavaMigrationAnalysisResultResult) *string { return v.HostName }).(pulumi.StringPtrOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetFleetJavaMigrationAnalysisResultResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFleetJavaMigrationAnalysisResultResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetFleetJavaMigrationAnalysisResultResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFleetJavaMigrationAnalysisResultResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetFleetJavaMigrationAnalysisResultResultOutput) JavaMigrationAnalysisResultId() pulumi.StringOutput {
@@ -183,18 +176,18 @@ func (o GetFleetJavaMigrationAnalysisResultResultOutput) JavaMigrationAnalysisRe
 }
 
 // The managed instance OCID.
-func (o GetFleetJavaMigrationAnalysisResultResultOutput) ManagedInstanceId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFleetJavaMigrationAnalysisResultResult) string { return v.ManagedInstanceId }).(pulumi.StringOutput)
+func (o GetFleetJavaMigrationAnalysisResultResultOutput) ManagedInstanceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFleetJavaMigrationAnalysisResultResult) *string { return v.ManagedInstanceId }).(pulumi.StringPtrOutput)
 }
 
 // Additional info reserved for future use.
-func (o GetFleetJavaMigrationAnalysisResultResultOutput) Metadata() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFleetJavaMigrationAnalysisResultResult) string { return v.Metadata }).(pulumi.StringOutput)
+func (o GetFleetJavaMigrationAnalysisResultResultOutput) Metadata() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFleetJavaMigrationAnalysisResultResult) *string { return v.Metadata }).(pulumi.StringPtrOutput)
 }
 
 // The object storage namespace that contains the results of the migration analysis.
-func (o GetFleetJavaMigrationAnalysisResultResultOutput) Namespace() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFleetJavaMigrationAnalysisResultResult) string { return v.Namespace }).(pulumi.StringOutput)
+func (o GetFleetJavaMigrationAnalysisResultResultOutput) Namespace() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFleetJavaMigrationAnalysisResultResult) *string { return v.Namespace }).(pulumi.StringPtrOutput)
 }
 
 // The names of the object storage objects that contain the results of the migration analysis.
@@ -203,28 +196,28 @@ func (o GetFleetJavaMigrationAnalysisResultResultOutput) ObjectLists() pulumi.St
 }
 
 // The directory path of the object storage bucket that contains the results of the migration analysis.
-func (o GetFleetJavaMigrationAnalysisResultResultOutput) ObjectStorageUploadDirPath() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFleetJavaMigrationAnalysisResultResult) string { return v.ObjectStorageUploadDirPath }).(pulumi.StringOutput)
+func (o GetFleetJavaMigrationAnalysisResultResultOutput) ObjectStorageUploadDirPath() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFleetJavaMigrationAnalysisResultResult) *string { return v.ObjectStorageUploadDirPath }).(pulumi.StringPtrOutput)
 }
 
 // The source JDK version of the application that's currently running.
-func (o GetFleetJavaMigrationAnalysisResultResultOutput) SourceJdkVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFleetJavaMigrationAnalysisResultResult) string { return v.SourceJdkVersion }).(pulumi.StringOutput)
+func (o GetFleetJavaMigrationAnalysisResultResultOutput) SourceJdkVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFleetJavaMigrationAnalysisResultResult) *string { return v.SourceJdkVersion }).(pulumi.StringPtrOutput)
 }
 
 // The target JDK version of the application to be migrated.
-func (o GetFleetJavaMigrationAnalysisResultResultOutput) TargetJdkVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFleetJavaMigrationAnalysisResultResult) string { return v.TargetJdkVersion }).(pulumi.StringOutput)
+func (o GetFleetJavaMigrationAnalysisResultResultOutput) TargetJdkVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFleetJavaMigrationAnalysisResultResult) *string { return v.TargetJdkVersion }).(pulumi.StringPtrOutput)
 }
 
 // The time the result is compiled.
-func (o GetFleetJavaMigrationAnalysisResultResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFleetJavaMigrationAnalysisResultResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetFleetJavaMigrationAnalysisResultResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFleetJavaMigrationAnalysisResultResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the work request of this analysis.
-func (o GetFleetJavaMigrationAnalysisResultResultOutput) WorkRequestId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFleetJavaMigrationAnalysisResultResult) string { return v.WorkRequestId }).(pulumi.StringOutput)
+func (o GetFleetJavaMigrationAnalysisResultResultOutput) WorkRequestId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFleetJavaMigrationAnalysisResultResult) *string { return v.WorkRequestId }).(pulumi.StringPtrOutput)
 }
 
 func init() {

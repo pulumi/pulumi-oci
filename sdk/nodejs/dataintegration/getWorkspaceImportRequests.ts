@@ -80,11 +80,11 @@ export interface GetWorkspaceImportRequestsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The list of import_request_summary_collection.
      */
-    readonly importRequestSummaryCollections: outputs.DataIntegration.GetWorkspaceImportRequestsImportRequestSummaryCollection[];
+    readonly importRequestSummaryCollections?: outputs.DataIntegration.GetWorkspaceImportRequestsImportRequestSummaryCollection[];
     readonly importStatus?: string;
     /**
      * Name of the import request.

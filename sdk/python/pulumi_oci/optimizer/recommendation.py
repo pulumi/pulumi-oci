@@ -21,15 +21,6 @@ class RecommendationArgs:
                  time_status_end: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a Recommendation resource.
-        :param pulumi.Input[str] recommendation_id: The unique OCID associated with the recommendation.
-        :param pulumi.Input[str] status: (Updatable) The status of the recommendation.
-        :param pulumi.Input[str] time_status_end: (Updatable) The date and time the current status will change. The format is defined by RFC3339.
-               
-               For example, "The current `postponed` status of the recommendation will end and change to `pending` on this date and time."
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "recommendation_id", recommendation_id)
         pulumi.set(__self__, "status", status)
@@ -39,9 +30,6 @@ class RecommendationArgs:
     @property
     @pulumi.getter(name="recommendationId")
     def recommendation_id(self) -> pulumi.Input[str]:
-        """
-        The unique OCID associated with the recommendation.
-        """
         return pulumi.get(self, "recommendation_id")
 
     @recommendation_id.setter
@@ -51,9 +39,6 @@ class RecommendationArgs:
     @property
     @pulumi.getter
     def status(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The status of the recommendation.
-        """
         return pulumi.get(self, "status")
 
     @status.setter
@@ -63,15 +48,6 @@ class RecommendationArgs:
     @property
     @pulumi.getter(name="timeStatusEnd")
     def time_status_end(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The date and time the current status will change. The format is defined by RFC3339.
-
-        For example, "The current `postponed` status of the recommendation will end and change to `pending` on this date and time."
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "time_status_end")
 
     @time_status_end.setter
@@ -100,28 +76,6 @@ class _RecommendationState:
                  time_updated: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering Recommendation resources.
-        :param pulumi.Input[str] category_id: The unique OCID associated with the category.
-        :param pulumi.Input[str] compartment_id: The OCID of the tenancy. The tenancy is the root compartment.
-        :param pulumi.Input[str] description: Text describing the recommendation.
-        :param pulumi.Input[float] estimated_cost_saving: The estimated cost savings, in dollars, for the recommendation.
-        :param pulumi.Input[Mapping[str, Any]] extended_metadata: Additional metadata key/value pairs for the recommendation.
-        :param pulumi.Input[str] importance: The level of importance assigned to the recommendation.
-        :param pulumi.Input[str] name: The name of the profile level.
-        :param pulumi.Input[str] recommendation_id: The unique OCID associated with the recommendation.
-        :param pulumi.Input[Sequence[pulumi.Input['RecommendationResourceCountArgs']]] resource_counts: An array of `ResourceCount` objects grouped by the status of the resource actions.
-        :param pulumi.Input[str] state: The recommendation's current state.
-        :param pulumi.Input[str] status: (Updatable) The status of the recommendation.
-        :param pulumi.Input[Sequence[pulumi.Input['RecommendationSupportedLevelArgs']]] supported_levels: Optional. The profile levels supported by a recommendation. For example, profile level values could be `Low`, `Medium`, and `High`. Not all recommendations support this field.
-        :param pulumi.Input[str] time_created: The date and time the recommendation details were created, in the format defined by RFC3339.
-        :param pulumi.Input[str] time_status_begin: The date and time that the recommendation entered its current status. The format is defined by RFC3339.
-        :param pulumi.Input[str] time_status_end: (Updatable) The date and time the current status will change. The format is defined by RFC3339.
-               
-               For example, "The current `postponed` status of the recommendation will end and change to `pending` on this date and time."
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] time_updated: The date and time the recommendation details were last updated, in the format defined by RFC3339.
         """
         if category_id is not None:
             pulumi.set(__self__, "category_id", category_id)
@@ -159,9 +113,6 @@ class _RecommendationState:
     @property
     @pulumi.getter(name="categoryId")
     def category_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The unique OCID associated with the category.
-        """
         return pulumi.get(self, "category_id")
 
     @category_id.setter
@@ -171,9 +122,6 @@ class _RecommendationState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the tenancy. The tenancy is the root compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -183,9 +131,6 @@ class _RecommendationState:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
-        """
-        Text describing the recommendation.
-        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -195,9 +140,6 @@ class _RecommendationState:
     @property
     @pulumi.getter(name="estimatedCostSaving")
     def estimated_cost_saving(self) -> Optional[pulumi.Input[float]]:
-        """
-        The estimated cost savings, in dollars, for the recommendation.
-        """
         return pulumi.get(self, "estimated_cost_saving")
 
     @estimated_cost_saving.setter
@@ -207,9 +149,6 @@ class _RecommendationState:
     @property
     @pulumi.getter(name="extendedMetadata")
     def extended_metadata(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        Additional metadata key/value pairs for the recommendation.
-        """
         return pulumi.get(self, "extended_metadata")
 
     @extended_metadata.setter
@@ -219,9 +158,6 @@ class _RecommendationState:
     @property
     @pulumi.getter
     def importance(self) -> Optional[pulumi.Input[str]]:
-        """
-        The level of importance assigned to the recommendation.
-        """
         return pulumi.get(self, "importance")
 
     @importance.setter
@@ -231,9 +167,6 @@ class _RecommendationState:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The name of the profile level.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -243,9 +176,6 @@ class _RecommendationState:
     @property
     @pulumi.getter(name="recommendationId")
     def recommendation_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The unique OCID associated with the recommendation.
-        """
         return pulumi.get(self, "recommendation_id")
 
     @recommendation_id.setter
@@ -255,9 +185,6 @@ class _RecommendationState:
     @property
     @pulumi.getter(name="resourceCounts")
     def resource_counts(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['RecommendationResourceCountArgs']]]]:
-        """
-        An array of `ResourceCount` objects grouped by the status of the resource actions.
-        """
         return pulumi.get(self, "resource_counts")
 
     @resource_counts.setter
@@ -267,9 +194,6 @@ class _RecommendationState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The recommendation's current state.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -279,9 +203,6 @@ class _RecommendationState:
     @property
     @pulumi.getter
     def status(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The status of the recommendation.
-        """
         return pulumi.get(self, "status")
 
     @status.setter
@@ -291,9 +212,6 @@ class _RecommendationState:
     @property
     @pulumi.getter(name="supportedLevels")
     def supported_levels(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['RecommendationSupportedLevelArgs']]]]:
-        """
-        Optional. The profile levels supported by a recommendation. For example, profile level values could be `Low`, `Medium`, and `High`. Not all recommendations support this field.
-        """
         return pulumi.get(self, "supported_levels")
 
     @supported_levels.setter
@@ -303,9 +221,6 @@ class _RecommendationState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time the recommendation details were created, in the format defined by RFC3339.
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -315,9 +230,6 @@ class _RecommendationState:
     @property
     @pulumi.getter(name="timeStatusBegin")
     def time_status_begin(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time that the recommendation entered its current status. The format is defined by RFC3339.
-        """
         return pulumi.get(self, "time_status_begin")
 
     @time_status_begin.setter
@@ -327,15 +239,6 @@ class _RecommendationState:
     @property
     @pulumi.getter(name="timeStatusEnd")
     def time_status_end(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The date and time the current status will change. The format is defined by RFC3339.
-
-        For example, "The current `postponed` status of the recommendation will end and change to `pending` on this date and time."
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "time_status_end")
 
     @time_status_end.setter
@@ -345,9 +248,6 @@ class _RecommendationState:
     @property
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time the recommendation details were last updated, in the format defined by RFC3339.
-        """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
@@ -365,34 +265,9 @@ class Recommendation(pulumi.CustomResource):
                  time_status_end: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Recommendation resource in Oracle Cloud Infrastructure Optimizer service.
-
-        Updates the recommendation that corresponds to the specified OCID.
-        Use this operation to implement the following actions:
-
-          * Postpone recommendation
-          * Dismiss recommendation
-          * Reactivate recommendation
-
-        ## Import
-
-        Recommendations can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Optimizer/recommendation:Recommendation test_recommendation "id"
-        ```
-
+        Create a Recommendation resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] recommendation_id: The unique OCID associated with the recommendation.
-        :param pulumi.Input[str] status: (Updatable) The status of the recommendation.
-        :param pulumi.Input[str] time_status_end: (Updatable) The date and time the current status will change. The format is defined by RFC3339.
-               
-               For example, "The current `postponed` status of the recommendation will end and change to `pending` on this date and time."
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -401,23 +276,7 @@ class Recommendation(pulumi.CustomResource):
                  args: RecommendationArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Recommendation resource in Oracle Cloud Infrastructure Optimizer service.
-
-        Updates the recommendation that corresponds to the specified OCID.
-        Use this operation to implement the following actions:
-
-          * Postpone recommendation
-          * Dismiss recommendation
-          * Reactivate recommendation
-
-        ## Import
-
-        Recommendations can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Optimizer/recommendation:Recommendation test_recommendation "id"
-        ```
-
+        Create a Recommendation resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param RecommendationArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -498,28 +357,6 @@ class Recommendation(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] category_id: The unique OCID associated with the category.
-        :param pulumi.Input[str] compartment_id: The OCID of the tenancy. The tenancy is the root compartment.
-        :param pulumi.Input[str] description: Text describing the recommendation.
-        :param pulumi.Input[float] estimated_cost_saving: The estimated cost savings, in dollars, for the recommendation.
-        :param pulumi.Input[Mapping[str, Any]] extended_metadata: Additional metadata key/value pairs for the recommendation.
-        :param pulumi.Input[str] importance: The level of importance assigned to the recommendation.
-        :param pulumi.Input[str] name: The name of the profile level.
-        :param pulumi.Input[str] recommendation_id: The unique OCID associated with the recommendation.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['RecommendationResourceCountArgs']]]] resource_counts: An array of `ResourceCount` objects grouped by the status of the resource actions.
-        :param pulumi.Input[str] state: The recommendation's current state.
-        :param pulumi.Input[str] status: (Updatable) The status of the recommendation.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['RecommendationSupportedLevelArgs']]]] supported_levels: Optional. The profile levels supported by a recommendation. For example, profile level values could be `Low`, `Medium`, and `High`. Not all recommendations support this field.
-        :param pulumi.Input[str] time_created: The date and time the recommendation details were created, in the format defined by RFC3339.
-        :param pulumi.Input[str] time_status_begin: The date and time that the recommendation entered its current status. The format is defined by RFC3339.
-        :param pulumi.Input[str] time_status_end: (Updatable) The date and time the current status will change. The format is defined by RFC3339.
-               
-               For example, "The current `postponed` status of the recommendation will end and change to `pending` on this date and time."
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] time_updated: The date and time the recommendation details were last updated, in the format defined by RFC3339.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -545,135 +382,81 @@ class Recommendation(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="categoryId")
-    def category_id(self) -> pulumi.Output[str]:
-        """
-        The unique OCID associated with the category.
-        """
+    def category_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "category_id")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> pulumi.Output[str]:
-        """
-        The OCID of the tenancy. The tenancy is the root compartment.
-        """
+    def compartment_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter
-    def description(self) -> pulumi.Output[str]:
-        """
-        Text describing the recommendation.
-        """
+    def description(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="estimatedCostSaving")
-    def estimated_cost_saving(self) -> pulumi.Output[float]:
-        """
-        The estimated cost savings, in dollars, for the recommendation.
-        """
+    def estimated_cost_saving(self) -> pulumi.Output[Optional[float]]:
         return pulumi.get(self, "estimated_cost_saving")
 
     @property
     @pulumi.getter(name="extendedMetadata")
-    def extended_metadata(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        Additional metadata key/value pairs for the recommendation.
-        """
+    def extended_metadata(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "extended_metadata")
 
     @property
     @pulumi.getter
-    def importance(self) -> pulumi.Output[str]:
-        """
-        The level of importance assigned to the recommendation.
-        """
+    def importance(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "importance")
 
     @property
     @pulumi.getter
-    def name(self) -> pulumi.Output[str]:
-        """
-        The name of the profile level.
-        """
+    def name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="recommendationId")
     def recommendation_id(self) -> pulumi.Output[str]:
-        """
-        The unique OCID associated with the recommendation.
-        """
         return pulumi.get(self, "recommendation_id")
 
     @property
     @pulumi.getter(name="resourceCounts")
-    def resource_counts(self) -> pulumi.Output[Sequence['outputs.RecommendationResourceCount']]:
-        """
-        An array of `ResourceCount` objects grouped by the status of the resource actions.
-        """
+    def resource_counts(self) -> pulumi.Output[Optional[Sequence['outputs.RecommendationResourceCount']]]:
         return pulumi.get(self, "resource_counts")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        The recommendation's current state.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter
     def status(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The status of the recommendation.
-        """
         return pulumi.get(self, "status")
 
     @property
     @pulumi.getter(name="supportedLevels")
-    def supported_levels(self) -> pulumi.Output[Sequence['outputs.RecommendationSupportedLevel']]:
-        """
-        Optional. The profile levels supported by a recommendation. For example, profile level values could be `Low`, `Medium`, and `High`. Not all recommendations support this field.
-        """
+    def supported_levels(self) -> pulumi.Output[Optional[Sequence['outputs.RecommendationSupportedLevel']]]:
         return pulumi.get(self, "supported_levels")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        The date and time the recommendation details were created, in the format defined by RFC3339.
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeStatusBegin")
-    def time_status_begin(self) -> pulumi.Output[str]:
-        """
-        The date and time that the recommendation entered its current status. The format is defined by RFC3339.
-        """
+    def time_status_begin(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_status_begin")
 
     @property
     @pulumi.getter(name="timeStatusEnd")
-    def time_status_end(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The date and time the current status will change. The format is defined by RFC3339.
-
-        For example, "The current `postponed` status of the recommendation will end and change to `pending` on this date and time."
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
+    def time_status_end(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_status_end")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> pulumi.Output[str]:
-        """
-        The date and time the recommendation details were last updated, in the format defined by RFC3339.
-        """
+    def time_updated(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_updated")
 

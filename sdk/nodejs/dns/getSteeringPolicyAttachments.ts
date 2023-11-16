@@ -122,7 +122,7 @@ export interface GetSteeringPolicyAttachmentsResult {
     /**
      * The list of steering_policy_attachments.
      */
-    readonly steeringPolicyAttachments: outputs.Dns.GetSteeringPolicyAttachmentsSteeringPolicyAttachment[];
+    readonly steeringPolicyAttachments?: outputs.Dns.GetSteeringPolicyAttachmentsSteeringPolicyAttachment[];
     /**
      * The OCID of the attached steering policy.
      */

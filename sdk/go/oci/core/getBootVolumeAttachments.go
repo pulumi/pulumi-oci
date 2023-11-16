@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 func GetBootVolumeAttachments(ctx *pulumi.Context, args *GetBootVolumeAttachmentsArgs, opts ...pulumi.InvokeOption) (*GetBootVolumeAttachmentsResult, error) {
@@ -47,7 +46,7 @@ type GetBootVolumeAttachmentsResult struct {
 	CompartmentId string                           `pulumi:"compartmentId"`
 	Filters       []GetBootVolumeAttachmentsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The OCID of the instance the boot volume is attached to.
 	InstanceId *string `pulumi:"instanceId"`
 }
@@ -97,12 +96,6 @@ func (o GetBootVolumeAttachmentsResultOutput) ToGetBootVolumeAttachmentsResultOu
 	return o
 }
 
-func (o GetBootVolumeAttachmentsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetBootVolumeAttachmentsResult] {
-	return pulumix.Output[GetBootVolumeAttachmentsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The availability domain of an instance.  Example: `Uocm:PHX-AD-1`
 func (o GetBootVolumeAttachmentsResultOutput) AvailabilityDomain() pulumi.StringOutput {
 	return o.ApplyT(func(v GetBootVolumeAttachmentsResult) string { return v.AvailabilityDomain }).(pulumi.StringOutput)
@@ -130,8 +123,8 @@ func (o GetBootVolumeAttachmentsResultOutput) Filters() GetBootVolumeAttachments
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetBootVolumeAttachmentsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBootVolumeAttachmentsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetBootVolumeAttachmentsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBootVolumeAttachmentsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the instance the boot volume is attached to.

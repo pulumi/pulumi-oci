@@ -47,7 +47,7 @@ class GetSubscriptionRedeemableUsersResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -55,10 +55,7 @@ class GetSubscriptionRedeemableUsersResult:
 
     @property
     @pulumi.getter(name="redeemableUserCollections")
-    def redeemable_user_collections(self) -> Sequence['outputs.GetSubscriptionRedeemableUsersRedeemableUserCollectionResult']:
-        """
-        The list of redeemable_user_collection.
-        """
+    def redeemable_user_collections(self) -> Optional[Sequence['outputs.GetSubscriptionRedeemableUsersRedeemableUserCollectionResult']]:
         return pulumi.get(self, "redeemable_user_collections")
 
     @property
@@ -90,23 +87,7 @@ def get_subscription_redeemable_users(filters: Optional[Sequence[pulumi.InputTyp
                                       tenancy_id: Optional[str] = None,
                                       opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetSubscriptionRedeemableUsersResult:
     """
-    This data source provides the list of Subscription Redeemable Users in Oracle Cloud Infrastructure Usage Proxy service.
-
-    Provides the list of user summary that can redeem rewards for the given subscription ID.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_subscription_redeemable_users = oci.UsageProxy.get_subscription_redeemable_users(subscription_id=oci_ons_subscription["test_subscription"]["id"],
-        tenancy_id=oci_identity_tenancy["test_tenancy"]["id"])
-    ```
-
-
-    :param str subscription_id: The subscription ID for which rewards information is requested for.
-    :param str tenancy_id: The OCID of the tenancy.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['filters'] = filters
@@ -129,22 +110,6 @@ def get_subscription_redeemable_users_output(filters: Optional[pulumi.Input[Opti
                                              tenancy_id: Optional[pulumi.Input[str]] = None,
                                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSubscriptionRedeemableUsersResult]:
     """
-    This data source provides the list of Subscription Redeemable Users in Oracle Cloud Infrastructure Usage Proxy service.
-
-    Provides the list of user summary that can redeem rewards for the given subscription ID.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_subscription_redeemable_users = oci.UsageProxy.get_subscription_redeemable_users(subscription_id=oci_ons_subscription["test_subscription"]["id"],
-        tenancy_id=oci_identity_tenancy["test_tenancy"]["id"])
-    ```
-
-
-    :param str subscription_id: The subscription ID for which rewards information is requested for.
-    :param str tenancy_id: The OCID of the tenancy.
+    Use this data source to access information about an existing resource.
     """
     ...

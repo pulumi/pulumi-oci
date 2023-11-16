@@ -32,7 +32,7 @@ public final class GetSecurityAssessmentsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Indicates whether or not the security assessment is set as a baseline. This is applicable only for saved security assessments.
      * 
@@ -44,7 +44,7 @@ public final class GetSecurityAssessmentsResult {
      * @return The list of security_assessments.
      * 
      */
-    private List<GetSecurityAssessmentsSecurityAssessment> securityAssessments;
+    private @Nullable List<GetSecurityAssessmentsSecurityAssessment> securityAssessments;
     /**
      * @return The current state of the security assessment.
      * 
@@ -92,8 +92,8 @@ public final class GetSecurityAssessmentsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Indicates whether or not the security assessment is set as a baseline. This is applicable only for saved security assessments.
@@ -113,7 +113,7 @@ public final class GetSecurityAssessmentsResult {
      * 
      */
     public List<GetSecurityAssessmentsSecurityAssessment> securityAssessments() {
-        return this.securityAssessments;
+        return this.securityAssessments == null ? List.of() : this.securityAssessments;
     }
     /**
      * @return The current state of the security assessment.
@@ -160,11 +160,11 @@ public final class GetSecurityAssessmentsResult {
         private @Nullable Boolean compartmentIdInSubtree;
         private @Nullable String displayName;
         private @Nullable List<GetSecurityAssessmentsFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable Boolean isBaseline;
         private @Nullable Boolean isScheduleAssessment;
         private @Nullable String scheduleAssessmentId;
-        private List<GetSecurityAssessmentsSecurityAssessment> securityAssessments;
+        private @Nullable List<GetSecurityAssessmentsSecurityAssessment> securityAssessments;
         private @Nullable String state;
         private @Nullable String targetId;
         private @Nullable String timeCreatedGreaterThanOrEqualTo;
@@ -221,8 +221,8 @@ public final class GetSecurityAssessmentsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -241,8 +241,8 @@ public final class GetSecurityAssessmentsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder securityAssessments(List<GetSecurityAssessmentsSecurityAssessment> securityAssessments) {
-            this.securityAssessments = Objects.requireNonNull(securityAssessments);
+        public Builder securityAssessments(@Nullable List<GetSecurityAssessmentsSecurityAssessment> securityAssessments) {
+            this.securityAssessments = securityAssessments;
             return this;
         }
         public Builder securityAssessments(GetSecurityAssessmentsSecurityAssessment... securityAssessments) {

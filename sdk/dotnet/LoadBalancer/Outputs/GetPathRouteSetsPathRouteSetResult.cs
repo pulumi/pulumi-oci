@@ -25,7 +25,7 @@ namespace Pulumi.Oci.LoadBalancer.Outputs
         /// The set of path route rules.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetPathRouteSetsPathRouteSetPathRouteResult> PathRoutes;
-        public readonly string State;
+        public readonly string? State;
 
         [OutputConstructor]
         private GetPathRouteSetsPathRouteSetResult(
@@ -35,7 +35,7 @@ namespace Pulumi.Oci.LoadBalancer.Outputs
 
             ImmutableArray<Outputs.GetPathRouteSetsPathRouteSetPathRouteResult> pathRoutes,
 
-            string state)
+            string? state)
         {
             LoadBalancerId = loadBalancerId;
             Name = name;

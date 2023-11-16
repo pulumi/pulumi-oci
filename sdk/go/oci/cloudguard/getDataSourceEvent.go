@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Data Source Event resource in Oracle Cloud Infrastructure Cloud Guard service.
@@ -65,7 +64,7 @@ type GetDataSourceEventResult struct {
 	// Attached data Source
 	DataSourceId string `pulumi:"dataSourceId"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// List of event related to a DataSource
 	Items []GetDataSourceEventItem `pulumi:"items"`
 	// Data source event region
@@ -112,20 +111,14 @@ func (o GetDataSourceEventResultOutput) ToGetDataSourceEventResultOutputWithCont
 	return o
 }
 
-func (o GetDataSourceEventResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDataSourceEventResult] {
-	return pulumix.Output[GetDataSourceEventResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Attached data Source
 func (o GetDataSourceEventResultOutput) DataSourceId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDataSourceEventResult) string { return v.DataSourceId }).(pulumi.StringOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetDataSourceEventResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDataSourceEventResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetDataSourceEventResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDataSourceEventResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // List of event related to a DataSource

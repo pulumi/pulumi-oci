@@ -58,55 +58,37 @@ class GetRepositoryCommitResult:
 
     @property
     @pulumi.getter(name="authorEmail")
-    def author_email(self) -> str:
-        """
-        Email of the author of the repository.
-        """
+    def author_email(self) -> Optional[str]:
         return pulumi.get(self, "author_email")
 
     @property
     @pulumi.getter(name="authorName")
-    def author_name(self) -> str:
-        """
-        Name of the author of the repository.
-        """
+    def author_name(self) -> Optional[str]:
         return pulumi.get(self, "author_name")
 
     @property
     @pulumi.getter(name="commitId")
     def commit_id(self) -> str:
-        """
-        Commit hash pointed to by reference name.
-        """
         return pulumi.get(self, "commit_id")
 
     @property
     @pulumi.getter(name="commitMessage")
-    def commit_message(self) -> str:
-        """
-        The commit message.
-        """
+    def commit_message(self) -> Optional[str]:
         return pulumi.get(self, "commit_message")
 
     @property
     @pulumi.getter(name="committerEmail")
-    def committer_email(self) -> str:
-        """
-        Email of who creates the commit.
-        """
+    def committer_email(self) -> Optional[str]:
         return pulumi.get(self, "committer_email")
 
     @property
     @pulumi.getter(name="committerName")
-    def committer_name(self) -> str:
-        """
-        Name of who creates the commit.
-        """
+    def committer_name(self) -> Optional[str]:
         return pulumi.get(self, "committer_name")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -114,10 +96,7 @@ class GetRepositoryCommitResult:
 
     @property
     @pulumi.getter(name="parentCommitIds")
-    def parent_commit_ids(self) -> Sequence[str]:
-        """
-        An array of parent commit IDs of created commit.
-        """
+    def parent_commit_ids(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "parent_commit_ids")
 
     @property
@@ -127,18 +106,12 @@ class GetRepositoryCommitResult:
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The time at which commit was created.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="treeId")
-    def tree_id(self) -> str:
-        """
-        Tree information for the specified commit.
-        """
+    def tree_id(self) -> Optional[str]:
         return pulumi.get(self, "tree_id")
 
 
@@ -165,23 +138,7 @@ def get_repository_commit(commit_id: Optional[str] = None,
                           repository_id: Optional[str] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetRepositoryCommitResult:
     """
-    This data source provides details about a specific Repository Commit resource in Oracle Cloud Infrastructure Devops service.
-
-    Retrieves a repository's commit by commit ID.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_repository_commit = oci.DevOps.get_repository_commit(commit_id=oci_devops_commit["test_commit"]["id"],
-        repository_id=oci_devops_repository["test_repository"]["id"])
-    ```
-
-
-    :param str commit_id: A filter to return only resources that match the given commit ID.
-    :param str repository_id: Unique repository identifier.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['commitId'] = commit_id
@@ -208,22 +165,6 @@ def get_repository_commit_output(commit_id: Optional[pulumi.Input[str]] = None,
                                  repository_id: Optional[pulumi.Input[str]] = None,
                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetRepositoryCommitResult]:
     """
-    This data source provides details about a specific Repository Commit resource in Oracle Cloud Infrastructure Devops service.
-
-    Retrieves a repository's commit by commit ID.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_repository_commit = oci.DevOps.get_repository_commit(commit_id=oci_devops_commit["test_commit"]["id"],
-        repository_id=oci_devops_repository["test_repository"]["id"])
-    ```
-
-
-    :param str commit_id: A filter to return only resources that match the given commit ID.
-    :param str repository_id: Unique repository identifier.
+    Use this data source to access information about an existing resource.
     """
     ...

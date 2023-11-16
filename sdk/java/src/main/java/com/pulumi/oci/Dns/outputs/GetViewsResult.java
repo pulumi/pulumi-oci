@@ -40,7 +40,7 @@ public final class GetViewsResult {
      * @return The list of views.
      * 
      */
-    private List<GetViewsView> views;
+    private @Nullable List<GetViewsView> views;
 
     private GetViewsResult() {}
     /**
@@ -82,7 +82,7 @@ public final class GetViewsResult {
      * 
      */
     public List<GetViewsView> views() {
-        return this.views;
+        return this.views == null ? List.of() : this.views;
     }
 
     public static Builder builder() {
@@ -100,7 +100,7 @@ public final class GetViewsResult {
         private @Nullable String id;
         private @Nullable String scope;
         private @Nullable String state;
-        private List<GetViewsView> views;
+        private @Nullable List<GetViewsView> views;
         public Builder() {}
         public Builder(GetViewsResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -147,8 +147,8 @@ public final class GetViewsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder views(List<GetViewsView> views) {
-            this.views = Objects.requireNonNull(views);
+        public Builder views(@Nullable List<GetViewsView> views) {
+            this.views = views;
             return this;
         }
         public Builder views(GetViewsView... views) {

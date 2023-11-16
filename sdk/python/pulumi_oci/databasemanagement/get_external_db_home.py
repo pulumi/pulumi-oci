@@ -61,34 +61,22 @@ class GetExternalDbHomeResult:
 
     @property
     @pulumi.getter(name="additionalDetails")
-    def additional_details(self) -> Mapping[str, Any]:
-        """
-        The additional details of the DB home defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
-        """
+    def additional_details(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "additional_details")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="componentName")
-    def component_name(self) -> str:
-        """
-        The name of the external DB home.
-        """
+    def component_name(self) -> Optional[str]:
         return pulumi.get(self, "component_name")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        The user-friendly name for the external DB home. The name does not have to be unique.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
@@ -98,23 +86,17 @@ class GetExternalDbHomeResult:
 
     @property
     @pulumi.getter(name="externalDbSystemId")
-    def external_db_system_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that the DB home is a part of.
-        """
+    def external_db_system_id(self) -> Optional[str]:
         return pulumi.get(self, "external_db_system_id")
 
     @property
     @pulumi.getter(name="homeDirectory")
-    def home_directory(self) -> str:
-        """
-        The location of the DB home.
-        """
+    def home_directory(self) -> Optional[str]:
         return pulumi.get(self, "home_directory")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -122,34 +104,22 @@ class GetExternalDbHomeResult:
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        Additional information about the current lifecycle state.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current lifecycle state of the external DB home.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the external DB home was created.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The date and time the external DB home was last updated.
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
 
@@ -176,21 +146,7 @@ class AwaitableGetExternalDbHomeResult(GetExternalDbHomeResult):
 def get_external_db_home(external_db_home_id: Optional[str] = None,
                          opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetExternalDbHomeResult:
     """
-    This data source provides details about a specific External Db Home resource in Oracle Cloud Infrastructure Database Management service.
-
-    Gets the details for the external DB home specified by `externalDbHomeId`.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_external_db_home = oci.DatabaseManagement.get_external_db_home(external_db_home_id=oci_database_management_external_db_home["test_external_db_home"]["id"])
-    ```
-
-
-    :param str external_db_home_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database home.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['externalDbHomeId'] = external_db_home_id
@@ -216,20 +172,6 @@ def get_external_db_home(external_db_home_id: Optional[str] = None,
 def get_external_db_home_output(external_db_home_id: Optional[pulumi.Input[str]] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetExternalDbHomeResult]:
     """
-    This data source provides details about a specific External Db Home resource in Oracle Cloud Infrastructure Database Management service.
-
-    Gets the details for the external DB home specified by `externalDbHomeId`.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_external_db_home = oci.DatabaseManagement.get_external_db_home(external_db_home_id=oci_database_management_external_db_home["test_external_db_home"]["id"])
-    ```
-
-
-    :param str external_db_home_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database home.
+    Use this data source to access information about an existing resource.
     """
     ...

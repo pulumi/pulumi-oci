@@ -57,12 +57,12 @@ export interface GetReplicationSourcesResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly namespace: string;
     /**
      * The list of replication_sources.
      */
-    readonly replicationSources: outputs.ObjectStorage.GetReplicationSourcesReplicationSource[];
+    readonly replicationSources?: outputs.ObjectStorage.GetReplicationSourcesReplicationSource[];
 }
 /**
  * This data source provides the list of Replication Sources in Oracle Cloud Infrastructure Object Storage service.

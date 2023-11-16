@@ -108,170 +108,170 @@ namespace Pulumi.Oci.Opsi
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compute Instance
         /// </summary>
-        public readonly string ComputeId;
+        public readonly string? ComputeId;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// OPSI Enterprise Manager Bridge OCID
         /// </summary>
-        public readonly string EnterpriseManagerBridgeId;
+        public readonly string? EnterpriseManagerBridgeId;
         /// <summary>
         /// Enterprise Manager Entity Display Name
         /// </summary>
-        public readonly string EnterpriseManagerEntityDisplayName;
+        public readonly string? EnterpriseManagerEntityDisplayName;
         /// <summary>
         /// Enterprise Manager Entity Unique Identifier
         /// </summary>
-        public readonly string EnterpriseManagerEntityIdentifier;
+        public readonly string? EnterpriseManagerEntityIdentifier;
         /// <summary>
         /// Enterprise Manager Entity Name
         /// </summary>
-        public readonly string EnterpriseManagerEntityName;
+        public readonly string? EnterpriseManagerEntityName;
         /// <summary>
         /// Enterprise Manager Entity Type
         /// </summary>
-        public readonly string EnterpriseManagerEntityType;
+        public readonly string? EnterpriseManagerEntityType;
         /// <summary>
         /// Enterprise Manager Unique Identifier
         /// </summary>
-        public readonly string EnterpriseManagerIdentifier;
+        public readonly string? EnterpriseManagerIdentifier;
         /// <summary>
         /// Source of the host entity.
         /// </summary>
-        public readonly string EntitySource;
+        public readonly string? EntitySource;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata insight.
         /// </summary>
-        public readonly string ExadataInsightId;
+        public readonly string? ExadataInsightId;
         /// <summary>
         /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// The user-friendly name for the host. The name does not have to be unique.
         /// </summary>
-        public readonly string HostDisplayName;
+        public readonly string? HostDisplayName;
         public readonly string HostInsightId;
         /// <summary>
         /// The host name. The host name is unique amongst the hosts managed by the same management agent.
         /// </summary>
-        public readonly string HostName;
+        public readonly string? HostName;
         /// <summary>
         /// Operations Insights internal representation of the host type. Possible value is EXTERNAL-HOST.
         /// </summary>
-        public readonly string HostType;
+        public readonly string? HostType;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the host insight resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         /// </summary>
-        public readonly string LifecycleDetails;
+        public readonly string? LifecycleDetails;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent
         /// </summary>
-        public readonly string ManagementAgentId;
+        public readonly string? ManagementAgentId;
         /// <summary>
         /// Platform name.
         /// </summary>
-        public readonly string PlatformName;
+        public readonly string? PlatformName;
         /// <summary>
         /// Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX, SOLARIS, WINDOWS]. Supported platformType(s) for MACS-managed cloud host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX, WINDOWS, AIX].
         /// </summary>
-        public readonly string PlatformType;
+        public readonly string? PlatformType;
         /// <summary>
         /// Platform version.
         /// </summary>
-        public readonly string PlatformVersion;
+        public readonly string? PlatformVersion;
         /// <summary>
         /// Processor count. This is the OCPU count for Autonomous Database and CPU core count for other database types.
         /// </summary>
-        public readonly int ProcessorCount;
+        public readonly int? ProcessorCount;
         /// <summary>
         /// The current state of the host.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// Indicates the status of a host insight in Operations Insights
         /// </summary>
-        public readonly string Status;
+        public readonly string? Status;
         /// <summary>
         /// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> SystemTags;
+        public readonly ImmutableDictionary<string, object>? SystemTags;
         /// <summary>
         /// The time the the host insight was first enabled. An RFC3339 formatted datetime string
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The time the host insight was updated. An RFC3339 formatted datetime string
         /// </summary>
-        public readonly string TimeUpdated;
+        public readonly string? TimeUpdated;
 
         [OutputConstructor]
         private GetHostInsightResult(
-            string compartmentId,
+            string? compartmentId,
 
-            string computeId,
+            string? computeId,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string enterpriseManagerBridgeId,
+            string? enterpriseManagerBridgeId,
 
-            string enterpriseManagerEntityDisplayName,
+            string? enterpriseManagerEntityDisplayName,
 
-            string enterpriseManagerEntityIdentifier,
+            string? enterpriseManagerEntityIdentifier,
 
-            string enterpriseManagerEntityName,
+            string? enterpriseManagerEntityName,
 
-            string enterpriseManagerEntityType,
+            string? enterpriseManagerEntityType,
 
-            string enterpriseManagerIdentifier,
+            string? enterpriseManagerIdentifier,
 
-            string entitySource,
+            string? entitySource,
 
-            string exadataInsightId,
+            string? exadataInsightId,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string hostDisplayName,
+            string? hostDisplayName,
 
             string hostInsightId,
 
-            string hostName,
+            string? hostName,
 
-            string hostType,
+            string? hostType,
 
-            string id,
+            string? id,
 
-            string lifecycleDetails,
+            string? lifecycleDetails,
 
-            string managementAgentId,
+            string? managementAgentId,
 
-            string platformName,
+            string? platformName,
 
-            string platformType,
+            string? platformType,
 
-            string platformVersion,
+            string? platformVersion,
 
-            int processorCount,
+            int? processorCount,
 
-            string state,
+            string? state,
 
-            string status,
+            string? status,
 
-            ImmutableDictionary<string, object> systemTags,
+            ImmutableDictionary<string, object>? systemTags,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeUpdated)
+            string? timeUpdated)
         {
             CompartmentId = compartmentId;
             ComputeId = computeId;

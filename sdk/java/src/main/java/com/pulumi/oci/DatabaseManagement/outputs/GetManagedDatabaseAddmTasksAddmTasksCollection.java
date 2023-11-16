@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabaseAddmTasksAddmTasksCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetManagedDatabaseAddmTasksAddmTasksCollection {
@@ -14,7 +15,7 @@ public final class GetManagedDatabaseAddmTasksAddmTasksCollection {
      * @return The list of ADDM task metadata.
      * 
      */
-    private List<GetManagedDatabaseAddmTasksAddmTasksCollectionItem> items;
+    private @Nullable List<GetManagedDatabaseAddmTasksAddmTasksCollectionItem> items;
 
     private GetManagedDatabaseAddmTasksAddmTasksCollection() {}
     /**
@@ -22,7 +23,7 @@ public final class GetManagedDatabaseAddmTasksAddmTasksCollection {
      * 
      */
     public List<GetManagedDatabaseAddmTasksAddmTasksCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -34,7 +35,7 @@ public final class GetManagedDatabaseAddmTasksAddmTasksCollection {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetManagedDatabaseAddmTasksAddmTasksCollectionItem> items;
+        private @Nullable List<GetManagedDatabaseAddmTasksAddmTasksCollectionItem> items;
         public Builder() {}
         public Builder(GetManagedDatabaseAddmTasksAddmTasksCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -42,8 +43,8 @@ public final class GetManagedDatabaseAddmTasksAddmTasksCollection {
         }
 
         @CustomType.Setter
-        public Builder items(List<GetManagedDatabaseAddmTasksAddmTasksCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetManagedDatabaseAddmTasksAddmTasksCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetManagedDatabaseAddmTasksAddmTasksCollectionItem... items) {

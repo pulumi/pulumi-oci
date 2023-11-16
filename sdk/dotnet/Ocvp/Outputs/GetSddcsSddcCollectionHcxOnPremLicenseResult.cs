@@ -16,23 +16,23 @@ namespace Pulumi.Oci.Ocvp.Outputs
         /// <summary>
         /// HCX on-premise license key value.
         /// </summary>
-        public readonly string ActivationKey;
+        public readonly string? ActivationKey;
         /// <summary>
         /// status of HCX on-premise license.
         /// </summary>
-        public readonly string Status;
+        public readonly string? Status;
         /// <summary>
         /// Name of the system that consumed the HCX on-premise license
         /// </summary>
-        public readonly string SystemName;
+        public readonly string? SystemName;
 
         [OutputConstructor]
         private GetSddcsSddcCollectionHcxOnPremLicenseResult(
-            string activationKey,
+            string? activationKey,
 
-            string status,
+            string? status,
 
-            string systemName)
+            string? systemName)
         {
             ActivationKey = activationKey;
             Status = status;

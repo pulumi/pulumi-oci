@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Nat Gateways in Oracle Cloud Infrastructure Core service.
@@ -76,7 +75,7 @@ type GetNatGatewaysResult struct {
 	DisplayName *string                `pulumi:"displayName"`
 	Filters     []GetNatGatewaysFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The list of nat_gateways.
 	NatGateways []GetNatGatewaysNatGateway `pulumi:"natGateways"`
 	// The NAT gateway's current state.
@@ -130,12 +129,6 @@ func (o GetNatGatewaysResultOutput) ToGetNatGatewaysResultOutputWithContext(ctx 
 	return o
 }
 
-func (o GetNatGatewaysResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetNatGatewaysResult] {
-	return pulumix.Output[GetNatGatewaysResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the NAT gateway.
 func (o GetNatGatewaysResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNatGatewaysResult) string { return v.CompartmentId }).(pulumi.StringOutput)
@@ -151,8 +144,8 @@ func (o GetNatGatewaysResultOutput) Filters() GetNatGatewaysFilterArrayOutput {
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetNatGatewaysResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNatGatewaysResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetNatGatewaysResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNatGatewaysResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The list of nat_gateways.

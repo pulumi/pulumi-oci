@@ -12,6 +12,7 @@ import com.pulumi.oci.Artifacts.inputs.ContainerConfigurationState;
 import com.pulumi.oci.Utilities;
 import java.lang.Boolean;
 import java.lang.String;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -80,14 +81,14 @@ public class ContainerConfiguration extends com.pulumi.resources.CustomResource 
      * 
      */
     @Export(name="namespace", refs={String.class}, tree="[0]")
-    private Output<String> namespace;
+    private Output</* @Nullable */ String> namespace;
 
     /**
      * @return The tenancy namespace used in the container repository path.
      * 
      */
-    public Output<String> namespace() {
-        return this.namespace;
+    public Output<Optional<String>> namespace() {
+        return Codegen.optional(this.namespace);
     }
 
     /**

@@ -156,7 +156,7 @@ namespace Pulumi.Oci.LogAnalytics
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// A list of resources and their category assignments
         /// </summary>
@@ -170,7 +170,7 @@ namespace Pulumi.Oci.LogAnalytics
         private GetLogAnalyticsResourceCategoriesListResult(
             ImmutableArray<Outputs.GetLogAnalyticsResourceCategoriesListCategoryResult> categories,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetLogAnalyticsResourceCategoriesListItemResult> items,
 

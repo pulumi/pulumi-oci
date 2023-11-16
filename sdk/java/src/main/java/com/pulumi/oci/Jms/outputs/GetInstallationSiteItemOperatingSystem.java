@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetInstallationSiteItemOperatingSystem {
@@ -14,63 +16,63 @@ public final class GetInstallationSiteItemOperatingSystem {
      * @return The architecture of the operating system as provided by the Java system property os.arch.
      * 
      */
-    private String architecture;
+    private @Nullable String architecture;
     /**
      * @return The operating system type, such as Windows or Linux
      * 
      */
-    private String family;
+    private @Nullable String family;
     /**
      * @return Number of instances running the operating system
      * 
      */
-    private Integer managedInstanceCount;
+    private @Nullable Integer managedInstanceCount;
     /**
      * @return The name of the operating system as provided by the Java system property os.name.
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return The version of the operating system as provided by the Java system property os.version.
      * 
      */
-    private String version;
+    private @Nullable String version;
 
     private GetInstallationSiteItemOperatingSystem() {}
     /**
      * @return The architecture of the operating system as provided by the Java system property os.arch.
      * 
      */
-    public String architecture() {
-        return this.architecture;
+    public Optional<String> architecture() {
+        return Optional.ofNullable(this.architecture);
     }
     /**
      * @return The operating system type, such as Windows or Linux
      * 
      */
-    public String family() {
-        return this.family;
+    public Optional<String> family() {
+        return Optional.ofNullable(this.family);
     }
     /**
      * @return Number of instances running the operating system
      * 
      */
-    public Integer managedInstanceCount() {
-        return this.managedInstanceCount;
+    public Optional<Integer> managedInstanceCount() {
+        return Optional.ofNullable(this.managedInstanceCount);
     }
     /**
      * @return The name of the operating system as provided by the Java system property os.name.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return The version of the operating system as provided by the Java system property os.version.
      * 
      */
-    public String version() {
-        return this.version;
+    public Optional<String> version() {
+        return Optional.ofNullable(this.version);
     }
 
     public static Builder builder() {
@@ -82,11 +84,11 @@ public final class GetInstallationSiteItemOperatingSystem {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String architecture;
-        private String family;
-        private Integer managedInstanceCount;
-        private String name;
-        private String version;
+        private @Nullable String architecture;
+        private @Nullable String family;
+        private @Nullable Integer managedInstanceCount;
+        private @Nullable String name;
+        private @Nullable String version;
         public Builder() {}
         public Builder(GetInstallationSiteItemOperatingSystem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -98,28 +100,28 @@ public final class GetInstallationSiteItemOperatingSystem {
         }
 
         @CustomType.Setter
-        public Builder architecture(String architecture) {
-            this.architecture = Objects.requireNonNull(architecture);
+        public Builder architecture(@Nullable String architecture) {
+            this.architecture = architecture;
             return this;
         }
         @CustomType.Setter
-        public Builder family(String family) {
-            this.family = Objects.requireNonNull(family);
+        public Builder family(@Nullable String family) {
+            this.family = family;
             return this;
         }
         @CustomType.Setter
-        public Builder managedInstanceCount(Integer managedInstanceCount) {
-            this.managedInstanceCount = Objects.requireNonNull(managedInstanceCount);
+        public Builder managedInstanceCount(@Nullable Integer managedInstanceCount) {
+            this.managedInstanceCount = managedInstanceCount;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder version(String version) {
-            this.version = Objects.requireNonNull(version);
+        public Builder version(@Nullable String version) {
+            this.version = version;
             return this;
         }
         public GetInstallationSiteItemOperatingSystem build() {

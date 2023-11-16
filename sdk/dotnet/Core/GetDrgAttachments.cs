@@ -256,7 +256,7 @@ namespace Pulumi.Oci.Core
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         public readonly string? NetworkId;
         /// <summary>
         /// The DRG attachment's current state.
@@ -283,7 +283,7 @@ namespace Pulumi.Oci.Core
 
             ImmutableArray<Outputs.GetDrgAttachmentsFilterResult> filters,
 
-            string id,
+            string? id,
 
             string? networkId,
 

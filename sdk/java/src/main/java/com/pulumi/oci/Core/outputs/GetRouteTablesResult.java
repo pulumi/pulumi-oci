@@ -29,12 +29,12 @@ public final class GetRouteTablesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The list of route_tables.
      * 
      */
-    private List<GetRouteTablesRouteTable> routeTables;
+    private @Nullable List<GetRouteTablesRouteTable> routeTables;
     /**
      * @return The route table&#39;s current state.
      * 
@@ -68,15 +68,15 @@ public final class GetRouteTablesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The list of route_tables.
      * 
      */
     public List<GetRouteTablesRouteTable> routeTables() {
-        return this.routeTables;
+        return this.routeTables == null ? List.of() : this.routeTables;
     }
     /**
      * @return The route table&#39;s current state.
@@ -105,8 +105,8 @@ public final class GetRouteTablesResult {
         private String compartmentId;
         private @Nullable String displayName;
         private @Nullable List<GetRouteTablesFilter> filters;
-        private String id;
-        private List<GetRouteTablesRouteTable> routeTables;
+        private @Nullable String id;
+        private @Nullable List<GetRouteTablesRouteTable> routeTables;
         private @Nullable String state;
         private @Nullable String vcnId;
         public Builder() {}
@@ -140,13 +140,13 @@ public final class GetRouteTablesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder routeTables(List<GetRouteTablesRouteTable> routeTables) {
-            this.routeTables = Objects.requireNonNull(routeTables);
+        public Builder routeTables(@Nullable List<GetRouteTablesRouteTable> routeTables) {
+            this.routeTables = routeTables;
             return this;
         }
         public Builder routeTables(GetRouteTablesRouteTable... routeTables) {

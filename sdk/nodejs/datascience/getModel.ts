@@ -44,69 +44,69 @@ export interface GetModelArgs {
  * A collection of values returned by getModel.
  */
 export interface GetModelResult {
-    readonly artifactContentDisposition: string;
-    readonly artifactContentLength: string;
-    readonly artifactContentMd5: string;
-    readonly artifactLastModified: string;
+    readonly artifactContentDisposition?: string;
+    readonly artifactContentLength?: string;
+    readonly artifactContentMd5?: string;
+    readonly artifactLastModified?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model's compartment.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the model.
      */
-    readonly createdBy: string;
+    readonly createdBy?: string;
     /**
      * An array of custom metadata details for the model.
      */
-    readonly customMetadataLists: outputs.DataScience.GetModelCustomMetadataList[];
+    readonly customMetadataLists?: outputs.DataScience.GetModelCustomMetadataList[];
     /**
      * An array of defined metadata details for the model.
      */
-    readonly definedMetadataLists: outputs.DataScience.GetModelDefinedMetadataList[];
+    readonly definedMetadataLists?: outputs.DataScience.GetModelDefinedMetadataList[];
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * A short description of the model.
      */
-    readonly description: string;
+    readonly description?: string;
     /**
      * A user-friendly display name for the resource. It does not have to be unique and can be modified. Avoid entering confidential information.
      */
-    readonly displayName: string;
-    readonly emptyModel: boolean;
+    readonly displayName?: string;
+    readonly emptyModel?: boolean;
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Input schema file content in String format
      */
-    readonly inputSchema: string;
-    readonly modelArtifact: string;
+    readonly inputSchema?: string;
+    readonly modelArtifact?: string;
     readonly modelId: string;
     /**
      * Output schema file content in String format
      */
-    readonly outputSchema: string;
+    readonly outputSchema?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project associated with the model.
      */
-    readonly projectId: string;
+    readonly projectId?: string;
     /**
      * The state of the model.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
 }
 /**
  * This data source provides details about a specific Model resource in Oracle Cloud Infrastructure Data Science service.

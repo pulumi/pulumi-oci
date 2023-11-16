@@ -39,10 +39,7 @@ class GetAutonomousDbPreviewVersionsResult:
 
     @property
     @pulumi.getter(name="autonomousDbPreviewVersions")
-    def autonomous_db_preview_versions(self) -> Sequence['outputs.GetAutonomousDbPreviewVersionsAutonomousDbPreviewVersionResult']:
-        """
-        The list of autonomous_db_preview_versions.
-        """
+    def autonomous_db_preview_versions(self) -> Optional[Sequence['outputs.GetAutonomousDbPreviewVersionsAutonomousDbPreviewVersionResult']]:
         return pulumi.get(self, "autonomous_db_preview_versions")
 
     @property
@@ -57,7 +54,7 @@ class GetAutonomousDbPreviewVersionsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -80,22 +77,7 @@ def get_autonomous_db_preview_versions(compartment_id: Optional[str] = None,
                                        filters: Optional[Sequence[pulumi.InputType['GetAutonomousDbPreviewVersionsFilterArgs']]] = None,
                                        opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAutonomousDbPreviewVersionsResult:
     """
-    This data source provides the list of Autonomous Db Preview Versions in Oracle Cloud Infrastructure Database service.
-
-    Gets a list of supported Autonomous Database versions. Note that preview version software is only available for
-    Autonomous Database Serverless (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) databases.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_autonomous_db_preview_versions = oci.Database.get_autonomous_db_preview_versions(compartment_id=var["compartment_id"])
-    ```
-
-
-    :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -115,21 +97,6 @@ def get_autonomous_db_preview_versions_output(compartment_id: Optional[pulumi.In
                                               filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetAutonomousDbPreviewVersionsFilterArgs']]]]] = None,
                                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAutonomousDbPreviewVersionsResult]:
     """
-    This data source provides the list of Autonomous Db Preview Versions in Oracle Cloud Infrastructure Database service.
-
-    Gets a list of supported Autonomous Database versions. Note that preview version software is only available for
-    Autonomous Database Serverless (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) databases.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_autonomous_db_preview_versions = oci.Database.get_autonomous_db_preview_versions(compartment_id=var["compartment_id"])
-    ```
-
-
-    :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+    Use this data source to access information about an existing resource.
     """
     ...

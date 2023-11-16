@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Resolver Endpoints in Oracle Cloud Infrastructure DNS service.
@@ -74,7 +73,7 @@ type GetResolverEndpointsArgs struct {
 type GetResolverEndpointsResult struct {
 	Filters []GetResolverEndpointsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The name of the resolver endpoint. Must be unique, case-insensitive, within the resolver.
 	Name *string `pulumi:"name"`
 	// The list of resolver_endpoints.
@@ -130,19 +129,13 @@ func (o GetResolverEndpointsResultOutput) ToGetResolverEndpointsResultOutputWith
 	return o
 }
 
-func (o GetResolverEndpointsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetResolverEndpointsResult] {
-	return pulumix.Output[GetResolverEndpointsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetResolverEndpointsResultOutput) Filters() GetResolverEndpointsFilterArrayOutput {
 	return o.ApplyT(func(v GetResolverEndpointsResult) []GetResolverEndpointsFilter { return v.Filters }).(GetResolverEndpointsFilterArrayOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetResolverEndpointsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetResolverEndpointsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetResolverEndpointsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetResolverEndpointsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The name of the resolver endpoint. Must be unique, case-insensitive, within the resolver.

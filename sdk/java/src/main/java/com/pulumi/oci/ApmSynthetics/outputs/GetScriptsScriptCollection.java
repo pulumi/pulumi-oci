@@ -7,14 +7,15 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.ApmSynthetics.outputs.GetScriptsScriptCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetScriptsScriptCollection {
-    private List<GetScriptsScriptCollectionItem> items;
+    private @Nullable List<GetScriptsScriptCollectionItem> items;
 
     private GetScriptsScriptCollection() {}
     public List<GetScriptsScriptCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -26,7 +27,7 @@ public final class GetScriptsScriptCollection {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetScriptsScriptCollectionItem> items;
+        private @Nullable List<GetScriptsScriptCollectionItem> items;
         public Builder() {}
         public Builder(GetScriptsScriptCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -34,8 +35,8 @@ public final class GetScriptsScriptCollection {
         }
 
         @CustomType.Setter
-        public Builder items(List<GetScriptsScriptCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetScriptsScriptCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetScriptsScriptCollectionItem... items) {

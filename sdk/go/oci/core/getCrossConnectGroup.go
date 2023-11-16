@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Cross Connect Group resource in Oracle Cloud Infrastructure Core service.
@@ -60,28 +59,28 @@ type LookupCrossConnectGroupArgs struct {
 // A collection of values returned by getCrossConnectGroup.
 type LookupCrossConnectGroupResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the cross-connect group.
-	CompartmentId       string `pulumi:"compartmentId"`
-	CrossConnectGroupId string `pulumi:"crossConnectGroupId"`
+	CompartmentId       *string `pulumi:"compartmentId"`
+	CrossConnectGroupId string  `pulumi:"crossConnectGroupId"`
 	// A reference name or identifier for the physical fiber connection that this cross-connect group uses.
-	CustomerReferenceName string `pulumi:"customerReferenceName"`
+	CustomerReferenceName *string `pulumi:"customerReferenceName"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The cross-connect group's Oracle ID (OCID).
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Properties used for MACsec (if capable).
 	MacsecProperties []GetCrossConnectGroupMacsecProperty `pulumi:"macsecProperties"`
 	// The FastConnect device that terminates the logical connection. This device might be different than the device that terminates the physical connection.
-	OciLogicalDeviceName string `pulumi:"ociLogicalDeviceName"`
+	OciLogicalDeviceName *string `pulumi:"ociLogicalDeviceName"`
 	// The FastConnect device that terminates the physical connection.
-	OciPhysicalDeviceName string `pulumi:"ociPhysicalDeviceName"`
+	OciPhysicalDeviceName *string `pulumi:"ociPhysicalDeviceName"`
 	// The cross-connect group's current state.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The date and time the cross-connect group was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 }
 
 func LookupCrossConnectGroupOutput(ctx *pulumi.Context, args LookupCrossConnectGroupOutputArgs, opts ...pulumi.InvokeOption) LookupCrossConnectGroupResultOutput {
@@ -122,15 +121,9 @@ func (o LookupCrossConnectGroupResultOutput) ToLookupCrossConnectGroupResultOutp
 	return o
 }
 
-func (o LookupCrossConnectGroupResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupCrossConnectGroupResult] {
-	return pulumix.Output[LookupCrossConnectGroupResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the cross-connect group.
-func (o LookupCrossConnectGroupResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupCrossConnectGroupResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupCrossConnectGroupResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupCrossConnectGroupResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupCrossConnectGroupResultOutput) CrossConnectGroupId() pulumi.StringOutput {
@@ -138,8 +131,8 @@ func (o LookupCrossConnectGroupResultOutput) CrossConnectGroupId() pulumi.String
 }
 
 // A reference name or identifier for the physical fiber connection that this cross-connect group uses.
-func (o LookupCrossConnectGroupResultOutput) CustomerReferenceName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupCrossConnectGroupResult) string { return v.CustomerReferenceName }).(pulumi.StringOutput)
+func (o LookupCrossConnectGroupResultOutput) CustomerReferenceName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupCrossConnectGroupResult) *string { return v.CustomerReferenceName }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -148,8 +141,8 @@ func (o LookupCrossConnectGroupResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-func (o LookupCrossConnectGroupResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupCrossConnectGroupResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupCrossConnectGroupResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupCrossConnectGroupResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -158,8 +151,8 @@ func (o LookupCrossConnectGroupResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The cross-connect group's Oracle ID (OCID).
-func (o LookupCrossConnectGroupResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupCrossConnectGroupResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupCrossConnectGroupResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupCrossConnectGroupResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Properties used for MACsec (if capable).
@@ -168,23 +161,23 @@ func (o LookupCrossConnectGroupResultOutput) MacsecProperties() GetCrossConnectG
 }
 
 // The FastConnect device that terminates the logical connection. This device might be different than the device that terminates the physical connection.
-func (o LookupCrossConnectGroupResultOutput) OciLogicalDeviceName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupCrossConnectGroupResult) string { return v.OciLogicalDeviceName }).(pulumi.StringOutput)
+func (o LookupCrossConnectGroupResultOutput) OciLogicalDeviceName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupCrossConnectGroupResult) *string { return v.OciLogicalDeviceName }).(pulumi.StringPtrOutput)
 }
 
 // The FastConnect device that terminates the physical connection.
-func (o LookupCrossConnectGroupResultOutput) OciPhysicalDeviceName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupCrossConnectGroupResult) string { return v.OciPhysicalDeviceName }).(pulumi.StringOutput)
+func (o LookupCrossConnectGroupResultOutput) OciPhysicalDeviceName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupCrossConnectGroupResult) *string { return v.OciPhysicalDeviceName }).(pulumi.StringPtrOutput)
 }
 
 // The cross-connect group's current state.
-func (o LookupCrossConnectGroupResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupCrossConnectGroupResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupCrossConnectGroupResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupCrossConnectGroupResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the cross-connect group was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-func (o LookupCrossConnectGroupResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupCrossConnectGroupResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupCrossConnectGroupResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupCrossConnectGroupResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 func init() {

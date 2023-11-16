@@ -78,11 +78,11 @@ export class OperationsInsightsWarehouse extends pulumi.CustomResource {
     /**
      * Number of OCPUs used by OPSI Warehouse ADW. Can be fractional.
      */
-    public /*out*/ readonly cpuUsed!: pulumi.Output<number>;
+    public /*out*/ readonly cpuUsed!: pulumi.Output<number | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) User-friedly name of Operations Insights Warehouse that does not have to be unique.
      */
@@ -90,23 +90,23 @@ export class OperationsInsightsWarehouse extends pulumi.CustomResource {
     /**
      * OCID of the dynamic group created for the warehouse
      */
-    public /*out*/ readonly dynamicGroupId!: pulumi.Output<string>;
+    public /*out*/ readonly dynamicGroupId!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string | undefined>;
     /**
      * Tenancy Identifier of Operations Insights service
      */
-    public /*out*/ readonly operationsInsightsTenancyId!: pulumi.Output<string>;
+    public /*out*/ readonly operationsInsightsTenancyId!: pulumi.Output<string | undefined>;
     /**
      * Possible lifecycle states
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Storage allocated to OPSI Warehouse ADW. 
      *
@@ -114,27 +114,27 @@ export class OperationsInsightsWarehouse extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly storageAllocatedInGbs!: pulumi.Output<number>;
+    public readonly storageAllocatedInGbs!: pulumi.Output<number | undefined>;
     /**
      * Storage by OPSI Warehouse ADW in GB.
      */
-    public /*out*/ readonly storageUsedInGbs!: pulumi.Output<number>;
+    public /*out*/ readonly storageUsedInGbs!: pulumi.Output<number | undefined>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any}>;
+    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * The time at which the resource was first created. An RFC3339 formatted datetime string
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * The time at which the ADW wallet was last rotated for the Operations Insights Warehouse. An RFC3339 formatted datetime string
      */
-    public /*out*/ readonly timeLastWalletRotated!: pulumi.Output<string>;
+    public /*out*/ readonly timeLastWalletRotated!: pulumi.Output<string | undefined>;
     /**
      * The time at which the resource was last updated. An RFC3339 formatted datetime string
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    public /*out*/ readonly timeUpdated!: pulumi.Output<string | undefined>;
 
     /**
      * Create a OperationsInsightsWarehouse resource with the given unique name, arguments, and options.

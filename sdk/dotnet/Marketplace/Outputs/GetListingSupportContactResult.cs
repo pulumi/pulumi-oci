@@ -16,29 +16,29 @@ namespace Pulumi.Oci.Marketplace.Outputs
         /// <summary>
         /// The email of the contact.
         /// </summary>
-        public readonly string Email;
+        public readonly string? Email;
         /// <summary>
         /// Text that describes the resource.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// The phone number of the contact.
         /// </summary>
-        public readonly string Phone;
+        public readonly string? Phone;
         /// <summary>
         /// The email subject line to use when contacting support.
         /// </summary>
-        public readonly string Subject;
+        public readonly string? Subject;
 
         [OutputConstructor]
         private GetListingSupportContactResult(
-            string email,
+            string? email,
 
-            string name,
+            string? name,
 
-            string phone,
+            string? phone,
 
-            string subject)
+            string? subject)
         {
             Email = email;
             Name = name;

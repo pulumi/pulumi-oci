@@ -47,72 +47,72 @@ export interface GetMigrationPlanResult {
     /**
      * Limits of the resources that are needed for migration. Example: {"BlockVolume": 2, "VCN": 1}
      */
-    readonly calculatedLimits: {[key: string]: any};
+    readonly calculatedLimits?: {[key: string]: any};
     /**
      * The OCID of the compartment containing the migration plan.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * The unique Oracle ID (OCID) that is immutable on creation.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
      */
-    readonly lifecycleDetails: string;
+    readonly lifecycleDetails?: string;
     /**
      * The OCID of the associated migration.
      */
-    readonly migrationId: string;
+    readonly migrationId?: string;
     readonly migrationPlanId: string;
     /**
      * Status of the migration plan.
      */
-    readonly migrationPlanStats: outputs.CloudMigrations.GetMigrationPlanMigrationPlanStat[];
+    readonly migrationPlanStats?: outputs.CloudMigrations.GetMigrationPlanMigrationPlanStat[];
     /**
      * OCID of the referenced ORM job.
      */
-    readonly referenceToRmsStack: string;
+    readonly referenceToRmsStack?: string;
     /**
      * Source migraiton plan ID to be cloned.
      */
-    readonly sourceMigrationPlanId: string;
+    readonly sourceMigrationPlanId?: string;
     /**
      * The current state of the migration plan.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * List of strategies for the resources to be migrated.
      */
-    readonly strategies: outputs.CloudMigrations.GetMigrationPlanStrategy[];
+    readonly strategies?: outputs.CloudMigrations.GetMigrationPlanStrategy[];
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    readonly systemTags: {[key: string]: any};
+    readonly systemTags?: {[key: string]: any};
     /**
      * List of target environments.
      */
-    readonly targetEnvironments: outputs.CloudMigrations.GetMigrationPlanTargetEnvironment[];
+    readonly targetEnvironments?: outputs.CloudMigrations.GetMigrationPlanTargetEnvironment[];
     /**
      * The time when the migration plan was created. An RFC3339 formatted datetime string.
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The time when the migration plan was updated. An RFC3339 formatted datetime string.
      */
-    readonly timeUpdated: string;
+    readonly timeUpdated?: string;
 }
 /**
  * This data source provides details about a specific Migration Plan resource in Oracle Cloud Infrastructure Cloud Migrations service.

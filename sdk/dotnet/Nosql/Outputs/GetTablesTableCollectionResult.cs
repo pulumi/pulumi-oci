@@ -16,51 +16,51 @@ namespace Pulumi.Oci.Nosql.Outputs
         /// <summary>
         /// The ID of a table's compartment.
         /// </summary>
-        public readonly string CompartmentId;
-        public readonly string DdlStatement;
+        public readonly string? CompartmentId;
+        public readonly string? DdlStatement;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace": {"bar-key": "value"}}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// Unique identifier that is immutable.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// True if this table can be reclaimed after an idle period.
         /// </summary>
-        public readonly bool IsAutoReclaimable;
+        public readonly bool? IsAutoReclaimable;
         /// <summary>
         /// True if this table is currently a member of a replication set.
         /// </summary>
-        public readonly bool IsMultiRegion;
+        public readonly bool? IsMultiRegion;
         /// <summary>
         /// A message describing the current state in more detail.
         /// </summary>
-        public readonly string LifecycleDetails;
-        public readonly int LocalReplicaInitializationInPercent;
+        public readonly string? LifecycleDetails;
+        public readonly int? LocalReplicaInitializationInPercent;
         /// <summary>
         /// A shell-globbing-style (*?[]) filter for names.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         public readonly ImmutableArray<Outputs.GetTablesTableCollectionReplicaResult> Replicas;
         /// <summary>
         /// The current state of this table's schema. Available states are MUTABLE - The schema can be changed. The table is not eligible for replication. FROZEN - The schema is immutable. The table is eligible for replication.
         /// </summary>
-        public readonly string SchemaState;
+        public readonly string? SchemaState;
         public readonly ImmutableArray<Outputs.GetTablesTableCollectionSchemaResult> Schemas;
         /// <summary>
         /// Filter list by the lifecycle state of the item.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// Read-only system tag. These predefined keys are scoped to namespaces.  At present the only supported namespace is `"orcl-cloud"`; and the only key in that namespace is `"free-tier-retained"`. Example: `{"orcl-cloud"": {"free-tier-retained": "true"}}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> SystemTags;
+        public readonly ImmutableDictionary<string, object>? SystemTags;
         /// <summary>
         /// Throughput and storage limits configuration of a table.
         /// </summary>
@@ -68,55 +68,55 @@ namespace Pulumi.Oci.Nosql.Outputs
         /// <summary>
         /// The time the the table was created. An RFC3339 formatted datetime string.
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// If lifecycleState is INACTIVE, indicates when this table will be automatically removed. An RFC3339 formatted datetime string.
         /// </summary>
-        public readonly string TimeOfExpiration;
+        public readonly string? TimeOfExpiration;
         /// <summary>
         /// The time the the table's metadata was last updated. An RFC3339 formatted datetime string.
         /// </summary>
-        public readonly string TimeUpdated;
+        public readonly string? TimeUpdated;
 
         [OutputConstructor]
         private GetTablesTableCollectionResult(
-            string compartmentId,
+            string? compartmentId,
 
-            string ddlStatement,
+            string? ddlStatement,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string id,
+            string? id,
 
-            bool isAutoReclaimable,
+            bool? isAutoReclaimable,
 
-            bool isMultiRegion,
+            bool? isMultiRegion,
 
-            string lifecycleDetails,
+            string? lifecycleDetails,
 
-            int localReplicaInitializationInPercent,
+            int? localReplicaInitializationInPercent,
 
-            string name,
+            string? name,
 
             ImmutableArray<Outputs.GetTablesTableCollectionReplicaResult> replicas,
 
-            string schemaState,
+            string? schemaState,
 
             ImmutableArray<Outputs.GetTablesTableCollectionSchemaResult> schemas,
 
-            string state,
+            string? state,
 
-            ImmutableDictionary<string, object> systemTags,
+            ImmutableDictionary<string, object>? systemTags,
 
             ImmutableArray<Outputs.GetTablesTableCollectionTableLimitResult> tableLimits,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeOfExpiration,
+            string? timeOfExpiration,
 
-            string timeUpdated)
+            string? timeUpdated)
         {
             CompartmentId = compartmentId;
             DdlStatement = ddlStatement;

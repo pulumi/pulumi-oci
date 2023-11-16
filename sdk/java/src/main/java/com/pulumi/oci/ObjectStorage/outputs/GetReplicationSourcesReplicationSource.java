@@ -6,6 +6,8 @@ package com.pulumi.oci.ObjectStorage.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetReplicationSourcesReplicationSource {
@@ -13,39 +15,39 @@ public final class GetReplicationSourcesReplicationSource {
      * @return The name of the policy.
      * 
      */
-    private String policyName;
+    private @Nullable String policyName;
     /**
      * @return The source bucket replicating data from.
      * 
      */
-    private String sourceBucketName;
+    private @Nullable String sourceBucketName;
     /**
      * @return The source region replicating data from, for example &#34;us-ashburn-1&#34;.
      * 
      */
-    private String sourceRegionName;
+    private @Nullable String sourceRegionName;
 
     private GetReplicationSourcesReplicationSource() {}
     /**
      * @return The name of the policy.
      * 
      */
-    public String policyName() {
-        return this.policyName;
+    public Optional<String> policyName() {
+        return Optional.ofNullable(this.policyName);
     }
     /**
      * @return The source bucket replicating data from.
      * 
      */
-    public String sourceBucketName() {
-        return this.sourceBucketName;
+    public Optional<String> sourceBucketName() {
+        return Optional.ofNullable(this.sourceBucketName);
     }
     /**
      * @return The source region replicating data from, for example &#34;us-ashburn-1&#34;.
      * 
      */
-    public String sourceRegionName() {
-        return this.sourceRegionName;
+    public Optional<String> sourceRegionName() {
+        return Optional.ofNullable(this.sourceRegionName);
     }
 
     public static Builder builder() {
@@ -57,9 +59,9 @@ public final class GetReplicationSourcesReplicationSource {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String policyName;
-        private String sourceBucketName;
-        private String sourceRegionName;
+        private @Nullable String policyName;
+        private @Nullable String sourceBucketName;
+        private @Nullable String sourceRegionName;
         public Builder() {}
         public Builder(GetReplicationSourcesReplicationSource defaults) {
     	      Objects.requireNonNull(defaults);
@@ -69,18 +71,18 @@ public final class GetReplicationSourcesReplicationSource {
         }
 
         @CustomType.Setter
-        public Builder policyName(String policyName) {
-            this.policyName = Objects.requireNonNull(policyName);
+        public Builder policyName(@Nullable String policyName) {
+            this.policyName = policyName;
             return this;
         }
         @CustomType.Setter
-        public Builder sourceBucketName(String sourceBucketName) {
-            this.sourceBucketName = Objects.requireNonNull(sourceBucketName);
+        public Builder sourceBucketName(@Nullable String sourceBucketName) {
+            this.sourceBucketName = sourceBucketName;
             return this;
         }
         @CustomType.Setter
-        public Builder sourceRegionName(String sourceRegionName) {
-            this.sourceRegionName = Objects.requireNonNull(sourceRegionName);
+        public Builder sourceRegionName(@Nullable String sourceRegionName) {
+            this.sourceRegionName = sourceRegionName;
             return this;
         }
         public GetReplicationSourcesReplicationSource build() {

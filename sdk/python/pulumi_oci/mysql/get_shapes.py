@@ -63,7 +63,7 @@ class GetShapesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -72,25 +72,16 @@ class GetShapesResult:
     @property
     @pulumi.getter(name="isSupportedFors")
     def is_supported_fors(self) -> Optional[Sequence[str]]:
-        """
-        What service features the shape is supported for.
-        """
         return pulumi.get(self, "is_supported_fors")
 
     @property
     @pulumi.getter
     def name(self) -> Optional[str]:
-        """
-        The name of the shape used for the DB System.
-        """
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
-    def shapes(self) -> Sequence['outputs.GetShapesShapeResult']:
-        """
-        The list of shapes.
-        """
+    def shapes(self) -> Optional[Sequence['outputs.GetShapesShapeResult']]:
         return pulumi.get(self, "shapes")
 
 
@@ -116,30 +107,7 @@ def get_shapes(availability_domain: Optional[str] = None,
                name: Optional[str] = None,
                opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetShapesResult:
     """
-    This data source provides the list of Shapes in Oracle Cloud Infrastructure MySQL Database service.
-
-    Gets a list of the shapes you can use to create a new MySQL DB System.
-    The shape determines the resources allocated to the DB System:
-    CPU cores and memory for VM shapes; CPU cores, memory and
-    storage for non-VM (or bare metal) shapes.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_shapes = oci.Mysql.get_shapes(compartment_id=var["compartment_id"],
-        availability_domain=var["shape_availability_domain"],
-        is_supported_fors=var["shape_is_supported_for"],
-        name=var["shape_name"])
-    ```
-
-
-    :param str availability_domain: The name of the Availability Domain.
-    :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param Sequence[str] is_supported_fors: Return shapes that are supported by the service feature.
-    :param str name: Name
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['availabilityDomain'] = availability_domain
@@ -168,29 +136,6 @@ def get_shapes_output(availability_domain: Optional[pulumi.Input[Optional[str]]]
                       name: Optional[pulumi.Input[Optional[str]]] = None,
                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetShapesResult]:
     """
-    This data source provides the list of Shapes in Oracle Cloud Infrastructure MySQL Database service.
-
-    Gets a list of the shapes you can use to create a new MySQL DB System.
-    The shape determines the resources allocated to the DB System:
-    CPU cores and memory for VM shapes; CPU cores, memory and
-    storage for non-VM (or bare metal) shapes.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_shapes = oci.Mysql.get_shapes(compartment_id=var["compartment_id"],
-        availability_domain=var["shape_availability_domain"],
-        is_supported_fors=var["shape_is_supported_for"],
-        name=var["shape_name"])
-    ```
-
-
-    :param str availability_domain: The name of the Availability Domain.
-    :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param Sequence[str] is_supported_fors: Return shapes that are supported by the service feature.
-    :param str name: Name
+    Use this data source to access information about an existing resource.
     """
     ...

@@ -60,20 +60,20 @@ export class ExternalDbSystemDiscovery extends pulumi.CustomResource {
     /**
      * The list of DB system components that were found in the DB system discovery.
      */
-    public /*out*/ readonly discoveredComponents!: pulumi.Output<outputs.DatabaseManagement.ExternalDbSystemDiscoveryDiscoveredComponent[]>;
+    public /*out*/ readonly discoveredComponents!: pulumi.Output<outputs.DatabaseManagement.ExternalDbSystemDiscoveryDiscoveredComponent[] | undefined>;
     /**
      * (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
      */
-    public readonly displayName!: pulumi.Output<string>;
-    public /*out*/ readonly externalDbSystemDiscoveryId!: pulumi.Output<string>;
+    public readonly displayName!: pulumi.Output<string | undefined>;
+    public /*out*/ readonly externalDbSystemDiscoveryId!: pulumi.Output<string | undefined>;
     /**
      * The directory in which Oracle Grid Infrastructure is installed.
      */
-    public /*out*/ readonly gridHome!: pulumi.Output<string>;
+    public /*out*/ readonly gridHome!: pulumi.Output<string | undefined>;
     /**
      * Additional information about the current lifecycle state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string | undefined>;
     /**
      * (Updatable)
      */
@@ -81,19 +81,19 @@ export class ExternalDbSystemDiscovery extends pulumi.CustomResource {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing Oracle Cloud Infrastructure resource matching the discovered DB system.
      */
-    public /*out*/ readonly resourceId!: pulumi.Output<string>;
+    public /*out*/ readonly resourceId!: pulumi.Output<string | undefined>;
     /**
      * The current lifecycle state of the external DB system discovery resource.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * The date and time the external DB system discovery was created.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * The date and time the external DB system discovery was last updated.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    public /*out*/ readonly timeUpdated!: pulumi.Output<string | undefined>;
 
     /**
      * Create a ExternalDbSystemDiscovery resource with the given unique name, arguments, and options.

@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDbHomePatchesPatch {
@@ -14,42 +16,42 @@ public final class GetDbHomePatchesPatch {
      * @return Actions that can possibly be performed using this patch.
      * 
      */
-    private List<String> availableActions;
+    private @Nullable List<String> availableActions;
     /**
      * @return The text describing this patch package.
      * 
      */
-    private String description;
+    private @Nullable String description;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the patch.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Action that is currently being performed or was completed last.
      * 
      */
-    private String lastAction;
+    private @Nullable String lastAction;
     /**
      * @return A descriptive text associated with the lifecycleState. Typically can contain additional displayable text.
      * 
      */
-    private String lifecycleDetails;
+    private @Nullable String lifecycleDetails;
     /**
      * @return The current state of the patch as a result of lastAction.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return The date and time that the patch was released.
      * 
      */
-    private String timeReleased;
+    private @Nullable String timeReleased;
     /**
      * @return The version of this patch package.
      * 
      */
-    private String version;
+    private @Nullable String version;
 
     private GetDbHomePatchesPatch() {}
     /**
@@ -57,56 +59,56 @@ public final class GetDbHomePatchesPatch {
      * 
      */
     public List<String> availableActions() {
-        return this.availableActions;
+        return this.availableActions == null ? List.of() : this.availableActions;
     }
     /**
      * @return The text describing this patch package.
      * 
      */
-    public String description() {
-        return this.description;
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the patch.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Action that is currently being performed or was completed last.
      * 
      */
-    public String lastAction() {
-        return this.lastAction;
+    public Optional<String> lastAction() {
+        return Optional.ofNullable(this.lastAction);
     }
     /**
      * @return A descriptive text associated with the lifecycleState. Typically can contain additional displayable text.
      * 
      */
-    public String lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Optional<String> lifecycleDetails() {
+        return Optional.ofNullable(this.lifecycleDetails);
     }
     /**
      * @return The current state of the patch as a result of lastAction.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return The date and time that the patch was released.
      * 
      */
-    public String timeReleased() {
-        return this.timeReleased;
+    public Optional<String> timeReleased() {
+        return Optional.ofNullable(this.timeReleased);
     }
     /**
      * @return The version of this patch package.
      * 
      */
-    public String version() {
-        return this.version;
+    public Optional<String> version() {
+        return Optional.ofNullable(this.version);
     }
 
     public static Builder builder() {
@@ -118,14 +120,14 @@ public final class GetDbHomePatchesPatch {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<String> availableActions;
-        private String description;
-        private String id;
-        private String lastAction;
-        private String lifecycleDetails;
-        private String state;
-        private String timeReleased;
-        private String version;
+        private @Nullable List<String> availableActions;
+        private @Nullable String description;
+        private @Nullable String id;
+        private @Nullable String lastAction;
+        private @Nullable String lifecycleDetails;
+        private @Nullable String state;
+        private @Nullable String timeReleased;
+        private @Nullable String version;
         public Builder() {}
         public Builder(GetDbHomePatchesPatch defaults) {
     	      Objects.requireNonNull(defaults);
@@ -140,46 +142,46 @@ public final class GetDbHomePatchesPatch {
         }
 
         @CustomType.Setter
-        public Builder availableActions(List<String> availableActions) {
-            this.availableActions = Objects.requireNonNull(availableActions);
+        public Builder availableActions(@Nullable List<String> availableActions) {
+            this.availableActions = availableActions;
             return this;
         }
         public Builder availableActions(String... availableActions) {
             return availableActions(List.of(availableActions));
         }
         @CustomType.Setter
-        public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+        public Builder description(@Nullable String description) {
+            this.description = description;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder lastAction(String lastAction) {
-            this.lastAction = Objects.requireNonNull(lastAction);
+        public Builder lastAction(@Nullable String lastAction) {
+            this.lastAction = lastAction;
             return this;
         }
         @CustomType.Setter
-        public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+        public Builder lifecycleDetails(@Nullable String lifecycleDetails) {
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder timeReleased(String timeReleased) {
-            this.timeReleased = Objects.requireNonNull(timeReleased);
+        public Builder timeReleased(@Nullable String timeReleased) {
+            this.timeReleased = timeReleased;
             return this;
         }
         @CustomType.Setter
-        public Builder version(String version) {
-            this.version = Objects.requireNonNull(version);
+        public Builder version(@Nullable String version) {
+            this.version = version;
             return this;
         }
         public GetDbHomePatchesPatch build() {

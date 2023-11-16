@@ -89,7 +89,7 @@ export interface GetJobExecutionsStatusesResult {
     /**
      * The list of job_executions_status_summary_collection.
      */
-    readonly jobExecutionsStatusSummaryCollections: outputs.DatabaseManagement.GetJobExecutionsStatusesJobExecutionsStatusSummaryCollection[];
+    readonly jobExecutionsStatusSummaryCollections?: outputs.DatabaseManagement.GetJobExecutionsStatusesJobExecutionsStatusSummaryCollection[];
     readonly managedDatabaseGroupId?: string;
     readonly managedDatabaseId?: string;
     readonly name?: string;

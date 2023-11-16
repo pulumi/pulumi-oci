@@ -47,68 +47,68 @@ export interface GetLifecycleStageResult {
     /**
      * The CPU architecture of the target instances.
      */
-    readonly archType: string;
+    readonly archType?: string;
     /**
      * The OCID of the tenancy containing the lifecycle stage.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * Software source name.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The OCID of the lifecycle environment for the lifecycle stage.
      */
-    readonly lifecycleEnvironmentId: string;
+    readonly lifecycleEnvironmentId?: string;
     readonly lifecycleStageId: string;
     /**
      * The list of managed instances specified lifecycle stage.
      */
-    readonly managedInstanceIds: outputs.OsManagementHub.GetLifecycleStageManagedInstanceId[];
+    readonly managedInstanceIds?: outputs.OsManagementHub.GetLifecycleStageManagedInstanceId[];
     /**
      * The operating system type of the target instances.
      */
-    readonly osFamily: string;
+    readonly osFamily?: string;
     /**
      * User specified rank for the lifecycle stage. Rank determines the hierarchy of the lifecycle stages for a given lifecycle environment.
      */
-    readonly rank: number;
+    readonly rank?: number;
     /**
      * Identifying information for the specified software source.
      */
-    readonly softwareSourceIds: outputs.OsManagementHub.GetLifecycleStageSoftwareSourceId[];
+    readonly softwareSourceIds?: outputs.OsManagementHub.GetLifecycleStageSoftwareSourceId[];
     /**
      * The current state of the lifecycle stage.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    readonly systemTags: {[key: string]: any};
+    readonly systemTags?: {[key: string]: any};
     /**
      * The time the lifecycle stage was created. An RFC3339 formatted datetime string.
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The time the lifecycle stage was last modified. An RFC3339 formatted datetime string.
      */
-    readonly timeModified: string;
+    readonly timeModified?: string;
     /**
      * The software source vendor name.
      */
-    readonly vendorName: string;
+    readonly vendorName?: string;
 }
 /**
  * This data source provides details about a specific Lifecycle Stage resource in Oracle Cloud Infrastructure Os Management Hub service.

@@ -77,47 +77,32 @@ class GetManagedDatabaseOptimizerStatisticsCollectionOperationResult:
 
     @property
     @pulumi.getter(name="completedCount")
-    def completed_count(self) -> int:
-        """
-        The number of objects for which statistics collection is completed.
-        """
+    def completed_count(self) -> Optional[int]:
         return pulumi.get(self, "completed_count")
 
     @property
     @pulumi.getter
-    def databases(self) -> Sequence['outputs.GetManagedDatabaseOptimizerStatisticsCollectionOperationDatabaseResult']:
-        """
-        The summary of the Managed Database resource.
-        """
+    def databases(self) -> Optional[Sequence['outputs.GetManagedDatabaseOptimizerStatisticsCollectionOperationDatabaseResult']]:
         return pulumi.get(self, "databases")
 
     @property
     @pulumi.getter(name="durationInSeconds")
-    def duration_in_seconds(self) -> float:
-        """
-        The time it takes to complete the operation (in seconds).
-        """
+    def duration_in_seconds(self) -> Optional[float]:
         return pulumi.get(self, "duration_in_seconds")
 
     @property
     @pulumi.getter(name="endTime")
-    def end_time(self) -> str:
-        """
-        The end time of the operation.
-        """
+    def end_time(self) -> Optional[str]:
         return pulumi.get(self, "end_time")
 
     @property
     @pulumi.getter(name="failedCount")
-    def failed_count(self) -> int:
-        """
-        The number of objects for which statistics collection failed.
-        """
+    def failed_count(self) -> Optional[int]:
         return pulumi.get(self, "failed_count")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -125,18 +110,12 @@ class GetManagedDatabaseOptimizerStatisticsCollectionOperationResult:
 
     @property
     @pulumi.getter(name="inProgressCount")
-    def in_progress_count(self) -> int:
-        """
-        The number of objects for which statistics collection is in progress.
-        """
+    def in_progress_count(self) -> Optional[int]:
         return pulumi.get(self, "in_progress_count")
 
     @property
     @pulumi.getter(name="jobName")
-    def job_name(self) -> str:
-        """
-        The name of the job.
-        """
+    def job_name(self) -> Optional[str]:
         return pulumi.get(self, "job_name")
 
     @property
@@ -146,10 +125,7 @@ class GetManagedDatabaseOptimizerStatisticsCollectionOperationResult:
 
     @property
     @pulumi.getter(name="operationName")
-    def operation_name(self) -> str:
-        """
-        The name of the operation.
-        """
+    def operation_name(self) -> Optional[str]:
         return pulumi.get(self, "operation_name")
 
     @property
@@ -159,50 +135,32 @@ class GetManagedDatabaseOptimizerStatisticsCollectionOperationResult:
 
     @property
     @pulumi.getter(name="startTime")
-    def start_time(self) -> str:
-        """
-        The start time of the operation.
-        """
+    def start_time(self) -> Optional[str]:
         return pulumi.get(self, "start_time")
 
     @property
     @pulumi.getter
-    def status(self) -> str:
-        """
-        The status of the Optimizer Statistics Collection task.
-        """
+    def status(self) -> Optional[str]:
         return pulumi.get(self, "status")
 
     @property
     @pulumi.getter
-    def target(self) -> str:
-        """
-        The name of the target object for which statistics are gathered.
-        """
+    def target(self) -> Optional[str]:
         return pulumi.get(self, "target")
 
     @property
     @pulumi.getter
-    def tasks(self) -> Sequence['outputs.GetManagedDatabaseOptimizerStatisticsCollectionOperationTaskResult']:
-        """
-        An array of Optimizer Statistics Collection task details.
-        """
+    def tasks(self) -> Optional[Sequence['outputs.GetManagedDatabaseOptimizerStatisticsCollectionOperationTaskResult']]:
         return pulumi.get(self, "tasks")
 
     @property
     @pulumi.getter(name="timedOutCount")
-    def timed_out_count(self) -> int:
-        """
-        The number of objects for which statistics collection timed out.
-        """
+    def timed_out_count(self) -> Optional[int]:
         return pulumi.get(self, "timed_out_count")
 
     @property
     @pulumi.getter(name="totalObjectsCount")
-    def total_objects_count(self) -> int:
-        """
-        The total number of objects for which statistics is collected. This number is the sum of all the objects with various statuses: completed, inProgress, failed, and timedOut.
-        """
+    def total_objects_count(self) -> Optional[int]:
         return pulumi.get(self, "total_objects_count")
 
 
@@ -235,23 +193,7 @@ def get_managed_database_optimizer_statistics_collection_operation(managed_datab
                                                                    optimizer_statistics_collection_operation_id: Optional[float] = None,
                                                                    opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetManagedDatabaseOptimizerStatisticsCollectionOperationResult:
     """
-    This data source provides details about a specific Managed Database Optimizer Statistics Collection Operation resource in Oracle Cloud Infrastructure Database Management service.
-
-    Gets a detailed report of the Optimizer Statistics Collection operation for the specified Managed Database.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_managed_database_optimizer_statistics_collection_operation = oci.DatabaseManagement.get_managed_database_optimizer_statistics_collection_operation(managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"],
-        optimizer_statistics_collection_operation_id=oci_database_management_optimizer_statistics_collection_operation["test_optimizer_statistics_collection_operation"]["id"])
-    ```
-
-
-    :param str managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
-    :param float optimizer_statistics_collection_operation_id: The ID of the Optimizer Statistics Collection operation.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['managedDatabaseId'] = managed_database_id
@@ -284,22 +226,6 @@ def get_managed_database_optimizer_statistics_collection_operation_output(manage
                                                                           optimizer_statistics_collection_operation_id: Optional[pulumi.Input[float]] = None,
                                                                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetManagedDatabaseOptimizerStatisticsCollectionOperationResult]:
     """
-    This data source provides details about a specific Managed Database Optimizer Statistics Collection Operation resource in Oracle Cloud Infrastructure Database Management service.
-
-    Gets a detailed report of the Optimizer Statistics Collection operation for the specified Managed Database.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_managed_database_optimizer_statistics_collection_operation = oci.DatabaseManagement.get_managed_database_optimizer_statistics_collection_operation(managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"],
-        optimizer_statistics_collection_operation_id=oci_database_management_optimizer_statistics_collection_operation["test_optimizer_statistics_collection_operation"]["id"])
-    ```
-
-
-    :param str managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
-    :param float optimizer_statistics_collection_operation_id: The ID of the Optimizer Statistics Collection operation.
+    Use this data source to access information about an existing resource.
     """
     ...

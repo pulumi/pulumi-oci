@@ -45,44 +45,44 @@ export interface GetRepositoryResult {
     /**
      * The OCID of the repository's compartment.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * The repository description.
      */
-    readonly description: string;
+    readonly description?: string;
     /**
      * The repository name.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the repository.  Example: `ocid1.artifactrepository.oc1..exampleuniqueID`
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Whether the repository is immutable. The artifacts of an immutable repository cannot be overwritten.
      */
-    readonly isImmutable: boolean;
+    readonly isImmutable?: boolean;
     readonly repositoryId: string;
     /**
      * The repository's supported artifact type.
      */
-    readonly repositoryType: string;
+    readonly repositoryType?: string;
     /**
      * The current state of the repository.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * An RFC 3339 timestamp indicating when the repository was created.
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
 }
 /**
  * This data source provides details about a specific Repository resource in Oracle Cloud Infrastructure Artifacts service.

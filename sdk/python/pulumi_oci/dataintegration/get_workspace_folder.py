@@ -74,18 +74,12 @@ class GetWorkspaceFolderResult:
 
     @property
     @pulumi.getter(name="categoryName")
-    def category_name(self) -> str:
-        """
-        The category name.
-        """
+    def category_name(self) -> Optional[str]:
         return pulumi.get(self, "category_name")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        The description of the aggregator.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
@@ -95,92 +89,62 @@ class GetWorkspaceFolderResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter
-    def identifier(self) -> str:
-        """
-        The identifier of the aggregator.
-        """
+    def identifier(self) -> Optional[str]:
         return pulumi.get(self, "identifier")
 
     @property
     @pulumi.getter
-    def key(self) -> str:
-        """
-        The key of the aggregator object.
-        """
+    def key(self) -> Optional[str]:
         return pulumi.get(self, "key")
 
     @property
     @pulumi.getter(name="keyMap")
-    def key_map(self) -> Mapping[str, Any]:
-        """
-        A key map. If provided, the key is replaced with generated key. This structure provides mapping between user provided key and generated key.
-        """
+    def key_map(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "key_map")
 
     @property
     @pulumi.getter
-    def metadatas(self) -> Sequence['outputs.GetWorkspaceFolderMetadataResult']:
-        """
-        A summary type containing information about the object including its key, name and when/who created/updated it.
-        """
+    def metadatas(self) -> Optional[Sequence['outputs.GetWorkspaceFolderMetadataResult']]:
         return pulumi.get(self, "metadatas")
 
     @property
     @pulumi.getter(name="modelType")
-    def model_type(self) -> str:
-        """
-        The type of the object.
-        """
+    def model_type(self) -> Optional[str]:
         return pulumi.get(self, "model_type")
 
     @property
     @pulumi.getter(name="modelVersion")
-    def model_version(self) -> str:
-        """
-        The model version of an object.
-        """
+    def model_version(self) -> Optional[str]:
         return pulumi.get(self, "model_version")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="objectStatus")
-    def object_status(self) -> int:
-        """
-        The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
-        """
+    def object_status(self) -> Optional[int]:
         return pulumi.get(self, "object_status")
 
     @property
     @pulumi.getter(name="objectVersion")
-    def object_version(self) -> int:
-        """
-        The version of the object that is used to track changes in the object instance.
-        """
+    def object_version(self) -> Optional[int]:
         return pulumi.get(self, "object_version")
 
     @property
     @pulumi.getter(name="parentReves")
-    def parent_reves(self) -> Sequence['outputs.GetWorkspaceFolderParentRefResult']:
-        """
-        A reference to the object's parent.
-        """
+    def parent_reves(self) -> Optional[Sequence['outputs.GetWorkspaceFolderParentRefResult']]:
         return pulumi.get(self, "parent_reves")
 
     @property
     @pulumi.getter(name="registryMetadatas")
-    def registry_metadatas(self) -> Sequence['outputs.GetWorkspaceFolderRegistryMetadataResult']:
+    def registry_metadatas(self) -> Optional[Sequence['outputs.GetWorkspaceFolderRegistryMetadataResult']]:
         return pulumi.get(self, "registry_metadatas")
 
     @property
@@ -217,23 +181,7 @@ def get_workspace_folder(folder_key: Optional[str] = None,
                          workspace_id: Optional[str] = None,
                          opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetWorkspaceFolderResult:
     """
-    This data source provides details about a specific Workspace Folder resource in Oracle Cloud Infrastructure Data Integration service.
-
-    Retrieves a folder using the specified identifier.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_workspace_folder = oci.DataIntegration.get_workspace_folder(folder_key=var["workspace_folder_folder_key"],
-        workspace_id=oci_dataintegration_workspace["test_workspace"]["id"])
-    ```
-
-
-    :param str folder_key: The folder key.
-    :param str workspace_id: The workspace ID.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['folderKey'] = folder_key
@@ -265,22 +213,6 @@ def get_workspace_folder_output(folder_key: Optional[pulumi.Input[str]] = None,
                                 workspace_id: Optional[pulumi.Input[str]] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetWorkspaceFolderResult]:
     """
-    This data source provides details about a specific Workspace Folder resource in Oracle Cloud Infrastructure Data Integration service.
-
-    Retrieves a folder using the specified identifier.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_workspace_folder = oci.DataIntegration.get_workspace_folder(folder_key=var["workspace_folder_folder_key"],
-        workspace_id=oci_dataintegration_workspace["test_workspace"]["id"])
-    ```
-
-
-    :param str folder_key: The folder key.
-    :param str workspace_id: The workspace ID.
+    Use this data source to access information about an existing resource.
     """
     ...

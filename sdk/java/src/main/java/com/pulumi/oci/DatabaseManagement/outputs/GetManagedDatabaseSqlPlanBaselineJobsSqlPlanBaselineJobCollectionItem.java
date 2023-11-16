@@ -6,6 +6,8 @@ package com.pulumi.oci.DatabaseManagement.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionItem {
@@ -13,51 +15,51 @@ public final class GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollec
      * @return A filter to return the SQL plan baseline jobs that match the name.
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return The status of the job.
      * 
      */
-    private String status;
+    private @Nullable String status;
     /**
      * @return The date and time the job was created.
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The type of the job.
      * 
      */
-    private String type;
+    private @Nullable String type;
 
     private GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionItem() {}
     /**
      * @return A filter to return the SQL plan baseline jobs that match the name.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return The status of the job.
      * 
      */
-    public String status() {
-        return this.status;
+    public Optional<String> status() {
+        return Optional.ofNullable(this.status);
     }
     /**
      * @return The date and time the job was created.
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return The type of the job.
      * 
      */
-    public String type() {
-        return this.type;
+    public Optional<String> type() {
+        return Optional.ofNullable(this.type);
     }
 
     public static Builder builder() {
@@ -69,10 +71,10 @@ public final class GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollec
     }
     @CustomType.Builder
     public static final class Builder {
-        private String name;
-        private String status;
-        private String timeCreated;
-        private String type;
+        private @Nullable String name;
+        private @Nullable String status;
+        private @Nullable String timeCreated;
+        private @Nullable String type;
         public Builder() {}
         public Builder(GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -83,23 +85,23 @@ public final class GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollec
         }
 
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder status(String status) {
-            this.status = Objects.requireNonNull(status);
+        public Builder status(@Nullable String status) {
+            this.status = status;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+        public Builder type(@Nullable String type) {
+            this.type = type;
             return this;
         }
         public GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionItem build() {

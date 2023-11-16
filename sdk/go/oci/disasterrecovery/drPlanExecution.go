@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Dr Plan Execution resource in Oracle Cloud Infrastructure Disaster Recovery service.
@@ -68,15 +67,15 @@ type DrPlanExecution struct {
 	pulumi.CustomResourceState
 
 	// The OCID of the compartment containing this DR plan execution.  Example: `ocid1.compartment.oc1..uniqueID`
-	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) The display name of the DR plan execution.  Example: `Execution - EBS Switchover PHX to IAD`
-	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrOutput `pulumi:"displayName"`
 	// The OCID of the DR protection group to which this DR plan execution belongs.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
-	DrProtectionGroupId pulumi.StringOutput `pulumi:"drProtectionGroupId"`
+	DrProtectionGroupId pulumi.StringPtrOutput `pulumi:"drProtectionGroupId"`
 	// The total duration in seconds taken to complete the step execution.  Example: `35`
-	ExecutionDurationInSec pulumi.IntOutput `pulumi:"executionDurationInSec"`
+	ExecutionDurationInSec pulumi.IntPtrOutput `pulumi:"executionDurationInSec"`
 	// The options for a plan execution.
 	ExecutionOptions DrPlanExecutionExecutionOptionsOutput `pulumi:"executionOptions"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{"Department": "Finance"}`
@@ -84,32 +83,32 @@ type DrPlanExecution struct {
 	// A list of groups executed in this DR plan execution.
 	GroupExecutions DrPlanExecutionGroupExecutionArrayOutput `pulumi:"groupExecutions"`
 	// A message describing the DR plan execution's current state in more detail.
-	LifeCycleDetails pulumi.StringOutput `pulumi:"lifeCycleDetails"`
+	LifeCycleDetails pulumi.StringPtrOutput `pulumi:"lifeCycleDetails"`
 	// The details of an object storage log location for a DR protection group.
 	LogLocations DrPlanExecutionLogLocationArrayOutput `pulumi:"logLocations"`
 	// The OCID of peer DR protection group associated with this plan's DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
-	PeerDrProtectionGroupId pulumi.StringOutput `pulumi:"peerDrProtectionGroupId"`
+	PeerDrProtectionGroupId pulumi.StringPtrOutput `pulumi:"peerDrProtectionGroupId"`
 	// The region of the peer DR protection group associated with this plan's DR protection group.  Example: `us-ashburn-1`
-	PeerRegion pulumi.StringOutput `pulumi:"peerRegion"`
+	PeerRegion pulumi.StringPtrOutput `pulumi:"peerRegion"`
 	// The type of the plan execution.
-	PlanExecutionType pulumi.StringOutput `pulumi:"planExecutionType"`
+	PlanExecutionType pulumi.StringPtrOutput `pulumi:"planExecutionType"`
 	// The OCID of the DR plan.  Example: `ocid1.drplan.oc1..uniqueID`
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	PlanId pulumi.StringOutput `pulumi:"planId"`
 	// The current state of the DR plan execution.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
 	// The date and time at which DR plan execution was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The date and time at which DR plan execution succeeded, failed, was paused, or was canceled. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
-	TimeEnded pulumi.StringOutput `pulumi:"timeEnded"`
+	TimeEnded pulumi.StringPtrOutput `pulumi:"timeEnded"`
 	// The date and time at which DR plan execution began. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
-	TimeStarted pulumi.StringOutput `pulumi:"timeStarted"`
+	TimeStarted pulumi.StringPtrOutput `pulumi:"timeStarted"`
 	// The time when DR plan execution was last updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
-	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 }
 
 // NewDrPlanExecution registers a new resource with the given unique name, arguments, and options.
@@ -299,12 +298,6 @@ func (i *DrPlanExecution) ToDrPlanExecutionOutputWithContext(ctx context.Context
 	return pulumi.ToOutputWithContext(ctx, i).(DrPlanExecutionOutput)
 }
 
-func (i *DrPlanExecution) ToOutput(ctx context.Context) pulumix.Output[*DrPlanExecution] {
-	return pulumix.Output[*DrPlanExecution]{
-		OutputState: i.ToDrPlanExecutionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // DrPlanExecutionArrayInput is an input type that accepts DrPlanExecutionArray and DrPlanExecutionArrayOutput values.
 // You can construct a concrete instance of `DrPlanExecutionArrayInput` via:
 //
@@ -328,12 +321,6 @@ func (i DrPlanExecutionArray) ToDrPlanExecutionArrayOutput() DrPlanExecutionArra
 
 func (i DrPlanExecutionArray) ToDrPlanExecutionArrayOutputWithContext(ctx context.Context) DrPlanExecutionArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(DrPlanExecutionArrayOutput)
-}
-
-func (i DrPlanExecutionArray) ToOutput(ctx context.Context) pulumix.Output[[]*DrPlanExecution] {
-	return pulumix.Output[[]*DrPlanExecution]{
-		OutputState: i.ToDrPlanExecutionArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // DrPlanExecutionMapInput is an input type that accepts DrPlanExecutionMap and DrPlanExecutionMapOutput values.
@@ -361,12 +348,6 @@ func (i DrPlanExecutionMap) ToDrPlanExecutionMapOutputWithContext(ctx context.Co
 	return pulumi.ToOutputWithContext(ctx, i).(DrPlanExecutionMapOutput)
 }
 
-func (i DrPlanExecutionMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*DrPlanExecution] {
-	return pulumix.Output[map[string]*DrPlanExecution]{
-		OutputState: i.ToDrPlanExecutionMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DrPlanExecutionOutput struct{ *pulumi.OutputState }
 
 func (DrPlanExecutionOutput) ElementType() reflect.Type {
@@ -381,15 +362,9 @@ func (o DrPlanExecutionOutput) ToDrPlanExecutionOutputWithContext(ctx context.Co
 	return o
 }
 
-func (o DrPlanExecutionOutput) ToOutput(ctx context.Context) pulumix.Output[*DrPlanExecution] {
-	return pulumix.Output[*DrPlanExecution]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the compartment containing this DR plan execution.  Example: `ocid1.compartment.oc1..uniqueID`
-func (o DrPlanExecutionOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v *DrPlanExecution) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
+func (o DrPlanExecutionOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DrPlanExecution) pulumi.StringPtrOutput { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Operations.CostCenter": "42"}`
@@ -398,18 +373,18 @@ func (o DrPlanExecutionOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // (Updatable) The display name of the DR plan execution.  Example: `Execution - EBS Switchover PHX to IAD`
-func (o DrPlanExecutionOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v *DrPlanExecution) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+func (o DrPlanExecutionOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DrPlanExecution) pulumi.StringPtrOutput { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the DR protection group to which this DR plan execution belongs.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
-func (o DrPlanExecutionOutput) DrProtectionGroupId() pulumi.StringOutput {
-	return o.ApplyT(func(v *DrPlanExecution) pulumi.StringOutput { return v.DrProtectionGroupId }).(pulumi.StringOutput)
+func (o DrPlanExecutionOutput) DrProtectionGroupId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DrPlanExecution) pulumi.StringPtrOutput { return v.DrProtectionGroupId }).(pulumi.StringPtrOutput)
 }
 
 // The total duration in seconds taken to complete the step execution.  Example: `35`
-func (o DrPlanExecutionOutput) ExecutionDurationInSec() pulumi.IntOutput {
-	return o.ApplyT(func(v *DrPlanExecution) pulumi.IntOutput { return v.ExecutionDurationInSec }).(pulumi.IntOutput)
+func (o DrPlanExecutionOutput) ExecutionDurationInSec() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *DrPlanExecution) pulumi.IntPtrOutput { return v.ExecutionDurationInSec }).(pulumi.IntPtrOutput)
 }
 
 // The options for a plan execution.
@@ -428,8 +403,8 @@ func (o DrPlanExecutionOutput) GroupExecutions() DrPlanExecutionGroupExecutionAr
 }
 
 // A message describing the DR plan execution's current state in more detail.
-func (o DrPlanExecutionOutput) LifeCycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v *DrPlanExecution) pulumi.StringOutput { return v.LifeCycleDetails }).(pulumi.StringOutput)
+func (o DrPlanExecutionOutput) LifeCycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DrPlanExecution) pulumi.StringPtrOutput { return v.LifeCycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // The details of an object storage log location for a DR protection group.
@@ -438,18 +413,18 @@ func (o DrPlanExecutionOutput) LogLocations() DrPlanExecutionLogLocationArrayOut
 }
 
 // The OCID of peer DR protection group associated with this plan's DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
-func (o DrPlanExecutionOutput) PeerDrProtectionGroupId() pulumi.StringOutput {
-	return o.ApplyT(func(v *DrPlanExecution) pulumi.StringOutput { return v.PeerDrProtectionGroupId }).(pulumi.StringOutput)
+func (o DrPlanExecutionOutput) PeerDrProtectionGroupId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DrPlanExecution) pulumi.StringPtrOutput { return v.PeerDrProtectionGroupId }).(pulumi.StringPtrOutput)
 }
 
 // The region of the peer DR protection group associated with this plan's DR protection group.  Example: `us-ashburn-1`
-func (o DrPlanExecutionOutput) PeerRegion() pulumi.StringOutput {
-	return o.ApplyT(func(v *DrPlanExecution) pulumi.StringOutput { return v.PeerRegion }).(pulumi.StringOutput)
+func (o DrPlanExecutionOutput) PeerRegion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DrPlanExecution) pulumi.StringPtrOutput { return v.PeerRegion }).(pulumi.StringPtrOutput)
 }
 
 // The type of the plan execution.
-func (o DrPlanExecutionOutput) PlanExecutionType() pulumi.StringOutput {
-	return o.ApplyT(func(v *DrPlanExecution) pulumi.StringOutput { return v.PlanExecutionType }).(pulumi.StringOutput)
+func (o DrPlanExecutionOutput) PlanExecutionType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DrPlanExecution) pulumi.StringPtrOutput { return v.PlanExecutionType }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the DR plan.  Example: `ocid1.drplan.oc1..uniqueID`
@@ -461,8 +436,8 @@ func (o DrPlanExecutionOutput) PlanId() pulumi.StringOutput {
 }
 
 // The current state of the DR plan execution.
-func (o DrPlanExecutionOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *DrPlanExecution) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o DrPlanExecutionOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DrPlanExecution) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -471,23 +446,23 @@ func (o DrPlanExecutionOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The date and time at which DR plan execution was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
-func (o DrPlanExecutionOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *DrPlanExecution) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o DrPlanExecutionOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DrPlanExecution) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time at which DR plan execution succeeded, failed, was paused, or was canceled. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
-func (o DrPlanExecutionOutput) TimeEnded() pulumi.StringOutput {
-	return o.ApplyT(func(v *DrPlanExecution) pulumi.StringOutput { return v.TimeEnded }).(pulumi.StringOutput)
+func (o DrPlanExecutionOutput) TimeEnded() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DrPlanExecution) pulumi.StringPtrOutput { return v.TimeEnded }).(pulumi.StringPtrOutput)
 }
 
 // The date and time at which DR plan execution began. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
-func (o DrPlanExecutionOutput) TimeStarted() pulumi.StringOutput {
-	return o.ApplyT(func(v *DrPlanExecution) pulumi.StringOutput { return v.TimeStarted }).(pulumi.StringOutput)
+func (o DrPlanExecutionOutput) TimeStarted() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DrPlanExecution) pulumi.StringPtrOutput { return v.TimeStarted }).(pulumi.StringPtrOutput)
 }
 
 // The time when DR plan execution was last updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
-func (o DrPlanExecutionOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *DrPlanExecution) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o DrPlanExecutionOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DrPlanExecution) pulumi.StringPtrOutput { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type DrPlanExecutionArrayOutput struct{ *pulumi.OutputState }
@@ -502,12 +477,6 @@ func (o DrPlanExecutionArrayOutput) ToDrPlanExecutionArrayOutput() DrPlanExecuti
 
 func (o DrPlanExecutionArrayOutput) ToDrPlanExecutionArrayOutputWithContext(ctx context.Context) DrPlanExecutionArrayOutput {
 	return o
-}
-
-func (o DrPlanExecutionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*DrPlanExecution] {
-	return pulumix.Output[[]*DrPlanExecution]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DrPlanExecutionArrayOutput) Index(i pulumi.IntInput) DrPlanExecutionOutput {
@@ -528,12 +497,6 @@ func (o DrPlanExecutionMapOutput) ToDrPlanExecutionMapOutput() DrPlanExecutionMa
 
 func (o DrPlanExecutionMapOutput) ToDrPlanExecutionMapOutputWithContext(ctx context.Context) DrPlanExecutionMapOutput {
 	return o
-}
-
-func (o DrPlanExecutionMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*DrPlanExecution] {
-	return pulumix.Output[map[string]*DrPlanExecution]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DrPlanExecutionMapOutput) MapIndex(k pulumi.StringInput) DrPlanExecutionOutput {

@@ -16,17 +16,17 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// <summary>
         /// The OCID of the masking policy..
         /// </summary>
-        public readonly string PolicyId;
+        public readonly string? PolicyId;
         /// <summary>
         /// A filter to return only items related to a specific target OCID.
         /// </summary>
-        public readonly string TargetId;
+        public readonly string? TargetId;
 
         [OutputConstructor]
         private GetMaskingAnalyticItemDimensionResult(
-            string policyId,
+            string? policyId,
 
-            string targetId)
+            string? targetId)
         {
             PolicyId = policyId;
             TargetId = targetId;

@@ -15,6 +15,7 @@ import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -92,42 +93,42 @@ public class VolumeAttachment extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="availabilityDomain", refs={String.class}, tree="[0]")
-    private Output<String> availabilityDomain;
+    private Output</* @Nullable */ String> availabilityDomain;
 
     /**
      * @return The availability domain of an instance.  Example: `Uocm:PHX-AD-1`
      * 
      */
-    public Output<String> availabilityDomain() {
-        return this.availabilityDomain;
+    public Output<Optional<String>> availabilityDomain() {
+        return Codegen.optional(this.availabilityDomain);
     }
     /**
      * The Challenge-Handshake-Authentication-Protocol (CHAP) secret valid for the associated CHAP user name. (Also called the &#34;CHAP password&#34;.)
      * 
      */
     @Export(name="chapSecret", refs={String.class}, tree="[0]")
-    private Output<String> chapSecret;
+    private Output</* @Nullable */ String> chapSecret;
 
     /**
      * @return The Challenge-Handshake-Authentication-Protocol (CHAP) secret valid for the associated CHAP user name. (Also called the &#34;CHAP password&#34;.)
      * 
      */
-    public Output<String> chapSecret() {
-        return this.chapSecret;
+    public Output<Optional<String>> chapSecret() {
+        return Codegen.optional(this.chapSecret);
     }
     /**
      * The volume&#39;s system-generated Challenge-Handshake-Authentication-Protocol (CHAP) user name. See [RFC 1994](https://tools.ietf.org/html/rfc1994) for more on CHAP.  Example: `ocid1.volume.oc1.phx.&lt;unique_ID&gt;`
      * 
      */
     @Export(name="chapUsername", refs={String.class}, tree="[0]")
-    private Output<String> chapUsername;
+    private Output</* @Nullable */ String> chapUsername;
 
     /**
      * @return The volume&#39;s system-generated Challenge-Handshake-Authentication-Protocol (CHAP) user name. See [RFC 1994](https://tools.ietf.org/html/rfc1994) for more on CHAP.  Example: `ocid1.volume.oc1.phx.&lt;unique_ID&gt;`
      * 
      */
-    public Output<String> chapUsername() {
-        return this.chapUsername;
+    public Output<Optional<String>> chapUsername() {
+        return Codegen.optional(this.chapUsername);
     }
     /**
      * The OCID of the compartment.
@@ -138,56 +139,56 @@ public class VolumeAttachment extends com.pulumi.resources.CustomResource {
      */
     @Deprecated /* The 'compartment_id' field has been deprecated and may be removed in a future version. Do not use this field. */
     @Export(name="compartmentId", refs={String.class}, tree="[0]")
-    private Output<String> compartmentId;
+    private Output</* @Nullable */ String> compartmentId;
 
     /**
      * @return The OCID of the compartment.
      * 
      */
-    public Output<String> compartmentId() {
-        return this.compartmentId;
+    public Output<Optional<String>> compartmentId() {
+        return Codegen.optional(this.compartmentId);
     }
     /**
      * The device name. To retrieve a list of devices for a given instance, see [ListInstanceDevices](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Device/ListInstanceDevices).
      * 
      */
     @Export(name="device", refs={String.class}, tree="[0]")
-    private Output<String> device;
+    private Output</* @Nullable */ String> device;
 
     /**
      * @return The device name. To retrieve a list of devices for a given instance, see [ListInstanceDevices](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Device/ListInstanceDevices).
      * 
      */
-    public Output<String> device() {
-        return this.device;
+    public Output<Optional<String>> device() {
+        return Codegen.optional(this.device);
     }
     /**
      * A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
     @Export(name="displayName", refs={String.class}, tree="[0]")
-    private Output<String> displayName;
+    private Output</* @Nullable */ String> displayName;
 
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    public Output<String> displayName() {
-        return this.displayName;
+    public Output<Optional<String>> displayName() {
+        return Codegen.optional(this.displayName);
     }
     /**
      * Refer the top-level definition of encryptionInTransitType. The default value is NONE.
      * 
      */
     @Export(name="encryptionInTransitType", refs={String.class}, tree="[0]")
-    private Output<String> encryptionInTransitType;
+    private Output</* @Nullable */ String> encryptionInTransitType;
 
     /**
      * @return Refer the top-level definition of encryptionInTransitType. The default value is NONE.
      * 
      */
-    public Output<String> encryptionInTransitType() {
-        return this.encryptionInTransitType;
+    public Output<Optional<String>> encryptionInTransitType() {
+        return Codegen.optional(this.encryptionInTransitType);
     }
     /**
      * The OCID of the instance.
@@ -208,182 +209,182 @@ public class VolumeAttachment extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="ipv4", refs={String.class}, tree="[0]")
-    private Output<String> ipv4;
+    private Output</* @Nullable */ String> ipv4;
 
     /**
      * @return The volume&#39;s iSCSI IP address.  Example: `169.254.2.2`
      * 
      */
-    public Output<String> ipv4() {
-        return this.ipv4;
+    public Output<Optional<String>> ipv4() {
+        return Codegen.optional(this.ipv4);
     }
     /**
      * The target volume&#39;s iSCSI Qualified Name in the format defined by [RFC 3720](https://tools.ietf.org/html/rfc3720#page-32).  Example: `iqn.2015-12.com.oracleiaas:40b7ee03-883f-46c6-a951-63d2841d2195`
      * 
      */
     @Export(name="iqn", refs={String.class}, tree="[0]")
-    private Output<String> iqn;
+    private Output</* @Nullable */ String> iqn;
 
     /**
      * @return The target volume&#39;s iSCSI Qualified Name in the format defined by [RFC 3720](https://tools.ietf.org/html/rfc3720#page-32).  Example: `iqn.2015-12.com.oracleiaas:40b7ee03-883f-46c6-a951-63d2841d2195`
      * 
      */
-    public Output<String> iqn() {
-        return this.iqn;
+    public Output<Optional<String>> iqn() {
+        return Codegen.optional(this.iqn);
     }
     /**
      * Whether to enable Oracle Cloud Agent to perform the iSCSI login and logout commands after the volume attach or detach operations for non multipath-enabled iSCSI attachments.
      * 
      */
     @Export(name="isAgentAutoIscsiLoginEnabled", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isAgentAutoIscsiLoginEnabled;
+    private Output</* @Nullable */ Boolean> isAgentAutoIscsiLoginEnabled;
 
     /**
      * @return Whether to enable Oracle Cloud Agent to perform the iSCSI login and logout commands after the volume attach or detach operations for non multipath-enabled iSCSI attachments.
      * 
      */
-    public Output<Boolean> isAgentAutoIscsiLoginEnabled() {
-        return this.isAgentAutoIscsiLoginEnabled;
+    public Output<Optional<Boolean>> isAgentAutoIscsiLoginEnabled() {
+        return Codegen.optional(this.isAgentAutoIscsiLoginEnabled);
     }
     /**
      * Whether the Iscsi or Paravirtualized attachment is multipath or not, it is not applicable to NVMe attachment.
      * 
      */
     @Export(name="isMultipath", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isMultipath;
+    private Output</* @Nullable */ Boolean> isMultipath;
 
     /**
      * @return Whether the Iscsi or Paravirtualized attachment is multipath or not, it is not applicable to NVMe attachment.
      * 
      */
-    public Output<Boolean> isMultipath() {
-        return this.isMultipath;
+    public Output<Optional<Boolean>> isMultipath() {
+        return Codegen.optional(this.isMultipath);
     }
     /**
      * Whether to enable in-transit encryption for the data volume&#39;s paravirtualized attachment. The default value is false.
      * 
      */
     @Export(name="isPvEncryptionInTransitEnabled", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isPvEncryptionInTransitEnabled;
+    private Output</* @Nullable */ Boolean> isPvEncryptionInTransitEnabled;
 
     /**
      * @return Whether to enable in-transit encryption for the data volume&#39;s paravirtualized attachment. The default value is false.
      * 
      */
-    public Output<Boolean> isPvEncryptionInTransitEnabled() {
-        return this.isPvEncryptionInTransitEnabled;
+    public Output<Optional<Boolean>> isPvEncryptionInTransitEnabled() {
+        return Codegen.optional(this.isPvEncryptionInTransitEnabled);
     }
     /**
      * Whether the attachment was created in read-only mode.
      * 
      */
     @Export(name="isReadOnly", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isReadOnly;
+    private Output</* @Nullable */ Boolean> isReadOnly;
 
     /**
      * @return Whether the attachment was created in read-only mode.
      * 
      */
-    public Output<Boolean> isReadOnly() {
-        return this.isReadOnly;
+    public Output<Optional<Boolean>> isReadOnly() {
+        return Codegen.optional(this.isReadOnly);
     }
     /**
      * Whether the attachment should be created in shareable mode. If an attachment is created in shareable mode, then other instances can attach the same volume, provided that they also create their attachments in shareable mode. Only certain volume types can be attached in shareable mode. Defaults to false if not specified.
      * 
      */
     @Export(name="isShareable", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isShareable;
+    private Output</* @Nullable */ Boolean> isShareable;
 
     /**
      * @return Whether the attachment should be created in shareable mode. If an attachment is created in shareable mode, then other instances can attach the same volume, provided that they also create their attachments in shareable mode. Only certain volume types can be attached in shareable mode. Defaults to false if not specified.
      * 
      */
-    public Output<Boolean> isShareable() {
-        return this.isShareable;
+    public Output<Optional<Boolean>> isShareable() {
+        return Codegen.optional(this.isShareable);
     }
     /**
      * The iscsi login state of the volume attachment. For a Iscsi volume attachment, all iscsi sessions need to be all logged-in or logged-out to be in logged-in or logged-out state.
      * 
      */
     @Export(name="iscsiLoginState", refs={String.class}, tree="[0]")
-    private Output<String> iscsiLoginState;
+    private Output</* @Nullable */ String> iscsiLoginState;
 
     /**
      * @return The iscsi login state of the volume attachment. For a Iscsi volume attachment, all iscsi sessions need to be all logged-in or logged-out to be in logged-in or logged-out state.
      * 
      */
-    public Output<String> iscsiLoginState() {
-        return this.iscsiLoginState;
+    public Output<Optional<String>> iscsiLoginState() {
+        return Codegen.optional(this.iscsiLoginState);
     }
     /**
      * A list of secondary multipath devices
      * 
      */
     @Export(name="multipathDevices", refs={List.class,VolumeAttachmentMultipathDevice.class}, tree="[0,1]")
-    private Output<List<VolumeAttachmentMultipathDevice>> multipathDevices;
+    private Output</* @Nullable */ List<VolumeAttachmentMultipathDevice>> multipathDevices;
 
     /**
      * @return A list of secondary multipath devices
      * 
      */
-    public Output<List<VolumeAttachmentMultipathDevice>> multipathDevices() {
-        return this.multipathDevices;
+    public Output<Optional<List<VolumeAttachmentMultipathDevice>>> multipathDevices() {
+        return Codegen.optional(this.multipathDevices);
     }
     /**
      * The volume&#39;s iSCSI port, usually port 860 or 3260.  Example: `3260`
      * 
      */
     @Export(name="port", refs={Integer.class}, tree="[0]")
-    private Output<Integer> port;
+    private Output</* @Nullable */ Integer> port;
 
     /**
      * @return The volume&#39;s iSCSI port, usually port 860 or 3260.  Example: `3260`
      * 
      */
-    public Output<Integer> port() {
-        return this.port;
+    public Output<Optional<Integer>> port() {
+        return Codegen.optional(this.port);
     }
     /**
      * The current state of the volume attachment.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The current state of the volume attachment.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * The date and time the volume was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The date and time the volume was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * Whether to use CHAP authentication for the volume attachment. Defaults to false.
      * 
      */
     @Export(name="useChap", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> useChap;
+    private Output</* @Nullable */ Boolean> useChap;
 
     /**
      * @return Whether to use CHAP authentication for the volume attachment. Defaults to false.
      * 
      */
-    public Output<Boolean> useChap() {
-        return this.useChap;
+    public Output<Optional<Boolean>> useChap() {
+        return Codegen.optional(this.useChap);
     }
     /**
      * The OCID of the volume.

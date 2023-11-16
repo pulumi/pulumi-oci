@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific External Db Node resource in Oracle Cloud Infrastructure Database Management service.
@@ -62,34 +61,34 @@ type LookupExternalDbNodeResult struct {
 	// The additional details of the external DB node defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
 	AdditionalDetails map[string]interface{} `pulumi:"additionalDetails"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// The name of the external DB node.
-	ComponentName string `pulumi:"componentName"`
+	ComponentName *string `pulumi:"componentName"`
 	// The number of CPU cores available on the DB node.
-	CpuCoreCount float64 `pulumi:"cpuCoreCount"`
+	CpuCoreCount *float64 `pulumi:"cpuCoreCount"`
 	// The user-friendly name for the external DB node. The name does not have to be unique.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Name of the domain.
-	DomainName string `pulumi:"domainName"`
+	DomainName *string `pulumi:"domainName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external connector.
-	ExternalConnectorId string `pulumi:"externalConnectorId"`
-	ExternalDbNodeId    string `pulumi:"externalDbNodeId"`
+	ExternalConnectorId *string `pulumi:"externalConnectorId"`
+	ExternalDbNodeId    string  `pulumi:"externalDbNodeId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that the DB node is a part of.
-	ExternalDbSystemId string `pulumi:"externalDbSystemId"`
+	ExternalDbSystemId *string `pulumi:"externalDbSystemId"`
 	// The host name for the DB node.
-	HostName string `pulumi:"hostName"`
+	HostName *string `pulumi:"hostName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB node.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Additional information about the current lifecycle state.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// The total memory in gigabytes (GB) on the DB node.
-	MemorySizeInGbs float64 `pulumi:"memorySizeInGbs"`
+	MemorySizeInGbs *float64 `pulumi:"memorySizeInGbs"`
 	// The current lifecycle state of the external DB node.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The date and time the external DB node was created.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The date and time the external DB node was last updated.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 func LookupExternalDbNodeOutput(ctx *pulumi.Context, args LookupExternalDbNodeOutputArgs, opts ...pulumi.InvokeOption) LookupExternalDbNodeResultOutput {
@@ -130,45 +129,39 @@ func (o LookupExternalDbNodeResultOutput) ToLookupExternalDbNodeResultOutputWith
 	return o
 }
 
-func (o LookupExternalDbNodeResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupExternalDbNodeResult] {
-	return pulumix.Output[LookupExternalDbNodeResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The additional details of the external DB node defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
 func (o LookupExternalDbNodeResultOutput) AdditionalDetails() pulumi.MapOutput {
 	return o.ApplyT(func(v LookupExternalDbNodeResult) map[string]interface{} { return v.AdditionalDetails }).(pulumi.MapOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-func (o LookupExternalDbNodeResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupExternalDbNodeResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupExternalDbNodeResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupExternalDbNodeResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // The name of the external DB node.
-func (o LookupExternalDbNodeResultOutput) ComponentName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupExternalDbNodeResult) string { return v.ComponentName }).(pulumi.StringOutput)
+func (o LookupExternalDbNodeResultOutput) ComponentName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupExternalDbNodeResult) *string { return v.ComponentName }).(pulumi.StringPtrOutput)
 }
 
 // The number of CPU cores available on the DB node.
-func (o LookupExternalDbNodeResultOutput) CpuCoreCount() pulumi.Float64Output {
-	return o.ApplyT(func(v LookupExternalDbNodeResult) float64 { return v.CpuCoreCount }).(pulumi.Float64Output)
+func (o LookupExternalDbNodeResultOutput) CpuCoreCount() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v LookupExternalDbNodeResult) *float64 { return v.CpuCoreCount }).(pulumi.Float64PtrOutput)
 }
 
 // The user-friendly name for the external DB node. The name does not have to be unique.
-func (o LookupExternalDbNodeResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupExternalDbNodeResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupExternalDbNodeResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupExternalDbNodeResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Name of the domain.
-func (o LookupExternalDbNodeResultOutput) DomainName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupExternalDbNodeResult) string { return v.DomainName }).(pulumi.StringOutput)
+func (o LookupExternalDbNodeResultOutput) DomainName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupExternalDbNodeResult) *string { return v.DomainName }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external connector.
-func (o LookupExternalDbNodeResultOutput) ExternalConnectorId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupExternalDbNodeResult) string { return v.ExternalConnectorId }).(pulumi.StringOutput)
+func (o LookupExternalDbNodeResultOutput) ExternalConnectorId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupExternalDbNodeResult) *string { return v.ExternalConnectorId }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupExternalDbNodeResultOutput) ExternalDbNodeId() pulumi.StringOutput {
@@ -176,43 +169,43 @@ func (o LookupExternalDbNodeResultOutput) ExternalDbNodeId() pulumi.StringOutput
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that the DB node is a part of.
-func (o LookupExternalDbNodeResultOutput) ExternalDbSystemId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupExternalDbNodeResult) string { return v.ExternalDbSystemId }).(pulumi.StringOutput)
+func (o LookupExternalDbNodeResultOutput) ExternalDbSystemId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupExternalDbNodeResult) *string { return v.ExternalDbSystemId }).(pulumi.StringPtrOutput)
 }
 
 // The host name for the DB node.
-func (o LookupExternalDbNodeResultOutput) HostName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupExternalDbNodeResult) string { return v.HostName }).(pulumi.StringOutput)
+func (o LookupExternalDbNodeResultOutput) HostName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupExternalDbNodeResult) *string { return v.HostName }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB node.
-func (o LookupExternalDbNodeResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupExternalDbNodeResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupExternalDbNodeResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupExternalDbNodeResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Additional information about the current lifecycle state.
-func (o LookupExternalDbNodeResultOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupExternalDbNodeResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o LookupExternalDbNodeResultOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupExternalDbNodeResult) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // The total memory in gigabytes (GB) on the DB node.
-func (o LookupExternalDbNodeResultOutput) MemorySizeInGbs() pulumi.Float64Output {
-	return o.ApplyT(func(v LookupExternalDbNodeResult) float64 { return v.MemorySizeInGbs }).(pulumi.Float64Output)
+func (o LookupExternalDbNodeResultOutput) MemorySizeInGbs() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v LookupExternalDbNodeResult) *float64 { return v.MemorySizeInGbs }).(pulumi.Float64PtrOutput)
 }
 
 // The current lifecycle state of the external DB node.
-func (o LookupExternalDbNodeResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupExternalDbNodeResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupExternalDbNodeResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupExternalDbNodeResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the external DB node was created.
-func (o LookupExternalDbNodeResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupExternalDbNodeResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupExternalDbNodeResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupExternalDbNodeResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the external DB node was last updated.
-func (o LookupExternalDbNodeResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupExternalDbNodeResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o LookupExternalDbNodeResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupExternalDbNodeResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 func init() {

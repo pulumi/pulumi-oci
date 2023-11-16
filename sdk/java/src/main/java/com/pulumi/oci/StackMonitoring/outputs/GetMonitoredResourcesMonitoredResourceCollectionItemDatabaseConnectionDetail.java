@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetMonitoredResourcesMonitoredResourceCollectionItemDatabaseConnectionDetail {
@@ -14,87 +16,87 @@ public final class GetMonitoredResourcesMonitoredResourceCollectionItemDatabaseC
      * @return Database connector Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
-    private String connectorId;
+    private @Nullable String connectorId;
     /**
      * @return dbId of the database.
      * 
      */
-    private String dbId;
+    private @Nullable String dbId;
     /**
      * @return UniqueName used for database connection requests.
      * 
      */
-    private String dbUniqueName;
+    private @Nullable String dbUniqueName;
     /**
      * @return Listener Port number used for connection requests.
      * 
      */
-    private Integer port;
+    private @Nullable Integer port;
     /**
      * @return Protocol used in DB connection string when connecting to external database service.
      * 
      */
-    private String protocol;
+    private @Nullable String protocol;
     /**
      * @return Service name used for connection requests.
      * 
      */
-    private String serviceName;
+    private @Nullable String serviceName;
     /**
      * @return SSL Secret Identifier for TCPS connector in Oracle Cloud Infrastructure Vault[OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
-    private String sslSecretId;
+    private @Nullable String sslSecretId;
 
     private GetMonitoredResourcesMonitoredResourceCollectionItemDatabaseConnectionDetail() {}
     /**
      * @return Database connector Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
-    public String connectorId() {
-        return this.connectorId;
+    public Optional<String> connectorId() {
+        return Optional.ofNullable(this.connectorId);
     }
     /**
      * @return dbId of the database.
      * 
      */
-    public String dbId() {
-        return this.dbId;
+    public Optional<String> dbId() {
+        return Optional.ofNullable(this.dbId);
     }
     /**
      * @return UniqueName used for database connection requests.
      * 
      */
-    public String dbUniqueName() {
-        return this.dbUniqueName;
+    public Optional<String> dbUniqueName() {
+        return Optional.ofNullable(this.dbUniqueName);
     }
     /**
      * @return Listener Port number used for connection requests.
      * 
      */
-    public Integer port() {
-        return this.port;
+    public Optional<Integer> port() {
+        return Optional.ofNullable(this.port);
     }
     /**
      * @return Protocol used in DB connection string when connecting to external database service.
      * 
      */
-    public String protocol() {
-        return this.protocol;
+    public Optional<String> protocol() {
+        return Optional.ofNullable(this.protocol);
     }
     /**
      * @return Service name used for connection requests.
      * 
      */
-    public String serviceName() {
-        return this.serviceName;
+    public Optional<String> serviceName() {
+        return Optional.ofNullable(this.serviceName);
     }
     /**
      * @return SSL Secret Identifier for TCPS connector in Oracle Cloud Infrastructure Vault[OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
-    public String sslSecretId() {
-        return this.sslSecretId;
+    public Optional<String> sslSecretId() {
+        return Optional.ofNullable(this.sslSecretId);
     }
 
     public static Builder builder() {
@@ -106,13 +108,13 @@ public final class GetMonitoredResourcesMonitoredResourceCollectionItemDatabaseC
     }
     @CustomType.Builder
     public static final class Builder {
-        private String connectorId;
-        private String dbId;
-        private String dbUniqueName;
-        private Integer port;
-        private String protocol;
-        private String serviceName;
-        private String sslSecretId;
+        private @Nullable String connectorId;
+        private @Nullable String dbId;
+        private @Nullable String dbUniqueName;
+        private @Nullable Integer port;
+        private @Nullable String protocol;
+        private @Nullable String serviceName;
+        private @Nullable String sslSecretId;
         public Builder() {}
         public Builder(GetMonitoredResourcesMonitoredResourceCollectionItemDatabaseConnectionDetail defaults) {
     	      Objects.requireNonNull(defaults);
@@ -126,38 +128,38 @@ public final class GetMonitoredResourcesMonitoredResourceCollectionItemDatabaseC
         }
 
         @CustomType.Setter
-        public Builder connectorId(String connectorId) {
-            this.connectorId = Objects.requireNonNull(connectorId);
+        public Builder connectorId(@Nullable String connectorId) {
+            this.connectorId = connectorId;
             return this;
         }
         @CustomType.Setter
-        public Builder dbId(String dbId) {
-            this.dbId = Objects.requireNonNull(dbId);
+        public Builder dbId(@Nullable String dbId) {
+            this.dbId = dbId;
             return this;
         }
         @CustomType.Setter
-        public Builder dbUniqueName(String dbUniqueName) {
-            this.dbUniqueName = Objects.requireNonNull(dbUniqueName);
+        public Builder dbUniqueName(@Nullable String dbUniqueName) {
+            this.dbUniqueName = dbUniqueName;
             return this;
         }
         @CustomType.Setter
-        public Builder port(Integer port) {
-            this.port = Objects.requireNonNull(port);
+        public Builder port(@Nullable Integer port) {
+            this.port = port;
             return this;
         }
         @CustomType.Setter
-        public Builder protocol(String protocol) {
-            this.protocol = Objects.requireNonNull(protocol);
+        public Builder protocol(@Nullable String protocol) {
+            this.protocol = protocol;
             return this;
         }
         @CustomType.Setter
-        public Builder serviceName(String serviceName) {
-            this.serviceName = Objects.requireNonNull(serviceName);
+        public Builder serviceName(@Nullable String serviceName) {
+            this.serviceName = serviceName;
             return this;
         }
         @CustomType.Setter
-        public Builder sslSecretId(String sslSecretId) {
-            this.sslSecretId = Objects.requireNonNull(sslSecretId);
+        public Builder sslSecretId(@Nullable String sslSecretId) {
+            this.sslSecretId = sslSecretId;
             return this;
         }
         public GetMonitoredResourcesMonitoredResourceCollectionItemDatabaseConnectionDetail build() {

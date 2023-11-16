@@ -6,6 +6,8 @@ package com.pulumi.oci.Database.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAutonomousDatabasesAutonomousDatabaseConnectionStringProfile {
@@ -13,99 +15,99 @@ public final class GetAutonomousDatabasesAutonomousDatabaseConnectionStringProfi
      * @return Consumer group used by the connection.
      * 
      */
-    private String consumerGroup;
+    private @Nullable String consumerGroup;
     /**
      * @return A filter to return only resources that match the entire display name given. The match is not case sensitive.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return Host format used in connection string.
      * 
      */
-    private String hostFormat;
+    private @Nullable String hostFormat;
     /**
      * @return Protocol used by the connection.
      * 
      */
-    private String protocol;
+    private @Nullable String protocol;
     /**
      * @return Specifies whether the listener performs a direct hand-off of the session, or redirects the session. In RAC deployments where SCAN is used, sessions are redirected to a Node VIP. Use `DIRECT` for direct hand-offs. Use `REDIRECT` to redirect the session.
      * 
      */
-    private String sessionMode;
+    private @Nullable String sessionMode;
     /**
      * @return Specifies whether the connection string is using the long (`LONG`), Easy Connect (`EZCONNECT`), or Easy Connect Plus (`EZCONNECTPLUS`) format. Autonomous Databases on shared Exadata infrastructure always use the long format.
      * 
      */
-    private String syntaxFormat;
+    private @Nullable String syntaxFormat;
     /**
      * @return Specifies whether the TLS handshake is using one-way (`SERVER`) or mutual (`MUTUAL`) authentication.
      * 
      */
-    private String tlsAuthentication;
+    private @Nullable String tlsAuthentication;
     /**
      * @return Connection string value.
      * 
      */
-    private String value;
+    private @Nullable String value;
 
     private GetAutonomousDatabasesAutonomousDatabaseConnectionStringProfile() {}
     /**
      * @return Consumer group used by the connection.
      * 
      */
-    public String consumerGroup() {
-        return this.consumerGroup;
+    public Optional<String> consumerGroup() {
+        return Optional.ofNullable(this.consumerGroup);
     }
     /**
      * @return A filter to return only resources that match the entire display name given. The match is not case sensitive.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return Host format used in connection string.
      * 
      */
-    public String hostFormat() {
-        return this.hostFormat;
+    public Optional<String> hostFormat() {
+        return Optional.ofNullable(this.hostFormat);
     }
     /**
      * @return Protocol used by the connection.
      * 
      */
-    public String protocol() {
-        return this.protocol;
+    public Optional<String> protocol() {
+        return Optional.ofNullable(this.protocol);
     }
     /**
      * @return Specifies whether the listener performs a direct hand-off of the session, or redirects the session. In RAC deployments where SCAN is used, sessions are redirected to a Node VIP. Use `DIRECT` for direct hand-offs. Use `REDIRECT` to redirect the session.
      * 
      */
-    public String sessionMode() {
-        return this.sessionMode;
+    public Optional<String> sessionMode() {
+        return Optional.ofNullable(this.sessionMode);
     }
     /**
      * @return Specifies whether the connection string is using the long (`LONG`), Easy Connect (`EZCONNECT`), or Easy Connect Plus (`EZCONNECTPLUS`) format. Autonomous Databases on shared Exadata infrastructure always use the long format.
      * 
      */
-    public String syntaxFormat() {
-        return this.syntaxFormat;
+    public Optional<String> syntaxFormat() {
+        return Optional.ofNullable(this.syntaxFormat);
     }
     /**
      * @return Specifies whether the TLS handshake is using one-way (`SERVER`) or mutual (`MUTUAL`) authentication.
      * 
      */
-    public String tlsAuthentication() {
-        return this.tlsAuthentication;
+    public Optional<String> tlsAuthentication() {
+        return Optional.ofNullable(this.tlsAuthentication);
     }
     /**
      * @return Connection string value.
      * 
      */
-    public String value() {
-        return this.value;
+    public Optional<String> value() {
+        return Optional.ofNullable(this.value);
     }
 
     public static Builder builder() {
@@ -117,14 +119,14 @@ public final class GetAutonomousDatabasesAutonomousDatabaseConnectionStringProfi
     }
     @CustomType.Builder
     public static final class Builder {
-        private String consumerGroup;
-        private String displayName;
-        private String hostFormat;
-        private String protocol;
-        private String sessionMode;
-        private String syntaxFormat;
-        private String tlsAuthentication;
-        private String value;
+        private @Nullable String consumerGroup;
+        private @Nullable String displayName;
+        private @Nullable String hostFormat;
+        private @Nullable String protocol;
+        private @Nullable String sessionMode;
+        private @Nullable String syntaxFormat;
+        private @Nullable String tlsAuthentication;
+        private @Nullable String value;
         public Builder() {}
         public Builder(GetAutonomousDatabasesAutonomousDatabaseConnectionStringProfile defaults) {
     	      Objects.requireNonNull(defaults);
@@ -139,43 +141,43 @@ public final class GetAutonomousDatabasesAutonomousDatabaseConnectionStringProfi
         }
 
         @CustomType.Setter
-        public Builder consumerGroup(String consumerGroup) {
-            this.consumerGroup = Objects.requireNonNull(consumerGroup);
+        public Builder consumerGroup(@Nullable String consumerGroup) {
+            this.consumerGroup = consumerGroup;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder hostFormat(String hostFormat) {
-            this.hostFormat = Objects.requireNonNull(hostFormat);
+        public Builder hostFormat(@Nullable String hostFormat) {
+            this.hostFormat = hostFormat;
             return this;
         }
         @CustomType.Setter
-        public Builder protocol(String protocol) {
-            this.protocol = Objects.requireNonNull(protocol);
+        public Builder protocol(@Nullable String protocol) {
+            this.protocol = protocol;
             return this;
         }
         @CustomType.Setter
-        public Builder sessionMode(String sessionMode) {
-            this.sessionMode = Objects.requireNonNull(sessionMode);
+        public Builder sessionMode(@Nullable String sessionMode) {
+            this.sessionMode = sessionMode;
             return this;
         }
         @CustomType.Setter
-        public Builder syntaxFormat(String syntaxFormat) {
-            this.syntaxFormat = Objects.requireNonNull(syntaxFormat);
+        public Builder syntaxFormat(@Nullable String syntaxFormat) {
+            this.syntaxFormat = syntaxFormat;
             return this;
         }
         @CustomType.Setter
-        public Builder tlsAuthentication(String tlsAuthentication) {
-            this.tlsAuthentication = Objects.requireNonNull(tlsAuthentication);
+        public Builder tlsAuthentication(@Nullable String tlsAuthentication) {
+            this.tlsAuthentication = tlsAuthentication;
             return this;
         }
         @CustomType.Setter
-        public Builder value(String value) {
-            this.value = Objects.requireNonNull(value);
+        public Builder value(@Nullable String value) {
+            this.value = value;
             return this;
         }
         public GetAutonomousDatabasesAutonomousDatabaseConnectionStringProfile build() {

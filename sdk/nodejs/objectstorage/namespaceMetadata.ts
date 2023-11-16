@@ -32,8 +32,8 @@ export class NamespaceMetadata extends pulumi.CustomResource {
         return obj['__pulumiType'] === NamespaceMetadata.__pulumiType;
     }
 
-    public readonly defaultS3compartmentId!: pulumi.Output<string>;
-    public readonly defaultSwiftCompartmentId!: pulumi.Output<string>;
+    public readonly defaultS3compartmentId!: pulumi.Output<string | undefined>;
+    public readonly defaultSwiftCompartmentId!: pulumi.Output<string | undefined>;
     public readonly namespace!: pulumi.Output<string>;
 
     /**

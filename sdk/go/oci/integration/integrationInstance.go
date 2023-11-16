@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Integration Instance resource in Oracle Cloud Infrastructure Integration service.
@@ -100,9 +99,9 @@ type IntegrationInstance struct {
 	// (Updatable) Compartment Identifier.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// Optional parameter specifying which entitlement to use for billing purposes. Only required if the account possesses more than one entitlement.
-	ConsumptionModel pulumi.StringOutput `pulumi:"consumptionModel"`
+	ConsumptionModel pulumi.StringPtrOutput `pulumi:"consumptionModel"`
 	// (Updatable) Details for a custom endpoint for the integration instance (update).
-	CustomEndpoint IntegrationInstanceCustomEndpointOutput `pulumi:"customEndpoint"`
+	CustomEndpoint IntegrationInstanceCustomEndpointPtrOutput `pulumi:"customEndpoint"`
 	// (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) Integration Instance Identifier.
@@ -118,32 +117,32 @@ type IntegrationInstance struct {
 	// Information for IDCS access
 	IdcsInfos IntegrationInstanceIdcsInfoArrayOutput `pulumi:"idcsInfos"`
 	// The Integration Instance URL.
-	InstanceUrl pulumi.StringOutput `pulumi:"instanceUrl"`
+	InstanceUrl pulumi.StringPtrOutput `pulumi:"instanceUrl"`
 	// (Updatable) Standard or Enterprise type,  Oracle Integration Generation 2 uses ENTERPRISE and STANDARD,  Oracle Integration 3 uses ENTERPRISEX and STANDARDX
 	IntegrationInstanceType pulumi.StringOutput `pulumi:"integrationInstanceType"`
 	// (Updatable) Bring your own license.
 	IsByol pulumi.BoolOutput `pulumi:"isByol"`
 	// (Updatable) The file server is enabled or not.
-	IsFileServerEnabled pulumi.BoolOutput `pulumi:"isFileServerEnabled"`
+	IsFileServerEnabled pulumi.BoolPtrOutput `pulumi:"isFileServerEnabled"`
 	// (Updatable) Visual Builder is enabled or not.
-	IsVisualBuilderEnabled pulumi.BoolOutput `pulumi:"isVisualBuilderEnabled"`
+	IsVisualBuilderEnabled pulumi.BoolPtrOutput `pulumi:"isVisualBuilderEnabled"`
 	// (Updatable) The number of configured message packs
 	MessagePacks pulumi.IntOutput `pulumi:"messagePacks"`
 	// Base representation of a network endpoint.
-	NetworkEndpointDetails IntegrationInstanceNetworkEndpointDetailsOutput `pulumi:"networkEndpointDetails"`
+	NetworkEndpointDetails IntegrationInstanceNetworkEndpointDetailsPtrOutput `pulumi:"networkEndpointDetails"`
 	// Shape
-	Shape pulumi.StringOutput `pulumi:"shape"`
+	Shape pulumi.StringPtrOutput `pulumi:"shape"`
 	// (Updatable) The target state for the instance. Could be set to ACTIVE or INACTIVE
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// An message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-	StateMessage pulumi.StringOutput `pulumi:"stateMessage"`
+	StateMessage pulumi.StringPtrOutput `pulumi:"stateMessage"`
 	// The time the the Integration Instance was created. An RFC3339 formatted datetime string.
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The time the IntegrationInstance was updated. An RFC3339 formatted datetime string.
-	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 }
 
 // NewIntegrationInstance registers a new resource with the given unique name, arguments, and options.
@@ -417,12 +416,6 @@ func (i *IntegrationInstance) ToIntegrationInstanceOutputWithContext(ctx context
 	return pulumi.ToOutputWithContext(ctx, i).(IntegrationInstanceOutput)
 }
 
-func (i *IntegrationInstance) ToOutput(ctx context.Context) pulumix.Output[*IntegrationInstance] {
-	return pulumix.Output[*IntegrationInstance]{
-		OutputState: i.ToIntegrationInstanceOutputWithContext(ctx).OutputState,
-	}
-}
-
 // IntegrationInstanceArrayInput is an input type that accepts IntegrationInstanceArray and IntegrationInstanceArrayOutput values.
 // You can construct a concrete instance of `IntegrationInstanceArrayInput` via:
 //
@@ -446,12 +439,6 @@ func (i IntegrationInstanceArray) ToIntegrationInstanceArrayOutput() Integration
 
 func (i IntegrationInstanceArray) ToIntegrationInstanceArrayOutputWithContext(ctx context.Context) IntegrationInstanceArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(IntegrationInstanceArrayOutput)
-}
-
-func (i IntegrationInstanceArray) ToOutput(ctx context.Context) pulumix.Output[[]*IntegrationInstance] {
-	return pulumix.Output[[]*IntegrationInstance]{
-		OutputState: i.ToIntegrationInstanceArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // IntegrationInstanceMapInput is an input type that accepts IntegrationInstanceMap and IntegrationInstanceMapOutput values.
@@ -479,12 +466,6 @@ func (i IntegrationInstanceMap) ToIntegrationInstanceMapOutputWithContext(ctx co
 	return pulumi.ToOutputWithContext(ctx, i).(IntegrationInstanceMapOutput)
 }
 
-func (i IntegrationInstanceMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*IntegrationInstance] {
-	return pulumix.Output[map[string]*IntegrationInstance]{
-		OutputState: i.ToIntegrationInstanceMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type IntegrationInstanceOutput struct{ *pulumi.OutputState }
 
 func (IntegrationInstanceOutput) ElementType() reflect.Type {
@@ -497,12 +478,6 @@ func (o IntegrationInstanceOutput) ToIntegrationInstanceOutput() IntegrationInst
 
 func (o IntegrationInstanceOutput) ToIntegrationInstanceOutputWithContext(ctx context.Context) IntegrationInstanceOutput {
 	return o
-}
-
-func (o IntegrationInstanceOutput) ToOutput(ctx context.Context) pulumix.Output[*IntegrationInstance] {
-	return pulumix.Output[*IntegrationInstance]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) A list of alternate custom endpoints to be used for the integration instance URL (contact Oracle for alternateCustomEndpoints availability for a specific instance).
@@ -523,13 +498,13 @@ func (o IntegrationInstanceOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // Optional parameter specifying which entitlement to use for billing purposes. Only required if the account possesses more than one entitlement.
-func (o IntegrationInstanceOutput) ConsumptionModel() pulumi.StringOutput {
-	return o.ApplyT(func(v *IntegrationInstance) pulumi.StringOutput { return v.ConsumptionModel }).(pulumi.StringOutput)
+func (o IntegrationInstanceOutput) ConsumptionModel() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *IntegrationInstance) pulumi.StringPtrOutput { return v.ConsumptionModel }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Details for a custom endpoint for the integration instance (update).
-func (o IntegrationInstanceOutput) CustomEndpoint() IntegrationInstanceCustomEndpointOutput {
-	return o.ApplyT(func(v *IntegrationInstance) IntegrationInstanceCustomEndpointOutput { return v.CustomEndpoint }).(IntegrationInstanceCustomEndpointOutput)
+func (o IntegrationInstanceOutput) CustomEndpoint() IntegrationInstanceCustomEndpointPtrOutput {
+	return o.ApplyT(func(v *IntegrationInstance) IntegrationInstanceCustomEndpointPtrOutput { return v.CustomEndpoint }).(IntegrationInstanceCustomEndpointPtrOutput)
 }
 
 // (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
@@ -568,8 +543,8 @@ func (o IntegrationInstanceOutput) IdcsInfos() IntegrationInstanceIdcsInfoArrayO
 }
 
 // The Integration Instance URL.
-func (o IntegrationInstanceOutput) InstanceUrl() pulumi.StringOutput {
-	return o.ApplyT(func(v *IntegrationInstance) pulumi.StringOutput { return v.InstanceUrl }).(pulumi.StringOutput)
+func (o IntegrationInstanceOutput) InstanceUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *IntegrationInstance) pulumi.StringPtrOutput { return v.InstanceUrl }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Standard or Enterprise type,  Oracle Integration Generation 2 uses ENTERPRISE and STANDARD,  Oracle Integration 3 uses ENTERPRISEX and STANDARDX
@@ -583,13 +558,13 @@ func (o IntegrationInstanceOutput) IsByol() pulumi.BoolOutput {
 }
 
 // (Updatable) The file server is enabled or not.
-func (o IntegrationInstanceOutput) IsFileServerEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v *IntegrationInstance) pulumi.BoolOutput { return v.IsFileServerEnabled }).(pulumi.BoolOutput)
+func (o IntegrationInstanceOutput) IsFileServerEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *IntegrationInstance) pulumi.BoolPtrOutput { return v.IsFileServerEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // (Updatable) Visual Builder is enabled or not.
-func (o IntegrationInstanceOutput) IsVisualBuilderEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v *IntegrationInstance) pulumi.BoolOutput { return v.IsVisualBuilderEnabled }).(pulumi.BoolOutput)
+func (o IntegrationInstanceOutput) IsVisualBuilderEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *IntegrationInstance) pulumi.BoolPtrOutput { return v.IsVisualBuilderEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // (Updatable) The number of configured message packs
@@ -598,38 +573,38 @@ func (o IntegrationInstanceOutput) MessagePacks() pulumi.IntOutput {
 }
 
 // Base representation of a network endpoint.
-func (o IntegrationInstanceOutput) NetworkEndpointDetails() IntegrationInstanceNetworkEndpointDetailsOutput {
-	return o.ApplyT(func(v *IntegrationInstance) IntegrationInstanceNetworkEndpointDetailsOutput {
+func (o IntegrationInstanceOutput) NetworkEndpointDetails() IntegrationInstanceNetworkEndpointDetailsPtrOutput {
+	return o.ApplyT(func(v *IntegrationInstance) IntegrationInstanceNetworkEndpointDetailsPtrOutput {
 		return v.NetworkEndpointDetails
-	}).(IntegrationInstanceNetworkEndpointDetailsOutput)
+	}).(IntegrationInstanceNetworkEndpointDetailsPtrOutput)
 }
 
 // Shape
-func (o IntegrationInstanceOutput) Shape() pulumi.StringOutput {
-	return o.ApplyT(func(v *IntegrationInstance) pulumi.StringOutput { return v.Shape }).(pulumi.StringOutput)
+func (o IntegrationInstanceOutput) Shape() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *IntegrationInstance) pulumi.StringPtrOutput { return v.Shape }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The target state for the instance. Could be set to ACTIVE or INACTIVE
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-func (o IntegrationInstanceOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *IntegrationInstance) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o IntegrationInstanceOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *IntegrationInstance) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // An message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-func (o IntegrationInstanceOutput) StateMessage() pulumi.StringOutput {
-	return o.ApplyT(func(v *IntegrationInstance) pulumi.StringOutput { return v.StateMessage }).(pulumi.StringOutput)
+func (o IntegrationInstanceOutput) StateMessage() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *IntegrationInstance) pulumi.StringPtrOutput { return v.StateMessage }).(pulumi.StringPtrOutput)
 }
 
 // The time the the Integration Instance was created. An RFC3339 formatted datetime string.
-func (o IntegrationInstanceOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *IntegrationInstance) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o IntegrationInstanceOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *IntegrationInstance) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time the IntegrationInstance was updated. An RFC3339 formatted datetime string.
-func (o IntegrationInstanceOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *IntegrationInstance) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o IntegrationInstanceOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *IntegrationInstance) pulumi.StringPtrOutput { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type IntegrationInstanceArrayOutput struct{ *pulumi.OutputState }
@@ -644,12 +619,6 @@ func (o IntegrationInstanceArrayOutput) ToIntegrationInstanceArrayOutput() Integ
 
 func (o IntegrationInstanceArrayOutput) ToIntegrationInstanceArrayOutputWithContext(ctx context.Context) IntegrationInstanceArrayOutput {
 	return o
-}
-
-func (o IntegrationInstanceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*IntegrationInstance] {
-	return pulumix.Output[[]*IntegrationInstance]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o IntegrationInstanceArrayOutput) Index(i pulumi.IntInput) IntegrationInstanceOutput {
@@ -670,12 +639,6 @@ func (o IntegrationInstanceMapOutput) ToIntegrationInstanceMapOutput() Integrati
 
 func (o IntegrationInstanceMapOutput) ToIntegrationInstanceMapOutputWithContext(ctx context.Context) IntegrationInstanceMapOutput {
 	return o
-}
-
-func (o IntegrationInstanceMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*IntegrationInstance] {
-	return pulumix.Output[map[string]*IntegrationInstance]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o IntegrationInstanceMapOutput) MapIndex(k pulumi.StringInput) IntegrationInstanceOutput {

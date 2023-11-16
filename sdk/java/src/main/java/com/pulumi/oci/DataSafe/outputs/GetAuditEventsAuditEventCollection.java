@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.DataSafe.outputs.GetAuditEventsAuditEventCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAuditEventsAuditEventCollection {
@@ -14,7 +15,7 @@ public final class GetAuditEventsAuditEventCollection {
      * @return Array of audit event summary.
      * 
      */
-    private List<GetAuditEventsAuditEventCollectionItem> items;
+    private @Nullable List<GetAuditEventsAuditEventCollectionItem> items;
 
     private GetAuditEventsAuditEventCollection() {}
     /**
@@ -22,7 +23,7 @@ public final class GetAuditEventsAuditEventCollection {
      * 
      */
     public List<GetAuditEventsAuditEventCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -34,7 +35,7 @@ public final class GetAuditEventsAuditEventCollection {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetAuditEventsAuditEventCollectionItem> items;
+        private @Nullable List<GetAuditEventsAuditEventCollectionItem> items;
         public Builder() {}
         public Builder(GetAuditEventsAuditEventCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -42,8 +43,8 @@ public final class GetAuditEventsAuditEventCollection {
         }
 
         @CustomType.Setter
-        public Builder items(List<GetAuditEventsAuditEventCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetAuditEventsAuditEventCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetAuditEventsAuditEventCollectionItem... items) {

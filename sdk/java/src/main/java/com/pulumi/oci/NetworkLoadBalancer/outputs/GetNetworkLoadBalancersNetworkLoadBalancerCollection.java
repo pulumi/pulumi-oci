@@ -7,14 +7,15 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.NetworkLoadBalancer.outputs.GetNetworkLoadBalancersNetworkLoadBalancerCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetNetworkLoadBalancersNetworkLoadBalancerCollection {
-    private List<GetNetworkLoadBalancersNetworkLoadBalancerCollectionItem> items;
+    private @Nullable List<GetNetworkLoadBalancersNetworkLoadBalancerCollectionItem> items;
 
     private GetNetworkLoadBalancersNetworkLoadBalancerCollection() {}
     public List<GetNetworkLoadBalancersNetworkLoadBalancerCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -26,7 +27,7 @@ public final class GetNetworkLoadBalancersNetworkLoadBalancerCollection {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetNetworkLoadBalancersNetworkLoadBalancerCollectionItem> items;
+        private @Nullable List<GetNetworkLoadBalancersNetworkLoadBalancerCollectionItem> items;
         public Builder() {}
         public Builder(GetNetworkLoadBalancersNetworkLoadBalancerCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -34,8 +35,8 @@ public final class GetNetworkLoadBalancersNetworkLoadBalancerCollection {
         }
 
         @CustomType.Setter
-        public Builder items(List<GetNetworkLoadBalancersNetworkLoadBalancerCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetNetworkLoadBalancersNetworkLoadBalancerCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetNetworkLoadBalancersNetworkLoadBalancerCollectionItem... items) {

@@ -57,9 +57,6 @@ class GetManagementAgentInstallKeysResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        Compartment Identifier
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
@@ -70,9 +67,6 @@ class GetManagementAgentInstallKeysResult:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        Management Agent Install Key Name
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -82,7 +76,7 @@ class GetManagementAgentInstallKeysResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -90,18 +84,12 @@ class GetManagementAgentInstallKeysResult:
 
     @property
     @pulumi.getter(name="managementAgentInstallKeys")
-    def management_agent_install_keys(self) -> Sequence['outputs.GetManagementAgentInstallKeysManagementAgentInstallKeyResult']:
-        """
-        The list of management_agent_install_keys.
-        """
+    def management_agent_install_keys(self) -> Optional[Sequence['outputs.GetManagementAgentInstallKeysManagementAgentInstallKeyResult']]:
         return pulumi.get(self, "management_agent_install_keys")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        Status of Key
-        """
         return pulumi.get(self, "state")
 
 
@@ -129,29 +117,7 @@ def get_management_agent_install_keys(access_level: Optional[str] = None,
                                       state: Optional[str] = None,
                                       opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetManagementAgentInstallKeysResult:
     """
-    This data source provides the list of Management Agent Install Keys in Oracle Cloud Infrastructure Management Agent service.
-
-    Returns a list of Management Agent installed Keys.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_management_agent_install_keys = oci.ManagementAgent.get_management_agent_install_keys(compartment_id=var["compartment_id"],
-        access_level=var["management_agent_install_key_access_level"],
-        compartment_id_in_subtree=var["management_agent_install_key_compartment_id_in_subtree"],
-        display_name=var["management_agent_install_key_display_name"],
-        state=var["management_agent_install_key_state"])
-    ```
-
-
-    :param str access_level: Value of this is always "ACCESSIBLE" and any other value is not supported.
-    :param str compartment_id: The OCID of the compartment to which a request will be scoped.
-    :param bool compartment_id_in_subtree: if set to true then it fetches resources for all compartments where user has access to else only on the compartment specified.
-    :param str display_name: The display name for which the Key needs to be listed.
-    :param str state: Filter to return only Management Agents in the particular lifecycle state.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['accessLevel'] = access_level
@@ -183,28 +149,6 @@ def get_management_agent_install_keys_output(access_level: Optional[pulumi.Input
                                              state: Optional[pulumi.Input[Optional[str]]] = None,
                                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetManagementAgentInstallKeysResult]:
     """
-    This data source provides the list of Management Agent Install Keys in Oracle Cloud Infrastructure Management Agent service.
-
-    Returns a list of Management Agent installed Keys.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_management_agent_install_keys = oci.ManagementAgent.get_management_agent_install_keys(compartment_id=var["compartment_id"],
-        access_level=var["management_agent_install_key_access_level"],
-        compartment_id_in_subtree=var["management_agent_install_key_compartment_id_in_subtree"],
-        display_name=var["management_agent_install_key_display_name"],
-        state=var["management_agent_install_key_state"])
-    ```
-
-
-    :param str access_level: Value of this is always "ACCESSIBLE" and any other value is not supported.
-    :param str compartment_id: The OCID of the compartment to which a request will be scoped.
-    :param bool compartment_id_in_subtree: if set to true then it fetches resources for all compartments where user has access to else only on the compartment specified.
-    :param str display_name: The display name for which the Key needs to be listed.
-    :param str state: Filter to return only Management Agents in the particular lifecycle state.
+    Use this data source to access information about an existing resource.
     """
     ...

@@ -29,7 +29,7 @@ public final class GetFusionEnvironmentsResult {
      * @return The list of fusion_environment_collection.
      * 
      */
-    private List<GetFusionEnvironmentsFusionEnvironmentCollection> fusionEnvironmentCollections;
+    private @Nullable List<GetFusionEnvironmentsFusionEnvironmentCollection> fusionEnvironmentCollections;
     /**
      * @return FusionEnvironmentFamily Identifier
      * 
@@ -39,7 +39,7 @@ public final class GetFusionEnvironmentsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The current state of the ServiceInstance.
      * 
@@ -69,7 +69,7 @@ public final class GetFusionEnvironmentsResult {
      * 
      */
     public List<GetFusionEnvironmentsFusionEnvironmentCollection> fusionEnvironmentCollections() {
-        return this.fusionEnvironmentCollections;
+        return this.fusionEnvironmentCollections == null ? List.of() : this.fusionEnvironmentCollections;
     }
     /**
      * @return FusionEnvironmentFamily Identifier
@@ -82,8 +82,8 @@ public final class GetFusionEnvironmentsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The current state of the ServiceInstance.
@@ -105,9 +105,9 @@ public final class GetFusionEnvironmentsResult {
         private String compartmentId;
         private @Nullable String displayName;
         private @Nullable List<GetFusionEnvironmentsFilter> filters;
-        private List<GetFusionEnvironmentsFusionEnvironmentCollection> fusionEnvironmentCollections;
+        private @Nullable List<GetFusionEnvironmentsFusionEnvironmentCollection> fusionEnvironmentCollections;
         private @Nullable String fusionEnvironmentFamilyId;
-        private String id;
+        private @Nullable String id;
         private @Nullable String state;
         public Builder() {}
         public Builder(GetFusionEnvironmentsResult defaults) {
@@ -140,8 +140,8 @@ public final class GetFusionEnvironmentsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder fusionEnvironmentCollections(List<GetFusionEnvironmentsFusionEnvironmentCollection> fusionEnvironmentCollections) {
-            this.fusionEnvironmentCollections = Objects.requireNonNull(fusionEnvironmentCollections);
+        public Builder fusionEnvironmentCollections(@Nullable List<GetFusionEnvironmentsFusionEnvironmentCollection> fusionEnvironmentCollections) {
+            this.fusionEnvironmentCollections = fusionEnvironmentCollections;
             return this;
         }
         public Builder fusionEnvironmentCollections(GetFusionEnvironmentsFusionEnvironmentCollection... fusionEnvironmentCollections) {
@@ -153,8 +153,8 @@ public final class GetFusionEnvironmentsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

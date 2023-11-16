@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Autonomous Container Patches in Oracle Cloud Infrastructure Database service.
@@ -74,7 +73,7 @@ type GetAutonomousContainerPatchesResult struct {
 	CompartmentId     string                                         `pulumi:"compartmentId"`
 	Filters           []GetAutonomousContainerPatchesFilter          `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 }
 
 func GetAutonomousContainerPatchesOutput(ctx *pulumi.Context, args GetAutonomousContainerPatchesOutputArgs, opts ...pulumi.InvokeOption) GetAutonomousContainerPatchesResultOutput {
@@ -120,12 +119,6 @@ func (o GetAutonomousContainerPatchesResultOutput) ToGetAutonomousContainerPatch
 	return o
 }
 
-func (o GetAutonomousContainerPatchesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetAutonomousContainerPatchesResult] {
-	return pulumix.Output[GetAutonomousContainerPatchesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetAutonomousContainerPatchesResultOutput) AutonomousContainerDatabaseId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAutonomousContainerPatchesResult) string { return v.AutonomousContainerDatabaseId }).(pulumi.StringOutput)
 }
@@ -151,8 +144,8 @@ func (o GetAutonomousContainerPatchesResultOutput) Filters() GetAutonomousContai
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetAutonomousContainerPatchesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAutonomousContainerPatchesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetAutonomousContainerPatchesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAutonomousContainerPatchesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func init() {

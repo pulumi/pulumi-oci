@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Service Environments in Oracle Cloud Infrastructure Service Manager Proxy service.
@@ -78,7 +77,7 @@ type GetServiceEnvironmentsResult struct {
 	DisplayName *string                        `pulumi:"displayName"`
 	Filters     []GetServiceEnvironmentsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The list of service_environment_collection.
 	ServiceEnvironmentCollections []GetServiceEnvironmentsServiceEnvironmentCollection `pulumi:"serviceEnvironmentCollections"`
 	ServiceEnvironmentId          *string                                              `pulumi:"serviceEnvironmentId"`
@@ -132,12 +131,6 @@ func (o GetServiceEnvironmentsResultOutput) ToGetServiceEnvironmentsResultOutput
 	return o
 }
 
-func (o GetServiceEnvironmentsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetServiceEnvironmentsResult] {
-	return pulumix.Output[GetServiceEnvironmentsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the compartment.
 func (o GetServiceEnvironmentsResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetServiceEnvironmentsResult) string { return v.CompartmentId }).(pulumi.StringOutput)
@@ -153,8 +146,8 @@ func (o GetServiceEnvironmentsResultOutput) Filters() GetServiceEnvironmentsFilt
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetServiceEnvironmentsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetServiceEnvironmentsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetServiceEnvironmentsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetServiceEnvironmentsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The list of service_environment_collection.

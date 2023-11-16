@@ -129,7 +129,7 @@ namespace Pulumi.Oci.GoldenGate
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Array of DeploymentTypeSummary
         /// </summary>
@@ -141,7 +141,7 @@ namespace Pulumi.Oci.GoldenGate
 
             string? displayName,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetDeploymentTypeItemResult> items)
         {

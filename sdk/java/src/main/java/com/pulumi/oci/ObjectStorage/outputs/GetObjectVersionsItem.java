@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetObjectVersionsItem {
@@ -14,123 +16,123 @@ public final class GetObjectVersionsItem {
      * @return Archival state of an object. This field is set only for objects in Archive tier.
      * 
      */
-    private String archivalState;
+    private @Nullable String archivalState;
     /**
      * @return The current entity tag (ETag) for the object.
      * 
      */
-    private String etag;
+    private @Nullable String etag;
     /**
      * @return This flag will indicate if the version is deleted or not.
      * 
      */
-    private Boolean isDeleteMarker;
+    private @Nullable Boolean isDeleteMarker;
     /**
      * @return Base64-encoded MD5 hash of the object data.
      * 
      */
-    private String md5;
+    private @Nullable String md5;
     /**
      * @return The name of the object. Avoid entering confidential information. Example: test/object1.log
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return Size of the object in bytes.
      * 
      */
-    private String size;
+    private @Nullable String size;
     /**
      * @return The storage tier that the object is stored in.
      * 
      */
-    private String storageTier;
+    private @Nullable String storageTier;
     /**
      * @return The date and time the object was created, as described in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-14.29).
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The date and time the object was modified, as described in [RFC 2616](https://tools.ietf.org/rfc/rfc2616#section-14.29).
      * 
      */
-    private String timeModified;
+    private @Nullable String timeModified;
     /**
      * @return VersionId of the object.
      * 
      */
-    private String versionId;
+    private @Nullable String versionId;
 
     private GetObjectVersionsItem() {}
     /**
      * @return Archival state of an object. This field is set only for objects in Archive tier.
      * 
      */
-    public String archivalState() {
-        return this.archivalState;
+    public Optional<String> archivalState() {
+        return Optional.ofNullable(this.archivalState);
     }
     /**
      * @return The current entity tag (ETag) for the object.
      * 
      */
-    public String etag() {
-        return this.etag;
+    public Optional<String> etag() {
+        return Optional.ofNullable(this.etag);
     }
     /**
      * @return This flag will indicate if the version is deleted or not.
      * 
      */
-    public Boolean isDeleteMarker() {
-        return this.isDeleteMarker;
+    public Optional<Boolean> isDeleteMarker() {
+        return Optional.ofNullable(this.isDeleteMarker);
     }
     /**
      * @return Base64-encoded MD5 hash of the object data.
      * 
      */
-    public String md5() {
-        return this.md5;
+    public Optional<String> md5() {
+        return Optional.ofNullable(this.md5);
     }
     /**
      * @return The name of the object. Avoid entering confidential information. Example: test/object1.log
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return Size of the object in bytes.
      * 
      */
-    public String size() {
-        return this.size;
+    public Optional<String> size() {
+        return Optional.ofNullable(this.size);
     }
     /**
      * @return The storage tier that the object is stored in.
      * 
      */
-    public String storageTier() {
-        return this.storageTier;
+    public Optional<String> storageTier() {
+        return Optional.ofNullable(this.storageTier);
     }
     /**
      * @return The date and time the object was created, as described in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-14.29).
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return The date and time the object was modified, as described in [RFC 2616](https://tools.ietf.org/rfc/rfc2616#section-14.29).
      * 
      */
-    public String timeModified() {
-        return this.timeModified;
+    public Optional<String> timeModified() {
+        return Optional.ofNullable(this.timeModified);
     }
     /**
      * @return VersionId of the object.
      * 
      */
-    public String versionId() {
-        return this.versionId;
+    public Optional<String> versionId() {
+        return Optional.ofNullable(this.versionId);
     }
 
     public static Builder builder() {
@@ -142,16 +144,16 @@ public final class GetObjectVersionsItem {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String archivalState;
-        private String etag;
-        private Boolean isDeleteMarker;
-        private String md5;
-        private String name;
-        private String size;
-        private String storageTier;
-        private String timeCreated;
-        private String timeModified;
-        private String versionId;
+        private @Nullable String archivalState;
+        private @Nullable String etag;
+        private @Nullable Boolean isDeleteMarker;
+        private @Nullable String md5;
+        private @Nullable String name;
+        private @Nullable String size;
+        private @Nullable String storageTier;
+        private @Nullable String timeCreated;
+        private @Nullable String timeModified;
+        private @Nullable String versionId;
         public Builder() {}
         public Builder(GetObjectVersionsItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -168,53 +170,53 @@ public final class GetObjectVersionsItem {
         }
 
         @CustomType.Setter
-        public Builder archivalState(String archivalState) {
-            this.archivalState = Objects.requireNonNull(archivalState);
+        public Builder archivalState(@Nullable String archivalState) {
+            this.archivalState = archivalState;
             return this;
         }
         @CustomType.Setter
-        public Builder etag(String etag) {
-            this.etag = Objects.requireNonNull(etag);
+        public Builder etag(@Nullable String etag) {
+            this.etag = etag;
             return this;
         }
         @CustomType.Setter
-        public Builder isDeleteMarker(Boolean isDeleteMarker) {
-            this.isDeleteMarker = Objects.requireNonNull(isDeleteMarker);
+        public Builder isDeleteMarker(@Nullable Boolean isDeleteMarker) {
+            this.isDeleteMarker = isDeleteMarker;
             return this;
         }
         @CustomType.Setter
-        public Builder md5(String md5) {
-            this.md5 = Objects.requireNonNull(md5);
+        public Builder md5(@Nullable String md5) {
+            this.md5 = md5;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder size(String size) {
-            this.size = Objects.requireNonNull(size);
+        public Builder size(@Nullable String size) {
+            this.size = size;
             return this;
         }
         @CustomType.Setter
-        public Builder storageTier(String storageTier) {
-            this.storageTier = Objects.requireNonNull(storageTier);
+        public Builder storageTier(@Nullable String storageTier) {
+            this.storageTier = storageTier;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeModified(String timeModified) {
-            this.timeModified = Objects.requireNonNull(timeModified);
+        public Builder timeModified(@Nullable String timeModified) {
+            this.timeModified = timeModified;
             return this;
         }
         @CustomType.Setter
-        public Builder versionId(String versionId) {
-            this.versionId = Objects.requireNonNull(versionId);
+        public Builder versionId(@Nullable String versionId) {
+            this.versionId = versionId;
             return this;
         }
         public GetObjectVersionsItem build() {

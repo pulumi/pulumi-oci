@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Publication Packages in Oracle Cloud Infrastructure Marketplace service.
@@ -68,7 +67,7 @@ type GetPublicationPackagesArgs struct {
 type GetPublicationPackagesResult struct {
 	Filters []GetPublicationPackagesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The specified package's type.
 	PackageType    *string `pulumi:"packageType"`
 	PackageVersion *string `pulumi:"packageVersion"`
@@ -120,19 +119,13 @@ func (o GetPublicationPackagesResultOutput) ToGetPublicationPackagesResultOutput
 	return o
 }
 
-func (o GetPublicationPackagesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetPublicationPackagesResult] {
-	return pulumix.Output[GetPublicationPackagesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetPublicationPackagesResultOutput) Filters() GetPublicationPackagesFilterArrayOutput {
 	return o.ApplyT(func(v GetPublicationPackagesResult) []GetPublicationPackagesFilter { return v.Filters }).(GetPublicationPackagesFilterArrayOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetPublicationPackagesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPublicationPackagesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetPublicationPackagesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetPublicationPackagesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The specified package's type.

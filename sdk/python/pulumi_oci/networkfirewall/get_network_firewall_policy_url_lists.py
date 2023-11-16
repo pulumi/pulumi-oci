@@ -52,7 +52,7 @@ class GetNetworkFirewallPolicyUrlListsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -65,10 +65,7 @@ class GetNetworkFirewallPolicyUrlListsResult:
 
     @property
     @pulumi.getter(name="urlListSummaryCollections")
-    def url_list_summary_collections(self) -> Sequence['outputs.GetNetworkFirewallPolicyUrlListsUrlListSummaryCollectionResult']:
-        """
-        The list of url_list_summary_collection.
-        """
+    def url_list_summary_collections(self) -> Optional[Sequence['outputs.GetNetworkFirewallPolicyUrlListsUrlListSummaryCollectionResult']]:
         return pulumi.get(self, "url_list_summary_collections")
 
 
@@ -90,23 +87,7 @@ def get_network_firewall_policy_url_lists(display_name: Optional[str] = None,
                                           network_firewall_policy_id: Optional[str] = None,
                                           opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetNetworkFirewallPolicyUrlListsResult:
     """
-    This data source provides the list of Network Firewall Policy Url Lists in Oracle Cloud Infrastructure Network Firewall service.
-
-    Returns a list of URL lists for the Network Firewall Policy.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_network_firewall_policy_url_lists = oci.NetworkFirewall.get_network_firewall_policy_url_lists(network_firewall_policy_id=oci_network_firewall_network_firewall_policy["test_network_firewall_policy"]["id"],
-        display_name=var["network_firewall_policy_url_list_display_name"])
-    ```
-
-
-    :param str display_name: A filter to return only resources that match the entire display name given.
-    :param str network_firewall_policy_id: Unique Network Firewall Policy identifier
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['displayName'] = display_name
@@ -129,22 +110,6 @@ def get_network_firewall_policy_url_lists_output(display_name: Optional[pulumi.I
                                                  network_firewall_policy_id: Optional[pulumi.Input[str]] = None,
                                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNetworkFirewallPolicyUrlListsResult]:
     """
-    This data source provides the list of Network Firewall Policy Url Lists in Oracle Cloud Infrastructure Network Firewall service.
-
-    Returns a list of URL lists for the Network Firewall Policy.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_network_firewall_policy_url_lists = oci.NetworkFirewall.get_network_firewall_policy_url_lists(network_firewall_policy_id=oci_network_firewall_network_firewall_policy["test_network_firewall_policy"]["id"],
-        display_name=var["network_firewall_policy_url_list_display_name"])
-    ```
-
-
-    :param str display_name: A filter to return only resources that match the entire display name given.
-    :param str network_firewall_policy_id: Unique Network Firewall Policy identifier
+    Use this data source to access information about an existing resource.
     """
     ...

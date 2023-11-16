@@ -16,10 +16,10 @@ namespace Pulumi.Oci.LoadBalancer.Outputs
         /// <summary>
         /// The name of a load balancing policy.  Example: 'LEAST_CONNECTIONS'
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
 
         [OutputConstructor]
-        private GetPoliciesPolicyResult(string name)
+        private GetPoliciesPolicyResult(string? name)
         {
             Name = name;
         }

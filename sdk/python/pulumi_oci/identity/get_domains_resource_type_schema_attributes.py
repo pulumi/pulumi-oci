@@ -94,7 +94,7 @@ class GetDomainsResourceTypeSchemaAttributesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -107,10 +107,7 @@ class GetDomainsResourceTypeSchemaAttributesResult:
 
     @property
     @pulumi.getter(name="itemsPerPage")
-    def items_per_page(self) -> int:
-        """
-        The number of resources returned in a list response page. REQUIRED when partial results returned due to pagination.
-        """
+    def items_per_page(self) -> Optional[int]:
         return pulumi.get(self, "items_per_page")
 
     @property
@@ -125,10 +122,7 @@ class GetDomainsResourceTypeSchemaAttributesResult:
 
     @property
     @pulumi.getter(name="resourceTypeSchemaAttributes")
-    def resource_type_schema_attributes(self) -> Sequence['outputs.GetDomainsResourceTypeSchemaAttributesResourceTypeSchemaAttributeResult']:
-        """
-        The list of resource_type_schema_attributes.
-        """
+    def resource_type_schema_attributes(self) -> Optional[Sequence['outputs.GetDomainsResourceTypeSchemaAttributesResourceTypeSchemaAttributeResult']]:
         return pulumi.get(self, "resource_type_schema_attributes")
 
     @property
@@ -138,10 +132,7 @@ class GetDomainsResourceTypeSchemaAttributesResult:
 
     @property
     @pulumi.getter
-    def schemas(self) -> Sequence[str]:
-        """
-        The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior. REQUIRED.
-        """
+    def schemas(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "schemas")
 
     @property
@@ -157,17 +148,11 @@ class GetDomainsResourceTypeSchemaAttributesResult:
     @property
     @pulumi.getter(name="startIndex")
     def start_index(self) -> Optional[int]:
-        """
-        The 1-based index of the first result in the current set of list results.  REQUIRED when partial results returned due to pagination.
-        """
         return pulumi.get(self, "start_index")
 
     @property
     @pulumi.getter(name="totalResults")
-    def total_results(self) -> int:
-        """
-        The total number of results returned by the list or query operation.  The value may be larger than the number of resources returned such as when returning a single page of results where multiple pages are available. REQUIRED.
-        """
+    def total_results(self) -> Optional[int]:
         return pulumi.get(self, "total_results")
 
 
@@ -208,35 +193,7 @@ def get_domains_resource_type_schema_attributes(attribute_sets: Optional[Sequenc
                                                 start_index: Optional[int] = None,
                                                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDomainsResourceTypeSchemaAttributesResult:
     """
-    This data source provides the list of Resource Type Schema Attributes in Oracle Cloud Infrastructure Identity Domains service.
-
-    Search Resource Type Schema Attributes
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_resource_type_schema_attributes = oci.Identity.get_domains_resource_type_schema_attributes(idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
-        resource_type_schema_attribute_count=var["resource_type_schema_attribute_resource_type_schema_attribute_count"],
-        resource_type_schema_attribute_filter=var["resource_type_schema_attribute_resource_type_schema_attribute_filter"],
-        attribute_sets=["all"],
-        attributes="",
-        authorization=var["resource_type_schema_attribute_authorization"],
-        resource_type_schema_version=var["resource_type_schema_attribute_resource_type_schema_version"],
-        start_index=var["resource_type_schema_attribute_start_index"])
-    ```
-
-
-    :param Sequence[str] attribute_sets: A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
-    :param str attributes: A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
-    :param str authorization: The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
-    :param str idcs_endpoint: The basic endpoint for the identity domain
-    :param int resource_type_schema_attribute_count: OPTIONAL. An integer that indicates the desired maximum number of query results per page. 1000 is the largest value that you can use. See the Pagination section of the System for Cross-Domain Identity Management Protocol specification for more information. (Section 3.4.2.4).
-    :param str resource_type_schema_attribute_filter: OPTIONAL. The filter string that is used to request a subset of resources. The filter string MUST be a valid filter expression. See the Filtering section of the SCIM specification for more information (Section 3.4.2.2). The string should contain at least one condition that each item must match in order to be returned in the search results. Each condition specifies an attribute, an operator, and a value. Conditions within a filter can be connected by logical operators (such as AND and OR). Sets of conditions can be grouped together using parentheses.
-    :param str resource_type_schema_version: An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
-    :param int start_index: OPTIONAL. An integer that indicates the 1-based index of the first query result. See the Pagination section of the SCIM specification for more information. (Section 3.4.2.4). The number of results pages to return. The first page is 1. Specify 2 to access the second page of results, and so on.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['attributeSets'] = attribute_sets
@@ -286,34 +243,6 @@ def get_domains_resource_type_schema_attributes_output(attribute_sets: Optional[
                                                        start_index: Optional[pulumi.Input[Optional[int]]] = None,
                                                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDomainsResourceTypeSchemaAttributesResult]:
     """
-    This data source provides the list of Resource Type Schema Attributes in Oracle Cloud Infrastructure Identity Domains service.
-
-    Search Resource Type Schema Attributes
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_resource_type_schema_attributes = oci.Identity.get_domains_resource_type_schema_attributes(idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
-        resource_type_schema_attribute_count=var["resource_type_schema_attribute_resource_type_schema_attribute_count"],
-        resource_type_schema_attribute_filter=var["resource_type_schema_attribute_resource_type_schema_attribute_filter"],
-        attribute_sets=["all"],
-        attributes="",
-        authorization=var["resource_type_schema_attribute_authorization"],
-        resource_type_schema_version=var["resource_type_schema_attribute_resource_type_schema_version"],
-        start_index=var["resource_type_schema_attribute_start_index"])
-    ```
-
-
-    :param Sequence[str] attribute_sets: A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
-    :param str attributes: A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
-    :param str authorization: The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
-    :param str idcs_endpoint: The basic endpoint for the identity domain
-    :param int resource_type_schema_attribute_count: OPTIONAL. An integer that indicates the desired maximum number of query results per page. 1000 is the largest value that you can use. See the Pagination section of the System for Cross-Domain Identity Management Protocol specification for more information. (Section 3.4.2.4).
-    :param str resource_type_schema_attribute_filter: OPTIONAL. The filter string that is used to request a subset of resources. The filter string MUST be a valid filter expression. See the Filtering section of the SCIM specification for more information (Section 3.4.2.2). The string should contain at least one condition that each item must match in order to be returned in the search results. Each condition specifies an attribute, an operator, and a value. Conditions within a filter can be connected by logical operators (such as AND and OR). Sets of conditions can be grouped together using parentheses.
-    :param str resource_type_schema_version: An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
-    :param int start_index: OPTIONAL. An integer that indicates the 1-based index of the first query result. See the Pagination section of the SCIM specification for more information. (Section 3.4.2.4). The number of results pages to return. The first page is 1. Specify 2 to access the second page of results, and so on.
+    Use this data source to access information about an existing resource.
     """
     ...

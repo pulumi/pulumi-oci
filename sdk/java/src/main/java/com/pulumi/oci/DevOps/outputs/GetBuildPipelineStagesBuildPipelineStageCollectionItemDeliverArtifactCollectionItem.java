@@ -6,6 +6,8 @@ package com.pulumi.oci.DevOps.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetBuildPipelineStagesBuildPipelineStageCollectionItemDeliverArtifactCollectionItem {
@@ -13,27 +15,27 @@ public final class GetBuildPipelineStagesBuildPipelineStageCollectionItemDeliver
      * @return Artifact identifier that contains the artifact definition.
      * 
      */
-    private String artifactId;
+    private @Nullable String artifactId;
     /**
      * @return Name of the artifact specified in the build_spec.yaml file.
      * 
      */
-    private String artifactName;
+    private @Nullable String artifactName;
 
     private GetBuildPipelineStagesBuildPipelineStageCollectionItemDeliverArtifactCollectionItem() {}
     /**
      * @return Artifact identifier that contains the artifact definition.
      * 
      */
-    public String artifactId() {
-        return this.artifactId;
+    public Optional<String> artifactId() {
+        return Optional.ofNullable(this.artifactId);
     }
     /**
      * @return Name of the artifact specified in the build_spec.yaml file.
      * 
      */
-    public String artifactName() {
-        return this.artifactName;
+    public Optional<String> artifactName() {
+        return Optional.ofNullable(this.artifactName);
     }
 
     public static Builder builder() {
@@ -45,8 +47,8 @@ public final class GetBuildPipelineStagesBuildPipelineStageCollectionItemDeliver
     }
     @CustomType.Builder
     public static final class Builder {
-        private String artifactId;
-        private String artifactName;
+        private @Nullable String artifactId;
+        private @Nullable String artifactName;
         public Builder() {}
         public Builder(GetBuildPipelineStagesBuildPipelineStageCollectionItemDeliverArtifactCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -55,13 +57,13 @@ public final class GetBuildPipelineStagesBuildPipelineStageCollectionItemDeliver
         }
 
         @CustomType.Setter
-        public Builder artifactId(String artifactId) {
-            this.artifactId = Objects.requireNonNull(artifactId);
+        public Builder artifactId(@Nullable String artifactId) {
+            this.artifactId = artifactId;
             return this;
         }
         @CustomType.Setter
-        public Builder artifactName(String artifactName) {
-            this.artifactName = Objects.requireNonNull(artifactName);
+        public Builder artifactName(@Nullable String artifactName) {
+            this.artifactName = artifactName;
             return this;
         }
         public GetBuildPipelineStagesBuildPipelineStageCollectionItemDeliverArtifactCollectionItem build() {

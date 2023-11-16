@@ -9,6 +9,8 @@ import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAccessRequestHistoryItem {
@@ -16,37 +18,37 @@ public final class GetAccessRequestHistoryItem {
      * @return List of operator actions for which approvals were requested by the operator.
      * 
      */
-    private List<String> actionsLists;
+    private @Nullable List<String> actionsLists;
     /**
      * @return Reason or description about the cause of change.
      * 
      */
-    private String description;
+    private @Nullable String description;
     /**
      * @return Duration for approval of request or extension depending on the type of action.
      * 
      */
-    private Integer duration;
+    private @Nullable Integer duration;
     /**
      * @return Whether the access request was automatically approved.
      * 
      */
-    private Boolean isAutoApproved;
+    private @Nullable Boolean isAutoApproved;
     /**
      * @return The current state of the AccessRequest.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return Time when the respective action happened in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format. Example: &#39;2020-05-22T21:10:29.600Z&#39;
      * 
      */
-    private String timeOfAction;
+    private @Nullable String timeOfAction;
     /**
      * @return Approver who modified the access request.
      * 
      */
-    private String userId;
+    private @Nullable String userId;
 
     private GetAccessRequestHistoryItem() {}
     /**
@@ -54,49 +56,49 @@ public final class GetAccessRequestHistoryItem {
      * 
      */
     public List<String> actionsLists() {
-        return this.actionsLists;
+        return this.actionsLists == null ? List.of() : this.actionsLists;
     }
     /**
      * @return Reason or description about the cause of change.
      * 
      */
-    public String description() {
-        return this.description;
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
     /**
      * @return Duration for approval of request or extension depending on the type of action.
      * 
      */
-    public Integer duration() {
-        return this.duration;
+    public Optional<Integer> duration() {
+        return Optional.ofNullable(this.duration);
     }
     /**
      * @return Whether the access request was automatically approved.
      * 
      */
-    public Boolean isAutoApproved() {
-        return this.isAutoApproved;
+    public Optional<Boolean> isAutoApproved() {
+        return Optional.ofNullable(this.isAutoApproved);
     }
     /**
      * @return The current state of the AccessRequest.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return Time when the respective action happened in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format. Example: &#39;2020-05-22T21:10:29.600Z&#39;
      * 
      */
-    public String timeOfAction() {
-        return this.timeOfAction;
+    public Optional<String> timeOfAction() {
+        return Optional.ofNullable(this.timeOfAction);
     }
     /**
      * @return Approver who modified the access request.
      * 
      */
-    public String userId() {
-        return this.userId;
+    public Optional<String> userId() {
+        return Optional.ofNullable(this.userId);
     }
 
     public static Builder builder() {
@@ -108,13 +110,13 @@ public final class GetAccessRequestHistoryItem {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<String> actionsLists;
-        private String description;
-        private Integer duration;
-        private Boolean isAutoApproved;
-        private String state;
-        private String timeOfAction;
-        private String userId;
+        private @Nullable List<String> actionsLists;
+        private @Nullable String description;
+        private @Nullable Integer duration;
+        private @Nullable Boolean isAutoApproved;
+        private @Nullable String state;
+        private @Nullable String timeOfAction;
+        private @Nullable String userId;
         public Builder() {}
         public Builder(GetAccessRequestHistoryItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -128,41 +130,41 @@ public final class GetAccessRequestHistoryItem {
         }
 
         @CustomType.Setter
-        public Builder actionsLists(List<String> actionsLists) {
-            this.actionsLists = Objects.requireNonNull(actionsLists);
+        public Builder actionsLists(@Nullable List<String> actionsLists) {
+            this.actionsLists = actionsLists;
             return this;
         }
         public Builder actionsLists(String... actionsLists) {
             return actionsLists(List.of(actionsLists));
         }
         @CustomType.Setter
-        public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+        public Builder description(@Nullable String description) {
+            this.description = description;
             return this;
         }
         @CustomType.Setter
-        public Builder duration(Integer duration) {
-            this.duration = Objects.requireNonNull(duration);
+        public Builder duration(@Nullable Integer duration) {
+            this.duration = duration;
             return this;
         }
         @CustomType.Setter
-        public Builder isAutoApproved(Boolean isAutoApproved) {
-            this.isAutoApproved = Objects.requireNonNull(isAutoApproved);
+        public Builder isAutoApproved(@Nullable Boolean isAutoApproved) {
+            this.isAutoApproved = isAutoApproved;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder timeOfAction(String timeOfAction) {
-            this.timeOfAction = Objects.requireNonNull(timeOfAction);
+        public Builder timeOfAction(@Nullable String timeOfAction) {
+            this.timeOfAction = timeOfAction;
             return this;
         }
         @CustomType.Setter
-        public Builder userId(String userId) {
-            this.userId = Objects.requireNonNull(userId);
+        public Builder userId(@Nullable String userId) {
+            this.userId = userId;
             return this;
         }
         public GetAccessRequestHistoryItem build() {

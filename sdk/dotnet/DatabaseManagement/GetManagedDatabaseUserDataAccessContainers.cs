@@ -157,7 +157,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         public readonly string ManagedDatabaseId;
         /// <summary>
         /// The name of the container included in the attribute.
@@ -171,7 +171,7 @@ namespace Pulumi.Oci.DatabaseManagement
 
             ImmutableArray<Outputs.GetManagedDatabaseUserDataAccessContainersFilterResult> filters,
 
-            string id,
+            string? id,
 
             string managedDatabaseId,
 

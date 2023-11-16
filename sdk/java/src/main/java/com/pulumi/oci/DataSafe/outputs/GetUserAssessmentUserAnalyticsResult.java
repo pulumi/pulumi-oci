@@ -24,7 +24,7 @@ public final class GetUserAssessmentUserAnalyticsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private @Nullable String targetId;
     private @Nullable String timeLastLoginGreaterThanOrEqualTo;
     private @Nullable String timeLastLoginLessThan;
@@ -36,7 +36,7 @@ public final class GetUserAssessmentUserAnalyticsResult {
      * @return The list of user_aggregations.
      * 
      */
-    private List<GetUserAssessmentUserAnalyticsUserAggregation> userAggregations;
+    private @Nullable List<GetUserAssessmentUserAnalyticsUserAggregation> userAggregations;
     private String userAssessmentId;
     private @Nullable String userCategory;
     private @Nullable String userKey;
@@ -62,8 +62,8 @@ public final class GetUserAssessmentUserAnalyticsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public Optional<String> targetId() {
         return Optional.ofNullable(this.targetId);
@@ -91,7 +91,7 @@ public final class GetUserAssessmentUserAnalyticsResult {
      * 
      */
     public List<GetUserAssessmentUserAnalyticsUserAggregation> userAggregations() {
-        return this.userAggregations;
+        return this.userAggregations == null ? List.of() : this.userAggregations;
     }
     public String userAssessmentId() {
         return this.userAssessmentId;
@@ -120,7 +120,7 @@ public final class GetUserAssessmentUserAnalyticsResult {
         private @Nullable String authenticationType;
         private @Nullable Boolean compartmentIdInSubtree;
         private @Nullable List<GetUserAssessmentUserAnalyticsFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String targetId;
         private @Nullable String timeLastLoginGreaterThanOrEqualTo;
         private @Nullable String timeLastLoginLessThan;
@@ -128,7 +128,7 @@ public final class GetUserAssessmentUserAnalyticsResult {
         private @Nullable String timePasswordLastChangedLessThan;
         private @Nullable String timeUserCreatedGreaterThanOrEqualTo;
         private @Nullable String timeUserCreatedLessThan;
-        private List<GetUserAssessmentUserAnalyticsUserAggregation> userAggregations;
+        private @Nullable List<GetUserAssessmentUserAnalyticsUserAggregation> userAggregations;
         private String userAssessmentId;
         private @Nullable String userCategory;
         private @Nullable String userKey;
@@ -185,8 +185,8 @@ public final class GetUserAssessmentUserAnalyticsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -225,8 +225,8 @@ public final class GetUserAssessmentUserAnalyticsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder userAggregations(List<GetUserAssessmentUserAnalyticsUserAggregation> userAggregations) {
-            this.userAggregations = Objects.requireNonNull(userAggregations);
+        public Builder userAggregations(@Nullable List<GetUserAssessmentUserAnalyticsUserAggregation> userAggregations) {
+            this.userAggregations = userAggregations;
             return this;
         }
         public Builder userAggregations(GetUserAssessmentUserAnalyticsUserAggregation... userAggregations) {

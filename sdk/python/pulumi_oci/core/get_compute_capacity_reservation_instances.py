@@ -46,9 +46,6 @@ class GetComputeCapacityReservationInstancesResult:
     @property
     @pulumi.getter(name="availabilityDomain")
     def availability_domain(self) -> Optional[str]:
-        """
-        The availability domain the instance is running in.
-        """
         return pulumi.get(self, "availability_domain")
 
     @property
@@ -58,18 +55,12 @@ class GetComputeCapacityReservationInstancesResult:
 
     @property
     @pulumi.getter(name="capacityReservationInstances")
-    def capacity_reservation_instances(self) -> Sequence['outputs.GetComputeCapacityReservationInstancesCapacityReservationInstanceResult']:
-        """
-        The list of capacity_reservation_instances.
-        """
+    def capacity_reservation_instances(self) -> Optional[Sequence['outputs.GetComputeCapacityReservationInstancesCapacityReservationInstanceResult']]:
         return pulumi.get(self, "capacity_reservation_instances")
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[str]:
-        """
-        The OCID of the compartment that contains the instance.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
@@ -79,7 +70,7 @@ class GetComputeCapacityReservationInstancesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -106,25 +97,7 @@ def get_compute_capacity_reservation_instances(availability_domain: Optional[str
                                                filters: Optional[Sequence[pulumi.InputType['GetComputeCapacityReservationInstancesFilterArgs']]] = None,
                                                opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetComputeCapacityReservationInstancesResult:
     """
-    This data source provides the list of Compute Capacity Reservation Instances in Oracle Cloud Infrastructure Core service.
-
-    Lists the instances launched under a capacity reservation. You can filter results by specifying criteria.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_compute_capacity_reservation_instances = oci.Core.get_compute_capacity_reservation_instances(capacity_reservation_id=oci_core_capacity_reservation["test_capacity_reservation"]["id"],
-        availability_domain=var["compute_capacity_reservation_instance_availability_domain"],
-        compartment_id=var["compartment_id"])
-    ```
-
-
-    :param str availability_domain: The name of the availability domain.  Example: `Uocm:PHX-AD-1`
-    :param str capacity_reservation_id: The OCID of the compute capacity reservation.
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['availabilityDomain'] = availability_domain
@@ -150,24 +123,6 @@ def get_compute_capacity_reservation_instances_output(availability_domain: Optio
                                                       filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetComputeCapacityReservationInstancesFilterArgs']]]]] = None,
                                                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetComputeCapacityReservationInstancesResult]:
     """
-    This data source provides the list of Compute Capacity Reservation Instances in Oracle Cloud Infrastructure Core service.
-
-    Lists the instances launched under a capacity reservation. You can filter results by specifying criteria.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_compute_capacity_reservation_instances = oci.Core.get_compute_capacity_reservation_instances(capacity_reservation_id=oci_core_capacity_reservation["test_capacity_reservation"]["id"],
-        availability_domain=var["compute_capacity_reservation_instance_availability_domain"],
-        compartment_id=var["compartment_id"])
-    ```
-
-
-    :param str availability_domain: The name of the availability domain.  Example: `Uocm:PHX-AD-1`
-    :param str capacity_reservation_id: The OCID of the compute capacity reservation.
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+    Use this data source to access information about an existing resource.
     """
     ...

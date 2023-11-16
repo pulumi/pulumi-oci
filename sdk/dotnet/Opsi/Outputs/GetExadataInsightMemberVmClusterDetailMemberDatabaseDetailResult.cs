@@ -16,59 +16,59 @@ namespace Pulumi.Oci.Opsi.Outputs
         /// <summary>
         /// Compartment identifier of the Exadata insight resource
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         public readonly ImmutableArray<Outputs.GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailResult> ConnectionDetails;
         public readonly ImmutableArray<Outputs.GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailResult> CredentialDetails;
-        public readonly string DatabaseId;
-        public readonly string DatabaseResourceType;
-        public readonly string DbmPrivateEndpointId;
+        public readonly string? DatabaseId;
+        public readonly string? DatabaseResourceType;
+        public readonly string? DbmPrivateEndpointId;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
-        public readonly string DeploymentType;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
+        public readonly string? DeploymentType;
         /// <summary>
         /// Source of the Exadata system.
         /// </summary>
-        public readonly string EntitySource;
+        public readonly string? EntitySource;
         /// <summary>
         /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
-        public readonly string OpsiPrivateEndpointId;
-        public readonly string ServiceName;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
+        public readonly string? OpsiPrivateEndpointId;
+        public readonly string? ServiceName;
         /// <summary>
         /// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> SystemTags;
+        public readonly ImmutableDictionary<string, object>? SystemTags;
 
         [OutputConstructor]
         private GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailResult(
-            string compartmentId,
+            string? compartmentId,
 
             ImmutableArray<Outputs.GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailResult> connectionDetails,
 
             ImmutableArray<Outputs.GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailResult> credentialDetails,
 
-            string databaseId,
+            string? databaseId,
 
-            string databaseResourceType,
+            string? databaseResourceType,
 
-            string dbmPrivateEndpointId,
+            string? dbmPrivateEndpointId,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string deploymentType,
+            string? deploymentType,
 
-            string entitySource,
+            string? entitySource,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string opsiPrivateEndpointId,
+            string? opsiPrivateEndpointId,
 
-            string serviceName,
+            string? serviceName,
 
-            ImmutableDictionary<string, object> systemTags)
+            ImmutableDictionary<string, object>? systemTags)
         {
             CompartmentId = compartmentId;
             ConnectionDetails = connectionDetails;

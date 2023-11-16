@@ -45,68 +45,68 @@ export interface GetManagedListResult {
     /**
      * Compartment Identifier where the resource is created
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * ManagedList description.
      */
-    readonly description: string;
+    readonly description?: string;
     /**
      * ManagedList display name.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * provider of the feed
      */
-    readonly feedProvider: string;
+    readonly feedProvider?: string;
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * Unique identifier that is immutable on creation
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * If this list is editable or not
      */
-    readonly isEditable: boolean;
+    readonly isEditable?: boolean;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
-    readonly lifecyleDetails: string;
+    readonly lifecyleDetails?: string;
     /**
      * List of ManagedListItem
      */
-    readonly listItems: string[];
+    readonly listItems?: string[];
     /**
      * type of the list
      */
-    readonly listType: string;
+    readonly listType?: string;
     readonly managedListId: string;
     /**
      * OCID of the Source ManagedList
      */
-    readonly sourceManagedListId: string;
+    readonly sourceManagedListId?: string;
     /**
      * The current state of the resource.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    readonly systemTags: {[key: string]: any};
+    readonly systemTags?: {[key: string]: any};
     /**
      * The date and time the managed list was created. Format defined by RFC3339.
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The date and time the managed list was updated. Format defined by RFC3339.
      */
-    readonly timeUpdated: string;
+    readonly timeUpdated?: string;
 }
 /**
  * This data source provides details about a specific Managed List resource in Oracle Cloud Infrastructure Cloud Guard service.

@@ -24,18 +24,6 @@ class DeploymentBackupArgs:
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None):
         """
         The set of arguments for constructing a DeploymentBackup resource.
-        :param pulumi.Input[str] bucket: Name of the bucket where the object is to be uploaded in the object storage
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
-        :param pulumi.Input[str] deployment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
-        :param pulumi.Input[str] display_name: An object's Display Name.
-        :param pulumi.Input[str] namespace: Name of namespace that serves as a container for all of your buckets
-        :param pulumi.Input[str] object: Name of the object to be uploaded to object storage
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
         """
         pulumi.set(__self__, "bucket", bucket)
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -51,9 +39,6 @@ class DeploymentBackupArgs:
     @property
     @pulumi.getter
     def bucket(self) -> pulumi.Input[str]:
-        """
-        Name of the bucket where the object is to be uploaded in the object storage
-        """
         return pulumi.get(self, "bucket")
 
     @bucket.setter
@@ -63,9 +48,6 @@ class DeploymentBackupArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -75,9 +57,6 @@ class DeploymentBackupArgs:
     @property
     @pulumi.getter(name="deploymentId")
     def deployment_id(self) -> pulumi.Input[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
-        """
         return pulumi.get(self, "deployment_id")
 
     @deployment_id.setter
@@ -87,9 +66,6 @@ class DeploymentBackupArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Input[str]:
-        """
-        An object's Display Name.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -99,9 +75,6 @@ class DeploymentBackupArgs:
     @property
     @pulumi.getter
     def namespace(self) -> pulumi.Input[str]:
-        """
-        Name of namespace that serves as a container for all of your buckets
-        """
         return pulumi.get(self, "namespace")
 
     @namespace.setter
@@ -111,13 +84,6 @@ class DeploymentBackupArgs:
     @property
     @pulumi.getter
     def object(self) -> pulumi.Input[str]:
-        """
-        Name of the object to be uploaded to object storage
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "object")
 
     @object.setter
@@ -127,9 +93,6 @@ class DeploymentBackupArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -139,9 +102,6 @@ class DeploymentBackupArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -173,29 +133,6 @@ class _DeploymentBackupState:
                  time_updated: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering DeploymentBackup resources.
-        :param pulumi.Input[str] backup_type: Possible Deployment backup types.
-        :param pulumi.Input[str] bucket: Name of the bucket where the object is to be uploaded in the object storage
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] deployment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
-        :param pulumi.Input[str] display_name: An object's Display Name.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
-        :param pulumi.Input[bool] is_automatic: True if this object is automatically created
-        :param pulumi.Input[str] lifecycle_details: Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
-        :param pulumi.Input[str] namespace: Name of namespace that serves as a container for all of your buckets
-        :param pulumi.Input[str] object: Name of the object to be uploaded to object storage
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] ogg_version: Version of OGG
-        :param pulumi.Input[float] size_in_bytes: The size of the backup stored in object storage (in bytes)
-        :param pulumi.Input[str] state: Possible lifecycle states.
-        :param pulumi.Input[Mapping[str, Any]] system_tags: The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
-        :param pulumi.Input[str] time_backup_finished: The time of the resource backup finish. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-        :param pulumi.Input[str] time_created: The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-        :param pulumi.Input[str] time_of_backup: The time of the resource backup. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-        :param pulumi.Input[str] time_updated: The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         """
         if backup_type is not None:
             pulumi.set(__self__, "backup_type", backup_type)
@@ -239,9 +176,6 @@ class _DeploymentBackupState:
     @property
     @pulumi.getter(name="backupType")
     def backup_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        Possible Deployment backup types.
-        """
         return pulumi.get(self, "backup_type")
 
     @backup_type.setter
@@ -251,9 +185,6 @@ class _DeploymentBackupState:
     @property
     @pulumi.getter
     def bucket(self) -> Optional[pulumi.Input[str]]:
-        """
-        Name of the bucket where the object is to be uploaded in the object storage
-        """
         return pulumi.get(self, "bucket")
 
     @bucket.setter
@@ -263,9 +194,6 @@ class _DeploymentBackupState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -275,9 +203,6 @@ class _DeploymentBackupState:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -287,9 +212,6 @@ class _DeploymentBackupState:
     @property
     @pulumi.getter(name="deploymentId")
     def deployment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
-        """
         return pulumi.get(self, "deployment_id")
 
     @deployment_id.setter
@@ -299,9 +221,6 @@ class _DeploymentBackupState:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        An object's Display Name.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -311,9 +230,6 @@ class _DeploymentBackupState:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -323,9 +239,6 @@ class _DeploymentBackupState:
     @property
     @pulumi.getter(name="isAutomatic")
     def is_automatic(self) -> Optional[pulumi.Input[bool]]:
-        """
-        True if this object is automatically created
-        """
         return pulumi.get(self, "is_automatic")
 
     @is_automatic.setter
@@ -335,9 +248,6 @@ class _DeploymentBackupState:
     @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> Optional[pulumi.Input[str]]:
-        """
-        Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
-        """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
@@ -347,9 +257,6 @@ class _DeploymentBackupState:
     @property
     @pulumi.getter
     def namespace(self) -> Optional[pulumi.Input[str]]:
-        """
-        Name of namespace that serves as a container for all of your buckets
-        """
         return pulumi.get(self, "namespace")
 
     @namespace.setter
@@ -359,13 +266,6 @@ class _DeploymentBackupState:
     @property
     @pulumi.getter
     def object(self) -> Optional[pulumi.Input[str]]:
-        """
-        Name of the object to be uploaded to object storage
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "object")
 
     @object.setter
@@ -375,9 +275,6 @@ class _DeploymentBackupState:
     @property
     @pulumi.getter(name="oggVersion")
     def ogg_version(self) -> Optional[pulumi.Input[str]]:
-        """
-        Version of OGG
-        """
         return pulumi.get(self, "ogg_version")
 
     @ogg_version.setter
@@ -387,9 +284,6 @@ class _DeploymentBackupState:
     @property
     @pulumi.getter(name="sizeInBytes")
     def size_in_bytes(self) -> Optional[pulumi.Input[float]]:
-        """
-        The size of the backup stored in object storage (in bytes)
-        """
         return pulumi.get(self, "size_in_bytes")
 
     @size_in_bytes.setter
@@ -399,9 +293,6 @@ class _DeploymentBackupState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        Possible lifecycle states.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -411,9 +302,6 @@ class _DeploymentBackupState:
     @property
     @pulumi.getter(name="systemTags")
     def system_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
-        """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
@@ -423,9 +311,6 @@ class _DeploymentBackupState:
     @property
     @pulumi.getter(name="timeBackupFinished")
     def time_backup_finished(self) -> Optional[pulumi.Input[str]]:
-        """
-        The time of the resource backup finish. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-        """
         return pulumi.get(self, "time_backup_finished")
 
     @time_backup_finished.setter
@@ -435,9 +320,6 @@ class _DeploymentBackupState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -447,9 +329,6 @@ class _DeploymentBackupState:
     @property
     @pulumi.getter(name="timeOfBackup")
     def time_of_backup(self) -> Optional[pulumi.Input[str]]:
-        """
-        The time of the resource backup. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-        """
         return pulumi.get(self, "time_of_backup")
 
     @time_of_backup.setter
@@ -459,9 +338,6 @@ class _DeploymentBackupState:
     @property
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> Optional[pulumi.Input[str]]:
-        """
-        The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-        """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
@@ -484,53 +360,9 @@ class DeploymentBackup(pulumi.CustomResource):
                  object: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Deployment Backup resource in Oracle Cloud Infrastructure Golden Gate service.
-
-        Creates a new DeploymentBackup.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_deployment_backup = oci.golden_gate.DeploymentBackup("testDeploymentBackup",
-            bucket=var["deployment_backup_bucket"],
-            compartment_id=var["compartment_id"],
-            deployment_id=oci_golden_gate_deployment["test_deployment"]["id"],
-            display_name=var["deployment_backup_display_name"],
-            namespace=var["deployment_backup_namespace"],
-            object=var["deployment_backup_object"],
-            defined_tags={
-                "foo-namespace.bar-key": "value",
-            },
-            freeform_tags={
-                "bar-key": "value",
-            })
-        ```
-
-        ## Import
-
-        DeploymentBackups can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:GoldenGate/deploymentBackup:DeploymentBackup test_deployment_backup "id"
-        ```
-
+        Create a DeploymentBackup resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] bucket: Name of the bucket where the object is to be uploaded in the object storage
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] deployment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
-        :param pulumi.Input[str] display_name: An object's Display Name.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] namespace: Name of namespace that serves as a container for all of your buckets
-        :param pulumi.Input[str] object: Name of the object to be uploaded to object storage
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -539,39 +371,7 @@ class DeploymentBackup(pulumi.CustomResource):
                  args: DeploymentBackupArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Deployment Backup resource in Oracle Cloud Infrastructure Golden Gate service.
-
-        Creates a new DeploymentBackup.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_deployment_backup = oci.golden_gate.DeploymentBackup("testDeploymentBackup",
-            bucket=var["deployment_backup_bucket"],
-            compartment_id=var["compartment_id"],
-            deployment_id=oci_golden_gate_deployment["test_deployment"]["id"],
-            display_name=var["deployment_backup_display_name"],
-            namespace=var["deployment_backup_namespace"],
-            object=var["deployment_backup_object"],
-            defined_tags={
-                "foo-namespace.bar-key": "value",
-            },
-            freeform_tags={
-                "bar-key": "value",
-            })
-        ```
-
-        ## Import
-
-        DeploymentBackups can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:GoldenGate/deploymentBackup:DeploymentBackup test_deployment_backup "id"
-        ```
-
+        Create a DeploymentBackup resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param DeploymentBackupArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -671,29 +471,6 @@ class DeploymentBackup(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] backup_type: Possible Deployment backup types.
-        :param pulumi.Input[str] bucket: Name of the bucket where the object is to be uploaded in the object storage
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] deployment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
-        :param pulumi.Input[str] display_name: An object's Display Name.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
-        :param pulumi.Input[bool] is_automatic: True if this object is automatically created
-        :param pulumi.Input[str] lifecycle_details: Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
-        :param pulumi.Input[str] namespace: Name of namespace that serves as a container for all of your buckets
-        :param pulumi.Input[str] object: Name of the object to be uploaded to object storage
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] ogg_version: Version of OGG
-        :param pulumi.Input[float] size_in_bytes: The size of the backup stored in object storage (in bytes)
-        :param pulumi.Input[str] state: Possible lifecycle states.
-        :param pulumi.Input[Mapping[str, Any]] system_tags: The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
-        :param pulumi.Input[str] time_backup_finished: The time of the resource backup finish. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-        :param pulumi.Input[str] time_created: The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-        :param pulumi.Input[str] time_of_backup: The time of the resource backup. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-        :param pulumi.Input[str] time_updated: The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -722,157 +499,96 @@ class DeploymentBackup(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="backupType")
-    def backup_type(self) -> pulumi.Output[str]:
-        """
-        Possible Deployment backup types.
-        """
+    def backup_type(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "backup_type")
 
     @property
     @pulumi.getter
     def bucket(self) -> pulumi.Output[str]:
-        """
-        Name of the bucket where the object is to be uploaded in the object storage
-        """
         return pulumi.get(self, "bucket")
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="deploymentId")
     def deployment_id(self) -> pulumi.Output[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
-        """
         return pulumi.get(self, "deployment_id")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Output[str]:
-        """
-        An object's Display Name.
-        """
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="isAutomatic")
-    def is_automatic(self) -> pulumi.Output[bool]:
-        """
-        True if this object is automatically created
-        """
+    def is_automatic(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "is_automatic")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> pulumi.Output[str]:
-        """
-        Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
-        """
+    def lifecycle_details(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter
     def namespace(self) -> pulumi.Output[str]:
-        """
-        Name of namespace that serves as a container for all of your buckets
-        """
         return pulumi.get(self, "namespace")
 
     @property
     @pulumi.getter
     def object(self) -> pulumi.Output[str]:
-        """
-        Name of the object to be uploaded to object storage
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "object")
 
     @property
     @pulumi.getter(name="oggVersion")
-    def ogg_version(self) -> pulumi.Output[str]:
-        """
-        Version of OGG
-        """
+    def ogg_version(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "ogg_version")
 
     @property
     @pulumi.getter(name="sizeInBytes")
-    def size_in_bytes(self) -> pulumi.Output[float]:
-        """
-        The size of the backup stored in object storage (in bytes)
-        """
+    def size_in_bytes(self) -> pulumi.Output[Optional[float]]:
         return pulumi.get(self, "size_in_bytes")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        Possible lifecycle states.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
-        """
+    def system_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeBackupFinished")
-    def time_backup_finished(self) -> pulumi.Output[str]:
-        """
-        The time of the resource backup finish. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-        """
+    def time_backup_finished(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_backup_finished")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeOfBackup")
-    def time_of_backup(self) -> pulumi.Output[str]:
-        """
-        The time of the resource backup. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-        """
+    def time_of_backup(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_of_backup")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> pulumi.Output[str]:
-        """
-        The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-        """
+    def time_updated(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_updated")
 

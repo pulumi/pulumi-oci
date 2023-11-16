@@ -9,6 +9,7 @@ import com.pulumi.oci.Core.outputs.GetCrossConnectPortSpeedShapeFilter;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 @CustomType
@@ -18,13 +19,13 @@ public final class GetCrossConnectPortSpeedShapeResult {
      * @return The list of cross_connect_port_speed_shapes.
      * 
      */
-    private List<GetCrossConnectPortSpeedShapeCrossConnectPortSpeedShape> crossConnectPortSpeedShapes;
+    private @Nullable List<GetCrossConnectPortSpeedShapeCrossConnectPortSpeedShape> crossConnectPortSpeedShapes;
     private @Nullable List<GetCrossConnectPortSpeedShapeFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
 
     private GetCrossConnectPortSpeedShapeResult() {}
     public String compartmentId() {
@@ -35,7 +36,7 @@ public final class GetCrossConnectPortSpeedShapeResult {
      * 
      */
     public List<GetCrossConnectPortSpeedShapeCrossConnectPortSpeedShape> crossConnectPortSpeedShapes() {
-        return this.crossConnectPortSpeedShapes;
+        return this.crossConnectPortSpeedShapes == null ? List.of() : this.crossConnectPortSpeedShapes;
     }
     public List<GetCrossConnectPortSpeedShapeFilter> filters() {
         return this.filters == null ? List.of() : this.filters;
@@ -44,8 +45,8 @@ public final class GetCrossConnectPortSpeedShapeResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
 
     public static Builder builder() {
@@ -58,9 +59,9 @@ public final class GetCrossConnectPortSpeedShapeResult {
     @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
-        private List<GetCrossConnectPortSpeedShapeCrossConnectPortSpeedShape> crossConnectPortSpeedShapes;
+        private @Nullable List<GetCrossConnectPortSpeedShapeCrossConnectPortSpeedShape> crossConnectPortSpeedShapes;
         private @Nullable List<GetCrossConnectPortSpeedShapeFilter> filters;
-        private String id;
+        private @Nullable String id;
         public Builder() {}
         public Builder(GetCrossConnectPortSpeedShapeResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -76,8 +77,8 @@ public final class GetCrossConnectPortSpeedShapeResult {
             return this;
         }
         @CustomType.Setter
-        public Builder crossConnectPortSpeedShapes(List<GetCrossConnectPortSpeedShapeCrossConnectPortSpeedShape> crossConnectPortSpeedShapes) {
-            this.crossConnectPortSpeedShapes = Objects.requireNonNull(crossConnectPortSpeedShapes);
+        public Builder crossConnectPortSpeedShapes(@Nullable List<GetCrossConnectPortSpeedShapeCrossConnectPortSpeedShape> crossConnectPortSpeedShapes) {
+            this.crossConnectPortSpeedShapes = crossConnectPortSpeedShapes;
             return this;
         }
         public Builder crossConnectPortSpeedShapes(GetCrossConnectPortSpeedShapeCrossConnectPortSpeedShape... crossConnectPortSpeedShapes) {
@@ -92,8 +93,8 @@ public final class GetCrossConnectPortSpeedShapeResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         public GetCrossConnectPortSpeedShapeResult build() {

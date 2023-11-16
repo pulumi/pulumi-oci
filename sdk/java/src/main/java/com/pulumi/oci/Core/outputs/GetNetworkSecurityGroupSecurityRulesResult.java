@@ -24,13 +24,13 @@ public final class GetNetworkSecurityGroupSecurityRulesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private String networkSecurityGroupId;
     /**
      * @return The list of security_rules.
      * 
      */
-    private List<GetNetworkSecurityGroupSecurityRulesSecurityRule> securityRules;
+    private @Nullable List<GetNetworkSecurityGroupSecurityRulesSecurityRule> securityRules;
 
     private GetNetworkSecurityGroupSecurityRulesResult() {}
     /**
@@ -47,8 +47,8 @@ public final class GetNetworkSecurityGroupSecurityRulesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public String networkSecurityGroupId() {
         return this.networkSecurityGroupId;
@@ -58,7 +58,7 @@ public final class GetNetworkSecurityGroupSecurityRulesResult {
      * 
      */
     public List<GetNetworkSecurityGroupSecurityRulesSecurityRule> securityRules() {
-        return this.securityRules;
+        return this.securityRules == null ? List.of() : this.securityRules;
     }
 
     public static Builder builder() {
@@ -72,9 +72,9 @@ public final class GetNetworkSecurityGroupSecurityRulesResult {
     public static final class Builder {
         private @Nullable String direction;
         private @Nullable List<GetNetworkSecurityGroupSecurityRulesFilter> filters;
-        private String id;
+        private @Nullable String id;
         private String networkSecurityGroupId;
-        private List<GetNetworkSecurityGroupSecurityRulesSecurityRule> securityRules;
+        private @Nullable List<GetNetworkSecurityGroupSecurityRulesSecurityRule> securityRules;
         public Builder() {}
         public Builder(GetNetworkSecurityGroupSecurityRulesResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -99,8 +99,8 @@ public final class GetNetworkSecurityGroupSecurityRulesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -109,8 +109,8 @@ public final class GetNetworkSecurityGroupSecurityRulesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder securityRules(List<GetNetworkSecurityGroupSecurityRulesSecurityRule> securityRules) {
-            this.securityRules = Objects.requireNonNull(securityRules);
+        public Builder securityRules(@Nullable List<GetNetworkSecurityGroupSecurityRulesSecurityRule> securityRules) {
+            this.securityRules = securityRules;
             return this;
         }
         public Builder securityRules(GetNetworkSecurityGroupSecurityRulesSecurityRule... securityRules) {

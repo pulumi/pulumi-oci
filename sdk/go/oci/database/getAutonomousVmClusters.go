@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Autonomous Vm Clusters in Oracle Cloud Infrastructure Database service.
@@ -79,7 +78,7 @@ type GetAutonomousVmClustersResult struct {
 	ExadataInfrastructureId *string                         `pulumi:"exadataInfrastructureId"`
 	Filters                 []GetAutonomousVmClustersFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The current state of the Autonomous VM cluster.
 	State *string `pulumi:"state"`
 }
@@ -129,12 +128,6 @@ func (o GetAutonomousVmClustersResultOutput) ToGetAutonomousVmClustersResultOutp
 	return o
 }
 
-func (o GetAutonomousVmClustersResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetAutonomousVmClustersResult] {
-	return pulumix.Output[GetAutonomousVmClustersResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The list of autonomous_vm_clusters.
 func (o GetAutonomousVmClustersResultOutput) AutonomousVmClusters() GetAutonomousVmClustersAutonomousVmClusterArrayOutput {
 	return o.ApplyT(func(v GetAutonomousVmClustersResult) []GetAutonomousVmClustersAutonomousVmCluster {
@@ -162,8 +155,8 @@ func (o GetAutonomousVmClustersResultOutput) Filters() GetAutonomousVmClustersFi
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetAutonomousVmClustersResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAutonomousVmClustersResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetAutonomousVmClustersResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAutonomousVmClustersResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the Autonomous VM cluster.

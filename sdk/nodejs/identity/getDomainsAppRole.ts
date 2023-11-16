@@ -77,113 +77,113 @@ export interface GetDomainsAppRoleResult {
     /**
      * If true, the role provides administrative access privileges.
      */
-    readonly adminRole: boolean;
+    readonly adminRole?: boolean;
     readonly appRoleId: string;
     /**
      * A unique identifier for the application that references this role.
      */
-    readonly apps: outputs.Identity.GetDomainsAppRoleApp[];
+    readonly apps?: outputs.Identity.GetDomainsAppRoleApp[];
     readonly attributeSets?: string[];
     readonly attributes?: string;
     readonly authorization?: string;
     /**
      * If true, this AppRole can be granted to Apps.
      */
-    readonly availableToClients: boolean;
+    readonly availableToClients?: boolean;
     /**
      * If true, this AppRole can be granted to Groups.
      */
-    readonly availableToGroups: boolean;
+    readonly availableToGroups?: boolean;
     /**
      * If true, this AppRole can be granted to Users.
      */
-    readonly availableToUsers: boolean;
+    readonly availableToUsers?: boolean;
     /**
      * Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
      */
-    readonly compartmentOcid: string;
+    readonly compartmentOcid?: string;
     /**
      * A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
      */
-    readonly deleteInProgress: boolean;
+    readonly deleteInProgress?: boolean;
     /**
      * AppRole description
      */
-    readonly description: string;
+    readonly description?: string;
     /**
      * AppRole name
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
      */
-    readonly domainOcid: string;
+    readonly domainOcid?: string;
     /**
      * Unique identifier for the SCIM Resource as defined by the Service Provider. Each representation of the Resource MUST include a non-empty id value. This identifier MUST be unique across the Service Provider's entire set of Resources. It MUST be a stable, non-reassignable identifier that does not change when the same Resource is returned in subsequent requests. The value of the id attribute is always issued by the Service Provider and MUST never be specified by the Service Consumer. bulkId: is a reserved keyword and MUST NOT be used in the unique identifier.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The User or App who created the Resource
      */
-    readonly idcsCreatedBies: outputs.Identity.GetDomainsAppRoleIdcsCreatedBy[];
+    readonly idcsCreatedBies?: outputs.Identity.GetDomainsAppRoleIdcsCreatedBy[];
     readonly idcsEndpoint: string;
     /**
      * The User or App who modified the Resource
      */
-    readonly idcsLastModifiedBies: outputs.Identity.GetDomainsAppRoleIdcsLastModifiedBy[];
+    readonly idcsLastModifiedBies?: outputs.Identity.GetDomainsAppRoleIdcsLastModifiedBy[];
     /**
      * The release number when the resource was upgraded.
      */
-    readonly idcsLastUpgradedInRelease: string;
+    readonly idcsLastUpgradedInRelease?: string;
     /**
      * Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
      */
-    readonly idcsPreventedOperations: string[];
+    readonly idcsPreventedOperations?: string[];
     /**
      * The name of the legacy group associated with this AppRole.
      */
-    readonly legacyGroupName: string;
+    readonly legacyGroupName?: string;
     /**
      * If true, indicates that this Oracle Identity Cloud Service AppRole can be granted to a delegated administrator whose scope is limited to users that are members of one or more groups.
      */
-    readonly limitedToOneOrMoreGroups: boolean;
+    readonly limitedToOneOrMoreGroups?: boolean;
     /**
      * AppRole localization name
      */
-    readonly localizedDisplayName: string;
+    readonly localizedDisplayName?: string;
     /**
      * AppRole members - when requesting members attribute, it is recommended to use startIndex and count to return members in pages instead of in a single response, eg : #attributes=members[startIndex=1%26count=10]
      */
-    readonly members: outputs.Identity.GetDomainsAppRoleMember[];
+    readonly members?: outputs.Identity.GetDomainsAppRoleMember[];
     /**
      * A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
      */
-    readonly metas: outputs.Identity.GetDomainsAppRoleMeta[];
+    readonly metas?: outputs.Identity.GetDomainsAppRoleMeta[];
     /**
      * Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
      */
-    readonly ocid: string;
+    readonly ocid?: string;
     /**
      * If true, this AppRole is available automatically to every Oracle Identity Cloud Service User in this tenancy. There is no need to grant it to individual Users or Groups.
      */
-    readonly public: boolean;
+    readonly public?: boolean;
     readonly resourceTypeSchemaVersion?: string;
     /**
      * REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
      */
-    readonly schemas: string[];
+    readonly schemas?: string[];
     /**
      * A list of tags on this resource.
      */
-    readonly tags: outputs.Identity.GetDomainsAppRoleTag[];
+    readonly tags?: outputs.Identity.GetDomainsAppRoleTag[];
     /**
      * Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
      */
-    readonly tenancyOcid: string;
+    readonly tenancyOcid?: string;
     /**
      * AppRole unique name
      */
-    readonly uniqueName: string;
+    readonly uniqueName?: string;
 }
 /**
  * This data source provides details about a specific App Role resource in Oracle Cloud Infrastructure Identity Domains service.

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of External Listeners in Oracle Cloud Infrastructure Database Management service.
@@ -76,7 +75,7 @@ type GetExternalListenersResult struct {
 	ExternalListenerCollections []GetExternalListenersExternalListenerCollection `pulumi:"externalListenerCollections"`
 	Filters                     []GetExternalListenersFilter                     `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 }
 
 func GetExternalListenersOutput(ctx *pulumi.Context, args GetExternalListenersOutputArgs, opts ...pulumi.InvokeOption) GetExternalListenersResultOutput {
@@ -122,12 +121,6 @@ func (o GetExternalListenersResultOutput) ToGetExternalListenersResultOutputWith
 	return o
 }
 
-func (o GetExternalListenersResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetExternalListenersResult] {
-	return pulumix.Output[GetExternalListenersResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the external database resides.
 func (o GetExternalListenersResultOutput) CompartmentId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetExternalListenersResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
@@ -155,8 +148,8 @@ func (o GetExternalListenersResultOutput) Filters() GetExternalListenersFilterAr
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetExternalListenersResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExternalListenersResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetExternalListenersResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExternalListenersResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func init() {

@@ -16,23 +16,23 @@ namespace Pulumi.Oci.Database.Outputs
         /// <summary>
         /// Returns all connection strings that can be used to connect to the Autonomous Database. For more information, please see [Predefined Database Service Names for Autonomous Transaction Processing](https://docs.oracle.com/en/cloud/paas/atp-cloud/atpug/connect-predefined.html#GUID-9747539B-FD46-44F1-8FF8-F5AC650F15BE)
         /// </summary>
-        public readonly ImmutableDictionary<string, object> AllConnectionStrings;
+        public readonly ImmutableDictionary<string, object>? AllConnectionStrings;
         /// <summary>
         /// The database service provides the least level of resources to each SQL statement, but supports the most number of concurrent SQL statements.
         /// </summary>
-        public readonly string Dedicated;
+        public readonly string? Dedicated;
         /// <summary>
         /// The High database service provides the highest level of resources to each SQL statement resulting in the highest performance, but supports the fewest number of concurrent SQL statements.
         /// </summary>
-        public readonly string High;
+        public readonly string? High;
         /// <summary>
         /// The Low database service provides the least level of resources to each SQL statement, but supports the most number of concurrent SQL statements.
         /// </summary>
-        public readonly string Low;
+        public readonly string? Low;
         /// <summary>
         /// The Medium database service provides a lower level of resources to each SQL statement potentially resulting a lower level of performance, but supports more concurrent SQL statements.
         /// </summary>
-        public readonly string Medium;
+        public readonly string? Medium;
         /// <summary>
         /// A list of connection string profiles to allow clients to group, filter and select connection string values based on structured metadata.
         /// </summary>
@@ -40,15 +40,15 @@ namespace Pulumi.Oci.Database.Outputs
 
         [OutputConstructor]
         private GetAutonomousDatabaseConnectionStringResult(
-            ImmutableDictionary<string, object> allConnectionStrings,
+            ImmutableDictionary<string, object>? allConnectionStrings,
 
-            string dedicated,
+            string? dedicated,
 
-            string high,
+            string? high,
 
-            string low,
+            string? low,
 
-            string medium,
+            string? medium,
 
             ImmutableArray<Outputs.GetAutonomousDatabaseConnectionStringProfileResult> profiles)
         {

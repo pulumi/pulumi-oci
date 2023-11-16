@@ -18,7 +18,7 @@ public final class GetApplicationVipsResult {
      * @return The list of application_vips.
      * 
      */
-    private List<GetApplicationVipsApplicationVip> applicationVips;
+    private @Nullable List<GetApplicationVipsApplicationVip> applicationVips;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud VM cluster associated with the application virtual IP (VIP) address.
      * 
@@ -34,7 +34,7 @@ public final class GetApplicationVipsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The current lifecycle state of the application virtual IP (VIP) address.
      * 
@@ -47,7 +47,7 @@ public final class GetApplicationVipsResult {
      * 
      */
     public List<GetApplicationVipsApplicationVip> applicationVips() {
-        return this.applicationVips;
+        return this.applicationVips == null ? List.of() : this.applicationVips;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud VM cluster associated with the application virtual IP (VIP) address.
@@ -70,8 +70,8 @@ public final class GetApplicationVipsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The current lifecycle state of the application virtual IP (VIP) address.
@@ -90,11 +90,11 @@ public final class GetApplicationVipsResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetApplicationVipsApplicationVip> applicationVips;
+        private @Nullable List<GetApplicationVipsApplicationVip> applicationVips;
         private String cloudVmClusterId;
         private String compartmentId;
         private @Nullable List<GetApplicationVipsFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String state;
         public Builder() {}
         public Builder(GetApplicationVipsResult defaults) {
@@ -108,8 +108,8 @@ public final class GetApplicationVipsResult {
         }
 
         @CustomType.Setter
-        public Builder applicationVips(List<GetApplicationVipsApplicationVip> applicationVips) {
-            this.applicationVips = Objects.requireNonNull(applicationVips);
+        public Builder applicationVips(@Nullable List<GetApplicationVipsApplicationVip> applicationVips) {
+            this.applicationVips = applicationVips;
             return this;
         }
         public Builder applicationVips(GetApplicationVipsApplicationVip... applicationVips) {
@@ -134,8 +134,8 @@ public final class GetApplicationVipsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Managed Databases User System Privilege resource in Oracle Cloud Infrastructure Database Management service.
@@ -66,7 +65,7 @@ type GetManagedDatabasesUserSystemPrivilegeArgs struct {
 // A collection of values returned by getManagedDatabasesUserSystemPrivilege.
 type GetManagedDatabasesUserSystemPrivilegeResult struct {
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// An array of system privileges.
 	Items             []GetManagedDatabasesUserSystemPrivilegeItem `pulumi:"items"`
 	ManagedDatabaseId string                                       `pulumi:"managedDatabaseId"`
@@ -117,15 +116,9 @@ func (o GetManagedDatabasesUserSystemPrivilegeResultOutput) ToGetManagedDatabase
 	return o
 }
 
-func (o GetManagedDatabasesUserSystemPrivilegeResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagedDatabasesUserSystemPrivilegeResult] {
-	return pulumix.Output[GetManagedDatabasesUserSystemPrivilegeResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The provider-assigned unique ID for this managed resource.
-func (o GetManagedDatabasesUserSystemPrivilegeResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedDatabasesUserSystemPrivilegeResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetManagedDatabasesUserSystemPrivilegeResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedDatabasesUserSystemPrivilegeResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // An array of system privileges.

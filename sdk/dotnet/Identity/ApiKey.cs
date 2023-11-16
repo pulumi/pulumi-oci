@@ -59,13 +59,13 @@ namespace Pulumi.Oci.Identity
         /// The key's fingerprint (e.g., 12:34:56:78:90:ab:cd:ef:12:34:56:78:90:ab:cd:ef).
         /// </summary>
         [Output("fingerprint")]
-        public Output<string> Fingerprint { get; private set; } = null!;
+        public Output<string?> Fingerprint { get; private set; } = null!;
 
         /// <summary>
         /// The detailed status of INACTIVE lifecycleState.
         /// </summary>
         [Output("inactiveStatus")]
-        public Output<string> InactiveStatus { get; private set; } = null!;
+        public Output<string?> InactiveStatus { get; private set; } = null!;
 
         /// <summary>
         /// The public key.  Must be an RSA key in PEM format.
@@ -77,13 +77,13 @@ namespace Pulumi.Oci.Identity
         /// The API key's current state.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// Date and time the `ApiKey` object was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// The OCID of the user.

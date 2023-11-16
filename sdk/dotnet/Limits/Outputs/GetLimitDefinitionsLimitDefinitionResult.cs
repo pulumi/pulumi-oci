@@ -16,59 +16,59 @@ namespace Pulumi.Oci.Limits.Outputs
         /// <summary>
         /// If true, quota policies can be created on top of this resource limit.
         /// </summary>
-        public readonly bool AreQuotasSupported;
+        public readonly bool? AreQuotasSupported;
         /// <summary>
         /// The limit description.
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// Indicates if the limit has been deprecated.
         /// </summary>
-        public readonly bool IsDeprecated;
+        public readonly bool? IsDeprecated;
         /// <summary>
         /// The limit for this resource has a dynamic value that is based on consumption across all Oracle Cloud Infrastructure services.
         /// </summary>
-        public readonly bool IsDynamic;
+        public readonly bool? IsDynamic;
         /// <summary>
         /// Indicates if the customer can request a limit increase for this resource.
         /// </summary>
-        public readonly bool IsEligibleForLimitIncrease;
+        public readonly bool? IsEligibleForLimitIncrease;
         /// <summary>
         /// Reflects whether or not the GetResourceAvailability API is supported for this limit. If not, the API returns an empty JSON response.
         /// </summary>
-        public readonly bool IsResourceAvailabilitySupported;
+        public readonly bool? IsResourceAvailabilitySupported;
         /// <summary>
         /// Optional field, filter for a specific resource limit.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// Reflects the scope of the resource limit, whether Global (across all regions), regional, or availability domain-specific.
         /// </summary>
-        public readonly string ScopeType;
+        public readonly string? ScopeType;
         /// <summary>
         /// The target service name.
         /// </summary>
-        public readonly string ServiceName;
+        public readonly string? ServiceName;
 
         [OutputConstructor]
         private GetLimitDefinitionsLimitDefinitionResult(
-            bool areQuotasSupported,
+            bool? areQuotasSupported,
 
-            string description,
+            string? description,
 
-            bool isDeprecated,
+            bool? isDeprecated,
 
-            bool isDynamic,
+            bool? isDynamic,
 
-            bool isEligibleForLimitIncrease,
+            bool? isEligibleForLimitIncrease,
 
-            bool isResourceAvailabilitySupported,
+            bool? isResourceAvailabilitySupported,
 
-            string name,
+            string? name,
 
-            string scopeType,
+            string? scopeType,
 
-            string serviceName)
+            string? serviceName)
         {
             AreQuotasSupported = areQuotasSupported;
             Description = description;

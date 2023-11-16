@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Vm Cluster Update History Entry resource in Oracle Cloud Infrastructure Database service.
@@ -63,23 +62,23 @@ type GetVmClusterUpdateHistoryEntryArgs struct {
 // A collection of values returned by getVmClusterUpdateHistoryEntry.
 type GetVmClusterUpdateHistoryEntryResult struct {
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Descriptive text providing additional details about the lifecycle state.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// The current lifecycle state of the maintenance update operation.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The date and time when the maintenance update action completed.
-	TimeCompleted string `pulumi:"timeCompleted"`
+	TimeCompleted *string `pulumi:"timeCompleted"`
 	// The date and time when the maintenance update action started.
-	TimeStarted string `pulumi:"timeStarted"`
+	TimeStarted *string `pulumi:"timeStarted"`
 	// The update action performed using this maintenance update.
-	UpdateAction         string `pulumi:"updateAction"`
-	UpdateHistoryEntryId string `pulumi:"updateHistoryEntryId"`
+	UpdateAction         *string `pulumi:"updateAction"`
+	UpdateHistoryEntryId string  `pulumi:"updateHistoryEntryId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance update.
-	UpdateId string `pulumi:"updateId"`
+	UpdateId *string `pulumi:"updateId"`
 	// The type of VM cluster maintenance update.
-	UpdateType  string `pulumi:"updateType"`
-	VmClusterId string `pulumi:"vmClusterId"`
+	UpdateType  *string `pulumi:"updateType"`
+	VmClusterId string  `pulumi:"vmClusterId"`
 }
 
 func GetVmClusterUpdateHistoryEntryOutput(ctx *pulumi.Context, args GetVmClusterUpdateHistoryEntryOutputArgs, opts ...pulumi.InvokeOption) GetVmClusterUpdateHistoryEntryResultOutput {
@@ -122,40 +121,34 @@ func (o GetVmClusterUpdateHistoryEntryResultOutput) ToGetVmClusterUpdateHistoryE
 	return o
 }
 
-func (o GetVmClusterUpdateHistoryEntryResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetVmClusterUpdateHistoryEntryResult] {
-	return pulumix.Output[GetVmClusterUpdateHistoryEntryResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The provider-assigned unique ID for this managed resource.
-func (o GetVmClusterUpdateHistoryEntryResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVmClusterUpdateHistoryEntryResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetVmClusterUpdateHistoryEntryResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVmClusterUpdateHistoryEntryResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Descriptive text providing additional details about the lifecycle state.
-func (o GetVmClusterUpdateHistoryEntryResultOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVmClusterUpdateHistoryEntryResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o GetVmClusterUpdateHistoryEntryResultOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVmClusterUpdateHistoryEntryResult) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // The current lifecycle state of the maintenance update operation.
-func (o GetVmClusterUpdateHistoryEntryResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVmClusterUpdateHistoryEntryResult) string { return v.State }).(pulumi.StringOutput)
+func (o GetVmClusterUpdateHistoryEntryResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVmClusterUpdateHistoryEntryResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time when the maintenance update action completed.
-func (o GetVmClusterUpdateHistoryEntryResultOutput) TimeCompleted() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVmClusterUpdateHistoryEntryResult) string { return v.TimeCompleted }).(pulumi.StringOutput)
+func (o GetVmClusterUpdateHistoryEntryResultOutput) TimeCompleted() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVmClusterUpdateHistoryEntryResult) *string { return v.TimeCompleted }).(pulumi.StringPtrOutput)
 }
 
 // The date and time when the maintenance update action started.
-func (o GetVmClusterUpdateHistoryEntryResultOutput) TimeStarted() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVmClusterUpdateHistoryEntryResult) string { return v.TimeStarted }).(pulumi.StringOutput)
+func (o GetVmClusterUpdateHistoryEntryResultOutput) TimeStarted() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVmClusterUpdateHistoryEntryResult) *string { return v.TimeStarted }).(pulumi.StringPtrOutput)
 }
 
 // The update action performed using this maintenance update.
-func (o GetVmClusterUpdateHistoryEntryResultOutput) UpdateAction() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVmClusterUpdateHistoryEntryResult) string { return v.UpdateAction }).(pulumi.StringOutput)
+func (o GetVmClusterUpdateHistoryEntryResultOutput) UpdateAction() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVmClusterUpdateHistoryEntryResult) *string { return v.UpdateAction }).(pulumi.StringPtrOutput)
 }
 
 func (o GetVmClusterUpdateHistoryEntryResultOutput) UpdateHistoryEntryId() pulumi.StringOutput {
@@ -163,13 +156,13 @@ func (o GetVmClusterUpdateHistoryEntryResultOutput) UpdateHistoryEntryId() pulum
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance update.
-func (o GetVmClusterUpdateHistoryEntryResultOutput) UpdateId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVmClusterUpdateHistoryEntryResult) string { return v.UpdateId }).(pulumi.StringOutput)
+func (o GetVmClusterUpdateHistoryEntryResultOutput) UpdateId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVmClusterUpdateHistoryEntryResult) *string { return v.UpdateId }).(pulumi.StringPtrOutput)
 }
 
 // The type of VM cluster maintenance update.
-func (o GetVmClusterUpdateHistoryEntryResultOutput) UpdateType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVmClusterUpdateHistoryEntryResult) string { return v.UpdateType }).(pulumi.StringOutput)
+func (o GetVmClusterUpdateHistoryEntryResultOutput) UpdateType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVmClusterUpdateHistoryEntryResult) *string { return v.UpdateType }).(pulumi.StringPtrOutput)
 }
 
 func (o GetVmClusterUpdateHistoryEntryResultOutput) VmClusterId() pulumi.StringOutput {

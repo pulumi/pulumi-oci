@@ -74,49 +74,49 @@ namespace Pulumi.Oci.DataSafe
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// The type of the discovery job. It defines the job's scope. NEW identifies new sensitive columns in the target database that are not in the sensitive data model. DELETED identifies columns that are present in the sensitive data model but have been deleted from the target database. MODIFIED identifies columns that are present in the target database as well as the sensitive data model but some of their attributes have been modified. ALL covers all the above three scenarios and reports new, deleted and modified columns.
         /// </summary>
         [Output("discoveryType")]
-        public Output<string> DiscoveryType { get; private set; } = null!;
+        public Output<string?> DiscoveryType { get; private set; } = null!;
 
         /// <summary>
         /// A user-friendly name for the discovery job. Does not have to be unique, and it is changeable. Avoid entering confidential information.
         /// </summary>
         [Output("displayName")]
-        public Output<string> DisplayName { get; private set; } = null!;
+        public Output<string?> DisplayName { get; private set; } = null!;
 
         /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// Indicates if the discovery job should identify potential application-level (non-dictionary) referential relationships between columns. Note that data discovery automatically identifies and adds database-level (dictionary-defined) relationships. This option helps identify application-level relationships that are not defined in the database dictionary, which in turn, helps identify additional sensitive columns and preserve referential integrity during data masking. It's disabled by default and should be used only if there is a need to identify application-level relationships.
         /// </summary>
         [Output("isAppDefinedRelationDiscoveryEnabled")]
-        public Output<bool> IsAppDefinedRelationDiscoveryEnabled { get; private set; } = null!;
+        public Output<bool?> IsAppDefinedRelationDiscoveryEnabled { get; private set; } = null!;
 
         /// <summary>
         /// Indicates if all the schemas should be scanned by the discovery job. If it is set to true, sensitive data is discovered in all schemas (except for schemas maintained by Oracle). If both attributes are not provided, the configuration from the sensitive data model is used.
         /// </summary>
         [Output("isIncludeAllSchemas")]
-        public Output<bool> IsIncludeAllSchemas { get; private set; } = null!;
+        public Output<bool?> IsIncludeAllSchemas { get; private set; } = null!;
 
         /// <summary>
         /// Indicates if all the existing sensitive types should be used by the discovery job. If it's set to true, the sensitiveTypeIdsForDiscovery attribute is ignored and all sensitive types are used for data discovery. If both attributes are not provided, the configuration from the sensitive data model is used.
         /// </summary>
         [Output("isIncludeAllSensitiveTypes")]
-        public Output<bool> IsIncludeAllSensitiveTypes { get; private set; } = null!;
+        public Output<bool?> IsIncludeAllSensitiveTypes { get; private set; } = null!;
 
         /// <summary>
         /// Indicates if the discovery job should collect and store sample data values for the discovered columns. Sample data helps review the discovered columns and ensure that they actually contain sensitive data. As it collects original data from the target database, it's disabled by default and should be used only if it's acceptable to store sample data in Data Safe's repository in Oracle Cloud. Note that sample data values are not collected for columns with the following data types: LONG, LOB, RAW, XMLTYPE and BFILE.
         /// </summary>
         [Output("isSampleDataCollectionEnabled")]
-        public Output<bool> IsSampleDataCollectionEnabled { get; private set; } = null!;
+        public Output<bool?> IsSampleDataCollectionEnabled { get; private set; } = null!;
 
         /// <summary>
         /// The schemas to be scanned by the discovery job. If not provided, the schemasForDiscovery attribute of the sensitive data model is used to get the list of schemas.
@@ -144,67 +144,67 @@ namespace Pulumi.Oci.DataSafe
         /// The current state of the discovery job.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
         [Output("systemTags")]
-        public Output<ImmutableDictionary<string, object>> SystemTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> SystemTags { get; private set; } = null!;
 
         /// <summary>
         /// The OCID of the target database associated with the discovery job.
         /// </summary>
         [Output("targetId")]
-        public Output<string> TargetId { get; private set; } = null!;
+        public Output<string?> TargetId { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the discovery job finished, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)..
         /// </summary>
         [Output("timeFinished")]
-        public Output<string> TimeFinished { get; private set; } = null!;
+        public Output<string?> TimeFinished { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the discovery job started, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         /// </summary>
         [Output("timeStarted")]
-        public Output<string> TimeStarted { get; private set; } = null!;
+        public Output<string?> TimeStarted { get; private set; } = null!;
 
         /// <summary>
         /// The total number of columns scanned by the discovery job.
         /// </summary>
         [Output("totalColumnsScanned")]
-        public Output<string> TotalColumnsScanned { get; private set; } = null!;
+        public Output<string?> TotalColumnsScanned { get; private set; } = null!;
 
         /// <summary>
         /// The total number of deleted sensitive columns identified by the discovery job.
         /// </summary>
         [Output("totalDeletedSensitiveColumns")]
-        public Output<string> TotalDeletedSensitiveColumns { get; private set; } = null!;
+        public Output<string?> TotalDeletedSensitiveColumns { get; private set; } = null!;
 
         /// <summary>
         /// The total number of modified sensitive columns identified by the discovery job.
         /// </summary>
         [Output("totalModifiedSensitiveColumns")]
-        public Output<string> TotalModifiedSensitiveColumns { get; private set; } = null!;
+        public Output<string?> TotalModifiedSensitiveColumns { get; private set; } = null!;
 
         /// <summary>
         /// The total number of new sensitive columns identified by the discovery job.
         /// </summary>
         [Output("totalNewSensitiveColumns")]
-        public Output<string> TotalNewSensitiveColumns { get; private set; } = null!;
+        public Output<string?> TotalNewSensitiveColumns { get; private set; } = null!;
 
         /// <summary>
         /// The total number of objects (tables and editioning views) scanned by the discovery job.
         /// </summary>
         [Output("totalObjectsScanned")]
-        public Output<string> TotalObjectsScanned { get; private set; } = null!;
+        public Output<string?> TotalObjectsScanned { get; private set; } = null!;
 
         /// <summary>
         /// The total number of schemas scanned by the discovery job.
         /// </summary>
         [Output("totalSchemasScanned")]
-        public Output<string> TotalSchemasScanned { get; private set; } = null!;
+        public Output<string?> TotalSchemasScanned { get; private set; } = null!;
 
 
         /// <summary>

@@ -6,6 +6,8 @@ package com.pulumi.oci.Database.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAutonomousDatabaseRefreshableClonesRefreshableCloneCollectionItem {
@@ -13,27 +15,27 @@ public final class GetAutonomousDatabaseRefreshableClonesRefreshableCloneCollect
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The name of the region where the refreshable clone exists.
      * 
      */
-    private String region;
+    private @Nullable String region;
 
     private GetAutonomousDatabaseRefreshableClonesRefreshableCloneCollectionItem() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The name of the region where the refreshable clone exists.
      * 
      */
-    public String region() {
-        return this.region;
+    public Optional<String> region() {
+        return Optional.ofNullable(this.region);
     }
 
     public static Builder builder() {
@@ -45,8 +47,8 @@ public final class GetAutonomousDatabaseRefreshableClonesRefreshableCloneCollect
     }
     @CustomType.Builder
     public static final class Builder {
-        private String id;
-        private String region;
+        private @Nullable String id;
+        private @Nullable String region;
         public Builder() {}
         public Builder(GetAutonomousDatabaseRefreshableClonesRefreshableCloneCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -55,13 +57,13 @@ public final class GetAutonomousDatabaseRefreshableClonesRefreshableCloneCollect
         }
 
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder region(String region) {
-            this.region = Objects.requireNonNull(region);
+        public Builder region(@Nullable String region) {
+            this.region = region;
             return this;
         }
         public GetAutonomousDatabaseRefreshableClonesRefreshableCloneCollectionItem build() {

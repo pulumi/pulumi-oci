@@ -16,17 +16,17 @@ namespace Pulumi.Oci.ServiceMesh.Outputs
         /// <summary>
         /// Name of the ingress gateway host that this route should apply to.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// The port of the ingress gateway host listener. Leave empty to match all ports for the host.
         /// </summary>
-        public readonly int Port;
+        public readonly int? Port;
 
         [OutputConstructor]
         private GetIngressGatewayRouteTableRouteRuleIngressGatewayHostResult(
-            string name,
+            string? name,
 
-            int port)
+            int? port)
         {
             Name = name;
             Port = port;

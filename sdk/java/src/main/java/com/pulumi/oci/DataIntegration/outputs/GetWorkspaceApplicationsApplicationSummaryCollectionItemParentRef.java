@@ -6,6 +6,8 @@ package com.pulumi.oci.DataIntegration.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetWorkspaceApplicationsApplicationSummaryCollectionItemParentRef {
@@ -13,27 +15,27 @@ public final class GetWorkspaceApplicationsApplicationSummaryCollectionItemParen
      * @return Key of the parent object.
      * 
      */
-    private String parent;
+    private @Nullable String parent;
     /**
      * @return Key of the root document object.
      * 
      */
-    private String rootDocId;
+    private @Nullable String rootDocId;
 
     private GetWorkspaceApplicationsApplicationSummaryCollectionItemParentRef() {}
     /**
      * @return Key of the parent object.
      * 
      */
-    public String parent() {
-        return this.parent;
+    public Optional<String> parent() {
+        return Optional.ofNullable(this.parent);
     }
     /**
      * @return Key of the root document object.
      * 
      */
-    public String rootDocId() {
-        return this.rootDocId;
+    public Optional<String> rootDocId() {
+        return Optional.ofNullable(this.rootDocId);
     }
 
     public static Builder builder() {
@@ -45,8 +47,8 @@ public final class GetWorkspaceApplicationsApplicationSummaryCollectionItemParen
     }
     @CustomType.Builder
     public static final class Builder {
-        private String parent;
-        private String rootDocId;
+        private @Nullable String parent;
+        private @Nullable String rootDocId;
         public Builder() {}
         public Builder(GetWorkspaceApplicationsApplicationSummaryCollectionItemParentRef defaults) {
     	      Objects.requireNonNull(defaults);
@@ -55,13 +57,13 @@ public final class GetWorkspaceApplicationsApplicationSummaryCollectionItemParen
         }
 
         @CustomType.Setter
-        public Builder parent(String parent) {
-            this.parent = Objects.requireNonNull(parent);
+        public Builder parent(@Nullable String parent) {
+            this.parent = parent;
             return this;
         }
         @CustomType.Setter
-        public Builder rootDocId(String rootDocId) {
-            this.rootDocId = Objects.requireNonNull(rootDocId);
+        public Builder rootDocId(@Nullable String rootDocId) {
+            this.rootDocId = rootDocId;
             return this;
         }
         public GetWorkspaceApplicationsApplicationSummaryCollectionItemParentRef build() {

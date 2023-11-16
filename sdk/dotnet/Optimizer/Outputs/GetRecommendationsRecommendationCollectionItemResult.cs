@@ -16,36 +16,36 @@ namespace Pulumi.Oci.Optimizer.Outputs
         /// <summary>
         /// The unique OCID associated with the category.
         /// </summary>
-        public readonly string CategoryId;
+        public readonly string? CategoryId;
         /// <summary>
         /// The OCID of the compartment.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// Text describing the recommendation.
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// The estimated cost savings, in dollars, for the recommendation.
         /// </summary>
-        public readonly double EstimatedCostSaving;
+        public readonly double? EstimatedCostSaving;
         /// <summary>
         /// Additional metadata key/value pairs for the recommendation.
         /// </summary>
-        public readonly ImmutableDictionary<string, object> ExtendedMetadata;
+        public readonly ImmutableDictionary<string, object>? ExtendedMetadata;
         /// <summary>
         /// The unique OCID associated with the recommendation.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The level of importance assigned to the recommendation.
         /// </summary>
-        public readonly string Importance;
+        public readonly string? Importance;
         /// <summary>
         /// Optional. A filter that returns results that match the name specified.
         /// </summary>
-        public readonly string Name;
-        public readonly string RecommendationId;
+        public readonly string? Name;
+        public readonly string? RecommendationId;
         /// <summary>
         /// An array of `ResourceCount` objects grouped by the status of the resource actions.
         /// </summary>
@@ -53,11 +53,11 @@ namespace Pulumi.Oci.Optimizer.Outputs
         /// <summary>
         /// A filter that returns results that match the lifecycle state specified.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// A filter that returns recommendations that match the status specified.
         /// </summary>
-        public readonly string Status;
+        public readonly string? Status;
         /// <summary>
         /// Optional. The profile levels supported by a recommendation. For example, profile level values could be `Low`, `Medium`, and `High`. Not all recommendations support this field.
         /// </summary>
@@ -65,55 +65,55 @@ namespace Pulumi.Oci.Optimizer.Outputs
         /// <summary>
         /// The date and time the recommendation details were created, in the format defined by RFC3339.
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The date and time that the recommendation entered its current status. The format is defined by RFC3339.
         /// </summary>
-        public readonly string TimeStatusBegin;
+        public readonly string? TimeStatusBegin;
         /// <summary>
         /// The date and time the current status will change. The format is defined by RFC3339.
         /// </summary>
-        public readonly string TimeStatusEnd;
+        public readonly string? TimeStatusEnd;
         /// <summary>
         /// The date and time the recommendation details were last updated, in the format defined by RFC3339.
         /// </summary>
-        public readonly string TimeUpdated;
+        public readonly string? TimeUpdated;
 
         [OutputConstructor]
         private GetRecommendationsRecommendationCollectionItemResult(
-            string categoryId,
+            string? categoryId,
 
-            string compartmentId,
+            string? compartmentId,
 
-            string description,
+            string? description,
 
-            double estimatedCostSaving,
+            double? estimatedCostSaving,
 
-            ImmutableDictionary<string, object> extendedMetadata,
+            ImmutableDictionary<string, object>? extendedMetadata,
 
-            string id,
+            string? id,
 
-            string importance,
+            string? importance,
 
-            string name,
+            string? name,
 
-            string recommendationId,
+            string? recommendationId,
 
             ImmutableArray<Outputs.GetRecommendationsRecommendationCollectionItemResourceCountResult> resourceCounts,
 
-            string state,
+            string? state,
 
-            string status,
+            string? status,
 
             ImmutableArray<Outputs.GetRecommendationsRecommendationCollectionItemSupportedLevelResult> supportedLevels,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeStatusBegin,
+            string? timeStatusBegin,
 
-            string timeStatusEnd,
+            string? timeStatusEnd,
 
-            string timeUpdated)
+            string? timeUpdated)
         {
             CategoryId = categoryId;
             CompartmentId = compartmentId;

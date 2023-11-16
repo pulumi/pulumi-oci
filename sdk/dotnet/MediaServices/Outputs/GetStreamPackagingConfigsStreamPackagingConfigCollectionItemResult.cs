@@ -16,19 +16,19 @@ namespace Pulumi.Oci.MediaServices.Outputs
         /// <summary>
         /// Compartment Identifier
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// A filter to return only the resources that match the entire display name given.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// Unique Stream Distribution Channel identifier.
         /// </summary>
-        public readonly string DistributionChannelId;
+        public readonly string? DistributionChannelId;
         /// <summary>
         /// The encryption used by the stream packaging configuration.
         /// </summary>
@@ -36,63 +36,63 @@ namespace Pulumi.Oci.MediaServices.Outputs
         /// <summary>
         /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// Unique identifier that is immutable on creation.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The duration in seconds for each fragment.
         /// </summary>
-        public readonly int SegmentTimeInSeconds;
+        public readonly int? SegmentTimeInSeconds;
         /// <summary>
         /// A filter to return only the resources with lifecycleState matching the given lifecycleState.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// The output format for the package.
         /// </summary>
-        public readonly string StreamPackagingFormat;
+        public readonly string? StreamPackagingFormat;
         /// <summary>
         /// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> SystemTags;
+        public readonly ImmutableDictionary<string, object>? SystemTags;
         /// <summary>
         /// The time when the Packaging Configuration was created. An RFC3339 formatted datetime string.
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The time when the Packaging Configuration was updated. An RFC3339 formatted datetime string.
         /// </summary>
-        public readonly string TimeUpdated;
+        public readonly string? TimeUpdated;
 
         [OutputConstructor]
         private GetStreamPackagingConfigsStreamPackagingConfigCollectionItemResult(
-            string compartmentId,
+            string? compartmentId,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string displayName,
+            string? displayName,
 
-            string distributionChannelId,
+            string? distributionChannelId,
 
             ImmutableArray<Outputs.GetStreamPackagingConfigsStreamPackagingConfigCollectionItemEncryptionResult> encryptions,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string id,
+            string? id,
 
-            int segmentTimeInSeconds,
+            int? segmentTimeInSeconds,
 
-            string state,
+            string? state,
 
-            string streamPackagingFormat,
+            string? streamPackagingFormat,
 
-            ImmutableDictionary<string, object> systemTags,
+            ImmutableDictionary<string, object>? systemTags,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeUpdated)
+            string? timeUpdated)
         {
             CompartmentId = compartmentId;
             DefinedTags = definedTags;

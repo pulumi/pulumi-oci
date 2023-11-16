@@ -51,19 +51,19 @@ export interface GetLogAnalyticsCategoryResult {
     /**
      * The category description.
      */
-    readonly description: string;
+    readonly description?: string;
     /**
      * The category display name.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The system flag. A value of false denotes a user-created category. A value of true denotes an Oracle-defined category.
      */
-    readonly isSystem: boolean;
+    readonly isSystem?: boolean;
     /**
      * The unique name that identifies the category.
      */
@@ -72,7 +72,7 @@ export interface GetLogAnalyticsCategoryResult {
     /**
      * The category type. Values include "PRODUCT", "TIER", "VENDOR" and "GENERIC".
      */
-    readonly type: string;
+    readonly type?: string;
 }
 /**
  * This data source provides details about a specific Log Analytics Category resource in Oracle Cloud Infrastructure Log Analytics service.

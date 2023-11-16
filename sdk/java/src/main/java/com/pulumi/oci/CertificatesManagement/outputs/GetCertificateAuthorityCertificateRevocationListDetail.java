@@ -8,6 +8,7 @@ import com.pulumi.oci.CertificatesManagement.outputs.GetCertificateAuthorityCert
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetCertificateAuthorityCertificateRevocationListDetail {
@@ -15,12 +16,12 @@ public final class GetCertificateAuthorityCertificateRevocationListDetail {
      * @return Optional CRL access points, expressed using a format where the version number of the issuing CA is inserted wherever you include a pair of curly braces. This versioning scheme helps avoid collisions when new CA versions are created. For example, myCrlFileIssuedFromCAVersion{}.crl becomes myCrlFileIssuedFromCAVersion2.crl for CA version 2.
      * 
      */
-    private List<String> customFormattedUrls;
+    private @Nullable List<String> customFormattedUrls;
     /**
      * @return The details of the Object Storage bucket configured to store the certificate revocation list (CRL).
      * 
      */
-    private List<GetCertificateAuthorityCertificateRevocationListDetailObjectStorageConfig> objectStorageConfigs;
+    private @Nullable List<GetCertificateAuthorityCertificateRevocationListDetailObjectStorageConfig> objectStorageConfigs;
 
     private GetCertificateAuthorityCertificateRevocationListDetail() {}
     /**
@@ -28,14 +29,14 @@ public final class GetCertificateAuthorityCertificateRevocationListDetail {
      * 
      */
     public List<String> customFormattedUrls() {
-        return this.customFormattedUrls;
+        return this.customFormattedUrls == null ? List.of() : this.customFormattedUrls;
     }
     /**
      * @return The details of the Object Storage bucket configured to store the certificate revocation list (CRL).
      * 
      */
     public List<GetCertificateAuthorityCertificateRevocationListDetailObjectStorageConfig> objectStorageConfigs() {
-        return this.objectStorageConfigs;
+        return this.objectStorageConfigs == null ? List.of() : this.objectStorageConfigs;
     }
 
     public static Builder builder() {
@@ -47,8 +48,8 @@ public final class GetCertificateAuthorityCertificateRevocationListDetail {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<String> customFormattedUrls;
-        private List<GetCertificateAuthorityCertificateRevocationListDetailObjectStorageConfig> objectStorageConfigs;
+        private @Nullable List<String> customFormattedUrls;
+        private @Nullable List<GetCertificateAuthorityCertificateRevocationListDetailObjectStorageConfig> objectStorageConfigs;
         public Builder() {}
         public Builder(GetCertificateAuthorityCertificateRevocationListDetail defaults) {
     	      Objects.requireNonNull(defaults);
@@ -57,16 +58,16 @@ public final class GetCertificateAuthorityCertificateRevocationListDetail {
         }
 
         @CustomType.Setter
-        public Builder customFormattedUrls(List<String> customFormattedUrls) {
-            this.customFormattedUrls = Objects.requireNonNull(customFormattedUrls);
+        public Builder customFormattedUrls(@Nullable List<String> customFormattedUrls) {
+            this.customFormattedUrls = customFormattedUrls;
             return this;
         }
         public Builder customFormattedUrls(String... customFormattedUrls) {
             return customFormattedUrls(List.of(customFormattedUrls));
         }
         @CustomType.Setter
-        public Builder objectStorageConfigs(List<GetCertificateAuthorityCertificateRevocationListDetailObjectStorageConfig> objectStorageConfigs) {
-            this.objectStorageConfigs = Objects.requireNonNull(objectStorageConfigs);
+        public Builder objectStorageConfigs(@Nullable List<GetCertificateAuthorityCertificateRevocationListDetailObjectStorageConfig> objectStorageConfigs) {
+            this.objectStorageConfigs = objectStorageConfigs;
             return this;
         }
         public Builder objectStorageConfigs(GetCertificateAuthorityCertificateRevocationListDetailObjectStorageConfig... objectStorageConfigs) {

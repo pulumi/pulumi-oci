@@ -6,6 +6,8 @@ package com.pulumi.oci.DataSafe.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetMaskingPolicyMaskingObjectsMaskingObjectCollectionItem {
@@ -13,39 +15,39 @@ public final class GetMaskingPolicyMaskingObjectsMaskingObjectCollectionItem {
      * @return A filter to return only items related to a specific object name.
      * 
      */
-    private String object;
+    private @Nullable String object;
     /**
      * @return A filter to return only items related to a specific object type.
      * 
      */
-    private String objectType;
+    private @Nullable String objectType;
     /**
      * @return A filter to return only items related to specific schema name.
      * 
      */
-    private String schemaName;
+    private @Nullable String schemaName;
 
     private GetMaskingPolicyMaskingObjectsMaskingObjectCollectionItem() {}
     /**
      * @return A filter to return only items related to a specific object name.
      * 
      */
-    public String object() {
-        return this.object;
+    public Optional<String> object() {
+        return Optional.ofNullable(this.object);
     }
     /**
      * @return A filter to return only items related to a specific object type.
      * 
      */
-    public String objectType() {
-        return this.objectType;
+    public Optional<String> objectType() {
+        return Optional.ofNullable(this.objectType);
     }
     /**
      * @return A filter to return only items related to specific schema name.
      * 
      */
-    public String schemaName() {
-        return this.schemaName;
+    public Optional<String> schemaName() {
+        return Optional.ofNullable(this.schemaName);
     }
 
     public static Builder builder() {
@@ -57,9 +59,9 @@ public final class GetMaskingPolicyMaskingObjectsMaskingObjectCollectionItem {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String object;
-        private String objectType;
-        private String schemaName;
+        private @Nullable String object;
+        private @Nullable String objectType;
+        private @Nullable String schemaName;
         public Builder() {}
         public Builder(GetMaskingPolicyMaskingObjectsMaskingObjectCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -69,18 +71,18 @@ public final class GetMaskingPolicyMaskingObjectsMaskingObjectCollectionItem {
         }
 
         @CustomType.Setter
-        public Builder object(String object) {
-            this.object = Objects.requireNonNull(object);
+        public Builder object(@Nullable String object) {
+            this.object = object;
             return this;
         }
         @CustomType.Setter
-        public Builder objectType(String objectType) {
-            this.objectType = Objects.requireNonNull(objectType);
+        public Builder objectType(@Nullable String objectType) {
+            this.objectType = objectType;
             return this;
         }
         @CustomType.Setter
-        public Builder schemaName(String schemaName) {
-            this.schemaName = Objects.requireNonNull(schemaName);
+        public Builder schemaName(@Nullable String schemaName) {
+            this.schemaName = schemaName;
             return this;
         }
         public GetMaskingPolicyMaskingObjectsMaskingObjectCollectionItem build() {

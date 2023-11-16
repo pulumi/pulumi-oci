@@ -16,17 +16,17 @@ namespace Pulumi.Oci.Core.Outputs
         /// <summary>
         /// This attribute is not used.
         /// </summary>
-        public readonly bool IsManagementSupported;
+        public readonly bool? IsManagementSupported;
         /// <summary>
         /// This attribute is not used.
         /// </summary>
-        public readonly bool IsMonitoringSupported;
+        public readonly bool? IsMonitoringSupported;
 
         [OutputConstructor]
         private GetImageAgentFeatureResult(
-            bool isManagementSupported,
+            bool? isManagementSupported,
 
-            bool isMonitoringSupported)
+            bool? isMonitoringSupported)
         {
             IsManagementSupported = isManagementSupported;
             IsMonitoringSupported = isMonitoringSupported;

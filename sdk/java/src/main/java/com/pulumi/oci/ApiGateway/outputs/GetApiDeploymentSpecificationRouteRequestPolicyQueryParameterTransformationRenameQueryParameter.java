@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.ApiGateway.outputs.GetApiDeploymentSpecificationRouteRequestPolicyQueryParameterTransformationRenameQueryParameterItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetApiDeploymentSpecificationRouteRequestPolicyQueryParameterTransformationRenameQueryParameter {
@@ -14,7 +15,7 @@ public final class GetApiDeploymentSpecificationRouteRequestPolicyQueryParameter
      * @return The list of headers.
      * 
      */
-    private List<GetApiDeploymentSpecificationRouteRequestPolicyQueryParameterTransformationRenameQueryParameterItem> items;
+    private @Nullable List<GetApiDeploymentSpecificationRouteRequestPolicyQueryParameterTransformationRenameQueryParameterItem> items;
 
     private GetApiDeploymentSpecificationRouteRequestPolicyQueryParameterTransformationRenameQueryParameter() {}
     /**
@@ -22,7 +23,7 @@ public final class GetApiDeploymentSpecificationRouteRequestPolicyQueryParameter
      * 
      */
     public List<GetApiDeploymentSpecificationRouteRequestPolicyQueryParameterTransformationRenameQueryParameterItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -34,7 +35,7 @@ public final class GetApiDeploymentSpecificationRouteRequestPolicyQueryParameter
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetApiDeploymentSpecificationRouteRequestPolicyQueryParameterTransformationRenameQueryParameterItem> items;
+        private @Nullable List<GetApiDeploymentSpecificationRouteRequestPolicyQueryParameterTransformationRenameQueryParameterItem> items;
         public Builder() {}
         public Builder(GetApiDeploymentSpecificationRouteRequestPolicyQueryParameterTransformationRenameQueryParameter defaults) {
     	      Objects.requireNonNull(defaults);
@@ -42,8 +43,8 @@ public final class GetApiDeploymentSpecificationRouteRequestPolicyQueryParameter
         }
 
         @CustomType.Setter
-        public Builder items(List<GetApiDeploymentSpecificationRouteRequestPolicyQueryParameterTransformationRenameQueryParameterItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetApiDeploymentSpecificationRouteRequestPolicyQueryParameterTransformationRenameQueryParameterItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetApiDeploymentSpecificationRouteRequestPolicyQueryParameterTransformationRenameQueryParameterItem... items) {

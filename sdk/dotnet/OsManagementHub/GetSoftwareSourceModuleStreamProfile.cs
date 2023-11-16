@@ -152,15 +152,15 @@ namespace Pulumi.Oci.OsManagementHub
         /// <summary>
         /// A description of the contents of the module stream profile.
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Indicates if this profile is the default for its module stream.
         /// </summary>
-        public readonly bool IsDefault;
+        public readonly bool? IsDefault;
         /// <summary>
         /// The name of the module that contains the stream profile.
         /// </summary>
@@ -168,7 +168,7 @@ namespace Pulumi.Oci.OsManagementHub
         /// <summary>
         /// The name of the profile.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// A list of packages that constitute the profile.  Each element in the list is the name of a package.  The name is suitable to use as an argument to other OS Management Hub APIs that interact directly with packages.
         /// </summary>
@@ -182,15 +182,15 @@ namespace Pulumi.Oci.OsManagementHub
 
         [OutputConstructor]
         private GetSoftwareSourceModuleStreamProfileResult(
-            string description,
+            string? description,
 
-            string id,
+            string? id,
 
-            bool isDefault,
+            bool? isDefault,
 
             string moduleName,
 
-            string name,
+            string? name,
 
             ImmutableArray<string> packages,
 

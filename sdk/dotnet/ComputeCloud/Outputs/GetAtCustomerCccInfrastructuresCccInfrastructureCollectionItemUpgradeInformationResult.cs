@@ -16,29 +16,29 @@ namespace Pulumi.Oci.ComputeCloud.Outputs
         /// <summary>
         /// The current version of software installed on the Compute Cloud@Customer infrastructure.
         /// </summary>
-        public readonly string CurrentVersion;
+        public readonly string? CurrentVersion;
         /// <summary>
         /// Indication that the Compute Cloud@Customer infrastructure is in the process of an upgrade or an upgrade activity (such as preloading upgrade images).
         /// </summary>
-        public readonly bool IsActive;
+        public readonly bool? IsActive;
         /// <summary>
         /// Expected duration of Compute Cloud@Customer infrastructure scheduled upgrade. The actual upgrade time might be longer or shorter than this duration depending on rack activity, this is only an estimate.
         /// </summary>
-        public readonly string ScheduledUpgradeDuration;
+        public readonly string? ScheduledUpgradeDuration;
         /// <summary>
         /// Compute Cloud@Customer infrastructure next upgrade time. The rack might have performance impacts during this time.
         /// </summary>
-        public readonly string TimeOfScheduledUpgrade;
+        public readonly string? TimeOfScheduledUpgrade;
 
         [OutputConstructor]
         private GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemUpgradeInformationResult(
-            string currentVersion,
+            string? currentVersion,
 
-            bool isActive,
+            bool? isActive,
 
-            string scheduledUpgradeDuration,
+            string? scheduledUpgradeDuration,
 
-            string timeOfScheduledUpgrade)
+            string? timeOfScheduledUpgrade)
         {
             CurrentVersion = currentVersion;
             IsActive = isActive;

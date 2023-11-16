@@ -46,9 +46,6 @@ class GetQuotasResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The OCID of the compartment containing the resource this quota applies to.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
@@ -58,7 +55,7 @@ class GetQuotasResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -67,25 +64,16 @@ class GetQuotasResult:
     @property
     @pulumi.getter
     def name(self) -> Optional[str]:
-        """
-        The name you assign to the quota during creation. The name must be unique across all quotas in the tenancy and cannot be changed.
-        """
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
-    def quotas(self) -> Sequence['outputs.GetQuotasQuotaResult']:
-        """
-        The list of quotas.
-        """
+    def quotas(self) -> Optional[Sequence['outputs.GetQuotasQuotaResult']]:
         return pulumi.get(self, "quotas")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The quota's current state.
-        """
         return pulumi.get(self, "state")
 
 
@@ -109,25 +97,7 @@ def get_quotas(compartment_id: Optional[str] = None,
                state: Optional[str] = None,
                opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetQuotasResult:
     """
-    This data source provides the list of Quotas in Oracle Cloud Infrastructure Limits service.
-
-    Lists all quotas on resources from the given compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_quotas = oci.Limits.get_quotas(compartment_id=var["tenancy_ocid"],
-        name=var["quota_name"],
-        state=var["quota_state"])
-    ```
-
-
-    :param str compartment_id: The OCID of the parent compartment (remember that the tenancy is simply the root compartment).
-    :param str name: name
-    :param str state: Filters returned quotas based on the given state.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -153,24 +123,6 @@ def get_quotas_output(compartment_id: Optional[pulumi.Input[str]] = None,
                       state: Optional[pulumi.Input[Optional[str]]] = None,
                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetQuotasResult]:
     """
-    This data source provides the list of Quotas in Oracle Cloud Infrastructure Limits service.
-
-    Lists all quotas on resources from the given compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_quotas = oci.Limits.get_quotas(compartment_id=var["tenancy_ocid"],
-        name=var["quota_name"],
-        state=var["quota_state"])
-    ```
-
-
-    :param str compartment_id: The OCID of the parent compartment (remember that the tenancy is simply the root compartment).
-    :param str name: name
-    :param str state: Filters returned quotas based on the given state.
+    Use this data source to access information about an existing resource.
     """
     ...

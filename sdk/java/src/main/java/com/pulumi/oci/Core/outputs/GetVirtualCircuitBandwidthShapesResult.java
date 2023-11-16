@@ -9,6 +9,7 @@ import com.pulumi.oci.Core.outputs.GetVirtualCircuitBandwidthShapesVirtualCircui
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 @CustomType
@@ -18,13 +19,13 @@ public final class GetVirtualCircuitBandwidthShapesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private String providerServiceId;
     /**
      * @return The list of virtual_circuit_bandwidth_shapes.
      * 
      */
-    private List<GetVirtualCircuitBandwidthShapesVirtualCircuitBandwidthShape> virtualCircuitBandwidthShapes;
+    private @Nullable List<GetVirtualCircuitBandwidthShapesVirtualCircuitBandwidthShape> virtualCircuitBandwidthShapes;
 
     private GetVirtualCircuitBandwidthShapesResult() {}
     public List<GetVirtualCircuitBandwidthShapesFilter> filters() {
@@ -34,8 +35,8 @@ public final class GetVirtualCircuitBandwidthShapesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public String providerServiceId() {
         return this.providerServiceId;
@@ -45,7 +46,7 @@ public final class GetVirtualCircuitBandwidthShapesResult {
      * 
      */
     public List<GetVirtualCircuitBandwidthShapesVirtualCircuitBandwidthShape> virtualCircuitBandwidthShapes() {
-        return this.virtualCircuitBandwidthShapes;
+        return this.virtualCircuitBandwidthShapes == null ? List.of() : this.virtualCircuitBandwidthShapes;
     }
 
     public static Builder builder() {
@@ -58,9 +59,9 @@ public final class GetVirtualCircuitBandwidthShapesResult {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable List<GetVirtualCircuitBandwidthShapesFilter> filters;
-        private String id;
+        private @Nullable String id;
         private String providerServiceId;
-        private List<GetVirtualCircuitBandwidthShapesVirtualCircuitBandwidthShape> virtualCircuitBandwidthShapes;
+        private @Nullable List<GetVirtualCircuitBandwidthShapesVirtualCircuitBandwidthShape> virtualCircuitBandwidthShapes;
         public Builder() {}
         public Builder(GetVirtualCircuitBandwidthShapesResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -79,8 +80,8 @@ public final class GetVirtualCircuitBandwidthShapesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -89,8 +90,8 @@ public final class GetVirtualCircuitBandwidthShapesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder virtualCircuitBandwidthShapes(List<GetVirtualCircuitBandwidthShapesVirtualCircuitBandwidthShape> virtualCircuitBandwidthShapes) {
-            this.virtualCircuitBandwidthShapes = Objects.requireNonNull(virtualCircuitBandwidthShapes);
+        public Builder virtualCircuitBandwidthShapes(@Nullable List<GetVirtualCircuitBandwidthShapesVirtualCircuitBandwidthShape> virtualCircuitBandwidthShapes) {
+            this.virtualCircuitBandwidthShapes = virtualCircuitBandwidthShapes;
             return this;
         }
         public Builder virtualCircuitBandwidthShapes(GetVirtualCircuitBandwidthShapesVirtualCircuitBandwidthShape... virtualCircuitBandwidthShapes) {

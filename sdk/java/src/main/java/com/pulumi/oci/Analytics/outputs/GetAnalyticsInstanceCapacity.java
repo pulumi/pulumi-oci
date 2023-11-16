@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAnalyticsInstanceCapacity {
@@ -14,27 +16,27 @@ public final class GetAnalyticsInstanceCapacity {
      * @return The capacity model to use.
      * 
      */
-    private String capacityType;
+    private @Nullable String capacityType;
     /**
      * @return The capacity value selected (OLPU count, number of users, ...etc...). This parameter affects the number of CPUs, amount of memory or other resources allocated to the instance.
      * 
      */
-    private Integer capacityValue;
+    private @Nullable Integer capacityValue;
 
     private GetAnalyticsInstanceCapacity() {}
     /**
      * @return The capacity model to use.
      * 
      */
-    public String capacityType() {
-        return this.capacityType;
+    public Optional<String> capacityType() {
+        return Optional.ofNullable(this.capacityType);
     }
     /**
      * @return The capacity value selected (OLPU count, number of users, ...etc...). This parameter affects the number of CPUs, amount of memory or other resources allocated to the instance.
      * 
      */
-    public Integer capacityValue() {
-        return this.capacityValue;
+    public Optional<Integer> capacityValue() {
+        return Optional.ofNullable(this.capacityValue);
     }
 
     public static Builder builder() {
@@ -46,8 +48,8 @@ public final class GetAnalyticsInstanceCapacity {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String capacityType;
-        private Integer capacityValue;
+        private @Nullable String capacityType;
+        private @Nullable Integer capacityValue;
         public Builder() {}
         public Builder(GetAnalyticsInstanceCapacity defaults) {
     	      Objects.requireNonNull(defaults);
@@ -56,13 +58,13 @@ public final class GetAnalyticsInstanceCapacity {
         }
 
         @CustomType.Setter
-        public Builder capacityType(String capacityType) {
-            this.capacityType = Objects.requireNonNull(capacityType);
+        public Builder capacityType(@Nullable String capacityType) {
+            this.capacityType = capacityType;
             return this;
         }
         @CustomType.Setter
-        public Builder capacityValue(Integer capacityValue) {
-            this.capacityValue = Objects.requireNonNull(capacityValue);
+        public Builder capacityValue(@Nullable Integer capacityValue) {
+            this.capacityValue = capacityValue;
             return this;
         }
         public GetAnalyticsInstanceCapacity build() {

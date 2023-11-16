@@ -50,7 +50,7 @@ export class MigrationPlan extends pulumi.CustomResource {
     /**
      * Limits of the resources that are needed for migration. Example: {"BlockVolume": 2, "VCN": 1}
      */
-    public /*out*/ readonly calculatedLimits!: pulumi.Output<{[key: string]: any}>;
+    public /*out*/ readonly calculatedLimits!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) Compartment identifier
      */
@@ -58,7 +58,7 @@ export class MigrationPlan extends pulumi.CustomResource {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) Migration plan identifier
      */
@@ -66,11 +66,11 @@ export class MigrationPlan extends pulumi.CustomResource {
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string | undefined>;
     /**
      * The OCID of the associated migration.
      */
@@ -78,39 +78,39 @@ export class MigrationPlan extends pulumi.CustomResource {
     /**
      * Status of the migration plan.
      */
-    public /*out*/ readonly migrationPlanStats!: pulumi.Output<outputs.CloudMigrations.MigrationPlanMigrationPlanStat[]>;
+    public /*out*/ readonly migrationPlanStats!: pulumi.Output<outputs.CloudMigrations.MigrationPlanMigrationPlanStat[] | undefined>;
     /**
      * OCID of the referenced ORM job.
      */
-    public /*out*/ readonly referenceToRmsStack!: pulumi.Output<string>;
+    public /*out*/ readonly referenceToRmsStack!: pulumi.Output<string | undefined>;
     /**
      * Source migraiton plan ID to be cloned.
      */
-    public readonly sourceMigrationPlanId!: pulumi.Output<string>;
+    public readonly sourceMigrationPlanId!: pulumi.Output<string | undefined>;
     /**
      * The current state of the migration plan.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) List of strategies for the resources to be migrated.
      */
-    public readonly strategies!: pulumi.Output<outputs.CloudMigrations.MigrationPlanStrategy[]>;
+    public readonly strategies!: pulumi.Output<outputs.CloudMigrations.MigrationPlanStrategy[] | undefined>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any}>;
+    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) List of target environments.
      */
-    public readonly targetEnvironments!: pulumi.Output<outputs.CloudMigrations.MigrationPlanTargetEnvironment[]>;
+    public readonly targetEnvironments!: pulumi.Output<outputs.CloudMigrations.MigrationPlanTargetEnvironment[] | undefined>;
     /**
      * The time when the migration plan was created. An RFC3339 formatted datetime string.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * The time when the migration plan was updated. An RFC3339 formatted datetime string.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    public /*out*/ readonly timeUpdated!: pulumi.Output<string | undefined>;
 
     /**
      * Create a MigrationPlan resource with the given unique name, arguments, and options.

@@ -41,10 +41,7 @@ class GetCustomTableResult:
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The custom table compartment OCID.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
@@ -54,26 +51,17 @@ class GetCustomTableResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The custom table OCID.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="savedCustomTables")
-    def saved_custom_tables(self) -> Sequence['outputs.GetCustomTableSavedCustomTableResult']:
-        """
-        The custom table for Cost Analysis UI rendering.
-        """
+    def saved_custom_tables(self) -> Optional[Sequence['outputs.GetCustomTableSavedCustomTableResult']]:
         return pulumi.get(self, "saved_custom_tables")
 
     @property
     @pulumi.getter(name="savedReportId")
-    def saved_report_id(self) -> str:
-        """
-        The custom table associated saved report OCID.
-        """
+    def saved_report_id(self) -> Optional[str]:
         return pulumi.get(self, "saved_report_id")
 
 
@@ -93,21 +81,7 @@ class AwaitableGetCustomTableResult(GetCustomTableResult):
 def get_custom_table(custom_table_id: Optional[str] = None,
                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetCustomTableResult:
     """
-    This data source provides details about a specific Custom Table resource in Oracle Cloud Infrastructure Metering Computation service.
-
-    Returns the saved custom table.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_custom_table = oci.MeteringComputation.get_custom_table(custom_table_id=oci_metering_computation_custom_table["test_custom_table"]["id"])
-    ```
-
-
-    :param str custom_table_id: The custom table unique OCID.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['customTableId'] = custom_table_id
@@ -126,20 +100,6 @@ def get_custom_table(custom_table_id: Optional[str] = None,
 def get_custom_table_output(custom_table_id: Optional[pulumi.Input[str]] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCustomTableResult]:
     """
-    This data source provides details about a specific Custom Table resource in Oracle Cloud Infrastructure Metering Computation service.
-
-    Returns the saved custom table.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_custom_table = oci.MeteringComputation.get_custom_table(custom_table_id=oci_metering_computation_custom_table["test_custom_table"]["id"])
-    ```
-
-
-    :param str custom_table_id: The custom table unique OCID.
+    Use this data source to access information about an existing resource.
     """
     ...

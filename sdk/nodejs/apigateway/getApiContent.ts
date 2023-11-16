@@ -43,11 +43,11 @@ export interface GetApiContentArgs {
  */
 export interface GetApiContentResult {
     readonly apiId: string;
-    readonly content: string;
+    readonly content?: string;
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
 }
 /**
  * This data source provides details about a specific Api Content resource in Oracle Cloud Infrastructure API Gateway service.

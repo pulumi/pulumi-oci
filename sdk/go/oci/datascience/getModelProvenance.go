@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Model Provenance resource in Oracle Cloud Infrastructure Data Science service.
@@ -60,19 +59,19 @@ type LookupModelProvenanceArgs struct {
 // A collection of values returned by getModelProvenance.
 type LookupModelProvenanceResult struct {
 	// For model reproducibility purposes. Branch of the git repository associated with model training.
-	GitBranch string `pulumi:"gitBranch"`
+	GitBranch *string `pulumi:"gitBranch"`
 	// For model reproducibility purposes. Commit ID of the git repository associated with model training.
-	GitCommit string `pulumi:"gitCommit"`
-	Id        string `pulumi:"id"`
-	ModelId   string `pulumi:"modelId"`
+	GitCommit *string `pulumi:"gitCommit"`
+	Id        *string `pulumi:"id"`
+	ModelId   string  `pulumi:"modelId"`
 	// For model reproducibility purposes. URL of the git repository associated with model training.
-	RepositoryUrl string `pulumi:"repositoryUrl"`
+	RepositoryUrl *string `pulumi:"repositoryUrl"`
 	// For model reproducibility purposes. Path to model artifacts.
-	ScriptDir string `pulumi:"scriptDir"`
+	ScriptDir *string `pulumi:"scriptDir"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a training session(Job or NotebookSession) in which the model was trained. It is used for model reproducibility purposes.
-	TrainingId string `pulumi:"trainingId"`
+	TrainingId *string `pulumi:"trainingId"`
 	// For model reproducibility purposes. Path to the python script or notebook in which the model was trained."
-	TrainingScript string `pulumi:"trainingScript"`
+	TrainingScript *string `pulumi:"trainingScript"`
 }
 
 func LookupModelProvenanceOutput(ctx *pulumi.Context, args LookupModelProvenanceOutputArgs, opts ...pulumi.InvokeOption) LookupModelProvenanceResultOutput {
@@ -113,24 +112,18 @@ func (o LookupModelProvenanceResultOutput) ToLookupModelProvenanceResultOutputWi
 	return o
 }
 
-func (o LookupModelProvenanceResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupModelProvenanceResult] {
-	return pulumix.Output[LookupModelProvenanceResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // For model reproducibility purposes. Branch of the git repository associated with model training.
-func (o LookupModelProvenanceResultOutput) GitBranch() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupModelProvenanceResult) string { return v.GitBranch }).(pulumi.StringOutput)
+func (o LookupModelProvenanceResultOutput) GitBranch() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupModelProvenanceResult) *string { return v.GitBranch }).(pulumi.StringPtrOutput)
 }
 
 // For model reproducibility purposes. Commit ID of the git repository associated with model training.
-func (o LookupModelProvenanceResultOutput) GitCommit() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupModelProvenanceResult) string { return v.GitCommit }).(pulumi.StringOutput)
+func (o LookupModelProvenanceResultOutput) GitCommit() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupModelProvenanceResult) *string { return v.GitCommit }).(pulumi.StringPtrOutput)
 }
 
-func (o LookupModelProvenanceResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupModelProvenanceResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupModelProvenanceResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupModelProvenanceResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupModelProvenanceResultOutput) ModelId() pulumi.StringOutput {
@@ -138,23 +131,23 @@ func (o LookupModelProvenanceResultOutput) ModelId() pulumi.StringOutput {
 }
 
 // For model reproducibility purposes. URL of the git repository associated with model training.
-func (o LookupModelProvenanceResultOutput) RepositoryUrl() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupModelProvenanceResult) string { return v.RepositoryUrl }).(pulumi.StringOutput)
+func (o LookupModelProvenanceResultOutput) RepositoryUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupModelProvenanceResult) *string { return v.RepositoryUrl }).(pulumi.StringPtrOutput)
 }
 
 // For model reproducibility purposes. Path to model artifacts.
-func (o LookupModelProvenanceResultOutput) ScriptDir() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupModelProvenanceResult) string { return v.ScriptDir }).(pulumi.StringOutput)
+func (o LookupModelProvenanceResultOutput) ScriptDir() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupModelProvenanceResult) *string { return v.ScriptDir }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a training session(Job or NotebookSession) in which the model was trained. It is used for model reproducibility purposes.
-func (o LookupModelProvenanceResultOutput) TrainingId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupModelProvenanceResult) string { return v.TrainingId }).(pulumi.StringOutput)
+func (o LookupModelProvenanceResultOutput) TrainingId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupModelProvenanceResult) *string { return v.TrainingId }).(pulumi.StringPtrOutput)
 }
 
 // For model reproducibility purposes. Path to the python script or notebook in which the model was trained."
-func (o LookupModelProvenanceResultOutput) TrainingScript() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupModelProvenanceResult) string { return v.TrainingScript }).(pulumi.StringOutput)
+func (o LookupModelProvenanceResultOutput) TrainingScript() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupModelProvenanceResult) *string { return v.TrainingScript }).(pulumi.StringPtrOutput)
 }
 
 func init() {

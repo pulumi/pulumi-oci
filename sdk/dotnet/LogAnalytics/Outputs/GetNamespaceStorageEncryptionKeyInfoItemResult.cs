@@ -16,23 +16,23 @@ namespace Pulumi.Oci.LogAnalytics.Outputs
         /// <summary>
         /// This is the key OCID of the encryption key (null if Oracle-managed).
         /// </summary>
-        public readonly string KeyId;
+        public readonly string? KeyId;
         /// <summary>
         /// This is the source of the encryption key.
         /// </summary>
-        public readonly string KeySource;
+        public readonly string? KeySource;
         /// <summary>
         /// This is the type of data to be encrypted. It can be either active or archival.
         /// </summary>
-        public readonly string KeyType;
+        public readonly string? KeyType;
 
         [OutputConstructor]
         private GetNamespaceStorageEncryptionKeyInfoItemResult(
-            string keyId,
+            string? keyId,
 
-            string keySource,
+            string? keySource,
 
-            string keyType)
+            string? keyType)
         {
             KeyId = keyId;
             KeySource = keySource;

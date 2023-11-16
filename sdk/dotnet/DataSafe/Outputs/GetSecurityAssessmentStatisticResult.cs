@@ -40,7 +40,7 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// <summary>
         /// The total number of targets in this security assessment.
         /// </summary>
-        public readonly int TargetsCount;
+        public readonly int? TargetsCount;
 
         [OutputConstructor]
         private GetSecurityAssessmentStatisticResult(
@@ -56,7 +56,7 @@ namespace Pulumi.Oci.DataSafe.Outputs
 
             ImmutableArray<Outputs.GetSecurityAssessmentStatisticPassResult> passes,
 
-            int targetsCount)
+            int? targetsCount)
         {
             Advisories = advisories;
             Evaluates = evaluates;

@@ -6,6 +6,8 @@ package com.pulumi.oci.Limits.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetQuotasQuotaLock {
@@ -13,51 +15,51 @@ public final class GetQuotasQuotaLock {
      * @return A message added by the lock creator. The message typically gives an indication of why the resource is locked.
      * 
      */
-    private String message;
+    private @Nullable String message;
     /**
      * @return The resource ID that is locking this resource. Indicates that deleting this resource removes the lock.
      * 
      */
-    private String relatedResourceId;
+    private @Nullable String relatedResourceId;
     /**
      * @return Date and time the quota was created, in the format defined by RFC 3339. Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return Lock type.
      * 
      */
-    private String type;
+    private @Nullable String type;
 
     private GetQuotasQuotaLock() {}
     /**
      * @return A message added by the lock creator. The message typically gives an indication of why the resource is locked.
      * 
      */
-    public String message() {
-        return this.message;
+    public Optional<String> message() {
+        return Optional.ofNullable(this.message);
     }
     /**
      * @return The resource ID that is locking this resource. Indicates that deleting this resource removes the lock.
      * 
      */
-    public String relatedResourceId() {
-        return this.relatedResourceId;
+    public Optional<String> relatedResourceId() {
+        return Optional.ofNullable(this.relatedResourceId);
     }
     /**
      * @return Date and time the quota was created, in the format defined by RFC 3339. Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return Lock type.
      * 
      */
-    public String type() {
-        return this.type;
+    public Optional<String> type() {
+        return Optional.ofNullable(this.type);
     }
 
     public static Builder builder() {
@@ -69,10 +71,10 @@ public final class GetQuotasQuotaLock {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String message;
-        private String relatedResourceId;
-        private String timeCreated;
-        private String type;
+        private @Nullable String message;
+        private @Nullable String relatedResourceId;
+        private @Nullable String timeCreated;
+        private @Nullable String type;
         public Builder() {}
         public Builder(GetQuotasQuotaLock defaults) {
     	      Objects.requireNonNull(defaults);
@@ -83,23 +85,23 @@ public final class GetQuotasQuotaLock {
         }
 
         @CustomType.Setter
-        public Builder message(String message) {
-            this.message = Objects.requireNonNull(message);
+        public Builder message(@Nullable String message) {
+            this.message = message;
             return this;
         }
         @CustomType.Setter
-        public Builder relatedResourceId(String relatedResourceId) {
-            this.relatedResourceId = Objects.requireNonNull(relatedResourceId);
+        public Builder relatedResourceId(@Nullable String relatedResourceId) {
+            this.relatedResourceId = relatedResourceId;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+        public Builder type(@Nullable String type) {
+            this.type = type;
             return this;
         }
         public GetQuotasQuotaLock build() {

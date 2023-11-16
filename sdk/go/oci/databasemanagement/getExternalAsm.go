@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific External Asm resource in Oracle Cloud Infrastructure Database Management service.
@@ -62,36 +61,36 @@ type LookupExternalAsmResult struct {
 	// The additional details of the external ASM defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
 	AdditionalDetails map[string]interface{} `pulumi:"additionalDetails"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the external database resides.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// The name of the external ASM.
-	ComponentName string `pulumi:"componentName"`
+	ComponentName *string `pulumi:"componentName"`
 	// The user-friendly name for the database. The name does not have to be unique.
-	DisplayName   string `pulumi:"displayName"`
-	ExternalAsmId string `pulumi:"externalAsmId"`
+	DisplayName   *string `pulumi:"displayName"`
+	ExternalAsmId string  `pulumi:"externalAsmId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external connector.
-	ExternalConnectorId string `pulumi:"externalConnectorId"`
+	ExternalConnectorId *string `pulumi:"externalConnectorId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that the ASM is a part of.
-	ExternalDbSystemId string `pulumi:"externalDbSystemId"`
+	ExternalDbSystemId *string `pulumi:"externalDbSystemId"`
 	// The directory in which ASM is installed. This is the same directory in which Oracle Grid Infrastructure is installed.
-	GridHome string `pulumi:"gridHome"`
+	GridHome *string `pulumi:"gridHome"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Indicates whether the ASM is a cluster ASM or not.
-	IsCluster bool `pulumi:"isCluster"`
+	IsCluster *bool `pulumi:"isCluster"`
 	// Indicates whether Oracle Flex ASM is enabled or not.
-	IsFlexEnabled bool `pulumi:"isFlexEnabled"`
+	IsFlexEnabled *bool `pulumi:"isFlexEnabled"`
 	// Additional information about the current lifecycle state.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// The list of databases that are serviced by the ASM.
 	ServicedDatabases []GetExternalAsmServicedDatabase `pulumi:"servicedDatabases"`
 	// The current lifecycle state of the external ASM.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The date and time the external ASM was created.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The date and time the external ASM was last updated.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 	// The ASM version.
-	Version string `pulumi:"version"`
+	Version *string `pulumi:"version"`
 }
 
 func LookupExternalAsmOutput(ctx *pulumi.Context, args LookupExternalAsmOutputArgs, opts ...pulumi.InvokeOption) LookupExternalAsmResultOutput {
@@ -132,30 +131,24 @@ func (o LookupExternalAsmResultOutput) ToLookupExternalAsmResultOutputWithContex
 	return o
 }
 
-func (o LookupExternalAsmResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupExternalAsmResult] {
-	return pulumix.Output[LookupExternalAsmResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The additional details of the external ASM defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
 func (o LookupExternalAsmResultOutput) AdditionalDetails() pulumi.MapOutput {
 	return o.ApplyT(func(v LookupExternalAsmResult) map[string]interface{} { return v.AdditionalDetails }).(pulumi.MapOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the external database resides.
-func (o LookupExternalAsmResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupExternalAsmResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupExternalAsmResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupExternalAsmResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // The name of the external ASM.
-func (o LookupExternalAsmResultOutput) ComponentName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupExternalAsmResult) string { return v.ComponentName }).(pulumi.StringOutput)
+func (o LookupExternalAsmResultOutput) ComponentName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupExternalAsmResult) *string { return v.ComponentName }).(pulumi.StringPtrOutput)
 }
 
 // The user-friendly name for the database. The name does not have to be unique.
-func (o LookupExternalAsmResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupExternalAsmResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupExternalAsmResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupExternalAsmResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupExternalAsmResultOutput) ExternalAsmId() pulumi.StringOutput {
@@ -163,38 +156,38 @@ func (o LookupExternalAsmResultOutput) ExternalAsmId() pulumi.StringOutput {
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external connector.
-func (o LookupExternalAsmResultOutput) ExternalConnectorId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupExternalAsmResult) string { return v.ExternalConnectorId }).(pulumi.StringOutput)
+func (o LookupExternalAsmResultOutput) ExternalConnectorId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupExternalAsmResult) *string { return v.ExternalConnectorId }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that the ASM is a part of.
-func (o LookupExternalAsmResultOutput) ExternalDbSystemId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupExternalAsmResult) string { return v.ExternalDbSystemId }).(pulumi.StringOutput)
+func (o LookupExternalAsmResultOutput) ExternalDbSystemId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupExternalAsmResult) *string { return v.ExternalDbSystemId }).(pulumi.StringPtrOutput)
 }
 
 // The directory in which ASM is installed. This is the same directory in which Oracle Grid Infrastructure is installed.
-func (o LookupExternalAsmResultOutput) GridHome() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupExternalAsmResult) string { return v.GridHome }).(pulumi.StringOutput)
+func (o LookupExternalAsmResultOutput) GridHome() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupExternalAsmResult) *string { return v.GridHome }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database.
-func (o LookupExternalAsmResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupExternalAsmResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupExternalAsmResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupExternalAsmResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Indicates whether the ASM is a cluster ASM or not.
-func (o LookupExternalAsmResultOutput) IsCluster() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupExternalAsmResult) bool { return v.IsCluster }).(pulumi.BoolOutput)
+func (o LookupExternalAsmResultOutput) IsCluster() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupExternalAsmResult) *bool { return v.IsCluster }).(pulumi.BoolPtrOutput)
 }
 
 // Indicates whether Oracle Flex ASM is enabled or not.
-func (o LookupExternalAsmResultOutput) IsFlexEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupExternalAsmResult) bool { return v.IsFlexEnabled }).(pulumi.BoolOutput)
+func (o LookupExternalAsmResultOutput) IsFlexEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupExternalAsmResult) *bool { return v.IsFlexEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // Additional information about the current lifecycle state.
-func (o LookupExternalAsmResultOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupExternalAsmResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o LookupExternalAsmResultOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupExternalAsmResult) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // The list of databases that are serviced by the ASM.
@@ -203,23 +196,23 @@ func (o LookupExternalAsmResultOutput) ServicedDatabases() GetExternalAsmService
 }
 
 // The current lifecycle state of the external ASM.
-func (o LookupExternalAsmResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupExternalAsmResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupExternalAsmResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupExternalAsmResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the external ASM was created.
-func (o LookupExternalAsmResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupExternalAsmResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupExternalAsmResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupExternalAsmResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the external ASM was last updated.
-func (o LookupExternalAsmResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupExternalAsmResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o LookupExternalAsmResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupExternalAsmResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 // The ASM version.
-func (o LookupExternalAsmResultOutput) Version() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupExternalAsmResult) string { return v.Version }).(pulumi.StringOutput)
+func (o LookupExternalAsmResultOutput) Version() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupExternalAsmResult) *string { return v.Version }).(pulumi.StringPtrOutput)
 }
 
 func init() {

@@ -133,23 +133,23 @@ namespace Pulumi.Oci.Database
         /// <summary>
         /// content of the downloaded config file for exadata infrastructure. If `base64_encode_content` is set to `true`, then this content will be base64 encoded.
         /// </summary>
-        public readonly string Content;
+        public readonly string? Content;
         public readonly string ExadataInfrastructureId;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         public readonly string VmClusterNetworkId;
 
         [OutputConstructor]
         private GetVmClusterNetworkDownloadConfigFileResult(
             bool? base64EncodeContent,
 
-            string content,
+            string? content,
 
             string exadataInfrastructureId,
 
-            string id,
+            string? id,
 
             string vmClusterNetworkId)
         {

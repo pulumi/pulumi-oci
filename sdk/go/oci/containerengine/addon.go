@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Addon resource in Oracle Cloud Infrastructure Container Engine service.
@@ -38,18 +37,18 @@ type Addon struct {
 	// (Updatable) Addon configuration details.
 	Configurations AddonConfigurationArrayOutput `pulumi:"configurations"`
 	// current installed version of the addon
-	CurrentInstalledVersion pulumi.StringOutput `pulumi:"currentInstalledVersion"`
+	CurrentInstalledVersion pulumi.StringPtrOutput `pulumi:"currentInstalledVersion"`
 	// Whether to remove addon resource in deletion.
 	RemoveAddonResourcesOnDelete pulumi.BoolOutput `pulumi:"removeAddonResourcesOnDelete"`
 	// The state of the addon.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// The time the cluster was created.
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// (Updatable) The version of addon to be installed.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	Version pulumi.StringOutput `pulumi:"version"`
+	Version pulumi.StringPtrOutput `pulumi:"version"`
 }
 
 // NewAddon registers a new resource with the given unique name, arguments, and options.
@@ -198,12 +197,6 @@ func (i *Addon) ToAddonOutputWithContext(ctx context.Context) AddonOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(AddonOutput)
 }
 
-func (i *Addon) ToOutput(ctx context.Context) pulumix.Output[*Addon] {
-	return pulumix.Output[*Addon]{
-		OutputState: i.ToAddonOutputWithContext(ctx).OutputState,
-	}
-}
-
 // AddonArrayInput is an input type that accepts AddonArray and AddonArrayOutput values.
 // You can construct a concrete instance of `AddonArrayInput` via:
 //
@@ -227,12 +220,6 @@ func (i AddonArray) ToAddonArrayOutput() AddonArrayOutput {
 
 func (i AddonArray) ToAddonArrayOutputWithContext(ctx context.Context) AddonArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(AddonArrayOutput)
-}
-
-func (i AddonArray) ToOutput(ctx context.Context) pulumix.Output[[]*Addon] {
-	return pulumix.Output[[]*Addon]{
-		OutputState: i.ToAddonArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // AddonMapInput is an input type that accepts AddonMap and AddonMapOutput values.
@@ -260,12 +247,6 @@ func (i AddonMap) ToAddonMapOutputWithContext(ctx context.Context) AddonMapOutpu
 	return pulumi.ToOutputWithContext(ctx, i).(AddonMapOutput)
 }
 
-func (i AddonMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*Addon] {
-	return pulumix.Output[map[string]*Addon]{
-		OutputState: i.ToAddonMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type AddonOutput struct{ *pulumi.OutputState }
 
 func (AddonOutput) ElementType() reflect.Type {
@@ -278,12 +259,6 @@ func (o AddonOutput) ToAddonOutput() AddonOutput {
 
 func (o AddonOutput) ToAddonOutputWithContext(ctx context.Context) AddonOutput {
 	return o
-}
-
-func (o AddonOutput) ToOutput(ctx context.Context) pulumix.Output[*Addon] {
-	return pulumix.Output[*Addon]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The error info of the addon.
@@ -307,8 +282,8 @@ func (o AddonOutput) Configurations() AddonConfigurationArrayOutput {
 }
 
 // current installed version of the addon
-func (o AddonOutput) CurrentInstalledVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v *Addon) pulumi.StringOutput { return v.CurrentInstalledVersion }).(pulumi.StringOutput)
+func (o AddonOutput) CurrentInstalledVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Addon) pulumi.StringPtrOutput { return v.CurrentInstalledVersion }).(pulumi.StringPtrOutput)
 }
 
 // Whether to remove addon resource in deletion.
@@ -317,21 +292,21 @@ func (o AddonOutput) RemoveAddonResourcesOnDelete() pulumi.BoolOutput {
 }
 
 // The state of the addon.
-func (o AddonOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *Addon) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o AddonOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Addon) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The time the cluster was created.
-func (o AddonOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *Addon) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o AddonOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Addon) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The version of addon to be installed.
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-func (o AddonOutput) Version() pulumi.StringOutput {
-	return o.ApplyT(func(v *Addon) pulumi.StringOutput { return v.Version }).(pulumi.StringOutput)
+func (o AddonOutput) Version() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Addon) pulumi.StringPtrOutput { return v.Version }).(pulumi.StringPtrOutput)
 }
 
 type AddonArrayOutput struct{ *pulumi.OutputState }
@@ -346,12 +321,6 @@ func (o AddonArrayOutput) ToAddonArrayOutput() AddonArrayOutput {
 
 func (o AddonArrayOutput) ToAddonArrayOutputWithContext(ctx context.Context) AddonArrayOutput {
 	return o
-}
-
-func (o AddonArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*Addon] {
-	return pulumix.Output[[]*Addon]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o AddonArrayOutput) Index(i pulumi.IntInput) AddonOutput {
@@ -372,12 +341,6 @@ func (o AddonMapOutput) ToAddonMapOutput() AddonMapOutput {
 
 func (o AddonMapOutput) ToAddonMapOutputWithContext(ctx context.Context) AddonMapOutput {
 	return o
-}
-
-func (o AddonMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*Addon] {
-	return pulumix.Output[map[string]*Addon]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o AddonMapOutput) MapIndex(k pulumi.StringInput) AddonOutput {

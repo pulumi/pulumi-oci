@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Namespace Properties Metadata in Oracle Cloud Infrastructure Log Analytics service.
@@ -77,7 +76,7 @@ type GetNamespacePropertiesMetadataResult struct {
 	DisplayText *string                                `pulumi:"displayText"`
 	Filters     []GetNamespacePropertiesMetadataFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id    string  `pulumi:"id"`
+	Id    *string `pulumi:"id"`
 	Level *string `pulumi:"level"`
 	// The property name.
 	Name      *string `pulumi:"name"`
@@ -133,12 +132,6 @@ func (o GetNamespacePropertiesMetadataResultOutput) ToGetNamespacePropertiesMeta
 	return o
 }
 
-func (o GetNamespacePropertiesMetadataResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetNamespacePropertiesMetadataResult] {
-	return pulumix.Output[GetNamespacePropertiesMetadataResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // A string representation of constraints that apply at this level. For example, a property defined at SOURCE level could further be applicable only for SOURCE_TYPE:database_sql.
 func (o GetNamespacePropertiesMetadataResultOutput) Constraints() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetNamespacePropertiesMetadataResult) *string { return v.Constraints }).(pulumi.StringPtrOutput)
@@ -153,8 +146,8 @@ func (o GetNamespacePropertiesMetadataResultOutput) Filters() GetNamespaceProper
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetNamespacePropertiesMetadataResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNamespacePropertiesMetadataResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetNamespacePropertiesMetadataResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNamespacePropertiesMetadataResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetNamespacePropertiesMetadataResultOutput) Level() pulumi.StringPtrOutput {

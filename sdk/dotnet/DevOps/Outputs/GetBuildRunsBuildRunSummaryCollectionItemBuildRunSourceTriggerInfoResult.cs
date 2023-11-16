@@ -20,19 +20,19 @@ namespace Pulumi.Oci.DevOps.Outputs
         /// <summary>
         /// A filter to return only resources that match the entire display name given.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// The trigger that invoked the build run.
         /// </summary>
-        public readonly string TriggerId;
+        public readonly string? TriggerId;
 
         [OutputConstructor]
         private GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoResult(
             ImmutableArray<Outputs.GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoActionResult> actions,
 
-            string displayName,
+            string? displayName,
 
-            string triggerId)
+            string? triggerId)
         {
             Actions = actions;
             DisplayName = displayName;

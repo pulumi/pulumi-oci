@@ -58,28 +58,28 @@ export interface GetSummarizeResourceInventoryResult {
     /**
      * The number of _active_ fleets.
      */
-    readonly activeFleetCount: number;
+    readonly activeFleetCount?: number;
     /**
      * The number of applications.
      */
-    readonly applicationCount: number;
+    readonly applicationCount?: number;
     readonly compartmentId?: string;
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The number of Java installations.
      */
-    readonly installationCount: number;
+    readonly installationCount?: number;
     /**
      * The number of Java Runtimes.
      */
-    readonly jreCount: number;
+    readonly jreCount?: number;
     /**
      * The number of managed instances.
      */
-    readonly managedInstanceCount: number;
+    readonly managedInstanceCount?: number;
     readonly timeEnd?: string;
     readonly timeStart?: string;
 }

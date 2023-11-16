@@ -46,11 +46,11 @@ export interface GetFusionEnvironmentStatusResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The data plane status of FusionEnvironment.
      */
-    readonly status: string;
+    readonly status?: string;
 }
 /**
  * This data source provides details about a specific Fusion Environment Status resource in Oracle Cloud Infrastructure Fusion Apps service.

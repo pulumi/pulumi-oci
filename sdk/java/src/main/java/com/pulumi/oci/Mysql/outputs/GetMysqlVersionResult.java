@@ -9,6 +9,7 @@ import com.pulumi.oci.Mysql.outputs.GetMysqlVersionVersion;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 @CustomType
@@ -19,12 +20,12 @@ public final class GetMysqlVersionResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The list of supported MySQL Versions.
      * 
      */
-    private List<GetMysqlVersionVersion> versions;
+    private @Nullable List<GetMysqlVersionVersion> versions;
 
     private GetMysqlVersionResult() {}
     public String compartmentId() {
@@ -37,15 +38,15 @@ public final class GetMysqlVersionResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The list of supported MySQL Versions.
      * 
      */
     public List<GetMysqlVersionVersion> versions() {
-        return this.versions;
+        return this.versions == null ? List.of() : this.versions;
     }
 
     public static Builder builder() {
@@ -59,8 +60,8 @@ public final class GetMysqlVersionResult {
     public static final class Builder {
         private String compartmentId;
         private @Nullable List<GetMysqlVersionFilter> filters;
-        private String id;
-        private List<GetMysqlVersionVersion> versions;
+        private @Nullable String id;
+        private @Nullable List<GetMysqlVersionVersion> versions;
         public Builder() {}
         public Builder(GetMysqlVersionResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -84,13 +85,13 @@ public final class GetMysqlVersionResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder versions(List<GetMysqlVersionVersion> versions) {
-            this.versions = Objects.requireNonNull(versions);
+        public Builder versions(@Nullable List<GetMysqlVersionVersion> versions) {
+            this.versions = versions;
             return this;
         }
         public Builder versions(GetMysqlVersionVersion... versions) {

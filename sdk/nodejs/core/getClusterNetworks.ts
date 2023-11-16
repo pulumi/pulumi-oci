@@ -62,7 +62,7 @@ export interface GetClusterNetworksResult {
     /**
      * The list of cluster_networks.
      */
-    readonly clusterNetworks: outputs.Core.GetClusterNetworksClusterNetwork[];
+    readonly clusterNetworks?: outputs.Core.GetClusterNetworksClusterNetwork[];
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance pool.
      */
@@ -75,7 +75,7 @@ export interface GetClusterNetworksResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The current state of the cluster network.
      */

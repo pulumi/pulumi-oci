@@ -103,13 +103,13 @@ export class Target extends pulumi.CustomResource {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * The target description.
      *
      * Avoid entering confidential information.
      */
-    public readonly description!: pulumi.Output<string>;
+    public readonly description!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) DetectorTemplate identifier.
      *
@@ -121,35 +121,35 @@ export class Target extends pulumi.CustomResource {
      *
      * Avoid entering confidential information.
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * List of inherited compartments
      */
-    public /*out*/ readonly inheritedByCompartments!: pulumi.Output<string[]>;
+    public /*out*/ readonly inheritedByCompartments!: pulumi.Output<string[] | undefined>;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
-    public /*out*/ readonly lifecyleDetails!: pulumi.Output<string>;
+    public /*out*/ readonly lifecyleDetails!: pulumi.Output<string | undefined>;
     /**
      * Total number of recipes attached to target
      */
-    public /*out*/ readonly recipeCount!: pulumi.Output<number>;
+    public /*out*/ readonly recipeCount!: pulumi.Output<number | undefined>;
     /**
      * (Updatable) The current state of the DetectorRule.
      */
-    public readonly state!: pulumi.Output<string>;
+    public readonly state!: pulumi.Output<string | undefined>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any}>;
+    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * Details specific to the target type.
      */
-    public /*out*/ readonly targetDetails!: pulumi.Output<outputs.CloudGuard.TargetTargetDetail[]>;
+    public /*out*/ readonly targetDetails!: pulumi.Output<outputs.CloudGuard.TargetTargetDetail[] | undefined>;
     /**
      * (Updatable) List of detector recipes to associate with target
      */
-    public readonly targetDetectorRecipes!: pulumi.Output<outputs.CloudGuard.TargetTargetDetectorRecipe[]>;
+    public readonly targetDetectorRecipes!: pulumi.Output<outputs.CloudGuard.TargetTargetDetectorRecipe[] | undefined>;
     /**
      * Resource ID which the target uses to monitor
      */
@@ -161,15 +161,15 @@ export class Target extends pulumi.CustomResource {
     /**
      * (Updatable) List of responder recipes to associate with target
      */
-    public readonly targetResponderRecipes!: pulumi.Output<outputs.CloudGuard.TargetTargetResponderRecipe[]>;
+    public readonly targetResponderRecipes!: pulumi.Output<outputs.CloudGuard.TargetTargetResponderRecipe[] | undefined>;
     /**
      * The date and time the target was created. Format defined by RFC3339.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * The date and time the target was updated. Format defined by RFC3339.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    public /*out*/ readonly timeUpdated!: pulumi.Output<string | undefined>;
 
     /**
      * Create a Target resource with the given unique name, arguments, and options.

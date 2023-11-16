@@ -41,7 +41,7 @@ public final class GetSoftwareSourcesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The OS family the software source belongs to.
      * 
@@ -51,7 +51,7 @@ public final class GetSoftwareSourcesResult {
      * @return The list of software_source_collection.
      * 
      */
-    private List<GetSoftwareSourcesSoftwareSourceCollection> softwareSourceCollections;
+    private @Nullable List<GetSoftwareSourcesSoftwareSourceCollection> softwareSourceCollections;
     private @Nullable String softwareSourceId;
     /**
      * @return Type of the software source.
@@ -111,8 +111,8 @@ public final class GetSoftwareSourcesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The OS family the software source belongs to.
@@ -126,7 +126,7 @@ public final class GetSoftwareSourcesResult {
      * 
      */
     public List<GetSoftwareSourcesSoftwareSourceCollection> softwareSourceCollections() {
-        return this.softwareSourceCollections;
+        return this.softwareSourceCollections == null ? List.of() : this.softwareSourceCollections;
     }
     public Optional<String> softwareSourceId() {
         return Optional.ofNullable(this.softwareSourceId);
@@ -169,9 +169,9 @@ public final class GetSoftwareSourcesResult {
         private @Nullable String displayNameContains;
         private @Nullable List<String> displayNameNotEqualTos;
         private @Nullable List<GetSoftwareSourcesFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable List<String> osFamilies;
-        private List<GetSoftwareSourcesSoftwareSourceCollection> softwareSourceCollections;
+        private @Nullable List<GetSoftwareSourcesSoftwareSourceCollection> softwareSourceCollections;
         private @Nullable String softwareSourceId;
         private @Nullable List<String> softwareSourceTypes;
         private @Nullable List<String> states;
@@ -243,8 +243,8 @@ public final class GetSoftwareSourcesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -256,8 +256,8 @@ public final class GetSoftwareSourcesResult {
             return osFamilies(List.of(osFamilies));
         }
         @CustomType.Setter
-        public Builder softwareSourceCollections(List<GetSoftwareSourcesSoftwareSourceCollection> softwareSourceCollections) {
-            this.softwareSourceCollections = Objects.requireNonNull(softwareSourceCollections);
+        public Builder softwareSourceCollections(@Nullable List<GetSoftwareSourcesSoftwareSourceCollection> softwareSourceCollections) {
+            this.softwareSourceCollections = softwareSourceCollections;
             return this;
         }
         public Builder softwareSourceCollections(GetSoftwareSourcesSoftwareSourceCollection... softwareSourceCollections) {

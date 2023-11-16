@@ -14,6 +14,7 @@ import java.lang.Boolean;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -71,28 +72,28 @@ public class Snapshot extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * (Updatable) The time when this snapshot will be deleted.
      * 
      */
     @Export(name="expirationTime", refs={String.class}, tree="[0]")
-    private Output<String> expirationTime;
+    private Output</* @Nullable */ String> expirationTime;
 
     /**
      * @return (Updatable) The time when this snapshot will be deleted.
      * 
      */
-    public Output<String> expirationTime() {
-        return this.expirationTime;
+    public Output<Optional<String>> expirationTime() {
+        return Codegen.optional(this.expirationTime);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system to take a snapshot of.
@@ -113,56 +114,56 @@ public class Snapshot extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="filesystemSnapshotPolicyId", refs={String.class}, tree="[0]")
-    private Output<String> filesystemSnapshotPolicyId;
+    private Output</* @Nullable */ String> filesystemSnapshotPolicyId;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system snapshot policy that created this snapshot.
      * 
      */
-    public Output<String> filesystemSnapshotPolicyId() {
-        return this.filesystemSnapshotPolicyId;
+    public Output<Optional<String>> filesystemSnapshotPolicyId() {
+        return Codegen.optional(this.filesystemSnapshotPolicyId);
     }
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * Specifies whether the snapshot has been cloned. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
      * 
      */
     @Export(name="isCloneSource", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isCloneSource;
+    private Output</* @Nullable */ Boolean> isCloneSource;
 
     /**
      * @return Specifies whether the snapshot has been cloned. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
      * 
      */
-    public Output<Boolean> isCloneSource() {
-        return this.isCloneSource;
+    public Output<Optional<Boolean>> isCloneSource() {
+        return Codegen.optional(this.isCloneSource);
     }
     /**
      * Additional information about the current `lifecycleState`.
      * 
      */
     @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
-    private Output<String> lifecycleDetails;
+    private Output</* @Nullable */ String> lifecycleDetails;
 
     /**
      * @return Additional information about the current `lifecycleState`.
      * 
      */
-    public Output<String> lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Output<Optional<String>> lifecycleDetails() {
+        return Codegen.optional(this.lifecycleDetails);
     }
     /**
      * Name of the snapshot. This value is immutable. It must also be unique with respect to all other non-DELETED snapshots on the associated file system.
@@ -197,14 +198,14 @@ public class Snapshot extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="provenanceId", refs={String.class}, tree="[0]")
-    private Output<String> provenanceId;
+    private Output</* @Nullable */ String> provenanceId;
 
     /**
      * @return An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) identifying the parent from which this snapshot was cloned. If this snapshot was not cloned, then the `provenanceId` is the same as the snapshot `id` value. If this snapshot was cloned, then the `provenanceId` value is the parent&#39;s `provenanceId`. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
      * 
      */
-    public Output<String> provenanceId() {
-        return this.provenanceId;
+    public Output<Optional<String>> provenanceId() {
+        return Codegen.optional(this.provenanceId);
     }
     /**
      * The date and time the snapshot was taken, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. This value might be the same or different from `timeCreated` depending on the following factors:
@@ -214,7 +215,7 @@ public class Snapshot extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="snapshotTime", refs={String.class}, tree="[0]")
-    private Output<String> snapshotTime;
+    private Output</* @Nullable */ String> snapshotTime;
 
     /**
      * @return The date and time the snapshot was taken, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. This value might be the same or different from `timeCreated` depending on the following factors:
@@ -223,50 +224,50 @@ public class Snapshot extends com.pulumi.resources.CustomResource {
      * * If the snapshot is replicated from a file system.
      * 
      */
-    public Output<String> snapshotTime() {
-        return this.snapshotTime;
+    public Output<Optional<String>> snapshotTime() {
+        return Codegen.optional(this.snapshotTime);
     }
     /**
      * Specifies the generation type of the snapshot.
      * 
      */
     @Export(name="snapshotType", refs={String.class}, tree="[0]")
-    private Output<String> snapshotType;
+    private Output</* @Nullable */ String> snapshotType;
 
     /**
      * @return Specifies the generation type of the snapshot.
      * 
      */
-    public Output<String> snapshotType() {
-        return this.snapshotType;
+    public Output<Optional<String>> snapshotType() {
+        return Codegen.optional(this.snapshotType);
     }
     /**
      * The current state of the snapshot.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The current state of the snapshot.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * The date and time the snapshot was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The date and time the snapshot was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
 
     /**

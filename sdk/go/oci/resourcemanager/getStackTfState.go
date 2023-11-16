@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // ## Example Usage
@@ -57,9 +56,9 @@ type GetStackTfStateArgs struct {
 // A collection of values returned by getStackTfState.
 type GetStackTfStateResult struct {
 	// The provider-assigned unique ID for this managed resource.
-	Id        string `pulumi:"id"`
-	LocalPath string `pulumi:"localPath"`
-	StackId   string `pulumi:"stackId"`
+	Id        *string `pulumi:"id"`
+	LocalPath string  `pulumi:"localPath"`
+	StackId   string  `pulumi:"stackId"`
 }
 
 func GetStackTfStateOutput(ctx *pulumi.Context, args GetStackTfStateOutputArgs, opts ...pulumi.InvokeOption) GetStackTfStateResultOutput {
@@ -101,15 +100,9 @@ func (o GetStackTfStateResultOutput) ToGetStackTfStateResultOutputWithContext(ct
 	return o
 }
 
-func (o GetStackTfStateResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetStackTfStateResult] {
-	return pulumix.Output[GetStackTfStateResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The provider-assigned unique ID for this managed resource.
-func (o GetStackTfStateResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetStackTfStateResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetStackTfStateResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetStackTfStateResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetStackTfStateResultOutput) LocalPath() pulumi.StringOutput {

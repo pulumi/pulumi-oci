@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Data Sources in Oracle Cloud Infrastructure Cloud Guard service.
@@ -104,7 +103,7 @@ type GetDataSourcesResult struct {
 	DisplayName *string                `pulumi:"displayName"`
 	Filters     []GetDataSourcesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Logging query type for data source (Sighting/Insight)
 	LoggingQueryType *string `pulumi:"loggingQueryType"`
 	// The current state of the resource.
@@ -162,12 +161,6 @@ func (o GetDataSourcesResultOutput) ToGetDataSourcesResultOutputWithContext(ctx 
 	return o
 }
 
-func (o GetDataSourcesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDataSourcesResult] {
-	return pulumix.Output[GetDataSourcesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDataSourcesResultOutput) AccessLevel() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetDataSourcesResult) *string { return v.AccessLevel }).(pulumi.StringPtrOutput)
 }
@@ -201,8 +194,8 @@ func (o GetDataSourcesResultOutput) Filters() GetDataSourcesFilterArrayOutput {
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetDataSourcesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDataSourcesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetDataSourcesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDataSourcesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Logging query type for data source (Sighting/Insight)

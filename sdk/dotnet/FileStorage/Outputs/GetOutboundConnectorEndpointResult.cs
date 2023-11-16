@@ -16,17 +16,17 @@ namespace Pulumi.Oci.FileStorage.Outputs
         /// <summary>
         /// Name of the DNS server.
         /// </summary>
-        public readonly string Hostname;
+        public readonly string? Hostname;
         /// <summary>
         /// Port of the DNS server.
         /// </summary>
-        public readonly string Port;
+        public readonly string? Port;
 
         [OutputConstructor]
         private GetOutboundConnectorEndpointResult(
-            string hostname,
+            string? hostname,
 
-            string port)
+            string? port)
         {
             Hostname = hostname;
             Port = port;

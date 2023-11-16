@@ -9,6 +9,7 @@ import com.pulumi.oci.LogAnalytics.outputs.GetNamespacesNamespaceCollection;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 @CustomType
@@ -23,12 +24,12 @@ public final class GetNamespacesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The list of namespace_collection.
      * 
      */
-    private List<GetNamespacesNamespaceCollection> namespaceCollections;
+    private @Nullable List<GetNamespacesNamespaceCollection> namespaceCollections;
 
     private GetNamespacesResult() {}
     /**
@@ -45,15 +46,15 @@ public final class GetNamespacesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The list of namespace_collection.
      * 
      */
     public List<GetNamespacesNamespaceCollection> namespaceCollections() {
-        return this.namespaceCollections;
+        return this.namespaceCollections == null ? List.of() : this.namespaceCollections;
     }
 
     public static Builder builder() {
@@ -67,8 +68,8 @@ public final class GetNamespacesResult {
     public static final class Builder {
         private String compartmentId;
         private @Nullable List<GetNamespacesFilter> filters;
-        private String id;
-        private List<GetNamespacesNamespaceCollection> namespaceCollections;
+        private @Nullable String id;
+        private @Nullable List<GetNamespacesNamespaceCollection> namespaceCollections;
         public Builder() {}
         public Builder(GetNamespacesResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -92,13 +93,13 @@ public final class GetNamespacesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder namespaceCollections(List<GetNamespacesNamespaceCollection> namespaceCollections) {
-            this.namespaceCollections = Objects.requireNonNull(namespaceCollections);
+        public Builder namespaceCollections(@Nullable List<GetNamespacesNamespaceCollection> namespaceCollections) {
+            this.namespaceCollections = namespaceCollections;
             return this;
         }
         public Builder namespaceCollections(GetNamespacesNamespaceCollection... namespaceCollections) {

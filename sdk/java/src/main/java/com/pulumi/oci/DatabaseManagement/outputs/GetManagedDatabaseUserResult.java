@@ -6,6 +6,8 @@ package com.pulumi.oci.DatabaseManagement.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetManagedDatabaseUserResult {
@@ -13,128 +15,128 @@ public final class GetManagedDatabaseUserResult {
      * @return In a sharded database, indicates whether the user is created with shard DDL enabled (YES) or not (NO).
      * 
      */
-    private String allShared;
+    private @Nullable String allShared;
     /**
      * @return The authentication mechanism for the user.
      * 
      */
-    private String authentication;
+    private @Nullable String authentication;
     /**
      * @return Indicates whether a given user is common(Y) or local(N).
      * 
      */
-    private String common;
+    private @Nullable String common;
     /**
      * @return The initial resource consumer group for the User.
      * 
      */
-    private String consumerGroup;
+    private @Nullable String consumerGroup;
     /**
      * @return The default collation for the user schema.
      * 
      */
-    private String defaultCollation;
+    private @Nullable String defaultCollation;
     /**
      * @return The default tablespace for data.
      * 
      */
-    private String defaultTablespace;
+    private @Nullable String defaultTablespace;
     /**
      * @return Indicates whether editions have been enabled for the corresponding user (Y) or not (N).
      * 
      */
-    private String editionsEnabled;
+    private @Nullable String editionsEnabled;
     /**
      * @return The external name of the user.
      * 
      */
-    private String externalName;
+    private @Nullable String externalName;
     /**
      * @return In a federated sharded database, indicates whether the user is an external shard user (YES) or not (NO).
      * 
      */
-    private String externalShared;
+    private @Nullable String externalShared;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Indicates whether the user is a common user created by an implicit application (YES) or not (NO).
      * 
      */
-    private String implicit;
+    private @Nullable String implicit;
     /**
      * @return Indicates whether the user definition is inherited from another container (YES) or not (NO).
      * 
      */
-    private String inherited;
+    private @Nullable String inherited;
     /**
      * @return The default local temporary tablespace for the user.
      * 
      */
-    private String localTempTablespace;
+    private @Nullable String localTempTablespace;
     private String managedDatabaseId;
     /**
      * @return The name of the User.
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return Indicates whether the user was created and is maintained by Oracle-supplied scripts (such as catalog.sql or catproc.sql).
      * 
      */
-    private String oracleMaintained;
+    private @Nullable String oracleMaintained;
     /**
      * @return The list of existing versions of the password hashes (also known as &#34;verifiers&#34;) for the account.
      * 
      */
-    private String passwordVersions;
+    private @Nullable String passwordVersions;
     /**
      * @return The profile name of the user.
      * 
      */
-    private String profile;
+    private @Nullable String profile;
     /**
      * @return Indicates whether a user can connect directly (N) or whether the account can only be proxied (Y) by users who have proxy privileges for this account (that is, by users who have been granted the &#34;connect through&#34; privilege for this account).
      * 
      */
-    private String proxyConnect;
+    private @Nullable String proxyConnect;
     /**
      * @return The status of the user account.
      * 
      */
-    private String status;
+    private @Nullable String status;
     /**
      * @return The name of the default tablespace for temporary tables or the name of a tablespace group.
      * 
      */
-    private String tempTablespace;
+    private @Nullable String tempTablespace;
     /**
      * @return The date and time the user was created.
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The date and time of the expiration of the user account.
      * 
      */
-    private String timeExpiring;
+    private @Nullable String timeExpiring;
     /**
      * @return The date and time of the last user login. This column is not populated when a user connects to the database with administrative privileges, that is, AS { SYSASM | SYSBACKUP | SYSDBA | SYSDG | SYSOPER | SYSRAC | SYSKM }.
      * 
      */
-    private String timeLastLogin;
+    private @Nullable String timeLastLogin;
     /**
      * @return The date the account was locked, if the status of the account is LOCKED.
      * 
      */
-    private String timeLocked;
+    private @Nullable String timeLocked;
     /**
      * @return The date and time when the user password was last set. This column is populated only when the value of the AUTHENTICATION_TYPE column is PASSWORD. Otherwise, this column is null.
      * 
      */
-    private String timePasswordChanged;
+    private @Nullable String timePasswordChanged;
     private String userName;
 
     private GetManagedDatabaseUserResult() {}
@@ -142,92 +144,92 @@ public final class GetManagedDatabaseUserResult {
      * @return In a sharded database, indicates whether the user is created with shard DDL enabled (YES) or not (NO).
      * 
      */
-    public String allShared() {
-        return this.allShared;
+    public Optional<String> allShared() {
+        return Optional.ofNullable(this.allShared);
     }
     /**
      * @return The authentication mechanism for the user.
      * 
      */
-    public String authentication() {
-        return this.authentication;
+    public Optional<String> authentication() {
+        return Optional.ofNullable(this.authentication);
     }
     /**
      * @return Indicates whether a given user is common(Y) or local(N).
      * 
      */
-    public String common() {
-        return this.common;
+    public Optional<String> common() {
+        return Optional.ofNullable(this.common);
     }
     /**
      * @return The initial resource consumer group for the User.
      * 
      */
-    public String consumerGroup() {
-        return this.consumerGroup;
+    public Optional<String> consumerGroup() {
+        return Optional.ofNullable(this.consumerGroup);
     }
     /**
      * @return The default collation for the user schema.
      * 
      */
-    public String defaultCollation() {
-        return this.defaultCollation;
+    public Optional<String> defaultCollation() {
+        return Optional.ofNullable(this.defaultCollation);
     }
     /**
      * @return The default tablespace for data.
      * 
      */
-    public String defaultTablespace() {
-        return this.defaultTablespace;
+    public Optional<String> defaultTablespace() {
+        return Optional.ofNullable(this.defaultTablespace);
     }
     /**
      * @return Indicates whether editions have been enabled for the corresponding user (Y) or not (N).
      * 
      */
-    public String editionsEnabled() {
-        return this.editionsEnabled;
+    public Optional<String> editionsEnabled() {
+        return Optional.ofNullable(this.editionsEnabled);
     }
     /**
      * @return The external name of the user.
      * 
      */
-    public String externalName() {
-        return this.externalName;
+    public Optional<String> externalName() {
+        return Optional.ofNullable(this.externalName);
     }
     /**
      * @return In a federated sharded database, indicates whether the user is an external shard user (YES) or not (NO).
      * 
      */
-    public String externalShared() {
-        return this.externalShared;
+    public Optional<String> externalShared() {
+        return Optional.ofNullable(this.externalShared);
     }
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Indicates whether the user is a common user created by an implicit application (YES) or not (NO).
      * 
      */
-    public String implicit() {
-        return this.implicit;
+    public Optional<String> implicit() {
+        return Optional.ofNullable(this.implicit);
     }
     /**
      * @return Indicates whether the user definition is inherited from another container (YES) or not (NO).
      * 
      */
-    public String inherited() {
-        return this.inherited;
+    public Optional<String> inherited() {
+        return Optional.ofNullable(this.inherited);
     }
     /**
      * @return The default local temporary tablespace for the user.
      * 
      */
-    public String localTempTablespace() {
-        return this.localTempTablespace;
+    public Optional<String> localTempTablespace() {
+        return Optional.ofNullable(this.localTempTablespace);
     }
     public String managedDatabaseId() {
         return this.managedDatabaseId;
@@ -236,85 +238,85 @@ public final class GetManagedDatabaseUserResult {
      * @return The name of the User.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return Indicates whether the user was created and is maintained by Oracle-supplied scripts (such as catalog.sql or catproc.sql).
      * 
      */
-    public String oracleMaintained() {
-        return this.oracleMaintained;
+    public Optional<String> oracleMaintained() {
+        return Optional.ofNullable(this.oracleMaintained);
     }
     /**
      * @return The list of existing versions of the password hashes (also known as &#34;verifiers&#34;) for the account.
      * 
      */
-    public String passwordVersions() {
-        return this.passwordVersions;
+    public Optional<String> passwordVersions() {
+        return Optional.ofNullable(this.passwordVersions);
     }
     /**
      * @return The profile name of the user.
      * 
      */
-    public String profile() {
-        return this.profile;
+    public Optional<String> profile() {
+        return Optional.ofNullable(this.profile);
     }
     /**
      * @return Indicates whether a user can connect directly (N) or whether the account can only be proxied (Y) by users who have proxy privileges for this account (that is, by users who have been granted the &#34;connect through&#34; privilege for this account).
      * 
      */
-    public String proxyConnect() {
-        return this.proxyConnect;
+    public Optional<String> proxyConnect() {
+        return Optional.ofNullable(this.proxyConnect);
     }
     /**
      * @return The status of the user account.
      * 
      */
-    public String status() {
-        return this.status;
+    public Optional<String> status() {
+        return Optional.ofNullable(this.status);
     }
     /**
      * @return The name of the default tablespace for temporary tables or the name of a tablespace group.
      * 
      */
-    public String tempTablespace() {
-        return this.tempTablespace;
+    public Optional<String> tempTablespace() {
+        return Optional.ofNullable(this.tempTablespace);
     }
     /**
      * @return The date and time the user was created.
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return The date and time of the expiration of the user account.
      * 
      */
-    public String timeExpiring() {
-        return this.timeExpiring;
+    public Optional<String> timeExpiring() {
+        return Optional.ofNullable(this.timeExpiring);
     }
     /**
      * @return The date and time of the last user login. This column is not populated when a user connects to the database with administrative privileges, that is, AS { SYSASM | SYSBACKUP | SYSDBA | SYSDG | SYSOPER | SYSRAC | SYSKM }.
      * 
      */
-    public String timeLastLogin() {
-        return this.timeLastLogin;
+    public Optional<String> timeLastLogin() {
+        return Optional.ofNullable(this.timeLastLogin);
     }
     /**
      * @return The date the account was locked, if the status of the account is LOCKED.
      * 
      */
-    public String timeLocked() {
-        return this.timeLocked;
+    public Optional<String> timeLocked() {
+        return Optional.ofNullable(this.timeLocked);
     }
     /**
      * @return The date and time when the user password was last set. This column is populated only when the value of the AUTHENTICATION_TYPE column is PASSWORD. Otherwise, this column is null.
      * 
      */
-    public String timePasswordChanged() {
-        return this.timePasswordChanged;
+    public Optional<String> timePasswordChanged() {
+        return Optional.ofNullable(this.timePasswordChanged);
     }
     public String userName() {
         return this.userName;
@@ -329,32 +331,32 @@ public final class GetManagedDatabaseUserResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String allShared;
-        private String authentication;
-        private String common;
-        private String consumerGroup;
-        private String defaultCollation;
-        private String defaultTablespace;
-        private String editionsEnabled;
-        private String externalName;
-        private String externalShared;
-        private String id;
-        private String implicit;
-        private String inherited;
-        private String localTempTablespace;
+        private @Nullable String allShared;
+        private @Nullable String authentication;
+        private @Nullable String common;
+        private @Nullable String consumerGroup;
+        private @Nullable String defaultCollation;
+        private @Nullable String defaultTablespace;
+        private @Nullable String editionsEnabled;
+        private @Nullable String externalName;
+        private @Nullable String externalShared;
+        private @Nullable String id;
+        private @Nullable String implicit;
+        private @Nullable String inherited;
+        private @Nullable String localTempTablespace;
         private String managedDatabaseId;
-        private String name;
-        private String oracleMaintained;
-        private String passwordVersions;
-        private String profile;
-        private String proxyConnect;
-        private String status;
-        private String tempTablespace;
-        private String timeCreated;
-        private String timeExpiring;
-        private String timeLastLogin;
-        private String timeLocked;
-        private String timePasswordChanged;
+        private @Nullable String name;
+        private @Nullable String oracleMaintained;
+        private @Nullable String passwordVersions;
+        private @Nullable String profile;
+        private @Nullable String proxyConnect;
+        private @Nullable String status;
+        private @Nullable String tempTablespace;
+        private @Nullable String timeCreated;
+        private @Nullable String timeExpiring;
+        private @Nullable String timeLastLogin;
+        private @Nullable String timeLocked;
+        private @Nullable String timePasswordChanged;
         private String userName;
         public Builder() {}
         public Builder(GetManagedDatabaseUserResult defaults) {
@@ -389,68 +391,68 @@ public final class GetManagedDatabaseUserResult {
         }
 
         @CustomType.Setter
-        public Builder allShared(String allShared) {
-            this.allShared = Objects.requireNonNull(allShared);
+        public Builder allShared(@Nullable String allShared) {
+            this.allShared = allShared;
             return this;
         }
         @CustomType.Setter
-        public Builder authentication(String authentication) {
-            this.authentication = Objects.requireNonNull(authentication);
+        public Builder authentication(@Nullable String authentication) {
+            this.authentication = authentication;
             return this;
         }
         @CustomType.Setter
-        public Builder common(String common) {
-            this.common = Objects.requireNonNull(common);
+        public Builder common(@Nullable String common) {
+            this.common = common;
             return this;
         }
         @CustomType.Setter
-        public Builder consumerGroup(String consumerGroup) {
-            this.consumerGroup = Objects.requireNonNull(consumerGroup);
+        public Builder consumerGroup(@Nullable String consumerGroup) {
+            this.consumerGroup = consumerGroup;
             return this;
         }
         @CustomType.Setter
-        public Builder defaultCollation(String defaultCollation) {
-            this.defaultCollation = Objects.requireNonNull(defaultCollation);
+        public Builder defaultCollation(@Nullable String defaultCollation) {
+            this.defaultCollation = defaultCollation;
             return this;
         }
         @CustomType.Setter
-        public Builder defaultTablespace(String defaultTablespace) {
-            this.defaultTablespace = Objects.requireNonNull(defaultTablespace);
+        public Builder defaultTablespace(@Nullable String defaultTablespace) {
+            this.defaultTablespace = defaultTablespace;
             return this;
         }
         @CustomType.Setter
-        public Builder editionsEnabled(String editionsEnabled) {
-            this.editionsEnabled = Objects.requireNonNull(editionsEnabled);
+        public Builder editionsEnabled(@Nullable String editionsEnabled) {
+            this.editionsEnabled = editionsEnabled;
             return this;
         }
         @CustomType.Setter
-        public Builder externalName(String externalName) {
-            this.externalName = Objects.requireNonNull(externalName);
+        public Builder externalName(@Nullable String externalName) {
+            this.externalName = externalName;
             return this;
         }
         @CustomType.Setter
-        public Builder externalShared(String externalShared) {
-            this.externalShared = Objects.requireNonNull(externalShared);
+        public Builder externalShared(@Nullable String externalShared) {
+            this.externalShared = externalShared;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder implicit(String implicit) {
-            this.implicit = Objects.requireNonNull(implicit);
+        public Builder implicit(@Nullable String implicit) {
+            this.implicit = implicit;
             return this;
         }
         @CustomType.Setter
-        public Builder inherited(String inherited) {
-            this.inherited = Objects.requireNonNull(inherited);
+        public Builder inherited(@Nullable String inherited) {
+            this.inherited = inherited;
             return this;
         }
         @CustomType.Setter
-        public Builder localTempTablespace(String localTempTablespace) {
-            this.localTempTablespace = Objects.requireNonNull(localTempTablespace);
+        public Builder localTempTablespace(@Nullable String localTempTablespace) {
+            this.localTempTablespace = localTempTablespace;
             return this;
         }
         @CustomType.Setter
@@ -459,63 +461,63 @@ public final class GetManagedDatabaseUserResult {
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder oracleMaintained(String oracleMaintained) {
-            this.oracleMaintained = Objects.requireNonNull(oracleMaintained);
+        public Builder oracleMaintained(@Nullable String oracleMaintained) {
+            this.oracleMaintained = oracleMaintained;
             return this;
         }
         @CustomType.Setter
-        public Builder passwordVersions(String passwordVersions) {
-            this.passwordVersions = Objects.requireNonNull(passwordVersions);
+        public Builder passwordVersions(@Nullable String passwordVersions) {
+            this.passwordVersions = passwordVersions;
             return this;
         }
         @CustomType.Setter
-        public Builder profile(String profile) {
-            this.profile = Objects.requireNonNull(profile);
+        public Builder profile(@Nullable String profile) {
+            this.profile = profile;
             return this;
         }
         @CustomType.Setter
-        public Builder proxyConnect(String proxyConnect) {
-            this.proxyConnect = Objects.requireNonNull(proxyConnect);
+        public Builder proxyConnect(@Nullable String proxyConnect) {
+            this.proxyConnect = proxyConnect;
             return this;
         }
         @CustomType.Setter
-        public Builder status(String status) {
-            this.status = Objects.requireNonNull(status);
+        public Builder status(@Nullable String status) {
+            this.status = status;
             return this;
         }
         @CustomType.Setter
-        public Builder tempTablespace(String tempTablespace) {
-            this.tempTablespace = Objects.requireNonNull(tempTablespace);
+        public Builder tempTablespace(@Nullable String tempTablespace) {
+            this.tempTablespace = tempTablespace;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeExpiring(String timeExpiring) {
-            this.timeExpiring = Objects.requireNonNull(timeExpiring);
+        public Builder timeExpiring(@Nullable String timeExpiring) {
+            this.timeExpiring = timeExpiring;
             return this;
         }
         @CustomType.Setter
-        public Builder timeLastLogin(String timeLastLogin) {
-            this.timeLastLogin = Objects.requireNonNull(timeLastLogin);
+        public Builder timeLastLogin(@Nullable String timeLastLogin) {
+            this.timeLastLogin = timeLastLogin;
             return this;
         }
         @CustomType.Setter
-        public Builder timeLocked(String timeLocked) {
-            this.timeLocked = Objects.requireNonNull(timeLocked);
+        public Builder timeLocked(@Nullable String timeLocked) {
+            this.timeLocked = timeLocked;
             return this;
         }
         @CustomType.Setter
-        public Builder timePasswordChanged(String timePasswordChanged) {
-            this.timePasswordChanged = Objects.requireNonNull(timePasswordChanged);
+        public Builder timePasswordChanged(@Nullable String timePasswordChanged) {
+            this.timePasswordChanged = timePasswordChanged;
             return this;
         }
         @CustomType.Setter

@@ -50,19 +50,19 @@ export class ExternalCluster extends pulumi.CustomResource {
     /**
      * The additional details of the external cluster defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
      */
-    public /*out*/ readonly additionalDetails!: pulumi.Output<{[key: string]: any}>;
+    public /*out*/ readonly additionalDetails!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
-    public /*out*/ readonly compartmentId!: pulumi.Output<string>;
+    public /*out*/ readonly compartmentId!: pulumi.Output<string | undefined>;
     /**
      * The name of the external cluster.
      */
-    public /*out*/ readonly componentName!: pulumi.Output<string>;
+    public /*out*/ readonly componentName!: pulumi.Output<string | undefined>;
     /**
      * The user-friendly name for the external cluster. The name does not have to be unique.
      */
-    public /*out*/ readonly displayName!: pulumi.Output<string>;
+    public /*out*/ readonly displayName!: pulumi.Output<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external cluster.
      */
@@ -74,55 +74,55 @@ export class ExternalCluster extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly externalConnectorId!: pulumi.Output<string>;
+    public readonly externalConnectorId!: pulumi.Output<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that the cluster is a part of.
      */
-    public /*out*/ readonly externalDbSystemId!: pulumi.Output<string>;
+    public /*out*/ readonly externalDbSystemId!: pulumi.Output<string | undefined>;
     /**
      * The directory in which Oracle Grid Infrastructure is installed.
      */
-    public /*out*/ readonly gridHome!: pulumi.Output<string>;
+    public /*out*/ readonly gridHome!: pulumi.Output<string | undefined>;
     /**
      * Indicates whether the cluster is Oracle Flex Cluster or not.
      */
-    public /*out*/ readonly isFlexCluster!: pulumi.Output<boolean>;
+    public /*out*/ readonly isFlexCluster!: pulumi.Output<boolean | undefined>;
     /**
      * Additional information about the current lifecycle state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string | undefined>;
     /**
      * The list of network address configurations of the external cluster.
      */
-    public /*out*/ readonly networkConfigurations!: pulumi.Output<outputs.DatabaseManagement.ExternalClusterNetworkConfiguration[]>;
+    public /*out*/ readonly networkConfigurations!: pulumi.Output<outputs.DatabaseManagement.ExternalClusterNetworkConfiguration[] | undefined>;
     /**
      * The location of the Oracle Cluster Registry (OCR).
      */
-    public /*out*/ readonly ocrFileLocation!: pulumi.Output<string>;
+    public /*out*/ readonly ocrFileLocation!: pulumi.Output<string | undefined>;
     /**
      * The list of Single Client Access Name (SCAN) configurations of the external cluster.
      */
-    public /*out*/ readonly scanConfigurations!: pulumi.Output<outputs.DatabaseManagement.ExternalClusterScanConfiguration[]>;
+    public /*out*/ readonly scanConfigurations!: pulumi.Output<outputs.DatabaseManagement.ExternalClusterScanConfiguration[] | undefined>;
     /**
      * The current lifecycle state of the external cluster.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * The date and time the external cluster was created.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * The date and time the external cluster was last updated.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    public /*out*/ readonly timeUpdated!: pulumi.Output<string | undefined>;
     /**
      * The cluster version.
      */
-    public /*out*/ readonly version!: pulumi.Output<string>;
+    public /*out*/ readonly version!: pulumi.Output<string | undefined>;
     /**
      * The list of Virtual IP (VIP) configurations of the external cluster.
      */
-    public /*out*/ readonly vipConfigurations!: pulumi.Output<outputs.DatabaseManagement.ExternalClusterVipConfiguration[]>;
+    public /*out*/ readonly vipConfigurations!: pulumi.Output<outputs.DatabaseManagement.ExternalClusterVipConfiguration[] | undefined>;
 
     /**
      * Create a ExternalCluster resource with the given unique name, arguments, and options.

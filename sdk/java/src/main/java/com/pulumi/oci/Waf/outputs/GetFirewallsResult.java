@@ -39,7 +39,7 @@ public final class GetFirewallsResult {
      * @return The list of web_app_firewall_collection.
      * 
      */
-    private List<GetFirewallsWebAppFirewallCollection> webAppFirewallCollections;
+    private @Nullable List<GetFirewallsWebAppFirewallCollection> webAppFirewallCollections;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of WebAppFirewallPolicy, which is attached to the resource.
      * 
@@ -83,7 +83,7 @@ public final class GetFirewallsResult {
      * 
      */
     public List<GetFirewallsWebAppFirewallCollection> webAppFirewallCollections() {
-        return this.webAppFirewallCollections;
+        return this.webAppFirewallCollections == null ? List.of() : this.webAppFirewallCollections;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of WebAppFirewallPolicy, which is attached to the resource.
@@ -107,7 +107,7 @@ public final class GetFirewallsResult {
         private @Nullable List<GetFirewallsFilter> filters;
         private @Nullable String id;
         private @Nullable List<String> states;
-        private List<GetFirewallsWebAppFirewallCollection> webAppFirewallCollections;
+        private @Nullable List<GetFirewallsWebAppFirewallCollection> webAppFirewallCollections;
         private @Nullable String webAppFirewallPolicyId;
         public Builder() {}
         public Builder(GetFirewallsResult defaults) {
@@ -153,8 +153,8 @@ public final class GetFirewallsResult {
             return states(List.of(states));
         }
         @CustomType.Setter
-        public Builder webAppFirewallCollections(List<GetFirewallsWebAppFirewallCollection> webAppFirewallCollections) {
-            this.webAppFirewallCollections = Objects.requireNonNull(webAppFirewallCollections);
+        public Builder webAppFirewallCollections(@Nullable List<GetFirewallsWebAppFirewallCollection> webAppFirewallCollections) {
+            this.webAppFirewallCollections = webAppFirewallCollections;
             return this;
         }
         public Builder webAppFirewallCollections(GetFirewallsWebAppFirewallCollection... webAppFirewallCollections) {

@@ -46,17 +46,11 @@ class GetNetworkFirewallPoliciesResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the NetworkFirewall Policy.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        A user-friendly optional name for the firewall policy. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -67,25 +61,16 @@ class GetNetworkFirewallPoliciesResult:
     @property
     @pulumi.getter
     def id(self) -> Optional[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource - Network Firewall Policy.
-        """
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="networkFirewallPolicySummaryCollections")
-    def network_firewall_policy_summary_collections(self) -> Sequence['outputs.GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionResult']:
-        """
-        The list of network_firewall_policy_summary_collection.
-        """
+    def network_firewall_policy_summary_collections(self) -> Optional[Sequence['outputs.GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionResult']]:
         return pulumi.get(self, "network_firewall_policy_summary_collections")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the Network Firewall Policy.
-        """
         return pulumi.get(self, "state")
 
 
@@ -110,27 +95,7 @@ def get_network_firewall_policies(compartment_id: Optional[str] = None,
                                   state: Optional[str] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetNetworkFirewallPoliciesResult:
     """
-    This data source provides the list of Network Firewall Policies in Oracle Cloud Infrastructure Network Firewall service.
-
-    Returns a list of Network Firewall Policies.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_network_firewall_policies = oci.NetworkFirewall.get_network_firewall_policies(compartment_id=var["compartment_id"],
-        display_name=var["network_firewall_policy_display_name"],
-        id=var["network_firewall_policy_id"],
-        state=var["network_firewall_policy_state"])
-    ```
-
-
-    :param str compartment_id: The ID of the compartment in which to list resources.
-    :param str display_name: A filter to return only resources that match the entire display name given.
-    :param str id: Unique Network Firewall Policy identifier
-    :param str state: A filter to return only resources with a lifecycleState matching the given value.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -158,26 +123,6 @@ def get_network_firewall_policies_output(compartment_id: Optional[pulumi.Input[s
                                          state: Optional[pulumi.Input[Optional[str]]] = None,
                                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNetworkFirewallPoliciesResult]:
     """
-    This data source provides the list of Network Firewall Policies in Oracle Cloud Infrastructure Network Firewall service.
-
-    Returns a list of Network Firewall Policies.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_network_firewall_policies = oci.NetworkFirewall.get_network_firewall_policies(compartment_id=var["compartment_id"],
-        display_name=var["network_firewall_policy_display_name"],
-        id=var["network_firewall_policy_id"],
-        state=var["network_firewall_policy_state"])
-    ```
-
-
-    :param str compartment_id: The ID of the compartment in which to list resources.
-    :param str display_name: A filter to return only resources that match the entire display name given.
-    :param str id: Unique Network Firewall Policy identifier
-    :param str state: A filter to return only resources with a lifecycleState matching the given value.
+    Use this data source to access information about an existing resource.
     """
     ...

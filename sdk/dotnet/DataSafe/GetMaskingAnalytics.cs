@@ -190,7 +190,7 @@ namespace Pulumi.Oci.DataSafe
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The list of masking_analytics_collection.
         /// </summary>
@@ -211,7 +211,7 @@ namespace Pulumi.Oci.DataSafe
 
             string? groupBy,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetMaskingAnalyticsMaskingAnalyticsCollectionResult> maskingAnalyticsCollections,
 

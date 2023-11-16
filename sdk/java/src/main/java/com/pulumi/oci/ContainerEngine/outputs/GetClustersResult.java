@@ -18,7 +18,7 @@ public final class GetClustersResult {
      * @return The list of clusters.
      * 
      */
-    private List<GetClustersCluster> clusters;
+    private @Nullable List<GetClustersCluster> clusters;
     /**
      * @return The OCID of the compartment in which the cluster exists.
      * 
@@ -29,7 +29,7 @@ public final class GetClustersResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The name of the cluster.
      * 
@@ -47,7 +47,7 @@ public final class GetClustersResult {
      * 
      */
     public List<GetClustersCluster> clusters() {
-        return this.clusters;
+        return this.clusters == null ? List.of() : this.clusters;
     }
     /**
      * @return The OCID of the compartment in which the cluster exists.
@@ -63,8 +63,8 @@ public final class GetClustersResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The name of the cluster.
@@ -90,10 +90,10 @@ public final class GetClustersResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetClustersCluster> clusters;
+        private @Nullable List<GetClustersCluster> clusters;
         private String compartmentId;
         private @Nullable List<GetClustersFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String name;
         private @Nullable List<String> states;
         public Builder() {}
@@ -108,8 +108,8 @@ public final class GetClustersResult {
         }
 
         @CustomType.Setter
-        public Builder clusters(List<GetClustersCluster> clusters) {
-            this.clusters = Objects.requireNonNull(clusters);
+        public Builder clusters(@Nullable List<GetClustersCluster> clusters) {
+            this.clusters = clusters;
             return this;
         }
         public Builder clusters(GetClustersCluster... clusters) {
@@ -129,8 +129,8 @@ public final class GetClustersResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

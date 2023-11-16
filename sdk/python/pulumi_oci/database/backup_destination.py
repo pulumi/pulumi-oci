@@ -27,19 +27,6 @@ class BackupDestinationArgs:
                  vpc_users: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
         """
         The set of arguments for constructing a BackupDestination resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param pulumi.Input[str] display_name: The user-provided name of the backup destination.
-        :param pulumi.Input[str] type: Type of the backup destination.
-        :param pulumi.Input[str] connection_string: (Updatable) The connection string for connecting to the Recovery Appliance.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] local_mount_point_path: The local directory path on each VM cluster node where the NFS server location is mounted. The local directory path and the NFS server location must each be the same across all of the VM cluster nodes. Ensure that the NFS mount is maintained continuously on all of the VM cluster nodes.
-        :param pulumi.Input['BackupDestinationMountTypeDetailsArgs'] mount_type_details: Mount type details for backup destination.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] vpc_users: (Updatable) The Virtual Private Catalog (VPC) users that are used to access the Recovery Appliance.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "display_name", display_name)
@@ -63,9 +50,6 @@ class BackupDestinationArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -75,9 +59,6 @@ class BackupDestinationArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Input[str]:
-        """
-        The user-provided name of the backup destination.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -87,9 +68,6 @@ class BackupDestinationArgs:
     @property
     @pulumi.getter
     def type(self) -> pulumi.Input[str]:
-        """
-        Type of the backup destination.
-        """
         return pulumi.get(self, "type")
 
     @type.setter
@@ -99,9 +77,6 @@ class BackupDestinationArgs:
     @property
     @pulumi.getter(name="connectionString")
     def connection_string(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The connection string for connecting to the Recovery Appliance.
-        """
         return pulumi.get(self, "connection_string")
 
     @connection_string.setter
@@ -111,9 +86,6 @@ class BackupDestinationArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -123,9 +95,6 @@ class BackupDestinationArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -135,9 +104,6 @@ class BackupDestinationArgs:
     @property
     @pulumi.getter(name="localMountPointPath")
     def local_mount_point_path(self) -> Optional[pulumi.Input[str]]:
-        """
-        The local directory path on each VM cluster node where the NFS server location is mounted. The local directory path and the NFS server location must each be the same across all of the VM cluster nodes. Ensure that the NFS mount is maintained continuously on all of the VM cluster nodes.
-        """
         warnings.warn("""The 'local_mount_point_path' field has been deprecated. Please use 'local_mount_point_path under mount_type_details' instead.""", DeprecationWarning)
         pulumi.log.warn("""local_mount_point_path is deprecated: The 'local_mount_point_path' field has been deprecated. Please use 'local_mount_point_path under mount_type_details' instead.""")
 
@@ -150,9 +116,6 @@ class BackupDestinationArgs:
     @property
     @pulumi.getter(name="mountTypeDetails")
     def mount_type_details(self) -> Optional[pulumi.Input['BackupDestinationMountTypeDetailsArgs']]:
-        """
-        Mount type details for backup destination.
-        """
         return pulumi.get(self, "mount_type_details")
 
     @mount_type_details.setter
@@ -162,13 +125,6 @@ class BackupDestinationArgs:
     @property
     @pulumi.getter(name="vpcUsers")
     def vpc_users(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) The Virtual Private Catalog (VPC) users that are used to access the Recovery Appliance.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "vpc_users")
 
     @vpc_users.setter
@@ -197,26 +153,6 @@ class _BackupDestinationState:
                  vpc_users: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
         """
         Input properties used for looking up and filtering BackupDestination resources.
-        :param pulumi.Input[Sequence[pulumi.Input['BackupDestinationAssociatedDatabaseArgs']]] associated_databases: List of databases associated with the backup destination.
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param pulumi.Input[str] connection_string: (Updatable) The connection string for connecting to the Recovery Appliance.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        :param pulumi.Input[str] display_name: The user-provided name of the backup destination.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] lifecycle_details: A descriptive text associated with the lifecycleState. Typically contains additional displayable text
-        :param pulumi.Input[str] local_mount_point_path: The local directory path on each VM cluster node where the NFS server location is mounted. The local directory path and the NFS server location must each be the same across all of the VM cluster nodes. Ensure that the NFS mount is maintained continuously on all of the VM cluster nodes.
-        :param pulumi.Input['BackupDestinationMountTypeDetailsArgs'] mount_type_details: Mount type details for backup destination.
-        :param pulumi.Input[str] nfs_mount_type: NFS Mount type for backup destination.
-        :param pulumi.Input[str] nfs_server_export: Specifies the directory on which to mount the file system
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] nfs_servers: IP addresses for NFS Auto mount.
-        :param pulumi.Input[str] state: The current lifecycle state of the backup destination.
-        :param pulumi.Input[str] time_created: The date and time the backup destination was created.
-        :param pulumi.Input[str] type: Type of the backup destination.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] vpc_users: (Updatable) The Virtual Private Catalog (VPC) users that are used to access the Recovery Appliance.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if associated_databases is not None:
             pulumi.set(__self__, "associated_databases", associated_databases)
@@ -257,9 +193,6 @@ class _BackupDestinationState:
     @property
     @pulumi.getter(name="associatedDatabases")
     def associated_databases(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['BackupDestinationAssociatedDatabaseArgs']]]]:
-        """
-        List of databases associated with the backup destination.
-        """
         return pulumi.get(self, "associated_databases")
 
     @associated_databases.setter
@@ -269,9 +202,6 @@ class _BackupDestinationState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -281,9 +211,6 @@ class _BackupDestinationState:
     @property
     @pulumi.getter(name="connectionString")
     def connection_string(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The connection string for connecting to the Recovery Appliance.
-        """
         return pulumi.get(self, "connection_string")
 
     @connection_string.setter
@@ -293,9 +220,6 @@ class _BackupDestinationState:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -305,9 +229,6 @@ class _BackupDestinationState:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The user-provided name of the backup destination.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -317,9 +238,6 @@ class _BackupDestinationState:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -329,9 +247,6 @@ class _BackupDestinationState:
     @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> Optional[pulumi.Input[str]]:
-        """
-        A descriptive text associated with the lifecycleState. Typically contains additional displayable text
-        """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
@@ -341,9 +256,6 @@ class _BackupDestinationState:
     @property
     @pulumi.getter(name="localMountPointPath")
     def local_mount_point_path(self) -> Optional[pulumi.Input[str]]:
-        """
-        The local directory path on each VM cluster node where the NFS server location is mounted. The local directory path and the NFS server location must each be the same across all of the VM cluster nodes. Ensure that the NFS mount is maintained continuously on all of the VM cluster nodes.
-        """
         warnings.warn("""The 'local_mount_point_path' field has been deprecated. Please use 'local_mount_point_path under mount_type_details' instead.""", DeprecationWarning)
         pulumi.log.warn("""local_mount_point_path is deprecated: The 'local_mount_point_path' field has been deprecated. Please use 'local_mount_point_path under mount_type_details' instead.""")
 
@@ -356,9 +268,6 @@ class _BackupDestinationState:
     @property
     @pulumi.getter(name="mountTypeDetails")
     def mount_type_details(self) -> Optional[pulumi.Input['BackupDestinationMountTypeDetailsArgs']]:
-        """
-        Mount type details for backup destination.
-        """
         return pulumi.get(self, "mount_type_details")
 
     @mount_type_details.setter
@@ -368,9 +277,6 @@ class _BackupDestinationState:
     @property
     @pulumi.getter(name="nfsMountType")
     def nfs_mount_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        NFS Mount type for backup destination.
-        """
         return pulumi.get(self, "nfs_mount_type")
 
     @nfs_mount_type.setter
@@ -380,9 +286,6 @@ class _BackupDestinationState:
     @property
     @pulumi.getter(name="nfsServerExport")
     def nfs_server_export(self) -> Optional[pulumi.Input[str]]:
-        """
-        Specifies the directory on which to mount the file system
-        """
         return pulumi.get(self, "nfs_server_export")
 
     @nfs_server_export.setter
@@ -392,9 +295,6 @@ class _BackupDestinationState:
     @property
     @pulumi.getter(name="nfsServers")
     def nfs_servers(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        IP addresses for NFS Auto mount.
-        """
         return pulumi.get(self, "nfs_servers")
 
     @nfs_servers.setter
@@ -404,9 +304,6 @@ class _BackupDestinationState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The current lifecycle state of the backup destination.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -416,9 +313,6 @@ class _BackupDestinationState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time the backup destination was created.
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -428,9 +322,6 @@ class _BackupDestinationState:
     @property
     @pulumi.getter
     def type(self) -> Optional[pulumi.Input[str]]:
-        """
-        Type of the backup destination.
-        """
         return pulumi.get(self, "type")
 
     @type.setter
@@ -440,13 +331,6 @@ class _BackupDestinationState:
     @property
     @pulumi.getter(name="vpcUsers")
     def vpc_users(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) The Virtual Private Catalog (VPC) users that are used to access the Recovery Appliance.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "vpc_users")
 
     @vpc_users.setter
@@ -470,58 +354,9 @@ class BackupDestination(pulumi.CustomResource):
                  vpc_users: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  __props__=None):
         """
-        This resource provides the Backup Destination resource in Oracle Cloud Infrastructure Database service.
-
-        Creates a backup destination in an Exadata Cloud@Customer system.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_backup_destination = oci.database.BackupDestination("testBackupDestination",
-            compartment_id=var["compartment_id"],
-            display_name=var["backup_destination_display_name"],
-            type=var["backup_destination_type"],
-            connection_string=var["backup_destination_connection_string"],
-            defined_tags=var["backup_destination_defined_tags"],
-            freeform_tags={
-                "Department": "Finance",
-            },
-            local_mount_point_path=var["backup_destination_local_mount_point_path"],
-            mount_type_details=oci.database.BackupDestinationMountTypeDetailsArgs(
-                mount_type=var["backup_destination_mount_type_details_mount_type"],
-                local_mount_point_path=var["backup_destination_mount_type_details_local_mount_point_path"],
-                nfs_servers=var["backup_destination_mount_type_details_nfs_server"],
-                nfs_server_export=var["backup_destination_mount_type_details_nfs_server_export"],
-            ),
-            vpc_users=var["backup_destination_vpc_users"])
-        ```
-
-        ## Import
-
-        BackupDestinations can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Database/backupDestination:BackupDestination test_backup_destination "id"
-        ```
-
+        Create a BackupDestination resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param pulumi.Input[str] connection_string: (Updatable) The connection string for connecting to the Recovery Appliance.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        :param pulumi.Input[str] display_name: The user-provided name of the backup destination.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] local_mount_point_path: The local directory path on each VM cluster node where the NFS server location is mounted. The local directory path and the NFS server location must each be the same across all of the VM cluster nodes. Ensure that the NFS mount is maintained continuously on all of the VM cluster nodes.
-        :param pulumi.Input[pulumi.InputType['BackupDestinationMountTypeDetailsArgs']] mount_type_details: Mount type details for backup destination.
-        :param pulumi.Input[str] type: Type of the backup destination.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] vpc_users: (Updatable) The Virtual Private Catalog (VPC) users that are used to access the Recovery Appliance.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -530,43 +365,7 @@ class BackupDestination(pulumi.CustomResource):
                  args: BackupDestinationArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Backup Destination resource in Oracle Cloud Infrastructure Database service.
-
-        Creates a backup destination in an Exadata Cloud@Customer system.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_backup_destination = oci.database.BackupDestination("testBackupDestination",
-            compartment_id=var["compartment_id"],
-            display_name=var["backup_destination_display_name"],
-            type=var["backup_destination_type"],
-            connection_string=var["backup_destination_connection_string"],
-            defined_tags=var["backup_destination_defined_tags"],
-            freeform_tags={
-                "Department": "Finance",
-            },
-            local_mount_point_path=var["backup_destination_local_mount_point_path"],
-            mount_type_details=oci.database.BackupDestinationMountTypeDetailsArgs(
-                mount_type=var["backup_destination_mount_type_details_mount_type"],
-                local_mount_point_path=var["backup_destination_mount_type_details_local_mount_point_path"],
-                nfs_servers=var["backup_destination_mount_type_details_nfs_server"],
-                nfs_server_export=var["backup_destination_mount_type_details_nfs_server_export"],
-            ),
-            vpc_users=var["backup_destination_vpc_users"])
-        ```
-
-        ## Import
-
-        BackupDestinations can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Database/backupDestination:BackupDestination test_backup_destination "id"
-        ```
-
+        Create a BackupDestination resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param BackupDestinationArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -655,26 +454,6 @@ class BackupDestination(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['BackupDestinationAssociatedDatabaseArgs']]]] associated_databases: List of databases associated with the backup destination.
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param pulumi.Input[str] connection_string: (Updatable) The connection string for connecting to the Recovery Appliance.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        :param pulumi.Input[str] display_name: The user-provided name of the backup destination.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] lifecycle_details: A descriptive text associated with the lifecycleState. Typically contains additional displayable text
-        :param pulumi.Input[str] local_mount_point_path: The local directory path on each VM cluster node where the NFS server location is mounted. The local directory path and the NFS server location must each be the same across all of the VM cluster nodes. Ensure that the NFS mount is maintained continuously on all of the VM cluster nodes.
-        :param pulumi.Input[pulumi.InputType['BackupDestinationMountTypeDetailsArgs']] mount_type_details: Mount type details for backup destination.
-        :param pulumi.Input[str] nfs_mount_type: NFS Mount type for backup destination.
-        :param pulumi.Input[str] nfs_server_export: Specifies the directory on which to mount the file system
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] nfs_servers: IP addresses for NFS Auto mount.
-        :param pulumi.Input[str] state: The current lifecycle state of the backup destination.
-        :param pulumi.Input[str] time_created: The date and time the backup destination was created.
-        :param pulumi.Input[str] type: Type of the backup destination.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] vpc_users: (Updatable) The Virtual Private Catalog (VPC) users that are used to access the Recovery Appliance.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -700,66 +479,42 @@ class BackupDestination(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="associatedDatabases")
-    def associated_databases(self) -> pulumi.Output[Sequence['outputs.BackupDestinationAssociatedDatabase']]:
-        """
-        List of databases associated with the backup destination.
-        """
+    def associated_databases(self) -> pulumi.Output[Optional[Sequence['outputs.BackupDestinationAssociatedDatabase']]]:
         return pulumi.get(self, "associated_databases")
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="connectionString")
     def connection_string(self) -> pulumi.Output[Optional[str]]:
-        """
-        (Updatable) The connection string for connecting to the Recovery Appliance.
-        """
         return pulumi.get(self, "connection_string")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        """
+    def defined_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Output[str]:
-        """
-        The user-provided name of the backup destination.
-        """
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> pulumi.Output[str]:
-        """
-        A descriptive text associated with the lifecycleState. Typically contains additional displayable text
-        """
+    def lifecycle_details(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="localMountPointPath")
-    def local_mount_point_path(self) -> pulumi.Output[str]:
-        """
-        The local directory path on each VM cluster node where the NFS server location is mounted. The local directory path and the NFS server location must each be the same across all of the VM cluster nodes. Ensure that the NFS mount is maintained continuously on all of the VM cluster nodes.
-        """
+    def local_mount_point_path(self) -> pulumi.Output[Optional[str]]:
         warnings.warn("""The 'local_mount_point_path' field has been deprecated. Please use 'local_mount_point_path under mount_type_details' instead.""", DeprecationWarning)
         pulumi.log.warn("""local_mount_point_path is deprecated: The 'local_mount_point_path' field has been deprecated. Please use 'local_mount_point_path under mount_type_details' instead.""")
 
@@ -767,69 +522,41 @@ class BackupDestination(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="mountTypeDetails")
-    def mount_type_details(self) -> pulumi.Output['outputs.BackupDestinationMountTypeDetails']:
-        """
-        Mount type details for backup destination.
-        """
+    def mount_type_details(self) -> pulumi.Output[Optional['outputs.BackupDestinationMountTypeDetails']]:
         return pulumi.get(self, "mount_type_details")
 
     @property
     @pulumi.getter(name="nfsMountType")
-    def nfs_mount_type(self) -> pulumi.Output[str]:
-        """
-        NFS Mount type for backup destination.
-        """
+    def nfs_mount_type(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "nfs_mount_type")
 
     @property
     @pulumi.getter(name="nfsServerExport")
-    def nfs_server_export(self) -> pulumi.Output[str]:
-        """
-        Specifies the directory on which to mount the file system
-        """
+    def nfs_server_export(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "nfs_server_export")
 
     @property
     @pulumi.getter(name="nfsServers")
-    def nfs_servers(self) -> pulumi.Output[Sequence[str]]:
-        """
-        IP addresses for NFS Auto mount.
-        """
+    def nfs_servers(self) -> pulumi.Output[Optional[Sequence[str]]]:
         return pulumi.get(self, "nfs_servers")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        The current lifecycle state of the backup destination.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        The date and time the backup destination was created.
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter
     def type(self) -> pulumi.Output[str]:
-        """
-        Type of the backup destination.
-        """
         return pulumi.get(self, "type")
 
     @property
     @pulumi.getter(name="vpcUsers")
     def vpc_users(self) -> pulumi.Output[Optional[Sequence[str]]]:
-        """
-        (Updatable) The Virtual Private Catalog (VPC) users that are used to access the Recovery Appliance.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "vpc_users")
 

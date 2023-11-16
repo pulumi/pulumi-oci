@@ -48,27 +48,27 @@ export class ExternalClusterInstance extends pulumi.CustomResource {
     /**
      * The Automatic Diagnostic Repository (ADR) home directory for the cluster instance.
      */
-    public /*out*/ readonly adrHomeDirectory!: pulumi.Output<string>;
+    public /*out*/ readonly adrHomeDirectory!: pulumi.Output<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
-    public /*out*/ readonly compartmentId!: pulumi.Output<string>;
+    public /*out*/ readonly compartmentId!: pulumi.Output<string | undefined>;
     /**
      * The name of the external cluster instance.
      */
-    public /*out*/ readonly componentName!: pulumi.Output<string>;
+    public /*out*/ readonly componentName!: pulumi.Output<string | undefined>;
     /**
      * The Oracle base location of Cluster Ready Services (CRS).
      */
-    public /*out*/ readonly crsBaseDirectory!: pulumi.Output<string>;
+    public /*out*/ readonly crsBaseDirectory!: pulumi.Output<string | undefined>;
     /**
      * The user-friendly name for the cluster instance. The name does not have to be unique.
      */
-    public /*out*/ readonly displayName!: pulumi.Output<string>;
+    public /*out*/ readonly displayName!: pulumi.Output<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external cluster that the cluster instance belongs to.
      */
-    public /*out*/ readonly externalClusterId!: pulumi.Output<string>;
+    public /*out*/ readonly externalClusterId!: pulumi.Output<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external cluster instance.
      */
@@ -80,39 +80,39 @@ export class ExternalClusterInstance extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly externalConnectorId!: pulumi.Output<string>;
+    public readonly externalConnectorId!: pulumi.Output<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB node.
      */
-    public /*out*/ readonly externalDbNodeId!: pulumi.Output<string>;
+    public /*out*/ readonly externalDbNodeId!: pulumi.Output<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that the cluster instance is a part of.
      */
-    public /*out*/ readonly externalDbSystemId!: pulumi.Output<string>;
+    public /*out*/ readonly externalDbSystemId!: pulumi.Output<string | undefined>;
     /**
      * The name of the host on which the cluster instance is running.
      */
-    public /*out*/ readonly hostName!: pulumi.Output<string>;
+    public /*out*/ readonly hostName!: pulumi.Output<string | undefined>;
     /**
      * Additional information about the current lifecycle state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string | undefined>;
     /**
      * The role of the cluster node.
      */
-    public /*out*/ readonly nodeRole!: pulumi.Output<string>;
+    public /*out*/ readonly nodeRole!: pulumi.Output<string | undefined>;
     /**
      * The current lifecycle state of the external cluster instance.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * The date and time the external cluster instance was created.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * The date and time the external cluster instance was last updated.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    public /*out*/ readonly timeUpdated!: pulumi.Output<string | undefined>;
 
     /**
      * Create a ExternalClusterInstance resource with the given unique name, arguments, and options.

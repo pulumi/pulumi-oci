@@ -16,27 +16,27 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
         /// <summary>
         /// The architecture for which the packages in this module stream were built.
         /// </summary>
-        public readonly string ArchType;
+        public readonly string? ArchType;
         /// <summary>
         /// A description of the contents of the module stream.
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// Indicates if this stream is the default for its module.
         /// </summary>
-        public readonly bool IsDefault;
+        public readonly bool? IsDefault;
         /// <summary>
         /// A boolean variable that is used to list only the latest versions of packages, module streams, and stream profiles when set to true. All packages, module streams, and stream profiles are returned when set to false.
         /// </summary>
-        public readonly bool IsLatest;
+        public readonly bool? IsLatest;
         /// <summary>
         /// The name of a module. This parameter is required if a streamName is specified.
         /// </summary>
-        public readonly string ModuleName;
+        public readonly string? ModuleName;
         /// <summary>
         /// The name of the entity to be queried.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// A list of packages that are contained by the stream.  Each element in the list is the name of a package.  The name is suitable to use as an argument to other OS Management Hub APIs that interact directly with packages.
         /// </summary>
@@ -48,27 +48,27 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
         /// <summary>
         /// The software source OCID.
         /// </summary>
-        public readonly string SoftwareSourceId;
+        public readonly string? SoftwareSourceId;
 
         [OutputConstructor]
         private GetSoftwareSourceModuleStreamsModuleStreamCollectionItemResult(
-            string archType,
+            string? archType,
 
-            string description,
+            string? description,
 
-            bool isDefault,
+            bool? isDefault,
 
-            bool isLatest,
+            bool? isLatest,
 
-            string moduleName,
+            string? moduleName,
 
-            string name,
+            string? name,
 
             ImmutableArray<string> packages,
 
             ImmutableArray<string> profiles,
 
-            string softwareSourceId)
+            string? softwareSourceId)
         {
             ArchType = archType;
             Description = description;

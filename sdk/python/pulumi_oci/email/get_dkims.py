@@ -45,18 +45,12 @@ class GetDkimsResult:
 
     @property
     @pulumi.getter(name="dkimCollections")
-    def dkim_collections(self) -> Sequence['outputs.GetDkimsDkimCollectionResult']:
-        """
-        The list of dkim_collection.
-        """
+    def dkim_collections(self) -> Optional[Sequence['outputs.GetDkimsDkimCollectionResult']]:
         return pulumi.get(self, "dkim_collections")
 
     @property
     @pulumi.getter(name="emailDomainId")
     def email_domain_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the email domain that this DKIM belongs to.
-        """
         return pulumi.get(self, "email_domain_id")
 
     @property
@@ -67,25 +61,16 @@ class GetDkimsResult:
     @property
     @pulumi.getter
     def id(self) -> Optional[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DKIM.
-        """
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter
     def name(self) -> Optional[str]:
-        """
-        The DKIM selector. If the same domain is managed in more than one region, each region must use different selectors.
-        """
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the DKIM.
-        """
         return pulumi.get(self, "state")
 
 
@@ -110,27 +95,7 @@ def get_dkims(email_domain_id: Optional[str] = None,
               state: Optional[str] = None,
               opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDkimsResult:
     """
-    This data source provides the list of Dkims in Oracle Cloud Infrastructure Email service.
-
-    Lists DKIMs for a email domain.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_dkims = oci.Email.get_dkims(email_domain_id=oci_email_email_domain["test_email_domain"]["id"],
-        id=var["dkim_id"],
-        name=var["dkim_name"],
-        state=var["dkim_state"])
-    ```
-
-
-    :param str email_domain_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the email domain to which this DKIM belongs.
-    :param str id: A filter to only return resources that match the given id exactly.
-    :param str name: A filter to only return resources that match the given name exactly.
-    :param str state: Filter returned list by specified lifecycle state. This parameter is case-insensitive.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['emailDomainId'] = email_domain_id
@@ -158,26 +123,6 @@ def get_dkims_output(email_domain_id: Optional[pulumi.Input[str]] = None,
                      state: Optional[pulumi.Input[Optional[str]]] = None,
                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDkimsResult]:
     """
-    This data source provides the list of Dkims in Oracle Cloud Infrastructure Email service.
-
-    Lists DKIMs for a email domain.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_dkims = oci.Email.get_dkims(email_domain_id=oci_email_email_domain["test_email_domain"]["id"],
-        id=var["dkim_id"],
-        name=var["dkim_name"],
-        state=var["dkim_state"])
-    ```
-
-
-    :param str email_domain_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the email domain to which this DKIM belongs.
-    :param str id: A filter to only return resources that match the given id exactly.
-    :param str name: A filter to only return resources that match the given name exactly.
-    :param str state: Filter returned list by specified lifecycle state. This parameter is case-insensitive.
+    Use this data source to access information about an existing resource.
     """
     ...

@@ -16,6 +16,7 @@ import java.lang.Integer;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -79,14 +80,14 @@ public class ContainerRepository extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="billableSizeInGbs", refs={String.class}, tree="[0]")
-    private Output<String> billableSizeInGbs;
+    private Output</* @Nullable */ String> billableSizeInGbs;
 
     /**
      * @return Total storage size in GBs that will be charged.
      * 
      */
-    public Output<String> billableSizeInGbs() {
-        return this.billableSizeInGbs;
+    public Output<Optional<String>> billableSizeInGbs() {
+        return Codegen.optional(this.billableSizeInGbs);
     }
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to create the resource.
@@ -107,28 +108,28 @@ public class ContainerRepository extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="createdBy", refs={String.class}, tree="[0]")
-    private Output<String> createdBy;
+    private Output</* @Nullable */ String> createdBy;
 
     /**
      * @return The id of the user or principal that created the resource.
      * 
      */
-    public Output<String> createdBy() {
-        return this.createdBy;
+    public Output<Optional<String>> createdBy() {
+        return Codegen.optional(this.createdBy);
     }
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * The container repository name.
@@ -149,168 +150,168 @@ public class ContainerRepository extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * Total number of images.
      * 
      */
     @Export(name="imageCount", refs={Integer.class}, tree="[0]")
-    private Output<Integer> imageCount;
+    private Output</* @Nullable */ Integer> imageCount;
 
     /**
      * @return Total number of images.
      * 
      */
-    public Output<Integer> imageCount() {
-        return this.imageCount;
+    public Output<Optional<Integer>> imageCount() {
+        return Codegen.optional(this.imageCount);
     }
     /**
      * (Updatable) Whether the repository is immutable. Images cannot be overwritten in an immutable repository.
      * 
      */
     @Export(name="isImmutable", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isImmutable;
+    private Output</* @Nullable */ Boolean> isImmutable;
 
     /**
      * @return (Updatable) Whether the repository is immutable. Images cannot be overwritten in an immutable repository.
      * 
      */
-    public Output<Boolean> isImmutable() {
-        return this.isImmutable;
+    public Output<Optional<Boolean>> isImmutable() {
+        return Codegen.optional(this.isImmutable);
     }
     /**
      * (Updatable) Whether the repository is public. A public repository allows unauthenticated access.
      * 
      */
     @Export(name="isPublic", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isPublic;
+    private Output</* @Nullable */ Boolean> isPublic;
 
     /**
      * @return (Updatable) Whether the repository is public. A public repository allows unauthenticated access.
      * 
      */
-    public Output<Boolean> isPublic() {
-        return this.isPublic;
+    public Output<Optional<Boolean>> isPublic() {
+        return Codegen.optional(this.isPublic);
     }
     /**
      * Total number of layers.
      * 
      */
     @Export(name="layerCount", refs={Integer.class}, tree="[0]")
-    private Output<Integer> layerCount;
+    private Output</* @Nullable */ Integer> layerCount;
 
     /**
      * @return Total number of layers.
      * 
      */
-    public Output<Integer> layerCount() {
-        return this.layerCount;
+    public Output<Optional<Integer>> layerCount() {
+        return Codegen.optional(this.layerCount);
     }
     /**
      * Total storage in bytes consumed by layers.
      * 
      */
     @Export(name="layersSizeInBytes", refs={String.class}, tree="[0]")
-    private Output<String> layersSizeInBytes;
+    private Output</* @Nullable */ String> layersSizeInBytes;
 
     /**
      * @return Total storage in bytes consumed by layers.
      * 
      */
-    public Output<String> layersSizeInBytes() {
-        return this.layersSizeInBytes;
+    public Output<Optional<String>> layersSizeInBytes() {
+        return Codegen.optional(this.layersSizeInBytes);
     }
     /**
      * The tenancy namespace used in the container repository path.
      * 
      */
     @Export(name="namespace", refs={String.class}, tree="[0]")
-    private Output<String> namespace;
+    private Output</* @Nullable */ String> namespace;
 
     /**
      * @return The tenancy namespace used in the container repository path.
      * 
      */
-    public Output<String> namespace() {
-        return this.namespace;
+    public Output<Optional<String>> namespace() {
+        return Codegen.optional(this.namespace);
     }
     /**
      * (Updatable) Container repository readme.
      * 
      */
     @Export(name="readme", refs={ContainerRepositoryReadme.class}, tree="[0]")
-    private Output<ContainerRepositoryReadme> readme;
+    private Output</* @Nullable */ ContainerRepositoryReadme> readme;
 
     /**
      * @return (Updatable) Container repository readme.
      * 
      */
-    public Output<ContainerRepositoryReadme> readme() {
-        return this.readme;
+    public Output<Optional<ContainerRepositoryReadme>> readme() {
+        return Codegen.optional(this.readme);
     }
     /**
      * The current state of the container repository.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The current state of the container repository.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * The system tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
     @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> systemTags;
+    private Output</* @Nullable */ Map<String,Object>> systemTags;
 
     /**
      * @return The system tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    public Output<Map<String,Object>> systemTags() {
-        return this.systemTags;
+    public Output<Optional<Map<String,Object>>> systemTags() {
+        return Codegen.optional(this.systemTags);
     }
     /**
      * An RFC 3339 timestamp indicating when the repository was created.
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return An RFC 3339 timestamp indicating when the repository was created.
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * An RFC 3339 timestamp indicating when an image was last pushed to the repository.
      * 
      */
     @Export(name="timeLastPushed", refs={String.class}, tree="[0]")
-    private Output<String> timeLastPushed;
+    private Output</* @Nullable */ String> timeLastPushed;
 
     /**
      * @return An RFC 3339 timestamp indicating when an image was last pushed to the repository.
      * 
      */
-    public Output<String> timeLastPushed() {
-        return this.timeLastPushed;
+    public Output<Optional<String>> timeLastPushed() {
+        return Codegen.optional(this.timeLastPushed);
     }
 
     /**

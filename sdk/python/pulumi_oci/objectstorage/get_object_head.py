@@ -55,7 +55,7 @@ class GetObjectHeadResult:
 
     @property
     @pulumi.getter(name="archivalState")
-    def archival_state(self) -> str:
+    def archival_state(self) -> Optional[str]:
         return pulumi.get(self, "archival_state")
 
     @property
@@ -65,31 +65,22 @@ class GetObjectHeadResult:
 
     @property
     @pulumi.getter(name="contentLength")
-    def content_length(self) -> int:
-        """
-        The content-length of the object
-        """
+    def content_length(self) -> Optional[int]:
         return pulumi.get(self, "content_length")
 
     @property
     @pulumi.getter(name="contentType")
-    def content_type(self) -> str:
-        """
-        The content-type of the object
-        """
+    def content_type(self) -> Optional[str]:
         return pulumi.get(self, "content_type")
 
     @property
     @pulumi.getter
-    def etag(self) -> str:
-        """
-        The etag of the object
-        """
+    def etag(self) -> Optional[str]:
         return pulumi.get(self, "etag")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -97,10 +88,7 @@ class GetObjectHeadResult:
 
     @property
     @pulumi.getter
-    def metadata(self) -> Mapping[str, Any]:
-        """
-        The metadata of the object
-        """
+    def metadata(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "metadata")
 
     @property
@@ -115,11 +103,7 @@ class GetObjectHeadResult:
 
     @property
     @pulumi.getter(name="storageTier")
-    def storage_tier(self) -> str:
-        """
-        The storage tier that the object is stored in.
-        * `archival-state` - Archival state of an object. This field is set only for objects in Archive tier.
-        """
+    def storage_tier(self) -> Optional[str]:
         return pulumi.get(self, "storage_tier")
 
 
@@ -146,25 +130,7 @@ def get_object_head(bucket: Optional[str] = None,
                     object: Optional[str] = None,
                     opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetObjectHeadResult:
     """
-    This data source provides details about metadata of a specific Object resource in Oracle Cloud Infrastructure Object Storage service.
-
-    Gets the metadata of an object.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_object_head = oci.ObjectStorage.get_object_head(bucket=var["object_bucket"],
-        namespace=var["object_namespace"],
-        object=var["object_object"])
-    ```
-
-
-    :param str bucket: The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
-    :param str namespace: The top-level namespace used for the request.
-    :param str object: The name of the object. Avoid entering confidential information. Example: `test/object1.log`
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['bucket'] = bucket
@@ -192,24 +158,6 @@ def get_object_head_output(bucket: Optional[pulumi.Input[str]] = None,
                            object: Optional[pulumi.Input[str]] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetObjectHeadResult]:
     """
-    This data source provides details about metadata of a specific Object resource in Oracle Cloud Infrastructure Object Storage service.
-
-    Gets the metadata of an object.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_object_head = oci.ObjectStorage.get_object_head(bucket=var["object_bucket"],
-        namespace=var["object_namespace"],
-        object=var["object_object"])
-    ```
-
-
-    :param str bucket: The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
-    :param str namespace: The top-level namespace used for the request.
-    :param str object: The name of the object. Avoid entering confidential information. Example: `test/object1.log`
+    Use this data source to access information about an existing resource.
     """
     ...

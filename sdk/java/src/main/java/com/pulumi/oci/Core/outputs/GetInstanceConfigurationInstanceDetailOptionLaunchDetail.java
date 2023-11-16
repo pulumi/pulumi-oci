@@ -19,6 +19,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetInstanceConfigurationInstanceDetailOptionLaunchDetail {
@@ -26,118 +28,118 @@ public final class GetInstanceConfigurationInstanceDetailOptionLaunchDetail {
      * @return Configuration options for the Oracle Cloud Agent software running on the instance.
      * 
      */
-    private List<GetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfig> agentConfigs;
+    private @Nullable List<GetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfig> agentConfigs;
     /**
      * @return Options for defining the availabiity of a VM instance after a maintenance event that impacts the underlying hardware.
      * 
      */
-    private List<GetInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfig> availabilityConfigs;
+    private @Nullable List<GetInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfig> availabilityConfigs;
     /**
      * @return The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
      * 
      */
-    private String availabilityDomain;
+    private @Nullable String availabilityDomain;
     /**
      * @return The OCID of the compute capacity reservation this instance is launched under.
      * 
      */
-    private String capacityReservationId;
+    private @Nullable String capacityReservationId;
     /**
      * @return The OCID of the compartment containing images to search
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return Contains the properties of the VNIC for an instance configuration. See [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) and [Instance Configurations](https://docs.cloud.oracle.com/iaas/Content/Compute/Concepts/instancemanagement.htm#config) for more information.
      * 
      */
-    private List<GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetail> createVnicDetails;
+    private @Nullable List<GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetail> createVnicDetails;
     /**
      * @return The OCID of the dedicated virtual machine host to place the instance on.
      * 
      */
-    private String dedicatedVmHostId;
+    private @Nullable String dedicatedVmHostId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
      * 
      */
-    private Map<String,Object> extendedMetadata;
+    private @Nullable Map<String,Object> extendedMetadata;
     /**
      * @return A fault domain is a grouping of hardware and infrastructure within an availability domain. Each availability domain contains three fault domains. Fault domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or Compute hardware maintenance that affects one fault domain does not affect instances in other fault domains.
      * 
      */
-    private String faultDomain;
+    private @Nullable String faultDomain;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return Optional mutable instance options. As a part of Instance Metadata Service Security Header, This allows user to disable the legacy imds endpoints.
      * 
      */
-    private List<GetInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOption> instanceOptions;
+    private @Nullable List<GetInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOption> instanceOptions;
     /**
      * @return This is an advanced option.
      * 
      */
-    private String ipxeScript;
+    private @Nullable String ipxeScript;
     /**
      * @return Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
      * 
      */
-    private Boolean isPvEncryptionInTransitEnabled;
+    private @Nullable Boolean isPvEncryptionInTransitEnabled;
     /**
      * @return Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
      * 
      */
-    private String launchMode;
+    private @Nullable String launchMode;
     /**
      * @return Options for tuning the compatibility and performance of VM shapes. The values that you specify override any default values.
      * 
      */
-    private List<GetInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOption> launchOptions;
+    private @Nullable List<GetInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOption> launchOptions;
     /**
      * @return Custom metadata key/value pairs that you provide, such as the SSH public key required to connect to the instance.
      * 
      */
-    private Map<String,Object> metadata;
+    private @Nullable Map<String,Object> metadata;
     /**
      * @return The platform configuration requested for the instance.
      * 
      */
-    private List<GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfig> platformConfigs;
+    private @Nullable List<GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfig> platformConfigs;
     /**
      * @return Configuration options for preemptible instances.
      * 
      */
-    private List<GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfig> preemptibleInstanceConfigs;
+    private @Nullable List<GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfig> preemptibleInstanceConfigs;
     /**
      * @return The preferred maintenance action for an instance. The default is LIVE_MIGRATE, if live migration is supported.
      * 
      */
-    private String preferredMaintenanceAction;
+    private @Nullable String preferredMaintenanceAction;
     /**
      * @return The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
      * 
      */
-    private String shape;
+    private @Nullable String shape;
     /**
      * @return The shape configuration requested for the instance.
      * 
      */
-    private List<GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfig> shapeConfigs;
-    private List<GetInstanceConfigurationInstanceDetailOptionLaunchDetailSourceDetail> sourceDetails;
+    private @Nullable List<GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfig> shapeConfigs;
+    private @Nullable List<GetInstanceConfigurationInstanceDetailOptionLaunchDetailSourceDetail> sourceDetails;
 
     private GetInstanceConfigurationInstanceDetailOptionLaunchDetail() {}
     /**
@@ -145,164 +147,164 @@ public final class GetInstanceConfigurationInstanceDetailOptionLaunchDetail {
      * 
      */
     public List<GetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfig> agentConfigs() {
-        return this.agentConfigs;
+        return this.agentConfigs == null ? List.of() : this.agentConfigs;
     }
     /**
      * @return Options for defining the availabiity of a VM instance after a maintenance event that impacts the underlying hardware.
      * 
      */
     public List<GetInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfig> availabilityConfigs() {
-        return this.availabilityConfigs;
+        return this.availabilityConfigs == null ? List.of() : this.availabilityConfigs;
     }
     /**
      * @return The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
      * 
      */
-    public String availabilityDomain() {
-        return this.availabilityDomain;
+    public Optional<String> availabilityDomain() {
+        return Optional.ofNullable(this.availabilityDomain);
     }
     /**
      * @return The OCID of the compute capacity reservation this instance is launched under.
      * 
      */
-    public String capacityReservationId() {
-        return this.capacityReservationId;
+    public Optional<String> capacityReservationId() {
+        return Optional.ofNullable(this.capacityReservationId);
     }
     /**
      * @return The OCID of the compartment containing images to search
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return Contains the properties of the VNIC for an instance configuration. See [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) and [Instance Configurations](https://docs.cloud.oracle.com/iaas/Content/Compute/Concepts/instancemanagement.htm#config) for more information.
      * 
      */
     public List<GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetail> createVnicDetails() {
-        return this.createVnicDetails;
+        return this.createVnicDetails == null ? List.of() : this.createVnicDetails;
     }
     /**
      * @return The OCID of the dedicated virtual machine host to place the instance on.
      * 
      */
-    public String dedicatedVmHostId() {
-        return this.dedicatedVmHostId;
+    public Optional<String> dedicatedVmHostId() {
+        return Optional.ofNullable(this.dedicatedVmHostId);
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
      * 
      */
     public Map<String,Object> extendedMetadata() {
-        return this.extendedMetadata;
+        return this.extendedMetadata == null ? Map.of() : this.extendedMetadata;
     }
     /**
      * @return A fault domain is a grouping of hardware and infrastructure within an availability domain. Each availability domain contains three fault domains. Fault domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or Compute hardware maintenance that affects one fault domain does not affect instances in other fault domains.
      * 
      */
-    public String faultDomain() {
-        return this.faultDomain;
+    public Optional<String> faultDomain() {
+        return Optional.ofNullable(this.faultDomain);
     }
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return Optional mutable instance options. As a part of Instance Metadata Service Security Header, This allows user to disable the legacy imds endpoints.
      * 
      */
     public List<GetInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOption> instanceOptions() {
-        return this.instanceOptions;
+        return this.instanceOptions == null ? List.of() : this.instanceOptions;
     }
     /**
      * @return This is an advanced option.
      * 
      */
-    public String ipxeScript() {
-        return this.ipxeScript;
+    public Optional<String> ipxeScript() {
+        return Optional.ofNullable(this.ipxeScript);
     }
     /**
      * @return Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
      * 
      */
-    public Boolean isPvEncryptionInTransitEnabled() {
-        return this.isPvEncryptionInTransitEnabled;
+    public Optional<Boolean> isPvEncryptionInTransitEnabled() {
+        return Optional.ofNullable(this.isPvEncryptionInTransitEnabled);
     }
     /**
      * @return Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
      * 
      */
-    public String launchMode() {
-        return this.launchMode;
+    public Optional<String> launchMode() {
+        return Optional.ofNullable(this.launchMode);
     }
     /**
      * @return Options for tuning the compatibility and performance of VM shapes. The values that you specify override any default values.
      * 
      */
     public List<GetInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOption> launchOptions() {
-        return this.launchOptions;
+        return this.launchOptions == null ? List.of() : this.launchOptions;
     }
     /**
      * @return Custom metadata key/value pairs that you provide, such as the SSH public key required to connect to the instance.
      * 
      */
     public Map<String,Object> metadata() {
-        return this.metadata;
+        return this.metadata == null ? Map.of() : this.metadata;
     }
     /**
      * @return The platform configuration requested for the instance.
      * 
      */
     public List<GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfig> platformConfigs() {
-        return this.platformConfigs;
+        return this.platformConfigs == null ? List.of() : this.platformConfigs;
     }
     /**
      * @return Configuration options for preemptible instances.
      * 
      */
     public List<GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfig> preemptibleInstanceConfigs() {
-        return this.preemptibleInstanceConfigs;
+        return this.preemptibleInstanceConfigs == null ? List.of() : this.preemptibleInstanceConfigs;
     }
     /**
      * @return The preferred maintenance action for an instance. The default is LIVE_MIGRATE, if live migration is supported.
      * 
      */
-    public String preferredMaintenanceAction() {
-        return this.preferredMaintenanceAction;
+    public Optional<String> preferredMaintenanceAction() {
+        return Optional.ofNullable(this.preferredMaintenanceAction);
     }
     /**
      * @return The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
      * 
      */
-    public String shape() {
-        return this.shape;
+    public Optional<String> shape() {
+        return Optional.ofNullable(this.shape);
     }
     /**
      * @return The shape configuration requested for the instance.
      * 
      */
     public List<GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfig> shapeConfigs() {
-        return this.shapeConfigs;
+        return this.shapeConfigs == null ? List.of() : this.shapeConfigs;
     }
     public List<GetInstanceConfigurationInstanceDetailOptionLaunchDetailSourceDetail> sourceDetails() {
-        return this.sourceDetails;
+        return this.sourceDetails == null ? List.of() : this.sourceDetails;
     }
 
     public static Builder builder() {
@@ -314,30 +316,30 @@ public final class GetInstanceConfigurationInstanceDetailOptionLaunchDetail {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfig> agentConfigs;
-        private List<GetInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfig> availabilityConfigs;
-        private String availabilityDomain;
-        private String capacityReservationId;
-        private String compartmentId;
-        private List<GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetail> createVnicDetails;
-        private String dedicatedVmHostId;
-        private Map<String,Object> definedTags;
-        private String displayName;
-        private Map<String,Object> extendedMetadata;
-        private String faultDomain;
-        private Map<String,Object> freeformTags;
-        private List<GetInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOption> instanceOptions;
-        private String ipxeScript;
-        private Boolean isPvEncryptionInTransitEnabled;
-        private String launchMode;
-        private List<GetInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOption> launchOptions;
-        private Map<String,Object> metadata;
-        private List<GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfig> platformConfigs;
-        private List<GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfig> preemptibleInstanceConfigs;
-        private String preferredMaintenanceAction;
-        private String shape;
-        private List<GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfig> shapeConfigs;
-        private List<GetInstanceConfigurationInstanceDetailOptionLaunchDetailSourceDetail> sourceDetails;
+        private @Nullable List<GetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfig> agentConfigs;
+        private @Nullable List<GetInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfig> availabilityConfigs;
+        private @Nullable String availabilityDomain;
+        private @Nullable String capacityReservationId;
+        private @Nullable String compartmentId;
+        private @Nullable List<GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetail> createVnicDetails;
+        private @Nullable String dedicatedVmHostId;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String displayName;
+        private @Nullable Map<String,Object> extendedMetadata;
+        private @Nullable String faultDomain;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable List<GetInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOption> instanceOptions;
+        private @Nullable String ipxeScript;
+        private @Nullable Boolean isPvEncryptionInTransitEnabled;
+        private @Nullable String launchMode;
+        private @Nullable List<GetInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOption> launchOptions;
+        private @Nullable Map<String,Object> metadata;
+        private @Nullable List<GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfig> platformConfigs;
+        private @Nullable List<GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfig> preemptibleInstanceConfigs;
+        private @Nullable String preferredMaintenanceAction;
+        private @Nullable String shape;
+        private @Nullable List<GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfig> shapeConfigs;
+        private @Nullable List<GetInstanceConfigurationInstanceDetailOptionLaunchDetailSourceDetail> sourceDetails;
         public Builder() {}
         public Builder(GetInstanceConfigurationInstanceDetailOptionLaunchDetail defaults) {
     	      Objects.requireNonNull(defaults);
@@ -368,147 +370,147 @@ public final class GetInstanceConfigurationInstanceDetailOptionLaunchDetail {
         }
 
         @CustomType.Setter
-        public Builder agentConfigs(List<GetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfig> agentConfigs) {
-            this.agentConfigs = Objects.requireNonNull(agentConfigs);
+        public Builder agentConfigs(@Nullable List<GetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfig> agentConfigs) {
+            this.agentConfigs = agentConfigs;
             return this;
         }
         public Builder agentConfigs(GetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfig... agentConfigs) {
             return agentConfigs(List.of(agentConfigs));
         }
         @CustomType.Setter
-        public Builder availabilityConfigs(List<GetInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfig> availabilityConfigs) {
-            this.availabilityConfigs = Objects.requireNonNull(availabilityConfigs);
+        public Builder availabilityConfigs(@Nullable List<GetInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfig> availabilityConfigs) {
+            this.availabilityConfigs = availabilityConfigs;
             return this;
         }
         public Builder availabilityConfigs(GetInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfig... availabilityConfigs) {
             return availabilityConfigs(List.of(availabilityConfigs));
         }
         @CustomType.Setter
-        public Builder availabilityDomain(String availabilityDomain) {
-            this.availabilityDomain = Objects.requireNonNull(availabilityDomain);
+        public Builder availabilityDomain(@Nullable String availabilityDomain) {
+            this.availabilityDomain = availabilityDomain;
             return this;
         }
         @CustomType.Setter
-        public Builder capacityReservationId(String capacityReservationId) {
-            this.capacityReservationId = Objects.requireNonNull(capacityReservationId);
+        public Builder capacityReservationId(@Nullable String capacityReservationId) {
+            this.capacityReservationId = capacityReservationId;
             return this;
         }
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder createVnicDetails(List<GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetail> createVnicDetails) {
-            this.createVnicDetails = Objects.requireNonNull(createVnicDetails);
+        public Builder createVnicDetails(@Nullable List<GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetail> createVnicDetails) {
+            this.createVnicDetails = createVnicDetails;
             return this;
         }
         public Builder createVnicDetails(GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetail... createVnicDetails) {
             return createVnicDetails(List.of(createVnicDetails));
         }
         @CustomType.Setter
-        public Builder dedicatedVmHostId(String dedicatedVmHostId) {
-            this.dedicatedVmHostId = Objects.requireNonNull(dedicatedVmHostId);
+        public Builder dedicatedVmHostId(@Nullable String dedicatedVmHostId) {
+            this.dedicatedVmHostId = dedicatedVmHostId;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder extendedMetadata(Map<String,Object> extendedMetadata) {
-            this.extendedMetadata = Objects.requireNonNull(extendedMetadata);
+        public Builder extendedMetadata(@Nullable Map<String,Object> extendedMetadata) {
+            this.extendedMetadata = extendedMetadata;
             return this;
         }
         @CustomType.Setter
-        public Builder faultDomain(String faultDomain) {
-            this.faultDomain = Objects.requireNonNull(faultDomain);
+        public Builder faultDomain(@Nullable String faultDomain) {
+            this.faultDomain = faultDomain;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder instanceOptions(List<GetInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOption> instanceOptions) {
-            this.instanceOptions = Objects.requireNonNull(instanceOptions);
+        public Builder instanceOptions(@Nullable List<GetInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOption> instanceOptions) {
+            this.instanceOptions = instanceOptions;
             return this;
         }
         public Builder instanceOptions(GetInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOption... instanceOptions) {
             return instanceOptions(List.of(instanceOptions));
         }
         @CustomType.Setter
-        public Builder ipxeScript(String ipxeScript) {
-            this.ipxeScript = Objects.requireNonNull(ipxeScript);
+        public Builder ipxeScript(@Nullable String ipxeScript) {
+            this.ipxeScript = ipxeScript;
             return this;
         }
         @CustomType.Setter
-        public Builder isPvEncryptionInTransitEnabled(Boolean isPvEncryptionInTransitEnabled) {
-            this.isPvEncryptionInTransitEnabled = Objects.requireNonNull(isPvEncryptionInTransitEnabled);
+        public Builder isPvEncryptionInTransitEnabled(@Nullable Boolean isPvEncryptionInTransitEnabled) {
+            this.isPvEncryptionInTransitEnabled = isPvEncryptionInTransitEnabled;
             return this;
         }
         @CustomType.Setter
-        public Builder launchMode(String launchMode) {
-            this.launchMode = Objects.requireNonNull(launchMode);
+        public Builder launchMode(@Nullable String launchMode) {
+            this.launchMode = launchMode;
             return this;
         }
         @CustomType.Setter
-        public Builder launchOptions(List<GetInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOption> launchOptions) {
-            this.launchOptions = Objects.requireNonNull(launchOptions);
+        public Builder launchOptions(@Nullable List<GetInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOption> launchOptions) {
+            this.launchOptions = launchOptions;
             return this;
         }
         public Builder launchOptions(GetInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOption... launchOptions) {
             return launchOptions(List.of(launchOptions));
         }
         @CustomType.Setter
-        public Builder metadata(Map<String,Object> metadata) {
-            this.metadata = Objects.requireNonNull(metadata);
+        public Builder metadata(@Nullable Map<String,Object> metadata) {
+            this.metadata = metadata;
             return this;
         }
         @CustomType.Setter
-        public Builder platformConfigs(List<GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfig> platformConfigs) {
-            this.platformConfigs = Objects.requireNonNull(platformConfigs);
+        public Builder platformConfigs(@Nullable List<GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfig> platformConfigs) {
+            this.platformConfigs = platformConfigs;
             return this;
         }
         public Builder platformConfigs(GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfig... platformConfigs) {
             return platformConfigs(List.of(platformConfigs));
         }
         @CustomType.Setter
-        public Builder preemptibleInstanceConfigs(List<GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfig> preemptibleInstanceConfigs) {
-            this.preemptibleInstanceConfigs = Objects.requireNonNull(preemptibleInstanceConfigs);
+        public Builder preemptibleInstanceConfigs(@Nullable List<GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfig> preemptibleInstanceConfigs) {
+            this.preemptibleInstanceConfigs = preemptibleInstanceConfigs;
             return this;
         }
         public Builder preemptibleInstanceConfigs(GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfig... preemptibleInstanceConfigs) {
             return preemptibleInstanceConfigs(List.of(preemptibleInstanceConfigs));
         }
         @CustomType.Setter
-        public Builder preferredMaintenanceAction(String preferredMaintenanceAction) {
-            this.preferredMaintenanceAction = Objects.requireNonNull(preferredMaintenanceAction);
+        public Builder preferredMaintenanceAction(@Nullable String preferredMaintenanceAction) {
+            this.preferredMaintenanceAction = preferredMaintenanceAction;
             return this;
         }
         @CustomType.Setter
-        public Builder shape(String shape) {
-            this.shape = Objects.requireNonNull(shape);
+        public Builder shape(@Nullable String shape) {
+            this.shape = shape;
             return this;
         }
         @CustomType.Setter
-        public Builder shapeConfigs(List<GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfig> shapeConfigs) {
-            this.shapeConfigs = Objects.requireNonNull(shapeConfigs);
+        public Builder shapeConfigs(@Nullable List<GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfig> shapeConfigs) {
+            this.shapeConfigs = shapeConfigs;
             return this;
         }
         public Builder shapeConfigs(GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfig... shapeConfigs) {
             return shapeConfigs(List.of(shapeConfigs));
         }
         @CustomType.Setter
-        public Builder sourceDetails(List<GetInstanceConfigurationInstanceDetailOptionLaunchDetailSourceDetail> sourceDetails) {
-            this.sourceDetails = Objects.requireNonNull(sourceDetails);
+        public Builder sourceDetails(@Nullable List<GetInstanceConfigurationInstanceDetailOptionLaunchDetailSourceDetail> sourceDetails) {
+            this.sourceDetails = sourceDetails;
             return this;
         }
         public Builder sourceDetails(GetInstanceConfigurationInstanceDetailOptionLaunchDetailSourceDetail... sourceDetails) {

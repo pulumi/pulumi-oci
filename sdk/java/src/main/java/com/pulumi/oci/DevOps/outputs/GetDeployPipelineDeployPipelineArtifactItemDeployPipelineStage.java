@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.DevOps.outputs.GetDeployPipelineDeployPipelineArtifactItemDeployPipelineStageItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDeployPipelineDeployPipelineArtifactItemDeployPipelineStage {
@@ -14,7 +15,7 @@ public final class GetDeployPipelineDeployPipelineArtifactItemDeployPipelineStag
      * @return List of parameters defined for a deployment pipeline.
      * 
      */
-    private List<GetDeployPipelineDeployPipelineArtifactItemDeployPipelineStageItem> items;
+    private @Nullable List<GetDeployPipelineDeployPipelineArtifactItemDeployPipelineStageItem> items;
 
     private GetDeployPipelineDeployPipelineArtifactItemDeployPipelineStage() {}
     /**
@@ -22,7 +23,7 @@ public final class GetDeployPipelineDeployPipelineArtifactItemDeployPipelineStag
      * 
      */
     public List<GetDeployPipelineDeployPipelineArtifactItemDeployPipelineStageItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -34,7 +35,7 @@ public final class GetDeployPipelineDeployPipelineArtifactItemDeployPipelineStag
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetDeployPipelineDeployPipelineArtifactItemDeployPipelineStageItem> items;
+        private @Nullable List<GetDeployPipelineDeployPipelineArtifactItemDeployPipelineStageItem> items;
         public Builder() {}
         public Builder(GetDeployPipelineDeployPipelineArtifactItemDeployPipelineStage defaults) {
     	      Objects.requireNonNull(defaults);
@@ -42,8 +43,8 @@ public final class GetDeployPipelineDeployPipelineArtifactItemDeployPipelineStag
         }
 
         @CustomType.Setter
-        public Builder items(List<GetDeployPipelineDeployPipelineArtifactItemDeployPipelineStageItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetDeployPipelineDeployPipelineArtifactItemDeployPipelineStageItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetDeployPipelineDeployPipelineArtifactItemDeployPipelineStageItem... items) {

@@ -110,40 +110,40 @@ namespace Pulumi.Oci.OsManagementHub
         /// <summary>
         /// The OCID of the tenancy containing the Management Station.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// Details describing the ManagementStation config.
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// ManagementStation name
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// Name of the host
         /// </summary>
-        public readonly string Hostname;
+        public readonly string? Hostname;
         /// <summary>
         /// OCID for the ManagementStation config
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// OCID for the Instance associated with the Management Station.
         /// </summary>
-        public readonly string ManagedInstanceId;
+        public readonly string? ManagedInstanceId;
         public readonly string ManagementStationId;
         /// <summary>
         /// A decimal number representing the mirror capacity
         /// </summary>
-        public readonly int MirrorCapacity;
+        public readonly int? MirrorCapacity;
         /// <summary>
         /// Status summary of all repos
         /// </summary>
@@ -155,15 +155,15 @@ namespace Pulumi.Oci.OsManagementHub
         /// <summary>
         /// A decimal number representing the completeness percentage
         /// </summary>
-        public readonly int OverallPercentage;
+        public readonly int? OverallPercentage;
         /// <summary>
         /// Current state of the mirroring
         /// </summary>
-        public readonly string OverallState;
+        public readonly string? OverallState;
         /// <summary>
         /// OCID of the Profile associated with the Station
         /// </summary>
-        public readonly string ProfileId;
+        public readonly string? ProfileId;
         /// <summary>
         /// Information for a proxy configuration
         /// </summary>
@@ -171,61 +171,61 @@ namespace Pulumi.Oci.OsManagementHub
         /// <summary>
         /// OCID of the Scheduled Job for mirror sync
         /// </summary>
-        public readonly string ScheduledJobId;
+        public readonly string? ScheduledJobId;
         /// <summary>
         /// The current state of the Management Station config.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> SystemTags;
+        public readonly ImmutableDictionary<string, object>? SystemTags;
         /// <summary>
         /// A decimal number representing the total of repos
         /// </summary>
-        public readonly int TotalMirrors;
+        public readonly int? TotalMirrors;
 
         [OutputConstructor]
         private GetManagementStationResult(
-            string compartmentId,
+            string? compartmentId,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string description,
+            string? description,
 
-            string displayName,
+            string? displayName,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string hostname,
+            string? hostname,
 
-            string id,
+            string? id,
 
-            string managedInstanceId,
+            string? managedInstanceId,
 
             string managementStationId,
 
-            int mirrorCapacity,
+            int? mirrorCapacity,
 
             ImmutableArray<Outputs.GetManagementStationMirrorSyncStatusResult> mirrorSyncStatuses,
 
             ImmutableArray<Outputs.GetManagementStationMirrorResult> mirrors,
 
-            int overallPercentage,
+            int? overallPercentage,
 
-            string overallState,
+            string? overallState,
 
-            string profileId,
+            string? profileId,
 
             ImmutableArray<Outputs.GetManagementStationProxyResult> proxies,
 
-            string scheduledJobId,
+            string? scheduledJobId,
 
-            string state,
+            string? state,
 
-            ImmutableDictionary<string, object> systemTags,
+            ImmutableDictionary<string, object>? systemTags,
 
-            int totalMirrors)
+            int? totalMirrors)
         {
             CompartmentId = compartmentId;
             DefinedTags = definedTags;

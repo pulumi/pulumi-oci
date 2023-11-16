@@ -17,22 +17,22 @@ namespace Pulumi.Oci.Database.Outputs
         /// <summary>
         /// Additional information about the current lifecycle state.
         /// </summary>
-        public readonly string LifecycleDetails;
-        public readonly string Objective;
+        public readonly string? LifecycleDetails;
+        public readonly string? Objective;
         /// <summary>
         /// A filter to return only cloud VM clusters that match the given lifecycle state exactly.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
 
         [OutputConstructor]
         private GetCloudVmClustersCloudVmClusterIormConfigCachResult(
             ImmutableArray<Outputs.GetCloudVmClustersCloudVmClusterIormConfigCachDbPlanResult> dbPlans,
 
-            string lifecycleDetails,
+            string? lifecycleDetails,
 
-            string objective,
+            string? objective,
 
-            string state)
+            string? state)
         {
             DbPlans = dbPlans;
             LifecycleDetails = lifecycleDetails;

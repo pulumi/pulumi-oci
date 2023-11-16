@@ -47,64 +47,64 @@ export interface GetDeployArtifactResult {
     /**
      * Mode for artifact parameter substitution. Options: `"NONE", "SUBSTITUTE_PLACEHOLDERS"` For Helm Deployments only "NONE" is supported.
      */
-    readonly argumentSubstitutionMode: string;
+    readonly argumentSubstitutionMode?: string;
     /**
      * The OCID of a compartment.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     readonly deployArtifactId: string;
     /**
      * Specifies source of an artifact.
      */
-    readonly deployArtifactSources: outputs.DevOps.GetDeployArtifactDeployArtifactSource[];
+    readonly deployArtifactSources?: outputs.DevOps.GetDeployArtifactDeployArtifactSource[];
     /**
      * Type of the deployment artifact.
      */
-    readonly deployArtifactType: string;
+    readonly deployArtifactType?: string;
     /**
      * Optional description about the artifact to be deployed.
      */
-    readonly description: string;
+    readonly description?: string;
     /**
      * Deployment artifact identifier, which can be renamed and is not necessarily unique. Avoid entering confidential information.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * Unique identifier that is immutable on creation.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * A detailed message describing the current state. For example, can be used to provide actionable information for a resource in Failed state.
      */
-    readonly lifecycleDetails: string;
+    readonly lifecycleDetails?: string;
     /**
      * The OCID of a project.
      */
-    readonly projectId: string;
+    readonly projectId?: string;
     /**
      * Current state of the deployment artifact.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    readonly systemTags: {[key: string]: any};
+    readonly systemTags?: {[key: string]: any};
     /**
      * Time the deployment artifact was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * Time the deployment artifact was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      */
-    readonly timeUpdated: string;
+    readonly timeUpdated?: string;
 }
 /**
  * This data source provides details about a specific Deploy Artifact resource in Oracle Cloud Infrastructure Devops service.

@@ -24,12 +24,12 @@ public final class GetServiceGatewaysResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The list of service_gateways.
      * 
      */
-    private List<GetServiceGatewaysServiceGateway> serviceGateways;
+    private @Nullable List<GetServiceGatewaysServiceGateway> serviceGateways;
     /**
      * @return The service gateway&#39;s current state.
      * 
@@ -56,15 +56,15 @@ public final class GetServiceGatewaysResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The list of service_gateways.
      * 
      */
     public List<GetServiceGatewaysServiceGateway> serviceGateways() {
-        return this.serviceGateways;
+        return this.serviceGateways == null ? List.of() : this.serviceGateways;
     }
     /**
      * @return The service gateway&#39;s current state.
@@ -92,8 +92,8 @@ public final class GetServiceGatewaysResult {
     public static final class Builder {
         private String compartmentId;
         private @Nullable List<GetServiceGatewaysFilter> filters;
-        private String id;
-        private List<GetServiceGatewaysServiceGateway> serviceGateways;
+        private @Nullable String id;
+        private @Nullable List<GetServiceGatewaysServiceGateway> serviceGateways;
         private @Nullable String state;
         private @Nullable String vcnId;
         public Builder() {}
@@ -121,13 +121,13 @@ public final class GetServiceGatewaysResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder serviceGateways(List<GetServiceGatewaysServiceGateway> serviceGateways) {
-            this.serviceGateways = Objects.requireNonNull(serviceGateways);
+        public Builder serviceGateways(@Nullable List<GetServiceGatewaysServiceGateway> serviceGateways) {
+            this.serviceGateways = serviceGateways;
             return this;
         }
         public Builder serviceGateways(GetServiceGatewaysServiceGateway... serviceGateways) {

@@ -10,6 +10,8 @@ import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetSubscriptionsSubscriptionSubscribedService {
@@ -17,267 +19,267 @@ public final class GetSubscriptionsSubscriptionSubscribedService {
      * @return Booking Opportunity Number of Subscribed Service
      * 
      */
-    private String bookingOptyNumber;
+    private @Nullable String bookingOptyNumber;
     /**
      * @return List of Commitment services of a line
      * 
      */
-    private List<GetSubscriptionsSubscriptionSubscribedServiceCommitmentService> commitmentServices;
+    private @Nullable List<GetSubscriptionsSubscriptionSubscribedServiceCommitmentService> commitmentServices;
     /**
      * @return Subscribed service CSI number
      * 
      */
-    private String csi;
+    private @Nullable String csi;
     /**
      * @return Subscribed service data center region
      * 
      */
-    private String dataCenterRegion;
+    private @Nullable String dataCenterRegion;
     /**
      * @return Funded Allocation line value example: 12000.00
      * 
      */
-    private String fundedAllocationValue;
+    private @Nullable String fundedAllocationValue;
     /**
      * @return SPM internal Subscribed Service ID
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Subscribed service intent to pay flag
      * 
      */
-    private Boolean isIntentToPay;
+    private @Nullable Boolean isIntentToPay;
     /**
      * @return Subscribed service net unit price
      * 
      */
-    private String netUnitPrice;
+    private @Nullable String netUnitPrice;
     /**
      * @return Subscribed service operation type
      * 
      */
-    private String operationType;
+    private @Nullable String operationType;
     /**
      * @return Sales Order Number associated to the subscribed service
      * 
      */
-    private String orderNumber;
+    private @Nullable String orderNumber;
     /**
      * @return This field contains the name of the partner to which the subscription belongs - depending on which the invoicing may differ
      * 
      */
-    private String partnerTransactionType;
+    private @Nullable String partnerTransactionType;
     /**
      * @return Subscribed service pricing model
      * 
      */
-    private String pricingModel;
+    private @Nullable String pricingModel;
     /**
      * @return Product description
      * 
      */
-    private List<GetSubscriptionsSubscriptionSubscribedServiceProduct> products;
+    private @Nullable List<GetSubscriptionsSubscriptionSubscribedServiceProduct> products;
     /**
      * @return Subscribed service program type
      * 
      */
-    private String programType;
+    private @Nullable String programType;
     /**
      * @return Subscribed service promotion type
      * 
      */
-    private String promoType;
+    private @Nullable String promoType;
     /**
      * @return Subscribed service quantity
      * 
      */
-    private String quantity;
+    private @Nullable String quantity;
     /**
      * @return Subscribed service status
      * 
      */
-    private String status;
+    private @Nullable String status;
     /**
      * @return Term value in Months
      * 
      */
-    private String termValue;
+    private @Nullable String termValue;
     /**
      * @return Term value UOM
      * 
      */
-    private String termValueUom;
+    private @Nullable String termValueUom;
     /**
      * @return Represents the date when the last service of the subscription ends
      * 
      */
-    private String timeEnd;
+    private @Nullable String timeEnd;
     /**
      * @return Represents the date when the first service of the subscription was activated
      * 
      */
-    private String timeStart;
+    private @Nullable String timeStart;
     /**
      * @return Subscribed service total value
      * 
      */
-    private String totalValue;
+    private @Nullable String totalValue;
 
     private GetSubscriptionsSubscriptionSubscribedService() {}
     /**
      * @return Booking Opportunity Number of Subscribed Service
      * 
      */
-    public String bookingOptyNumber() {
-        return this.bookingOptyNumber;
+    public Optional<String> bookingOptyNumber() {
+        return Optional.ofNullable(this.bookingOptyNumber);
     }
     /**
      * @return List of Commitment services of a line
      * 
      */
     public List<GetSubscriptionsSubscriptionSubscribedServiceCommitmentService> commitmentServices() {
-        return this.commitmentServices;
+        return this.commitmentServices == null ? List.of() : this.commitmentServices;
     }
     /**
      * @return Subscribed service CSI number
      * 
      */
-    public String csi() {
-        return this.csi;
+    public Optional<String> csi() {
+        return Optional.ofNullable(this.csi);
     }
     /**
      * @return Subscribed service data center region
      * 
      */
-    public String dataCenterRegion() {
-        return this.dataCenterRegion;
+    public Optional<String> dataCenterRegion() {
+        return Optional.ofNullable(this.dataCenterRegion);
     }
     /**
      * @return Funded Allocation line value example: 12000.00
      * 
      */
-    public String fundedAllocationValue() {
-        return this.fundedAllocationValue;
+    public Optional<String> fundedAllocationValue() {
+        return Optional.ofNullable(this.fundedAllocationValue);
     }
     /**
      * @return SPM internal Subscribed Service ID
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Subscribed service intent to pay flag
      * 
      */
-    public Boolean isIntentToPay() {
-        return this.isIntentToPay;
+    public Optional<Boolean> isIntentToPay() {
+        return Optional.ofNullable(this.isIntentToPay);
     }
     /**
      * @return Subscribed service net unit price
      * 
      */
-    public String netUnitPrice() {
-        return this.netUnitPrice;
+    public Optional<String> netUnitPrice() {
+        return Optional.ofNullable(this.netUnitPrice);
     }
     /**
      * @return Subscribed service operation type
      * 
      */
-    public String operationType() {
-        return this.operationType;
+    public Optional<String> operationType() {
+        return Optional.ofNullable(this.operationType);
     }
     /**
      * @return Sales Order Number associated to the subscribed service
      * 
      */
-    public String orderNumber() {
-        return this.orderNumber;
+    public Optional<String> orderNumber() {
+        return Optional.ofNullable(this.orderNumber);
     }
     /**
      * @return This field contains the name of the partner to which the subscription belongs - depending on which the invoicing may differ
      * 
      */
-    public String partnerTransactionType() {
-        return this.partnerTransactionType;
+    public Optional<String> partnerTransactionType() {
+        return Optional.ofNullable(this.partnerTransactionType);
     }
     /**
      * @return Subscribed service pricing model
      * 
      */
-    public String pricingModel() {
-        return this.pricingModel;
+    public Optional<String> pricingModel() {
+        return Optional.ofNullable(this.pricingModel);
     }
     /**
      * @return Product description
      * 
      */
     public List<GetSubscriptionsSubscriptionSubscribedServiceProduct> products() {
-        return this.products;
+        return this.products == null ? List.of() : this.products;
     }
     /**
      * @return Subscribed service program type
      * 
      */
-    public String programType() {
-        return this.programType;
+    public Optional<String> programType() {
+        return Optional.ofNullable(this.programType);
     }
     /**
      * @return Subscribed service promotion type
      * 
      */
-    public String promoType() {
-        return this.promoType;
+    public Optional<String> promoType() {
+        return Optional.ofNullable(this.promoType);
     }
     /**
      * @return Subscribed service quantity
      * 
      */
-    public String quantity() {
-        return this.quantity;
+    public Optional<String> quantity() {
+        return Optional.ofNullable(this.quantity);
     }
     /**
      * @return Subscribed service status
      * 
      */
-    public String status() {
-        return this.status;
+    public Optional<String> status() {
+        return Optional.ofNullable(this.status);
     }
     /**
      * @return Term value in Months
      * 
      */
-    public String termValue() {
-        return this.termValue;
+    public Optional<String> termValue() {
+        return Optional.ofNullable(this.termValue);
     }
     /**
      * @return Term value UOM
      * 
      */
-    public String termValueUom() {
-        return this.termValueUom;
+    public Optional<String> termValueUom() {
+        return Optional.ofNullable(this.termValueUom);
     }
     /**
      * @return Represents the date when the last service of the subscription ends
      * 
      */
-    public String timeEnd() {
-        return this.timeEnd;
+    public Optional<String> timeEnd() {
+        return Optional.ofNullable(this.timeEnd);
     }
     /**
      * @return Represents the date when the first service of the subscription was activated
      * 
      */
-    public String timeStart() {
-        return this.timeStart;
+    public Optional<String> timeStart() {
+        return Optional.ofNullable(this.timeStart);
     }
     /**
      * @return Subscribed service total value
      * 
      */
-    public String totalValue() {
-        return this.totalValue;
+    public Optional<String> totalValue() {
+        return Optional.ofNullable(this.totalValue);
     }
 
     public static Builder builder() {
@@ -289,28 +291,28 @@ public final class GetSubscriptionsSubscriptionSubscribedService {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String bookingOptyNumber;
-        private List<GetSubscriptionsSubscriptionSubscribedServiceCommitmentService> commitmentServices;
-        private String csi;
-        private String dataCenterRegion;
-        private String fundedAllocationValue;
-        private String id;
-        private Boolean isIntentToPay;
-        private String netUnitPrice;
-        private String operationType;
-        private String orderNumber;
-        private String partnerTransactionType;
-        private String pricingModel;
-        private List<GetSubscriptionsSubscriptionSubscribedServiceProduct> products;
-        private String programType;
-        private String promoType;
-        private String quantity;
-        private String status;
-        private String termValue;
-        private String termValueUom;
-        private String timeEnd;
-        private String timeStart;
-        private String totalValue;
+        private @Nullable String bookingOptyNumber;
+        private @Nullable List<GetSubscriptionsSubscriptionSubscribedServiceCommitmentService> commitmentServices;
+        private @Nullable String csi;
+        private @Nullable String dataCenterRegion;
+        private @Nullable String fundedAllocationValue;
+        private @Nullable String id;
+        private @Nullable Boolean isIntentToPay;
+        private @Nullable String netUnitPrice;
+        private @Nullable String operationType;
+        private @Nullable String orderNumber;
+        private @Nullable String partnerTransactionType;
+        private @Nullable String pricingModel;
+        private @Nullable List<GetSubscriptionsSubscriptionSubscribedServiceProduct> products;
+        private @Nullable String programType;
+        private @Nullable String promoType;
+        private @Nullable String quantity;
+        private @Nullable String status;
+        private @Nullable String termValue;
+        private @Nullable String termValueUom;
+        private @Nullable String timeEnd;
+        private @Nullable String timeStart;
+        private @Nullable String totalValue;
         public Builder() {}
         public Builder(GetSubscriptionsSubscriptionSubscribedService defaults) {
     	      Objects.requireNonNull(defaults);
@@ -339,119 +341,119 @@ public final class GetSubscriptionsSubscriptionSubscribedService {
         }
 
         @CustomType.Setter
-        public Builder bookingOptyNumber(String bookingOptyNumber) {
-            this.bookingOptyNumber = Objects.requireNonNull(bookingOptyNumber);
+        public Builder bookingOptyNumber(@Nullable String bookingOptyNumber) {
+            this.bookingOptyNumber = bookingOptyNumber;
             return this;
         }
         @CustomType.Setter
-        public Builder commitmentServices(List<GetSubscriptionsSubscriptionSubscribedServiceCommitmentService> commitmentServices) {
-            this.commitmentServices = Objects.requireNonNull(commitmentServices);
+        public Builder commitmentServices(@Nullable List<GetSubscriptionsSubscriptionSubscribedServiceCommitmentService> commitmentServices) {
+            this.commitmentServices = commitmentServices;
             return this;
         }
         public Builder commitmentServices(GetSubscriptionsSubscriptionSubscribedServiceCommitmentService... commitmentServices) {
             return commitmentServices(List.of(commitmentServices));
         }
         @CustomType.Setter
-        public Builder csi(String csi) {
-            this.csi = Objects.requireNonNull(csi);
+        public Builder csi(@Nullable String csi) {
+            this.csi = csi;
             return this;
         }
         @CustomType.Setter
-        public Builder dataCenterRegion(String dataCenterRegion) {
-            this.dataCenterRegion = Objects.requireNonNull(dataCenterRegion);
+        public Builder dataCenterRegion(@Nullable String dataCenterRegion) {
+            this.dataCenterRegion = dataCenterRegion;
             return this;
         }
         @CustomType.Setter
-        public Builder fundedAllocationValue(String fundedAllocationValue) {
-            this.fundedAllocationValue = Objects.requireNonNull(fundedAllocationValue);
+        public Builder fundedAllocationValue(@Nullable String fundedAllocationValue) {
+            this.fundedAllocationValue = fundedAllocationValue;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder isIntentToPay(Boolean isIntentToPay) {
-            this.isIntentToPay = Objects.requireNonNull(isIntentToPay);
+        public Builder isIntentToPay(@Nullable Boolean isIntentToPay) {
+            this.isIntentToPay = isIntentToPay;
             return this;
         }
         @CustomType.Setter
-        public Builder netUnitPrice(String netUnitPrice) {
-            this.netUnitPrice = Objects.requireNonNull(netUnitPrice);
+        public Builder netUnitPrice(@Nullable String netUnitPrice) {
+            this.netUnitPrice = netUnitPrice;
             return this;
         }
         @CustomType.Setter
-        public Builder operationType(String operationType) {
-            this.operationType = Objects.requireNonNull(operationType);
+        public Builder operationType(@Nullable String operationType) {
+            this.operationType = operationType;
             return this;
         }
         @CustomType.Setter
-        public Builder orderNumber(String orderNumber) {
-            this.orderNumber = Objects.requireNonNull(orderNumber);
+        public Builder orderNumber(@Nullable String orderNumber) {
+            this.orderNumber = orderNumber;
             return this;
         }
         @CustomType.Setter
-        public Builder partnerTransactionType(String partnerTransactionType) {
-            this.partnerTransactionType = Objects.requireNonNull(partnerTransactionType);
+        public Builder partnerTransactionType(@Nullable String partnerTransactionType) {
+            this.partnerTransactionType = partnerTransactionType;
             return this;
         }
         @CustomType.Setter
-        public Builder pricingModel(String pricingModel) {
-            this.pricingModel = Objects.requireNonNull(pricingModel);
+        public Builder pricingModel(@Nullable String pricingModel) {
+            this.pricingModel = pricingModel;
             return this;
         }
         @CustomType.Setter
-        public Builder products(List<GetSubscriptionsSubscriptionSubscribedServiceProduct> products) {
-            this.products = Objects.requireNonNull(products);
+        public Builder products(@Nullable List<GetSubscriptionsSubscriptionSubscribedServiceProduct> products) {
+            this.products = products;
             return this;
         }
         public Builder products(GetSubscriptionsSubscriptionSubscribedServiceProduct... products) {
             return products(List.of(products));
         }
         @CustomType.Setter
-        public Builder programType(String programType) {
-            this.programType = Objects.requireNonNull(programType);
+        public Builder programType(@Nullable String programType) {
+            this.programType = programType;
             return this;
         }
         @CustomType.Setter
-        public Builder promoType(String promoType) {
-            this.promoType = Objects.requireNonNull(promoType);
+        public Builder promoType(@Nullable String promoType) {
+            this.promoType = promoType;
             return this;
         }
         @CustomType.Setter
-        public Builder quantity(String quantity) {
-            this.quantity = Objects.requireNonNull(quantity);
+        public Builder quantity(@Nullable String quantity) {
+            this.quantity = quantity;
             return this;
         }
         @CustomType.Setter
-        public Builder status(String status) {
-            this.status = Objects.requireNonNull(status);
+        public Builder status(@Nullable String status) {
+            this.status = status;
             return this;
         }
         @CustomType.Setter
-        public Builder termValue(String termValue) {
-            this.termValue = Objects.requireNonNull(termValue);
+        public Builder termValue(@Nullable String termValue) {
+            this.termValue = termValue;
             return this;
         }
         @CustomType.Setter
-        public Builder termValueUom(String termValueUom) {
-            this.termValueUom = Objects.requireNonNull(termValueUom);
+        public Builder termValueUom(@Nullable String termValueUom) {
+            this.termValueUom = termValueUom;
             return this;
         }
         @CustomType.Setter
-        public Builder timeEnd(String timeEnd) {
-            this.timeEnd = Objects.requireNonNull(timeEnd);
+        public Builder timeEnd(@Nullable String timeEnd) {
+            this.timeEnd = timeEnd;
             return this;
         }
         @CustomType.Setter
-        public Builder timeStart(String timeStart) {
-            this.timeStart = Objects.requireNonNull(timeStart);
+        public Builder timeStart(@Nullable String timeStart) {
+            this.timeStart = timeStart;
             return this;
         }
         @CustomType.Setter
-        public Builder totalValue(String totalValue) {
-            this.totalValue = Objects.requireNonNull(totalValue);
+        public Builder totalValue(@Nullable String totalValue) {
+            this.totalValue = totalValue;
             return this;
         }
         public GetSubscriptionsSubscriptionSubscribedService build() {

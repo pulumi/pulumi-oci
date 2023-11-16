@@ -27,15 +27,6 @@ class PathAnalyzerTestArgs:
                  query_options: Optional[pulumi.Input['PathAnalyzerTestQueryOptionsArgs']] = None):
         """
         The set of arguments for constructing a PathAnalyzerTest resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the `PathAnalyzerTest` resource's compartment.
-        :param pulumi.Input['PathAnalyzerTestDestinationEndpointArgs'] destination_endpoint: (Updatable) Information describing a source or destination in a `PathAnalyzerTest` resource.
-        :param pulumi.Input[int] protocol: (Updatable) The IP protocol to use in the `PathAnalyzerTest` resource.
-        :param pulumi.Input['PathAnalyzerTestSourceEndpointArgs'] source_endpoint: (Updatable) Information describing a source or destination in a `PathAnalyzerTest` resource.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input['PathAnalyzerTestProtocolParametersArgs'] protocol_parameters: (Updatable) Defines the IP protocol parameters for a `PathAnalyzerTest` resource.
-        :param pulumi.Input['PathAnalyzerTestQueryOptionsArgs'] query_options: (Updatable) Defines the query options required for a `PathAnalyzerTest` resource.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "destination_endpoint", destination_endpoint)
@@ -55,9 +46,6 @@ class PathAnalyzerTestArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the `PathAnalyzerTest` resource's compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -67,9 +55,6 @@ class PathAnalyzerTestArgs:
     @property
     @pulumi.getter(name="destinationEndpoint")
     def destination_endpoint(self) -> pulumi.Input['PathAnalyzerTestDestinationEndpointArgs']:
-        """
-        (Updatable) Information describing a source or destination in a `PathAnalyzerTest` resource.
-        """
         return pulumi.get(self, "destination_endpoint")
 
     @destination_endpoint.setter
@@ -79,9 +64,6 @@ class PathAnalyzerTestArgs:
     @property
     @pulumi.getter
     def protocol(self) -> pulumi.Input[int]:
-        """
-        (Updatable) The IP protocol to use in the `PathAnalyzerTest` resource.
-        """
         return pulumi.get(self, "protocol")
 
     @protocol.setter
@@ -91,9 +73,6 @@ class PathAnalyzerTestArgs:
     @property
     @pulumi.getter(name="sourceEndpoint")
     def source_endpoint(self) -> pulumi.Input['PathAnalyzerTestSourceEndpointArgs']:
-        """
-        (Updatable) Information describing a source or destination in a `PathAnalyzerTest` resource.
-        """
         return pulumi.get(self, "source_endpoint")
 
     @source_endpoint.setter
@@ -103,9 +82,6 @@ class PathAnalyzerTestArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -115,9 +91,6 @@ class PathAnalyzerTestArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -127,9 +100,6 @@ class PathAnalyzerTestArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -139,9 +109,6 @@ class PathAnalyzerTestArgs:
     @property
     @pulumi.getter(name="protocolParameters")
     def protocol_parameters(self) -> Optional[pulumi.Input['PathAnalyzerTestProtocolParametersArgs']]:
-        """
-        (Updatable) Defines the IP protocol parameters for a `PathAnalyzerTest` resource.
-        """
         return pulumi.get(self, "protocol_parameters")
 
     @protocol_parameters.setter
@@ -151,9 +118,6 @@ class PathAnalyzerTestArgs:
     @property
     @pulumi.getter(name="queryOptions")
     def query_options(self) -> Optional[pulumi.Input['PathAnalyzerTestQueryOptionsArgs']]:
-        """
-        (Updatable) Defines the query options required for a `PathAnalyzerTest` resource.
-        """
         return pulumi.get(self, "query_options")
 
     @query_options.setter
@@ -179,19 +143,6 @@ class _PathAnalyzerTestState:
                  time_updated: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering PathAnalyzerTest resources.
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the `PathAnalyzerTest` resource's compartment.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input['PathAnalyzerTestDestinationEndpointArgs'] destination_endpoint: (Updatable) Information describing a source or destination in a `PathAnalyzerTest` resource.
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[int] protocol: (Updatable) The IP protocol to use in the `PathAnalyzerTest` resource.
-        :param pulumi.Input['PathAnalyzerTestProtocolParametersArgs'] protocol_parameters: (Updatable) Defines the IP protocol parameters for a `PathAnalyzerTest` resource.
-        :param pulumi.Input['PathAnalyzerTestQueryOptionsArgs'] query_options: (Updatable) Defines the query options required for a `PathAnalyzerTest` resource.
-        :param pulumi.Input['PathAnalyzerTestSourceEndpointArgs'] source_endpoint: (Updatable) Information describing a source or destination in a `PathAnalyzerTest` resource.
-        :param pulumi.Input[str] state: The current state of the `PathAnalyzerTest` resource.
-        :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[str] time_created: The date and time the `PathAnalyzerTest` resource was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        :param pulumi.Input[str] time_updated: The date and time the `PathAnalyzerTest` resource was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
@@ -223,9 +174,6 @@ class _PathAnalyzerTestState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the `PathAnalyzerTest` resource's compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -235,9 +183,6 @@ class _PathAnalyzerTestState:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -247,9 +192,6 @@ class _PathAnalyzerTestState:
     @property
     @pulumi.getter(name="destinationEndpoint")
     def destination_endpoint(self) -> Optional[pulumi.Input['PathAnalyzerTestDestinationEndpointArgs']]:
-        """
-        (Updatable) Information describing a source or destination in a `PathAnalyzerTest` resource.
-        """
         return pulumi.get(self, "destination_endpoint")
 
     @destination_endpoint.setter
@@ -259,9 +201,6 @@ class _PathAnalyzerTestState:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -271,9 +210,6 @@ class _PathAnalyzerTestState:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -283,9 +219,6 @@ class _PathAnalyzerTestState:
     @property
     @pulumi.getter
     def protocol(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) The IP protocol to use in the `PathAnalyzerTest` resource.
-        """
         return pulumi.get(self, "protocol")
 
     @protocol.setter
@@ -295,9 +228,6 @@ class _PathAnalyzerTestState:
     @property
     @pulumi.getter(name="protocolParameters")
     def protocol_parameters(self) -> Optional[pulumi.Input['PathAnalyzerTestProtocolParametersArgs']]:
-        """
-        (Updatable) Defines the IP protocol parameters for a `PathAnalyzerTest` resource.
-        """
         return pulumi.get(self, "protocol_parameters")
 
     @protocol_parameters.setter
@@ -307,9 +237,6 @@ class _PathAnalyzerTestState:
     @property
     @pulumi.getter(name="queryOptions")
     def query_options(self) -> Optional[pulumi.Input['PathAnalyzerTestQueryOptionsArgs']]:
-        """
-        (Updatable) Defines the query options required for a `PathAnalyzerTest` resource.
-        """
         return pulumi.get(self, "query_options")
 
     @query_options.setter
@@ -319,9 +246,6 @@ class _PathAnalyzerTestState:
     @property
     @pulumi.getter(name="sourceEndpoint")
     def source_endpoint(self) -> Optional[pulumi.Input['PathAnalyzerTestSourceEndpointArgs']]:
-        """
-        (Updatable) Information describing a source or destination in a `PathAnalyzerTest` resource.
-        """
         return pulumi.get(self, "source_endpoint")
 
     @source_endpoint.setter
@@ -331,9 +255,6 @@ class _PathAnalyzerTestState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The current state of the `PathAnalyzerTest` resource.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -343,9 +264,6 @@ class _PathAnalyzerTestState:
     @property
     @pulumi.getter(name="systemTags")
     def system_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
@@ -355,9 +273,6 @@ class _PathAnalyzerTestState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time the `PathAnalyzerTest` resource was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -367,9 +282,6 @@ class _PathAnalyzerTestState:
     @property
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time the `PathAnalyzerTest` resource was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
@@ -393,79 +305,9 @@ class PathAnalyzerTest(pulumi.CustomResource):
                  source_endpoint: Optional[pulumi.Input[pulumi.InputType['PathAnalyzerTestSourceEndpointArgs']]] = None,
                  __props__=None):
         """
-        This resource provides the Path Analyzer Test resource in Oracle Cloud Infrastructure Vn Monitoring service.
-
-        Creates a new `PathAnalyzerTest` resource.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_path_analyzer_test = oci.vn_monitoring.PathAnalyzerTest("testPathAnalyzerTest",
-            compartment_id=var["compartment_id"],
-            destination_endpoint=oci.vn_monitoring.PathAnalyzerTestDestinationEndpointArgs(
-                type=var["path_analyzer_test_destination_endpoint_type"],
-                address=var["path_analyzer_test_destination_endpoint_address"],
-                instance_id=oci_core_instance["test_instance"]["id"],
-                listener_id=oci_load_balancer_listener["test_listener"]["id"],
-                load_balancer_id=oci_load_balancer_load_balancer["test_load_balancer"]["id"],
-                network_load_balancer_id=oci_network_load_balancer_network_load_balancer["test_network_load_balancer"]["id"],
-                subnet_id=oci_core_subnet["test_subnet"]["id"],
-                vlan_id=oci_core_vlan["test_vlan"]["id"],
-                vnic_id=oci_core_vnic_attachment["test_vnic_attachment"]["id"],
-            ),
-            protocol=var["path_analyzer_test_protocol"],
-            source_endpoint=oci.vn_monitoring.PathAnalyzerTestSourceEndpointArgs(
-                type=var["path_analyzer_test_source_endpoint_type"],
-                address=var["path_analyzer_test_source_endpoint_address"],
-                instance_id=oci_core_instance["test_instance"]["id"],
-                listener_id=oci_load_balancer_listener["test_listener"]["id"],
-                load_balancer_id=oci_load_balancer_load_balancer["test_load_balancer"]["id"],
-                network_load_balancer_id=oci_network_load_balancer_network_load_balancer["test_network_load_balancer"]["id"],
-                subnet_id=oci_core_subnet["test_subnet"]["id"],
-                vlan_id=oci_core_vlan["test_vlan"]["id"],
-                vnic_id=oci_core_vnic_attachment["test_vnic_attachment"]["id"],
-            ),
-            defined_tags={
-                "foo-namespace.bar-key": "value",
-            },
-            display_name=var["path_analyzer_test_display_name"],
-            freeform_tags={
-                "bar-key": "value",
-            },
-            protocol_parameters=oci.vn_monitoring.PathAnalyzerTestProtocolParametersArgs(
-                type=var["path_analyzer_test_protocol_parameters_type"],
-                destination_port=var["path_analyzer_test_protocol_parameters_destination_port"],
-                icmp_code=var["path_analyzer_test_protocol_parameters_icmp_code"],
-                icmp_type=var["path_analyzer_test_protocol_parameters_icmp_type"],
-                source_port=var["path_analyzer_test_protocol_parameters_source_port"],
-            ),
-            query_options=oci.vn_monitoring.PathAnalyzerTestQueryOptionsArgs(
-                is_bi_directional_analysis=var["path_analyzer_test_query_options_is_bi_directional_analysis"],
-            ))
-        ```
-
-        ## Import
-
-        PathAnalyzerTests can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:VnMonitoring/pathAnalyzerTest:PathAnalyzerTest test_path_analyzer_test "id"
-        ```
-
+        Create a PathAnalyzerTest resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the `PathAnalyzerTest` resource's compartment.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[pulumi.InputType['PathAnalyzerTestDestinationEndpointArgs']] destination_endpoint: (Updatable) Information describing a source or destination in a `PathAnalyzerTest` resource.
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[int] protocol: (Updatable) The IP protocol to use in the `PathAnalyzerTest` resource.
-        :param pulumi.Input[pulumi.InputType['PathAnalyzerTestProtocolParametersArgs']] protocol_parameters: (Updatable) Defines the IP protocol parameters for a `PathAnalyzerTest` resource.
-        :param pulumi.Input[pulumi.InputType['PathAnalyzerTestQueryOptionsArgs']] query_options: (Updatable) Defines the query options required for a `PathAnalyzerTest` resource.
-        :param pulumi.Input[pulumi.InputType['PathAnalyzerTestSourceEndpointArgs']] source_endpoint: (Updatable) Information describing a source or destination in a `PathAnalyzerTest` resource.
         """
         ...
     @overload
@@ -474,68 +316,7 @@ class PathAnalyzerTest(pulumi.CustomResource):
                  args: PathAnalyzerTestArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Path Analyzer Test resource in Oracle Cloud Infrastructure Vn Monitoring service.
-
-        Creates a new `PathAnalyzerTest` resource.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_path_analyzer_test = oci.vn_monitoring.PathAnalyzerTest("testPathAnalyzerTest",
-            compartment_id=var["compartment_id"],
-            destination_endpoint=oci.vn_monitoring.PathAnalyzerTestDestinationEndpointArgs(
-                type=var["path_analyzer_test_destination_endpoint_type"],
-                address=var["path_analyzer_test_destination_endpoint_address"],
-                instance_id=oci_core_instance["test_instance"]["id"],
-                listener_id=oci_load_balancer_listener["test_listener"]["id"],
-                load_balancer_id=oci_load_balancer_load_balancer["test_load_balancer"]["id"],
-                network_load_balancer_id=oci_network_load_balancer_network_load_balancer["test_network_load_balancer"]["id"],
-                subnet_id=oci_core_subnet["test_subnet"]["id"],
-                vlan_id=oci_core_vlan["test_vlan"]["id"],
-                vnic_id=oci_core_vnic_attachment["test_vnic_attachment"]["id"],
-            ),
-            protocol=var["path_analyzer_test_protocol"],
-            source_endpoint=oci.vn_monitoring.PathAnalyzerTestSourceEndpointArgs(
-                type=var["path_analyzer_test_source_endpoint_type"],
-                address=var["path_analyzer_test_source_endpoint_address"],
-                instance_id=oci_core_instance["test_instance"]["id"],
-                listener_id=oci_load_balancer_listener["test_listener"]["id"],
-                load_balancer_id=oci_load_balancer_load_balancer["test_load_balancer"]["id"],
-                network_load_balancer_id=oci_network_load_balancer_network_load_balancer["test_network_load_balancer"]["id"],
-                subnet_id=oci_core_subnet["test_subnet"]["id"],
-                vlan_id=oci_core_vlan["test_vlan"]["id"],
-                vnic_id=oci_core_vnic_attachment["test_vnic_attachment"]["id"],
-            ),
-            defined_tags={
-                "foo-namespace.bar-key": "value",
-            },
-            display_name=var["path_analyzer_test_display_name"],
-            freeform_tags={
-                "bar-key": "value",
-            },
-            protocol_parameters=oci.vn_monitoring.PathAnalyzerTestProtocolParametersArgs(
-                type=var["path_analyzer_test_protocol_parameters_type"],
-                destination_port=var["path_analyzer_test_protocol_parameters_destination_port"],
-                icmp_code=var["path_analyzer_test_protocol_parameters_icmp_code"],
-                icmp_type=var["path_analyzer_test_protocol_parameters_icmp_type"],
-                source_port=var["path_analyzer_test_protocol_parameters_source_port"],
-            ),
-            query_options=oci.vn_monitoring.PathAnalyzerTestQueryOptionsArgs(
-                is_bi_directional_analysis=var["path_analyzer_test_query_options_is_bi_directional_analysis"],
-            ))
-        ```
-
-        ## Import
-
-        PathAnalyzerTests can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:VnMonitoring/pathAnalyzerTest:PathAnalyzerTest test_path_analyzer_test "id"
-        ```
-
+        Create a PathAnalyzerTest resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param PathAnalyzerTestArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -620,19 +401,6 @@ class PathAnalyzerTest(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the `PathAnalyzerTest` resource's compartment.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[pulumi.InputType['PathAnalyzerTestDestinationEndpointArgs']] destination_endpoint: (Updatable) Information describing a source or destination in a `PathAnalyzerTest` resource.
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[int] protocol: (Updatable) The IP protocol to use in the `PathAnalyzerTest` resource.
-        :param pulumi.Input[pulumi.InputType['PathAnalyzerTestProtocolParametersArgs']] protocol_parameters: (Updatable) Defines the IP protocol parameters for a `PathAnalyzerTest` resource.
-        :param pulumi.Input[pulumi.InputType['PathAnalyzerTestQueryOptionsArgs']] query_options: (Updatable) Defines the query options required for a `PathAnalyzerTest` resource.
-        :param pulumi.Input[pulumi.InputType['PathAnalyzerTestSourceEndpointArgs']] source_endpoint: (Updatable) Information describing a source or destination in a `PathAnalyzerTest` resource.
-        :param pulumi.Input[str] state: The current state of the `PathAnalyzerTest` resource.
-        :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[str] time_created: The date and time the `PathAnalyzerTest` resource was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        :param pulumi.Input[str] time_updated: The date and time the `PathAnalyzerTest` resource was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -656,104 +424,65 @@ class PathAnalyzerTest(pulumi.CustomResource):
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the `PathAnalyzerTest` resource's compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="destinationEndpoint")
     def destination_endpoint(self) -> pulumi.Output['outputs.PathAnalyzerTestDestinationEndpoint']:
-        """
-        (Updatable) Information describing a source or destination in a `PathAnalyzerTest` resource.
-        """
         return pulumi.get(self, "destination_endpoint")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> pulumi.Output[str]:
-        """
-        (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
+    def display_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
     def protocol(self) -> pulumi.Output[int]:
-        """
-        (Updatable) The IP protocol to use in the `PathAnalyzerTest` resource.
-        """
         return pulumi.get(self, "protocol")
 
     @property
     @pulumi.getter(name="protocolParameters")
-    def protocol_parameters(self) -> pulumi.Output['outputs.PathAnalyzerTestProtocolParameters']:
-        """
-        (Updatable) Defines the IP protocol parameters for a `PathAnalyzerTest` resource.
-        """
+    def protocol_parameters(self) -> pulumi.Output[Optional['outputs.PathAnalyzerTestProtocolParameters']]:
         return pulumi.get(self, "protocol_parameters")
 
     @property
     @pulumi.getter(name="queryOptions")
-    def query_options(self) -> pulumi.Output['outputs.PathAnalyzerTestQueryOptions']:
-        """
-        (Updatable) Defines the query options required for a `PathAnalyzerTest` resource.
-        """
+    def query_options(self) -> pulumi.Output[Optional['outputs.PathAnalyzerTestQueryOptions']]:
         return pulumi.get(self, "query_options")
 
     @property
     @pulumi.getter(name="sourceEndpoint")
     def source_endpoint(self) -> pulumi.Output['outputs.PathAnalyzerTestSourceEndpoint']:
-        """
-        (Updatable) Information describing a source or destination in a `PathAnalyzerTest` resource.
-        """
         return pulumi.get(self, "source_endpoint")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        The current state of the `PathAnalyzerTest` resource.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        The date and time the `PathAnalyzerTest` resource was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> pulumi.Output[str]:
-        """
-        The date and time the `PathAnalyzerTest` resource was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        """
+    def time_updated(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_updated")
 

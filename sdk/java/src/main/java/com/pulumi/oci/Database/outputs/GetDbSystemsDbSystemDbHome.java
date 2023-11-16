@@ -11,126 +11,128 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDbSystemsDbSystemDbHome {
-    private Boolean createAsync;
-    private String databaseSoftwareImageId;
-    private List<GetDbSystemsDbSystemDbHomeDatabase> databases;
-    private String dbHomeLocation;
-    private String dbVersion;
+    private @Nullable Boolean createAsync;
+    private @Nullable String databaseSoftwareImageId;
+    private @Nullable List<GetDbSystemsDbSystemDbHomeDatabase> databases;
+    private @Nullable String dbHomeLocation;
+    private @Nullable String dbVersion;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return A filter to return only resources that match the entire display name given. The match is not case sensitive.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last patch history. This value is updated as soon as a patch operation starts.
      * 
      */
-    private String lastPatchHistoryEntryId;
+    private @Nullable String lastPatchHistoryEntryId;
     /**
      * @return Additional information about the current lifecycle state.
      * 
      */
-    private String lifecycleDetails;
+    private @Nullable String lifecycleDetails;
     /**
      * @return A filter to return only resources that match the given lifecycle state exactly.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return The date and time the DB system was created.
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
 
     private GetDbSystemsDbSystemDbHome() {}
-    public Boolean createAsync() {
-        return this.createAsync;
+    public Optional<Boolean> createAsync() {
+        return Optional.ofNullable(this.createAsync);
     }
-    public String databaseSoftwareImageId() {
-        return this.databaseSoftwareImageId;
+    public Optional<String> databaseSoftwareImageId() {
+        return Optional.ofNullable(this.databaseSoftwareImageId);
     }
     public List<GetDbSystemsDbSystemDbHomeDatabase> databases() {
-        return this.databases;
+        return this.databases == null ? List.of() : this.databases;
     }
-    public String dbHomeLocation() {
-        return this.dbHomeLocation;
+    public Optional<String> dbHomeLocation() {
+        return Optional.ofNullable(this.dbHomeLocation);
     }
-    public String dbVersion() {
-        return this.dbVersion;
+    public Optional<String> dbVersion() {
+        return Optional.ofNullable(this.dbVersion);
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return A filter to return only resources that match the entire display name given. The match is not case sensitive.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last patch history. This value is updated as soon as a patch operation starts.
      * 
      */
-    public String lastPatchHistoryEntryId() {
-        return this.lastPatchHistoryEntryId;
+    public Optional<String> lastPatchHistoryEntryId() {
+        return Optional.ofNullable(this.lastPatchHistoryEntryId);
     }
     /**
      * @return Additional information about the current lifecycle state.
      * 
      */
-    public String lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Optional<String> lifecycleDetails() {
+        return Optional.ofNullable(this.lifecycleDetails);
     }
     /**
      * @return A filter to return only resources that match the given lifecycle state exactly.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return The date and time the DB system was created.
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
 
     public static Builder builder() {
@@ -142,19 +144,19 @@ public final class GetDbSystemsDbSystemDbHome {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Boolean createAsync;
-        private String databaseSoftwareImageId;
-        private List<GetDbSystemsDbSystemDbHomeDatabase> databases;
-        private String dbHomeLocation;
-        private String dbVersion;
-        private Map<String,Object> definedTags;
-        private String displayName;
-        private Map<String,Object> freeformTags;
-        private String id;
-        private String lastPatchHistoryEntryId;
-        private String lifecycleDetails;
-        private String state;
-        private String timeCreated;
+        private @Nullable Boolean createAsync;
+        private @Nullable String databaseSoftwareImageId;
+        private @Nullable List<GetDbSystemsDbSystemDbHomeDatabase> databases;
+        private @Nullable String dbHomeLocation;
+        private @Nullable String dbVersion;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String displayName;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String id;
+        private @Nullable String lastPatchHistoryEntryId;
+        private @Nullable String lifecycleDetails;
+        private @Nullable String state;
+        private @Nullable String timeCreated;
         public Builder() {}
         public Builder(GetDbSystemsDbSystemDbHome defaults) {
     	      Objects.requireNonNull(defaults);
@@ -174,71 +176,71 @@ public final class GetDbSystemsDbSystemDbHome {
         }
 
         @CustomType.Setter
-        public Builder createAsync(Boolean createAsync) {
-            this.createAsync = Objects.requireNonNull(createAsync);
+        public Builder createAsync(@Nullable Boolean createAsync) {
+            this.createAsync = createAsync;
             return this;
         }
         @CustomType.Setter
-        public Builder databaseSoftwareImageId(String databaseSoftwareImageId) {
-            this.databaseSoftwareImageId = Objects.requireNonNull(databaseSoftwareImageId);
+        public Builder databaseSoftwareImageId(@Nullable String databaseSoftwareImageId) {
+            this.databaseSoftwareImageId = databaseSoftwareImageId;
             return this;
         }
         @CustomType.Setter
-        public Builder databases(List<GetDbSystemsDbSystemDbHomeDatabase> databases) {
-            this.databases = Objects.requireNonNull(databases);
+        public Builder databases(@Nullable List<GetDbSystemsDbSystemDbHomeDatabase> databases) {
+            this.databases = databases;
             return this;
         }
         public Builder databases(GetDbSystemsDbSystemDbHomeDatabase... databases) {
             return databases(List.of(databases));
         }
         @CustomType.Setter
-        public Builder dbHomeLocation(String dbHomeLocation) {
-            this.dbHomeLocation = Objects.requireNonNull(dbHomeLocation);
+        public Builder dbHomeLocation(@Nullable String dbHomeLocation) {
+            this.dbHomeLocation = dbHomeLocation;
             return this;
         }
         @CustomType.Setter
-        public Builder dbVersion(String dbVersion) {
-            this.dbVersion = Objects.requireNonNull(dbVersion);
+        public Builder dbVersion(@Nullable String dbVersion) {
+            this.dbVersion = dbVersion;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder lastPatchHistoryEntryId(String lastPatchHistoryEntryId) {
-            this.lastPatchHistoryEntryId = Objects.requireNonNull(lastPatchHistoryEntryId);
+        public Builder lastPatchHistoryEntryId(@Nullable String lastPatchHistoryEntryId) {
+            this.lastPatchHistoryEntryId = lastPatchHistoryEntryId;
             return this;
         }
         @CustomType.Setter
-        public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+        public Builder lifecycleDetails(@Nullable String lifecycleDetails) {
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         public GetDbSystemsDbSystemDbHome build() {

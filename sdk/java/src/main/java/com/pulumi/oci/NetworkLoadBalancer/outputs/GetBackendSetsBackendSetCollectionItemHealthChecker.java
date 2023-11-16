@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetBackendSetsBackendSetCollectionItemHealthChecker {
@@ -14,123 +16,123 @@ public final class GetBackendSetsBackendSetCollectionItemHealthChecker {
      * @return The interval between health checks, in milliseconds. The default value is 10000 (10 seconds).  Example: `10000`
      * 
      */
-    private Integer intervalInMillis;
+    private @Nullable Integer intervalInMillis;
     /**
      * @return The backend server port against which to run the health check. If the port is not specified, then the network load balancer uses the port information from the `Backend` object. The port must be specified if the backend port is 0.  Example: `8080`
      * 
      */
-    private Integer port;
+    private @Nullable Integer port;
     /**
      * @return The protocol the health check must use; either HTTP or HTTPS, or UDP or TCP.  Example: `HTTP`
      * 
      */
-    private String protocol;
+    private @Nullable String protocol;
     /**
      * @return Base64 encoded pattern to be sent as UDP or TCP health check probe.
      * 
      */
-    private String requestData;
+    private @Nullable String requestData;
     /**
      * @return A regular expression for parsing the response body from the backend server.  Example: `^((?!false).|\s)*$`
      * 
      */
-    private String responseBodyRegex;
+    private @Nullable String responseBodyRegex;
     /**
      * @return Base64 encoded pattern to be validated as UDP or TCP health check probe response.
      * 
      */
-    private String responseData;
+    private @Nullable String responseData;
     /**
      * @return The number of retries to attempt before a backend server is considered &#34;unhealthy&#34;. This number also applies when recovering a server to the &#34;healthy&#34; state. The default value is 3.  Example: `3`
      * 
      */
-    private Integer retries;
+    private @Nullable Integer retries;
     /**
      * @return The status code a healthy backend server should return. If you configure the health check policy to use the HTTP protocol, then you can use common HTTP status codes such as &#34;200&#34;.  Example: `200`
      * 
      */
-    private Integer returnCode;
+    private @Nullable Integer returnCode;
     /**
      * @return The maximum time, in milliseconds, to wait for a reply to a health check. A health check is successful only if a reply returns within this timeout period. The default value is 3000 (3 seconds).  Example: `3000`
      * 
      */
-    private Integer timeoutInMillis;
+    private @Nullable Integer timeoutInMillis;
     /**
      * @return The path against which to run the health check.  Example: `/healthcheck`
      * 
      */
-    private String urlPath;
+    private @Nullable String urlPath;
 
     private GetBackendSetsBackendSetCollectionItemHealthChecker() {}
     /**
      * @return The interval between health checks, in milliseconds. The default value is 10000 (10 seconds).  Example: `10000`
      * 
      */
-    public Integer intervalInMillis() {
-        return this.intervalInMillis;
+    public Optional<Integer> intervalInMillis() {
+        return Optional.ofNullable(this.intervalInMillis);
     }
     /**
      * @return The backend server port against which to run the health check. If the port is not specified, then the network load balancer uses the port information from the `Backend` object. The port must be specified if the backend port is 0.  Example: `8080`
      * 
      */
-    public Integer port() {
-        return this.port;
+    public Optional<Integer> port() {
+        return Optional.ofNullable(this.port);
     }
     /**
      * @return The protocol the health check must use; either HTTP or HTTPS, or UDP or TCP.  Example: `HTTP`
      * 
      */
-    public String protocol() {
-        return this.protocol;
+    public Optional<String> protocol() {
+        return Optional.ofNullable(this.protocol);
     }
     /**
      * @return Base64 encoded pattern to be sent as UDP or TCP health check probe.
      * 
      */
-    public String requestData() {
-        return this.requestData;
+    public Optional<String> requestData() {
+        return Optional.ofNullable(this.requestData);
     }
     /**
      * @return A regular expression for parsing the response body from the backend server.  Example: `^((?!false).|\s)*$`
      * 
      */
-    public String responseBodyRegex() {
-        return this.responseBodyRegex;
+    public Optional<String> responseBodyRegex() {
+        return Optional.ofNullable(this.responseBodyRegex);
     }
     /**
      * @return Base64 encoded pattern to be validated as UDP or TCP health check probe response.
      * 
      */
-    public String responseData() {
-        return this.responseData;
+    public Optional<String> responseData() {
+        return Optional.ofNullable(this.responseData);
     }
     /**
      * @return The number of retries to attempt before a backend server is considered &#34;unhealthy&#34;. This number also applies when recovering a server to the &#34;healthy&#34; state. The default value is 3.  Example: `3`
      * 
      */
-    public Integer retries() {
-        return this.retries;
+    public Optional<Integer> retries() {
+        return Optional.ofNullable(this.retries);
     }
     /**
      * @return The status code a healthy backend server should return. If you configure the health check policy to use the HTTP protocol, then you can use common HTTP status codes such as &#34;200&#34;.  Example: `200`
      * 
      */
-    public Integer returnCode() {
-        return this.returnCode;
+    public Optional<Integer> returnCode() {
+        return Optional.ofNullable(this.returnCode);
     }
     /**
      * @return The maximum time, in milliseconds, to wait for a reply to a health check. A health check is successful only if a reply returns within this timeout period. The default value is 3000 (3 seconds).  Example: `3000`
      * 
      */
-    public Integer timeoutInMillis() {
-        return this.timeoutInMillis;
+    public Optional<Integer> timeoutInMillis() {
+        return Optional.ofNullable(this.timeoutInMillis);
     }
     /**
      * @return The path against which to run the health check.  Example: `/healthcheck`
      * 
      */
-    public String urlPath() {
-        return this.urlPath;
+    public Optional<String> urlPath() {
+        return Optional.ofNullable(this.urlPath);
     }
 
     public static Builder builder() {
@@ -142,16 +144,16 @@ public final class GetBackendSetsBackendSetCollectionItemHealthChecker {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Integer intervalInMillis;
-        private Integer port;
-        private String protocol;
-        private String requestData;
-        private String responseBodyRegex;
-        private String responseData;
-        private Integer retries;
-        private Integer returnCode;
-        private Integer timeoutInMillis;
-        private String urlPath;
+        private @Nullable Integer intervalInMillis;
+        private @Nullable Integer port;
+        private @Nullable String protocol;
+        private @Nullable String requestData;
+        private @Nullable String responseBodyRegex;
+        private @Nullable String responseData;
+        private @Nullable Integer retries;
+        private @Nullable Integer returnCode;
+        private @Nullable Integer timeoutInMillis;
+        private @Nullable String urlPath;
         public Builder() {}
         public Builder(GetBackendSetsBackendSetCollectionItemHealthChecker defaults) {
     	      Objects.requireNonNull(defaults);
@@ -168,53 +170,53 @@ public final class GetBackendSetsBackendSetCollectionItemHealthChecker {
         }
 
         @CustomType.Setter
-        public Builder intervalInMillis(Integer intervalInMillis) {
-            this.intervalInMillis = Objects.requireNonNull(intervalInMillis);
+        public Builder intervalInMillis(@Nullable Integer intervalInMillis) {
+            this.intervalInMillis = intervalInMillis;
             return this;
         }
         @CustomType.Setter
-        public Builder port(Integer port) {
-            this.port = Objects.requireNonNull(port);
+        public Builder port(@Nullable Integer port) {
+            this.port = port;
             return this;
         }
         @CustomType.Setter
-        public Builder protocol(String protocol) {
-            this.protocol = Objects.requireNonNull(protocol);
+        public Builder protocol(@Nullable String protocol) {
+            this.protocol = protocol;
             return this;
         }
         @CustomType.Setter
-        public Builder requestData(String requestData) {
-            this.requestData = Objects.requireNonNull(requestData);
+        public Builder requestData(@Nullable String requestData) {
+            this.requestData = requestData;
             return this;
         }
         @CustomType.Setter
-        public Builder responseBodyRegex(String responseBodyRegex) {
-            this.responseBodyRegex = Objects.requireNonNull(responseBodyRegex);
+        public Builder responseBodyRegex(@Nullable String responseBodyRegex) {
+            this.responseBodyRegex = responseBodyRegex;
             return this;
         }
         @CustomType.Setter
-        public Builder responseData(String responseData) {
-            this.responseData = Objects.requireNonNull(responseData);
+        public Builder responseData(@Nullable String responseData) {
+            this.responseData = responseData;
             return this;
         }
         @CustomType.Setter
-        public Builder retries(Integer retries) {
-            this.retries = Objects.requireNonNull(retries);
+        public Builder retries(@Nullable Integer retries) {
+            this.retries = retries;
             return this;
         }
         @CustomType.Setter
-        public Builder returnCode(Integer returnCode) {
-            this.returnCode = Objects.requireNonNull(returnCode);
+        public Builder returnCode(@Nullable Integer returnCode) {
+            this.returnCode = returnCode;
             return this;
         }
         @CustomType.Setter
-        public Builder timeoutInMillis(Integer timeoutInMillis) {
-            this.timeoutInMillis = Objects.requireNonNull(timeoutInMillis);
+        public Builder timeoutInMillis(@Nullable Integer timeoutInMillis) {
+            this.timeoutInMillis = timeoutInMillis;
             return this;
         }
         @CustomType.Setter
-        public Builder urlPath(String urlPath) {
-            this.urlPath = Objects.requireNonNull(urlPath);
+        public Builder urlPath(@Nullable String urlPath) {
+            this.urlPath = urlPath;
             return this;
         }
         public GetBackendSetsBackendSetCollectionItemHealthChecker build() {

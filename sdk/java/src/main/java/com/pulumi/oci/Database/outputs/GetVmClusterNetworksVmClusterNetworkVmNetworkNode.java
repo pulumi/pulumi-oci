@@ -6,6 +6,8 @@ package com.pulumi.oci.Database.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetVmClusterNetworksVmClusterNetworkVmNetworkNode {
@@ -13,75 +15,75 @@ public final class GetVmClusterNetworksVmClusterNetworkVmNetworkNode {
      * @return The Db server associated with the node.
      * 
      */
-    private String dbServerId;
+    private @Nullable String dbServerId;
     /**
      * @return The node host name.
      * 
      */
-    private String hostname;
+    private @Nullable String hostname;
     /**
      * @return The node IP address.
      * 
      */
-    private String ip;
+    private @Nullable String ip;
     /**
      * @return A filter to return only resources that match the given lifecycle state exactly.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return The node virtual IP (VIP) address.
      * 
      */
-    private String vip;
+    private @Nullable String vip;
     /**
      * @return The node virtual IP (VIP) host name.
      * 
      */
-    private String vipHostname;
+    private @Nullable String vipHostname;
 
     private GetVmClusterNetworksVmClusterNetworkVmNetworkNode() {}
     /**
      * @return The Db server associated with the node.
      * 
      */
-    public String dbServerId() {
-        return this.dbServerId;
+    public Optional<String> dbServerId() {
+        return Optional.ofNullable(this.dbServerId);
     }
     /**
      * @return The node host name.
      * 
      */
-    public String hostname() {
-        return this.hostname;
+    public Optional<String> hostname() {
+        return Optional.ofNullable(this.hostname);
     }
     /**
      * @return The node IP address.
      * 
      */
-    public String ip() {
-        return this.ip;
+    public Optional<String> ip() {
+        return Optional.ofNullable(this.ip);
     }
     /**
      * @return A filter to return only resources that match the given lifecycle state exactly.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return The node virtual IP (VIP) address.
      * 
      */
-    public String vip() {
-        return this.vip;
+    public Optional<String> vip() {
+        return Optional.ofNullable(this.vip);
     }
     /**
      * @return The node virtual IP (VIP) host name.
      * 
      */
-    public String vipHostname() {
-        return this.vipHostname;
+    public Optional<String> vipHostname() {
+        return Optional.ofNullable(this.vipHostname);
     }
 
     public static Builder builder() {
@@ -93,12 +95,12 @@ public final class GetVmClusterNetworksVmClusterNetworkVmNetworkNode {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String dbServerId;
-        private String hostname;
-        private String ip;
-        private String state;
-        private String vip;
-        private String vipHostname;
+        private @Nullable String dbServerId;
+        private @Nullable String hostname;
+        private @Nullable String ip;
+        private @Nullable String state;
+        private @Nullable String vip;
+        private @Nullable String vipHostname;
         public Builder() {}
         public Builder(GetVmClusterNetworksVmClusterNetworkVmNetworkNode defaults) {
     	      Objects.requireNonNull(defaults);
@@ -111,33 +113,33 @@ public final class GetVmClusterNetworksVmClusterNetworkVmNetworkNode {
         }
 
         @CustomType.Setter
-        public Builder dbServerId(String dbServerId) {
-            this.dbServerId = Objects.requireNonNull(dbServerId);
+        public Builder dbServerId(@Nullable String dbServerId) {
+            this.dbServerId = dbServerId;
             return this;
         }
         @CustomType.Setter
-        public Builder hostname(String hostname) {
-            this.hostname = Objects.requireNonNull(hostname);
+        public Builder hostname(@Nullable String hostname) {
+            this.hostname = hostname;
             return this;
         }
         @CustomType.Setter
-        public Builder ip(String ip) {
-            this.ip = Objects.requireNonNull(ip);
+        public Builder ip(@Nullable String ip) {
+            this.ip = ip;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder vip(String vip) {
-            this.vip = Objects.requireNonNull(vip);
+        public Builder vip(@Nullable String vip) {
+            this.vip = vip;
             return this;
         }
         @CustomType.Setter
-        public Builder vipHostname(String vipHostname) {
-            this.vipHostname = Objects.requireNonNull(vipHostname);
+        public Builder vipHostname(@Nullable String vipHostname) {
+            this.vipHostname = vipHostname;
             return this;
         }
         public GetVmClusterNetworksVmClusterNetworkVmNetworkNode build() {

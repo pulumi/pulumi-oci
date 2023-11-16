@@ -88,98 +88,62 @@ class GetControlResult:
 
     @property
     @pulumi.getter(name="approvalRequiredOpActionLists")
-    def approval_required_op_action_lists(self) -> Sequence[str]:
-        """
-        List of operator actions that need explicit approval. Any operator action not in the pre-approved list will require explicit approval. Access requests associated with a resource governed by this operator control will be require explicit approval if the access request contains any operator action in this list.
-        """
+    def approval_required_op_action_lists(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "approval_required_op_action_lists")
 
     @property
     @pulumi.getter(name="approverGroupsLists")
-    def approver_groups_lists(self) -> Sequence[str]:
-        """
-        List of user groups who can approve an access request associated with a target resource under the governance of this operator control.
-        """
+    def approver_groups_lists(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "approver_groups_lists")
 
     @property
     @pulumi.getter(name="approversLists")
-    def approvers_lists(self) -> Sequence[str]:
-        """
-        List of users who can approve an access request associated with a target resource under the governance of this operator control.
-        """
+    def approvers_lists(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "approvers_lists")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The OCID of the compartment that contains the operator control.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace.
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        Description of operator control.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="emailIdLists")
-    def email_id_lists(self) -> Sequence[str]:
-        """
-        List of emailId.
-        """
+    def email_id_lists(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "email_id_lists")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The OCID of the operator control.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="isDefaultOperatorControl")
-    def is_default_operator_control(self) -> bool:
-        """
-        Whether the operator control is a default Operator Control.
-        """
+    def is_default_operator_control(self) -> Optional[bool]:
         return pulumi.get(self, "is_default_operator_control")
 
     @property
     @pulumi.getter(name="isFullyPreApproved")
-    def is_fully_pre_approved(self) -> bool:
-        """
-        Whether all the operator actions have been pre-approved. If yes, all access requests associated with a resource governed by this operator control  will be auto-approved.
-        """
+    def is_fully_pre_approved(self) -> Optional[bool]:
         return pulumi.get(self, "is_fully_pre_approved")
 
     @property
     @pulumi.getter(name="lastModifiedInfo")
-    def last_modified_info(self) -> str:
-        """
-        Description associated with the latest modification of the operator control.
-        """
+    def last_modified_info(self) -> Optional[str]:
         return pulumi.get(self, "last_modified_info")
 
     @property
@@ -189,66 +153,42 @@ class GetControlResult:
 
     @property
     @pulumi.getter(name="operatorControlName")
-    def operator_control_name(self) -> str:
-        """
-        Name of the operator control. The name must be unique.
-        """
+    def operator_control_name(self) -> Optional[str]:
         return pulumi.get(self, "operator_control_name")
 
     @property
     @pulumi.getter(name="preApprovedOpActionLists")
-    def pre_approved_op_action_lists(self) -> Sequence[str]:
-        """
-        List of pre-approved operator actions. Access requests associated with a resource governed by this operator control will be automatically approved if the access request only contain operator actions in the pre-approved list.
-        """
+    def pre_approved_op_action_lists(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "pre_approved_op_action_lists")
 
     @property
     @pulumi.getter(name="resourceType")
-    def resource_type(self) -> str:
-        """
-        resourceType for which the OperatorControl is applicable
-        """
+    def resource_type(self) -> Optional[str]:
         return pulumi.get(self, "resource_type")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current lifecycle state of the operator control.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="systemMessage")
-    def system_message(self) -> str:
-        """
-        System message that would be displayed to the operator users on accessing the target resource under the governance of this operator control.
-        """
+    def system_message(self) -> Optional[str]:
         return pulumi.get(self, "system_message")
 
     @property
     @pulumi.getter(name="timeOfCreation")
-    def time_of_creation(self) -> str:
-        """
-        Time when the operator control was created expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: '2020-05-22T21:10:29.600Z'
-        """
+    def time_of_creation(self) -> Optional[str]:
         return pulumi.get(self, "time_of_creation")
 
     @property
     @pulumi.getter(name="timeOfDeletion")
-    def time_of_deletion(self) -> str:
-        """
-        Time when deleted expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format. Example: '2020-05-22T21:10:29.600Z'. Note a deleted operator control still stays in the system, so that you can still audit operator actions associated with access requests raised on target resources governed by the deleted operator control.
-        """
+    def time_of_deletion(self) -> Optional[str]:
         return pulumi.get(self, "time_of_deletion")
 
     @property
     @pulumi.getter(name="timeOfModification")
-    def time_of_modification(self) -> str:
-        """
-        Time when the operator control was last modified expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: '2020-05-22T21:10:29.600Z'
-        """
+    def time_of_modification(self) -> Optional[str]:
         return pulumi.get(self, "time_of_modification")
 
 
@@ -284,21 +224,7 @@ class AwaitableGetControlResult(GetControlResult):
 def get_control(operator_control_id: Optional[str] = None,
                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetControlResult:
     """
-    This data source provides details about a specific Operator Control resource in Oracle Cloud Infrastructure Operator Access Control service.
-
-    Gets the Operator Control associated with the specified Operator Control ID.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_operator_control = oci.OperatorAccessControl.get_control(operator_control_id=oci_operator_access_control_operator_control["test_operator_control"]["id"])
-    ```
-
-
-    :param str operator_control_id: unique OperatorControl identifier
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['operatorControlId'] = operator_control_id
@@ -333,20 +259,6 @@ def get_control(operator_control_id: Optional[str] = None,
 def get_control_output(operator_control_id: Optional[pulumi.Input[str]] = None,
                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetControlResult]:
     """
-    This data source provides details about a specific Operator Control resource in Oracle Cloud Infrastructure Operator Access Control service.
-
-    Gets the Operator Control associated with the specified Operator Control ID.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_operator_control = oci.OperatorAccessControl.get_control(operator_control_id=oci_operator_access_control_operator_control["test_operator_control"]["id"])
-    ```
-
-
-    :param str operator_control_id: unique OperatorControl identifier
+    Use this data source to access information about an existing resource.
     """
     ...

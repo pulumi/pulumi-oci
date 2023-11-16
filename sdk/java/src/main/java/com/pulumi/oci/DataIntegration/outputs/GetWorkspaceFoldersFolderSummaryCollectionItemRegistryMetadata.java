@@ -9,6 +9,8 @@ import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetWorkspaceFoldersFolderSummaryCollectionItemRegistryMetadata {
@@ -16,63 +18,63 @@ public final class GetWorkspaceFoldersFolderSummaryCollectionItemRegistryMetadat
      * @return Used to filter by the project or the folder object.
      * 
      */
-    private String aggregatorKey;
+    private @Nullable String aggregatorKey;
     /**
      * @return Specifies whether this object is a favorite or not.
      * 
      */
-    private Boolean isFavorite;
+    private @Nullable Boolean isFavorite;
     /**
      * @return The key of the aggregator object.
      * 
      */
-    private String key;
+    private @Nullable String key;
     /**
      * @return Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
      * 
      */
-    private List<String> labels;
+    private @Nullable List<String> labels;
     /**
      * @return The registry version of the object.
      * 
      */
-    private Integer registryVersion;
+    private @Nullable Integer registryVersion;
 
     private GetWorkspaceFoldersFolderSummaryCollectionItemRegistryMetadata() {}
     /**
      * @return Used to filter by the project or the folder object.
      * 
      */
-    public String aggregatorKey() {
-        return this.aggregatorKey;
+    public Optional<String> aggregatorKey() {
+        return Optional.ofNullable(this.aggregatorKey);
     }
     /**
      * @return Specifies whether this object is a favorite or not.
      * 
      */
-    public Boolean isFavorite() {
-        return this.isFavorite;
+    public Optional<Boolean> isFavorite() {
+        return Optional.ofNullable(this.isFavorite);
     }
     /**
      * @return The key of the aggregator object.
      * 
      */
-    public String key() {
-        return this.key;
+    public Optional<String> key() {
+        return Optional.ofNullable(this.key);
     }
     /**
      * @return Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
      * 
      */
     public List<String> labels() {
-        return this.labels;
+        return this.labels == null ? List.of() : this.labels;
     }
     /**
      * @return The registry version of the object.
      * 
      */
-    public Integer registryVersion() {
-        return this.registryVersion;
+    public Optional<Integer> registryVersion() {
+        return Optional.ofNullable(this.registryVersion);
     }
 
     public static Builder builder() {
@@ -84,11 +86,11 @@ public final class GetWorkspaceFoldersFolderSummaryCollectionItemRegistryMetadat
     }
     @CustomType.Builder
     public static final class Builder {
-        private String aggregatorKey;
-        private Boolean isFavorite;
-        private String key;
-        private List<String> labels;
-        private Integer registryVersion;
+        private @Nullable String aggregatorKey;
+        private @Nullable Boolean isFavorite;
+        private @Nullable String key;
+        private @Nullable List<String> labels;
+        private @Nullable Integer registryVersion;
         public Builder() {}
         public Builder(GetWorkspaceFoldersFolderSummaryCollectionItemRegistryMetadata defaults) {
     	      Objects.requireNonNull(defaults);
@@ -100,31 +102,31 @@ public final class GetWorkspaceFoldersFolderSummaryCollectionItemRegistryMetadat
         }
 
         @CustomType.Setter
-        public Builder aggregatorKey(String aggregatorKey) {
-            this.aggregatorKey = Objects.requireNonNull(aggregatorKey);
+        public Builder aggregatorKey(@Nullable String aggregatorKey) {
+            this.aggregatorKey = aggregatorKey;
             return this;
         }
         @CustomType.Setter
-        public Builder isFavorite(Boolean isFavorite) {
-            this.isFavorite = Objects.requireNonNull(isFavorite);
+        public Builder isFavorite(@Nullable Boolean isFavorite) {
+            this.isFavorite = isFavorite;
             return this;
         }
         @CustomType.Setter
-        public Builder key(String key) {
-            this.key = Objects.requireNonNull(key);
+        public Builder key(@Nullable String key) {
+            this.key = key;
             return this;
         }
         @CustomType.Setter
-        public Builder labels(List<String> labels) {
-            this.labels = Objects.requireNonNull(labels);
+        public Builder labels(@Nullable List<String> labels) {
+            this.labels = labels;
             return this;
         }
         public Builder labels(String... labels) {
             return labels(List.of(labels));
         }
         @CustomType.Setter
-        public Builder registryVersion(Integer registryVersion) {
-            this.registryVersion = Objects.requireNonNull(registryVersion);
+        public Builder registryVersion(@Nullable Integer registryVersion) {
+            this.registryVersion = registryVersion;
             return this;
         }
         public GetWorkspaceFoldersFolderSummaryCollectionItemRegistryMetadata build() {

@@ -15,6 +15,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDeploymentResult {
@@ -22,224 +24,224 @@ public final class GetDeploymentResult {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return The Minimum number of OCPUs to be made available for this Deployment.
      * 
      */
-    private Integer cpuCoreCount;
+    private @Nullable Integer cpuCoreCount;
     /**
      * @return Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup being referenced.
      * 
      */
-    private String deploymentBackupId;
+    private @Nullable String deploymentBackupId;
     /**
      * @return Information regarding the deployment diagnostic collection
      * 
      */
-    private List<GetDeploymentDeploymentDiagnosticData> deploymentDiagnosticDatas;
+    private @Nullable List<GetDeploymentDeploymentDiagnosticData> deploymentDiagnosticDatas;
     private String deploymentId;
     /**
      * @return The type of deployment, which can be any one of the Allowed values.  NOTE: Use of the value &#39;OGG&#39; is maintained for backward compatibility purposes.  Its use is discouraged in favor of &#39;DATABASE_ORACLE&#39;.
      * 
      */
-    private String deploymentType;
+    private @Nullable String deploymentType;
     /**
      * @return The URL of a resource.
      * 
      */
-    private String deploymentUrl;
+    private @Nullable String deploymentUrl;
     /**
      * @return Metadata about this specific object.
      * 
      */
-    private String description;
+    private @Nullable String description;
     /**
      * @return An object&#39;s Display Name.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return A three-label Fully Qualified Domain Name (FQDN) for a resource.
      * 
      */
-    private String fqdn;
+    private @Nullable String fqdn;
     /**
      * @return A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Indicates if auto scaling is enabled for the Deployment&#39;s CPU core count.
      * 
      */
-    private Boolean isAutoScalingEnabled;
+    private @Nullable Boolean isAutoScalingEnabled;
     /**
      * @return True if all of the aggregate resources are working correctly.
      * 
      */
-    private Boolean isHealthy;
+    private @Nullable Boolean isHealthy;
     /**
      * @return Indicates if the resource is the the latest available version.
      * 
      */
-    private Boolean isLatestVersion;
+    private @Nullable Boolean isLatestVersion;
     /**
      * @return True if this object is publicly available.
      * 
      */
-    private Boolean isPublic;
+    private @Nullable Boolean isPublic;
     /**
      * @return Indicator will be true if the amount of storage being utilized exceeds the allowable storage utilization limit.  Exceeding the limit may be an indication of a misconfiguration of the deployment&#39;s GoldenGate service.
      * 
      */
-    private Boolean isStorageUtilizationLimitExceeded;
+    private @Nullable Boolean isStorageUtilizationLimitExceeded;
     /**
      * @return The Oracle license model that applies to a Deployment.
      * 
      */
-    private String licenseModel;
+    private @Nullable String licenseModel;
     /**
      * @return Describes the object&#39;s current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
      * 
      */
-    private String lifecycleDetails;
+    private @Nullable String lifecycleDetails;
     /**
      * @return Possible GGS lifecycle sub-states.
      * 
      */
-    private String lifecycleSubState;
+    private @Nullable String lifecycleSubState;
     /**
      * @return Attributes for configuring automatic deployment maintenance.
      * 
      */
-    private List<GetDeploymentMaintenanceConfiguration> maintenanceConfigurations;
+    private @Nullable List<GetDeploymentMaintenanceConfiguration> maintenanceConfigurations;
     /**
      * @return Defines the maintenance window, when automatic actions can be performed.
      * 
      */
-    private List<GetDeploymentMaintenanceWindow> maintenanceWindows;
+    private @Nullable List<GetDeploymentMaintenanceWindow> maintenanceWindows;
     /**
      * @return Type of the next maintenance.
      * 
      */
-    private String nextMaintenanceActionType;
+    private @Nullable String nextMaintenanceActionType;
     /**
      * @return Description of the next maintenance.
      * 
      */
-    private String nextMaintenanceDescription;
+    private @Nullable String nextMaintenanceDescription;
     /**
      * @return An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
      * 
      */
-    private List<String> nsgIds;
+    private @Nullable List<String> nsgIds;
     /**
      * @return Deployment Data for an OggDeployment
      * 
      */
-    private List<GetDeploymentOggData> oggDatas;
+    private @Nullable List<GetDeploymentOggData> oggDatas;
     /**
      * @return The private IP address in the customer&#39;s VCN representing the access point for the associated endpoint service in the GoldenGate service VCN.
      * 
      */
-    private String privateIpAddress;
+    private @Nullable String privateIpAddress;
     /**
      * @return The public IP address representing the access point for the Deployment.
      * 
      */
-    private String publicIpAddress;
+    private @Nullable String publicIpAddress;
     /**
      * @return Possible lifecycle states.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return The amount of storage being utilized (in bytes)
      * 
      */
-    private String storageUtilizationInBytes;
+    private @Nullable String storageUtilizationInBytes;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet being referenced.
      * 
      */
-    private String subnetId;
+    private @Nullable String subnetId;
     /**
      * @return The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
      * 
      */
-    private Map<String,Object> systemTags;
+    private @Nullable Map<String,Object> systemTags;
     /**
      * @return The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The time of next maintenance schedule. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      * 
      */
-    private String timeOfNextMaintenance;
+    private @Nullable String timeOfNextMaintenance;
     /**
      * @return The time until OGG version is supported. After this date has passed OGG version will not be available anymore. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      * 
      */
-    private String timeOggVersionSupportedUntil;
+    private @Nullable String timeOggVersionSupportedUntil;
     /**
      * @return The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      * 
      */
-    private String timeUpdated;
+    private @Nullable String timeUpdated;
     /**
      * @return Note: Deprecated: Use timeOfNextMaintenance instead, or related upgrade records  to check, when deployment will be forced to upgrade to a newer version. Old description: The date the existing version in use will no longer be considered as usable and an upgrade will be required.  This date is typically 6 months after the version was released for use by GGS.  The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      * 
      */
-    private String timeUpgradeRequired;
+    private @Nullable String timeUpgradeRequired;
 
     private GetDeploymentResult() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return The Minimum number of OCPUs to be made available for this Deployment.
      * 
      */
-    public Integer cpuCoreCount() {
-        return this.cpuCoreCount;
+    public Optional<Integer> cpuCoreCount() {
+        return Optional.ofNullable(this.cpuCoreCount);
     }
     /**
      * @return Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup being referenced.
      * 
      */
-    public String deploymentBackupId() {
-        return this.deploymentBackupId;
+    public Optional<String> deploymentBackupId() {
+        return Optional.ofNullable(this.deploymentBackupId);
     }
     /**
      * @return Information regarding the deployment diagnostic collection
      * 
      */
     public List<GetDeploymentDeploymentDiagnosticData> deploymentDiagnosticDatas() {
-        return this.deploymentDiagnosticDatas;
+        return this.deploymentDiagnosticDatas == null ? List.of() : this.deploymentDiagnosticDatas;
     }
     public String deploymentId() {
         return this.deploymentId;
@@ -248,225 +250,225 @@ public final class GetDeploymentResult {
      * @return The type of deployment, which can be any one of the Allowed values.  NOTE: Use of the value &#39;OGG&#39; is maintained for backward compatibility purposes.  Its use is discouraged in favor of &#39;DATABASE_ORACLE&#39;.
      * 
      */
-    public String deploymentType() {
-        return this.deploymentType;
+    public Optional<String> deploymentType() {
+        return Optional.ofNullable(this.deploymentType);
     }
     /**
      * @return The URL of a resource.
      * 
      */
-    public String deploymentUrl() {
-        return this.deploymentUrl;
+    public Optional<String> deploymentUrl() {
+        return Optional.ofNullable(this.deploymentUrl);
     }
     /**
      * @return Metadata about this specific object.
      * 
      */
-    public String description() {
-        return this.description;
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
     /**
      * @return An object&#39;s Display Name.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return A three-label Fully Qualified Domain Name (FQDN) for a resource.
      * 
      */
-    public String fqdn() {
-        return this.fqdn;
+    public Optional<String> fqdn() {
+        return Optional.ofNullable(this.fqdn);
     }
     /**
      * @return A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Indicates if auto scaling is enabled for the Deployment&#39;s CPU core count.
      * 
      */
-    public Boolean isAutoScalingEnabled() {
-        return this.isAutoScalingEnabled;
+    public Optional<Boolean> isAutoScalingEnabled() {
+        return Optional.ofNullable(this.isAutoScalingEnabled);
     }
     /**
      * @return True if all of the aggregate resources are working correctly.
      * 
      */
-    public Boolean isHealthy() {
-        return this.isHealthy;
+    public Optional<Boolean> isHealthy() {
+        return Optional.ofNullable(this.isHealthy);
     }
     /**
      * @return Indicates if the resource is the the latest available version.
      * 
      */
-    public Boolean isLatestVersion() {
-        return this.isLatestVersion;
+    public Optional<Boolean> isLatestVersion() {
+        return Optional.ofNullable(this.isLatestVersion);
     }
     /**
      * @return True if this object is publicly available.
      * 
      */
-    public Boolean isPublic() {
-        return this.isPublic;
+    public Optional<Boolean> isPublic() {
+        return Optional.ofNullable(this.isPublic);
     }
     /**
      * @return Indicator will be true if the amount of storage being utilized exceeds the allowable storage utilization limit.  Exceeding the limit may be an indication of a misconfiguration of the deployment&#39;s GoldenGate service.
      * 
      */
-    public Boolean isStorageUtilizationLimitExceeded() {
-        return this.isStorageUtilizationLimitExceeded;
+    public Optional<Boolean> isStorageUtilizationLimitExceeded() {
+        return Optional.ofNullable(this.isStorageUtilizationLimitExceeded);
     }
     /**
      * @return The Oracle license model that applies to a Deployment.
      * 
      */
-    public String licenseModel() {
-        return this.licenseModel;
+    public Optional<String> licenseModel() {
+        return Optional.ofNullable(this.licenseModel);
     }
     /**
      * @return Describes the object&#39;s current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
      * 
      */
-    public String lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Optional<String> lifecycleDetails() {
+        return Optional.ofNullable(this.lifecycleDetails);
     }
     /**
      * @return Possible GGS lifecycle sub-states.
      * 
      */
-    public String lifecycleSubState() {
-        return this.lifecycleSubState;
+    public Optional<String> lifecycleSubState() {
+        return Optional.ofNullable(this.lifecycleSubState);
     }
     /**
      * @return Attributes for configuring automatic deployment maintenance.
      * 
      */
     public List<GetDeploymentMaintenanceConfiguration> maintenanceConfigurations() {
-        return this.maintenanceConfigurations;
+        return this.maintenanceConfigurations == null ? List.of() : this.maintenanceConfigurations;
     }
     /**
      * @return Defines the maintenance window, when automatic actions can be performed.
      * 
      */
     public List<GetDeploymentMaintenanceWindow> maintenanceWindows() {
-        return this.maintenanceWindows;
+        return this.maintenanceWindows == null ? List.of() : this.maintenanceWindows;
     }
     /**
      * @return Type of the next maintenance.
      * 
      */
-    public String nextMaintenanceActionType() {
-        return this.nextMaintenanceActionType;
+    public Optional<String> nextMaintenanceActionType() {
+        return Optional.ofNullable(this.nextMaintenanceActionType);
     }
     /**
      * @return Description of the next maintenance.
      * 
      */
-    public String nextMaintenanceDescription() {
-        return this.nextMaintenanceDescription;
+    public Optional<String> nextMaintenanceDescription() {
+        return Optional.ofNullable(this.nextMaintenanceDescription);
     }
     /**
      * @return An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
      * 
      */
     public List<String> nsgIds() {
-        return this.nsgIds;
+        return this.nsgIds == null ? List.of() : this.nsgIds;
     }
     /**
      * @return Deployment Data for an OggDeployment
      * 
      */
     public List<GetDeploymentOggData> oggDatas() {
-        return this.oggDatas;
+        return this.oggDatas == null ? List.of() : this.oggDatas;
     }
     /**
      * @return The private IP address in the customer&#39;s VCN representing the access point for the associated endpoint service in the GoldenGate service VCN.
      * 
      */
-    public String privateIpAddress() {
-        return this.privateIpAddress;
+    public Optional<String> privateIpAddress() {
+        return Optional.ofNullable(this.privateIpAddress);
     }
     /**
      * @return The public IP address representing the access point for the Deployment.
      * 
      */
-    public String publicIpAddress() {
-        return this.publicIpAddress;
+    public Optional<String> publicIpAddress() {
+        return Optional.ofNullable(this.publicIpAddress);
     }
     /**
      * @return Possible lifecycle states.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return The amount of storage being utilized (in bytes)
      * 
      */
-    public String storageUtilizationInBytes() {
-        return this.storageUtilizationInBytes;
+    public Optional<String> storageUtilizationInBytes() {
+        return Optional.ofNullable(this.storageUtilizationInBytes);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet being referenced.
      * 
      */
-    public String subnetId() {
-        return this.subnetId;
+    public Optional<String> subnetId() {
+        return Optional.ofNullable(this.subnetId);
     }
     /**
      * @return The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
      * 
      */
     public Map<String,Object> systemTags() {
-        return this.systemTags;
+        return this.systemTags == null ? Map.of() : this.systemTags;
     }
     /**
      * @return The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return The time of next maintenance schedule. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      * 
      */
-    public String timeOfNextMaintenance() {
-        return this.timeOfNextMaintenance;
+    public Optional<String> timeOfNextMaintenance() {
+        return Optional.ofNullable(this.timeOfNextMaintenance);
     }
     /**
      * @return The time until OGG version is supported. After this date has passed OGG version will not be available anymore. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      * 
      */
-    public String timeOggVersionSupportedUntil() {
-        return this.timeOggVersionSupportedUntil;
+    public Optional<String> timeOggVersionSupportedUntil() {
+        return Optional.ofNullable(this.timeOggVersionSupportedUntil);
     }
     /**
      * @return The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      * 
      */
-    public String timeUpdated() {
-        return this.timeUpdated;
+    public Optional<String> timeUpdated() {
+        return Optional.ofNullable(this.timeUpdated);
     }
     /**
      * @return Note: Deprecated: Use timeOfNextMaintenance instead, or related upgrade records  to check, when deployment will be forced to upgrade to a newer version. Old description: The date the existing version in use will no longer be considered as usable and an upgrade will be required.  This date is typically 6 months after the version was released for use by GGS.  The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      * 
      */
-    public String timeUpgradeRequired() {
-        return this.timeUpgradeRequired;
+    public Optional<String> timeUpgradeRequired() {
+        return Optional.ofNullable(this.timeUpgradeRequired);
     }
 
     public static Builder builder() {
@@ -478,44 +480,44 @@ public final class GetDeploymentResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String compartmentId;
-        private Integer cpuCoreCount;
-        private Map<String,Object> definedTags;
-        private String deploymentBackupId;
-        private List<GetDeploymentDeploymentDiagnosticData> deploymentDiagnosticDatas;
+        private @Nullable String compartmentId;
+        private @Nullable Integer cpuCoreCount;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String deploymentBackupId;
+        private @Nullable List<GetDeploymentDeploymentDiagnosticData> deploymentDiagnosticDatas;
         private String deploymentId;
-        private String deploymentType;
-        private String deploymentUrl;
-        private String description;
-        private String displayName;
-        private String fqdn;
-        private Map<String,Object> freeformTags;
-        private String id;
-        private Boolean isAutoScalingEnabled;
-        private Boolean isHealthy;
-        private Boolean isLatestVersion;
-        private Boolean isPublic;
-        private Boolean isStorageUtilizationLimitExceeded;
-        private String licenseModel;
-        private String lifecycleDetails;
-        private String lifecycleSubState;
-        private List<GetDeploymentMaintenanceConfiguration> maintenanceConfigurations;
-        private List<GetDeploymentMaintenanceWindow> maintenanceWindows;
-        private String nextMaintenanceActionType;
-        private String nextMaintenanceDescription;
-        private List<String> nsgIds;
-        private List<GetDeploymentOggData> oggDatas;
-        private String privateIpAddress;
-        private String publicIpAddress;
-        private String state;
-        private String storageUtilizationInBytes;
-        private String subnetId;
-        private Map<String,Object> systemTags;
-        private String timeCreated;
-        private String timeOfNextMaintenance;
-        private String timeOggVersionSupportedUntil;
-        private String timeUpdated;
-        private String timeUpgradeRequired;
+        private @Nullable String deploymentType;
+        private @Nullable String deploymentUrl;
+        private @Nullable String description;
+        private @Nullable String displayName;
+        private @Nullable String fqdn;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String id;
+        private @Nullable Boolean isAutoScalingEnabled;
+        private @Nullable Boolean isHealthy;
+        private @Nullable Boolean isLatestVersion;
+        private @Nullable Boolean isPublic;
+        private @Nullable Boolean isStorageUtilizationLimitExceeded;
+        private @Nullable String licenseModel;
+        private @Nullable String lifecycleDetails;
+        private @Nullable String lifecycleSubState;
+        private @Nullable List<GetDeploymentMaintenanceConfiguration> maintenanceConfigurations;
+        private @Nullable List<GetDeploymentMaintenanceWindow> maintenanceWindows;
+        private @Nullable String nextMaintenanceActionType;
+        private @Nullable String nextMaintenanceDescription;
+        private @Nullable List<String> nsgIds;
+        private @Nullable List<GetDeploymentOggData> oggDatas;
+        private @Nullable String privateIpAddress;
+        private @Nullable String publicIpAddress;
+        private @Nullable String state;
+        private @Nullable String storageUtilizationInBytes;
+        private @Nullable String subnetId;
+        private @Nullable Map<String,Object> systemTags;
+        private @Nullable String timeCreated;
+        private @Nullable String timeOfNextMaintenance;
+        private @Nullable String timeOggVersionSupportedUntil;
+        private @Nullable String timeUpdated;
+        private @Nullable String timeUpgradeRequired;
         public Builder() {}
         public Builder(GetDeploymentResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -560,28 +562,28 @@ public final class GetDeploymentResult {
         }
 
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder cpuCoreCount(Integer cpuCoreCount) {
-            this.cpuCoreCount = Objects.requireNonNull(cpuCoreCount);
+        public Builder cpuCoreCount(@Nullable Integer cpuCoreCount) {
+            this.cpuCoreCount = cpuCoreCount;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder deploymentBackupId(String deploymentBackupId) {
-            this.deploymentBackupId = Objects.requireNonNull(deploymentBackupId);
+        public Builder deploymentBackupId(@Nullable String deploymentBackupId) {
+            this.deploymentBackupId = deploymentBackupId;
             return this;
         }
         @CustomType.Setter
-        public Builder deploymentDiagnosticDatas(List<GetDeploymentDeploymentDiagnosticData> deploymentDiagnosticDatas) {
-            this.deploymentDiagnosticDatas = Objects.requireNonNull(deploymentDiagnosticDatas);
+        public Builder deploymentDiagnosticDatas(@Nullable List<GetDeploymentDeploymentDiagnosticData> deploymentDiagnosticDatas) {
+            this.deploymentDiagnosticDatas = deploymentDiagnosticDatas;
             return this;
         }
         public Builder deploymentDiagnosticDatas(GetDeploymentDeploymentDiagnosticData... deploymentDiagnosticDatas) {
@@ -593,175 +595,175 @@ public final class GetDeploymentResult {
             return this;
         }
         @CustomType.Setter
-        public Builder deploymentType(String deploymentType) {
-            this.deploymentType = Objects.requireNonNull(deploymentType);
+        public Builder deploymentType(@Nullable String deploymentType) {
+            this.deploymentType = deploymentType;
             return this;
         }
         @CustomType.Setter
-        public Builder deploymentUrl(String deploymentUrl) {
-            this.deploymentUrl = Objects.requireNonNull(deploymentUrl);
+        public Builder deploymentUrl(@Nullable String deploymentUrl) {
+            this.deploymentUrl = deploymentUrl;
             return this;
         }
         @CustomType.Setter
-        public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+        public Builder description(@Nullable String description) {
+            this.description = description;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder fqdn(String fqdn) {
-            this.fqdn = Objects.requireNonNull(fqdn);
+        public Builder fqdn(@Nullable String fqdn) {
+            this.fqdn = fqdn;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder isAutoScalingEnabled(Boolean isAutoScalingEnabled) {
-            this.isAutoScalingEnabled = Objects.requireNonNull(isAutoScalingEnabled);
+        public Builder isAutoScalingEnabled(@Nullable Boolean isAutoScalingEnabled) {
+            this.isAutoScalingEnabled = isAutoScalingEnabled;
             return this;
         }
         @CustomType.Setter
-        public Builder isHealthy(Boolean isHealthy) {
-            this.isHealthy = Objects.requireNonNull(isHealthy);
+        public Builder isHealthy(@Nullable Boolean isHealthy) {
+            this.isHealthy = isHealthy;
             return this;
         }
         @CustomType.Setter
-        public Builder isLatestVersion(Boolean isLatestVersion) {
-            this.isLatestVersion = Objects.requireNonNull(isLatestVersion);
+        public Builder isLatestVersion(@Nullable Boolean isLatestVersion) {
+            this.isLatestVersion = isLatestVersion;
             return this;
         }
         @CustomType.Setter
-        public Builder isPublic(Boolean isPublic) {
-            this.isPublic = Objects.requireNonNull(isPublic);
+        public Builder isPublic(@Nullable Boolean isPublic) {
+            this.isPublic = isPublic;
             return this;
         }
         @CustomType.Setter
-        public Builder isStorageUtilizationLimitExceeded(Boolean isStorageUtilizationLimitExceeded) {
-            this.isStorageUtilizationLimitExceeded = Objects.requireNonNull(isStorageUtilizationLimitExceeded);
+        public Builder isStorageUtilizationLimitExceeded(@Nullable Boolean isStorageUtilizationLimitExceeded) {
+            this.isStorageUtilizationLimitExceeded = isStorageUtilizationLimitExceeded;
             return this;
         }
         @CustomType.Setter
-        public Builder licenseModel(String licenseModel) {
-            this.licenseModel = Objects.requireNonNull(licenseModel);
+        public Builder licenseModel(@Nullable String licenseModel) {
+            this.licenseModel = licenseModel;
             return this;
         }
         @CustomType.Setter
-        public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+        public Builder lifecycleDetails(@Nullable String lifecycleDetails) {
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
-        public Builder lifecycleSubState(String lifecycleSubState) {
-            this.lifecycleSubState = Objects.requireNonNull(lifecycleSubState);
+        public Builder lifecycleSubState(@Nullable String lifecycleSubState) {
+            this.lifecycleSubState = lifecycleSubState;
             return this;
         }
         @CustomType.Setter
-        public Builder maintenanceConfigurations(List<GetDeploymentMaintenanceConfiguration> maintenanceConfigurations) {
-            this.maintenanceConfigurations = Objects.requireNonNull(maintenanceConfigurations);
+        public Builder maintenanceConfigurations(@Nullable List<GetDeploymentMaintenanceConfiguration> maintenanceConfigurations) {
+            this.maintenanceConfigurations = maintenanceConfigurations;
             return this;
         }
         public Builder maintenanceConfigurations(GetDeploymentMaintenanceConfiguration... maintenanceConfigurations) {
             return maintenanceConfigurations(List.of(maintenanceConfigurations));
         }
         @CustomType.Setter
-        public Builder maintenanceWindows(List<GetDeploymentMaintenanceWindow> maintenanceWindows) {
-            this.maintenanceWindows = Objects.requireNonNull(maintenanceWindows);
+        public Builder maintenanceWindows(@Nullable List<GetDeploymentMaintenanceWindow> maintenanceWindows) {
+            this.maintenanceWindows = maintenanceWindows;
             return this;
         }
         public Builder maintenanceWindows(GetDeploymentMaintenanceWindow... maintenanceWindows) {
             return maintenanceWindows(List.of(maintenanceWindows));
         }
         @CustomType.Setter
-        public Builder nextMaintenanceActionType(String nextMaintenanceActionType) {
-            this.nextMaintenanceActionType = Objects.requireNonNull(nextMaintenanceActionType);
+        public Builder nextMaintenanceActionType(@Nullable String nextMaintenanceActionType) {
+            this.nextMaintenanceActionType = nextMaintenanceActionType;
             return this;
         }
         @CustomType.Setter
-        public Builder nextMaintenanceDescription(String nextMaintenanceDescription) {
-            this.nextMaintenanceDescription = Objects.requireNonNull(nextMaintenanceDescription);
+        public Builder nextMaintenanceDescription(@Nullable String nextMaintenanceDescription) {
+            this.nextMaintenanceDescription = nextMaintenanceDescription;
             return this;
         }
         @CustomType.Setter
-        public Builder nsgIds(List<String> nsgIds) {
-            this.nsgIds = Objects.requireNonNull(nsgIds);
+        public Builder nsgIds(@Nullable List<String> nsgIds) {
+            this.nsgIds = nsgIds;
             return this;
         }
         public Builder nsgIds(String... nsgIds) {
             return nsgIds(List.of(nsgIds));
         }
         @CustomType.Setter
-        public Builder oggDatas(List<GetDeploymentOggData> oggDatas) {
-            this.oggDatas = Objects.requireNonNull(oggDatas);
+        public Builder oggDatas(@Nullable List<GetDeploymentOggData> oggDatas) {
+            this.oggDatas = oggDatas;
             return this;
         }
         public Builder oggDatas(GetDeploymentOggData... oggDatas) {
             return oggDatas(List.of(oggDatas));
         }
         @CustomType.Setter
-        public Builder privateIpAddress(String privateIpAddress) {
-            this.privateIpAddress = Objects.requireNonNull(privateIpAddress);
+        public Builder privateIpAddress(@Nullable String privateIpAddress) {
+            this.privateIpAddress = privateIpAddress;
             return this;
         }
         @CustomType.Setter
-        public Builder publicIpAddress(String publicIpAddress) {
-            this.publicIpAddress = Objects.requireNonNull(publicIpAddress);
+        public Builder publicIpAddress(@Nullable String publicIpAddress) {
+            this.publicIpAddress = publicIpAddress;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder storageUtilizationInBytes(String storageUtilizationInBytes) {
-            this.storageUtilizationInBytes = Objects.requireNonNull(storageUtilizationInBytes);
+        public Builder storageUtilizationInBytes(@Nullable String storageUtilizationInBytes) {
+            this.storageUtilizationInBytes = storageUtilizationInBytes;
             return this;
         }
         @CustomType.Setter
-        public Builder subnetId(String subnetId) {
-            this.subnetId = Objects.requireNonNull(subnetId);
+        public Builder subnetId(@Nullable String subnetId) {
+            this.subnetId = subnetId;
             return this;
         }
         @CustomType.Setter
-        public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+        public Builder systemTags(@Nullable Map<String,Object> systemTags) {
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeOfNextMaintenance(String timeOfNextMaintenance) {
-            this.timeOfNextMaintenance = Objects.requireNonNull(timeOfNextMaintenance);
+        public Builder timeOfNextMaintenance(@Nullable String timeOfNextMaintenance) {
+            this.timeOfNextMaintenance = timeOfNextMaintenance;
             return this;
         }
         @CustomType.Setter
-        public Builder timeOggVersionSupportedUntil(String timeOggVersionSupportedUntil) {
-            this.timeOggVersionSupportedUntil = Objects.requireNonNull(timeOggVersionSupportedUntil);
+        public Builder timeOggVersionSupportedUntil(@Nullable String timeOggVersionSupportedUntil) {
+            this.timeOggVersionSupportedUntil = timeOggVersionSupportedUntil;
             return this;
         }
         @CustomType.Setter
-        public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+        public Builder timeUpdated(@Nullable String timeUpdated) {
+            this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeUpgradeRequired(String timeUpgradeRequired) {
-            this.timeUpgradeRequired = Objects.requireNonNull(timeUpgradeRequired);
+        public Builder timeUpgradeRequired(@Nullable String timeUpgradeRequired) {
+            this.timeUpgradeRequired = timeUpgradeRequired;
             return this;
         }
         public GetDeploymentResult build() {

@@ -16,17 +16,17 @@ namespace Pulumi.Oci.ApmSynthetics.Outputs
         /// <summary>
         /// Content of the private key file.
         /// </summary>
-        public readonly string Content;
+        public readonly string? Content;
         /// <summary>
         /// Name of the private key file.
         /// </summary>
-        public readonly string FileName;
+        public readonly string? FileName;
 
         [OutputConstructor]
         private GetMonitorConfigurationClientCertificateDetailClientCertificateResult(
-            string content,
+            string? content,
 
-            string fileName)
+            string? fileName)
         {
             Content = content;
             FileName = fileName;

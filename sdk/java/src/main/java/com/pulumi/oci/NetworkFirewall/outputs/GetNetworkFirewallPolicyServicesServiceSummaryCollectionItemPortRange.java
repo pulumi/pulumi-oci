@@ -6,6 +6,8 @@ package com.pulumi.oci.NetworkFirewall.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.Integer;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetNetworkFirewallPolicyServicesServiceSummaryCollectionItemPortRange {
@@ -13,7 +15,7 @@ public final class GetNetworkFirewallPolicyServicesServiceSummaryCollectionItemP
      * @return The maximum port in the range (inclusive), which may be absent for a single-port range.
      * 
      */
-    private Integer maximumPort;
+    private @Nullable Integer maximumPort;
     /**
      * @return The minimum port in the range (inclusive), or the sole port of a single-port range.
      * 
@@ -25,8 +27,8 @@ public final class GetNetworkFirewallPolicyServicesServiceSummaryCollectionItemP
      * @return The maximum port in the range (inclusive), which may be absent for a single-port range.
      * 
      */
-    public Integer maximumPort() {
-        return this.maximumPort;
+    public Optional<Integer> maximumPort() {
+        return Optional.ofNullable(this.maximumPort);
     }
     /**
      * @return The minimum port in the range (inclusive), or the sole port of a single-port range.
@@ -45,7 +47,7 @@ public final class GetNetworkFirewallPolicyServicesServiceSummaryCollectionItemP
     }
     @CustomType.Builder
     public static final class Builder {
-        private Integer maximumPort;
+        private @Nullable Integer maximumPort;
         private Integer minimumPort;
         public Builder() {}
         public Builder(GetNetworkFirewallPolicyServicesServiceSummaryCollectionItemPortRange defaults) {
@@ -55,8 +57,8 @@ public final class GetNetworkFirewallPolicyServicesServiceSummaryCollectionItemP
         }
 
         @CustomType.Setter
-        public Builder maximumPort(Integer maximumPort) {
-            this.maximumPort = Objects.requireNonNull(maximumPort);
+        public Builder maximumPort(@Nullable Integer maximumPort) {
+            this.maximumPort = maximumPort;
             return this;
         }
         @CustomType.Setter

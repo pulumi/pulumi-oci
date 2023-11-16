@@ -16,77 +16,77 @@ namespace Pulumi.Oci.Core.Outputs
         /// <summary>
         /// Whether virtualization instructions are available.
         /// </summary>
-        public readonly bool AreVirtualInstructionsEnabled;
+        public readonly bool? AreVirtualInstructionsEnabled;
         /// <summary>
         /// Instance Platform Configuration Configuration Map for flexible setting input.
         /// </summary>
-        public readonly ImmutableDictionary<string, object> ConfigMap;
+        public readonly ImmutableDictionary<string, object>? ConfigMap;
         /// <summary>
         /// Whether the Access Control Service is enabled on the instance. When enabled, the platform can enforce PCIe device isolation, required for VFIO device passthrough.
         /// </summary>
-        public readonly bool IsAccessControlServiceEnabled;
+        public readonly bool? IsAccessControlServiceEnabled;
         /// <summary>
         /// Whether the input-output memory management unit is enabled.
         /// </summary>
-        public readonly bool IsInputOutputMemoryManagementUnitEnabled;
+        public readonly bool? IsInputOutputMemoryManagementUnitEnabled;
         /// <summary>
         /// Whether the Measured Boot is to be enabled on the instance
         /// </summary>
-        public readonly bool IsMeasuredBootEnabled;
+        public readonly bool? IsMeasuredBootEnabled;
         /// <summary>
         /// Whether the instance is a confidential instance. If this value is `true`, the instance is a confidential instance. The default value is `false`.
         /// </summary>
-        public readonly bool IsMemoryEncryptionEnabled;
+        public readonly bool? IsMemoryEncryptionEnabled;
         /// <summary>
         /// Whether the Secure Boot is to be enabled on the instance.
         /// </summary>
-        public readonly bool IsSecureBootEnabled;
+        public readonly bool? IsSecureBootEnabled;
         /// <summary>
         /// Whether symmetric multi-threading is enabled on the instance.
         /// </summary>
-        public readonly bool IsSymmetricMultiThreadingEnabled;
+        public readonly bool? IsSymmetricMultiThreadingEnabled;
         /// <summary>
         /// Whether the Trusted Platform Module (TPM) is to be enabled on the instance.
         /// </summary>
-        public readonly bool IsTrustedPlatformModuleEnabled;
+        public readonly bool? IsTrustedPlatformModuleEnabled;
         /// <summary>
         /// The number of NUMA nodes per socket (NPS).
         /// </summary>
-        public readonly string NumaNodesPerSocket;
+        public readonly string? NumaNodesPerSocket;
         /// <summary>
         /// The percentage of cores enabled.
         /// </summary>
-        public readonly int PercentageOfCoresEnabled;
+        public readonly int? PercentageOfCoresEnabled;
         /// <summary>
         /// (Required) The type of action to run when the instance is interrupted for eviction.
         /// </summary>
-        public readonly string Type;
+        public readonly string? Type;
 
         [OutputConstructor]
         private GetInstancePlatformConfigResult(
-            bool areVirtualInstructionsEnabled,
+            bool? areVirtualInstructionsEnabled,
 
-            ImmutableDictionary<string, object> configMap,
+            ImmutableDictionary<string, object>? configMap,
 
-            bool isAccessControlServiceEnabled,
+            bool? isAccessControlServiceEnabled,
 
-            bool isInputOutputMemoryManagementUnitEnabled,
+            bool? isInputOutputMemoryManagementUnitEnabled,
 
-            bool isMeasuredBootEnabled,
+            bool? isMeasuredBootEnabled,
 
-            bool isMemoryEncryptionEnabled,
+            bool? isMemoryEncryptionEnabled,
 
-            bool isSecureBootEnabled,
+            bool? isSecureBootEnabled,
 
-            bool isSymmetricMultiThreadingEnabled,
+            bool? isSymmetricMultiThreadingEnabled,
 
-            bool isTrustedPlatformModuleEnabled,
+            bool? isTrustedPlatformModuleEnabled,
 
-            string numaNodesPerSocket,
+            string? numaNodesPerSocket,
 
-            int percentageOfCoresEnabled,
+            int? percentageOfCoresEnabled,
 
-            string type)
+            string? type)
         {
             AreVirtualInstructionsEnabled = areVirtualInstructionsEnabled;
             ConfigMap = configMap;

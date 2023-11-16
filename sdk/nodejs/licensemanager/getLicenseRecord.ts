@@ -45,76 +45,76 @@ export interface GetLicenseRecordResult {
     /**
      * The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) where the license record is created.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * The license record display name. Avoid entering confidential information.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * The license record end date in [RFC 3339](https://tools.ietf.org/html/rfc3339) date format. Example: `2018-09-12`
      */
-    readonly expirationDate: string;
+    readonly expirationDate?: string;
     /**
      * Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * The license record [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Specifies if the license record term is perpertual.
      */
-    readonly isPerpetual: boolean;
+    readonly isPerpetual?: boolean;
     /**
      * Specifies if the license count is unlimited.
      */
-    readonly isUnlimited: boolean;
+    readonly isUnlimited?: boolean;
     /**
      * The number of license units added by the user for the given license record. Default 1
      */
-    readonly licenseCount: number;
+    readonly licenseCount?: number;
     readonly licenseRecordId: string;
     /**
      * The product license unit.
      */
-    readonly licenseUnit: string;
+    readonly licenseUnit?: string;
     /**
      * The license record product ID.
      */
-    readonly productId: string;
+    readonly productId?: string;
     /**
      * The product license name with which the license record is associated.
      */
-    readonly productLicense: string;
+    readonly productLicense?: string;
     /**
      * The product license [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) with which the license record is associated.
      */
-    readonly productLicenseId: string;
+    readonly productLicenseId?: string;
     /**
      * The current license record state.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * The license record support end date in [RFC 3339](https://tools.ietf.org/html/rfc3339) date format. Example: `2018-09-12`
      */
-    readonly supportEndDate: string;
+    readonly supportEndDate?: string;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    readonly systemTags: {[key: string]: any};
+    readonly systemTags?: {[key: string]: any};
     /**
      * The time the license record was created. An [RFC 3339](https://tools.ietf.org/html/rfc3339)-formatted datetime string.
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The time the license record was updated. An [RFC 3339](https://tools.ietf.org/html/rfc3339)-formatted datetime string.
      */
-    readonly timeUpdated: string;
+    readonly timeUpdated?: string;
 }
 /**
  * This data source provides details about a specific License Record resource in Oracle Cloud Infrastructure License Manager service.

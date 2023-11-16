@@ -8,6 +8,7 @@ import com.pulumi.oci.DatabaseMigration.outputs.GetMigrationDataTransferMediumDe
 import com.pulumi.oci.DatabaseMigration.outputs.GetMigrationDataTransferMediumDetailObjectStorageDetail;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetMigrationDataTransferMediumDetail {
@@ -15,12 +16,12 @@ public final class GetMigrationDataTransferMediumDetail {
      * @return Optional details for creating a network database link from Oracle Cloud Infrastructure database to on-premise database.
      * 
      */
-    private List<GetMigrationDataTransferMediumDetailDatabaseLinkDetail> databaseLinkDetails;
+    private @Nullable List<GetMigrationDataTransferMediumDetailDatabaseLinkDetail> databaseLinkDetails;
     /**
      * @return In lieu of a network database link, Oracle Cloud Infrastructure Object Storage bucket will be used to store Data Pump dump files for the migration. Additionally, it can be specified alongside a database link data transfer medium.
      * 
      */
-    private List<GetMigrationDataTransferMediumDetailObjectStorageDetail> objectStorageDetails;
+    private @Nullable List<GetMigrationDataTransferMediumDetailObjectStorageDetail> objectStorageDetails;
 
     private GetMigrationDataTransferMediumDetail() {}
     /**
@@ -28,14 +29,14 @@ public final class GetMigrationDataTransferMediumDetail {
      * 
      */
     public List<GetMigrationDataTransferMediumDetailDatabaseLinkDetail> databaseLinkDetails() {
-        return this.databaseLinkDetails;
+        return this.databaseLinkDetails == null ? List.of() : this.databaseLinkDetails;
     }
     /**
      * @return In lieu of a network database link, Oracle Cloud Infrastructure Object Storage bucket will be used to store Data Pump dump files for the migration. Additionally, it can be specified alongside a database link data transfer medium.
      * 
      */
     public List<GetMigrationDataTransferMediumDetailObjectStorageDetail> objectStorageDetails() {
-        return this.objectStorageDetails;
+        return this.objectStorageDetails == null ? List.of() : this.objectStorageDetails;
     }
 
     public static Builder builder() {
@@ -47,8 +48,8 @@ public final class GetMigrationDataTransferMediumDetail {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetMigrationDataTransferMediumDetailDatabaseLinkDetail> databaseLinkDetails;
-        private List<GetMigrationDataTransferMediumDetailObjectStorageDetail> objectStorageDetails;
+        private @Nullable List<GetMigrationDataTransferMediumDetailDatabaseLinkDetail> databaseLinkDetails;
+        private @Nullable List<GetMigrationDataTransferMediumDetailObjectStorageDetail> objectStorageDetails;
         public Builder() {}
         public Builder(GetMigrationDataTransferMediumDetail defaults) {
     	      Objects.requireNonNull(defaults);
@@ -57,16 +58,16 @@ public final class GetMigrationDataTransferMediumDetail {
         }
 
         @CustomType.Setter
-        public Builder databaseLinkDetails(List<GetMigrationDataTransferMediumDetailDatabaseLinkDetail> databaseLinkDetails) {
-            this.databaseLinkDetails = Objects.requireNonNull(databaseLinkDetails);
+        public Builder databaseLinkDetails(@Nullable List<GetMigrationDataTransferMediumDetailDatabaseLinkDetail> databaseLinkDetails) {
+            this.databaseLinkDetails = databaseLinkDetails;
             return this;
         }
         public Builder databaseLinkDetails(GetMigrationDataTransferMediumDetailDatabaseLinkDetail... databaseLinkDetails) {
             return databaseLinkDetails(List.of(databaseLinkDetails));
         }
         @CustomType.Setter
-        public Builder objectStorageDetails(List<GetMigrationDataTransferMediumDetailObjectStorageDetail> objectStorageDetails) {
-            this.objectStorageDetails = Objects.requireNonNull(objectStorageDetails);
+        public Builder objectStorageDetails(@Nullable List<GetMigrationDataTransferMediumDetailObjectStorageDetail> objectStorageDetails) {
+            this.objectStorageDetails = objectStorageDetails;
             return this;
         }
         public Builder objectStorageDetails(GetMigrationDataTransferMediumDetailObjectStorageDetail... objectStorageDetails) {

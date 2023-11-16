@@ -57,76 +57,76 @@ export interface GetTableResult {
     /**
      * A DDL statement representing the schema.
      */
-    readonly ddlStatement: string;
+    readonly ddlStatement?: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace": {"bar-key": "value"}}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * Unique identifier that is immutable.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * True if this table can be reclaimed after an idle period.
      */
-    readonly isAutoReclaimable: boolean;
+    readonly isAutoReclaimable?: boolean;
     /**
      * True if this table is currently a member of a replication set.
      */
-    readonly isMultiRegion: boolean;
+    readonly isMultiRegion?: boolean;
     /**
      * A message describing the current state in more detail.
      */
-    readonly lifecycleDetails: string;
+    readonly lifecycleDetails?: string;
     /**
      * If this table is in a replication set, this value represents the progress of the initialization of the replica's data.  A value of 100 indicates that initialization has completed.
      */
-    readonly localReplicaInitializationInPercent: number;
+    readonly localReplicaInitializationInPercent?: number;
     /**
      * The column name.
      */
-    readonly name: string;
+    readonly name?: string;
     /**
      * An array of Replica listing this table's replicas, if any
      */
-    readonly replicas: outputs.Nosql.GetTableReplica[];
+    readonly replicas?: outputs.Nosql.GetTableReplica[];
     /**
      * The current state of this table's schema. Available states are MUTABLE - The schema can be changed. The table is not eligible for replication. FROZEN - The schema is immutable. The table is eligible for replication.
      */
-    readonly schemaState: string;
+    readonly schemaState?: string;
     /**
      * The table schema information as a JSON object.
      */
-    readonly schemas: outputs.Nosql.GetTableSchema[];
+    readonly schemas?: outputs.Nosql.GetTableSchema[];
     /**
      * The state of a table.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * Read-only system tag. These predefined keys are scoped to namespaces.  At present the only supported namespace is `"orcl-cloud"`; and the only key in that namespace is `"free-tier-retained"`. Example: `{"orcl-cloud"": {"free-tier-retained": "true"}}`
      */
-    readonly systemTags: {[key: string]: any};
+    readonly systemTags?: {[key: string]: any};
     /**
      * Throughput and storage limits configuration of a table.
      */
-    readonly tableLimits: outputs.Nosql.GetTableTableLimit[];
+    readonly tableLimits?: outputs.Nosql.GetTableTableLimit[];
     readonly tableNameOrId: string;
     /**
      * The time the the table was created. An RFC3339 formatted datetime string.
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * If lifecycleState is INACTIVE, indicates when this table will be automatically removed. An RFC3339 formatted datetime string.
      */
-    readonly timeOfExpiration: string;
+    readonly timeOfExpiration?: string;
     /**
      * The time the the table's metadata was last updated. An RFC3339 formatted datetime string.
      */
-    readonly timeUpdated: string;
+    readonly timeUpdated?: string;
 }
 /**
  * This data source provides details about a specific Table resource in Oracle Cloud Infrastructure NoSQL Database service.

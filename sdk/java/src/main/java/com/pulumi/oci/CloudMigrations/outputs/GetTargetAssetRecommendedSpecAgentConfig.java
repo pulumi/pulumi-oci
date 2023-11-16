@@ -8,6 +8,8 @@ import com.pulumi.oci.CloudMigrations.outputs.GetTargetAssetRecommendedSpecAgent
 import java.lang.Boolean;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetTargetAssetRecommendedSpecAgentConfig {
@@ -15,51 +17,51 @@ public final class GetTargetAssetRecommendedSpecAgentConfig {
      * @return Whether Oracle Cloud Agent can run all the available plugins. This includes the management and monitoring plugins.
      * 
      */
-    private Boolean areAllPluginsDisabled;
+    private @Nullable Boolean areAllPluginsDisabled;
     /**
      * @return Whether Oracle Cloud Agent can run all the available management plugins. By default, the value is false (management plugins are enabled).
      * 
      */
-    private Boolean isManagementDisabled;
+    private @Nullable Boolean isManagementDisabled;
     /**
      * @return Whether Oracle Cloud Agent can gather performance metrics and monitor the instance using the monitoring plugins. By default, the value is false (monitoring plugins are enabled).
      * 
      */
-    private Boolean isMonitoringDisabled;
+    private @Nullable Boolean isMonitoringDisabled;
     /**
      * @return The configuration of plugins associated with this instance.
      * 
      */
-    private List<GetTargetAssetRecommendedSpecAgentConfigPluginsConfig> pluginsConfigs;
+    private @Nullable List<GetTargetAssetRecommendedSpecAgentConfigPluginsConfig> pluginsConfigs;
 
     private GetTargetAssetRecommendedSpecAgentConfig() {}
     /**
      * @return Whether Oracle Cloud Agent can run all the available plugins. This includes the management and monitoring plugins.
      * 
      */
-    public Boolean areAllPluginsDisabled() {
-        return this.areAllPluginsDisabled;
+    public Optional<Boolean> areAllPluginsDisabled() {
+        return Optional.ofNullable(this.areAllPluginsDisabled);
     }
     /**
      * @return Whether Oracle Cloud Agent can run all the available management plugins. By default, the value is false (management plugins are enabled).
      * 
      */
-    public Boolean isManagementDisabled() {
-        return this.isManagementDisabled;
+    public Optional<Boolean> isManagementDisabled() {
+        return Optional.ofNullable(this.isManagementDisabled);
     }
     /**
      * @return Whether Oracle Cloud Agent can gather performance metrics and monitor the instance using the monitoring plugins. By default, the value is false (monitoring plugins are enabled).
      * 
      */
-    public Boolean isMonitoringDisabled() {
-        return this.isMonitoringDisabled;
+    public Optional<Boolean> isMonitoringDisabled() {
+        return Optional.ofNullable(this.isMonitoringDisabled);
     }
     /**
      * @return The configuration of plugins associated with this instance.
      * 
      */
     public List<GetTargetAssetRecommendedSpecAgentConfigPluginsConfig> pluginsConfigs() {
-        return this.pluginsConfigs;
+        return this.pluginsConfigs == null ? List.of() : this.pluginsConfigs;
     }
 
     public static Builder builder() {
@@ -71,10 +73,10 @@ public final class GetTargetAssetRecommendedSpecAgentConfig {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Boolean areAllPluginsDisabled;
-        private Boolean isManagementDisabled;
-        private Boolean isMonitoringDisabled;
-        private List<GetTargetAssetRecommendedSpecAgentConfigPluginsConfig> pluginsConfigs;
+        private @Nullable Boolean areAllPluginsDisabled;
+        private @Nullable Boolean isManagementDisabled;
+        private @Nullable Boolean isMonitoringDisabled;
+        private @Nullable List<GetTargetAssetRecommendedSpecAgentConfigPluginsConfig> pluginsConfigs;
         public Builder() {}
         public Builder(GetTargetAssetRecommendedSpecAgentConfig defaults) {
     	      Objects.requireNonNull(defaults);
@@ -85,23 +87,23 @@ public final class GetTargetAssetRecommendedSpecAgentConfig {
         }
 
         @CustomType.Setter
-        public Builder areAllPluginsDisabled(Boolean areAllPluginsDisabled) {
-            this.areAllPluginsDisabled = Objects.requireNonNull(areAllPluginsDisabled);
+        public Builder areAllPluginsDisabled(@Nullable Boolean areAllPluginsDisabled) {
+            this.areAllPluginsDisabled = areAllPluginsDisabled;
             return this;
         }
         @CustomType.Setter
-        public Builder isManagementDisabled(Boolean isManagementDisabled) {
-            this.isManagementDisabled = Objects.requireNonNull(isManagementDisabled);
+        public Builder isManagementDisabled(@Nullable Boolean isManagementDisabled) {
+            this.isManagementDisabled = isManagementDisabled;
             return this;
         }
         @CustomType.Setter
-        public Builder isMonitoringDisabled(Boolean isMonitoringDisabled) {
-            this.isMonitoringDisabled = Objects.requireNonNull(isMonitoringDisabled);
+        public Builder isMonitoringDisabled(@Nullable Boolean isMonitoringDisabled) {
+            this.isMonitoringDisabled = isMonitoringDisabled;
             return this;
         }
         @CustomType.Setter
-        public Builder pluginsConfigs(List<GetTargetAssetRecommendedSpecAgentConfigPluginsConfig> pluginsConfigs) {
-            this.pluginsConfigs = Objects.requireNonNull(pluginsConfigs);
+        public Builder pluginsConfigs(@Nullable List<GetTargetAssetRecommendedSpecAgentConfigPluginsConfig> pluginsConfigs) {
+            this.pluginsConfigs = pluginsConfigs;
             return this;
         }
         public Builder pluginsConfigs(GetTargetAssetRecommendedSpecAgentConfigPluginsConfig... pluginsConfigs) {

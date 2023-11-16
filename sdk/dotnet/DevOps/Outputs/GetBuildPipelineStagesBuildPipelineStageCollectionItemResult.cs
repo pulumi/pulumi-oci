@@ -16,7 +16,7 @@ namespace Pulumi.Oci.DevOps.Outputs
         /// <summary>
         /// The OCID of the parent build pipeline.
         /// </summary>
-        public readonly string BuildPipelineId;
+        public readonly string? BuildPipelineId;
         /// <summary>
         /// The collection containing the predecessors of a stage.
         /// </summary>
@@ -24,51 +24,51 @@ namespace Pulumi.Oci.DevOps.Outputs
         /// <summary>
         /// Defines the stage type, which is one of the following: BUILD, DELIVER_ARTIFACT, WAIT, and TRIGGER_DEPLOYMENT_PIPELINE.
         /// </summary>
-        public readonly string BuildPipelineStageType;
+        public readonly string? BuildPipelineStageType;
         /// <summary>
         /// The information about build runner.
         /// </summary>
-        public readonly Outputs.GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildRunnerShapeConfigResult BuildRunnerShapeConfig;
+        public readonly Outputs.GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildRunnerShapeConfigResult? BuildRunnerShapeConfig;
         /// <summary>
         /// Collection of build sources.
         /// </summary>
-        public readonly Outputs.GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildSourceCollectionResult BuildSourceCollection;
+        public readonly Outputs.GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildSourceCollectionResult? BuildSourceCollection;
         /// <summary>
         /// The path to the build specification file for this environment. The default location of the file if not specified is build_spec.yaml.
         /// </summary>
-        public readonly string BuildSpecFile;
+        public readonly string? BuildSpecFile;
         /// <summary>
         /// The OCID of the compartment in which to list resources.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// The type of source provider.
         /// </summary>
-        public readonly string ConnectionType;
+        public readonly string? ConnectionType;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// Specifies an array of artifacts that need to be pushed to the artifactory stores.
         /// </summary>
-        public readonly Outputs.GetBuildPipelineStagesBuildPipelineStageCollectionItemDeliverArtifactCollectionResult DeliverArtifactCollection;
+        public readonly Outputs.GetBuildPipelineStagesBuildPipelineStageCollectionItemDeliverArtifactCollectionResult? DeliverArtifactCollection;
         /// <summary>
         /// A target deployment pipeline OCID that will run in this stage.
         /// </summary>
-        public readonly string DeployPipelineId;
+        public readonly string? DeployPipelineId;
         /// <summary>
         /// Optional description about the build stage.
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// A filter to return only resources that match the entire display name given.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// Unique identifier or OCID for listing a single resource by ID.
         /// </summary>
@@ -76,107 +76,107 @@ namespace Pulumi.Oci.DevOps.Outputs
         /// <summary>
         /// Image name for the build environment.
         /// </summary>
-        public readonly string Image;
+        public readonly string? Image;
         /// <summary>
         /// A boolean flag that specifies whether all the parameters must be passed when the deployment is triggered.
         /// </summary>
-        public readonly bool IsPassAllParametersEnabled;
+        public readonly bool? IsPassAllParametersEnabled;
         /// <summary>
         /// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         /// </summary>
-        public readonly string LifecycleDetails;
+        public readonly string? LifecycleDetails;
         /// <summary>
         /// Name of the build source where the build_spec.yml file is located. If not specified, then the first entry in the build source collection is chosen as primary build source.
         /// </summary>
-        public readonly string PrimaryBuildSource;
+        public readonly string? PrimaryBuildSource;
         /// <summary>
         /// Specifies the configuration needed when the target Oracle Cloud Infrastructure resource, i.e., OKE cluster, resides in customer's private network.
         /// </summary>
-        public readonly Outputs.GetBuildPipelineStagesBuildPipelineStageCollectionItemPrivateAccessConfigResult PrivateAccessConfig;
+        public readonly Outputs.GetBuildPipelineStagesBuildPipelineStageCollectionItemPrivateAccessConfigResult? PrivateAccessConfig;
         /// <summary>
         /// The OCID of the DevOps project.
         /// </summary>
-        public readonly string ProjectId;
+        public readonly string? ProjectId;
         /// <summary>
         /// Timeout for the build stage execution. Specify value in seconds.
         /// </summary>
-        public readonly int StageExecutionTimeoutInSeconds;
+        public readonly int? StageExecutionTimeoutInSeconds;
         /// <summary>
         /// A filter to return the stages that matches the given lifecycle state.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> SystemTags;
+        public readonly ImmutableDictionary<string, object>? SystemTags;
         /// <summary>
         /// The time the stage was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The time the stage was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
         /// </summary>
-        public readonly string TimeUpdated;
+        public readonly string? TimeUpdated;
         /// <summary>
         /// Specifies wait criteria for the Wait stage.
         /// </summary>
-        public readonly Outputs.GetBuildPipelineStagesBuildPipelineStageCollectionItemWaitCriteriaResult WaitCriteria;
+        public readonly Outputs.GetBuildPipelineStagesBuildPipelineStageCollectionItemWaitCriteriaResult? WaitCriteria;
 
         [OutputConstructor]
         private GetBuildPipelineStagesBuildPipelineStageCollectionItemResult(
-            string buildPipelineId,
+            string? buildPipelineId,
 
             ImmutableArray<Outputs.GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildPipelineStagePredecessorCollectionResult> buildPipelineStagePredecessorCollections,
 
-            string buildPipelineStageType,
+            string? buildPipelineStageType,
 
-            Outputs.GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildRunnerShapeConfigResult buildRunnerShapeConfig,
+            Outputs.GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildRunnerShapeConfigResult? buildRunnerShapeConfig,
 
-            Outputs.GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildSourceCollectionResult buildSourceCollection,
+            Outputs.GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildSourceCollectionResult? buildSourceCollection,
 
-            string buildSpecFile,
+            string? buildSpecFile,
 
-            string compartmentId,
+            string? compartmentId,
 
-            string connectionType,
+            string? connectionType,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            Outputs.GetBuildPipelineStagesBuildPipelineStageCollectionItemDeliverArtifactCollectionResult deliverArtifactCollection,
+            Outputs.GetBuildPipelineStagesBuildPipelineStageCollectionItemDeliverArtifactCollectionResult? deliverArtifactCollection,
 
-            string deployPipelineId,
+            string? deployPipelineId,
 
-            string description,
+            string? description,
 
-            string displayName,
+            string? displayName,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
             string id,
 
-            string image,
+            string? image,
 
-            bool isPassAllParametersEnabled,
+            bool? isPassAllParametersEnabled,
 
-            string lifecycleDetails,
+            string? lifecycleDetails,
 
-            string primaryBuildSource,
+            string? primaryBuildSource,
 
-            Outputs.GetBuildPipelineStagesBuildPipelineStageCollectionItemPrivateAccessConfigResult privateAccessConfig,
+            Outputs.GetBuildPipelineStagesBuildPipelineStageCollectionItemPrivateAccessConfigResult? privateAccessConfig,
 
-            string projectId,
+            string? projectId,
 
-            int stageExecutionTimeoutInSeconds,
+            int? stageExecutionTimeoutInSeconds,
 
-            string state,
+            string? state,
 
-            ImmutableDictionary<string, object> systemTags,
+            ImmutableDictionary<string, object>? systemTags,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeUpdated,
+            string? timeUpdated,
 
-            Outputs.GetBuildPipelineStagesBuildPipelineStageCollectionItemWaitCriteriaResult waitCriteria)
+            Outputs.GetBuildPipelineStagesBuildPipelineStageCollectionItemWaitCriteriaResult? waitCriteria)
         {
             BuildPipelineId = buildPipelineId;
             BuildPipelineStagePredecessorCollections = buildPipelineStagePredecessorCollections;

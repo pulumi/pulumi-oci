@@ -45,18 +45,12 @@ class GetEventsResult:
 
     @property
     @pulumi.getter(name="auditEvents")
-    def audit_events(self) -> Sequence['outputs.GetEventsAuditEventResult']:
-        """
-        The list of audit_events.
-        """
+    def audit_events(self) -> Optional[Sequence['outputs.GetEventsAuditEventResult']]:
         return pulumi.get(self, "audit_events")
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment of the resource  emitting the event.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
@@ -71,7 +65,7 @@ class GetEventsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -103,30 +97,7 @@ def get_events(compartment_id: Optional[str] = None,
                start_time: Optional[str] = None,
                opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetEventsResult:
     """
-    This data source provides the list of Audit Events in Oracle Cloud Infrastructure Audit service.
-
-    Returns all the audit events processed for the specified compartment within the specified
-    time range.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_audit_events = oci.Audit.get_events(compartment_id=var["compartment_id"],
-        end_time=var["audit_event_end_time"],
-        start_time=var["audit_event_start_time"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param str end_time: Returns events that were processed before this end date and time, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
-           
-           For example, a start value of `2017-01-01T00:00:00Z` and an end value of `2017-01-02T00:00:00Z` will retrieve a list of all events processed on January 1, 2017. Similarly, a start value of `2017-01-01T00:00:00Z` and an end value of `2017-02-01T00:00:00Z` will result in a list of all events processed between January 1, 2017 and January 31, 2017. You can specify a value with granularity to the minute. Seconds (and milliseconds, if included) must be set to `0`.
-    :param str start_time: Returns events that were processed at or after this start date and time, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
-           
-           For example, a start value of `2017-01-15T11:30:00Z` will retrieve a list of all events processed since 30 minutes after the 11th hour of January 15, 2017, in Coordinated Universal Time (UTC). You can specify a value with granularity to the minute. Seconds (and milliseconds, if included) must be set to `0`.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -152,29 +123,6 @@ def get_events_output(compartment_id: Optional[pulumi.Input[str]] = None,
                       start_time: Optional[pulumi.Input[str]] = None,
                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetEventsResult]:
     """
-    This data source provides the list of Audit Events in Oracle Cloud Infrastructure Audit service.
-
-    Returns all the audit events processed for the specified compartment within the specified
-    time range.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_audit_events = oci.Audit.get_events(compartment_id=var["compartment_id"],
-        end_time=var["audit_event_end_time"],
-        start_time=var["audit_event_start_time"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param str end_time: Returns events that were processed before this end date and time, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
-           
-           For example, a start value of `2017-01-01T00:00:00Z` and an end value of `2017-01-02T00:00:00Z` will retrieve a list of all events processed on January 1, 2017. Similarly, a start value of `2017-01-01T00:00:00Z` and an end value of `2017-02-01T00:00:00Z` will result in a list of all events processed between January 1, 2017 and January 31, 2017. You can specify a value with granularity to the minute. Seconds (and milliseconds, if included) must be set to `0`.
-    :param str start_time: Returns events that were processed at or after this start date and time, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
-           
-           For example, a start value of `2017-01-15T11:30:00Z` will retrieve a list of all events processed since 30 minutes after the 11th hour of January 15, 2017, in Coordinated Universal Time (UTC). You can specify a value with granularity to the minute. Seconds (and milliseconds, if included) must be set to `0`.
+    Use this data source to access information about an existing resource.
     """
     ...

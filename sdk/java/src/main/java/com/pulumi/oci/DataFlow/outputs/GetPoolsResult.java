@@ -30,7 +30,7 @@ public final class GetPoolsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The OCID of the user who created the resource.
      * 
@@ -40,7 +40,7 @@ public final class GetPoolsResult {
      * @return The list of pool_collection.
      * 
      */
-    private List<GetPoolsPoolCollection> poolCollections;
+    private @Nullable List<GetPoolsPoolCollection> poolCollections;
     /**
      * @return The current state of this pool.
      * 
@@ -72,8 +72,8 @@ public final class GetPoolsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The OCID of the user who created the resource.
@@ -87,7 +87,7 @@ public final class GetPoolsResult {
      * 
      */
     public List<GetPoolsPoolCollection> poolCollections() {
-        return this.poolCollections;
+        return this.poolCollections == null ? List.of() : this.poolCollections;
     }
     /**
      * @return The current state of this pool.
@@ -110,9 +110,9 @@ public final class GetPoolsResult {
         private @Nullable String displayName;
         private @Nullable String displayNameStartsWith;
         private @Nullable List<GetPoolsFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String ownerPrincipalId;
-        private List<GetPoolsPoolCollection> poolCollections;
+        private @Nullable List<GetPoolsPoolCollection> poolCollections;
         private @Nullable String state;
         public Builder() {}
         public Builder(GetPoolsResult defaults) {
@@ -151,8 +151,8 @@ public final class GetPoolsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -161,8 +161,8 @@ public final class GetPoolsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder poolCollections(List<GetPoolsPoolCollection> poolCollections) {
-            this.poolCollections = Objects.requireNonNull(poolCollections);
+        public Builder poolCollections(@Nullable List<GetPoolsPoolCollection> poolCollections) {
+            this.poolCollections = poolCollections;
             return this;
         }
         public Builder poolCollections(GetPoolsPoolCollection... poolCollections) {

@@ -8,6 +8,8 @@ import com.pulumi.oci.DevOps.outputs.GetDeploymentsDeploymentCollectionItemDeplo
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDeploymentsDeploymentCollectionItemDeployPipelineArtifactItem {
@@ -15,39 +17,39 @@ public final class GetDeploymentsDeploymentCollectionItemDeployPipelineArtifactI
      * @return The OCID of an artifact
      * 
      */
-    private String deployArtifactId;
+    private @Nullable String deployArtifactId;
     /**
      * @return List of stages.
      * 
      */
-    private List<GetDeploymentsDeploymentCollectionItemDeployPipelineArtifactItemDeployPipelineStage> deployPipelineStages;
+    private @Nullable List<GetDeploymentsDeploymentCollectionItemDeployPipelineArtifactItemDeployPipelineStage> deployPipelineStages;
     /**
      * @return A filter to return only resources that match the entire display name given.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
 
     private GetDeploymentsDeploymentCollectionItemDeployPipelineArtifactItem() {}
     /**
      * @return The OCID of an artifact
      * 
      */
-    public String deployArtifactId() {
-        return this.deployArtifactId;
+    public Optional<String> deployArtifactId() {
+        return Optional.ofNullable(this.deployArtifactId);
     }
     /**
      * @return List of stages.
      * 
      */
     public List<GetDeploymentsDeploymentCollectionItemDeployPipelineArtifactItemDeployPipelineStage> deployPipelineStages() {
-        return this.deployPipelineStages;
+        return this.deployPipelineStages == null ? List.of() : this.deployPipelineStages;
     }
     /**
      * @return A filter to return only resources that match the entire display name given.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
 
     public static Builder builder() {
@@ -59,9 +61,9 @@ public final class GetDeploymentsDeploymentCollectionItemDeployPipelineArtifactI
     }
     @CustomType.Builder
     public static final class Builder {
-        private String deployArtifactId;
-        private List<GetDeploymentsDeploymentCollectionItemDeployPipelineArtifactItemDeployPipelineStage> deployPipelineStages;
-        private String displayName;
+        private @Nullable String deployArtifactId;
+        private @Nullable List<GetDeploymentsDeploymentCollectionItemDeployPipelineArtifactItemDeployPipelineStage> deployPipelineStages;
+        private @Nullable String displayName;
         public Builder() {}
         public Builder(GetDeploymentsDeploymentCollectionItemDeployPipelineArtifactItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -71,21 +73,21 @@ public final class GetDeploymentsDeploymentCollectionItemDeployPipelineArtifactI
         }
 
         @CustomType.Setter
-        public Builder deployArtifactId(String deployArtifactId) {
-            this.deployArtifactId = Objects.requireNonNull(deployArtifactId);
+        public Builder deployArtifactId(@Nullable String deployArtifactId) {
+            this.deployArtifactId = deployArtifactId;
             return this;
         }
         @CustomType.Setter
-        public Builder deployPipelineStages(List<GetDeploymentsDeploymentCollectionItemDeployPipelineArtifactItemDeployPipelineStage> deployPipelineStages) {
-            this.deployPipelineStages = Objects.requireNonNull(deployPipelineStages);
+        public Builder deployPipelineStages(@Nullable List<GetDeploymentsDeploymentCollectionItemDeployPipelineArtifactItemDeployPipelineStage> deployPipelineStages) {
+            this.deployPipelineStages = deployPipelineStages;
             return this;
         }
         public Builder deployPipelineStages(GetDeploymentsDeploymentCollectionItemDeployPipelineArtifactItemDeployPipelineStage... deployPipelineStages) {
             return deployPipelineStages(List.of(deployPipelineStages));
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         public GetDeploymentsDeploymentCollectionItemDeployPipelineArtifactItem build() {

@@ -16,7 +16,7 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
         /// <summary>
         /// Whether the cluster should be assigned a public IP address. Defaults to false. If set to true on a private subnet, the cluster provisioning will fail.
         /// </summary>
-        public readonly bool IsPublicIpEnabled;
+        public readonly bool? IsPublicIpEnabled;
         /// <summary>
         /// A list of the OCIDs of the network security groups (NSGs) to apply to the cluster endpoint. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
         /// </summary>
@@ -24,15 +24,15 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
         /// <summary>
         /// The OCID of the regional subnet in which to place the Cluster endpoint.
         /// </summary>
-        public readonly string SubnetId;
+        public readonly string? SubnetId;
 
         [OutputConstructor]
         private GetClustersClusterEndpointConfigResult(
-            bool isPublicIpEnabled,
+            bool? isPublicIpEnabled,
 
             ImmutableArray<string> nsgIds,
 
-            string subnetId)
+            string? subnetId)
         {
             IsPublicIpEnabled = isPublicIpEnabled;
             NsgIds = nsgIds;

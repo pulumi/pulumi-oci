@@ -51,31 +51,31 @@ namespace Pulumi.Oci.DevOps
         /// (Updatable) Commit ID pointed to by the new branch.
         /// </summary>
         [Output("commitId")]
-        public Output<string> CommitId { get; private set; } = null!;
+        public Output<string?> CommitId { get; private set; } = null!;
 
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// Unique full reference name inside a repository.
         /// </summary>
         [Output("fullRefName")]
-        public Output<string> FullRefName { get; private set; } = null!;
+        public Output<string?> FullRefName { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) SHA-1 hash value of the object pointed to by the tag.
         /// </summary>
         [Output("objectId")]
-        public Output<string> ObjectId { get; private set; } = null!;
+        public Output<string?> ObjectId { get; private set; } = null!;
 
         /// <summary>
         /// A filter to return only resources that match the given reference name.

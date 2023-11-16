@@ -20,41 +20,41 @@ namespace Pulumi.Oci.Core.Outputs
         /// <summary>
         /// The OCID of the image originally used to launch the instance.
         /// </summary>
-        public readonly string BaseImageId;
+        public readonly string? BaseImageId;
         /// <summary>
         /// The size of the internal storage for this image that is subject to billing (1 GB = 1,073,741,824 bytes).  Example: `100`
         /// </summary>
-        public readonly string BillableSizeInGbs;
+        public readonly string? BillableSizeInGbs;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// Whether instances launched with this image can be used to create new images. For example, you cannot create an image of an Oracle Database instance.  Example: `true`
         /// </summary>
-        public readonly bool CreateImageAllowed;
+        public readonly bool? CreateImageAllowed;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// A filter to return only resources that match the given display name exactly.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// The OCID of the image.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         public readonly ImmutableArray<Outputs.GetImagesImageImageSourceDetailResult> ImageSourceDetails;
-        public readonly string InstanceId;
+        public readonly string? InstanceId;
         /// <summary>
         /// Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
         /// </summary>
-        public readonly string LaunchMode;
+        public readonly string? LaunchMode;
         /// <summary>
         /// Options for tuning the compatibility and performance of VM shapes. The values that you specify override any default values.
         /// </summary>
@@ -62,67 +62,67 @@ namespace Pulumi.Oci.Core.Outputs
         /// <summary>
         /// The listing type of the image. The default value is "NONE".
         /// </summary>
-        public readonly string ListingType;
+        public readonly string? ListingType;
         /// <summary>
         /// The image's operating system.  Example: `Oracle Linux`
         /// </summary>
-        public readonly string OperatingSystem;
+        public readonly string? OperatingSystem;
         /// <summary>
         /// The image's operating system version.  Example: `7.2`
         /// </summary>
-        public readonly string OperatingSystemVersion;
+        public readonly string? OperatingSystemVersion;
         /// <summary>
         /// The boot volume size for an instance launched from this image (1 MB = 1,048,576 bytes). Note this is not the same as the size of the image when it was exported or the actual size of the image.  Example: `47694`
         /// </summary>
-        public readonly string SizeInMbs;
+        public readonly string? SizeInMbs;
         /// <summary>
         /// A filter to only return resources that match the given lifecycle state.  The state value is case-insensitive.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// The date and time the image was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
 
         [OutputConstructor]
         private GetImagesImageResult(
             ImmutableArray<Outputs.GetImagesImageAgentFeatureResult> agentFeatures,
 
-            string baseImageId,
+            string? baseImageId,
 
-            string billableSizeInGbs,
+            string? billableSizeInGbs,
 
-            string compartmentId,
+            string? compartmentId,
 
-            bool createImageAllowed,
+            bool? createImageAllowed,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string displayName,
+            string? displayName,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetImagesImageImageSourceDetailResult> imageSourceDetails,
 
-            string instanceId,
+            string? instanceId,
 
-            string launchMode,
+            string? launchMode,
 
             ImmutableArray<Outputs.GetImagesImageLaunchOptionResult> launchOptions,
 
-            string listingType,
+            string? listingType,
 
-            string operatingSystem,
+            string? operatingSystem,
 
-            string operatingSystemVersion,
+            string? operatingSystemVersion,
 
-            string sizeInMbs,
+            string? sizeInMbs,
 
-            string state,
+            string? state,
 
-            string timeCreated)
+            string? timeCreated)
         {
             AgentFeatures = agentFeatures;
             BaseImageId = baseImageId;

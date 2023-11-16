@@ -53,7 +53,7 @@ class GetPingProbeResultsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -61,18 +61,12 @@ class GetPingProbeResultsResult:
 
     @property
     @pulumi.getter(name="pingProbeResults")
-    def ping_probe_results(self) -> Sequence['outputs.GetPingProbeResultsPingProbeResultResult']:
-        """
-        The list of ping_probe_results.
-        """
+    def ping_probe_results(self) -> Optional[Sequence['outputs.GetPingProbeResultsPingProbeResultResult']]:
         return pulumi.get(self, "ping_probe_results")
 
     @property
     @pulumi.getter(name="probeConfigurationId")
     def probe_configuration_id(self) -> str:
-        """
-        The OCID of the monitor or on-demand probe responsible for creating this result.
-        """
         return pulumi.get(self, "probe_configuration_id")
 
     @property
@@ -88,9 +82,6 @@ class GetPingProbeResultsResult:
     @property
     @pulumi.getter
     def target(self) -> Optional[str]:
-        """
-        The target hostname or IP address of the probe.
-        """
         return pulumi.get(self, "target")
 
 
@@ -116,33 +107,7 @@ def get_ping_probe_results(filters: Optional[Sequence[pulumi.InputType['GetPingP
                            target: Optional[str] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetPingProbeResultsResult:
     """
-    This data source provides the list of Ping Probe Results in Oracle Cloud Infrastructure Health Checks service.
-
-    Returns the results for the specified probe, where the `probeConfigurationId`
-    is the OCID of either a monitor or an on-demand probe.
-
-    Results are paginated based on `page` and `limit`.  The `opc-next-page` header provides
-    a URL for fetching the next page.  Use `sortOrder` to set the order of the
-    results.  If `sortOrder` is unspecified, results are sorted in ascending order by
-    `startTime`.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_ping_probe_results = oci.HealthChecks.get_ping_probe_results(probe_configuration_id=oci_health_checks_probe_configuration["test_probe_configuration"]["id"],
-        start_time_greater_than_or_equal_to=var["ping_probe_result_start_time_greater_than_or_equal_to"],
-        start_time_less_than_or_equal_to=var["ping_probe_result_start_time_less_than_or_equal_to"],
-        target=var["ping_probe_result_target"])
-    ```
-
-
-    :param str probe_configuration_id: The OCID of a monitor or on-demand probe.
-    :param float start_time_greater_than_or_equal_to: Returns results with a `startTime` equal to or greater than the specified value.
-    :param float start_time_less_than_or_equal_to: Returns results with a `startTime` equal to or less than the specified value.
-    :param str target: Filters results that match the `target`.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['filters'] = filters
@@ -171,32 +136,6 @@ def get_ping_probe_results_output(filters: Optional[pulumi.Input[Optional[Sequen
                                   target: Optional[pulumi.Input[Optional[str]]] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetPingProbeResultsResult]:
     """
-    This data source provides the list of Ping Probe Results in Oracle Cloud Infrastructure Health Checks service.
-
-    Returns the results for the specified probe, where the `probeConfigurationId`
-    is the OCID of either a monitor or an on-demand probe.
-
-    Results are paginated based on `page` and `limit`.  The `opc-next-page` header provides
-    a URL for fetching the next page.  Use `sortOrder` to set the order of the
-    results.  If `sortOrder` is unspecified, results are sorted in ascending order by
-    `startTime`.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_ping_probe_results = oci.HealthChecks.get_ping_probe_results(probe_configuration_id=oci_health_checks_probe_configuration["test_probe_configuration"]["id"],
-        start_time_greater_than_or_equal_to=var["ping_probe_result_start_time_greater_than_or_equal_to"],
-        start_time_less_than_or_equal_to=var["ping_probe_result_start_time_less_than_or_equal_to"],
-        target=var["ping_probe_result_target"])
-    ```
-
-
-    :param str probe_configuration_id: The OCID of a monitor or on-demand probe.
-    :param float start_time_greater_than_or_equal_to: Returns results with a `startTime` equal to or greater than the specified value.
-    :param float start_time_less_than_or_equal_to: Returns results with a `startTime` equal to or less than the specified value.
-    :param str target: Filters results that match the `target`.
+    Use this data source to access information about an existing resource.
     """
     ...

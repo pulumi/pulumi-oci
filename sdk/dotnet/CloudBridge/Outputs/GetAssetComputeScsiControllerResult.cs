@@ -16,23 +16,23 @@ namespace Pulumi.Oci.CloudBridge.Outputs
         /// <summary>
         /// Provides a label and summary information for the device.
         /// </summary>
-        public readonly string Label;
+        public readonly string? Label;
         /// <summary>
         /// Shared bus.
         /// </summary>
-        public readonly string SharedBus;
+        public readonly string? SharedBus;
         /// <summary>
         /// The unit number of the SCSI controller.
         /// </summary>
-        public readonly int UnitNumber;
+        public readonly int? UnitNumber;
 
         [OutputConstructor]
         private GetAssetComputeScsiControllerResult(
-            string label,
+            string? label,
 
-            string sharedBus,
+            string? sharedBus,
 
-            int unitNumber)
+            int? unitNumber)
         {
             Label = label;
             SharedBus = sharedBus;

@@ -47,7 +47,7 @@ namespace Pulumi.Oci.ContainerEngine
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// The network configuration for access to the Cluster control plane.
@@ -65,19 +65,19 @@ namespace Pulumi.Oci.ContainerEngine
         /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The image verification policy for signature validation. Once a policy is created and enabled with one or more kms keys, the policy will ensure all images deployed has been signed with the key(s) attached to the policy.
         /// </summary>
         [Output("imagePolicyConfig")]
-        public Output<Outputs.ClusterImagePolicyConfig> ImagePolicyConfig { get; private set; } = null!;
+        public Output<Outputs.ClusterImagePolicyConfig?> ImagePolicyConfig { get; private set; } = null!;
 
         /// <summary>
         /// The OCID of the KMS key to be used as the master encryption key for Kubernetes secret encryption. When used, `kubernetesVersion` must be at least `v1.13.0`.
         /// </summary>
         [Output("kmsKeyId")]
-        public Output<string> KmsKeyId { get; private set; } = null!;
+        public Output<string?> KmsKeyId { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The version of Kubernetes to install into the cluster masters.
@@ -89,7 +89,7 @@ namespace Pulumi.Oci.ContainerEngine
         /// Details about the state of the cluster masters.
         /// </summary>
         [Output("lifecycleDetails")]
-        public Output<string> LifecycleDetails { get; private set; } = null!;
+        public Output<string?> LifecycleDetails { get; private set; } = null!;
 
         /// <summary>
         /// Metadata about the cluster.
@@ -107,19 +107,19 @@ namespace Pulumi.Oci.ContainerEngine
         /// (Updatable) Optional attributes for the cluster.
         /// </summary>
         [Output("options")]
-        public Output<Outputs.ClusterOptions> Options { get; private set; } = null!;
+        public Output<Outputs.ClusterOptions?> Options { get; private set; } = null!;
 
         /// <summary>
         /// The state of the cluster masters.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Type of cluster
         /// </summary>
         [Output("type")]
-        public Output<string> Type { get; private set; } = null!;
+        public Output<string?> Type { get; private set; } = null!;
 
         /// <summary>
         /// The OCID of the virtual cloud network (VCN) in which to create the cluster.

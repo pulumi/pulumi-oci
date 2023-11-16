@@ -15,6 +15,7 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -97,126 +98,126 @@ public class DiscoveryMod extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * The type of the discovery job. It defines the job&#39;s scope. NEW identifies new sensitive columns in the target database that are not in the sensitive data model. DELETED identifies columns that are present in the sensitive data model but have been deleted from the target database. MODIFIED identifies columns that are present in the target database as well as the sensitive data model but some of their attributes have been modified. ALL covers all the above three scenarios and reports new, deleted and modified columns.
      * 
      */
     @Export(name="discoveryType", refs={String.class}, tree="[0]")
-    private Output<String> discoveryType;
+    private Output</* @Nullable */ String> discoveryType;
 
     /**
      * @return The type of the discovery job. It defines the job&#39;s scope. NEW identifies new sensitive columns in the target database that are not in the sensitive data model. DELETED identifies columns that are present in the sensitive data model but have been deleted from the target database. MODIFIED identifies columns that are present in the target database as well as the sensitive data model but some of their attributes have been modified. ALL covers all the above three scenarios and reports new, deleted and modified columns.
      * 
      */
-    public Output<String> discoveryType() {
-        return this.discoveryType;
+    public Output<Optional<String>> discoveryType() {
+        return Codegen.optional(this.discoveryType);
     }
     /**
      * A user-friendly name for the discovery job. Does not have to be unique, and it is changeable. Avoid entering confidential information.
      * 
      */
     @Export(name="displayName", refs={String.class}, tree="[0]")
-    private Output<String> displayName;
+    private Output</* @Nullable */ String> displayName;
 
     /**
      * @return A user-friendly name for the discovery job. Does not have to be unique, and it is changeable. Avoid entering confidential information.
      * 
      */
-    public Output<String> displayName() {
-        return this.displayName;
+    public Output<Optional<String>> displayName() {
+        return Codegen.optional(this.displayName);
     }
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * Indicates if the discovery job should identify potential application-level (non-dictionary) referential relationships between columns. Note that data discovery automatically identifies and adds database-level (dictionary-defined) relationships. This option helps identify application-level relationships that are not defined in the database dictionary, which in turn, helps identify additional sensitive columns and preserve referential integrity during data masking. It&#39;s disabled by default and should be used only if there is a need to identify application-level relationships.
      * 
      */
     @Export(name="isAppDefinedRelationDiscoveryEnabled", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isAppDefinedRelationDiscoveryEnabled;
+    private Output</* @Nullable */ Boolean> isAppDefinedRelationDiscoveryEnabled;
 
     /**
      * @return Indicates if the discovery job should identify potential application-level (non-dictionary) referential relationships between columns. Note that data discovery automatically identifies and adds database-level (dictionary-defined) relationships. This option helps identify application-level relationships that are not defined in the database dictionary, which in turn, helps identify additional sensitive columns and preserve referential integrity during data masking. It&#39;s disabled by default and should be used only if there is a need to identify application-level relationships.
      * 
      */
-    public Output<Boolean> isAppDefinedRelationDiscoveryEnabled() {
-        return this.isAppDefinedRelationDiscoveryEnabled;
+    public Output<Optional<Boolean>> isAppDefinedRelationDiscoveryEnabled() {
+        return Codegen.optional(this.isAppDefinedRelationDiscoveryEnabled);
     }
     /**
      * Indicates if all the schemas should be scanned by the discovery job. If it is set to true, sensitive data is discovered in all schemas (except for schemas maintained by Oracle). If both attributes are not provided, the configuration from the sensitive data model is used.
      * 
      */
     @Export(name="isIncludeAllSchemas", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isIncludeAllSchemas;
+    private Output</* @Nullable */ Boolean> isIncludeAllSchemas;
 
     /**
      * @return Indicates if all the schemas should be scanned by the discovery job. If it is set to true, sensitive data is discovered in all schemas (except for schemas maintained by Oracle). If both attributes are not provided, the configuration from the sensitive data model is used.
      * 
      */
-    public Output<Boolean> isIncludeAllSchemas() {
-        return this.isIncludeAllSchemas;
+    public Output<Optional<Boolean>> isIncludeAllSchemas() {
+        return Codegen.optional(this.isIncludeAllSchemas);
     }
     /**
      * Indicates if all the existing sensitive types should be used by the discovery job. If it&#39;s set to true, the sensitiveTypeIdsForDiscovery attribute is ignored and all sensitive types are used for data discovery. If both attributes are not provided, the configuration from the sensitive data model is used.
      * 
      */
     @Export(name="isIncludeAllSensitiveTypes", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isIncludeAllSensitiveTypes;
+    private Output</* @Nullable */ Boolean> isIncludeAllSensitiveTypes;
 
     /**
      * @return Indicates if all the existing sensitive types should be used by the discovery job. If it&#39;s set to true, the sensitiveTypeIdsForDiscovery attribute is ignored and all sensitive types are used for data discovery. If both attributes are not provided, the configuration from the sensitive data model is used.
      * 
      */
-    public Output<Boolean> isIncludeAllSensitiveTypes() {
-        return this.isIncludeAllSensitiveTypes;
+    public Output<Optional<Boolean>> isIncludeAllSensitiveTypes() {
+        return Codegen.optional(this.isIncludeAllSensitiveTypes);
     }
     /**
      * Indicates if the discovery job should collect and store sample data values for the discovered columns. Sample data helps review the discovered columns and ensure that they actually contain sensitive data. As it collects original data from the target database, it&#39;s disabled by default and should be used only if it&#39;s acceptable to store sample data in Data Safe&#39;s repository in Oracle Cloud. Note that sample data values are not collected for columns with the following data types: LONG, LOB, RAW, XMLTYPE and BFILE.
      * 
      */
     @Export(name="isSampleDataCollectionEnabled", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isSampleDataCollectionEnabled;
+    private Output</* @Nullable */ Boolean> isSampleDataCollectionEnabled;
 
     /**
      * @return Indicates if the discovery job should collect and store sample data values for the discovered columns. Sample data helps review the discovered columns and ensure that they actually contain sensitive data. As it collects original data from the target database, it&#39;s disabled by default and should be used only if it&#39;s acceptable to store sample data in Data Safe&#39;s repository in Oracle Cloud. Note that sample data values are not collected for columns with the following data types: LONG, LOB, RAW, XMLTYPE and BFILE.
      * 
      */
-    public Output<Boolean> isSampleDataCollectionEnabled() {
-        return this.isSampleDataCollectionEnabled;
+    public Output<Optional<Boolean>> isSampleDataCollectionEnabled() {
+        return Codegen.optional(this.isSampleDataCollectionEnabled);
     }
     /**
      * The schemas to be scanned by the discovery job. If not provided, the schemasForDiscovery attribute of the sensitive data model is used to get the list of schemas.
      * 
      */
     @Export(name="schemasForDiscoveries", refs={List.class,String.class}, tree="[0,1]")
-    private Output<List<String>> schemasForDiscoveries;
+    private Output</* @Nullable */ List<String>> schemasForDiscoveries;
 
     /**
      * @return The schemas to be scanned by the discovery job. If not provided, the schemasForDiscovery attribute of the sensitive data model is used to get the list of schemas.
      * 
      */
-    public Output<List<String>> schemasForDiscoveries() {
-        return this.schemasForDiscoveries;
+    public Output<Optional<List<String>>> schemasForDiscoveries() {
+        return Codegen.optional(this.schemasForDiscoveries);
     }
     /**
      * The OCID of the sensitive data model.
@@ -240,7 +241,7 @@ public class DiscoveryMod extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="sensitiveTypeIdsForDiscoveries", refs={List.class,String.class}, tree="[0,1]")
-    private Output<List<String>> sensitiveTypeIdsForDiscoveries;
+    private Output</* @Nullable */ List<String>> sensitiveTypeIdsForDiscoveries;
 
     /**
      * @return The OCIDs of the sensitive types to be used by the discovery job. If not provided, the sensitiveTypeIdsForDiscovery attribute of the sensitive data model is used to get the list of sensitive types.
@@ -249,162 +250,162 @@ public class DiscoveryMod extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Output<List<String>> sensitiveTypeIdsForDiscoveries() {
-        return this.sensitiveTypeIdsForDiscoveries;
+    public Output<Optional<List<String>>> sensitiveTypeIdsForDiscoveries() {
+        return Codegen.optional(this.sensitiveTypeIdsForDiscoveries);
     }
     /**
      * The current state of the discovery job.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The current state of the discovery job.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
     @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> systemTags;
+    private Output</* @Nullable */ Map<String,Object>> systemTags;
 
     /**
      * @return System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    public Output<Map<String,Object>> systemTags() {
-        return this.systemTags;
+    public Output<Optional<Map<String,Object>>> systemTags() {
+        return Codegen.optional(this.systemTags);
     }
     /**
      * The OCID of the target database associated with the discovery job.
      * 
      */
     @Export(name="targetId", refs={String.class}, tree="[0]")
-    private Output<String> targetId;
+    private Output</* @Nullable */ String> targetId;
 
     /**
      * @return The OCID of the target database associated with the discovery job.
      * 
      */
-    public Output<String> targetId() {
-        return this.targetId;
+    public Output<Optional<String>> targetId() {
+        return Codegen.optional(this.targetId);
     }
     /**
      * The date and time the discovery job finished, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)..
      * 
      */
     @Export(name="timeFinished", refs={String.class}, tree="[0]")
-    private Output<String> timeFinished;
+    private Output</* @Nullable */ String> timeFinished;
 
     /**
      * @return The date and time the discovery job finished, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)..
      * 
      */
-    public Output<String> timeFinished() {
-        return this.timeFinished;
+    public Output<Optional<String>> timeFinished() {
+        return Codegen.optional(this.timeFinished);
     }
     /**
      * The date and time the discovery job started, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
     @Export(name="timeStarted", refs={String.class}, tree="[0]")
-    private Output<String> timeStarted;
+    private Output</* @Nullable */ String> timeStarted;
 
     /**
      * @return The date and time the discovery job started, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    public Output<String> timeStarted() {
-        return this.timeStarted;
+    public Output<Optional<String>> timeStarted() {
+        return Codegen.optional(this.timeStarted);
     }
     /**
      * The total number of columns scanned by the discovery job.
      * 
      */
     @Export(name="totalColumnsScanned", refs={String.class}, tree="[0]")
-    private Output<String> totalColumnsScanned;
+    private Output</* @Nullable */ String> totalColumnsScanned;
 
     /**
      * @return The total number of columns scanned by the discovery job.
      * 
      */
-    public Output<String> totalColumnsScanned() {
-        return this.totalColumnsScanned;
+    public Output<Optional<String>> totalColumnsScanned() {
+        return Codegen.optional(this.totalColumnsScanned);
     }
     /**
      * The total number of deleted sensitive columns identified by the discovery job.
      * 
      */
     @Export(name="totalDeletedSensitiveColumns", refs={String.class}, tree="[0]")
-    private Output<String> totalDeletedSensitiveColumns;
+    private Output</* @Nullable */ String> totalDeletedSensitiveColumns;
 
     /**
      * @return The total number of deleted sensitive columns identified by the discovery job.
      * 
      */
-    public Output<String> totalDeletedSensitiveColumns() {
-        return this.totalDeletedSensitiveColumns;
+    public Output<Optional<String>> totalDeletedSensitiveColumns() {
+        return Codegen.optional(this.totalDeletedSensitiveColumns);
     }
     /**
      * The total number of modified sensitive columns identified by the discovery job.
      * 
      */
     @Export(name="totalModifiedSensitiveColumns", refs={String.class}, tree="[0]")
-    private Output<String> totalModifiedSensitiveColumns;
+    private Output</* @Nullable */ String> totalModifiedSensitiveColumns;
 
     /**
      * @return The total number of modified sensitive columns identified by the discovery job.
      * 
      */
-    public Output<String> totalModifiedSensitiveColumns() {
-        return this.totalModifiedSensitiveColumns;
+    public Output<Optional<String>> totalModifiedSensitiveColumns() {
+        return Codegen.optional(this.totalModifiedSensitiveColumns);
     }
     /**
      * The total number of new sensitive columns identified by the discovery job.
      * 
      */
     @Export(name="totalNewSensitiveColumns", refs={String.class}, tree="[0]")
-    private Output<String> totalNewSensitiveColumns;
+    private Output</* @Nullable */ String> totalNewSensitiveColumns;
 
     /**
      * @return The total number of new sensitive columns identified by the discovery job.
      * 
      */
-    public Output<String> totalNewSensitiveColumns() {
-        return this.totalNewSensitiveColumns;
+    public Output<Optional<String>> totalNewSensitiveColumns() {
+        return Codegen.optional(this.totalNewSensitiveColumns);
     }
     /**
      * The total number of objects (tables and editioning views) scanned by the discovery job.
      * 
      */
     @Export(name="totalObjectsScanned", refs={String.class}, tree="[0]")
-    private Output<String> totalObjectsScanned;
+    private Output</* @Nullable */ String> totalObjectsScanned;
 
     /**
      * @return The total number of objects (tables and editioning views) scanned by the discovery job.
      * 
      */
-    public Output<String> totalObjectsScanned() {
-        return this.totalObjectsScanned;
+    public Output<Optional<String>> totalObjectsScanned() {
+        return Codegen.optional(this.totalObjectsScanned);
     }
     /**
      * The total number of schemas scanned by the discovery job.
      * 
      */
     @Export(name="totalSchemasScanned", refs={String.class}, tree="[0]")
-    private Output<String> totalSchemasScanned;
+    private Output</* @Nullable */ String> totalSchemasScanned;
 
     /**
      * @return The total number of schemas scanned by the discovery job.
      * 
      */
-    public Output<String> totalSchemasScanned() {
-        return this.totalSchemasScanned;
+    public Output<Optional<String>> totalSchemasScanned() {
+        return Codegen.optional(this.totalSchemasScanned);
     }
 
     /**

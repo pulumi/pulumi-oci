@@ -51,24 +51,24 @@ export interface GetRepositoryRefResult {
     /**
      * Commit ID pointed to by the new branch.
      */
-    readonly commitId: string;
+    readonly commitId?: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * Unique full reference name inside a repository.
      */
-    readonly fullRefName: string;
-    readonly id: string;
+    readonly fullRefName?: string;
+    readonly id?: string;
     /**
      * SHA-1 hash value of the object pointed to by the tag.
      */
-    readonly objectId: string;
+    readonly objectId?: string;
     /**
      * Unique reference name inside a repository.
      */
@@ -76,7 +76,7 @@ export interface GetRepositoryRefResult {
     /**
      * The type of reference (BRANCH or TAG).
      */
-    readonly refType: string;
+    readonly refType?: string;
     /**
      * The OCID of the repository containing the reference.
      */

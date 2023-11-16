@@ -58,7 +58,7 @@ class GetSqlCollectionLogInsightsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -71,26 +71,17 @@ class GetSqlCollectionLogInsightsResult:
 
     @property
     @pulumi.getter(name="sqlCollectionLogInsightsCollections")
-    def sql_collection_log_insights_collections(self) -> Sequence['outputs.GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionResult']:
-        """
-        The list of sql_collection_log_insights_collection.
-        """
+    def sql_collection_log_insights_collections(self) -> Optional[Sequence['outputs.GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionResult']]:
         return pulumi.get(self, "sql_collection_log_insights_collections")
 
     @property
     @pulumi.getter(name="timeEnded")
     def time_ended(self) -> str:
-        """
-        The time at which the aggregation ended.
-        """
         return pulumi.get(self, "time_ended")
 
     @property
     @pulumi.getter(name="timeStarted")
     def time_started(self) -> str:
-        """
-        The time at which the aggregation started.
-        """
         return pulumi.get(self, "time_started")
 
 
@@ -116,27 +107,7 @@ def get_sql_collection_log_insights(filters: Optional[Sequence[pulumi.InputType[
                                     time_started: Optional[str] = None,
                                     opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetSqlCollectionLogInsightsResult:
     """
-    This data source provides the list of Sql Collection Log Insights in Oracle Cloud Infrastructure Data Safe service.
-
-    Retrieves a list of the SQL collection log analytics.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_sql_collection_log_insights = oci.DataSafe.get_sql_collection_log_insights(sql_collection_id=oci_data_safe_sql_collection["test_sql_collection"]["id"],
-        time_ended=var["sql_collection_log_insight_time_ended"],
-        time_started=var["sql_collection_log_insight_time_started"],
-        group_by=var["sql_collection_log_insight_group_by"])
-    ```
-
-
-    :param str group_by: The group by parameter to summarize SQL collection log insights aggregation.
-    :param str sql_collection_id: The OCID of the SQL collection resource.
-    :param str time_ended: An optional filter to return the stats of the SQL collection logs collected before the date-time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-    :param str time_started: An optional filter to return the stats of the SQL collection logs collected after the date-time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['filters'] = filters
@@ -165,26 +136,6 @@ def get_sql_collection_log_insights_output(filters: Optional[pulumi.Input[Option
                                            time_started: Optional[pulumi.Input[str]] = None,
                                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSqlCollectionLogInsightsResult]:
     """
-    This data source provides the list of Sql Collection Log Insights in Oracle Cloud Infrastructure Data Safe service.
-
-    Retrieves a list of the SQL collection log analytics.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_sql_collection_log_insights = oci.DataSafe.get_sql_collection_log_insights(sql_collection_id=oci_data_safe_sql_collection["test_sql_collection"]["id"],
-        time_ended=var["sql_collection_log_insight_time_ended"],
-        time_started=var["sql_collection_log_insight_time_started"],
-        group_by=var["sql_collection_log_insight_group_by"])
-    ```
-
-
-    :param str group_by: The group by parameter to summarize SQL collection log insights aggregation.
-    :param str sql_collection_id: The OCID of the SQL collection resource.
-    :param str time_ended: An optional filter to return the stats of the SQL collection logs collected before the date-time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-    :param str time_started: An optional filter to return the stats of the SQL collection logs collected after the date-time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+    Use this data source to access information about an existing resource.
     """
     ...

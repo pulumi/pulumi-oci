@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Alarm History Collection resource in Oracle Cloud Infrastructure Monitoring service.
@@ -82,9 +81,9 @@ type GetAlarmHistoryCollectionResult struct {
 	// The set of history entries retrieved for the alarm.
 	Entries []GetAlarmHistoryCollectionEntry `pulumi:"entries"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Whether the alarm is enabled.  Example: `true`
-	IsEnabled                     bool    `pulumi:"isEnabled"`
+	IsEnabled                     *bool   `pulumi:"isEnabled"`
 	TimestampGreaterThanOrEqualTo *string `pulumi:"timestampGreaterThanOrEqualTo"`
 	TimestampLessThan             *string `pulumi:"timestampLessThan"`
 }
@@ -133,12 +132,6 @@ func (o GetAlarmHistoryCollectionResultOutput) ToGetAlarmHistoryCollectionResult
 	return o
 }
 
-func (o GetAlarmHistoryCollectionResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetAlarmHistoryCollectionResult] {
-	return pulumix.Output[GetAlarmHistoryCollectionResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetAlarmHistoryCollectionResultOutput) AlarmHistorytype() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetAlarmHistoryCollectionResult) *string { return v.AlarmHistorytype }).(pulumi.StringPtrOutput)
 }
@@ -154,13 +147,13 @@ func (o GetAlarmHistoryCollectionResultOutput) Entries() GetAlarmHistoryCollecti
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetAlarmHistoryCollectionResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAlarmHistoryCollectionResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetAlarmHistoryCollectionResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAlarmHistoryCollectionResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Whether the alarm is enabled.  Example: `true`
-func (o GetAlarmHistoryCollectionResultOutput) IsEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetAlarmHistoryCollectionResult) bool { return v.IsEnabled }).(pulumi.BoolOutput)
+func (o GetAlarmHistoryCollectionResultOutput) IsEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetAlarmHistoryCollectionResult) *bool { return v.IsEnabled }).(pulumi.BoolPtrOutput)
 }
 
 func (o GetAlarmHistoryCollectionResultOutput) TimestampGreaterThanOrEqualTo() pulumi.StringPtrOutput {

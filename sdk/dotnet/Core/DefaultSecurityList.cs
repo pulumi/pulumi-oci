@@ -13,19 +13,19 @@ namespace Pulumi.Oci.Core
     public partial class DefaultSecurityList : global::Pulumi.CustomResource
     {
         [Output("compartmentId")]
-        public Output<string> CompartmentId { get; private set; } = null!;
+        public Output<string?> CompartmentId { get; private set; } = null!;
 
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         [Output("displayName")]
-        public Output<string> DisplayName { get; private set; } = null!;
+        public Output<string?> DisplayName { get; private set; } = null!;
 
         [Output("egressSecurityRules")]
         public Output<ImmutableArray<Outputs.DefaultSecurityListEgressSecurityRule>> EgressSecurityRules { get; private set; } = null!;
 
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         [Output("ingressSecurityRules")]
         public Output<ImmutableArray<Outputs.DefaultSecurityListIngressSecurityRule>> IngressSecurityRules { get; private set; } = null!;
@@ -34,10 +34,10 @@ namespace Pulumi.Oci.Core
         public Output<string> ManageDefaultResourceId { get; private set; } = null!;
 
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
 
         /// <summary>

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Supported Vmware Software Versions in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
@@ -64,7 +63,7 @@ type GetSupportedVmwareSoftwareVersionsResult struct {
 	CompartmentId string                                     `pulumi:"compartmentId"`
 	Filters       []GetSupportedVmwareSoftwareVersionsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// A list of the supported versions of bundled VMware software.
 	Items []GetSupportedVmwareSoftwareVersionsItem `pulumi:"items"`
 }
@@ -108,12 +107,6 @@ func (o GetSupportedVmwareSoftwareVersionsResultOutput) ToGetSupportedVmwareSoft
 	return o
 }
 
-func (o GetSupportedVmwareSoftwareVersionsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetSupportedVmwareSoftwareVersionsResult] {
-	return pulumix.Output[GetSupportedVmwareSoftwareVersionsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSupportedVmwareSoftwareVersionsResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSupportedVmwareSoftwareVersionsResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
@@ -125,8 +118,8 @@ func (o GetSupportedVmwareSoftwareVersionsResultOutput) Filters() GetSupportedVm
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetSupportedVmwareSoftwareVersionsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSupportedVmwareSoftwareVersionsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetSupportedVmwareSoftwareVersionsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSupportedVmwareSoftwareVersionsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // A list of the supported versions of bundled VMware software.

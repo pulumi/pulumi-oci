@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Secret resource in Oracle Cloud Infrastructure Vault service.
@@ -32,17 +31,17 @@ type Secret struct {
 	// (Updatable) The OCID of the compartment where you want to create the secret.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// The version number of the secret version that's currently in use.
-	CurrentVersionNumber pulumi.StringOutput `pulumi:"currentVersionNumber"`
+	CurrentVersionNumber pulumi.StringPtrOutput `pulumi:"currentVersionNumber"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) A brief description of the secret. Avoid entering confidential information.
-	Description pulumi.StringOutput `pulumi:"description"`
+	Description pulumi.StringPtrOutput `pulumi:"description"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// The OCID of the master encryption key that is used to encrypt the secret.
 	KeyId pulumi.StringOutput `pulumi:"keyId"`
 	// Additional information about the current lifecycle state of the secret.
-	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrOutput `pulumi:"lifecycleDetails"`
 	// (Updatable) Additional metadata that you can use to provide context about how to use the secret during rotation or other administrative tasks. For example, for a secret that you use to connect to a database, the additional metadata might specify the connection endpoint and the connection string. Provide additional metadata as key-value pairs.
 	Metadata pulumi.MapOutput `pulumi:"metadata"`
 	// (Updatable) The content of the secret and metadata to help identify it.
@@ -52,13 +51,13 @@ type Secret struct {
 	// (Updatable) A list of rules to control how the secret is used and managed.
 	SecretRules SecretSecretRuleArrayOutput `pulumi:"secretRules"`
 	// The current lifecycle state of the secret.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// A property indicating when the secret was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// An optional property indicating when the current secret version will expire, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-	TimeOfCurrentVersionExpiry pulumi.StringOutput `pulumi:"timeOfCurrentVersionExpiry"`
+	TimeOfCurrentVersionExpiry pulumi.StringPtrOutput `pulumi:"timeOfCurrentVersionExpiry"`
 	// An optional property indicating when to delete the secret, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-	TimeOfDeletion pulumi.StringOutput `pulumi:"timeOfDeletion"`
+	TimeOfDeletion pulumi.StringPtrOutput `pulumi:"timeOfDeletion"`
 	// The OCID of the vault where you want to create the secret.
 	//
 	// ** IMPORTANT **
@@ -266,12 +265,6 @@ func (i *Secret) ToSecretOutputWithContext(ctx context.Context) SecretOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(SecretOutput)
 }
 
-func (i *Secret) ToOutput(ctx context.Context) pulumix.Output[*Secret] {
-	return pulumix.Output[*Secret]{
-		OutputState: i.ToSecretOutputWithContext(ctx).OutputState,
-	}
-}
-
 // SecretArrayInput is an input type that accepts SecretArray and SecretArrayOutput values.
 // You can construct a concrete instance of `SecretArrayInput` via:
 //
@@ -295,12 +288,6 @@ func (i SecretArray) ToSecretArrayOutput() SecretArrayOutput {
 
 func (i SecretArray) ToSecretArrayOutputWithContext(ctx context.Context) SecretArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(SecretArrayOutput)
-}
-
-func (i SecretArray) ToOutput(ctx context.Context) pulumix.Output[[]*Secret] {
-	return pulumix.Output[[]*Secret]{
-		OutputState: i.ToSecretArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // SecretMapInput is an input type that accepts SecretMap and SecretMapOutput values.
@@ -328,12 +315,6 @@ func (i SecretMap) ToSecretMapOutputWithContext(ctx context.Context) SecretMapOu
 	return pulumi.ToOutputWithContext(ctx, i).(SecretMapOutput)
 }
 
-func (i SecretMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*Secret] {
-	return pulumix.Output[map[string]*Secret]{
-		OutputState: i.ToSecretMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type SecretOutput struct{ *pulumi.OutputState }
 
 func (SecretOutput) ElementType() reflect.Type {
@@ -348,20 +329,14 @@ func (o SecretOutput) ToSecretOutputWithContext(ctx context.Context) SecretOutpu
 	return o
 }
 
-func (o SecretOutput) ToOutput(ctx context.Context) pulumix.Output[*Secret] {
-	return pulumix.Output[*Secret]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) The OCID of the compartment where you want to create the secret.
 func (o SecretOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Secret) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
 // The version number of the secret version that's currently in use.
-func (o SecretOutput) CurrentVersionNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v *Secret) pulumi.StringOutput { return v.CurrentVersionNumber }).(pulumi.StringOutput)
+func (o SecretOutput) CurrentVersionNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Secret) pulumi.StringPtrOutput { return v.CurrentVersionNumber }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -370,8 +345,8 @@ func (o SecretOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // (Updatable) A brief description of the secret. Avoid entering confidential information.
-func (o SecretOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v *Secret) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
+func (o SecretOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Secret) pulumi.StringPtrOutput { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -385,8 +360,8 @@ func (o SecretOutput) KeyId() pulumi.StringOutput {
 }
 
 // Additional information about the current lifecycle state of the secret.
-func (o SecretOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v *Secret) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o SecretOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Secret) pulumi.StringPtrOutput { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Additional metadata that you can use to provide context about how to use the secret during rotation or other administrative tasks. For example, for a secret that you use to connect to a database, the additional metadata might specify the connection endpoint and the connection string. Provide additional metadata as key-value pairs.
@@ -410,23 +385,23 @@ func (o SecretOutput) SecretRules() SecretSecretRuleArrayOutput {
 }
 
 // The current lifecycle state of the secret.
-func (o SecretOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *Secret) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o SecretOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Secret) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // A property indicating when the secret was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-func (o SecretOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *Secret) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o SecretOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Secret) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // An optional property indicating when the current secret version will expire, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-func (o SecretOutput) TimeOfCurrentVersionExpiry() pulumi.StringOutput {
-	return o.ApplyT(func(v *Secret) pulumi.StringOutput { return v.TimeOfCurrentVersionExpiry }).(pulumi.StringOutput)
+func (o SecretOutput) TimeOfCurrentVersionExpiry() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Secret) pulumi.StringPtrOutput { return v.TimeOfCurrentVersionExpiry }).(pulumi.StringPtrOutput)
 }
 
 // An optional property indicating when to delete the secret, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-func (o SecretOutput) TimeOfDeletion() pulumi.StringOutput {
-	return o.ApplyT(func(v *Secret) pulumi.StringOutput { return v.TimeOfDeletion }).(pulumi.StringOutput)
+func (o SecretOutput) TimeOfDeletion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Secret) pulumi.StringPtrOutput { return v.TimeOfDeletion }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the vault where you want to create the secret.
@@ -451,12 +426,6 @@ func (o SecretArrayOutput) ToSecretArrayOutputWithContext(ctx context.Context) S
 	return o
 }
 
-func (o SecretArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*Secret] {
-	return pulumix.Output[[]*Secret]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o SecretArrayOutput) Index(i pulumi.IntInput) SecretOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *Secret {
 		return vs[0].([]*Secret)[vs[1].(int)]
@@ -475,12 +444,6 @@ func (o SecretMapOutput) ToSecretMapOutput() SecretMapOutput {
 
 func (o SecretMapOutput) ToSecretMapOutputWithContext(ctx context.Context) SecretMapOutput {
 	return o
-}
-
-func (o SecretMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*Secret] {
-	return pulumix.Output[map[string]*Secret]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o SecretMapOutput) MapIndex(k pulumi.StringInput) SecretOutput {

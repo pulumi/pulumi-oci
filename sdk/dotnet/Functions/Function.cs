@@ -81,7 +81,7 @@ namespace Pulumi.Oci.Functions
         /// The OCID of the compartment that contains the function.
         /// </summary>
         [Output("compartmentId")]
-        public Output<string> CompartmentId { get; private set; } = null!;
+        public Output<string?> CompartmentId { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Function configuration. These values are passed on to the function as environment variables, this overrides application configuration values. Keys must be ASCII strings consisting solely of letters, digits, and the '_' (underscore) character, and must not begin with a digit. Values should be limited to printable unicode characters.  Example: `{"MY_FUNCTION_CONFIG": "ConfVal"}`
@@ -89,13 +89,13 @@ namespace Pulumi.Oci.Functions
         /// The maximum size for all configuration keys and values is limited to 4KB. This is measured as the sum of octets necessary to represent each key and value in UTF-8.
         /// </summary>
         [Output("config")]
-        public Output<ImmutableDictionary<string, object>> Config { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> Config { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// The display name of the function. The display name must be unique within the application containing the function. Avoid entering confidential information.
@@ -107,25 +107,25 @@ namespace Pulumi.Oci.Functions
         /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The qualified name of the Docker image to use in the function, including the image tag. The image should be in the Oracle Cloud Infrastructure Registry that is in the same region as the function itself. This field must be updated if image_digest is updated. Example: `phx.ocir.io/ten/functions/function:0.0.1`
         /// </summary>
         [Output("image")]
-        public Output<string> Image { get; private set; } = null!;
+        public Output<string?> Image { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The image digest for the version of the image that will be pulled when invoking this function. If no value is specified, the digest currently associated with the image in the Oracle Cloud Infrastructure Registry will be used. This field must be updated if image is updated. Example: `sha256:ca0eeb6fb05351dfc8759c20733c91def84cb8007aa89a5bf606bc8b315b9fc7`
         /// </summary>
         [Output("imageDigest")]
-        public Output<string> ImageDigest { get; private set; } = null!;
+        public Output<string?> ImageDigest { get; private set; } = null!;
 
         /// <summary>
         /// The base https invoke URL to set on a client in order to invoke a function. This URL will never change over the lifetime of the function and can be cached.
         /// </summary>
         [Output("invokeEndpoint")]
-        public Output<string> InvokeEndpoint { get; private set; } = null!;
+        public Output<string?> InvokeEndpoint { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Maximum usable memory for the function (MiB).
@@ -137,49 +137,49 @@ namespace Pulumi.Oci.Functions
         /// (Updatable) Define the strategy for provisioned concurrency for the function.
         /// </summary>
         [Output("provisionedConcurrencyConfig")]
-        public Output<Outputs.FunctionProvisionedConcurrencyConfig> ProvisionedConcurrencyConfig { get; private set; } = null!;
+        public Output<Outputs.FunctionProvisionedConcurrencyConfig?> ProvisionedConcurrencyConfig { get; private set; } = null!;
 
         /// <summary>
         /// The processor shape (`GENERIC_X86`/`GENERIC_ARM`) on which to run functions in the application, extracted from the image manifest.
         /// </summary>
         [Output("shape")]
-        public Output<string> Shape { get; private set; } = null!;
+        public Output<string?> Shape { get; private set; } = null!;
 
         /// <summary>
         /// The source details for the Function. The function can be created from various sources.
         /// </summary>
         [Output("sourceDetails")]
-        public Output<Outputs.FunctionSourceDetails> SourceDetails { get; private set; } = null!;
+        public Output<Outputs.FunctionSourceDetails?> SourceDetails { get; private set; } = null!;
 
         /// <summary>
         /// The current state of the function.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// The time the function was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-09-12T22:47:12.613Z`
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// The time the function was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-09-12T22:47:12.613Z`
         /// </summary>
         [Output("timeUpdated")]
-        public Output<string> TimeUpdated { get; private set; } = null!;
+        public Output<string?> TimeUpdated { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Timeout for executions of the function. Value in seconds.
         /// </summary>
         [Output("timeoutInSeconds")]
-        public Output<int> TimeoutInSeconds { get; private set; } = null!;
+        public Output<int?> TimeoutInSeconds { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Define the tracing configuration for a function.
         /// </summary>
         [Output("traceConfig")]
-        public Output<Outputs.FunctionTraceConfig> TraceConfig { get; private set; } = null!;
+        public Output<Outputs.FunctionTraceConfig?> TraceConfig { get; private set; } = null!;
 
 
         /// <summary>

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Instance Pool Instances in Oracle Cloud Infrastructure Core service.
@@ -72,8 +71,8 @@ type GetInstancePoolInstancesResult struct {
 	DisplayName *string                          `pulumi:"displayName"`
 	Filters     []GetInstancePoolInstancesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id             string `pulumi:"id"`
-	InstancePoolId string `pulumi:"instancePoolId"`
+	Id             *string `pulumi:"id"`
+	InstancePoolId string  `pulumi:"instancePoolId"`
 	// The list of instances.
 	Instances []GetInstancePoolInstancesInstance `pulumi:"instances"`
 }
@@ -121,12 +120,6 @@ func (o GetInstancePoolInstancesResultOutput) ToGetInstancePoolInstancesResultOu
 	return o
 }
 
-func (o GetInstancePoolInstancesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetInstancePoolInstancesResult] {
-	return pulumix.Output[GetInstancePoolInstancesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the instance.
 func (o GetInstancePoolInstancesResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstancePoolInstancesResult) string { return v.CompartmentId }).(pulumi.StringOutput)
@@ -142,8 +135,8 @@ func (o GetInstancePoolInstancesResultOutput) Filters() GetInstancePoolInstances
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetInstancePoolInstancesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstancePoolInstancesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetInstancePoolInstancesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInstancePoolInstancesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetInstancePoolInstancesResultOutput) InstancePoolId() pulumi.StringOutput {

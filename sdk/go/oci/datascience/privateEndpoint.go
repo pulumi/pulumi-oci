@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Data Science Private Endpoint resource in Oracle Cloud Infrastructure Data Science service.
@@ -70,36 +69,36 @@ type PrivateEndpoint struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the private endpoint.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user that created the private endpoint.
-	CreatedBy pulumi.StringOutput `pulumi:"createdBy"`
+	CreatedBy pulumi.StringPtrOutput `pulumi:"createdBy"`
 	// Data Science resource type.
 	DataScienceResourceType pulumi.StringOutput `pulumi:"dataScienceResourceType"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) A user friendly description. Avoid entering confidential information.
-	Description pulumi.StringOutput `pulumi:"description"`
+	Description pulumi.StringPtrOutput `pulumi:"description"`
 	// (Updatable) A user friendly name. It doesn't have to be unique. Avoid entering confidential information.
-	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrOutput `pulumi:"displayName"`
 	// Accesing the Data Science resource using FQDN.
-	Fqdn pulumi.StringOutput `pulumi:"fqdn"`
+	Fqdn pulumi.StringPtrOutput `pulumi:"fqdn"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// Details of the state of Data Science private endpoint.
-	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrOutput `pulumi:"lifecycleDetails"`
 	// (Updatable) An array of network security group OCIDs.
 	NsgIds pulumi.StringArrayOutput `pulumi:"nsgIds"`
 	// State of the Data Science private endpoint.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// Subdomain for a private endpoint FQDN.
-	SubDomain pulumi.StringOutput `pulumi:"subDomain"`
+	SubDomain pulumi.StringPtrOutput `pulumi:"subDomain"`
 	// The OCID of the subnet.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SubnetId pulumi.StringOutput `pulumi:"subnetId"`
 	// The date and time that the Data Science private endpoint was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The date and time that the Data Science private endpoint was updated expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
-	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 }
 
 // NewPrivateEndpoint registers a new resource with the given unique name, arguments, and options.
@@ -288,12 +287,6 @@ func (i *PrivateEndpoint) ToPrivateEndpointOutputWithContext(ctx context.Context
 	return pulumi.ToOutputWithContext(ctx, i).(PrivateEndpointOutput)
 }
 
-func (i *PrivateEndpoint) ToOutput(ctx context.Context) pulumix.Output[*PrivateEndpoint] {
-	return pulumix.Output[*PrivateEndpoint]{
-		OutputState: i.ToPrivateEndpointOutputWithContext(ctx).OutputState,
-	}
-}
-
 // PrivateEndpointArrayInput is an input type that accepts PrivateEndpointArray and PrivateEndpointArrayOutput values.
 // You can construct a concrete instance of `PrivateEndpointArrayInput` via:
 //
@@ -317,12 +310,6 @@ func (i PrivateEndpointArray) ToPrivateEndpointArrayOutput() PrivateEndpointArra
 
 func (i PrivateEndpointArray) ToPrivateEndpointArrayOutputWithContext(ctx context.Context) PrivateEndpointArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(PrivateEndpointArrayOutput)
-}
-
-func (i PrivateEndpointArray) ToOutput(ctx context.Context) pulumix.Output[[]*PrivateEndpoint] {
-	return pulumix.Output[[]*PrivateEndpoint]{
-		OutputState: i.ToPrivateEndpointArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // PrivateEndpointMapInput is an input type that accepts PrivateEndpointMap and PrivateEndpointMapOutput values.
@@ -350,12 +337,6 @@ func (i PrivateEndpointMap) ToPrivateEndpointMapOutputWithContext(ctx context.Co
 	return pulumi.ToOutputWithContext(ctx, i).(PrivateEndpointMapOutput)
 }
 
-func (i PrivateEndpointMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*PrivateEndpoint] {
-	return pulumix.Output[map[string]*PrivateEndpoint]{
-		OutputState: i.ToPrivateEndpointMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type PrivateEndpointOutput struct{ *pulumi.OutputState }
 
 func (PrivateEndpointOutput) ElementType() reflect.Type {
@@ -370,20 +351,14 @@ func (o PrivateEndpointOutput) ToPrivateEndpointOutputWithContext(ctx context.Co
 	return o
 }
 
-func (o PrivateEndpointOutput) ToOutput(ctx context.Context) pulumix.Output[*PrivateEndpoint] {
-	return pulumix.Output[*PrivateEndpoint]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the private endpoint.
 func (o PrivateEndpointOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *PrivateEndpoint) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user that created the private endpoint.
-func (o PrivateEndpointOutput) CreatedBy() pulumi.StringOutput {
-	return o.ApplyT(func(v *PrivateEndpoint) pulumi.StringOutput { return v.CreatedBy }).(pulumi.StringOutput)
+func (o PrivateEndpointOutput) CreatedBy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *PrivateEndpoint) pulumi.StringPtrOutput { return v.CreatedBy }).(pulumi.StringPtrOutput)
 }
 
 // Data Science resource type.
@@ -397,18 +372,18 @@ func (o PrivateEndpointOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // (Updatable) A user friendly description. Avoid entering confidential information.
-func (o PrivateEndpointOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v *PrivateEndpoint) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
+func (o PrivateEndpointOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *PrivateEndpoint) pulumi.StringPtrOutput { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) A user friendly name. It doesn't have to be unique. Avoid entering confidential information.
-func (o PrivateEndpointOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v *PrivateEndpoint) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+func (o PrivateEndpointOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *PrivateEndpoint) pulumi.StringPtrOutput { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Accesing the Data Science resource using FQDN.
-func (o PrivateEndpointOutput) Fqdn() pulumi.StringOutput {
-	return o.ApplyT(func(v *PrivateEndpoint) pulumi.StringOutput { return v.Fqdn }).(pulumi.StringOutput)
+func (o PrivateEndpointOutput) Fqdn() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *PrivateEndpoint) pulumi.StringPtrOutput { return v.Fqdn }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -417,8 +392,8 @@ func (o PrivateEndpointOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // Details of the state of Data Science private endpoint.
-func (o PrivateEndpointOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v *PrivateEndpoint) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o PrivateEndpointOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *PrivateEndpoint) pulumi.StringPtrOutput { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) An array of network security group OCIDs.
@@ -427,13 +402,13 @@ func (o PrivateEndpointOutput) NsgIds() pulumi.StringArrayOutput {
 }
 
 // State of the Data Science private endpoint.
-func (o PrivateEndpointOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *PrivateEndpoint) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o PrivateEndpointOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *PrivateEndpoint) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Subdomain for a private endpoint FQDN.
-func (o PrivateEndpointOutput) SubDomain() pulumi.StringOutput {
-	return o.ApplyT(func(v *PrivateEndpoint) pulumi.StringOutput { return v.SubDomain }).(pulumi.StringOutput)
+func (o PrivateEndpointOutput) SubDomain() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *PrivateEndpoint) pulumi.StringPtrOutput { return v.SubDomain }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the subnet.
@@ -445,13 +420,13 @@ func (o PrivateEndpointOutput) SubnetId() pulumi.StringOutput {
 }
 
 // The date and time that the Data Science private endpoint was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
-func (o PrivateEndpointOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *PrivateEndpoint) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o PrivateEndpointOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *PrivateEndpoint) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time that the Data Science private endpoint was updated expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
-func (o PrivateEndpointOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *PrivateEndpoint) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o PrivateEndpointOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *PrivateEndpoint) pulumi.StringPtrOutput { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type PrivateEndpointArrayOutput struct{ *pulumi.OutputState }
@@ -466,12 +441,6 @@ func (o PrivateEndpointArrayOutput) ToPrivateEndpointArrayOutput() PrivateEndpoi
 
 func (o PrivateEndpointArrayOutput) ToPrivateEndpointArrayOutputWithContext(ctx context.Context) PrivateEndpointArrayOutput {
 	return o
-}
-
-func (o PrivateEndpointArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*PrivateEndpoint] {
-	return pulumix.Output[[]*PrivateEndpoint]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o PrivateEndpointArrayOutput) Index(i pulumi.IntInput) PrivateEndpointOutput {
@@ -492,12 +461,6 @@ func (o PrivateEndpointMapOutput) ToPrivateEndpointMapOutput() PrivateEndpointMa
 
 func (o PrivateEndpointMapOutput) ToPrivateEndpointMapOutputWithContext(ctx context.Context) PrivateEndpointMapOutput {
 	return o
-}
-
-func (o PrivateEndpointMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*PrivateEndpoint] {
-	return pulumix.Output[map[string]*PrivateEndpoint]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o PrivateEndpointMapOutput) MapIndex(k pulumi.StringInput) PrivateEndpointOutput {

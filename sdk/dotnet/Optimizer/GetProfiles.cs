@@ -159,7 +159,7 @@ namespace Pulumi.Oci.Optimizer
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The name assigned to the profile. Avoid entering confidential information.
         /// </summary>
@@ -179,7 +179,7 @@ namespace Pulumi.Oci.Optimizer
 
             ImmutableArray<Outputs.GetProfilesFilterResult> filters,
 
-            string id,
+            string? id,
 
             string? name,
 

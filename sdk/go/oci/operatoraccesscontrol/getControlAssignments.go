@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Operator Control Assignments in Oracle Cloud Infrastructure Operator Access Control service.
@@ -76,7 +75,7 @@ type GetControlAssignmentsResult struct {
 	CompartmentId string                        `pulumi:"compartmentId"`
 	Filters       []GetControlAssignmentsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The list of operator_control_assignment_collection.
 	OperatorControlAssignmentCollections []GetControlAssignmentsOperatorControlAssignmentCollection `pulumi:"operatorControlAssignmentCollections"`
 	OperatorControlName                  *string                                                    `pulumi:"operatorControlName"`
@@ -135,12 +134,6 @@ func (o GetControlAssignmentsResultOutput) ToGetControlAssignmentsResultOutputWi
 	return o
 }
 
-func (o GetControlAssignmentsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetControlAssignmentsResult] {
-	return pulumix.Output[GetControlAssignmentsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the comparment that contains the operator control assignment.
 func (o GetControlAssignmentsResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetControlAssignmentsResult) string { return v.CompartmentId }).(pulumi.StringOutput)
@@ -151,8 +144,8 @@ func (o GetControlAssignmentsResultOutput) Filters() GetControlAssignmentsFilter
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetControlAssignmentsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetControlAssignmentsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetControlAssignmentsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetControlAssignmentsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The list of operator_control_assignment_collection.

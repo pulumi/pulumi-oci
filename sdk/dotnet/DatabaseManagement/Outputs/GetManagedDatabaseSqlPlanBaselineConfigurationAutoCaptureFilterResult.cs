@@ -16,7 +16,7 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// <summary>
         /// The database user who last updated the filter value.
         /// </summary>
-        public readonly string ModifiedBy;
+        public readonly string? ModifiedBy;
         /// <summary>
         /// The name of the automatic capture filter.
         /// * AUTO_CAPTURE_SQL_TEXT: Search pattern to apply to SQL text.
@@ -24,11 +24,11 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// * AUTO_CAPTURE_MODULE: Module to include or exclude for SQL plan management auto capture.
         /// * AUTO_CAPTURE_ACTION: Action to include or exclude for SQL plan management automatic capture.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// The time the filter value was last updated.
         /// </summary>
-        public readonly string TimeLastModified;
+        public readonly string? TimeLastModified;
         /// <summary>
         /// A list of filter values to exclude.
         /// </summary>
@@ -40,11 +40,11 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
 
         [OutputConstructor]
         private GetManagedDatabaseSqlPlanBaselineConfigurationAutoCaptureFilterResult(
-            string modifiedBy,
+            string? modifiedBy,
 
-            string name,
+            string? name,
 
-            string timeLastModified,
+            string? timeLastModified,
 
             ImmutableArray<string> valuesToExcludes,
 

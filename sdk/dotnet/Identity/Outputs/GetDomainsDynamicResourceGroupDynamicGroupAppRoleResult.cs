@@ -16,47 +16,47 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// If true, then the role provides administrative access privileges. READ-ONLY.
         /// </summary>
-        public readonly bool AdminRole;
+        public readonly bool? AdminRole;
         /// <summary>
         /// App identifier
         /// </summary>
-        public readonly string AppId;
+        public readonly string? AppId;
         /// <summary>
         /// Name of parent App. READ-ONLY.
         /// </summary>
-        public readonly string AppName;
+        public readonly string? AppName;
         /// <summary>
         /// The displayName of the User or App who modified this Resource
         /// </summary>
-        public readonly string Display;
+        public readonly string? Display;
         /// <summary>
         /// The name of the legacy group associated with this AppRole.
         /// </summary>
-        public readonly string LegacyGroupName;
+        public readonly string? LegacyGroupName;
         /// <summary>
         /// The URI of the SCIM resource that represents the User or App who modified this Resource
         /// </summary>
-        public readonly string Ref;
+        public readonly string? Ref;
         /// <summary>
         /// Oracle Cloud Infrastructure Tag value
         /// </summary>
-        public readonly string Value;
+        public readonly string? Value;
 
         [OutputConstructor]
         private GetDomainsDynamicResourceGroupDynamicGroupAppRoleResult(
-            bool adminRole,
+            bool? adminRole,
 
-            string appId,
+            string? appId,
 
-            string appName,
+            string? appName,
 
-            string display,
+            string? display,
 
-            string legacyGroupName,
+            string? legacyGroupName,
 
-            string @ref,
+            string? @ref,
 
-            string value)
+            string? value)
         {
             AdminRole = adminRole;
             AppId = appId;

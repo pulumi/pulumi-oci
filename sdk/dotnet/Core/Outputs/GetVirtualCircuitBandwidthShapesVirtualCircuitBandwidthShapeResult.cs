@@ -16,17 +16,17 @@ namespace Pulumi.Oci.Core.Outputs
         /// <summary>
         /// The bandwidth in Mbps.  Example: `10000`
         /// </summary>
-        public readonly int BandwidthInMbps;
+        public readonly int? BandwidthInMbps;
         /// <summary>
         /// The name of the bandwidth shape.  Example: `10 Gbps`
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
 
         [OutputConstructor]
         private GetVirtualCircuitBandwidthShapesVirtualCircuitBandwidthShapeResult(
-            int bandwidthInMbps,
+            int? bandwidthInMbps,
 
-            string name)
+            string? name)
         {
             BandwidthInMbps = bandwidthInMbps;
             Name = name;

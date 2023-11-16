@@ -6,6 +6,8 @@ package com.pulumi.oci.Kms.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetVaultExternalKeyManagerMetadataSummaryOauthMetadataSummary {
@@ -13,27 +15,27 @@ public final class GetVaultExternalKeyManagerMetadataSummaryOauthMetadataSummary
      * @return ID of the client app created in IDP.
      * 
      */
-    private String clientAppId;
+    private @Nullable String clientAppId;
     /**
      * @return Base URL of the IDCS account where confidential client app is created.
      * 
      */
-    private String idcsAccountNameUrl;
+    private @Nullable String idcsAccountNameUrl;
 
     private GetVaultExternalKeyManagerMetadataSummaryOauthMetadataSummary() {}
     /**
      * @return ID of the client app created in IDP.
      * 
      */
-    public String clientAppId() {
-        return this.clientAppId;
+    public Optional<String> clientAppId() {
+        return Optional.ofNullable(this.clientAppId);
     }
     /**
      * @return Base URL of the IDCS account where confidential client app is created.
      * 
      */
-    public String idcsAccountNameUrl() {
-        return this.idcsAccountNameUrl;
+    public Optional<String> idcsAccountNameUrl() {
+        return Optional.ofNullable(this.idcsAccountNameUrl);
     }
 
     public static Builder builder() {
@@ -45,8 +47,8 @@ public final class GetVaultExternalKeyManagerMetadataSummaryOauthMetadataSummary
     }
     @CustomType.Builder
     public static final class Builder {
-        private String clientAppId;
-        private String idcsAccountNameUrl;
+        private @Nullable String clientAppId;
+        private @Nullable String idcsAccountNameUrl;
         public Builder() {}
         public Builder(GetVaultExternalKeyManagerMetadataSummaryOauthMetadataSummary defaults) {
     	      Objects.requireNonNull(defaults);
@@ -55,13 +57,13 @@ public final class GetVaultExternalKeyManagerMetadataSummaryOauthMetadataSummary
         }
 
         @CustomType.Setter
-        public Builder clientAppId(String clientAppId) {
-            this.clientAppId = Objects.requireNonNull(clientAppId);
+        public Builder clientAppId(@Nullable String clientAppId) {
+            this.clientAppId = clientAppId;
             return this;
         }
         @CustomType.Setter
-        public Builder idcsAccountNameUrl(String idcsAccountNameUrl) {
-            this.idcsAccountNameUrl = Objects.requireNonNull(idcsAccountNameUrl);
+        public Builder idcsAccountNameUrl(@Nullable String idcsAccountNameUrl) {
+            this.idcsAccountNameUrl = idcsAccountNameUrl;
             return this;
         }
         public GetVaultExternalKeyManagerMetadataSummaryOauthMetadataSummary build() {

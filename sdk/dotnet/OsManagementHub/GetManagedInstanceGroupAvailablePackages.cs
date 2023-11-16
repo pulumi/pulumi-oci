@@ -203,7 +203,7 @@ namespace Pulumi.Oci.OsManagementHub
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Flag to return only latest package versions.
         /// </summary>
@@ -224,7 +224,7 @@ namespace Pulumi.Oci.OsManagementHub
 
             ImmutableArray<Outputs.GetManagedInstanceGroupAvailablePackagesFilterResult> filters,
 
-            string id,
+            string? id,
 
             bool? isLatest,
 

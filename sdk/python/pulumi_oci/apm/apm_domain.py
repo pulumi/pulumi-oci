@@ -22,16 +22,6 @@ class ApmDomainArgs:
                  is_free_tier: Optional[pulumi.Input[bool]] = None):
         """
         The set of arguments for constructing a ApmDomain resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment corresponding to the APM domain.
-        :param pulumi.Input[str] display_name: (Updatable) Display name of the APM domain.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] description: (Updatable) Description of the APM domain.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[bool] is_free_tier: Indicates whether this is an "Always Free" resource. The default value is false.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "display_name", display_name)
@@ -47,9 +37,6 @@ class ApmDomainArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The OCID of the compartment corresponding to the APM domain.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -59,9 +46,6 @@ class ApmDomainArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Display name of the APM domain.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -71,9 +55,6 @@ class ApmDomainArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -83,9 +64,6 @@ class ApmDomainArgs:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Description of the APM domain.
-        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -95,9 +73,6 @@ class ApmDomainArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -107,13 +82,6 @@ class ApmDomainArgs:
     @property
     @pulumi.getter(name="isFreeTier")
     def is_free_tier(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Indicates whether this is an "Always Free" resource. The default value is false.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "is_free_tier")
 
     @is_free_tier.setter
@@ -136,20 +104,6 @@ class _ApmDomainState:
                  time_updated: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering ApmDomain resources.
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment corresponding to the APM domain.
-        :param pulumi.Input[str] data_upload_endpoint: The endpoint where the APM agents upload their observations and metrics.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] description: (Updatable) Description of the APM domain.
-        :param pulumi.Input[str] display_name: (Updatable) Display name of the APM domain.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[bool] is_free_tier: Indicates whether this is an "Always Free" resource. The default value is false.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] state: The current lifecycle state of the APM domain.
-        :param pulumi.Input[str] time_created: The time the APM domain was created, expressed in RFC 3339 timestamp format.
-        :param pulumi.Input[str] time_updated: The time the APM domain was updated, expressed in RFC 3339 timestamp format.
         """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
@@ -175,9 +129,6 @@ class _ApmDomainState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The OCID of the compartment corresponding to the APM domain.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -187,9 +138,6 @@ class _ApmDomainState:
     @property
     @pulumi.getter(name="dataUploadEndpoint")
     def data_upload_endpoint(self) -> Optional[pulumi.Input[str]]:
-        """
-        The endpoint where the APM agents upload their observations and metrics.
-        """
         return pulumi.get(self, "data_upload_endpoint")
 
     @data_upload_endpoint.setter
@@ -199,9 +147,6 @@ class _ApmDomainState:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -211,9 +156,6 @@ class _ApmDomainState:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Description of the APM domain.
-        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -223,9 +165,6 @@ class _ApmDomainState:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Display name of the APM domain.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -235,9 +174,6 @@ class _ApmDomainState:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -247,13 +183,6 @@ class _ApmDomainState:
     @property
     @pulumi.getter(name="isFreeTier")
     def is_free_tier(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Indicates whether this is an "Always Free" resource. The default value is false.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "is_free_tier")
 
     @is_free_tier.setter
@@ -263,9 +192,6 @@ class _ApmDomainState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The current lifecycle state of the APM domain.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -275,9 +201,6 @@ class _ApmDomainState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The time the APM domain was created, expressed in RFC 3339 timestamp format.
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -287,9 +210,6 @@ class _ApmDomainState:
     @property
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> Optional[pulumi.Input[str]]:
-        """
-        The time the APM domain was updated, expressed in RFC 3339 timestamp format.
-        """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
@@ -310,49 +230,9 @@ class ApmDomain(pulumi.CustomResource):
                  is_free_tier: Optional[pulumi.Input[bool]] = None,
                  __props__=None):
         """
-        This resource provides the Apm Domain resource in Oracle Cloud Infrastructure Apm service.
-
-        Creates a new APM domain.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_apm_domain = oci.apm.ApmDomain("testApmDomain",
-            compartment_id=var["compartment_id"],
-            display_name=var["apm_domain_display_name"],
-            defined_tags={
-                "foo-namespace.bar-key": "value",
-            },
-            description=var["apm_domain_description"],
-            freeform_tags={
-                "bar-key": "value",
-            },
-            is_free_tier=var["apm_domain_is_free_tier"])
-        ```
-
-        ## Import
-
-        ApmDomains can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Apm/apmDomain:ApmDomain test_apm_domain "id"
-        ```
-
+        Create a ApmDomain resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment corresponding to the APM domain.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] description: (Updatable) Description of the APM domain.
-        :param pulumi.Input[str] display_name: (Updatable) Display name of the APM domain.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[bool] is_free_tier: Indicates whether this is an "Always Free" resource. The default value is false.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -361,37 +241,7 @@ class ApmDomain(pulumi.CustomResource):
                  args: ApmDomainArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Apm Domain resource in Oracle Cloud Infrastructure Apm service.
-
-        Creates a new APM domain.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_apm_domain = oci.apm.ApmDomain("testApmDomain",
-            compartment_id=var["compartment_id"],
-            display_name=var["apm_domain_display_name"],
-            defined_tags={
-                "foo-namespace.bar-key": "value",
-            },
-            description=var["apm_domain_description"],
-            freeform_tags={
-                "bar-key": "value",
-            },
-            is_free_tier=var["apm_domain_is_free_tier"])
-        ```
-
-        ## Import
-
-        ApmDomains can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Apm/apmDomain:ApmDomain test_apm_domain "id"
-        ```
-
+        Create a ApmDomain resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param ApmDomainArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -463,20 +313,6 @@ class ApmDomain(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment corresponding to the APM domain.
-        :param pulumi.Input[str] data_upload_endpoint: The endpoint where the APM agents upload their observations and metrics.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] description: (Updatable) Description of the APM domain.
-        :param pulumi.Input[str] display_name: (Updatable) Display name of the APM domain.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[bool] is_free_tier: Indicates whether this is an "Always Free" resource. The default value is false.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] state: The current lifecycle state of the APM domain.
-        :param pulumi.Input[str] time_created: The time the APM domain was created, expressed in RFC 3339 timestamp format.
-        :param pulumi.Input[str] time_updated: The time the APM domain was updated, expressed in RFC 3339 timestamp format.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -497,84 +333,50 @@ class ApmDomain(pulumi.CustomResource):
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The OCID of the compartment corresponding to the APM domain.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="dataUploadEndpoint")
-    def data_upload_endpoint(self) -> pulumi.Output[str]:
-        """
-        The endpoint where the APM agents upload their observations and metrics.
-        """
+    def data_upload_endpoint(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "data_upload_endpoint")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def description(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Description of the APM domain.
-        """
+    def description(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Display name of the APM domain.
-        """
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="isFreeTier")
-    def is_free_tier(self) -> pulumi.Output[bool]:
-        """
-        Indicates whether this is an "Always Free" resource. The default value is false.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
+    def is_free_tier(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "is_free_tier")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        The current lifecycle state of the APM domain.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        The time the APM domain was created, expressed in RFC 3339 timestamp format.
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> pulumi.Output[str]:
-        """
-        The time the APM domain was updated, expressed in RFC 3339 timestamp format.
-        """
+    def time_updated(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_updated")
 

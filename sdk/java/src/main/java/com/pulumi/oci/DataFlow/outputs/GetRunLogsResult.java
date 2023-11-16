@@ -9,6 +9,7 @@ import com.pulumi.oci.DataFlow.outputs.GetRunLogsRunLog;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 @CustomType
@@ -18,13 +19,13 @@ public final class GetRunLogsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private String runId;
     /**
      * @return The list of run_logs.
      * 
      */
-    private List<GetRunLogsRunLog> runLogs;
+    private @Nullable List<GetRunLogsRunLog> runLogs;
 
     private GetRunLogsResult() {}
     public List<GetRunLogsFilter> filters() {
@@ -34,8 +35,8 @@ public final class GetRunLogsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public String runId() {
         return this.runId;
@@ -45,7 +46,7 @@ public final class GetRunLogsResult {
      * 
      */
     public List<GetRunLogsRunLog> runLogs() {
-        return this.runLogs;
+        return this.runLogs == null ? List.of() : this.runLogs;
     }
 
     public static Builder builder() {
@@ -58,9 +59,9 @@ public final class GetRunLogsResult {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable List<GetRunLogsFilter> filters;
-        private String id;
+        private @Nullable String id;
         private String runId;
-        private List<GetRunLogsRunLog> runLogs;
+        private @Nullable List<GetRunLogsRunLog> runLogs;
         public Builder() {}
         public Builder(GetRunLogsResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -79,8 +80,8 @@ public final class GetRunLogsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -89,8 +90,8 @@ public final class GetRunLogsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder runLogs(List<GetRunLogsRunLog> runLogs) {
-            this.runLogs = Objects.requireNonNull(runLogs);
+        public Builder runLogs(@Nullable List<GetRunLogsRunLog> runLogs) {
+            this.runLogs = runLogs;
             return this;
         }
         public Builder runLogs(GetRunLogsRunLog... runLogs) {

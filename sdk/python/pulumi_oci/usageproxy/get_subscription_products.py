@@ -53,7 +53,7 @@ class GetSubscriptionProductsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -61,10 +61,7 @@ class GetSubscriptionProductsResult:
 
     @property
     @pulumi.getter(name="productCollections")
-    def product_collections(self) -> Sequence['outputs.GetSubscriptionProductsProductCollectionResult']:
-        """
-        The list of product_collection.
-        """
+    def product_collections(self) -> Optional[Sequence['outputs.GetSubscriptionProductsProductCollectionResult']]:
         return pulumi.get(self, "product_collections")
 
     @property
@@ -110,27 +107,7 @@ def get_subscription_products(filters: Optional[Sequence[pulumi.InputType['GetSu
                               usage_period_key: Optional[str] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetSubscriptionProductsResult:
     """
-    This data source provides the list of Subscription Products in Oracle Cloud Infrastructure Usage Proxy service.
-
-    Provides product information that is specific to a reward usage period and its usage details.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_subscription_products = oci.UsageProxy.get_subscription_products(subscription_id=oci_ons_subscription["test_subscription"]["id"],
-        tenancy_id=oci_identity_tenancy["test_tenancy"]["id"],
-        usage_period_key=var["subscription_product_usage_period_key"],
-        producttype=var["subscription_product_producttype"])
-    ```
-
-
-    :param str producttype: The field to specify the type of product.
-    :param str subscription_id: The subscription ID for which rewards information is requested for.
-    :param str tenancy_id: The OCID of the tenancy.
-    :param str usage_period_key: The SPM Identifier for the usage period.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['filters'] = filters
@@ -159,26 +136,6 @@ def get_subscription_products_output(filters: Optional[pulumi.Input[Optional[Seq
                                      usage_period_key: Optional[pulumi.Input[str]] = None,
                                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSubscriptionProductsResult]:
     """
-    This data source provides the list of Subscription Products in Oracle Cloud Infrastructure Usage Proxy service.
-
-    Provides product information that is specific to a reward usage period and its usage details.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_subscription_products = oci.UsageProxy.get_subscription_products(subscription_id=oci_ons_subscription["test_subscription"]["id"],
-        tenancy_id=oci_identity_tenancy["test_tenancy"]["id"],
-        usage_period_key=var["subscription_product_usage_period_key"],
-        producttype=var["subscription_product_producttype"])
-    ```
-
-
-    :param str producttype: The field to specify the type of product.
-    :param str subscription_id: The subscription ID for which rewards information is requested for.
-    :param str tenancy_id: The OCID of the tenancy.
-    :param str usage_period_key: The SPM Identifier for the usage period.
+    Use this data source to access information about an existing resource.
     """
     ...

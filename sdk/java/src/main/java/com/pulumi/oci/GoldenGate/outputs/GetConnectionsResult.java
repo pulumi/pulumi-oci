@@ -26,7 +26,7 @@ public final class GetConnectionsResult {
      * @return The list of connection_collection.
      * 
      */
-    private List<GetConnectionsConnectionCollection> connectionCollections;
+    private @Nullable List<GetConnectionsConnectionCollection> connectionCollections;
     /**
      * @return The connection type.
      * 
@@ -42,7 +42,7 @@ public final class GetConnectionsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Possible lifecycle states for connection.
      * 
@@ -76,7 +76,7 @@ public final class GetConnectionsResult {
      * 
      */
     public List<GetConnectionsConnectionCollection> connectionCollections() {
-        return this.connectionCollections;
+        return this.connectionCollections == null ? List.of() : this.connectionCollections;
     }
     /**
      * @return The connection type.
@@ -99,8 +99,8 @@ public final class GetConnectionsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Possible lifecycle states for connection.
@@ -130,11 +130,11 @@ public final class GetConnectionsResult {
         private @Nullable String assignableDeploymentType;
         private @Nullable String assignedDeploymentId;
         private String compartmentId;
-        private List<GetConnectionsConnectionCollection> connectionCollections;
+        private @Nullable List<GetConnectionsConnectionCollection> connectionCollections;
         private @Nullable List<String> connectionTypes;
         private @Nullable String displayName;
         private @Nullable List<GetConnectionsFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String state;
         private @Nullable List<String> technologyTypes;
         public Builder() {}
@@ -174,8 +174,8 @@ public final class GetConnectionsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder connectionCollections(List<GetConnectionsConnectionCollection> connectionCollections) {
-            this.connectionCollections = Objects.requireNonNull(connectionCollections);
+        public Builder connectionCollections(@Nullable List<GetConnectionsConnectionCollection> connectionCollections) {
+            this.connectionCollections = connectionCollections;
             return this;
         }
         public Builder connectionCollections(GetConnectionsConnectionCollection... connectionCollections) {
@@ -203,8 +203,8 @@ public final class GetConnectionsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

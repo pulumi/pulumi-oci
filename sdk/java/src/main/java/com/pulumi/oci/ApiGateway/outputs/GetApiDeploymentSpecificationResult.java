@@ -10,6 +10,8 @@ import com.pulumi.oci.ApiGateway.outputs.GetApiDeploymentSpecificationRoute;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetApiDeploymentSpecificationResult {
@@ -18,22 +20,22 @@ public final class GetApiDeploymentSpecificationResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Policies controlling the pushing of logs to Oracle Cloud Infrastructure Public Logging.
      * 
      */
-    private List<GetApiDeploymentSpecificationLoggingPolicy> loggingPolicies;
+    private @Nullable List<GetApiDeploymentSpecificationLoggingPolicy> loggingPolicies;
     /**
      * @return Behavior applied to any requests received by the API on this route.
      * 
      */
-    private List<GetApiDeploymentSpecificationRequestPolicy> requestPolicies;
+    private @Nullable List<GetApiDeploymentSpecificationRequestPolicy> requestPolicies;
     /**
      * @return A list of routes that this API exposes.
      * 
      */
-    private List<GetApiDeploymentSpecificationRoute> routes;
+    private @Nullable List<GetApiDeploymentSpecificationRoute> routes;
 
     private GetApiDeploymentSpecificationResult() {}
     public String apiId() {
@@ -43,29 +45,29 @@ public final class GetApiDeploymentSpecificationResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Policies controlling the pushing of logs to Oracle Cloud Infrastructure Public Logging.
      * 
      */
     public List<GetApiDeploymentSpecificationLoggingPolicy> loggingPolicies() {
-        return this.loggingPolicies;
+        return this.loggingPolicies == null ? List.of() : this.loggingPolicies;
     }
     /**
      * @return Behavior applied to any requests received by the API on this route.
      * 
      */
     public List<GetApiDeploymentSpecificationRequestPolicy> requestPolicies() {
-        return this.requestPolicies;
+        return this.requestPolicies == null ? List.of() : this.requestPolicies;
     }
     /**
      * @return A list of routes that this API exposes.
      * 
      */
     public List<GetApiDeploymentSpecificationRoute> routes() {
-        return this.routes;
+        return this.routes == null ? List.of() : this.routes;
     }
 
     public static Builder builder() {
@@ -78,10 +80,10 @@ public final class GetApiDeploymentSpecificationResult {
     @CustomType.Builder
     public static final class Builder {
         private String apiId;
-        private String id;
-        private List<GetApiDeploymentSpecificationLoggingPolicy> loggingPolicies;
-        private List<GetApiDeploymentSpecificationRequestPolicy> requestPolicies;
-        private List<GetApiDeploymentSpecificationRoute> routes;
+        private @Nullable String id;
+        private @Nullable List<GetApiDeploymentSpecificationLoggingPolicy> loggingPolicies;
+        private @Nullable List<GetApiDeploymentSpecificationRequestPolicy> requestPolicies;
+        private @Nullable List<GetApiDeploymentSpecificationRoute> routes;
         public Builder() {}
         public Builder(GetApiDeploymentSpecificationResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -98,29 +100,29 @@ public final class GetApiDeploymentSpecificationResult {
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder loggingPolicies(List<GetApiDeploymentSpecificationLoggingPolicy> loggingPolicies) {
-            this.loggingPolicies = Objects.requireNonNull(loggingPolicies);
+        public Builder loggingPolicies(@Nullable List<GetApiDeploymentSpecificationLoggingPolicy> loggingPolicies) {
+            this.loggingPolicies = loggingPolicies;
             return this;
         }
         public Builder loggingPolicies(GetApiDeploymentSpecificationLoggingPolicy... loggingPolicies) {
             return loggingPolicies(List.of(loggingPolicies));
         }
         @CustomType.Setter
-        public Builder requestPolicies(List<GetApiDeploymentSpecificationRequestPolicy> requestPolicies) {
-            this.requestPolicies = Objects.requireNonNull(requestPolicies);
+        public Builder requestPolicies(@Nullable List<GetApiDeploymentSpecificationRequestPolicy> requestPolicies) {
+            this.requestPolicies = requestPolicies;
             return this;
         }
         public Builder requestPolicies(GetApiDeploymentSpecificationRequestPolicy... requestPolicies) {
             return requestPolicies(List.of(requestPolicies));
         }
         @CustomType.Setter
-        public Builder routes(List<GetApiDeploymentSpecificationRoute> routes) {
-            this.routes = Objects.requireNonNull(routes);
+        public Builder routes(@Nullable List<GetApiDeploymentSpecificationRoute> routes) {
+            this.routes = routes;
             return this;
         }
         public Builder routes(GetApiDeploymentSpecificationRoute... routes) {

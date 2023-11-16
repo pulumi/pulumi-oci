@@ -16,35 +16,35 @@ namespace Pulumi.Oci.Jms.Outputs
         /// <summary>
         /// The display name for the Java family.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// Link to access the documentation for the release.
         /// </summary>
-        public readonly string DocUrl;
+        public readonly string? DocUrl;
         /// <summary>
         /// The End of Support Life (EOSL) date of the Java release family (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
         /// </summary>
-        public readonly string EndOfSupportLifeDate;
+        public readonly string? EndOfSupportLifeDate;
         /// <summary>
         /// The version identifier for the Java family.
         /// </summary>
-        public readonly string FamilyVersion;
+        public readonly string? FamilyVersion;
         /// <summary>
         /// This indicates the support category for the Java release family.
         /// </summary>
-        public readonly string SupportType;
+        public readonly string? SupportType;
 
         [OutputConstructor]
         private GetJavaFamiliesJavaFamilyCollectionItemResult(
-            string displayName,
+            string? displayName,
 
-            string docUrl,
+            string? docUrl,
 
-            string endOfSupportLifeDate,
+            string? endOfSupportLifeDate,
 
-            string familyVersion,
+            string? familyVersion,
 
-            string supportType)
+            string? supportType)
         {
             DisplayName = displayName;
             DocUrl = docUrl;

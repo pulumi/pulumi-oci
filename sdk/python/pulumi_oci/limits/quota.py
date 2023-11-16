@@ -25,16 +25,6 @@ class QuotaArgs:
                  name: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a Quota resource.
-        :param pulumi.Input[str] compartment_id: The OCID of the compartment containing the resource this quota applies to.
-        :param pulumi.Input[str] description: (Updatable) The description you assign to the quota.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] statements: (Updatable) An array of quota statements written in the declarative quota statement language. 
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[Sequence[pulumi.Input['QuotaLockArgs']]] locks: Locks associated with this resource.
-        :param pulumi.Input[str] name: The name you assign to the quota during creation. The name must be unique across all quotas in the tenancy and cannot be changed.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "description", description)
@@ -51,9 +41,6 @@ class QuotaArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
-        """
-        The OCID of the compartment containing the resource this quota applies to.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -63,9 +50,6 @@ class QuotaArgs:
     @property
     @pulumi.getter
     def description(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The description you assign to the quota.
-        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -75,12 +59,6 @@ class QuotaArgs:
     @property
     @pulumi.getter
     def statements(self) -> pulumi.Input[Sequence[pulumi.Input[str]]]:
-        """
-        (Updatable) An array of quota statements written in the declarative quota statement language. 
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "statements")
 
     @statements.setter
@@ -90,9 +68,6 @@ class QuotaArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -102,9 +77,6 @@ class QuotaArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -114,9 +86,6 @@ class QuotaArgs:
     @property
     @pulumi.getter
     def locks(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['QuotaLockArgs']]]]:
-        """
-        Locks associated with this resource.
-        """
         return pulumi.get(self, "locks")
 
     @locks.setter
@@ -126,9 +95,6 @@ class QuotaArgs:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The name you assign to the quota during creation. The name must be unique across all quotas in the tenancy and cannot be changed.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -151,19 +117,6 @@ class _QuotaState:
                  time_created: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering Quota resources.
-        :param pulumi.Input[str] compartment_id: The OCID of the compartment containing the resource this quota applies to.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] description: (Updatable) The description you assign to the quota.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[bool] is_lock_override: this is a computed field which is set to true if any lock is present`
-        :param pulumi.Input[Sequence[pulumi.Input['QuotaLockArgs']]] locks: Locks associated with this resource.
-        :param pulumi.Input[str] name: The name you assign to the quota during creation. The name must be unique across all quotas in the tenancy and cannot be changed.
-        :param pulumi.Input[str] state: The quota's current state.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] statements: (Updatable) An array of quota statements written in the declarative quota statement language. 
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] time_created: Date and time the quota was created, in the format defined by RFC 3339. Example: `2016-08-25T21:10:29.600Z`
         """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
@@ -189,9 +142,6 @@ class _QuotaState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the compartment containing the resource this quota applies to.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -201,9 +151,6 @@ class _QuotaState:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -213,9 +160,6 @@ class _QuotaState:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The description you assign to the quota.
-        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -225,9 +169,6 @@ class _QuotaState:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -237,9 +178,6 @@ class _QuotaState:
     @property
     @pulumi.getter(name="isLockOverride")
     def is_lock_override(self) -> Optional[pulumi.Input[bool]]:
-        """
-        this is a computed field which is set to true if any lock is present`
-        """
         return pulumi.get(self, "is_lock_override")
 
     @is_lock_override.setter
@@ -249,9 +187,6 @@ class _QuotaState:
     @property
     @pulumi.getter
     def locks(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['QuotaLockArgs']]]]:
-        """
-        Locks associated with this resource.
-        """
         return pulumi.get(self, "locks")
 
     @locks.setter
@@ -261,9 +196,6 @@ class _QuotaState:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The name you assign to the quota during creation. The name must be unique across all quotas in the tenancy and cannot be changed.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -273,9 +205,6 @@ class _QuotaState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The quota's current state.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -285,12 +214,6 @@ class _QuotaState:
     @property
     @pulumi.getter
     def statements(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) An array of quota statements written in the declarative quota statement language. 
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "statements")
 
     @statements.setter
@@ -300,9 +223,6 @@ class _QuotaState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        Date and time the quota was created, in the format defined by RFC 3339. Example: `2016-08-25T21:10:29.600Z`
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -324,53 +244,9 @@ class Quota(pulumi.CustomResource):
                  statements: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  __props__=None):
         """
-        This resource provides the Quota resource in Oracle Cloud Infrastructure Limits service.
-
-        Creates a new quota with the details supplied.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_quota = oci.limits.Quota("testQuota",
-            compartment_id=var["tenancy_ocid"],
-            description=var["quota_description"],
-            statements=var["quota_statements"],
-            defined_tags={
-                "Operations.CostCenter": "42",
-            },
-            freeform_tags={
-                "Department": "Finance",
-            },
-            locks=[oci.limits.QuotaLockArgs(
-                type=var["quota_locks_type"],
-                message=var["quota_locks_message"],
-                related_resource_id=oci_limits_related_resource["test_related_resource"]["id"],
-            )])
-        ```
-
-        ## Import
-
-        Quotas can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Limits/quota:Quota test_quota "id"
-        ```
-
+        Create a Quota resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: The OCID of the compartment containing the resource this quota applies to.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] description: (Updatable) The description you assign to the quota.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['QuotaLockArgs']]]] locks: Locks associated with this resource.
-        :param pulumi.Input[str] name: The name you assign to the quota during creation. The name must be unique across all quotas in the tenancy and cannot be changed.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] statements: (Updatable) An array of quota statements written in the declarative quota statement language. 
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -379,41 +255,7 @@ class Quota(pulumi.CustomResource):
                  args: QuotaArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Quota resource in Oracle Cloud Infrastructure Limits service.
-
-        Creates a new quota with the details supplied.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_quota = oci.limits.Quota("testQuota",
-            compartment_id=var["tenancy_ocid"],
-            description=var["quota_description"],
-            statements=var["quota_statements"],
-            defined_tags={
-                "Operations.CostCenter": "42",
-            },
-            freeform_tags={
-                "Department": "Finance",
-            },
-            locks=[oci.limits.QuotaLockArgs(
-                type=var["quota_locks_type"],
-                message=var["quota_locks_message"],
-                related_resource_id=oci_limits_related_resource["test_related_resource"]["id"],
-            )])
-        ```
-
-        ## Import
-
-        Quotas can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Limits/quota:Quota test_quota "id"
-        ```
-
+        Create a Quota resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param QuotaArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -488,19 +330,6 @@ class Quota(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: The OCID of the compartment containing the resource this quota applies to.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] description: (Updatable) The description you assign to the quota.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[bool] is_lock_override: this is a computed field which is set to true if any lock is present`
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['QuotaLockArgs']]]] locks: Locks associated with this resource.
-        :param pulumi.Input[str] name: The name you assign to the quota during creation. The name must be unique across all quotas in the tenancy and cannot be changed.
-        :param pulumi.Input[str] state: The quota's current state.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] statements: (Updatable) An array of quota statements written in the declarative quota statement language. 
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] time_created: Date and time the quota was created, in the format defined by RFC 3339. Example: `2016-08-25T21:10:29.600Z`
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -521,83 +350,50 @@ class Quota(pulumi.CustomResource):
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
-        """
-        The OCID of the compartment containing the resource this quota applies to.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
     def description(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The description you assign to the quota.
-        """
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="isLockOverride")
-    def is_lock_override(self) -> pulumi.Output[bool]:
-        """
-        this is a computed field which is set to true if any lock is present`
-        """
+    def is_lock_override(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "is_lock_override")
 
     @property
     @pulumi.getter
-    def locks(self) -> pulumi.Output[Sequence['outputs.QuotaLock']]:
-        """
-        Locks associated with this resource.
-        """
+    def locks(self) -> pulumi.Output[Optional[Sequence['outputs.QuotaLock']]]:
         return pulumi.get(self, "locks")
 
     @property
     @pulumi.getter
     def name(self) -> pulumi.Output[str]:
-        """
-        The name you assign to the quota during creation. The name must be unique across all quotas in the tenancy and cannot be changed.
-        """
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        The quota's current state.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter
     def statements(self) -> pulumi.Output[Sequence[str]]:
-        """
-        (Updatable) An array of quota statements written in the declarative quota statement language. 
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "statements")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        Date and time the quota was created, in the format defined by RFC 3339. Example: `2016-08-25T21:10:29.600Z`
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 

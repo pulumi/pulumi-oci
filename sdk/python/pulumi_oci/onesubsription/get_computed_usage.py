@@ -110,10 +110,7 @@ class GetComputedUsageResult:
 
     @property
     @pulumi.getter(name="commitmentServiceId")
-    def commitment_service_id(self) -> str:
-        """
-        Subscribed service commitmentId.
-        """
+    def commitment_service_id(self) -> Optional[str]:
         return pulumi.get(self, "commitment_service_id")
 
     @property
@@ -123,10 +120,7 @@ class GetComputedUsageResult:
 
     @property
     @pulumi.getter(name="computeSource")
-    def compute_source(self) -> str:
-        """
-        SPM Internal compute records source .
-        """
+    def compute_source(self) -> Optional[str]:
         return pulumi.get(self, "compute_source")
 
     @property
@@ -136,34 +130,22 @@ class GetComputedUsageResult:
 
     @property
     @pulumi.getter
-    def cost(self) -> str:
-        """
-        Computed Line Amount not rounded
-        """
+    def cost(self) -> Optional[str]:
         return pulumi.get(self, "cost")
 
     @property
     @pulumi.getter(name="costRounded")
-    def cost_rounded(self) -> str:
-        """
-        Computed Line Amount rounded.
-        """
+    def cost_rounded(self) -> Optional[str]:
         return pulumi.get(self, "cost_rounded")
 
     @property
     @pulumi.getter(name="currencyCode")
-    def currency_code(self) -> str:
-        """
-        Currency code
-        """
+    def currency_code(self) -> Optional[str]:
         return pulumi.get(self, "currency_code")
 
     @property
     @pulumi.getter(name="dataCenter")
-    def data_center(self) -> str:
-        """
-        Data Center Attribute as sent by MQS to SPM.
-        """
+    def data_center(self) -> Optional[str]:
         return pulumi.get(self, "data_center")
 
     @property
@@ -173,7 +155,7 @@ class GetComputedUsageResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -181,146 +163,92 @@ class GetComputedUsageResult:
 
     @property
     @pulumi.getter(name="isInvoiced")
-    def is_invoiced(self) -> bool:
-        """
-        Invoicing status for the aggregated compute usage
-        """
+    def is_invoiced(self) -> Optional[bool]:
         return pulumi.get(self, "is_invoiced")
 
     @property
     @pulumi.getter(name="mqsMessageId")
-    def mqs_message_id(self) -> str:
-        """
-        MQS Identfier send to SPM , SPM does not transform this attribute and is received as is.
-        """
+    def mqs_message_id(self) -> Optional[str]:
         return pulumi.get(self, "mqs_message_id")
 
     @property
     @pulumi.getter(name="netUnitPrice")
-    def net_unit_price(self) -> str:
-        """
-        Net Unit Price for the product in consideration, price actual.
-        """
+    def net_unit_price(self) -> Optional[str]:
         return pulumi.get(self, "net_unit_price")
 
     @property
     @pulumi.getter(name="originalUsageNumber")
-    def original_usage_number(self) -> str:
-        """
-        SPM Internal Original usage Line number identifier in SPM coming from Metered Services entity.
-        """
+    def original_usage_number(self) -> Optional[str]:
         return pulumi.get(self, "original_usage_number")
 
     @property
     @pulumi.getter(name="parentProducts")
-    def parent_products(self) -> Sequence['outputs.GetComputedUsageParentProductResult']:
-        """
-        Product description
-        """
+    def parent_products(self) -> Optional[Sequence['outputs.GetComputedUsageParentProductResult']]:
         return pulumi.get(self, "parent_products")
 
     @property
     @pulumi.getter(name="parentSubscribedServiceId")
-    def parent_subscribed_service_id(self) -> str:
-        """
-        Subscribed service line parent id
-        """
+    def parent_subscribed_service_id(self) -> Optional[str]:
         return pulumi.get(self, "parent_subscribed_service_id")
 
     @property
     @pulumi.getter(name="planNumber")
-    def plan_number(self) -> str:
-        """
-        Subscription plan number
-        """
+    def plan_number(self) -> Optional[str]:
         return pulumi.get(self, "plan_number")
 
     @property
     @pulumi.getter
-    def products(self) -> Sequence['outputs.GetComputedUsageProductResult']:
-        """
-        Product description
-        """
+    def products(self) -> Optional[Sequence['outputs.GetComputedUsageProductResult']]:
         return pulumi.get(self, "products")
 
     @property
     @pulumi.getter
-    def quantity(self) -> str:
-        """
-        Total Quantity that was used for computation
-        """
+    def quantity(self) -> Optional[str]:
         return pulumi.get(self, "quantity")
 
     @property
     @pulumi.getter(name="rateCardId")
-    def rate_card_id(self) -> str:
-        """
-        Ratecard Id at subscribed service level
-        """
+    def rate_card_id(self) -> Optional[str]:
         return pulumi.get(self, "rate_card_id")
 
     @property
     @pulumi.getter(name="rateCardTierdId")
-    def rate_card_tierd_id(self) -> str:
-        """
-        References the tier in the ratecard for that usage (OCI will be using the same reference to cross-reference for correctness on the usage csv report), comes from Entity OBSCNTR_IPT_PRODUCTTIER.
-        """
+    def rate_card_tierd_id(self) -> Optional[str]:
         return pulumi.get(self, "rate_card_tierd_id")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        Computed Usage created time, expressed in RFC 3339 timestamp format.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeMeteredOn")
-    def time_metered_on(self) -> str:
-        """
-        Metered Service date, expressed in RFC 3339 timestamp format.
-        """
+    def time_metered_on(self) -> Optional[str]:
         return pulumi.get(self, "time_metered_on")
 
     @property
     @pulumi.getter(name="timeOfArrival")
-    def time_of_arrival(self) -> str:
-        """
-        Usae computation date, expressed in RFC 3339 timestamp format.
-        """
+    def time_of_arrival(self) -> Optional[str]:
         return pulumi.get(self, "time_of_arrival")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        Computed Usage updated time, expressed in RFC 3339 timestamp format.
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
     @property
     @pulumi.getter
-    def type(self) -> str:
-        """
-        Usage compute type in SPM.
-        """
+    def type(self) -> Optional[str]:
         return pulumi.get(self, "type")
 
     @property
     @pulumi.getter(name="unitOfMeasure")
-    def unit_of_measure(self) -> str:
-        """
-        Unit of Messure
-        """
+    def unit_of_measure(self) -> Optional[str]:
         return pulumi.get(self, "unit_of_measure")
 
     @property
     @pulumi.getter(name="usageNumber")
-    def usage_number(self) -> str:
-        """
-        SPM Internal usage Line number identifier in SPM coming from Metered Services entity.
-        """
+    def usage_number(self) -> Optional[str]:
         return pulumi.get(self, "usage_number")
 
 
@@ -365,25 +293,7 @@ def get_computed_usage(compartment_id: Optional[str] = None,
                        fields: Optional[Sequence[str]] = None,
                        opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetComputedUsageResult:
     """
-    This data source provides details about a specific Computed Usage resource in Oracle Cloud Infrastructure Onesubscription service.
-
-    This is an API which returns Computed Usage corresponding to the id passed
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_computed_usage = oci.OneSubsription.get_computed_usage(compartment_id=var["compartment_id"],
-        computed_usage_id=oci_onesubscription_computed_usage["test_computed_usage"]["id"],
-        fields=var["computed_usage_fields"])
-    ```
-
-
-    :param str compartment_id: The OCID of the root compartment.
-    :param str computed_usage_id: The Computed Usage Id
-    :param Sequence[str] fields: Partial response refers to an optimization technique offered by the RESTful web APIs to return only the information  (fields) required by the client. This parameter is used to control what fields to return.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -429,24 +339,6 @@ def get_computed_usage_output(compartment_id: Optional[pulumi.Input[str]] = None
                               fields: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetComputedUsageResult]:
     """
-    This data source provides details about a specific Computed Usage resource in Oracle Cloud Infrastructure Onesubscription service.
-
-    This is an API which returns Computed Usage corresponding to the id passed
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_computed_usage = oci.OneSubsription.get_computed_usage(compartment_id=var["compartment_id"],
-        computed_usage_id=oci_onesubscription_computed_usage["test_computed_usage"]["id"],
-        fields=var["computed_usage_fields"])
-    ```
-
-
-    :param str compartment_id: The OCID of the root compartment.
-    :param str computed_usage_id: The Computed Usage Id
-    :param Sequence[str] fields: Partial response refers to an optimization technique offered by the RESTful web APIs to return only the information  (fields) required by the client. This parameter is used to control what fields to return.
+    Use this data source to access information about an existing resource.
     """
     ...

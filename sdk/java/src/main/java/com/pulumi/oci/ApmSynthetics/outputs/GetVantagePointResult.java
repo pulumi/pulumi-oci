@@ -23,12 +23,12 @@ public final class GetVantagePointResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return List of PublicVantagePointSummary items.
      * 
      */
-    private List<GetVantagePointItem> items;
+    private @Nullable List<GetVantagePointItem> items;
     /**
      * @return Unique permanent name of the vantage point.
      * 
@@ -50,15 +50,15 @@ public final class GetVantagePointResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return List of PublicVantagePointSummary items.
      * 
      */
     public List<GetVantagePointItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
     /**
      * @return Unique permanent name of the vantage point.
@@ -79,8 +79,8 @@ public final class GetVantagePointResult {
     public static final class Builder {
         private String apmDomainId;
         private @Nullable String displayName;
-        private String id;
-        private List<GetVantagePointItem> items;
+        private @Nullable String id;
+        private @Nullable List<GetVantagePointItem> items;
         private @Nullable String name;
         public Builder() {}
         public Builder(GetVantagePointResult defaults) {
@@ -103,13 +103,13 @@ public final class GetVantagePointResult {
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder items(List<GetVantagePointItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetVantagePointItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetVantagePointItem... items) {

@@ -8,6 +8,8 @@ import com.pulumi.oci.BigDataService.outputs.GetAutoScalingConfigurationPolicyDe
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAutoScalingConfigurationPolicyDetailScaleInConfigMetric {
@@ -15,27 +17,27 @@ public final class GetAutoScalingConfigurationPolicyDetailScaleInConfigMetric {
      * @return Allowed value is CPU_UTILIZATION.
      * 
      */
-    private String metricType;
+    private @Nullable String metricType;
     /**
      * @return An autoscale action is triggered when a performance metric exceeds a threshold.
      * 
      */
-    private List<GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricThreshold> thresholds;
+    private @Nullable List<GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricThreshold> thresholds;
 
     private GetAutoScalingConfigurationPolicyDetailScaleInConfigMetric() {}
     /**
      * @return Allowed value is CPU_UTILIZATION.
      * 
      */
-    public String metricType() {
-        return this.metricType;
+    public Optional<String> metricType() {
+        return Optional.ofNullable(this.metricType);
     }
     /**
      * @return An autoscale action is triggered when a performance metric exceeds a threshold.
      * 
      */
     public List<GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricThreshold> thresholds() {
-        return this.thresholds;
+        return this.thresholds == null ? List.of() : this.thresholds;
     }
 
     public static Builder builder() {
@@ -47,8 +49,8 @@ public final class GetAutoScalingConfigurationPolicyDetailScaleInConfigMetric {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String metricType;
-        private List<GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricThreshold> thresholds;
+        private @Nullable String metricType;
+        private @Nullable List<GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricThreshold> thresholds;
         public Builder() {}
         public Builder(GetAutoScalingConfigurationPolicyDetailScaleInConfigMetric defaults) {
     	      Objects.requireNonNull(defaults);
@@ -57,13 +59,13 @@ public final class GetAutoScalingConfigurationPolicyDetailScaleInConfigMetric {
         }
 
         @CustomType.Setter
-        public Builder metricType(String metricType) {
-            this.metricType = Objects.requireNonNull(metricType);
+        public Builder metricType(@Nullable String metricType) {
+            this.metricType = metricType;
             return this;
         }
         @CustomType.Setter
-        public Builder thresholds(List<GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricThreshold> thresholds) {
-            this.thresholds = Objects.requireNonNull(thresholds);
+        public Builder thresholds(@Nullable List<GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricThreshold> thresholds) {
+            this.thresholds = thresholds;
             return this;
         }
         public Builder thresholds(GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricThreshold... thresholds) {

@@ -132,17 +132,17 @@ namespace Pulumi.Oci.Core
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the IPSec connection.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         public readonly ImmutableArray<Outputs.GetIpsecConfigFilterResult> Filters;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         public readonly string IpsecId;
         /// <summary>
         /// The date and time the IPSec connection was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// Two [TunnelConfig](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/TunnelConfig/) objects.
         /// </summary>
@@ -150,15 +150,15 @@ namespace Pulumi.Oci.Core
 
         [OutputConstructor]
         private GetIpsecConfigResult(
-            string compartmentId,
+            string? compartmentId,
 
             ImmutableArray<Outputs.GetIpsecConfigFilterResult> filters,
 
-            string id,
+            string? id,
 
             string ipsecId,
 
-            string timeCreated,
+            string? timeCreated,
 
             ImmutableArray<Outputs.GetIpsecConfigTunnelResult> tunnels)
         {

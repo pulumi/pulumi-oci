@@ -8,6 +8,8 @@ import com.pulumi.oci.DatabaseManagement.outputs.GetDbManagementPrivateEndpointA
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDbManagementPrivateEndpointAssociatedDatabaseResult {
@@ -21,12 +23,12 @@ public final class GetDbManagementPrivateEndpointAssociatedDatabaseResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return A list of databases using a Database Management private endpoint.
      * 
      */
-    private List<GetDbManagementPrivateEndpointAssociatedDatabaseItem> items;
+    private @Nullable List<GetDbManagementPrivateEndpointAssociatedDatabaseItem> items;
 
     private GetDbManagementPrivateEndpointAssociatedDatabaseResult() {}
     /**
@@ -43,15 +45,15 @@ public final class GetDbManagementPrivateEndpointAssociatedDatabaseResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return A list of databases using a Database Management private endpoint.
      * 
      */
     public List<GetDbManagementPrivateEndpointAssociatedDatabaseItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -65,8 +67,8 @@ public final class GetDbManagementPrivateEndpointAssociatedDatabaseResult {
     public static final class Builder {
         private String compartmentId;
         private String dbManagementPrivateEndpointId;
-        private String id;
-        private List<GetDbManagementPrivateEndpointAssociatedDatabaseItem> items;
+        private @Nullable String id;
+        private @Nullable List<GetDbManagementPrivateEndpointAssociatedDatabaseItem> items;
         public Builder() {}
         public Builder(GetDbManagementPrivateEndpointAssociatedDatabaseResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -87,13 +89,13 @@ public final class GetDbManagementPrivateEndpointAssociatedDatabaseResult {
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder items(List<GetDbManagementPrivateEndpointAssociatedDatabaseItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetDbManagementPrivateEndpointAssociatedDatabaseItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetDbManagementPrivateEndpointAssociatedDatabaseItem... items) {

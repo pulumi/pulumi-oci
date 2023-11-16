@@ -16,59 +16,59 @@ namespace Pulumi.Oci.Core.Outputs
         /// <summary>
         /// Additional properties for the route, computed by the service.
         /// </summary>
-        public readonly ImmutableDictionary<string, object> Attributes;
+        public readonly ImmutableDictionary<string, object>? Attributes;
         /// <summary>
         /// Represents the range of IP addresses to match against when routing traffic.
         /// </summary>
-        public readonly string Destination;
+        public readonly string? Destination;
         /// <summary>
         /// The type of destination for the rule.
         /// </summary>
-        public readonly string DestinationType;
+        public readonly string? DestinationType;
         /// <summary>
         /// The Oracle-assigned ID of the DRG route rule.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Indicates that if the next hop attachment does not exist, so traffic for this route is discarded without notification.
         /// </summary>
-        public readonly bool IsBlackhole;
+        public readonly bool? IsBlackhole;
         /// <summary>
         /// Indicates that the route was not imported due to a conflict between route rules.
         /// </summary>
-        public readonly bool IsConflict;
+        public readonly bool? IsConflict;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next hop DRG attachment responsible for reaching the network destination.
         /// </summary>
-        public readonly string NextHopDrgAttachmentId;
+        public readonly string? NextHopDrgAttachmentId;
         /// <summary>
         /// The earliest origin of a route. If a route is advertised to a DRG through an IPsec tunnel attachment, and is propagated to peered DRGs via RPC attachments, the route's provenance in the peered DRGs remains `IPSEC_TUNNEL`, because that is the earliest origin.
         /// </summary>
-        public readonly string RouteProvenance;
+        public readonly string? RouteProvenance;
         /// <summary>
         /// Static routes are specified through the DRG route table API. Dynamic routes are learned by the DRG from the DRG attachments through various routing protocols.
         /// </summary>
-        public readonly string RouteType;
+        public readonly string? RouteType;
 
         [OutputConstructor]
         private GetDrgRouteTableRouteRulesDrgRouteRuleResult(
-            ImmutableDictionary<string, object> attributes,
+            ImmutableDictionary<string, object>? attributes,
 
-            string destination,
+            string? destination,
 
-            string destinationType,
+            string? destinationType,
 
-            string id,
+            string? id,
 
-            bool isBlackhole,
+            bool? isBlackhole,
 
-            bool isConflict,
+            bool? isConflict,
 
-            string nextHopDrgAttachmentId,
+            string? nextHopDrgAttachmentId,
 
-            string routeProvenance,
+            string? routeProvenance,
 
-            string routeType)
+            string? routeType)
         {
             Attributes = attributes;
             Destination = destination;

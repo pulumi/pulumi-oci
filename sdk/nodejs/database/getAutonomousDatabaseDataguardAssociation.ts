@@ -51,11 +51,11 @@ export interface GetAutonomousDatabaseDataguardAssociationResult {
     /**
      * The lag time between updates to the primary database and application of the redo data on the standby database, as computed by the reporting database.  Example: `9 seconds`
      */
-    readonly applyLag: string;
+    readonly applyLag?: string;
     /**
      * The rate at which redo logs are synced between the associated databases.  Example: `180 Mb per second`
      */
-    readonly applyRate: string;
+    readonly applyRate?: string;
     readonly autonomousDatabaseDataguardAssociationId: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database that has a relationship with the peer Autonomous Database.
@@ -64,43 +64,43 @@ export interface GetAutonomousDatabaseDataguardAssociationResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Additional information about the current lifecycleState, if available.
      */
-    readonly lifecycleDetails: string;
+    readonly lifecycleDetails?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer Autonomous Database.
      */
-    readonly peerAutonomousDatabaseId: string;
+    readonly peerAutonomousDatabaseId?: string;
     /**
      * The current state of the Autonomous Dataguard.
      */
-    readonly peerAutonomousDatabaseLifeCycleState: string;
+    readonly peerAutonomousDatabaseLifeCycleState?: string;
     /**
      * The role of the Autonomous Dataguard enabled Autonomous Container Database.
      */
-    readonly peerRole: string;
+    readonly peerRole?: string;
     /**
      * The protection mode of this Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
      */
-    readonly protectionMode: string;
+    readonly protectionMode?: string;
     /**
      * The role of the Autonomous Dataguard enabled Autonomous Container Database.
      */
-    readonly role: string;
+    readonly role?: string;
     /**
      * The current state of the Autonomous Dataguard.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * The date and time the Data Guard association was created.
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The date and time when the last role change action happened.
      */
-    readonly timeLastRoleChanged: string;
+    readonly timeLastRoleChanged?: string;
 }
 /**
  * This data source provides details about a specific Autonomous Database Dataguard Association resource in Oracle Cloud Infrastructure Database service.

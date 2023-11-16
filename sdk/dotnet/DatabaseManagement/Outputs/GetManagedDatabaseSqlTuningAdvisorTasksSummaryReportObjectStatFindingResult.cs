@@ -16,41 +16,41 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// <summary>
         /// Name of the object.
         /// </summary>
-        public readonly string Object;
+        public readonly string? Object;
         /// <summary>
         /// Numerical representation of the object.
         /// </summary>
-        public readonly string ObjectHashValue;
+        public readonly string? ObjectHashValue;
         /// <summary>
         /// Type of the object.
         /// </summary>
-        public readonly string ObjectType;
+        public readonly string? ObjectType;
         /// <summary>
         /// Type of statistics problem related to the object.
         /// </summary>
-        public readonly string ProblemType;
+        public readonly string? ProblemType;
         /// <summary>
         /// The number of the times the object is referenced within the SQL Tuning advisor task findings.
         /// </summary>
-        public readonly int ReferenceCount;
+        public readonly int? ReferenceCount;
         /// <summary>
         /// Schema of the object.
         /// </summary>
-        public readonly string Schema;
+        public readonly string? Schema;
 
         [OutputConstructor]
         private GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportObjectStatFindingResult(
-            string @object,
+            string? @object,
 
-            string objectHashValue,
+            string? objectHashValue,
 
-            string objectType,
+            string? objectType,
 
-            string problemType,
+            string? problemType,
 
-            int referenceCount,
+            int? referenceCount,
 
-            string schema)
+            string? schema)
         {
             Object = @object;
             ObjectHashValue = objectHashValue;

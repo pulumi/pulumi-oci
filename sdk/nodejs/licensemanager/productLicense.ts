@@ -75,7 +75,7 @@ export class ProductLicense extends pulumi.CustomResource {
     /**
      * The number of active license records associated with the product license.
      */
-    public /*out*/ readonly activeLicenseRecordCount!: pulumi.Output<number>;
+    public /*out*/ readonly activeLicenseRecordCount!: pulumi.Output<number | undefined>;
     /**
      * The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) where product licenses are created.
      */
@@ -83,7 +83,7 @@ export class ProductLicense extends pulumi.CustomResource {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * Name of the product license.
      */
@@ -91,19 +91,19 @@ export class ProductLicense extends pulumi.CustomResource {
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) The image details associated with the product license.
      */
-    public readonly images!: pulumi.Output<outputs.LicenseManager.ProductLicenseImage[]>;
+    public readonly images!: pulumi.Output<outputs.LicenseManager.ProductLicenseImage[] | undefined>;
     /**
      * Specifies whether or not the product license is oversubscribed.
      */
-    public /*out*/ readonly isOverSubscribed!: pulumi.Output<boolean>;
+    public /*out*/ readonly isOverSubscribed!: pulumi.Output<boolean | undefined>;
     /**
      * Specifies if the license unit count is unlimited.
      */
-    public /*out*/ readonly isUnlimited!: pulumi.Output<boolean>;
+    public /*out*/ readonly isUnlimited!: pulumi.Output<boolean | undefined>;
     /**
      * Specifies if the product license vendor is Oracle or a third party.
      */
@@ -115,39 +115,39 @@ export class ProductLicense extends pulumi.CustomResource {
     /**
      * The current product license state.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * The current product license status.
      */
-    public /*out*/ readonly status!: pulumi.Output<string>;
+    public /*out*/ readonly status!: pulumi.Output<string | undefined>;
     /**
      * Status description for the current product license status.
      */
-    public /*out*/ readonly statusDescription!: pulumi.Output<string>;
+    public /*out*/ readonly statusDescription!: pulumi.Output<string | undefined>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any}>;
+    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * The time the product license was created. An [RFC 3339](https://tools.ietf.org/html/rfc3339)-formatted datetime string.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * The time the product license was updated. An [RFC 3339](https://tools.ietf.org/html/rfc3339)-formatted datetime string.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    public /*out*/ readonly timeUpdated!: pulumi.Output<string | undefined>;
     /**
      * The total number of licenses available for the product license, calculated by adding up all the license counts for active license records associated with the product license.
      */
-    public /*out*/ readonly totalActiveLicenseUnitCount!: pulumi.Output<number>;
+    public /*out*/ readonly totalActiveLicenseUnitCount!: pulumi.Output<number | undefined>;
     /**
      * The number of license records associated with the product license.
      */
-    public /*out*/ readonly totalLicenseRecordCount!: pulumi.Output<number>;
+    public /*out*/ readonly totalLicenseRecordCount!: pulumi.Output<number | undefined>;
     /**
      * The number of license units consumed. Updated after each allocation run.
      */
-    public /*out*/ readonly totalLicenseUnitsConsumed!: pulumi.Output<number>;
+    public /*out*/ readonly totalLicenseUnitsConsumed!: pulumi.Output<number | undefined>;
     /**
      * The product license vendor name, for example: Microsoft, RHEL, and so on. 
      *
@@ -155,7 +155,7 @@ export class ProductLicense extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly vendorName!: pulumi.Output<string>;
+    public readonly vendorName!: pulumi.Output<string | undefined>;
 
     /**
      * Create a ProductLicense resource with the given unique name, arguments, and options.

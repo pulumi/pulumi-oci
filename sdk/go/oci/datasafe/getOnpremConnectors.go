@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of On Prem Connectors in Oracle Cloud Infrastructure Data Safe service.
@@ -83,7 +82,7 @@ type GetOnpremConnectorsResult struct {
 	DisplayName *string                     `pulumi:"displayName"`
 	Filters     []GetOnpremConnectorsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id                            string  `pulumi:"id"`
+	Id                            *string `pulumi:"id"`
 	OnPremConnectorId             *string `pulumi:"onPremConnectorId"`
 	OnPremConnectorLifecycleState *string `pulumi:"onPremConnectorLifecycleState"`
 	// The list of on_prem_connectors.
@@ -139,12 +138,6 @@ func (o GetOnpremConnectorsResultOutput) ToGetOnpremConnectorsResultOutputWithCo
 	return o
 }
 
-func (o GetOnpremConnectorsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetOnpremConnectorsResult] {
-	return pulumix.Output[GetOnpremConnectorsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetOnpremConnectorsResultOutput) AccessLevel() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetOnpremConnectorsResult) *string { return v.AccessLevel }).(pulumi.StringPtrOutput)
 }
@@ -168,8 +161,8 @@ func (o GetOnpremConnectorsResultOutput) Filters() GetOnpremConnectorsFilterArra
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetOnpremConnectorsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOnpremConnectorsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetOnpremConnectorsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOnpremConnectorsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetOnpremConnectorsResultOutput) OnPremConnectorId() pulumi.StringPtrOutput {

@@ -18,7 +18,7 @@ public final class GetByoipRangesResult {
      * @return The list of byoip_range_collection.
      * 
      */
-    private List<GetByoipRangesByoipRangeCollection> byoipRangeCollections;
+    private @Nullable List<GetByoipRangesByoipRangeCollection> byoipRangeCollections;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the BYOIP CIDR block.
      * 
@@ -34,7 +34,7 @@ public final class GetByoipRangesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The `ByoipRange` resource&#39;s current state.
      * 
@@ -47,7 +47,7 @@ public final class GetByoipRangesResult {
      * 
      */
     public List<GetByoipRangesByoipRangeCollection> byoipRangeCollections() {
-        return this.byoipRangeCollections;
+        return this.byoipRangeCollections == null ? List.of() : this.byoipRangeCollections;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the BYOIP CIDR block.
@@ -70,8 +70,8 @@ public final class GetByoipRangesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The `ByoipRange` resource&#39;s current state.
@@ -90,11 +90,11 @@ public final class GetByoipRangesResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetByoipRangesByoipRangeCollection> byoipRangeCollections;
+        private @Nullable List<GetByoipRangesByoipRangeCollection> byoipRangeCollections;
         private String compartmentId;
         private @Nullable String displayName;
         private @Nullable List<GetByoipRangesFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String state;
         public Builder() {}
         public Builder(GetByoipRangesResult defaults) {
@@ -108,8 +108,8 @@ public final class GetByoipRangesResult {
         }
 
         @CustomType.Setter
-        public Builder byoipRangeCollections(List<GetByoipRangesByoipRangeCollection> byoipRangeCollections) {
-            this.byoipRangeCollections = Objects.requireNonNull(byoipRangeCollections);
+        public Builder byoipRangeCollections(@Nullable List<GetByoipRangesByoipRangeCollection> byoipRangeCollections) {
+            this.byoipRangeCollections = byoipRangeCollections;
             return this;
         }
         public Builder byoipRangeCollections(GetByoipRangesByoipRangeCollection... byoipRangeCollections) {
@@ -134,8 +134,8 @@ public final class GetByoipRangesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

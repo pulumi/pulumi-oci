@@ -61,12 +61,12 @@ export interface GetManagementAgentAvailableHistoriesResult {
     /**
      * The list of availability_histories.
      */
-    readonly availabilityHistories: outputs.ManagementAgent.GetManagementAgentAvailableHistoriesAvailabilityHistory[];
+    readonly availabilityHistories?: outputs.ManagementAgent.GetManagementAgentAvailableHistoriesAvailabilityHistory[];
     readonly filters?: outputs.ManagementAgent.GetManagementAgentAvailableHistoriesFilter[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * agent identifier
      */

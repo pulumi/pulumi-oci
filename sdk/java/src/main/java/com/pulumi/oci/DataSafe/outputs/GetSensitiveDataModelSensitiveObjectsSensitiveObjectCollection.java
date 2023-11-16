@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.DataSafe.outputs.GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollection {
@@ -14,7 +15,7 @@ public final class GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectio
      * @return An array of sensitive object summary objects.
      * 
      */
-    private List<GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionItem> items;
+    private @Nullable List<GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionItem> items;
 
     private GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollection() {}
     /**
@@ -22,7 +23,7 @@ public final class GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectio
      * 
      */
     public List<GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -34,7 +35,7 @@ public final class GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectio
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionItem> items;
+        private @Nullable List<GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionItem> items;
         public Builder() {}
         public Builder(GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -42,8 +43,8 @@ public final class GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectio
         }
 
         @CustomType.Setter
-        public Builder items(List<GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionItem... items) {

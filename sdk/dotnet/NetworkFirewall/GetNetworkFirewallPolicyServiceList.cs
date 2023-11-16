@@ -73,7 +73,7 @@ namespace Pulumi.Oci.NetworkFirewall
     [OutputType]
     public sealed class GetNetworkFirewallPolicyServiceListResult
     {
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Name of the service Group.
         /// </summary>
@@ -82,7 +82,7 @@ namespace Pulumi.Oci.NetworkFirewall
         /// <summary>
         /// OCID of the Network Firewall Policy this serviceList belongs to.
         /// </summary>
-        public readonly string ParentResourceId;
+        public readonly string? ParentResourceId;
         /// <summary>
         /// List of services in the group.
         /// </summary>
@@ -90,21 +90,21 @@ namespace Pulumi.Oci.NetworkFirewall
         /// <summary>
         /// Count of total services in the given service List.
         /// </summary>
-        public readonly int TotalServices;
+        public readonly int? TotalServices;
 
         [OutputConstructor]
         private GetNetworkFirewallPolicyServiceListResult(
-            string id,
+            string? id,
 
             string name,
 
             string networkFirewallPolicyId,
 
-            string parentResourceId,
+            string? parentResourceId,
 
             ImmutableArray<string> services,
 
-            int totalServices)
+            int? totalServices)
         {
             Id = id;
             Name = name;

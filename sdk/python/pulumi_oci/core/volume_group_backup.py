@@ -25,16 +25,6 @@ class VolumeGroupBackupArgs:
                  volume_group_id: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a VolumeGroupBackup resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment that will contain the volume group backup. This parameter is optional, by default backup will be created in the same compartment and source volume group.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input['VolumeGroupBackupSourceDetailsArgs'] source_details: Details of the volume group backup source in the cloud.
-        :param pulumi.Input[str] type: The type of backup to create. If omitted, defaults to incremental.
-               * Allowed values are :
-               * FULL
-               * INCREMENTAL
-        :param pulumi.Input[str] volume_group_id: The OCID of the volume group that needs to be backed up.
         """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
@@ -54,9 +44,6 @@ class VolumeGroupBackupArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The OCID of the compartment that will contain the volume group backup. This parameter is optional, by default backup will be created in the same compartment and source volume group.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -66,9 +53,6 @@ class VolumeGroupBackupArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -78,9 +62,6 @@ class VolumeGroupBackupArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -90,9 +71,6 @@ class VolumeGroupBackupArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -102,9 +80,6 @@ class VolumeGroupBackupArgs:
     @property
     @pulumi.getter(name="sourceDetails")
     def source_details(self) -> Optional[pulumi.Input['VolumeGroupBackupSourceDetailsArgs']]:
-        """
-        Details of the volume group backup source in the cloud.
-        """
         return pulumi.get(self, "source_details")
 
     @source_details.setter
@@ -114,12 +89,6 @@ class VolumeGroupBackupArgs:
     @property
     @pulumi.getter
     def type(self) -> Optional[pulumi.Input[str]]:
-        """
-        The type of backup to create. If omitted, defaults to incremental.
-        * Allowed values are :
-        * FULL
-        * INCREMENTAL
-        """
         return pulumi.get(self, "type")
 
     @type.setter
@@ -129,9 +98,6 @@ class VolumeGroupBackupArgs:
     @property
     @pulumi.getter(name="volumeGroupId")
     def volume_group_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the volume group that needs to be backed up.
-        """
         return pulumi.get(self, "volume_group_id")
 
     @volume_group_id.setter
@@ -162,27 +128,6 @@ class _VolumeGroupBackupState:
                  volume_group_id: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering VolumeGroupBackup resources.
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment that will contain the volume group backup. This parameter is optional, by default backup will be created in the same compartment and source volume group.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[str] expiration_time: The date and time the volume group backup will expire and be automatically deleted. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). This parameter will always be present for volume group backups that were created automatically by a scheduled-backup policy. For manually created volume group backups, it will be absent, signifying that there is no expiration time and the backup will last forever until manually deleted.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] size_in_gbs: The aggregate size of the volume group backup, in GBs.
-        :param pulumi.Input[str] size_in_mbs: The aggregate size of the volume group backup, in MBs.
-        :param pulumi.Input['VolumeGroupBackupSourceDetailsArgs'] source_details: Details of the volume group backup source in the cloud.
-        :param pulumi.Input[str] source_type: Specifies whether the volume group backup was created manually, or via scheduled backup policy.
-        :param pulumi.Input[str] source_volume_group_backup_id: The OCID of the source volume group backup.
-        :param pulumi.Input[str] state: The current state of a volume group backup.
-        :param pulumi.Input[str] time_created: The date and time the volume group backup was created. This is the time the actual point-in-time image of the volume group data was taken. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        :param pulumi.Input[str] time_request_received: The date and time the request to create the volume group backup was received. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        :param pulumi.Input[str] type: The type of backup to create. If omitted, defaults to incremental.
-               * Allowed values are :
-               * FULL
-               * INCREMENTAL
-        :param pulumi.Input[str] unique_size_in_gbs: The aggregate size used by the volume group backup, in GBs.  It is typically smaller than `size_in_gbs`, depending on the space consumed on the volume group and whether the volume backup is full or incremental.
-        :param pulumi.Input[str] unique_size_in_mbs: The aggregate size used by the volume group backup, in MBs.  It is typically smaller than `size_in_mbs`, depending on the space consumed on the volume group and whether the volume backup is full or incremental.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] volume_backup_ids: OCIDs for the volume backups in this volume group backup.
-        :param pulumi.Input[str] volume_group_id: The OCID of the volume group that needs to be backed up.
         """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
@@ -224,9 +169,6 @@ class _VolumeGroupBackupState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The OCID of the compartment that will contain the volume group backup. This parameter is optional, by default backup will be created in the same compartment and source volume group.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -236,9 +178,6 @@ class _VolumeGroupBackupState:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -248,9 +187,6 @@ class _VolumeGroupBackupState:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -260,9 +196,6 @@ class _VolumeGroupBackupState:
     @property
     @pulumi.getter(name="expirationTime")
     def expiration_time(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time the volume group backup will expire and be automatically deleted. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). This parameter will always be present for volume group backups that were created automatically by a scheduled-backup policy. For manually created volume group backups, it will be absent, signifying that there is no expiration time and the backup will last forever until manually deleted.
-        """
         return pulumi.get(self, "expiration_time")
 
     @expiration_time.setter
@@ -272,9 +205,6 @@ class _VolumeGroupBackupState:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -284,9 +214,6 @@ class _VolumeGroupBackupState:
     @property
     @pulumi.getter(name="sizeInGbs")
     def size_in_gbs(self) -> Optional[pulumi.Input[str]]:
-        """
-        The aggregate size of the volume group backup, in GBs.
-        """
         return pulumi.get(self, "size_in_gbs")
 
     @size_in_gbs.setter
@@ -296,9 +223,6 @@ class _VolumeGroupBackupState:
     @property
     @pulumi.getter(name="sizeInMbs")
     def size_in_mbs(self) -> Optional[pulumi.Input[str]]:
-        """
-        The aggregate size of the volume group backup, in MBs.
-        """
         return pulumi.get(self, "size_in_mbs")
 
     @size_in_mbs.setter
@@ -308,9 +232,6 @@ class _VolumeGroupBackupState:
     @property
     @pulumi.getter(name="sourceDetails")
     def source_details(self) -> Optional[pulumi.Input['VolumeGroupBackupSourceDetailsArgs']]:
-        """
-        Details of the volume group backup source in the cloud.
-        """
         return pulumi.get(self, "source_details")
 
     @source_details.setter
@@ -320,9 +241,6 @@ class _VolumeGroupBackupState:
     @property
     @pulumi.getter(name="sourceType")
     def source_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        Specifies whether the volume group backup was created manually, or via scheduled backup policy.
-        """
         return pulumi.get(self, "source_type")
 
     @source_type.setter
@@ -332,9 +250,6 @@ class _VolumeGroupBackupState:
     @property
     @pulumi.getter(name="sourceVolumeGroupBackupId")
     def source_volume_group_backup_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the source volume group backup.
-        """
         return pulumi.get(self, "source_volume_group_backup_id")
 
     @source_volume_group_backup_id.setter
@@ -344,9 +259,6 @@ class _VolumeGroupBackupState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The current state of a volume group backup.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -356,9 +268,6 @@ class _VolumeGroupBackupState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time the volume group backup was created. This is the time the actual point-in-time image of the volume group data was taken. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -368,9 +277,6 @@ class _VolumeGroupBackupState:
     @property
     @pulumi.getter(name="timeRequestReceived")
     def time_request_received(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time the request to create the volume group backup was received. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        """
         return pulumi.get(self, "time_request_received")
 
     @time_request_received.setter
@@ -380,12 +286,6 @@ class _VolumeGroupBackupState:
     @property
     @pulumi.getter
     def type(self) -> Optional[pulumi.Input[str]]:
-        """
-        The type of backup to create. If omitted, defaults to incremental.
-        * Allowed values are :
-        * FULL
-        * INCREMENTAL
-        """
         return pulumi.get(self, "type")
 
     @type.setter
@@ -395,9 +295,6 @@ class _VolumeGroupBackupState:
     @property
     @pulumi.getter(name="uniqueSizeInGbs")
     def unique_size_in_gbs(self) -> Optional[pulumi.Input[str]]:
-        """
-        The aggregate size used by the volume group backup, in GBs.  It is typically smaller than `size_in_gbs`, depending on the space consumed on the volume group and whether the volume backup is full or incremental.
-        """
         return pulumi.get(self, "unique_size_in_gbs")
 
     @unique_size_in_gbs.setter
@@ -407,9 +304,6 @@ class _VolumeGroupBackupState:
     @property
     @pulumi.getter(name="uniqueSizeInMbs")
     def unique_size_in_mbs(self) -> Optional[pulumi.Input[str]]:
-        """
-        The aggregate size used by the volume group backup, in MBs.  It is typically smaller than `size_in_mbs`, depending on the space consumed on the volume group and whether the volume backup is full or incremental.
-        """
         return pulumi.get(self, "unique_size_in_mbs")
 
     @unique_size_in_mbs.setter
@@ -419,9 +313,6 @@ class _VolumeGroupBackupState:
     @property
     @pulumi.getter(name="volumeBackupIds")
     def volume_backup_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        OCIDs for the volume backups in this volume group backup.
-        """
         return pulumi.get(self, "volume_backup_ids")
 
     @volume_backup_ids.setter
@@ -431,9 +322,6 @@ class _VolumeGroupBackupState:
     @property
     @pulumi.getter(name="volumeGroupId")
     def volume_group_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the volume group that needs to be backed up.
-        """
         return pulumi.get(self, "volume_group_id")
 
     @volume_group_id.setter
@@ -455,50 +343,9 @@ class VolumeGroupBackup(pulumi.CustomResource):
                  volume_group_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Volume Group Backup resource in Oracle Cloud Infrastructure Core service.
-
-        Creates a new backup volume group of the specified volume group.
-        For more information, see [Volume Groups](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/volumegroups.htm).
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_volume_group_backup = oci.core.VolumeGroupBackup("testVolumeGroupBackup",
-            volume_group_id=oci_core_volume_group["test_volume_group"]["id"],
-            compartment_id=var["compartment_id"],
-            defined_tags={
-                "Operations.CostCenter": "42",
-            },
-            display_name=var["volume_group_backup_display_name"],
-            freeform_tags={
-                "Department": "Finance",
-            },
-            type=var["volume_group_backup_type"])
-        ```
-
-        ## Import
-
-        VolumeGroupBackups can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Core/volumeGroupBackup:VolumeGroupBackup test_volume_group_backup "id"
-        ```
-
+        Create a VolumeGroupBackup resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment that will contain the volume group backup. This parameter is optional, by default backup will be created in the same compartment and source volume group.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[pulumi.InputType['VolumeGroupBackupSourceDetailsArgs']] source_details: Details of the volume group backup source in the cloud.
-        :param pulumi.Input[str] type: The type of backup to create. If omitted, defaults to incremental.
-               * Allowed values are :
-               * FULL
-               * INCREMENTAL
-        :param pulumi.Input[str] volume_group_id: The OCID of the volume group that needs to be backed up.
         """
         ...
     @overload
@@ -507,38 +354,7 @@ class VolumeGroupBackup(pulumi.CustomResource):
                  args: Optional[VolumeGroupBackupArgs] = None,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Volume Group Backup resource in Oracle Cloud Infrastructure Core service.
-
-        Creates a new backup volume group of the specified volume group.
-        For more information, see [Volume Groups](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/volumegroups.htm).
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_volume_group_backup = oci.core.VolumeGroupBackup("testVolumeGroupBackup",
-            volume_group_id=oci_core_volume_group["test_volume_group"]["id"],
-            compartment_id=var["compartment_id"],
-            defined_tags={
-                "Operations.CostCenter": "42",
-            },
-            display_name=var["volume_group_backup_display_name"],
-            freeform_tags={
-                "Department": "Finance",
-            },
-            type=var["volume_group_backup_type"])
-        ```
-
-        ## Import
-
-        VolumeGroupBackups can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Core/volumeGroupBackup:VolumeGroupBackup test_volume_group_backup "id"
-        ```
-
+        Create a VolumeGroupBackup resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param VolumeGroupBackupArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -623,27 +439,6 @@ class VolumeGroupBackup(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment that will contain the volume group backup. This parameter is optional, by default backup will be created in the same compartment and source volume group.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[str] expiration_time: The date and time the volume group backup will expire and be automatically deleted. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). This parameter will always be present for volume group backups that were created automatically by a scheduled-backup policy. For manually created volume group backups, it will be absent, signifying that there is no expiration time and the backup will last forever until manually deleted.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] size_in_gbs: The aggregate size of the volume group backup, in GBs.
-        :param pulumi.Input[str] size_in_mbs: The aggregate size of the volume group backup, in MBs.
-        :param pulumi.Input[pulumi.InputType['VolumeGroupBackupSourceDetailsArgs']] source_details: Details of the volume group backup source in the cloud.
-        :param pulumi.Input[str] source_type: Specifies whether the volume group backup was created manually, or via scheduled backup policy.
-        :param pulumi.Input[str] source_volume_group_backup_id: The OCID of the source volume group backup.
-        :param pulumi.Input[str] state: The current state of a volume group backup.
-        :param pulumi.Input[str] time_created: The date and time the volume group backup was created. This is the time the actual point-in-time image of the volume group data was taken. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        :param pulumi.Input[str] time_request_received: The date and time the request to create the volume group backup was received. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        :param pulumi.Input[str] type: The type of backup to create. If omitted, defaults to incremental.
-               * Allowed values are :
-               * FULL
-               * INCREMENTAL
-        :param pulumi.Input[str] unique_size_in_gbs: The aggregate size used by the volume group backup, in GBs.  It is typically smaller than `size_in_gbs`, depending on the space consumed on the volume group and whether the volume backup is full or incremental.
-        :param pulumi.Input[str] unique_size_in_mbs: The aggregate size used by the volume group backup, in MBs.  It is typically smaller than `size_in_mbs`, depending on the space consumed on the volume group and whether the volume backup is full or incremental.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] volume_backup_ids: OCIDs for the volume backups in this volume group backup.
-        :param pulumi.Input[str] volume_group_id: The OCID of the volume group that needs to be backed up.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -671,148 +466,91 @@ class VolumeGroupBackup(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The OCID of the compartment that will contain the volume group backup. This parameter is optional, by default backup will be created in the same compartment and source volume group.
-        """
+    def compartment_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> pulumi.Output[str]:
-        """
-        (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
+    def display_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="expirationTime")
-    def expiration_time(self) -> pulumi.Output[str]:
-        """
-        The date and time the volume group backup will expire and be automatically deleted. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). This parameter will always be present for volume group backups that were created automatically by a scheduled-backup policy. For manually created volume group backups, it will be absent, signifying that there is no expiration time and the backup will last forever until manually deleted.
-        """
+    def expiration_time(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "expiration_time")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="sizeInGbs")
-    def size_in_gbs(self) -> pulumi.Output[str]:
-        """
-        The aggregate size of the volume group backup, in GBs.
-        """
+    def size_in_gbs(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "size_in_gbs")
 
     @property
     @pulumi.getter(name="sizeInMbs")
-    def size_in_mbs(self) -> pulumi.Output[str]:
-        """
-        The aggregate size of the volume group backup, in MBs.
-        """
+    def size_in_mbs(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "size_in_mbs")
 
     @property
     @pulumi.getter(name="sourceDetails")
     def source_details(self) -> pulumi.Output[Optional['outputs.VolumeGroupBackupSourceDetails']]:
-        """
-        Details of the volume group backup source in the cloud.
-        """
         return pulumi.get(self, "source_details")
 
     @property
     @pulumi.getter(name="sourceType")
-    def source_type(self) -> pulumi.Output[str]:
-        """
-        Specifies whether the volume group backup was created manually, or via scheduled backup policy.
-        """
+    def source_type(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "source_type")
 
     @property
     @pulumi.getter(name="sourceVolumeGroupBackupId")
-    def source_volume_group_backup_id(self) -> pulumi.Output[str]:
-        """
-        The OCID of the source volume group backup.
-        """
+    def source_volume_group_backup_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "source_volume_group_backup_id")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        The current state of a volume group backup.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        The date and time the volume group backup was created. This is the time the actual point-in-time image of the volume group data was taken. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeRequestReceived")
-    def time_request_received(self) -> pulumi.Output[str]:
-        """
-        The date and time the request to create the volume group backup was received. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        """
+    def time_request_received(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_request_received")
 
     @property
     @pulumi.getter
-    def type(self) -> pulumi.Output[str]:
-        """
-        The type of backup to create. If omitted, defaults to incremental.
-        * Allowed values are :
-        * FULL
-        * INCREMENTAL
-        """
+    def type(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "type")
 
     @property
     @pulumi.getter(name="uniqueSizeInGbs")
-    def unique_size_in_gbs(self) -> pulumi.Output[str]:
-        """
-        The aggregate size used by the volume group backup, in GBs.  It is typically smaller than `size_in_gbs`, depending on the space consumed on the volume group and whether the volume backup is full or incremental.
-        """
+    def unique_size_in_gbs(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "unique_size_in_gbs")
 
     @property
     @pulumi.getter(name="uniqueSizeInMbs")
-    def unique_size_in_mbs(self) -> pulumi.Output[str]:
-        """
-        The aggregate size used by the volume group backup, in MBs.  It is typically smaller than `size_in_mbs`, depending on the space consumed on the volume group and whether the volume backup is full or incremental.
-        """
+    def unique_size_in_mbs(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "unique_size_in_mbs")
 
     @property
     @pulumi.getter(name="volumeBackupIds")
-    def volume_backup_ids(self) -> pulumi.Output[Sequence[str]]:
-        """
-        OCIDs for the volume backups in this volume group backup.
-        """
+    def volume_backup_ids(self) -> pulumi.Output[Optional[Sequence[str]]]:
         return pulumi.get(self, "volume_backup_ids")
 
     @property
     @pulumi.getter(name="volumeGroupId")
-    def volume_group_id(self) -> pulumi.Output[str]:
-        """
-        The OCID of the volume group that needs to be backed up.
-        """
+    def volume_group_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "volume_group_id")
 

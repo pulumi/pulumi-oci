@@ -39,19 +39,19 @@ namespace Pulumi.Oci.Core
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the DRG attachment.
         /// </summary>
         [Output("compartmentId")]
-        public Output<string> CompartmentId { get; private set; } = null!;
+        public Output<string?> CompartmentId { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         /// </summary>
         [Output("displayName")]
-        public Output<string> DisplayName { get; private set; } = null!;
+        public Output<string?> DisplayName { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
@@ -65,32 +65,32 @@ namespace Pulumi.Oci.Core
         /// The DRG route table manages traffic inside the DRG.
         /// </summary>
         [Output("drgRouteTableId")]
-        public Output<string> DrgRouteTableId { get; private set; } = null!;
+        public Output<string?> DrgRouteTableId { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the export route distribution used to specify how routes in the assigned DRG route table are advertised to the attachment. If this value is null, no routes are advertised through this attachment.
         /// This field cannot be set by the user while creating the resource and gets a default value on creation. This can be only be updated to its default value. If this fields needs to be set to null, remove_export_drg_route_distribution_trigger needs to be used.
         /// </summary>
         [Output("exportDrgRouteDistributionId")]
-        public Output<string> ExportDrgRouteDistributionId { get; private set; } = null!;
+        public Output<string?> ExportDrgRouteDistributionId { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// Indicates whether the DRG attachment and attached network live in a different tenancy than the DRG.  Example: `false`
         /// </summary>
         [Output("isCrossTenancy")]
-        public Output<bool> IsCrossTenancy { get; private set; } = null!;
+        public Output<bool?> IsCrossTenancy { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable)
         /// </summary>
         [Output("networkDetails")]
-        public Output<Outputs.DrgAttachmentNetworkDetails> NetworkDetails { get; private set; } = null!;
+        public Output<Outputs.DrgAttachmentNetworkDetails?> NetworkDetails { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) An optional property when set to true during update disables the export of route Distribution by setting export_drg_route_distribution_id to null.
@@ -110,25 +110,25 @@ namespace Pulumi.Oci.Core
         /// This field is deprecated. Instead, use the networkDetails field to specify the VCN route table for this attachment.
         /// </summary>
         [Output("routeTableId")]
-        public Output<string> RouteTableId { get; private set; } = null!;
+        public Output<string?> RouteTableId { get; private set; } = null!;
 
         /// <summary>
         /// The DRG attachment's current state.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the DRG attachment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// (Optional) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN. This field is deprecated. Instead, use the `networkDetails` field to specify the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the attached resource.
         /// </summary>
         [Output("vcnId")]
-        public Output<string> VcnId { get; private set; } = null!;
+        public Output<string?> VcnId { get; private set; } = null!;
 
 
         /// <summary>

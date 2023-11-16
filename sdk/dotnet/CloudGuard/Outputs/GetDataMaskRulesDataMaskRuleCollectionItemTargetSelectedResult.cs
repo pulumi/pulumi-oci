@@ -16,7 +16,7 @@ namespace Pulumi.Oci.CloudGuard.Outputs
         /// <summary>
         /// Target selection.
         /// </summary>
-        public readonly string Kind;
+        public readonly string? Kind;
         /// <summary>
         /// Types of Targets
         /// </summary>
@@ -24,7 +24,7 @@ namespace Pulumi.Oci.CloudGuard.Outputs
 
         [OutputConstructor]
         private GetDataMaskRulesDataMaskRuleCollectionItemTargetSelectedResult(
-            string kind,
+            string? kind,
 
             ImmutableArray<string> values)
         {

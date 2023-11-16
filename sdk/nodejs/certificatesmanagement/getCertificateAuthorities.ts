@@ -75,7 +75,7 @@ export interface GetCertificateAuthoritiesResult {
     /**
      * The list of certificate_authority_collection.
      */
-    readonly certificateAuthorityCollections: outputs.CertificatesManagement.GetCertificateAuthoritiesCertificateAuthorityCollection[];
+    readonly certificateAuthorityCollections?: outputs.CertificatesManagement.GetCertificateAuthoritiesCertificateAuthorityCollection[];
     /**
      * The OCID of the CA.
      */
@@ -88,7 +88,7 @@ export interface GetCertificateAuthoritiesResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The OCID of the parent CA that issued this CA. If this is the root CA, then this value is null.
      */

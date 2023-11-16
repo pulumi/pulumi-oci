@@ -16,7 +16,7 @@ namespace Pulumi.Oci.Jms.Outputs
         /// <summary>
         /// The approximate count of applications running on this installation
         /// </summary>
-        public readonly int ApproximateApplicationCount;
+        public readonly int? ApproximateApplicationCount;
         /// <summary>
         /// The list of operations that are blocklisted.
         /// </summary>
@@ -24,7 +24,7 @@ namespace Pulumi.Oci.Jms.Outputs
         /// <summary>
         /// The unique identifier for the installation of Java Runtime at a specific path on a specific operating system.
         /// </summary>
-        public readonly string InstallationKey;
+        public readonly string? InstallationKey;
         /// <summary>
         /// The essential properties to identify a Java Runtime.
         /// </summary>
@@ -32,7 +32,7 @@ namespace Pulumi.Oci.Jms.Outputs
         /// <summary>
         /// The Fleet-unique identifier of the related managed instance.
         /// </summary>
-        public readonly string ManagedInstanceId;
+        public readonly string? ManagedInstanceId;
         /// <summary>
         /// Operating System of the platform on which the Java Runtime was reported.
         /// </summary>
@@ -40,41 +40,41 @@ namespace Pulumi.Oci.Jms.Outputs
         /// <summary>
         /// The file system path of the installation.
         /// </summary>
-        public readonly string Path;
+        public readonly string? Path;
         /// <summary>
         /// The security status of the Java Runtime.
         /// </summary>
-        public readonly string SecurityStatus;
+        public readonly string? SecurityStatus;
         /// <summary>
         /// The lifecycle state of the installation site.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// The date and time the resource was _last_ reported to JMS. This is potentially _after_ the specified time period provided by the filters. For example, a resource can be last reported to JMS before the start of a specified time period, if it is also reported during the time period.
         /// </summary>
-        public readonly string TimeLastSeen;
+        public readonly string? TimeLastSeen;
 
         [OutputConstructor]
         private GetInstallationSitesInstallationSiteCollectionItemItemResult(
-            int approximateApplicationCount,
+            int? approximateApplicationCount,
 
             ImmutableArray<Outputs.GetInstallationSitesInstallationSiteCollectionItemItemBlocklistResult> blocklists,
 
-            string installationKey,
+            string? installationKey,
 
             ImmutableArray<Outputs.GetInstallationSitesInstallationSiteCollectionItemItemJreResult> jres,
 
-            string managedInstanceId,
+            string? managedInstanceId,
 
             ImmutableArray<Outputs.GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemResult> operatingSystems,
 
-            string path,
+            string? path,
 
-            string securityStatus,
+            string? securityStatus,
 
-            string state,
+            string? state,
 
-            string timeLastSeen)
+            string? timeLastSeen)
         {
             ApproximateApplicationCount = approximateApplicationCount;
             Blocklists = blocklists;

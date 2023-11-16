@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDomainsDynamicResourceGroupDynamicGroupAppRole {
@@ -14,87 +16,87 @@ public final class GetDomainsDynamicResourceGroupDynamicGroupAppRole {
      * @return If true, then the role provides administrative access privileges. READ-ONLY.
      * 
      */
-    private Boolean adminRole;
+    private @Nullable Boolean adminRole;
     /**
      * @return App identifier
      * 
      */
-    private String appId;
+    private @Nullable String appId;
     /**
      * @return Name of parent App. READ-ONLY.
      * 
      */
-    private String appName;
+    private @Nullable String appName;
     /**
      * @return The displayName of the User or App who modified this Resource
      * 
      */
-    private String display;
+    private @Nullable String display;
     /**
      * @return The name of the legacy group associated with this AppRole.
      * 
      */
-    private String legacyGroupName;
+    private @Nullable String legacyGroupName;
     /**
      * @return The URI of the SCIM resource that represents the User or App who modified this Resource
      * 
      */
-    private String ref;
+    private @Nullable String ref;
     /**
      * @return Oracle Cloud Infrastructure Tag value
      * 
      */
-    private String value;
+    private @Nullable String value;
 
     private GetDomainsDynamicResourceGroupDynamicGroupAppRole() {}
     /**
      * @return If true, then the role provides administrative access privileges. READ-ONLY.
      * 
      */
-    public Boolean adminRole() {
-        return this.adminRole;
+    public Optional<Boolean> adminRole() {
+        return Optional.ofNullable(this.adminRole);
     }
     /**
      * @return App identifier
      * 
      */
-    public String appId() {
-        return this.appId;
+    public Optional<String> appId() {
+        return Optional.ofNullable(this.appId);
     }
     /**
      * @return Name of parent App. READ-ONLY.
      * 
      */
-    public String appName() {
-        return this.appName;
+    public Optional<String> appName() {
+        return Optional.ofNullable(this.appName);
     }
     /**
      * @return The displayName of the User or App who modified this Resource
      * 
      */
-    public String display() {
-        return this.display;
+    public Optional<String> display() {
+        return Optional.ofNullable(this.display);
     }
     /**
      * @return The name of the legacy group associated with this AppRole.
      * 
      */
-    public String legacyGroupName() {
-        return this.legacyGroupName;
+    public Optional<String> legacyGroupName() {
+        return Optional.ofNullable(this.legacyGroupName);
     }
     /**
      * @return The URI of the SCIM resource that represents the User or App who modified this Resource
      * 
      */
-    public String ref() {
-        return this.ref;
+    public Optional<String> ref() {
+        return Optional.ofNullable(this.ref);
     }
     /**
      * @return Oracle Cloud Infrastructure Tag value
      * 
      */
-    public String value() {
-        return this.value;
+    public Optional<String> value() {
+        return Optional.ofNullable(this.value);
     }
 
     public static Builder builder() {
@@ -106,13 +108,13 @@ public final class GetDomainsDynamicResourceGroupDynamicGroupAppRole {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Boolean adminRole;
-        private String appId;
-        private String appName;
-        private String display;
-        private String legacyGroupName;
-        private String ref;
-        private String value;
+        private @Nullable Boolean adminRole;
+        private @Nullable String appId;
+        private @Nullable String appName;
+        private @Nullable String display;
+        private @Nullable String legacyGroupName;
+        private @Nullable String ref;
+        private @Nullable String value;
         public Builder() {}
         public Builder(GetDomainsDynamicResourceGroupDynamicGroupAppRole defaults) {
     	      Objects.requireNonNull(defaults);
@@ -126,38 +128,38 @@ public final class GetDomainsDynamicResourceGroupDynamicGroupAppRole {
         }
 
         @CustomType.Setter
-        public Builder adminRole(Boolean adminRole) {
-            this.adminRole = Objects.requireNonNull(adminRole);
+        public Builder adminRole(@Nullable Boolean adminRole) {
+            this.adminRole = adminRole;
             return this;
         }
         @CustomType.Setter
-        public Builder appId(String appId) {
-            this.appId = Objects.requireNonNull(appId);
+        public Builder appId(@Nullable String appId) {
+            this.appId = appId;
             return this;
         }
         @CustomType.Setter
-        public Builder appName(String appName) {
-            this.appName = Objects.requireNonNull(appName);
+        public Builder appName(@Nullable String appName) {
+            this.appName = appName;
             return this;
         }
         @CustomType.Setter
-        public Builder display(String display) {
-            this.display = Objects.requireNonNull(display);
+        public Builder display(@Nullable String display) {
+            this.display = display;
             return this;
         }
         @CustomType.Setter
-        public Builder legacyGroupName(String legacyGroupName) {
-            this.legacyGroupName = Objects.requireNonNull(legacyGroupName);
+        public Builder legacyGroupName(@Nullable String legacyGroupName) {
+            this.legacyGroupName = legacyGroupName;
             return this;
         }
         @CustomType.Setter
-        public Builder ref(String ref) {
-            this.ref = Objects.requireNonNull(ref);
+        public Builder ref(@Nullable String ref) {
+            this.ref = ref;
             return this;
         }
         @CustomType.Setter
-        public Builder value(String value) {
-            this.value = Objects.requireNonNull(value);
+        public Builder value(@Nullable String value) {
+            this.value = value;
             return this;
         }
         public GetDomainsDynamicResourceGroupDynamicGroupAppRole build() {

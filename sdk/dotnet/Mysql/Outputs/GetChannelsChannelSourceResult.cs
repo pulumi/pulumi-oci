@@ -20,16 +20,16 @@ namespace Pulumi.Oci.Mysql.Outputs
         /// <summary>
         /// The network address of the MySQL instance.
         /// </summary>
-        public readonly string Hostname;
-        public readonly string Password;
+        public readonly string? Hostname;
+        public readonly string? Password;
         /// <summary>
         /// The port the source MySQL instance listens on.
         /// </summary>
-        public readonly int Port;
+        public readonly int? Port;
         /// <summary>
         /// The specific source identifier.
         /// </summary>
-        public readonly string SourceType;
+        public readonly string? SourceType;
         /// <summary>
         /// The CA certificate of the server used for VERIFY_IDENTITY and VERIFY_CA ssl modes.
         /// </summary>
@@ -37,29 +37,29 @@ namespace Pulumi.Oci.Mysql.Outputs
         /// <summary>
         /// The SSL mode of the Channel.
         /// </summary>
-        public readonly string SslMode;
+        public readonly string? SslMode;
         /// <summary>
         /// The name of the replication user on the source MySQL instance. The username has a maximum length of 96 characters. For more information, please see the [MySQL documentation](https://dev.mysql.com/doc/refman/8.0/en/change-master-to.html)
         /// </summary>
-        public readonly string Username;
+        public readonly string? Username;
 
         [OutputConstructor]
         private GetChannelsChannelSourceResult(
             ImmutableArray<Outputs.GetChannelsChannelSourceAnonymousTransactionsHandlingResult> anonymousTransactionsHandlings,
 
-            string hostname,
+            string? hostname,
 
-            string password,
+            string? password,
 
-            int port,
+            int? port,
 
-            string sourceType,
+            string? sourceType,
 
             ImmutableArray<Outputs.GetChannelsChannelSourceSslCaCertificateResult> sslCaCertificates,
 
-            string sslMode,
+            string? sslMode,
 
-            string username)
+            string? username)
         {
             AnonymousTransactionsHandlings = anonymousTransactionsHandlings;
             Hostname = hostname;

@@ -13,6 +13,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetVolumesVolume {
@@ -20,75 +22,75 @@ public final class GetVolumesVolume {
      * @return The number of Volume Performance Units per GB that this volume is effectively tuned to.
      * 
      */
-    private String autoTunedVpusPerGb;
+    private @Nullable String autoTunedVpusPerGb;
     /**
      * @return The list of autotune policies enabled for this volume.
      * 
      */
-    private List<GetVolumesVolumeAutotunePolicy> autotunePolicies;
+    private @Nullable List<GetVolumesVolumeAutotunePolicy> autotunePolicies;
     /**
      * @return The name of the availability domain.  Example: `Uocm:PHX-AD-1`
      * 
      */
-    private String availabilityDomain;
+    private @Nullable String availabilityDomain;
     /**
      * @deprecated
      * The &#39;backup_policy_id&#39; field has been deprecated. Please use the &#39;oci_core_volume_backup_policy_assignment&#39; resource instead.
      * 
      */
     @Deprecated /* The 'backup_policy_id' field has been deprecated. Please use the 'oci_core_volume_backup_policy_assignment' resource instead. */
-    private String backupPolicyId;
+    private @Nullable String backupPolicyId;
     /**
      * @return The list of block volume replicas of this volume.
      * 
      */
-    private List<GetVolumesVolumeBlockVolumeReplica> blockVolumeReplicas;
-    private Boolean blockVolumeReplicasDeletion;
+    private @Nullable List<GetVolumesVolumeBlockVolumeReplica> blockVolumeReplicas;
+    private @Nullable Boolean blockVolumeReplicasDeletion;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return A filter to return only resources that match the given display name exactly.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return The OCID of the block volume replica.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Specifies whether the auto-tune performance is enabled for this volume. This field is deprecated. Use the `DetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
      * 
      */
-    private Boolean isAutoTuneEnabled;
+    private @Nullable Boolean isAutoTuneEnabled;
     /**
      * @return Specifies whether the cloned volume&#39;s data has finished copying from the source volume or backup.
      * 
      */
-    private Boolean isHydrated;
+    private @Nullable Boolean isHydrated;
     /**
      * @return The OCID of the Vault service key which is the master encryption key for the volume.
      * 
      */
-    private String kmsKeyId;
+    private @Nullable String kmsKeyId;
     /**
      * @return The size of the volume in GBs.
      * 
      */
-    private String sizeInGbs;
+    private @Nullable String sizeInGbs;
     /**
      * @return The size of the volume in MBs. This field is deprecated. Use `size_in_gbs` instead.
      * 
@@ -97,56 +99,56 @@ public final class GetVolumesVolume {
      * 
      */
     @Deprecated /* The 'size_in_mbs' field has been deprecated. Please use 'size_in_gbs' instead. */
-    private String sizeInMbs;
-    private List<GetVolumesVolumeSourceDetail> sourceDetails;
+    private @Nullable String sizeInMbs;
+    private @Nullable List<GetVolumesVolumeSourceDetail> sourceDetails;
     /**
      * @return A filter to only return resources that match the given lifecycle state. The state value is case-insensitive.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> systemTags;
+    private @Nullable Map<String,Object> systemTags;
     /**
      * @return The date and time the volume was created. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    private String timeCreated;
-    private String volumeBackupId;
+    private @Nullable String timeCreated;
+    private @Nullable String volumeBackupId;
     /**
      * @return The OCID of the volume group.
      * 
      */
-    private String volumeGroupId;
+    private @Nullable String volumeGroupId;
     /**
      * @return The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service&#39;s elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
      * 
      */
-    private String vpusPerGb;
+    private @Nullable String vpusPerGb;
 
     private GetVolumesVolume() {}
     /**
      * @return The number of Volume Performance Units per GB that this volume is effectively tuned to.
      * 
      */
-    public String autoTunedVpusPerGb() {
-        return this.autoTunedVpusPerGb;
+    public Optional<String> autoTunedVpusPerGb() {
+        return Optional.ofNullable(this.autoTunedVpusPerGb);
     }
     /**
      * @return The list of autotune policies enabled for this volume.
      * 
      */
     public List<GetVolumesVolumeAutotunePolicy> autotunePolicies() {
-        return this.autotunePolicies;
+        return this.autotunePolicies == null ? List.of() : this.autotunePolicies;
     }
     /**
      * @return The name of the availability domain.  Example: `Uocm:PHX-AD-1`
      * 
      */
-    public String availabilityDomain() {
-        return this.availabilityDomain;
+    public Optional<String> availabilityDomain() {
+        return Optional.ofNullable(this.availabilityDomain);
     }
     /**
      * @deprecated
@@ -154,81 +156,81 @@ public final class GetVolumesVolume {
      * 
      */
     @Deprecated /* The 'backup_policy_id' field has been deprecated. Please use the 'oci_core_volume_backup_policy_assignment' resource instead. */
-    public String backupPolicyId() {
-        return this.backupPolicyId;
+    public Optional<String> backupPolicyId() {
+        return Optional.ofNullable(this.backupPolicyId);
     }
     /**
      * @return The list of block volume replicas of this volume.
      * 
      */
     public List<GetVolumesVolumeBlockVolumeReplica> blockVolumeReplicas() {
-        return this.blockVolumeReplicas;
+        return this.blockVolumeReplicas == null ? List.of() : this.blockVolumeReplicas;
     }
-    public Boolean blockVolumeReplicasDeletion() {
-        return this.blockVolumeReplicasDeletion;
+    public Optional<Boolean> blockVolumeReplicasDeletion() {
+        return Optional.ofNullable(this.blockVolumeReplicasDeletion);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return A filter to return only resources that match the given display name exactly.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return The OCID of the block volume replica.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Specifies whether the auto-tune performance is enabled for this volume. This field is deprecated. Use the `DetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
      * 
      */
-    public Boolean isAutoTuneEnabled() {
-        return this.isAutoTuneEnabled;
+    public Optional<Boolean> isAutoTuneEnabled() {
+        return Optional.ofNullable(this.isAutoTuneEnabled);
     }
     /**
      * @return Specifies whether the cloned volume&#39;s data has finished copying from the source volume or backup.
      * 
      */
-    public Boolean isHydrated() {
-        return this.isHydrated;
+    public Optional<Boolean> isHydrated() {
+        return Optional.ofNullable(this.isHydrated);
     }
     /**
      * @return The OCID of the Vault service key which is the master encryption key for the volume.
      * 
      */
-    public String kmsKeyId() {
-        return this.kmsKeyId;
+    public Optional<String> kmsKeyId() {
+        return Optional.ofNullable(this.kmsKeyId);
     }
     /**
      * @return The size of the volume in GBs.
      * 
      */
-    public String sizeInGbs() {
-        return this.sizeInGbs;
+    public Optional<String> sizeInGbs() {
+        return Optional.ofNullable(this.sizeInGbs);
     }
     /**
      * @return The size of the volume in MBs. This field is deprecated. Use `size_in_gbs` instead.
@@ -238,49 +240,49 @@ public final class GetVolumesVolume {
      * 
      */
     @Deprecated /* The 'size_in_mbs' field has been deprecated. Please use 'size_in_gbs' instead. */
-    public String sizeInMbs() {
-        return this.sizeInMbs;
+    public Optional<String> sizeInMbs() {
+        return Optional.ofNullable(this.sizeInMbs);
     }
     public List<GetVolumesVolumeSourceDetail> sourceDetails() {
-        return this.sourceDetails;
+        return this.sourceDetails == null ? List.of() : this.sourceDetails;
     }
     /**
      * @return A filter to only return resources that match the given lifecycle state. The state value is case-insensitive.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Map<String,Object> systemTags() {
-        return this.systemTags;
+        return this.systemTags == null ? Map.of() : this.systemTags;
     }
     /**
      * @return The date and time the volume was created. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
-    public String volumeBackupId() {
-        return this.volumeBackupId;
+    public Optional<String> volumeBackupId() {
+        return Optional.ofNullable(this.volumeBackupId);
     }
     /**
      * @return The OCID of the volume group.
      * 
      */
-    public String volumeGroupId() {
-        return this.volumeGroupId;
+    public Optional<String> volumeGroupId() {
+        return Optional.ofNullable(this.volumeGroupId);
     }
     /**
      * @return The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service&#39;s elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
      * 
      */
-    public String vpusPerGb() {
-        return this.vpusPerGb;
+    public Optional<String> vpusPerGb() {
+        return Optional.ofNullable(this.vpusPerGb);
     }
 
     public static Builder builder() {
@@ -292,29 +294,29 @@ public final class GetVolumesVolume {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String autoTunedVpusPerGb;
-        private List<GetVolumesVolumeAutotunePolicy> autotunePolicies;
-        private String availabilityDomain;
-        private String backupPolicyId;
-        private List<GetVolumesVolumeBlockVolumeReplica> blockVolumeReplicas;
-        private Boolean blockVolumeReplicasDeletion;
-        private String compartmentId;
-        private Map<String,Object> definedTags;
-        private String displayName;
-        private Map<String,Object> freeformTags;
-        private String id;
-        private Boolean isAutoTuneEnabled;
-        private Boolean isHydrated;
-        private String kmsKeyId;
-        private String sizeInGbs;
-        private String sizeInMbs;
-        private List<GetVolumesVolumeSourceDetail> sourceDetails;
-        private String state;
-        private Map<String,Object> systemTags;
-        private String timeCreated;
-        private String volumeBackupId;
-        private String volumeGroupId;
-        private String vpusPerGb;
+        private @Nullable String autoTunedVpusPerGb;
+        private @Nullable List<GetVolumesVolumeAutotunePolicy> autotunePolicies;
+        private @Nullable String availabilityDomain;
+        private @Nullable String backupPolicyId;
+        private @Nullable List<GetVolumesVolumeBlockVolumeReplica> blockVolumeReplicas;
+        private @Nullable Boolean blockVolumeReplicasDeletion;
+        private @Nullable String compartmentId;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String displayName;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String id;
+        private @Nullable Boolean isAutoTuneEnabled;
+        private @Nullable Boolean isHydrated;
+        private @Nullable String kmsKeyId;
+        private @Nullable String sizeInGbs;
+        private @Nullable String sizeInMbs;
+        private @Nullable List<GetVolumesVolumeSourceDetail> sourceDetails;
+        private @Nullable String state;
+        private @Nullable Map<String,Object> systemTags;
+        private @Nullable String timeCreated;
+        private @Nullable String volumeBackupId;
+        private @Nullable String volumeGroupId;
+        private @Nullable String vpusPerGb;
         public Builder() {}
         public Builder(GetVolumesVolume defaults) {
     	      Objects.requireNonNull(defaults);
@@ -344,127 +346,127 @@ public final class GetVolumesVolume {
         }
 
         @CustomType.Setter
-        public Builder autoTunedVpusPerGb(String autoTunedVpusPerGb) {
-            this.autoTunedVpusPerGb = Objects.requireNonNull(autoTunedVpusPerGb);
+        public Builder autoTunedVpusPerGb(@Nullable String autoTunedVpusPerGb) {
+            this.autoTunedVpusPerGb = autoTunedVpusPerGb;
             return this;
         }
         @CustomType.Setter
-        public Builder autotunePolicies(List<GetVolumesVolumeAutotunePolicy> autotunePolicies) {
-            this.autotunePolicies = Objects.requireNonNull(autotunePolicies);
+        public Builder autotunePolicies(@Nullable List<GetVolumesVolumeAutotunePolicy> autotunePolicies) {
+            this.autotunePolicies = autotunePolicies;
             return this;
         }
         public Builder autotunePolicies(GetVolumesVolumeAutotunePolicy... autotunePolicies) {
             return autotunePolicies(List.of(autotunePolicies));
         }
         @CustomType.Setter
-        public Builder availabilityDomain(String availabilityDomain) {
-            this.availabilityDomain = Objects.requireNonNull(availabilityDomain);
+        public Builder availabilityDomain(@Nullable String availabilityDomain) {
+            this.availabilityDomain = availabilityDomain;
             return this;
         }
         @CustomType.Setter
-        public Builder backupPolicyId(String backupPolicyId) {
-            this.backupPolicyId = Objects.requireNonNull(backupPolicyId);
+        public Builder backupPolicyId(@Nullable String backupPolicyId) {
+            this.backupPolicyId = backupPolicyId;
             return this;
         }
         @CustomType.Setter
-        public Builder blockVolumeReplicas(List<GetVolumesVolumeBlockVolumeReplica> blockVolumeReplicas) {
-            this.blockVolumeReplicas = Objects.requireNonNull(blockVolumeReplicas);
+        public Builder blockVolumeReplicas(@Nullable List<GetVolumesVolumeBlockVolumeReplica> blockVolumeReplicas) {
+            this.blockVolumeReplicas = blockVolumeReplicas;
             return this;
         }
         public Builder blockVolumeReplicas(GetVolumesVolumeBlockVolumeReplica... blockVolumeReplicas) {
             return blockVolumeReplicas(List.of(blockVolumeReplicas));
         }
         @CustomType.Setter
-        public Builder blockVolumeReplicasDeletion(Boolean blockVolumeReplicasDeletion) {
-            this.blockVolumeReplicasDeletion = Objects.requireNonNull(blockVolumeReplicasDeletion);
+        public Builder blockVolumeReplicasDeletion(@Nullable Boolean blockVolumeReplicasDeletion) {
+            this.blockVolumeReplicasDeletion = blockVolumeReplicasDeletion;
             return this;
         }
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder isAutoTuneEnabled(Boolean isAutoTuneEnabled) {
-            this.isAutoTuneEnabled = Objects.requireNonNull(isAutoTuneEnabled);
+        public Builder isAutoTuneEnabled(@Nullable Boolean isAutoTuneEnabled) {
+            this.isAutoTuneEnabled = isAutoTuneEnabled;
             return this;
         }
         @CustomType.Setter
-        public Builder isHydrated(Boolean isHydrated) {
-            this.isHydrated = Objects.requireNonNull(isHydrated);
+        public Builder isHydrated(@Nullable Boolean isHydrated) {
+            this.isHydrated = isHydrated;
             return this;
         }
         @CustomType.Setter
-        public Builder kmsKeyId(String kmsKeyId) {
-            this.kmsKeyId = Objects.requireNonNull(kmsKeyId);
+        public Builder kmsKeyId(@Nullable String kmsKeyId) {
+            this.kmsKeyId = kmsKeyId;
             return this;
         }
         @CustomType.Setter
-        public Builder sizeInGbs(String sizeInGbs) {
-            this.sizeInGbs = Objects.requireNonNull(sizeInGbs);
+        public Builder sizeInGbs(@Nullable String sizeInGbs) {
+            this.sizeInGbs = sizeInGbs;
             return this;
         }
         @CustomType.Setter
-        public Builder sizeInMbs(String sizeInMbs) {
-            this.sizeInMbs = Objects.requireNonNull(sizeInMbs);
+        public Builder sizeInMbs(@Nullable String sizeInMbs) {
+            this.sizeInMbs = sizeInMbs;
             return this;
         }
         @CustomType.Setter
-        public Builder sourceDetails(List<GetVolumesVolumeSourceDetail> sourceDetails) {
-            this.sourceDetails = Objects.requireNonNull(sourceDetails);
+        public Builder sourceDetails(@Nullable List<GetVolumesVolumeSourceDetail> sourceDetails) {
+            this.sourceDetails = sourceDetails;
             return this;
         }
         public Builder sourceDetails(GetVolumesVolumeSourceDetail... sourceDetails) {
             return sourceDetails(List.of(sourceDetails));
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+        public Builder systemTags(@Nullable Map<String,Object> systemTags) {
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder volumeBackupId(String volumeBackupId) {
-            this.volumeBackupId = Objects.requireNonNull(volumeBackupId);
+        public Builder volumeBackupId(@Nullable String volumeBackupId) {
+            this.volumeBackupId = volumeBackupId;
             return this;
         }
         @CustomType.Setter
-        public Builder volumeGroupId(String volumeGroupId) {
-            this.volumeGroupId = Objects.requireNonNull(volumeGroupId);
+        public Builder volumeGroupId(@Nullable String volumeGroupId) {
+            this.volumeGroupId = volumeGroupId;
             return this;
         }
         @CustomType.Setter
-        public Builder vpusPerGb(String vpusPerGb) {
-            this.vpusPerGb = Objects.requireNonNull(vpusPerGb);
+        public Builder vpusPerGb(@Nullable String vpusPerGb) {
+            this.vpusPerGb = vpusPerGb;
             return this;
         }
         public GetVolumesVolume build() {

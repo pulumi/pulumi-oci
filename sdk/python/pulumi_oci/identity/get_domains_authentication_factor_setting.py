@@ -178,122 +178,77 @@ class GetDomainsAuthenticationFactorSettingResult:
 
     @property
     @pulumi.getter(name="autoEnrollEmailFactorDisabled")
-    def auto_enroll_email_factor_disabled(self) -> bool:
-        """
-        If true, indicates that email will not be enrolled as a MFA factor automatically if it a account recovery factor
-        """
+    def auto_enroll_email_factor_disabled(self) -> Optional[bool]:
         return pulumi.get(self, "auto_enroll_email_factor_disabled")
 
     @property
     @pulumi.getter(name="bypassCodeEnabled")
-    def bypass_code_enabled(self) -> bool:
-        """
-        If true, indicates that Bypass Code is enabled for authentication
-        """
+    def bypass_code_enabled(self) -> Optional[bool]:
         return pulumi.get(self, "bypass_code_enabled")
 
     @property
     @pulumi.getter(name="bypassCodeSettings")
-    def bypass_code_settings(self) -> Sequence['outputs.GetDomainsAuthenticationFactorSettingBypassCodeSettingResult']:
-        """
-        Settings related to the bypass code, such as bypass code length, bypass code expiry, max active bypass codes, and so on
-        """
+    def bypass_code_settings(self) -> Optional[Sequence['outputs.GetDomainsAuthenticationFactorSettingBypassCodeSettingResult']]:
         return pulumi.get(self, "bypass_code_settings")
 
     @property
     @pulumi.getter(name="clientAppSettings")
-    def client_app_settings(self) -> Sequence['outputs.GetDomainsAuthenticationFactorSettingClientAppSettingResult']:
-        """
-        Settings related to compliance, Personal Identification Number (PIN) policy, and so on
-        """
+    def client_app_settings(self) -> Optional[Sequence['outputs.GetDomainsAuthenticationFactorSettingClientAppSettingResult']]:
         return pulumi.get(self, "client_app_settings")
 
     @property
     @pulumi.getter(name="compartmentOcid")
-    def compartment_ocid(self) -> str:
-        """
-        Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
-        """
+    def compartment_ocid(self) -> Optional[str]:
         return pulumi.get(self, "compartment_ocid")
 
     @property
     @pulumi.getter(name="compliancePolicies")
-    def compliance_policies(self) -> Sequence['outputs.GetDomainsAuthenticationFactorSettingCompliancePolicyResult']:
-        """
-        Compliance Policy that defines actions to be taken when a condition is violated
-        """
+    def compliance_policies(self) -> Optional[Sequence['outputs.GetDomainsAuthenticationFactorSettingCompliancePolicyResult']]:
         return pulumi.get(self, "compliance_policies")
 
     @property
     @pulumi.getter(name="deleteInProgress")
-    def delete_in_progress(self) -> bool:
-        """
-        A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
-        """
+    def delete_in_progress(self) -> Optional[bool]:
         return pulumi.get(self, "delete_in_progress")
 
     @property
     @pulumi.getter(name="domainOcid")
-    def domain_ocid(self) -> str:
-        """
-        Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
-        """
+    def domain_ocid(self) -> Optional[str]:
         return pulumi.get(self, "domain_ocid")
 
     @property
     @pulumi.getter(name="emailEnabled")
-    def email_enabled(self) -> bool:
-        """
-        If true, indicates that the EMAIL channel is enabled for authentication
-        """
+    def email_enabled(self) -> Optional[bool]:
         return pulumi.get(self, "email_enabled")
 
     @property
     @pulumi.getter(name="emailSettings")
-    def email_settings(self) -> Sequence['outputs.GetDomainsAuthenticationFactorSettingEmailSettingResult']:
-        """
-        Settings related to Email Factor, such as enabled email magic link factor, custom url for Email Link
-        """
+    def email_settings(self) -> Optional[Sequence['outputs.GetDomainsAuthenticationFactorSettingEmailSettingResult']]:
         return pulumi.get(self, "email_settings")
 
     @property
     @pulumi.getter(name="endpointRestrictions")
-    def endpoint_restrictions(self) -> Sequence['outputs.GetDomainsAuthenticationFactorSettingEndpointRestrictionResult']:
-        """
-        Settings that describe the set of restrictions that the system should apply to devices and trusted endpoints of a user
-        """
+    def endpoint_restrictions(self) -> Optional[Sequence['outputs.GetDomainsAuthenticationFactorSettingEndpointRestrictionResult']]:
         return pulumi.get(self, "endpoint_restrictions")
 
     @property
     @pulumi.getter(name="fidoAuthenticatorEnabled")
-    def fido_authenticator_enabled(self) -> bool:
-        """
-        If true, indicates that the Fido Authenticator channels are enabled for authentication
-        """
+    def fido_authenticator_enabled(self) -> Optional[bool]:
         return pulumi.get(self, "fido_authenticator_enabled")
 
     @property
     @pulumi.getter(name="hideBackupFactorEnabled")
-    def hide_backup_factor_enabled(self) -> bool:
-        """
-        If true, indicates that 'Show backup factor(s)' button will be hidden during authentication
-        """
+    def hide_backup_factor_enabled(self) -> Optional[bool]:
         return pulumi.get(self, "hide_backup_factor_enabled")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        Unique identifier for the SCIM Resource as defined by the Service Provider. Each representation of the Resource MUST include a non-empty id value. This identifier MUST be unique across the Service Provider's entire set of Resources. It MUST be a stable, non-reassignable identifier that does not change when the same Resource is returned in subsequent requests. The value of the id attribute is always issued by the Service Provider and MUST never be specified by the Service Consumer. bulkId: is a reserved keyword and MUST NOT be used in the unique identifier.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="idcsCreatedBies")
-    def idcs_created_bies(self) -> Sequence['outputs.GetDomainsAuthenticationFactorSettingIdcsCreatedByResult']:
-        """
-        The User or App who created the Resource
-        """
+    def idcs_created_bies(self) -> Optional[Sequence['outputs.GetDomainsAuthenticationFactorSettingIdcsCreatedByResult']]:
         return pulumi.get(self, "idcs_created_bies")
 
     @property
@@ -303,90 +258,57 @@ class GetDomainsAuthenticationFactorSettingResult:
 
     @property
     @pulumi.getter(name="idcsLastModifiedBies")
-    def idcs_last_modified_bies(self) -> Sequence['outputs.GetDomainsAuthenticationFactorSettingIdcsLastModifiedByResult']:
-        """
-        The User or App who modified the Resource
-        """
+    def idcs_last_modified_bies(self) -> Optional[Sequence['outputs.GetDomainsAuthenticationFactorSettingIdcsLastModifiedByResult']]:
         return pulumi.get(self, "idcs_last_modified_bies")
 
     @property
     @pulumi.getter(name="idcsLastUpgradedInRelease")
-    def idcs_last_upgraded_in_release(self) -> str:
-        """
-        The release number when the resource was upgraded.
-        """
+    def idcs_last_upgraded_in_release(self) -> Optional[str]:
         return pulumi.get(self, "idcs_last_upgraded_in_release")
 
     @property
     @pulumi.getter(name="idcsPreventedOperations")
-    def idcs_prevented_operations(self) -> Sequence[str]:
-        """
-        Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
-        """
+    def idcs_prevented_operations(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "idcs_prevented_operations")
 
     @property
     @pulumi.getter(name="identityStoreSettings")
-    def identity_store_settings(self) -> Sequence['outputs.GetDomainsAuthenticationFactorSettingIdentityStoreSettingResult']:
-        """
-        Settings related to the use of a user's profile details from the identity store
-        """
+    def identity_store_settings(self) -> Optional[Sequence['outputs.GetDomainsAuthenticationFactorSettingIdentityStoreSettingResult']]:
         return pulumi.get(self, "identity_store_settings")
 
     @property
     @pulumi.getter
-    def metas(self) -> Sequence['outputs.GetDomainsAuthenticationFactorSettingMetaResult']:
-        """
-        A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
-        """
+    def metas(self) -> Optional[Sequence['outputs.GetDomainsAuthenticationFactorSettingMetaResult']]:
         return pulumi.get(self, "metas")
 
     @property
     @pulumi.getter(name="mfaEnabledCategory")
-    def mfa_enabled_category(self) -> str:
-        """
-        Specifies the category of people for whom Multi-Factor Authentication is enabled. This is a readOnly attribute which reflects the value of mfaEnabledCategory attribute in SsoSettings
-        """
+    def mfa_enabled_category(self) -> Optional[str]:
         return pulumi.get(self, "mfa_enabled_category")
 
     @property
     @pulumi.getter(name="mfaEnrollmentType")
-    def mfa_enrollment_type(self) -> str:
-        """
-        Specifies if Multi-Factor Authentication enrollment is mandatory or optional for a user
-        """
+    def mfa_enrollment_type(self) -> Optional[str]:
         return pulumi.get(self, "mfa_enrollment_type")
 
     @property
     @pulumi.getter(name="notificationSettings")
-    def notification_settings(self) -> Sequence['outputs.GetDomainsAuthenticationFactorSettingNotificationSettingResult']:
-        """
-        Settings related to the Mobile App Notification channel, such as pull
-        """
+    def notification_settings(self) -> Optional[Sequence['outputs.GetDomainsAuthenticationFactorSettingNotificationSettingResult']]:
         return pulumi.get(self, "notification_settings")
 
     @property
     @pulumi.getter
-    def ocid(self) -> str:
-        """
-        Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
-        """
+    def ocid(self) -> Optional[str]:
         return pulumi.get(self, "ocid")
 
     @property
     @pulumi.getter(name="phoneCallEnabled")
-    def phone_call_enabled(self) -> bool:
-        """
-        If true, indicates that the phone (PHONE_CALL) channel is enabled for authentication
-        """
+    def phone_call_enabled(self) -> Optional[bool]:
         return pulumi.get(self, "phone_call_enabled")
 
     @property
     @pulumi.getter(name="pushEnabled")
-    def push_enabled(self) -> bool:
-        """
-        If true, indicates that the Mobile App Push Notification channel is enabled for authentication
-        """
+    def push_enabled(self) -> Optional[bool]:
         return pulumi.get(self, "push_enabled")
 
     @property
@@ -396,98 +318,62 @@ class GetDomainsAuthenticationFactorSettingResult:
 
     @property
     @pulumi.getter
-    def schemas(self) -> Sequence[str]:
-        """
-        REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \\"enterprise\\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
-        """
+    def schemas(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "schemas")
 
     @property
     @pulumi.getter(name="securityQuestionsEnabled")
-    def security_questions_enabled(self) -> bool:
-        """
-        If true, indicates that Security Questions are enabled for authentication
-        """
+    def security_questions_enabled(self) -> Optional[bool]:
         return pulumi.get(self, "security_questions_enabled")
 
     @property
     @pulumi.getter(name="smsEnabled")
-    def sms_enabled(self) -> bool:
-        """
-        If true, indicates that the Short Message Service (SMS) channel is enabled for authentication
-        """
+    def sms_enabled(self) -> Optional[bool]:
         return pulumi.get(self, "sms_enabled")
 
     @property
     @pulumi.getter
-    def tags(self) -> Sequence['outputs.GetDomainsAuthenticationFactorSettingTagResult']:
-        """
-        A list of tags on this resource.
-        """
+    def tags(self) -> Optional[Sequence['outputs.GetDomainsAuthenticationFactorSettingTagResult']]:
         return pulumi.get(self, "tags")
 
     @property
     @pulumi.getter(name="tenancyOcid")
-    def tenancy_ocid(self) -> str:
-        """
-        Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
-        """
+    def tenancy_ocid(self) -> Optional[str]:
         return pulumi.get(self, "tenancy_ocid")
 
     @property
     @pulumi.getter(name="thirdPartyFactors")
-    def third_party_factors(self) -> Sequence['outputs.GetDomainsAuthenticationFactorSettingThirdPartyFactorResult']:
-        """
-        Settings related to third-party factor
-        """
+    def third_party_factors(self) -> Optional[Sequence['outputs.GetDomainsAuthenticationFactorSettingThirdPartyFactorResult']]:
         return pulumi.get(self, "third_party_factors")
 
     @property
     @pulumi.getter(name="totpEnabled")
-    def totp_enabled(self) -> bool:
-        """
-        If true, indicates that the Mobile App One Time Passcode channel is enabled for authentication
-        """
+    def totp_enabled(self) -> Optional[bool]:
         return pulumi.get(self, "totp_enabled")
 
     @property
     @pulumi.getter(name="totpSettings")
-    def totp_settings(self) -> Sequence['outputs.GetDomainsAuthenticationFactorSettingTotpSettingResult']:
-        """
-        Settings related to Time-Based One-Time Passcodes (TOTP), such as hashing algo, totp time step, passcode length, and so on
-        """
+    def totp_settings(self) -> Optional[Sequence['outputs.GetDomainsAuthenticationFactorSettingTotpSettingResult']]:
         return pulumi.get(self, "totp_settings")
 
     @property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettings")
-    def urnietfparamsscimschemasoracleidcsextensionfido_authentication_factor_settings(self) -> Sequence['outputs.GetDomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettingResult']:
-        """
-        This extension defines attributes used to manage Multi-Factor Authentication settings of fido authentication
-        """
+    def urnietfparamsscimschemasoracleidcsextensionfido_authentication_factor_settings(self) -> Optional[Sequence['outputs.GetDomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettingResult']]:
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionfido_authentication_factor_settings")
 
     @property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettings")
-    def urnietfparamsscimschemasoracleidcsextensionthird_party_authentication_factor_settings(self) -> Sequence['outputs.GetDomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettingResult']:
-        """
-        This extension defines attributes used to manage Multi-Factor Authentication settings of third party provider
-        """
+    def urnietfparamsscimschemasoracleidcsextensionthird_party_authentication_factor_settings(self) -> Optional[Sequence['outputs.GetDomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettingResult']]:
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionthird_party_authentication_factor_settings")
 
     @property
     @pulumi.getter(name="userEnrollmentDisabledFactors")
-    def user_enrollment_disabled_factors(self) -> Sequence[str]:
-        """
-        Factors for which enrollment should be blocked for End User
-        """
+    def user_enrollment_disabled_factors(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "user_enrollment_disabled_factors")
 
     @property
     @pulumi.getter(name="yubicoOtpEnabled")
-    def yubico_otp_enabled(self) -> bool:
-        """
-        If true, indicates that the Yubico OTP is enabled for authentication
-        """
+    def yubico_otp_enabled(self) -> Optional[bool]:
         return pulumi.get(self, "yubico_otp_enabled")
 
 
@@ -551,31 +437,7 @@ def get_domains_authentication_factor_setting(attribute_sets: Optional[Sequence[
                                               resource_type_schema_version: Optional[str] = None,
                                               opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDomainsAuthenticationFactorSettingResult:
     """
-    This data source provides details about a specific Authentication Factor Setting resource in Oracle Cloud Infrastructure Identity Domains service.
-
-    Get Authentication Factor Settings
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_authentication_factor_setting = oci.Identity.get_domains_authentication_factor_setting(authentication_factor_setting_id=oci_identity_domains_authentication_factor_setting["test_authentication_factor_setting"]["id"],
-        idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
-        attribute_sets=[],
-        attributes="",
-        authorization=var["authentication_factor_setting_authorization"],
-        resource_type_schema_version=var["authentication_factor_setting_resource_type_schema_version"])
-    ```
-
-
-    :param Sequence[str] attribute_sets: A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
-    :param str attributes: A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
-    :param str authentication_factor_setting_id: ID of the resource
-    :param str authorization: The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
-    :param str idcs_endpoint: The basic endpoint for the identity domain
-    :param str resource_type_schema_version: An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['attributeSets'] = attribute_sets
@@ -643,30 +505,6 @@ def get_domains_authentication_factor_setting_output(attribute_sets: Optional[pu
                                                      resource_type_schema_version: Optional[pulumi.Input[Optional[str]]] = None,
                                                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDomainsAuthenticationFactorSettingResult]:
     """
-    This data source provides details about a specific Authentication Factor Setting resource in Oracle Cloud Infrastructure Identity Domains service.
-
-    Get Authentication Factor Settings
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_authentication_factor_setting = oci.Identity.get_domains_authentication_factor_setting(authentication_factor_setting_id=oci_identity_domains_authentication_factor_setting["test_authentication_factor_setting"]["id"],
-        idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
-        attribute_sets=[],
-        attributes="",
-        authorization=var["authentication_factor_setting_authorization"],
-        resource_type_schema_version=var["authentication_factor_setting_resource_type_schema_version"])
-    ```
-
-
-    :param Sequence[str] attribute_sets: A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
-    :param str attributes: A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
-    :param str authentication_factor_setting_id: ID of the resource
-    :param str authorization: The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
-    :param str idcs_endpoint: The basic endpoint for the identity domain
-    :param str resource_type_schema_version: An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
+    Use this data source to access information about an existing resource.
     """
     ...

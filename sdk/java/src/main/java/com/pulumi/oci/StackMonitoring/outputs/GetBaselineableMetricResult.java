@@ -9,6 +9,8 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetBaselineableMetricResult {
@@ -17,82 +19,82 @@ public final class GetBaselineableMetricResult {
      * @return metric column name
      * 
      */
-    private String column;
+    private @Nullable String column;
     /**
      * @return OCID of the compartment
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return Created user id
      * 
      */
-    private String createdBy;
+    private @Nullable String createdBy;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return OCID of the metric
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Is the metric created out of box, default false
      * 
      */
-    private Boolean isOutOfBox;
+    private @Nullable Boolean isOutOfBox;
     /**
      * @return last Updated user id
      * 
      */
-    private String lastUpdatedBy;
+    private @Nullable String lastUpdatedBy;
     /**
      * @return name of the metric
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return namespace of the metric
      * 
      */
-    private String namespace;
+    private @Nullable String namespace;
     /**
      * @return Resource group of the metric
      * 
      */
-    private String resourceGroup;
+    private @Nullable String resourceGroup;
     /**
      * @return The current lifecycle state of the metric extension
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    private Map<String,Object> systemTags;
+    private @Nullable Map<String,Object> systemTags;
     /**
      * @return OCID of the tenancy
      * 
      */
-    private String tenancyId;
+    private @Nullable String tenancyId;
     /**
      * @return creation date
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return last updated time
      * 
      */
-    private String timeLastUpdated;
+    private @Nullable String timeLastUpdated;
 
     private GetBaselineableMetricResult() {}
     public String baselineableMetricId() {
@@ -102,113 +104,113 @@ public final class GetBaselineableMetricResult {
      * @return metric column name
      * 
      */
-    public String column() {
-        return this.column;
+    public Optional<String> column() {
+        return Optional.ofNullable(this.column);
     }
     /**
      * @return OCID of the compartment
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return Created user id
      * 
      */
-    public String createdBy() {
-        return this.createdBy;
+    public Optional<String> createdBy() {
+        return Optional.ofNullable(this.createdBy);
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return OCID of the metric
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Is the metric created out of box, default false
      * 
      */
-    public Boolean isOutOfBox() {
-        return this.isOutOfBox;
+    public Optional<Boolean> isOutOfBox() {
+        return Optional.ofNullable(this.isOutOfBox);
     }
     /**
      * @return last Updated user id
      * 
      */
-    public String lastUpdatedBy() {
-        return this.lastUpdatedBy;
+    public Optional<String> lastUpdatedBy() {
+        return Optional.ofNullable(this.lastUpdatedBy);
     }
     /**
      * @return name of the metric
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return namespace of the metric
      * 
      */
-    public String namespace() {
-        return this.namespace;
+    public Optional<String> namespace() {
+        return Optional.ofNullable(this.namespace);
     }
     /**
      * @return Resource group of the metric
      * 
      */
-    public String resourceGroup() {
-        return this.resourceGroup;
+    public Optional<String> resourceGroup() {
+        return Optional.ofNullable(this.resourceGroup);
     }
     /**
      * @return The current lifecycle state of the metric extension
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
     public Map<String,Object> systemTags() {
-        return this.systemTags;
+        return this.systemTags == null ? Map.of() : this.systemTags;
     }
     /**
      * @return OCID of the tenancy
      * 
      */
-    public String tenancyId() {
-        return this.tenancyId;
+    public Optional<String> tenancyId() {
+        return Optional.ofNullable(this.tenancyId);
     }
     /**
      * @return creation date
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return last updated time
      * 
      */
-    public String timeLastUpdated() {
-        return this.timeLastUpdated;
+    public Optional<String> timeLastUpdated() {
+        return Optional.ofNullable(this.timeLastUpdated);
     }
 
     public static Builder builder() {
@@ -221,22 +223,22 @@ public final class GetBaselineableMetricResult {
     @CustomType.Builder
     public static final class Builder {
         private String baselineableMetricId;
-        private String column;
-        private String compartmentId;
-        private String createdBy;
-        private Map<String,Object> definedTags;
-        private Map<String,Object> freeformTags;
-        private String id;
-        private Boolean isOutOfBox;
-        private String lastUpdatedBy;
-        private String name;
-        private String namespace;
-        private String resourceGroup;
-        private String state;
-        private Map<String,Object> systemTags;
-        private String tenancyId;
-        private String timeCreated;
-        private String timeLastUpdated;
+        private @Nullable String column;
+        private @Nullable String compartmentId;
+        private @Nullable String createdBy;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String id;
+        private @Nullable Boolean isOutOfBox;
+        private @Nullable String lastUpdatedBy;
+        private @Nullable String name;
+        private @Nullable String namespace;
+        private @Nullable String resourceGroup;
+        private @Nullable String state;
+        private @Nullable Map<String,Object> systemTags;
+        private @Nullable String tenancyId;
+        private @Nullable String timeCreated;
+        private @Nullable String timeLastUpdated;
         public Builder() {}
         public Builder(GetBaselineableMetricResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -265,83 +267,83 @@ public final class GetBaselineableMetricResult {
             return this;
         }
         @CustomType.Setter
-        public Builder column(String column) {
-            this.column = Objects.requireNonNull(column);
+        public Builder column(@Nullable String column) {
+            this.column = column;
             return this;
         }
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder createdBy(String createdBy) {
-            this.createdBy = Objects.requireNonNull(createdBy);
+        public Builder createdBy(@Nullable String createdBy) {
+            this.createdBy = createdBy;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder isOutOfBox(Boolean isOutOfBox) {
-            this.isOutOfBox = Objects.requireNonNull(isOutOfBox);
+        public Builder isOutOfBox(@Nullable Boolean isOutOfBox) {
+            this.isOutOfBox = isOutOfBox;
             return this;
         }
         @CustomType.Setter
-        public Builder lastUpdatedBy(String lastUpdatedBy) {
-            this.lastUpdatedBy = Objects.requireNonNull(lastUpdatedBy);
+        public Builder lastUpdatedBy(@Nullable String lastUpdatedBy) {
+            this.lastUpdatedBy = lastUpdatedBy;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder namespace(String namespace) {
-            this.namespace = Objects.requireNonNull(namespace);
+        public Builder namespace(@Nullable String namespace) {
+            this.namespace = namespace;
             return this;
         }
         @CustomType.Setter
-        public Builder resourceGroup(String resourceGroup) {
-            this.resourceGroup = Objects.requireNonNull(resourceGroup);
+        public Builder resourceGroup(@Nullable String resourceGroup) {
+            this.resourceGroup = resourceGroup;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+        public Builder systemTags(@Nullable Map<String,Object> systemTags) {
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
-        public Builder tenancyId(String tenancyId) {
-            this.tenancyId = Objects.requireNonNull(tenancyId);
+        public Builder tenancyId(@Nullable String tenancyId) {
+            this.tenancyId = tenancyId;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeLastUpdated(String timeLastUpdated) {
-            this.timeLastUpdated = Objects.requireNonNull(timeLastUpdated);
+        public Builder timeLastUpdated(@Nullable String timeLastUpdated) {
+            this.timeLastUpdated = timeLastUpdated;
             return this;
         }
         public GetBaselineableMetricResult build() {

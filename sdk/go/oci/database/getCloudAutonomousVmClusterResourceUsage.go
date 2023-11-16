@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Cloud Autonomous Vm Cluster Resource Usage resource in Oracle Cloud Infrastructure Database service.
@@ -60,46 +59,46 @@ type GetCloudAutonomousVmClusterResourceUsageArgs struct {
 // A collection of values returned by getCloudAutonomousVmClusterResourceUsage.
 type GetCloudAutonomousVmClusterResourceUsageResult struct {
 	// The data disk group size allocated for Autonomous Databases, in TBs.
-	AutonomousDataStorageSizeInTbs float64 `pulumi:"autonomousDataStorageSizeInTbs"`
+	AutonomousDataStorageSizeInTbs *float64 `pulumi:"autonomousDataStorageSizeInTbs"`
 	// List of Autonomous VM resource usages.
 	AutonomousVmResourceUsages []GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsage `pulumi:"autonomousVmResourceUsages"`
 	// The data disk group size available for Autonomous Databases, in TBs.
-	AvailableAutonomousDataStorageSizeInTbs float64 `pulumi:"availableAutonomousDataStorageSizeInTbs"`
+	AvailableAutonomousDataStorageSizeInTbs *float64 `pulumi:"availableAutonomousDataStorageSizeInTbs"`
 	// The number of CPU cores available.
-	AvailableCpus              float64 `pulumi:"availableCpus"`
-	CloudAutonomousVmClusterId string  `pulumi:"cloudAutonomousVmClusterId"`
+	AvailableCpus              *float64 `pulumi:"availableCpus"`
+	CloudAutonomousVmClusterId string   `pulumi:"cloudAutonomousVmClusterId"`
 	// The local node storage allocated in GBs.
-	DbNodeStorageSizeInGbs int `pulumi:"dbNodeStorageSizeInGbs"`
+	DbNodeStorageSizeInGbs *int `pulumi:"dbNodeStorageSizeInGbs"`
 	// The user-friendly name for the Autonomous VM cluster. The name does not need to be unique.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Total exadata storage allocated for the Autonomous VM Cluster. DATA + RECOVERY + SPARSE + any overhead in TBs.
-	ExadataStorageInTbs float64 `pulumi:"exadataStorageInTbs"`
+	ExadataStorageInTbs *float64 `pulumi:"exadataStorageInTbs"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The amount of memory (in GBs) to be enabled per each CPU core.
-	MemoryPerOracleComputeUnitInGbs int `pulumi:"memoryPerOracleComputeUnitInGbs"`
+	MemoryPerOracleComputeUnitInGbs *int `pulumi:"memoryPerOracleComputeUnitInGbs"`
 	// The memory allocated in GBs.
-	MemorySizeInGbs int `pulumi:"memorySizeInGbs"`
+	MemorySizeInGbs *int `pulumi:"memorySizeInGbs"`
 	// The number of non-provisionable Autonomous Container Databases in an Autonomous VM Cluster.
-	NonProvisionableAutonomousContainerDatabases int `pulumi:"nonProvisionableAutonomousContainerDatabases"`
+	NonProvisionableAutonomousContainerDatabases *int `pulumi:"nonProvisionableAutonomousContainerDatabases"`
 	// The number of provisionable Autonomous Container Databases in an Autonomous VM Cluster.
-	ProvisionableAutonomousContainerDatabases int `pulumi:"provisionableAutonomousContainerDatabases"`
+	ProvisionableAutonomousContainerDatabases *int `pulumi:"provisionableAutonomousContainerDatabases"`
 	// The number of provisioned Autonomous Container Databases in an Autonomous VM Cluster.
-	ProvisionedAutonomousContainerDatabases int `pulumi:"provisionedAutonomousContainerDatabases"`
+	ProvisionedAutonomousContainerDatabases *int `pulumi:"provisionedAutonomousContainerDatabases"`
 	// The number of CPUs provisioned in an Autonomous VM Cluster.
-	ProvisionedCpus float64 `pulumi:"provisionedCpus"`
+	ProvisionedCpus *float64 `pulumi:"provisionedCpus"`
 	// CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
-	ReclaimableCpus float64 `pulumi:"reclaimableCpus"`
+	ReclaimableCpus *float64 `pulumi:"reclaimableCpus"`
 	// The number of CPUs reserved in an Autonomous VM Cluster.
-	ReservedCpus float64 `pulumi:"reservedCpus"`
+	ReservedCpus *float64 `pulumi:"reservedCpus"`
 	// The total number of Autonomous Container Databases that can be created.
-	TotalContainerDatabases int `pulumi:"totalContainerDatabases"`
+	TotalContainerDatabases *int `pulumi:"totalContainerDatabases"`
 	// The number of CPU cores enabled on the Cloud Autonomous VM cluster.
-	TotalCpus float64 `pulumi:"totalCpus"`
+	TotalCpus *float64 `pulumi:"totalCpus"`
 	// The data disk group size used for Autonomous Databases, in TBs.
-	UsedAutonomousDataStorageSizeInTbs float64 `pulumi:"usedAutonomousDataStorageSizeInTbs"`
+	UsedAutonomousDataStorageSizeInTbs *float64 `pulumi:"usedAutonomousDataStorageSizeInTbs"`
 	// The number of CPU cores alloted to the Autonomous Container Databases in an Cloud Autonomous VM cluster.
-	UsedCpus float64 `pulumi:"usedCpus"`
+	UsedCpus *float64 `pulumi:"usedCpus"`
 }
 
 func GetCloudAutonomousVmClusterResourceUsageOutput(ctx *pulumi.Context, args GetCloudAutonomousVmClusterResourceUsageOutputArgs, opts ...pulumi.InvokeOption) GetCloudAutonomousVmClusterResourceUsageResultOutput {
@@ -140,17 +139,11 @@ func (o GetCloudAutonomousVmClusterResourceUsageResultOutput) ToGetCloudAutonomo
 	return o
 }
 
-func (o GetCloudAutonomousVmClusterResourceUsageResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetCloudAutonomousVmClusterResourceUsageResult] {
-	return pulumix.Output[GetCloudAutonomousVmClusterResourceUsageResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The data disk group size allocated for Autonomous Databases, in TBs.
-func (o GetCloudAutonomousVmClusterResourceUsageResultOutput) AutonomousDataStorageSizeInTbs() pulumi.Float64Output {
-	return o.ApplyT(func(v GetCloudAutonomousVmClusterResourceUsageResult) float64 {
+func (o GetCloudAutonomousVmClusterResourceUsageResultOutput) AutonomousDataStorageSizeInTbs() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetCloudAutonomousVmClusterResourceUsageResult) *float64 {
 		return v.AutonomousDataStorageSizeInTbs
-	}).(pulumi.Float64Output)
+	}).(pulumi.Float64PtrOutput)
 }
 
 // List of Autonomous VM resource usages.
@@ -161,15 +154,15 @@ func (o GetCloudAutonomousVmClusterResourceUsageResultOutput) AutonomousVmResour
 }
 
 // The data disk group size available for Autonomous Databases, in TBs.
-func (o GetCloudAutonomousVmClusterResourceUsageResultOutput) AvailableAutonomousDataStorageSizeInTbs() pulumi.Float64Output {
-	return o.ApplyT(func(v GetCloudAutonomousVmClusterResourceUsageResult) float64 {
+func (o GetCloudAutonomousVmClusterResourceUsageResultOutput) AvailableAutonomousDataStorageSizeInTbs() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetCloudAutonomousVmClusterResourceUsageResult) *float64 {
 		return v.AvailableAutonomousDataStorageSizeInTbs
-	}).(pulumi.Float64Output)
+	}).(pulumi.Float64PtrOutput)
 }
 
 // The number of CPU cores available.
-func (o GetCloudAutonomousVmClusterResourceUsageResultOutput) AvailableCpus() pulumi.Float64Output {
-	return o.ApplyT(func(v GetCloudAutonomousVmClusterResourceUsageResult) float64 { return v.AvailableCpus }).(pulumi.Float64Output)
+func (o GetCloudAutonomousVmClusterResourceUsageResultOutput) AvailableCpus() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetCloudAutonomousVmClusterResourceUsageResult) *float64 { return v.AvailableCpus }).(pulumi.Float64PtrOutput)
 }
 
 func (o GetCloudAutonomousVmClusterResourceUsageResultOutput) CloudAutonomousVmClusterId() pulumi.StringOutput {
@@ -177,91 +170,91 @@ func (o GetCloudAutonomousVmClusterResourceUsageResultOutput) CloudAutonomousVmC
 }
 
 // The local node storage allocated in GBs.
-func (o GetCloudAutonomousVmClusterResourceUsageResultOutput) DbNodeStorageSizeInGbs() pulumi.IntOutput {
-	return o.ApplyT(func(v GetCloudAutonomousVmClusterResourceUsageResult) int { return v.DbNodeStorageSizeInGbs }).(pulumi.IntOutput)
+func (o GetCloudAutonomousVmClusterResourceUsageResultOutput) DbNodeStorageSizeInGbs() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetCloudAutonomousVmClusterResourceUsageResult) *int { return v.DbNodeStorageSizeInGbs }).(pulumi.IntPtrOutput)
 }
 
 // The user-friendly name for the Autonomous VM cluster. The name does not need to be unique.
-func (o GetCloudAutonomousVmClusterResourceUsageResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCloudAutonomousVmClusterResourceUsageResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetCloudAutonomousVmClusterResourceUsageResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCloudAutonomousVmClusterResourceUsageResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Total exadata storage allocated for the Autonomous VM Cluster. DATA + RECOVERY + SPARSE + any overhead in TBs.
-func (o GetCloudAutonomousVmClusterResourceUsageResultOutput) ExadataStorageInTbs() pulumi.Float64Output {
-	return o.ApplyT(func(v GetCloudAutonomousVmClusterResourceUsageResult) float64 { return v.ExadataStorageInTbs }).(pulumi.Float64Output)
+func (o GetCloudAutonomousVmClusterResourceUsageResultOutput) ExadataStorageInTbs() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetCloudAutonomousVmClusterResourceUsageResult) *float64 { return v.ExadataStorageInTbs }).(pulumi.Float64PtrOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetCloudAutonomousVmClusterResourceUsageResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCloudAutonomousVmClusterResourceUsageResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetCloudAutonomousVmClusterResourceUsageResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCloudAutonomousVmClusterResourceUsageResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The amount of memory (in GBs) to be enabled per each CPU core.
-func (o GetCloudAutonomousVmClusterResourceUsageResultOutput) MemoryPerOracleComputeUnitInGbs() pulumi.IntOutput {
-	return o.ApplyT(func(v GetCloudAutonomousVmClusterResourceUsageResult) int { return v.MemoryPerOracleComputeUnitInGbs }).(pulumi.IntOutput)
+func (o GetCloudAutonomousVmClusterResourceUsageResultOutput) MemoryPerOracleComputeUnitInGbs() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetCloudAutonomousVmClusterResourceUsageResult) *int { return v.MemoryPerOracleComputeUnitInGbs }).(pulumi.IntPtrOutput)
 }
 
 // The memory allocated in GBs.
-func (o GetCloudAutonomousVmClusterResourceUsageResultOutput) MemorySizeInGbs() pulumi.IntOutput {
-	return o.ApplyT(func(v GetCloudAutonomousVmClusterResourceUsageResult) int { return v.MemorySizeInGbs }).(pulumi.IntOutput)
+func (o GetCloudAutonomousVmClusterResourceUsageResultOutput) MemorySizeInGbs() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetCloudAutonomousVmClusterResourceUsageResult) *int { return v.MemorySizeInGbs }).(pulumi.IntPtrOutput)
 }
 
 // The number of non-provisionable Autonomous Container Databases in an Autonomous VM Cluster.
-func (o GetCloudAutonomousVmClusterResourceUsageResultOutput) NonProvisionableAutonomousContainerDatabases() pulumi.IntOutput {
-	return o.ApplyT(func(v GetCloudAutonomousVmClusterResourceUsageResult) int {
+func (o GetCloudAutonomousVmClusterResourceUsageResultOutput) NonProvisionableAutonomousContainerDatabases() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetCloudAutonomousVmClusterResourceUsageResult) *int {
 		return v.NonProvisionableAutonomousContainerDatabases
-	}).(pulumi.IntOutput)
+	}).(pulumi.IntPtrOutput)
 }
 
 // The number of provisionable Autonomous Container Databases in an Autonomous VM Cluster.
-func (o GetCloudAutonomousVmClusterResourceUsageResultOutput) ProvisionableAutonomousContainerDatabases() pulumi.IntOutput {
-	return o.ApplyT(func(v GetCloudAutonomousVmClusterResourceUsageResult) int {
+func (o GetCloudAutonomousVmClusterResourceUsageResultOutput) ProvisionableAutonomousContainerDatabases() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetCloudAutonomousVmClusterResourceUsageResult) *int {
 		return v.ProvisionableAutonomousContainerDatabases
-	}).(pulumi.IntOutput)
+	}).(pulumi.IntPtrOutput)
 }
 
 // The number of provisioned Autonomous Container Databases in an Autonomous VM Cluster.
-func (o GetCloudAutonomousVmClusterResourceUsageResultOutput) ProvisionedAutonomousContainerDatabases() pulumi.IntOutput {
-	return o.ApplyT(func(v GetCloudAutonomousVmClusterResourceUsageResult) int {
+func (o GetCloudAutonomousVmClusterResourceUsageResultOutput) ProvisionedAutonomousContainerDatabases() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetCloudAutonomousVmClusterResourceUsageResult) *int {
 		return v.ProvisionedAutonomousContainerDatabases
-	}).(pulumi.IntOutput)
+	}).(pulumi.IntPtrOutput)
 }
 
 // The number of CPUs provisioned in an Autonomous VM Cluster.
-func (o GetCloudAutonomousVmClusterResourceUsageResultOutput) ProvisionedCpus() pulumi.Float64Output {
-	return o.ApplyT(func(v GetCloudAutonomousVmClusterResourceUsageResult) float64 { return v.ProvisionedCpus }).(pulumi.Float64Output)
+func (o GetCloudAutonomousVmClusterResourceUsageResultOutput) ProvisionedCpus() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetCloudAutonomousVmClusterResourceUsageResult) *float64 { return v.ProvisionedCpus }).(pulumi.Float64PtrOutput)
 }
 
 // CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
-func (o GetCloudAutonomousVmClusterResourceUsageResultOutput) ReclaimableCpus() pulumi.Float64Output {
-	return o.ApplyT(func(v GetCloudAutonomousVmClusterResourceUsageResult) float64 { return v.ReclaimableCpus }).(pulumi.Float64Output)
+func (o GetCloudAutonomousVmClusterResourceUsageResultOutput) ReclaimableCpus() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetCloudAutonomousVmClusterResourceUsageResult) *float64 { return v.ReclaimableCpus }).(pulumi.Float64PtrOutput)
 }
 
 // The number of CPUs reserved in an Autonomous VM Cluster.
-func (o GetCloudAutonomousVmClusterResourceUsageResultOutput) ReservedCpus() pulumi.Float64Output {
-	return o.ApplyT(func(v GetCloudAutonomousVmClusterResourceUsageResult) float64 { return v.ReservedCpus }).(pulumi.Float64Output)
+func (o GetCloudAutonomousVmClusterResourceUsageResultOutput) ReservedCpus() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetCloudAutonomousVmClusterResourceUsageResult) *float64 { return v.ReservedCpus }).(pulumi.Float64PtrOutput)
 }
 
 // The total number of Autonomous Container Databases that can be created.
-func (o GetCloudAutonomousVmClusterResourceUsageResultOutput) TotalContainerDatabases() pulumi.IntOutput {
-	return o.ApplyT(func(v GetCloudAutonomousVmClusterResourceUsageResult) int { return v.TotalContainerDatabases }).(pulumi.IntOutput)
+func (o GetCloudAutonomousVmClusterResourceUsageResultOutput) TotalContainerDatabases() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetCloudAutonomousVmClusterResourceUsageResult) *int { return v.TotalContainerDatabases }).(pulumi.IntPtrOutput)
 }
 
 // The number of CPU cores enabled on the Cloud Autonomous VM cluster.
-func (o GetCloudAutonomousVmClusterResourceUsageResultOutput) TotalCpus() pulumi.Float64Output {
-	return o.ApplyT(func(v GetCloudAutonomousVmClusterResourceUsageResult) float64 { return v.TotalCpus }).(pulumi.Float64Output)
+func (o GetCloudAutonomousVmClusterResourceUsageResultOutput) TotalCpus() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetCloudAutonomousVmClusterResourceUsageResult) *float64 { return v.TotalCpus }).(pulumi.Float64PtrOutput)
 }
 
 // The data disk group size used for Autonomous Databases, in TBs.
-func (o GetCloudAutonomousVmClusterResourceUsageResultOutput) UsedAutonomousDataStorageSizeInTbs() pulumi.Float64Output {
-	return o.ApplyT(func(v GetCloudAutonomousVmClusterResourceUsageResult) float64 {
+func (o GetCloudAutonomousVmClusterResourceUsageResultOutput) UsedAutonomousDataStorageSizeInTbs() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetCloudAutonomousVmClusterResourceUsageResult) *float64 {
 		return v.UsedAutonomousDataStorageSizeInTbs
-	}).(pulumi.Float64Output)
+	}).(pulumi.Float64PtrOutput)
 }
 
 // The number of CPU cores alloted to the Autonomous Container Databases in an Cloud Autonomous VM cluster.
-func (o GetCloudAutonomousVmClusterResourceUsageResultOutput) UsedCpus() pulumi.Float64Output {
-	return o.ApplyT(func(v GetCloudAutonomousVmClusterResourceUsageResult) float64 { return v.UsedCpus }).(pulumi.Float64Output)
+func (o GetCloudAutonomousVmClusterResourceUsageResultOutput) UsedCpus() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetCloudAutonomousVmClusterResourceUsageResult) *float64 { return v.UsedCpus }).(pulumi.Float64PtrOutput)
 }
 
 func init() {

@@ -6,6 +6,8 @@ package com.pulumi.oci.DatabaseManagement.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetManagedDatabaseUserObjectPrivilegeItem {
@@ -13,111 +15,111 @@ public final class GetManagedDatabaseUserObjectPrivilegeItem {
      * @return Indicates how the object privilege was granted. Possible values: YES if the role is granted commonly (CONTAINER=ALL is used) NO if the role is granted locally (CONTAINER=ALL is not used)
      * 
      */
-    private String common;
+    private @Nullable String common;
     /**
      * @return Indicates whether the privilege is granted with the GRANT OPTION (YES) or not (NO).
      * 
      */
-    private String grantOption;
+    private @Nullable String grantOption;
     /**
      * @return The name of the user who granted the object privilege.
      * 
      */
-    private String grantor;
+    private @Nullable String grantor;
     /**
      * @return Indicates whether the privilege is granted with the HIERARCHY OPTION (YES) or not (NO).
      * 
      */
-    private String hierarchy;
+    private @Nullable String hierarchy;
     /**
      * @return Indicates whether the granted privilege is inherited from another container (YES) or not (NO).
      * 
      */
-    private String inherited;
+    private @Nullable String inherited;
     /**
      * @return A filter to return only resources that match the entire name.
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return The name of the object. The object can be any object, including tables, packages, indexes, sequences, and so on.
      * 
      */
-    private String object;
+    private @Nullable String object;
     /**
      * @return The owner of the object.
      * 
      */
-    private String owner;
+    private @Nullable String owner;
     /**
      * @return The type of object.
      * 
      */
-    private String schemaType;
+    private @Nullable String schemaType;
 
     private GetManagedDatabaseUserObjectPrivilegeItem() {}
     /**
      * @return Indicates how the object privilege was granted. Possible values: YES if the role is granted commonly (CONTAINER=ALL is used) NO if the role is granted locally (CONTAINER=ALL is not used)
      * 
      */
-    public String common() {
-        return this.common;
+    public Optional<String> common() {
+        return Optional.ofNullable(this.common);
     }
     /**
      * @return Indicates whether the privilege is granted with the GRANT OPTION (YES) or not (NO).
      * 
      */
-    public String grantOption() {
-        return this.grantOption;
+    public Optional<String> grantOption() {
+        return Optional.ofNullable(this.grantOption);
     }
     /**
      * @return The name of the user who granted the object privilege.
      * 
      */
-    public String grantor() {
-        return this.grantor;
+    public Optional<String> grantor() {
+        return Optional.ofNullable(this.grantor);
     }
     /**
      * @return Indicates whether the privilege is granted with the HIERARCHY OPTION (YES) or not (NO).
      * 
      */
-    public String hierarchy() {
-        return this.hierarchy;
+    public Optional<String> hierarchy() {
+        return Optional.ofNullable(this.hierarchy);
     }
     /**
      * @return Indicates whether the granted privilege is inherited from another container (YES) or not (NO).
      * 
      */
-    public String inherited() {
-        return this.inherited;
+    public Optional<String> inherited() {
+        return Optional.ofNullable(this.inherited);
     }
     /**
      * @return A filter to return only resources that match the entire name.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return The name of the object. The object can be any object, including tables, packages, indexes, sequences, and so on.
      * 
      */
-    public String object() {
-        return this.object;
+    public Optional<String> object() {
+        return Optional.ofNullable(this.object);
     }
     /**
      * @return The owner of the object.
      * 
      */
-    public String owner() {
-        return this.owner;
+    public Optional<String> owner() {
+        return Optional.ofNullable(this.owner);
     }
     /**
      * @return The type of object.
      * 
      */
-    public String schemaType() {
-        return this.schemaType;
+    public Optional<String> schemaType() {
+        return Optional.ofNullable(this.schemaType);
     }
 
     public static Builder builder() {
@@ -129,15 +131,15 @@ public final class GetManagedDatabaseUserObjectPrivilegeItem {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String common;
-        private String grantOption;
-        private String grantor;
-        private String hierarchy;
-        private String inherited;
-        private String name;
-        private String object;
-        private String owner;
-        private String schemaType;
+        private @Nullable String common;
+        private @Nullable String grantOption;
+        private @Nullable String grantor;
+        private @Nullable String hierarchy;
+        private @Nullable String inherited;
+        private @Nullable String name;
+        private @Nullable String object;
+        private @Nullable String owner;
+        private @Nullable String schemaType;
         public Builder() {}
         public Builder(GetManagedDatabaseUserObjectPrivilegeItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -153,48 +155,48 @@ public final class GetManagedDatabaseUserObjectPrivilegeItem {
         }
 
         @CustomType.Setter
-        public Builder common(String common) {
-            this.common = Objects.requireNonNull(common);
+        public Builder common(@Nullable String common) {
+            this.common = common;
             return this;
         }
         @CustomType.Setter
-        public Builder grantOption(String grantOption) {
-            this.grantOption = Objects.requireNonNull(grantOption);
+        public Builder grantOption(@Nullable String grantOption) {
+            this.grantOption = grantOption;
             return this;
         }
         @CustomType.Setter
-        public Builder grantor(String grantor) {
-            this.grantor = Objects.requireNonNull(grantor);
+        public Builder grantor(@Nullable String grantor) {
+            this.grantor = grantor;
             return this;
         }
         @CustomType.Setter
-        public Builder hierarchy(String hierarchy) {
-            this.hierarchy = Objects.requireNonNull(hierarchy);
+        public Builder hierarchy(@Nullable String hierarchy) {
+            this.hierarchy = hierarchy;
             return this;
         }
         @CustomType.Setter
-        public Builder inherited(String inherited) {
-            this.inherited = Objects.requireNonNull(inherited);
+        public Builder inherited(@Nullable String inherited) {
+            this.inherited = inherited;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder object(String object) {
-            this.object = Objects.requireNonNull(object);
+        public Builder object(@Nullable String object) {
+            this.object = object;
             return this;
         }
         @CustomType.Setter
-        public Builder owner(String owner) {
-            this.owner = Objects.requireNonNull(owner);
+        public Builder owner(@Nullable String owner) {
+            this.owner = owner;
             return this;
         }
         @CustomType.Setter
-        public Builder schemaType(String schemaType) {
-            this.schemaType = Objects.requireNonNull(schemaType);
+        public Builder schemaType(@Nullable String schemaType) {
+            this.schemaType = schemaType;
             return this;
         }
         public GetManagedDatabaseUserObjectPrivilegeItem build() {

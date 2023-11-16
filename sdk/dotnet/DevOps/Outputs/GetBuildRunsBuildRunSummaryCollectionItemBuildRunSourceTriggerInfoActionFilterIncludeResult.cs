@@ -16,17 +16,17 @@ namespace Pulumi.Oci.DevOps.Outputs
         /// <summary>
         /// The target branch for pull requests; not applicable for push requests.
         /// </summary>
-        public readonly string BaseRef;
+        public readonly string? BaseRef;
         /// <summary>
         /// Branch for push event; source branch for pull requests.
         /// </summary>
-        public readonly string HeadRef;
+        public readonly string? HeadRef;
 
         [OutputConstructor]
         private GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoActionFilterIncludeResult(
-            string baseRef,
+            string? baseRef,
 
-            string headRef)
+            string? headRef)
         {
             BaseRef = baseRef;
             HeadRef = headRef;

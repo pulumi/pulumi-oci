@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Clusters in Oracle Cloud Infrastructure Container Engine service.
@@ -72,7 +71,7 @@ type GetClustersResult struct {
 	CompartmentId string              `pulumi:"compartmentId"`
 	Filters       []GetClustersFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The name of the cluster.
 	Name *string `pulumi:"name"`
 	// The state of the cluster masters.
@@ -122,12 +121,6 @@ func (o GetClustersResultOutput) ToGetClustersResultOutputWithContext(ctx contex
 	return o
 }
 
-func (o GetClustersResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetClustersResult] {
-	return pulumix.Output[GetClustersResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The list of clusters.
 func (o GetClustersResultOutput) Clusters() GetClustersClusterArrayOutput {
 	return o.ApplyT(func(v GetClustersResult) []GetClustersCluster { return v.Clusters }).(GetClustersClusterArrayOutput)
@@ -143,8 +136,8 @@ func (o GetClustersResultOutput) Filters() GetClustersFilterArrayOutput {
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetClustersResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetClustersResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetClustersResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetClustersResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The name of the cluster.

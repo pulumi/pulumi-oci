@@ -16,35 +16,35 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// Status of the account
         /// </summary>
-        public readonly bool Active;
+        public readonly bool? Active;
         /// <summary>
         /// The ID of the App in this Grant.
         /// </summary>
-        public readonly string AppId;
+        public readonly string? AppId;
         /// <summary>
         /// Name of the account assigned to the User.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// User Token URI
         /// </summary>
-        public readonly string Ref;
+        public readonly string? Ref;
         /// <summary>
         /// The value of a X509 certificate.
         /// </summary>
-        public readonly string Value;
+        public readonly string? Value;
 
         [OutputConstructor]
         private GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserAccountResult(
-            bool active,
+            bool? active,
 
-            string appId,
+            string? appId,
 
-            string name,
+            string? name,
 
-            string @ref,
+            string? @ref,
 
-            string value)
+            string? value)
         {
             Active = active;
             AppId = appId;

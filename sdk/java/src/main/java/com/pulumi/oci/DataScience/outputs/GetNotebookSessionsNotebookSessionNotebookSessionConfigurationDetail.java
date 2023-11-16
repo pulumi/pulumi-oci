@@ -9,6 +9,8 @@ import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetail {
@@ -16,63 +18,63 @@ public final class GetNotebookSessionsNotebookSessionNotebookSessionConfiguratio
      * @return A notebook session instance is provided with a block storage volume. This specifies the size of the volume in GBs.
      * 
      */
-    private Integer blockStorageSizeInGbs;
+    private @Nullable Integer blockStorageSizeInGbs;
     /**
      * @return Details for the notebook session shape configuration.
      * 
      */
-    private List<GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetail> notebookSessionShapeConfigDetails;
+    private @Nullable List<GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetail> notebookSessionShapeConfigDetails;
     /**
      * @return The OCID of a Data Science private endpoint.
      * 
      */
-    private String privateEndpointId;
+    private @Nullable String privateEndpointId;
     /**
      * @return The shape used to launch the notebook session compute instance.  The list of available shapes in a given compartment can be retrieved using the `ListNotebookSessionShapes` endpoint.
      * 
      */
-    private String shape;
+    private @Nullable String shape;
     /**
      * @return A notebook session instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT gateway for egress to the internet.
      * 
      */
-    private String subnetId;
+    private @Nullable String subnetId;
 
     private GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetail() {}
     /**
      * @return A notebook session instance is provided with a block storage volume. This specifies the size of the volume in GBs.
      * 
      */
-    public Integer blockStorageSizeInGbs() {
-        return this.blockStorageSizeInGbs;
+    public Optional<Integer> blockStorageSizeInGbs() {
+        return Optional.ofNullable(this.blockStorageSizeInGbs);
     }
     /**
      * @return Details for the notebook session shape configuration.
      * 
      */
     public List<GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetail> notebookSessionShapeConfigDetails() {
-        return this.notebookSessionShapeConfigDetails;
+        return this.notebookSessionShapeConfigDetails == null ? List.of() : this.notebookSessionShapeConfigDetails;
     }
     /**
      * @return The OCID of a Data Science private endpoint.
      * 
      */
-    public String privateEndpointId() {
-        return this.privateEndpointId;
+    public Optional<String> privateEndpointId() {
+        return Optional.ofNullable(this.privateEndpointId);
     }
     /**
      * @return The shape used to launch the notebook session compute instance.  The list of available shapes in a given compartment can be retrieved using the `ListNotebookSessionShapes` endpoint.
      * 
      */
-    public String shape() {
-        return this.shape;
+    public Optional<String> shape() {
+        return Optional.ofNullable(this.shape);
     }
     /**
      * @return A notebook session instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT gateway for egress to the internet.
      * 
      */
-    public String subnetId() {
-        return this.subnetId;
+    public Optional<String> subnetId() {
+        return Optional.ofNullable(this.subnetId);
     }
 
     public static Builder builder() {
@@ -84,11 +86,11 @@ public final class GetNotebookSessionsNotebookSessionNotebookSessionConfiguratio
     }
     @CustomType.Builder
     public static final class Builder {
-        private Integer blockStorageSizeInGbs;
-        private List<GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetail> notebookSessionShapeConfigDetails;
-        private String privateEndpointId;
-        private String shape;
-        private String subnetId;
+        private @Nullable Integer blockStorageSizeInGbs;
+        private @Nullable List<GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetail> notebookSessionShapeConfigDetails;
+        private @Nullable String privateEndpointId;
+        private @Nullable String shape;
+        private @Nullable String subnetId;
         public Builder() {}
         public Builder(GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetail defaults) {
     	      Objects.requireNonNull(defaults);
@@ -100,31 +102,31 @@ public final class GetNotebookSessionsNotebookSessionNotebookSessionConfiguratio
         }
 
         @CustomType.Setter
-        public Builder blockStorageSizeInGbs(Integer blockStorageSizeInGbs) {
-            this.blockStorageSizeInGbs = Objects.requireNonNull(blockStorageSizeInGbs);
+        public Builder blockStorageSizeInGbs(@Nullable Integer blockStorageSizeInGbs) {
+            this.blockStorageSizeInGbs = blockStorageSizeInGbs;
             return this;
         }
         @CustomType.Setter
-        public Builder notebookSessionShapeConfigDetails(List<GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetail> notebookSessionShapeConfigDetails) {
-            this.notebookSessionShapeConfigDetails = Objects.requireNonNull(notebookSessionShapeConfigDetails);
+        public Builder notebookSessionShapeConfigDetails(@Nullable List<GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetail> notebookSessionShapeConfigDetails) {
+            this.notebookSessionShapeConfigDetails = notebookSessionShapeConfigDetails;
             return this;
         }
         public Builder notebookSessionShapeConfigDetails(GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetail... notebookSessionShapeConfigDetails) {
             return notebookSessionShapeConfigDetails(List.of(notebookSessionShapeConfigDetails));
         }
         @CustomType.Setter
-        public Builder privateEndpointId(String privateEndpointId) {
-            this.privateEndpointId = Objects.requireNonNull(privateEndpointId);
+        public Builder privateEndpointId(@Nullable String privateEndpointId) {
+            this.privateEndpointId = privateEndpointId;
             return this;
         }
         @CustomType.Setter
-        public Builder shape(String shape) {
-            this.shape = Objects.requireNonNull(shape);
+        public Builder shape(@Nullable String shape) {
+            this.shape = shape;
             return this;
         }
         @CustomType.Setter
-        public Builder subnetId(String subnetId) {
-            this.subnetId = Objects.requireNonNull(subnetId);
+        public Builder subnetId(@Nullable String subnetId) {
+            this.subnetId = subnetId;
             return this;
         }
         public GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetail build() {

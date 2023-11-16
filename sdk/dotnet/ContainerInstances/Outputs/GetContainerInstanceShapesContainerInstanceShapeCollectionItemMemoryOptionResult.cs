@@ -16,35 +16,35 @@ namespace Pulumi.Oci.ContainerInstances.Outputs
         /// <summary>
         /// The default amount of memory per OCPU available for this shape (GB).
         /// </summary>
-        public readonly double DefaultPerOcpuInGbs;
+        public readonly double? DefaultPerOcpuInGbs;
         /// <summary>
         /// The maximum amount of memory (GB).
         /// </summary>
-        public readonly double MaxInGbs;
+        public readonly double? MaxInGbs;
         /// <summary>
         /// The maximum amount of memory per OCPU available for this shape (GB).
         /// </summary>
-        public readonly double MaxPerOcpuInGbs;
+        public readonly double? MaxPerOcpuInGbs;
         /// <summary>
         /// The minimum amount of memory (GB).
         /// </summary>
-        public readonly double MinInGbs;
+        public readonly double? MinInGbs;
         /// <summary>
         /// The minimum amount of memory per OCPU available for this shape (GB).
         /// </summary>
-        public readonly double MinPerOcpuInGbs;
+        public readonly double? MinPerOcpuInGbs;
 
         [OutputConstructor]
         private GetContainerInstanceShapesContainerInstanceShapeCollectionItemMemoryOptionResult(
-            double defaultPerOcpuInGbs,
+            double? defaultPerOcpuInGbs,
 
-            double maxInGbs,
+            double? maxInGbs,
 
-            double maxPerOcpuInGbs,
+            double? maxPerOcpuInGbs,
 
-            double minInGbs,
+            double? minInGbs,
 
-            double minPerOcpuInGbs)
+            double? minPerOcpuInGbs)
         {
             DefaultPerOcpuInGbs = defaultPerOcpuInGbs;
             MaxInGbs = maxInGbs;

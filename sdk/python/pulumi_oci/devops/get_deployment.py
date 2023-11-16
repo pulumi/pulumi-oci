@@ -95,82 +95,52 @@ class GetDeploymentResult:
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The OCID of a compartment.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="deployArtifactOverrideArguments")
-    def deploy_artifact_override_arguments(self) -> Sequence['outputs.GetDeploymentDeployArtifactOverrideArgumentResult']:
-        """
-        Specifies the list of artifact override arguments at the time of deployment.
-        """
+    def deploy_artifact_override_arguments(self) -> Optional[Sequence['outputs.GetDeploymentDeployArtifactOverrideArgumentResult']]:
         return pulumi.get(self, "deploy_artifact_override_arguments")
 
     @property
     @pulumi.getter(name="deployPipelineArtifacts")
-    def deploy_pipeline_artifacts(self) -> Sequence['outputs.GetDeploymentDeployPipelineArtifactResult']:
-        """
-        List of all artifacts used in the pipeline.
-        """
+    def deploy_pipeline_artifacts(self) -> Optional[Sequence['outputs.GetDeploymentDeployPipelineArtifactResult']]:
         return pulumi.get(self, "deploy_pipeline_artifacts")
 
     @property
     @pulumi.getter(name="deployPipelineEnvironments")
-    def deploy_pipeline_environments(self) -> Sequence['outputs.GetDeploymentDeployPipelineEnvironmentResult']:
-        """
-        List of all environments used in the pipeline.
-        """
+    def deploy_pipeline_environments(self) -> Optional[Sequence['outputs.GetDeploymentDeployPipelineEnvironmentResult']]:
         return pulumi.get(self, "deploy_pipeline_environments")
 
     @property
     @pulumi.getter(name="deployPipelineId")
-    def deploy_pipeline_id(self) -> str:
-        """
-        The OCID of a pipeline.
-        """
+    def deploy_pipeline_id(self) -> Optional[str]:
         return pulumi.get(self, "deploy_pipeline_id")
 
     @property
     @pulumi.getter(name="deployStageId")
-    def deploy_stage_id(self) -> str:
-        """
-        The OCID of the stage.
-        """
+    def deploy_stage_id(self) -> Optional[str]:
         return pulumi.get(self, "deploy_stage_id")
 
     @property
     @pulumi.getter(name="deployStageOverrideArguments")
-    def deploy_stage_override_arguments(self) -> Sequence['outputs.GetDeploymentDeployStageOverrideArgumentResult']:
-        """
-        Specifies the list of arguments to be overriden per Stage at the time of deployment.
-        """
+    def deploy_stage_override_arguments(self) -> Optional[Sequence['outputs.GetDeploymentDeployStageOverrideArgumentResult']]:
         return pulumi.get(self, "deploy_stage_override_arguments")
 
     @property
     @pulumi.getter(name="deploymentArguments")
-    def deployment_arguments(self) -> Sequence['outputs.GetDeploymentDeploymentArgumentResult']:
-        """
-        Specifies list of arguments passed along with the deployment.
-        """
+    def deployment_arguments(self) -> Optional[Sequence['outputs.GetDeploymentDeploymentArgumentResult']]:
         return pulumi.get(self, "deployment_arguments")
 
     @property
     @pulumi.getter(name="deploymentExecutionProgresses")
-    def deployment_execution_progresses(self) -> Sequence['outputs.GetDeploymentDeploymentExecutionProgressResult']:
-        """
-        The execution progress details of a deployment.
-        """
+    def deployment_execution_progresses(self) -> Optional[Sequence['outputs.GetDeploymentDeploymentExecutionProgressResult']]:
         return pulumi.get(self, "deployment_execution_progresses")
 
     @property
@@ -180,95 +150,62 @@ class GetDeploymentResult:
 
     @property
     @pulumi.getter(name="deploymentType")
-    def deployment_type(self) -> str:
-        """
-        Specifies type of Deployment
-        """
+    def deployment_type(self) -> Optional[str]:
         return pulumi.get(self, "deployment_type")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        Deployment identifier which can be renamed and is not necessarily unique. Avoid entering confidential information.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        Unique identifier that is immutable on creation.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="previousDeploymentId")
-    def previous_deployment_id(self) -> str:
-        """
-        Specifies the OCID of the previous deployment to be redeployed.
-        """
+    def previous_deployment_id(self) -> Optional[str]:
         return pulumi.get(self, "previous_deployment_id")
 
     @property
     @pulumi.getter(name="projectId")
-    def project_id(self) -> str:
-        """
-        The OCID of a project.
-        """
+    def project_id(self) -> Optional[str]:
         return pulumi.get(self, "project_id")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the deployment.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        Time the deployment was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        Time the deployment was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
     @property
     @pulumi.getter(name="triggerNewDevopsDeployment")
-    def trigger_new_devops_deployment(self) -> bool:
+    def trigger_new_devops_deployment(self) -> Optional[bool]:
         return pulumi.get(self, "trigger_new_devops_deployment")
 
 
@@ -306,21 +243,7 @@ class AwaitableGetDeploymentResult(GetDeploymentResult):
 def get_deployment(deployment_id: Optional[str] = None,
                    opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDeploymentResult:
     """
-    This data source provides details about a specific Deployment resource in Oracle Cloud Infrastructure Devops service.
-
-    Retrieves a deployment by identifier.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_deployment = oci.DevOps.get_deployment(deployment_id=oci_devops_deployment["test_deployment"]["id"])
-    ```
-
-
-    :param str deployment_id: Unique deployment identifier.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['deploymentId'] = deployment_id
@@ -357,20 +280,6 @@ def get_deployment(deployment_id: Optional[str] = None,
 def get_deployment_output(deployment_id: Optional[pulumi.Input[str]] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDeploymentResult]:
     """
-    This data source provides details about a specific Deployment resource in Oracle Cloud Infrastructure Devops service.
-
-    Retrieves a deployment by identifier.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_deployment = oci.DevOps.get_deployment(deployment_id=oci_devops_deployment["test_deployment"]["id"])
-    ```
-
-
-    :param str deployment_id: Unique deployment identifier.
+    Use this data source to access information about an existing resource.
     """
     ...

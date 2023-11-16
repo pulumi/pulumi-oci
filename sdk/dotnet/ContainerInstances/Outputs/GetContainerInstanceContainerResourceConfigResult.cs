@@ -13,14 +13,14 @@ namespace Pulumi.Oci.ContainerInstances.Outputs
     [OutputType]
     public sealed class GetContainerInstanceContainerResourceConfigResult
     {
-        public readonly double MemoryLimitInGbs;
-        public readonly double VcpusLimit;
+        public readonly double? MemoryLimitInGbs;
+        public readonly double? VcpusLimit;
 
         [OutputConstructor]
         private GetContainerInstanceContainerResourceConfigResult(
-            double memoryLimitInGbs,
+            double? memoryLimitInGbs,
 
-            double vcpusLimit)
+            double? vcpusLimit)
         {
             MemoryLimitInGbs = memoryLimitInGbs;
             VcpusLimit = vcpusLimit;

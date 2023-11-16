@@ -22,12 +22,6 @@ class InstancePoolInstanceArgs:
                  decrement_size_on_delete: Optional[pulumi.Input[bool]] = None):
         """
         The set of arguments for constructing a InstancePoolInstance resource.
-        :param pulumi.Input[str] instance_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance.
-        :param pulumi.Input[str] instance_pool_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance pool.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "instance_id", instance_id)
         pulumi.set(__self__, "instance_pool_id", instance_pool_id)
@@ -39,9 +33,6 @@ class InstancePoolInstanceArgs:
     @property
     @pulumi.getter(name="instanceId")
     def instance_id(self) -> pulumi.Input[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance.
-        """
         return pulumi.get(self, "instance_id")
 
     @instance_id.setter
@@ -51,13 +42,6 @@ class InstancePoolInstanceArgs:
     @property
     @pulumi.getter(name="instancePoolId")
     def instance_pool_id(self) -> pulumi.Input[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance pool.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "instance_pool_id")
 
     @instance_pool_id.setter
@@ -102,22 +86,6 @@ class _InstancePoolInstanceState:
                  time_created: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering InstancePoolInstance resources.
-        :param pulumi.Input[str] availability_domain: The availability domain the instance is running in.
-        :param pulumi.Input[str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the instance.
-        :param pulumi.Input[str] display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[str] fault_domain: The fault domain the instance is running in.
-        :param pulumi.Input[str] instance_configuration_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance configuration used to create the instance.
-        :param pulumi.Input[str] instance_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance.
-        :param pulumi.Input[str] instance_pool_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance pool.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Sequence[pulumi.Input['InstancePoolInstanceLoadBalancerBackendArgs']]] load_balancer_backends: The load balancer backends that are configured for the instance pool instance.
-        :param pulumi.Input[str] region: The region that contains the availability domain the instance is running in.
-        :param pulumi.Input[str] shape: The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
-        :param pulumi.Input[str] state: The lifecycle state of the instance. Refer to `lifecycleState` in the [Instance](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Instance) resource.
-        :param pulumi.Input[str] time_created: The date and time the instance pool instance was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
         """
         if auto_terminate_instance_on_delete is not None:
             pulumi.set(__self__, "auto_terminate_instance_on_delete", auto_terminate_instance_on_delete)
@@ -160,9 +128,6 @@ class _InstancePoolInstanceState:
     @property
     @pulumi.getter(name="availabilityDomain")
     def availability_domain(self) -> Optional[pulumi.Input[str]]:
-        """
-        The availability domain the instance is running in.
-        """
         return pulumi.get(self, "availability_domain")
 
     @availability_domain.setter
@@ -172,9 +137,6 @@ class _InstancePoolInstanceState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the instance.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -193,9 +155,6 @@ class _InstancePoolInstanceState:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -205,9 +164,6 @@ class _InstancePoolInstanceState:
     @property
     @pulumi.getter(name="faultDomain")
     def fault_domain(self) -> Optional[pulumi.Input[str]]:
-        """
-        The fault domain the instance is running in.
-        """
         return pulumi.get(self, "fault_domain")
 
     @fault_domain.setter
@@ -217,9 +173,6 @@ class _InstancePoolInstanceState:
     @property
     @pulumi.getter(name="instanceConfigurationId")
     def instance_configuration_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance configuration used to create the instance.
-        """
         return pulumi.get(self, "instance_configuration_id")
 
     @instance_configuration_id.setter
@@ -229,9 +182,6 @@ class _InstancePoolInstanceState:
     @property
     @pulumi.getter(name="instanceId")
     def instance_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance.
-        """
         return pulumi.get(self, "instance_id")
 
     @instance_id.setter
@@ -241,13 +191,6 @@ class _InstancePoolInstanceState:
     @property
     @pulumi.getter(name="instancePoolId")
     def instance_pool_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance pool.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "instance_pool_id")
 
     @instance_pool_id.setter
@@ -257,9 +200,6 @@ class _InstancePoolInstanceState:
     @property
     @pulumi.getter(name="loadBalancerBackends")
     def load_balancer_backends(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['InstancePoolInstanceLoadBalancerBackendArgs']]]]:
-        """
-        The load balancer backends that are configured for the instance pool instance.
-        """
         return pulumi.get(self, "load_balancer_backends")
 
     @load_balancer_backends.setter
@@ -269,9 +209,6 @@ class _InstancePoolInstanceState:
     @property
     @pulumi.getter
     def region(self) -> Optional[pulumi.Input[str]]:
-        """
-        The region that contains the availability domain the instance is running in.
-        """
         return pulumi.get(self, "region")
 
     @region.setter
@@ -281,9 +218,6 @@ class _InstancePoolInstanceState:
     @property
     @pulumi.getter
     def shape(self) -> Optional[pulumi.Input[str]]:
-        """
-        The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
-        """
         return pulumi.get(self, "shape")
 
     @shape.setter
@@ -293,9 +227,6 @@ class _InstancePoolInstanceState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The lifecycle state of the instance. Refer to `lifecycleState` in the [Instance](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Instance) resource.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -305,9 +236,6 @@ class _InstancePoolInstanceState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time the instance pool instance was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -326,41 +254,9 @@ class InstancePoolInstance(pulumi.CustomResource):
                  instance_pool_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Instance Pool Instance resource in Oracle Cloud Infrastructure Core service.
-
-        Attaches an instance to an instance pool. For information about the prerequisites
-        that an instance must meet before you can attach it to a pool, see
-        [Attaching an Instance to an Instance Pool](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/updatinginstancepool.htm#attach-instance).
-
-        Using this resource will impact the size of the instance pool, attach will increment the size of the pool
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_instance_pool_instance = oci.core.InstancePoolInstance("testInstancePoolInstance",
-            instance_id=oci_core_instance["test_instance"]["id"],
-            instance_pool_id=oci_core_instance_pool["test_instance_pool"]["id"])
-        ```
-
-        ## Import
-
-        InstancePoolInstances can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Core/instancePoolInstance:InstancePoolInstance test_instance_pool_instance "instancePools/{instancePoolId}/instances/compartmentId/{compartmentId}"
-        ```
-
+        Create a InstancePoolInstance resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] instance_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance.
-        :param pulumi.Input[str] instance_pool_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance pool.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -369,33 +265,7 @@ class InstancePoolInstance(pulumi.CustomResource):
                  args: InstancePoolInstanceArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Instance Pool Instance resource in Oracle Cloud Infrastructure Core service.
-
-        Attaches an instance to an instance pool. For information about the prerequisites
-        that an instance must meet before you can attach it to a pool, see
-        [Attaching an Instance to an Instance Pool](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/updatinginstancepool.htm#attach-instance).
-
-        Using this resource will impact the size of the instance pool, attach will increment the size of the pool
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_instance_pool_instance = oci.core.InstancePoolInstance("testInstancePoolInstance",
-            instance_id=oci_core_instance["test_instance"]["id"],
-            instance_pool_id=oci_core_instance_pool["test_instance_pool"]["id"])
-        ```
-
-        ## Import
-
-        InstancePoolInstances can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Core/instancePoolInstance:InstancePoolInstance test_instance_pool_instance "instancePools/{instancePoolId}/instances/compartmentId/{compartmentId}"
-        ```
-
+        Create a InstancePoolInstance resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param InstancePoolInstanceArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -473,22 +343,6 @@ class InstancePoolInstance(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] availability_domain: The availability domain the instance is running in.
-        :param pulumi.Input[str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the instance.
-        :param pulumi.Input[str] display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[str] fault_domain: The fault domain the instance is running in.
-        :param pulumi.Input[str] instance_configuration_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance configuration used to create the instance.
-        :param pulumi.Input[str] instance_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance.
-        :param pulumi.Input[str] instance_pool_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance pool.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['InstancePoolInstanceLoadBalancerBackendArgs']]]] load_balancer_backends: The load balancer backends that are configured for the instance pool instance.
-        :param pulumi.Input[str] region: The region that contains the availability domain the instance is running in.
-        :param pulumi.Input[str] shape: The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
-        :param pulumi.Input[str] state: The lifecycle state of the instance. Refer to `lifecycleState` in the [Instance](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Instance) resource.
-        :param pulumi.Input[str] time_created: The date and time the instance pool instance was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -517,18 +371,12 @@ class InstancePoolInstance(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="availabilityDomain")
-    def availability_domain(self) -> pulumi.Output[str]:
-        """
-        The availability domain the instance is running in.
-        """
+    def availability_domain(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "availability_domain")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> pulumi.Output[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the instance.
-        """
+    def compartment_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "compartment_id")
 
     @property
@@ -538,85 +386,51 @@ class InstancePoolInstance(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> pulumi.Output[str]:
-        """
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
+    def display_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="faultDomain")
-    def fault_domain(self) -> pulumi.Output[str]:
-        """
-        The fault domain the instance is running in.
-        """
+    def fault_domain(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "fault_domain")
 
     @property
     @pulumi.getter(name="instanceConfigurationId")
-    def instance_configuration_id(self) -> pulumi.Output[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance configuration used to create the instance.
-        """
+    def instance_configuration_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "instance_configuration_id")
 
     @property
     @pulumi.getter(name="instanceId")
     def instance_id(self) -> pulumi.Output[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance.
-        """
         return pulumi.get(self, "instance_id")
 
     @property
     @pulumi.getter(name="instancePoolId")
     def instance_pool_id(self) -> pulumi.Output[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance pool.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "instance_pool_id")
 
     @property
     @pulumi.getter(name="loadBalancerBackends")
-    def load_balancer_backends(self) -> pulumi.Output[Sequence['outputs.InstancePoolInstanceLoadBalancerBackend']]:
-        """
-        The load balancer backends that are configured for the instance pool instance.
-        """
+    def load_balancer_backends(self) -> pulumi.Output[Optional[Sequence['outputs.InstancePoolInstanceLoadBalancerBackend']]]:
         return pulumi.get(self, "load_balancer_backends")
 
     @property
     @pulumi.getter
-    def region(self) -> pulumi.Output[str]:
-        """
-        The region that contains the availability domain the instance is running in.
-        """
+    def region(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "region")
 
     @property
     @pulumi.getter
-    def shape(self) -> pulumi.Output[str]:
-        """
-        The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
-        """
+    def shape(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "shape")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        The lifecycle state of the instance. Refer to `lifecycleState` in the [Instance](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Instance) resource.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        The date and time the instance pool instance was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 

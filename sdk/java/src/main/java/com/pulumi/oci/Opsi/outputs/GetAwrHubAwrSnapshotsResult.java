@@ -19,14 +19,14 @@ public final class GetAwrHubAwrSnapshotsResult {
      * @return The list of awr_snapshot_collection.
      * 
      */
-    private List<GetAwrHubAwrSnapshotsAwrSnapshotCollection> awrSnapshotCollections;
+    private @Nullable List<GetAwrHubAwrSnapshotsAwrSnapshotCollection> awrSnapshotCollections;
     private String awrSourceDatabaseIdentifier;
     private @Nullable List<GetAwrHubAwrSnapshotsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private @Nullable String timeGreaterThanOrEqualTo;
     private @Nullable String timeLessThanOrEqualTo;
 
@@ -39,7 +39,7 @@ public final class GetAwrHubAwrSnapshotsResult {
      * 
      */
     public List<GetAwrHubAwrSnapshotsAwrSnapshotCollection> awrSnapshotCollections() {
-        return this.awrSnapshotCollections;
+        return this.awrSnapshotCollections == null ? List.of() : this.awrSnapshotCollections;
     }
     public String awrSourceDatabaseIdentifier() {
         return this.awrSourceDatabaseIdentifier;
@@ -51,8 +51,8 @@ public final class GetAwrHubAwrSnapshotsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public Optional<String> timeGreaterThanOrEqualTo() {
         return Optional.ofNullable(this.timeGreaterThanOrEqualTo);
@@ -71,10 +71,10 @@ public final class GetAwrHubAwrSnapshotsResult {
     @CustomType.Builder
     public static final class Builder {
         private String awrHubId;
-        private List<GetAwrHubAwrSnapshotsAwrSnapshotCollection> awrSnapshotCollections;
+        private @Nullable List<GetAwrHubAwrSnapshotsAwrSnapshotCollection> awrSnapshotCollections;
         private String awrSourceDatabaseIdentifier;
         private @Nullable List<GetAwrHubAwrSnapshotsFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String timeGreaterThanOrEqualTo;
         private @Nullable String timeLessThanOrEqualTo;
         public Builder() {}
@@ -95,8 +95,8 @@ public final class GetAwrHubAwrSnapshotsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder awrSnapshotCollections(List<GetAwrHubAwrSnapshotsAwrSnapshotCollection> awrSnapshotCollections) {
-            this.awrSnapshotCollections = Objects.requireNonNull(awrSnapshotCollections);
+        public Builder awrSnapshotCollections(@Nullable List<GetAwrHubAwrSnapshotsAwrSnapshotCollection> awrSnapshotCollections) {
+            this.awrSnapshotCollections = awrSnapshotCollections;
             return this;
         }
         public Builder awrSnapshotCollections(GetAwrHubAwrSnapshotsAwrSnapshotCollection... awrSnapshotCollections) {
@@ -116,8 +116,8 @@ public final class GetAwrHubAwrSnapshotsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

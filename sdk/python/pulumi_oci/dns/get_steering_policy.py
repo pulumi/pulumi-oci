@@ -68,82 +68,52 @@ class GetSteeringPolicyResult:
 
     @property
     @pulumi.getter
-    def answers(self) -> Sequence['outputs.GetSteeringPolicyAnswerResult']:
-        """
-        The set of all answers that can potentially issue from the steering policy.
-        """
+    def answers(self) -> Optional[Sequence['outputs.GetSteeringPolicyAnswerResult']]:
         return pulumi.get(self, "answers")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The OCID of the compartment containing the steering policy.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A user-friendly name for the steering policy. Does not have to be unique and can be changed. Avoid entering confidential information.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="healthCheckMonitorId")
-    def health_check_monitor_id(self) -> str:
-        """
-        The OCID of the health check monitor providing health data about the answers of the steering policy. A steering policy answer with `rdata` matching a monitored endpoint will use the health data of that endpoint. A steering policy answer with `rdata` not matching any monitored endpoint will be assumed healthy.
-        """
+    def health_check_monitor_id(self) -> Optional[str]:
         return pulumi.get(self, "health_check_monitor_id")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The OCID of the resource.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter
-    def rules(self) -> Sequence['outputs.GetSteeringPolicyRuleResult']:
-        """
-        The series of rules that will be processed in sequence to reduce the pool of answers to a response for any given request.
-        """
+    def rules(self) -> Optional[Sequence['outputs.GetSteeringPolicyRuleResult']]:
         return pulumi.get(self, "rules")
 
     @property
     @pulumi.getter
-    def self(self) -> str:
-        """
-        The canonical absolute URL of the resource.
-        """
+    def self(self) -> Optional[str]:
         return pulumi.get(self, "self")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the resource.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
@@ -153,26 +123,17 @@ class GetSteeringPolicyResult:
 
     @property
     @pulumi.getter
-    def template(self) -> str:
-        """
-        A set of predefined rules based on the desired purpose of the steering policy. Each template utilizes Traffic Management's rules in a different order to produce the desired results when answering DNS queries.
-        """
+    def template(self) -> Optional[str]:
         return pulumi.get(self, "template")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the resource was created, expressed in RFC 3339 timestamp format.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter
-    def ttl(self) -> int:
-        """
-        The Time To Live (TTL) for responses from the steering policy, in seconds. If not specified during creation, a value of 30 seconds will be used.
-        """
+    def ttl(self) -> Optional[int]:
         return pulumi.get(self, "ttl")
 
 
@@ -201,21 +162,7 @@ class AwaitableGetSteeringPolicyResult(GetSteeringPolicyResult):
 def get_steering_policy(steering_policy_id: Optional[str] = None,
                         opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetSteeringPolicyResult:
     """
-    This data source provides details about a specific Steering Policy resource in Oracle Cloud Infrastructure DNS service.
-
-    Gets information about the specified steering policy.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_steering_policy = oci.Dns.get_steering_policy(steering_policy_id=oci_dns_steering_policy["test_steering_policy"]["id"])
-    ```
-
-
-    :param str steering_policy_id: The OCID of the target steering policy.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['steeringPolicyId'] = steering_policy_id
@@ -243,20 +190,6 @@ def get_steering_policy(steering_policy_id: Optional[str] = None,
 def get_steering_policy_output(steering_policy_id: Optional[pulumi.Input[str]] = None,
                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSteeringPolicyResult]:
     """
-    This data source provides details about a specific Steering Policy resource in Oracle Cloud Infrastructure DNS service.
-
-    Gets information about the specified steering policy.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_steering_policy = oci.Dns.get_steering_policy(steering_policy_id=oci_dns_steering_policy["test_steering_policy"]["id"])
-    ```
-
-
-    :param str steering_policy_id: The OCID of the target steering policy.
+    Use this data source to access information about an existing resource.
     """
     ...

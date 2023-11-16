@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Channel resource in Oracle Cloud Infrastructure MySQL Database service.
@@ -30,29 +29,29 @@ type Channel struct {
 	pulumi.CustomResourceState
 
 	// The OCID of the compartment.
-	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrOutput `pulumi:"compartmentId"`
 	// (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) User provided information about the Channel.
-	Description pulumi.StringOutput `pulumi:"description"`
+	Description pulumi.StringPtrOutput `pulumi:"description"`
 	// (Updatable) The user-friendly name for the Channel. It does not have to be unique.
-	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrOutput `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// (Updatable) Whether the Channel should be enabled upon creation. If set to true, the Channel will be asynchronously started as a result of the create Channel operation.
-	IsEnabled pulumi.BoolOutput `pulumi:"isEnabled"`
+	IsEnabled pulumi.BoolPtrOutput `pulumi:"isEnabled"`
 	// A message describing the state of the Channel.
-	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrOutput `pulumi:"lifecycleDetails"`
 	// (Updatable) Parameters detailing how to provision the source for the given Channel.
 	Source ChannelSourceOutput `pulumi:"source"`
 	// The state of the Channel.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// (Updatable) Parameters detailing how to provision the target for the given Channel.
 	Target ChannelTargetOutput `pulumi:"target"`
 	// The date and time the Channel was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The time the Channel was last updated, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 }
 
 // NewChannel registers a new resource with the given unique name, arguments, and options.
@@ -210,12 +209,6 @@ func (i *Channel) ToChannelOutputWithContext(ctx context.Context) ChannelOutput 
 	return pulumi.ToOutputWithContext(ctx, i).(ChannelOutput)
 }
 
-func (i *Channel) ToOutput(ctx context.Context) pulumix.Output[*Channel] {
-	return pulumix.Output[*Channel]{
-		OutputState: i.ToChannelOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ChannelArrayInput is an input type that accepts ChannelArray and ChannelArrayOutput values.
 // You can construct a concrete instance of `ChannelArrayInput` via:
 //
@@ -239,12 +232,6 @@ func (i ChannelArray) ToChannelArrayOutput() ChannelArrayOutput {
 
 func (i ChannelArray) ToChannelArrayOutputWithContext(ctx context.Context) ChannelArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ChannelArrayOutput)
-}
-
-func (i ChannelArray) ToOutput(ctx context.Context) pulumix.Output[[]*Channel] {
-	return pulumix.Output[[]*Channel]{
-		OutputState: i.ToChannelArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // ChannelMapInput is an input type that accepts ChannelMap and ChannelMapOutput values.
@@ -272,12 +259,6 @@ func (i ChannelMap) ToChannelMapOutputWithContext(ctx context.Context) ChannelMa
 	return pulumi.ToOutputWithContext(ctx, i).(ChannelMapOutput)
 }
 
-func (i ChannelMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*Channel] {
-	return pulumix.Output[map[string]*Channel]{
-		OutputState: i.ToChannelMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ChannelOutput struct{ *pulumi.OutputState }
 
 func (ChannelOutput) ElementType() reflect.Type {
@@ -292,15 +273,9 @@ func (o ChannelOutput) ToChannelOutputWithContext(ctx context.Context) ChannelOu
 	return o
 }
 
-func (o ChannelOutput) ToOutput(ctx context.Context) pulumix.Output[*Channel] {
-	return pulumix.Output[*Channel]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the compartment.
-func (o ChannelOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v *Channel) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
+func (o ChannelOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Channel) pulumi.StringPtrOutput { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
@@ -309,13 +284,13 @@ func (o ChannelOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // (Updatable) User provided information about the Channel.
-func (o ChannelOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v *Channel) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
+func (o ChannelOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Channel) pulumi.StringPtrOutput { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The user-friendly name for the Channel. It does not have to be unique.
-func (o ChannelOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v *Channel) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+func (o ChannelOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Channel) pulumi.StringPtrOutput { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Simple key-value pair applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -324,13 +299,13 @@ func (o ChannelOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // (Updatable) Whether the Channel should be enabled upon creation. If set to true, the Channel will be asynchronously started as a result of the create Channel operation.
-func (o ChannelOutput) IsEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v *Channel) pulumi.BoolOutput { return v.IsEnabled }).(pulumi.BoolOutput)
+func (o ChannelOutput) IsEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *Channel) pulumi.BoolPtrOutput { return v.IsEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // A message describing the state of the Channel.
-func (o ChannelOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v *Channel) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o ChannelOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Channel) pulumi.StringPtrOutput { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Parameters detailing how to provision the source for the given Channel.
@@ -339,8 +314,8 @@ func (o ChannelOutput) Source() ChannelSourceOutput {
 }
 
 // The state of the Channel.
-func (o ChannelOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *Channel) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o ChannelOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Channel) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Parameters detailing how to provision the target for the given Channel.
@@ -349,13 +324,13 @@ func (o ChannelOutput) Target() ChannelTargetOutput {
 }
 
 // The date and time the Channel was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-func (o ChannelOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *Channel) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o ChannelOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Channel) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time the Channel was last updated, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-func (o ChannelOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *Channel) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o ChannelOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Channel) pulumi.StringPtrOutput { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type ChannelArrayOutput struct{ *pulumi.OutputState }
@@ -370,12 +345,6 @@ func (o ChannelArrayOutput) ToChannelArrayOutput() ChannelArrayOutput {
 
 func (o ChannelArrayOutput) ToChannelArrayOutputWithContext(ctx context.Context) ChannelArrayOutput {
 	return o
-}
-
-func (o ChannelArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*Channel] {
-	return pulumix.Output[[]*Channel]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ChannelArrayOutput) Index(i pulumi.IntInput) ChannelOutput {
@@ -396,12 +365,6 @@ func (o ChannelMapOutput) ToChannelMapOutput() ChannelMapOutput {
 
 func (o ChannelMapOutput) ToChannelMapOutputWithContext(ctx context.Context) ChannelMapOutput {
 	return o
-}
-
-func (o ChannelMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*Channel] {
-	return pulumix.Output[map[string]*Channel]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ChannelMapOutput) MapIndex(k pulumi.StringInput) ChannelOutput {

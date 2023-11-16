@@ -19,14 +19,14 @@ public final class GetCommitmentAggregatedsResult {
      * @return The list of computed_usage_aggregateds.
      * 
      */
-    private List<GetCommitmentAggregatedsComputedUsageAggregated> computedUsageAggregateds;
+    private @Nullable List<GetCommitmentAggregatedsComputedUsageAggregated> computedUsageAggregateds;
     private @Nullable List<GetCommitmentAggregatedsFilter> filters;
     private @Nullable String grouping;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Product description
      * 
@@ -50,7 +50,7 @@ public final class GetCommitmentAggregatedsResult {
      * 
      */
     public List<GetCommitmentAggregatedsComputedUsageAggregated> computedUsageAggregateds() {
-        return this.computedUsageAggregateds;
+        return this.computedUsageAggregateds == null ? List.of() : this.computedUsageAggregateds;
     }
     public List<GetCommitmentAggregatedsFilter> filters() {
         return this.filters == null ? List.of() : this.filters;
@@ -62,8 +62,8 @@ public final class GetCommitmentAggregatedsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Product description
@@ -99,10 +99,10 @@ public final class GetCommitmentAggregatedsResult {
     @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
-        private List<GetCommitmentAggregatedsComputedUsageAggregated> computedUsageAggregateds;
+        private @Nullable List<GetCommitmentAggregatedsComputedUsageAggregated> computedUsageAggregateds;
         private @Nullable List<GetCommitmentAggregatedsFilter> filters;
         private @Nullable String grouping;
-        private String id;
+        private @Nullable String id;
         private @Nullable String parentProduct;
         private String subscriptionId;
         private String timeFrom;
@@ -129,8 +129,8 @@ public final class GetCommitmentAggregatedsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder computedUsageAggregateds(List<GetCommitmentAggregatedsComputedUsageAggregated> computedUsageAggregateds) {
-            this.computedUsageAggregateds = Objects.requireNonNull(computedUsageAggregateds);
+        public Builder computedUsageAggregateds(@Nullable List<GetCommitmentAggregatedsComputedUsageAggregated> computedUsageAggregateds) {
+            this.computedUsageAggregateds = computedUsageAggregateds;
             return this;
         }
         public Builder computedUsageAggregateds(GetCommitmentAggregatedsComputedUsageAggregated... computedUsageAggregateds) {
@@ -150,8 +150,8 @@ public final class GetCommitmentAggregatedsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

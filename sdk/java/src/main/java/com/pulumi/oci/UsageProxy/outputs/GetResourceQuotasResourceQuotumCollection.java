@@ -8,6 +8,8 @@ import com.pulumi.oci.UsageProxy.outputs.GetResourceQuotasResourceQuotumCollecti
 import java.lang.Boolean;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetResourceQuotasResourceQuotumCollection {
@@ -15,27 +17,27 @@ public final class GetResourceQuotasResourceQuotumCollection {
      * @return Used to indicate if further quota consumption isAllowed.
      * 
      */
-    private Boolean isAllowed;
+    private @Nullable Boolean isAllowed;
     /**
      * @return The list of resource quota details.
      * 
      */
-    private List<GetResourceQuotasResourceQuotumCollectionItem> items;
+    private @Nullable List<GetResourceQuotasResourceQuotumCollectionItem> items;
 
     private GetResourceQuotasResourceQuotumCollection() {}
     /**
      * @return Used to indicate if further quota consumption isAllowed.
      * 
      */
-    public Boolean isAllowed() {
-        return this.isAllowed;
+    public Optional<Boolean> isAllowed() {
+        return Optional.ofNullable(this.isAllowed);
     }
     /**
      * @return The list of resource quota details.
      * 
      */
     public List<GetResourceQuotasResourceQuotumCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -47,8 +49,8 @@ public final class GetResourceQuotasResourceQuotumCollection {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Boolean isAllowed;
-        private List<GetResourceQuotasResourceQuotumCollectionItem> items;
+        private @Nullable Boolean isAllowed;
+        private @Nullable List<GetResourceQuotasResourceQuotumCollectionItem> items;
         public Builder() {}
         public Builder(GetResourceQuotasResourceQuotumCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -57,13 +59,13 @@ public final class GetResourceQuotasResourceQuotumCollection {
         }
 
         @CustomType.Setter
-        public Builder isAllowed(Boolean isAllowed) {
-            this.isAllowed = Objects.requireNonNull(isAllowed);
+        public Builder isAllowed(@Nullable Boolean isAllowed) {
+            this.isAllowed = isAllowed;
             return this;
         }
         @CustomType.Setter
-        public Builder items(List<GetResourceQuotasResourceQuotumCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetResourceQuotasResourceQuotumCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetResourceQuotasResourceQuotumCollectionItem... items) {

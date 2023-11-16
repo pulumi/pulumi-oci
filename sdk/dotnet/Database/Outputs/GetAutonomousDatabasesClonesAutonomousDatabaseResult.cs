@@ -16,11 +16,11 @@ namespace Pulumi.Oci.Database.Outputs
         /// <summary>
         /// The current amount of storage in use for user and system data, in terabytes (TB).
         /// </summary>
-        public readonly double ActualUsedDataStorageSizeInTbs;
+        public readonly double? ActualUsedDataStorageSizeInTbs;
         /// <summary>
         /// The amount of storage currently allocated for the database tables and billed for, rounded up. When auto-scaling is not enabled, this value is equal to the `dataStorageSizeInTBs` value. You can compare this value to the `actualUsedDataStorageSizeInTBs` value to determine if a manual shrink operation is appropriate for your allocated storage.
         /// </summary>
-        public readonly double AllocatedStorageSizeInTbs;
+        public readonly double? AllocatedStorageSizeInTbs;
         /// <summary>
         /// Information about Oracle APEX Application Development.
         /// </summary>
@@ -28,15 +28,15 @@ namespace Pulumi.Oci.Database.Outputs
         /// <summary>
         /// This field will be null if the Autonomous Database is not Data Guard enabled or Access Control is disabled. It's value would be `TRUE` if Autonomous Database is Data Guard enabled and Access Control is enabled and if the Autonomous Database uses primary IP access control list (ACL) for standby. It's value would be `FALSE` if Autonomous Database is Data Guard enabled and Access Control is enabled and if the Autonomous Database uses different IP access control list (ACL) for standby compared to primary.
         /// </summary>
-        public readonly bool ArePrimaryWhitelistedIpsUsed;
+        public readonly bool? ArePrimaryWhitelistedIpsUsed;
         /// <summary>
         /// The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
-        public readonly string AutonomousContainerDatabaseId;
+        public readonly string? AutonomousContainerDatabaseId;
         /// <summary>
         /// The maintenance schedule type of the Autonomous Database Serverless. An EARLY maintenance schedule follows a schedule applying patches prior to the REGULAR schedule. A REGULAR maintenance schedule follows the normal cycle
         /// </summary>
-        public readonly string AutonomousMaintenanceScheduleType;
+        public readonly string? AutonomousMaintenanceScheduleType;
         /// <summary>
         /// List of Oracle Database versions available for a database upgrade. If there are no version upgrades available, this list is empty.
         /// </summary>
@@ -48,23 +48,23 @@ namespace Pulumi.Oci.Database.Outputs
         /// <summary>
         /// Retention period, in days, for backups.
         /// </summary>
-        public readonly int BackupRetentionPeriodInDays;
+        public readonly int? BackupRetentionPeriodInDays;
         /// <summary>
         /// The character set for the autonomous database.  The default is AL32UTF8. Allowed values are:
         /// </summary>
-        public readonly string CharacterSet;
+        public readonly string? CharacterSet;
         /// <summary>
         /// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// The compute amount available to the database. Minimum and maximum values depend on the compute model and whether the database is an Autonomous Database Serverless instance or an Autonomous Database on Dedicated Exadata Infrastructure. For an Autonomous Database Serverless instance, the 'ECPU' compute model requires values in multiples of two. Required when using the `computeModel` parameter. When using `cpuCoreCount` parameter, it is an error to specify computeCount to a non-null value.
         /// </summary>
-        public readonly double ComputeCount;
+        public readonly double? ComputeCount;
         /// <summary>
         /// The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value.
         /// </summary>
-        public readonly string ComputeModel;
+        public readonly string? ComputeModel;
         /// <summary>
         /// The connection string used to connect to the Autonomous Database. The username for the Service Console is ADMIN. Use the password you entered when creating the Autonomous Database for the password value.
         /// </summary>
@@ -76,7 +76,7 @@ namespace Pulumi.Oci.Database.Outputs
         /// <summary>
         /// The number of OCPU cores to be made available to the database. When the ECPU is selected, the value for cpuCoreCount is 0. For Autonomous Databases on dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&amp;id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
         /// </summary>
-        public readonly int CpuCoreCount;
+        public readonly int? CpuCoreCount;
         /// <summary>
         /// Customer Contacts.
         /// </summary>
@@ -84,35 +84,35 @@ namespace Pulumi.Oci.Database.Outputs
         /// <summary>
         /// Status of the Data Safe registration for this Autonomous Database.
         /// </summary>
-        public readonly string DataSafeStatus;
+        public readonly string? DataSafeStatus;
         /// <summary>
         /// The quantity of data in the database, in gigabytes.
         /// </summary>
-        public readonly int DataStorageSizeInGb;
+        public readonly int? DataStorageSizeInGb;
         /// <summary>
         /// The quantity of data in the database, in terabytes.
         /// </summary>
-        public readonly int DataStorageSizeInTbs;
+        public readonly int? DataStorageSizeInTbs;
         /// <summary>
         /// The Oracle Database Edition that applies to the Autonomous databases.
         /// </summary>
-        public readonly string DatabaseEdition;
+        public readonly string? DatabaseEdition;
         /// <summary>
         /// Status of Database Management for this Autonomous Database.
         /// </summary>
-        public readonly string DatabaseManagementStatus;
+        public readonly string? DatabaseManagementStatus;
         /// <summary>
         /// The Autonomous Data Guard region type of the Autonomous Database. For Autonomous Database Serverless, Autonomous Data Guard associations have designated primary and standby regions, and these region types do not change when the database changes roles. The standby regions in Autonomous Data Guard associations can be the same region designated as the primary region, or they can be remote regions. Certain database administrative operations may be available only in the primary region of the Autonomous Data Guard association, and cannot be performed when the database using the primary role is operating in a remote Autonomous Data Guard standby region.
         /// </summary>
-        public readonly string DataguardRegionType;
+        public readonly string? DataguardRegionType;
         /// <summary>
         /// The database name.
         /// </summary>
-        public readonly string DbName;
+        public readonly string? DbName;
         /// <summary>
         /// A valid Oracle Database version for Autonomous Database.
         /// </summary>
-        public readonly string DbVersion;
+        public readonly string? DbVersion;
         /// <summary>
         /// The Autonomous Database workload type. The following values are valid:
         /// * OLTP - indicates an Autonomous Transaction Processing database
@@ -120,91 +120,91 @@ namespace Pulumi.Oci.Database.Outputs
         /// * AJD - indicates an Autonomous JSON Database
         /// * APEX - indicates an Autonomous Database with the Oracle APEX Application Development workload type.
         /// </summary>
-        public readonly string DbWorkload;
+        public readonly string? DbWorkload;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// The disaster recovery (DR) region type of the Autonomous Database. For Autonomous Database Serverless instances, DR associations have designated primary and standby regions. These region types do not change when the database changes roles. The standby region in DR associations can be the same region as the primary region, or they can be in a remote regions. Some database administration operations may be available only in the primary region of the DR association, and cannot be performed when the database using the primary role is operating in a remote region.
         /// </summary>
-        public readonly string DisasterRecoveryRegionType;
+        public readonly string? DisasterRecoveryRegionType;
         /// <summary>
         /// A filter to return only resources that match the entire display name given. The match is not case sensitive.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// Indicates the number of seconds of data loss for a Data Guard failover.
         /// </summary>
-        public readonly int FailedDataRecoveryInSeconds;
+        public readonly int? FailedDataRecoveryInSeconds;
         /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// The id of the Autonomous Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The area assigned to In-Memory tables in Autonomous Database.
         /// </summary>
-        public readonly int InMemoryAreaInGbs;
+        public readonly int? InMemoryAreaInGbs;
         /// <summary>
         /// The percentage of the System Global Area(SGA) assigned to In-Memory tables in Autonomous Database.
         /// </summary>
-        public readonly int InMemoryPercentage;
+        public readonly int? InMemoryPercentage;
         /// <summary>
         /// The infrastructure type this resource belongs to.
         /// </summary>
-        public readonly string InfrastructureType;
+        public readonly string? InfrastructureType;
         /// <summary>
         /// Indicates if the database-level access control is enabled. If disabled, database access is defined by the network security rules. If enabled, database access is restricted to the IP addresses defined by the rules specified with the `whitelistedIps` property. While specifying `whitelistedIps` rules is optional, if database-level access control is enabled and no rules are specified, the database will become inaccessible. The rules can be added later using the `UpdateAutonomousDatabase` API operation or edit option in console. When creating a database clone, the desired access control setting should be specified. By default, database-level access control will be disabled for the clone.
         /// </summary>
-        public readonly bool IsAccessControlEnabled;
+        public readonly bool? IsAccessControlEnabled;
         /// <summary>
         /// Indicates if auto scaling is enabled for the Autonomous Database CPU core count.
         /// </summary>
-        public readonly bool IsAutoScalingEnabled;
+        public readonly bool? IsAutoScalingEnabled;
         /// <summary>
         /// Indicates if auto scaling is enabled for the Autonomous Database storage. The default value is `FALSE`.
         /// </summary>
-        public readonly bool IsAutoScalingForStorageEnabled;
+        public readonly bool? IsAutoScalingForStorageEnabled;
         /// <summary>
         /// **Deprecated.** Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
         /// </summary>
-        public readonly bool IsDataGuardEnabled;
+        public readonly bool? IsDataGuardEnabled;
         /// <summary>
         /// True if the database uses [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html).
         /// </summary>
-        public readonly bool IsDedicated;
+        public readonly bool? IsDedicated;
         /// <summary>
         /// Indicates if this is an Always Free resource. The default value is false. Note that Always Free Autonomous Databases have 1 CPU and 20GB of memory. For Always Free databases, memory and CPU cannot be scaled.
         /// </summary>
-        public readonly bool IsFreeTier;
+        public readonly bool? IsFreeTier;
         /// <summary>
         /// Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
         /// </summary>
-        public readonly bool IsLocalDataGuardEnabled;
+        public readonly bool? IsLocalDataGuardEnabled;
         /// <summary>
         /// Specifies if the Autonomous Database requires mTLS connections.
         /// </summary>
-        public readonly bool IsMtlsConnectionRequired;
+        public readonly bool? IsMtlsConnectionRequired;
         /// <summary>
         /// Indicates if the Autonomous Database version is a preview version.
         /// </summary>
-        public readonly bool IsPreview;
+        public readonly bool? IsPreview;
         /// <summary>
         /// Indicates if the refreshable clone can be reconnected to its source database.
         /// </summary>
-        public readonly bool IsReconnectCloneEnabled;
+        public readonly bool? IsReconnectCloneEnabled;
         /// <summary>
         /// Indicates if the Autonomous Database is a refreshable clone.
         /// </summary>
-        public readonly bool IsRefreshableClone;
+        public readonly bool? IsRefreshableClone;
         /// <summary>
         /// Indicates whether the Autonomous Database has Cross Region Data Guard enabled. Not applicable to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
         /// </summary>
-        public readonly bool IsRemoteDataGuardEnabled;
+        public readonly bool? IsRemoteDataGuardEnabled;
         /// <summary>
         /// Key History Entry.
         /// </summary>
@@ -212,39 +212,39 @@ namespace Pulumi.Oci.Database.Outputs
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
         /// </summary>
-        public readonly string KeyStoreId;
+        public readonly string? KeyStoreId;
         /// <summary>
         /// The wallet name for Oracle Key Vault.
         /// </summary>
-        public readonly string KeyStoreWalletName;
+        public readonly string? KeyStoreWalletName;
         /// <summary>
         /// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
         /// </summary>
-        public readonly string KmsKeyId;
+        public readonly string? KmsKeyId;
         /// <summary>
         /// KMS key lifecycle details.
         /// </summary>
-        public readonly string KmsKeyLifecycleDetails;
+        public readonly string? KmsKeyLifecycleDetails;
         /// <summary>
         /// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
         /// </summary>
-        public readonly string KmsKeyVersionId;
+        public readonly string? KmsKeyVersionId;
         /// <summary>
         /// The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle PaaS and IaaS services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Database service. Note that when provisioning an Autonomous Database on [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null because the attribute is already set at the Autonomous Exadata Infrastructure level. When using [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), if a value is not specified, the system will supply the value of `BRING_YOUR_OWN_LICENSE`.
         /// </summary>
-        public readonly string LicenseModel;
+        public readonly string? LicenseModel;
         /// <summary>
         /// Additional information about the current lifecycle state.
         /// </summary>
-        public readonly string LifecycleDetails;
+        public readonly string? LifecycleDetails;
         /// <summary>
         /// Parameter that allows users to select an acceptable maximum data loss limit in seconds, up to which Automatic Failover will be triggered when necessary for a Local Autonomous Data Guard
         /// </summary>
-        public readonly int LocalAdgAutoFailoverMaxDataLossLimit;
+        public readonly int? LocalAdgAutoFailoverMaxDataLossLimit;
         /// <summary>
         /// Indicates the local disaster recovery (DR) type of the Autonomous Database Serverless instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
         /// </summary>
-        public readonly string LocalDisasterRecoveryType;
+        public readonly string? LocalDisasterRecoveryType;
         /// <summary>
         /// Autonomous Data Guard standby database details.
         /// </summary>
@@ -256,19 +256,19 @@ namespace Pulumi.Oci.Database.Outputs
         /// <summary>
         /// The number of Max OCPU cores to be made available to the autonomous database with auto scaling of cpu enabled.
         /// </summary>
-        public readonly int MaxCpuCoreCount;
+        public readonly int? MaxCpuCoreCount;
         /// <summary>
         /// The amount of memory (in GBs) enabled per OCPU or ECPU. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
         /// </summary>
-        public readonly int MemoryPerOracleComputeUnitInGbs;
+        public readonly int? MemoryPerOracleComputeUnitInGbs;
         /// <summary>
         /// The national character set for the autonomous database.  The default is AL16UTF16. Allowed values are: AL16UTF16 or UTF8.
         /// </summary>
-        public readonly string NcharacterSet;
+        public readonly string? NcharacterSet;
         /// <summary>
         /// The date and time when the next long-term backup would be created.
         /// </summary>
-        public readonly string NextLongTermBackupTimeStamp;
+        public readonly string? NextLongTermBackupTimeStamp;
         /// <summary>
         /// The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
         /// * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
@@ -277,11 +277,11 @@ namespace Pulumi.Oci.Database.Outputs
         /// <summary>
         /// The number of OCPU cores to be made available to the database.
         /// </summary>
-        public readonly double OcpuCount;
+        public readonly double? OcpuCount;
         /// <summary>
         /// Indicates the Autonomous Database mode. The database can be opened in `READ_ONLY` or `READ_WRITE` mode.
         /// </summary>
-        public readonly string OpenMode;
+        public readonly string? OpenMode;
         /// <summary>
         /// The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of standby databases located in Autonomous Data Guard remote regions that are associated with the source database. Note that for shared Exadata infrastructure, standby databases located in the same region as the source primary database do not have OCIDs.
         /// </summary>
@@ -289,15 +289,15 @@ namespace Pulumi.Oci.Database.Outputs
         /// <summary>
         /// The private endpoint for the resource.
         /// </summary>
-        public readonly string PrivateEndpoint;
+        public readonly string? PrivateEndpoint;
         /// <summary>
         /// The private endpoint Ip address for the resource.
         /// </summary>
-        public readonly string PrivateEndpointIp;
+        public readonly string? PrivateEndpointIp;
         /// <summary>
         /// The resource's private endpoint label. Setting this to an empty string, after the creation of the private endpoint database, changes the private endpoint database to a public endpoint database.
         /// </summary>
-        public readonly string PrivateEndpointLabel;
+        public readonly string? PrivateEndpointLabel;
         /// <summary>
         /// An array of CPU values that an Autonomous Database can be scaled to.
         /// </summary>
@@ -305,11 +305,11 @@ namespace Pulumi.Oci.Database.Outputs
         /// <summary>
         /// The refresh mode of the clone. AUTOMATIC indicates that the clone is automatically being refreshed with data from the source Autonomous Database.
         /// </summary>
-        public readonly string RefreshableMode;
+        public readonly string? RefreshableMode;
         /// <summary>
         /// The refresh status of the clone. REFRESHING indicates that the clone is currently being refreshed with data from the source Autonomous Database.
         /// </summary>
-        public readonly string RefreshableStatus;
+        public readonly string? RefreshableStatus;
         /// <summary>
         /// Configurations of a Disaster Recovery.
         /// </summary>
@@ -317,7 +317,7 @@ namespace Pulumi.Oci.Database.Outputs
         /// <summary>
         /// The unique identifier for leader autonomous database OCID [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
-        public readonly string ResourcePoolLeaderId;
+        public readonly string? ResourcePoolLeaderId;
         /// <summary>
         /// The configuration details for resource pool
         /// </summary>
@@ -325,7 +325,7 @@ namespace Pulumi.Oci.Database.Outputs
         /// <summary>
         /// The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
         /// </summary>
-        public readonly string Role;
+        public readonly string? Role;
         /// <summary>
         /// The list of scheduled operations.
         /// </summary>
@@ -333,11 +333,11 @@ namespace Pulumi.Oci.Database.Outputs
         /// <summary>
         /// The URL of the Service Console for the Autonomous Database.
         /// </summary>
-        public readonly string ServiceConsoleUrl;
+        public readonly string? ServiceConsoleUrl;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source Autonomous Database that was cloned to create the current Autonomous Database.
         /// </summary>
-        public readonly string SourceId;
+        public readonly string? SourceId;
         /// <summary>
         /// **Deprecated** Autonomous Data Guard standby database details.
         /// </summary>
@@ -349,11 +349,11 @@ namespace Pulumi.Oci.Database.Outputs
         /// <summary>
         /// A filter to return only resources that match the given lifecycle state exactly.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the resource is associated with.
         /// </summary>
-        public readonly string SubnetId;
+        public readonly string? SubnetId;
         /// <summary>
         /// The list of regions that support the creation of an Autonomous Database clone or an Autonomous Data Guard standby database.
         /// </summary>
@@ -361,80 +361,80 @@ namespace Pulumi.Oci.Database.Outputs
         /// <summary>
         /// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         /// </summary>
-        public readonly ImmutableDictionary<string, object> SystemTags;
+        public readonly ImmutableDictionary<string, object>? SystemTags;
         /// <summary>
         /// The date and time the Autonomous Database was created.
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The date and time the Autonomous Data Guard role was switched for the Autonomous Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the "primary" role in the primary Data Guard region, or database located in the remote Data Guard standby region.
         /// </summary>
-        public readonly string TimeDataGuardRoleChanged;
+        public readonly string? TimeDataGuardRoleChanged;
         /// <summary>
         /// The date and time the Always Free database will be automatically deleted because of inactivity. If the database is in the STOPPED state and without activity until this time, it will be deleted.
         /// </summary>
-        public readonly string TimeDeletionOfFreeAutonomousDatabase;
+        public readonly string? TimeDeletionOfFreeAutonomousDatabase;
         /// <summary>
         /// The date and time the Disaster Recovery role was switched for the standby Autonomous Database.
         /// </summary>
-        public readonly string TimeDisasterRecoveryRoleChanged;
+        public readonly string? TimeDisasterRecoveryRoleChanged;
         /// <summary>
         /// The date and time that Autonomous Data Guard was enabled for an Autonomous Database where the standby was provisioned in the same region as the primary database.
         /// </summary>
-        public readonly string TimeLocalDataGuardEnabled;
+        public readonly string? TimeLocalDataGuardEnabled;
         /// <summary>
         /// The date and time when maintenance will begin.
         /// </summary>
-        public readonly string TimeMaintenanceBegin;
+        public readonly string? TimeMaintenanceBegin;
         /// <summary>
         /// The date and time when maintenance will end.
         /// </summary>
-        public readonly string TimeMaintenanceEnd;
-        public readonly string TimeOfJoiningResourcePool;
+        public readonly string? TimeMaintenanceEnd;
+        public readonly string? TimeOfJoiningResourcePool;
         /// <summary>
         /// The timestamp of the last failover operation.
         /// </summary>
-        public readonly string TimeOfLastFailover;
+        public readonly string? TimeOfLastFailover;
         /// <summary>
         /// The date and time when last refresh happened.
         /// </summary>
-        public readonly string TimeOfLastRefresh;
+        public readonly string? TimeOfLastRefresh;
         /// <summary>
         /// The refresh point timestamp (UTC). The refresh point is the time to which the database was most recently refreshed. Data created after the refresh point is not included in the refresh.
         /// </summary>
-        public readonly string TimeOfLastRefreshPoint;
+        public readonly string? TimeOfLastRefreshPoint;
         /// <summary>
         /// The timestamp of the last switchover operation for the Autonomous Database.
         /// </summary>
-        public readonly string TimeOfLastSwitchover;
+        public readonly string? TimeOfLastSwitchover;
         /// <summary>
         /// The date and time of next refresh.
         /// </summary>
-        public readonly string TimeOfNextRefresh;
+        public readonly string? TimeOfNextRefresh;
         /// <summary>
         /// The date and time the Always Free database will be stopped because of inactivity. If this time is reached without any database activity, the database will automatically be put into the STOPPED state.
         /// </summary>
-        public readonly string TimeReclamationOfFreeAutonomousDatabase;
+        public readonly string? TimeReclamationOfFreeAutonomousDatabase;
         /// <summary>
         /// The time and date as an RFC3339 formatted string, e.g., 2022-01-01T12:00:00.000Z, to set the limit for a refreshable clone to be reconnected to its source database.
         /// </summary>
-        public readonly string TimeUntilReconnectCloneEnabled;
+        public readonly string? TimeUntilReconnectCloneEnabled;
         /// <summary>
         /// The backup storage to the database.
         /// </summary>
-        public readonly double TotalBackupStorageSizeInGbs;
+        public readonly double? TotalBackupStorageSizeInGbs;
         /// <summary>
         /// The storage space consumed by Autonomous Database in GBs.
         /// </summary>
-        public readonly int UsedDataStorageSizeInGbs;
+        public readonly int? UsedDataStorageSizeInGbs;
         /// <summary>
         /// The amount of storage that has been used, in terabytes.
         /// </summary>
-        public readonly int UsedDataStorageSizeInTbs;
+        public readonly int? UsedDataStorageSizeInTbs;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
         /// </summary>
-        public readonly string VaultId;
+        public readonly string? VaultId;
         /// <summary>
         /// The client IP access control list (ACL). This feature is available for [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance.
         /// </summary>
@@ -442,215 +442,215 @@ namespace Pulumi.Oci.Database.Outputs
 
         [OutputConstructor]
         private GetAutonomousDatabasesClonesAutonomousDatabaseResult(
-            double actualUsedDataStorageSizeInTbs,
+            double? actualUsedDataStorageSizeInTbs,
 
-            double allocatedStorageSizeInTbs,
+            double? allocatedStorageSizeInTbs,
 
             ImmutableArray<Outputs.GetAutonomousDatabasesClonesAutonomousDatabaseApexDetailResult> apexDetails,
 
-            bool arePrimaryWhitelistedIpsUsed,
+            bool? arePrimaryWhitelistedIpsUsed,
 
-            string autonomousContainerDatabaseId,
+            string? autonomousContainerDatabaseId,
 
-            string autonomousMaintenanceScheduleType,
+            string? autonomousMaintenanceScheduleType,
 
             ImmutableArray<string> availableUpgradeVersions,
 
             ImmutableArray<Outputs.GetAutonomousDatabasesClonesAutonomousDatabaseBackupConfigResult> backupConfigs,
 
-            int backupRetentionPeriodInDays,
+            int? backupRetentionPeriodInDays,
 
-            string characterSet,
+            string? characterSet,
 
-            string compartmentId,
+            string? compartmentId,
 
-            double computeCount,
+            double? computeCount,
 
-            string computeModel,
+            string? computeModel,
 
             ImmutableArray<Outputs.GetAutonomousDatabasesClonesAutonomousDatabaseConnectionStringResult> connectionStrings,
 
             ImmutableArray<Outputs.GetAutonomousDatabasesClonesAutonomousDatabaseConnectionUrlResult> connectionUrls,
 
-            int cpuCoreCount,
+            int? cpuCoreCount,
 
             ImmutableArray<Outputs.GetAutonomousDatabasesClonesAutonomousDatabaseCustomerContactResult> customerContacts,
 
-            string dataSafeStatus,
+            string? dataSafeStatus,
 
-            int dataStorageSizeInGb,
+            int? dataStorageSizeInGb,
 
-            int dataStorageSizeInTbs,
+            int? dataStorageSizeInTbs,
 
-            string databaseEdition,
+            string? databaseEdition,
 
-            string databaseManagementStatus,
+            string? databaseManagementStatus,
 
-            string dataguardRegionType,
+            string? dataguardRegionType,
 
-            string dbName,
+            string? dbName,
 
-            string dbVersion,
+            string? dbVersion,
 
-            string dbWorkload,
+            string? dbWorkload,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string disasterRecoveryRegionType,
+            string? disasterRecoveryRegionType,
 
-            string displayName,
+            string? displayName,
 
-            int failedDataRecoveryInSeconds,
+            int? failedDataRecoveryInSeconds,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string id,
+            string? id,
 
-            int inMemoryAreaInGbs,
+            int? inMemoryAreaInGbs,
 
-            int inMemoryPercentage,
+            int? inMemoryPercentage,
 
-            string infrastructureType,
+            string? infrastructureType,
 
-            bool isAccessControlEnabled,
+            bool? isAccessControlEnabled,
 
-            bool isAutoScalingEnabled,
+            bool? isAutoScalingEnabled,
 
-            bool isAutoScalingForStorageEnabled,
+            bool? isAutoScalingForStorageEnabled,
 
-            bool isDataGuardEnabled,
+            bool? isDataGuardEnabled,
 
-            bool isDedicated,
+            bool? isDedicated,
 
-            bool isFreeTier,
+            bool? isFreeTier,
 
-            bool isLocalDataGuardEnabled,
+            bool? isLocalDataGuardEnabled,
 
-            bool isMtlsConnectionRequired,
+            bool? isMtlsConnectionRequired,
 
-            bool isPreview,
+            bool? isPreview,
 
-            bool isReconnectCloneEnabled,
+            bool? isReconnectCloneEnabled,
 
-            bool isRefreshableClone,
+            bool? isRefreshableClone,
 
-            bool isRemoteDataGuardEnabled,
+            bool? isRemoteDataGuardEnabled,
 
             ImmutableArray<Outputs.GetAutonomousDatabasesClonesAutonomousDatabaseKeyHistoryEntryResult> keyHistoryEntries,
 
-            string keyStoreId,
+            string? keyStoreId,
 
-            string keyStoreWalletName,
+            string? keyStoreWalletName,
 
-            string kmsKeyId,
+            string? kmsKeyId,
 
-            string kmsKeyLifecycleDetails,
+            string? kmsKeyLifecycleDetails,
 
-            string kmsKeyVersionId,
+            string? kmsKeyVersionId,
 
-            string licenseModel,
+            string? licenseModel,
 
-            string lifecycleDetails,
+            string? lifecycleDetails,
 
-            int localAdgAutoFailoverMaxDataLossLimit,
+            int? localAdgAutoFailoverMaxDataLossLimit,
 
-            string localDisasterRecoveryType,
+            string? localDisasterRecoveryType,
 
             ImmutableArray<Outputs.GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDbResult> localStandbyDbs,
 
             ImmutableArray<Outputs.GetAutonomousDatabasesClonesAutonomousDatabaseLongTermBackupScheduleResult> longTermBackupSchedules,
 
-            int maxCpuCoreCount,
+            int? maxCpuCoreCount,
 
-            int memoryPerOracleComputeUnitInGbs,
+            int? memoryPerOracleComputeUnitInGbs,
 
-            string ncharacterSet,
+            string? ncharacterSet,
 
-            string nextLongTermBackupTimeStamp,
+            string? nextLongTermBackupTimeStamp,
 
             ImmutableArray<string> nsgIds,
 
-            double ocpuCount,
+            double? ocpuCount,
 
-            string openMode,
+            string? openMode,
 
             ImmutableArray<string> peerDbIds,
 
-            string privateEndpoint,
+            string? privateEndpoint,
 
-            string privateEndpointIp,
+            string? privateEndpointIp,
 
-            string privateEndpointLabel,
+            string? privateEndpointLabel,
 
             ImmutableArray<double> provisionableCpuses,
 
-            string refreshableMode,
+            string? refreshableMode,
 
-            string refreshableStatus,
+            string? refreshableStatus,
 
             ImmutableArray<Outputs.GetAutonomousDatabasesClonesAutonomousDatabaseRemoteDisasterRecoveryConfigurationResult> remoteDisasterRecoveryConfigurations,
 
-            string resourcePoolLeaderId,
+            string? resourcePoolLeaderId,
 
             ImmutableArray<Outputs.GetAutonomousDatabasesClonesAutonomousDatabaseResourcePoolSummaryResult> resourcePoolSummaries,
 
-            string role,
+            string? role,
 
             ImmutableArray<Outputs.GetAutonomousDatabasesClonesAutonomousDatabaseScheduledOperationResult> scheduledOperations,
 
-            string serviceConsoleUrl,
+            string? serviceConsoleUrl,
 
-            string sourceId,
+            string? sourceId,
 
             ImmutableArray<Outputs.GetAutonomousDatabasesClonesAutonomousDatabaseStandbyDbResult> standbyDbs,
 
             ImmutableArray<string> standbyWhitelistedIps,
 
-            string state,
+            string? state,
 
-            string subnetId,
+            string? subnetId,
 
             ImmutableArray<string> supportedRegionsToCloneTos,
 
-            ImmutableDictionary<string, object> systemTags,
+            ImmutableDictionary<string, object>? systemTags,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeDataGuardRoleChanged,
+            string? timeDataGuardRoleChanged,
 
-            string timeDeletionOfFreeAutonomousDatabase,
+            string? timeDeletionOfFreeAutonomousDatabase,
 
-            string timeDisasterRecoveryRoleChanged,
+            string? timeDisasterRecoveryRoleChanged,
 
-            string timeLocalDataGuardEnabled,
+            string? timeLocalDataGuardEnabled,
 
-            string timeMaintenanceBegin,
+            string? timeMaintenanceBegin,
 
-            string timeMaintenanceEnd,
+            string? timeMaintenanceEnd,
 
-            string timeOfJoiningResourcePool,
+            string? timeOfJoiningResourcePool,
 
-            string timeOfLastFailover,
+            string? timeOfLastFailover,
 
-            string timeOfLastRefresh,
+            string? timeOfLastRefresh,
 
-            string timeOfLastRefreshPoint,
+            string? timeOfLastRefreshPoint,
 
-            string timeOfLastSwitchover,
+            string? timeOfLastSwitchover,
 
-            string timeOfNextRefresh,
+            string? timeOfNextRefresh,
 
-            string timeReclamationOfFreeAutonomousDatabase,
+            string? timeReclamationOfFreeAutonomousDatabase,
 
-            string timeUntilReconnectCloneEnabled,
+            string? timeUntilReconnectCloneEnabled,
 
-            double totalBackupStorageSizeInGbs,
+            double? totalBackupStorageSizeInGbs,
 
-            int usedDataStorageSizeInGbs,
+            int? usedDataStorageSizeInGbs,
 
-            int usedDataStorageSizeInTbs,
+            int? usedDataStorageSizeInTbs,
 
-            string vaultId,
+            string? vaultId,
 
             ImmutableArray<string> whitelistedIps)
         {

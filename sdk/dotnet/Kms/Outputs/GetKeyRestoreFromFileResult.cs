@@ -16,23 +16,23 @@ namespace Pulumi.Oci.Kms.Outputs
         /// <summary>
         /// content length of key's backup binary file
         /// </summary>
-        public readonly string ContentLength;
+        public readonly string? ContentLength;
         /// <summary>
         /// content md5 hashed value of key's backup file
         /// </summary>
-        public readonly string ContentMd5;
+        public readonly string? ContentMd5;
         /// <summary>
         /// Key backup file content
         /// </summary>
-        public readonly string RestoreKeyFromFileDetails;
+        public readonly string? RestoreKeyFromFileDetails;
 
         [OutputConstructor]
         private GetKeyRestoreFromFileResult(
-            string contentLength,
+            string? contentLength,
 
-            string contentMd5,
+            string? contentMd5,
 
-            string restoreKeyFromFileDetails)
+            string? restoreKeyFromFileDetails)
         {
             ContentLength = contentLength;
             ContentMd5 = contentMd5;

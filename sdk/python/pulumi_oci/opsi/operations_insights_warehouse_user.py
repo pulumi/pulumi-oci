@@ -25,19 +25,6 @@ class OperationsInsightsWarehouseUserArgs:
                  name: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a OperationsInsightsWarehouseUser resource.
-        :param pulumi.Input[str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param pulumi.Input[str] connection_password: (Updatable) User provided connection password for the AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
-        :param pulumi.Input[bool] is_awr_data_access: (Updatable) Indicate whether user has access to AWR data.
-        :param pulumi.Input[str] operations_insights_warehouse_id: OPSI Warehouse OCID
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[bool] is_em_data_access: (Updatable) Indicate whether user has access to EM data.
-        :param pulumi.Input[bool] is_opsi_data_access: (Updatable) Indicate whether user has access to OPSI data.
-        :param pulumi.Input[str] name: Username for schema which would have access to AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "connection_password", connection_password)
@@ -57,9 +44,6 @@ class OperationsInsightsWarehouseUserArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -69,9 +53,6 @@ class OperationsInsightsWarehouseUserArgs:
     @property
     @pulumi.getter(name="connectionPassword")
     def connection_password(self) -> pulumi.Input[str]:
-        """
-        (Updatable) User provided connection password for the AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
-        """
         return pulumi.get(self, "connection_password")
 
     @connection_password.setter
@@ -81,9 +62,6 @@ class OperationsInsightsWarehouseUserArgs:
     @property
     @pulumi.getter(name="isAwrDataAccess")
     def is_awr_data_access(self) -> pulumi.Input[bool]:
-        """
-        (Updatable) Indicate whether user has access to AWR data.
-        """
         return pulumi.get(self, "is_awr_data_access")
 
     @is_awr_data_access.setter
@@ -93,13 +71,6 @@ class OperationsInsightsWarehouseUserArgs:
     @property
     @pulumi.getter(name="operationsInsightsWarehouseId")
     def operations_insights_warehouse_id(self) -> pulumi.Input[str]:
-        """
-        OPSI Warehouse OCID
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "operations_insights_warehouse_id")
 
     @operations_insights_warehouse_id.setter
@@ -109,9 +80,6 @@ class OperationsInsightsWarehouseUserArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -121,9 +89,6 @@ class OperationsInsightsWarehouseUserArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -133,9 +98,6 @@ class OperationsInsightsWarehouseUserArgs:
     @property
     @pulumi.getter(name="isEmDataAccess")
     def is_em_data_access(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Indicate whether user has access to EM data.
-        """
         return pulumi.get(self, "is_em_data_access")
 
     @is_em_data_access.setter
@@ -145,9 +107,6 @@ class OperationsInsightsWarehouseUserArgs:
     @property
     @pulumi.getter(name="isOpsiDataAccess")
     def is_opsi_data_access(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Indicate whether user has access to OPSI data.
-        """
         return pulumi.get(self, "is_opsi_data_access")
 
     @is_opsi_data_access.setter
@@ -157,9 +116,6 @@ class OperationsInsightsWarehouseUserArgs:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        Username for schema which would have access to AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -186,24 +142,6 @@ class _OperationsInsightsWarehouseUserState:
                  time_updated: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering OperationsInsightsWarehouseUser resources.
-        :param pulumi.Input[str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param pulumi.Input[str] connection_password: (Updatable) User provided connection password for the AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[bool] is_awr_data_access: (Updatable) Indicate whether user has access to AWR data.
-        :param pulumi.Input[bool] is_em_data_access: (Updatable) Indicate whether user has access to EM data.
-        :param pulumi.Input[bool] is_opsi_data_access: (Updatable) Indicate whether user has access to OPSI data.
-        :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        :param pulumi.Input[str] name: Username for schema which would have access to AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
-        :param pulumi.Input[str] operations_insights_warehouse_id: OPSI Warehouse OCID
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] state: Possible lifecycle states
-        :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[str] time_created: The time at which the resource was first created. An RFC3339 formatted datetime string
-        :param pulumi.Input[str] time_updated: The time at which the resource was last updated. An RFC3339 formatted datetime string
         """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
@@ -237,9 +175,6 @@ class _OperationsInsightsWarehouseUserState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -249,9 +184,6 @@ class _OperationsInsightsWarehouseUserState:
     @property
     @pulumi.getter(name="connectionPassword")
     def connection_password(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) User provided connection password for the AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
-        """
         return pulumi.get(self, "connection_password")
 
     @connection_password.setter
@@ -261,9 +193,6 @@ class _OperationsInsightsWarehouseUserState:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -273,9 +202,6 @@ class _OperationsInsightsWarehouseUserState:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -285,9 +211,6 @@ class _OperationsInsightsWarehouseUserState:
     @property
     @pulumi.getter(name="isAwrDataAccess")
     def is_awr_data_access(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Indicate whether user has access to AWR data.
-        """
         return pulumi.get(self, "is_awr_data_access")
 
     @is_awr_data_access.setter
@@ -297,9 +220,6 @@ class _OperationsInsightsWarehouseUserState:
     @property
     @pulumi.getter(name="isEmDataAccess")
     def is_em_data_access(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Indicate whether user has access to EM data.
-        """
         return pulumi.get(self, "is_em_data_access")
 
     @is_em_data_access.setter
@@ -309,9 +229,6 @@ class _OperationsInsightsWarehouseUserState:
     @property
     @pulumi.getter(name="isOpsiDataAccess")
     def is_opsi_data_access(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Indicate whether user has access to OPSI data.
-        """
         return pulumi.get(self, "is_opsi_data_access")
 
     @is_opsi_data_access.setter
@@ -321,9 +238,6 @@ class _OperationsInsightsWarehouseUserState:
     @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> Optional[pulumi.Input[str]]:
-        """
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
@@ -333,9 +247,6 @@ class _OperationsInsightsWarehouseUserState:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        Username for schema which would have access to AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -345,13 +256,6 @@ class _OperationsInsightsWarehouseUserState:
     @property
     @pulumi.getter(name="operationsInsightsWarehouseId")
     def operations_insights_warehouse_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        OPSI Warehouse OCID
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "operations_insights_warehouse_id")
 
     @operations_insights_warehouse_id.setter
@@ -361,9 +265,6 @@ class _OperationsInsightsWarehouseUserState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        Possible lifecycle states
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -373,9 +274,6 @@ class _OperationsInsightsWarehouseUserState:
     @property
     @pulumi.getter(name="systemTags")
     def system_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
@@ -385,9 +283,6 @@ class _OperationsInsightsWarehouseUserState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The time at which the resource was first created. An RFC3339 formatted datetime string
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -397,9 +292,6 @@ class _OperationsInsightsWarehouseUserState:
     @property
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> Optional[pulumi.Input[str]]:
-        """
-        The time at which the resource was last updated. An RFC3339 formatted datetime string
-        """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
@@ -423,55 +315,9 @@ class OperationsInsightsWarehouseUser(pulumi.CustomResource):
                  operations_insights_warehouse_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Operations Insights Warehouse User resource in Oracle Cloud Infrastructure Opsi service.
-
-        Create a Operations Insights Warehouse user resource for the tenant in Operations Insights.
-        This resource will be created in root compartment.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_operations_insights_warehouse_user = oci.opsi.OperationsInsightsWarehouseUser("testOperationsInsightsWarehouseUser",
-            compartment_id=var["compartment_id"],
-            connection_password=var["operations_insights_warehouse_user_connection_password"],
-            is_awr_data_access=var["operations_insights_warehouse_user_is_awr_data_access"],
-            operations_insights_warehouse_id=oci_opsi_operations_insights_warehouse["test_operations_insights_warehouse"]["id"],
-            defined_tags={
-                "foo-namespace.bar-key": "value",
-            },
-            freeform_tags={
-                "bar-key": "value",
-            },
-            is_em_data_access=var["operations_insights_warehouse_user_is_em_data_access"],
-            is_opsi_data_access=var["operations_insights_warehouse_user_is_opsi_data_access"])
-        ```
-
-        ## Import
-
-        OperationsInsightsWarehouseUsers can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Opsi/operationsInsightsWarehouseUser:OperationsInsightsWarehouseUser test_operations_insights_warehouse_user "id"
-        ```
-
+        Create a OperationsInsightsWarehouseUser resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param pulumi.Input[str] connection_password: (Updatable) User provided connection password for the AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[bool] is_awr_data_access: (Updatable) Indicate whether user has access to AWR data.
-        :param pulumi.Input[bool] is_em_data_access: (Updatable) Indicate whether user has access to EM data.
-        :param pulumi.Input[bool] is_opsi_data_access: (Updatable) Indicate whether user has access to OPSI data.
-        :param pulumi.Input[str] name: Username for schema which would have access to AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
-        :param pulumi.Input[str] operations_insights_warehouse_id: OPSI Warehouse OCID
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -480,40 +326,7 @@ class OperationsInsightsWarehouseUser(pulumi.CustomResource):
                  args: OperationsInsightsWarehouseUserArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Operations Insights Warehouse User resource in Oracle Cloud Infrastructure Opsi service.
-
-        Create a Operations Insights Warehouse user resource for the tenant in Operations Insights.
-        This resource will be created in root compartment.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_operations_insights_warehouse_user = oci.opsi.OperationsInsightsWarehouseUser("testOperationsInsightsWarehouseUser",
-            compartment_id=var["compartment_id"],
-            connection_password=var["operations_insights_warehouse_user_connection_password"],
-            is_awr_data_access=var["operations_insights_warehouse_user_is_awr_data_access"],
-            operations_insights_warehouse_id=oci_opsi_operations_insights_warehouse["test_operations_insights_warehouse"]["id"],
-            defined_tags={
-                "foo-namespace.bar-key": "value",
-            },
-            freeform_tags={
-                "bar-key": "value",
-            },
-            is_em_data_access=var["operations_insights_warehouse_user_is_em_data_access"],
-            is_opsi_data_access=var["operations_insights_warehouse_user_is_opsi_data_access"])
-        ```
-
-        ## Import
-
-        OperationsInsightsWarehouseUsers can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Opsi/operationsInsightsWarehouseUser:OperationsInsightsWarehouseUser test_operations_insights_warehouse_user "id"
-        ```
-
+        Create a OperationsInsightsWarehouseUser resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param OperationsInsightsWarehouseUserArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -602,24 +415,6 @@ class OperationsInsightsWarehouseUser(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param pulumi.Input[str] connection_password: (Updatable) User provided connection password for the AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[bool] is_awr_data_access: (Updatable) Indicate whether user has access to AWR data.
-        :param pulumi.Input[bool] is_em_data_access: (Updatable) Indicate whether user has access to EM data.
-        :param pulumi.Input[bool] is_opsi_data_access: (Updatable) Indicate whether user has access to OPSI data.
-        :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        :param pulumi.Input[str] name: Username for schema which would have access to AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
-        :param pulumi.Input[str] operations_insights_warehouse_id: OPSI Warehouse OCID
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] state: Possible lifecycle states
-        :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[str] time_created: The time at which the resource was first created. An RFC3339 formatted datetime string
-        :param pulumi.Input[str] time_updated: The time at which the resource was last updated. An RFC3339 formatted datetime string
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -644,116 +439,70 @@ class OperationsInsightsWarehouseUser(pulumi.CustomResource):
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="connectionPassword")
     def connection_password(self) -> pulumi.Output[str]:
-        """
-        (Updatable) User provided connection password for the AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
-        """
         return pulumi.get(self, "connection_password")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="isAwrDataAccess")
     def is_awr_data_access(self) -> pulumi.Output[bool]:
-        """
-        (Updatable) Indicate whether user has access to AWR data.
-        """
         return pulumi.get(self, "is_awr_data_access")
 
     @property
     @pulumi.getter(name="isEmDataAccess")
-    def is_em_data_access(self) -> pulumi.Output[bool]:
-        """
-        (Updatable) Indicate whether user has access to EM data.
-        """
+    def is_em_data_access(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "is_em_data_access")
 
     @property
     @pulumi.getter(name="isOpsiDataAccess")
-    def is_opsi_data_access(self) -> pulumi.Output[bool]:
-        """
-        (Updatable) Indicate whether user has access to OPSI data.
-        """
+    def is_opsi_data_access(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "is_opsi_data_access")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> pulumi.Output[str]:
-        """
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        """
+    def lifecycle_details(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter
     def name(self) -> pulumi.Output[str]:
-        """
-        Username for schema which would have access to AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
-        """
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="operationsInsightsWarehouseId")
     def operations_insights_warehouse_id(self) -> pulumi.Output[str]:
-        """
-        OPSI Warehouse OCID
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "operations_insights_warehouse_id")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        Possible lifecycle states
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        The time at which the resource was first created. An RFC3339 formatted datetime string
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> pulumi.Output[str]:
-        """
-        The time at which the resource was last updated. An RFC3339 formatted datetime string
-        """
+    def time_updated(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_updated")
 

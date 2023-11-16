@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Tunnel Security Associations in Oracle Cloud Infrastructure Core service.
@@ -65,9 +64,9 @@ type GetTunnelSecurityAssociationsArgs struct {
 type GetTunnelSecurityAssociationsResult struct {
 	Filters []GetTunnelSecurityAssociationsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id       string `pulumi:"id"`
-	IpsecId  string `pulumi:"ipsecId"`
-	TunnelId string `pulumi:"tunnelId"`
+	Id       *string `pulumi:"id"`
+	IpsecId  string  `pulumi:"ipsecId"`
+	TunnelId string  `pulumi:"tunnelId"`
 	// The list of tunnel_security_associations.
 	TunnelSecurityAssociations []GetTunnelSecurityAssociationsTunnelSecurityAssociation `pulumi:"tunnelSecurityAssociations"`
 }
@@ -113,19 +112,13 @@ func (o GetTunnelSecurityAssociationsResultOutput) ToGetTunnelSecurityAssociatio
 	return o
 }
 
-func (o GetTunnelSecurityAssociationsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetTunnelSecurityAssociationsResult] {
-	return pulumix.Output[GetTunnelSecurityAssociationsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetTunnelSecurityAssociationsResultOutput) Filters() GetTunnelSecurityAssociationsFilterArrayOutput {
 	return o.ApplyT(func(v GetTunnelSecurityAssociationsResult) []GetTunnelSecurityAssociationsFilter { return v.Filters }).(GetTunnelSecurityAssociationsFilterArrayOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetTunnelSecurityAssociationsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetTunnelSecurityAssociationsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetTunnelSecurityAssociationsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetTunnelSecurityAssociationsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetTunnelSecurityAssociationsResultOutput) IpsecId() pulumi.StringOutput {

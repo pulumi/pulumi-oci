@@ -57,31 +57,31 @@ namespace Pulumi.Oci.Identity
         /// The detailed status of INACTIVE lifecycleState.
         /// </summary>
         [Output("inactiveState")]
-        public Output<string> InactiveState { get; private set; } = null!;
+        public Output<string?> InactiveState { get; private set; } = null!;
 
         /// <summary>
         /// The SMTP password.
         /// </summary>
         [Output("password")]
-        public Output<string> Password { get; private set; } = null!;
+        public Output<string?> Password { get; private set; } = null!;
 
         /// <summary>
         /// The credential's current state.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// Date and time the `SmtpCredential` object was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// Date and time when this credential will expire, in the format defined by RFC3339. Null if it never expires.  Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
         [Output("timeExpires")]
-        public Output<string> TimeExpires { get; private set; } = null!;
+        public Output<string?> TimeExpires { get; private set; } = null!;
 
         /// <summary>
         /// The OCID of the user.
@@ -97,7 +97,7 @@ namespace Pulumi.Oci.Identity
         /// The SMTP user name.
         /// </summary>
         [Output("username")]
-        public Output<string> Username { get; private set; } = null!;
+        public Output<string?> Username { get; private set; } = null!;
 
 
         /// <summary>

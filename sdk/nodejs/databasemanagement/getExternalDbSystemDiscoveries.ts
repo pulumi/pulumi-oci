@@ -63,12 +63,12 @@ export interface GetExternalDbSystemDiscoveriesResult {
     /**
      * The list of external_db_system_discovery_collection.
      */
-    readonly externalDbSystemDiscoveryCollections: outputs.DatabaseManagement.GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollection[];
+    readonly externalDbSystemDiscoveryCollections?: outputs.DatabaseManagement.GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollection[];
     readonly filters?: outputs.DatabaseManagement.GetExternalDbSystemDiscoveriesFilter[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
 }
 /**
  * This data source provides the list of External Db System Discoveries in Oracle Cloud Infrastructure Database Management service.

@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Zone resource in Oracle Cloud Infrastructure DNS service.
@@ -93,24 +92,24 @@ type Zone struct {
 	// **Example:** `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// A Boolean flag indicating whether or not parts of the resource are unable to be explicitly managed.
-	IsProtected pulumi.BoolOutput `pulumi:"isProtected"`
+	IsProtected pulumi.BoolPtrOutput `pulumi:"isProtected"`
 	// The name of the zone.
 	Name pulumi.StringOutput `pulumi:"name"`
 	// The authoritative nameservers for the zone.
 	Nameservers ZoneNameserverArrayOutput `pulumi:"nameservers"`
 	// Specifies to operate only on resources that have a matching DNS scope.
 	// This value will be null for zones in the global DNS and `PRIVATE` when creating a private zone.
-	Scope pulumi.StringOutput `pulumi:"scope"`
+	Scope pulumi.StringPtrOutput `pulumi:"scope"`
 	// The canonical absolute URL of the resource.
-	Self pulumi.StringOutput `pulumi:"self"`
+	Self pulumi.StringPtrOutput `pulumi:"self"`
 	// The current serial of the zone. As seen in the zone's SOA record.
-	Serial pulumi.IntOutput `pulumi:"serial"`
+	Serial pulumi.IntPtrOutput `pulumi:"serial"`
 	// The current state of the zone resource.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// Version is the never-repeating, totally-orderable, version of the zone, from which the serial field of the zone's SOA record is derived.
-	Version pulumi.StringOutput `pulumi:"version"`
+	Version pulumi.StringPtrOutput `pulumi:"version"`
 	// The OCID of the private view containing the zone. This value will be null for zones in the global DNS, which are publicly resolvable and not part of a private view.
 	ViewId pulumi.StringPtrOutput `pulumi:"viewId"`
 	// The Oracle Cloud Infrastructure nameservers that transfer the zone data with external nameservers.
@@ -333,12 +332,6 @@ func (i *Zone) ToZoneOutputWithContext(ctx context.Context) ZoneOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ZoneOutput)
 }
 
-func (i *Zone) ToOutput(ctx context.Context) pulumix.Output[*Zone] {
-	return pulumix.Output[*Zone]{
-		OutputState: i.ToZoneOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ZoneArrayInput is an input type that accepts ZoneArray and ZoneArrayOutput values.
 // You can construct a concrete instance of `ZoneArrayInput` via:
 //
@@ -362,12 +355,6 @@ func (i ZoneArray) ToZoneArrayOutput() ZoneArrayOutput {
 
 func (i ZoneArray) ToZoneArrayOutputWithContext(ctx context.Context) ZoneArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ZoneArrayOutput)
-}
-
-func (i ZoneArray) ToOutput(ctx context.Context) pulumix.Output[[]*Zone] {
-	return pulumix.Output[[]*Zone]{
-		OutputState: i.ToZoneArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // ZoneMapInput is an input type that accepts ZoneMap and ZoneMapOutput values.
@@ -395,12 +382,6 @@ func (i ZoneMap) ToZoneMapOutputWithContext(ctx context.Context) ZoneMapOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ZoneMapOutput)
 }
 
-func (i ZoneMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*Zone] {
-	return pulumix.Output[map[string]*Zone]{
-		OutputState: i.ToZoneMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ZoneOutput struct{ *pulumi.OutputState }
 
 func (ZoneOutput) ElementType() reflect.Type {
@@ -413,12 +394,6 @@ func (o ZoneOutput) ToZoneOutput() ZoneOutput {
 
 func (o ZoneOutput) ToZoneOutputWithContext(ctx context.Context) ZoneOutput {
 	return o
-}
-
-func (o ZoneOutput) ToOutput(ctx context.Context) pulumix.Output[*Zone] {
-	return pulumix.Output[*Zone]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The OCID of the compartment the resource belongs to.
@@ -451,8 +426,8 @@ func (o ZoneOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // A Boolean flag indicating whether or not parts of the resource are unable to be explicitly managed.
-func (o ZoneOutput) IsProtected() pulumi.BoolOutput {
-	return o.ApplyT(func(v *Zone) pulumi.BoolOutput { return v.IsProtected }).(pulumi.BoolOutput)
+func (o ZoneOutput) IsProtected() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *Zone) pulumi.BoolPtrOutput { return v.IsProtected }).(pulumi.BoolPtrOutput)
 }
 
 // The name of the zone.
@@ -467,33 +442,33 @@ func (o ZoneOutput) Nameservers() ZoneNameserverArrayOutput {
 
 // Specifies to operate only on resources that have a matching DNS scope.
 // This value will be null for zones in the global DNS and `PRIVATE` when creating a private zone.
-func (o ZoneOutput) Scope() pulumi.StringOutput {
-	return o.ApplyT(func(v *Zone) pulumi.StringOutput { return v.Scope }).(pulumi.StringOutput)
+func (o ZoneOutput) Scope() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Zone) pulumi.StringPtrOutput { return v.Scope }).(pulumi.StringPtrOutput)
 }
 
 // The canonical absolute URL of the resource.
-func (o ZoneOutput) Self() pulumi.StringOutput {
-	return o.ApplyT(func(v *Zone) pulumi.StringOutput { return v.Self }).(pulumi.StringOutput)
+func (o ZoneOutput) Self() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Zone) pulumi.StringPtrOutput { return v.Self }).(pulumi.StringPtrOutput)
 }
 
 // The current serial of the zone. As seen in the zone's SOA record.
-func (o ZoneOutput) Serial() pulumi.IntOutput {
-	return o.ApplyT(func(v *Zone) pulumi.IntOutput { return v.Serial }).(pulumi.IntOutput)
+func (o ZoneOutput) Serial() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *Zone) pulumi.IntPtrOutput { return v.Serial }).(pulumi.IntPtrOutput)
 }
 
 // The current state of the zone resource.
-func (o ZoneOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *Zone) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o ZoneOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Zone) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
-func (o ZoneOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *Zone) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o ZoneOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Zone) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // Version is the never-repeating, totally-orderable, version of the zone, from which the serial field of the zone's SOA record is derived.
-func (o ZoneOutput) Version() pulumi.StringOutput {
-	return o.ApplyT(func(v *Zone) pulumi.StringOutput { return v.Version }).(pulumi.StringOutput)
+func (o ZoneOutput) Version() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Zone) pulumi.StringPtrOutput { return v.Version }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the private view containing the zone. This value will be null for zones in the global DNS, which are publicly resolvable and not part of a private view.
@@ -528,12 +503,6 @@ func (o ZoneArrayOutput) ToZoneArrayOutputWithContext(ctx context.Context) ZoneA
 	return o
 }
 
-func (o ZoneArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*Zone] {
-	return pulumix.Output[[]*Zone]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o ZoneArrayOutput) Index(i pulumi.IntInput) ZoneOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *Zone {
 		return vs[0].([]*Zone)[vs[1].(int)]
@@ -552,12 +521,6 @@ func (o ZoneMapOutput) ToZoneMapOutput() ZoneMapOutput {
 
 func (o ZoneMapOutput) ToZoneMapOutputWithContext(ctx context.Context) ZoneMapOutput {
 	return o
-}
-
-func (o ZoneMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*Zone] {
-	return pulumix.Output[map[string]*Zone]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ZoneMapOutput) MapIndex(k pulumi.StringInput) ZoneOutput {

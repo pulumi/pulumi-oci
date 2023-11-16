@@ -13,35 +13,35 @@ namespace Pulumi.Oci.DataSafe.Outputs
     [OutputType]
     public sealed class GetSecurityAssessmentFindingFindingResult
     {
-        public readonly string AssessmentId;
+        public readonly string? AssessmentId;
         public readonly ImmutableArray<string> Details;
-        public readonly string Key;
+        public readonly string? Key;
         public readonly ImmutableArray<Outputs.GetSecurityAssessmentFindingFindingReferenceResult> References;
-        public readonly string Remarks;
-        public readonly string Severity;
-        public readonly string Summary;
-        public readonly string TargetId;
-        public readonly string Title;
+        public readonly string? Remarks;
+        public readonly string? Severity;
+        public readonly string? Summary;
+        public readonly string? TargetId;
+        public readonly string? Title;
 
         [OutputConstructor]
         private GetSecurityAssessmentFindingFindingResult(
-            string assessmentId,
+            string? assessmentId,
 
             ImmutableArray<string> details,
 
-            string key,
+            string? key,
 
             ImmutableArray<Outputs.GetSecurityAssessmentFindingFindingReferenceResult> references,
 
-            string remarks,
+            string? remarks,
 
-            string severity,
+            string? severity,
 
-            string summary,
+            string? summary,
 
-            string targetId,
+            string? targetId,
 
-            string title)
+            string? title)
         {
             AssessmentId = assessmentId;
             Details = details;

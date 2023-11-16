@@ -109,7 +109,7 @@ namespace Pulumi.Oci.Functions
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// List of subscriptions.
         /// </summary>
@@ -119,7 +119,7 @@ namespace Pulumi.Oci.Functions
         private GetFusionEnvironmentFamilySubscriptionDetailResult(
             string fusionEnvironmentFamilyId,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetFusionEnvironmentFamilySubscriptionDetailSubscriptionResult> subscriptions)
         {

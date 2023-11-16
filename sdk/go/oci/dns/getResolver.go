@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Resolver resource in Oracle Cloud Infrastructure DNS service.
@@ -65,37 +64,37 @@ type LookupResolverArgs struct {
 // A collection of values returned by getResolver.
 type LookupResolverResult struct {
 	// The OCID of the attached VCN.
-	AttachedVcnId string `pulumi:"attachedVcnId"`
+	AttachedVcnId *string `pulumi:"attachedVcnId"`
 	// The attached views. Views are evaluated in order.
 	AttachedViews []GetResolverAttachedView `pulumi:"attachedViews"`
 	// The OCID of the owning compartment. This will match the resolver that the resolver endpoint is under and will be updated if the resolver's compartment is changed.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// The OCID of the default view.
-	DefaultViewId string `pulumi:"defaultViewId"`
+	DefaultViewId *string `pulumi:"defaultViewId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The display name of the resolver.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Read-only array of endpoints for the resolver.
 	Endpoints []GetResolverEndpointType `pulumi:"endpoints"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The OCID of the resolver.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// A Boolean flag indicating whether or not parts of the resource are unable to be explicitly managed.
-	IsProtected bool   `pulumi:"isProtected"`
+	IsProtected *bool  `pulumi:"isProtected"`
 	ResolverId  string `pulumi:"resolverId"`
 	// Rules for the resolver. Rules are evaluated in order.
 	Rules []GetResolverRule `pulumi:"rules"`
 	Scope *string           `pulumi:"scope"`
 	// The canonical absolute URL of the resource.
-	Self string `pulumi:"self"`
+	Self *string `pulumi:"self"`
 	// The current state of the resource.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The date and time the resource was last updated in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 func LookupResolverOutput(ctx *pulumi.Context, args LookupResolverOutputArgs, opts ...pulumi.InvokeOption) LookupResolverResultOutput {
@@ -138,15 +137,9 @@ func (o LookupResolverResultOutput) ToLookupResolverResultOutputWithContext(ctx 
 	return o
 }
 
-func (o LookupResolverResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupResolverResult] {
-	return pulumix.Output[LookupResolverResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the attached VCN.
-func (o LookupResolverResultOutput) AttachedVcnId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupResolverResult) string { return v.AttachedVcnId }).(pulumi.StringOutput)
+func (o LookupResolverResultOutput) AttachedVcnId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupResolverResult) *string { return v.AttachedVcnId }).(pulumi.StringPtrOutput)
 }
 
 // The attached views. Views are evaluated in order.
@@ -155,13 +148,13 @@ func (o LookupResolverResultOutput) AttachedViews() GetResolverAttachedViewArray
 }
 
 // The OCID of the owning compartment. This will match the resolver that the resolver endpoint is under and will be updated if the resolver's compartment is changed.
-func (o LookupResolverResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupResolverResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupResolverResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupResolverResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the default view.
-func (o LookupResolverResultOutput) DefaultViewId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupResolverResult) string { return v.DefaultViewId }).(pulumi.StringOutput)
+func (o LookupResolverResultOutput) DefaultViewId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupResolverResult) *string { return v.DefaultViewId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -170,8 +163,8 @@ func (o LookupResolverResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // The display name of the resolver.
-func (o LookupResolverResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupResolverResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupResolverResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupResolverResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Read-only array of endpoints for the resolver.
@@ -185,13 +178,13 @@ func (o LookupResolverResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The OCID of the resolver.
-func (o LookupResolverResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupResolverResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupResolverResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupResolverResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // A Boolean flag indicating whether or not parts of the resource are unable to be explicitly managed.
-func (o LookupResolverResultOutput) IsProtected() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupResolverResult) bool { return v.IsProtected }).(pulumi.BoolOutput)
+func (o LookupResolverResultOutput) IsProtected() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupResolverResult) *bool { return v.IsProtected }).(pulumi.BoolPtrOutput)
 }
 
 func (o LookupResolverResultOutput) ResolverId() pulumi.StringOutput {
@@ -208,23 +201,23 @@ func (o LookupResolverResultOutput) Scope() pulumi.StringPtrOutput {
 }
 
 // The canonical absolute URL of the resource.
-func (o LookupResolverResultOutput) Self() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupResolverResult) string { return v.Self }).(pulumi.StringOutput)
+func (o LookupResolverResultOutput) Self() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupResolverResult) *string { return v.Self }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the resource.
-func (o LookupResolverResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupResolverResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupResolverResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupResolverResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
-func (o LookupResolverResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupResolverResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupResolverResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupResolverResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the resource was last updated in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
-func (o LookupResolverResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupResolverResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o LookupResolverResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupResolverResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 func init() {

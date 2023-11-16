@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of My Devices in Oracle Cloud Infrastructure Identity Domains service.
@@ -88,9 +87,9 @@ type GetDomainsMyDevicesResult struct {
 	Authorization *string  `pulumi:"authorization"`
 	CompartmentId *string  `pulumi:"compartmentId"`
 	// The provider-assigned unique ID for this managed resource.
-	Id             string  `pulumi:"id"`
+	Id             *string `pulumi:"id"`
 	IdcsEndpoint   string  `pulumi:"idcsEndpoint"`
-	ItemsPerPage   int     `pulumi:"itemsPerPage"`
+	ItemsPerPage   *int    `pulumi:"itemsPerPage"`
 	MyDeviceCount  *int    `pulumi:"myDeviceCount"`
 	MyDeviceFilter *string `pulumi:"myDeviceFilter"`
 	// The list of my_devices.
@@ -101,7 +100,7 @@ type GetDomainsMyDevicesResult struct {
 	SortBy       *string  `pulumi:"sortBy"`
 	SortOrder    *string  `pulumi:"sortOrder"`
 	StartIndex   *int     `pulumi:"startIndex"`
-	TotalResults int      `pulumi:"totalResults"`
+	TotalResults *int     `pulumi:"totalResults"`
 }
 
 func GetDomainsMyDevicesOutput(ctx *pulumi.Context, args GetDomainsMyDevicesOutputArgs, opts ...pulumi.InvokeOption) GetDomainsMyDevicesResultOutput {
@@ -159,12 +158,6 @@ func (o GetDomainsMyDevicesResultOutput) ToGetDomainsMyDevicesResultOutputWithCo
 	return o
 }
 
-func (o GetDomainsMyDevicesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDomainsMyDevicesResult] {
-	return pulumix.Output[GetDomainsMyDevicesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDomainsMyDevicesResultOutput) AttributeSets() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetDomainsMyDevicesResult) []string { return v.AttributeSets }).(pulumi.StringArrayOutput)
 }
@@ -182,16 +175,16 @@ func (o GetDomainsMyDevicesResultOutput) CompartmentId() pulumi.StringPtrOutput 
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetDomainsMyDevicesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDomainsMyDevicesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetDomainsMyDevicesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDomainsMyDevicesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetDomainsMyDevicesResultOutput) IdcsEndpoint() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDomainsMyDevicesResult) string { return v.IdcsEndpoint }).(pulumi.StringOutput)
 }
 
-func (o GetDomainsMyDevicesResultOutput) ItemsPerPage() pulumi.IntOutput {
-	return o.ApplyT(func(v GetDomainsMyDevicesResult) int { return v.ItemsPerPage }).(pulumi.IntOutput)
+func (o GetDomainsMyDevicesResultOutput) ItemsPerPage() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetDomainsMyDevicesResult) *int { return v.ItemsPerPage }).(pulumi.IntPtrOutput)
 }
 
 func (o GetDomainsMyDevicesResultOutput) MyDeviceCount() pulumi.IntPtrOutput {
@@ -228,8 +221,8 @@ func (o GetDomainsMyDevicesResultOutput) StartIndex() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v GetDomainsMyDevicesResult) *int { return v.StartIndex }).(pulumi.IntPtrOutput)
 }
 
-func (o GetDomainsMyDevicesResultOutput) TotalResults() pulumi.IntOutput {
-	return o.ApplyT(func(v GetDomainsMyDevicesResult) int { return v.TotalResults }).(pulumi.IntOutput)
+func (o GetDomainsMyDevicesResultOutput) TotalResults() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetDomainsMyDevicesResult) *int { return v.TotalResults }).(pulumi.IntPtrOutput)
 }
 
 func init() {

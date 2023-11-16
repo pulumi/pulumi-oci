@@ -20,25 +20,25 @@ namespace Pulumi.Oci.AiLanguage.Outputs
         /// <summary>
         /// supported language default value is en
         /// </summary>
-        public readonly string LanguageCode;
+        public readonly string? LanguageCode;
         /// <summary>
         /// Model type
         /// </summary>
-        public readonly string ModelType;
+        public readonly string? ModelType;
         /// <summary>
         /// For pre trained models this will identify model type version used for model creation For custom identifying the model by model id is difficult. This param provides ease of use for end customer. &lt;&lt;service&gt;&gt;::&lt;&lt;service-name&gt;&gt;_&lt;&lt;model-type-version&gt;&gt;::&lt;&lt;custom model on which this training has to be done&gt;&gt; ex: ai-lang::NER_V1::CUSTOM-V0
         /// </summary>
-        public readonly string Version;
+        public readonly string? Version;
 
         [OutputConstructor]
         private GetModelModelDetailResult(
             ImmutableArray<Outputs.GetModelModelDetailClassificationModeResult> classificationModes,
 
-            string languageCode,
+            string? languageCode,
 
-            string modelType,
+            string? modelType,
 
-            string version)
+            string? version)
         {
             ClassificationModes = classificationModes;
             LanguageCode = languageCode;

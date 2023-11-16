@@ -16,68 +16,68 @@ namespace Pulumi.Oci.Core.Outputs
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// A filter to return only resources that match the given display name exactly.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// The date and time the volume group backup will expire and be automatically deleted. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). This parameter will always be present for volume group backups that were created automatically by a scheduled-backup policy. For manually created volume group backups, it will be absent, signifying that there is no expiration time and the backup will last forever until manually deleted.
         /// </summary>
-        public readonly string ExpirationTime;
+        public readonly string? ExpirationTime;
         /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// The OCID of the volume group backup.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The aggregate size of the volume group backup, in GBs.
         /// </summary>
-        public readonly string SizeInGbs;
+        public readonly string? SizeInGbs;
         /// <summary>
         /// The aggregate size of the volume group backup, in MBs.
         /// </summary>
-        public readonly string SizeInMbs;
+        public readonly string? SizeInMbs;
         public readonly ImmutableArray<Outputs.GetVolumeGroupBackupsVolumeGroupBackupSourceDetailResult> SourceDetails;
         /// <summary>
         /// Specifies whether the volume group backup was created manually, or via scheduled backup policy.
         /// </summary>
-        public readonly string SourceType;
+        public readonly string? SourceType;
         /// <summary>
         /// The OCID of the source volume group backup.
         /// </summary>
-        public readonly string SourceVolumeGroupBackupId;
+        public readonly string? SourceVolumeGroupBackupId;
         /// <summary>
         /// The current state of a volume group backup.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// The date and time the volume group backup was created. This is the time the actual point-in-time image of the volume group data was taken. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The date and time the request to create the volume group backup was received. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         /// </summary>
-        public readonly string TimeRequestReceived;
+        public readonly string? TimeRequestReceived;
         /// <summary>
         /// The type of backup.
         /// </summary>
-        public readonly string Type;
+        public readonly string? Type;
         /// <summary>
         /// The aggregate size used by the volume group backup, in GBs.  It is typically smaller than `size_in_gbs`, depending on the space consumed on the volume group and whether the volume backup is full or incremental.
         /// </summary>
-        public readonly string UniqueSizeInGbs;
+        public readonly string? UniqueSizeInGbs;
         /// <summary>
         /// The aggregate size used by the volume group backup, in MBs.  It is typically smaller than `size_in_mbs`, depending on the space consumed on the volume group and whether the volume backup is full or incremental.
         /// </summary>
-        public readonly string UniqueSizeInMbs;
+        public readonly string? UniqueSizeInMbs;
         /// <summary>
         /// OCIDs for the volume backups in this volume group backup.
         /// </summary>
@@ -85,47 +85,47 @@ namespace Pulumi.Oci.Core.Outputs
         /// <summary>
         /// The OCID of the volume group.
         /// </summary>
-        public readonly string VolumeGroupId;
+        public readonly string? VolumeGroupId;
 
         [OutputConstructor]
         private GetVolumeGroupBackupsVolumeGroupBackupResult(
-            string compartmentId,
+            string? compartmentId,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string displayName,
+            string? displayName,
 
-            string expirationTime,
+            string? expirationTime,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string id,
+            string? id,
 
-            string sizeInGbs,
+            string? sizeInGbs,
 
-            string sizeInMbs,
+            string? sizeInMbs,
 
             ImmutableArray<Outputs.GetVolumeGroupBackupsVolumeGroupBackupSourceDetailResult> sourceDetails,
 
-            string sourceType,
+            string? sourceType,
 
-            string sourceVolumeGroupBackupId,
+            string? sourceVolumeGroupBackupId,
 
-            string state,
+            string? state,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeRequestReceived,
+            string? timeRequestReceived,
 
-            string type,
+            string? type,
 
-            string uniqueSizeInGbs,
+            string? uniqueSizeInGbs,
 
-            string uniqueSizeInMbs,
+            string? uniqueSizeInMbs,
 
             ImmutableArray<string> volumeBackupIds,
 
-            string volumeGroupId)
+            string? volumeGroupId)
         {
             CompartmentId = compartmentId;
             DefinedTags = definedTags;

@@ -6,6 +6,8 @@ package com.pulumi.oci.Core.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetCnvDnsResolverAssociationResult {
@@ -14,13 +16,13 @@ public final class GetCnvDnsResolverAssociationResult {
      * is created, we will create it asynchronously. It would be null until it is actually created.
      * 
      */
-    private String dnsResolverId;
+    private @Nullable String dnsResolverId;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
-    private String state;
+    private @Nullable String id;
+    private @Nullable String state;
     /**
      * @return The OCID of the VCN in the association.
      * 
@@ -33,18 +35,18 @@ public final class GetCnvDnsResolverAssociationResult {
      * is created, we will create it asynchronously. It would be null until it is actually created.
      * 
      */
-    public String dnsResolverId() {
-        return this.dnsResolverId;
+    public Optional<String> dnsResolverId() {
+        return Optional.ofNullable(this.dnsResolverId);
     }
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return The OCID of the VCN in the association.
@@ -63,9 +65,9 @@ public final class GetCnvDnsResolverAssociationResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String dnsResolverId;
-        private String id;
-        private String state;
+        private @Nullable String dnsResolverId;
+        private @Nullable String id;
+        private @Nullable String state;
         private String vcnId;
         public Builder() {}
         public Builder(GetCnvDnsResolverAssociationResult defaults) {
@@ -77,18 +79,18 @@ public final class GetCnvDnsResolverAssociationResult {
         }
 
         @CustomType.Setter
-        public Builder dnsResolverId(String dnsResolverId) {
-            this.dnsResolverId = Objects.requireNonNull(dnsResolverId);
+        public Builder dnsResolverId(@Nullable String dnsResolverId) {
+            this.dnsResolverId = dnsResolverId;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter

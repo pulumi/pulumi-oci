@@ -55,13 +55,13 @@ export interface GetNetworkFirewallPolicyApplicationsResult {
     /**
      * The list of application_summary_collection.
      */
-    readonly applicationSummaryCollections: outputs.NetworkFirewall.GetNetworkFirewallPolicyApplicationsApplicationSummaryCollection[];
+    readonly applicationSummaryCollections?: outputs.NetworkFirewall.GetNetworkFirewallPolicyApplicationsApplicationSummaryCollection[];
     readonly displayName?: string;
     readonly filters?: outputs.NetworkFirewall.GetNetworkFirewallPolicyApplicationsFilter[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly networkFirewallPolicyId: string;
 }
 /**

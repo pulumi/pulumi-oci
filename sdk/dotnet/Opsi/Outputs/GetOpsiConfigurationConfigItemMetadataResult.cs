@@ -16,19 +16,19 @@ namespace Pulumi.Oci.Opsi.Outputs
         /// <summary>
         /// Type of configuration item.
         /// </summary>
-        public readonly string ConfigItemType;
+        public readonly string? ConfigItemType;
         /// <summary>
         /// Data type of configuration item. Examples: STRING, BOOLEAN, NUMBER
         /// </summary>
-        public readonly string DataType;
+        public readonly string? DataType;
         /// <summary>
         /// Description of OPSI configuration.
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// User-friendly display name for the OPSI configuration. The name does not have to be unique.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// Unit details of configuration item.
         /// </summary>
@@ -40,13 +40,13 @@ namespace Pulumi.Oci.Opsi.Outputs
 
         [OutputConstructor]
         private GetOpsiConfigurationConfigItemMetadataResult(
-            string configItemType,
+            string? configItemType,
 
-            string dataType,
+            string? dataType,
 
-            string description,
+            string? description,
 
-            string displayName,
+            string? displayName,
 
             ImmutableArray<Outputs.GetOpsiConfigurationConfigItemMetadataUnitDetailResult> unitDetails,
 

@@ -35,7 +35,7 @@ public final class GetSnapshotsResult {
      * @return The list of snapshots.
      * 
      */
-    private List<GetSnapshotsSnapshot> snapshots;
+    private @Nullable List<GetSnapshotsSnapshot> snapshots;
     /**
      * @return The current state of the snapshot.
      * 
@@ -75,7 +75,7 @@ public final class GetSnapshotsResult {
      * 
      */
     public List<GetSnapshotsSnapshot> snapshots() {
-        return this.snapshots;
+        return this.snapshots == null ? List.of() : this.snapshots;
     }
     /**
      * @return The current state of the snapshot.
@@ -99,7 +99,7 @@ public final class GetSnapshotsResult {
         private @Nullable String filesystemSnapshotPolicyId;
         private @Nullable List<GetSnapshotsFilter> filters;
         private @Nullable String id;
-        private List<GetSnapshotsSnapshot> snapshots;
+        private @Nullable List<GetSnapshotsSnapshot> snapshots;
         private @Nullable String state;
         public Builder() {}
         public Builder(GetSnapshotsResult defaults) {
@@ -142,8 +142,8 @@ public final class GetSnapshotsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder snapshots(List<GetSnapshotsSnapshot> snapshots) {
-            this.snapshots = Objects.requireNonNull(snapshots);
+        public Builder snapshots(@Nullable List<GetSnapshotsSnapshot> snapshots) {
+            this.snapshots = snapshots;
             return this;
         }
         public Builder snapshots(GetSnapshotsSnapshot... snapshots) {

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Data Mask Rule resource in Oracle Cloud Infrastructure Cloud Guard service.
@@ -60,36 +59,36 @@ type LookupDataMaskRuleArgs struct {
 // A collection of values returned by getDataMaskRule.
 type LookupDataMaskRuleResult struct {
 	// Compartment Identifier where the resource is created.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Data Mask Categories
 	DataMaskCategories []string `pulumi:"dataMaskCategories"`
 	DataMaskRuleId     string   `pulumi:"dataMaskRuleId"`
 	// The status of the dataMaskRule.
-	DataMaskRuleStatus string `pulumi:"dataMaskRuleStatus"`
+	DataMaskRuleStatus *string `pulumi:"dataMaskRuleStatus"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The data mask rule description.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// Data Mask Rule Identifier, can be renamed.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// IAM Group id associated with the data mask rule
-	IamGroupId string `pulumi:"iamGroupId"`
+	IamGroupId *string `pulumi:"iamGroupId"`
 	// Unique identifier that is immutable on creation
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-	LifecyleDetails string `pulumi:"lifecyleDetails"`
+	LifecyleDetails *string `pulumi:"lifecyleDetails"`
 	// The current state of the DataMaskRule.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// Target Selection eg select ALL or select on basis of TargetResourceTypes or TargetIds.
 	TargetSelecteds []GetDataMaskRuleTargetSelected `pulumi:"targetSelecteds"`
 	// The date and time the target was created. Format defined by RFC3339.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The date and time the target was updated. Format defined by RFC3339.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 func LookupDataMaskRuleOutput(ctx *pulumi.Context, args LookupDataMaskRuleOutputArgs, opts ...pulumi.InvokeOption) LookupDataMaskRuleResultOutput {
@@ -130,15 +129,9 @@ func (o LookupDataMaskRuleResultOutput) ToLookupDataMaskRuleResultOutputWithCont
 	return o
 }
 
-func (o LookupDataMaskRuleResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupDataMaskRuleResult] {
-	return pulumix.Output[LookupDataMaskRuleResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Compartment Identifier where the resource is created.
-func (o LookupDataMaskRuleResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDataMaskRuleResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupDataMaskRuleResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDataMaskRuleResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Data Mask Categories
@@ -151,8 +144,8 @@ func (o LookupDataMaskRuleResultOutput) DataMaskRuleId() pulumi.StringOutput {
 }
 
 // The status of the dataMaskRule.
-func (o LookupDataMaskRuleResultOutput) DataMaskRuleStatus() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDataMaskRuleResult) string { return v.DataMaskRuleStatus }).(pulumi.StringOutput)
+func (o LookupDataMaskRuleResultOutput) DataMaskRuleStatus() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDataMaskRuleResult) *string { return v.DataMaskRuleStatus }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -161,13 +154,13 @@ func (o LookupDataMaskRuleResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // The data mask rule description.
-func (o LookupDataMaskRuleResultOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDataMaskRuleResult) string { return v.Description }).(pulumi.StringOutput)
+func (o LookupDataMaskRuleResultOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDataMaskRuleResult) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // Data Mask Rule Identifier, can be renamed.
-func (o LookupDataMaskRuleResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDataMaskRuleResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupDataMaskRuleResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDataMaskRuleResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -176,23 +169,23 @@ func (o LookupDataMaskRuleResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // IAM Group id associated with the data mask rule
-func (o LookupDataMaskRuleResultOutput) IamGroupId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDataMaskRuleResult) string { return v.IamGroupId }).(pulumi.StringOutput)
+func (o LookupDataMaskRuleResultOutput) IamGroupId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDataMaskRuleResult) *string { return v.IamGroupId }).(pulumi.StringPtrOutput)
 }
 
 // Unique identifier that is immutable on creation
-func (o LookupDataMaskRuleResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDataMaskRuleResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupDataMaskRuleResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDataMaskRuleResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-func (o LookupDataMaskRuleResultOutput) LifecyleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDataMaskRuleResult) string { return v.LifecyleDetails }).(pulumi.StringOutput)
+func (o LookupDataMaskRuleResultOutput) LifecyleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDataMaskRuleResult) *string { return v.LifecyleDetails }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the DataMaskRule.
-func (o LookupDataMaskRuleResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDataMaskRuleResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupDataMaskRuleResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDataMaskRuleResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -206,13 +199,13 @@ func (o LookupDataMaskRuleResultOutput) TargetSelecteds() GetDataMaskRuleTargetS
 }
 
 // The date and time the target was created. Format defined by RFC3339.
-func (o LookupDataMaskRuleResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDataMaskRuleResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupDataMaskRuleResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDataMaskRuleResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the target was updated. Format defined by RFC3339.
-func (o LookupDataMaskRuleResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDataMaskRuleResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o LookupDataMaskRuleResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDataMaskRuleResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 func init() {

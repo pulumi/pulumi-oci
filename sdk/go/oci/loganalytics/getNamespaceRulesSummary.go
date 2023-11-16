@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Namespace Rules Summary resource in Oracle Cloud Infrastructure Log Analytics service.
@@ -64,14 +63,14 @@ type GetNamespaceRulesSummaryArgs struct {
 type GetNamespaceRulesSummaryResult struct {
 	CompartmentId string `pulumi:"compartmentId"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The count of ingest time rules.
-	IngestTimeRulesCount int    `pulumi:"ingestTimeRulesCount"`
+	IngestTimeRulesCount *int   `pulumi:"ingestTimeRulesCount"`
 	Namespace            string `pulumi:"namespace"`
 	// The count of saved search rules.
-	SavedSearchRulesCount int `pulumi:"savedSearchRulesCount"`
+	SavedSearchRulesCount *int `pulumi:"savedSearchRulesCount"`
 	// The total count of detection rules.
-	TotalCount int `pulumi:"totalCount"`
+	TotalCount *int `pulumi:"totalCount"`
 }
 
 func GetNamespaceRulesSummaryOutput(ctx *pulumi.Context, args GetNamespaceRulesSummaryOutputArgs, opts ...pulumi.InvokeOption) GetNamespaceRulesSummaryResultOutput {
@@ -114,24 +113,18 @@ func (o GetNamespaceRulesSummaryResultOutput) ToGetNamespaceRulesSummaryResultOu
 	return o
 }
 
-func (o GetNamespaceRulesSummaryResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetNamespaceRulesSummaryResult] {
-	return pulumix.Output[GetNamespaceRulesSummaryResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetNamespaceRulesSummaryResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNamespaceRulesSummaryResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetNamespaceRulesSummaryResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNamespaceRulesSummaryResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetNamespaceRulesSummaryResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNamespaceRulesSummaryResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The count of ingest time rules.
-func (o GetNamespaceRulesSummaryResultOutput) IngestTimeRulesCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetNamespaceRulesSummaryResult) int { return v.IngestTimeRulesCount }).(pulumi.IntOutput)
+func (o GetNamespaceRulesSummaryResultOutput) IngestTimeRulesCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetNamespaceRulesSummaryResult) *int { return v.IngestTimeRulesCount }).(pulumi.IntPtrOutput)
 }
 
 func (o GetNamespaceRulesSummaryResultOutput) Namespace() pulumi.StringOutput {
@@ -139,13 +132,13 @@ func (o GetNamespaceRulesSummaryResultOutput) Namespace() pulumi.StringOutput {
 }
 
 // The count of saved search rules.
-func (o GetNamespaceRulesSummaryResultOutput) SavedSearchRulesCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetNamespaceRulesSummaryResult) int { return v.SavedSearchRulesCount }).(pulumi.IntOutput)
+func (o GetNamespaceRulesSummaryResultOutput) SavedSearchRulesCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetNamespaceRulesSummaryResult) *int { return v.SavedSearchRulesCount }).(pulumi.IntPtrOutput)
 }
 
 // The total count of detection rules.
-func (o GetNamespaceRulesSummaryResultOutput) TotalCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetNamespaceRulesSummaryResult) int { return v.TotalCount }).(pulumi.IntOutput)
+func (o GetNamespaceRulesSummaryResultOutput) TotalCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetNamespaceRulesSummaryResult) *int { return v.TotalCount }).(pulumi.IntPtrOutput)
 }
 
 func init() {

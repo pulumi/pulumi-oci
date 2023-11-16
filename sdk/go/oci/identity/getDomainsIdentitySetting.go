@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Identity Setting resource in Oracle Cloud Infrastructure Identity Domains service.
@@ -80,24 +79,24 @@ type LookupDomainsIdentitySettingResult struct {
 	Attributes    *string  `pulumi:"attributes"`
 	Authorization *string  `pulumi:"authorization"`
 	// Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
-	CompartmentOcid string `pulumi:"compartmentOcid"`
+	CompartmentOcid *string `pulumi:"compartmentOcid"`
 	// A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
-	DeleteInProgress bool `pulumi:"deleteInProgress"`
+	DeleteInProgress *bool `pulumi:"deleteInProgress"`
 	// Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
-	DomainOcid string `pulumi:"domainOcid"`
+	DomainOcid *string `pulumi:"domainOcid"`
 	// Indicates whether to show the 'user-is-locked' message during authentication if the user is already locked. The default value is false, which tells the system to show a generic 'authentication-failure' message. This is the most secure behavior. If the option is set to true, the system shows a more detailed 'error-message' that says the user is locked. This is more helpful but is less secure, for example, because the difference in error-messages could be used to determine which usernames exist and which do not.
-	EmitLockedMessageWhenUserIsLocked bool `pulumi:"emitLockedMessageWhenUserIsLocked"`
+	EmitLockedMessageWhenUserIsLocked *bool `pulumi:"emitLockedMessageWhenUserIsLocked"`
 	// An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer's tenant.
-	ExternalId string `pulumi:"externalId"`
+	ExternalId *string `pulumi:"externalId"`
 	// Unique identifier for the SCIM Resource as defined by the Service Provider. Each representation of the Resource MUST include a non-empty id value. This identifier MUST be unique across the Service Provider's entire set of Resources. It MUST be a stable, non-reassignable identifier that does not change when the same Resource is returned in subsequent requests. The value of the id attribute is always issued by the Service Provider and MUST never be specified by the Service Consumer. bulkId: is a reserved keyword and MUST NOT be used in the unique identifier.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The User or App who created the Resource
 	IdcsCreatedBies []GetDomainsIdentitySettingIdcsCreatedBy `pulumi:"idcsCreatedBies"`
 	IdcsEndpoint    string                                   `pulumi:"idcsEndpoint"`
 	// The User or App who modified the Resource
 	IdcsLastModifiedBies []GetDomainsIdentitySettingIdcsLastModifiedBy `pulumi:"idcsLastModifiedBies"`
 	// The release number when the resource was upgraded.
-	IdcsLastUpgradedInRelease string `pulumi:"idcsLastUpgradedInRelease"`
+	IdcsLastUpgradedInRelease *string `pulumi:"idcsLastUpgradedInRelease"`
 	// Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
 	IdcsPreventedOperations []string `pulumi:"idcsPreventedOperations"`
 	IdentitySettingId       string   `pulumi:"identitySettingId"`
@@ -106,28 +105,28 @@ type LookupDomainsIdentitySettingResult struct {
 	// Whether to allow users to update their own profile.
 	MyProfiles []GetDomainsIdentitySettingMyProfile `pulumi:"myProfiles"`
 	// Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
-	Ocid string `pulumi:"ocid"`
+	Ocid *string `pulumi:"ocid"`
 	// A list of Posix Gid settings.
 	PosixGids []GetDomainsIdentitySettingPosixGid `pulumi:"posixGids"`
 	// A list of Posix Uid settings.
 	PosixUids []GetDomainsIdentitySettingPosixUid `pulumi:"posixUids"`
 	// Indicates whether the primary email is required.
-	PrimaryEmailRequired bool `pulumi:"primaryEmailRequired"`
+	PrimaryEmailRequired *bool `pulumi:"primaryEmailRequired"`
 	// Indicates whether to remove non-RFC5322 compliant emails before creating a user.
-	RemoveInvalidEmails       bool    `pulumi:"removeInvalidEmails"`
+	RemoveInvalidEmails       *bool   `pulumi:"removeInvalidEmails"`
 	ResourceTypeSchemaVersion *string `pulumi:"resourceTypeSchemaVersion"`
 	// **Added In:** 2302092332
-	ReturnInactiveOverLockedMessage bool `pulumi:"returnInactiveOverLockedMessage"`
+	ReturnInactiveOverLockedMessage *bool `pulumi:"returnInactiveOverLockedMessage"`
 	// REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
 	Schemas []string `pulumi:"schemas"`
 	// A list of tags on this resource.
 	Tags []GetDomainsIdentitySettingTag `pulumi:"tags"`
 	// Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
-	TenancyOcid string `pulumi:"tenancyOcid"`
+	TenancyOcid *string `pulumi:"tenancyOcid"`
 	// A list of tokens and their expiry length.
 	Tokens []GetDomainsIdentitySettingToken `pulumi:"tokens"`
 	// Indicates whether a user is allowed to change their own recovery email.
-	UserAllowedToSetRecoveryEmail bool `pulumi:"userAllowedToSetRecoveryEmail"`
+	UserAllowedToSetRecoveryEmail *bool `pulumi:"userAllowedToSetRecoveryEmail"`
 }
 
 func LookupDomainsIdentitySettingOutput(ctx *pulumi.Context, args LookupDomainsIdentitySettingOutputArgs, opts ...pulumi.InvokeOption) LookupDomainsIdentitySettingResultOutput {
@@ -178,12 +177,6 @@ func (o LookupDomainsIdentitySettingResultOutput) ToLookupDomainsIdentitySetting
 	return o
 }
 
-func (o LookupDomainsIdentitySettingResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupDomainsIdentitySettingResult] {
-	return pulumix.Output[LookupDomainsIdentitySettingResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o LookupDomainsIdentitySettingResultOutput) AttributeSets() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v LookupDomainsIdentitySettingResult) []string { return v.AttributeSets }).(pulumi.StringArrayOutput)
 }
@@ -197,33 +190,33 @@ func (o LookupDomainsIdentitySettingResultOutput) Authorization() pulumi.StringP
 }
 
 // Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
-func (o LookupDomainsIdentitySettingResultOutput) CompartmentOcid() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsIdentitySettingResult) string { return v.CompartmentOcid }).(pulumi.StringOutput)
+func (o LookupDomainsIdentitySettingResultOutput) CompartmentOcid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsIdentitySettingResult) *string { return v.CompartmentOcid }).(pulumi.StringPtrOutput)
 }
 
 // A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
-func (o LookupDomainsIdentitySettingResultOutput) DeleteInProgress() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupDomainsIdentitySettingResult) bool { return v.DeleteInProgress }).(pulumi.BoolOutput)
+func (o LookupDomainsIdentitySettingResultOutput) DeleteInProgress() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupDomainsIdentitySettingResult) *bool { return v.DeleteInProgress }).(pulumi.BoolPtrOutput)
 }
 
 // Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
-func (o LookupDomainsIdentitySettingResultOutput) DomainOcid() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsIdentitySettingResult) string { return v.DomainOcid }).(pulumi.StringOutput)
+func (o LookupDomainsIdentitySettingResultOutput) DomainOcid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsIdentitySettingResult) *string { return v.DomainOcid }).(pulumi.StringPtrOutput)
 }
 
 // Indicates whether to show the 'user-is-locked' message during authentication if the user is already locked. The default value is false, which tells the system to show a generic 'authentication-failure' message. This is the most secure behavior. If the option is set to true, the system shows a more detailed 'error-message' that says the user is locked. This is more helpful but is less secure, for example, because the difference in error-messages could be used to determine which usernames exist and which do not.
-func (o LookupDomainsIdentitySettingResultOutput) EmitLockedMessageWhenUserIsLocked() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupDomainsIdentitySettingResult) bool { return v.EmitLockedMessageWhenUserIsLocked }).(pulumi.BoolOutput)
+func (o LookupDomainsIdentitySettingResultOutput) EmitLockedMessageWhenUserIsLocked() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupDomainsIdentitySettingResult) *bool { return v.EmitLockedMessageWhenUserIsLocked }).(pulumi.BoolPtrOutput)
 }
 
 // An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer's tenant.
-func (o LookupDomainsIdentitySettingResultOutput) ExternalId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsIdentitySettingResult) string { return v.ExternalId }).(pulumi.StringOutput)
+func (o LookupDomainsIdentitySettingResultOutput) ExternalId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsIdentitySettingResult) *string { return v.ExternalId }).(pulumi.StringPtrOutput)
 }
 
 // Unique identifier for the SCIM Resource as defined by the Service Provider. Each representation of the Resource MUST include a non-empty id value. This identifier MUST be unique across the Service Provider's entire set of Resources. It MUST be a stable, non-reassignable identifier that does not change when the same Resource is returned in subsequent requests. The value of the id attribute is always issued by the Service Provider and MUST never be specified by the Service Consumer. bulkId: is a reserved keyword and MUST NOT be used in the unique identifier.
-func (o LookupDomainsIdentitySettingResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsIdentitySettingResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupDomainsIdentitySettingResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsIdentitySettingResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The User or App who created the Resource
@@ -245,8 +238,8 @@ func (o LookupDomainsIdentitySettingResultOutput) IdcsLastModifiedBies() GetDoma
 }
 
 // The release number when the resource was upgraded.
-func (o LookupDomainsIdentitySettingResultOutput) IdcsLastUpgradedInRelease() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsIdentitySettingResult) string { return v.IdcsLastUpgradedInRelease }).(pulumi.StringOutput)
+func (o LookupDomainsIdentitySettingResultOutput) IdcsLastUpgradedInRelease() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsIdentitySettingResult) *string { return v.IdcsLastUpgradedInRelease }).(pulumi.StringPtrOutput)
 }
 
 // Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
@@ -269,8 +262,8 @@ func (o LookupDomainsIdentitySettingResultOutput) MyProfiles() GetDomainsIdentit
 }
 
 // Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
-func (o LookupDomainsIdentitySettingResultOutput) Ocid() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsIdentitySettingResult) string { return v.Ocid }).(pulumi.StringOutput)
+func (o LookupDomainsIdentitySettingResultOutput) Ocid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsIdentitySettingResult) *string { return v.Ocid }).(pulumi.StringPtrOutput)
 }
 
 // A list of Posix Gid settings.
@@ -284,13 +277,13 @@ func (o LookupDomainsIdentitySettingResultOutput) PosixUids() GetDomainsIdentity
 }
 
 // Indicates whether the primary email is required.
-func (o LookupDomainsIdentitySettingResultOutput) PrimaryEmailRequired() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupDomainsIdentitySettingResult) bool { return v.PrimaryEmailRequired }).(pulumi.BoolOutput)
+func (o LookupDomainsIdentitySettingResultOutput) PrimaryEmailRequired() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupDomainsIdentitySettingResult) *bool { return v.PrimaryEmailRequired }).(pulumi.BoolPtrOutput)
 }
 
 // Indicates whether to remove non-RFC5322 compliant emails before creating a user.
-func (o LookupDomainsIdentitySettingResultOutput) RemoveInvalidEmails() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupDomainsIdentitySettingResult) bool { return v.RemoveInvalidEmails }).(pulumi.BoolOutput)
+func (o LookupDomainsIdentitySettingResultOutput) RemoveInvalidEmails() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupDomainsIdentitySettingResult) *bool { return v.RemoveInvalidEmails }).(pulumi.BoolPtrOutput)
 }
 
 func (o LookupDomainsIdentitySettingResultOutput) ResourceTypeSchemaVersion() pulumi.StringPtrOutput {
@@ -298,8 +291,8 @@ func (o LookupDomainsIdentitySettingResultOutput) ResourceTypeSchemaVersion() pu
 }
 
 // **Added In:** 2302092332
-func (o LookupDomainsIdentitySettingResultOutput) ReturnInactiveOverLockedMessage() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupDomainsIdentitySettingResult) bool { return v.ReturnInactiveOverLockedMessage }).(pulumi.BoolOutput)
+func (o LookupDomainsIdentitySettingResultOutput) ReturnInactiveOverLockedMessage() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupDomainsIdentitySettingResult) *bool { return v.ReturnInactiveOverLockedMessage }).(pulumi.BoolPtrOutput)
 }
 
 // REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
@@ -313,8 +306,8 @@ func (o LookupDomainsIdentitySettingResultOutput) Tags() GetDomainsIdentitySetti
 }
 
 // Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
-func (o LookupDomainsIdentitySettingResultOutput) TenancyOcid() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsIdentitySettingResult) string { return v.TenancyOcid }).(pulumi.StringOutput)
+func (o LookupDomainsIdentitySettingResultOutput) TenancyOcid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsIdentitySettingResult) *string { return v.TenancyOcid }).(pulumi.StringPtrOutput)
 }
 
 // A list of tokens and their expiry length.
@@ -323,8 +316,8 @@ func (o LookupDomainsIdentitySettingResultOutput) Tokens() GetDomainsIdentitySet
 }
 
 // Indicates whether a user is allowed to change their own recovery email.
-func (o LookupDomainsIdentitySettingResultOutput) UserAllowedToSetRecoveryEmail() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupDomainsIdentitySettingResult) bool { return v.UserAllowedToSetRecoveryEmail }).(pulumi.BoolOutput)
+func (o LookupDomainsIdentitySettingResultOutput) UserAllowedToSetRecoveryEmail() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupDomainsIdentitySettingResult) *bool { return v.UserAllowedToSetRecoveryEmail }).(pulumi.BoolPtrOutput)
 }
 
 func init() {

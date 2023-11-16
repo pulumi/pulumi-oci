@@ -46,33 +46,21 @@ class GetExternalDbNodesResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        The user-friendly name for the external DB node. The name does not have to be unique.
-        """
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="externalDbNodeCollections")
-    def external_db_node_collections(self) -> Sequence['outputs.GetExternalDbNodesExternalDbNodeCollectionResult']:
-        """
-        The list of external_db_node_collection.
-        """
+    def external_db_node_collections(self) -> Optional[Sequence['outputs.GetExternalDbNodesExternalDbNodeCollectionResult']]:
         return pulumi.get(self, "external_db_node_collections")
 
     @property
     @pulumi.getter(name="externalDbSystemId")
     def external_db_system_id(self) -> Optional[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that the DB node is a part of.
-        """
         return pulumi.get(self, "external_db_system_id")
 
     @property
@@ -82,7 +70,7 @@ class GetExternalDbNodesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -109,25 +97,7 @@ def get_external_db_nodes(compartment_id: Optional[str] = None,
                           filters: Optional[Sequence[pulumi.InputType['GetExternalDbNodesFilterArgs']]] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetExternalDbNodesResult:
     """
-    This data source provides the list of External Db Nodes in Oracle Cloud Infrastructure Database Management service.
-
-    Lists the external DB nodes in the specified external DB system.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_external_db_nodes = oci.DatabaseManagement.get_external_db_nodes(compartment_id=var["compartment_id"],
-        display_name=var["external_db_node_display_name"],
-        external_db_system_id=oci_database_management_external_db_system["test_external_db_system"]["id"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param str display_name: A filter to only return the resources that match the entire display name.
-    :param str external_db_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -153,24 +123,6 @@ def get_external_db_nodes_output(compartment_id: Optional[pulumi.Input[Optional[
                                  filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetExternalDbNodesFilterArgs']]]]] = None,
                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetExternalDbNodesResult]:
     """
-    This data source provides the list of External Db Nodes in Oracle Cloud Infrastructure Database Management service.
-
-    Lists the external DB nodes in the specified external DB system.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_external_db_nodes = oci.DatabaseManagement.get_external_db_nodes(compartment_id=var["compartment_id"],
-        display_name=var["external_db_node_display_name"],
-        external_db_system_id=oci_database_management_external_db_system["test_external_db_system"]["id"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param str display_name: A filter to only return the resources that match the entire display name.
-    :param str external_db_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system.
+    Use this data source to access information about an existing resource.
     """
     ...

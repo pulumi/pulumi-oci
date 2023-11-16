@@ -30,32 +30,6 @@ class MountTargetArgs:
                  nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
         """
         The set of arguments for constructing a MountTarget resource.
-        :param pulumi.Input[str] availability_domain: The availability domain in which to create the mount target.  Example: `Uocm:PHX-AD-1`
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to create the mount target.
-        :param pulumi.Input[str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in which to create the mount target. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `My mount target`
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] hostname_label: The hostname for the mount target's IP address, used for DNS resolution. The value is the hostname portion of the private IP address's fully qualified domain name (FQDN). For example, `files-1` in the FQDN `files-1.subnet123.vcn1.oraclevcn.com`. Must be unique across all VNICs in the subnet and comply with [RFC 952](https://tools.ietf.org/html/rfc952) and [RFC 1123](https://tools.ietf.org/html/rfc1123).
-               
-               Note: This attribute value is stored in the [PrivateIp](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/PrivateIp/) resource, not in the `mountTarget` resource. To update the `hostnameLabel`, use `GetMountTarget` to obtain the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the mount target's private IPs (`privateIpIds`). Then, you can use [UpdatePrivateIp](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/PrivateIp/UpdatePrivateIp) to update the `hostnameLabel` value.
-               
-               For more information, see [DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
-               
-               Example: `files-1`
-        :param pulumi.Input[str] idmap_type: (Updatable) The method used to map a Unix UID to secondary groups, if any.
-        :param pulumi.Input[str] ip_address: A private IP address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet.
-               
-               Note: This attribute value is stored in the [PrivateIp](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/PrivateIp/) resource, not in the `mountTarget` resource. To update the `ipAddress`, use `GetMountTarget` to obtain the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the mount target's private IPs (`privateIpIds`). Then, you can use [UpdatePrivateIp](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/PrivateIp/UpdatePrivateIp) to update the `ipAddress` value.
-               
-               Example: `10.0.3.3`
-        :param pulumi.Input['MountTargetKerberosArgs'] kerberos: (Updatable) Kerberos details needed to create configuration.
-        :param pulumi.Input['MountTargetLdapIdmapArgs'] ldap_idmap: (Updatable) Mount target details about the LDAP ID mapping configuration.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: (Updatable) A list of Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this mount target. A maximum of 5 is allowed. Setting this to an empty array after the list is created removes the mount target from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
         """
         pulumi.set(__self__, "availability_domain", availability_domain)
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -82,9 +56,6 @@ class MountTargetArgs:
     @property
     @pulumi.getter(name="availabilityDomain")
     def availability_domain(self) -> pulumi.Input[str]:
-        """
-        The availability domain in which to create the mount target.  Example: `Uocm:PHX-AD-1`
-        """
         return pulumi.get(self, "availability_domain")
 
     @availability_domain.setter
@@ -94,9 +65,6 @@ class MountTargetArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to create the mount target.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -106,13 +74,6 @@ class MountTargetArgs:
     @property
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> pulumi.Input[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in which to create the mount target. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "subnet_id")
 
     @subnet_id.setter
@@ -122,9 +83,6 @@ class MountTargetArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -134,9 +92,6 @@ class MountTargetArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `My mount target`
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -146,9 +101,6 @@ class MountTargetArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -158,15 +110,6 @@ class MountTargetArgs:
     @property
     @pulumi.getter(name="hostnameLabel")
     def hostname_label(self) -> Optional[pulumi.Input[str]]:
-        """
-        The hostname for the mount target's IP address, used for DNS resolution. The value is the hostname portion of the private IP address's fully qualified domain name (FQDN). For example, `files-1` in the FQDN `files-1.subnet123.vcn1.oraclevcn.com`. Must be unique across all VNICs in the subnet and comply with [RFC 952](https://tools.ietf.org/html/rfc952) and [RFC 1123](https://tools.ietf.org/html/rfc1123).
-
-        Note: This attribute value is stored in the [PrivateIp](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/PrivateIp/) resource, not in the `mountTarget` resource. To update the `hostnameLabel`, use `GetMountTarget` to obtain the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the mount target's private IPs (`privateIpIds`). Then, you can use [UpdatePrivateIp](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/PrivateIp/UpdatePrivateIp) to update the `hostnameLabel` value.
-
-        For more information, see [DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
-
-        Example: `files-1`
-        """
         return pulumi.get(self, "hostname_label")
 
     @hostname_label.setter
@@ -176,9 +119,6 @@ class MountTargetArgs:
     @property
     @pulumi.getter(name="idmapType")
     def idmap_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The method used to map a Unix UID to secondary groups, if any.
-        """
         return pulumi.get(self, "idmap_type")
 
     @idmap_type.setter
@@ -188,13 +128,6 @@ class MountTargetArgs:
     @property
     @pulumi.getter(name="ipAddress")
     def ip_address(self) -> Optional[pulumi.Input[str]]:
-        """
-        A private IP address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet.
-
-        Note: This attribute value is stored in the [PrivateIp](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/PrivateIp/) resource, not in the `mountTarget` resource. To update the `ipAddress`, use `GetMountTarget` to obtain the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the mount target's private IPs (`privateIpIds`). Then, you can use [UpdatePrivateIp](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/PrivateIp/UpdatePrivateIp) to update the `ipAddress` value.
-
-        Example: `10.0.3.3`
-        """
         return pulumi.get(self, "ip_address")
 
     @ip_address.setter
@@ -204,9 +137,6 @@ class MountTargetArgs:
     @property
     @pulumi.getter
     def kerberos(self) -> Optional[pulumi.Input['MountTargetKerberosArgs']]:
-        """
-        (Updatable) Kerberos details needed to create configuration.
-        """
         return pulumi.get(self, "kerberos")
 
     @kerberos.setter
@@ -216,9 +146,6 @@ class MountTargetArgs:
     @property
     @pulumi.getter(name="ldapIdmap")
     def ldap_idmap(self) -> Optional[pulumi.Input['MountTargetLdapIdmapArgs']]:
-        """
-        (Updatable) Mount target details about the LDAP ID mapping configuration.
-        """
         return pulumi.get(self, "ldap_idmap")
 
     @ldap_idmap.setter
@@ -228,9 +155,6 @@ class MountTargetArgs:
     @property
     @pulumi.getter(name="nsgIds")
     def nsg_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) A list of Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this mount target. A maximum of 5 is allowed. Setting this to an empty array after the list is created removes the mount target from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
-        """
         return pulumi.get(self, "nsg_ids")
 
     @nsg_ids.setter
@@ -260,37 +184,6 @@ class _MountTargetState:
                  time_created: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering MountTarget resources.
-        :param pulumi.Input[str] availability_domain: The availability domain in which to create the mount target.  Example: `Uocm:PHX-AD-1`
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to create the mount target.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `My mount target`
-        :param pulumi.Input[str] export_set_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated export set. Controls what file systems will be exported through Network File System (NFS) protocol on this mount target.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] hostname_label: The hostname for the mount target's IP address, used for DNS resolution. The value is the hostname portion of the private IP address's fully qualified domain name (FQDN). For example, `files-1` in the FQDN `files-1.subnet123.vcn1.oraclevcn.com`. Must be unique across all VNICs in the subnet and comply with [RFC 952](https://tools.ietf.org/html/rfc952) and [RFC 1123](https://tools.ietf.org/html/rfc1123).
-               
-               Note: This attribute value is stored in the [PrivateIp](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/PrivateIp/) resource, not in the `mountTarget` resource. To update the `hostnameLabel`, use `GetMountTarget` to obtain the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the mount target's private IPs (`privateIpIds`). Then, you can use [UpdatePrivateIp](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/PrivateIp/UpdatePrivateIp) to update the `hostnameLabel` value.
-               
-               For more information, see [DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
-               
-               Example: `files-1`
-        :param pulumi.Input[str] idmap_type: (Updatable) The method used to map a Unix UID to secondary groups, if any.
-        :param pulumi.Input[str] ip_address: A private IP address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet.
-               
-               Note: This attribute value is stored in the [PrivateIp](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/PrivateIp/) resource, not in the `mountTarget` resource. To update the `ipAddress`, use `GetMountTarget` to obtain the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the mount target's private IPs (`privateIpIds`). Then, you can use [UpdatePrivateIp](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/PrivateIp/UpdatePrivateIp) to update the `ipAddress` value.
-               
-               Example: `10.0.3.3`
-        :param pulumi.Input['MountTargetKerberosArgs'] kerberos: (Updatable) Kerberos details needed to create configuration.
-        :param pulumi.Input['MountTargetLdapIdmapArgs'] ldap_idmap: (Updatable) Mount target details about the LDAP ID mapping configuration.
-        :param pulumi.Input[str] lifecycle_details: Additional information about the current 'lifecycleState'.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: (Updatable) A list of Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this mount target. A maximum of 5 is allowed. Setting this to an empty array after the list is created removes the mount target from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] private_ip_ids: The OCIDs of the private IP addresses associated with this mount target.
-        :param pulumi.Input[str] state: The current state of the mount target.
-        :param pulumi.Input[str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in which to create the mount target. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] time_created: The date and time the mount target was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         """
         if availability_domain is not None:
             pulumi.set(__self__, "availability_domain", availability_domain)
@@ -330,9 +223,6 @@ class _MountTargetState:
     @property
     @pulumi.getter(name="availabilityDomain")
     def availability_domain(self) -> Optional[pulumi.Input[str]]:
-        """
-        The availability domain in which to create the mount target.  Example: `Uocm:PHX-AD-1`
-        """
         return pulumi.get(self, "availability_domain")
 
     @availability_domain.setter
@@ -342,9 +232,6 @@ class _MountTargetState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to create the mount target.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -354,9 +241,6 @@ class _MountTargetState:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -366,9 +250,6 @@ class _MountTargetState:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `My mount target`
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -378,9 +259,6 @@ class _MountTargetState:
     @property
     @pulumi.getter(name="exportSetId")
     def export_set_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated export set. Controls what file systems will be exported through Network File System (NFS) protocol on this mount target.
-        """
         return pulumi.get(self, "export_set_id")
 
     @export_set_id.setter
@@ -390,9 +268,6 @@ class _MountTargetState:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -402,15 +277,6 @@ class _MountTargetState:
     @property
     @pulumi.getter(name="hostnameLabel")
     def hostname_label(self) -> Optional[pulumi.Input[str]]:
-        """
-        The hostname for the mount target's IP address, used for DNS resolution. The value is the hostname portion of the private IP address's fully qualified domain name (FQDN). For example, `files-1` in the FQDN `files-1.subnet123.vcn1.oraclevcn.com`. Must be unique across all VNICs in the subnet and comply with [RFC 952](https://tools.ietf.org/html/rfc952) and [RFC 1123](https://tools.ietf.org/html/rfc1123).
-
-        Note: This attribute value is stored in the [PrivateIp](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/PrivateIp/) resource, not in the `mountTarget` resource. To update the `hostnameLabel`, use `GetMountTarget` to obtain the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the mount target's private IPs (`privateIpIds`). Then, you can use [UpdatePrivateIp](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/PrivateIp/UpdatePrivateIp) to update the `hostnameLabel` value.
-
-        For more information, see [DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
-
-        Example: `files-1`
-        """
         return pulumi.get(self, "hostname_label")
 
     @hostname_label.setter
@@ -420,9 +286,6 @@ class _MountTargetState:
     @property
     @pulumi.getter(name="idmapType")
     def idmap_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The method used to map a Unix UID to secondary groups, if any.
-        """
         return pulumi.get(self, "idmap_type")
 
     @idmap_type.setter
@@ -432,13 +295,6 @@ class _MountTargetState:
     @property
     @pulumi.getter(name="ipAddress")
     def ip_address(self) -> Optional[pulumi.Input[str]]:
-        """
-        A private IP address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet.
-
-        Note: This attribute value is stored in the [PrivateIp](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/PrivateIp/) resource, not in the `mountTarget` resource. To update the `ipAddress`, use `GetMountTarget` to obtain the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the mount target's private IPs (`privateIpIds`). Then, you can use [UpdatePrivateIp](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/PrivateIp/UpdatePrivateIp) to update the `ipAddress` value.
-
-        Example: `10.0.3.3`
-        """
         return pulumi.get(self, "ip_address")
 
     @ip_address.setter
@@ -448,9 +304,6 @@ class _MountTargetState:
     @property
     @pulumi.getter
     def kerberos(self) -> Optional[pulumi.Input['MountTargetKerberosArgs']]:
-        """
-        (Updatable) Kerberos details needed to create configuration.
-        """
         return pulumi.get(self, "kerberos")
 
     @kerberos.setter
@@ -460,9 +313,6 @@ class _MountTargetState:
     @property
     @pulumi.getter(name="ldapIdmap")
     def ldap_idmap(self) -> Optional[pulumi.Input['MountTargetLdapIdmapArgs']]:
-        """
-        (Updatable) Mount target details about the LDAP ID mapping configuration.
-        """
         return pulumi.get(self, "ldap_idmap")
 
     @ldap_idmap.setter
@@ -472,9 +322,6 @@ class _MountTargetState:
     @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> Optional[pulumi.Input[str]]:
-        """
-        Additional information about the current 'lifecycleState'.
-        """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
@@ -484,9 +331,6 @@ class _MountTargetState:
     @property
     @pulumi.getter(name="nsgIds")
     def nsg_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) A list of Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this mount target. A maximum of 5 is allowed. Setting this to an empty array after the list is created removes the mount target from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
-        """
         return pulumi.get(self, "nsg_ids")
 
     @nsg_ids.setter
@@ -496,9 +340,6 @@ class _MountTargetState:
     @property
     @pulumi.getter(name="privateIpIds")
     def private_ip_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        The OCIDs of the private IP addresses associated with this mount target.
-        """
         return pulumi.get(self, "private_ip_ids")
 
     @private_ip_ids.setter
@@ -508,9 +349,6 @@ class _MountTargetState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The current state of the mount target.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -520,13 +358,6 @@ class _MountTargetState:
     @property
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in which to create the mount target. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "subnet_id")
 
     @subnet_id.setter
@@ -536,9 +367,6 @@ class _MountTargetState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time the mount target was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -565,117 +393,9 @@ class MountTarget(pulumi.CustomResource):
                  subnet_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Mount Target resource in Oracle Cloud Infrastructure File Storage service.
-
-        Creates a new mount target in the specified compartment and
-        subnet. You can associate a file system with a mount
-        target only when they exist in the same availability domain. Instances
-        can connect to mount targets in another availablity domain, but
-        you might see higher latency than with instances in the same
-        availability domain as the mount target.
-
-        Mount targets have one or more private IP addresses that you can
-        provide as the host portion of remote target parameters in
-        client mount commands. These private IP addresses are listed
-        in the privateIpIds property of the mount target and are highly available. Mount
-        targets also consume additional IP addresses in their subnet.
-        Do not use /30 or smaller subnets for mount target creation because they
-        do not have sufficient available IP addresses.
-        Allow at least three IP addresses for each mount target.
-
-        For information about access control and compartments, see
-        [Overview of the IAM
-        Service](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm).
-
-        For information about availability domains, see [Regions and
-        Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
-        To get a list of availability domains, use the
-        `ListAvailabilityDomains` operation in the Identity and Access
-        Management Service API.
-
-        All Oracle Cloud Infrastructure Services resources, including
-        mount targets, get an Oracle-assigned, unique ID called an
-        Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
-        When you create a resource, you can find its OCID in the response.
-        You can also retrieve a resource's OCID by using a List API operation on that resource
-        type, or by viewing the resource in the Console.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_mount_target = oci.file_storage.MountTarget("testMountTarget",
-            availability_domain=var["mount_target_availability_domain"],
-            compartment_id=var["compartment_id"],
-            subnet_id=oci_core_subnet["test_subnet"]["id"],
-            defined_tags={
-                "Operations.CostCenter": "42",
-            },
-            display_name=var["mount_target_display_name"],
-            freeform_tags={
-                "Department": "Finance",
-            },
-            hostname_label=var["mount_target_hostname_label"],
-            idmap_type=var["mount_target_idmap_type"],
-            ip_address=var["mount_target_ip_address"],
-            kerberos=oci.file_storage.MountTargetKerberosArgs(
-                kerberos_realm=var["mount_target_kerberos_kerberos_realm"],
-                backup_key_tab_secret_version=var["mount_target_kerberos_backup_key_tab_secret_version"],
-                current_key_tab_secret_version=var["mount_target_kerberos_current_key_tab_secret_version"],
-                is_kerberos_enabled=var["mount_target_kerberos_is_kerberos_enabled"],
-                key_tab_secret_id=oci_vault_secret["test_secret"]["id"],
-            ),
-            ldap_idmap=oci.file_storage.MountTargetLdapIdmapArgs(
-                cache_lifetime_seconds=var["mount_target_ldap_idmap_cache_lifetime_seconds"],
-                cache_refresh_interval_seconds=var["mount_target_ldap_idmap_cache_refresh_interval_seconds"],
-                group_search_base=var["mount_target_ldap_idmap_group_search_base"],
-                negative_cache_lifetime_seconds=var["mount_target_ldap_idmap_negative_cache_lifetime_seconds"],
-                outbound_connector1id=oci_file_storage_outbound_connector1["test_outbound_connector1"]["id"],
-                outbound_connector2id=oci_file_storage_outbound_connector2["test_outbound_connector2"]["id"],
-                schema_type=var["mount_target_ldap_idmap_schema_type"],
-                user_search_base=var["mount_target_ldap_idmap_user_search_base"],
-            ),
-            nsg_ids=var["mount_target_nsg_ids"])
-        ```
-
-        ## Import
-
-        MountTargets can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:FileStorage/mountTarget:MountTarget test_mount_target "id"
-        ```
-
+        Create a MountTarget resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] availability_domain: The availability domain in which to create the mount target.  Example: `Uocm:PHX-AD-1`
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to create the mount target.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `My mount target`
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] hostname_label: The hostname for the mount target's IP address, used for DNS resolution. The value is the hostname portion of the private IP address's fully qualified domain name (FQDN). For example, `files-1` in the FQDN `files-1.subnet123.vcn1.oraclevcn.com`. Must be unique across all VNICs in the subnet and comply with [RFC 952](https://tools.ietf.org/html/rfc952) and [RFC 1123](https://tools.ietf.org/html/rfc1123).
-               
-               Note: This attribute value is stored in the [PrivateIp](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/PrivateIp/) resource, not in the `mountTarget` resource. To update the `hostnameLabel`, use `GetMountTarget` to obtain the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the mount target's private IPs (`privateIpIds`). Then, you can use [UpdatePrivateIp](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/PrivateIp/UpdatePrivateIp) to update the `hostnameLabel` value.
-               
-               For more information, see [DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
-               
-               Example: `files-1`
-        :param pulumi.Input[str] idmap_type: (Updatable) The method used to map a Unix UID to secondary groups, if any.
-        :param pulumi.Input[str] ip_address: A private IP address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet.
-               
-               Note: This attribute value is stored in the [PrivateIp](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/PrivateIp/) resource, not in the `mountTarget` resource. To update the `ipAddress`, use `GetMountTarget` to obtain the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the mount target's private IPs (`privateIpIds`). Then, you can use [UpdatePrivateIp](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/PrivateIp/UpdatePrivateIp) to update the `ipAddress` value.
-               
-               Example: `10.0.3.3`
-        :param pulumi.Input[pulumi.InputType['MountTargetKerberosArgs']] kerberos: (Updatable) Kerberos details needed to create configuration.
-        :param pulumi.Input[pulumi.InputType['MountTargetLdapIdmapArgs']] ldap_idmap: (Updatable) Mount target details about the LDAP ID mapping configuration.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: (Updatable) A list of Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this mount target. A maximum of 5 is allowed. Setting this to an empty array after the list is created removes the mount target from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
-        :param pulumi.Input[str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in which to create the mount target. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -684,89 +404,7 @@ class MountTarget(pulumi.CustomResource):
                  args: MountTargetArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Mount Target resource in Oracle Cloud Infrastructure File Storage service.
-
-        Creates a new mount target in the specified compartment and
-        subnet. You can associate a file system with a mount
-        target only when they exist in the same availability domain. Instances
-        can connect to mount targets in another availablity domain, but
-        you might see higher latency than with instances in the same
-        availability domain as the mount target.
-
-        Mount targets have one or more private IP addresses that you can
-        provide as the host portion of remote target parameters in
-        client mount commands. These private IP addresses are listed
-        in the privateIpIds property of the mount target and are highly available. Mount
-        targets also consume additional IP addresses in their subnet.
-        Do not use /30 or smaller subnets for mount target creation because they
-        do not have sufficient available IP addresses.
-        Allow at least three IP addresses for each mount target.
-
-        For information about access control and compartments, see
-        [Overview of the IAM
-        Service](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm).
-
-        For information about availability domains, see [Regions and
-        Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
-        To get a list of availability domains, use the
-        `ListAvailabilityDomains` operation in the Identity and Access
-        Management Service API.
-
-        All Oracle Cloud Infrastructure Services resources, including
-        mount targets, get an Oracle-assigned, unique ID called an
-        Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
-        When you create a resource, you can find its OCID in the response.
-        You can also retrieve a resource's OCID by using a List API operation on that resource
-        type, or by viewing the resource in the Console.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_mount_target = oci.file_storage.MountTarget("testMountTarget",
-            availability_domain=var["mount_target_availability_domain"],
-            compartment_id=var["compartment_id"],
-            subnet_id=oci_core_subnet["test_subnet"]["id"],
-            defined_tags={
-                "Operations.CostCenter": "42",
-            },
-            display_name=var["mount_target_display_name"],
-            freeform_tags={
-                "Department": "Finance",
-            },
-            hostname_label=var["mount_target_hostname_label"],
-            idmap_type=var["mount_target_idmap_type"],
-            ip_address=var["mount_target_ip_address"],
-            kerberos=oci.file_storage.MountTargetKerberosArgs(
-                kerberos_realm=var["mount_target_kerberos_kerberos_realm"],
-                backup_key_tab_secret_version=var["mount_target_kerberos_backup_key_tab_secret_version"],
-                current_key_tab_secret_version=var["mount_target_kerberos_current_key_tab_secret_version"],
-                is_kerberos_enabled=var["mount_target_kerberos_is_kerberos_enabled"],
-                key_tab_secret_id=oci_vault_secret["test_secret"]["id"],
-            ),
-            ldap_idmap=oci.file_storage.MountTargetLdapIdmapArgs(
-                cache_lifetime_seconds=var["mount_target_ldap_idmap_cache_lifetime_seconds"],
-                cache_refresh_interval_seconds=var["mount_target_ldap_idmap_cache_refresh_interval_seconds"],
-                group_search_base=var["mount_target_ldap_idmap_group_search_base"],
-                negative_cache_lifetime_seconds=var["mount_target_ldap_idmap_negative_cache_lifetime_seconds"],
-                outbound_connector1id=oci_file_storage_outbound_connector1["test_outbound_connector1"]["id"],
-                outbound_connector2id=oci_file_storage_outbound_connector2["test_outbound_connector2"]["id"],
-                schema_type=var["mount_target_ldap_idmap_schema_type"],
-                user_search_base=var["mount_target_ldap_idmap_user_search_base"],
-            ),
-            nsg_ids=var["mount_target_nsg_ids"])
-        ```
-
-        ## Import
-
-        MountTargets can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:FileStorage/mountTarget:MountTarget test_mount_target "id"
-        ```
-
+        Create a MountTarget resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param MountTargetArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -860,37 +498,6 @@ class MountTarget(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] availability_domain: The availability domain in which to create the mount target.  Example: `Uocm:PHX-AD-1`
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to create the mount target.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `My mount target`
-        :param pulumi.Input[str] export_set_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated export set. Controls what file systems will be exported through Network File System (NFS) protocol on this mount target.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] hostname_label: The hostname for the mount target's IP address, used for DNS resolution. The value is the hostname portion of the private IP address's fully qualified domain name (FQDN). For example, `files-1` in the FQDN `files-1.subnet123.vcn1.oraclevcn.com`. Must be unique across all VNICs in the subnet and comply with [RFC 952](https://tools.ietf.org/html/rfc952) and [RFC 1123](https://tools.ietf.org/html/rfc1123).
-               
-               Note: This attribute value is stored in the [PrivateIp](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/PrivateIp/) resource, not in the `mountTarget` resource. To update the `hostnameLabel`, use `GetMountTarget` to obtain the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the mount target's private IPs (`privateIpIds`). Then, you can use [UpdatePrivateIp](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/PrivateIp/UpdatePrivateIp) to update the `hostnameLabel` value.
-               
-               For more information, see [DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
-               
-               Example: `files-1`
-        :param pulumi.Input[str] idmap_type: (Updatable) The method used to map a Unix UID to secondary groups, if any.
-        :param pulumi.Input[str] ip_address: A private IP address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet.
-               
-               Note: This attribute value is stored in the [PrivateIp](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/PrivateIp/) resource, not in the `mountTarget` resource. To update the `ipAddress`, use `GetMountTarget` to obtain the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the mount target's private IPs (`privateIpIds`). Then, you can use [UpdatePrivateIp](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/PrivateIp/UpdatePrivateIp) to update the `ipAddress` value.
-               
-               Example: `10.0.3.3`
-        :param pulumi.Input[pulumi.InputType['MountTargetKerberosArgs']] kerberos: (Updatable) Kerberos details needed to create configuration.
-        :param pulumi.Input[pulumi.InputType['MountTargetLdapIdmapArgs']] ldap_idmap: (Updatable) Mount target details about the LDAP ID mapping configuration.
-        :param pulumi.Input[str] lifecycle_details: Additional information about the current 'lifecycleState'.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: (Updatable) A list of Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this mount target. A maximum of 5 is allowed. Setting this to an empty array after the list is created removes the mount target from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] private_ip_ids: The OCIDs of the private IP addresses associated with this mount target.
-        :param pulumi.Input[str] state: The current state of the mount target.
-        :param pulumi.Input[str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in which to create the mount target. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] time_created: The date and time the mount target was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -918,150 +525,85 @@ class MountTarget(pulumi.CustomResource):
     @property
     @pulumi.getter(name="availabilityDomain")
     def availability_domain(self) -> pulumi.Output[str]:
-        """
-        The availability domain in which to create the mount target.  Example: `Uocm:PHX-AD-1`
-        """
         return pulumi.get(self, "availability_domain")
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to create the mount target.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> pulumi.Output[str]:
-        """
-        (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `My mount target`
-        """
+    def display_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="exportSetId")
-    def export_set_id(self) -> pulumi.Output[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated export set. Controls what file systems will be exported through Network File System (NFS) protocol on this mount target.
-        """
+    def export_set_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "export_set_id")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="hostnameLabel")
-    def hostname_label(self) -> pulumi.Output[str]:
-        """
-        The hostname for the mount target's IP address, used for DNS resolution. The value is the hostname portion of the private IP address's fully qualified domain name (FQDN). For example, `files-1` in the FQDN `files-1.subnet123.vcn1.oraclevcn.com`. Must be unique across all VNICs in the subnet and comply with [RFC 952](https://tools.ietf.org/html/rfc952) and [RFC 1123](https://tools.ietf.org/html/rfc1123).
-
-        Note: This attribute value is stored in the [PrivateIp](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/PrivateIp/) resource, not in the `mountTarget` resource. To update the `hostnameLabel`, use `GetMountTarget` to obtain the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the mount target's private IPs (`privateIpIds`). Then, you can use [UpdatePrivateIp](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/PrivateIp/UpdatePrivateIp) to update the `hostnameLabel` value.
-
-        For more information, see [DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
-
-        Example: `files-1`
-        """
+    def hostname_label(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "hostname_label")
 
     @property
     @pulumi.getter(name="idmapType")
-    def idmap_type(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The method used to map a Unix UID to secondary groups, if any.
-        """
+    def idmap_type(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "idmap_type")
 
     @property
     @pulumi.getter(name="ipAddress")
-    def ip_address(self) -> pulumi.Output[str]:
-        """
-        A private IP address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet.
-
-        Note: This attribute value is stored in the [PrivateIp](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/PrivateIp/) resource, not in the `mountTarget` resource. To update the `ipAddress`, use `GetMountTarget` to obtain the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the mount target's private IPs (`privateIpIds`). Then, you can use [UpdatePrivateIp](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/PrivateIp/UpdatePrivateIp) to update the `ipAddress` value.
-
-        Example: `10.0.3.3`
-        """
+    def ip_address(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "ip_address")
 
     @property
     @pulumi.getter
     def kerberos(self) -> pulumi.Output[Optional['outputs.MountTargetKerberos']]:
-        """
-        (Updatable) Kerberos details needed to create configuration.
-        """
         return pulumi.get(self, "kerberos")
 
     @property
     @pulumi.getter(name="ldapIdmap")
     def ldap_idmap(self) -> pulumi.Output[Optional['outputs.MountTargetLdapIdmap']]:
-        """
-        (Updatable) Mount target details about the LDAP ID mapping configuration.
-        """
         return pulumi.get(self, "ldap_idmap")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> pulumi.Output[str]:
-        """
-        Additional information about the current 'lifecycleState'.
-        """
+    def lifecycle_details(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="nsgIds")
-    def nsg_ids(self) -> pulumi.Output[Sequence[str]]:
-        """
-        (Updatable) A list of Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this mount target. A maximum of 5 is allowed. Setting this to an empty array after the list is created removes the mount target from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
-        """
+    def nsg_ids(self) -> pulumi.Output[Optional[Sequence[str]]]:
         return pulumi.get(self, "nsg_ids")
 
     @property
     @pulumi.getter(name="privateIpIds")
-    def private_ip_ids(self) -> pulumi.Output[Sequence[str]]:
-        """
-        The OCIDs of the private IP addresses associated with this mount target.
-        """
+    def private_ip_ids(self) -> pulumi.Output[Optional[Sequence[str]]]:
         return pulumi.get(self, "private_ip_ids")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        The current state of the mount target.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> pulumi.Output[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in which to create the mount target. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "subnet_id")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        The date and time the mount target was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 

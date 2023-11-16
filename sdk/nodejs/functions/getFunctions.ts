@@ -76,7 +76,7 @@ export interface GetFunctionsResult {
     /**
      * The list of functions.
      */
-    readonly functions: outputs.Functions.GetFunctionsFunction[];
+    readonly functions?: outputs.Functions.GetFunctionsFunction[];
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the function.
      */

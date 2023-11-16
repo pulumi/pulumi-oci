@@ -16,35 +16,35 @@ namespace Pulumi.Oci.LogAnalytics.Outputs
         /// <summary>
         /// The category description.
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// The category display name.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// The system flag. A value of false denotes a user-created category assignment. A value of true denotes an Oracle-defined category assignment.
         /// </summary>
-        public readonly bool IsSystem;
+        public readonly bool? IsSystem;
         /// <summary>
         /// The unique name that identifies the category.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// The category type. Values include "PRODUCT", "TIER", "VENDOR" and "GENERIC".
         /// </summary>
-        public readonly string Type;
+        public readonly string? Type;
 
         [OutputConstructor]
         private GetLogAnalyticsResourceCategoriesListCategoryResult(
-            string description,
+            string? description,
 
-            string displayName,
+            string? displayName,
 
-            bool isSystem,
+            bool? isSystem,
 
-            string name,
+            string? name,
 
-            string type)
+            string? type)
         {
             Description = description;
             DisplayName = displayName;

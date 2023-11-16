@@ -46,17 +46,11 @@ class GetServiceConnectorsResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the metric.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -66,7 +60,7 @@ class GetServiceConnectorsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -74,18 +68,12 @@ class GetServiceConnectorsResult:
 
     @property
     @pulumi.getter(name="serviceConnectorCollections")
-    def service_connector_collections(self) -> Sequence['outputs.GetServiceConnectorsServiceConnectorCollectionResult']:
-        """
-        The list of service_connector_collection.
-        """
+    def service_connector_collections(self) -> Optional[Sequence['outputs.GetServiceConnectorsServiceConnectorCollectionResult']]:
         return pulumi.get(self, "service_connector_collections")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the service connector.
-        """
         return pulumi.get(self, "state")
 
 
@@ -109,25 +97,7 @@ def get_service_connectors(compartment_id: Optional[str] = None,
                            state: Optional[str] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetServiceConnectorsResult:
     """
-    This data source provides the list of Service Connectors in Oracle Cloud Infrastructure Service Connector Hub service.
-
-    Lists service connectors in the specified compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_service_connectors = oci.Sch.get_service_connectors(compartment_id=var["compartment_id"],
-        display_name=var["service_connector_display_name"],
-        state=var["service_connector_state"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for this request.
-    :param str display_name: A filter to return only resources that match the given display name exactly.  Example: `example_service_connector`
-    :param str state: A filter to return only resources that match the given lifecycle state.  Example: `ACTIVE`
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -153,24 +123,6 @@ def get_service_connectors_output(compartment_id: Optional[pulumi.Input[str]] = 
                                   state: Optional[pulumi.Input[Optional[str]]] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetServiceConnectorsResult]:
     """
-    This data source provides the list of Service Connectors in Oracle Cloud Infrastructure Service Connector Hub service.
-
-    Lists service connectors in the specified compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_service_connectors = oci.Sch.get_service_connectors(compartment_id=var["compartment_id"],
-        display_name=var["service_connector_display_name"],
-        state=var["service_connector_state"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for this request.
-    :param str display_name: A filter to return only resources that match the given display name exactly.  Example: `example_service_connector`
-    :param str state: A filter to return only resources that match the given lifecycle state.  Example: `ACTIVE`
+    Use this data source to access information about an existing resource.
     """
     ...

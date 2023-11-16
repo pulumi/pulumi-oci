@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.DevOps.outputs.GetDeployStageDeployStagePredecessorCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDeployStageDeployStagePredecessorCollection {
@@ -14,7 +15,7 @@ public final class GetDeployStageDeployStagePredecessorCollection {
      * @return List of parameters defined to set helm value.
      * 
      */
-    private List<GetDeployStageDeployStagePredecessorCollectionItem> items;
+    private @Nullable List<GetDeployStageDeployStagePredecessorCollectionItem> items;
 
     private GetDeployStageDeployStagePredecessorCollection() {}
     /**
@@ -22,7 +23,7 @@ public final class GetDeployStageDeployStagePredecessorCollection {
      * 
      */
     public List<GetDeployStageDeployStagePredecessorCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -34,7 +35,7 @@ public final class GetDeployStageDeployStagePredecessorCollection {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetDeployStageDeployStagePredecessorCollectionItem> items;
+        private @Nullable List<GetDeployStageDeployStagePredecessorCollectionItem> items;
         public Builder() {}
         public Builder(GetDeployStageDeployStagePredecessorCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -42,8 +43,8 @@ public final class GetDeployStageDeployStagePredecessorCollection {
         }
 
         @CustomType.Setter
-        public Builder items(List<GetDeployStageDeployStagePredecessorCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetDeployStageDeployStagePredecessorCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetDeployStageDeployStagePredecessorCollectionItem... items) {

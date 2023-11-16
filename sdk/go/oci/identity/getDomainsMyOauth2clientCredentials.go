@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of My O Auth2 Client Credentials in Oracle Cloud Infrastructure Identity Domains service.
@@ -80,9 +79,9 @@ type GetDomainsMyOauth2clientCredentialsResult struct {
 	Authorization *string `pulumi:"authorization"`
 	CompartmentId *string `pulumi:"compartmentId"`
 	// The provider-assigned unique ID for this managed resource.
-	Id                             string  `pulumi:"id"`
+	Id                             *string `pulumi:"id"`
 	IdcsEndpoint                   string  `pulumi:"idcsEndpoint"`
-	ItemsPerPage                   int     `pulumi:"itemsPerPage"`
+	ItemsPerPage                   *int    `pulumi:"itemsPerPage"`
 	MyOauth2clientCredentialCount  *int    `pulumi:"myOauth2clientCredentialCount"`
 	MyOauth2clientCredentialFilter *string `pulumi:"myOauth2clientCredentialFilter"`
 	// The list of my_oauth2client_credentials.
@@ -93,7 +92,7 @@ type GetDomainsMyOauth2clientCredentialsResult struct {
 	SortBy       *string  `pulumi:"sortBy"`
 	SortOrder    *string  `pulumi:"sortOrder"`
 	StartIndex   *int     `pulumi:"startIndex"`
-	TotalResults int      `pulumi:"totalResults"`
+	TotalResults *int     `pulumi:"totalResults"`
 }
 
 func GetDomainsMyOauth2clientCredentialsOutput(ctx *pulumi.Context, args GetDomainsMyOauth2clientCredentialsOutputArgs, opts ...pulumi.InvokeOption) GetDomainsMyOauth2clientCredentialsResultOutput {
@@ -147,12 +146,6 @@ func (o GetDomainsMyOauth2clientCredentialsResultOutput) ToGetDomainsMyOauth2cli
 	return o
 }
 
-func (o GetDomainsMyOauth2clientCredentialsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDomainsMyOauth2clientCredentialsResult] {
-	return pulumix.Output[GetDomainsMyOauth2clientCredentialsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDomainsMyOauth2clientCredentialsResultOutput) Authorization() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetDomainsMyOauth2clientCredentialsResult) *string { return v.Authorization }).(pulumi.StringPtrOutput)
 }
@@ -162,16 +155,16 @@ func (o GetDomainsMyOauth2clientCredentialsResultOutput) CompartmentId() pulumi.
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetDomainsMyOauth2clientCredentialsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDomainsMyOauth2clientCredentialsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetDomainsMyOauth2clientCredentialsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDomainsMyOauth2clientCredentialsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetDomainsMyOauth2clientCredentialsResultOutput) IdcsEndpoint() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDomainsMyOauth2clientCredentialsResult) string { return v.IdcsEndpoint }).(pulumi.StringOutput)
 }
 
-func (o GetDomainsMyOauth2clientCredentialsResultOutput) ItemsPerPage() pulumi.IntOutput {
-	return o.ApplyT(func(v GetDomainsMyOauth2clientCredentialsResult) int { return v.ItemsPerPage }).(pulumi.IntOutput)
+func (o GetDomainsMyOauth2clientCredentialsResultOutput) ItemsPerPage() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetDomainsMyOauth2clientCredentialsResult) *int { return v.ItemsPerPage }).(pulumi.IntPtrOutput)
 }
 
 func (o GetDomainsMyOauth2clientCredentialsResultOutput) MyOauth2clientCredentialCount() pulumi.IntPtrOutput {
@@ -210,8 +203,8 @@ func (o GetDomainsMyOauth2clientCredentialsResultOutput) StartIndex() pulumi.Int
 	return o.ApplyT(func(v GetDomainsMyOauth2clientCredentialsResult) *int { return v.StartIndex }).(pulumi.IntPtrOutput)
 }
 
-func (o GetDomainsMyOauth2clientCredentialsResultOutput) TotalResults() pulumi.IntOutput {
-	return o.ApplyT(func(v GetDomainsMyOauth2clientCredentialsResult) int { return v.TotalResults }).(pulumi.IntOutput)
+func (o GetDomainsMyOauth2clientCredentialsResultOutput) TotalResults() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetDomainsMyOauth2clientCredentialsResult) *int { return v.TotalResults }).(pulumi.IntPtrOutput)
 }
 
 func init() {

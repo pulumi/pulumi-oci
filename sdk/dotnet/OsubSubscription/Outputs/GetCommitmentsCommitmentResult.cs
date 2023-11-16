@@ -16,47 +16,47 @@ namespace Pulumi.Oci.OsubSubscription.Outputs
         /// <summary>
         /// Commitment available amount
         /// </summary>
-        public readonly string AvailableAmount;
+        public readonly string? AvailableAmount;
         /// <summary>
         /// Funded Allocation line value example: 12000.00
         /// </summary>
-        public readonly string FundedAllocationValue;
+        public readonly string? FundedAllocationValue;
         /// <summary>
         /// SPM internal Commitment ID
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Commitment quantity
         /// </summary>
-        public readonly string Quantity;
+        public readonly string? Quantity;
         /// <summary>
         /// Commitment end date
         /// </summary>
-        public readonly string TimeEnd;
+        public readonly string? TimeEnd;
         /// <summary>
         /// Commitment start date
         /// </summary>
-        public readonly string TimeStart;
+        public readonly string? TimeStart;
         /// <summary>
         /// Commitment used amount
         /// </summary>
-        public readonly string UsedAmount;
+        public readonly string? UsedAmount;
 
         [OutputConstructor]
         private GetCommitmentsCommitmentResult(
-            string availableAmount,
+            string? availableAmount,
 
-            string fundedAllocationValue,
+            string? fundedAllocationValue,
 
-            string id,
+            string? id,
 
-            string quantity,
+            string? quantity,
 
-            string timeEnd,
+            string? timeEnd,
 
-            string timeStart,
+            string? timeStart,
 
-            string usedAmount)
+            string? usedAmount)
         {
             AvailableAmount = availableAmount;
             FundedAllocationValue = fundedAllocationValue;

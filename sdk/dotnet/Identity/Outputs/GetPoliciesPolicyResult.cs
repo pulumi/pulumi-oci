@@ -13,41 +13,41 @@ namespace Pulumi.Oci.Identity.Outputs
     [OutputType]
     public sealed class GetPoliciesPolicyResult
     {
-        public readonly string ETag;
+        public readonly string? ETag;
         /// <summary>
         /// The OCID of the compartment (remember that the tenancy is simply the root compartment).
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// The description you assign to the policy. Does not have to be unique, and it's changeable.
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// The OCID of the policy.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The detailed status of INACTIVE lifecycleState.
         /// </summary>
-        public readonly string InactiveState;
-        public readonly string LastUpdateETag;
+        public readonly string? InactiveState;
+        public readonly string? LastUpdateETag;
         /// <summary>
         /// A filter to only return resources that match the given name exactly.
         /// </summary>
-        public readonly string Name;
-        public readonly string PolicyHash;
+        public readonly string? Name;
+        public readonly string? PolicyHash;
         /// <summary>
         /// A filter to only return resources that match the given lifecycle state.  The state value is case-insensitive.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// An array of one or more policy statements written in the policy language.
         /// </summary>
@@ -55,41 +55,41 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// Date and time the policy was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The version of the policy. If null or set to an empty string, when a request comes in for authorization, the policy will be evaluated according to the current behavior of the services at that moment. If set to a particular date (YYYY-MM-DD), the policy will be evaluated according to the behavior of the services on that date.
         /// </summary>
-        public readonly string VersionDate;
+        public readonly string? VersionDate;
 
         [OutputConstructor]
         private GetPoliciesPolicyResult(
-            string ETag,
+            string? ETag,
 
-            string compartmentId,
+            string? compartmentId,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string description,
+            string? description,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string id,
+            string? id,
 
-            string inactiveState,
+            string? inactiveState,
 
-            string lastUpdateETag,
+            string? lastUpdateETag,
 
-            string name,
+            string? name,
 
-            string policyHash,
+            string? policyHash,
 
-            string state,
+            string? state,
 
             ImmutableArray<string> statements,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string versionDate)
+            string? versionDate)
         {
             this.ETag = ETag;
             CompartmentId = compartmentId;

@@ -16,29 +16,29 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// <summary>
         /// Indicates whether the system privilege is granted with the ADMIN option (YES) or not (NO).
         /// </summary>
-        public readonly string AdminOption;
+        public readonly string? AdminOption;
         /// <summary>
         /// Indicates how the system privilege was granted. Possible values: YES if the system privilege is granted commonly (CONTAINER=ALL is used) NO if the system privilege is granted locally (CONTAINER=ALL is not used)
         /// </summary>
-        public readonly string Common;
+        public readonly string? Common;
         /// <summary>
         /// Indicates whether the granted system privilege is inherited from another container (YES) or not (NO).
         /// </summary>
-        public readonly string Inherited;
+        public readonly string? Inherited;
         /// <summary>
         /// A filter to return only resources that match the entire name.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
 
         [OutputConstructor]
         private GetManagedDatabasesUserSystemPrivilegesSystemPrivilegeCollectionItemResult(
-            string adminOption,
+            string? adminOption,
 
-            string common,
+            string? common,
 
-            string inherited,
+            string? inherited,
 
-            string name)
+            string? name)
         {
             AdminOption = adminOption;
             Common = common;

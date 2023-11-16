@@ -25,12 +25,12 @@ public final class GetMetricExtensionsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The list of metric_extension_collection.
      * 
      */
-    private List<GetMetricExtensionsMetricExtensionCollection> metricExtensionCollections;
+    private @Nullable List<GetMetricExtensionsMetricExtensionCollection> metricExtensionCollections;
     /**
      * @return Name of the script file
      * 
@@ -70,15 +70,15 @@ public final class GetMetricExtensionsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The list of metric_extension_collection.
      * 
      */
     public List<GetMetricExtensionsMetricExtensionCollection> metricExtensionCollections() {
-        return this.metricExtensionCollections;
+        return this.metricExtensionCollections == null ? List.of() : this.metricExtensionCollections;
     }
     /**
      * @return Name of the script file
@@ -121,8 +121,8 @@ public final class GetMetricExtensionsResult {
         private String compartmentId;
         private @Nullable String enabledOnResourceId;
         private @Nullable List<GetMetricExtensionsFilter> filters;
-        private String id;
-        private List<GetMetricExtensionsMetricExtensionCollection> metricExtensionCollections;
+        private @Nullable String id;
+        private @Nullable List<GetMetricExtensionsMetricExtensionCollection> metricExtensionCollections;
         private @Nullable String name;
         private @Nullable String resourceType;
         private @Nullable String state;
@@ -160,13 +160,13 @@ public final class GetMetricExtensionsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder metricExtensionCollections(List<GetMetricExtensionsMetricExtensionCollection> metricExtensionCollections) {
-            this.metricExtensionCollections = Objects.requireNonNull(metricExtensionCollections);
+        public Builder metricExtensionCollections(@Nullable List<GetMetricExtensionsMetricExtensionCollection> metricExtensionCollections) {
+            this.metricExtensionCollections = metricExtensionCollections;
             return this;
         }
         public Builder metricExtensionCollections(GetMetricExtensionsMetricExtensionCollection... metricExtensionCollections) {

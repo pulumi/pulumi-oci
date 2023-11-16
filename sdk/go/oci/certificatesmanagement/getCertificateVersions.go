@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Certificate Versions in Oracle Cloud Infrastructure Certificates Management service.
@@ -70,7 +69,7 @@ type GetCertificateVersionsResult struct {
 	CertificateVersionCollections []GetCertificateVersionsCertificateVersionCollection `pulumi:"certificateVersionCollections"`
 	Filters                       []GetCertificateVersionsFilter                       `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The version number of the certificate.
 	VersionNumber *string `pulumi:"versionNumber"`
 }
@@ -116,12 +115,6 @@ func (o GetCertificateVersionsResultOutput) ToGetCertificateVersionsResultOutput
 	return o
 }
 
-func (o GetCertificateVersionsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetCertificateVersionsResult] {
-	return pulumix.Output[GetCertificateVersionsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the certificate.
 func (o GetCertificateVersionsResultOutput) CertificateId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetCertificateVersionsResult) string { return v.CertificateId }).(pulumi.StringOutput)
@@ -139,8 +132,8 @@ func (o GetCertificateVersionsResultOutput) Filters() GetCertificateVersionsFilt
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetCertificateVersionsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateVersionsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetCertificateVersionsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateVersionsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The version number of the certificate.

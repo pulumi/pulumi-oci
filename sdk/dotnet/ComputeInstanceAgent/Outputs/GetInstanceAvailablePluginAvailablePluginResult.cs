@@ -16,29 +16,29 @@ namespace Pulumi.Oci.ComputeInstanceAgent.Outputs
         /// <summary>
         /// Is the plugin enabled or disabled by default
         /// </summary>
-        public readonly bool IsEnabledByDefault;
+        public readonly bool? IsEnabledByDefault;
         /// <summary>
         /// Is the plugin supported or not
         /// </summary>
-        public readonly bool IsSupported;
+        public readonly bool? IsSupported;
         /// <summary>
         /// The plugin name
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// A brief description of the plugin functionality
         /// </summary>
-        public readonly string Summary;
+        public readonly string? Summary;
 
         [OutputConstructor]
         private GetInstanceAvailablePluginAvailablePluginResult(
-            bool isEnabledByDefault,
+            bool? isEnabledByDefault,
 
-            bool isSupported,
+            bool? isSupported,
 
-            string name,
+            string? name,
 
-            string summary)
+            string? summary)
         {
             IsEnabledByDefault = isEnabledByDefault;
             IsSupported = isSupported;

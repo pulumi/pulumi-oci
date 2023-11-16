@@ -15,6 +15,7 @@ import com.pulumi.oci.AiDocument.outputs.ProcessorJobProcessorConfig;
 import com.pulumi.oci.Utilities;
 import java.lang.Double;
 import java.lang.String;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -113,14 +114,14 @@ public class ProcessorJob extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="displayName", refs={String.class}, tree="[0]")
-    private Output<String> displayName;
+    private Output</* @Nullable */ String> displayName;
 
     /**
      * @return The display name of the processor job.
      * 
      */
-    public Output<String> displayName() {
-        return this.displayName;
+    public Output<Optional<String>> displayName() {
+        return Codegen.optional(this.displayName);
     }
     /**
      * The location of the inputs.
@@ -141,14 +142,14 @@ public class ProcessorJob extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
-    private Output<String> lifecycleDetails;
+    private Output</* @Nullable */ String> lifecycleDetails;
 
     /**
      * @return The detailed status of FAILED state.
      * 
      */
-    public Output<String> lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Output<Optional<String>> lifecycleDetails() {
+        return Codegen.optional(this.lifecycleDetails);
     }
     /**
      * The object storage location where to store analysis results.
@@ -169,14 +170,14 @@ public class ProcessorJob extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="percentComplete", refs={Double.class}, tree="[0]")
-    private Output<Double> percentComplete;
+    private Output</* @Nullable */ Double> percentComplete;
 
     /**
      * @return How much progress the operation has made, compared to the total amount of work to be performed.
      * 
      */
-    public Output<Double> percentComplete() {
-        return this.percentComplete;
+    public Output<Optional<Double>> percentComplete() {
+        return Codegen.optional(this.percentComplete);
     }
     /**
      * The configuration of a processor.
@@ -197,56 +198,56 @@ public class ProcessorJob extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The current state of the processor job.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * The job acceptance time.
      * 
      */
     @Export(name="timeAccepted", refs={String.class}, tree="[0]")
-    private Output<String> timeAccepted;
+    private Output</* @Nullable */ String> timeAccepted;
 
     /**
      * @return The job acceptance time.
      * 
      */
-    public Output<String> timeAccepted() {
-        return this.timeAccepted;
+    public Output<Optional<String>> timeAccepted() {
+        return Codegen.optional(this.timeAccepted);
     }
     /**
      * The job finish time.
      * 
      */
     @Export(name="timeFinished", refs={String.class}, tree="[0]")
-    private Output<String> timeFinished;
+    private Output</* @Nullable */ String> timeFinished;
 
     /**
      * @return The job finish time.
      * 
      */
-    public Output<String> timeFinished() {
-        return this.timeFinished;
+    public Output<Optional<String>> timeFinished() {
+        return Codegen.optional(this.timeFinished);
     }
     /**
      * The job start time.
      * 
      */
     @Export(name="timeStarted", refs={String.class}, tree="[0]")
-    private Output<String> timeStarted;
+    private Output</* @Nullable */ String> timeStarted;
 
     /**
      * @return The job start time.
      * 
      */
-    public Output<String> timeStarted() {
-        return this.timeStarted;
+    public Output<Optional<String>> timeStarted() {
+        return Codegen.optional(this.timeStarted);
     }
 
     /**

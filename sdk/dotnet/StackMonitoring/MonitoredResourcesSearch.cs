@@ -105,7 +105,7 @@ namespace Pulumi.Oci.StackMonitoring
         /// License edition of the monitored resource.
         /// </summary>
         [Output("license")]
-        public Output<string> License { get; private set; } = null!;
+        public Output<string?> License { get; private set; } = null!;
 
         /// <summary>
         /// A filter to return resources with matching management agent id.

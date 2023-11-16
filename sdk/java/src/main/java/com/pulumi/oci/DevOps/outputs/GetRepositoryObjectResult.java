@@ -17,29 +17,29 @@ public final class GetRepositoryObjectResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Flag to determine if the object contains binary file content or not.
      * 
      */
-    private Boolean isBinary;
+    private @Nullable Boolean isBinary;
     private @Nullable String refName;
     private String repositoryId;
     /**
      * @return SHA-1 hash of git object.
      * 
      */
-    private String sha;
+    private @Nullable String sha;
     /**
      * @return Size in bytes.
      * 
      */
-    private String sizeInBytes;
+    private @Nullable String sizeInBytes;
     /**
      * @return The type of git object.
      * 
      */
-    private String type;
+    private @Nullable String type;
 
     private GetRepositoryObjectResult() {}
     public Optional<String> filePath() {
@@ -49,15 +49,15 @@ public final class GetRepositoryObjectResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Flag to determine if the object contains binary file content or not.
      * 
      */
-    public Boolean isBinary() {
-        return this.isBinary;
+    public Optional<Boolean> isBinary() {
+        return Optional.ofNullable(this.isBinary);
     }
     public Optional<String> refName() {
         return Optional.ofNullable(this.refName);
@@ -69,22 +69,22 @@ public final class GetRepositoryObjectResult {
      * @return SHA-1 hash of git object.
      * 
      */
-    public String sha() {
-        return this.sha;
+    public Optional<String> sha() {
+        return Optional.ofNullable(this.sha);
     }
     /**
      * @return Size in bytes.
      * 
      */
-    public String sizeInBytes() {
-        return this.sizeInBytes;
+    public Optional<String> sizeInBytes() {
+        return Optional.ofNullable(this.sizeInBytes);
     }
     /**
      * @return The type of git object.
      * 
      */
-    public String type() {
-        return this.type;
+    public Optional<String> type() {
+        return Optional.ofNullable(this.type);
     }
 
     public static Builder builder() {
@@ -97,13 +97,13 @@ public final class GetRepositoryObjectResult {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable String filePath;
-        private String id;
-        private Boolean isBinary;
+        private @Nullable String id;
+        private @Nullable Boolean isBinary;
         private @Nullable String refName;
         private String repositoryId;
-        private String sha;
-        private String sizeInBytes;
-        private String type;
+        private @Nullable String sha;
+        private @Nullable String sizeInBytes;
+        private @Nullable String type;
         public Builder() {}
         public Builder(GetRepositoryObjectResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -123,13 +123,13 @@ public final class GetRepositoryObjectResult {
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder isBinary(Boolean isBinary) {
-            this.isBinary = Objects.requireNonNull(isBinary);
+        public Builder isBinary(@Nullable Boolean isBinary) {
+            this.isBinary = isBinary;
             return this;
         }
         @CustomType.Setter
@@ -143,18 +143,18 @@ public final class GetRepositoryObjectResult {
             return this;
         }
         @CustomType.Setter
-        public Builder sha(String sha) {
-            this.sha = Objects.requireNonNull(sha);
+        public Builder sha(@Nullable String sha) {
+            this.sha = sha;
             return this;
         }
         @CustomType.Setter
-        public Builder sizeInBytes(String sizeInBytes) {
-            this.sizeInBytes = Objects.requireNonNull(sizeInBytes);
+        public Builder sizeInBytes(@Nullable String sizeInBytes) {
+            this.sizeInBytes = sizeInBytes;
             return this;
         }
         @CustomType.Setter
-        public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+        public Builder type(@Nullable String type) {
+            this.type = type;
             return this;
         }
         public GetRepositoryObjectResult build() {

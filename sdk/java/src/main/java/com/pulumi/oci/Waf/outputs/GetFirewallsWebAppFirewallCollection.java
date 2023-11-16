@@ -7,14 +7,15 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.Waf.outputs.GetFirewallsWebAppFirewallCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetFirewallsWebAppFirewallCollection {
-    private List<GetFirewallsWebAppFirewallCollectionItem> items;
+    private @Nullable List<GetFirewallsWebAppFirewallCollectionItem> items;
 
     private GetFirewallsWebAppFirewallCollection() {}
     public List<GetFirewallsWebAppFirewallCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -26,7 +27,7 @@ public final class GetFirewallsWebAppFirewallCollection {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetFirewallsWebAppFirewallCollectionItem> items;
+        private @Nullable List<GetFirewallsWebAppFirewallCollectionItem> items;
         public Builder() {}
         public Builder(GetFirewallsWebAppFirewallCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -34,8 +35,8 @@ public final class GetFirewallsWebAppFirewallCollection {
         }
 
         @CustomType.Setter
-        public Builder items(List<GetFirewallsWebAppFirewallCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetFirewallsWebAppFirewallCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetFirewallsWebAppFirewallCollectionItem... items) {

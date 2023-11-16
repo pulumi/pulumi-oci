@@ -16,19 +16,19 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// Identifies the name of a cost center.
         /// </summary>
-        public readonly string CostCenter;
+        public readonly string? CostCenter;
         /// <summary>
         /// Identifies the name of a department.
         /// </summary>
-        public readonly string Department;
+        public readonly string? Department;
         /// <summary>
         /// Identifies the name of a division.
         /// </summary>
-        public readonly string Division;
+        public readonly string? Division;
         /// <summary>
         /// Numeric or alphanumeric identifier assigned to  a person, typically based on order of hire or association with an organization.
         /// </summary>
-        public readonly string EmployeeNumber;
+        public readonly string? EmployeeNumber;
         /// <summary>
         /// The User's manager. A complex type that optionally allows Service Providers to represent organizational hierarchy by referencing the 'id' attribute of another User.
         /// </summary>
@@ -36,21 +36,21 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// Identifies the name of an organization.
         /// </summary>
-        public readonly string Organization;
+        public readonly string? Organization;
 
         [OutputConstructor]
         private GetDomainsUserUrnietfparamsscimschemasextensionenterprise20userResult(
-            string costCenter,
+            string? costCenter,
 
-            string department,
+            string? department,
 
-            string division,
+            string? division,
 
-            string employeeNumber,
+            string? employeeNumber,
 
             ImmutableArray<Outputs.GetDomainsUserUrnietfparamsscimschemasextensionenterprise20userManagerResult> managers,
 
-            string organization)
+            string? organization)
         {
             CostCenter = costCenter;
             Department = department;

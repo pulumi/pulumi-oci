@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Network Security Group resource in Oracle Cloud Infrastructure Core service.
@@ -66,22 +65,22 @@ type LookupNetworkSecurityGroupArgs struct {
 // A collection of values returned by getNetworkSecurityGroup.
 type LookupNetworkSecurityGroupResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment the network security group is in.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security group.
-	Id                     string `pulumi:"id"`
-	NetworkSecurityGroupId string `pulumi:"networkSecurityGroupId"`
+	Id                     *string `pulumi:"id"`
+	NetworkSecurityGroupId string  `pulumi:"networkSecurityGroupId"`
 	// The network security group's current state.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The date and time the network security group was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security group's VCN.
-	VcnId string `pulumi:"vcnId"`
+	VcnId *string `pulumi:"vcnId"`
 }
 
 func LookupNetworkSecurityGroupOutput(ctx *pulumi.Context, args LookupNetworkSecurityGroupOutputArgs, opts ...pulumi.InvokeOption) LookupNetworkSecurityGroupResultOutput {
@@ -122,15 +121,9 @@ func (o LookupNetworkSecurityGroupResultOutput) ToLookupNetworkSecurityGroupResu
 	return o
 }
 
-func (o LookupNetworkSecurityGroupResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupNetworkSecurityGroupResult] {
-	return pulumix.Output[LookupNetworkSecurityGroupResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment the network security group is in.
-func (o LookupNetworkSecurityGroupResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupNetworkSecurityGroupResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupNetworkSecurityGroupResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupNetworkSecurityGroupResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -139,8 +132,8 @@ func (o LookupNetworkSecurityGroupResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-func (o LookupNetworkSecurityGroupResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupNetworkSecurityGroupResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupNetworkSecurityGroupResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupNetworkSecurityGroupResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -149,8 +142,8 @@ func (o LookupNetworkSecurityGroupResultOutput) FreeformTags() pulumi.MapOutput 
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security group.
-func (o LookupNetworkSecurityGroupResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupNetworkSecurityGroupResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupNetworkSecurityGroupResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupNetworkSecurityGroupResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupNetworkSecurityGroupResultOutput) NetworkSecurityGroupId() pulumi.StringOutput {
@@ -158,18 +151,18 @@ func (o LookupNetworkSecurityGroupResultOutput) NetworkSecurityGroupId() pulumi.
 }
 
 // The network security group's current state.
-func (o LookupNetworkSecurityGroupResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupNetworkSecurityGroupResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupNetworkSecurityGroupResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupNetworkSecurityGroupResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the network security group was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-func (o LookupNetworkSecurityGroupResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupNetworkSecurityGroupResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupNetworkSecurityGroupResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupNetworkSecurityGroupResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security group's VCN.
-func (o LookupNetworkSecurityGroupResultOutput) VcnId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupNetworkSecurityGroupResult) string { return v.VcnId }).(pulumi.StringOutput)
+func (o LookupNetworkSecurityGroupResultOutput) VcnId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupNetworkSecurityGroupResult) *string { return v.VcnId }).(pulumi.StringPtrOutput)
 }
 
 func init() {

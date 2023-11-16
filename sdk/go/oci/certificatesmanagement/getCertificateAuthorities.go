@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Certificate Authorities in Oracle Cloud Infrastructure Certificates Management service.
@@ -81,7 +80,7 @@ type GetCertificateAuthoritiesResult struct {
 	CompartmentId *string                           `pulumi:"compartmentId"`
 	Filters       []GetCertificateAuthoritiesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The OCID of the parent CA that issued this CA. If this is the root CA, then this value is null.
 	IssuerCertificateAuthorityId *string `pulumi:"issuerCertificateAuthorityId"`
 	// A user-friendly name for the CA. Names are unique within a compartment. Avoid entering confidential information. Valid characters include uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
@@ -137,12 +136,6 @@ func (o GetCertificateAuthoritiesResultOutput) ToGetCertificateAuthoritiesResult
 	return o
 }
 
-func (o GetCertificateAuthoritiesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetCertificateAuthoritiesResult] {
-	return pulumix.Output[GetCertificateAuthoritiesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The list of certificate_authority_collection.
 func (o GetCertificateAuthoritiesResultOutput) CertificateAuthorityCollections() GetCertificateAuthoritiesCertificateAuthorityCollectionArrayOutput {
 	return o.ApplyT(func(v GetCertificateAuthoritiesResult) []GetCertificateAuthoritiesCertificateAuthorityCollection {
@@ -165,8 +158,8 @@ func (o GetCertificateAuthoritiesResultOutput) Filters() GetCertificateAuthoriti
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetCertificateAuthoritiesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateAuthoritiesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetCertificateAuthoritiesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateAuthoritiesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the parent CA that issued this CA. If this is the root CA, then this value is null.

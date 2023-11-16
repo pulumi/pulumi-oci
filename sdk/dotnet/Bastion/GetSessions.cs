@@ -177,7 +177,7 @@ namespace Pulumi.Oci.Bastion
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         public readonly string? SessionId;
         public readonly string? SessionLifecycleState;
         /// <summary>
@@ -193,7 +193,7 @@ namespace Pulumi.Oci.Bastion
 
             ImmutableArray<Outputs.GetSessionsFilterResult> filters,
 
-            string id,
+            string? id,
 
             string? sessionId,
 

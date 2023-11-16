@@ -16,59 +16,59 @@ namespace Pulumi.Oci.Jms.Outputs
         /// <summary>
         /// Ftp host to be set in net.properties file.
         /// </summary>
-        public readonly string FtpProxyHost;
+        public readonly string? FtpProxyHost;
         /// <summary>
         /// Ftp port number to be set in net.properties file.
         /// </summary>
-        public readonly int FtpProxyPort;
+        public readonly int? FtpProxyPort;
         /// <summary>
         /// Http host to be set in net.properties file.
         /// </summary>
-        public readonly string HttpProxyHost;
+        public readonly string? HttpProxyHost;
         /// <summary>
         /// Http port number to be set in net.properties file.
         /// </summary>
-        public readonly int HttpProxyPort;
+        public readonly int? HttpProxyPort;
         /// <summary>
         /// Https host to be set in net.properties file.
         /// </summary>
-        public readonly string HttpsProxyHost;
+        public readonly string? HttpsProxyHost;
         /// <summary>
         /// Https port number to be set in net.properties file.
         /// </summary>
-        public readonly int HttpsProxyPort;
+        public readonly int? HttpsProxyPort;
         /// <summary>
         /// Socks host to be set in net.properties file.
         /// </summary>
-        public readonly string SocksProxyHost;
+        public readonly string? SocksProxyHost;
         /// <summary>
         /// Socks port number to be set in net.properties file.
         /// </summary>
-        public readonly int SocksProxyPort;
+        public readonly int? SocksProxyPort;
         /// <summary>
         /// Sets "java.net.useSystemProxies=true" in net.properties when they exist.
         /// </summary>
-        public readonly bool UseSystemProxies;
+        public readonly bool? UseSystemProxies;
 
         [OutputConstructor]
         private GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyResult(
-            string ftpProxyHost,
+            string? ftpProxyHost,
 
-            int ftpProxyPort,
+            int? ftpProxyPort,
 
-            string httpProxyHost,
+            string? httpProxyHost,
 
-            int httpProxyPort,
+            int? httpProxyPort,
 
-            string httpsProxyHost,
+            string? httpsProxyHost,
 
-            int httpsProxyPort,
+            int? httpsProxyPort,
 
-            string socksProxyHost,
+            string? socksProxyHost,
 
-            int socksProxyPort,
+            int? socksProxyPort,
 
-            bool useSystemProxies)
+            bool? useSystemProxies)
         {
             FtpProxyHost = ftpProxyHost;
             FtpProxyPort = ftpProxyPort;

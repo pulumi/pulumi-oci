@@ -125,7 +125,7 @@ namespace Pulumi.Oci.MediaServices
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// List of SytemMediaWorkflow items.
         /// </summary>
@@ -139,7 +139,7 @@ namespace Pulumi.Oci.MediaServices
         private GetSystemMediaWorkflowResult(
             string? compartmentId,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetSystemMediaWorkflowItemResult> items,
 

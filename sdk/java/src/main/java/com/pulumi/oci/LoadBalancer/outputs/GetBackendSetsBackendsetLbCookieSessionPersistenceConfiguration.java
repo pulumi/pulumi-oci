@@ -8,6 +8,8 @@ import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetBackendSetsBackendsetLbCookieSessionPersistenceConfiguration {
@@ -15,87 +17,87 @@ public final class GetBackendSetsBackendsetLbCookieSessionPersistenceConfigurati
      * @return The name of the cookie used to detect a session initiated by the backend server. Use &#39;*&#39; to specify that any cookie set by the backend causes the session to persist.  Example: `example_cookie`
      * 
      */
-    private String cookieName;
+    private @Nullable String cookieName;
     /**
      * @return Whether the load balancer is prevented from directing traffic from a persistent session client to a different backend server if the original server is unavailable. Defaults to false.  Example: `false`
      * 
      */
-    private Boolean disableFallback;
+    private @Nullable Boolean disableFallback;
     /**
      * @return The domain in which the cookie is valid. The `Set-cookie` header inserted by the load balancer contains a domain attribute with the specified value.
      * 
      */
-    private String domain;
+    private @Nullable String domain;
     /**
      * @return Whether the `Set-cookie` header should contain the `HttpOnly` attribute. If `true`, the `Set-cookie` header inserted by the load balancer contains the `HttpOnly` attribute, which limits the scope of the cookie to HTTP requests. This attribute directs the client or browser to omit the cookie when providing access to cookies through non-HTTP APIs. For example, it restricts the cookie from JavaScript channels.  Example: `true`
      * 
      */
-    private Boolean isHttpOnly;
+    private @Nullable Boolean isHttpOnly;
     /**
      * @return Whether the `Set-cookie` header should contain the `Secure` attribute. If `true`, the `Set-cookie` header inserted by the load balancer contains the `Secure` attribute, which directs the client or browser to send the cookie only using a secure protocol.
      * 
      */
-    private Boolean isSecure;
+    private @Nullable Boolean isSecure;
     /**
      * @return The amount of time the cookie remains valid. The `Set-cookie` header inserted by the load balancer contains a `Max-Age` attribute with the specified value.
      * 
      */
-    private Integer maxAgeInSeconds;
+    private @Nullable Integer maxAgeInSeconds;
     /**
      * @return The path in which the cookie is valid. The `Set-cookie header` inserted by the load balancer contains a `Path` attribute with the specified value.
      * 
      */
-    private String path;
+    private @Nullable String path;
 
     private GetBackendSetsBackendsetLbCookieSessionPersistenceConfiguration() {}
     /**
      * @return The name of the cookie used to detect a session initiated by the backend server. Use &#39;*&#39; to specify that any cookie set by the backend causes the session to persist.  Example: `example_cookie`
      * 
      */
-    public String cookieName() {
-        return this.cookieName;
+    public Optional<String> cookieName() {
+        return Optional.ofNullable(this.cookieName);
     }
     /**
      * @return Whether the load balancer is prevented from directing traffic from a persistent session client to a different backend server if the original server is unavailable. Defaults to false.  Example: `false`
      * 
      */
-    public Boolean disableFallback() {
-        return this.disableFallback;
+    public Optional<Boolean> disableFallback() {
+        return Optional.ofNullable(this.disableFallback);
     }
     /**
      * @return The domain in which the cookie is valid. The `Set-cookie` header inserted by the load balancer contains a domain attribute with the specified value.
      * 
      */
-    public String domain() {
-        return this.domain;
+    public Optional<String> domain() {
+        return Optional.ofNullable(this.domain);
     }
     /**
      * @return Whether the `Set-cookie` header should contain the `HttpOnly` attribute. If `true`, the `Set-cookie` header inserted by the load balancer contains the `HttpOnly` attribute, which limits the scope of the cookie to HTTP requests. This attribute directs the client or browser to omit the cookie when providing access to cookies through non-HTTP APIs. For example, it restricts the cookie from JavaScript channels.  Example: `true`
      * 
      */
-    public Boolean isHttpOnly() {
-        return this.isHttpOnly;
+    public Optional<Boolean> isHttpOnly() {
+        return Optional.ofNullable(this.isHttpOnly);
     }
     /**
      * @return Whether the `Set-cookie` header should contain the `Secure` attribute. If `true`, the `Set-cookie` header inserted by the load balancer contains the `Secure` attribute, which directs the client or browser to send the cookie only using a secure protocol.
      * 
      */
-    public Boolean isSecure() {
-        return this.isSecure;
+    public Optional<Boolean> isSecure() {
+        return Optional.ofNullable(this.isSecure);
     }
     /**
      * @return The amount of time the cookie remains valid. The `Set-cookie` header inserted by the load balancer contains a `Max-Age` attribute with the specified value.
      * 
      */
-    public Integer maxAgeInSeconds() {
-        return this.maxAgeInSeconds;
+    public Optional<Integer> maxAgeInSeconds() {
+        return Optional.ofNullable(this.maxAgeInSeconds);
     }
     /**
      * @return The path in which the cookie is valid. The `Set-cookie header` inserted by the load balancer contains a `Path` attribute with the specified value.
      * 
      */
-    public String path() {
-        return this.path;
+    public Optional<String> path() {
+        return Optional.ofNullable(this.path);
     }
 
     public static Builder builder() {
@@ -107,13 +109,13 @@ public final class GetBackendSetsBackendsetLbCookieSessionPersistenceConfigurati
     }
     @CustomType.Builder
     public static final class Builder {
-        private String cookieName;
-        private Boolean disableFallback;
-        private String domain;
-        private Boolean isHttpOnly;
-        private Boolean isSecure;
-        private Integer maxAgeInSeconds;
-        private String path;
+        private @Nullable String cookieName;
+        private @Nullable Boolean disableFallback;
+        private @Nullable String domain;
+        private @Nullable Boolean isHttpOnly;
+        private @Nullable Boolean isSecure;
+        private @Nullable Integer maxAgeInSeconds;
+        private @Nullable String path;
         public Builder() {}
         public Builder(GetBackendSetsBackendsetLbCookieSessionPersistenceConfiguration defaults) {
     	      Objects.requireNonNull(defaults);
@@ -127,38 +129,38 @@ public final class GetBackendSetsBackendsetLbCookieSessionPersistenceConfigurati
         }
 
         @CustomType.Setter
-        public Builder cookieName(String cookieName) {
-            this.cookieName = Objects.requireNonNull(cookieName);
+        public Builder cookieName(@Nullable String cookieName) {
+            this.cookieName = cookieName;
             return this;
         }
         @CustomType.Setter
-        public Builder disableFallback(Boolean disableFallback) {
-            this.disableFallback = Objects.requireNonNull(disableFallback);
+        public Builder disableFallback(@Nullable Boolean disableFallback) {
+            this.disableFallback = disableFallback;
             return this;
         }
         @CustomType.Setter
-        public Builder domain(String domain) {
-            this.domain = Objects.requireNonNull(domain);
+        public Builder domain(@Nullable String domain) {
+            this.domain = domain;
             return this;
         }
         @CustomType.Setter
-        public Builder isHttpOnly(Boolean isHttpOnly) {
-            this.isHttpOnly = Objects.requireNonNull(isHttpOnly);
+        public Builder isHttpOnly(@Nullable Boolean isHttpOnly) {
+            this.isHttpOnly = isHttpOnly;
             return this;
         }
         @CustomType.Setter
-        public Builder isSecure(Boolean isSecure) {
-            this.isSecure = Objects.requireNonNull(isSecure);
+        public Builder isSecure(@Nullable Boolean isSecure) {
+            this.isSecure = isSecure;
             return this;
         }
         @CustomType.Setter
-        public Builder maxAgeInSeconds(Integer maxAgeInSeconds) {
-            this.maxAgeInSeconds = Objects.requireNonNull(maxAgeInSeconds);
+        public Builder maxAgeInSeconds(@Nullable Integer maxAgeInSeconds) {
+            this.maxAgeInSeconds = maxAgeInSeconds;
             return this;
         }
         @CustomType.Setter
-        public Builder path(String path) {
-            this.path = Objects.requireNonNull(path);
+        public Builder path(@Nullable String path) {
+            this.path = path;
             return this;
         }
         public GetBackendSetsBackendsetLbCookieSessionPersistenceConfiguration build() {

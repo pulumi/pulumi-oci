@@ -48,10 +48,7 @@ class GetCommitmentsResult:
 
     @property
     @pulumi.getter
-    def commitments(self) -> Sequence['outputs.GetCommitmentsCommitmentResult']:
-        """
-        The list of commitments.
-        """
+    def commitments(self) -> Optional[Sequence['outputs.GetCommitmentsCommitmentResult']]:
         return pulumi.get(self, "commitments")
 
     @property
@@ -66,7 +63,7 @@ class GetCommitmentsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -110,27 +107,7 @@ def get_commitments(compartment_id: Optional[str] = None,
                     x_one_origin_region: Optional[str] = None,
                     opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetCommitmentsResult:
     """
-    This data source provides the list of Commitments in Oracle Cloud Infrastructure Osub Subscription service.
-
-    This list API returns all commitments for a particular Subscribed Service
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_commitments = oci.OsubSubscription.get_commitments(compartment_id=var["compartment_id"],
-        subscribed_service_id=oci_core_service["test_service"]["id"],
-        x_one_gateway_subscription_id=var["commitment_x_one_gateway_subscription_id"],
-        x_one_origin_region=var["commitment_x_one_origin_region"])
-    ```
-
-
-    :param str compartment_id: The OCID of the compartment.
-    :param str subscribed_service_id: This param is used to get the commitments for a particular subscribed service
-    :param str x_one_gateway_subscription_id: This header is meant to be used only for internal purposes and will be ignored on any public request. The purpose of this header is  to help on Gateway to API calls identification.
-    :param str x_one_origin_region: The Oracle Cloud Infrastructure home region name in case home region is not us-ashburn-1 (IAD), e.g. ap-mumbai-1, us-phoenix-1 etc.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -159,26 +136,6 @@ def get_commitments_output(compartment_id: Optional[pulumi.Input[str]] = None,
                            x_one_origin_region: Optional[pulumi.Input[Optional[str]]] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCommitmentsResult]:
     """
-    This data source provides the list of Commitments in Oracle Cloud Infrastructure Osub Subscription service.
-
-    This list API returns all commitments for a particular Subscribed Service
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_commitments = oci.OsubSubscription.get_commitments(compartment_id=var["compartment_id"],
-        subscribed_service_id=oci_core_service["test_service"]["id"],
-        x_one_gateway_subscription_id=var["commitment_x_one_gateway_subscription_id"],
-        x_one_origin_region=var["commitment_x_one_origin_region"])
-    ```
-
-
-    :param str compartment_id: The OCID of the compartment.
-    :param str subscribed_service_id: This param is used to get the commitments for a particular subscribed service
-    :param str x_one_gateway_subscription_id: This header is meant to be used only for internal purposes and will be ignored on any public request. The purpose of this header is  to help on Gateway to API calls identification.
-    :param str x_one_origin_region: The Oracle Cloud Infrastructure home region name in case home region is not us-ashburn-1 (IAD), e.g. ap-mumbai-1, us-phoenix-1 etc.
+    Use this data source to access information about an existing resource.
     """
     ...

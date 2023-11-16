@@ -16,10 +16,10 @@ namespace Pulumi.Oci.Core.Outputs
         /// <summary>
         /// Optional. Used to disambiguate which subnet prefix should be used to create an IPv6 allocation.
         /// </summary>
-        public readonly string Ipv6subnetCidr;
+        public readonly string? Ipv6subnetCidr;
 
         [OutputConstructor]
-        private GetInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailResult(string ipv6subnetCidr)
+        private GetInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailResult(string? ipv6subnetCidr)
         {
             Ipv6subnetCidr = ipv6subnetCidr;
         }

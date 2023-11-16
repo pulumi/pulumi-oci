@@ -10,6 +10,8 @@ import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetTraceSpanSummary {
@@ -17,195 +19,195 @@ public final class GetTraceSpanSummary {
      * @return The number of spans with errors that have been processed by the system for the trace. Note that the number of spans with errors will be less than or equal to the total number of spans in the trace.
      * 
      */
-    private Integer errorSpanCount;
+    private @Nullable Integer errorSpanCount;
     /**
      * @return Boolean flag that indicates whether the trace has an error.
      * 
      */
-    private Boolean isFault;
+    private @Nullable Boolean isFault;
     /**
      * @return Unique identifier (spanId) for the span.  Note that this field is defined as spanKey in the API and it maps to the spanId in the trace data in Application Performance Monitoring.
      * 
      */
-    private String key;
+    private @Nullable String key;
     /**
      * @return Time taken for the root span operation to complete in milliseconds.
      * 
      */
-    private Integer rootSpanDurationInMs;
+    private @Nullable Integer rootSpanDurationInMs;
     /**
      * @return Root span name associated with the trace. This is the flow start operation name. Null is displayed if the root span is not yet completed.
      * 
      */
-    private String rootSpanOperationName;
+    private @Nullable String rootSpanOperationName;
     /**
      * @return Service associated with the trace.
      * 
      */
-    private String rootSpanServiceName;
+    private @Nullable String rootSpanServiceName;
     /**
      * @return A summary of the spans by service.
      * 
      */
-    private List<GetTraceSpanSummaryServiceSummary> serviceSummaries;
+    private @Nullable List<GetTraceSpanSummaryServiceSummary> serviceSummaries;
     /**
      * @return The number of spans that have been processed by the system for the trace.  Note that there could be additional spans that have not been processed or reported yet if the trace is still in progress.
      * 
      */
-    private Integer spanCount;
+    private @Nullable Integer spanCount;
     /**
      * @return Start time of the earliest span in the span collection.
      * 
      */
-    private String timeEarliestSpanStarted;
+    private @Nullable String timeEarliestSpanStarted;
     /**
      * @return End time of the span that most recently ended in the span collection.
      * 
      */
-    private String timeLatestSpanEnded;
+    private @Nullable String timeLatestSpanEnded;
     /**
      * @return End time of the root span for the span collection.
      * 
      */
-    private String timeRootSpanEnded;
+    private @Nullable String timeRootSpanEnded;
     /**
      * @return Start time of the root span for the span collection.
      * 
      */
-    private String timeRootSpanStarted;
+    private @Nullable String timeRootSpanStarted;
     /**
      * @return Time between the start of the earliest span and the end of the most recent span in milliseconds.
      * 
      */
-    private Integer traceDurationInMs;
+    private @Nullable Integer traceDurationInMs;
     /**
      * @return Error code of the trace.
      * 
      */
-    private String traceErrorCode;
+    private @Nullable String traceErrorCode;
     /**
      * @return Error type of the trace.
      * 
      */
-    private String traceErrorType;
+    private @Nullable String traceErrorType;
     /**
      * @return The status of the trace. The trace statuses are defined as follows: complete - a root span has been recorded, but there is no information on the errors. success - a complete root span is recorded there is a successful error type and error code - HTTP 200. incomplete - the root span has not yet been received. error - the root span returned with an error. There may or may not be an associated error code or error type.
      * 
      */
-    private String traceStatus;
+    private @Nullable String traceStatus;
 
     private GetTraceSpanSummary() {}
     /**
      * @return The number of spans with errors that have been processed by the system for the trace. Note that the number of spans with errors will be less than or equal to the total number of spans in the trace.
      * 
      */
-    public Integer errorSpanCount() {
-        return this.errorSpanCount;
+    public Optional<Integer> errorSpanCount() {
+        return Optional.ofNullable(this.errorSpanCount);
     }
     /**
      * @return Boolean flag that indicates whether the trace has an error.
      * 
      */
-    public Boolean isFault() {
-        return this.isFault;
+    public Optional<Boolean> isFault() {
+        return Optional.ofNullable(this.isFault);
     }
     /**
      * @return Unique identifier (spanId) for the span.  Note that this field is defined as spanKey in the API and it maps to the spanId in the trace data in Application Performance Monitoring.
      * 
      */
-    public String key() {
-        return this.key;
+    public Optional<String> key() {
+        return Optional.ofNullable(this.key);
     }
     /**
      * @return Time taken for the root span operation to complete in milliseconds.
      * 
      */
-    public Integer rootSpanDurationInMs() {
-        return this.rootSpanDurationInMs;
+    public Optional<Integer> rootSpanDurationInMs() {
+        return Optional.ofNullable(this.rootSpanDurationInMs);
     }
     /**
      * @return Root span name associated with the trace. This is the flow start operation name. Null is displayed if the root span is not yet completed.
      * 
      */
-    public String rootSpanOperationName() {
-        return this.rootSpanOperationName;
+    public Optional<String> rootSpanOperationName() {
+        return Optional.ofNullable(this.rootSpanOperationName);
     }
     /**
      * @return Service associated with the trace.
      * 
      */
-    public String rootSpanServiceName() {
-        return this.rootSpanServiceName;
+    public Optional<String> rootSpanServiceName() {
+        return Optional.ofNullable(this.rootSpanServiceName);
     }
     /**
      * @return A summary of the spans by service.
      * 
      */
     public List<GetTraceSpanSummaryServiceSummary> serviceSummaries() {
-        return this.serviceSummaries;
+        return this.serviceSummaries == null ? List.of() : this.serviceSummaries;
     }
     /**
      * @return The number of spans that have been processed by the system for the trace.  Note that there could be additional spans that have not been processed or reported yet if the trace is still in progress.
      * 
      */
-    public Integer spanCount() {
-        return this.spanCount;
+    public Optional<Integer> spanCount() {
+        return Optional.ofNullable(this.spanCount);
     }
     /**
      * @return Start time of the earliest span in the span collection.
      * 
      */
-    public String timeEarliestSpanStarted() {
-        return this.timeEarliestSpanStarted;
+    public Optional<String> timeEarliestSpanStarted() {
+        return Optional.ofNullable(this.timeEarliestSpanStarted);
     }
     /**
      * @return End time of the span that most recently ended in the span collection.
      * 
      */
-    public String timeLatestSpanEnded() {
-        return this.timeLatestSpanEnded;
+    public Optional<String> timeLatestSpanEnded() {
+        return Optional.ofNullable(this.timeLatestSpanEnded);
     }
     /**
      * @return End time of the root span for the span collection.
      * 
      */
-    public String timeRootSpanEnded() {
-        return this.timeRootSpanEnded;
+    public Optional<String> timeRootSpanEnded() {
+        return Optional.ofNullable(this.timeRootSpanEnded);
     }
     /**
      * @return Start time of the root span for the span collection.
      * 
      */
-    public String timeRootSpanStarted() {
-        return this.timeRootSpanStarted;
+    public Optional<String> timeRootSpanStarted() {
+        return Optional.ofNullable(this.timeRootSpanStarted);
     }
     /**
      * @return Time between the start of the earliest span and the end of the most recent span in milliseconds.
      * 
      */
-    public Integer traceDurationInMs() {
-        return this.traceDurationInMs;
+    public Optional<Integer> traceDurationInMs() {
+        return Optional.ofNullable(this.traceDurationInMs);
     }
     /**
      * @return Error code of the trace.
      * 
      */
-    public String traceErrorCode() {
-        return this.traceErrorCode;
+    public Optional<String> traceErrorCode() {
+        return Optional.ofNullable(this.traceErrorCode);
     }
     /**
      * @return Error type of the trace.
      * 
      */
-    public String traceErrorType() {
-        return this.traceErrorType;
+    public Optional<String> traceErrorType() {
+        return Optional.ofNullable(this.traceErrorType);
     }
     /**
      * @return The status of the trace. The trace statuses are defined as follows: complete - a root span has been recorded, but there is no information on the errors. success - a complete root span is recorded there is a successful error type and error code - HTTP 200. incomplete - the root span has not yet been received. error - the root span returned with an error. There may or may not be an associated error code or error type.
      * 
      */
-    public String traceStatus() {
-        return this.traceStatus;
+    public Optional<String> traceStatus() {
+        return Optional.ofNullable(this.traceStatus);
     }
 
     public static Builder builder() {
@@ -217,22 +219,22 @@ public final class GetTraceSpanSummary {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Integer errorSpanCount;
-        private Boolean isFault;
-        private String key;
-        private Integer rootSpanDurationInMs;
-        private String rootSpanOperationName;
-        private String rootSpanServiceName;
-        private List<GetTraceSpanSummaryServiceSummary> serviceSummaries;
-        private Integer spanCount;
-        private String timeEarliestSpanStarted;
-        private String timeLatestSpanEnded;
-        private String timeRootSpanEnded;
-        private String timeRootSpanStarted;
-        private Integer traceDurationInMs;
-        private String traceErrorCode;
-        private String traceErrorType;
-        private String traceStatus;
+        private @Nullable Integer errorSpanCount;
+        private @Nullable Boolean isFault;
+        private @Nullable String key;
+        private @Nullable Integer rootSpanDurationInMs;
+        private @Nullable String rootSpanOperationName;
+        private @Nullable String rootSpanServiceName;
+        private @Nullable List<GetTraceSpanSummaryServiceSummary> serviceSummaries;
+        private @Nullable Integer spanCount;
+        private @Nullable String timeEarliestSpanStarted;
+        private @Nullable String timeLatestSpanEnded;
+        private @Nullable String timeRootSpanEnded;
+        private @Nullable String timeRootSpanStarted;
+        private @Nullable Integer traceDurationInMs;
+        private @Nullable String traceErrorCode;
+        private @Nullable String traceErrorType;
+        private @Nullable String traceStatus;
         public Builder() {}
         public Builder(GetTraceSpanSummary defaults) {
     	      Objects.requireNonNull(defaults);
@@ -255,86 +257,86 @@ public final class GetTraceSpanSummary {
         }
 
         @CustomType.Setter
-        public Builder errorSpanCount(Integer errorSpanCount) {
-            this.errorSpanCount = Objects.requireNonNull(errorSpanCount);
+        public Builder errorSpanCount(@Nullable Integer errorSpanCount) {
+            this.errorSpanCount = errorSpanCount;
             return this;
         }
         @CustomType.Setter
-        public Builder isFault(Boolean isFault) {
-            this.isFault = Objects.requireNonNull(isFault);
+        public Builder isFault(@Nullable Boolean isFault) {
+            this.isFault = isFault;
             return this;
         }
         @CustomType.Setter
-        public Builder key(String key) {
-            this.key = Objects.requireNonNull(key);
+        public Builder key(@Nullable String key) {
+            this.key = key;
             return this;
         }
         @CustomType.Setter
-        public Builder rootSpanDurationInMs(Integer rootSpanDurationInMs) {
-            this.rootSpanDurationInMs = Objects.requireNonNull(rootSpanDurationInMs);
+        public Builder rootSpanDurationInMs(@Nullable Integer rootSpanDurationInMs) {
+            this.rootSpanDurationInMs = rootSpanDurationInMs;
             return this;
         }
         @CustomType.Setter
-        public Builder rootSpanOperationName(String rootSpanOperationName) {
-            this.rootSpanOperationName = Objects.requireNonNull(rootSpanOperationName);
+        public Builder rootSpanOperationName(@Nullable String rootSpanOperationName) {
+            this.rootSpanOperationName = rootSpanOperationName;
             return this;
         }
         @CustomType.Setter
-        public Builder rootSpanServiceName(String rootSpanServiceName) {
-            this.rootSpanServiceName = Objects.requireNonNull(rootSpanServiceName);
+        public Builder rootSpanServiceName(@Nullable String rootSpanServiceName) {
+            this.rootSpanServiceName = rootSpanServiceName;
             return this;
         }
         @CustomType.Setter
-        public Builder serviceSummaries(List<GetTraceSpanSummaryServiceSummary> serviceSummaries) {
-            this.serviceSummaries = Objects.requireNonNull(serviceSummaries);
+        public Builder serviceSummaries(@Nullable List<GetTraceSpanSummaryServiceSummary> serviceSummaries) {
+            this.serviceSummaries = serviceSummaries;
             return this;
         }
         public Builder serviceSummaries(GetTraceSpanSummaryServiceSummary... serviceSummaries) {
             return serviceSummaries(List.of(serviceSummaries));
         }
         @CustomType.Setter
-        public Builder spanCount(Integer spanCount) {
-            this.spanCount = Objects.requireNonNull(spanCount);
+        public Builder spanCount(@Nullable Integer spanCount) {
+            this.spanCount = spanCount;
             return this;
         }
         @CustomType.Setter
-        public Builder timeEarliestSpanStarted(String timeEarliestSpanStarted) {
-            this.timeEarliestSpanStarted = Objects.requireNonNull(timeEarliestSpanStarted);
+        public Builder timeEarliestSpanStarted(@Nullable String timeEarliestSpanStarted) {
+            this.timeEarliestSpanStarted = timeEarliestSpanStarted;
             return this;
         }
         @CustomType.Setter
-        public Builder timeLatestSpanEnded(String timeLatestSpanEnded) {
-            this.timeLatestSpanEnded = Objects.requireNonNull(timeLatestSpanEnded);
+        public Builder timeLatestSpanEnded(@Nullable String timeLatestSpanEnded) {
+            this.timeLatestSpanEnded = timeLatestSpanEnded;
             return this;
         }
         @CustomType.Setter
-        public Builder timeRootSpanEnded(String timeRootSpanEnded) {
-            this.timeRootSpanEnded = Objects.requireNonNull(timeRootSpanEnded);
+        public Builder timeRootSpanEnded(@Nullable String timeRootSpanEnded) {
+            this.timeRootSpanEnded = timeRootSpanEnded;
             return this;
         }
         @CustomType.Setter
-        public Builder timeRootSpanStarted(String timeRootSpanStarted) {
-            this.timeRootSpanStarted = Objects.requireNonNull(timeRootSpanStarted);
+        public Builder timeRootSpanStarted(@Nullable String timeRootSpanStarted) {
+            this.timeRootSpanStarted = timeRootSpanStarted;
             return this;
         }
         @CustomType.Setter
-        public Builder traceDurationInMs(Integer traceDurationInMs) {
-            this.traceDurationInMs = Objects.requireNonNull(traceDurationInMs);
+        public Builder traceDurationInMs(@Nullable Integer traceDurationInMs) {
+            this.traceDurationInMs = traceDurationInMs;
             return this;
         }
         @CustomType.Setter
-        public Builder traceErrorCode(String traceErrorCode) {
-            this.traceErrorCode = Objects.requireNonNull(traceErrorCode);
+        public Builder traceErrorCode(@Nullable String traceErrorCode) {
+            this.traceErrorCode = traceErrorCode;
             return this;
         }
         @CustomType.Setter
-        public Builder traceErrorType(String traceErrorType) {
-            this.traceErrorType = Objects.requireNonNull(traceErrorType);
+        public Builder traceErrorType(@Nullable String traceErrorType) {
+            this.traceErrorType = traceErrorType;
             return this;
         }
         @CustomType.Setter
-        public Builder traceStatus(String traceStatus) {
-            this.traceStatus = Objects.requireNonNull(traceStatus);
+        public Builder traceStatus(@Nullable String traceStatus) {
+            this.traceStatus = traceStatus;
             return this;
         }
         public GetTraceSpanSummary build() {

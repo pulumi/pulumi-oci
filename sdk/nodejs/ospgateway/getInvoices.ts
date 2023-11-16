@@ -105,11 +105,11 @@ export interface GetInvoicesResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The list of invoice_collection.
      */
-    readonly invoiceCollections: outputs.OspGateway.GetInvoicesInvoiceCollection[];
+    readonly invoiceCollections?: outputs.OspGateway.GetInvoicesInvoiceCollection[];
     /**
      * Invoice identifier which is generated on the on-premise sie. Pls note this is not an OCID
      */

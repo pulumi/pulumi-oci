@@ -13,6 +13,8 @@ import com.pulumi.oci.DataSafe.outputs.GetSecurityAssessmentStatisticPass;
 import java.lang.Integer;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetSecurityAssessmentStatistic {
@@ -20,37 +22,37 @@ public final class GetSecurityAssessmentStatistic {
      * @return Statistics showing the number of findings with a particular risk level for each category.
      * 
      */
-    private List<GetSecurityAssessmentStatisticAdvisory> advisories;
+    private @Nullable List<GetSecurityAssessmentStatisticAdvisory> advisories;
     /**
      * @return Statistics showing the number of findings with a particular risk level for each category.
      * 
      */
-    private List<GetSecurityAssessmentStatisticEvaluate> evaluates;
+    private @Nullable List<GetSecurityAssessmentStatisticEvaluate> evaluates;
     /**
      * @return Statistics showing the number of findings with a particular risk level for each category.
      * 
      */
-    private List<GetSecurityAssessmentStatisticHighRisk> highRisks;
+    private @Nullable List<GetSecurityAssessmentStatisticHighRisk> highRisks;
     /**
      * @return Statistics showing the number of findings with a particular risk level for each category.
      * 
      */
-    private List<GetSecurityAssessmentStatisticLowRisk> lowRisks;
+    private @Nullable List<GetSecurityAssessmentStatisticLowRisk> lowRisks;
     /**
      * @return Statistics showing the number of findings with a particular risk level for each category.
      * 
      */
-    private List<GetSecurityAssessmentStatisticMediumRisk> mediumRisks;
+    private @Nullable List<GetSecurityAssessmentStatisticMediumRisk> mediumRisks;
     /**
      * @return Statistics showing the number of findings with a particular risk level for each category.
      * 
      */
-    private List<GetSecurityAssessmentStatisticPass> passes;
+    private @Nullable List<GetSecurityAssessmentStatisticPass> passes;
     /**
      * @return The total number of targets in this security assessment.
      * 
      */
-    private Integer targetsCount;
+    private @Nullable Integer targetsCount;
 
     private GetSecurityAssessmentStatistic() {}
     /**
@@ -58,49 +60,49 @@ public final class GetSecurityAssessmentStatistic {
      * 
      */
     public List<GetSecurityAssessmentStatisticAdvisory> advisories() {
-        return this.advisories;
+        return this.advisories == null ? List.of() : this.advisories;
     }
     /**
      * @return Statistics showing the number of findings with a particular risk level for each category.
      * 
      */
     public List<GetSecurityAssessmentStatisticEvaluate> evaluates() {
-        return this.evaluates;
+        return this.evaluates == null ? List.of() : this.evaluates;
     }
     /**
      * @return Statistics showing the number of findings with a particular risk level for each category.
      * 
      */
     public List<GetSecurityAssessmentStatisticHighRisk> highRisks() {
-        return this.highRisks;
+        return this.highRisks == null ? List.of() : this.highRisks;
     }
     /**
      * @return Statistics showing the number of findings with a particular risk level for each category.
      * 
      */
     public List<GetSecurityAssessmentStatisticLowRisk> lowRisks() {
-        return this.lowRisks;
+        return this.lowRisks == null ? List.of() : this.lowRisks;
     }
     /**
      * @return Statistics showing the number of findings with a particular risk level for each category.
      * 
      */
     public List<GetSecurityAssessmentStatisticMediumRisk> mediumRisks() {
-        return this.mediumRisks;
+        return this.mediumRisks == null ? List.of() : this.mediumRisks;
     }
     /**
      * @return Statistics showing the number of findings with a particular risk level for each category.
      * 
      */
     public List<GetSecurityAssessmentStatisticPass> passes() {
-        return this.passes;
+        return this.passes == null ? List.of() : this.passes;
     }
     /**
      * @return The total number of targets in this security assessment.
      * 
      */
-    public Integer targetsCount() {
-        return this.targetsCount;
+    public Optional<Integer> targetsCount() {
+        return Optional.ofNullable(this.targetsCount);
     }
 
     public static Builder builder() {
@@ -112,13 +114,13 @@ public final class GetSecurityAssessmentStatistic {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetSecurityAssessmentStatisticAdvisory> advisories;
-        private List<GetSecurityAssessmentStatisticEvaluate> evaluates;
-        private List<GetSecurityAssessmentStatisticHighRisk> highRisks;
-        private List<GetSecurityAssessmentStatisticLowRisk> lowRisks;
-        private List<GetSecurityAssessmentStatisticMediumRisk> mediumRisks;
-        private List<GetSecurityAssessmentStatisticPass> passes;
-        private Integer targetsCount;
+        private @Nullable List<GetSecurityAssessmentStatisticAdvisory> advisories;
+        private @Nullable List<GetSecurityAssessmentStatisticEvaluate> evaluates;
+        private @Nullable List<GetSecurityAssessmentStatisticHighRisk> highRisks;
+        private @Nullable List<GetSecurityAssessmentStatisticLowRisk> lowRisks;
+        private @Nullable List<GetSecurityAssessmentStatisticMediumRisk> mediumRisks;
+        private @Nullable List<GetSecurityAssessmentStatisticPass> passes;
+        private @Nullable Integer targetsCount;
         public Builder() {}
         public Builder(GetSecurityAssessmentStatistic defaults) {
     	      Objects.requireNonNull(defaults);
@@ -132,56 +134,56 @@ public final class GetSecurityAssessmentStatistic {
         }
 
         @CustomType.Setter
-        public Builder advisories(List<GetSecurityAssessmentStatisticAdvisory> advisories) {
-            this.advisories = Objects.requireNonNull(advisories);
+        public Builder advisories(@Nullable List<GetSecurityAssessmentStatisticAdvisory> advisories) {
+            this.advisories = advisories;
             return this;
         }
         public Builder advisories(GetSecurityAssessmentStatisticAdvisory... advisories) {
             return advisories(List.of(advisories));
         }
         @CustomType.Setter
-        public Builder evaluates(List<GetSecurityAssessmentStatisticEvaluate> evaluates) {
-            this.evaluates = Objects.requireNonNull(evaluates);
+        public Builder evaluates(@Nullable List<GetSecurityAssessmentStatisticEvaluate> evaluates) {
+            this.evaluates = evaluates;
             return this;
         }
         public Builder evaluates(GetSecurityAssessmentStatisticEvaluate... evaluates) {
             return evaluates(List.of(evaluates));
         }
         @CustomType.Setter
-        public Builder highRisks(List<GetSecurityAssessmentStatisticHighRisk> highRisks) {
-            this.highRisks = Objects.requireNonNull(highRisks);
+        public Builder highRisks(@Nullable List<GetSecurityAssessmentStatisticHighRisk> highRisks) {
+            this.highRisks = highRisks;
             return this;
         }
         public Builder highRisks(GetSecurityAssessmentStatisticHighRisk... highRisks) {
             return highRisks(List.of(highRisks));
         }
         @CustomType.Setter
-        public Builder lowRisks(List<GetSecurityAssessmentStatisticLowRisk> lowRisks) {
-            this.lowRisks = Objects.requireNonNull(lowRisks);
+        public Builder lowRisks(@Nullable List<GetSecurityAssessmentStatisticLowRisk> lowRisks) {
+            this.lowRisks = lowRisks;
             return this;
         }
         public Builder lowRisks(GetSecurityAssessmentStatisticLowRisk... lowRisks) {
             return lowRisks(List.of(lowRisks));
         }
         @CustomType.Setter
-        public Builder mediumRisks(List<GetSecurityAssessmentStatisticMediumRisk> mediumRisks) {
-            this.mediumRisks = Objects.requireNonNull(mediumRisks);
+        public Builder mediumRisks(@Nullable List<GetSecurityAssessmentStatisticMediumRisk> mediumRisks) {
+            this.mediumRisks = mediumRisks;
             return this;
         }
         public Builder mediumRisks(GetSecurityAssessmentStatisticMediumRisk... mediumRisks) {
             return mediumRisks(List.of(mediumRisks));
         }
         @CustomType.Setter
-        public Builder passes(List<GetSecurityAssessmentStatisticPass> passes) {
-            this.passes = Objects.requireNonNull(passes);
+        public Builder passes(@Nullable List<GetSecurityAssessmentStatisticPass> passes) {
+            this.passes = passes;
             return this;
         }
         public Builder passes(GetSecurityAssessmentStatisticPass... passes) {
             return passes(List.of(passes));
         }
         @CustomType.Setter
-        public Builder targetsCount(Integer targetsCount) {
-            this.targetsCount = Objects.requireNonNull(targetsCount);
+        public Builder targetsCount(@Nullable Integer targetsCount) {
+            this.targetsCount = targetsCount;
             return this;
         }
         public GetSecurityAssessmentStatistic build() {

@@ -47,191 +47,191 @@ export interface GetCloudVmClusterResult {
     /**
      * The name of the availability domain that the cloud Exadata infrastructure resource is located in.
      */
-    readonly availabilityDomain: string;
+    readonly availabilityDomain?: string;
     /**
      * A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
      */
-    readonly backupNetworkNsgIds: string[];
+    readonly backupNetworkNsgIds?: string[];
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup network subnet associated with the cloud VM cluster.
      */
-    readonly backupSubnetId: string;
+    readonly backupSubnetId?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Exadata infrastructure.
      */
-    readonly cloudExadataInfrastructureId: string;
+    readonly cloudExadataInfrastructureId?: string;
     readonly cloudVmClusterId: string;
     /**
      * The cluster name for cloud VM cluster. The cluster name must begin with an alphabetic character, and may contain hyphens (-). Underscores (_) are not permitted. The cluster name can be no longer than 11 characters and is not case sensitive.
      */
-    readonly clusterName: string;
+    readonly clusterName?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * The number of CPU cores enabled on the cloud VM cluster.
      */
-    readonly cpuCoreCount: number;
-    readonly createAsync: boolean;
+    readonly cpuCoreCount?: number;
+    readonly createAsync?: boolean;
     /**
      * Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
      */
-    readonly dataCollectionOptions: outputs.Database.GetCloudVmClusterDataCollectionOption[];
+    readonly dataCollectionOptions?: outputs.Database.GetCloudVmClusterDataCollectionOption[];
     /**
      * The percentage assigned to DATA storage (user data and database files). The remaining percentage is assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). Accepted values are 35, 40, 60 and 80. The default is 80 percent assigned to DATA storage. See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
      */
-    readonly dataStoragePercentage: number;
+    readonly dataStoragePercentage?: number;
     /**
      * The data disk group size to be allocated in TBs.
      */
-    readonly dataStorageSizeInTbs: number;
+    readonly dataStorageSizeInTbs?: number;
     /**
      * The local node storage to be allocated in GBs.
      */
-    readonly dbNodeStorageSizeInGbs: number;
+    readonly dbNodeStorageSizeInGbs?: number;
     /**
      * The list of DB servers.
      */
-    readonly dbServers: string[];
+    readonly dbServers?: string[];
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * The type of redundancy configured for the cloud Vm cluster. NORMAL is 2-way redundancy. HIGH is 3-way redundancy.
      */
-    readonly diskRedundancy: string;
+    readonly diskRedundancy?: string;
     /**
      * The user-friendly name for the cloud VM cluster. The name does not need to be unique.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * The domain name for the cloud VM cluster.
      */
-    readonly domain: string;
+    readonly domain?: string;
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * A valid Oracle Grid Infrastructure (GI) software version.
      */
-    readonly giVersion: string;
+    readonly giVersion?: string;
     /**
      * The hostname for the cloud VM cluster.
      */
-    readonly hostname: string;
+    readonly hostname?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud VM cluster.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The IORM settings of the Exadata DB system.
      */
-    readonly iormConfigCaches: outputs.Database.GetCloudVmClusterIormConfigCach[];
+    readonly iormConfigCaches?: outputs.Database.GetCloudVmClusterIormConfigCach[];
     /**
      * If true, database backup on local Exadata storage is configured for the cloud VM cluster. If false, database backup on local Exadata storage is not available in the cloud VM cluster.
      */
-    readonly isLocalBackupEnabled: boolean;
+    readonly isLocalBackupEnabled?: boolean;
     /**
      * If true, sparse disk group is configured for the cloud VM cluster. If false, sparse disk group is not created.
      */
-    readonly isSparseDiskgroupEnabled: boolean;
+    readonly isSparseDiskgroupEnabled?: boolean;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance update history entry. This value is updated when a maintenance update starts.
      */
-    readonly lastUpdateHistoryEntryId: string;
+    readonly lastUpdateHistoryEntryId?: string;
     /**
      * The Oracle license model that applies to the cloud VM cluster. The default is LICENSE_INCLUDED.
      */
-    readonly licenseModel: string;
+    readonly licenseModel?: string;
     /**
      * Additional information about the current lifecycle state.
      */
-    readonly lifecycleDetails: string;
+    readonly lifecycleDetails?: string;
     /**
      * The port number configured for the listener on the cloud VM cluster.
      */
-    readonly listenerPort: string;
+    readonly listenerPort?: string;
     /**
      * The memory to be allocated in GBs.
      */
-    readonly memorySizeInGbs: number;
+    readonly memorySizeInGbs?: number;
     /**
      * The number of nodes in the cloud VM cluster.
      */
-    readonly nodeCount: number;
+    readonly nodeCount?: number;
     /**
      * The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
      * * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
      */
-    readonly nsgIds: string[];
+    readonly nsgIds?: string[];
     /**
      * The number of OCPU cores to enable on the cloud VM cluster. Only 1 decimal place is allowed for the fractional part.
      */
-    readonly ocpuCount: number;
-    readonly privateZoneId: string;
+    readonly ocpuCount?: number;
+    readonly privateZoneId?: string;
     /**
      * The FQDN of the DNS record for the SCAN IP addresses that are associated with the cloud VM cluster.
      */
-    readonly scanDnsName: string;
+    readonly scanDnsName?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DNS record for the SCAN IP addresses that are associated with the cloud VM cluster.
      */
-    readonly scanDnsRecordId: string;
+    readonly scanDnsRecordId?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IP addresses associated with the cloud VM cluster. SCAN IP addresses are typically used for load balancing and are not assigned to any interface. Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
      */
-    readonly scanIpIds: string[];
+    readonly scanIpIds?: string[];
     /**
      * The TCP Single Client Access Name (SCAN) port. The default port is 1521.
      */
-    readonly scanListenerPortTcp: number;
+    readonly scanListenerPortTcp?: number;
     /**
      * The TCPS Single Client Access Name (SCAN) port. The default port is 2484.
      */
-    readonly scanListenerPortTcpSsl: number;
+    readonly scanListenerPortTcpSsl?: number;
     /**
      * The model name of the Exadata hardware running the cloud VM cluster.
      */
-    readonly shape: string;
+    readonly shape?: string;
     /**
      * The public key portion of one or more key pairs used for SSH access to the cloud VM cluster.
      */
-    readonly sshPublicKeys: string[];
+    readonly sshPublicKeys?: string[];
     /**
      * The current state of the cloud VM cluster.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * The storage allocation for the disk group, in gigabytes (GB).
      */
-    readonly storageSizeInGbs: number;
+    readonly storageSizeInGbs?: number;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the cloud VM cluster.
      */
-    readonly subnetId: string;
+    readonly subnetId?: string;
     /**
      * Operating system version of the image.
      */
-    readonly systemVersion: string;
+    readonly systemVersion?: string;
     /**
      * The date and time that the cloud VM cluster was created.
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The time zone of the cloud VM cluster. For details, see [Exadata Infrastructure Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
      */
-    readonly timeZone: string;
+    readonly timeZone?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) addresses associated with the cloud VM cluster. The Cluster Ready Services (CRS) creates and maintains one VIP address for each node in the Exadata Cloud Service instance to enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
      */
-    readonly vipIds: string[];
+    readonly vipIds?: string[];
     /**
      * The OCID of the zone the cloud VM cluster is associated with.
      */
-    readonly zoneId: string;
+    readonly zoneId?: string;
 }
 /**
  * This data source provides details about a specific Cloud Vm Cluster resource in Oracle Cloud Infrastructure Database service.

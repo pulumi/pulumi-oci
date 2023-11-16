@@ -98,19 +98,19 @@ namespace Pulumi.Oci.MeteringComputation
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The description of the schedule.
         /// </summary>
         [Output("description")]
-        public Output<string> Description { get; private set; } = null!;
+        public Output<string?> Description { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// The unique name of the user-created schedule.
@@ -122,13 +122,13 @@ namespace Pulumi.Oci.MeteringComputation
         /// (Updatable) Specifies supported output file format.
         /// </summary>
         [Output("outputFileFormat")]
-        public Output<string> OutputFileFormat { get; private set; } = null!;
+        public Output<string?> OutputFileFormat { get; private set; } = null!;
 
         /// <summary>
         /// The query properties.
         /// </summary>
         [Output("queryProperties")]
-        public Output<Outputs.ScheduleQueryProperties> QueryProperties { get; private set; } = null!;
+        public Output<Outputs.ScheduleQueryProperties?> QueryProperties { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The location where usage or cost CSVs will be uploaded defined by `locationType`, which corresponds with type-specific characteristics.
@@ -140,7 +140,7 @@ namespace Pulumi.Oci.MeteringComputation
         /// The saved report id which can also be used to generate query.
         /// </summary>
         [Output("savedReportId")]
-        public Output<string> SavedReportId { get; private set; } = null!;
+        public Output<string?> SavedReportId { get; private set; } = null!;
 
         /// <summary>
         /// Specifies the frequency according to when the schedule will be run,  in the x-obmcs-recurring-time format described in [RFC 5545 section 3.3.10](https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10). Supported values are : ONE_TIME, DAILY, WEEKLY and MONTHLY.
@@ -152,25 +152,25 @@ namespace Pulumi.Oci.MeteringComputation
         /// The schedule lifecycle state.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
         [Output("systemTags")]
-        public Output<ImmutableDictionary<string, object>> SystemTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> SystemTags { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the schedule was created.
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// The date and time of the next job execution.
         /// </summary>
         [Output("timeNextRun")]
-        public Output<string> TimeNextRun { get; private set; } = null!;
+        public Output<string?> TimeNextRun { get; private set; } = null!;
 
         /// <summary>
         /// The date and time of the first time job execution.

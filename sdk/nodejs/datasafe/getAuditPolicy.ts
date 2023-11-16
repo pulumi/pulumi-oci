@@ -47,74 +47,74 @@ export interface GetAuditPolicyResult {
     /**
      * Lists the audit policy provisioning conditions for the target database.
      */
-    readonly auditConditions: outputs.DataSafe.GetAuditPolicyAuditCondition[];
+    readonly auditConditions?: outputs.DataSafe.GetAuditPolicyAuditCondition[];
     readonly auditPolicyId: string;
     /**
      * Represents all available audit policy specifications relevant for the target database. For more details on available audit polcies, refer to [documentation](https://docs.oracle.com/en/cloud/paas/data-safe/udscs/audit-policies.html#GUID-361A9A9A-7C21-4F5A-8945-9B3A0C472827).
      */
-    readonly auditSpecifications: outputs.DataSafe.GetAuditPolicyAuditSpecification[];
+    readonly auditSpecifications?: outputs.DataSafe.GetAuditPolicyAuditSpecification[];
     /**
      * The OCID of the compartment containing the audit policy.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * Description of the audit policy.
      */
-    readonly description: string;
+    readonly description?: string;
     /**
      * The display name of the audit policy.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * The OCID of the audit policy.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Option provided to users at the target to indicate whether the Data Safe service account has to be excluded while provisioning the audit policies.
      */
-    readonly isDataSafeServiceAccountExcluded: boolean;
+    readonly isDataSafeServiceAccountExcluded?: boolean;
     /**
      * Details about the current state of the audit policy in Data Safe.
      */
-    readonly lifecycleDetails: string;
-    readonly provisionTrigger: number;
-    readonly retrieveFromTargetTrigger: number;
+    readonly lifecycleDetails?: string;
+    readonly provisionTrigger?: number;
+    readonly retrieveFromTargetTrigger?: number;
     /**
      * The current state of the audit policy.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    readonly systemTags: {[key: string]: any};
+    readonly systemTags?: {[key: string]: any};
     /**
      * The OCID of the target for which the audit policy is created.
      */
-    readonly targetId: string;
+    readonly targetId?: string;
     /**
      * The time the the audit policy was created, in the format defined by RFC3339.
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * Indicates the last provisioning time of audit policies on the target, in the format defined by RFC3339.
      */
-    readonly timeLastProvisioned: string;
+    readonly timeLastProvisioned?: string;
     /**
      * The time when the audit policies was last retrieved from this target, in the format defined by RFC3339.
      */
-    readonly timeLastRetrieved: string;
+    readonly timeLastRetrieved?: string;
     /**
      * The last date and time the audit policy was updated, in the format defined by RFC3339.
      */
-    readonly timeUpdated: string;
+    readonly timeUpdated?: string;
 }
 /**
  * This data source provides details about a specific Audit Policy resource in Oracle Cloud Infrastructure Data Safe service.

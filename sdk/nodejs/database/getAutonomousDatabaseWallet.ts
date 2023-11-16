@@ -71,12 +71,12 @@ export interface GetAutonomousDatabaseWalletResult {
     /**
      * content of the downloaded zipped wallet for the Autonomous Database. If `base64EncodeContent` is set to `true`, then this content will be base64 encoded.
      */
-    readonly content: string;
+    readonly content?: string;
     readonly generateType?: string;
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly password: string;
 }
 /**

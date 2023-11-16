@@ -54,14 +54,11 @@ class GetFleetJavaMigrationAnalysisResultsResult:
     @property
     @pulumi.getter(name="fleetId")
     def fleet_id(self) -> str:
-        """
-        The fleet OCID.
-        """
         return pulumi.get(self, "fleet_id")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -69,18 +66,12 @@ class GetFleetJavaMigrationAnalysisResultsResult:
 
     @property
     @pulumi.getter(name="javaMigrationAnalysisResultCollections")
-    def java_migration_analysis_result_collections(self) -> Sequence['outputs.GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionResult']:
-        """
-        The list of java_migration_analysis_result_collection.
-        """
+    def java_migration_analysis_result_collections(self) -> Optional[Sequence['outputs.GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionResult']]:
         return pulumi.get(self, "java_migration_analysis_result_collections")
 
     @property
     @pulumi.getter(name="managedInstanceId")
     def managed_instance_id(self) -> Optional[str]:
-        """
-        The managed instance OCID.
-        """
         return pulumi.get(self, "managed_instance_id")
 
     @property
@@ -116,27 +107,7 @@ def get_fleet_java_migration_analysis_results(filters: Optional[Sequence[pulumi.
                                               time_start: Optional[str] = None,
                                               opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetFleetJavaMigrationAnalysisResultsResult:
     """
-    This data source provides the list of Fleet Java Migration Analysis Results in Oracle Cloud Infrastructure Jms service.
-
-    Lists the results of a Java migration analysis.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_fleet_java_migration_analysis_results = oci.Jms.get_fleet_java_migration_analysis_results(fleet_id=oci_jms_fleet["test_fleet"]["id"],
-        managed_instance_id=oci_osmanagement_managed_instance["test_managed_instance"]["id"],
-        time_end=var["fleet_java_migration_analysis_result_time_end"],
-        time_start=var["fleet_java_migration_analysis_result_time_start"])
-    ```
-
-
-    :param str fleet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
-    :param str managed_instance_id: The Fleet-unique identifier of the related managed instance.
-    :param str time_end: The end of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-    :param str time_start: The start of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['filters'] = filters
@@ -165,26 +136,6 @@ def get_fleet_java_migration_analysis_results_output(filters: Optional[pulumi.In
                                                      time_start: Optional[pulumi.Input[Optional[str]]] = None,
                                                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetFleetJavaMigrationAnalysisResultsResult]:
     """
-    This data source provides the list of Fleet Java Migration Analysis Results in Oracle Cloud Infrastructure Jms service.
-
-    Lists the results of a Java migration analysis.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_fleet_java_migration_analysis_results = oci.Jms.get_fleet_java_migration_analysis_results(fleet_id=oci_jms_fleet["test_fleet"]["id"],
-        managed_instance_id=oci_osmanagement_managed_instance["test_managed_instance"]["id"],
-        time_end=var["fleet_java_migration_analysis_result_time_end"],
-        time_start=var["fleet_java_migration_analysis_result_time_start"])
-    ```
-
-
-    :param str fleet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
-    :param str managed_instance_id: The Fleet-unique identifier of the related managed instance.
-    :param str time_end: The end of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-    :param str time_start: The start of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+    Use this data source to access information about an existing resource.
     """
     ...

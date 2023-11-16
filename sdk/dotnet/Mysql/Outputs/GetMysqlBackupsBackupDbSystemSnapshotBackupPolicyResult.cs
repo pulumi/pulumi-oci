@@ -16,15 +16,15 @@ namespace Pulumi.Oci.Mysql.Outputs
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// Specifies if PITR is enabled or disabled.
         /// </summary>
-        public readonly bool IsEnabled;
+        public readonly bool? IsEnabled;
         /// <summary>
         /// The PITR policy for the DB System.
         /// </summary>
@@ -32,25 +32,25 @@ namespace Pulumi.Oci.Mysql.Outputs
         /// <summary>
         /// Number of days to retain this backup.
         /// </summary>
-        public readonly int RetentionInDays;
+        public readonly int? RetentionInDays;
         /// <summary>
         /// The start time of the maintenance window.
         /// </summary>
-        public readonly string WindowStartTime;
+        public readonly string? WindowStartTime;
 
         [OutputConstructor]
         private GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyResult(
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            bool isEnabled,
+            bool? isEnabled,
 
             ImmutableArray<Outputs.GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyResult> pitrPolicies,
 
-            int retentionInDays,
+            int? retentionInDays,
 
-            string windowStartTime)
+            string? windowStartTime)
         {
             DefinedTags = definedTags;
             FreeformTags = freeformTags;

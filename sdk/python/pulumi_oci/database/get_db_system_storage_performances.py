@@ -42,10 +42,7 @@ class GetDbSystemStoragePerformancesResult:
 
     @property
     @pulumi.getter(name="dbSystemStoragePerformances")
-    def db_system_storage_performances(self) -> Sequence['outputs.GetDbSystemStoragePerformancesDbSystemStoragePerformanceResult']:
-        """
-        The list of db_system_storage_performances.
-        """
+    def db_system_storage_performances(self) -> Optional[Sequence['outputs.GetDbSystemStoragePerformancesDbSystemStoragePerformanceResult']]:
         return pulumi.get(self, "db_system_storage_performances")
 
     @property
@@ -55,7 +52,7 @@ class GetDbSystemStoragePerformancesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -64,9 +61,6 @@ class GetDbSystemStoragePerformancesResult:
     @property
     @pulumi.getter(name="shapeType")
     def shape_type(self) -> Optional[str]:
-        """
-        ShapeType of the DbSystems,INTEL or AMD
-        """
         return pulumi.get(self, "shape_type")
 
     @property
@@ -93,25 +87,7 @@ def get_db_system_storage_performances(filters: Optional[Sequence[pulumi.InputTy
                                        storage_management: Optional[str] = None,
                                        opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDbSystemStoragePerformancesResult:
     """
-    This data source provides the list of Db System Storage Performances in Oracle Cloud Infrastructure Database service.
-
-    Gets a list of possible expected storage performance parameters of a VMDB System based on Configuration.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_db_system_storage_performances = oci.Database.get_db_system_storage_performances(storage_management=var["db_system_storage_performance_storage_management"],
-        shape_type=var["db_system_storage_performance_shape_type"])
-    ```
-
-
-    :param str shape_type: Optional. Filters the performance results by shape type.
-    :param str storage_management: The DB system storage management option. Used to list database versions available for that storage manager. Valid values are `ASM` and `LVM`.
-           * ASM specifies Oracle Automatic Storage Management
-           * LVM specifies logical volume manager, sometimes called logical disk manager.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['filters'] = filters
@@ -134,24 +110,6 @@ def get_db_system_storage_performances_output(filters: Optional[pulumi.Input[Opt
                                               storage_management: Optional[pulumi.Input[str]] = None,
                                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDbSystemStoragePerformancesResult]:
     """
-    This data source provides the list of Db System Storage Performances in Oracle Cloud Infrastructure Database service.
-
-    Gets a list of possible expected storage performance parameters of a VMDB System based on Configuration.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_db_system_storage_performances = oci.Database.get_db_system_storage_performances(storage_management=var["db_system_storage_performance_storage_management"],
-        shape_type=var["db_system_storage_performance_shape_type"])
-    ```
-
-
-    :param str shape_type: Optional. Filters the performance results by shape type.
-    :param str storage_management: The DB system storage management option. Used to list database versions available for that storage manager. Valid values are `ASM` and `LVM`.
-           * ASM specifies Oracle Automatic Storage Management
-           * LVM specifies logical volume manager, sometimes called logical disk manager.
+    Use this data source to access information about an existing resource.
     """
     ...

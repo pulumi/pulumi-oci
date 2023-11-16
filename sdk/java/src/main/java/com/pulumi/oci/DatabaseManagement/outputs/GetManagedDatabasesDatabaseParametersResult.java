@@ -19,13 +19,13 @@ public final class GetManagedDatabasesDatabaseParametersResult {
      * @return The list of database_parameters_collection.
      * 
      */
-    private List<GetManagedDatabasesDatabaseParametersDatabaseParametersCollection> databaseParametersCollections;
+    private @Nullable List<GetManagedDatabasesDatabaseParametersDatabaseParametersCollection> databaseParametersCollections;
     private @Nullable List<GetManagedDatabasesDatabaseParametersFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private @Nullable Boolean isAllowedValuesIncluded;
     private String managedDatabaseId;
     /**
@@ -41,7 +41,7 @@ public final class GetManagedDatabasesDatabaseParametersResult {
      * 
      */
     public List<GetManagedDatabasesDatabaseParametersDatabaseParametersCollection> databaseParametersCollections() {
-        return this.databaseParametersCollections;
+        return this.databaseParametersCollections == null ? List.of() : this.databaseParametersCollections;
     }
     public List<GetManagedDatabasesDatabaseParametersFilter> filters() {
         return this.filters == null ? List.of() : this.filters;
@@ -50,8 +50,8 @@ public final class GetManagedDatabasesDatabaseParametersResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public Optional<Boolean> isAllowedValuesIncluded() {
         return Optional.ofNullable(this.isAllowedValuesIncluded);
@@ -79,9 +79,9 @@ public final class GetManagedDatabasesDatabaseParametersResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetManagedDatabasesDatabaseParametersDatabaseParametersCollection> databaseParametersCollections;
+        private @Nullable List<GetManagedDatabasesDatabaseParametersDatabaseParametersCollection> databaseParametersCollections;
         private @Nullable List<GetManagedDatabasesDatabaseParametersFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable Boolean isAllowedValuesIncluded;
         private String managedDatabaseId;
         private @Nullable String name;
@@ -99,8 +99,8 @@ public final class GetManagedDatabasesDatabaseParametersResult {
         }
 
         @CustomType.Setter
-        public Builder databaseParametersCollections(List<GetManagedDatabasesDatabaseParametersDatabaseParametersCollection> databaseParametersCollections) {
-            this.databaseParametersCollections = Objects.requireNonNull(databaseParametersCollections);
+        public Builder databaseParametersCollections(@Nullable List<GetManagedDatabasesDatabaseParametersDatabaseParametersCollection> databaseParametersCollections) {
+            this.databaseParametersCollections = databaseParametersCollections;
             return this;
         }
         public Builder databaseParametersCollections(GetManagedDatabasesDatabaseParametersDatabaseParametersCollection... databaseParametersCollections) {
@@ -115,8 +115,8 @@ public final class GetManagedDatabasesDatabaseParametersResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

@@ -64,7 +64,7 @@ export class HeatWaveCluster extends pulumi.CustomResource {
     /**
      * A HeatWave node is a compute host that is part of a HeatWave cluster.
      */
-    public /*out*/ readonly clusterNodes!: pulumi.Output<outputs.Mysql.HeatWaveClusterClusterNode[]>;
+    public /*out*/ readonly clusterNodes!: pulumi.Output<outputs.Mysql.HeatWaveClusterClusterNode[] | undefined>;
     /**
      * (Updatable) A change to the number of nodes in the HeatWave cluster will result in the entire cluster being torn down and re-created with the new cluster of nodes. This may result in a significant downtime for the analytics capability while the HeatWave cluster is re-provisioned.
      */
@@ -76,11 +76,11 @@ export class HeatWaveCluster extends pulumi.CustomResource {
     /**
      * (Updatable) Enable/disable Lakehouse for the HeatWave cluster.
      */
-    public readonly isLakehouseEnabled!: pulumi.Output<boolean>;
+    public readonly isLakehouseEnabled!: pulumi.Output<boolean | undefined>;
     /**
      * Additional information about the current lifecycleState.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) A change to the shape of the nodes in the HeatWave cluster will result in the entire cluster being torn down and re-created with Compute instances of the new Shape. This may result in significant downtime for the analytics capability while the HeatWave cluster is re-provisioned.
      */
@@ -91,15 +91,15 @@ export class HeatWaveCluster extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly state!: pulumi.Output<string>;
+    public readonly state!: pulumi.Output<string | undefined>;
     /**
      * The date and time the HeatWave cluster was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * The time the HeatWave cluster was last updated, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    public /*out*/ readonly timeUpdated!: pulumi.Output<string | undefined>;
 
     /**
      * Create a HeatWaveCluster resource with the given unique name, arguments, and options.

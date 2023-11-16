@@ -19,6 +19,7 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -76,84 +77,84 @@ public class VmClusterRemoveVirtualMachine extends com.pulumi.resources.CustomRe
      * 
      */
     @Export(name="availabilityDomain", refs={String.class}, tree="[0]")
-    private Output<String> availabilityDomain;
+    private Output</* @Nullable */ String> availabilityDomain;
 
     /**
      * @return The name of the availability domain that the VM cluster is located in.
      * 
      */
-    public Output<String> availabilityDomain() {
-        return this.availabilityDomain;
+    public Output<Optional<String>> availabilityDomain() {
+        return Codegen.optional(this.availabilityDomain);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
     @Export(name="compartmentId", refs={String.class}, tree="[0]")
-    private Output<String> compartmentId;
+    private Output</* @Nullable */ String> compartmentId;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    public Output<String> compartmentId() {
-        return this.compartmentId;
+    public Output<Optional<String>> compartmentId() {
+        return Codegen.optional(this.compartmentId);
     }
     /**
      * The number of enabled CPU cores.
      * 
      */
     @Export(name="cpusEnabled", refs={Integer.class}, tree="[0]")
-    private Output<Integer> cpusEnabled;
+    private Output</* @Nullable */ Integer> cpusEnabled;
 
     /**
      * @return The number of enabled CPU cores.
      * 
      */
-    public Output<Integer> cpusEnabled() {
-        return this.cpusEnabled;
+    public Output<Optional<Integer>> cpusEnabled() {
+        return Codegen.optional(this.cpusEnabled);
     }
     /**
      * Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
      * 
      */
     @Export(name="dataCollectionOptions", refs={List.class,VmClusterRemoveVirtualMachineDataCollectionOption.class}, tree="[0,1]")
-    private Output<List<VmClusterRemoveVirtualMachineDataCollectionOption>> dataCollectionOptions;
+    private Output</* @Nullable */ List<VmClusterRemoveVirtualMachineDataCollectionOption>> dataCollectionOptions;
 
     /**
      * @return Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
      * 
      */
-    public Output<List<VmClusterRemoveVirtualMachineDataCollectionOption>> dataCollectionOptions() {
-        return this.dataCollectionOptions;
+    public Output<Optional<List<VmClusterRemoveVirtualMachineDataCollectionOption>>> dataCollectionOptions() {
+        return Codegen.optional(this.dataCollectionOptions);
     }
     /**
      * Size, in terabytes, of the DATA disk group.
      * 
      */
     @Export(name="dataStorageSizeInTbs", refs={Double.class}, tree="[0]")
-    private Output<Double> dataStorageSizeInTbs;
+    private Output</* @Nullable */ Double> dataStorageSizeInTbs;
 
     /**
      * @return Size, in terabytes, of the DATA disk group.
      * 
      */
-    public Output<Double> dataStorageSizeInTbs() {
-        return this.dataStorageSizeInTbs;
+    public Output<Optional<Double>> dataStorageSizeInTbs() {
+        return Codegen.optional(this.dataStorageSizeInTbs);
     }
     /**
      * The local node storage allocated in GBs.
      * 
      */
     @Export(name="dbNodeStorageSizeInGbs", refs={Integer.class}, tree="[0]")
-    private Output<Integer> dbNodeStorageSizeInGbs;
+    private Output</* @Nullable */ Integer> dbNodeStorageSizeInGbs;
 
     /**
      * @return The local node storage allocated in GBs.
      * 
      */
-    public Output<Integer> dbNodeStorageSizeInGbs() {
-        return this.dbNodeStorageSizeInGbs;
+    public Output<Optional<Integer>> dbNodeStorageSizeInGbs() {
+        return Codegen.optional(this.dbNodeStorageSizeInGbs);
     }
     /**
      * The list of Exacc DB servers for the cluster to be removed.
@@ -174,238 +175,238 @@ public class VmClusterRemoveVirtualMachine extends com.pulumi.resources.CustomRe
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * The user-friendly name for the Exadata Cloud@Customer VM cluster. The name does not need to be unique.
      * 
      */
     @Export(name="displayName", refs={String.class}, tree="[0]")
-    private Output<String> displayName;
+    private Output</* @Nullable */ String> displayName;
 
     /**
      * @return The user-friendly name for the Exadata Cloud@Customer VM cluster. The name does not need to be unique.
      * 
      */
-    public Output<String> displayName() {
-        return this.displayName;
+    public Output<Optional<String>> displayName() {
+        return Codegen.optional(this.displayName);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
      * 
      */
     @Export(name="exadataInfrastructureId", refs={String.class}, tree="[0]")
-    private Output<String> exadataInfrastructureId;
+    private Output</* @Nullable */ String> exadataInfrastructureId;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
      * 
      */
-    public Output<String> exadataInfrastructureId() {
-        return this.exadataInfrastructureId;
+    public Output<Optional<String>> exadataInfrastructureId() {
+        return Codegen.optional(this.exadataInfrastructureId);
     }
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * The Oracle Grid Infrastructure software version for the VM cluster.
      * 
      */
     @Export(name="giVersion", refs={String.class}, tree="[0]")
-    private Output<String> giVersion;
+    private Output</* @Nullable */ String> giVersion;
 
     /**
      * @return The Oracle Grid Infrastructure software version for the VM cluster.
      * 
      */
-    public Output<String> giVersion() {
-        return this.giVersion;
+    public Output<Optional<String>> giVersion() {
+        return Codegen.optional(this.giVersion);
     }
     /**
      * If true, database backup on local Exadata storage is configured for the VM cluster. If false, database backup on local Exadata storage is not available in the VM cluster.
      * 
      */
     @Export(name="isLocalBackupEnabled", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isLocalBackupEnabled;
+    private Output</* @Nullable */ Boolean> isLocalBackupEnabled;
 
     /**
      * @return If true, database backup on local Exadata storage is configured for the VM cluster. If false, database backup on local Exadata storage is not available in the VM cluster.
      * 
      */
-    public Output<Boolean> isLocalBackupEnabled() {
-        return this.isLocalBackupEnabled;
+    public Output<Optional<Boolean>> isLocalBackupEnabled() {
+        return Codegen.optional(this.isLocalBackupEnabled);
     }
     /**
      * If true, sparse disk group is configured for the VM cluster. If false, sparse disk group is not created.
      * 
      */
     @Export(name="isSparseDiskgroupEnabled", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isSparseDiskgroupEnabled;
+    private Output</* @Nullable */ Boolean> isSparseDiskgroupEnabled;
 
     /**
      * @return If true, sparse disk group is configured for the VM cluster. If false, sparse disk group is not created.
      * 
      */
-    public Output<Boolean> isSparseDiskgroupEnabled() {
-        return this.isSparseDiskgroupEnabled;
+    public Output<Optional<Boolean>> isSparseDiskgroupEnabled() {
+        return Codegen.optional(this.isSparseDiskgroupEnabled);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last patch history. This value is updated as soon as a patch operation starts.
      * 
      */
     @Export(name="lastPatchHistoryEntryId", refs={String.class}, tree="[0]")
-    private Output<String> lastPatchHistoryEntryId;
+    private Output</* @Nullable */ String> lastPatchHistoryEntryId;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last patch history. This value is updated as soon as a patch operation starts.
      * 
      */
-    public Output<String> lastPatchHistoryEntryId() {
-        return this.lastPatchHistoryEntryId;
+    public Output<Optional<String>> lastPatchHistoryEntryId() {
+        return Codegen.optional(this.lastPatchHistoryEntryId);
     }
     /**
      * The Oracle license model that applies to the VM cluster. The default is LICENSE_INCLUDED.
      * 
      */
     @Export(name="licenseModel", refs={String.class}, tree="[0]")
-    private Output<String> licenseModel;
+    private Output</* @Nullable */ String> licenseModel;
 
     /**
      * @return The Oracle license model that applies to the VM cluster. The default is LICENSE_INCLUDED.
      * 
      */
-    public Output<String> licenseModel() {
-        return this.licenseModel;
+    public Output<Optional<String>> licenseModel() {
+        return Codegen.optional(this.licenseModel);
     }
     /**
      * Additional information about the current lifecycle state.
      * 
      */
     @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
-    private Output<String> lifecycleDetails;
+    private Output</* @Nullable */ String> lifecycleDetails;
 
     /**
      * @return Additional information about the current lifecycle state.
      * 
      */
-    public Output<String> lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Output<Optional<String>> lifecycleDetails() {
+        return Codegen.optional(this.lifecycleDetails);
     }
     /**
      * The memory allocated in GBs.
      * 
      */
     @Export(name="memorySizeInGbs", refs={Integer.class}, tree="[0]")
-    private Output<Integer> memorySizeInGbs;
+    private Output</* @Nullable */ Integer> memorySizeInGbs;
 
     /**
      * @return The memory allocated in GBs.
      * 
      */
-    public Output<Integer> memorySizeInGbs() {
-        return this.memorySizeInGbs;
+    public Output<Optional<Integer>> memorySizeInGbs() {
+        return Codegen.optional(this.memorySizeInGbs);
     }
     /**
      * The shape of the Exadata infrastructure. The shape determines the amount of CPU, storage, and memory resources allocated to the instance.
      * 
      */
     @Export(name="shape", refs={String.class}, tree="[0]")
-    private Output<String> shape;
+    private Output</* @Nullable */ String> shape;
 
     /**
      * @return The shape of the Exadata infrastructure. The shape determines the amount of CPU, storage, and memory resources allocated to the instance.
      * 
      */
-    public Output<String> shape() {
-        return this.shape;
+    public Output<Optional<String>> shape() {
+        return Codegen.optional(this.shape);
     }
     /**
      * The public key portion of one or more key pairs used for SSH access to the VM cluster.
      * 
      */
     @Export(name="sshPublicKeys", refs={List.class,String.class}, tree="[0,1]")
-    private Output<List<String>> sshPublicKeys;
+    private Output</* @Nullable */ List<String>> sshPublicKeys;
 
     /**
      * @return The public key portion of one or more key pairs used for SSH access to the VM cluster.
      * 
      */
-    public Output<List<String>> sshPublicKeys() {
-        return this.sshPublicKeys;
+    public Output<Optional<List<String>>> sshPublicKeys() {
+        return Codegen.optional(this.sshPublicKeys);
     }
     /**
      * The current state of the VM cluster.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The current state of the VM cluster.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * Operating system version of the image.
      * 
      */
     @Export(name="systemVersion", refs={String.class}, tree="[0]")
-    private Output<String> systemVersion;
+    private Output</* @Nullable */ String> systemVersion;
 
     /**
      * @return Operating system version of the image.
      * 
      */
-    public Output<String> systemVersion() {
-        return this.systemVersion;
+    public Output<Optional<String>> systemVersion() {
+        return Codegen.optional(this.systemVersion);
     }
     /**
      * The date and time that the VM cluster was created.
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The date and time that the VM cluster was created.
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * The time zone of the Exadata infrastructure. For details, see [Exadata Infrastructure Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
      * 
      */
     @Export(name="timeZone", refs={String.class}, tree="[0]")
-    private Output<String> timeZone;
+    private Output</* @Nullable */ String> timeZone;
 
     /**
      * @return The time zone of the Exadata infrastructure. For details, see [Exadata Infrastructure Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
      * 
      */
-    public Output<String> timeZone() {
-        return this.timeZone;
+    public Output<Optional<String>> timeZone() {
+        return Codegen.optional(this.timeZone);
     }
     /**
      * The VM cluster [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -432,14 +433,14 @@ public class VmClusterRemoveVirtualMachine extends com.pulumi.resources.CustomRe
      * 
      */
     @Export(name="vmClusterNetworkId", refs={String.class}, tree="[0]")
-    private Output<String> vmClusterNetworkId;
+    private Output</* @Nullable */ String> vmClusterNetworkId;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster network.
      * 
      */
-    public Output<String> vmClusterNetworkId() {
-        return this.vmClusterNetworkId;
+    public Output<Optional<String>> vmClusterNetworkId() {
+        return Codegen.optional(this.vmClusterNetworkId);
     }
 
     /**

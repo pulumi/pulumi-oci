@@ -37,9 +37,9 @@ export interface GetShapeResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly imageId?: string;
-    readonly shapes: outputs.Core.GetShapeShape[];
+    readonly shapes?: outputs.Core.GetShapeShape[];
 }
 export function getShapeOutput(args: GetShapeOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetShapeResult> {
     return pulumi.output(args).apply((a: any) => getShape(a, opts))

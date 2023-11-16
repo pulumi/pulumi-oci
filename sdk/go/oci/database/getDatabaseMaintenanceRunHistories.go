@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Maintenance Run Histories in Oracle Cloud Infrastructure Database service.
@@ -80,7 +79,7 @@ type GetDatabaseMaintenanceRunHistoriesResult struct {
 	CompartmentId string                                     `pulumi:"compartmentId"`
 	Filters       []GetDatabaseMaintenanceRunHistoriesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The list of maintenance_run_histories.
 	MaintenanceRunHistories []GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistory `pulumi:"maintenanceRunHistories"`
 	// Maintenance type.
@@ -142,12 +141,6 @@ func (o GetDatabaseMaintenanceRunHistoriesResultOutput) ToGetDatabaseMaintenance
 	return o
 }
 
-func (o GetDatabaseMaintenanceRunHistoriesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDatabaseMaintenanceRunHistoriesResult] {
-	return pulumix.Output[GetDatabaseMaintenanceRunHistoriesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDatabaseMaintenanceRunHistoriesResultOutput) AvailabilityDomain() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoriesResult) *string { return v.AvailabilityDomain }).(pulumi.StringPtrOutput)
 }
@@ -164,8 +157,8 @@ func (o GetDatabaseMaintenanceRunHistoriesResultOutput) Filters() GetDatabaseMai
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetDatabaseMaintenanceRunHistoriesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoriesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetDatabaseMaintenanceRunHistoriesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoriesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The list of maintenance_run_histories.

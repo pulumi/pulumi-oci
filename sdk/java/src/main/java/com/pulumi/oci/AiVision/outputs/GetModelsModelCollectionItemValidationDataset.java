@@ -6,6 +6,8 @@ package com.pulumi.oci.AiVision.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetModelsModelCollectionItemValidationDataset {
@@ -13,55 +15,55 @@ public final class GetModelsModelCollectionItemValidationDataset {
      * @return The name of the ObjectStorage bucket that contains the input data file.
      * 
      */
-    private String bucket;
+    private @Nullable String bucket;
     /**
      * @return The OCID of the Data Science Labeling Dataset.
      * 
      */
-    private String datasetId;
+    private @Nullable String datasetId;
     /**
      * @return Type of the Dataset.
      * 
      */
-    private String datasetType;
-    private String namespaceName;
+    private @Nullable String datasetType;
+    private @Nullable String namespaceName;
     /**
      * @return The object name of the input data file.
      * 
      */
-    private String object;
+    private @Nullable String object;
 
     private GetModelsModelCollectionItemValidationDataset() {}
     /**
      * @return The name of the ObjectStorage bucket that contains the input data file.
      * 
      */
-    public String bucket() {
-        return this.bucket;
+    public Optional<String> bucket() {
+        return Optional.ofNullable(this.bucket);
     }
     /**
      * @return The OCID of the Data Science Labeling Dataset.
      * 
      */
-    public String datasetId() {
-        return this.datasetId;
+    public Optional<String> datasetId() {
+        return Optional.ofNullable(this.datasetId);
     }
     /**
      * @return Type of the Dataset.
      * 
      */
-    public String datasetType() {
-        return this.datasetType;
+    public Optional<String> datasetType() {
+        return Optional.ofNullable(this.datasetType);
     }
-    public String namespaceName() {
-        return this.namespaceName;
+    public Optional<String> namespaceName() {
+        return Optional.ofNullable(this.namespaceName);
     }
     /**
      * @return The object name of the input data file.
      * 
      */
-    public String object() {
-        return this.object;
+    public Optional<String> object() {
+        return Optional.ofNullable(this.object);
     }
 
     public static Builder builder() {
@@ -73,11 +75,11 @@ public final class GetModelsModelCollectionItemValidationDataset {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String bucket;
-        private String datasetId;
-        private String datasetType;
-        private String namespaceName;
-        private String object;
+        private @Nullable String bucket;
+        private @Nullable String datasetId;
+        private @Nullable String datasetType;
+        private @Nullable String namespaceName;
+        private @Nullable String object;
         public Builder() {}
         public Builder(GetModelsModelCollectionItemValidationDataset defaults) {
     	      Objects.requireNonNull(defaults);
@@ -89,28 +91,28 @@ public final class GetModelsModelCollectionItemValidationDataset {
         }
 
         @CustomType.Setter
-        public Builder bucket(String bucket) {
-            this.bucket = Objects.requireNonNull(bucket);
+        public Builder bucket(@Nullable String bucket) {
+            this.bucket = bucket;
             return this;
         }
         @CustomType.Setter
-        public Builder datasetId(String datasetId) {
-            this.datasetId = Objects.requireNonNull(datasetId);
+        public Builder datasetId(@Nullable String datasetId) {
+            this.datasetId = datasetId;
             return this;
         }
         @CustomType.Setter
-        public Builder datasetType(String datasetType) {
-            this.datasetType = Objects.requireNonNull(datasetType);
+        public Builder datasetType(@Nullable String datasetType) {
+            this.datasetType = datasetType;
             return this;
         }
         @CustomType.Setter
-        public Builder namespaceName(String namespaceName) {
-            this.namespaceName = Objects.requireNonNull(namespaceName);
+        public Builder namespaceName(@Nullable String namespaceName) {
+            this.namespaceName = namespaceName;
             return this;
         }
         @CustomType.Setter
-        public Builder object(String object) {
-            this.object = Objects.requireNonNull(object);
+        public Builder object(@Nullable String object) {
+            this.object = object;
             return this;
         }
         public GetModelsModelCollectionItemValidationDataset build() {

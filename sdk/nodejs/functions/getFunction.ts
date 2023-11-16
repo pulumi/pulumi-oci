@@ -47,80 +47,80 @@ export interface GetFunctionResult {
     /**
      * The OCID of the application the function belongs to.
      */
-    readonly applicationId: string;
+    readonly applicationId?: string;
     /**
      * The OCID of the compartment that contains the function.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * Function configuration. Overrides application configuration. Keys must be ASCII strings consisting solely of letters, digits, and the '_' (underscore) character, and must not begin with a digit. Values should be limited to printable unicode characters.  Example: `{"MY_FUNCTION_CONFIG": "ConfVal"}`
      */
-    readonly config: {[key: string]: any};
+    readonly config?: {[key: string]: any};
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * The display name of the function. The display name is unique within the application containing the function.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     readonly functionId: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the function.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The qualified name of the Docker image to use in the function, including the image tag. The image should be in the Oracle Cloud Infrastructure Registry that is in the same region as the function itself. Example: `phx.ocir.io/ten/functions/function:0.0.1`
      */
-    readonly image: string;
+    readonly image?: string;
     /**
      * The image digest for the version of the image that will be pulled when invoking this function. If no value is specified, the digest currently associated with the image in the Oracle Cloud Infrastructure Registry will be used. Example: `sha256:ca0eeb6fb05351dfc8759c20733c91def84cb8007aa89a5bf606bc8b315b9fc7`
      */
-    readonly imageDigest: string;
+    readonly imageDigest?: string;
     /**
      * The base https invoke URL to set on a client in order to invoke a function. This URL will never change over the lifetime of the function and can be cached.
      */
-    readonly invokeEndpoint: string;
+    readonly invokeEndpoint?: string;
     /**
      * Maximum usable memory for the function (MiB).
      */
-    readonly memoryInMbs: string;
+    readonly memoryInMbs?: string;
     /**
      * Define the strategy for provisioned concurrency for the function.
      */
-    readonly provisionedConcurrencyConfigs: outputs.Functions.GetFunctionProvisionedConcurrencyConfig[];
+    readonly provisionedConcurrencyConfigs?: outputs.Functions.GetFunctionProvisionedConcurrencyConfig[];
     /**
      * The processor shape (`GENERIC_X86`/`GENERIC_ARM`) on which to run functions in the application, extracted from the image manifest.
      */
-    readonly shape: string;
+    readonly shape?: string;
     /**
      * The source details for the Function. The function can be created from various sources.
      */
-    readonly sourceDetails: outputs.Functions.GetFunctionSourceDetail[];
+    readonly sourceDetails?: outputs.Functions.GetFunctionSourceDetail[];
     /**
      * The current state of the function.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * The time the function was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-09-12T22:47:12.613Z`
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The time the function was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-09-12T22:47:12.613Z`
      */
-    readonly timeUpdated: string;
+    readonly timeUpdated?: string;
     /**
      * Timeout for executions of the function. Value in seconds.
      */
-    readonly timeoutInSeconds: number;
+    readonly timeoutInSeconds?: number;
     /**
      * Define the tracing configuration for a function.
      */
-    readonly traceConfigs: outputs.Functions.GetFunctionTraceConfig[];
+    readonly traceConfigs?: outputs.Functions.GetFunctionTraceConfig[];
 }
 /**
  * This data source provides details about a specific Function resource in Oracle Cloud Infrastructure Functions service.

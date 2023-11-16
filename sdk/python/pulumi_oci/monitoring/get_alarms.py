@@ -48,18 +48,12 @@ class GetAlarmsResult:
 
     @property
     @pulumi.getter
-    def alarms(self) -> Sequence['outputs.GetAlarmsAlarmResult']:
-        """
-        The list of alarms.
-        """
+    def alarms(self) -> Optional[Sequence['outputs.GetAlarmsAlarmResult']]:
         return pulumi.get(self, "alarms")
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the alarm.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
@@ -70,9 +64,6 @@ class GetAlarmsResult:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        A user-friendly name for the alarm. It does not have to be unique, and it's changeable.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -82,7 +73,7 @@ class GetAlarmsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -91,9 +82,6 @@ class GetAlarmsResult:
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current lifecycle state of the alarm.  Example: `DELETED`
-        """
         return pulumi.get(self, "state")
 
 
@@ -119,35 +107,7 @@ def get_alarms(compartment_id: Optional[str] = None,
                state: Optional[str] = None,
                opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAlarmsResult:
     """
-    This data source provides the list of Alarms in Oracle Cloud Infrastructure Monitoring service.
-
-    Lists the alarms for the specified compartment.
-    For more information, see
-    [Listing Alarms](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/list-alarm.htm).
-    For important limits information, see
-    [Limits on Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits).
-
-    This call is subject to a Monitoring limit that applies to the total number of requests across all alarm operations.
-    Monitoring might throttle this call to reject an otherwise valid request when the total rate of alarm operations exceeds 10 requests,
-    or transactions, per second (TPS) for a given tenancy.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_alarms = oci.Monitoring.get_alarms(compartment_id=var["compartment_id"],
-        compartment_id_in_subtree=var["alarm_compartment_id_in_subtree"],
-        display_name=var["alarm_display_name"],
-        state=var["alarm_state"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the resources monitored by the metric that you are searching for. Use tenancyId to search in the root compartment.  Example: `ocid1.compartment.oc1..exampleuniqueID`
-    :param bool compartment_id_in_subtree: When true, returns resources from all compartments and subcompartments. The parameter can only be set to true when compartmentId is the tenancy OCID (the tenancy is the root compartment). A true value requires the user to have tenancy-level permissions. If this requirement is not met, then the call is rejected. When false, returns resources from only the compartment specified in compartmentId. Default is false.
-    :param str display_name: A filter to return only resources that match the given display name exactly. Use this filter to list an alarm by name. Alternatively, when you know the alarm OCID, use the GetAlarm operation.
-    :param str state: A filter to return only alarms that match the given lifecycle state exactly. When not specified, only alarms in the ACTIVE lifecycle state are listed.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -176,34 +136,6 @@ def get_alarms_output(compartment_id: Optional[pulumi.Input[str]] = None,
                       state: Optional[pulumi.Input[Optional[str]]] = None,
                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAlarmsResult]:
     """
-    This data source provides the list of Alarms in Oracle Cloud Infrastructure Monitoring service.
-
-    Lists the alarms for the specified compartment.
-    For more information, see
-    [Listing Alarms](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/list-alarm.htm).
-    For important limits information, see
-    [Limits on Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits).
-
-    This call is subject to a Monitoring limit that applies to the total number of requests across all alarm operations.
-    Monitoring might throttle this call to reject an otherwise valid request when the total rate of alarm operations exceeds 10 requests,
-    or transactions, per second (TPS) for a given tenancy.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_alarms = oci.Monitoring.get_alarms(compartment_id=var["compartment_id"],
-        compartment_id_in_subtree=var["alarm_compartment_id_in_subtree"],
-        display_name=var["alarm_display_name"],
-        state=var["alarm_state"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the resources monitored by the metric that you are searching for. Use tenancyId to search in the root compartment.  Example: `ocid1.compartment.oc1..exampleuniqueID`
-    :param bool compartment_id_in_subtree: When true, returns resources from all compartments and subcompartments. The parameter can only be set to true when compartmentId is the tenancy OCID (the tenancy is the root compartment). A true value requires the user to have tenancy-level permissions. If this requirement is not met, then the call is rejected. When false, returns resources from only the compartment specified in compartmentId. Default is false.
-    :param str display_name: A filter to return only resources that match the given display name exactly. Use this filter to list an alarm by name. Alternatively, when you know the alarm OCID, use the GetAlarm operation.
-    :param str state: A filter to return only alarms that match the given lifecycle state exactly. When not specified, only alarms in the ACTIVE lifecycle state are listed.
+    Use this data source to access information about an existing resource.
     """
     ...

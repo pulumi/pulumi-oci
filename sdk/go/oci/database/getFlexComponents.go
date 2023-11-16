@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Flex Components in Oracle Cloud Infrastructure Database service.
@@ -68,7 +67,7 @@ type GetFlexComponentsResult struct {
 	// The list of flex_component_collection.
 	FlexComponentCollections []GetFlexComponentsFlexComponentCollection `pulumi:"flexComponentCollections"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The name of the Flex Component used for the DB system.
 	Name *string `pulumi:"name"`
 }
@@ -114,12 +113,6 @@ func (o GetFlexComponentsResultOutput) ToGetFlexComponentsResultOutputWithContex
 	return o
 }
 
-func (o GetFlexComponentsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetFlexComponentsResult] {
-	return pulumix.Output[GetFlexComponentsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetFlexComponentsResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFlexComponentsResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
@@ -136,8 +129,8 @@ func (o GetFlexComponentsResultOutput) FlexComponentCollections() GetFlexCompone
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetFlexComponentsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFlexComponentsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetFlexComponentsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFlexComponentsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The name of the Flex Component used for the DB system.

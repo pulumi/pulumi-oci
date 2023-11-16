@@ -111,7 +111,7 @@ namespace Pulumi.Oci.DatabaseMigration
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
 
         [OutputConstructor]
         private GetAgentImagesResult(
@@ -119,7 +119,7 @@ namespace Pulumi.Oci.DatabaseMigration
 
             ImmutableArray<Outputs.GetAgentImagesFilterResult> filters,
 
-            string id)
+            string? id)
         {
             AgentImageCollections = agentImageCollections;
             Filters = filters;

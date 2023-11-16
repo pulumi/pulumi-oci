@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of My Customer Secret Keys in Oracle Cloud Infrastructure Identity Domains service.
@@ -80,9 +79,9 @@ type GetDomainsMyCustomerSecretKeysResult struct {
 	Authorization *string `pulumi:"authorization"`
 	CompartmentId *string `pulumi:"compartmentId"`
 	// The provider-assigned unique ID for this managed resource.
-	Id                        string  `pulumi:"id"`
+	Id                        *string `pulumi:"id"`
 	IdcsEndpoint              string  `pulumi:"idcsEndpoint"`
-	ItemsPerPage              int     `pulumi:"itemsPerPage"`
+	ItemsPerPage              *int    `pulumi:"itemsPerPage"`
 	MyCustomerSecretKeyCount  *int    `pulumi:"myCustomerSecretKeyCount"`
 	MyCustomerSecretKeyFilter *string `pulumi:"myCustomerSecretKeyFilter"`
 	// The list of my_customer_secret_keys.
@@ -93,7 +92,7 @@ type GetDomainsMyCustomerSecretKeysResult struct {
 	SortBy       *string  `pulumi:"sortBy"`
 	SortOrder    *string  `pulumi:"sortOrder"`
 	StartIndex   *int     `pulumi:"startIndex"`
-	TotalResults int      `pulumi:"totalResults"`
+	TotalResults *int     `pulumi:"totalResults"`
 }
 
 func GetDomainsMyCustomerSecretKeysOutput(ctx *pulumi.Context, args GetDomainsMyCustomerSecretKeysOutputArgs, opts ...pulumi.InvokeOption) GetDomainsMyCustomerSecretKeysResultOutput {
@@ -147,12 +146,6 @@ func (o GetDomainsMyCustomerSecretKeysResultOutput) ToGetDomainsMyCustomerSecret
 	return o
 }
 
-func (o GetDomainsMyCustomerSecretKeysResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDomainsMyCustomerSecretKeysResult] {
-	return pulumix.Output[GetDomainsMyCustomerSecretKeysResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDomainsMyCustomerSecretKeysResultOutput) Authorization() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetDomainsMyCustomerSecretKeysResult) *string { return v.Authorization }).(pulumi.StringPtrOutput)
 }
@@ -162,16 +155,16 @@ func (o GetDomainsMyCustomerSecretKeysResultOutput) CompartmentId() pulumi.Strin
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetDomainsMyCustomerSecretKeysResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDomainsMyCustomerSecretKeysResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetDomainsMyCustomerSecretKeysResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDomainsMyCustomerSecretKeysResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetDomainsMyCustomerSecretKeysResultOutput) IdcsEndpoint() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDomainsMyCustomerSecretKeysResult) string { return v.IdcsEndpoint }).(pulumi.StringOutput)
 }
 
-func (o GetDomainsMyCustomerSecretKeysResultOutput) ItemsPerPage() pulumi.IntOutput {
-	return o.ApplyT(func(v GetDomainsMyCustomerSecretKeysResult) int { return v.ItemsPerPage }).(pulumi.IntOutput)
+func (o GetDomainsMyCustomerSecretKeysResultOutput) ItemsPerPage() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetDomainsMyCustomerSecretKeysResult) *int { return v.ItemsPerPage }).(pulumi.IntPtrOutput)
 }
 
 func (o GetDomainsMyCustomerSecretKeysResultOutput) MyCustomerSecretKeyCount() pulumi.IntPtrOutput {
@@ -210,8 +203,8 @@ func (o GetDomainsMyCustomerSecretKeysResultOutput) StartIndex() pulumi.IntPtrOu
 	return o.ApplyT(func(v GetDomainsMyCustomerSecretKeysResult) *int { return v.StartIndex }).(pulumi.IntPtrOutput)
 }
 
-func (o GetDomainsMyCustomerSecretKeysResultOutput) TotalResults() pulumi.IntOutput {
-	return o.ApplyT(func(v GetDomainsMyCustomerSecretKeysResult) int { return v.TotalResults }).(pulumi.IntOutput)
+func (o GetDomainsMyCustomerSecretKeysResultOutput) TotalResults() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetDomainsMyCustomerSecretKeysResult) *int { return v.TotalResults }).(pulumi.IntPtrOutput)
 }
 
 func init() {

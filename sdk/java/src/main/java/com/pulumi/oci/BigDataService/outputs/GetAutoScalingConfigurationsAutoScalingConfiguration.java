@@ -10,54 +10,56 @@ import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAutoScalingConfigurationsAutoScalingConfiguration {
-    private String bdsInstanceId;
-    private String clusterAdminPassword;
-    private String displayName;
-    private String id;
-    private Boolean isEnabled;
-    private String nodeType;
-    private List<GetAutoScalingConfigurationsAutoScalingConfigurationPolicy> policies;
-    private List<GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetail> policyDetails;
-    private String state;
-    private String timeCreated;
-    private String timeUpdated;
+    private @Nullable String bdsInstanceId;
+    private @Nullable String clusterAdminPassword;
+    private @Nullable String displayName;
+    private @Nullable String id;
+    private @Nullable Boolean isEnabled;
+    private @Nullable String nodeType;
+    private @Nullable List<GetAutoScalingConfigurationsAutoScalingConfigurationPolicy> policies;
+    private @Nullable List<GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetail> policyDetails;
+    private @Nullable String state;
+    private @Nullable String timeCreated;
+    private @Nullable String timeUpdated;
 
     private GetAutoScalingConfigurationsAutoScalingConfiguration() {}
-    public String bdsInstanceId() {
-        return this.bdsInstanceId;
+    public Optional<String> bdsInstanceId() {
+        return Optional.ofNullable(this.bdsInstanceId);
     }
-    public String clusterAdminPassword() {
-        return this.clusterAdminPassword;
+    public Optional<String> clusterAdminPassword() {
+        return Optional.ofNullable(this.clusterAdminPassword);
     }
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
-    public Boolean isEnabled() {
-        return this.isEnabled;
+    public Optional<Boolean> isEnabled() {
+        return Optional.ofNullable(this.isEnabled);
     }
-    public String nodeType() {
-        return this.nodeType;
+    public Optional<String> nodeType() {
+        return Optional.ofNullable(this.nodeType);
     }
     public List<GetAutoScalingConfigurationsAutoScalingConfigurationPolicy> policies() {
-        return this.policies;
+        return this.policies == null ? List.of() : this.policies;
     }
     public List<GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetail> policyDetails() {
-        return this.policyDetails;
+        return this.policyDetails == null ? List.of() : this.policyDetails;
     }
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
-    public String timeUpdated() {
-        return this.timeUpdated;
+    public Optional<String> timeUpdated() {
+        return Optional.ofNullable(this.timeUpdated);
     }
 
     public static Builder builder() {
@@ -69,17 +71,17 @@ public final class GetAutoScalingConfigurationsAutoScalingConfiguration {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String bdsInstanceId;
-        private String clusterAdminPassword;
-        private String displayName;
-        private String id;
-        private Boolean isEnabled;
-        private String nodeType;
-        private List<GetAutoScalingConfigurationsAutoScalingConfigurationPolicy> policies;
-        private List<GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetail> policyDetails;
-        private String state;
-        private String timeCreated;
-        private String timeUpdated;
+        private @Nullable String bdsInstanceId;
+        private @Nullable String clusterAdminPassword;
+        private @Nullable String displayName;
+        private @Nullable String id;
+        private @Nullable Boolean isEnabled;
+        private @Nullable String nodeType;
+        private @Nullable List<GetAutoScalingConfigurationsAutoScalingConfigurationPolicy> policies;
+        private @Nullable List<GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetail> policyDetails;
+        private @Nullable String state;
+        private @Nullable String timeCreated;
+        private @Nullable String timeUpdated;
         public Builder() {}
         public Builder(GetAutoScalingConfigurationsAutoScalingConfiguration defaults) {
     	      Objects.requireNonNull(defaults);
@@ -97,64 +99,64 @@ public final class GetAutoScalingConfigurationsAutoScalingConfiguration {
         }
 
         @CustomType.Setter
-        public Builder bdsInstanceId(String bdsInstanceId) {
-            this.bdsInstanceId = Objects.requireNonNull(bdsInstanceId);
+        public Builder bdsInstanceId(@Nullable String bdsInstanceId) {
+            this.bdsInstanceId = bdsInstanceId;
             return this;
         }
         @CustomType.Setter
-        public Builder clusterAdminPassword(String clusterAdminPassword) {
-            this.clusterAdminPassword = Objects.requireNonNull(clusterAdminPassword);
+        public Builder clusterAdminPassword(@Nullable String clusterAdminPassword) {
+            this.clusterAdminPassword = clusterAdminPassword;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder isEnabled(Boolean isEnabled) {
-            this.isEnabled = Objects.requireNonNull(isEnabled);
+        public Builder isEnabled(@Nullable Boolean isEnabled) {
+            this.isEnabled = isEnabled;
             return this;
         }
         @CustomType.Setter
-        public Builder nodeType(String nodeType) {
-            this.nodeType = Objects.requireNonNull(nodeType);
+        public Builder nodeType(@Nullable String nodeType) {
+            this.nodeType = nodeType;
             return this;
         }
         @CustomType.Setter
-        public Builder policies(List<GetAutoScalingConfigurationsAutoScalingConfigurationPolicy> policies) {
-            this.policies = Objects.requireNonNull(policies);
+        public Builder policies(@Nullable List<GetAutoScalingConfigurationsAutoScalingConfigurationPolicy> policies) {
+            this.policies = policies;
             return this;
         }
         public Builder policies(GetAutoScalingConfigurationsAutoScalingConfigurationPolicy... policies) {
             return policies(List.of(policies));
         }
         @CustomType.Setter
-        public Builder policyDetails(List<GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetail> policyDetails) {
-            this.policyDetails = Objects.requireNonNull(policyDetails);
+        public Builder policyDetails(@Nullable List<GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetail> policyDetails) {
+            this.policyDetails = policyDetails;
             return this;
         }
         public Builder policyDetails(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetail... policyDetails) {
             return policyDetails(List.of(policyDetails));
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+        public Builder timeUpdated(@Nullable String timeUpdated) {
+            this.timeUpdated = timeUpdated;
             return this;
         }
         public GetAutoScalingConfigurationsAutoScalingConfiguration build() {

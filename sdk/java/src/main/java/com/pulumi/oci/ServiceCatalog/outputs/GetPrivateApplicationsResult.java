@@ -29,12 +29,12 @@ public final class GetPrivateApplicationsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The list of private_application_collection.
      * 
      */
-    private List<GetPrivateApplicationsPrivateApplicationCollection> privateApplicationCollections;
+    private @Nullable List<GetPrivateApplicationsPrivateApplicationCollection> privateApplicationCollections;
     private @Nullable String privateApplicationId;
 
     private GetPrivateApplicationsResult() {}
@@ -59,15 +59,15 @@ public final class GetPrivateApplicationsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The list of private_application_collection.
      * 
      */
     public List<GetPrivateApplicationsPrivateApplicationCollection> privateApplicationCollections() {
-        return this.privateApplicationCollections;
+        return this.privateApplicationCollections == null ? List.of() : this.privateApplicationCollections;
     }
     public Optional<String> privateApplicationId() {
         return Optional.ofNullable(this.privateApplicationId);
@@ -85,8 +85,8 @@ public final class GetPrivateApplicationsResult {
         private String compartmentId;
         private @Nullable String displayName;
         private @Nullable List<GetPrivateApplicationsFilter> filters;
-        private String id;
-        private List<GetPrivateApplicationsPrivateApplicationCollection> privateApplicationCollections;
+        private @Nullable String id;
+        private @Nullable List<GetPrivateApplicationsPrivateApplicationCollection> privateApplicationCollections;
         private @Nullable String privateApplicationId;
         public Builder() {}
         public Builder(GetPrivateApplicationsResult defaults) {
@@ -118,13 +118,13 @@ public final class GetPrivateApplicationsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder privateApplicationCollections(List<GetPrivateApplicationsPrivateApplicationCollection> privateApplicationCollections) {
-            this.privateApplicationCollections = Objects.requireNonNull(privateApplicationCollections);
+        public Builder privateApplicationCollections(@Nullable List<GetPrivateApplicationsPrivateApplicationCollection> privateApplicationCollections) {
+            this.privateApplicationCollections = privateApplicationCollections;
             return this;
         }
         public Builder privateApplicationCollections(GetPrivateApplicationsPrivateApplicationCollection... privateApplicationCollections) {

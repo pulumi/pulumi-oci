@@ -25,7 +25,7 @@ public final class GetNamespacePropertiesMetadataResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private @Nullable String level;
     /**
      * @return The property name.
@@ -37,7 +37,7 @@ public final class GetNamespacePropertiesMetadataResult {
      * @return The list of property_metadata_summary_collection.
      * 
      */
-    private List<GetNamespacePropertiesMetadataPropertyMetadataSummaryCollection> propertyMetadataSummaryCollections;
+    private @Nullable List<GetNamespacePropertiesMetadataPropertyMetadataSummaryCollection> propertyMetadataSummaryCollections;
 
     private GetNamespacePropertiesMetadataResult() {}
     /**
@@ -57,8 +57,8 @@ public final class GetNamespacePropertiesMetadataResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public Optional<String> level() {
         return Optional.ofNullable(this.level);
@@ -78,7 +78,7 @@ public final class GetNamespacePropertiesMetadataResult {
      * 
      */
     public List<GetNamespacePropertiesMetadataPropertyMetadataSummaryCollection> propertyMetadataSummaryCollections() {
-        return this.propertyMetadataSummaryCollections;
+        return this.propertyMetadataSummaryCollections == null ? List.of() : this.propertyMetadataSummaryCollections;
     }
 
     public static Builder builder() {
@@ -93,11 +93,11 @@ public final class GetNamespacePropertiesMetadataResult {
         private @Nullable String constraints;
         private @Nullable String displayText;
         private @Nullable List<GetNamespacePropertiesMetadataFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String level;
         private @Nullable String name;
         private String namespace;
-        private List<GetNamespacePropertiesMetadataPropertyMetadataSummaryCollection> propertyMetadataSummaryCollections;
+        private @Nullable List<GetNamespacePropertiesMetadataPropertyMetadataSummaryCollection> propertyMetadataSummaryCollections;
         public Builder() {}
         public Builder(GetNamespacePropertiesMetadataResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -130,8 +130,8 @@ public final class GetNamespacePropertiesMetadataResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -150,8 +150,8 @@ public final class GetNamespacePropertiesMetadataResult {
             return this;
         }
         @CustomType.Setter
-        public Builder propertyMetadataSummaryCollections(List<GetNamespacePropertiesMetadataPropertyMetadataSummaryCollection> propertyMetadataSummaryCollections) {
-            this.propertyMetadataSummaryCollections = Objects.requireNonNull(propertyMetadataSummaryCollections);
+        public Builder propertyMetadataSummaryCollections(@Nullable List<GetNamespacePropertiesMetadataPropertyMetadataSummaryCollection> propertyMetadataSummaryCollections) {
+            this.propertyMetadataSummaryCollections = propertyMetadataSummaryCollections;
             return this;
         }
         public Builder propertyMetadataSummaryCollections(GetNamespacePropertiesMetadataPropertyMetadataSummaryCollection... propertyMetadataSummaryCollections) {

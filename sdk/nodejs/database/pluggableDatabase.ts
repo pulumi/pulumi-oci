@@ -52,15 +52,15 @@ export class PluggableDatabase extends pulumi.CustomResource {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
-    public /*out*/ readonly compartmentId!: pulumi.Output<string>;
+    public /*out*/ readonly compartmentId!: pulumi.Output<string | undefined>;
     /**
      * Connection strings to connect to an Oracle Pluggable Database.
      */
-    public /*out*/ readonly connectionStrings!: pulumi.Output<outputs.Database.PluggableDatabaseConnectionString[]>;
+    public /*out*/ readonly connectionStrings!: pulumi.Output<outputs.Database.PluggableDatabaseConnectionString[] | undefined>;
     /**
      * The DB system administrator password of the Container Database.
      */
-    public readonly containerDatabaseAdminPassword!: pulumi.Output<string>;
+    public readonly containerDatabaseAdminPassword!: pulumi.Output<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the CDB
      */
@@ -72,33 +72,33 @@ export class PluggableDatabase extends pulumi.CustomResource {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * The restricted mode of the pluggable database. If a pluggable database is opened in restricted mode, the user needs both create a session and have restricted session privileges to connect to it.
      */
-    public /*out*/ readonly isRestricted!: pulumi.Output<boolean>;
+    public /*out*/ readonly isRestricted!: pulumi.Output<boolean | undefined>;
     /**
      * Detailed message for the lifecycle state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string | undefined>;
     /**
      * The mode that pluggable database is in. Open mode can only be changed to READ_ONLY or MIGRATE directly from the backend (within the Oracle Database software).
      */
-    public /*out*/ readonly openMode!: pulumi.Output<string>;
+    public /*out*/ readonly openMode!: pulumi.Output<string | undefined>;
     /**
      * A strong password for PDB Admin. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numbers, and two special characters. The special characters must be _, \#, or -.
      */
-    public readonly pdbAdminPassword!: pulumi.Output<string>;
+    public readonly pdbAdminPassword!: pulumi.Output<string | undefined>;
     /**
      * The Pluggable Database creation type. Use `LOCAL_CLONE_PDB` for creating a new PDB using Local Clone on Source Pluggable Database. This will Clone and starts a pluggable database (PDB) in the same database (CDB) as the source PDB. The source PDB must be in the `READ_WRITE` openMode to perform the clone operation. Use `REMOTE_CLONE_PDB` for creating a new PDB using Remote Clone on Source Pluggable Database. This will Clone a pluggable database (PDB) to a different database from the source PDB. The cloned PDB will be started upon completion of the clone operation. The source PDB must be in the `READ_WRITE` openMode when performing the clone. For Exadata Cloud@Customer instances, the source pluggable database (PDB) must be on the same Exadata Infrastructure as the target container database (CDB) to create a remote clone.
      *
      * Use `RELOCATE_PDB` for relocating the Pluggable Database from Source CDB and creating it in target CDB. This will relocate a pluggable database (PDB) to a different database from the source PDB. The source PDB must be in the `READ_WRITE` openMode when performing the relocate.
      */
-    public readonly pdbCreationTypeDetails!: pulumi.Output<outputs.Database.PluggableDatabasePdbCreationTypeDetails>;
+    public readonly pdbCreationTypeDetails!: pulumi.Output<outputs.Database.PluggableDatabasePdbCreationTypeDetails | undefined>;
     /**
      * The name for the pluggable database (PDB). The name is unique in the context of a [container database](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/Database/). The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. The pluggable database name should not be same as the container database name.
      */
@@ -106,11 +106,11 @@ export class PluggableDatabase extends pulumi.CustomResource {
     /**
      * Pluggable Database Node Level Details. Example: [{"nodeName" : "node1", "openMode" : "READ_WRITE"}, {"nodeName" : "node2", "openMode" : "READ_ONLY"}]
      */
-    public /*out*/ readonly pdbNodeLevelDetails!: pulumi.Output<outputs.Database.PluggableDatabasePdbNodeLevelDetail[]>;
+    public /*out*/ readonly pdbNodeLevelDetails!: pulumi.Output<outputs.Database.PluggableDatabasePdbNodeLevelDetail[] | undefined>;
     /**
      * The configuration of the Pluggable Database Management service.
      */
-    public /*out*/ readonly pluggableDatabaseManagementConfigs!: pulumi.Output<outputs.Database.PluggableDatabasePluggableDatabaseManagementConfig[]>;
+    public /*out*/ readonly pluggableDatabaseManagementConfigs!: pulumi.Output<outputs.Database.PluggableDatabasePluggableDatabaseManagementConfig[] | undefined>;
     /**
      * (Updatable) An optional property when incremented triggers Refresh. Could be set to any integer value.
      */
@@ -118,7 +118,7 @@ export class PluggableDatabase extends pulumi.CustomResource {
     /**
      * Pluggable Database Refreshable Clone Configuration.
      */
-    public /*out*/ readonly refreshableCloneConfigs!: pulumi.Output<outputs.Database.PluggableDatabaseRefreshableCloneConfig[]>;
+    public /*out*/ readonly refreshableCloneConfigs!: pulumi.Output<outputs.Database.PluggableDatabaseRefreshableCloneConfig[] | undefined>;
     /**
      * (Updatable) An optional property when incremented triggers Rotate Key. Could be set to any integer value.
      *
@@ -130,23 +130,23 @@ export class PluggableDatabase extends pulumi.CustomResource {
     /**
      * Indicates whether to take Pluggable Database Backup after the operation.
      */
-    public readonly shouldCreatePdbBackup!: pulumi.Output<boolean>;
+    public readonly shouldCreatePdbBackup!: pulumi.Output<boolean | undefined>;
     /**
      * The locked mode of the pluggable database admin account. If false, the user needs to provide the PDB Admin Password to connect to it. If true, the pluggable database will be locked and user cannot login to it.
      */
-    public readonly shouldPdbAdminAccountBeLocked!: pulumi.Output<boolean>;
+    public readonly shouldPdbAdminAccountBeLocked!: pulumi.Output<boolean | undefined>;
     /**
      * The current state of the pluggable database.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * The existing TDE wallet password of the CDB.
      */
-    public readonly tdeWalletPassword!: pulumi.Output<string>;
+    public readonly tdeWalletPassword!: pulumi.Output<string | undefined>;
     /**
      * The date and time the pluggable database was created.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
 
     /**
      * Create a PluggableDatabase resource with the given unique name, arguments, and options.

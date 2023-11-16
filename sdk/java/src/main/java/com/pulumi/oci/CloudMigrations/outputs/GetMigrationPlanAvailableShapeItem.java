@@ -10,6 +10,8 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetMigrationPlanAvailableShapeItem {
@@ -17,207 +19,207 @@ public final class GetMigrationPlanAvailableShapeItem {
      * @return The availability domain in which to list resources.
      * 
      */
-    private String availabilityDomain;
+    private @Nullable String availabilityDomain;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return Description of the GPUs.
      * 
      */
-    private String gpuDescription;
+    private @Nullable String gpuDescription;
     /**
      * @return Number of GPUs.
      * 
      */
-    private Integer gpus;
+    private @Nullable Integer gpus;
     /**
      * @return Description of local disks.
      * 
      */
-    private String localDiskDescription;
+    private @Nullable String localDiskDescription;
     /**
      * @return Number of local disks.
      * 
      */
-    private Integer localDisks;
+    private @Nullable Integer localDisks;
     /**
      * @return Total size of local disks for shape.
      * 
      */
-    private Double localDisksTotalSizeInGbs;
+    private @Nullable Double localDisksTotalSizeInGbs;
     /**
      * @return Maximum number of virtual network interfaces that can be attached.
      * 
      */
-    private Integer maxVnicAttachments;
+    private @Nullable Integer maxVnicAttachments;
     /**
      * @return Amount of memory for the shape.
      * 
      */
-    private Double memoryInGbs;
+    private @Nullable Double memoryInGbs;
     /**
      * @return Minimum CPUs required.
      * 
      */
-    private Double minTotalBaselineOcpusRequired;
+    private @Nullable Double minTotalBaselineOcpusRequired;
     /**
      * @return Shape bandwidth.
      * 
      */
-    private Double networkingBandwidthInGbps;
+    private @Nullable Double networkingBandwidthInGbps;
     /**
      * @return Number of CPUs.
      * 
      */
-    private Double ocpus;
+    private @Nullable Double ocpus;
     /**
      * @return Shape name and availability domain.  Used for pagination.
      * 
      */
-    private String paginationToken;
+    private @Nullable String paginationToken;
     /**
      * @return Description of the processor.
      * 
      */
-    private String processorDescription;
+    private @Nullable String processorDescription;
     /**
      * @return Name of the shape.
      * 
      */
-    private String shape;
+    private @Nullable String shape;
     /**
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    private Map<String,Object> systemTags;
+    private @Nullable Map<String,Object> systemTags;
 
     private GetMigrationPlanAvailableShapeItem() {}
     /**
      * @return The availability domain in which to list resources.
      * 
      */
-    public String availabilityDomain() {
-        return this.availabilityDomain;
+    public Optional<String> availabilityDomain() {
+        return Optional.ofNullable(this.availabilityDomain);
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return Description of the GPUs.
      * 
      */
-    public String gpuDescription() {
-        return this.gpuDescription;
+    public Optional<String> gpuDescription() {
+        return Optional.ofNullable(this.gpuDescription);
     }
     /**
      * @return Number of GPUs.
      * 
      */
-    public Integer gpus() {
-        return this.gpus;
+    public Optional<Integer> gpus() {
+        return Optional.ofNullable(this.gpus);
     }
     /**
      * @return Description of local disks.
      * 
      */
-    public String localDiskDescription() {
-        return this.localDiskDescription;
+    public Optional<String> localDiskDescription() {
+        return Optional.ofNullable(this.localDiskDescription);
     }
     /**
      * @return Number of local disks.
      * 
      */
-    public Integer localDisks() {
-        return this.localDisks;
+    public Optional<Integer> localDisks() {
+        return Optional.ofNullable(this.localDisks);
     }
     /**
      * @return Total size of local disks for shape.
      * 
      */
-    public Double localDisksTotalSizeInGbs() {
-        return this.localDisksTotalSizeInGbs;
+    public Optional<Double> localDisksTotalSizeInGbs() {
+        return Optional.ofNullable(this.localDisksTotalSizeInGbs);
     }
     /**
      * @return Maximum number of virtual network interfaces that can be attached.
      * 
      */
-    public Integer maxVnicAttachments() {
-        return this.maxVnicAttachments;
+    public Optional<Integer> maxVnicAttachments() {
+        return Optional.ofNullable(this.maxVnicAttachments);
     }
     /**
      * @return Amount of memory for the shape.
      * 
      */
-    public Double memoryInGbs() {
-        return this.memoryInGbs;
+    public Optional<Double> memoryInGbs() {
+        return Optional.ofNullable(this.memoryInGbs);
     }
     /**
      * @return Minimum CPUs required.
      * 
      */
-    public Double minTotalBaselineOcpusRequired() {
-        return this.minTotalBaselineOcpusRequired;
+    public Optional<Double> minTotalBaselineOcpusRequired() {
+        return Optional.ofNullable(this.minTotalBaselineOcpusRequired);
     }
     /**
      * @return Shape bandwidth.
      * 
      */
-    public Double networkingBandwidthInGbps() {
-        return this.networkingBandwidthInGbps;
+    public Optional<Double> networkingBandwidthInGbps() {
+        return Optional.ofNullable(this.networkingBandwidthInGbps);
     }
     /**
      * @return Number of CPUs.
      * 
      */
-    public Double ocpus() {
-        return this.ocpus;
+    public Optional<Double> ocpus() {
+        return Optional.ofNullable(this.ocpus);
     }
     /**
      * @return Shape name and availability domain.  Used for pagination.
      * 
      */
-    public String paginationToken() {
-        return this.paginationToken;
+    public Optional<String> paginationToken() {
+        return Optional.ofNullable(this.paginationToken);
     }
     /**
      * @return Description of the processor.
      * 
      */
-    public String processorDescription() {
-        return this.processorDescription;
+    public Optional<String> processorDescription() {
+        return Optional.ofNullable(this.processorDescription);
     }
     /**
      * @return Name of the shape.
      * 
      */
-    public String shape() {
-        return this.shape;
+    public Optional<String> shape() {
+        return Optional.ofNullable(this.shape);
     }
     /**
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
     public Map<String,Object> systemTags() {
-        return this.systemTags;
+        return this.systemTags == null ? Map.of() : this.systemTags;
     }
 
     public static Builder builder() {
@@ -229,23 +231,23 @@ public final class GetMigrationPlanAvailableShapeItem {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String availabilityDomain;
-        private Map<String,Object> definedTags;
-        private Map<String,Object> freeformTags;
-        private String gpuDescription;
-        private Integer gpus;
-        private String localDiskDescription;
-        private Integer localDisks;
-        private Double localDisksTotalSizeInGbs;
-        private Integer maxVnicAttachments;
-        private Double memoryInGbs;
-        private Double minTotalBaselineOcpusRequired;
-        private Double networkingBandwidthInGbps;
-        private Double ocpus;
-        private String paginationToken;
-        private String processorDescription;
-        private String shape;
-        private Map<String,Object> systemTags;
+        private @Nullable String availabilityDomain;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String gpuDescription;
+        private @Nullable Integer gpus;
+        private @Nullable String localDiskDescription;
+        private @Nullable Integer localDisks;
+        private @Nullable Double localDisksTotalSizeInGbs;
+        private @Nullable Integer maxVnicAttachments;
+        private @Nullable Double memoryInGbs;
+        private @Nullable Double minTotalBaselineOcpusRequired;
+        private @Nullable Double networkingBandwidthInGbps;
+        private @Nullable Double ocpus;
+        private @Nullable String paginationToken;
+        private @Nullable String processorDescription;
+        private @Nullable String shape;
+        private @Nullable Map<String,Object> systemTags;
         public Builder() {}
         public Builder(GetMigrationPlanAvailableShapeItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -269,88 +271,88 @@ public final class GetMigrationPlanAvailableShapeItem {
         }
 
         @CustomType.Setter
-        public Builder availabilityDomain(String availabilityDomain) {
-            this.availabilityDomain = Objects.requireNonNull(availabilityDomain);
+        public Builder availabilityDomain(@Nullable String availabilityDomain) {
+            this.availabilityDomain = availabilityDomain;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder gpuDescription(String gpuDescription) {
-            this.gpuDescription = Objects.requireNonNull(gpuDescription);
+        public Builder gpuDescription(@Nullable String gpuDescription) {
+            this.gpuDescription = gpuDescription;
             return this;
         }
         @CustomType.Setter
-        public Builder gpus(Integer gpus) {
-            this.gpus = Objects.requireNonNull(gpus);
+        public Builder gpus(@Nullable Integer gpus) {
+            this.gpus = gpus;
             return this;
         }
         @CustomType.Setter
-        public Builder localDiskDescription(String localDiskDescription) {
-            this.localDiskDescription = Objects.requireNonNull(localDiskDescription);
+        public Builder localDiskDescription(@Nullable String localDiskDescription) {
+            this.localDiskDescription = localDiskDescription;
             return this;
         }
         @CustomType.Setter
-        public Builder localDisks(Integer localDisks) {
-            this.localDisks = Objects.requireNonNull(localDisks);
+        public Builder localDisks(@Nullable Integer localDisks) {
+            this.localDisks = localDisks;
             return this;
         }
         @CustomType.Setter
-        public Builder localDisksTotalSizeInGbs(Double localDisksTotalSizeInGbs) {
-            this.localDisksTotalSizeInGbs = Objects.requireNonNull(localDisksTotalSizeInGbs);
+        public Builder localDisksTotalSizeInGbs(@Nullable Double localDisksTotalSizeInGbs) {
+            this.localDisksTotalSizeInGbs = localDisksTotalSizeInGbs;
             return this;
         }
         @CustomType.Setter
-        public Builder maxVnicAttachments(Integer maxVnicAttachments) {
-            this.maxVnicAttachments = Objects.requireNonNull(maxVnicAttachments);
+        public Builder maxVnicAttachments(@Nullable Integer maxVnicAttachments) {
+            this.maxVnicAttachments = maxVnicAttachments;
             return this;
         }
         @CustomType.Setter
-        public Builder memoryInGbs(Double memoryInGbs) {
-            this.memoryInGbs = Objects.requireNonNull(memoryInGbs);
+        public Builder memoryInGbs(@Nullable Double memoryInGbs) {
+            this.memoryInGbs = memoryInGbs;
             return this;
         }
         @CustomType.Setter
-        public Builder minTotalBaselineOcpusRequired(Double minTotalBaselineOcpusRequired) {
-            this.minTotalBaselineOcpusRequired = Objects.requireNonNull(minTotalBaselineOcpusRequired);
+        public Builder minTotalBaselineOcpusRequired(@Nullable Double minTotalBaselineOcpusRequired) {
+            this.minTotalBaselineOcpusRequired = minTotalBaselineOcpusRequired;
             return this;
         }
         @CustomType.Setter
-        public Builder networkingBandwidthInGbps(Double networkingBandwidthInGbps) {
-            this.networkingBandwidthInGbps = Objects.requireNonNull(networkingBandwidthInGbps);
+        public Builder networkingBandwidthInGbps(@Nullable Double networkingBandwidthInGbps) {
+            this.networkingBandwidthInGbps = networkingBandwidthInGbps;
             return this;
         }
         @CustomType.Setter
-        public Builder ocpus(Double ocpus) {
-            this.ocpus = Objects.requireNonNull(ocpus);
+        public Builder ocpus(@Nullable Double ocpus) {
+            this.ocpus = ocpus;
             return this;
         }
         @CustomType.Setter
-        public Builder paginationToken(String paginationToken) {
-            this.paginationToken = Objects.requireNonNull(paginationToken);
+        public Builder paginationToken(@Nullable String paginationToken) {
+            this.paginationToken = paginationToken;
             return this;
         }
         @CustomType.Setter
-        public Builder processorDescription(String processorDescription) {
-            this.processorDescription = Objects.requireNonNull(processorDescription);
+        public Builder processorDescription(@Nullable String processorDescription) {
+            this.processorDescription = processorDescription;
             return this;
         }
         @CustomType.Setter
-        public Builder shape(String shape) {
-            this.shape = Objects.requireNonNull(shape);
+        public Builder shape(@Nullable String shape) {
+            this.shape = shape;
             return this;
         }
         @CustomType.Setter
-        public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+        public Builder systemTags(@Nullable Map<String,Object> systemTags) {
+            this.systemTags = systemTags;
             return this;
         }
         public GetMigrationPlanAvailableShapeItem build() {

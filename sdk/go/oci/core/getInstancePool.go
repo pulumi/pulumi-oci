@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Instance Pool resource in Oracle Cloud Infrastructure Core service.
@@ -59,23 +58,23 @@ type LookupInstancePoolArgs struct {
 
 // A collection of values returned by getInstancePool.
 type LookupInstancePoolResult struct {
-	ActualSize int `pulumi:"actualSize"`
+	ActualSize *int `pulumi:"actualSize"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance pool.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer attachment.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance configuration associated with the instance pool.
-	InstanceConfigurationId string `pulumi:"instanceConfigurationId"`
+	InstanceConfigurationId *string `pulumi:"instanceConfigurationId"`
 	// A user-friendly formatter for the instance pool's instances. Instance displaynames follow the format. The formatter does not retroactively change instance's displaynames, only instance displaynames in the future follow the format
-	InstanceDisplayNameFormatter string `pulumi:"instanceDisplayNameFormatter"`
+	InstanceDisplayNameFormatter *string `pulumi:"instanceDisplayNameFormatter"`
 	// A user-friendly formatter for the instance pool's instances. Instance hostnames follow the format. The formatter does not retroactively change instance's hostnames, only instance hostnames in the future follow the format
-	InstanceHostnameFormatter string `pulumi:"instanceHostnameFormatter"`
+	InstanceHostnameFormatter *string `pulumi:"instanceHostnameFormatter"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance pool of the load balancer attachment.
 	InstancePoolId string `pulumi:"instancePoolId"`
 	// The load balancers attached to the instance pool.
@@ -83,11 +82,11 @@ type LookupInstancePoolResult struct {
 	// The placement configurations for the instance pool.
 	PlacementConfigurations []GetInstancePoolPlacementConfiguration `pulumi:"placementConfigurations"`
 	// The number of actual instances in the instance pool on the cloud. This attribute will be different when instance pool is used along with autoScaling Configuration.
-	Size int `pulumi:"size"`
+	Size *int `pulumi:"size"`
 	// The current state of the instance pool.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The date and time the instance pool was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 }
 
 func LookupInstancePoolOutput(ctx *pulumi.Context, args LookupInstancePoolOutputArgs, opts ...pulumi.InvokeOption) LookupInstancePoolResultOutput {
@@ -128,19 +127,13 @@ func (o LookupInstancePoolResultOutput) ToLookupInstancePoolResultOutputWithCont
 	return o
 }
 
-func (o LookupInstancePoolResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupInstancePoolResult] {
-	return pulumix.Output[LookupInstancePoolResult]{
-		OutputState: o.OutputState,
-	}
-}
-
-func (o LookupInstancePoolResultOutput) ActualSize() pulumi.IntOutput {
-	return o.ApplyT(func(v LookupInstancePoolResult) int { return v.ActualSize }).(pulumi.IntOutput)
+func (o LookupInstancePoolResultOutput) ActualSize() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LookupInstancePoolResult) *int { return v.ActualSize }).(pulumi.IntPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance pool.
-func (o LookupInstancePoolResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupInstancePoolResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupInstancePoolResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupInstancePoolResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -149,8 +142,8 @@ func (o LookupInstancePoolResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
-func (o LookupInstancePoolResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupInstancePoolResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupInstancePoolResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupInstancePoolResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -159,23 +152,23 @@ func (o LookupInstancePoolResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer attachment.
-func (o LookupInstancePoolResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupInstancePoolResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupInstancePoolResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupInstancePoolResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance configuration associated with the instance pool.
-func (o LookupInstancePoolResultOutput) InstanceConfigurationId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupInstancePoolResult) string { return v.InstanceConfigurationId }).(pulumi.StringOutput)
+func (o LookupInstancePoolResultOutput) InstanceConfigurationId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupInstancePoolResult) *string { return v.InstanceConfigurationId }).(pulumi.StringPtrOutput)
 }
 
 // A user-friendly formatter for the instance pool's instances. Instance displaynames follow the format. The formatter does not retroactively change instance's displaynames, only instance displaynames in the future follow the format
-func (o LookupInstancePoolResultOutput) InstanceDisplayNameFormatter() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupInstancePoolResult) string { return v.InstanceDisplayNameFormatter }).(pulumi.StringOutput)
+func (o LookupInstancePoolResultOutput) InstanceDisplayNameFormatter() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupInstancePoolResult) *string { return v.InstanceDisplayNameFormatter }).(pulumi.StringPtrOutput)
 }
 
 // A user-friendly formatter for the instance pool's instances. Instance hostnames follow the format. The formatter does not retroactively change instance's hostnames, only instance hostnames in the future follow the format
-func (o LookupInstancePoolResultOutput) InstanceHostnameFormatter() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupInstancePoolResult) string { return v.InstanceHostnameFormatter }).(pulumi.StringOutput)
+func (o LookupInstancePoolResultOutput) InstanceHostnameFormatter() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupInstancePoolResult) *string { return v.InstanceHostnameFormatter }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance pool of the load balancer attachment.
@@ -196,18 +189,18 @@ func (o LookupInstancePoolResultOutput) PlacementConfigurations() GetInstancePoo
 }
 
 // The number of actual instances in the instance pool on the cloud. This attribute will be different when instance pool is used along with autoScaling Configuration.
-func (o LookupInstancePoolResultOutput) Size() pulumi.IntOutput {
-	return o.ApplyT(func(v LookupInstancePoolResult) int { return v.Size }).(pulumi.IntOutput)
+func (o LookupInstancePoolResultOutput) Size() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LookupInstancePoolResult) *int { return v.Size }).(pulumi.IntPtrOutput)
 }
 
 // The current state of the instance pool.
-func (o LookupInstancePoolResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupInstancePoolResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupInstancePoolResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupInstancePoolResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the instance pool was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
-func (o LookupInstancePoolResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupInstancePoolResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupInstancePoolResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupInstancePoolResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 func init() {

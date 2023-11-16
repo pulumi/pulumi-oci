@@ -66,7 +66,7 @@ export class CloudGuardConfiguration extends pulumi.CustomResource {
     /**
      * (Updatable) Identifies if Oracle managed resources will be created by customers. If no value is specified false is the default.
      */
-    public readonly selfManageResources!: pulumi.Output<boolean>;
+    public readonly selfManageResources!: pulumi.Output<boolean | undefined>;
     /**
      * (Updatable) Status of Cloud Guard Tenant
      *

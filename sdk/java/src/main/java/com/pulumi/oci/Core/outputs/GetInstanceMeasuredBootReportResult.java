@@ -9,6 +9,8 @@ import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetInstanceMeasuredBootReportResult {
@@ -16,26 +18,26 @@ public final class GetInstanceMeasuredBootReportResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private String instanceId;
     /**
      * @return Whether the verification succeeded, and the new values match the expected values.
      * 
      */
-    private Boolean isPolicyVerificationSuccessful;
+    private @Nullable Boolean isPolicyVerificationSuccessful;
     /**
      * @return A list of Trusted Platform Module (TPM) Platform Configuration Register (PCR) entries.
      * 
      */
-    private List<GetInstanceMeasuredBootReportMeasurement> measurements;
+    private @Nullable List<GetInstanceMeasuredBootReportMeasurement> measurements;
 
     private GetInstanceMeasuredBootReportResult() {}
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public String instanceId() {
         return this.instanceId;
@@ -44,15 +46,15 @@ public final class GetInstanceMeasuredBootReportResult {
      * @return Whether the verification succeeded, and the new values match the expected values.
      * 
      */
-    public Boolean isPolicyVerificationSuccessful() {
-        return this.isPolicyVerificationSuccessful;
+    public Optional<Boolean> isPolicyVerificationSuccessful() {
+        return Optional.ofNullable(this.isPolicyVerificationSuccessful);
     }
     /**
      * @return A list of Trusted Platform Module (TPM) Platform Configuration Register (PCR) entries.
      * 
      */
     public List<GetInstanceMeasuredBootReportMeasurement> measurements() {
-        return this.measurements;
+        return this.measurements == null ? List.of() : this.measurements;
     }
 
     public static Builder builder() {
@@ -64,10 +66,10 @@ public final class GetInstanceMeasuredBootReportResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String id;
+        private @Nullable String id;
         private String instanceId;
-        private Boolean isPolicyVerificationSuccessful;
-        private List<GetInstanceMeasuredBootReportMeasurement> measurements;
+        private @Nullable Boolean isPolicyVerificationSuccessful;
+        private @Nullable List<GetInstanceMeasuredBootReportMeasurement> measurements;
         public Builder() {}
         public Builder(GetInstanceMeasuredBootReportResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -78,8 +80,8 @@ public final class GetInstanceMeasuredBootReportResult {
         }
 
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -88,13 +90,13 @@ public final class GetInstanceMeasuredBootReportResult {
             return this;
         }
         @CustomType.Setter
-        public Builder isPolicyVerificationSuccessful(Boolean isPolicyVerificationSuccessful) {
-            this.isPolicyVerificationSuccessful = Objects.requireNonNull(isPolicyVerificationSuccessful);
+        public Builder isPolicyVerificationSuccessful(@Nullable Boolean isPolicyVerificationSuccessful) {
+            this.isPolicyVerificationSuccessful = isPolicyVerificationSuccessful;
             return this;
         }
         @CustomType.Setter
-        public Builder measurements(List<GetInstanceMeasuredBootReportMeasurement> measurements) {
-            this.measurements = Objects.requireNonNull(measurements);
+        public Builder measurements(@Nullable List<GetInstanceMeasuredBootReportMeasurement> measurements) {
+            this.measurements = measurements;
             return this;
         }
         public Builder measurements(GetInstanceMeasuredBootReportMeasurement... measurements) {

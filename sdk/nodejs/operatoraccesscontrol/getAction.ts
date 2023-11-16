@@ -47,32 +47,32 @@ export interface GetActionResult {
     /**
      * Name of the infrastructure layer associated with the operator action.
      */
-    readonly component: string;
+    readonly component?: string;
     /**
      * Display Name of the operator action.
      */
-    readonly customerDisplayName: string;
+    readonly customerDisplayName?: string;
     /**
      * Description of the operator action in terms of associated risk profile, and characteristics of the operating system commands made available to the operator under this operator action.
      */
-    readonly description: string;
+    readonly description?: string;
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Name of the property
      */
-    readonly name: string;
+    readonly name?: string;
     readonly operatorActionId: string;
     /**
      * Fine grained properties associated with the operator control.
      */
-    readonly properties: outputs.OperatorAccessControl.GetActionProperty[];
+    readonly properties?: outputs.OperatorAccessControl.GetActionProperty[];
     /**
      * resourceType for which the OperatorAction is applicable
      */
-    readonly resourceType: string;
+    readonly resourceType?: string;
 }
 /**
  * This data source provides details about a specific Operator Action resource in Oracle Cloud Infrastructure Operator Access Control service.

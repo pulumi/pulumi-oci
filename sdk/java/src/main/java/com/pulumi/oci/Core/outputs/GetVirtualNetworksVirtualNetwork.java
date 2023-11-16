@@ -11,90 +11,92 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetVirtualNetworksVirtualNetwork {
-    private List<String> byoipv6cidrBlocks;
-    private List<GetVirtualNetworksVirtualNetworkByoipv6cidrDetail> byoipv6cidrDetails;
-    private String cidrBlock;
-    private List<String> cidrBlocks;
-    private String compartmentId;
-    private String defaultDhcpOptionsId;
-    private String defaultRouteTableId;
-    private String defaultSecurityListId;
-    private Map<String,Object> definedTags;
-    private String displayName;
-    private String dnsLabel;
-    private Map<String,Object> freeformTags;
-    private String id;
-    private List<String> ipv6cidrBlocks;
-    private List<String> ipv6privateCidrBlocks;
-    private Boolean isIpv6enabled;
-    private Boolean isOracleGuaAllocationEnabled;
-    private String state;
-    private String timeCreated;
-    private String vcnDomainName;
+    private @Nullable List<String> byoipv6cidrBlocks;
+    private @Nullable List<GetVirtualNetworksVirtualNetworkByoipv6cidrDetail> byoipv6cidrDetails;
+    private @Nullable String cidrBlock;
+    private @Nullable List<String> cidrBlocks;
+    private @Nullable String compartmentId;
+    private @Nullable String defaultDhcpOptionsId;
+    private @Nullable String defaultRouteTableId;
+    private @Nullable String defaultSecurityListId;
+    private @Nullable Map<String,Object> definedTags;
+    private @Nullable String displayName;
+    private @Nullable String dnsLabel;
+    private @Nullable Map<String,Object> freeformTags;
+    private @Nullable String id;
+    private @Nullable List<String> ipv6cidrBlocks;
+    private @Nullable List<String> ipv6privateCidrBlocks;
+    private @Nullable Boolean isIpv6enabled;
+    private @Nullable Boolean isOracleGuaAllocationEnabled;
+    private @Nullable String state;
+    private @Nullable String timeCreated;
+    private @Nullable String vcnDomainName;
 
     private GetVirtualNetworksVirtualNetwork() {}
     public List<String> byoipv6cidrBlocks() {
-        return this.byoipv6cidrBlocks;
+        return this.byoipv6cidrBlocks == null ? List.of() : this.byoipv6cidrBlocks;
     }
     public List<GetVirtualNetworksVirtualNetworkByoipv6cidrDetail> byoipv6cidrDetails() {
-        return this.byoipv6cidrDetails;
+        return this.byoipv6cidrDetails == null ? List.of() : this.byoipv6cidrDetails;
     }
-    public String cidrBlock() {
-        return this.cidrBlock;
+    public Optional<String> cidrBlock() {
+        return Optional.ofNullable(this.cidrBlock);
     }
     public List<String> cidrBlocks() {
-        return this.cidrBlocks;
+        return this.cidrBlocks == null ? List.of() : this.cidrBlocks;
     }
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
-    public String defaultDhcpOptionsId() {
-        return this.defaultDhcpOptionsId;
+    public Optional<String> defaultDhcpOptionsId() {
+        return Optional.ofNullable(this.defaultDhcpOptionsId);
     }
-    public String defaultRouteTableId() {
-        return this.defaultRouteTableId;
+    public Optional<String> defaultRouteTableId() {
+        return Optional.ofNullable(this.defaultRouteTableId);
     }
-    public String defaultSecurityListId() {
-        return this.defaultSecurityListId;
+    public Optional<String> defaultSecurityListId() {
+        return Optional.ofNullable(this.defaultSecurityListId);
     }
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
-    public String dnsLabel() {
-        return this.dnsLabel;
+    public Optional<String> dnsLabel() {
+        return Optional.ofNullable(this.dnsLabel);
     }
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public List<String> ipv6cidrBlocks() {
-        return this.ipv6cidrBlocks;
+        return this.ipv6cidrBlocks == null ? List.of() : this.ipv6cidrBlocks;
     }
     public List<String> ipv6privateCidrBlocks() {
-        return this.ipv6privateCidrBlocks;
+        return this.ipv6privateCidrBlocks == null ? List.of() : this.ipv6privateCidrBlocks;
     }
-    public Boolean isIpv6enabled() {
-        return this.isIpv6enabled;
+    public Optional<Boolean> isIpv6enabled() {
+        return Optional.ofNullable(this.isIpv6enabled);
     }
-    public Boolean isOracleGuaAllocationEnabled() {
-        return this.isOracleGuaAllocationEnabled;
+    public Optional<Boolean> isOracleGuaAllocationEnabled() {
+        return Optional.ofNullable(this.isOracleGuaAllocationEnabled);
     }
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
-    public String vcnDomainName() {
-        return this.vcnDomainName;
+    public Optional<String> vcnDomainName() {
+        return Optional.ofNullable(this.vcnDomainName);
     }
 
     public static Builder builder() {
@@ -106,26 +108,26 @@ public final class GetVirtualNetworksVirtualNetwork {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<String> byoipv6cidrBlocks;
-        private List<GetVirtualNetworksVirtualNetworkByoipv6cidrDetail> byoipv6cidrDetails;
-        private String cidrBlock;
-        private List<String> cidrBlocks;
-        private String compartmentId;
-        private String defaultDhcpOptionsId;
-        private String defaultRouteTableId;
-        private String defaultSecurityListId;
-        private Map<String,Object> definedTags;
-        private String displayName;
-        private String dnsLabel;
-        private Map<String,Object> freeformTags;
-        private String id;
-        private List<String> ipv6cidrBlocks;
-        private List<String> ipv6privateCidrBlocks;
-        private Boolean isIpv6enabled;
-        private Boolean isOracleGuaAllocationEnabled;
-        private String state;
-        private String timeCreated;
-        private String vcnDomainName;
+        private @Nullable List<String> byoipv6cidrBlocks;
+        private @Nullable List<GetVirtualNetworksVirtualNetworkByoipv6cidrDetail> byoipv6cidrDetails;
+        private @Nullable String cidrBlock;
+        private @Nullable List<String> cidrBlocks;
+        private @Nullable String compartmentId;
+        private @Nullable String defaultDhcpOptionsId;
+        private @Nullable String defaultRouteTableId;
+        private @Nullable String defaultSecurityListId;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String displayName;
+        private @Nullable String dnsLabel;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String id;
+        private @Nullable List<String> ipv6cidrBlocks;
+        private @Nullable List<String> ipv6privateCidrBlocks;
+        private @Nullable Boolean isIpv6enabled;
+        private @Nullable Boolean isOracleGuaAllocationEnabled;
+        private @Nullable String state;
+        private @Nullable String timeCreated;
+        private @Nullable String vcnDomainName;
         public Builder() {}
         public Builder(GetVirtualNetworksVirtualNetwork defaults) {
     	      Objects.requireNonNull(defaults);
@@ -152,118 +154,118 @@ public final class GetVirtualNetworksVirtualNetwork {
         }
 
         @CustomType.Setter
-        public Builder byoipv6cidrBlocks(List<String> byoipv6cidrBlocks) {
-            this.byoipv6cidrBlocks = Objects.requireNonNull(byoipv6cidrBlocks);
+        public Builder byoipv6cidrBlocks(@Nullable List<String> byoipv6cidrBlocks) {
+            this.byoipv6cidrBlocks = byoipv6cidrBlocks;
             return this;
         }
         public Builder byoipv6cidrBlocks(String... byoipv6cidrBlocks) {
             return byoipv6cidrBlocks(List.of(byoipv6cidrBlocks));
         }
         @CustomType.Setter
-        public Builder byoipv6cidrDetails(List<GetVirtualNetworksVirtualNetworkByoipv6cidrDetail> byoipv6cidrDetails) {
-            this.byoipv6cidrDetails = Objects.requireNonNull(byoipv6cidrDetails);
+        public Builder byoipv6cidrDetails(@Nullable List<GetVirtualNetworksVirtualNetworkByoipv6cidrDetail> byoipv6cidrDetails) {
+            this.byoipv6cidrDetails = byoipv6cidrDetails;
             return this;
         }
         public Builder byoipv6cidrDetails(GetVirtualNetworksVirtualNetworkByoipv6cidrDetail... byoipv6cidrDetails) {
             return byoipv6cidrDetails(List.of(byoipv6cidrDetails));
         }
         @CustomType.Setter
-        public Builder cidrBlock(String cidrBlock) {
-            this.cidrBlock = Objects.requireNonNull(cidrBlock);
+        public Builder cidrBlock(@Nullable String cidrBlock) {
+            this.cidrBlock = cidrBlock;
             return this;
         }
         @CustomType.Setter
-        public Builder cidrBlocks(List<String> cidrBlocks) {
-            this.cidrBlocks = Objects.requireNonNull(cidrBlocks);
+        public Builder cidrBlocks(@Nullable List<String> cidrBlocks) {
+            this.cidrBlocks = cidrBlocks;
             return this;
         }
         public Builder cidrBlocks(String... cidrBlocks) {
             return cidrBlocks(List.of(cidrBlocks));
         }
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder defaultDhcpOptionsId(String defaultDhcpOptionsId) {
-            this.defaultDhcpOptionsId = Objects.requireNonNull(defaultDhcpOptionsId);
+        public Builder defaultDhcpOptionsId(@Nullable String defaultDhcpOptionsId) {
+            this.defaultDhcpOptionsId = defaultDhcpOptionsId;
             return this;
         }
         @CustomType.Setter
-        public Builder defaultRouteTableId(String defaultRouteTableId) {
-            this.defaultRouteTableId = Objects.requireNonNull(defaultRouteTableId);
+        public Builder defaultRouteTableId(@Nullable String defaultRouteTableId) {
+            this.defaultRouteTableId = defaultRouteTableId;
             return this;
         }
         @CustomType.Setter
-        public Builder defaultSecurityListId(String defaultSecurityListId) {
-            this.defaultSecurityListId = Objects.requireNonNull(defaultSecurityListId);
+        public Builder defaultSecurityListId(@Nullable String defaultSecurityListId) {
+            this.defaultSecurityListId = defaultSecurityListId;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder dnsLabel(String dnsLabel) {
-            this.dnsLabel = Objects.requireNonNull(dnsLabel);
+        public Builder dnsLabel(@Nullable String dnsLabel) {
+            this.dnsLabel = dnsLabel;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder ipv6cidrBlocks(List<String> ipv6cidrBlocks) {
-            this.ipv6cidrBlocks = Objects.requireNonNull(ipv6cidrBlocks);
+        public Builder ipv6cidrBlocks(@Nullable List<String> ipv6cidrBlocks) {
+            this.ipv6cidrBlocks = ipv6cidrBlocks;
             return this;
         }
         public Builder ipv6cidrBlocks(String... ipv6cidrBlocks) {
             return ipv6cidrBlocks(List.of(ipv6cidrBlocks));
         }
         @CustomType.Setter
-        public Builder ipv6privateCidrBlocks(List<String> ipv6privateCidrBlocks) {
-            this.ipv6privateCidrBlocks = Objects.requireNonNull(ipv6privateCidrBlocks);
+        public Builder ipv6privateCidrBlocks(@Nullable List<String> ipv6privateCidrBlocks) {
+            this.ipv6privateCidrBlocks = ipv6privateCidrBlocks;
             return this;
         }
         public Builder ipv6privateCidrBlocks(String... ipv6privateCidrBlocks) {
             return ipv6privateCidrBlocks(List.of(ipv6privateCidrBlocks));
         }
         @CustomType.Setter
-        public Builder isIpv6enabled(Boolean isIpv6enabled) {
-            this.isIpv6enabled = Objects.requireNonNull(isIpv6enabled);
+        public Builder isIpv6enabled(@Nullable Boolean isIpv6enabled) {
+            this.isIpv6enabled = isIpv6enabled;
             return this;
         }
         @CustomType.Setter
-        public Builder isOracleGuaAllocationEnabled(Boolean isOracleGuaAllocationEnabled) {
-            this.isOracleGuaAllocationEnabled = Objects.requireNonNull(isOracleGuaAllocationEnabled);
+        public Builder isOracleGuaAllocationEnabled(@Nullable Boolean isOracleGuaAllocationEnabled) {
+            this.isOracleGuaAllocationEnabled = isOracleGuaAllocationEnabled;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder vcnDomainName(String vcnDomainName) {
-            this.vcnDomainName = Objects.requireNonNull(vcnDomainName);
+        public Builder vcnDomainName(@Nullable String vcnDomainName) {
+            this.vcnDomainName = vcnDomainName;
             return this;
         }
         public GetVirtualNetworksVirtualNetwork build() {

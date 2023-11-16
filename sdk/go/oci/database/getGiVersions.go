@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Gi Versions in Oracle Cloud Infrastructure Database service.
@@ -68,7 +67,7 @@ type GetGiVersionsResult struct {
 	// The list of gi_versions.
 	GiVersions []GetGiVersionsGiVersion `pulumi:"giVersions"`
 	// The provider-assigned unique ID for this managed resource.
-	Id    string  `pulumi:"id"`
+	Id    *string `pulumi:"id"`
 	Shape *string `pulumi:"shape"`
 }
 
@@ -113,12 +112,6 @@ func (o GetGiVersionsResultOutput) ToGetGiVersionsResultOutputWithContext(ctx co
 	return o
 }
 
-func (o GetGiVersionsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetGiVersionsResult] {
-	return pulumix.Output[GetGiVersionsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetGiVersionsResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetGiVersionsResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
@@ -133,8 +126,8 @@ func (o GetGiVersionsResultOutput) GiVersions() GetGiVersionsGiVersionArrayOutpu
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetGiVersionsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetGiVersionsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetGiVersionsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetGiVersionsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetGiVersionsResultOutput) Shape() pulumi.StringPtrOutput {

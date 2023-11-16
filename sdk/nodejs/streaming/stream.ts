@@ -70,23 +70,23 @@ export class Stream extends pulumi.CustomResource {
     /**
      * (Updatable) The OCID of the compartment that contains the stream.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    public readonly compartmentId!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair that is applied with no predefined name, type, or namespace. Exists for cross-compatibility only. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * Any additional details about the current state of the stream.
      */
-    public /*out*/ readonly lifecycleStateDetails!: pulumi.Output<string>;
+    public /*out*/ readonly lifecycleStateDetails!: pulumi.Output<string | undefined>;
     /**
      * The endpoint to use when creating the StreamClient to consume or publish messages in the stream. If the associated stream pool is private, the endpoint is also private and can only be accessed from inside the stream pool's associated subnet.
      */
-    public /*out*/ readonly messagesEndpoint!: pulumi.Output<string>;
+    public /*out*/ readonly messagesEndpoint!: pulumi.Output<string | undefined>;
     /**
      * The name of the stream. Avoid entering confidential information.  Example: `TelemetryEvents`
      */
@@ -98,11 +98,11 @@ export class Stream extends pulumi.CustomResource {
     /**
      * The retention period of the stream, in hours. Accepted values are between 24 and 168 (7 days). If not specified, the stream will have a retention period of 24 hours.
      */
-    public readonly retentionInHours!: pulumi.Output<number>;
+    public readonly retentionInHours!: pulumi.Output<number | undefined>;
     /**
      * The current state of the stream.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The OCID of the stream pool that contains the stream.
      *
@@ -110,11 +110,11 @@ export class Stream extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly streamPoolId!: pulumi.Output<string>;
+    public readonly streamPoolId!: pulumi.Output<string | undefined>;
     /**
      * The date and time the stream was created, expressed in in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2018-04-20T00:00:07.405Z`
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
 
     /**
      * Create a Stream resource with the given unique name, arguments, and options.

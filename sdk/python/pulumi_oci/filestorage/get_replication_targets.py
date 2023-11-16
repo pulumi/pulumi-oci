@@ -49,25 +49,16 @@ class GetReplicationTargetsResult:
     @property
     @pulumi.getter(name="availabilityDomain")
     def availability_domain(self) -> str:
-        """
-        The availability domain the replication target is in. Must be in the same availability domain as the target file system. Example: `Uocm:PHX-AD-1`
-        """
         return pulumi.get(self, "availability_domain")
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the replication.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        A user-friendly name. This name is same as the replication display name for the associated resource. Example: `My Replication`
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -78,25 +69,16 @@ class GetReplicationTargetsResult:
     @property
     @pulumi.getter
     def id(self) -> Optional[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the replication target.
-        """
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="replicationTargets")
-    def replication_targets(self) -> Sequence['outputs.GetReplicationTargetsReplicationTargetResult']:
-        """
-        The list of replication_targets.
-        """
+    def replication_targets(self) -> Optional[Sequence['outputs.GetReplicationTargetsReplicationTargetResult']]:
         return pulumi.get(self, "replication_targets")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of this replication.
-        """
         return pulumi.get(self, "state")
 
 
@@ -123,29 +105,7 @@ def get_replication_targets(availability_domain: Optional[str] = None,
                             state: Optional[str] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetReplicationTargetsResult:
     """
-    This data source provides the list of Replication Targets in Oracle Cloud Infrastructure File Storage service.
-
-    Lists the replication target resources in the specified compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_replication_targets = oci.FileStorage.get_replication_targets(availability_domain=var["replication_target_availability_domain"],
-        compartment_id=var["compartment_id"],
-        display_name=var["replication_target_display_name"],
-        id=var["replication_target_id"],
-        state=var["replication_target_state"])
-    ```
-
-
-    :param str availability_domain: The name of the availability domain.  Example: `Uocm:PHX-AD-1`
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param str display_name: A user-friendly name. It does not have to be unique, and it is changeable.  Example: `My resource`
-    :param str id: Filter results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resouce type.
-    :param str state: Filter results by the specified lifecycle state. Must be a valid state for the resource type.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['availabilityDomain'] = availability_domain
@@ -176,28 +136,6 @@ def get_replication_targets_output(availability_domain: Optional[pulumi.Input[st
                                    state: Optional[pulumi.Input[Optional[str]]] = None,
                                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetReplicationTargetsResult]:
     """
-    This data source provides the list of Replication Targets in Oracle Cloud Infrastructure File Storage service.
-
-    Lists the replication target resources in the specified compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_replication_targets = oci.FileStorage.get_replication_targets(availability_domain=var["replication_target_availability_domain"],
-        compartment_id=var["compartment_id"],
-        display_name=var["replication_target_display_name"],
-        id=var["replication_target_id"],
-        state=var["replication_target_state"])
-    ```
-
-
-    :param str availability_domain: The name of the availability domain.  Example: `Uocm:PHX-AD-1`
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param str display_name: A user-friendly name. It does not have to be unique, and it is changeable.  Example: `My resource`
-    :param str id: Filter results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resouce type.
-    :param str state: Filter results by the specified lifecycle state. Must be a valid state for the resource type.
+    Use this data source to access information about an existing resource.
     """
     ...

@@ -6,6 +6,8 @@ package com.pulumi.oci.Database.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAutonomousDatabasesAutonomousDatabaseBackupConfig {
@@ -13,27 +15,27 @@ public final class GetAutonomousDatabasesAutonomousDatabaseBackupConfig {
      * @return Name of [Object Storage](https://docs.cloud.oracle.com/iaas/Content/Object/Concepts/objectstorageoverview.htm) bucket to use for storing manual backups.
      * 
      */
-    private String manualBackupBucketName;
+    private @Nullable String manualBackupBucketName;
     /**
      * @return The manual backup destination type.
      * 
      */
-    private String manualBackupType;
+    private @Nullable String manualBackupType;
 
     private GetAutonomousDatabasesAutonomousDatabaseBackupConfig() {}
     /**
      * @return Name of [Object Storage](https://docs.cloud.oracle.com/iaas/Content/Object/Concepts/objectstorageoverview.htm) bucket to use for storing manual backups.
      * 
      */
-    public String manualBackupBucketName() {
-        return this.manualBackupBucketName;
+    public Optional<String> manualBackupBucketName() {
+        return Optional.ofNullable(this.manualBackupBucketName);
     }
     /**
      * @return The manual backup destination type.
      * 
      */
-    public String manualBackupType() {
-        return this.manualBackupType;
+    public Optional<String> manualBackupType() {
+        return Optional.ofNullable(this.manualBackupType);
     }
 
     public static Builder builder() {
@@ -45,8 +47,8 @@ public final class GetAutonomousDatabasesAutonomousDatabaseBackupConfig {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String manualBackupBucketName;
-        private String manualBackupType;
+        private @Nullable String manualBackupBucketName;
+        private @Nullable String manualBackupType;
         public Builder() {}
         public Builder(GetAutonomousDatabasesAutonomousDatabaseBackupConfig defaults) {
     	      Objects.requireNonNull(defaults);
@@ -55,13 +57,13 @@ public final class GetAutonomousDatabasesAutonomousDatabaseBackupConfig {
         }
 
         @CustomType.Setter
-        public Builder manualBackupBucketName(String manualBackupBucketName) {
-            this.manualBackupBucketName = Objects.requireNonNull(manualBackupBucketName);
+        public Builder manualBackupBucketName(@Nullable String manualBackupBucketName) {
+            this.manualBackupBucketName = manualBackupBucketName;
             return this;
         }
         @CustomType.Setter
-        public Builder manualBackupType(String manualBackupType) {
-            this.manualBackupType = Objects.requireNonNull(manualBackupType);
+        public Builder manualBackupType(@Nullable String manualBackupType) {
+            this.manualBackupType = manualBackupType;
             return this;
         }
         public GetAutonomousDatabasesAutonomousDatabaseBackupConfig build() {

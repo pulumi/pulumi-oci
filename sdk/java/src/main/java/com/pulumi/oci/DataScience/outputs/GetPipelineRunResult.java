@@ -16,6 +16,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetPipelineRunResult {
@@ -23,197 +25,197 @@ public final class GetPipelineRunResult {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the pipeline run.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return The configuration details of a pipeline.
      * 
      */
-    private List<GetPipelineRunConfigurationDetail> configurationDetails;
+    private @Nullable List<GetPipelineRunConfigurationDetail> configurationDetails;
     /**
      * @return The configuration details of a pipeline.
      * 
      */
-    private List<GetPipelineRunConfigurationOverrideDetail> configurationOverrideDetails;
+    private @Nullable List<GetPipelineRunConfigurationOverrideDetail> configurationOverrideDetails;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the pipeline run.
      * 
      */
-    private String createdBy;
+    private @Nullable String createdBy;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
-    private Boolean deleteRelatedJobRuns;
+    private @Nullable Map<String,Object> definedTags;
+    private @Nullable Boolean deleteRelatedJobRuns;
     /**
      * @return A user-friendly display name for the resource.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pipeline run.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Details of the state of the step run.
      * 
      */
-    private String lifecycleDetails;
+    private @Nullable String lifecycleDetails;
     /**
      * @return The pipeline log configuration details.
      * 
      */
-    private List<GetPipelineRunLogConfigurationOverrideDetail> logConfigurationOverrideDetails;
+    private @Nullable List<GetPipelineRunLogConfigurationOverrideDetail> logConfigurationOverrideDetails;
     /**
      * @return Customer logging details for pipeline run.
      * 
      */
-    private List<GetPipelineRunLogDetail> logDetails;
+    private @Nullable List<GetPipelineRunLogDetail> logDetails;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pipeline for which pipeline run is created.
      * 
      */
-    private String pipelineId;
+    private @Nullable String pipelineId;
     private String pipelineRunId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the pipeline run with.
      * 
      */
-    private String projectId;
+    private @Nullable String projectId;
     /**
      * @return The state of the step run.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return Array of step override details. Only Step Configuration is allowed to be overridden.
      * 
      */
-    private List<GetPipelineRunStepOverrideDetail> stepOverrideDetails;
+    private @Nullable List<GetPipelineRunStepOverrideDetail> stepOverrideDetails;
     /**
      * @return Array of StepRun object for each step.
      * 
      */
-    private List<GetPipelineRunStepRun> stepRuns;
+    private @Nullable List<GetPipelineRunStepRun> stepRuns;
     /**
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    private Map<String,Object> systemTags;
+    private @Nullable Map<String,Object> systemTags;
     /**
      * @return The date and time the pipeline run was accepted in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    private String timeAccepted;
+    private @Nullable String timeAccepted;
     /**
      * @return The date and time the pipeline run request was finished in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    private String timeFinished;
+    private @Nullable String timeFinished;
     /**
      * @return The date and time the pipeline run request was started in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    private String timeStarted;
+    private @Nullable String timeStarted;
     /**
      * @return The date and time the pipeline run was updated in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    private String timeUpdated;
+    private @Nullable String timeUpdated;
 
     private GetPipelineRunResult() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the pipeline run.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return The configuration details of a pipeline.
      * 
      */
     public List<GetPipelineRunConfigurationDetail> configurationDetails() {
-        return this.configurationDetails;
+        return this.configurationDetails == null ? List.of() : this.configurationDetails;
     }
     /**
      * @return The configuration details of a pipeline.
      * 
      */
     public List<GetPipelineRunConfigurationOverrideDetail> configurationOverrideDetails() {
-        return this.configurationOverrideDetails;
+        return this.configurationOverrideDetails == null ? List.of() : this.configurationOverrideDetails;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the pipeline run.
      * 
      */
-    public String createdBy() {
-        return this.createdBy;
+    public Optional<String> createdBy() {
+        return Optional.ofNullable(this.createdBy);
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
-    public Boolean deleteRelatedJobRuns() {
-        return this.deleteRelatedJobRuns;
+    public Optional<Boolean> deleteRelatedJobRuns() {
+        return Optional.ofNullable(this.deleteRelatedJobRuns);
     }
     /**
      * @return A user-friendly display name for the resource.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pipeline run.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Details of the state of the step run.
      * 
      */
-    public String lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Optional<String> lifecycleDetails() {
+        return Optional.ofNullable(this.lifecycleDetails);
     }
     /**
      * @return The pipeline log configuration details.
      * 
      */
     public List<GetPipelineRunLogConfigurationOverrideDetail> logConfigurationOverrideDetails() {
-        return this.logConfigurationOverrideDetails;
+        return this.logConfigurationOverrideDetails == null ? List.of() : this.logConfigurationOverrideDetails;
     }
     /**
      * @return Customer logging details for pipeline run.
      * 
      */
     public List<GetPipelineRunLogDetail> logDetails() {
-        return this.logDetails;
+        return this.logDetails == null ? List.of() : this.logDetails;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pipeline for which pipeline run is created.
      * 
      */
-    public String pipelineId() {
-        return this.pipelineId;
+    public Optional<String> pipelineId() {
+        return Optional.ofNullable(this.pipelineId);
     }
     public String pipelineRunId() {
         return this.pipelineRunId;
@@ -222,64 +224,64 @@ public final class GetPipelineRunResult {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the pipeline run with.
      * 
      */
-    public String projectId() {
-        return this.projectId;
+    public Optional<String> projectId() {
+        return Optional.ofNullable(this.projectId);
     }
     /**
      * @return The state of the step run.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return Array of step override details. Only Step Configuration is allowed to be overridden.
      * 
      */
     public List<GetPipelineRunStepOverrideDetail> stepOverrideDetails() {
-        return this.stepOverrideDetails;
+        return this.stepOverrideDetails == null ? List.of() : this.stepOverrideDetails;
     }
     /**
      * @return Array of StepRun object for each step.
      * 
      */
     public List<GetPipelineRunStepRun> stepRuns() {
-        return this.stepRuns;
+        return this.stepRuns == null ? List.of() : this.stepRuns;
     }
     /**
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
     public Map<String,Object> systemTags() {
-        return this.systemTags;
+        return this.systemTags == null ? Map.of() : this.systemTags;
     }
     /**
      * @return The date and time the pipeline run was accepted in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    public String timeAccepted() {
-        return this.timeAccepted;
+    public Optional<String> timeAccepted() {
+        return Optional.ofNullable(this.timeAccepted);
     }
     /**
      * @return The date and time the pipeline run request was finished in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    public String timeFinished() {
-        return this.timeFinished;
+    public Optional<String> timeFinished() {
+        return Optional.ofNullable(this.timeFinished);
     }
     /**
      * @return The date and time the pipeline run request was started in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    public String timeStarted() {
-        return this.timeStarted;
+    public Optional<String> timeStarted() {
+        return Optional.ofNullable(this.timeStarted);
     }
     /**
      * @return The date and time the pipeline run was updated in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    public String timeUpdated() {
-        return this.timeUpdated;
+    public Optional<String> timeUpdated() {
+        return Optional.ofNullable(this.timeUpdated);
     }
 
     public static Builder builder() {
@@ -291,29 +293,29 @@ public final class GetPipelineRunResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String compartmentId;
-        private List<GetPipelineRunConfigurationDetail> configurationDetails;
-        private List<GetPipelineRunConfigurationOverrideDetail> configurationOverrideDetails;
-        private String createdBy;
-        private Map<String,Object> definedTags;
-        private Boolean deleteRelatedJobRuns;
-        private String displayName;
-        private Map<String,Object> freeformTags;
-        private String id;
-        private String lifecycleDetails;
-        private List<GetPipelineRunLogConfigurationOverrideDetail> logConfigurationOverrideDetails;
-        private List<GetPipelineRunLogDetail> logDetails;
-        private String pipelineId;
+        private @Nullable String compartmentId;
+        private @Nullable List<GetPipelineRunConfigurationDetail> configurationDetails;
+        private @Nullable List<GetPipelineRunConfigurationOverrideDetail> configurationOverrideDetails;
+        private @Nullable String createdBy;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable Boolean deleteRelatedJobRuns;
+        private @Nullable String displayName;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String id;
+        private @Nullable String lifecycleDetails;
+        private @Nullable List<GetPipelineRunLogConfigurationOverrideDetail> logConfigurationOverrideDetails;
+        private @Nullable List<GetPipelineRunLogDetail> logDetails;
+        private @Nullable String pipelineId;
         private String pipelineRunId;
-        private String projectId;
-        private String state;
-        private List<GetPipelineRunStepOverrideDetail> stepOverrideDetails;
-        private List<GetPipelineRunStepRun> stepRuns;
-        private Map<String,Object> systemTags;
-        private String timeAccepted;
-        private String timeFinished;
-        private String timeStarted;
-        private String timeUpdated;
+        private @Nullable String projectId;
+        private @Nullable String state;
+        private @Nullable List<GetPipelineRunStepOverrideDetail> stepOverrideDetails;
+        private @Nullable List<GetPipelineRunStepRun> stepRuns;
+        private @Nullable Map<String,Object> systemTags;
+        private @Nullable String timeAccepted;
+        private @Nullable String timeFinished;
+        private @Nullable String timeStarted;
+        private @Nullable String timeUpdated;
         public Builder() {}
         public Builder(GetPipelineRunResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -343,80 +345,80 @@ public final class GetPipelineRunResult {
         }
 
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder configurationDetails(List<GetPipelineRunConfigurationDetail> configurationDetails) {
-            this.configurationDetails = Objects.requireNonNull(configurationDetails);
+        public Builder configurationDetails(@Nullable List<GetPipelineRunConfigurationDetail> configurationDetails) {
+            this.configurationDetails = configurationDetails;
             return this;
         }
         public Builder configurationDetails(GetPipelineRunConfigurationDetail... configurationDetails) {
             return configurationDetails(List.of(configurationDetails));
         }
         @CustomType.Setter
-        public Builder configurationOverrideDetails(List<GetPipelineRunConfigurationOverrideDetail> configurationOverrideDetails) {
-            this.configurationOverrideDetails = Objects.requireNonNull(configurationOverrideDetails);
+        public Builder configurationOverrideDetails(@Nullable List<GetPipelineRunConfigurationOverrideDetail> configurationOverrideDetails) {
+            this.configurationOverrideDetails = configurationOverrideDetails;
             return this;
         }
         public Builder configurationOverrideDetails(GetPipelineRunConfigurationOverrideDetail... configurationOverrideDetails) {
             return configurationOverrideDetails(List.of(configurationOverrideDetails));
         }
         @CustomType.Setter
-        public Builder createdBy(String createdBy) {
-            this.createdBy = Objects.requireNonNull(createdBy);
+        public Builder createdBy(@Nullable String createdBy) {
+            this.createdBy = createdBy;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder deleteRelatedJobRuns(Boolean deleteRelatedJobRuns) {
-            this.deleteRelatedJobRuns = Objects.requireNonNull(deleteRelatedJobRuns);
+        public Builder deleteRelatedJobRuns(@Nullable Boolean deleteRelatedJobRuns) {
+            this.deleteRelatedJobRuns = deleteRelatedJobRuns;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+        public Builder lifecycleDetails(@Nullable String lifecycleDetails) {
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
-        public Builder logConfigurationOverrideDetails(List<GetPipelineRunLogConfigurationOverrideDetail> logConfigurationOverrideDetails) {
-            this.logConfigurationOverrideDetails = Objects.requireNonNull(logConfigurationOverrideDetails);
+        public Builder logConfigurationOverrideDetails(@Nullable List<GetPipelineRunLogConfigurationOverrideDetail> logConfigurationOverrideDetails) {
+            this.logConfigurationOverrideDetails = logConfigurationOverrideDetails;
             return this;
         }
         public Builder logConfigurationOverrideDetails(GetPipelineRunLogConfigurationOverrideDetail... logConfigurationOverrideDetails) {
             return logConfigurationOverrideDetails(List.of(logConfigurationOverrideDetails));
         }
         @CustomType.Setter
-        public Builder logDetails(List<GetPipelineRunLogDetail> logDetails) {
-            this.logDetails = Objects.requireNonNull(logDetails);
+        public Builder logDetails(@Nullable List<GetPipelineRunLogDetail> logDetails) {
+            this.logDetails = logDetails;
             return this;
         }
         public Builder logDetails(GetPipelineRunLogDetail... logDetails) {
             return logDetails(List.of(logDetails));
         }
         @CustomType.Setter
-        public Builder pipelineId(String pipelineId) {
-            this.pipelineId = Objects.requireNonNull(pipelineId);
+        public Builder pipelineId(@Nullable String pipelineId) {
+            this.pipelineId = pipelineId;
             return this;
         }
         @CustomType.Setter
@@ -425,54 +427,54 @@ public final class GetPipelineRunResult {
             return this;
         }
         @CustomType.Setter
-        public Builder projectId(String projectId) {
-            this.projectId = Objects.requireNonNull(projectId);
+        public Builder projectId(@Nullable String projectId) {
+            this.projectId = projectId;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder stepOverrideDetails(List<GetPipelineRunStepOverrideDetail> stepOverrideDetails) {
-            this.stepOverrideDetails = Objects.requireNonNull(stepOverrideDetails);
+        public Builder stepOverrideDetails(@Nullable List<GetPipelineRunStepOverrideDetail> stepOverrideDetails) {
+            this.stepOverrideDetails = stepOverrideDetails;
             return this;
         }
         public Builder stepOverrideDetails(GetPipelineRunStepOverrideDetail... stepOverrideDetails) {
             return stepOverrideDetails(List.of(stepOverrideDetails));
         }
         @CustomType.Setter
-        public Builder stepRuns(List<GetPipelineRunStepRun> stepRuns) {
-            this.stepRuns = Objects.requireNonNull(stepRuns);
+        public Builder stepRuns(@Nullable List<GetPipelineRunStepRun> stepRuns) {
+            this.stepRuns = stepRuns;
             return this;
         }
         public Builder stepRuns(GetPipelineRunStepRun... stepRuns) {
             return stepRuns(List.of(stepRuns));
         }
         @CustomType.Setter
-        public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+        public Builder systemTags(@Nullable Map<String,Object> systemTags) {
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
-        public Builder timeAccepted(String timeAccepted) {
-            this.timeAccepted = Objects.requireNonNull(timeAccepted);
+        public Builder timeAccepted(@Nullable String timeAccepted) {
+            this.timeAccepted = timeAccepted;
             return this;
         }
         @CustomType.Setter
-        public Builder timeFinished(String timeFinished) {
-            this.timeFinished = Objects.requireNonNull(timeFinished);
+        public Builder timeFinished(@Nullable String timeFinished) {
+            this.timeFinished = timeFinished;
             return this;
         }
         @CustomType.Setter
-        public Builder timeStarted(String timeStarted) {
-            this.timeStarted = Objects.requireNonNull(timeStarted);
+        public Builder timeStarted(@Nullable String timeStarted) {
+            this.timeStarted = timeStarted;
             return this;
         }
         @CustomType.Setter
-        public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+        public Builder timeUpdated(@Nullable String timeUpdated) {
+            this.timeUpdated = timeUpdated;
             return this;
         }
         public GetPipelineRunResult build() {

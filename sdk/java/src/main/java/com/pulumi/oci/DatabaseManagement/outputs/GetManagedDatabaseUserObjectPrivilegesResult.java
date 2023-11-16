@@ -19,7 +19,7 @@ public final class GetManagedDatabaseUserObjectPrivilegesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private String managedDatabaseId;
     /**
      * @return The name of the privilege on the object.
@@ -30,7 +30,7 @@ public final class GetManagedDatabaseUserObjectPrivilegesResult {
      * @return The list of object_privilege_collection.
      * 
      */
-    private List<GetManagedDatabaseUserObjectPrivilegesObjectPrivilegeCollection> objectPrivilegeCollections;
+    private @Nullable List<GetManagedDatabaseUserObjectPrivilegesObjectPrivilegeCollection> objectPrivilegeCollections;
     private String userName;
 
     private GetManagedDatabaseUserObjectPrivilegesResult() {}
@@ -41,8 +41,8 @@ public final class GetManagedDatabaseUserObjectPrivilegesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public String managedDatabaseId() {
         return this.managedDatabaseId;
@@ -59,7 +59,7 @@ public final class GetManagedDatabaseUserObjectPrivilegesResult {
      * 
      */
     public List<GetManagedDatabaseUserObjectPrivilegesObjectPrivilegeCollection> objectPrivilegeCollections() {
-        return this.objectPrivilegeCollections;
+        return this.objectPrivilegeCollections == null ? List.of() : this.objectPrivilegeCollections;
     }
     public String userName() {
         return this.userName;
@@ -75,10 +75,10 @@ public final class GetManagedDatabaseUserObjectPrivilegesResult {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable List<GetManagedDatabaseUserObjectPrivilegesFilter> filters;
-        private String id;
+        private @Nullable String id;
         private String managedDatabaseId;
         private @Nullable String name;
-        private List<GetManagedDatabaseUserObjectPrivilegesObjectPrivilegeCollection> objectPrivilegeCollections;
+        private @Nullable List<GetManagedDatabaseUserObjectPrivilegesObjectPrivilegeCollection> objectPrivilegeCollections;
         private String userName;
         public Builder() {}
         public Builder(GetManagedDatabaseUserObjectPrivilegesResult defaults) {
@@ -100,8 +100,8 @@ public final class GetManagedDatabaseUserObjectPrivilegesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -115,8 +115,8 @@ public final class GetManagedDatabaseUserObjectPrivilegesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder objectPrivilegeCollections(List<GetManagedDatabaseUserObjectPrivilegesObjectPrivilegeCollection> objectPrivilegeCollections) {
-            this.objectPrivilegeCollections = Objects.requireNonNull(objectPrivilegeCollections);
+        public Builder objectPrivilegeCollections(@Nullable List<GetManagedDatabaseUserObjectPrivilegesObjectPrivilegeCollection> objectPrivilegeCollections) {
+            this.objectPrivilegeCollections = objectPrivilegeCollections;
             return this;
         }
         public Builder objectPrivilegeCollections(GetManagedDatabaseUserObjectPrivilegesObjectPrivilegeCollection... objectPrivilegeCollections) {

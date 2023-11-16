@@ -13,6 +13,7 @@ import com.pulumi.oci.Utilities;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -95,14 +96,14 @@ public class NetworkFirewallPolicyServiceList extends com.pulumi.resources.Custo
      * 
      */
     @Export(name="parentResourceId", refs={String.class}, tree="[0]")
-    private Output<String> parentResourceId;
+    private Output</* @Nullable */ String> parentResourceId;
 
     /**
      * @return OCID of the Network Firewall Policy this serviceList belongs to.
      * 
      */
-    public Output<String> parentResourceId() {
-        return this.parentResourceId;
+    public Output<Optional<String>> parentResourceId() {
+        return Codegen.optional(this.parentResourceId);
     }
     /**
      * (Updatable) Collection of service names. The services referenced in the service list must already be present in the policy before being used in the service list.
@@ -129,14 +130,14 @@ public class NetworkFirewallPolicyServiceList extends com.pulumi.resources.Custo
      * 
      */
     @Export(name="totalServices", refs={Integer.class}, tree="[0]")
-    private Output<Integer> totalServices;
+    private Output</* @Nullable */ Integer> totalServices;
 
     /**
      * @return Count of total services in the given service List.
      * 
      */
-    public Output<Integer> totalServices() {
-        return this.totalServices;
+    public Output<Optional<Integer>> totalServices() {
+        return Codegen.optional(this.totalServices);
     }
 
     /**

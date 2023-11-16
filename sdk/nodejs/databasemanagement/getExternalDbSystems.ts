@@ -63,12 +63,12 @@ export interface GetExternalDbSystemsResult {
     /**
      * The list of external_db_system_collection.
      */
-    readonly externalDbSystemCollections: outputs.DatabaseManagement.GetExternalDbSystemsExternalDbSystemCollection[];
+    readonly externalDbSystemCollections?: outputs.DatabaseManagement.GetExternalDbSystemsExternalDbSystemCollection[];
     readonly filters?: outputs.DatabaseManagement.GetExternalDbSystemsFilter[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
 }
 /**
  * This data source provides the list of External Db Systems in Oracle Cloud Infrastructure Database Management service.

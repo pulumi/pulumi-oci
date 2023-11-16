@@ -27,19 +27,6 @@ class PluggableDatabaseManagementsManagementArgs:
                  ssl_secret_id: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a PluggableDatabaseManagementsManagement resource.
-        :param pulumi.Input['PluggableDatabaseManagementsManagementCredentialDetailsArgs'] credential_details: Data for the credential used to connect to the database.
-        :param pulumi.Input[bool] enable_pluggabledatabasemanagement: (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] pluggable_database_id: The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param pulumi.Input[str] private_end_point_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
-        :param pulumi.Input[str] service_name: The name of the Oracle Database service that will be used to connect to the database.
-        :param pulumi.Input[int] port: The port used to connect to the pluggable database.
-        :param pulumi.Input[str] protocol: Protocol used by the database connection.
-        :param pulumi.Input[str] role: The role of the user that will be connecting to the pluggable database.
-        :param pulumi.Input[str] ssl_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
         """
         pulumi.set(__self__, "credential_details", credential_details)
         pulumi.set(__self__, "enable_pluggabledatabasemanagement", enable_pluggabledatabasemanagement)
@@ -58,9 +45,6 @@ class PluggableDatabaseManagementsManagementArgs:
     @property
     @pulumi.getter(name="credentialDetails")
     def credential_details(self) -> pulumi.Input['PluggableDatabaseManagementsManagementCredentialDetailsArgs']:
-        """
-        Data for the credential used to connect to the database.
-        """
         return pulumi.get(self, "credential_details")
 
     @credential_details.setter
@@ -70,13 +54,6 @@ class PluggableDatabaseManagementsManagementArgs:
     @property
     @pulumi.getter(name="enablePluggabledatabasemanagement")
     def enable_pluggabledatabasemanagement(self) -> pulumi.Input[bool]:
-        """
-        (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "enable_pluggabledatabasemanagement")
 
     @enable_pluggabledatabasemanagement.setter
@@ -86,9 +63,6 @@ class PluggableDatabaseManagementsManagementArgs:
     @property
     @pulumi.getter(name="pluggableDatabaseId")
     def pluggable_database_id(self) -> pulumi.Input[str]:
-        """
-        The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        """
         return pulumi.get(self, "pluggable_database_id")
 
     @pluggable_database_id.setter
@@ -98,9 +72,6 @@ class PluggableDatabaseManagementsManagementArgs:
     @property
     @pulumi.getter(name="privateEndPointId")
     def private_end_point_id(self) -> pulumi.Input[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
-        """
         return pulumi.get(self, "private_end_point_id")
 
     @private_end_point_id.setter
@@ -110,9 +81,6 @@ class PluggableDatabaseManagementsManagementArgs:
     @property
     @pulumi.getter(name="serviceName")
     def service_name(self) -> pulumi.Input[str]:
-        """
-        The name of the Oracle Database service that will be used to connect to the database.
-        """
         return pulumi.get(self, "service_name")
 
     @service_name.setter
@@ -122,9 +90,6 @@ class PluggableDatabaseManagementsManagementArgs:
     @property
     @pulumi.getter
     def port(self) -> Optional[pulumi.Input[int]]:
-        """
-        The port used to connect to the pluggable database.
-        """
         return pulumi.get(self, "port")
 
     @port.setter
@@ -134,9 +99,6 @@ class PluggableDatabaseManagementsManagementArgs:
     @property
     @pulumi.getter
     def protocol(self) -> Optional[pulumi.Input[str]]:
-        """
-        Protocol used by the database connection.
-        """
         return pulumi.get(self, "protocol")
 
     @protocol.setter
@@ -146,9 +108,6 @@ class PluggableDatabaseManagementsManagementArgs:
     @property
     @pulumi.getter
     def role(self) -> Optional[pulumi.Input[str]]:
-        """
-        The role of the user that will be connecting to the pluggable database.
-        """
         return pulumi.get(self, "role")
 
     @role.setter
@@ -158,9 +117,6 @@ class PluggableDatabaseManagementsManagementArgs:
     @property
     @pulumi.getter(name="sslSecretId")
     def ssl_secret_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
-        """
         return pulumi.get(self, "ssl_secret_id")
 
     @ssl_secret_id.setter
@@ -194,31 +150,6 @@ class _PluggableDatabaseManagementsManagementState:
                  time_created: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering PluggableDatabaseManagementsManagement resources.
-        :param pulumi.Input[str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param pulumi.Input[Sequence[pulumi.Input['PluggableDatabaseManagementsManagementConnectionStringArgs']]] connection_strings: Connection strings to connect to an Oracle Pluggable Database.
-        :param pulumi.Input[str] container_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the CDB.
-        :param pulumi.Input['PluggableDatabaseManagementsManagementCredentialDetailsArgs'] credential_details: Data for the credential used to connect to the database.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        :param pulumi.Input[bool] enable_pluggabledatabasemanagement: (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[bool] is_restricted: The restricted mode of the pluggable database. If a pluggable database is opened in restricted mode, the user needs both create a session and have restricted session privileges to connect to it.
-        :param pulumi.Input[str] lifecycle_details: Detailed message for the lifecycle state.
-        :param pulumi.Input[str] open_mode: The mode that pluggable database is in. Open mode can only be changed to READ_ONLY or MIGRATE directly from the backend (within the Oracle Database software).
-        :param pulumi.Input[str] pdb_name: The name for the pluggable database (PDB). The name is unique in the context of a [container database](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/Database/). The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. The pluggable database name should not be same as the container database name.
-        :param pulumi.Input[str] pluggable_database_id: The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param pulumi.Input[Sequence[pulumi.Input['PluggableDatabaseManagementsManagementPluggableDatabaseManagementConfigArgs']]] pluggable_database_management_configs: The configuration of the Pluggable Database Management service.
-        :param pulumi.Input[int] port: The port used to connect to the pluggable database.
-        :param pulumi.Input[str] private_end_point_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
-        :param pulumi.Input[str] protocol: Protocol used by the database connection.
-        :param pulumi.Input[str] role: The role of the user that will be connecting to the pluggable database.
-        :param pulumi.Input[str] service_name: The name of the Oracle Database service that will be used to connect to the database.
-        :param pulumi.Input[str] ssl_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
-        :param pulumi.Input[str] state: The current state of the pluggable database.
-        :param pulumi.Input[str] time_created: The date and time the pluggable database was created.
         """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
@@ -266,9 +197,6 @@ class _PluggableDatabaseManagementsManagementState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -278,9 +206,6 @@ class _PluggableDatabaseManagementsManagementState:
     @property
     @pulumi.getter(name="connectionStrings")
     def connection_strings(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PluggableDatabaseManagementsManagementConnectionStringArgs']]]]:
-        """
-        Connection strings to connect to an Oracle Pluggable Database.
-        """
         return pulumi.get(self, "connection_strings")
 
     @connection_strings.setter
@@ -290,9 +215,6 @@ class _PluggableDatabaseManagementsManagementState:
     @property
     @pulumi.getter(name="containerDatabaseId")
     def container_database_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the CDB.
-        """
         return pulumi.get(self, "container_database_id")
 
     @container_database_id.setter
@@ -302,9 +224,6 @@ class _PluggableDatabaseManagementsManagementState:
     @property
     @pulumi.getter(name="credentialDetails")
     def credential_details(self) -> Optional[pulumi.Input['PluggableDatabaseManagementsManagementCredentialDetailsArgs']]:
-        """
-        Data for the credential used to connect to the database.
-        """
         return pulumi.get(self, "credential_details")
 
     @credential_details.setter
@@ -314,9 +233,6 @@ class _PluggableDatabaseManagementsManagementState:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -326,13 +242,6 @@ class _PluggableDatabaseManagementsManagementState:
     @property
     @pulumi.getter(name="enablePluggabledatabasemanagement")
     def enable_pluggabledatabasemanagement(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "enable_pluggabledatabasemanagement")
 
     @enable_pluggabledatabasemanagement.setter
@@ -342,9 +251,6 @@ class _PluggableDatabaseManagementsManagementState:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -354,9 +260,6 @@ class _PluggableDatabaseManagementsManagementState:
     @property
     @pulumi.getter(name="isRestricted")
     def is_restricted(self) -> Optional[pulumi.Input[bool]]:
-        """
-        The restricted mode of the pluggable database. If a pluggable database is opened in restricted mode, the user needs both create a session and have restricted session privileges to connect to it.
-        """
         return pulumi.get(self, "is_restricted")
 
     @is_restricted.setter
@@ -366,9 +269,6 @@ class _PluggableDatabaseManagementsManagementState:
     @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> Optional[pulumi.Input[str]]:
-        """
-        Detailed message for the lifecycle state.
-        """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
@@ -378,9 +278,6 @@ class _PluggableDatabaseManagementsManagementState:
     @property
     @pulumi.getter(name="openMode")
     def open_mode(self) -> Optional[pulumi.Input[str]]:
-        """
-        The mode that pluggable database is in. Open mode can only be changed to READ_ONLY or MIGRATE directly from the backend (within the Oracle Database software).
-        """
         return pulumi.get(self, "open_mode")
 
     @open_mode.setter
@@ -390,9 +287,6 @@ class _PluggableDatabaseManagementsManagementState:
     @property
     @pulumi.getter(name="pdbName")
     def pdb_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The name for the pluggable database (PDB). The name is unique in the context of a [container database](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/Database/). The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. The pluggable database name should not be same as the container database name.
-        """
         return pulumi.get(self, "pdb_name")
 
     @pdb_name.setter
@@ -402,9 +296,6 @@ class _PluggableDatabaseManagementsManagementState:
     @property
     @pulumi.getter(name="pluggableDatabaseId")
     def pluggable_database_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        """
         return pulumi.get(self, "pluggable_database_id")
 
     @pluggable_database_id.setter
@@ -414,9 +305,6 @@ class _PluggableDatabaseManagementsManagementState:
     @property
     @pulumi.getter(name="pluggableDatabaseManagementConfigs")
     def pluggable_database_management_configs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PluggableDatabaseManagementsManagementPluggableDatabaseManagementConfigArgs']]]]:
-        """
-        The configuration of the Pluggable Database Management service.
-        """
         return pulumi.get(self, "pluggable_database_management_configs")
 
     @pluggable_database_management_configs.setter
@@ -426,9 +314,6 @@ class _PluggableDatabaseManagementsManagementState:
     @property
     @pulumi.getter
     def port(self) -> Optional[pulumi.Input[int]]:
-        """
-        The port used to connect to the pluggable database.
-        """
         return pulumi.get(self, "port")
 
     @port.setter
@@ -438,9 +323,6 @@ class _PluggableDatabaseManagementsManagementState:
     @property
     @pulumi.getter(name="privateEndPointId")
     def private_end_point_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
-        """
         return pulumi.get(self, "private_end_point_id")
 
     @private_end_point_id.setter
@@ -450,9 +332,6 @@ class _PluggableDatabaseManagementsManagementState:
     @property
     @pulumi.getter
     def protocol(self) -> Optional[pulumi.Input[str]]:
-        """
-        Protocol used by the database connection.
-        """
         return pulumi.get(self, "protocol")
 
     @protocol.setter
@@ -462,9 +341,6 @@ class _PluggableDatabaseManagementsManagementState:
     @property
     @pulumi.getter
     def role(self) -> Optional[pulumi.Input[str]]:
-        """
-        The role of the user that will be connecting to the pluggable database.
-        """
         return pulumi.get(self, "role")
 
     @role.setter
@@ -474,9 +350,6 @@ class _PluggableDatabaseManagementsManagementState:
     @property
     @pulumi.getter(name="serviceName")
     def service_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The name of the Oracle Database service that will be used to connect to the database.
-        """
         return pulumi.get(self, "service_name")
 
     @service_name.setter
@@ -486,9 +359,6 @@ class _PluggableDatabaseManagementsManagementState:
     @property
     @pulumi.getter(name="sslSecretId")
     def ssl_secret_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
-        """
         return pulumi.get(self, "ssl_secret_id")
 
     @ssl_secret_id.setter
@@ -498,9 +368,6 @@ class _PluggableDatabaseManagementsManagementState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The current state of the pluggable database.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -510,9 +377,6 @@ class _PluggableDatabaseManagementsManagementState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time the pluggable database was created.
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -536,46 +400,9 @@ class PluggableDatabaseManagementsManagement(pulumi.CustomResource):
                  ssl_secret_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Pluggable Database Pluggabledatabasemanagements Management resource in Oracle Cloud Infrastructure Database service.
-
-        Enables the Database Management service for an Oracle Pluggable Database located in Oracle Cloud Infrastructure. This service allows the pluggable database to access tools including Metrics and Performance hub. Database Management is enabled at the pluggable database (PDB) level.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_pluggable_database_pluggabledatabasemanagements_management = oci.database.PluggableDatabaseManagementsManagement("testPluggableDatabasePluggabledatabasemanagementsManagement",
-            pluggable_database_id=oci_database_pluggable_database["test_pluggable_database"]["id"],
-            enable_pluggabledatabasemanagement=var["enable_pluggabledatabasemanagement"],
-            credential_details=oci.database.PluggableDatabaseManagementsManagementCredentialDetailsArgs(
-                password_secret_id=oci_vault_secret["test_secret"]["id"],
-                user_name=oci_identity_user["test_user"]["name"],
-            ),
-            private_end_point_id=oci_database_private_end_point["test_private_end_point"]["id"],
-            service_name=oci_core_service["test_service"]["name"],
-            port=var["pluggable_database_pluggabledatabasemanagements_management_port"],
-            protocol=var["pluggable_database_pluggabledatabasemanagements_management_protocol"],
-            role=var["pluggable_database_pluggabledatabasemanagements_management_role"],
-            ssl_secret_id=oci_vault_secret["test_secret"]["id"])
-        ```
-
+        Create a PluggableDatabaseManagementsManagement resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[pulumi.InputType['PluggableDatabaseManagementsManagementCredentialDetailsArgs']] credential_details: Data for the credential used to connect to the database.
-        :param pulumi.Input[bool] enable_pluggabledatabasemanagement: (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] pluggable_database_id: The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param pulumi.Input[int] port: The port used to connect to the pluggable database.
-        :param pulumi.Input[str] private_end_point_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
-        :param pulumi.Input[str] protocol: Protocol used by the database connection.
-        :param pulumi.Input[str] role: The role of the user that will be connecting to the pluggable database.
-        :param pulumi.Input[str] service_name: The name of the Oracle Database service that will be used to connect to the database.
-        :param pulumi.Input[str] ssl_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
         """
         ...
     @overload
@@ -584,31 +411,7 @@ class PluggableDatabaseManagementsManagement(pulumi.CustomResource):
                  args: PluggableDatabaseManagementsManagementArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Pluggable Database Pluggabledatabasemanagements Management resource in Oracle Cloud Infrastructure Database service.
-
-        Enables the Database Management service for an Oracle Pluggable Database located in Oracle Cloud Infrastructure. This service allows the pluggable database to access tools including Metrics and Performance hub. Database Management is enabled at the pluggable database (PDB) level.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_pluggable_database_pluggabledatabasemanagements_management = oci.database.PluggableDatabaseManagementsManagement("testPluggableDatabasePluggabledatabasemanagementsManagement",
-            pluggable_database_id=oci_database_pluggable_database["test_pluggable_database"]["id"],
-            enable_pluggabledatabasemanagement=var["enable_pluggabledatabasemanagement"],
-            credential_details=oci.database.PluggableDatabaseManagementsManagementCredentialDetailsArgs(
-                password_secret_id=oci_vault_secret["test_secret"]["id"],
-                user_name=oci_identity_user["test_user"]["name"],
-            ),
-            private_end_point_id=oci_database_private_end_point["test_private_end_point"]["id"],
-            service_name=oci_core_service["test_service"]["name"],
-            port=var["pluggable_database_pluggabledatabasemanagements_management_port"],
-            protocol=var["pluggable_database_pluggabledatabasemanagements_management_protocol"],
-            role=var["pluggable_database_pluggabledatabasemanagements_management_role"],
-            ssl_secret_id=oci_vault_secret["test_secret"]["id"])
-        ```
-
+        Create a PluggableDatabaseManagementsManagement resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param PluggableDatabaseManagementsManagementArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -711,31 +514,6 @@ class PluggableDatabaseManagementsManagement(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PluggableDatabaseManagementsManagementConnectionStringArgs']]]] connection_strings: Connection strings to connect to an Oracle Pluggable Database.
-        :param pulumi.Input[str] container_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the CDB.
-        :param pulumi.Input[pulumi.InputType['PluggableDatabaseManagementsManagementCredentialDetailsArgs']] credential_details: Data for the credential used to connect to the database.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        :param pulumi.Input[bool] enable_pluggabledatabasemanagement: (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[bool] is_restricted: The restricted mode of the pluggable database. If a pluggable database is opened in restricted mode, the user needs both create a session and have restricted session privileges to connect to it.
-        :param pulumi.Input[str] lifecycle_details: Detailed message for the lifecycle state.
-        :param pulumi.Input[str] open_mode: The mode that pluggable database is in. Open mode can only be changed to READ_ONLY or MIGRATE directly from the backend (within the Oracle Database software).
-        :param pulumi.Input[str] pdb_name: The name for the pluggable database (PDB). The name is unique in the context of a [container database](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/Database/). The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. The pluggable database name should not be same as the container database name.
-        :param pulumi.Input[str] pluggable_database_id: The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PluggableDatabaseManagementsManagementPluggableDatabaseManagementConfigArgs']]]] pluggable_database_management_configs: The configuration of the Pluggable Database Management service.
-        :param pulumi.Input[int] port: The port used to connect to the pluggable database.
-        :param pulumi.Input[str] private_end_point_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
-        :param pulumi.Input[str] protocol: Protocol used by the database connection.
-        :param pulumi.Input[str] role: The role of the user that will be connecting to the pluggable database.
-        :param pulumi.Input[str] service_name: The name of the Oracle Database service that will be used to connect to the database.
-        :param pulumi.Input[str] ssl_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
-        :param pulumi.Input[str] state: The current state of the pluggable database.
-        :param pulumi.Input[str] time_created: The date and time the pluggable database was created.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -766,173 +544,106 @@ class PluggableDatabaseManagementsManagement(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> pulumi.Output[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
+    def compartment_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="connectionStrings")
-    def connection_strings(self) -> pulumi.Output[Sequence['outputs.PluggableDatabaseManagementsManagementConnectionString']]:
-        """
-        Connection strings to connect to an Oracle Pluggable Database.
-        """
+    def connection_strings(self) -> pulumi.Output[Optional[Sequence['outputs.PluggableDatabaseManagementsManagementConnectionString']]]:
         return pulumi.get(self, "connection_strings")
 
     @property
     @pulumi.getter(name="containerDatabaseId")
-    def container_database_id(self) -> pulumi.Output[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the CDB.
-        """
+    def container_database_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "container_database_id")
 
     @property
     @pulumi.getter(name="credentialDetails")
     def credential_details(self) -> pulumi.Output['outputs.PluggableDatabaseManagementsManagementCredentialDetails']:
-        """
-        Data for the credential used to connect to the database.
-        """
         return pulumi.get(self, "credential_details")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        """
+    def defined_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="enablePluggabledatabasemanagement")
     def enable_pluggabledatabasemanagement(self) -> pulumi.Output[bool]:
-        """
-        (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "enable_pluggabledatabasemanagement")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="isRestricted")
-    def is_restricted(self) -> pulumi.Output[bool]:
-        """
-        The restricted mode of the pluggable database. If a pluggable database is opened in restricted mode, the user needs both create a session and have restricted session privileges to connect to it.
-        """
+    def is_restricted(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "is_restricted")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> pulumi.Output[str]:
-        """
-        Detailed message for the lifecycle state.
-        """
+    def lifecycle_details(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="openMode")
-    def open_mode(self) -> pulumi.Output[str]:
-        """
-        The mode that pluggable database is in. Open mode can only be changed to READ_ONLY or MIGRATE directly from the backend (within the Oracle Database software).
-        """
+    def open_mode(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "open_mode")
 
     @property
     @pulumi.getter(name="pdbName")
-    def pdb_name(self) -> pulumi.Output[str]:
-        """
-        The name for the pluggable database (PDB). The name is unique in the context of a [container database](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/Database/). The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. The pluggable database name should not be same as the container database name.
-        """
+    def pdb_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "pdb_name")
 
     @property
     @pulumi.getter(name="pluggableDatabaseId")
     def pluggable_database_id(self) -> pulumi.Output[str]:
-        """
-        The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        """
         return pulumi.get(self, "pluggable_database_id")
 
     @property
     @pulumi.getter(name="pluggableDatabaseManagementConfigs")
-    def pluggable_database_management_configs(self) -> pulumi.Output[Sequence['outputs.PluggableDatabaseManagementsManagementPluggableDatabaseManagementConfig']]:
-        """
-        The configuration of the Pluggable Database Management service.
-        """
+    def pluggable_database_management_configs(self) -> pulumi.Output[Optional[Sequence['outputs.PluggableDatabaseManagementsManagementPluggableDatabaseManagementConfig']]]:
         return pulumi.get(self, "pluggable_database_management_configs")
 
     @property
     @pulumi.getter
-    def port(self) -> pulumi.Output[int]:
-        """
-        The port used to connect to the pluggable database.
-        """
+    def port(self) -> pulumi.Output[Optional[int]]:
         return pulumi.get(self, "port")
 
     @property
     @pulumi.getter(name="privateEndPointId")
     def private_end_point_id(self) -> pulumi.Output[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
-        """
         return pulumi.get(self, "private_end_point_id")
 
     @property
     @pulumi.getter
-    def protocol(self) -> pulumi.Output[str]:
-        """
-        Protocol used by the database connection.
-        """
+    def protocol(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "protocol")
 
     @property
     @pulumi.getter
-    def role(self) -> pulumi.Output[str]:
-        """
-        The role of the user that will be connecting to the pluggable database.
-        """
+    def role(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "role")
 
     @property
     @pulumi.getter(name="serviceName")
     def service_name(self) -> pulumi.Output[str]:
-        """
-        The name of the Oracle Database service that will be used to connect to the database.
-        """
         return pulumi.get(self, "service_name")
 
     @property
     @pulumi.getter(name="sslSecretId")
-    def ssl_secret_id(self) -> pulumi.Output[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
-        """
+    def ssl_secret_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "ssl_secret_id")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        The current state of the pluggable database.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        The date and time the pluggable database was created.
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 

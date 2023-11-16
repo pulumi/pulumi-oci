@@ -47,84 +47,84 @@ export interface GetCloudAutonomousVmClusterResourceUsageResult {
     /**
      * The data disk group size allocated for Autonomous Databases, in TBs.
      */
-    readonly autonomousDataStorageSizeInTbs: number;
+    readonly autonomousDataStorageSizeInTbs?: number;
     /**
      * List of Autonomous VM resource usages.
      */
-    readonly autonomousVmResourceUsages: outputs.Database.GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsage[];
+    readonly autonomousVmResourceUsages?: outputs.Database.GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsage[];
     /**
      * The data disk group size available for Autonomous Databases, in TBs.
      */
-    readonly availableAutonomousDataStorageSizeInTbs: number;
+    readonly availableAutonomousDataStorageSizeInTbs?: number;
     /**
      * The number of CPU cores available.
      */
-    readonly availableCpus: number;
+    readonly availableCpus?: number;
     readonly cloudAutonomousVmClusterId: string;
     /**
      * The local node storage allocated in GBs.
      */
-    readonly dbNodeStorageSizeInGbs: number;
+    readonly dbNodeStorageSizeInGbs?: number;
     /**
      * The user-friendly name for the Autonomous VM cluster. The name does not need to be unique.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * Total exadata storage allocated for the Autonomous VM Cluster. DATA + RECOVERY + SPARSE + any overhead in TBs.
      */
-    readonly exadataStorageInTbs: number;
+    readonly exadataStorageInTbs?: number;
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The amount of memory (in GBs) to be enabled per each CPU core.
      */
-    readonly memoryPerOracleComputeUnitInGbs: number;
+    readonly memoryPerOracleComputeUnitInGbs?: number;
     /**
      * The memory allocated in GBs.
      */
-    readonly memorySizeInGbs: number;
+    readonly memorySizeInGbs?: number;
     /**
      * The number of non-provisionable Autonomous Container Databases in an Autonomous VM Cluster.
      */
-    readonly nonProvisionableAutonomousContainerDatabases: number;
+    readonly nonProvisionableAutonomousContainerDatabases?: number;
     /**
      * The number of provisionable Autonomous Container Databases in an Autonomous VM Cluster.
      */
-    readonly provisionableAutonomousContainerDatabases: number;
+    readonly provisionableAutonomousContainerDatabases?: number;
     /**
      * The number of provisioned Autonomous Container Databases in an Autonomous VM Cluster.
      */
-    readonly provisionedAutonomousContainerDatabases: number;
+    readonly provisionedAutonomousContainerDatabases?: number;
     /**
      * The number of CPUs provisioned in an Autonomous VM Cluster.
      */
-    readonly provisionedCpus: number;
+    readonly provisionedCpus?: number;
     /**
      * CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
      */
-    readonly reclaimableCpus: number;
+    readonly reclaimableCpus?: number;
     /**
      * The number of CPUs reserved in an Autonomous VM Cluster.
      */
-    readonly reservedCpus: number;
+    readonly reservedCpus?: number;
     /**
      * The total number of Autonomous Container Databases that can be created.
      */
-    readonly totalContainerDatabases: number;
+    readonly totalContainerDatabases?: number;
     /**
      * The number of CPU cores enabled on the Cloud Autonomous VM cluster.
      */
-    readonly totalCpus: number;
+    readonly totalCpus?: number;
     /**
      * The data disk group size used for Autonomous Databases, in TBs.
      */
-    readonly usedAutonomousDataStorageSizeInTbs: number;
+    readonly usedAutonomousDataStorageSizeInTbs?: number;
     /**
      * The number of CPU cores alloted to the Autonomous Container Databases in an Cloud Autonomous VM cluster.
      */
-    readonly usedCpus: number;
+    readonly usedCpus?: number;
 }
 /**
  * This data source provides details about a specific Cloud Autonomous Vm Cluster Resource Usage resource in Oracle Cloud Infrastructure Database service.

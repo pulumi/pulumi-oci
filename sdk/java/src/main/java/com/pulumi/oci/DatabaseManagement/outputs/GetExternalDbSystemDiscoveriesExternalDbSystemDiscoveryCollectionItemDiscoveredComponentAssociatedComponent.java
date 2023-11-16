@@ -6,6 +6,8 @@ package com.pulumi.oci.DatabaseManagement.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentAssociatedComponent {
@@ -13,39 +15,39 @@ public final class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollec
      * @return The association type.
      * 
      */
-    private String associationType;
+    private @Nullable String associationType;
     /**
      * @return The identifier of the discovered DB system component.
      * 
      */
-    private String componentId;
+    private @Nullable String componentId;
     /**
      * @return The component type.
      * 
      */
-    private String componentType;
+    private @Nullable String componentType;
 
     private GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentAssociatedComponent() {}
     /**
      * @return The association type.
      * 
      */
-    public String associationType() {
-        return this.associationType;
+    public Optional<String> associationType() {
+        return Optional.ofNullable(this.associationType);
     }
     /**
      * @return The identifier of the discovered DB system component.
      * 
      */
-    public String componentId() {
-        return this.componentId;
+    public Optional<String> componentId() {
+        return Optional.ofNullable(this.componentId);
     }
     /**
      * @return The component type.
      * 
      */
-    public String componentType() {
-        return this.componentType;
+    public Optional<String> componentType() {
+        return Optional.ofNullable(this.componentType);
     }
 
     public static Builder builder() {
@@ -57,9 +59,9 @@ public final class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollec
     }
     @CustomType.Builder
     public static final class Builder {
-        private String associationType;
-        private String componentId;
-        private String componentType;
+        private @Nullable String associationType;
+        private @Nullable String componentId;
+        private @Nullable String componentType;
         public Builder() {}
         public Builder(GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentAssociatedComponent defaults) {
     	      Objects.requireNonNull(defaults);
@@ -69,18 +71,18 @@ public final class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollec
         }
 
         @CustomType.Setter
-        public Builder associationType(String associationType) {
-            this.associationType = Objects.requireNonNull(associationType);
+        public Builder associationType(@Nullable String associationType) {
+            this.associationType = associationType;
             return this;
         }
         @CustomType.Setter
-        public Builder componentId(String componentId) {
-            this.componentId = Objects.requireNonNull(componentId);
+        public Builder componentId(@Nullable String componentId) {
+            this.componentId = componentId;
             return this;
         }
         @CustomType.Setter
-        public Builder componentType(String componentType) {
-            this.componentType = Objects.requireNonNull(componentType);
+        public Builder componentType(@Nullable String componentType) {
+            this.componentType = componentType;
             return this;
         }
         public GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentAssociatedComponent build() {

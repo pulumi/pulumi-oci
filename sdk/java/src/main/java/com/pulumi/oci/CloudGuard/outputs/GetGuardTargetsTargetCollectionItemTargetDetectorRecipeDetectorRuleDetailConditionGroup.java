@@ -6,6 +6,8 @@ package com.pulumi.oci.CloudGuard.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConditionGroup {
@@ -13,27 +15,27 @@ public final class GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetect
      * @return The ID of the compartment in which to list resources.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return Base condition object
      * 
      */
-    private String condition;
+    private @Nullable String condition;
 
     private GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConditionGroup() {}
     /**
      * @return The ID of the compartment in which to list resources.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return Base condition object
      * 
      */
-    public String condition() {
-        return this.condition;
+    public Optional<String> condition() {
+        return Optional.ofNullable(this.condition);
     }
 
     public static Builder builder() {
@@ -45,8 +47,8 @@ public final class GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetect
     }
     @CustomType.Builder
     public static final class Builder {
-        private String compartmentId;
-        private String condition;
+        private @Nullable String compartmentId;
+        private @Nullable String condition;
         public Builder() {}
         public Builder(GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConditionGroup defaults) {
     	      Objects.requireNonNull(defaults);
@@ -55,13 +57,13 @@ public final class GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetect
         }
 
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder condition(String condition) {
-            this.condition = Objects.requireNonNull(condition);
+        public Builder condition(@Nullable String condition) {
+            this.condition = condition;
             return this;
         }
         public GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConditionGroup build() {

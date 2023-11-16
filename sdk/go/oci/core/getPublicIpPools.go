@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Public Ip Pools in Oracle Cloud Infrastructure Core service.
@@ -74,7 +73,7 @@ type GetPublicIpPoolsResult struct {
 	DisplayName *string                  `pulumi:"displayName"`
 	Filters     []GetPublicIpPoolsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The list of public_ip_pool_collection.
 	PublicIpPoolCollections []GetPublicIpPoolsPublicIpPoolCollection `pulumi:"publicIpPoolCollections"`
 }
@@ -122,12 +121,6 @@ func (o GetPublicIpPoolsResultOutput) ToGetPublicIpPoolsResultOutputWithContext(
 	return o
 }
 
-func (o GetPublicIpPoolsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetPublicIpPoolsResult] {
-	return pulumix.Output[GetPublicIpPoolsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetPublicIpPoolsResultOutput) ByoipRangeId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetPublicIpPoolsResult) *string { return v.ByoipRangeId }).(pulumi.StringPtrOutput)
 }
@@ -147,8 +140,8 @@ func (o GetPublicIpPoolsResultOutput) Filters() GetPublicIpPoolsFilterArrayOutpu
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetPublicIpPoolsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPublicIpPoolsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetPublicIpPoolsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetPublicIpPoolsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The list of public_ip_pool_collection.

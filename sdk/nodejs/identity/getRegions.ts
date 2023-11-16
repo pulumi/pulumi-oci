@@ -44,11 +44,11 @@ export interface GetRegionsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The list of regions.
      */
-    readonly regions: outputs.Identity.GetRegionsRegion[];
+    readonly regions?: outputs.Identity.GetRegionsRegion[];
 }
 /**
  * This data source provides the list of Regions in Oracle Cloud Infrastructure Identity service.

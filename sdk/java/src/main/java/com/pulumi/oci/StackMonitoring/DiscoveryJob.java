@@ -113,28 +113,28 @@ public class DiscoveryJob extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * Client who submits discovery job.
      * 
      */
     @Export(name="discoveryClient", refs={String.class}, tree="[0]")
-    private Output<String> discoveryClient;
+    private Output</* @Nullable */ String> discoveryClient;
 
     /**
      * @return Client who submits discovery job.
      * 
      */
-    public Output<String> discoveryClient() {
-        return this.discoveryClient;
+    public Output<Optional<String>> discoveryClient() {
+        return Codegen.optional(this.discoveryClient);
     }
     /**
      * The request of DiscoveryJob Resource details.
@@ -169,14 +169,14 @@ public class DiscoveryJob extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * If this parameter set to true, the specified tags will be applied  to all resources discovered in the current request.  Default is true.
@@ -186,7 +186,7 @@ public class DiscoveryJob extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="shouldPropagateTagsToDiscoveredResources", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> shouldPropagateTagsToDiscoveredResources;
+    private Output</* @Nullable */ Boolean> shouldPropagateTagsToDiscoveredResources;
 
     /**
      * @return If this parameter set to true, the specified tags will be applied  to all resources discovered in the current request.  Default is true.
@@ -195,106 +195,106 @@ public class DiscoveryJob extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Output<Boolean> shouldPropagateTagsToDiscoveredResources() {
-        return this.shouldPropagateTagsToDiscoveredResources;
+    public Output<Optional<Boolean>> shouldPropagateTagsToDiscoveredResources() {
+        return Codegen.optional(this.shouldPropagateTagsToDiscoveredResources);
     }
     /**
      * The current state of the DiscoveryJob Resource.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The current state of the DiscoveryJob Resource.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * Specifies the status of the discovery job
      * 
      */
     @Export(name="status", refs={String.class}, tree="[0]")
-    private Output<String> status;
+    private Output</* @Nullable */ String> status;
 
     /**
      * @return Specifies the status of the discovery job
      * 
      */
-    public Output<String> status() {
-        return this.status;
+    public Output<Optional<String>> status() {
+        return Codegen.optional(this.status);
     }
     /**
      * The short summary of the status of the discovery job
      * 
      */
     @Export(name="statusMessage", refs={String.class}, tree="[0]")
-    private Output<String> statusMessage;
+    private Output</* @Nullable */ String> statusMessage;
 
     /**
      * @return The short summary of the status of the discovery job
      * 
      */
-    public Output<String> statusMessage() {
-        return this.statusMessage;
+    public Output<Optional<String>> statusMessage() {
+        return Codegen.optional(this.statusMessage);
     }
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
     @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> systemTags;
+    private Output</* @Nullable */ Map<String,Object>> systemTags;
 
     /**
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    public Output<Map<String,Object>> systemTags() {
-        return this.systemTags;
+    public Output<Optional<Map<String,Object>>> systemTags() {
+        return Codegen.optional(this.systemTags);
     }
     /**
      * The OCID of Tenant
      * 
      */
     @Export(name="tenantId", refs={String.class}, tree="[0]")
-    private Output<String> tenantId;
+    private Output</* @Nullable */ String> tenantId;
 
     /**
      * @return The OCID of Tenant
      * 
      */
-    public Output<String> tenantId() {
-        return this.tenantId;
+    public Output<Optional<String>> tenantId() {
+        return Codegen.optional(this.tenantId);
     }
     /**
      * The time the discovery Job was updated.
      * 
      */
     @Export(name="timeUpdated", refs={String.class}, tree="[0]")
-    private Output<String> timeUpdated;
+    private Output</* @Nullable */ String> timeUpdated;
 
     /**
      * @return The time the discovery Job was updated.
      * 
      */
-    public Output<String> timeUpdated() {
-        return this.timeUpdated;
+    public Output<Optional<String>> timeUpdated() {
+        return Codegen.optional(this.timeUpdated);
     }
     /**
      * The OCID of user in which the job is submitted
      * 
      */
     @Export(name="userId", refs={String.class}, tree="[0]")
-    private Output<String> userId;
+    private Output</* @Nullable */ String> userId;
 
     /**
      * @return The OCID of user in which the job is submitted
      * 
      */
-    public Output<String> userId() {
-        return this.userId;
+    public Output<Optional<String>> userId() {
+        return Codegen.optional(this.userId);
     }
 
     /**

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Node Pool Option resource in Oracle Cloud Infrastructure Container Engine service.
@@ -64,7 +63,7 @@ type GetNodePoolOptionArgs struct {
 type GetNodePoolOptionResult struct {
 	CompartmentId *string `pulumi:"compartmentId"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Deprecated. See sources. When creating a node pool, only image names contained in this property can be passed to the `nodeImageName` property.
 	Images []string `pulumi:"images"`
 	// Available Kubernetes versions.
@@ -116,19 +115,13 @@ func (o GetNodePoolOptionResultOutput) ToGetNodePoolOptionResultOutputWithContex
 	return o
 }
 
-func (o GetNodePoolOptionResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetNodePoolOptionResult] {
-	return pulumix.Output[GetNodePoolOptionResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetNodePoolOptionResultOutput) CompartmentId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetNodePoolOptionResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetNodePoolOptionResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNodePoolOptionResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetNodePoolOptionResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNodePoolOptionResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Deprecated. See sources. When creating a node pool, only image names contained in this property can be passed to the `nodeImageName` property.

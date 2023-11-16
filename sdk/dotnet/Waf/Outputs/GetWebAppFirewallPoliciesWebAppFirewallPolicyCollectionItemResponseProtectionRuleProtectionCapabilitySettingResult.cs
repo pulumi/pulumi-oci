@@ -20,37 +20,37 @@ namespace Pulumi.Oci.Waf.Outputs
         /// <summary>
         /// Maximum allowed length of headers in an HTTP request. Used in protection capability: 9200024: Limit length of request header size.
         /// </summary>
-        public readonly int MaxHttpRequestHeaderLength;
+        public readonly int? MaxHttpRequestHeaderLength;
         /// <summary>
         /// Maximum number of headers allowed in an HTTP request. Used in protection capability 9200014: Limit Number of Request Headers.
         /// </summary>
-        public readonly int MaxHttpRequestHeaders;
+        public readonly int? MaxHttpRequestHeaders;
         /// <summary>
         /// Maximum number of arguments allowed. Used in protection capability 920380: Number of Arguments Limits.
         /// </summary>
-        public readonly int MaxNumberOfArguments;
+        public readonly int? MaxNumberOfArguments;
         /// <summary>
         /// Maximum allowed length of a single argument. Used in protection capability 920370: Limit argument value length.
         /// </summary>
-        public readonly int MaxSingleArgumentLength;
+        public readonly int? MaxSingleArgumentLength;
         /// <summary>
         /// Maximum allowed total length of all arguments. Used in protection capability 920390: Limit arguments total length.
         /// </summary>
-        public readonly int MaxTotalArgumentLength;
+        public readonly int? MaxTotalArgumentLength;
 
         [OutputConstructor]
         private GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilitySettingResult(
             ImmutableArray<string> allowedHttpMethods,
 
-            int maxHttpRequestHeaderLength,
+            int? maxHttpRequestHeaderLength,
 
-            int maxHttpRequestHeaders,
+            int? maxHttpRequestHeaders,
 
-            int maxNumberOfArguments,
+            int? maxNumberOfArguments,
 
-            int maxSingleArgumentLength,
+            int? maxSingleArgumentLength,
 
-            int maxTotalArgumentLength)
+            int? maxTotalArgumentLength)
         {
             AllowedHttpMethods = allowedHttpMethods;
             MaxHttpRequestHeaderLength = maxHttpRequestHeaderLength;

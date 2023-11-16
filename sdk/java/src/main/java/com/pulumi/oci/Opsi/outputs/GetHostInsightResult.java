@@ -9,6 +9,8 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetHostInsightResult {
@@ -16,230 +18,230 @@ public final class GetHostInsightResult {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compute Instance
      * 
      */
-    private String computeId;
+    private @Nullable String computeId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return OPSI Enterprise Manager Bridge OCID
      * 
      */
-    private String enterpriseManagerBridgeId;
+    private @Nullable String enterpriseManagerBridgeId;
     /**
      * @return Enterprise Manager Entity Display Name
      * 
      */
-    private String enterpriseManagerEntityDisplayName;
+    private @Nullable String enterpriseManagerEntityDisplayName;
     /**
      * @return Enterprise Manager Entity Unique Identifier
      * 
      */
-    private String enterpriseManagerEntityIdentifier;
+    private @Nullable String enterpriseManagerEntityIdentifier;
     /**
      * @return Enterprise Manager Entity Name
      * 
      */
-    private String enterpriseManagerEntityName;
+    private @Nullable String enterpriseManagerEntityName;
     /**
      * @return Enterprise Manager Entity Type
      * 
      */
-    private String enterpriseManagerEntityType;
+    private @Nullable String enterpriseManagerEntityType;
     /**
      * @return Enterprise Manager Unique Identifier
      * 
      */
-    private String enterpriseManagerIdentifier;
+    private @Nullable String enterpriseManagerIdentifier;
     /**
      * @return Source of the host entity.
      * 
      */
-    private String entitySource;
+    private @Nullable String entitySource;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata insight.
      * 
      */
-    private String exadataInsightId;
+    private @Nullable String exadataInsightId;
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return The user-friendly name for the host. The name does not have to be unique.
      * 
      */
-    private String hostDisplayName;
+    private @Nullable String hostDisplayName;
     private String hostInsightId;
     /**
      * @return The host name. The host name is unique amongst the hosts managed by the same management agent.
      * 
      */
-    private String hostName;
+    private @Nullable String hostName;
     /**
      * @return Operations Insights internal representation of the host type. Possible value is EXTERNAL-HOST.
      * 
      */
-    private String hostType;
+    private @Nullable String hostType;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the host insight resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
-    private String lifecycleDetails;
+    private @Nullable String lifecycleDetails;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent
      * 
      */
-    private String managementAgentId;
+    private @Nullable String managementAgentId;
     /**
      * @return Platform name.
      * 
      */
-    private String platformName;
+    private @Nullable String platformName;
     /**
      * @return Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX, SOLARIS, WINDOWS]. Supported platformType(s) for MACS-managed cloud host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX, WINDOWS, AIX].
      * 
      */
-    private String platformType;
+    private @Nullable String platformType;
     /**
      * @return Platform version.
      * 
      */
-    private String platformVersion;
+    private @Nullable String platformVersion;
     /**
      * @return Processor count. This is the OCPU count for Autonomous Database and CPU core count for other database types.
      * 
      */
-    private Integer processorCount;
+    private @Nullable Integer processorCount;
     /**
      * @return The current state of the host.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return Indicates the status of a host insight in Operations Insights
      * 
      */
-    private String status;
+    private @Nullable String status;
     /**
      * @return System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    private Map<String,Object> systemTags;
+    private @Nullable Map<String,Object> systemTags;
     /**
      * @return The time the the host insight was first enabled. An RFC3339 formatted datetime string
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The time the host insight was updated. An RFC3339 formatted datetime string
      * 
      */
-    private String timeUpdated;
+    private @Nullable String timeUpdated;
 
     private GetHostInsightResult() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compute Instance
      * 
      */
-    public String computeId() {
-        return this.computeId;
+    public Optional<String> computeId() {
+        return Optional.ofNullable(this.computeId);
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return OPSI Enterprise Manager Bridge OCID
      * 
      */
-    public String enterpriseManagerBridgeId() {
-        return this.enterpriseManagerBridgeId;
+    public Optional<String> enterpriseManagerBridgeId() {
+        return Optional.ofNullable(this.enterpriseManagerBridgeId);
     }
     /**
      * @return Enterprise Manager Entity Display Name
      * 
      */
-    public String enterpriseManagerEntityDisplayName() {
-        return this.enterpriseManagerEntityDisplayName;
+    public Optional<String> enterpriseManagerEntityDisplayName() {
+        return Optional.ofNullable(this.enterpriseManagerEntityDisplayName);
     }
     /**
      * @return Enterprise Manager Entity Unique Identifier
      * 
      */
-    public String enterpriseManagerEntityIdentifier() {
-        return this.enterpriseManagerEntityIdentifier;
+    public Optional<String> enterpriseManagerEntityIdentifier() {
+        return Optional.ofNullable(this.enterpriseManagerEntityIdentifier);
     }
     /**
      * @return Enterprise Manager Entity Name
      * 
      */
-    public String enterpriseManagerEntityName() {
-        return this.enterpriseManagerEntityName;
+    public Optional<String> enterpriseManagerEntityName() {
+        return Optional.ofNullable(this.enterpriseManagerEntityName);
     }
     /**
      * @return Enterprise Manager Entity Type
      * 
      */
-    public String enterpriseManagerEntityType() {
-        return this.enterpriseManagerEntityType;
+    public Optional<String> enterpriseManagerEntityType() {
+        return Optional.ofNullable(this.enterpriseManagerEntityType);
     }
     /**
      * @return Enterprise Manager Unique Identifier
      * 
      */
-    public String enterpriseManagerIdentifier() {
-        return this.enterpriseManagerIdentifier;
+    public Optional<String> enterpriseManagerIdentifier() {
+        return Optional.ofNullable(this.enterpriseManagerIdentifier);
     }
     /**
      * @return Source of the host entity.
      * 
      */
-    public String entitySource() {
-        return this.entitySource;
+    public Optional<String> entitySource() {
+        return Optional.ofNullable(this.entitySource);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata insight.
      * 
      */
-    public String exadataInsightId() {
-        return this.exadataInsightId;
+    public Optional<String> exadataInsightId() {
+        return Optional.ofNullable(this.exadataInsightId);
     }
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return The user-friendly name for the host. The name does not have to be unique.
      * 
      */
-    public String hostDisplayName() {
-        return this.hostDisplayName;
+    public Optional<String> hostDisplayName() {
+        return Optional.ofNullable(this.hostDisplayName);
     }
     public String hostInsightId() {
         return this.hostInsightId;
@@ -248,99 +250,99 @@ public final class GetHostInsightResult {
      * @return The host name. The host name is unique amongst the hosts managed by the same management agent.
      * 
      */
-    public String hostName() {
-        return this.hostName;
+    public Optional<String> hostName() {
+        return Optional.ofNullable(this.hostName);
     }
     /**
      * @return Operations Insights internal representation of the host type. Possible value is EXTERNAL-HOST.
      * 
      */
-    public String hostType() {
-        return this.hostType;
+    public Optional<String> hostType() {
+        return Optional.ofNullable(this.hostType);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the host insight resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
-    public String lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Optional<String> lifecycleDetails() {
+        return Optional.ofNullable(this.lifecycleDetails);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent
      * 
      */
-    public String managementAgentId() {
-        return this.managementAgentId;
+    public Optional<String> managementAgentId() {
+        return Optional.ofNullable(this.managementAgentId);
     }
     /**
      * @return Platform name.
      * 
      */
-    public String platformName() {
-        return this.platformName;
+    public Optional<String> platformName() {
+        return Optional.ofNullable(this.platformName);
     }
     /**
      * @return Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX, SOLARIS, WINDOWS]. Supported platformType(s) for MACS-managed cloud host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX, WINDOWS, AIX].
      * 
      */
-    public String platformType() {
-        return this.platformType;
+    public Optional<String> platformType() {
+        return Optional.ofNullable(this.platformType);
     }
     /**
      * @return Platform version.
      * 
      */
-    public String platformVersion() {
-        return this.platformVersion;
+    public Optional<String> platformVersion() {
+        return Optional.ofNullable(this.platformVersion);
     }
     /**
      * @return Processor count. This is the OCPU count for Autonomous Database and CPU core count for other database types.
      * 
      */
-    public Integer processorCount() {
-        return this.processorCount;
+    public Optional<Integer> processorCount() {
+        return Optional.ofNullable(this.processorCount);
     }
     /**
      * @return The current state of the host.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return Indicates the status of a host insight in Operations Insights
      * 
      */
-    public String status() {
-        return this.status;
+    public Optional<String> status() {
+        return Optional.ofNullable(this.status);
     }
     /**
      * @return System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
     public Map<String,Object> systemTags() {
-        return this.systemTags;
+        return this.systemTags == null ? Map.of() : this.systemTags;
     }
     /**
      * @return The time the the host insight was first enabled. An RFC3339 formatted datetime string
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return The time the host insight was updated. An RFC3339 formatted datetime string
      * 
      */
-    public String timeUpdated() {
-        return this.timeUpdated;
+    public Optional<String> timeUpdated() {
+        return Optional.ofNullable(this.timeUpdated);
     }
 
     public static Builder builder() {
@@ -352,34 +354,34 @@ public final class GetHostInsightResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String compartmentId;
-        private String computeId;
-        private Map<String,Object> definedTags;
-        private String enterpriseManagerBridgeId;
-        private String enterpriseManagerEntityDisplayName;
-        private String enterpriseManagerEntityIdentifier;
-        private String enterpriseManagerEntityName;
-        private String enterpriseManagerEntityType;
-        private String enterpriseManagerIdentifier;
-        private String entitySource;
-        private String exadataInsightId;
-        private Map<String,Object> freeformTags;
-        private String hostDisplayName;
+        private @Nullable String compartmentId;
+        private @Nullable String computeId;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String enterpriseManagerBridgeId;
+        private @Nullable String enterpriseManagerEntityDisplayName;
+        private @Nullable String enterpriseManagerEntityIdentifier;
+        private @Nullable String enterpriseManagerEntityName;
+        private @Nullable String enterpriseManagerEntityType;
+        private @Nullable String enterpriseManagerIdentifier;
+        private @Nullable String entitySource;
+        private @Nullable String exadataInsightId;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String hostDisplayName;
         private String hostInsightId;
-        private String hostName;
-        private String hostType;
-        private String id;
-        private String lifecycleDetails;
-        private String managementAgentId;
-        private String platformName;
-        private String platformType;
-        private String platformVersion;
-        private Integer processorCount;
-        private String state;
-        private String status;
-        private Map<String,Object> systemTags;
-        private String timeCreated;
-        private String timeUpdated;
+        private @Nullable String hostName;
+        private @Nullable String hostType;
+        private @Nullable String id;
+        private @Nullable String lifecycleDetails;
+        private @Nullable String managementAgentId;
+        private @Nullable String platformName;
+        private @Nullable String platformType;
+        private @Nullable String platformVersion;
+        private @Nullable Integer processorCount;
+        private @Nullable String state;
+        private @Nullable String status;
+        private @Nullable Map<String,Object> systemTags;
+        private @Nullable String timeCreated;
+        private @Nullable String timeUpdated;
         public Builder() {}
         public Builder(GetHostInsightResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -414,68 +416,68 @@ public final class GetHostInsightResult {
         }
 
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder computeId(String computeId) {
-            this.computeId = Objects.requireNonNull(computeId);
+        public Builder computeId(@Nullable String computeId) {
+            this.computeId = computeId;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder enterpriseManagerBridgeId(String enterpriseManagerBridgeId) {
-            this.enterpriseManagerBridgeId = Objects.requireNonNull(enterpriseManagerBridgeId);
+        public Builder enterpriseManagerBridgeId(@Nullable String enterpriseManagerBridgeId) {
+            this.enterpriseManagerBridgeId = enterpriseManagerBridgeId;
             return this;
         }
         @CustomType.Setter
-        public Builder enterpriseManagerEntityDisplayName(String enterpriseManagerEntityDisplayName) {
-            this.enterpriseManagerEntityDisplayName = Objects.requireNonNull(enterpriseManagerEntityDisplayName);
+        public Builder enterpriseManagerEntityDisplayName(@Nullable String enterpriseManagerEntityDisplayName) {
+            this.enterpriseManagerEntityDisplayName = enterpriseManagerEntityDisplayName;
             return this;
         }
         @CustomType.Setter
-        public Builder enterpriseManagerEntityIdentifier(String enterpriseManagerEntityIdentifier) {
-            this.enterpriseManagerEntityIdentifier = Objects.requireNonNull(enterpriseManagerEntityIdentifier);
+        public Builder enterpriseManagerEntityIdentifier(@Nullable String enterpriseManagerEntityIdentifier) {
+            this.enterpriseManagerEntityIdentifier = enterpriseManagerEntityIdentifier;
             return this;
         }
         @CustomType.Setter
-        public Builder enterpriseManagerEntityName(String enterpriseManagerEntityName) {
-            this.enterpriseManagerEntityName = Objects.requireNonNull(enterpriseManagerEntityName);
+        public Builder enterpriseManagerEntityName(@Nullable String enterpriseManagerEntityName) {
+            this.enterpriseManagerEntityName = enterpriseManagerEntityName;
             return this;
         }
         @CustomType.Setter
-        public Builder enterpriseManagerEntityType(String enterpriseManagerEntityType) {
-            this.enterpriseManagerEntityType = Objects.requireNonNull(enterpriseManagerEntityType);
+        public Builder enterpriseManagerEntityType(@Nullable String enterpriseManagerEntityType) {
+            this.enterpriseManagerEntityType = enterpriseManagerEntityType;
             return this;
         }
         @CustomType.Setter
-        public Builder enterpriseManagerIdentifier(String enterpriseManagerIdentifier) {
-            this.enterpriseManagerIdentifier = Objects.requireNonNull(enterpriseManagerIdentifier);
+        public Builder enterpriseManagerIdentifier(@Nullable String enterpriseManagerIdentifier) {
+            this.enterpriseManagerIdentifier = enterpriseManagerIdentifier;
             return this;
         }
         @CustomType.Setter
-        public Builder entitySource(String entitySource) {
-            this.entitySource = Objects.requireNonNull(entitySource);
+        public Builder entitySource(@Nullable String entitySource) {
+            this.entitySource = entitySource;
             return this;
         }
         @CustomType.Setter
-        public Builder exadataInsightId(String exadataInsightId) {
-            this.exadataInsightId = Objects.requireNonNull(exadataInsightId);
+        public Builder exadataInsightId(@Nullable String exadataInsightId) {
+            this.exadataInsightId = exadataInsightId;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder hostDisplayName(String hostDisplayName) {
-            this.hostDisplayName = Objects.requireNonNull(hostDisplayName);
+        public Builder hostDisplayName(@Nullable String hostDisplayName) {
+            this.hostDisplayName = hostDisplayName;
             return this;
         }
         @CustomType.Setter
@@ -484,73 +486,73 @@ public final class GetHostInsightResult {
             return this;
         }
         @CustomType.Setter
-        public Builder hostName(String hostName) {
-            this.hostName = Objects.requireNonNull(hostName);
+        public Builder hostName(@Nullable String hostName) {
+            this.hostName = hostName;
             return this;
         }
         @CustomType.Setter
-        public Builder hostType(String hostType) {
-            this.hostType = Objects.requireNonNull(hostType);
+        public Builder hostType(@Nullable String hostType) {
+            this.hostType = hostType;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+        public Builder lifecycleDetails(@Nullable String lifecycleDetails) {
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
-        public Builder managementAgentId(String managementAgentId) {
-            this.managementAgentId = Objects.requireNonNull(managementAgentId);
+        public Builder managementAgentId(@Nullable String managementAgentId) {
+            this.managementAgentId = managementAgentId;
             return this;
         }
         @CustomType.Setter
-        public Builder platformName(String platformName) {
-            this.platformName = Objects.requireNonNull(platformName);
+        public Builder platformName(@Nullable String platformName) {
+            this.platformName = platformName;
             return this;
         }
         @CustomType.Setter
-        public Builder platformType(String platformType) {
-            this.platformType = Objects.requireNonNull(platformType);
+        public Builder platformType(@Nullable String platformType) {
+            this.platformType = platformType;
             return this;
         }
         @CustomType.Setter
-        public Builder platformVersion(String platformVersion) {
-            this.platformVersion = Objects.requireNonNull(platformVersion);
+        public Builder platformVersion(@Nullable String platformVersion) {
+            this.platformVersion = platformVersion;
             return this;
         }
         @CustomType.Setter
-        public Builder processorCount(Integer processorCount) {
-            this.processorCount = Objects.requireNonNull(processorCount);
+        public Builder processorCount(@Nullable Integer processorCount) {
+            this.processorCount = processorCount;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder status(String status) {
-            this.status = Objects.requireNonNull(status);
+        public Builder status(@Nullable String status) {
+            this.status = status;
             return this;
         }
         @CustomType.Setter
-        public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+        public Builder systemTags(@Nullable Map<String,Object> systemTags) {
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+        public Builder timeUpdated(@Nullable String timeUpdated) {
+            this.timeUpdated = timeUpdated;
             return this;
         }
         public GetHostInsightResult build() {

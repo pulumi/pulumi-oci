@@ -6,6 +6,8 @@ package com.pulumi.oci.DataIntegration.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetWorkspaceApplicationSourceApplicationInfo {
@@ -13,55 +15,55 @@ public final class GetWorkspaceApplicationSourceApplicationInfo {
      * @return The application key.
      * 
      */
-    private String applicationKey;
+    private @Nullable String applicationKey;
     /**
      * @return The source application version of the application.
      * 
      */
-    private String applicationVersion;
-    private String copyType;
+    private @Nullable String applicationVersion;
+    private @Nullable String copyType;
     /**
      * @return The last patch key for the application.
      * 
      */
-    private String lastPatchKey;
+    private @Nullable String lastPatchKey;
     /**
      * @return The workspace ID.
      * 
      */
-    private String workspaceId;
+    private @Nullable String workspaceId;
 
     private GetWorkspaceApplicationSourceApplicationInfo() {}
     /**
      * @return The application key.
      * 
      */
-    public String applicationKey() {
-        return this.applicationKey;
+    public Optional<String> applicationKey() {
+        return Optional.ofNullable(this.applicationKey);
     }
     /**
      * @return The source application version of the application.
      * 
      */
-    public String applicationVersion() {
-        return this.applicationVersion;
+    public Optional<String> applicationVersion() {
+        return Optional.ofNullable(this.applicationVersion);
     }
-    public String copyType() {
-        return this.copyType;
+    public Optional<String> copyType() {
+        return Optional.ofNullable(this.copyType);
     }
     /**
      * @return The last patch key for the application.
      * 
      */
-    public String lastPatchKey() {
-        return this.lastPatchKey;
+    public Optional<String> lastPatchKey() {
+        return Optional.ofNullable(this.lastPatchKey);
     }
     /**
      * @return The workspace ID.
      * 
      */
-    public String workspaceId() {
-        return this.workspaceId;
+    public Optional<String> workspaceId() {
+        return Optional.ofNullable(this.workspaceId);
     }
 
     public static Builder builder() {
@@ -73,11 +75,11 @@ public final class GetWorkspaceApplicationSourceApplicationInfo {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String applicationKey;
-        private String applicationVersion;
-        private String copyType;
-        private String lastPatchKey;
-        private String workspaceId;
+        private @Nullable String applicationKey;
+        private @Nullable String applicationVersion;
+        private @Nullable String copyType;
+        private @Nullable String lastPatchKey;
+        private @Nullable String workspaceId;
         public Builder() {}
         public Builder(GetWorkspaceApplicationSourceApplicationInfo defaults) {
     	      Objects.requireNonNull(defaults);
@@ -89,28 +91,28 @@ public final class GetWorkspaceApplicationSourceApplicationInfo {
         }
 
         @CustomType.Setter
-        public Builder applicationKey(String applicationKey) {
-            this.applicationKey = Objects.requireNonNull(applicationKey);
+        public Builder applicationKey(@Nullable String applicationKey) {
+            this.applicationKey = applicationKey;
             return this;
         }
         @CustomType.Setter
-        public Builder applicationVersion(String applicationVersion) {
-            this.applicationVersion = Objects.requireNonNull(applicationVersion);
+        public Builder applicationVersion(@Nullable String applicationVersion) {
+            this.applicationVersion = applicationVersion;
             return this;
         }
         @CustomType.Setter
-        public Builder copyType(String copyType) {
-            this.copyType = Objects.requireNonNull(copyType);
+        public Builder copyType(@Nullable String copyType) {
+            this.copyType = copyType;
             return this;
         }
         @CustomType.Setter
-        public Builder lastPatchKey(String lastPatchKey) {
-            this.lastPatchKey = Objects.requireNonNull(lastPatchKey);
+        public Builder lastPatchKey(@Nullable String lastPatchKey) {
+            this.lastPatchKey = lastPatchKey;
             return this;
         }
         @CustomType.Setter
-        public Builder workspaceId(String workspaceId) {
-            this.workspaceId = Objects.requireNonNull(workspaceId);
+        public Builder workspaceId(@Nullable String workspaceId) {
+            this.workspaceId = workspaceId;
             return this;
         }
         public GetWorkspaceApplicationSourceApplicationInfo build() {

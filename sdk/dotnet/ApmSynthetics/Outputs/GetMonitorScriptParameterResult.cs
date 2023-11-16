@@ -16,11 +16,11 @@ namespace Pulumi.Oci.ApmSynthetics.Outputs
         /// <summary>
         /// If parameter value is default or overwritten.
         /// </summary>
-        public readonly bool IsOverwritten;
+        public readonly bool? IsOverwritten;
         /// <summary>
         /// Describes if  the parameter value is secret and should be kept confidential. isSecret is specified in either CreateScript or UpdateScript API.
         /// </summary>
-        public readonly bool IsSecret;
+        public readonly bool? IsSecret;
         /// <summary>
         /// Details of the script parameter that can be used to overwrite the parameter present in the script.
         /// </summary>
@@ -28,23 +28,23 @@ namespace Pulumi.Oci.ApmSynthetics.Outputs
         /// <summary>
         /// Name of the parameter.
         /// </summary>
-        public readonly string ParamName;
+        public readonly string? ParamName;
         /// <summary>
         /// Value of the parameter.
         /// </summary>
-        public readonly string ParamValue;
+        public readonly string? ParamValue;
 
         [OutputConstructor]
         private GetMonitorScriptParameterResult(
-            bool isOverwritten,
+            bool? isOverwritten,
 
-            bool isSecret,
+            bool? isSecret,
 
             ImmutableArray<Outputs.GetMonitorScriptParameterMonitorScriptParameterResult> monitorScriptParameters,
 
-            string paramName,
+            string? paramName,
 
-            string paramValue)
+            string? paramValue)
         {
             IsOverwritten = isOverwritten;
             IsSecret = isSecret;

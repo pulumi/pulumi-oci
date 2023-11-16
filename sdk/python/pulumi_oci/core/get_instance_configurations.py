@@ -40,9 +40,6 @@ class GetInstanceConfigurationsResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The OCID of the compartment containing images to search
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
@@ -52,7 +49,7 @@ class GetInstanceConfigurationsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -60,10 +57,7 @@ class GetInstanceConfigurationsResult:
 
     @property
     @pulumi.getter(name="instanceConfigurations")
-    def instance_configurations(self) -> Sequence['outputs.GetInstanceConfigurationsInstanceConfigurationResult']:
-        """
-        The list of instance_configurations.
-        """
+    def instance_configurations(self) -> Optional[Sequence['outputs.GetInstanceConfigurationsInstanceConfigurationResult']]:
         return pulumi.get(self, "instance_configurations")
 
 
@@ -83,21 +77,7 @@ def get_instance_configurations(compartment_id: Optional[str] = None,
                                 filters: Optional[Sequence[pulumi.InputType['GetInstanceConfigurationsFilterArgs']]] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetInstanceConfigurationsResult:
     """
-    This data source provides the list of Instance Configurations in Oracle Cloud Infrastructure Core service.
-
-    Lists the instance configurations in the specified compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_instance_configurations = oci.Core.get_instance_configurations(compartment_id=var["compartment_id"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -117,20 +97,6 @@ def get_instance_configurations_output(compartment_id: Optional[pulumi.Input[str
                                        filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetInstanceConfigurationsFilterArgs']]]]] = None,
                                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetInstanceConfigurationsResult]:
     """
-    This data source provides the list of Instance Configurations in Oracle Cloud Infrastructure Core service.
-
-    Lists the instance configurations in the specified compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_instance_configurations = oci.Core.get_instance_configurations(compartment_id=var["compartment_id"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+    Use this data source to access information about an existing resource.
     """
     ...

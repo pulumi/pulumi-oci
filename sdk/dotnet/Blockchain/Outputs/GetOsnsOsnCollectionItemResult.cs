@@ -24,15 +24,15 @@ namespace Pulumi.Oci.Blockchain.Outputs
         /// <summary>
         /// OCPU allocation parameter
         /// </summary>
-        public readonly Outputs.GetOsnsOsnCollectionItemOcpuAllocationParamResult OcpuAllocationParam;
+        public readonly Outputs.GetOsnsOsnCollectionItemOcpuAllocationParamResult? OcpuAllocationParam;
         /// <summary>
         /// OSN identifier
         /// </summary>
-        public readonly string OsnKey;
+        public readonly string? OsnKey;
         /// <summary>
         /// The current state of the OSN.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
 
         [OutputConstructor]
         private GetOsnsOsnCollectionItemResult(
@@ -40,11 +40,11 @@ namespace Pulumi.Oci.Blockchain.Outputs
 
             string blockchainPlatformId,
 
-            Outputs.GetOsnsOsnCollectionItemOcpuAllocationParamResult ocpuAllocationParam,
+            Outputs.GetOsnsOsnCollectionItemOcpuAllocationParamResult? ocpuAllocationParam,
 
-            string osnKey,
+            string? osnKey,
 
-            string state)
+            string? state)
         {
             Ad = ad;
             BlockchainPlatformId = blockchainPlatformId;

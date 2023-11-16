@@ -80,7 +80,7 @@ namespace Pulumi.Oci.DataScience
         /// This allows to specify a filename during upload. This file name is used to dispose of the file contents while downloading the file. Example: `attachment; filename=model-artifact.zip`
         /// </summary>
         [Output("artifactContentDisposition")]
-        public Output<string> ArtifactContentDisposition { get; private set; } = null!;
+        public Output<string?> ArtifactContentDisposition { get; private set; } = null!;
 
         /// <summary>
         /// The content length of the model_artifact.
@@ -92,10 +92,10 @@ namespace Pulumi.Oci.DataScience
         public Output<string> ArtifactContentLength { get; private set; } = null!;
 
         [Output("artifactContentMd5")]
-        public Output<string> ArtifactContentMd5 { get; private set; } = null!;
+        public Output<string?> ArtifactContentMd5 { get; private set; } = null!;
 
         [Output("artifactLastModified")]
-        public Output<string> ArtifactLastModified { get; private set; } = null!;
+        public Output<string?> ArtifactLastModified { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the model in.
@@ -107,7 +107,7 @@ namespace Pulumi.Oci.DataScience
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the model.
         /// </summary>
         [Output("createdBy")]
-        public Output<string> CreatedBy { get; private set; } = null!;
+        public Output<string?> CreatedBy { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) An array of custom metadata details for the model.
@@ -125,34 +125,34 @@ namespace Pulumi.Oci.DataScience
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) A short description of the model.
         /// </summary>
         [Output("description")]
-        public Output<string> Description { get; private set; } = null!;
+        public Output<string?> Description { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) A user-friendly display name for the resource. It does not have to be unique and can be modified. Avoid entering confidential information. Example: `My Model`
         /// </summary>
         [Output("displayName")]
-        public Output<string> DisplayName { get; private set; } = null!;
+        public Output<string?> DisplayName { get; private set; } = null!;
 
         [Output("emptyModel")]
-        public Output<bool> EmptyModel { get; private set; } = null!;
+        public Output<bool?> EmptyModel { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// Input schema file content in String format
         /// </summary>
         [Output("inputSchema")]
-        public Output<string> InputSchema { get; private set; } = null!;
+        public Output<string?> InputSchema { get; private set; } = null!;
 
         /// <summary>
         /// The model artifact to upload. It is a ZIP archive of the files necessary to run the model. This can be done in a separate step or using cli/sdk. The Model will remain in "Creating" state until its artifact is uploaded.
@@ -164,7 +164,7 @@ namespace Pulumi.Oci.DataScience
         /// Output schema file content in String format
         /// </summary>
         [Output("outputSchema")]
-        public Output<string> OutputSchema { get; private set; } = null!;
+        public Output<string?> OutputSchema { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model.
@@ -176,13 +176,13 @@ namespace Pulumi.Oci.DataScience
         /// The state of the model.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
 
         /// <summary>

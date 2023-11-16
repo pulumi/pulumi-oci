@@ -17,28 +17,28 @@ namespace Pulumi.Oci.ApiGateway.Outputs
         /// <summary>
         /// The body of the stock response from the mock backend.
         /// </summary>
-        public readonly string Body;
+        public readonly string? Body;
         /// <summary>
         /// Defines a timeout for establishing a connection with a proxied server.
         /// </summary>
-        public readonly double ConnectTimeoutInSeconds;
+        public readonly double? ConnectTimeoutInSeconds;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Functions function resource.
         /// </summary>
-        public readonly string FunctionId;
+        public readonly string? FunctionId;
         public readonly ImmutableArray<Outputs.GetDeploymentSpecificationRouteBackendHeaderResult> Headers;
         /// <summary>
         /// Defines whether or not to uphold SSL verification.
         /// </summary>
-        public readonly bool IsSslVerifyDisabled;
+        public readonly bool? IsSslVerifyDisabled;
         /// <summary>
         /// Defines a state that should be shared on redirecting to postLogout URL.
         /// </summary>
-        public readonly string PostLogoutState;
+        public readonly string? PostLogoutState;
         /// <summary>
         /// Defines a timeout for reading a response from the proxied server.
         /// </summary>
-        public readonly double ReadTimeoutInSeconds;
+        public readonly double? ReadTimeoutInSeconds;
         /// <summary>
         /// List of backends to chose from for Dynamic Routing.
         /// </summary>
@@ -50,46 +50,46 @@ namespace Pulumi.Oci.ApiGateway.Outputs
         /// <summary>
         /// Defines a timeout for transmitting a request to the proxied server.
         /// </summary>
-        public readonly double SendTimeoutInSeconds;
+        public readonly double? SendTimeoutInSeconds;
         /// <summary>
         /// The status code of the stock response from the mock backend.
         /// </summary>
-        public readonly int Status;
+        public readonly int? Status;
         /// <summary>
         /// Type of the Response Cache Store Policy.
         /// </summary>
-        public readonly string Type;
-        public readonly string Url;
+        public readonly string? Type;
+        public readonly string? Url;
 
         [OutputConstructor]
         private GetDeploymentSpecificationRouteBackendResult(
             ImmutableArray<string> allowedPostLogoutUris,
 
-            string body,
+            string? body,
 
-            double connectTimeoutInSeconds,
+            double? connectTimeoutInSeconds,
 
-            string functionId,
+            string? functionId,
 
             ImmutableArray<Outputs.GetDeploymentSpecificationRouteBackendHeaderResult> headers,
 
-            bool isSslVerifyDisabled,
+            bool? isSslVerifyDisabled,
 
-            string postLogoutState,
+            string? postLogoutState,
 
-            double readTimeoutInSeconds,
+            double? readTimeoutInSeconds,
 
             ImmutableArray<Outputs.GetDeploymentSpecificationRouteBackendRoutingBackendResult> routingBackends,
 
             ImmutableArray<Outputs.GetDeploymentSpecificationRouteBackendSelectionSourceResult> selectionSources,
 
-            double sendTimeoutInSeconds,
+            double? sendTimeoutInSeconds,
 
-            int status,
+            int? status,
 
-            string type,
+            string? type,
 
-            string url)
+            string? url)
         {
             AllowedPostLogoutUris = allowedPostLogoutUris;
             Body = body;

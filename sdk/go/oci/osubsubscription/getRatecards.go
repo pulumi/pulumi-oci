@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Ratecards in Oracle Cloud Infrastructure Osub Subscription service.
@@ -79,7 +78,7 @@ type GetRatecardsResult struct {
 	CompartmentId string               `pulumi:"compartmentId"`
 	Filters       []GetRatecardsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Product part numner
 	PartNumber *string `pulumi:"partNumber"`
 	// The list of rate_cards.
@@ -139,12 +138,6 @@ func (o GetRatecardsResultOutput) ToGetRatecardsResultOutputWithContext(ctx cont
 	return o
 }
 
-func (o GetRatecardsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetRatecardsResult] {
-	return pulumix.Output[GetRatecardsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetRatecardsResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRatecardsResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
@@ -154,8 +147,8 @@ func (o GetRatecardsResultOutput) Filters() GetRatecardsFilterArrayOutput {
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetRatecardsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRatecardsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetRatecardsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRatecardsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Product part numner

@@ -40,15 +40,12 @@ class GetOperationsInsightsWarehouseResourceUsageSummaryResult:
 
     @property
     @pulumi.getter(name="cpuUsed")
-    def cpu_used(self) -> float:
-        """
-        Number of OCPUs used by OPSI Warehouse ADW. Can be fractional.
-        """
+    def cpu_used(self) -> Optional[float]:
         return pulumi.get(self, "cpu_used")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -61,18 +58,12 @@ class GetOperationsInsightsWarehouseResourceUsageSummaryResult:
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        Possible lifecycle states
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="storageUsedInGbs")
-    def storage_used_in_gbs(self) -> float:
-        """
-        Storage by OPSI Warehouse ADW in GB.
-        """
+    def storage_used_in_gbs(self) -> Optional[float]:
         return pulumi.get(self, "storage_used_in_gbs")
 
 
@@ -92,22 +83,7 @@ class AwaitableGetOperationsInsightsWarehouseResourceUsageSummaryResult(GetOpera
 def get_operations_insights_warehouse_resource_usage_summary(operations_insights_warehouse_id: Optional[str] = None,
                                                              opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetOperationsInsightsWarehouseResourceUsageSummaryResult:
     """
-    This data source provides details about a specific Operations Insights Warehouse Resource Usage Summary resource in Oracle Cloud Infrastructure Opsi service.
-
-    Gets the details of resources used by an Operations Insights Warehouse.
-    There is only expected to be 1 warehouse per tenant. The warehouse is expected to be in the root compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_operations_insights_warehouse_resource_usage_summary = oci.Opsi.get_operations_insights_warehouse_resource_usage_summary(operations_insights_warehouse_id=oci_opsi_operations_insights_warehouse["test_operations_insights_warehouse"]["id"])
-    ```
-
-
-    :param str operations_insights_warehouse_id: Unique Operations Insights Warehouse identifier
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['operationsInsightsWarehouseId'] = operations_insights_warehouse_id
@@ -126,21 +102,6 @@ def get_operations_insights_warehouse_resource_usage_summary(operations_insights
 def get_operations_insights_warehouse_resource_usage_summary_output(operations_insights_warehouse_id: Optional[pulumi.Input[str]] = None,
                                                                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetOperationsInsightsWarehouseResourceUsageSummaryResult]:
     """
-    This data source provides details about a specific Operations Insights Warehouse Resource Usage Summary resource in Oracle Cloud Infrastructure Opsi service.
-
-    Gets the details of resources used by an Operations Insights Warehouse.
-    There is only expected to be 1 warehouse per tenant. The warehouse is expected to be in the root compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_operations_insights_warehouse_resource_usage_summary = oci.Opsi.get_operations_insights_warehouse_resource_usage_summary(operations_insights_warehouse_id=oci_opsi_operations_insights_warehouse["test_operations_insights_warehouse"]["id"])
-    ```
-
-
-    :param str operations_insights_warehouse_id: Unique Operations Insights Warehouse identifier
+    Use this data source to access information about an existing resource.
     """
     ...

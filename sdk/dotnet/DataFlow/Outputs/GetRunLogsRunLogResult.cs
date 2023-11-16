@@ -13,29 +13,29 @@ namespace Pulumi.Oci.DataFlow.Outputs
     [OutputType]
     public sealed class GetRunLogsRunLogResult
     {
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// The unique ID for the run
         /// </summary>
-        public readonly string RunId;
-        public readonly string SizeInBytes;
-        public readonly string Source;
-        public readonly string TimeCreated;
-        public readonly string Type;
+        public readonly string? RunId;
+        public readonly string? SizeInBytes;
+        public readonly string? Source;
+        public readonly string? TimeCreated;
+        public readonly string? Type;
 
         [OutputConstructor]
         private GetRunLogsRunLogResult(
-            string name,
+            string? name,
 
-            string runId,
+            string? runId,
 
-            string sizeInBytes,
+            string? sizeInBytes,
 
-            string source,
+            string? source,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string type)
+            string? type)
         {
             Name = name;
             RunId = runId;

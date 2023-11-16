@@ -46,17 +46,11 @@ class GetProjectsResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[str]:
-        """
-        Compartment Identifier
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        Project Identifier, can be renamed
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -67,25 +61,16 @@ class GetProjectsResult:
     @property
     @pulumi.getter
     def id(self) -> Optional[str]:
-        """
-        Unique identifier that is immutable on creation
-        """
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="projectCollections")
-    def project_collections(self) -> Sequence['outputs.GetProjectsProjectCollectionResult']:
-        """
-        The list of project_collection.
-        """
+    def project_collections(self) -> Optional[Sequence['outputs.GetProjectsProjectCollectionResult']]:
         return pulumi.get(self, "project_collections")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the Project.
-        """
         return pulumi.get(self, "state")
 
 
@@ -110,27 +95,7 @@ def get_projects(compartment_id: Optional[str] = None,
                  state: Optional[str] = None,
                  opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetProjectsResult:
     """
-    This data source provides the list of Projects in Oracle Cloud Infrastructure Ai Vision service.
-
-    Returns a list of Projects.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_projects = oci.AiVision.get_projects(compartment_id=var["compartment_id"],
-        display_name=var["project_display_name"],
-        id=var["project_id"],
-        state=var["project_state"])
-    ```
-
-
-    :param str compartment_id: The ID of the compartment in which to list resources.
-    :param str display_name: A filter to return only resources that match the entire display name given.
-    :param str id: unique Project identifier
-    :param str state: A filter to return only resources their lifecycleState matches the given lifecycleState.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -158,26 +123,6 @@ def get_projects_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = 
                         state: Optional[pulumi.Input[Optional[str]]] = None,
                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetProjectsResult]:
     """
-    This data source provides the list of Projects in Oracle Cloud Infrastructure Ai Vision service.
-
-    Returns a list of Projects.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_projects = oci.AiVision.get_projects(compartment_id=var["compartment_id"],
-        display_name=var["project_display_name"],
-        id=var["project_id"],
-        state=var["project_state"])
-    ```
-
-
-    :param str compartment_id: The ID of the compartment in which to list resources.
-    :param str display_name: A filter to return only resources that match the entire display name given.
-    :param str id: unique Project identifier
-    :param str state: A filter to return only resources their lifecycleState matches the given lifecycleState.
+    Use this data source to access information about an existing resource.
     """
     ...

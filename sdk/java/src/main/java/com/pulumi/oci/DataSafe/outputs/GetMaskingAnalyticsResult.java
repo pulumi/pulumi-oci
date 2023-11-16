@@ -23,12 +23,12 @@ public final class GetMaskingAnalyticsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The list of masking_analytics_collection.
      * 
      */
-    private List<GetMaskingAnalyticsMaskingAnalyticsCollection> maskingAnalyticsCollections;
+    private @Nullable List<GetMaskingAnalyticsMaskingAnalyticsCollection> maskingAnalyticsCollections;
     private @Nullable String maskingPolicyId;
     /**
      * @return The OCID of the target database.
@@ -53,15 +53,15 @@ public final class GetMaskingAnalyticsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The list of masking_analytics_collection.
      * 
      */
     public List<GetMaskingAnalyticsMaskingAnalyticsCollection> maskingAnalyticsCollections() {
-        return this.maskingAnalyticsCollections;
+        return this.maskingAnalyticsCollections == null ? List.of() : this.maskingAnalyticsCollections;
     }
     public Optional<String> maskingPolicyId() {
         return Optional.ofNullable(this.maskingPolicyId);
@@ -87,8 +87,8 @@ public final class GetMaskingAnalyticsResult {
         private @Nullable Boolean compartmentIdInSubtree;
         private @Nullable List<GetMaskingAnalyticsFilter> filters;
         private @Nullable String groupBy;
-        private String id;
-        private List<GetMaskingAnalyticsMaskingAnalyticsCollection> maskingAnalyticsCollections;
+        private @Nullable String id;
+        private @Nullable List<GetMaskingAnalyticsMaskingAnalyticsCollection> maskingAnalyticsCollections;
         private @Nullable String maskingPolicyId;
         private @Nullable String targetId;
         public Builder() {}
@@ -128,13 +128,13 @@ public final class GetMaskingAnalyticsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder maskingAnalyticsCollections(List<GetMaskingAnalyticsMaskingAnalyticsCollection> maskingAnalyticsCollections) {
-            this.maskingAnalyticsCollections = Objects.requireNonNull(maskingAnalyticsCollections);
+        public Builder maskingAnalyticsCollections(@Nullable List<GetMaskingAnalyticsMaskingAnalyticsCollection> maskingAnalyticsCollections) {
+            this.maskingAnalyticsCollections = maskingAnalyticsCollections;
             return this;
         }
         public Builder maskingAnalyticsCollections(GetMaskingAnalyticsMaskingAnalyticsCollection... maskingAnalyticsCollections) {

@@ -43,15 +43,12 @@ class GetMediaWorkflowJobFactResult:
 
     @property
     @pulumi.getter
-    def detail(self) -> str:
-        """
-        The body of the detail captured as JSON.
-        """
+    def detail(self) -> Optional[str]:
         return pulumi.get(self, "detail")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -60,33 +57,21 @@ class GetMediaWorkflowJobFactResult:
     @property
     @pulumi.getter
     def key(self) -> str:
-        """
-        System generated serial number to uniquely identify a detail in order within a MediaWorkflowJob.
-        """
         return pulumi.get(self, "key")
 
     @property
     @pulumi.getter(name="mediaWorkflowJobId")
     def media_workflow_job_id(self) -> str:
-        """
-        Reference to the parent job.
-        """
         return pulumi.get(self, "media_workflow_job_id")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        Unique name. It is read-only and generated for the fact.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
-    def type(self) -> str:
-        """
-        The type of information contained in this detail.
-        """
+    def type(self) -> Optional[str]:
         return pulumi.get(self, "type")
 
 
@@ -108,23 +93,7 @@ def get_media_workflow_job_fact(key: Optional[str] = None,
                                 media_workflow_job_id: Optional[str] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetMediaWorkflowJobFactResult:
     """
-    This data source provides details about a specific Media Workflow Job Fact resource in Oracle Cloud Infrastructure Media Services service.
-
-    Get the MediaWorkflowJobFact identified by the mediaWorkflowJobId and Fact ID.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_media_workflow_job_fact = oci.MediaServices.get_media_workflow_job_fact(key=var["media_workflow_job_fact_key"],
-        media_workflow_job_id=oci_media_services_media_workflow_job["test_media_workflow_job"]["id"])
-    ```
-
-
-    :param str key: Identifier of the MediaWorkflowJobFact within a MediaWorkflowJob.
-    :param str media_workflow_job_id: Unique MediaWorkflowJob identifier.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['key'] = key
@@ -146,22 +115,6 @@ def get_media_workflow_job_fact_output(key: Optional[pulumi.Input[str]] = None,
                                        media_workflow_job_id: Optional[pulumi.Input[str]] = None,
                                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetMediaWorkflowJobFactResult]:
     """
-    This data source provides details about a specific Media Workflow Job Fact resource in Oracle Cloud Infrastructure Media Services service.
-
-    Get the MediaWorkflowJobFact identified by the mediaWorkflowJobId and Fact ID.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_media_workflow_job_fact = oci.MediaServices.get_media_workflow_job_fact(key=var["media_workflow_job_fact_key"],
-        media_workflow_job_id=oci_media_services_media_workflow_job["test_media_workflow_job"]["id"])
-    ```
-
-
-    :param str key: Identifier of the MediaWorkflowJobFact within a MediaWorkflowJob.
-    :param str media_workflow_job_id: Unique MediaWorkflowJob identifier.
+    Use this data source to access information about an existing resource.
     """
     ...

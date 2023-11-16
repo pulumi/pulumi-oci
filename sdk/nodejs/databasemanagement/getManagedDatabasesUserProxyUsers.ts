@@ -62,7 +62,7 @@ export interface GetManagedDatabasesUserProxyUsersResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly managedDatabaseId: string;
     /**
      * The name of a proxy user or the name of the client user.
@@ -71,7 +71,7 @@ export interface GetManagedDatabasesUserProxyUsersResult {
     /**
      * The list of proxy_user_collection.
      */
-    readonly proxyUserCollections: outputs.DatabaseManagement.GetManagedDatabasesUserProxyUsersProxyUserCollection[];
+    readonly proxyUserCollections?: outputs.DatabaseManagement.GetManagedDatabasesUserProxyUsersProxyUserCollection[];
     readonly userName: string;
 }
 /**

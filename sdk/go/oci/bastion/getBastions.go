@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Bastions in Oracle Cloud Infrastructure Bastion service.
@@ -77,7 +76,7 @@ type GetBastionsResult struct {
 	CompartmentId string              `pulumi:"compartmentId"`
 	Filters       []GetBastionsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The name of the bastion, which can't be changed after creation.
 	Name *string `pulumi:"name"`
 }
@@ -127,12 +126,6 @@ func (o GetBastionsResultOutput) ToGetBastionsResultOutputWithContext(ctx contex
 	return o
 }
 
-func (o GetBastionsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetBastionsResult] {
-	return pulumix.Output[GetBastionsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetBastionsResultOutput) BastionId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetBastionsResult) *string { return v.BastionId }).(pulumi.StringPtrOutput)
 }
@@ -156,8 +149,8 @@ func (o GetBastionsResultOutput) Filters() GetBastionsFilterArrayOutput {
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetBastionsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBastionsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetBastionsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBastionsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The name of the bastion, which can't be changed after creation.

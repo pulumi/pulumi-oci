@@ -67,7 +67,7 @@ namespace Pulumi.Oci.DataSafe
         /// (Updatable) The application suite name identifying a collection of applications. It's useful only if maintaining a sensitive data model for a suite of applications.
         /// </summary>
         [Output("appSuiteName")]
-        public Output<string> AppSuiteName { get; private set; } = null!;
+        public Output<string?> AppSuiteName { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The OCID of the compartment where the sensitive data model should be created.
@@ -79,49 +79,49 @@ namespace Pulumi.Oci.DataSafe
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The description of the sensitive data model.
         /// </summary>
         [Output("description")]
-        public Output<string> Description { get; private set; } = null!;
+        public Output<string?> Description { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The display name of the sensitive data model. The name does not have to be unique, and it's changeable.
         /// </summary>
         [Output("displayName")]
-        public Output<string> DisplayName { get; private set; } = null!;
+        public Output<string?> DisplayName { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Indicates if data discovery jobs should identify potential application-level (non-dictionary) referential relationships between columns. Note that data discovery automatically identifies and adds database-level (dictionary-defined) relationships. This option helps identify application-level relationships that are not defined in the database dictionary, which in turn, helps identify additional sensitive columns and preserve referential integrity during data masking. It's disabled by default and should be used only if there is a need to identify application-level relationships.
         /// </summary>
         [Output("isAppDefinedRelationDiscoveryEnabled")]
-        public Output<bool> IsAppDefinedRelationDiscoveryEnabled { get; private set; } = null!;
+        public Output<bool?> IsAppDefinedRelationDiscoveryEnabled { get; private set; } = null!;
 
         /// <summary>
         /// Indicates if all the schemas in the associated target database should be scanned by data discovery jobs. If it is set to true, sensitive data is discovered in all schemas (except for schemas maintained by Oracle).
         /// </summary>
         [Output("isIncludeAllSchemas")]
-        public Output<bool> IsIncludeAllSchemas { get; private set; } = null!;
+        public Output<bool?> IsIncludeAllSchemas { get; private set; } = null!;
 
         /// <summary>
         /// Indicates if all the existing sensitive types should be used by data discovery jobs. If it's set to true, the sensitiveTypeIdsForDiscovery attribute is ignored and all sensitive types are used for data discovery.
         /// </summary>
         [Output("isIncludeAllSensitiveTypes")]
-        public Output<bool> IsIncludeAllSensitiveTypes { get; private set; } = null!;
+        public Output<bool?> IsIncludeAllSensitiveTypes { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Indicates if data discovery jobs should collect and store sample data values for the discovered columns. Sample data helps review the discovered columns and ensure that they actually contain sensitive data. As it collects original data from the target database, it's disabled by default and should be used only if it's acceptable to store sample data in Data Safe's repository in Oracle Cloud. Note that sample data values are not collected for columns with the following data types: LONG, LOB, RAW, XMLTYPE and BFILE.
         /// </summary>
         [Output("isSampleDataCollectionEnabled")]
-        public Output<bool> IsSampleDataCollectionEnabled { get; private set; } = null!;
+        public Output<bool?> IsSampleDataCollectionEnabled { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The schemas to be scanned by data discovery jobs.
@@ -139,13 +139,13 @@ namespace Pulumi.Oci.DataSafe
         /// The current state of the sensitive data model.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
         [Output("systemTags")]
-        public Output<ImmutableDictionary<string, object>> SystemTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> SystemTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The OCID of the reference target database to be associated with the sensitive data model. All operations such as performing data discovery and adding columns manually are done in the context of the associated target database. 
@@ -161,13 +161,13 @@ namespace Pulumi.Oci.DataSafe
         /// The date and time the sensitive data model was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the sensitive data model was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         /// </summary>
         [Output("timeUpdated")]
-        public Output<string> TimeUpdated { get; private set; } = null!;
+        public Output<string?> TimeUpdated { get; private set; } = null!;
 
 
         /// <summary>

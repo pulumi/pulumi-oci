@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.DevOps.outputs.GetBuildPipelinesBuildPipelineCollectionItemBuildPipelineParameterItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetBuildPipelinesBuildPipelineCollectionItemBuildPipelineParameter {
@@ -14,7 +15,7 @@ public final class GetBuildPipelinesBuildPipelineCollectionItemBuildPipelinePara
      * @return List of parameters defined for a build pipeline.
      * 
      */
-    private List<GetBuildPipelinesBuildPipelineCollectionItemBuildPipelineParameterItem> items;
+    private @Nullable List<GetBuildPipelinesBuildPipelineCollectionItemBuildPipelineParameterItem> items;
 
     private GetBuildPipelinesBuildPipelineCollectionItemBuildPipelineParameter() {}
     /**
@@ -22,7 +23,7 @@ public final class GetBuildPipelinesBuildPipelineCollectionItemBuildPipelinePara
      * 
      */
     public List<GetBuildPipelinesBuildPipelineCollectionItemBuildPipelineParameterItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -34,7 +35,7 @@ public final class GetBuildPipelinesBuildPipelineCollectionItemBuildPipelinePara
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetBuildPipelinesBuildPipelineCollectionItemBuildPipelineParameterItem> items;
+        private @Nullable List<GetBuildPipelinesBuildPipelineCollectionItemBuildPipelineParameterItem> items;
         public Builder() {}
         public Builder(GetBuildPipelinesBuildPipelineCollectionItemBuildPipelineParameter defaults) {
     	      Objects.requireNonNull(defaults);
@@ -42,8 +43,8 @@ public final class GetBuildPipelinesBuildPipelineCollectionItemBuildPipelinePara
         }
 
         @CustomType.Setter
-        public Builder items(List<GetBuildPipelinesBuildPipelineCollectionItemBuildPipelineParameterItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetBuildPipelinesBuildPipelineCollectionItemBuildPipelineParameterItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetBuildPipelinesBuildPipelineCollectionItemBuildPipelineParameterItem... items) {

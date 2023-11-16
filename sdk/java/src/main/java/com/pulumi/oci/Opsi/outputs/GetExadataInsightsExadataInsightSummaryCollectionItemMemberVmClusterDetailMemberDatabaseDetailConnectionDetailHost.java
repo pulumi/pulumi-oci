@@ -7,18 +7,20 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetailHost {
-    private String hostIp;
-    private Integer port;
+    private @Nullable String hostIp;
+    private @Nullable Integer port;
 
     private GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetailHost() {}
-    public String hostIp() {
-        return this.hostIp;
+    public Optional<String> hostIp() {
+        return Optional.ofNullable(this.hostIp);
     }
-    public Integer port() {
-        return this.port;
+    public Optional<Integer> port() {
+        return Optional.ofNullable(this.port);
     }
 
     public static Builder builder() {
@@ -30,8 +32,8 @@ public final class GetExadataInsightsExadataInsightSummaryCollectionItemMemberVm
     }
     @CustomType.Builder
     public static final class Builder {
-        private String hostIp;
-        private Integer port;
+        private @Nullable String hostIp;
+        private @Nullable Integer port;
         public Builder() {}
         public Builder(GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetailHost defaults) {
     	      Objects.requireNonNull(defaults);
@@ -40,13 +42,13 @@ public final class GetExadataInsightsExadataInsightSummaryCollectionItemMemberVm
         }
 
         @CustomType.Setter
-        public Builder hostIp(String hostIp) {
-            this.hostIp = Objects.requireNonNull(hostIp);
+        public Builder hostIp(@Nullable String hostIp) {
+            this.hostIp = hostIp;
             return this;
         }
         @CustomType.Setter
-        public Builder port(Integer port) {
-            this.port = Objects.requireNonNull(port);
+        public Builder port(@Nullable Integer port) {
+            this.port = port;
             return this;
         }
         public GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetailHost build() {

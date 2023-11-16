@@ -8,18 +8,20 @@ import com.pulumi.oci.Artifacts.outputs.GetContainerImagesContainerImageCollecti
 import java.lang.Integer;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetContainerImagesContainerImageCollection {
-    private List<GetContainerImagesContainerImageCollectionItem> items;
-    private Integer remainingItemsCount;
+    private @Nullable List<GetContainerImagesContainerImageCollectionItem> items;
+    private @Nullable Integer remainingItemsCount;
 
     private GetContainerImagesContainerImageCollection() {}
     public List<GetContainerImagesContainerImageCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
-    public Integer remainingItemsCount() {
-        return this.remainingItemsCount;
+    public Optional<Integer> remainingItemsCount() {
+        return Optional.ofNullable(this.remainingItemsCount);
     }
 
     public static Builder builder() {
@@ -31,8 +33,8 @@ public final class GetContainerImagesContainerImageCollection {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetContainerImagesContainerImageCollectionItem> items;
-        private Integer remainingItemsCount;
+        private @Nullable List<GetContainerImagesContainerImageCollectionItem> items;
+        private @Nullable Integer remainingItemsCount;
         public Builder() {}
         public Builder(GetContainerImagesContainerImageCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -41,16 +43,16 @@ public final class GetContainerImagesContainerImageCollection {
         }
 
         @CustomType.Setter
-        public Builder items(List<GetContainerImagesContainerImageCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetContainerImagesContainerImageCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetContainerImagesContainerImageCollectionItem... items) {
             return items(List.of(items));
         }
         @CustomType.Setter
-        public Builder remainingItemsCount(Integer remainingItemsCount) {
-            this.remainingItemsCount = Objects.requireNonNull(remainingItemsCount);
+        public Builder remainingItemsCount(@Nullable Integer remainingItemsCount) {
+            this.remainingItemsCount = remainingItemsCount;
             return this;
         }
         public GetContainerImagesContainerImageCollection build() {

@@ -47,15 +47,15 @@ export interface GetDatabaseMaintenanceRunHistoryResult {
     /**
      * List of database server history details.
      */
-    readonly dbServersHistoryDetails: outputs.Database.GetDatabaseMaintenanceRunHistoryDbServersHistoryDetail[];
+    readonly dbServersHistoryDetails?: outputs.Database.GetDatabaseMaintenanceRunHistoryDbServersHistoryDetail[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Details of a maintenance run.
      */
-    readonly maintenanceRunDetails: outputs.Database.GetDatabaseMaintenanceRunHistoryMaintenanceRunDetail[];
+    readonly maintenanceRunDetails?: outputs.Database.GetDatabaseMaintenanceRunHistoryMaintenanceRunDetail[];
     readonly maintenanceRunHistoryId: string;
 }
 /**

@@ -16,53 +16,53 @@ namespace Pulumi.Oci.OneSubsription.Outputs
         /// <summary>
         /// User that created the Payment term
         /// </summary>
-        public readonly string CreatedBy;
+        public readonly string? CreatedBy;
         /// <summary>
         /// Payment term Description
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// Payment term active flag
         /// </summary>
-        public readonly bool IsActive;
+        public readonly bool? IsActive;
         /// <summary>
         /// Payment Term name
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// SPM Invocie creation date
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// SPM Invoice updated date
         /// </summary>
-        public readonly string TimeUpdated;
+        public readonly string? TimeUpdated;
         /// <summary>
         /// User that updated SPM Invoice
         /// </summary>
-        public readonly string UpdatedBy;
+        public readonly string? UpdatedBy;
         /// <summary>
         /// Payment Term value
         /// </summary>
-        public readonly string Value;
+        public readonly string? Value;
 
         [OutputConstructor]
         private GetInvoicesInvoicePaymentTermResult(
-            string createdBy,
+            string? createdBy,
 
-            string description,
+            string? description,
 
-            bool isActive,
+            bool? isActive,
 
-            string name,
+            string? name,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeUpdated,
+            string? timeUpdated,
 
-            string updatedBy,
+            string? updatedBy,
 
-            string value)
+            string? value)
         {
             CreatedBy = createdBy;
             Description = description;

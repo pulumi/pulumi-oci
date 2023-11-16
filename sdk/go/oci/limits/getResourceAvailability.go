@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Resource Availability resource in Oracle Cloud Infrastructure Limits service.
@@ -73,20 +72,20 @@ type GetResourceAvailabilityArgs struct {
 type GetResourceAvailabilityResult struct {
 	AvailabilityDomain *string `pulumi:"availabilityDomain"`
 	// The count of available resources. To support resources with fractional counts, the field rounds down to the nearest integer.
-	Available     string `pulumi:"available"`
-	CompartmentId string `pulumi:"compartmentId"`
+	Available     *string `pulumi:"available"`
+	CompartmentId string  `pulumi:"compartmentId"`
 	// The effective quota value for the given compartment. This field is only present if there is a current quota policy affecting the current resource in the target region or availability domain.
-	EffectiveQuotaValue float64 `pulumi:"effectiveQuotaValue"`
+	EffectiveQuotaValue *float64 `pulumi:"effectiveQuotaValue"`
 	// The most accurate count of available resources.
-	FractionalAvailability float64 `pulumi:"fractionalAvailability"`
+	FractionalAvailability *float64 `pulumi:"fractionalAvailability"`
 	// The current most accurate usage in the given compartment.
-	FractionalUsage float64 `pulumi:"fractionalUsage"`
+	FractionalUsage *float64 `pulumi:"fractionalUsage"`
 	// The provider-assigned unique ID for this managed resource.
-	Id          string `pulumi:"id"`
-	LimitName   string `pulumi:"limitName"`
-	ServiceName string `pulumi:"serviceName"`
+	Id          *string `pulumi:"id"`
+	LimitName   string  `pulumi:"limitName"`
+	ServiceName string  `pulumi:"serviceName"`
 	// The current usage in the given compartment. To support resources with fractional counts, the field rounds up to the nearest integer.
-	Used string `pulumi:"used"`
+	Used *string `pulumi:"used"`
 }
 
 func GetResourceAvailabilityOutput(ctx *pulumi.Context, args GetResourceAvailabilityOutputArgs, opts ...pulumi.InvokeOption) GetResourceAvailabilityResultOutput {
@@ -133,19 +132,13 @@ func (o GetResourceAvailabilityResultOutput) ToGetResourceAvailabilityResultOutp
 	return o
 }
 
-func (o GetResourceAvailabilityResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetResourceAvailabilityResult] {
-	return pulumix.Output[GetResourceAvailabilityResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetResourceAvailabilityResultOutput) AvailabilityDomain() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetResourceAvailabilityResult) *string { return v.AvailabilityDomain }).(pulumi.StringPtrOutput)
 }
 
 // The count of available resources. To support resources with fractional counts, the field rounds down to the nearest integer.
-func (o GetResourceAvailabilityResultOutput) Available() pulumi.StringOutput {
-	return o.ApplyT(func(v GetResourceAvailabilityResult) string { return v.Available }).(pulumi.StringOutput)
+func (o GetResourceAvailabilityResultOutput) Available() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetResourceAvailabilityResult) *string { return v.Available }).(pulumi.StringPtrOutput)
 }
 
 func (o GetResourceAvailabilityResultOutput) CompartmentId() pulumi.StringOutput {
@@ -153,23 +146,23 @@ func (o GetResourceAvailabilityResultOutput) CompartmentId() pulumi.StringOutput
 }
 
 // The effective quota value for the given compartment. This field is only present if there is a current quota policy affecting the current resource in the target region or availability domain.
-func (o GetResourceAvailabilityResultOutput) EffectiveQuotaValue() pulumi.Float64Output {
-	return o.ApplyT(func(v GetResourceAvailabilityResult) float64 { return v.EffectiveQuotaValue }).(pulumi.Float64Output)
+func (o GetResourceAvailabilityResultOutput) EffectiveQuotaValue() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetResourceAvailabilityResult) *float64 { return v.EffectiveQuotaValue }).(pulumi.Float64PtrOutput)
 }
 
 // The most accurate count of available resources.
-func (o GetResourceAvailabilityResultOutput) FractionalAvailability() pulumi.Float64Output {
-	return o.ApplyT(func(v GetResourceAvailabilityResult) float64 { return v.FractionalAvailability }).(pulumi.Float64Output)
+func (o GetResourceAvailabilityResultOutput) FractionalAvailability() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetResourceAvailabilityResult) *float64 { return v.FractionalAvailability }).(pulumi.Float64PtrOutput)
 }
 
 // The current most accurate usage in the given compartment.
-func (o GetResourceAvailabilityResultOutput) FractionalUsage() pulumi.Float64Output {
-	return o.ApplyT(func(v GetResourceAvailabilityResult) float64 { return v.FractionalUsage }).(pulumi.Float64Output)
+func (o GetResourceAvailabilityResultOutput) FractionalUsage() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetResourceAvailabilityResult) *float64 { return v.FractionalUsage }).(pulumi.Float64PtrOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetResourceAvailabilityResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetResourceAvailabilityResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetResourceAvailabilityResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetResourceAvailabilityResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetResourceAvailabilityResultOutput) LimitName() pulumi.StringOutput {
@@ -181,8 +174,8 @@ func (o GetResourceAvailabilityResultOutput) ServiceName() pulumi.StringOutput {
 }
 
 // The current usage in the given compartment. To support resources with fractional counts, the field rounds up to the nearest integer.
-func (o GetResourceAvailabilityResultOutput) Used() pulumi.StringOutput {
-	return o.ApplyT(func(v GetResourceAvailabilityResult) string { return v.Used }).(pulumi.StringOutput)
+func (o GetResourceAvailabilityResultOutput) Used() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetResourceAvailabilityResult) *string { return v.Used }).(pulumi.StringPtrOutput)
 }
 
 func init() {

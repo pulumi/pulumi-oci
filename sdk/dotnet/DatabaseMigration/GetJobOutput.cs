@@ -110,7 +110,7 @@ namespace Pulumi.Oci.DatabaseMigration
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Items in collection.
         /// </summary>
@@ -119,7 +119,7 @@ namespace Pulumi.Oci.DatabaseMigration
 
         [OutputConstructor]
         private GetJobOutputResult(
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetJobOutputItemResult> items,
 

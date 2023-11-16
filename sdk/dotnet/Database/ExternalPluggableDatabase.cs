@@ -56,7 +56,7 @@ namespace Pulumi.Oci.Database
         /// The character set of the external database.
         /// </summary>
         [Output("characterSet")]
-        public Output<string> CharacterSet { get; private set; } = null!;
+        public Output<string?> CharacterSet { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -68,13 +68,13 @@ namespace Pulumi.Oci.Database
         /// The Oracle Database configuration
         /// </summary>
         [Output("databaseConfiguration")]
-        public Output<string> DatabaseConfiguration { get; private set; } = null!;
+        public Output<string?> DatabaseConfiguration { get; private set; } = null!;
 
         /// <summary>
         /// The Oracle Database edition.
         /// </summary>
         [Output("databaseEdition")]
-        public Output<string> DatabaseEdition { get; private set; } = null!;
+        public Output<string?> DatabaseEdition { get; private set; } = null!;
 
         /// <summary>
         /// The configuration of the Database Management service.
@@ -86,31 +86,31 @@ namespace Pulumi.Oci.Database
         /// The Oracle Database version.
         /// </summary>
         [Output("databaseVersion")]
-        public Output<string> DatabaseVersion { get; private set; } = null!;
+        public Output<string?> DatabaseVersion { get; private set; } = null!;
 
         /// <summary>
         /// The Oracle Database ID, which identifies an Oracle Database located outside of Oracle Cloud.
         /// </summary>
         [Output("dbId")]
-        public Output<string> DbId { get; private set; } = null!;
+        public Output<string?> DbId { get; private set; } = null!;
 
         /// <summary>
         /// The database packs licensed for the external Oracle Database.
         /// </summary>
         [Output("dbPacks")]
-        public Output<string> DbPacks { get; private set; } = null!;
+        public Output<string?> DbPacks { get; private set; } = null!;
 
         /// <summary>
         /// The `DB_UNIQUE_NAME` of the external database.
         /// </summary>
         [Output("dbUniqueName")]
-        public Output<string> DbUniqueName { get; private set; } = null!;
+        public Output<string?> DbUniqueName { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The user-friendly name for the external database. The name does not have to be unique.
@@ -128,19 +128,19 @@ namespace Pulumi.Oci.Database
         /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// Additional information about the current lifecycle state.
         /// </summary>
         [Output("lifecycleDetails")]
-        public Output<string> LifecycleDetails { get; private set; } = null!;
+        public Output<string?> LifecycleDetails { get; private set; } = null!;
 
         /// <summary>
         /// The national character of the external database.
         /// </summary>
         [Output("ncharacterSet")]
-        public Output<string> NcharacterSet { get; private set; } = null!;
+        public Output<string?> NcharacterSet { get; private set; } = null!;
 
         /// <summary>
         /// The configuration of Operations Insights for the external database
@@ -156,7 +156,7 @@ namespace Pulumi.Oci.Database
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("sourceId")]
-        public Output<string> SourceId { get; private set; } = null!;
+        public Output<string?> SourceId { get; private set; } = null!;
 
         /// <summary>
         /// The configuration of Stack Monitoring for the external database.
@@ -168,19 +168,19 @@ namespace Pulumi.Oci.Database
         /// The current state of the Oracle Cloud Infrastructure external database resource.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the database was created.
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// The time zone of the external database. It is a time zone offset (a character type in the format '[+|-]TZH:TZM') or a time zone region name, depending on how the time zone value was specified when the database was created / last altered.
         /// </summary>
         [Output("timeZone")]
-        public Output<string> TimeZone { get; private set; } = null!;
+        public Output<string?> TimeZone { get; private set; } = null!;
 
 
         /// <summary>

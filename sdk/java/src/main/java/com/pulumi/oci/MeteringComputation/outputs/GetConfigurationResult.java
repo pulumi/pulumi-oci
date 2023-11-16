@@ -8,6 +8,8 @@ import com.pulumi.oci.MeteringComputation.outputs.GetConfigurationItem;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetConfigurationResult {
@@ -15,12 +17,12 @@ public final class GetConfigurationResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The list of available configurations.
      * 
      */
-    private List<GetConfigurationItem> items;
+    private @Nullable List<GetConfigurationItem> items;
     private String tenantId;
 
     private GetConfigurationResult() {}
@@ -28,15 +30,15 @@ public final class GetConfigurationResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The list of available configurations.
      * 
      */
     public List<GetConfigurationItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
     public String tenantId() {
         return this.tenantId;
@@ -51,8 +53,8 @@ public final class GetConfigurationResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String id;
-        private List<GetConfigurationItem> items;
+        private @Nullable String id;
+        private @Nullable List<GetConfigurationItem> items;
         private String tenantId;
         public Builder() {}
         public Builder(GetConfigurationResult defaults) {
@@ -63,13 +65,13 @@ public final class GetConfigurationResult {
         }
 
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder items(List<GetConfigurationItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetConfigurationItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetConfigurationItem... items) {

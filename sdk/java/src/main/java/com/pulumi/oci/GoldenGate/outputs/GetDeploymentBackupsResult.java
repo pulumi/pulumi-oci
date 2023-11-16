@@ -23,7 +23,7 @@ public final class GetDeploymentBackupsResult {
      * @return The list of deployment_backup_collection.
      * 
      */
-    private List<GetDeploymentBackupsDeploymentBackupCollection> deploymentBackupCollections;
+    private @Nullable List<GetDeploymentBackupsDeploymentBackupCollection> deploymentBackupCollections;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
      * 
@@ -39,7 +39,7 @@ public final class GetDeploymentBackupsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Possible lifecycle states.
      * 
@@ -59,7 +59,7 @@ public final class GetDeploymentBackupsResult {
      * 
      */
     public List<GetDeploymentBackupsDeploymentBackupCollection> deploymentBackupCollections() {
-        return this.deploymentBackupCollections;
+        return this.deploymentBackupCollections == null ? List.of() : this.deploymentBackupCollections;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
@@ -82,8 +82,8 @@ public final class GetDeploymentBackupsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Possible lifecycle states.
@@ -103,11 +103,11 @@ public final class GetDeploymentBackupsResult {
     @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
-        private List<GetDeploymentBackupsDeploymentBackupCollection> deploymentBackupCollections;
+        private @Nullable List<GetDeploymentBackupsDeploymentBackupCollection> deploymentBackupCollections;
         private @Nullable String deploymentId;
         private @Nullable String displayName;
         private @Nullable List<GetDeploymentBackupsFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String state;
         public Builder() {}
         public Builder(GetDeploymentBackupsResult defaults) {
@@ -127,8 +127,8 @@ public final class GetDeploymentBackupsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder deploymentBackupCollections(List<GetDeploymentBackupsDeploymentBackupCollection> deploymentBackupCollections) {
-            this.deploymentBackupCollections = Objects.requireNonNull(deploymentBackupCollections);
+        public Builder deploymentBackupCollections(@Nullable List<GetDeploymentBackupsDeploymentBackupCollection> deploymentBackupCollections) {
+            this.deploymentBackupCollections = deploymentBackupCollections;
             return this;
         }
         public Builder deploymentBackupCollections(GetDeploymentBackupsDeploymentBackupCollection... deploymentBackupCollections) {
@@ -153,8 +153,8 @@ public final class GetDeploymentBackupsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

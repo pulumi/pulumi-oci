@@ -105,56 +105,56 @@ public class Bucket extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="approximateCount", refs={String.class}, tree="[0]")
-    private Output<String> approximateCount;
+    private Output</* @Nullable */ String> approximateCount;
 
     /**
      * @return The approximate number of objects in the bucket. Count statistics are reported periodically. You will see a lag between what is displayed and the actual object count.
      * 
      */
-    public Output<String> approximateCount() {
-        return this.approximateCount;
+    public Output<Optional<String>> approximateCount() {
+        return Codegen.optional(this.approximateCount);
     }
     /**
      * The approximate total size in bytes of all objects in the bucket. Size statistics are reported periodically. You will see a lag between what is displayed and the actual size of the bucket.
      * 
      */
     @Export(name="approximateSize", refs={String.class}, tree="[0]")
-    private Output<String> approximateSize;
+    private Output</* @Nullable */ String> approximateSize;
 
     /**
      * @return The approximate total size in bytes of all objects in the bucket. Size statistics are reported periodically. You will see a lag between what is displayed and the actual size of the bucket.
      * 
      */
-    public Output<String> approximateSize() {
-        return this.approximateSize;
+    public Output<Optional<String>> approximateSize() {
+        return Codegen.optional(this.approximateSize);
     }
     /**
      * (Updatable) Set the auto tiering status on the bucket. By default, a bucket is created with auto tiering `Disabled`. Use this option to enable auto tiering during bucket creation. Objects in a bucket with auto tiering set to `InfrequentAccess` are transitioned automatically between the &#39;Standard&#39; and &#39;InfrequentAccess&#39; tiers based on the access pattern of the objects.
      * 
      */
     @Export(name="autoTiering", refs={String.class}, tree="[0]")
-    private Output<String> autoTiering;
+    private Output</* @Nullable */ String> autoTiering;
 
     /**
      * @return (Updatable) Set the auto tiering status on the bucket. By default, a bucket is created with auto tiering `Disabled`. Use this option to enable auto tiering during bucket creation. Objects in a bucket with auto tiering set to `InfrequentAccess` are transitioned automatically between the &#39;Standard&#39; and &#39;InfrequentAccess&#39; tiers based on the access pattern of the objects.
      * 
      */
-    public Output<String> autoTiering() {
-        return this.autoTiering;
+    public Output<Optional<String>> autoTiering() {
+        return Codegen.optional(this.autoTiering);
     }
     /**
      * The OCID of the bucket which is a Oracle assigned unique identifier for this resource type (bucket). `bucket_id` cannot be used for bucket lookup.
      * 
      */
     @Export(name="bucketId", refs={String.class}, tree="[0]")
-    private Output<String> bucketId;
+    private Output</* @Nullable */ String> bucketId;
 
     /**
      * @return The OCID of the bucket which is a Oracle assigned unique identifier for this resource type (bucket). `bucket_id` cannot be used for bucket lookup.
      * 
      */
-    public Output<String> bucketId() {
-        return this.bucketId;
+    public Output<Optional<String>> bucketId() {
+        return Codegen.optional(this.bucketId);
     }
     /**
      * (Updatable) The ID of the compartment in which to create the bucket.
@@ -175,84 +175,84 @@ public class Bucket extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="createdBy", refs={String.class}, tree="[0]")
-    private Output<String> createdBy;
+    private Output</* @Nullable */ String> createdBy;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the bucket.
      * 
      */
-    public Output<String> createdBy() {
-        return this.createdBy;
+    public Output<Optional<String>> createdBy() {
+        return Codegen.optional(this.createdBy);
     }
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * The entity tag (ETag) for the bucket.
      * 
      */
     @Export(name="etag", refs={String.class}, tree="[0]")
-    private Output<String> etag;
+    private Output</* @Nullable */ String> etag;
 
     /**
      * @return The entity tag (ETag) for the bucket.
      * 
      */
-    public Output<String> etag() {
-        return this.etag;
+    public Output<Optional<String>> etag() {
+        return Codegen.optional(this.etag);
     }
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * Whether or not this bucket is read only. By default, `isReadOnly` is set to `false`. This will be set to &#39;true&#39; when this bucket is configured as a destination in a replication policy.
      * 
      */
     @Export(name="isReadOnly", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isReadOnly;
+    private Output</* @Nullable */ Boolean> isReadOnly;
 
     /**
      * @return Whether or not this bucket is read only. By default, `isReadOnly` is set to `false`. This will be set to &#39;true&#39; when this bucket is configured as a destination in a replication policy.
      * 
      */
-    public Output<Boolean> isReadOnly() {
-        return this.isReadOnly;
+    public Output<Optional<Boolean>> isReadOnly() {
+        return Codegen.optional(this.isReadOnly);
     }
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a master encryption key used to call the Key Management service to generate a data encryption key or to encrypt or decrypt a data encryption key.
      * 
      */
     @Export(name="kmsKeyId", refs={String.class}, tree="[0]")
-    private Output<String> kmsKeyId;
+    private Output</* @Nullable */ String> kmsKeyId;
 
     /**
      * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a master encryption key used to call the Key Management service to generate a data encryption key or to encrypt or decrypt a data encryption key.
      * 
      */
-    public Output<String> kmsKeyId() {
-        return this.kmsKeyId;
+    public Output<Optional<String>> kmsKeyId() {
+        return Codegen.optional(this.kmsKeyId);
     }
     /**
      * (Updatable) Arbitrary string, up to 4KB, of keys and values for user-defined metadata.
@@ -301,42 +301,42 @@ public class Bucket extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="objectEventsEnabled", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> objectEventsEnabled;
+    private Output</* @Nullable */ Boolean> objectEventsEnabled;
 
     /**
      * @return (Updatable) Whether or not events are emitted for object state changes in this bucket. By default, `objectEventsEnabled` is set to `false`. Set `objectEventsEnabled` to `true` to emit events for object state changes. For more information about events, see [Overview of Events](https://docs.cloud.oracle.com/iaas/Content/Events/Concepts/eventsoverview.htm).
      * 
      */
-    public Output<Boolean> objectEventsEnabled() {
-        return this.objectEventsEnabled;
+    public Output<Optional<Boolean>> objectEventsEnabled() {
+        return Codegen.optional(this.objectEventsEnabled);
     }
     /**
      * The entity tag (ETag) for the live object lifecycle policy on the bucket.
      * 
      */
     @Export(name="objectLifecyclePolicyEtag", refs={String.class}, tree="[0]")
-    private Output<String> objectLifecyclePolicyEtag;
+    private Output</* @Nullable */ String> objectLifecyclePolicyEtag;
 
     /**
      * @return The entity tag (ETag) for the live object lifecycle policy on the bucket.
      * 
      */
-    public Output<String> objectLifecyclePolicyEtag() {
-        return this.objectLifecyclePolicyEtag;
+    public Output<Optional<String>> objectLifecyclePolicyEtag() {
+        return Codegen.optional(this.objectLifecyclePolicyEtag);
     }
     /**
      * Whether or not this bucket is a replication source. By default, `replicationEnabled` is set to `false`. This will be set to &#39;true&#39; when you create a replication policy for the bucket.
      * 
      */
     @Export(name="replicationEnabled", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> replicationEnabled;
+    private Output</* @Nullable */ Boolean> replicationEnabled;
 
     /**
      * @return Whether or not this bucket is a replication source. By default, `replicationEnabled` is set to `false`. This will be set to &#39;true&#39; when you create a replication policy for the bucket.
      * 
      */
-    public Output<Boolean> replicationEnabled() {
-        return this.replicationEnabled;
+    public Output<Optional<Boolean>> replicationEnabled() {
+        return Codegen.optional(this.replicationEnabled);
     }
     /**
      * (Updatable) Creates a new retention rule in the specified bucket. The new rule will take effect typically within 30 seconds. Note that a maximum of 100 rules are supported on a bucket.
@@ -357,28 +357,28 @@ public class Bucket extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="storageTier", refs={String.class}, tree="[0]")
-    private Output<String> storageTier;
+    private Output</* @Nullable */ String> storageTier;
 
     /**
      * @return The type of storage tier of this bucket. A bucket is set to &#39;Standard&#39; tier by default, which means the bucket will be put in the standard storage tier. When &#39;Archive&#39; tier type is set explicitly, the bucket is put in the Archive Storage tier. The &#39;storageTier&#39; property is immutable after bucket is created.
      * 
      */
-    public Output<String> storageTier() {
-        return this.storageTier;
+    public Output<Optional<String>> storageTier() {
+        return Codegen.optional(this.storageTier);
     }
     /**
      * The date and time the bucket was created, as described in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-14.29).
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The date and time the bucket was created, as described in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-14.29).
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * (Updatable) Set the versioning status on the bucket. By default, a bucket is created with versioning `Disabled`. Use this option to enable versioning during bucket creation. Objects in a version enabled bucket are protected from overwrites and deletions. Previous versions of the same object will be available in the bucket. Allowed Create values: Enabled, Disabled. Allowed Update values: Enabled, Suspended.
@@ -388,7 +388,7 @@ public class Bucket extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="versioning", refs={String.class}, tree="[0]")
-    private Output<String> versioning;
+    private Output</* @Nullable */ String> versioning;
 
     /**
      * @return (Updatable) Set the versioning status on the bucket. By default, a bucket is created with versioning `Disabled`. Use this option to enable versioning during bucket creation. Objects in a version enabled bucket are protected from overwrites and deletions. Previous versions of the same object will be available in the bucket. Allowed Create values: Enabled, Disabled. Allowed Update values: Enabled, Suspended.
@@ -397,8 +397,8 @@ public class Bucket extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Output<String> versioning() {
-        return this.versioning;
+    public Output<Optional<String>> versioning() {
+        return Codegen.optional(this.versioning);
     }
 
     /**

@@ -16,89 +16,89 @@ namespace Pulumi.Oci.CloudBridge.Outputs
         /// <summary>
         /// The checksum of the image file.
         /// </summary>
-        public readonly string Checksum;
+        public readonly string? Checksum;
         /// <summary>
         /// The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// A filter to return only resources that match the entire display name given.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// The URL from which the appliance image can be downloaded.
         /// </summary>
-        public readonly string DownloadUrl;
+        public readonly string? DownloadUrl;
         /// <summary>
         /// The name of the appliance Image file.
         /// </summary>
-        public readonly string FileName;
+        public readonly string? FileName;
         /// <summary>
         /// The file format of the image file.
         /// </summary>
-        public readonly string Format;
+        public readonly string? Format;
         /// <summary>
         /// The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// Unique identifier that is immutable on creation.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The virtualization platform that the image file supports.
         /// </summary>
-        public readonly string Platform;
+        public readonly string? Platform;
         /// <summary>
         /// The size of the image file in megabytes.
         /// </summary>
-        public readonly string SizeInMbs;
+        public readonly string? SizeInMbs;
         /// <summary>
         /// The current state of the appliance image.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// The time when the appliance image was created.An RFC3339 formatted datetime string.
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The time when the appliance image was last updated. An RFC3339 formatted datetime string.
         /// </summary>
-        public readonly string TimeUpdated;
+        public readonly string? TimeUpdated;
         /// <summary>
         /// The version of the image file.
         /// </summary>
-        public readonly string Version;
+        public readonly string? Version;
 
         [OutputConstructor]
         private GetApplianceImagesApplianceImageCollectionItemResult(
-            string checksum,
+            string? checksum,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string displayName,
+            string? displayName,
 
-            string downloadUrl,
+            string? downloadUrl,
 
-            string fileName,
+            string? fileName,
 
-            string format,
+            string? format,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string id,
+            string? id,
 
-            string platform,
+            string? platform,
 
-            string sizeInMbs,
+            string? sizeInMbs,
 
-            string state,
+            string? state,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeUpdated,
+            string? timeUpdated,
 
-            string version)
+            string? version)
         {
             Checksum = checksum;
             DefinedTags = definedTags;

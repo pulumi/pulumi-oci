@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Metric Extensions Test Management resource in Oracle Cloud Infrastructure Stack Monitoring service.
@@ -58,13 +57,13 @@ type MetricExtensionsTestManagement struct {
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ResourceIds pulumi.StringOutput `pulumi:"resourceIds"`
 	// Test Run Id
-	TestRunId pulumi.StringOutput `pulumi:"testRunId"`
+	TestRunId pulumi.StringPtrOutput `pulumi:"testRunId"`
 	// Test Run Metric Suffix
-	TestRunMetricSuffix pulumi.StringOutput `pulumi:"testRunMetricSuffix"`
+	TestRunMetricSuffix pulumi.StringPtrOutput `pulumi:"testRunMetricSuffix"`
 	// Test Run Namespace name
-	TestRunNamespaceName pulumi.StringOutput `pulumi:"testRunNamespaceName"`
+	TestRunNamespaceName pulumi.StringPtrOutput `pulumi:"testRunNamespaceName"`
 	// Test Run Resource Group name
-	TestRunResourceGroupName pulumi.StringOutput `pulumi:"testRunResourceGroupName"`
+	TestRunResourceGroupName pulumi.StringPtrOutput `pulumi:"testRunResourceGroupName"`
 }
 
 // NewMetricExtensionsTestManagement registers a new resource with the given unique name, arguments, and options.
@@ -186,12 +185,6 @@ func (i *MetricExtensionsTestManagement) ToMetricExtensionsTestManagementOutputW
 	return pulumi.ToOutputWithContext(ctx, i).(MetricExtensionsTestManagementOutput)
 }
 
-func (i *MetricExtensionsTestManagement) ToOutput(ctx context.Context) pulumix.Output[*MetricExtensionsTestManagement] {
-	return pulumix.Output[*MetricExtensionsTestManagement]{
-		OutputState: i.ToMetricExtensionsTestManagementOutputWithContext(ctx).OutputState,
-	}
-}
-
 // MetricExtensionsTestManagementArrayInput is an input type that accepts MetricExtensionsTestManagementArray and MetricExtensionsTestManagementArrayOutput values.
 // You can construct a concrete instance of `MetricExtensionsTestManagementArrayInput` via:
 //
@@ -215,12 +208,6 @@ func (i MetricExtensionsTestManagementArray) ToMetricExtensionsTestManagementArr
 
 func (i MetricExtensionsTestManagementArray) ToMetricExtensionsTestManagementArrayOutputWithContext(ctx context.Context) MetricExtensionsTestManagementArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(MetricExtensionsTestManagementArrayOutput)
-}
-
-func (i MetricExtensionsTestManagementArray) ToOutput(ctx context.Context) pulumix.Output[[]*MetricExtensionsTestManagement] {
-	return pulumix.Output[[]*MetricExtensionsTestManagement]{
-		OutputState: i.ToMetricExtensionsTestManagementArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // MetricExtensionsTestManagementMapInput is an input type that accepts MetricExtensionsTestManagementMap and MetricExtensionsTestManagementMapOutput values.
@@ -248,12 +235,6 @@ func (i MetricExtensionsTestManagementMap) ToMetricExtensionsTestManagementMapOu
 	return pulumi.ToOutputWithContext(ctx, i).(MetricExtensionsTestManagementMapOutput)
 }
 
-func (i MetricExtensionsTestManagementMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*MetricExtensionsTestManagement] {
-	return pulumix.Output[map[string]*MetricExtensionsTestManagement]{
-		OutputState: i.ToMetricExtensionsTestManagementMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type MetricExtensionsTestManagementOutput struct{ *pulumi.OutputState }
 
 func (MetricExtensionsTestManagementOutput) ElementType() reflect.Type {
@@ -266,12 +247,6 @@ func (o MetricExtensionsTestManagementOutput) ToMetricExtensionsTestManagementOu
 
 func (o MetricExtensionsTestManagementOutput) ToMetricExtensionsTestManagementOutputWithContext(ctx context.Context) MetricExtensionsTestManagementOutput {
 	return o
-}
-
-func (o MetricExtensionsTestManagementOutput) ToOutput(ctx context.Context) pulumix.Output[*MetricExtensionsTestManagement] {
-	return pulumix.Output[*MetricExtensionsTestManagement]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the metric extension resource.
@@ -288,23 +263,23 @@ func (o MetricExtensionsTestManagementOutput) ResourceIds() pulumi.StringOutput 
 }
 
 // Test Run Id
-func (o MetricExtensionsTestManagementOutput) TestRunId() pulumi.StringOutput {
-	return o.ApplyT(func(v *MetricExtensionsTestManagement) pulumi.StringOutput { return v.TestRunId }).(pulumi.StringOutput)
+func (o MetricExtensionsTestManagementOutput) TestRunId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MetricExtensionsTestManagement) pulumi.StringPtrOutput { return v.TestRunId }).(pulumi.StringPtrOutput)
 }
 
 // Test Run Metric Suffix
-func (o MetricExtensionsTestManagementOutput) TestRunMetricSuffix() pulumi.StringOutput {
-	return o.ApplyT(func(v *MetricExtensionsTestManagement) pulumi.StringOutput { return v.TestRunMetricSuffix }).(pulumi.StringOutput)
+func (o MetricExtensionsTestManagementOutput) TestRunMetricSuffix() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MetricExtensionsTestManagement) pulumi.StringPtrOutput { return v.TestRunMetricSuffix }).(pulumi.StringPtrOutput)
 }
 
 // Test Run Namespace name
-func (o MetricExtensionsTestManagementOutput) TestRunNamespaceName() pulumi.StringOutput {
-	return o.ApplyT(func(v *MetricExtensionsTestManagement) pulumi.StringOutput { return v.TestRunNamespaceName }).(pulumi.StringOutput)
+func (o MetricExtensionsTestManagementOutput) TestRunNamespaceName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MetricExtensionsTestManagement) pulumi.StringPtrOutput { return v.TestRunNamespaceName }).(pulumi.StringPtrOutput)
 }
 
 // Test Run Resource Group name
-func (o MetricExtensionsTestManagementOutput) TestRunResourceGroupName() pulumi.StringOutput {
-	return o.ApplyT(func(v *MetricExtensionsTestManagement) pulumi.StringOutput { return v.TestRunResourceGroupName }).(pulumi.StringOutput)
+func (o MetricExtensionsTestManagementOutput) TestRunResourceGroupName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MetricExtensionsTestManagement) pulumi.StringPtrOutput { return v.TestRunResourceGroupName }).(pulumi.StringPtrOutput)
 }
 
 type MetricExtensionsTestManagementArrayOutput struct{ *pulumi.OutputState }
@@ -319,12 +294,6 @@ func (o MetricExtensionsTestManagementArrayOutput) ToMetricExtensionsTestManagem
 
 func (o MetricExtensionsTestManagementArrayOutput) ToMetricExtensionsTestManagementArrayOutputWithContext(ctx context.Context) MetricExtensionsTestManagementArrayOutput {
 	return o
-}
-
-func (o MetricExtensionsTestManagementArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*MetricExtensionsTestManagement] {
-	return pulumix.Output[[]*MetricExtensionsTestManagement]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o MetricExtensionsTestManagementArrayOutput) Index(i pulumi.IntInput) MetricExtensionsTestManagementOutput {
@@ -345,12 +314,6 @@ func (o MetricExtensionsTestManagementMapOutput) ToMetricExtensionsTestManagemen
 
 func (o MetricExtensionsTestManagementMapOutput) ToMetricExtensionsTestManagementMapOutputWithContext(ctx context.Context) MetricExtensionsTestManagementMapOutput {
 	return o
-}
-
-func (o MetricExtensionsTestManagementMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*MetricExtensionsTestManagement] {
-	return pulumix.Output[map[string]*MetricExtensionsTestManagement]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o MetricExtensionsTestManagementMapOutput) MapIndex(k pulumi.StringInput) MetricExtensionsTestManagementOutput {

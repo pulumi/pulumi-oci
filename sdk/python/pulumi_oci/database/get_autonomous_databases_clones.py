@@ -56,10 +56,7 @@ class GetAutonomousDatabasesClonesResult:
 
     @property
     @pulumi.getter(name="autonomousDatabases")
-    def autonomous_databases(self) -> Sequence['outputs.GetAutonomousDatabasesClonesAutonomousDatabaseResult']:
-        """
-        The list of autonomous_databases.
-        """
+    def autonomous_databases(self) -> Optional[Sequence['outputs.GetAutonomousDatabasesClonesAutonomousDatabaseResult']]:
         return pulumi.get(self, "autonomous_databases")
 
     @property
@@ -70,17 +67,11 @@ class GetAutonomousDatabasesClonesResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        The user-friendly name for the Autonomous Database. The name does not have to be unique.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -90,7 +81,7 @@ class GetAutonomousDatabasesClonesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -99,9 +90,6 @@ class GetAutonomousDatabasesClonesResult:
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the Autonomous Database.
-        """
         return pulumi.get(self, "state")
 
 
@@ -129,29 +117,7 @@ def get_autonomous_databases_clones(autonomous_database_id: Optional[str] = None
                                     state: Optional[str] = None,
                                     opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAutonomousDatabasesClonesResult:
     """
-    This data source provides the list of Autonomous Databases Clones in Oracle Cloud Infrastructure Database service.
-
-    Lists the Autonomous Database clones for the specified Autonomous Database.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_autonomous_databases_clones = oci.Database.get_autonomous_databases_clones(autonomous_database_id=oci_database_autonomous_database["test_autonomous_database"]["id"],
-        compartment_id=var["compartment_id"],
-        clone_type=var["autonomous_databases_clone_clone_type"],
-        display_name=var["autonomous_databases_clone_display_name"],
-        state=var["autonomous_databases_clone_state"])
-    ```
-
-
-    :param str autonomous_database_id: The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param str clone_type: A filter to return only resources that match the given clone type exactly.
-    :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param str display_name: A filter to return only resources that match the entire display name given. The match is not case sensitive.
-    :param str state: A filter to return only resources that match the given lifecycle state exactly.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['autonomousDatabaseId'] = autonomous_database_id
@@ -183,28 +149,6 @@ def get_autonomous_databases_clones_output(autonomous_database_id: Optional[pulu
                                            state: Optional[pulumi.Input[Optional[str]]] = None,
                                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAutonomousDatabasesClonesResult]:
     """
-    This data source provides the list of Autonomous Databases Clones in Oracle Cloud Infrastructure Database service.
-
-    Lists the Autonomous Database clones for the specified Autonomous Database.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_autonomous_databases_clones = oci.Database.get_autonomous_databases_clones(autonomous_database_id=oci_database_autonomous_database["test_autonomous_database"]["id"],
-        compartment_id=var["compartment_id"],
-        clone_type=var["autonomous_databases_clone_clone_type"],
-        display_name=var["autonomous_databases_clone_display_name"],
-        state=var["autonomous_databases_clone_state"])
-    ```
-
-
-    :param str autonomous_database_id: The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param str clone_type: A filter to return only resources that match the given clone type exactly.
-    :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param str display_name: A filter to return only resources that match the entire display name given. The match is not case sensitive.
-    :param str state: A filter to return only resources that match the given lifecycle state exactly.
+    Use this data source to access information about an existing resource.
     """
     ...

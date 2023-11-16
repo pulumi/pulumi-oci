@@ -48,10 +48,7 @@ class GetCaBundlesResult:
 
     @property
     @pulumi.getter(name="caBundleCollections")
-    def ca_bundle_collections(self) -> Sequence['outputs.GetCaBundlesCaBundleCollectionResult']:
-        """
-        The list of ca_bundle_collection.
-        """
+    def ca_bundle_collections(self) -> Optional[Sequence['outputs.GetCaBundlesCaBundleCollectionResult']]:
         return pulumi.get(self, "ca_bundle_collections")
 
     @property
@@ -62,9 +59,6 @@ class GetCaBundlesResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[str]:
-        """
-        The OCID of the compartment for the CA bundle.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
@@ -74,7 +68,7 @@ class GetCaBundlesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -83,17 +77,11 @@ class GetCaBundlesResult:
     @property
     @pulumi.getter
     def name(self) -> Optional[str]:
-        """
-        A user-friendly name for the CA bundle. Names are unique within a compartment. Avoid entering confidential information. Valid characters include uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
-        """
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current lifecycle state of the CA bundle.
-        """
         return pulumi.get(self, "state")
 
 
@@ -119,28 +107,7 @@ def get_ca_bundles(ca_bundle_id: Optional[str] = None,
                    state: Optional[str] = None,
                    opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetCaBundlesResult:
     """
-    This data source provides the list of Ca Bundles in Oracle Cloud Infrastructure Certificates Management service.
-
-    Lists all CA bundles that match the query parameters.
-    Optionally, you can use the parameter `FilterByCaBundleIdQueryParam` to limit the result set to a single item that matches the specified CA bundle.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_ca_bundles = oci.CertificatesManagement.get_ca_bundles(ca_bundle_id=oci_certificates_management_ca_bundle["test_ca_bundle"]["id"],
-        compartment_id=var["compartment_id"],
-        name=var["ca_bundle_name"],
-        state=var["ca_bundle_state"])
-    ```
-
-
-    :param str ca_bundle_id: The OCID of the CA bundle.
-    :param str compartment_id: A filter that returns only resources that match the given compartment OCID.
-    :param str name: A filter that returns only resources that match the specified name.
-    :param str state: A filter that returns only resources that match the given lifecycle state. The state value is case-insensitive.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['caBundleId'] = ca_bundle_id
@@ -169,27 +136,6 @@ def get_ca_bundles_output(ca_bundle_id: Optional[pulumi.Input[Optional[str]]] = 
                           state: Optional[pulumi.Input[Optional[str]]] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCaBundlesResult]:
     """
-    This data source provides the list of Ca Bundles in Oracle Cloud Infrastructure Certificates Management service.
-
-    Lists all CA bundles that match the query parameters.
-    Optionally, you can use the parameter `FilterByCaBundleIdQueryParam` to limit the result set to a single item that matches the specified CA bundle.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_ca_bundles = oci.CertificatesManagement.get_ca_bundles(ca_bundle_id=oci_certificates_management_ca_bundle["test_ca_bundle"]["id"],
-        compartment_id=var["compartment_id"],
-        name=var["ca_bundle_name"],
-        state=var["ca_bundle_state"])
-    ```
-
-
-    :param str ca_bundle_id: The OCID of the CA bundle.
-    :param str compartment_id: A filter that returns only resources that match the given compartment OCID.
-    :param str name: A filter that returns only resources that match the specified name.
-    :param str state: A filter that returns only resources that match the given lifecycle state. The state value is case-insensitive.
+    Use this data source to access information about an existing resource.
     """
     ...

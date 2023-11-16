@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Preauthenticated Requests in Oracle Cloud Infrastructure Object Storage service.
@@ -70,7 +69,7 @@ type GetPreauthrequestsResult struct {
 	Bucket  string                     `pulumi:"bucket"`
 	Filters []GetPreauthrequestsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The Object Storage namespace used for the request.
 	Namespace        string  `pulumi:"namespace"`
 	ObjectNamePrefix *string `pulumi:"objectNamePrefix"`
@@ -121,12 +120,6 @@ func (o GetPreauthrequestsResultOutput) ToGetPreauthrequestsResultOutputWithCont
 	return o
 }
 
-func (o GetPreauthrequestsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetPreauthrequestsResult] {
-	return pulumix.Output[GetPreauthrequestsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The name of the bucket.  Example: `my-new-bucket1`
 func (o GetPreauthrequestsResultOutput) Bucket() pulumi.StringOutput {
 	return o.ApplyT(func(v GetPreauthrequestsResult) string { return v.Bucket }).(pulumi.StringOutput)
@@ -137,8 +130,8 @@ func (o GetPreauthrequestsResultOutput) Filters() GetPreauthrequestsFilterArrayO
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetPreauthrequestsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPreauthrequestsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetPreauthrequestsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetPreauthrequestsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The Object Storage namespace used for the request.

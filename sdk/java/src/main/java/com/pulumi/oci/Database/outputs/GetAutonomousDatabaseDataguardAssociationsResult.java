@@ -9,6 +9,7 @@ import com.pulumi.oci.Database.outputs.GetAutonomousDatabaseDataguardAssociation
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 @CustomType
@@ -17,7 +18,7 @@ public final class GetAutonomousDatabaseDataguardAssociationsResult {
      * @return The list of autonomous_database_dataguard_associations.
      * 
      */
-    private List<GetAutonomousDatabaseDataguardAssociationsAutonomousDatabaseDataguardAssociation> autonomousDatabaseDataguardAssociations;
+    private @Nullable List<GetAutonomousDatabaseDataguardAssociationsAutonomousDatabaseDataguardAssociation> autonomousDatabaseDataguardAssociations;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database that has a relationship with the peer Autonomous Database.
      * 
@@ -28,7 +29,7 @@ public final class GetAutonomousDatabaseDataguardAssociationsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
 
     private GetAutonomousDatabaseDataguardAssociationsResult() {}
     /**
@@ -36,7 +37,7 @@ public final class GetAutonomousDatabaseDataguardAssociationsResult {
      * 
      */
     public List<GetAutonomousDatabaseDataguardAssociationsAutonomousDatabaseDataguardAssociation> autonomousDatabaseDataguardAssociations() {
-        return this.autonomousDatabaseDataguardAssociations;
+        return this.autonomousDatabaseDataguardAssociations == null ? List.of() : this.autonomousDatabaseDataguardAssociations;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database that has a relationship with the peer Autonomous Database.
@@ -52,8 +53,8 @@ public final class GetAutonomousDatabaseDataguardAssociationsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
 
     public static Builder builder() {
@@ -65,10 +66,10 @@ public final class GetAutonomousDatabaseDataguardAssociationsResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetAutonomousDatabaseDataguardAssociationsAutonomousDatabaseDataguardAssociation> autonomousDatabaseDataguardAssociations;
+        private @Nullable List<GetAutonomousDatabaseDataguardAssociationsAutonomousDatabaseDataguardAssociation> autonomousDatabaseDataguardAssociations;
         private String autonomousDatabaseId;
         private @Nullable List<GetAutonomousDatabaseDataguardAssociationsFilter> filters;
-        private String id;
+        private @Nullable String id;
         public Builder() {}
         public Builder(GetAutonomousDatabaseDataguardAssociationsResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -79,8 +80,8 @@ public final class GetAutonomousDatabaseDataguardAssociationsResult {
         }
 
         @CustomType.Setter
-        public Builder autonomousDatabaseDataguardAssociations(List<GetAutonomousDatabaseDataguardAssociationsAutonomousDatabaseDataguardAssociation> autonomousDatabaseDataguardAssociations) {
-            this.autonomousDatabaseDataguardAssociations = Objects.requireNonNull(autonomousDatabaseDataguardAssociations);
+        public Builder autonomousDatabaseDataguardAssociations(@Nullable List<GetAutonomousDatabaseDataguardAssociationsAutonomousDatabaseDataguardAssociation> autonomousDatabaseDataguardAssociations) {
+            this.autonomousDatabaseDataguardAssociations = autonomousDatabaseDataguardAssociations;
             return this;
         }
         public Builder autonomousDatabaseDataguardAssociations(GetAutonomousDatabaseDataguardAssociationsAutonomousDatabaseDataguardAssociation... autonomousDatabaseDataguardAssociations) {
@@ -100,8 +101,8 @@ public final class GetAutonomousDatabaseDataguardAssociationsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         public GetAutonomousDatabaseDataguardAssociationsResult build() {

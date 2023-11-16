@@ -47,43 +47,43 @@ namespace Pulumi.Oci.DataSafe
         /// (Updatable) The OCID of the compartment containing the audit policy.
         /// </summary>
         [Output("compartmentId")]
-        public Output<string> CompartmentId { get; private set; } = null!;
+        public Output<string?> CompartmentId { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The description of the audit policy.
         /// </summary>
         [Output("description")]
-        public Output<string> Description { get; private set; } = null!;
+        public Output<string?> Description { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The display name of the audit policy. The name does not have to be unique, and it is changeable.
         /// </summary>
         [Output("displayName")]
-        public Output<string> DisplayName { get; private set; } = null!;
+        public Output<string?> DisplayName { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// Option provided to users at the target to indicate whether the Data Safe service account has to be excluded while provisioning the audit policies.
         /// </summary>
         [Output("isDataSafeServiceAccountExcluded")]
-        public Output<bool> IsDataSafeServiceAccountExcluded { get; private set; } = null!;
+        public Output<bool?> IsDataSafeServiceAccountExcluded { get; private set; } = null!;
 
         /// <summary>
         /// Details about the current state of the audit policy in Data Safe.
         /// </summary>
         [Output("lifecycleDetails")]
-        public Output<string> LifecycleDetails { get; private set; } = null!;
+        public Output<string?> LifecycleDetails { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) An optional property when incremented triggers Provision. Could be set to any integer value.
@@ -105,43 +105,43 @@ namespace Pulumi.Oci.DataSafe
         /// The current state of the audit policy.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
         [Output("systemTags")]
-        public Output<ImmutableDictionary<string, object>> SystemTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> SystemTags { get; private set; } = null!;
 
         /// <summary>
         /// The OCID of the target for which the audit policy is created.
         /// </summary>
         [Output("targetId")]
-        public Output<string> TargetId { get; private set; } = null!;
+        public Output<string?> TargetId { get; private set; } = null!;
 
         /// <summary>
         /// The time the the audit policy was created, in the format defined by RFC3339.
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// Indicates the last provisioning time of audit policies on the target, in the format defined by RFC3339.
         /// </summary>
         [Output("timeLastProvisioned")]
-        public Output<string> TimeLastProvisioned { get; private set; } = null!;
+        public Output<string?> TimeLastProvisioned { get; private set; } = null!;
 
         /// <summary>
         /// The time when the audit policies was last retrieved from this target, in the format defined by RFC3339.
         /// </summary>
         [Output("timeLastRetrieved")]
-        public Output<string> TimeLastRetrieved { get; private set; } = null!;
+        public Output<string?> TimeLastRetrieved { get; private set; } = null!;
 
         /// <summary>
         /// The last date and time the audit policy was updated, in the format defined by RFC3339.
         /// </summary>
         [Output("timeUpdated")]
-        public Output<string> TimeUpdated { get; private set; } = null!;
+        public Output<string?> TimeUpdated { get; private set; } = null!;
 
 
         /// <summary>

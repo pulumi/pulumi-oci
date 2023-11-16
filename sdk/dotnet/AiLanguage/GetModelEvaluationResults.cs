@@ -129,7 +129,7 @@ namespace Pulumi.Oci.AiLanguage
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         public readonly string ModelId;
 
         [OutputConstructor]
@@ -138,7 +138,7 @@ namespace Pulumi.Oci.AiLanguage
 
             ImmutableArray<Outputs.GetModelEvaluationResultsFilterResult> filters,
 
-            string id,
+            string? id,
 
             string modelId)
         {

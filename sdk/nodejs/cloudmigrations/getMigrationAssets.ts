@@ -73,11 +73,11 @@ export interface GetMigrationAssetsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The list of migration_asset_collection.
      */
-    readonly migrationAssetCollections: outputs.CloudMigrations.GetMigrationAssetsMigrationAssetCollection[];
+    readonly migrationAssetCollections?: outputs.CloudMigrations.GetMigrationAssetsMigrationAssetCollection[];
     readonly migrationAssetId?: string;
     /**
      * OCID of the associated migration.

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 func GetTargetDatabaseRole(ctx *pulumi.Context, args *GetTargetDatabaseRoleArgs, opts ...pulumi.InvokeOption) (*GetTargetDatabaseRoleResult, error) {
@@ -37,7 +36,7 @@ type GetTargetDatabaseRoleResult struct {
 	AuthenticationType *string                       `pulumi:"authenticationType"`
 	Filters            []GetTargetDatabaseRoleFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id                 string                      `pulumi:"id"`
+	Id                 *string                     `pulumi:"id"`
 	IsOracleMaintained *bool                       `pulumi:"isOracleMaintained"`
 	RoleNameContains   *string                     `pulumi:"roleNameContains"`
 	RoleNames          []string                    `pulumi:"roleNames"`
@@ -87,12 +86,6 @@ func (o GetTargetDatabaseRoleResultOutput) ToGetTargetDatabaseRoleResultOutputWi
 	return o
 }
 
-func (o GetTargetDatabaseRoleResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetTargetDatabaseRoleResult] {
-	return pulumix.Output[GetTargetDatabaseRoleResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetTargetDatabaseRoleResultOutput) AuthenticationType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetTargetDatabaseRoleResult) *string { return v.AuthenticationType }).(pulumi.StringPtrOutput)
 }
@@ -102,8 +95,8 @@ func (o GetTargetDatabaseRoleResultOutput) Filters() GetTargetDatabaseRoleFilter
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetTargetDatabaseRoleResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetTargetDatabaseRoleResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetTargetDatabaseRoleResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetTargetDatabaseRoleResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetTargetDatabaseRoleResultOutput) IsOracleMaintained() pulumi.BoolPtrOutput {

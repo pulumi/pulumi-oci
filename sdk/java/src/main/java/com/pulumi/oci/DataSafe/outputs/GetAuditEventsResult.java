@@ -20,7 +20,7 @@ public final class GetAuditEventsResult {
      * @return The list of audit_event_collection.
      * 
      */
-    private List<GetAuditEventsAuditEventCollection> auditEventCollections;
+    private @Nullable List<GetAuditEventsAuditEventCollection> auditEventCollections;
     /**
      * @return The OCID of the compartment containing the audit event. This is the same as that of audit profile of the target database resource compartment.
      * 
@@ -32,7 +32,7 @@ public final class GetAuditEventsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private @Nullable String scimQuery;
 
     private GetAuditEventsResult() {}
@@ -44,7 +44,7 @@ public final class GetAuditEventsResult {
      * 
      */
     public List<GetAuditEventsAuditEventCollection> auditEventCollections() {
-        return this.auditEventCollections;
+        return this.auditEventCollections == null ? List.of() : this.auditEventCollections;
     }
     /**
      * @return The OCID of the compartment containing the audit event. This is the same as that of audit profile of the target database resource compartment.
@@ -63,8 +63,8 @@ public final class GetAuditEventsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public Optional<String> scimQuery() {
         return Optional.ofNullable(this.scimQuery);
@@ -80,11 +80,11 @@ public final class GetAuditEventsResult {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable String accessLevel;
-        private List<GetAuditEventsAuditEventCollection> auditEventCollections;
+        private @Nullable List<GetAuditEventsAuditEventCollection> auditEventCollections;
         private String compartmentId;
         private @Nullable Boolean compartmentIdInSubtree;
         private @Nullable List<GetAuditEventsFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String scimQuery;
         public Builder() {}
         public Builder(GetAuditEventsResult defaults) {
@@ -104,8 +104,8 @@ public final class GetAuditEventsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder auditEventCollections(List<GetAuditEventsAuditEventCollection> auditEventCollections) {
-            this.auditEventCollections = Objects.requireNonNull(auditEventCollections);
+        public Builder auditEventCollections(@Nullable List<GetAuditEventsAuditEventCollection> auditEventCollections) {
+            this.auditEventCollections = auditEventCollections;
             return this;
         }
         public Builder auditEventCollections(GetAuditEventsAuditEventCollection... auditEventCollections) {
@@ -130,8 +130,8 @@ public final class GetAuditEventsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

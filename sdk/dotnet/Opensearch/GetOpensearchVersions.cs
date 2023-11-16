@@ -162,7 +162,7 @@ namespace Pulumi.Oci.Opensearch
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The list of opensearch_versions_collection.
         /// </summary>
@@ -174,7 +174,7 @@ namespace Pulumi.Oci.Opensearch
 
             ImmutableArray<Outputs.GetOpensearchVersionsFilterResult> filters,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetOpensearchVersionsOpensearchVersionsCollectionResult> opensearchVersionsCollections)
         {

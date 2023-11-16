@@ -6,6 +6,8 @@ package com.pulumi.oci.CloudGuard.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleEntitiesMapping {
@@ -13,39 +15,39 @@ public final class GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetect
      * @return A filter to return only resources that match the entire display name given.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return Possible type of entity
      * 
      */
-    private String entityType;
+    private @Nullable String entityType;
     /**
      * @return The entity value mapped to a data source query
      * 
      */
-    private String queryField;
+    private @Nullable String queryField;
 
     private GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleEntitiesMapping() {}
     /**
      * @return A filter to return only resources that match the entire display name given.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return Possible type of entity
      * 
      */
-    public String entityType() {
-        return this.entityType;
+    public Optional<String> entityType() {
+        return Optional.ofNullable(this.entityType);
     }
     /**
      * @return The entity value mapped to a data source query
      * 
      */
-    public String queryField() {
-        return this.queryField;
+    public Optional<String> queryField() {
+        return Optional.ofNullable(this.queryField);
     }
 
     public static Builder builder() {
@@ -57,9 +59,9 @@ public final class GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetect
     }
     @CustomType.Builder
     public static final class Builder {
-        private String displayName;
-        private String entityType;
-        private String queryField;
+        private @Nullable String displayName;
+        private @Nullable String entityType;
+        private @Nullable String queryField;
         public Builder() {}
         public Builder(GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleEntitiesMapping defaults) {
     	      Objects.requireNonNull(defaults);
@@ -69,18 +71,18 @@ public final class GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetect
         }
 
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder entityType(String entityType) {
-            this.entityType = Objects.requireNonNull(entityType);
+        public Builder entityType(@Nullable String entityType) {
+            this.entityType = entityType;
             return this;
         }
         @CustomType.Setter
-        public Builder queryField(String queryField) {
-            this.queryField = Objects.requireNonNull(queryField);
+        public Builder queryField(@Nullable String queryField) {
+            this.queryField = queryField;
             return this;
         }
         public GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleEntitiesMapping build() {

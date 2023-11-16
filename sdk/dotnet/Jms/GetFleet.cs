@@ -108,48 +108,48 @@ namespace Pulumi.Oci.Jms
         /// <summary>
         /// The approximate count of all unique applications in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
         /// </summary>
-        public readonly int ApproximateApplicationCount;
+        public readonly int? ApproximateApplicationCount;
         /// <summary>
         /// The approximate count of all unique Java installations in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
         /// </summary>
-        public readonly int ApproximateInstallationCount;
+        public readonly int? ApproximateInstallationCount;
         /// <summary>
         /// The approximate count of all unique Java servers in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
         /// </summary>
-        public readonly int ApproximateJavaServerCount;
+        public readonly int? ApproximateJavaServerCount;
         /// <summary>
         /// The approximate count of all unique Java Runtimes in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
         /// </summary>
-        public readonly int ApproximateJreCount;
+        public readonly int? ApproximateJreCount;
         /// <summary>
         /// The approximate count of all unique managed instances in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
         /// </summary>
-        public readonly int ApproximateManagedInstanceCount;
+        public readonly int? ApproximateManagedInstanceCount;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment of the Fleet.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. (See [Understanding Free-form Tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// The Fleet's description.
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// The name of the Fleet.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         public readonly string FleetId;
         /// <summary>
         /// Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`. (See [Managing Tags and Tag Namespaces](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Custom Log for inventory or operation log.
         /// </summary>
@@ -157,7 +157,7 @@ namespace Pulumi.Oci.Jms
         /// <summary>
         /// Whether or not advanced features are enabled in this Fleet. Deprecated, use `/fleets/{fleetId}/advanceFeatureConfiguration` API instead.
         /// </summary>
-        public readonly bool IsAdvancedFeaturesEnabled;
+        public readonly bool? IsAdvancedFeaturesEnabled;
         /// <summary>
         /// Custom Log for inventory or operation log.
         /// </summary>
@@ -165,53 +165,53 @@ namespace Pulumi.Oci.Jms
         /// <summary>
         /// The lifecycle state of the Fleet.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> SystemTags;
+        public readonly ImmutableDictionary<string, object>? SystemTags;
         /// <summary>
         /// The creation date and time of the Fleet (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
 
         [OutputConstructor]
         private GetFleetResult(
-            int approximateApplicationCount,
+            int? approximateApplicationCount,
 
-            int approximateInstallationCount,
+            int? approximateInstallationCount,
 
-            int approximateJavaServerCount,
+            int? approximateJavaServerCount,
 
-            int approximateJreCount,
+            int? approximateJreCount,
 
-            int approximateManagedInstanceCount,
+            int? approximateManagedInstanceCount,
 
-            string compartmentId,
+            string? compartmentId,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string description,
+            string? description,
 
-            string displayName,
+            string? displayName,
 
             string fleetId,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetFleetInventoryLogResult> inventoryLogs,
 
-            bool isAdvancedFeaturesEnabled,
+            bool? isAdvancedFeaturesEnabled,
 
             ImmutableArray<Outputs.GetFleetOperationLogResult> operationLogs,
 
-            string state,
+            string? state,
 
-            ImmutableDictionary<string, object> systemTags,
+            ImmutableDictionary<string, object>? systemTags,
 
-            string timeCreated)
+            string? timeCreated)
         {
             ApproximateApplicationCount = approximateApplicationCount;
             ApproximateInstallationCount = approximateInstallationCount;

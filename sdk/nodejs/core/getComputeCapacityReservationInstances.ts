@@ -66,7 +66,7 @@ export interface GetComputeCapacityReservationInstancesResult {
     /**
      * The list of capacity_reservation_instances.
      */
-    readonly capacityReservationInstances: outputs.Core.GetComputeCapacityReservationInstancesCapacityReservationInstance[];
+    readonly capacityReservationInstances?: outputs.Core.GetComputeCapacityReservationInstancesCapacityReservationInstance[];
     /**
      * The OCID of the compartment that contains the instance.
      */
@@ -75,7 +75,7 @@ export interface GetComputeCapacityReservationInstancesResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
 }
 /**
  * This data source provides the list of Compute Capacity Reservation Instances in Oracle Cloud Infrastructure Core service.

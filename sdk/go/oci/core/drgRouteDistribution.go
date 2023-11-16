@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Drg Route Distribution resource in Oracle Cloud Infrastructure Core service.
@@ -67,11 +66,11 @@ type DrgRouteDistribution struct {
 	pulumi.CustomResourceState
 
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the route distribution.
-	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrOutput `pulumi:"displayName"`
 	// Whether this distribution defines how routes get imported into route tables or exported through DRG Attachments
 	DistributionType pulumi.StringOutput `pulumi:"distributionType"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG the DRG route table belongs to.
@@ -82,9 +81,9 @@ type DrgRouteDistribution struct {
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// The route distribution's current state.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// The date and time the route distribution was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 }
 
 // NewDrgRouteDistribution registers a new resource with the given unique name, arguments, and options.
@@ -226,12 +225,6 @@ func (i *DrgRouteDistribution) ToDrgRouteDistributionOutputWithContext(ctx conte
 	return pulumi.ToOutputWithContext(ctx, i).(DrgRouteDistributionOutput)
 }
 
-func (i *DrgRouteDistribution) ToOutput(ctx context.Context) pulumix.Output[*DrgRouteDistribution] {
-	return pulumix.Output[*DrgRouteDistribution]{
-		OutputState: i.ToDrgRouteDistributionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // DrgRouteDistributionArrayInput is an input type that accepts DrgRouteDistributionArray and DrgRouteDistributionArrayOutput values.
 // You can construct a concrete instance of `DrgRouteDistributionArrayInput` via:
 //
@@ -255,12 +248,6 @@ func (i DrgRouteDistributionArray) ToDrgRouteDistributionArrayOutput() DrgRouteD
 
 func (i DrgRouteDistributionArray) ToDrgRouteDistributionArrayOutputWithContext(ctx context.Context) DrgRouteDistributionArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(DrgRouteDistributionArrayOutput)
-}
-
-func (i DrgRouteDistributionArray) ToOutput(ctx context.Context) pulumix.Output[[]*DrgRouteDistribution] {
-	return pulumix.Output[[]*DrgRouteDistribution]{
-		OutputState: i.ToDrgRouteDistributionArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // DrgRouteDistributionMapInput is an input type that accepts DrgRouteDistributionMap and DrgRouteDistributionMapOutput values.
@@ -288,12 +275,6 @@ func (i DrgRouteDistributionMap) ToDrgRouteDistributionMapOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(DrgRouteDistributionMapOutput)
 }
 
-func (i DrgRouteDistributionMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*DrgRouteDistribution] {
-	return pulumix.Output[map[string]*DrgRouteDistribution]{
-		OutputState: i.ToDrgRouteDistributionMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DrgRouteDistributionOutput struct{ *pulumi.OutputState }
 
 func (DrgRouteDistributionOutput) ElementType() reflect.Type {
@@ -308,15 +289,9 @@ func (o DrgRouteDistributionOutput) ToDrgRouteDistributionOutputWithContext(ctx 
 	return o
 }
 
-func (o DrgRouteDistributionOutput) ToOutput(ctx context.Context) pulumix.Output[*DrgRouteDistribution] {
-	return pulumix.Output[*DrgRouteDistribution]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the route distribution.
-func (o DrgRouteDistributionOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v *DrgRouteDistribution) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
+func (o DrgRouteDistributionOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DrgRouteDistribution) pulumi.StringPtrOutput { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -325,8 +300,8 @@ func (o DrgRouteDistributionOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-func (o DrgRouteDistributionOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v *DrgRouteDistribution) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+func (o DrgRouteDistributionOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DrgRouteDistribution) pulumi.StringPtrOutput { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Whether this distribution defines how routes get imported into route tables or exported through DRG Attachments
@@ -348,13 +323,13 @@ func (o DrgRouteDistributionOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The route distribution's current state.
-func (o DrgRouteDistributionOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *DrgRouteDistribution) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o DrgRouteDistributionOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DrgRouteDistribution) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the route distribution was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-func (o DrgRouteDistributionOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *DrgRouteDistribution) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o DrgRouteDistributionOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DrgRouteDistribution) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 type DrgRouteDistributionArrayOutput struct{ *pulumi.OutputState }
@@ -369,12 +344,6 @@ func (o DrgRouteDistributionArrayOutput) ToDrgRouteDistributionArrayOutput() Drg
 
 func (o DrgRouteDistributionArrayOutput) ToDrgRouteDistributionArrayOutputWithContext(ctx context.Context) DrgRouteDistributionArrayOutput {
 	return o
-}
-
-func (o DrgRouteDistributionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*DrgRouteDistribution] {
-	return pulumix.Output[[]*DrgRouteDistribution]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DrgRouteDistributionArrayOutput) Index(i pulumi.IntInput) DrgRouteDistributionOutput {
@@ -395,12 +364,6 @@ func (o DrgRouteDistributionMapOutput) ToDrgRouteDistributionMapOutput() DrgRout
 
 func (o DrgRouteDistributionMapOutput) ToDrgRouteDistributionMapOutputWithContext(ctx context.Context) DrgRouteDistributionMapOutput {
 	return o
-}
-
-func (o DrgRouteDistributionMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*DrgRouteDistribution] {
-	return pulumix.Output[map[string]*DrgRouteDistribution]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DrgRouteDistributionMapOutput) MapIndex(k pulumi.StringInput) DrgRouteDistributionOutput {

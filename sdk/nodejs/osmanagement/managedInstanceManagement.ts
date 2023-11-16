@@ -80,31 +80,31 @@ export class ManagedInstanceManagement extends pulumi.CustomResource {
     /**
      * (Updatable) list of child Software Sources attached to the Managed Instance
      */
-    public readonly childSoftwareSources!: pulumi.Output<outputs.OsManagement.ManagedInstanceManagementChildSoftwareSource[]>;
+    public readonly childSoftwareSources!: pulumi.Output<outputs.OsManagement.ManagedInstanceManagementChildSoftwareSource[] | undefined>;
     /**
      * OCID for the Compartment
      */
-    public /*out*/ readonly compartmentId!: pulumi.Output<string>;
+    public /*out*/ readonly compartmentId!: pulumi.Output<string | undefined>;
     /**
      * Information specified by the user about the managed instance
      */
-    public /*out*/ readonly description!: pulumi.Output<string>;
+    public /*out*/ readonly description!: pulumi.Output<string | undefined>;
     /**
      * User friendly name
      */
-    public /*out*/ readonly displayName!: pulumi.Output<string>;
+    public /*out*/ readonly displayName!: pulumi.Output<string | undefined>;
     /**
      * Time at which the instance last booted
      */
-    public /*out*/ readonly lastBoot!: pulumi.Output<string>;
+    public /*out*/ readonly lastBoot!: pulumi.Output<string | undefined>;
     /**
      * Time at which the instance last checked in
      */
-    public /*out*/ readonly lastCheckin!: pulumi.Output<string>;
+    public /*out*/ readonly lastCheckin!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The ids of the managed instance groups of which this instance is a member.
      */
-    public readonly managedInstanceGroups!: pulumi.Output<outputs.OsManagement.ManagedInstanceManagementManagedInstanceGroup[]>;
+    public readonly managedInstanceGroups!: pulumi.Output<outputs.OsManagement.ManagedInstanceManagementManagedInstanceGroup[] | undefined>;
     /**
      * OCID for the managed instance
      */
@@ -112,27 +112,27 @@ export class ManagedInstanceManagement extends pulumi.CustomResource {
     /**
      * Operating System Kernel Version
      */
-    public /*out*/ readonly osKernelVersion!: pulumi.Output<string>;
+    public /*out*/ readonly osKernelVersion!: pulumi.Output<string | undefined>;
     /**
      * Operating System Name
      */
-    public /*out*/ readonly osName!: pulumi.Output<string>;
+    public /*out*/ readonly osName!: pulumi.Output<string | undefined>;
     /**
      * Operating System Version
      */
-    public /*out*/ readonly osVersion!: pulumi.Output<string>;
+    public /*out*/ readonly osVersion!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) the parent (base) Software Source attached to the Managed Instance
      */
-    public readonly parentSoftwareSource!: pulumi.Output<outputs.OsManagement.ManagedInstanceManagementParentSoftwareSource>;
+    public readonly parentSoftwareSource!: pulumi.Output<outputs.OsManagement.ManagedInstanceManagementParentSoftwareSource | undefined>;
     /**
      * status of the managed instance.
      */
-    public /*out*/ readonly status!: pulumi.Output<string>;
+    public /*out*/ readonly status!: pulumi.Output<string | undefined>;
     /**
      * Number of updates available to be installed
      */
-    public /*out*/ readonly updatesAvailable!: pulumi.Output<number>;
+    public /*out*/ readonly updatesAvailable!: pulumi.Output<number | undefined>;
 
     /**
      * Create a ManagedInstanceManagement resource with the given unique name, arguments, and options.

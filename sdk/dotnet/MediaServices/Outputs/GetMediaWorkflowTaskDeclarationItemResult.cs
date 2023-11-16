@@ -16,29 +16,29 @@ namespace Pulumi.Oci.MediaServices.Outputs
         /// <summary>
         /// A filter to return only the resources with their system defined, unique name matching the given name.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// JSON schema specifying the parameters supported by this type of task. This is used to validate tasks' parameters when jobs are created.
         /// </summary>
-        public readonly string ParametersSchema;
+        public readonly string? ParametersSchema;
         /// <summary>
         /// JSON schema similar to the parameterSchema, but permits parameter values to refer to other parameters using the ${/path/to/another/parmeter} syntax.  This is used to validate task parameters when workflows are created.
         /// </summary>
-        public readonly string ParametersSchemaAllowingReferences;
+        public readonly string? ParametersSchemaAllowingReferences;
         /// <summary>
         /// A filter to select MediaWorkflowTaskDeclaration by version.
         /// </summary>
-        public readonly int Version;
+        public readonly int? Version;
 
         [OutputConstructor]
         private GetMediaWorkflowTaskDeclarationItemResult(
-            string name,
+            string? name,
 
-            string parametersSchema,
+            string? parametersSchema,
 
-            string parametersSchemaAllowingReferences,
+            string? parametersSchemaAllowingReferences,
 
-            int version)
+            int? version)
         {
             Name = name;
             ParametersSchema = parametersSchema;

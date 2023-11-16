@@ -9,6 +9,8 @@ import com.pulumi.oci.Autoscaling.outputs.GetAutoScalingConfigurationsAutoScalin
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRule {
@@ -16,22 +18,22 @@ public final class GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRul
      * @return The action to take when autoscaling is triggered.
      * 
      */
-    private List<GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleAction> actions;
+    private @Nullable List<GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleAction> actions;
     /**
      * @return A filter to return only resources that match the given display name exactly.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return ID of the condition that is assigned after creation.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Metric and threshold details for triggering an autoscaling action.
      * 
      */
-    private List<GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetric> metrics;
+    private @Nullable List<GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetric> metrics;
 
     private GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRule() {}
     /**
@@ -39,28 +41,28 @@ public final class GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRul
      * 
      */
     public List<GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleAction> actions() {
-        return this.actions;
+        return this.actions == null ? List.of() : this.actions;
     }
     /**
      * @return A filter to return only resources that match the given display name exactly.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return ID of the condition that is assigned after creation.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Metric and threshold details for triggering an autoscaling action.
      * 
      */
     public List<GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetric> metrics() {
-        return this.metrics;
+        return this.metrics == null ? List.of() : this.metrics;
     }
 
     public static Builder builder() {
@@ -72,10 +74,10 @@ public final class GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRul
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleAction> actions;
-        private String displayName;
-        private String id;
-        private List<GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetric> metrics;
+        private @Nullable List<GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleAction> actions;
+        private @Nullable String displayName;
+        private @Nullable String id;
+        private @Nullable List<GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetric> metrics;
         public Builder() {}
         public Builder(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRule defaults) {
     	      Objects.requireNonNull(defaults);
@@ -86,26 +88,26 @@ public final class GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRul
         }
 
         @CustomType.Setter
-        public Builder actions(List<GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleAction> actions) {
-            this.actions = Objects.requireNonNull(actions);
+        public Builder actions(@Nullable List<GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleAction> actions) {
+            this.actions = actions;
             return this;
         }
         public Builder actions(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleAction... actions) {
             return actions(List.of(actions));
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder metrics(List<GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetric> metrics) {
-            this.metrics = Objects.requireNonNull(metrics);
+        public Builder metrics(@Nullable List<GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetric> metrics) {
+            this.metrics = metrics;
             return this;
         }
         public Builder metrics(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetric... metrics) {

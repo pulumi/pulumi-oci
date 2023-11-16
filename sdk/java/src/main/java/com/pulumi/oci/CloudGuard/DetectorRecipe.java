@@ -16,6 +16,7 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -53,56 +54,56 @@ public class DetectorRecipe extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * (Updatable) Description for DetectorRecipeDetectorRule.
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
-    private Output<String> description;
+    private Output</* @Nullable */ String> description;
 
     /**
      * @return (Updatable) Description for DetectorRecipeDetectorRule.
      * 
      */
-    public Output<String> description() {
-        return this.description;
+    public Output<Optional<String>> description() {
+        return Codegen.optional(this.description);
     }
     /**
      * detector for the rule
      * 
      */
     @Export(name="detector", refs={String.class}, tree="[0]")
-    private Output<String> detector;
+    private Output</* @Nullable */ String> detector;
 
     /**
      * @return detector for the rule
      * 
      */
-    public Output<String> detector() {
-        return this.detector;
+    public Output<Optional<String>> detector() {
+        return Codegen.optional(this.detector);
     }
     /**
      * (Updatable) Detector Rules to override from source detector recipe
      * 
      */
     @Export(name="detectorRules", refs={List.class,DetectorRecipeDetectorRule.class}, tree="[0,1]")
-    private Output<List<DetectorRecipeDetectorRule>> detectorRules;
+    private Output</* @Nullable */ List<DetectorRecipeDetectorRule>> detectorRules;
 
     /**
      * @return (Updatable) Detector Rules to override from source detector recipe
      * 
      */
-    public Output<List<DetectorRecipeDetectorRule>> detectorRules() {
-        return this.detectorRules;
+    public Output<Optional<List<DetectorRecipeDetectorRule>>> detectorRules() {
+        return Codegen.optional(this.detectorRules);
     }
     /**
      * (Updatable) Detector recipe display name.
@@ -127,14 +128,14 @@ public class DetectorRecipe extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="effectiveDetectorRules", refs={List.class,DetectorRecipeEffectiveDetectorRule.class}, tree="[0,1]")
-    private Output<List<DetectorRecipeEffectiveDetectorRule>> effectiveDetectorRules;
+    private Output</* @Nullable */ List<DetectorRecipeEffectiveDetectorRule>> effectiveDetectorRules;
 
     /**
      * @return List of effective detector rules for the detector type for recipe after applying defaults
      * 
      */
-    public Output<List<DetectorRecipeEffectiveDetectorRule>> effectiveDetectorRules() {
-        return this.effectiveDetectorRules;
+    public Output<Optional<List<DetectorRecipeEffectiveDetectorRule>>> effectiveDetectorRules() {
+        return Codegen.optional(this.effectiveDetectorRules);
     }
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
@@ -143,7 +144,7 @@ public class DetectorRecipe extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
@@ -151,22 +152,22 @@ public class DetectorRecipe extends com.pulumi.resources.CustomResource {
      * Avoid entering confidential information.
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * Owner of detector recipe
      * 
      */
     @Export(name="owner", refs={String.class}, tree="[0]")
-    private Output<String> owner;
+    private Output</* @Nullable */ String> owner;
 
     /**
      * @return Owner of detector recipe
      * 
      */
-    public Output<String> owner() {
-        return this.owner;
+    public Output<Optional<String>> owner() {
+        return Codegen.optional(this.owner);
     }
     /**
      * The id of the source detector recipe.
@@ -176,7 +177,7 @@ public class DetectorRecipe extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="sourceDetectorRecipeId", refs={String.class}, tree="[0]")
-    private Output<String> sourceDetectorRecipeId;
+    private Output</* @Nullable */ String> sourceDetectorRecipeId;
 
     /**
      * @return The id of the source detector recipe.
@@ -185,78 +186,78 @@ public class DetectorRecipe extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Output<String> sourceDetectorRecipeId() {
-        return this.sourceDetectorRecipeId;
+    public Output<Optional<String>> sourceDetectorRecipeId() {
+        return Codegen.optional(this.sourceDetectorRecipeId);
     }
     /**
      * The current state of the resource.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The current state of the resource.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
     @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> systemTags;
+    private Output</* @Nullable */ Map<String,Object>> systemTags;
 
     /**
      * @return System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    public Output<Map<String,Object>> systemTags() {
-        return this.systemTags;
+    public Output<Optional<Map<String,Object>>> systemTags() {
+        return Codegen.optional(this.systemTags);
     }
     /**
      * The recipe attached to targets
      * 
      */
     @Export(name="targetIds", refs={List.class,String.class}, tree="[0,1]")
-    private Output<List<String>> targetIds;
+    private Output</* @Nullable */ List<String>> targetIds;
 
     /**
      * @return The recipe attached to targets
      * 
      */
-    public Output<List<String>> targetIds() {
-        return this.targetIds;
+    public Output<Optional<List<String>>> targetIds() {
+        return Codegen.optional(this.targetIds);
     }
     /**
      * The date and time the detector recipe was created. Format defined by RFC3339.
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The date and time the detector recipe was created. Format defined by RFC3339.
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * The date and time the detector recipe was updated. Format defined by RFC3339.
      * 
      */
     @Export(name="timeUpdated", refs={String.class}, tree="[0]")
-    private Output<String> timeUpdated;
+    private Output</* @Nullable */ String> timeUpdated;
 
     /**
      * @return The date and time the detector recipe was updated. Format defined by RFC3339.
      * 
      */
-    public Output<String> timeUpdated() {
-        return this.timeUpdated;
+    public Output<Optional<String>> timeUpdated() {
+        return Codegen.optional(this.timeUpdated);
     }
 
     /**

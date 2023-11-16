@@ -16,17 +16,17 @@ namespace Pulumi.Oci.MeteringComputation.Outputs
         /// <summary>
         /// The graph type.
         /// </summary>
-        public readonly string Graph;
+        public readonly string? Graph;
         /// <summary>
         /// A cumulative graph.
         /// </summary>
-        public readonly bool IsCumulativeGraph;
+        public readonly bool? IsCumulativeGraph;
 
         [OutputConstructor]
         private GetQueryQueryDefinitionCostAnalysisUiResult(
-            string graph,
+            string? graph,
 
-            bool isCumulativeGraph)
+            bool? isCumulativeGraph)
         {
             Graph = graph;
             IsCumulativeGraph = isCumulativeGraph;

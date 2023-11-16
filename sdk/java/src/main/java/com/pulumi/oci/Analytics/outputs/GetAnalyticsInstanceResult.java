@@ -11,6 +11,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAnalyticsInstanceResult {
@@ -19,83 +21,83 @@ public final class GetAnalyticsInstanceResult {
      * @return Service instance capacity metadata (e.g.: OLPU count, number of users, ...etc...).
      * 
      */
-    private List<GetAnalyticsInstanceCapacity> capacities;
+    private @Nullable List<GetAnalyticsInstanceCapacity> capacities;
     /**
      * @return The OCID of the compartment.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return Description of the vanity url.
      * 
      */
-    private String description;
+    private @Nullable String description;
     /**
      * @return Email address receiving notifications.
      * 
      */
-    private String emailNotification;
+    private @Nullable String emailNotification;
     /**
      * @return Analytics feature set.
      * 
      */
-    private String featureSet;
+    private @Nullable String featureSet;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return The Virtual Cloud Network OCID.
      * 
      */
-    private String id;
-    private String idcsAccessToken;
+    private @Nullable String id;
+    private @Nullable String idcsAccessToken;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates Oracle managed default encryption.
      * 
      */
-    private String kmsKeyId;
+    private @Nullable String kmsKeyId;
     /**
      * @return The license used for the service.
      * 
      */
-    private String licenseType;
+    private @Nullable String licenseType;
     /**
      * @return The name of the Analytics instance. This name must be unique in the tenancy and cannot be changed.
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return Base representation of a network endpoint.
      * 
      */
-    private List<GetAnalyticsInstanceNetworkEndpointDetail> networkEndpointDetails;
+    private @Nullable List<GetAnalyticsInstanceNetworkEndpointDetail> networkEndpointDetails;
     /**
      * @return URL of the Analytics service.
      * 
      */
-    private String serviceUrl;
+    private @Nullable String serviceUrl;
     /**
      * @return The current state of an instance.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return The date and time the instance was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The date and time the instance was last updated (in the format defined by RFC3339). This timestamp represents updates made through this API. External events do not influence it.
      * 
      */
-    private String timeUpdated;
+    private @Nullable String timeUpdated;
 
     private GetAnalyticsInstanceResult() {}
     public String analyticsInstanceId() {
@@ -106,115 +108,115 @@ public final class GetAnalyticsInstanceResult {
      * 
      */
     public List<GetAnalyticsInstanceCapacity> capacities() {
-        return this.capacities;
+        return this.capacities == null ? List.of() : this.capacities;
     }
     /**
      * @return The OCID of the compartment.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return Description of the vanity url.
      * 
      */
-    public String description() {
-        return this.description;
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
     /**
      * @return Email address receiving notifications.
      * 
      */
-    public String emailNotification() {
-        return this.emailNotification;
+    public Optional<String> emailNotification() {
+        return Optional.ofNullable(this.emailNotification);
     }
     /**
      * @return Analytics feature set.
      * 
      */
-    public String featureSet() {
-        return this.featureSet;
+    public Optional<String> featureSet() {
+        return Optional.ofNullable(this.featureSet);
     }
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return The Virtual Cloud Network OCID.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
-    public String idcsAccessToken() {
-        return this.idcsAccessToken;
+    public Optional<String> idcsAccessToken() {
+        return Optional.ofNullable(this.idcsAccessToken);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates Oracle managed default encryption.
      * 
      */
-    public String kmsKeyId() {
-        return this.kmsKeyId;
+    public Optional<String> kmsKeyId() {
+        return Optional.ofNullable(this.kmsKeyId);
     }
     /**
      * @return The license used for the service.
      * 
      */
-    public String licenseType() {
-        return this.licenseType;
+    public Optional<String> licenseType() {
+        return Optional.ofNullable(this.licenseType);
     }
     /**
      * @return The name of the Analytics instance. This name must be unique in the tenancy and cannot be changed.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return Base representation of a network endpoint.
      * 
      */
     public List<GetAnalyticsInstanceNetworkEndpointDetail> networkEndpointDetails() {
-        return this.networkEndpointDetails;
+        return this.networkEndpointDetails == null ? List.of() : this.networkEndpointDetails;
     }
     /**
      * @return URL of the Analytics service.
      * 
      */
-    public String serviceUrl() {
-        return this.serviceUrl;
+    public Optional<String> serviceUrl() {
+        return Optional.ofNullable(this.serviceUrl);
     }
     /**
      * @return The current state of an instance.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return The date and time the instance was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return The date and time the instance was last updated (in the format defined by RFC3339). This timestamp represents updates made through this API. External events do not influence it.
      * 
      */
-    public String timeUpdated() {
-        return this.timeUpdated;
+    public Optional<String> timeUpdated() {
+        return Optional.ofNullable(this.timeUpdated);
     }
 
     public static Builder builder() {
@@ -227,23 +229,23 @@ public final class GetAnalyticsInstanceResult {
     @CustomType.Builder
     public static final class Builder {
         private String analyticsInstanceId;
-        private List<GetAnalyticsInstanceCapacity> capacities;
-        private String compartmentId;
-        private Map<String,Object> definedTags;
-        private String description;
-        private String emailNotification;
-        private String featureSet;
-        private Map<String,Object> freeformTags;
-        private String id;
-        private String idcsAccessToken;
-        private String kmsKeyId;
-        private String licenseType;
-        private String name;
-        private List<GetAnalyticsInstanceNetworkEndpointDetail> networkEndpointDetails;
-        private String serviceUrl;
-        private String state;
-        private String timeCreated;
-        private String timeUpdated;
+        private @Nullable List<GetAnalyticsInstanceCapacity> capacities;
+        private @Nullable String compartmentId;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String description;
+        private @Nullable String emailNotification;
+        private @Nullable String featureSet;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String id;
+        private @Nullable String idcsAccessToken;
+        private @Nullable String kmsKeyId;
+        private @Nullable String licenseType;
+        private @Nullable String name;
+        private @Nullable List<GetAnalyticsInstanceNetworkEndpointDetail> networkEndpointDetails;
+        private @Nullable String serviceUrl;
+        private @Nullable String state;
+        private @Nullable String timeCreated;
+        private @Nullable String timeUpdated;
         public Builder() {}
         public Builder(GetAnalyticsInstanceResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -273,94 +275,94 @@ public final class GetAnalyticsInstanceResult {
             return this;
         }
         @CustomType.Setter
-        public Builder capacities(List<GetAnalyticsInstanceCapacity> capacities) {
-            this.capacities = Objects.requireNonNull(capacities);
+        public Builder capacities(@Nullable List<GetAnalyticsInstanceCapacity> capacities) {
+            this.capacities = capacities;
             return this;
         }
         public Builder capacities(GetAnalyticsInstanceCapacity... capacities) {
             return capacities(List.of(capacities));
         }
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+        public Builder description(@Nullable String description) {
+            this.description = description;
             return this;
         }
         @CustomType.Setter
-        public Builder emailNotification(String emailNotification) {
-            this.emailNotification = Objects.requireNonNull(emailNotification);
+        public Builder emailNotification(@Nullable String emailNotification) {
+            this.emailNotification = emailNotification;
             return this;
         }
         @CustomType.Setter
-        public Builder featureSet(String featureSet) {
-            this.featureSet = Objects.requireNonNull(featureSet);
+        public Builder featureSet(@Nullable String featureSet) {
+            this.featureSet = featureSet;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder idcsAccessToken(String idcsAccessToken) {
-            this.idcsAccessToken = Objects.requireNonNull(idcsAccessToken);
+        public Builder idcsAccessToken(@Nullable String idcsAccessToken) {
+            this.idcsAccessToken = idcsAccessToken;
             return this;
         }
         @CustomType.Setter
-        public Builder kmsKeyId(String kmsKeyId) {
-            this.kmsKeyId = Objects.requireNonNull(kmsKeyId);
+        public Builder kmsKeyId(@Nullable String kmsKeyId) {
+            this.kmsKeyId = kmsKeyId;
             return this;
         }
         @CustomType.Setter
-        public Builder licenseType(String licenseType) {
-            this.licenseType = Objects.requireNonNull(licenseType);
+        public Builder licenseType(@Nullable String licenseType) {
+            this.licenseType = licenseType;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder networkEndpointDetails(List<GetAnalyticsInstanceNetworkEndpointDetail> networkEndpointDetails) {
-            this.networkEndpointDetails = Objects.requireNonNull(networkEndpointDetails);
+        public Builder networkEndpointDetails(@Nullable List<GetAnalyticsInstanceNetworkEndpointDetail> networkEndpointDetails) {
+            this.networkEndpointDetails = networkEndpointDetails;
             return this;
         }
         public Builder networkEndpointDetails(GetAnalyticsInstanceNetworkEndpointDetail... networkEndpointDetails) {
             return networkEndpointDetails(List.of(networkEndpointDetails));
         }
         @CustomType.Setter
-        public Builder serviceUrl(String serviceUrl) {
-            this.serviceUrl = Objects.requireNonNull(serviceUrl);
+        public Builder serviceUrl(@Nullable String serviceUrl) {
+            this.serviceUrl = serviceUrl;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+        public Builder timeUpdated(@Nullable String timeUpdated) {
+            this.timeUpdated = timeUpdated;
             return this;
         }
         public GetAnalyticsInstanceResult build() {

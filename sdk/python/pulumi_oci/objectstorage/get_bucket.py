@@ -95,183 +95,117 @@ class GetBucketResult:
 
     @property
     @pulumi.getter(name="accessType")
-    def access_type(self) -> str:
-        """
-        The type of public access enabled on this bucket. A bucket is set to `NoPublicAccess` by default, which only allows an authenticated caller to access the bucket and its contents. When `ObjectRead` is enabled on the bucket, public access is allowed for the `GetObject`, `HeadObject`, and `ListObjects` operations. When `ObjectReadWithoutList` is enabled on the bucket, public access is allowed for the `GetObject` and `HeadObject` operations.
-        """
+    def access_type(self) -> Optional[str]:
         return pulumi.get(self, "access_type")
 
     @property
     @pulumi.getter(name="approximateCount")
-    def approximate_count(self) -> str:
-        """
-        The approximate number of objects in the bucket. Count statistics are reported periodically. You will see a lag between what is displayed and the actual object count.
-        """
+    def approximate_count(self) -> Optional[str]:
         return pulumi.get(self, "approximate_count")
 
     @property
     @pulumi.getter(name="approximateSize")
-    def approximate_size(self) -> str:
-        """
-        The approximate total size in bytes of all objects in the bucket. Size statistics are reported periodically. You will see a lag between what is displayed and the actual size of the bucket.
-        """
+    def approximate_size(self) -> Optional[str]:
         return pulumi.get(self, "approximate_size")
 
     @property
     @pulumi.getter(name="autoTiering")
-    def auto_tiering(self) -> str:
-        """
-        The auto tiering status on the bucket. A bucket is created with auto tiering `Disabled` by default. For auto tiering `InfrequentAccess`, objects are transitioned automatically between the 'Standard' and 'InfrequentAccess' tiers based on the access pattern of the objects.
-        """
+    def auto_tiering(self) -> Optional[str]:
         return pulumi.get(self, "auto_tiering")
 
     @property
     @pulumi.getter(name="bucketId")
-    def bucket_id(self) -> str:
-        """
-        The OCID of the bucket which is a Oracle assigned unique identifier for this resource type (bucket). `bucket_id` cannot be used for bucket lookup.
-        """
+    def bucket_id(self) -> Optional[str]:
         return pulumi.get(self, "bucket_id")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The compartment ID in which the bucket is authorized.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="createdBy")
-    def created_by(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the bucket.
-        """
+    def created_by(self) -> Optional[str]:
         return pulumi.get(self, "created_by")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def etag(self) -> str:
-        """
-        The entity tag (ETag) for the bucket.
-        """
+    def etag(self) -> Optional[str]:
         return pulumi.get(self, "etag")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="isReadOnly")
-    def is_read_only(self) -> bool:
-        """
-        Whether or not this bucket is read only. By default, `isReadOnly` is set to `false`. This will be set to 'true' when this bucket is configured as a destination in a replication policy.
-        """
+    def is_read_only(self) -> Optional[bool]:
         return pulumi.get(self, "is_read_only")
 
     @property
     @pulumi.getter(name="kmsKeyId")
-    def kms_key_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a master encryption key used to call the Key Management service to generate a data encryption key or to encrypt or decrypt a data encryption key.
-        """
+    def kms_key_id(self) -> Optional[str]:
         return pulumi.get(self, "kms_key_id")
 
     @property
     @pulumi.getter
-    def metadata(self) -> Mapping[str, Any]:
-        """
-        Arbitrary string keys and values for user-defined metadata.
-        """
+    def metadata(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "metadata")
 
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        The name of the bucket. Avoid entering confidential information. Example: my-new-bucket1
-        """
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
     def namespace(self) -> str:
-        """
-        The Object Storage namespace in which the bucket resides.
-        """
         return pulumi.get(self, "namespace")
 
     @property
     @pulumi.getter(name="objectEventsEnabled")
-    def object_events_enabled(self) -> bool:
-        """
-        Whether or not events are emitted for object state changes in this bucket. By default, `objectEventsEnabled` is set to `false`. Set `objectEventsEnabled` to `true` to emit events for object state changes. For more information about events, see [Overview of Events](https://docs.cloud.oracle.com/iaas/Content/Events/Concepts/eventsoverview.htm).
-        """
+    def object_events_enabled(self) -> Optional[bool]:
         return pulumi.get(self, "object_events_enabled")
 
     @property
     @pulumi.getter(name="objectLifecyclePolicyEtag")
-    def object_lifecycle_policy_etag(self) -> str:
-        """
-        The entity tag (ETag) for the live object lifecycle policy on the bucket.
-        """
+    def object_lifecycle_policy_etag(self) -> Optional[str]:
         return pulumi.get(self, "object_lifecycle_policy_etag")
 
     @property
     @pulumi.getter(name="replicationEnabled")
-    def replication_enabled(self) -> bool:
-        """
-        Whether or not this bucket is a replication source. By default, `replicationEnabled` is set to `false`. This will be set to 'true' when you create a replication policy for the bucket.
-        """
+    def replication_enabled(self) -> Optional[bool]:
         return pulumi.get(self, "replication_enabled")
 
     @property
     @pulumi.getter(name="retentionRules")
-    def retention_rules(self) -> Sequence['outputs.GetBucketRetentionRuleResult']:
-        """
-        User specified list of retention rules for the bucket.
-        """
+    def retention_rules(self) -> Optional[Sequence['outputs.GetBucketRetentionRuleResult']]:
         return pulumi.get(self, "retention_rules")
 
     @property
     @pulumi.getter(name="storageTier")
-    def storage_tier(self) -> str:
-        """
-        The storage tier type assigned to the bucket. A bucket is set to `Standard` tier by default, which means objects uploaded or copied to the bucket will be in the standard storage tier. When the `Archive` tier type is set explicitly for a bucket, objects uploaded or copied to the bucket will be stored in archive storage. The `storageTier` property is immutable after bucket is created.
-        """
+    def storage_tier(self) -> Optional[str]:
         return pulumi.get(self, "storage_tier")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the bucket was created, as described in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-14.29).
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter
-    def versioning(self) -> str:
-        """
-        The versioning status on the bucket. A bucket is created with versioning `Disabled` by default. For versioning `Enabled`, objects are protected from overwrites and deletes, by maintaining their version history. When versioning is `Suspended`, the previous versions will still remain but new versions will no longer be created when overwitten or deleted.
-        """
+    def versioning(self) -> Optional[str]:
         return pulumi.get(self, "versioning")
 
 
@@ -310,23 +244,7 @@ def get_bucket(name: Optional[str] = None,
                namespace: Optional[str] = None,
                opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetBucketResult:
     """
-    This data source provides details about a specific Bucket resource in Oracle Cloud Infrastructure Object Storage service.
-
-    Gets the current representation of the given bucket in the given Object Storage namespace.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_bucket = oci.ObjectStorage.get_bucket(name=var["bucket_name"],
-        namespace=var["bucket_namespace"])
-    ```
-
-
-    :param str name: The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
-    :param str namespace: The Object Storage namespace used for the request.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['name'] = name
@@ -365,22 +283,6 @@ def get_bucket_output(name: Optional[pulumi.Input[str]] = None,
                       namespace: Optional[pulumi.Input[str]] = None,
                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetBucketResult]:
     """
-    This data source provides details about a specific Bucket resource in Oracle Cloud Infrastructure Object Storage service.
-
-    Gets the current representation of the given bucket in the given Object Storage namespace.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_bucket = oci.ObjectStorage.get_bucket(name=var["bucket_name"],
-        namespace=var["bucket_namespace"])
-    ```
-
-
-    :param str name: The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
-    :param str namespace: The Object Storage namespace used for the request.
+    Use this data source to access information about an existing resource.
     """
     ...

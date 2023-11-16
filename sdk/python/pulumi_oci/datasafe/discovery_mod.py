@@ -28,22 +28,6 @@ class DiscoveryModArgs:
                  sensitive_type_ids_for_discoveries: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
         """
         The set of arguments for constructing a DiscoveryMod resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment where the discovery job resource should be created.
-        :param pulumi.Input[str] sensitive_data_model_id: The OCID of the sensitive data model.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] discovery_type: The type of the discovery job. It defines the job's scope. NEW identifies new sensitive columns in the target database that are not in the sensitive data model. DELETED identifies columns that are present in the sensitive data model but have been deleted from the target database. MODIFIED identifies columns that are present in the target database as well as the sensitive data model but some of their attributes have been modified. ALL covers all the above three scenarios and reports new, deleted and modified columns.
-        :param pulumi.Input[str] display_name: A user-friendly name for the discovery job. Does not have to be unique, and it is changeable. Avoid entering confidential information.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[bool] is_app_defined_relation_discovery_enabled: Indicates if the discovery job should identify potential application-level (non-dictionary) referential relationships between columns. Note that data discovery automatically identifies and adds database-level (dictionary-defined) relationships. This option helps identify application-level relationships that are not defined in the database dictionary, which in turn, helps identify additional sensitive columns and preserve referential integrity during data masking. It's disabled by default and should be used only if there is a need to identify application-level relationships.
-        :param pulumi.Input[bool] is_include_all_schemas: Indicates if all the schemas should be scanned by the discovery job. If it is set to true, sensitive data is discovered in all schemas (except for schemas maintained by Oracle). If both attributes are not provided, the configuration from the sensitive data model is used.
-        :param pulumi.Input[bool] is_include_all_sensitive_types: Indicates if all the existing sensitive types should be used by the discovery job. If it's set to true, the sensitiveTypeIdsForDiscovery attribute is ignored and all sensitive types are used for data discovery. If both attributes are not provided, the configuration from the sensitive data model is used.
-        :param pulumi.Input[bool] is_sample_data_collection_enabled: Indicates if the discovery job should collect and store sample data values for the discovered columns. Sample data helps review the discovered columns and ensure that they actually contain sensitive data. As it collects original data from the target database, it's disabled by default and should be used only if it's acceptable to store sample data in Data Safe's repository in Oracle Cloud. Note that sample data values are not collected for columns with the following data types: LONG, LOB, RAW, XMLTYPE and BFILE.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] schemas_for_discoveries: The schemas to be scanned by the discovery job. If not provided, the schemasForDiscovery attribute of the sensitive data model is used to get the list of schemas.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] sensitive_type_ids_for_discoveries: The OCIDs of the sensitive types to be used by the discovery job. If not provided, the sensitiveTypeIdsForDiscovery attribute of the sensitive data model is used to get the list of sensitive types. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "sensitive_data_model_id", sensitive_data_model_id)
@@ -71,9 +55,6 @@ class DiscoveryModArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The OCID of the compartment where the discovery job resource should be created.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -83,9 +64,6 @@ class DiscoveryModArgs:
     @property
     @pulumi.getter(name="sensitiveDataModelId")
     def sensitive_data_model_id(self) -> pulumi.Input[str]:
-        """
-        The OCID of the sensitive data model.
-        """
         return pulumi.get(self, "sensitive_data_model_id")
 
     @sensitive_data_model_id.setter
@@ -95,9 +73,6 @@ class DiscoveryModArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -107,9 +82,6 @@ class DiscoveryModArgs:
     @property
     @pulumi.getter(name="discoveryType")
     def discovery_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        The type of the discovery job. It defines the job's scope. NEW identifies new sensitive columns in the target database that are not in the sensitive data model. DELETED identifies columns that are present in the sensitive data model but have been deleted from the target database. MODIFIED identifies columns that are present in the target database as well as the sensitive data model but some of their attributes have been modified. ALL covers all the above three scenarios and reports new, deleted and modified columns.
-        """
         return pulumi.get(self, "discovery_type")
 
     @discovery_type.setter
@@ -119,9 +91,6 @@ class DiscoveryModArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        A user-friendly name for the discovery job. Does not have to be unique, and it is changeable. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -131,9 +100,6 @@ class DiscoveryModArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -143,9 +109,6 @@ class DiscoveryModArgs:
     @property
     @pulumi.getter(name="isAppDefinedRelationDiscoveryEnabled")
     def is_app_defined_relation_discovery_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Indicates if the discovery job should identify potential application-level (non-dictionary) referential relationships between columns. Note that data discovery automatically identifies and adds database-level (dictionary-defined) relationships. This option helps identify application-level relationships that are not defined in the database dictionary, which in turn, helps identify additional sensitive columns and preserve referential integrity during data masking. It's disabled by default and should be used only if there is a need to identify application-level relationships.
-        """
         return pulumi.get(self, "is_app_defined_relation_discovery_enabled")
 
     @is_app_defined_relation_discovery_enabled.setter
@@ -155,9 +118,6 @@ class DiscoveryModArgs:
     @property
     @pulumi.getter(name="isIncludeAllSchemas")
     def is_include_all_schemas(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Indicates if all the schemas should be scanned by the discovery job. If it is set to true, sensitive data is discovered in all schemas (except for schemas maintained by Oracle). If both attributes are not provided, the configuration from the sensitive data model is used.
-        """
         return pulumi.get(self, "is_include_all_schemas")
 
     @is_include_all_schemas.setter
@@ -167,9 +127,6 @@ class DiscoveryModArgs:
     @property
     @pulumi.getter(name="isIncludeAllSensitiveTypes")
     def is_include_all_sensitive_types(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Indicates if all the existing sensitive types should be used by the discovery job. If it's set to true, the sensitiveTypeIdsForDiscovery attribute is ignored and all sensitive types are used for data discovery. If both attributes are not provided, the configuration from the sensitive data model is used.
-        """
         return pulumi.get(self, "is_include_all_sensitive_types")
 
     @is_include_all_sensitive_types.setter
@@ -179,9 +136,6 @@ class DiscoveryModArgs:
     @property
     @pulumi.getter(name="isSampleDataCollectionEnabled")
     def is_sample_data_collection_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Indicates if the discovery job should collect and store sample data values for the discovered columns. Sample data helps review the discovered columns and ensure that they actually contain sensitive data. As it collects original data from the target database, it's disabled by default and should be used only if it's acceptable to store sample data in Data Safe's repository in Oracle Cloud. Note that sample data values are not collected for columns with the following data types: LONG, LOB, RAW, XMLTYPE and BFILE.
-        """
         return pulumi.get(self, "is_sample_data_collection_enabled")
 
     @is_sample_data_collection_enabled.setter
@@ -191,9 +145,6 @@ class DiscoveryModArgs:
     @property
     @pulumi.getter(name="schemasForDiscoveries")
     def schemas_for_discoveries(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        The schemas to be scanned by the discovery job. If not provided, the schemasForDiscovery attribute of the sensitive data model is used to get the list of schemas.
-        """
         return pulumi.get(self, "schemas_for_discoveries")
 
     @schemas_for_discoveries.setter
@@ -203,13 +154,6 @@ class DiscoveryModArgs:
     @property
     @pulumi.getter(name="sensitiveTypeIdsForDiscoveries")
     def sensitive_type_ids_for_discoveries(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        The OCIDs of the sensitive types to be used by the discovery job. If not provided, the sensitiveTypeIdsForDiscovery attribute of the sensitive data model is used to get the list of sensitive types. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "sensitive_type_ids_for_discoveries")
 
     @sensitive_type_ids_for_discoveries.setter
@@ -245,33 +189,6 @@ class _DiscoveryModState:
                  total_schemas_scanned: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering DiscoveryMod resources.
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment where the discovery job resource should be created.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] discovery_type: The type of the discovery job. It defines the job's scope. NEW identifies new sensitive columns in the target database that are not in the sensitive data model. DELETED identifies columns that are present in the sensitive data model but have been deleted from the target database. MODIFIED identifies columns that are present in the target database as well as the sensitive data model but some of their attributes have been modified. ALL covers all the above three scenarios and reports new, deleted and modified columns.
-        :param pulumi.Input[str] display_name: A user-friendly name for the discovery job. Does not have to be unique, and it is changeable. Avoid entering confidential information.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[bool] is_app_defined_relation_discovery_enabled: Indicates if the discovery job should identify potential application-level (non-dictionary) referential relationships between columns. Note that data discovery automatically identifies and adds database-level (dictionary-defined) relationships. This option helps identify application-level relationships that are not defined in the database dictionary, which in turn, helps identify additional sensitive columns and preserve referential integrity during data masking. It's disabled by default and should be used only if there is a need to identify application-level relationships.
-        :param pulumi.Input[bool] is_include_all_schemas: Indicates if all the schemas should be scanned by the discovery job. If it is set to true, sensitive data is discovered in all schemas (except for schemas maintained by Oracle). If both attributes are not provided, the configuration from the sensitive data model is used.
-        :param pulumi.Input[bool] is_include_all_sensitive_types: Indicates if all the existing sensitive types should be used by the discovery job. If it's set to true, the sensitiveTypeIdsForDiscovery attribute is ignored and all sensitive types are used for data discovery. If both attributes are not provided, the configuration from the sensitive data model is used.
-        :param pulumi.Input[bool] is_sample_data_collection_enabled: Indicates if the discovery job should collect and store sample data values for the discovered columns. Sample data helps review the discovered columns and ensure that they actually contain sensitive data. As it collects original data from the target database, it's disabled by default and should be used only if it's acceptable to store sample data in Data Safe's repository in Oracle Cloud. Note that sample data values are not collected for columns with the following data types: LONG, LOB, RAW, XMLTYPE and BFILE.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] schemas_for_discoveries: The schemas to be scanned by the discovery job. If not provided, the schemasForDiscovery attribute of the sensitive data model is used to get the list of schemas.
-        :param pulumi.Input[str] sensitive_data_model_id: The OCID of the sensitive data model.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] sensitive_type_ids_for_discoveries: The OCIDs of the sensitive types to be used by the discovery job. If not provided, the sensitiveTypeIdsForDiscovery attribute of the sensitive data model is used to get the list of sensitive types. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] state: The current state of the discovery job.
-        :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[str] target_id: The OCID of the target database associated with the discovery job.
-        :param pulumi.Input[str] time_finished: The date and time the discovery job finished, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)..
-        :param pulumi.Input[str] time_started: The date and time the discovery job started, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        :param pulumi.Input[str] total_columns_scanned: The total number of columns scanned by the discovery job.
-        :param pulumi.Input[str] total_deleted_sensitive_columns: The total number of deleted sensitive columns identified by the discovery job.
-        :param pulumi.Input[str] total_modified_sensitive_columns: The total number of modified sensitive columns identified by the discovery job.
-        :param pulumi.Input[str] total_new_sensitive_columns: The total number of new sensitive columns identified by the discovery job.
-        :param pulumi.Input[str] total_objects_scanned: The total number of objects (tables and editioning views) scanned by the discovery job.
-        :param pulumi.Input[str] total_schemas_scanned: The total number of schemas scanned by the discovery job.
         """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
@@ -323,9 +240,6 @@ class _DiscoveryModState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The OCID of the compartment where the discovery job resource should be created.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -335,9 +249,6 @@ class _DiscoveryModState:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -347,9 +258,6 @@ class _DiscoveryModState:
     @property
     @pulumi.getter(name="discoveryType")
     def discovery_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        The type of the discovery job. It defines the job's scope. NEW identifies new sensitive columns in the target database that are not in the sensitive data model. DELETED identifies columns that are present in the sensitive data model but have been deleted from the target database. MODIFIED identifies columns that are present in the target database as well as the sensitive data model but some of their attributes have been modified. ALL covers all the above three scenarios and reports new, deleted and modified columns.
-        """
         return pulumi.get(self, "discovery_type")
 
     @discovery_type.setter
@@ -359,9 +267,6 @@ class _DiscoveryModState:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        A user-friendly name for the discovery job. Does not have to be unique, and it is changeable. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -371,9 +276,6 @@ class _DiscoveryModState:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -383,9 +285,6 @@ class _DiscoveryModState:
     @property
     @pulumi.getter(name="isAppDefinedRelationDiscoveryEnabled")
     def is_app_defined_relation_discovery_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Indicates if the discovery job should identify potential application-level (non-dictionary) referential relationships between columns. Note that data discovery automatically identifies and adds database-level (dictionary-defined) relationships. This option helps identify application-level relationships that are not defined in the database dictionary, which in turn, helps identify additional sensitive columns and preserve referential integrity during data masking. It's disabled by default and should be used only if there is a need to identify application-level relationships.
-        """
         return pulumi.get(self, "is_app_defined_relation_discovery_enabled")
 
     @is_app_defined_relation_discovery_enabled.setter
@@ -395,9 +294,6 @@ class _DiscoveryModState:
     @property
     @pulumi.getter(name="isIncludeAllSchemas")
     def is_include_all_schemas(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Indicates if all the schemas should be scanned by the discovery job. If it is set to true, sensitive data is discovered in all schemas (except for schemas maintained by Oracle). If both attributes are not provided, the configuration from the sensitive data model is used.
-        """
         return pulumi.get(self, "is_include_all_schemas")
 
     @is_include_all_schemas.setter
@@ -407,9 +303,6 @@ class _DiscoveryModState:
     @property
     @pulumi.getter(name="isIncludeAllSensitiveTypes")
     def is_include_all_sensitive_types(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Indicates if all the existing sensitive types should be used by the discovery job. If it's set to true, the sensitiveTypeIdsForDiscovery attribute is ignored and all sensitive types are used for data discovery. If both attributes are not provided, the configuration from the sensitive data model is used.
-        """
         return pulumi.get(self, "is_include_all_sensitive_types")
 
     @is_include_all_sensitive_types.setter
@@ -419,9 +312,6 @@ class _DiscoveryModState:
     @property
     @pulumi.getter(name="isSampleDataCollectionEnabled")
     def is_sample_data_collection_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Indicates if the discovery job should collect and store sample data values for the discovered columns. Sample data helps review the discovered columns and ensure that they actually contain sensitive data. As it collects original data from the target database, it's disabled by default and should be used only if it's acceptable to store sample data in Data Safe's repository in Oracle Cloud. Note that sample data values are not collected for columns with the following data types: LONG, LOB, RAW, XMLTYPE and BFILE.
-        """
         return pulumi.get(self, "is_sample_data_collection_enabled")
 
     @is_sample_data_collection_enabled.setter
@@ -431,9 +321,6 @@ class _DiscoveryModState:
     @property
     @pulumi.getter(name="schemasForDiscoveries")
     def schemas_for_discoveries(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        The schemas to be scanned by the discovery job. If not provided, the schemasForDiscovery attribute of the sensitive data model is used to get the list of schemas.
-        """
         return pulumi.get(self, "schemas_for_discoveries")
 
     @schemas_for_discoveries.setter
@@ -443,9 +330,6 @@ class _DiscoveryModState:
     @property
     @pulumi.getter(name="sensitiveDataModelId")
     def sensitive_data_model_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the sensitive data model.
-        """
         return pulumi.get(self, "sensitive_data_model_id")
 
     @sensitive_data_model_id.setter
@@ -455,13 +339,6 @@ class _DiscoveryModState:
     @property
     @pulumi.getter(name="sensitiveTypeIdsForDiscoveries")
     def sensitive_type_ids_for_discoveries(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        The OCIDs of the sensitive types to be used by the discovery job. If not provided, the sensitiveTypeIdsForDiscovery attribute of the sensitive data model is used to get the list of sensitive types. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "sensitive_type_ids_for_discoveries")
 
     @sensitive_type_ids_for_discoveries.setter
@@ -471,9 +348,6 @@ class _DiscoveryModState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The current state of the discovery job.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -483,9 +357,6 @@ class _DiscoveryModState:
     @property
     @pulumi.getter(name="systemTags")
     def system_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
@@ -495,9 +366,6 @@ class _DiscoveryModState:
     @property
     @pulumi.getter(name="targetId")
     def target_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the target database associated with the discovery job.
-        """
         return pulumi.get(self, "target_id")
 
     @target_id.setter
@@ -507,9 +375,6 @@ class _DiscoveryModState:
     @property
     @pulumi.getter(name="timeFinished")
     def time_finished(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time the discovery job finished, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)..
-        """
         return pulumi.get(self, "time_finished")
 
     @time_finished.setter
@@ -519,9 +384,6 @@ class _DiscoveryModState:
     @property
     @pulumi.getter(name="timeStarted")
     def time_started(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time the discovery job started, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        """
         return pulumi.get(self, "time_started")
 
     @time_started.setter
@@ -531,9 +393,6 @@ class _DiscoveryModState:
     @property
     @pulumi.getter(name="totalColumnsScanned")
     def total_columns_scanned(self) -> Optional[pulumi.Input[str]]:
-        """
-        The total number of columns scanned by the discovery job.
-        """
         return pulumi.get(self, "total_columns_scanned")
 
     @total_columns_scanned.setter
@@ -543,9 +402,6 @@ class _DiscoveryModState:
     @property
     @pulumi.getter(name="totalDeletedSensitiveColumns")
     def total_deleted_sensitive_columns(self) -> Optional[pulumi.Input[str]]:
-        """
-        The total number of deleted sensitive columns identified by the discovery job.
-        """
         return pulumi.get(self, "total_deleted_sensitive_columns")
 
     @total_deleted_sensitive_columns.setter
@@ -555,9 +411,6 @@ class _DiscoveryModState:
     @property
     @pulumi.getter(name="totalModifiedSensitiveColumns")
     def total_modified_sensitive_columns(self) -> Optional[pulumi.Input[str]]:
-        """
-        The total number of modified sensitive columns identified by the discovery job.
-        """
         return pulumi.get(self, "total_modified_sensitive_columns")
 
     @total_modified_sensitive_columns.setter
@@ -567,9 +420,6 @@ class _DiscoveryModState:
     @property
     @pulumi.getter(name="totalNewSensitiveColumns")
     def total_new_sensitive_columns(self) -> Optional[pulumi.Input[str]]:
-        """
-        The total number of new sensitive columns identified by the discovery job.
-        """
         return pulumi.get(self, "total_new_sensitive_columns")
 
     @total_new_sensitive_columns.setter
@@ -579,9 +429,6 @@ class _DiscoveryModState:
     @property
     @pulumi.getter(name="totalObjectsScanned")
     def total_objects_scanned(self) -> Optional[pulumi.Input[str]]:
-        """
-        The total number of objects (tables and editioning views) scanned by the discovery job.
-        """
         return pulumi.get(self, "total_objects_scanned")
 
     @total_objects_scanned.setter
@@ -591,9 +438,6 @@ class _DiscoveryModState:
     @property
     @pulumi.getter(name="totalSchemasScanned")
     def total_schemas_scanned(self) -> Optional[pulumi.Input[str]]:
-        """
-        The total number of schemas scanned by the discovery job.
-        """
         return pulumi.get(self, "total_schemas_scanned")
 
     @total_schemas_scanned.setter
@@ -620,65 +464,9 @@ class DiscoveryMod(pulumi.CustomResource):
                  sensitive_type_ids_for_discoveries: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  __props__=None):
         """
-        This resource provides the Discovery Job resource in Oracle Cloud Infrastructure Data Safe service.
-
-        Performs incremental data discovery for the specified sensitive data model. It uses the target database associated
-        with the sensitive data model.
-        After performing data discovery, you can use ListDiscoveryJobResults to view the discovery results, PatchDiscoveryJobResults
-        to specify the action you want perform on these results, and then ApplyDiscoveryJobResults to process the results
-        and apply them to the sensitive data model.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_discovery_job = oci.data_safe.DiscoveryMod("testDiscoveryJob",
-            compartment_id=var["compartment_id"],
-            sensitive_data_model_id=oci_data_safe_sensitive_data_model["test_sensitive_data_model"]["id"],
-            defined_tags={
-                "Operations.CostCenter": "42",
-            },
-            discovery_type=var["discovery_job_discovery_type"],
-            display_name=var["discovery_job_display_name"],
-            freeform_tags={
-                "Department": "Finance",
-            },
-            is_app_defined_relation_discovery_enabled=var["discovery_job_is_app_defined_relation_discovery_enabled"],
-            is_include_all_schemas=var["discovery_job_is_include_all_schemas"],
-            is_include_all_sensitive_types=var["discovery_job_is_include_all_sensitive_types"],
-            is_sample_data_collection_enabled=var["discovery_job_is_sample_data_collection_enabled"],
-            schemas_for_discoveries=var["discovery_job_schemas_for_discovery"],
-            sensitive_type_ids_for_discoveries=var["discovery_job_sensitive_type_ids_for_discovery"])
-        ```
-
-        ## Import
-
-        DiscoveryJobs can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:DataSafe/discoveryMod:DiscoveryMod test_discovery_job "id"
-        ```
-
+        Create a DiscoveryMod resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment where the discovery job resource should be created.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] discovery_type: The type of the discovery job. It defines the job's scope. NEW identifies new sensitive columns in the target database that are not in the sensitive data model. DELETED identifies columns that are present in the sensitive data model but have been deleted from the target database. MODIFIED identifies columns that are present in the target database as well as the sensitive data model but some of their attributes have been modified. ALL covers all the above three scenarios and reports new, deleted and modified columns.
-        :param pulumi.Input[str] display_name: A user-friendly name for the discovery job. Does not have to be unique, and it is changeable. Avoid entering confidential information.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[bool] is_app_defined_relation_discovery_enabled: Indicates if the discovery job should identify potential application-level (non-dictionary) referential relationships between columns. Note that data discovery automatically identifies and adds database-level (dictionary-defined) relationships. This option helps identify application-level relationships that are not defined in the database dictionary, which in turn, helps identify additional sensitive columns and preserve referential integrity during data masking. It's disabled by default and should be used only if there is a need to identify application-level relationships.
-        :param pulumi.Input[bool] is_include_all_schemas: Indicates if all the schemas should be scanned by the discovery job. If it is set to true, sensitive data is discovered in all schemas (except for schemas maintained by Oracle). If both attributes are not provided, the configuration from the sensitive data model is used.
-        :param pulumi.Input[bool] is_include_all_sensitive_types: Indicates if all the existing sensitive types should be used by the discovery job. If it's set to true, the sensitiveTypeIdsForDiscovery attribute is ignored and all sensitive types are used for data discovery. If both attributes are not provided, the configuration from the sensitive data model is used.
-        :param pulumi.Input[bool] is_sample_data_collection_enabled: Indicates if the discovery job should collect and store sample data values for the discovered columns. Sample data helps review the discovered columns and ensure that they actually contain sensitive data. As it collects original data from the target database, it's disabled by default and should be used only if it's acceptable to store sample data in Data Safe's repository in Oracle Cloud. Note that sample data values are not collected for columns with the following data types: LONG, LOB, RAW, XMLTYPE and BFILE.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] schemas_for_discoveries: The schemas to be scanned by the discovery job. If not provided, the schemasForDiscovery attribute of the sensitive data model is used to get the list of schemas.
-        :param pulumi.Input[str] sensitive_data_model_id: The OCID of the sensitive data model.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] sensitive_type_ids_for_discoveries: The OCIDs of the sensitive types to be used by the discovery job. If not provided, the sensitiveTypeIdsForDiscovery attribute of the sensitive data model is used to get the list of sensitive types. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -687,47 +475,7 @@ class DiscoveryMod(pulumi.CustomResource):
                  args: DiscoveryModArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Discovery Job resource in Oracle Cloud Infrastructure Data Safe service.
-
-        Performs incremental data discovery for the specified sensitive data model. It uses the target database associated
-        with the sensitive data model.
-        After performing data discovery, you can use ListDiscoveryJobResults to view the discovery results, PatchDiscoveryJobResults
-        to specify the action you want perform on these results, and then ApplyDiscoveryJobResults to process the results
-        and apply them to the sensitive data model.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_discovery_job = oci.data_safe.DiscoveryMod("testDiscoveryJob",
-            compartment_id=var["compartment_id"],
-            sensitive_data_model_id=oci_data_safe_sensitive_data_model["test_sensitive_data_model"]["id"],
-            defined_tags={
-                "Operations.CostCenter": "42",
-            },
-            discovery_type=var["discovery_job_discovery_type"],
-            display_name=var["discovery_job_display_name"],
-            freeform_tags={
-                "Department": "Finance",
-            },
-            is_app_defined_relation_discovery_enabled=var["discovery_job_is_app_defined_relation_discovery_enabled"],
-            is_include_all_schemas=var["discovery_job_is_include_all_schemas"],
-            is_include_all_sensitive_types=var["discovery_job_is_include_all_sensitive_types"],
-            is_sample_data_collection_enabled=var["discovery_job_is_sample_data_collection_enabled"],
-            schemas_for_discoveries=var["discovery_job_schemas_for_discovery"],
-            sensitive_type_ids_for_discoveries=var["discovery_job_sensitive_type_ids_for_discovery"])
-        ```
-
-        ## Import
-
-        DiscoveryJobs can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:DataSafe/discoveryMod:DiscoveryMod test_discovery_job "id"
-        ```
-
+        Create a DiscoveryMod resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param DiscoveryModArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -831,33 +579,6 @@ class DiscoveryMod(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment where the discovery job resource should be created.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] discovery_type: The type of the discovery job. It defines the job's scope. NEW identifies new sensitive columns in the target database that are not in the sensitive data model. DELETED identifies columns that are present in the sensitive data model but have been deleted from the target database. MODIFIED identifies columns that are present in the target database as well as the sensitive data model but some of their attributes have been modified. ALL covers all the above three scenarios and reports new, deleted and modified columns.
-        :param pulumi.Input[str] display_name: A user-friendly name for the discovery job. Does not have to be unique, and it is changeable. Avoid entering confidential information.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[bool] is_app_defined_relation_discovery_enabled: Indicates if the discovery job should identify potential application-level (non-dictionary) referential relationships between columns. Note that data discovery automatically identifies and adds database-level (dictionary-defined) relationships. This option helps identify application-level relationships that are not defined in the database dictionary, which in turn, helps identify additional sensitive columns and preserve referential integrity during data masking. It's disabled by default and should be used only if there is a need to identify application-level relationships.
-        :param pulumi.Input[bool] is_include_all_schemas: Indicates if all the schemas should be scanned by the discovery job. If it is set to true, sensitive data is discovered in all schemas (except for schemas maintained by Oracle). If both attributes are not provided, the configuration from the sensitive data model is used.
-        :param pulumi.Input[bool] is_include_all_sensitive_types: Indicates if all the existing sensitive types should be used by the discovery job. If it's set to true, the sensitiveTypeIdsForDiscovery attribute is ignored and all sensitive types are used for data discovery. If both attributes are not provided, the configuration from the sensitive data model is used.
-        :param pulumi.Input[bool] is_sample_data_collection_enabled: Indicates if the discovery job should collect and store sample data values for the discovered columns. Sample data helps review the discovered columns and ensure that they actually contain sensitive data. As it collects original data from the target database, it's disabled by default and should be used only if it's acceptable to store sample data in Data Safe's repository in Oracle Cloud. Note that sample data values are not collected for columns with the following data types: LONG, LOB, RAW, XMLTYPE and BFILE.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] schemas_for_discoveries: The schemas to be scanned by the discovery job. If not provided, the schemasForDiscovery attribute of the sensitive data model is used to get the list of schemas.
-        :param pulumi.Input[str] sensitive_data_model_id: The OCID of the sensitive data model.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] sensitive_type_ids_for_discoveries: The OCIDs of the sensitive types to be used by the discovery job. If not provided, the sensitiveTypeIdsForDiscovery attribute of the sensitive data model is used to get the list of sensitive types. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] state: The current state of the discovery job.
-        :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[str] target_id: The OCID of the target database associated with the discovery job.
-        :param pulumi.Input[str] time_finished: The date and time the discovery job finished, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)..
-        :param pulumi.Input[str] time_started: The date and time the discovery job started, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        :param pulumi.Input[str] total_columns_scanned: The total number of columns scanned by the discovery job.
-        :param pulumi.Input[str] total_deleted_sensitive_columns: The total number of deleted sensitive columns identified by the discovery job.
-        :param pulumi.Input[str] total_modified_sensitive_columns: The total number of modified sensitive columns identified by the discovery job.
-        :param pulumi.Input[str] total_new_sensitive_columns: The total number of new sensitive columns identified by the discovery job.
-        :param pulumi.Input[str] total_objects_scanned: The total number of objects (tables and editioning views) scanned by the discovery job.
-        :param pulumi.Input[str] total_schemas_scanned: The total number of schemas scanned by the discovery job.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -891,188 +612,115 @@ class DiscoveryMod(pulumi.CustomResource):
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The OCID of the compartment where the discovery job resource should be created.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="discoveryType")
-    def discovery_type(self) -> pulumi.Output[str]:
-        """
-        The type of the discovery job. It defines the job's scope. NEW identifies new sensitive columns in the target database that are not in the sensitive data model. DELETED identifies columns that are present in the sensitive data model but have been deleted from the target database. MODIFIED identifies columns that are present in the target database as well as the sensitive data model but some of their attributes have been modified. ALL covers all the above three scenarios and reports new, deleted and modified columns.
-        """
+    def discovery_type(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "discovery_type")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> pulumi.Output[str]:
-        """
-        A user-friendly name for the discovery job. Does not have to be unique, and it is changeable. Avoid entering confidential information.
-        """
+    def display_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="isAppDefinedRelationDiscoveryEnabled")
-    def is_app_defined_relation_discovery_enabled(self) -> pulumi.Output[bool]:
-        """
-        Indicates if the discovery job should identify potential application-level (non-dictionary) referential relationships between columns. Note that data discovery automatically identifies and adds database-level (dictionary-defined) relationships. This option helps identify application-level relationships that are not defined in the database dictionary, which in turn, helps identify additional sensitive columns and preserve referential integrity during data masking. It's disabled by default and should be used only if there is a need to identify application-level relationships.
-        """
+    def is_app_defined_relation_discovery_enabled(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "is_app_defined_relation_discovery_enabled")
 
     @property
     @pulumi.getter(name="isIncludeAllSchemas")
-    def is_include_all_schemas(self) -> pulumi.Output[bool]:
-        """
-        Indicates if all the schemas should be scanned by the discovery job. If it is set to true, sensitive data is discovered in all schemas (except for schemas maintained by Oracle). If both attributes are not provided, the configuration from the sensitive data model is used.
-        """
+    def is_include_all_schemas(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "is_include_all_schemas")
 
     @property
     @pulumi.getter(name="isIncludeAllSensitiveTypes")
-    def is_include_all_sensitive_types(self) -> pulumi.Output[bool]:
-        """
-        Indicates if all the existing sensitive types should be used by the discovery job. If it's set to true, the sensitiveTypeIdsForDiscovery attribute is ignored and all sensitive types are used for data discovery. If both attributes are not provided, the configuration from the sensitive data model is used.
-        """
+    def is_include_all_sensitive_types(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "is_include_all_sensitive_types")
 
     @property
     @pulumi.getter(name="isSampleDataCollectionEnabled")
-    def is_sample_data_collection_enabled(self) -> pulumi.Output[bool]:
-        """
-        Indicates if the discovery job should collect and store sample data values for the discovered columns. Sample data helps review the discovered columns and ensure that they actually contain sensitive data. As it collects original data from the target database, it's disabled by default and should be used only if it's acceptable to store sample data in Data Safe's repository in Oracle Cloud. Note that sample data values are not collected for columns with the following data types: LONG, LOB, RAW, XMLTYPE and BFILE.
-        """
+    def is_sample_data_collection_enabled(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "is_sample_data_collection_enabled")
 
     @property
     @pulumi.getter(name="schemasForDiscoveries")
-    def schemas_for_discoveries(self) -> pulumi.Output[Sequence[str]]:
-        """
-        The schemas to be scanned by the discovery job. If not provided, the schemasForDiscovery attribute of the sensitive data model is used to get the list of schemas.
-        """
+    def schemas_for_discoveries(self) -> pulumi.Output[Optional[Sequence[str]]]:
         return pulumi.get(self, "schemas_for_discoveries")
 
     @property
     @pulumi.getter(name="sensitiveDataModelId")
     def sensitive_data_model_id(self) -> pulumi.Output[str]:
-        """
-        The OCID of the sensitive data model.
-        """
         return pulumi.get(self, "sensitive_data_model_id")
 
     @property
     @pulumi.getter(name="sensitiveTypeIdsForDiscoveries")
-    def sensitive_type_ids_for_discoveries(self) -> pulumi.Output[Sequence[str]]:
-        """
-        The OCIDs of the sensitive types to be used by the discovery job. If not provided, the sensitiveTypeIdsForDiscovery attribute of the sensitive data model is used to get the list of sensitive types. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
+    def sensitive_type_ids_for_discoveries(self) -> pulumi.Output[Optional[Sequence[str]]]:
         return pulumi.get(self, "sensitive_type_ids_for_discoveries")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        The current state of the discovery job.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="targetId")
-    def target_id(self) -> pulumi.Output[str]:
-        """
-        The OCID of the target database associated with the discovery job.
-        """
+    def target_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "target_id")
 
     @property
     @pulumi.getter(name="timeFinished")
-    def time_finished(self) -> pulumi.Output[str]:
-        """
-        The date and time the discovery job finished, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)..
-        """
+    def time_finished(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_finished")
 
     @property
     @pulumi.getter(name="timeStarted")
-    def time_started(self) -> pulumi.Output[str]:
-        """
-        The date and time the discovery job started, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        """
+    def time_started(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_started")
 
     @property
     @pulumi.getter(name="totalColumnsScanned")
-    def total_columns_scanned(self) -> pulumi.Output[str]:
-        """
-        The total number of columns scanned by the discovery job.
-        """
+    def total_columns_scanned(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "total_columns_scanned")
 
     @property
     @pulumi.getter(name="totalDeletedSensitiveColumns")
-    def total_deleted_sensitive_columns(self) -> pulumi.Output[str]:
-        """
-        The total number of deleted sensitive columns identified by the discovery job.
-        """
+    def total_deleted_sensitive_columns(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "total_deleted_sensitive_columns")
 
     @property
     @pulumi.getter(name="totalModifiedSensitiveColumns")
-    def total_modified_sensitive_columns(self) -> pulumi.Output[str]:
-        """
-        The total number of modified sensitive columns identified by the discovery job.
-        """
+    def total_modified_sensitive_columns(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "total_modified_sensitive_columns")
 
     @property
     @pulumi.getter(name="totalNewSensitiveColumns")
-    def total_new_sensitive_columns(self) -> pulumi.Output[str]:
-        """
-        The total number of new sensitive columns identified by the discovery job.
-        """
+    def total_new_sensitive_columns(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "total_new_sensitive_columns")
 
     @property
     @pulumi.getter(name="totalObjectsScanned")
-    def total_objects_scanned(self) -> pulumi.Output[str]:
-        """
-        The total number of objects (tables and editioning views) scanned by the discovery job.
-        """
+    def total_objects_scanned(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "total_objects_scanned")
 
     @property
     @pulumi.getter(name="totalSchemasScanned")
-    def total_schemas_scanned(self) -> pulumi.Output[str]:
-        """
-        The total number of schemas scanned by the discovery job.
-        """
+    def total_schemas_scanned(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "total_schemas_scanned")
 

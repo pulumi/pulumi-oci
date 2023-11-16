@@ -44,11 +44,6 @@ class ActionCreateZoneFromZoneFileExternalDownstreamArgs:
                  address: Optional[pulumi.Input[str]] = None,
                  port: Optional[pulumi.Input[int]] = None,
                  tsig_key_id: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] address: The server's IP address (IPv4 or IPv6).
-        :param pulumi.Input[int] port: The server's port.
-        :param pulumi.Input[str] tsig_key_id: The OCID of the TSIG key.
-        """
         if address is not None:
             pulumi.set(__self__, "address", address)
         if port is not None:
@@ -59,9 +54,6 @@ class ActionCreateZoneFromZoneFileExternalDownstreamArgs:
     @property
     @pulumi.getter
     def address(self) -> Optional[pulumi.Input[str]]:
-        """
-        The server's IP address (IPv4 or IPv6).
-        """
         return pulumi.get(self, "address")
 
     @address.setter
@@ -71,9 +63,6 @@ class ActionCreateZoneFromZoneFileExternalDownstreamArgs:
     @property
     @pulumi.getter
     def port(self) -> Optional[pulumi.Input[int]]:
-        """
-        The server's port.
-        """
         return pulumi.get(self, "port")
 
     @port.setter
@@ -83,9 +72,6 @@ class ActionCreateZoneFromZoneFileExternalDownstreamArgs:
     @property
     @pulumi.getter(name="tsigKeyId")
     def tsig_key_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the TSIG key.
-        """
         return pulumi.get(self, "tsig_key_id")
 
     @tsig_key_id.setter
@@ -99,11 +85,6 @@ class ActionCreateZoneFromZoneFileExternalMasterArgs:
                  address: Optional[pulumi.Input[str]] = None,
                  port: Optional[pulumi.Input[int]] = None,
                  tsig_key_id: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] address: The server's IP address (IPv4 or IPv6).
-        :param pulumi.Input[int] port: The server's port.
-        :param pulumi.Input[str] tsig_key_id: The OCID of the TSIG key.
-        """
         if address is not None:
             pulumi.set(__self__, "address", address)
         if port is not None:
@@ -114,9 +95,6 @@ class ActionCreateZoneFromZoneFileExternalMasterArgs:
     @property
     @pulumi.getter
     def address(self) -> Optional[pulumi.Input[str]]:
-        """
-        The server's IP address (IPv4 or IPv6).
-        """
         return pulumi.get(self, "address")
 
     @address.setter
@@ -126,9 +104,6 @@ class ActionCreateZoneFromZoneFileExternalMasterArgs:
     @property
     @pulumi.getter
     def port(self) -> Optional[pulumi.Input[int]]:
-        """
-        The server's port.
-        """
         return pulumi.get(self, "port")
 
     @port.setter
@@ -138,9 +113,6 @@ class ActionCreateZoneFromZoneFileExternalMasterArgs:
     @property
     @pulumi.getter(name="tsigKeyId")
     def tsig_key_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the TSIG key.
-        """
         return pulumi.get(self, "tsig_key_id")
 
     @tsig_key_id.setter
@@ -152,18 +124,12 @@ class ActionCreateZoneFromZoneFileExternalMasterArgs:
 class ActionCreateZoneFromZoneFileNameserverArgs:
     def __init__(__self__, *,
                  hostname: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] hostname: The hostname of the nameserver.
-        """
         if hostname is not None:
             pulumi.set(__self__, "hostname", hostname)
 
     @property
     @pulumi.getter
     def hostname(self) -> Optional[pulumi.Input[str]]:
-        """
-        The hostname of the nameserver.
-        """
         return pulumi.get(self, "hostname")
 
     @hostname.setter
@@ -178,12 +144,6 @@ class ActionCreateZoneFromZoneFileZoneTransferServerArgs:
                  is_transfer_destination: Optional[pulumi.Input[bool]] = None,
                  is_transfer_source: Optional[pulumi.Input[bool]] = None,
                  port: Optional[pulumi.Input[int]] = None):
-        """
-        :param pulumi.Input[str] address: The server's IP address (IPv4 or IPv6).
-        :param pulumi.Input[bool] is_transfer_destination: A Boolean flag indicating whether or not the server is a zone data transfer destination.
-        :param pulumi.Input[bool] is_transfer_source: A Boolean flag indicating whether or not the server is a zone data transfer source.
-        :param pulumi.Input[int] port: The server's port.
-        """
         if address is not None:
             pulumi.set(__self__, "address", address)
         if is_transfer_destination is not None:
@@ -196,9 +156,6 @@ class ActionCreateZoneFromZoneFileZoneTransferServerArgs:
     @property
     @pulumi.getter
     def address(self) -> Optional[pulumi.Input[str]]:
-        """
-        The server's IP address (IPv4 or IPv6).
-        """
         return pulumi.get(self, "address")
 
     @address.setter
@@ -208,9 +165,6 @@ class ActionCreateZoneFromZoneFileZoneTransferServerArgs:
     @property
     @pulumi.getter(name="isTransferDestination")
     def is_transfer_destination(self) -> Optional[pulumi.Input[bool]]:
-        """
-        A Boolean flag indicating whether or not the server is a zone data transfer destination.
-        """
         return pulumi.get(self, "is_transfer_destination")
 
     @is_transfer_destination.setter
@@ -220,9 +174,6 @@ class ActionCreateZoneFromZoneFileZoneTransferServerArgs:
     @property
     @pulumi.getter(name="isTransferSource")
     def is_transfer_source(self) -> Optional[pulumi.Input[bool]]:
-        """
-        A Boolean flag indicating whether or not the server is a zone data transfer source.
-        """
         return pulumi.get(self, "is_transfer_source")
 
     @is_transfer_source.setter
@@ -232,9 +183,6 @@ class ActionCreateZoneFromZoneFileZoneTransferServerArgs:
     @property
     @pulumi.getter
     def port(self) -> Optional[pulumi.Input[int]]:
-        """
-        The server's port.
-        """
         return pulumi.get(self, "port")
 
     @port.setter
@@ -246,17 +194,11 @@ class ActionCreateZoneFromZoneFileZoneTransferServerArgs:
 class ResolverAttachedViewArgs:
     def __init__(__self__, *,
                  view_id: pulumi.Input[str]):
-        """
-        :param pulumi.Input[str] view_id: (Updatable) The OCID of the view.
-        """
         pulumi.set(__self__, "view_id", view_id)
 
     @property
     @pulumi.getter(name="viewId")
     def view_id(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The OCID of the view.
-        """
         return pulumi.get(self, "view_id")
 
     @view_id.setter
@@ -279,20 +221,6 @@ class ResolverEndpointArgs:
                  subnet_id: Optional[pulumi.Input[str]] = None,
                  time_created: Optional[pulumi.Input[str]] = None,
                  time_updated: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the owning compartment.
-        :param pulumi.Input[str] endpoint_type: The type of resolver endpoint. VNIC is currently the only supported type.
-        :param pulumi.Input[str] forwarding_address: An IP address from which forwarded queries may be sent. For VNIC endpoints, this IP address must be part of the subnet and will be assigned by the system if unspecified when isForwarding is true.
-        :param pulumi.Input[bool] is_forwarding: A Boolean flag indicating whether or not the resolver endpoint is for forwarding.
-        :param pulumi.Input[bool] is_listening: A Boolean flag indicating whether or not the resolver endpoint is for listening.
-        :param pulumi.Input[str] listening_address: An IP address to listen to queries on. For VNIC endpoints this IP address must be part of the subnet and will be assigned by the system if unspecified when isListening is true.
-        :param pulumi.Input[str] name: The name of the resolver endpoint. Must be unique, case-insensitive, within the resolver.
-        :param pulumi.Input[str] self: The canonical absolute URL of the resource.
-        :param pulumi.Input[str] state: The current state of the resource.
-        :param pulumi.Input[str] subnet_id: The OCID of a subnet. Must be part of the VCN that the resolver is attached to.
-        :param pulumi.Input[str] time_created: The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
-        :param pulumi.Input[str] time_updated: The date and time the resource was last updated in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
-        """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
         if endpoint_type is not None:
@@ -321,9 +249,6 @@ class ResolverEndpointArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The OCID of the owning compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -333,9 +258,6 @@ class ResolverEndpointArgs:
     @property
     @pulumi.getter(name="endpointType")
     def endpoint_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        The type of resolver endpoint. VNIC is currently the only supported type.
-        """
         return pulumi.get(self, "endpoint_type")
 
     @endpoint_type.setter
@@ -345,9 +267,6 @@ class ResolverEndpointArgs:
     @property
     @pulumi.getter(name="forwardingAddress")
     def forwarding_address(self) -> Optional[pulumi.Input[str]]:
-        """
-        An IP address from which forwarded queries may be sent. For VNIC endpoints, this IP address must be part of the subnet and will be assigned by the system if unspecified when isForwarding is true.
-        """
         return pulumi.get(self, "forwarding_address")
 
     @forwarding_address.setter
@@ -357,9 +276,6 @@ class ResolverEndpointArgs:
     @property
     @pulumi.getter(name="isForwarding")
     def is_forwarding(self) -> Optional[pulumi.Input[bool]]:
-        """
-        A Boolean flag indicating whether or not the resolver endpoint is for forwarding.
-        """
         return pulumi.get(self, "is_forwarding")
 
     @is_forwarding.setter
@@ -369,9 +285,6 @@ class ResolverEndpointArgs:
     @property
     @pulumi.getter(name="isListening")
     def is_listening(self) -> Optional[pulumi.Input[bool]]:
-        """
-        A Boolean flag indicating whether or not the resolver endpoint is for listening.
-        """
         return pulumi.get(self, "is_listening")
 
     @is_listening.setter
@@ -381,9 +294,6 @@ class ResolverEndpointArgs:
     @property
     @pulumi.getter(name="listeningAddress")
     def listening_address(self) -> Optional[pulumi.Input[str]]:
-        """
-        An IP address to listen to queries on. For VNIC endpoints this IP address must be part of the subnet and will be assigned by the system if unspecified when isListening is true.
-        """
         return pulumi.get(self, "listening_address")
 
     @listening_address.setter
@@ -393,9 +303,6 @@ class ResolverEndpointArgs:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The name of the resolver endpoint. Must be unique, case-insensitive, within the resolver.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -405,9 +312,6 @@ class ResolverEndpointArgs:
     @property
     @pulumi.getter
     def self(self) -> Optional[pulumi.Input[str]]:
-        """
-        The canonical absolute URL of the resource.
-        """
         return pulumi.get(self, "self")
 
     @self.setter
@@ -417,9 +321,6 @@ class ResolverEndpointArgs:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The current state of the resource.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -429,9 +330,6 @@ class ResolverEndpointArgs:
     @property
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of a subnet. Must be part of the VCN that the resolver is attached to.
-        """
         return pulumi.get(self, "subnet_id")
 
     @subnet_id.setter
@@ -441,9 +339,6 @@ class ResolverEndpointArgs:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -453,9 +348,6 @@ class ResolverEndpointArgs:
     @property
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time the resource was last updated in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
-        """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
@@ -471,13 +363,6 @@ class ResolverRuleArgs:
                  source_endpoint_name: pulumi.Input[str],
                  client_address_conditions: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  qname_cover_conditions: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
-        """
-        :param pulumi.Input[str] action: (Updatable) The action determines the behavior of the rule. If a query matches a supplied condition, the action will apply. If there are no conditions on the rule, all queries are subject to the specified action.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] destination_addresses: (Updatable) IP addresses to which queries should be forwarded. Currently limited to a single address.
-        :param pulumi.Input[str] source_endpoint_name: (Updatable) Name of an endpoint, that is a sub-resource of the resolver, to use as the forwarding interface. The endpoint must have isForwarding set to true.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] client_address_conditions: (Updatable) A list of CIDR blocks. The query must come from a client within one of the blocks in order for the rule action to apply.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] qname_cover_conditions: (Updatable) A list of domain names. The query must be covered by one of the domains in order for the rule action to apply.
-        """
         pulumi.set(__self__, "action", action)
         pulumi.set(__self__, "destination_addresses", destination_addresses)
         pulumi.set(__self__, "source_endpoint_name", source_endpoint_name)
@@ -489,9 +374,6 @@ class ResolverRuleArgs:
     @property
     @pulumi.getter
     def action(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The action determines the behavior of the rule. If a query matches a supplied condition, the action will apply. If there are no conditions on the rule, all queries are subject to the specified action.
-        """
         return pulumi.get(self, "action")
 
     @action.setter
@@ -501,9 +383,6 @@ class ResolverRuleArgs:
     @property
     @pulumi.getter(name="destinationAddresses")
     def destination_addresses(self) -> pulumi.Input[Sequence[pulumi.Input[str]]]:
-        """
-        (Updatable) IP addresses to which queries should be forwarded. Currently limited to a single address.
-        """
         return pulumi.get(self, "destination_addresses")
 
     @destination_addresses.setter
@@ -513,9 +392,6 @@ class ResolverRuleArgs:
     @property
     @pulumi.getter(name="sourceEndpointName")
     def source_endpoint_name(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Name of an endpoint, that is a sub-resource of the resolver, to use as the forwarding interface. The endpoint must have isForwarding set to true.
-        """
         return pulumi.get(self, "source_endpoint_name")
 
     @source_endpoint_name.setter
@@ -525,9 +401,6 @@ class ResolverRuleArgs:
     @property
     @pulumi.getter(name="clientAddressConditions")
     def client_address_conditions(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) A list of CIDR blocks. The query must come from a client within one of the blocks in order for the rule action to apply.
-        """
         return pulumi.get(self, "client_address_conditions")
 
     @client_address_conditions.setter
@@ -537,9 +410,6 @@ class ResolverRuleArgs:
     @property
     @pulumi.getter(name="qnameCoverConditions")
     def qname_cover_conditions(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) A list of domain names. The query must be covered by one of the domains in order for the rule action to apply.
-        """
         return pulumi.get(self, "qname_cover_conditions")
 
     @qname_cover_conditions.setter
@@ -557,15 +427,6 @@ class RrsetItemArgs:
                  is_protected: Optional[pulumi.Input[bool]] = None,
                  record_hash: Optional[pulumi.Input[str]] = None,
                  rrset_version: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] domain: The fully qualified domain name where the record can be located.
-        :param pulumi.Input[str] rdata: (Updatable) The record's data, as whitespace-delimited tokens in type-specific presentation format. All RDATA is normalized and the returned presentation of your RDATA may differ from its initial input. For more information about RDATA, see [Supported DNS Resource Record Types](https://docs.cloud.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm)
-        :param pulumi.Input[str] rtype: The type of the target RRSet within the target zone.
-        :param pulumi.Input[int] ttl: (Updatable) The Time To Live for the record, in seconds.
-        :param pulumi.Input[bool] is_protected: A Boolean flag indicating whether or not parts of the record are unable to be explicitly managed.
-        :param pulumi.Input[str] record_hash: A unique identifier for the record within its zone.
-        :param pulumi.Input[str] rrset_version: The latest version of the record's zone in which its RRSet differs from the preceding version.
-        """
         pulumi.set(__self__, "domain", domain)
         pulumi.set(__self__, "rdata", rdata)
         pulumi.set(__self__, "rtype", rtype)
@@ -580,9 +441,6 @@ class RrsetItemArgs:
     @property
     @pulumi.getter
     def domain(self) -> pulumi.Input[str]:
-        """
-        The fully qualified domain name where the record can be located.
-        """
         return pulumi.get(self, "domain")
 
     @domain.setter
@@ -592,9 +450,6 @@ class RrsetItemArgs:
     @property
     @pulumi.getter
     def rdata(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The record's data, as whitespace-delimited tokens in type-specific presentation format. All RDATA is normalized and the returned presentation of your RDATA may differ from its initial input. For more information about RDATA, see [Supported DNS Resource Record Types](https://docs.cloud.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm)
-        """
         return pulumi.get(self, "rdata")
 
     @rdata.setter
@@ -604,9 +459,6 @@ class RrsetItemArgs:
     @property
     @pulumi.getter
     def rtype(self) -> pulumi.Input[str]:
-        """
-        The type of the target RRSet within the target zone.
-        """
         return pulumi.get(self, "rtype")
 
     @rtype.setter
@@ -616,9 +468,6 @@ class RrsetItemArgs:
     @property
     @pulumi.getter
     def ttl(self) -> pulumi.Input[int]:
-        """
-        (Updatable) The Time To Live for the record, in seconds.
-        """
         return pulumi.get(self, "ttl")
 
     @ttl.setter
@@ -628,9 +477,6 @@ class RrsetItemArgs:
     @property
     @pulumi.getter(name="isProtected")
     def is_protected(self) -> Optional[pulumi.Input[bool]]:
-        """
-        A Boolean flag indicating whether or not parts of the record are unable to be explicitly managed.
-        """
         return pulumi.get(self, "is_protected")
 
     @is_protected.setter
@@ -640,9 +486,6 @@ class RrsetItemArgs:
     @property
     @pulumi.getter(name="recordHash")
     def record_hash(self) -> Optional[pulumi.Input[str]]:
-        """
-        A unique identifier for the record within its zone.
-        """
         return pulumi.get(self, "record_hash")
 
     @record_hash.setter
@@ -652,9 +495,6 @@ class RrsetItemArgs:
     @property
     @pulumi.getter(name="rrsetVersion")
     def rrset_version(self) -> Optional[pulumi.Input[str]]:
-        """
-        The latest version of the record's zone in which its RRSet differs from the preceding version.
-        """
         return pulumi.get(self, "rrset_version")
 
     @rrset_version.setter
@@ -670,13 +510,6 @@ class SteeringPolicyAnswerArgs:
                  rtype: pulumi.Input[str],
                  is_disabled: Optional[pulumi.Input[bool]] = None,
                  pool: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] name: A user-friendly name for the answer, unique within the steering policy. An answer's `name` property can be referenced in `answerCondition` properties of rules using `answer.name`.
-        :param pulumi.Input[str] rdata: The record's data, as whitespace-delimited tokens in type-specific presentation format. All RDATA is normalized and the returned presentation of your RDATA may differ from its initial input. For more information about RDATA, see [Supported DNS Resource Record Types](https://docs.cloud.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm).
-        :param pulumi.Input[str] rtype: The type of DNS record, such as A or CNAME. Only A, AAAA, and CNAME are supported. For more information, see [Supported DNS Resource Record Types](https://docs.cloud.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm).
-        :param pulumi.Input[bool] is_disabled: Set this property to `true` to indicate that the answer is administratively disabled, such as when the corresponding server is down for maintenance. An answer's `isDisabled` property can be referenced in `answerCondition` properties in rules using `answer.isDisabled`.
-        :param pulumi.Input[str] pool: The freeform name of a group of one or more records in which this record is included, such as "LAX data center". An answer's `pool` property can be referenced in `answerCondition` properties of rules using `answer.pool`.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "rdata", rdata)
         pulumi.set(__self__, "rtype", rtype)
@@ -688,9 +521,6 @@ class SteeringPolicyAnswerArgs:
     @property
     @pulumi.getter
     def name(self) -> pulumi.Input[str]:
-        """
-        A user-friendly name for the answer, unique within the steering policy. An answer's `name` property can be referenced in `answerCondition` properties of rules using `answer.name`.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -700,9 +530,6 @@ class SteeringPolicyAnswerArgs:
     @property
     @pulumi.getter
     def rdata(self) -> pulumi.Input[str]:
-        """
-        The record's data, as whitespace-delimited tokens in type-specific presentation format. All RDATA is normalized and the returned presentation of your RDATA may differ from its initial input. For more information about RDATA, see [Supported DNS Resource Record Types](https://docs.cloud.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm).
-        """
         return pulumi.get(self, "rdata")
 
     @rdata.setter
@@ -712,9 +539,6 @@ class SteeringPolicyAnswerArgs:
     @property
     @pulumi.getter
     def rtype(self) -> pulumi.Input[str]:
-        """
-        The type of DNS record, such as A or CNAME. Only A, AAAA, and CNAME are supported. For more information, see [Supported DNS Resource Record Types](https://docs.cloud.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm).
-        """
         return pulumi.get(self, "rtype")
 
     @rtype.setter
@@ -724,9 +548,6 @@ class SteeringPolicyAnswerArgs:
     @property
     @pulumi.getter(name="isDisabled")
     def is_disabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Set this property to `true` to indicate that the answer is administratively disabled, such as when the corresponding server is down for maintenance. An answer's `isDisabled` property can be referenced in `answerCondition` properties in rules using `answer.isDisabled`.
-        """
         return pulumi.get(self, "is_disabled")
 
     @is_disabled.setter
@@ -736,9 +557,6 @@ class SteeringPolicyAnswerArgs:
     @property
     @pulumi.getter
     def pool(self) -> Optional[pulumi.Input[str]]:
-        """
-        The freeform name of a group of one or more records in which this record is included, such as "LAX data center". An answer's `pool` property can be referenced in `answerCondition` properties of rules using `answer.pool`.
-        """
         return pulumi.get(self, "pool")
 
     @pool.setter
@@ -754,13 +572,6 @@ class SteeringPolicyRuleArgs:
                  default_answer_datas: Optional[pulumi.Input[Sequence[pulumi.Input['SteeringPolicyRuleDefaultAnswerDataArgs']]]] = None,
                  default_count: Optional[pulumi.Input[int]] = None,
                  description: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] rule_type: The type of a rule determines its sorting/filtering behavior.
-        :param pulumi.Input[Sequence[pulumi.Input['SteeringPolicyRuleCaseArgs']]] cases: An array of `caseConditions`. A rule may optionally include a sequence of cases defining alternate configurations for how it should behave during processing for any given DNS query. When a rule has no sequence of `cases`, it is always evaluated with the same configuration during processing. When a rule has an empty sequence of `cases`, it is always ignored during processing. When a rule has a non-empty sequence of `cases`, its behavior during processing is configured by the first matching `case` in the sequence. When a rule has no matching cases the rule is ignored. A rule case with no `caseCondition` always matches. A rule case with a `caseCondition` matches only when that expression evaluates to true for the given query.
-        :param pulumi.Input[Sequence[pulumi.Input['SteeringPolicyRuleDefaultAnswerDataArgs']]] default_answer_datas: Defines a default set of answer conditions and values that are applied to an answer when `cases` is not defined for the rule, or a matching case does not have any matching `answerCondition`s in its `answerData`. `defaultAnswerData` is not applied if `cases` is defined and there are no matching cases. In this scenario, the next rule will be processed.
-        :param pulumi.Input[int] default_count: Defines a default count if `cases` is not defined for the rule or a matching case does not define `count`. `defaultCount` is **not** applied if `cases` is defined and there are no matching cases. In this scenario, the next rule will be processed. If no rules remain to be processed, the answer will be chosen from the remaining list of answers.
-        :param pulumi.Input[str] description: A user-defined description of the rule's purpose or behavior.
-        """
         pulumi.set(__self__, "rule_type", rule_type)
         if cases is not None:
             pulumi.set(__self__, "cases", cases)
@@ -774,9 +585,6 @@ class SteeringPolicyRuleArgs:
     @property
     @pulumi.getter(name="ruleType")
     def rule_type(self) -> pulumi.Input[str]:
-        """
-        The type of a rule determines its sorting/filtering behavior.
-        """
         return pulumi.get(self, "rule_type")
 
     @rule_type.setter
@@ -786,9 +594,6 @@ class SteeringPolicyRuleArgs:
     @property
     @pulumi.getter
     def cases(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['SteeringPolicyRuleCaseArgs']]]]:
-        """
-        An array of `caseConditions`. A rule may optionally include a sequence of cases defining alternate configurations for how it should behave during processing for any given DNS query. When a rule has no sequence of `cases`, it is always evaluated with the same configuration during processing. When a rule has an empty sequence of `cases`, it is always ignored during processing. When a rule has a non-empty sequence of `cases`, its behavior during processing is configured by the first matching `case` in the sequence. When a rule has no matching cases the rule is ignored. A rule case with no `caseCondition` always matches. A rule case with a `caseCondition` matches only when that expression evaluates to true for the given query.
-        """
         return pulumi.get(self, "cases")
 
     @cases.setter
@@ -798,9 +603,6 @@ class SteeringPolicyRuleArgs:
     @property
     @pulumi.getter(name="defaultAnswerDatas")
     def default_answer_datas(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['SteeringPolicyRuleDefaultAnswerDataArgs']]]]:
-        """
-        Defines a default set of answer conditions and values that are applied to an answer when `cases` is not defined for the rule, or a matching case does not have any matching `answerCondition`s in its `answerData`. `defaultAnswerData` is not applied if `cases` is defined and there are no matching cases. In this scenario, the next rule will be processed.
-        """
         return pulumi.get(self, "default_answer_datas")
 
     @default_answer_datas.setter
@@ -810,9 +612,6 @@ class SteeringPolicyRuleArgs:
     @property
     @pulumi.getter(name="defaultCount")
     def default_count(self) -> Optional[pulumi.Input[int]]:
-        """
-        Defines a default count if `cases` is not defined for the rule or a matching case does not define `count`. `defaultCount` is **not** applied if `cases` is defined and there are no matching cases. In this scenario, the next rule will be processed. If no rules remain to be processed, the answer will be chosen from the remaining list of answers.
-        """
         return pulumi.get(self, "default_count")
 
     @default_count.setter
@@ -822,9 +621,6 @@ class SteeringPolicyRuleArgs:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
-        """
-        A user-defined description of the rule's purpose or behavior.
-        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -838,11 +634,6 @@ class SteeringPolicyRuleCaseArgs:
                  answer_datas: Optional[pulumi.Input[Sequence[pulumi.Input['SteeringPolicyRuleCaseAnswerDataArgs']]]] = None,
                  case_condition: Optional[pulumi.Input[str]] = None,
                  count: Optional[pulumi.Input[int]] = None):
-        """
-        :param pulumi.Input[Sequence[pulumi.Input['SteeringPolicyRuleCaseAnswerDataArgs']]] answer_datas: An array of `SteeringPolicyPriorityAnswerData` objects.
-        :param pulumi.Input[str] case_condition: An expression that uses conditions at the time of a DNS query to indicate whether a case matches. Conditions may include the geographical location, IP subnet, or ASN the DNS query originated. **Example:** If you have an office that uses the subnet `192.0.2.0/24` you could use a `caseCondition` expression `query.client.subnet in ('192.0.2.0/24')` to define a case that matches queries from that office.
-        :param pulumi.Input[int] count: The number of answers allowed to remain after the limit rule has been processed, keeping only the first of the remaining answers in the list. Example: If the `count` property is set to `2` and four answers remain before the limit rule is processed, only the first two answers in the list will remain after the limit rule has been processed.
-        """
         if answer_datas is not None:
             pulumi.set(__self__, "answer_datas", answer_datas)
         if case_condition is not None:
@@ -853,9 +644,6 @@ class SteeringPolicyRuleCaseArgs:
     @property
     @pulumi.getter(name="answerDatas")
     def answer_datas(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['SteeringPolicyRuleCaseAnswerDataArgs']]]]:
-        """
-        An array of `SteeringPolicyPriorityAnswerData` objects.
-        """
         return pulumi.get(self, "answer_datas")
 
     @answer_datas.setter
@@ -865,9 +653,6 @@ class SteeringPolicyRuleCaseArgs:
     @property
     @pulumi.getter(name="caseCondition")
     def case_condition(self) -> Optional[pulumi.Input[str]]:
-        """
-        An expression that uses conditions at the time of a DNS query to indicate whether a case matches. Conditions may include the geographical location, IP subnet, or ASN the DNS query originated. **Example:** If you have an office that uses the subnet `192.0.2.0/24` you could use a `caseCondition` expression `query.client.subnet in ('192.0.2.0/24')` to define a case that matches queries from that office.
-        """
         return pulumi.get(self, "case_condition")
 
     @case_condition.setter
@@ -877,9 +662,6 @@ class SteeringPolicyRuleCaseArgs:
     @property
     @pulumi.getter
     def count(self) -> Optional[pulumi.Input[int]]:
-        """
-        The number of answers allowed to remain after the limit rule has been processed, keeping only the first of the remaining answers in the list. Example: If the `count` property is set to `2` and four answers remain before the limit rule is processed, only the first two answers in the list will remain after the limit rule has been processed.
-        """
         return pulumi.get(self, "count")
 
     @count.setter
@@ -893,11 +675,6 @@ class SteeringPolicyRuleCaseAnswerDataArgs:
                  answer_condition: Optional[pulumi.Input[str]] = None,
                  should_keep: Optional[pulumi.Input[bool]] = None,
                  value: Optional[pulumi.Input[int]] = None):
-        """
-        :param pulumi.Input[str] answer_condition: An expression that is used to select a set of answers that match a condition. For example, answers with matching pool properties.
-        :param pulumi.Input[bool] should_keep: Keeps the answer only if the value is `true`.
-        :param pulumi.Input[int] value: The rank assigned to the set of answers that match the expression in `answerCondition`. Answers with the lowest values move to the beginning of the list without changing the relative order of those with the same value. Answers can be given a value between `0` and `255`.
-        """
         if answer_condition is not None:
             pulumi.set(__self__, "answer_condition", answer_condition)
         if should_keep is not None:
@@ -908,9 +685,6 @@ class SteeringPolicyRuleCaseAnswerDataArgs:
     @property
     @pulumi.getter(name="answerCondition")
     def answer_condition(self) -> Optional[pulumi.Input[str]]:
-        """
-        An expression that is used to select a set of answers that match a condition. For example, answers with matching pool properties.
-        """
         return pulumi.get(self, "answer_condition")
 
     @answer_condition.setter
@@ -920,9 +694,6 @@ class SteeringPolicyRuleCaseAnswerDataArgs:
     @property
     @pulumi.getter(name="shouldKeep")
     def should_keep(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Keeps the answer only if the value is `true`.
-        """
         return pulumi.get(self, "should_keep")
 
     @should_keep.setter
@@ -932,9 +703,6 @@ class SteeringPolicyRuleCaseAnswerDataArgs:
     @property
     @pulumi.getter
     def value(self) -> Optional[pulumi.Input[int]]:
-        """
-        The rank assigned to the set of answers that match the expression in `answerCondition`. Answers with the lowest values move to the beginning of the list without changing the relative order of those with the same value. Answers can be given a value between `0` and `255`.
-        """
         return pulumi.get(self, "value")
 
     @value.setter
@@ -948,11 +716,6 @@ class SteeringPolicyRuleDefaultAnswerDataArgs:
                  answer_condition: Optional[pulumi.Input[str]] = None,
                  should_keep: Optional[pulumi.Input[bool]] = None,
                  value: Optional[pulumi.Input[int]] = None):
-        """
-        :param pulumi.Input[str] answer_condition: An expression that is used to select a set of answers that match a condition. For example, answers with matching pool properties.
-        :param pulumi.Input[bool] should_keep: Keeps the answer only if the value is `true`.
-        :param pulumi.Input[int] value: The rank assigned to the set of answers that match the expression in `answerCondition`. Answers with the lowest values move to the beginning of the list without changing the relative order of those with the same value. Answers can be given a value between `0` and `255`.
-        """
         if answer_condition is not None:
             pulumi.set(__self__, "answer_condition", answer_condition)
         if should_keep is not None:
@@ -963,9 +726,6 @@ class SteeringPolicyRuleDefaultAnswerDataArgs:
     @property
     @pulumi.getter(name="answerCondition")
     def answer_condition(self) -> Optional[pulumi.Input[str]]:
-        """
-        An expression that is used to select a set of answers that match a condition. For example, answers with matching pool properties.
-        """
         return pulumi.get(self, "answer_condition")
 
     @answer_condition.setter
@@ -975,9 +735,6 @@ class SteeringPolicyRuleDefaultAnswerDataArgs:
     @property
     @pulumi.getter(name="shouldKeep")
     def should_keep(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Keeps the answer only if the value is `true`.
-        """
         return pulumi.get(self, "should_keep")
 
     @should_keep.setter
@@ -987,9 +744,6 @@ class SteeringPolicyRuleDefaultAnswerDataArgs:
     @property
     @pulumi.getter
     def value(self) -> Optional[pulumi.Input[int]]:
-        """
-        The rank assigned to the set of answers that match the expression in `answerCondition`. Answers with the lowest values move to the beginning of the list without changing the relative order of those with the same value. Answers can be given a value between `0` and `255`.
-        """
         return pulumi.get(self, "value")
 
     @value.setter
@@ -1003,11 +757,6 @@ class ZoneExternalDownstreamArgs:
                  address: pulumi.Input[str],
                  port: Optional[pulumi.Input[int]] = None,
                  tsig_key_id: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] address: (Updatable) The server's IP address (IPv4 or IPv6).
-        :param pulumi.Input[int] port: (Updatable) The server's port. Port value must be a value of 53, otherwise omit the port value.
-        :param pulumi.Input[str] tsig_key_id: (Updatable) The OCID of the TSIG key.
-        """
         pulumi.set(__self__, "address", address)
         if port is not None:
             pulumi.set(__self__, "port", port)
@@ -1017,9 +766,6 @@ class ZoneExternalDownstreamArgs:
     @property
     @pulumi.getter
     def address(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The server's IP address (IPv4 or IPv6).
-        """
         return pulumi.get(self, "address")
 
     @address.setter
@@ -1029,9 +775,6 @@ class ZoneExternalDownstreamArgs:
     @property
     @pulumi.getter
     def port(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) The server's port. Port value must be a value of 53, otherwise omit the port value.
-        """
         return pulumi.get(self, "port")
 
     @port.setter
@@ -1041,9 +784,6 @@ class ZoneExternalDownstreamArgs:
     @property
     @pulumi.getter(name="tsigKeyId")
     def tsig_key_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The OCID of the TSIG key.
-        """
         return pulumi.get(self, "tsig_key_id")
 
     @tsig_key_id.setter
@@ -1057,11 +797,6 @@ class ZoneExternalMasterArgs:
                  address: pulumi.Input[str],
                  port: Optional[pulumi.Input[int]] = None,
                  tsig_key_id: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] address: (Updatable) The server's IP address (IPv4 or IPv6).
-        :param pulumi.Input[int] port: (Updatable) The server's port. Port value must be a value of 53, otherwise omit the port value.
-        :param pulumi.Input[str] tsig_key_id: (Updatable) The OCID of the TSIG key.
-        """
         pulumi.set(__self__, "address", address)
         if port is not None:
             pulumi.set(__self__, "port", port)
@@ -1071,9 +806,6 @@ class ZoneExternalMasterArgs:
     @property
     @pulumi.getter
     def address(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The server's IP address (IPv4 or IPv6).
-        """
         return pulumi.get(self, "address")
 
     @address.setter
@@ -1083,9 +815,6 @@ class ZoneExternalMasterArgs:
     @property
     @pulumi.getter
     def port(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) The server's port. Port value must be a value of 53, otherwise omit the port value.
-        """
         return pulumi.get(self, "port")
 
     @port.setter
@@ -1095,9 +824,6 @@ class ZoneExternalMasterArgs:
     @property
     @pulumi.getter(name="tsigKeyId")
     def tsig_key_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The OCID of the TSIG key.
-        """
         return pulumi.get(self, "tsig_key_id")
 
     @tsig_key_id.setter
@@ -1109,18 +835,12 @@ class ZoneExternalMasterArgs:
 class ZoneNameserverArgs:
     def __init__(__self__, *,
                  hostname: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] hostname: The hostname of the nameserver.
-        """
         if hostname is not None:
             pulumi.set(__self__, "hostname", hostname)
 
     @property
     @pulumi.getter
     def hostname(self) -> Optional[pulumi.Input[str]]:
-        """
-        The hostname of the nameserver.
-        """
         return pulumi.get(self, "hostname")
 
     @hostname.setter
@@ -1135,12 +855,6 @@ class ZoneZoneTransferServerArgs:
                  is_transfer_destination: Optional[pulumi.Input[bool]] = None,
                  is_transfer_source: Optional[pulumi.Input[bool]] = None,
                  port: Optional[pulumi.Input[int]] = None):
-        """
-        :param pulumi.Input[str] address: (Updatable) The server's IP address (IPv4 or IPv6).
-        :param pulumi.Input[bool] is_transfer_destination: A Boolean flag indicating whether or not the server is a zone data transfer destination.
-        :param pulumi.Input[bool] is_transfer_source: A Boolean flag indicating whether or not the server is a zone data transfer source.
-        :param pulumi.Input[int] port: (Updatable) The server's port. Port value must be a value of 53, otherwise omit the port value.
-        """
         if address is not None:
             pulumi.set(__self__, "address", address)
         if is_transfer_destination is not None:
@@ -1153,9 +867,6 @@ class ZoneZoneTransferServerArgs:
     @property
     @pulumi.getter
     def address(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The server's IP address (IPv4 or IPv6).
-        """
         return pulumi.get(self, "address")
 
     @address.setter
@@ -1165,9 +876,6 @@ class ZoneZoneTransferServerArgs:
     @property
     @pulumi.getter(name="isTransferDestination")
     def is_transfer_destination(self) -> Optional[pulumi.Input[bool]]:
-        """
-        A Boolean flag indicating whether or not the server is a zone data transfer destination.
-        """
         return pulumi.get(self, "is_transfer_destination")
 
     @is_transfer_destination.setter
@@ -1177,9 +885,6 @@ class ZoneZoneTransferServerArgs:
     @property
     @pulumi.getter(name="isTransferSource")
     def is_transfer_source(self) -> Optional[pulumi.Input[bool]]:
-        """
-        A Boolean flag indicating whether or not the server is a zone data transfer source.
-        """
         return pulumi.get(self, "is_transfer_source")
 
     @is_transfer_source.setter
@@ -1189,9 +894,6 @@ class ZoneZoneTransferServerArgs:
     @property
     @pulumi.getter
     def port(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) The server's port. Port value must be a value of 53, otherwise omit the port value.
-        """
         return pulumi.get(self, "port")
 
     @port.setter
@@ -1244,9 +946,6 @@ class GetResolverEndpointsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: The name of a resource.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -1255,9 +954,6 @@ class GetResolverEndpointsFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        The name of a resource.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -1367,9 +1063,6 @@ class GetSteeringPoliciesFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: A user-friendly name for the answer, unique within the steering policy. An answer's `name` property can be referenced in `answerCondition` properties of rules using `answer.name`.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -1378,9 +1071,6 @@ class GetSteeringPoliciesFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        A user-friendly name for the answer, unique within the steering policy. An answer's `name` property can be referenced in `answerCondition` properties of rules using `answer.name`.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -1451,9 +1141,6 @@ class GetTsigKeysFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: The name of a resource.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -1462,9 +1149,6 @@ class GetTsigKeysFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        The name of a resource.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -1535,9 +1219,6 @@ class GetZonesFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: A case-sensitive filter for zone names. Will match any zone with a name that equals the provided value.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -1546,9 +1227,6 @@ class GetZonesFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        A case-sensitive filter for zone names. Will match any zone with a name that equals the provided value.
-        """
         return pulumi.get(self, "name")
 
     @name.setter

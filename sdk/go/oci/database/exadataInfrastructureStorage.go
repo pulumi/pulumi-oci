@@ -10,48 +10,47 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 type ExadataInfrastructureStorage struct {
 	pulumi.CustomResourceState
 
-	ActivatedStorageCount    pulumi.IntOutput                                    `pulumi:"activatedStorageCount"`
-	ActivationFile           pulumi.StringPtrOutput                              `pulumi:"activationFile"`
-	AdditionalStorageCount   pulumi.IntOutput                                    `pulumi:"additionalStorageCount"`
-	AdminNetworkCidr         pulumi.StringOutput                                 `pulumi:"adminNetworkCidr"`
-	CloudControlPlaneServer1 pulumi.StringOutput                                 `pulumi:"cloudControlPlaneServer1"`
-	CloudControlPlaneServer2 pulumi.StringOutput                                 `pulumi:"cloudControlPlaneServer2"`
-	CompartmentId            pulumi.StringOutput                                 `pulumi:"compartmentId"`
-	ComputeCount             pulumi.IntOutput                                    `pulumi:"computeCount"`
-	Contacts                 ExadataInfrastructureStorageContactArrayOutput      `pulumi:"contacts"`
-	CorporateProxy           pulumi.StringOutput                                 `pulumi:"corporateProxy"`
-	CpusEnabled              pulumi.IntOutput                                    `pulumi:"cpusEnabled"`
-	CsiNumber                pulumi.StringOutput                                 `pulumi:"csiNumber"`
-	DataStorageSizeInTbs     pulumi.Float64Output                                `pulumi:"dataStorageSizeInTbs"`
-	DbNodeStorageSizeInGbs   pulumi.IntOutput                                    `pulumi:"dbNodeStorageSizeInGbs"`
-	DefinedTags              pulumi.MapOutput                                    `pulumi:"definedTags"`
-	DisplayName              pulumi.StringOutput                                 `pulumi:"displayName"`
-	DnsServers               pulumi.StringArrayOutput                            `pulumi:"dnsServers"`
-	ExadataInfrastructureId  pulumi.StringPtrOutput                              `pulumi:"exadataInfrastructureId"`
-	FreeformTags             pulumi.MapOutput                                    `pulumi:"freeformTags"`
-	Gateway                  pulumi.StringOutput                                 `pulumi:"gateway"`
-	InfiniBandNetworkCidr    pulumi.StringOutput                                 `pulumi:"infiniBandNetworkCidr"`
-	LifecycleDetails         pulumi.StringOutput                                 `pulumi:"lifecycleDetails"`
-	MaintenanceSloStatus     pulumi.StringOutput                                 `pulumi:"maintenanceSloStatus"`
-	MaintenanceWindow        ExadataInfrastructureStorageMaintenanceWindowOutput `pulumi:"maintenanceWindow"`
-	MaxCpuCount              pulumi.IntOutput                                    `pulumi:"maxCpuCount"`
-	MaxDataStorageInTbs      pulumi.Float64Output                                `pulumi:"maxDataStorageInTbs"`
-	MaxDbNodeStorageInGbs    pulumi.IntOutput                                    `pulumi:"maxDbNodeStorageInGbs"`
-	MaxMemoryInGbs           pulumi.IntOutput                                    `pulumi:"maxMemoryInGbs"`
-	MemorySizeInGbs          pulumi.IntOutput                                    `pulumi:"memorySizeInGbs"`
-	Netmask                  pulumi.StringOutput                                 `pulumi:"netmask"`
-	NtpServers               pulumi.StringArrayOutput                            `pulumi:"ntpServers"`
-	Shape                    pulumi.StringOutput                                 `pulumi:"shape"`
-	State                    pulumi.StringOutput                                 `pulumi:"state"`
-	StorageCount             pulumi.IntOutput                                    `pulumi:"storageCount"`
-	TimeCreated              pulumi.StringOutput                                 `pulumi:"timeCreated"`
-	TimeZone                 pulumi.StringOutput                                 `pulumi:"timeZone"`
+	ActivatedStorageCount    pulumi.IntPtrOutput                                    `pulumi:"activatedStorageCount"`
+	ActivationFile           pulumi.StringPtrOutput                                 `pulumi:"activationFile"`
+	AdditionalStorageCount   pulumi.IntPtrOutput                                    `pulumi:"additionalStorageCount"`
+	AdminNetworkCidr         pulumi.StringOutput                                    `pulumi:"adminNetworkCidr"`
+	CloudControlPlaneServer1 pulumi.StringOutput                                    `pulumi:"cloudControlPlaneServer1"`
+	CloudControlPlaneServer2 pulumi.StringOutput                                    `pulumi:"cloudControlPlaneServer2"`
+	CompartmentId            pulumi.StringOutput                                    `pulumi:"compartmentId"`
+	ComputeCount             pulumi.IntPtrOutput                                    `pulumi:"computeCount"`
+	Contacts                 ExadataInfrastructureStorageContactArrayOutput         `pulumi:"contacts"`
+	CorporateProxy           pulumi.StringPtrOutput                                 `pulumi:"corporateProxy"`
+	CpusEnabled              pulumi.IntPtrOutput                                    `pulumi:"cpusEnabled"`
+	CsiNumber                pulumi.StringPtrOutput                                 `pulumi:"csiNumber"`
+	DataStorageSizeInTbs     pulumi.Float64PtrOutput                                `pulumi:"dataStorageSizeInTbs"`
+	DbNodeStorageSizeInGbs   pulumi.IntPtrOutput                                    `pulumi:"dbNodeStorageSizeInGbs"`
+	DefinedTags              pulumi.MapOutput                                       `pulumi:"definedTags"`
+	DisplayName              pulumi.StringOutput                                    `pulumi:"displayName"`
+	DnsServers               pulumi.StringArrayOutput                               `pulumi:"dnsServers"`
+	ExadataInfrastructureId  pulumi.StringPtrOutput                                 `pulumi:"exadataInfrastructureId"`
+	FreeformTags             pulumi.MapOutput                                       `pulumi:"freeformTags"`
+	Gateway                  pulumi.StringOutput                                    `pulumi:"gateway"`
+	InfiniBandNetworkCidr    pulumi.StringOutput                                    `pulumi:"infiniBandNetworkCidr"`
+	LifecycleDetails         pulumi.StringPtrOutput                                 `pulumi:"lifecycleDetails"`
+	MaintenanceSloStatus     pulumi.StringPtrOutput                                 `pulumi:"maintenanceSloStatus"`
+	MaintenanceWindow        ExadataInfrastructureStorageMaintenanceWindowPtrOutput `pulumi:"maintenanceWindow"`
+	MaxCpuCount              pulumi.IntPtrOutput                                    `pulumi:"maxCpuCount"`
+	MaxDataStorageInTbs      pulumi.Float64PtrOutput                                `pulumi:"maxDataStorageInTbs"`
+	MaxDbNodeStorageInGbs    pulumi.IntPtrOutput                                    `pulumi:"maxDbNodeStorageInGbs"`
+	MaxMemoryInGbs           pulumi.IntPtrOutput                                    `pulumi:"maxMemoryInGbs"`
+	MemorySizeInGbs          pulumi.IntPtrOutput                                    `pulumi:"memorySizeInGbs"`
+	Netmask                  pulumi.StringOutput                                    `pulumi:"netmask"`
+	NtpServers               pulumi.StringArrayOutput                               `pulumi:"ntpServers"`
+	Shape                    pulumi.StringOutput                                    `pulumi:"shape"`
+	State                    pulumi.StringPtrOutput                                 `pulumi:"state"`
+	StorageCount             pulumi.IntPtrOutput                                    `pulumi:"storageCount"`
+	TimeCreated              pulumi.StringPtrOutput                                 `pulumi:"timeCreated"`
+	TimeZone                 pulumi.StringOutput                                    `pulumi:"timeZone"`
 }
 
 // NewExadataInfrastructureStorage registers a new resource with the given unique name, arguments, and options.
@@ -273,12 +272,6 @@ func (i *ExadataInfrastructureStorage) ToExadataInfrastructureStorageOutputWithC
 	return pulumi.ToOutputWithContext(ctx, i).(ExadataInfrastructureStorageOutput)
 }
 
-func (i *ExadataInfrastructureStorage) ToOutput(ctx context.Context) pulumix.Output[*ExadataInfrastructureStorage] {
-	return pulumix.Output[*ExadataInfrastructureStorage]{
-		OutputState: i.ToExadataInfrastructureStorageOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ExadataInfrastructureStorageArrayInput is an input type that accepts ExadataInfrastructureStorageArray and ExadataInfrastructureStorageArrayOutput values.
 // You can construct a concrete instance of `ExadataInfrastructureStorageArrayInput` via:
 //
@@ -302,12 +295,6 @@ func (i ExadataInfrastructureStorageArray) ToExadataInfrastructureStorageArrayOu
 
 func (i ExadataInfrastructureStorageArray) ToExadataInfrastructureStorageArrayOutputWithContext(ctx context.Context) ExadataInfrastructureStorageArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ExadataInfrastructureStorageArrayOutput)
-}
-
-func (i ExadataInfrastructureStorageArray) ToOutput(ctx context.Context) pulumix.Output[[]*ExadataInfrastructureStorage] {
-	return pulumix.Output[[]*ExadataInfrastructureStorage]{
-		OutputState: i.ToExadataInfrastructureStorageArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // ExadataInfrastructureStorageMapInput is an input type that accepts ExadataInfrastructureStorageMap and ExadataInfrastructureStorageMapOutput values.
@@ -335,12 +322,6 @@ func (i ExadataInfrastructureStorageMap) ToExadataInfrastructureStorageMapOutput
 	return pulumi.ToOutputWithContext(ctx, i).(ExadataInfrastructureStorageMapOutput)
 }
 
-func (i ExadataInfrastructureStorageMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*ExadataInfrastructureStorage] {
-	return pulumix.Output[map[string]*ExadataInfrastructureStorage]{
-		OutputState: i.ToExadataInfrastructureStorageMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ExadataInfrastructureStorageOutput struct{ *pulumi.OutputState }
 
 func (ExadataInfrastructureStorageOutput) ElementType() reflect.Type {
@@ -355,22 +336,16 @@ func (o ExadataInfrastructureStorageOutput) ToExadataInfrastructureStorageOutput
 	return o
 }
 
-func (o ExadataInfrastructureStorageOutput) ToOutput(ctx context.Context) pulumix.Output[*ExadataInfrastructureStorage] {
-	return pulumix.Output[*ExadataInfrastructureStorage]{
-		OutputState: o.OutputState,
-	}
-}
-
-func (o ExadataInfrastructureStorageOutput) ActivatedStorageCount() pulumi.IntOutput {
-	return o.ApplyT(func(v *ExadataInfrastructureStorage) pulumi.IntOutput { return v.ActivatedStorageCount }).(pulumi.IntOutput)
+func (o ExadataInfrastructureStorageOutput) ActivatedStorageCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *ExadataInfrastructureStorage) pulumi.IntPtrOutput { return v.ActivatedStorageCount }).(pulumi.IntPtrOutput)
 }
 
 func (o ExadataInfrastructureStorageOutput) ActivationFile() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ExadataInfrastructureStorage) pulumi.StringPtrOutput { return v.ActivationFile }).(pulumi.StringPtrOutput)
 }
 
-func (o ExadataInfrastructureStorageOutput) AdditionalStorageCount() pulumi.IntOutput {
-	return o.ApplyT(func(v *ExadataInfrastructureStorage) pulumi.IntOutput { return v.AdditionalStorageCount }).(pulumi.IntOutput)
+func (o ExadataInfrastructureStorageOutput) AdditionalStorageCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *ExadataInfrastructureStorage) pulumi.IntPtrOutput { return v.AdditionalStorageCount }).(pulumi.IntPtrOutput)
 }
 
 func (o ExadataInfrastructureStorageOutput) AdminNetworkCidr() pulumi.StringOutput {
@@ -389,8 +364,8 @@ func (o ExadataInfrastructureStorageOutput) CompartmentId() pulumi.StringOutput 
 	return o.ApplyT(func(v *ExadataInfrastructureStorage) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-func (o ExadataInfrastructureStorageOutput) ComputeCount() pulumi.IntOutput {
-	return o.ApplyT(func(v *ExadataInfrastructureStorage) pulumi.IntOutput { return v.ComputeCount }).(pulumi.IntOutput)
+func (o ExadataInfrastructureStorageOutput) ComputeCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *ExadataInfrastructureStorage) pulumi.IntPtrOutput { return v.ComputeCount }).(pulumi.IntPtrOutput)
 }
 
 func (o ExadataInfrastructureStorageOutput) Contacts() ExadataInfrastructureStorageContactArrayOutput {
@@ -399,24 +374,24 @@ func (o ExadataInfrastructureStorageOutput) Contacts() ExadataInfrastructureStor
 	}).(ExadataInfrastructureStorageContactArrayOutput)
 }
 
-func (o ExadataInfrastructureStorageOutput) CorporateProxy() pulumi.StringOutput {
-	return o.ApplyT(func(v *ExadataInfrastructureStorage) pulumi.StringOutput { return v.CorporateProxy }).(pulumi.StringOutput)
+func (o ExadataInfrastructureStorageOutput) CorporateProxy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExadataInfrastructureStorage) pulumi.StringPtrOutput { return v.CorporateProxy }).(pulumi.StringPtrOutput)
 }
 
-func (o ExadataInfrastructureStorageOutput) CpusEnabled() pulumi.IntOutput {
-	return o.ApplyT(func(v *ExadataInfrastructureStorage) pulumi.IntOutput { return v.CpusEnabled }).(pulumi.IntOutput)
+func (o ExadataInfrastructureStorageOutput) CpusEnabled() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *ExadataInfrastructureStorage) pulumi.IntPtrOutput { return v.CpusEnabled }).(pulumi.IntPtrOutput)
 }
 
-func (o ExadataInfrastructureStorageOutput) CsiNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v *ExadataInfrastructureStorage) pulumi.StringOutput { return v.CsiNumber }).(pulumi.StringOutput)
+func (o ExadataInfrastructureStorageOutput) CsiNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExadataInfrastructureStorage) pulumi.StringPtrOutput { return v.CsiNumber }).(pulumi.StringPtrOutput)
 }
 
-func (o ExadataInfrastructureStorageOutput) DataStorageSizeInTbs() pulumi.Float64Output {
-	return o.ApplyT(func(v *ExadataInfrastructureStorage) pulumi.Float64Output { return v.DataStorageSizeInTbs }).(pulumi.Float64Output)
+func (o ExadataInfrastructureStorageOutput) DataStorageSizeInTbs() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v *ExadataInfrastructureStorage) pulumi.Float64PtrOutput { return v.DataStorageSizeInTbs }).(pulumi.Float64PtrOutput)
 }
 
-func (o ExadataInfrastructureStorageOutput) DbNodeStorageSizeInGbs() pulumi.IntOutput {
-	return o.ApplyT(func(v *ExadataInfrastructureStorage) pulumi.IntOutput { return v.DbNodeStorageSizeInGbs }).(pulumi.IntOutput)
+func (o ExadataInfrastructureStorageOutput) DbNodeStorageSizeInGbs() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *ExadataInfrastructureStorage) pulumi.IntPtrOutput { return v.DbNodeStorageSizeInGbs }).(pulumi.IntPtrOutput)
 }
 
 func (o ExadataInfrastructureStorageOutput) DefinedTags() pulumi.MapOutput {
@@ -447,38 +422,38 @@ func (o ExadataInfrastructureStorageOutput) InfiniBandNetworkCidr() pulumi.Strin
 	return o.ApplyT(func(v *ExadataInfrastructureStorage) pulumi.StringOutput { return v.InfiniBandNetworkCidr }).(pulumi.StringOutput)
 }
 
-func (o ExadataInfrastructureStorageOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v *ExadataInfrastructureStorage) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o ExadataInfrastructureStorageOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExadataInfrastructureStorage) pulumi.StringPtrOutput { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
-func (o ExadataInfrastructureStorageOutput) MaintenanceSloStatus() pulumi.StringOutput {
-	return o.ApplyT(func(v *ExadataInfrastructureStorage) pulumi.StringOutput { return v.MaintenanceSloStatus }).(pulumi.StringOutput)
+func (o ExadataInfrastructureStorageOutput) MaintenanceSloStatus() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExadataInfrastructureStorage) pulumi.StringPtrOutput { return v.MaintenanceSloStatus }).(pulumi.StringPtrOutput)
 }
 
-func (o ExadataInfrastructureStorageOutput) MaintenanceWindow() ExadataInfrastructureStorageMaintenanceWindowOutput {
-	return o.ApplyT(func(v *ExadataInfrastructureStorage) ExadataInfrastructureStorageMaintenanceWindowOutput {
+func (o ExadataInfrastructureStorageOutput) MaintenanceWindow() ExadataInfrastructureStorageMaintenanceWindowPtrOutput {
+	return o.ApplyT(func(v *ExadataInfrastructureStorage) ExadataInfrastructureStorageMaintenanceWindowPtrOutput {
 		return v.MaintenanceWindow
-	}).(ExadataInfrastructureStorageMaintenanceWindowOutput)
+	}).(ExadataInfrastructureStorageMaintenanceWindowPtrOutput)
 }
 
-func (o ExadataInfrastructureStorageOutput) MaxCpuCount() pulumi.IntOutput {
-	return o.ApplyT(func(v *ExadataInfrastructureStorage) pulumi.IntOutput { return v.MaxCpuCount }).(pulumi.IntOutput)
+func (o ExadataInfrastructureStorageOutput) MaxCpuCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *ExadataInfrastructureStorage) pulumi.IntPtrOutput { return v.MaxCpuCount }).(pulumi.IntPtrOutput)
 }
 
-func (o ExadataInfrastructureStorageOutput) MaxDataStorageInTbs() pulumi.Float64Output {
-	return o.ApplyT(func(v *ExadataInfrastructureStorage) pulumi.Float64Output { return v.MaxDataStorageInTbs }).(pulumi.Float64Output)
+func (o ExadataInfrastructureStorageOutput) MaxDataStorageInTbs() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v *ExadataInfrastructureStorage) pulumi.Float64PtrOutput { return v.MaxDataStorageInTbs }).(pulumi.Float64PtrOutput)
 }
 
-func (o ExadataInfrastructureStorageOutput) MaxDbNodeStorageInGbs() pulumi.IntOutput {
-	return o.ApplyT(func(v *ExadataInfrastructureStorage) pulumi.IntOutput { return v.MaxDbNodeStorageInGbs }).(pulumi.IntOutput)
+func (o ExadataInfrastructureStorageOutput) MaxDbNodeStorageInGbs() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *ExadataInfrastructureStorage) pulumi.IntPtrOutput { return v.MaxDbNodeStorageInGbs }).(pulumi.IntPtrOutput)
 }
 
-func (o ExadataInfrastructureStorageOutput) MaxMemoryInGbs() pulumi.IntOutput {
-	return o.ApplyT(func(v *ExadataInfrastructureStorage) pulumi.IntOutput { return v.MaxMemoryInGbs }).(pulumi.IntOutput)
+func (o ExadataInfrastructureStorageOutput) MaxMemoryInGbs() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *ExadataInfrastructureStorage) pulumi.IntPtrOutput { return v.MaxMemoryInGbs }).(pulumi.IntPtrOutput)
 }
 
-func (o ExadataInfrastructureStorageOutput) MemorySizeInGbs() pulumi.IntOutput {
-	return o.ApplyT(func(v *ExadataInfrastructureStorage) pulumi.IntOutput { return v.MemorySizeInGbs }).(pulumi.IntOutput)
+func (o ExadataInfrastructureStorageOutput) MemorySizeInGbs() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *ExadataInfrastructureStorage) pulumi.IntPtrOutput { return v.MemorySizeInGbs }).(pulumi.IntPtrOutput)
 }
 
 func (o ExadataInfrastructureStorageOutput) Netmask() pulumi.StringOutput {
@@ -493,16 +468,16 @@ func (o ExadataInfrastructureStorageOutput) Shape() pulumi.StringOutput {
 	return o.ApplyT(func(v *ExadataInfrastructureStorage) pulumi.StringOutput { return v.Shape }).(pulumi.StringOutput)
 }
 
-func (o ExadataInfrastructureStorageOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *ExadataInfrastructureStorage) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o ExadataInfrastructureStorageOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExadataInfrastructureStorage) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
-func (o ExadataInfrastructureStorageOutput) StorageCount() pulumi.IntOutput {
-	return o.ApplyT(func(v *ExadataInfrastructureStorage) pulumi.IntOutput { return v.StorageCount }).(pulumi.IntOutput)
+func (o ExadataInfrastructureStorageOutput) StorageCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *ExadataInfrastructureStorage) pulumi.IntPtrOutput { return v.StorageCount }).(pulumi.IntPtrOutput)
 }
 
-func (o ExadataInfrastructureStorageOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *ExadataInfrastructureStorage) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o ExadataInfrastructureStorageOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExadataInfrastructureStorage) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 func (o ExadataInfrastructureStorageOutput) TimeZone() pulumi.StringOutput {
@@ -523,12 +498,6 @@ func (o ExadataInfrastructureStorageArrayOutput) ToExadataInfrastructureStorageA
 	return o
 }
 
-func (o ExadataInfrastructureStorageArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*ExadataInfrastructureStorage] {
-	return pulumix.Output[[]*ExadataInfrastructureStorage]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o ExadataInfrastructureStorageArrayOutput) Index(i pulumi.IntInput) ExadataInfrastructureStorageOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *ExadataInfrastructureStorage {
 		return vs[0].([]*ExadataInfrastructureStorage)[vs[1].(int)]
@@ -547,12 +516,6 @@ func (o ExadataInfrastructureStorageMapOutput) ToExadataInfrastructureStorageMap
 
 func (o ExadataInfrastructureStorageMapOutput) ToExadataInfrastructureStorageMapOutputWithContext(ctx context.Context) ExadataInfrastructureStorageMapOutput {
 	return o
-}
-
-func (o ExadataInfrastructureStorageMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*ExadataInfrastructureStorage] {
-	return pulumix.Output[map[string]*ExadataInfrastructureStorage]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ExadataInfrastructureStorageMapOutput) MapIndex(k pulumi.StringInput) ExadataInfrastructureStorageOutput {

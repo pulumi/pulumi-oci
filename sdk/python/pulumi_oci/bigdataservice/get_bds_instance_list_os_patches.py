@@ -49,7 +49,7 @@ class GetBdsInstanceListOsPatchesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -57,10 +57,7 @@ class GetBdsInstanceListOsPatchesResult:
 
     @property
     @pulumi.getter(name="osPatches")
-    def os_patches(self) -> Sequence['outputs.GetBdsInstanceListOsPatchesOsPatchResult']:
-        """
-        The list of os_patches.
-        """
+    def os_patches(self) -> Optional[Sequence['outputs.GetBdsInstanceListOsPatchesOsPatchResult']]:
         return pulumi.get(self, "os_patches")
 
 
@@ -80,21 +77,7 @@ def get_bds_instance_list_os_patches(bds_instance_id: Optional[str] = None,
                                      filters: Optional[Sequence[pulumi.InputType['GetBdsInstanceListOsPatchesFilterArgs']]] = None,
                                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetBdsInstanceListOsPatchesResult:
     """
-    This data source provides the list of Bds Instance List Os Patches in Oracle Cloud Infrastructure Big Data Service service.
-
-    List all available os patches for a given cluster
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_bds_instance_list_os_patches = oci.BigDataService.get_bds_instance_list_os_patches(bds_instance_id=oci_bds_bds_instance["test_bds_instance"]["id"])
-    ```
-
-
-    :param str bds_instance_id: The OCID of the cluster.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['bdsInstanceId'] = bds_instance_id
@@ -114,20 +97,6 @@ def get_bds_instance_list_os_patches_output(bds_instance_id: Optional[pulumi.Inp
                                             filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetBdsInstanceListOsPatchesFilterArgs']]]]] = None,
                                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetBdsInstanceListOsPatchesResult]:
     """
-    This data source provides the list of Bds Instance List Os Patches in Oracle Cloud Infrastructure Big Data Service service.
-
-    List all available os patches for a given cluster
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_bds_instance_list_os_patches = oci.BigDataService.get_bds_instance_list_os_patches(bds_instance_id=oci_bds_bds_instance["test_bds_instance"]["id"])
-    ```
-
-
-    :param str bds_instance_id: The OCID of the cluster.
+    Use this data source to access information about an existing resource.
     """
     ...

@@ -49,7 +49,7 @@ class GetPoliciesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -57,10 +57,7 @@ class GetPoliciesResult:
 
     @property
     @pulumi.getter
-    def policies(self) -> Sequence['outputs.GetPoliciesPolicyResult']:
-        """
-        The list of policies.
-        """
+    def policies(self) -> Optional[Sequence['outputs.GetPoliciesPolicyResult']]:
         return pulumi.get(self, "policies")
 
 
@@ -80,21 +77,7 @@ def get_policies(compartment_id: Optional[str] = None,
                  filters: Optional[Sequence[pulumi.InputType['GetPoliciesFilterArgs']]] = None,
                  opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetPoliciesResult:
     """
-    This data source provides the list of Load Balancer Policies in Oracle Cloud Infrastructure Load Balancer service.
-
-    Lists the available load balancer policies.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_load_balancer_policies = oci.LoadBalancer.get_policies(compartment_id=var["compartment_id"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the load balancer policies to list.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -114,20 +97,6 @@ def get_policies_output(compartment_id: Optional[pulumi.Input[str]] = None,
                         filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetPoliciesFilterArgs']]]]] = None,
                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetPoliciesResult]:
     """
-    This data source provides the list of Load Balancer Policies in Oracle Cloud Infrastructure Load Balancer service.
-
-    Lists the available load balancer policies.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_load_balancer_policies = oci.LoadBalancer.get_policies(compartment_id=var["compartment_id"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the load balancer policies to list.
+    Use this data source to access information about an existing resource.
     """
     ...

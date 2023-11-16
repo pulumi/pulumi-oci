@@ -8,6 +8,8 @@ import com.pulumi.oci.StackMonitoring.outputs.GetMonitoredResourceCredentialProp
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetMonitoredResourceCredential {
@@ -18,37 +20,37 @@ public final class GetMonitoredResourceCredential {
      * * ENCRYPTED - The credential properties will have credentials stored in vault in encrypted format using KMS client which uses master key for encryption. The same master key will be used to decrypt the credentials before passing on to the management agent.
      * 
      */
-    private String credentialType;
+    private @Nullable String credentialType;
     /**
      * @return The user-specified textual description of the credential.
      * 
      */
-    private String description;
+    private @Nullable String description;
     /**
      * @return The master key should be created in Oracle Cloud Infrastructure Vault owned by the client of this API.  The user should have permission to access the vault key.
      * 
      */
-    private String keyId;
+    private @Nullable String keyId;
     /**
      * @return Property Name.
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return List of monitored resource properties.
      * 
      */
-    private List<GetMonitoredResourceCredentialProperty> properties;
+    private @Nullable List<GetMonitoredResourceCredentialProperty> properties;
     /**
      * @return The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
      * 
      */
-    private String source;
+    private @Nullable String source;
     /**
      * @return Monitored Resource Type.
      * 
      */
-    private String type;
+    private @Nullable String type;
 
     private GetMonitoredResourceCredential() {}
     /**
@@ -58,50 +60,50 @@ public final class GetMonitoredResourceCredential {
      * * ENCRYPTED - The credential properties will have credentials stored in vault in encrypted format using KMS client which uses master key for encryption. The same master key will be used to decrypt the credentials before passing on to the management agent.
      * 
      */
-    public String credentialType() {
-        return this.credentialType;
+    public Optional<String> credentialType() {
+        return Optional.ofNullable(this.credentialType);
     }
     /**
      * @return The user-specified textual description of the credential.
      * 
      */
-    public String description() {
-        return this.description;
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
     /**
      * @return The master key should be created in Oracle Cloud Infrastructure Vault owned by the client of this API.  The user should have permission to access the vault key.
      * 
      */
-    public String keyId() {
-        return this.keyId;
+    public Optional<String> keyId() {
+        return Optional.ofNullable(this.keyId);
     }
     /**
      * @return Property Name.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return List of monitored resource properties.
      * 
      */
     public List<GetMonitoredResourceCredentialProperty> properties() {
-        return this.properties;
+        return this.properties == null ? List.of() : this.properties;
     }
     /**
      * @return The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
      * 
      */
-    public String source() {
-        return this.source;
+    public Optional<String> source() {
+        return Optional.ofNullable(this.source);
     }
     /**
      * @return Monitored Resource Type.
      * 
      */
-    public String type() {
-        return this.type;
+    public Optional<String> type() {
+        return Optional.ofNullable(this.type);
     }
 
     public static Builder builder() {
@@ -113,13 +115,13 @@ public final class GetMonitoredResourceCredential {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String credentialType;
-        private String description;
-        private String keyId;
-        private String name;
-        private List<GetMonitoredResourceCredentialProperty> properties;
-        private String source;
-        private String type;
+        private @Nullable String credentialType;
+        private @Nullable String description;
+        private @Nullable String keyId;
+        private @Nullable String name;
+        private @Nullable List<GetMonitoredResourceCredentialProperty> properties;
+        private @Nullable String source;
+        private @Nullable String type;
         public Builder() {}
         public Builder(GetMonitoredResourceCredential defaults) {
     	      Objects.requireNonNull(defaults);
@@ -133,41 +135,41 @@ public final class GetMonitoredResourceCredential {
         }
 
         @CustomType.Setter
-        public Builder credentialType(String credentialType) {
-            this.credentialType = Objects.requireNonNull(credentialType);
+        public Builder credentialType(@Nullable String credentialType) {
+            this.credentialType = credentialType;
             return this;
         }
         @CustomType.Setter
-        public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+        public Builder description(@Nullable String description) {
+            this.description = description;
             return this;
         }
         @CustomType.Setter
-        public Builder keyId(String keyId) {
-            this.keyId = Objects.requireNonNull(keyId);
+        public Builder keyId(@Nullable String keyId) {
+            this.keyId = keyId;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder properties(List<GetMonitoredResourceCredentialProperty> properties) {
-            this.properties = Objects.requireNonNull(properties);
+        public Builder properties(@Nullable List<GetMonitoredResourceCredentialProperty> properties) {
+            this.properties = properties;
             return this;
         }
         public Builder properties(GetMonitoredResourceCredentialProperty... properties) {
             return properties(List.of(properties));
         }
         @CustomType.Setter
-        public Builder source(String source) {
-            this.source = Objects.requireNonNull(source);
+        public Builder source(@Nullable String source) {
+            this.source = source;
             return this;
         }
         @CustomType.Setter
-        public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+        public Builder type(@Nullable String type) {
+            this.type = type;
             return this;
         }
         public GetMonitoredResourceCredential build() {

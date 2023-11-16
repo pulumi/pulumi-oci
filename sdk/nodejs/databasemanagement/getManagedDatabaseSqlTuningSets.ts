@@ -62,7 +62,7 @@ export interface GetManagedDatabaseSqlTuningSetsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
      */
@@ -75,7 +75,7 @@ export interface GetManagedDatabaseSqlTuningSetsResult {
     /**
      * The list of sql_tuning_set_collection.
      */
-    readonly sqlTuningSetCollections: outputs.DatabaseManagement.GetManagedDatabaseSqlTuningSetsSqlTuningSetCollection[];
+    readonly sqlTuningSetCollections?: outputs.DatabaseManagement.GetManagedDatabaseSqlTuningSetsSqlTuningSetCollection[];
 }
 /**
  * This data source provides the list of Managed Database Sql Tuning Sets in Oracle Cloud Infrastructure Database Management service.

@@ -62,63 +62,42 @@ class GetQuotaResult:
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The OCID of the compartment containing the resource this quota applies to.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        The description you assign to the quota.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The OCID of the quota.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="isLockOverride")
-    def is_lock_override(self) -> bool:
+    def is_lock_override(self) -> Optional[bool]:
         return pulumi.get(self, "is_lock_override")
 
     @property
     @pulumi.getter
-    def locks(self) -> Sequence['outputs.GetQuotaLockResult']:
-        """
-        Locks associated with this resource.
-        """
+    def locks(self) -> Optional[Sequence['outputs.GetQuotaLockResult']]:
         return pulumi.get(self, "locks")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        The name you assign to the quota during creation. The name must be unique across all quotas in the tenancy and cannot be changed.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
@@ -128,26 +107,17 @@ class GetQuotaResult:
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The quota's current state.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter
-    def statements(self) -> Sequence[str]:
-        """
-        An array of one or more quota statements written in the declarative quota statement language.
-        """
+    def statements(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "statements")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        Date and time the quota was created, in the format defined by RFC 3339. Example: `2016-08-25T21:10:29.600Z`
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
 
@@ -174,21 +144,7 @@ class AwaitableGetQuotaResult(GetQuotaResult):
 def get_quota(quota_id: Optional[str] = None,
               opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetQuotaResult:
     """
-    This data source provides details about a specific Quota resource in Oracle Cloud Infrastructure Limits service.
-
-    Gets the quota for the OCID specified.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_quota = oci.Limits.get_quota(quota_id=oci_limits_quota["test_quota"]["id"])
-    ```
-
-
-    :param str quota_id: The OCID of the quota.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['quotaId'] = quota_id
@@ -214,20 +170,6 @@ def get_quota(quota_id: Optional[str] = None,
 def get_quota_output(quota_id: Optional[pulumi.Input[str]] = None,
                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetQuotaResult]:
     """
-    This data source provides details about a specific Quota resource in Oracle Cloud Infrastructure Limits service.
-
-    Gets the quota for the OCID specified.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_quota = oci.Limits.get_quota(quota_id=oci_limits_quota["test_quota"]["id"])
-    ```
-
-
-    :param str quota_id: The OCID of the quota.
+    Use this data source to access information about an existing resource.
     """
     ...

@@ -7,14 +7,15 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.OsManagementHub.outputs.GetManagementStationsManagementStationCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetManagementStationsManagementStationCollection {
-    private List<GetManagementStationsManagementStationCollectionItem> items;
+    private @Nullable List<GetManagementStationsManagementStationCollectionItem> items;
 
     private GetManagementStationsManagementStationCollection() {}
     public List<GetManagementStationsManagementStationCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -26,7 +27,7 @@ public final class GetManagementStationsManagementStationCollection {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetManagementStationsManagementStationCollectionItem> items;
+        private @Nullable List<GetManagementStationsManagementStationCollectionItem> items;
         public Builder() {}
         public Builder(GetManagementStationsManagementStationCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -34,8 +35,8 @@ public final class GetManagementStationsManagementStationCollection {
         }
 
         @CustomType.Setter
-        public Builder items(List<GetManagementStationsManagementStationCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetManagementStationsManagementStationCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetManagementStationsManagementStationCollectionItem... items) {

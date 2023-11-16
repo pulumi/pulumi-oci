@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Security Recipe resource in Oracle Cloud Infrastructure Cloud Guard service.
@@ -69,7 +68,7 @@ type SecurityRecipe struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) The recipe's description
-	Description pulumi.StringOutput `pulumi:"description"`
+	Description pulumi.StringPtrOutput `pulumi:"description"`
 	// (Updatable) The recipe's name
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -77,20 +76,20 @@ type SecurityRecipe struct {
 	// Avoid entering confidential information.
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// A message describing the current state in more detail. For example, this can be used to provide actionable information for a recipe in the `Failed` state.
-	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrOutput `pulumi:"lifecycleDetails"`
 	// The owner of the recipe
-	Owner pulumi.StringOutput `pulumi:"owner"`
+	Owner pulumi.StringPtrOutput `pulumi:"owner"`
 	// (Updatable) The list of `SecurityPolicy` ids to include in the recipe
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SecurityPolicies pulumi.StringArrayOutput `pulumi:"securityPolicies"`
 	// The current state of the recipe
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// The time the recipe was created. An RFC3339 formatted datetime string.
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The time the recipe was last updated. An RFC3339 formatted datetime string.
-	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 }
 
 // NewSecurityRecipe registers a new resource with the given unique name, arguments, and options.
@@ -259,12 +258,6 @@ func (i *SecurityRecipe) ToSecurityRecipeOutputWithContext(ctx context.Context) 
 	return pulumi.ToOutputWithContext(ctx, i).(SecurityRecipeOutput)
 }
 
-func (i *SecurityRecipe) ToOutput(ctx context.Context) pulumix.Output[*SecurityRecipe] {
-	return pulumix.Output[*SecurityRecipe]{
-		OutputState: i.ToSecurityRecipeOutputWithContext(ctx).OutputState,
-	}
-}
-
 // SecurityRecipeArrayInput is an input type that accepts SecurityRecipeArray and SecurityRecipeArrayOutput values.
 // You can construct a concrete instance of `SecurityRecipeArrayInput` via:
 //
@@ -288,12 +281,6 @@ func (i SecurityRecipeArray) ToSecurityRecipeArrayOutput() SecurityRecipeArrayOu
 
 func (i SecurityRecipeArray) ToSecurityRecipeArrayOutputWithContext(ctx context.Context) SecurityRecipeArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(SecurityRecipeArrayOutput)
-}
-
-func (i SecurityRecipeArray) ToOutput(ctx context.Context) pulumix.Output[[]*SecurityRecipe] {
-	return pulumix.Output[[]*SecurityRecipe]{
-		OutputState: i.ToSecurityRecipeArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // SecurityRecipeMapInput is an input type that accepts SecurityRecipeMap and SecurityRecipeMapOutput values.
@@ -321,12 +308,6 @@ func (i SecurityRecipeMap) ToSecurityRecipeMapOutputWithContext(ctx context.Cont
 	return pulumi.ToOutputWithContext(ctx, i).(SecurityRecipeMapOutput)
 }
 
-func (i SecurityRecipeMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*SecurityRecipe] {
-	return pulumix.Output[map[string]*SecurityRecipe]{
-		OutputState: i.ToSecurityRecipeMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type SecurityRecipeOutput struct{ *pulumi.OutputState }
 
 func (SecurityRecipeOutput) ElementType() reflect.Type {
@@ -341,12 +322,6 @@ func (o SecurityRecipeOutput) ToSecurityRecipeOutputWithContext(ctx context.Cont
 	return o
 }
 
-func (o SecurityRecipeOutput) ToOutput(ctx context.Context) pulumix.Output[*SecurityRecipe] {
-	return pulumix.Output[*SecurityRecipe]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) The compartment in which to create the recipe
 func (o SecurityRecipeOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *SecurityRecipe) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
@@ -358,8 +333,8 @@ func (o SecurityRecipeOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // (Updatable) The recipe's description
-func (o SecurityRecipeOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v *SecurityRecipe) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
+func (o SecurityRecipeOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SecurityRecipe) pulumi.StringPtrOutput { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The recipe's name
@@ -375,13 +350,13 @@ func (o SecurityRecipeOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // A message describing the current state in more detail. For example, this can be used to provide actionable information for a recipe in the `Failed` state.
-func (o SecurityRecipeOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v *SecurityRecipe) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o SecurityRecipeOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SecurityRecipe) pulumi.StringPtrOutput { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // The owner of the recipe
-func (o SecurityRecipeOutput) Owner() pulumi.StringOutput {
-	return o.ApplyT(func(v *SecurityRecipe) pulumi.StringOutput { return v.Owner }).(pulumi.StringOutput)
+func (o SecurityRecipeOutput) Owner() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SecurityRecipe) pulumi.StringPtrOutput { return v.Owner }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The list of `SecurityPolicy` ids to include in the recipe
@@ -393,18 +368,18 @@ func (o SecurityRecipeOutput) SecurityPolicies() pulumi.StringArrayOutput {
 }
 
 // The current state of the recipe
-func (o SecurityRecipeOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *SecurityRecipe) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o SecurityRecipeOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SecurityRecipe) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The time the recipe was created. An RFC3339 formatted datetime string.
-func (o SecurityRecipeOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *SecurityRecipe) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o SecurityRecipeOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SecurityRecipe) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time the recipe was last updated. An RFC3339 formatted datetime string.
-func (o SecurityRecipeOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *SecurityRecipe) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o SecurityRecipeOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SecurityRecipe) pulumi.StringPtrOutput { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type SecurityRecipeArrayOutput struct{ *pulumi.OutputState }
@@ -419,12 +394,6 @@ func (o SecurityRecipeArrayOutput) ToSecurityRecipeArrayOutput() SecurityRecipeA
 
 func (o SecurityRecipeArrayOutput) ToSecurityRecipeArrayOutputWithContext(ctx context.Context) SecurityRecipeArrayOutput {
 	return o
-}
-
-func (o SecurityRecipeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*SecurityRecipe] {
-	return pulumix.Output[[]*SecurityRecipe]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o SecurityRecipeArrayOutput) Index(i pulumi.IntInput) SecurityRecipeOutput {
@@ -445,12 +414,6 @@ func (o SecurityRecipeMapOutput) ToSecurityRecipeMapOutput() SecurityRecipeMapOu
 
 func (o SecurityRecipeMapOutput) ToSecurityRecipeMapOutputWithContext(ctx context.Context) SecurityRecipeMapOutput {
 	return o
-}
-
-func (o SecurityRecipeMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*SecurityRecipe] {
-	return pulumix.Output[map[string]*SecurityRecipe]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o SecurityRecipeMapOutput) MapIndex(k pulumi.StringInput) SecurityRecipeOutput {

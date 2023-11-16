@@ -16,134 +16,134 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// <summary>
         /// The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> AdditionalDetails;
-        public readonly string ConnectorId;
+        public readonly ImmutableDictionary<string, object>? AdditionalDetails;
+        public readonly string? ConnectorId;
         /// <summary>
         /// The CPU count of the Exadata storage server.
         /// </summary>
-        public readonly double CpuCount;
+        public readonly double? CpuCount;
         /// <summary>
         /// The optional single value query filter parameter on the entity display name.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
         /// </summary>
-        public readonly string ExadataInfrastructureId;
+        public readonly string? ExadataInfrastructureId;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The internal ID of the Exadata resource.
         /// </summary>
-        public readonly string InternalId;
+        public readonly string? InternalId;
         /// <summary>
         /// The IP address of the Exadata storage server.
         /// </summary>
-        public readonly string IpAddress;
+        public readonly string? IpAddress;
         /// <summary>
         /// The details of the lifecycle state of the Exadata resource.
         /// </summary>
-        public readonly string LifecycleDetails;
+        public readonly string? LifecycleDetails;
         /// <summary>
         /// The make model of the Exadata storage server.
         /// </summary>
-        public readonly string MakeModel;
+        public readonly string? MakeModel;
         /// <summary>
         /// The maximum flash disk IO operations per second of the Exadata storage server.
         /// </summary>
-        public readonly int MaxFlashDiskIops;
+        public readonly int? MaxFlashDiskIops;
         /// <summary>
         /// The maximum flash disk IO throughput in MB/s of the Exadata storage server.
         /// </summary>
-        public readonly int MaxFlashDiskThroughput;
+        public readonly int? MaxFlashDiskThroughput;
         /// <summary>
         /// The maximum hard disk IO operations per second of the Exadata storage server.
         /// </summary>
-        public readonly int MaxHardDiskIops;
+        public readonly int? MaxHardDiskIops;
         /// <summary>
         /// The maximum hard disk IO throughput in MB/s of the Exadata storage server.
         /// </summary>
-        public readonly int MaxHardDiskThroughput;
+        public readonly int? MaxHardDiskThroughput;
         /// <summary>
         /// The Exadata storage server memory size in GB.
         /// </summary>
-        public readonly double MemoryGb;
+        public readonly double? MemoryGb;
         /// <summary>
         /// The type of Exadata resource.
         /// </summary>
-        public readonly string ResourceType;
+        public readonly string? ResourceType;
         /// <summary>
         /// The current lifecycle state of the database resource.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// The status of the Exadata resource.
         /// </summary>
-        public readonly string Status;
+        public readonly string? Status;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata storage server grid.
         /// </summary>
-        public readonly string StorageGridId;
+        public readonly string? StorageGridId;
         /// <summary>
         /// The timestamp of the creation of the Exadata resource.
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The timestamp of the last update of the Exadata resource.
         /// </summary>
-        public readonly string TimeUpdated;
+        public readonly string? TimeUpdated;
         /// <summary>
         /// The version of the Exadata resource.
         /// </summary>
-        public readonly string Version;
+        public readonly string? Version;
 
         [OutputConstructor]
         private GetExternalExadataStorageServersExternalExadataStorageServerCollectionItemResult(
-            ImmutableDictionary<string, object> additionalDetails,
+            ImmutableDictionary<string, object>? additionalDetails,
 
-            string connectorId,
+            string? connectorId,
 
-            double cpuCount,
+            double? cpuCount,
 
-            string displayName,
+            string? displayName,
 
-            string exadataInfrastructureId,
+            string? exadataInfrastructureId,
 
-            string id,
+            string? id,
 
-            string internalId,
+            string? internalId,
 
-            string ipAddress,
+            string? ipAddress,
 
-            string lifecycleDetails,
+            string? lifecycleDetails,
 
-            string makeModel,
+            string? makeModel,
 
-            int maxFlashDiskIops,
+            int? maxFlashDiskIops,
 
-            int maxFlashDiskThroughput,
+            int? maxFlashDiskThroughput,
 
-            int maxHardDiskIops,
+            int? maxHardDiskIops,
 
-            int maxHardDiskThroughput,
+            int? maxHardDiskThroughput,
 
-            double memoryGb,
+            double? memoryGb,
 
-            string resourceType,
+            string? resourceType,
 
-            string state,
+            string? state,
 
-            string status,
+            string? status,
 
-            string storageGridId,
+            string? storageGridId,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeUpdated,
+            string? timeUpdated,
 
-            string version)
+            string? version)
         {
             AdditionalDetails = additionalDetails;
             ConnectorId = connectorId;

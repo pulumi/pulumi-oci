@@ -16,35 +16,35 @@ namespace Pulumi.Oci.Adm.Outputs
         /// <summary>
         /// Information about the current step within the given stage.
         /// </summary>
-        public readonly string Summary;
+        public readonly string? Summary;
         /// <summary>
         /// The creation date and time of the remediation run (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The date and time of the finish of the remediation run (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
         /// </summary>
-        public readonly string TimeFinished;
+        public readonly string? TimeFinished;
         /// <summary>
         /// The date and time of the start of the remediation run (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
         /// </summary>
-        public readonly string TimeStarted;
+        public readonly string? TimeStarted;
         /// <summary>
         /// The type of stage.
         /// </summary>
-        public readonly string Type;
+        public readonly string? Type;
 
         [OutputConstructor]
         private GetRemediationRunStageResult(
-            string summary,
+            string? summary,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeFinished,
+            string? timeFinished,
 
-            string timeStarted,
+            string? timeStarted,
 
-            string type)
+            string? type)
         {
             Summary = summary;
             TimeCreated = timeCreated;

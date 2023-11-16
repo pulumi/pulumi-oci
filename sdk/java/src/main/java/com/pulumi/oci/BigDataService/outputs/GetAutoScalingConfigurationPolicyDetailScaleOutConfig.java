@@ -8,6 +8,8 @@ import com.pulumi.oci.BigDataService.outputs.GetAutoScalingConfigurationPolicyDe
 import java.lang.Integer;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAutoScalingConfigurationPolicyDetailScaleOutConfig {
@@ -15,39 +17,39 @@ public final class GetAutoScalingConfigurationPolicyDetailScaleOutConfig {
      * @return This value is the maximum number of nodes the cluster can be scaled-out to.
      * 
      */
-    private Integer maxNodeCount;
+    private @Nullable Integer maxNodeCount;
     /**
      * @return Metric and threshold details for triggering an autoscale action.
      * 
      */
-    private List<GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetric> metrics;
+    private @Nullable List<GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetric> metrics;
     /**
      * @return This value is the number of nodes to add during a scale-out event.
      * 
      */
-    private Integer stepSize;
+    private @Nullable Integer stepSize;
 
     private GetAutoScalingConfigurationPolicyDetailScaleOutConfig() {}
     /**
      * @return This value is the maximum number of nodes the cluster can be scaled-out to.
      * 
      */
-    public Integer maxNodeCount() {
-        return this.maxNodeCount;
+    public Optional<Integer> maxNodeCount() {
+        return Optional.ofNullable(this.maxNodeCount);
     }
     /**
      * @return Metric and threshold details for triggering an autoscale action.
      * 
      */
     public List<GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetric> metrics() {
-        return this.metrics;
+        return this.metrics == null ? List.of() : this.metrics;
     }
     /**
      * @return This value is the number of nodes to add during a scale-out event.
      * 
      */
-    public Integer stepSize() {
-        return this.stepSize;
+    public Optional<Integer> stepSize() {
+        return Optional.ofNullable(this.stepSize);
     }
 
     public static Builder builder() {
@@ -59,9 +61,9 @@ public final class GetAutoScalingConfigurationPolicyDetailScaleOutConfig {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Integer maxNodeCount;
-        private List<GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetric> metrics;
-        private Integer stepSize;
+        private @Nullable Integer maxNodeCount;
+        private @Nullable List<GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetric> metrics;
+        private @Nullable Integer stepSize;
         public Builder() {}
         public Builder(GetAutoScalingConfigurationPolicyDetailScaleOutConfig defaults) {
     	      Objects.requireNonNull(defaults);
@@ -71,21 +73,21 @@ public final class GetAutoScalingConfigurationPolicyDetailScaleOutConfig {
         }
 
         @CustomType.Setter
-        public Builder maxNodeCount(Integer maxNodeCount) {
-            this.maxNodeCount = Objects.requireNonNull(maxNodeCount);
+        public Builder maxNodeCount(@Nullable Integer maxNodeCount) {
+            this.maxNodeCount = maxNodeCount;
             return this;
         }
         @CustomType.Setter
-        public Builder metrics(List<GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetric> metrics) {
-            this.metrics = Objects.requireNonNull(metrics);
+        public Builder metrics(@Nullable List<GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetric> metrics) {
+            this.metrics = metrics;
             return this;
         }
         public Builder metrics(GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetric... metrics) {
             return metrics(List.of(metrics));
         }
         @CustomType.Setter
-        public Builder stepSize(Integer stepSize) {
-            this.stepSize = Objects.requireNonNull(stepSize);
+        public Builder stepSize(@Nullable Integer stepSize) {
+            this.stepSize = stepSize;
             return this;
         }
         public GetAutoScalingConfigurationPolicyDetailScaleOutConfig build() {

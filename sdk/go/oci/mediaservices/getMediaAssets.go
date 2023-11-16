@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Media Assets in Oracle Cloud Infrastructure Media Services service.
@@ -102,7 +101,7 @@ type GetMediaAssetsResult struct {
 	DistributionChannelId *string                `pulumi:"distributionChannelId"`
 	Filters               []GetMediaAssetsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The ID of the senior most asset from which this asset is derived.
 	MasterMediaAssetId *string `pulumi:"masterMediaAssetId"`
 	// The list of media_asset_collection.
@@ -184,12 +183,6 @@ func (o GetMediaAssetsResultOutput) ToGetMediaAssetsResultOutputWithContext(ctx 
 	return o
 }
 
-func (o GetMediaAssetsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetMediaAssetsResult] {
-	return pulumix.Output[GetMediaAssetsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The name of the object storage bucket where this represented asset is located.
 func (o GetMediaAssetsResultOutput) Bucket() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetMediaAssetsResult) *string { return v.Bucket }).(pulumi.StringPtrOutput)
@@ -214,8 +207,8 @@ func (o GetMediaAssetsResultOutput) Filters() GetMediaAssetsFilterArrayOutput {
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetMediaAssetsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMediaAssetsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetMediaAssetsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMediaAssetsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The ID of the senior most asset from which this asset is derived.

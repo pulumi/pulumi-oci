@@ -16,29 +16,29 @@ namespace Pulumi.Oci.Functions.Outputs
         /// <summary>
         /// Admin users email address
         /// </summary>
-        public readonly string EmailAddress;
+        public readonly string? EmailAddress;
         /// <summary>
         /// Admin users first name
         /// </summary>
-        public readonly string FirstName;
+        public readonly string? FirstName;
         /// <summary>
         /// Admin users last name
         /// </summary>
-        public readonly string LastName;
+        public readonly string? LastName;
         /// <summary>
         /// Admin username
         /// </summary>
-        public readonly string Username;
+        public readonly string? Username;
 
         [OutputConstructor]
         private GetFusionEnvironmentAdminUserItemResult(
-            string emailAddress,
+            string? emailAddress,
 
-            string firstName,
+            string? firstName,
 
-            string lastName,
+            string? lastName,
 
-            string username)
+            string? username)
         {
             EmailAddress = emailAddress;
             FirstName = firstName;

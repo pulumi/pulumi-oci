@@ -16,19 +16,19 @@ namespace Pulumi.Oci.Monitoring.Outputs
         /// <summary>
         /// A filter to return only resources that match the given display name exactly. Use this filter to list an alarm by name. Alternatively, when you know the alarm OCID, use the GetAlarm operation.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the alarm.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The configured severity of the alarm.  Example: `CRITICAL`
         /// </summary>
-        public readonly string Severity;
+        public readonly string? Severity;
         /// <summary>
         /// The status of the metric stream to use for alarm filtering. For example, set `StatusQueryParam` to "FIRING" to filter results to metric streams of the alarm with that status. Default behaviour is to return alarms irrespective of metric streams' status.  Example: `FIRING`
         /// </summary>
-        public readonly string Status;
+        public readonly string? Status;
         /// <summary>
         /// The configuration details for suppressing an alarm.
         /// </summary>
@@ -36,21 +36,21 @@ namespace Pulumi.Oci.Monitoring.Outputs
         /// <summary>
         /// Timestamp for the transition of the alarm state. For example, the time when the alarm transitioned from OK to Firing. Note: A three-minute lag for this value accounts for any late-arriving metrics.  Example: `2019-02-01T01:02:29.600Z`
         /// </summary>
-        public readonly string TimestampTriggered;
+        public readonly string? TimestampTriggered;
 
         [OutputConstructor]
         private GetAlarmStatusesAlarmStatusResult(
-            string displayName,
+            string? displayName,
 
-            string id,
+            string? id,
 
-            string severity,
+            string? severity,
 
-            string status,
+            string? status,
 
             ImmutableArray<Outputs.GetAlarmStatusesAlarmStatusSuppressionResult> suppressions,
 
-            string timestampTriggered)
+            string? timestampTriggered)
         {
             DisplayName = displayName;
             Id = id;

@@ -122,11 +122,11 @@ namespace Pulumi.Oci.DevOps
         /// <summary>
         /// Email of the author of the repository.
         /// </summary>
-        public readonly string AuthorEmail;
+        public readonly string? AuthorEmail;
         /// <summary>
         /// Name of the author of the repository.
         /// </summary>
-        public readonly string AuthorName;
+        public readonly string? AuthorName;
         /// <summary>
         /// Commit hash pointed to by reference name.
         /// </summary>
@@ -134,19 +134,19 @@ namespace Pulumi.Oci.DevOps
         /// <summary>
         /// The commit message.
         /// </summary>
-        public readonly string CommitMessage;
+        public readonly string? CommitMessage;
         /// <summary>
         /// Email of who creates the commit.
         /// </summary>
-        public readonly string CommitterEmail;
+        public readonly string? CommitterEmail;
         /// <summary>
         /// Name of who creates the commit.
         /// </summary>
-        public readonly string CommitterName;
+        public readonly string? CommitterName;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// An array of parent commit IDs of created commit.
         /// </summary>
@@ -155,35 +155,35 @@ namespace Pulumi.Oci.DevOps
         /// <summary>
         /// The time at which commit was created.
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// Tree information for the specified commit.
         /// </summary>
-        public readonly string TreeId;
+        public readonly string? TreeId;
 
         [OutputConstructor]
         private GetRepositoryCommitResult(
-            string authorEmail,
+            string? authorEmail,
 
-            string authorName,
+            string? authorName,
 
             string commitId,
 
-            string commitMessage,
+            string? commitMessage,
 
-            string committerEmail,
+            string? committerEmail,
 
-            string committerName,
+            string? committerName,
 
-            string id,
+            string? id,
 
             ImmutableArray<string> parentCommitIds,
 
             string repositoryId,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string treeId)
+            string? treeId)
         {
             AuthorEmail = authorEmail;
             AuthorName = authorName;

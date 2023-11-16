@@ -16,35 +16,35 @@ namespace Pulumi.Oci.Jms.Outputs
         /// <summary>
         /// The architecture of the operating system as provided by the Java system property os.arch.
         /// </summary>
-        public readonly string Architecture;
+        public readonly string? Architecture;
         /// <summary>
         /// The operating system type, such as Windows or Linux
         /// </summary>
-        public readonly string Family;
+        public readonly string? Family;
         /// <summary>
         /// Number of instances running the operating system
         /// </summary>
-        public readonly int ManagedInstanceCount;
+        public readonly int? ManagedInstanceCount;
         /// <summary>
         /// The name of the operating system as provided by the Java system property os.name.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// The version of the operating system as provided by the Java system property os.version.
         /// </summary>
-        public readonly string Version;
+        public readonly string? Version;
 
         [OutputConstructor]
         private GetInstallationSiteItemOperatingSystemResult(
-            string architecture,
+            string? architecture,
 
-            string family,
+            string? family,
 
-            int managedInstanceCount,
+            int? managedInstanceCount,
 
-            string name,
+            string? name,
 
-            string version)
+            string? version)
         {
             Architecture = architecture;
             Family = family;

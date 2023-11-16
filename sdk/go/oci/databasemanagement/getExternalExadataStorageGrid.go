@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific External Exadata Storage Grid resource in Oracle Cloud Infrastructure Database Management service.
@@ -62,32 +61,32 @@ type GetExternalExadataStorageGridResult struct {
 	// The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
 	AdditionalDetails map[string]interface{} `pulumi:"additionalDetails"`
 	// The name of the Exadata resource. English letters, numbers, "-", "_" and "." only.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
-	ExadataInfrastructureId      string `pulumi:"exadataInfrastructureId"`
-	ExternalExadataStorageGridId string `pulumi:"externalExadataStorageGridId"`
+	ExadataInfrastructureId      *string `pulumi:"exadataInfrastructureId"`
+	ExternalExadataStorageGridId string  `pulumi:"externalExadataStorageGridId"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The internal ID of the Exadata resource.
-	InternalId string `pulumi:"internalId"`
+	InternalId *string `pulumi:"internalId"`
 	// The details of the lifecycle state of the Exadata resource.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// The type of Exadata resource.
-	ResourceType string `pulumi:"resourceType"`
+	ResourceType *string `pulumi:"resourceType"`
 	// The number of Exadata storage servers in the Exadata infrastructure.
-	ServerCount float64 `pulumi:"serverCount"`
+	ServerCount *float64 `pulumi:"serverCount"`
 	// The current lifecycle state of the database resource.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The status of the Exadata resource.
-	Status string `pulumi:"status"`
+	Status *string `pulumi:"status"`
 	// A list of monitored Exadata storage servers.
 	StorageServers []GetExternalExadataStorageGridStorageServer `pulumi:"storageServers"`
 	// The timestamp of the creation of the Exadata resource.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The timestamp of the last update of the Exadata resource.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 	// The version of the Exadata resource.
-	Version string `pulumi:"version"`
+	Version *string `pulumi:"version"`
 }
 
 func GetExternalExadataStorageGridOutput(ctx *pulumi.Context, args GetExternalExadataStorageGridOutputArgs, opts ...pulumi.InvokeOption) GetExternalExadataStorageGridResultOutput {
@@ -128,25 +127,19 @@ func (o GetExternalExadataStorageGridResultOutput) ToGetExternalExadataStorageGr
 	return o
 }
 
-func (o GetExternalExadataStorageGridResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetExternalExadataStorageGridResult] {
-	return pulumix.Output[GetExternalExadataStorageGridResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
 func (o GetExternalExadataStorageGridResultOutput) AdditionalDetails() pulumi.MapOutput {
 	return o.ApplyT(func(v GetExternalExadataStorageGridResult) map[string]interface{} { return v.AdditionalDetails }).(pulumi.MapOutput)
 }
 
 // The name of the Exadata resource. English letters, numbers, "-", "_" and "." only.
-func (o GetExternalExadataStorageGridResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExternalExadataStorageGridResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetExternalExadataStorageGridResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExternalExadataStorageGridResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
-func (o GetExternalExadataStorageGridResultOutput) ExadataInfrastructureId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExternalExadataStorageGridResult) string { return v.ExadataInfrastructureId }).(pulumi.StringOutput)
+func (o GetExternalExadataStorageGridResultOutput) ExadataInfrastructureId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExternalExadataStorageGridResult) *string { return v.ExadataInfrastructureId }).(pulumi.StringPtrOutput)
 }
 
 func (o GetExternalExadataStorageGridResultOutput) ExternalExadataStorageGridId() pulumi.StringOutput {
@@ -154,38 +147,38 @@ func (o GetExternalExadataStorageGridResultOutput) ExternalExadataStorageGridId(
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetExternalExadataStorageGridResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExternalExadataStorageGridResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetExternalExadataStorageGridResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExternalExadataStorageGridResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The internal ID of the Exadata resource.
-func (o GetExternalExadataStorageGridResultOutput) InternalId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExternalExadataStorageGridResult) string { return v.InternalId }).(pulumi.StringOutput)
+func (o GetExternalExadataStorageGridResultOutput) InternalId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExternalExadataStorageGridResult) *string { return v.InternalId }).(pulumi.StringPtrOutput)
 }
 
 // The details of the lifecycle state of the Exadata resource.
-func (o GetExternalExadataStorageGridResultOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExternalExadataStorageGridResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o GetExternalExadataStorageGridResultOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExternalExadataStorageGridResult) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // The type of Exadata resource.
-func (o GetExternalExadataStorageGridResultOutput) ResourceType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExternalExadataStorageGridResult) string { return v.ResourceType }).(pulumi.StringOutput)
+func (o GetExternalExadataStorageGridResultOutput) ResourceType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExternalExadataStorageGridResult) *string { return v.ResourceType }).(pulumi.StringPtrOutput)
 }
 
 // The number of Exadata storage servers in the Exadata infrastructure.
-func (o GetExternalExadataStorageGridResultOutput) ServerCount() pulumi.Float64Output {
-	return o.ApplyT(func(v GetExternalExadataStorageGridResult) float64 { return v.ServerCount }).(pulumi.Float64Output)
+func (o GetExternalExadataStorageGridResultOutput) ServerCount() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetExternalExadataStorageGridResult) *float64 { return v.ServerCount }).(pulumi.Float64PtrOutput)
 }
 
 // The current lifecycle state of the database resource.
-func (o GetExternalExadataStorageGridResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExternalExadataStorageGridResult) string { return v.State }).(pulumi.StringOutput)
+func (o GetExternalExadataStorageGridResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExternalExadataStorageGridResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The status of the Exadata resource.
-func (o GetExternalExadataStorageGridResultOutput) Status() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExternalExadataStorageGridResult) string { return v.Status }).(pulumi.StringOutput)
+func (o GetExternalExadataStorageGridResultOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExternalExadataStorageGridResult) *string { return v.Status }).(pulumi.StringPtrOutput)
 }
 
 // A list of monitored Exadata storage servers.
@@ -196,18 +189,18 @@ func (o GetExternalExadataStorageGridResultOutput) StorageServers() GetExternalE
 }
 
 // The timestamp of the creation of the Exadata resource.
-func (o GetExternalExadataStorageGridResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExternalExadataStorageGridResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetExternalExadataStorageGridResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExternalExadataStorageGridResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The timestamp of the last update of the Exadata resource.
-func (o GetExternalExadataStorageGridResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExternalExadataStorageGridResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o GetExternalExadataStorageGridResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExternalExadataStorageGridResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 // The version of the Exadata resource.
-func (o GetExternalExadataStorageGridResultOutput) Version() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExternalExadataStorageGridResult) string { return v.Version }).(pulumi.StringOutput)
+func (o GetExternalExadataStorageGridResultOutput) Version() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExternalExadataStorageGridResult) *string { return v.Version }).(pulumi.StringPtrOutput)
 }
 
 func init() {

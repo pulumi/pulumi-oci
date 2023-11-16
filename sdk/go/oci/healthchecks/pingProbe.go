@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Ping Probe resource in Oracle Cloud Infrastructure Health Checks service.
@@ -66,19 +65,19 @@ type PingProbe struct {
 	// The OCID of the compartment.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// The region where updates must be made and where results must be fetched from.
-	HomeRegion pulumi.StringOutput `pulumi:"homeRegion"`
+	HomeRegion pulumi.StringPtrOutput `pulumi:"homeRegion"`
 	// The port on which to probe endpoints. If unspecified, probes will use the default port of their protocol.
-	Port pulumi.IntOutput `pulumi:"port"`
+	Port pulumi.IntPtrOutput `pulumi:"port"`
 	// The protocols for ping probes.
 	Protocol pulumi.StringOutput `pulumi:"protocol"`
 	// A URL for fetching the probe results.
-	ResultsUrl pulumi.StringOutput `pulumi:"resultsUrl"`
+	ResultsUrl pulumi.StringPtrOutput `pulumi:"resultsUrl"`
 	// A list of targets (hostnames or IP addresses) of the probe.
 	Targets pulumi.StringArrayOutput `pulumi:"targets"`
 	// The RFC 3339-formatted creation date and time of the probe.
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The probe timeout in seconds. Valid values: 10, 20, 30, and 60. The probe timeout must be less than or equal to `intervalInSeconds` for monitors.
-	TimeoutInSeconds pulumi.IntOutput `pulumi:"timeoutInSeconds"`
+	TimeoutInSeconds pulumi.IntPtrOutput `pulumi:"timeoutInSeconds"`
 	// A list of names of vantage points from which to execute the probe.
 	//
 	// ** IMPORTANT **
@@ -236,12 +235,6 @@ func (i *PingProbe) ToPingProbeOutputWithContext(ctx context.Context) PingProbeO
 	return pulumi.ToOutputWithContext(ctx, i).(PingProbeOutput)
 }
 
-func (i *PingProbe) ToOutput(ctx context.Context) pulumix.Output[*PingProbe] {
-	return pulumix.Output[*PingProbe]{
-		OutputState: i.ToPingProbeOutputWithContext(ctx).OutputState,
-	}
-}
-
 // PingProbeArrayInput is an input type that accepts PingProbeArray and PingProbeArrayOutput values.
 // You can construct a concrete instance of `PingProbeArrayInput` via:
 //
@@ -265,12 +258,6 @@ func (i PingProbeArray) ToPingProbeArrayOutput() PingProbeArrayOutput {
 
 func (i PingProbeArray) ToPingProbeArrayOutputWithContext(ctx context.Context) PingProbeArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(PingProbeArrayOutput)
-}
-
-func (i PingProbeArray) ToOutput(ctx context.Context) pulumix.Output[[]*PingProbe] {
-	return pulumix.Output[[]*PingProbe]{
-		OutputState: i.ToPingProbeArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // PingProbeMapInput is an input type that accepts PingProbeMap and PingProbeMapOutput values.
@@ -298,12 +285,6 @@ func (i PingProbeMap) ToPingProbeMapOutputWithContext(ctx context.Context) PingP
 	return pulumi.ToOutputWithContext(ctx, i).(PingProbeMapOutput)
 }
 
-func (i PingProbeMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*PingProbe] {
-	return pulumix.Output[map[string]*PingProbe]{
-		OutputState: i.ToPingProbeMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type PingProbeOutput struct{ *pulumi.OutputState }
 
 func (PingProbeOutput) ElementType() reflect.Type {
@@ -318,25 +299,19 @@ func (o PingProbeOutput) ToPingProbeOutputWithContext(ctx context.Context) PingP
 	return o
 }
 
-func (o PingProbeOutput) ToOutput(ctx context.Context) pulumix.Output[*PingProbe] {
-	return pulumix.Output[*PingProbe]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the compartment.
 func (o PingProbeOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *PingProbe) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
 // The region where updates must be made and where results must be fetched from.
-func (o PingProbeOutput) HomeRegion() pulumi.StringOutput {
-	return o.ApplyT(func(v *PingProbe) pulumi.StringOutput { return v.HomeRegion }).(pulumi.StringOutput)
+func (o PingProbeOutput) HomeRegion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *PingProbe) pulumi.StringPtrOutput { return v.HomeRegion }).(pulumi.StringPtrOutput)
 }
 
 // The port on which to probe endpoints. If unspecified, probes will use the default port of their protocol.
-func (o PingProbeOutput) Port() pulumi.IntOutput {
-	return o.ApplyT(func(v *PingProbe) pulumi.IntOutput { return v.Port }).(pulumi.IntOutput)
+func (o PingProbeOutput) Port() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *PingProbe) pulumi.IntPtrOutput { return v.Port }).(pulumi.IntPtrOutput)
 }
 
 // The protocols for ping probes.
@@ -345,8 +320,8 @@ func (o PingProbeOutput) Protocol() pulumi.StringOutput {
 }
 
 // A URL for fetching the probe results.
-func (o PingProbeOutput) ResultsUrl() pulumi.StringOutput {
-	return o.ApplyT(func(v *PingProbe) pulumi.StringOutput { return v.ResultsUrl }).(pulumi.StringOutput)
+func (o PingProbeOutput) ResultsUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *PingProbe) pulumi.StringPtrOutput { return v.ResultsUrl }).(pulumi.StringPtrOutput)
 }
 
 // A list of targets (hostnames or IP addresses) of the probe.
@@ -355,13 +330,13 @@ func (o PingProbeOutput) Targets() pulumi.StringArrayOutput {
 }
 
 // The RFC 3339-formatted creation date and time of the probe.
-func (o PingProbeOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *PingProbe) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o PingProbeOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *PingProbe) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The probe timeout in seconds. Valid values: 10, 20, 30, and 60. The probe timeout must be less than or equal to `intervalInSeconds` for monitors.
-func (o PingProbeOutput) TimeoutInSeconds() pulumi.IntOutput {
-	return o.ApplyT(func(v *PingProbe) pulumi.IntOutput { return v.TimeoutInSeconds }).(pulumi.IntOutput)
+func (o PingProbeOutput) TimeoutInSeconds() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *PingProbe) pulumi.IntPtrOutput { return v.TimeoutInSeconds }).(pulumi.IntPtrOutput)
 }
 
 // A list of names of vantage points from which to execute the probe.
@@ -386,12 +361,6 @@ func (o PingProbeArrayOutput) ToPingProbeArrayOutputWithContext(ctx context.Cont
 	return o
 }
 
-func (o PingProbeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*PingProbe] {
-	return pulumix.Output[[]*PingProbe]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o PingProbeArrayOutput) Index(i pulumi.IntInput) PingProbeOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *PingProbe {
 		return vs[0].([]*PingProbe)[vs[1].(int)]
@@ -410,12 +379,6 @@ func (o PingProbeMapOutput) ToPingProbeMapOutput() PingProbeMapOutput {
 
 func (o PingProbeMapOutput) ToPingProbeMapOutputWithContext(ctx context.Context) PingProbeMapOutput {
 	return o
-}
-
-func (o PingProbeMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*PingProbe] {
-	return pulumix.Output[map[string]*PingProbe]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o PingProbeMapOutput) MapIndex(k pulumi.StringInput) PingProbeOutput {

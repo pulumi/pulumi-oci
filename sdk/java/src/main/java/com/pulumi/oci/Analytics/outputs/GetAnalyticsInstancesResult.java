@@ -18,7 +18,7 @@ public final class GetAnalyticsInstancesResult {
      * @return The list of analytics_instances.
      * 
      */
-    private List<GetAnalyticsInstancesAnalyticsInstance> analyticsInstances;
+    private @Nullable List<GetAnalyticsInstancesAnalyticsInstance> analyticsInstances;
     /**
      * @return The capacity model to use.
      * 
@@ -39,7 +39,7 @@ public final class GetAnalyticsInstancesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The name of the Analytics instance. This name must be unique in the tenancy and cannot be changed.
      * 
@@ -57,7 +57,7 @@ public final class GetAnalyticsInstancesResult {
      * 
      */
     public List<GetAnalyticsInstancesAnalyticsInstance> analyticsInstances() {
-        return this.analyticsInstances;
+        return this.analyticsInstances == null ? List.of() : this.analyticsInstances;
     }
     /**
      * @return The capacity model to use.
@@ -87,8 +87,8 @@ public final class GetAnalyticsInstancesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The name of the Analytics instance. This name must be unique in the tenancy and cannot be changed.
@@ -114,12 +114,12 @@ public final class GetAnalyticsInstancesResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetAnalyticsInstancesAnalyticsInstance> analyticsInstances;
+        private @Nullable List<GetAnalyticsInstancesAnalyticsInstance> analyticsInstances;
         private @Nullable String capacityType;
         private String compartmentId;
         private @Nullable String featureSet;
         private @Nullable List<GetAnalyticsInstancesFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String name;
         private @Nullable String state;
         public Builder() {}
@@ -136,8 +136,8 @@ public final class GetAnalyticsInstancesResult {
         }
 
         @CustomType.Setter
-        public Builder analyticsInstances(List<GetAnalyticsInstancesAnalyticsInstance> analyticsInstances) {
-            this.analyticsInstances = Objects.requireNonNull(analyticsInstances);
+        public Builder analyticsInstances(@Nullable List<GetAnalyticsInstancesAnalyticsInstance> analyticsInstances) {
+            this.analyticsInstances = analyticsInstances;
             return this;
         }
         public Builder analyticsInstances(GetAnalyticsInstancesAnalyticsInstance... analyticsInstances) {
@@ -167,8 +167,8 @@ public final class GetAnalyticsInstancesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

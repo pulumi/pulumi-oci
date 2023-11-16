@@ -16,11 +16,11 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// Social IDP Access token URL
         /// </summary>
-        public readonly string AccessTokenUrl;
+        public readonly string? AccessTokenUrl;
         /// <summary>
         /// Whether account linking is enabled
         /// </summary>
-        public readonly bool AccountLinkingEnabled;
+        public readonly bool? AccountLinkingEnabled;
         /// <summary>
         /// Admin scope to request
         /// </summary>
@@ -28,43 +28,43 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// Social IDP Authorization URL
         /// </summary>
-        public readonly string AuthzUrl;
+        public readonly string? AuthzUrl;
         /// <summary>
         /// Whether the client credential is contained in payload
         /// </summary>
-        public readonly bool ClientCredentialInPayload;
+        public readonly bool? ClientCredentialInPayload;
         /// <summary>
         /// Social IDP allowed clock skew time
         /// </summary>
-        public readonly int ClockSkewInSeconds;
+        public readonly int? ClockSkewInSeconds;
         /// <summary>
         /// Social IDP Client Application Client ID
         /// </summary>
-        public readonly string ConsumerKey;
+        public readonly string? ConsumerKey;
         /// <summary>
         /// Social IDP Client Application Client Secret
         /// </summary>
-        public readonly string ConsumerSecret;
+        public readonly string? ConsumerSecret;
         /// <summary>
         /// Discovery URL
         /// </summary>
-        public readonly string DiscoveryUrl;
+        public readonly string? DiscoveryUrl;
         /// <summary>
         /// Id attribute used for account linking
         /// </summary>
-        public readonly string IdAttribute;
+        public readonly string? IdAttribute;
         /// <summary>
         /// Social IDP User profile URL
         /// </summary>
-        public readonly string ProfileUrl;
+        public readonly string? ProfileUrl;
         /// <summary>
         /// redirect URL for social idp
         /// </summary>
-        public readonly string RedirectUrl;
+        public readonly string? RedirectUrl;
         /// <summary>
         /// Whether registration is enabled
         /// </summary>
-        public readonly bool RegistrationEnabled;
+        public readonly bool? RegistrationEnabled;
         /// <summary>
         /// Scope to request
         /// </summary>
@@ -72,45 +72,45 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// Service Provider Name
         /// </summary>
-        public readonly string ServiceProviderName;
+        public readonly string? ServiceProviderName;
         /// <summary>
         /// Status
         /// </summary>
-        public readonly string Status;
+        public readonly string? Status;
 
         [OutputConstructor]
         private GetDomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionsocialIdentityProviderResult(
-            string accessTokenUrl,
+            string? accessTokenUrl,
 
-            bool accountLinkingEnabled,
+            bool? accountLinkingEnabled,
 
             ImmutableArray<string> adminScopes,
 
-            string authzUrl,
+            string? authzUrl,
 
-            bool clientCredentialInPayload,
+            bool? clientCredentialInPayload,
 
-            int clockSkewInSeconds,
+            int? clockSkewInSeconds,
 
-            string consumerKey,
+            string? consumerKey,
 
-            string consumerSecret,
+            string? consumerSecret,
 
-            string discoveryUrl,
+            string? discoveryUrl,
 
-            string idAttribute,
+            string? idAttribute,
 
-            string profileUrl,
+            string? profileUrl,
 
-            string redirectUrl,
+            string? redirectUrl,
 
-            bool registrationEnabled,
+            bool? registrationEnabled,
 
             ImmutableArray<string> scopes,
 
-            string serviceProviderName,
+            string? serviceProviderName,
 
-            string status)
+            string? status)
         {
             AccessTokenUrl = accessTokenUrl;
             AccountLinkingEnabled = accountLinkingEnabled;

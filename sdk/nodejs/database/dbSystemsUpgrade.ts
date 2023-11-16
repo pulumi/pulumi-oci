@@ -65,39 +65,39 @@ export class DbSystemsUpgrade extends pulumi.CustomResource {
     /**
      * The name of the availability domain that the DB system is located in.
      */
-    public /*out*/ readonly availabilityDomain!: pulumi.Output<string>;
+    public /*out*/ readonly availabilityDomain!: pulumi.Output<string | undefined>;
     /**
      * A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
      */
-    public /*out*/ readonly backupNetworkNsgIds!: pulumi.Output<string[]>;
+    public /*out*/ readonly backupNetworkNsgIds!: pulumi.Output<string[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup network subnet the DB system is associated with. Applicable only to Exadata DB systems.
      */
-    public /*out*/ readonly backupSubnetId!: pulumi.Output<string>;
+    public /*out*/ readonly backupSubnetId!: pulumi.Output<string | undefined>;
     /**
      * The cluster name for Exadata and 2-node RAC virtual machine DB systems. The cluster name must begin with an alphabetic character, and may contain hyphens (-). Underscores (_) are not permitted. The cluster name can be no longer than 11 characters and is not case sensitive.
      */
-    public /*out*/ readonly clusterName!: pulumi.Output<string>;
+    public /*out*/ readonly clusterName!: pulumi.Output<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
-    public /*out*/ readonly compartmentId!: pulumi.Output<string>;
+    public /*out*/ readonly compartmentId!: pulumi.Output<string | undefined>;
     /**
      * The number of CPU cores enabled on the DB system.
      */
-    public /*out*/ readonly cpuCoreCount!: pulumi.Output<number>;
+    public /*out*/ readonly cpuCoreCount!: pulumi.Output<number | undefined>;
     /**
      * The percentage assigned to DATA storage (user data and database files). The remaining percentage is assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). Accepted values are 40 and 80. The default is 80 percent assigned to DATA storage. Not applicable for virtual machine DB systems.
      */
-    public /*out*/ readonly dataStoragePercentage!: pulumi.Output<number>;
+    public /*out*/ readonly dataStoragePercentage!: pulumi.Output<number | undefined>;
     /**
      * The data storage size, in gigabytes, that is currently available to the DB system. Applies only for virtual machine DB systems.
      */
-    public /*out*/ readonly dataStorageSizeInGb!: pulumi.Output<number>;
+    public /*out*/ readonly dataStorageSizeInGb!: pulumi.Output<number | undefined>;
     /**
      * The Oracle Database edition that applies to all the databases on the DB system.
      */
-    public /*out*/ readonly databaseEdition!: pulumi.Output<string>;
+    public /*out*/ readonly databaseEdition!: pulumi.Output<string | undefined>;
     /**
      * The DB system [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
@@ -105,114 +105,114 @@ export class DbSystemsUpgrade extends pulumi.CustomResource {
     /**
      * The DB system options.
      */
-    public /*out*/ readonly dbSystemOptions!: pulumi.Output<outputs.Database.DbSystemsUpgradeDbSystemOption[]>;
+    public /*out*/ readonly dbSystemOptions!: pulumi.Output<outputs.Database.DbSystemsUpgradeDbSystemOption[] | undefined>;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    public /*out*/ readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public /*out*/ readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * The type of redundancy configured for the DB system. NORMAL is 2-way redundancy. HIGH is 3-way redundancy.
      */
-    public /*out*/ readonly diskRedundancy!: pulumi.Output<string>;
+    public /*out*/ readonly diskRedundancy!: pulumi.Output<string | undefined>;
     /**
      * The user-friendly name for the DB system. The name does not have to be unique.
      */
-    public /*out*/ readonly displayName!: pulumi.Output<string>;
+    public /*out*/ readonly displayName!: pulumi.Output<string | undefined>;
     /**
      * The domain name for the DB system.
      */
-    public /*out*/ readonly domain!: pulumi.Output<string>;
+    public /*out*/ readonly domain!: pulumi.Output<string | undefined>;
     /**
      * List of the Fault Domains in which this DB system is provisioned.
      */
-    public /*out*/ readonly faultDomains!: pulumi.Output<string[]>;
+    public /*out*/ readonly faultDomains!: pulumi.Output<string[] | undefined>;
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    public /*out*/ readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public /*out*/ readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * The hostname for the DB system.
      */
-    public /*out*/ readonly hostname!: pulumi.Output<string>;
+    public /*out*/ readonly hostname!: pulumi.Output<string | undefined>;
     /**
      * The IORM settings of the Exadata DB system.
      */
-    public /*out*/ readonly iormConfigCaches!: pulumi.Output<outputs.Database.DbSystemsUpgradeIormConfigCach[]>;
+    public /*out*/ readonly iormConfigCaches!: pulumi.Output<outputs.Database.DbSystemsUpgradeIormConfigCach[] | undefined>;
     /**
      * If true, rollback time is updated even if operating system upgrade history contains errors.
      */
-    public readonly isSnapshotRetentionDaysForceUpdated!: pulumi.Output<boolean>;
+    public readonly isSnapshotRetentionDaysForceUpdated!: pulumi.Output<boolean | undefined>;
     /**
      * The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
      */
-    public /*out*/ readonly kmsKeyId!: pulumi.Output<string>;
+    public /*out*/ readonly kmsKeyId!: pulumi.Output<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
      */
-    public /*out*/ readonly lastMaintenanceRunId!: pulumi.Output<string>;
+    public /*out*/ readonly lastMaintenanceRunId!: pulumi.Output<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last patch history. This value is updated as soon as a patch operation starts.
      */
-    public /*out*/ readonly lastPatchHistoryEntryId!: pulumi.Output<string>;
+    public /*out*/ readonly lastPatchHistoryEntryId!: pulumi.Output<string | undefined>;
     /**
      * The Oracle license model that applies to all the databases on the DB system. The default is LICENSE_INCLUDED.
      */
-    public /*out*/ readonly licenseModel!: pulumi.Output<string>;
+    public /*out*/ readonly licenseModel!: pulumi.Output<string | undefined>;
     /**
      * Additional information about the current lifecycle state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string | undefined>;
     /**
      * The port number configured for the listener on the DB system.
      */
-    public /*out*/ readonly listenerPort!: pulumi.Output<number>;
+    public /*out*/ readonly listenerPort!: pulumi.Output<number | undefined>;
     /**
      * The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
      */
-    public /*out*/ readonly maintenanceWindows!: pulumi.Output<outputs.Database.DbSystemsUpgradeMaintenanceWindow[]>;
+    public /*out*/ readonly maintenanceWindows!: pulumi.Output<outputs.Database.DbSystemsUpgradeMaintenanceWindow[] | undefined>;
     /**
      * A valid Oracle Grid Infrastructure (GI) software version.
      */
-    public readonly newGiVersion!: pulumi.Output<string>;
+    public readonly newGiVersion!: pulumi.Output<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
      */
-    public /*out*/ readonly nextMaintenanceRunId!: pulumi.Output<string>;
+    public /*out*/ readonly nextMaintenanceRunId!: pulumi.Output<string | undefined>;
     /**
      * The number of nodes in the DB system. For RAC DB systems, the value is greater than 1.
      */
-    public /*out*/ readonly nodeCount!: pulumi.Output<number>;
+    public /*out*/ readonly nodeCount!: pulumi.Output<number | undefined>;
     /**
      * A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that this resource belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
      * * Autonomous Databases with private access require at least 1 Network Security Group (NSG). The nsgIds array cannot be empty.
      */
-    public /*out*/ readonly nsgIds!: pulumi.Output<string[]>;
+    public /*out*/ readonly nsgIds!: pulumi.Output<string[] | undefined>;
     /**
      * The point in time for a cloned database system when the data disks were cloned from the source database system, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      */
-    public /*out*/ readonly pointInTimeDataDiskCloneTimestamp!: pulumi.Output<string>;
+    public /*out*/ readonly pointInTimeDataDiskCloneTimestamp!: pulumi.Output<string | undefined>;
     /**
      * The RECO/REDO storage size, in gigabytes, that is currently allocated to the DB system. Applies only for virtual machine DB systems.
      */
-    public /*out*/ readonly recoStorageSizeInGb!: pulumi.Output<number>;
+    public /*out*/ readonly recoStorageSizeInGb!: pulumi.Output<number | undefined>;
     /**
      * The FQDN of the DNS record for the SCAN IP addresses that are associated with the DB system.
      */
-    public /*out*/ readonly scanDnsName!: pulumi.Output<string>;
+    public /*out*/ readonly scanDnsName!: pulumi.Output<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DNS record for the SCAN IP addresses that are associated with the DB system.
      */
-    public /*out*/ readonly scanDnsRecordId!: pulumi.Output<string>;
+    public /*out*/ readonly scanDnsRecordId!: pulumi.Output<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IP addresses associated with the DB system. SCAN IP addresses are typically used for load balancing and are not assigned to any interface. Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
      */
-    public /*out*/ readonly scanIpIds!: pulumi.Output<string[]>;
+    public /*out*/ readonly scanIpIds!: pulumi.Output<string[] | undefined>;
     /**
      * The shape of the DB system. The shape determines resources to allocate to the DB system.
      * * For virtual machine shapes, the number of CPU cores and memory
      * * For bare metal and Exadata shapes, the number of CPU cores, storage, and memory
      */
-    public /*out*/ readonly shape!: pulumi.Output<string>;
+    public /*out*/ readonly shape!: pulumi.Output<string | undefined>;
     /**
      * The retention period, in days, for the snapshot that allows you to perform a rollback of the upgrade operation. After this number of days passes, you cannot roll back the upgrade.
      *
@@ -220,47 +220,47 @@ export class DbSystemsUpgrade extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly snapshotRetentionPeriodInDays!: pulumi.Output<number>;
+    public readonly snapshotRetentionPeriodInDays!: pulumi.Output<number | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
      */
-    public /*out*/ readonly sourceDbSystemId!: pulumi.Output<string>;
+    public /*out*/ readonly sourceDbSystemId!: pulumi.Output<string | undefined>;
     /**
      * True, if Sparse Diskgroup is configured for Exadata dbsystem, False, if Sparse diskgroup was not configured.
      */
-    public /*out*/ readonly sparseDiskgroup!: pulumi.Output<boolean>;
+    public /*out*/ readonly sparseDiskgroup!: pulumi.Output<boolean | undefined>;
     /**
      * The public key portion of one or more key pairs used for SSH access to the DB system.
      */
-    public /*out*/ readonly sshPublicKeys!: pulumi.Output<string[]>;
+    public /*out*/ readonly sshPublicKeys!: pulumi.Output<string[] | undefined>;
     /**
      * The current state of the DB system.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the DB system is associated with.
      */
-    public /*out*/ readonly subnetId!: pulumi.Output<string>;
+    public /*out*/ readonly subnetId!: pulumi.Output<string | undefined>;
     /**
      * The date and time the DB system was created.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * The time zone of the DB system. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
      */
-    public /*out*/ readonly timeZone!: pulumi.Output<string>;
+    public /*out*/ readonly timeZone!: pulumi.Output<string | undefined>;
     /**
      * The Oracle Database version of the DB system.
      */
-    public /*out*/ readonly version!: pulumi.Output<string>;
+    public /*out*/ readonly version!: pulumi.Output<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) addresses associated with the DB system. The Cluster Ready Services (CRS) creates and maintains one VIP address for each node in the DB system to enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
      */
-    public /*out*/ readonly vipIds!: pulumi.Output<string[]>;
+    public /*out*/ readonly vipIds!: pulumi.Output<string[] | undefined>;
     /**
      * The OCID of the zone the DB system is associated with.
      */
-    public /*out*/ readonly zoneId!: pulumi.Output<string>;
+    public /*out*/ readonly zoneId!: pulumi.Output<string | undefined>;
 
     /**
      * Create a DbSystemsUpgrade resource with the given unique name, arguments, and options.

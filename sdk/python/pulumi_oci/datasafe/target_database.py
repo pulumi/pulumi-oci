@@ -27,15 +27,6 @@ class TargetDatabaseArgs:
                  tls_config: Optional[pulumi.Input['TargetDatabaseTlsConfigArgs']] = None):
         """
         The set of arguments for constructing a TargetDatabase resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment in which to create the Data Safe target database.
-        :param pulumi.Input['TargetDatabaseDatabaseDetailsArgs'] database_details: (Updatable) Details of the database for the registration in Data Safe.
-        :param pulumi.Input['TargetDatabaseConnectionOptionArgs'] connection_option: (Updatable) Types of connection supported by Data Safe.
-        :param pulumi.Input['TargetDatabaseCredentialsArgs'] credentials: (Updatable) The database credentials required for Data Safe to connect to the database.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] description: (Updatable) The description of the target database in Data Safe.
-        :param pulumi.Input[str] display_name: (Updatable) The display name of the target database in Data Safe. The name is modifiable and does not need to be unique.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-        :param pulumi.Input['TargetDatabaseTlsConfigArgs'] tls_config: (Updatable) The details required to establish a TLS enabled connection.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "database_details", database_details)
@@ -57,9 +48,6 @@ class TargetDatabaseArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The OCID of the compartment in which to create the Data Safe target database.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -69,9 +57,6 @@ class TargetDatabaseArgs:
     @property
     @pulumi.getter(name="databaseDetails")
     def database_details(self) -> pulumi.Input['TargetDatabaseDatabaseDetailsArgs']:
-        """
-        (Updatable) Details of the database for the registration in Data Safe.
-        """
         return pulumi.get(self, "database_details")
 
     @database_details.setter
@@ -81,9 +66,6 @@ class TargetDatabaseArgs:
     @property
     @pulumi.getter(name="connectionOption")
     def connection_option(self) -> Optional[pulumi.Input['TargetDatabaseConnectionOptionArgs']]:
-        """
-        (Updatable) Types of connection supported by Data Safe.
-        """
         return pulumi.get(self, "connection_option")
 
     @connection_option.setter
@@ -93,9 +75,6 @@ class TargetDatabaseArgs:
     @property
     @pulumi.getter
     def credentials(self) -> Optional[pulumi.Input['TargetDatabaseCredentialsArgs']]:
-        """
-        (Updatable) The database credentials required for Data Safe to connect to the database.
-        """
         return pulumi.get(self, "credentials")
 
     @credentials.setter
@@ -105,9 +84,6 @@ class TargetDatabaseArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -117,9 +93,6 @@ class TargetDatabaseArgs:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The description of the target database in Data Safe.
-        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -129,9 +102,6 @@ class TargetDatabaseArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The display name of the target database in Data Safe. The name is modifiable and does not need to be unique.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -141,9 +111,6 @@ class TargetDatabaseArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -153,9 +120,6 @@ class TargetDatabaseArgs:
     @property
     @pulumi.getter(name="tlsConfig")
     def tls_config(self) -> Optional[pulumi.Input['TargetDatabaseTlsConfigArgs']]:
-        """
-        (Updatable) The details required to establish a TLS enabled connection.
-        """
         return pulumi.get(self, "tls_config")
 
     @tls_config.setter
@@ -183,21 +147,6 @@ class _TargetDatabaseState:
                  tls_config: Optional[pulumi.Input['TargetDatabaseTlsConfigArgs']] = None):
         """
         Input properties used for looking up and filtering TargetDatabase resources.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] associated_resource_ids: The OCIDs of associated resources like database, Data Safe private endpoint etc.
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment in which to create the Data Safe target database.
-        :param pulumi.Input['TargetDatabaseConnectionOptionArgs'] connection_option: (Updatable) Types of connection supported by Data Safe.
-        :param pulumi.Input['TargetDatabaseCredentialsArgs'] credentials: (Updatable) The database credentials required for Data Safe to connect to the database.
-        :param pulumi.Input['TargetDatabaseDatabaseDetailsArgs'] database_details: (Updatable) Details of the database for the registration in Data Safe.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] description: (Updatable) The description of the target database in Data Safe.
-        :param pulumi.Input[str] display_name: (Updatable) The display name of the target database in Data Safe. The name is modifiable and does not need to be unique.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] lifecycle_details: Details about the current state of the target database in Data Safe.
-        :param pulumi.Input[str] state: The current state of the target database in Data Safe.
-        :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[str] time_created: The date and time the database was registered in Data Safe and created as a target database in Data Safe.
-        :param pulumi.Input[str] time_updated: The date and time of the target database update in Data Safe.
-        :param pulumi.Input['TargetDatabaseTlsConfigArgs'] tls_config: (Updatable) The details required to establish a TLS enabled connection.
         """
         if associated_resource_ids is not None:
             pulumi.set(__self__, "associated_resource_ids", associated_resource_ids)
@@ -233,9 +182,6 @@ class _TargetDatabaseState:
     @property
     @pulumi.getter(name="associatedResourceIds")
     def associated_resource_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        The OCIDs of associated resources like database, Data Safe private endpoint etc.
-        """
         return pulumi.get(self, "associated_resource_ids")
 
     @associated_resource_ids.setter
@@ -245,9 +191,6 @@ class _TargetDatabaseState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The OCID of the compartment in which to create the Data Safe target database.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -257,9 +200,6 @@ class _TargetDatabaseState:
     @property
     @pulumi.getter(name="connectionOption")
     def connection_option(self) -> Optional[pulumi.Input['TargetDatabaseConnectionOptionArgs']]:
-        """
-        (Updatable) Types of connection supported by Data Safe.
-        """
         return pulumi.get(self, "connection_option")
 
     @connection_option.setter
@@ -269,9 +209,6 @@ class _TargetDatabaseState:
     @property
     @pulumi.getter
     def credentials(self) -> Optional[pulumi.Input['TargetDatabaseCredentialsArgs']]:
-        """
-        (Updatable) The database credentials required for Data Safe to connect to the database.
-        """
         return pulumi.get(self, "credentials")
 
     @credentials.setter
@@ -281,9 +218,6 @@ class _TargetDatabaseState:
     @property
     @pulumi.getter(name="databaseDetails")
     def database_details(self) -> Optional[pulumi.Input['TargetDatabaseDatabaseDetailsArgs']]:
-        """
-        (Updatable) Details of the database for the registration in Data Safe.
-        """
         return pulumi.get(self, "database_details")
 
     @database_details.setter
@@ -293,9 +227,6 @@ class _TargetDatabaseState:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -305,9 +236,6 @@ class _TargetDatabaseState:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The description of the target database in Data Safe.
-        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -317,9 +245,6 @@ class _TargetDatabaseState:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The display name of the target database in Data Safe. The name is modifiable and does not need to be unique.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -329,9 +254,6 @@ class _TargetDatabaseState:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -341,9 +263,6 @@ class _TargetDatabaseState:
     @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> Optional[pulumi.Input[str]]:
-        """
-        Details about the current state of the target database in Data Safe.
-        """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
@@ -353,9 +272,6 @@ class _TargetDatabaseState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The current state of the target database in Data Safe.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -365,9 +281,6 @@ class _TargetDatabaseState:
     @property
     @pulumi.getter(name="systemTags")
     def system_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
@@ -377,9 +290,6 @@ class _TargetDatabaseState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time the database was registered in Data Safe and created as a target database in Data Safe.
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -389,9 +299,6 @@ class _TargetDatabaseState:
     @property
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time of the target database update in Data Safe.
-        """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
@@ -401,9 +308,6 @@ class _TargetDatabaseState:
     @property
     @pulumi.getter(name="tlsConfig")
     def tls_config(self) -> Optional[pulumi.Input['TargetDatabaseTlsConfigArgs']]:
-        """
-        (Updatable) The details required to establish a TLS enabled connection.
-        """
         return pulumi.get(self, "tls_config")
 
     @tls_config.setter
@@ -427,74 +331,9 @@ class TargetDatabase(pulumi.CustomResource):
                  tls_config: Optional[pulumi.Input[pulumi.InputType['TargetDatabaseTlsConfigArgs']]] = None,
                  __props__=None):
         """
-        This resource provides the Target Database resource in Oracle Cloud Infrastructure Data Safe service.
-
-        Registers the specified database with Data Safe and creates a Data Safe target database in the Data Safe Console.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_target_database = oci.data_safe.TargetDatabase("testTargetDatabase",
-            compartment_id=var["compartment_id"],
-            database_details=oci.data_safe.TargetDatabaseDatabaseDetailsArgs(
-                database_type=var["target_database_database_details_database_type"],
-                infrastructure_type=var["target_database_database_details_infrastructure_type"],
-                autonomous_database_id=oci_database_autonomous_database["test_autonomous_database"]["id"],
-                db_system_id=oci_database_db_system["test_db_system"]["id"],
-                instance_id=oci_core_instance["test_instance"]["id"],
-                ip_addresses=var["target_database_database_details_ip_addresses"],
-                listener_port=var["target_database_database_details_listener_port"],
-                service_name=oci_core_service["test_service"]["name"],
-                vm_cluster_id=oci_database_vm_cluster["test_vm_cluster"]["id"],
-            ),
-            connection_option=oci.data_safe.TargetDatabaseConnectionOptionArgs(
-                connection_type=var["target_database_connection_option_connection_type"],
-                datasafe_private_endpoint_id=oci_dataflow_private_endpoint["test_private_endpoint"]["id"],
-                on_prem_connector_id=oci_data_safe_on_prem_connector["test_on_prem_connector"]["id"],
-            ),
-            credentials=oci.data_safe.TargetDatabaseCredentialsArgs(
-                password=var["target_database_credentials_password"],
-                user_name=oci_identity_user["test_user"]["name"],
-            ),
-            defined_tags={
-                "Operations.CostCenter": "42",
-            },
-            description=var["target_database_description"],
-            display_name=var["target_database_display_name"],
-            freeform_tags={
-                "Department": "Finance",
-            },
-            tls_config=oci.data_safe.TargetDatabaseTlsConfigArgs(
-                status=var["target_database_tls_config_status"],
-                certificate_store_type=var["target_database_tls_config_certificate_store_type"],
-                key_store_content=var["target_database_tls_config_key_store_content"],
-                store_password=var["target_database_tls_config_store_password"],
-                trust_store_content=var["target_database_tls_config_trust_store_content"],
-            ))
-        ```
-
-        ## Import
-
-        TargetDatabases can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:DataSafe/targetDatabase:TargetDatabase test_target_database "id"
-        ```
-
+        Create a TargetDatabase resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment in which to create the Data Safe target database.
-        :param pulumi.Input[pulumi.InputType['TargetDatabaseConnectionOptionArgs']] connection_option: (Updatable) Types of connection supported by Data Safe.
-        :param pulumi.Input[pulumi.InputType['TargetDatabaseCredentialsArgs']] credentials: (Updatable) The database credentials required for Data Safe to connect to the database.
-        :param pulumi.Input[pulumi.InputType['TargetDatabaseDatabaseDetailsArgs']] database_details: (Updatable) Details of the database for the registration in Data Safe.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] description: (Updatable) The description of the target database in Data Safe.
-        :param pulumi.Input[str] display_name: (Updatable) The display name of the target database in Data Safe. The name is modifiable and does not need to be unique.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[pulumi.InputType['TargetDatabaseTlsConfigArgs']] tls_config: (Updatable) The details required to establish a TLS enabled connection.
         """
         ...
     @overload
@@ -503,63 +342,7 @@ class TargetDatabase(pulumi.CustomResource):
                  args: TargetDatabaseArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Target Database resource in Oracle Cloud Infrastructure Data Safe service.
-
-        Registers the specified database with Data Safe and creates a Data Safe target database in the Data Safe Console.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_target_database = oci.data_safe.TargetDatabase("testTargetDatabase",
-            compartment_id=var["compartment_id"],
-            database_details=oci.data_safe.TargetDatabaseDatabaseDetailsArgs(
-                database_type=var["target_database_database_details_database_type"],
-                infrastructure_type=var["target_database_database_details_infrastructure_type"],
-                autonomous_database_id=oci_database_autonomous_database["test_autonomous_database"]["id"],
-                db_system_id=oci_database_db_system["test_db_system"]["id"],
-                instance_id=oci_core_instance["test_instance"]["id"],
-                ip_addresses=var["target_database_database_details_ip_addresses"],
-                listener_port=var["target_database_database_details_listener_port"],
-                service_name=oci_core_service["test_service"]["name"],
-                vm_cluster_id=oci_database_vm_cluster["test_vm_cluster"]["id"],
-            ),
-            connection_option=oci.data_safe.TargetDatabaseConnectionOptionArgs(
-                connection_type=var["target_database_connection_option_connection_type"],
-                datasafe_private_endpoint_id=oci_dataflow_private_endpoint["test_private_endpoint"]["id"],
-                on_prem_connector_id=oci_data_safe_on_prem_connector["test_on_prem_connector"]["id"],
-            ),
-            credentials=oci.data_safe.TargetDatabaseCredentialsArgs(
-                password=var["target_database_credentials_password"],
-                user_name=oci_identity_user["test_user"]["name"],
-            ),
-            defined_tags={
-                "Operations.CostCenter": "42",
-            },
-            description=var["target_database_description"],
-            display_name=var["target_database_display_name"],
-            freeform_tags={
-                "Department": "Finance",
-            },
-            tls_config=oci.data_safe.TargetDatabaseTlsConfigArgs(
-                status=var["target_database_tls_config_status"],
-                certificate_store_type=var["target_database_tls_config_certificate_store_type"],
-                key_store_content=var["target_database_tls_config_key_store_content"],
-                store_password=var["target_database_tls_config_store_password"],
-                trust_store_content=var["target_database_tls_config_trust_store_content"],
-            ))
-        ```
-
-        ## Import
-
-        TargetDatabases can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:DataSafe/targetDatabase:TargetDatabase test_target_database "id"
-        ```
-
+        Create a TargetDatabase resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param TargetDatabaseArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -644,21 +427,6 @@ class TargetDatabase(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] associated_resource_ids: The OCIDs of associated resources like database, Data Safe private endpoint etc.
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment in which to create the Data Safe target database.
-        :param pulumi.Input[pulumi.InputType['TargetDatabaseConnectionOptionArgs']] connection_option: (Updatable) Types of connection supported by Data Safe.
-        :param pulumi.Input[pulumi.InputType['TargetDatabaseCredentialsArgs']] credentials: (Updatable) The database credentials required for Data Safe to connect to the database.
-        :param pulumi.Input[pulumi.InputType['TargetDatabaseDatabaseDetailsArgs']] database_details: (Updatable) Details of the database for the registration in Data Safe.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] description: (Updatable) The description of the target database in Data Safe.
-        :param pulumi.Input[str] display_name: (Updatable) The display name of the target database in Data Safe. The name is modifiable and does not need to be unique.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] lifecycle_details: Details about the current state of the target database in Data Safe.
-        :param pulumi.Input[str] state: The current state of the target database in Data Safe.
-        :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[str] time_created: The date and time the database was registered in Data Safe and created as a target database in Data Safe.
-        :param pulumi.Input[str] time_updated: The date and time of the target database update in Data Safe.
-        :param pulumi.Input[pulumi.InputType['TargetDatabaseTlsConfigArgs']] tls_config: (Updatable) The details required to establish a TLS enabled connection.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -683,121 +451,76 @@ class TargetDatabase(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="associatedResourceIds")
-    def associated_resource_ids(self) -> pulumi.Output[Sequence[str]]:
-        """
-        The OCIDs of associated resources like database, Data Safe private endpoint etc.
-        """
+    def associated_resource_ids(self) -> pulumi.Output[Optional[Sequence[str]]]:
         return pulumi.get(self, "associated_resource_ids")
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The OCID of the compartment in which to create the Data Safe target database.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="connectionOption")
-    def connection_option(self) -> pulumi.Output['outputs.TargetDatabaseConnectionOption']:
-        """
-        (Updatable) Types of connection supported by Data Safe.
-        """
+    def connection_option(self) -> pulumi.Output[Optional['outputs.TargetDatabaseConnectionOption']]:
         return pulumi.get(self, "connection_option")
 
     @property
     @pulumi.getter
-    def credentials(self) -> pulumi.Output['outputs.TargetDatabaseCredentials']:
-        """
-        (Updatable) The database credentials required for Data Safe to connect to the database.
-        """
+    def credentials(self) -> pulumi.Output[Optional['outputs.TargetDatabaseCredentials']]:
         return pulumi.get(self, "credentials")
 
     @property
     @pulumi.getter(name="databaseDetails")
     def database_details(self) -> pulumi.Output['outputs.TargetDatabaseDatabaseDetails']:
-        """
-        (Updatable) Details of the database for the registration in Data Safe.
-        """
         return pulumi.get(self, "database_details")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def description(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The description of the target database in Data Safe.
-        """
+    def description(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The display name of the target database in Data Safe. The name is modifiable and does not need to be unique.
-        """
+    def display_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> pulumi.Output[str]:
-        """
-        Details about the current state of the target database in Data Safe.
-        """
+    def lifecycle_details(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        The current state of the target database in Data Safe.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        The date and time the database was registered in Data Safe and created as a target database in Data Safe.
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> pulumi.Output[str]:
-        """
-        The date and time of the target database update in Data Safe.
-        """
+    def time_updated(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_updated")
 
     @property
     @pulumi.getter(name="tlsConfig")
-    def tls_config(self) -> pulumi.Output['outputs.TargetDatabaseTlsConfig']:
-        """
-        (Updatable) The details required to establish a TLS enabled connection.
-        """
+    def tls_config(self) -> pulumi.Output[Optional['outputs.TargetDatabaseTlsConfig']]:
         return pulumi.get(self, "tls_config")
 

@@ -77,7 +77,7 @@ export interface GetCloudAutonomousVmClustersResult {
     /**
      * The list of cloud_autonomous_vm_clusters.
      */
-    readonly cloudAutonomousVmClusters: outputs.Database.GetCloudAutonomousVmClustersCloudAutonomousVmCluster[];
+    readonly cloudAutonomousVmClusters?: outputs.Database.GetCloudAutonomousVmClustersCloudAutonomousVmCluster[];
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Exadata infrastructure.
      */
@@ -94,7 +94,7 @@ export interface GetCloudAutonomousVmClustersResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The current state of the cloud Autonomous VM cluster.
      */

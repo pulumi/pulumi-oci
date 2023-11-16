@@ -44,44 +44,44 @@ export interface GetMysqlDbSystemArgs {
  * A collection of values returned by getMysqlDbSystem.
  */
 export interface GetMysqlDbSystemResult {
-    readonly adminPassword: string;
-    readonly adminUsername: string;
+    readonly adminPassword?: string;
+    readonly adminUsername?: string;
     /**
      * The availability domain in which the DB System is placed.
      */
-    readonly availabilityDomain: string;
+    readonly availabilityDomain?: string;
     /**
      * The Backup policy for the DB System.
      */
-    readonly backupPolicies: outputs.Mysql.GetMysqlDbSystemBackupPolicy[];
+    readonly backupPolicies?: outputs.Mysql.GetMysqlDbSystemBackupPolicy[];
     /**
      * A list with a summary of all the Channels attached to the DB System.
      */
-    readonly channels: outputs.Mysql.GetMysqlDbSystemChannel[];
+    readonly channels?: outputs.Mysql.GetMysqlDbSystemChannel[];
     /**
      * The OCID of the compartment the DB System belongs in.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * The OCID of the Configuration to be used for Instances in this DB System.
      */
-    readonly configurationId: string;
+    readonly configurationId?: string;
     /**
      * Whether to run the DB System with InnoDB Redo Logs and the Double Write Buffer enabled or disabled, and whether to enable or disable syncing of the Binary Logs.
      */
-    readonly crashRecovery: string;
+    readonly crashRecovery?: string;
     /**
      * The availability domain and fault domain a DB System is placed in.
      */
-    readonly currentPlacements: outputs.Mysql.GetMysqlDbSystemCurrentPlacement[];
+    readonly currentPlacements?: outputs.Mysql.GetMysqlDbSystemCurrentPlacement[];
     /**
      * Initial size of the data volume in GiBs that will be created and attached.
      */
-    readonly dataStorageSizeInGb: number;
+    readonly dataStorageSizeInGb?: number;
     /**
      * Whether to enable monitoring via the Database Management service.
      */
-    readonly databaseManagement: string;
+    readonly databaseManagement?: string;
     /**
      * The OCID of the DB System from which a backup shall be selected to be restored when creating the new DB System. Use this together with recovery point to perform a point in time recovery operation.
      */
@@ -89,104 +89,104 @@ export interface GetMysqlDbSystemResult {
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * The Deletion policy for the DB System.
      */
-    readonly deletionPolicies: outputs.Mysql.GetMysqlDbSystemDeletionPolicy[];
+    readonly deletionPolicies?: outputs.Mysql.GetMysqlDbSystemDeletionPolicy[];
     /**
      * User-provided data about the DB System.
      */
-    readonly description: string;
+    readonly description?: string;
     /**
      * The user-friendly name for the DB System. It does not have to be unique.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * The network endpoints available for this DB System.
      */
-    readonly endpoints: outputs.Mysql.GetMysqlDbSystemEndpoint[];
+    readonly endpoints?: outputs.Mysql.GetMysqlDbSystemEndpoint[];
     /**
      * The fault domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
      */
-    readonly faultDomain: string;
+    readonly faultDomain?: string;
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * A summary of a HeatWave cluster.
      */
-    readonly heatWaveClusters: outputs.Mysql.GetMysqlDbSystemHeatWaveCluster[];
+    readonly heatWaveClusters?: outputs.Mysql.GetMysqlDbSystemHeatWaveCluster[];
     /**
      * The hostname for the primary endpoint of the DB System. Used for DNS. The value is the hostname portion of the primary private IP's fully qualified domain name (FQDN) (for example, "dbsystem-1" in FQDN "dbsystem-1.subnet123.vcn1.oraclevcn.com"). Must be unique across all VNICs in the subnet and comply with RFC 952 and RFC 1123.
      */
-    readonly hostnameLabel: string;
+    readonly hostnameLabel?: string;
     /**
      * The OCID of the DB System.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The IP address the DB System is configured to listen on. A private IP address of the primary endpoint of the DB System. Must be an available IP address within the subnet's CIDR. This will be a "dotted-quad" style IPv4 address.
      */
-    readonly ipAddress: string;
+    readonly ipAddress?: string;
     /**
      * If the DB System has a HeatWave Cluster attached.
      */
-    readonly isHeatWaveClusterAttached: boolean;
+    readonly isHeatWaveClusterAttached?: boolean;
     /**
      * Specifies if the DB System is highly available.
      */
-    readonly isHighlyAvailable: boolean;
+    readonly isHighlyAvailable?: boolean;
     /**
      * Additional information about the current lifecycleState.
      */
-    readonly lifecycleDetails: string;
+    readonly lifecycleDetails?: string;
     /**
      * The Maintenance Policy for the DB System or Read Replica that this model is included in.
      */
-    readonly maintenances: outputs.Mysql.GetMysqlDbSystemMaintenance[];
+    readonly maintenances?: outputs.Mysql.GetMysqlDbSystemMaintenance[];
     /**
      * Name of the MySQL Version in use for the DB System.
      */
-    readonly mysqlVersion: string;
+    readonly mysqlVersion?: string;
     /**
      * Point-in-time Recovery details like earliest and latest recovery time point for the DB System.
      */
-    readonly pointInTimeRecoveryDetails: outputs.Mysql.GetMysqlDbSystemPointInTimeRecoveryDetail[];
+    readonly pointInTimeRecoveryDetails?: outputs.Mysql.GetMysqlDbSystemPointInTimeRecoveryDetail[];
     /**
      * The port for primary endpoint of the DB System to listen on.
      */
-    readonly port: number;
+    readonly port?: number;
     /**
      * The network port on which X Plugin listens for TCP/IP connections. This is the X Plugin equivalent of port.
      */
-    readonly portX: number;
+    readonly portX?: number;
     /**
      * The shape of the primary instances of the DB System. The shape determines resources allocated to a DB System - CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use (the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20181021/ShapeSummary/ListShapes) operation.
      */
-    readonly shapeName: string;
-    readonly shutdownType: string;
+    readonly shapeName?: string;
+    readonly shutdownType?: string;
     /**
      * Parameters detailing how to provision the initial data of the DB System.
      */
-    readonly sources: outputs.Mysql.GetMysqlDbSystemSource[];
+    readonly sources?: outputs.Mysql.GetMysqlDbSystemSource[];
     /**
      * The current state of the DB System.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * The OCID of the subnet the DB System is associated with.
      */
-    readonly subnetId: string;
+    readonly subnetId?: string;
     /**
      * The date and time the DB System was created.
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The time the DB System was last updated.
      */
-    readonly timeUpdated: string;
+    readonly timeUpdated?: string;
 }
 /**
  * This data source provides details about a specific Mysql Db System resource in Oracle Cloud Infrastructure MySQL Database service.

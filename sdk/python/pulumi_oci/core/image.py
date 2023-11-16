@@ -25,16 +25,6 @@ class ImageArgs:
                  launch_mode: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a Image resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment you want the image to be created in.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name for the image. It does not have to be unique, and it's changeable. Avoid entering confidential information.
-               
-               You cannot use a platform image name as a custom image name.
-               
-               Example: `My Oracle Linux image`
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] instance_id: The OCID of the instance you want to use as the basis for the image.
-        :param pulumi.Input[str] launch_mode: Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         if defined_tags is not None:
@@ -53,9 +43,6 @@ class ImageArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The OCID of the compartment you want the image to be created in.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -65,9 +52,6 @@ class ImageArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -77,13 +61,6 @@ class ImageArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A user-friendly name for the image. It does not have to be unique, and it's changeable. Avoid entering confidential information.
-
-        You cannot use a platform image name as a custom image name.
-
-        Example: `My Oracle Linux image`
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -93,9 +70,6 @@ class ImageArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -114,9 +88,6 @@ class ImageArgs:
     @property
     @pulumi.getter(name="instanceId")
     def instance_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the instance you want to use as the basis for the image.
-        """
         return pulumi.get(self, "instance_id")
 
     @instance_id.setter
@@ -126,9 +97,6 @@ class ImageArgs:
     @property
     @pulumi.getter(name="launchMode")
     def launch_mode(self) -> Optional[pulumi.Input[str]]:
-        """
-        Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
-        """
         return pulumi.get(self, "launch_mode")
 
     @launch_mode.setter
@@ -159,27 +127,6 @@ class _ImageState:
                  time_created: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering Image resources.
-        :param pulumi.Input[Sequence[pulumi.Input['ImageAgentFeatureArgs']]] agent_features: Oracle Cloud Agent features supported on the image.
-        :param pulumi.Input[str] base_image_id: The OCID of the image originally used to launch the instance.
-        :param pulumi.Input[str] billable_size_in_gbs: The size of the internal storage for this image that is subject to billing (1 GB = 1,073,741,824 bytes).  Example: `100`
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment you want the image to be created in.
-        :param pulumi.Input[bool] create_image_allowed: Whether instances launched with this image can be used to create new images. For example, you cannot create an image of an Oracle Database instance.  Example: `true`
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name for the image. It does not have to be unique, and it's changeable. Avoid entering confidential information.
-               
-               You cannot use a platform image name as a custom image name.
-               
-               Example: `My Oracle Linux image`
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] instance_id: The OCID of the instance you want to use as the basis for the image.
-        :param pulumi.Input[str] launch_mode: Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
-        :param pulumi.Input[Sequence[pulumi.Input['ImageLaunchOptionArgs']]] launch_options: Options for tuning the compatibility and performance of VM shapes. The values that you specify override any default values.
-        :param pulumi.Input[str] listing_type: The listing type of the image. The default value is "NONE".
-        :param pulumi.Input[str] operating_system: The image's operating system.  Example: `Oracle Linux`
-        :param pulumi.Input[str] operating_system_version: The image's operating system version.  Example: `7.2`
-        :param pulumi.Input[str] size_in_mbs: The boot volume size for an instance launched from this image (1 MB = 1,048,576 bytes). Note this is not the same as the size of the image when it was exported or the actual size of the image.  Example: `47694`
-        :param pulumi.Input[str] state: The current state of the image.
-        :param pulumi.Input[str] time_created: The date and time the image was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         """
         if agent_features is not None:
             pulumi.set(__self__, "agent_features", agent_features)
@@ -221,9 +168,6 @@ class _ImageState:
     @property
     @pulumi.getter(name="agentFeatures")
     def agent_features(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ImageAgentFeatureArgs']]]]:
-        """
-        Oracle Cloud Agent features supported on the image.
-        """
         return pulumi.get(self, "agent_features")
 
     @agent_features.setter
@@ -233,9 +177,6 @@ class _ImageState:
     @property
     @pulumi.getter(name="baseImageId")
     def base_image_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the image originally used to launch the instance.
-        """
         return pulumi.get(self, "base_image_id")
 
     @base_image_id.setter
@@ -245,9 +186,6 @@ class _ImageState:
     @property
     @pulumi.getter(name="billableSizeInGbs")
     def billable_size_in_gbs(self) -> Optional[pulumi.Input[str]]:
-        """
-        The size of the internal storage for this image that is subject to billing (1 GB = 1,073,741,824 bytes).  Example: `100`
-        """
         return pulumi.get(self, "billable_size_in_gbs")
 
     @billable_size_in_gbs.setter
@@ -257,9 +195,6 @@ class _ImageState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The OCID of the compartment you want the image to be created in.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -269,9 +204,6 @@ class _ImageState:
     @property
     @pulumi.getter(name="createImageAllowed")
     def create_image_allowed(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Whether instances launched with this image can be used to create new images. For example, you cannot create an image of an Oracle Database instance.  Example: `true`
-        """
         return pulumi.get(self, "create_image_allowed")
 
     @create_image_allowed.setter
@@ -281,9 +213,6 @@ class _ImageState:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -293,13 +222,6 @@ class _ImageState:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A user-friendly name for the image. It does not have to be unique, and it's changeable. Avoid entering confidential information.
-
-        You cannot use a platform image name as a custom image name.
-
-        Example: `My Oracle Linux image`
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -309,9 +231,6 @@ class _ImageState:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -330,9 +249,6 @@ class _ImageState:
     @property
     @pulumi.getter(name="instanceId")
     def instance_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the instance you want to use as the basis for the image.
-        """
         return pulumi.get(self, "instance_id")
 
     @instance_id.setter
@@ -342,9 +258,6 @@ class _ImageState:
     @property
     @pulumi.getter(name="launchMode")
     def launch_mode(self) -> Optional[pulumi.Input[str]]:
-        """
-        Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
-        """
         return pulumi.get(self, "launch_mode")
 
     @launch_mode.setter
@@ -354,9 +267,6 @@ class _ImageState:
     @property
     @pulumi.getter(name="launchOptions")
     def launch_options(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ImageLaunchOptionArgs']]]]:
-        """
-        Options for tuning the compatibility and performance of VM shapes. The values that you specify override any default values.
-        """
         return pulumi.get(self, "launch_options")
 
     @launch_options.setter
@@ -366,9 +276,6 @@ class _ImageState:
     @property
     @pulumi.getter(name="listingType")
     def listing_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        The listing type of the image. The default value is "NONE".
-        """
         return pulumi.get(self, "listing_type")
 
     @listing_type.setter
@@ -378,9 +285,6 @@ class _ImageState:
     @property
     @pulumi.getter(name="operatingSystem")
     def operating_system(self) -> Optional[pulumi.Input[str]]:
-        """
-        The image's operating system.  Example: `Oracle Linux`
-        """
         return pulumi.get(self, "operating_system")
 
     @operating_system.setter
@@ -390,9 +294,6 @@ class _ImageState:
     @property
     @pulumi.getter(name="operatingSystemVersion")
     def operating_system_version(self) -> Optional[pulumi.Input[str]]:
-        """
-        The image's operating system version.  Example: `7.2`
-        """
         return pulumi.get(self, "operating_system_version")
 
     @operating_system_version.setter
@@ -402,9 +303,6 @@ class _ImageState:
     @property
     @pulumi.getter(name="sizeInMbs")
     def size_in_mbs(self) -> Optional[pulumi.Input[str]]:
-        """
-        The boot volume size for an instance launched from this image (1 MB = 1,048,576 bytes). Note this is not the same as the size of the image when it was exported or the actual size of the image.  Example: `47694`
-        """
         return pulumi.get(self, "size_in_mbs")
 
     @size_in_mbs.setter
@@ -414,9 +312,6 @@ class _ImageState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The current state of the image.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -426,9 +321,6 @@ class _ImageState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time the image was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -450,107 +342,9 @@ class Image(pulumi.CustomResource):
                  launch_mode: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Image resource in Oracle Cloud Infrastructure Core service.
-
-        Creates a boot disk image for the specified instance or imports an exported image from the Oracle Cloud Infrastructure Object Storage service.
-
-        When creating a new image, you must provide the OCID of the instance you want to use as the basis for the image, and
-        the OCID of the compartment containing that instance. For more information about images,
-        see [Managing Custom Images](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/managingcustomimages.htm).
-
-        When importing an exported image from Object Storage, you specify the source information
-        in [ImageSourceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/requests/ImageSourceDetails).
-
-        When importing an image based on the namespace, bucket name, and object name,
-        use [ImageSourceViaObjectStorageTupleDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/requests/ImageSourceViaObjectStorageTupleDetails).
-
-        When importing an image based on the Object Storage URL, use
-        [ImageSourceViaObjectStorageUriDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/requests/ImageSourceViaObjectStorageUriDetails).
-        See [Object Storage URLs](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/imageimportexport.htm#URLs) and [Using Pre-Authenticated Requests](https://docs.cloud.oracle.com/iaas/Content/Object/Tasks/usingpreauthenticatedrequests.htm)
-        for constructing URLs for image import/export.
-
-        For more information about importing exported images, see
-        [Image Import/Export](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/imageimportexport.htm).
-
-        You may optionally specify a *display name* for the image, which is simply a friendly name or description.
-        It does not have to be unique, and you can change it. See [UpdateImage](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Image/UpdateImage).
-        Avoid entering confidential information.
-
-        ## Example Usage
-        ### Create image from instance in tenancy
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_image = oci.core.Image("testImage",
-            compartment_id=var["compartment_id"],
-            instance_id=oci_core_instance["test_instance"]["id"],
-            defined_tags={
-                "Operations.CostCenter": "42",
-            },
-            display_name=var["image_display_name"],
-            launch_mode=var["image_launch_mode"],
-            freeform_tags={
-                "Department": "Finance",
-            })
-        ```
-        ### Create image from exported image via direct access to object store
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_image = oci.core.Image("testImage",
-            compartment_id=var["compartment_id"],
-            display_name=var["image_display_name"],
-            launch_mode=var["image_launch_mode"],
-            image_source_details=oci.core.ImageImageSourceDetailsArgs(
-                source_type="objectStorageTuple",
-                bucket_name=var["bucket_name"],
-                namespace_name=var["namespace"],
-                object_name=var["object_name"],
-                operating_system=var["image_image_source_details_operating_system"],
-                operating_system_version=var["image_image_source_details_operating_system_version"],
-                source_image_type=var["source_image_type"],
-            ))
-        ```
-        ### Create image from exported image at publicly accessible uri
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_image = oci.core.Image("testImage",
-            compartment_id=var["compartment_id"],
-            display_name=var["image_display_name"],
-            launch_mode=var["image_launch_mode"],
-            image_source_details=oci.core.ImageImageSourceDetailsArgs(
-                source_type="objectStorageUri",
-                source_uri=var["source_uri"],
-                operating_system=var["image_image_source_details_operating_system"],
-                operating_system_version=var["image_image_source_details_operating_system_version"],
-                source_image_type=var["source_image_type"],
-            ))
-        ```
-
-        ## Import
-
-        Images can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Core/image:Image test_image "id"
-        ```
-
+        Create a Image resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment you want the image to be created in.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name for the image. It does not have to be unique, and it's changeable. Avoid entering confidential information.
-               
-               You cannot use a platform image name as a custom image name.
-               
-               Example: `My Oracle Linux image`
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] instance_id: The OCID of the instance you want to use as the basis for the image.
-        :param pulumi.Input[str] launch_mode: Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
         """
         ...
     @overload
@@ -559,95 +353,7 @@ class Image(pulumi.CustomResource):
                  args: ImageArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Image resource in Oracle Cloud Infrastructure Core service.
-
-        Creates a boot disk image for the specified instance or imports an exported image from the Oracle Cloud Infrastructure Object Storage service.
-
-        When creating a new image, you must provide the OCID of the instance you want to use as the basis for the image, and
-        the OCID of the compartment containing that instance. For more information about images,
-        see [Managing Custom Images](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/managingcustomimages.htm).
-
-        When importing an exported image from Object Storage, you specify the source information
-        in [ImageSourceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/requests/ImageSourceDetails).
-
-        When importing an image based on the namespace, bucket name, and object name,
-        use [ImageSourceViaObjectStorageTupleDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/requests/ImageSourceViaObjectStorageTupleDetails).
-
-        When importing an image based on the Object Storage URL, use
-        [ImageSourceViaObjectStorageUriDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/requests/ImageSourceViaObjectStorageUriDetails).
-        See [Object Storage URLs](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/imageimportexport.htm#URLs) and [Using Pre-Authenticated Requests](https://docs.cloud.oracle.com/iaas/Content/Object/Tasks/usingpreauthenticatedrequests.htm)
-        for constructing URLs for image import/export.
-
-        For more information about importing exported images, see
-        [Image Import/Export](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/imageimportexport.htm).
-
-        You may optionally specify a *display name* for the image, which is simply a friendly name or description.
-        It does not have to be unique, and you can change it. See [UpdateImage](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Image/UpdateImage).
-        Avoid entering confidential information.
-
-        ## Example Usage
-        ### Create image from instance in tenancy
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_image = oci.core.Image("testImage",
-            compartment_id=var["compartment_id"],
-            instance_id=oci_core_instance["test_instance"]["id"],
-            defined_tags={
-                "Operations.CostCenter": "42",
-            },
-            display_name=var["image_display_name"],
-            launch_mode=var["image_launch_mode"],
-            freeform_tags={
-                "Department": "Finance",
-            })
-        ```
-        ### Create image from exported image via direct access to object store
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_image = oci.core.Image("testImage",
-            compartment_id=var["compartment_id"],
-            display_name=var["image_display_name"],
-            launch_mode=var["image_launch_mode"],
-            image_source_details=oci.core.ImageImageSourceDetailsArgs(
-                source_type="objectStorageTuple",
-                bucket_name=var["bucket_name"],
-                namespace_name=var["namespace"],
-                object_name=var["object_name"],
-                operating_system=var["image_image_source_details_operating_system"],
-                operating_system_version=var["image_image_source_details_operating_system_version"],
-                source_image_type=var["source_image_type"],
-            ))
-        ```
-        ### Create image from exported image at publicly accessible uri
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_image = oci.core.Image("testImage",
-            compartment_id=var["compartment_id"],
-            display_name=var["image_display_name"],
-            launch_mode=var["image_launch_mode"],
-            image_source_details=oci.core.ImageImageSourceDetailsArgs(
-                source_type="objectStorageUri",
-                source_uri=var["source_uri"],
-                operating_system=var["image_image_source_details_operating_system"],
-                operating_system_version=var["image_image_source_details_operating_system_version"],
-                source_image_type=var["source_image_type"],
-            ))
-        ```
-
-        ## Import
-
-        Images can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Core/image:Image test_image "id"
-        ```
-
+        Create a Image resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param ImageArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -734,27 +440,6 @@ class Image(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ImageAgentFeatureArgs']]]] agent_features: Oracle Cloud Agent features supported on the image.
-        :param pulumi.Input[str] base_image_id: The OCID of the image originally used to launch the instance.
-        :param pulumi.Input[str] billable_size_in_gbs: The size of the internal storage for this image that is subject to billing (1 GB = 1,073,741,824 bytes).  Example: `100`
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment you want the image to be created in.
-        :param pulumi.Input[bool] create_image_allowed: Whether instances launched with this image can be used to create new images. For example, you cannot create an image of an Oracle Database instance.  Example: `true`
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name for the image. It does not have to be unique, and it's changeable. Avoid entering confidential information.
-               
-               You cannot use a platform image name as a custom image name.
-               
-               Example: `My Oracle Linux image`
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] instance_id: The OCID of the instance you want to use as the basis for the image.
-        :param pulumi.Input[str] launch_mode: Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ImageLaunchOptionArgs']]]] launch_options: Options for tuning the compatibility and performance of VM shapes. The values that you specify override any default values.
-        :param pulumi.Input[str] listing_type: The listing type of the image. The default value is "NONE".
-        :param pulumi.Input[str] operating_system: The image's operating system.  Example: `Oracle Linux`
-        :param pulumi.Input[str] operating_system_version: The image's operating system version.  Example: `7.2`
-        :param pulumi.Input[str] size_in_mbs: The boot volume size for an instance launched from this image (1 MB = 1,048,576 bytes). Note this is not the same as the size of the image when it was exported or the actual size of the image.  Example: `47694`
-        :param pulumi.Input[str] state: The current state of the image.
-        :param pulumi.Input[str] time_created: The date and time the image was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -782,70 +467,42 @@ class Image(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="agentFeatures")
-    def agent_features(self) -> pulumi.Output[Sequence['outputs.ImageAgentFeature']]:
-        """
-        Oracle Cloud Agent features supported on the image.
-        """
+    def agent_features(self) -> pulumi.Output[Optional[Sequence['outputs.ImageAgentFeature']]]:
         return pulumi.get(self, "agent_features")
 
     @property
     @pulumi.getter(name="baseImageId")
-    def base_image_id(self) -> pulumi.Output[str]:
-        """
-        The OCID of the image originally used to launch the instance.
-        """
+    def base_image_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "base_image_id")
 
     @property
     @pulumi.getter(name="billableSizeInGbs")
-    def billable_size_in_gbs(self) -> pulumi.Output[str]:
-        """
-        The size of the internal storage for this image that is subject to billing (1 GB = 1,073,741,824 bytes).  Example: `100`
-        """
+    def billable_size_in_gbs(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "billable_size_in_gbs")
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The OCID of the compartment you want the image to be created in.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="createImageAllowed")
-    def create_image_allowed(self) -> pulumi.Output[bool]:
-        """
-        Whether instances launched with this image can be used to create new images. For example, you cannot create an image of an Oracle Database instance.  Example: `true`
-        """
+    def create_image_allowed(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "create_image_allowed")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> pulumi.Output[str]:
-        """
-        (Updatable) A user-friendly name for the image. It does not have to be unique, and it's changeable. Avoid entering confidential information.
-
-        You cannot use a platform image name as a custom image name.
-
-        Example: `My Oracle Linux image`
-        """
+    def display_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
@@ -856,72 +513,45 @@ class Image(pulumi.CustomResource):
     @property
     @pulumi.getter(name="instanceId")
     def instance_id(self) -> pulumi.Output[Optional[str]]:
-        """
-        The OCID of the instance you want to use as the basis for the image.
-        """
         return pulumi.get(self, "instance_id")
 
     @property
     @pulumi.getter(name="launchMode")
-    def launch_mode(self) -> pulumi.Output[str]:
-        """
-        Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
-        """
+    def launch_mode(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "launch_mode")
 
     @property
     @pulumi.getter(name="launchOptions")
-    def launch_options(self) -> pulumi.Output[Sequence['outputs.ImageLaunchOption']]:
-        """
-        Options for tuning the compatibility and performance of VM shapes. The values that you specify override any default values.
-        """
+    def launch_options(self) -> pulumi.Output[Optional[Sequence['outputs.ImageLaunchOption']]]:
         return pulumi.get(self, "launch_options")
 
     @property
     @pulumi.getter(name="listingType")
-    def listing_type(self) -> pulumi.Output[str]:
-        """
-        The listing type of the image. The default value is "NONE".
-        """
+    def listing_type(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "listing_type")
 
     @property
     @pulumi.getter(name="operatingSystem")
-    def operating_system(self) -> pulumi.Output[str]:
-        """
-        The image's operating system.  Example: `Oracle Linux`
-        """
+    def operating_system(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "operating_system")
 
     @property
     @pulumi.getter(name="operatingSystemVersion")
-    def operating_system_version(self) -> pulumi.Output[str]:
-        """
-        The image's operating system version.  Example: `7.2`
-        """
+    def operating_system_version(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "operating_system_version")
 
     @property
     @pulumi.getter(name="sizeInMbs")
-    def size_in_mbs(self) -> pulumi.Output[str]:
-        """
-        The boot volume size for an instance launched from this image (1 MB = 1,048,576 bytes). Note this is not the same as the size of the image when it was exported or the actual size of the image.  Example: `47694`
-        """
+    def size_in_mbs(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "size_in_mbs")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        The current state of the image.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        The date and time the image was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 

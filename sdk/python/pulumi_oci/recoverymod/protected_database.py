@@ -29,17 +29,6 @@ class ProtectedDatabaseArgs:
                  is_redo_logs_shipped: Optional[pulumi.Input[bool]] = None):
         """
         The set of arguments for constructing a ProtectedDatabase resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment that contains the protected database.
-        :param pulumi.Input[str] db_unique_name: The dbUniqueName of the protected database in Recovery Service. You cannot change the unique name.
-        :param pulumi.Input[str] display_name: (Updatable) The protected database name. You can change the displayName. Avoid entering confidential information.
-        :param pulumi.Input[str] password: (Updatable) Password credential which can be used to connect to Protected Database. It must contain at least 2 uppercase, 2 lowercase, 2 numeric and 2 special characters. The special characters must be underscore (_), number sign (https://docs.cloud.oracle.com/iaas/api/#) or hyphen (-). The password must not contain the username "admin", regardless of casing.
-        :param pulumi.Input[str] protection_policy_id: (Updatable) The OCID of the protection policy associated with the protected database.
-        :param pulumi.Input[Sequence[pulumi.Input['ProtectedDatabaseRecoveryServiceSubnetArgs']]] recovery_service_subnets: (Updatable) List of recovery service subnet resources associated with the protected database.
-        :param pulumi.Input[str] database_id: The OCID of the protected database.
-        :param pulumi.Input[str] database_size: (Updatable) The size of the protected database. XS - Less than 5GB, S - 5GB to 50GB, M - 50GB to 500GB, L - 500GB to 1TB, XL - 1TB to 5TB, XXL - Greater than 5TB.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[bool] is_redo_logs_shipped: (Updatable) The value TRUE indicates that the protected database is configured to use Real-time data protection, and redo-data is sent from the protected database to Recovery Service. Real-time data protection substantially reduces the window of potential data loss that exists between successive archived redo log backups.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "db_unique_name", db_unique_name)
@@ -61,9 +50,6 @@ class ProtectedDatabaseArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The OCID of the compartment that contains the protected database.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -73,9 +59,6 @@ class ProtectedDatabaseArgs:
     @property
     @pulumi.getter(name="dbUniqueName")
     def db_unique_name(self) -> pulumi.Input[str]:
-        """
-        The dbUniqueName of the protected database in Recovery Service. You cannot change the unique name.
-        """
         return pulumi.get(self, "db_unique_name")
 
     @db_unique_name.setter
@@ -85,9 +68,6 @@ class ProtectedDatabaseArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The protected database name. You can change the displayName. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -97,9 +77,6 @@ class ProtectedDatabaseArgs:
     @property
     @pulumi.getter
     def password(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Password credential which can be used to connect to Protected Database. It must contain at least 2 uppercase, 2 lowercase, 2 numeric and 2 special characters. The special characters must be underscore (_), number sign (https://docs.cloud.oracle.com/iaas/api/#) or hyphen (-). The password must not contain the username "admin", regardless of casing.
-        """
         return pulumi.get(self, "password")
 
     @password.setter
@@ -109,9 +86,6 @@ class ProtectedDatabaseArgs:
     @property
     @pulumi.getter(name="protectionPolicyId")
     def protection_policy_id(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The OCID of the protection policy associated with the protected database.
-        """
         return pulumi.get(self, "protection_policy_id")
 
     @protection_policy_id.setter
@@ -121,9 +95,6 @@ class ProtectedDatabaseArgs:
     @property
     @pulumi.getter(name="recoveryServiceSubnets")
     def recovery_service_subnets(self) -> pulumi.Input[Sequence[pulumi.Input['ProtectedDatabaseRecoveryServiceSubnetArgs']]]:
-        """
-        (Updatable) List of recovery service subnet resources associated with the protected database.
-        """
         return pulumi.get(self, "recovery_service_subnets")
 
     @recovery_service_subnets.setter
@@ -133,9 +104,6 @@ class ProtectedDatabaseArgs:
     @property
     @pulumi.getter(name="databaseId")
     def database_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the protected database.
-        """
         return pulumi.get(self, "database_id")
 
     @database_id.setter
@@ -145,9 +113,6 @@ class ProtectedDatabaseArgs:
     @property
     @pulumi.getter(name="databaseSize")
     def database_size(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The size of the protected database. XS - Less than 5GB, S - 5GB to 50GB, M - 50GB to 500GB, L - 500GB to 1TB, XL - 1TB to 5TB, XXL - Greater than 5TB.
-        """
         return pulumi.get(self, "database_size")
 
     @database_size.setter
@@ -157,9 +122,6 @@ class ProtectedDatabaseArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -169,9 +131,6 @@ class ProtectedDatabaseArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -181,9 +140,6 @@ class ProtectedDatabaseArgs:
     @property
     @pulumi.getter(name="isRedoLogsShipped")
     def is_redo_logs_shipped(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) The value TRUE indicates that the protected database is configured to use Real-time data protection, and redo-data is sent from the protected database to Recovery Service. Real-time data protection substantially reduces the window of potential data loss that exists between successive archived redo log backups.
-        """
         return pulumi.get(self, "is_redo_logs_shipped")
 
     @is_redo_logs_shipped.setter
@@ -217,30 +173,6 @@ class _ProtectedDatabaseState:
                  vpc_user_name: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering ProtectedDatabase resources.
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment that contains the protected database.
-        :param pulumi.Input[str] database_id: The OCID of the protected database.
-        :param pulumi.Input[str] database_size: (Updatable) The size of the protected database. XS - Less than 5GB, S - 5GB to 50GB, M - 50GB to 500GB, L - 500GB to 1TB, XL - 1TB to 5TB, XXL - Greater than 5TB.
-        :param pulumi.Input[str] db_unique_name: The dbUniqueName of the protected database in Recovery Service. You cannot change the unique name.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
-        :param pulumi.Input[str] display_name: (Updatable) The protected database name. You can change the displayName. Avoid entering confidential information.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] health: Indicates the protection status of the database. Allowed values are:
-               * HEALTHY
-               * WARNING
-               * ALERT
-        :param pulumi.Input[str] health_details: A message describing the current health of the protected database.
-        :param pulumi.Input[bool] is_read_only_resource: Indicates whether the protected database is created by Recovery Service or created manually. Set to <b>TRUE</b> for a service-defined protected database. When you enable the OCI-managed automatic backups option for a database and set Recovery Service as the backup destination, then Recovery Service creates the associated protected database resource. Set to <b>FALSE</b> for a user-defined protected database.
-        :param pulumi.Input[bool] is_redo_logs_shipped: (Updatable) The value TRUE indicates that the protected database is configured to use Real-time data protection, and redo-data is sent from the protected database to Recovery Service. Real-time data protection substantially reduces the window of potential data loss that exists between successive archived redo log backups.
-        :param pulumi.Input[str] lifecycle_details: Detailed description about the current lifecycle state of the protected database. For example, it can be used to provide actionable information for a resource in a Failed state.
-        :param pulumi.Input[Sequence[pulumi.Input['ProtectedDatabaseMetricArgs']]] metrics: Backup performance and storage utilization metrics for the protected database.
-        :param pulumi.Input[str] password: (Updatable) Password credential which can be used to connect to Protected Database. It must contain at least 2 uppercase, 2 lowercase, 2 numeric and 2 special characters. The special characters must be underscore (_), number sign (https://docs.cloud.oracle.com/iaas/api/#) or hyphen (-). The password must not contain the username "admin", regardless of casing.
-        :param pulumi.Input[str] protection_policy_id: (Updatable) The OCID of the protection policy associated with the protected database.
-        :param pulumi.Input[Sequence[pulumi.Input['ProtectedDatabaseRecoveryServiceSubnetArgs']]] recovery_service_subnets: (Updatable) List of recovery service subnet resources associated with the protected database.
-        :param pulumi.Input[str] state: The current state of the Protected Database.
-        :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
-        :param pulumi.Input[str] time_created: An RFC3339 formatted datetime string that indicates the created time for a protected database. For example: '2020-05-22T21:10:29.600Z'
-        :param pulumi.Input[str] time_updated: An RFC3339 formatted datetime string that indicates the last updated time for a protected database. For example: '2020-05-22T21:10:29.600Z'
-        :param pulumi.Input[str] vpc_user_name: The virtual private catalog (VPC) user credentials that authenticates the protected database to access Recovery Service.
         """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
@@ -288,9 +220,6 @@ class _ProtectedDatabaseState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The OCID of the compartment that contains the protected database.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -300,9 +229,6 @@ class _ProtectedDatabaseState:
     @property
     @pulumi.getter(name="databaseId")
     def database_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the protected database.
-        """
         return pulumi.get(self, "database_id")
 
     @database_id.setter
@@ -312,9 +238,6 @@ class _ProtectedDatabaseState:
     @property
     @pulumi.getter(name="databaseSize")
     def database_size(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The size of the protected database. XS - Less than 5GB, S - 5GB to 50GB, M - 50GB to 500GB, L - 500GB to 1TB, XL - 1TB to 5TB, XXL - Greater than 5TB.
-        """
         return pulumi.get(self, "database_size")
 
     @database_size.setter
@@ -324,9 +247,6 @@ class _ProtectedDatabaseState:
     @property
     @pulumi.getter(name="dbUniqueName")
     def db_unique_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The dbUniqueName of the protected database in Recovery Service. You cannot change the unique name.
-        """
         return pulumi.get(self, "db_unique_name")
 
     @db_unique_name.setter
@@ -336,9 +256,6 @@ class _ProtectedDatabaseState:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -348,9 +265,6 @@ class _ProtectedDatabaseState:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The protected database name. You can change the displayName. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -360,9 +274,6 @@ class _ProtectedDatabaseState:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -372,12 +283,6 @@ class _ProtectedDatabaseState:
     @property
     @pulumi.getter
     def health(self) -> Optional[pulumi.Input[str]]:
-        """
-        Indicates the protection status of the database. Allowed values are:
-        * HEALTHY
-        * WARNING
-        * ALERT
-        """
         return pulumi.get(self, "health")
 
     @health.setter
@@ -387,9 +292,6 @@ class _ProtectedDatabaseState:
     @property
     @pulumi.getter(name="healthDetails")
     def health_details(self) -> Optional[pulumi.Input[str]]:
-        """
-        A message describing the current health of the protected database.
-        """
         return pulumi.get(self, "health_details")
 
     @health_details.setter
@@ -399,9 +301,6 @@ class _ProtectedDatabaseState:
     @property
     @pulumi.getter(name="isReadOnlyResource")
     def is_read_only_resource(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Indicates whether the protected database is created by Recovery Service or created manually. Set to <b>TRUE</b> for a service-defined protected database. When you enable the OCI-managed automatic backups option for a database and set Recovery Service as the backup destination, then Recovery Service creates the associated protected database resource. Set to <b>FALSE</b> for a user-defined protected database.
-        """
         return pulumi.get(self, "is_read_only_resource")
 
     @is_read_only_resource.setter
@@ -411,9 +310,6 @@ class _ProtectedDatabaseState:
     @property
     @pulumi.getter(name="isRedoLogsShipped")
     def is_redo_logs_shipped(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) The value TRUE indicates that the protected database is configured to use Real-time data protection, and redo-data is sent from the protected database to Recovery Service. Real-time data protection substantially reduces the window of potential data loss that exists between successive archived redo log backups.
-        """
         return pulumi.get(self, "is_redo_logs_shipped")
 
     @is_redo_logs_shipped.setter
@@ -423,9 +319,6 @@ class _ProtectedDatabaseState:
     @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> Optional[pulumi.Input[str]]:
-        """
-        Detailed description about the current lifecycle state of the protected database. For example, it can be used to provide actionable information for a resource in a Failed state.
-        """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
@@ -435,9 +328,6 @@ class _ProtectedDatabaseState:
     @property
     @pulumi.getter
     def metrics(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ProtectedDatabaseMetricArgs']]]]:
-        """
-        Backup performance and storage utilization metrics for the protected database.
-        """
         return pulumi.get(self, "metrics")
 
     @metrics.setter
@@ -447,9 +337,6 @@ class _ProtectedDatabaseState:
     @property
     @pulumi.getter
     def password(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Password credential which can be used to connect to Protected Database. It must contain at least 2 uppercase, 2 lowercase, 2 numeric and 2 special characters. The special characters must be underscore (_), number sign (https://docs.cloud.oracle.com/iaas/api/#) or hyphen (-). The password must not contain the username "admin", regardless of casing.
-        """
         return pulumi.get(self, "password")
 
     @password.setter
@@ -459,9 +346,6 @@ class _ProtectedDatabaseState:
     @property
     @pulumi.getter(name="protectionPolicyId")
     def protection_policy_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The OCID of the protection policy associated with the protected database.
-        """
         return pulumi.get(self, "protection_policy_id")
 
     @protection_policy_id.setter
@@ -471,9 +355,6 @@ class _ProtectedDatabaseState:
     @property
     @pulumi.getter(name="recoveryServiceSubnets")
     def recovery_service_subnets(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ProtectedDatabaseRecoveryServiceSubnetArgs']]]]:
-        """
-        (Updatable) List of recovery service subnet resources associated with the protected database.
-        """
         return pulumi.get(self, "recovery_service_subnets")
 
     @recovery_service_subnets.setter
@@ -483,9 +364,6 @@ class _ProtectedDatabaseState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The current state of the Protected Database.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -495,9 +373,6 @@ class _ProtectedDatabaseState:
     @property
     @pulumi.getter(name="systemTags")
     def system_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
-        """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
@@ -507,9 +382,6 @@ class _ProtectedDatabaseState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        An RFC3339 formatted datetime string that indicates the created time for a protected database. For example: '2020-05-22T21:10:29.600Z'
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -519,9 +391,6 @@ class _ProtectedDatabaseState:
     @property
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> Optional[pulumi.Input[str]]:
-        """
-        An RFC3339 formatted datetime string that indicates the last updated time for a protected database. For example: '2020-05-22T21:10:29.600Z'
-        """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
@@ -531,9 +400,6 @@ class _ProtectedDatabaseState:
     @property
     @pulumi.getter(name="vpcUserName")
     def vpc_user_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The virtual private catalog (VPC) user credentials that authenticates the protected database to access Recovery Service.
-        """
         return pulumi.get(self, "vpc_user_name")
 
     @vpc_user_name.setter
@@ -559,57 +425,9 @@ class ProtectedDatabase(pulumi.CustomResource):
                  recovery_service_subnets: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ProtectedDatabaseRecoveryServiceSubnetArgs']]]]] = None,
                  __props__=None):
         """
-        This resource provides the Protected Database resource in Oracle Cloud Infrastructure Recovery service.
-
-        Creates a new Protected Database.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_protected_database = oci.recovery_mod.ProtectedDatabase("testProtectedDatabase",
-            compartment_id=var["compartment_id"],
-            db_unique_name=var["protected_database_db_unique_name"],
-            display_name=var["protected_database_display_name"],
-            password=var["protected_database_password"],
-            protection_policy_id=oci_recovery_protection_policy["test_protection_policy"]["id"],
-            recovery_service_subnets=[oci.recovery_mod.ProtectedDatabaseRecoveryServiceSubnetArgs(
-                recovery_service_subnet_id=oci_recovery_recovery_service_subnet["test_recovery_service_subnet"]["id"],
-            )],
-            database_id=oci_database_database["test_database"]["id"],
-            database_size=var["protected_database_database_size"],
-            defined_tags={
-                "foo-namespace.bar-key": "value",
-            },
-            freeform_tags={
-                "bar-key": "value",
-            },
-            is_redo_logs_shipped=var["protected_database_is_redo_logs_shipped"])
-        ```
-
-        ## Import
-
-        ProtectedDatabases can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:RecoveryMod/protectedDatabase:ProtectedDatabase test_protected_database "id"
-        ```
-
+        Create a ProtectedDatabase resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment that contains the protected database.
-        :param pulumi.Input[str] database_id: The OCID of the protected database.
-        :param pulumi.Input[str] database_size: (Updatable) The size of the protected database. XS - Less than 5GB, S - 5GB to 50GB, M - 50GB to 500GB, L - 500GB to 1TB, XL - 1TB to 5TB, XXL - Greater than 5TB.
-        :param pulumi.Input[str] db_unique_name: The dbUniqueName of the protected database in Recovery Service. You cannot change the unique name.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
-        :param pulumi.Input[str] display_name: (Updatable) The protected database name. You can change the displayName. Avoid entering confidential information.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[bool] is_redo_logs_shipped: (Updatable) The value TRUE indicates that the protected database is configured to use Real-time data protection, and redo-data is sent from the protected database to Recovery Service. Real-time data protection substantially reduces the window of potential data loss that exists between successive archived redo log backups.
-        :param pulumi.Input[str] password: (Updatable) Password credential which can be used to connect to Protected Database. It must contain at least 2 uppercase, 2 lowercase, 2 numeric and 2 special characters. The special characters must be underscore (_), number sign (https://docs.cloud.oracle.com/iaas/api/#) or hyphen (-). The password must not contain the username "admin", regardless of casing.
-        :param pulumi.Input[str] protection_policy_id: (Updatable) The OCID of the protection policy associated with the protected database.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ProtectedDatabaseRecoveryServiceSubnetArgs']]]] recovery_service_subnets: (Updatable) List of recovery service subnet resources associated with the protected database.
         """
         ...
     @overload
@@ -618,44 +436,7 @@ class ProtectedDatabase(pulumi.CustomResource):
                  args: ProtectedDatabaseArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Protected Database resource in Oracle Cloud Infrastructure Recovery service.
-
-        Creates a new Protected Database.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_protected_database = oci.recovery_mod.ProtectedDatabase("testProtectedDatabase",
-            compartment_id=var["compartment_id"],
-            db_unique_name=var["protected_database_db_unique_name"],
-            display_name=var["protected_database_display_name"],
-            password=var["protected_database_password"],
-            protection_policy_id=oci_recovery_protection_policy["test_protection_policy"]["id"],
-            recovery_service_subnets=[oci.recovery_mod.ProtectedDatabaseRecoveryServiceSubnetArgs(
-                recovery_service_subnet_id=oci_recovery_recovery_service_subnet["test_recovery_service_subnet"]["id"],
-            )],
-            database_id=oci_database_database["test_database"]["id"],
-            database_size=var["protected_database_database_size"],
-            defined_tags={
-                "foo-namespace.bar-key": "value",
-            },
-            freeform_tags={
-                "bar-key": "value",
-            },
-            is_redo_logs_shipped=var["protected_database_is_redo_logs_shipped"])
-        ```
-
-        ## Import
-
-        ProtectedDatabases can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:RecoveryMod/protectedDatabase:ProtectedDatabase test_protected_database "id"
-        ```
-
+        Create a ProtectedDatabase resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param ProtectedDatabaseArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -764,30 +545,6 @@ class ProtectedDatabase(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment that contains the protected database.
-        :param pulumi.Input[str] database_id: The OCID of the protected database.
-        :param pulumi.Input[str] database_size: (Updatable) The size of the protected database. XS - Less than 5GB, S - 5GB to 50GB, M - 50GB to 500GB, L - 500GB to 1TB, XL - 1TB to 5TB, XXL - Greater than 5TB.
-        :param pulumi.Input[str] db_unique_name: The dbUniqueName of the protected database in Recovery Service. You cannot change the unique name.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
-        :param pulumi.Input[str] display_name: (Updatable) The protected database name. You can change the displayName. Avoid entering confidential information.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] health: Indicates the protection status of the database. Allowed values are:
-               * HEALTHY
-               * WARNING
-               * ALERT
-        :param pulumi.Input[str] health_details: A message describing the current health of the protected database.
-        :param pulumi.Input[bool] is_read_only_resource: Indicates whether the protected database is created by Recovery Service or created manually. Set to <b>TRUE</b> for a service-defined protected database. When you enable the OCI-managed automatic backups option for a database and set Recovery Service as the backup destination, then Recovery Service creates the associated protected database resource. Set to <b>FALSE</b> for a user-defined protected database.
-        :param pulumi.Input[bool] is_redo_logs_shipped: (Updatable) The value TRUE indicates that the protected database is configured to use Real-time data protection, and redo-data is sent from the protected database to Recovery Service. Real-time data protection substantially reduces the window of potential data loss that exists between successive archived redo log backups.
-        :param pulumi.Input[str] lifecycle_details: Detailed description about the current lifecycle state of the protected database. For example, it can be used to provide actionable information for a resource in a Failed state.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ProtectedDatabaseMetricArgs']]]] metrics: Backup performance and storage utilization metrics for the protected database.
-        :param pulumi.Input[str] password: (Updatable) Password credential which can be used to connect to Protected Database. It must contain at least 2 uppercase, 2 lowercase, 2 numeric and 2 special characters. The special characters must be underscore (_), number sign (https://docs.cloud.oracle.com/iaas/api/#) or hyphen (-). The password must not contain the username "admin", regardless of casing.
-        :param pulumi.Input[str] protection_policy_id: (Updatable) The OCID of the protection policy associated with the protected database.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ProtectedDatabaseRecoveryServiceSubnetArgs']]]] recovery_service_subnets: (Updatable) List of recovery service subnet resources associated with the protected database.
-        :param pulumi.Input[str] state: The current state of the Protected Database.
-        :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
-        :param pulumi.Input[str] time_created: An RFC3339 formatted datetime string that indicates the created time for a protected database. For example: '2020-05-22T21:10:29.600Z'
-        :param pulumi.Input[str] time_updated: An RFC3339 formatted datetime string that indicates the last updated time for a protected database. For example: '2020-05-22T21:10:29.600Z'
-        :param pulumi.Input[str] vpc_user_name: The virtual private catalog (VPC) user credentials that authenticates the protected database to access Recovery Service.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -819,171 +576,105 @@ class ProtectedDatabase(pulumi.CustomResource):
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The OCID of the compartment that contains the protected database.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="databaseId")
-    def database_id(self) -> pulumi.Output[str]:
-        """
-        The OCID of the protected database.
-        """
+    def database_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "database_id")
 
     @property
     @pulumi.getter(name="databaseSize")
-    def database_size(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The size of the protected database. XS - Less than 5GB, S - 5GB to 50GB, M - 50GB to 500GB, L - 500GB to 1TB, XL - 1TB to 5TB, XXL - Greater than 5TB.
-        """
+    def database_size(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "database_size")
 
     @property
     @pulumi.getter(name="dbUniqueName")
     def db_unique_name(self) -> pulumi.Output[str]:
-        """
-        The dbUniqueName of the protected database in Recovery Service. You cannot change the unique name.
-        """
         return pulumi.get(self, "db_unique_name")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
-        """
+    def defined_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The protected database name. You can change the displayName. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def health(self) -> pulumi.Output[str]:
-        """
-        Indicates the protection status of the database. Allowed values are:
-        * HEALTHY
-        * WARNING
-        * ALERT
-        """
+    def health(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "health")
 
     @property
     @pulumi.getter(name="healthDetails")
-    def health_details(self) -> pulumi.Output[str]:
-        """
-        A message describing the current health of the protected database.
-        """
+    def health_details(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "health_details")
 
     @property
     @pulumi.getter(name="isReadOnlyResource")
-    def is_read_only_resource(self) -> pulumi.Output[bool]:
-        """
-        Indicates whether the protected database is created by Recovery Service or created manually. Set to <b>TRUE</b> for a service-defined protected database. When you enable the OCI-managed automatic backups option for a database and set Recovery Service as the backup destination, then Recovery Service creates the associated protected database resource. Set to <b>FALSE</b> for a user-defined protected database.
-        """
+    def is_read_only_resource(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "is_read_only_resource")
 
     @property
     @pulumi.getter(name="isRedoLogsShipped")
-    def is_redo_logs_shipped(self) -> pulumi.Output[bool]:
-        """
-        (Updatable) The value TRUE indicates that the protected database is configured to use Real-time data protection, and redo-data is sent from the protected database to Recovery Service. Real-time data protection substantially reduces the window of potential data loss that exists between successive archived redo log backups.
-        """
+    def is_redo_logs_shipped(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "is_redo_logs_shipped")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> pulumi.Output[str]:
-        """
-        Detailed description about the current lifecycle state of the protected database. For example, it can be used to provide actionable information for a resource in a Failed state.
-        """
+    def lifecycle_details(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter
-    def metrics(self) -> pulumi.Output[Sequence['outputs.ProtectedDatabaseMetric']]:
-        """
-        Backup performance and storage utilization metrics for the protected database.
-        """
+    def metrics(self) -> pulumi.Output[Optional[Sequence['outputs.ProtectedDatabaseMetric']]]:
         return pulumi.get(self, "metrics")
 
     @property
     @pulumi.getter
     def password(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Password credential which can be used to connect to Protected Database. It must contain at least 2 uppercase, 2 lowercase, 2 numeric and 2 special characters. The special characters must be underscore (_), number sign (https://docs.cloud.oracle.com/iaas/api/#) or hyphen (-). The password must not contain the username "admin", regardless of casing.
-        """
         return pulumi.get(self, "password")
 
     @property
     @pulumi.getter(name="protectionPolicyId")
     def protection_policy_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The OCID of the protection policy associated with the protected database.
-        """
         return pulumi.get(self, "protection_policy_id")
 
     @property
     @pulumi.getter(name="recoveryServiceSubnets")
     def recovery_service_subnets(self) -> pulumi.Output[Sequence['outputs.ProtectedDatabaseRecoveryServiceSubnet']]:
-        """
-        (Updatable) List of recovery service subnet resources associated with the protected database.
-        """
         return pulumi.get(self, "recovery_service_subnets")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        The current state of the Protected Database.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
-        """
+    def system_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        An RFC3339 formatted datetime string that indicates the created time for a protected database. For example: '2020-05-22T21:10:29.600Z'
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> pulumi.Output[str]:
-        """
-        An RFC3339 formatted datetime string that indicates the last updated time for a protected database. For example: '2020-05-22T21:10:29.600Z'
-        """
+    def time_updated(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_updated")
 
     @property
     @pulumi.getter(name="vpcUserName")
-    def vpc_user_name(self) -> pulumi.Output[str]:
-        """
-        The virtual private catalog (VPC) user credentials that authenticates the protected database to access Recovery Service.
-        """
+    def vpc_user_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "vpc_user_name")
 

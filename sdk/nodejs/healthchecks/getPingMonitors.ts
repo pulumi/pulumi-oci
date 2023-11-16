@@ -77,11 +77,11 @@ export interface GetPingMonitorsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The list of ping_monitors.
      */
-    readonly pingMonitors: outputs.HealthChecks.GetPingMonitorsPingMonitor[];
+    readonly pingMonitors?: outputs.HealthChecks.GetPingMonitorsPingMonitor[];
 }
 /**
  * This data source provides the list of Ping Monitors in Oracle Cloud Infrastructure Health Checks service.

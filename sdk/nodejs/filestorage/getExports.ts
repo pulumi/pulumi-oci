@@ -81,7 +81,7 @@ export interface GetExportsResult {
     /**
      * The list of exports.
      */
-    readonly exports: outputs.FileStorage.GetExportsExport[];
+    readonly exports?: outputs.FileStorage.GetExportsExport[];
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this export's file system.
      */

@@ -62,7 +62,7 @@ export interface GetVmClusterUpdateHistoryEntriesResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The current lifecycle state of the maintenance update operation.
      */
@@ -75,7 +75,7 @@ export interface GetVmClusterUpdateHistoryEntriesResult {
     /**
      * The list of vm_cluster_update_history_entries.
      */
-    readonly vmClusterUpdateHistoryEntries: outputs.Database.GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntry[];
+    readonly vmClusterUpdateHistoryEntries?: outputs.Database.GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntry[];
 }
 /**
  * This data source provides the list of Vm Cluster Update History Entries in Oracle Cloud Infrastructure Database service.

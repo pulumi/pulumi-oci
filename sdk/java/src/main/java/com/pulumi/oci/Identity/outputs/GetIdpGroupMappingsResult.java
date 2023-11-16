@@ -9,6 +9,7 @@ import com.pulumi.oci.Identity.outputs.GetIdpGroupMappingsIdpGroupMapping;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 @CustomType
@@ -18,7 +19,7 @@ public final class GetIdpGroupMappingsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The OCID of the `IdentityProvider` this mapping belongs to.
      * 
@@ -28,7 +29,7 @@ public final class GetIdpGroupMappingsResult {
      * @return The list of idp_group_mappings.
      * 
      */
-    private List<GetIdpGroupMappingsIdpGroupMapping> idpGroupMappings;
+    private @Nullable List<GetIdpGroupMappingsIdpGroupMapping> idpGroupMappings;
 
     private GetIdpGroupMappingsResult() {}
     public List<GetIdpGroupMappingsFilter> filters() {
@@ -38,8 +39,8 @@ public final class GetIdpGroupMappingsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The OCID of the `IdentityProvider` this mapping belongs to.
@@ -53,7 +54,7 @@ public final class GetIdpGroupMappingsResult {
      * 
      */
     public List<GetIdpGroupMappingsIdpGroupMapping> idpGroupMappings() {
-        return this.idpGroupMappings;
+        return this.idpGroupMappings == null ? List.of() : this.idpGroupMappings;
     }
 
     public static Builder builder() {
@@ -66,9 +67,9 @@ public final class GetIdpGroupMappingsResult {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable List<GetIdpGroupMappingsFilter> filters;
-        private String id;
+        private @Nullable String id;
         private String identityProviderId;
-        private List<GetIdpGroupMappingsIdpGroupMapping> idpGroupMappings;
+        private @Nullable List<GetIdpGroupMappingsIdpGroupMapping> idpGroupMappings;
         public Builder() {}
         public Builder(GetIdpGroupMappingsResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -87,8 +88,8 @@ public final class GetIdpGroupMappingsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -97,8 +98,8 @@ public final class GetIdpGroupMappingsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder idpGroupMappings(List<GetIdpGroupMappingsIdpGroupMapping> idpGroupMappings) {
-            this.idpGroupMappings = Objects.requireNonNull(idpGroupMappings);
+        public Builder idpGroupMappings(@Nullable List<GetIdpGroupMappingsIdpGroupMapping> idpGroupMappings) {
+            this.idpGroupMappings = idpGroupMappings;
             return this;
         }
         public Builder idpGroupMappings(GetIdpGroupMappingsIdpGroupMapping... idpGroupMappings) {

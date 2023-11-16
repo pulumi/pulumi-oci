@@ -83,13 +83,13 @@ export interface GetCustomProtectionRulesResult {
     /**
      * The list of custom_protection_rules.
      */
-    readonly customProtectionRules: outputs.Waas.GetCustomProtectionRulesCustomProtectionRule[];
+    readonly customProtectionRules?: outputs.Waas.GetCustomProtectionRulesCustomProtectionRule[];
     readonly displayNames?: string[];
     readonly filters?: outputs.Waas.GetCustomProtectionRulesFilter[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly ids?: string[];
     readonly states?: string[];
     readonly timeCreatedGreaterThanOrEqualTo?: string;

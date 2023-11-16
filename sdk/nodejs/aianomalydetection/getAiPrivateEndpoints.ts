@@ -67,7 +67,7 @@ export interface GetAiPrivateEndpointsResult {
     /**
      * The list of ai_private_endpoint_collection.
      */
-    readonly aiPrivateEndpointCollections: outputs.AiAnomalyDetection.GetAiPrivateEndpointsAiPrivateEndpointCollection[];
+    readonly aiPrivateEndpointCollections?: outputs.AiAnomalyDetection.GetAiPrivateEndpointsAiPrivateEndpointCollection[];
     /**
      * Compartment Identifier.
      */

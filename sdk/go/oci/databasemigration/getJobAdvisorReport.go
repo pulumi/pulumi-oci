@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Job Advisor Report resource in Oracle Cloud Infrastructure Database Migration service.
@@ -60,20 +59,20 @@ type GetJobAdvisorReportArgs struct {
 // A collection of values returned by getJobAdvisorReport.
 type GetJobAdvisorReportResult struct {
 	// The provider-assigned unique ID for this managed resource.
-	Id    string `pulumi:"id"`
-	JobId string `pulumi:"jobId"`
+	Id    *string `pulumi:"id"`
+	JobId string  `pulumi:"jobId"`
 	// Number of Fatal results in the advisor report.
-	NumberOfFatal int `pulumi:"numberOfFatal"`
+	NumberOfFatal *int `pulumi:"numberOfFatal"`
 	// Number of Fatal Blocker results in the advisor report.
-	NumberOfFatalBlockers int `pulumi:"numberOfFatalBlockers"`
+	NumberOfFatalBlockers *int `pulumi:"numberOfFatalBlockers"`
 	// Number of Informational results in the advisor report.
-	NumberOfInformationalResults int `pulumi:"numberOfInformationalResults"`
+	NumberOfInformationalResults *int `pulumi:"numberOfInformationalResults"`
 	// Number of Warning results in the advisor report.
-	NumberOfWarnings int `pulumi:"numberOfWarnings"`
+	NumberOfWarnings *int `pulumi:"numberOfWarnings"`
 	// Details to access Pre-Migration Advisor report.
 	ReportLocationDetails []GetJobAdvisorReportReportLocationDetail `pulumi:"reportLocationDetails"`
 	// Pre-Migration advisor result.
-	Result string `pulumi:"result"`
+	Result *string `pulumi:"result"`
 }
 
 func GetJobAdvisorReportOutput(ctx *pulumi.Context, args GetJobAdvisorReportOutputArgs, opts ...pulumi.InvokeOption) GetJobAdvisorReportResultOutput {
@@ -114,15 +113,9 @@ func (o GetJobAdvisorReportResultOutput) ToGetJobAdvisorReportResultOutputWithCo
 	return o
 }
 
-func (o GetJobAdvisorReportResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetJobAdvisorReportResult] {
-	return pulumix.Output[GetJobAdvisorReportResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The provider-assigned unique ID for this managed resource.
-func (o GetJobAdvisorReportResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetJobAdvisorReportResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetJobAdvisorReportResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetJobAdvisorReportResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetJobAdvisorReportResultOutput) JobId() pulumi.StringOutput {
@@ -130,23 +123,23 @@ func (o GetJobAdvisorReportResultOutput) JobId() pulumi.StringOutput {
 }
 
 // Number of Fatal results in the advisor report.
-func (o GetJobAdvisorReportResultOutput) NumberOfFatal() pulumi.IntOutput {
-	return o.ApplyT(func(v GetJobAdvisorReportResult) int { return v.NumberOfFatal }).(pulumi.IntOutput)
+func (o GetJobAdvisorReportResultOutput) NumberOfFatal() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetJobAdvisorReportResult) *int { return v.NumberOfFatal }).(pulumi.IntPtrOutput)
 }
 
 // Number of Fatal Blocker results in the advisor report.
-func (o GetJobAdvisorReportResultOutput) NumberOfFatalBlockers() pulumi.IntOutput {
-	return o.ApplyT(func(v GetJobAdvisorReportResult) int { return v.NumberOfFatalBlockers }).(pulumi.IntOutput)
+func (o GetJobAdvisorReportResultOutput) NumberOfFatalBlockers() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetJobAdvisorReportResult) *int { return v.NumberOfFatalBlockers }).(pulumi.IntPtrOutput)
 }
 
 // Number of Informational results in the advisor report.
-func (o GetJobAdvisorReportResultOutput) NumberOfInformationalResults() pulumi.IntOutput {
-	return o.ApplyT(func(v GetJobAdvisorReportResult) int { return v.NumberOfInformationalResults }).(pulumi.IntOutput)
+func (o GetJobAdvisorReportResultOutput) NumberOfInformationalResults() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetJobAdvisorReportResult) *int { return v.NumberOfInformationalResults }).(pulumi.IntPtrOutput)
 }
 
 // Number of Warning results in the advisor report.
-func (o GetJobAdvisorReportResultOutput) NumberOfWarnings() pulumi.IntOutput {
-	return o.ApplyT(func(v GetJobAdvisorReportResult) int { return v.NumberOfWarnings }).(pulumi.IntOutput)
+func (o GetJobAdvisorReportResultOutput) NumberOfWarnings() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetJobAdvisorReportResult) *int { return v.NumberOfWarnings }).(pulumi.IntPtrOutput)
 }
 
 // Details to access Pre-Migration Advisor report.
@@ -157,8 +150,8 @@ func (o GetJobAdvisorReportResultOutput) ReportLocationDetails() GetJobAdvisorRe
 }
 
 // Pre-Migration advisor result.
-func (o GetJobAdvisorReportResultOutput) Result() pulumi.StringOutput {
-	return o.ApplyT(func(v GetJobAdvisorReportResult) string { return v.Result }).(pulumi.StringOutput)
+func (o GetJobAdvisorReportResultOutput) Result() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetJobAdvisorReportResult) *string { return v.Result }).(pulumi.StringPtrOutput)
 }
 
 func init() {

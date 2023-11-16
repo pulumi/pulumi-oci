@@ -9,6 +9,7 @@ import com.pulumi.oci.Database.outputs.GetDbNodeConsoleConnectionsFilter;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 @CustomType
@@ -17,7 +18,7 @@ public final class GetDbNodeConsoleConnectionsResult {
      * @return The list of console_connections.
      * 
      */
-    private List<GetDbNodeConsoleConnectionsConsoleConnection> consoleConnections;
+    private @Nullable List<GetDbNodeConsoleConnectionsConsoleConnection> consoleConnections;
     /**
      * @return The OCID of the database node.
      * 
@@ -28,7 +29,7 @@ public final class GetDbNodeConsoleConnectionsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
 
     private GetDbNodeConsoleConnectionsResult() {}
     /**
@@ -36,7 +37,7 @@ public final class GetDbNodeConsoleConnectionsResult {
      * 
      */
     public List<GetDbNodeConsoleConnectionsConsoleConnection> consoleConnections() {
-        return this.consoleConnections;
+        return this.consoleConnections == null ? List.of() : this.consoleConnections;
     }
     /**
      * @return The OCID of the database node.
@@ -52,8 +53,8 @@ public final class GetDbNodeConsoleConnectionsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
 
     public static Builder builder() {
@@ -65,10 +66,10 @@ public final class GetDbNodeConsoleConnectionsResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetDbNodeConsoleConnectionsConsoleConnection> consoleConnections;
+        private @Nullable List<GetDbNodeConsoleConnectionsConsoleConnection> consoleConnections;
         private String dbNodeId;
         private @Nullable List<GetDbNodeConsoleConnectionsFilter> filters;
-        private String id;
+        private @Nullable String id;
         public Builder() {}
         public Builder(GetDbNodeConsoleConnectionsResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -79,8 +80,8 @@ public final class GetDbNodeConsoleConnectionsResult {
         }
 
         @CustomType.Setter
-        public Builder consoleConnections(List<GetDbNodeConsoleConnectionsConsoleConnection> consoleConnections) {
-            this.consoleConnections = Objects.requireNonNull(consoleConnections);
+        public Builder consoleConnections(@Nullable List<GetDbNodeConsoleConnectionsConsoleConnection> consoleConnections) {
+            this.consoleConnections = consoleConnections;
             return this;
         }
         public Builder consoleConnections(GetDbNodeConsoleConnectionsConsoleConnection... consoleConnections) {
@@ -100,8 +101,8 @@ public final class GetDbNodeConsoleConnectionsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         public GetDbNodeConsoleConnectionsResult build() {

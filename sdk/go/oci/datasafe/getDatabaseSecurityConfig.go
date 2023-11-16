@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Database Security Config resource in Oracle Cloud Infrastructure Data Safe service.
@@ -60,35 +59,35 @@ type LookupDatabaseSecurityConfigArgs struct {
 // A collection of values returned by getDatabaseSecurityConfig.
 type LookupDatabaseSecurityConfigResult struct {
 	// The OCID of the compartment containing the database security config.
-	CompartmentId            string `pulumi:"compartmentId"`
-	DatabaseSecurityConfigId string `pulumi:"databaseSecurityConfigId"`
+	CompartmentId            *string `pulumi:"compartmentId"`
+	DatabaseSecurityConfigId string  `pulumi:"databaseSecurityConfigId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The description of the database security config.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// The display name of the database security config.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The OCID of the database security config.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Details about the current state of the database security config in Data Safe.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
-	RefreshTrigger   int    `pulumi:"refreshTrigger"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
+	RefreshTrigger   *int    `pulumi:"refreshTrigger"`
 	// The SQL firewall related configurations.
 	SqlFirewallConfigs []GetDatabaseSecurityConfigSqlFirewallConfig `pulumi:"sqlFirewallConfigs"`
 	// The current state of the database security config.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The target OCID corresponding to the database security config.
-	TargetId string `pulumi:"targetId"`
+	TargetId *string `pulumi:"targetId"`
 	// The time that the database security config was created, in the format defined by RFC3339.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The last date and time the database security config was refreshed, in the format defined by RFC3339.
-	TimeLastRefreshed string `pulumi:"timeLastRefreshed"`
+	TimeLastRefreshed *string `pulumi:"timeLastRefreshed"`
 	// The date and time the database security configuration was last updated, in the format defined by RFC3339.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 func LookupDatabaseSecurityConfigOutput(ctx *pulumi.Context, args LookupDatabaseSecurityConfigOutputArgs, opts ...pulumi.InvokeOption) LookupDatabaseSecurityConfigResultOutput {
@@ -129,15 +128,9 @@ func (o LookupDatabaseSecurityConfigResultOutput) ToLookupDatabaseSecurityConfig
 	return o
 }
 
-func (o LookupDatabaseSecurityConfigResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupDatabaseSecurityConfigResult] {
-	return pulumix.Output[LookupDatabaseSecurityConfigResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the compartment containing the database security config.
-func (o LookupDatabaseSecurityConfigResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDatabaseSecurityConfigResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupDatabaseSecurityConfigResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDatabaseSecurityConfigResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupDatabaseSecurityConfigResultOutput) DatabaseSecurityConfigId() pulumi.StringOutput {
@@ -150,13 +143,13 @@ func (o LookupDatabaseSecurityConfigResultOutput) DefinedTags() pulumi.MapOutput
 }
 
 // The description of the database security config.
-func (o LookupDatabaseSecurityConfigResultOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDatabaseSecurityConfigResult) string { return v.Description }).(pulumi.StringOutput)
+func (o LookupDatabaseSecurityConfigResultOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDatabaseSecurityConfigResult) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // The display name of the database security config.
-func (o LookupDatabaseSecurityConfigResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDatabaseSecurityConfigResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupDatabaseSecurityConfigResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDatabaseSecurityConfigResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
@@ -165,17 +158,17 @@ func (o LookupDatabaseSecurityConfigResultOutput) FreeformTags() pulumi.MapOutpu
 }
 
 // The OCID of the database security config.
-func (o LookupDatabaseSecurityConfigResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDatabaseSecurityConfigResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupDatabaseSecurityConfigResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDatabaseSecurityConfigResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Details about the current state of the database security config in Data Safe.
-func (o LookupDatabaseSecurityConfigResultOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDatabaseSecurityConfigResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o LookupDatabaseSecurityConfigResultOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDatabaseSecurityConfigResult) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
-func (o LookupDatabaseSecurityConfigResultOutput) RefreshTrigger() pulumi.IntOutput {
-	return o.ApplyT(func(v LookupDatabaseSecurityConfigResult) int { return v.RefreshTrigger }).(pulumi.IntOutput)
+func (o LookupDatabaseSecurityConfigResultOutput) RefreshTrigger() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LookupDatabaseSecurityConfigResult) *int { return v.RefreshTrigger }).(pulumi.IntPtrOutput)
 }
 
 // The SQL firewall related configurations.
@@ -186,8 +179,8 @@ func (o LookupDatabaseSecurityConfigResultOutput) SqlFirewallConfigs() GetDataba
 }
 
 // The current state of the database security config.
-func (o LookupDatabaseSecurityConfigResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDatabaseSecurityConfigResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupDatabaseSecurityConfigResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDatabaseSecurityConfigResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -196,23 +189,23 @@ func (o LookupDatabaseSecurityConfigResultOutput) SystemTags() pulumi.MapOutput 
 }
 
 // The target OCID corresponding to the database security config.
-func (o LookupDatabaseSecurityConfigResultOutput) TargetId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDatabaseSecurityConfigResult) string { return v.TargetId }).(pulumi.StringOutput)
+func (o LookupDatabaseSecurityConfigResultOutput) TargetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDatabaseSecurityConfigResult) *string { return v.TargetId }).(pulumi.StringPtrOutput)
 }
 
 // The time that the database security config was created, in the format defined by RFC3339.
-func (o LookupDatabaseSecurityConfigResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDatabaseSecurityConfigResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupDatabaseSecurityConfigResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDatabaseSecurityConfigResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The last date and time the database security config was refreshed, in the format defined by RFC3339.
-func (o LookupDatabaseSecurityConfigResultOutput) TimeLastRefreshed() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDatabaseSecurityConfigResult) string { return v.TimeLastRefreshed }).(pulumi.StringOutput)
+func (o LookupDatabaseSecurityConfigResultOutput) TimeLastRefreshed() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDatabaseSecurityConfigResult) *string { return v.TimeLastRefreshed }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the database security configuration was last updated, in the format defined by RFC3339.
-func (o LookupDatabaseSecurityConfigResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDatabaseSecurityConfigResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o LookupDatabaseSecurityConfigResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDatabaseSecurityConfigResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 func init() {

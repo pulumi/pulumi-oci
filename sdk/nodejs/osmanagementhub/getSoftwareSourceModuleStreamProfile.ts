@@ -63,15 +63,15 @@ export interface GetSoftwareSourceModuleStreamProfileResult {
     /**
      * A description of the contents of the module stream profile.
      */
-    readonly description: string;
+    readonly description?: string;
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Indicates if this profile is the default for its module stream.
      */
-    readonly isDefault: boolean;
+    readonly isDefault?: boolean;
     /**
      * The name of the module that contains the stream profile.
      */
@@ -79,11 +79,11 @@ export interface GetSoftwareSourceModuleStreamProfileResult {
     /**
      * The name of the profile.
      */
-    readonly name: string;
+    readonly name?: string;
     /**
      * A list of packages that constitute the profile.  Each element in the list is the name of a package.  The name is suitable to use as an argument to other OS Management Hub APIs that interact directly with packages.
      */
-    readonly packages: string[];
+    readonly packages?: string[];
     readonly profileName: string;
     readonly softwareSourceId: string;
     /**

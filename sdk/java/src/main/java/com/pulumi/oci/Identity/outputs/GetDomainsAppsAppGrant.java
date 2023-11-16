@@ -6,6 +6,8 @@ package com.pulumi.oci.Identity.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDomainsAppsAppGrant {
@@ -16,27 +18,27 @@ public final class GetDomainsAppsAppGrant {
      * * &#39;ADMINISTRATOR_TO_APP&#39; is for a grant to a specific App.  The grantee (client) App gains access to the granted (server) App.
      * 
      */
-    private String grantMechanism;
+    private @Nullable String grantMechanism;
     /**
      * @return Grantee identifier
      * 
      */
-    private String granteeId;
+    private @Nullable String granteeId;
     /**
      * @return Grantee resource type. Allowed values are User and Group.
      * 
      */
-    private String granteeType;
+    private @Nullable String granteeType;
     /**
      * @return URI of the AppRole.
      * 
      */
-    private String ref;
+    private @Nullable String ref;
     /**
      * @return ID of the AppRole.
      * 
      */
-    private String value;
+    private @Nullable String value;
 
     private GetDomainsAppsAppGrant() {}
     /**
@@ -46,36 +48,36 @@ public final class GetDomainsAppsAppGrant {
      * * &#39;ADMINISTRATOR_TO_APP&#39; is for a grant to a specific App.  The grantee (client) App gains access to the granted (server) App.
      * 
      */
-    public String grantMechanism() {
-        return this.grantMechanism;
+    public Optional<String> grantMechanism() {
+        return Optional.ofNullable(this.grantMechanism);
     }
     /**
      * @return Grantee identifier
      * 
      */
-    public String granteeId() {
-        return this.granteeId;
+    public Optional<String> granteeId() {
+        return Optional.ofNullable(this.granteeId);
     }
     /**
      * @return Grantee resource type. Allowed values are User and Group.
      * 
      */
-    public String granteeType() {
-        return this.granteeType;
+    public Optional<String> granteeType() {
+        return Optional.ofNullable(this.granteeType);
     }
     /**
      * @return URI of the AppRole.
      * 
      */
-    public String ref() {
-        return this.ref;
+    public Optional<String> ref() {
+        return Optional.ofNullable(this.ref);
     }
     /**
      * @return ID of the AppRole.
      * 
      */
-    public String value() {
-        return this.value;
+    public Optional<String> value() {
+        return Optional.ofNullable(this.value);
     }
 
     public static Builder builder() {
@@ -87,11 +89,11 @@ public final class GetDomainsAppsAppGrant {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String grantMechanism;
-        private String granteeId;
-        private String granteeType;
-        private String ref;
-        private String value;
+        private @Nullable String grantMechanism;
+        private @Nullable String granteeId;
+        private @Nullable String granteeType;
+        private @Nullable String ref;
+        private @Nullable String value;
         public Builder() {}
         public Builder(GetDomainsAppsAppGrant defaults) {
     	      Objects.requireNonNull(defaults);
@@ -103,28 +105,28 @@ public final class GetDomainsAppsAppGrant {
         }
 
         @CustomType.Setter
-        public Builder grantMechanism(String grantMechanism) {
-            this.grantMechanism = Objects.requireNonNull(grantMechanism);
+        public Builder grantMechanism(@Nullable String grantMechanism) {
+            this.grantMechanism = grantMechanism;
             return this;
         }
         @CustomType.Setter
-        public Builder granteeId(String granteeId) {
-            this.granteeId = Objects.requireNonNull(granteeId);
+        public Builder granteeId(@Nullable String granteeId) {
+            this.granteeId = granteeId;
             return this;
         }
         @CustomType.Setter
-        public Builder granteeType(String granteeType) {
-            this.granteeType = Objects.requireNonNull(granteeType);
+        public Builder granteeType(@Nullable String granteeType) {
+            this.granteeType = granteeType;
             return this;
         }
         @CustomType.Setter
-        public Builder ref(String ref) {
-            this.ref = Objects.requireNonNull(ref);
+        public Builder ref(@Nullable String ref) {
+            this.ref = ref;
             return this;
         }
         @CustomType.Setter
-        public Builder value(String value) {
-            this.value = Objects.requireNonNull(value);
+        public Builder value(@Nullable String value) {
+            this.value = value;
             return this;
         }
         public GetDomainsAppsAppGrant build() {

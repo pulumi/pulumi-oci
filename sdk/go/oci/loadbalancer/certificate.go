@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // ## Example Usage
@@ -67,7 +66,7 @@ type Certificate struct {
 	// aXR5MRQwEgYDVQQDEwtCZXN0IENBIEx0ZDAeFw0wMD..TUwMTZaFw0wMTAy
 	// ...
 	// -----END CERTIFICATE-----
-	CaCertificate pulumi.StringOutput `pulumi:"caCertificate"`
+	CaCertificate pulumi.StringPtrOutput `pulumi:"caCertificate"`
 	// A friendly name for the certificate bundle. It must be unique and it cannot be changed. Valid certificate bundle names include only alphanumeric characters, dashes, and underscores. Certificate bundle names cannot contain spaces. Avoid entering confidential information.  Example: `exampleCertificateBundle`
 	CertificateName pulumi.StringOutput `pulumi:"certificateName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer on which to add the certificate bundle.
@@ -85,7 +84,7 @@ type Certificate struct {
 	// /Umr7wJzVrMqK5sDiSu4WuaaBdqMGfL5hLsTjcBFD..Da2iyQmSKuVD4lIZ
 	// ...
 	// -----END RSA PRIVATE KEY-----
-	PrivateKey pulumi.StringOutput `pulumi:"privateKey"`
+	PrivateKey pulumi.StringPtrOutput `pulumi:"privateKey"`
 	// The public certificate, in PEM format, that you received from your SSL certificate provider.
 	//
 	// Example:
@@ -100,8 +99,8 @@ type Certificate struct {
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	PublicCertificate pulumi.StringOutput `pulumi:"publicCertificate"`
-	State             pulumi.StringOutput `pulumi:"state"`
+	PublicCertificate pulumi.StringPtrOutput `pulumi:"publicCertificate"`
+	State             pulumi.StringPtrOutput `pulumi:"state"`
 }
 
 // NewCertificate registers a new resource with the given unique name, arguments, and options.
@@ -372,12 +371,6 @@ func (i *Certificate) ToCertificateOutputWithContext(ctx context.Context) Certif
 	return pulumi.ToOutputWithContext(ctx, i).(CertificateOutput)
 }
 
-func (i *Certificate) ToOutput(ctx context.Context) pulumix.Output[*Certificate] {
-	return pulumix.Output[*Certificate]{
-		OutputState: i.ToCertificateOutputWithContext(ctx).OutputState,
-	}
-}
-
 // CertificateArrayInput is an input type that accepts CertificateArray and CertificateArrayOutput values.
 // You can construct a concrete instance of `CertificateArrayInput` via:
 //
@@ -401,12 +394,6 @@ func (i CertificateArray) ToCertificateArrayOutput() CertificateArrayOutput {
 
 func (i CertificateArray) ToCertificateArrayOutputWithContext(ctx context.Context) CertificateArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(CertificateArrayOutput)
-}
-
-func (i CertificateArray) ToOutput(ctx context.Context) pulumix.Output[[]*Certificate] {
-	return pulumix.Output[[]*Certificate]{
-		OutputState: i.ToCertificateArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // CertificateMapInput is an input type that accepts CertificateMap and CertificateMapOutput values.
@@ -434,12 +421,6 @@ func (i CertificateMap) ToCertificateMapOutputWithContext(ctx context.Context) C
 	return pulumi.ToOutputWithContext(ctx, i).(CertificateMapOutput)
 }
 
-func (i CertificateMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*Certificate] {
-	return pulumix.Output[map[string]*Certificate]{
-		OutputState: i.ToCertificateMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type CertificateOutput struct{ *pulumi.OutputState }
 
 func (CertificateOutput) ElementType() reflect.Type {
@@ -454,12 +435,6 @@ func (o CertificateOutput) ToCertificateOutputWithContext(ctx context.Context) C
 	return o
 }
 
-func (o CertificateOutput) ToOutput(ctx context.Context) pulumix.Output[*Certificate] {
-	return pulumix.Output[*Certificate]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The Certificate Authority certificate, or any interim certificate, that you received from your SSL certificate provider.
 //
 // Example:
@@ -471,8 +446,8 @@ func (o CertificateOutput) ToOutput(ctx context.Context) pulumix.Output[*Certifi
 // aXR5MRQwEgYDVQQDEwtCZXN0IENBIEx0ZDAeFw0wMD..TUwMTZaFw0wMTAy
 // ...
 // -----END CERTIFICATE-----
-func (o CertificateOutput) CaCertificate() pulumi.StringOutput {
-	return o.ApplyT(func(v *Certificate) pulumi.StringOutput { return v.CaCertificate }).(pulumi.StringOutput)
+func (o CertificateOutput) CaCertificate() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Certificate) pulumi.StringPtrOutput { return v.CaCertificate }).(pulumi.StringPtrOutput)
 }
 
 // A friendly name for the certificate bundle. It must be unique and it cannot be changed. Valid certificate bundle names include only alphanumeric characters, dashes, and underscores. Certificate bundle names cannot contain spaces. Avoid entering confidential information.  Example: `exampleCertificateBundle`
@@ -501,8 +476,8 @@ func (o CertificateOutput) Passphrase() pulumi.StringPtrOutput {
 // /Umr7wJzVrMqK5sDiSu4WuaaBdqMGfL5hLsTjcBFD..Da2iyQmSKuVD4lIZ
 // ...
 // -----END RSA PRIVATE KEY-----
-func (o CertificateOutput) PrivateKey() pulumi.StringOutput {
-	return o.ApplyT(func(v *Certificate) pulumi.StringOutput { return v.PrivateKey }).(pulumi.StringOutput)
+func (o CertificateOutput) PrivateKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Certificate) pulumi.StringPtrOutput { return v.PrivateKey }).(pulumi.StringPtrOutput)
 }
 
 // The public certificate, in PEM format, that you received from your SSL certificate provider.
@@ -519,12 +494,12 @@ func (o CertificateOutput) PrivateKey() pulumi.StringOutput {
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-func (o CertificateOutput) PublicCertificate() pulumi.StringOutput {
-	return o.ApplyT(func(v *Certificate) pulumi.StringOutput { return v.PublicCertificate }).(pulumi.StringOutput)
+func (o CertificateOutput) PublicCertificate() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Certificate) pulumi.StringPtrOutput { return v.PublicCertificate }).(pulumi.StringPtrOutput)
 }
 
-func (o CertificateOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *Certificate) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o CertificateOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Certificate) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 type CertificateArrayOutput struct{ *pulumi.OutputState }
@@ -539,12 +514,6 @@ func (o CertificateArrayOutput) ToCertificateArrayOutput() CertificateArrayOutpu
 
 func (o CertificateArrayOutput) ToCertificateArrayOutputWithContext(ctx context.Context) CertificateArrayOutput {
 	return o
-}
-
-func (o CertificateArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*Certificate] {
-	return pulumix.Output[[]*Certificate]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o CertificateArrayOutput) Index(i pulumi.IntInput) CertificateOutput {
@@ -565,12 +534,6 @@ func (o CertificateMapOutput) ToCertificateMapOutput() CertificateMapOutput {
 
 func (o CertificateMapOutput) ToCertificateMapOutputWithContext(ctx context.Context) CertificateMapOutput {
 	return o
-}
-
-func (o CertificateMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*Certificate] {
-	return pulumix.Output[map[string]*Certificate]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o CertificateMapOutput) MapIndex(k pulumi.StringInput) CertificateOutput {

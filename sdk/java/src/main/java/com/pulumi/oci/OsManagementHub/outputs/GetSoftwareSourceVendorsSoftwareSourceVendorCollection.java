@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.OsManagementHub.outputs.GetSoftwareSourceVendorsSoftwareSourceVendorCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetSoftwareSourceVendorsSoftwareSourceVendorCollection {
@@ -14,7 +15,7 @@ public final class GetSoftwareSourceVendorsSoftwareSourceVendorCollection {
      * @return List of SoftwareSourceVendor.
      * 
      */
-    private List<GetSoftwareSourceVendorsSoftwareSourceVendorCollectionItem> items;
+    private @Nullable List<GetSoftwareSourceVendorsSoftwareSourceVendorCollectionItem> items;
 
     private GetSoftwareSourceVendorsSoftwareSourceVendorCollection() {}
     /**
@@ -22,7 +23,7 @@ public final class GetSoftwareSourceVendorsSoftwareSourceVendorCollection {
      * 
      */
     public List<GetSoftwareSourceVendorsSoftwareSourceVendorCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -34,7 +35,7 @@ public final class GetSoftwareSourceVendorsSoftwareSourceVendorCollection {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetSoftwareSourceVendorsSoftwareSourceVendorCollectionItem> items;
+        private @Nullable List<GetSoftwareSourceVendorsSoftwareSourceVendorCollectionItem> items;
         public Builder() {}
         public Builder(GetSoftwareSourceVendorsSoftwareSourceVendorCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -42,8 +43,8 @@ public final class GetSoftwareSourceVendorsSoftwareSourceVendorCollection {
         }
 
         @CustomType.Setter
-        public Builder items(List<GetSoftwareSourceVendorsSoftwareSourceVendorCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetSoftwareSourceVendorsSoftwareSourceVendorCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetSoftwareSourceVendorsSoftwareSourceVendorCollectionItem... items) {

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific System Media Workflow resource in Oracle Cloud Infrastructure Media Services service.
@@ -64,7 +63,7 @@ type GetSystemMediaWorkflowArgs struct {
 type GetSystemMediaWorkflowResult struct {
 	CompartmentId *string `pulumi:"compartmentId"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// List of SytemMediaWorkflow items.
 	Items []GetSystemMediaWorkflowItem `pulumi:"items"`
 	// System provided unique identifier for this static media workflow.
@@ -111,19 +110,13 @@ func (o GetSystemMediaWorkflowResultOutput) ToGetSystemMediaWorkflowResultOutput
 	return o
 }
 
-func (o GetSystemMediaWorkflowResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetSystemMediaWorkflowResult] {
-	return pulumix.Output[GetSystemMediaWorkflowResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSystemMediaWorkflowResultOutput) CompartmentId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetSystemMediaWorkflowResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetSystemMediaWorkflowResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSystemMediaWorkflowResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetSystemMediaWorkflowResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSystemMediaWorkflowResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // List of SytemMediaWorkflow items.

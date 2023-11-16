@@ -6,6 +6,8 @@ package com.pulumi.oci.Identity.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetIamWorkRequestErrorsIamWorkRequestError {
@@ -13,39 +15,39 @@ public final class GetIamWorkRequestErrorsIamWorkRequestError {
      * @return A machine-usable code for the error that occured.
      * 
      */
-    private String code;
+    private @Nullable String code;
     /**
      * @return A human-readable error string.
      * 
      */
-    private String message;
+    private @Nullable String message;
     /**
      * @return The date and time the error occurred.
      * 
      */
-    private String timestamp;
+    private @Nullable String timestamp;
 
     private GetIamWorkRequestErrorsIamWorkRequestError() {}
     /**
      * @return A machine-usable code for the error that occured.
      * 
      */
-    public String code() {
-        return this.code;
+    public Optional<String> code() {
+        return Optional.ofNullable(this.code);
     }
     /**
      * @return A human-readable error string.
      * 
      */
-    public String message() {
-        return this.message;
+    public Optional<String> message() {
+        return Optional.ofNullable(this.message);
     }
     /**
      * @return The date and time the error occurred.
      * 
      */
-    public String timestamp() {
-        return this.timestamp;
+    public Optional<String> timestamp() {
+        return Optional.ofNullable(this.timestamp);
     }
 
     public static Builder builder() {
@@ -57,9 +59,9 @@ public final class GetIamWorkRequestErrorsIamWorkRequestError {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String code;
-        private String message;
-        private String timestamp;
+        private @Nullable String code;
+        private @Nullable String message;
+        private @Nullable String timestamp;
         public Builder() {}
         public Builder(GetIamWorkRequestErrorsIamWorkRequestError defaults) {
     	      Objects.requireNonNull(defaults);
@@ -69,18 +71,18 @@ public final class GetIamWorkRequestErrorsIamWorkRequestError {
         }
 
         @CustomType.Setter
-        public Builder code(String code) {
-            this.code = Objects.requireNonNull(code);
+        public Builder code(@Nullable String code) {
+            this.code = code;
             return this;
         }
         @CustomType.Setter
-        public Builder message(String message) {
-            this.message = Objects.requireNonNull(message);
+        public Builder message(@Nullable String message) {
+            this.message = message;
             return this;
         }
         @CustomType.Setter
-        public Builder timestamp(String timestamp) {
-            this.timestamp = Objects.requireNonNull(timestamp);
+        public Builder timestamp(@Nullable String timestamp) {
+            this.timestamp = timestamp;
             return this;
         }
         public GetIamWorkRequestErrorsIamWorkRequestError build() {

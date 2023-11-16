@@ -6,6 +6,8 @@ package com.pulumi.oci.Limits.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetLimitValuesLimitValue {
@@ -13,51 +15,51 @@ public final class GetLimitValuesLimitValue {
      * @return Filter entries by availability domain. This implies that only AD-specific values are returned.
      * 
      */
-    private String availabilityDomain;
+    private @Nullable String availabilityDomain;
     /**
      * @return Optional field, can be used to see a specific resource limit value.
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return Filter entries by scope type.
      * 
      */
-    private String scopeType;
+    private @Nullable String scopeType;
     /**
      * @return The resource limit value.
      * 
      */
-    private String value;
+    private @Nullable String value;
 
     private GetLimitValuesLimitValue() {}
     /**
      * @return Filter entries by availability domain. This implies that only AD-specific values are returned.
      * 
      */
-    public String availabilityDomain() {
-        return this.availabilityDomain;
+    public Optional<String> availabilityDomain() {
+        return Optional.ofNullable(this.availabilityDomain);
     }
     /**
      * @return Optional field, can be used to see a specific resource limit value.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return Filter entries by scope type.
      * 
      */
-    public String scopeType() {
-        return this.scopeType;
+    public Optional<String> scopeType() {
+        return Optional.ofNullable(this.scopeType);
     }
     /**
      * @return The resource limit value.
      * 
      */
-    public String value() {
-        return this.value;
+    public Optional<String> value() {
+        return Optional.ofNullable(this.value);
     }
 
     public static Builder builder() {
@@ -69,10 +71,10 @@ public final class GetLimitValuesLimitValue {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String availabilityDomain;
-        private String name;
-        private String scopeType;
-        private String value;
+        private @Nullable String availabilityDomain;
+        private @Nullable String name;
+        private @Nullable String scopeType;
+        private @Nullable String value;
         public Builder() {}
         public Builder(GetLimitValuesLimitValue defaults) {
     	      Objects.requireNonNull(defaults);
@@ -83,23 +85,23 @@ public final class GetLimitValuesLimitValue {
         }
 
         @CustomType.Setter
-        public Builder availabilityDomain(String availabilityDomain) {
-            this.availabilityDomain = Objects.requireNonNull(availabilityDomain);
+        public Builder availabilityDomain(@Nullable String availabilityDomain) {
+            this.availabilityDomain = availabilityDomain;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder scopeType(String scopeType) {
-            this.scopeType = Objects.requireNonNull(scopeType);
+        public Builder scopeType(@Nullable String scopeType) {
+            this.scopeType = scopeType;
             return this;
         }
         @CustomType.Setter
-        public Builder value(String value) {
-            this.value = Objects.requireNonNull(value);
+        public Builder value(@Nullable String value) {
+            this.value = value;
             return this;
         }
         public GetLimitValuesLimitValue build() {

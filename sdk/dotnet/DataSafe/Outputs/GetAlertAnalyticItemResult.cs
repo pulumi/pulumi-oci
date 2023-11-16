@@ -16,7 +16,7 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// <summary>
         /// Total count of aggregated values.
         /// </summary>
-        public readonly string Count;
+        public readonly string? Count;
         /// <summary>
         /// Details of aggregation dimension summarizing alerts.
         /// </summary>
@@ -24,27 +24,27 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// <summary>
         /// The name of the aggregation.
         /// </summary>
-        public readonly string MetricName;
+        public readonly string? MetricName;
         /// <summary>
         /// An optional filter to return audit events whose creation time in the database is less than and equal to the date-time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         /// </summary>
-        public readonly string TimeEnded;
+        public readonly string? TimeEnded;
         /// <summary>
         /// An optional filter to return audit events whose creation time in the database is greater than and equal to the date-time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         /// </summary>
-        public readonly string TimeStarted;
+        public readonly string? TimeStarted;
 
         [OutputConstructor]
         private GetAlertAnalyticItemResult(
-            string count,
+            string? count,
 
             ImmutableArray<Outputs.GetAlertAnalyticItemDimensionResult> dimensions,
 
-            string metricName,
+            string? metricName,
 
-            string timeEnded,
+            string? timeEnded,
 
-            string timeStarted)
+            string? timeStarted)
         {
             Count = count;
             Dimensions = dimensions;

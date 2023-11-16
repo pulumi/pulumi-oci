@@ -6,6 +6,8 @@ package com.pulumi.oci.OsManagementHub.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetLifecycleStagesLifecycleStageCollectionItemManagedInstanceId {
@@ -13,27 +15,27 @@ public final class GetLifecycleStagesLifecycleStageCollectionItemManagedInstance
      * @return A filter to return resources that match the given display names.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return The OCID of the software source.
      * 
      */
-    private String id;
+    private @Nullable String id;
 
     private GetLifecycleStagesLifecycleStageCollectionItemManagedInstanceId() {}
     /**
      * @return A filter to return resources that match the given display names.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return The OCID of the software source.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
 
     public static Builder builder() {
@@ -45,8 +47,8 @@ public final class GetLifecycleStagesLifecycleStageCollectionItemManagedInstance
     }
     @CustomType.Builder
     public static final class Builder {
-        private String displayName;
-        private String id;
+        private @Nullable String displayName;
+        private @Nullable String id;
         public Builder() {}
         public Builder(GetLifecycleStagesLifecycleStageCollectionItemManagedInstanceId defaults) {
     	      Objects.requireNonNull(defaults);
@@ -55,13 +57,13 @@ public final class GetLifecycleStagesLifecycleStageCollectionItemManagedInstance
         }
 
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         public GetLifecycleStagesLifecycleStageCollectionItemManagedInstanceId build() {

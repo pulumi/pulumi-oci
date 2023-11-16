@@ -69,9 +69,6 @@ class GetSensitiveDataModelsResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The OCID of the compartment that contains the sensitive data model.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
@@ -82,9 +79,6 @@ class GetSensitiveDataModelsResult:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        The display name of the sensitive data model.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -94,7 +88,7 @@ class GetSensitiveDataModelsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -102,10 +96,7 @@ class GetSensitiveDataModelsResult:
 
     @property
     @pulumi.getter(name="sensitiveDataModelCollections")
-    def sensitive_data_model_collections(self) -> Sequence['outputs.GetSensitiveDataModelsSensitiveDataModelCollectionResult']:
-        """
-        The list of sensitive_data_model_collection.
-        """
+    def sensitive_data_model_collections(self) -> Optional[Sequence['outputs.GetSensitiveDataModelsSensitiveDataModelCollectionResult']]:
         return pulumi.get(self, "sensitive_data_model_collections")
 
     @property
@@ -116,17 +107,11 @@ class GetSensitiveDataModelsResult:
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the sensitive data model.
-        """
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="targetId")
     def target_id(self) -> Optional[str]:
-        """
-        The OCID of the reference target database associated with the sensitive data model. All operations such as performing data discovery and adding columns manually are done in the context of the associated target database.
-        """
         return pulumi.get(self, "target_id")
 
     @property
@@ -172,41 +157,7 @@ def get_sensitive_data_models(access_level: Optional[str] = None,
                               time_created_less_than: Optional[str] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetSensitiveDataModelsResult:
     """
-    This data source provides the list of Sensitive Data Models in Oracle Cloud Infrastructure Data Safe service.
-
-    Gets a list of sensitive data models based on the specified query parameters.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_sensitive_data_models = oci.DataSafe.get_sensitive_data_models(compartment_id=var["compartment_id"],
-        access_level=var["sensitive_data_model_access_level"],
-        compartment_id_in_subtree=var["sensitive_data_model_compartment_id_in_subtree"],
-        display_name=var["sensitive_data_model_display_name"],
-        sensitive_data_model_id=oci_data_safe_sensitive_data_model["test_sensitive_data_model"]["id"],
-        state=var["sensitive_data_model_state"],
-        target_id=oci_cloud_guard_target["test_target"]["id"],
-        time_created_greater_than_or_equal_to=var["sensitive_data_model_time_created_greater_than_or_equal_to"],
-        time_created_less_than=var["sensitive_data_model_time_created_less_than"])
-    ```
-
-
-    :param str access_level: Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
-    :param str compartment_id: A filter to return only resources that match the specified compartment OCID.
-    :param bool compartment_id_in_subtree: Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
-    :param str display_name: A filter to return only resources that match the specified display name.
-    :param str sensitive_data_model_id: A filter to return only the resources that match the specified sensitive data model OCID.
-    :param str state: A filter to return only the resources that match the specified lifecycle state.
-    :param str target_id: A filter to return only items related to a specific target OCID.
-    :param str time_created_greater_than_or_equal_to: A filter to return only the resources that were created after the specified date and time, as defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Using TimeCreatedGreaterThanOrEqualToQueryParam parameter retrieves all resources created after that date.
-           
-           **Example:** 2016-12-19T16:39:57.600Z
-    :param str time_created_less_than: Search for resources that were created before a specific date. Specifying this parameter corresponding `timeCreatedLessThan` parameter will retrieve all resources created before the specified created date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by RFC 3339.
-           
-           **Example:** 2016-12-19T16:39:57.600Z
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['accessLevel'] = access_level
@@ -250,40 +201,6 @@ def get_sensitive_data_models_output(access_level: Optional[pulumi.Input[Optiona
                                      time_created_less_than: Optional[pulumi.Input[Optional[str]]] = None,
                                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSensitiveDataModelsResult]:
     """
-    This data source provides the list of Sensitive Data Models in Oracle Cloud Infrastructure Data Safe service.
-
-    Gets a list of sensitive data models based on the specified query parameters.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_sensitive_data_models = oci.DataSafe.get_sensitive_data_models(compartment_id=var["compartment_id"],
-        access_level=var["sensitive_data_model_access_level"],
-        compartment_id_in_subtree=var["sensitive_data_model_compartment_id_in_subtree"],
-        display_name=var["sensitive_data_model_display_name"],
-        sensitive_data_model_id=oci_data_safe_sensitive_data_model["test_sensitive_data_model"]["id"],
-        state=var["sensitive_data_model_state"],
-        target_id=oci_cloud_guard_target["test_target"]["id"],
-        time_created_greater_than_or_equal_to=var["sensitive_data_model_time_created_greater_than_or_equal_to"],
-        time_created_less_than=var["sensitive_data_model_time_created_less_than"])
-    ```
-
-
-    :param str access_level: Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
-    :param str compartment_id: A filter to return only resources that match the specified compartment OCID.
-    :param bool compartment_id_in_subtree: Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
-    :param str display_name: A filter to return only resources that match the specified display name.
-    :param str sensitive_data_model_id: A filter to return only the resources that match the specified sensitive data model OCID.
-    :param str state: A filter to return only the resources that match the specified lifecycle state.
-    :param str target_id: A filter to return only items related to a specific target OCID.
-    :param str time_created_greater_than_or_equal_to: A filter to return only the resources that were created after the specified date and time, as defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Using TimeCreatedGreaterThanOrEqualToQueryParam parameter retrieves all resources created after that date.
-           
-           **Example:** 2016-12-19T16:39:57.600Z
-    :param str time_created_less_than: Search for resources that were created before a specific date. Specifying this parameter corresponding `timeCreatedLessThan` parameter will retrieve all resources created before the specified created date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by RFC 3339.
-           
-           **Example:** 2016-12-19T16:39:57.600Z
+    Use this data source to access information about an existing resource.
     """
     ...

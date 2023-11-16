@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Compute Capacity Reservation resource in Oracle Cloud Infrastructure Core service.
@@ -90,7 +89,7 @@ type ComputeCapacityReservation struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrOutput `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// (Updatable) The capacity configurations for the capacity reservation.
@@ -101,17 +100,17 @@ type ComputeCapacityReservation struct {
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	IsDefaultReservation pulumi.BoolOutput `pulumi:"isDefaultReservation"`
+	IsDefaultReservation pulumi.BoolPtrOutput `pulumi:"isDefaultReservation"`
 	// The number of instances for which capacity will be held with this compute capacity reservation. This number is the sum of the values of the `reservedCount` fields for all of the instance capacity configurations under this reservation. The purpose of this field is to calculate the percentage usage of the reservation.
-	ReservedInstanceCount pulumi.StringOutput `pulumi:"reservedInstanceCount"`
+	ReservedInstanceCount pulumi.StringPtrOutput `pulumi:"reservedInstanceCount"`
 	// The current state of the compute capacity reservation.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// The date and time the compute capacity reservation was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The date and time the compute capacity reservation was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 	// The total number of instances currently consuming space in this compute capacity reservation. This number is the sum of the values of the `usedCount` fields for all of the instance capacity configurations under this reservation. The purpose of this field is to calculate the percentage usage of the reservation.
-	UsedInstanceCount pulumi.StringOutput `pulumi:"usedInstanceCount"`
+	UsedInstanceCount pulumi.StringPtrOutput `pulumi:"usedInstanceCount"`
 }
 
 // NewComputeCapacityReservation registers a new resource with the given unique name, arguments, and options.
@@ -288,12 +287,6 @@ func (i *ComputeCapacityReservation) ToComputeCapacityReservationOutputWithConte
 	return pulumi.ToOutputWithContext(ctx, i).(ComputeCapacityReservationOutput)
 }
 
-func (i *ComputeCapacityReservation) ToOutput(ctx context.Context) pulumix.Output[*ComputeCapacityReservation] {
-	return pulumix.Output[*ComputeCapacityReservation]{
-		OutputState: i.ToComputeCapacityReservationOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ComputeCapacityReservationArrayInput is an input type that accepts ComputeCapacityReservationArray and ComputeCapacityReservationArrayOutput values.
 // You can construct a concrete instance of `ComputeCapacityReservationArrayInput` via:
 //
@@ -317,12 +310,6 @@ func (i ComputeCapacityReservationArray) ToComputeCapacityReservationArrayOutput
 
 func (i ComputeCapacityReservationArray) ToComputeCapacityReservationArrayOutputWithContext(ctx context.Context) ComputeCapacityReservationArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ComputeCapacityReservationArrayOutput)
-}
-
-func (i ComputeCapacityReservationArray) ToOutput(ctx context.Context) pulumix.Output[[]*ComputeCapacityReservation] {
-	return pulumix.Output[[]*ComputeCapacityReservation]{
-		OutputState: i.ToComputeCapacityReservationArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // ComputeCapacityReservationMapInput is an input type that accepts ComputeCapacityReservationMap and ComputeCapacityReservationMapOutput values.
@@ -350,12 +337,6 @@ func (i ComputeCapacityReservationMap) ToComputeCapacityReservationMapOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(ComputeCapacityReservationMapOutput)
 }
 
-func (i ComputeCapacityReservationMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*ComputeCapacityReservation] {
-	return pulumix.Output[map[string]*ComputeCapacityReservation]{
-		OutputState: i.ToComputeCapacityReservationMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ComputeCapacityReservationOutput struct{ *pulumi.OutputState }
 
 func (ComputeCapacityReservationOutput) ElementType() reflect.Type {
@@ -368,12 +349,6 @@ func (o ComputeCapacityReservationOutput) ToComputeCapacityReservationOutput() C
 
 func (o ComputeCapacityReservationOutput) ToComputeCapacityReservationOutputWithContext(ctx context.Context) ComputeCapacityReservationOutput {
 	return o
-}
-
-func (o ComputeCapacityReservationOutput) ToOutput(ctx context.Context) pulumix.Output[*ComputeCapacityReservation] {
-	return pulumix.Output[*ComputeCapacityReservation]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The availability domain of this compute capacity reservation.  Example: `Uocm:PHX-AD-1`
@@ -392,8 +367,8 @@ func (o ComputeCapacityReservationOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-func (o ComputeCapacityReservationOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v *ComputeCapacityReservation) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+func (o ComputeCapacityReservationOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ComputeCapacityReservation) pulumi.StringPtrOutput { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -414,33 +389,33 @@ func (o ComputeCapacityReservationOutput) InstanceReservationConfigs() ComputeCa
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-func (o ComputeCapacityReservationOutput) IsDefaultReservation() pulumi.BoolOutput {
-	return o.ApplyT(func(v *ComputeCapacityReservation) pulumi.BoolOutput { return v.IsDefaultReservation }).(pulumi.BoolOutput)
+func (o ComputeCapacityReservationOutput) IsDefaultReservation() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *ComputeCapacityReservation) pulumi.BoolPtrOutput { return v.IsDefaultReservation }).(pulumi.BoolPtrOutput)
 }
 
 // The number of instances for which capacity will be held with this compute capacity reservation. This number is the sum of the values of the `reservedCount` fields for all of the instance capacity configurations under this reservation. The purpose of this field is to calculate the percentage usage of the reservation.
-func (o ComputeCapacityReservationOutput) ReservedInstanceCount() pulumi.StringOutput {
-	return o.ApplyT(func(v *ComputeCapacityReservation) pulumi.StringOutput { return v.ReservedInstanceCount }).(pulumi.StringOutput)
+func (o ComputeCapacityReservationOutput) ReservedInstanceCount() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ComputeCapacityReservation) pulumi.StringPtrOutput { return v.ReservedInstanceCount }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the compute capacity reservation.
-func (o ComputeCapacityReservationOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *ComputeCapacityReservation) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o ComputeCapacityReservationOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ComputeCapacityReservation) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the compute capacity reservation was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-func (o ComputeCapacityReservationOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *ComputeCapacityReservation) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o ComputeCapacityReservationOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ComputeCapacityReservation) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the compute capacity reservation was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-func (o ComputeCapacityReservationOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *ComputeCapacityReservation) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o ComputeCapacityReservationOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ComputeCapacityReservation) pulumi.StringPtrOutput { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 // The total number of instances currently consuming space in this compute capacity reservation. This number is the sum of the values of the `usedCount` fields for all of the instance capacity configurations under this reservation. The purpose of this field is to calculate the percentage usage of the reservation.
-func (o ComputeCapacityReservationOutput) UsedInstanceCount() pulumi.StringOutput {
-	return o.ApplyT(func(v *ComputeCapacityReservation) pulumi.StringOutput { return v.UsedInstanceCount }).(pulumi.StringOutput)
+func (o ComputeCapacityReservationOutput) UsedInstanceCount() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ComputeCapacityReservation) pulumi.StringPtrOutput { return v.UsedInstanceCount }).(pulumi.StringPtrOutput)
 }
 
 type ComputeCapacityReservationArrayOutput struct{ *pulumi.OutputState }
@@ -455,12 +430,6 @@ func (o ComputeCapacityReservationArrayOutput) ToComputeCapacityReservationArray
 
 func (o ComputeCapacityReservationArrayOutput) ToComputeCapacityReservationArrayOutputWithContext(ctx context.Context) ComputeCapacityReservationArrayOutput {
 	return o
-}
-
-func (o ComputeCapacityReservationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*ComputeCapacityReservation] {
-	return pulumix.Output[[]*ComputeCapacityReservation]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ComputeCapacityReservationArrayOutput) Index(i pulumi.IntInput) ComputeCapacityReservationOutput {
@@ -481,12 +450,6 @@ func (o ComputeCapacityReservationMapOutput) ToComputeCapacityReservationMapOutp
 
 func (o ComputeCapacityReservationMapOutput) ToComputeCapacityReservationMapOutputWithContext(ctx context.Context) ComputeCapacityReservationMapOutput {
 	return o
-}
-
-func (o ComputeCapacityReservationMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*ComputeCapacityReservation] {
-	return pulumix.Output[map[string]*ComputeCapacityReservation]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ComputeCapacityReservationMapOutput) MapIndex(k pulumi.StringInput) ComputeCapacityReservationOutput {

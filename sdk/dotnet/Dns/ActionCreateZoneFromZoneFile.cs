@@ -64,7 +64,7 @@ namespace Pulumi.Oci.Dns
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// External secondary servers for the zone. This field is currently not supported when `zoneType` is `SECONDARY` or `scope` is `PRIVATE`.
@@ -82,19 +82,19 @@ namespace Pulumi.Oci.Dns
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// A Boolean flag indicating whether or not parts of the resource are unable to be explicitly managed.
         /// </summary>
         [Output("isProtected")]
-        public Output<bool> IsProtected { get; private set; } = null!;
+        public Output<bool?> IsProtected { get; private set; } = null!;
 
         /// <summary>
         /// The name of the zone.
         /// </summary>
         [Output("name")]
-        public Output<string> Name { get; private set; } = null!;
+        public Output<string?> Name { get; private set; } = null!;
 
         /// <summary>
         /// The authoritative nameservers for the zone.
@@ -106,37 +106,37 @@ namespace Pulumi.Oci.Dns
         /// Specifies to operate only on resources that have a matching DNS scope.
         /// </summary>
         [Output("scope")]
-        public Output<string> Scope { get; private set; } = null!;
+        public Output<string?> Scope { get; private set; } = null!;
 
         /// <summary>
         /// The canonical absolute URL of the resource.
         /// </summary>
         [Output("self")]
-        public Output<string> Self { get; private set; } = null!;
+        public Output<string?> Self { get; private set; } = null!;
 
         /// <summary>
         /// The current serial of the zone. As seen in the zone's SOA record.
         /// </summary>
         [Output("serial")]
-        public Output<string> Serial { get; private set; } = null!;
+        public Output<string?> Serial { get; private set; } = null!;
 
         /// <summary>
         /// The current state of the zone resource.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// Version is the never-repeating, totally-orderable, version of the zone, from which the serial field of the zone's SOA record is derived.
         /// </summary>
         [Output("version")]
-        public Output<string> Version { get; private set; } = null!;
+        public Output<string?> Version { get; private set; } = null!;
 
         /// <summary>
         /// The OCID of the view the resource is associated with.
@@ -146,7 +146,7 @@ namespace Pulumi.Oci.Dns
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("viewId")]
-        public Output<string> ViewId { get; private set; } = null!;
+        public Output<string?> ViewId { get; private set; } = null!;
 
         /// <summary>
         /// The Oracle Cloud Infrastructure nameservers that transfer the zone data with external nameservers.
@@ -158,7 +158,7 @@ namespace Pulumi.Oci.Dns
         /// The type of the zone. Must be either `PRIMARY` or `SECONDARY`. `SECONDARY` is only supported for GLOBAL zones.
         /// </summary>
         [Output("zoneType")]
-        public Output<string> ZoneType { get; private set; } = null!;
+        public Output<string?> ZoneType { get; private set; } = null!;
 
 
         /// <summary>

@@ -16,59 +16,59 @@ namespace Pulumi.Oci.Adm.Outputs
         /// <summary>
         /// The branch used by ADM to patch vulnerabilities.
         /// </summary>
-        public readonly string Branch;
+        public readonly string? Branch;
         /// <summary>
         /// The location of the build file relative to the root of the repository. Only Maven build files (POM) are currently supported. If this property is not specified, ADM will use the build file located at the root of the repository.
         /// </summary>
-        public readonly string BuildFileLocation;
+        public readonly string? BuildFileLocation;
         /// <summary>
         /// The type of External Source Code Management.
         /// </summary>
-        public readonly string ExternalScmType;
+        public readonly string? ExternalScmType;
         /// <summary>
         /// If true, the Pull Request (PR) will be merged after the verify stage completes successfully     If false, the PR with the proposed changes must be reviewed and manually merged.
         /// </summary>
-        public readonly bool IsAutomergeEnabled;
+        public readonly bool? IsAutomergeEnabled;
         /// <summary>
         /// The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Oracle Cloud Infrastructure DevOps repository.
         /// </summary>
-        public readonly string OciCodeRepositoryId;
+        public readonly string? OciCodeRepositoryId;
         /// <summary>
         /// The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Private Access Token (PAT) Secret. The PAT provides the credentials to access the Jenkins Pipeline.
         /// </summary>
-        public readonly string PatSecretId;
+        public readonly string? PatSecretId;
         /// <summary>
         /// The location of the repository where the GitHub Actions is defined. For Non-Enterprise GitHub the expected format is https://github.com/[owner]/[repoName] For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName]
         /// </summary>
-        public readonly string RepositoryUrl;
+        public readonly string? RepositoryUrl;
         /// <summary>
         /// The type of Source Code Management.
         /// </summary>
-        public readonly string ScmType;
+        public readonly string? ScmType;
         /// <summary>
         /// The username that will be used to authenticate with Jenkins.
         /// </summary>
-        public readonly string Username;
+        public readonly string? Username;
 
         [OutputConstructor]
         private GetRemediationRecipeScmConfigurationResult(
-            string branch,
+            string? branch,
 
-            string buildFileLocation,
+            string? buildFileLocation,
 
-            string externalScmType,
+            string? externalScmType,
 
-            bool isAutomergeEnabled,
+            bool? isAutomergeEnabled,
 
-            string ociCodeRepositoryId,
+            string? ociCodeRepositoryId,
 
-            string patSecretId,
+            string? patSecretId,
 
-            string repositoryUrl,
+            string? repositoryUrl,
 
-            string scmType,
+            string? scmType,
 
-            string username)
+            string? username)
         {
             Branch = branch;
             BuildFileLocation = buildFileLocation;

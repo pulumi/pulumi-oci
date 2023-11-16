@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Managed Database resource in Oracle Cloud Infrastructure Database Management service.
@@ -62,36 +61,36 @@ type GetManagedDatabaseResult struct {
 	// The additional details specific to a type of database defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
 	AdditionalDetails map[string]interface{} `pulumi:"additionalDetails"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the Managed Database Group resides.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// The status of the Oracle Database. Indicates whether the status of the database is UP, DOWN, or UNKNOWN at the current time.
-	DatabaseStatus string `pulumi:"databaseStatus"`
+	DatabaseStatus *string `pulumi:"databaseStatus"`
 	// The subtype of the Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, Non-container Database, Autonomous Database, or Autonomous Container Database.
-	DatabaseSubType string `pulumi:"databaseSubType"`
+	DatabaseSubType *string `pulumi:"databaseSubType"`
 	// The type of Oracle Database installation.
-	DatabaseType string `pulumi:"databaseType"`
+	DatabaseType *string `pulumi:"databaseType"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that this Managed Database is part of.
-	DbSystemId string `pulumi:"dbSystemId"`
+	DbSystemId *string `pulumi:"dbSystemId"`
 	// The infrastructure used to deploy the Oracle Database.
-	DeploymentType string `pulumi:"deploymentType"`
+	DeploymentType *string `pulumi:"deploymentType"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Indicates whether the Oracle Database is part of a cluster.
-	IsCluster bool `pulumi:"isCluster"`
+	IsCluster *bool `pulumi:"isCluster"`
 	// A list of Managed Database Groups that the Managed Database belongs to.
 	ManagedDatabaseGroups []GetManagedDatabaseManagedDatabaseGroup `pulumi:"managedDatabaseGroups"`
 	ManagedDatabaseId     string                                   `pulumi:"managedDatabaseId"`
 	// The management option used when enabling Database Management.
-	ManagementOption string `pulumi:"managementOption"`
+	ManagementOption *string `pulumi:"managementOption"`
 	// The name of the Managed Database.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent Container Database if Managed Database is a Pluggable Database.
-	ParentContainerId string `pulumi:"parentContainerId"`
+	ParentContainerId *string `pulumi:"parentContainerId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the storage DB system.
-	StorageSystemId string `pulumi:"storageSystemId"`
+	StorageSystemId *string `pulumi:"storageSystemId"`
 	// The date and time the Managed Database was created.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The workload type of the Autonomous Database.
-	WorkloadType string `pulumi:"workloadType"`
+	WorkloadType *string `pulumi:"workloadType"`
 }
 
 func GetManagedDatabaseOutput(ctx *pulumi.Context, args GetManagedDatabaseOutputArgs, opts ...pulumi.InvokeOption) GetManagedDatabaseResultOutput {
@@ -132,55 +131,49 @@ func (o GetManagedDatabaseResultOutput) ToGetManagedDatabaseResultOutputWithCont
 	return o
 }
 
-func (o GetManagedDatabaseResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagedDatabaseResult] {
-	return pulumix.Output[GetManagedDatabaseResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The additional details specific to a type of database defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
 func (o GetManagedDatabaseResultOutput) AdditionalDetails() pulumi.MapOutput {
 	return o.ApplyT(func(v GetManagedDatabaseResult) map[string]interface{} { return v.AdditionalDetails }).(pulumi.MapOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the Managed Database Group resides.
-func (o GetManagedDatabaseResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedDatabaseResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetManagedDatabaseResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedDatabaseResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // The status of the Oracle Database. Indicates whether the status of the database is UP, DOWN, or UNKNOWN at the current time.
-func (o GetManagedDatabaseResultOutput) DatabaseStatus() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedDatabaseResult) string { return v.DatabaseStatus }).(pulumi.StringOutput)
+func (o GetManagedDatabaseResultOutput) DatabaseStatus() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedDatabaseResult) *string { return v.DatabaseStatus }).(pulumi.StringPtrOutput)
 }
 
 // The subtype of the Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, Non-container Database, Autonomous Database, or Autonomous Container Database.
-func (o GetManagedDatabaseResultOutput) DatabaseSubType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedDatabaseResult) string { return v.DatabaseSubType }).(pulumi.StringOutput)
+func (o GetManagedDatabaseResultOutput) DatabaseSubType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedDatabaseResult) *string { return v.DatabaseSubType }).(pulumi.StringPtrOutput)
 }
 
 // The type of Oracle Database installation.
-func (o GetManagedDatabaseResultOutput) DatabaseType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedDatabaseResult) string { return v.DatabaseType }).(pulumi.StringOutput)
+func (o GetManagedDatabaseResultOutput) DatabaseType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedDatabaseResult) *string { return v.DatabaseType }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that this Managed Database is part of.
-func (o GetManagedDatabaseResultOutput) DbSystemId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedDatabaseResult) string { return v.DbSystemId }).(pulumi.StringOutput)
+func (o GetManagedDatabaseResultOutput) DbSystemId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedDatabaseResult) *string { return v.DbSystemId }).(pulumi.StringPtrOutput)
 }
 
 // The infrastructure used to deploy the Oracle Database.
-func (o GetManagedDatabaseResultOutput) DeploymentType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedDatabaseResult) string { return v.DeploymentType }).(pulumi.StringOutput)
+func (o GetManagedDatabaseResultOutput) DeploymentType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedDatabaseResult) *string { return v.DeploymentType }).(pulumi.StringPtrOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetManagedDatabaseResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedDatabaseResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetManagedDatabaseResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedDatabaseResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Indicates whether the Oracle Database is part of a cluster.
-func (o GetManagedDatabaseResultOutput) IsCluster() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetManagedDatabaseResult) bool { return v.IsCluster }).(pulumi.BoolOutput)
+func (o GetManagedDatabaseResultOutput) IsCluster() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetManagedDatabaseResult) *bool { return v.IsCluster }).(pulumi.BoolPtrOutput)
 }
 
 // A list of Managed Database Groups that the Managed Database belongs to.
@@ -195,33 +188,33 @@ func (o GetManagedDatabaseResultOutput) ManagedDatabaseId() pulumi.StringOutput 
 }
 
 // The management option used when enabling Database Management.
-func (o GetManagedDatabaseResultOutput) ManagementOption() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedDatabaseResult) string { return v.ManagementOption }).(pulumi.StringOutput)
+func (o GetManagedDatabaseResultOutput) ManagementOption() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedDatabaseResult) *string { return v.ManagementOption }).(pulumi.StringPtrOutput)
 }
 
 // The name of the Managed Database.
-func (o GetManagedDatabaseResultOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedDatabaseResult) string { return v.Name }).(pulumi.StringOutput)
+func (o GetManagedDatabaseResultOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedDatabaseResult) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent Container Database if Managed Database is a Pluggable Database.
-func (o GetManagedDatabaseResultOutput) ParentContainerId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedDatabaseResult) string { return v.ParentContainerId }).(pulumi.StringOutput)
+func (o GetManagedDatabaseResultOutput) ParentContainerId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedDatabaseResult) *string { return v.ParentContainerId }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the storage DB system.
-func (o GetManagedDatabaseResultOutput) StorageSystemId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedDatabaseResult) string { return v.StorageSystemId }).(pulumi.StringOutput)
+func (o GetManagedDatabaseResultOutput) StorageSystemId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedDatabaseResult) *string { return v.StorageSystemId }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the Managed Database was created.
-func (o GetManagedDatabaseResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedDatabaseResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetManagedDatabaseResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedDatabaseResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The workload type of the Autonomous Database.
-func (o GetManagedDatabaseResultOutput) WorkloadType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedDatabaseResult) string { return v.WorkloadType }).(pulumi.StringOutput)
+func (o GetManagedDatabaseResultOutput) WorkloadType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedDatabaseResult) *string { return v.WorkloadType }).(pulumi.StringPtrOutput)
 }
 
 func init() {

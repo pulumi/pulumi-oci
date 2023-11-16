@@ -9,6 +9,7 @@ import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabaseTableStatisti
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 @CustomType
@@ -18,13 +19,13 @@ public final class GetManagedDatabaseTableStatisticsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private String managedDatabaseId;
     /**
      * @return The list of table_statistics_collection.
      * 
      */
-    private List<GetManagedDatabaseTableStatisticsTableStatisticsCollection> tableStatisticsCollections;
+    private @Nullable List<GetManagedDatabaseTableStatisticsTableStatisticsCollection> tableStatisticsCollections;
 
     private GetManagedDatabaseTableStatisticsResult() {}
     public List<GetManagedDatabaseTableStatisticsFilter> filters() {
@@ -34,8 +35,8 @@ public final class GetManagedDatabaseTableStatisticsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public String managedDatabaseId() {
         return this.managedDatabaseId;
@@ -45,7 +46,7 @@ public final class GetManagedDatabaseTableStatisticsResult {
      * 
      */
     public List<GetManagedDatabaseTableStatisticsTableStatisticsCollection> tableStatisticsCollections() {
-        return this.tableStatisticsCollections;
+        return this.tableStatisticsCollections == null ? List.of() : this.tableStatisticsCollections;
     }
 
     public static Builder builder() {
@@ -58,9 +59,9 @@ public final class GetManagedDatabaseTableStatisticsResult {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable List<GetManagedDatabaseTableStatisticsFilter> filters;
-        private String id;
+        private @Nullable String id;
         private String managedDatabaseId;
-        private List<GetManagedDatabaseTableStatisticsTableStatisticsCollection> tableStatisticsCollections;
+        private @Nullable List<GetManagedDatabaseTableStatisticsTableStatisticsCollection> tableStatisticsCollections;
         public Builder() {}
         public Builder(GetManagedDatabaseTableStatisticsResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -79,8 +80,8 @@ public final class GetManagedDatabaseTableStatisticsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -89,8 +90,8 @@ public final class GetManagedDatabaseTableStatisticsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder tableStatisticsCollections(List<GetManagedDatabaseTableStatisticsTableStatisticsCollection> tableStatisticsCollections) {
-            this.tableStatisticsCollections = Objects.requireNonNull(tableStatisticsCollections);
+        public Builder tableStatisticsCollections(@Nullable List<GetManagedDatabaseTableStatisticsTableStatisticsCollection> tableStatisticsCollections) {
+            this.tableStatisticsCollections = tableStatisticsCollections;
             return this;
         }
         public Builder tableStatisticsCollections(GetManagedDatabaseTableStatisticsTableStatisticsCollection... tableStatisticsCollections) {

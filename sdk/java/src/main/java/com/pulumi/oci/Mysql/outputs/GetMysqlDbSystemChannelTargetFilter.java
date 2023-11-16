@@ -6,6 +6,8 @@ package com.pulumi.oci.Mysql.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetMysqlDbSystemChannelTargetFilter {
@@ -13,27 +15,27 @@ public final class GetMysqlDbSystemChannelTargetFilter {
      * @return The type of the filter rule.
      * 
      */
-    private String type;
+    private @Nullable String type;
     /**
      * @return The body of the filter rule. This can represent a database, a table, or a database pair (represented as &#34;db1-&gt;db2&#34;). For more information, see [Replication Filtering Rules](https://dev.mysql.com/doc/refman/8.0/en/replication-rules.html).
      * 
      */
-    private String value;
+    private @Nullable String value;
 
     private GetMysqlDbSystemChannelTargetFilter() {}
     /**
      * @return The type of the filter rule.
      * 
      */
-    public String type() {
-        return this.type;
+    public Optional<String> type() {
+        return Optional.ofNullable(this.type);
     }
     /**
      * @return The body of the filter rule. This can represent a database, a table, or a database pair (represented as &#34;db1-&gt;db2&#34;). For more information, see [Replication Filtering Rules](https://dev.mysql.com/doc/refman/8.0/en/replication-rules.html).
      * 
      */
-    public String value() {
-        return this.value;
+    public Optional<String> value() {
+        return Optional.ofNullable(this.value);
     }
 
     public static Builder builder() {
@@ -45,8 +47,8 @@ public final class GetMysqlDbSystemChannelTargetFilter {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String type;
-        private String value;
+        private @Nullable String type;
+        private @Nullable String value;
         public Builder() {}
         public Builder(GetMysqlDbSystemChannelTargetFilter defaults) {
     	      Objects.requireNonNull(defaults);
@@ -55,13 +57,13 @@ public final class GetMysqlDbSystemChannelTargetFilter {
         }
 
         @CustomType.Setter
-        public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+        public Builder type(@Nullable String type) {
+            this.type = type;
             return this;
         }
         @CustomType.Setter
-        public Builder value(String value) {
-            this.value = Objects.requireNonNull(value);
+        public Builder value(@Nullable String value) {
+            this.value = value;
             return this;
         }
         public GetMysqlDbSystemChannelTargetFilter build() {

@@ -49,7 +49,7 @@ class GetJobShapesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -57,10 +57,7 @@ class GetJobShapesResult:
 
     @property
     @pulumi.getter(name="jobShapes")
-    def job_shapes(self) -> Sequence['outputs.GetJobShapesJobShapeResult']:
-        """
-        The list of job_shapes.
-        """
+    def job_shapes(self) -> Optional[Sequence['outputs.GetJobShapesJobShapeResult']]:
         return pulumi.get(self, "job_shapes")
 
 
@@ -80,21 +77,7 @@ def get_job_shapes(compartment_id: Optional[str] = None,
                    filters: Optional[Sequence[pulumi.InputType['GetJobShapesFilterArgs']]] = None,
                    opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetJobShapesResult:
     """
-    This data source provides the list of Job Shapes in Oracle Cloud Infrastructure Data Science service.
-
-    List job shapes available in the specified compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_job_shapes = oci.DataScience.get_job_shapes(compartment_id=var["compartment_id"])
-    ```
-
-
-    :param str compartment_id: <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -114,20 +97,6 @@ def get_job_shapes_output(compartment_id: Optional[pulumi.Input[str]] = None,
                           filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetJobShapesFilterArgs']]]]] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetJobShapesResult]:
     """
-    This data source provides the list of Job Shapes in Oracle Cloud Infrastructure Data Science service.
-
-    List job shapes available in the specified compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_job_shapes = oci.DataScience.get_job_shapes(compartment_id=var["compartment_id"])
-    ```
-
-
-    :param str compartment_id: <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+    Use this data source to access information about an existing resource.
     """
     ...

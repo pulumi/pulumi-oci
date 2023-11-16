@@ -58,11 +58,11 @@ export interface GetPeersResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The list of peer_collection.
      */
-    readonly peerCollections: outputs.Blockchain.GetPeersPeerCollection[];
+    readonly peerCollections?: outputs.Blockchain.GetPeersPeerCollection[];
 }
 /**
  * This data source provides the list of Peers in Oracle Cloud Infrastructure Blockchain service.

@@ -16,17 +16,17 @@ namespace Pulumi.Oci.Database.Outputs
         /// <summary>
         /// The status of the Database Management service.
         /// </summary>
-        public readonly string ManagementStatus;
+        public readonly string? ManagementStatus;
         /// <summary>
         /// The Database Management type.
         /// </summary>
-        public readonly string ManagementType;
+        public readonly string? ManagementType;
 
         [OutputConstructor]
         private GetDatabasesDatabaseDatabaseManagementConfigResult(
-            string managementStatus,
+            string? managementStatus,
 
-            string managementType)
+            string? managementType)
         {
             ManagementStatus = managementStatus;
             ManagementType = managementType;

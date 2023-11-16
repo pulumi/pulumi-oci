@@ -6,6 +6,8 @@ package com.pulumi.oci.DevOps.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDeployStageBlueGreenStrategy {
@@ -13,51 +15,51 @@ public final class GetDeployStageBlueGreenStrategy {
      * @return Name of the Ingress resource.
      * 
      */
-    private String ingressName;
+    private @Nullable String ingressName;
     /**
      * @return First Namespace for deployment.
      * 
      */
-    private String namespaceA;
+    private @Nullable String namespaceA;
     /**
      * @return Second Namespace for deployment.
      * 
      */
-    private String namespaceB;
+    private @Nullable String namespaceB;
     /**
      * @return Canary strategy type.
      * 
      */
-    private String strategyType;
+    private @Nullable String strategyType;
 
     private GetDeployStageBlueGreenStrategy() {}
     /**
      * @return Name of the Ingress resource.
      * 
      */
-    public String ingressName() {
-        return this.ingressName;
+    public Optional<String> ingressName() {
+        return Optional.ofNullable(this.ingressName);
     }
     /**
      * @return First Namespace for deployment.
      * 
      */
-    public String namespaceA() {
-        return this.namespaceA;
+    public Optional<String> namespaceA() {
+        return Optional.ofNullable(this.namespaceA);
     }
     /**
      * @return Second Namespace for deployment.
      * 
      */
-    public String namespaceB() {
-        return this.namespaceB;
+    public Optional<String> namespaceB() {
+        return Optional.ofNullable(this.namespaceB);
     }
     /**
      * @return Canary strategy type.
      * 
      */
-    public String strategyType() {
-        return this.strategyType;
+    public Optional<String> strategyType() {
+        return Optional.ofNullable(this.strategyType);
     }
 
     public static Builder builder() {
@@ -69,10 +71,10 @@ public final class GetDeployStageBlueGreenStrategy {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String ingressName;
-        private String namespaceA;
-        private String namespaceB;
-        private String strategyType;
+        private @Nullable String ingressName;
+        private @Nullable String namespaceA;
+        private @Nullable String namespaceB;
+        private @Nullable String strategyType;
         public Builder() {}
         public Builder(GetDeployStageBlueGreenStrategy defaults) {
     	      Objects.requireNonNull(defaults);
@@ -83,23 +85,23 @@ public final class GetDeployStageBlueGreenStrategy {
         }
 
         @CustomType.Setter
-        public Builder ingressName(String ingressName) {
-            this.ingressName = Objects.requireNonNull(ingressName);
+        public Builder ingressName(@Nullable String ingressName) {
+            this.ingressName = ingressName;
             return this;
         }
         @CustomType.Setter
-        public Builder namespaceA(String namespaceA) {
-            this.namespaceA = Objects.requireNonNull(namespaceA);
+        public Builder namespaceA(@Nullable String namespaceA) {
+            this.namespaceA = namespaceA;
             return this;
         }
         @CustomType.Setter
-        public Builder namespaceB(String namespaceB) {
-            this.namespaceB = Objects.requireNonNull(namespaceB);
+        public Builder namespaceB(@Nullable String namespaceB) {
+            this.namespaceB = namespaceB;
             return this;
         }
         @CustomType.Setter
-        public Builder strategyType(String strategyType) {
-            this.strategyType = Objects.requireNonNull(strategyType);
+        public Builder strategyType(@Nullable String strategyType) {
+            this.strategyType = strategyType;
             return this;
         }
         public GetDeployStageBlueGreenStrategy build() {

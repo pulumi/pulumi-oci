@@ -46,25 +46,16 @@ class GetExternalDatabasesResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        The user-friendly name for the database. The name does not have to be unique.
-        """
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="externalDatabaseCollections")
-    def external_database_collections(self) -> Sequence['outputs.GetExternalDatabasesExternalDatabaseCollectionResult']:
-        """
-        The list of external_database_collection.
-        """
+    def external_database_collections(self) -> Optional[Sequence['outputs.GetExternalDatabasesExternalDatabaseCollectionResult']]:
         return pulumi.get(self, "external_database_collections")
 
     @property
@@ -79,7 +70,7 @@ class GetExternalDatabasesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -106,25 +97,7 @@ def get_external_databases(compartment_id: Optional[str] = None,
                            filters: Optional[Sequence[pulumi.InputType['GetExternalDatabasesFilterArgs']]] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetExternalDatabasesResult:
     """
-    This data source provides the list of External Databases in Oracle Cloud Infrastructure Database Management service.
-
-    Lists the external databases in the specified compartment or in the specified DB system.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_external_databases = oci.DatabaseManagement.get_external_databases(compartment_id=var["compartment_id"],
-        display_name=var["external_database_display_name"],
-        external_db_system_id=oci_database_management_external_db_system["test_external_db_system"]["id"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param str display_name: A filter to only return the resources that match the entire display name.
-    :param str external_db_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -150,24 +123,6 @@ def get_external_databases_output(compartment_id: Optional[pulumi.Input[Optional
                                   filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetExternalDatabasesFilterArgs']]]]] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetExternalDatabasesResult]:
     """
-    This data source provides the list of External Databases in Oracle Cloud Infrastructure Database Management service.
-
-    Lists the external databases in the specified compartment or in the specified DB system.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_external_databases = oci.DatabaseManagement.get_external_databases(compartment_id=var["compartment_id"],
-        display_name=var["external_database_display_name"],
-        external_db_system_id=oci_database_management_external_db_system["test_external_db_system"]["id"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param str display_name: A filter to only return the resources that match the entire display name.
-    :param str external_db_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system.
+    Use this data source to access information about an existing resource.
     """
     ...

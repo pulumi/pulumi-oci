@@ -110,7 +110,7 @@ namespace Pulumi.Oci.CloudGuard
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// List of problem entities summaries related to a data source.
         /// </summary>
@@ -122,7 +122,7 @@ namespace Pulumi.Oci.CloudGuard
 
         [OutputConstructor]
         private GetProblemEntityResult(
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetProblemEntityItemResult> items,
 

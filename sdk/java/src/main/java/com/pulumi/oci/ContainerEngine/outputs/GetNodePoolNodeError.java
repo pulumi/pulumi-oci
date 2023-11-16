@@ -6,6 +6,8 @@ package com.pulumi.oci.ContainerEngine.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetNodePoolNodeError {
@@ -13,39 +15,39 @@ public final class GetNodePoolNodeError {
      * @return A short error code that defines the upstream error, meant for programmatic parsing. See [API Errors](https://docs.cloud.oracle.com/iaas/Content/API/References/apierrors.htm).
      * 
      */
-    private String code;
+    private @Nullable String code;
     /**
      * @return A human-readable error string of the upstream error.
      * 
      */
-    private String message;
+    private @Nullable String message;
     /**
      * @return The status of the HTTP response encountered in the upstream error.
      * 
      */
-    private String status;
+    private @Nullable String status;
 
     private GetNodePoolNodeError() {}
     /**
      * @return A short error code that defines the upstream error, meant for programmatic parsing. See [API Errors](https://docs.cloud.oracle.com/iaas/Content/API/References/apierrors.htm).
      * 
      */
-    public String code() {
-        return this.code;
+    public Optional<String> code() {
+        return Optional.ofNullable(this.code);
     }
     /**
      * @return A human-readable error string of the upstream error.
      * 
      */
-    public String message() {
-        return this.message;
+    public Optional<String> message() {
+        return Optional.ofNullable(this.message);
     }
     /**
      * @return The status of the HTTP response encountered in the upstream error.
      * 
      */
-    public String status() {
-        return this.status;
+    public Optional<String> status() {
+        return Optional.ofNullable(this.status);
     }
 
     public static Builder builder() {
@@ -57,9 +59,9 @@ public final class GetNodePoolNodeError {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String code;
-        private String message;
-        private String status;
+        private @Nullable String code;
+        private @Nullable String message;
+        private @Nullable String status;
         public Builder() {}
         public Builder(GetNodePoolNodeError defaults) {
     	      Objects.requireNonNull(defaults);
@@ -69,18 +71,18 @@ public final class GetNodePoolNodeError {
         }
 
         @CustomType.Setter
-        public Builder code(String code) {
-            this.code = Objects.requireNonNull(code);
+        public Builder code(@Nullable String code) {
+            this.code = code;
             return this;
         }
         @CustomType.Setter
-        public Builder message(String message) {
-            this.message = Objects.requireNonNull(message);
+        public Builder message(@Nullable String message) {
+            this.message = message;
             return this;
         }
         @CustomType.Setter
-        public Builder status(String status) {
-            this.status = Objects.requireNonNull(status);
+        public Builder status(@Nullable String status) {
+            this.status = status;
             return this;
         }
         public GetNodePoolNodeError build() {

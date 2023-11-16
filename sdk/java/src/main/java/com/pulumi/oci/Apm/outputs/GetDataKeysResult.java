@@ -20,13 +20,13 @@ public final class GetDataKeysResult {
      * @return The list of data_keys.
      * 
      */
-    private List<GetDataKeysDataKey> dataKeys;
+    private @Nullable List<GetDataKeysDataKey> dataKeys;
     private @Nullable List<GetDataKeysFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
 
     private GetDataKeysResult() {}
     public String apmDomainId() {
@@ -40,7 +40,7 @@ public final class GetDataKeysResult {
      * 
      */
     public List<GetDataKeysDataKey> dataKeys() {
-        return this.dataKeys;
+        return this.dataKeys == null ? List.of() : this.dataKeys;
     }
     public List<GetDataKeysFilter> filters() {
         return this.filters == null ? List.of() : this.filters;
@@ -49,8 +49,8 @@ public final class GetDataKeysResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
 
     public static Builder builder() {
@@ -64,9 +64,9 @@ public final class GetDataKeysResult {
     public static final class Builder {
         private String apmDomainId;
         private @Nullable String dataKeyType;
-        private List<GetDataKeysDataKey> dataKeys;
+        private @Nullable List<GetDataKeysDataKey> dataKeys;
         private @Nullable List<GetDataKeysFilter> filters;
-        private String id;
+        private @Nullable String id;
         public Builder() {}
         public Builder(GetDataKeysResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -88,8 +88,8 @@ public final class GetDataKeysResult {
             return this;
         }
         @CustomType.Setter
-        public Builder dataKeys(List<GetDataKeysDataKey> dataKeys) {
-            this.dataKeys = Objects.requireNonNull(dataKeys);
+        public Builder dataKeys(@Nullable List<GetDataKeysDataKey> dataKeys) {
+            this.dataKeys = dataKeys;
             return this;
         }
         public Builder dataKeys(GetDataKeysDataKey... dataKeys) {
@@ -104,8 +104,8 @@ public final class GetDataKeysResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         public GetDataKeysResult build() {

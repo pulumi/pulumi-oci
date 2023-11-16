@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Invoice Line Computed Usages in Oracle Cloud Infrastructure Onesubscription service.
@@ -70,8 +69,8 @@ type GetInvoiceLineComputedUsagesResult struct {
 	Fields        []string                             `pulumi:"fields"`
 	Filters       []GetInvoiceLineComputedUsagesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id            string `pulumi:"id"`
-	InvoiceLineId string `pulumi:"invoiceLineId"`
+	Id            *string `pulumi:"id"`
+	InvoiceLineId string  `pulumi:"invoiceLineId"`
 	// The list of invoiceline_computed_usages.
 	InvoicelineComputedUsages []GetInvoiceLineComputedUsagesInvoicelineComputedUsage `pulumi:"invoicelineComputedUsages"`
 }
@@ -119,12 +118,6 @@ func (o GetInvoiceLineComputedUsagesResultOutput) ToGetInvoiceLineComputedUsages
 	return o
 }
 
-func (o GetInvoiceLineComputedUsagesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetInvoiceLineComputedUsagesResult] {
-	return pulumix.Output[GetInvoiceLineComputedUsagesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetInvoiceLineComputedUsagesResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInvoiceLineComputedUsagesResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
@@ -138,8 +131,8 @@ func (o GetInvoiceLineComputedUsagesResultOutput) Filters() GetInvoiceLineComput
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetInvoiceLineComputedUsagesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoiceLineComputedUsagesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetInvoiceLineComputedUsagesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoiceLineComputedUsagesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetInvoiceLineComputedUsagesResultOutput) InvoiceLineId() pulumi.StringOutput {

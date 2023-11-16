@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Model resource in Oracle Cloud Infrastructure Data Science service.
@@ -59,14 +58,14 @@ type LookupModelArgs struct {
 
 // A collection of values returned by getModel.
 type LookupModelResult struct {
-	ArtifactContentDisposition string `pulumi:"artifactContentDisposition"`
-	ArtifactContentLength      string `pulumi:"artifactContentLength"`
-	ArtifactContentMd5         string `pulumi:"artifactContentMd5"`
-	ArtifactLastModified       string `pulumi:"artifactLastModified"`
+	ArtifactContentDisposition *string `pulumi:"artifactContentDisposition"`
+	ArtifactContentLength      *string `pulumi:"artifactContentLength"`
+	ArtifactContentMd5         *string `pulumi:"artifactContentMd5"`
+	ArtifactLastModified       *string `pulumi:"artifactLastModified"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model's compartment.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the model.
-	CreatedBy string `pulumi:"createdBy"`
+	CreatedBy *string `pulumi:"createdBy"`
 	// An array of custom metadata details for the model.
 	CustomMetadataLists []GetModelCustomMetadataList `pulumi:"customMetadataLists"`
 	// An array of defined metadata details for the model.
@@ -74,26 +73,26 @@ type LookupModelResult struct {
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A short description of the model.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// A user-friendly display name for the resource. It does not have to be unique and can be modified. Avoid entering confidential information.
-	DisplayName string `pulumi:"displayName"`
-	EmptyModel  bool   `pulumi:"emptyModel"`
+	DisplayName *string `pulumi:"displayName"`
+	EmptyModel  *bool   `pulumi:"emptyModel"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Input schema file content in String format
-	InputSchema   string `pulumi:"inputSchema"`
-	ModelArtifact string `pulumi:"modelArtifact"`
-	ModelId       string `pulumi:"modelId"`
+	InputSchema   *string `pulumi:"inputSchema"`
+	ModelArtifact *string `pulumi:"modelArtifact"`
+	ModelId       string  `pulumi:"modelId"`
 	// Output schema file content in String format
-	OutputSchema string `pulumi:"outputSchema"`
+	OutputSchema *string `pulumi:"outputSchema"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project associated with the model.
-	ProjectId string `pulumi:"projectId"`
+	ProjectId *string `pulumi:"projectId"`
 	// The state of the model.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 }
 
 func LookupModelOutput(ctx *pulumi.Context, args LookupModelOutputArgs, opts ...pulumi.InvokeOption) LookupModelResultOutput {
@@ -134,36 +133,30 @@ func (o LookupModelResultOutput) ToLookupModelResultOutputWithContext(ctx contex
 	return o
 }
 
-func (o LookupModelResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupModelResult] {
-	return pulumix.Output[LookupModelResult]{
-		OutputState: o.OutputState,
-	}
+func (o LookupModelResultOutput) ArtifactContentDisposition() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupModelResult) *string { return v.ArtifactContentDisposition }).(pulumi.StringPtrOutput)
 }
 
-func (o LookupModelResultOutput) ArtifactContentDisposition() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupModelResult) string { return v.ArtifactContentDisposition }).(pulumi.StringOutput)
+func (o LookupModelResultOutput) ArtifactContentLength() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupModelResult) *string { return v.ArtifactContentLength }).(pulumi.StringPtrOutput)
 }
 
-func (o LookupModelResultOutput) ArtifactContentLength() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupModelResult) string { return v.ArtifactContentLength }).(pulumi.StringOutput)
+func (o LookupModelResultOutput) ArtifactContentMd5() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupModelResult) *string { return v.ArtifactContentMd5 }).(pulumi.StringPtrOutput)
 }
 
-func (o LookupModelResultOutput) ArtifactContentMd5() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupModelResult) string { return v.ArtifactContentMd5 }).(pulumi.StringOutput)
-}
-
-func (o LookupModelResultOutput) ArtifactLastModified() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupModelResult) string { return v.ArtifactLastModified }).(pulumi.StringOutput)
+func (o LookupModelResultOutput) ArtifactLastModified() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupModelResult) *string { return v.ArtifactLastModified }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model's compartment.
-func (o LookupModelResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupModelResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupModelResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupModelResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the model.
-func (o LookupModelResultOutput) CreatedBy() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupModelResult) string { return v.CreatedBy }).(pulumi.StringOutput)
+func (o LookupModelResultOutput) CreatedBy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupModelResult) *string { return v.CreatedBy }).(pulumi.StringPtrOutput)
 }
 
 // An array of custom metadata details for the model.
@@ -182,17 +175,17 @@ func (o LookupModelResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // A short description of the model.
-func (o LookupModelResultOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupModelResult) string { return v.Description }).(pulumi.StringOutput)
+func (o LookupModelResultOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupModelResult) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // A user-friendly display name for the resource. It does not have to be unique and can be modified. Avoid entering confidential information.
-func (o LookupModelResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupModelResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupModelResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupModelResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
-func (o LookupModelResultOutput) EmptyModel() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupModelResult) bool { return v.EmptyModel }).(pulumi.BoolOutput)
+func (o LookupModelResultOutput) EmptyModel() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupModelResult) *bool { return v.EmptyModel }).(pulumi.BoolPtrOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -201,17 +194,17 @@ func (o LookupModelResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model.
-func (o LookupModelResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupModelResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupModelResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupModelResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Input schema file content in String format
-func (o LookupModelResultOutput) InputSchema() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupModelResult) string { return v.InputSchema }).(pulumi.StringOutput)
+func (o LookupModelResultOutput) InputSchema() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupModelResult) *string { return v.InputSchema }).(pulumi.StringPtrOutput)
 }
 
-func (o LookupModelResultOutput) ModelArtifact() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupModelResult) string { return v.ModelArtifact }).(pulumi.StringOutput)
+func (o LookupModelResultOutput) ModelArtifact() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupModelResult) *string { return v.ModelArtifact }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupModelResultOutput) ModelId() pulumi.StringOutput {
@@ -219,23 +212,23 @@ func (o LookupModelResultOutput) ModelId() pulumi.StringOutput {
 }
 
 // Output schema file content in String format
-func (o LookupModelResultOutput) OutputSchema() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupModelResult) string { return v.OutputSchema }).(pulumi.StringOutput)
+func (o LookupModelResultOutput) OutputSchema() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupModelResult) *string { return v.OutputSchema }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project associated with the model.
-func (o LookupModelResultOutput) ProjectId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupModelResult) string { return v.ProjectId }).(pulumi.StringOutput)
+func (o LookupModelResultOutput) ProjectId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupModelResult) *string { return v.ProjectId }).(pulumi.StringPtrOutput)
 }
 
 // The state of the model.
-func (o LookupModelResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupModelResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupModelResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupModelResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
-func (o LookupModelResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupModelResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupModelResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupModelResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 func init() {

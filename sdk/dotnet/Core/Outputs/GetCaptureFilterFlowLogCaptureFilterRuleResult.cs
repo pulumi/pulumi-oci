@@ -16,11 +16,11 @@ namespace Pulumi.Oci.Core.Outputs
         /// <summary>
         /// Traffic sent to this CIDR block through the VTAP source will be mirrored to the VTAP target.
         /// </summary>
-        public readonly string DestinationCidr;
+        public readonly string? DestinationCidr;
         /// <summary>
         /// Type or types of flow logs to store. `ALL` includes records for both accepted traffic and rejected traffic.
         /// </summary>
-        public readonly string FlowLogType;
+        public readonly string? FlowLogType;
         /// <summary>
         /// Optional and valid only for ICMP and ICMPv6. Use to specify a particular ICMP type and code as defined in:
         /// * [ICMP Parameters](http://www.iana.org/assignments/icmp-parameters/icmp-parameters.xhtml)
@@ -30,30 +30,30 @@ namespace Pulumi.Oci.Core.Outputs
         /// <summary>
         /// Indicates whether a flow log capture filter rule is enabled.
         /// </summary>
-        public readonly bool IsEnabled;
+        public readonly bool? IsEnabled;
         /// <summary>
         /// A lower number indicates a higher priority, range 0-9. Each rule must have a distinct priority.
         /// </summary>
-        public readonly int Priority;
+        public readonly int? Priority;
         /// <summary>
         /// The transport protocol used in the filter. If do not choose a protocol, all protocols will be used in the filter. Supported options are:
         /// * 1 = ICMP
         /// * 6 = TCP
         /// * 17 = UDP
         /// </summary>
-        public readonly string Protocol;
+        public readonly string? Protocol;
         /// <summary>
         /// Include or exclude packets meeting this definition from mirrored traffic.
         /// </summary>
-        public readonly string RuleAction;
+        public readonly string? RuleAction;
         /// <summary>
         /// Sampling interval as 1 of X, where X is an integer not greater than 100000.
         /// </summary>
-        public readonly int SamplingRate;
+        public readonly int? SamplingRate;
         /// <summary>
         /// Traffic from this CIDR block to the VTAP source will be mirrored to the VTAP target.
         /// </summary>
-        public readonly string SourceCidr;
+        public readonly string? SourceCidr;
         /// <summary>
         /// Optional and valid only for TCP. Use to specify particular destination ports for TCP rules. If you specify TCP as the protocol but omit this object, then all destination ports are allowed.
         /// </summary>
@@ -65,23 +65,23 @@ namespace Pulumi.Oci.Core.Outputs
 
         [OutputConstructor]
         private GetCaptureFilterFlowLogCaptureFilterRuleResult(
-            string destinationCidr,
+            string? destinationCidr,
 
-            string flowLogType,
+            string? flowLogType,
 
             ImmutableArray<Outputs.GetCaptureFilterFlowLogCaptureFilterRuleIcmpOptionResult> icmpOptions,
 
-            bool isEnabled,
+            bool? isEnabled,
 
-            int priority,
+            int? priority,
 
-            string protocol,
+            string? protocol,
 
-            string ruleAction,
+            string? ruleAction,
 
-            int samplingRate,
+            int? samplingRate,
 
-            string sourceCidr,
+            string? sourceCidr,
 
             ImmutableArray<Outputs.GetCaptureFilterFlowLogCaptureFilterRuleTcpOptionResult> tcpOptions,
 

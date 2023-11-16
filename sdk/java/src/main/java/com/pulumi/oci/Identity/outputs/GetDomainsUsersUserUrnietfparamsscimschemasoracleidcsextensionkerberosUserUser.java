@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.Identity.outputs.GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUser;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUser {
@@ -14,7 +15,7 @@ public final class GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensio
      * @return A list of kerberos realm users for an Oracle Identity Cloud Service User
      * 
      */
-    private List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUser> realmUsers;
+    private @Nullable List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUser> realmUsers;
 
     private GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUser() {}
     /**
@@ -22,7 +23,7 @@ public final class GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensio
      * 
      */
     public List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUser> realmUsers() {
-        return this.realmUsers;
+        return this.realmUsers == null ? List.of() : this.realmUsers;
     }
 
     public static Builder builder() {
@@ -34,7 +35,7 @@ public final class GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensio
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUser> realmUsers;
+        private @Nullable List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUser> realmUsers;
         public Builder() {}
         public Builder(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUser defaults) {
     	      Objects.requireNonNull(defaults);
@@ -42,8 +43,8 @@ public final class GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensio
         }
 
         @CustomType.Setter
-        public Builder realmUsers(List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUser> realmUsers) {
-            this.realmUsers = Objects.requireNonNull(realmUsers);
+        public Builder realmUsers(@Nullable List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUser> realmUsers) {
+            this.realmUsers = realmUsers;
             return this;
         }
         public Builder realmUsers(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUser... realmUsers) {

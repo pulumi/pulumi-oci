@@ -16,35 +16,35 @@ namespace Pulumi.Oci.Functions.Outputs
         /// <summary>
         /// Description of the stock units.
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// Description of the covered product belonging to this Sku.
         /// </summary>
-        public readonly string LicensePartDescription;
+        public readonly string? LicensePartDescription;
         /// <summary>
         /// Base metric for billing the service.
         /// </summary>
-        public readonly string MetricName;
+        public readonly string? MetricName;
         /// <summary>
         /// Quantity of the stock units.
         /// </summary>
-        public readonly int Quantity;
+        public readonly int? Quantity;
         /// <summary>
         /// Stock keeping unit id.
         /// </summary>
-        public readonly string Sku;
+        public readonly string? Sku;
 
         [OutputConstructor]
         private GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkusResult(
-            string description,
+            string? description,
 
-            string licensePartDescription,
+            string? licensePartDescription,
 
-            string metricName,
+            string? metricName,
 
-            int quantity,
+            int? quantity,
 
-            string sku)
+            string? sku)
         {
             Description = description;
             LicensePartDescription = licensePartDescription;

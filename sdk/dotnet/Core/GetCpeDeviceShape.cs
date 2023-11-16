@@ -134,7 +134,7 @@ namespace Pulumi.Oci.Core
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// For certain CPE devices types, the customer can provide answers to questions that are specific to the device type. This attribute contains a list of those questions. The Networking service merges the answers with other information and renders a set of CPE configuration content. To provide the answers, use [UpdateTunnelCpeDeviceConfig](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/TunnelCpeDeviceConfig/UpdateTunnelCpeDeviceConfig).
         /// </summary>
@@ -145,7 +145,7 @@ namespace Pulumi.Oci.Core
         /// * [GetIpsecCpeDeviceConfigContent](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IPSecConnection/GetIpsecCpeDeviceConfigContent)
         /// * [GetTunnelCpeDeviceConfigContent](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/TunnelCpeDeviceConfig/GetTunnelCpeDeviceConfigContent)
         /// </summary>
-        public readonly string Template;
+        public readonly string? Template;
 
         [OutputConstructor]
         private GetCpeDeviceShapeResult(
@@ -153,11 +153,11 @@ namespace Pulumi.Oci.Core
 
             string cpeDeviceShapeId,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetCpeDeviceShapeParameterResult> parameters,
 
-            string template)
+            string? template)
         {
             CpeDeviceInfos = cpeDeviceInfos;
             CpeDeviceShapeId = cpeDeviceShapeId;

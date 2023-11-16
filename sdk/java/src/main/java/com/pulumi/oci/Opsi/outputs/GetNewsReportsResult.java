@@ -26,12 +26,12 @@ public final class GetNewsReportsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The list of news_report_collection.
      * 
      */
-    private List<GetNewsReportsNewsReportCollection> newsReportCollections;
+    private @Nullable List<GetNewsReportsNewsReportCollection> newsReportCollections;
     private @Nullable String newsReportId;
     /**
      * @return The current state of the news report.
@@ -62,15 +62,15 @@ public final class GetNewsReportsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The list of news_report_collection.
      * 
      */
     public List<GetNewsReportsNewsReportCollection> newsReportCollections() {
-        return this.newsReportCollections;
+        return this.newsReportCollections == null ? List.of() : this.newsReportCollections;
     }
     public Optional<String> newsReportId() {
         return Optional.ofNullable(this.newsReportId);
@@ -102,8 +102,8 @@ public final class GetNewsReportsResult {
         private @Nullable String compartmentId;
         private @Nullable Boolean compartmentIdInSubtree;
         private @Nullable List<GetNewsReportsFilter> filters;
-        private String id;
-        private List<GetNewsReportsNewsReportCollection> newsReportCollections;
+        private @Nullable String id;
+        private @Nullable List<GetNewsReportsNewsReportCollection> newsReportCollections;
         private @Nullable String newsReportId;
         private @Nullable List<String> states;
         private @Nullable List<String> statuses;
@@ -139,13 +139,13 @@ public final class GetNewsReportsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder newsReportCollections(List<GetNewsReportsNewsReportCollection> newsReportCollections) {
-            this.newsReportCollections = Objects.requireNonNull(newsReportCollections);
+        public Builder newsReportCollections(@Nullable List<GetNewsReportsNewsReportCollection> newsReportCollections) {
+            this.newsReportCollections = newsReportCollections;
             return this;
         }
         public Builder newsReportCollections(GetNewsReportsNewsReportCollection... newsReportCollections) {

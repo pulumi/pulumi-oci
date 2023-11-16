@@ -49,57 +49,36 @@ class GetTriggersResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[str]:
-        """
-        The OCID of the compartment that contains the trigger.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        Trigger display name. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter
     def filters(self) -> Optional[Sequence['outputs.GetTriggersFilterResult']]:
-        """
-        The filters for the trigger.
-        """
         return pulumi.get(self, "filters")
 
     @property
     @pulumi.getter
     def id(self) -> Optional[str]:
-        """
-        Unique identifier that is immutable on creation.
-        """
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="projectId")
     def project_id(self) -> Optional[str]:
-        """
-        The OCID of the DevOps project to which the trigger belongs to.
-        """
         return pulumi.get(self, "project_id")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the trigger.
-        """
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="triggerCollections")
-    def trigger_collections(self) -> Sequence['outputs.GetTriggersTriggerCollectionResult']:
-        """
-        The list of trigger_collection.
-        """
+    def trigger_collections(self) -> Optional[Sequence['outputs.GetTriggersTriggerCollectionResult']]:
         return pulumi.get(self, "trigger_collections")
 
 
@@ -126,30 +105,7 @@ def get_triggers(compartment_id: Optional[str] = None,
                  state: Optional[str] = None,
                  opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetTriggersResult:
     """
-    This data source provides the list of Triggers in Oracle Cloud Infrastructure Devops service.
-
-    Returns a list of triggers.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_triggers = oci.DevOps.get_triggers(compartment_id=var["compartment_id"],
-        display_name=var["trigger_display_name"],
-        id=var["trigger_id"],
-        project_id=oci_devops_project["test_project"]["id"],
-        state=var["trigger_state"])
-    ```
-
-
-    :param str compartment_id: The OCID of the compartment in which to list resources.
-    :param str display_name: A filter to return only resources that match the entire display name given.
-    :param Sequence[pulumi.InputType['GetTriggersFilterArgs']] filters: The filters for the trigger.
-    :param str id: Unique trigger identifier.
-    :param str project_id: unique project identifier
-    :param str state: A filter to return only triggers that matches the given lifecycle state.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -180,29 +136,6 @@ def get_triggers_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = 
                         state: Optional[pulumi.Input[Optional[str]]] = None,
                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetTriggersResult]:
     """
-    This data source provides the list of Triggers in Oracle Cloud Infrastructure Devops service.
-
-    Returns a list of triggers.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_triggers = oci.DevOps.get_triggers(compartment_id=var["compartment_id"],
-        display_name=var["trigger_display_name"],
-        id=var["trigger_id"],
-        project_id=oci_devops_project["test_project"]["id"],
-        state=var["trigger_state"])
-    ```
-
-
-    :param str compartment_id: The OCID of the compartment in which to list resources.
-    :param str display_name: A filter to return only resources that match the entire display name given.
-    :param Sequence[pulumi.InputType['GetTriggersFilterArgs']] filters: The filters for the trigger.
-    :param str id: Unique trigger identifier.
-    :param str project_id: unique project identifier
-    :param str state: A filter to return only triggers that matches the given lifecycle state.
+    Use this data source to access information about an existing resource.
     """
     ...

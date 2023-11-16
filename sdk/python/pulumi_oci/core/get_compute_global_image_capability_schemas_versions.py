@@ -43,25 +43,16 @@ class GetComputeGlobalImageCapabilitySchemasVersionsResult:
     @property
     @pulumi.getter(name="computeGlobalImageCapabilitySchemaId")
     def compute_global_image_capability_schema_id(self) -> str:
-        """
-        The ocid of the compute global image capability schema
-        """
         return pulumi.get(self, "compute_global_image_capability_schema_id")
 
     @property
     @pulumi.getter(name="computeGlobalImageCapabilitySchemaVersions")
-    def compute_global_image_capability_schema_versions(self) -> Sequence['outputs.GetComputeGlobalImageCapabilitySchemasVersionsComputeGlobalImageCapabilitySchemaVersionResult']:
-        """
-        The list of compute_global_image_capability_schema_versions.
-        """
+    def compute_global_image_capability_schema_versions(self) -> Optional[Sequence['outputs.GetComputeGlobalImageCapabilitySchemasVersionsComputeGlobalImageCapabilitySchemaVersionResult']]:
         return pulumi.get(self, "compute_global_image_capability_schema_versions")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -71,7 +62,7 @@ class GetComputeGlobalImageCapabilitySchemasVersionsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -96,23 +87,7 @@ def get_compute_global_image_capability_schemas_versions(compute_global_image_ca
                                                          filters: Optional[Sequence[pulumi.InputType['GetComputeGlobalImageCapabilitySchemasVersionsFilterArgs']]] = None,
                                                          opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetComputeGlobalImageCapabilitySchemasVersionsResult:
     """
-    This data source provides the list of Compute Global Image Capability Schemas Versions in Oracle Cloud Infrastructure Core service.
-
-    Lists Compute Global Image Capability Schema versions in the specified compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_compute_global_image_capability_schemas_versions = oci.Core.get_compute_global_image_capability_schemas_versions(compute_global_image_capability_schema_id=oci_core_compute_global_image_capability_schema["test_compute_global_image_capability_schema"]["id"],
-        display_name=var["compute_global_image_capability_schemas_version_display_name"])
-    ```
-
-
-    :param str compute_global_image_capability_schema_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute global image capability schema
-    :param str display_name: A filter to return only resources that match the given display name exactly.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['computeGlobalImageCapabilitySchemaId'] = compute_global_image_capability_schema_id
@@ -135,22 +110,6 @@ def get_compute_global_image_capability_schemas_versions_output(compute_global_i
                                                                 filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetComputeGlobalImageCapabilitySchemasVersionsFilterArgs']]]]] = None,
                                                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetComputeGlobalImageCapabilitySchemasVersionsResult]:
     """
-    This data source provides the list of Compute Global Image Capability Schemas Versions in Oracle Cloud Infrastructure Core service.
-
-    Lists Compute Global Image Capability Schema versions in the specified compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_compute_global_image_capability_schemas_versions = oci.Core.get_compute_global_image_capability_schemas_versions(compute_global_image_capability_schema_id=oci_core_compute_global_image_capability_schema["test_compute_global_image_capability_schema"]["id"],
-        display_name=var["compute_global_image_capability_schemas_version_display_name"])
-    ```
-
-
-    :param str compute_global_image_capability_schema_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute global image capability schema
-    :param str display_name: A filter to return only resources that match the given display name exactly.
+    Use this data source to access information about an existing resource.
     """
     ...

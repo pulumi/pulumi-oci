@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Run Statements in Oracle Cloud Infrastructure Data Flow service.
@@ -65,7 +64,7 @@ type GetRunStatementsArgs struct {
 type GetRunStatementsResult struct {
 	Filters []GetRunStatementsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The ID of a run.
 	RunId string `pulumi:"runId"`
 	// The current state of this statement.
@@ -115,19 +114,13 @@ func (o GetRunStatementsResultOutput) ToGetRunStatementsResultOutputWithContext(
 	return o
 }
 
-func (o GetRunStatementsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetRunStatementsResult] {
-	return pulumix.Output[GetRunStatementsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetRunStatementsResultOutput) Filters() GetRunStatementsFilterArrayOutput {
 	return o.ApplyT(func(v GetRunStatementsResult) []GetRunStatementsFilter { return v.Filters }).(GetRunStatementsFilterArrayOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetRunStatementsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRunStatementsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetRunStatementsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRunStatementsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The ID of a run.

@@ -108,11 +108,11 @@ namespace Pulumi.Oci.Database
         /// <summary>
         /// The character set for the database.
         /// </summary>
-        public readonly string CharacterSet;
+        public readonly string? CharacterSet;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// The Connection strings used to connect to the Oracle Database.
         /// </summary>
@@ -125,7 +125,7 @@ namespace Pulumi.Oci.Database
         /// <summary>
         /// The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
         /// </summary>
-        public readonly string DatabaseSoftwareImageId;
+        public readonly string? DatabaseSoftwareImageId;
         public readonly ImmutableArray<Outputs.GetDatabaseDatabaseResult> Databases;
         /// <summary>
         /// Backup Options To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized, talk to an administrator. If you're an administrator who needs to write policies to give users access, see [Getting Started with Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
@@ -134,113 +134,113 @@ namespace Pulumi.Oci.Database
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
         /// </summary>
-        public readonly string DbHomeId;
+        public readonly string? DbHomeId;
         /// <summary>
         /// The database name.
         /// </summary>
-        public readonly string DbName;
+        public readonly string? DbName;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
         /// </summary>
-        public readonly string DbSystemId;
+        public readonly string? DbSystemId;
         /// <summary>
         /// A system-generated name for the database to ensure uniqueness within an Oracle Data Guard group (a primary database and its standby databases). The unique name cannot be changed.
         /// </summary>
-        public readonly string DbUniqueName;
-        public readonly string DbVersion;
+        public readonly string? DbUniqueName;
+        public readonly string? DbVersion;
         /// <summary>
         /// **Deprecated.** The dbWorkload field has been deprecated for Exadata Database Service on Dedicated Infrastructure, Exadata Database Service on Cloud@Customer, and Base Database Service. Support for this attribute will end in November 2023. You may choose to update your custom scripts to exclude the dbWorkload attribute. After November 2023 if you pass a value to the dbWorkload attribute, it will be ignored.
         /// </summary>
-        public readonly string DbWorkload;
+        public readonly string? DbWorkload;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// True if the database is a container database.
         /// </summary>
-        public readonly bool IsCdb;
+        public readonly bool? IsCdb;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
         /// </summary>
-        public readonly string KeyStoreId;
+        public readonly string? KeyStoreId;
         /// <summary>
         /// The wallet name for Oracle Key Vault.
         /// </summary>
-        public readonly string KeyStoreWalletName;
+        public readonly string? KeyStoreWalletName;
         /// <summary>
         /// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
         /// </summary>
-        public readonly string KmsKeyId;
-        public readonly bool KmsKeyMigration;
-        public readonly int KmsKeyRotation;
+        public readonly string? KmsKeyId;
+        public readonly bool? KmsKeyMigration;
+        public readonly int? KmsKeyRotation;
         /// <summary>
         /// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
         /// </summary>
-        public readonly string KmsKeyVersionId;
+        public readonly string? KmsKeyVersionId;
         /// <summary>
         /// The duration when the latest database backup created.
         /// </summary>
-        public readonly int LastBackupDurationInSeconds;
+        public readonly int? LastBackupDurationInSeconds;
         /// <summary>
         /// The date and time when the latest database backup was created.
         /// </summary>
-        public readonly string LastBackupTimestamp;
+        public readonly string? LastBackupTimestamp;
         /// <summary>
         /// The date and time when the latest database backup failed.
         /// </summary>
-        public readonly string LastFailedBackupTimestamp;
+        public readonly string? LastFailedBackupTimestamp;
         /// <summary>
         /// Additional information about the current lifecycle state.
         /// </summary>
-        public readonly string LifecycleDetails;
+        public readonly string? LifecycleDetails;
         /// <summary>
         /// The national character set for the database.
         /// </summary>
-        public readonly string NcharacterSet;
+        public readonly string? NcharacterSet;
         /// <summary>
         /// The name of the pluggable database. The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. Pluggable database should not be same as database name.
         /// </summary>
-        public readonly string PdbName;
+        public readonly string? PdbName;
         /// <summary>
         /// Specifies a prefix for the `Oracle SID` of the database to be created.
         /// </summary>
-        public readonly string SidPrefix;
-        public readonly string Source;
+        public readonly string? SidPrefix;
+        public readonly string? Source;
         /// <summary>
         /// Point in time recovery timeStamp of the source database at which cloned database system is cloned from the source database system, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339)
         /// </summary>
-        public readonly string SourceDatabasePointInTimeRecoveryTimestamp;
+        public readonly string? SourceDatabasePointInTimeRecoveryTimestamp;
         /// <summary>
         /// The current state of the database.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// The date and time the database was created.
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
         /// </summary>
-        public readonly string VaultId;
+        public readonly string? VaultId;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
         /// </summary>
-        public readonly string VmClusterId;
+        public readonly string? VmClusterId;
 
         [OutputConstructor]
         private GetDatabaseResult(
-            string characterSet,
+            string? characterSet,
 
-            string compartmentId,
+            string? compartmentId,
 
             ImmutableArray<Outputs.GetDatabaseConnectionStringResult> connectionStrings,
 
@@ -248,69 +248,69 @@ namespace Pulumi.Oci.Database
 
             ImmutableArray<Outputs.GetDatabaseDatabaseManagementConfigResult> databaseManagementConfigs,
 
-            string databaseSoftwareImageId,
+            string? databaseSoftwareImageId,
 
             ImmutableArray<Outputs.GetDatabaseDatabaseResult> databases,
 
             ImmutableArray<Outputs.GetDatabaseDbBackupConfigResult> dbBackupConfigs,
 
-            string dbHomeId,
+            string? dbHomeId,
 
-            string dbName,
+            string? dbName,
 
-            string dbSystemId,
+            string? dbSystemId,
 
-            string dbUniqueName,
+            string? dbUniqueName,
 
-            string dbVersion,
+            string? dbVersion,
 
-            string dbWorkload,
+            string? dbWorkload,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string id,
+            string? id,
 
-            bool isCdb,
+            bool? isCdb,
 
-            string keyStoreId,
+            string? keyStoreId,
 
-            string keyStoreWalletName,
+            string? keyStoreWalletName,
 
-            string kmsKeyId,
+            string? kmsKeyId,
 
-            bool kmsKeyMigration,
+            bool? kmsKeyMigration,
 
-            int kmsKeyRotation,
+            int? kmsKeyRotation,
 
-            string kmsKeyVersionId,
+            string? kmsKeyVersionId,
 
-            int lastBackupDurationInSeconds,
+            int? lastBackupDurationInSeconds,
 
-            string lastBackupTimestamp,
+            string? lastBackupTimestamp,
 
-            string lastFailedBackupTimestamp,
+            string? lastFailedBackupTimestamp,
 
-            string lifecycleDetails,
+            string? lifecycleDetails,
 
-            string ncharacterSet,
+            string? ncharacterSet,
 
-            string pdbName,
+            string? pdbName,
 
-            string sidPrefix,
+            string? sidPrefix,
 
-            string source,
+            string? source,
 
-            string sourceDatabasePointInTimeRecoveryTimestamp,
+            string? sourceDatabasePointInTimeRecoveryTimestamp,
 
-            string state,
+            string? state,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string vaultId,
+            string? vaultId,
 
-            string vmClusterId)
+            string? vmClusterId)
         {
             CharacterSet = characterSet;
             CompartmentId = compartmentId;

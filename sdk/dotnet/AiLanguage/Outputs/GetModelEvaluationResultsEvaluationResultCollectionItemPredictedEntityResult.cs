@@ -16,23 +16,23 @@ namespace Pulumi.Oci.AiLanguage.Outputs
         /// <summary>
         /// Length of text
         /// </summary>
-        public readonly int Length;
+        public readonly int? Length;
         /// <summary>
         /// Starting index on text.
         /// </summary>
-        public readonly int Offset;
+        public readonly int? Offset;
         /// <summary>
         /// Type of entity text like PER, LOC, GPE, NOPE etc.
         /// </summary>
-        public readonly string Type;
+        public readonly string? Type;
 
         [OutputConstructor]
         private GetModelEvaluationResultsEvaluationResultCollectionItemPredictedEntityResult(
-            int length,
+            int? length,
 
-            int offset,
+            int? offset,
 
-            string type)
+            string? type)
         {
             Length = length;
             Offset = offset;

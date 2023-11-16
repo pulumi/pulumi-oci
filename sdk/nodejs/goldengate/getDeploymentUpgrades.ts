@@ -75,7 +75,7 @@ export interface GetDeploymentUpgradesResult {
     /**
      * The list of deployment_upgrade_collection.
      */
-    readonly deploymentUpgradeCollections: outputs.GoldenGate.GetDeploymentUpgradesDeploymentUpgradeCollection[];
+    readonly deploymentUpgradeCollections?: outputs.GoldenGate.GetDeploymentUpgradesDeploymentUpgradeCollection[];
     /**
      * An object's Display Name.
      */
@@ -84,7 +84,7 @@ export interface GetDeploymentUpgradesResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Possible lifecycle states.
      */

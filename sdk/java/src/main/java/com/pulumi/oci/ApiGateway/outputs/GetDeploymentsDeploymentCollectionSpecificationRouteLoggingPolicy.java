@@ -8,6 +8,7 @@ import com.pulumi.oci.ApiGateway.outputs.GetDeploymentsDeploymentCollectionSpeci
 import com.pulumi.oci.ApiGateway.outputs.GetDeploymentsDeploymentCollectionSpecificationRouteLoggingPolicyExecutionLog;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDeploymentsDeploymentCollectionSpecificationRouteLoggingPolicy {
@@ -15,12 +16,12 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRouteLoggingPo
      * @return Configures the logging policies for the access logs of an API Deployment.
      * 
      */
-    private List<GetDeploymentsDeploymentCollectionSpecificationRouteLoggingPolicyAccessLog> accessLogs;
+    private @Nullable List<GetDeploymentsDeploymentCollectionSpecificationRouteLoggingPolicyAccessLog> accessLogs;
     /**
      * @return Configures the logging policies for the execution logs of an API Deployment.
      * 
      */
-    private List<GetDeploymentsDeploymentCollectionSpecificationRouteLoggingPolicyExecutionLog> executionLogs;
+    private @Nullable List<GetDeploymentsDeploymentCollectionSpecificationRouteLoggingPolicyExecutionLog> executionLogs;
 
     private GetDeploymentsDeploymentCollectionSpecificationRouteLoggingPolicy() {}
     /**
@@ -28,14 +29,14 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRouteLoggingPo
      * 
      */
     public List<GetDeploymentsDeploymentCollectionSpecificationRouteLoggingPolicyAccessLog> accessLogs() {
-        return this.accessLogs;
+        return this.accessLogs == null ? List.of() : this.accessLogs;
     }
     /**
      * @return Configures the logging policies for the execution logs of an API Deployment.
      * 
      */
     public List<GetDeploymentsDeploymentCollectionSpecificationRouteLoggingPolicyExecutionLog> executionLogs() {
-        return this.executionLogs;
+        return this.executionLogs == null ? List.of() : this.executionLogs;
     }
 
     public static Builder builder() {
@@ -47,8 +48,8 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRouteLoggingPo
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetDeploymentsDeploymentCollectionSpecificationRouteLoggingPolicyAccessLog> accessLogs;
-        private List<GetDeploymentsDeploymentCollectionSpecificationRouteLoggingPolicyExecutionLog> executionLogs;
+        private @Nullable List<GetDeploymentsDeploymentCollectionSpecificationRouteLoggingPolicyAccessLog> accessLogs;
+        private @Nullable List<GetDeploymentsDeploymentCollectionSpecificationRouteLoggingPolicyExecutionLog> executionLogs;
         public Builder() {}
         public Builder(GetDeploymentsDeploymentCollectionSpecificationRouteLoggingPolicy defaults) {
     	      Objects.requireNonNull(defaults);
@@ -57,16 +58,16 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRouteLoggingPo
         }
 
         @CustomType.Setter
-        public Builder accessLogs(List<GetDeploymentsDeploymentCollectionSpecificationRouteLoggingPolicyAccessLog> accessLogs) {
-            this.accessLogs = Objects.requireNonNull(accessLogs);
+        public Builder accessLogs(@Nullable List<GetDeploymentsDeploymentCollectionSpecificationRouteLoggingPolicyAccessLog> accessLogs) {
+            this.accessLogs = accessLogs;
             return this;
         }
         public Builder accessLogs(GetDeploymentsDeploymentCollectionSpecificationRouteLoggingPolicyAccessLog... accessLogs) {
             return accessLogs(List.of(accessLogs));
         }
         @CustomType.Setter
-        public Builder executionLogs(List<GetDeploymentsDeploymentCollectionSpecificationRouteLoggingPolicyExecutionLog> executionLogs) {
-            this.executionLogs = Objects.requireNonNull(executionLogs);
+        public Builder executionLogs(@Nullable List<GetDeploymentsDeploymentCollectionSpecificationRouteLoggingPolicyExecutionLog> executionLogs) {
+            this.executionLogs = executionLogs;
             return this;
         }
         public Builder executionLogs(GetDeploymentsDeploymentCollectionSpecificationRouteLoggingPolicyExecutionLog... executionLogs) {

@@ -6,6 +6,8 @@ package com.pulumi.oci.Core.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetIpsecStatusTunnel {
@@ -13,51 +15,51 @@ public final class GetIpsecStatusTunnel {
      * @return The IP address of Oracle&#39;s VPN headend.  Example: `203.0.113.50`
      * 
      */
-    private String ipAddress;
+    private @Nullable String ipAddress;
     /**
      * @return The tunnel&#39;s current state.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return The date and time the IPSec connection was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return When the state of the tunnel last changed, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    private String timeStateModified;
+    private @Nullable String timeStateModified;
 
     private GetIpsecStatusTunnel() {}
     /**
      * @return The IP address of Oracle&#39;s VPN headend.  Example: `203.0.113.50`
      * 
      */
-    public String ipAddress() {
-        return this.ipAddress;
+    public Optional<String> ipAddress() {
+        return Optional.ofNullable(this.ipAddress);
     }
     /**
      * @return The tunnel&#39;s current state.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return The date and time the IPSec connection was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return When the state of the tunnel last changed, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    public String timeStateModified() {
-        return this.timeStateModified;
+    public Optional<String> timeStateModified() {
+        return Optional.ofNullable(this.timeStateModified);
     }
 
     public static Builder builder() {
@@ -69,10 +71,10 @@ public final class GetIpsecStatusTunnel {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String ipAddress;
-        private String state;
-        private String timeCreated;
-        private String timeStateModified;
+        private @Nullable String ipAddress;
+        private @Nullable String state;
+        private @Nullable String timeCreated;
+        private @Nullable String timeStateModified;
         public Builder() {}
         public Builder(GetIpsecStatusTunnel defaults) {
     	      Objects.requireNonNull(defaults);
@@ -83,23 +85,23 @@ public final class GetIpsecStatusTunnel {
         }
 
         @CustomType.Setter
-        public Builder ipAddress(String ipAddress) {
-            this.ipAddress = Objects.requireNonNull(ipAddress);
+        public Builder ipAddress(@Nullable String ipAddress) {
+            this.ipAddress = ipAddress;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeStateModified(String timeStateModified) {
-            this.timeStateModified = Objects.requireNonNull(timeStateModified);
+        public Builder timeStateModified(@Nullable String timeStateModified) {
+            this.timeStateModified = timeStateModified;
             return this;
         }
         public GetIpsecStatusTunnel build() {

@@ -50,12 +50,12 @@ export interface GetSslCipherSuitesResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly loadBalancerId: string;
     /**
      * The list of ssl_cipher_suites.
      */
-    readonly sslCipherSuites: outputs.LoadBalancer.GetSslCipherSuitesSslCipherSuite[];
+    readonly sslCipherSuites?: outputs.LoadBalancer.GetSslCipherSuitesSslCipherSuite[];
 }
 /**
  * This data source provides the list of Ssl Cipher Suites in Oracle Cloud Infrastructure Load Balancer service.

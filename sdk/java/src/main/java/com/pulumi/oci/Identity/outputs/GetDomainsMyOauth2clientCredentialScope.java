@@ -6,6 +6,8 @@ package com.pulumi.oci.Identity.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDomainsMyOauth2clientCredentialScope {
@@ -13,27 +15,27 @@ public final class GetDomainsMyOauth2clientCredentialScope {
      * @return Audience
      * 
      */
-    private String audience;
+    private @Nullable String audience;
     /**
      * @return Scope
      * 
      */
-    private String scope;
+    private @Nullable String scope;
 
     private GetDomainsMyOauth2clientCredentialScope() {}
     /**
      * @return Audience
      * 
      */
-    public String audience() {
-        return this.audience;
+    public Optional<String> audience() {
+        return Optional.ofNullable(this.audience);
     }
     /**
      * @return Scope
      * 
      */
-    public String scope() {
-        return this.scope;
+    public Optional<String> scope() {
+        return Optional.ofNullable(this.scope);
     }
 
     public static Builder builder() {
@@ -45,8 +47,8 @@ public final class GetDomainsMyOauth2clientCredentialScope {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String audience;
-        private String scope;
+        private @Nullable String audience;
+        private @Nullable String scope;
         public Builder() {}
         public Builder(GetDomainsMyOauth2clientCredentialScope defaults) {
     	      Objects.requireNonNull(defaults);
@@ -55,13 +57,13 @@ public final class GetDomainsMyOauth2clientCredentialScope {
         }
 
         @CustomType.Setter
-        public Builder audience(String audience) {
-            this.audience = Objects.requireNonNull(audience);
+        public Builder audience(@Nullable String audience) {
+            this.audience = audience;
             return this;
         }
         @CustomType.Setter
-        public Builder scope(String scope) {
-            this.scope = Objects.requireNonNull(scope);
+        public Builder scope(@Nullable String scope) {
+            this.scope = scope;
             return this;
         }
         public GetDomainsMyOauth2clientCredentialScope build() {

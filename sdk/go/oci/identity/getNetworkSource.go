@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Network Source resource in Oracle Cloud Infrastructure Identity service.
@@ -60,28 +59,28 @@ type LookupNetworkSourceArgs struct {
 // A collection of values returned by getNetworkSource.
 type LookupNetworkSourceResult struct {
 	// The OCID of the tenancy containing the network source. The tenancy is the root compartment.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The description you assign to the network source. Does not have to be unique, and it's changeable.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The OCID of the network source.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The detailed status of INACTIVE lifecycleState.
-	InactiveState string `pulumi:"inactiveState"`
+	InactiveState *string `pulumi:"inactiveState"`
 	// The name you assign to the network source during creation. The name must be unique across the tenancy and cannot be changed.
-	Name            string `pulumi:"name"`
-	NetworkSourceId string `pulumi:"networkSourceId"`
+	Name            *string `pulumi:"name"`
+	NetworkSourceId string  `pulumi:"networkSourceId"`
 	// A list of allowed public IP addresses and CIDR ranges.
 	PublicSourceLists []string `pulumi:"publicSourceLists"`
 	// A list of services allowed to make on-behalf-of requests. These requests can have different source IPs than those specified in the network source. Currently, only `all` and `none` are supported. The default is `all`.
 	Services []string `pulumi:"services"`
 	// The network source object's current state. After creating a network source, make sure its `lifecycleState` changes from CREATING to ACTIVE before using it.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// Date and time the group was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// A list of allowed VCN OCID and IP range pairs. Example:`"vcnId": "ocid1.vcn.oc1.iad.aaaaaaaaexampleuniqueID", "ipRanges": [ "129.213.39.0/24" ]`
 	VirtualSourceLists []GetNetworkSourceVirtualSourceList `pulumi:"virtualSourceLists"`
 }
@@ -124,15 +123,9 @@ func (o LookupNetworkSourceResultOutput) ToLookupNetworkSourceResultOutputWithCo
 	return o
 }
 
-func (o LookupNetworkSourceResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupNetworkSourceResult] {
-	return pulumix.Output[LookupNetworkSourceResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the tenancy containing the network source. The tenancy is the root compartment.
-func (o LookupNetworkSourceResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupNetworkSourceResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupNetworkSourceResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupNetworkSourceResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -141,8 +134,8 @@ func (o LookupNetworkSourceResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // The description you assign to the network source. Does not have to be unique, and it's changeable.
-func (o LookupNetworkSourceResultOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupNetworkSourceResult) string { return v.Description }).(pulumi.StringOutput)
+func (o LookupNetworkSourceResultOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupNetworkSourceResult) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -151,18 +144,18 @@ func (o LookupNetworkSourceResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The OCID of the network source.
-func (o LookupNetworkSourceResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupNetworkSourceResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupNetworkSourceResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupNetworkSourceResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The detailed status of INACTIVE lifecycleState.
-func (o LookupNetworkSourceResultOutput) InactiveState() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupNetworkSourceResult) string { return v.InactiveState }).(pulumi.StringOutput)
+func (o LookupNetworkSourceResultOutput) InactiveState() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupNetworkSourceResult) *string { return v.InactiveState }).(pulumi.StringPtrOutput)
 }
 
 // The name you assign to the network source during creation. The name must be unique across the tenancy and cannot be changed.
-func (o LookupNetworkSourceResultOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupNetworkSourceResult) string { return v.Name }).(pulumi.StringOutput)
+func (o LookupNetworkSourceResultOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupNetworkSourceResult) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupNetworkSourceResultOutput) NetworkSourceId() pulumi.StringOutput {
@@ -180,13 +173,13 @@ func (o LookupNetworkSourceResultOutput) Services() pulumi.StringArrayOutput {
 }
 
 // The network source object's current state. After creating a network source, make sure its `lifecycleState` changes from CREATING to ACTIVE before using it.
-func (o LookupNetworkSourceResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupNetworkSourceResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupNetworkSourceResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupNetworkSourceResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Date and time the group was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
-func (o LookupNetworkSourceResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupNetworkSourceResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupNetworkSourceResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupNetworkSourceResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // A list of allowed VCN OCID and IP range pairs. Example:`"vcnId": "ocid1.vcn.oc1.iad.aaaaaaaaexampleuniqueID", "ipRanges": [ "129.213.39.0/24" ]`

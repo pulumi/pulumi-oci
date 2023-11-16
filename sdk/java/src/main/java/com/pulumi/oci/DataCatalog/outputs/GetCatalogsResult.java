@@ -18,7 +18,7 @@ public final class GetCatalogsResult {
      * @return The list of catalogs.
      * 
      */
-    private List<GetCatalogsCatalog> catalogs;
+    private @Nullable List<GetCatalogsCatalog> catalogs;
     /**
      * @return Compartment identifier.
      * 
@@ -34,7 +34,7 @@ public final class GetCatalogsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The current state of the data catalog resource.
      * 
@@ -47,7 +47,7 @@ public final class GetCatalogsResult {
      * 
      */
     public List<GetCatalogsCatalog> catalogs() {
-        return this.catalogs;
+        return this.catalogs == null ? List.of() : this.catalogs;
     }
     /**
      * @return Compartment identifier.
@@ -70,8 +70,8 @@ public final class GetCatalogsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The current state of the data catalog resource.
@@ -90,11 +90,11 @@ public final class GetCatalogsResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetCatalogsCatalog> catalogs;
+        private @Nullable List<GetCatalogsCatalog> catalogs;
         private String compartmentId;
         private @Nullable String displayName;
         private @Nullable List<GetCatalogsFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String state;
         public Builder() {}
         public Builder(GetCatalogsResult defaults) {
@@ -108,8 +108,8 @@ public final class GetCatalogsResult {
         }
 
         @CustomType.Setter
-        public Builder catalogs(List<GetCatalogsCatalog> catalogs) {
-            this.catalogs = Objects.requireNonNull(catalogs);
+        public Builder catalogs(@Nullable List<GetCatalogsCatalog> catalogs) {
+            this.catalogs = catalogs;
             return this;
         }
         public Builder catalogs(GetCatalogsCatalog... catalogs) {
@@ -134,8 +134,8 @@ public final class GetCatalogsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

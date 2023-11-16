@@ -29,12 +29,12 @@ public final class GetRemotePeeringConnectionsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The list of remote_peering_connections.
      * 
      */
-    private List<GetRemotePeeringConnectionsRemotePeeringConnection> remotePeeringConnections;
+    private @Nullable List<GetRemotePeeringConnectionsRemotePeeringConnection> remotePeeringConnections;
 
     private GetRemotePeeringConnectionsResult() {}
     /**
@@ -58,15 +58,15 @@ public final class GetRemotePeeringConnectionsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The list of remote_peering_connections.
      * 
      */
     public List<GetRemotePeeringConnectionsRemotePeeringConnection> remotePeeringConnections() {
-        return this.remotePeeringConnections;
+        return this.remotePeeringConnections == null ? List.of() : this.remotePeeringConnections;
     }
 
     public static Builder builder() {
@@ -81,8 +81,8 @@ public final class GetRemotePeeringConnectionsResult {
         private String compartmentId;
         private @Nullable String drgId;
         private @Nullable List<GetRemotePeeringConnectionsFilter> filters;
-        private String id;
-        private List<GetRemotePeeringConnectionsRemotePeeringConnection> remotePeeringConnections;
+        private @Nullable String id;
+        private @Nullable List<GetRemotePeeringConnectionsRemotePeeringConnection> remotePeeringConnections;
         public Builder() {}
         public Builder(GetRemotePeeringConnectionsResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -112,13 +112,13 @@ public final class GetRemotePeeringConnectionsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder remotePeeringConnections(List<GetRemotePeeringConnectionsRemotePeeringConnection> remotePeeringConnections) {
-            this.remotePeeringConnections = Objects.requireNonNull(remotePeeringConnections);
+        public Builder remotePeeringConnections(@Nullable List<GetRemotePeeringConnectionsRemotePeeringConnection> remotePeeringConnections) {
+            this.remotePeeringConnections = remotePeeringConnections;
             return this;
         }
         public Builder remotePeeringConnections(GetRemotePeeringConnectionsRemotePeeringConnection... remotePeeringConnections) {

@@ -52,17 +52,11 @@ class GetManagedDatabasesResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the Managed Database Group resides.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="deploymentType")
     def deployment_type(self) -> Optional[str]:
-        """
-        The infrastructure used to deploy the Oracle Database.
-        """
         return pulumi.get(self, "deployment_type")
 
     @property
@@ -78,33 +72,21 @@ class GetManagedDatabasesResult:
     @property
     @pulumi.getter
     def id(self) -> Optional[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database Group.
-        """
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="managedDatabaseCollections")
-    def managed_database_collections(self) -> Sequence['outputs.GetManagedDatabasesManagedDatabaseCollectionResult']:
-        """
-        The list of managed_database_collection.
-        """
+    def managed_database_collections(self) -> Optional[Sequence['outputs.GetManagedDatabasesManagedDatabaseCollectionResult']]:
         return pulumi.get(self, "managed_database_collections")
 
     @property
     @pulumi.getter(name="managementOption")
     def management_option(self) -> Optional[str]:
-        """
-        The management option used when enabling Database Management.
-        """
         return pulumi.get(self, "management_option")
 
     @property
     @pulumi.getter
     def name(self) -> Optional[str]:
-        """
-        The name of the Managed Database.
-        """
         return pulumi.get(self, "name")
 
 
@@ -133,36 +115,7 @@ def get_managed_databases(compartment_id: Optional[str] = None,
                           name: Optional[str] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetManagedDatabasesResult:
     """
-    This data source provides the list of Managed Databases in Oracle Cloud Infrastructure Database Management service.
-
-    Gets the Managed Database for a specific ID or the list of Managed Databases in a specific compartment.
-    Managed Databases can be filtered based on the name parameter. Only one of the parameters, ID or name
-    should be provided. If neither of these parameters is provided, all the Managed Databases in the compartment
-    are listed. Managed Databases can also be filtered based on the deployment type and management option.
-    If the deployment type is not specified or if it is `ONPREMISE`, then the management option is not
-    considered and Managed Databases with `ADVANCED` management option are listed.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_managed_databases = oci.DatabaseManagement.get_managed_databases(compartment_id=var["compartment_id"],
-        deployment_type=var["managed_database_deployment_type"],
-        external_exadata_infrastructure_id=oci_database_management_external_exadata_infrastructure["test_external_exadata_infrastructure"]["id"],
-        id=var["managed_database_id"],
-        management_option=var["managed_database_management_option"],
-        name=var["managed_database_name"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param str deployment_type: A filter to return Managed Databases of the specified deployment type.
-    :param str external_exadata_infrastructure_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
-    :param str id: The identifier of the resource.
-    :param str management_option: A filter to return Managed Databases with the specified management option.
-    :param str name: A filter to return only resources that match the entire name.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -196,35 +149,6 @@ def get_managed_databases_output(compartment_id: Optional[pulumi.Input[str]] = N
                                  name: Optional[pulumi.Input[Optional[str]]] = None,
                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetManagedDatabasesResult]:
     """
-    This data source provides the list of Managed Databases in Oracle Cloud Infrastructure Database Management service.
-
-    Gets the Managed Database for a specific ID or the list of Managed Databases in a specific compartment.
-    Managed Databases can be filtered based on the name parameter. Only one of the parameters, ID or name
-    should be provided. If neither of these parameters is provided, all the Managed Databases in the compartment
-    are listed. Managed Databases can also be filtered based on the deployment type and management option.
-    If the deployment type is not specified or if it is `ONPREMISE`, then the management option is not
-    considered and Managed Databases with `ADVANCED` management option are listed.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_managed_databases = oci.DatabaseManagement.get_managed_databases(compartment_id=var["compartment_id"],
-        deployment_type=var["managed_database_deployment_type"],
-        external_exadata_infrastructure_id=oci_database_management_external_exadata_infrastructure["test_external_exadata_infrastructure"]["id"],
-        id=var["managed_database_id"],
-        management_option=var["managed_database_management_option"],
-        name=var["managed_database_name"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param str deployment_type: A filter to return Managed Databases of the specified deployment type.
-    :param str external_exadata_infrastructure_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
-    :param str id: The identifier of the resource.
-    :param str management_option: A filter to return Managed Databases with the specified management option.
-    :param str name: A filter to return only resources that match the entire name.
+    Use this data source to access information about an existing resource.
     """
     ...

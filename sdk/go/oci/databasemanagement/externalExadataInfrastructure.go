@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the External Exadata Infrastructure resource in Oracle Cloud Infrastructure Database Management service.
@@ -77,21 +76,21 @@ type ExternalExadataInfrastructure struct {
 	// (Updatable) The list of DB systems in the Exadata infrastructure.
 	DbSystemIds pulumi.StringArrayOutput `pulumi:"dbSystemIds"`
 	// (Updatable) The unique key of the discovery request.
-	DiscoveryKey pulumi.StringOutput `pulumi:"discoveryKey"`
+	DiscoveryKey pulumi.StringPtrOutput `pulumi:"discoveryKey"`
 	// (Updatable) The name of the Exadata infrastructure.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// The internal ID of the Exadata resource.
-	InternalId pulumi.StringOutput `pulumi:"internalId"`
+	InternalId pulumi.StringPtrOutput `pulumi:"internalId"`
 	// (Updatable) The Oracle license model that applies to the database management resources.
-	LicenseModel pulumi.StringOutput `pulumi:"licenseModel"`
+	LicenseModel pulumi.StringPtrOutput `pulumi:"licenseModel"`
 	// The details of the lifecycle state of the Exadata resource.
-	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrOutput `pulumi:"lifecycleDetails"`
 	// The rack size of the Exadata infrastructure.
-	RackSize pulumi.StringOutput `pulumi:"rackSize"`
+	RackSize pulumi.StringPtrOutput `pulumi:"rackSize"`
 	// The current lifecycle state of the database resource.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// The status of the Exadata resource.
-	Status pulumi.StringOutput `pulumi:"status"`
+	Status pulumi.StringPtrOutput `pulumi:"status"`
 	// The Exadata storage server grid of the Exadata infrastructure.
 	StorageGrids ExternalExadataInfrastructureStorageGridArrayOutput `pulumi:"storageGrids"`
 	// (Updatable) The list of all the Exadata storage server names to be included for monitoring purposes. If not specified, all the Exadata storage servers associated with the DB systems are included.
@@ -100,11 +99,11 @@ type ExternalExadataInfrastructure struct {
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	StorageServerNames pulumi.StringArrayOutput `pulumi:"storageServerNames"`
 	// The timestamp of the creation of the Exadata resource.
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The timestamp of the last update of the Exadata resource.
-	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 	// The version of the Exadata resource.
-	Version pulumi.StringOutput `pulumi:"version"`
+	Version pulumi.StringPtrOutput `pulumi:"version"`
 }
 
 // NewExternalExadataInfrastructure registers a new resource with the given unique name, arguments, and options.
@@ -293,12 +292,6 @@ func (i *ExternalExadataInfrastructure) ToExternalExadataInfrastructureOutputWit
 	return pulumi.ToOutputWithContext(ctx, i).(ExternalExadataInfrastructureOutput)
 }
 
-func (i *ExternalExadataInfrastructure) ToOutput(ctx context.Context) pulumix.Output[*ExternalExadataInfrastructure] {
-	return pulumix.Output[*ExternalExadataInfrastructure]{
-		OutputState: i.ToExternalExadataInfrastructureOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ExternalExadataInfrastructureArrayInput is an input type that accepts ExternalExadataInfrastructureArray and ExternalExadataInfrastructureArrayOutput values.
 // You can construct a concrete instance of `ExternalExadataInfrastructureArrayInput` via:
 //
@@ -322,12 +315,6 @@ func (i ExternalExadataInfrastructureArray) ToExternalExadataInfrastructureArray
 
 func (i ExternalExadataInfrastructureArray) ToExternalExadataInfrastructureArrayOutputWithContext(ctx context.Context) ExternalExadataInfrastructureArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ExternalExadataInfrastructureArrayOutput)
-}
-
-func (i ExternalExadataInfrastructureArray) ToOutput(ctx context.Context) pulumix.Output[[]*ExternalExadataInfrastructure] {
-	return pulumix.Output[[]*ExternalExadataInfrastructure]{
-		OutputState: i.ToExternalExadataInfrastructureArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // ExternalExadataInfrastructureMapInput is an input type that accepts ExternalExadataInfrastructureMap and ExternalExadataInfrastructureMapOutput values.
@@ -355,12 +342,6 @@ func (i ExternalExadataInfrastructureMap) ToExternalExadataInfrastructureMapOutp
 	return pulumi.ToOutputWithContext(ctx, i).(ExternalExadataInfrastructureMapOutput)
 }
 
-func (i ExternalExadataInfrastructureMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*ExternalExadataInfrastructure] {
-	return pulumix.Output[map[string]*ExternalExadataInfrastructure]{
-		OutputState: i.ToExternalExadataInfrastructureMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ExternalExadataInfrastructureOutput struct{ *pulumi.OutputState }
 
 func (ExternalExadataInfrastructureOutput) ElementType() reflect.Type {
@@ -373,12 +354,6 @@ func (o ExternalExadataInfrastructureOutput) ToExternalExadataInfrastructureOutp
 
 func (o ExternalExadataInfrastructureOutput) ToExternalExadataInfrastructureOutputWithContext(ctx context.Context) ExternalExadataInfrastructureOutput {
 	return o
-}
-
-func (o ExternalExadataInfrastructureOutput) ToOutput(ctx context.Context) pulumix.Output[*ExternalExadataInfrastructure] {
-	return pulumix.Output[*ExternalExadataInfrastructure]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
@@ -409,8 +384,8 @@ func (o ExternalExadataInfrastructureOutput) DbSystemIds() pulumi.StringArrayOut
 }
 
 // (Updatable) The unique key of the discovery request.
-func (o ExternalExadataInfrastructureOutput) DiscoveryKey() pulumi.StringOutput {
-	return o.ApplyT(func(v *ExternalExadataInfrastructure) pulumi.StringOutput { return v.DiscoveryKey }).(pulumi.StringOutput)
+func (o ExternalExadataInfrastructureOutput) DiscoveryKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExternalExadataInfrastructure) pulumi.StringPtrOutput { return v.DiscoveryKey }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The name of the Exadata infrastructure.
@@ -419,33 +394,33 @@ func (o ExternalExadataInfrastructureOutput) DisplayName() pulumi.StringOutput {
 }
 
 // The internal ID of the Exadata resource.
-func (o ExternalExadataInfrastructureOutput) InternalId() pulumi.StringOutput {
-	return o.ApplyT(func(v *ExternalExadataInfrastructure) pulumi.StringOutput { return v.InternalId }).(pulumi.StringOutput)
+func (o ExternalExadataInfrastructureOutput) InternalId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExternalExadataInfrastructure) pulumi.StringPtrOutput { return v.InternalId }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The Oracle license model that applies to the database management resources.
-func (o ExternalExadataInfrastructureOutput) LicenseModel() pulumi.StringOutput {
-	return o.ApplyT(func(v *ExternalExadataInfrastructure) pulumi.StringOutput { return v.LicenseModel }).(pulumi.StringOutput)
+func (o ExternalExadataInfrastructureOutput) LicenseModel() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExternalExadataInfrastructure) pulumi.StringPtrOutput { return v.LicenseModel }).(pulumi.StringPtrOutput)
 }
 
 // The details of the lifecycle state of the Exadata resource.
-func (o ExternalExadataInfrastructureOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v *ExternalExadataInfrastructure) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o ExternalExadataInfrastructureOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExternalExadataInfrastructure) pulumi.StringPtrOutput { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // The rack size of the Exadata infrastructure.
-func (o ExternalExadataInfrastructureOutput) RackSize() pulumi.StringOutput {
-	return o.ApplyT(func(v *ExternalExadataInfrastructure) pulumi.StringOutput { return v.RackSize }).(pulumi.StringOutput)
+func (o ExternalExadataInfrastructureOutput) RackSize() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExternalExadataInfrastructure) pulumi.StringPtrOutput { return v.RackSize }).(pulumi.StringPtrOutput)
 }
 
 // The current lifecycle state of the database resource.
-func (o ExternalExadataInfrastructureOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *ExternalExadataInfrastructure) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o ExternalExadataInfrastructureOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExternalExadataInfrastructure) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The status of the Exadata resource.
-func (o ExternalExadataInfrastructureOutput) Status() pulumi.StringOutput {
-	return o.ApplyT(func(v *ExternalExadataInfrastructure) pulumi.StringOutput { return v.Status }).(pulumi.StringOutput)
+func (o ExternalExadataInfrastructureOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExternalExadataInfrastructure) pulumi.StringPtrOutput { return v.Status }).(pulumi.StringPtrOutput)
 }
 
 // The Exadata storage server grid of the Exadata infrastructure.
@@ -464,18 +439,18 @@ func (o ExternalExadataInfrastructureOutput) StorageServerNames() pulumi.StringA
 }
 
 // The timestamp of the creation of the Exadata resource.
-func (o ExternalExadataInfrastructureOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *ExternalExadataInfrastructure) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o ExternalExadataInfrastructureOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExternalExadataInfrastructure) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The timestamp of the last update of the Exadata resource.
-func (o ExternalExadataInfrastructureOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *ExternalExadataInfrastructure) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o ExternalExadataInfrastructureOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExternalExadataInfrastructure) pulumi.StringPtrOutput { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 // The version of the Exadata resource.
-func (o ExternalExadataInfrastructureOutput) Version() pulumi.StringOutput {
-	return o.ApplyT(func(v *ExternalExadataInfrastructure) pulumi.StringOutput { return v.Version }).(pulumi.StringOutput)
+func (o ExternalExadataInfrastructureOutput) Version() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExternalExadataInfrastructure) pulumi.StringPtrOutput { return v.Version }).(pulumi.StringPtrOutput)
 }
 
 type ExternalExadataInfrastructureArrayOutput struct{ *pulumi.OutputState }
@@ -490,12 +465,6 @@ func (o ExternalExadataInfrastructureArrayOutput) ToExternalExadataInfrastructur
 
 func (o ExternalExadataInfrastructureArrayOutput) ToExternalExadataInfrastructureArrayOutputWithContext(ctx context.Context) ExternalExadataInfrastructureArrayOutput {
 	return o
-}
-
-func (o ExternalExadataInfrastructureArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*ExternalExadataInfrastructure] {
-	return pulumix.Output[[]*ExternalExadataInfrastructure]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ExternalExadataInfrastructureArrayOutput) Index(i pulumi.IntInput) ExternalExadataInfrastructureOutput {
@@ -516,12 +485,6 @@ func (o ExternalExadataInfrastructureMapOutput) ToExternalExadataInfrastructureM
 
 func (o ExternalExadataInfrastructureMapOutput) ToExternalExadataInfrastructureMapOutputWithContext(ctx context.Context) ExternalExadataInfrastructureMapOutput {
 	return o
-}
-
-func (o ExternalExadataInfrastructureMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*ExternalExadataInfrastructure] {
-	return pulumix.Output[map[string]*ExternalExadataInfrastructure]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ExternalExadataInfrastructureMapOutput) MapIndex(k pulumi.StringInput) ExternalExadataInfrastructureOutput {

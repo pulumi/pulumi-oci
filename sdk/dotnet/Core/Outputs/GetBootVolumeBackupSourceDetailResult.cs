@@ -16,20 +16,20 @@ namespace Pulumi.Oci.Core.Outputs
         /// <summary>
         /// The OCID of the boot volume backup.
         /// </summary>
-        public readonly string BootVolumeBackupId;
+        public readonly string? BootVolumeBackupId;
         /// <summary>
         /// The OCID of the Vault service master encryption assigned to the boot volume backup. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
         /// </summary>
-        public readonly string KmsKeyId;
-        public readonly string Region;
+        public readonly string? KmsKeyId;
+        public readonly string? Region;
 
         [OutputConstructor]
         private GetBootVolumeBackupSourceDetailResult(
-            string bootVolumeBackupId,
+            string? bootVolumeBackupId,
 
-            string kmsKeyId,
+            string? kmsKeyId,
 
-            string region)
+            string? region)
         {
             BootVolumeBackupId = bootVolumeBackupId;
             KmsKeyId = kmsKeyId;

@@ -70,11 +70,11 @@ export interface GetRulesResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The list of rules.
      */
-    readonly rules: outputs.Events.GetRulesRule[];
+    readonly rules?: outputs.Events.GetRulesRule[];
     /**
      * The current state of the rule.
      */

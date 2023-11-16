@@ -63,12 +63,12 @@ export interface GetDatabasePdbConversionHistoryEntriesResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly pdbConversionAction?: string;
     /**
      * The list of pdb_conversion_history_entries.
      */
-    readonly pdbConversionHistoryEntries: outputs.Database.GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntry[];
+    readonly pdbConversionHistoryEntries?: outputs.Database.GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntry[];
     /**
      * Status of an operation performed during the conversion of a non-container database to a pluggable database.
      */

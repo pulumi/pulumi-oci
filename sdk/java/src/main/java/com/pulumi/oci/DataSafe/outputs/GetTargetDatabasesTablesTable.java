@@ -6,6 +6,8 @@ package com.pulumi.oci.DataSafe.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetTargetDatabasesTablesTable {
@@ -13,27 +15,27 @@ public final class GetTargetDatabasesTablesTable {
      * @return A filter to return only items related to specific schema name.
      * 
      */
-    private String schemaName;
+    private @Nullable String schemaName;
     /**
      * @return A filter to return only items related to specific table name.
      * 
      */
-    private String tableName;
+    private @Nullable String tableName;
 
     private GetTargetDatabasesTablesTable() {}
     /**
      * @return A filter to return only items related to specific schema name.
      * 
      */
-    public String schemaName() {
-        return this.schemaName;
+    public Optional<String> schemaName() {
+        return Optional.ofNullable(this.schemaName);
     }
     /**
      * @return A filter to return only items related to specific table name.
      * 
      */
-    public String tableName() {
-        return this.tableName;
+    public Optional<String> tableName() {
+        return Optional.ofNullable(this.tableName);
     }
 
     public static Builder builder() {
@@ -45,8 +47,8 @@ public final class GetTargetDatabasesTablesTable {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String schemaName;
-        private String tableName;
+        private @Nullable String schemaName;
+        private @Nullable String tableName;
         public Builder() {}
         public Builder(GetTargetDatabasesTablesTable defaults) {
     	      Objects.requireNonNull(defaults);
@@ -55,13 +57,13 @@ public final class GetTargetDatabasesTablesTable {
         }
 
         @CustomType.Setter
-        public Builder schemaName(String schemaName) {
-            this.schemaName = Objects.requireNonNull(schemaName);
+        public Builder schemaName(@Nullable String schemaName) {
+            this.schemaName = schemaName;
             return this;
         }
         @CustomType.Setter
-        public Builder tableName(String tableName) {
-            this.tableName = Objects.requireNonNull(tableName);
+        public Builder tableName(@Nullable String tableName) {
+            this.tableName = tableName;
             return this;
         }
         public GetTargetDatabasesTablesTable build() {

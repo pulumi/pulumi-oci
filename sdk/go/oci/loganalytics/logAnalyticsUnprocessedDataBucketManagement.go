@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Log Analytics Unprocessed Data Bucket Management resource in Oracle Cloud Infrastructure Log Analytics service.
@@ -55,16 +54,16 @@ type LogAnalyticsUnprocessedDataBucketManagement struct {
 	// Name of the Object Storage bucket.
 	Bucket pulumi.StringOutput `pulumi:"bucket"`
 	// Flag that specifies if this configuration is enabled or not.
-	IsEnabled pulumi.BoolOutput `pulumi:"isEnabled"`
+	IsEnabled pulumi.BoolPtrOutput `pulumi:"isEnabled"`
 	// The Logging Analytics namespace used for the request.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Namespace pulumi.StringOutput `pulumi:"namespace"`
 	// The time when this record is created. An RFC3339 formatted datetime string.
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The latest time when this record is updated. An RFC3339 formatted datetime string.
-	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 }
 
 // NewLogAnalyticsUnprocessedDataBucketManagement registers a new resource with the given unique name, arguments, and options.
@@ -186,12 +185,6 @@ func (i *LogAnalyticsUnprocessedDataBucketManagement) ToLogAnalyticsUnprocessedD
 	return pulumi.ToOutputWithContext(ctx, i).(LogAnalyticsUnprocessedDataBucketManagementOutput)
 }
 
-func (i *LogAnalyticsUnprocessedDataBucketManagement) ToOutput(ctx context.Context) pulumix.Output[*LogAnalyticsUnprocessedDataBucketManagement] {
-	return pulumix.Output[*LogAnalyticsUnprocessedDataBucketManagement]{
-		OutputState: i.ToLogAnalyticsUnprocessedDataBucketManagementOutputWithContext(ctx).OutputState,
-	}
-}
-
 // LogAnalyticsUnprocessedDataBucketManagementArrayInput is an input type that accepts LogAnalyticsUnprocessedDataBucketManagementArray and LogAnalyticsUnprocessedDataBucketManagementArrayOutput values.
 // You can construct a concrete instance of `LogAnalyticsUnprocessedDataBucketManagementArrayInput` via:
 //
@@ -215,12 +208,6 @@ func (i LogAnalyticsUnprocessedDataBucketManagementArray) ToLogAnalyticsUnproces
 
 func (i LogAnalyticsUnprocessedDataBucketManagementArray) ToLogAnalyticsUnprocessedDataBucketManagementArrayOutputWithContext(ctx context.Context) LogAnalyticsUnprocessedDataBucketManagementArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(LogAnalyticsUnprocessedDataBucketManagementArrayOutput)
-}
-
-func (i LogAnalyticsUnprocessedDataBucketManagementArray) ToOutput(ctx context.Context) pulumix.Output[[]*LogAnalyticsUnprocessedDataBucketManagement] {
-	return pulumix.Output[[]*LogAnalyticsUnprocessedDataBucketManagement]{
-		OutputState: i.ToLogAnalyticsUnprocessedDataBucketManagementArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // LogAnalyticsUnprocessedDataBucketManagementMapInput is an input type that accepts LogAnalyticsUnprocessedDataBucketManagementMap and LogAnalyticsUnprocessedDataBucketManagementMapOutput values.
@@ -248,12 +235,6 @@ func (i LogAnalyticsUnprocessedDataBucketManagementMap) ToLogAnalyticsUnprocesse
 	return pulumi.ToOutputWithContext(ctx, i).(LogAnalyticsUnprocessedDataBucketManagementMapOutput)
 }
 
-func (i LogAnalyticsUnprocessedDataBucketManagementMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*LogAnalyticsUnprocessedDataBucketManagement] {
-	return pulumix.Output[map[string]*LogAnalyticsUnprocessedDataBucketManagement]{
-		OutputState: i.ToLogAnalyticsUnprocessedDataBucketManagementMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type LogAnalyticsUnprocessedDataBucketManagementOutput struct{ *pulumi.OutputState }
 
 func (LogAnalyticsUnprocessedDataBucketManagementOutput) ElementType() reflect.Type {
@@ -268,20 +249,14 @@ func (o LogAnalyticsUnprocessedDataBucketManagementOutput) ToLogAnalyticsUnproce
 	return o
 }
 
-func (o LogAnalyticsUnprocessedDataBucketManagementOutput) ToOutput(ctx context.Context) pulumix.Output[*LogAnalyticsUnprocessedDataBucketManagement] {
-	return pulumix.Output[*LogAnalyticsUnprocessedDataBucketManagement]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Name of the Object Storage bucket.
 func (o LogAnalyticsUnprocessedDataBucketManagementOutput) Bucket() pulumi.StringOutput {
 	return o.ApplyT(func(v *LogAnalyticsUnprocessedDataBucketManagement) pulumi.StringOutput { return v.Bucket }).(pulumi.StringOutput)
 }
 
 // Flag that specifies if this configuration is enabled or not.
-func (o LogAnalyticsUnprocessedDataBucketManagementOutput) IsEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v *LogAnalyticsUnprocessedDataBucketManagement) pulumi.BoolOutput { return v.IsEnabled }).(pulumi.BoolOutput)
+func (o LogAnalyticsUnprocessedDataBucketManagementOutput) IsEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *LogAnalyticsUnprocessedDataBucketManagement) pulumi.BoolPtrOutput { return v.IsEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // The Logging Analytics namespace used for the request.
@@ -293,13 +268,13 @@ func (o LogAnalyticsUnprocessedDataBucketManagementOutput) Namespace() pulumi.St
 }
 
 // The time when this record is created. An RFC3339 formatted datetime string.
-func (o LogAnalyticsUnprocessedDataBucketManagementOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *LogAnalyticsUnprocessedDataBucketManagement) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LogAnalyticsUnprocessedDataBucketManagementOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *LogAnalyticsUnprocessedDataBucketManagement) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The latest time when this record is updated. An RFC3339 formatted datetime string.
-func (o LogAnalyticsUnprocessedDataBucketManagementOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *LogAnalyticsUnprocessedDataBucketManagement) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o LogAnalyticsUnprocessedDataBucketManagementOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *LogAnalyticsUnprocessedDataBucketManagement) pulumi.StringPtrOutput { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type LogAnalyticsUnprocessedDataBucketManagementArrayOutput struct{ *pulumi.OutputState }
@@ -314,12 +289,6 @@ func (o LogAnalyticsUnprocessedDataBucketManagementArrayOutput) ToLogAnalyticsUn
 
 func (o LogAnalyticsUnprocessedDataBucketManagementArrayOutput) ToLogAnalyticsUnprocessedDataBucketManagementArrayOutputWithContext(ctx context.Context) LogAnalyticsUnprocessedDataBucketManagementArrayOutput {
 	return o
-}
-
-func (o LogAnalyticsUnprocessedDataBucketManagementArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*LogAnalyticsUnprocessedDataBucketManagement] {
-	return pulumix.Output[[]*LogAnalyticsUnprocessedDataBucketManagement]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o LogAnalyticsUnprocessedDataBucketManagementArrayOutput) Index(i pulumi.IntInput) LogAnalyticsUnprocessedDataBucketManagementOutput {
@@ -340,12 +309,6 @@ func (o LogAnalyticsUnprocessedDataBucketManagementMapOutput) ToLogAnalyticsUnpr
 
 func (o LogAnalyticsUnprocessedDataBucketManagementMapOutput) ToLogAnalyticsUnprocessedDataBucketManagementMapOutputWithContext(ctx context.Context) LogAnalyticsUnprocessedDataBucketManagementMapOutput {
 	return o
-}
-
-func (o LogAnalyticsUnprocessedDataBucketManagementMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*LogAnalyticsUnprocessedDataBucketManagement] {
-	return pulumix.Output[map[string]*LogAnalyticsUnprocessedDataBucketManagement]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o LogAnalyticsUnprocessedDataBucketManagementMapOutput) MapIndex(k pulumi.StringInput) LogAnalyticsUnprocessedDataBucketManagementOutput {

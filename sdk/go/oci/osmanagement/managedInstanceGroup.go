@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Managed Instance Group resource in Oracle Cloud Infrastructure OS Management service.
@@ -71,21 +70,21 @@ type ManagedInstanceGroup struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) Information specified by the user about the managed instance group
-	Description pulumi.StringOutput `pulumi:"description"`
+	Description pulumi.StringPtrOutput `pulumi:"description"`
 	// (Updatable) Managed Instance Group identifier
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags         pulumi.MapOutput `pulumi:"freeformTags"`
-	ManagedInstanceCount pulumi.IntOutput `pulumi:"managedInstanceCount"`
+	FreeformTags         pulumi.MapOutput    `pulumi:"freeformTags"`
+	ManagedInstanceCount pulumi.IntPtrOutput `pulumi:"managedInstanceCount"`
 	// list of Managed Instances in the group
 	ManagedInstances ManagedInstanceGroupManagedInstanceArrayOutput `pulumi:"managedInstances"`
 	// The Operating System type of the managed instance(s) on which this scheduled job will operate. If not specified, this defaults to Linux.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	OsFamily pulumi.StringOutput `pulumi:"osFamily"`
+	OsFamily pulumi.StringPtrOutput `pulumi:"osFamily"`
 	// The current state of the Software Source.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 }
 
 // NewManagedInstanceGroup registers a new resource with the given unique name, arguments, and options.
@@ -233,12 +232,6 @@ func (i *ManagedInstanceGroup) ToManagedInstanceGroupOutputWithContext(ctx conte
 	return pulumi.ToOutputWithContext(ctx, i).(ManagedInstanceGroupOutput)
 }
 
-func (i *ManagedInstanceGroup) ToOutput(ctx context.Context) pulumix.Output[*ManagedInstanceGroup] {
-	return pulumix.Output[*ManagedInstanceGroup]{
-		OutputState: i.ToManagedInstanceGroupOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ManagedInstanceGroupArrayInput is an input type that accepts ManagedInstanceGroupArray and ManagedInstanceGroupArrayOutput values.
 // You can construct a concrete instance of `ManagedInstanceGroupArrayInput` via:
 //
@@ -262,12 +255,6 @@ func (i ManagedInstanceGroupArray) ToManagedInstanceGroupArrayOutput() ManagedIn
 
 func (i ManagedInstanceGroupArray) ToManagedInstanceGroupArrayOutputWithContext(ctx context.Context) ManagedInstanceGroupArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ManagedInstanceGroupArrayOutput)
-}
-
-func (i ManagedInstanceGroupArray) ToOutput(ctx context.Context) pulumix.Output[[]*ManagedInstanceGroup] {
-	return pulumix.Output[[]*ManagedInstanceGroup]{
-		OutputState: i.ToManagedInstanceGroupArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // ManagedInstanceGroupMapInput is an input type that accepts ManagedInstanceGroupMap and ManagedInstanceGroupMapOutput values.
@@ -295,12 +282,6 @@ func (i ManagedInstanceGroupMap) ToManagedInstanceGroupMapOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(ManagedInstanceGroupMapOutput)
 }
 
-func (i ManagedInstanceGroupMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*ManagedInstanceGroup] {
-	return pulumix.Output[map[string]*ManagedInstanceGroup]{
-		OutputState: i.ToManagedInstanceGroupMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ManagedInstanceGroupOutput struct{ *pulumi.OutputState }
 
 func (ManagedInstanceGroupOutput) ElementType() reflect.Type {
@@ -315,12 +296,6 @@ func (o ManagedInstanceGroupOutput) ToManagedInstanceGroupOutputWithContext(ctx 
 	return o
 }
 
-func (o ManagedInstanceGroupOutput) ToOutput(ctx context.Context) pulumix.Output[*ManagedInstanceGroup] {
-	return pulumix.Output[*ManagedInstanceGroup]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) OCID for the Compartment
 func (o ManagedInstanceGroupOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *ManagedInstanceGroup) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
@@ -332,8 +307,8 @@ func (o ManagedInstanceGroupOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // (Updatable) Information specified by the user about the managed instance group
-func (o ManagedInstanceGroupOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v *ManagedInstanceGroup) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
+func (o ManagedInstanceGroupOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ManagedInstanceGroup) pulumi.StringPtrOutput { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Managed Instance Group identifier
@@ -346,8 +321,8 @@ func (o ManagedInstanceGroupOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *ManagedInstanceGroup) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
 }
 
-func (o ManagedInstanceGroupOutput) ManagedInstanceCount() pulumi.IntOutput {
-	return o.ApplyT(func(v *ManagedInstanceGroup) pulumi.IntOutput { return v.ManagedInstanceCount }).(pulumi.IntOutput)
+func (o ManagedInstanceGroupOutput) ManagedInstanceCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *ManagedInstanceGroup) pulumi.IntPtrOutput { return v.ManagedInstanceCount }).(pulumi.IntPtrOutput)
 }
 
 // list of Managed Instances in the group
@@ -361,13 +336,13 @@ func (o ManagedInstanceGroupOutput) ManagedInstances() ManagedInstanceGroupManag
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-func (o ManagedInstanceGroupOutput) OsFamily() pulumi.StringOutput {
-	return o.ApplyT(func(v *ManagedInstanceGroup) pulumi.StringOutput { return v.OsFamily }).(pulumi.StringOutput)
+func (o ManagedInstanceGroupOutput) OsFamily() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ManagedInstanceGroup) pulumi.StringPtrOutput { return v.OsFamily }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the Software Source.
-func (o ManagedInstanceGroupOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *ManagedInstanceGroup) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o ManagedInstanceGroupOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ManagedInstanceGroup) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 type ManagedInstanceGroupArrayOutput struct{ *pulumi.OutputState }
@@ -382,12 +357,6 @@ func (o ManagedInstanceGroupArrayOutput) ToManagedInstanceGroupArrayOutput() Man
 
 func (o ManagedInstanceGroupArrayOutput) ToManagedInstanceGroupArrayOutputWithContext(ctx context.Context) ManagedInstanceGroupArrayOutput {
 	return o
-}
-
-func (o ManagedInstanceGroupArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*ManagedInstanceGroup] {
-	return pulumix.Output[[]*ManagedInstanceGroup]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ManagedInstanceGroupArrayOutput) Index(i pulumi.IntInput) ManagedInstanceGroupOutput {
@@ -408,12 +377,6 @@ func (o ManagedInstanceGroupMapOutput) ToManagedInstanceGroupMapOutput() Managed
 
 func (o ManagedInstanceGroupMapOutput) ToManagedInstanceGroupMapOutputWithContext(ctx context.Context) ManagedInstanceGroupMapOutput {
 	return o
-}
-
-func (o ManagedInstanceGroupMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*ManagedInstanceGroup] {
-	return pulumix.Output[map[string]*ManagedInstanceGroup]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ManagedInstanceGroupMapOutput) MapIndex(k pulumi.StringInput) ManagedInstanceGroupOutput {

@@ -11,6 +11,7 @@ import com.pulumi.oci.Identity.DomainReplicationToRegionArgs;
 import com.pulumi.oci.Identity.inputs.DomainReplicationToRegionState;
 import com.pulumi.oci.Utilities;
 import java.lang.String;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -90,7 +91,7 @@ public class DomainReplicationToRegion extends com.pulumi.resources.CustomResour
      * 
      */
     @Export(name="replicaRegion", refs={String.class}, tree="[0]")
-    private Output<String> replicaRegion;
+    private Output</* @Nullable */ String> replicaRegion;
 
     /**
      * @return A region for which domain replication is requested for. See [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm) for the full list of supported region names.  Example: `us-phoenix-1`
@@ -99,8 +100,8 @@ public class DomainReplicationToRegion extends com.pulumi.resources.CustomResour
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Output<String> replicaRegion() {
-        return this.replicaRegion;
+    public Output<Optional<String>> replicaRegion() {
+        return Codegen.optional(this.replicaRegion);
     }
 
     /**

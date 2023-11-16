@@ -102,7 +102,7 @@ export class InstancePool extends pulumi.CustomResource {
     /**
      * The number of actual instances in the instance pool on the cloud. This attribute will be different when instance pool is used along with autoScaling Configuration.
      */
-    public /*out*/ readonly actualSize!: pulumi.Output<number>;
+    public /*out*/ readonly actualSize!: pulumi.Output<number | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance pool.
      */
@@ -110,15 +110,15 @@ export class InstancePool extends pulumi.CustomResource {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    public readonly displayName!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance configuration associated with the instance pool.
      */
@@ -126,15 +126,15 @@ export class InstancePool extends pulumi.CustomResource {
     /**
      * (Updatable) A user-friendly formatter for the instance pool's instances. Instance displaynames follow the format. The formatter does not retroactively change instance's displaynames, only instance displaynames in the future follow the format
      */
-    public readonly instanceDisplayNameFormatter!: pulumi.Output<string>;
+    public readonly instanceDisplayNameFormatter!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) A user-friendly formatter for the instance pool's instances. Instance hostnames follow the format. The formatter does not retroactively change instance's hostnames, only instance hostnames in the future follow the format
      */
-    public readonly instanceHostnameFormatter!: pulumi.Output<string>;
+    public readonly instanceHostnameFormatter!: pulumi.Output<string | undefined>;
     /**
      * The load balancers to attach to the instance pool.
      */
-    public readonly loadBalancers!: pulumi.Output<outputs.Core.InstancePoolLoadBalancer[]>;
+    public readonly loadBalancers!: pulumi.Output<outputs.Core.InstancePoolLoadBalancer[] | undefined>;
     /**
      * (Updatable) The placement configurations for the instance pool. Provide one placement configuration for each availability domain.
      *
@@ -152,11 +152,11 @@ export class InstancePool extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly state!: pulumi.Output<string>;
+    public readonly state!: pulumi.Output<string | undefined>;
     /**
      * The date and time the instance pool was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
 
     /**
      * Create a InstancePool resource with the given unique name, arguments, and options.

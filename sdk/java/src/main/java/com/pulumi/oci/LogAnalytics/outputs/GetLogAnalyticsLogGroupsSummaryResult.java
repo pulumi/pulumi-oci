@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetLogAnalyticsLogGroupsSummaryResult {
@@ -15,8 +17,8 @@ public final class GetLogAnalyticsLogGroupsSummaryResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
-    private Integer logGroupCount;
+    private @Nullable String id;
+    private @Nullable Integer logGroupCount;
     private String namespace;
 
     private GetLogAnalyticsLogGroupsSummaryResult() {}
@@ -27,11 +29,11 @@ public final class GetLogAnalyticsLogGroupsSummaryResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
-    public Integer logGroupCount() {
-        return this.logGroupCount;
+    public Optional<Integer> logGroupCount() {
+        return Optional.ofNullable(this.logGroupCount);
     }
     public String namespace() {
         return this.namespace;
@@ -47,8 +49,8 @@ public final class GetLogAnalyticsLogGroupsSummaryResult {
     @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
-        private String id;
-        private Integer logGroupCount;
+        private @Nullable String id;
+        private @Nullable Integer logGroupCount;
         private String namespace;
         public Builder() {}
         public Builder(GetLogAnalyticsLogGroupsSummaryResult defaults) {
@@ -65,13 +67,13 @@ public final class GetLogAnalyticsLogGroupsSummaryResult {
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder logGroupCount(Integer logGroupCount) {
-            this.logGroupCount = Objects.requireNonNull(logGroupCount);
+        public Builder logGroupCount(@Nullable Integer logGroupCount) {
+            this.logGroupCount = logGroupCount;
             return this;
         }
         @CustomType.Setter

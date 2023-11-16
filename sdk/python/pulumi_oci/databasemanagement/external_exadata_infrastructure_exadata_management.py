@@ -19,13 +19,6 @@ class ExternalExadataInfrastructureExadataManagementArgs:
                  license_model: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a ExternalExadataInfrastructureExadataManagement resource.
-        :param pulumi.Input[bool] enable_exadata: (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] external_exadata_infrastructure_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
-        :param pulumi.Input[str] license_model: The Oracle license model.
         """
         pulumi.set(__self__, "enable_exadata", enable_exadata)
         pulumi.set(__self__, "external_exadata_infrastructure_id", external_exadata_infrastructure_id)
@@ -35,13 +28,6 @@ class ExternalExadataInfrastructureExadataManagementArgs:
     @property
     @pulumi.getter(name="enableExadata")
     def enable_exadata(self) -> pulumi.Input[bool]:
-        """
-        (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "enable_exadata")
 
     @enable_exadata.setter
@@ -51,9 +37,6 @@ class ExternalExadataInfrastructureExadataManagementArgs:
     @property
     @pulumi.getter(name="externalExadataInfrastructureId")
     def external_exadata_infrastructure_id(self) -> pulumi.Input[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
-        """
         return pulumi.get(self, "external_exadata_infrastructure_id")
 
     @external_exadata_infrastructure_id.setter
@@ -63,9 +46,6 @@ class ExternalExadataInfrastructureExadataManagementArgs:
     @property
     @pulumi.getter(name="licenseModel")
     def license_model(self) -> Optional[pulumi.Input[str]]:
-        """
-        The Oracle license model.
-        """
         return pulumi.get(self, "license_model")
 
     @license_model.setter
@@ -81,13 +61,6 @@ class _ExternalExadataInfrastructureExadataManagementState:
                  license_model: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering ExternalExadataInfrastructureExadataManagement resources.
-        :param pulumi.Input[bool] enable_exadata: (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] external_exadata_infrastructure_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
-        :param pulumi.Input[str] license_model: The Oracle license model.
         """
         if enable_exadata is not None:
             pulumi.set(__self__, "enable_exadata", enable_exadata)
@@ -99,13 +72,6 @@ class _ExternalExadataInfrastructureExadataManagementState:
     @property
     @pulumi.getter(name="enableExadata")
     def enable_exadata(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "enable_exadata")
 
     @enable_exadata.setter
@@ -115,9 +81,6 @@ class _ExternalExadataInfrastructureExadataManagementState:
     @property
     @pulumi.getter(name="externalExadataInfrastructureId")
     def external_exadata_infrastructure_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
-        """
         return pulumi.get(self, "external_exadata_infrastructure_id")
 
     @external_exadata_infrastructure_id.setter
@@ -127,9 +90,6 @@ class _ExternalExadataInfrastructureExadataManagementState:
     @property
     @pulumi.getter(name="licenseModel")
     def license_model(self) -> Optional[pulumi.Input[str]]:
-        """
-        The Oracle license model.
-        """
         return pulumi.get(self, "license_model")
 
     @license_model.setter
@@ -147,36 +107,9 @@ class ExternalExadataInfrastructureExadataManagement(pulumi.CustomResource):
                  license_model: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the External Exadata Infrastructure Exadata Management resource in Oracle Cloud Infrastructure Database Management service.
-
-        Enables Database Management for the Exadata infrastructure specified by externalExadataInfrastructureId. It covers the following
-        components:
-
-        - Exadata infrastructure
-        - Exadata storage grid
-        - Exadata storage server
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_external_exadata_infrastructure_exadata_management = oci.database_management.ExternalExadataInfrastructureExadataManagement("testExternalExadataInfrastructureExadataManagement",
-            external_exadata_infrastructure_id=oci_database_management_external_exadata_infrastructure["test_external_exadata_infrastructure"]["id"],
-            enable_exadata=var["enable_exadata"],
-            license_model=var["external_exadata_infrastructure_exadata_management_license_model"])
-        ```
-
+        Create a ExternalExadataInfrastructureExadataManagement resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[bool] enable_exadata: (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] external_exadata_infrastructure_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
-        :param pulumi.Input[str] license_model: The Oracle license model.
         """
         ...
     @overload
@@ -185,27 +118,7 @@ class ExternalExadataInfrastructureExadataManagement(pulumi.CustomResource):
                  args: ExternalExadataInfrastructureExadataManagementArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the External Exadata Infrastructure Exadata Management resource in Oracle Cloud Infrastructure Database Management service.
-
-        Enables Database Management for the Exadata infrastructure specified by externalExadataInfrastructureId. It covers the following
-        components:
-
-        - Exadata infrastructure
-        - Exadata storage grid
-        - Exadata storage server
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_external_exadata_infrastructure_exadata_management = oci.database_management.ExternalExadataInfrastructureExadataManagement("testExternalExadataInfrastructureExadataManagement",
-            external_exadata_infrastructure_id=oci_database_management_external_exadata_infrastructure["test_external_exadata_infrastructure"]["id"],
-            enable_exadata=var["enable_exadata"],
-            license_model=var["external_exadata_infrastructure_exadata_management_license_model"])
-        ```
-
+        Create a ExternalExadataInfrastructureExadataManagement resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param ExternalExadataInfrastructureExadataManagementArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -260,13 +173,6 @@ class ExternalExadataInfrastructureExadataManagement(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[bool] enable_exadata: (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] external_exadata_infrastructure_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
-        :param pulumi.Input[str] license_model: The Oracle license model.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -280,28 +186,15 @@ class ExternalExadataInfrastructureExadataManagement(pulumi.CustomResource):
     @property
     @pulumi.getter(name="enableExadata")
     def enable_exadata(self) -> pulumi.Output[bool]:
-        """
-        (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "enable_exadata")
 
     @property
     @pulumi.getter(name="externalExadataInfrastructureId")
     def external_exadata_infrastructure_id(self) -> pulumi.Output[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
-        """
         return pulumi.get(self, "external_exadata_infrastructure_id")
 
     @property
     @pulumi.getter(name="licenseModel")
-    def license_model(self) -> pulumi.Output[str]:
-        """
-        The Oracle license model.
-        """
+    def license_model(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "license_model")
 

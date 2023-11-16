@@ -47,10 +47,7 @@ class GetAddressRuleResult:
 
     @property
     @pulumi.getter
-    def addresses(self) -> Sequence['outputs.GetAddressRuleAddressResult']:
-        """
-        Address type rule information
-        """
+    def addresses(self) -> Optional[Sequence['outputs.GetAddressRuleAddressResult']]:
         return pulumi.get(self, "addresses")
 
     @property
@@ -60,23 +57,17 @@ class GetAddressRuleResult:
 
     @property
     @pulumi.getter
-    def contacts(self) -> Sequence['outputs.GetAddressRuleContactResult']:
-        """
-        Contact type rule information
-        """
+    def contacts(self) -> Optional[Sequence['outputs.GetAddressRuleContactResult']]:
         return pulumi.get(self, "contacts")
 
     @property
     @pulumi.getter(name="countryCode")
     def country_code(self) -> str:
-        """
-        Country code for the address rule in ISO-3166-1 2-letter format
-        """
         return pulumi.get(self, "country_code")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -89,10 +80,7 @@ class GetAddressRuleResult:
 
     @property
     @pulumi.getter
-    def taxes(self) -> Sequence['outputs.GetAddressRuleTaxResult']:
-        """
-        Tax type rule information
-        """
+    def taxes(self) -> Optional[Sequence['outputs.GetAddressRuleTaxResult']]:
         return pulumi.get(self, "taxes")
 
 
@@ -116,25 +104,7 @@ def get_address_rule(compartment_id: Optional[str] = None,
                      osp_home_region: Optional[str] = None,
                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAddressRuleResult:
     """
-    This data source provides details about a specific Address Rule resource in Oracle Cloud Infrastructure Osp Gateway service.
-
-    Get the address rule for the compartment based on the country code
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_address_rule = oci.OspGateway.get_address_rule(compartment_id=var["compartment_id"],
-        country_code=var["address_rule_country_code"],
-        osp_home_region=var["address_rule_osp_home_region"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param str country_code: Country code for the address rule in ISO-3166-1 2-letter format.
-    :param str osp_home_region: The home region's public name of the logged in user.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -159,24 +129,6 @@ def get_address_rule_output(compartment_id: Optional[pulumi.Input[str]] = None,
                             osp_home_region: Optional[pulumi.Input[str]] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAddressRuleResult]:
     """
-    This data source provides details about a specific Address Rule resource in Oracle Cloud Infrastructure Osp Gateway service.
-
-    Get the address rule for the compartment based on the country code
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_address_rule = oci.OspGateway.get_address_rule(compartment_id=var["compartment_id"],
-        country_code=var["address_rule_country_code"],
-        osp_home_region=var["address_rule_osp_home_region"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param str country_code: Country code for the address rule in ISO-3166-1 2-letter format.
-    :param str osp_home_region: The home region's public name of the logged in user.
+    Use this data source to access information about an existing resource.
     """
     ...

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Boot Volume Backups in Oracle Cloud Infrastructure Core service.
@@ -82,7 +81,7 @@ type GetBootVolumeBackupsResult struct {
 	DisplayName *string                      `pulumi:"displayName"`
 	Filters     []GetBootVolumeBackupsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The OCID of the source boot volume backup.
 	SourceBootVolumeBackupId *string `pulumi:"sourceBootVolumeBackupId"`
 	// The current state of a boot volume backup.
@@ -136,12 +135,6 @@ func (o GetBootVolumeBackupsResultOutput) ToGetBootVolumeBackupsResultOutputWith
 	return o
 }
 
-func (o GetBootVolumeBackupsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetBootVolumeBackupsResult] {
-	return pulumix.Output[GetBootVolumeBackupsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The list of boot_volume_backups.
 func (o GetBootVolumeBackupsResultOutput) BootVolumeBackups() GetBootVolumeBackupsBootVolumeBackupArrayOutput {
 	return o.ApplyT(func(v GetBootVolumeBackupsResult) []GetBootVolumeBackupsBootVolumeBackup { return v.BootVolumeBackups }).(GetBootVolumeBackupsBootVolumeBackupArrayOutput)
@@ -167,8 +160,8 @@ func (o GetBootVolumeBackupsResultOutput) Filters() GetBootVolumeBackupsFilterAr
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetBootVolumeBackupsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBootVolumeBackupsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetBootVolumeBackupsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBootVolumeBackupsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the source boot volume backup.

@@ -51,19 +51,19 @@ namespace Pulumi.Oci.Nosql
         /// The OCID of the table's compartment.  Required if the tableNameOrId path parameter is a table name. Optional if tableNameOrId is an OCID.  If tableNameOrId is an OCID, and compartmentId is supplied, the latter must match the identified table's compartmentId.
         /// </summary>
         [Output("compartmentId")]
-        public Output<string> CompartmentId { get; private set; } = null!;
+        public Output<string?> CompartmentId { get; private set; } = null!;
 
         /// <summary>
         /// Maximum sustained read throughput limit for the new replica table. If not specified, the local table's read limit is used.
         /// </summary>
         [Output("maxReadUnits")]
-        public Output<int> MaxReadUnits { get; private set; } = null!;
+        public Output<int?> MaxReadUnits { get; private set; } = null!;
 
         /// <summary>
         /// Maximum sustained write throughput limit for the new replica table. If not specified, the local table's write limit is used.
         /// </summary>
         [Output("maxWriteUnits")]
-        public Output<int> MaxWriteUnits { get; private set; } = null!;
+        public Output<int?> MaxWriteUnits { get; private set; } = null!;
 
         /// <summary>
         /// Name of the remote region in standard Oracle Cloud Infrastructure format, i.e. us-ashburn-1

@@ -122,9 +122,9 @@ namespace Pulumi.Oci.Blockchain
         /// <summary>
         /// Availability Domain of OSN
         /// </summary>
-        public readonly string Ad;
+        public readonly string? Ad;
         public readonly string BlockchainPlatformId;
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// OCPU allocation parameter
         /// </summary>
@@ -133,27 +133,27 @@ namespace Pulumi.Oci.Blockchain
         /// <summary>
         /// OSN identifier
         /// </summary>
-        public readonly string OsnKey;
+        public readonly string? OsnKey;
         /// <summary>
         /// The current state of the OSN.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
 
         [OutputConstructor]
         private GetOsnResult(
-            string ad,
+            string? ad,
 
             string blockchainPlatformId,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetOsnOcpuAllocationParamResult> ocpuAllocationParams,
 
             string osnId,
 
-            string osnKey,
+            string? osnKey,
 
-            string state)
+            string? state)
         {
             Ad = ad;
             BlockchainPlatformId = blockchainPlatformId;

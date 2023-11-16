@@ -24,18 +24,6 @@ class AuditArchiveRetrievalArgs:
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None):
         """
         The set of arguments for constructing a AuditArchiveRetrieval resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment that contains the archival retrieval.
-        :param pulumi.Input[str] end_date: End month of the archive retrieval, in the format defined by RFC3339.
-        :param pulumi.Input[str] start_date: Start month of the archive retrieval, in the format defined by RFC3339.
-        :param pulumi.Input[str] target_id: The OCID of the target associated with the archive retrieval.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] description: (Updatable) Description of the archive retrieval.
-        :param pulumi.Input[str] display_name: (Updatable) The display name of the archive retrieval. The name does not have to be unique, and is changeable.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "end_date", end_date)
@@ -53,9 +41,6 @@ class AuditArchiveRetrievalArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The OCID of the compartment that contains the archival retrieval.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -65,9 +50,6 @@ class AuditArchiveRetrievalArgs:
     @property
     @pulumi.getter(name="endDate")
     def end_date(self) -> pulumi.Input[str]:
-        """
-        End month of the archive retrieval, in the format defined by RFC3339.
-        """
         return pulumi.get(self, "end_date")
 
     @end_date.setter
@@ -77,9 +59,6 @@ class AuditArchiveRetrievalArgs:
     @property
     @pulumi.getter(name="startDate")
     def start_date(self) -> pulumi.Input[str]:
-        """
-        Start month of the archive retrieval, in the format defined by RFC3339.
-        """
         return pulumi.get(self, "start_date")
 
     @start_date.setter
@@ -89,13 +68,6 @@ class AuditArchiveRetrievalArgs:
     @property
     @pulumi.getter(name="targetId")
     def target_id(self) -> pulumi.Input[str]:
-        """
-        The OCID of the target associated with the archive retrieval.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "target_id")
 
     @target_id.setter
@@ -105,9 +77,6 @@ class AuditArchiveRetrievalArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -117,9 +86,6 @@ class AuditArchiveRetrievalArgs:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Description of the archive retrieval.
-        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -129,9 +95,6 @@ class AuditArchiveRetrievalArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The display name of the archive retrieval. The name does not have to be unique, and is changeable.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -141,9 +104,6 @@ class AuditArchiveRetrievalArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -172,26 +132,6 @@ class _AuditArchiveRetrievalState:
                  time_requested: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering AuditArchiveRetrieval resources.
-        :param pulumi.Input[str] audit_event_count: Total count of audit events to be retrieved from the archive for the specified date range.
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment that contains the archival retrieval.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] description: (Updatable) Description of the archive retrieval.
-        :param pulumi.Input[str] display_name: (Updatable) The display name of the archive retrieval. The name does not have to be unique, and is changeable.
-        :param pulumi.Input[str] end_date: End month of the archive retrieval, in the format defined by RFC3339.
-        :param pulumi.Input[str] error_info: The Error details of a failed archive retrieval.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] lifecycle_details: Details about the current state of the archive retrieval.
-        :param pulumi.Input[str] start_date: Start month of the archive retrieval, in the format defined by RFC3339.
-        :param pulumi.Input[str] state: The current state of the archive retrieval.
-        :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[str] target_id: The OCID of the target associated with the archive retrieval.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] time_completed: The date time when archive retrieval request was fulfilled, in the format defined by RFC3339.
-        :param pulumi.Input[str] time_of_expiry: The date time when retrieved archive data will be deleted from Data Safe and unloaded back into archival.
-        :param pulumi.Input[str] time_requested: The date time when archive retrieval was requested, in the format defined by RFC3339.
         """
         if audit_event_count is not None:
             pulumi.set(__self__, "audit_event_count", audit_event_count)
@@ -229,9 +169,6 @@ class _AuditArchiveRetrievalState:
     @property
     @pulumi.getter(name="auditEventCount")
     def audit_event_count(self) -> Optional[pulumi.Input[str]]:
-        """
-        Total count of audit events to be retrieved from the archive for the specified date range.
-        """
         return pulumi.get(self, "audit_event_count")
 
     @audit_event_count.setter
@@ -241,9 +178,6 @@ class _AuditArchiveRetrievalState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The OCID of the compartment that contains the archival retrieval.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -253,9 +187,6 @@ class _AuditArchiveRetrievalState:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -265,9 +196,6 @@ class _AuditArchiveRetrievalState:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Description of the archive retrieval.
-        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -277,9 +205,6 @@ class _AuditArchiveRetrievalState:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The display name of the archive retrieval. The name does not have to be unique, and is changeable.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -289,9 +214,6 @@ class _AuditArchiveRetrievalState:
     @property
     @pulumi.getter(name="endDate")
     def end_date(self) -> Optional[pulumi.Input[str]]:
-        """
-        End month of the archive retrieval, in the format defined by RFC3339.
-        """
         return pulumi.get(self, "end_date")
 
     @end_date.setter
@@ -301,9 +223,6 @@ class _AuditArchiveRetrievalState:
     @property
     @pulumi.getter(name="errorInfo")
     def error_info(self) -> Optional[pulumi.Input[str]]:
-        """
-        The Error details of a failed archive retrieval.
-        """
         return pulumi.get(self, "error_info")
 
     @error_info.setter
@@ -313,9 +232,6 @@ class _AuditArchiveRetrievalState:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -325,9 +241,6 @@ class _AuditArchiveRetrievalState:
     @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> Optional[pulumi.Input[str]]:
-        """
-        Details about the current state of the archive retrieval.
-        """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
@@ -337,9 +250,6 @@ class _AuditArchiveRetrievalState:
     @property
     @pulumi.getter(name="startDate")
     def start_date(self) -> Optional[pulumi.Input[str]]:
-        """
-        Start month of the archive retrieval, in the format defined by RFC3339.
-        """
         return pulumi.get(self, "start_date")
 
     @start_date.setter
@@ -349,9 +259,6 @@ class _AuditArchiveRetrievalState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The current state of the archive retrieval.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -361,9 +268,6 @@ class _AuditArchiveRetrievalState:
     @property
     @pulumi.getter(name="systemTags")
     def system_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
@@ -373,13 +277,6 @@ class _AuditArchiveRetrievalState:
     @property
     @pulumi.getter(name="targetId")
     def target_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the target associated with the archive retrieval.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "target_id")
 
     @target_id.setter
@@ -389,9 +286,6 @@ class _AuditArchiveRetrievalState:
     @property
     @pulumi.getter(name="timeCompleted")
     def time_completed(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date time when archive retrieval request was fulfilled, in the format defined by RFC3339.
-        """
         return pulumi.get(self, "time_completed")
 
     @time_completed.setter
@@ -401,9 +295,6 @@ class _AuditArchiveRetrievalState:
     @property
     @pulumi.getter(name="timeOfExpiry")
     def time_of_expiry(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date time when retrieved archive data will be deleted from Data Safe and unloaded back into archival.
-        """
         return pulumi.get(self, "time_of_expiry")
 
     @time_of_expiry.setter
@@ -413,9 +304,6 @@ class _AuditArchiveRetrievalState:
     @property
     @pulumi.getter(name="timeRequested")
     def time_requested(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date time when archive retrieval was requested, in the format defined by RFC3339.
-        """
         return pulumi.get(self, "time_requested")
 
     @time_requested.setter
@@ -438,55 +326,9 @@ class AuditArchiveRetrieval(pulumi.CustomResource):
                  target_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Audit Archive Retrieval resource in Oracle Cloud Infrastructure Data Safe service.
-
-        Creates a work request to retrieve archived audit data. This asynchronous process will usually take over an hour to complete.
-        Save the id from the response of this operation. Call GetAuditArchiveRetrieval operation after an hour, passing the id to know the status of
-        this operation.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_audit_archive_retrieval = oci.data_safe.AuditArchiveRetrieval("testAuditArchiveRetrieval",
-            compartment_id=var["compartment_id"],
-            end_date=var["audit_archive_retrieval_end_date"],
-            start_date=var["audit_archive_retrieval_start_date"],
-            target_id=oci_cloud_guard_target["test_target"]["id"],
-            defined_tags={
-                "Operations.CostCenter": "42",
-            },
-            description=var["audit_archive_retrieval_description"],
-            display_name=var["audit_archive_retrieval_display_name"],
-            freeform_tags={
-                "Department": "Finance",
-            })
-        ```
-
-        ## Import
-
-        AuditArchiveRetrievals can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:DataSafe/auditArchiveRetrieval:AuditArchiveRetrieval test_audit_archive_retrieval "id"
-        ```
-
+        Create a AuditArchiveRetrieval resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment that contains the archival retrieval.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] description: (Updatable) Description of the archive retrieval.
-        :param pulumi.Input[str] display_name: (Updatable) The display name of the archive retrieval. The name does not have to be unique, and is changeable.
-        :param pulumi.Input[str] end_date: End month of the archive retrieval, in the format defined by RFC3339.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] start_date: Start month of the archive retrieval, in the format defined by RFC3339.
-        :param pulumi.Input[str] target_id: The OCID of the target associated with the archive retrieval.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -495,41 +337,7 @@ class AuditArchiveRetrieval(pulumi.CustomResource):
                  args: AuditArchiveRetrievalArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Audit Archive Retrieval resource in Oracle Cloud Infrastructure Data Safe service.
-
-        Creates a work request to retrieve archived audit data. This asynchronous process will usually take over an hour to complete.
-        Save the id from the response of this operation. Call GetAuditArchiveRetrieval operation after an hour, passing the id to know the status of
-        this operation.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_audit_archive_retrieval = oci.data_safe.AuditArchiveRetrieval("testAuditArchiveRetrieval",
-            compartment_id=var["compartment_id"],
-            end_date=var["audit_archive_retrieval_end_date"],
-            start_date=var["audit_archive_retrieval_start_date"],
-            target_id=oci_cloud_guard_target["test_target"]["id"],
-            defined_tags={
-                "Operations.CostCenter": "42",
-            },
-            description=var["audit_archive_retrieval_description"],
-            display_name=var["audit_archive_retrieval_display_name"],
-            freeform_tags={
-                "Department": "Finance",
-            })
-        ```
-
-        ## Import
-
-        AuditArchiveRetrievals can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:DataSafe/auditArchiveRetrieval:AuditArchiveRetrieval test_audit_archive_retrieval "id"
-        ```
-
+        Create a AuditArchiveRetrieval resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param AuditArchiveRetrievalArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -619,26 +427,6 @@ class AuditArchiveRetrieval(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] audit_event_count: Total count of audit events to be retrieved from the archive for the specified date range.
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment that contains the archival retrieval.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] description: (Updatable) Description of the archive retrieval.
-        :param pulumi.Input[str] display_name: (Updatable) The display name of the archive retrieval. The name does not have to be unique, and is changeable.
-        :param pulumi.Input[str] end_date: End month of the archive retrieval, in the format defined by RFC3339.
-        :param pulumi.Input[str] error_info: The Error details of a failed archive retrieval.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] lifecycle_details: Details about the current state of the archive retrieval.
-        :param pulumi.Input[str] start_date: Start month of the archive retrieval, in the format defined by RFC3339.
-        :param pulumi.Input[str] state: The current state of the archive retrieval.
-        :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[str] target_id: The OCID of the target associated with the archive retrieval.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] time_completed: The date time when archive retrieval request was fulfilled, in the format defined by RFC3339.
-        :param pulumi.Input[str] time_of_expiry: The date time when retrieved archive data will be deleted from Data Safe and unloaded back into archival.
-        :param pulumi.Input[str] time_requested: The date time when archive retrieval was requested, in the format defined by RFC3339.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -664,133 +452,81 @@ class AuditArchiveRetrieval(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="auditEventCount")
-    def audit_event_count(self) -> pulumi.Output[str]:
-        """
-        Total count of audit events to be retrieved from the archive for the specified date range.
-        """
+    def audit_event_count(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "audit_event_count")
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The OCID of the compartment that contains the archival retrieval.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def description(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Description of the archive retrieval.
-        """
+    def description(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The display name of the archive retrieval. The name does not have to be unique, and is changeable.
-        """
+    def display_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="endDate")
     def end_date(self) -> pulumi.Output[str]:
-        """
-        End month of the archive retrieval, in the format defined by RFC3339.
-        """
         return pulumi.get(self, "end_date")
 
     @property
     @pulumi.getter(name="errorInfo")
-    def error_info(self) -> pulumi.Output[str]:
-        """
-        The Error details of a failed archive retrieval.
-        """
+    def error_info(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "error_info")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> pulumi.Output[str]:
-        """
-        Details about the current state of the archive retrieval.
-        """
+    def lifecycle_details(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="startDate")
     def start_date(self) -> pulumi.Output[str]:
-        """
-        Start month of the archive retrieval, in the format defined by RFC3339.
-        """
         return pulumi.get(self, "start_date")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        The current state of the archive retrieval.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="targetId")
     def target_id(self) -> pulumi.Output[str]:
-        """
-        The OCID of the target associated with the archive retrieval.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "target_id")
 
     @property
     @pulumi.getter(name="timeCompleted")
-    def time_completed(self) -> pulumi.Output[str]:
-        """
-        The date time when archive retrieval request was fulfilled, in the format defined by RFC3339.
-        """
+    def time_completed(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_completed")
 
     @property
     @pulumi.getter(name="timeOfExpiry")
-    def time_of_expiry(self) -> pulumi.Output[str]:
-        """
-        The date time when retrieved archive data will be deleted from Data Safe and unloaded back into archival.
-        """
+    def time_of_expiry(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_of_expiry")
 
     @property
     @pulumi.getter(name="timeRequested")
-    def time_requested(self) -> pulumi.Output[str]:
-        """
-        The date time when archive retrieval was requested, in the format defined by RFC3339.
-        """
+    def time_requested(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_requested")
 

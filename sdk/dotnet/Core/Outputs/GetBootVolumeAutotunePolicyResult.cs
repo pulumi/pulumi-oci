@@ -16,17 +16,17 @@ namespace Pulumi.Oci.Core.Outputs
         /// <summary>
         /// This specifies the type of autotunes supported by OCI.
         /// </summary>
-        public readonly string AutotuneType;
+        public readonly string? AutotuneType;
         /// <summary>
         /// This will be the maximum VPUs/GB performance level that the volume will be auto-tuned temporarily based on performance monitoring.
         /// </summary>
-        public readonly string MaxVpusPerGb;
+        public readonly string? MaxVpusPerGb;
 
         [OutputConstructor]
         private GetBootVolumeAutotunePolicyResult(
-            string autotuneType,
+            string? autotuneType,
 
-            string maxVpusPerGb)
+            string? maxVpusPerGb)
         {
             AutotuneType = autotuneType;
             MaxVpusPerGb = maxVpusPerGb;

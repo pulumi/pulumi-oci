@@ -73,11 +73,11 @@ export interface GetControlsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The list of operator_control_collection.
      */
-    readonly operatorControlCollections: outputs.OperatorAccessControl.GetControlsOperatorControlCollection[];
+    readonly operatorControlCollections?: outputs.OperatorAccessControl.GetControlsOperatorControlCollection[];
     /**
      * resourceType for which the OperatorControl is applicable
      */

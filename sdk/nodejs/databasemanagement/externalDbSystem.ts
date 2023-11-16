@@ -74,7 +74,7 @@ export class ExternalDbSystem extends pulumi.CustomResource {
     /**
      * The details required to enable Database Management for an external DB system.
      */
-    public readonly databaseManagementConfig!: pulumi.Output<outputs.DatabaseManagement.ExternalDbSystemDatabaseManagementConfig>;
+    public readonly databaseManagementConfig!: pulumi.Output<outputs.DatabaseManagement.ExternalDbSystemDatabaseManagementConfig | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system discovery.
      */
@@ -82,39 +82,39 @@ export class ExternalDbSystem extends pulumi.CustomResource {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used during the discovery of the DB system.
      */
-    public /*out*/ readonly discoveryAgentId!: pulumi.Output<string>;
+    public /*out*/ readonly discoveryAgentId!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    public readonly displayName!: pulumi.Output<string | undefined>;
     /**
      * The Oracle Grid home directory in case of cluster-based DB system and Oracle home directory in case of single instance-based DB system.
      */
-    public /*out*/ readonly homeDirectory!: pulumi.Output<string>;
+    public /*out*/ readonly homeDirectory!: pulumi.Output<string | undefined>;
     /**
      * Indicates whether the DB system is a cluster DB system or not.
      */
-    public /*out*/ readonly isCluster!: pulumi.Output<boolean>;
+    public /*out*/ readonly isCluster!: pulumi.Output<boolean | undefined>;
     /**
      * Additional information about the current lifecycle state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string | undefined>;
     /**
      * The details of the associated service that will be enabled or disabled for an external DB System.
      */
-    public readonly stackMonitoringConfig!: pulumi.Output<outputs.DatabaseManagement.ExternalDbSystemStackMonitoringConfig>;
+    public readonly stackMonitoringConfig!: pulumi.Output<outputs.DatabaseManagement.ExternalDbSystemStackMonitoringConfig | undefined>;
     /**
      * The current lifecycle state of the external DB system resource.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * The date and time the external DB system was created.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * The date and time the external DB system was last updated.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    public /*out*/ readonly timeUpdated!: pulumi.Output<string | undefined>;
 
     /**
      * Create a ExternalDbSystem resource with the given unique name, arguments, and options.

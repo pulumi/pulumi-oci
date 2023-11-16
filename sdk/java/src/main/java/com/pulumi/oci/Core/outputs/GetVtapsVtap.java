@@ -10,6 +10,8 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetVtapsVtap {
@@ -17,164 +19,164 @@ public final class GetVtapsVtap {
      * @return The capture filter&#39;s Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
      * 
      */
-    private String captureFilterId;
+    private @Nullable String captureFilterId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return A filter to return only resources that match the given display name exactly.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return Defines an encapsulation header type for the VTAP&#39;s mirrored traffic.
      * 
      */
-    private String encapsulationProtocol;
+    private @Nullable String encapsulationProtocol;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return The VTAP&#39;s Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Indicates whether to list all VTAPs or only running VTAPs.
      * * When `FALSE`, lists ALL running and stopped VTAPs.
      * * When `TRUE`, lists only running VTAPs (VTAPs where isVtapEnabled = `TRUE`).
      * 
      */
-    private Boolean isVtapEnabled;
+    private @Nullable Boolean isVtapEnabled;
     /**
      * @return The VTAP&#39;s current running state.
      * 
      */
-    private String lifecycleStateDetails;
+    private @Nullable String lifecycleStateDetails;
     /**
      * @return The maximum size of the packets to be included in the filter.
      * 
      */
-    private Integer maxPacketSize;
+    private @Nullable Integer maxPacketSize;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source point where packets are captured.
      * 
      */
-    private String sourceId;
+    private @Nullable String sourceId;
     /**
      * @return The IP Address of the source private endpoint.
      * 
      */
-    private String sourcePrivateEndpointIp;
+    private @Nullable String sourcePrivateEndpointIp;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet that source private endpoint belongs to.
      * 
      */
-    private String sourcePrivateEndpointSubnetId;
+    private @Nullable String sourcePrivateEndpointSubnetId;
     /**
      * @return The source type for the VTAP.
      * 
      */
-    private String sourceType;
+    private @Nullable String sourceType;
     /**
      * @return A filter to return only resources that match the given VTAP administrative lifecycle state. The state value is case-insensitive.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VTAP target.
      * 
      */
-    private String targetId;
+    private @Nullable String targetId;
     /**
      * @return The IP address of the VTAP target.
      * 
      */
-    private String targetIp;
+    private @Nullable String targetIp;
     /**
      * @return The target type for the VTAP.
      * 
      */
-    private String targetType;
+    private @Nullable String targetType;
     /**
      * @return The date and time the VTAP was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2020-08-25T21:10:29.600Z`
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return Used to control the priority of traffic. It is an optional field. If it not passed, the value is DEFAULT
      * 
      */
-    private String trafficMode;
+    private @Nullable String trafficMode;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
      * 
      */
-    private String vcnId;
+    private @Nullable String vcnId;
     /**
      * @return The virtual extensible LAN (VXLAN) network identifier (or VXLAN segment ID) that uniquely identifies the VXLAN.
      * 
      */
-    private String vxlanNetworkIdentifier;
+    private @Nullable String vxlanNetworkIdentifier;
 
     private GetVtapsVtap() {}
     /**
      * @return The capture filter&#39;s Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
      * 
      */
-    public String captureFilterId() {
-        return this.captureFilterId;
+    public Optional<String> captureFilterId() {
+        return Optional.ofNullable(this.captureFilterId);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return A filter to return only resources that match the given display name exactly.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return Defines an encapsulation header type for the VTAP&#39;s mirrored traffic.
      * 
      */
-    public String encapsulationProtocol() {
-        return this.encapsulationProtocol;
+    public Optional<String> encapsulationProtocol() {
+        return Optional.ofNullable(this.encapsulationProtocol);
     }
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return The VTAP&#39;s Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Indicates whether to list all VTAPs or only running VTAPs.
@@ -182,106 +184,106 @@ public final class GetVtapsVtap {
      * * When `TRUE`, lists only running VTAPs (VTAPs where isVtapEnabled = `TRUE`).
      * 
      */
-    public Boolean isVtapEnabled() {
-        return this.isVtapEnabled;
+    public Optional<Boolean> isVtapEnabled() {
+        return Optional.ofNullable(this.isVtapEnabled);
     }
     /**
      * @return The VTAP&#39;s current running state.
      * 
      */
-    public String lifecycleStateDetails() {
-        return this.lifecycleStateDetails;
+    public Optional<String> lifecycleStateDetails() {
+        return Optional.ofNullable(this.lifecycleStateDetails);
     }
     /**
      * @return The maximum size of the packets to be included in the filter.
      * 
      */
-    public Integer maxPacketSize() {
-        return this.maxPacketSize;
+    public Optional<Integer> maxPacketSize() {
+        return Optional.ofNullable(this.maxPacketSize);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source point where packets are captured.
      * 
      */
-    public String sourceId() {
-        return this.sourceId;
+    public Optional<String> sourceId() {
+        return Optional.ofNullable(this.sourceId);
     }
     /**
      * @return The IP Address of the source private endpoint.
      * 
      */
-    public String sourcePrivateEndpointIp() {
-        return this.sourcePrivateEndpointIp;
+    public Optional<String> sourcePrivateEndpointIp() {
+        return Optional.ofNullable(this.sourcePrivateEndpointIp);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet that source private endpoint belongs to.
      * 
      */
-    public String sourcePrivateEndpointSubnetId() {
-        return this.sourcePrivateEndpointSubnetId;
+    public Optional<String> sourcePrivateEndpointSubnetId() {
+        return Optional.ofNullable(this.sourcePrivateEndpointSubnetId);
     }
     /**
      * @return The source type for the VTAP.
      * 
      */
-    public String sourceType() {
-        return this.sourceType;
+    public Optional<String> sourceType() {
+        return Optional.ofNullable(this.sourceType);
     }
     /**
      * @return A filter to return only resources that match the given VTAP administrative lifecycle state. The state value is case-insensitive.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VTAP target.
      * 
      */
-    public String targetId() {
-        return this.targetId;
+    public Optional<String> targetId() {
+        return Optional.ofNullable(this.targetId);
     }
     /**
      * @return The IP address of the VTAP target.
      * 
      */
-    public String targetIp() {
-        return this.targetIp;
+    public Optional<String> targetIp() {
+        return Optional.ofNullable(this.targetIp);
     }
     /**
      * @return The target type for the VTAP.
      * 
      */
-    public String targetType() {
-        return this.targetType;
+    public Optional<String> targetType() {
+        return Optional.ofNullable(this.targetType);
     }
     /**
      * @return The date and time the VTAP was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2020-08-25T21:10:29.600Z`
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return Used to control the priority of traffic. It is an optional field. If it not passed, the value is DEFAULT
      * 
      */
-    public String trafficMode() {
-        return this.trafficMode;
+    public Optional<String> trafficMode() {
+        return Optional.ofNullable(this.trafficMode);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
      * 
      */
-    public String vcnId() {
-        return this.vcnId;
+    public Optional<String> vcnId() {
+        return Optional.ofNullable(this.vcnId);
     }
     /**
      * @return The virtual extensible LAN (VXLAN) network identifier (or VXLAN segment ID) that uniquely identifies the VXLAN.
      * 
      */
-    public String vxlanNetworkIdentifier() {
-        return this.vxlanNetworkIdentifier;
+    public Optional<String> vxlanNetworkIdentifier() {
+        return Optional.ofNullable(this.vxlanNetworkIdentifier);
     }
 
     public static Builder builder() {
@@ -293,28 +295,28 @@ public final class GetVtapsVtap {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String captureFilterId;
-        private String compartmentId;
-        private Map<String,Object> definedTags;
-        private String displayName;
-        private String encapsulationProtocol;
-        private Map<String,Object> freeformTags;
-        private String id;
-        private Boolean isVtapEnabled;
-        private String lifecycleStateDetails;
-        private Integer maxPacketSize;
-        private String sourceId;
-        private String sourcePrivateEndpointIp;
-        private String sourcePrivateEndpointSubnetId;
-        private String sourceType;
-        private String state;
-        private String targetId;
-        private String targetIp;
-        private String targetType;
-        private String timeCreated;
-        private String trafficMode;
-        private String vcnId;
-        private String vxlanNetworkIdentifier;
+        private @Nullable String captureFilterId;
+        private @Nullable String compartmentId;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String displayName;
+        private @Nullable String encapsulationProtocol;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String id;
+        private @Nullable Boolean isVtapEnabled;
+        private @Nullable String lifecycleStateDetails;
+        private @Nullable Integer maxPacketSize;
+        private @Nullable String sourceId;
+        private @Nullable String sourcePrivateEndpointIp;
+        private @Nullable String sourcePrivateEndpointSubnetId;
+        private @Nullable String sourceType;
+        private @Nullable String state;
+        private @Nullable String targetId;
+        private @Nullable String targetIp;
+        private @Nullable String targetType;
+        private @Nullable String timeCreated;
+        private @Nullable String trafficMode;
+        private @Nullable String vcnId;
+        private @Nullable String vxlanNetworkIdentifier;
         public Builder() {}
         public Builder(GetVtapsVtap defaults) {
     	      Objects.requireNonNull(defaults);
@@ -343,113 +345,113 @@ public final class GetVtapsVtap {
         }
 
         @CustomType.Setter
-        public Builder captureFilterId(String captureFilterId) {
-            this.captureFilterId = Objects.requireNonNull(captureFilterId);
+        public Builder captureFilterId(@Nullable String captureFilterId) {
+            this.captureFilterId = captureFilterId;
             return this;
         }
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder encapsulationProtocol(String encapsulationProtocol) {
-            this.encapsulationProtocol = Objects.requireNonNull(encapsulationProtocol);
+        public Builder encapsulationProtocol(@Nullable String encapsulationProtocol) {
+            this.encapsulationProtocol = encapsulationProtocol;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder isVtapEnabled(Boolean isVtapEnabled) {
-            this.isVtapEnabled = Objects.requireNonNull(isVtapEnabled);
+        public Builder isVtapEnabled(@Nullable Boolean isVtapEnabled) {
+            this.isVtapEnabled = isVtapEnabled;
             return this;
         }
         @CustomType.Setter
-        public Builder lifecycleStateDetails(String lifecycleStateDetails) {
-            this.lifecycleStateDetails = Objects.requireNonNull(lifecycleStateDetails);
+        public Builder lifecycleStateDetails(@Nullable String lifecycleStateDetails) {
+            this.lifecycleStateDetails = lifecycleStateDetails;
             return this;
         }
         @CustomType.Setter
-        public Builder maxPacketSize(Integer maxPacketSize) {
-            this.maxPacketSize = Objects.requireNonNull(maxPacketSize);
+        public Builder maxPacketSize(@Nullable Integer maxPacketSize) {
+            this.maxPacketSize = maxPacketSize;
             return this;
         }
         @CustomType.Setter
-        public Builder sourceId(String sourceId) {
-            this.sourceId = Objects.requireNonNull(sourceId);
+        public Builder sourceId(@Nullable String sourceId) {
+            this.sourceId = sourceId;
             return this;
         }
         @CustomType.Setter
-        public Builder sourcePrivateEndpointIp(String sourcePrivateEndpointIp) {
-            this.sourcePrivateEndpointIp = Objects.requireNonNull(sourcePrivateEndpointIp);
+        public Builder sourcePrivateEndpointIp(@Nullable String sourcePrivateEndpointIp) {
+            this.sourcePrivateEndpointIp = sourcePrivateEndpointIp;
             return this;
         }
         @CustomType.Setter
-        public Builder sourcePrivateEndpointSubnetId(String sourcePrivateEndpointSubnetId) {
-            this.sourcePrivateEndpointSubnetId = Objects.requireNonNull(sourcePrivateEndpointSubnetId);
+        public Builder sourcePrivateEndpointSubnetId(@Nullable String sourcePrivateEndpointSubnetId) {
+            this.sourcePrivateEndpointSubnetId = sourcePrivateEndpointSubnetId;
             return this;
         }
         @CustomType.Setter
-        public Builder sourceType(String sourceType) {
-            this.sourceType = Objects.requireNonNull(sourceType);
+        public Builder sourceType(@Nullable String sourceType) {
+            this.sourceType = sourceType;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder targetId(String targetId) {
-            this.targetId = Objects.requireNonNull(targetId);
+        public Builder targetId(@Nullable String targetId) {
+            this.targetId = targetId;
             return this;
         }
         @CustomType.Setter
-        public Builder targetIp(String targetIp) {
-            this.targetIp = Objects.requireNonNull(targetIp);
+        public Builder targetIp(@Nullable String targetIp) {
+            this.targetIp = targetIp;
             return this;
         }
         @CustomType.Setter
-        public Builder targetType(String targetType) {
-            this.targetType = Objects.requireNonNull(targetType);
+        public Builder targetType(@Nullable String targetType) {
+            this.targetType = targetType;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder trafficMode(String trafficMode) {
-            this.trafficMode = Objects.requireNonNull(trafficMode);
+        public Builder trafficMode(@Nullable String trafficMode) {
+            this.trafficMode = trafficMode;
             return this;
         }
         @CustomType.Setter
-        public Builder vcnId(String vcnId) {
-            this.vcnId = Objects.requireNonNull(vcnId);
+        public Builder vcnId(@Nullable String vcnId) {
+            this.vcnId = vcnId;
             return this;
         }
         @CustomType.Setter
-        public Builder vxlanNetworkIdentifier(String vxlanNetworkIdentifier) {
-            this.vxlanNetworkIdentifier = Objects.requireNonNull(vxlanNetworkIdentifier);
+        public Builder vxlanNetworkIdentifier(@Nullable String vxlanNetworkIdentifier) {
+            this.vxlanNetworkIdentifier = vxlanNetworkIdentifier;
             return this;
         }
         public GetVtapsVtap build() {

@@ -127,7 +127,7 @@ namespace Pulumi.Oci.Core
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         public readonly string NetworkSecurityGroupId;
         /// <summary>
         /// The list of network_security_group_vnics.
@@ -138,7 +138,7 @@ namespace Pulumi.Oci.Core
         private GetNetworkSecurityGroupVnicsResult(
             ImmutableArray<Outputs.GetNetworkSecurityGroupVnicsFilterResult> filters,
 
-            string id,
+            string? id,
 
             string networkSecurityGroupId,
 

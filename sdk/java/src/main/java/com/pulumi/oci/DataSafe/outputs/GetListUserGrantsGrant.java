@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetListUserGrantsGrant {
@@ -14,63 +16,63 @@ public final class GetListUserGrantsGrant {
      * @return A filter to return only items that match the specified user grant depth level.
      * 
      */
-    private Integer depthLevel;
+    private @Nullable Integer depthLevel;
     /**
      * @return A filter to return only items that match the specified user grant name.
      * 
      */
-    private String grantName;
+    private @Nullable String grantName;
     /**
      * @return The unique key of a user grant.
      * 
      */
-    private String key;
+    private @Nullable String key;
     /**
      * @return A filter to return only items that match the specified user privilege category.
      * 
      */
-    private String privilegeCategory;
+    private @Nullable String privilegeCategory;
     /**
      * @return A filter to return only items that match the specified privilege grant type.
      * 
      */
-    private String privilegeType;
+    private @Nullable String privilegeType;
 
     private GetListUserGrantsGrant() {}
     /**
      * @return A filter to return only items that match the specified user grant depth level.
      * 
      */
-    public Integer depthLevel() {
-        return this.depthLevel;
+    public Optional<Integer> depthLevel() {
+        return Optional.ofNullable(this.depthLevel);
     }
     /**
      * @return A filter to return only items that match the specified user grant name.
      * 
      */
-    public String grantName() {
-        return this.grantName;
+    public Optional<String> grantName() {
+        return Optional.ofNullable(this.grantName);
     }
     /**
      * @return The unique key of a user grant.
      * 
      */
-    public String key() {
-        return this.key;
+    public Optional<String> key() {
+        return Optional.ofNullable(this.key);
     }
     /**
      * @return A filter to return only items that match the specified user privilege category.
      * 
      */
-    public String privilegeCategory() {
-        return this.privilegeCategory;
+    public Optional<String> privilegeCategory() {
+        return Optional.ofNullable(this.privilegeCategory);
     }
     /**
      * @return A filter to return only items that match the specified privilege grant type.
      * 
      */
-    public String privilegeType() {
-        return this.privilegeType;
+    public Optional<String> privilegeType() {
+        return Optional.ofNullable(this.privilegeType);
     }
 
     public static Builder builder() {
@@ -82,11 +84,11 @@ public final class GetListUserGrantsGrant {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Integer depthLevel;
-        private String grantName;
-        private String key;
-        private String privilegeCategory;
-        private String privilegeType;
+        private @Nullable Integer depthLevel;
+        private @Nullable String grantName;
+        private @Nullable String key;
+        private @Nullable String privilegeCategory;
+        private @Nullable String privilegeType;
         public Builder() {}
         public Builder(GetListUserGrantsGrant defaults) {
     	      Objects.requireNonNull(defaults);
@@ -98,28 +100,28 @@ public final class GetListUserGrantsGrant {
         }
 
         @CustomType.Setter
-        public Builder depthLevel(Integer depthLevel) {
-            this.depthLevel = Objects.requireNonNull(depthLevel);
+        public Builder depthLevel(@Nullable Integer depthLevel) {
+            this.depthLevel = depthLevel;
             return this;
         }
         @CustomType.Setter
-        public Builder grantName(String grantName) {
-            this.grantName = Objects.requireNonNull(grantName);
+        public Builder grantName(@Nullable String grantName) {
+            this.grantName = grantName;
             return this;
         }
         @CustomType.Setter
-        public Builder key(String key) {
-            this.key = Objects.requireNonNull(key);
+        public Builder key(@Nullable String key) {
+            this.key = key;
             return this;
         }
         @CustomType.Setter
-        public Builder privilegeCategory(String privilegeCategory) {
-            this.privilegeCategory = Objects.requireNonNull(privilegeCategory);
+        public Builder privilegeCategory(@Nullable String privilegeCategory) {
+            this.privilegeCategory = privilegeCategory;
             return this;
         }
         @CustomType.Setter
-        public Builder privilegeType(String privilegeType) {
-            this.privilegeType = Objects.requireNonNull(privilegeType);
+        public Builder privilegeType(@Nullable String privilegeType) {
+            this.privilegeType = privilegeType;
             return this;
         }
         public GetListUserGrantsGrant build() {

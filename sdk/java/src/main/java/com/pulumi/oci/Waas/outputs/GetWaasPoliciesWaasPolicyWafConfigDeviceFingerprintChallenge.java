@@ -10,6 +10,8 @@ import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallenge {
@@ -17,99 +19,99 @@ public final class GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallenge 
      * @return The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
      * 
      */
-    private String action;
+    private @Nullable String action;
     /**
      * @return The number of seconds between challenges from the same IP address. If unspecified, defaults to `60`.
      * 
      */
-    private Integer actionExpirationInSeconds;
+    private @Nullable Integer actionExpirationInSeconds;
     /**
      * @return The challenge settings if `action` is set to `BLOCK`.
      * 
      */
-    private List<GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSetting> challengeSettings;
+    private @Nullable List<GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSetting> challengeSettings;
     /**
      * @return The number of failed requests before taking action. If unspecified, defaults to `10`.
      * 
      */
-    private Integer failureThreshold;
+    private @Nullable Integer failureThreshold;
     /**
      * @return The number of seconds before the failure threshold resets. If unspecified, defaults to  `60`.
      * 
      */
-    private Integer failureThresholdExpirationInSeconds;
+    private @Nullable Integer failureThresholdExpirationInSeconds;
     /**
      * @return Enables or disables the JavaScript challenge Web Application Firewall feature.
      * 
      */
-    private Boolean isEnabled;
+    private @Nullable Boolean isEnabled;
     /**
      * @return The maximum number of IP addresses permitted with the same device fingerprint. If unspecified, defaults to `20`.
      * 
      */
-    private Integer maxAddressCount;
+    private @Nullable Integer maxAddressCount;
     /**
      * @return The number of seconds before the maximum addresses count resets. If unspecified, defaults to `60`.
      * 
      */
-    private Integer maxAddressCountExpirationInSeconds;
+    private @Nullable Integer maxAddressCountExpirationInSeconds;
 
     private GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallenge() {}
     /**
      * @return The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
      * 
      */
-    public String action() {
-        return this.action;
+    public Optional<String> action() {
+        return Optional.ofNullable(this.action);
     }
     /**
      * @return The number of seconds between challenges from the same IP address. If unspecified, defaults to `60`.
      * 
      */
-    public Integer actionExpirationInSeconds() {
-        return this.actionExpirationInSeconds;
+    public Optional<Integer> actionExpirationInSeconds() {
+        return Optional.ofNullable(this.actionExpirationInSeconds);
     }
     /**
      * @return The challenge settings if `action` is set to `BLOCK`.
      * 
      */
     public List<GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSetting> challengeSettings() {
-        return this.challengeSettings;
+        return this.challengeSettings == null ? List.of() : this.challengeSettings;
     }
     /**
      * @return The number of failed requests before taking action. If unspecified, defaults to `10`.
      * 
      */
-    public Integer failureThreshold() {
-        return this.failureThreshold;
+    public Optional<Integer> failureThreshold() {
+        return Optional.ofNullable(this.failureThreshold);
     }
     /**
      * @return The number of seconds before the failure threshold resets. If unspecified, defaults to  `60`.
      * 
      */
-    public Integer failureThresholdExpirationInSeconds() {
-        return this.failureThresholdExpirationInSeconds;
+    public Optional<Integer> failureThresholdExpirationInSeconds() {
+        return Optional.ofNullable(this.failureThresholdExpirationInSeconds);
     }
     /**
      * @return Enables or disables the JavaScript challenge Web Application Firewall feature.
      * 
      */
-    public Boolean isEnabled() {
-        return this.isEnabled;
+    public Optional<Boolean> isEnabled() {
+        return Optional.ofNullable(this.isEnabled);
     }
     /**
      * @return The maximum number of IP addresses permitted with the same device fingerprint. If unspecified, defaults to `20`.
      * 
      */
-    public Integer maxAddressCount() {
-        return this.maxAddressCount;
+    public Optional<Integer> maxAddressCount() {
+        return Optional.ofNullable(this.maxAddressCount);
     }
     /**
      * @return The number of seconds before the maximum addresses count resets. If unspecified, defaults to `60`.
      * 
      */
-    public Integer maxAddressCountExpirationInSeconds() {
-        return this.maxAddressCountExpirationInSeconds;
+    public Optional<Integer> maxAddressCountExpirationInSeconds() {
+        return Optional.ofNullable(this.maxAddressCountExpirationInSeconds);
     }
 
     public static Builder builder() {
@@ -121,14 +123,14 @@ public final class GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallenge 
     }
     @CustomType.Builder
     public static final class Builder {
-        private String action;
-        private Integer actionExpirationInSeconds;
-        private List<GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSetting> challengeSettings;
-        private Integer failureThreshold;
-        private Integer failureThresholdExpirationInSeconds;
-        private Boolean isEnabled;
-        private Integer maxAddressCount;
-        private Integer maxAddressCountExpirationInSeconds;
+        private @Nullable String action;
+        private @Nullable Integer actionExpirationInSeconds;
+        private @Nullable List<GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSetting> challengeSettings;
+        private @Nullable Integer failureThreshold;
+        private @Nullable Integer failureThresholdExpirationInSeconds;
+        private @Nullable Boolean isEnabled;
+        private @Nullable Integer maxAddressCount;
+        private @Nullable Integer maxAddressCountExpirationInSeconds;
         public Builder() {}
         public Builder(GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallenge defaults) {
     	      Objects.requireNonNull(defaults);
@@ -143,46 +145,46 @@ public final class GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallenge 
         }
 
         @CustomType.Setter
-        public Builder action(String action) {
-            this.action = Objects.requireNonNull(action);
+        public Builder action(@Nullable String action) {
+            this.action = action;
             return this;
         }
         @CustomType.Setter
-        public Builder actionExpirationInSeconds(Integer actionExpirationInSeconds) {
-            this.actionExpirationInSeconds = Objects.requireNonNull(actionExpirationInSeconds);
+        public Builder actionExpirationInSeconds(@Nullable Integer actionExpirationInSeconds) {
+            this.actionExpirationInSeconds = actionExpirationInSeconds;
             return this;
         }
         @CustomType.Setter
-        public Builder challengeSettings(List<GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSetting> challengeSettings) {
-            this.challengeSettings = Objects.requireNonNull(challengeSettings);
+        public Builder challengeSettings(@Nullable List<GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSetting> challengeSettings) {
+            this.challengeSettings = challengeSettings;
             return this;
         }
         public Builder challengeSettings(GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSetting... challengeSettings) {
             return challengeSettings(List.of(challengeSettings));
         }
         @CustomType.Setter
-        public Builder failureThreshold(Integer failureThreshold) {
-            this.failureThreshold = Objects.requireNonNull(failureThreshold);
+        public Builder failureThreshold(@Nullable Integer failureThreshold) {
+            this.failureThreshold = failureThreshold;
             return this;
         }
         @CustomType.Setter
-        public Builder failureThresholdExpirationInSeconds(Integer failureThresholdExpirationInSeconds) {
-            this.failureThresholdExpirationInSeconds = Objects.requireNonNull(failureThresholdExpirationInSeconds);
+        public Builder failureThresholdExpirationInSeconds(@Nullable Integer failureThresholdExpirationInSeconds) {
+            this.failureThresholdExpirationInSeconds = failureThresholdExpirationInSeconds;
             return this;
         }
         @CustomType.Setter
-        public Builder isEnabled(Boolean isEnabled) {
-            this.isEnabled = Objects.requireNonNull(isEnabled);
+        public Builder isEnabled(@Nullable Boolean isEnabled) {
+            this.isEnabled = isEnabled;
             return this;
         }
         @CustomType.Setter
-        public Builder maxAddressCount(Integer maxAddressCount) {
-            this.maxAddressCount = Objects.requireNonNull(maxAddressCount);
+        public Builder maxAddressCount(@Nullable Integer maxAddressCount) {
+            this.maxAddressCount = maxAddressCount;
             return this;
         }
         @CustomType.Setter
-        public Builder maxAddressCountExpirationInSeconds(Integer maxAddressCountExpirationInSeconds) {
-            this.maxAddressCountExpirationInSeconds = Objects.requireNonNull(maxAddressCountExpirationInSeconds);
+        public Builder maxAddressCountExpirationInSeconds(@Nullable Integer maxAddressCountExpirationInSeconds) {
+            this.maxAddressCountExpirationInSeconds = maxAddressCountExpirationInSeconds;
             return this;
         }
         public GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallenge build() {

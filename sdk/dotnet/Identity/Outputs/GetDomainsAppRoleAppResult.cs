@@ -16,35 +16,35 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// Member display name
         /// </summary>
-        public readonly string Display;
+        public readonly string? Display;
         /// <summary>
         /// Application name
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// The URI corresponding to the member Resource of this Group
         /// </summary>
-        public readonly string Ref;
+        public readonly string? Ref;
         /// <summary>
         /// The serviceInstanceIdentifier of the App that defines this AppRole. This value will match the opcServiceInstanceGUID of any service-instance that the App represents.
         /// </summary>
-        public readonly string ServiceInstanceIdentifier;
+        public readonly string? ServiceInstanceIdentifier;
         /// <summary>
         /// Value of the tag.
         /// </summary>
-        public readonly string Value;
+        public readonly string? Value;
 
         [OutputConstructor]
         private GetDomainsAppRoleAppResult(
-            string display,
+            string? display,
 
-            string name,
+            string? name,
 
-            string @ref,
+            string? @ref,
 
-            string serviceInstanceIdentifier,
+            string? serviceInstanceIdentifier,
 
-            string value)
+            string? value)
         {
             Display = display;
             Name = name;

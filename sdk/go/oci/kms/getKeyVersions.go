@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Key Versions in Oracle Cloud Infrastructure Kms service.
@@ -71,7 +70,7 @@ type GetKeyVersionsArgs struct {
 type GetKeyVersionsResult struct {
 	Filters []GetKeyVersionsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The OCID of the master encryption key associated with this key version.
 	KeyId string `pulumi:"keyId"`
 	// The list of key_versions.
@@ -120,19 +119,13 @@ func (o GetKeyVersionsResultOutput) ToGetKeyVersionsResultOutputWithContext(ctx 
 	return o
 }
 
-func (o GetKeyVersionsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetKeyVersionsResult] {
-	return pulumix.Output[GetKeyVersionsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetKeyVersionsResultOutput) Filters() GetKeyVersionsFilterArrayOutput {
 	return o.ApplyT(func(v GetKeyVersionsResult) []GetKeyVersionsFilter { return v.Filters }).(GetKeyVersionsFilterArrayOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetKeyVersionsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetKeyVersionsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetKeyVersionsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetKeyVersionsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the master encryption key associated with this key version.

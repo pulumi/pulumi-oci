@@ -106,11 +106,11 @@ export interface GetAuditEventAnalyticResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The aggregated data point items.
      */
-    readonly items: outputs.DataSafe.GetAuditEventAnalyticItem[];
+    readonly items?: outputs.DataSafe.GetAuditEventAnalyticItem[];
     readonly queryTimeZone?: string;
     readonly scimQuery?: string;
     readonly summaryFields?: string[];

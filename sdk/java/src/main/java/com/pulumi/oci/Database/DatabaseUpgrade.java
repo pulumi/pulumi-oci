@@ -19,6 +19,7 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -102,42 +103,42 @@ public class DatabaseUpgrade extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="characterSet", refs={String.class}, tree="[0]")
-    private Output<String> characterSet;
+    private Output</* @Nullable */ String> characterSet;
 
     /**
      * @return The character set for the database.
      * 
      */
-    public Output<String> characterSet() {
-        return this.characterSet;
+    public Output<Optional<String>> characterSet() {
+        return Codegen.optional(this.characterSet);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
     @Export(name="compartmentId", refs={String.class}, tree="[0]")
-    private Output<String> compartmentId;
+    private Output</* @Nullable */ String> compartmentId;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    public Output<String> compartmentId() {
-        return this.compartmentId;
+    public Output<Optional<String>> compartmentId() {
+        return Codegen.optional(this.compartmentId);
     }
     /**
      * The Connection strings used to connect to the Oracle Database.
      * 
      */
     @Export(name="connectionStrings", refs={List.class,DatabaseUpgradeConnectionString.class}, tree="[0,1]")
-    private Output<List<DatabaseUpgradeConnectionString>> connectionStrings;
+    private Output</* @Nullable */ List<DatabaseUpgradeConnectionString>> connectionStrings;
 
     /**
      * @return The Connection strings used to connect to the Oracle Database.
      * 
      */
-    public Output<List<DatabaseUpgradeConnectionString>> connectionStrings() {
-        return this.connectionStrings;
+    public Output<Optional<List<DatabaseUpgradeConnectionString>>> connectionStrings() {
+        return Codegen.optional(this.connectionStrings);
     }
     /**
      * The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -158,378 +159,378 @@ public class DatabaseUpgrade extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="databaseSoftwareImageId", refs={String.class}, tree="[0]")
-    private Output<String> databaseSoftwareImageId;
+    private Output</* @Nullable */ String> databaseSoftwareImageId;
 
     /**
      * @return The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the image to be used to upgrade a database.
      * 
      */
-    public Output<String> databaseSoftwareImageId() {
-        return this.databaseSoftwareImageId;
+    public Output<Optional<String>> databaseSoftwareImageId() {
+        return Codegen.optional(this.databaseSoftwareImageId);
     }
     /**
      * Details for the database upgrade source.
      * 
      */
     @Export(name="databaseUpgradeSourceDetails", refs={DatabaseUpgradeDatabaseUpgradeSourceDetails.class}, tree="[0]")
-    private Output<DatabaseUpgradeDatabaseUpgradeSourceDetails> databaseUpgradeSourceDetails;
+    private Output</* @Nullable */ DatabaseUpgradeDatabaseUpgradeSourceDetails> databaseUpgradeSourceDetails;
 
     /**
      * @return Details for the database upgrade source.
      * 
      */
-    public Output<DatabaseUpgradeDatabaseUpgradeSourceDetails> databaseUpgradeSourceDetails() {
-        return this.databaseUpgradeSourceDetails;
+    public Output<Optional<DatabaseUpgradeDatabaseUpgradeSourceDetails>> databaseUpgradeSourceDetails() {
+        return Codegen.optional(this.databaseUpgradeSourceDetails);
     }
     /**
      * Backup Options To use any of the API operations, you must be authorized in an IAM policy. If you&#39;re not authorized, talk to an administrator. If you&#39;re an administrator who needs to write policies to give users access, see [Getting Started with Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
      * 
      */
     @Export(name="dbBackupConfigs", refs={List.class,DatabaseUpgradeDbBackupConfig.class}, tree="[0,1]")
-    private Output<List<DatabaseUpgradeDbBackupConfig>> dbBackupConfigs;
+    private Output</* @Nullable */ List<DatabaseUpgradeDbBackupConfig>> dbBackupConfigs;
 
     /**
      * @return Backup Options To use any of the API operations, you must be authorized in an IAM policy. If you&#39;re not authorized, talk to an administrator. If you&#39;re an administrator who needs to write policies to give users access, see [Getting Started with Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
      * 
      */
-    public Output<List<DatabaseUpgradeDbBackupConfig>> dbBackupConfigs() {
-        return this.dbBackupConfigs;
+    public Output<Optional<List<DatabaseUpgradeDbBackupConfig>>> dbBackupConfigs() {
+        return Codegen.optional(this.dbBackupConfigs);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
      * 
      */
     @Export(name="dbHomeId", refs={String.class}, tree="[0]")
-    private Output<String> dbHomeId;
+    private Output</* @Nullable */ String> dbHomeId;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
      * 
      */
-    public Output<String> dbHomeId() {
-        return this.dbHomeId;
+    public Output<Optional<String>> dbHomeId() {
+        return Codegen.optional(this.dbHomeId);
     }
     /**
      * The database name.
      * 
      */
     @Export(name="dbName", refs={String.class}, tree="[0]")
-    private Output<String> dbName;
+    private Output</* @Nullable */ String> dbName;
 
     /**
      * @return The database name.
      * 
      */
-    public Output<String> dbName() {
-        return this.dbName;
+    public Output<Optional<String>> dbName() {
+        return Codegen.optional(this.dbName);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
      * 
      */
     @Export(name="dbSystemId", refs={String.class}, tree="[0]")
-    private Output<String> dbSystemId;
+    private Output</* @Nullable */ String> dbSystemId;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
      * 
      */
-    public Output<String> dbSystemId() {
-        return this.dbSystemId;
+    public Output<Optional<String>> dbSystemId() {
+        return Codegen.optional(this.dbSystemId);
     }
     /**
      * A system-generated name for the database to ensure uniqueness within an Oracle Data Guard group (a primary database and its standby databases). The unique name cannot be changed.
      * 
      */
     @Export(name="dbUniqueName", refs={String.class}, tree="[0]")
-    private Output<String> dbUniqueName;
+    private Output</* @Nullable */ String> dbUniqueName;
 
     /**
      * @return A system-generated name for the database to ensure uniqueness within an Oracle Data Guard group (a primary database and its standby databases). The unique name cannot be changed.
      * 
      */
-    public Output<String> dbUniqueName() {
-        return this.dbUniqueName;
+    public Output<Optional<String>> dbUniqueName() {
+        return Codegen.optional(this.dbUniqueName);
     }
     /**
      * **Deprecated.** The dbWorkload field has been deprecated for Exadata Database Service on Dedicated Infrastructure, Exadata Database Service on Cloud@Customer, and Base Database Service. Support for this attribute will end in November 2023. You may choose to update your custom scripts to exclude the dbWorkload attribute. After November 2023 if you pass a value to the dbWorkload attribute, it will be ignored.
      * 
      */
     @Export(name="dbWorkload", refs={String.class}, tree="[0]")
-    private Output<String> dbWorkload;
+    private Output</* @Nullable */ String> dbWorkload;
 
     /**
      * @return **Deprecated.** The dbWorkload field has been deprecated for Exadata Database Service on Dedicated Infrastructure, Exadata Database Service on Cloud@Customer, and Base Database Service. Support for this attribute will end in November 2023. You may choose to update your custom scripts to exclude the dbWorkload attribute. After November 2023 if you pass a value to the dbWorkload attribute, it will be ignored.
      * 
      */
-    public Output<String> dbWorkload() {
-        return this.dbWorkload;
+    public Output<Optional<String>> dbWorkload() {
+        return Codegen.optional(this.dbWorkload);
     }
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * True if the database is a container database.
      * 
      */
     @Export(name="isCdb", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isCdb;
+    private Output</* @Nullable */ Boolean> isCdb;
 
     /**
      * @return True if the database is a container database.
      * 
      */
-    public Output<Boolean> isCdb() {
-        return this.isCdb;
+    public Output<Optional<Boolean>> isCdb() {
+        return Codegen.optional(this.isCdb);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
      * 
      */
     @Export(name="keyStoreId", refs={String.class}, tree="[0]")
-    private Output<String> keyStoreId;
+    private Output</* @Nullable */ String> keyStoreId;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
      * 
      */
-    public Output<String> keyStoreId() {
-        return this.keyStoreId;
+    public Output<Optional<String>> keyStoreId() {
+        return Codegen.optional(this.keyStoreId);
     }
     /**
      * The wallet name for Oracle Key Vault.
      * 
      */
     @Export(name="keyStoreWalletName", refs={String.class}, tree="[0]")
-    private Output<String> keyStoreWalletName;
+    private Output</* @Nullable */ String> keyStoreWalletName;
 
     /**
      * @return The wallet name for Oracle Key Vault.
      * 
      */
-    public Output<String> keyStoreWalletName() {
-        return this.keyStoreWalletName;
+    public Output<Optional<String>> keyStoreWalletName() {
+        return Codegen.optional(this.keyStoreWalletName);
     }
     /**
      * The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
      * 
      */
     @Export(name="kmsKeyId", refs={String.class}, tree="[0]")
-    private Output<String> kmsKeyId;
+    private Output</* @Nullable */ String> kmsKeyId;
 
     /**
      * @return The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
      * 
      */
-    public Output<String> kmsKeyId() {
-        return this.kmsKeyId;
+    public Output<Optional<String>> kmsKeyId() {
+        return Codegen.optional(this.kmsKeyId);
     }
     /**
      * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
      * 
      */
     @Export(name="kmsKeyVersionId", refs={String.class}, tree="[0]")
-    private Output<String> kmsKeyVersionId;
+    private Output</* @Nullable */ String> kmsKeyVersionId;
 
     /**
      * @return The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
      * 
      */
-    public Output<String> kmsKeyVersionId() {
-        return this.kmsKeyVersionId;
+    public Output<Optional<String>> kmsKeyVersionId() {
+        return Codegen.optional(this.kmsKeyVersionId);
     }
     /**
      * The duration when the latest database backup created.
      * 
      */
     @Export(name="lastBackupDurationInSeconds", refs={Integer.class}, tree="[0]")
-    private Output<Integer> lastBackupDurationInSeconds;
+    private Output</* @Nullable */ Integer> lastBackupDurationInSeconds;
 
     /**
      * @return The duration when the latest database backup created.
      * 
      */
-    public Output<Integer> lastBackupDurationInSeconds() {
-        return this.lastBackupDurationInSeconds;
+    public Output<Optional<Integer>> lastBackupDurationInSeconds() {
+        return Codegen.optional(this.lastBackupDurationInSeconds);
     }
     /**
      * The date and time when the latest database backup was created.
      * 
      */
     @Export(name="lastBackupTimestamp", refs={String.class}, tree="[0]")
-    private Output<String> lastBackupTimestamp;
+    private Output</* @Nullable */ String> lastBackupTimestamp;
 
     /**
      * @return The date and time when the latest database backup was created.
      * 
      */
-    public Output<String> lastBackupTimestamp() {
-        return this.lastBackupTimestamp;
+    public Output<Optional<String>> lastBackupTimestamp() {
+        return Codegen.optional(this.lastBackupTimestamp);
     }
     /**
      * The date and time when the latest database backup failed.
      * 
      */
     @Export(name="lastFailedBackupTimestamp", refs={String.class}, tree="[0]")
-    private Output<String> lastFailedBackupTimestamp;
+    private Output</* @Nullable */ String> lastFailedBackupTimestamp;
 
     /**
      * @return The date and time when the latest database backup failed.
      * 
      */
-    public Output<String> lastFailedBackupTimestamp() {
-        return this.lastFailedBackupTimestamp;
+    public Output<Optional<String>> lastFailedBackupTimestamp() {
+        return Codegen.optional(this.lastFailedBackupTimestamp);
     }
     /**
      * Additional information about the current lifecycle state.
      * 
      */
     @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
-    private Output<String> lifecycleDetails;
+    private Output</* @Nullable */ String> lifecycleDetails;
 
     /**
      * @return Additional information about the current lifecycle state.
      * 
      */
-    public Output<String> lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Output<Optional<String>> lifecycleDetails() {
+        return Codegen.optional(this.lifecycleDetails);
     }
     /**
      * The national character set for the database.
      * 
      */
     @Export(name="ncharacterSet", refs={String.class}, tree="[0]")
-    private Output<String> ncharacterSet;
+    private Output</* @Nullable */ String> ncharacterSet;
 
     /**
      * @return The national character set for the database.
      * 
      */
-    public Output<String> ncharacterSet() {
-        return this.ncharacterSet;
+    public Output<Optional<String>> ncharacterSet() {
+        return Codegen.optional(this.ncharacterSet);
     }
     /**
      * The name of the pluggable database. The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. Pluggable database should not be same as database name.
      * 
      */
     @Export(name="pdbName", refs={String.class}, tree="[0]")
-    private Output<String> pdbName;
+    private Output</* @Nullable */ String> pdbName;
 
     /**
      * @return The name of the pluggable database. The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. Pluggable database should not be same as database name.
      * 
      */
-    public Output<String> pdbName() {
-        return this.pdbName;
+    public Output<Optional<String>> pdbName() {
+        return Codegen.optional(this.pdbName);
     }
     /**
      * Specifies a prefix for the `Oracle SID` of the database to be created.
      * 
      */
     @Export(name="sidPrefix", refs={String.class}, tree="[0]")
-    private Output<String> sidPrefix;
+    private Output</* @Nullable */ String> sidPrefix;
 
     /**
      * @return Specifies a prefix for the `Oracle SID` of the database to be created.
      * 
      */
-    public Output<String> sidPrefix() {
-        return this.sidPrefix;
+    public Output<Optional<String>> sidPrefix() {
+        return Codegen.optional(this.sidPrefix);
     }
     /**
      * Point in time recovery timeStamp of the source database at which cloned database system is cloned from the source database system, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339)
      * 
      */
     @Export(name="sourceDatabasePointInTimeRecoveryTimestamp", refs={String.class}, tree="[0]")
-    private Output<String> sourceDatabasePointInTimeRecoveryTimestamp;
+    private Output</* @Nullable */ String> sourceDatabasePointInTimeRecoveryTimestamp;
 
     /**
      * @return Point in time recovery timeStamp of the source database at which cloned database system is cloned from the source database system, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339)
      * 
      */
-    public Output<String> sourceDatabasePointInTimeRecoveryTimestamp() {
-        return this.sourceDatabasePointInTimeRecoveryTimestamp;
+    public Output<Optional<String>> sourceDatabasePointInTimeRecoveryTimestamp() {
+        return Codegen.optional(this.sourceDatabasePointInTimeRecoveryTimestamp);
     }
     /**
      * The current state of the database.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The current state of the database.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * The date and time the database was created.
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The date and time the database was created.
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
      * 
      */
     @Export(name="vaultId", refs={String.class}, tree="[0]")
-    private Output<String> vaultId;
+    private Output</* @Nullable */ String> vaultId;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
      * 
      */
-    public Output<String> vaultId() {
-        return this.vaultId;
+    public Output<Optional<String>> vaultId() {
+        return Codegen.optional(this.vaultId);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
      * 
      */
     @Export(name="vmClusterId", refs={String.class}, tree="[0]")
-    private Output<String> vmClusterId;
+    private Output</* @Nullable */ String> vmClusterId;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
      * 
      */
-    public Output<String> vmClusterId() {
-        return this.vmClusterId;
+    public Output<Optional<String>> vmClusterId() {
+        return Codegen.optional(this.vmClusterId);
     }
 
     /**

@@ -133,57 +133,57 @@ namespace Pulumi.Oci.ObjectStorage
     [OutputType]
     public sealed class GetObjectHeadResult
     {
-        public readonly string ArchivalState;
+        public readonly string? ArchivalState;
         public readonly string Bucket;
         /// <summary>
         /// The content-length of the object
         /// </summary>
-        public readonly int ContentLength;
+        public readonly int? ContentLength;
         /// <summary>
         /// The content-type of the object
         /// </summary>
-        public readonly string ContentType;
+        public readonly string? ContentType;
         /// <summary>
         /// The etag of the object
         /// </summary>
-        public readonly string Etag;
+        public readonly string? Etag;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The metadata of the object
         /// </summary>
-        public readonly ImmutableDictionary<string, object> Metadata;
+        public readonly ImmutableDictionary<string, object>? Metadata;
         public readonly string Namespace;
         public readonly string Object;
         /// <summary>
         /// The storage tier that the object is stored in.
         /// * `archival-state` - Archival state of an object. This field is set only for objects in Archive tier.
         /// </summary>
-        public readonly string StorageTier;
+        public readonly string? StorageTier;
 
         [OutputConstructor]
         private GetObjectHeadResult(
-            string archivalState,
+            string? archivalState,
 
             string bucket,
 
-            int contentLength,
+            int? contentLength,
 
-            string contentType,
+            string? contentType,
 
-            string etag,
+            string? etag,
 
-            string id,
+            string? id,
 
-            ImmutableDictionary<string, object> metadata,
+            ImmutableDictionary<string, object>? metadata,
 
             string @namespace,
 
             string @object,
 
-            string storageTier)
+            string? storageTier)
         {
             ArchivalState = archivalState;
             Bucket = bucket;

@@ -137,26 +137,17 @@ class GetDatabaseResult:
 
     @property
     @pulumi.getter(name="characterSet")
-    def character_set(self) -> str:
-        """
-        The character set for the database.
-        """
+    def character_set(self) -> Optional[str]:
         return pulumi.get(self, "character_set")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="connectionStrings")
-    def connection_strings(self) -> Sequence['outputs.GetDatabaseConnectionStringResult']:
-        """
-        The Connection strings used to connect to the Oracle Database.
-        """
+    def connection_strings(self) -> Optional[Sequence['outputs.GetDatabaseConnectionStringResult']]:
         return pulumi.get(self, "connection_strings")
 
     @property
@@ -166,251 +157,167 @@ class GetDatabaseResult:
 
     @property
     @pulumi.getter(name="databaseManagementConfigs")
-    def database_management_configs(self) -> Sequence['outputs.GetDatabaseDatabaseManagementConfigResult']:
-        """
-        The configuration of the Database Management service.
-        """
+    def database_management_configs(self) -> Optional[Sequence['outputs.GetDatabaseDatabaseManagementConfigResult']]:
         return pulumi.get(self, "database_management_configs")
 
     @property
     @pulumi.getter(name="databaseSoftwareImageId")
-    def database_software_image_id(self) -> str:
-        """
-        The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-        """
+    def database_software_image_id(self) -> Optional[str]:
         return pulumi.get(self, "database_software_image_id")
 
     @property
     @pulumi.getter
-    def databases(self) -> Sequence['outputs.GetDatabaseDatabaseResult']:
+    def databases(self) -> Optional[Sequence['outputs.GetDatabaseDatabaseResult']]:
         return pulumi.get(self, "databases")
 
     @property
     @pulumi.getter(name="dbBackupConfigs")
-    def db_backup_configs(self) -> Sequence['outputs.GetDatabaseDbBackupConfigResult']:
-        """
-        Backup Options To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized, talk to an administrator. If you're an administrator who needs to write policies to give users access, see [Getting Started with Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
-        """
+    def db_backup_configs(self) -> Optional[Sequence['outputs.GetDatabaseDbBackupConfigResult']]:
         return pulumi.get(self, "db_backup_configs")
 
     @property
     @pulumi.getter(name="dbHomeId")
-    def db_home_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
-        """
+    def db_home_id(self) -> Optional[str]:
         return pulumi.get(self, "db_home_id")
 
     @property
     @pulumi.getter(name="dbName")
-    def db_name(self) -> str:
-        """
-        The database name.
-        """
+    def db_name(self) -> Optional[str]:
         return pulumi.get(self, "db_name")
 
     @property
     @pulumi.getter(name="dbSystemId")
-    def db_system_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
-        """
+    def db_system_id(self) -> Optional[str]:
         return pulumi.get(self, "db_system_id")
 
     @property
     @pulumi.getter(name="dbUniqueName")
-    def db_unique_name(self) -> str:
-        """
-        A system-generated name for the database to ensure uniqueness within an Oracle Data Guard group (a primary database and its standby databases). The unique name cannot be changed.
-        """
+    def db_unique_name(self) -> Optional[str]:
         return pulumi.get(self, "db_unique_name")
 
     @property
     @pulumi.getter(name="dbVersion")
-    def db_version(self) -> str:
+    def db_version(self) -> Optional[str]:
         return pulumi.get(self, "db_version")
 
     @property
     @pulumi.getter(name="dbWorkload")
-    def db_workload(self) -> str:
-        """
-        **Deprecated.** The dbWorkload field has been deprecated for Exadata Database Service on Dedicated Infrastructure, Exadata Database Service on Cloud@Customer, and Base Database Service. Support for this attribute will end in November 2023. You may choose to update your custom scripts to exclude the dbWorkload attribute. After November 2023 if you pass a value to the dbWorkload attribute, it will be ignored.
-        """
+    def db_workload(self) -> Optional[str]:
         return pulumi.get(self, "db_workload")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="isCdb")
-    def is_cdb(self) -> bool:
-        """
-        True if the database is a container database.
-        """
+    def is_cdb(self) -> Optional[bool]:
         return pulumi.get(self, "is_cdb")
 
     @property
     @pulumi.getter(name="keyStoreId")
-    def key_store_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
-        """
+    def key_store_id(self) -> Optional[str]:
         return pulumi.get(self, "key_store_id")
 
     @property
     @pulumi.getter(name="keyStoreWalletName")
-    def key_store_wallet_name(self) -> str:
-        """
-        The wallet name for Oracle Key Vault.
-        """
+    def key_store_wallet_name(self) -> Optional[str]:
         return pulumi.get(self, "key_store_wallet_name")
 
     @property
     @pulumi.getter(name="kmsKeyId")
-    def kms_key_id(self) -> str:
-        """
-        The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
-        """
+    def kms_key_id(self) -> Optional[str]:
         return pulumi.get(self, "kms_key_id")
 
     @property
     @pulumi.getter(name="kmsKeyMigration")
-    def kms_key_migration(self) -> bool:
+    def kms_key_migration(self) -> Optional[bool]:
         return pulumi.get(self, "kms_key_migration")
 
     @property
     @pulumi.getter(name="kmsKeyRotation")
-    def kms_key_rotation(self) -> int:
+    def kms_key_rotation(self) -> Optional[int]:
         return pulumi.get(self, "kms_key_rotation")
 
     @property
     @pulumi.getter(name="kmsKeyVersionId")
-    def kms_key_version_id(self) -> str:
-        """
-        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
-        """
+    def kms_key_version_id(self) -> Optional[str]:
         return pulumi.get(self, "kms_key_version_id")
 
     @property
     @pulumi.getter(name="lastBackupDurationInSeconds")
-    def last_backup_duration_in_seconds(self) -> int:
-        """
-        The duration when the latest database backup created.
-        """
+    def last_backup_duration_in_seconds(self) -> Optional[int]:
         return pulumi.get(self, "last_backup_duration_in_seconds")
 
     @property
     @pulumi.getter(name="lastBackupTimestamp")
-    def last_backup_timestamp(self) -> str:
-        """
-        The date and time when the latest database backup was created.
-        """
+    def last_backup_timestamp(self) -> Optional[str]:
         return pulumi.get(self, "last_backup_timestamp")
 
     @property
     @pulumi.getter(name="lastFailedBackupTimestamp")
-    def last_failed_backup_timestamp(self) -> str:
-        """
-        The date and time when the latest database backup failed.
-        """
+    def last_failed_backup_timestamp(self) -> Optional[str]:
         return pulumi.get(self, "last_failed_backup_timestamp")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        Additional information about the current lifecycle state.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="ncharacterSet")
-    def ncharacter_set(self) -> str:
-        """
-        The national character set for the database.
-        """
+    def ncharacter_set(self) -> Optional[str]:
         return pulumi.get(self, "ncharacter_set")
 
     @property
     @pulumi.getter(name="pdbName")
-    def pdb_name(self) -> str:
-        """
-        The name of the pluggable database. The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. Pluggable database should not be same as database name.
-        """
+    def pdb_name(self) -> Optional[str]:
         return pulumi.get(self, "pdb_name")
 
     @property
     @pulumi.getter(name="sidPrefix")
-    def sid_prefix(self) -> str:
-        """
-        Specifies a prefix for the `Oracle SID` of the database to be created.
-        """
+    def sid_prefix(self) -> Optional[str]:
         return pulumi.get(self, "sid_prefix")
 
     @property
     @pulumi.getter
-    def source(self) -> str:
+    def source(self) -> Optional[str]:
         return pulumi.get(self, "source")
 
     @property
     @pulumi.getter(name="sourceDatabasePointInTimeRecoveryTimestamp")
-    def source_database_point_in_time_recovery_timestamp(self) -> str:
-        """
-        Point in time recovery timeStamp of the source database at which cloned database system is cloned from the source database system, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339)
-        """
+    def source_database_point_in_time_recovery_timestamp(self) -> Optional[str]:
         return pulumi.get(self, "source_database_point_in_time_recovery_timestamp")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the database.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the database was created.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="vaultId")
-    def vault_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
-        """
+    def vault_id(self) -> Optional[str]:
         return pulumi.get(self, "vault_id")
 
     @property
     @pulumi.getter(name="vmClusterId")
-    def vm_cluster_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
-        """
+    def vm_cluster_id(self) -> Optional[str]:
         return pulumi.get(self, "vm_cluster_id")
 
 
@@ -462,21 +369,7 @@ class AwaitableGetDatabaseResult(GetDatabaseResult):
 def get_database(database_id: Optional[str] = None,
                  opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDatabaseResult:
     """
-    This data source provides details about a specific Database resource in Oracle Cloud Infrastructure Database service.
-
-    Gets information about the specified database.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_database = oci.Database.get_database(database_id=var["database_id"])
-    ```
-
-
-    :param str database_id: The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['databaseId'] = database_id
@@ -527,20 +420,6 @@ def get_database(database_id: Optional[str] = None,
 def get_database_output(database_id: Optional[pulumi.Input[str]] = None,
                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDatabaseResult]:
     """
-    This data source provides details about a specific Database resource in Oracle Cloud Infrastructure Database service.
-
-    Gets information about the specified database.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_database = oci.Database.get_database(database_id=var["database_id"])
-    ```
-
-
-    :param str database_id: The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+    Use this data source to access information about an existing resource.
     """
     ...

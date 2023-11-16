@@ -8,6 +8,8 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonModified {
@@ -15,17 +17,17 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComp
      * @return A map contains the statistics for the SQL execution using the plan. The key of the map is the metric&#39;s name. The value of the map is the metric&#39;s value.
      * 
      */
-    private Map<String,Object> planStats;
+    private @Nullable Map<String,Object> planStats;
     /**
      * @return The status of the execution using the plan.
      * 
      */
-    private String planStatus;
+    private @Nullable String planStatus;
     /**
      * @return The type of the original or modified plan with profile, index, and so on.
      * 
      */
-    private String planType;
+    private @Nullable String planType;
 
     private GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonModified() {}
     /**
@@ -33,21 +35,21 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComp
      * 
      */
     public Map<String,Object> planStats() {
-        return this.planStats;
+        return this.planStats == null ? Map.of() : this.planStats;
     }
     /**
      * @return The status of the execution using the plan.
      * 
      */
-    public String planStatus() {
-        return this.planStatus;
+    public Optional<String> planStatus() {
+        return Optional.ofNullable(this.planStatus);
     }
     /**
      * @return The type of the original or modified plan with profile, index, and so on.
      * 
      */
-    public String planType() {
-        return this.planType;
+    public Optional<String> planType() {
+        return Optional.ofNullable(this.planType);
     }
 
     public static Builder builder() {
@@ -59,9 +61,9 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComp
     }
     @CustomType.Builder
     public static final class Builder {
-        private Map<String,Object> planStats;
-        private String planStatus;
-        private String planType;
+        private @Nullable Map<String,Object> planStats;
+        private @Nullable String planStatus;
+        private @Nullable String planType;
         public Builder() {}
         public Builder(GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonModified defaults) {
     	      Objects.requireNonNull(defaults);
@@ -71,18 +73,18 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComp
         }
 
         @CustomType.Setter
-        public Builder planStats(Map<String,Object> planStats) {
-            this.planStats = Objects.requireNonNull(planStats);
+        public Builder planStats(@Nullable Map<String,Object> planStats) {
+            this.planStats = planStats;
             return this;
         }
         @CustomType.Setter
-        public Builder planStatus(String planStatus) {
-            this.planStatus = Objects.requireNonNull(planStatus);
+        public Builder planStatus(@Nullable String planStatus) {
+            this.planStatus = planStatus;
             return this;
         }
         @CustomType.Setter
-        public Builder planType(String planType) {
-            this.planType = Objects.requireNonNull(planType);
+        public Builder planType(@Nullable String planType) {
+            this.planType = planType;
             return this;
         }
         public GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonModified build() {

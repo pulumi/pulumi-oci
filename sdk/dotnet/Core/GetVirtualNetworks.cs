@@ -79,7 +79,7 @@ namespace Pulumi.Oci.Core
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         public readonly string? State;
         public readonly ImmutableArray<Outputs.GetVirtualNetworksVirtualNetworkResult> VirtualNetworks;
 
@@ -91,7 +91,7 @@ namespace Pulumi.Oci.Core
 
             ImmutableArray<Outputs.GetVirtualNetworksFilterResult> filters,
 
-            string id,
+            string? id,
 
             string? state,
 

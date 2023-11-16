@@ -16,35 +16,35 @@ namespace Pulumi.Oci.LoadBalancer.Outputs
         /// <summary>
         /// The valid domain name (hostname) or IP address to use in the redirect URI.
         /// </summary>
-        public readonly string Host;
+        public readonly string? Host;
         /// <summary>
         /// The HTTP URI path to use in the redirect URI.
         /// </summary>
-        public readonly string Path;
+        public readonly string? Path;
         /// <summary>
         /// The communication port to use in the redirect URI.
         /// </summary>
-        public readonly int Port;
+        public readonly int? Port;
         /// <summary>
         /// The HTTP protocol to use in the redirect URI.
         /// </summary>
-        public readonly string Protocol;
+        public readonly string? Protocol;
         /// <summary>
         /// The query string to use in the redirect URI.
         /// </summary>
-        public readonly string Query;
+        public readonly string? Query;
 
         [OutputConstructor]
         private GetRuleSetsRuleSetItemRedirectUriResult(
-            string host,
+            string? host,
 
-            string path,
+            string? path,
 
-            int port,
+            int? port,
 
-            string protocol,
+            string? protocol,
 
-            string query)
+            string? query)
         {
             Host = host;
             Path = path;

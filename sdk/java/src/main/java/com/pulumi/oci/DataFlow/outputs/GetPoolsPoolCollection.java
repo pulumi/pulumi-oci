@@ -7,14 +7,15 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.DataFlow.outputs.GetPoolsPoolCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetPoolsPoolCollection {
-    private List<GetPoolsPoolCollectionItem> items;
+    private @Nullable List<GetPoolsPoolCollectionItem> items;
 
     private GetPoolsPoolCollection() {}
     public List<GetPoolsPoolCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -26,7 +27,7 @@ public final class GetPoolsPoolCollection {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetPoolsPoolCollectionItem> items;
+        private @Nullable List<GetPoolsPoolCollectionItem> items;
         public Builder() {}
         public Builder(GetPoolsPoolCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -34,8 +35,8 @@ public final class GetPoolsPoolCollection {
         }
 
         @CustomType.Setter
-        public Builder items(List<GetPoolsPoolCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetPoolsPoolCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetPoolsPoolCollectionItem... items) {

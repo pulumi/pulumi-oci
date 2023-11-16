@@ -71,7 +71,7 @@ export interface GetDeploymentBackupsResult {
     /**
      * The list of deployment_backup_collection.
      */
-    readonly deploymentBackupCollections: outputs.GoldenGate.GetDeploymentBackupsDeploymentBackupCollection[];
+    readonly deploymentBackupCollections?: outputs.GoldenGate.GetDeploymentBackupsDeploymentBackupCollection[];
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
      */
@@ -84,7 +84,7 @@ export interface GetDeploymentBackupsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Possible lifecycle states.
      */

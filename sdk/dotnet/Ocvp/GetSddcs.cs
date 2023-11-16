@@ -183,7 +183,7 @@ namespace Pulumi.Oci.Ocvp
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The list of sddc_collection.
         /// </summary>
@@ -203,7 +203,7 @@ namespace Pulumi.Oci.Ocvp
 
             ImmutableArray<Outputs.GetSddcsFilterResult> filters,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetSddcsSddcCollectionResult> sddcCollections,
 

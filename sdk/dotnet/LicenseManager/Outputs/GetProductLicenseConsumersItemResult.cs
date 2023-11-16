@@ -16,19 +16,19 @@ namespace Pulumi.Oci.LicenseManager.Outputs
         /// <summary>
         /// Specifies if all options are available.
         /// </summary>
-        public readonly bool AreAllOptionsAvailable;
+        public readonly bool? AreAllOptionsAvailable;
         /// <summary>
         /// Specifies if the base license is available.
         /// </summary>
-        public readonly bool IsBaseLicenseAvailable;
+        public readonly bool? IsBaseLicenseAvailable;
         /// <summary>
         /// The product license unit.
         /// </summary>
-        public readonly string LicenseUnitType;
+        public readonly string? LicenseUnitType;
         /// <summary>
         /// Number of license units consumed by the resource.
         /// </summary>
-        public readonly double LicenseUnitsConsumed;
+        public readonly double? LicenseUnitsConsumed;
         /// <summary>
         /// Collection of missing product licenses.
         /// </summary>
@@ -36,57 +36,57 @@ namespace Pulumi.Oci.LicenseManager.Outputs
         /// <summary>
         /// The resource product name.
         /// </summary>
-        public readonly string ProductName;
+        public readonly string? ProductName;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the resource.
         /// </summary>
-        public readonly string ResourceCompartmentId;
+        public readonly string? ResourceCompartmentId;
         /// <summary>
         /// The display name of the compartment that contains the resource.
         /// </summary>
-        public readonly string ResourceCompartmentName;
+        public readonly string? ResourceCompartmentName;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
         /// </summary>
-        public readonly string ResourceId;
+        public readonly string? ResourceId;
         /// <summary>
         /// The display name of the resource.
         /// </summary>
-        public readonly string ResourceName;
+        public readonly string? ResourceName;
         /// <summary>
         /// Number of units of the resource
         /// </summary>
-        public readonly double ResourceUnitCount;
+        public readonly double? ResourceUnitCount;
         /// <summary>
         /// The unit type for the resource.
         /// </summary>
-        public readonly string ResourceUnitType;
+        public readonly string? ResourceUnitType;
 
         [OutputConstructor]
         private GetProductLicenseConsumersItemResult(
-            bool areAllOptionsAvailable,
+            bool? areAllOptionsAvailable,
 
-            bool isBaseLicenseAvailable,
+            bool? isBaseLicenseAvailable,
 
-            string licenseUnitType,
+            string? licenseUnitType,
 
-            double licenseUnitsConsumed,
+            double? licenseUnitsConsumed,
 
             ImmutableArray<Outputs.GetProductLicenseConsumersItemMissingProductResult> missingProducts,
 
-            string productName,
+            string? productName,
 
-            string resourceCompartmentId,
+            string? resourceCompartmentId,
 
-            string resourceCompartmentName,
+            string? resourceCompartmentName,
 
-            string resourceId,
+            string? resourceId,
 
-            string resourceName,
+            string? resourceName,
 
-            double resourceUnitCount,
+            double? resourceUnitCount,
 
-            string resourceUnitType)
+            string? resourceUnitType)
         {
             AreAllOptionsAvailable = areAllOptionsAvailable;
             IsBaseLicenseAvailable = isBaseLicenseAvailable;

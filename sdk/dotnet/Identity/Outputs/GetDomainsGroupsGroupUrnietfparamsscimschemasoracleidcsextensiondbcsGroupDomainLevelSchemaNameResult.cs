@@ -16,17 +16,17 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// DBCS Domain Name
         /// </summary>
-        public readonly string DomainName;
+        public readonly string? DomainName;
         /// <summary>
         /// The DBCS schema-name granted to this Group for the DB instance that 'dbInstanceId' specifies.
         /// </summary>
-        public readonly string SchemaName;
+        public readonly string? SchemaName;
 
         [OutputConstructor]
         private GetDomainsGroupsGroupUrnietfparamsscimschemasoracleidcsextensiondbcsGroupDomainLevelSchemaNameResult(
-            string domainName,
+            string? domainName,
 
-            string schemaName)
+            string? schemaName)
         {
             DomainName = domainName;
             SchemaName = schemaName;

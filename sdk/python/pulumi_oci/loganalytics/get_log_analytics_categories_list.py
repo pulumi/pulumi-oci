@@ -54,7 +54,7 @@ class GetLogAnalyticsCategoriesListResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -62,18 +62,12 @@ class GetLogAnalyticsCategoriesListResult:
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetLogAnalyticsCategoriesListItemResult']:
-        """
-        An array of categories.
-        """
+    def items(self) -> Optional[Sequence['outputs.GetLogAnalyticsCategoriesListItemResult']]:
         return pulumi.get(self, "items")
 
     @property
     @pulumi.getter
     def name(self) -> Optional[str]:
-        """
-        The unique name that identifies the category.
-        """
         return pulumi.get(self, "name")
 
     @property
@@ -102,27 +96,7 @@ def get_log_analytics_categories_list(category_display_text: Optional[str] = Non
                                       namespace: Optional[str] = None,
                                       opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetLogAnalyticsCategoriesListResult:
     """
-    This data source provides details about Categories in Oracle Cloud Infrastructure Log Analytics service.
-
-    Returns a list of categories, containing detailed information about them. You may limit the number of results, provide sorting order, and filter by information such as category name or description.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_log_analytics_categories_list = oci.LogAnalytics.get_log_analytics_categories_list(namespace=var["log_analytics_categories_list_namespace"],
-        category_display_text=var["log_analytics_categories_list_category_display_text"],
-        category_type=var["log_analytics_categories_list_category_type"],
-        name=var["log_analytics_categories_list_name"])
-    ```
-
-
-    :param str category_display_text: The category display text used for filtering. Only categories matching the specified display name or description will be returned.
-    :param str category_type: A comma-separated list of category types used for filtering. Only categories of the specified types will be returned.
-    :param str name: A filter to return only log analytics category whose name matches the entire name given. The match is case-insensitive.
-    :param str namespace: The Logging Analytics namespace used for the request.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['categoryDisplayText'] = category_display_text
@@ -148,26 +122,6 @@ def get_log_analytics_categories_list_output(category_display_text: Optional[pul
                                              namespace: Optional[pulumi.Input[str]] = None,
                                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetLogAnalyticsCategoriesListResult]:
     """
-    This data source provides details about Categories in Oracle Cloud Infrastructure Log Analytics service.
-
-    Returns a list of categories, containing detailed information about them. You may limit the number of results, provide sorting order, and filter by information such as category name or description.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_log_analytics_categories_list = oci.LogAnalytics.get_log_analytics_categories_list(namespace=var["log_analytics_categories_list_namespace"],
-        category_display_text=var["log_analytics_categories_list_category_display_text"],
-        category_type=var["log_analytics_categories_list_category_type"],
-        name=var["log_analytics_categories_list_name"])
-    ```
-
-
-    :param str category_display_text: The category display text used for filtering. Only categories matching the specified display name or description will be returned.
-    :param str category_type: A comma-separated list of category types used for filtering. Only categories of the specified types will be returned.
-    :param str name: A filter to return only log analytics category whose name matches the entire name given. The match is case-insensitive.
-    :param str namespace: The Logging Analytics namespace used for the request.
+    Use this data source to access information about an existing resource.
     """
     ...

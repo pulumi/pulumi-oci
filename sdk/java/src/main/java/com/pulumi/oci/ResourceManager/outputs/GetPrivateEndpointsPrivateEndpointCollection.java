@@ -7,14 +7,15 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.ResourceManager.outputs.GetPrivateEndpointsPrivateEndpointCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetPrivateEndpointsPrivateEndpointCollection {
-    private List<GetPrivateEndpointsPrivateEndpointCollectionItem> items;
+    private @Nullable List<GetPrivateEndpointsPrivateEndpointCollectionItem> items;
 
     private GetPrivateEndpointsPrivateEndpointCollection() {}
     public List<GetPrivateEndpointsPrivateEndpointCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -26,7 +27,7 @@ public final class GetPrivateEndpointsPrivateEndpointCollection {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetPrivateEndpointsPrivateEndpointCollectionItem> items;
+        private @Nullable List<GetPrivateEndpointsPrivateEndpointCollectionItem> items;
         public Builder() {}
         public Builder(GetPrivateEndpointsPrivateEndpointCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -34,8 +35,8 @@ public final class GetPrivateEndpointsPrivateEndpointCollection {
         }
 
         @CustomType.Setter
-        public Builder items(List<GetPrivateEndpointsPrivateEndpointCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetPrivateEndpointsPrivateEndpointCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetPrivateEndpointsPrivateEndpointCollectionItem... items) {

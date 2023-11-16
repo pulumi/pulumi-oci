@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Db Management Private Endpoint resource in Oracle Cloud Infrastructure Database Management service.
@@ -62,26 +61,26 @@ type DbManagementPrivateEndpoint struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) The description of the private endpoint.
-	Description pulumi.StringOutput `pulumi:"description"`
+	Description pulumi.StringPtrOutput `pulumi:"description"`
 	// Specifies whether the Database Management private endpoint will be used for Oracle Databases in a cluster.
-	IsCluster pulumi.BoolOutput `pulumi:"isCluster"`
+	IsCluster pulumi.BoolPtrOutput `pulumi:"isCluster"`
 	// (Updatable) The display name of the Database Management private endpoint.
 	Name pulumi.StringOutput `pulumi:"name"`
 	// (Updatable) The OCIDs of the Network Security Groups to which the Database Management private endpoint belongs.
 	NsgIds pulumi.StringArrayOutput `pulumi:"nsgIds"`
 	// The IP addresses assigned to the Database Management private endpoint.
-	PrivateIp pulumi.StringOutput `pulumi:"privateIp"`
+	PrivateIp pulumi.StringPtrOutput `pulumi:"privateIp"`
 	// The current lifecycle state of the Database Management private endpoint.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SubnetId pulumi.StringOutput `pulumi:"subnetId"`
 	// The date and time the Database Managament private endpoint was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
-	VcnId pulumi.StringOutput `pulumi:"vcnId"`
+	VcnId pulumi.StringPtrOutput `pulumi:"vcnId"`
 }
 
 // NewDbManagementPrivateEndpoint registers a new resource with the given unique name, arguments, and options.
@@ -235,12 +234,6 @@ func (i *DbManagementPrivateEndpoint) ToDbManagementPrivateEndpointOutputWithCon
 	return pulumi.ToOutputWithContext(ctx, i).(DbManagementPrivateEndpointOutput)
 }
 
-func (i *DbManagementPrivateEndpoint) ToOutput(ctx context.Context) pulumix.Output[*DbManagementPrivateEndpoint] {
-	return pulumix.Output[*DbManagementPrivateEndpoint]{
-		OutputState: i.ToDbManagementPrivateEndpointOutputWithContext(ctx).OutputState,
-	}
-}
-
 // DbManagementPrivateEndpointArrayInput is an input type that accepts DbManagementPrivateEndpointArray and DbManagementPrivateEndpointArrayOutput values.
 // You can construct a concrete instance of `DbManagementPrivateEndpointArrayInput` via:
 //
@@ -264,12 +257,6 @@ func (i DbManagementPrivateEndpointArray) ToDbManagementPrivateEndpointArrayOutp
 
 func (i DbManagementPrivateEndpointArray) ToDbManagementPrivateEndpointArrayOutputWithContext(ctx context.Context) DbManagementPrivateEndpointArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(DbManagementPrivateEndpointArrayOutput)
-}
-
-func (i DbManagementPrivateEndpointArray) ToOutput(ctx context.Context) pulumix.Output[[]*DbManagementPrivateEndpoint] {
-	return pulumix.Output[[]*DbManagementPrivateEndpoint]{
-		OutputState: i.ToDbManagementPrivateEndpointArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // DbManagementPrivateEndpointMapInput is an input type that accepts DbManagementPrivateEndpointMap and DbManagementPrivateEndpointMapOutput values.
@@ -297,12 +284,6 @@ func (i DbManagementPrivateEndpointMap) ToDbManagementPrivateEndpointMapOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(DbManagementPrivateEndpointMapOutput)
 }
 
-func (i DbManagementPrivateEndpointMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*DbManagementPrivateEndpoint] {
-	return pulumix.Output[map[string]*DbManagementPrivateEndpoint]{
-		OutputState: i.ToDbManagementPrivateEndpointMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DbManagementPrivateEndpointOutput struct{ *pulumi.OutputState }
 
 func (DbManagementPrivateEndpointOutput) ElementType() reflect.Type {
@@ -317,25 +298,19 @@ func (o DbManagementPrivateEndpointOutput) ToDbManagementPrivateEndpointOutputWi
 	return o
 }
 
-func (o DbManagementPrivateEndpointOutput) ToOutput(ctx context.Context) pulumix.Output[*DbManagementPrivateEndpoint] {
-	return pulumix.Output[*DbManagementPrivateEndpoint]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 func (o DbManagementPrivateEndpointOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *DbManagementPrivateEndpoint) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
 // (Updatable) The description of the private endpoint.
-func (o DbManagementPrivateEndpointOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v *DbManagementPrivateEndpoint) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
+func (o DbManagementPrivateEndpointOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DbManagementPrivateEndpoint) pulumi.StringPtrOutput { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // Specifies whether the Database Management private endpoint will be used for Oracle Databases in a cluster.
-func (o DbManagementPrivateEndpointOutput) IsCluster() pulumi.BoolOutput {
-	return o.ApplyT(func(v *DbManagementPrivateEndpoint) pulumi.BoolOutput { return v.IsCluster }).(pulumi.BoolOutput)
+func (o DbManagementPrivateEndpointOutput) IsCluster() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DbManagementPrivateEndpoint) pulumi.BoolPtrOutput { return v.IsCluster }).(pulumi.BoolPtrOutput)
 }
 
 // (Updatable) The display name of the Database Management private endpoint.
@@ -349,13 +324,13 @@ func (o DbManagementPrivateEndpointOutput) NsgIds() pulumi.StringArrayOutput {
 }
 
 // The IP addresses assigned to the Database Management private endpoint.
-func (o DbManagementPrivateEndpointOutput) PrivateIp() pulumi.StringOutput {
-	return o.ApplyT(func(v *DbManagementPrivateEndpoint) pulumi.StringOutput { return v.PrivateIp }).(pulumi.StringOutput)
+func (o DbManagementPrivateEndpointOutput) PrivateIp() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DbManagementPrivateEndpoint) pulumi.StringPtrOutput { return v.PrivateIp }).(pulumi.StringPtrOutput)
 }
 
 // The current lifecycle state of the Database Management private endpoint.
-func (o DbManagementPrivateEndpointOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *DbManagementPrivateEndpoint) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o DbManagementPrivateEndpointOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DbManagementPrivateEndpoint) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet.
@@ -367,13 +342,13 @@ func (o DbManagementPrivateEndpointOutput) SubnetId() pulumi.StringOutput {
 }
 
 // The date and time the Database Managament private endpoint was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-func (o DbManagementPrivateEndpointOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *DbManagementPrivateEndpoint) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o DbManagementPrivateEndpointOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DbManagementPrivateEndpoint) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
-func (o DbManagementPrivateEndpointOutput) VcnId() pulumi.StringOutput {
-	return o.ApplyT(func(v *DbManagementPrivateEndpoint) pulumi.StringOutput { return v.VcnId }).(pulumi.StringOutput)
+func (o DbManagementPrivateEndpointOutput) VcnId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DbManagementPrivateEndpoint) pulumi.StringPtrOutput { return v.VcnId }).(pulumi.StringPtrOutput)
 }
 
 type DbManagementPrivateEndpointArrayOutput struct{ *pulumi.OutputState }
@@ -388,12 +363,6 @@ func (o DbManagementPrivateEndpointArrayOutput) ToDbManagementPrivateEndpointArr
 
 func (o DbManagementPrivateEndpointArrayOutput) ToDbManagementPrivateEndpointArrayOutputWithContext(ctx context.Context) DbManagementPrivateEndpointArrayOutput {
 	return o
-}
-
-func (o DbManagementPrivateEndpointArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*DbManagementPrivateEndpoint] {
-	return pulumix.Output[[]*DbManagementPrivateEndpoint]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DbManagementPrivateEndpointArrayOutput) Index(i pulumi.IntInput) DbManagementPrivateEndpointOutput {
@@ -414,12 +383,6 @@ func (o DbManagementPrivateEndpointMapOutput) ToDbManagementPrivateEndpointMapOu
 
 func (o DbManagementPrivateEndpointMapOutput) ToDbManagementPrivateEndpointMapOutputWithContext(ctx context.Context) DbManagementPrivateEndpointMapOutput {
 	return o
-}
-
-func (o DbManagementPrivateEndpointMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*DbManagementPrivateEndpoint] {
-	return pulumix.Output[map[string]*DbManagementPrivateEndpoint]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DbManagementPrivateEndpointMapOutput) MapIndex(k pulumi.StringInput) DbManagementPrivateEndpointOutput {

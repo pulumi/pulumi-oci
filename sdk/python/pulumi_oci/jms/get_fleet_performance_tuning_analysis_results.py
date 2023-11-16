@@ -52,9 +52,6 @@ class GetFleetPerformanceTuningAnalysisResultsResult:
     @property
     @pulumi.getter(name="applicationId")
     def application_id(self) -> Optional[str]:
-        """
-        The OCID of the application for which the report has been generated.
-        """
         return pulumi.get(self, "application_id")
 
     @property
@@ -65,14 +62,11 @@ class GetFleetPerformanceTuningAnalysisResultsResult:
     @property
     @pulumi.getter(name="fleetId")
     def fleet_id(self) -> str:
-        """
-        The fleet OCID.
-        """
         return pulumi.get(self, "fleet_id")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -81,17 +75,11 @@ class GetFleetPerformanceTuningAnalysisResultsResult:
     @property
     @pulumi.getter(name="managedInstanceId")
     def managed_instance_id(self) -> Optional[str]:
-        """
-        The managed instance OCID.
-        """
         return pulumi.get(self, "managed_instance_id")
 
     @property
     @pulumi.getter(name="performanceTuningAnalysisResultCollections")
-    def performance_tuning_analysis_result_collections(self) -> Sequence['outputs.GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionResult']:
-        """
-        The list of performance_tuning_analysis_result_collection.
-        """
+    def performance_tuning_analysis_result_collections(self) -> Optional[Sequence['outputs.GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionResult']]:
         return pulumi.get(self, "performance_tuning_analysis_result_collections")
 
     @property
@@ -129,29 +117,7 @@ def get_fleet_performance_tuning_analysis_results(application_id: Optional[str] 
                                                   time_start: Optional[str] = None,
                                                   opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetFleetPerformanceTuningAnalysisResultsResult:
     """
-    This data source provides the list of Fleet Performance Tuning Analysis Results in Oracle Cloud Infrastructure Jms service.
-
-    List Performance Tuning Analysis results.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_fleet_performance_tuning_analysis_results = oci.Jms.get_fleet_performance_tuning_analysis_results(fleet_id=oci_jms_fleet["test_fleet"]["id"],
-        application_id=oci_dataflow_application["test_application"]["id"],
-        managed_instance_id=oci_osmanagement_managed_instance["test_managed_instance"]["id"],
-        time_end=var["fleet_performance_tuning_analysis_result_time_end"],
-        time_start=var["fleet_performance_tuning_analysis_result_time_start"])
-    ```
-
-
-    :param str application_id: The Fleet-unique identifier of the related application.
-    :param str fleet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
-    :param str managed_instance_id: The Fleet-unique identifier of the related managed instance.
-    :param str time_end: The end of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-    :param str time_start: The start of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['applicationId'] = application_id
@@ -183,28 +149,6 @@ def get_fleet_performance_tuning_analysis_results_output(application_id: Optiona
                                                          time_start: Optional[pulumi.Input[Optional[str]]] = None,
                                                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetFleetPerformanceTuningAnalysisResultsResult]:
     """
-    This data source provides the list of Fleet Performance Tuning Analysis Results in Oracle Cloud Infrastructure Jms service.
-
-    List Performance Tuning Analysis results.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_fleet_performance_tuning_analysis_results = oci.Jms.get_fleet_performance_tuning_analysis_results(fleet_id=oci_jms_fleet["test_fleet"]["id"],
-        application_id=oci_dataflow_application["test_application"]["id"],
-        managed_instance_id=oci_osmanagement_managed_instance["test_managed_instance"]["id"],
-        time_end=var["fleet_performance_tuning_analysis_result_time_end"],
-        time_start=var["fleet_performance_tuning_analysis_result_time_start"])
-    ```
-
-
-    :param str application_id: The Fleet-unique identifier of the related application.
-    :param str fleet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
-    :param str managed_instance_id: The Fleet-unique identifier of the related managed instance.
-    :param str time_end: The end of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-    :param str time_start: The start of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+    Use this data source to access information about an existing resource.
     """
     ...

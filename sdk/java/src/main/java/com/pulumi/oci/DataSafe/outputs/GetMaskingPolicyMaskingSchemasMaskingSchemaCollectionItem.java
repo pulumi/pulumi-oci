@@ -6,6 +6,8 @@ package com.pulumi.oci.DataSafe.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionItem {
@@ -13,15 +15,15 @@ public final class GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionItem {
      * @return A filter to return only items related to specific schema name.
      * 
      */
-    private String schemaName;
+    private @Nullable String schemaName;
 
     private GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionItem() {}
     /**
      * @return A filter to return only items related to specific schema name.
      * 
      */
-    public String schemaName() {
-        return this.schemaName;
+    public Optional<String> schemaName() {
+        return Optional.ofNullable(this.schemaName);
     }
 
     public static Builder builder() {
@@ -33,7 +35,7 @@ public final class GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionItem {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String schemaName;
+        private @Nullable String schemaName;
         public Builder() {}
         public Builder(GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -41,8 +43,8 @@ public final class GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionItem {
         }
 
         @CustomType.Setter
-        public Builder schemaName(String schemaName) {
-            this.schemaName = Objects.requireNonNull(schemaName);
+        public Builder schemaName(@Nullable String schemaName) {
+            this.schemaName = schemaName;
             return this;
         }
         public GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionItem build() {

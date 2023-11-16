@@ -54,7 +54,7 @@ class GetRepositoryObjectResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -62,10 +62,7 @@ class GetRepositoryObjectResult:
 
     @property
     @pulumi.getter(name="isBinary")
-    def is_binary(self) -> bool:
-        """
-        Flag to determine if the object contains binary file content or not.
-        """
+    def is_binary(self) -> Optional[bool]:
         return pulumi.get(self, "is_binary")
 
     @property
@@ -80,26 +77,17 @@ class GetRepositoryObjectResult:
 
     @property
     @pulumi.getter
-    def sha(self) -> str:
-        """
-        SHA-1 hash of git object.
-        """
+    def sha(self) -> Optional[str]:
         return pulumi.get(self, "sha")
 
     @property
     @pulumi.getter(name="sizeInBytes")
-    def size_in_bytes(self) -> str:
-        """
-        Size in bytes.
-        """
+    def size_in_bytes(self) -> Optional[str]:
         return pulumi.get(self, "size_in_bytes")
 
     @property
     @pulumi.getter
-    def type(self) -> str:
-        """
-        The type of git object.
-        """
+    def type(self) -> Optional[str]:
         return pulumi.get(self, "type")
 
 
@@ -124,25 +112,7 @@ def get_repository_object(file_path: Optional[str] = None,
                           repository_id: Optional[str] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetRepositoryObjectResult:
     """
-    This data source provides details about a specific Repository Object resource in Oracle Cloud Infrastructure Devops service.
-
-    Retrieves blob of specific branch name/commit ID and file path.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_repository_object = oci.DevOps.get_repository_object(repository_id=oci_devops_repository["test_repository"]["id"],
-        file_path=var["repository_object_file_path"],
-        ref_name=var["repository_object_ref_name"])
-    ```
-
-
-    :param str file_path: A filter to return only commits that affect any of the specified paths.
-    :param str ref_name: A filter to return only resources that match the given reference name.
-    :param str repository_id: Unique repository identifier.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['filePath'] = file_path
@@ -168,24 +138,6 @@ def get_repository_object_output(file_path: Optional[pulumi.Input[Optional[str]]
                                  repository_id: Optional[pulumi.Input[str]] = None,
                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetRepositoryObjectResult]:
     """
-    This data source provides details about a specific Repository Object resource in Oracle Cloud Infrastructure Devops service.
-
-    Retrieves blob of specific branch name/commit ID and file path.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_repository_object = oci.DevOps.get_repository_object(repository_id=oci_devops_repository["test_repository"]["id"],
-        file_path=var["repository_object_file_path"],
-        ref_name=var["repository_object_ref_name"])
-    ```
-
-
-    :param str file_path: A filter to return only commits that affect any of the specified paths.
-    :param str ref_name: A filter to return only resources that match the given reference name.
-    :param str repository_id: Unique repository identifier.
+    Use this data source to access information about an existing resource.
     """
     ...

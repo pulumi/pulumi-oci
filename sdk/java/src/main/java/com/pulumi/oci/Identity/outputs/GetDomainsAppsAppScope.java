@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDomainsAppsAppScope {
@@ -14,75 +16,75 @@ public final class GetDomainsAppsAppScope {
      * @return The description of the AppRole.
      * 
      */
-    private String description;
+    private @Nullable String description;
     /**
      * @return Display name of the flatfile bundle configuration property. This attribute maps to \&#34;displayName\&#34; attribute in \&#34;ConfigurationProperty\&#34; in ICF.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return The fully qualified value of this scope within this App. A fully qualified scope combines the &#39;value&#39; of each scope with the value of &#39;audience&#39;. Each value of &#39;fqs&#39; must be unique across the system. Used only when this App acts as an OAuth Resource.
      * 
      */
-    private String fqs;
+    private @Nullable String fqs;
     /**
      * @return If true, indicates that this value must be protected.
      * 
      */
-    private Boolean readOnly;
+    private @Nullable Boolean readOnly;
     /**
      * @return If true, indicates that a user must provide consent to access this scope. Note: Used only when this App acts as an OAuth Resource.
      * 
      */
-    private Boolean requiresConsent;
+    private @Nullable Boolean requiresConsent;
     /**
      * @return ID of the AppRole.
      * 
      */
-    private String value;
+    private @Nullable String value;
 
     private GetDomainsAppsAppScope() {}
     /**
      * @return The description of the AppRole.
      * 
      */
-    public String description() {
-        return this.description;
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
     /**
      * @return Display name of the flatfile bundle configuration property. This attribute maps to \&#34;displayName\&#34; attribute in \&#34;ConfigurationProperty\&#34; in ICF.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return The fully qualified value of this scope within this App. A fully qualified scope combines the &#39;value&#39; of each scope with the value of &#39;audience&#39;. Each value of &#39;fqs&#39; must be unique across the system. Used only when this App acts as an OAuth Resource.
      * 
      */
-    public String fqs() {
-        return this.fqs;
+    public Optional<String> fqs() {
+        return Optional.ofNullable(this.fqs);
     }
     /**
      * @return If true, indicates that this value must be protected.
      * 
      */
-    public Boolean readOnly() {
-        return this.readOnly;
+    public Optional<Boolean> readOnly() {
+        return Optional.ofNullable(this.readOnly);
     }
     /**
      * @return If true, indicates that a user must provide consent to access this scope. Note: Used only when this App acts as an OAuth Resource.
      * 
      */
-    public Boolean requiresConsent() {
-        return this.requiresConsent;
+    public Optional<Boolean> requiresConsent() {
+        return Optional.ofNullable(this.requiresConsent);
     }
     /**
      * @return ID of the AppRole.
      * 
      */
-    public String value() {
-        return this.value;
+    public Optional<String> value() {
+        return Optional.ofNullable(this.value);
     }
 
     public static Builder builder() {
@@ -94,12 +96,12 @@ public final class GetDomainsAppsAppScope {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String description;
-        private String displayName;
-        private String fqs;
-        private Boolean readOnly;
-        private Boolean requiresConsent;
-        private String value;
+        private @Nullable String description;
+        private @Nullable String displayName;
+        private @Nullable String fqs;
+        private @Nullable Boolean readOnly;
+        private @Nullable Boolean requiresConsent;
+        private @Nullable String value;
         public Builder() {}
         public Builder(GetDomainsAppsAppScope defaults) {
     	      Objects.requireNonNull(defaults);
@@ -112,33 +114,33 @@ public final class GetDomainsAppsAppScope {
         }
 
         @CustomType.Setter
-        public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+        public Builder description(@Nullable String description) {
+            this.description = description;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder fqs(String fqs) {
-            this.fqs = Objects.requireNonNull(fqs);
+        public Builder fqs(@Nullable String fqs) {
+            this.fqs = fqs;
             return this;
         }
         @CustomType.Setter
-        public Builder readOnly(Boolean readOnly) {
-            this.readOnly = Objects.requireNonNull(readOnly);
+        public Builder readOnly(@Nullable Boolean readOnly) {
+            this.readOnly = readOnly;
             return this;
         }
         @CustomType.Setter
-        public Builder requiresConsent(Boolean requiresConsent) {
-            this.requiresConsent = Objects.requireNonNull(requiresConsent);
+        public Builder requiresConsent(@Nullable Boolean requiresConsent) {
+            this.requiresConsent = requiresConsent;
             return this;
         }
         @CustomType.Setter
-        public Builder value(String value) {
-            this.value = Objects.requireNonNull(value);
+        public Builder value(@Nullable String value) {
+            this.value = value;
             return this;
         }
         public GetDomainsAppsAppScope build() {

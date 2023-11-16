@@ -23,12 +23,12 @@ export interface GetNamespaceMetadataArgs {
  * A collection of values returned by getNamespaceMetadata.
  */
 export interface GetNamespaceMetadataResult {
-    readonly defaultS3compartmentId: string;
-    readonly defaultSwiftCompartmentId: string;
+    readonly defaultS3compartmentId?: string;
+    readonly defaultSwiftCompartmentId?: string;
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly namespace: string;
 }
 export function getNamespaceMetadataOutput(args: GetNamespaceMetadataOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNamespaceMetadataResult> {

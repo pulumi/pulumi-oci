@@ -24,7 +24,7 @@ namespace Pulumi.Oci.Waas.Outputs
         /// <summary>
         /// The unique name of the whitelist.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
 
         [OutputConstructor]
         private GetWaasPoliciesWaasPolicyWafConfigWhitelistResult(
@@ -32,7 +32,7 @@ namespace Pulumi.Oci.Waas.Outputs
 
             ImmutableArray<string> addresses,
 
-            string name)
+            string? name)
         {
             AddressLists = addressLists;
             Addresses = addresses;

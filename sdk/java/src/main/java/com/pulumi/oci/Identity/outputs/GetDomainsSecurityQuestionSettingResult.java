@@ -25,95 +25,95 @@ public final class GetDomainsSecurityQuestionSettingResult {
      * @return Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
      * 
      */
-    private String compartmentOcid;
+    private @Nullable String compartmentOcid;
     /**
      * @return A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
      * 
      */
-    private Boolean deleteInProgress;
+    private @Nullable Boolean deleteInProgress;
     /**
      * @return Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
      * 
      */
-    private String domainOcid;
+    private @Nullable String domainOcid;
     /**
      * @return An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer&#39;s tenant.
      * 
      */
-    private String externalId;
+    private @Nullable String externalId;
     /**
      * @return Unique identifier for the SCIM Resource as defined by the Service Provider. Each representation of the Resource MUST include a non-empty id value. This identifier MUST be unique across the Service Provider&#39;s entire set of Resources. It MUST be a stable, non-reassignable identifier that does not change when the same Resource is returned in subsequent requests. The value of the id attribute is always issued by the Service Provider and MUST never be specified by the Service Consumer. bulkId: is a reserved keyword and MUST NOT be used in the unique identifier.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The User or App who created the Resource
      * 
      */
-    private List<GetDomainsSecurityQuestionSettingIdcsCreatedBy> idcsCreatedBies;
+    private @Nullable List<GetDomainsSecurityQuestionSettingIdcsCreatedBy> idcsCreatedBies;
     private String idcsEndpoint;
     /**
      * @return The User or App who modified the Resource
      * 
      */
-    private List<GetDomainsSecurityQuestionSettingIdcsLastModifiedBy> idcsLastModifiedBies;
+    private @Nullable List<GetDomainsSecurityQuestionSettingIdcsLastModifiedBy> idcsLastModifiedBies;
     /**
      * @return The release number when the resource was upgraded.
      * 
      */
-    private String idcsLastUpgradedInRelease;
+    private @Nullable String idcsLastUpgradedInRelease;
     /**
      * @return Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
      * 
      */
-    private List<String> idcsPreventedOperations;
+    private @Nullable List<String> idcsPreventedOperations;
     /**
      * @return Indicates the maximum length of following fields Security Questions, Answer and Hint
      * 
      */
-    private Integer maxFieldLength;
+    private @Nullable Integer maxFieldLength;
     /**
      * @return A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
      * 
      */
-    private List<GetDomainsSecurityQuestionSettingMeta> metas;
+    private @Nullable List<GetDomainsSecurityQuestionSettingMeta> metas;
     /**
      * @return Indicates the minimum length of answer for security questions
      * 
      */
-    private Integer minAnswerLength;
+    private @Nullable Integer minAnswerLength;
     /**
      * @return Indicates the number of security questions that a user must answer
      * 
      */
-    private Integer numQuestionsToAns;
+    private @Nullable Integer numQuestionsToAns;
     /**
      * @return Indicates the number of security questions a user must setup
      * 
      */
-    private Integer numQuestionsToSetup;
+    private @Nullable Integer numQuestionsToSetup;
     /**
      * @return Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
      * 
      */
-    private String ocid;
+    private @Nullable String ocid;
     private @Nullable String resourceTypeSchemaVersion;
     /**
      * @return REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \&#34;enterprise\&#34; extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
      * 
      */
-    private List<String> schemas;
+    private @Nullable List<String> schemas;
     private String securityQuestionSettingId;
     /**
      * @return A list of tags on this resource.
      * 
      */
-    private List<GetDomainsSecurityQuestionSettingTag> tags;
+    private @Nullable List<GetDomainsSecurityQuestionSettingTag> tags;
     /**
      * @return Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
      * 
      */
-    private String tenancyOcid;
+    private @Nullable String tenancyOcid;
 
     private GetDomainsSecurityQuestionSettingResult() {}
     public List<String> attributeSets() {
@@ -129,43 +129,43 @@ public final class GetDomainsSecurityQuestionSettingResult {
      * @return Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
      * 
      */
-    public String compartmentOcid() {
-        return this.compartmentOcid;
+    public Optional<String> compartmentOcid() {
+        return Optional.ofNullable(this.compartmentOcid);
     }
     /**
      * @return A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
      * 
      */
-    public Boolean deleteInProgress() {
-        return this.deleteInProgress;
+    public Optional<Boolean> deleteInProgress() {
+        return Optional.ofNullable(this.deleteInProgress);
     }
     /**
      * @return Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
      * 
      */
-    public String domainOcid() {
-        return this.domainOcid;
+    public Optional<String> domainOcid() {
+        return Optional.ofNullable(this.domainOcid);
     }
     /**
      * @return An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer&#39;s tenant.
      * 
      */
-    public String externalId() {
-        return this.externalId;
+    public Optional<String> externalId() {
+        return Optional.ofNullable(this.externalId);
     }
     /**
      * @return Unique identifier for the SCIM Resource as defined by the Service Provider. Each representation of the Resource MUST include a non-empty id value. This identifier MUST be unique across the Service Provider&#39;s entire set of Resources. It MUST be a stable, non-reassignable identifier that does not change when the same Resource is returned in subsequent requests. The value of the id attribute is always issued by the Service Provider and MUST never be specified by the Service Consumer. bulkId: is a reserved keyword and MUST NOT be used in the unique identifier.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The User or App who created the Resource
      * 
      */
     public List<GetDomainsSecurityQuestionSettingIdcsCreatedBy> idcsCreatedBies() {
-        return this.idcsCreatedBies;
+        return this.idcsCreatedBies == null ? List.of() : this.idcsCreatedBies;
     }
     public String idcsEndpoint() {
         return this.idcsEndpoint;
@@ -175,63 +175,63 @@ public final class GetDomainsSecurityQuestionSettingResult {
      * 
      */
     public List<GetDomainsSecurityQuestionSettingIdcsLastModifiedBy> idcsLastModifiedBies() {
-        return this.idcsLastModifiedBies;
+        return this.idcsLastModifiedBies == null ? List.of() : this.idcsLastModifiedBies;
     }
     /**
      * @return The release number when the resource was upgraded.
      * 
      */
-    public String idcsLastUpgradedInRelease() {
-        return this.idcsLastUpgradedInRelease;
+    public Optional<String> idcsLastUpgradedInRelease() {
+        return Optional.ofNullable(this.idcsLastUpgradedInRelease);
     }
     /**
      * @return Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
      * 
      */
     public List<String> idcsPreventedOperations() {
-        return this.idcsPreventedOperations;
+        return this.idcsPreventedOperations == null ? List.of() : this.idcsPreventedOperations;
     }
     /**
      * @return Indicates the maximum length of following fields Security Questions, Answer and Hint
      * 
      */
-    public Integer maxFieldLength() {
-        return this.maxFieldLength;
+    public Optional<Integer> maxFieldLength() {
+        return Optional.ofNullable(this.maxFieldLength);
     }
     /**
      * @return A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
      * 
      */
     public List<GetDomainsSecurityQuestionSettingMeta> metas() {
-        return this.metas;
+        return this.metas == null ? List.of() : this.metas;
     }
     /**
      * @return Indicates the minimum length of answer for security questions
      * 
      */
-    public Integer minAnswerLength() {
-        return this.minAnswerLength;
+    public Optional<Integer> minAnswerLength() {
+        return Optional.ofNullable(this.minAnswerLength);
     }
     /**
      * @return Indicates the number of security questions that a user must answer
      * 
      */
-    public Integer numQuestionsToAns() {
-        return this.numQuestionsToAns;
+    public Optional<Integer> numQuestionsToAns() {
+        return Optional.ofNullable(this.numQuestionsToAns);
     }
     /**
      * @return Indicates the number of security questions a user must setup
      * 
      */
-    public Integer numQuestionsToSetup() {
-        return this.numQuestionsToSetup;
+    public Optional<Integer> numQuestionsToSetup() {
+        return Optional.ofNullable(this.numQuestionsToSetup);
     }
     /**
      * @return Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
      * 
      */
-    public String ocid() {
-        return this.ocid;
+    public Optional<String> ocid() {
+        return Optional.ofNullable(this.ocid);
     }
     public Optional<String> resourceTypeSchemaVersion() {
         return Optional.ofNullable(this.resourceTypeSchemaVersion);
@@ -241,7 +241,7 @@ public final class GetDomainsSecurityQuestionSettingResult {
      * 
      */
     public List<String> schemas() {
-        return this.schemas;
+        return this.schemas == null ? List.of() : this.schemas;
     }
     public String securityQuestionSettingId() {
         return this.securityQuestionSettingId;
@@ -251,14 +251,14 @@ public final class GetDomainsSecurityQuestionSettingResult {
      * 
      */
     public List<GetDomainsSecurityQuestionSettingTag> tags() {
-        return this.tags;
+        return this.tags == null ? List.of() : this.tags;
     }
     /**
      * @return Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
      * 
      */
-    public String tenancyOcid() {
-        return this.tenancyOcid;
+    public Optional<String> tenancyOcid() {
+        return Optional.ofNullable(this.tenancyOcid);
     }
 
     public static Builder builder() {
@@ -273,27 +273,27 @@ public final class GetDomainsSecurityQuestionSettingResult {
         private @Nullable List<String> attributeSets;
         private @Nullable String attributes;
         private @Nullable String authorization;
-        private String compartmentOcid;
-        private Boolean deleteInProgress;
-        private String domainOcid;
-        private String externalId;
-        private String id;
-        private List<GetDomainsSecurityQuestionSettingIdcsCreatedBy> idcsCreatedBies;
+        private @Nullable String compartmentOcid;
+        private @Nullable Boolean deleteInProgress;
+        private @Nullable String domainOcid;
+        private @Nullable String externalId;
+        private @Nullable String id;
+        private @Nullable List<GetDomainsSecurityQuestionSettingIdcsCreatedBy> idcsCreatedBies;
         private String idcsEndpoint;
-        private List<GetDomainsSecurityQuestionSettingIdcsLastModifiedBy> idcsLastModifiedBies;
-        private String idcsLastUpgradedInRelease;
-        private List<String> idcsPreventedOperations;
-        private Integer maxFieldLength;
-        private List<GetDomainsSecurityQuestionSettingMeta> metas;
-        private Integer minAnswerLength;
-        private Integer numQuestionsToAns;
-        private Integer numQuestionsToSetup;
-        private String ocid;
+        private @Nullable List<GetDomainsSecurityQuestionSettingIdcsLastModifiedBy> idcsLastModifiedBies;
+        private @Nullable String idcsLastUpgradedInRelease;
+        private @Nullable List<String> idcsPreventedOperations;
+        private @Nullable Integer maxFieldLength;
+        private @Nullable List<GetDomainsSecurityQuestionSettingMeta> metas;
+        private @Nullable Integer minAnswerLength;
+        private @Nullable Integer numQuestionsToAns;
+        private @Nullable Integer numQuestionsToSetup;
+        private @Nullable String ocid;
         private @Nullable String resourceTypeSchemaVersion;
-        private List<String> schemas;
+        private @Nullable List<String> schemas;
         private String securityQuestionSettingId;
-        private List<GetDomainsSecurityQuestionSettingTag> tags;
-        private String tenancyOcid;
+        private @Nullable List<GetDomainsSecurityQuestionSettingTag> tags;
+        private @Nullable String tenancyOcid;
         public Builder() {}
         public Builder(GetDomainsSecurityQuestionSettingResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -342,33 +342,33 @@ public final class GetDomainsSecurityQuestionSettingResult {
             return this;
         }
         @CustomType.Setter
-        public Builder compartmentOcid(String compartmentOcid) {
-            this.compartmentOcid = Objects.requireNonNull(compartmentOcid);
+        public Builder compartmentOcid(@Nullable String compartmentOcid) {
+            this.compartmentOcid = compartmentOcid;
             return this;
         }
         @CustomType.Setter
-        public Builder deleteInProgress(Boolean deleteInProgress) {
-            this.deleteInProgress = Objects.requireNonNull(deleteInProgress);
+        public Builder deleteInProgress(@Nullable Boolean deleteInProgress) {
+            this.deleteInProgress = deleteInProgress;
             return this;
         }
         @CustomType.Setter
-        public Builder domainOcid(String domainOcid) {
-            this.domainOcid = Objects.requireNonNull(domainOcid);
+        public Builder domainOcid(@Nullable String domainOcid) {
+            this.domainOcid = domainOcid;
             return this;
         }
         @CustomType.Setter
-        public Builder externalId(String externalId) {
-            this.externalId = Objects.requireNonNull(externalId);
+        public Builder externalId(@Nullable String externalId) {
+            this.externalId = externalId;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder idcsCreatedBies(List<GetDomainsSecurityQuestionSettingIdcsCreatedBy> idcsCreatedBies) {
-            this.idcsCreatedBies = Objects.requireNonNull(idcsCreatedBies);
+        public Builder idcsCreatedBies(@Nullable List<GetDomainsSecurityQuestionSettingIdcsCreatedBy> idcsCreatedBies) {
+            this.idcsCreatedBies = idcsCreatedBies;
             return this;
         }
         public Builder idcsCreatedBies(GetDomainsSecurityQuestionSettingIdcsCreatedBy... idcsCreatedBies) {
@@ -380,57 +380,57 @@ public final class GetDomainsSecurityQuestionSettingResult {
             return this;
         }
         @CustomType.Setter
-        public Builder idcsLastModifiedBies(List<GetDomainsSecurityQuestionSettingIdcsLastModifiedBy> idcsLastModifiedBies) {
-            this.idcsLastModifiedBies = Objects.requireNonNull(idcsLastModifiedBies);
+        public Builder idcsLastModifiedBies(@Nullable List<GetDomainsSecurityQuestionSettingIdcsLastModifiedBy> idcsLastModifiedBies) {
+            this.idcsLastModifiedBies = idcsLastModifiedBies;
             return this;
         }
         public Builder idcsLastModifiedBies(GetDomainsSecurityQuestionSettingIdcsLastModifiedBy... idcsLastModifiedBies) {
             return idcsLastModifiedBies(List.of(idcsLastModifiedBies));
         }
         @CustomType.Setter
-        public Builder idcsLastUpgradedInRelease(String idcsLastUpgradedInRelease) {
-            this.idcsLastUpgradedInRelease = Objects.requireNonNull(idcsLastUpgradedInRelease);
+        public Builder idcsLastUpgradedInRelease(@Nullable String idcsLastUpgradedInRelease) {
+            this.idcsLastUpgradedInRelease = idcsLastUpgradedInRelease;
             return this;
         }
         @CustomType.Setter
-        public Builder idcsPreventedOperations(List<String> idcsPreventedOperations) {
-            this.idcsPreventedOperations = Objects.requireNonNull(idcsPreventedOperations);
+        public Builder idcsPreventedOperations(@Nullable List<String> idcsPreventedOperations) {
+            this.idcsPreventedOperations = idcsPreventedOperations;
             return this;
         }
         public Builder idcsPreventedOperations(String... idcsPreventedOperations) {
             return idcsPreventedOperations(List.of(idcsPreventedOperations));
         }
         @CustomType.Setter
-        public Builder maxFieldLength(Integer maxFieldLength) {
-            this.maxFieldLength = Objects.requireNonNull(maxFieldLength);
+        public Builder maxFieldLength(@Nullable Integer maxFieldLength) {
+            this.maxFieldLength = maxFieldLength;
             return this;
         }
         @CustomType.Setter
-        public Builder metas(List<GetDomainsSecurityQuestionSettingMeta> metas) {
-            this.metas = Objects.requireNonNull(metas);
+        public Builder metas(@Nullable List<GetDomainsSecurityQuestionSettingMeta> metas) {
+            this.metas = metas;
             return this;
         }
         public Builder metas(GetDomainsSecurityQuestionSettingMeta... metas) {
             return metas(List.of(metas));
         }
         @CustomType.Setter
-        public Builder minAnswerLength(Integer minAnswerLength) {
-            this.minAnswerLength = Objects.requireNonNull(minAnswerLength);
+        public Builder minAnswerLength(@Nullable Integer minAnswerLength) {
+            this.minAnswerLength = minAnswerLength;
             return this;
         }
         @CustomType.Setter
-        public Builder numQuestionsToAns(Integer numQuestionsToAns) {
-            this.numQuestionsToAns = Objects.requireNonNull(numQuestionsToAns);
+        public Builder numQuestionsToAns(@Nullable Integer numQuestionsToAns) {
+            this.numQuestionsToAns = numQuestionsToAns;
             return this;
         }
         @CustomType.Setter
-        public Builder numQuestionsToSetup(Integer numQuestionsToSetup) {
-            this.numQuestionsToSetup = Objects.requireNonNull(numQuestionsToSetup);
+        public Builder numQuestionsToSetup(@Nullable Integer numQuestionsToSetup) {
+            this.numQuestionsToSetup = numQuestionsToSetup;
             return this;
         }
         @CustomType.Setter
-        public Builder ocid(String ocid) {
-            this.ocid = Objects.requireNonNull(ocid);
+        public Builder ocid(@Nullable String ocid) {
+            this.ocid = ocid;
             return this;
         }
         @CustomType.Setter
@@ -439,8 +439,8 @@ public final class GetDomainsSecurityQuestionSettingResult {
             return this;
         }
         @CustomType.Setter
-        public Builder schemas(List<String> schemas) {
-            this.schemas = Objects.requireNonNull(schemas);
+        public Builder schemas(@Nullable List<String> schemas) {
+            this.schemas = schemas;
             return this;
         }
         public Builder schemas(String... schemas) {
@@ -452,16 +452,16 @@ public final class GetDomainsSecurityQuestionSettingResult {
             return this;
         }
         @CustomType.Setter
-        public Builder tags(List<GetDomainsSecurityQuestionSettingTag> tags) {
-            this.tags = Objects.requireNonNull(tags);
+        public Builder tags(@Nullable List<GetDomainsSecurityQuestionSettingTag> tags) {
+            this.tags = tags;
             return this;
         }
         public Builder tags(GetDomainsSecurityQuestionSettingTag... tags) {
             return tags(List.of(tags));
         }
         @CustomType.Setter
-        public Builder tenancyOcid(String tenancyOcid) {
-            this.tenancyOcid = Objects.requireNonNull(tenancyOcid);
+        public Builder tenancyOcid(@Nullable String tenancyOcid) {
+            this.tenancyOcid = tenancyOcid;
             return this;
         }
         public GetDomainsSecurityQuestionSettingResult build() {

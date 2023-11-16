@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of My User Db Credentials in Oracle Cloud Infrastructure Identity Domains service.
@@ -80,9 +79,9 @@ type GetDomainsMyUserDbCredentialsResult struct {
 	Authorization *string `pulumi:"authorization"`
 	CompartmentId *string `pulumi:"compartmentId"`
 	// The provider-assigned unique ID for this managed resource.
-	Id                       string  `pulumi:"id"`
+	Id                       *string `pulumi:"id"`
 	IdcsEndpoint             string  `pulumi:"idcsEndpoint"`
-	ItemsPerPage             int     `pulumi:"itemsPerPage"`
+	ItemsPerPage             *int    `pulumi:"itemsPerPage"`
 	MyUserDbCredentialCount  *int    `pulumi:"myUserDbCredentialCount"`
 	MyUserDbCredentialFilter *string `pulumi:"myUserDbCredentialFilter"`
 	// The list of my_user_db_credentials.
@@ -93,7 +92,7 @@ type GetDomainsMyUserDbCredentialsResult struct {
 	SortBy       *string  `pulumi:"sortBy"`
 	SortOrder    *string  `pulumi:"sortOrder"`
 	StartIndex   *int     `pulumi:"startIndex"`
-	TotalResults int      `pulumi:"totalResults"`
+	TotalResults *int     `pulumi:"totalResults"`
 }
 
 func GetDomainsMyUserDbCredentialsOutput(ctx *pulumi.Context, args GetDomainsMyUserDbCredentialsOutputArgs, opts ...pulumi.InvokeOption) GetDomainsMyUserDbCredentialsResultOutput {
@@ -147,12 +146,6 @@ func (o GetDomainsMyUserDbCredentialsResultOutput) ToGetDomainsMyUserDbCredentia
 	return o
 }
 
-func (o GetDomainsMyUserDbCredentialsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDomainsMyUserDbCredentialsResult] {
-	return pulumix.Output[GetDomainsMyUserDbCredentialsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDomainsMyUserDbCredentialsResultOutput) Authorization() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetDomainsMyUserDbCredentialsResult) *string { return v.Authorization }).(pulumi.StringPtrOutput)
 }
@@ -162,16 +155,16 @@ func (o GetDomainsMyUserDbCredentialsResultOutput) CompartmentId() pulumi.String
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetDomainsMyUserDbCredentialsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDomainsMyUserDbCredentialsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetDomainsMyUserDbCredentialsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDomainsMyUserDbCredentialsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetDomainsMyUserDbCredentialsResultOutput) IdcsEndpoint() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDomainsMyUserDbCredentialsResult) string { return v.IdcsEndpoint }).(pulumi.StringOutput)
 }
 
-func (o GetDomainsMyUserDbCredentialsResultOutput) ItemsPerPage() pulumi.IntOutput {
-	return o.ApplyT(func(v GetDomainsMyUserDbCredentialsResult) int { return v.ItemsPerPage }).(pulumi.IntOutput)
+func (o GetDomainsMyUserDbCredentialsResultOutput) ItemsPerPage() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetDomainsMyUserDbCredentialsResult) *int { return v.ItemsPerPage }).(pulumi.IntPtrOutput)
 }
 
 func (o GetDomainsMyUserDbCredentialsResultOutput) MyUserDbCredentialCount() pulumi.IntPtrOutput {
@@ -210,8 +203,8 @@ func (o GetDomainsMyUserDbCredentialsResultOutput) StartIndex() pulumi.IntPtrOut
 	return o.ApplyT(func(v GetDomainsMyUserDbCredentialsResult) *int { return v.StartIndex }).(pulumi.IntPtrOutput)
 }
 
-func (o GetDomainsMyUserDbCredentialsResultOutput) TotalResults() pulumi.IntOutput {
-	return o.ApplyT(func(v GetDomainsMyUserDbCredentialsResult) int { return v.TotalResults }).(pulumi.IntOutput)
+func (o GetDomainsMyUserDbCredentialsResultOutput) TotalResults() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetDomainsMyUserDbCredentialsResult) *int { return v.TotalResults }).(pulumi.IntPtrOutput)
 }
 
 func init() {

@@ -47,47 +47,47 @@ export interface GetJavaReleaseResult {
     /**
      * Artifact content types for the Java version.
      */
-    readonly artifactContentTypes: string[];
+    readonly artifactContentTypes?: string[];
     /**
      * List of Java artifacts.
      */
-    readonly artifacts: outputs.Jms.GetJavaReleaseArtifact[];
+    readonly artifacts?: outputs.Jms.GetJavaReleaseArtifact[];
     /**
      * Metadata associated with a specific Java release family. A Java release family is typically a major version in the Java version identifier.
      */
-    readonly familyDetails: outputs.Jms.GetJavaReleaseFamilyDetail[];
+    readonly familyDetails?: outputs.Jms.GetJavaReleaseFamilyDetail[];
     /**
      * Java release family identifier.
      */
-    readonly familyVersion: string;
+    readonly familyVersion?: string;
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Information about a license type for Java.
      */
-    readonly licenseDetails: outputs.Jms.GetJavaReleaseLicenseDetail[];
+    readonly licenseDetails?: outputs.Jms.GetJavaReleaseLicenseDetail[];
     /**
      * License type for the Java version.
      */
-    readonly licenseType: string;
+    readonly licenseType?: string;
     /**
      * Parent Java release version identifier. This is applicable for BPR releases.
      */
-    readonly parentReleaseVersion: string;
+    readonly parentReleaseVersion?: string;
     /**
      * The release date of the Java version (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      */
-    readonly releaseDate: string;
+    readonly releaseDate?: string;
     /**
      * Release notes associated with the Java version.
      */
-    readonly releaseNotesUrl: string;
+    readonly releaseNotesUrl?: string;
     /**
      * Release category of the Java version.
      */
-    readonly releaseType: string;
+    readonly releaseType?: string;
     /**
      * Java release version identifier.
      */
@@ -95,7 +95,7 @@ export interface GetJavaReleaseResult {
     /**
      * The security status of the Java version.
      */
-    readonly securityStatus: string;
+    readonly securityStatus?: string;
 }
 /**
  * This data source provides details about a specific Java Release resource in Oracle Cloud Infrastructure Jms service.

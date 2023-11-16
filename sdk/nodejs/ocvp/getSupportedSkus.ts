@@ -59,11 +59,11 @@ export interface GetSupportedSkusResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The list of the supported SKUs.
      */
-    readonly items: outputs.Ocvp.GetSupportedSkusItem[];
+    readonly items?: outputs.Ocvp.GetSupportedSkusItem[];
 }
 /**
  * This data source provides the list of Supported Skus in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.\

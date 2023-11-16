@@ -50,52 +50,52 @@ export interface GetChannelResult {
     /**
      * The OCID of the compartment.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * User provided description of the Channel.
      */
-    readonly description: string;
+    readonly description?: string;
     /**
      * The user-friendly name for the Channel. It does not have to be unique.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * Simple key-value pair applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    readonly freeformTags: {[key: string]: any};
-    readonly id: string;
+    readonly freeformTags?: {[key: string]: any};
+    readonly id?: string;
     /**
      * Whether the Channel has been enabled by the user.
      */
-    readonly isEnabled: boolean;
+    readonly isEnabled?: boolean;
     /**
      * A message describing the state of the Channel.
      */
-    readonly lifecycleDetails: string;
+    readonly lifecycleDetails?: string;
     /**
      * Parameters detailing how to provision the source for the given Channel.
      */
-    readonly sources: outputs.Mysql.GetChannelSource[];
+    readonly sources?: outputs.Mysql.GetChannelSource[];
     /**
      * The state of the Channel.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * Details about the Channel target.
      */
-    readonly targets: outputs.Mysql.GetChannelTarget[];
+    readonly targets?: outputs.Mysql.GetChannelTarget[];
     /**
      * The date and time the Channel was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The time the Channel was last updated, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      */
-    readonly timeUpdated: string;
+    readonly timeUpdated?: string;
 }
 /**
  * This data source provides details about a specific Channel resource in Oracle Cloud Infrastructure MySQL Database service.

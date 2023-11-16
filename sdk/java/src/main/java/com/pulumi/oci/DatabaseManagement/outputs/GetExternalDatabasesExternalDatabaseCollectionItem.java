@@ -10,6 +10,8 @@ import com.pulumi.oci.DatabaseManagement.outputs.GetExternalDatabasesExternalDat
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetExternalDatabasesExternalDatabaseCollectionItem {
@@ -17,159 +19,159 @@ public final class GetExternalDatabasesExternalDatabaseCollectionItem {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return The subtype of Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, or Non-container Database.
      * 
      */
-    private String databaseSubType;
+    private @Nullable String databaseSubType;
     /**
      * @return The type of Oracle Database installation.
      * 
      */
-    private String databaseType;
+    private @Nullable String databaseType;
     /**
      * @return The configuration of the Database Management service.
      * 
      */
-    private List<GetExternalDatabasesExternalDatabaseCollectionItemDbManagementConfig> dbManagementConfigs;
+    private @Nullable List<GetExternalDatabasesExternalDatabaseCollectionItemDbManagementConfig> dbManagementConfigs;
     /**
      * @return The basic information about an external DB system.
      * 
      */
-    private List<GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfo> dbSystemInfos;
+    private @Nullable List<GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfo> dbSystemInfos;
     /**
      * @return The `DB_UNIQUE_NAME` of the external database.
      * 
      */
-    private String dbUniqueName;
+    private @Nullable String dbUniqueName;
     /**
      * @return A filter to only return the resources that match the entire display name.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent Container Database (CDB) if this is a Pluggable Database (PDB).
      * 
      */
-    private String externalContainerDatabaseId;
+    private @Nullable String externalContainerDatabaseId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB home.
      * 
      */
-    private String externalDbHomeId;
+    private @Nullable String externalDbHomeId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The list of database instances if the database is a RAC database.
      * 
      */
-    private List<GetExternalDatabasesExternalDatabaseCollectionItemInstanceDetail> instanceDetails;
+    private @Nullable List<GetExternalDatabasesExternalDatabaseCollectionItemInstanceDetail> instanceDetails;
     /**
      * @return The current lifecycle state of the external database resource.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return The date and time the external DB system was created.
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
 
     private GetExternalDatabasesExternalDatabaseCollectionItem() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return The subtype of Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, or Non-container Database.
      * 
      */
-    public String databaseSubType() {
-        return this.databaseSubType;
+    public Optional<String> databaseSubType() {
+        return Optional.ofNullable(this.databaseSubType);
     }
     /**
      * @return The type of Oracle Database installation.
      * 
      */
-    public String databaseType() {
-        return this.databaseType;
+    public Optional<String> databaseType() {
+        return Optional.ofNullable(this.databaseType);
     }
     /**
      * @return The configuration of the Database Management service.
      * 
      */
     public List<GetExternalDatabasesExternalDatabaseCollectionItemDbManagementConfig> dbManagementConfigs() {
-        return this.dbManagementConfigs;
+        return this.dbManagementConfigs == null ? List.of() : this.dbManagementConfigs;
     }
     /**
      * @return The basic information about an external DB system.
      * 
      */
     public List<GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfo> dbSystemInfos() {
-        return this.dbSystemInfos;
+        return this.dbSystemInfos == null ? List.of() : this.dbSystemInfos;
     }
     /**
      * @return The `DB_UNIQUE_NAME` of the external database.
      * 
      */
-    public String dbUniqueName() {
-        return this.dbUniqueName;
+    public Optional<String> dbUniqueName() {
+        return Optional.ofNullable(this.dbUniqueName);
     }
     /**
      * @return A filter to only return the resources that match the entire display name.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent Container Database (CDB) if this is a Pluggable Database (PDB).
      * 
      */
-    public String externalContainerDatabaseId() {
-        return this.externalContainerDatabaseId;
+    public Optional<String> externalContainerDatabaseId() {
+        return Optional.ofNullable(this.externalContainerDatabaseId);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB home.
      * 
      */
-    public String externalDbHomeId() {
-        return this.externalDbHomeId;
+    public Optional<String> externalDbHomeId() {
+        return Optional.ofNullable(this.externalDbHomeId);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The list of database instances if the database is a RAC database.
      * 
      */
     public List<GetExternalDatabasesExternalDatabaseCollectionItemInstanceDetail> instanceDetails() {
-        return this.instanceDetails;
+        return this.instanceDetails == null ? List.of() : this.instanceDetails;
     }
     /**
      * @return The current lifecycle state of the external database resource.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return The date and time the external DB system was created.
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
 
     public static Builder builder() {
@@ -181,19 +183,19 @@ public final class GetExternalDatabasesExternalDatabaseCollectionItem {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String compartmentId;
-        private String databaseSubType;
-        private String databaseType;
-        private List<GetExternalDatabasesExternalDatabaseCollectionItemDbManagementConfig> dbManagementConfigs;
-        private List<GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfo> dbSystemInfos;
-        private String dbUniqueName;
-        private String displayName;
-        private String externalContainerDatabaseId;
-        private String externalDbHomeId;
-        private String id;
-        private List<GetExternalDatabasesExternalDatabaseCollectionItemInstanceDetail> instanceDetails;
-        private String state;
-        private String timeCreated;
+        private @Nullable String compartmentId;
+        private @Nullable String databaseSubType;
+        private @Nullable String databaseType;
+        private @Nullable List<GetExternalDatabasesExternalDatabaseCollectionItemDbManagementConfig> dbManagementConfigs;
+        private @Nullable List<GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfo> dbSystemInfos;
+        private @Nullable String dbUniqueName;
+        private @Nullable String displayName;
+        private @Nullable String externalContainerDatabaseId;
+        private @Nullable String externalDbHomeId;
+        private @Nullable String id;
+        private @Nullable List<GetExternalDatabasesExternalDatabaseCollectionItemInstanceDetail> instanceDetails;
+        private @Nullable String state;
+        private @Nullable String timeCreated;
         public Builder() {}
         public Builder(GetExternalDatabasesExternalDatabaseCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -213,77 +215,77 @@ public final class GetExternalDatabasesExternalDatabaseCollectionItem {
         }
 
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder databaseSubType(String databaseSubType) {
-            this.databaseSubType = Objects.requireNonNull(databaseSubType);
+        public Builder databaseSubType(@Nullable String databaseSubType) {
+            this.databaseSubType = databaseSubType;
             return this;
         }
         @CustomType.Setter
-        public Builder databaseType(String databaseType) {
-            this.databaseType = Objects.requireNonNull(databaseType);
+        public Builder databaseType(@Nullable String databaseType) {
+            this.databaseType = databaseType;
             return this;
         }
         @CustomType.Setter
-        public Builder dbManagementConfigs(List<GetExternalDatabasesExternalDatabaseCollectionItemDbManagementConfig> dbManagementConfigs) {
-            this.dbManagementConfigs = Objects.requireNonNull(dbManagementConfigs);
+        public Builder dbManagementConfigs(@Nullable List<GetExternalDatabasesExternalDatabaseCollectionItemDbManagementConfig> dbManagementConfigs) {
+            this.dbManagementConfigs = dbManagementConfigs;
             return this;
         }
         public Builder dbManagementConfigs(GetExternalDatabasesExternalDatabaseCollectionItemDbManagementConfig... dbManagementConfigs) {
             return dbManagementConfigs(List.of(dbManagementConfigs));
         }
         @CustomType.Setter
-        public Builder dbSystemInfos(List<GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfo> dbSystemInfos) {
-            this.dbSystemInfos = Objects.requireNonNull(dbSystemInfos);
+        public Builder dbSystemInfos(@Nullable List<GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfo> dbSystemInfos) {
+            this.dbSystemInfos = dbSystemInfos;
             return this;
         }
         public Builder dbSystemInfos(GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfo... dbSystemInfos) {
             return dbSystemInfos(List.of(dbSystemInfos));
         }
         @CustomType.Setter
-        public Builder dbUniqueName(String dbUniqueName) {
-            this.dbUniqueName = Objects.requireNonNull(dbUniqueName);
+        public Builder dbUniqueName(@Nullable String dbUniqueName) {
+            this.dbUniqueName = dbUniqueName;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder externalContainerDatabaseId(String externalContainerDatabaseId) {
-            this.externalContainerDatabaseId = Objects.requireNonNull(externalContainerDatabaseId);
+        public Builder externalContainerDatabaseId(@Nullable String externalContainerDatabaseId) {
+            this.externalContainerDatabaseId = externalContainerDatabaseId;
             return this;
         }
         @CustomType.Setter
-        public Builder externalDbHomeId(String externalDbHomeId) {
-            this.externalDbHomeId = Objects.requireNonNull(externalDbHomeId);
+        public Builder externalDbHomeId(@Nullable String externalDbHomeId) {
+            this.externalDbHomeId = externalDbHomeId;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder instanceDetails(List<GetExternalDatabasesExternalDatabaseCollectionItemInstanceDetail> instanceDetails) {
-            this.instanceDetails = Objects.requireNonNull(instanceDetails);
+        public Builder instanceDetails(@Nullable List<GetExternalDatabasesExternalDatabaseCollectionItemInstanceDetail> instanceDetails) {
+            this.instanceDetails = instanceDetails;
             return this;
         }
         public Builder instanceDetails(GetExternalDatabasesExternalDatabaseCollectionItemInstanceDetail... instanceDetails) {
             return instanceDetails(List.of(instanceDetails));
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         public GetExternalDatabasesExternalDatabaseCollectionItem build() {

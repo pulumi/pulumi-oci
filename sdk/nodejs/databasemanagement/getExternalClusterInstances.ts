@@ -74,12 +74,12 @@ export interface GetExternalClusterInstancesResult {
     /**
      * The list of external_cluster_instance_collection.
      */
-    readonly externalClusterInstanceCollections: outputs.DatabaseManagement.GetExternalClusterInstancesExternalClusterInstanceCollection[];
+    readonly externalClusterInstanceCollections?: outputs.DatabaseManagement.GetExternalClusterInstancesExternalClusterInstanceCollection[];
     readonly filters?: outputs.DatabaseManagement.GetExternalClusterInstancesFilter[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
 }
 /**
  * This data source provides the list of External Cluster Instances in Oracle Cloud Infrastructure Database Management service.

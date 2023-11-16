@@ -76,50 +76,32 @@ class GetExternalClusterInstanceResult:
 
     @property
     @pulumi.getter(name="adrHomeDirectory")
-    def adr_home_directory(self) -> str:
-        """
-        The Automatic Diagnostic Repository (ADR) home directory for the cluster instance.
-        """
+    def adr_home_directory(self) -> Optional[str]:
         return pulumi.get(self, "adr_home_directory")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="componentName")
-    def component_name(self) -> str:
-        """
-        The name of the external cluster instance.
-        """
+    def component_name(self) -> Optional[str]:
         return pulumi.get(self, "component_name")
 
     @property
     @pulumi.getter(name="crsBaseDirectory")
-    def crs_base_directory(self) -> str:
-        """
-        The Oracle base location of Cluster Ready Services (CRS).
-        """
+    def crs_base_directory(self) -> Optional[str]:
         return pulumi.get(self, "crs_base_directory")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        The user-friendly name for the cluster instance. The name does not have to be unique.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="externalClusterId")
-    def external_cluster_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external cluster that the cluster instance belongs to.
-        """
+    def external_cluster_id(self) -> Optional[str]:
         return pulumi.get(self, "external_cluster_id")
 
     @property
@@ -129,82 +111,52 @@ class GetExternalClusterInstanceResult:
 
     @property
     @pulumi.getter(name="externalConnectorId")
-    def external_connector_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external connector.
-        """
+    def external_connector_id(self) -> Optional[str]:
         return pulumi.get(self, "external_connector_id")
 
     @property
     @pulumi.getter(name="externalDbNodeId")
-    def external_db_node_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB node.
-        """
+    def external_db_node_id(self) -> Optional[str]:
         return pulumi.get(self, "external_db_node_id")
 
     @property
     @pulumi.getter(name="externalDbSystemId")
-    def external_db_system_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that the cluster instance is a part of.
-        """
+    def external_db_system_id(self) -> Optional[str]:
         return pulumi.get(self, "external_db_system_id")
 
     @property
     @pulumi.getter(name="hostName")
-    def host_name(self) -> str:
-        """
-        The name of the host on which the cluster instance is running.
-        """
+    def host_name(self) -> Optional[str]:
         return pulumi.get(self, "host_name")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external cluster instance.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        Additional information about the current lifecycle state.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="nodeRole")
-    def node_role(self) -> str:
-        """
-        The role of the cluster node.
-        """
+    def node_role(self) -> Optional[str]:
         return pulumi.get(self, "node_role")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current lifecycle state of the external cluster instance.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the external cluster instance was created.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The date and time the external cluster instance was last updated.
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
 
@@ -236,21 +188,7 @@ class AwaitableGetExternalClusterInstanceResult(GetExternalClusterInstanceResult
 def get_external_cluster_instance(external_cluster_instance_id: Optional[str] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetExternalClusterInstanceResult:
     """
-    This data source provides details about a specific External Cluster Instance resource in Oracle Cloud Infrastructure Database Management service.
-
-    Gets the details for the external cluster instance specified by `externalClusterInstanceId`.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_external_cluster_instance = oci.DatabaseManagement.get_external_cluster_instance(external_cluster_instance_id=oci_database_management_external_cluster_instance["test_external_cluster_instance"]["id"])
-    ```
-
-
-    :param str external_cluster_instance_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external cluster instance.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['externalClusterInstanceId'] = external_cluster_instance_id
@@ -281,20 +219,6 @@ def get_external_cluster_instance(external_cluster_instance_id: Optional[str] = 
 def get_external_cluster_instance_output(external_cluster_instance_id: Optional[pulumi.Input[str]] = None,
                                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetExternalClusterInstanceResult]:
     """
-    This data source provides details about a specific External Cluster Instance resource in Oracle Cloud Infrastructure Database Management service.
-
-    Gets the details for the external cluster instance specified by `externalClusterInstanceId`.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_external_cluster_instance = oci.DatabaseManagement.get_external_cluster_instance(external_cluster_instance_id=oci_database_management_external_cluster_instance["test_external_cluster_instance"]["id"])
-    ```
-
-
-    :param str external_cluster_instance_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external cluster instance.
+    Use this data source to access information about an existing resource.
     """
     ...

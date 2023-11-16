@@ -15,6 +15,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetVirtualNodePoolsVirtualNodePool {
@@ -22,235 +24,235 @@ public final class GetVirtualNodePoolsVirtualNodePool {
      * @return The OCID of the cluster.
      * 
      */
-    private String clusterId;
+    private @Nullable String clusterId;
     /**
      * @return The OCID of the compartment.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return Display name of the virtual node pool. This is a non-unique value.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return The OCID of the virtual node pool.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Initial labels that will be added to the Kubernetes Virtual Node object when it registers. This is the same as virtualNodePool resources.
      * 
      */
-    private List<GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabel> initialVirtualNodeLabels;
+    private @Nullable List<GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabel> initialVirtualNodeLabels;
     /**
      * @return The version of Kubernetes running on the nodes in the node pool.
      * 
      */
-    private String kubernetesVersion;
+    private @Nullable String kubernetesVersion;
     /**
      * @return Details about the state of the Virtual Node Pool.
      * 
      */
-    private String lifecycleDetails;
+    private @Nullable String lifecycleDetails;
     /**
      * @return List of network security group IDs applied to the Pod VNIC.
      * 
      */
-    private List<String> nsgIds;
+    private @Nullable List<String> nsgIds;
     /**
      * @return The list of placement configurations which determines where Virtual Nodes will be provisioned across as it relates to the subnet and availability domains. The size attribute determines how many we evenly spread across these placement configurations
      * 
      */
-    private List<GetVirtualNodePoolsVirtualNodePoolPlacementConfiguration> placementConfigurations;
+    private @Nullable List<GetVirtualNodePoolsVirtualNodePoolPlacementConfiguration> placementConfigurations;
     /**
      * @return The pod configuration for pods run on virtual nodes of this virtual node pool.
      * 
      */
-    private List<GetVirtualNodePoolsVirtualNodePoolPodConfiguration> podConfigurations;
+    private @Nullable List<GetVirtualNodePoolsVirtualNodePoolPodConfiguration> podConfigurations;
     /**
      * @return The number of Virtual Nodes that should be in the Virtual Node Pool. The placement configurations determine where these virtual nodes are placed.
      * 
      */
-    private Integer size;
+    private @Nullable Integer size;
     /**
      * @return A virtual node pool lifecycle state to filter on. Can have multiple parameters of this name.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    private Map<String,Object> systemTags;
+    private @Nullable Map<String,Object> systemTags;
     /**
      * @return A taint is a collection of &lt;key, value, effect&gt;. These taints will be applied to the Virtual Nodes of this Virtual Node Pool for Kubernetes scheduling.
      * 
      */
-    private List<GetVirtualNodePoolsVirtualNodePoolTaint> taints;
+    private @Nullable List<GetVirtualNodePoolsVirtualNodePoolTaint> taints;
     /**
      * @return The time the virtual node pool was created.
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The time the virtual node pool was updated.
      * 
      */
-    private String timeUpdated;
-    private String virtualNodePoolId;
+    private @Nullable String timeUpdated;
+    private @Nullable String virtualNodePoolId;
     /**
      * @return The tags associated to the virtual nodes in this virtual node pool.
      * 
      */
-    private List<GetVirtualNodePoolsVirtualNodePoolVirtualNodeTag> virtualNodeTags;
+    private @Nullable List<GetVirtualNodePoolsVirtualNodePoolVirtualNodeTag> virtualNodeTags;
 
     private GetVirtualNodePoolsVirtualNodePool() {}
     /**
      * @return The OCID of the cluster.
      * 
      */
-    public String clusterId() {
-        return this.clusterId;
+    public Optional<String> clusterId() {
+        return Optional.ofNullable(this.clusterId);
     }
     /**
      * @return The OCID of the compartment.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return Display name of the virtual node pool. This is a non-unique value.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return The OCID of the virtual node pool.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Initial labels that will be added to the Kubernetes Virtual Node object when it registers. This is the same as virtualNodePool resources.
      * 
      */
     public List<GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabel> initialVirtualNodeLabels() {
-        return this.initialVirtualNodeLabels;
+        return this.initialVirtualNodeLabels == null ? List.of() : this.initialVirtualNodeLabels;
     }
     /**
      * @return The version of Kubernetes running on the nodes in the node pool.
      * 
      */
-    public String kubernetesVersion() {
-        return this.kubernetesVersion;
+    public Optional<String> kubernetesVersion() {
+        return Optional.ofNullable(this.kubernetesVersion);
     }
     /**
      * @return Details about the state of the Virtual Node Pool.
      * 
      */
-    public String lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Optional<String> lifecycleDetails() {
+        return Optional.ofNullable(this.lifecycleDetails);
     }
     /**
      * @return List of network security group IDs applied to the Pod VNIC.
      * 
      */
     public List<String> nsgIds() {
-        return this.nsgIds;
+        return this.nsgIds == null ? List.of() : this.nsgIds;
     }
     /**
      * @return The list of placement configurations which determines where Virtual Nodes will be provisioned across as it relates to the subnet and availability domains. The size attribute determines how many we evenly spread across these placement configurations
      * 
      */
     public List<GetVirtualNodePoolsVirtualNodePoolPlacementConfiguration> placementConfigurations() {
-        return this.placementConfigurations;
+        return this.placementConfigurations == null ? List.of() : this.placementConfigurations;
     }
     /**
      * @return The pod configuration for pods run on virtual nodes of this virtual node pool.
      * 
      */
     public List<GetVirtualNodePoolsVirtualNodePoolPodConfiguration> podConfigurations() {
-        return this.podConfigurations;
+        return this.podConfigurations == null ? List.of() : this.podConfigurations;
     }
     /**
      * @return The number of Virtual Nodes that should be in the Virtual Node Pool. The placement configurations determine where these virtual nodes are placed.
      * 
      */
-    public Integer size() {
-        return this.size;
+    public Optional<Integer> size() {
+        return Optional.ofNullable(this.size);
     }
     /**
      * @return A virtual node pool lifecycle state to filter on. Can have multiple parameters of this name.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
     public Map<String,Object> systemTags() {
-        return this.systemTags;
+        return this.systemTags == null ? Map.of() : this.systemTags;
     }
     /**
      * @return A taint is a collection of &lt;key, value, effect&gt;. These taints will be applied to the Virtual Nodes of this Virtual Node Pool for Kubernetes scheduling.
      * 
      */
     public List<GetVirtualNodePoolsVirtualNodePoolTaint> taints() {
-        return this.taints;
+        return this.taints == null ? List.of() : this.taints;
     }
     /**
      * @return The time the virtual node pool was created.
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return The time the virtual node pool was updated.
      * 
      */
-    public String timeUpdated() {
-        return this.timeUpdated;
+    public Optional<String> timeUpdated() {
+        return Optional.ofNullable(this.timeUpdated);
     }
-    public String virtualNodePoolId() {
-        return this.virtualNodePoolId;
+    public Optional<String> virtualNodePoolId() {
+        return Optional.ofNullable(this.virtualNodePoolId);
     }
     /**
      * @return The tags associated to the virtual nodes in this virtual node pool.
      * 
      */
     public List<GetVirtualNodePoolsVirtualNodePoolVirtualNodeTag> virtualNodeTags() {
-        return this.virtualNodeTags;
+        return this.virtualNodeTags == null ? List.of() : this.virtualNodeTags;
     }
 
     public static Builder builder() {
@@ -262,26 +264,26 @@ public final class GetVirtualNodePoolsVirtualNodePool {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String clusterId;
-        private String compartmentId;
-        private Map<String,Object> definedTags;
-        private String displayName;
-        private Map<String,Object> freeformTags;
-        private String id;
-        private List<GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabel> initialVirtualNodeLabels;
-        private String kubernetesVersion;
-        private String lifecycleDetails;
-        private List<String> nsgIds;
-        private List<GetVirtualNodePoolsVirtualNodePoolPlacementConfiguration> placementConfigurations;
-        private List<GetVirtualNodePoolsVirtualNodePoolPodConfiguration> podConfigurations;
-        private Integer size;
-        private String state;
-        private Map<String,Object> systemTags;
-        private List<GetVirtualNodePoolsVirtualNodePoolTaint> taints;
-        private String timeCreated;
-        private String timeUpdated;
-        private String virtualNodePoolId;
-        private List<GetVirtualNodePoolsVirtualNodePoolVirtualNodeTag> virtualNodeTags;
+        private @Nullable String clusterId;
+        private @Nullable String compartmentId;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String displayName;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String id;
+        private @Nullable List<GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabel> initialVirtualNodeLabels;
+        private @Nullable String kubernetesVersion;
+        private @Nullable String lifecycleDetails;
+        private @Nullable List<String> nsgIds;
+        private @Nullable List<GetVirtualNodePoolsVirtualNodePoolPlacementConfiguration> placementConfigurations;
+        private @Nullable List<GetVirtualNodePoolsVirtualNodePoolPodConfiguration> podConfigurations;
+        private @Nullable Integer size;
+        private @Nullable String state;
+        private @Nullable Map<String,Object> systemTags;
+        private @Nullable List<GetVirtualNodePoolsVirtualNodePoolTaint> taints;
+        private @Nullable String timeCreated;
+        private @Nullable String timeUpdated;
+        private @Nullable String virtualNodePoolId;
+        private @Nullable List<GetVirtualNodePoolsVirtualNodePoolVirtualNodeTag> virtualNodeTags;
         public Builder() {}
         public Builder(GetVirtualNodePoolsVirtualNodePool defaults) {
     	      Objects.requireNonNull(defaults);
@@ -308,118 +310,118 @@ public final class GetVirtualNodePoolsVirtualNodePool {
         }
 
         @CustomType.Setter
-        public Builder clusterId(String clusterId) {
-            this.clusterId = Objects.requireNonNull(clusterId);
+        public Builder clusterId(@Nullable String clusterId) {
+            this.clusterId = clusterId;
             return this;
         }
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder initialVirtualNodeLabels(List<GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabel> initialVirtualNodeLabels) {
-            this.initialVirtualNodeLabels = Objects.requireNonNull(initialVirtualNodeLabels);
+        public Builder initialVirtualNodeLabels(@Nullable List<GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabel> initialVirtualNodeLabels) {
+            this.initialVirtualNodeLabels = initialVirtualNodeLabels;
             return this;
         }
         public Builder initialVirtualNodeLabels(GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabel... initialVirtualNodeLabels) {
             return initialVirtualNodeLabels(List.of(initialVirtualNodeLabels));
         }
         @CustomType.Setter
-        public Builder kubernetesVersion(String kubernetesVersion) {
-            this.kubernetesVersion = Objects.requireNonNull(kubernetesVersion);
+        public Builder kubernetesVersion(@Nullable String kubernetesVersion) {
+            this.kubernetesVersion = kubernetesVersion;
             return this;
         }
         @CustomType.Setter
-        public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+        public Builder lifecycleDetails(@Nullable String lifecycleDetails) {
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
-        public Builder nsgIds(List<String> nsgIds) {
-            this.nsgIds = Objects.requireNonNull(nsgIds);
+        public Builder nsgIds(@Nullable List<String> nsgIds) {
+            this.nsgIds = nsgIds;
             return this;
         }
         public Builder nsgIds(String... nsgIds) {
             return nsgIds(List.of(nsgIds));
         }
         @CustomType.Setter
-        public Builder placementConfigurations(List<GetVirtualNodePoolsVirtualNodePoolPlacementConfiguration> placementConfigurations) {
-            this.placementConfigurations = Objects.requireNonNull(placementConfigurations);
+        public Builder placementConfigurations(@Nullable List<GetVirtualNodePoolsVirtualNodePoolPlacementConfiguration> placementConfigurations) {
+            this.placementConfigurations = placementConfigurations;
             return this;
         }
         public Builder placementConfigurations(GetVirtualNodePoolsVirtualNodePoolPlacementConfiguration... placementConfigurations) {
             return placementConfigurations(List.of(placementConfigurations));
         }
         @CustomType.Setter
-        public Builder podConfigurations(List<GetVirtualNodePoolsVirtualNodePoolPodConfiguration> podConfigurations) {
-            this.podConfigurations = Objects.requireNonNull(podConfigurations);
+        public Builder podConfigurations(@Nullable List<GetVirtualNodePoolsVirtualNodePoolPodConfiguration> podConfigurations) {
+            this.podConfigurations = podConfigurations;
             return this;
         }
         public Builder podConfigurations(GetVirtualNodePoolsVirtualNodePoolPodConfiguration... podConfigurations) {
             return podConfigurations(List.of(podConfigurations));
         }
         @CustomType.Setter
-        public Builder size(Integer size) {
-            this.size = Objects.requireNonNull(size);
+        public Builder size(@Nullable Integer size) {
+            this.size = size;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+        public Builder systemTags(@Nullable Map<String,Object> systemTags) {
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
-        public Builder taints(List<GetVirtualNodePoolsVirtualNodePoolTaint> taints) {
-            this.taints = Objects.requireNonNull(taints);
+        public Builder taints(@Nullable List<GetVirtualNodePoolsVirtualNodePoolTaint> taints) {
+            this.taints = taints;
             return this;
         }
         public Builder taints(GetVirtualNodePoolsVirtualNodePoolTaint... taints) {
             return taints(List.of(taints));
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+        public Builder timeUpdated(@Nullable String timeUpdated) {
+            this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter
-        public Builder virtualNodePoolId(String virtualNodePoolId) {
-            this.virtualNodePoolId = Objects.requireNonNull(virtualNodePoolId);
+        public Builder virtualNodePoolId(@Nullable String virtualNodePoolId) {
+            this.virtualNodePoolId = virtualNodePoolId;
             return this;
         }
         @CustomType.Setter
-        public Builder virtualNodeTags(List<GetVirtualNodePoolsVirtualNodePoolVirtualNodeTag> virtualNodeTags) {
-            this.virtualNodeTags = Objects.requireNonNull(virtualNodeTags);
+        public Builder virtualNodeTags(@Nullable List<GetVirtualNodePoolsVirtualNodePoolVirtualNodeTag> virtualNodeTags) {
+            this.virtualNodeTags = virtualNodeTags;
             return this;
         }
         public Builder virtualNodeTags(GetVirtualNodePoolsVirtualNodePoolVirtualNodeTag... virtualNodeTags) {

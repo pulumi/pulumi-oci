@@ -61,49 +61,31 @@ class GetMysqlDbSystemsResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The OCID of the compartment the DB System belongs in.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="configurationId")
     def configuration_id(self) -> Optional[str]:
-        """
-        The OCID of the Configuration to be used for Instances in this DB System.
-        """
         return pulumi.get(self, "configuration_id")
 
     @property
     @pulumi.getter(name="databaseManagements")
     def database_managements(self) -> Optional[Sequence[str]]:
-        """
-        Whether to enable monitoring via the Database Management service.
-        """
         return pulumi.get(self, "database_managements")
 
     @property
     @pulumi.getter(name="dbSystemId")
     def db_system_id(self) -> Optional[str]:
-        """
-        The OCID of the DB System from which a backup shall be selected to be restored when creating the new DB System. Use this together with recovery point to perform a point in time recovery operation.
-        """
         return pulumi.get(self, "db_system_id")
 
     @property
     @pulumi.getter(name="dbSystems")
-    def db_systems(self) -> Sequence['outputs.GetMysqlDbSystemsDbSystemResult']:
-        """
-        The list of db_systems.
-        """
+    def db_systems(self) -> Optional[Sequence['outputs.GetMysqlDbSystemsDbSystemResult']]:
         return pulumi.get(self, "db_systems")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        The user-friendly name for the DB System. It does not have to be unique.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -113,7 +95,7 @@ class GetMysqlDbSystemsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -122,9 +104,6 @@ class GetMysqlDbSystemsResult:
     @property
     @pulumi.getter(name="isHeatWaveClusterAttached")
     def is_heat_wave_cluster_attached(self) -> Optional[bool]:
-        """
-        If the DB System has a HeatWave Cluster attached.
-        """
         return pulumi.get(self, "is_heat_wave_cluster_attached")
 
     @property
@@ -135,9 +114,6 @@ class GetMysqlDbSystemsResult:
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the DB System.
-        """
         return pulumi.get(self, "state")
 
 
@@ -171,36 +147,7 @@ def get_mysql_db_systems(compartment_id: Optional[str] = None,
                          state: Optional[str] = None,
                          opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetMysqlDbSystemsResult:
     """
-    This data source provides the list of Mysql Db Systems in Oracle Cloud Infrastructure MySQL Database service.
-
-    Get a list of DB Systems in the specified compartment.
-    The default sort order is by timeUpdated, descending.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_mysql_db_systems = oci.Mysql.get_mysql_db_systems(compartment_id=var["compartment_id"],
-        configuration_id=var["mysql_configuration_id"],
-        database_managements=var["mysql_db_system_database_management"],
-        db_system_id=oci_mysql_mysql_db_system["test_db_system"]["id"],
-        display_name=var["mysql_db_system_display_name"],
-        is_heat_wave_cluster_attached=var["mysql_db_system_is_heat_wave_cluster_attached"],
-        is_up_to_date=var["mysql_db_system_is_up_to_date"],
-        state=var["mysql_db_system_state"])
-    ```
-
-
-    :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param str configuration_id: The requested Configuration instance.
-    :param Sequence[str] database_managements: Filter DB Systems by their Database Management configuration.
-    :param str db_system_id: The DB System [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param str display_name: A filter to return only the resource matching the given display name exactly.
-    :param bool is_heat_wave_cluster_attached: If true, return only DB Systems with a HeatWave cluster attached, if false return only DB Systems with no HeatWave cluster attached. If not present, return all DB Systems.
-    :param bool is_up_to_date: Filter instances if they are using the latest revision of the Configuration they are associated with.
-    :param str state: DbSystem Lifecycle State
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -241,35 +188,6 @@ def get_mysql_db_systems_output(compartment_id: Optional[pulumi.Input[str]] = No
                                 state: Optional[pulumi.Input[Optional[str]]] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetMysqlDbSystemsResult]:
     """
-    This data source provides the list of Mysql Db Systems in Oracle Cloud Infrastructure MySQL Database service.
-
-    Get a list of DB Systems in the specified compartment.
-    The default sort order is by timeUpdated, descending.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_mysql_db_systems = oci.Mysql.get_mysql_db_systems(compartment_id=var["compartment_id"],
-        configuration_id=var["mysql_configuration_id"],
-        database_managements=var["mysql_db_system_database_management"],
-        db_system_id=oci_mysql_mysql_db_system["test_db_system"]["id"],
-        display_name=var["mysql_db_system_display_name"],
-        is_heat_wave_cluster_attached=var["mysql_db_system_is_heat_wave_cluster_attached"],
-        is_up_to_date=var["mysql_db_system_is_up_to_date"],
-        state=var["mysql_db_system_state"])
-    ```
-
-
-    :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param str configuration_id: The requested Configuration instance.
-    :param Sequence[str] database_managements: Filter DB Systems by their Database Management configuration.
-    :param str db_system_id: The DB System [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param str display_name: A filter to return only the resource matching the given display name exactly.
-    :param bool is_heat_wave_cluster_attached: If true, return only DB Systems with a HeatWave cluster attached, if false return only DB Systems with no HeatWave cluster attached. If not present, return all DB Systems.
-    :param bool is_up_to_date: Filter instances if they are using the latest revision of the Configuration they are associated with.
-    :param str state: DbSystem Lifecycle State
+    Use this data source to access information about an existing resource.
     """
     ...

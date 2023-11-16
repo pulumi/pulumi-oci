@@ -16,47 +16,47 @@ namespace Pulumi.Oci.Waas.Outputs
         /// <summary>
         /// The fully qualified domain name used for DNS lookups of the server.
         /// </summary>
-        public readonly string CommonName;
+        public readonly string? CommonName;
         /// <summary>
         /// ISO 3166-1 alpha-2 code of the country where the organization is located. For a list of codes, see [ISO's website](https://www.iso.org/obp/ui/#search/code/).
         /// </summary>
-        public readonly string Country;
+        public readonly string? Country;
         /// <summary>
         /// The email address of the server's administrator.
         /// </summary>
-        public readonly string EmailAddress;
+        public readonly string? EmailAddress;
         /// <summary>
         /// The city in which the organization is located.
         /// </summary>
-        public readonly string Locality;
+        public readonly string? Locality;
         /// <summary>
         /// The organization name.
         /// </summary>
-        public readonly string Organization;
+        public readonly string? Organization;
         /// <summary>
         /// The field to differentiate between divisions within an organization.
         /// </summary>
-        public readonly string OrganizationalUnit;
+        public readonly string? OrganizationalUnit;
         /// <summary>
         /// The province where the organization is located.
         /// </summary>
-        public readonly string StateProvince;
+        public readonly string? StateProvince;
 
         [OutputConstructor]
         private GetCertificateSubjectNameResult(
-            string commonName,
+            string? commonName,
 
-            string country,
+            string? country,
 
-            string emailAddress,
+            string? emailAddress,
 
-            string locality,
+            string? locality,
 
-            string organization,
+            string? organization,
 
-            string organizationalUnit,
+            string? organizationalUnit,
 
-            string stateProvince)
+            string? stateProvince)
         {
             CommonName = commonName;
             Country = country;

@@ -83,18 +83,12 @@ class GetCrossConnectResult:
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the cross-connect group.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="crossConnectGroupId")
-    def cross_connect_group_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cross-connect group this cross-connect belongs to (if any).
-        """
+    def cross_connect_group_id(self) -> Optional[str]:
         return pulumi.get(self, "cross_connect_group_id")
 
     @property
@@ -104,121 +98,82 @@ class GetCrossConnectResult:
 
     @property
     @pulumi.getter(name="customerReferenceName")
-    def customer_reference_name(self) -> str:
-        """
-        A reference name or identifier for the physical fiber connection that this cross-connect uses.
-        """
+    def customer_reference_name(self) -> Optional[str]:
         return pulumi.get(self, "customer_reference_name")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="farCrossConnectOrCrossConnectGroupId")
-    def far_cross_connect_or_cross_connect_group_id(self) -> str:
+    def far_cross_connect_or_cross_connect_group_id(self) -> Optional[str]:
         return pulumi.get(self, "far_cross_connect_or_cross_connect_group_id")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The cross-connect's Oracle ID (OCID).
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="isActive")
-    def is_active(self) -> bool:
+    def is_active(self) -> Optional[bool]:
         return pulumi.get(self, "is_active")
 
     @property
     @pulumi.getter(name="locationName")
-    def location_name(self) -> str:
-        """
-        The name of the FastConnect location where this cross-connect is installed.
-        """
+    def location_name(self) -> Optional[str]:
         return pulumi.get(self, "location_name")
 
     @property
     @pulumi.getter(name="macsecProperties")
-    def macsec_properties(self) -> Sequence['outputs.GetCrossConnectMacsecPropertyResult']:
-        """
-        Properties used for MACsec (if capable).
-        """
+    def macsec_properties(self) -> Optional[Sequence['outputs.GetCrossConnectMacsecPropertyResult']]:
         return pulumi.get(self, "macsec_properties")
 
     @property
     @pulumi.getter(name="nearCrossConnectOrCrossConnectGroupId")
-    def near_cross_connect_or_cross_connect_group_id(self) -> str:
+    def near_cross_connect_or_cross_connect_group_id(self) -> Optional[str]:
         return pulumi.get(self, "near_cross_connect_or_cross_connect_group_id")
 
     @property
     @pulumi.getter(name="ociLogicalDeviceName")
-    def oci_logical_device_name(self) -> str:
-        """
-        The FastConnect device that terminates the logical connection. This device might be different than the device that terminates the physical connection.
-        """
+    def oci_logical_device_name(self) -> Optional[str]:
         return pulumi.get(self, "oci_logical_device_name")
 
     @property
     @pulumi.getter(name="ociPhysicalDeviceName")
-    def oci_physical_device_name(self) -> str:
-        """
-        The FastConnect device that terminates the physical connection.
-        """
+    def oci_physical_device_name(self) -> Optional[str]:
         return pulumi.get(self, "oci_physical_device_name")
 
     @property
     @pulumi.getter(name="portName")
-    def port_name(self) -> str:
-        """
-        A string identifying the meet-me room port for this cross-connect.
-        """
+    def port_name(self) -> Optional[str]:
         return pulumi.get(self, "port_name")
 
     @property
     @pulumi.getter(name="portSpeedShapeName")
-    def port_speed_shape_name(self) -> str:
-        """
-        The port speed for this cross-connect.  Example: `10 Gbps`
-        """
+    def port_speed_shape_name(self) -> Optional[str]:
         return pulumi.get(self, "port_speed_shape_name")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The cross-connect's current state.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the cross-connect was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
 
@@ -252,21 +207,7 @@ class AwaitableGetCrossConnectResult(GetCrossConnectResult):
 def get_cross_connect(cross_connect_id: Optional[str] = None,
                       opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetCrossConnectResult:
     """
-    This data source provides details about a specific Cross Connect resource in Oracle Cloud Infrastructure Core service.
-
-    Gets the specified cross-connect's information.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_cross_connect = oci.Core.get_cross_connect(cross_connect_id=oci_core_cross_connect["test_cross_connect"]["id"])
-    ```
-
-
-    :param str cross_connect_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cross-connect.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['crossConnectId'] = cross_connect_id
@@ -299,20 +240,6 @@ def get_cross_connect(cross_connect_id: Optional[str] = None,
 def get_cross_connect_output(cross_connect_id: Optional[pulumi.Input[str]] = None,
                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCrossConnectResult]:
     """
-    This data source provides details about a specific Cross Connect resource in Oracle Cloud Infrastructure Core service.
-
-    Gets the specified cross-connect's information.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_cross_connect = oci.Core.get_cross_connect(cross_connect_id=oci_core_cross_connect["test_cross_connect"]["id"])
-    ```
-
-
-    :param str cross_connect_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cross-connect.
+    Use this data source to access information about an existing resource.
     """
     ...

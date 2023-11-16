@@ -9,6 +9,7 @@ import com.pulumi.oci.DatabaseMigration.outputs.GetAgentImagesFilter;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 @CustomType
@@ -17,13 +18,13 @@ public final class GetAgentImagesResult {
      * @return The list of agent_image_collection.
      * 
      */
-    private List<GetAgentImagesAgentImageCollection> agentImageCollections;
+    private @Nullable List<GetAgentImagesAgentImageCollection> agentImageCollections;
     private @Nullable List<GetAgentImagesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
 
     private GetAgentImagesResult() {}
     /**
@@ -31,7 +32,7 @@ public final class GetAgentImagesResult {
      * 
      */
     public List<GetAgentImagesAgentImageCollection> agentImageCollections() {
-        return this.agentImageCollections;
+        return this.agentImageCollections == null ? List.of() : this.agentImageCollections;
     }
     public List<GetAgentImagesFilter> filters() {
         return this.filters == null ? List.of() : this.filters;
@@ -40,8 +41,8 @@ public final class GetAgentImagesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
 
     public static Builder builder() {
@@ -53,9 +54,9 @@ public final class GetAgentImagesResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetAgentImagesAgentImageCollection> agentImageCollections;
+        private @Nullable List<GetAgentImagesAgentImageCollection> agentImageCollections;
         private @Nullable List<GetAgentImagesFilter> filters;
-        private String id;
+        private @Nullable String id;
         public Builder() {}
         public Builder(GetAgentImagesResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -65,8 +66,8 @@ public final class GetAgentImagesResult {
         }
 
         @CustomType.Setter
-        public Builder agentImageCollections(List<GetAgentImagesAgentImageCollection> agentImageCollections) {
-            this.agentImageCollections = Objects.requireNonNull(agentImageCollections);
+        public Builder agentImageCollections(@Nullable List<GetAgentImagesAgentImageCollection> agentImageCollections) {
+            this.agentImageCollections = agentImageCollections;
             return this;
         }
         public Builder agentImageCollections(GetAgentImagesAgentImageCollection... agentImageCollections) {
@@ -81,8 +82,8 @@ public final class GetAgentImagesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         public GetAgentImagesResult build() {

@@ -16,10 +16,10 @@ namespace Pulumi.Oci.Sch.Outputs
         /// <summary>
         /// The type descriminator.
         /// </summary>
-        public readonly string Kind;
+        public readonly string? Kind;
 
         [OutputConstructor]
-        private GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetricResult(string kind)
+        private GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetricResult(string? kind)
         {
             Kind = kind;
         }

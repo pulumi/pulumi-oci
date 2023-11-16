@@ -246,7 +246,7 @@ namespace Pulumi.Oci.CloudGuard
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The current state of the DataMaskRule.
         /// </summary>
@@ -270,7 +270,7 @@ namespace Pulumi.Oci.CloudGuard
 
             string? iamGroupId,
 
-            string id,
+            string? id,
 
             string? state,
 

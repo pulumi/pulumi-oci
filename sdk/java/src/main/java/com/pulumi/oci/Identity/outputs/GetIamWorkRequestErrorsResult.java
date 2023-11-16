@@ -9,6 +9,7 @@ import com.pulumi.oci.Identity.outputs.GetIamWorkRequestErrorsIamWorkRequestErro
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 @CustomType
@@ -18,13 +19,13 @@ public final class GetIamWorkRequestErrorsResult {
      * @return The list of iam_work_request_errors.
      * 
      */
-    private List<GetIamWorkRequestErrorsIamWorkRequestError> iamWorkRequestErrors;
+    private @Nullable List<GetIamWorkRequestErrorsIamWorkRequestError> iamWorkRequestErrors;
     private String iamWorkRequestId;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
 
     private GetIamWorkRequestErrorsResult() {}
     public List<GetIamWorkRequestErrorsFilter> filters() {
@@ -35,7 +36,7 @@ public final class GetIamWorkRequestErrorsResult {
      * 
      */
     public List<GetIamWorkRequestErrorsIamWorkRequestError> iamWorkRequestErrors() {
-        return this.iamWorkRequestErrors;
+        return this.iamWorkRequestErrors == null ? List.of() : this.iamWorkRequestErrors;
     }
     public String iamWorkRequestId() {
         return this.iamWorkRequestId;
@@ -44,8 +45,8 @@ public final class GetIamWorkRequestErrorsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
 
     public static Builder builder() {
@@ -58,9 +59,9 @@ public final class GetIamWorkRequestErrorsResult {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable List<GetIamWorkRequestErrorsFilter> filters;
-        private List<GetIamWorkRequestErrorsIamWorkRequestError> iamWorkRequestErrors;
+        private @Nullable List<GetIamWorkRequestErrorsIamWorkRequestError> iamWorkRequestErrors;
         private String iamWorkRequestId;
-        private String id;
+        private @Nullable String id;
         public Builder() {}
         public Builder(GetIamWorkRequestErrorsResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -79,8 +80,8 @@ public final class GetIamWorkRequestErrorsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder iamWorkRequestErrors(List<GetIamWorkRequestErrorsIamWorkRequestError> iamWorkRequestErrors) {
-            this.iamWorkRequestErrors = Objects.requireNonNull(iamWorkRequestErrors);
+        public Builder iamWorkRequestErrors(@Nullable List<GetIamWorkRequestErrorsIamWorkRequestError> iamWorkRequestErrors) {
+            this.iamWorkRequestErrors = iamWorkRequestErrors;
             return this;
         }
         public Builder iamWorkRequestErrors(GetIamWorkRequestErrorsIamWorkRequestError... iamWorkRequestErrors) {
@@ -92,8 +93,8 @@ public final class GetIamWorkRequestErrorsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         public GetIamWorkRequestErrorsResult build() {

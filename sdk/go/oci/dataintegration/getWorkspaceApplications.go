@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Workspace Applications in Oracle Cloud Infrastructure Data Integration service.
@@ -77,7 +76,7 @@ type GetWorkspaceApplicationsResult struct {
 	Fields                        []string                                               `pulumi:"fields"`
 	Filters                       []GetWorkspaceApplicationsFilter                       `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be modified.
 	Identifiers []string `pulumi:"identifiers"`
 	// Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
@@ -134,12 +133,6 @@ func (o GetWorkspaceApplicationsResultOutput) ToGetWorkspaceApplicationsResultOu
 	return o
 }
 
-func (o GetWorkspaceApplicationsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetWorkspaceApplicationsResult] {
-	return pulumix.Output[GetWorkspaceApplicationsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The list of application_summary_collection.
 func (o GetWorkspaceApplicationsResultOutput) ApplicationSummaryCollections() GetWorkspaceApplicationsApplicationSummaryCollectionArrayOutput {
 	return o.ApplyT(func(v GetWorkspaceApplicationsResult) []GetWorkspaceApplicationsApplicationSummaryCollection {
@@ -156,8 +149,8 @@ func (o GetWorkspaceApplicationsResultOutput) Filters() GetWorkspaceApplications
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetWorkspaceApplicationsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceApplicationsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetWorkspaceApplicationsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be modified.

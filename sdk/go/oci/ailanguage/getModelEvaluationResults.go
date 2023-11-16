@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Model Evaluation Results in Oracle Cloud Infrastructure Ai Language service.
@@ -64,8 +63,8 @@ type GetModelEvaluationResultsResult struct {
 	EvaluationResultCollections []GetModelEvaluationResultsEvaluationResultCollection `pulumi:"evaluationResultCollections"`
 	Filters                     []GetModelEvaluationResultsFilter                     `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id      string `pulumi:"id"`
-	ModelId string `pulumi:"modelId"`
+	Id      *string `pulumi:"id"`
+	ModelId string  `pulumi:"modelId"`
 }
 
 func GetModelEvaluationResultsOutput(ctx *pulumi.Context, args GetModelEvaluationResultsOutputArgs, opts ...pulumi.InvokeOption) GetModelEvaluationResultsResultOutput {
@@ -107,12 +106,6 @@ func (o GetModelEvaluationResultsResultOutput) ToGetModelEvaluationResultsResult
 	return o
 }
 
-func (o GetModelEvaluationResultsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetModelEvaluationResultsResult] {
-	return pulumix.Output[GetModelEvaluationResultsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The list of evaluation_result_collection.
 func (o GetModelEvaluationResultsResultOutput) EvaluationResultCollections() GetModelEvaluationResultsEvaluationResultCollectionArrayOutput {
 	return o.ApplyT(func(v GetModelEvaluationResultsResult) []GetModelEvaluationResultsEvaluationResultCollection {
@@ -125,8 +118,8 @@ func (o GetModelEvaluationResultsResultOutput) Filters() GetModelEvaluationResul
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetModelEvaluationResultsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetModelEvaluationResultsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetModelEvaluationResultsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetModelEvaluationResultsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetModelEvaluationResultsResultOutput) ModelId() pulumi.StringOutput {

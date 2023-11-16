@@ -15,322 +15,324 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetBlockchainPlatformsBlockchainPlatformCollectionItem {
-    private String caCertArchiveText;
+    private @Nullable String caCertArchiveText;
     /**
      * @return The ID of the compartment in which to list resources.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return Blockchain Platform component details.
      * 
      */
-    private List<GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetail> componentDetails;
+    private @Nullable List<GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetail> componentDetails;
     /**
      * @return Compute shape - STANDARD or ENTERPRISE_SMALL or ENTERPRISE_MEDIUM or ENTERPRISE_LARGE or ENTERPRISE_EXTRA_LARGE or ENTERPRISE_CUSTOM
      * 
      */
-    private String computeShape;
+    private @Nullable String computeShape;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return Platform Instance Description
      * 
      */
-    private String description;
+    private @Nullable String description;
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Example: `My new resource`
      * 
      */
-    private String displayName;
-    private String federatedUserId;
+    private @Nullable String displayName;
+    private @Nullable String federatedUserId;
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return List of OcpuUtilization for all hosts
      * 
      */
-    private List<GetBlockchainPlatformsBlockchainPlatformCollectionItemHostOcpuUtilizationInfo> hostOcpuUtilizationInfos;
+    private @Nullable List<GetBlockchainPlatformsBlockchainPlatformCollectionItemHostOcpuUtilizationInfo> hostOcpuUtilizationInfos;
     /**
      * @return unique identifier that is immutable on creation
      * 
      */
-    private String id;
-    private String idcsAccessToken;
+    private @Nullable String id;
+    private @Nullable String idcsAccessToken;
     /**
      * @return Bring your own license
      * 
      */
-    private Boolean isByol;
+    private @Nullable Boolean isByol;
     /**
      * @return True for multi-AD blockchain plaforms, false for single-AD
      * 
      */
-    private Boolean isMultiAd;
+    private @Nullable Boolean isMultiAd;
     /**
      * @return An message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
-    private String lifecycleDetails;
+    private @Nullable String lifecycleDetails;
     /**
      * @return Type of Load Balancer shape - LB_100_MBPS or LB_400_MBPS. Default is LB_100_MBPS.
      * 
      */
-    private String loadBalancerShape;
+    private @Nullable String loadBalancerShape;
     /**
      * @return Role of platform - FOUNDER or PARTICIPANT
      * 
      */
-    private String platformRole;
+    private @Nullable String platformRole;
     /**
      * @return Type of Platform shape - DEFAULT or CUSTOM
      * 
      */
-    private String platformShapeType;
+    private @Nullable String platformShapeType;
     /**
      * @return Platform Version
      * 
      */
-    private String platformVersion;
+    private @Nullable String platformVersion;
     /**
      * @return Number of replicas of service components like Rest Proxy, CA and Console
      * 
      */
-    private List<GetBlockchainPlatformsBlockchainPlatformCollectionItemReplica> replicas;
+    private @Nullable List<GetBlockchainPlatformsBlockchainPlatformCollectionItemReplica> replicas;
     /**
      * @return Service endpoint URL, valid post-provisioning
      * 
      */
-    private String serviceEndpoint;
+    private @Nullable String serviceEndpoint;
     /**
      * @return The version of the Platform Instance.
      * 
      */
-    private String serviceVersion;
+    private @Nullable String serviceVersion;
     /**
      * @return A filter to only return resources that match the given lifecycle state. The state value is case-insensitive.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return Storage size in TBs
      * 
      */
-    private Double storageSizeInTbs;
+    private @Nullable Double storageSizeInTbs;
     /**
      * @return Storage used in TBs
      * 
      */
-    private Double storageUsedInTbs;
+    private @Nullable Double storageUsedInTbs;
     /**
      * @return The time the the Platform Instance was created. An RFC3339 formatted datetime string
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The time the Platform Instance was updated. An RFC3339 formatted datetime string
      * 
      */
-    private String timeUpdated;
+    private @Nullable String timeUpdated;
     /**
      * @return Number of total OCPUs allocated to the platform cluster
      * 
      */
-    private Integer totalOcpuCapacity;
+    private @Nullable Integer totalOcpuCapacity;
 
     private GetBlockchainPlatformsBlockchainPlatformCollectionItem() {}
-    public String caCertArchiveText() {
-        return this.caCertArchiveText;
+    public Optional<String> caCertArchiveText() {
+        return Optional.ofNullable(this.caCertArchiveText);
     }
     /**
      * @return The ID of the compartment in which to list resources.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return Blockchain Platform component details.
      * 
      */
     public List<GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetail> componentDetails() {
-        return this.componentDetails;
+        return this.componentDetails == null ? List.of() : this.componentDetails;
     }
     /**
      * @return Compute shape - STANDARD or ENTERPRISE_SMALL or ENTERPRISE_MEDIUM or ENTERPRISE_LARGE or ENTERPRISE_EXTRA_LARGE or ENTERPRISE_CUSTOM
      * 
      */
-    public String computeShape() {
-        return this.computeShape;
+    public Optional<String> computeShape() {
+        return Optional.ofNullable(this.computeShape);
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return Platform Instance Description
      * 
      */
-    public String description() {
-        return this.description;
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Example: `My new resource`
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
-    public String federatedUserId() {
-        return this.federatedUserId;
+    public Optional<String> federatedUserId() {
+        return Optional.ofNullable(this.federatedUserId);
     }
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return List of OcpuUtilization for all hosts
      * 
      */
     public List<GetBlockchainPlatformsBlockchainPlatformCollectionItemHostOcpuUtilizationInfo> hostOcpuUtilizationInfos() {
-        return this.hostOcpuUtilizationInfos;
+        return this.hostOcpuUtilizationInfos == null ? List.of() : this.hostOcpuUtilizationInfos;
     }
     /**
      * @return unique identifier that is immutable on creation
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
-    public String idcsAccessToken() {
-        return this.idcsAccessToken;
+    public Optional<String> idcsAccessToken() {
+        return Optional.ofNullable(this.idcsAccessToken);
     }
     /**
      * @return Bring your own license
      * 
      */
-    public Boolean isByol() {
-        return this.isByol;
+    public Optional<Boolean> isByol() {
+        return Optional.ofNullable(this.isByol);
     }
     /**
      * @return True for multi-AD blockchain plaforms, false for single-AD
      * 
      */
-    public Boolean isMultiAd() {
-        return this.isMultiAd;
+    public Optional<Boolean> isMultiAd() {
+        return Optional.ofNullable(this.isMultiAd);
     }
     /**
      * @return An message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
-    public String lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Optional<String> lifecycleDetails() {
+        return Optional.ofNullable(this.lifecycleDetails);
     }
     /**
      * @return Type of Load Balancer shape - LB_100_MBPS or LB_400_MBPS. Default is LB_100_MBPS.
      * 
      */
-    public String loadBalancerShape() {
-        return this.loadBalancerShape;
+    public Optional<String> loadBalancerShape() {
+        return Optional.ofNullable(this.loadBalancerShape);
     }
     /**
      * @return Role of platform - FOUNDER or PARTICIPANT
      * 
      */
-    public String platformRole() {
-        return this.platformRole;
+    public Optional<String> platformRole() {
+        return Optional.ofNullable(this.platformRole);
     }
     /**
      * @return Type of Platform shape - DEFAULT or CUSTOM
      * 
      */
-    public String platformShapeType() {
-        return this.platformShapeType;
+    public Optional<String> platformShapeType() {
+        return Optional.ofNullable(this.platformShapeType);
     }
     /**
      * @return Platform Version
      * 
      */
-    public String platformVersion() {
-        return this.platformVersion;
+    public Optional<String> platformVersion() {
+        return Optional.ofNullable(this.platformVersion);
     }
     /**
      * @return Number of replicas of service components like Rest Proxy, CA and Console
      * 
      */
     public List<GetBlockchainPlatformsBlockchainPlatformCollectionItemReplica> replicas() {
-        return this.replicas;
+        return this.replicas == null ? List.of() : this.replicas;
     }
     /**
      * @return Service endpoint URL, valid post-provisioning
      * 
      */
-    public String serviceEndpoint() {
-        return this.serviceEndpoint;
+    public Optional<String> serviceEndpoint() {
+        return Optional.ofNullable(this.serviceEndpoint);
     }
     /**
      * @return The version of the Platform Instance.
      * 
      */
-    public String serviceVersion() {
-        return this.serviceVersion;
+    public Optional<String> serviceVersion() {
+        return Optional.ofNullable(this.serviceVersion);
     }
     /**
      * @return A filter to only return resources that match the given lifecycle state. The state value is case-insensitive.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return Storage size in TBs
      * 
      */
-    public Double storageSizeInTbs() {
-        return this.storageSizeInTbs;
+    public Optional<Double> storageSizeInTbs() {
+        return Optional.ofNullable(this.storageSizeInTbs);
     }
     /**
      * @return Storage used in TBs
      * 
      */
-    public Double storageUsedInTbs() {
-        return this.storageUsedInTbs;
+    public Optional<Double> storageUsedInTbs() {
+        return Optional.ofNullable(this.storageUsedInTbs);
     }
     /**
      * @return The time the the Platform Instance was created. An RFC3339 formatted datetime string
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return The time the Platform Instance was updated. An RFC3339 formatted datetime string
      * 
      */
-    public String timeUpdated() {
-        return this.timeUpdated;
+    public Optional<String> timeUpdated() {
+        return Optional.ofNullable(this.timeUpdated);
     }
     /**
      * @return Number of total OCPUs allocated to the platform cluster
      * 
      */
-    public Integer totalOcpuCapacity() {
-        return this.totalOcpuCapacity;
+    public Optional<Integer> totalOcpuCapacity() {
+        return Optional.ofNullable(this.totalOcpuCapacity);
     }
 
     public static Builder builder() {
@@ -342,34 +344,34 @@ public final class GetBlockchainPlatformsBlockchainPlatformCollectionItem {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String caCertArchiveText;
-        private String compartmentId;
-        private List<GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetail> componentDetails;
-        private String computeShape;
-        private Map<String,Object> definedTags;
-        private String description;
-        private String displayName;
-        private String federatedUserId;
-        private Map<String,Object> freeformTags;
-        private List<GetBlockchainPlatformsBlockchainPlatformCollectionItemHostOcpuUtilizationInfo> hostOcpuUtilizationInfos;
-        private String id;
-        private String idcsAccessToken;
-        private Boolean isByol;
-        private Boolean isMultiAd;
-        private String lifecycleDetails;
-        private String loadBalancerShape;
-        private String platformRole;
-        private String platformShapeType;
-        private String platformVersion;
-        private List<GetBlockchainPlatformsBlockchainPlatformCollectionItemReplica> replicas;
-        private String serviceEndpoint;
-        private String serviceVersion;
-        private String state;
-        private Double storageSizeInTbs;
-        private Double storageUsedInTbs;
-        private String timeCreated;
-        private String timeUpdated;
-        private Integer totalOcpuCapacity;
+        private @Nullable String caCertArchiveText;
+        private @Nullable String compartmentId;
+        private @Nullable List<GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetail> componentDetails;
+        private @Nullable String computeShape;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String description;
+        private @Nullable String displayName;
+        private @Nullable String federatedUserId;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable List<GetBlockchainPlatformsBlockchainPlatformCollectionItemHostOcpuUtilizationInfo> hostOcpuUtilizationInfos;
+        private @Nullable String id;
+        private @Nullable String idcsAccessToken;
+        private @Nullable Boolean isByol;
+        private @Nullable Boolean isMultiAd;
+        private @Nullable String lifecycleDetails;
+        private @Nullable String loadBalancerShape;
+        private @Nullable String platformRole;
+        private @Nullable String platformShapeType;
+        private @Nullable String platformVersion;
+        private @Nullable List<GetBlockchainPlatformsBlockchainPlatformCollectionItemReplica> replicas;
+        private @Nullable String serviceEndpoint;
+        private @Nullable String serviceVersion;
+        private @Nullable String state;
+        private @Nullable Double storageSizeInTbs;
+        private @Nullable Double storageUsedInTbs;
+        private @Nullable String timeCreated;
+        private @Nullable String timeUpdated;
+        private @Nullable Integer totalOcpuCapacity;
         public Builder() {}
         public Builder(GetBlockchainPlatformsBlockchainPlatformCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -404,152 +406,152 @@ public final class GetBlockchainPlatformsBlockchainPlatformCollectionItem {
         }
 
         @CustomType.Setter
-        public Builder caCertArchiveText(String caCertArchiveText) {
-            this.caCertArchiveText = Objects.requireNonNull(caCertArchiveText);
+        public Builder caCertArchiveText(@Nullable String caCertArchiveText) {
+            this.caCertArchiveText = caCertArchiveText;
             return this;
         }
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder componentDetails(List<GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetail> componentDetails) {
-            this.componentDetails = Objects.requireNonNull(componentDetails);
+        public Builder componentDetails(@Nullable List<GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetail> componentDetails) {
+            this.componentDetails = componentDetails;
             return this;
         }
         public Builder componentDetails(GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetail... componentDetails) {
             return componentDetails(List.of(componentDetails));
         }
         @CustomType.Setter
-        public Builder computeShape(String computeShape) {
-            this.computeShape = Objects.requireNonNull(computeShape);
+        public Builder computeShape(@Nullable String computeShape) {
+            this.computeShape = computeShape;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+        public Builder description(@Nullable String description) {
+            this.description = description;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder federatedUserId(String federatedUserId) {
-            this.federatedUserId = Objects.requireNonNull(federatedUserId);
+        public Builder federatedUserId(@Nullable String federatedUserId) {
+            this.federatedUserId = federatedUserId;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder hostOcpuUtilizationInfos(List<GetBlockchainPlatformsBlockchainPlatformCollectionItemHostOcpuUtilizationInfo> hostOcpuUtilizationInfos) {
-            this.hostOcpuUtilizationInfos = Objects.requireNonNull(hostOcpuUtilizationInfos);
+        public Builder hostOcpuUtilizationInfos(@Nullable List<GetBlockchainPlatformsBlockchainPlatformCollectionItemHostOcpuUtilizationInfo> hostOcpuUtilizationInfos) {
+            this.hostOcpuUtilizationInfos = hostOcpuUtilizationInfos;
             return this;
         }
         public Builder hostOcpuUtilizationInfos(GetBlockchainPlatformsBlockchainPlatformCollectionItemHostOcpuUtilizationInfo... hostOcpuUtilizationInfos) {
             return hostOcpuUtilizationInfos(List.of(hostOcpuUtilizationInfos));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder idcsAccessToken(String idcsAccessToken) {
-            this.idcsAccessToken = Objects.requireNonNull(idcsAccessToken);
+        public Builder idcsAccessToken(@Nullable String idcsAccessToken) {
+            this.idcsAccessToken = idcsAccessToken;
             return this;
         }
         @CustomType.Setter
-        public Builder isByol(Boolean isByol) {
-            this.isByol = Objects.requireNonNull(isByol);
+        public Builder isByol(@Nullable Boolean isByol) {
+            this.isByol = isByol;
             return this;
         }
         @CustomType.Setter
-        public Builder isMultiAd(Boolean isMultiAd) {
-            this.isMultiAd = Objects.requireNonNull(isMultiAd);
+        public Builder isMultiAd(@Nullable Boolean isMultiAd) {
+            this.isMultiAd = isMultiAd;
             return this;
         }
         @CustomType.Setter
-        public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+        public Builder lifecycleDetails(@Nullable String lifecycleDetails) {
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
-        public Builder loadBalancerShape(String loadBalancerShape) {
-            this.loadBalancerShape = Objects.requireNonNull(loadBalancerShape);
+        public Builder loadBalancerShape(@Nullable String loadBalancerShape) {
+            this.loadBalancerShape = loadBalancerShape;
             return this;
         }
         @CustomType.Setter
-        public Builder platformRole(String platformRole) {
-            this.platformRole = Objects.requireNonNull(platformRole);
+        public Builder platformRole(@Nullable String platformRole) {
+            this.platformRole = platformRole;
             return this;
         }
         @CustomType.Setter
-        public Builder platformShapeType(String platformShapeType) {
-            this.platformShapeType = Objects.requireNonNull(platformShapeType);
+        public Builder platformShapeType(@Nullable String platformShapeType) {
+            this.platformShapeType = platformShapeType;
             return this;
         }
         @CustomType.Setter
-        public Builder platformVersion(String platformVersion) {
-            this.platformVersion = Objects.requireNonNull(platformVersion);
+        public Builder platformVersion(@Nullable String platformVersion) {
+            this.platformVersion = platformVersion;
             return this;
         }
         @CustomType.Setter
-        public Builder replicas(List<GetBlockchainPlatformsBlockchainPlatformCollectionItemReplica> replicas) {
-            this.replicas = Objects.requireNonNull(replicas);
+        public Builder replicas(@Nullable List<GetBlockchainPlatformsBlockchainPlatformCollectionItemReplica> replicas) {
+            this.replicas = replicas;
             return this;
         }
         public Builder replicas(GetBlockchainPlatformsBlockchainPlatformCollectionItemReplica... replicas) {
             return replicas(List.of(replicas));
         }
         @CustomType.Setter
-        public Builder serviceEndpoint(String serviceEndpoint) {
-            this.serviceEndpoint = Objects.requireNonNull(serviceEndpoint);
+        public Builder serviceEndpoint(@Nullable String serviceEndpoint) {
+            this.serviceEndpoint = serviceEndpoint;
             return this;
         }
         @CustomType.Setter
-        public Builder serviceVersion(String serviceVersion) {
-            this.serviceVersion = Objects.requireNonNull(serviceVersion);
+        public Builder serviceVersion(@Nullable String serviceVersion) {
+            this.serviceVersion = serviceVersion;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder storageSizeInTbs(Double storageSizeInTbs) {
-            this.storageSizeInTbs = Objects.requireNonNull(storageSizeInTbs);
+        public Builder storageSizeInTbs(@Nullable Double storageSizeInTbs) {
+            this.storageSizeInTbs = storageSizeInTbs;
             return this;
         }
         @CustomType.Setter
-        public Builder storageUsedInTbs(Double storageUsedInTbs) {
-            this.storageUsedInTbs = Objects.requireNonNull(storageUsedInTbs);
+        public Builder storageUsedInTbs(@Nullable Double storageUsedInTbs) {
+            this.storageUsedInTbs = storageUsedInTbs;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+        public Builder timeUpdated(@Nullable String timeUpdated) {
+            this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter
-        public Builder totalOcpuCapacity(Integer totalOcpuCapacity) {
-            this.totalOcpuCapacity = Objects.requireNonNull(totalOcpuCapacity);
+        public Builder totalOcpuCapacity(@Nullable Integer totalOcpuCapacity) {
+            this.totalOcpuCapacity = totalOcpuCapacity;
             return this;
         }
         public GetBlockchainPlatformsBlockchainPlatformCollectionItem build() {

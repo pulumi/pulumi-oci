@@ -40,7 +40,7 @@ public final class GetManagementStationsResult {
      * @return The list of management_station_collection.
      * 
      */
-    private List<GetManagementStationsManagementStationCollection> managementStationCollections;
+    private @Nullable List<GetManagementStationsManagementStationCollection> managementStationCollections;
     /**
      * @return The current state of the Management Station config.
      * 
@@ -87,7 +87,7 @@ public final class GetManagementStationsResult {
      * 
      */
     public List<GetManagementStationsManagementStationCollection> managementStationCollections() {
-        return this.managementStationCollections;
+        return this.managementStationCollections == null ? List.of() : this.managementStationCollections;
     }
     /**
      * @return The current state of the Management Station config.
@@ -112,7 +112,7 @@ public final class GetManagementStationsResult {
         private @Nullable List<GetManagementStationsFilter> filters;
         private @Nullable String id;
         private @Nullable String managedInstanceId;
-        private List<GetManagementStationsManagementStationCollection> managementStationCollections;
+        private @Nullable List<GetManagementStationsManagementStationCollection> managementStationCollections;
         private @Nullable String state;
         public Builder() {}
         public Builder(GetManagementStationsResult defaults) {
@@ -161,8 +161,8 @@ public final class GetManagementStationsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder managementStationCollections(List<GetManagementStationsManagementStationCollection> managementStationCollections) {
-            this.managementStationCollections = Objects.requireNonNull(managementStationCollections);
+        public Builder managementStationCollections(@Nullable List<GetManagementStationsManagementStationCollection> managementStationCollections) {
+            this.managementStationCollections = managementStationCollections;
             return this;
         }
         public Builder managementStationCollections(GetManagementStationsManagementStationCollection... managementStationCollections) {

@@ -20,19 +20,19 @@ namespace Pulumi.Oci.OneSubsription.Outputs
         /// <summary>
         /// Rate card discretionary discount percentage
         /// </summary>
-        public readonly string DiscretionaryDiscountPercentage;
+        public readonly string? DiscretionaryDiscountPercentage;
         /// <summary>
         /// Rate card price tier flag
         /// </summary>
-        public readonly bool IsTier;
+        public readonly bool? IsTier;
         /// <summary>
         /// Rate card tier net unit price
         /// </summary>
-        public readonly string NetUnitPrice;
+        public readonly string? NetUnitPrice;
         /// <summary>
         /// Rate card tier overage price
         /// </summary>
-        public readonly string OveragePrice;
+        public readonly string? OveragePrice;
         /// <summary>
         /// Product description
         /// </summary>
@@ -44,37 +44,37 @@ namespace Pulumi.Oci.OneSubsription.Outputs
         /// <summary>
         /// The Subscribed Service Id
         /// </summary>
-        public readonly string SubscribedServiceId;
+        public readonly string? SubscribedServiceId;
         /// <summary>
         /// Subscribed service end date
         /// </summary>
-        public readonly string TimeEnd;
+        public readonly string? TimeEnd;
         /// <summary>
         /// Subscribed service start date
         /// </summary>
-        public readonly string TimeStart;
+        public readonly string? TimeStart;
 
         [OutputConstructor]
         private GetSubscribedServiceRateCardResult(
             ImmutableArray<Outputs.GetSubscribedServiceRateCardCurrencyResult> currencies,
 
-            string discretionaryDiscountPercentage,
+            string? discretionaryDiscountPercentage,
 
-            bool isTier,
+            bool? isTier,
 
-            string netUnitPrice,
+            string? netUnitPrice,
 
-            string overagePrice,
+            string? overagePrice,
 
             ImmutableArray<Outputs.GetSubscribedServiceRateCardProductResult> products,
 
             ImmutableArray<Outputs.GetSubscribedServiceRateCardRateCardTierResult> rateCardTiers,
 
-            string subscribedServiceId,
+            string? subscribedServiceId,
 
-            string timeEnd,
+            string? timeEnd,
 
-            string timeStart)
+            string? timeStart)
         {
             Currencies = currencies;
             DiscretionaryDiscountPercentage = discretionaryDiscountPercentage;

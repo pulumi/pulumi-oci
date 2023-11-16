@@ -64,13 +64,13 @@ namespace Pulumi.Oci.EmWarehouse
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// EmWarehouse Identifier
         /// </summary>
         [Output("displayName")]
-        public Output<string> DisplayName { get; private set; } = null!;
+        public Output<string?> DisplayName { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) EMBridge Identifier
@@ -82,37 +82,37 @@ namespace Pulumi.Oci.EmWarehouse
         /// Type of the EmWarehouse.
         /// </summary>
         [Output("emWarehouseType")]
-        public Output<string> EmWarehouseType { get; private set; } = null!;
+        public Output<string?> EmWarehouseType { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// Data Flow Run Status Message
         /// </summary>
         [Output("latestEtlRunMessage")]
-        public Output<string> LatestEtlRunMessage { get; private set; } = null!;
+        public Output<string?> LatestEtlRunMessage { get; private set; } = null!;
 
         /// <summary>
         /// Data Flow Run Status
         /// </summary>
         [Output("latestEtlRunStatus")]
-        public Output<string> LatestEtlRunStatus { get; private set; } = null!;
+        public Output<string?> LatestEtlRunStatus { get; private set; } = null!;
 
         /// <summary>
         /// Data Flow Run Total Time
         /// </summary>
         [Output("latestEtlRunTime")]
-        public Output<string> LatestEtlRunTime { get; private set; } = null!;
+        public Output<string?> LatestEtlRunTime { get; private set; } = null!;
 
         /// <summary>
         /// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         /// </summary>
         [Output("lifecycleDetails")]
-        public Output<string> LifecycleDetails { get; private set; } = null!;
+        public Output<string?> LifecycleDetails { get; private set; } = null!;
 
         /// <summary>
         /// operations Insights Warehouse Identifier
@@ -128,25 +128,25 @@ namespace Pulumi.Oci.EmWarehouse
         /// The current state of the EmWarehouse.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
         [Output("systemTags")]
-        public Output<ImmutableDictionary<string, object>> SystemTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> SystemTags { get; private set; } = null!;
 
         /// <summary>
         /// The time the the EmWarehouse was created. An RFC3339 formatted datetime string
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// The time the EmWarehouse was updated. An RFC3339 formatted datetime string
         /// </summary>
         [Output("timeUpdated")]
-        public Output<string> TimeUpdated { get; private set; } = null!;
+        public Output<string?> TimeUpdated { get; private set; } = null!;
 
 
         /// <summary>

@@ -16,6 +16,7 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -39,14 +40,14 @@ public class MediaAsset extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="bucket", refs={String.class}, tree="[0]")
-    private Output<String> bucket;
+    private Output</* @Nullable */ String> bucket;
 
     /**
      * @return The name of the object storage bucket where this asset is located.
      * 
      */
-    public Output<String> bucket() {
-        return this.bucket;
+    public Output<Optional<String>> bucket() {
+        return Codegen.optional(this.bucket);
     }
     /**
      * (Updatable) Compartment Identifier.
@@ -67,266 +68,266 @@ public class MediaAsset extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * (Updatable) Display name for the Media Asset. Does not have to be unique. Avoid entering confidential information.
      * 
      */
     @Export(name="displayName", refs={String.class}, tree="[0]")
-    private Output<String> displayName;
+    private Output</* @Nullable */ String> displayName;
 
     /**
      * @return (Updatable) Display name for the Media Asset. Does not have to be unique. Avoid entering confidential information.
      * 
      */
-    public Output<String> displayName() {
-        return this.displayName;
+    public Output<Optional<String>> displayName() {
+        return Codegen.optional(this.displayName);
     }
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * (Updatable) The ID of the senior most asset from which this asset is derived.
      * 
      */
     @Export(name="masterMediaAssetId", refs={String.class}, tree="[0]")
-    private Output<String> masterMediaAssetId;
+    private Output</* @Nullable */ String> masterMediaAssetId;
 
     /**
      * @return (Updatable) The ID of the senior most asset from which this asset is derived.
      * 
      */
-    public Output<String> masterMediaAssetId() {
-        return this.masterMediaAssetId;
+    public Output<Optional<String>> masterMediaAssetId() {
+        return Codegen.optional(this.masterMediaAssetId);
     }
     /**
      * (Updatable) list of tags for the MediaAsset.
      * 
      */
     @Export(name="mediaAssetTags", refs={List.class,MediaAssetMediaAssetTag.class}, tree="[0,1]")
-    private Output<List<MediaAssetMediaAssetTag>> mediaAssetTags;
+    private Output</* @Nullable */ List<MediaAssetMediaAssetTag>> mediaAssetTags;
 
     /**
      * @return (Updatable) list of tags for the MediaAsset.
      * 
      */
-    public Output<List<MediaAssetMediaAssetTag>> mediaAssetTags() {
-        return this.mediaAssetTags;
+    public Output<Optional<List<MediaAssetMediaAssetTag>>> mediaAssetTags() {
+        return Codegen.optional(this.mediaAssetTags);
     }
     /**
      * The ID of the MediaWorkflowJob used to produce this asset.
      * 
      */
     @Export(name="mediaWorkflowJobId", refs={String.class}, tree="[0]")
-    private Output<String> mediaWorkflowJobId;
+    private Output</* @Nullable */ String> mediaWorkflowJobId;
 
     /**
      * @return The ID of the MediaWorkflowJob used to produce this asset.
      * 
      */
-    public Output<String> mediaWorkflowJobId() {
-        return this.mediaWorkflowJobId;
+    public Output<Optional<String>> mediaWorkflowJobId() {
+        return Codegen.optional(this.mediaWorkflowJobId);
     }
     /**
      * (Updatable) JSON string containing the technial metadata for the media asset.
      * 
      */
     @Export(name="metadatas", refs={List.class,MediaAssetMetadata.class}, tree="[0,1]")
-    private Output<List<MediaAssetMetadata>> metadatas;
+    private Output</* @Nullable */ List<MediaAssetMetadata>> metadatas;
 
     /**
      * @return (Updatable) JSON string containing the technial metadata for the media asset.
      * 
      */
-    public Output<List<MediaAssetMetadata>> metadatas() {
-        return this.metadatas;
+    public Output<Optional<List<MediaAssetMetadata>>> metadatas() {
+        return Codegen.optional(this.metadatas);
     }
     /**
      * The object storage namespace where this asset is located.
      * 
      */
     @Export(name="namespace", refs={String.class}, tree="[0]")
-    private Output<String> namespace;
+    private Output</* @Nullable */ String> namespace;
 
     /**
      * @return The object storage namespace where this asset is located.
      * 
      */
-    public Output<String> namespace() {
-        return this.namespace;
+    public Output<Optional<String>> namespace() {
+        return Codegen.optional(this.namespace);
     }
     /**
      * The object storage object name that identifies this asset.
      * 
      */
     @Export(name="object", refs={String.class}, tree="[0]")
-    private Output<String> object;
+    private Output</* @Nullable */ String> object;
 
     /**
      * @return The object storage object name that identifies this asset.
      * 
      */
-    public Output<String> object() {
-        return this.object;
+    public Output<Optional<String>> object() {
+        return Codegen.optional(this.object);
     }
     /**
      * eTag of the underlying object storage object.
      * 
      */
     @Export(name="objectEtag", refs={String.class}, tree="[0]")
-    private Output<String> objectEtag;
+    private Output</* @Nullable */ String> objectEtag;
 
     /**
      * @return eTag of the underlying object storage object.
      * 
      */
-    public Output<String> objectEtag() {
-        return this.objectEtag;
+    public Output<Optional<String>> objectEtag() {
+        return Codegen.optional(this.objectEtag);
     }
     /**
      * (Updatable) The ID of the parent asset from which this asset is derived.
      * 
      */
     @Export(name="parentMediaAssetId", refs={String.class}, tree="[0]")
-    private Output<String> parentMediaAssetId;
+    private Output</* @Nullable */ String> parentMediaAssetId;
 
     /**
      * @return (Updatable) The ID of the parent asset from which this asset is derived.
      * 
      */
-    public Output<String> parentMediaAssetId() {
-        return this.parentMediaAssetId;
+    public Output<Optional<String>> parentMediaAssetId() {
+        return Codegen.optional(this.parentMediaAssetId);
     }
     /**
      * The end index for video segment files.
      * 
      */
     @Export(name="segmentRangeEndIndex", refs={String.class}, tree="[0]")
-    private Output<String> segmentRangeEndIndex;
+    private Output</* @Nullable */ String> segmentRangeEndIndex;
 
     /**
      * @return The end index for video segment files.
      * 
      */
-    public Output<String> segmentRangeEndIndex() {
-        return this.segmentRangeEndIndex;
+    public Output<Optional<String>> segmentRangeEndIndex() {
+        return Codegen.optional(this.segmentRangeEndIndex);
     }
     /**
      * The start index for video segment files.
      * 
      */
     @Export(name="segmentRangeStartIndex", refs={String.class}, tree="[0]")
-    private Output<String> segmentRangeStartIndex;
+    private Output</* @Nullable */ String> segmentRangeStartIndex;
 
     /**
      * @return The start index for video segment files.
      * 
      */
-    public Output<String> segmentRangeStartIndex() {
-        return this.segmentRangeStartIndex;
+    public Output<Optional<String>> segmentRangeStartIndex() {
+        return Codegen.optional(this.segmentRangeStartIndex);
     }
     /**
      * The ID of the MediaWorkflow used to produce this asset.
      * 
      */
     @Export(name="sourceMediaWorkflowId", refs={String.class}, tree="[0]")
-    private Output<String> sourceMediaWorkflowId;
+    private Output</* @Nullable */ String> sourceMediaWorkflowId;
 
     /**
      * @return The ID of the MediaWorkflow used to produce this asset.
      * 
      */
-    public Output<String> sourceMediaWorkflowId() {
-        return this.sourceMediaWorkflowId;
+    public Output<Optional<String>> sourceMediaWorkflowId() {
+        return Codegen.optional(this.sourceMediaWorkflowId);
     }
     /**
      * The version of the MediaWorkflow used to produce this asset.
      * 
      */
     @Export(name="sourceMediaWorkflowVersion", refs={String.class}, tree="[0]")
-    private Output<String> sourceMediaWorkflowVersion;
+    private Output</* @Nullable */ String> sourceMediaWorkflowVersion;
 
     /**
      * @return The version of the MediaWorkflow used to produce this asset.
      * 
      */
-    public Output<String> sourceMediaWorkflowVersion() {
-        return this.sourceMediaWorkflowVersion;
+    public Output<Optional<String>> sourceMediaWorkflowVersion() {
+        return Codegen.optional(this.sourceMediaWorkflowVersion);
     }
     /**
      * The current state of the MediaAsset.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The current state of the MediaAsset.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
     @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> systemTags;
+    private Output</* @Nullable */ Map<String,Object>> systemTags;
 
     /**
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    public Output<Map<String,Object>> systemTags() {
-        return this.systemTags;
+    public Output<Optional<Map<String,Object>>> systemTags() {
+        return Codegen.optional(this.systemTags);
     }
     /**
      * The time when the MediaAsset was created. An RFC3339 formatted datetime string.
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The time when the MediaAsset was created. An RFC3339 formatted datetime string.
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * The time when the MediaAsset was updated. An RFC3339 formatted datetime string.
      * 
      */
     @Export(name="timeUpdated", refs={String.class}, tree="[0]")
-    private Output<String> timeUpdated;
+    private Output</* @Nullable */ String> timeUpdated;
 
     /**
      * @return The time when the MediaAsset was updated. An RFC3339 formatted datetime string.
      * 
      */
-    public Output<String> timeUpdated() {
-        return this.timeUpdated;
+    public Output<Optional<String>> timeUpdated() {
+        return Codegen.optional(this.timeUpdated);
     }
     /**
      * (Updatable) The type of the media asset.

@@ -27,21 +27,6 @@ class BastionArgs:
                  static_jump_host_ip_addresses: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
         """
         The set of arguments for constructing a Bastion resource.
-        :param pulumi.Input[str] bastion_type: The type of bastion. Use `standard`.
-        :param pulumi.Input[str] compartment_id: (Updatable) The unique identifier (OCID) of the compartment where the bastion is located.
-        :param pulumi.Input[str] target_subnet_id: The unique identifier (OCID) of the subnet that the bastion connects to.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] client_cidr_block_allow_lists: (Updatable) A list of address ranges in CIDR notation that you want to allow to connect to sessions hosted by this bastion.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] dns_proxy_status: Flag to enable FQDN and SOCKS5 Proxy Support. Example: `ENABLED`, `DISABLED`
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[int] max_session_ttl_in_seconds: (Updatable) The maximum amount of time that any session on the bastion can remain active.
-        :param pulumi.Input[str] name: The name of the bastion, which can't be changed after creation.
-        :param pulumi.Input[str] phone_book_entry: The phonebook entry of the customer's team, which can't be changed after creation. Not applicable to `standard` bastions.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] static_jump_host_ip_addresses: (Updatable) A list of IP addresses of the hosts that the bastion has access to. Not applicable to `standard` bastions.
         """
         pulumi.set(__self__, "bastion_type", bastion_type)
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -66,9 +51,6 @@ class BastionArgs:
     @property
     @pulumi.getter(name="bastionType")
     def bastion_type(self) -> pulumi.Input[str]:
-        """
-        The type of bastion. Use `standard`.
-        """
         return pulumi.get(self, "bastion_type")
 
     @bastion_type.setter
@@ -78,9 +60,6 @@ class BastionArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The unique identifier (OCID) of the compartment where the bastion is located.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -90,13 +69,6 @@ class BastionArgs:
     @property
     @pulumi.getter(name="targetSubnetId")
     def target_subnet_id(self) -> pulumi.Input[str]:
-        """
-        The unique identifier (OCID) of the subnet that the bastion connects to.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "target_subnet_id")
 
     @target_subnet_id.setter
@@ -106,9 +78,6 @@ class BastionArgs:
     @property
     @pulumi.getter(name="clientCidrBlockAllowLists")
     def client_cidr_block_allow_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) A list of address ranges in CIDR notation that you want to allow to connect to sessions hosted by this bastion.
-        """
         return pulumi.get(self, "client_cidr_block_allow_lists")
 
     @client_cidr_block_allow_lists.setter
@@ -118,9 +87,6 @@ class BastionArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -130,9 +96,6 @@ class BastionArgs:
     @property
     @pulumi.getter(name="dnsProxyStatus")
     def dns_proxy_status(self) -> Optional[pulumi.Input[str]]:
-        """
-        Flag to enable FQDN and SOCKS5 Proxy Support. Example: `ENABLED`, `DISABLED`
-        """
         return pulumi.get(self, "dns_proxy_status")
 
     @dns_proxy_status.setter
@@ -142,9 +105,6 @@ class BastionArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -154,9 +114,6 @@ class BastionArgs:
     @property
     @pulumi.getter(name="maxSessionTtlInSeconds")
     def max_session_ttl_in_seconds(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) The maximum amount of time that any session on the bastion can remain active.
-        """
         return pulumi.get(self, "max_session_ttl_in_seconds")
 
     @max_session_ttl_in_seconds.setter
@@ -166,9 +123,6 @@ class BastionArgs:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The name of the bastion, which can't be changed after creation.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -178,9 +132,6 @@ class BastionArgs:
     @property
     @pulumi.getter(name="phoneBookEntry")
     def phone_book_entry(self) -> Optional[pulumi.Input[str]]:
-        """
-        The phonebook entry of the customer's team, which can't be changed after creation. Not applicable to `standard` bastions.
-        """
         return pulumi.get(self, "phone_book_entry")
 
     @phone_book_entry.setter
@@ -190,9 +141,6 @@ class BastionArgs:
     @property
     @pulumi.getter(name="staticJumpHostIpAddresses")
     def static_jump_host_ip_addresses(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) A list of IP addresses of the hosts that the bastion has access to. Not applicable to `standard` bastions.
-        """
         return pulumi.get(self, "static_jump_host_ip_addresses")
 
     @static_jump_host_ip_addresses.setter
@@ -224,29 +172,6 @@ class _BastionState:
                  time_updated: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering Bastion resources.
-        :param pulumi.Input[str] bastion_type: The type of bastion. Use `standard`.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] client_cidr_block_allow_lists: (Updatable) A list of address ranges in CIDR notation that you want to allow to connect to sessions hosted by this bastion.
-        :param pulumi.Input[str] compartment_id: (Updatable) The unique identifier (OCID) of the compartment where the bastion is located.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] dns_proxy_status: Flag to enable FQDN and SOCKS5 Proxy Support. Example: `ENABLED`, `DISABLED`
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail.
-        :param pulumi.Input[int] max_session_ttl_in_seconds: (Updatable) The maximum amount of time that any session on the bastion can remain active.
-        :param pulumi.Input[int] max_sessions_allowed: The maximum number of active sessions allowed on the bastion.
-        :param pulumi.Input[str] name: The name of the bastion, which can't be changed after creation.
-        :param pulumi.Input[str] phone_book_entry: The phonebook entry of the customer's team, which can't be changed after creation. Not applicable to `standard` bastions.
-        :param pulumi.Input[str] private_endpoint_ip_address: The private IP address of the created private endpoint.
-        :param pulumi.Input[str] state: The current state of the bastion.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] static_jump_host_ip_addresses: (Updatable) A list of IP addresses of the hosts that the bastion has access to. Not applicable to `standard` bastions.
-        :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[str] target_subnet_id: The unique identifier (OCID) of the subnet that the bastion connects to.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] target_vcn_id: The unique identifier (OCID) of the virtual cloud network (VCN) that the bastion connects to.
-        :param pulumi.Input[str] time_created: The time the bastion was created. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
-        :param pulumi.Input[str] time_updated: The time the bastion was updated. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
         """
         if bastion_type is not None:
             pulumi.set(__self__, "bastion_type", bastion_type)
@@ -290,9 +215,6 @@ class _BastionState:
     @property
     @pulumi.getter(name="bastionType")
     def bastion_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        The type of bastion. Use `standard`.
-        """
         return pulumi.get(self, "bastion_type")
 
     @bastion_type.setter
@@ -302,9 +224,6 @@ class _BastionState:
     @property
     @pulumi.getter(name="clientCidrBlockAllowLists")
     def client_cidr_block_allow_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) A list of address ranges in CIDR notation that you want to allow to connect to sessions hosted by this bastion.
-        """
         return pulumi.get(self, "client_cidr_block_allow_lists")
 
     @client_cidr_block_allow_lists.setter
@@ -314,9 +233,6 @@ class _BastionState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The unique identifier (OCID) of the compartment where the bastion is located.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -326,9 +242,6 @@ class _BastionState:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -338,9 +251,6 @@ class _BastionState:
     @property
     @pulumi.getter(name="dnsProxyStatus")
     def dns_proxy_status(self) -> Optional[pulumi.Input[str]]:
-        """
-        Flag to enable FQDN and SOCKS5 Proxy Support. Example: `ENABLED`, `DISABLED`
-        """
         return pulumi.get(self, "dns_proxy_status")
 
     @dns_proxy_status.setter
@@ -350,9 +260,6 @@ class _BastionState:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -362,9 +269,6 @@ class _BastionState:
     @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> Optional[pulumi.Input[str]]:
-        """
-        A message describing the current state in more detail.
-        """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
@@ -374,9 +278,6 @@ class _BastionState:
     @property
     @pulumi.getter(name="maxSessionTtlInSeconds")
     def max_session_ttl_in_seconds(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) The maximum amount of time that any session on the bastion can remain active.
-        """
         return pulumi.get(self, "max_session_ttl_in_seconds")
 
     @max_session_ttl_in_seconds.setter
@@ -386,9 +287,6 @@ class _BastionState:
     @property
     @pulumi.getter(name="maxSessionsAllowed")
     def max_sessions_allowed(self) -> Optional[pulumi.Input[int]]:
-        """
-        The maximum number of active sessions allowed on the bastion.
-        """
         return pulumi.get(self, "max_sessions_allowed")
 
     @max_sessions_allowed.setter
@@ -398,9 +296,6 @@ class _BastionState:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The name of the bastion, which can't be changed after creation.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -410,9 +305,6 @@ class _BastionState:
     @property
     @pulumi.getter(name="phoneBookEntry")
     def phone_book_entry(self) -> Optional[pulumi.Input[str]]:
-        """
-        The phonebook entry of the customer's team, which can't be changed after creation. Not applicable to `standard` bastions.
-        """
         return pulumi.get(self, "phone_book_entry")
 
     @phone_book_entry.setter
@@ -422,9 +314,6 @@ class _BastionState:
     @property
     @pulumi.getter(name="privateEndpointIpAddress")
     def private_endpoint_ip_address(self) -> Optional[pulumi.Input[str]]:
-        """
-        The private IP address of the created private endpoint.
-        """
         return pulumi.get(self, "private_endpoint_ip_address")
 
     @private_endpoint_ip_address.setter
@@ -434,9 +323,6 @@ class _BastionState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The current state of the bastion.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -446,9 +332,6 @@ class _BastionState:
     @property
     @pulumi.getter(name="staticJumpHostIpAddresses")
     def static_jump_host_ip_addresses(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) A list of IP addresses of the hosts that the bastion has access to. Not applicable to `standard` bastions.
-        """
         return pulumi.get(self, "static_jump_host_ip_addresses")
 
     @static_jump_host_ip_addresses.setter
@@ -458,9 +341,6 @@ class _BastionState:
     @property
     @pulumi.getter(name="systemTags")
     def system_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
@@ -470,13 +350,6 @@ class _BastionState:
     @property
     @pulumi.getter(name="targetSubnetId")
     def target_subnet_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The unique identifier (OCID) of the subnet that the bastion connects to.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "target_subnet_id")
 
     @target_subnet_id.setter
@@ -486,9 +359,6 @@ class _BastionState:
     @property
     @pulumi.getter(name="targetVcnId")
     def target_vcn_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The unique identifier (OCID) of the virtual cloud network (VCN) that the bastion connects to.
-        """
         return pulumi.get(self, "target_vcn_id")
 
     @target_vcn_id.setter
@@ -498,9 +368,6 @@ class _BastionState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The time the bastion was created. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -510,9 +377,6 @@ class _BastionState:
     @property
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> Optional[pulumi.Input[str]]:
-        """
-        The time the bastion was updated. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
-        """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
@@ -538,58 +402,9 @@ class Bastion(pulumi.CustomResource):
                  target_subnet_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Bastion resource in Oracle Cloud Infrastructure Bastion service.
-
-        Creates a new bastion. A bastion provides secured, public access to target resources in the cloud that you cannot otherwise reach from the internet. A bastion resides in a public subnet and establishes the network infrastructure needed to connect a user to a target resource in a private subnet.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_bastion = oci.bastion.Bastion("testBastion",
-            bastion_type=var["bastion_bastion_type"],
-            compartment_id=var["compartment_id"],
-            target_subnet_id=oci_core_subnet["test_subnet"]["id"],
-            client_cidr_block_allow_lists=var["bastion_client_cidr_block_allow_list"],
-            defined_tags={
-                "foo-namespace.bar-key": "value",
-            },
-            dns_proxy_status=var["bastion_dns_proxy_status"],
-            freeform_tags={
-                "bar-key": "value",
-            },
-            max_session_ttl_in_seconds=var["bastion_max_session_ttl_in_seconds"],
-            phone_book_entry=var["bastion_phone_book_entry"],
-            static_jump_host_ip_addresses=var["bastion_static_jump_host_ip_addresses"])
-        ```
-
-        ## Import
-
-        Bastions can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Bastion/bastion:Bastion test_bastion "id"
-        ```
-
+        Create a Bastion resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] bastion_type: The type of bastion. Use `standard`.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] client_cidr_block_allow_lists: (Updatable) A list of address ranges in CIDR notation that you want to allow to connect to sessions hosted by this bastion.
-        :param pulumi.Input[str] compartment_id: (Updatable) The unique identifier (OCID) of the compartment where the bastion is located.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] dns_proxy_status: Flag to enable FQDN and SOCKS5 Proxy Support. Example: `ENABLED`, `DISABLED`
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[int] max_session_ttl_in_seconds: (Updatable) The maximum amount of time that any session on the bastion can remain active.
-        :param pulumi.Input[str] name: The name of the bastion, which can't be changed after creation.
-        :param pulumi.Input[str] phone_book_entry: The phonebook entry of the customer's team, which can't be changed after creation. Not applicable to `standard` bastions.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] static_jump_host_ip_addresses: (Updatable) A list of IP addresses of the hosts that the bastion has access to. Not applicable to `standard` bastions.
-        :param pulumi.Input[str] target_subnet_id: The unique identifier (OCID) of the subnet that the bastion connects to.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -598,41 +413,7 @@ class Bastion(pulumi.CustomResource):
                  args: BastionArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Bastion resource in Oracle Cloud Infrastructure Bastion service.
-
-        Creates a new bastion. A bastion provides secured, public access to target resources in the cloud that you cannot otherwise reach from the internet. A bastion resides in a public subnet and establishes the network infrastructure needed to connect a user to a target resource in a private subnet.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_bastion = oci.bastion.Bastion("testBastion",
-            bastion_type=var["bastion_bastion_type"],
-            compartment_id=var["compartment_id"],
-            target_subnet_id=oci_core_subnet["test_subnet"]["id"],
-            client_cidr_block_allow_lists=var["bastion_client_cidr_block_allow_list"],
-            defined_tags={
-                "foo-namespace.bar-key": "value",
-            },
-            dns_proxy_status=var["bastion_dns_proxy_status"],
-            freeform_tags={
-                "bar-key": "value",
-            },
-            max_session_ttl_in_seconds=var["bastion_max_session_ttl_in_seconds"],
-            phone_book_entry=var["bastion_phone_book_entry"],
-            static_jump_host_ip_addresses=var["bastion_static_jump_host_ip_addresses"])
-        ```
-
-        ## Import
-
-        Bastions can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Bastion/bastion:Bastion test_bastion "id"
-        ```
-
+        Create a Bastion resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param BastionArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -729,29 +510,6 @@ class Bastion(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] bastion_type: The type of bastion. Use `standard`.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] client_cidr_block_allow_lists: (Updatable) A list of address ranges in CIDR notation that you want to allow to connect to sessions hosted by this bastion.
-        :param pulumi.Input[str] compartment_id: (Updatable) The unique identifier (OCID) of the compartment where the bastion is located.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] dns_proxy_status: Flag to enable FQDN and SOCKS5 Proxy Support. Example: `ENABLED`, `DISABLED`
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail.
-        :param pulumi.Input[int] max_session_ttl_in_seconds: (Updatable) The maximum amount of time that any session on the bastion can remain active.
-        :param pulumi.Input[int] max_sessions_allowed: The maximum number of active sessions allowed on the bastion.
-        :param pulumi.Input[str] name: The name of the bastion, which can't be changed after creation.
-        :param pulumi.Input[str] phone_book_entry: The phonebook entry of the customer's team, which can't be changed after creation. Not applicable to `standard` bastions.
-        :param pulumi.Input[str] private_endpoint_ip_address: The private IP address of the created private endpoint.
-        :param pulumi.Input[str] state: The current state of the bastion.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] static_jump_host_ip_addresses: (Updatable) A list of IP addresses of the hosts that the bastion has access to. Not applicable to `standard` bastions.
-        :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[str] target_subnet_id: The unique identifier (OCID) of the subnet that the bastion connects to.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] target_vcn_id: The unique identifier (OCID) of the virtual cloud network (VCN) that the bastion connects to.
-        :param pulumi.Input[str] time_created: The time the bastion was created. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
-        :param pulumi.Input[str] time_updated: The time the bastion was updated. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -781,156 +539,95 @@ class Bastion(pulumi.CustomResource):
     @property
     @pulumi.getter(name="bastionType")
     def bastion_type(self) -> pulumi.Output[str]:
-        """
-        The type of bastion. Use `standard`.
-        """
         return pulumi.get(self, "bastion_type")
 
     @property
     @pulumi.getter(name="clientCidrBlockAllowLists")
-    def client_cidr_block_allow_lists(self) -> pulumi.Output[Sequence[str]]:
-        """
-        (Updatable) A list of address ranges in CIDR notation that you want to allow to connect to sessions hosted by this bastion.
-        """
+    def client_cidr_block_allow_lists(self) -> pulumi.Output[Optional[Sequence[str]]]:
         return pulumi.get(self, "client_cidr_block_allow_lists")
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The unique identifier (OCID) of the compartment where the bastion is located.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="dnsProxyStatus")
-    def dns_proxy_status(self) -> pulumi.Output[str]:
-        """
-        Flag to enable FQDN and SOCKS5 Proxy Support. Example: `ENABLED`, `DISABLED`
-        """
+    def dns_proxy_status(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "dns_proxy_status")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> pulumi.Output[str]:
-        """
-        A message describing the current state in more detail.
-        """
+    def lifecycle_details(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="maxSessionTtlInSeconds")
-    def max_session_ttl_in_seconds(self) -> pulumi.Output[int]:
-        """
-        (Updatable) The maximum amount of time that any session on the bastion can remain active.
-        """
+    def max_session_ttl_in_seconds(self) -> pulumi.Output[Optional[int]]:
         return pulumi.get(self, "max_session_ttl_in_seconds")
 
     @property
     @pulumi.getter(name="maxSessionsAllowed")
-    def max_sessions_allowed(self) -> pulumi.Output[int]:
-        """
-        The maximum number of active sessions allowed on the bastion.
-        """
+    def max_sessions_allowed(self) -> pulumi.Output[Optional[int]]:
         return pulumi.get(self, "max_sessions_allowed")
 
     @property
     @pulumi.getter
     def name(self) -> pulumi.Output[str]:
-        """
-        The name of the bastion, which can't be changed after creation.
-        """
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="phoneBookEntry")
-    def phone_book_entry(self) -> pulumi.Output[str]:
-        """
-        The phonebook entry of the customer's team, which can't be changed after creation. Not applicable to `standard` bastions.
-        """
+    def phone_book_entry(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "phone_book_entry")
 
     @property
     @pulumi.getter(name="privateEndpointIpAddress")
-    def private_endpoint_ip_address(self) -> pulumi.Output[str]:
-        """
-        The private IP address of the created private endpoint.
-        """
+    def private_endpoint_ip_address(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "private_endpoint_ip_address")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        The current state of the bastion.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="staticJumpHostIpAddresses")
-    def static_jump_host_ip_addresses(self) -> pulumi.Output[Sequence[str]]:
-        """
-        (Updatable) A list of IP addresses of the hosts that the bastion has access to. Not applicable to `standard` bastions.
-        """
+    def static_jump_host_ip_addresses(self) -> pulumi.Output[Optional[Sequence[str]]]:
         return pulumi.get(self, "static_jump_host_ip_addresses")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="targetSubnetId")
     def target_subnet_id(self) -> pulumi.Output[str]:
-        """
-        The unique identifier (OCID) of the subnet that the bastion connects to.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "target_subnet_id")
 
     @property
     @pulumi.getter(name="targetVcnId")
-    def target_vcn_id(self) -> pulumi.Output[str]:
-        """
-        The unique identifier (OCID) of the virtual cloud network (VCN) that the bastion connects to.
-        """
+    def target_vcn_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "target_vcn_id")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        The time the bastion was created. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> pulumi.Output[str]:
-        """
-        The time the bastion was updated. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
-        """
+    def time_updated(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_updated")
 

@@ -149,7 +149,7 @@ namespace Pulumi.Oci.Database
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
 
         [OutputConstructor]
         private GetCloudAutonomousVmClusterAcdResourceUsagesResult(
@@ -161,7 +161,7 @@ namespace Pulumi.Oci.Database
 
             ImmutableArray<Outputs.GetCloudAutonomousVmClusterAcdResourceUsagesFilterResult> filters,
 
-            string id)
+            string? id)
         {
             AutonomousContainerDatabaseResourceUsages = autonomousContainerDatabaseResourceUsages;
             CloudAutonomousVmClusterId = cloudAutonomousVmClusterId;

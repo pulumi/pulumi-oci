@@ -16,32 +16,32 @@ namespace Pulumi.Oci.Artifacts.Outputs
         /// <summary>
         /// Total number of images.
         /// </summary>
-        public readonly int ImageCount;
+        public readonly int? ImageCount;
         public readonly ImmutableArray<Outputs.GetContainerRepositoriesContainerRepositoryCollectionItemResult> Items;
         /// <summary>
         /// Total number of layers.
         /// </summary>
-        public readonly int LayerCount;
+        public readonly int? LayerCount;
         /// <summary>
         /// Total storage in bytes consumed by layers.
         /// </summary>
-        public readonly string LayersSizeInBytes;
-        public readonly int RemainingItemsCount;
-        public readonly int RepositoryCount;
+        public readonly string? LayersSizeInBytes;
+        public readonly int? RemainingItemsCount;
+        public readonly int? RepositoryCount;
 
         [OutputConstructor]
         private GetContainerRepositoriesContainerRepositoryCollectionResult(
-            int imageCount,
+            int? imageCount,
 
             ImmutableArray<Outputs.GetContainerRepositoriesContainerRepositoryCollectionItemResult> items,
 
-            int layerCount,
+            int? layerCount,
 
-            string layersSizeInBytes,
+            string? layersSizeInBytes,
 
-            int remainingItemsCount,
+            int? remainingItemsCount,
 
-            int repositoryCount)
+            int? repositoryCount)
         {
             ImageCount = imageCount;
             Items = items;

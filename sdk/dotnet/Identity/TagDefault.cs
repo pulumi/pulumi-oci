@@ -67,13 +67,13 @@ namespace Pulumi.Oci.Identity
         /// Example: `false`
         /// </summary>
         [Output("isRequired")]
-        public Output<bool> IsRequired { get; private set; } = null!;
+        public Output<bool?> IsRequired { get; private set; } = null!;
 
         /// <summary>
         /// The tag default's current state. After creating a `TagDefault`, make sure its `lifecycleState` is ACTIVE before using it.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// The OCID of the tag definition. The tag default will always assign a default value for this tag definition.
@@ -85,19 +85,19 @@ namespace Pulumi.Oci.Identity
         /// The name used in the tag definition. This field is informational in the context of the tag default.
         /// </summary>
         [Output("tagDefinitionName")]
-        public Output<string> TagDefinitionName { get; private set; } = null!;
+        public Output<string?> TagDefinitionName { get; private set; } = null!;
 
         /// <summary>
         /// The OCID of the tag namespace that contains the tag definition.
         /// </summary>
         [Output("tagNamespaceId")]
-        public Output<string> TagNamespaceId { get; private set; } = null!;
+        public Output<string?> TagNamespaceId { get; private set; } = null!;
 
         /// <summary>
         /// Date and time the `TagDefault` object was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The default value for the tag definition. This will be applied to all new resources created in the compartment. 

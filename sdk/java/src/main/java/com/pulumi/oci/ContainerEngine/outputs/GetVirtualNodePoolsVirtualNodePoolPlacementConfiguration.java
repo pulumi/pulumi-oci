@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetVirtualNodePoolsVirtualNodePoolPlacementConfiguration {
@@ -14,39 +16,39 @@ public final class GetVirtualNodePoolsVirtualNodePoolPlacementConfiguration {
      * @return The availability domain in which to place virtual nodes. Example: `Uocm:PHX-AD-1`
      * 
      */
-    private String availabilityDomain;
+    private @Nullable String availabilityDomain;
     /**
      * @return The fault domain of this virtual node.
      * 
      */
-    private List<String> faultDomains;
+    private @Nullable List<String> faultDomains;
     /**
      * @return The regional subnet where pods&#39; VNIC will be placed.
      * 
      */
-    private String subnetId;
+    private @Nullable String subnetId;
 
     private GetVirtualNodePoolsVirtualNodePoolPlacementConfiguration() {}
     /**
      * @return The availability domain in which to place virtual nodes. Example: `Uocm:PHX-AD-1`
      * 
      */
-    public String availabilityDomain() {
-        return this.availabilityDomain;
+    public Optional<String> availabilityDomain() {
+        return Optional.ofNullable(this.availabilityDomain);
     }
     /**
      * @return The fault domain of this virtual node.
      * 
      */
     public List<String> faultDomains() {
-        return this.faultDomains;
+        return this.faultDomains == null ? List.of() : this.faultDomains;
     }
     /**
      * @return The regional subnet where pods&#39; VNIC will be placed.
      * 
      */
-    public String subnetId() {
-        return this.subnetId;
+    public Optional<String> subnetId() {
+        return Optional.ofNullable(this.subnetId);
     }
 
     public static Builder builder() {
@@ -58,9 +60,9 @@ public final class GetVirtualNodePoolsVirtualNodePoolPlacementConfiguration {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String availabilityDomain;
-        private List<String> faultDomains;
-        private String subnetId;
+        private @Nullable String availabilityDomain;
+        private @Nullable List<String> faultDomains;
+        private @Nullable String subnetId;
         public Builder() {}
         public Builder(GetVirtualNodePoolsVirtualNodePoolPlacementConfiguration defaults) {
     	      Objects.requireNonNull(defaults);
@@ -70,21 +72,21 @@ public final class GetVirtualNodePoolsVirtualNodePoolPlacementConfiguration {
         }
 
         @CustomType.Setter
-        public Builder availabilityDomain(String availabilityDomain) {
-            this.availabilityDomain = Objects.requireNonNull(availabilityDomain);
+        public Builder availabilityDomain(@Nullable String availabilityDomain) {
+            this.availabilityDomain = availabilityDomain;
             return this;
         }
         @CustomType.Setter
-        public Builder faultDomains(List<String> faultDomains) {
-            this.faultDomains = Objects.requireNonNull(faultDomains);
+        public Builder faultDomains(@Nullable List<String> faultDomains) {
+            this.faultDomains = faultDomains;
             return this;
         }
         public Builder faultDomains(String... faultDomains) {
             return faultDomains(List.of(faultDomains));
         }
         @CustomType.Setter
-        public Builder subnetId(String subnetId) {
-            this.subnetId = Objects.requireNonNull(subnetId);
+        public Builder subnetId(@Nullable String subnetId) {
+            this.subnetId = subnetId;
             return this;
         }
         public GetVirtualNodePoolsVirtualNodePoolPlacementConfiguration build() {

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Config resource in Oracle Cloud Infrastructure Stack Monitoring service.
@@ -60,32 +59,32 @@ type LookupConfigArgs struct {
 // A collection of values returned by getConfig.
 type LookupConfigResult struct {
 	// The OCID of the compartment containing the configuration.
-	CompartmentId string `pulumi:"compartmentId"`
-	ConfigId      string `pulumi:"configId"`
+	CompartmentId *string `pulumi:"compartmentId"`
+	ConfigId      string  `pulumi:"configId"`
 	// The type of configuration.
-	ConfigType string `pulumi:"configType"`
+	ConfigType *string `pulumi:"configType"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The Unique Oracle ID (OCID) that is immutable on creation.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// True if automatic promotion or enterprise extensibility is enabled, false if it is not enabled.
-	IsEnabled bool `pulumi:"isEnabled"`
+	IsEnabled *bool `pulumi:"isEnabled"`
 	// License edition.
-	License string `pulumi:"license"`
+	License *string `pulumi:"license"`
 	// The type of resource to configure for automatic promotion.
-	ResourceType string `pulumi:"resourceType"`
+	ResourceType *string `pulumi:"resourceType"`
 	// The current state of the configuration.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The time the configuration was created. An RFC3339 formatted datetime string.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time the Config was updated.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 func LookupConfigOutput(ctx *pulumi.Context, args LookupConfigOutputArgs, opts ...pulumi.InvokeOption) LookupConfigResultOutput {
@@ -126,15 +125,9 @@ func (o LookupConfigResultOutput) ToLookupConfigResultOutputWithContext(ctx cont
 	return o
 }
 
-func (o LookupConfigResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupConfigResult] {
-	return pulumix.Output[LookupConfigResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the compartment containing the configuration.
-func (o LookupConfigResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupConfigResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupConfigResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupConfigResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupConfigResultOutput) ConfigId() pulumi.StringOutput {
@@ -142,8 +135,8 @@ func (o LookupConfigResultOutput) ConfigId() pulumi.StringOutput {
 }
 
 // The type of configuration.
-func (o LookupConfigResultOutput) ConfigType() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupConfigResult) string { return v.ConfigType }).(pulumi.StringOutput)
+func (o LookupConfigResultOutput) ConfigType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupConfigResult) *string { return v.ConfigType }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -152,8 +145,8 @@ func (o LookupConfigResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-func (o LookupConfigResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupConfigResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupConfigResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupConfigResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -162,28 +155,28 @@ func (o LookupConfigResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The Unique Oracle ID (OCID) that is immutable on creation.
-func (o LookupConfigResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupConfigResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupConfigResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupConfigResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // True if automatic promotion or enterprise extensibility is enabled, false if it is not enabled.
-func (o LookupConfigResultOutput) IsEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupConfigResult) bool { return v.IsEnabled }).(pulumi.BoolOutput)
+func (o LookupConfigResultOutput) IsEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupConfigResult) *bool { return v.IsEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // License edition.
-func (o LookupConfigResultOutput) License() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupConfigResult) string { return v.License }).(pulumi.StringOutput)
+func (o LookupConfigResultOutput) License() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupConfigResult) *string { return v.License }).(pulumi.StringPtrOutput)
 }
 
 // The type of resource to configure for automatic promotion.
-func (o LookupConfigResultOutput) ResourceType() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupConfigResult) string { return v.ResourceType }).(pulumi.StringOutput)
+func (o LookupConfigResultOutput) ResourceType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupConfigResult) *string { return v.ResourceType }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the configuration.
-func (o LookupConfigResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupConfigResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupConfigResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupConfigResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -192,13 +185,13 @@ func (o LookupConfigResultOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The time the configuration was created. An RFC3339 formatted datetime string.
-func (o LookupConfigResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupConfigResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupConfigResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupConfigResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time the Config was updated.
-func (o LookupConfigResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupConfigResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o LookupConfigResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupConfigResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 func init() {

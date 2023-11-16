@@ -44,25 +44,25 @@ namespace Pulumi.Oci.DataSafe
         /// (Updatable) A filter to return only resources that match the specified compartment OCID.
         /// </summary>
         [Output("compartmentId")]
-        public Output<string> CompartmentId { get; private set; } = null!;
+        public Output<string?> CompartmentId { get; private set; } = null!;
 
         /// <summary>
         /// The Oracle Data Safe's NAT Gateway IP Address.
         /// </summary>
         [Output("dataSafeNatGatewayIpAddress")]
-        public Output<string> DataSafeNatGatewayIpAddress { get; private set; } = null!;
+        public Output<string?> DataSafeNatGatewayIpAddress { get; private set; } = null!;
 
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// Details of the tenancy level global settings in Data Safe.
@@ -84,19 +84,19 @@ namespace Pulumi.Oci.DataSafe
         /// The current state of Data Safe.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// The date and time Data Safe was enabled, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         /// </summary>
         [Output("timeEnabled")]
-        public Output<string> TimeEnabled { get; private set; } = null!;
+        public Output<string?> TimeEnabled { get; private set; } = null!;
 
         /// <summary>
         /// The URL of the Data Safe service.
         /// </summary>
         [Output("url")]
-        public Output<string> Url { get; private set; } = null!;
+        public Output<string?> Url { get; private set; } = null!;
 
 
         /// <summary>

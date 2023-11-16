@@ -56,10 +56,7 @@ class GetIamWorkRequestResult:
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The OCID of the compartment containing this IAM work request.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
@@ -69,7 +66,7 @@ class GetIamWorkRequestResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -77,58 +74,37 @@ class GetIamWorkRequestResult:
 
     @property
     @pulumi.getter(name="operationType")
-    def operation_type(self) -> str:
-        """
-        The asynchronous operation tracked by this IAM work request.
-        """
+    def operation_type(self) -> Optional[str]:
         return pulumi.get(self, "operation_type")
 
     @property
     @pulumi.getter(name="percentComplete")
-    def percent_complete(self) -> float:
-        """
-        How much progress the operation has made.
-        """
+    def percent_complete(self) -> Optional[float]:
         return pulumi.get(self, "percent_complete")
 
     @property
     @pulumi.getter
-    def resources(self) -> Sequence['outputs.GetIamWorkRequestResourceResult']:
-        """
-        The resources this work request affects.
-        """
+    def resources(self) -> Optional[Sequence['outputs.GetIamWorkRequestResourceResult']]:
         return pulumi.get(self, "resources")
 
     @property
     @pulumi.getter
-    def status(self) -> str:
-        """
-        Status of the work request
-        """
+    def status(self) -> Optional[str]:
         return pulumi.get(self, "status")
 
     @property
     @pulumi.getter(name="timeAccepted")
-    def time_accepted(self) -> str:
-        """
-        Date and time the work was accepted, in the format defined by RFC3339. Example: `2016-08-25T21:10:29.600Z`
-        """
+    def time_accepted(self) -> Optional[str]:
         return pulumi.get(self, "time_accepted")
 
     @property
     @pulumi.getter(name="timeFinished")
-    def time_finished(self) -> str:
-        """
-        Date and time the work completed, in the format defined by RFC3339. Example: `2016-08-25T21:10:29.600Z`
-        """
+    def time_finished(self) -> Optional[str]:
         return pulumi.get(self, "time_finished")
 
     @property
     @pulumi.getter(name="timeStarted")
-    def time_started(self) -> str:
-        """
-        Date and time the work started, in the format defined by RFC3339. Example: `2016-08-25T21:10:29.600Z`
-        """
+    def time_started(self) -> Optional[str]:
         return pulumi.get(self, "time_started")
 
 
@@ -153,25 +129,7 @@ class AwaitableGetIamWorkRequestResult(GetIamWorkRequestResult):
 def get_iam_work_request(iam_work_request_id: Optional[str] = None,
                          opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetIamWorkRequestResult:
     """
-    This data source provides details about a specific Iam Work Request resource in Oracle Cloud Infrastructure Identity service.
-
-    Gets details on a specified IAM work request. For asynchronous operations in Identity and Access Management service, opc-work-request-id header values contains
-    iam work request id that can be provided in this API to track the current status of the operation.
-
-    - If workrequest exists, returns 202 ACCEPTED
-    - If workrequest does not exist, returns 404 NOT FOUND
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_iam_work_request = oci.Identity.get_iam_work_request(iam_work_request_id=oci_identity_iam_work_request["test_iam_work_request"]["id"])
-    ```
-
-
-    :param str iam_work_request_id: The OCID of the IAM work request.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['iamWorkRequestId'] = iam_work_request_id
@@ -195,24 +153,6 @@ def get_iam_work_request(iam_work_request_id: Optional[str] = None,
 def get_iam_work_request_output(iam_work_request_id: Optional[pulumi.Input[str]] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetIamWorkRequestResult]:
     """
-    This data source provides details about a specific Iam Work Request resource in Oracle Cloud Infrastructure Identity service.
-
-    Gets details on a specified IAM work request. For asynchronous operations in Identity and Access Management service, opc-work-request-id header values contains
-    iam work request id that can be provided in this API to track the current status of the operation.
-
-    - If workrequest exists, returns 202 ACCEPTED
-    - If workrequest does not exist, returns 404 NOT FOUND
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_iam_work_request = oci.Identity.get_iam_work_request(iam_work_request_id=oci_identity_iam_work_request["test_iam_work_request"]["id"])
-    ```
-
-
-    :param str iam_work_request_id: The OCID of the IAM work request.
+    Use this data source to access information about an existing resource.
     """
     ...

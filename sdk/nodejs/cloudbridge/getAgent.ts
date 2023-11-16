@@ -51,79 +51,79 @@ export interface GetAgentResult {
     /**
      * Resource principal public key.
      */
-    readonly agentPubKey: string;
+    readonly agentPubKey?: string;
     /**
      * Type of the Agent.
      */
-    readonly agentType: string;
+    readonly agentType?: string;
     /**
      * Agent identifier.
      */
-    readonly agentVersion: string;
+    readonly agentVersion?: string;
     /**
      * Compartment identifier.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * Agent identifier, can be renamed.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * Environment identifier.
      */
-    readonly environmentId: string;
+    readonly environmentId?: string;
     /**
      * The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * The current heartbeat status of the Agent based on its timeLastSyncReceived value.
      */
-    readonly heartBeatStatus: string;
+    readonly heartBeatStatus?: string;
     /**
      * Unique identifier that is immutable on creation.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
      */
-    readonly lifecycleDetails: string;
+    readonly lifecycleDetails?: string;
     /**
      * OS version.
      */
-    readonly osVersion: string;
+    readonly osVersion?: string;
     /**
      * List of plugins associated with the agent.
      */
-    readonly pluginLists: outputs.CloudBridge.GetAgentPluginList[];
+    readonly pluginLists?: outputs.CloudBridge.GetAgentPluginList[];
     /**
      * The current state of the Agent.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
      */
-    readonly systemTags: {[key: string]: any};
+    readonly systemTags?: {[key: string]: any};
     /**
      * The time when the Agent was created. An RFC3339 formatted datetime string.
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The time since epoch for when the public key will expire. An RFC3339 formatted datetime string.
      */
-    readonly timeExpireAgentKeyInMs: string;
+    readonly timeExpireAgentKeyInMs?: string;
     /**
      * The time when the last heartbeat of the Agent was noted. An RFC3339 formatted datetime string.
      */
-    readonly timeLastSyncReceived: string;
+    readonly timeLastSyncReceived?: string;
     /**
      * The time when the Agent was updated. An RFC3339 formatted datetime string.
      */
-    readonly timeUpdated: string;
+    readonly timeUpdated?: string;
 }
 /**
  * This data source provides details about a specific Agent resource in Oracle Cloud Infrastructure Cloud Bridge service.

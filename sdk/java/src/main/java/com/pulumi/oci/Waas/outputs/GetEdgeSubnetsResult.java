@@ -9,6 +9,7 @@ import com.pulumi.oci.Waas.outputs.GetEdgeSubnetsFilter;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 @CustomType
@@ -17,13 +18,13 @@ public final class GetEdgeSubnetsResult {
      * @return The list of edge_subnets.
      * 
      */
-    private List<GetEdgeSubnetsEdgeSubnet> edgeSubnets;
+    private @Nullable List<GetEdgeSubnetsEdgeSubnet> edgeSubnets;
     private @Nullable List<GetEdgeSubnetsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
 
     private GetEdgeSubnetsResult() {}
     /**
@@ -31,7 +32,7 @@ public final class GetEdgeSubnetsResult {
      * 
      */
     public List<GetEdgeSubnetsEdgeSubnet> edgeSubnets() {
-        return this.edgeSubnets;
+        return this.edgeSubnets == null ? List.of() : this.edgeSubnets;
     }
     public List<GetEdgeSubnetsFilter> filters() {
         return this.filters == null ? List.of() : this.filters;
@@ -40,8 +41,8 @@ public final class GetEdgeSubnetsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
 
     public static Builder builder() {
@@ -53,9 +54,9 @@ public final class GetEdgeSubnetsResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetEdgeSubnetsEdgeSubnet> edgeSubnets;
+        private @Nullable List<GetEdgeSubnetsEdgeSubnet> edgeSubnets;
         private @Nullable List<GetEdgeSubnetsFilter> filters;
-        private String id;
+        private @Nullable String id;
         public Builder() {}
         public Builder(GetEdgeSubnetsResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -65,8 +66,8 @@ public final class GetEdgeSubnetsResult {
         }
 
         @CustomType.Setter
-        public Builder edgeSubnets(List<GetEdgeSubnetsEdgeSubnet> edgeSubnets) {
-            this.edgeSubnets = Objects.requireNonNull(edgeSubnets);
+        public Builder edgeSubnets(@Nullable List<GetEdgeSubnetsEdgeSubnet> edgeSubnets) {
+            this.edgeSubnets = edgeSubnets;
             return this;
         }
         public Builder edgeSubnets(GetEdgeSubnetsEdgeSubnet... edgeSubnets) {
@@ -81,8 +82,8 @@ public final class GetEdgeSubnetsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         public GetEdgeSubnetsResult build() {

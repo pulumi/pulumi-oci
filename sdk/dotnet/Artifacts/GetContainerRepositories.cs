@@ -208,7 +208,7 @@ namespace Pulumi.Oci.Artifacts
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Whether the repository is public. A public repository allows unauthenticated access.
         /// </summary>
@@ -231,7 +231,7 @@ namespace Pulumi.Oci.Artifacts
 
             ImmutableArray<Outputs.GetContainerRepositoriesFilterResult> filters,
 
-            string id,
+            string? id,
 
             bool? isPublic,
 

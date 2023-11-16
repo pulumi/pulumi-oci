@@ -64,12 +64,12 @@ export interface GetInvoiceLineComputedUsagesResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly invoiceLineId: string;
     /**
      * The list of invoiceline_computed_usages.
      */
-    readonly invoicelineComputedUsages: outputs.OneSubsription.GetInvoiceLineComputedUsagesInvoicelineComputedUsage[];
+    readonly invoicelineComputedUsages?: outputs.OneSubsription.GetInvoiceLineComputedUsagesInvoicelineComputedUsage[];
 }
 /**
  * This data source provides the list of Invoice Line Computed Usages in Oracle Cloud Infrastructure Onesubscription service.

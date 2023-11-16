@@ -6,6 +6,8 @@ package com.pulumi.oci.ApmTraces.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetTraceSpanTag {
@@ -13,27 +15,27 @@ public final class GetTraceSpanTag {
      * @return Key that specifies the tag name.
      * 
      */
-    private String tagName;
+    private @Nullable String tagName;
     /**
      * @return Value associated with the tag key.
      * 
      */
-    private String tagValue;
+    private @Nullable String tagValue;
 
     private GetTraceSpanTag() {}
     /**
      * @return Key that specifies the tag name.
      * 
      */
-    public String tagName() {
-        return this.tagName;
+    public Optional<String> tagName() {
+        return Optional.ofNullable(this.tagName);
     }
     /**
      * @return Value associated with the tag key.
      * 
      */
-    public String tagValue() {
-        return this.tagValue;
+    public Optional<String> tagValue() {
+        return Optional.ofNullable(this.tagValue);
     }
 
     public static Builder builder() {
@@ -45,8 +47,8 @@ public final class GetTraceSpanTag {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String tagName;
-        private String tagValue;
+        private @Nullable String tagName;
+        private @Nullable String tagValue;
         public Builder() {}
         public Builder(GetTraceSpanTag defaults) {
     	      Objects.requireNonNull(defaults);
@@ -55,13 +57,13 @@ public final class GetTraceSpanTag {
         }
 
         @CustomType.Setter
-        public Builder tagName(String tagName) {
-            this.tagName = Objects.requireNonNull(tagName);
+        public Builder tagName(@Nullable String tagName) {
+            this.tagName = tagName;
             return this;
         }
         @CustomType.Setter
-        public Builder tagValue(String tagValue) {
-            this.tagValue = Objects.requireNonNull(tagValue);
+        public Builder tagValue(@Nullable String tagValue) {
+            this.tagValue = tagValue;
             return this;
         }
         public GetTraceSpanTag build() {

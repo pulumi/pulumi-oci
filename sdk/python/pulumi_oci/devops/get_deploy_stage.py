@@ -233,154 +233,97 @@ class GetDeployStageResult:
 
     @property
     @pulumi.getter(name="approvalPolicies")
-    def approval_policies(self) -> Sequence['outputs.GetDeployStageApprovalPolicyResult']:
-        """
-        Specifies the approval policy.
-        """
+    def approval_policies(self) -> Optional[Sequence['outputs.GetDeployStageApprovalPolicyResult']]:
         return pulumi.get(self, "approval_policies")
 
     @property
     @pulumi.getter(name="areHooksEnabled")
-    def are_hooks_enabled(self) -> bool:
-        """
-        Disable pre/post upgrade hooks. Set to false by default.
-        """
+    def are_hooks_enabled(self) -> Optional[bool]:
         return pulumi.get(self, "are_hooks_enabled")
 
     @property
     @pulumi.getter(name="blueBackendIps")
-    def blue_backend_ips(self) -> Sequence['outputs.GetDeployStageBlueBackendIpResult']:
-        """
-        Collection of backend environment IP addresses.
-        """
+    def blue_backend_ips(self) -> Optional[Sequence['outputs.GetDeployStageBlueBackendIpResult']]:
         return pulumi.get(self, "blue_backend_ips")
 
     @property
     @pulumi.getter(name="blueGreenStrategies")
-    def blue_green_strategies(self) -> Sequence['outputs.GetDeployStageBlueGreenStrategyResult']:
-        """
-        Specifies the required blue green release strategy for OKE deployment.
-        """
+    def blue_green_strategies(self) -> Optional[Sequence['outputs.GetDeployStageBlueGreenStrategyResult']]:
         return pulumi.get(self, "blue_green_strategies")
 
     @property
     @pulumi.getter(name="canaryStrategies")
-    def canary_strategies(self) -> Sequence['outputs.GetDeployStageCanaryStrategyResult']:
-        """
-        Specifies the required canary release strategy for OKE deployment.
-        """
+    def canary_strategies(self) -> Optional[Sequence['outputs.GetDeployStageCanaryStrategyResult']]:
         return pulumi.get(self, "canary_strategies")
 
     @property
     @pulumi.getter(name="commandSpecDeployArtifactId")
-    def command_spec_deploy_artifact_id(self) -> str:
-        """
-        The OCID of the artifact that contains the command specification.
-        """
+    def command_spec_deploy_artifact_id(self) -> Optional[str]:
         return pulumi.get(self, "command_spec_deploy_artifact_id")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The OCID of the compartment where the ContainerInstance will be created.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="computeInstanceGroupBlueGreenDeploymentDeployStageId")
-    def compute_instance_group_blue_green_deployment_deploy_stage_id(self) -> str:
-        """
-        The OCID of the upstream compute instance group blue-green deployment stage in this pipeline.
-        """
+    def compute_instance_group_blue_green_deployment_deploy_stage_id(self) -> Optional[str]:
         return pulumi.get(self, "compute_instance_group_blue_green_deployment_deploy_stage_id")
 
     @property
     @pulumi.getter(name="computeInstanceGroupCanaryDeployStageId")
-    def compute_instance_group_canary_deploy_stage_id(self) -> str:
-        """
-        The OCID of an upstream compute instance group canary deployment stage ID in this pipeline.
-        """
+    def compute_instance_group_canary_deploy_stage_id(self) -> Optional[str]:
         return pulumi.get(self, "compute_instance_group_canary_deploy_stage_id")
 
     @property
     @pulumi.getter(name="computeInstanceGroupCanaryTrafficShiftDeployStageId")
-    def compute_instance_group_canary_traffic_shift_deploy_stage_id(self) -> str:
-        """
-        A compute instance group canary traffic shift stage OCID for load balancer.
-        """
+    def compute_instance_group_canary_traffic_shift_deploy_stage_id(self) -> Optional[str]:
         return pulumi.get(self, "compute_instance_group_canary_traffic_shift_deploy_stage_id")
 
     @property
     @pulumi.getter(name="computeInstanceGroupDeployEnvironmentId")
-    def compute_instance_group_deploy_environment_id(self) -> str:
-        """
-        A compute instance group environment OCID for rolling deployment.
-        """
+    def compute_instance_group_deploy_environment_id(self) -> Optional[str]:
         return pulumi.get(self, "compute_instance_group_deploy_environment_id")
 
     @property
     @pulumi.getter
-    def config(self) -> Mapping[str, Any]:
-        """
-        User provided key and value pair configuration, which is assigned through constants or parameter.
-        """
+    def config(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "config")
 
     @property
     @pulumi.getter(name="containerConfigs")
-    def container_configs(self) -> Sequence['outputs.GetDeployStageContainerConfigResult']:
-        """
-        Specifies the container configuration.
-        """
+    def container_configs(self) -> Optional[Sequence['outputs.GetDeployStageContainerConfigResult']]:
         return pulumi.get(self, "container_configs")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="deployArtifactId")
-    def deploy_artifact_id(self) -> str:
-        """
-        Optional artifact OCID. The artifact will be included in the body for the function invocation during the stage's execution. If the DeployArtifact.argumentSubstituitionMode is set to SUBSTITUTE_PLACEHOLDERS, then the pipeline parameter values will be used to replace the placeholders in the artifact content.
-        """
+    def deploy_artifact_id(self) -> Optional[str]:
         return pulumi.get(self, "deploy_artifact_id")
 
     @property
     @pulumi.getter(name="deployArtifactIds")
-    def deploy_artifact_ids(self) -> Sequence[str]:
-        """
-        The list of file artifact OCIDs to deploy.
-        """
+    def deploy_artifact_ids(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "deploy_artifact_ids")
 
     @property
     @pulumi.getter(name="deployEnvironmentIdA")
-    def deploy_environment_id_a(self) -> str:
-        """
-        First compute instance group environment OCID for deployment.
-        """
+    def deploy_environment_id_a(self) -> Optional[str]:
         return pulumi.get(self, "deploy_environment_id_a")
 
     @property
     @pulumi.getter(name="deployEnvironmentIdB")
-    def deploy_environment_id_b(self) -> str:
-        """
-        Second compute instance group environment OCID for deployment.
-        """
+    def deploy_environment_id_b(self) -> Optional[str]:
         return pulumi.get(self, "deploy_environment_id_b")
 
     @property
     @pulumi.getter(name="deployPipelineId")
-    def deploy_pipeline_id(self) -> str:
-        """
-        The OCID of a pipeline.
-        """
+    def deploy_pipeline_id(self) -> Optional[str]:
         return pulumi.get(self, "deploy_pipeline_id")
 
     @property
@@ -390,394 +333,247 @@ class GetDeployStageResult:
 
     @property
     @pulumi.getter(name="deployStagePredecessorCollections")
-    def deploy_stage_predecessor_collections(self) -> Sequence['outputs.GetDeployStageDeployStagePredecessorCollectionResult']:
-        """
-        Collection containing the predecessors of a stage.
-        """
+    def deploy_stage_predecessor_collections(self) -> Optional[Sequence['outputs.GetDeployStageDeployStagePredecessorCollectionResult']]:
         return pulumi.get(self, "deploy_stage_predecessor_collections")
 
     @property
     @pulumi.getter(name="deployStageType")
-    def deploy_stage_type(self) -> str:
-        """
-        Deployment stage type.
-        """
+    def deploy_stage_type(self) -> Optional[str]:
         return pulumi.get(self, "deploy_stage_type")
 
     @property
     @pulumi.getter(name="deploymentSpecDeployArtifactId")
-    def deployment_spec_deploy_artifact_id(self) -> str:
-        """
-        The OCID of the artifact that contains the deployment specification.
-        """
+    def deployment_spec_deploy_artifact_id(self) -> Optional[str]:
         return pulumi.get(self, "deployment_spec_deploy_artifact_id")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        Optional description about the deployment stage.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        Deployment stage display name, which can be renamed and is not necessarily unique. Avoid entering confidential information.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="dockerImageDeployArtifactId")
-    def docker_image_deploy_artifact_id(self) -> str:
-        """
-        A Docker image artifact OCID.
-        """
+    def docker_image_deploy_artifact_id(self) -> Optional[str]:
         return pulumi.get(self, "docker_image_deploy_artifact_id")
 
     @property
     @pulumi.getter(name="failurePolicies")
-    def failure_policies(self) -> Sequence['outputs.GetDeployStageFailurePolicyResult']:
-        """
-        Specifies a failure policy for a compute instance group rolling deployment stage.
-        """
+    def failure_policies(self) -> Optional[Sequence['outputs.GetDeployStageFailurePolicyResult']]:
         return pulumi.get(self, "failure_policies")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="functionDeployEnvironmentId")
-    def function_deploy_environment_id(self) -> str:
-        """
-        Function environment OCID.
-        """
+    def function_deploy_environment_id(self) -> Optional[str]:
         return pulumi.get(self, "function_deploy_environment_id")
 
     @property
     @pulumi.getter(name="functionTimeoutInSeconds")
-    def function_timeout_in_seconds(self) -> int:
-        """
-        Timeout for execution of the Function. Value in seconds.
-        """
+    def function_timeout_in_seconds(self) -> Optional[int]:
         return pulumi.get(self, "function_timeout_in_seconds")
 
     @property
     @pulumi.getter(name="greenBackendIps")
-    def green_backend_ips(self) -> Sequence['outputs.GetDeployStageGreenBackendIpResult']:
-        """
-        Collection of backend environment IP addresses.
-        """
+    def green_backend_ips(self) -> Optional[Sequence['outputs.GetDeployStageGreenBackendIpResult']]:
         return pulumi.get(self, "green_backend_ips")
 
     @property
     @pulumi.getter(name="helmChartDeployArtifactId")
-    def helm_chart_deploy_artifact_id(self) -> str:
-        """
-        Helm chart artifact OCID.
-        """
+    def helm_chart_deploy_artifact_id(self) -> Optional[str]:
         return pulumi.get(self, "helm_chart_deploy_artifact_id")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        Unique identifier that is immutable on creation.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="isAsync")
-    def is_async(self) -> bool:
-        """
-        A boolean flag specifies whether this stage executes asynchronously.
-        """
+    def is_async(self) -> Optional[bool]:
         return pulumi.get(self, "is_async")
 
     @property
     @pulumi.getter(name="isDebugEnabled")
-    def is_debug_enabled(self) -> bool:
-        """
-        Enables helm --debug option to stream output to tf stdout. Set to false by default.
-        """
+    def is_debug_enabled(self) -> Optional[bool]:
         return pulumi.get(self, "is_debug_enabled")
 
     @property
     @pulumi.getter(name="isForceEnabled")
-    def is_force_enabled(self) -> bool:
-        """
-        Force resource update through delete; or if required, recreate. Set to false by default.
-        """
+    def is_force_enabled(self) -> Optional[bool]:
         return pulumi.get(self, "is_force_enabled")
 
     @property
     @pulumi.getter(name="isValidationEnabled")
-    def is_validation_enabled(self) -> bool:
-        """
-        A boolean flag specifies whether the invoked function must be validated.
-        """
+    def is_validation_enabled(self) -> Optional[bool]:
         return pulumi.get(self, "is_validation_enabled")
 
     @property
     @pulumi.getter(name="kubernetesManifestDeployArtifactIds")
-    def kubernetes_manifest_deploy_artifact_ids(self) -> Sequence[str]:
-        """
-        List of Kubernetes manifest artifact OCIDs.
-        """
+    def kubernetes_manifest_deploy_artifact_ids(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "kubernetes_manifest_deploy_artifact_ids")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="loadBalancerConfigs")
-    def load_balancer_configs(self) -> Sequence['outputs.GetDeployStageLoadBalancerConfigResult']:
-        """
-        Specifies config for load balancer traffic shift stages. The Load Balancer specified here should be an Application Load Balancer type. Network Load Balancers are not supported.
-        """
+    def load_balancer_configs(self) -> Optional[Sequence['outputs.GetDeployStageLoadBalancerConfigResult']]:
         return pulumi.get(self, "load_balancer_configs")
 
     @property
     @pulumi.getter(name="maxHistory")
-    def max_history(self) -> int:
-        """
-        Limit the maximum number of revisions saved per release. Use 0 for no limit. Set to 10 by default
-        """
+    def max_history(self) -> Optional[int]:
         return pulumi.get(self, "max_history")
 
     @property
     @pulumi.getter(name="maxMemoryInMbs")
-    def max_memory_in_mbs(self) -> str:
-        """
-        Maximum usable memory for the Function (in MB).
-        """
+    def max_memory_in_mbs(self) -> Optional[str]:
         return pulumi.get(self, "max_memory_in_mbs")
 
     @property
     @pulumi.getter
-    def namespace(self) -> str:
-        """
-        Default Namespace to be used for Kubernetes deployment when not specified in the manifest.
-        """
+    def namespace(self) -> Optional[str]:
         return pulumi.get(self, "namespace")
 
     @property
     @pulumi.getter(name="okeBlueGreenDeployStageId")
-    def oke_blue_green_deploy_stage_id(self) -> str:
-        """
-        The OCID of the upstream OKE blue-green deployment stage in this pipeline.
-        """
+    def oke_blue_green_deploy_stage_id(self) -> Optional[str]:
         return pulumi.get(self, "oke_blue_green_deploy_stage_id")
 
     @property
     @pulumi.getter(name="okeCanaryDeployStageId")
-    def oke_canary_deploy_stage_id(self) -> str:
-        """
-        The OCID of an upstream OKE canary deployment stage in this pipeline.
-        """
+    def oke_canary_deploy_stage_id(self) -> Optional[str]:
         return pulumi.get(self, "oke_canary_deploy_stage_id")
 
     @property
     @pulumi.getter(name="okeCanaryTrafficShiftDeployStageId")
-    def oke_canary_traffic_shift_deploy_stage_id(self) -> str:
-        """
-        The OCID of an upstream OKE canary deployment traffic shift stage in this pipeline.
-        """
+    def oke_canary_traffic_shift_deploy_stage_id(self) -> Optional[str]:
         return pulumi.get(self, "oke_canary_traffic_shift_deploy_stage_id")
 
     @property
     @pulumi.getter(name="okeClusterDeployEnvironmentId")
-    def oke_cluster_deploy_environment_id(self) -> str:
-        """
-        Kubernetes cluster environment OCID for deployment.
-        """
+    def oke_cluster_deploy_environment_id(self) -> Optional[str]:
         return pulumi.get(self, "oke_cluster_deploy_environment_id")
 
     @property
     @pulumi.getter(name="productionLoadBalancerConfigs")
-    def production_load_balancer_configs(self) -> Sequence['outputs.GetDeployStageProductionLoadBalancerConfigResult']:
-        """
-        Specifies config for load balancer traffic shift stages. The Load Balancer specified here should be an Application Load Balancer type. Network Load Balancers are not supported.
-        """
+    def production_load_balancer_configs(self) -> Optional[Sequence['outputs.GetDeployStageProductionLoadBalancerConfigResult']]:
         return pulumi.get(self, "production_load_balancer_configs")
 
     @property
     @pulumi.getter(name="projectId")
-    def project_id(self) -> str:
-        """
-        The OCID of a project.
-        """
+    def project_id(self) -> Optional[str]:
         return pulumi.get(self, "project_id")
 
     @property
     @pulumi.getter(name="releaseName")
-    def release_name(self) -> str:
-        """
-        Release name of the Helm chart.
-        """
+    def release_name(self) -> Optional[str]:
         return pulumi.get(self, "release_name")
 
     @property
     @pulumi.getter(name="rollbackPolicies")
-    def rollback_policies(self) -> Sequence['outputs.GetDeployStageRollbackPolicyResult']:
-        """
-        Specifies the rollback policy. This is initiated on the failure of certain stage types.
-        """
+    def rollback_policies(self) -> Optional[Sequence['outputs.GetDeployStageRollbackPolicyResult']]:
         return pulumi.get(self, "rollback_policies")
 
     @property
     @pulumi.getter(name="rolloutPolicies")
-    def rollout_policies(self) -> Sequence['outputs.GetDeployStageRolloutPolicyResult']:
-        """
-        Description of rollout policy for load balancer traffic shift stage.
-        """
+    def rollout_policies(self) -> Optional[Sequence['outputs.GetDeployStageRolloutPolicyResult']]:
         return pulumi.get(self, "rollout_policies")
 
     @property
     @pulumi.getter(name="setStrings")
-    def set_strings(self) -> Sequence['outputs.GetDeployStageSetStringResult']:
-        """
-        Specifies the name and value pairs to set helm values.
-        """
+    def set_strings(self) -> Optional[Sequence['outputs.GetDeployStageSetStringResult']]:
         return pulumi.get(self, "set_strings")
 
     @property
     @pulumi.getter(name="setValues")
-    def set_values(self) -> Sequence['outputs.GetDeployStageSetValueResult']:
-        """
-        Specifies the name and value pairs to set helm values.
-        """
+    def set_values(self) -> Optional[Sequence['outputs.GetDeployStageSetValueResult']]:
         return pulumi.get(self, "set_values")
 
     @property
     @pulumi.getter(name="shouldCleanupOnFail")
-    def should_cleanup_on_fail(self) -> bool:
-        """
-        Allow deletion of new resources created during when an upgrade fails. Set to false by default.
-        """
+    def should_cleanup_on_fail(self) -> Optional[bool]:
         return pulumi.get(self, "should_cleanup_on_fail")
 
     @property
     @pulumi.getter(name="shouldNotWait")
-    def should_not_wait(self) -> bool:
-        """
-        Waits until all the resources are in a ready state to mark the release as successful. Set to false by default.
-        """
+    def should_not_wait(self) -> Optional[bool]:
         return pulumi.get(self, "should_not_wait")
 
     @property
     @pulumi.getter(name="shouldResetValues")
-    def should_reset_values(self) -> bool:
-        """
-        During upgrade, reset the values to the ones built into the chart. It overrides shouldReuseValues. Set to false by default.
-        """
+    def should_reset_values(self) -> Optional[bool]:
         return pulumi.get(self, "should_reset_values")
 
     @property
     @pulumi.getter(name="shouldReuseValues")
-    def should_reuse_values(self) -> bool:
-        """
-        During upgrade, reuse the values of the last release and merge overrides from the command line. Set to false by default.
-        """
+    def should_reuse_values(self) -> Optional[bool]:
         return pulumi.get(self, "should_reuse_values")
 
     @property
     @pulumi.getter(name="shouldSkipCrds")
-    def should_skip_crds(self) -> bool:
-        """
-        If set, no CRDs are installed. By default, CRDs are installed only if they are not present already. Set to false by default.
-        """
+    def should_skip_crds(self) -> Optional[bool]:
         return pulumi.get(self, "should_skip_crds")
 
     @property
     @pulumi.getter(name="shouldSkipRenderSubchartNotes")
-    def should_skip_render_subchart_notes(self) -> bool:
-        """
-        If set, renders subchart notes along with the parent. Set to false by default.
-        """
+    def should_skip_render_subchart_notes(self) -> Optional[bool]:
         return pulumi.get(self, "should_skip_render_subchart_notes")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the deployment stage.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="testLoadBalancerConfigs")
-    def test_load_balancer_configs(self) -> Sequence['outputs.GetDeployStageTestLoadBalancerConfigResult']:
-        """
-        Specifies config for load balancer traffic shift stages. The Load Balancer specified here should be an Application Load Balancer type. Network Load Balancers are not supported.
-        """
+    def test_load_balancer_configs(self) -> Optional[Sequence['outputs.GetDeployStageTestLoadBalancerConfigResult']]:
         return pulumi.get(self, "test_load_balancer_configs")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        Time the deployment stage was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        Time the deployment stage was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
     @property
     @pulumi.getter(name="timeoutInSeconds")
-    def timeout_in_seconds(self) -> int:
-        """
-        Time to wait for execution of a Shell/Helm stage. Defaults to 36000 seconds for Shell and 300 seconds for Helm Stage
-        """
+    def timeout_in_seconds(self) -> Optional[int]:
         return pulumi.get(self, "timeout_in_seconds")
 
     @property
     @pulumi.getter(name="trafficShiftTarget")
-    def traffic_shift_target(self) -> str:
-        """
-        Specifies the target or destination backend set.
-        """
+    def traffic_shift_target(self) -> Optional[str]:
         return pulumi.get(self, "traffic_shift_target")
 
     @property
     @pulumi.getter(name="valuesArtifactIds")
-    def values_artifact_ids(self) -> Sequence[str]:
-        """
-        List of values.yaml file artifact OCIDs.
-        """
+    def values_artifact_ids(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "values_artifact_ids")
 
     @property
     @pulumi.getter(name="waitCriterias")
-    def wait_criterias(self) -> Sequence['outputs.GetDeployStageWaitCriteriaResult']:
-        """
-        Specifies wait criteria for the Wait stage.
-        """
+    def wait_criterias(self) -> Optional[Sequence['outputs.GetDeployStageWaitCriteriaResult']]:
         return pulumi.get(self, "wait_criterias")
 
 
@@ -861,21 +657,7 @@ class AwaitableGetDeployStageResult(GetDeployStageResult):
 def get_deploy_stage(deploy_stage_id: Optional[str] = None,
                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDeployStageResult:
     """
-    This data source provides details about a specific Deploy Stage resource in Oracle Cloud Infrastructure Devops service.
-
-    Retrieves a deployment stage by identifier.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_deploy_stage = oci.DevOps.get_deploy_stage(deploy_stage_id=oci_devops_deploy_stage["test_deploy_stage"]["id"])
-    ```
-
-
-    :param str deploy_stage_id: Unique stage identifier.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['deployStageId'] = deploy_stage_id
@@ -958,20 +740,6 @@ def get_deploy_stage(deploy_stage_id: Optional[str] = None,
 def get_deploy_stage_output(deploy_stage_id: Optional[pulumi.Input[str]] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDeployStageResult]:
     """
-    This data source provides details about a specific Deploy Stage resource in Oracle Cloud Infrastructure Devops service.
-
-    Retrieves a deployment stage by identifier.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_deploy_stage = oci.DevOps.get_deploy_stage(deploy_stage_id=oci_devops_deploy_stage["test_deploy_stage"]["id"])
-    ```
-
-
-    :param str deploy_stage_id: Unique stage identifier.
+    Use this data source to access information about an existing resource.
     """
     ...

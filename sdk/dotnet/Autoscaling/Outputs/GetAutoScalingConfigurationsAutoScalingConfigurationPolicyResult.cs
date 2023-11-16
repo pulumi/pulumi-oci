@@ -20,7 +20,7 @@ namespace Pulumi.Oci.Autoscaling.Outputs
         /// <summary>
         /// A filter to return only resources that match the given display name exactly.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// The schedule for executing the autoscaling policy.
         /// </summary>
@@ -28,15 +28,15 @@ namespace Pulumi.Oci.Autoscaling.Outputs
         /// <summary>
         /// ID of the condition that is assigned after creation.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Whether the autoscaling policy is enabled.
         /// </summary>
-        public readonly bool IsEnabled;
+        public readonly bool? IsEnabled;
         /// <summary>
         /// The type of autoscaling policy.
         /// </summary>
-        public readonly string PolicyType;
+        public readonly string? PolicyType;
         /// <summary>
         /// An action that can be executed against a resource.
         /// </summary>
@@ -45,27 +45,27 @@ namespace Pulumi.Oci.Autoscaling.Outputs
         /// <summary>
         /// The date and time the autoscaling configuration was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
 
         [OutputConstructor]
         private GetAutoScalingConfigurationsAutoScalingConfigurationPolicyResult(
             ImmutableArray<Outputs.GetAutoScalingConfigurationsAutoScalingConfigurationPolicyCapacityResult> capacities,
 
-            string displayName,
+            string? displayName,
 
             ImmutableArray<Outputs.GetAutoScalingConfigurationsAutoScalingConfigurationPolicyExecutionScheduleResult> executionSchedules,
 
-            string id,
+            string? id,
 
-            bool isEnabled,
+            bool? isEnabled,
 
-            string policyType,
+            string? policyType,
 
             ImmutableArray<Outputs.GetAutoScalingConfigurationsAutoScalingConfigurationPolicyResourceActionResult> resourceActions,
 
             ImmutableArray<Outputs.GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleResult> rules,
 
-            string timeCreated)
+            string? timeCreated)
         {
             Capacities = capacities;
             DisplayName = displayName;

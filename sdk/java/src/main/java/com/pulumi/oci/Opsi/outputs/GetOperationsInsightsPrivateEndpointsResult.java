@@ -31,7 +31,7 @@ public final class GetOperationsInsightsPrivateEndpointsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The flag is to identify if private endpoint is used for rac database or not
      * 
@@ -41,7 +41,7 @@ public final class GetOperationsInsightsPrivateEndpointsResult {
      * @return The list of operations_insights_private_endpoint_collection.
      * 
      */
-    private List<GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollection> operationsInsightsPrivateEndpointCollections;
+    private @Nullable List<GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollection> operationsInsightsPrivateEndpointCollections;
     private @Nullable String opsiPrivateEndpointId;
     /**
      * @return The current state of the private endpoint.
@@ -79,8 +79,8 @@ public final class GetOperationsInsightsPrivateEndpointsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The flag is to identify if private endpoint is used for rac database or not
@@ -94,7 +94,7 @@ public final class GetOperationsInsightsPrivateEndpointsResult {
      * 
      */
     public List<GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollection> operationsInsightsPrivateEndpointCollections() {
-        return this.operationsInsightsPrivateEndpointCollections;
+        return this.operationsInsightsPrivateEndpointCollections == null ? List.of() : this.operationsInsightsPrivateEndpointCollections;
     }
     public Optional<String> opsiPrivateEndpointId() {
         return Optional.ofNullable(this.opsiPrivateEndpointId);
@@ -127,9 +127,9 @@ public final class GetOperationsInsightsPrivateEndpointsResult {
         private @Nullable Boolean compartmentIdInSubtree;
         private @Nullable String displayName;
         private @Nullable List<GetOperationsInsightsPrivateEndpointsFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable Boolean isUsedForRacDbs;
-        private List<GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollection> operationsInsightsPrivateEndpointCollections;
+        private @Nullable List<GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollection> operationsInsightsPrivateEndpointCollections;
         private @Nullable String opsiPrivateEndpointId;
         private @Nullable List<String> states;
         private @Nullable String vcnId;
@@ -172,8 +172,8 @@ public final class GetOperationsInsightsPrivateEndpointsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -182,8 +182,8 @@ public final class GetOperationsInsightsPrivateEndpointsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder operationsInsightsPrivateEndpointCollections(List<GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollection> operationsInsightsPrivateEndpointCollections) {
-            this.operationsInsightsPrivateEndpointCollections = Objects.requireNonNull(operationsInsightsPrivateEndpointCollections);
+        public Builder operationsInsightsPrivateEndpointCollections(@Nullable List<GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollection> operationsInsightsPrivateEndpointCollections) {
+            this.operationsInsightsPrivateEndpointCollections = operationsInsightsPrivateEndpointCollections;
             return this;
         }
         public Builder operationsInsightsPrivateEndpointCollections(GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollection... operationsInsightsPrivateEndpointCollections) {

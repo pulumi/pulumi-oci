@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Repository File Diff resource in Oracle Cloud Infrastructure Devops service.
@@ -72,28 +71,28 @@ type GetRepositoryFileDiffArgs struct {
 // A collection of values returned by getRepositoryFileDiff.
 type GetRepositoryFileDiffResult struct {
 	// Indicates whether the changed file contains conflicts.
-	AreConflictsInFile bool   `pulumi:"areConflictsInFile"`
+	AreConflictsInFile *bool  `pulumi:"areConflictsInFile"`
 	BaseVersion        string `pulumi:"baseVersion"`
 	// List of changed section in the file.
 	Changes  []GetRepositoryFileDiffChange `pulumi:"changes"`
 	FilePath string                        `pulumi:"filePath"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Indicates whether the file is binary.
-	IsBinary                  bool  `pulumi:"isBinary"`
+	IsBinary                  *bool `pulumi:"isBinary"`
 	IsComparisonFromMergeBase *bool `pulumi:"isComparisonFromMergeBase"`
 	// Indicates whether the file is large.
-	IsLarge bool `pulumi:"isLarge"`
+	IsLarge *bool `pulumi:"isLarge"`
 	// The ID of the changed object on the target version.
-	NewId string `pulumi:"newId"`
+	NewId *string `pulumi:"newId"`
 	// The path on the target version to the changed object.
-	NewPath string `pulumi:"newPath"`
+	NewPath *string `pulumi:"newPath"`
 	// The ID of the changed object on the base version.
-	OldId string `pulumi:"oldId"`
+	OldId *string `pulumi:"oldId"`
 	// The path on the base version to the changed object.
-	OldPath       string `pulumi:"oldPath"`
-	RepositoryId  string `pulumi:"repositoryId"`
-	TargetVersion string `pulumi:"targetVersion"`
+	OldPath       *string `pulumi:"oldPath"`
+	RepositoryId  string  `pulumi:"repositoryId"`
+	TargetVersion string  `pulumi:"targetVersion"`
 }
 
 func GetRepositoryFileDiffOutput(ctx *pulumi.Context, args GetRepositoryFileDiffOutputArgs, opts ...pulumi.InvokeOption) GetRepositoryFileDiffResultOutput {
@@ -142,15 +141,9 @@ func (o GetRepositoryFileDiffResultOutput) ToGetRepositoryFileDiffResultOutputWi
 	return o
 }
 
-func (o GetRepositoryFileDiffResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetRepositoryFileDiffResult] {
-	return pulumix.Output[GetRepositoryFileDiffResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Indicates whether the changed file contains conflicts.
-func (o GetRepositoryFileDiffResultOutput) AreConflictsInFile() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetRepositoryFileDiffResult) bool { return v.AreConflictsInFile }).(pulumi.BoolOutput)
+func (o GetRepositoryFileDiffResultOutput) AreConflictsInFile() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetRepositoryFileDiffResult) *bool { return v.AreConflictsInFile }).(pulumi.BoolPtrOutput)
 }
 
 func (o GetRepositoryFileDiffResultOutput) BaseVersion() pulumi.StringOutput {
@@ -167,13 +160,13 @@ func (o GetRepositoryFileDiffResultOutput) FilePath() pulumi.StringOutput {
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetRepositoryFileDiffResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRepositoryFileDiffResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetRepositoryFileDiffResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRepositoryFileDiffResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Indicates whether the file is binary.
-func (o GetRepositoryFileDiffResultOutput) IsBinary() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetRepositoryFileDiffResult) bool { return v.IsBinary }).(pulumi.BoolOutput)
+func (o GetRepositoryFileDiffResultOutput) IsBinary() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetRepositoryFileDiffResult) *bool { return v.IsBinary }).(pulumi.BoolPtrOutput)
 }
 
 func (o GetRepositoryFileDiffResultOutput) IsComparisonFromMergeBase() pulumi.BoolPtrOutput {
@@ -181,28 +174,28 @@ func (o GetRepositoryFileDiffResultOutput) IsComparisonFromMergeBase() pulumi.Bo
 }
 
 // Indicates whether the file is large.
-func (o GetRepositoryFileDiffResultOutput) IsLarge() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetRepositoryFileDiffResult) bool { return v.IsLarge }).(pulumi.BoolOutput)
+func (o GetRepositoryFileDiffResultOutput) IsLarge() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetRepositoryFileDiffResult) *bool { return v.IsLarge }).(pulumi.BoolPtrOutput)
 }
 
 // The ID of the changed object on the target version.
-func (o GetRepositoryFileDiffResultOutput) NewId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRepositoryFileDiffResult) string { return v.NewId }).(pulumi.StringOutput)
+func (o GetRepositoryFileDiffResultOutput) NewId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRepositoryFileDiffResult) *string { return v.NewId }).(pulumi.StringPtrOutput)
 }
 
 // The path on the target version to the changed object.
-func (o GetRepositoryFileDiffResultOutput) NewPath() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRepositoryFileDiffResult) string { return v.NewPath }).(pulumi.StringOutput)
+func (o GetRepositoryFileDiffResultOutput) NewPath() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRepositoryFileDiffResult) *string { return v.NewPath }).(pulumi.StringPtrOutput)
 }
 
 // The ID of the changed object on the base version.
-func (o GetRepositoryFileDiffResultOutput) OldId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRepositoryFileDiffResult) string { return v.OldId }).(pulumi.StringOutput)
+func (o GetRepositoryFileDiffResultOutput) OldId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRepositoryFileDiffResult) *string { return v.OldId }).(pulumi.StringPtrOutput)
 }
 
 // The path on the base version to the changed object.
-func (o GetRepositoryFileDiffResultOutput) OldPath() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRepositoryFileDiffResult) string { return v.OldPath }).(pulumi.StringOutput)
+func (o GetRepositoryFileDiffResultOutput) OldPath() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRepositoryFileDiffResult) *string { return v.OldPath }).(pulumi.StringPtrOutput)
 }
 
 func (o GetRepositoryFileDiffResultOutput) RepositoryId() pulumi.StringOutput {

@@ -48,18 +48,12 @@ class GetManagedInstanceGroupAvailableSoftwareSourcesResult:
 
     @property
     @pulumi.getter(name="availableSoftwareSourceCollections")
-    def available_software_source_collections(self) -> Sequence['outputs.GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceCollectionResult']:
-        """
-        The list of available_software_source_collection.
-        """
+    def available_software_source_collections(self) -> Optional[Sequence['outputs.GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceCollectionResult']]:
         return pulumi.get(self, "available_software_source_collections")
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[str]:
-        """
-        The OCID for the compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
@@ -70,9 +64,6 @@ class GetManagedInstanceGroupAvailableSoftwareSourcesResult:
     @property
     @pulumi.getter(name="displayNames")
     def display_names(self) -> Optional[Sequence[str]]:
-        """
-        User friendly name for the software source.
-        """
         return pulumi.get(self, "display_names")
 
     @property
@@ -82,7 +73,7 @@ class GetManagedInstanceGroupAvailableSoftwareSourcesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -116,28 +107,7 @@ def get_managed_instance_group_available_software_sources(compartment_id: Option
                                                           managed_instance_group_id: Optional[str] = None,
                                                           opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetManagedInstanceGroupAvailableSoftwareSourcesResult:
     """
-    This data source provides the list of Managed Instance Group Available Software Sources in Oracle Cloud Infrastructure Os Management Hub service.
-
-    Lists available software sources for a specified managed instance group. Filter the list against a variety of
-    criteria including but not limited to its name.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_managed_instance_group_available_software_sources = oci.OsManagementHub.get_managed_instance_group_available_software_sources(managed_instance_group_id=oci_os_management_hub_managed_instance_group["test_managed_instance_group"]["id"],
-        compartment_id=var["compartment_id"],
-        display_names=var["managed_instance_group_available_software_source_display_name"],
-        display_name_contains=var["managed_instance_group_available_software_source_display_name_contains"])
-    ```
-
-
-    :param str compartment_id: The OCID of the compartment that contains the resources to list.
-    :param str display_name_contains: A filter to return resources that may partially match the given display name.
-    :param Sequence[str] display_names: A filter to return resources that match the given display names.
-    :param str managed_instance_group_id: The managed instance group OCID.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -166,27 +136,6 @@ def get_managed_instance_group_available_software_sources_output(compartment_id:
                                                                  managed_instance_group_id: Optional[pulumi.Input[str]] = None,
                                                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetManagedInstanceGroupAvailableSoftwareSourcesResult]:
     """
-    This data source provides the list of Managed Instance Group Available Software Sources in Oracle Cloud Infrastructure Os Management Hub service.
-
-    Lists available software sources for a specified managed instance group. Filter the list against a variety of
-    criteria including but not limited to its name.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_managed_instance_group_available_software_sources = oci.OsManagementHub.get_managed_instance_group_available_software_sources(managed_instance_group_id=oci_os_management_hub_managed_instance_group["test_managed_instance_group"]["id"],
-        compartment_id=var["compartment_id"],
-        display_names=var["managed_instance_group_available_software_source_display_name"],
-        display_name_contains=var["managed_instance_group_available_software_source_display_name_contains"])
-    ```
-
-
-    :param str compartment_id: The OCID of the compartment that contains the resources to list.
-    :param str display_name_contains: A filter to return resources that may partially match the given display name.
-    :param Sequence[str] display_names: A filter to return resources that match the given display names.
-    :param str managed_instance_group_id: The managed instance group OCID.
+    Use this data source to access information about an existing resource.
     """
     ...

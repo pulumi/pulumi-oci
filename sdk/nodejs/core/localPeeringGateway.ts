@@ -73,39 +73,39 @@ export class LocalPeeringGateway extends pulumi.CustomResource {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    public readonly displayName!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * Whether the VCN at the other end of the peering is in a different tenancy.  Example: `false`
      */
-    public /*out*/ readonly isCrossTenancyPeering!: pulumi.Output<boolean>;
+    public /*out*/ readonly isCrossTenancyPeering!: pulumi.Output<boolean | undefined>;
     /**
      * The smallest aggregate CIDR that contains all the CIDR routes advertised by the VCN at the other end of the peering from this LPG. See `peerAdvertisedCidrDetails` for the individual CIDRs. The value is `null` if the LPG is not peered.  Example: `192.168.0.0/16`, or if aggregated with `172.16.0.0/24` then `128.0.0.0/1`
      */
-    public /*out*/ readonly peerAdvertisedCidr!: pulumi.Output<string>;
+    public /*out*/ readonly peerAdvertisedCidr!: pulumi.Output<string | undefined>;
     /**
      * The specific ranges of IP addresses available on or via the VCN at the other end of the peering from this LPG. The value is `null` if the LPG is not peered. You can use these as destination CIDRs for route rules to route a subnet's traffic to this LPG.  Example: [`192.168.0.0/16`, `172.16.0.0/24`]
      */
-    public /*out*/ readonly peerAdvertisedCidrDetails!: pulumi.Output<string[]>;
+    public /*out*/ readonly peerAdvertisedCidrDetails!: pulumi.Output<string[] | undefined>;
     /**
      * The OCID of the LPG you want to peer with. Specifying a peerId connects this local peering gateway (LPG) to another one in the same region. This operation must be called by the VCN administrator who is designated as the *requestor* in the peering relationship. The *acceptor* must implement an Identity and Access Management (IAM) policy that gives the requestor permission to connect to LPGs in the acceptor's compartment. Without that permission, this operation will fail. For more information, see [VCN Peering](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/VCNpeering.htm).
      */
-    public readonly peerId!: pulumi.Output<string>;
+    public readonly peerId!: pulumi.Output<string | undefined>;
     /**
      * Whether the LPG is peered with another LPG. `NEW` means the LPG has not yet been peered. `PENDING` means the peering is being established. `REVOKED` means the LPG at the other end of the peering has been deleted.
      */
-    public /*out*/ readonly peeringStatus!: pulumi.Output<string>;
+    public /*out*/ readonly peeringStatus!: pulumi.Output<string | undefined>;
     /**
      * Additional information regarding the peering status, if applicable.
      */
-    public /*out*/ readonly peeringStatusDetails!: pulumi.Output<string>;
+    public /*out*/ readonly peeringStatusDetails!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the LPG will use.
      *
@@ -113,15 +113,15 @@ export class LocalPeeringGateway extends pulumi.CustomResource {
      *
      * For information about why you would associate a route table with an LPG, see [Transit Routing: Access to Multiple VCNs in Same Region](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm).
      */
-    public readonly routeTableId!: pulumi.Output<string>;
+    public readonly routeTableId!: pulumi.Output<string | undefined>;
     /**
      * The LPG's current lifecycle state.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * The date and time the LPG was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN the LPG belongs to.
      *

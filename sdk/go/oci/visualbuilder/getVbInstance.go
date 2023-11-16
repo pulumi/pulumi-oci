@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Vb Instance resource in Oracle Cloud Infrastructure Visual Builder service.
@@ -64,47 +63,47 @@ type LookupVbInstanceResult struct {
 	// A list of associated attachments to other services
 	Attachments []GetVbInstanceAttachment `pulumi:"attachments"`
 	// Compartment Identifier.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// The entitlement used for billing purposes.
-	ConsumptionModel string `pulumi:"consumptionModel"`
+	ConsumptionModel *string `pulumi:"consumptionModel"`
 	// Details for a custom endpoint for the vb instance.
 	CustomEndpoints []GetVbInstanceCustomEndpoint `pulumi:"customEndpoints"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// Vb Instance Identifier, can be renamed.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// Unique identifier that is immutable on creation.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Information for IDCS access
 	IdcsInfos  []GetVbInstanceIdcsInfo `pulumi:"idcsInfos"`
-	IdcsOpenId string                  `pulumi:"idcsOpenId"`
+	IdcsOpenId *string                 `pulumi:"idcsOpenId"`
 	// The Vb Instance URL.
-	InstanceUrl string `pulumi:"instanceUrl"`
+	InstanceUrl *string `pulumi:"instanceUrl"`
 	// Visual Builder is enabled or not.
-	IsVisualBuilderEnabled bool `pulumi:"isVisualBuilderEnabled"`
+	IsVisualBuilderEnabled *bool `pulumi:"isVisualBuilderEnabled"`
 	// The NAT gateway IP address for the VB management VCN
-	ManagementNatGatewayIp string `pulumi:"managementNatGatewayIp"`
+	ManagementNatGatewayIp *string `pulumi:"managementNatGatewayIp"`
 	// The Oracle Cloud ID (OCID) of the Visual Builder management VCN
-	ManagementVcnId string `pulumi:"managementVcnId"`
+	ManagementVcnId *string `pulumi:"managementVcnId"`
 	// The number of Nodes
-	NodeCount int `pulumi:"nodeCount"`
+	NodeCount *int `pulumi:"nodeCount"`
 	// The NAT gateway IP address for the VB service VCN
-	ServiceNatGatewayIp string `pulumi:"serviceNatGatewayIp"`
+	ServiceNatGatewayIp *string `pulumi:"serviceNatGatewayIp"`
 	// The Oracle Cloud ID (OCID) of the Visual Builder service VCN
-	ServiceVcnId string `pulumi:"serviceVcnId"`
+	ServiceVcnId *string `pulumi:"serviceVcnId"`
 	// The current state of the vb instance.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// An message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-	StateMessage string `pulumi:"stateMessage"`
+	StateMessage *string `pulumi:"stateMessage"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The time the the VbInstance was created. An RFC3339 formatted datetime string.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time the VbInstance was updated. An RFC3339 formatted datetime string.
-	TimeUpdated  string `pulumi:"timeUpdated"`
-	VbInstanceId string `pulumi:"vbInstanceId"`
+	TimeUpdated  *string `pulumi:"timeUpdated"`
+	VbInstanceId string  `pulumi:"vbInstanceId"`
 }
 
 func LookupVbInstanceOutput(ctx *pulumi.Context, args LookupVbInstanceOutputArgs, opts ...pulumi.InvokeOption) LookupVbInstanceResultOutput {
@@ -145,12 +144,6 @@ func (o LookupVbInstanceResultOutput) ToLookupVbInstanceResultOutputWithContext(
 	return o
 }
 
-func (o LookupVbInstanceResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupVbInstanceResult] {
-	return pulumix.Output[LookupVbInstanceResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // A list of alternate custom endpoints used for the vb instance URL.
 func (o LookupVbInstanceResultOutput) AlternateCustomEndpoints() GetVbInstanceAlternateCustomEndpointArrayOutput {
 	return o.ApplyT(func(v LookupVbInstanceResult) []GetVbInstanceAlternateCustomEndpoint {
@@ -164,13 +157,13 @@ func (o LookupVbInstanceResultOutput) Attachments() GetVbInstanceAttachmentArray
 }
 
 // Compartment Identifier.
-func (o LookupVbInstanceResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupVbInstanceResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupVbInstanceResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupVbInstanceResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // The entitlement used for billing purposes.
-func (o LookupVbInstanceResultOutput) ConsumptionModel() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupVbInstanceResult) string { return v.ConsumptionModel }).(pulumi.StringOutput)
+func (o LookupVbInstanceResultOutput) ConsumptionModel() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupVbInstanceResult) *string { return v.ConsumptionModel }).(pulumi.StringPtrOutput)
 }
 
 // Details for a custom endpoint for the vb instance.
@@ -184,8 +177,8 @@ func (o LookupVbInstanceResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // Vb Instance Identifier, can be renamed.
-func (o LookupVbInstanceResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupVbInstanceResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupVbInstanceResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupVbInstanceResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -194,8 +187,8 @@ func (o LookupVbInstanceResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // Unique identifier that is immutable on creation.
-func (o LookupVbInstanceResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupVbInstanceResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupVbInstanceResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupVbInstanceResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Information for IDCS access
@@ -203,53 +196,53 @@ func (o LookupVbInstanceResultOutput) IdcsInfos() GetVbInstanceIdcsInfoArrayOutp
 	return o.ApplyT(func(v LookupVbInstanceResult) []GetVbInstanceIdcsInfo { return v.IdcsInfos }).(GetVbInstanceIdcsInfoArrayOutput)
 }
 
-func (o LookupVbInstanceResultOutput) IdcsOpenId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupVbInstanceResult) string { return v.IdcsOpenId }).(pulumi.StringOutput)
+func (o LookupVbInstanceResultOutput) IdcsOpenId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupVbInstanceResult) *string { return v.IdcsOpenId }).(pulumi.StringPtrOutput)
 }
 
 // The Vb Instance URL.
-func (o LookupVbInstanceResultOutput) InstanceUrl() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupVbInstanceResult) string { return v.InstanceUrl }).(pulumi.StringOutput)
+func (o LookupVbInstanceResultOutput) InstanceUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupVbInstanceResult) *string { return v.InstanceUrl }).(pulumi.StringPtrOutput)
 }
 
 // Visual Builder is enabled or not.
-func (o LookupVbInstanceResultOutput) IsVisualBuilderEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupVbInstanceResult) bool { return v.IsVisualBuilderEnabled }).(pulumi.BoolOutput)
+func (o LookupVbInstanceResultOutput) IsVisualBuilderEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupVbInstanceResult) *bool { return v.IsVisualBuilderEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // The NAT gateway IP address for the VB management VCN
-func (o LookupVbInstanceResultOutput) ManagementNatGatewayIp() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupVbInstanceResult) string { return v.ManagementNatGatewayIp }).(pulumi.StringOutput)
+func (o LookupVbInstanceResultOutput) ManagementNatGatewayIp() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupVbInstanceResult) *string { return v.ManagementNatGatewayIp }).(pulumi.StringPtrOutput)
 }
 
 // The Oracle Cloud ID (OCID) of the Visual Builder management VCN
-func (o LookupVbInstanceResultOutput) ManagementVcnId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupVbInstanceResult) string { return v.ManagementVcnId }).(pulumi.StringOutput)
+func (o LookupVbInstanceResultOutput) ManagementVcnId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupVbInstanceResult) *string { return v.ManagementVcnId }).(pulumi.StringPtrOutput)
 }
 
 // The number of Nodes
-func (o LookupVbInstanceResultOutput) NodeCount() pulumi.IntOutput {
-	return o.ApplyT(func(v LookupVbInstanceResult) int { return v.NodeCount }).(pulumi.IntOutput)
+func (o LookupVbInstanceResultOutput) NodeCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LookupVbInstanceResult) *int { return v.NodeCount }).(pulumi.IntPtrOutput)
 }
 
 // The NAT gateway IP address for the VB service VCN
-func (o LookupVbInstanceResultOutput) ServiceNatGatewayIp() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupVbInstanceResult) string { return v.ServiceNatGatewayIp }).(pulumi.StringOutput)
+func (o LookupVbInstanceResultOutput) ServiceNatGatewayIp() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupVbInstanceResult) *string { return v.ServiceNatGatewayIp }).(pulumi.StringPtrOutput)
 }
 
 // The Oracle Cloud ID (OCID) of the Visual Builder service VCN
-func (o LookupVbInstanceResultOutput) ServiceVcnId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupVbInstanceResult) string { return v.ServiceVcnId }).(pulumi.StringOutput)
+func (o LookupVbInstanceResultOutput) ServiceVcnId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupVbInstanceResult) *string { return v.ServiceVcnId }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the vb instance.
-func (o LookupVbInstanceResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupVbInstanceResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupVbInstanceResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupVbInstanceResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // An message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-func (o LookupVbInstanceResultOutput) StateMessage() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupVbInstanceResult) string { return v.StateMessage }).(pulumi.StringOutput)
+func (o LookupVbInstanceResultOutput) StateMessage() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupVbInstanceResult) *string { return v.StateMessage }).(pulumi.StringPtrOutput)
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -258,13 +251,13 @@ func (o LookupVbInstanceResultOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The time the the VbInstance was created. An RFC3339 formatted datetime string.
-func (o LookupVbInstanceResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupVbInstanceResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupVbInstanceResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupVbInstanceResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time the VbInstance was updated. An RFC3339 formatted datetime string.
-func (o LookupVbInstanceResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupVbInstanceResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o LookupVbInstanceResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupVbInstanceResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupVbInstanceResultOutput) VbInstanceId() pulumi.StringOutput {

@@ -18,7 +18,7 @@ public final class GetAutonomousVmClusterAcdResourceUsagesResult {
      * @return The list of autonomous_container_database_resource_usages.
      * 
      */
-    private List<GetAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsage> autonomousContainerDatabaseResourceUsages;
+    private @Nullable List<GetAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsage> autonomousContainerDatabaseResourceUsages;
     private String autonomousVmClusterId;
     private @Nullable String compartmentId;
     private @Nullable List<GetAutonomousVmClusterAcdResourceUsagesFilter> filters;
@@ -26,7 +26,7 @@ public final class GetAutonomousVmClusterAcdResourceUsagesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
 
     private GetAutonomousVmClusterAcdResourceUsagesResult() {}
     /**
@@ -34,7 +34,7 @@ public final class GetAutonomousVmClusterAcdResourceUsagesResult {
      * 
      */
     public List<GetAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsage> autonomousContainerDatabaseResourceUsages() {
-        return this.autonomousContainerDatabaseResourceUsages;
+        return this.autonomousContainerDatabaseResourceUsages == null ? List.of() : this.autonomousContainerDatabaseResourceUsages;
     }
     public String autonomousVmClusterId() {
         return this.autonomousVmClusterId;
@@ -49,8 +49,8 @@ public final class GetAutonomousVmClusterAcdResourceUsagesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
 
     public static Builder builder() {
@@ -62,11 +62,11 @@ public final class GetAutonomousVmClusterAcdResourceUsagesResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsage> autonomousContainerDatabaseResourceUsages;
+        private @Nullable List<GetAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsage> autonomousContainerDatabaseResourceUsages;
         private String autonomousVmClusterId;
         private @Nullable String compartmentId;
         private @Nullable List<GetAutonomousVmClusterAcdResourceUsagesFilter> filters;
-        private String id;
+        private @Nullable String id;
         public Builder() {}
         public Builder(GetAutonomousVmClusterAcdResourceUsagesResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -78,8 +78,8 @@ public final class GetAutonomousVmClusterAcdResourceUsagesResult {
         }
 
         @CustomType.Setter
-        public Builder autonomousContainerDatabaseResourceUsages(List<GetAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsage> autonomousContainerDatabaseResourceUsages) {
-            this.autonomousContainerDatabaseResourceUsages = Objects.requireNonNull(autonomousContainerDatabaseResourceUsages);
+        public Builder autonomousContainerDatabaseResourceUsages(@Nullable List<GetAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsage> autonomousContainerDatabaseResourceUsages) {
+            this.autonomousContainerDatabaseResourceUsages = autonomousContainerDatabaseResourceUsages;
             return this;
         }
         public Builder autonomousContainerDatabaseResourceUsages(GetAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsage... autonomousContainerDatabaseResourceUsages) {
@@ -104,8 +104,8 @@ public final class GetAutonomousVmClusterAcdResourceUsagesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         public GetAutonomousVmClusterAcdResourceUsagesResult build() {

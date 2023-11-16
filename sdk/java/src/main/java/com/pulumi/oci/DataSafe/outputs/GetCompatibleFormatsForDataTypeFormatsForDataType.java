@@ -8,6 +8,8 @@ import com.pulumi.oci.DataSafe.outputs.GetCompatibleFormatsForDataTypeFormatsFor
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetCompatibleFormatsForDataTypeFormatsForDataType {
@@ -15,27 +17,27 @@ public final class GetCompatibleFormatsForDataTypeFormatsForDataType {
      * @return The data type category, which can be one of the following - Character - Includes CHAR, NCHAR, VARCHAR2, and NVARCHAR2 Numeric - Includes NUMBER, FLOAT, RAW, BINARY_FLOAT, and BINARY_DOUBLE Date - Includes DATE and TIMESTAMP LOB - Includes BLOB, CLOB, and NCLOB All - Includes all the supported data types
      * 
      */
-    private String dataType;
+    private @Nullable String dataType;
     /**
      * @return An array of the basic masking formats compatible with the data type category.
      * 
      */
-    private List<GetCompatibleFormatsForDataTypeFormatsForDataTypeMaskingFormat> maskingFormats;
+    private @Nullable List<GetCompatibleFormatsForDataTypeFormatsForDataTypeMaskingFormat> maskingFormats;
 
     private GetCompatibleFormatsForDataTypeFormatsForDataType() {}
     /**
      * @return The data type category, which can be one of the following - Character - Includes CHAR, NCHAR, VARCHAR2, and NVARCHAR2 Numeric - Includes NUMBER, FLOAT, RAW, BINARY_FLOAT, and BINARY_DOUBLE Date - Includes DATE and TIMESTAMP LOB - Includes BLOB, CLOB, and NCLOB All - Includes all the supported data types
      * 
      */
-    public String dataType() {
-        return this.dataType;
+    public Optional<String> dataType() {
+        return Optional.ofNullable(this.dataType);
     }
     /**
      * @return An array of the basic masking formats compatible with the data type category.
      * 
      */
     public List<GetCompatibleFormatsForDataTypeFormatsForDataTypeMaskingFormat> maskingFormats() {
-        return this.maskingFormats;
+        return this.maskingFormats == null ? List.of() : this.maskingFormats;
     }
 
     public static Builder builder() {
@@ -47,8 +49,8 @@ public final class GetCompatibleFormatsForDataTypeFormatsForDataType {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String dataType;
-        private List<GetCompatibleFormatsForDataTypeFormatsForDataTypeMaskingFormat> maskingFormats;
+        private @Nullable String dataType;
+        private @Nullable List<GetCompatibleFormatsForDataTypeFormatsForDataTypeMaskingFormat> maskingFormats;
         public Builder() {}
         public Builder(GetCompatibleFormatsForDataTypeFormatsForDataType defaults) {
     	      Objects.requireNonNull(defaults);
@@ -57,13 +59,13 @@ public final class GetCompatibleFormatsForDataTypeFormatsForDataType {
         }
 
         @CustomType.Setter
-        public Builder dataType(String dataType) {
-            this.dataType = Objects.requireNonNull(dataType);
+        public Builder dataType(@Nullable String dataType) {
+            this.dataType = dataType;
             return this;
         }
         @CustomType.Setter
-        public Builder maskingFormats(List<GetCompatibleFormatsForDataTypeFormatsForDataTypeMaskingFormat> maskingFormats) {
-            this.maskingFormats = Objects.requireNonNull(maskingFormats);
+        public Builder maskingFormats(@Nullable List<GetCompatibleFormatsForDataTypeFormatsForDataTypeMaskingFormat> maskingFormats) {
+            this.maskingFormats = maskingFormats;
             return this;
         }
         public Builder maskingFormats(GetCompatibleFormatsForDataTypeFormatsForDataTypeMaskingFormat... maskingFormats) {

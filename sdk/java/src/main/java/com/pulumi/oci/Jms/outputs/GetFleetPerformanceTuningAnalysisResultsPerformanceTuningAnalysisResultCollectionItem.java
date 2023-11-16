@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItem {
@@ -14,207 +16,207 @@ public final class GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnal
      * @return The Fleet-unique identifier of the related application.
      * 
      */
-    private String applicationId;
+    private @Nullable String applicationId;
     /**
      * @return The internal identifier of the application installation for which the report has been generated.
      * 
      */
-    private String applicationInstallationId;
+    private @Nullable String applicationInstallationId;
     /**
      * @return The installation path of the application for which the report has been generated.
      * 
      */
-    private String applicationInstallationPath;
+    private @Nullable String applicationInstallationPath;
     /**
      * @return The name of the application for which the report has been generated.
      * 
      */
-    private String applicationName;
+    private @Nullable String applicationName;
     /**
      * @return The Object Storage bucket name of this analysis result.
      * 
      */
-    private String bucket;
+    private @Nullable String bucket;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
      * 
      */
-    private String fleetId;
+    private @Nullable String fleetId;
     /**
      * @return The hostname of the managed instance.
      * 
      */
-    private String hostName;
+    private @Nullable String hostName;
     /**
      * @return The OCID to identify this analysis results.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The Fleet-unique identifier of the related managed instance.
      * 
      */
-    private String managedInstanceId;
+    private @Nullable String managedInstanceId;
     /**
      * @return The Object Storage namespace of this analysis result.
      * 
      */
-    private String namespace;
+    private @Nullable String namespace;
     /**
      * @return The Object Storage object name of this analysis result.
      * 
      */
-    private String object;
+    private @Nullable String object;
     /**
      * @return Result of the analysis based on whether warnings have been found or not.
      * 
      */
-    private String result;
+    private @Nullable String result;
     /**
      * @return The time the result is compiled.
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The time the JFR capture finished.
      * 
      */
-    private String timeFinished;
+    private @Nullable String timeFinished;
     /**
      * @return The time the JFR capture started.
      * 
      */
-    private String timeStarted;
+    private @Nullable String timeStarted;
     /**
      * @return Total number of warnings reported by the analysis.
      * 
      */
-    private Integer warningCount;
+    private @Nullable Integer warningCount;
     /**
      * @return The OCID of the work request to start the analysis.
      * 
      */
-    private String workRequestId;
+    private @Nullable String workRequestId;
 
     private GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItem() {}
     /**
      * @return The Fleet-unique identifier of the related application.
      * 
      */
-    public String applicationId() {
-        return this.applicationId;
+    public Optional<String> applicationId() {
+        return Optional.ofNullable(this.applicationId);
     }
     /**
      * @return The internal identifier of the application installation for which the report has been generated.
      * 
      */
-    public String applicationInstallationId() {
-        return this.applicationInstallationId;
+    public Optional<String> applicationInstallationId() {
+        return Optional.ofNullable(this.applicationInstallationId);
     }
     /**
      * @return The installation path of the application for which the report has been generated.
      * 
      */
-    public String applicationInstallationPath() {
-        return this.applicationInstallationPath;
+    public Optional<String> applicationInstallationPath() {
+        return Optional.ofNullable(this.applicationInstallationPath);
     }
     /**
      * @return The name of the application for which the report has been generated.
      * 
      */
-    public String applicationName() {
-        return this.applicationName;
+    public Optional<String> applicationName() {
+        return Optional.ofNullable(this.applicationName);
     }
     /**
      * @return The Object Storage bucket name of this analysis result.
      * 
      */
-    public String bucket() {
-        return this.bucket;
+    public Optional<String> bucket() {
+        return Optional.ofNullable(this.bucket);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
      * 
      */
-    public String fleetId() {
-        return this.fleetId;
+    public Optional<String> fleetId() {
+        return Optional.ofNullable(this.fleetId);
     }
     /**
      * @return The hostname of the managed instance.
      * 
      */
-    public String hostName() {
-        return this.hostName;
+    public Optional<String> hostName() {
+        return Optional.ofNullable(this.hostName);
     }
     /**
      * @return The OCID to identify this analysis results.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The Fleet-unique identifier of the related managed instance.
      * 
      */
-    public String managedInstanceId() {
-        return this.managedInstanceId;
+    public Optional<String> managedInstanceId() {
+        return Optional.ofNullable(this.managedInstanceId);
     }
     /**
      * @return The Object Storage namespace of this analysis result.
      * 
      */
-    public String namespace() {
-        return this.namespace;
+    public Optional<String> namespace() {
+        return Optional.ofNullable(this.namespace);
     }
     /**
      * @return The Object Storage object name of this analysis result.
      * 
      */
-    public String object() {
-        return this.object;
+    public Optional<String> object() {
+        return Optional.ofNullable(this.object);
     }
     /**
      * @return Result of the analysis based on whether warnings have been found or not.
      * 
      */
-    public String result() {
-        return this.result;
+    public Optional<String> result() {
+        return Optional.ofNullable(this.result);
     }
     /**
      * @return The time the result is compiled.
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return The time the JFR capture finished.
      * 
      */
-    public String timeFinished() {
-        return this.timeFinished;
+    public Optional<String> timeFinished() {
+        return Optional.ofNullable(this.timeFinished);
     }
     /**
      * @return The time the JFR capture started.
      * 
      */
-    public String timeStarted() {
-        return this.timeStarted;
+    public Optional<String> timeStarted() {
+        return Optional.ofNullable(this.timeStarted);
     }
     /**
      * @return Total number of warnings reported by the analysis.
      * 
      */
-    public Integer warningCount() {
-        return this.warningCount;
+    public Optional<Integer> warningCount() {
+        return Optional.ofNullable(this.warningCount);
     }
     /**
      * @return The OCID of the work request to start the analysis.
      * 
      */
-    public String workRequestId() {
-        return this.workRequestId;
+    public Optional<String> workRequestId() {
+        return Optional.ofNullable(this.workRequestId);
     }
 
     public static Builder builder() {
@@ -226,23 +228,23 @@ public final class GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnal
     }
     @CustomType.Builder
     public static final class Builder {
-        private String applicationId;
-        private String applicationInstallationId;
-        private String applicationInstallationPath;
-        private String applicationName;
-        private String bucket;
-        private String fleetId;
-        private String hostName;
-        private String id;
-        private String managedInstanceId;
-        private String namespace;
-        private String object;
-        private String result;
-        private String timeCreated;
-        private String timeFinished;
-        private String timeStarted;
-        private Integer warningCount;
-        private String workRequestId;
+        private @Nullable String applicationId;
+        private @Nullable String applicationInstallationId;
+        private @Nullable String applicationInstallationPath;
+        private @Nullable String applicationName;
+        private @Nullable String bucket;
+        private @Nullable String fleetId;
+        private @Nullable String hostName;
+        private @Nullable String id;
+        private @Nullable String managedInstanceId;
+        private @Nullable String namespace;
+        private @Nullable String object;
+        private @Nullable String result;
+        private @Nullable String timeCreated;
+        private @Nullable String timeFinished;
+        private @Nullable String timeStarted;
+        private @Nullable Integer warningCount;
+        private @Nullable String workRequestId;
         public Builder() {}
         public Builder(GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -266,88 +268,88 @@ public final class GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnal
         }
 
         @CustomType.Setter
-        public Builder applicationId(String applicationId) {
-            this.applicationId = Objects.requireNonNull(applicationId);
+        public Builder applicationId(@Nullable String applicationId) {
+            this.applicationId = applicationId;
             return this;
         }
         @CustomType.Setter
-        public Builder applicationInstallationId(String applicationInstallationId) {
-            this.applicationInstallationId = Objects.requireNonNull(applicationInstallationId);
+        public Builder applicationInstallationId(@Nullable String applicationInstallationId) {
+            this.applicationInstallationId = applicationInstallationId;
             return this;
         }
         @CustomType.Setter
-        public Builder applicationInstallationPath(String applicationInstallationPath) {
-            this.applicationInstallationPath = Objects.requireNonNull(applicationInstallationPath);
+        public Builder applicationInstallationPath(@Nullable String applicationInstallationPath) {
+            this.applicationInstallationPath = applicationInstallationPath;
             return this;
         }
         @CustomType.Setter
-        public Builder applicationName(String applicationName) {
-            this.applicationName = Objects.requireNonNull(applicationName);
+        public Builder applicationName(@Nullable String applicationName) {
+            this.applicationName = applicationName;
             return this;
         }
         @CustomType.Setter
-        public Builder bucket(String bucket) {
-            this.bucket = Objects.requireNonNull(bucket);
+        public Builder bucket(@Nullable String bucket) {
+            this.bucket = bucket;
             return this;
         }
         @CustomType.Setter
-        public Builder fleetId(String fleetId) {
-            this.fleetId = Objects.requireNonNull(fleetId);
+        public Builder fleetId(@Nullable String fleetId) {
+            this.fleetId = fleetId;
             return this;
         }
         @CustomType.Setter
-        public Builder hostName(String hostName) {
-            this.hostName = Objects.requireNonNull(hostName);
+        public Builder hostName(@Nullable String hostName) {
+            this.hostName = hostName;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder managedInstanceId(String managedInstanceId) {
-            this.managedInstanceId = Objects.requireNonNull(managedInstanceId);
+        public Builder managedInstanceId(@Nullable String managedInstanceId) {
+            this.managedInstanceId = managedInstanceId;
             return this;
         }
         @CustomType.Setter
-        public Builder namespace(String namespace) {
-            this.namespace = Objects.requireNonNull(namespace);
+        public Builder namespace(@Nullable String namespace) {
+            this.namespace = namespace;
             return this;
         }
         @CustomType.Setter
-        public Builder object(String object) {
-            this.object = Objects.requireNonNull(object);
+        public Builder object(@Nullable String object) {
+            this.object = object;
             return this;
         }
         @CustomType.Setter
-        public Builder result(String result) {
-            this.result = Objects.requireNonNull(result);
+        public Builder result(@Nullable String result) {
+            this.result = result;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeFinished(String timeFinished) {
-            this.timeFinished = Objects.requireNonNull(timeFinished);
+        public Builder timeFinished(@Nullable String timeFinished) {
+            this.timeFinished = timeFinished;
             return this;
         }
         @CustomType.Setter
-        public Builder timeStarted(String timeStarted) {
-            this.timeStarted = Objects.requireNonNull(timeStarted);
+        public Builder timeStarted(@Nullable String timeStarted) {
+            this.timeStarted = timeStarted;
             return this;
         }
         @CustomType.Setter
-        public Builder warningCount(Integer warningCount) {
-            this.warningCount = Objects.requireNonNull(warningCount);
+        public Builder warningCount(@Nullable Integer warningCount) {
+            this.warningCount = warningCount;
             return this;
         }
         @CustomType.Setter
-        public Builder workRequestId(String workRequestId) {
-            this.workRequestId = Objects.requireNonNull(workRequestId);
+        public Builder workRequestId(@Nullable String workRequestId) {
+            this.workRequestId = workRequestId;
             return this;
         }
         public GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItem build() {

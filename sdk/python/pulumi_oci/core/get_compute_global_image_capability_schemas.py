@@ -43,25 +43,16 @@ class GetComputeGlobalImageCapabilitySchemasResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[str]:
-        """
-        The OCID of the compartment containing the compute global image capability schema
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="computeGlobalImageCapabilitySchemas")
-    def compute_global_image_capability_schemas(self) -> Sequence['outputs.GetComputeGlobalImageCapabilitySchemasComputeGlobalImageCapabilitySchemaResult']:
-        """
-        The list of compute_global_image_capability_schemas.
-        """
+    def compute_global_image_capability_schemas(self) -> Optional[Sequence['outputs.GetComputeGlobalImageCapabilitySchemasComputeGlobalImageCapabilitySchemaResult']]:
         return pulumi.get(self, "compute_global_image_capability_schemas")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -71,7 +62,7 @@ class GetComputeGlobalImageCapabilitySchemasResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -96,23 +87,7 @@ def get_compute_global_image_capability_schemas(compartment_id: Optional[str] = 
                                                 filters: Optional[Sequence[pulumi.InputType['GetComputeGlobalImageCapabilitySchemasFilterArgs']]] = None,
                                                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetComputeGlobalImageCapabilitySchemasResult:
     """
-    This data source provides the list of Compute Global Image Capability Schemas in Oracle Cloud Infrastructure Core service.
-
-    Lists Compute Global Image Capability Schema in the specified compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_compute_global_image_capability_schemas = oci.Core.get_compute_global_image_capability_schemas(compartment_id=var["compartment_id"],
-        display_name=var["compute_global_image_capability_schema_display_name"])
-    ```
-
-
-    :param str compartment_id: A filter to return only resources that match the given compartment OCID exactly.
-    :param str display_name: A filter to return only resources that match the given display name exactly.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -135,22 +110,6 @@ def get_compute_global_image_capability_schemas_output(compartment_id: Optional[
                                                        filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetComputeGlobalImageCapabilitySchemasFilterArgs']]]]] = None,
                                                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetComputeGlobalImageCapabilitySchemasResult]:
     """
-    This data source provides the list of Compute Global Image Capability Schemas in Oracle Cloud Infrastructure Core service.
-
-    Lists Compute Global Image Capability Schema in the specified compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_compute_global_image_capability_schemas = oci.Core.get_compute_global_image_capability_schemas(compartment_id=var["compartment_id"],
-        display_name=var["compute_global_image_capability_schema_display_name"])
-    ```
-
-
-    :param str compartment_id: A filter to return only resources that match the given compartment OCID exactly.
-    :param str display_name: A filter to return only resources that match the given display name exactly.
+    Use this data source to access information about an existing resource.
     """
     ...

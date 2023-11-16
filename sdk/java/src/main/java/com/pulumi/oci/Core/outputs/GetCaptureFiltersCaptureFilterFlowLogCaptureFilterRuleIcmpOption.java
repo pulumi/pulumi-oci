@@ -6,6 +6,8 @@ package com.pulumi.oci.Core.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.Integer;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetCaptureFiltersCaptureFilterFlowLogCaptureFilterRuleIcmpOption {
@@ -13,27 +15,27 @@ public final class GetCaptureFiltersCaptureFilterFlowLogCaptureFilterRuleIcmpOpt
      * @return The ICMP code (optional).
      * 
      */
-    private Integer code;
+    private @Nullable Integer code;
     /**
      * @return The ICMP type.
      * 
      */
-    private Integer type;
+    private @Nullable Integer type;
 
     private GetCaptureFiltersCaptureFilterFlowLogCaptureFilterRuleIcmpOption() {}
     /**
      * @return The ICMP code (optional).
      * 
      */
-    public Integer code() {
-        return this.code;
+    public Optional<Integer> code() {
+        return Optional.ofNullable(this.code);
     }
     /**
      * @return The ICMP type.
      * 
      */
-    public Integer type() {
-        return this.type;
+    public Optional<Integer> type() {
+        return Optional.ofNullable(this.type);
     }
 
     public static Builder builder() {
@@ -45,8 +47,8 @@ public final class GetCaptureFiltersCaptureFilterFlowLogCaptureFilterRuleIcmpOpt
     }
     @CustomType.Builder
     public static final class Builder {
-        private Integer code;
-        private Integer type;
+        private @Nullable Integer code;
+        private @Nullable Integer type;
         public Builder() {}
         public Builder(GetCaptureFiltersCaptureFilterFlowLogCaptureFilterRuleIcmpOption defaults) {
     	      Objects.requireNonNull(defaults);
@@ -55,13 +57,13 @@ public final class GetCaptureFiltersCaptureFilterFlowLogCaptureFilterRuleIcmpOpt
         }
 
         @CustomType.Setter
-        public Builder code(Integer code) {
-            this.code = Objects.requireNonNull(code);
+        public Builder code(@Nullable Integer code) {
+            this.code = code;
             return this;
         }
         @CustomType.Setter
-        public Builder type(Integer type) {
-            this.type = Objects.requireNonNull(type);
+        public Builder type(@Nullable Integer type) {
+            this.type = type;
             return this;
         }
         public GetCaptureFiltersCaptureFilterFlowLogCaptureFilterRuleIcmpOption build() {

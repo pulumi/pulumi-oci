@@ -108,86 +108,86 @@ namespace Pulumi.Oci.ManagementAgent
         /// <summary>
         /// Total number of install for this keys
         /// </summary>
-        public readonly int AllowedKeyInstallCount;
+        public readonly int? AllowedKeyInstallCount;
         /// <summary>
         /// Compartment Identifier
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// Principal id of user who created the Agent Install key
         /// </summary>
-        public readonly string CreatedByPrincipalId;
+        public readonly string? CreatedByPrincipalId;
         /// <summary>
         /// Total number of install for this keys
         /// </summary>
-        public readonly int CurrentKeyInstallCount;
+        public readonly int? CurrentKeyInstallCount;
         /// <summary>
         /// Management Agent Install Key Name
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// Agent install Key identifier
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// If set to true, the install key has no expiration date or usage limit. Properties allowedKeyInstallCount and timeExpires are ignored if set to true. Defaults to false.
         /// </summary>
-        public readonly bool IsUnlimited;
+        public readonly bool? IsUnlimited;
         /// <summary>
         /// Management Agent Install Key
         /// </summary>
-        public readonly string Key;
+        public readonly string? Key;
         /// <summary>
         /// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         /// </summary>
-        public readonly string LifecycleDetails;
+        public readonly string? LifecycleDetails;
         public readonly string ManagementAgentInstallKeyId;
         /// <summary>
         /// Status of Key
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// The time when Management Agent install Key was created. An RFC3339 formatted date time string
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// date after which key would expire after creation
         /// </summary>
-        public readonly string TimeExpires;
+        public readonly string? TimeExpires;
         /// <summary>
         /// The time when Management Agent install Key was updated. An RFC3339 formatted date time string
         /// </summary>
-        public readonly string TimeUpdated;
+        public readonly string? TimeUpdated;
 
         [OutputConstructor]
         private GetManagementAgentInstallKeyResult(
-            int allowedKeyInstallCount,
+            int? allowedKeyInstallCount,
 
-            string compartmentId,
+            string? compartmentId,
 
-            string createdByPrincipalId,
+            string? createdByPrincipalId,
 
-            int currentKeyInstallCount,
+            int? currentKeyInstallCount,
 
-            string displayName,
+            string? displayName,
 
-            string id,
+            string? id,
 
-            bool isUnlimited,
+            bool? isUnlimited,
 
-            string key,
+            string? key,
 
-            string lifecycleDetails,
+            string? lifecycleDetails,
 
             string managementAgentInstallKeyId,
 
-            string state,
+            string? state,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeExpires,
+            string? timeExpires,
 
-            string timeUpdated)
+            string? timeUpdated)
         {
             AllowedKeyInstallCount = allowedKeyInstallCount;
             CompartmentId = compartmentId;

@@ -64,7 +64,7 @@ namespace Pulumi.Oci.Blockchain
         /// Base64 encoded text in ASCII character set of a Thirdparty CA Certificates archive file. The Archive file is a zip file containing third part CA Certificates, the ca key and certificate files used when issuing enrollment certificates (ECerts) and transaction certificates (TCerts). The chainfile (if it exists) contains the certificate chain which should be trusted for this CA, where the 1st in the chain is always the root CA certificate. File list in zip file [ca-cert.pem,ca-key.pem,ca-chain.pem(optional)].
         /// </summary>
         [Output("caCertArchiveText")]
-        public Output<string> CaCertArchiveText { get; private set; } = null!;
+        public Output<string?> CaCertArchiveText { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Compartment Identifier
@@ -88,13 +88,13 @@ namespace Pulumi.Oci.Blockchain
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Platform Instance Description
         /// </summary>
         [Output("description")]
-        public Output<string> Description { get; private set; } = null!;
+        public Output<string?> Description { get; private set; } = null!;
 
         /// <summary>
         /// Platform Instance Display name, can be renamed
@@ -106,13 +106,13 @@ namespace Pulumi.Oci.Blockchain
         /// Identifier for a federated user
         /// </summary>
         [Output("federatedUserId")]
-        public Output<string> FederatedUserId { get; private set; } = null!;
+        public Output<string?> FederatedUserId { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// List of OcpuUtilization for all hosts
@@ -130,19 +130,19 @@ namespace Pulumi.Oci.Blockchain
         /// Bring your own license
         /// </summary>
         [Output("isByol")]
-        public Output<bool> IsByol { get; private set; } = null!;
+        public Output<bool?> IsByol { get; private set; } = null!;
 
         /// <summary>
         /// True for multi-AD blockchain plaforms, false for single-AD
         /// </summary>
         [Output("isMultiAd")]
-        public Output<bool> IsMultiAd { get; private set; } = null!;
+        public Output<bool?> IsMultiAd { get; private set; } = null!;
 
         /// <summary>
         /// An message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         /// </summary>
         [Output("lifecycleDetails")]
-        public Output<string> LifecycleDetails { get; private set; } = null!;
+        public Output<string?> LifecycleDetails { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Type of Load Balancer shape - LB_100_MBPS or LB_400_MBPS. Default is LB_100_MBPS.
@@ -152,7 +152,7 @@ namespace Pulumi.Oci.Blockchain
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("loadBalancerShape")]
-        public Output<string> LoadBalancerShape { get; private set; } = null!;
+        public Output<string?> LoadBalancerShape { get; private set; } = null!;
 
         /// <summary>
         /// Role of platform - founder or participant
@@ -164,67 +164,67 @@ namespace Pulumi.Oci.Blockchain
         /// Type of Platform shape - DEFAULT or CUSTOM
         /// </summary>
         [Output("platformShapeType")]
-        public Output<string> PlatformShapeType { get; private set; } = null!;
+        public Output<string?> PlatformShapeType { get; private set; } = null!;
 
         /// <summary>
         /// Platform version
         /// </summary>
         [Output("platformVersion")]
-        public Output<string> PlatformVersion { get; private set; } = null!;
+        public Output<string?> PlatformVersion { get; private set; } = null!;
 
         /// <summary>
         /// Number of replicas of service components like Rest Proxy, CA and Console
         /// </summary>
         [Output("replicas")]
-        public Output<Outputs.BlockchainPlatformReplicas> Replicas { get; private set; } = null!;
+        public Output<Outputs.BlockchainPlatformReplicas?> Replicas { get; private set; } = null!;
 
         /// <summary>
         /// Service endpoint URL, valid post-provisioning
         /// </summary>
         [Output("serviceEndpoint")]
-        public Output<string> ServiceEndpoint { get; private set; } = null!;
+        public Output<string?> ServiceEndpoint { get; private set; } = null!;
 
         /// <summary>
         /// The version of the Platform Instance.
         /// </summary>
         [Output("serviceVersion")]
-        public Output<string> ServiceVersion { get; private set; } = null!;
+        public Output<string?> ServiceVersion { get; private set; } = null!;
 
         /// <summary>
         /// The current state of the Platform Instance.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// Storage size in TBs
         /// </summary>
         [Output("storageSizeInTbs")]
-        public Output<double> StorageSizeInTbs { get; private set; } = null!;
+        public Output<double?> StorageSizeInTbs { get; private set; } = null!;
 
         /// <summary>
         /// Storage used in TBs
         /// </summary>
         [Output("storageUsedInTbs")]
-        public Output<double> StorageUsedInTbs { get; private set; } = null!;
+        public Output<double?> StorageUsedInTbs { get; private set; } = null!;
 
         /// <summary>
         /// The time the the Platform Instance was created. An RFC3339 formatted datetime string
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// The time the Platform Instance was updated. An RFC3339 formatted datetime string
         /// </summary>
         [Output("timeUpdated")]
-        public Output<string> TimeUpdated { get; private set; } = null!;
+        public Output<string?> TimeUpdated { get; private set; } = null!;
 
         /// <summary>
         /// Number of total OCPUs allocated to the platform cluster
         /// </summary>
         [Output("totalOcpuCapacity")]
-        public Output<int> TotalOcpuCapacity { get; private set; } = null!;
+        public Output<int?> TotalOcpuCapacity { get; private set; } = null!;
 
 
         /// <summary>

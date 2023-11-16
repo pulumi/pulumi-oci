@@ -10,6 +10,8 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetWorkspacesWorkspace {
@@ -17,239 +19,239 @@ public final class GetWorkspacesWorkspace {
      * @return The OCID of the compartment containing the resources you want to list.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return A user defined description for the workspace.
      * 
      */
-    private String description;
+    private @Nullable String description;
     /**
      * @return A user-friendly display name for the workspace. Does not have to be unique, and can be modified. Avoid entering confidential information.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return The IP of the custom DNS.
      * 
      */
-    private String dnsServerIp;
+    private @Nullable String dnsServerIp;
     /**
      * @return The DNS zone of the custom DNS to use to resolve names.
      * 
      */
-    private String dnsServerZone;
-    private String endpointCompartmentId;
+    private @Nullable String dnsServerZone;
+    private @Nullable String endpointCompartmentId;
     /**
      * @return DCMS endpoint associated with the container/workspace. Returns null if there is none.
      * 
      */
-    private String endpointId;
+    private @Nullable String endpointId;
     /**
      * @return Name of the private endpoint associated with the container/workspace. Returns null if there is none.
      * 
      */
-    private String endpointName;
+    private @Nullable String endpointName;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return A system-generated and immutable identifier assigned to the workspace upon creation.
      * 
      */
-    private String id;
-    private Boolean isForceOperation;
+    private @Nullable String id;
+    private @Nullable Boolean isForceOperation;
     /**
      * @return Specifies whether the private network connection is enabled or disabled.
      * 
      */
-    private Boolean isPrivateNetworkEnabled;
-    private Integer quiesceTimeout;
-    private String registryCompartmentId;
+    private @Nullable Boolean isPrivateNetworkEnabled;
+    private @Nullable Integer quiesceTimeout;
+    private @Nullable String registryCompartmentId;
     /**
      * @return DCMS registry associated with the container/workspace. Returns null if there is none.
      * 
      */
-    private String registryId;
-    private String registryName;
+    private @Nullable String registryId;
+    private @Nullable String registryName;
     /**
      * @return The lifecycle state of a resource. When specified, the operation only returns resources that match the given lifecycle state. When not specified, all lifecycle states are processed as a match.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in failed state.
      * 
      */
-    private String stateMessage;
+    private @Nullable String stateMessage;
     /**
      * @return The OCID of the subnet for customer connected databases.
      * 
      */
-    private String subnetId;
+    private @Nullable String subnetId;
     /**
      * @return The date and time the workspace was created, in the timestamp format defined by RFC3339.
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The date and time the workspace was updated, in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    private String timeUpdated;
+    private @Nullable String timeUpdated;
     /**
      * @return The OCID of the VCN the subnet is in.
      * 
      */
-    private String vcnId;
+    private @Nullable String vcnId;
 
     private GetWorkspacesWorkspace() {}
     /**
      * @return The OCID of the compartment containing the resources you want to list.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return A user defined description for the workspace.
      * 
      */
-    public String description() {
-        return this.description;
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
     /**
      * @return A user-friendly display name for the workspace. Does not have to be unique, and can be modified. Avoid entering confidential information.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return The IP of the custom DNS.
      * 
      */
-    public String dnsServerIp() {
-        return this.dnsServerIp;
+    public Optional<String> dnsServerIp() {
+        return Optional.ofNullable(this.dnsServerIp);
     }
     /**
      * @return The DNS zone of the custom DNS to use to resolve names.
      * 
      */
-    public String dnsServerZone() {
-        return this.dnsServerZone;
+    public Optional<String> dnsServerZone() {
+        return Optional.ofNullable(this.dnsServerZone);
     }
-    public String endpointCompartmentId() {
-        return this.endpointCompartmentId;
+    public Optional<String> endpointCompartmentId() {
+        return Optional.ofNullable(this.endpointCompartmentId);
     }
     /**
      * @return DCMS endpoint associated with the container/workspace. Returns null if there is none.
      * 
      */
-    public String endpointId() {
-        return this.endpointId;
+    public Optional<String> endpointId() {
+        return Optional.ofNullable(this.endpointId);
     }
     /**
      * @return Name of the private endpoint associated with the container/workspace. Returns null if there is none.
      * 
      */
-    public String endpointName() {
-        return this.endpointName;
+    public Optional<String> endpointName() {
+        return Optional.ofNullable(this.endpointName);
     }
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return A system-generated and immutable identifier assigned to the workspace upon creation.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
-    public Boolean isForceOperation() {
-        return this.isForceOperation;
+    public Optional<Boolean> isForceOperation() {
+        return Optional.ofNullable(this.isForceOperation);
     }
     /**
      * @return Specifies whether the private network connection is enabled or disabled.
      * 
      */
-    public Boolean isPrivateNetworkEnabled() {
-        return this.isPrivateNetworkEnabled;
+    public Optional<Boolean> isPrivateNetworkEnabled() {
+        return Optional.ofNullable(this.isPrivateNetworkEnabled);
     }
-    public Integer quiesceTimeout() {
-        return this.quiesceTimeout;
+    public Optional<Integer> quiesceTimeout() {
+        return Optional.ofNullable(this.quiesceTimeout);
     }
-    public String registryCompartmentId() {
-        return this.registryCompartmentId;
+    public Optional<String> registryCompartmentId() {
+        return Optional.ofNullable(this.registryCompartmentId);
     }
     /**
      * @return DCMS registry associated with the container/workspace. Returns null if there is none.
      * 
      */
-    public String registryId() {
-        return this.registryId;
+    public Optional<String> registryId() {
+        return Optional.ofNullable(this.registryId);
     }
-    public String registryName() {
-        return this.registryName;
+    public Optional<String> registryName() {
+        return Optional.ofNullable(this.registryName);
     }
     /**
      * @return The lifecycle state of a resource. When specified, the operation only returns resources that match the given lifecycle state. When not specified, all lifecycle states are processed as a match.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in failed state.
      * 
      */
-    public String stateMessage() {
-        return this.stateMessage;
+    public Optional<String> stateMessage() {
+        return Optional.ofNullable(this.stateMessage);
     }
     /**
      * @return The OCID of the subnet for customer connected databases.
      * 
      */
-    public String subnetId() {
-        return this.subnetId;
+    public Optional<String> subnetId() {
+        return Optional.ofNullable(this.subnetId);
     }
     /**
      * @return The date and time the workspace was created, in the timestamp format defined by RFC3339.
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return The date and time the workspace was updated, in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    public String timeUpdated() {
-        return this.timeUpdated;
+    public Optional<String> timeUpdated() {
+        return Optional.ofNullable(this.timeUpdated);
     }
     /**
      * @return The OCID of the VCN the subnet is in.
      * 
      */
-    public String vcnId() {
-        return this.vcnId;
+    public Optional<String> vcnId() {
+        return Optional.ofNullable(this.vcnId);
     }
 
     public static Builder builder() {
@@ -261,29 +263,29 @@ public final class GetWorkspacesWorkspace {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String compartmentId;
-        private Map<String,Object> definedTags;
-        private String description;
-        private String displayName;
-        private String dnsServerIp;
-        private String dnsServerZone;
-        private String endpointCompartmentId;
-        private String endpointId;
-        private String endpointName;
-        private Map<String,Object> freeformTags;
-        private String id;
-        private Boolean isForceOperation;
-        private Boolean isPrivateNetworkEnabled;
-        private Integer quiesceTimeout;
-        private String registryCompartmentId;
-        private String registryId;
-        private String registryName;
-        private String state;
-        private String stateMessage;
-        private String subnetId;
-        private String timeCreated;
-        private String timeUpdated;
-        private String vcnId;
+        private @Nullable String compartmentId;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String description;
+        private @Nullable String displayName;
+        private @Nullable String dnsServerIp;
+        private @Nullable String dnsServerZone;
+        private @Nullable String endpointCompartmentId;
+        private @Nullable String endpointId;
+        private @Nullable String endpointName;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String id;
+        private @Nullable Boolean isForceOperation;
+        private @Nullable Boolean isPrivateNetworkEnabled;
+        private @Nullable Integer quiesceTimeout;
+        private @Nullable String registryCompartmentId;
+        private @Nullable String registryId;
+        private @Nullable String registryName;
+        private @Nullable String state;
+        private @Nullable String stateMessage;
+        private @Nullable String subnetId;
+        private @Nullable String timeCreated;
+        private @Nullable String timeUpdated;
+        private @Nullable String vcnId;
         public Builder() {}
         public Builder(GetWorkspacesWorkspace defaults) {
     	      Objects.requireNonNull(defaults);
@@ -313,118 +315,118 @@ public final class GetWorkspacesWorkspace {
         }
 
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+        public Builder description(@Nullable String description) {
+            this.description = description;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder dnsServerIp(String dnsServerIp) {
-            this.dnsServerIp = Objects.requireNonNull(dnsServerIp);
+        public Builder dnsServerIp(@Nullable String dnsServerIp) {
+            this.dnsServerIp = dnsServerIp;
             return this;
         }
         @CustomType.Setter
-        public Builder dnsServerZone(String dnsServerZone) {
-            this.dnsServerZone = Objects.requireNonNull(dnsServerZone);
+        public Builder dnsServerZone(@Nullable String dnsServerZone) {
+            this.dnsServerZone = dnsServerZone;
             return this;
         }
         @CustomType.Setter
-        public Builder endpointCompartmentId(String endpointCompartmentId) {
-            this.endpointCompartmentId = Objects.requireNonNull(endpointCompartmentId);
+        public Builder endpointCompartmentId(@Nullable String endpointCompartmentId) {
+            this.endpointCompartmentId = endpointCompartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder endpointId(String endpointId) {
-            this.endpointId = Objects.requireNonNull(endpointId);
+        public Builder endpointId(@Nullable String endpointId) {
+            this.endpointId = endpointId;
             return this;
         }
         @CustomType.Setter
-        public Builder endpointName(String endpointName) {
-            this.endpointName = Objects.requireNonNull(endpointName);
+        public Builder endpointName(@Nullable String endpointName) {
+            this.endpointName = endpointName;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder isForceOperation(Boolean isForceOperation) {
-            this.isForceOperation = Objects.requireNonNull(isForceOperation);
+        public Builder isForceOperation(@Nullable Boolean isForceOperation) {
+            this.isForceOperation = isForceOperation;
             return this;
         }
         @CustomType.Setter
-        public Builder isPrivateNetworkEnabled(Boolean isPrivateNetworkEnabled) {
-            this.isPrivateNetworkEnabled = Objects.requireNonNull(isPrivateNetworkEnabled);
+        public Builder isPrivateNetworkEnabled(@Nullable Boolean isPrivateNetworkEnabled) {
+            this.isPrivateNetworkEnabled = isPrivateNetworkEnabled;
             return this;
         }
         @CustomType.Setter
-        public Builder quiesceTimeout(Integer quiesceTimeout) {
-            this.quiesceTimeout = Objects.requireNonNull(quiesceTimeout);
+        public Builder quiesceTimeout(@Nullable Integer quiesceTimeout) {
+            this.quiesceTimeout = quiesceTimeout;
             return this;
         }
         @CustomType.Setter
-        public Builder registryCompartmentId(String registryCompartmentId) {
-            this.registryCompartmentId = Objects.requireNonNull(registryCompartmentId);
+        public Builder registryCompartmentId(@Nullable String registryCompartmentId) {
+            this.registryCompartmentId = registryCompartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder registryId(String registryId) {
-            this.registryId = Objects.requireNonNull(registryId);
+        public Builder registryId(@Nullable String registryId) {
+            this.registryId = registryId;
             return this;
         }
         @CustomType.Setter
-        public Builder registryName(String registryName) {
-            this.registryName = Objects.requireNonNull(registryName);
+        public Builder registryName(@Nullable String registryName) {
+            this.registryName = registryName;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder stateMessage(String stateMessage) {
-            this.stateMessage = Objects.requireNonNull(stateMessage);
+        public Builder stateMessage(@Nullable String stateMessage) {
+            this.stateMessage = stateMessage;
             return this;
         }
         @CustomType.Setter
-        public Builder subnetId(String subnetId) {
-            this.subnetId = Objects.requireNonNull(subnetId);
+        public Builder subnetId(@Nullable String subnetId) {
+            this.subnetId = subnetId;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+        public Builder timeUpdated(@Nullable String timeUpdated) {
+            this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter
-        public Builder vcnId(String vcnId) {
-            this.vcnId = Objects.requireNonNull(vcnId);
+        public Builder vcnId(@Nullable String vcnId) {
+            this.vcnId = vcnId;
             return this;
         }
         public GetWorkspacesWorkspace build() {

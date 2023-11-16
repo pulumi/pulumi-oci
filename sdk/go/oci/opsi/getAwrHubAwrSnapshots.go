@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Awr Hub Awr Snapshots in Oracle Cloud Infrastructure Opsi service.
@@ -76,7 +75,7 @@ type GetAwrHubAwrSnapshotsResult struct {
 	AwrSourceDatabaseIdentifier string                                       `pulumi:"awrSourceDatabaseIdentifier"`
 	Filters                     []GetAwrHubAwrSnapshotsFilter                `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id                       string  `pulumi:"id"`
+	Id                       *string `pulumi:"id"`
 	TimeGreaterThanOrEqualTo *string `pulumi:"timeGreaterThanOrEqualTo"`
 	TimeLessThanOrEqualTo    *string `pulumi:"timeLessThanOrEqualTo"`
 }
@@ -126,12 +125,6 @@ func (o GetAwrHubAwrSnapshotsResultOutput) ToGetAwrHubAwrSnapshotsResultOutputWi
 	return o
 }
 
-func (o GetAwrHubAwrSnapshotsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetAwrHubAwrSnapshotsResult] {
-	return pulumix.Output[GetAwrHubAwrSnapshotsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetAwrHubAwrSnapshotsResultOutput) AwrHubId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAwrHubAwrSnapshotsResult) string { return v.AwrHubId }).(pulumi.StringOutput)
 }
@@ -152,8 +145,8 @@ func (o GetAwrHubAwrSnapshotsResultOutput) Filters() GetAwrHubAwrSnapshotsFilter
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetAwrHubAwrSnapshotsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAwrHubAwrSnapshotsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetAwrHubAwrSnapshotsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAwrHubAwrSnapshotsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetAwrHubAwrSnapshotsResultOutput) TimeGreaterThanOrEqualTo() pulumi.StringPtrOutput {

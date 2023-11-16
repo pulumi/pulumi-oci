@@ -16,23 +16,23 @@ namespace Pulumi.Oci.DatabaseMigration.Outputs
         /// <summary>
         /// OCID of the compartment where the secret containing the credentials will be created.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// OCID of the vault encryption key
         /// </summary>
-        public readonly string KeyId;
+        public readonly string? KeyId;
         /// <summary>
         /// OCID of the vault
         /// </summary>
-        public readonly string VaultId;
+        public readonly string? VaultId;
 
         [OutputConstructor]
         private GetConnectionVaultDetailResult(
-            string compartmentId,
+            string? compartmentId,
 
-            string keyId,
+            string? keyId,
 
-            string vaultId)
+            string? vaultId)
         {
             CompartmentId = compartmentId;
             KeyId = keyId;

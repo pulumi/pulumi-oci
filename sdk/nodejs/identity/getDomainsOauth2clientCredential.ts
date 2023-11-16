@@ -80,90 +80,90 @@ export interface GetDomainsOauth2clientCredentialResult {
     /**
      * Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
      */
-    readonly compartmentOcid: string;
+    readonly compartmentOcid?: string;
     /**
      * A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
      */
-    readonly deleteInProgress: boolean;
+    readonly deleteInProgress?: boolean;
     /**
      * Description
      */
-    readonly description: string;
+    readonly description?: string;
     /**
      * Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
      */
-    readonly domainOcid: string;
+    readonly domainOcid?: string;
     /**
      * When the user's credentials expire.
      */
-    readonly expiresOn: string;
+    readonly expiresOn?: string;
     /**
      * Unique identifier for the SCIM Resource as defined by the Service Provider. Each representation of the Resource MUST include a non-empty id value. This identifier MUST be unique across the Service Provider's entire set of Resources. It MUST be a stable, non-reassignable identifier that does not change when the same Resource is returned in subsequent requests. The value of the id attribute is always issued by the Service Provider and MUST never be specified by the Service Consumer. bulkId: is a reserved keyword and MUST NOT be used in the unique identifier.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The User or App who created the Resource
      */
-    readonly idcsCreatedBies: outputs.Identity.GetDomainsOauth2clientCredentialIdcsCreatedBy[];
+    readonly idcsCreatedBies?: outputs.Identity.GetDomainsOauth2clientCredentialIdcsCreatedBy[];
     readonly idcsEndpoint: string;
     /**
      * The User or App who modified the Resource
      */
-    readonly idcsLastModifiedBies: outputs.Identity.GetDomainsOauth2clientCredentialIdcsLastModifiedBy[];
+    readonly idcsLastModifiedBies?: outputs.Identity.GetDomainsOauth2clientCredentialIdcsLastModifiedBy[];
     /**
      * The release number when the resource was upgraded.
      */
-    readonly idcsLastUpgradedInRelease: string;
+    readonly idcsLastUpgradedInRelease?: string;
     /**
      * Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
      */
-    readonly idcsPreventedOperations: string[];
+    readonly idcsPreventedOperations?: string[];
     /**
      * Specifies whether the secret must be reset.
      */
-    readonly isResetSecret: boolean;
+    readonly isResetSecret?: boolean;
     /**
      * A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
      */
-    readonly metas: outputs.Identity.GetDomainsOauth2clientCredentialMeta[];
+    readonly metas?: outputs.Identity.GetDomainsOauth2clientCredentialMeta[];
     /**
      * The username.
      */
-    readonly name: string;
+    readonly name?: string;
     readonly oAuth2clientCredentialId: string;
     /**
      * The user's OCID.
      */
-    readonly ocid: string;
+    readonly ocid?: string;
     readonly resourceTypeSchemaVersion?: string;
     /**
      * REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
      */
-    readonly schemas: string[];
+    readonly schemas?: string[];
     /**
      * Scopes
      */
-    readonly scopes: outputs.Identity.GetDomainsOauth2clientCredentialScope[];
+    readonly scopes?: outputs.Identity.GetDomainsOauth2clientCredentialScope[];
     /**
      * The user's credential status.
      */
-    readonly status: string;
+    readonly status?: string;
     /**
      * A list of tags on this resource.
      */
-    readonly tags: outputs.Identity.GetDomainsOauth2clientCredentialTag[];
+    readonly tags?: outputs.Identity.GetDomainsOauth2clientCredentialTag[];
     /**
      * Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
      */
-    readonly tenancyOcid: string;
+    readonly tenancyOcid?: string;
     /**
      * Controls whether a user can update themselves or not via User related APIs
      */
-    readonly urnietfparamsscimschemasoracleidcsextensionselfChangeUsers: outputs.Identity.GetDomainsOauth2clientCredentialUrnietfparamsscimschemasoracleidcsextensionselfChangeUser[];
+    readonly urnietfparamsscimschemasoracleidcsextensionselfChangeUsers?: outputs.Identity.GetDomainsOauth2clientCredentialUrnietfparamsscimschemasoracleidcsextensionselfChangeUser[];
     /**
      * The user linked to the OAuth2 client credential.
      */
-    readonly users: outputs.Identity.GetDomainsOauth2clientCredentialUser[];
+    readonly users?: outputs.Identity.GetDomainsOauth2clientCredentialUser[];
 }
 /**
  * This data source provides details about a specific O Auth2 Client Credential resource in Oracle Cloud Infrastructure Identity Domains service.

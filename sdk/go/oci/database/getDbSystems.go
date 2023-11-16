@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Db Systems in Oracle Cloud Infrastructure Database service.
@@ -87,7 +86,7 @@ type GetDbSystemsResult struct {
 	DisplayName *string              `pulumi:"displayName"`
 	Filters     []GetDbSystemsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The current state of the DB system.
 	State *string `pulumi:"state"`
 }
@@ -139,12 +138,6 @@ func (o GetDbSystemsResultOutput) ToGetDbSystemsResultOutputWithContext(ctx cont
 	return o
 }
 
-func (o GetDbSystemsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDbSystemsResult] {
-	return pulumix.Output[GetDbSystemsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The name of the availability domain that the DB system is located in.
 func (o GetDbSystemsResultOutput) AvailabilityDomain() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetDbSystemsResult) *string { return v.AvailabilityDomain }).(pulumi.StringPtrOutput)
@@ -174,8 +167,8 @@ func (o GetDbSystemsResultOutput) Filters() GetDbSystemsFilterArrayOutput {
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetDbSystemsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDbSystemsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetDbSystemsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDbSystemsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the DB system.

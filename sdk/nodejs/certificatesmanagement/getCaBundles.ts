@@ -69,7 +69,7 @@ export interface GetCaBundlesResult {
     /**
      * The list of ca_bundle_collection.
      */
-    readonly caBundleCollections: outputs.CertificatesManagement.GetCaBundlesCaBundleCollection[];
+    readonly caBundleCollections?: outputs.CertificatesManagement.GetCaBundlesCaBundleCollection[];
     readonly caBundleId?: string;
     /**
      * The OCID of the compartment for the CA bundle.
@@ -79,7 +79,7 @@ export interface GetCaBundlesResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * A user-friendly name for the CA bundle. Names are unique within a compartment. Avoid entering confidential information. Valid characters include uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
      */

@@ -16,17 +16,17 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// The URI that corresponds to the member Resource of this device
         /// </summary>
-        public readonly string Ref;
+        public readonly string? Ref;
         /// <summary>
         /// The identifier of the user
         /// </summary>
-        public readonly string Value;
+        public readonly string? Value;
 
         [OutputConstructor]
         private GetDomainsMyDevicesMyDevicePushNotificationTargetResult(
-            string @ref,
+            string? @ref,
 
-            string value)
+            string? value)
         {
             Ref = @ref;
             Value = value;

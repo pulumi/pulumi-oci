@@ -19,14 +19,14 @@ public final class GetManagedDatabaseAttentionLogCountsResult {
      * @return The list of attention_log_counts_collection.
      * 
      */
-    private List<GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollection> attentionLogCountsCollections;
+    private @Nullable List<GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollection> attentionLogCountsCollections;
     private @Nullable List<GetManagedDatabaseAttentionLogCountsFilter> filters;
     private @Nullable String groupBy;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private @Nullable Boolean isRegularExpression;
     private @Nullable String logSearchText;
     /**
@@ -45,7 +45,7 @@ public final class GetManagedDatabaseAttentionLogCountsResult {
      * 
      */
     public List<GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollection> attentionLogCountsCollections() {
-        return this.attentionLogCountsCollections;
+        return this.attentionLogCountsCollections == null ? List.of() : this.attentionLogCountsCollections;
     }
     public List<GetManagedDatabaseAttentionLogCountsFilter> filters() {
         return this.filters == null ? List.of() : this.filters;
@@ -57,8 +57,8 @@ public final class GetManagedDatabaseAttentionLogCountsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public Optional<Boolean> isRegularExpression() {
         return Optional.ofNullable(this.isRegularExpression);
@@ -95,10 +95,10 @@ public final class GetManagedDatabaseAttentionLogCountsResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollection> attentionLogCountsCollections;
+        private @Nullable List<GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollection> attentionLogCountsCollections;
         private @Nullable List<GetManagedDatabaseAttentionLogCountsFilter> filters;
         private @Nullable String groupBy;
-        private String id;
+        private @Nullable String id;
         private @Nullable Boolean isRegularExpression;
         private @Nullable String logSearchText;
         private String managedDatabaseId;
@@ -123,8 +123,8 @@ public final class GetManagedDatabaseAttentionLogCountsResult {
         }
 
         @CustomType.Setter
-        public Builder attentionLogCountsCollections(List<GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollection> attentionLogCountsCollections) {
-            this.attentionLogCountsCollections = Objects.requireNonNull(attentionLogCountsCollections);
+        public Builder attentionLogCountsCollections(@Nullable List<GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollection> attentionLogCountsCollections) {
+            this.attentionLogCountsCollections = attentionLogCountsCollections;
             return this;
         }
         public Builder attentionLogCountsCollections(GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollection... attentionLogCountsCollections) {
@@ -144,8 +144,8 @@ public final class GetManagedDatabaseAttentionLogCountsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

@@ -46,25 +46,16 @@ class GetExadataInfrastructuresResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        The user-friendly name for the Exadata Cloud@Customer infrastructure. The name does not need to be unique.
-        """
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="exadataInfrastructures")
-    def exadata_infrastructures(self) -> Sequence['outputs.GetExadataInfrastructuresExadataInfrastructureResult']:
-        """
-        The list of exadata_infrastructures.
-        """
+    def exadata_infrastructures(self) -> Optional[Sequence['outputs.GetExadataInfrastructuresExadataInfrastructureResult']]:
         return pulumi.get(self, "exadata_infrastructures")
 
     @property
@@ -74,7 +65,7 @@ class GetExadataInfrastructuresResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -83,9 +74,6 @@ class GetExadataInfrastructuresResult:
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current lifecycle state of the Exadata infrastructure.
-        """
         return pulumi.get(self, "state")
 
 
@@ -109,15 +97,7 @@ def get_exadata_infrastructures(compartment_id: Optional[str] = None,
                                 state: Optional[str] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetExadataInfrastructuresResult:
     """
-    This data source provides the list of Exadata Infrastructures in Oracle Cloud Infrastructure Database service.
-
-    Lists the Exadata infrastructure resources in the specified compartment. Applies to Exadata Cloud@Customer instances only.
-    To list the Exadata Cloud Service infrastructure resources in a compartment, use the  [ListCloudExadataInfrastructures](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudExadataInfrastructure/ListCloudExadataInfrastructures) operation.
-
-
-    :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param str display_name: A filter to return only resources that match the entire display name given. The match is not case sensitive.
-    :param str state: A filter to return only resources that match the given lifecycle state exactly.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -143,14 +123,6 @@ def get_exadata_infrastructures_output(compartment_id: Optional[pulumi.Input[str
                                        state: Optional[pulumi.Input[Optional[str]]] = None,
                                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetExadataInfrastructuresResult]:
     """
-    This data source provides the list of Exadata Infrastructures in Oracle Cloud Infrastructure Database service.
-
-    Lists the Exadata infrastructure resources in the specified compartment. Applies to Exadata Cloud@Customer instances only.
-    To list the Exadata Cloud Service infrastructure resources in a compartment, use the  [ListCloudExadataInfrastructures](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudExadataInfrastructure/ListCloudExadataInfrastructures) operation.
-
-
-    :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param str display_name: A filter to return only resources that match the entire display name given. The match is not case sensitive.
-    :param str state: A filter to return only resources that match the given lifecycle state exactly.
+    Use this data source to access information about an existing resource.
     """
     ...

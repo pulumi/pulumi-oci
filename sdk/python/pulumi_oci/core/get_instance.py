@@ -152,121 +152,82 @@ class GetInstanceResult:
 
     @property
     @pulumi.getter(name="agentConfigs")
-    def agent_configs(self) -> Sequence['outputs.GetInstanceAgentConfigResult']:
-        """
-        Configuration options for the Oracle Cloud Agent software running on the instance.
-        """
+    def agent_configs(self) -> Optional[Sequence['outputs.GetInstanceAgentConfigResult']]:
         return pulumi.get(self, "agent_configs")
 
     @property
     @pulumi.getter(name="async")
-    def async_(self) -> bool:
+    def async_(self) -> Optional[bool]:
         return pulumi.get(self, "async_")
 
     @property
     @pulumi.getter(name="availabilityConfigs")
-    def availability_configs(self) -> Sequence['outputs.GetInstanceAvailabilityConfigResult']:
-        """
-        Options for defining the availabiity of a VM instance after a maintenance event that impacts the underlying hardware.
-        """
+    def availability_configs(self) -> Optional[Sequence['outputs.GetInstanceAvailabilityConfigResult']]:
         return pulumi.get(self, "availability_configs")
 
     @property
     @pulumi.getter(name="availabilityDomain")
-    def availability_domain(self) -> str:
-        """
-        The availability domain the instance is running in.  Example: `Uocm:PHX-AD-1`
-        """
+    def availability_domain(self) -> Optional[str]:
         return pulumi.get(self, "availability_domain")
 
     @property
     @pulumi.getter(name="bootVolumeId")
-    def boot_volume_id(self) -> str:
-        """
-        The OCID of the attached boot volume. If the `source_type` is `bootVolume`, this will be the same OCID as the `source_id`.
-        """
+    def boot_volume_id(self) -> Optional[str]:
         return pulumi.get(self, "boot_volume_id")
 
     @property
     @pulumi.getter(name="capacityReservationId")
-    def capacity_reservation_id(self) -> str:
-        """
-        The OCID of the compute capacity reservation this instance is launched under. When this field contains an empty string or is null, the instance is not currently in a capacity reservation. For more information, see [Capacity Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default).
-        """
+    def capacity_reservation_id(self) -> Optional[str]:
         return pulumi.get(self, "capacity_reservation_id")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The OCID of the compartment containing images to search
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="computeClusterId")
-    def compute_cluster_id(self) -> str:
+    def compute_cluster_id(self) -> Optional[str]:
         return pulumi.get(self, "compute_cluster_id")
 
     @property
     @pulumi.getter(name="createVnicDetails")
-    def create_vnic_details(self) -> Sequence['outputs.GetInstanceCreateVnicDetailResult']:
+    def create_vnic_details(self) -> Optional[Sequence['outputs.GetInstanceCreateVnicDetailResult']]:
         return pulumi.get(self, "create_vnic_details")
 
     @property
     @pulumi.getter(name="dedicatedVmHostId")
-    def dedicated_vm_host_id(self) -> str:
-        """
-        The OCID of the dedicated virtual machine host that the instance is placed on.
-        """
+    def dedicated_vm_host_id(self) -> Optional[str]:
         return pulumi.get(self, "dedicated_vm_host_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="extendedMetadata")
-    def extended_metadata(self) -> Mapping[str, Any]:
-        """
-        Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
-        """
+    def extended_metadata(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "extended_metadata")
 
     @property
     @pulumi.getter(name="faultDomain")
-    def fault_domain(self) -> str:
-        """
-        The name of the fault domain the instance is running in.
-        """
+    def fault_domain(self) -> Optional[str]:
         return pulumi.get(self, "fault_domain")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="hostnameLabel")
-    def hostname_label(self) -> str:
-        """
-        The hostname for the instance VNIC's primary private IP.
-        """
+    def hostname_label(self) -> Optional[str]:
         warnings.warn("""The 'hostname_label' field has been deprecated. Please use 'hostname_label under create_vnic_details' instead.""", DeprecationWarning)
         pulumi.log.warn("""hostname_label is deprecated: The 'hostname_label' field has been deprecated. Please use 'hostname_label under create_vnic_details' instead.""")
 
@@ -274,18 +235,12 @@ class GetInstanceResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The OCID of the instance.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter
-    def image(self) -> str:
-        """
-        Deprecated. Use `sourceDetails` instead.
-        """
+    def image(self) -> Optional[str]:
         warnings.warn("""The 'image' field has been deprecated. Please use 'source_details' instead. If both fields are specified, then 'source_details' will be used.""", DeprecationWarning)
         pulumi.log.warn("""image is deprecated: The 'image' field has been deprecated. Please use 'source_details' instead. If both fields are specified, then 'source_details' will be used.""")
 
@@ -293,10 +248,7 @@ class GetInstanceResult:
 
     @property
     @pulumi.getter(name="instanceConfigurationId")
-    def instance_configuration_id(self) -> str:
-        """
-        The OCID of the Instance Configuration used to source launch details for this instance. Any other fields supplied in the instance launch request override the details stored in the Instance Configuration for this instance launch.
-        """
+    def instance_configuration_id(self) -> Optional[str]:
         return pulumi.get(self, "instance_configuration_id")
 
     @property
@@ -306,140 +258,92 @@ class GetInstanceResult:
 
     @property
     @pulumi.getter(name="instanceOptions")
-    def instance_options(self) -> Sequence['outputs.GetInstanceInstanceOptionResult']:
-        """
-        Optional mutable instance options
-        """
+    def instance_options(self) -> Optional[Sequence['outputs.GetInstanceInstanceOptionResult']]:
         return pulumi.get(self, "instance_options")
 
     @property
     @pulumi.getter(name="ipxeScript")
-    def ipxe_script(self) -> str:
-        """
-        When a bare metal or virtual machine instance boots, the iPXE firmware that runs on the instance is configured to run an iPXE script to continue the boot process.
-        """
+    def ipxe_script(self) -> Optional[str]:
         return pulumi.get(self, "ipxe_script")
 
     @property
     @pulumi.getter(name="isCrossNumaNode")
-    def is_cross_numa_node(self) -> bool:
-        """
-        Whether the instance’s OCPUs and memory are distributed across multiple NUMA nodes.
-        """
+    def is_cross_numa_node(self) -> Optional[bool]:
         return pulumi.get(self, "is_cross_numa_node")
 
     @property
     @pulumi.getter(name="isPvEncryptionInTransitEnabled")
-    def is_pv_encryption_in_transit_enabled(self) -> bool:
-        """
-        Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/LaunchInstanceDetails).
-        """
+    def is_pv_encryption_in_transit_enabled(self) -> Optional[bool]:
         return pulumi.get(self, "is_pv_encryption_in_transit_enabled")
 
     @property
     @pulumi.getter(name="launchMode")
-    def launch_mode(self) -> str:
-        """
-        Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
-        """
+    def launch_mode(self) -> Optional[str]:
         return pulumi.get(self, "launch_mode")
 
     @property
     @pulumi.getter(name="launchOptions")
-    def launch_options(self) -> Sequence['outputs.GetInstanceLaunchOptionResult']:
-        """
-        Options for tuning the compatibility and performance of VM shapes. The values that you specify override any default values.
-        """
+    def launch_options(self) -> Optional[Sequence['outputs.GetInstanceLaunchOptionResult']]:
         return pulumi.get(self, "launch_options")
 
     @property
     @pulumi.getter
-    def metadata(self) -> Mapping[str, Any]:
-        """
-        Custom metadata that you provide.
-        """
+    def metadata(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "metadata")
 
     @property
     @pulumi.getter(name="platformConfigs")
-    def platform_configs(self) -> Sequence['outputs.GetInstancePlatformConfigResult']:
-        """
-        The platform configuration for the instance.
-        """
+    def platform_configs(self) -> Optional[Sequence['outputs.GetInstancePlatformConfigResult']]:
         return pulumi.get(self, "platform_configs")
 
     @property
     @pulumi.getter(name="preemptibleInstanceConfigs")
-    def preemptible_instance_configs(self) -> Sequence['outputs.GetInstancePreemptibleInstanceConfigResult']:
-        """
-        (Optional) Configuration options for preemptible instances.
-        """
+    def preemptible_instance_configs(self) -> Optional[Sequence['outputs.GetInstancePreemptibleInstanceConfigResult']]:
         return pulumi.get(self, "preemptible_instance_configs")
 
     @property
     @pulumi.getter(name="preserveBootVolume")
-    def preserve_boot_volume(self) -> bool:
-        """
-        (Optional) Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. Defaults to false if not specified.
-        """
+    def preserve_boot_volume(self) -> Optional[bool]:
         return pulumi.get(self, "preserve_boot_volume")
 
     @property
     @pulumi.getter(name="privateIp")
-    def private_ip(self) -> str:
-        """
-        The private IP address of instance VNIC. To set the private IP address, use the `private_ip` argument in create_vnic_details.
-        """
+    def private_ip(self) -> Optional[str]:
         return pulumi.get(self, "private_ip")
 
     @property
     @pulumi.getter(name="publicIp")
-    def public_ip(self) -> str:
-        """
-        The public IP address of instance VNIC (if enabled).
-        """
+    def public_ip(self) -> Optional[str]:
         return pulumi.get(self, "public_ip")
 
     @property
     @pulumi.getter
-    def region(self) -> str:
-        """
-        The region that contains the availability domain the instance is running in.
-        """
+    def region(self) -> Optional[str]:
         return pulumi.get(self, "region")
 
     @property
     @pulumi.getter
-    def shape(self) -> str:
-        """
-        The shape of the instance. The shape determines the number of CPUs and the amount of memory allocated to the instance. You can enumerate all available shapes by calling [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Shape/ListShapes).
-        """
+    def shape(self) -> Optional[str]:
         return pulumi.get(self, "shape")
 
     @property
     @pulumi.getter(name="shapeConfigs")
-    def shape_configs(self) -> Sequence['outputs.GetInstanceShapeConfigResult']:
-        """
-        The shape configuration for an instance. The shape configuration determines the resources allocated to an instance.
-        """
+    def shape_configs(self) -> Optional[Sequence['outputs.GetInstanceShapeConfigResult']]:
         return pulumi.get(self, "shape_configs")
 
     @property
     @pulumi.getter(name="sourceDetails")
-    def source_details(self) -> Sequence['outputs.GetInstanceSourceDetailResult']:
+    def source_details(self) -> Optional[Sequence['outputs.GetInstanceSourceDetailResult']]:
         return pulumi.get(self, "source_details")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the instance.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="subnetId")
-    def subnet_id(self) -> str:
+    def subnet_id(self) -> Optional[str]:
         warnings.warn("""The 'subnet_id' field has been deprecated. Please use 'subnet_id under create_vnic_details' instead.""", DeprecationWarning)
         pulumi.log.warn("""subnet_id is deprecated: The 'subnet_id' field has been deprecated. Please use 'subnet_id under create_vnic_details' instead.""")
 
@@ -447,31 +351,22 @@ class GetInstanceResult:
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the instance was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeMaintenanceRebootDue")
-    def time_maintenance_reboot_due(self) -> str:
-        """
-        The date and time the instance is expected to be stopped / started,  in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). After that time if instance hasn't been rebooted, Oracle will reboot the instance within 24 hours of the due time. Regardless of how the instance was stopped, the flag will be reset to empty as soon as instance reaches Stopped state. Example: `2018-05-25T21:10:29.600Z`
-        """
+    def time_maintenance_reboot_due(self) -> Optional[str]:
         return pulumi.get(self, "time_maintenance_reboot_due")
 
     @property
     @pulumi.getter(name="updateOperationConstraint")
-    def update_operation_constraint(self) -> str:
+    def update_operation_constraint(self) -> Optional[str]:
         return pulumi.get(self, "update_operation_constraint")
 
 
@@ -528,24 +423,7 @@ class AwaitableGetInstanceResult(GetInstanceResult):
 def get_instance(instance_id: Optional[str] = None,
                  opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetInstanceResult:
     """
-    This data source provides details about a specific Instance resource in Oracle Cloud Infrastructure Core service.
-
-    Gets information about the specified instance.
-
-    **Note:** To retrieve public and private IP addresses for an instance, use the [ListVnicAttachments](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/VnicAttachment/ListVnicAttachments)
-    operation to get the VNIC ID for the instance, and then call [GetVnic](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vnic/GetVnic) with the VNIC ID.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_instance = oci.Core.get_instance(instance_id=oci_core_instance["test_instance"]["id"])
-    ```
-
-
-    :param str instance_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['instanceId'] = instance_id
@@ -601,23 +479,6 @@ def get_instance(instance_id: Optional[str] = None,
 def get_instance_output(instance_id: Optional[pulumi.Input[str]] = None,
                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetInstanceResult]:
     """
-    This data source provides details about a specific Instance resource in Oracle Cloud Infrastructure Core service.
-
-    Gets information about the specified instance.
-
-    **Note:** To retrieve public and private IP addresses for an instance, use the [ListVnicAttachments](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/VnicAttachment/ListVnicAttachments)
-    operation to get the VNIC ID for the instance, and then call [GetVnic](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vnic/GetVnic) with the VNIC ID.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_instance = oci.Core.get_instance(instance_id=oci_core_instance["test_instance"]["id"])
-    ```
-
-
-    :param str instance_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance.
+    Use this data source to access information about an existing resource.
     """
     ...

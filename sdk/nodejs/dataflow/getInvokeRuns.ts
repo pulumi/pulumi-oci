@@ -105,7 +105,7 @@ export interface GetInvokeRunsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The OCID of the user who created the resource.
      */
@@ -117,7 +117,7 @@ export interface GetInvokeRunsResult {
     /**
      * The list of runs.
      */
-    readonly runs: outputs.DataFlow.GetInvokeRunsRun[];
+    readonly runs?: outputs.DataFlow.GetInvokeRunsRun[];
     /**
      * The current state of this run.
      */

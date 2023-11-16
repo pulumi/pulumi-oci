@@ -24,15 +24,15 @@ namespace Pulumi.Oci.Core.Outputs
         /// <summary>
         /// The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
         /// </summary>
-        public readonly string AvailabilityDomain;
+        public readonly string? AvailabilityDomain;
         /// <summary>
         /// The OCID of the compute capacity reservation this instance is launched under.
         /// </summary>
-        public readonly string CapacityReservationId;
+        public readonly string? CapacityReservationId;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// Contains the properties of the VNIC for an instance configuration. See [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) and [Instance Configurations](https://docs.cloud.oracle.com/iaas/Content/Compute/Concepts/instancemanagement.htm#config) for more information.
         /// </summary>
@@ -40,27 +40,27 @@ namespace Pulumi.Oci.Core.Outputs
         /// <summary>
         /// The OCID of the dedicated virtual machine host to place the instance on.
         /// </summary>
-        public readonly string DedicatedVmHostId;
+        public readonly string? DedicatedVmHostId;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
         /// </summary>
-        public readonly ImmutableDictionary<string, object> ExtendedMetadata;
+        public readonly ImmutableDictionary<string, object>? ExtendedMetadata;
         /// <summary>
         /// A fault domain is a grouping of hardware and infrastructure within an availability domain. Each availability domain contains three fault domains. Fault domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or Compute hardware maintenance that affects one fault domain does not affect instances in other fault domains.
         /// </summary>
-        public readonly string FaultDomain;
+        public readonly string? FaultDomain;
         /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// Optional mutable instance options. As a part of Instance Metadata Service Security Header, This allows user to disable the legacy imds endpoints.
         /// </summary>
@@ -68,15 +68,15 @@ namespace Pulumi.Oci.Core.Outputs
         /// <summary>
         /// This is an advanced option.
         /// </summary>
-        public readonly string IpxeScript;
+        public readonly string? IpxeScript;
         /// <summary>
         /// Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
         /// </summary>
-        public readonly bool IsPvEncryptionInTransitEnabled;
+        public readonly bool? IsPvEncryptionInTransitEnabled;
         /// <summary>
         /// Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
         /// </summary>
-        public readonly string LaunchMode;
+        public readonly string? LaunchMode;
         /// <summary>
         /// Options for tuning the compatibility and performance of VM shapes. The values that you specify override any default values.
         /// </summary>
@@ -84,7 +84,7 @@ namespace Pulumi.Oci.Core.Outputs
         /// <summary>
         /// Custom metadata key/value pairs that you provide, such as the SSH public key required to connect to the instance.
         /// </summary>
-        public readonly ImmutableDictionary<string, object> Metadata;
+        public readonly ImmutableDictionary<string, object>? Metadata;
         /// <summary>
         /// The platform configuration requested for the instance.
         /// </summary>
@@ -96,11 +96,11 @@ namespace Pulumi.Oci.Core.Outputs
         /// <summary>
         /// The preferred maintenance action for an instance. The default is LIVE_MIGRATE, if live migration is supported.
         /// </summary>
-        public readonly string PreferredMaintenanceAction;
+        public readonly string? PreferredMaintenanceAction;
         /// <summary>
         /// The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
         /// </summary>
-        public readonly string Shape;
+        public readonly string? Shape;
         /// <summary>
         /// The shape configuration requested for the instance.
         /// </summary>
@@ -113,45 +113,45 @@ namespace Pulumi.Oci.Core.Outputs
 
             ImmutableArray<Outputs.GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfigResult> availabilityConfigs,
 
-            string availabilityDomain,
+            string? availabilityDomain,
 
-            string capacityReservationId,
+            string? capacityReservationId,
 
-            string compartmentId,
+            string? compartmentId,
 
             ImmutableArray<Outputs.GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailResult> createVnicDetails,
 
-            string dedicatedVmHostId,
+            string? dedicatedVmHostId,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string displayName,
+            string? displayName,
 
-            ImmutableDictionary<string, object> extendedMetadata,
+            ImmutableDictionary<string, object>? extendedMetadata,
 
-            string faultDomain,
+            string? faultDomain,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
             ImmutableArray<Outputs.GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOptionResult> instanceOptions,
 
-            string ipxeScript,
+            string? ipxeScript,
 
-            bool isPvEncryptionInTransitEnabled,
+            bool? isPvEncryptionInTransitEnabled,
 
-            string launchMode,
+            string? launchMode,
 
             ImmutableArray<Outputs.GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionResult> launchOptions,
 
-            ImmutableDictionary<string, object> metadata,
+            ImmutableDictionary<string, object>? metadata,
 
             ImmutableArray<Outputs.GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigResult> platformConfigs,
 
             ImmutableArray<Outputs.GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigResult> preemptibleInstanceConfigs,
 
-            string preferredMaintenanceAction,
+            string? preferredMaintenanceAction,
 
-            string shape,
+            string? shape,
 
             ImmutableArray<Outputs.GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigResult> shapeConfigs,
 

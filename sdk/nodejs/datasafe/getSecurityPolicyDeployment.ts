@@ -45,56 +45,56 @@ export interface GetSecurityPolicyDeploymentResult {
     /**
      * The OCID of the compartment containing the security policy deployment.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * The description of the security policy deployment.
      */
-    readonly description: string;
+    readonly description?: string;
     /**
      * The display name of the security policy deployment.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * The OCID of the security policy deployment.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Details about the current state of the security policy deployment in Data Safe.
      */
-    readonly lifecycleDetails: string;
+    readonly lifecycleDetails?: string;
     readonly securityPolicyDeploymentId: string;
     /**
      * The OCID of the security policy corresponding to the security policy deployment.
      */
-    readonly securityPolicyId: string;
+    readonly securityPolicyId?: string;
     /**
      * The current state of the security policy deployment.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    readonly systemTags: {[key: string]: any};
+    readonly systemTags?: {[key: string]: any};
     /**
      * The OCID of the target where the security policy is deployed.
      */
-    readonly targetId: string;
+    readonly targetId?: string;
     /**
      * The time that the security policy deployment was created, in the format defined by RFC3339.
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The last date and time the security policy deployment was updated, in the format defined by RFC3339.
      */
-    readonly timeUpdated: string;
+    readonly timeUpdated?: string;
 }
 /**
  * This data source provides details about a specific Security Policy Deployment resource in Oracle Cloud Infrastructure Data Safe service.

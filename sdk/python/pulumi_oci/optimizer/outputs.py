@@ -81,18 +81,12 @@ __all__ = [
 class ProfileLevelsConfiguration(dict):
     def __init__(__self__, *,
                  items: Optional[Sequence['outputs.ProfileLevelsConfigurationItem']] = None):
-        """
-        :param Sequence['ProfileLevelsConfigurationItemArgs'] items: (Updatable) The list of tags specified in the current profile override.
-        """
         if items is not None:
             pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
     def items(self) -> Optional[Sequence['outputs.ProfileLevelsConfigurationItem']]:
-        """
-        (Updatable) The list of tags specified in the current profile override.
-        """
         return pulumi.get(self, "items")
 
 
@@ -118,10 +112,6 @@ class ProfileLevelsConfigurationItem(dict):
     def __init__(__self__, *,
                  level: Optional[str] = None,
                  recommendation_id: Optional[str] = None):
-        """
-        :param str level: (Updatable) The pre-defined profile level.
-        :param str recommendation_id: (Updatable) The unique OCID of the recommendation.
-        """
         if level is not None:
             pulumi.set(__self__, "level", level)
         if recommendation_id is not None:
@@ -130,17 +120,11 @@ class ProfileLevelsConfigurationItem(dict):
     @property
     @pulumi.getter
     def level(self) -> Optional[str]:
-        """
-        (Updatable) The pre-defined profile level.
-        """
         return pulumi.get(self, "level")
 
     @property
     @pulumi.getter(name="recommendationId")
     def recommendation_id(self) -> Optional[str]:
-        """
-        (Updatable) The unique OCID of the recommendation.
-        """
         return pulumi.get(self, "recommendation_id")
 
 
@@ -148,17 +132,11 @@ class ProfileLevelsConfigurationItem(dict):
 class ProfileTargetCompartments(dict):
     def __init__(__self__, *,
                  items: Sequence[str]):
-        """
-        :param Sequence[str] items: (Updatable) The list of tags specified in the current profile override.
-        """
         pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
     def items(self) -> Sequence[str]:
-        """
-        (Updatable) The list of tags specified in the current profile override.
-        """
         return pulumi.get(self, "items")
 
 
@@ -166,17 +144,11 @@ class ProfileTargetCompartments(dict):
 class ProfileTargetTags(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.ProfileTargetTagsItem']):
-        """
-        :param Sequence['ProfileTargetTagsItemArgs'] items: (Updatable) The list of tags specified in the current profile override.
-        """
         pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
     def items(self) -> Sequence['outputs.ProfileTargetTagsItem']:
-        """
-        (Updatable) The list of tags specified in the current profile override.
-        """
         return pulumi.get(self, "items")
 
 
@@ -210,20 +182,6 @@ class ProfileTargetTagsItem(dict):
                  tag_namespace_name: str,
                  tag_value_type: str,
                  tag_values: Optional[Sequence[str]] = None):
-        """
-        :param str tag_definition_name: (Updatable) The name you use to refer to the tag, also known as the tag key.
-        :param str tag_namespace_name: (Updatable) The name of the tag namespace.
-        :param str tag_value_type: (Updatable) Specifies which tag value types in the `tagValues` field result in overrides of the recommendation criteria.
-               
-               When the value for this field is `ANY`, the `tagValues` field should be empty, which enforces overrides to the recommendation for resources with any tag values attached to them.
-               
-               When the value for this field value is `VALUE`, the `tagValues` field must include a specific value or list of values. Overrides to the recommendation criteria only occur for resources that match the values in the `tagValues` fields.
-        :param Sequence[str] tag_values: (Updatable) The list of tag values. The tag value is the value that the user applying the tag adds to the tag key.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         pulumi.set(__self__, "tag_definition_name", tag_definition_name)
         pulumi.set(__self__, "tag_namespace_name", tag_namespace_name)
         pulumi.set(__self__, "tag_value_type", tag_value_type)
@@ -233,41 +191,21 @@ class ProfileTargetTagsItem(dict):
     @property
     @pulumi.getter(name="tagDefinitionName")
     def tag_definition_name(self) -> str:
-        """
-        (Updatable) The name you use to refer to the tag, also known as the tag key.
-        """
         return pulumi.get(self, "tag_definition_name")
 
     @property
     @pulumi.getter(name="tagNamespaceName")
     def tag_namespace_name(self) -> str:
-        """
-        (Updatable) The name of the tag namespace.
-        """
         return pulumi.get(self, "tag_namespace_name")
 
     @property
     @pulumi.getter(name="tagValueType")
     def tag_value_type(self) -> str:
-        """
-        (Updatable) Specifies which tag value types in the `tagValues` field result in overrides of the recommendation criteria.
-
-        When the value for this field is `ANY`, the `tagValues` field should be empty, which enforces overrides to the recommendation for resources with any tag values attached to them.
-
-        When the value for this field value is `VALUE`, the `tagValues` field must include a specific value or list of values. Overrides to the recommendation criteria only occur for resources that match the values in the `tagValues` fields.
-        """
         return pulumi.get(self, "tag_value_type")
 
     @property
     @pulumi.getter(name="tagValues")
     def tag_values(self) -> Optional[Sequence[str]]:
-        """
-        (Updatable) The list of tag values. The tag value is the value that the user applying the tag adds to the tag key.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "tag_values")
 
 
@@ -276,10 +214,6 @@ class RecommendationResourceCount(dict):
     def __init__(__self__, *,
                  count: Optional[int] = None,
                  status: Optional[str] = None):
-        """
-        :param int count: The count of resources.
-        :param str status: (Updatable) The status of the recommendation.
-        """
         if count is not None:
             pulumi.set(__self__, "count", count)
         if status is not None:
@@ -288,17 +222,11 @@ class RecommendationResourceCount(dict):
     @property
     @pulumi.getter
     def count(self) -> Optional[int]:
-        """
-        The count of resources.
-        """
         return pulumi.get(self, "count")
 
     @property
     @pulumi.getter
     def status(self) -> Optional[str]:
-        """
-        (Updatable) The status of the recommendation.
-        """
         return pulumi.get(self, "status")
 
 
@@ -306,18 +234,12 @@ class RecommendationResourceCount(dict):
 class RecommendationSupportedLevel(dict):
     def __init__(__self__, *,
                  items: Optional[Sequence['outputs.RecommendationSupportedLevelItem']] = None):
-        """
-        :param Sequence['RecommendationSupportedLevelItemArgs'] items: The list of supported levels.
-        """
         if items is not None:
             pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
     def items(self) -> Optional[Sequence['outputs.RecommendationSupportedLevelItem']]:
-        """
-        The list of supported levels.
-        """
         return pulumi.get(self, "items")
 
 
@@ -325,18 +247,12 @@ class RecommendationSupportedLevel(dict):
 class RecommendationSupportedLevelItem(dict):
     def __init__(__self__, *,
                  name: Optional[str] = None):
-        """
-        :param str name: The name of the profile level.
-        """
         if name is not None:
             pulumi.set(__self__, "name", name)
 
     @property
     @pulumi.getter
     def name(self) -> Optional[str]:
-        """
-        The name of the profile level.
-        """
         return pulumi.get(self, "name")
 
 
@@ -346,11 +262,6 @@ class ResourceActionAction(dict):
                  description: Optional[str] = None,
                  type: Optional[str] = None,
                  url: Optional[str] = None):
-        """
-        :param str description: Text describing the recommended action.
-        :param str type: The status of the resource action.
-        :param str url: The URL path to documentation that explains how to perform the action.
-        """
         if description is not None:
             pulumi.set(__self__, "description", description)
         if type is not None:
@@ -361,234 +272,172 @@ class ResourceActionAction(dict):
     @property
     @pulumi.getter
     def description(self) -> Optional[str]:
-        """
-        Text describing the recommended action.
-        """
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter
     def type(self) -> Optional[str]:
-        """
-        The status of the resource action.
-        """
         return pulumi.get(self, "type")
 
     @property
     @pulumi.getter
     def url(self) -> Optional[str]:
-        """
-        The URL path to documentation that explains how to perform the action.
-        """
         return pulumi.get(self, "url")
 
 
 @pulumi.output_type
 class GetCategoriesCategoryCollectionResult(dict):
     def __init__(__self__, *,
-                 items: Sequence['outputs.GetCategoriesCategoryCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+                 items: Optional[Sequence['outputs.GetCategoriesCategoryCollectionItemResult']] = None):
+        if items is not None:
+            pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetCategoriesCategoryCollectionItemResult']:
+    def items(self) -> Optional[Sequence['outputs.GetCategoriesCategoryCollectionItemResult']]:
         return pulumi.get(self, "items")
 
 
 @pulumi.output_type
 class GetCategoriesCategoryCollectionItemResult(dict):
     def __init__(__self__, *,
-                 compartment_id: str,
-                 compartment_name: str,
-                 description: str,
-                 estimated_cost_saving: float,
-                 extended_metadata: Mapping[str, Any],
-                 id: str,
-                 name: str,
-                 recommendation_counts: Sequence['outputs.GetCategoriesCategoryCollectionItemRecommendationCountResult'],
-                 resource_counts: Sequence['outputs.GetCategoriesCategoryCollectionItemResourceCountResult'],
-                 state: str,
-                 time_created: str,
-                 time_updated: str):
-        """
-        :param str compartment_id: The OCID of the compartment.
-        :param str compartment_name: The name associated with the compartment.
-        :param str description: Text describing the category.
-        :param float estimated_cost_saving: The estimated cost savings, in dollars, for the category.
-        :param Mapping[str, Any] extended_metadata: Additional metadata key/value pairs for the category.
-        :param str id: The unique OCID of the category.
-        :param str name: Optional. A filter that returns results that match the name specified.
-        :param Sequence['GetCategoriesCategoryCollectionItemRecommendationCountArgs'] recommendation_counts: An array of `RecommendationCount` objects grouped by the level of importance assigned to the recommendation.
-        :param Sequence['GetCategoriesCategoryCollectionItemResourceCountArgs'] resource_counts: An array of `ResourceCount` objects grouped by the status of the recommendation.
-        :param str state: A filter that returns results that match the lifecycle state specified.
-        :param str time_created: The date and time the category details were created, in the format defined by RFC3339.
-        :param str time_updated: The date and time the category details were last updated, in the format defined by RFC3339.
-        """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "compartment_name", compartment_name)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "estimated_cost_saving", estimated_cost_saving)
-        pulumi.set(__self__, "extended_metadata", extended_metadata)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "recommendation_counts", recommendation_counts)
-        pulumi.set(__self__, "resource_counts", resource_counts)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+                 compartment_id: Optional[str] = None,
+                 compartment_name: Optional[str] = None,
+                 description: Optional[str] = None,
+                 estimated_cost_saving: Optional[float] = None,
+                 extended_metadata: Optional[Mapping[str, Any]] = None,
+                 id: Optional[str] = None,
+                 name: Optional[str] = None,
+                 recommendation_counts: Optional[Sequence['outputs.GetCategoriesCategoryCollectionItemRecommendationCountResult']] = None,
+                 resource_counts: Optional[Sequence['outputs.GetCategoriesCategoryCollectionItemResourceCountResult']] = None,
+                 state: Optional[str] = None,
+                 time_created: Optional[str] = None,
+                 time_updated: Optional[str] = None):
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if compartment_name is not None:
+            pulumi.set(__self__, "compartment_name", compartment_name)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if estimated_cost_saving is not None:
+            pulumi.set(__self__, "estimated_cost_saving", estimated_cost_saving)
+        if extended_metadata is not None:
+            pulumi.set(__self__, "extended_metadata", extended_metadata)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if recommendation_counts is not None:
+            pulumi.set(__self__, "recommendation_counts", recommendation_counts)
+        if resource_counts is not None:
+            pulumi.set(__self__, "resource_counts", resource_counts)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if time_updated is not None:
+            pulumi.set(__self__, "time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The OCID of the compartment.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="compartmentName")
-    def compartment_name(self) -> str:
-        """
-        The name associated with the compartment.
-        """
+    def compartment_name(self) -> Optional[str]:
         return pulumi.get(self, "compartment_name")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        Text describing the category.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="estimatedCostSaving")
-    def estimated_cost_saving(self) -> float:
-        """
-        The estimated cost savings, in dollars, for the category.
-        """
+    def estimated_cost_saving(self) -> Optional[float]:
         return pulumi.get(self, "estimated_cost_saving")
 
     @property
     @pulumi.getter(name="extendedMetadata")
-    def extended_metadata(self) -> Mapping[str, Any]:
-        """
-        Additional metadata key/value pairs for the category.
-        """
+    def extended_metadata(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "extended_metadata")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The unique OCID of the category.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        Optional. A filter that returns results that match the name specified.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="recommendationCounts")
-    def recommendation_counts(self) -> Sequence['outputs.GetCategoriesCategoryCollectionItemRecommendationCountResult']:
-        """
-        An array of `RecommendationCount` objects grouped by the level of importance assigned to the recommendation.
-        """
+    def recommendation_counts(self) -> Optional[Sequence['outputs.GetCategoriesCategoryCollectionItemRecommendationCountResult']]:
         return pulumi.get(self, "recommendation_counts")
 
     @property
     @pulumi.getter(name="resourceCounts")
-    def resource_counts(self) -> Sequence['outputs.GetCategoriesCategoryCollectionItemResourceCountResult']:
-        """
-        An array of `ResourceCount` objects grouped by the status of the recommendation.
-        """
+    def resource_counts(self) -> Optional[Sequence['outputs.GetCategoriesCategoryCollectionItemResourceCountResult']]:
         return pulumi.get(self, "resource_counts")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        A filter that returns results that match the lifecycle state specified.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the category details were created, in the format defined by RFC3339.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The date and time the category details were last updated, in the format defined by RFC3339.
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
 
 @pulumi.output_type
 class GetCategoriesCategoryCollectionItemRecommendationCountResult(dict):
     def __init__(__self__, *,
-                 count: int,
-                 importance: str):
-        """
-        :param int count: The count of resources.
-        :param str importance: The level of importance assigned to the recommendation.
-        """
-        pulumi.set(__self__, "count", count)
-        pulumi.set(__self__, "importance", importance)
+                 count: Optional[int] = None,
+                 importance: Optional[str] = None):
+        if count is not None:
+            pulumi.set(__self__, "count", count)
+        if importance is not None:
+            pulumi.set(__self__, "importance", importance)
 
     @property
     @pulumi.getter
-    def count(self) -> int:
-        """
-        The count of resources.
-        """
+    def count(self) -> Optional[int]:
         return pulumi.get(self, "count")
 
     @property
     @pulumi.getter
-    def importance(self) -> str:
-        """
-        The level of importance assigned to the recommendation.
-        """
+    def importance(self) -> Optional[str]:
         return pulumi.get(self, "importance")
 
 
 @pulumi.output_type
 class GetCategoriesCategoryCollectionItemResourceCountResult(dict):
     def __init__(__self__, *,
-                 count: int,
-                 status: str):
-        """
-        :param int count: The count of resources.
-        :param str status: The recommendation status of the resource.
-        """
-        pulumi.set(__self__, "count", count)
-        pulumi.set(__self__, "status", status)
+                 count: Optional[int] = None,
+                 status: Optional[str] = None):
+        if count is not None:
+            pulumi.set(__self__, "count", count)
+        if status is not None:
+            pulumi.set(__self__, "status", status)
 
     @property
     @pulumi.getter
-    def count(self) -> int:
-        """
-        The count of resources.
-        """
+    def count(self) -> Optional[int]:
         return pulumi.get(self, "count")
 
     @property
     @pulumi.getter
-    def status(self) -> str:
-        """
-        The recommendation status of the resource.
-        """
+    def status(self) -> Optional[str]:
         return pulumi.get(self, "status")
 
 
@@ -598,9 +447,6 @@ class GetCategoriesFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: Optional. A filter that returns results that match the name specified.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -609,9 +455,6 @@ class GetCategoriesFilterResult(dict):
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        Optional. A filter that returns results that match the name specified.
-        """
         return pulumi.get(self, "name")
 
     @property
@@ -628,161 +471,124 @@ class GetCategoriesFilterResult(dict):
 @pulumi.output_type
 class GetCategoryRecommendationCountResult(dict):
     def __init__(__self__, *,
-                 count: int,
-                 importance: str):
-        """
-        :param int count: The count of resources.
-        :param str importance: The level of importance assigned to the recommendation.
-        """
-        pulumi.set(__self__, "count", count)
-        pulumi.set(__self__, "importance", importance)
+                 count: Optional[int] = None,
+                 importance: Optional[str] = None):
+        if count is not None:
+            pulumi.set(__self__, "count", count)
+        if importance is not None:
+            pulumi.set(__self__, "importance", importance)
 
     @property
     @pulumi.getter
-    def count(self) -> int:
-        """
-        The count of resources.
-        """
+    def count(self) -> Optional[int]:
         return pulumi.get(self, "count")
 
     @property
     @pulumi.getter
-    def importance(self) -> str:
-        """
-        The level of importance assigned to the recommendation.
-        """
+    def importance(self) -> Optional[str]:
         return pulumi.get(self, "importance")
 
 
 @pulumi.output_type
 class GetCategoryResourceCountResult(dict):
     def __init__(__self__, *,
-                 count: int,
-                 status: str):
-        """
-        :param int count: The count of resources.
-        :param str status: The recommendation status of the resource.
-        """
-        pulumi.set(__self__, "count", count)
-        pulumi.set(__self__, "status", status)
+                 count: Optional[int] = None,
+                 status: Optional[str] = None):
+        if count is not None:
+            pulumi.set(__self__, "count", count)
+        if status is not None:
+            pulumi.set(__self__, "status", status)
 
     @property
     @pulumi.getter
-    def count(self) -> int:
-        """
-        The count of resources.
-        """
+    def count(self) -> Optional[int]:
         return pulumi.get(self, "count")
 
     @property
     @pulumi.getter
-    def status(self) -> str:
-        """
-        The recommendation status of the resource.
-        """
+    def status(self) -> Optional[str]:
         return pulumi.get(self, "status")
 
 
 @pulumi.output_type
 class GetEnrollmentStatusesEnrollmentStatusCollectionResult(dict):
     def __init__(__self__, *,
-                 items: Sequence['outputs.GetEnrollmentStatusesEnrollmentStatusCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+                 items: Optional[Sequence['outputs.GetEnrollmentStatusesEnrollmentStatusCollectionItemResult']] = None):
+        if items is not None:
+            pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetEnrollmentStatusesEnrollmentStatusCollectionItemResult']:
+    def items(self) -> Optional[Sequence['outputs.GetEnrollmentStatusesEnrollmentStatusCollectionItemResult']]:
         return pulumi.get(self, "items")
 
 
 @pulumi.output_type
 class GetEnrollmentStatusesEnrollmentStatusCollectionItemResult(dict):
     def __init__(__self__, *,
-                 compartment_id: str,
-                 enrollment_status_id: str,
-                 id: str,
-                 state: str,
-                 status: str,
-                 status_reason: str,
-                 time_created: str,
-                 time_updated: str):
-        """
-        :param str compartment_id: The OCID of the compartment.
-        :param str id: The OCID of the enrollment status.
-        :param str state: A filter that returns results that match the lifecycle state specified.
-        :param str status: A filter that returns results that match the Cloud Advisor enrollment status specified.
-        :param str status_reason: The reason for the enrollment status of the tenancy.
-        :param str time_created: The date and time the enrollment status was created, in the format defined by RFC3339.
-        :param str time_updated: The date and time the enrollment status was last updated, in the format defined by RFC3339.
-        """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "enrollment_status_id", enrollment_status_id)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "status", status)
-        pulumi.set(__self__, "status_reason", status_reason)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+                 compartment_id: Optional[str] = None,
+                 enrollment_status_id: Optional[str] = None,
+                 id: Optional[str] = None,
+                 state: Optional[str] = None,
+                 status: Optional[str] = None,
+                 status_reason: Optional[str] = None,
+                 time_created: Optional[str] = None,
+                 time_updated: Optional[str] = None):
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if enrollment_status_id is not None:
+            pulumi.set(__self__, "enrollment_status_id", enrollment_status_id)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if status is not None:
+            pulumi.set(__self__, "status", status)
+        if status_reason is not None:
+            pulumi.set(__self__, "status_reason", status_reason)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if time_updated is not None:
+            pulumi.set(__self__, "time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The OCID of the compartment.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="enrollmentStatusId")
-    def enrollment_status_id(self) -> str:
+    def enrollment_status_id(self) -> Optional[str]:
         return pulumi.get(self, "enrollment_status_id")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The OCID of the enrollment status.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        A filter that returns results that match the lifecycle state specified.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter
-    def status(self) -> str:
-        """
-        A filter that returns results that match the Cloud Advisor enrollment status specified.
-        """
+    def status(self) -> Optional[str]:
         return pulumi.get(self, "status")
 
     @property
     @pulumi.getter(name="statusReason")
-    def status_reason(self) -> str:
-        """
-        The reason for the enrollment status of the tenancy.
-        """
+    def status_reason(self) -> Optional[str]:
         return pulumi.get(self, "status_reason")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the enrollment status was created, in the format defined by RFC3339.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The date and time the enrollment status was last updated, in the format defined by RFC3339.
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
 
@@ -819,9 +625,6 @@ class GetHistoriesFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: Optional. A filter that returns results that match the name specified.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -830,9 +633,6 @@ class GetHistoriesFilterResult(dict):
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        Optional. A filter that returns results that match the name specified.
-        """
         return pulumi.get(self, "name")
 
     @property
@@ -849,434 +649,315 @@ class GetHistoriesFilterResult(dict):
 @pulumi.output_type
 class GetHistoriesHistoryCollectionResult(dict):
     def __init__(__self__, *,
-                 items: Sequence['outputs.GetHistoriesHistoryCollectionItemResult']):
-        """
-        :param Sequence['GetHistoriesHistoryCollectionItemArgs'] items: A collection of history summaries.
-        """
-        pulumi.set(__self__, "items", items)
+                 items: Optional[Sequence['outputs.GetHistoriesHistoryCollectionItemResult']] = None):
+        if items is not None:
+            pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetHistoriesHistoryCollectionItemResult']:
-        """
-        A collection of history summaries.
-        """
+    def items(self) -> Optional[Sequence['outputs.GetHistoriesHistoryCollectionItemResult']]:
         return pulumi.get(self, "items")
 
 
 @pulumi.output_type
 class GetHistoriesHistoryCollectionItemResult(dict):
     def __init__(__self__, *,
-                 actions: Sequence['outputs.GetHistoriesHistoryCollectionItemActionResult'],
-                 category_id: str,
-                 compartment_id: str,
-                 compartment_name: str,
-                 estimated_cost_saving: float,
-                 extended_metadata: Mapping[str, Any],
-                 id: str,
-                 metadata: Mapping[str, Any],
-                 name: str,
-                 recommendation_id: str,
-                 recommendation_name: str,
-                 resource_action_id: str,
-                 resource_id: str,
-                 resource_type: str,
-                 state: str,
-                 status: str,
-                 time_created: str):
-        """
-        :param Sequence['GetHistoriesHistoryCollectionItemActionArgs'] actions: Details about the recommended action.
-        :param str category_id: The unique OCID associated with the category.
-        :param str compartment_id: The OCID of the compartment.
-        :param str compartment_name: The name assigned to the compartment.
-        :param float estimated_cost_saving: The estimated cost savings, in dollars, for the resource action.
-        :param Mapping[str, Any] extended_metadata: Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
-        :param str id: The unique OCID associated with the recommendation history.
-        :param Mapping[str, Any] metadata: Custom metadata key/value pairs for the resource action.
-        :param str name: Optional. A filter that returns results that match the name specified.
-        :param str recommendation_id: The unique OCID associated with the recommendation.
-        :param str recommendation_name: Optional. A filter that returns results that match the recommendation name specified.
-        :param str resource_action_id: The unique OCID associated with the resource action.
-        :param str resource_id: The unique OCID associated with the resource.
-        :param str resource_type: Optional. A filter that returns results that match the resource type specified.
-        :param str state: A filter that returns results that match the lifecycle state specified.
-        :param str status: A filter that returns recommendations that match the status specified.
-        :param str time_created: The date and time the recommendation history was created, in the format defined by RFC3339.
-        """
-        pulumi.set(__self__, "actions", actions)
-        pulumi.set(__self__, "category_id", category_id)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "compartment_name", compartment_name)
-        pulumi.set(__self__, "estimated_cost_saving", estimated_cost_saving)
-        pulumi.set(__self__, "extended_metadata", extended_metadata)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "metadata", metadata)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "recommendation_id", recommendation_id)
-        pulumi.set(__self__, "recommendation_name", recommendation_name)
-        pulumi.set(__self__, "resource_action_id", resource_action_id)
-        pulumi.set(__self__, "resource_id", resource_id)
-        pulumi.set(__self__, "resource_type", resource_type)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "status", status)
-        pulumi.set(__self__, "time_created", time_created)
+                 actions: Optional[Sequence['outputs.GetHistoriesHistoryCollectionItemActionResult']] = None,
+                 category_id: Optional[str] = None,
+                 compartment_id: Optional[str] = None,
+                 compartment_name: Optional[str] = None,
+                 estimated_cost_saving: Optional[float] = None,
+                 extended_metadata: Optional[Mapping[str, Any]] = None,
+                 id: Optional[str] = None,
+                 metadata: Optional[Mapping[str, Any]] = None,
+                 name: Optional[str] = None,
+                 recommendation_id: Optional[str] = None,
+                 recommendation_name: Optional[str] = None,
+                 resource_action_id: Optional[str] = None,
+                 resource_id: Optional[str] = None,
+                 resource_type: Optional[str] = None,
+                 state: Optional[str] = None,
+                 status: Optional[str] = None,
+                 time_created: Optional[str] = None):
+        if actions is not None:
+            pulumi.set(__self__, "actions", actions)
+        if category_id is not None:
+            pulumi.set(__self__, "category_id", category_id)
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if compartment_name is not None:
+            pulumi.set(__self__, "compartment_name", compartment_name)
+        if estimated_cost_saving is not None:
+            pulumi.set(__self__, "estimated_cost_saving", estimated_cost_saving)
+        if extended_metadata is not None:
+            pulumi.set(__self__, "extended_metadata", extended_metadata)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if metadata is not None:
+            pulumi.set(__self__, "metadata", metadata)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if recommendation_id is not None:
+            pulumi.set(__self__, "recommendation_id", recommendation_id)
+        if recommendation_name is not None:
+            pulumi.set(__self__, "recommendation_name", recommendation_name)
+        if resource_action_id is not None:
+            pulumi.set(__self__, "resource_action_id", resource_action_id)
+        if resource_id is not None:
+            pulumi.set(__self__, "resource_id", resource_id)
+        if resource_type is not None:
+            pulumi.set(__self__, "resource_type", resource_type)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if status is not None:
+            pulumi.set(__self__, "status", status)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
 
     @property
     @pulumi.getter
-    def actions(self) -> Sequence['outputs.GetHistoriesHistoryCollectionItemActionResult']:
-        """
-        Details about the recommended action.
-        """
+    def actions(self) -> Optional[Sequence['outputs.GetHistoriesHistoryCollectionItemActionResult']]:
         return pulumi.get(self, "actions")
 
     @property
     @pulumi.getter(name="categoryId")
-    def category_id(self) -> str:
-        """
-        The unique OCID associated with the category.
-        """
+    def category_id(self) -> Optional[str]:
         return pulumi.get(self, "category_id")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The OCID of the compartment.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="compartmentName")
-    def compartment_name(self) -> str:
-        """
-        The name assigned to the compartment.
-        """
+    def compartment_name(self) -> Optional[str]:
         return pulumi.get(self, "compartment_name")
 
     @property
     @pulumi.getter(name="estimatedCostSaving")
-    def estimated_cost_saving(self) -> float:
-        """
-        The estimated cost savings, in dollars, for the resource action.
-        """
+    def estimated_cost_saving(self) -> Optional[float]:
         return pulumi.get(self, "estimated_cost_saving")
 
     @property
     @pulumi.getter(name="extendedMetadata")
-    def extended_metadata(self) -> Mapping[str, Any]:
-        """
-        Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
-        """
+    def extended_metadata(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "extended_metadata")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The unique OCID associated with the recommendation history.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter
-    def metadata(self) -> Mapping[str, Any]:
-        """
-        Custom metadata key/value pairs for the resource action.
-        """
+    def metadata(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "metadata")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        Optional. A filter that returns results that match the name specified.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="recommendationId")
-    def recommendation_id(self) -> str:
-        """
-        The unique OCID associated with the recommendation.
-        """
+    def recommendation_id(self) -> Optional[str]:
         return pulumi.get(self, "recommendation_id")
 
     @property
     @pulumi.getter(name="recommendationName")
-    def recommendation_name(self) -> str:
-        """
-        Optional. A filter that returns results that match the recommendation name specified.
-        """
+    def recommendation_name(self) -> Optional[str]:
         return pulumi.get(self, "recommendation_name")
 
     @property
     @pulumi.getter(name="resourceActionId")
-    def resource_action_id(self) -> str:
-        """
-        The unique OCID associated with the resource action.
-        """
+    def resource_action_id(self) -> Optional[str]:
         return pulumi.get(self, "resource_action_id")
 
     @property
     @pulumi.getter(name="resourceId")
-    def resource_id(self) -> str:
-        """
-        The unique OCID associated with the resource.
-        """
+    def resource_id(self) -> Optional[str]:
         return pulumi.get(self, "resource_id")
 
     @property
     @pulumi.getter(name="resourceType")
-    def resource_type(self) -> str:
-        """
-        Optional. A filter that returns results that match the resource type specified.
-        """
+    def resource_type(self) -> Optional[str]:
         return pulumi.get(self, "resource_type")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        A filter that returns results that match the lifecycle state specified.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter
-    def status(self) -> str:
-        """
-        A filter that returns recommendations that match the status specified.
-        """
+    def status(self) -> Optional[str]:
         return pulumi.get(self, "status")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the recommendation history was created, in the format defined by RFC3339.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
 
 @pulumi.output_type
 class GetHistoriesHistoryCollectionItemActionResult(dict):
     def __init__(__self__, *,
-                 description: str,
-                 type: str,
-                 url: str):
-        """
-        :param str description: Text describing the recommended action.
-        :param str type: The status of the resource action.
-        :param str url: The URL path to documentation that explains how to perform the action.
-        """
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "type", type)
-        pulumi.set(__self__, "url", url)
+                 description: Optional[str] = None,
+                 type: Optional[str] = None,
+                 url: Optional[str] = None):
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+        if url is not None:
+            pulumi.set(__self__, "url", url)
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        Text describing the recommended action.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter
-    def type(self) -> str:
-        """
-        The status of the resource action.
-        """
+    def type(self) -> Optional[str]:
         return pulumi.get(self, "type")
 
     @property
     @pulumi.getter
-    def url(self) -> str:
-        """
-        The URL path to documentation that explains how to perform the action.
-        """
+    def url(self) -> Optional[str]:
         return pulumi.get(self, "url")
 
 
 @pulumi.output_type
 class GetProfileLevelItemResult(dict):
     def __init__(__self__, *,
-                 default_interval: int,
-                 metrics: Sequence['outputs.GetProfileLevelItemMetricResult'],
-                 name: str,
-                 recommendation_name: str,
-                 time_created: str,
-                 time_updated: str,
-                 valid_intervals: Sequence[int]):
-        """
-        :param int default_interval: The default aggregation interval (in days) for profiles using this profile level.
-        :param Sequence['GetProfileLevelItemMetricArgs'] metrics: The metrics that will be evaluated by profiles using this profile level.
-        :param str name: Optional. A filter that returns results that match the name specified.
-        :param str recommendation_name: Optional. A filter that returns results that match the recommendation name specified.
-        :param str time_created: The date and time the category details were created, in the format defined by RFC3339.
-        :param str time_updated: The date and time the category details were last updated, in the format defined by RFC3339.
-        :param Sequence[int] valid_intervals: An array of aggregation intervals (in days) allowed for profiles using this profile level.
-        """
-        pulumi.set(__self__, "default_interval", default_interval)
-        pulumi.set(__self__, "metrics", metrics)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "recommendation_name", recommendation_name)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
-        pulumi.set(__self__, "valid_intervals", valid_intervals)
+                 default_interval: Optional[int] = None,
+                 metrics: Optional[Sequence['outputs.GetProfileLevelItemMetricResult']] = None,
+                 name: Optional[str] = None,
+                 recommendation_name: Optional[str] = None,
+                 time_created: Optional[str] = None,
+                 time_updated: Optional[str] = None,
+                 valid_intervals: Optional[Sequence[int]] = None):
+        if default_interval is not None:
+            pulumi.set(__self__, "default_interval", default_interval)
+        if metrics is not None:
+            pulumi.set(__self__, "metrics", metrics)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if recommendation_name is not None:
+            pulumi.set(__self__, "recommendation_name", recommendation_name)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if time_updated is not None:
+            pulumi.set(__self__, "time_updated", time_updated)
+        if valid_intervals is not None:
+            pulumi.set(__self__, "valid_intervals", valid_intervals)
 
     @property
     @pulumi.getter(name="defaultInterval")
-    def default_interval(self) -> int:
-        """
-        The default aggregation interval (in days) for profiles using this profile level.
-        """
+    def default_interval(self) -> Optional[int]:
         return pulumi.get(self, "default_interval")
 
     @property
     @pulumi.getter
-    def metrics(self) -> Sequence['outputs.GetProfileLevelItemMetricResult']:
-        """
-        The metrics that will be evaluated by profiles using this profile level.
-        """
+    def metrics(self) -> Optional[Sequence['outputs.GetProfileLevelItemMetricResult']]:
         return pulumi.get(self, "metrics")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        Optional. A filter that returns results that match the name specified.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="recommendationName")
-    def recommendation_name(self) -> str:
-        """
-        Optional. A filter that returns results that match the recommendation name specified.
-        """
+    def recommendation_name(self) -> Optional[str]:
         return pulumi.get(self, "recommendation_name")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the category details were created, in the format defined by RFC3339.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The date and time the category details were last updated, in the format defined by RFC3339.
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
     @property
     @pulumi.getter(name="validIntervals")
-    def valid_intervals(self) -> Sequence[int]:
-        """
-        An array of aggregation intervals (in days) allowed for profiles using this profile level.
-        """
+    def valid_intervals(self) -> Optional[Sequence[int]]:
         return pulumi.get(self, "valid_intervals")
 
 
 @pulumi.output_type
 class GetProfileLevelItemMetricResult(dict):
     def __init__(__self__, *,
-                 name: str,
-                 statistic: str,
-                 target: float,
-                 threshold: float):
-        """
-        :param str name: Optional. A filter that returns results that match the name specified.
-        :param str statistic: The name of the statistic (e.g., `p95`).
-        :param float target: Optional. The metric value that the recommendation will target.
-        :param float threshold: The threshold that must be crossed for the recommendation to appear.
-        """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "statistic", statistic)
-        pulumi.set(__self__, "target", target)
-        pulumi.set(__self__, "threshold", threshold)
+                 name: Optional[str] = None,
+                 statistic: Optional[str] = None,
+                 target: Optional[float] = None,
+                 threshold: Optional[float] = None):
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if statistic is not None:
+            pulumi.set(__self__, "statistic", statistic)
+        if target is not None:
+            pulumi.set(__self__, "target", target)
+        if threshold is not None:
+            pulumi.set(__self__, "threshold", threshold)
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        Optional. A filter that returns results that match the name specified.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
-    def statistic(self) -> str:
-        """
-        The name of the statistic (e.g., `p95`).
-        """
+    def statistic(self) -> Optional[str]:
         return pulumi.get(self, "statistic")
 
     @property
     @pulumi.getter
-    def target(self) -> float:
-        """
-        Optional. The metric value that the recommendation will target.
-        """
+    def target(self) -> Optional[float]:
         return pulumi.get(self, "target")
 
     @property
     @pulumi.getter
-    def threshold(self) -> float:
-        """
-        The threshold that must be crossed for the recommendation to appear.
-        """
+    def threshold(self) -> Optional[float]:
         return pulumi.get(self, "threshold")
 
 
 @pulumi.output_type
 class GetProfileLevelsConfigurationResult(dict):
     def __init__(__self__, *,
-                 items: Sequence['outputs.GetProfileLevelsConfigurationItemResult']):
-        """
-        :param Sequence['GetProfileLevelsConfigurationItemArgs'] items: The list of tags specified in the current profile override.
-        """
-        pulumi.set(__self__, "items", items)
+                 items: Optional[Sequence['outputs.GetProfileLevelsConfigurationItemResult']] = None):
+        if items is not None:
+            pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetProfileLevelsConfigurationItemResult']:
-        """
-        The list of tags specified in the current profile override.
-        """
+    def items(self) -> Optional[Sequence['outputs.GetProfileLevelsConfigurationItemResult']]:
         return pulumi.get(self, "items")
 
 
 @pulumi.output_type
 class GetProfileLevelsConfigurationItemResult(dict):
     def __init__(__self__, *,
-                 level: str,
-                 recommendation_id: str):
-        """
-        :param str level: The pre-defined profile level.
-        :param str recommendation_id: The unique OCID of the recommendation.
-        """
-        pulumi.set(__self__, "level", level)
-        pulumi.set(__self__, "recommendation_id", recommendation_id)
+                 level: Optional[str] = None,
+                 recommendation_id: Optional[str] = None):
+        if level is not None:
+            pulumi.set(__self__, "level", level)
+        if recommendation_id is not None:
+            pulumi.set(__self__, "recommendation_id", recommendation_id)
 
     @property
     @pulumi.getter
-    def level(self) -> str:
-        """
-        The pre-defined profile level.
-        """
+    def level(self) -> Optional[str]:
         return pulumi.get(self, "level")
 
     @property
     @pulumi.getter(name="recommendationId")
-    def recommendation_id(self) -> str:
-        """
-        The unique OCID of the recommendation.
-        """
+    def recommendation_id(self) -> Optional[str]:
         return pulumi.get(self, "recommendation_id")
 
 
@@ -1286,9 +967,6 @@ class GetProfileLevelsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: Optional. A filter that returns results that match the name specified.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -1297,9 +975,6 @@ class GetProfileLevelsFilterResult(dict):
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        Optional. A filter that returns results that match the name specified.
-        """
         return pulumi.get(self, "name")
 
     @property
@@ -1316,240 +991,174 @@ class GetProfileLevelsFilterResult(dict):
 @pulumi.output_type
 class GetProfileLevelsProfileLevelCollectionResult(dict):
     def __init__(__self__, *,
-                 items: Sequence['outputs.GetProfileLevelsProfileLevelCollectionItemResult']):
-        """
-        :param Sequence['GetProfileLevelsProfileLevelCollectionItemArgs'] items: A collection of profile levels.
-        """
-        pulumi.set(__self__, "items", items)
+                 items: Optional[Sequence['outputs.GetProfileLevelsProfileLevelCollectionItemResult']] = None):
+        if items is not None:
+            pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetProfileLevelsProfileLevelCollectionItemResult']:
-        """
-        A collection of profile levels.
-        """
+    def items(self) -> Optional[Sequence['outputs.GetProfileLevelsProfileLevelCollectionItemResult']]:
         return pulumi.get(self, "items")
 
 
 @pulumi.output_type
 class GetProfileLevelsProfileLevelCollectionItemResult(dict):
     def __init__(__self__, *,
-                 default_interval: int,
-                 metrics: Sequence['outputs.GetProfileLevelsProfileLevelCollectionItemMetricResult'],
-                 name: str,
-                 recommendation_name: str,
-                 time_created: str,
-                 time_updated: str,
-                 valid_intervals: Sequence[int]):
-        """
-        :param int default_interval: The default aggregation interval (in days) for profiles using this profile level.
-        :param Sequence['GetProfileLevelsProfileLevelCollectionItemMetricArgs'] metrics: The metrics that will be evaluated by profiles using this profile level.
-        :param str name: Optional. A filter that returns results that match the name specified.
-        :param str recommendation_name: Optional. A filter that returns results that match the recommendation name specified.
-        :param str time_created: The date and time the category details were created, in the format defined by RFC3339.
-        :param str time_updated: The date and time the category details were last updated, in the format defined by RFC3339.
-        :param Sequence[int] valid_intervals: An array of aggregation intervals (in days) allowed for profiles using this profile level.
-        """
-        pulumi.set(__self__, "default_interval", default_interval)
-        pulumi.set(__self__, "metrics", metrics)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "recommendation_name", recommendation_name)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
-        pulumi.set(__self__, "valid_intervals", valid_intervals)
+                 default_interval: Optional[int] = None,
+                 metrics: Optional[Sequence['outputs.GetProfileLevelsProfileLevelCollectionItemMetricResult']] = None,
+                 name: Optional[str] = None,
+                 recommendation_name: Optional[str] = None,
+                 time_created: Optional[str] = None,
+                 time_updated: Optional[str] = None,
+                 valid_intervals: Optional[Sequence[int]] = None):
+        if default_interval is not None:
+            pulumi.set(__self__, "default_interval", default_interval)
+        if metrics is not None:
+            pulumi.set(__self__, "metrics", metrics)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if recommendation_name is not None:
+            pulumi.set(__self__, "recommendation_name", recommendation_name)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if time_updated is not None:
+            pulumi.set(__self__, "time_updated", time_updated)
+        if valid_intervals is not None:
+            pulumi.set(__self__, "valid_intervals", valid_intervals)
 
     @property
     @pulumi.getter(name="defaultInterval")
-    def default_interval(self) -> int:
-        """
-        The default aggregation interval (in days) for profiles using this profile level.
-        """
+    def default_interval(self) -> Optional[int]:
         return pulumi.get(self, "default_interval")
 
     @property
     @pulumi.getter
-    def metrics(self) -> Sequence['outputs.GetProfileLevelsProfileLevelCollectionItemMetricResult']:
-        """
-        The metrics that will be evaluated by profiles using this profile level.
-        """
+    def metrics(self) -> Optional[Sequence['outputs.GetProfileLevelsProfileLevelCollectionItemMetricResult']]:
         return pulumi.get(self, "metrics")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        Optional. A filter that returns results that match the name specified.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="recommendationName")
-    def recommendation_name(self) -> str:
-        """
-        Optional. A filter that returns results that match the recommendation name specified.
-        """
+    def recommendation_name(self) -> Optional[str]:
         return pulumi.get(self, "recommendation_name")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the category details were created, in the format defined by RFC3339.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The date and time the category details were last updated, in the format defined by RFC3339.
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
     @property
     @pulumi.getter(name="validIntervals")
-    def valid_intervals(self) -> Sequence[int]:
-        """
-        An array of aggregation intervals (in days) allowed for profiles using this profile level.
-        """
+    def valid_intervals(self) -> Optional[Sequence[int]]:
         return pulumi.get(self, "valid_intervals")
 
 
 @pulumi.output_type
 class GetProfileLevelsProfileLevelCollectionItemMetricResult(dict):
     def __init__(__self__, *,
-                 name: str,
-                 statistic: str,
-                 target: float,
-                 threshold: float):
-        """
-        :param str name: Optional. A filter that returns results that match the name specified.
-        :param str statistic: The name of the statistic (e.g., `p95`).
-        :param float target: Optional. The metric value that the recommendation will target.
-        :param float threshold: The threshold that must be crossed for the recommendation to appear.
-        """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "statistic", statistic)
-        pulumi.set(__self__, "target", target)
-        pulumi.set(__self__, "threshold", threshold)
+                 name: Optional[str] = None,
+                 statistic: Optional[str] = None,
+                 target: Optional[float] = None,
+                 threshold: Optional[float] = None):
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if statistic is not None:
+            pulumi.set(__self__, "statistic", statistic)
+        if target is not None:
+            pulumi.set(__self__, "target", target)
+        if threshold is not None:
+            pulumi.set(__self__, "threshold", threshold)
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        Optional. A filter that returns results that match the name specified.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
-    def statistic(self) -> str:
-        """
-        The name of the statistic (e.g., `p95`).
-        """
+    def statistic(self) -> Optional[str]:
         return pulumi.get(self, "statistic")
 
     @property
     @pulumi.getter
-    def target(self) -> float:
-        """
-        Optional. The metric value that the recommendation will target.
-        """
+    def target(self) -> Optional[float]:
         return pulumi.get(self, "target")
 
     @property
     @pulumi.getter
-    def threshold(self) -> float:
-        """
-        The threshold that must be crossed for the recommendation to appear.
-        """
+    def threshold(self) -> Optional[float]:
         return pulumi.get(self, "threshold")
 
 
 @pulumi.output_type
 class GetProfileTargetCompartmentResult(dict):
     def __init__(__self__, *,
-                 items: Sequence[str]):
-        """
-        :param Sequence[str] items: The list of tags specified in the current profile override.
-        """
-        pulumi.set(__self__, "items", items)
+                 items: Optional[Sequence[str]] = None):
+        if items is not None:
+            pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence[str]:
-        """
-        The list of tags specified in the current profile override.
-        """
+    def items(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "items")
 
 
 @pulumi.output_type
 class GetProfileTargetTagResult(dict):
     def __init__(__self__, *,
-                 items: Sequence['outputs.GetProfileTargetTagItemResult']):
-        """
-        :param Sequence['GetProfileTargetTagItemArgs'] items: The list of tags specified in the current profile override.
-        """
-        pulumi.set(__self__, "items", items)
+                 items: Optional[Sequence['outputs.GetProfileTargetTagItemResult']] = None):
+        if items is not None:
+            pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetProfileTargetTagItemResult']:
-        """
-        The list of tags specified in the current profile override.
-        """
+    def items(self) -> Optional[Sequence['outputs.GetProfileTargetTagItemResult']]:
         return pulumi.get(self, "items")
 
 
 @pulumi.output_type
 class GetProfileTargetTagItemResult(dict):
     def __init__(__self__, *,
-                 tag_definition_name: str,
-                 tag_namespace_name: str,
-                 tag_value_type: str,
-                 tag_values: Sequence[str]):
-        """
-        :param str tag_definition_name: The name you use to refer to the tag, also known as the tag key.
-        :param str tag_namespace_name: The name of the tag namespace.
-        :param str tag_value_type: Specifies which tag value types in the `tagValues` field result in overrides of the recommendation criteria.
-        :param Sequence[str] tag_values: The list of tag values. The tag value is the value that the user applying the tag adds to the tag key.
-        """
-        pulumi.set(__self__, "tag_definition_name", tag_definition_name)
-        pulumi.set(__self__, "tag_namespace_name", tag_namespace_name)
-        pulumi.set(__self__, "tag_value_type", tag_value_type)
-        pulumi.set(__self__, "tag_values", tag_values)
+                 tag_definition_name: Optional[str] = None,
+                 tag_namespace_name: Optional[str] = None,
+                 tag_value_type: Optional[str] = None,
+                 tag_values: Optional[Sequence[str]] = None):
+        if tag_definition_name is not None:
+            pulumi.set(__self__, "tag_definition_name", tag_definition_name)
+        if tag_namespace_name is not None:
+            pulumi.set(__self__, "tag_namespace_name", tag_namespace_name)
+        if tag_value_type is not None:
+            pulumi.set(__self__, "tag_value_type", tag_value_type)
+        if tag_values is not None:
+            pulumi.set(__self__, "tag_values", tag_values)
 
     @property
     @pulumi.getter(name="tagDefinitionName")
-    def tag_definition_name(self) -> str:
-        """
-        The name you use to refer to the tag, also known as the tag key.
-        """
+    def tag_definition_name(self) -> Optional[str]:
         return pulumi.get(self, "tag_definition_name")
 
     @property
     @pulumi.getter(name="tagNamespaceName")
-    def tag_namespace_name(self) -> str:
-        """
-        The name of the tag namespace.
-        """
+    def tag_namespace_name(self) -> Optional[str]:
         return pulumi.get(self, "tag_namespace_name")
 
     @property
     @pulumi.getter(name="tagValueType")
-    def tag_value_type(self) -> str:
-        """
-        Specifies which tag value types in the `tagValues` field result in overrides of the recommendation criteria.
-        """
+    def tag_value_type(self) -> Optional[str]:
         return pulumi.get(self, "tag_value_type")
 
     @property
     @pulumi.getter(name="tagValues")
-    def tag_values(self) -> Sequence[str]:
-        """
-        The list of tag values. The tag value is the value that the user applying the tag adds to the tag key.
-        """
+    def tag_values(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "tag_values")
 
 
@@ -1559,9 +1168,6 @@ class GetProfilesFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: Optional. A filter that returns results that match the name specified.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -1570,9 +1176,6 @@ class GetProfilesFilterResult(dict):
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        Optional. A filter that returns results that match the name specified.
-        """
         return pulumi.get(self, "name")
 
     @property
@@ -1589,331 +1192,240 @@ class GetProfilesFilterResult(dict):
 @pulumi.output_type
 class GetProfilesProfileCollectionResult(dict):
     def __init__(__self__, *,
-                 items: Sequence['outputs.GetProfilesProfileCollectionItemResult']):
-        """
-        :param Sequence['GetProfilesProfileCollectionItemArgs'] items: The list of tags specified in the current profile override.
-        """
-        pulumi.set(__self__, "items", items)
+                 items: Optional[Sequence['outputs.GetProfilesProfileCollectionItemResult']] = None):
+        if items is not None:
+            pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetProfilesProfileCollectionItemResult']:
-        """
-        The list of tags specified in the current profile override.
-        """
+    def items(self) -> Optional[Sequence['outputs.GetProfilesProfileCollectionItemResult']]:
         return pulumi.get(self, "items")
 
 
 @pulumi.output_type
 class GetProfilesProfileCollectionItemResult(dict):
     def __init__(__self__, *,
-                 aggregation_interval_in_days: int,
-                 compartment_id: str,
-                 defined_tags: Mapping[str, Any],
-                 description: str,
-                 freeform_tags: Mapping[str, Any],
-                 id: str,
-                 levels_configurations: Sequence['outputs.GetProfilesProfileCollectionItemLevelsConfigurationResult'],
-                 name: str,
-                 state: str,
-                 target_compartments: Sequence['outputs.GetProfilesProfileCollectionItemTargetCompartmentResult'],
-                 target_tags: Sequence['outputs.GetProfilesProfileCollectionItemTargetTagResult'],
-                 time_created: str,
-                 time_updated: str):
-        """
-        :param int aggregation_interval_in_days: The time period over which to collect data for the recommendations, measured in number of days.
-        :param str compartment_id: The OCID of the compartment.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"foo-namespace.bar-key": "value"}`
-        :param str description: Text describing the profile. Avoid entering confidential information.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair applied without any predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
-        :param str id: The unique OCID of the profile.
-        :param Sequence['GetProfilesProfileCollectionItemLevelsConfigurationArgs'] levels_configurations: A list of configuration levels for each recommendation.
-        :param str name: Optional. A filter that returns results that match the name specified.
-        :param str state: A filter that returns results that match the lifecycle state specified.
-        :param Sequence['GetProfilesProfileCollectionItemTargetCompartmentArgs'] target_compartments: Optional. The compartments specified in the profile override for a recommendation.
-        :param Sequence['GetProfilesProfileCollectionItemTargetTagArgs'] target_tags: Optional. The tags specified in the profile override for a recommendation.
-        :param str time_created: The date and time the profile was created, in the format defined by RFC3339.
-        :param str time_updated: The date and time the profile was last updated, in the format defined by RFC3339.
-        """
-        pulumi.set(__self__, "aggregation_interval_in_days", aggregation_interval_in_days)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "levels_configurations", levels_configurations)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "target_compartments", target_compartments)
-        pulumi.set(__self__, "target_tags", target_tags)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+                 aggregation_interval_in_days: Optional[int] = None,
+                 compartment_id: Optional[str] = None,
+                 defined_tags: Optional[Mapping[str, Any]] = None,
+                 description: Optional[str] = None,
+                 freeform_tags: Optional[Mapping[str, Any]] = None,
+                 id: Optional[str] = None,
+                 levels_configurations: Optional[Sequence['outputs.GetProfilesProfileCollectionItemLevelsConfigurationResult']] = None,
+                 name: Optional[str] = None,
+                 state: Optional[str] = None,
+                 target_compartments: Optional[Sequence['outputs.GetProfilesProfileCollectionItemTargetCompartmentResult']] = None,
+                 target_tags: Optional[Sequence['outputs.GetProfilesProfileCollectionItemTargetTagResult']] = None,
+                 time_created: Optional[str] = None,
+                 time_updated: Optional[str] = None):
+        if aggregation_interval_in_days is not None:
+            pulumi.set(__self__, "aggregation_interval_in_days", aggregation_interval_in_days)
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if levels_configurations is not None:
+            pulumi.set(__self__, "levels_configurations", levels_configurations)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if target_compartments is not None:
+            pulumi.set(__self__, "target_compartments", target_compartments)
+        if target_tags is not None:
+            pulumi.set(__self__, "target_tags", target_tags)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if time_updated is not None:
+            pulumi.set(__self__, "time_updated", time_updated)
 
     @property
     @pulumi.getter(name="aggregationIntervalInDays")
-    def aggregation_interval_in_days(self) -> int:
-        """
-        The time period over which to collect data for the recommendations, measured in number of days.
-        """
+    def aggregation_interval_in_days(self) -> Optional[int]:
         return pulumi.get(self, "aggregation_interval_in_days")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The OCID of the compartment.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        Text describing the profile. Avoid entering confidential information.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair applied without any predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The unique OCID of the profile.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="levelsConfigurations")
-    def levels_configurations(self) -> Sequence['outputs.GetProfilesProfileCollectionItemLevelsConfigurationResult']:
-        """
-        A list of configuration levels for each recommendation.
-        """
+    def levels_configurations(self) -> Optional[Sequence['outputs.GetProfilesProfileCollectionItemLevelsConfigurationResult']]:
         return pulumi.get(self, "levels_configurations")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        Optional. A filter that returns results that match the name specified.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        A filter that returns results that match the lifecycle state specified.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="targetCompartments")
-    def target_compartments(self) -> Sequence['outputs.GetProfilesProfileCollectionItemTargetCompartmentResult']:
-        """
-        Optional. The compartments specified in the profile override for a recommendation.
-        """
+    def target_compartments(self) -> Optional[Sequence['outputs.GetProfilesProfileCollectionItemTargetCompartmentResult']]:
         return pulumi.get(self, "target_compartments")
 
     @property
     @pulumi.getter(name="targetTags")
-    def target_tags(self) -> Sequence['outputs.GetProfilesProfileCollectionItemTargetTagResult']:
-        """
-        Optional. The tags specified in the profile override for a recommendation.
-        """
+    def target_tags(self) -> Optional[Sequence['outputs.GetProfilesProfileCollectionItemTargetTagResult']]:
         return pulumi.get(self, "target_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the profile was created, in the format defined by RFC3339.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The date and time the profile was last updated, in the format defined by RFC3339.
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
 
 @pulumi.output_type
 class GetProfilesProfileCollectionItemLevelsConfigurationResult(dict):
     def __init__(__self__, *,
-                 items: Sequence['outputs.GetProfilesProfileCollectionItemLevelsConfigurationItemResult']):
-        """
-        :param Sequence['GetProfilesProfileCollectionItemLevelsConfigurationItemArgs'] items: The list of tags specified in the current profile override.
-        """
-        pulumi.set(__self__, "items", items)
+                 items: Optional[Sequence['outputs.GetProfilesProfileCollectionItemLevelsConfigurationItemResult']] = None):
+        if items is not None:
+            pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetProfilesProfileCollectionItemLevelsConfigurationItemResult']:
-        """
-        The list of tags specified in the current profile override.
-        """
+    def items(self) -> Optional[Sequence['outputs.GetProfilesProfileCollectionItemLevelsConfigurationItemResult']]:
         return pulumi.get(self, "items")
 
 
 @pulumi.output_type
 class GetProfilesProfileCollectionItemLevelsConfigurationItemResult(dict):
     def __init__(__self__, *,
-                 level: str,
-                 recommendation_id: str):
-        """
-        :param str level: The pre-defined profile level.
-        :param str recommendation_id: The unique OCID of the recommendation.
-        """
-        pulumi.set(__self__, "level", level)
-        pulumi.set(__self__, "recommendation_id", recommendation_id)
+                 level: Optional[str] = None,
+                 recommendation_id: Optional[str] = None):
+        if level is not None:
+            pulumi.set(__self__, "level", level)
+        if recommendation_id is not None:
+            pulumi.set(__self__, "recommendation_id", recommendation_id)
 
     @property
     @pulumi.getter
-    def level(self) -> str:
-        """
-        The pre-defined profile level.
-        """
+    def level(self) -> Optional[str]:
         return pulumi.get(self, "level")
 
     @property
     @pulumi.getter(name="recommendationId")
-    def recommendation_id(self) -> str:
-        """
-        The unique OCID of the recommendation.
-        """
+    def recommendation_id(self) -> Optional[str]:
         return pulumi.get(self, "recommendation_id")
 
 
 @pulumi.output_type
 class GetProfilesProfileCollectionItemTargetCompartmentResult(dict):
     def __init__(__self__, *,
-                 items: Sequence[str]):
-        """
-        :param Sequence[str] items: The list of tags specified in the current profile override.
-        """
-        pulumi.set(__self__, "items", items)
+                 items: Optional[Sequence[str]] = None):
+        if items is not None:
+            pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence[str]:
-        """
-        The list of tags specified in the current profile override.
-        """
+    def items(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "items")
 
 
 @pulumi.output_type
 class GetProfilesProfileCollectionItemTargetTagResult(dict):
     def __init__(__self__, *,
-                 items: Sequence['outputs.GetProfilesProfileCollectionItemTargetTagItemResult']):
-        """
-        :param Sequence['GetProfilesProfileCollectionItemTargetTagItemArgs'] items: The list of tags specified in the current profile override.
-        """
-        pulumi.set(__self__, "items", items)
+                 items: Optional[Sequence['outputs.GetProfilesProfileCollectionItemTargetTagItemResult']] = None):
+        if items is not None:
+            pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetProfilesProfileCollectionItemTargetTagItemResult']:
-        """
-        The list of tags specified in the current profile override.
-        """
+    def items(self) -> Optional[Sequence['outputs.GetProfilesProfileCollectionItemTargetTagItemResult']]:
         return pulumi.get(self, "items")
 
 
 @pulumi.output_type
 class GetProfilesProfileCollectionItemTargetTagItemResult(dict):
     def __init__(__self__, *,
-                 tag_definition_name: str,
-                 tag_namespace_name: str,
-                 tag_value_type: str,
-                 tag_values: Sequence[str]):
-        """
-        :param str tag_definition_name: The name you use to refer to the tag, also known as the tag key.
-        :param str tag_namespace_name: The name of the tag namespace.
-        :param str tag_value_type: Specifies which tag value types in the `tagValues` field result in overrides of the recommendation criteria.
-        :param Sequence[str] tag_values: The list of tag values. The tag value is the value that the user applying the tag adds to the tag key.
-        """
-        pulumi.set(__self__, "tag_definition_name", tag_definition_name)
-        pulumi.set(__self__, "tag_namespace_name", tag_namespace_name)
-        pulumi.set(__self__, "tag_value_type", tag_value_type)
-        pulumi.set(__self__, "tag_values", tag_values)
+                 tag_definition_name: Optional[str] = None,
+                 tag_namespace_name: Optional[str] = None,
+                 tag_value_type: Optional[str] = None,
+                 tag_values: Optional[Sequence[str]] = None):
+        if tag_definition_name is not None:
+            pulumi.set(__self__, "tag_definition_name", tag_definition_name)
+        if tag_namespace_name is not None:
+            pulumi.set(__self__, "tag_namespace_name", tag_namespace_name)
+        if tag_value_type is not None:
+            pulumi.set(__self__, "tag_value_type", tag_value_type)
+        if tag_values is not None:
+            pulumi.set(__self__, "tag_values", tag_values)
 
     @property
     @pulumi.getter(name="tagDefinitionName")
-    def tag_definition_name(self) -> str:
-        """
-        The name you use to refer to the tag, also known as the tag key.
-        """
+    def tag_definition_name(self) -> Optional[str]:
         return pulumi.get(self, "tag_definition_name")
 
     @property
     @pulumi.getter(name="tagNamespaceName")
-    def tag_namespace_name(self) -> str:
-        """
-        The name of the tag namespace.
-        """
+    def tag_namespace_name(self) -> Optional[str]:
         return pulumi.get(self, "tag_namespace_name")
 
     @property
     @pulumi.getter(name="tagValueType")
-    def tag_value_type(self) -> str:
-        """
-        Specifies which tag value types in the `tagValues` field result in overrides of the recommendation criteria.
-        """
+    def tag_value_type(self) -> Optional[str]:
         return pulumi.get(self, "tag_value_type")
 
     @property
     @pulumi.getter(name="tagValues")
-    def tag_values(self) -> Sequence[str]:
-        """
-        The list of tag values. The tag value is the value that the user applying the tag adds to the tag key.
-        """
+    def tag_values(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "tag_values")
 
 
 @pulumi.output_type
 class GetRecommendationResourceCountResult(dict):
     def __init__(__self__, *,
-                 count: int,
-                 status: str):
-        """
-        :param int count: The count of resources.
-        :param str status: The current status of the recommendation.
-        """
-        pulumi.set(__self__, "count", count)
-        pulumi.set(__self__, "status", status)
+                 count: Optional[int] = None,
+                 status: Optional[str] = None):
+        if count is not None:
+            pulumi.set(__self__, "count", count)
+        if status is not None:
+            pulumi.set(__self__, "status", status)
 
     @property
     @pulumi.getter
-    def count(self) -> int:
-        """
-        The count of resources.
-        """
+    def count(self) -> Optional[int]:
         return pulumi.get(self, "count")
 
     @property
     @pulumi.getter
-    def status(self) -> str:
-        """
-        The current status of the recommendation.
-        """
+    def status(self) -> Optional[str]:
         return pulumi.get(self, "status")
 
 
@@ -1923,9 +1435,6 @@ class GetRecommendationStrategiesFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: Optional. A filter that returns results that match the name specified.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -1934,9 +1443,6 @@ class GetRecommendationStrategiesFilterResult(dict):
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        Optional. A filter that returns results that match the name specified.
-        """
         return pulumi.get(self, "name")
 
     @property
@@ -1953,338 +1459,245 @@ class GetRecommendationStrategiesFilterResult(dict):
 @pulumi.output_type
 class GetRecommendationStrategiesRecommendationStrategyCollectionResult(dict):
     def __init__(__self__, *,
-                 items: Sequence['outputs.GetRecommendationStrategiesRecommendationStrategyCollectionItemResult']):
-        """
-        :param Sequence['GetRecommendationStrategiesRecommendationStrategyCollectionItemArgs'] items: A collection of recommendation strategy summaries.
-        """
-        pulumi.set(__self__, "items", items)
+                 items: Optional[Sequence['outputs.GetRecommendationStrategiesRecommendationStrategyCollectionItemResult']] = None):
+        if items is not None:
+            pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetRecommendationStrategiesRecommendationStrategyCollectionItemResult']:
-        """
-        A collection of recommendation strategy summaries.
-        """
+    def items(self) -> Optional[Sequence['outputs.GetRecommendationStrategiesRecommendationStrategyCollectionItemResult']]:
         return pulumi.get(self, "items")
 
 
 @pulumi.output_type
 class GetRecommendationStrategiesRecommendationStrategyCollectionItemResult(dict):
     def __init__(__self__, *,
-                 name: str,
-                 strategies: Sequence['outputs.GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyResult']):
-        """
-        :param str name: Optional. A filter that returns results that match the name specified.
-        :param Sequence['GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyArgs'] strategies: The list of strategies used.
-        """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "strategies", strategies)
+                 name: Optional[str] = None,
+                 strategies: Optional[Sequence['outputs.GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyResult']] = None):
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if strategies is not None:
+            pulumi.set(__self__, "strategies", strategies)
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        Optional. A filter that returns results that match the name specified.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
-    def strategies(self) -> Sequence['outputs.GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyResult']:
-        """
-        The list of strategies used.
-        """
+    def strategies(self) -> Optional[Sequence['outputs.GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyResult']]:
         return pulumi.get(self, "strategies")
 
 
 @pulumi.output_type
 class GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyResult(dict):
     def __init__(__self__, *,
-                 is_default: bool,
-                 parameters_definitions: Sequence['outputs.GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyParametersDefinitionResult'],
-                 strategy_name: str):
-        """
-        :param bool is_default: Whether this is the default recommendation strategy.
-        :param Sequence['GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyParametersDefinitionArgs'] parameters_definitions: The list of strategies for the parameters.
-        :param str strategy_name: The name of the strategy.
-        """
-        pulumi.set(__self__, "is_default", is_default)
-        pulumi.set(__self__, "parameters_definitions", parameters_definitions)
-        pulumi.set(__self__, "strategy_name", strategy_name)
+                 is_default: Optional[bool] = None,
+                 parameters_definitions: Optional[Sequence['outputs.GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyParametersDefinitionResult']] = None,
+                 strategy_name: Optional[str] = None):
+        if is_default is not None:
+            pulumi.set(__self__, "is_default", is_default)
+        if parameters_definitions is not None:
+            pulumi.set(__self__, "parameters_definitions", parameters_definitions)
+        if strategy_name is not None:
+            pulumi.set(__self__, "strategy_name", strategy_name)
 
     @property
     @pulumi.getter(name="isDefault")
-    def is_default(self) -> bool:
-        """
-        Whether this is the default recommendation strategy.
-        """
+    def is_default(self) -> Optional[bool]:
         return pulumi.get(self, "is_default")
 
     @property
     @pulumi.getter(name="parametersDefinitions")
-    def parameters_definitions(self) -> Sequence['outputs.GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyParametersDefinitionResult']:
-        """
-        The list of strategies for the parameters.
-        """
+    def parameters_definitions(self) -> Optional[Sequence['outputs.GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyParametersDefinitionResult']]:
         return pulumi.get(self, "parameters_definitions")
 
     @property
     @pulumi.getter(name="strategyName")
-    def strategy_name(self) -> str:
-        """
-        The name of the strategy.
-        """
+    def strategy_name(self) -> Optional[str]:
         return pulumi.get(self, "strategy_name")
 
 
 @pulumi.output_type
 class GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyParametersDefinitionResult(dict):
     def __init__(__self__, *,
-                 default_values: Sequence[Any],
-                 description: str,
-                 is_required: bool,
-                 name: str,
-                 possible_values: Sequence[Any],
-                 type: str):
-        """
-        :param Sequence[Any] default_values: A default value used for the strategy parameter.
-        :param str description: Text describing the strategy parameter.
-        :param bool is_required: Whether this parameter is required.
-        :param str name: Optional. A filter that returns results that match the name specified.
-        :param Sequence[Any] possible_values: The list of possible values used for these strategy parameters.
-        :param str type: The type of strategy parameter.
-        """
-        pulumi.set(__self__, "default_values", default_values)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "is_required", is_required)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "possible_values", possible_values)
-        pulumi.set(__self__, "type", type)
+                 default_values: Optional[Sequence[Any]] = None,
+                 description: Optional[str] = None,
+                 is_required: Optional[bool] = None,
+                 name: Optional[str] = None,
+                 possible_values: Optional[Sequence[Any]] = None,
+                 type: Optional[str] = None):
+        if default_values is not None:
+            pulumi.set(__self__, "default_values", default_values)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if is_required is not None:
+            pulumi.set(__self__, "is_required", is_required)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if possible_values is not None:
+            pulumi.set(__self__, "possible_values", possible_values)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
 
     @property
     @pulumi.getter(name="defaultValues")
-    def default_values(self) -> Sequence[Any]:
-        """
-        A default value used for the strategy parameter.
-        """
+    def default_values(self) -> Optional[Sequence[Any]]:
         return pulumi.get(self, "default_values")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        Text describing the strategy parameter.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="isRequired")
-    def is_required(self) -> bool:
-        """
-        Whether this parameter is required.
-        """
+    def is_required(self) -> Optional[bool]:
         return pulumi.get(self, "is_required")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        Optional. A filter that returns results that match the name specified.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="possibleValues")
-    def possible_values(self) -> Sequence[Any]:
-        """
-        The list of possible values used for these strategy parameters.
-        """
+    def possible_values(self) -> Optional[Sequence[Any]]:
         return pulumi.get(self, "possible_values")
 
     @property
     @pulumi.getter
-    def type(self) -> str:
-        """
-        The type of strategy parameter.
-        """
+    def type(self) -> Optional[str]:
         return pulumi.get(self, "type")
 
 
 @pulumi.output_type
 class GetRecommendationStrategyItemResult(dict):
     def __init__(__self__, *,
-                 name: str,
-                 strategies: Sequence['outputs.GetRecommendationStrategyItemStrategyResult']):
-        """
-        :param str name: Optional. A filter that returns results that match the name specified.
-        :param Sequence['GetRecommendationStrategyItemStrategyArgs'] strategies: The list of strategies used.
-        """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "strategies", strategies)
+                 name: Optional[str] = None,
+                 strategies: Optional[Sequence['outputs.GetRecommendationStrategyItemStrategyResult']] = None):
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if strategies is not None:
+            pulumi.set(__self__, "strategies", strategies)
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        Optional. A filter that returns results that match the name specified.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
-    def strategies(self) -> Sequence['outputs.GetRecommendationStrategyItemStrategyResult']:
-        """
-        The list of strategies used.
-        """
+    def strategies(self) -> Optional[Sequence['outputs.GetRecommendationStrategyItemStrategyResult']]:
         return pulumi.get(self, "strategies")
 
 
 @pulumi.output_type
 class GetRecommendationStrategyItemStrategyResult(dict):
     def __init__(__self__, *,
-                 is_default: bool,
-                 parameters_definitions: Sequence['outputs.GetRecommendationStrategyItemStrategyParametersDefinitionResult'],
-                 strategy_name: str):
-        """
-        :param bool is_default: Whether this is the default recommendation strategy.
-        :param Sequence['GetRecommendationStrategyItemStrategyParametersDefinitionArgs'] parameters_definitions: The list of strategies for the parameters.
-        :param str strategy_name: The name of the strategy.
-        """
-        pulumi.set(__self__, "is_default", is_default)
-        pulumi.set(__self__, "parameters_definitions", parameters_definitions)
-        pulumi.set(__self__, "strategy_name", strategy_name)
+                 is_default: Optional[bool] = None,
+                 parameters_definitions: Optional[Sequence['outputs.GetRecommendationStrategyItemStrategyParametersDefinitionResult']] = None,
+                 strategy_name: Optional[str] = None):
+        if is_default is not None:
+            pulumi.set(__self__, "is_default", is_default)
+        if parameters_definitions is not None:
+            pulumi.set(__self__, "parameters_definitions", parameters_definitions)
+        if strategy_name is not None:
+            pulumi.set(__self__, "strategy_name", strategy_name)
 
     @property
     @pulumi.getter(name="isDefault")
-    def is_default(self) -> bool:
-        """
-        Whether this is the default recommendation strategy.
-        """
+    def is_default(self) -> Optional[bool]:
         return pulumi.get(self, "is_default")
 
     @property
     @pulumi.getter(name="parametersDefinitions")
-    def parameters_definitions(self) -> Sequence['outputs.GetRecommendationStrategyItemStrategyParametersDefinitionResult']:
-        """
-        The list of strategies for the parameters.
-        """
+    def parameters_definitions(self) -> Optional[Sequence['outputs.GetRecommendationStrategyItemStrategyParametersDefinitionResult']]:
         return pulumi.get(self, "parameters_definitions")
 
     @property
     @pulumi.getter(name="strategyName")
-    def strategy_name(self) -> str:
-        """
-        The name of the strategy.
-        """
+    def strategy_name(self) -> Optional[str]:
         return pulumi.get(self, "strategy_name")
 
 
 @pulumi.output_type
 class GetRecommendationStrategyItemStrategyParametersDefinitionResult(dict):
     def __init__(__self__, *,
-                 default_values: Sequence[Any],
-                 description: str,
-                 is_required: bool,
-                 name: str,
-                 possible_values: Sequence[Any],
-                 type: str):
-        """
-        :param Sequence[Any] default_values: A default value used for the strategy parameter.
-        :param str description: Text describing the strategy parameter.
-        :param bool is_required: Whether this parameter is required.
-        :param str name: Optional. A filter that returns results that match the name specified.
-        :param Sequence[Any] possible_values: The list of possible values used for these strategy parameters.
-        :param str type: The type of strategy parameter.
-        """
-        pulumi.set(__self__, "default_values", default_values)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "is_required", is_required)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "possible_values", possible_values)
-        pulumi.set(__self__, "type", type)
+                 default_values: Optional[Sequence[Any]] = None,
+                 description: Optional[str] = None,
+                 is_required: Optional[bool] = None,
+                 name: Optional[str] = None,
+                 possible_values: Optional[Sequence[Any]] = None,
+                 type: Optional[str] = None):
+        if default_values is not None:
+            pulumi.set(__self__, "default_values", default_values)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if is_required is not None:
+            pulumi.set(__self__, "is_required", is_required)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if possible_values is not None:
+            pulumi.set(__self__, "possible_values", possible_values)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
 
     @property
     @pulumi.getter(name="defaultValues")
-    def default_values(self) -> Sequence[Any]:
-        """
-        A default value used for the strategy parameter.
-        """
+    def default_values(self) -> Optional[Sequence[Any]]:
         return pulumi.get(self, "default_values")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        Text describing the strategy parameter.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="isRequired")
-    def is_required(self) -> bool:
-        """
-        Whether this parameter is required.
-        """
+    def is_required(self) -> Optional[bool]:
         return pulumi.get(self, "is_required")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        Optional. A filter that returns results that match the name specified.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="possibleValues")
-    def possible_values(self) -> Sequence[Any]:
-        """
-        The list of possible values used for these strategy parameters.
-        """
+    def possible_values(self) -> Optional[Sequence[Any]]:
         return pulumi.get(self, "possible_values")
 
     @property
     @pulumi.getter
-    def type(self) -> str:
-        """
-        The type of strategy parameter.
-        """
+    def type(self) -> Optional[str]:
         return pulumi.get(self, "type")
 
 
 @pulumi.output_type
 class GetRecommendationSupportedLevelResult(dict):
     def __init__(__self__, *,
-                 items: Sequence['outputs.GetRecommendationSupportedLevelItemResult']):
-        """
-        :param Sequence['GetRecommendationSupportedLevelItemArgs'] items: The list of supported levels.
-        """
-        pulumi.set(__self__, "items", items)
+                 items: Optional[Sequence['outputs.GetRecommendationSupportedLevelItemResult']] = None):
+        if items is not None:
+            pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetRecommendationSupportedLevelItemResult']:
-        """
-        The list of supported levels.
-        """
+    def items(self) -> Optional[Sequence['outputs.GetRecommendationSupportedLevelItemResult']]:
         return pulumi.get(self, "items")
 
 
 @pulumi.output_type
 class GetRecommendationSupportedLevelItemResult(dict):
     def __init__(__self__, *,
-                 name: str):
-        """
-        :param str name: The name of the profile level.
-        """
-        pulumi.set(__self__, "name", name)
+                 name: Optional[str] = None):
+        if name is not None:
+            pulumi.set(__self__, "name", name)
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        The name of the profile level.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
 
@@ -2294,9 +1707,6 @@ class GetRecommendationsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: Optional. A filter that returns results that match the name specified.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -2305,9 +1715,6 @@ class GetRecommendationsFilterResult(dict):
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        Optional. A filter that returns results that match the name specified.
-        """
         return pulumi.get(self, "name")
 
     @property
@@ -2324,313 +1731,230 @@ class GetRecommendationsFilterResult(dict):
 @pulumi.output_type
 class GetRecommendationsRecommendationCollectionResult(dict):
     def __init__(__self__, *,
-                 items: Sequence['outputs.GetRecommendationsRecommendationCollectionItemResult']):
-        """
-        :param Sequence['GetRecommendationsRecommendationCollectionItemArgs'] items: The list of supported levels.
-        """
-        pulumi.set(__self__, "items", items)
+                 items: Optional[Sequence['outputs.GetRecommendationsRecommendationCollectionItemResult']] = None):
+        if items is not None:
+            pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetRecommendationsRecommendationCollectionItemResult']:
-        """
-        The list of supported levels.
-        """
+    def items(self) -> Optional[Sequence['outputs.GetRecommendationsRecommendationCollectionItemResult']]:
         return pulumi.get(self, "items")
 
 
 @pulumi.output_type
 class GetRecommendationsRecommendationCollectionItemResult(dict):
     def __init__(__self__, *,
-                 category_id: str,
-                 compartment_id: str,
-                 description: str,
-                 estimated_cost_saving: float,
-                 extended_metadata: Mapping[str, Any],
-                 id: str,
-                 importance: str,
-                 name: str,
-                 recommendation_id: str,
-                 resource_counts: Sequence['outputs.GetRecommendationsRecommendationCollectionItemResourceCountResult'],
-                 state: str,
-                 status: str,
-                 supported_levels: Sequence['outputs.GetRecommendationsRecommendationCollectionItemSupportedLevelResult'],
-                 time_created: str,
-                 time_status_begin: str,
-                 time_status_end: str,
-                 time_updated: str):
-        """
-        :param str category_id: The unique OCID associated with the category.
-        :param str compartment_id: The OCID of the compartment.
-        :param str description: Text describing the recommendation.
-        :param float estimated_cost_saving: The estimated cost savings, in dollars, for the recommendation.
-        :param Mapping[str, Any] extended_metadata: Additional metadata key/value pairs for the recommendation.
-        :param str id: The unique OCID associated with the recommendation.
-        :param str importance: The level of importance assigned to the recommendation.
-        :param str name: Optional. A filter that returns results that match the name specified.
-        :param Sequence['GetRecommendationsRecommendationCollectionItemResourceCountArgs'] resource_counts: An array of `ResourceCount` objects grouped by the status of the resource actions.
-        :param str state: A filter that returns results that match the lifecycle state specified.
-        :param str status: A filter that returns recommendations that match the status specified.
-        :param Sequence['GetRecommendationsRecommendationCollectionItemSupportedLevelArgs'] supported_levels: Optional. The profile levels supported by a recommendation. For example, profile level values could be `Low`, `Medium`, and `High`. Not all recommendations support this field.
-        :param str time_created: The date and time the recommendation details were created, in the format defined by RFC3339.
-        :param str time_status_begin: The date and time that the recommendation entered its current status. The format is defined by RFC3339.
-        :param str time_status_end: The date and time the current status will change. The format is defined by RFC3339.
-        :param str time_updated: The date and time the recommendation details were last updated, in the format defined by RFC3339.
-        """
-        pulumi.set(__self__, "category_id", category_id)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "estimated_cost_saving", estimated_cost_saving)
-        pulumi.set(__self__, "extended_metadata", extended_metadata)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "importance", importance)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "recommendation_id", recommendation_id)
-        pulumi.set(__self__, "resource_counts", resource_counts)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "status", status)
-        pulumi.set(__self__, "supported_levels", supported_levels)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_status_begin", time_status_begin)
-        pulumi.set(__self__, "time_status_end", time_status_end)
-        pulumi.set(__self__, "time_updated", time_updated)
+                 category_id: Optional[str] = None,
+                 compartment_id: Optional[str] = None,
+                 description: Optional[str] = None,
+                 estimated_cost_saving: Optional[float] = None,
+                 extended_metadata: Optional[Mapping[str, Any]] = None,
+                 id: Optional[str] = None,
+                 importance: Optional[str] = None,
+                 name: Optional[str] = None,
+                 recommendation_id: Optional[str] = None,
+                 resource_counts: Optional[Sequence['outputs.GetRecommendationsRecommendationCollectionItemResourceCountResult']] = None,
+                 state: Optional[str] = None,
+                 status: Optional[str] = None,
+                 supported_levels: Optional[Sequence['outputs.GetRecommendationsRecommendationCollectionItemSupportedLevelResult']] = None,
+                 time_created: Optional[str] = None,
+                 time_status_begin: Optional[str] = None,
+                 time_status_end: Optional[str] = None,
+                 time_updated: Optional[str] = None):
+        if category_id is not None:
+            pulumi.set(__self__, "category_id", category_id)
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if estimated_cost_saving is not None:
+            pulumi.set(__self__, "estimated_cost_saving", estimated_cost_saving)
+        if extended_metadata is not None:
+            pulumi.set(__self__, "extended_metadata", extended_metadata)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if importance is not None:
+            pulumi.set(__self__, "importance", importance)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if recommendation_id is not None:
+            pulumi.set(__self__, "recommendation_id", recommendation_id)
+        if resource_counts is not None:
+            pulumi.set(__self__, "resource_counts", resource_counts)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if status is not None:
+            pulumi.set(__self__, "status", status)
+        if supported_levels is not None:
+            pulumi.set(__self__, "supported_levels", supported_levels)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if time_status_begin is not None:
+            pulumi.set(__self__, "time_status_begin", time_status_begin)
+        if time_status_end is not None:
+            pulumi.set(__self__, "time_status_end", time_status_end)
+        if time_updated is not None:
+            pulumi.set(__self__, "time_updated", time_updated)
 
     @property
     @pulumi.getter(name="categoryId")
-    def category_id(self) -> str:
-        """
-        The unique OCID associated with the category.
-        """
+    def category_id(self) -> Optional[str]:
         return pulumi.get(self, "category_id")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The OCID of the compartment.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        Text describing the recommendation.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="estimatedCostSaving")
-    def estimated_cost_saving(self) -> float:
-        """
-        The estimated cost savings, in dollars, for the recommendation.
-        """
+    def estimated_cost_saving(self) -> Optional[float]:
         return pulumi.get(self, "estimated_cost_saving")
 
     @property
     @pulumi.getter(name="extendedMetadata")
-    def extended_metadata(self) -> Mapping[str, Any]:
-        """
-        Additional metadata key/value pairs for the recommendation.
-        """
+    def extended_metadata(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "extended_metadata")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The unique OCID associated with the recommendation.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter
-    def importance(self) -> str:
-        """
-        The level of importance assigned to the recommendation.
-        """
+    def importance(self) -> Optional[str]:
         return pulumi.get(self, "importance")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        Optional. A filter that returns results that match the name specified.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="recommendationId")
-    def recommendation_id(self) -> str:
+    def recommendation_id(self) -> Optional[str]:
         return pulumi.get(self, "recommendation_id")
 
     @property
     @pulumi.getter(name="resourceCounts")
-    def resource_counts(self) -> Sequence['outputs.GetRecommendationsRecommendationCollectionItemResourceCountResult']:
-        """
-        An array of `ResourceCount` objects grouped by the status of the resource actions.
-        """
+    def resource_counts(self) -> Optional[Sequence['outputs.GetRecommendationsRecommendationCollectionItemResourceCountResult']]:
         return pulumi.get(self, "resource_counts")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        A filter that returns results that match the lifecycle state specified.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter
-    def status(self) -> str:
-        """
-        A filter that returns recommendations that match the status specified.
-        """
+    def status(self) -> Optional[str]:
         return pulumi.get(self, "status")
 
     @property
     @pulumi.getter(name="supportedLevels")
-    def supported_levels(self) -> Sequence['outputs.GetRecommendationsRecommendationCollectionItemSupportedLevelResult']:
-        """
-        Optional. The profile levels supported by a recommendation. For example, profile level values could be `Low`, `Medium`, and `High`. Not all recommendations support this field.
-        """
+    def supported_levels(self) -> Optional[Sequence['outputs.GetRecommendationsRecommendationCollectionItemSupportedLevelResult']]:
         return pulumi.get(self, "supported_levels")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the recommendation details were created, in the format defined by RFC3339.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeStatusBegin")
-    def time_status_begin(self) -> str:
-        """
-        The date and time that the recommendation entered its current status. The format is defined by RFC3339.
-        """
+    def time_status_begin(self) -> Optional[str]:
         return pulumi.get(self, "time_status_begin")
 
     @property
     @pulumi.getter(name="timeStatusEnd")
-    def time_status_end(self) -> str:
-        """
-        The date and time the current status will change. The format is defined by RFC3339.
-        """
+    def time_status_end(self) -> Optional[str]:
         return pulumi.get(self, "time_status_end")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The date and time the recommendation details were last updated, in the format defined by RFC3339.
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
 
 @pulumi.output_type
 class GetRecommendationsRecommendationCollectionItemResourceCountResult(dict):
     def __init__(__self__, *,
-                 count: int,
-                 status: str):
-        """
-        :param int count: The count of resources.
-        :param str status: A filter that returns recommendations that match the status specified.
-        """
-        pulumi.set(__self__, "count", count)
-        pulumi.set(__self__, "status", status)
+                 count: Optional[int] = None,
+                 status: Optional[str] = None):
+        if count is not None:
+            pulumi.set(__self__, "count", count)
+        if status is not None:
+            pulumi.set(__self__, "status", status)
 
     @property
     @pulumi.getter
-    def count(self) -> int:
-        """
-        The count of resources.
-        """
+    def count(self) -> Optional[int]:
         return pulumi.get(self, "count")
 
     @property
     @pulumi.getter
-    def status(self) -> str:
-        """
-        A filter that returns recommendations that match the status specified.
-        """
+    def status(self) -> Optional[str]:
         return pulumi.get(self, "status")
 
 
 @pulumi.output_type
 class GetRecommendationsRecommendationCollectionItemSupportedLevelResult(dict):
     def __init__(__self__, *,
-                 items: Sequence['outputs.GetRecommendationsRecommendationCollectionItemSupportedLevelItemResult']):
-        """
-        :param Sequence['GetRecommendationsRecommendationCollectionItemSupportedLevelItemArgs'] items: The list of supported levels.
-        """
-        pulumi.set(__self__, "items", items)
+                 items: Optional[Sequence['outputs.GetRecommendationsRecommendationCollectionItemSupportedLevelItemResult']] = None):
+        if items is not None:
+            pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetRecommendationsRecommendationCollectionItemSupportedLevelItemResult']:
-        """
-        The list of supported levels.
-        """
+    def items(self) -> Optional[Sequence['outputs.GetRecommendationsRecommendationCollectionItemSupportedLevelItemResult']]:
         return pulumi.get(self, "items")
 
 
 @pulumi.output_type
 class GetRecommendationsRecommendationCollectionItemSupportedLevelItemResult(dict):
     def __init__(__self__, *,
-                 name: str):
-        """
-        :param str name: Optional. A filter that returns results that match the name specified.
-        """
-        pulumi.set(__self__, "name", name)
+                 name: Optional[str] = None):
+        if name is not None:
+            pulumi.set(__self__, "name", name)
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        Optional. A filter that returns results that match the name specified.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
 
 @pulumi.output_type
 class GetResourceActionActionResult(dict):
     def __init__(__self__, *,
-                 description: str,
-                 type: str,
-                 url: str):
-        """
-        :param str description: Text describing the recommended action.
-        :param str type: The status of the resource action.
-        :param str url: The URL path to documentation that explains how to perform the action.
-        """
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "type", type)
-        pulumi.set(__self__, "url", url)
+                 description: Optional[str] = None,
+                 type: Optional[str] = None,
+                 url: Optional[str] = None):
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+        if url is not None:
+            pulumi.set(__self__, "url", url)
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        Text describing the recommended action.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter
-    def type(self) -> str:
-        """
-        The status of the resource action.
-        """
+    def type(self) -> Optional[str]:
         return pulumi.get(self, "type")
 
     @property
     @pulumi.getter
-    def url(self) -> str:
-        """
-        The URL path to documentation that explains how to perform the action.
-        """
+    def url(self) -> Optional[str]:
         return pulumi.get(self, "url")
 
 
@@ -2640,9 +1964,6 @@ class GetResourceActionsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: Optional. A filter that returns results that match the name specified.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -2651,9 +1972,6 @@ class GetResourceActionsFilterResult(dict):
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        Optional. A filter that returns results that match the name specified.
-        """
         return pulumi.get(self, "name")
 
     @property
@@ -2670,264 +1988,199 @@ class GetResourceActionsFilterResult(dict):
 @pulumi.output_type
 class GetResourceActionsResourceActionCollectionResult(dict):
     def __init__(__self__, *,
-                 items: Sequence['outputs.GetResourceActionsResourceActionCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+                 items: Optional[Sequence['outputs.GetResourceActionsResourceActionCollectionItemResult']] = None):
+        if items is not None:
+            pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetResourceActionsResourceActionCollectionItemResult']:
+    def items(self) -> Optional[Sequence['outputs.GetResourceActionsResourceActionCollectionItemResult']]:
         return pulumi.get(self, "items")
 
 
 @pulumi.output_type
 class GetResourceActionsResourceActionCollectionItemResult(dict):
     def __init__(__self__, *,
-                 actions: Sequence['outputs.GetResourceActionsResourceActionCollectionItemActionResult'],
-                 category_id: str,
-                 compartment_id: str,
-                 compartment_name: str,
-                 estimated_cost_saving: float,
-                 extended_metadata: Mapping[str, Any],
-                 id: str,
-                 metadata: Mapping[str, Any],
-                 name: str,
-                 recommendation_id: str,
-                 resource_action_id: str,
-                 resource_id: str,
-                 resource_type: str,
-                 state: str,
-                 status: str,
-                 time_created: str,
-                 time_status_begin: str,
-                 time_status_end: str,
-                 time_updated: str):
-        """
-        :param Sequence['GetResourceActionsResourceActionCollectionItemActionArgs'] actions: Details about the recommended action.
-        :param str category_id: The unique OCID associated with the category.
-        :param str compartment_id: The OCID of the compartment.
-        :param str compartment_name: The name associated with the compartment.
-        :param float estimated_cost_saving: The estimated cost savings, in dollars, for the resource action.
-        :param Mapping[str, Any] extended_metadata: Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
-        :param str id: The unique OCID associated with the resource action.
-        :param Mapping[str, Any] metadata: Custom metadata key/value pairs for the resource action.
-        :param str name: Optional. A filter that returns results that match the name specified.
-        :param str recommendation_id: The unique OCID associated with the recommendation.
-        :param str resource_id: The unique OCID associated with the resource.
-        :param str resource_type: Optional. A filter that returns results that match the resource type specified.
-        :param str state: A filter that returns results that match the lifecycle state specified.
-        :param str status: A filter that returns recommendations that match the status specified.
-        :param str time_created: The date and time the resource action details were created, in the format defined by RFC3339.
-        :param str time_status_begin: The date and time that the resource action entered its current status. The format is defined by RFC3339.
-        :param str time_status_end: The date and time the current status will change. The format is defined by RFC3339.
-        :param str time_updated: The date and time the resource action details were last updated, in the format defined by RFC3339.
-        """
-        pulumi.set(__self__, "actions", actions)
-        pulumi.set(__self__, "category_id", category_id)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "compartment_name", compartment_name)
-        pulumi.set(__self__, "estimated_cost_saving", estimated_cost_saving)
-        pulumi.set(__self__, "extended_metadata", extended_metadata)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "metadata", metadata)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "recommendation_id", recommendation_id)
-        pulumi.set(__self__, "resource_action_id", resource_action_id)
-        pulumi.set(__self__, "resource_id", resource_id)
-        pulumi.set(__self__, "resource_type", resource_type)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "status", status)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_status_begin", time_status_begin)
-        pulumi.set(__self__, "time_status_end", time_status_end)
-        pulumi.set(__self__, "time_updated", time_updated)
+                 actions: Optional[Sequence['outputs.GetResourceActionsResourceActionCollectionItemActionResult']] = None,
+                 category_id: Optional[str] = None,
+                 compartment_id: Optional[str] = None,
+                 compartment_name: Optional[str] = None,
+                 estimated_cost_saving: Optional[float] = None,
+                 extended_metadata: Optional[Mapping[str, Any]] = None,
+                 id: Optional[str] = None,
+                 metadata: Optional[Mapping[str, Any]] = None,
+                 name: Optional[str] = None,
+                 recommendation_id: Optional[str] = None,
+                 resource_action_id: Optional[str] = None,
+                 resource_id: Optional[str] = None,
+                 resource_type: Optional[str] = None,
+                 state: Optional[str] = None,
+                 status: Optional[str] = None,
+                 time_created: Optional[str] = None,
+                 time_status_begin: Optional[str] = None,
+                 time_status_end: Optional[str] = None,
+                 time_updated: Optional[str] = None):
+        if actions is not None:
+            pulumi.set(__self__, "actions", actions)
+        if category_id is not None:
+            pulumi.set(__self__, "category_id", category_id)
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if compartment_name is not None:
+            pulumi.set(__self__, "compartment_name", compartment_name)
+        if estimated_cost_saving is not None:
+            pulumi.set(__self__, "estimated_cost_saving", estimated_cost_saving)
+        if extended_metadata is not None:
+            pulumi.set(__self__, "extended_metadata", extended_metadata)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if metadata is not None:
+            pulumi.set(__self__, "metadata", metadata)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if recommendation_id is not None:
+            pulumi.set(__self__, "recommendation_id", recommendation_id)
+        if resource_action_id is not None:
+            pulumi.set(__self__, "resource_action_id", resource_action_id)
+        if resource_id is not None:
+            pulumi.set(__self__, "resource_id", resource_id)
+        if resource_type is not None:
+            pulumi.set(__self__, "resource_type", resource_type)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if status is not None:
+            pulumi.set(__self__, "status", status)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if time_status_begin is not None:
+            pulumi.set(__self__, "time_status_begin", time_status_begin)
+        if time_status_end is not None:
+            pulumi.set(__self__, "time_status_end", time_status_end)
+        if time_updated is not None:
+            pulumi.set(__self__, "time_updated", time_updated)
 
     @property
     @pulumi.getter
-    def actions(self) -> Sequence['outputs.GetResourceActionsResourceActionCollectionItemActionResult']:
-        """
-        Details about the recommended action.
-        """
+    def actions(self) -> Optional[Sequence['outputs.GetResourceActionsResourceActionCollectionItemActionResult']]:
         return pulumi.get(self, "actions")
 
     @property
     @pulumi.getter(name="categoryId")
-    def category_id(self) -> str:
-        """
-        The unique OCID associated with the category.
-        """
+    def category_id(self) -> Optional[str]:
         return pulumi.get(self, "category_id")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The OCID of the compartment.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="compartmentName")
-    def compartment_name(self) -> str:
-        """
-        The name associated with the compartment.
-        """
+    def compartment_name(self) -> Optional[str]:
         return pulumi.get(self, "compartment_name")
 
     @property
     @pulumi.getter(name="estimatedCostSaving")
-    def estimated_cost_saving(self) -> float:
-        """
-        The estimated cost savings, in dollars, for the resource action.
-        """
+    def estimated_cost_saving(self) -> Optional[float]:
         return pulumi.get(self, "estimated_cost_saving")
 
     @property
     @pulumi.getter(name="extendedMetadata")
-    def extended_metadata(self) -> Mapping[str, Any]:
-        """
-        Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
-        """
+    def extended_metadata(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "extended_metadata")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The unique OCID associated with the resource action.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter
-    def metadata(self) -> Mapping[str, Any]:
-        """
-        Custom metadata key/value pairs for the resource action.
-        """
+    def metadata(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "metadata")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        Optional. A filter that returns results that match the name specified.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="recommendationId")
-    def recommendation_id(self) -> str:
-        """
-        The unique OCID associated with the recommendation.
-        """
+    def recommendation_id(self) -> Optional[str]:
         return pulumi.get(self, "recommendation_id")
 
     @property
     @pulumi.getter(name="resourceActionId")
-    def resource_action_id(self) -> str:
+    def resource_action_id(self) -> Optional[str]:
         return pulumi.get(self, "resource_action_id")
 
     @property
     @pulumi.getter(name="resourceId")
-    def resource_id(self) -> str:
-        """
-        The unique OCID associated with the resource.
-        """
+    def resource_id(self) -> Optional[str]:
         return pulumi.get(self, "resource_id")
 
     @property
     @pulumi.getter(name="resourceType")
-    def resource_type(self) -> str:
-        """
-        Optional. A filter that returns results that match the resource type specified.
-        """
+    def resource_type(self) -> Optional[str]:
         return pulumi.get(self, "resource_type")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        A filter that returns results that match the lifecycle state specified.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter
-    def status(self) -> str:
-        """
-        A filter that returns recommendations that match the status specified.
-        """
+    def status(self) -> Optional[str]:
         return pulumi.get(self, "status")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the resource action details were created, in the format defined by RFC3339.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeStatusBegin")
-    def time_status_begin(self) -> str:
-        """
-        The date and time that the resource action entered its current status. The format is defined by RFC3339.
-        """
+    def time_status_begin(self) -> Optional[str]:
         return pulumi.get(self, "time_status_begin")
 
     @property
     @pulumi.getter(name="timeStatusEnd")
-    def time_status_end(self) -> str:
-        """
-        The date and time the current status will change. The format is defined by RFC3339.
-        """
+    def time_status_end(self) -> Optional[str]:
         return pulumi.get(self, "time_status_end")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The date and time the resource action details were last updated, in the format defined by RFC3339.
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
 
 @pulumi.output_type
 class GetResourceActionsResourceActionCollectionItemActionResult(dict):
     def __init__(__self__, *,
-                 description: str,
-                 type: str,
-                 url: str):
-        """
-        :param str description: Text describing the recommended action.
-        :param str type: The status of the resource action.
-        :param str url: The URL path to documentation that explains how to perform the action.
-        """
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "type", type)
-        pulumi.set(__self__, "url", url)
+                 description: Optional[str] = None,
+                 type: Optional[str] = None,
+                 url: Optional[str] = None):
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+        if url is not None:
+            pulumi.set(__self__, "url", url)
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        Text describing the recommended action.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter
-    def type(self) -> str:
-        """
-        The status of the resource action.
-        """
+    def type(self) -> Optional[str]:
         return pulumi.get(self, "type")
 
     @property
     @pulumi.getter
-    def url(self) -> str:
-        """
-        The URL path to documentation that explains how to perform the action.
-        """
+    def url(self) -> Optional[str]:
         return pulumi.get(self, "url")
 
 

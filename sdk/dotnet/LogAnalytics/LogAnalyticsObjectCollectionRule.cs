@@ -73,13 +73,13 @@ namespace Pulumi.Oci.LogAnalytics
         /// (Updatable) An optional character encoding to aid in detecting the character encoding of the contents of the objects while processing. It is recommended to set this value as ISO_8589_1 when configuring content of the objects having more numeric characters, and very few alphabets. For e.g. this applies when configuring VCN Flow Logs.
         /// </summary>
         [Output("charEncoding")]
-        public Output<string> CharEncoding { get; private set; } = null!;
+        public Output<string?> CharEncoding { get; private set; } = null!;
 
         /// <summary>
         /// The type of collection. Supported collection types: LIVE, HISTORIC, HISTORIC_LIVE
         /// </summary>
         [Output("collectionType")]
-        public Output<string> CollectionType { get; private set; } = null!;
+        public Output<string?> CollectionType { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to which this rule belongs.
@@ -91,37 +91,37 @@ namespace Pulumi.Oci.LogAnalytics
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) A string that describes the details of the rule. It does not have to be unique, and can be changed. Avoid entering confidential information.
         /// </summary>
         [Output("description")]
-        public Output<string> Description { get; private set; } = null!;
+        public Output<string?> Description { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Logging Analytics entity OCID. Associates the processed logs with the given entity (optional).
         /// </summary>
         [Output("entityId")]
-        public Output<string> EntityId { get; private set; } = null!;
+        public Output<string?> EntityId { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Whether or not this rule is currently enabled.
         /// </summary>
         [Output("isEnabled")]
-        public Output<bool> IsEnabled { get; private set; } = null!;
+        public Output<bool?> IsEnabled { get; private set; } = null!;
 
         /// <summary>
         /// A detailed status of the life cycle state.
         /// </summary>
         [Output("lifecycleDetails")]
-        public Output<string> LifecycleDetails { get; private set; } = null!;
+        public Output<string?> LifecycleDetails { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Logging Analytics Log group OCID to associate the processed logs with.
@@ -133,19 +133,19 @@ namespace Pulumi.Oci.LogAnalytics
         /// (Updatable) The logSet to be associated with the processed logs. The logSet feature can be used by customers with high volume of data  and this feature has to be enabled for a given tenancy prior to its usage. When logSetExtRegex value is provided, it will take precedence over this logSet value and logSet will be computed dynamically  using logSetKey and logSetExtRegex.
         /// </summary>
         [Output("logSet")]
-        public Output<string> LogSet { get; private set; } = null!;
+        public Output<string?> LogSet { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The regex to be applied against given logSetKey. Regex has to be in string escaped format.
         /// </summary>
         [Output("logSetExtRegex")]
-        public Output<string> LogSetExtRegex { get; private set; } = null!;
+        public Output<string?> LogSetExtRegex { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) An optional parameter to indicate from where the logSet to be extracted using logSetExtRegex. Default value is OBJECT_PATH (e.g. /n/&lt;namespace&gt;/b/&lt;bucketname&gt;/o/&lt;objectname&gt;).
         /// </summary>
         [Output("logSetKey")]
-        public Output<string> LogSetKey { get; private set; } = null!;
+        public Output<string?> LogSetKey { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Name of the Logging Analytics Source to use for the processing.
@@ -193,31 +193,31 @@ namespace Pulumi.Oci.LogAnalytics
         /// The oldest time of the file in the bucket to consider for collection. Accepted values are: BEGINNING or CURRENT_TIME or RFC3339 formatted datetime string. Use this for HISTORIC or HISTORIC_LIVE collection types. When collectionType is LIVE, specifying pollSince value other than CURRENT_TIME will result in error.
         /// </summary>
         [Output("pollSince")]
-        public Output<string> PollSince { get; private set; } = null!;
+        public Output<string?> PollSince { get; private set; } = null!;
 
         /// <summary>
         /// The newest time of the file in the bucket to consider for collection. Accepted values are: CURRENT_TIME or RFC3339 formatted datetime string. Use this for HISTORIC collection type. When collectionType is LIVE or HISTORIC_LIVE, specifying pollTill will result in error.
         /// </summary>
         [Output("pollTill")]
-        public Output<string> PollTill { get; private set; } = null!;
+        public Output<string?> PollTill { get; private set; } = null!;
 
         /// <summary>
         /// The current state of the rule.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// The time when this rule was created. An RFC3339 formatted datetime string.
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// The time when this rule was last updated. An RFC3339 formatted datetime string.
         /// </summary>
         [Output("timeUpdated")]
-        public Output<string> TimeUpdated { get; private set; } = null!;
+        public Output<string?> TimeUpdated { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Timezone to be used when processing log entries whose timestamps do not include an explicit timezone.  When this property is not specified, the timezone of the entity specified is used.  If the entity is also not specified or do not have a valid timezone then UTC is used. 
@@ -227,7 +227,7 @@ namespace Pulumi.Oci.LogAnalytics
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("timezone")]
-        public Output<string> Timezone { get; private set; } = null!;
+        public Output<string?> Timezone { get; private set; } = null!;
 
 
         /// <summary>

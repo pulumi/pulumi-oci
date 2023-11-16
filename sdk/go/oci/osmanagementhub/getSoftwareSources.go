@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Software Sources in Oracle Cloud Infrastructure Os Management Hub service.
@@ -103,7 +102,7 @@ type GetSoftwareSourcesResult struct {
 	DisplayNameNotEqualTos []string                   `pulumi:"displayNameNotEqualTos"`
 	Filters                []GetSoftwareSourcesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The OS family the software source belongs to.
 	OsFamilies []string `pulumi:"osFamilies"`
 	// The list of software_source_collection.
@@ -176,12 +175,6 @@ func (o GetSoftwareSourcesResultOutput) ToGetSoftwareSourcesResultOutputWithCont
 	return o
 }
 
-func (o GetSoftwareSourcesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetSoftwareSourcesResult] {
-	return pulumix.Output[GetSoftwareSourcesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The architecture type supported by the software source.
 func (o GetSoftwareSourcesResultOutput) ArchTypes() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetSoftwareSourcesResult) []string { return v.ArchTypes }).(pulumi.StringArrayOutput)
@@ -215,8 +208,8 @@ func (o GetSoftwareSourcesResultOutput) Filters() GetSoftwareSourcesFilterArrayO
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetSoftwareSourcesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSoftwareSourcesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetSoftwareSourcesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSoftwareSourcesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The OS family the software source belongs to.

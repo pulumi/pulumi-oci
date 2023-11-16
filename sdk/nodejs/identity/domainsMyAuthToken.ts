@@ -64,7 +64,7 @@ export class DomainsMyAuthToken extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public /*out*/ readonly compartmentOcid!: pulumi.Output<string>;
+    public /*out*/ readonly compartmentOcid!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
      *
@@ -78,7 +78,7 @@ export class DomainsMyAuthToken extends pulumi.CustomResource {
      * * type: boolean
      * * uniqueness: none
      */
-    public /*out*/ readonly deleteInProgress!: pulumi.Output<boolean>;
+    public /*out*/ readonly deleteInProgress!: pulumi.Output<boolean | undefined>;
     /**
      * Description
      *
@@ -91,7 +91,7 @@ export class DomainsMyAuthToken extends pulumi.CustomResource {
      * * required: false
      * * returned: default
      */
-    public readonly description!: pulumi.Output<string>;
+    public readonly description!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
      *
@@ -105,7 +105,7 @@ export class DomainsMyAuthToken extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public /*out*/ readonly domainOcid!: pulumi.Output<string>;
+    public /*out*/ readonly domainOcid!: pulumi.Output<string | undefined>;
     /**
      * When the user's credential expire.
      *
@@ -121,7 +121,7 @@ export class DomainsMyAuthToken extends pulumi.CustomResource {
      * * type: dateTime
      * * uniqueness: none
      */
-    public readonly expiresOn!: pulumi.Output<string>;
+    public readonly expiresOn!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The User or App who created the Resource
      *
@@ -133,7 +133,7 @@ export class DomainsMyAuthToken extends pulumi.CustomResource {
      * * returned: default
      * * type: complex
      */
-    public /*out*/ readonly idcsCreatedBies!: pulumi.Output<outputs.Identity.DomainsMyAuthTokenIdcsCreatedBy[]>;
+    public /*out*/ readonly idcsCreatedBies!: pulumi.Output<outputs.Identity.DomainsMyAuthTokenIdcsCreatedBy[] | undefined>;
     /**
      * The basic endpoint for the identity domain
      */
@@ -149,7 +149,7 @@ export class DomainsMyAuthToken extends pulumi.CustomResource {
      * * returned: default
      * * type: complex
      */
-    public /*out*/ readonly idcsLastModifiedBies!: pulumi.Output<outputs.Identity.DomainsMyAuthTokenIdcsLastModifiedBy[]>;
+    public /*out*/ readonly idcsLastModifiedBies!: pulumi.Output<outputs.Identity.DomainsMyAuthTokenIdcsLastModifiedBy[] | undefined>;
     /**
      * (Updatable) The release number when the resource was upgraded.
      *
@@ -163,7 +163,7 @@ export class DomainsMyAuthToken extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public /*out*/ readonly idcsLastUpgradedInRelease!: pulumi.Output<string>;
+    public /*out*/ readonly idcsLastUpgradedInRelease!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
      *
@@ -176,7 +176,7 @@ export class DomainsMyAuthToken extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public /*out*/ readonly idcsPreventedOperations!: pulumi.Output<string[]>;
+    public /*out*/ readonly idcsPreventedOperations!: pulumi.Output<string[] | undefined>;
     /**
      * (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
      *
@@ -190,7 +190,7 @@ export class DomainsMyAuthToken extends pulumi.CustomResource {
      * * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
      * * type: complex
      */
-    public /*out*/ readonly metas!: pulumi.Output<outputs.Identity.DomainsMyAuthTokenMeta[]>;
+    public /*out*/ readonly metas!: pulumi.Output<outputs.Identity.DomainsMyAuthTokenMeta[] | undefined>;
     /**
      * The user's OCID.
      *
@@ -204,7 +204,7 @@ export class DomainsMyAuthToken extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly ocid!: pulumi.Output<string>;
+    public readonly ocid!: pulumi.Output<string | undefined>;
     /**
      * An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
      */
@@ -238,7 +238,7 @@ export class DomainsMyAuthToken extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly status!: pulumi.Output<string>;
+    public readonly status!: pulumi.Output<string | undefined>;
     /**
      * A list of tags on this resource.
      *
@@ -252,7 +252,7 @@ export class DomainsMyAuthToken extends pulumi.CustomResource {
      * * type: complex
      * * uniqueness: none
      */
-    public readonly tags!: pulumi.Output<outputs.Identity.DomainsMyAuthTokenTag[]>;
+    public readonly tags!: pulumi.Output<outputs.Identity.DomainsMyAuthTokenTag[] | undefined>;
     /**
      * (Updatable) Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
      *
@@ -266,7 +266,7 @@ export class DomainsMyAuthToken extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public /*out*/ readonly tenancyOcid!: pulumi.Output<string>;
+    public /*out*/ readonly tenancyOcid!: pulumi.Output<string | undefined>;
     /**
      * The user linked to the Auth token.
      *
@@ -280,7 +280,7 @@ export class DomainsMyAuthToken extends pulumi.CustomResource {
      * * type: complex
      * * uniqueness: none
      */
-    public readonly user!: pulumi.Output<outputs.Identity.DomainsMyAuthTokenUser>;
+    public readonly user!: pulumi.Output<outputs.Identity.DomainsMyAuthTokenUser | undefined>;
 
     /**
      * Create a DomainsMyAuthToken resource with the given unique name, arguments, and options.

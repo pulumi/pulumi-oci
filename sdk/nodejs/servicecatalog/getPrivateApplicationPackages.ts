@@ -72,7 +72,7 @@ export interface GetPrivateApplicationPackagesResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The specified package's type.
      */
@@ -84,7 +84,7 @@ export interface GetPrivateApplicationPackagesResult {
     /**
      * The list of private_application_package_collection.
      */
-    readonly privateApplicationPackageCollections: outputs.ServiceCatalog.GetPrivateApplicationPackagesPrivateApplicationPackageCollection[];
+    readonly privateApplicationPackageCollections?: outputs.ServiceCatalog.GetPrivateApplicationPackagesPrivateApplicationPackageCollection[];
     readonly privateApplicationPackageId?: string;
 }
 /**

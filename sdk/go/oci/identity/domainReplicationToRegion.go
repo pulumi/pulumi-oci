@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Domain Replication To Region resource in Oracle Cloud Infrastructure Identity service.
@@ -68,7 +67,7 @@ type DomainReplicationToRegion struct {
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	ReplicaRegion pulumi.StringOutput `pulumi:"replicaRegion"`
+	ReplicaRegion pulumi.StringPtrOutput `pulumi:"replicaRegion"`
 }
 
 // NewDomainReplicationToRegion registers a new resource with the given unique name, arguments, and options.
@@ -171,12 +170,6 @@ func (i *DomainReplicationToRegion) ToDomainReplicationToRegionOutputWithContext
 	return pulumi.ToOutputWithContext(ctx, i).(DomainReplicationToRegionOutput)
 }
 
-func (i *DomainReplicationToRegion) ToOutput(ctx context.Context) pulumix.Output[*DomainReplicationToRegion] {
-	return pulumix.Output[*DomainReplicationToRegion]{
-		OutputState: i.ToDomainReplicationToRegionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // DomainReplicationToRegionArrayInput is an input type that accepts DomainReplicationToRegionArray and DomainReplicationToRegionArrayOutput values.
 // You can construct a concrete instance of `DomainReplicationToRegionArrayInput` via:
 //
@@ -200,12 +193,6 @@ func (i DomainReplicationToRegionArray) ToDomainReplicationToRegionArrayOutput()
 
 func (i DomainReplicationToRegionArray) ToDomainReplicationToRegionArrayOutputWithContext(ctx context.Context) DomainReplicationToRegionArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(DomainReplicationToRegionArrayOutput)
-}
-
-func (i DomainReplicationToRegionArray) ToOutput(ctx context.Context) pulumix.Output[[]*DomainReplicationToRegion] {
-	return pulumix.Output[[]*DomainReplicationToRegion]{
-		OutputState: i.ToDomainReplicationToRegionArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // DomainReplicationToRegionMapInput is an input type that accepts DomainReplicationToRegionMap and DomainReplicationToRegionMapOutput values.
@@ -233,12 +220,6 @@ func (i DomainReplicationToRegionMap) ToDomainReplicationToRegionMapOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(DomainReplicationToRegionMapOutput)
 }
 
-func (i DomainReplicationToRegionMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*DomainReplicationToRegion] {
-	return pulumix.Output[map[string]*DomainReplicationToRegion]{
-		OutputState: i.ToDomainReplicationToRegionMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DomainReplicationToRegionOutput struct{ *pulumi.OutputState }
 
 func (DomainReplicationToRegionOutput) ElementType() reflect.Type {
@@ -253,12 +234,6 @@ func (o DomainReplicationToRegionOutput) ToDomainReplicationToRegionOutputWithCo
 	return o
 }
 
-func (o DomainReplicationToRegionOutput) ToOutput(ctx context.Context) pulumix.Output[*DomainReplicationToRegion] {
-	return pulumix.Output[*DomainReplicationToRegion]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the domain
 func (o DomainReplicationToRegionOutput) DomainId() pulumi.StringOutput {
 	return o.ApplyT(func(v *DomainReplicationToRegion) pulumi.StringOutput { return v.DomainId }).(pulumi.StringOutput)
@@ -268,8 +243,8 @@ func (o DomainReplicationToRegionOutput) DomainId() pulumi.StringOutput {
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-func (o DomainReplicationToRegionOutput) ReplicaRegion() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainReplicationToRegion) pulumi.StringOutput { return v.ReplicaRegion }).(pulumi.StringOutput)
+func (o DomainReplicationToRegionOutput) ReplicaRegion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainReplicationToRegion) pulumi.StringPtrOutput { return v.ReplicaRegion }).(pulumi.StringPtrOutput)
 }
 
 type DomainReplicationToRegionArrayOutput struct{ *pulumi.OutputState }
@@ -284,12 +259,6 @@ func (o DomainReplicationToRegionArrayOutput) ToDomainReplicationToRegionArrayOu
 
 func (o DomainReplicationToRegionArrayOutput) ToDomainReplicationToRegionArrayOutputWithContext(ctx context.Context) DomainReplicationToRegionArrayOutput {
 	return o
-}
-
-func (o DomainReplicationToRegionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*DomainReplicationToRegion] {
-	return pulumix.Output[[]*DomainReplicationToRegion]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DomainReplicationToRegionArrayOutput) Index(i pulumi.IntInput) DomainReplicationToRegionOutput {
@@ -310,12 +279,6 @@ func (o DomainReplicationToRegionMapOutput) ToDomainReplicationToRegionMapOutput
 
 func (o DomainReplicationToRegionMapOutput) ToDomainReplicationToRegionMapOutputWithContext(ctx context.Context) DomainReplicationToRegionMapOutput {
 	return o
-}
-
-func (o DomainReplicationToRegionMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*DomainReplicationToRegion] {
-	return pulumix.Output[map[string]*DomainReplicationToRegion]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DomainReplicationToRegionMapOutput) MapIndex(k pulumi.StringInput) DomainReplicationToRegionOutput {

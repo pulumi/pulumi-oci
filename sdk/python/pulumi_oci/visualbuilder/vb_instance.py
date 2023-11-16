@@ -28,20 +28,6 @@ class VbInstanceArgs:
                  is_visual_builder_enabled: Optional[pulumi.Input[bool]] = None):
         """
         The set of arguments for constructing a VbInstance resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier.
-        :param pulumi.Input[str] display_name: (Updatable) Vb Instance Identifier.
-        :param pulumi.Input[int] node_count: (Updatable) The number of Nodes
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Sequence[pulumi.Input['VbInstanceAlternateCustomEndpointArgs']]] alternate_custom_endpoints: (Updatable) A list of alternate custom endpoints to be used for the vb instance URL (contact Oracle for alternateCustomEndpoints availability for a specific instance).
-        :param pulumi.Input[str] consumption_model: Optional parameter specifying which entitlement to use for billing purposes. Only required if the account possesses more than one entitlement.
-        :param pulumi.Input['VbInstanceCustomEndpointArgs'] custom_endpoint: (Updatable) Details for a custom endpoint for the vb instance (update).
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] idcs_open_id: (Updatable) Encrypted IDCS Open ID token. This is required for pre-UCPIS cloud accounts, but not UCPIS, hence not a required parameter
-        :param pulumi.Input[bool] is_visual_builder_enabled: (Updatable) Visual Builder is enabled or not.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "display_name", display_name)
@@ -64,9 +50,6 @@ class VbInstanceArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Compartment Identifier.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -76,9 +59,6 @@ class VbInstanceArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Vb Instance Identifier.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -88,13 +68,6 @@ class VbInstanceArgs:
     @property
     @pulumi.getter(name="nodeCount")
     def node_count(self) -> pulumi.Input[int]:
-        """
-        (Updatable) The number of Nodes
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "node_count")
 
     @node_count.setter
@@ -104,9 +77,6 @@ class VbInstanceArgs:
     @property
     @pulumi.getter(name="alternateCustomEndpoints")
     def alternate_custom_endpoints(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['VbInstanceAlternateCustomEndpointArgs']]]]:
-        """
-        (Updatable) A list of alternate custom endpoints to be used for the vb instance URL (contact Oracle for alternateCustomEndpoints availability for a specific instance).
-        """
         return pulumi.get(self, "alternate_custom_endpoints")
 
     @alternate_custom_endpoints.setter
@@ -116,9 +86,6 @@ class VbInstanceArgs:
     @property
     @pulumi.getter(name="consumptionModel")
     def consumption_model(self) -> Optional[pulumi.Input[str]]:
-        """
-        Optional parameter specifying which entitlement to use for billing purposes. Only required if the account possesses more than one entitlement.
-        """
         return pulumi.get(self, "consumption_model")
 
     @consumption_model.setter
@@ -128,9 +95,6 @@ class VbInstanceArgs:
     @property
     @pulumi.getter(name="customEndpoint")
     def custom_endpoint(self) -> Optional[pulumi.Input['VbInstanceCustomEndpointArgs']]:
-        """
-        (Updatable) Details for a custom endpoint for the vb instance (update).
-        """
         return pulumi.get(self, "custom_endpoint")
 
     @custom_endpoint.setter
@@ -140,9 +104,6 @@ class VbInstanceArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -152,9 +113,6 @@ class VbInstanceArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -164,9 +122,6 @@ class VbInstanceArgs:
     @property
     @pulumi.getter(name="idcsOpenId")
     def idcs_open_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Encrypted IDCS Open ID token. This is required for pre-UCPIS cloud accounts, but not UCPIS, hence not a required parameter
-        """
         return pulumi.get(self, "idcs_open_id")
 
     @idcs_open_id.setter
@@ -176,9 +131,6 @@ class VbInstanceArgs:
     @property
     @pulumi.getter(name="isVisualBuilderEnabled")
     def is_visual_builder_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Visual Builder is enabled or not.
-        """
         return pulumi.get(self, "is_visual_builder_enabled")
 
     @is_visual_builder_enabled.setter
@@ -213,32 +165,6 @@ class _VbInstanceState:
                  time_updated: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering VbInstance resources.
-        :param pulumi.Input[Sequence[pulumi.Input['VbInstanceAlternateCustomEndpointArgs']]] alternate_custom_endpoints: (Updatable) A list of alternate custom endpoints to be used for the vb instance URL (contact Oracle for alternateCustomEndpoints availability for a specific instance).
-        :param pulumi.Input[Sequence[pulumi.Input['VbInstanceAttachmentArgs']]] attachments: A list of associated attachments to other services
-        :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier.
-        :param pulumi.Input[str] consumption_model: Optional parameter specifying which entitlement to use for billing purposes. Only required if the account possesses more than one entitlement.
-        :param pulumi.Input['VbInstanceCustomEndpointArgs'] custom_endpoint: (Updatable) Details for a custom endpoint for the vb instance (update).
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] display_name: (Updatable) Vb Instance Identifier.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[Sequence[pulumi.Input['VbInstanceIdcsInfoArgs']]] idcs_infos: Information for IDCS access
-        :param pulumi.Input[str] idcs_open_id: (Updatable) Encrypted IDCS Open ID token. This is required for pre-UCPIS cloud accounts, but not UCPIS, hence not a required parameter
-        :param pulumi.Input[str] instance_url: The Vb Instance URL.
-        :param pulumi.Input[bool] is_visual_builder_enabled: (Updatable) Visual Builder is enabled or not.
-        :param pulumi.Input[str] management_nat_gateway_ip: The NAT gateway IP address for the VB management VCN
-        :param pulumi.Input[str] management_vcn_id: The Oracle Cloud ID (OCID) of the Visual Builder management VCN
-        :param pulumi.Input[int] node_count: (Updatable) The number of Nodes
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] service_nat_gateway_ip: The NAT gateway IP address for the VB service VCN
-        :param pulumi.Input[str] service_vcn_id: The Oracle Cloud ID (OCID) of the Visual Builder service VCN
-        :param pulumi.Input[str] state: The current state of the vb instance.
-        :param pulumi.Input[str] state_message: An message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[str] time_created: The time the the VbInstance was created. An RFC3339 formatted datetime string.
-        :param pulumi.Input[str] time_updated: The time the VbInstance was updated. An RFC3339 formatted datetime string.
         """
         if alternate_custom_endpoints is not None:
             pulumi.set(__self__, "alternate_custom_endpoints", alternate_custom_endpoints)
@@ -288,9 +214,6 @@ class _VbInstanceState:
     @property
     @pulumi.getter(name="alternateCustomEndpoints")
     def alternate_custom_endpoints(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['VbInstanceAlternateCustomEndpointArgs']]]]:
-        """
-        (Updatable) A list of alternate custom endpoints to be used for the vb instance URL (contact Oracle for alternateCustomEndpoints availability for a specific instance).
-        """
         return pulumi.get(self, "alternate_custom_endpoints")
 
     @alternate_custom_endpoints.setter
@@ -300,9 +223,6 @@ class _VbInstanceState:
     @property
     @pulumi.getter
     def attachments(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['VbInstanceAttachmentArgs']]]]:
-        """
-        A list of associated attachments to other services
-        """
         return pulumi.get(self, "attachments")
 
     @attachments.setter
@@ -312,9 +232,6 @@ class _VbInstanceState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Compartment Identifier.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -324,9 +241,6 @@ class _VbInstanceState:
     @property
     @pulumi.getter(name="consumptionModel")
     def consumption_model(self) -> Optional[pulumi.Input[str]]:
-        """
-        Optional parameter specifying which entitlement to use for billing purposes. Only required if the account possesses more than one entitlement.
-        """
         return pulumi.get(self, "consumption_model")
 
     @consumption_model.setter
@@ -336,9 +250,6 @@ class _VbInstanceState:
     @property
     @pulumi.getter(name="customEndpoint")
     def custom_endpoint(self) -> Optional[pulumi.Input['VbInstanceCustomEndpointArgs']]:
-        """
-        (Updatable) Details for a custom endpoint for the vb instance (update).
-        """
         return pulumi.get(self, "custom_endpoint")
 
     @custom_endpoint.setter
@@ -348,9 +259,6 @@ class _VbInstanceState:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -360,9 +268,6 @@ class _VbInstanceState:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Vb Instance Identifier.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -372,9 +277,6 @@ class _VbInstanceState:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -384,9 +286,6 @@ class _VbInstanceState:
     @property
     @pulumi.getter(name="idcsInfos")
     def idcs_infos(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['VbInstanceIdcsInfoArgs']]]]:
-        """
-        Information for IDCS access
-        """
         return pulumi.get(self, "idcs_infos")
 
     @idcs_infos.setter
@@ -396,9 +295,6 @@ class _VbInstanceState:
     @property
     @pulumi.getter(name="idcsOpenId")
     def idcs_open_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Encrypted IDCS Open ID token. This is required for pre-UCPIS cloud accounts, but not UCPIS, hence not a required parameter
-        """
         return pulumi.get(self, "idcs_open_id")
 
     @idcs_open_id.setter
@@ -408,9 +304,6 @@ class _VbInstanceState:
     @property
     @pulumi.getter(name="instanceUrl")
     def instance_url(self) -> Optional[pulumi.Input[str]]:
-        """
-        The Vb Instance URL.
-        """
         return pulumi.get(self, "instance_url")
 
     @instance_url.setter
@@ -420,9 +313,6 @@ class _VbInstanceState:
     @property
     @pulumi.getter(name="isVisualBuilderEnabled")
     def is_visual_builder_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Visual Builder is enabled or not.
-        """
         return pulumi.get(self, "is_visual_builder_enabled")
 
     @is_visual_builder_enabled.setter
@@ -432,9 +322,6 @@ class _VbInstanceState:
     @property
     @pulumi.getter(name="managementNatGatewayIp")
     def management_nat_gateway_ip(self) -> Optional[pulumi.Input[str]]:
-        """
-        The NAT gateway IP address for the VB management VCN
-        """
         return pulumi.get(self, "management_nat_gateway_ip")
 
     @management_nat_gateway_ip.setter
@@ -444,9 +331,6 @@ class _VbInstanceState:
     @property
     @pulumi.getter(name="managementVcnId")
     def management_vcn_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The Oracle Cloud ID (OCID) of the Visual Builder management VCN
-        """
         return pulumi.get(self, "management_vcn_id")
 
     @management_vcn_id.setter
@@ -456,13 +340,6 @@ class _VbInstanceState:
     @property
     @pulumi.getter(name="nodeCount")
     def node_count(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) The number of Nodes
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "node_count")
 
     @node_count.setter
@@ -472,9 +349,6 @@ class _VbInstanceState:
     @property
     @pulumi.getter(name="serviceNatGatewayIp")
     def service_nat_gateway_ip(self) -> Optional[pulumi.Input[str]]:
-        """
-        The NAT gateway IP address for the VB service VCN
-        """
         return pulumi.get(self, "service_nat_gateway_ip")
 
     @service_nat_gateway_ip.setter
@@ -484,9 +358,6 @@ class _VbInstanceState:
     @property
     @pulumi.getter(name="serviceVcnId")
     def service_vcn_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The Oracle Cloud ID (OCID) of the Visual Builder service VCN
-        """
         return pulumi.get(self, "service_vcn_id")
 
     @service_vcn_id.setter
@@ -496,9 +367,6 @@ class _VbInstanceState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The current state of the vb instance.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -508,9 +376,6 @@ class _VbInstanceState:
     @property
     @pulumi.getter(name="stateMessage")
     def state_message(self) -> Optional[pulumi.Input[str]]:
-        """
-        An message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        """
         return pulumi.get(self, "state_message")
 
     @state_message.setter
@@ -520,9 +385,6 @@ class _VbInstanceState:
     @property
     @pulumi.getter(name="systemTags")
     def system_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
@@ -532,9 +394,6 @@ class _VbInstanceState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The time the the VbInstance was created. An RFC3339 formatted datetime string.
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -544,9 +403,6 @@ class _VbInstanceState:
     @property
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> Optional[pulumi.Input[str]]:
-        """
-        The time the VbInstance was updated. An RFC3339 formatted datetime string.
-        """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
@@ -571,63 +427,9 @@ class VbInstance(pulumi.CustomResource):
                  node_count: Optional[pulumi.Input[int]] = None,
                  __props__=None):
         """
-        This resource provides the Vb Instance resource in Oracle Cloud Infrastructure Visual Builder service.
-
-        Creates a new Vb Instance.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_vb_instance = oci.visual_builder.VbInstance("testVbInstance",
-            compartment_id=var["compartment_id"],
-            display_name=var["vb_instance_display_name"],
-            node_count=var["vb_instance_node_count"],
-            alternate_custom_endpoints=[oci.visual_builder.VbInstanceAlternateCustomEndpointArgs(
-                hostname=var["vb_instance_alternate_custom_endpoints_hostname"],
-                certificate_secret_id=oci_vault_secret["test_secret"]["id"],
-            )],
-            consumption_model=var["vb_instance_consumption_model"],
-            custom_endpoint=oci.visual_builder.VbInstanceCustomEndpointArgs(
-                hostname=var["vb_instance_custom_endpoint_hostname"],
-                certificate_secret_id=oci_vault_secret["test_secret"]["id"],
-            ),
-            defined_tags={
-                "foo-namespace.bar-key": "value",
-            },
-            freeform_tags={
-                "bar-key": "value",
-            },
-            idcs_open_id=oci_visual_builder_idcs_open["test_idcs_open"]["id"],
-            is_visual_builder_enabled=var["vb_instance_is_visual_builder_enabled"])
-        ```
-
-        ## Import
-
-        VbInstances can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:VisualBuilder/vbInstance:VbInstance test_vb_instance "id"
-        ```
-
+        Create a VbInstance resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['VbInstanceAlternateCustomEndpointArgs']]]] alternate_custom_endpoints: (Updatable) A list of alternate custom endpoints to be used for the vb instance URL (contact Oracle for alternateCustomEndpoints availability for a specific instance).
-        :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier.
-        :param pulumi.Input[str] consumption_model: Optional parameter specifying which entitlement to use for billing purposes. Only required if the account possesses more than one entitlement.
-        :param pulumi.Input[pulumi.InputType['VbInstanceCustomEndpointArgs']] custom_endpoint: (Updatable) Details for a custom endpoint for the vb instance (update).
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] display_name: (Updatable) Vb Instance Identifier.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] idcs_open_id: (Updatable) Encrypted IDCS Open ID token. This is required for pre-UCPIS cloud accounts, but not UCPIS, hence not a required parameter
-        :param pulumi.Input[bool] is_visual_builder_enabled: (Updatable) Visual Builder is enabled or not.
-        :param pulumi.Input[int] node_count: (Updatable) The number of Nodes
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -636,47 +438,7 @@ class VbInstance(pulumi.CustomResource):
                  args: VbInstanceArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Vb Instance resource in Oracle Cloud Infrastructure Visual Builder service.
-
-        Creates a new Vb Instance.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_vb_instance = oci.visual_builder.VbInstance("testVbInstance",
-            compartment_id=var["compartment_id"],
-            display_name=var["vb_instance_display_name"],
-            node_count=var["vb_instance_node_count"],
-            alternate_custom_endpoints=[oci.visual_builder.VbInstanceAlternateCustomEndpointArgs(
-                hostname=var["vb_instance_alternate_custom_endpoints_hostname"],
-                certificate_secret_id=oci_vault_secret["test_secret"]["id"],
-            )],
-            consumption_model=var["vb_instance_consumption_model"],
-            custom_endpoint=oci.visual_builder.VbInstanceCustomEndpointArgs(
-                hostname=var["vb_instance_custom_endpoint_hostname"],
-                certificate_secret_id=oci_vault_secret["test_secret"]["id"],
-            ),
-            defined_tags={
-                "foo-namespace.bar-key": "value",
-            },
-            freeform_tags={
-                "bar-key": "value",
-            },
-            idcs_open_id=oci_visual_builder_idcs_open["test_idcs_open"]["id"],
-            is_visual_builder_enabled=var["vb_instance_is_visual_builder_enabled"])
-        ```
-
-        ## Import
-
-        VbInstances can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:VisualBuilder/vbInstance:VbInstance test_vb_instance "id"
-        ```
-
+        Create a VbInstance resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param VbInstanceArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -780,32 +542,6 @@ class VbInstance(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['VbInstanceAlternateCustomEndpointArgs']]]] alternate_custom_endpoints: (Updatable) A list of alternate custom endpoints to be used for the vb instance URL (contact Oracle for alternateCustomEndpoints availability for a specific instance).
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['VbInstanceAttachmentArgs']]]] attachments: A list of associated attachments to other services
-        :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier.
-        :param pulumi.Input[str] consumption_model: Optional parameter specifying which entitlement to use for billing purposes. Only required if the account possesses more than one entitlement.
-        :param pulumi.Input[pulumi.InputType['VbInstanceCustomEndpointArgs']] custom_endpoint: (Updatable) Details for a custom endpoint for the vb instance (update).
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] display_name: (Updatable) Vb Instance Identifier.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['VbInstanceIdcsInfoArgs']]]] idcs_infos: Information for IDCS access
-        :param pulumi.Input[str] idcs_open_id: (Updatable) Encrypted IDCS Open ID token. This is required for pre-UCPIS cloud accounts, but not UCPIS, hence not a required parameter
-        :param pulumi.Input[str] instance_url: The Vb Instance URL.
-        :param pulumi.Input[bool] is_visual_builder_enabled: (Updatable) Visual Builder is enabled or not.
-        :param pulumi.Input[str] management_nat_gateway_ip: The NAT gateway IP address for the VB management VCN
-        :param pulumi.Input[str] management_vcn_id: The Oracle Cloud ID (OCID) of the Visual Builder management VCN
-        :param pulumi.Input[int] node_count: (Updatable) The number of Nodes
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] service_nat_gateway_ip: The NAT gateway IP address for the VB service VCN
-        :param pulumi.Input[str] service_vcn_id: The Oracle Cloud ID (OCID) of the Visual Builder service VCN
-        :param pulumi.Input[str] state: The current state of the vb instance.
-        :param pulumi.Input[str] state_message: An message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[str] time_created: The time the the VbInstance was created. An RFC3339 formatted datetime string.
-        :param pulumi.Input[str] time_updated: The time the VbInstance was updated. An RFC3339 formatted datetime string.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -837,181 +573,111 @@ class VbInstance(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="alternateCustomEndpoints")
-    def alternate_custom_endpoints(self) -> pulumi.Output[Sequence['outputs.VbInstanceAlternateCustomEndpoint']]:
-        """
-        (Updatable) A list of alternate custom endpoints to be used for the vb instance URL (contact Oracle for alternateCustomEndpoints availability for a specific instance).
-        """
+    def alternate_custom_endpoints(self) -> pulumi.Output[Optional[Sequence['outputs.VbInstanceAlternateCustomEndpoint']]]:
         return pulumi.get(self, "alternate_custom_endpoints")
 
     @property
     @pulumi.getter
-    def attachments(self) -> pulumi.Output[Sequence['outputs.VbInstanceAttachment']]:
-        """
-        A list of associated attachments to other services
-        """
+    def attachments(self) -> pulumi.Output[Optional[Sequence['outputs.VbInstanceAttachment']]]:
         return pulumi.get(self, "attachments")
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Compartment Identifier.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="consumptionModel")
-    def consumption_model(self) -> pulumi.Output[str]:
-        """
-        Optional parameter specifying which entitlement to use for billing purposes. Only required if the account possesses more than one entitlement.
-        """
+    def consumption_model(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "consumption_model")
 
     @property
     @pulumi.getter(name="customEndpoint")
-    def custom_endpoint(self) -> pulumi.Output['outputs.VbInstanceCustomEndpoint']:
-        """
-        (Updatable) Details for a custom endpoint for the vb instance (update).
-        """
+    def custom_endpoint(self) -> pulumi.Output[Optional['outputs.VbInstanceCustomEndpoint']]:
         return pulumi.get(self, "custom_endpoint")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Vb Instance Identifier.
-        """
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="idcsInfos")
-    def idcs_infos(self) -> pulumi.Output[Sequence['outputs.VbInstanceIdcsInfo']]:
-        """
-        Information for IDCS access
-        """
+    def idcs_infos(self) -> pulumi.Output[Optional[Sequence['outputs.VbInstanceIdcsInfo']]]:
         return pulumi.get(self, "idcs_infos")
 
     @property
     @pulumi.getter(name="idcsOpenId")
     def idcs_open_id(self) -> pulumi.Output[Optional[str]]:
-        """
-        (Updatable) Encrypted IDCS Open ID token. This is required for pre-UCPIS cloud accounts, but not UCPIS, hence not a required parameter
-        """
         return pulumi.get(self, "idcs_open_id")
 
     @property
     @pulumi.getter(name="instanceUrl")
-    def instance_url(self) -> pulumi.Output[str]:
-        """
-        The Vb Instance URL.
-        """
+    def instance_url(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "instance_url")
 
     @property
     @pulumi.getter(name="isVisualBuilderEnabled")
-    def is_visual_builder_enabled(self) -> pulumi.Output[bool]:
-        """
-        (Updatable) Visual Builder is enabled or not.
-        """
+    def is_visual_builder_enabled(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "is_visual_builder_enabled")
 
     @property
     @pulumi.getter(name="managementNatGatewayIp")
-    def management_nat_gateway_ip(self) -> pulumi.Output[str]:
-        """
-        The NAT gateway IP address for the VB management VCN
-        """
+    def management_nat_gateway_ip(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "management_nat_gateway_ip")
 
     @property
     @pulumi.getter(name="managementVcnId")
-    def management_vcn_id(self) -> pulumi.Output[str]:
-        """
-        The Oracle Cloud ID (OCID) of the Visual Builder management VCN
-        """
+    def management_vcn_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "management_vcn_id")
 
     @property
     @pulumi.getter(name="nodeCount")
     def node_count(self) -> pulumi.Output[int]:
-        """
-        (Updatable) The number of Nodes
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "node_count")
 
     @property
     @pulumi.getter(name="serviceNatGatewayIp")
-    def service_nat_gateway_ip(self) -> pulumi.Output[str]:
-        """
-        The NAT gateway IP address for the VB service VCN
-        """
+    def service_nat_gateway_ip(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "service_nat_gateway_ip")
 
     @property
     @pulumi.getter(name="serviceVcnId")
-    def service_vcn_id(self) -> pulumi.Output[str]:
-        """
-        The Oracle Cloud ID (OCID) of the Visual Builder service VCN
-        """
+    def service_vcn_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "service_vcn_id")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        The current state of the vb instance.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="stateMessage")
-    def state_message(self) -> pulumi.Output[str]:
-        """
-        An message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        """
+    def state_message(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state_message")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        The time the the VbInstance was created. An RFC3339 formatted datetime string.
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> pulumi.Output[str]:
-        """
-        The time the VbInstance was updated. An RFC3339 formatted datetime string.
-        """
+    def time_updated(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_updated")
 

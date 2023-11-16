@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Baselineable Metric resource in Oracle Cloud Infrastructure Stack Monitoring service.
@@ -61,37 +60,37 @@ type LookupBaselineableMetricArgs struct {
 type LookupBaselineableMetricResult struct {
 	BaselineableMetricId string `pulumi:"baselineableMetricId"`
 	// metric column name
-	Column string `pulumi:"column"`
+	Column *string `pulumi:"column"`
 	// OCID of the compartment
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Created user id
-	CreatedBy string `pulumi:"createdBy"`
+	CreatedBy *string `pulumi:"createdBy"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// OCID of the metric
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Is the metric created out of box, default false
-	IsOutOfBox bool `pulumi:"isOutOfBox"`
+	IsOutOfBox *bool `pulumi:"isOutOfBox"`
 	// last Updated user id
-	LastUpdatedBy string `pulumi:"lastUpdatedBy"`
+	LastUpdatedBy *string `pulumi:"lastUpdatedBy"`
 	// name of the metric
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// namespace of the metric
-	Namespace string `pulumi:"namespace"`
+	Namespace *string `pulumi:"namespace"`
 	// Resource group of the metric
-	ResourceGroup string `pulumi:"resourceGroup"`
+	ResourceGroup *string `pulumi:"resourceGroup"`
 	// The current lifecycle state of the metric extension
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// OCID of the tenancy
-	TenancyId string `pulumi:"tenancyId"`
+	TenancyId *string `pulumi:"tenancyId"`
 	// creation date
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// last updated time
-	TimeLastUpdated string `pulumi:"timeLastUpdated"`
+	TimeLastUpdated *string `pulumi:"timeLastUpdated"`
 }
 
 func LookupBaselineableMetricOutput(ctx *pulumi.Context, args LookupBaselineableMetricOutputArgs, opts ...pulumi.InvokeOption) LookupBaselineableMetricResultOutput {
@@ -132,29 +131,23 @@ func (o LookupBaselineableMetricResultOutput) ToLookupBaselineableMetricResultOu
 	return o
 }
 
-func (o LookupBaselineableMetricResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupBaselineableMetricResult] {
-	return pulumix.Output[LookupBaselineableMetricResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o LookupBaselineableMetricResultOutput) BaselineableMetricId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupBaselineableMetricResult) string { return v.BaselineableMetricId }).(pulumi.StringOutput)
 }
 
 // metric column name
-func (o LookupBaselineableMetricResultOutput) Column() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupBaselineableMetricResult) string { return v.Column }).(pulumi.StringOutput)
+func (o LookupBaselineableMetricResultOutput) Column() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupBaselineableMetricResult) *string { return v.Column }).(pulumi.StringPtrOutput)
 }
 
 // OCID of the compartment
-func (o LookupBaselineableMetricResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupBaselineableMetricResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupBaselineableMetricResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupBaselineableMetricResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Created user id
-func (o LookupBaselineableMetricResultOutput) CreatedBy() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupBaselineableMetricResult) string { return v.CreatedBy }).(pulumi.StringOutput)
+func (o LookupBaselineableMetricResultOutput) CreatedBy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupBaselineableMetricResult) *string { return v.CreatedBy }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -168,38 +161,38 @@ func (o LookupBaselineableMetricResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // OCID of the metric
-func (o LookupBaselineableMetricResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupBaselineableMetricResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupBaselineableMetricResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupBaselineableMetricResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Is the metric created out of box, default false
-func (o LookupBaselineableMetricResultOutput) IsOutOfBox() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupBaselineableMetricResult) bool { return v.IsOutOfBox }).(pulumi.BoolOutput)
+func (o LookupBaselineableMetricResultOutput) IsOutOfBox() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupBaselineableMetricResult) *bool { return v.IsOutOfBox }).(pulumi.BoolPtrOutput)
 }
 
 // last Updated user id
-func (o LookupBaselineableMetricResultOutput) LastUpdatedBy() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupBaselineableMetricResult) string { return v.LastUpdatedBy }).(pulumi.StringOutput)
+func (o LookupBaselineableMetricResultOutput) LastUpdatedBy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupBaselineableMetricResult) *string { return v.LastUpdatedBy }).(pulumi.StringPtrOutput)
 }
 
 // name of the metric
-func (o LookupBaselineableMetricResultOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupBaselineableMetricResult) string { return v.Name }).(pulumi.StringOutput)
+func (o LookupBaselineableMetricResultOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupBaselineableMetricResult) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // namespace of the metric
-func (o LookupBaselineableMetricResultOutput) Namespace() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupBaselineableMetricResult) string { return v.Namespace }).(pulumi.StringOutput)
+func (o LookupBaselineableMetricResultOutput) Namespace() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupBaselineableMetricResult) *string { return v.Namespace }).(pulumi.StringPtrOutput)
 }
 
 // Resource group of the metric
-func (o LookupBaselineableMetricResultOutput) ResourceGroup() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupBaselineableMetricResult) string { return v.ResourceGroup }).(pulumi.StringOutput)
+func (o LookupBaselineableMetricResultOutput) ResourceGroup() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupBaselineableMetricResult) *string { return v.ResourceGroup }).(pulumi.StringPtrOutput)
 }
 
 // The current lifecycle state of the metric extension
-func (o LookupBaselineableMetricResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupBaselineableMetricResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupBaselineableMetricResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupBaselineableMetricResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -208,18 +201,18 @@ func (o LookupBaselineableMetricResultOutput) SystemTags() pulumi.MapOutput {
 }
 
 // OCID of the tenancy
-func (o LookupBaselineableMetricResultOutput) TenancyId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupBaselineableMetricResult) string { return v.TenancyId }).(pulumi.StringOutput)
+func (o LookupBaselineableMetricResultOutput) TenancyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupBaselineableMetricResult) *string { return v.TenancyId }).(pulumi.StringPtrOutput)
 }
 
 // creation date
-func (o LookupBaselineableMetricResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupBaselineableMetricResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupBaselineableMetricResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupBaselineableMetricResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // last updated time
-func (o LookupBaselineableMetricResultOutput) TimeLastUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupBaselineableMetricResult) string { return v.TimeLastUpdated }).(pulumi.StringOutput)
+func (o LookupBaselineableMetricResultOutput) TimeLastUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupBaselineableMetricResult) *string { return v.TimeLastUpdated }).(pulumi.StringPtrOutput)
 }
 
 func init() {

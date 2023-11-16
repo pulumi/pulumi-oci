@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Managed Databases Asm Properties in Oracle Cloud Infrastructure Database Management service.
@@ -67,7 +66,7 @@ type GetManagedDatabasesAsmPropertiesResult struct {
 	AsmPropertyCollections []GetManagedDatabasesAsmPropertiesAsmPropertyCollection `pulumi:"asmPropertyCollections"`
 	Filters                []GetManagedDatabasesAsmPropertiesFilter                `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id                string  `pulumi:"id"`
+	Id                *string `pulumi:"id"`
 	ManagedDatabaseId string  `pulumi:"managedDatabaseId"`
 	Name              *string `pulumi:"name"`
 }
@@ -113,12 +112,6 @@ func (o GetManagedDatabasesAsmPropertiesResultOutput) ToGetManagedDatabasesAsmPr
 	return o
 }
 
-func (o GetManagedDatabasesAsmPropertiesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagedDatabasesAsmPropertiesResult] {
-	return pulumix.Output[GetManagedDatabasesAsmPropertiesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The list of asm_property_collection.
 func (o GetManagedDatabasesAsmPropertiesResultOutput) AsmPropertyCollections() GetManagedDatabasesAsmPropertiesAsmPropertyCollectionArrayOutput {
 	return o.ApplyT(func(v GetManagedDatabasesAsmPropertiesResult) []GetManagedDatabasesAsmPropertiesAsmPropertyCollection {
@@ -133,8 +126,8 @@ func (o GetManagedDatabasesAsmPropertiesResultOutput) Filters() GetManagedDataba
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetManagedDatabasesAsmPropertiesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedDatabasesAsmPropertiesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetManagedDatabasesAsmPropertiesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedDatabasesAsmPropertiesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetManagedDatabasesAsmPropertiesResultOutput) ManagedDatabaseId() pulumi.StringOutput {

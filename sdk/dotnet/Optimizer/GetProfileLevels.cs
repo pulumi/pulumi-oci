@@ -175,7 +175,7 @@ namespace Pulumi.Oci.Optimizer
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// A unique name for the profile level.
         /// </summary>
@@ -197,7 +197,7 @@ namespace Pulumi.Oci.Optimizer
 
             ImmutableArray<Outputs.GetProfileLevelsFilterResult> filters,
 
-            string id,
+            string? id,
 
             string? name,
 

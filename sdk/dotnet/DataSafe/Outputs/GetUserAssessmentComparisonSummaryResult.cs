@@ -15,7 +15,7 @@ namespace Pulumi.Oci.DataSafe.Outputs
     {
         public readonly ImmutableArray<Outputs.GetUserAssessmentComparisonSummaryBaselineResult> Baselines;
         public readonly ImmutableArray<Outputs.GetUserAssessmentComparisonSummaryCurrentResult> Currents;
-        public readonly string Status;
+        public readonly string? Status;
 
         [OutputConstructor]
         private GetUserAssessmentComparisonSummaryResult(
@@ -23,7 +23,7 @@ namespace Pulumi.Oci.DataSafe.Outputs
 
             ImmutableArray<Outputs.GetUserAssessmentComparisonSummaryCurrentResult> currents,
 
-            string status)
+            string? status)
         {
             Baselines = baselines;
             Currents = currents;

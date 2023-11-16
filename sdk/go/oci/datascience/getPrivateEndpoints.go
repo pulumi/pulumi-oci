@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Data Science Private Endpoints in Oracle Cloud Infrastructure Data Science service.
@@ -84,7 +83,7 @@ type GetPrivateEndpointsResult struct {
 	DisplayName *string                     `pulumi:"displayName"`
 	Filters     []GetPrivateEndpointsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// State of the Data Science private endpoint.
 	State *string `pulumi:"state"`
 }
@@ -136,12 +135,6 @@ func (o GetPrivateEndpointsResultOutput) ToGetPrivateEndpointsResultOutputWithCo
 	return o
 }
 
-func (o GetPrivateEndpointsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetPrivateEndpointsResult] {
-	return pulumix.Output[GetPrivateEndpointsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create private endpoint.
 func (o GetPrivateEndpointsResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetPrivateEndpointsResult) string { return v.CompartmentId }).(pulumi.StringOutput)
@@ -174,8 +167,8 @@ func (o GetPrivateEndpointsResultOutput) Filters() GetPrivateEndpointsFilterArra
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetPrivateEndpointsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPrivateEndpointsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetPrivateEndpointsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetPrivateEndpointsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // State of the Data Science private endpoint.

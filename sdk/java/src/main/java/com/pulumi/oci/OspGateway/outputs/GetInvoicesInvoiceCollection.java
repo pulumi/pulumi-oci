@@ -7,14 +7,15 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.OspGateway.outputs.GetInvoicesInvoiceCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetInvoicesInvoiceCollection {
-    private List<GetInvoicesInvoiceCollectionItem> items;
+    private @Nullable List<GetInvoicesInvoiceCollectionItem> items;
 
     private GetInvoicesInvoiceCollection() {}
     public List<GetInvoicesInvoiceCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -26,7 +27,7 @@ public final class GetInvoicesInvoiceCollection {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetInvoicesInvoiceCollectionItem> items;
+        private @Nullable List<GetInvoicesInvoiceCollectionItem> items;
         public Builder() {}
         public Builder(GetInvoicesInvoiceCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -34,8 +35,8 @@ public final class GetInvoicesInvoiceCollection {
         }
 
         @CustomType.Setter
-        public Builder items(List<GetInvoicesInvoiceCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetInvoicesInvoiceCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetInvoicesInvoiceCollectionItem... items) {

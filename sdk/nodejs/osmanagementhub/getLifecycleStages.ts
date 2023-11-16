@@ -89,11 +89,11 @@ export interface GetLifecycleStagesResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The list of lifecycle_stage_collection.
      */
-    readonly lifecycleStageCollections: outputs.OsManagementHub.GetLifecycleStagesLifecycleStageCollection[];
+    readonly lifecycleStageCollections?: outputs.OsManagementHub.GetLifecycleStagesLifecycleStageCollection[];
     readonly lifecycleStageId?: string;
     /**
      * The operating system type of the target instances.

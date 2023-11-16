@@ -20,13 +20,13 @@ public final class GetPublishersResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private @Nullable String publisherId;
     /**
      * @return The list of publishers.
      * 
      */
-    private List<GetPublishersPublisher> publishers;
+    private @Nullable List<GetPublishersPublisher> publishers;
 
     private GetPublishersResult() {}
     public Optional<String> compartmentId() {
@@ -39,8 +39,8 @@ public final class GetPublishersResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public Optional<String> publisherId() {
         return Optional.ofNullable(this.publisherId);
@@ -50,7 +50,7 @@ public final class GetPublishersResult {
      * 
      */
     public List<GetPublishersPublisher> publishers() {
-        return this.publishers;
+        return this.publishers == null ? List.of() : this.publishers;
     }
 
     public static Builder builder() {
@@ -64,9 +64,9 @@ public final class GetPublishersResult {
     public static final class Builder {
         private @Nullable String compartmentId;
         private @Nullable List<GetPublishersFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String publisherId;
-        private List<GetPublishersPublisher> publishers;
+        private @Nullable List<GetPublishersPublisher> publishers;
         public Builder() {}
         public Builder(GetPublishersResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -91,8 +91,8 @@ public final class GetPublishersResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -101,8 +101,8 @@ public final class GetPublishersResult {
             return this;
         }
         @CustomType.Setter
-        public Builder publishers(List<GetPublishersPublisher> publishers) {
-            this.publishers = Objects.requireNonNull(publishers);
+        public Builder publishers(@Nullable List<GetPublishersPublisher> publishers) {
+            this.publishers = publishers;
             return this;
         }
         public Builder publishers(GetPublishersPublisher... publishers) {

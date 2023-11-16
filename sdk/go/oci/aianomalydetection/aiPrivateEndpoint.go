@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Ai Private Endpoint resource in Oracle Cloud Infrastructure Ai Anomaly Detection service.
@@ -71,15 +70,15 @@ type AiPrivateEndpoint struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) Display name of the private endpoint resource being created.
-	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrOutput `pulumi:"displayName"`
 	// (Updatable) List of DNS zones to be used by the data assets. Example: custpvtsubnet.oraclevcn.com for data asset: db.custpvtsubnet.oraclevcn.com
 	DnsZones pulumi.StringArrayOutput `pulumi:"dnsZones"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'Failed' state.
-	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrOutput `pulumi:"lifecycleDetails"`
 	// The current state of the private endpoint resource.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// The OCID of subnet to which the reverse connection is to be created.
 	//
 	// ** IMPORTANT **
@@ -88,9 +87,9 @@ type AiPrivateEndpoint struct {
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
 	// The time the private endpoint was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The time the private endpoint was updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 }
 
 // NewAiPrivateEndpoint registers a new resource with the given unique name, arguments, and options.
@@ -255,12 +254,6 @@ func (i *AiPrivateEndpoint) ToAiPrivateEndpointOutputWithContext(ctx context.Con
 	return pulumi.ToOutputWithContext(ctx, i).(AiPrivateEndpointOutput)
 }
 
-func (i *AiPrivateEndpoint) ToOutput(ctx context.Context) pulumix.Output[*AiPrivateEndpoint] {
-	return pulumix.Output[*AiPrivateEndpoint]{
-		OutputState: i.ToAiPrivateEndpointOutputWithContext(ctx).OutputState,
-	}
-}
-
 // AiPrivateEndpointArrayInput is an input type that accepts AiPrivateEndpointArray and AiPrivateEndpointArrayOutput values.
 // You can construct a concrete instance of `AiPrivateEndpointArrayInput` via:
 //
@@ -284,12 +277,6 @@ func (i AiPrivateEndpointArray) ToAiPrivateEndpointArrayOutput() AiPrivateEndpoi
 
 func (i AiPrivateEndpointArray) ToAiPrivateEndpointArrayOutputWithContext(ctx context.Context) AiPrivateEndpointArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(AiPrivateEndpointArrayOutput)
-}
-
-func (i AiPrivateEndpointArray) ToOutput(ctx context.Context) pulumix.Output[[]*AiPrivateEndpoint] {
-	return pulumix.Output[[]*AiPrivateEndpoint]{
-		OutputState: i.ToAiPrivateEndpointArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // AiPrivateEndpointMapInput is an input type that accepts AiPrivateEndpointMap and AiPrivateEndpointMapOutput values.
@@ -317,12 +304,6 @@ func (i AiPrivateEndpointMap) ToAiPrivateEndpointMapOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(AiPrivateEndpointMapOutput)
 }
 
-func (i AiPrivateEndpointMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*AiPrivateEndpoint] {
-	return pulumix.Output[map[string]*AiPrivateEndpoint]{
-		OutputState: i.ToAiPrivateEndpointMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type AiPrivateEndpointOutput struct{ *pulumi.OutputState }
 
 func (AiPrivateEndpointOutput) ElementType() reflect.Type {
@@ -335,12 +316,6 @@ func (o AiPrivateEndpointOutput) ToAiPrivateEndpointOutput() AiPrivateEndpointOu
 
 func (o AiPrivateEndpointOutput) ToAiPrivateEndpointOutputWithContext(ctx context.Context) AiPrivateEndpointOutput {
 	return o
-}
-
-func (o AiPrivateEndpointOutput) ToOutput(ctx context.Context) pulumix.Output[*AiPrivateEndpoint] {
-	return pulumix.Output[*AiPrivateEndpoint]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The list of dataAssets using the private reverse connection endpoint.
@@ -359,8 +334,8 @@ func (o AiPrivateEndpointOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // (Updatable) Display name of the private endpoint resource being created.
-func (o AiPrivateEndpointOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v *AiPrivateEndpoint) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+func (o AiPrivateEndpointOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AiPrivateEndpoint) pulumi.StringPtrOutput { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) List of DNS zones to be used by the data assets. Example: custpvtsubnet.oraclevcn.com for data asset: db.custpvtsubnet.oraclevcn.com
@@ -374,13 +349,13 @@ func (o AiPrivateEndpointOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'Failed' state.
-func (o AiPrivateEndpointOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v *AiPrivateEndpoint) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o AiPrivateEndpointOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AiPrivateEndpoint) pulumi.StringPtrOutput { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the private endpoint resource.
-func (o AiPrivateEndpointOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *AiPrivateEndpoint) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o AiPrivateEndpointOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AiPrivateEndpoint) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of subnet to which the reverse connection is to be created.
@@ -397,13 +372,13 @@ func (o AiPrivateEndpointOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The time the private endpoint was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-func (o AiPrivateEndpointOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *AiPrivateEndpoint) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o AiPrivateEndpointOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AiPrivateEndpoint) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time the private endpoint was updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-func (o AiPrivateEndpointOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *AiPrivateEndpoint) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o AiPrivateEndpointOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AiPrivateEndpoint) pulumi.StringPtrOutput { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type AiPrivateEndpointArrayOutput struct{ *pulumi.OutputState }
@@ -418,12 +393,6 @@ func (o AiPrivateEndpointArrayOutput) ToAiPrivateEndpointArrayOutput() AiPrivate
 
 func (o AiPrivateEndpointArrayOutput) ToAiPrivateEndpointArrayOutputWithContext(ctx context.Context) AiPrivateEndpointArrayOutput {
 	return o
-}
-
-func (o AiPrivateEndpointArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*AiPrivateEndpoint] {
-	return pulumix.Output[[]*AiPrivateEndpoint]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o AiPrivateEndpointArrayOutput) Index(i pulumi.IntInput) AiPrivateEndpointOutput {
@@ -444,12 +413,6 @@ func (o AiPrivateEndpointMapOutput) ToAiPrivateEndpointMapOutput() AiPrivateEndp
 
 func (o AiPrivateEndpointMapOutput) ToAiPrivateEndpointMapOutputWithContext(ctx context.Context) AiPrivateEndpointMapOutput {
 	return o
-}
-
-func (o AiPrivateEndpointMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*AiPrivateEndpoint] {
-	return pulumix.Output[map[string]*AiPrivateEndpoint]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o AiPrivateEndpointMapOutput) MapIndex(k pulumi.StringInput) AiPrivateEndpointOutput {

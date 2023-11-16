@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Compute Global Image Capability Schema resource in Oracle Cloud Infrastructure Core service.
@@ -60,20 +59,20 @@ type GetComputeGlobalImageCapabilitySchemaArgs struct {
 // A collection of values returned by getComputeGlobalImageCapabilitySchema.
 type GetComputeGlobalImageCapabilitySchemaResult struct {
 	// The OCID of the compartment containing the compute global image capability schema
-	CompartmentId                        string `pulumi:"compartmentId"`
-	ComputeGlobalImageCapabilitySchemaId string `pulumi:"computeGlobalImageCapabilitySchemaId"`
+	CompartmentId                        *string `pulumi:"compartmentId"`
+	ComputeGlobalImageCapabilitySchemaId string  `pulumi:"computeGlobalImageCapabilitySchemaId"`
 	// The name of the global capabilities version resource that is considered the current version.
-	CurrentVersionName string `pulumi:"currentVersionName"`
+	CurrentVersionName *string `pulumi:"currentVersionName"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The date and time the compute global image capability schema was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 }
 
 func GetComputeGlobalImageCapabilitySchemaOutput(ctx *pulumi.Context, args GetComputeGlobalImageCapabilitySchemaOutputArgs, opts ...pulumi.InvokeOption) GetComputeGlobalImageCapabilitySchemaResultOutput {
@@ -114,15 +113,9 @@ func (o GetComputeGlobalImageCapabilitySchemaResultOutput) ToGetComputeGlobalIma
 	return o
 }
 
-func (o GetComputeGlobalImageCapabilitySchemaResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetComputeGlobalImageCapabilitySchemaResult] {
-	return pulumix.Output[GetComputeGlobalImageCapabilitySchemaResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the compartment containing the compute global image capability schema
-func (o GetComputeGlobalImageCapabilitySchemaResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetComputeGlobalImageCapabilitySchemaResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetComputeGlobalImageCapabilitySchemaResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetComputeGlobalImageCapabilitySchemaResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 func (o GetComputeGlobalImageCapabilitySchemaResultOutput) ComputeGlobalImageCapabilitySchemaId() pulumi.StringOutput {
@@ -132,8 +125,8 @@ func (o GetComputeGlobalImageCapabilitySchemaResultOutput) ComputeGlobalImageCap
 }
 
 // The name of the global capabilities version resource that is considered the current version.
-func (o GetComputeGlobalImageCapabilitySchemaResultOutput) CurrentVersionName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetComputeGlobalImageCapabilitySchemaResult) string { return v.CurrentVersionName }).(pulumi.StringOutput)
+func (o GetComputeGlobalImageCapabilitySchemaResultOutput) CurrentVersionName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetComputeGlobalImageCapabilitySchemaResult) *string { return v.CurrentVersionName }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -142,8 +135,8 @@ func (o GetComputeGlobalImageCapabilitySchemaResultOutput) DefinedTags() pulumi.
 }
 
 // A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-func (o GetComputeGlobalImageCapabilitySchemaResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetComputeGlobalImageCapabilitySchemaResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetComputeGlobalImageCapabilitySchemaResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetComputeGlobalImageCapabilitySchemaResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -152,13 +145,13 @@ func (o GetComputeGlobalImageCapabilitySchemaResultOutput) FreeformTags() pulumi
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetComputeGlobalImageCapabilitySchemaResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetComputeGlobalImageCapabilitySchemaResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetComputeGlobalImageCapabilitySchemaResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetComputeGlobalImageCapabilitySchemaResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the compute global image capability schema was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-func (o GetComputeGlobalImageCapabilitySchemaResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetComputeGlobalImageCapabilitySchemaResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetComputeGlobalImageCapabilitySchemaResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetComputeGlobalImageCapabilitySchemaResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 func init() {

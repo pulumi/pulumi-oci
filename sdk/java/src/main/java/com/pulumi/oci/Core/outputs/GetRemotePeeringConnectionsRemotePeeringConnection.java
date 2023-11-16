@@ -9,6 +9,8 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetRemotePeeringConnectionsRemotePeeringConnection {
@@ -16,159 +18,159 @@ public final class GetRemotePeeringConnectionsRemotePeeringConnection {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
      * 
      */
-    private String drgId;
+    private @Nullable String drgId;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the RPC.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Whether the VCN at the other end of the peering is in a different tenancy.  Example: `false`
      * 
      */
-    private Boolean isCrossTenancyPeering;
+    private @Nullable Boolean isCrossTenancyPeering;
     /**
      * @return If this RPC is peered, this value is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the other RPC.
      * 
      */
-    private String peerId;
+    private @Nullable String peerId;
     /**
      * @return If this RPC is peered, this value is the region that contains the other RPC.  Example: `us-ashburn-1`
      * 
      */
-    private String peerRegionName;
+    private @Nullable String peerRegionName;
     /**
      * @return If this RPC is peered, this value is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the other RPC&#39;s tenancy.
      * 
      */
-    private String peerTenancyId;
+    private @Nullable String peerTenancyId;
     /**
      * @return Whether the RPC is peered with another RPC. `NEW` means the RPC has not yet been peered. `PENDING` means the peering is being established. `REVOKED` means the RPC at the other end of the peering has been deleted.
      * 
      */
-    private String peeringStatus;
+    private @Nullable String peeringStatus;
     /**
      * @return The RPC&#39;s current lifecycle state.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return The date and time the RPC was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
 
     private GetRemotePeeringConnectionsRemotePeeringConnection() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
      * 
      */
-    public String drgId() {
-        return this.drgId;
+    public Optional<String> drgId() {
+        return Optional.ofNullable(this.drgId);
     }
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the RPC.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Whether the VCN at the other end of the peering is in a different tenancy.  Example: `false`
      * 
      */
-    public Boolean isCrossTenancyPeering() {
-        return this.isCrossTenancyPeering;
+    public Optional<Boolean> isCrossTenancyPeering() {
+        return Optional.ofNullable(this.isCrossTenancyPeering);
     }
     /**
      * @return If this RPC is peered, this value is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the other RPC.
      * 
      */
-    public String peerId() {
-        return this.peerId;
+    public Optional<String> peerId() {
+        return Optional.ofNullable(this.peerId);
     }
     /**
      * @return If this RPC is peered, this value is the region that contains the other RPC.  Example: `us-ashburn-1`
      * 
      */
-    public String peerRegionName() {
-        return this.peerRegionName;
+    public Optional<String> peerRegionName() {
+        return Optional.ofNullable(this.peerRegionName);
     }
     /**
      * @return If this RPC is peered, this value is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the other RPC&#39;s tenancy.
      * 
      */
-    public String peerTenancyId() {
-        return this.peerTenancyId;
+    public Optional<String> peerTenancyId() {
+        return Optional.ofNullable(this.peerTenancyId);
     }
     /**
      * @return Whether the RPC is peered with another RPC. `NEW` means the RPC has not yet been peered. `PENDING` means the peering is being established. `REVOKED` means the RPC at the other end of the peering has been deleted.
      * 
      */
-    public String peeringStatus() {
-        return this.peeringStatus;
+    public Optional<String> peeringStatus() {
+        return Optional.ofNullable(this.peeringStatus);
     }
     /**
      * @return The RPC&#39;s current lifecycle state.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return The date and time the RPC was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
 
     public static Builder builder() {
@@ -180,19 +182,19 @@ public final class GetRemotePeeringConnectionsRemotePeeringConnection {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String compartmentId;
-        private Map<String,Object> definedTags;
-        private String displayName;
-        private String drgId;
-        private Map<String,Object> freeformTags;
-        private String id;
-        private Boolean isCrossTenancyPeering;
-        private String peerId;
-        private String peerRegionName;
-        private String peerTenancyId;
-        private String peeringStatus;
-        private String state;
-        private String timeCreated;
+        private @Nullable String compartmentId;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String displayName;
+        private @Nullable String drgId;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String id;
+        private @Nullable Boolean isCrossTenancyPeering;
+        private @Nullable String peerId;
+        private @Nullable String peerRegionName;
+        private @Nullable String peerTenancyId;
+        private @Nullable String peeringStatus;
+        private @Nullable String state;
+        private @Nullable String timeCreated;
         public Builder() {}
         public Builder(GetRemotePeeringConnectionsRemotePeeringConnection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -212,68 +214,68 @@ public final class GetRemotePeeringConnectionsRemotePeeringConnection {
         }
 
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder drgId(String drgId) {
-            this.drgId = Objects.requireNonNull(drgId);
+        public Builder drgId(@Nullable String drgId) {
+            this.drgId = drgId;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder isCrossTenancyPeering(Boolean isCrossTenancyPeering) {
-            this.isCrossTenancyPeering = Objects.requireNonNull(isCrossTenancyPeering);
+        public Builder isCrossTenancyPeering(@Nullable Boolean isCrossTenancyPeering) {
+            this.isCrossTenancyPeering = isCrossTenancyPeering;
             return this;
         }
         @CustomType.Setter
-        public Builder peerId(String peerId) {
-            this.peerId = Objects.requireNonNull(peerId);
+        public Builder peerId(@Nullable String peerId) {
+            this.peerId = peerId;
             return this;
         }
         @CustomType.Setter
-        public Builder peerRegionName(String peerRegionName) {
-            this.peerRegionName = Objects.requireNonNull(peerRegionName);
+        public Builder peerRegionName(@Nullable String peerRegionName) {
+            this.peerRegionName = peerRegionName;
             return this;
         }
         @CustomType.Setter
-        public Builder peerTenancyId(String peerTenancyId) {
-            this.peerTenancyId = Objects.requireNonNull(peerTenancyId);
+        public Builder peerTenancyId(@Nullable String peerTenancyId) {
+            this.peerTenancyId = peerTenancyId;
             return this;
         }
         @CustomType.Setter
-        public Builder peeringStatus(String peeringStatus) {
-            this.peeringStatus = Objects.requireNonNull(peeringStatus);
+        public Builder peeringStatus(@Nullable String peeringStatus) {
+            this.peeringStatus = peeringStatus;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         public GetRemotePeeringConnectionsRemotePeeringConnection build() {

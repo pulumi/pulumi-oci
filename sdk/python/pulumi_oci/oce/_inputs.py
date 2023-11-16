@@ -19,9 +19,6 @@ class GetOceInstancesFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: OceInstance Name
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -30,9 +27,6 @@ class GetOceInstancesFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        OceInstance Name
-        """
         return pulumi.get(self, "name")
 
     @name.setter

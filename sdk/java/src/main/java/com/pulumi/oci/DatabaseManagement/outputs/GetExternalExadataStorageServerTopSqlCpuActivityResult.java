@@ -8,6 +8,8 @@ import com.pulumi.oci.DatabaseManagement.outputs.GetExternalExadataStorageServer
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetExternalExadataStorageServerTopSqlCpuActivityResult {
@@ -15,13 +17,13 @@ public final class GetExternalExadataStorageServerTopSqlCpuActivityResult {
      * @return A list of sql CPU activity.
      * 
      */
-    private List<GetExternalExadataStorageServerTopSqlCpuActivityActivity> activities;
+    private @Nullable List<GetExternalExadataStorageServerTopSqlCpuActivityActivity> activities;
     private String externalExadataStorageServerId;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
 
     private GetExternalExadataStorageServerTopSqlCpuActivityResult() {}
     /**
@@ -29,7 +31,7 @@ public final class GetExternalExadataStorageServerTopSqlCpuActivityResult {
      * 
      */
     public List<GetExternalExadataStorageServerTopSqlCpuActivityActivity> activities() {
-        return this.activities;
+        return this.activities == null ? List.of() : this.activities;
     }
     public String externalExadataStorageServerId() {
         return this.externalExadataStorageServerId;
@@ -38,8 +40,8 @@ public final class GetExternalExadataStorageServerTopSqlCpuActivityResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
 
     public static Builder builder() {
@@ -51,9 +53,9 @@ public final class GetExternalExadataStorageServerTopSqlCpuActivityResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetExternalExadataStorageServerTopSqlCpuActivityActivity> activities;
+        private @Nullable List<GetExternalExadataStorageServerTopSqlCpuActivityActivity> activities;
         private String externalExadataStorageServerId;
-        private String id;
+        private @Nullable String id;
         public Builder() {}
         public Builder(GetExternalExadataStorageServerTopSqlCpuActivityResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -63,8 +65,8 @@ public final class GetExternalExadataStorageServerTopSqlCpuActivityResult {
         }
 
         @CustomType.Setter
-        public Builder activities(List<GetExternalExadataStorageServerTopSqlCpuActivityActivity> activities) {
-            this.activities = Objects.requireNonNull(activities);
+        public Builder activities(@Nullable List<GetExternalExadataStorageServerTopSqlCpuActivityActivity> activities) {
+            this.activities = activities;
             return this;
         }
         public Builder activities(GetExternalExadataStorageServerTopSqlCpuActivityActivity... activities) {
@@ -76,8 +78,8 @@ public final class GetExternalExadataStorageServerTopSqlCpuActivityResult {
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         public GetExternalExadataStorageServerTopSqlCpuActivityResult build() {

@@ -68,39 +68,27 @@ class GetPbfListingVersionResult:
 
     @property
     @pulumi.getter(name="changeSummary")
-    def change_summary(self) -> str:
-        """
-        Details changes are included in this version.
-        """
+    def change_summary(self) -> Optional[str]:
         return pulumi.get(self, "change_summary")
 
     @property
     @pulumi.getter
-    def configs(self) -> Sequence['outputs.GetPbfListingVersionConfigResult']:
-        """
-        Details about the required and optional Function configurations needed for proper performance of the PBF.
-        """
+    def configs(self) -> Optional[Sequence['outputs.GetPbfListingVersionConfigResult']]:
         return pulumi.get(self, "configs")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -108,18 +96,12 @@ class GetPbfListingVersionResult:
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        A brief descriptive name for the PBF trigger.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="pbfListingId")
-    def pbf_listing_id(self) -> str:
-        """
-        The OCID of the PbfListing this resource version belongs to.
-        """
+    def pbf_listing_id(self) -> Optional[str]:
         return pulumi.get(self, "pbf_listing_id")
 
     @property
@@ -129,50 +111,32 @@ class GetPbfListingVersionResult:
 
     @property
     @pulumi.getter
-    def requirements(self) -> Sequence['outputs.GetPbfListingVersionRequirementResult']:
-        """
-        Minimum memory required by this PBF. The user should use memory greater than or equal to this value  while configuring the Function.
-        """
+    def requirements(self) -> Optional[Sequence['outputs.GetPbfListingVersionRequirementResult']]:
         return pulumi.get(self, "requirements")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the PBF resource.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The time the PbfListingVersion was created. An RFC3339 formatted datetime string.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The last time the PbfListingVersion was updated. An RFC3339 formatted datetime string.
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
     @property
     @pulumi.getter
-    def triggers(self) -> Sequence['outputs.GetPbfListingVersionTriggerResult']:
-        """
-        An array of Trigger. A list of triggers that may activate the PBF.
-        """
+    def triggers(self) -> Optional[Sequence['outputs.GetPbfListingVersionTriggerResult']]:
         return pulumi.get(self, "triggers")
 
 
@@ -201,21 +165,7 @@ class AwaitableGetPbfListingVersionResult(GetPbfListingVersionResult):
 def get_pbf_listing_version(pbf_listing_version_id: Optional[str] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetPbfListingVersionResult:
     """
-    This data source provides details about a specific Pbf Listing Version resource in Oracle Cloud Infrastructure Functions service.
-
-    Gets a PbfListingVersion by identifier for a PbfListing.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_pbf_listing_version = oci.Functions.get_pbf_listing_version(pbf_listing_version_id=oci_functions_pbf_listing_version["test_pbf_listing_version"]["id"])
-    ```
-
-
-    :param str pbf_listing_version_id: unique PbfListingVersion identifier
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['pbfListingVersionId'] = pbf_listing_version_id
@@ -243,20 +193,6 @@ def get_pbf_listing_version(pbf_listing_version_id: Optional[str] = None,
 def get_pbf_listing_version_output(pbf_listing_version_id: Optional[pulumi.Input[str]] = None,
                                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetPbfListingVersionResult]:
     """
-    This data source provides details about a specific Pbf Listing Version resource in Oracle Cloud Infrastructure Functions service.
-
-    Gets a PbfListingVersion by identifier for a PbfListing.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_pbf_listing_version = oci.Functions.get_pbf_listing_version(pbf_listing_version_id=oci_functions_pbf_listing_version["test_pbf_listing_version"]["id"])
-    ```
-
-
-    :param str pbf_listing_version_id: unique PbfListingVersion identifier
+    Use this data source to access information about an existing resource.
     """
     ...

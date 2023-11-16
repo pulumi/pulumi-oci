@@ -26,13 +26,13 @@ public final class GetCompartmentsResult {
      * @return The list of compartments.
      * 
      */
-    private List<GetCompartmentsCompartment> compartments;
+    private @Nullable List<GetCompartmentsCompartment> compartments;
     private @Nullable List<GetCompartmentsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The name you assign to the compartment during creation. The name must be unique across all compartments in the parent. Avoid entering confidential information.
      * 
@@ -63,7 +63,7 @@ public final class GetCompartmentsResult {
      * 
      */
     public List<GetCompartmentsCompartment> compartments() {
-        return this.compartments;
+        return this.compartments == null ? List.of() : this.compartments;
     }
     public List<GetCompartmentsFilter> filters() {
         return this.filters == null ? List.of() : this.filters;
@@ -72,8 +72,8 @@ public final class GetCompartmentsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The name you assign to the compartment during creation. The name must be unique across all compartments in the parent. Avoid entering confidential information.
@@ -102,9 +102,9 @@ public final class GetCompartmentsResult {
         private @Nullable String accessLevel;
         private String compartmentId;
         private @Nullable Boolean compartmentIdInSubtree;
-        private List<GetCompartmentsCompartment> compartments;
+        private @Nullable List<GetCompartmentsCompartment> compartments;
         private @Nullable List<GetCompartmentsFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String name;
         private @Nullable String state;
         public Builder() {}
@@ -136,8 +136,8 @@ public final class GetCompartmentsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder compartments(List<GetCompartmentsCompartment> compartments) {
-            this.compartments = Objects.requireNonNull(compartments);
+        public Builder compartments(@Nullable List<GetCompartmentsCompartment> compartments) {
+            this.compartments = compartments;
             return this;
         }
         public Builder compartments(GetCompartmentsCompartment... compartments) {
@@ -152,8 +152,8 @@ public final class GetCompartmentsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

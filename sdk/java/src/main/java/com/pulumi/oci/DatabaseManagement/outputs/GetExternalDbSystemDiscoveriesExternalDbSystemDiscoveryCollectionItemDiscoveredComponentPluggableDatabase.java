@@ -8,6 +8,8 @@ import com.pulumi.oci.DatabaseManagement.outputs.GetExternalDbSystemDiscoveriesE
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabase {
@@ -15,51 +17,51 @@ public final class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollec
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return The connector details used to connect to the external DB system component.
      * 
      */
-    private List<GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnector> connectors;
+    private @Nullable List<GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnector> connectors;
     /**
      * @return The unique identifier of the parent Container Database (CDB).
      * 
      */
-    private String containerDatabaseId;
+    private @Nullable String containerDatabaseId;
     /**
      * @return The unique identifier of the PDB.
      * 
      */
-    private String guid;
+    private @Nullable String guid;
 
     private GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabase() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return The connector details used to connect to the external DB system component.
      * 
      */
     public List<GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnector> connectors() {
-        return this.connectors;
+        return this.connectors == null ? List.of() : this.connectors;
     }
     /**
      * @return The unique identifier of the parent Container Database (CDB).
      * 
      */
-    public String containerDatabaseId() {
-        return this.containerDatabaseId;
+    public Optional<String> containerDatabaseId() {
+        return Optional.ofNullable(this.containerDatabaseId);
     }
     /**
      * @return The unique identifier of the PDB.
      * 
      */
-    public String guid() {
-        return this.guid;
+    public Optional<String> guid() {
+        return Optional.ofNullable(this.guid);
     }
 
     public static Builder builder() {
@@ -71,10 +73,10 @@ public final class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollec
     }
     @CustomType.Builder
     public static final class Builder {
-        private String compartmentId;
-        private List<GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnector> connectors;
-        private String containerDatabaseId;
-        private String guid;
+        private @Nullable String compartmentId;
+        private @Nullable List<GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnector> connectors;
+        private @Nullable String containerDatabaseId;
+        private @Nullable String guid;
         public Builder() {}
         public Builder(GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabase defaults) {
     	      Objects.requireNonNull(defaults);
@@ -85,26 +87,26 @@ public final class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollec
         }
 
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder connectors(List<GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnector> connectors) {
-            this.connectors = Objects.requireNonNull(connectors);
+        public Builder connectors(@Nullable List<GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnector> connectors) {
+            this.connectors = connectors;
             return this;
         }
         public Builder connectors(GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnector... connectors) {
             return connectors(List.of(connectors));
         }
         @CustomType.Setter
-        public Builder containerDatabaseId(String containerDatabaseId) {
-            this.containerDatabaseId = Objects.requireNonNull(containerDatabaseId);
+        public Builder containerDatabaseId(@Nullable String containerDatabaseId) {
+            this.containerDatabaseId = containerDatabaseId;
             return this;
         }
         @CustomType.Setter
-        public Builder guid(String guid) {
-            this.guid = Objects.requireNonNull(guid);
+        public Builder guid(@Nullable String guid) {
+            this.guid = guid;
             return this;
         }
         public GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabase build() {

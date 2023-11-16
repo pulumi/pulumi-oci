@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Message resource in Oracle Cloud Infrastructure Golden Gate service.
@@ -61,7 +60,7 @@ type GetMessageArgs struct {
 type GetMessageResult struct {
 	DeploymentId string `pulumi:"deploymentId"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// An array of DeploymentMessages.
 	Items []GetMessageItem `pulumi:"items"`
 }
@@ -104,19 +103,13 @@ func (o GetMessageResultOutput) ToGetMessageResultOutputWithContext(ctx context.
 	return o
 }
 
-func (o GetMessageResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetMessageResult] {
-	return pulumix.Output[GetMessageResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetMessageResultOutput) DeploymentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMessageResult) string { return v.DeploymentId }).(pulumi.StringOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetMessageResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMessageResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetMessageResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMessageResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // An array of DeploymentMessages.

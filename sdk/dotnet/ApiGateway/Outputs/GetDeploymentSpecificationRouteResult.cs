@@ -28,7 +28,7 @@ namespace Pulumi.Oci.ApiGateway.Outputs
         /// <summary>
         /// A URL path pattern that must be matched on this route. The path pattern may contain a subset of RFC 6570 identifiers to allow wildcard and parameterized matching.
         /// </summary>
-        public readonly string Path;
+        public readonly string? Path;
         /// <summary>
         /// Behavior applied to any requests received by the API on this route.
         /// </summary>
@@ -46,7 +46,7 @@ namespace Pulumi.Oci.ApiGateway.Outputs
 
             ImmutableArray<string> methods,
 
-            string path,
+            string? path,
 
             ImmutableArray<Outputs.GetDeploymentSpecificationRouteRequestPolicyResult> requestPolicies,
 

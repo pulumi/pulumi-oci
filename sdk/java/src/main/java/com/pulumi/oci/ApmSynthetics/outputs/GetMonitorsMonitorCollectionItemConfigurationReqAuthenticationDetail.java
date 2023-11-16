@@ -8,6 +8,8 @@ import com.pulumi.oci.ApmSynthetics.outputs.GetMonitorsMonitorCollectionItemConf
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetail {
@@ -15,42 +17,42 @@ public final class GetMonitorsMonitorCollectionItemConfigurationReqAuthenticatio
      * @return List of authentication headers. Example: `[{&#34;headerName&#34;: &#34;content-type&#34;, &#34;headerValue&#34;:&#34;json&#34;}]`
      * 
      */
-    private List<GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailAuthHeader> authHeaders;
+    private @Nullable List<GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailAuthHeader> authHeaders;
     /**
      * @return Request method.
      * 
      */
-    private String authRequestMethod;
+    private @Nullable String authRequestMethod;
     /**
      * @return Request post body.
      * 
      */
-    private String authRequestPostBody;
+    private @Nullable String authRequestPostBody;
     /**
      * @return Authentication token.
      * 
      */
-    private String authToken;
+    private @Nullable String authToken;
     /**
      * @return URL to get authentication token.
      * 
      */
-    private String authUrl;
+    private @Nullable String authUrl;
     /**
      * @return User name for authentication.
      * 
      */
-    private String authUserName;
+    private @Nullable String authUserName;
     /**
      * @return User password for authentication.
      * 
      */
-    private String authUserPassword;
+    private @Nullable String authUserPassword;
     /**
      * @return Request HTTP OAuth scheme.
      * 
      */
-    private String oauthScheme;
+    private @Nullable String oauthScheme;
 
     private GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetail() {}
     /**
@@ -58,56 +60,56 @@ public final class GetMonitorsMonitorCollectionItemConfigurationReqAuthenticatio
      * 
      */
     public List<GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailAuthHeader> authHeaders() {
-        return this.authHeaders;
+        return this.authHeaders == null ? List.of() : this.authHeaders;
     }
     /**
      * @return Request method.
      * 
      */
-    public String authRequestMethod() {
-        return this.authRequestMethod;
+    public Optional<String> authRequestMethod() {
+        return Optional.ofNullable(this.authRequestMethod);
     }
     /**
      * @return Request post body.
      * 
      */
-    public String authRequestPostBody() {
-        return this.authRequestPostBody;
+    public Optional<String> authRequestPostBody() {
+        return Optional.ofNullable(this.authRequestPostBody);
     }
     /**
      * @return Authentication token.
      * 
      */
-    public String authToken() {
-        return this.authToken;
+    public Optional<String> authToken() {
+        return Optional.ofNullable(this.authToken);
     }
     /**
      * @return URL to get authentication token.
      * 
      */
-    public String authUrl() {
-        return this.authUrl;
+    public Optional<String> authUrl() {
+        return Optional.ofNullable(this.authUrl);
     }
     /**
      * @return User name for authentication.
      * 
      */
-    public String authUserName() {
-        return this.authUserName;
+    public Optional<String> authUserName() {
+        return Optional.ofNullable(this.authUserName);
     }
     /**
      * @return User password for authentication.
      * 
      */
-    public String authUserPassword() {
-        return this.authUserPassword;
+    public Optional<String> authUserPassword() {
+        return Optional.ofNullable(this.authUserPassword);
     }
     /**
      * @return Request HTTP OAuth scheme.
      * 
      */
-    public String oauthScheme() {
-        return this.oauthScheme;
+    public Optional<String> oauthScheme() {
+        return Optional.ofNullable(this.oauthScheme);
     }
 
     public static Builder builder() {
@@ -119,14 +121,14 @@ public final class GetMonitorsMonitorCollectionItemConfigurationReqAuthenticatio
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailAuthHeader> authHeaders;
-        private String authRequestMethod;
-        private String authRequestPostBody;
-        private String authToken;
-        private String authUrl;
-        private String authUserName;
-        private String authUserPassword;
-        private String oauthScheme;
+        private @Nullable List<GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailAuthHeader> authHeaders;
+        private @Nullable String authRequestMethod;
+        private @Nullable String authRequestPostBody;
+        private @Nullable String authToken;
+        private @Nullable String authUrl;
+        private @Nullable String authUserName;
+        private @Nullable String authUserPassword;
+        private @Nullable String oauthScheme;
         public Builder() {}
         public Builder(GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetail defaults) {
     	      Objects.requireNonNull(defaults);
@@ -141,46 +143,46 @@ public final class GetMonitorsMonitorCollectionItemConfigurationReqAuthenticatio
         }
 
         @CustomType.Setter
-        public Builder authHeaders(List<GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailAuthHeader> authHeaders) {
-            this.authHeaders = Objects.requireNonNull(authHeaders);
+        public Builder authHeaders(@Nullable List<GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailAuthHeader> authHeaders) {
+            this.authHeaders = authHeaders;
             return this;
         }
         public Builder authHeaders(GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailAuthHeader... authHeaders) {
             return authHeaders(List.of(authHeaders));
         }
         @CustomType.Setter
-        public Builder authRequestMethod(String authRequestMethod) {
-            this.authRequestMethod = Objects.requireNonNull(authRequestMethod);
+        public Builder authRequestMethod(@Nullable String authRequestMethod) {
+            this.authRequestMethod = authRequestMethod;
             return this;
         }
         @CustomType.Setter
-        public Builder authRequestPostBody(String authRequestPostBody) {
-            this.authRequestPostBody = Objects.requireNonNull(authRequestPostBody);
+        public Builder authRequestPostBody(@Nullable String authRequestPostBody) {
+            this.authRequestPostBody = authRequestPostBody;
             return this;
         }
         @CustomType.Setter
-        public Builder authToken(String authToken) {
-            this.authToken = Objects.requireNonNull(authToken);
+        public Builder authToken(@Nullable String authToken) {
+            this.authToken = authToken;
             return this;
         }
         @CustomType.Setter
-        public Builder authUrl(String authUrl) {
-            this.authUrl = Objects.requireNonNull(authUrl);
+        public Builder authUrl(@Nullable String authUrl) {
+            this.authUrl = authUrl;
             return this;
         }
         @CustomType.Setter
-        public Builder authUserName(String authUserName) {
-            this.authUserName = Objects.requireNonNull(authUserName);
+        public Builder authUserName(@Nullable String authUserName) {
+            this.authUserName = authUserName;
             return this;
         }
         @CustomType.Setter
-        public Builder authUserPassword(String authUserPassword) {
-            this.authUserPassword = Objects.requireNonNull(authUserPassword);
+        public Builder authUserPassword(@Nullable String authUserPassword) {
+            this.authUserPassword = authUserPassword;
             return this;
         }
         @CustomType.Setter
-        public Builder oauthScheme(String oauthScheme) {
-            this.oauthScheme = Objects.requireNonNull(oauthScheme);
+        public Builder oauthScheme(@Nullable String oauthScheme) {
+            this.oauthScheme = oauthScheme;
             return this;
         }
         public GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetail build() {

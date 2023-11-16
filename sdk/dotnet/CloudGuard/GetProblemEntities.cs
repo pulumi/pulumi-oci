@@ -127,7 +127,7 @@ namespace Pulumi.Oci.CloudGuard
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The list of problem_entity_collection.
         /// </summary>
@@ -141,7 +141,7 @@ namespace Pulumi.Oci.CloudGuard
         private GetProblemEntitiesResult(
             ImmutableArray<Outputs.GetProblemEntitiesFilterResult> filters,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetProblemEntitiesProblemEntityCollectionResult> problemEntityCollections,
 

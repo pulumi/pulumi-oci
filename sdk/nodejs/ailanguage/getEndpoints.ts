@@ -71,7 +71,7 @@ export interface GetEndpointsResult {
     /**
      * The list of endpoint_collection.
      */
-    readonly endpointCollections: outputs.AiLanguage.GetEndpointsEndpointCollection[];
+    readonly endpointCollections?: outputs.AiLanguage.GetEndpointsEndpointCollection[];
     readonly filters?: outputs.AiLanguage.GetEndpointsFilter[];
     /**
      * Unique identifier endpoint OCID of an endpoint that is immutable on creation.

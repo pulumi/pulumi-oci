@@ -77,7 +77,7 @@ export class AgentDependency extends pulumi.CustomResource {
     /**
      * The checksum associated with the dependency object returned by Object Storage.
      */
-    public /*out*/ readonly checksum!: pulumi.Output<string>;
+    public /*out*/ readonly checksum!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Compartment identifier.
      */
@@ -85,7 +85,7 @@ export class AgentDependency extends pulumi.CustomResource {
     /**
      * (Updatable) The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) Name of the dependency type. This should match the whitelisted enum of dependency names.
      */
@@ -93,11 +93,11 @@ export class AgentDependency extends pulumi.CustomResource {
     /**
      * (Updatable) Version of the Agent dependency.
      */
-    public readonly dependencyVersion!: pulumi.Output<string>;
+    public readonly dependencyVersion!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Description about the Agent dependency.
      */
-    public readonly description!: pulumi.Output<string>;
+    public readonly description!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Display name of the Agent dependency.
      */
@@ -105,15 +105,15 @@ export class AgentDependency extends pulumi.CustomResource {
     /**
      * The eTag associated with the dependency object returned by Object Storage.
      */
-    public /*out*/ readonly eTag!: pulumi.Output<string>;
+    public /*out*/ readonly eTag!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Object storage namespace associated with the customer's tenancy.
      */
@@ -125,7 +125,7 @@ export class AgentDependency extends pulumi.CustomResource {
     /**
      * The current state of AgentDependency.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}` 
      *
@@ -133,11 +133,11 @@ export class AgentDependency extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly systemTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly systemTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * The time when the AgentDependency was created. An RFC3339 formatted datetime string.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
 
     /**
      * Create a AgentDependency resource with the given unique name, arguments, and options.

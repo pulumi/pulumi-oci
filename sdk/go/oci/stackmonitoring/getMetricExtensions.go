@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Metric Extensions in Oracle Cloud Infrastructure Stack Monitoring service.
@@ -80,7 +79,7 @@ type GetMetricExtensionsResult struct {
 	EnabledOnResourceId *string                     `pulumi:"enabledOnResourceId"`
 	Filters             []GetMetricExtensionsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The list of metric_extension_collection.
 	MetricExtensionCollections []GetMetricExtensionsMetricExtensionCollection `pulumi:"metricExtensionCollections"`
 	// Name of the script file
@@ -142,12 +141,6 @@ func (o GetMetricExtensionsResultOutput) ToGetMetricExtensionsResultOutputWithCo
 	return o
 }
 
-func (o GetMetricExtensionsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetMetricExtensionsResult] {
-	return pulumix.Output[GetMetricExtensionsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
 func (o GetMetricExtensionsResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMetricExtensionsResult) string { return v.CompartmentId }).(pulumi.StringOutput)
@@ -162,8 +155,8 @@ func (o GetMetricExtensionsResultOutput) Filters() GetMetricExtensionsFilterArra
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetMetricExtensionsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMetricExtensionsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetMetricExtensionsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMetricExtensionsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The list of metric_extension_collection.

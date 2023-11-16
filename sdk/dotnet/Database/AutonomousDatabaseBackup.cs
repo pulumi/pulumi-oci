@@ -56,79 +56,79 @@ namespace Pulumi.Oci.Database
         /// Backup destination details
         /// </summary>
         [Output("backupDestinationDetails")]
-        public Output<Outputs.AutonomousDatabaseBackupBackupDestinationDetails> BackupDestinationDetails { get; private set; } = null!;
+        public Output<Outputs.AutonomousDatabaseBackupBackupDestinationDetails?> BackupDestinationDetails { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         /// </summary>
         [Output("compartmentId")]
-        public Output<string> CompartmentId { get; private set; } = null!;
+        public Output<string?> CompartmentId { get; private set; } = null!;
 
         /// <summary>
         /// The size of the database in terabytes at the time the backup was taken.
         /// </summary>
         [Output("databaseSizeInTbs")]
-        public Output<double> DatabaseSizeInTbs { get; private set; } = null!;
+        public Output<double?> DatabaseSizeInTbs { get; private set; } = null!;
 
         /// <summary>
         /// A valid Oracle Database version for Autonomous Database.
         /// </summary>
         [Output("dbVersion")]
-        public Output<string> DbVersion { get; private set; } = null!;
+        public Output<string?> DbVersion { get; private set; } = null!;
 
         /// <summary>
         /// The user-friendly name for the backup. The name does not have to be unique.
         /// </summary>
         [Output("displayName")]
-        public Output<string> DisplayName { get; private set; } = null!;
+        public Output<string?> DisplayName { get; private set; } = null!;
 
         /// <summary>
         /// Indicates whether the backup is user-initiated or automatic.
         /// </summary>
         [Output("isAutomatic")]
-        public Output<bool> IsAutomatic { get; private set; } = null!;
+        public Output<bool?> IsAutomatic { get; private set; } = null!;
 
         /// <summary>
         /// Indicates whether the backup is long-term
         /// </summary>
         [Output("isLongTermBackup")]
-        public Output<bool> IsLongTermBackup { get; private set; } = null!;
+        public Output<bool?> IsLongTermBackup { get; private set; } = null!;
 
         /// <summary>
         /// Indicates whether the backup can be used to restore the associated Autonomous Database.
         /// </summary>
         [Output("isRestorable")]
-        public Output<bool> IsRestorable { get; private set; } = null!;
+        public Output<bool?> IsRestorable { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
         /// </summary>
         [Output("keyStoreId")]
-        public Output<string> KeyStoreId { get; private set; } = null!;
+        public Output<string?> KeyStoreId { get; private set; } = null!;
 
         /// <summary>
         /// The wallet name for Oracle Key Vault.
         /// </summary>
         [Output("keyStoreWalletName")]
-        public Output<string> KeyStoreWalletName { get; private set; } = null!;
+        public Output<string?> KeyStoreWalletName { get; private set; } = null!;
 
         /// <summary>
         /// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
         /// </summary>
         [Output("kmsKeyId")]
-        public Output<string> KmsKeyId { get; private set; } = null!;
+        public Output<string?> KmsKeyId { get; private set; } = null!;
 
         /// <summary>
         /// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
         /// </summary>
         [Output("kmsKeyVersionId")]
-        public Output<string> KmsKeyVersionId { get; private set; } = null!;
+        public Output<string?> KmsKeyVersionId { get; private set; } = null!;
 
         /// <summary>
         /// Additional information about the current lifecycle state.
         /// </summary>
         [Output("lifecycleDetails")]
-        public Output<string> LifecycleDetails { get; private set; } = null!;
+        public Output<string?> LifecycleDetails { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Retention period, in days, for long-term backups
@@ -138,49 +138,49 @@ namespace Pulumi.Oci.Database
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("retentionPeriodInDays")]
-        public Output<int> RetentionPeriodInDays { get; private set; } = null!;
+        public Output<int?> RetentionPeriodInDays { get; private set; } = null!;
 
         /// <summary>
         /// The backup size in terrabytes (TB).
         /// </summary>
         [Output("sizeInTbs")]
-        public Output<double> SizeInTbs { get; private set; } = null!;
+        public Output<double?> SizeInTbs { get; private set; } = null!;
 
         /// <summary>
         /// The current state of the backup.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// Timestamp until when the backup will be available
         /// </summary>
         [Output("timeAvailableTill")]
-        public Output<string> TimeAvailableTill { get; private set; } = null!;
+        public Output<string?> TimeAvailableTill { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the backup completed.
         /// </summary>
         [Output("timeEnded")]
-        public Output<string> TimeEnded { get; private set; } = null!;
+        public Output<string?> TimeEnded { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the backup started.
         /// </summary>
         [Output("timeStarted")]
-        public Output<string> TimeStarted { get; private set; } = null!;
+        public Output<string?> TimeStarted { get; private set; } = null!;
 
         /// <summary>
         /// The type of backup.
         /// </summary>
         [Output("type")]
-        public Output<string> Type { get; private set; } = null!;
+        public Output<string?> Type { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
         /// </summary>
         [Output("vaultId")]
-        public Output<string> VaultId { get; private set; } = null!;
+        public Output<string?> VaultId { get; private set; } = null!;
 
 
         /// <summary>

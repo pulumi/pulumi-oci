@@ -6,6 +6,8 @@ package com.pulumi.oci.DevOps.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoActionFilterInclude {
@@ -13,27 +15,27 @@ public final class GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTrigge
      * @return The target branch for pull requests; not applicable for push requests.
      * 
      */
-    private String baseRef;
+    private @Nullable String baseRef;
     /**
      * @return Branch for push event; source branch for pull requests.
      * 
      */
-    private String headRef;
+    private @Nullable String headRef;
 
     private GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoActionFilterInclude() {}
     /**
      * @return The target branch for pull requests; not applicable for push requests.
      * 
      */
-    public String baseRef() {
-        return this.baseRef;
+    public Optional<String> baseRef() {
+        return Optional.ofNullable(this.baseRef);
     }
     /**
      * @return Branch for push event; source branch for pull requests.
      * 
      */
-    public String headRef() {
-        return this.headRef;
+    public Optional<String> headRef() {
+        return Optional.ofNullable(this.headRef);
     }
 
     public static Builder builder() {
@@ -45,8 +47,8 @@ public final class GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTrigge
     }
     @CustomType.Builder
     public static final class Builder {
-        private String baseRef;
-        private String headRef;
+        private @Nullable String baseRef;
+        private @Nullable String headRef;
         public Builder() {}
         public Builder(GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoActionFilterInclude defaults) {
     	      Objects.requireNonNull(defaults);
@@ -55,13 +57,13 @@ public final class GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTrigge
         }
 
         @CustomType.Setter
-        public Builder baseRef(String baseRef) {
-            this.baseRef = Objects.requireNonNull(baseRef);
+        public Builder baseRef(@Nullable String baseRef) {
+            this.baseRef = baseRef;
             return this;
         }
         @CustomType.Setter
-        public Builder headRef(String headRef) {
-            this.headRef = Objects.requireNonNull(headRef);
+        public Builder headRef(@Nullable String headRef) {
+            this.headRef = headRef;
             return this;
         }
         public GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoActionFilterInclude build() {

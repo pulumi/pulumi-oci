@@ -29,7 +29,7 @@ public final class GetVnicAttachmentsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The OCID of the instance.
      * 
@@ -39,7 +39,7 @@ public final class GetVnicAttachmentsResult {
      * @return The list of vnic_attachments.
      * 
      */
-    private List<GetVnicAttachmentsVnicAttachment> vnicAttachments;
+    private @Nullable List<GetVnicAttachmentsVnicAttachment> vnicAttachments;
     /**
      * @return The OCID of the VNIC. Available after the attachment process is complete.
      * 
@@ -68,8 +68,8 @@ public final class GetVnicAttachmentsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The OCID of the instance.
@@ -83,7 +83,7 @@ public final class GetVnicAttachmentsResult {
      * 
      */
     public List<GetVnicAttachmentsVnicAttachment> vnicAttachments() {
-        return this.vnicAttachments;
+        return this.vnicAttachments == null ? List.of() : this.vnicAttachments;
     }
     /**
      * @return The OCID of the VNIC. Available after the attachment process is complete.
@@ -105,9 +105,9 @@ public final class GetVnicAttachmentsResult {
         private @Nullable String availabilityDomain;
         private String compartmentId;
         private @Nullable List<GetVnicAttachmentsFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String instanceId;
-        private List<GetVnicAttachmentsVnicAttachment> vnicAttachments;
+        private @Nullable List<GetVnicAttachmentsVnicAttachment> vnicAttachments;
         private @Nullable String vnicId;
         public Builder() {}
         public Builder(GetVnicAttachmentsResult defaults) {
@@ -140,8 +140,8 @@ public final class GetVnicAttachmentsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -150,8 +150,8 @@ public final class GetVnicAttachmentsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder vnicAttachments(List<GetVnicAttachmentsVnicAttachment> vnicAttachments) {
-            this.vnicAttachments = Objects.requireNonNull(vnicAttachments);
+        public Builder vnicAttachments(@Nullable List<GetVnicAttachmentsVnicAttachment> vnicAttachments) {
+            this.vnicAttachments = vnicAttachments;
             return this;
         }
         public Builder vnicAttachments(GetVnicAttachmentsVnicAttachment... vnicAttachments) {

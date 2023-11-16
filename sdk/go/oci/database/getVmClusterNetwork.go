@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Vm Cluster Network resource in Oracle Cloud Infrastructure Database service.
@@ -63,13 +62,13 @@ type LookupVmClusterNetworkArgs struct {
 
 // A collection of values returned by getVmClusterNetwork.
 type LookupVmClusterNetworkResult struct {
-	Action string `pulumi:"action"`
+	Action *string `pulumi:"action"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The user-friendly name for the VM cluster network. The name does not need to be unique.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// The list of DNS server IP addresses. Maximum of 3 allowed.
 	Dns []string `pulumi:"dns"`
 	// The SCAN details for DR network
@@ -79,21 +78,21 @@ type LookupVmClusterNetworkResult struct {
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster network.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Additional information about the current lifecycle state.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// The list of NTP server IP addresses. Maximum of 3 allowed.
 	Ntps []string `pulumi:"ntps"`
 	// The SCAN details.
 	Scans []GetVmClusterNetworkScan `pulumi:"scans"`
 	// The current state of the VM cluster network nodes. CREATING - The resource is being created REQUIRES_VALIDATION - The resource is created and may not be usable until it is validated. VALIDATING - The resource is being validated and not available to use. VALIDATED - The resource is validated and is available for consumption by VM cluster. VALIDATION_FAILED - The resource validation has failed and might require user input to be corrected. UPDATING - The resource is being updated and not available to use. ALLOCATED - The resource is currently being used by VM cluster. TERMINATING - The resource is being deleted and not available to use. TERMINATED - The resource is deleted and unavailable. FAILED - The resource is in a failed state due to validation or other errors.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The date and time when the VM cluster network was created.
-	TimeCreated              string `pulumi:"timeCreated"`
-	ValidateVmClusterNetwork bool   `pulumi:"validateVmClusterNetwork"`
+	TimeCreated              *string `pulumi:"timeCreated"`
+	ValidateVmClusterNetwork *bool   `pulumi:"validateVmClusterNetwork"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated VM Cluster.
-	VmClusterId        string `pulumi:"vmClusterId"`
-	VmClusterNetworkId string `pulumi:"vmClusterNetworkId"`
+	VmClusterId        *string `pulumi:"vmClusterId"`
+	VmClusterNetworkId string  `pulumi:"vmClusterNetworkId"`
 	// Details of the client and backup networks.
 	VmNetworks []GetVmClusterNetworkVmNetwork `pulumi:"vmNetworks"`
 }
@@ -138,19 +137,13 @@ func (o LookupVmClusterNetworkResultOutput) ToLookupVmClusterNetworkResultOutput
 	return o
 }
 
-func (o LookupVmClusterNetworkResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupVmClusterNetworkResult] {
-	return pulumix.Output[LookupVmClusterNetworkResult]{
-		OutputState: o.OutputState,
-	}
-}
-
-func (o LookupVmClusterNetworkResultOutput) Action() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupVmClusterNetworkResult) string { return v.Action }).(pulumi.StringOutput)
+func (o LookupVmClusterNetworkResultOutput) Action() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupVmClusterNetworkResult) *string { return v.Action }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-func (o LookupVmClusterNetworkResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupVmClusterNetworkResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupVmClusterNetworkResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupVmClusterNetworkResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -159,8 +152,8 @@ func (o LookupVmClusterNetworkResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // The user-friendly name for the VM cluster network. The name does not need to be unique.
-func (o LookupVmClusterNetworkResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupVmClusterNetworkResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupVmClusterNetworkResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupVmClusterNetworkResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // The list of DNS server IP addresses. Maximum of 3 allowed.
@@ -184,13 +177,13 @@ func (o LookupVmClusterNetworkResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster network.
-func (o LookupVmClusterNetworkResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupVmClusterNetworkResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupVmClusterNetworkResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupVmClusterNetworkResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Additional information about the current lifecycle state.
-func (o LookupVmClusterNetworkResultOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupVmClusterNetworkResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o LookupVmClusterNetworkResultOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupVmClusterNetworkResult) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // The list of NTP server IP addresses. Maximum of 3 allowed.
@@ -204,22 +197,22 @@ func (o LookupVmClusterNetworkResultOutput) Scans() GetVmClusterNetworkScanArray
 }
 
 // The current state of the VM cluster network nodes. CREATING - The resource is being created REQUIRES_VALIDATION - The resource is created and may not be usable until it is validated. VALIDATING - The resource is being validated and not available to use. VALIDATED - The resource is validated and is available for consumption by VM cluster. VALIDATION_FAILED - The resource validation has failed and might require user input to be corrected. UPDATING - The resource is being updated and not available to use. ALLOCATED - The resource is currently being used by VM cluster. TERMINATING - The resource is being deleted and not available to use. TERMINATED - The resource is deleted and unavailable. FAILED - The resource is in a failed state due to validation or other errors.
-func (o LookupVmClusterNetworkResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupVmClusterNetworkResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupVmClusterNetworkResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupVmClusterNetworkResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time when the VM cluster network was created.
-func (o LookupVmClusterNetworkResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupVmClusterNetworkResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupVmClusterNetworkResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupVmClusterNetworkResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
-func (o LookupVmClusterNetworkResultOutput) ValidateVmClusterNetwork() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupVmClusterNetworkResult) bool { return v.ValidateVmClusterNetwork }).(pulumi.BoolOutput)
+func (o LookupVmClusterNetworkResultOutput) ValidateVmClusterNetwork() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupVmClusterNetworkResult) *bool { return v.ValidateVmClusterNetwork }).(pulumi.BoolPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated VM Cluster.
-func (o LookupVmClusterNetworkResultOutput) VmClusterId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupVmClusterNetworkResult) string { return v.VmClusterId }).(pulumi.StringOutput)
+func (o LookupVmClusterNetworkResultOutput) VmClusterId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupVmClusterNetworkResult) *string { return v.VmClusterId }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupVmClusterNetworkResultOutput) VmClusterNetworkId() pulumi.StringOutput {

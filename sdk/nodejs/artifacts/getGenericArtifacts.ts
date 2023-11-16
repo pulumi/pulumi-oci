@@ -104,7 +104,7 @@ export interface GetGenericArtifactsResult {
     /**
      * The list of generic_artifact_collection.
      */
-    readonly genericArtifactCollections: outputs.Artifacts.GetGenericArtifactsGenericArtifactCollection[];
+    readonly genericArtifactCollections?: outputs.Artifacts.GetGenericArtifactsGenericArtifactCollection[];
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the artifact.  Example: `ocid1.genericartifact.oc1..exampleuniqueID`
      */

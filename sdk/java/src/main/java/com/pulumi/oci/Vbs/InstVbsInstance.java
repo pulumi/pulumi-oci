@@ -14,6 +14,7 @@ import java.lang.Boolean;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -87,14 +88,14 @@ public class InstVbsInstance extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * (Updatable) Display Name
@@ -115,56 +116,56 @@ public class InstVbsInstance extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * IDCS personal acceess token identifying IDCS user and stripe for the VBS service
      * 
      */
     @Export(name="idcsAccessToken", refs={String.class}, tree="[0]")
-    private Output<String> idcsAccessToken;
+    private Output</* @Nullable */ String> idcsAccessToken;
 
     /**
      * @return IDCS personal acceess token identifying IDCS user and stripe for the VBS service
      * 
      */
-    public Output<String> idcsAccessToken() {
-        return this.idcsAccessToken;
+    public Output<Optional<String>> idcsAccessToken() {
+        return Codegen.optional(this.idcsAccessToken);
     }
     /**
      * (Updatable) Whether VBS is authorized to create and use resources in the customer tenancy
      * 
      */
     @Export(name="isResourceUsageAgreementGranted", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isResourceUsageAgreementGranted;
+    private Output</* @Nullable */ Boolean> isResourceUsageAgreementGranted;
 
     /**
      * @return (Updatable) Whether VBS is authorized to create and use resources in the customer tenancy
      * 
      */
-    public Output<Boolean> isResourceUsageAgreementGranted() {
-        return this.isResourceUsageAgreementGranted;
+    public Output<Optional<Boolean>> isResourceUsageAgreementGranted() {
+        return Codegen.optional(this.isResourceUsageAgreementGranted);
     }
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
     @Export(name="lifecyleDetails", refs={String.class}, tree="[0]")
-    private Output<String> lifecyleDetails;
+    private Output</* @Nullable */ String> lifecyleDetails;
 
     /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
-    public Output<String> lifecyleDetails() {
-        return this.lifecyleDetails;
+    public Output<Optional<String>> lifecyleDetails() {
+        return Codegen.optional(this.lifecyleDetails);
     }
     /**
      * Service Instance Name
@@ -188,7 +189,7 @@ public class InstVbsInstance extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="resourceCompartmentId", refs={String.class}, tree="[0]")
-    private Output<String> resourceCompartmentId;
+    private Output</* @Nullable */ String> resourceCompartmentId;
 
     /**
      * @return (Updatable) Compartment where VBS may create additional resources for the service instance
@@ -197,78 +198,78 @@ public class InstVbsInstance extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Output<String> resourceCompartmentId() {
-        return this.resourceCompartmentId;
+    public Output<Optional<String>> resourceCompartmentId() {
+        return Codegen.optional(this.resourceCompartmentId);
     }
     /**
      * The current state of the VbsInstance.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The current state of the VbsInstance.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
     @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> systemTags;
+    private Output</* @Nullable */ Map<String,Object>> systemTags;
 
     /**
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    public Output<Map<String,Object>> systemTags() {
-        return this.systemTags;
+    public Output<Optional<Map<String,Object>>> systemTags() {
+        return Codegen.optional(this.systemTags);
     }
     /**
      * The time the the VbsInstance was created. An RFC3339 formatted datetime string
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The time the the VbsInstance was created. An RFC3339 formatted datetime string
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * The time the VbsInstance was updated. An RFC3339 formatted datetime string
      * 
      */
     @Export(name="timeUpdated", refs={String.class}, tree="[0]")
-    private Output<String> timeUpdated;
+    private Output</* @Nullable */ String> timeUpdated;
 
     /**
      * @return The time the VbsInstance was updated. An RFC3339 formatted datetime string
      * 
      */
-    public Output<String> timeUpdated() {
-        return this.timeUpdated;
+    public Output<Optional<String>> timeUpdated() {
+        return Codegen.optional(this.timeUpdated);
     }
     /**
      * Public web URL for accessing the VBS service instance
      * 
      */
     @Export(name="vbsAccessUrl", refs={String.class}, tree="[0]")
-    private Output<String> vbsAccessUrl;
+    private Output</* @Nullable */ String> vbsAccessUrl;
 
     /**
      * @return Public web URL for accessing the VBS service instance
      * 
      */
-    public Output<String> vbsAccessUrl() {
-        return this.vbsAccessUrl;
+    public Output<Optional<String>> vbsAccessUrl() {
+        return Codegen.optional(this.vbsAccessUrl);
     }
 
     /**

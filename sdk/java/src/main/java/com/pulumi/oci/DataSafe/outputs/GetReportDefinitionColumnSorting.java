@@ -8,6 +8,8 @@ import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetReportDefinitionColumnSorting {
@@ -15,39 +17,39 @@ public final class GetReportDefinitionColumnSorting {
      * @return Name of the column that must be sorted.
      * 
      */
-    private String fieldName;
+    private @Nullable String fieldName;
     /**
      * @return Indicates if the column must be sorted in ascending order. Values can either be &#39;true&#39; or &#39;false&#39;.
      * 
      */
-    private Boolean isAscending;
+    private @Nullable Boolean isAscending;
     /**
      * @return Indicates the order at which column must be sorted.
      * 
      */
-    private Integer sortingOrder;
+    private @Nullable Integer sortingOrder;
 
     private GetReportDefinitionColumnSorting() {}
     /**
      * @return Name of the column that must be sorted.
      * 
      */
-    public String fieldName() {
-        return this.fieldName;
+    public Optional<String> fieldName() {
+        return Optional.ofNullable(this.fieldName);
     }
     /**
      * @return Indicates if the column must be sorted in ascending order. Values can either be &#39;true&#39; or &#39;false&#39;.
      * 
      */
-    public Boolean isAscending() {
-        return this.isAscending;
+    public Optional<Boolean> isAscending() {
+        return Optional.ofNullable(this.isAscending);
     }
     /**
      * @return Indicates the order at which column must be sorted.
      * 
      */
-    public Integer sortingOrder() {
-        return this.sortingOrder;
+    public Optional<Integer> sortingOrder() {
+        return Optional.ofNullable(this.sortingOrder);
     }
 
     public static Builder builder() {
@@ -59,9 +61,9 @@ public final class GetReportDefinitionColumnSorting {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String fieldName;
-        private Boolean isAscending;
-        private Integer sortingOrder;
+        private @Nullable String fieldName;
+        private @Nullable Boolean isAscending;
+        private @Nullable Integer sortingOrder;
         public Builder() {}
         public Builder(GetReportDefinitionColumnSorting defaults) {
     	      Objects.requireNonNull(defaults);
@@ -71,18 +73,18 @@ public final class GetReportDefinitionColumnSorting {
         }
 
         @CustomType.Setter
-        public Builder fieldName(String fieldName) {
-            this.fieldName = Objects.requireNonNull(fieldName);
+        public Builder fieldName(@Nullable String fieldName) {
+            this.fieldName = fieldName;
             return this;
         }
         @CustomType.Setter
-        public Builder isAscending(Boolean isAscending) {
-            this.isAscending = Objects.requireNonNull(isAscending);
+        public Builder isAscending(@Nullable Boolean isAscending) {
+            this.isAscending = isAscending;
             return this;
         }
         @CustomType.Setter
-        public Builder sortingOrder(Integer sortingOrder) {
-            this.sortingOrder = Objects.requireNonNull(sortingOrder);
+        public Builder sortingOrder(@Nullable Integer sortingOrder) {
+            this.sortingOrder = sortingOrder;
             return this;
         }
         public GetReportDefinitionColumnSorting build() {

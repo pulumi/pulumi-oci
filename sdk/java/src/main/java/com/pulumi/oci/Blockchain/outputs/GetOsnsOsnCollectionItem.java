@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.Blockchain.outputs.GetOsnsOsnCollectionItemOcpuAllocationParam;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetOsnsOsnCollectionItem {
@@ -24,17 +26,17 @@ public final class GetOsnsOsnCollectionItem {
      * @return OCPU allocation parameter
      * 
      */
-    private GetOsnsOsnCollectionItemOcpuAllocationParam ocpuAllocationParam;
+    private @Nullable GetOsnsOsnCollectionItemOcpuAllocationParam ocpuAllocationParam;
     /**
      * @return OSN identifier
      * 
      */
-    private String osnKey;
+    private @Nullable String osnKey;
     /**
      * @return The current state of the OSN.
      * 
      */
-    private String state;
+    private @Nullable String state;
 
     private GetOsnsOsnCollectionItem() {}
     /**
@@ -55,22 +57,22 @@ public final class GetOsnsOsnCollectionItem {
      * @return OCPU allocation parameter
      * 
      */
-    public GetOsnsOsnCollectionItemOcpuAllocationParam ocpuAllocationParam() {
-        return this.ocpuAllocationParam;
+    public Optional<GetOsnsOsnCollectionItemOcpuAllocationParam> ocpuAllocationParam() {
+        return Optional.ofNullable(this.ocpuAllocationParam);
     }
     /**
      * @return OSN identifier
      * 
      */
-    public String osnKey() {
-        return this.osnKey;
+    public Optional<String> osnKey() {
+        return Optional.ofNullable(this.osnKey);
     }
     /**
      * @return The current state of the OSN.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
 
     public static Builder builder() {
@@ -84,9 +86,9 @@ public final class GetOsnsOsnCollectionItem {
     public static final class Builder {
         private String ad;
         private String blockchainPlatformId;
-        private GetOsnsOsnCollectionItemOcpuAllocationParam ocpuAllocationParam;
-        private String osnKey;
-        private String state;
+        private @Nullable GetOsnsOsnCollectionItemOcpuAllocationParam ocpuAllocationParam;
+        private @Nullable String osnKey;
+        private @Nullable String state;
         public Builder() {}
         public Builder(GetOsnsOsnCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -108,18 +110,18 @@ public final class GetOsnsOsnCollectionItem {
             return this;
         }
         @CustomType.Setter
-        public Builder ocpuAllocationParam(GetOsnsOsnCollectionItemOcpuAllocationParam ocpuAllocationParam) {
-            this.ocpuAllocationParam = Objects.requireNonNull(ocpuAllocationParam);
+        public Builder ocpuAllocationParam(@Nullable GetOsnsOsnCollectionItemOcpuAllocationParam ocpuAllocationParam) {
+            this.ocpuAllocationParam = ocpuAllocationParam;
             return this;
         }
         @CustomType.Setter
-        public Builder osnKey(String osnKey) {
-            this.osnKey = Objects.requireNonNull(osnKey);
+        public Builder osnKey(@Nullable String osnKey) {
+            this.osnKey = osnKey;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         public GetOsnsOsnCollectionItem build() {

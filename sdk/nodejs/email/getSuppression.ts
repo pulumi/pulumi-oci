@@ -46,40 +46,40 @@ export interface GetSuppressionResult {
     /**
      * The OCID of the compartment to contain the suppression. Since suppressions are at the customer level, this must be the tenancy OCID.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * The email address of the suppression.
      */
-    readonly emailAddress: string;
+    readonly emailAddress?: string;
     /**
      * The specific error message returned by a system that resulted in the suppression. This message is usually an SMTP error code with additional descriptive text. Not provided for all types of suppressions.
      */
-    readonly errorDetail: string;
+    readonly errorDetail?: string;
     /**
      * DNS name of the source of the error that caused the suppression. Will be set to either the remote-mta or reporting-mta field from a delivery status notification (RFC 3464) when available. Not provided for all types of suppressions, and not always known.
      */
-    readonly errorSource: string;
+    readonly errorSource?: string;
     /**
      * The unique OCID of the suppression.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The value of the Message-ID header from the email that triggered a suppression. This value is as defined in RFC 5322 section 3.6.4, excluding angle-brackets. Not provided for all types of suppressions.
      */
-    readonly messageId: string;
+    readonly messageId?: string;
     /**
      * The reason that the email address was suppressed. For more information on the types of bounces, see [Suppression List](https://docs.cloud.oracle.com/iaas/Content/Email/Concepts/overview.htm#components).
      */
-    readonly reason: string;
+    readonly reason?: string;
     readonly suppressionId: string;
     /**
      * The date and time a recipient's email address was added to the suppression list, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by RFC 3339.
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The last date and time the suppression prevented submission in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by RFC 3339.
      */
-    readonly timeLastSuppressed: string;
+    readonly timeLastSuppressed?: string;
 }
 /**
  * This data source provides details about a specific Suppression resource in Oracle Cloud Infrastructure Email service.

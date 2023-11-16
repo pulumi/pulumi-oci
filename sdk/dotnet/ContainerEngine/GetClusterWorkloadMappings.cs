@@ -129,7 +129,7 @@ namespace Pulumi.Oci.ContainerEngine
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The list of workload_mappings.
         /// </summary>
@@ -141,7 +141,7 @@ namespace Pulumi.Oci.ContainerEngine
 
             ImmutableArray<Outputs.GetClusterWorkloadMappingsFilterResult> filters,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetClusterWorkloadMappingsWorkloadMappingResult> workloadMappings)
         {

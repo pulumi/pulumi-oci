@@ -16,71 +16,71 @@ namespace Pulumi.Oci.Core.Outputs
         /// <summary>
         /// Phase two authentication algorithm proposed during tunnel negotiation.
         /// </summary>
-        public readonly string CustomAuthenticationAlgorithm;
+        public readonly string? CustomAuthenticationAlgorithm;
         /// <summary>
         /// The proposed custom Diffie-Hellman group.
         /// </summary>
-        public readonly string CustomDhGroup;
+        public readonly string? CustomDhGroup;
         /// <summary>
         /// The proposed custom phase two encryption algorithm.
         /// </summary>
-        public readonly string CustomEncryptionAlgorithm;
+        public readonly string? CustomEncryptionAlgorithm;
         /// <summary>
         /// Indicates whether custom phase one configuration is enabled. If this option is not enabled, default settings are proposed.
         /// </summary>
-        public readonly bool IsCustomPhaseOneConfig;
+        public readonly bool? IsCustomPhaseOneConfig;
         /// <summary>
         /// Indicates whether IKE phase one is established.
         /// </summary>
-        public readonly bool IsIkeEstablished;
+        public readonly bool? IsIkeEstablished;
         /// <summary>
         /// The total configured lifetime of the IKE security association.
         /// </summary>
-        public readonly int Lifetime;
+        public readonly int? Lifetime;
         /// <summary>
         /// The negotiated phase two authentication algorithm.
         /// </summary>
-        public readonly string NegotiatedAuthenticationAlgorithm;
+        public readonly string? NegotiatedAuthenticationAlgorithm;
         /// <summary>
         /// The negotiated Diffie-Hellman group.
         /// </summary>
-        public readonly string NegotiatedDhGroup;
+        public readonly string? NegotiatedDhGroup;
         /// <summary>
         /// The negotiated encryption algorithm.
         /// </summary>
-        public readonly string NegotiatedEncryptionAlgorithm;
+        public readonly string? NegotiatedEncryptionAlgorithm;
         /// <summary>
         /// The remaining lifetime before the key is refreshed.
         /// </summary>
-        public readonly string RemainingLifetime;
+        public readonly string? RemainingLifetime;
         /// <summary>
         /// The date and time the remaining lifetime was last retrieved, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
-        public readonly string RemainingLifetimeLastRetrieved;
+        public readonly string? RemainingLifetimeLastRetrieved;
 
         [OutputConstructor]
         private GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetailResult(
-            string customAuthenticationAlgorithm,
+            string? customAuthenticationAlgorithm,
 
-            string customDhGroup,
+            string? customDhGroup,
 
-            string customEncryptionAlgorithm,
+            string? customEncryptionAlgorithm,
 
-            bool isCustomPhaseOneConfig,
+            bool? isCustomPhaseOneConfig,
 
-            bool isIkeEstablished,
+            bool? isIkeEstablished,
 
-            int lifetime,
+            int? lifetime,
 
-            string negotiatedAuthenticationAlgorithm,
+            string? negotiatedAuthenticationAlgorithm,
 
-            string negotiatedDhGroup,
+            string? negotiatedDhGroup,
 
-            string negotiatedEncryptionAlgorithm,
+            string? negotiatedEncryptionAlgorithm,
 
-            string remainingLifetime,
+            string? remainingLifetime,
 
-            string remainingLifetimeLastRetrieved)
+            string? remainingLifetimeLastRetrieved)
         {
             CustomAuthenticationAlgorithm = customAuthenticationAlgorithm;
             CustomDhGroup = customDhGroup;

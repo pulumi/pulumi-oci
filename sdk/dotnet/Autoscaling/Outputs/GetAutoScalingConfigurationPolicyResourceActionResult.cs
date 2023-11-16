@@ -16,17 +16,17 @@ namespace Pulumi.Oci.Autoscaling.Outputs
         /// <summary>
         /// The action to take when autoscaling is triggered.
         /// </summary>
-        public readonly string Action;
+        public readonly string? Action;
         /// <summary>
         /// The type of resource action.
         /// </summary>
-        public readonly string ActionType;
+        public readonly string? ActionType;
 
         [OutputConstructor]
         private GetAutoScalingConfigurationPolicyResourceActionResult(
-            string action,
+            string? action,
 
-            string actionType)
+            string? actionType)
         {
             Action = action;
             ActionType = actionType;

@@ -155,19 +155,19 @@ export class Config extends pulumi.CustomResource {
     /**
      * (Updatable) Monitor availability configuration details.
      */
-    public readonly availabilityConfiguration!: pulumi.Output<outputs.ApmSynthetics.ConfigAvailabilityConfiguration>;
+    public readonly availabilityConfiguration!: pulumi.Output<outputs.ApmSynthetics.ConfigAvailabilityConfiguration | undefined>;
     /**
      * (Updatable) Time interval between 2 runs in round robin batch mode (*SchedulingPolicy - BATCHED_ROUND_ROBIN).
      */
-    public readonly batchIntervalInSeconds!: pulumi.Output<number>;
+    public readonly batchIntervalInSeconds!: pulumi.Output<number | undefined>;
     /**
      * (Updatable) Details of monitor configuration.
      */
-    public readonly configuration!: pulumi.Output<outputs.ApmSynthetics.ConfigConfiguration>;
+    public readonly configuration!: pulumi.Output<outputs.ApmSynthetics.ConfigConfiguration | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * Unique name that can be edited. The name should not contain any confidential information.
      */
@@ -175,19 +175,19 @@ export class Config extends pulumi.CustomResource {
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) If isRunNow is enabled, then the monitor will run immediately.
      */
-    public readonly isRunNow!: pulumi.Output<boolean>;
+    public readonly isRunNow!: pulumi.Output<boolean | undefined>;
     /**
      * (Updatable) If runOnce is enabled, then the monitor will run once.
      */
-    public readonly isRunOnce!: pulumi.Output<boolean>;
+    public readonly isRunOnce!: pulumi.Output<boolean | undefined>;
     /**
      * (Updatable) Details required to schedule maintenance window.
      */
-    public readonly maintenanceWindowSchedule!: pulumi.Output<outputs.ApmSynthetics.ConfigMaintenanceWindowSchedule>;
+    public readonly maintenanceWindowSchedule!: pulumi.Output<outputs.ApmSynthetics.ConfigMaintenanceWindowSchedule | undefined>;
     /**
      * Type of monitor.
      */
@@ -199,43 +199,43 @@ export class Config extends pulumi.CustomResource {
     /**
      * (Updatable) Scheduling policy to decide the distribution of monitor executions on vantage points.
      */
-    public readonly schedulingPolicy!: pulumi.Output<string>;
+    public readonly schedulingPolicy!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the script. scriptId is mandatory for creation of SCRIPTED_BROWSER and SCRIPTED_REST monitor types. For other monitor types, it should be set to null.
      */
-    public readonly scriptId!: pulumi.Output<string>;
+    public readonly scriptId!: pulumi.Output<string | undefined>;
     /**
      * Name of the script.
      */
-    public readonly scriptName!: pulumi.Output<string>;
+    public readonly scriptName!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) List of script parameters in the monitor. This is valid only for SCRIPTED_BROWSER and SCRIPTED_REST monitor types. For other monitor types, it should be set to null. Example: `[{"paramName": "userid", "paramValue":"testuser"}]`
      */
-    public readonly scriptParameters!: pulumi.Output<outputs.ApmSynthetics.ConfigScriptParameter[]>;
+    public readonly scriptParameters!: pulumi.Output<outputs.ApmSynthetics.ConfigScriptParameter[] | undefined>;
     /**
      * (Updatable) Enables or disables the monitor.
      */
-    public readonly status!: pulumi.Output<string>;
+    public readonly status!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Specify the endpoint on which to run the monitor. For BROWSER and REST monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is. For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80
      */
-    public readonly target!: pulumi.Output<string>;
+    public readonly target!: pulumi.Output<string | undefined>;
     /**
      * The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    public /*out*/ readonly timeUpdated!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Timeout in seconds. If isFailureRetried is true, then timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. If isFailureRetried is false, then timeout cannot be more than 50% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
      */
-    public readonly timeoutInSeconds!: pulumi.Output<number>;
+    public readonly timeoutInSeconds!: pulumi.Output<number | undefined>;
     /**
      * Number of vantage points where monitor is running.
      */
-    public /*out*/ readonly vantagePointCount!: pulumi.Output<number>;
+    public /*out*/ readonly vantagePointCount!: pulumi.Output<number | undefined>;
     /**
      * (Updatable) A list of public and dedicated vantage points from which to execute the monitor. Use /publicVantagePoints to fetch public vantage points, and /dedicatedVantagePoints to fetch dedicated vantage points. 
      *

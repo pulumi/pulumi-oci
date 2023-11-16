@@ -9,6 +9,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetPoliciesPolicy {
@@ -18,76 +20,76 @@ public final class GetPoliciesPolicy {
      * 
      */
     @Deprecated /* The 'ETag' field has been deprecated and may be removed in a future version. Do not use this field. */
-    private String ETag;
+    private @Nullable String ETag;
     /**
      * @return The OCID of the compartment (remember that the tenancy is simply the root compartment).
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return The description you assign to the policy. Does not have to be unique, and it&#39;s changeable.
      * 
      */
-    private String description;
+    private @Nullable String description;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return The OCID of the policy.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The detailed status of INACTIVE lifecycleState.
      * 
      */
-    private String inactiveState;
+    private @Nullable String inactiveState;
     /**
      * @deprecated
      * The &#39;lastUpdateETag&#39; field has been deprecated and may be removed in a future version. Do not use this field.
      * 
      */
     @Deprecated /* The 'lastUpdateETag' field has been deprecated and may be removed in a future version. Do not use this field. */
-    private String lastUpdateETag;
+    private @Nullable String lastUpdateETag;
     /**
      * @return A filter to only return resources that match the given name exactly.
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @deprecated
      * The &#39;policyHash&#39; field has been deprecated and may be removed in a future version. Do not use this field.
      * 
      */
     @Deprecated /* The 'policyHash' field has been deprecated and may be removed in a future version. Do not use this field. */
-    private String policyHash;
+    private @Nullable String policyHash;
     /**
      * @return A filter to only return resources that match the given lifecycle state.  The state value is case-insensitive.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return An array of one or more policy statements written in the policy language.
      * 
      */
-    private List<String> statements;
+    private @Nullable List<String> statements;
     /**
      * @return Date and time the policy was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The version of the policy. If null or set to an empty string, when a request comes in for authorization, the policy will be evaluated according to the current behavior of the services at that moment. If set to a particular date (YYYY-MM-DD), the policy will be evaluated according to the behavior of the services on that date.
      * 
      */
-    private String versionDate;
+    private @Nullable String versionDate;
 
     private GetPoliciesPolicy() {}
     /**
@@ -96,50 +98,50 @@ public final class GetPoliciesPolicy {
      * 
      */
     @Deprecated /* The 'ETag' field has been deprecated and may be removed in a future version. Do not use this field. */
-    public String ETag() {
-        return this.ETag;
+    public Optional<String> ETag() {
+        return Optional.ofNullable(this.ETag);
     }
     /**
      * @return The OCID of the compartment (remember that the tenancy is simply the root compartment).
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return The description you assign to the policy. Does not have to be unique, and it&#39;s changeable.
      * 
      */
-    public String description() {
-        return this.description;
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return The OCID of the policy.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The detailed status of INACTIVE lifecycleState.
      * 
      */
-    public String inactiveState() {
-        return this.inactiveState;
+    public Optional<String> inactiveState() {
+        return Optional.ofNullable(this.inactiveState);
     }
     /**
      * @deprecated
@@ -147,15 +149,15 @@ public final class GetPoliciesPolicy {
      * 
      */
     @Deprecated /* The 'lastUpdateETag' field has been deprecated and may be removed in a future version. Do not use this field. */
-    public String lastUpdateETag() {
-        return this.lastUpdateETag;
+    public Optional<String> lastUpdateETag() {
+        return Optional.ofNullable(this.lastUpdateETag);
     }
     /**
      * @return A filter to only return resources that match the given name exactly.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @deprecated
@@ -163,36 +165,36 @@ public final class GetPoliciesPolicy {
      * 
      */
     @Deprecated /* The 'policyHash' field has been deprecated and may be removed in a future version. Do not use this field. */
-    public String policyHash() {
-        return this.policyHash;
+    public Optional<String> policyHash() {
+        return Optional.ofNullable(this.policyHash);
     }
     /**
      * @return A filter to only return resources that match the given lifecycle state.  The state value is case-insensitive.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return An array of one or more policy statements written in the policy language.
      * 
      */
     public List<String> statements() {
-        return this.statements;
+        return this.statements == null ? List.of() : this.statements;
     }
     /**
      * @return Date and time the policy was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return The version of the policy. If null or set to an empty string, when a request comes in for authorization, the policy will be evaluated according to the current behavior of the services at that moment. If set to a particular date (YYYY-MM-DD), the policy will be evaluated according to the behavior of the services on that date.
      * 
      */
-    public String versionDate() {
-        return this.versionDate;
+    public Optional<String> versionDate() {
+        return Optional.ofNullable(this.versionDate);
     }
 
     public static Builder builder() {
@@ -204,20 +206,20 @@ public final class GetPoliciesPolicy {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String ETag;
-        private String compartmentId;
-        private Map<String,Object> definedTags;
-        private String description;
-        private Map<String,Object> freeformTags;
-        private String id;
-        private String inactiveState;
-        private String lastUpdateETag;
-        private String name;
-        private String policyHash;
-        private String state;
-        private List<String> statements;
-        private String timeCreated;
-        private String versionDate;
+        private @Nullable String ETag;
+        private @Nullable String compartmentId;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String description;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String id;
+        private @Nullable String inactiveState;
+        private @Nullable String lastUpdateETag;
+        private @Nullable String name;
+        private @Nullable String policyHash;
+        private @Nullable String state;
+        private @Nullable List<String> statements;
+        private @Nullable String timeCreated;
+        private @Nullable String versionDate;
         public Builder() {}
         public Builder(GetPoliciesPolicy defaults) {
     	      Objects.requireNonNull(defaults);
@@ -238,76 +240,76 @@ public final class GetPoliciesPolicy {
         }
 
         @CustomType.Setter
-        public Builder ETag(String ETag) {
-            this.ETag = Objects.requireNonNull(ETag);
+        public Builder ETag(@Nullable String ETag) {
+            this.ETag = ETag;
             return this;
         }
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+        public Builder description(@Nullable String description) {
+            this.description = description;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder inactiveState(String inactiveState) {
-            this.inactiveState = Objects.requireNonNull(inactiveState);
+        public Builder inactiveState(@Nullable String inactiveState) {
+            this.inactiveState = inactiveState;
             return this;
         }
         @CustomType.Setter
-        public Builder lastUpdateETag(String lastUpdateETag) {
-            this.lastUpdateETag = Objects.requireNonNull(lastUpdateETag);
+        public Builder lastUpdateETag(@Nullable String lastUpdateETag) {
+            this.lastUpdateETag = lastUpdateETag;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder policyHash(String policyHash) {
-            this.policyHash = Objects.requireNonNull(policyHash);
+        public Builder policyHash(@Nullable String policyHash) {
+            this.policyHash = policyHash;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder statements(List<String> statements) {
-            this.statements = Objects.requireNonNull(statements);
+        public Builder statements(@Nullable List<String> statements) {
+            this.statements = statements;
             return this;
         }
         public Builder statements(String... statements) {
             return statements(List.of(statements));
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder versionDate(String versionDate) {
-            this.versionDate = Objects.requireNonNull(versionDate);
+        public Builder versionDate(@Nullable String versionDate) {
+            this.versionDate = versionDate;
             return this;
         }
         public GetPoliciesPolicy build() {

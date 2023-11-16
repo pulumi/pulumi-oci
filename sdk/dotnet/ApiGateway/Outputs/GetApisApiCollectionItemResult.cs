@@ -16,24 +16,24 @@ namespace Pulumi.Oci.ApiGateway.Outputs
         /// <summary>
         /// The ocid of the compartment in which to list resources.
         /// </summary>
-        public readonly string CompartmentId;
-        public readonly string Content;
+        public readonly string? CompartmentId;
+        public readonly string? Content;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// A message describing the current lifecycleState in more detail. For ACTIVE state it describes if the document has been validated and the possible values are:
         /// * 'New' for just updated API Specifications
@@ -44,23 +44,23 @@ namespace Pulumi.Oci.ApiGateway.Outputs
         /// * 'Failed' the document validation failed
         /// * 'Canceled' the document validation was canceled
         /// </summary>
-        public readonly string LifecycleDetails;
+        public readonly string? LifecycleDetails;
         /// <summary>
         /// Type of API Specification file.
         /// </summary>
-        public readonly string SpecificationType;
+        public readonly string? SpecificationType;
         /// <summary>
         /// A filter to return only resources that match the given lifecycle state.  Example: `ACTIVE`
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// The time this resource was created. An RFC3339 formatted datetime string.
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The time this resource was last updated. An RFC3339 formatted datetime string.
         /// </summary>
-        public readonly string TimeUpdated;
+        public readonly string? TimeUpdated;
         /// <summary>
         /// Status of each feature available from the API.
         /// </summary>
@@ -68,27 +68,27 @@ namespace Pulumi.Oci.ApiGateway.Outputs
 
         [OutputConstructor]
         private GetApisApiCollectionItemResult(
-            string compartmentId,
+            string? compartmentId,
 
-            string content,
+            string? content,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string displayName,
+            string? displayName,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string id,
+            string? id,
 
-            string lifecycleDetails,
+            string? lifecycleDetails,
 
-            string specificationType,
+            string? specificationType,
 
-            string state,
+            string? state,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeUpdated,
+            string? timeUpdated,
 
             ImmutableArray<Outputs.GetApisApiCollectionItemValidationResultResult> validationResults)
         {

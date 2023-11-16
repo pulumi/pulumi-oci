@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricThreshold {
@@ -14,19 +16,19 @@ public final class GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRul
      * @return The comparison operator to use. Options are greater than (`GT`), greater than or equal to (`GTE`), less than (`LT`), and less than or equal to (`LTE`).
      * 
      */
-    private String operator;
-    private Integer value;
+    private @Nullable String operator;
+    private @Nullable Integer value;
 
     private GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricThreshold() {}
     /**
      * @return The comparison operator to use. Options are greater than (`GT`), greater than or equal to (`GTE`), less than (`LT`), and less than or equal to (`LTE`).
      * 
      */
-    public String operator() {
-        return this.operator;
+    public Optional<String> operator() {
+        return Optional.ofNullable(this.operator);
     }
-    public Integer value() {
-        return this.value;
+    public Optional<Integer> value() {
+        return Optional.ofNullable(this.value);
     }
 
     public static Builder builder() {
@@ -38,8 +40,8 @@ public final class GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRul
     }
     @CustomType.Builder
     public static final class Builder {
-        private String operator;
-        private Integer value;
+        private @Nullable String operator;
+        private @Nullable Integer value;
         public Builder() {}
         public Builder(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricThreshold defaults) {
     	      Objects.requireNonNull(defaults);
@@ -48,13 +50,13 @@ public final class GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRul
         }
 
         @CustomType.Setter
-        public Builder operator(String operator) {
-            this.operator = Objects.requireNonNull(operator);
+        public Builder operator(@Nullable String operator) {
+            this.operator = operator;
             return this;
         }
         @CustomType.Setter
-        public Builder value(Integer value) {
-            this.value = Objects.requireNonNull(value);
+        public Builder value(@Nullable Integer value) {
+            this.value = value;
             return this;
         }
         public GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricThreshold build() {

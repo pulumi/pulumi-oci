@@ -11,6 +11,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetOneoffPatchesOneoffPatch {
@@ -18,187 +20,187 @@ public final class GetOneoffPatchesOneoffPatch {
      * @return (Updatable) The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return A valid Oracle Database version. To get a list of supported versions, use the [ListDbVersions](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/DbVersionSummary/ListDbVersions) operation.
      * 
      */
-    private String dbVersion;
+    private @Nullable String dbVersion;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return A filter to return only resources that match the entire display name given. The match is not case sensitive.
      * 
      */
-    private String displayName;
-    private Integer downloadOneoffPatchTrigger;
+    private @Nullable String displayName;
+    private @Nullable Integer downloadOneoffPatchTrigger;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the one-off patch.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Detailed message for the lifecycle state.
      * 
      */
-    private String lifecycleDetails;
+    private @Nullable String lifecycleDetails;
     /**
      * @return List of one-off patches for Database Homes.
      * 
      */
-    private List<String> oneOffPatches;
+    private @Nullable List<String> oneOffPatches;
     /**
      * @return The PSU or PBP or Release Updates. To get a list of supported versions, use the [ListDbVersions](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/DbVersionSummary/ListDbVersions) operation.
      * 
      */
-    private String releaseUpdate;
+    private @Nullable String releaseUpdate;
     /**
      * @return SHA-256 checksum of the one-off patch.
      * 
      */
-    private String sha256sum;
+    private @Nullable String sha256sum;
     /**
      * @return The size of one-off patch in kilobytes.
      * 
      */
-    private Double sizeInKbs;
+    private @Nullable Double sizeInKbs;
     /**
      * @return A filter to return only resources that match the given lifecycle state exactly
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return The date and time one-off patch was created.
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The date and time until which the one-off patch will be available for download.
      * 
      */
-    private String timeOfExpiration;
+    private @Nullable String timeOfExpiration;
     /**
      * @return The date and time one-off patch was updated.
      * 
      */
-    private String timeUpdated;
+    private @Nullable String timeUpdated;
 
     private GetOneoffPatchesOneoffPatch() {}
     /**
      * @return (Updatable) The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return A valid Oracle Database version. To get a list of supported versions, use the [ListDbVersions](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/DbVersionSummary/ListDbVersions) operation.
      * 
      */
-    public String dbVersion() {
-        return this.dbVersion;
+    public Optional<String> dbVersion() {
+        return Optional.ofNullable(this.dbVersion);
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return A filter to return only resources that match the entire display name given. The match is not case sensitive.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
-    public Integer downloadOneoffPatchTrigger() {
-        return this.downloadOneoffPatchTrigger;
+    public Optional<Integer> downloadOneoffPatchTrigger() {
+        return Optional.ofNullable(this.downloadOneoffPatchTrigger);
     }
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the one-off patch.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Detailed message for the lifecycle state.
      * 
      */
-    public String lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Optional<String> lifecycleDetails() {
+        return Optional.ofNullable(this.lifecycleDetails);
     }
     /**
      * @return List of one-off patches for Database Homes.
      * 
      */
     public List<String> oneOffPatches() {
-        return this.oneOffPatches;
+        return this.oneOffPatches == null ? List.of() : this.oneOffPatches;
     }
     /**
      * @return The PSU or PBP or Release Updates. To get a list of supported versions, use the [ListDbVersions](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/DbVersionSummary/ListDbVersions) operation.
      * 
      */
-    public String releaseUpdate() {
-        return this.releaseUpdate;
+    public Optional<String> releaseUpdate() {
+        return Optional.ofNullable(this.releaseUpdate);
     }
     /**
      * @return SHA-256 checksum of the one-off patch.
      * 
      */
-    public String sha256sum() {
-        return this.sha256sum;
+    public Optional<String> sha256sum() {
+        return Optional.ofNullable(this.sha256sum);
     }
     /**
      * @return The size of one-off patch in kilobytes.
      * 
      */
-    public Double sizeInKbs() {
-        return this.sizeInKbs;
+    public Optional<Double> sizeInKbs() {
+        return Optional.ofNullable(this.sizeInKbs);
     }
     /**
      * @return A filter to return only resources that match the given lifecycle state exactly
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return The date and time one-off patch was created.
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return The date and time until which the one-off patch will be available for download.
      * 
      */
-    public String timeOfExpiration() {
-        return this.timeOfExpiration;
+    public Optional<String> timeOfExpiration() {
+        return Optional.ofNullable(this.timeOfExpiration);
     }
     /**
      * @return The date and time one-off patch was updated.
      * 
      */
-    public String timeUpdated() {
-        return this.timeUpdated;
+    public Optional<String> timeUpdated() {
+        return Optional.ofNullable(this.timeUpdated);
     }
 
     public static Builder builder() {
@@ -210,22 +212,22 @@ public final class GetOneoffPatchesOneoffPatch {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String compartmentId;
-        private String dbVersion;
-        private Map<String,Object> definedTags;
-        private String displayName;
-        private Integer downloadOneoffPatchTrigger;
-        private Map<String,Object> freeformTags;
-        private String id;
-        private String lifecycleDetails;
-        private List<String> oneOffPatches;
-        private String releaseUpdate;
-        private String sha256sum;
-        private Double sizeInKbs;
-        private String state;
-        private String timeCreated;
-        private String timeOfExpiration;
-        private String timeUpdated;
+        private @Nullable String compartmentId;
+        private @Nullable String dbVersion;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String displayName;
+        private @Nullable Integer downloadOneoffPatchTrigger;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String id;
+        private @Nullable String lifecycleDetails;
+        private @Nullable List<String> oneOffPatches;
+        private @Nullable String releaseUpdate;
+        private @Nullable String sha256sum;
+        private @Nullable Double sizeInKbs;
+        private @Nullable String state;
+        private @Nullable String timeCreated;
+        private @Nullable String timeOfExpiration;
+        private @Nullable String timeUpdated;
         public Builder() {}
         public Builder(GetOneoffPatchesOneoffPatch defaults) {
     	      Objects.requireNonNull(defaults);
@@ -248,86 +250,86 @@ public final class GetOneoffPatchesOneoffPatch {
         }
 
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder dbVersion(String dbVersion) {
-            this.dbVersion = Objects.requireNonNull(dbVersion);
+        public Builder dbVersion(@Nullable String dbVersion) {
+            this.dbVersion = dbVersion;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder downloadOneoffPatchTrigger(Integer downloadOneoffPatchTrigger) {
-            this.downloadOneoffPatchTrigger = Objects.requireNonNull(downloadOneoffPatchTrigger);
+        public Builder downloadOneoffPatchTrigger(@Nullable Integer downloadOneoffPatchTrigger) {
+            this.downloadOneoffPatchTrigger = downloadOneoffPatchTrigger;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+        public Builder lifecycleDetails(@Nullable String lifecycleDetails) {
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
-        public Builder oneOffPatches(List<String> oneOffPatches) {
-            this.oneOffPatches = Objects.requireNonNull(oneOffPatches);
+        public Builder oneOffPatches(@Nullable List<String> oneOffPatches) {
+            this.oneOffPatches = oneOffPatches;
             return this;
         }
         public Builder oneOffPatches(String... oneOffPatches) {
             return oneOffPatches(List.of(oneOffPatches));
         }
         @CustomType.Setter
-        public Builder releaseUpdate(String releaseUpdate) {
-            this.releaseUpdate = Objects.requireNonNull(releaseUpdate);
+        public Builder releaseUpdate(@Nullable String releaseUpdate) {
+            this.releaseUpdate = releaseUpdate;
             return this;
         }
         @CustomType.Setter
-        public Builder sha256sum(String sha256sum) {
-            this.sha256sum = Objects.requireNonNull(sha256sum);
+        public Builder sha256sum(@Nullable String sha256sum) {
+            this.sha256sum = sha256sum;
             return this;
         }
         @CustomType.Setter
-        public Builder sizeInKbs(Double sizeInKbs) {
-            this.sizeInKbs = Objects.requireNonNull(sizeInKbs);
+        public Builder sizeInKbs(@Nullable Double sizeInKbs) {
+            this.sizeInKbs = sizeInKbs;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeOfExpiration(String timeOfExpiration) {
-            this.timeOfExpiration = Objects.requireNonNull(timeOfExpiration);
+        public Builder timeOfExpiration(@Nullable String timeOfExpiration) {
+            this.timeOfExpiration = timeOfExpiration;
             return this;
         }
         @CustomType.Setter
-        public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+        public Builder timeUpdated(@Nullable String timeUpdated) {
+            this.timeUpdated = timeUpdated;
             return this;
         }
         public GetOneoffPatchesOneoffPatch build() {

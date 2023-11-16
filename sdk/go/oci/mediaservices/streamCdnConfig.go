@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Stream Cdn Config resource in Oracle Cloud Infrastructure Media Services service.
@@ -78,7 +77,7 @@ type StreamCdnConfig struct {
 	pulumi.CustomResourceState
 
 	// Compartment Identifier.
-	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrOutput `pulumi:"compartmentId"`
 	// (Updatable) Base fields of the StreamCdnConfig configuration object.
 	Config StreamCdnConfigConfigOutput `pulumi:"config"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -93,17 +92,17 @@ type StreamCdnConfig struct {
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	IsEnabled pulumi.BoolOutput `pulumi:"isEnabled"`
+	IsEnabled pulumi.BoolPtrOutput `pulumi:"isEnabled"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-	LifecyleDetails pulumi.StringOutput `pulumi:"lifecyleDetails"`
+	LifecyleDetails pulumi.StringPtrOutput `pulumi:"lifecyleDetails"`
 	// The current state of the CDN Configuration.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
 	// The time when the CDN Config was created. An RFC3339 formatted datetime string.
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The time when the CDN Config was updated. An RFC3339 formatted datetime string.
-	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 }
 
 // NewStreamCdnConfig registers a new resource with the given unique name, arguments, and options.
@@ -268,12 +267,6 @@ func (i *StreamCdnConfig) ToStreamCdnConfigOutputWithContext(ctx context.Context
 	return pulumi.ToOutputWithContext(ctx, i).(StreamCdnConfigOutput)
 }
 
-func (i *StreamCdnConfig) ToOutput(ctx context.Context) pulumix.Output[*StreamCdnConfig] {
-	return pulumix.Output[*StreamCdnConfig]{
-		OutputState: i.ToStreamCdnConfigOutputWithContext(ctx).OutputState,
-	}
-}
-
 // StreamCdnConfigArrayInput is an input type that accepts StreamCdnConfigArray and StreamCdnConfigArrayOutput values.
 // You can construct a concrete instance of `StreamCdnConfigArrayInput` via:
 //
@@ -297,12 +290,6 @@ func (i StreamCdnConfigArray) ToStreamCdnConfigArrayOutput() StreamCdnConfigArra
 
 func (i StreamCdnConfigArray) ToStreamCdnConfigArrayOutputWithContext(ctx context.Context) StreamCdnConfigArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(StreamCdnConfigArrayOutput)
-}
-
-func (i StreamCdnConfigArray) ToOutput(ctx context.Context) pulumix.Output[[]*StreamCdnConfig] {
-	return pulumix.Output[[]*StreamCdnConfig]{
-		OutputState: i.ToStreamCdnConfigArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // StreamCdnConfigMapInput is an input type that accepts StreamCdnConfigMap and StreamCdnConfigMapOutput values.
@@ -330,12 +317,6 @@ func (i StreamCdnConfigMap) ToStreamCdnConfigMapOutputWithContext(ctx context.Co
 	return pulumi.ToOutputWithContext(ctx, i).(StreamCdnConfigMapOutput)
 }
 
-func (i StreamCdnConfigMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*StreamCdnConfig] {
-	return pulumix.Output[map[string]*StreamCdnConfig]{
-		OutputState: i.ToStreamCdnConfigMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type StreamCdnConfigOutput struct{ *pulumi.OutputState }
 
 func (StreamCdnConfigOutput) ElementType() reflect.Type {
@@ -350,15 +331,9 @@ func (o StreamCdnConfigOutput) ToStreamCdnConfigOutputWithContext(ctx context.Co
 	return o
 }
 
-func (o StreamCdnConfigOutput) ToOutput(ctx context.Context) pulumix.Output[*StreamCdnConfig] {
-	return pulumix.Output[*StreamCdnConfig]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Compartment Identifier.
-func (o StreamCdnConfigOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v *StreamCdnConfig) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
+func (o StreamCdnConfigOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *StreamCdnConfig) pulumi.StringPtrOutput { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Base fields of the StreamCdnConfig configuration object.
@@ -390,18 +365,18 @@ func (o StreamCdnConfigOutput) FreeformTags() pulumi.MapOutput {
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-func (o StreamCdnConfigOutput) IsEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v *StreamCdnConfig) pulumi.BoolOutput { return v.IsEnabled }).(pulumi.BoolOutput)
+func (o StreamCdnConfigOutput) IsEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *StreamCdnConfig) pulumi.BoolPtrOutput { return v.IsEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-func (o StreamCdnConfigOutput) LifecyleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v *StreamCdnConfig) pulumi.StringOutput { return v.LifecyleDetails }).(pulumi.StringOutput)
+func (o StreamCdnConfigOutput) LifecyleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *StreamCdnConfig) pulumi.StringPtrOutput { return v.LifecyleDetails }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the CDN Configuration.
-func (o StreamCdnConfigOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *StreamCdnConfig) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o StreamCdnConfigOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *StreamCdnConfig) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -410,13 +385,13 @@ func (o StreamCdnConfigOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The time when the CDN Config was created. An RFC3339 formatted datetime string.
-func (o StreamCdnConfigOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *StreamCdnConfig) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o StreamCdnConfigOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *StreamCdnConfig) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time when the CDN Config was updated. An RFC3339 formatted datetime string.
-func (o StreamCdnConfigOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *StreamCdnConfig) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o StreamCdnConfigOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *StreamCdnConfig) pulumi.StringPtrOutput { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type StreamCdnConfigArrayOutput struct{ *pulumi.OutputState }
@@ -431,12 +406,6 @@ func (o StreamCdnConfigArrayOutput) ToStreamCdnConfigArrayOutput() StreamCdnConf
 
 func (o StreamCdnConfigArrayOutput) ToStreamCdnConfigArrayOutputWithContext(ctx context.Context) StreamCdnConfigArrayOutput {
 	return o
-}
-
-func (o StreamCdnConfigArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*StreamCdnConfig] {
-	return pulumix.Output[[]*StreamCdnConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o StreamCdnConfigArrayOutput) Index(i pulumi.IntInput) StreamCdnConfigOutput {
@@ -457,12 +426,6 @@ func (o StreamCdnConfigMapOutput) ToStreamCdnConfigMapOutput() StreamCdnConfigMa
 
 func (o StreamCdnConfigMapOutput) ToStreamCdnConfigMapOutputWithContext(ctx context.Context) StreamCdnConfigMapOutput {
 	return o
-}
-
-func (o StreamCdnConfigMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*StreamCdnConfig] {
-	return pulumix.Output[map[string]*StreamCdnConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o StreamCdnConfigMapOutput) MapIndex(k pulumi.StringInput) StreamCdnConfigOutput {

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Managed Database Group resource in Oracle Cloud Infrastructure Database Management service.
@@ -60,22 +59,22 @@ type LookupManagedDatabaseGroupArgs struct {
 // A collection of values returned by getManagedDatabaseGroup.
 type LookupManagedDatabaseGroupResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the Managed Database resides.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// The information specified by the user about the Managed Database Group.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
-	Id                     string `pulumi:"id"`
-	ManagedDatabaseGroupId string `pulumi:"managedDatabaseGroupId"`
+	Id                     *string `pulumi:"id"`
+	ManagedDatabaseGroupId string  `pulumi:"managedDatabaseGroupId"`
 	// A list of Managed Databases in the Managed Database Group.
 	ManagedDatabases []GetManagedDatabaseGroupManagedDatabase `pulumi:"managedDatabases"`
 	// The name of the Managed Database Group.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// The current lifecycle state of the Managed Database Group.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The date and time the Managed Database Group was created.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The date and time the Managed Database Group was last updated.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 func LookupManagedDatabaseGroupOutput(ctx *pulumi.Context, args LookupManagedDatabaseGroupOutputArgs, opts ...pulumi.InvokeOption) LookupManagedDatabaseGroupResultOutput {
@@ -116,25 +115,19 @@ func (o LookupManagedDatabaseGroupResultOutput) ToLookupManagedDatabaseGroupResu
 	return o
 }
 
-func (o LookupManagedDatabaseGroupResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupManagedDatabaseGroupResult] {
-	return pulumix.Output[LookupManagedDatabaseGroupResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the Managed Database resides.
-func (o LookupManagedDatabaseGroupResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupManagedDatabaseGroupResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupManagedDatabaseGroupResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupManagedDatabaseGroupResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // The information specified by the user about the Managed Database Group.
-func (o LookupManagedDatabaseGroupResultOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupManagedDatabaseGroupResult) string { return v.Description }).(pulumi.StringOutput)
+func (o LookupManagedDatabaseGroupResultOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupManagedDatabaseGroupResult) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
-func (o LookupManagedDatabaseGroupResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupManagedDatabaseGroupResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupManagedDatabaseGroupResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupManagedDatabaseGroupResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupManagedDatabaseGroupResultOutput) ManagedDatabaseGroupId() pulumi.StringOutput {
@@ -149,23 +142,23 @@ func (o LookupManagedDatabaseGroupResultOutput) ManagedDatabases() GetManagedDat
 }
 
 // The name of the Managed Database Group.
-func (o LookupManagedDatabaseGroupResultOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupManagedDatabaseGroupResult) string { return v.Name }).(pulumi.StringOutput)
+func (o LookupManagedDatabaseGroupResultOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupManagedDatabaseGroupResult) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // The current lifecycle state of the Managed Database Group.
-func (o LookupManagedDatabaseGroupResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupManagedDatabaseGroupResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupManagedDatabaseGroupResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupManagedDatabaseGroupResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the Managed Database Group was created.
-func (o LookupManagedDatabaseGroupResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupManagedDatabaseGroupResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupManagedDatabaseGroupResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupManagedDatabaseGroupResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the Managed Database Group was last updated.
-func (o LookupManagedDatabaseGroupResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupManagedDatabaseGroupResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o LookupManagedDatabaseGroupResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupManagedDatabaseGroupResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 func init() {

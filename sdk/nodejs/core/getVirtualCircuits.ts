@@ -70,7 +70,7 @@ export interface GetVirtualCircuitsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The virtual circuit's current state. For information about the different states, see [FastConnect Overview](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm).
      */
@@ -78,7 +78,7 @@ export interface GetVirtualCircuitsResult {
     /**
      * The list of virtual_circuits.
      */
-    readonly virtualCircuits: outputs.Core.GetVirtualCircuitsVirtualCircuit[];
+    readonly virtualCircuits?: outputs.Core.GetVirtualCircuitsVirtualCircuit[];
 }
 /**
  * This data source provides the list of Virtual Circuits in Oracle Cloud Infrastructure Core service.

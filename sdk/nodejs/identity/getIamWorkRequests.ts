@@ -63,11 +63,11 @@ export interface GetIamWorkRequestsResult {
     /**
      * The list of iam_work_requests.
      */
-    readonly iamWorkRequests: outputs.Identity.GetIamWorkRequestsIamWorkRequest[];
+    readonly iamWorkRequests?: outputs.Identity.GetIamWorkRequestsIamWorkRequest[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly resourceIdentifier?: string;
 }
 /**

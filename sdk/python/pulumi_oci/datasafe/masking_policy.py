@@ -32,24 +32,6 @@ class MaskingPolicyArgs:
                  recompile: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a MaskingPolicy resource.
-        :param pulumi.Input[Sequence[pulumi.Input['MaskingPolicyColumnSourceArgs']]] column_sources: (Updatable) The source of masking columns.
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment where the masking policy should be created.
-        :param pulumi.Input[int] add_masking_columns_from_sdm_trigger: (Updatable) An optional property when incremented triggers Add Masking Columns From Sdm. Could be set to any integer value.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] description: (Updatable) The description of the masking policy.
-        :param pulumi.Input[str] display_name: (Updatable) The display name of the masking policy. The name does not have to be unique, and it's changeable.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[bool] is_drop_temp_tables_enabled: (Updatable) Indicates if the temporary tables created during a masking operation should be dropped after masking. It's enabled by default. Set this attribute to false to preserve the temporary tables. Masking creates temporary tables that map the original sensitive  data values to mask values. By default, these temporary tables are dropped after masking. But, in some cases, you may want  to preserve this information to track how masking changed your data. Note that doing so compromises security. These tables  must be dropped before the database is available for unprivileged users.
-        :param pulumi.Input[bool] is_redo_logging_enabled: (Updatable) Indicates if redo logging is enabled during a masking operation. It's disabled by default. Set this attribute to true to enable redo logging. By default, masking disables redo logging and flashback logging to purge any original unmasked  data from logs. However, in certain circumstances when you only want to test masking, rollback changes, and retry masking, you could enable logging and use a flashback database to retrieve the original unmasked data after it has been masked.
-        :param pulumi.Input[bool] is_refresh_stats_enabled: (Updatable) Indicates if statistics gathering is enabled. It's enabled by default. Set this attribute to false to disable statistics gathering. The masking process gathers statistics on masked database tables after masking completes.
-        :param pulumi.Input[str] parallel_degree: (Updatable) Specifies options to enable parallel execution when running data masking. Allowed values are 'NONE' (no parallelism), 'DEFAULT' (the Oracle Database computes the optimum degree of parallelism) or an integer value to be used as the degree of parallelism. Parallel execution helps effectively use multiple CPUs and improve masking performance. Refer to the Oracle Database parallel execution framework when choosing an explicit degree of parallelism.
-        :param pulumi.Input[str] post_masking_script: (Updatable) A post-masking script, which can contain SQL and PL/SQL statements. It's executed after the core masking script generated using the masking policy. It's usually used to perform additional transformation or cleanup work after masking.
-        :param pulumi.Input[str] pre_masking_script: (Updatable) A pre-masking script, which can contain SQL and PL/SQL statements. It's executed before  the core masking script generated using the masking policy. It's usually used to perform any preparation or prerequisite work before masking data.
-        :param pulumi.Input[str] recompile: (Updatable) Specifies how to recompile invalid objects post data masking. Allowed values are 'SERIAL' (recompile in serial),  'PARALLEL' (recompile in parallel), 'NONE' (do not recompile). If it's set to PARALLEL, the value of parallelDegree attribute is used. Use the built-in UTL_RECOMP package to recompile any remaining invalid objects after masking completes.
         """
         pulumi.set(__self__, "column_sources", column_sources)
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -81,9 +63,6 @@ class MaskingPolicyArgs:
     @property
     @pulumi.getter(name="columnSources")
     def column_sources(self) -> pulumi.Input[Sequence[pulumi.Input['MaskingPolicyColumnSourceArgs']]]:
-        """
-        (Updatable) The source of masking columns.
-        """
         return pulumi.get(self, "column_sources")
 
     @column_sources.setter
@@ -93,9 +72,6 @@ class MaskingPolicyArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The OCID of the compartment where the masking policy should be created.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -105,13 +81,6 @@ class MaskingPolicyArgs:
     @property
     @pulumi.getter(name="addMaskingColumnsFromSdmTrigger")
     def add_masking_columns_from_sdm_trigger(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) An optional property when incremented triggers Add Masking Columns From Sdm. Could be set to any integer value.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "add_masking_columns_from_sdm_trigger")
 
     @add_masking_columns_from_sdm_trigger.setter
@@ -121,9 +90,6 @@ class MaskingPolicyArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -133,9 +99,6 @@ class MaskingPolicyArgs:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The description of the masking policy.
-        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -145,9 +108,6 @@ class MaskingPolicyArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The display name of the masking policy. The name does not have to be unique, and it's changeable.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -157,9 +117,6 @@ class MaskingPolicyArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -169,9 +126,6 @@ class MaskingPolicyArgs:
     @property
     @pulumi.getter(name="isDropTempTablesEnabled")
     def is_drop_temp_tables_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Indicates if the temporary tables created during a masking operation should be dropped after masking. It's enabled by default. Set this attribute to false to preserve the temporary tables. Masking creates temporary tables that map the original sensitive  data values to mask values. By default, these temporary tables are dropped after masking. But, in some cases, you may want  to preserve this information to track how masking changed your data. Note that doing so compromises security. These tables  must be dropped before the database is available for unprivileged users.
-        """
         return pulumi.get(self, "is_drop_temp_tables_enabled")
 
     @is_drop_temp_tables_enabled.setter
@@ -181,9 +135,6 @@ class MaskingPolicyArgs:
     @property
     @pulumi.getter(name="isRedoLoggingEnabled")
     def is_redo_logging_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Indicates if redo logging is enabled during a masking operation. It's disabled by default. Set this attribute to true to enable redo logging. By default, masking disables redo logging and flashback logging to purge any original unmasked  data from logs. However, in certain circumstances when you only want to test masking, rollback changes, and retry masking, you could enable logging and use a flashback database to retrieve the original unmasked data after it has been masked.
-        """
         return pulumi.get(self, "is_redo_logging_enabled")
 
     @is_redo_logging_enabled.setter
@@ -193,9 +144,6 @@ class MaskingPolicyArgs:
     @property
     @pulumi.getter(name="isRefreshStatsEnabled")
     def is_refresh_stats_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Indicates if statistics gathering is enabled. It's enabled by default. Set this attribute to false to disable statistics gathering. The masking process gathers statistics on masked database tables after masking completes.
-        """
         return pulumi.get(self, "is_refresh_stats_enabled")
 
     @is_refresh_stats_enabled.setter
@@ -205,9 +153,6 @@ class MaskingPolicyArgs:
     @property
     @pulumi.getter(name="parallelDegree")
     def parallel_degree(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Specifies options to enable parallel execution when running data masking. Allowed values are 'NONE' (no parallelism), 'DEFAULT' (the Oracle Database computes the optimum degree of parallelism) or an integer value to be used as the degree of parallelism. Parallel execution helps effectively use multiple CPUs and improve masking performance. Refer to the Oracle Database parallel execution framework when choosing an explicit degree of parallelism.
-        """
         return pulumi.get(self, "parallel_degree")
 
     @parallel_degree.setter
@@ -217,9 +162,6 @@ class MaskingPolicyArgs:
     @property
     @pulumi.getter(name="postMaskingScript")
     def post_masking_script(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A post-masking script, which can contain SQL and PL/SQL statements. It's executed after the core masking script generated using the masking policy. It's usually used to perform additional transformation or cleanup work after masking.
-        """
         return pulumi.get(self, "post_masking_script")
 
     @post_masking_script.setter
@@ -229,9 +171,6 @@ class MaskingPolicyArgs:
     @property
     @pulumi.getter(name="preMaskingScript")
     def pre_masking_script(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A pre-masking script, which can contain SQL and PL/SQL statements. It's executed before  the core masking script generated using the masking policy. It's usually used to perform any preparation or prerequisite work before masking data.
-        """
         return pulumi.get(self, "pre_masking_script")
 
     @pre_masking_script.setter
@@ -241,9 +180,6 @@ class MaskingPolicyArgs:
     @property
     @pulumi.getter
     def recompile(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Specifies how to recompile invalid objects post data masking. Allowed values are 'SERIAL' (recompile in serial),  'PARALLEL' (recompile in parallel), 'NONE' (do not recompile). If it's set to PARALLEL, the value of parallelDegree attribute is used. Use the built-in UTL_RECOMP package to recompile any remaining invalid objects after masking completes.
-        """
         return pulumi.get(self, "recompile")
 
     @recompile.setter
@@ -273,27 +209,6 @@ class _MaskingPolicyState:
                  time_updated: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering MaskingPolicy resources.
-        :param pulumi.Input[int] add_masking_columns_from_sdm_trigger: (Updatable) An optional property when incremented triggers Add Masking Columns From Sdm. Could be set to any integer value.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Sequence[pulumi.Input['MaskingPolicyColumnSourceArgs']]] column_sources: (Updatable) The source of masking columns.
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment where the masking policy should be created.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] description: (Updatable) The description of the masking policy.
-        :param pulumi.Input[str] display_name: (Updatable) The display name of the masking policy. The name does not have to be unique, and it's changeable.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[bool] is_drop_temp_tables_enabled: (Updatable) Indicates if the temporary tables created during a masking operation should be dropped after masking. It's enabled by default. Set this attribute to false to preserve the temporary tables. Masking creates temporary tables that map the original sensitive  data values to mask values. By default, these temporary tables are dropped after masking. But, in some cases, you may want  to preserve this information to track how masking changed your data. Note that doing so compromises security. These tables  must be dropped before the database is available for unprivileged users.
-        :param pulumi.Input[bool] is_redo_logging_enabled: (Updatable) Indicates if redo logging is enabled during a masking operation. It's disabled by default. Set this attribute to true to enable redo logging. By default, masking disables redo logging and flashback logging to purge any original unmasked  data from logs. However, in certain circumstances when you only want to test masking, rollback changes, and retry masking, you could enable logging and use a flashback database to retrieve the original unmasked data after it has been masked.
-        :param pulumi.Input[bool] is_refresh_stats_enabled: (Updatable) Indicates if statistics gathering is enabled. It's enabled by default. Set this attribute to false to disable statistics gathering. The masking process gathers statistics on masked database tables after masking completes.
-        :param pulumi.Input[str] parallel_degree: (Updatable) Specifies options to enable parallel execution when running data masking. Allowed values are 'NONE' (no parallelism), 'DEFAULT' (the Oracle Database computes the optimum degree of parallelism) or an integer value to be used as the degree of parallelism. Parallel execution helps effectively use multiple CPUs and improve masking performance. Refer to the Oracle Database parallel execution framework when choosing an explicit degree of parallelism.
-        :param pulumi.Input[str] post_masking_script: (Updatable) A post-masking script, which can contain SQL and PL/SQL statements. It's executed after the core masking script generated using the masking policy. It's usually used to perform additional transformation or cleanup work after masking.
-        :param pulumi.Input[str] pre_masking_script: (Updatable) A pre-masking script, which can contain SQL and PL/SQL statements. It's executed before  the core masking script generated using the masking policy. It's usually used to perform any preparation or prerequisite work before masking data.
-        :param pulumi.Input[str] recompile: (Updatable) Specifies how to recompile invalid objects post data masking. Allowed values are 'SERIAL' (recompile in serial),  'PARALLEL' (recompile in parallel), 'NONE' (do not recompile). If it's set to PARALLEL, the value of parallelDegree attribute is used. Use the built-in UTL_RECOMP package to recompile any remaining invalid objects after masking completes.
-        :param pulumi.Input[str] state: The current state of the masking policy.
-        :param pulumi.Input[str] time_created: The date and time the masking policy was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        :param pulumi.Input[str] time_updated: The date and time the masking policy was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)
         """
         if add_masking_columns_from_sdm_trigger is not None:
             pulumi.set(__self__, "add_masking_columns_from_sdm_trigger", add_masking_columns_from_sdm_trigger)
@@ -333,13 +248,6 @@ class _MaskingPolicyState:
     @property
     @pulumi.getter(name="addMaskingColumnsFromSdmTrigger")
     def add_masking_columns_from_sdm_trigger(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) An optional property when incremented triggers Add Masking Columns From Sdm. Could be set to any integer value.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "add_masking_columns_from_sdm_trigger")
 
     @add_masking_columns_from_sdm_trigger.setter
@@ -349,9 +257,6 @@ class _MaskingPolicyState:
     @property
     @pulumi.getter(name="columnSources")
     def column_sources(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['MaskingPolicyColumnSourceArgs']]]]:
-        """
-        (Updatable) The source of masking columns.
-        """
         return pulumi.get(self, "column_sources")
 
     @column_sources.setter
@@ -361,9 +266,6 @@ class _MaskingPolicyState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The OCID of the compartment where the masking policy should be created.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -373,9 +275,6 @@ class _MaskingPolicyState:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -385,9 +284,6 @@ class _MaskingPolicyState:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The description of the masking policy.
-        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -397,9 +293,6 @@ class _MaskingPolicyState:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The display name of the masking policy. The name does not have to be unique, and it's changeable.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -409,9 +302,6 @@ class _MaskingPolicyState:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -421,9 +311,6 @@ class _MaskingPolicyState:
     @property
     @pulumi.getter(name="isDropTempTablesEnabled")
     def is_drop_temp_tables_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Indicates if the temporary tables created during a masking operation should be dropped after masking. It's enabled by default. Set this attribute to false to preserve the temporary tables. Masking creates temporary tables that map the original sensitive  data values to mask values. By default, these temporary tables are dropped after masking. But, in some cases, you may want  to preserve this information to track how masking changed your data. Note that doing so compromises security. These tables  must be dropped before the database is available for unprivileged users.
-        """
         return pulumi.get(self, "is_drop_temp_tables_enabled")
 
     @is_drop_temp_tables_enabled.setter
@@ -433,9 +320,6 @@ class _MaskingPolicyState:
     @property
     @pulumi.getter(name="isRedoLoggingEnabled")
     def is_redo_logging_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Indicates if redo logging is enabled during a masking operation. It's disabled by default. Set this attribute to true to enable redo logging. By default, masking disables redo logging and flashback logging to purge any original unmasked  data from logs. However, in certain circumstances when you only want to test masking, rollback changes, and retry masking, you could enable logging and use a flashback database to retrieve the original unmasked data after it has been masked.
-        """
         return pulumi.get(self, "is_redo_logging_enabled")
 
     @is_redo_logging_enabled.setter
@@ -445,9 +329,6 @@ class _MaskingPolicyState:
     @property
     @pulumi.getter(name="isRefreshStatsEnabled")
     def is_refresh_stats_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Indicates if statistics gathering is enabled. It's enabled by default. Set this attribute to false to disable statistics gathering. The masking process gathers statistics on masked database tables after masking completes.
-        """
         return pulumi.get(self, "is_refresh_stats_enabled")
 
     @is_refresh_stats_enabled.setter
@@ -457,9 +338,6 @@ class _MaskingPolicyState:
     @property
     @pulumi.getter(name="parallelDegree")
     def parallel_degree(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Specifies options to enable parallel execution when running data masking. Allowed values are 'NONE' (no parallelism), 'DEFAULT' (the Oracle Database computes the optimum degree of parallelism) or an integer value to be used as the degree of parallelism. Parallel execution helps effectively use multiple CPUs and improve masking performance. Refer to the Oracle Database parallel execution framework when choosing an explicit degree of parallelism.
-        """
         return pulumi.get(self, "parallel_degree")
 
     @parallel_degree.setter
@@ -469,9 +347,6 @@ class _MaskingPolicyState:
     @property
     @pulumi.getter(name="postMaskingScript")
     def post_masking_script(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A post-masking script, which can contain SQL and PL/SQL statements. It's executed after the core masking script generated using the masking policy. It's usually used to perform additional transformation or cleanup work after masking.
-        """
         return pulumi.get(self, "post_masking_script")
 
     @post_masking_script.setter
@@ -481,9 +356,6 @@ class _MaskingPolicyState:
     @property
     @pulumi.getter(name="preMaskingScript")
     def pre_masking_script(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A pre-masking script, which can contain SQL and PL/SQL statements. It's executed before  the core masking script generated using the masking policy. It's usually used to perform any preparation or prerequisite work before masking data.
-        """
         return pulumi.get(self, "pre_masking_script")
 
     @pre_masking_script.setter
@@ -493,9 +365,6 @@ class _MaskingPolicyState:
     @property
     @pulumi.getter
     def recompile(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Specifies how to recompile invalid objects post data masking. Allowed values are 'SERIAL' (recompile in serial),  'PARALLEL' (recompile in parallel), 'NONE' (do not recompile). If it's set to PARALLEL, the value of parallelDegree attribute is used. Use the built-in UTL_RECOMP package to recompile any remaining invalid objects after masking completes.
-        """
         return pulumi.get(self, "recompile")
 
     @recompile.setter
@@ -505,9 +374,6 @@ class _MaskingPolicyState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The current state of the masking policy.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -517,9 +383,6 @@ class _MaskingPolicyState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time the masking policy was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -529,9 +392,6 @@ class _MaskingPolicyState:
     @property
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time the masking policy was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)
-        """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
@@ -560,84 +420,9 @@ class MaskingPolicy(pulumi.CustomResource):
                  recompile: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Masking Policy resource in Oracle Cloud Infrastructure Data Safe service.
-
-        Creates a new masking policy and associates it with a sensitive data model or a target database.
-
-        To use a sensitive data model as the source of masking columns, set the columnSource attribute to
-        SENSITIVE_DATA_MODEL and provide the sensitiveDataModelId attribute. After creating a masking policy,
-        you can use the AddMaskingColumnsFromSdm operation to automatically add all the columns from
-        the associated sensitive data model. In this case, the target database associated with the
-        sensitive data model is used for column and masking format validations.
-
-        You can also create a masking policy without using a sensitive data model. In this case,
-        you need to associate your masking policy with a target database by setting the columnSource
-        attribute to TARGET and providing the targetId attribute. The specified target database
-        is used for column and masking format validations.
-
-        After creating a masking policy, you can use the CreateMaskingColumn or PatchMaskingColumns
-        operation to manually add columns to the policy. You need to add the parent columns only,
-        and it automatically adds the child columns (in referential relationship with the parent columns)
-        from the associated sensitive data model or target database.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_masking_policy = oci.data_safe.MaskingPolicy("testMaskingPolicy",
-            column_sources=[oci.data_safe.MaskingPolicyColumnSourceArgs(
-                column_source=var["masking_policy_column_source_column_source"],
-                sensitive_data_model_id=oci_data_safe_sensitive_data_model["test_sensitive_data_model"]["id"],
-                target_id=oci_cloud_guard_target["test_target"]["id"],
-            )],
-            compartment_id=var["compartment_id"],
-            defined_tags={
-                "Operations.CostCenter": "42",
-            },
-            description=var["masking_policy_description"],
-            display_name=var["masking_policy_display_name"],
-            freeform_tags={
-                "Department": "Finance",
-            },
-            is_drop_temp_tables_enabled=var["masking_policy_is_drop_temp_tables_enabled"],
-            is_redo_logging_enabled=var["masking_policy_is_redo_logging_enabled"],
-            is_refresh_stats_enabled=var["masking_policy_is_refresh_stats_enabled"],
-            parallel_degree=var["masking_policy_parallel_degree"],
-            post_masking_script=var["masking_policy_post_masking_script"],
-            pre_masking_script=var["masking_policy_pre_masking_script"],
-            recompile=var["masking_policy_recompile"])
-        ```
-
-        ## Import
-
-        MaskingPolicies can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:DataSafe/maskingPolicy:MaskingPolicy test_masking_policy "id"
-        ```
-
+        Create a MaskingPolicy resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[int] add_masking_columns_from_sdm_trigger: (Updatable) An optional property when incremented triggers Add Masking Columns From Sdm. Could be set to any integer value.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MaskingPolicyColumnSourceArgs']]]] column_sources: (Updatable) The source of masking columns.
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment where the masking policy should be created.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] description: (Updatable) The description of the masking policy.
-        :param pulumi.Input[str] display_name: (Updatable) The display name of the masking policy. The name does not have to be unique, and it's changeable.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[bool] is_drop_temp_tables_enabled: (Updatable) Indicates if the temporary tables created during a masking operation should be dropped after masking. It's enabled by default. Set this attribute to false to preserve the temporary tables. Masking creates temporary tables that map the original sensitive  data values to mask values. By default, these temporary tables are dropped after masking. But, in some cases, you may want  to preserve this information to track how masking changed your data. Note that doing so compromises security. These tables  must be dropped before the database is available for unprivileged users.
-        :param pulumi.Input[bool] is_redo_logging_enabled: (Updatable) Indicates if redo logging is enabled during a masking operation. It's disabled by default. Set this attribute to true to enable redo logging. By default, masking disables redo logging and flashback logging to purge any original unmasked  data from logs. However, in certain circumstances when you only want to test masking, rollback changes, and retry masking, you could enable logging and use a flashback database to retrieve the original unmasked data after it has been masked.
-        :param pulumi.Input[bool] is_refresh_stats_enabled: (Updatable) Indicates if statistics gathering is enabled. It's enabled by default. Set this attribute to false to disable statistics gathering. The masking process gathers statistics on masked database tables after masking completes.
-        :param pulumi.Input[str] parallel_degree: (Updatable) Specifies options to enable parallel execution when running data masking. Allowed values are 'NONE' (no parallelism), 'DEFAULT' (the Oracle Database computes the optimum degree of parallelism) or an integer value to be used as the degree of parallelism. Parallel execution helps effectively use multiple CPUs and improve masking performance. Refer to the Oracle Database parallel execution framework when choosing an explicit degree of parallelism.
-        :param pulumi.Input[str] post_masking_script: (Updatable) A post-masking script, which can contain SQL and PL/SQL statements. It's executed after the core masking script generated using the masking policy. It's usually used to perform additional transformation or cleanup work after masking.
-        :param pulumi.Input[str] pre_masking_script: (Updatable) A pre-masking script, which can contain SQL and PL/SQL statements. It's executed before  the core masking script generated using the masking policy. It's usually used to perform any preparation or prerequisite work before masking data.
-        :param pulumi.Input[str] recompile: (Updatable) Specifies how to recompile invalid objects post data masking. Allowed values are 'SERIAL' (recompile in serial),  'PARALLEL' (recompile in parallel), 'NONE' (do not recompile). If it's set to PARALLEL, the value of parallelDegree attribute is used. Use the built-in UTL_RECOMP package to recompile any remaining invalid objects after masking completes.
         """
         ...
     @overload
@@ -646,64 +431,7 @@ class MaskingPolicy(pulumi.CustomResource):
                  args: MaskingPolicyArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Masking Policy resource in Oracle Cloud Infrastructure Data Safe service.
-
-        Creates a new masking policy and associates it with a sensitive data model or a target database.
-
-        To use a sensitive data model as the source of masking columns, set the columnSource attribute to
-        SENSITIVE_DATA_MODEL and provide the sensitiveDataModelId attribute. After creating a masking policy,
-        you can use the AddMaskingColumnsFromSdm operation to automatically add all the columns from
-        the associated sensitive data model. In this case, the target database associated with the
-        sensitive data model is used for column and masking format validations.
-
-        You can also create a masking policy without using a sensitive data model. In this case,
-        you need to associate your masking policy with a target database by setting the columnSource
-        attribute to TARGET and providing the targetId attribute. The specified target database
-        is used for column and masking format validations.
-
-        After creating a masking policy, you can use the CreateMaskingColumn or PatchMaskingColumns
-        operation to manually add columns to the policy. You need to add the parent columns only,
-        and it automatically adds the child columns (in referential relationship with the parent columns)
-        from the associated sensitive data model or target database.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_masking_policy = oci.data_safe.MaskingPolicy("testMaskingPolicy",
-            column_sources=[oci.data_safe.MaskingPolicyColumnSourceArgs(
-                column_source=var["masking_policy_column_source_column_source"],
-                sensitive_data_model_id=oci_data_safe_sensitive_data_model["test_sensitive_data_model"]["id"],
-                target_id=oci_cloud_guard_target["test_target"]["id"],
-            )],
-            compartment_id=var["compartment_id"],
-            defined_tags={
-                "Operations.CostCenter": "42",
-            },
-            description=var["masking_policy_description"],
-            display_name=var["masking_policy_display_name"],
-            freeform_tags={
-                "Department": "Finance",
-            },
-            is_drop_temp_tables_enabled=var["masking_policy_is_drop_temp_tables_enabled"],
-            is_redo_logging_enabled=var["masking_policy_is_redo_logging_enabled"],
-            is_refresh_stats_enabled=var["masking_policy_is_refresh_stats_enabled"],
-            parallel_degree=var["masking_policy_parallel_degree"],
-            post_masking_script=var["masking_policy_post_masking_script"],
-            pre_masking_script=var["masking_policy_pre_masking_script"],
-            recompile=var["masking_policy_recompile"])
-        ```
-
-        ## Import
-
-        MaskingPolicies can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:DataSafe/maskingPolicy:MaskingPolicy test_masking_policy "id"
-        ```
-
+        Create a MaskingPolicy resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param MaskingPolicyArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -797,27 +525,6 @@ class MaskingPolicy(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[int] add_masking_columns_from_sdm_trigger: (Updatable) An optional property when incremented triggers Add Masking Columns From Sdm. Could be set to any integer value.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MaskingPolicyColumnSourceArgs']]]] column_sources: (Updatable) The source of masking columns.
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment where the masking policy should be created.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] description: (Updatable) The description of the masking policy.
-        :param pulumi.Input[str] display_name: (Updatable) The display name of the masking policy. The name does not have to be unique, and it's changeable.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[bool] is_drop_temp_tables_enabled: (Updatable) Indicates if the temporary tables created during a masking operation should be dropped after masking. It's enabled by default. Set this attribute to false to preserve the temporary tables. Masking creates temporary tables that map the original sensitive  data values to mask values. By default, these temporary tables are dropped after masking. But, in some cases, you may want  to preserve this information to track how masking changed your data. Note that doing so compromises security. These tables  must be dropped before the database is available for unprivileged users.
-        :param pulumi.Input[bool] is_redo_logging_enabled: (Updatable) Indicates if redo logging is enabled during a masking operation. It's disabled by default. Set this attribute to true to enable redo logging. By default, masking disables redo logging and flashback logging to purge any original unmasked  data from logs. However, in certain circumstances when you only want to test masking, rollback changes, and retry masking, you could enable logging and use a flashback database to retrieve the original unmasked data after it has been masked.
-        :param pulumi.Input[bool] is_refresh_stats_enabled: (Updatable) Indicates if statistics gathering is enabled. It's enabled by default. Set this attribute to false to disable statistics gathering. The masking process gathers statistics on masked database tables after masking completes.
-        :param pulumi.Input[str] parallel_degree: (Updatable) Specifies options to enable parallel execution when running data masking. Allowed values are 'NONE' (no parallelism), 'DEFAULT' (the Oracle Database computes the optimum degree of parallelism) or an integer value to be used as the degree of parallelism. Parallel execution helps effectively use multiple CPUs and improve masking performance. Refer to the Oracle Database parallel execution framework when choosing an explicit degree of parallelism.
-        :param pulumi.Input[str] post_masking_script: (Updatable) A post-masking script, which can contain SQL and PL/SQL statements. It's executed after the core masking script generated using the masking policy. It's usually used to perform additional transformation or cleanup work after masking.
-        :param pulumi.Input[str] pre_masking_script: (Updatable) A pre-masking script, which can contain SQL and PL/SQL statements. It's executed before  the core masking script generated using the masking policy. It's usually used to perform any preparation or prerequisite work before masking data.
-        :param pulumi.Input[str] recompile: (Updatable) Specifies how to recompile invalid objects post data masking. Allowed values are 'SERIAL' (recompile in serial),  'PARALLEL' (recompile in parallel), 'NONE' (do not recompile). If it's set to PARALLEL, the value of parallelDegree attribute is used. Use the built-in UTL_RECOMP package to recompile any remaining invalid objects after masking completes.
-        :param pulumi.Input[str] state: The current state of the masking policy.
-        :param pulumi.Input[str] time_created: The date and time the masking policy was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        :param pulumi.Input[str] time_updated: The date and time the masking policy was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -845,140 +552,85 @@ class MaskingPolicy(pulumi.CustomResource):
     @property
     @pulumi.getter(name="addMaskingColumnsFromSdmTrigger")
     def add_masking_columns_from_sdm_trigger(self) -> pulumi.Output[Optional[int]]:
-        """
-        (Updatable) An optional property when incremented triggers Add Masking Columns From Sdm. Could be set to any integer value.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "add_masking_columns_from_sdm_trigger")
 
     @property
     @pulumi.getter(name="columnSources")
     def column_sources(self) -> pulumi.Output[Sequence['outputs.MaskingPolicyColumnSource']]:
-        """
-        (Updatable) The source of masking columns.
-        """
         return pulumi.get(self, "column_sources")
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The OCID of the compartment where the masking policy should be created.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def description(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The description of the masking policy.
-        """
+    def description(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The display name of the masking policy. The name does not have to be unique, and it's changeable.
-        """
+    def display_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="isDropTempTablesEnabled")
-    def is_drop_temp_tables_enabled(self) -> pulumi.Output[bool]:
-        """
-        (Updatable) Indicates if the temporary tables created during a masking operation should be dropped after masking. It's enabled by default. Set this attribute to false to preserve the temporary tables. Masking creates temporary tables that map the original sensitive  data values to mask values. By default, these temporary tables are dropped after masking. But, in some cases, you may want  to preserve this information to track how masking changed your data. Note that doing so compromises security. These tables  must be dropped before the database is available for unprivileged users.
-        """
+    def is_drop_temp_tables_enabled(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "is_drop_temp_tables_enabled")
 
     @property
     @pulumi.getter(name="isRedoLoggingEnabled")
-    def is_redo_logging_enabled(self) -> pulumi.Output[bool]:
-        """
-        (Updatable) Indicates if redo logging is enabled during a masking operation. It's disabled by default. Set this attribute to true to enable redo logging. By default, masking disables redo logging and flashback logging to purge any original unmasked  data from logs. However, in certain circumstances when you only want to test masking, rollback changes, and retry masking, you could enable logging and use a flashback database to retrieve the original unmasked data after it has been masked.
-        """
+    def is_redo_logging_enabled(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "is_redo_logging_enabled")
 
     @property
     @pulumi.getter(name="isRefreshStatsEnabled")
-    def is_refresh_stats_enabled(self) -> pulumi.Output[bool]:
-        """
-        (Updatable) Indicates if statistics gathering is enabled. It's enabled by default. Set this attribute to false to disable statistics gathering. The masking process gathers statistics on masked database tables after masking completes.
-        """
+    def is_refresh_stats_enabled(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "is_refresh_stats_enabled")
 
     @property
     @pulumi.getter(name="parallelDegree")
-    def parallel_degree(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Specifies options to enable parallel execution when running data masking. Allowed values are 'NONE' (no parallelism), 'DEFAULT' (the Oracle Database computes the optimum degree of parallelism) or an integer value to be used as the degree of parallelism. Parallel execution helps effectively use multiple CPUs and improve masking performance. Refer to the Oracle Database parallel execution framework when choosing an explicit degree of parallelism.
-        """
+    def parallel_degree(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "parallel_degree")
 
     @property
     @pulumi.getter(name="postMaskingScript")
-    def post_masking_script(self) -> pulumi.Output[str]:
-        """
-        (Updatable) A post-masking script, which can contain SQL and PL/SQL statements. It's executed after the core masking script generated using the masking policy. It's usually used to perform additional transformation or cleanup work after masking.
-        """
+    def post_masking_script(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "post_masking_script")
 
     @property
     @pulumi.getter(name="preMaskingScript")
-    def pre_masking_script(self) -> pulumi.Output[str]:
-        """
-        (Updatable) A pre-masking script, which can contain SQL and PL/SQL statements. It's executed before  the core masking script generated using the masking policy. It's usually used to perform any preparation or prerequisite work before masking data.
-        """
+    def pre_masking_script(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "pre_masking_script")
 
     @property
     @pulumi.getter
-    def recompile(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Specifies how to recompile invalid objects post data masking. Allowed values are 'SERIAL' (recompile in serial),  'PARALLEL' (recompile in parallel), 'NONE' (do not recompile). If it's set to PARALLEL, the value of parallelDegree attribute is used. Use the built-in UTL_RECOMP package to recompile any remaining invalid objects after masking completes.
-        """
+    def recompile(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "recompile")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        The current state of the masking policy.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        The date and time the masking policy was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> pulumi.Output[str]:
-        """
-        The date and time the masking policy was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)
-        """
+    def time_updated(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_updated")
 

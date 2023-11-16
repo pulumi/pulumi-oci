@@ -12,6 +12,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetContainerImageResult {
@@ -19,148 +21,148 @@ public final class GetContainerImageResult {
      * @return The compartment OCID to which the container image belongs. Inferred from the container repository.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return The OCID of the user or principal that pushed the version.
      * 
      */
-    private String createdBy;
+    private @Nullable String createdBy;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return The sha256 digest of the image layer.
      * 
      */
-    private String digest;
+    private @Nullable String digest;
     /**
      * @return The repository name and the most recent version associated with the image. If there are no versions associated with the image, then last known version and digest are used instead. If the last known version is unavailable, then &#39;unknown&#39; is used instead of the version.  Example: `ubuntu:latest` or `ubuntu:latest@sha256:45b23dee08af5e43a7fea6c4cf9c25ccf269ee113168c19722f87876677c5cb2`
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private String imageId;
     /**
      * @return Layers of which the image is composed, ordered by the layer digest.
      * 
      */
-    private List<GetContainerImageLayer> layers;
+    private @Nullable List<GetContainerImageLayer> layers;
     /**
      * @return The total size of the container image layers in bytes.
      * 
      */
-    private String layersSizeInBytes;
+    private @Nullable String layersSizeInBytes;
     /**
      * @return The size of the container image manifest in bytes.
      * 
      */
-    private Integer manifestSizeInBytes;
+    private @Nullable Integer manifestSizeInBytes;
     /**
      * @return Total number of pulls.
      * 
      */
-    private String pullCount;
+    private @Nullable String pullCount;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the container repository.
      * 
      */
-    private String repositoryId;
+    private @Nullable String repositoryId;
     /**
      * @return The container repository name.
      * 
      */
-    private String repositoryName;
+    private @Nullable String repositoryName;
     /**
      * @return The current state of the container image.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return The system tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    private Map<String,Object> systemTags;
+    private @Nullable Map<String,Object> systemTags;
     /**
      * @return The creation time of the version.
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return An RFC 3339 timestamp indicating when the image was last pulled.
      * 
      */
-    private String timeLastPulled;
+    private @Nullable String timeLastPulled;
     /**
      * @return The version name.
      * 
      */
-    private String version;
+    private @Nullable String version;
     /**
      * @return The versions associated with this image.
      * 
      */
-    private List<GetContainerImageVersion> versions;
+    private @Nullable List<GetContainerImageVersion> versions;
 
     private GetContainerImageResult() {}
     /**
      * @return The compartment OCID to which the container image belongs. Inferred from the container repository.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return The OCID of the user or principal that pushed the version.
      * 
      */
-    public String createdBy() {
-        return this.createdBy;
+    public Optional<String> createdBy() {
+        return Optional.ofNullable(this.createdBy);
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return The sha256 digest of the image layer.
      * 
      */
-    public String digest() {
-        return this.digest;
+    public Optional<String> digest() {
+        return Optional.ofNullable(this.digest);
     }
     /**
      * @return The repository name and the most recent version associated with the image. If there are no versions associated with the image, then last known version and digest are used instead. If the last known version is unavailable, then &#39;unknown&#39; is used instead of the version.  Example: `ubuntu:latest` or `ubuntu:latest@sha256:45b23dee08af5e43a7fea6c4cf9c25ccf269ee113168c19722f87876677c5cb2`
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public String imageId() {
         return this.imageId;
@@ -170,84 +172,84 @@ public final class GetContainerImageResult {
      * 
      */
     public List<GetContainerImageLayer> layers() {
-        return this.layers;
+        return this.layers == null ? List.of() : this.layers;
     }
     /**
      * @return The total size of the container image layers in bytes.
      * 
      */
-    public String layersSizeInBytes() {
-        return this.layersSizeInBytes;
+    public Optional<String> layersSizeInBytes() {
+        return Optional.ofNullable(this.layersSizeInBytes);
     }
     /**
      * @return The size of the container image manifest in bytes.
      * 
      */
-    public Integer manifestSizeInBytes() {
-        return this.manifestSizeInBytes;
+    public Optional<Integer> manifestSizeInBytes() {
+        return Optional.ofNullable(this.manifestSizeInBytes);
     }
     /**
      * @return Total number of pulls.
      * 
      */
-    public String pullCount() {
-        return this.pullCount;
+    public Optional<String> pullCount() {
+        return Optional.ofNullable(this.pullCount);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the container repository.
      * 
      */
-    public String repositoryId() {
-        return this.repositoryId;
+    public Optional<String> repositoryId() {
+        return Optional.ofNullable(this.repositoryId);
     }
     /**
      * @return The container repository name.
      * 
      */
-    public String repositoryName() {
-        return this.repositoryName;
+    public Optional<String> repositoryName() {
+        return Optional.ofNullable(this.repositoryName);
     }
     /**
      * @return The current state of the container image.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return The system tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
     public Map<String,Object> systemTags() {
-        return this.systemTags;
+        return this.systemTags == null ? Map.of() : this.systemTags;
     }
     /**
      * @return The creation time of the version.
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return An RFC 3339 timestamp indicating when the image was last pulled.
      * 
      */
-    public String timeLastPulled() {
-        return this.timeLastPulled;
+    public Optional<String> timeLastPulled() {
+        return Optional.ofNullable(this.timeLastPulled);
     }
     /**
      * @return The version name.
      * 
      */
-    public String version() {
-        return this.version;
+    public Optional<String> version() {
+        return Optional.ofNullable(this.version);
     }
     /**
      * @return The versions associated with this image.
      * 
      */
     public List<GetContainerImageVersion> versions() {
-        return this.versions;
+        return this.versions == null ? List.of() : this.versions;
     }
 
     public static Builder builder() {
@@ -259,26 +261,26 @@ public final class GetContainerImageResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String compartmentId;
-        private String createdBy;
-        private Map<String,Object> definedTags;
-        private String digest;
-        private String displayName;
-        private Map<String,Object> freeformTags;
-        private String id;
+        private @Nullable String compartmentId;
+        private @Nullable String createdBy;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String digest;
+        private @Nullable String displayName;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String id;
         private String imageId;
-        private List<GetContainerImageLayer> layers;
-        private String layersSizeInBytes;
-        private Integer manifestSizeInBytes;
-        private String pullCount;
-        private String repositoryId;
-        private String repositoryName;
-        private String state;
-        private Map<String,Object> systemTags;
-        private String timeCreated;
-        private String timeLastPulled;
-        private String version;
-        private List<GetContainerImageVersion> versions;
+        private @Nullable List<GetContainerImageLayer> layers;
+        private @Nullable String layersSizeInBytes;
+        private @Nullable Integer manifestSizeInBytes;
+        private @Nullable String pullCount;
+        private @Nullable String repositoryId;
+        private @Nullable String repositoryName;
+        private @Nullable String state;
+        private @Nullable Map<String,Object> systemTags;
+        private @Nullable String timeCreated;
+        private @Nullable String timeLastPulled;
+        private @Nullable String version;
+        private @Nullable List<GetContainerImageVersion> versions;
         public Builder() {}
         public Builder(GetContainerImageResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -305,38 +307,38 @@ public final class GetContainerImageResult {
         }
 
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder createdBy(String createdBy) {
-            this.createdBy = Objects.requireNonNull(createdBy);
+        public Builder createdBy(@Nullable String createdBy) {
+            this.createdBy = createdBy;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder digest(String digest) {
-            this.digest = Objects.requireNonNull(digest);
+        public Builder digest(@Nullable String digest) {
+            this.digest = digest;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -345,66 +347,66 @@ public final class GetContainerImageResult {
             return this;
         }
         @CustomType.Setter
-        public Builder layers(List<GetContainerImageLayer> layers) {
-            this.layers = Objects.requireNonNull(layers);
+        public Builder layers(@Nullable List<GetContainerImageLayer> layers) {
+            this.layers = layers;
             return this;
         }
         public Builder layers(GetContainerImageLayer... layers) {
             return layers(List.of(layers));
         }
         @CustomType.Setter
-        public Builder layersSizeInBytes(String layersSizeInBytes) {
-            this.layersSizeInBytes = Objects.requireNonNull(layersSizeInBytes);
+        public Builder layersSizeInBytes(@Nullable String layersSizeInBytes) {
+            this.layersSizeInBytes = layersSizeInBytes;
             return this;
         }
         @CustomType.Setter
-        public Builder manifestSizeInBytes(Integer manifestSizeInBytes) {
-            this.manifestSizeInBytes = Objects.requireNonNull(manifestSizeInBytes);
+        public Builder manifestSizeInBytes(@Nullable Integer manifestSizeInBytes) {
+            this.manifestSizeInBytes = manifestSizeInBytes;
             return this;
         }
         @CustomType.Setter
-        public Builder pullCount(String pullCount) {
-            this.pullCount = Objects.requireNonNull(pullCount);
+        public Builder pullCount(@Nullable String pullCount) {
+            this.pullCount = pullCount;
             return this;
         }
         @CustomType.Setter
-        public Builder repositoryId(String repositoryId) {
-            this.repositoryId = Objects.requireNonNull(repositoryId);
+        public Builder repositoryId(@Nullable String repositoryId) {
+            this.repositoryId = repositoryId;
             return this;
         }
         @CustomType.Setter
-        public Builder repositoryName(String repositoryName) {
-            this.repositoryName = Objects.requireNonNull(repositoryName);
+        public Builder repositoryName(@Nullable String repositoryName) {
+            this.repositoryName = repositoryName;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+        public Builder systemTags(@Nullable Map<String,Object> systemTags) {
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeLastPulled(String timeLastPulled) {
-            this.timeLastPulled = Objects.requireNonNull(timeLastPulled);
+        public Builder timeLastPulled(@Nullable String timeLastPulled) {
+            this.timeLastPulled = timeLastPulled;
             return this;
         }
         @CustomType.Setter
-        public Builder version(String version) {
-            this.version = Objects.requireNonNull(version);
+        public Builder version(@Nullable String version) {
+            this.version = version;
             return this;
         }
         @CustomType.Setter
-        public Builder versions(List<GetContainerImageVersion> versions) {
-            this.versions = Objects.requireNonNull(versions);
+        public Builder versions(@Nullable List<GetContainerImageVersion> versions) {
+            this.versions = versions;
             return this;
         }
         public Builder versions(GetContainerImageVersion... versions) {

@@ -6,6 +6,8 @@ package com.pulumi.oci.OneSubsription.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetSubscribedServiceRateCardProduct {
@@ -13,75 +15,75 @@ public final class GetSubscribedServiceRateCardProduct {
      * @return Metered service billing category
      * 
      */
-    private String billingCategory;
+    private @Nullable String billingCategory;
     /**
      * @return Commercial name also called customer name.
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return Product part numner
      * 
      */
-    private String partNumber;
+    private @Nullable String partNumber;
     /**
      * @return Product category
      * 
      */
-    private String productCategory;
+    private @Nullable String productCategory;
     /**
      * @return Rate card part type of Product
      * 
      */
-    private String ucmRateCardPartType;
+    private @Nullable String ucmRateCardPartType;
     /**
      * @return Unit of measure
      * 
      */
-    private String unitOfMeasure;
+    private @Nullable String unitOfMeasure;
 
     private GetSubscribedServiceRateCardProduct() {}
     /**
      * @return Metered service billing category
      * 
      */
-    public String billingCategory() {
-        return this.billingCategory;
+    public Optional<String> billingCategory() {
+        return Optional.ofNullable(this.billingCategory);
     }
     /**
      * @return Commercial name also called customer name.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return Product part numner
      * 
      */
-    public String partNumber() {
-        return this.partNumber;
+    public Optional<String> partNumber() {
+        return Optional.ofNullable(this.partNumber);
     }
     /**
      * @return Product category
      * 
      */
-    public String productCategory() {
-        return this.productCategory;
+    public Optional<String> productCategory() {
+        return Optional.ofNullable(this.productCategory);
     }
     /**
      * @return Rate card part type of Product
      * 
      */
-    public String ucmRateCardPartType() {
-        return this.ucmRateCardPartType;
+    public Optional<String> ucmRateCardPartType() {
+        return Optional.ofNullable(this.ucmRateCardPartType);
     }
     /**
      * @return Unit of measure
      * 
      */
-    public String unitOfMeasure() {
-        return this.unitOfMeasure;
+    public Optional<String> unitOfMeasure() {
+        return Optional.ofNullable(this.unitOfMeasure);
     }
 
     public static Builder builder() {
@@ -93,12 +95,12 @@ public final class GetSubscribedServiceRateCardProduct {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String billingCategory;
-        private String name;
-        private String partNumber;
-        private String productCategory;
-        private String ucmRateCardPartType;
-        private String unitOfMeasure;
+        private @Nullable String billingCategory;
+        private @Nullable String name;
+        private @Nullable String partNumber;
+        private @Nullable String productCategory;
+        private @Nullable String ucmRateCardPartType;
+        private @Nullable String unitOfMeasure;
         public Builder() {}
         public Builder(GetSubscribedServiceRateCardProduct defaults) {
     	      Objects.requireNonNull(defaults);
@@ -111,33 +113,33 @@ public final class GetSubscribedServiceRateCardProduct {
         }
 
         @CustomType.Setter
-        public Builder billingCategory(String billingCategory) {
-            this.billingCategory = Objects.requireNonNull(billingCategory);
+        public Builder billingCategory(@Nullable String billingCategory) {
+            this.billingCategory = billingCategory;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder partNumber(String partNumber) {
-            this.partNumber = Objects.requireNonNull(partNumber);
+        public Builder partNumber(@Nullable String partNumber) {
+            this.partNumber = partNumber;
             return this;
         }
         @CustomType.Setter
-        public Builder productCategory(String productCategory) {
-            this.productCategory = Objects.requireNonNull(productCategory);
+        public Builder productCategory(@Nullable String productCategory) {
+            this.productCategory = productCategory;
             return this;
         }
         @CustomType.Setter
-        public Builder ucmRateCardPartType(String ucmRateCardPartType) {
-            this.ucmRateCardPartType = Objects.requireNonNull(ucmRateCardPartType);
+        public Builder ucmRateCardPartType(@Nullable String ucmRateCardPartType) {
+            this.ucmRateCardPartType = ucmRateCardPartType;
             return this;
         }
         @CustomType.Setter
-        public Builder unitOfMeasure(String unitOfMeasure) {
-            this.unitOfMeasure = Objects.requireNonNull(unitOfMeasure);
+        public Builder unitOfMeasure(@Nullable String unitOfMeasure) {
+            this.unitOfMeasure = unitOfMeasure;
             return this;
         }
         public GetSubscribedServiceRateCardProduct build() {

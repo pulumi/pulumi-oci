@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Blockchain Platform resource in Oracle Cloud Infrastructure Blockchain service.
@@ -59,60 +58,60 @@ type LookupBlockchainPlatformArgs struct {
 
 // A collection of values returned by getBlockchainPlatform.
 type LookupBlockchainPlatformResult struct {
-	BlockchainPlatformId string `pulumi:"blockchainPlatformId"`
-	CaCertArchiveText    string `pulumi:"caCertArchiveText"`
+	BlockchainPlatformId string  `pulumi:"blockchainPlatformId"`
+	CaCertArchiveText    *string `pulumi:"caCertArchiveText"`
 	// Compartment Identifier
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Blockchain Platform component details.
 	ComponentDetails []GetBlockchainPlatformComponentDetail `pulumi:"componentDetails"`
 	// Compute shape - STANDARD or ENTERPRISE_SMALL or ENTERPRISE_MEDIUM or ENTERPRISE_LARGE or ENTERPRISE_EXTRA_LARGE or ENTERPRISE_CUSTOM
-	ComputeShape string `pulumi:"computeShape"`
+	ComputeShape *string `pulumi:"computeShape"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// Platform Instance Description
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// Platform Instance Display name, can be renamed
-	DisplayName     string `pulumi:"displayName"`
-	FederatedUserId string `pulumi:"federatedUserId"`
+	DisplayName     *string `pulumi:"displayName"`
+	FederatedUserId *string `pulumi:"federatedUserId"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// List of OcpuUtilization for all hosts
 	HostOcpuUtilizationInfos []GetBlockchainPlatformHostOcpuUtilizationInfo `pulumi:"hostOcpuUtilizationInfos"`
 	// unique identifier that is immutable on creation
-	Id              string `pulumi:"id"`
-	IdcsAccessToken string `pulumi:"idcsAccessToken"`
+	Id              *string `pulumi:"id"`
+	IdcsAccessToken *string `pulumi:"idcsAccessToken"`
 	// Bring your own license
-	IsByol bool `pulumi:"isByol"`
+	IsByol *bool `pulumi:"isByol"`
 	// True for multi-AD blockchain plaforms, false for single-AD
-	IsMultiAd bool `pulumi:"isMultiAd"`
+	IsMultiAd *bool `pulumi:"isMultiAd"`
 	// An message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// Type of Load Balancer shape - LB_100_MBPS or LB_400_MBPS. Default is LB_100_MBPS.
-	LoadBalancerShape string `pulumi:"loadBalancerShape"`
+	LoadBalancerShape *string `pulumi:"loadBalancerShape"`
 	// Role of platform - FOUNDER or PARTICIPANT
-	PlatformRole string `pulumi:"platformRole"`
+	PlatformRole *string `pulumi:"platformRole"`
 	// Type of Platform shape - DEFAULT or CUSTOM
-	PlatformShapeType string `pulumi:"platformShapeType"`
+	PlatformShapeType *string `pulumi:"platformShapeType"`
 	// Platform Version
-	PlatformVersion string `pulumi:"platformVersion"`
+	PlatformVersion *string `pulumi:"platformVersion"`
 	// Number of replicas of service components like Rest Proxy, CA and Console
 	Replicas []GetBlockchainPlatformReplica `pulumi:"replicas"`
 	// Service endpoint URL, valid post-provisioning
-	ServiceEndpoint string `pulumi:"serviceEndpoint"`
+	ServiceEndpoint *string `pulumi:"serviceEndpoint"`
 	// The version of the Platform Instance.
-	ServiceVersion string `pulumi:"serviceVersion"`
+	ServiceVersion *string `pulumi:"serviceVersion"`
 	// The current state of the Platform Instance.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// Storage size in TBs
-	StorageSizeInTbs float64 `pulumi:"storageSizeInTbs"`
+	StorageSizeInTbs *float64 `pulumi:"storageSizeInTbs"`
 	// Storage used in TBs
-	StorageUsedInTbs float64 `pulumi:"storageUsedInTbs"`
+	StorageUsedInTbs *float64 `pulumi:"storageUsedInTbs"`
 	// The time the the Platform Instance was created. An RFC3339 formatted datetime string
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time the Platform Instance was updated. An RFC3339 formatted datetime string
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 	// Number of total OCPUs allocated to the platform cluster
-	TotalOcpuCapacity int `pulumi:"totalOcpuCapacity"`
+	TotalOcpuCapacity *int `pulumi:"totalOcpuCapacity"`
 }
 
 func LookupBlockchainPlatformOutput(ctx *pulumi.Context, args LookupBlockchainPlatformOutputArgs, opts ...pulumi.InvokeOption) LookupBlockchainPlatformResultOutput {
@@ -153,23 +152,17 @@ func (o LookupBlockchainPlatformResultOutput) ToLookupBlockchainPlatformResultOu
 	return o
 }
 
-func (o LookupBlockchainPlatformResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupBlockchainPlatformResult] {
-	return pulumix.Output[LookupBlockchainPlatformResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o LookupBlockchainPlatformResultOutput) BlockchainPlatformId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupBlockchainPlatformResult) string { return v.BlockchainPlatformId }).(pulumi.StringOutput)
 }
 
-func (o LookupBlockchainPlatformResultOutput) CaCertArchiveText() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupBlockchainPlatformResult) string { return v.CaCertArchiveText }).(pulumi.StringOutput)
+func (o LookupBlockchainPlatformResultOutput) CaCertArchiveText() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupBlockchainPlatformResult) *string { return v.CaCertArchiveText }).(pulumi.StringPtrOutput)
 }
 
 // Compartment Identifier
-func (o LookupBlockchainPlatformResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupBlockchainPlatformResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupBlockchainPlatformResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupBlockchainPlatformResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Blockchain Platform component details.
@@ -180,8 +173,8 @@ func (o LookupBlockchainPlatformResultOutput) ComponentDetails() GetBlockchainPl
 }
 
 // Compute shape - STANDARD or ENTERPRISE_SMALL or ENTERPRISE_MEDIUM or ENTERPRISE_LARGE or ENTERPRISE_EXTRA_LARGE or ENTERPRISE_CUSTOM
-func (o LookupBlockchainPlatformResultOutput) ComputeShape() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupBlockchainPlatformResult) string { return v.ComputeShape }).(pulumi.StringOutput)
+func (o LookupBlockchainPlatformResultOutput) ComputeShape() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupBlockchainPlatformResult) *string { return v.ComputeShape }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -190,17 +183,17 @@ func (o LookupBlockchainPlatformResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // Platform Instance Description
-func (o LookupBlockchainPlatformResultOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupBlockchainPlatformResult) string { return v.Description }).(pulumi.StringOutput)
+func (o LookupBlockchainPlatformResultOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupBlockchainPlatformResult) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // Platform Instance Display name, can be renamed
-func (o LookupBlockchainPlatformResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupBlockchainPlatformResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupBlockchainPlatformResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupBlockchainPlatformResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
-func (o LookupBlockchainPlatformResultOutput) FederatedUserId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupBlockchainPlatformResult) string { return v.FederatedUserId }).(pulumi.StringOutput)
+func (o LookupBlockchainPlatformResultOutput) FederatedUserId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupBlockchainPlatformResult) *string { return v.FederatedUserId }).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -216,47 +209,47 @@ func (o LookupBlockchainPlatformResultOutput) HostOcpuUtilizationInfos() GetBloc
 }
 
 // unique identifier that is immutable on creation
-func (o LookupBlockchainPlatformResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupBlockchainPlatformResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupBlockchainPlatformResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupBlockchainPlatformResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
-func (o LookupBlockchainPlatformResultOutput) IdcsAccessToken() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupBlockchainPlatformResult) string { return v.IdcsAccessToken }).(pulumi.StringOutput)
+func (o LookupBlockchainPlatformResultOutput) IdcsAccessToken() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupBlockchainPlatformResult) *string { return v.IdcsAccessToken }).(pulumi.StringPtrOutput)
 }
 
 // Bring your own license
-func (o LookupBlockchainPlatformResultOutput) IsByol() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupBlockchainPlatformResult) bool { return v.IsByol }).(pulumi.BoolOutput)
+func (o LookupBlockchainPlatformResultOutput) IsByol() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupBlockchainPlatformResult) *bool { return v.IsByol }).(pulumi.BoolPtrOutput)
 }
 
 // True for multi-AD blockchain plaforms, false for single-AD
-func (o LookupBlockchainPlatformResultOutput) IsMultiAd() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupBlockchainPlatformResult) bool { return v.IsMultiAd }).(pulumi.BoolOutput)
+func (o LookupBlockchainPlatformResultOutput) IsMultiAd() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupBlockchainPlatformResult) *bool { return v.IsMultiAd }).(pulumi.BoolPtrOutput)
 }
 
 // An message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-func (o LookupBlockchainPlatformResultOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupBlockchainPlatformResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o LookupBlockchainPlatformResultOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupBlockchainPlatformResult) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // Type of Load Balancer shape - LB_100_MBPS or LB_400_MBPS. Default is LB_100_MBPS.
-func (o LookupBlockchainPlatformResultOutput) LoadBalancerShape() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupBlockchainPlatformResult) string { return v.LoadBalancerShape }).(pulumi.StringOutput)
+func (o LookupBlockchainPlatformResultOutput) LoadBalancerShape() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupBlockchainPlatformResult) *string { return v.LoadBalancerShape }).(pulumi.StringPtrOutput)
 }
 
 // Role of platform - FOUNDER or PARTICIPANT
-func (o LookupBlockchainPlatformResultOutput) PlatformRole() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupBlockchainPlatformResult) string { return v.PlatformRole }).(pulumi.StringOutput)
+func (o LookupBlockchainPlatformResultOutput) PlatformRole() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupBlockchainPlatformResult) *string { return v.PlatformRole }).(pulumi.StringPtrOutput)
 }
 
 // Type of Platform shape - DEFAULT or CUSTOM
-func (o LookupBlockchainPlatformResultOutput) PlatformShapeType() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupBlockchainPlatformResult) string { return v.PlatformShapeType }).(pulumi.StringOutput)
+func (o LookupBlockchainPlatformResultOutput) PlatformShapeType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupBlockchainPlatformResult) *string { return v.PlatformShapeType }).(pulumi.StringPtrOutput)
 }
 
 // Platform Version
-func (o LookupBlockchainPlatformResultOutput) PlatformVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupBlockchainPlatformResult) string { return v.PlatformVersion }).(pulumi.StringOutput)
+func (o LookupBlockchainPlatformResultOutput) PlatformVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupBlockchainPlatformResult) *string { return v.PlatformVersion }).(pulumi.StringPtrOutput)
 }
 
 // Number of replicas of service components like Rest Proxy, CA and Console
@@ -265,43 +258,43 @@ func (o LookupBlockchainPlatformResultOutput) Replicas() GetBlockchainPlatformRe
 }
 
 // Service endpoint URL, valid post-provisioning
-func (o LookupBlockchainPlatformResultOutput) ServiceEndpoint() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupBlockchainPlatformResult) string { return v.ServiceEndpoint }).(pulumi.StringOutput)
+func (o LookupBlockchainPlatformResultOutput) ServiceEndpoint() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupBlockchainPlatformResult) *string { return v.ServiceEndpoint }).(pulumi.StringPtrOutput)
 }
 
 // The version of the Platform Instance.
-func (o LookupBlockchainPlatformResultOutput) ServiceVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupBlockchainPlatformResult) string { return v.ServiceVersion }).(pulumi.StringOutput)
+func (o LookupBlockchainPlatformResultOutput) ServiceVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupBlockchainPlatformResult) *string { return v.ServiceVersion }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the Platform Instance.
-func (o LookupBlockchainPlatformResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupBlockchainPlatformResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupBlockchainPlatformResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupBlockchainPlatformResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Storage size in TBs
-func (o LookupBlockchainPlatformResultOutput) StorageSizeInTbs() pulumi.Float64Output {
-	return o.ApplyT(func(v LookupBlockchainPlatformResult) float64 { return v.StorageSizeInTbs }).(pulumi.Float64Output)
+func (o LookupBlockchainPlatformResultOutput) StorageSizeInTbs() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v LookupBlockchainPlatformResult) *float64 { return v.StorageSizeInTbs }).(pulumi.Float64PtrOutput)
 }
 
 // Storage used in TBs
-func (o LookupBlockchainPlatformResultOutput) StorageUsedInTbs() pulumi.Float64Output {
-	return o.ApplyT(func(v LookupBlockchainPlatformResult) float64 { return v.StorageUsedInTbs }).(pulumi.Float64Output)
+func (o LookupBlockchainPlatformResultOutput) StorageUsedInTbs() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v LookupBlockchainPlatformResult) *float64 { return v.StorageUsedInTbs }).(pulumi.Float64PtrOutput)
 }
 
 // The time the the Platform Instance was created. An RFC3339 formatted datetime string
-func (o LookupBlockchainPlatformResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupBlockchainPlatformResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupBlockchainPlatformResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupBlockchainPlatformResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time the Platform Instance was updated. An RFC3339 formatted datetime string
-func (o LookupBlockchainPlatformResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupBlockchainPlatformResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o LookupBlockchainPlatformResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupBlockchainPlatformResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 // Number of total OCPUs allocated to the platform cluster
-func (o LookupBlockchainPlatformResultOutput) TotalOcpuCapacity() pulumi.IntOutput {
-	return o.ApplyT(func(v LookupBlockchainPlatformResult) int { return v.TotalOcpuCapacity }).(pulumi.IntOutput)
+func (o LookupBlockchainPlatformResultOutput) TotalOcpuCapacity() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LookupBlockchainPlatformResult) *int { return v.TotalOcpuCapacity }).(pulumi.IntPtrOutput)
 }
 
 func init() {

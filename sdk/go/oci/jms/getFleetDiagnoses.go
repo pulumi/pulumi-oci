@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Fleet Diagnoses in Oracle Cloud Infrastructure Jms service.
@@ -65,7 +64,7 @@ type GetFleetDiagnosesResult struct {
 	FleetDiagnosisCollections []GetFleetDiagnosesFleetDiagnosisCollection `pulumi:"fleetDiagnosisCollections"`
 	FleetId                   string                                      `pulumi:"fleetId"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 }
 
 func GetFleetDiagnosesOutput(ctx *pulumi.Context, args GetFleetDiagnosesOutputArgs, opts ...pulumi.InvokeOption) GetFleetDiagnosesResultOutput {
@@ -107,12 +106,6 @@ func (o GetFleetDiagnosesResultOutput) ToGetFleetDiagnosesResultOutputWithContex
 	return o
 }
 
-func (o GetFleetDiagnosesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetFleetDiagnosesResult] {
-	return pulumix.Output[GetFleetDiagnosesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetFleetDiagnosesResultOutput) Filters() GetFleetDiagnosesFilterArrayOutput {
 	return o.ApplyT(func(v GetFleetDiagnosesResult) []GetFleetDiagnosesFilter { return v.Filters }).(GetFleetDiagnosesFilterArrayOutput)
 }
@@ -129,8 +122,8 @@ func (o GetFleetDiagnosesResultOutput) FleetId() pulumi.StringOutput {
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetFleetDiagnosesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFleetDiagnosesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetFleetDiagnosesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFleetDiagnosesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func init() {

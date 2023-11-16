@@ -7,14 +7,15 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.DevOps.outputs.GetTriggersTriggerCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetTriggersTriggerCollection {
-    private List<GetTriggersTriggerCollectionItem> items;
+    private @Nullable List<GetTriggersTriggerCollectionItem> items;
 
     private GetTriggersTriggerCollection() {}
     public List<GetTriggersTriggerCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -26,7 +27,7 @@ public final class GetTriggersTriggerCollection {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetTriggersTriggerCollectionItem> items;
+        private @Nullable List<GetTriggersTriggerCollectionItem> items;
         public Builder() {}
         public Builder(GetTriggersTriggerCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -34,8 +35,8 @@ public final class GetTriggersTriggerCollection {
         }
 
         @CustomType.Setter
-        public Builder items(List<GetTriggersTriggerCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetTriggersTriggerCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetTriggersTriggerCollectionItem... items) {

@@ -144,7 +144,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// <summary>
         /// The errors in the Optimizer Statistics Advisor execution, if any.
         /// </summary>
-        public readonly string ErrorMessage;
+        public readonly string? ErrorMessage;
         /// <summary>
         /// The name of the Optimizer Statistics Advisor execution.
         /// </summary>
@@ -152,11 +152,11 @@ namespace Pulumi.Oci.DatabaseManagement
         /// <summary>
         /// The list of findings for the rule.
         /// </summary>
-        public readonly int Findings;
+        public readonly int? Findings;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         public readonly string ManagedDatabaseId;
         /// <summary>
         /// A report that includes the rules, findings, recommendations, and actions discovered during the execution of the Optimizer Statistics Advisor.
@@ -165,11 +165,11 @@ namespace Pulumi.Oci.DatabaseManagement
         /// <summary>
         /// The status of the Optimizer Statistics Advisor execution.
         /// </summary>
-        public readonly string Status;
+        public readonly string? Status;
         /// <summary>
         /// The Optimizer Statistics Advisor execution status message, if any.
         /// </summary>
-        public readonly string StatusMessage;
+        public readonly string? StatusMessage;
         /// <summary>
         /// The name of the Optimizer Statistics Advisor task.
         /// </summary>
@@ -177,37 +177,37 @@ namespace Pulumi.Oci.DatabaseManagement
         /// <summary>
         /// The end time of the time range to retrieve the Optimizer Statistics Advisor execution of a Managed Database in UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
         /// </summary>
-        public readonly string TimeEnd;
+        public readonly string? TimeEnd;
         /// <summary>
         /// The start time of the time range to retrieve the Optimizer Statistics Advisor execution of a Managed Database in UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
         /// </summary>
-        public readonly string TimeStart;
+        public readonly string? TimeStart;
 
         [OutputConstructor]
         private GetManagedDatabaseOptimizerStatisticsAdvisorExecutionResult(
             ImmutableArray<Outputs.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionDatabaseResult> databases,
 
-            string errorMessage,
+            string? errorMessage,
 
             string executionName,
 
-            int findings,
+            int? findings,
 
-            string id,
+            string? id,
 
             string managedDatabaseId,
 
             ImmutableArray<Outputs.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportResult> reports,
 
-            string status,
+            string? status,
 
-            string statusMessage,
+            string? statusMessage,
 
             string taskName,
 
-            string timeEnd,
+            string? timeEnd,
 
-            string timeStart)
+            string? timeStart)
         {
             Databases = databases;
             ErrorMessage = errorMessage;

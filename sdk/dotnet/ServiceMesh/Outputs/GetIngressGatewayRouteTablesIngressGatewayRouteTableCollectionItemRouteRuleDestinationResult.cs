@@ -16,23 +16,23 @@ namespace Pulumi.Oci.ServiceMesh.Outputs
         /// <summary>
         /// The port of the ingress gateway host listener. Leave empty to match all ports for the host.
         /// </summary>
-        public readonly int Port;
+        public readonly int? Port;
         /// <summary>
         /// The OCID of the virtual service where the request will be routed.
         /// </summary>
-        public readonly string VirtualServiceId;
+        public readonly string? VirtualServiceId;
         /// <summary>
         /// Weight of traffic target.
         /// </summary>
-        public readonly int Weight;
+        public readonly int? Weight;
 
         [OutputConstructor]
         private GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleDestinationResult(
-            int port,
+            int? port,
 
-            string virtualServiceId,
+            string? virtualServiceId,
 
-            int weight)
+            int? weight)
         {
             Port = port;
             VirtualServiceId = virtualServiceId;

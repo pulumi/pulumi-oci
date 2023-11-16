@@ -24,13 +24,13 @@ public final class GetSqlFirewallAllowedSqlAnalyticsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private @Nullable String scimQuery;
     /**
      * @return The list of sql_firewall_allowed_sql_analytics_collection.
      * 
      */
-    private List<GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollection> sqlFirewallAllowedSqlAnalyticsCollections;
+    private @Nullable List<GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollection> sqlFirewallAllowedSqlAnalyticsCollections;
 
     private GetSqlFirewallAllowedSqlAnalyticsResult() {}
     public Optional<String> accessLevel() {
@@ -52,8 +52,8 @@ public final class GetSqlFirewallAllowedSqlAnalyticsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public Optional<String> scimQuery() {
         return Optional.ofNullable(this.scimQuery);
@@ -63,7 +63,7 @@ public final class GetSqlFirewallAllowedSqlAnalyticsResult {
      * 
      */
     public List<GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollection> sqlFirewallAllowedSqlAnalyticsCollections() {
-        return this.sqlFirewallAllowedSqlAnalyticsCollections;
+        return this.sqlFirewallAllowedSqlAnalyticsCollections == null ? List.of() : this.sqlFirewallAllowedSqlAnalyticsCollections;
     }
 
     public static Builder builder() {
@@ -80,9 +80,9 @@ public final class GetSqlFirewallAllowedSqlAnalyticsResult {
         private @Nullable Boolean compartmentIdInSubtree;
         private @Nullable List<GetSqlFirewallAllowedSqlAnalyticsFilter> filters;
         private @Nullable List<String> groupBies;
-        private String id;
+        private @Nullable String id;
         private @Nullable String scimQuery;
-        private List<GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollection> sqlFirewallAllowedSqlAnalyticsCollections;
+        private @Nullable List<GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollection> sqlFirewallAllowedSqlAnalyticsCollections;
         public Builder() {}
         public Builder(GetSqlFirewallAllowedSqlAnalyticsResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -128,8 +128,8 @@ public final class GetSqlFirewallAllowedSqlAnalyticsResult {
             return groupBies(List.of(groupBies));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -138,8 +138,8 @@ public final class GetSqlFirewallAllowedSqlAnalyticsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder sqlFirewallAllowedSqlAnalyticsCollections(List<GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollection> sqlFirewallAllowedSqlAnalyticsCollections) {
-            this.sqlFirewallAllowedSqlAnalyticsCollections = Objects.requireNonNull(sqlFirewallAllowedSqlAnalyticsCollections);
+        public Builder sqlFirewallAllowedSqlAnalyticsCollections(@Nullable List<GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollection> sqlFirewallAllowedSqlAnalyticsCollections) {
+            this.sqlFirewallAllowedSqlAnalyticsCollections = sqlFirewallAllowedSqlAnalyticsCollections;
             return this;
         }
         public Builder sqlFirewallAllowedSqlAnalyticsCollections(GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollection... sqlFirewallAllowedSqlAnalyticsCollections) {

@@ -7,14 +7,15 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.DataIntegration.outputs.GetWorkspaceProjectsProjectSummaryCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetWorkspaceProjectsProjectSummaryCollection {
-    private List<GetWorkspaceProjectsProjectSummaryCollectionItem> items;
+    private @Nullable List<GetWorkspaceProjectsProjectSummaryCollectionItem> items;
 
     private GetWorkspaceProjectsProjectSummaryCollection() {}
     public List<GetWorkspaceProjectsProjectSummaryCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -26,7 +27,7 @@ public final class GetWorkspaceProjectsProjectSummaryCollection {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetWorkspaceProjectsProjectSummaryCollectionItem> items;
+        private @Nullable List<GetWorkspaceProjectsProjectSummaryCollectionItem> items;
         public Builder() {}
         public Builder(GetWorkspaceProjectsProjectSummaryCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -34,8 +35,8 @@ public final class GetWorkspaceProjectsProjectSummaryCollection {
         }
 
         @CustomType.Setter
-        public Builder items(List<GetWorkspaceProjectsProjectSummaryCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetWorkspaceProjectsProjectSummaryCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetWorkspaceProjectsProjectSummaryCollectionItem... items) {

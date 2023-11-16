@@ -47,56 +47,56 @@ export interface GetDetectionDataAssetResult {
     /**
      * The OCID of the compartment containing the DataAsset.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     readonly dataAssetId: string;
     /**
      * Possible data sources
      */
-    readonly dataSourceDetails: outputs.AiAnomalyDetection.GetDetectionDataAssetDataSourceDetail[];
+    readonly dataSourceDetails?: outputs.AiAnomalyDetection.GetDetectionDataAssetDataSourceDetail[];
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * A short description of the data asset.
      */
-    readonly description: string;
+    readonly description?: string;
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * The Unique Oracle ID (OCID) that is immutable on creation.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * OCID of Private Endpoint.
      */
-    readonly privateEndpointId: string;
+    readonly privateEndpointId?: string;
     /**
      * The Unique project id which is created at project creation that is immutable on creation.
      */
-    readonly projectId: string;
+    readonly projectId?: string;
     /**
      * The lifecycle state of the Data Asset.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    readonly systemTags: {[key: string]: any};
+    readonly systemTags?: {[key: string]: any};
     /**
      * The time the the DataAsset was created. An RFC3339 formatted datetime string
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The time the the DataAsset was updated. An RFC3339 formatted datetime string
      */
-    readonly timeUpdated: string;
+    readonly timeUpdated?: string;
 }
 /**
  * This data source provides details about a specific Data Asset resource in Oracle Cloud Infrastructure Ai Anomaly Detection service.

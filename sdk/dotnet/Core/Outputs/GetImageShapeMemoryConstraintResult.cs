@@ -16,17 +16,17 @@ namespace Pulumi.Oci.Core.Outputs
         /// <summary>
         /// The maximum amount of memory, in gigabytes.
         /// </summary>
-        public readonly int MaxInGbs;
+        public readonly int? MaxInGbs;
         /// <summary>
         /// The minimum amount of memory, in gigabytes.
         /// </summary>
-        public readonly int MinInGbs;
+        public readonly int? MinInGbs;
 
         [OutputConstructor]
         private GetImageShapeMemoryConstraintResult(
-            int maxInGbs,
+            int? maxInGbs,
 
-            int minInGbs)
+            int? minInGbs)
         {
             MaxInGbs = maxInGbs;
             MinInGbs = minInGbs;

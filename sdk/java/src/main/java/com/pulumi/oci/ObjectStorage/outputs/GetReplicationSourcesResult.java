@@ -9,6 +9,7 @@ import com.pulumi.oci.ObjectStorage.outputs.GetReplicationSourcesReplicationSour
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 @CustomType
@@ -19,13 +20,13 @@ public final class GetReplicationSourcesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private String namespace;
     /**
      * @return The list of replication_sources.
      * 
      */
-    private List<GetReplicationSourcesReplicationSource> replicationSources;
+    private @Nullable List<GetReplicationSourcesReplicationSource> replicationSources;
 
     private GetReplicationSourcesResult() {}
     public String bucket() {
@@ -38,8 +39,8 @@ public final class GetReplicationSourcesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public String namespace() {
         return this.namespace;
@@ -49,7 +50,7 @@ public final class GetReplicationSourcesResult {
      * 
      */
     public List<GetReplicationSourcesReplicationSource> replicationSources() {
-        return this.replicationSources;
+        return this.replicationSources == null ? List.of() : this.replicationSources;
     }
 
     public static Builder builder() {
@@ -63,9 +64,9 @@ public final class GetReplicationSourcesResult {
     public static final class Builder {
         private String bucket;
         private @Nullable List<GetReplicationSourcesFilter> filters;
-        private String id;
+        private @Nullable String id;
         private String namespace;
-        private List<GetReplicationSourcesReplicationSource> replicationSources;
+        private @Nullable List<GetReplicationSourcesReplicationSource> replicationSources;
         public Builder() {}
         public Builder(GetReplicationSourcesResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -90,8 +91,8 @@ public final class GetReplicationSourcesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -100,8 +101,8 @@ public final class GetReplicationSourcesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder replicationSources(List<GetReplicationSourcesReplicationSource> replicationSources) {
-            this.replicationSources = Objects.requireNonNull(replicationSources);
+        public Builder replicationSources(@Nullable List<GetReplicationSourcesReplicationSource> replicationSources) {
+            this.replicationSources = replicationSources;
             return this;
         }
         public Builder replicationSources(GetReplicationSourcesReplicationSource... replicationSources) {

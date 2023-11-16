@@ -6,18 +6,20 @@ package com.pulumi.oci.Core.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail {
-    private String ipv6Address;
-    private String ipv6SubnetCidr;
+    private @Nullable String ipv6Address;
+    private @Nullable String ipv6SubnetCidr;
 
     private GetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail() {}
-    public String ipv6Address() {
-        return this.ipv6Address;
+    public Optional<String> ipv6Address() {
+        return Optional.ofNullable(this.ipv6Address);
     }
-    public String ipv6SubnetCidr() {
-        return this.ipv6SubnetCidr;
+    public Optional<String> ipv6SubnetCidr() {
+        return Optional.ofNullable(this.ipv6SubnetCidr);
     }
 
     public static Builder builder() {
@@ -29,8 +31,8 @@ public final class GetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIp
     }
     @CustomType.Builder
     public static final class Builder {
-        private String ipv6Address;
-        private String ipv6SubnetCidr;
+        private @Nullable String ipv6Address;
+        private @Nullable String ipv6SubnetCidr;
         public Builder() {}
         public Builder(GetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail defaults) {
     	      Objects.requireNonNull(defaults);
@@ -39,13 +41,13 @@ public final class GetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIp
         }
 
         @CustomType.Setter
-        public Builder ipv6Address(String ipv6Address) {
-            this.ipv6Address = Objects.requireNonNull(ipv6Address);
+        public Builder ipv6Address(@Nullable String ipv6Address) {
+            this.ipv6Address = ipv6Address;
             return this;
         }
         @CustomType.Setter
-        public Builder ipv6SubnetCidr(String ipv6SubnetCidr) {
-            this.ipv6SubnetCidr = Objects.requireNonNull(ipv6SubnetCidr);
+        public Builder ipv6SubnetCidr(@Nullable String ipv6SubnetCidr) {
+            this.ipv6SubnetCidr = ipv6SubnetCidr;
             return this;
         }
         public GetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail build() {

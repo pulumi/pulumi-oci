@@ -110,12 +110,12 @@ namespace Pulumi.Oci.GoldenGate
         /// <summary>
         /// Access key ID to access the Amazon S3 bucket. e.g.: "this-is-not-the-secret"
         /// </summary>
-        public readonly string AccessKeyId;
-        public readonly string AccountKey;
+        public readonly string? AccessKeyId;
+        public readonly string? AccountKey;
         /// <summary>
         /// Sets the Azure storage account name.
         /// </summary>
-        public readonly string AccountName;
+        public readonly string? AccountName;
         /// <summary>
         /// An array of name-value pair attribute entries. Used as additional parameters in connection string.
         /// </summary>
@@ -123,11 +123,11 @@ namespace Pulumi.Oci.GoldenGate
         /// <summary>
         /// Used authentication mechanism to access Azure Data Lake Storage.
         /// </summary>
-        public readonly string AuthenticationType;
+        public readonly string? AuthenticationType;
         /// <summary>
         /// Azure tenant ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 14593954-d337-4a61-a364-9f758c64f97f
         /// </summary>
-        public readonly string AzureTenantId;
+        public readonly string? AzureTenantId;
         /// <summary>
         /// Kafka bootstrap. Equivalent of bootstrap.servers configuration property in Kafka: list of KafkaBootstrapServer objects specified by host/port. Used for establishing the initial connection to the Kafka cluster. Example: `"server1.example.com:9092,server2.example.com:9092"`
         /// </summary>
@@ -135,75 +135,75 @@ namespace Pulumi.Oci.GoldenGate
         /// <summary>
         /// Azure client ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
         /// </summary>
-        public readonly string ClientId;
-        public readonly string ClientSecret;
+        public readonly string? ClientId;
+        public readonly string? ClientSecret;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// The of Java class implementing javax.jms.ConnectionFactory interface supplied by the Java Message Service provider. e.g.: 'com.stc.jmsjca.core.JConnectionFactoryXA'
         /// </summary>
-        public readonly string ConnectionFactory;
+        public readonly string? ConnectionFactory;
         public readonly string ConnectionId;
         /// <summary>
         /// Connection string. AZURE_SYNAPSE_ANALYTICS e.g.: 'jdbc:sqlserver://&lt;synapse-workspace&gt;.sql.azuresynapse.net:1433;database=&lt;db-name&gt;;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.sql.azuresynapse.net;loginTimeout=300;', MONGODB e.g.: 'mongodb://mongodb0.example.com:27017/recordsrecords'.
         /// </summary>
-        public readonly string ConnectionString;
+        public readonly string? ConnectionString;
         /// <summary>
         /// The connection type.
         /// </summary>
-        public readonly string ConnectionType;
+        public readonly string? ConnectionType;
         /// <summary>
         /// JAVA_MESSAGE_SERVICE: Connection URL of the Java Message Service, specifying the protocol, host, and port. e.g.: 'mq://myjms.host.domain:7676', SNOWFLAKE: JDBC connection URL. e.g.: 'jdbc:snowflake://&lt;account_name&gt;.snowflakecomputing.com/?warehouse=&lt;warehouse-name&gt;&amp;db=&lt;db-name&gt;'
         /// </summary>
-        public readonly string ConnectionUrl;
-        public readonly string ConsumerProperties;
-        public readonly string CoreSiteXml;
+        public readonly string? ConnectionUrl;
+        public readonly string? ConsumerProperties;
+        public readonly string? CoreSiteXml;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database being referenced.
         /// </summary>
-        public readonly string DatabaseId;
+        public readonly string? DatabaseId;
         /// <summary>
         /// The name of the database.
         /// </summary>
-        public readonly string DatabaseName;
+        public readonly string? DatabaseName;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database system being referenced.
         /// </summary>
-        public readonly string DbSystemId;
+        public readonly string? DbSystemId;
         /// <summary>
         /// Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
         /// </summary>
-        public readonly string DeploymentId;
+        public readonly string? DeploymentId;
         /// <summary>
         /// Metadata about this specific object.
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// An object's Display Name.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// Azure Storage service endpoint. e.g: https://test.blob.core.windows.net
         /// </summary>
-        public readonly string Endpoint;
+        public readonly string? Endpoint;
         /// <summary>
         /// A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// The name or address of a host.
         /// </summary>
-        public readonly string Host;
+        public readonly string? Host;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection being referenced.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// List of ingress IP addresses from where the GoldenGate deployment connects to this connection's privateIp.  Customers may optionally set up ingress security rules to restrict traffic from these IP addresses.
         /// </summary>
@@ -211,282 +211,282 @@ namespace Pulumi.Oci.GoldenGate
         /// <summary>
         /// The Connection Factory can be looked up using this name. e.g.: 'ConnectionFactory'
         /// </summary>
-        public readonly string JndiConnectionFactory;
+        public readonly string? JndiConnectionFactory;
         /// <summary>
         /// The implementation of javax.naming.spi.InitialContextFactory interface that the client uses to obtain initial naming context. e.g.: 'org.apache.activemq.jndi.ActiveMQInitialContextFactory'
         /// </summary>
-        public readonly string JndiInitialContextFactory;
+        public readonly string? JndiInitialContextFactory;
         /// <summary>
         /// The URL that Java Message Service will use to contact the JNDI provider. e.g.: 'tcp://myjms.host.domain:61616?jms.prefetchPolicy.all=1000'
         /// </summary>
-        public readonly string JndiProviderUrl;
-        public readonly string JndiSecurityCredentials;
+        public readonly string? JndiProviderUrl;
+        public readonly string? JndiSecurityCredentials;
         /// <summary>
         /// Specifies the identity of the principal (user) to be authenticated. e.g.: 'admin2'
         /// </summary>
-        public readonly string JndiSecurityPrincipal;
+        public readonly string? JndiSecurityPrincipal;
         /// <summary>
         /// Refers to the customer's master key OCID.  If provided, it references a key to manage secrets. Customers must add policies to permit GoldenGate to use this key.
         /// </summary>
-        public readonly string KeyId;
-        public readonly string KeyStore;
-        public readonly string KeyStorePassword;
+        public readonly string? KeyId;
+        public readonly string? KeyStore;
+        public readonly string? KeyStorePassword;
         /// <summary>
         /// Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
         /// </summary>
-        public readonly string LifecycleDetails;
+        public readonly string? LifecycleDetails;
         /// <summary>
         /// An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
         /// </summary>
         public readonly ImmutableArray<string> NsgIds;
-        public readonly string Password;
+        public readonly string? Password;
         /// <summary>
         /// The port of an endpoint usually specified for a connection.
         /// </summary>
-        public readonly int Port;
+        public readonly int? Port;
         /// <summary>
         /// The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
         /// </summary>
-        public readonly string PrivateIp;
-        public readonly string PrivateKeyFile;
-        public readonly string PrivateKeyPassphrase;
-        public readonly string ProducerProperties;
-        public readonly string PublicKeyFingerprint;
+        public readonly string? PrivateIp;
+        public readonly string? PrivateKeyFile;
+        public readonly string? PrivateKeyPassphrase;
+        public readonly string? ProducerProperties;
+        public readonly string? PublicKeyFingerprint;
         /// <summary>
         /// The name of the region. e.g.: us-ashburn-1
         /// </summary>
-        public readonly string Region;
-        public readonly string SasToken;
-        public readonly string SecretAccessKey;
+        public readonly string? Region;
+        public readonly string? SasToken;
+        public readonly string? SecretAccessKey;
         /// <summary>
         /// Security Protocol for Microsoft SQL Server/PostgreSQL.
         /// </summary>
-        public readonly string SecurityProtocol;
+        public readonly string? SecurityProtocol;
         /// <summary>
         /// The mode of the database connection session to be established by the data client. 'REDIRECT' - for a RAC database, 'DIRECT' - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
         /// </summary>
-        public readonly string SessionMode;
+        public readonly string? SessionMode;
         /// <summary>
         /// If set to true, Java Naming and Directory Interface (JNDI) properties should be provided.
         /// </summary>
-        public readonly bool ShouldUseJndi;
+        public readonly bool? ShouldUseJndi;
         /// <summary>
         /// If set to true, the driver validates the certificate that is sent by the database server.
         /// </summary>
-        public readonly bool ShouldValidateServerCertificate;
+        public readonly bool? ShouldValidateServerCertificate;
         /// <summary>
         /// Database Certificate - The base64 encoded content of pem file containing the server public key (for 1-way SSL).
         /// </summary>
-        public readonly string SslCa;
-        public readonly string SslCert;
-        public readonly string SslCrl;
-        public readonly string SslKey;
-        public readonly string SslKeyPassword;
+        public readonly string? SslCa;
+        public readonly string? SslCert;
+        public readonly string? SslCrl;
+        public readonly string? SslKey;
+        public readonly string? SslKeyPassword;
         /// <summary>
         /// SSL mode for PostgreSQL.
         /// </summary>
-        public readonly string SslMode;
+        public readonly string? SslMode;
         /// <summary>
         /// Possible lifecycle states for connection.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream pool being referenced.
         /// </summary>
-        public readonly string StreamPoolId;
+        public readonly string? StreamPoolId;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet being referenced.
         /// </summary>
-        public readonly string SubnetId;
+        public readonly string? SubnetId;
         /// <summary>
         /// The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> SystemTags;
+        public readonly ImmutableDictionary<string, object>? SystemTags;
         /// <summary>
         /// The Kafka (e.g. Confluent) Schema Registry technology type.
         /// </summary>
-        public readonly string TechnologyType;
+        public readonly string? TechnologyType;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related Oracle Cloud Infrastructure tenancy.
         /// </summary>
-        public readonly string TenancyId;
+        public readonly string? TenancyId;
         /// <summary>
         /// The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         /// </summary>
-        public readonly string TimeUpdated;
-        public readonly string TrustStore;
-        public readonly string TrustStorePassword;
+        public readonly string? TimeUpdated;
+        public readonly string? TrustStore;
+        public readonly string? TrustStorePassword;
         /// <summary>
         /// Kafka Schema Registry URL. e.g.: 'https://server1.us.oracle.com:8081'
         /// </summary>
-        public readonly string Url;
+        public readonly string? Url;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Oracle NoSQL database/Object Storage. The user must have write access to the table they want to connect to.
         /// </summary>
-        public readonly string UserId;
+        public readonly string? UserId;
         /// <summary>
         /// The username Oracle GoldenGate uses to connect the associated system of the given technology. This username must already exist and be available by the system/application to be connected to and must conform to the case sensitivity requirements defined in it.
         /// </summary>
-        public readonly string Username;
+        public readonly string? Username;
         /// <summary>
         /// Refers to the customer's vault OCID.  If provided, it references a vault where GoldenGate can manage secrets. Customers must add policies to permit GoldenGate to manage secrets contained within this vault.
         /// </summary>
-        public readonly string VaultId;
-        public readonly string Wallet;
+        public readonly string? VaultId;
+        public readonly string? Wallet;
 
         [OutputConstructor]
         private GetConnectionResult(
-            string accessKeyId,
+            string? accessKeyId,
 
-            string accountKey,
+            string? accountKey,
 
-            string accountName,
+            string? accountName,
 
             ImmutableArray<Outputs.GetConnectionAdditionalAttributeResult> additionalAttributes,
 
-            string authenticationType,
+            string? authenticationType,
 
-            string azureTenantId,
+            string? azureTenantId,
 
             ImmutableArray<Outputs.GetConnectionBootstrapServerResult> bootstrapServers,
 
-            string clientId,
+            string? clientId,
 
-            string clientSecret,
+            string? clientSecret,
 
-            string compartmentId,
+            string? compartmentId,
 
-            string connectionFactory,
+            string? connectionFactory,
 
             string connectionId,
 
-            string connectionString,
+            string? connectionString,
 
-            string connectionType,
+            string? connectionType,
 
-            string connectionUrl,
+            string? connectionUrl,
 
-            string consumerProperties,
+            string? consumerProperties,
 
-            string coreSiteXml,
+            string? coreSiteXml,
 
-            string databaseId,
+            string? databaseId,
 
-            string databaseName,
+            string? databaseName,
 
-            string dbSystemId,
+            string? dbSystemId,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string deploymentId,
+            string? deploymentId,
 
-            string description,
+            string? description,
 
-            string displayName,
+            string? displayName,
 
-            string endpoint,
+            string? endpoint,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string host,
+            string? host,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetConnectionIngressIpResult> ingressIps,
 
-            string jndiConnectionFactory,
+            string? jndiConnectionFactory,
 
-            string jndiInitialContextFactory,
+            string? jndiInitialContextFactory,
 
-            string jndiProviderUrl,
+            string? jndiProviderUrl,
 
-            string jndiSecurityCredentials,
+            string? jndiSecurityCredentials,
 
-            string jndiSecurityPrincipal,
+            string? jndiSecurityPrincipal,
 
-            string keyId,
+            string? keyId,
 
-            string keyStore,
+            string? keyStore,
 
-            string keyStorePassword,
+            string? keyStorePassword,
 
-            string lifecycleDetails,
+            string? lifecycleDetails,
 
             ImmutableArray<string> nsgIds,
 
-            string password,
+            string? password,
 
-            int port,
+            int? port,
 
-            string privateIp,
+            string? privateIp,
 
-            string privateKeyFile,
+            string? privateKeyFile,
 
-            string privateKeyPassphrase,
+            string? privateKeyPassphrase,
 
-            string producerProperties,
+            string? producerProperties,
 
-            string publicKeyFingerprint,
+            string? publicKeyFingerprint,
 
-            string region,
+            string? region,
 
-            string sasToken,
+            string? sasToken,
 
-            string secretAccessKey,
+            string? secretAccessKey,
 
-            string securityProtocol,
+            string? securityProtocol,
 
-            string sessionMode,
+            string? sessionMode,
 
-            bool shouldUseJndi,
+            bool? shouldUseJndi,
 
-            bool shouldValidateServerCertificate,
+            bool? shouldValidateServerCertificate,
 
-            string sslCa,
+            string? sslCa,
 
-            string sslCert,
+            string? sslCert,
 
-            string sslCrl,
+            string? sslCrl,
 
-            string sslKey,
+            string? sslKey,
 
-            string sslKeyPassword,
+            string? sslKeyPassword,
 
-            string sslMode,
+            string? sslMode,
 
-            string state,
+            string? state,
 
-            string streamPoolId,
+            string? streamPoolId,
 
-            string subnetId,
+            string? subnetId,
 
-            ImmutableDictionary<string, object> systemTags,
+            ImmutableDictionary<string, object>? systemTags,
 
-            string technologyType,
+            string? technologyType,
 
-            string tenancyId,
+            string? tenancyId,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeUpdated,
+            string? timeUpdated,
 
-            string trustStore,
+            string? trustStore,
 
-            string trustStorePassword,
+            string? trustStorePassword,
 
-            string url,
+            string? url,
 
-            string userId,
+            string? userId,
 
-            string username,
+            string? username,
 
-            string vaultId,
+            string? vaultId,
 
-            string wallet)
+            string? wallet)
         {
             AccessKeyId = accessKeyId;
             AccountKey = accountKey;

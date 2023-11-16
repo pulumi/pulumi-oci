@@ -76,11 +76,11 @@ export interface GetDetectionModelsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The list of model_collection.
      */
-    readonly modelCollections: outputs.AiAnomalyDetection.GetDetectionModelsModelCollection[];
+    readonly modelCollections?: outputs.AiAnomalyDetection.GetDetectionModelsModelCollection[];
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model.
      */

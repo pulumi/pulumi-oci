@@ -39,10 +39,7 @@ class GetModelEvaluationResultsResult:
 
     @property
     @pulumi.getter(name="evaluationResultCollections")
-    def evaluation_result_collections(self) -> Sequence['outputs.GetModelEvaluationResultsEvaluationResultCollectionResult']:
-        """
-        The list of evaluation_result_collection.
-        """
+    def evaluation_result_collections(self) -> Optional[Sequence['outputs.GetModelEvaluationResultsEvaluationResultCollectionResult']]:
         return pulumi.get(self, "evaluation_result_collections")
 
     @property
@@ -52,7 +49,7 @@ class GetModelEvaluationResultsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -80,21 +77,7 @@ def get_model_evaluation_results(filters: Optional[Sequence[pulumi.InputType['Ge
                                  model_id: Optional[str] = None,
                                  opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetModelEvaluationResultsResult:
     """
-    This data source provides the list of Model Evaluation Results in Oracle Cloud Infrastructure Ai Language service.
-
-    Get a (paginated) list of evaluation results for a given model.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_model_evaluation_results = oci.AiLanguage.get_model_evaluation_results(model_id=oci_ai_language_model["test_model"]["id"])
-    ```
-
-
-    :param str model_id: unique model OCID.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['filters'] = filters
@@ -114,20 +97,6 @@ def get_model_evaluation_results_output(filters: Optional[pulumi.Input[Optional[
                                         model_id: Optional[pulumi.Input[str]] = None,
                                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetModelEvaluationResultsResult]:
     """
-    This data source provides the list of Model Evaluation Results in Oracle Cloud Infrastructure Ai Language service.
-
-    Get a (paginated) list of evaluation results for a given model.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_model_evaluation_results = oci.AiLanguage.get_model_evaluation_results(model_id=oci_ai_language_model["test_model"]["id"])
-    ```
-
-
-    :param str model_id: unique model OCID.
+    Use this data source to access information about an existing resource.
     """
     ...

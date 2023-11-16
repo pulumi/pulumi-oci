@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Oda Private Endpoint Scan Proxies in Oracle Cloud Infrastructure Digital Assistant service.
@@ -70,8 +69,8 @@ type GetOdaPrivateEndpointScanProxiesArgs struct {
 type GetOdaPrivateEndpointScanProxiesResult struct {
 	Filters []GetOdaPrivateEndpointScanProxiesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id                   string `pulumi:"id"`
-	OdaPrivateEndpointId string `pulumi:"odaPrivateEndpointId"`
+	Id                   *string `pulumi:"id"`
+	OdaPrivateEndpointId string  `pulumi:"odaPrivateEndpointId"`
 	// The list of oda_private_endpoint_scan_proxy_collection.
 	OdaPrivateEndpointScanProxyCollections []GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollection `pulumi:"odaPrivateEndpointScanProxyCollections"`
 	// The current state of the ODA Private Endpoint Scan Proxy.
@@ -119,12 +118,6 @@ func (o GetOdaPrivateEndpointScanProxiesResultOutput) ToGetOdaPrivateEndpointSca
 	return o
 }
 
-func (o GetOdaPrivateEndpointScanProxiesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetOdaPrivateEndpointScanProxiesResult] {
-	return pulumix.Output[GetOdaPrivateEndpointScanProxiesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetOdaPrivateEndpointScanProxiesResultOutput) Filters() GetOdaPrivateEndpointScanProxiesFilterArrayOutput {
 	return o.ApplyT(func(v GetOdaPrivateEndpointScanProxiesResult) []GetOdaPrivateEndpointScanProxiesFilter {
 		return v.Filters
@@ -132,8 +125,8 @@ func (o GetOdaPrivateEndpointScanProxiesResultOutput) Filters() GetOdaPrivateEnd
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetOdaPrivateEndpointScanProxiesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOdaPrivateEndpointScanProxiesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetOdaPrivateEndpointScanProxiesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOdaPrivateEndpointScanProxiesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetOdaPrivateEndpointScanProxiesResultOutput) OdaPrivateEndpointId() pulumi.StringOutput {

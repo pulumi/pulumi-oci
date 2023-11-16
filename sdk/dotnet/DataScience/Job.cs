@@ -111,10 +111,10 @@ namespace Pulumi.Oci.DataScience
         public Output<string?> ArtifactContentLength { get; private set; } = null!;
 
         [Output("artifactContentMd5")]
-        public Output<string> ArtifactContentMd5 { get; private set; } = null!;
+        public Output<string?> ArtifactContentMd5 { get; private set; } = null!;
 
         [Output("artifactLastModified")]
-        public Output<string> ArtifactLastModified { get; private set; } = null!;
+        public Output<string?> ArtifactLastModified { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the job.
@@ -126,13 +126,13 @@ namespace Pulumi.Oci.DataScience
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the project.
         /// </summary>
         [Output("createdBy")]
-        public Output<string> CreatedBy { get; private set; } = null!;
+        public Output<string?> CreatedBy { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Delete all related JobRuns upon deletion of the Job.
@@ -144,22 +144,22 @@ namespace Pulumi.Oci.DataScience
         /// (Updatable) A short description of the job.
         /// </summary>
         [Output("description")]
-        public Output<string> Description { get; private set; } = null!;
+        public Output<string?> Description { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) A user-friendly display name for the resource.
         /// </summary>
         [Output("displayName")]
-        public Output<string> DisplayName { get; private set; } = null!;
+        public Output<string?> DisplayName { get; private set; } = null!;
 
         [Output("emptyArtifact")]
-        public Output<bool> EmptyArtifact { get; private set; } = null!;
+        public Output<bool?> EmptyArtifact { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// The job artifact to upload. This can be done in a separate step or from cli/sdk. The Job will remain in "Creating" state until its artifact is uploaded.
@@ -183,7 +183,7 @@ namespace Pulumi.Oci.DataScience
         /// Logging configuration for resource.
         /// </summary>
         [Output("jobLogConfigurationDetails")]
-        public Output<Outputs.JobJobLogConfigurationDetails> JobLogConfigurationDetails { get; private set; } = null!;
+        public Output<Outputs.JobJobLogConfigurationDetails?> JobLogConfigurationDetails { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Collection of JobStorageMountConfigurationDetails.
@@ -195,7 +195,7 @@ namespace Pulumi.Oci.DataScience
         /// The state of the job.
         /// </summary>
         [Output("lifecycleDetails")]
-        public Output<string> LifecycleDetails { get; private set; } = null!;
+        public Output<string?> LifecycleDetails { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job with.
@@ -207,13 +207,13 @@ namespace Pulumi.Oci.DataScience
         /// The state of the job.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2020-08-06T21:10:29.41Z
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
 
         /// <summary>

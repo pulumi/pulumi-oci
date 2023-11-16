@@ -18,7 +18,7 @@ public final class GetAwrHubsResult {
      * @return The list of awr_hub_summary_collection.
      * 
      */
-    private List<GetAwrHubsAwrHubSummaryCollection> awrHubSummaryCollections;
+    private @Nullable List<GetAwrHubsAwrHubSummaryCollection> awrHubSummaryCollections;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
@@ -52,7 +52,7 @@ public final class GetAwrHubsResult {
      * 
      */
     public List<GetAwrHubsAwrHubSummaryCollection> awrHubSummaryCollections() {
-        return this.awrHubSummaryCollections;
+        return this.awrHubSummaryCollections == null ? List.of() : this.awrHubSummaryCollections;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -102,7 +102,7 @@ public final class GetAwrHubsResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetAwrHubsAwrHubSummaryCollection> awrHubSummaryCollections;
+        private @Nullable List<GetAwrHubsAwrHubSummaryCollection> awrHubSummaryCollections;
         private @Nullable String compartmentId;
         private @Nullable String displayName;
         private @Nullable List<GetAwrHubsFilter> filters;
@@ -122,8 +122,8 @@ public final class GetAwrHubsResult {
         }
 
         @CustomType.Setter
-        public Builder awrHubSummaryCollections(List<GetAwrHubsAwrHubSummaryCollection> awrHubSummaryCollections) {
-            this.awrHubSummaryCollections = Objects.requireNonNull(awrHubSummaryCollections);
+        public Builder awrHubSummaryCollections(@Nullable List<GetAwrHubsAwrHubSummaryCollection> awrHubSummaryCollections) {
+            this.awrHubSummaryCollections = awrHubSummaryCollections;
             return this;
         }
         public Builder awrHubSummaryCollections(GetAwrHubsAwrHubSummaryCollection... awrHubSummaryCollections) {

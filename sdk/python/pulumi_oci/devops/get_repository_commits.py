@@ -61,17 +61,11 @@ class GetRepositoryCommitsResult:
     @property
     @pulumi.getter(name="authorName")
     def author_name(self) -> Optional[str]:
-        """
-        Name of the author of the repository.
-        """
         return pulumi.get(self, "author_name")
 
     @property
     @pulumi.getter(name="commitMessage")
     def commit_message(self) -> Optional[str]:
-        """
-        The commit message.
-        """
         return pulumi.get(self, "commit_message")
 
     @property
@@ -91,7 +85,7 @@ class GetRepositoryCommitsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -104,10 +98,7 @@ class GetRepositoryCommitsResult:
 
     @property
     @pulumi.getter(name="repositoryCommitCollections")
-    def repository_commit_collections(self) -> Sequence['outputs.GetRepositoryCommitsRepositoryCommitCollectionResult']:
-        """
-        The list of repository_commit_collection.
-        """
+    def repository_commit_collections(self) -> Optional[Sequence['outputs.GetRepositoryCommitsRepositoryCommitCollectionResult']]:
         return pulumi.get(self, "repository_commit_collections")
 
     @property
@@ -156,35 +147,7 @@ def get_repository_commits(author_name: Optional[str] = None,
                            timestamp_less_than_or_equal_to: Optional[str] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetRepositoryCommitsResult:
     """
-    This data source provides the list of Repository Commits in Oracle Cloud Infrastructure Devops service.
-
-    Returns a list of commits.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_repository_commits = oci.DevOps.get_repository_commits(repository_id=oci_devops_repository["test_repository"]["id"],
-        author_name=var["repository_commit_author_name"],
-        commit_message=var["repository_commit_commit_message"],
-        exclude_ref_name=var["repository_commit_exclude_ref_name"],
-        file_path=var["repository_commit_file_path"],
-        ref_name=var["repository_commit_ref_name"],
-        timestamp_greater_than_or_equal_to=var["repository_commit_timestamp_greater_than_or_equal_to"],
-        timestamp_less_than_or_equal_to=var["repository_commit_timestamp_less_than_or_equal_to"])
-    ```
-
-
-    :param str author_name: A filter to return any commits that are pushed by the requested author.
-    :param str commit_message: A filter to return any commits that contains the given message.
-    :param str exclude_ref_name: A filter to exclude commits that match the given reference name.
-    :param str file_path: A filter to return only commits that affect any of the specified paths.
-    :param str ref_name: A filter to return only resources that match the given reference name.
-    :param str repository_id: Unique repository identifier.
-    :param str timestamp_greater_than_or_equal_to: A filter to return commits only created after the specified timestamp value.
-    :param str timestamp_less_than_or_equal_to: A filter to return commits only created before the specified timestamp value.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['authorName'] = author_name
@@ -225,34 +188,6 @@ def get_repository_commits_output(author_name: Optional[pulumi.Input[Optional[st
                                   timestamp_less_than_or_equal_to: Optional[pulumi.Input[Optional[str]]] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetRepositoryCommitsResult]:
     """
-    This data source provides the list of Repository Commits in Oracle Cloud Infrastructure Devops service.
-
-    Returns a list of commits.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_repository_commits = oci.DevOps.get_repository_commits(repository_id=oci_devops_repository["test_repository"]["id"],
-        author_name=var["repository_commit_author_name"],
-        commit_message=var["repository_commit_commit_message"],
-        exclude_ref_name=var["repository_commit_exclude_ref_name"],
-        file_path=var["repository_commit_file_path"],
-        ref_name=var["repository_commit_ref_name"],
-        timestamp_greater_than_or_equal_to=var["repository_commit_timestamp_greater_than_or_equal_to"],
-        timestamp_less_than_or_equal_to=var["repository_commit_timestamp_less_than_or_equal_to"])
-    ```
-
-
-    :param str author_name: A filter to return any commits that are pushed by the requested author.
-    :param str commit_message: A filter to return any commits that contains the given message.
-    :param str exclude_ref_name: A filter to exclude commits that match the given reference name.
-    :param str file_path: A filter to return only commits that affect any of the specified paths.
-    :param str ref_name: A filter to return only resources that match the given reference name.
-    :param str repository_id: Unique repository identifier.
-    :param str timestamp_greater_than_or_equal_to: A filter to return commits only created after the specified timestamp value.
-    :param str timestamp_less_than_or_equal_to: A filter to return commits only created before the specified timestamp value.
+    Use this data source to access information about an existing resource.
     """
     ...

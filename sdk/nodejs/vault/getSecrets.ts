@@ -72,12 +72,12 @@ export interface GetSecretsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly name?: string;
     /**
      * The list of secrets.
      */
-    readonly secrets: outputs.Vault.GetSecretsSecret[];
+    readonly secrets?: outputs.Vault.GetSecretsSecret[];
     /**
      * The current lifecycle state of the secret.
      */

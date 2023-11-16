@@ -21,7 +21,7 @@ public final class GetShapesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return What service features the shape is supported for.
      * 
@@ -36,7 +36,7 @@ public final class GetShapesResult {
      * @return The list of shapes.
      * 
      */
-    private List<GetShapesShape> shapes;
+    private @Nullable List<GetShapesShape> shapes;
 
     private GetShapesResult() {}
     public Optional<String> availabilityDomain() {
@@ -52,8 +52,8 @@ public final class GetShapesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return What service features the shape is supported for.
@@ -74,7 +74,7 @@ public final class GetShapesResult {
      * 
      */
     public List<GetShapesShape> shapes() {
-        return this.shapes;
+        return this.shapes == null ? List.of() : this.shapes;
     }
 
     public static Builder builder() {
@@ -89,10 +89,10 @@ public final class GetShapesResult {
         private @Nullable String availabilityDomain;
         private String compartmentId;
         private @Nullable List<GetShapesFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable List<String> isSupportedFors;
         private @Nullable String name;
-        private List<GetShapesShape> shapes;
+        private @Nullable List<GetShapesShape> shapes;
         public Builder() {}
         public Builder(GetShapesResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -124,8 +124,8 @@ public final class GetShapesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -142,8 +142,8 @@ public final class GetShapesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder shapes(List<GetShapesShape> shapes) {
-            this.shapes = Objects.requireNonNull(shapes);
+        public Builder shapes(@Nullable List<GetShapesShape> shapes) {
+            this.shapes = shapes;
             return this;
         }
         public Builder shapes(GetShapesShape... shapes) {

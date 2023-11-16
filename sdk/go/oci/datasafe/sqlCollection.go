@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Sql Collection resource in Oracle Cloud Infrastructure Data Safe service.
@@ -74,27 +73,27 @@ type SqlCollection struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) The description of the SQL collection.
-	Description pulumi.StringOutput `pulumi:"description"`
+	Description pulumi.StringPtrOutput `pulumi:"description"`
 	// (Updatable) The display name of the SQL collection. The name does not have to be unique, and it is changeable.
-	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrOutput `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// (Updatable) An optional property when incremented triggers Generate Sql Firewall Policy. Could be set to any integer value.
 	GenerateSqlFirewallPolicyTrigger pulumi.BoolPtrOutput `pulumi:"generateSqlFirewallPolicyTrigger"`
 	// Details about the current state of the SQL collection in Data Safe.
-	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrOutput `pulumi:"lifecycleDetails"`
 	// (Updatable) An optional property when incremented triggers Purge Logs. Could be set to any integer value.
 	PurgeLogsTrigger pulumi.BoolPtrOutput `pulumi:"purgeLogsTrigger"`
 	// (Updatable) An optional property when incremented triggers Refresh Log Insights. Could be set to any integer value.
 	RefreshLogInsightsTrigger pulumi.BoolPtrOutput `pulumi:"refreshLogInsightsTrigger"`
 	// Specifies the level of SQL that will be collected. USER_ISSUED_SQL - User issued SQL statements only. ALL_SQL - Includes all SQL statements including SQL statement issued inside PL/SQL units.
-	SqlLevel pulumi.StringOutput `pulumi:"sqlLevel"`
+	SqlLevel pulumi.StringPtrOutput `pulumi:"sqlLevel"`
 	// (Updatable) An optional property when incremented triggers Start. Could be set to any integer value.
 	StartTrigger pulumi.BoolPtrOutput `pulumi:"startTrigger"`
 	// The current state of the SQL collection.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// Specifies if the SqlCollection has to be started after creation. Enabled indicates that the SqlCollection will be started after creation.
-	Status pulumi.StringOutput `pulumi:"status"`
+	Status pulumi.StringPtrOutput `pulumi:"status"`
 	// (Updatable) An optional property when incremented triggers Stop. Could be set to any integer value.
 	//
 	// ** IMPORTANT **
@@ -105,13 +104,13 @@ type SqlCollection struct {
 	// The OCID of the target corresponding to the security policy deployment.
 	TargetId pulumi.StringOutput `pulumi:"targetId"`
 	// The time that the SQL collection was created, in the format defined by RFC3339.
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The timestamp of the most recent SqlCollection start operation, in the format defined by RFC3339.
-	TimeLastStarted pulumi.StringOutput `pulumi:"timeLastStarted"`
+	TimeLastStarted pulumi.StringPtrOutput `pulumi:"timeLastStarted"`
 	// The timestamp of the most recent SqlCollection stop operation, in the format defined by RFC3339.
-	TimeLastStopped pulumi.StringOutput `pulumi:"timeLastStopped"`
+	TimeLastStopped pulumi.StringPtrOutput `pulumi:"timeLastStopped"`
 	// The last date and time the SQL collection was updated, in the format defined by RFC3339.
-	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 }
 
 // NewSqlCollection registers a new resource with the given unique name, arguments, and options.
@@ -344,12 +343,6 @@ func (i *SqlCollection) ToSqlCollectionOutputWithContext(ctx context.Context) Sq
 	return pulumi.ToOutputWithContext(ctx, i).(SqlCollectionOutput)
 }
 
-func (i *SqlCollection) ToOutput(ctx context.Context) pulumix.Output[*SqlCollection] {
-	return pulumix.Output[*SqlCollection]{
-		OutputState: i.ToSqlCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // SqlCollectionArrayInput is an input type that accepts SqlCollectionArray and SqlCollectionArrayOutput values.
 // You can construct a concrete instance of `SqlCollectionArrayInput` via:
 //
@@ -373,12 +366,6 @@ func (i SqlCollectionArray) ToSqlCollectionArrayOutput() SqlCollectionArrayOutpu
 
 func (i SqlCollectionArray) ToSqlCollectionArrayOutputWithContext(ctx context.Context) SqlCollectionArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(SqlCollectionArrayOutput)
-}
-
-func (i SqlCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]*SqlCollection] {
-	return pulumix.Output[[]*SqlCollection]{
-		OutputState: i.ToSqlCollectionArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // SqlCollectionMapInput is an input type that accepts SqlCollectionMap and SqlCollectionMapOutput values.
@@ -406,12 +393,6 @@ func (i SqlCollectionMap) ToSqlCollectionMapOutputWithContext(ctx context.Contex
 	return pulumi.ToOutputWithContext(ctx, i).(SqlCollectionMapOutput)
 }
 
-func (i SqlCollectionMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*SqlCollection] {
-	return pulumix.Output[map[string]*SqlCollection]{
-		OutputState: i.ToSqlCollectionMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type SqlCollectionOutput struct{ *pulumi.OutputState }
 
 func (SqlCollectionOutput) ElementType() reflect.Type {
@@ -424,12 +405,6 @@ func (o SqlCollectionOutput) ToSqlCollectionOutput() SqlCollectionOutput {
 
 func (o SqlCollectionOutput) ToSqlCollectionOutputWithContext(ctx context.Context) SqlCollectionOutput {
 	return o
-}
-
-func (o SqlCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[*SqlCollection] {
-	return pulumix.Output[*SqlCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The OCID of the compartment containing the SQL collection.
@@ -448,13 +423,13 @@ func (o SqlCollectionOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // (Updatable) The description of the SQL collection.
-func (o SqlCollectionOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v *SqlCollection) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
+func (o SqlCollectionOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SqlCollection) pulumi.StringPtrOutput { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The display name of the SQL collection. The name does not have to be unique, and it is changeable.
-func (o SqlCollectionOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v *SqlCollection) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+func (o SqlCollectionOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SqlCollection) pulumi.StringPtrOutput { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
@@ -468,8 +443,8 @@ func (o SqlCollectionOutput) GenerateSqlFirewallPolicyTrigger() pulumi.BoolPtrOu
 }
 
 // Details about the current state of the SQL collection in Data Safe.
-func (o SqlCollectionOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v *SqlCollection) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o SqlCollectionOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SqlCollection) pulumi.StringPtrOutput { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) An optional property when incremented triggers Purge Logs. Could be set to any integer value.
@@ -483,8 +458,8 @@ func (o SqlCollectionOutput) RefreshLogInsightsTrigger() pulumi.BoolPtrOutput {
 }
 
 // Specifies the level of SQL that will be collected. USER_ISSUED_SQL - User issued SQL statements only. ALL_SQL - Includes all SQL statements including SQL statement issued inside PL/SQL units.
-func (o SqlCollectionOutput) SqlLevel() pulumi.StringOutput {
-	return o.ApplyT(func(v *SqlCollection) pulumi.StringOutput { return v.SqlLevel }).(pulumi.StringOutput)
+func (o SqlCollectionOutput) SqlLevel() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SqlCollection) pulumi.StringPtrOutput { return v.SqlLevel }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) An optional property when incremented triggers Start. Could be set to any integer value.
@@ -493,13 +468,13 @@ func (o SqlCollectionOutput) StartTrigger() pulumi.BoolPtrOutput {
 }
 
 // The current state of the SQL collection.
-func (o SqlCollectionOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *SqlCollection) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o SqlCollectionOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SqlCollection) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Specifies if the SqlCollection has to be started after creation. Enabled indicates that the SqlCollection will be started after creation.
-func (o SqlCollectionOutput) Status() pulumi.StringOutput {
-	return o.ApplyT(func(v *SqlCollection) pulumi.StringOutput { return v.Status }).(pulumi.StringOutput)
+func (o SqlCollectionOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SqlCollection) pulumi.StringPtrOutput { return v.Status }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) An optional property when incremented triggers Stop. Could be set to any integer value.
@@ -521,23 +496,23 @@ func (o SqlCollectionOutput) TargetId() pulumi.StringOutput {
 }
 
 // The time that the SQL collection was created, in the format defined by RFC3339.
-func (o SqlCollectionOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *SqlCollection) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o SqlCollectionOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SqlCollection) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The timestamp of the most recent SqlCollection start operation, in the format defined by RFC3339.
-func (o SqlCollectionOutput) TimeLastStarted() pulumi.StringOutput {
-	return o.ApplyT(func(v *SqlCollection) pulumi.StringOutput { return v.TimeLastStarted }).(pulumi.StringOutput)
+func (o SqlCollectionOutput) TimeLastStarted() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SqlCollection) pulumi.StringPtrOutput { return v.TimeLastStarted }).(pulumi.StringPtrOutput)
 }
 
 // The timestamp of the most recent SqlCollection stop operation, in the format defined by RFC3339.
-func (o SqlCollectionOutput) TimeLastStopped() pulumi.StringOutput {
-	return o.ApplyT(func(v *SqlCollection) pulumi.StringOutput { return v.TimeLastStopped }).(pulumi.StringOutput)
+func (o SqlCollectionOutput) TimeLastStopped() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SqlCollection) pulumi.StringPtrOutput { return v.TimeLastStopped }).(pulumi.StringPtrOutput)
 }
 
 // The last date and time the SQL collection was updated, in the format defined by RFC3339.
-func (o SqlCollectionOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *SqlCollection) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o SqlCollectionOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SqlCollection) pulumi.StringPtrOutput { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type SqlCollectionArrayOutput struct{ *pulumi.OutputState }
@@ -552,12 +527,6 @@ func (o SqlCollectionArrayOutput) ToSqlCollectionArrayOutput() SqlCollectionArra
 
 func (o SqlCollectionArrayOutput) ToSqlCollectionArrayOutputWithContext(ctx context.Context) SqlCollectionArrayOutput {
 	return o
-}
-
-func (o SqlCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*SqlCollection] {
-	return pulumix.Output[[]*SqlCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o SqlCollectionArrayOutput) Index(i pulumi.IntInput) SqlCollectionOutput {
@@ -578,12 +547,6 @@ func (o SqlCollectionMapOutput) ToSqlCollectionMapOutput() SqlCollectionMapOutpu
 
 func (o SqlCollectionMapOutput) ToSqlCollectionMapOutputWithContext(ctx context.Context) SqlCollectionMapOutput {
 	return o
-}
-
-func (o SqlCollectionMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*SqlCollection] {
-	return pulumix.Output[map[string]*SqlCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o SqlCollectionMapOutput) MapIndex(k pulumi.StringInput) SqlCollectionOutput {

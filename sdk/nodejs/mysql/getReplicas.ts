@@ -102,13 +102,13 @@ export interface GetReplicasResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly isUpToDate?: boolean;
     readonly replicaId?: string;
     /**
      * The list of replicas.
      */
-    readonly replicas: outputs.Mysql.GetReplicasReplica[];
+    readonly replicas?: outputs.Mysql.GetReplicasReplica[];
     /**
      * The state of the read replica.
      */

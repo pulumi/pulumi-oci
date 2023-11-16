@@ -52,41 +52,26 @@ class GetPrivateEndpointsResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create private endpoint.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="createdBy")
     def created_by(self) -> Optional[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user that created the private endpoint.
-        """
         return pulumi.get(self, "created_by")
 
     @property
     @pulumi.getter(name="dataSciencePrivateEndpoints")
-    def data_science_private_endpoints(self) -> Sequence['outputs.GetPrivateEndpointsDataSciencePrivateEndpointResult']:
-        """
-        The list of data_science_private_endpoints.
-        """
+    def data_science_private_endpoints(self) -> Optional[Sequence['outputs.GetPrivateEndpointsDataSciencePrivateEndpointResult']]:
         return pulumi.get(self, "data_science_private_endpoints")
 
     @property
     @pulumi.getter(name="dataScienceResourceType")
     def data_science_resource_type(self) -> Optional[str]:
-        """
-        Data Science resource type.
-        """
         return pulumi.get(self, "data_science_resource_type")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        A user friendly name. It doesn't have to be unique. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -96,7 +81,7 @@ class GetPrivateEndpointsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -105,9 +90,6 @@ class GetPrivateEndpointsResult:
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        State of the Data Science private endpoint.
-        """
         return pulumi.get(self, "state")
 
 
@@ -135,29 +117,7 @@ def get_private_endpoints(compartment_id: Optional[str] = None,
                           state: Optional[str] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetPrivateEndpointsResult:
     """
-    This data source provides the list of Data Science Private Endpoints in Oracle Cloud Infrastructure Data Science service.
-
-    Lists all Data Science private endpoints in the specified compartment. The query must include compartmentId. The query can also include one other parameter. If the query doesn't include compartmentId, or includes compartmentId with two or more other parameters, then an error is returned.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_data_science_private_endpoints = oci.DataScience.get_private_endpoints(compartment_id=var["compartment_id"],
-        created_by=var["data_science_private_endpoint_created_by"],
-        data_science_resource_type=var["data_science_private_endpoint_data_science_resource_type"],
-        display_name=var["data_science_private_endpoint_display_name"],
-        state=var["data_science_private_endpoint_state"])
-    ```
-
-
-    :param str compartment_id: <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param str created_by: <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the resource.
-    :param str data_science_resource_type: Resource types in the Data Science service such as notebooks.
-    :param str display_name: <b>Filter</b> results by its user-friendly name.
-    :param str state: The lifecycle state of the private endpoint.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -189,28 +149,6 @@ def get_private_endpoints_output(compartment_id: Optional[pulumi.Input[str]] = N
                                  state: Optional[pulumi.Input[Optional[str]]] = None,
                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetPrivateEndpointsResult]:
     """
-    This data source provides the list of Data Science Private Endpoints in Oracle Cloud Infrastructure Data Science service.
-
-    Lists all Data Science private endpoints in the specified compartment. The query must include compartmentId. The query can also include one other parameter. If the query doesn't include compartmentId, or includes compartmentId with two or more other parameters, then an error is returned.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_data_science_private_endpoints = oci.DataScience.get_private_endpoints(compartment_id=var["compartment_id"],
-        created_by=var["data_science_private_endpoint_created_by"],
-        data_science_resource_type=var["data_science_private_endpoint_data_science_resource_type"],
-        display_name=var["data_science_private_endpoint_display_name"],
-        state=var["data_science_private_endpoint_state"])
-    ```
-
-
-    :param str compartment_id: <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param str created_by: <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the resource.
-    :param str data_science_resource_type: Resource types in the Data Science service such as notebooks.
-    :param str display_name: <b>Filter</b> results by its user-friendly name.
-    :param str state: The lifecycle state of the private endpoint.
+    Use this data source to access information about an existing resource.
     """
     ...

@@ -45,11 +45,11 @@ export interface GetPeerRegionForRemotePeeringsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The list of peer_region_for_remote_peerings.
      */
-    readonly peerRegionForRemotePeerings: outputs.Core.GetPeerRegionForRemotePeeringsPeerRegionForRemotePeering[];
+    readonly peerRegionForRemotePeerings?: outputs.Core.GetPeerRegionForRemotePeeringsPeerRegionForRemotePeering[];
 }
 /**
  * This data source provides the list of Peer Region For Remote Peerings in Oracle Cloud Infrastructure Core service.

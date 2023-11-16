@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Double;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetExternalExadataStorageServerTopSqlCpuActivityActivity {
@@ -14,39 +16,39 @@ public final class GetExternalExadataStorageServerTopSqlCpuActivityActivity {
      * @return The CPU activity percentage.
      * 
      */
-    private Double cpuActivity;
+    private @Nullable Double cpuActivity;
     /**
      * @return The database name.
      * 
      */
-    private String databaseName;
+    private @Nullable String databaseName;
     /**
      * @return The SQL ID.
      * 
      */
-    private String sqlId;
+    private @Nullable String sqlId;
 
     private GetExternalExadataStorageServerTopSqlCpuActivityActivity() {}
     /**
      * @return The CPU activity percentage.
      * 
      */
-    public Double cpuActivity() {
-        return this.cpuActivity;
+    public Optional<Double> cpuActivity() {
+        return Optional.ofNullable(this.cpuActivity);
     }
     /**
      * @return The database name.
      * 
      */
-    public String databaseName() {
-        return this.databaseName;
+    public Optional<String> databaseName() {
+        return Optional.ofNullable(this.databaseName);
     }
     /**
      * @return The SQL ID.
      * 
      */
-    public String sqlId() {
-        return this.sqlId;
+    public Optional<String> sqlId() {
+        return Optional.ofNullable(this.sqlId);
     }
 
     public static Builder builder() {
@@ -58,9 +60,9 @@ public final class GetExternalExadataStorageServerTopSqlCpuActivityActivity {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Double cpuActivity;
-        private String databaseName;
-        private String sqlId;
+        private @Nullable Double cpuActivity;
+        private @Nullable String databaseName;
+        private @Nullable String sqlId;
         public Builder() {}
         public Builder(GetExternalExadataStorageServerTopSqlCpuActivityActivity defaults) {
     	      Objects.requireNonNull(defaults);
@@ -70,18 +72,18 @@ public final class GetExternalExadataStorageServerTopSqlCpuActivityActivity {
         }
 
         @CustomType.Setter
-        public Builder cpuActivity(Double cpuActivity) {
-            this.cpuActivity = Objects.requireNonNull(cpuActivity);
+        public Builder cpuActivity(@Nullable Double cpuActivity) {
+            this.cpuActivity = cpuActivity;
             return this;
         }
         @CustomType.Setter
-        public Builder databaseName(String databaseName) {
-            this.databaseName = Objects.requireNonNull(databaseName);
+        public Builder databaseName(@Nullable String databaseName) {
+            this.databaseName = databaseName;
             return this;
         }
         @CustomType.Setter
-        public Builder sqlId(String sqlId) {
-            this.sqlId = Objects.requireNonNull(sqlId);
+        public Builder sqlId(@Nullable String sqlId) {
+            this.sqlId = sqlId;
             return this;
         }
         public GetExternalExadataStorageServerTopSqlCpuActivityActivity build() {

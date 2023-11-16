@@ -56,18 +56,12 @@ class GetBaselineableMetricsResult:
 
     @property
     @pulumi.getter(name="baselineableMetricSummaryCollections")
-    def baselineable_metric_summary_collections(self) -> Sequence['outputs.GetBaselineableMetricsBaselineableMetricSummaryCollectionResult']:
-        """
-        The list of baselineable_metric_summary_collection.
-        """
+    def baselineable_metric_summary_collections(self) -> Optional[Sequence['outputs.GetBaselineableMetricsBaselineableMetricSummaryCollectionResult']]:
         return pulumi.get(self, "baselineable_metric_summary_collections")
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[str]:
-        """
-        OCID of the compartment
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
@@ -77,7 +71,7 @@ class GetBaselineableMetricsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -91,17 +85,11 @@ class GetBaselineableMetricsResult:
     @property
     @pulumi.getter
     def name(self) -> Optional[str]:
-        """
-        name of the metric
-        """
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="resourceGroup")
     def resource_group(self) -> Optional[str]:
-        """
-        Resource group of the metric
-        """
         return pulumi.get(self, "resource_group")
 
 
@@ -129,29 +117,7 @@ def get_baselineable_metrics(baselineable_metric_id: Optional[str] = None,
                              resource_group: Optional[str] = None,
                              opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetBaselineableMetricsResult:
     """
-    This data source provides the list of Baselineable Metrics in Oracle Cloud Infrastructure Stack Monitoring service.
-
-    List of summary of baseline-able metrics for a given resource group if specified.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_baselineable_metrics = oci.StackMonitoring.get_baselineable_metrics(baselineable_metric_id=oci_stack_monitoring_baselineable_metric["test_baselineable_metric"]["id"],
-        compartment_id=var["compartment_id"],
-        metric_namespace=var["baselineable_metric_metric_namespace"],
-        name=var["baselineable_metric_name"],
-        resource_group=var["baselineable_metric_resource_group"])
-    ```
-
-
-    :param str baselineable_metric_id: Identifier for the metric
-    :param str compartment_id: The ID of the compartment in which data is listed.
-    :param str metric_namespace: A filter to return monitored resource types that has the matching namespace.
-    :param str name: Metric Name
-    :param str resource_group: Resource Group
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['baselineableMetricId'] = baselineable_metric_id
@@ -183,28 +149,6 @@ def get_baselineable_metrics_output(baselineable_metric_id: Optional[pulumi.Inpu
                                     resource_group: Optional[pulumi.Input[Optional[str]]] = None,
                                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetBaselineableMetricsResult]:
     """
-    This data source provides the list of Baselineable Metrics in Oracle Cloud Infrastructure Stack Monitoring service.
-
-    List of summary of baseline-able metrics for a given resource group if specified.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_baselineable_metrics = oci.StackMonitoring.get_baselineable_metrics(baselineable_metric_id=oci_stack_monitoring_baselineable_metric["test_baselineable_metric"]["id"],
-        compartment_id=var["compartment_id"],
-        metric_namespace=var["baselineable_metric_metric_namespace"],
-        name=var["baselineable_metric_name"],
-        resource_group=var["baselineable_metric_resource_group"])
-    ```
-
-
-    :param str baselineable_metric_id: Identifier for the metric
-    :param str compartment_id: The ID of the compartment in which data is listed.
-    :param str metric_namespace: A filter to return monitored resource types that has the matching namespace.
-    :param str name: Metric Name
-    :param str resource_group: Resource Group
+    Use this data source to access information about an existing resource.
     """
     ...

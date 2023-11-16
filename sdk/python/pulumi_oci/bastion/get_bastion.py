@@ -93,162 +93,102 @@ class GetBastionResult:
 
     @property
     @pulumi.getter(name="bastionType")
-    def bastion_type(self) -> str:
-        """
-        The type of bastion.
-        """
+    def bastion_type(self) -> Optional[str]:
         return pulumi.get(self, "bastion_type")
 
     @property
     @pulumi.getter(name="clientCidrBlockAllowLists")
-    def client_cidr_block_allow_lists(self) -> Sequence[str]:
-        """
-        A list of address ranges in CIDR notation that you want to allow to connect to sessions hosted by this bastion.
-        """
+    def client_cidr_block_allow_lists(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "client_cidr_block_allow_lists")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The unique identifier (OCID) of the compartment where the bastion is located.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="dnsProxyStatus")
-    def dns_proxy_status(self) -> str:
-        """
-        Flag to enable FQDN and SOCKS5 Proxy Support. Example: `ENABLED`, `DISABLED`
-        """
+    def dns_proxy_status(self) -> Optional[str]:
         return pulumi.get(self, "dns_proxy_status")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The unique identifier (OCID) of the bastion, which can't be changed after creation.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        A message describing the current state in more detail.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="maxSessionTtlInSeconds")
-    def max_session_ttl_in_seconds(self) -> int:
-        """
-        The maximum amount of time that any session on the bastion can remain active.
-        """
+    def max_session_ttl_in_seconds(self) -> Optional[int]:
         return pulumi.get(self, "max_session_ttl_in_seconds")
 
     @property
     @pulumi.getter(name="maxSessionsAllowed")
-    def max_sessions_allowed(self) -> int:
-        """
-        The maximum number of active sessions allowed on the bastion.
-        """
+    def max_sessions_allowed(self) -> Optional[int]:
         return pulumi.get(self, "max_sessions_allowed")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        The name of the bastion, which can't be changed after creation.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="phoneBookEntry")
-    def phone_book_entry(self) -> str:
-        """
-        The phonebook entry of the customer's team, which can't be changed after creation. Not applicable to `standard` bastions.
-        """
+    def phone_book_entry(self) -> Optional[str]:
         return pulumi.get(self, "phone_book_entry")
 
     @property
     @pulumi.getter(name="privateEndpointIpAddress")
-    def private_endpoint_ip_address(self) -> str:
-        """
-        The private IP address of the created private endpoint.
-        """
+    def private_endpoint_ip_address(self) -> Optional[str]:
         return pulumi.get(self, "private_endpoint_ip_address")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the bastion.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="staticJumpHostIpAddresses")
-    def static_jump_host_ip_addresses(self) -> Sequence[str]:
-        """
-        A list of IP addresses of the hosts that the bastion has access to. Not applicable to `standard` bastions.
-        """
+    def static_jump_host_ip_addresses(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "static_jump_host_ip_addresses")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="targetSubnetId")
-    def target_subnet_id(self) -> str:
-        """
-        The unique identifier (OCID) of the subnet that the bastion connects to.
-        """
+    def target_subnet_id(self) -> Optional[str]:
         return pulumi.get(self, "target_subnet_id")
 
     @property
     @pulumi.getter(name="targetVcnId")
-    def target_vcn_id(self) -> str:
-        """
-        The unique identifier (OCID) of the virtual cloud network (VCN) that the bastion connects to.
-        """
+    def target_vcn_id(self) -> Optional[str]:
         return pulumi.get(self, "target_vcn_id")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The time the bastion was created. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The time the bastion was updated. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
 
@@ -284,21 +224,7 @@ class AwaitableGetBastionResult(GetBastionResult):
 def get_bastion(bastion_id: Optional[str] = None,
                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetBastionResult:
     """
-    This data source provides details about a specific Bastion resource in Oracle Cloud Infrastructure Bastion service.
-
-    Retrieves a bastion identified by the bastion ID. A bastion provides secured, public access to target resources in the cloud that you cannot otherwise reach from the internet.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_bastion = oci.Bastion.get_bastion(bastion_id=oci_bastion_bastion["test_bastion"]["id"])
-    ```
-
-
-    :param str bastion_id: The unique identifier (OCID) of the bastion.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['bastionId'] = bastion_id
@@ -333,20 +259,6 @@ def get_bastion(bastion_id: Optional[str] = None,
 def get_bastion_output(bastion_id: Optional[pulumi.Input[str]] = None,
                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetBastionResult]:
     """
-    This data source provides details about a specific Bastion resource in Oracle Cloud Infrastructure Bastion service.
-
-    Retrieves a bastion identified by the bastion ID. A bastion provides secured, public access to target resources in the cloud that you cannot otherwise reach from the internet.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_bastion = oci.Bastion.get_bastion(bastion_id=oci_bastion_bastion["test_bastion"]["id"])
-    ```
-
-
-    :param str bastion_id: The unique identifier (OCID) of the bastion.
+    Use this data source to access information about an existing resource.
     """
     ...

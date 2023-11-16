@@ -48,7 +48,7 @@ export class EnrollmentStatus extends pulumi.CustomResource {
     /**
      * The OCID of the compartment.
      */
-    public /*out*/ readonly compartmentId!: pulumi.Output<string>;
+    public /*out*/ readonly compartmentId!: pulumi.Output<string | undefined>;
     /**
      * The unique OCID associated with the enrollment status.
      */
@@ -56,7 +56,7 @@ export class EnrollmentStatus extends pulumi.CustomResource {
     /**
      * The enrollment status' current state.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The Cloud Advisor enrollment status.
      *
@@ -68,15 +68,15 @@ export class EnrollmentStatus extends pulumi.CustomResource {
     /**
      * The reason for the enrollment status of the tenancy.
      */
-    public /*out*/ readonly statusReason!: pulumi.Output<string>;
+    public /*out*/ readonly statusReason!: pulumi.Output<string | undefined>;
     /**
      * The date and time the enrollment status was created, in the format defined by RFC3339.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * The date and time the enrollment status was last updated, in the format defined by RFC3339.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    public /*out*/ readonly timeUpdated!: pulumi.Output<string | undefined>;
 
     /**
      * Create a EnrollmentStatus resource with the given unique name, arguments, and options.

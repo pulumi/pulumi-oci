@@ -47,96 +47,96 @@ export interface GetMediaAssetResult {
     /**
      * The name of the object storage bucket where this represented asset is located.
      */
-    readonly bucket: string;
+    readonly bucket?: string;
     /**
      * The ID of the compartment containing the MediaAsset.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * Unique identifier that is immutable on creation.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The ID of the senior most asset from which this asset is derived.
      */
-    readonly masterMediaAssetId: string;
+    readonly masterMediaAssetId?: string;
     readonly mediaAssetId: string;
     /**
      * List of tags for the MediaAsset.
      */
-    readonly mediaAssetTags: outputs.MediaServices.GetMediaAssetMediaAssetTag[];
+    readonly mediaAssetTags?: outputs.MediaServices.GetMediaAssetMediaAssetTag[];
     /**
      * The ID of the MediaWorkflowJob used to produce this asset.
      */
-    readonly mediaWorkflowJobId: string;
+    readonly mediaWorkflowJobId?: string;
     /**
      * JSON string containing the technial metadata for the media asset.
      */
-    readonly metadatas: outputs.MediaServices.GetMediaAssetMetadata[];
+    readonly metadatas?: outputs.MediaServices.GetMediaAssetMetadata[];
     /**
      * The object storage namespace where this asset is located.
      */
-    readonly namespace: string;
+    readonly namespace?: string;
     /**
      * The object storage object name that identifies this asset.
      */
-    readonly object: string;
+    readonly object?: string;
     /**
      * eTag of the underlying object storage object.
      */
-    readonly objectEtag: string;
+    readonly objectEtag?: string;
     /**
      * The ID of the parent asset from which this asset is derived.
      */
-    readonly parentMediaAssetId: string;
+    readonly parentMediaAssetId?: string;
     /**
      * The end index of video segment files.
      */
-    readonly segmentRangeEndIndex: string;
+    readonly segmentRangeEndIndex?: string;
     /**
      * The start index for video segment files.
      */
-    readonly segmentRangeStartIndex: string;
+    readonly segmentRangeStartIndex?: string;
     /**
      * The ID of the MediaWorkflow used to produce this asset.
      */
-    readonly sourceMediaWorkflowId: string;
+    readonly sourceMediaWorkflowId?: string;
     /**
      * The version of the MediaWorkflow used to produce this asset.
      */
-    readonly sourceMediaWorkflowVersion: string;
+    readonly sourceMediaWorkflowVersion?: string;
     /**
      * The current state of the MediaAsset.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    readonly systemTags: {[key: string]: any};
+    readonly systemTags?: {[key: string]: any};
     /**
      * The time when the MediaAsset was created. An RFC3339 formatted datetime string.
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The time when the MediaAsset was updated. An RFC3339 formatted datetime string.
      */
-    readonly timeUpdated: string;
+    readonly timeUpdated?: string;
     /**
      * The type of the media asset.
      */
-    readonly type: string;
+    readonly type?: string;
 }
 /**
  * This data source provides details about a specific Media Asset resource in Oracle Cloud Infrastructure Media Services service.

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific User resource in Oracle Cloud Infrastructure Identity Domains service.
@@ -75,63 +74,63 @@ type LookupDomainsUserArgs struct {
 // A collection of values returned by getDomainsUser.
 type LookupDomainsUserResult struct {
 	// Status of the account
-	Active bool `pulumi:"active"`
+	Active *bool `pulumi:"active"`
 	// A physical mailing address for this User, as described in (address Element). Canonical Type Values of work, home, and other. The value attribute is a complex type with the following sub-attributes.
 	Addresses     []GetDomainsUserAddress `pulumi:"addresses"`
 	AttributeSets []string                `pulumi:"attributeSets"`
 	Attributes    *string                 `pulumi:"attributes"`
 	Authorization *string                 `pulumi:"authorization"`
 	// Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
-	CompartmentOcid string `pulumi:"compartmentOcid"`
+	CompartmentOcid *string `pulumi:"compartmentOcid"`
 	// A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
-	DeleteInProgress bool `pulumi:"deleteInProgress"`
+	DeleteInProgress *bool `pulumi:"deleteInProgress"`
 	// Description of the user
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// The displayName of the User's manager. OPTIONAL and READ-ONLY.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
-	DomainOcid string `pulumi:"domainOcid"`
+	DomainOcid *string `pulumi:"domainOcid"`
 	// A complex attribute representing emails
 	Emails []GetDomainsUserEmail `pulumi:"emails"`
 	// A list of entitlements for the User that represent a thing the User has.
 	Entitlements []GetDomainsUserEntitlement `pulumi:"entitlements"`
 	// An identifier for the Resource as defined by the Service Consumer. READ-ONLY.
-	ExternalId string `pulumi:"externalId"`
+	ExternalId *string `pulumi:"externalId"`
 	// A list of groups that the user belongs to, either thorough direct membership, nested groups, or dynamically calculated
 	Groups []GetDomainsUserGroup `pulumi:"groups"`
 	// Unique identifier for the SCIM Resource as defined by the Service Provider. Each representation of the Resource MUST include a non-empty id value. This identifier MUST be unique across the Service Provider's entire set of Resources. It MUST be a stable, non-reassignable identifier that does not change when the same Resource is returned in subsequent requests. The value of the id attribute is always issued by the Service Provider and MUST never be specified by the Service Consumer. bulkId: is a reserved keyword and MUST NOT be used in the unique identifier.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The User or App who created the Resource
 	IdcsCreatedBies []GetDomainsUserIdcsCreatedBy `pulumi:"idcsCreatedBies"`
 	IdcsEndpoint    string                        `pulumi:"idcsEndpoint"`
 	// The User or App who modified the Resource
 	IdcsLastModifiedBies []GetDomainsUserIdcsLastModifiedBy `pulumi:"idcsLastModifiedBies"`
 	// The release number when the resource was upgraded.
-	IdcsLastUpgradedInRelease string `pulumi:"idcsLastUpgradedInRelease"`
+	IdcsLastUpgradedInRelease *string `pulumi:"idcsLastUpgradedInRelease"`
 	// Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
 	IdcsPreventedOperations []string `pulumi:"idcsPreventedOperations"`
 	// User's instant messaging addresses
 	Ims []GetDomainsUserIm `pulumi:"ims"`
 	// Used to indicate the User's default location for purposes of localizing items such as currency, date and time format, numerical representations, and so on.
-	Locale string `pulumi:"locale"`
+	Locale *string `pulumi:"locale"`
 	// A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
 	Metas []GetDomainsUserMeta `pulumi:"metas"`
 	// Name of the account assigned to the User.
 	Names []GetDomainsUserName `pulumi:"names"`
 	// Nick name
-	NickName string `pulumi:"nickName"`
+	NickName *string `pulumi:"nickName"`
 	// The OCID of the user's support account.
-	Ocid string `pulumi:"ocid"`
+	Ocid *string `pulumi:"ocid"`
 	// Password attribute. Max length for password is controlled via Password Policy.
-	Password string `pulumi:"password"`
+	Password *string `pulumi:"password"`
 	// Phone numbers
 	PhoneNumbers []GetDomainsUserPhoneNumber `pulumi:"phoneNumbers"`
 	// URLs of photos for the User
 	Photos []GetDomainsUserPhoto `pulumi:"photos"`
 	// User's preferred written or spoken language used for localized user interfaces
-	PreferredLanguage string `pulumi:"preferredLanguage"`
+	PreferredLanguage *string `pulumi:"preferredLanguage"`
 	// A fully-qualified URL to a page representing the User's online profile
-	ProfileUrl                string  `pulumi:"profileUrl"`
+	ProfileUrl                *string `pulumi:"profileUrl"`
 	ResourceTypeSchemaVersion *string `pulumi:"resourceTypeSchemaVersion"`
 	// A list of roles for the User that collectively represent who the User is; e.g., 'Student', 'Faculty'.
 	Roles []GetDomainsUserRole `pulumi:"roles"`
@@ -140,11 +139,11 @@ type LookupDomainsUserResult struct {
 	// A list of tags on this resource.
 	Tags []GetDomainsUserTag `pulumi:"tags"`
 	// Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
-	TenancyOcid string `pulumi:"tenancyOcid"`
+	TenancyOcid *string `pulumi:"tenancyOcid"`
 	// User's timezone
-	Timezone string `pulumi:"timezone"`
+	Timezone *string `pulumi:"timezone"`
 	// Title
-	Title string `pulumi:"title"`
+	Title *string `pulumi:"title"`
 	// Enterprise User
 	Urnietfparamsscimschemasextensionenterprise20users []GetDomainsUserUrnietfparamsscimschemasextensionenterprise20user `pulumi:"urnietfparamsscimschemasextensionenterprise20users"`
 	// Oracle Cloud Infrastructure Tags.
@@ -188,9 +187,9 @@ type LookupDomainsUserResult struct {
 	// User Support User Id
 	UserId string `pulumi:"userId"`
 	// User name
-	UserName string `pulumi:"userName"`
+	UserName *string `pulumi:"userName"`
 	// Used to identify the organization-to-user relationship
-	UserType string `pulumi:"userType"`
+	UserType *string `pulumi:"userType"`
 	// A list of certificates issued to the User.
 	X509certificates []GetDomainsUserX509certificate `pulumi:"x509certificates"`
 }
@@ -243,15 +242,9 @@ func (o LookupDomainsUserResultOutput) ToLookupDomainsUserResultOutputWithContex
 	return o
 }
 
-func (o LookupDomainsUserResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupDomainsUserResult] {
-	return pulumix.Output[LookupDomainsUserResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Status of the account
-func (o LookupDomainsUserResultOutput) Active() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupDomainsUserResult) bool { return v.Active }).(pulumi.BoolOutput)
+func (o LookupDomainsUserResultOutput) Active() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupDomainsUserResult) *bool { return v.Active }).(pulumi.BoolPtrOutput)
 }
 
 // A physical mailing address for this User, as described in (address Element). Canonical Type Values of work, home, and other. The value attribute is a complex type with the following sub-attributes.
@@ -272,28 +265,28 @@ func (o LookupDomainsUserResultOutput) Authorization() pulumi.StringPtrOutput {
 }
 
 // Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
-func (o LookupDomainsUserResultOutput) CompartmentOcid() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsUserResult) string { return v.CompartmentOcid }).(pulumi.StringOutput)
+func (o LookupDomainsUserResultOutput) CompartmentOcid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsUserResult) *string { return v.CompartmentOcid }).(pulumi.StringPtrOutput)
 }
 
 // A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
-func (o LookupDomainsUserResultOutput) DeleteInProgress() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupDomainsUserResult) bool { return v.DeleteInProgress }).(pulumi.BoolOutput)
+func (o LookupDomainsUserResultOutput) DeleteInProgress() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupDomainsUserResult) *bool { return v.DeleteInProgress }).(pulumi.BoolPtrOutput)
 }
 
 // Description of the user
-func (o LookupDomainsUserResultOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsUserResult) string { return v.Description }).(pulumi.StringOutput)
+func (o LookupDomainsUserResultOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsUserResult) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // The displayName of the User's manager. OPTIONAL and READ-ONLY.
-func (o LookupDomainsUserResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsUserResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupDomainsUserResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsUserResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
-func (o LookupDomainsUserResultOutput) DomainOcid() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsUserResult) string { return v.DomainOcid }).(pulumi.StringOutput)
+func (o LookupDomainsUserResultOutput) DomainOcid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsUserResult) *string { return v.DomainOcid }).(pulumi.StringPtrOutput)
 }
 
 // A complex attribute representing emails
@@ -307,8 +300,8 @@ func (o LookupDomainsUserResultOutput) Entitlements() GetDomainsUserEntitlementA
 }
 
 // An identifier for the Resource as defined by the Service Consumer. READ-ONLY.
-func (o LookupDomainsUserResultOutput) ExternalId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsUserResult) string { return v.ExternalId }).(pulumi.StringOutput)
+func (o LookupDomainsUserResultOutput) ExternalId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsUserResult) *string { return v.ExternalId }).(pulumi.StringPtrOutput)
 }
 
 // A list of groups that the user belongs to, either thorough direct membership, nested groups, or dynamically calculated
@@ -317,8 +310,8 @@ func (o LookupDomainsUserResultOutput) Groups() GetDomainsUserGroupArrayOutput {
 }
 
 // Unique identifier for the SCIM Resource as defined by the Service Provider. Each representation of the Resource MUST include a non-empty id value. This identifier MUST be unique across the Service Provider's entire set of Resources. It MUST be a stable, non-reassignable identifier that does not change when the same Resource is returned in subsequent requests. The value of the id attribute is always issued by the Service Provider and MUST never be specified by the Service Consumer. bulkId: is a reserved keyword and MUST NOT be used in the unique identifier.
-func (o LookupDomainsUserResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsUserResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupDomainsUserResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsUserResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The User or App who created the Resource
@@ -336,8 +329,8 @@ func (o LookupDomainsUserResultOutput) IdcsLastModifiedBies() GetDomainsUserIdcs
 }
 
 // The release number when the resource was upgraded.
-func (o LookupDomainsUserResultOutput) IdcsLastUpgradedInRelease() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsUserResult) string { return v.IdcsLastUpgradedInRelease }).(pulumi.StringOutput)
+func (o LookupDomainsUserResultOutput) IdcsLastUpgradedInRelease() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsUserResult) *string { return v.IdcsLastUpgradedInRelease }).(pulumi.StringPtrOutput)
 }
 
 // Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
@@ -351,8 +344,8 @@ func (o LookupDomainsUserResultOutput) Ims() GetDomainsUserImArrayOutput {
 }
 
 // Used to indicate the User's default location for purposes of localizing items such as currency, date and time format, numerical representations, and so on.
-func (o LookupDomainsUserResultOutput) Locale() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsUserResult) string { return v.Locale }).(pulumi.StringOutput)
+func (o LookupDomainsUserResultOutput) Locale() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsUserResult) *string { return v.Locale }).(pulumi.StringPtrOutput)
 }
 
 // A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
@@ -366,18 +359,18 @@ func (o LookupDomainsUserResultOutput) Names() GetDomainsUserNameArrayOutput {
 }
 
 // Nick name
-func (o LookupDomainsUserResultOutput) NickName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsUserResult) string { return v.NickName }).(pulumi.StringOutput)
+func (o LookupDomainsUserResultOutput) NickName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsUserResult) *string { return v.NickName }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the user's support account.
-func (o LookupDomainsUserResultOutput) Ocid() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsUserResult) string { return v.Ocid }).(pulumi.StringOutput)
+func (o LookupDomainsUserResultOutput) Ocid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsUserResult) *string { return v.Ocid }).(pulumi.StringPtrOutput)
 }
 
 // Password attribute. Max length for password is controlled via Password Policy.
-func (o LookupDomainsUserResultOutput) Password() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsUserResult) string { return v.Password }).(pulumi.StringOutput)
+func (o LookupDomainsUserResultOutput) Password() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsUserResult) *string { return v.Password }).(pulumi.StringPtrOutput)
 }
 
 // Phone numbers
@@ -391,13 +384,13 @@ func (o LookupDomainsUserResultOutput) Photos() GetDomainsUserPhotoArrayOutput {
 }
 
 // User's preferred written or spoken language used for localized user interfaces
-func (o LookupDomainsUserResultOutput) PreferredLanguage() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsUserResult) string { return v.PreferredLanguage }).(pulumi.StringOutput)
+func (o LookupDomainsUserResultOutput) PreferredLanguage() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsUserResult) *string { return v.PreferredLanguage }).(pulumi.StringPtrOutput)
 }
 
 // A fully-qualified URL to a page representing the User's online profile
-func (o LookupDomainsUserResultOutput) ProfileUrl() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsUserResult) string { return v.ProfileUrl }).(pulumi.StringOutput)
+func (o LookupDomainsUserResultOutput) ProfileUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsUserResult) *string { return v.ProfileUrl }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupDomainsUserResultOutput) ResourceTypeSchemaVersion() pulumi.StringPtrOutput {
@@ -420,18 +413,18 @@ func (o LookupDomainsUserResultOutput) Tags() GetDomainsUserTagArrayOutput {
 }
 
 // Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
-func (o LookupDomainsUserResultOutput) TenancyOcid() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsUserResult) string { return v.TenancyOcid }).(pulumi.StringOutput)
+func (o LookupDomainsUserResultOutput) TenancyOcid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsUserResult) *string { return v.TenancyOcid }).(pulumi.StringPtrOutput)
 }
 
 // User's timezone
-func (o LookupDomainsUserResultOutput) Timezone() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsUserResult) string { return v.Timezone }).(pulumi.StringOutput)
+func (o LookupDomainsUserResultOutput) Timezone() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsUserResult) *string { return v.Timezone }).(pulumi.StringPtrOutput)
 }
 
 // Title
-func (o LookupDomainsUserResultOutput) Title() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsUserResult) string { return v.Title }).(pulumi.StringOutput)
+func (o LookupDomainsUserResultOutput) Title() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsUserResult) *string { return v.Title }).(pulumi.StringPtrOutput)
 }
 
 // Enterprise User
@@ -580,13 +573,13 @@ func (o LookupDomainsUserResultOutput) UserId() pulumi.StringOutput {
 }
 
 // User name
-func (o LookupDomainsUserResultOutput) UserName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsUserResult) string { return v.UserName }).(pulumi.StringOutput)
+func (o LookupDomainsUserResultOutput) UserName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsUserResult) *string { return v.UserName }).(pulumi.StringPtrOutput)
 }
 
 // Used to identify the organization-to-user relationship
-func (o LookupDomainsUserResultOutput) UserType() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsUserResult) string { return v.UserType }).(pulumi.StringOutput)
+func (o LookupDomainsUserResultOutput) UserType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsUserResult) *string { return v.UserType }).(pulumi.StringPtrOutput)
 }
 
 // A list of certificates issued to the User.

@@ -16,7 +16,7 @@ namespace Pulumi.Oci.CloudMigrations.Outputs
         /// <summary>
         /// The time when the migration plan was updated. An RFC3339 formatted datetime string.
         /// </summary>
-        public readonly string TimeUpdated;
+        public readonly string? TimeUpdated;
         /// <summary>
         /// Cost estimation description
         /// </summary>
@@ -24,15 +24,15 @@ namespace Pulumi.Oci.CloudMigrations.Outputs
         /// <summary>
         /// The total count of VMs in migration
         /// </summary>
-        public readonly int VmCount;
+        public readonly int? VmCount;
 
         [OutputConstructor]
         private GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatResult(
-            string timeUpdated,
+            string? timeUpdated,
 
             ImmutableArray<Outputs.GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostResult> totalEstimatedCosts,
 
-            int vmCount)
+            int? vmCount)
         {
             TimeUpdated = timeUpdated;
             TotalEstimatedCosts = totalEstimatedCosts;

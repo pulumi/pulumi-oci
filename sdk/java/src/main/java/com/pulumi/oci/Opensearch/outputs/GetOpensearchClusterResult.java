@@ -10,6 +10,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetOpensearchClusterResult {
@@ -17,203 +19,203 @@ public final class GetOpensearchClusterResult {
      * @return The availability domains to distribute the cluser nodes across.
      * 
      */
-    private List<String> availabilityDomains;
+    private @Nullable List<String> availabilityDomains;
     /**
      * @return The OCID of the compartment where the cluster is located.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return The number of data nodes configured for the cluster.
      * 
      */
-    private Integer dataNodeCount;
+    private @Nullable Integer dataNodeCount;
     /**
      * @return The bare metal shape for the cluster&#39;s data nodes.
      * 
      */
-    private String dataNodeHostBareMetalShape;
+    private @Nullable String dataNodeHostBareMetalShape;
     /**
      * @return The amount of memory in GB, for the cluster&#39;s data nodes.
      * 
      */
-    private Integer dataNodeHostMemoryGb;
+    private @Nullable Integer dataNodeHostMemoryGb;
     /**
      * @return The number of OCPUs configured for the cluster&#39;s data nodes.
      * 
      */
-    private Integer dataNodeHostOcpuCount;
+    private @Nullable Integer dataNodeHostOcpuCount;
     /**
      * @return The instance type for the cluster&#39;s data nodes.
      * 
      */
-    private String dataNodeHostType;
+    private @Nullable String dataNodeHostType;
     /**
      * @return The amount of storage in GB, to configure per node for the cluster&#39;s data nodes.
      * 
      */
-    private Integer dataNodeStorageGb;
+    private @Nullable Integer dataNodeStorageGb;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return The name of the cluster. Avoid entering confidential information.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return The fully qualified domain name (FQDN) for the cluster&#39;s API endpoint.
      * 
      */
-    private String fqdn;
+    private @Nullable String fqdn;
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return The OCID of the cluster.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Additional information about the current lifecycle state of the cluster.
      * 
      */
-    private String lifecycleDetails;
+    private @Nullable String lifecycleDetails;
     /**
      * @return The number of master nodes configured for the cluster.
      * 
      */
-    private Integer masterNodeCount;
+    private @Nullable Integer masterNodeCount;
     /**
      * @return The bare metal shape for the cluster&#39;s master nodes.
      * 
      */
-    private String masterNodeHostBareMetalShape;
+    private @Nullable String masterNodeHostBareMetalShape;
     /**
      * @return The amount of memory in GB, for the cluster&#39;s master nodes.
      * 
      */
-    private Integer masterNodeHostMemoryGb;
+    private @Nullable Integer masterNodeHostMemoryGb;
     /**
      * @return The number of OCPUs configured for cluster&#39;s master nodes.
      * 
      */
-    private Integer masterNodeHostOcpuCount;
+    private @Nullable Integer masterNodeHostOcpuCount;
     /**
      * @return The instance type for the cluster&#39;s master nodes.
      * 
      */
-    private String masterNodeHostType;
+    private @Nullable String masterNodeHostType;
     /**
      * @return The fully qualified domain name (FQDN) for the cluster&#39;s OpenSearch Dashboard API endpoint.
      * 
      */
-    private String opendashboardFqdn;
+    private @Nullable String opendashboardFqdn;
     /**
      * @return The number of OpenSearch Dashboard nodes configured for the cluster.
      * 
      */
-    private Integer opendashboardNodeCount;
+    private @Nullable Integer opendashboardNodeCount;
     /**
      * @return The amount of memory in GB, for the cluster&#39;s OpenSearch Dashboard nodes.
      * 
      */
-    private Integer opendashboardNodeHostMemoryGb;
+    private @Nullable Integer opendashboardNodeHostMemoryGb;
     /**
      * @return The amount of memory in GB, for the cluster&#39;s OpenSearch Dashboard nodes.
      * 
      */
-    private Integer opendashboardNodeHostOcpuCount;
+    private @Nullable Integer opendashboardNodeHostOcpuCount;
     /**
      * @return The private IP address for the cluster&#39;s OpenSearch Dashboard.
      * 
      */
-    private String opendashboardPrivateIp;
+    private @Nullable String opendashboardPrivateIp;
     private String opensearchClusterId;
     /**
      * @return The fully qualified domain name (FQDN) for the cluster&#39;s API endpoint.
      * 
      */
-    private String opensearchFqdn;
+    private @Nullable String opensearchFqdn;
     /**
      * @return The cluster&#39;s private IP address.
      * 
      */
-    private String opensearchPrivateIp;
+    private @Nullable String opensearchPrivateIp;
     /**
      * @return The name of the master user that are used to manage security config
      * 
      */
-    private String securityMasterUserName;
+    private @Nullable String securityMasterUserName;
     /**
      * @return The password hash of the master user that are used to manage security config
      * 
      */
-    private String securityMasterUserPasswordHash;
+    private @Nullable String securityMasterUserPasswordHash;
     /**
      * @return The security mode of the cluster.
      * 
      */
-    private String securityMode;
+    private @Nullable String securityMode;
     /**
      * @return The software version the cluster is running.
      * 
      */
-    private String softwareVersion;
+    private @Nullable String softwareVersion;
     /**
      * @return The current state of the cluster.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return The OCID for the compartment where the cluster&#39;s subnet is located.
      * 
      */
-    private String subnetCompartmentId;
+    private @Nullable String subnetCompartmentId;
     /**
      * @return The OCID of the cluster&#39;s subnet.
      * 
      */
-    private String subnetId;
+    private @Nullable String subnetId;
     /**
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    private Map<String,Object> systemTags;
+    private @Nullable Map<String,Object> systemTags;
     /**
      * @return The amount of time in milliseconds since the cluster was created.
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The amount of time in milliseconds since the cluster was updated.
      * 
      */
-    private String timeDeleted;
+    private @Nullable String timeDeleted;
     /**
      * @return The amount of time in milliseconds since the cluster was updated.
      * 
      */
-    private String timeUpdated;
+    private @Nullable String timeUpdated;
     /**
      * @return The size in GB of the cluster&#39;s total storage.
      * 
      */
-    private Integer totalStorageGb;
+    private @Nullable Integer totalStorageGb;
     /**
      * @return The OCID for the compartment where the cluster&#39;s VCN is located.
      * 
      */
-    private String vcnCompartmentId;
+    private @Nullable String vcnCompartmentId;
     /**
      * @return The OCID of the cluster&#39;s VCN.
      * 
      */
-    private String vcnId;
+    private @Nullable String vcnId;
 
     private GetOpensearchClusterResult() {}
     /**
@@ -221,168 +223,168 @@ public final class GetOpensearchClusterResult {
      * 
      */
     public List<String> availabilityDomains() {
-        return this.availabilityDomains;
+        return this.availabilityDomains == null ? List.of() : this.availabilityDomains;
     }
     /**
      * @return The OCID of the compartment where the cluster is located.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return The number of data nodes configured for the cluster.
      * 
      */
-    public Integer dataNodeCount() {
-        return this.dataNodeCount;
+    public Optional<Integer> dataNodeCount() {
+        return Optional.ofNullable(this.dataNodeCount);
     }
     /**
      * @return The bare metal shape for the cluster&#39;s data nodes.
      * 
      */
-    public String dataNodeHostBareMetalShape() {
-        return this.dataNodeHostBareMetalShape;
+    public Optional<String> dataNodeHostBareMetalShape() {
+        return Optional.ofNullable(this.dataNodeHostBareMetalShape);
     }
     /**
      * @return The amount of memory in GB, for the cluster&#39;s data nodes.
      * 
      */
-    public Integer dataNodeHostMemoryGb() {
-        return this.dataNodeHostMemoryGb;
+    public Optional<Integer> dataNodeHostMemoryGb() {
+        return Optional.ofNullable(this.dataNodeHostMemoryGb);
     }
     /**
      * @return The number of OCPUs configured for the cluster&#39;s data nodes.
      * 
      */
-    public Integer dataNodeHostOcpuCount() {
-        return this.dataNodeHostOcpuCount;
+    public Optional<Integer> dataNodeHostOcpuCount() {
+        return Optional.ofNullable(this.dataNodeHostOcpuCount);
     }
     /**
      * @return The instance type for the cluster&#39;s data nodes.
      * 
      */
-    public String dataNodeHostType() {
-        return this.dataNodeHostType;
+    public Optional<String> dataNodeHostType() {
+        return Optional.ofNullable(this.dataNodeHostType);
     }
     /**
      * @return The amount of storage in GB, to configure per node for the cluster&#39;s data nodes.
      * 
      */
-    public Integer dataNodeStorageGb() {
-        return this.dataNodeStorageGb;
+    public Optional<Integer> dataNodeStorageGb() {
+        return Optional.ofNullable(this.dataNodeStorageGb);
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return The name of the cluster. Avoid entering confidential information.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return The fully qualified domain name (FQDN) for the cluster&#39;s API endpoint.
      * 
      */
-    public String fqdn() {
-        return this.fqdn;
+    public Optional<String> fqdn() {
+        return Optional.ofNullable(this.fqdn);
     }
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return The OCID of the cluster.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Additional information about the current lifecycle state of the cluster.
      * 
      */
-    public String lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Optional<String> lifecycleDetails() {
+        return Optional.ofNullable(this.lifecycleDetails);
     }
     /**
      * @return The number of master nodes configured for the cluster.
      * 
      */
-    public Integer masterNodeCount() {
-        return this.masterNodeCount;
+    public Optional<Integer> masterNodeCount() {
+        return Optional.ofNullable(this.masterNodeCount);
     }
     /**
      * @return The bare metal shape for the cluster&#39;s master nodes.
      * 
      */
-    public String masterNodeHostBareMetalShape() {
-        return this.masterNodeHostBareMetalShape;
+    public Optional<String> masterNodeHostBareMetalShape() {
+        return Optional.ofNullable(this.masterNodeHostBareMetalShape);
     }
     /**
      * @return The amount of memory in GB, for the cluster&#39;s master nodes.
      * 
      */
-    public Integer masterNodeHostMemoryGb() {
-        return this.masterNodeHostMemoryGb;
+    public Optional<Integer> masterNodeHostMemoryGb() {
+        return Optional.ofNullable(this.masterNodeHostMemoryGb);
     }
     /**
      * @return The number of OCPUs configured for cluster&#39;s master nodes.
      * 
      */
-    public Integer masterNodeHostOcpuCount() {
-        return this.masterNodeHostOcpuCount;
+    public Optional<Integer> masterNodeHostOcpuCount() {
+        return Optional.ofNullable(this.masterNodeHostOcpuCount);
     }
     /**
      * @return The instance type for the cluster&#39;s master nodes.
      * 
      */
-    public String masterNodeHostType() {
-        return this.masterNodeHostType;
+    public Optional<String> masterNodeHostType() {
+        return Optional.ofNullable(this.masterNodeHostType);
     }
     /**
      * @return The fully qualified domain name (FQDN) for the cluster&#39;s OpenSearch Dashboard API endpoint.
      * 
      */
-    public String opendashboardFqdn() {
-        return this.opendashboardFqdn;
+    public Optional<String> opendashboardFqdn() {
+        return Optional.ofNullable(this.opendashboardFqdn);
     }
     /**
      * @return The number of OpenSearch Dashboard nodes configured for the cluster.
      * 
      */
-    public Integer opendashboardNodeCount() {
-        return this.opendashboardNodeCount;
+    public Optional<Integer> opendashboardNodeCount() {
+        return Optional.ofNullable(this.opendashboardNodeCount);
     }
     /**
      * @return The amount of memory in GB, for the cluster&#39;s OpenSearch Dashboard nodes.
      * 
      */
-    public Integer opendashboardNodeHostMemoryGb() {
-        return this.opendashboardNodeHostMemoryGb;
+    public Optional<Integer> opendashboardNodeHostMemoryGb() {
+        return Optional.ofNullable(this.opendashboardNodeHostMemoryGb);
     }
     /**
      * @return The amount of memory in GB, for the cluster&#39;s OpenSearch Dashboard nodes.
      * 
      */
-    public Integer opendashboardNodeHostOcpuCount() {
-        return this.opendashboardNodeHostOcpuCount;
+    public Optional<Integer> opendashboardNodeHostOcpuCount() {
+        return Optional.ofNullable(this.opendashboardNodeHostOcpuCount);
     }
     /**
      * @return The private IP address for the cluster&#39;s OpenSearch Dashboard.
      * 
      */
-    public String opendashboardPrivateIp() {
-        return this.opendashboardPrivateIp;
+    public Optional<String> opendashboardPrivateIp() {
+        return Optional.ofNullable(this.opendashboardPrivateIp);
     }
     public String opensearchClusterId() {
         return this.opensearchClusterId;
@@ -391,113 +393,113 @@ public final class GetOpensearchClusterResult {
      * @return The fully qualified domain name (FQDN) for the cluster&#39;s API endpoint.
      * 
      */
-    public String opensearchFqdn() {
-        return this.opensearchFqdn;
+    public Optional<String> opensearchFqdn() {
+        return Optional.ofNullable(this.opensearchFqdn);
     }
     /**
      * @return The cluster&#39;s private IP address.
      * 
      */
-    public String opensearchPrivateIp() {
-        return this.opensearchPrivateIp;
+    public Optional<String> opensearchPrivateIp() {
+        return Optional.ofNullable(this.opensearchPrivateIp);
     }
     /**
      * @return The name of the master user that are used to manage security config
      * 
      */
-    public String securityMasterUserName() {
-        return this.securityMasterUserName;
+    public Optional<String> securityMasterUserName() {
+        return Optional.ofNullable(this.securityMasterUserName);
     }
     /**
      * @return The password hash of the master user that are used to manage security config
      * 
      */
-    public String securityMasterUserPasswordHash() {
-        return this.securityMasterUserPasswordHash;
+    public Optional<String> securityMasterUserPasswordHash() {
+        return Optional.ofNullable(this.securityMasterUserPasswordHash);
     }
     /**
      * @return The security mode of the cluster.
      * 
      */
-    public String securityMode() {
-        return this.securityMode;
+    public Optional<String> securityMode() {
+        return Optional.ofNullable(this.securityMode);
     }
     /**
      * @return The software version the cluster is running.
      * 
      */
-    public String softwareVersion() {
-        return this.softwareVersion;
+    public Optional<String> softwareVersion() {
+        return Optional.ofNullable(this.softwareVersion);
     }
     /**
      * @return The current state of the cluster.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return The OCID for the compartment where the cluster&#39;s subnet is located.
      * 
      */
-    public String subnetCompartmentId() {
-        return this.subnetCompartmentId;
+    public Optional<String> subnetCompartmentId() {
+        return Optional.ofNullable(this.subnetCompartmentId);
     }
     /**
      * @return The OCID of the cluster&#39;s subnet.
      * 
      */
-    public String subnetId() {
-        return this.subnetId;
+    public Optional<String> subnetId() {
+        return Optional.ofNullable(this.subnetId);
     }
     /**
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
     public Map<String,Object> systemTags() {
-        return this.systemTags;
+        return this.systemTags == null ? Map.of() : this.systemTags;
     }
     /**
      * @return The amount of time in milliseconds since the cluster was created.
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return The amount of time in milliseconds since the cluster was updated.
      * 
      */
-    public String timeDeleted() {
-        return this.timeDeleted;
+    public Optional<String> timeDeleted() {
+        return Optional.ofNullable(this.timeDeleted);
     }
     /**
      * @return The amount of time in milliseconds since the cluster was updated.
      * 
      */
-    public String timeUpdated() {
-        return this.timeUpdated;
+    public Optional<String> timeUpdated() {
+        return Optional.ofNullable(this.timeUpdated);
     }
     /**
      * @return The size in GB of the cluster&#39;s total storage.
      * 
      */
-    public Integer totalStorageGb() {
-        return this.totalStorageGb;
+    public Optional<Integer> totalStorageGb() {
+        return Optional.ofNullable(this.totalStorageGb);
     }
     /**
      * @return The OCID for the compartment where the cluster&#39;s VCN is located.
      * 
      */
-    public String vcnCompartmentId() {
-        return this.vcnCompartmentId;
+    public Optional<String> vcnCompartmentId() {
+        return Optional.ofNullable(this.vcnCompartmentId);
     }
     /**
      * @return The OCID of the cluster&#39;s VCN.
      * 
      */
-    public String vcnId() {
-        return this.vcnId;
+    public Optional<String> vcnId() {
+        return Optional.ofNullable(this.vcnId);
     }
 
     public static Builder builder() {
@@ -509,47 +511,47 @@ public final class GetOpensearchClusterResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<String> availabilityDomains;
-        private String compartmentId;
-        private Integer dataNodeCount;
-        private String dataNodeHostBareMetalShape;
-        private Integer dataNodeHostMemoryGb;
-        private Integer dataNodeHostOcpuCount;
-        private String dataNodeHostType;
-        private Integer dataNodeStorageGb;
-        private Map<String,Object> definedTags;
-        private String displayName;
-        private String fqdn;
-        private Map<String,Object> freeformTags;
-        private String id;
-        private String lifecycleDetails;
-        private Integer masterNodeCount;
-        private String masterNodeHostBareMetalShape;
-        private Integer masterNodeHostMemoryGb;
-        private Integer masterNodeHostOcpuCount;
-        private String masterNodeHostType;
-        private String opendashboardFqdn;
-        private Integer opendashboardNodeCount;
-        private Integer opendashboardNodeHostMemoryGb;
-        private Integer opendashboardNodeHostOcpuCount;
-        private String opendashboardPrivateIp;
+        private @Nullable List<String> availabilityDomains;
+        private @Nullable String compartmentId;
+        private @Nullable Integer dataNodeCount;
+        private @Nullable String dataNodeHostBareMetalShape;
+        private @Nullable Integer dataNodeHostMemoryGb;
+        private @Nullable Integer dataNodeHostOcpuCount;
+        private @Nullable String dataNodeHostType;
+        private @Nullable Integer dataNodeStorageGb;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String displayName;
+        private @Nullable String fqdn;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String id;
+        private @Nullable String lifecycleDetails;
+        private @Nullable Integer masterNodeCount;
+        private @Nullable String masterNodeHostBareMetalShape;
+        private @Nullable Integer masterNodeHostMemoryGb;
+        private @Nullable Integer masterNodeHostOcpuCount;
+        private @Nullable String masterNodeHostType;
+        private @Nullable String opendashboardFqdn;
+        private @Nullable Integer opendashboardNodeCount;
+        private @Nullable Integer opendashboardNodeHostMemoryGb;
+        private @Nullable Integer opendashboardNodeHostOcpuCount;
+        private @Nullable String opendashboardPrivateIp;
         private String opensearchClusterId;
-        private String opensearchFqdn;
-        private String opensearchPrivateIp;
-        private String securityMasterUserName;
-        private String securityMasterUserPasswordHash;
-        private String securityMode;
-        private String softwareVersion;
-        private String state;
-        private String subnetCompartmentId;
-        private String subnetId;
-        private Map<String,Object> systemTags;
-        private String timeCreated;
-        private String timeDeleted;
-        private String timeUpdated;
-        private Integer totalStorageGb;
-        private String vcnCompartmentId;
-        private String vcnId;
+        private @Nullable String opensearchFqdn;
+        private @Nullable String opensearchPrivateIp;
+        private @Nullable String securityMasterUserName;
+        private @Nullable String securityMasterUserPasswordHash;
+        private @Nullable String securityMode;
+        private @Nullable String softwareVersion;
+        private @Nullable String state;
+        private @Nullable String subnetCompartmentId;
+        private @Nullable String subnetId;
+        private @Nullable Map<String,Object> systemTags;
+        private @Nullable String timeCreated;
+        private @Nullable String timeDeleted;
+        private @Nullable String timeUpdated;
+        private @Nullable Integer totalStorageGb;
+        private @Nullable String vcnCompartmentId;
+        private @Nullable String vcnId;
         public Builder() {}
         public Builder(GetOpensearchClusterResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -597,126 +599,126 @@ public final class GetOpensearchClusterResult {
         }
 
         @CustomType.Setter
-        public Builder availabilityDomains(List<String> availabilityDomains) {
-            this.availabilityDomains = Objects.requireNonNull(availabilityDomains);
+        public Builder availabilityDomains(@Nullable List<String> availabilityDomains) {
+            this.availabilityDomains = availabilityDomains;
             return this;
         }
         public Builder availabilityDomains(String... availabilityDomains) {
             return availabilityDomains(List.of(availabilityDomains));
         }
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder dataNodeCount(Integer dataNodeCount) {
-            this.dataNodeCount = Objects.requireNonNull(dataNodeCount);
+        public Builder dataNodeCount(@Nullable Integer dataNodeCount) {
+            this.dataNodeCount = dataNodeCount;
             return this;
         }
         @CustomType.Setter
-        public Builder dataNodeHostBareMetalShape(String dataNodeHostBareMetalShape) {
-            this.dataNodeHostBareMetalShape = Objects.requireNonNull(dataNodeHostBareMetalShape);
+        public Builder dataNodeHostBareMetalShape(@Nullable String dataNodeHostBareMetalShape) {
+            this.dataNodeHostBareMetalShape = dataNodeHostBareMetalShape;
             return this;
         }
         @CustomType.Setter
-        public Builder dataNodeHostMemoryGb(Integer dataNodeHostMemoryGb) {
-            this.dataNodeHostMemoryGb = Objects.requireNonNull(dataNodeHostMemoryGb);
+        public Builder dataNodeHostMemoryGb(@Nullable Integer dataNodeHostMemoryGb) {
+            this.dataNodeHostMemoryGb = dataNodeHostMemoryGb;
             return this;
         }
         @CustomType.Setter
-        public Builder dataNodeHostOcpuCount(Integer dataNodeHostOcpuCount) {
-            this.dataNodeHostOcpuCount = Objects.requireNonNull(dataNodeHostOcpuCount);
+        public Builder dataNodeHostOcpuCount(@Nullable Integer dataNodeHostOcpuCount) {
+            this.dataNodeHostOcpuCount = dataNodeHostOcpuCount;
             return this;
         }
         @CustomType.Setter
-        public Builder dataNodeHostType(String dataNodeHostType) {
-            this.dataNodeHostType = Objects.requireNonNull(dataNodeHostType);
+        public Builder dataNodeHostType(@Nullable String dataNodeHostType) {
+            this.dataNodeHostType = dataNodeHostType;
             return this;
         }
         @CustomType.Setter
-        public Builder dataNodeStorageGb(Integer dataNodeStorageGb) {
-            this.dataNodeStorageGb = Objects.requireNonNull(dataNodeStorageGb);
+        public Builder dataNodeStorageGb(@Nullable Integer dataNodeStorageGb) {
+            this.dataNodeStorageGb = dataNodeStorageGb;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder fqdn(String fqdn) {
-            this.fqdn = Objects.requireNonNull(fqdn);
+        public Builder fqdn(@Nullable String fqdn) {
+            this.fqdn = fqdn;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+        public Builder lifecycleDetails(@Nullable String lifecycleDetails) {
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
-        public Builder masterNodeCount(Integer masterNodeCount) {
-            this.masterNodeCount = Objects.requireNonNull(masterNodeCount);
+        public Builder masterNodeCount(@Nullable Integer masterNodeCount) {
+            this.masterNodeCount = masterNodeCount;
             return this;
         }
         @CustomType.Setter
-        public Builder masterNodeHostBareMetalShape(String masterNodeHostBareMetalShape) {
-            this.masterNodeHostBareMetalShape = Objects.requireNonNull(masterNodeHostBareMetalShape);
+        public Builder masterNodeHostBareMetalShape(@Nullable String masterNodeHostBareMetalShape) {
+            this.masterNodeHostBareMetalShape = masterNodeHostBareMetalShape;
             return this;
         }
         @CustomType.Setter
-        public Builder masterNodeHostMemoryGb(Integer masterNodeHostMemoryGb) {
-            this.masterNodeHostMemoryGb = Objects.requireNonNull(masterNodeHostMemoryGb);
+        public Builder masterNodeHostMemoryGb(@Nullable Integer masterNodeHostMemoryGb) {
+            this.masterNodeHostMemoryGb = masterNodeHostMemoryGb;
             return this;
         }
         @CustomType.Setter
-        public Builder masterNodeHostOcpuCount(Integer masterNodeHostOcpuCount) {
-            this.masterNodeHostOcpuCount = Objects.requireNonNull(masterNodeHostOcpuCount);
+        public Builder masterNodeHostOcpuCount(@Nullable Integer masterNodeHostOcpuCount) {
+            this.masterNodeHostOcpuCount = masterNodeHostOcpuCount;
             return this;
         }
         @CustomType.Setter
-        public Builder masterNodeHostType(String masterNodeHostType) {
-            this.masterNodeHostType = Objects.requireNonNull(masterNodeHostType);
+        public Builder masterNodeHostType(@Nullable String masterNodeHostType) {
+            this.masterNodeHostType = masterNodeHostType;
             return this;
         }
         @CustomType.Setter
-        public Builder opendashboardFqdn(String opendashboardFqdn) {
-            this.opendashboardFqdn = Objects.requireNonNull(opendashboardFqdn);
+        public Builder opendashboardFqdn(@Nullable String opendashboardFqdn) {
+            this.opendashboardFqdn = opendashboardFqdn;
             return this;
         }
         @CustomType.Setter
-        public Builder opendashboardNodeCount(Integer opendashboardNodeCount) {
-            this.opendashboardNodeCount = Objects.requireNonNull(opendashboardNodeCount);
+        public Builder opendashboardNodeCount(@Nullable Integer opendashboardNodeCount) {
+            this.opendashboardNodeCount = opendashboardNodeCount;
             return this;
         }
         @CustomType.Setter
-        public Builder opendashboardNodeHostMemoryGb(Integer opendashboardNodeHostMemoryGb) {
-            this.opendashboardNodeHostMemoryGb = Objects.requireNonNull(opendashboardNodeHostMemoryGb);
+        public Builder opendashboardNodeHostMemoryGb(@Nullable Integer opendashboardNodeHostMemoryGb) {
+            this.opendashboardNodeHostMemoryGb = opendashboardNodeHostMemoryGb;
             return this;
         }
         @CustomType.Setter
-        public Builder opendashboardNodeHostOcpuCount(Integer opendashboardNodeHostOcpuCount) {
-            this.opendashboardNodeHostOcpuCount = Objects.requireNonNull(opendashboardNodeHostOcpuCount);
+        public Builder opendashboardNodeHostOcpuCount(@Nullable Integer opendashboardNodeHostOcpuCount) {
+            this.opendashboardNodeHostOcpuCount = opendashboardNodeHostOcpuCount;
             return this;
         }
         @CustomType.Setter
-        public Builder opendashboardPrivateIp(String opendashboardPrivateIp) {
-            this.opendashboardPrivateIp = Objects.requireNonNull(opendashboardPrivateIp);
+        public Builder opendashboardPrivateIp(@Nullable String opendashboardPrivateIp) {
+            this.opendashboardPrivateIp = opendashboardPrivateIp;
             return this;
         }
         @CustomType.Setter
@@ -725,83 +727,83 @@ public final class GetOpensearchClusterResult {
             return this;
         }
         @CustomType.Setter
-        public Builder opensearchFqdn(String opensearchFqdn) {
-            this.opensearchFqdn = Objects.requireNonNull(opensearchFqdn);
+        public Builder opensearchFqdn(@Nullable String opensearchFqdn) {
+            this.opensearchFqdn = opensearchFqdn;
             return this;
         }
         @CustomType.Setter
-        public Builder opensearchPrivateIp(String opensearchPrivateIp) {
-            this.opensearchPrivateIp = Objects.requireNonNull(opensearchPrivateIp);
+        public Builder opensearchPrivateIp(@Nullable String opensearchPrivateIp) {
+            this.opensearchPrivateIp = opensearchPrivateIp;
             return this;
         }
         @CustomType.Setter
-        public Builder securityMasterUserName(String securityMasterUserName) {
-            this.securityMasterUserName = Objects.requireNonNull(securityMasterUserName);
+        public Builder securityMasterUserName(@Nullable String securityMasterUserName) {
+            this.securityMasterUserName = securityMasterUserName;
             return this;
         }
         @CustomType.Setter
-        public Builder securityMasterUserPasswordHash(String securityMasterUserPasswordHash) {
-            this.securityMasterUserPasswordHash = Objects.requireNonNull(securityMasterUserPasswordHash);
+        public Builder securityMasterUserPasswordHash(@Nullable String securityMasterUserPasswordHash) {
+            this.securityMasterUserPasswordHash = securityMasterUserPasswordHash;
             return this;
         }
         @CustomType.Setter
-        public Builder securityMode(String securityMode) {
-            this.securityMode = Objects.requireNonNull(securityMode);
+        public Builder securityMode(@Nullable String securityMode) {
+            this.securityMode = securityMode;
             return this;
         }
         @CustomType.Setter
-        public Builder softwareVersion(String softwareVersion) {
-            this.softwareVersion = Objects.requireNonNull(softwareVersion);
+        public Builder softwareVersion(@Nullable String softwareVersion) {
+            this.softwareVersion = softwareVersion;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder subnetCompartmentId(String subnetCompartmentId) {
-            this.subnetCompartmentId = Objects.requireNonNull(subnetCompartmentId);
+        public Builder subnetCompartmentId(@Nullable String subnetCompartmentId) {
+            this.subnetCompartmentId = subnetCompartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder subnetId(String subnetId) {
-            this.subnetId = Objects.requireNonNull(subnetId);
+        public Builder subnetId(@Nullable String subnetId) {
+            this.subnetId = subnetId;
             return this;
         }
         @CustomType.Setter
-        public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+        public Builder systemTags(@Nullable Map<String,Object> systemTags) {
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeDeleted(String timeDeleted) {
-            this.timeDeleted = Objects.requireNonNull(timeDeleted);
+        public Builder timeDeleted(@Nullable String timeDeleted) {
+            this.timeDeleted = timeDeleted;
             return this;
         }
         @CustomType.Setter
-        public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+        public Builder timeUpdated(@Nullable String timeUpdated) {
+            this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter
-        public Builder totalStorageGb(Integer totalStorageGb) {
-            this.totalStorageGb = Objects.requireNonNull(totalStorageGb);
+        public Builder totalStorageGb(@Nullable Integer totalStorageGb) {
+            this.totalStorageGb = totalStorageGb;
             return this;
         }
         @CustomType.Setter
-        public Builder vcnCompartmentId(String vcnCompartmentId) {
-            this.vcnCompartmentId = Objects.requireNonNull(vcnCompartmentId);
+        public Builder vcnCompartmentId(@Nullable String vcnCompartmentId) {
+            this.vcnCompartmentId = vcnCompartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder vcnId(String vcnId) {
-            this.vcnId = Objects.requireNonNull(vcnId);
+        public Builder vcnId(@Nullable String vcnId) {
+            this.vcnId = vcnId;
             return this;
         }
         public GetOpensearchClusterResult build() {

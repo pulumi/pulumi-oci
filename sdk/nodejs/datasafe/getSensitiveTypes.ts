@@ -138,7 +138,7 @@ export interface GetSensitiveTypesResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The OCID of the parent sensitive category.
      */
@@ -146,7 +146,7 @@ export interface GetSensitiveTypesResult {
     /**
      * The list of sensitive_type_collection.
      */
-    readonly sensitiveTypeCollections: outputs.DataSafe.GetSensitiveTypesSensitiveTypeCollection[];
+    readonly sensitiveTypeCollections?: outputs.DataSafe.GetSensitiveTypesSensitiveTypeCollection[];
     readonly sensitiveTypeId?: string;
     readonly sensitiveTypeSource?: string;
     /**

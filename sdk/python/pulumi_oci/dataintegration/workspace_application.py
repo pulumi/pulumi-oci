@@ -32,24 +32,6 @@ class WorkspaceApplicationArgs:
                  state: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a WorkspaceApplication resource.
-        :param pulumi.Input[str] identifier: (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
-        :param pulumi.Input[str] model_type: (Updatable) The type of the application.
-        :param pulumi.Input[str] workspace_id: The workspace ID.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] description: (Updatable) Detailed description for the object.
-        :param pulumi.Input[str] display_name: (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] key: The identifying key for the object.
-        :param pulumi.Input[str] model_version: (Updatable) The object's model version.
-        :param pulumi.Input[str] name: (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
-        :param pulumi.Input[int] object_status: (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
-        :param pulumi.Input['WorkspaceApplicationRegistryMetadataArgs'] registry_metadata: Information about the object and its parent.
-        :param pulumi.Input['WorkspaceApplicationSourceApplicationInfoArgs'] source_application_info: The information about the application.
-        :param pulumi.Input[str] state: (Updatable) The current state of the workspace.
         """
         pulumi.set(__self__, "identifier", identifier)
         pulumi.set(__self__, "model_type", model_type)
@@ -80,9 +62,6 @@ class WorkspaceApplicationArgs:
     @property
     @pulumi.getter
     def identifier(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
-        """
         return pulumi.get(self, "identifier")
 
     @identifier.setter
@@ -92,9 +71,6 @@ class WorkspaceApplicationArgs:
     @property
     @pulumi.getter(name="modelType")
     def model_type(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The type of the application.
-        """
         return pulumi.get(self, "model_type")
 
     @model_type.setter
@@ -104,13 +80,6 @@ class WorkspaceApplicationArgs:
     @property
     @pulumi.getter(name="workspaceId")
     def workspace_id(self) -> pulumi.Input[str]:
-        """
-        The workspace ID.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "workspace_id")
 
     @workspace_id.setter
@@ -120,9 +89,6 @@ class WorkspaceApplicationArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -132,9 +98,6 @@ class WorkspaceApplicationArgs:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Detailed description for the object.
-        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -144,9 +107,6 @@ class WorkspaceApplicationArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -156,9 +116,6 @@ class WorkspaceApplicationArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -168,9 +125,6 @@ class WorkspaceApplicationArgs:
     @property
     @pulumi.getter
     def key(self) -> Optional[pulumi.Input[str]]:
-        """
-        The identifying key for the object.
-        """
         return pulumi.get(self, "key")
 
     @key.setter
@@ -180,9 +134,6 @@ class WorkspaceApplicationArgs:
     @property
     @pulumi.getter(name="modelVersion")
     def model_version(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The object's model version.
-        """
         return pulumi.get(self, "model_version")
 
     @model_version.setter
@@ -192,9 +143,6 @@ class WorkspaceApplicationArgs:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -204,9 +152,6 @@ class WorkspaceApplicationArgs:
     @property
     @pulumi.getter(name="objectStatus")
     def object_status(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
-        """
         return pulumi.get(self, "object_status")
 
     @object_status.setter
@@ -216,9 +161,6 @@ class WorkspaceApplicationArgs:
     @property
     @pulumi.getter(name="registryMetadata")
     def registry_metadata(self) -> Optional[pulumi.Input['WorkspaceApplicationRegistryMetadataArgs']]:
-        """
-        Information about the object and its parent.
-        """
         return pulumi.get(self, "registry_metadata")
 
     @registry_metadata.setter
@@ -228,9 +170,6 @@ class WorkspaceApplicationArgs:
     @property
     @pulumi.getter(name="sourceApplicationInfo")
     def source_application_info(self) -> Optional[pulumi.Input['WorkspaceApplicationSourceApplicationInfoArgs']]:
-        """
-        The information about the application.
-        """
         return pulumi.get(self, "source_application_info")
 
     @source_application_info.setter
@@ -240,9 +179,6 @@ class WorkspaceApplicationArgs:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The current state of the workspace.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -280,35 +216,6 @@ class _WorkspaceApplicationState:
                  workspace_id: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering WorkspaceApplication resources.
-        :param pulumi.Input[int] application_version: The source application version of the application.
-        :param pulumi.Input[str] compartment_id: OCID of the compartment that this resource belongs to. Defaults to compartment of the Workspace.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[Sequence[pulumi.Input['WorkspaceApplicationDependentObjectMetadataArgs']]] dependent_object_metadatas: A list of dependent objects in this patch.
-        :param pulumi.Input[str] description: (Updatable) Detailed description for the object.
-        :param pulumi.Input[str] display_name: (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] identifier: (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
-        :param pulumi.Input[str] key: The identifying key for the object.
-        :param pulumi.Input[Mapping[str, Any]] key_map: A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
-        :param pulumi.Input[Sequence[pulumi.Input['WorkspaceApplicationMetadataArgs']]] metadatas: A summary type containing information about the object including its key, name and when/who created/updated it.
-        :param pulumi.Input[str] model_type: (Updatable) The type of the application.
-        :param pulumi.Input[str] model_version: (Updatable) The object's model version.
-        :param pulumi.Input[str] name: (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
-        :param pulumi.Input[int] object_status: (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
-        :param pulumi.Input[int] object_version: The object version.
-        :param pulumi.Input[Sequence[pulumi.Input['WorkspaceApplicationParentRefArgs']]] parent_reves: A reference to the object's parent.
-        :param pulumi.Input[Sequence[pulumi.Input['WorkspaceApplicationPublishedObjectMetadataArgs']]] published_object_metadatas: A list of objects that are published or unpublished in this patch.
-        :param pulumi.Input['WorkspaceApplicationRegistryMetadataArgs'] registry_metadata: Information about the object and its parent.
-        :param pulumi.Input['WorkspaceApplicationSourceApplicationInfoArgs'] source_application_info: The information about the application.
-        :param pulumi.Input[str] state: (Updatable) The current state of the workspace.
-        :param pulumi.Input[str] time_created: The date and time the application was created, in the timestamp format defined by RFC3339.
-        :param pulumi.Input[str] time_patched: The date and time the application was patched, in the timestamp format defined by RFC3339.
-        :param pulumi.Input[str] time_updated: The date and time the application was updated, in the timestamp format defined by RFC3339. example: 2019-08-25T21:10:29.41Z
-        :param pulumi.Input[str] workspace_id: The workspace ID.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if application_version is not None:
             pulumi.set(__self__, "application_version", application_version)
@@ -364,9 +271,6 @@ class _WorkspaceApplicationState:
     @property
     @pulumi.getter(name="applicationVersion")
     def application_version(self) -> Optional[pulumi.Input[int]]:
-        """
-        The source application version of the application.
-        """
         return pulumi.get(self, "application_version")
 
     @application_version.setter
@@ -376,9 +280,6 @@ class _WorkspaceApplicationState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        OCID of the compartment that this resource belongs to. Defaults to compartment of the Workspace.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -388,9 +289,6 @@ class _WorkspaceApplicationState:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -400,9 +298,6 @@ class _WorkspaceApplicationState:
     @property
     @pulumi.getter(name="dependentObjectMetadatas")
     def dependent_object_metadatas(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['WorkspaceApplicationDependentObjectMetadataArgs']]]]:
-        """
-        A list of dependent objects in this patch.
-        """
         return pulumi.get(self, "dependent_object_metadatas")
 
     @dependent_object_metadatas.setter
@@ -412,9 +307,6 @@ class _WorkspaceApplicationState:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Detailed description for the object.
-        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -424,9 +316,6 @@ class _WorkspaceApplicationState:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -436,9 +325,6 @@ class _WorkspaceApplicationState:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -448,9 +334,6 @@ class _WorkspaceApplicationState:
     @property
     @pulumi.getter
     def identifier(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
-        """
         return pulumi.get(self, "identifier")
 
     @identifier.setter
@@ -460,9 +343,6 @@ class _WorkspaceApplicationState:
     @property
     @pulumi.getter
     def key(self) -> Optional[pulumi.Input[str]]:
-        """
-        The identifying key for the object.
-        """
         return pulumi.get(self, "key")
 
     @key.setter
@@ -472,9 +352,6 @@ class _WorkspaceApplicationState:
     @property
     @pulumi.getter(name="keyMap")
     def key_map(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
-        """
         return pulumi.get(self, "key_map")
 
     @key_map.setter
@@ -484,9 +361,6 @@ class _WorkspaceApplicationState:
     @property
     @pulumi.getter
     def metadatas(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['WorkspaceApplicationMetadataArgs']]]]:
-        """
-        A summary type containing information about the object including its key, name and when/who created/updated it.
-        """
         return pulumi.get(self, "metadatas")
 
     @metadatas.setter
@@ -496,9 +370,6 @@ class _WorkspaceApplicationState:
     @property
     @pulumi.getter(name="modelType")
     def model_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The type of the application.
-        """
         return pulumi.get(self, "model_type")
 
     @model_type.setter
@@ -508,9 +379,6 @@ class _WorkspaceApplicationState:
     @property
     @pulumi.getter(name="modelVersion")
     def model_version(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The object's model version.
-        """
         return pulumi.get(self, "model_version")
 
     @model_version.setter
@@ -520,9 +388,6 @@ class _WorkspaceApplicationState:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -532,9 +397,6 @@ class _WorkspaceApplicationState:
     @property
     @pulumi.getter(name="objectStatus")
     def object_status(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
-        """
         return pulumi.get(self, "object_status")
 
     @object_status.setter
@@ -544,9 +406,6 @@ class _WorkspaceApplicationState:
     @property
     @pulumi.getter(name="objectVersion")
     def object_version(self) -> Optional[pulumi.Input[int]]:
-        """
-        The object version.
-        """
         return pulumi.get(self, "object_version")
 
     @object_version.setter
@@ -556,9 +415,6 @@ class _WorkspaceApplicationState:
     @property
     @pulumi.getter(name="parentReves")
     def parent_reves(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['WorkspaceApplicationParentRefArgs']]]]:
-        """
-        A reference to the object's parent.
-        """
         return pulumi.get(self, "parent_reves")
 
     @parent_reves.setter
@@ -568,9 +424,6 @@ class _WorkspaceApplicationState:
     @property
     @pulumi.getter(name="publishedObjectMetadatas")
     def published_object_metadatas(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['WorkspaceApplicationPublishedObjectMetadataArgs']]]]:
-        """
-        A list of objects that are published or unpublished in this patch.
-        """
         return pulumi.get(self, "published_object_metadatas")
 
     @published_object_metadatas.setter
@@ -580,9 +433,6 @@ class _WorkspaceApplicationState:
     @property
     @pulumi.getter(name="registryMetadata")
     def registry_metadata(self) -> Optional[pulumi.Input['WorkspaceApplicationRegistryMetadataArgs']]:
-        """
-        Information about the object and its parent.
-        """
         return pulumi.get(self, "registry_metadata")
 
     @registry_metadata.setter
@@ -592,9 +442,6 @@ class _WorkspaceApplicationState:
     @property
     @pulumi.getter(name="sourceApplicationInfo")
     def source_application_info(self) -> Optional[pulumi.Input['WorkspaceApplicationSourceApplicationInfoArgs']]:
-        """
-        The information about the application.
-        """
         return pulumi.get(self, "source_application_info")
 
     @source_application_info.setter
@@ -604,9 +451,6 @@ class _WorkspaceApplicationState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The current state of the workspace.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -616,9 +460,6 @@ class _WorkspaceApplicationState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time the application was created, in the timestamp format defined by RFC3339.
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -628,9 +469,6 @@ class _WorkspaceApplicationState:
     @property
     @pulumi.getter(name="timePatched")
     def time_patched(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time the application was patched, in the timestamp format defined by RFC3339.
-        """
         return pulumi.get(self, "time_patched")
 
     @time_patched.setter
@@ -640,9 +478,6 @@ class _WorkspaceApplicationState:
     @property
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time the application was updated, in the timestamp format defined by RFC3339. example: 2019-08-25T21:10:29.41Z
-        """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
@@ -652,13 +487,6 @@ class _WorkspaceApplicationState:
     @property
     @pulumi.getter(name="workspaceId")
     def workspace_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The workspace ID.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "workspace_id")
 
     @workspace_id.setter
@@ -687,74 +515,9 @@ class WorkspaceApplication(pulumi.CustomResource):
                  workspace_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Workspace Application resource in Oracle Cloud Infrastructure Data Integration service.
-
-        Creates an application.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_workspace_application = oci.data_integration.WorkspaceApplication("testWorkspaceApplication",
-            identifier=var["workspace_application_identifier"],
-            workspace_id=oci_dataintegration_workspace["test_workspace"]["id"],
-            model_type=var["workspace_application_model_type"],
-            defined_tags={
-                "foo-namespace.bar-key": "value",
-            },
-            description=var["workspace_application_description"],
-            display_name=var["workspace_application_display_name"],
-            freeform_tags={
-                "bar-key": "value",
-            },
-            key=var["workspace_application_key"],
-            model_version=var["workspace_application_model_version"],
-            object_status=var["workspace_application_object_status"],
-            registry_metadata=oci.data_integration.WorkspaceApplicationRegistryMetadataArgs(
-                aggregator_key=var["workspace_application_registry_metadata_aggregator_key"],
-                is_favorite=var["workspace_application_registry_metadata_is_favorite"],
-                key=var["workspace_application_registry_metadata_key"],
-                labels=var["workspace_application_registry_metadata_labels"],
-                registry_version=var["workspace_application_registry_metadata_registry_version"],
-            ),
-            source_application_info=oci.data_integration.WorkspaceApplicationSourceApplicationInfoArgs(
-                application_key=var["workspace_application_source_application_info_application_key"],
-                copy_type=var["workspace_application_source_application_info_copy_type"],
-                workspace_id=oci_dataintegration_workspace["test_workspace"]["id"],
-            ),
-            state=var["workspace_application_state"])
-        ```
-
-        ## Import
-
-        WorkspaceApplications can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:DataIntegration/workspaceApplication:WorkspaceApplication test_workspace_application "workspaces/{workspaceId}/applications/{applicationKey}"
-        ```
-
+        Create a WorkspaceApplication resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] description: (Updatable) Detailed description for the object.
-        :param pulumi.Input[str] display_name: (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] identifier: (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
-        :param pulumi.Input[str] key: The identifying key for the object.
-        :param pulumi.Input[str] model_type: (Updatable) The type of the application.
-        :param pulumi.Input[str] model_version: (Updatable) The object's model version.
-        :param pulumi.Input[str] name: (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
-        :param pulumi.Input[int] object_status: (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
-        :param pulumi.Input[pulumi.InputType['WorkspaceApplicationRegistryMetadataArgs']] registry_metadata: Information about the object and its parent.
-        :param pulumi.Input[pulumi.InputType['WorkspaceApplicationSourceApplicationInfoArgs']] source_application_info: The information about the application.
-        :param pulumi.Input[str] state: (Updatable) The current state of the workspace.
-        :param pulumi.Input[str] workspace_id: The workspace ID.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -763,54 +526,7 @@ class WorkspaceApplication(pulumi.CustomResource):
                  args: WorkspaceApplicationArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Workspace Application resource in Oracle Cloud Infrastructure Data Integration service.
-
-        Creates an application.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_workspace_application = oci.data_integration.WorkspaceApplication("testWorkspaceApplication",
-            identifier=var["workspace_application_identifier"],
-            workspace_id=oci_dataintegration_workspace["test_workspace"]["id"],
-            model_type=var["workspace_application_model_type"],
-            defined_tags={
-                "foo-namespace.bar-key": "value",
-            },
-            description=var["workspace_application_description"],
-            display_name=var["workspace_application_display_name"],
-            freeform_tags={
-                "bar-key": "value",
-            },
-            key=var["workspace_application_key"],
-            model_version=var["workspace_application_model_version"],
-            object_status=var["workspace_application_object_status"],
-            registry_metadata=oci.data_integration.WorkspaceApplicationRegistryMetadataArgs(
-                aggregator_key=var["workspace_application_registry_metadata_aggregator_key"],
-                is_favorite=var["workspace_application_registry_metadata_is_favorite"],
-                key=var["workspace_application_registry_metadata_key"],
-                labels=var["workspace_application_registry_metadata_labels"],
-                registry_version=var["workspace_application_registry_metadata_registry_version"],
-            ),
-            source_application_info=oci.data_integration.WorkspaceApplicationSourceApplicationInfoArgs(
-                application_key=var["workspace_application_source_application_info_application_key"],
-                copy_type=var["workspace_application_source_application_info_copy_type"],
-                workspace_id=oci_dataintegration_workspace["test_workspace"]["id"],
-            ),
-            state=var["workspace_application_state"])
-        ```
-
-        ## Import
-
-        WorkspaceApplications can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:DataIntegration/workspaceApplication:WorkspaceApplication test_workspace_application "workspaces/{workspaceId}/applications/{applicationKey}"
-        ```
-
+        Create a WorkspaceApplication resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param WorkspaceApplicationArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -922,35 +638,6 @@ class WorkspaceApplication(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[int] application_version: The source application version of the application.
-        :param pulumi.Input[str] compartment_id: OCID of the compartment that this resource belongs to. Defaults to compartment of the Workspace.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['WorkspaceApplicationDependentObjectMetadataArgs']]]] dependent_object_metadatas: A list of dependent objects in this patch.
-        :param pulumi.Input[str] description: (Updatable) Detailed description for the object.
-        :param pulumi.Input[str] display_name: (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] identifier: (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
-        :param pulumi.Input[str] key: The identifying key for the object.
-        :param pulumi.Input[Mapping[str, Any]] key_map: A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['WorkspaceApplicationMetadataArgs']]]] metadatas: A summary type containing information about the object including its key, name and when/who created/updated it.
-        :param pulumi.Input[str] model_type: (Updatable) The type of the application.
-        :param pulumi.Input[str] model_version: (Updatable) The object's model version.
-        :param pulumi.Input[str] name: (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
-        :param pulumi.Input[int] object_status: (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
-        :param pulumi.Input[int] object_version: The object version.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['WorkspaceApplicationParentRefArgs']]]] parent_reves: A reference to the object's parent.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['WorkspaceApplicationPublishedObjectMetadataArgs']]]] published_object_metadatas: A list of objects that are published or unpublished in this patch.
-        :param pulumi.Input[pulumi.InputType['WorkspaceApplicationRegistryMetadataArgs']] registry_metadata: Information about the object and its parent.
-        :param pulumi.Input[pulumi.InputType['WorkspaceApplicationSourceApplicationInfoArgs']] source_application_info: The information about the application.
-        :param pulumi.Input[str] state: (Updatable) The current state of the workspace.
-        :param pulumi.Input[str] time_created: The date and time the application was created, in the timestamp format defined by RFC3339.
-        :param pulumi.Input[str] time_patched: The date and time the application was patched, in the timestamp format defined by RFC3339.
-        :param pulumi.Input[str] time_updated: The date and time the application was updated, in the timestamp format defined by RFC3339. example: 2019-08-25T21:10:29.41Z
-        :param pulumi.Input[str] workspace_id: The workspace ID.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -985,205 +672,126 @@ class WorkspaceApplication(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="applicationVersion")
-    def application_version(self) -> pulumi.Output[int]:
-        """
-        The source application version of the application.
-        """
+    def application_version(self) -> pulumi.Output[Optional[int]]:
         return pulumi.get(self, "application_version")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> pulumi.Output[str]:
-        """
-        OCID of the compartment that this resource belongs to. Defaults to compartment of the Workspace.
-        """
+    def compartment_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="dependentObjectMetadatas")
-    def dependent_object_metadatas(self) -> pulumi.Output[Sequence['outputs.WorkspaceApplicationDependentObjectMetadata']]:
-        """
-        A list of dependent objects in this patch.
-        """
+    def dependent_object_metadatas(self) -> pulumi.Output[Optional[Sequence['outputs.WorkspaceApplicationDependentObjectMetadata']]]:
         return pulumi.get(self, "dependent_object_metadatas")
 
     @property
     @pulumi.getter
-    def description(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Detailed description for the object.
-        """
+    def description(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
-        """
+    def display_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
     def identifier(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
-        """
         return pulumi.get(self, "identifier")
 
     @property
     @pulumi.getter
-    def key(self) -> pulumi.Output[str]:
-        """
-        The identifying key for the object.
-        """
+    def key(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "key")
 
     @property
     @pulumi.getter(name="keyMap")
-    def key_map(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
-        """
+    def key_map(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "key_map")
 
     @property
     @pulumi.getter
-    def metadatas(self) -> pulumi.Output[Sequence['outputs.WorkspaceApplicationMetadata']]:
-        """
-        A summary type containing information about the object including its key, name and when/who created/updated it.
-        """
+    def metadatas(self) -> pulumi.Output[Optional[Sequence['outputs.WorkspaceApplicationMetadata']]]:
         return pulumi.get(self, "metadatas")
 
     @property
     @pulumi.getter(name="modelType")
     def model_type(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The type of the application.
-        """
         return pulumi.get(self, "model_type")
 
     @property
     @pulumi.getter(name="modelVersion")
-    def model_version(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The object's model version.
-        """
+    def model_version(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "model_version")
 
     @property
     @pulumi.getter
     def name(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
-        """
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="objectStatus")
-    def object_status(self) -> pulumi.Output[int]:
-        """
-        (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
-        """
+    def object_status(self) -> pulumi.Output[Optional[int]]:
         return pulumi.get(self, "object_status")
 
     @property
     @pulumi.getter(name="objectVersion")
-    def object_version(self) -> pulumi.Output[int]:
-        """
-        The object version.
-        """
+    def object_version(self) -> pulumi.Output[Optional[int]]:
         return pulumi.get(self, "object_version")
 
     @property
     @pulumi.getter(name="parentReves")
-    def parent_reves(self) -> pulumi.Output[Sequence['outputs.WorkspaceApplicationParentRef']]:
-        """
-        A reference to the object's parent.
-        """
+    def parent_reves(self) -> pulumi.Output[Optional[Sequence['outputs.WorkspaceApplicationParentRef']]]:
         return pulumi.get(self, "parent_reves")
 
     @property
     @pulumi.getter(name="publishedObjectMetadatas")
-    def published_object_metadatas(self) -> pulumi.Output[Sequence['outputs.WorkspaceApplicationPublishedObjectMetadata']]:
-        """
-        A list of objects that are published or unpublished in this patch.
-        """
+    def published_object_metadatas(self) -> pulumi.Output[Optional[Sequence['outputs.WorkspaceApplicationPublishedObjectMetadata']]]:
         return pulumi.get(self, "published_object_metadatas")
 
     @property
     @pulumi.getter(name="registryMetadata")
-    def registry_metadata(self) -> pulumi.Output['outputs.WorkspaceApplicationRegistryMetadata']:
-        """
-        Information about the object and its parent.
-        """
+    def registry_metadata(self) -> pulumi.Output[Optional['outputs.WorkspaceApplicationRegistryMetadata']]:
         return pulumi.get(self, "registry_metadata")
 
     @property
     @pulumi.getter(name="sourceApplicationInfo")
-    def source_application_info(self) -> pulumi.Output['outputs.WorkspaceApplicationSourceApplicationInfo']:
-        """
-        The information about the application.
-        """
+    def source_application_info(self) -> pulumi.Output[Optional['outputs.WorkspaceApplicationSourceApplicationInfo']]:
         return pulumi.get(self, "source_application_info")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The current state of the workspace.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        The date and time the application was created, in the timestamp format defined by RFC3339.
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timePatched")
-    def time_patched(self) -> pulumi.Output[str]:
-        """
-        The date and time the application was patched, in the timestamp format defined by RFC3339.
-        """
+    def time_patched(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_patched")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> pulumi.Output[str]:
-        """
-        The date and time the application was updated, in the timestamp format defined by RFC3339. example: 2019-08-25T21:10:29.41Z
-        """
+    def time_updated(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_updated")
 
     @property
     @pulumi.getter(name="workspaceId")
     def workspace_id(self) -> pulumi.Output[str]:
-        """
-        The workspace ID.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "workspace_id")
 

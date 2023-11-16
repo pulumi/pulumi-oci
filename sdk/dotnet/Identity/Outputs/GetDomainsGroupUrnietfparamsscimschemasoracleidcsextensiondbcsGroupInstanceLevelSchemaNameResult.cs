@@ -16,17 +16,17 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// App Id of DBCS App instance
         /// </summary>
-        public readonly string DbInstanceId;
+        public readonly string? DbInstanceId;
         /// <summary>
         /// The DBCS schema-name granted to this Group for the DB instance that 'dbInstanceId' specifies.
         /// </summary>
-        public readonly string SchemaName;
+        public readonly string? SchemaName;
 
         [OutputConstructor]
         private GetDomainsGroupUrnietfparamsscimschemasoracleidcsextensiondbcsGroupInstanceLevelSchemaNameResult(
-            string dbInstanceId,
+            string? dbInstanceId,
 
-            string schemaName)
+            string? schemaName)
         {
             DbInstanceId = dbInstanceId;
             SchemaName = schemaName;

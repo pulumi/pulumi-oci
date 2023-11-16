@@ -32,13 +32,13 @@ public final class GetResponderRecipesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private @Nullable Boolean resourceMetadataOnly;
     /**
      * @return The list of responder_recipe_collection.
      * 
      */
-    private List<GetResponderRecipesResponderRecipeCollection> responderRecipeCollections;
+    private @Nullable List<GetResponderRecipesResponderRecipeCollection> responderRecipeCollections;
     /**
      * @return The current state of the Example.
      * 
@@ -73,8 +73,8 @@ public final class GetResponderRecipesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public Optional<Boolean> resourceMetadataOnly() {
         return Optional.ofNullable(this.resourceMetadataOnly);
@@ -84,7 +84,7 @@ public final class GetResponderRecipesResult {
      * 
      */
     public List<GetResponderRecipesResponderRecipeCollection> responderRecipeCollections() {
-        return this.responderRecipeCollections;
+        return this.responderRecipeCollections == null ? List.of() : this.responderRecipeCollections;
     }
     /**
      * @return The current state of the Example.
@@ -108,9 +108,9 @@ public final class GetResponderRecipesResult {
         private @Nullable Boolean compartmentIdInSubtree;
         private @Nullable String displayName;
         private @Nullable List<GetResponderRecipesFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable Boolean resourceMetadataOnly;
-        private List<GetResponderRecipesResponderRecipeCollection> responderRecipeCollections;
+        private @Nullable List<GetResponderRecipesResponderRecipeCollection> responderRecipeCollections;
         private @Nullable String state;
         public Builder() {}
         public Builder(GetResponderRecipesResult defaults) {
@@ -155,8 +155,8 @@ public final class GetResponderRecipesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -165,8 +165,8 @@ public final class GetResponderRecipesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder responderRecipeCollections(List<GetResponderRecipesResponderRecipeCollection> responderRecipeCollections) {
-            this.responderRecipeCollections = Objects.requireNonNull(responderRecipeCollections);
+        public Builder responderRecipeCollections(@Nullable List<GetResponderRecipesResponderRecipeCollection> responderRecipeCollections) {
+            this.responderRecipeCollections = responderRecipeCollections;
             return this;
         }
         public Builder responderRecipeCollections(GetResponderRecipesResponderRecipeCollection... responderRecipeCollections) {

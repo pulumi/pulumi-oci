@@ -31,7 +31,7 @@ public final class GetUnifiedAgentConfigurationsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private @Nullable Boolean isCompartmentIdInSubtree;
     private @Nullable String logId;
     /**
@@ -43,7 +43,7 @@ public final class GetUnifiedAgentConfigurationsResult {
      * @return The list of unified_agent_configuration_collection.
      * 
      */
-    private List<GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollection> unifiedAgentConfigurationCollections;
+    private @Nullable List<GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollection> unifiedAgentConfigurationCollections;
 
     private GetUnifiedAgentConfigurationsResult() {}
     /**
@@ -70,8 +70,8 @@ public final class GetUnifiedAgentConfigurationsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public Optional<Boolean> isCompartmentIdInSubtree() {
         return Optional.ofNullable(this.isCompartmentIdInSubtree);
@@ -91,7 +91,7 @@ public final class GetUnifiedAgentConfigurationsResult {
      * 
      */
     public List<GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollection> unifiedAgentConfigurationCollections() {
-        return this.unifiedAgentConfigurationCollections;
+        return this.unifiedAgentConfigurationCollections == null ? List.of() : this.unifiedAgentConfigurationCollections;
     }
 
     public static Builder builder() {
@@ -107,11 +107,11 @@ public final class GetUnifiedAgentConfigurationsResult {
         private @Nullable String displayName;
         private @Nullable List<GetUnifiedAgentConfigurationsFilter> filters;
         private @Nullable String groupId;
-        private String id;
+        private @Nullable String id;
         private @Nullable Boolean isCompartmentIdInSubtree;
         private @Nullable String logId;
         private @Nullable String state;
-        private List<GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollection> unifiedAgentConfigurationCollections;
+        private @Nullable List<GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollection> unifiedAgentConfigurationCollections;
         public Builder() {}
         public Builder(GetUnifiedAgentConfigurationsResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -150,8 +150,8 @@ public final class GetUnifiedAgentConfigurationsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -170,8 +170,8 @@ public final class GetUnifiedAgentConfigurationsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder unifiedAgentConfigurationCollections(List<GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollection> unifiedAgentConfigurationCollections) {
-            this.unifiedAgentConfigurationCollections = Objects.requireNonNull(unifiedAgentConfigurationCollections);
+        public Builder unifiedAgentConfigurationCollections(@Nullable List<GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollection> unifiedAgentConfigurationCollections) {
+            this.unifiedAgentConfigurationCollections = unifiedAgentConfigurationCollections;
             return this;
         }
         public Builder unifiedAgentConfigurationCollections(GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollection... unifiedAgentConfigurationCollections) {

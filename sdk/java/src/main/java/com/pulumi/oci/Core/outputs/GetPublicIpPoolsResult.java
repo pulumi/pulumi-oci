@@ -30,12 +30,12 @@ public final class GetPublicIpPoolsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The list of public_ip_pool_collection.
      * 
      */
-    private List<GetPublicIpPoolsPublicIpPoolCollection> publicIpPoolCollections;
+    private @Nullable List<GetPublicIpPoolsPublicIpPoolCollection> publicIpPoolCollections;
 
     private GetPublicIpPoolsResult() {}
     public Optional<String> byoipRangeId() {
@@ -62,15 +62,15 @@ public final class GetPublicIpPoolsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The list of public_ip_pool_collection.
      * 
      */
     public List<GetPublicIpPoolsPublicIpPoolCollection> publicIpPoolCollections() {
-        return this.publicIpPoolCollections;
+        return this.publicIpPoolCollections == null ? List.of() : this.publicIpPoolCollections;
     }
 
     public static Builder builder() {
@@ -86,8 +86,8 @@ public final class GetPublicIpPoolsResult {
         private String compartmentId;
         private @Nullable String displayName;
         private @Nullable List<GetPublicIpPoolsFilter> filters;
-        private String id;
-        private List<GetPublicIpPoolsPublicIpPoolCollection> publicIpPoolCollections;
+        private @Nullable String id;
+        private @Nullable List<GetPublicIpPoolsPublicIpPoolCollection> publicIpPoolCollections;
         public Builder() {}
         public Builder(GetPublicIpPoolsResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -123,13 +123,13 @@ public final class GetPublicIpPoolsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder publicIpPoolCollections(List<GetPublicIpPoolsPublicIpPoolCollection> publicIpPoolCollections) {
-            this.publicIpPoolCollections = Objects.requireNonNull(publicIpPoolCollections);
+        public Builder publicIpPoolCollections(@Nullable List<GetPublicIpPoolsPublicIpPoolCollection> publicIpPoolCollections) {
+            this.publicIpPoolCollections = publicIpPoolCollections;
             return this;
         }
         public Builder publicIpPoolCollections(GetPublicIpPoolsPublicIpPoolCollection... publicIpPoolCollections) {

@@ -53,50 +53,50 @@ export interface GetWorkspaceProjectResult {
     /**
      * The description of the aggregator.
      */
-    readonly description: string;
-    readonly id: string;
+    readonly description?: string;
+    readonly id?: string;
     /**
      * The identifier of the aggregator.
      */
-    readonly identifier: string;
+    readonly identifier?: string;
     /**
      * The key of the aggregator object.
      */
-    readonly key: string;
+    readonly key?: string;
     /**
      * A key map. If provided, the key is replaced with generated key. This structure provides mapping between user provided key and generated key.
      */
-    readonly keyMap: {[key: string]: any};
+    readonly keyMap?: {[key: string]: any};
     /**
      * A summary type containing information about the object including its key, name and when/who created/updated it.
      */
-    readonly metadatas: outputs.DataIntegration.GetWorkspaceProjectMetadata[];
+    readonly metadatas?: outputs.DataIntegration.GetWorkspaceProjectMetadata[];
     /**
      * The type of the object.
      */
-    readonly modelType: string;
+    readonly modelType?: string;
     /**
      * The model version of an object.
      */
-    readonly modelVersion: string;
+    readonly modelVersion?: string;
     /**
      * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      */
-    readonly name: string;
+    readonly name?: string;
     /**
      * The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
      */
-    readonly objectStatus: number;
+    readonly objectStatus?: number;
     /**
      * The version of the object that is used to track changes in the object instance.
      */
-    readonly objectVersion: number;
+    readonly objectVersion?: number;
     /**
      * A reference to the object's parent.
      */
-    readonly parentReves: outputs.DataIntegration.GetWorkspaceProjectParentRef[];
+    readonly parentReves?: outputs.DataIntegration.GetWorkspaceProjectParentRef[];
     readonly projectKey: string;
-    readonly registryMetadatas: outputs.DataIntegration.GetWorkspaceProjectRegistryMetadata[];
+    readonly registryMetadatas?: outputs.DataIntegration.GetWorkspaceProjectRegistryMetadata[];
     readonly workspaceId: string;
 }
 /**

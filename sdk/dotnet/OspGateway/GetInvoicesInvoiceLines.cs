@@ -154,7 +154,7 @@ namespace Pulumi.Oci.OspGateway
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         public readonly string InternalInvoiceId;
         /// <summary>
         /// The list of invoice_line_collection.
@@ -168,7 +168,7 @@ namespace Pulumi.Oci.OspGateway
 
             ImmutableArray<Outputs.GetInvoicesInvoiceLinesFilterResult> filters,
 
-            string id,
+            string? id,
 
             string internalInvoiceId,
 

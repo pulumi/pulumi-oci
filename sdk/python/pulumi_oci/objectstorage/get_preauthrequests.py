@@ -46,9 +46,6 @@ class GetPreauthrequestsResult:
     @property
     @pulumi.getter
     def bucket(self) -> str:
-        """
-        The name of the bucket.  Example: `my-new-bucket1`
-        """
         return pulumi.get(self, "bucket")
 
     @property
@@ -58,7 +55,7 @@ class GetPreauthrequestsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -67,9 +64,6 @@ class GetPreauthrequestsResult:
     @property
     @pulumi.getter
     def namespace(self) -> str:
-        """
-        The Object Storage namespace used for the request.
-        """
         return pulumi.get(self, "namespace")
 
     @property
@@ -79,10 +73,7 @@ class GetPreauthrequestsResult:
 
     @property
     @pulumi.getter(name="preauthenticatedRequests")
-    def preauthenticated_requests(self) -> Sequence['outputs.GetPreauthrequestsPreauthenticatedRequestResult']:
-        """
-        The list of preauthenticated_requests.
-        """
+    def preauthenticated_requests(self) -> Optional[Sequence['outputs.GetPreauthrequestsPreauthenticatedRequestResult']]:
         return pulumi.get(self, "preauthenticated_requests")
 
 
@@ -106,25 +97,7 @@ def get_preauthrequests(bucket: Optional[str] = None,
                         object_name_prefix: Optional[str] = None,
                         opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetPreauthrequestsResult:
     """
-    This data source provides the list of Preauthenticated Requests in Oracle Cloud Infrastructure Object Storage service.
-
-    Lists pre-authenticated requests for the bucket.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_preauthenticated_requests = oci.ObjectStorage.get_preauthrequests(bucket=var["preauthenticated_request_bucket"],
-        namespace=var["preauthenticated_request_namespace"],
-        object_name_prefix=var["preauthenticated_request_object_name_prefix"])
-    ```
-
-
-    :param str bucket: The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
-    :param str namespace: The Object Storage namespace used for the request.
-    :param str object_name_prefix: User-specified object name prefixes can be used to query and return a list of pre-authenticated requests.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['bucket'] = bucket
@@ -150,24 +123,6 @@ def get_preauthrequests_output(bucket: Optional[pulumi.Input[str]] = None,
                                object_name_prefix: Optional[pulumi.Input[Optional[str]]] = None,
                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetPreauthrequestsResult]:
     """
-    This data source provides the list of Preauthenticated Requests in Oracle Cloud Infrastructure Object Storage service.
-
-    Lists pre-authenticated requests for the bucket.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_preauthenticated_requests = oci.ObjectStorage.get_preauthrequests(bucket=var["preauthenticated_request_bucket"],
-        namespace=var["preauthenticated_request_namespace"],
-        object_name_prefix=var["preauthenticated_request_object_name_prefix"])
-    ```
-
-
-    :param str bucket: The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
-    :param str namespace: The Object Storage namespace used for the request.
-    :param str object_name_prefix: User-specified object name prefixes can be used to query and return a list of pre-authenticated requests.
+    Use this data source to access information about an existing resource.
     """
     ...

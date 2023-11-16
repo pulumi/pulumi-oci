@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Security Zone resource in Oracle Cloud Infrastructure Cloud Guard service.
@@ -69,7 +68,7 @@ type SecurityZone struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) The security zone's description
-	Description pulumi.StringOutput `pulumi:"description"`
+	Description pulumi.StringPtrOutput `pulumi:"description"`
 	// (Updatable) The security zone's name
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -79,20 +78,20 @@ type SecurityZone struct {
 	// List of inherited compartments
 	InheritedByCompartments pulumi.StringArrayOutput `pulumi:"inheritedByCompartments"`
 	// A message describing the current state in more detail. For example, this can be used to provide actionable information for a zone in the `Failed` state.
-	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrOutput `pulumi:"lifecycleDetails"`
 	// (Updatable) The OCID of the recipe (`SecurityRecipe`) for the security zone
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SecurityZoneRecipeId pulumi.StringOutput `pulumi:"securityZoneRecipeId"`
 	// The OCID of the target associated with the security zone
-	SecurityZoneTargetId pulumi.StringOutput `pulumi:"securityZoneTargetId"`
+	SecurityZoneTargetId pulumi.StringPtrOutput `pulumi:"securityZoneTargetId"`
 	// The current state of the security zone
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// The time the security zone was created. An RFC3339 formatted datetime string.
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The time the security zone was last updated. An RFC3339 formatted datetime string.
-	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 }
 
 // NewSecurityZone registers a new resource with the given unique name, arguments, and options.
@@ -265,12 +264,6 @@ func (i *SecurityZone) ToSecurityZoneOutputWithContext(ctx context.Context) Secu
 	return pulumi.ToOutputWithContext(ctx, i).(SecurityZoneOutput)
 }
 
-func (i *SecurityZone) ToOutput(ctx context.Context) pulumix.Output[*SecurityZone] {
-	return pulumix.Output[*SecurityZone]{
-		OutputState: i.ToSecurityZoneOutputWithContext(ctx).OutputState,
-	}
-}
-
 // SecurityZoneArrayInput is an input type that accepts SecurityZoneArray and SecurityZoneArrayOutput values.
 // You can construct a concrete instance of `SecurityZoneArrayInput` via:
 //
@@ -294,12 +287,6 @@ func (i SecurityZoneArray) ToSecurityZoneArrayOutput() SecurityZoneArrayOutput {
 
 func (i SecurityZoneArray) ToSecurityZoneArrayOutputWithContext(ctx context.Context) SecurityZoneArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(SecurityZoneArrayOutput)
-}
-
-func (i SecurityZoneArray) ToOutput(ctx context.Context) pulumix.Output[[]*SecurityZone] {
-	return pulumix.Output[[]*SecurityZone]{
-		OutputState: i.ToSecurityZoneArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // SecurityZoneMapInput is an input type that accepts SecurityZoneMap and SecurityZoneMapOutput values.
@@ -327,12 +314,6 @@ func (i SecurityZoneMap) ToSecurityZoneMapOutputWithContext(ctx context.Context)
 	return pulumi.ToOutputWithContext(ctx, i).(SecurityZoneMapOutput)
 }
 
-func (i SecurityZoneMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*SecurityZone] {
-	return pulumix.Output[map[string]*SecurityZone]{
-		OutputState: i.ToSecurityZoneMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type SecurityZoneOutput struct{ *pulumi.OutputState }
 
 func (SecurityZoneOutput) ElementType() reflect.Type {
@@ -347,12 +328,6 @@ func (o SecurityZoneOutput) ToSecurityZoneOutputWithContext(ctx context.Context)
 	return o
 }
 
-func (o SecurityZoneOutput) ToOutput(ctx context.Context) pulumix.Output[*SecurityZone] {
-	return pulumix.Output[*SecurityZone]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) The OCID of the compartment for the security zone
 func (o SecurityZoneOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *SecurityZone) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
@@ -364,8 +339,8 @@ func (o SecurityZoneOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // (Updatable) The security zone's description
-func (o SecurityZoneOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v *SecurityZone) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
+func (o SecurityZoneOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SecurityZone) pulumi.StringPtrOutput { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The security zone's name
@@ -386,8 +361,8 @@ func (o SecurityZoneOutput) InheritedByCompartments() pulumi.StringArrayOutput {
 }
 
 // A message describing the current state in more detail. For example, this can be used to provide actionable information for a zone in the `Failed` state.
-func (o SecurityZoneOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v *SecurityZone) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o SecurityZoneOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SecurityZone) pulumi.StringPtrOutput { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The OCID of the recipe (`SecurityRecipe`) for the security zone
@@ -399,23 +374,23 @@ func (o SecurityZoneOutput) SecurityZoneRecipeId() pulumi.StringOutput {
 }
 
 // The OCID of the target associated with the security zone
-func (o SecurityZoneOutput) SecurityZoneTargetId() pulumi.StringOutput {
-	return o.ApplyT(func(v *SecurityZone) pulumi.StringOutput { return v.SecurityZoneTargetId }).(pulumi.StringOutput)
+func (o SecurityZoneOutput) SecurityZoneTargetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SecurityZone) pulumi.StringPtrOutput { return v.SecurityZoneTargetId }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the security zone
-func (o SecurityZoneOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *SecurityZone) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o SecurityZoneOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SecurityZone) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The time the security zone was created. An RFC3339 formatted datetime string.
-func (o SecurityZoneOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *SecurityZone) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o SecurityZoneOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SecurityZone) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time the security zone was last updated. An RFC3339 formatted datetime string.
-func (o SecurityZoneOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *SecurityZone) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o SecurityZoneOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SecurityZone) pulumi.StringPtrOutput { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type SecurityZoneArrayOutput struct{ *pulumi.OutputState }
@@ -430,12 +405,6 @@ func (o SecurityZoneArrayOutput) ToSecurityZoneArrayOutput() SecurityZoneArrayOu
 
 func (o SecurityZoneArrayOutput) ToSecurityZoneArrayOutputWithContext(ctx context.Context) SecurityZoneArrayOutput {
 	return o
-}
-
-func (o SecurityZoneArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*SecurityZone] {
-	return pulumix.Output[[]*SecurityZone]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o SecurityZoneArrayOutput) Index(i pulumi.IntInput) SecurityZoneOutput {
@@ -456,12 +425,6 @@ func (o SecurityZoneMapOutput) ToSecurityZoneMapOutput() SecurityZoneMapOutput {
 
 func (o SecurityZoneMapOutput) ToSecurityZoneMapOutputWithContext(ctx context.Context) SecurityZoneMapOutput {
 	return o
-}
-
-func (o SecurityZoneMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*SecurityZone] {
-	return pulumix.Output[map[string]*SecurityZone]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o SecurityZoneMapOutput) MapIndex(k pulumi.StringInput) SecurityZoneOutput {

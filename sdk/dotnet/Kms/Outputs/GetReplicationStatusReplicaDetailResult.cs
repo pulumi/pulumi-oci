@@ -16,17 +16,17 @@ namespace Pulumi.Oci.Kms.Outputs
         /// <summary>
         /// The replica region
         /// </summary>
-        public readonly string Region;
+        public readonly string? Region;
         /// <summary>
         /// Replication status associated with a replicationId
         /// </summary>
-        public readonly string Status;
+        public readonly string? Status;
 
         [OutputConstructor]
         private GetReplicationStatusReplicaDetailResult(
-            string region,
+            string? region,
 
-            string status)
+            string? status)
         {
             Region = region;
             Status = status;

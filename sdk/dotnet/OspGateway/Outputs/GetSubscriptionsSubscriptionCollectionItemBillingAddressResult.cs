@@ -16,161 +16,161 @@ namespace Pulumi.Oci.OspGateway.Outputs
         /// <summary>
         /// Address identifier.
         /// </summary>
-        public readonly string AddressKey;
+        public readonly string? AddressKey;
         /// <summary>
         /// Name of the city.
         /// </summary>
-        public readonly string City;
+        public readonly string? City;
         /// <summary>
         /// Name of the customer company.
         /// </summary>
-        public readonly string CompanyName;
+        public readonly string? CompanyName;
         /// <summary>
         /// Contributor class of the customer company.
         /// </summary>
-        public readonly string ContributorClass;
+        public readonly string? ContributorClass;
         /// <summary>
         /// Country of the address.
         /// </summary>
-        public readonly string Country;
+        public readonly string? Country;
         /// <summary>
         /// County of the address.
         /// </summary>
-        public readonly string County;
+        public readonly string? County;
         /// <summary>
         /// Department name of the customer company.
         /// </summary>
-        public readonly string DepartmentName;
+        public readonly string? DepartmentName;
         /// <summary>
         /// The email address of the paypal user.
         /// </summary>
-        public readonly string EmailAddress;
+        public readonly string? EmailAddress;
         /// <summary>
         /// First name of the paypal user.
         /// </summary>
-        public readonly string FirstName;
+        public readonly string? FirstName;
         /// <summary>
         /// Internal number of the customer company.
         /// </summary>
-        public readonly string InternalNumber;
+        public readonly string? InternalNumber;
         /// <summary>
         /// Job title of the contact person.
         /// </summary>
-        public readonly string JobTitle;
+        public readonly string? JobTitle;
         /// <summary>
         /// Last name of the paypal user.
         /// </summary>
-        public readonly string LastName;
+        public readonly string? LastName;
         /// <summary>
         /// Address line 1.
         /// </summary>
-        public readonly string Line1;
+        public readonly string? Line1;
         /// <summary>
         /// Address line 2.
         /// </summary>
-        public readonly string Line2;
+        public readonly string? Line2;
         /// <summary>
         /// Address line 3.
         /// </summary>
-        public readonly string Line3;
+        public readonly string? Line3;
         /// <summary>
         /// Address line 4.
         /// </summary>
-        public readonly string Line4;
+        public readonly string? Line4;
         /// <summary>
         /// Middle name of the contact person.
         /// </summary>
-        public readonly string MiddleName;
+        public readonly string? MiddleName;
         /// <summary>
         /// Municipal Inscription.
         /// </summary>
-        public readonly string MunicipalInscription;
+        public readonly string? MunicipalInscription;
         /// <summary>
         /// Phone country code of the contact person.
         /// </summary>
-        public readonly string PhoneCountryCode;
+        public readonly string? PhoneCountryCode;
         /// <summary>
         /// Phone number of the contact person.
         /// </summary>
-        public readonly string PhoneNumber;
+        public readonly string? PhoneNumber;
         /// <summary>
         /// Post code of the address.
         /// </summary>
-        public readonly string PostalCode;
+        public readonly string? PostalCode;
         /// <summary>
         /// Province of the address.
         /// </summary>
-        public readonly string Province;
+        public readonly string? Province;
         /// <summary>
         /// State of the address.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// State Inscription.
         /// </summary>
-        public readonly string StateInscription;
+        public readonly string? StateInscription;
         /// <summary>
         /// Street name of the address.
         /// </summary>
-        public readonly string StreetName;
+        public readonly string? StreetName;
         /// <summary>
         /// Street number of the address.
         /// </summary>
-        public readonly string StreetNumber;
+        public readonly string? StreetNumber;
 
         [OutputConstructor]
         private GetSubscriptionsSubscriptionCollectionItemBillingAddressResult(
-            string addressKey,
+            string? addressKey,
 
-            string city,
+            string? city,
 
-            string companyName,
+            string? companyName,
 
-            string contributorClass,
+            string? contributorClass,
 
-            string country,
+            string? country,
 
-            string county,
+            string? county,
 
-            string departmentName,
+            string? departmentName,
 
-            string emailAddress,
+            string? emailAddress,
 
-            string firstName,
+            string? firstName,
 
-            string internalNumber,
+            string? internalNumber,
 
-            string jobTitle,
+            string? jobTitle,
 
-            string lastName,
+            string? lastName,
 
-            string line1,
+            string? line1,
 
-            string line2,
+            string? line2,
 
-            string line3,
+            string? line3,
 
-            string line4,
+            string? line4,
 
-            string middleName,
+            string? middleName,
 
-            string municipalInscription,
+            string? municipalInscription,
 
-            string phoneCountryCode,
+            string? phoneCountryCode,
 
-            string phoneNumber,
+            string? phoneNumber,
 
-            string postalCode,
+            string? postalCode,
 
-            string province,
+            string? province,
 
-            string state,
+            string? state,
 
-            string stateInscription,
+            string? stateInscription,
 
-            string streetName,
+            string? streetName,
 
-            string streetNumber)
+            string? streetNumber)
         {
             AddressKey = addressKey;
             City = city;

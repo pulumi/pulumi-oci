@@ -47,64 +47,64 @@ export interface GetNotebookSessionResult {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the notebook session's compartment.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the notebook session.
      */
-    readonly createdBy: string;
+    readonly createdBy?: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * A user-friendly display name for the resource. It does not have to be unique and can be modified. Avoid entering confidential information. Example: `My NotebookSession`
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the notebook session.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Details about the state of the notebook session.
      */
-    readonly lifecycleDetails: string;
+    readonly lifecycleDetails?: string;
     /**
      * Details for the notebook session configuration.
      */
-    readonly notebookSessionConfigDetails: outputs.DataScience.GetNotebookSessionNotebookSessionConfigDetail[];
+    readonly notebookSessionConfigDetails?: outputs.DataScience.GetNotebookSessionNotebookSessionConfigDetail[];
     /**
      * Details for the notebook session configuration.
      */
-    readonly notebookSessionConfigurationDetails: outputs.DataScience.GetNotebookSessionNotebookSessionConfigurationDetail[];
+    readonly notebookSessionConfigurationDetails?: outputs.DataScience.GetNotebookSessionNotebookSessionConfigurationDetail[];
     readonly notebookSessionId: string;
     /**
      * Notebook Session runtime configuration details.
      */
-    readonly notebookSessionRuntimeConfigDetails: outputs.DataScience.GetNotebookSessionNotebookSessionRuntimeConfigDetail[];
+    readonly notebookSessionRuntimeConfigDetails?: outputs.DataScience.GetNotebookSessionNotebookSessionRuntimeConfigDetail[];
     /**
      * Collection of NotebookSessionStorageMountConfigurationDetails.
      */
-    readonly notebookSessionStorageMountConfigurationDetailsLists: outputs.DataScience.GetNotebookSessionNotebookSessionStorageMountConfigurationDetailsList[];
+    readonly notebookSessionStorageMountConfigurationDetailsLists?: outputs.DataScience.GetNotebookSessionNotebookSessionStorageMountConfigurationDetailsList[];
     /**
      * The URL to interact with the notebook session.
      */
-    readonly notebookSessionUrl: string;
+    readonly notebookSessionUrl?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project associated with the notebook session.
      */
-    readonly projectId: string;
+    readonly projectId?: string;
     /**
      * The state of the notebook session.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
 }
 /**
  * This data source provides details about a specific Notebook Session resource in Oracle Cloud Infrastructure Data Science service.

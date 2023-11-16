@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Managed Databases User Proxy User resource in Oracle Cloud Infrastructure Database Management service.
@@ -66,7 +65,7 @@ type GetManagedDatabasesUserProxyUserArgs struct {
 // A collection of values returned by getManagedDatabasesUserProxyUser.
 type GetManagedDatabasesUserProxyUserResult struct {
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// An array of user resources.
 	Items             []GetManagedDatabasesUserProxyUserItem `pulumi:"items"`
 	ManagedDatabaseId string                                 `pulumi:"managedDatabaseId"`
@@ -117,15 +116,9 @@ func (o GetManagedDatabasesUserProxyUserResultOutput) ToGetManagedDatabasesUserP
 	return o
 }
 
-func (o GetManagedDatabasesUserProxyUserResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagedDatabasesUserProxyUserResult] {
-	return pulumix.Output[GetManagedDatabasesUserProxyUserResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The provider-assigned unique ID for this managed resource.
-func (o GetManagedDatabasesUserProxyUserResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedDatabasesUserProxyUserResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetManagedDatabasesUserProxyUserResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedDatabasesUserProxyUserResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // An array of user resources.

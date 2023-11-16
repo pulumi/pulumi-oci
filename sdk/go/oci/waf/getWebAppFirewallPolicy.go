@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Web App Firewall Policy resource in Oracle Cloud Infrastructure Waf service.
@@ -62,17 +61,17 @@ type GetWebAppFirewallPolicyResult struct {
 	// Predefined actions for use in multiple different rules. Not all actions are supported in every module. Some actions terminate further execution of modules and rules in a module and some do not. Actions names must be unique within this array.
 	Actions []GetWebAppFirewallPolicyAction `pulumi:"actions"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// WebAppFirewallPolicy display name, can be renamed.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the WebAppFirewallPolicy.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in FAILED state.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// Module that allows inspection of HTTP request properties and to return a defined HTTP response. In this module, rules with the name 'Default Action' are not allowed, since this name is reserved for default action logs.
 	RequestAccessControls []GetWebAppFirewallPolicyRequestAccessControl `pulumi:"requestAccessControls"`
 	// Module that allows to enable OCI-managed protection capabilities for incoming HTTP requests.
@@ -84,14 +83,14 @@ type GetWebAppFirewallPolicyResult struct {
 	// Module that allows to enable OCI-managed protection capabilities for HTTP responses.
 	ResponseProtections []GetWebAppFirewallPolicyResponseProtection `pulumi:"responseProtections"`
 	// The current state of the WebAppFirewallPolicy.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The time the WebAppFirewallPolicy was created. An RFC3339 formatted datetime string.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time the WebAppFirewallPolicy was updated. An RFC3339 formatted datetime string.
-	TimeUpdated            string `pulumi:"timeUpdated"`
-	WebAppFirewallPolicyId string `pulumi:"webAppFirewallPolicyId"`
+	TimeUpdated            *string `pulumi:"timeUpdated"`
+	WebAppFirewallPolicyId string  `pulumi:"webAppFirewallPolicyId"`
 }
 
 func GetWebAppFirewallPolicyOutput(ctx *pulumi.Context, args GetWebAppFirewallPolicyOutputArgs, opts ...pulumi.InvokeOption) GetWebAppFirewallPolicyResultOutput {
@@ -132,20 +131,14 @@ func (o GetWebAppFirewallPolicyResultOutput) ToGetWebAppFirewallPolicyResultOutp
 	return o
 }
 
-func (o GetWebAppFirewallPolicyResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetWebAppFirewallPolicyResult] {
-	return pulumix.Output[GetWebAppFirewallPolicyResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Predefined actions for use in multiple different rules. Not all actions are supported in every module. Some actions terminate further execution of modules and rules in a module and some do not. Actions names must be unique within this array.
 func (o GetWebAppFirewallPolicyResultOutput) Actions() GetWebAppFirewallPolicyActionArrayOutput {
 	return o.ApplyT(func(v GetWebAppFirewallPolicyResult) []GetWebAppFirewallPolicyAction { return v.Actions }).(GetWebAppFirewallPolicyActionArrayOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-func (o GetWebAppFirewallPolicyResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWebAppFirewallPolicyResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetWebAppFirewallPolicyResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWebAppFirewallPolicyResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -154,8 +147,8 @@ func (o GetWebAppFirewallPolicyResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // WebAppFirewallPolicy display name, can be renamed.
-func (o GetWebAppFirewallPolicyResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWebAppFirewallPolicyResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetWebAppFirewallPolicyResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWebAppFirewallPolicyResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -164,13 +157,13 @@ func (o GetWebAppFirewallPolicyResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the WebAppFirewallPolicy.
-func (o GetWebAppFirewallPolicyResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWebAppFirewallPolicyResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetWebAppFirewallPolicyResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWebAppFirewallPolicyResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in FAILED state.
-func (o GetWebAppFirewallPolicyResultOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWebAppFirewallPolicyResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o GetWebAppFirewallPolicyResultOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWebAppFirewallPolicyResult) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // Module that allows inspection of HTTP request properties and to return a defined HTTP response. In this module, rules with the name 'Default Action' are not allowed, since this name is reserved for default action logs.
@@ -209,8 +202,8 @@ func (o GetWebAppFirewallPolicyResultOutput) ResponseProtections() GetWebAppFire
 }
 
 // The current state of the WebAppFirewallPolicy.
-func (o GetWebAppFirewallPolicyResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWebAppFirewallPolicyResult) string { return v.State }).(pulumi.StringOutput)
+func (o GetWebAppFirewallPolicyResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWebAppFirewallPolicyResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -219,13 +212,13 @@ func (o GetWebAppFirewallPolicyResultOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The time the WebAppFirewallPolicy was created. An RFC3339 formatted datetime string.
-func (o GetWebAppFirewallPolicyResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWebAppFirewallPolicyResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetWebAppFirewallPolicyResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWebAppFirewallPolicyResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time the WebAppFirewallPolicy was updated. An RFC3339 formatted datetime string.
-func (o GetWebAppFirewallPolicyResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWebAppFirewallPolicyResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o GetWebAppFirewallPolicyResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWebAppFirewallPolicyResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 func (o GetWebAppFirewallPolicyResultOutput) WebAppFirewallPolicyId() pulumi.StringOutput {

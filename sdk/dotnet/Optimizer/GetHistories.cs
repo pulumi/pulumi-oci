@@ -240,7 +240,7 @@ namespace Pulumi.Oci.Optimizer
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The name assigned to the resource.
         /// </summary>
@@ -276,7 +276,7 @@ namespace Pulumi.Oci.Optimizer
 
             ImmutableArray<Outputs.GetHistoriesHistoryCollectionResult> historyCollections,
 
-            string id,
+            string? id,
 
             string? name,
 

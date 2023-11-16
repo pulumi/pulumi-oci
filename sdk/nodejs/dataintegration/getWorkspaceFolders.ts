@@ -85,11 +85,11 @@ export interface GetWorkspaceFoldersResult {
     /**
      * The list of folder_summary_collection.
      */
-    readonly folderSummaryCollections: outputs.DataIntegration.GetWorkspaceFoldersFolderSummaryCollection[];
+    readonly folderSummaryCollections?: outputs.DataIntegration.GetWorkspaceFoldersFolderSummaryCollection[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The identifier of the aggregator.
      */

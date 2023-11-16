@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetManagementStationMirrorsMirrorsCollectionItem {
@@ -14,111 +16,111 @@ public final class GetManagementStationMirrorsMirrorsCollectionItem {
      * @return The architecture type supported by the Software Source
      * 
      */
-    private String archType;
+    private @Nullable String archType;
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable.  Example: `My new resource`
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return OCID of a software source
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The current log from the management station plugin.
      * 
      */
-    private String log;
+    private @Nullable String log;
     /**
      * @return The OS family the Software Source belongs to
      * 
      */
-    private String osFamily;
+    private @Nullable String osFamily;
     /**
      * @return A decimal number representing the completness percentage
      * 
      */
-    private Integer percentage;
+    private @Nullable Integer percentage;
     /**
      * @return Current state of the mirror
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return Timestamp of the last time the mirror was sync
      * 
      */
-    private String timeLastSynced;
+    private @Nullable String timeLastSynced;
     /**
      * @return Type of the mirror
      * 
      */
-    private String type;
+    private @Nullable String type;
 
     private GetManagementStationMirrorsMirrorsCollectionItem() {}
     /**
      * @return The architecture type supported by the Software Source
      * 
      */
-    public String archType() {
-        return this.archType;
+    public Optional<String> archType() {
+        return Optional.ofNullable(this.archType);
     }
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable.  Example: `My new resource`
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return OCID of a software source
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The current log from the management station plugin.
      * 
      */
-    public String log() {
-        return this.log;
+    public Optional<String> log() {
+        return Optional.ofNullable(this.log);
     }
     /**
      * @return The OS family the Software Source belongs to
      * 
      */
-    public String osFamily() {
-        return this.osFamily;
+    public Optional<String> osFamily() {
+        return Optional.ofNullable(this.osFamily);
     }
     /**
      * @return A decimal number representing the completness percentage
      * 
      */
-    public Integer percentage() {
-        return this.percentage;
+    public Optional<Integer> percentage() {
+        return Optional.ofNullable(this.percentage);
     }
     /**
      * @return Current state of the mirror
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return Timestamp of the last time the mirror was sync
      * 
      */
-    public String timeLastSynced() {
-        return this.timeLastSynced;
+    public Optional<String> timeLastSynced() {
+        return Optional.ofNullable(this.timeLastSynced);
     }
     /**
      * @return Type of the mirror
      * 
      */
-    public String type() {
-        return this.type;
+    public Optional<String> type() {
+        return Optional.ofNullable(this.type);
     }
 
     public static Builder builder() {
@@ -130,15 +132,15 @@ public final class GetManagementStationMirrorsMirrorsCollectionItem {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String archType;
-        private String displayName;
-        private String id;
-        private String log;
-        private String osFamily;
-        private Integer percentage;
-        private String state;
-        private String timeLastSynced;
-        private String type;
+        private @Nullable String archType;
+        private @Nullable String displayName;
+        private @Nullable String id;
+        private @Nullable String log;
+        private @Nullable String osFamily;
+        private @Nullable Integer percentage;
+        private @Nullable String state;
+        private @Nullable String timeLastSynced;
+        private @Nullable String type;
         public Builder() {}
         public Builder(GetManagementStationMirrorsMirrorsCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -154,48 +156,48 @@ public final class GetManagementStationMirrorsMirrorsCollectionItem {
         }
 
         @CustomType.Setter
-        public Builder archType(String archType) {
-            this.archType = Objects.requireNonNull(archType);
+        public Builder archType(@Nullable String archType) {
+            this.archType = archType;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder log(String log) {
-            this.log = Objects.requireNonNull(log);
+        public Builder log(@Nullable String log) {
+            this.log = log;
             return this;
         }
         @CustomType.Setter
-        public Builder osFamily(String osFamily) {
-            this.osFamily = Objects.requireNonNull(osFamily);
+        public Builder osFamily(@Nullable String osFamily) {
+            this.osFamily = osFamily;
             return this;
         }
         @CustomType.Setter
-        public Builder percentage(Integer percentage) {
-            this.percentage = Objects.requireNonNull(percentage);
+        public Builder percentage(@Nullable Integer percentage) {
+            this.percentage = percentage;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder timeLastSynced(String timeLastSynced) {
-            this.timeLastSynced = Objects.requireNonNull(timeLastSynced);
+        public Builder timeLastSynced(@Nullable String timeLastSynced) {
+            this.timeLastSynced = timeLastSynced;
             return this;
         }
         @CustomType.Setter
-        public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+        public Builder type(@Nullable String type) {
+            this.type = type;
             return this;
         }
         public GetManagementStationMirrorsMirrorsCollectionItem build() {

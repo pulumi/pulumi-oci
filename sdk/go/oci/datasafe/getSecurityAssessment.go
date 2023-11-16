@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Security Assessment resource in Oracle Cloud Infrastructure Data Safe service.
@@ -60,57 +59,57 @@ type LookupSecurityAssessmentArgs struct {
 // A collection of values returned by getSecurityAssessment.
 type LookupSecurityAssessmentResult struct {
 	// The OCID of the compartment that contains the security assessment.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The description of the security assessment.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// The display name of the security assessment.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The OCID of the security assessment.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// List containing maps as values. Example: `{"Operations": [ {"CostCenter": "42"} ] }`
 	IgnoredAssessmentIds []string `pulumi:"ignoredAssessmentIds"`
 	// List containing maps as values. Example: `{"Operations": [ {"CostCenter": "42"} ] }`
 	IgnoredTargets []string `pulumi:"ignoredTargets"`
 	// Indicates whether or not the security assessment is set as a baseline. This is applicable only for saved security assessments.
-	IsBaseline bool `pulumi:"isBaseline"`
+	IsBaseline *bool `pulumi:"isBaseline"`
 	// Indicates whether or not the security assessment deviates from the baseline.
-	IsDeviatedFromBaseline bool `pulumi:"isDeviatedFromBaseline"`
+	IsDeviatedFromBaseline *bool `pulumi:"isDeviatedFromBaseline"`
 	// The OCID of the baseline against which the latest security assessment was compared.
-	LastComparedBaselineId string `pulumi:"lastComparedBaselineId"`
+	LastComparedBaselineId *string `pulumi:"lastComparedBaselineId"`
 	// Details about the current state of the security assessment.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// The summary of findings for the security assessment.
-	Link string `pulumi:"link"`
+	Link *string `pulumi:"link"`
 	// Schedule of the assessment that runs periodically in the specified format: - <version-string>;<version-specific-schedule>
-	Schedule string `pulumi:"schedule"`
+	Schedule *string `pulumi:"schedule"`
 	// The OCID of the security assessment that is responsible for creating this scheduled save assessment.
-	ScheduleSecurityAssessmentId string `pulumi:"scheduleSecurityAssessmentId"`
-	SecurityAssessmentId         string `pulumi:"securityAssessmentId"`
+	ScheduleSecurityAssessmentId *string `pulumi:"scheduleSecurityAssessmentId"`
+	SecurityAssessmentId         string  `pulumi:"securityAssessmentId"`
 	// The current state of the security assessment.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// Statistics showing the number of findings for each category grouped by risk levels for all the targets in the specified security assessment.
 	Statistics []GetSecurityAssessmentStatistic `pulumi:"statistics"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
-	TargetId   string                 `pulumi:"targetId"`
+	TargetId   *string                `pulumi:"targetId"`
 	// Array of database target OCIDs.
 	TargetIds []string `pulumi:"targetIds"`
 	// The version of the target database.
-	TargetVersion string `pulumi:"targetVersion"`
+	TargetVersion *string `pulumi:"targetVersion"`
 	// The date and time the security assessment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The date and time the security assessment was last executed, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-	TimeLastAssessed string `pulumi:"timeLastAssessed"`
+	TimeLastAssessed *string `pulumi:"timeLastAssessed"`
 	// The date and time the security assessment was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 	// Indicates whether the security assessment was created by system or by a user.
-	TriggeredBy string `pulumi:"triggeredBy"`
+	TriggeredBy *string `pulumi:"triggeredBy"`
 	// The type of this security assessment. The possible types are:
-	Type string `pulumi:"type"`
+	Type *string `pulumi:"type"`
 }
 
 func LookupSecurityAssessmentOutput(ctx *pulumi.Context, args LookupSecurityAssessmentOutputArgs, opts ...pulumi.InvokeOption) LookupSecurityAssessmentResultOutput {
@@ -151,15 +150,9 @@ func (o LookupSecurityAssessmentResultOutput) ToLookupSecurityAssessmentResultOu
 	return o
 }
 
-func (o LookupSecurityAssessmentResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupSecurityAssessmentResult] {
-	return pulumix.Output[LookupSecurityAssessmentResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the compartment that contains the security assessment.
-func (o LookupSecurityAssessmentResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSecurityAssessmentResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupSecurityAssessmentResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSecurityAssessmentResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
@@ -168,13 +161,13 @@ func (o LookupSecurityAssessmentResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // The description of the security assessment.
-func (o LookupSecurityAssessmentResultOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSecurityAssessmentResult) string { return v.Description }).(pulumi.StringOutput)
+func (o LookupSecurityAssessmentResultOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSecurityAssessmentResult) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // The display name of the security assessment.
-func (o LookupSecurityAssessmentResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSecurityAssessmentResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupSecurityAssessmentResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSecurityAssessmentResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
@@ -183,8 +176,8 @@ func (o LookupSecurityAssessmentResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The OCID of the security assessment.
-func (o LookupSecurityAssessmentResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSecurityAssessmentResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupSecurityAssessmentResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSecurityAssessmentResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // List containing maps as values. Example: `{"Operations": [ {"CostCenter": "42"} ] }`
@@ -198,38 +191,38 @@ func (o LookupSecurityAssessmentResultOutput) IgnoredTargets() pulumi.StringArra
 }
 
 // Indicates whether or not the security assessment is set as a baseline. This is applicable only for saved security assessments.
-func (o LookupSecurityAssessmentResultOutput) IsBaseline() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupSecurityAssessmentResult) bool { return v.IsBaseline }).(pulumi.BoolOutput)
+func (o LookupSecurityAssessmentResultOutput) IsBaseline() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupSecurityAssessmentResult) *bool { return v.IsBaseline }).(pulumi.BoolPtrOutput)
 }
 
 // Indicates whether or not the security assessment deviates from the baseline.
-func (o LookupSecurityAssessmentResultOutput) IsDeviatedFromBaseline() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupSecurityAssessmentResult) bool { return v.IsDeviatedFromBaseline }).(pulumi.BoolOutput)
+func (o LookupSecurityAssessmentResultOutput) IsDeviatedFromBaseline() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupSecurityAssessmentResult) *bool { return v.IsDeviatedFromBaseline }).(pulumi.BoolPtrOutput)
 }
 
 // The OCID of the baseline against which the latest security assessment was compared.
-func (o LookupSecurityAssessmentResultOutput) LastComparedBaselineId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSecurityAssessmentResult) string { return v.LastComparedBaselineId }).(pulumi.StringOutput)
+func (o LookupSecurityAssessmentResultOutput) LastComparedBaselineId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSecurityAssessmentResult) *string { return v.LastComparedBaselineId }).(pulumi.StringPtrOutput)
 }
 
 // Details about the current state of the security assessment.
-func (o LookupSecurityAssessmentResultOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSecurityAssessmentResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o LookupSecurityAssessmentResultOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSecurityAssessmentResult) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // The summary of findings for the security assessment.
-func (o LookupSecurityAssessmentResultOutput) Link() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSecurityAssessmentResult) string { return v.Link }).(pulumi.StringOutput)
+func (o LookupSecurityAssessmentResultOutput) Link() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSecurityAssessmentResult) *string { return v.Link }).(pulumi.StringPtrOutput)
 }
 
 // Schedule of the assessment that runs periodically in the specified format: - <version-string>;<version-specific-schedule>
-func (o LookupSecurityAssessmentResultOutput) Schedule() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSecurityAssessmentResult) string { return v.Schedule }).(pulumi.StringOutput)
+func (o LookupSecurityAssessmentResultOutput) Schedule() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSecurityAssessmentResult) *string { return v.Schedule }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the security assessment that is responsible for creating this scheduled save assessment.
-func (o LookupSecurityAssessmentResultOutput) ScheduleSecurityAssessmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSecurityAssessmentResult) string { return v.ScheduleSecurityAssessmentId }).(pulumi.StringOutput)
+func (o LookupSecurityAssessmentResultOutput) ScheduleSecurityAssessmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSecurityAssessmentResult) *string { return v.ScheduleSecurityAssessmentId }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupSecurityAssessmentResultOutput) SecurityAssessmentId() pulumi.StringOutput {
@@ -237,8 +230,8 @@ func (o LookupSecurityAssessmentResultOutput) SecurityAssessmentId() pulumi.Stri
 }
 
 // The current state of the security assessment.
-func (o LookupSecurityAssessmentResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSecurityAssessmentResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupSecurityAssessmentResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSecurityAssessmentResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Statistics showing the number of findings for each category grouped by risk levels for all the targets in the specified security assessment.
@@ -251,8 +244,8 @@ func (o LookupSecurityAssessmentResultOutput) SystemTags() pulumi.MapOutput {
 	return o.ApplyT(func(v LookupSecurityAssessmentResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
 }
 
-func (o LookupSecurityAssessmentResultOutput) TargetId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSecurityAssessmentResult) string { return v.TargetId }).(pulumi.StringOutput)
+func (o LookupSecurityAssessmentResultOutput) TargetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSecurityAssessmentResult) *string { return v.TargetId }).(pulumi.StringPtrOutput)
 }
 
 // Array of database target OCIDs.
@@ -261,33 +254,33 @@ func (o LookupSecurityAssessmentResultOutput) TargetIds() pulumi.StringArrayOutp
 }
 
 // The version of the target database.
-func (o LookupSecurityAssessmentResultOutput) TargetVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSecurityAssessmentResult) string { return v.TargetVersion }).(pulumi.StringOutput)
+func (o LookupSecurityAssessmentResultOutput) TargetVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSecurityAssessmentResult) *string { return v.TargetVersion }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the security assessment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-func (o LookupSecurityAssessmentResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSecurityAssessmentResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupSecurityAssessmentResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSecurityAssessmentResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the security assessment was last executed, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-func (o LookupSecurityAssessmentResultOutput) TimeLastAssessed() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSecurityAssessmentResult) string { return v.TimeLastAssessed }).(pulumi.StringOutput)
+func (o LookupSecurityAssessmentResultOutput) TimeLastAssessed() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSecurityAssessmentResult) *string { return v.TimeLastAssessed }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the security assessment was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-func (o LookupSecurityAssessmentResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSecurityAssessmentResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o LookupSecurityAssessmentResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSecurityAssessmentResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 // Indicates whether the security assessment was created by system or by a user.
-func (o LookupSecurityAssessmentResultOutput) TriggeredBy() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSecurityAssessmentResult) string { return v.TriggeredBy }).(pulumi.StringOutput)
+func (o LookupSecurityAssessmentResultOutput) TriggeredBy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSecurityAssessmentResult) *string { return v.TriggeredBy }).(pulumi.StringPtrOutput)
 }
 
 // The type of this security assessment. The possible types are:
-func (o LookupSecurityAssessmentResultOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSecurityAssessmentResult) string { return v.Type }).(pulumi.StringOutput)
+func (o LookupSecurityAssessmentResultOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSecurityAssessmentResult) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
 
 func init() {

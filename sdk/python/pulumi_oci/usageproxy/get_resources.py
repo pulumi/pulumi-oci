@@ -60,7 +60,7 @@ class GetResourcesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -68,10 +68,7 @@ class GetResourcesResult:
 
     @property
     @pulumi.getter(name="resourcesCollections")
-    def resources_collections(self) -> Sequence['outputs.GetResourcesResourcesCollectionResult']:
-        """
-        The list of resources_collection.
-        """
+    def resources_collections(self) -> Optional[Sequence['outputs.GetResourcesResourcesCollectionResult']]:
         return pulumi.get(self, "resources_collections")
 
     @property
@@ -100,26 +97,7 @@ def get_resources(compartment_id: Optional[str] = None,
                   service_name: Optional[str] = None,
                   opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetResourcesResult:
     """
-    This data source provides the list of Resources in Oracle Cloud Infrastructure Usage Proxy service.
-
-    Returns the resource details for a service
-    > **Important**: Calls to this API will only succeed against the endpoint in the home region.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_resources = oci.UsageProxy.get_resources(compartment_id=var["compartment_id"],
-        service_name=oci_core_service["test_service"]["name"],
-        entitlement_id=oci_usage_proxy_entitlement["test_entitlement"]["id"])
-    ```
-
-
-    :param str compartment_id: The OCID of the root compartment.
-    :param str entitlement_id: Subscription or entitlement Id.
-    :param str service_name: Service Name.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -145,25 +123,6 @@ def get_resources_output(compartment_id: Optional[pulumi.Input[str]] = None,
                          service_name: Optional[pulumi.Input[str]] = None,
                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetResourcesResult]:
     """
-    This data source provides the list of Resources in Oracle Cloud Infrastructure Usage Proxy service.
-
-    Returns the resource details for a service
-    > **Important**: Calls to this API will only succeed against the endpoint in the home region.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_resources = oci.UsageProxy.get_resources(compartment_id=var["compartment_id"],
-        service_name=oci_core_service["test_service"]["name"],
-        entitlement_id=oci_usage_proxy_entitlement["test_entitlement"]["id"])
-    ```
-
-
-    :param str compartment_id: The OCID of the root compartment.
-    :param str entitlement_id: Subscription or entitlement Id.
-    :param str service_name: Service Name.
+    Use this data source to access information about an existing resource.
     """
     ...

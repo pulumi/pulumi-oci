@@ -73,7 +73,7 @@ export interface GetAgentDependenciesResult {
     /**
      * The list of agent_dependency_collection.
      */
-    readonly agentDependencyCollections: outputs.CloudBridge.GetAgentDependenciesAgentDependencyCollection[];
+    readonly agentDependencyCollections?: outputs.CloudBridge.GetAgentDependenciesAgentDependencyCollection[];
     readonly agentId?: string;
     /**
      * Compartment identifier
@@ -88,7 +88,7 @@ export interface GetAgentDependenciesResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The current state of AgentDependency.
      */

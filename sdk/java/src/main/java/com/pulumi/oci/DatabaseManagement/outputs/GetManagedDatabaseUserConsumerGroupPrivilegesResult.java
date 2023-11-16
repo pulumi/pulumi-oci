@@ -18,13 +18,13 @@ public final class GetManagedDatabaseUserConsumerGroupPrivilegesResult {
      * @return The list of consumer_group_privilege_collection.
      * 
      */
-    private List<GetManagedDatabaseUserConsumerGroupPrivilegesConsumerGroupPrivilegeCollection> consumerGroupPrivilegeCollections;
+    private @Nullable List<GetManagedDatabaseUserConsumerGroupPrivilegesConsumerGroupPrivilegeCollection> consumerGroupPrivilegeCollections;
     private @Nullable List<GetManagedDatabaseUserConsumerGroupPrivilegesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private String managedDatabaseId;
     /**
      * @return The name of the granted consumer group privilege.
@@ -39,7 +39,7 @@ public final class GetManagedDatabaseUserConsumerGroupPrivilegesResult {
      * 
      */
     public List<GetManagedDatabaseUserConsumerGroupPrivilegesConsumerGroupPrivilegeCollection> consumerGroupPrivilegeCollections() {
-        return this.consumerGroupPrivilegeCollections;
+        return this.consumerGroupPrivilegeCollections == null ? List.of() : this.consumerGroupPrivilegeCollections;
     }
     public List<GetManagedDatabaseUserConsumerGroupPrivilegesFilter> filters() {
         return this.filters == null ? List.of() : this.filters;
@@ -48,8 +48,8 @@ public final class GetManagedDatabaseUserConsumerGroupPrivilegesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public String managedDatabaseId() {
         return this.managedDatabaseId;
@@ -74,9 +74,9 @@ public final class GetManagedDatabaseUserConsumerGroupPrivilegesResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetManagedDatabaseUserConsumerGroupPrivilegesConsumerGroupPrivilegeCollection> consumerGroupPrivilegeCollections;
+        private @Nullable List<GetManagedDatabaseUserConsumerGroupPrivilegesConsumerGroupPrivilegeCollection> consumerGroupPrivilegeCollections;
         private @Nullable List<GetManagedDatabaseUserConsumerGroupPrivilegesFilter> filters;
-        private String id;
+        private @Nullable String id;
         private String managedDatabaseId;
         private @Nullable String name;
         private String userName;
@@ -92,8 +92,8 @@ public final class GetManagedDatabaseUserConsumerGroupPrivilegesResult {
         }
 
         @CustomType.Setter
-        public Builder consumerGroupPrivilegeCollections(List<GetManagedDatabaseUserConsumerGroupPrivilegesConsumerGroupPrivilegeCollection> consumerGroupPrivilegeCollections) {
-            this.consumerGroupPrivilegeCollections = Objects.requireNonNull(consumerGroupPrivilegeCollections);
+        public Builder consumerGroupPrivilegeCollections(@Nullable List<GetManagedDatabaseUserConsumerGroupPrivilegesConsumerGroupPrivilegeCollection> consumerGroupPrivilegeCollections) {
+            this.consumerGroupPrivilegeCollections = consumerGroupPrivilegeCollections;
             return this;
         }
         public Builder consumerGroupPrivilegeCollections(GetManagedDatabaseUserConsumerGroupPrivilegesConsumerGroupPrivilegeCollection... consumerGroupPrivilegeCollections) {
@@ -108,8 +108,8 @@ public final class GetManagedDatabaseUserConsumerGroupPrivilegesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

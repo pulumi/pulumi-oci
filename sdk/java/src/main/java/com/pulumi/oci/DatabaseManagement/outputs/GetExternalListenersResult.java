@@ -33,13 +33,13 @@ public final class GetExternalListenersResult {
      * @return The list of external_listener_collection.
      * 
      */
-    private List<GetExternalListenersExternalListenerCollection> externalListenerCollections;
+    private @Nullable List<GetExternalListenersExternalListenerCollection> externalListenerCollections;
     private @Nullable List<GetExternalListenersFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
 
     private GetExternalListenersResult() {}
     /**
@@ -68,7 +68,7 @@ public final class GetExternalListenersResult {
      * 
      */
     public List<GetExternalListenersExternalListenerCollection> externalListenerCollections() {
-        return this.externalListenerCollections;
+        return this.externalListenerCollections == null ? List.of() : this.externalListenerCollections;
     }
     public List<GetExternalListenersFilter> filters() {
         return this.filters == null ? List.of() : this.filters;
@@ -77,8 +77,8 @@ public final class GetExternalListenersResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
 
     public static Builder builder() {
@@ -93,9 +93,9 @@ public final class GetExternalListenersResult {
         private @Nullable String compartmentId;
         private @Nullable String displayName;
         private @Nullable String externalDbSystemId;
-        private List<GetExternalListenersExternalListenerCollection> externalListenerCollections;
+        private @Nullable List<GetExternalListenersExternalListenerCollection> externalListenerCollections;
         private @Nullable List<GetExternalListenersFilter> filters;
-        private String id;
+        private @Nullable String id;
         public Builder() {}
         public Builder(GetExternalListenersResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -123,8 +123,8 @@ public final class GetExternalListenersResult {
             return this;
         }
         @CustomType.Setter
-        public Builder externalListenerCollections(List<GetExternalListenersExternalListenerCollection> externalListenerCollections) {
-            this.externalListenerCollections = Objects.requireNonNull(externalListenerCollections);
+        public Builder externalListenerCollections(@Nullable List<GetExternalListenersExternalListenerCollection> externalListenerCollections) {
+            this.externalListenerCollections = externalListenerCollections;
             return this;
         }
         public Builder externalListenerCollections(GetExternalListenersExternalListenerCollection... externalListenerCollections) {
@@ -139,8 +139,8 @@ public final class GetExternalListenersResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         public GetExternalListenersResult build() {

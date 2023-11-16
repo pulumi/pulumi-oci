@@ -193,23 +193,23 @@ namespace Pulumi.Oci.Identity
         /// <summary>
         /// Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
         /// </summary>
-        public readonly string CompartmentOcid;
+        public readonly string? CompartmentOcid;
         /// <summary>
         /// A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
         /// </summary>
-        public readonly bool DeleteInProgress;
+        public readonly bool? DeleteInProgress;
         /// <summary>
         /// Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
         /// </summary>
-        public readonly string DomainOcid;
+        public readonly string? DomainOcid;
         /// <summary>
         /// An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer's tenant.
         /// </summary>
-        public readonly string ExternalId;
+        public readonly string? ExternalId;
         /// <summary>
         /// Unique identifier for the SCIM Resource as defined by the Service Provider. Each representation of the Resource MUST include a non-empty id value. This identifier MUST be unique across the Service Provider's entire set of Resources. It MUST be a stable, non-reassignable identifier that does not change when the same Resource is returned in subsequent requests. The value of the id attribute is always issued by the Service Provider and MUST never be specified by the Service Consumer. bulkId: is a reserved keyword and MUST NOT be used in the unique identifier.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The User or App who created the Resource
         /// </summary>
@@ -222,7 +222,7 @@ namespace Pulumi.Oci.Identity
         /// <summary>
         /// The release number when the resource was upgraded.
         /// </summary>
-        public readonly string IdcsLastUpgradedInRelease;
+        public readonly string? IdcsLastUpgradedInRelease;
         /// <summary>
         /// Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
         /// </summary>
@@ -230,24 +230,24 @@ namespace Pulumi.Oci.Identity
         /// <summary>
         /// Identifier represents KMSI feature is enabled or not.
         /// </summary>
-        public readonly bool KmsiFeatureEnabled;
+        public readonly bool? KmsiFeatureEnabled;
         /// <summary>
         /// Identifier represents KMSI to be prompted to user or not.
         /// </summary>
-        public readonly bool KmsiPromptEnabled;
+        public readonly bool? KmsiPromptEnabled;
         public readonly string KmsiSettingId;
         /// <summary>
         /// Timestamp of when the KmsiSettings was enabled last time.
         /// </summary>
-        public readonly string LastEnabledOn;
+        public readonly string? LastEnabledOn;
         /// <summary>
         /// Identifier represents duration in days within which kmsi token must be used.
         /// </summary>
-        public readonly int LastUsedValidityInDays;
+        public readonly int? LastUsedValidityInDays;
         /// <summary>
         /// Identifier represents maximum KMSI sessions allowed in the system.
         /// </summary>
-        public readonly int MaxAllowedSessions;
+        public readonly int? MaxAllowedSessions;
         /// <summary>
         /// A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
         /// </summary>
@@ -255,7 +255,7 @@ namespace Pulumi.Oci.Identity
         /// <summary>
         /// Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
         /// </summary>
-        public readonly string Ocid;
+        public readonly string? Ocid;
         public readonly string? ResourceTypeSchemaVersion;
         /// <summary>
         /// REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
@@ -268,15 +268,15 @@ namespace Pulumi.Oci.Identity
         /// <summary>
         /// Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
         /// </summary>
-        public readonly string TenancyOcid;
+        public readonly string? TenancyOcid;
         /// <summary>
         /// Identifier represents validity duration in days.
         /// </summary>
-        public readonly int TokenValidityInDays;
+        public readonly int? TokenValidityInDays;
         /// <summary>
         /// Identifier represents whether user is prompted for ToU or not.
         /// </summary>
-        public readonly bool TouPromptDisabled;
+        public readonly bool? TouPromptDisabled;
 
         [OutputConstructor]
         private GetDomainsKmsiSettingResult(
@@ -286,15 +286,15 @@ namespace Pulumi.Oci.Identity
 
             string? authorization,
 
-            string compartmentOcid,
+            string? compartmentOcid,
 
-            bool deleteInProgress,
+            bool? deleteInProgress,
 
-            string domainOcid,
+            string? domainOcid,
 
-            string externalId,
+            string? externalId,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetDomainsKmsiSettingIdcsCreatedByResult> idcsCreatedBies,
 
@@ -302,25 +302,25 @@ namespace Pulumi.Oci.Identity
 
             ImmutableArray<Outputs.GetDomainsKmsiSettingIdcsLastModifiedByResult> idcsLastModifiedBies,
 
-            string idcsLastUpgradedInRelease,
+            string? idcsLastUpgradedInRelease,
 
             ImmutableArray<string> idcsPreventedOperations,
 
-            bool kmsiFeatureEnabled,
+            bool? kmsiFeatureEnabled,
 
-            bool kmsiPromptEnabled,
+            bool? kmsiPromptEnabled,
 
             string kmsiSettingId,
 
-            string lastEnabledOn,
+            string? lastEnabledOn,
 
-            int lastUsedValidityInDays,
+            int? lastUsedValidityInDays,
 
-            int maxAllowedSessions,
+            int? maxAllowedSessions,
 
             ImmutableArray<Outputs.GetDomainsKmsiSettingMetaResult> metas,
 
-            string ocid,
+            string? ocid,
 
             string? resourceTypeSchemaVersion,
 
@@ -328,11 +328,11 @@ namespace Pulumi.Oci.Identity
 
             ImmutableArray<Outputs.GetDomainsKmsiSettingTagResult> tags,
 
-            string tenancyOcid,
+            string? tenancyOcid,
 
-            int tokenValidityInDays,
+            int? tokenValidityInDays,
 
-            bool touPromptDisabled)
+            bool? touPromptDisabled)
         {
             AttributeSets = attributeSets;
             Attributes = attributes;

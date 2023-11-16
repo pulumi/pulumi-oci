@@ -52,9 +52,6 @@ class GetControlAssignmentsResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The OCID of the comparment that contains the operator control assignment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
@@ -64,7 +61,7 @@ class GetControlAssignmentsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -72,10 +69,7 @@ class GetControlAssignmentsResult:
 
     @property
     @pulumi.getter(name="operatorControlAssignmentCollections")
-    def operator_control_assignment_collections(self) -> Sequence['outputs.GetControlAssignmentsOperatorControlAssignmentCollectionResult']:
-        """
-        The list of operator_control_assignment_collection.
-        """
+    def operator_control_assignment_collections(self) -> Optional[Sequence['outputs.GetControlAssignmentsOperatorControlAssignmentCollectionResult']]:
         return pulumi.get(self, "operator_control_assignment_collections")
 
     @property
@@ -86,25 +80,16 @@ class GetControlAssignmentsResult:
     @property
     @pulumi.getter(name="resourceName")
     def resource_name(self) -> Optional[str]:
-        """
-        Name of the target resource.
-        """
         return pulumi.get(self, "resource_name")
 
     @property
     @pulumi.getter(name="resourceType")
     def resource_type(self) -> Optional[str]:
-        """
-        resourceType for which the OperatorControlAssignment is applicable
-        """
         return pulumi.get(self, "resource_type")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current lifcycle state of the OperatorControl.
-        """
         return pulumi.get(self, "state")
 
 
@@ -132,29 +117,7 @@ def get_control_assignments(compartment_id: Optional[str] = None,
                             state: Optional[str] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetControlAssignmentsResult:
     """
-    This data source provides the list of Operator Control Assignments in Oracle Cloud Infrastructure Operator Access Control service.
-
-    Lists all Operator Control Assignments.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_operator_control_assignments = oci.OperatorAccessControl.get_control_assignments(compartment_id=var["compartment_id"],
-        operator_control_name=oci_operator_access_control_operator_control["test_operator_control"]["name"],
-        resource_name=var["operator_control_assignment_resource_name"],
-        resource_type=var["operator_control_assignment_resource_type"],
-        state=var["operator_control_assignment_state"])
-    ```
-
-
-    :param str compartment_id: The ID of the compartment in which to list resources.
-    :param str operator_control_name: A filter to return OperatorControl that match the given operatorControlName.
-    :param str resource_name: A filter to return only resources that match the given ResourceName.
-    :param str resource_type: A filter to return only lists of resources that match the entire given service type.
-    :param str state: A filter to return only resources whose lifecycleState matches the given OperatorControlAssignment lifecycleState.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -186,28 +149,6 @@ def get_control_assignments_output(compartment_id: Optional[pulumi.Input[str]] =
                                    state: Optional[pulumi.Input[Optional[str]]] = None,
                                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetControlAssignmentsResult]:
     """
-    This data source provides the list of Operator Control Assignments in Oracle Cloud Infrastructure Operator Access Control service.
-
-    Lists all Operator Control Assignments.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_operator_control_assignments = oci.OperatorAccessControl.get_control_assignments(compartment_id=var["compartment_id"],
-        operator_control_name=oci_operator_access_control_operator_control["test_operator_control"]["name"],
-        resource_name=var["operator_control_assignment_resource_name"],
-        resource_type=var["operator_control_assignment_resource_type"],
-        state=var["operator_control_assignment_state"])
-    ```
-
-
-    :param str compartment_id: The ID of the compartment in which to list resources.
-    :param str operator_control_name: A filter to return OperatorControl that match the given operatorControlName.
-    :param str resource_name: A filter to return only resources that match the given ResourceName.
-    :param str resource_type: A filter to return only lists of resources that match the entire given service type.
-    :param str state: A filter to return only resources whose lifecycleState matches the given OperatorControlAssignment lifecycleState.
+    Use this data source to access information about an existing resource.
     """
     ...

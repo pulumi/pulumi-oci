@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Authentication Factor Setting resource in Oracle Cloud Infrastructure Identity Domains service.
@@ -49,7 +48,7 @@ type DomainsAuthenticationFactorSetting struct {
 	// * returned: default
 	// * type: boolean
 	// * uniqueness: none
-	AutoEnrollEmailFactorDisabled pulumi.BoolOutput `pulumi:"autoEnrollEmailFactorDisabled"`
+	AutoEnrollEmailFactorDisabled pulumi.BoolPtrOutput `pulumi:"autoEnrollEmailFactorDisabled"`
 	// (Updatable) If true, indicates that Bypass Code is enabled for authentication
 	//
 	// **SCIM++ Properties:**
@@ -94,7 +93,7 @@ type DomainsAuthenticationFactorSetting struct {
 	// * returned: default
 	// * type: string
 	// * uniqueness: none
-	CompartmentOcid pulumi.StringOutput `pulumi:"compartmentOcid"`
+	CompartmentOcid pulumi.StringPtrOutput `pulumi:"compartmentOcid"`
 	// (Updatable) Compliance Policy that defines actions to be taken when a condition is violated
 	//
 	// **SCIM++ Properties:**
@@ -118,7 +117,7 @@ type DomainsAuthenticationFactorSetting struct {
 	// * returned: default
 	// * type: boolean
 	// * uniqueness: none
-	DeleteInProgress pulumi.BoolOutput `pulumi:"deleteInProgress"`
+	DeleteInProgress pulumi.BoolPtrOutput `pulumi:"deleteInProgress"`
 	// (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
 	//
 	// **SCIM++ Properties:**
@@ -130,7 +129,7 @@ type DomainsAuthenticationFactorSetting struct {
 	// * returned: default
 	// * type: string
 	// * uniqueness: none
-	DomainOcid pulumi.StringOutput `pulumi:"domainOcid"`
+	DomainOcid pulumi.StringPtrOutput `pulumi:"domainOcid"`
 	// (Updatable) If true, indicates that the EMAIL channel is enabled for authentication
 	//
 	// **Added In:** 18.1.2
@@ -143,7 +142,7 @@ type DomainsAuthenticationFactorSetting struct {
 	// * returned: default
 	// * type: boolean
 	// * uniqueness: none
-	EmailEnabled pulumi.BoolOutput `pulumi:"emailEnabled"`
+	EmailEnabled pulumi.BoolPtrOutput `pulumi:"emailEnabled"`
 	// (Updatable) Settings related to Email Factor, such as enabled email magic link factor, custom url for Email Link
 	//
 	// **Added In:** 20.1.3
@@ -156,7 +155,7 @@ type DomainsAuthenticationFactorSetting struct {
 	// * returned: default
 	// * type: complex
 	// * uniqueness: none
-	EmailSettings DomainsAuthenticationFactorSettingEmailSettingsOutput `pulumi:"emailSettings"`
+	EmailSettings DomainsAuthenticationFactorSettingEmailSettingsPtrOutput `pulumi:"emailSettings"`
 	// (Updatable) Settings that describe the set of restrictions that the system should apply to devices and trusted endpoints of a user
 	//
 	// **SCIM++ Properties:**
@@ -180,7 +179,7 @@ type DomainsAuthenticationFactorSetting struct {
 	// * returned: default
 	// * type: boolean
 	// * uniqueness: none
-	FidoAuthenticatorEnabled pulumi.BoolOutput `pulumi:"fidoAuthenticatorEnabled"`
+	FidoAuthenticatorEnabled pulumi.BoolPtrOutput `pulumi:"fidoAuthenticatorEnabled"`
 	// (Updatable) If true, indicates that 'Show backup factor(s)' button will be hidden during authentication
 	//
 	// **Added In:** 19.3.3
@@ -193,7 +192,7 @@ type DomainsAuthenticationFactorSetting struct {
 	// * returned: default
 	// * type: boolean
 	// * uniqueness: none
-	HideBackupFactorEnabled pulumi.BoolOutput `pulumi:"hideBackupFactorEnabled"`
+	HideBackupFactorEnabled pulumi.BoolPtrOutput `pulumi:"hideBackupFactorEnabled"`
 	// (Updatable) The User or App who created the Resource
 	//
 	// **SCIM++ Properties:**
@@ -227,7 +226,7 @@ type DomainsAuthenticationFactorSetting struct {
 	// * returned: request
 	// * type: string
 	// * uniqueness: none
-	IdcsLastUpgradedInRelease pulumi.StringOutput `pulumi:"idcsLastUpgradedInRelease"`
+	IdcsLastUpgradedInRelease pulumi.StringPtrOutput `pulumi:"idcsLastUpgradedInRelease"`
 	// (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
 	//
 	// **SCIM++ Properties:**
@@ -249,7 +248,7 @@ type DomainsAuthenticationFactorSetting struct {
 	// * returned: default
 	// * type: complex
 	// * uniqueness: none
-	IdentityStoreSettings DomainsAuthenticationFactorSettingIdentityStoreSettingsOutput `pulumi:"identityStoreSettings"`
+	IdentityStoreSettings DomainsAuthenticationFactorSettingIdentityStoreSettingsPtrOutput `pulumi:"identityStoreSettings"`
 	// (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
 	//
 	// **SCIM++ Properties:**
@@ -274,7 +273,7 @@ type DomainsAuthenticationFactorSetting struct {
 	// * returned: default
 	// * type: string
 	// * uniqueness: none
-	MfaEnabledCategory pulumi.StringOutput `pulumi:"mfaEnabledCategory"`
+	MfaEnabledCategory pulumi.StringPtrOutput `pulumi:"mfaEnabledCategory"`
 	// (Updatable) Specifies if Multi-Factor Authentication enrollment is mandatory or optional for a user
 	//
 	// **Deprecated Since: 18.1.2**
@@ -314,7 +313,7 @@ type DomainsAuthenticationFactorSetting struct {
 	// * returned: default
 	// * type: string
 	// * uniqueness: global
-	Ocid pulumi.StringOutput `pulumi:"ocid"`
+	Ocid pulumi.StringPtrOutput `pulumi:"ocid"`
 	// (Updatable) If true, indicates that the phone (PHONE_CALL) channel is enabled for authentication
 	//
 	// **Added In:** 20.1.3
@@ -327,7 +326,7 @@ type DomainsAuthenticationFactorSetting struct {
 	// * returned: default
 	// * type: boolean
 	// * uniqueness: none
-	PhoneCallEnabled pulumi.BoolOutput `pulumi:"phoneCallEnabled"`
+	PhoneCallEnabled pulumi.BoolPtrOutput `pulumi:"phoneCallEnabled"`
 	// (Updatable) If true, indicates that the Mobile App Push Notification channel is enabled for authentication
 	//
 	// **SCIM++ Properties:**
@@ -398,7 +397,7 @@ type DomainsAuthenticationFactorSetting struct {
 	// * returned: default
 	// * type: string
 	// * uniqueness: none
-	TenancyOcid pulumi.StringOutput `pulumi:"tenancyOcid"`
+	TenancyOcid pulumi.StringPtrOutput `pulumi:"tenancyOcid"`
 	// (Updatable) Settings related to third-party factor
 	//
 	// **Added In:** 19.2.1
@@ -411,7 +410,7 @@ type DomainsAuthenticationFactorSetting struct {
 	// * returned: default
 	// * type: complex
 	// * uniqueness: none
-	ThirdPartyFactor DomainsAuthenticationFactorSettingThirdPartyFactorOutput `pulumi:"thirdPartyFactor"`
+	ThirdPartyFactor DomainsAuthenticationFactorSettingThirdPartyFactorPtrOutput `pulumi:"thirdPartyFactor"`
 	// (Updatable) If true, indicates that the Mobile App One Time Passcode channel is enabled for authentication
 	//
 	// **SCIM++ Properties:**
@@ -435,9 +434,9 @@ type DomainsAuthenticationFactorSetting struct {
 	// * uniqueness: none
 	TotpSettings DomainsAuthenticationFactorSettingTotpSettingsOutput `pulumi:"totpSettings"`
 	// (Updatable) This extension defines attributes used to manage Multi-Factor Authentication settings of fido authentication
-	UrnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettings DomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettingsOutput `pulumi:"urnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettings"`
+	UrnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettings DomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettingsPtrOutput `pulumi:"urnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettings"`
 	// (Updatable) This extension defines attributes used to manage Multi-Factor Authentication settings of third party provider
-	UrnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettings DomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettingsOutput `pulumi:"urnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettings"`
+	UrnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettings DomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettingsPtrOutput `pulumi:"urnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettings"`
 	// (Updatable) Factors for which enrollment should be blocked for End User
 	//
 	// **Added In:** 2012271618
@@ -466,7 +465,7 @@ type DomainsAuthenticationFactorSetting struct {
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	YubicoOtpEnabled pulumi.BoolOutput `pulumi:"yubicoOtpEnabled"`
+	YubicoOtpEnabled pulumi.BoolPtrOutput `pulumi:"yubicoOtpEnabled"`
 }
 
 // NewDomainsAuthenticationFactorSetting registers a new resource with the given unique name, arguments, and options.
@@ -2103,12 +2102,6 @@ func (i *DomainsAuthenticationFactorSetting) ToDomainsAuthenticationFactorSettin
 	return pulumi.ToOutputWithContext(ctx, i).(DomainsAuthenticationFactorSettingOutput)
 }
 
-func (i *DomainsAuthenticationFactorSetting) ToOutput(ctx context.Context) pulumix.Output[*DomainsAuthenticationFactorSetting] {
-	return pulumix.Output[*DomainsAuthenticationFactorSetting]{
-		OutputState: i.ToDomainsAuthenticationFactorSettingOutputWithContext(ctx).OutputState,
-	}
-}
-
 // DomainsAuthenticationFactorSettingArrayInput is an input type that accepts DomainsAuthenticationFactorSettingArray and DomainsAuthenticationFactorSettingArrayOutput values.
 // You can construct a concrete instance of `DomainsAuthenticationFactorSettingArrayInput` via:
 //
@@ -2132,12 +2125,6 @@ func (i DomainsAuthenticationFactorSettingArray) ToDomainsAuthenticationFactorSe
 
 func (i DomainsAuthenticationFactorSettingArray) ToDomainsAuthenticationFactorSettingArrayOutputWithContext(ctx context.Context) DomainsAuthenticationFactorSettingArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(DomainsAuthenticationFactorSettingArrayOutput)
-}
-
-func (i DomainsAuthenticationFactorSettingArray) ToOutput(ctx context.Context) pulumix.Output[[]*DomainsAuthenticationFactorSetting] {
-	return pulumix.Output[[]*DomainsAuthenticationFactorSetting]{
-		OutputState: i.ToDomainsAuthenticationFactorSettingArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // DomainsAuthenticationFactorSettingMapInput is an input type that accepts DomainsAuthenticationFactorSettingMap and DomainsAuthenticationFactorSettingMapOutput values.
@@ -2165,12 +2152,6 @@ func (i DomainsAuthenticationFactorSettingMap) ToDomainsAuthenticationFactorSett
 	return pulumi.ToOutputWithContext(ctx, i).(DomainsAuthenticationFactorSettingMapOutput)
 }
 
-func (i DomainsAuthenticationFactorSettingMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*DomainsAuthenticationFactorSetting] {
-	return pulumix.Output[map[string]*DomainsAuthenticationFactorSetting]{
-		OutputState: i.ToDomainsAuthenticationFactorSettingMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DomainsAuthenticationFactorSettingOutput struct{ *pulumi.OutputState }
 
 func (DomainsAuthenticationFactorSettingOutput) ElementType() reflect.Type {
@@ -2183,12 +2164,6 @@ func (o DomainsAuthenticationFactorSettingOutput) ToDomainsAuthenticationFactorS
 
 func (o DomainsAuthenticationFactorSettingOutput) ToDomainsAuthenticationFactorSettingOutputWithContext(ctx context.Context) DomainsAuthenticationFactorSettingOutput {
 	return o
-}
-
-func (o DomainsAuthenticationFactorSettingOutput) ToOutput(ctx context.Context) pulumix.Output[*DomainsAuthenticationFactorSetting] {
-	return pulumix.Output[*DomainsAuthenticationFactorSetting]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
@@ -2225,8 +2200,10 @@ func (o DomainsAuthenticationFactorSettingOutput) Authorization() pulumi.StringP
 // * returned: default
 // * type: boolean
 // * uniqueness: none
-func (o DomainsAuthenticationFactorSettingOutput) AutoEnrollEmailFactorDisabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v *DomainsAuthenticationFactorSetting) pulumi.BoolOutput { return v.AutoEnrollEmailFactorDisabled }).(pulumi.BoolOutput)
+func (o DomainsAuthenticationFactorSettingOutput) AutoEnrollEmailFactorDisabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DomainsAuthenticationFactorSetting) pulumi.BoolPtrOutput {
+		return v.AutoEnrollEmailFactorDisabled
+	}).(pulumi.BoolPtrOutput)
 }
 
 // (Updatable) If true, indicates that Bypass Code is enabled for authentication
@@ -2286,8 +2263,8 @@ func (o DomainsAuthenticationFactorSettingOutput) ClientAppSettings() DomainsAut
 // * returned: default
 // * type: string
 // * uniqueness: none
-func (o DomainsAuthenticationFactorSettingOutput) CompartmentOcid() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsAuthenticationFactorSetting) pulumi.StringOutput { return v.CompartmentOcid }).(pulumi.StringOutput)
+func (o DomainsAuthenticationFactorSettingOutput) CompartmentOcid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsAuthenticationFactorSetting) pulumi.StringPtrOutput { return v.CompartmentOcid }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Compliance Policy that defines actions to be taken when a condition is violated
@@ -2318,8 +2295,8 @@ func (o DomainsAuthenticationFactorSettingOutput) CompliancePolicies() DomainsAu
 // * returned: default
 // * type: boolean
 // * uniqueness: none
-func (o DomainsAuthenticationFactorSettingOutput) DeleteInProgress() pulumi.BoolOutput {
-	return o.ApplyT(func(v *DomainsAuthenticationFactorSetting) pulumi.BoolOutput { return v.DeleteInProgress }).(pulumi.BoolOutput)
+func (o DomainsAuthenticationFactorSettingOutput) DeleteInProgress() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DomainsAuthenticationFactorSetting) pulumi.BoolPtrOutput { return v.DeleteInProgress }).(pulumi.BoolPtrOutput)
 }
 
 // (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
@@ -2333,8 +2310,8 @@ func (o DomainsAuthenticationFactorSettingOutput) DeleteInProgress() pulumi.Bool
 // * returned: default
 // * type: string
 // * uniqueness: none
-func (o DomainsAuthenticationFactorSettingOutput) DomainOcid() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsAuthenticationFactorSetting) pulumi.StringOutput { return v.DomainOcid }).(pulumi.StringOutput)
+func (o DomainsAuthenticationFactorSettingOutput) DomainOcid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsAuthenticationFactorSetting) pulumi.StringPtrOutput { return v.DomainOcid }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) If true, indicates that the EMAIL channel is enabled for authentication
@@ -2349,8 +2326,8 @@ func (o DomainsAuthenticationFactorSettingOutput) DomainOcid() pulumi.StringOutp
 // * returned: default
 // * type: boolean
 // * uniqueness: none
-func (o DomainsAuthenticationFactorSettingOutput) EmailEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v *DomainsAuthenticationFactorSetting) pulumi.BoolOutput { return v.EmailEnabled }).(pulumi.BoolOutput)
+func (o DomainsAuthenticationFactorSettingOutput) EmailEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DomainsAuthenticationFactorSetting) pulumi.BoolPtrOutput { return v.EmailEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // (Updatable) Settings related to Email Factor, such as enabled email magic link factor, custom url for Email Link
@@ -2365,10 +2342,10 @@ func (o DomainsAuthenticationFactorSettingOutput) EmailEnabled() pulumi.BoolOutp
 // * returned: default
 // * type: complex
 // * uniqueness: none
-func (o DomainsAuthenticationFactorSettingOutput) EmailSettings() DomainsAuthenticationFactorSettingEmailSettingsOutput {
-	return o.ApplyT(func(v *DomainsAuthenticationFactorSetting) DomainsAuthenticationFactorSettingEmailSettingsOutput {
+func (o DomainsAuthenticationFactorSettingOutput) EmailSettings() DomainsAuthenticationFactorSettingEmailSettingsPtrOutput {
+	return o.ApplyT(func(v *DomainsAuthenticationFactorSetting) DomainsAuthenticationFactorSettingEmailSettingsPtrOutput {
 		return v.EmailSettings
-	}).(DomainsAuthenticationFactorSettingEmailSettingsOutput)
+	}).(DomainsAuthenticationFactorSettingEmailSettingsPtrOutput)
 }
 
 // (Updatable) Settings that describe the set of restrictions that the system should apply to devices and trusted endpoints of a user
@@ -2399,8 +2376,8 @@ func (o DomainsAuthenticationFactorSettingOutput) EndpointRestrictions() Domains
 // * returned: default
 // * type: boolean
 // * uniqueness: none
-func (o DomainsAuthenticationFactorSettingOutput) FidoAuthenticatorEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v *DomainsAuthenticationFactorSetting) pulumi.BoolOutput { return v.FidoAuthenticatorEnabled }).(pulumi.BoolOutput)
+func (o DomainsAuthenticationFactorSettingOutput) FidoAuthenticatorEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DomainsAuthenticationFactorSetting) pulumi.BoolPtrOutput { return v.FidoAuthenticatorEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // (Updatable) If true, indicates that 'Show backup factor(s)' button will be hidden during authentication
@@ -2415,8 +2392,8 @@ func (o DomainsAuthenticationFactorSettingOutput) FidoAuthenticatorEnabled() pul
 // * returned: default
 // * type: boolean
 // * uniqueness: none
-func (o DomainsAuthenticationFactorSettingOutput) HideBackupFactorEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v *DomainsAuthenticationFactorSetting) pulumi.BoolOutput { return v.HideBackupFactorEnabled }).(pulumi.BoolOutput)
+func (o DomainsAuthenticationFactorSettingOutput) HideBackupFactorEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DomainsAuthenticationFactorSetting) pulumi.BoolPtrOutput { return v.HideBackupFactorEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // (Updatable) The User or App who created the Resource
@@ -2465,8 +2442,8 @@ func (o DomainsAuthenticationFactorSettingOutput) IdcsLastModifiedBies() Domains
 // * returned: request
 // * type: string
 // * uniqueness: none
-func (o DomainsAuthenticationFactorSettingOutput) IdcsLastUpgradedInRelease() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsAuthenticationFactorSetting) pulumi.StringOutput { return v.IdcsLastUpgradedInRelease }).(pulumi.StringOutput)
+func (o DomainsAuthenticationFactorSettingOutput) IdcsLastUpgradedInRelease() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsAuthenticationFactorSetting) pulumi.StringPtrOutput { return v.IdcsLastUpgradedInRelease }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
@@ -2493,10 +2470,10 @@ func (o DomainsAuthenticationFactorSettingOutput) IdcsPreventedOperations() pulu
 // * returned: default
 // * type: complex
 // * uniqueness: none
-func (o DomainsAuthenticationFactorSettingOutput) IdentityStoreSettings() DomainsAuthenticationFactorSettingIdentityStoreSettingsOutput {
-	return o.ApplyT(func(v *DomainsAuthenticationFactorSetting) DomainsAuthenticationFactorSettingIdentityStoreSettingsOutput {
+func (o DomainsAuthenticationFactorSettingOutput) IdentityStoreSettings() DomainsAuthenticationFactorSettingIdentityStoreSettingsPtrOutput {
+	return o.ApplyT(func(v *DomainsAuthenticationFactorSetting) DomainsAuthenticationFactorSettingIdentityStoreSettingsPtrOutput {
 		return v.IdentityStoreSettings
-	}).(DomainsAuthenticationFactorSettingIdentityStoreSettingsOutput)
+	}).(DomainsAuthenticationFactorSettingIdentityStoreSettingsPtrOutput)
 }
 
 // (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
@@ -2528,8 +2505,8 @@ func (o DomainsAuthenticationFactorSettingOutput) Metas() DomainsAuthenticationF
 // * returned: default
 // * type: string
 // * uniqueness: none
-func (o DomainsAuthenticationFactorSettingOutput) MfaEnabledCategory() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsAuthenticationFactorSetting) pulumi.StringOutput { return v.MfaEnabledCategory }).(pulumi.StringOutput)
+func (o DomainsAuthenticationFactorSettingOutput) MfaEnabledCategory() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsAuthenticationFactorSetting) pulumi.StringPtrOutput { return v.MfaEnabledCategory }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Specifies if Multi-Factor Authentication enrollment is mandatory or optional for a user
@@ -2579,8 +2556,8 @@ func (o DomainsAuthenticationFactorSettingOutput) NotificationSettings() Domains
 // * returned: default
 // * type: string
 // * uniqueness: global
-func (o DomainsAuthenticationFactorSettingOutput) Ocid() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsAuthenticationFactorSetting) pulumi.StringOutput { return v.Ocid }).(pulumi.StringOutput)
+func (o DomainsAuthenticationFactorSettingOutput) Ocid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsAuthenticationFactorSetting) pulumi.StringPtrOutput { return v.Ocid }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) If true, indicates that the phone (PHONE_CALL) channel is enabled for authentication
@@ -2595,8 +2572,8 @@ func (o DomainsAuthenticationFactorSettingOutput) Ocid() pulumi.StringOutput {
 // * returned: default
 // * type: boolean
 // * uniqueness: none
-func (o DomainsAuthenticationFactorSettingOutput) PhoneCallEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v *DomainsAuthenticationFactorSetting) pulumi.BoolOutput { return v.PhoneCallEnabled }).(pulumi.BoolOutput)
+func (o DomainsAuthenticationFactorSettingOutput) PhoneCallEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DomainsAuthenticationFactorSetting) pulumi.BoolPtrOutput { return v.PhoneCallEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // (Updatable) If true, indicates that the Mobile App Push Notification channel is enabled for authentication
@@ -2689,8 +2666,8 @@ func (o DomainsAuthenticationFactorSettingOutput) Tags() DomainsAuthenticationFa
 // * returned: default
 // * type: string
 // * uniqueness: none
-func (o DomainsAuthenticationFactorSettingOutput) TenancyOcid() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsAuthenticationFactorSetting) pulumi.StringOutput { return v.TenancyOcid }).(pulumi.StringOutput)
+func (o DomainsAuthenticationFactorSettingOutput) TenancyOcid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsAuthenticationFactorSetting) pulumi.StringPtrOutput { return v.TenancyOcid }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Settings related to third-party factor
@@ -2705,10 +2682,10 @@ func (o DomainsAuthenticationFactorSettingOutput) TenancyOcid() pulumi.StringOut
 // * returned: default
 // * type: complex
 // * uniqueness: none
-func (o DomainsAuthenticationFactorSettingOutput) ThirdPartyFactor() DomainsAuthenticationFactorSettingThirdPartyFactorOutput {
-	return o.ApplyT(func(v *DomainsAuthenticationFactorSetting) DomainsAuthenticationFactorSettingThirdPartyFactorOutput {
+func (o DomainsAuthenticationFactorSettingOutput) ThirdPartyFactor() DomainsAuthenticationFactorSettingThirdPartyFactorPtrOutput {
+	return o.ApplyT(func(v *DomainsAuthenticationFactorSetting) DomainsAuthenticationFactorSettingThirdPartyFactorPtrOutput {
 		return v.ThirdPartyFactor
-	}).(DomainsAuthenticationFactorSettingThirdPartyFactorOutput)
+	}).(DomainsAuthenticationFactorSettingThirdPartyFactorPtrOutput)
 }
 
 // (Updatable) If true, indicates that the Mobile App One Time Passcode channel is enabled for authentication
@@ -2742,17 +2719,17 @@ func (o DomainsAuthenticationFactorSettingOutput) TotpSettings() DomainsAuthenti
 }
 
 // (Updatable) This extension defines attributes used to manage Multi-Factor Authentication settings of fido authentication
-func (o DomainsAuthenticationFactorSettingOutput) UrnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettings() DomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettingsOutput {
-	return o.ApplyT(func(v *DomainsAuthenticationFactorSetting) DomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettingsOutput {
+func (o DomainsAuthenticationFactorSettingOutput) UrnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettings() DomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettingsPtrOutput {
+	return o.ApplyT(func(v *DomainsAuthenticationFactorSetting) DomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettingsPtrOutput {
 		return v.UrnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettings
-	}).(DomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettingsOutput)
+	}).(DomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettingsPtrOutput)
 }
 
 // (Updatable) This extension defines attributes used to manage Multi-Factor Authentication settings of third party provider
-func (o DomainsAuthenticationFactorSettingOutput) UrnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettings() DomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettingsOutput {
-	return o.ApplyT(func(v *DomainsAuthenticationFactorSetting) DomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettingsOutput {
+func (o DomainsAuthenticationFactorSettingOutput) UrnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettings() DomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettingsPtrOutput {
+	return o.ApplyT(func(v *DomainsAuthenticationFactorSetting) DomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettingsPtrOutput {
 		return v.UrnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettings
-	}).(DomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettingsOutput)
+	}).(DomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettingsPtrOutput)
 }
 
 // (Updatable) Factors for which enrollment should be blocked for End User
@@ -2788,8 +2765,8 @@ func (o DomainsAuthenticationFactorSettingOutput) UserEnrollmentDisabledFactors(
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-func (o DomainsAuthenticationFactorSettingOutput) YubicoOtpEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v *DomainsAuthenticationFactorSetting) pulumi.BoolOutput { return v.YubicoOtpEnabled }).(pulumi.BoolOutput)
+func (o DomainsAuthenticationFactorSettingOutput) YubicoOtpEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DomainsAuthenticationFactorSetting) pulumi.BoolPtrOutput { return v.YubicoOtpEnabled }).(pulumi.BoolPtrOutput)
 }
 
 type DomainsAuthenticationFactorSettingArrayOutput struct{ *pulumi.OutputState }
@@ -2804,12 +2781,6 @@ func (o DomainsAuthenticationFactorSettingArrayOutput) ToDomainsAuthenticationFa
 
 func (o DomainsAuthenticationFactorSettingArrayOutput) ToDomainsAuthenticationFactorSettingArrayOutputWithContext(ctx context.Context) DomainsAuthenticationFactorSettingArrayOutput {
 	return o
-}
-
-func (o DomainsAuthenticationFactorSettingArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*DomainsAuthenticationFactorSetting] {
-	return pulumix.Output[[]*DomainsAuthenticationFactorSetting]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DomainsAuthenticationFactorSettingArrayOutput) Index(i pulumi.IntInput) DomainsAuthenticationFactorSettingOutput {
@@ -2830,12 +2801,6 @@ func (o DomainsAuthenticationFactorSettingMapOutput) ToDomainsAuthenticationFact
 
 func (o DomainsAuthenticationFactorSettingMapOutput) ToDomainsAuthenticationFactorSettingMapOutputWithContext(ctx context.Context) DomainsAuthenticationFactorSettingMapOutput {
 	return o
-}
-
-func (o DomainsAuthenticationFactorSettingMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*DomainsAuthenticationFactorSetting] {
-	return pulumix.Output[map[string]*DomainsAuthenticationFactorSetting]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DomainsAuthenticationFactorSettingMapOutput) MapIndex(k pulumi.StringInput) DomainsAuthenticationFactorSettingOutput {

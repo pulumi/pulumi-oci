@@ -79,7 +79,7 @@ export class Profile extends pulumi.CustomResource {
     /**
      * The architecture type.
      */
-    public readonly archType!: pulumi.Output<string>;
+    public readonly archType!: pulumi.Output<string | undefined>;
     /**
      * The OCID of the tenancy containing the registration profile.
      */
@@ -87,11 +87,11 @@ export class Profile extends pulumi.CustomResource {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) The description of the registration profile.
      */
-    public readonly description!: pulumi.Output<string>;
+    public readonly description!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
@@ -99,35 +99,35 @@ export class Profile extends pulumi.CustomResource {
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * Identifying information for the specified lifecycle environment.
      */
-    public /*out*/ readonly lifecycleEnvironments!: pulumi.Output<outputs.OsManagementHub.ProfileLifecycleEnvironment[]>;
+    public /*out*/ readonly lifecycleEnvironments!: pulumi.Output<outputs.OsManagementHub.ProfileLifecycleEnvironment[] | undefined>;
     /**
      * The OCID of the lifecycle stage from which the registration profile will inherit its software source.
      */
-    public readonly lifecycleStageId!: pulumi.Output<string>;
+    public readonly lifecycleStageId!: pulumi.Output<string | undefined>;
     /**
      * Identifying information for the specified lifecycle stage.
      */
-    public /*out*/ readonly lifecycleStages!: pulumi.Output<outputs.OsManagementHub.ProfileLifecycleStage[]>;
+    public /*out*/ readonly lifecycleStages!: pulumi.Output<outputs.OsManagementHub.ProfileLifecycleStage[] | undefined>;
     /**
      * The OCID of the managed instance group from which the registration profile will inherit its software sources.
      */
-    public readonly managedInstanceGroupId!: pulumi.Output<string>;
+    public readonly managedInstanceGroupId!: pulumi.Output<string | undefined>;
     /**
      * Identifying information for the specified managed instance group.
      */
-    public /*out*/ readonly managedInstanceGroups!: pulumi.Output<outputs.OsManagementHub.ProfileManagedInstanceGroup[]>;
+    public /*out*/ readonly managedInstanceGroups!: pulumi.Output<outputs.OsManagementHub.ProfileManagedInstanceGroup[] | undefined>;
     /**
      * The OCID of the management station.
      */
-    public readonly managementStationId!: pulumi.Output<string>;
+    public readonly managementStationId!: pulumi.Output<string | undefined>;
     /**
      * The operating system family.
      */
-    public readonly osFamily!: pulumi.Output<string>;
+    public readonly osFamily!: pulumi.Output<string | undefined>;
     /**
      * The type of registration profile. Either SOFTWARESOURCE, GROUP or LIFECYCLE.
      */
@@ -135,23 +135,23 @@ export class Profile extends pulumi.CustomResource {
     /**
      * The list of software source OCIDs that the registration profile will use.
      */
-    public readonly softwareSourceIds!: pulumi.Output<string[]>;
+    public readonly softwareSourceIds!: pulumi.Output<string[] | undefined>;
     /**
      * The list of software sources that the registration profile will use.
      */
-    public /*out*/ readonly softwareSources!: pulumi.Output<outputs.OsManagementHub.ProfileSoftwareSource[]>;
+    public /*out*/ readonly softwareSources!: pulumi.Output<outputs.OsManagementHub.ProfileSoftwareSource[] | undefined>;
     /**
      * The current state of the registration profile.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any}>;
+    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * The time the the registration profile was created. An RFC3339 formatted datetime string.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * The software source vendor name.
      *
@@ -159,7 +159,7 @@ export class Profile extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly vendorName!: pulumi.Output<string>;
+    public readonly vendorName!: pulumi.Output<string | undefined>;
 
     /**
      * Create a Profile resource with the given unique name, arguments, and options.

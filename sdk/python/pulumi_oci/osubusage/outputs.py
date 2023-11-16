@@ -27,380 +27,276 @@ __all__ = [
 @pulumi.output_type
 class GetCommitmentAggregatedsComputedUsageAggregatedResult(dict):
     def __init__(__self__, *,
-                 aggregated_computed_usages: Sequence['outputs.GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageResult'],
-                 currency_code: str,
-                 parent_products: Sequence['outputs.GetCommitmentAggregatedsComputedUsageAggregatedParentProductResult'],
-                 parent_subscribed_service_id: str,
-                 plan_number: str,
-                 pricing_model: str,
-                 rate_card_id: str,
-                 subscription_id: str,
-                 time_end: str,
-                 time_start: str):
-        """
-        :param Sequence['GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageArgs'] aggregated_computed_usages: Aggregation of computed usages for the subscribed service.
-        :param str currency_code: Currency code
-        :param Sequence['GetCommitmentAggregatedsComputedUsageAggregatedParentProductArgs'] parent_products: Product part number for subscribed service line, called parent product.
-        :param str parent_subscribed_service_id: Subscribed service line parent id
-        :param str plan_number: Subscribed service asociated subscription plan number.
-        :param str pricing_model: Subscribed services pricing model
-        :param str rate_card_id: Inernal SPM Ratecard Id at line level
-        :param str subscription_id: Subscription Id is an identifier associated to the service used for filter the Computed Usage in SPM.
-        :param str time_end: Subscribed services contract line end date, expressed in RFC 3339 timestamp format.
-        :param str time_start: Subscribed services contract line start date, expressed in RFC 3339 timestamp format.
-        """
-        pulumi.set(__self__, "aggregated_computed_usages", aggregated_computed_usages)
-        pulumi.set(__self__, "currency_code", currency_code)
-        pulumi.set(__self__, "parent_products", parent_products)
-        pulumi.set(__self__, "parent_subscribed_service_id", parent_subscribed_service_id)
-        pulumi.set(__self__, "plan_number", plan_number)
-        pulumi.set(__self__, "pricing_model", pricing_model)
-        pulumi.set(__self__, "rate_card_id", rate_card_id)
-        pulumi.set(__self__, "subscription_id", subscription_id)
-        pulumi.set(__self__, "time_end", time_end)
-        pulumi.set(__self__, "time_start", time_start)
+                 aggregated_computed_usages: Optional[Sequence['outputs.GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageResult']] = None,
+                 currency_code: Optional[str] = None,
+                 parent_products: Optional[Sequence['outputs.GetCommitmentAggregatedsComputedUsageAggregatedParentProductResult']] = None,
+                 parent_subscribed_service_id: Optional[str] = None,
+                 plan_number: Optional[str] = None,
+                 pricing_model: Optional[str] = None,
+                 rate_card_id: Optional[str] = None,
+                 subscription_id: Optional[str] = None,
+                 time_end: Optional[str] = None,
+                 time_start: Optional[str] = None):
+        if aggregated_computed_usages is not None:
+            pulumi.set(__self__, "aggregated_computed_usages", aggregated_computed_usages)
+        if currency_code is not None:
+            pulumi.set(__self__, "currency_code", currency_code)
+        if parent_products is not None:
+            pulumi.set(__self__, "parent_products", parent_products)
+        if parent_subscribed_service_id is not None:
+            pulumi.set(__self__, "parent_subscribed_service_id", parent_subscribed_service_id)
+        if plan_number is not None:
+            pulumi.set(__self__, "plan_number", plan_number)
+        if pricing_model is not None:
+            pulumi.set(__self__, "pricing_model", pricing_model)
+        if rate_card_id is not None:
+            pulumi.set(__self__, "rate_card_id", rate_card_id)
+        if subscription_id is not None:
+            pulumi.set(__self__, "subscription_id", subscription_id)
+        if time_end is not None:
+            pulumi.set(__self__, "time_end", time_end)
+        if time_start is not None:
+            pulumi.set(__self__, "time_start", time_start)
 
     @property
     @pulumi.getter(name="aggregatedComputedUsages")
-    def aggregated_computed_usages(self) -> Sequence['outputs.GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageResult']:
-        """
-        Aggregation of computed usages for the subscribed service.
-        """
+    def aggregated_computed_usages(self) -> Optional[Sequence['outputs.GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageResult']]:
         return pulumi.get(self, "aggregated_computed_usages")
 
     @property
     @pulumi.getter(name="currencyCode")
-    def currency_code(self) -> str:
-        """
-        Currency code
-        """
+    def currency_code(self) -> Optional[str]:
         return pulumi.get(self, "currency_code")
 
     @property
     @pulumi.getter(name="parentProducts")
-    def parent_products(self) -> Sequence['outputs.GetCommitmentAggregatedsComputedUsageAggregatedParentProductResult']:
-        """
-        Product part number for subscribed service line, called parent product.
-        """
+    def parent_products(self) -> Optional[Sequence['outputs.GetCommitmentAggregatedsComputedUsageAggregatedParentProductResult']]:
         return pulumi.get(self, "parent_products")
 
     @property
     @pulumi.getter(name="parentSubscribedServiceId")
-    def parent_subscribed_service_id(self) -> str:
-        """
-        Subscribed service line parent id
-        """
+    def parent_subscribed_service_id(self) -> Optional[str]:
         return pulumi.get(self, "parent_subscribed_service_id")
 
     @property
     @pulumi.getter(name="planNumber")
-    def plan_number(self) -> str:
-        """
-        Subscribed service asociated subscription plan number.
-        """
+    def plan_number(self) -> Optional[str]:
         return pulumi.get(self, "plan_number")
 
     @property
     @pulumi.getter(name="pricingModel")
-    def pricing_model(self) -> str:
-        """
-        Subscribed services pricing model
-        """
+    def pricing_model(self) -> Optional[str]:
         return pulumi.get(self, "pricing_model")
 
     @property
     @pulumi.getter(name="rateCardId")
-    def rate_card_id(self) -> str:
-        """
-        Inernal SPM Ratecard Id at line level
-        """
+    def rate_card_id(self) -> Optional[str]:
         return pulumi.get(self, "rate_card_id")
 
     @property
     @pulumi.getter(name="subscriptionId")
-    def subscription_id(self) -> str:
-        """
-        Subscription Id is an identifier associated to the service used for filter the Computed Usage in SPM.
-        """
+    def subscription_id(self) -> Optional[str]:
         return pulumi.get(self, "subscription_id")
 
     @property
     @pulumi.getter(name="timeEnd")
-    def time_end(self) -> str:
-        """
-        Subscribed services contract line end date, expressed in RFC 3339 timestamp format.
-        """
+    def time_end(self) -> Optional[str]:
         return pulumi.get(self, "time_end")
 
     @property
     @pulumi.getter(name="timeStart")
-    def time_start(self) -> str:
-        """
-        Subscribed services contract line start date, expressed in RFC 3339 timestamp format.
-        """
+    def time_start(self) -> Optional[str]:
         return pulumi.get(self, "time_start")
 
 
 @pulumi.output_type
 class GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageResult(dict):
     def __init__(__self__, *,
-                 cost: str,
-                 cost_unrounded: str,
-                 data_center: str,
-                 net_unit_price: str,
-                 products: Sequence['outputs.GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageProductResult'],
-                 quantity: str,
-                 time_metered_on: str,
-                 type: str):
-        """
-        :param str cost: Sum of Computed Line Amount rounded
-        :param str cost_unrounded: Sum of Computed Line Amount unrounded
-        :param str data_center: Data Center Attribute as sent by MQS to SPM.
-        :param str net_unit_price: Net Unit Price for the product in consideration.
-        :param Sequence['GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageProductArgs'] products: Product description
-        :param str quantity: Total Quantity that was used for computation
-        :param str time_metered_on: Metered Service date , expressed in RFC 3339 timestamp format.
-        :param str type: Usage compute type in SPM.
-        """
-        pulumi.set(__self__, "cost", cost)
-        pulumi.set(__self__, "cost_unrounded", cost_unrounded)
-        pulumi.set(__self__, "data_center", data_center)
-        pulumi.set(__self__, "net_unit_price", net_unit_price)
-        pulumi.set(__self__, "products", products)
-        pulumi.set(__self__, "quantity", quantity)
-        pulumi.set(__self__, "time_metered_on", time_metered_on)
-        pulumi.set(__self__, "type", type)
+                 cost: Optional[str] = None,
+                 cost_unrounded: Optional[str] = None,
+                 data_center: Optional[str] = None,
+                 net_unit_price: Optional[str] = None,
+                 products: Optional[Sequence['outputs.GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageProductResult']] = None,
+                 quantity: Optional[str] = None,
+                 time_metered_on: Optional[str] = None,
+                 type: Optional[str] = None):
+        if cost is not None:
+            pulumi.set(__self__, "cost", cost)
+        if cost_unrounded is not None:
+            pulumi.set(__self__, "cost_unrounded", cost_unrounded)
+        if data_center is not None:
+            pulumi.set(__self__, "data_center", data_center)
+        if net_unit_price is not None:
+            pulumi.set(__self__, "net_unit_price", net_unit_price)
+        if products is not None:
+            pulumi.set(__self__, "products", products)
+        if quantity is not None:
+            pulumi.set(__self__, "quantity", quantity)
+        if time_metered_on is not None:
+            pulumi.set(__self__, "time_metered_on", time_metered_on)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
 
     @property
     @pulumi.getter
-    def cost(self) -> str:
-        """
-        Sum of Computed Line Amount rounded
-        """
+    def cost(self) -> Optional[str]:
         return pulumi.get(self, "cost")
 
     @property
     @pulumi.getter(name="costUnrounded")
-    def cost_unrounded(self) -> str:
-        """
-        Sum of Computed Line Amount unrounded
-        """
+    def cost_unrounded(self) -> Optional[str]:
         return pulumi.get(self, "cost_unrounded")
 
     @property
     @pulumi.getter(name="dataCenter")
-    def data_center(self) -> str:
-        """
-        Data Center Attribute as sent by MQS to SPM.
-        """
+    def data_center(self) -> Optional[str]:
         return pulumi.get(self, "data_center")
 
     @property
     @pulumi.getter(name="netUnitPrice")
-    def net_unit_price(self) -> str:
-        """
-        Net Unit Price for the product in consideration.
-        """
+    def net_unit_price(self) -> Optional[str]:
         return pulumi.get(self, "net_unit_price")
 
     @property
     @pulumi.getter
-    def products(self) -> Sequence['outputs.GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageProductResult']:
-        """
-        Product description
-        """
+    def products(self) -> Optional[Sequence['outputs.GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageProductResult']]:
         return pulumi.get(self, "products")
 
     @property
     @pulumi.getter
-    def quantity(self) -> str:
-        """
-        Total Quantity that was used for computation
-        """
+    def quantity(self) -> Optional[str]:
         return pulumi.get(self, "quantity")
 
     @property
     @pulumi.getter(name="timeMeteredOn")
-    def time_metered_on(self) -> str:
-        """
-        Metered Service date , expressed in RFC 3339 timestamp format.
-        """
+    def time_metered_on(self) -> Optional[str]:
         return pulumi.get(self, "time_metered_on")
 
     @property
     @pulumi.getter
-    def type(self) -> str:
-        """
-        Usage compute type in SPM.
-        """
+    def type(self) -> Optional[str]:
         return pulumi.get(self, "type")
 
 
 @pulumi.output_type
 class GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageProductResult(dict):
     def __init__(__self__, *,
-                 billing_category: str,
-                 name: str,
-                 part_number: str,
-                 product_category: str,
-                 provisioning_group: str,
-                 ucm_rate_card_part_type: str,
-                 unit_of_measure: str):
-        """
-        :param str billing_category: Metered service billing category
-        :param str name: Product name
-        :param str part_number: Product part number
-        :param str product_category: Product category
-        :param str provisioning_group: Product provisioning group
-        :param str ucm_rate_card_part_type: Rate card part type of Product
-        :param str unit_of_measure: Unit of Measure
-        """
-        pulumi.set(__self__, "billing_category", billing_category)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "part_number", part_number)
-        pulumi.set(__self__, "product_category", product_category)
-        pulumi.set(__self__, "provisioning_group", provisioning_group)
-        pulumi.set(__self__, "ucm_rate_card_part_type", ucm_rate_card_part_type)
-        pulumi.set(__self__, "unit_of_measure", unit_of_measure)
+                 billing_category: Optional[str] = None,
+                 name: Optional[str] = None,
+                 part_number: Optional[str] = None,
+                 product_category: Optional[str] = None,
+                 provisioning_group: Optional[str] = None,
+                 ucm_rate_card_part_type: Optional[str] = None,
+                 unit_of_measure: Optional[str] = None):
+        if billing_category is not None:
+            pulumi.set(__self__, "billing_category", billing_category)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if part_number is not None:
+            pulumi.set(__self__, "part_number", part_number)
+        if product_category is not None:
+            pulumi.set(__self__, "product_category", product_category)
+        if provisioning_group is not None:
+            pulumi.set(__self__, "provisioning_group", provisioning_group)
+        if ucm_rate_card_part_type is not None:
+            pulumi.set(__self__, "ucm_rate_card_part_type", ucm_rate_card_part_type)
+        if unit_of_measure is not None:
+            pulumi.set(__self__, "unit_of_measure", unit_of_measure)
 
     @property
     @pulumi.getter(name="billingCategory")
-    def billing_category(self) -> str:
-        """
-        Metered service billing category
-        """
+    def billing_category(self) -> Optional[str]:
         return pulumi.get(self, "billing_category")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        Product name
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="partNumber")
-    def part_number(self) -> str:
-        """
-        Product part number
-        """
+    def part_number(self) -> Optional[str]:
         return pulumi.get(self, "part_number")
 
     @property
     @pulumi.getter(name="productCategory")
-    def product_category(self) -> str:
-        """
-        Product category
-        """
+    def product_category(self) -> Optional[str]:
         return pulumi.get(self, "product_category")
 
     @property
     @pulumi.getter(name="provisioningGroup")
-    def provisioning_group(self) -> str:
-        """
-        Product provisioning group
-        """
+    def provisioning_group(self) -> Optional[str]:
         return pulumi.get(self, "provisioning_group")
 
     @property
     @pulumi.getter(name="ucmRateCardPartType")
-    def ucm_rate_card_part_type(self) -> str:
-        """
-        Rate card part type of Product
-        """
+    def ucm_rate_card_part_type(self) -> Optional[str]:
         return pulumi.get(self, "ucm_rate_card_part_type")
 
     @property
     @pulumi.getter(name="unitOfMeasure")
-    def unit_of_measure(self) -> str:
-        """
-        Unit of Measure
-        """
+    def unit_of_measure(self) -> Optional[str]:
         return pulumi.get(self, "unit_of_measure")
 
 
 @pulumi.output_type
 class GetCommitmentAggregatedsComputedUsageAggregatedParentProductResult(dict):
     def __init__(__self__, *,
-                 billing_category: str,
-                 name: str,
-                 part_number: str,
-                 product_category: str,
-                 provisioning_group: str,
-                 ucm_rate_card_part_type: str,
-                 unit_of_measure: str):
-        """
-        :param str billing_category: Metered service billing category
-        :param str name: Product name
-        :param str part_number: Product part number
-        :param str product_category: Product category
-        :param str provisioning_group: Product provisioning group
-        :param str ucm_rate_card_part_type: Rate card part type of Product
-        :param str unit_of_measure: Unit of Measure
-        """
-        pulumi.set(__self__, "billing_category", billing_category)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "part_number", part_number)
-        pulumi.set(__self__, "product_category", product_category)
-        pulumi.set(__self__, "provisioning_group", provisioning_group)
-        pulumi.set(__self__, "ucm_rate_card_part_type", ucm_rate_card_part_type)
-        pulumi.set(__self__, "unit_of_measure", unit_of_measure)
+                 billing_category: Optional[str] = None,
+                 name: Optional[str] = None,
+                 part_number: Optional[str] = None,
+                 product_category: Optional[str] = None,
+                 provisioning_group: Optional[str] = None,
+                 ucm_rate_card_part_type: Optional[str] = None,
+                 unit_of_measure: Optional[str] = None):
+        if billing_category is not None:
+            pulumi.set(__self__, "billing_category", billing_category)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if part_number is not None:
+            pulumi.set(__self__, "part_number", part_number)
+        if product_category is not None:
+            pulumi.set(__self__, "product_category", product_category)
+        if provisioning_group is not None:
+            pulumi.set(__self__, "provisioning_group", provisioning_group)
+        if ucm_rate_card_part_type is not None:
+            pulumi.set(__self__, "ucm_rate_card_part_type", ucm_rate_card_part_type)
+        if unit_of_measure is not None:
+            pulumi.set(__self__, "unit_of_measure", unit_of_measure)
 
     @property
     @pulumi.getter(name="billingCategory")
-    def billing_category(self) -> str:
-        """
-        Metered service billing category
-        """
+    def billing_category(self) -> Optional[str]:
         return pulumi.get(self, "billing_category")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        Product name
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="partNumber")
-    def part_number(self) -> str:
-        """
-        Product part number
-        """
+    def part_number(self) -> Optional[str]:
         return pulumi.get(self, "part_number")
 
     @property
     @pulumi.getter(name="productCategory")
-    def product_category(self) -> str:
-        """
-        Product category
-        """
+    def product_category(self) -> Optional[str]:
         return pulumi.get(self, "product_category")
 
     @property
     @pulumi.getter(name="provisioningGroup")
-    def provisioning_group(self) -> str:
-        """
-        Product provisioning group
-        """
+    def provisioning_group(self) -> Optional[str]:
         return pulumi.get(self, "provisioning_group")
 
     @property
     @pulumi.getter(name="ucmRateCardPartType")
-    def ucm_rate_card_part_type(self) -> str:
-        """
-        Rate card part type of Product
-        """
+    def ucm_rate_card_part_type(self) -> Optional[str]:
         return pulumi.get(self, "ucm_rate_card_part_type")
 
     @property
     @pulumi.getter(name="unitOfMeasure")
-    def unit_of_measure(self) -> str:
-        """
-        Unit of Measure
-        """
+    def unit_of_measure(self) -> Optional[str]:
         return pulumi.get(self, "unit_of_measure")
 
 
@@ -410,9 +306,6 @@ class GetCommitmentAggregatedsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: Product name
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -421,9 +314,6 @@ class GetCommitmentAggregatedsFilterResult(dict):
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        Product name
-        """
         return pulumi.get(self, "name")
 
     @property
@@ -440,625 +330,457 @@ class GetCommitmentAggregatedsFilterResult(dict):
 @pulumi.output_type
 class GetComputedUsageParentProductResult(dict):
     def __init__(__self__, *,
-                 billing_category: str,
-                 name: str,
-                 part_number: str,
-                 product_category: str,
-                 provisioning_group: str,
-                 ucm_rate_card_part_type: str,
-                 unit_of_measure: str):
-        """
-        :param str billing_category: Metered service billing category
-        :param str name: Product name
-        :param str part_number: Product part number
-        :param str product_category: Product category
-        :param str provisioning_group: Product provisioning group
-        :param str ucm_rate_card_part_type: Rate card part type of Product
-        :param str unit_of_measure: Unit of Messure
-        """
-        pulumi.set(__self__, "billing_category", billing_category)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "part_number", part_number)
-        pulumi.set(__self__, "product_category", product_category)
-        pulumi.set(__self__, "provisioning_group", provisioning_group)
-        pulumi.set(__self__, "ucm_rate_card_part_type", ucm_rate_card_part_type)
-        pulumi.set(__self__, "unit_of_measure", unit_of_measure)
+                 billing_category: Optional[str] = None,
+                 name: Optional[str] = None,
+                 part_number: Optional[str] = None,
+                 product_category: Optional[str] = None,
+                 provisioning_group: Optional[str] = None,
+                 ucm_rate_card_part_type: Optional[str] = None,
+                 unit_of_measure: Optional[str] = None):
+        if billing_category is not None:
+            pulumi.set(__self__, "billing_category", billing_category)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if part_number is not None:
+            pulumi.set(__self__, "part_number", part_number)
+        if product_category is not None:
+            pulumi.set(__self__, "product_category", product_category)
+        if provisioning_group is not None:
+            pulumi.set(__self__, "provisioning_group", provisioning_group)
+        if ucm_rate_card_part_type is not None:
+            pulumi.set(__self__, "ucm_rate_card_part_type", ucm_rate_card_part_type)
+        if unit_of_measure is not None:
+            pulumi.set(__self__, "unit_of_measure", unit_of_measure)
 
     @property
     @pulumi.getter(name="billingCategory")
-    def billing_category(self) -> str:
-        """
-        Metered service billing category
-        """
+    def billing_category(self) -> Optional[str]:
         return pulumi.get(self, "billing_category")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        Product name
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="partNumber")
-    def part_number(self) -> str:
-        """
-        Product part number
-        """
+    def part_number(self) -> Optional[str]:
         return pulumi.get(self, "part_number")
 
     @property
     @pulumi.getter(name="productCategory")
-    def product_category(self) -> str:
-        """
-        Product category
-        """
+    def product_category(self) -> Optional[str]:
         return pulumi.get(self, "product_category")
 
     @property
     @pulumi.getter(name="provisioningGroup")
-    def provisioning_group(self) -> str:
-        """
-        Product provisioning group
-        """
+    def provisioning_group(self) -> Optional[str]:
         return pulumi.get(self, "provisioning_group")
 
     @property
     @pulumi.getter(name="ucmRateCardPartType")
-    def ucm_rate_card_part_type(self) -> str:
-        """
-        Rate card part type of Product
-        """
+    def ucm_rate_card_part_type(self) -> Optional[str]:
         return pulumi.get(self, "ucm_rate_card_part_type")
 
     @property
     @pulumi.getter(name="unitOfMeasure")
-    def unit_of_measure(self) -> str:
-        """
-        Unit of Messure
-        """
+    def unit_of_measure(self) -> Optional[str]:
         return pulumi.get(self, "unit_of_measure")
 
 
 @pulumi.output_type
 class GetComputedUsageProductResult(dict):
     def __init__(__self__, *,
-                 billing_category: str,
-                 name: str,
-                 part_number: str,
-                 product_category: str,
-                 provisioning_group: str,
-                 ucm_rate_card_part_type: str,
-                 unit_of_measure: str):
-        """
-        :param str billing_category: Metered service billing category
-        :param str name: Product name
-        :param str part_number: Product part number
-        :param str product_category: Product category
-        :param str provisioning_group: Product provisioning group
-        :param str ucm_rate_card_part_type: Rate card part type of Product
-        :param str unit_of_measure: Unit of Messure
-        """
-        pulumi.set(__self__, "billing_category", billing_category)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "part_number", part_number)
-        pulumi.set(__self__, "product_category", product_category)
-        pulumi.set(__self__, "provisioning_group", provisioning_group)
-        pulumi.set(__self__, "ucm_rate_card_part_type", ucm_rate_card_part_type)
-        pulumi.set(__self__, "unit_of_measure", unit_of_measure)
+                 billing_category: Optional[str] = None,
+                 name: Optional[str] = None,
+                 part_number: Optional[str] = None,
+                 product_category: Optional[str] = None,
+                 provisioning_group: Optional[str] = None,
+                 ucm_rate_card_part_type: Optional[str] = None,
+                 unit_of_measure: Optional[str] = None):
+        if billing_category is not None:
+            pulumi.set(__self__, "billing_category", billing_category)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if part_number is not None:
+            pulumi.set(__self__, "part_number", part_number)
+        if product_category is not None:
+            pulumi.set(__self__, "product_category", product_category)
+        if provisioning_group is not None:
+            pulumi.set(__self__, "provisioning_group", provisioning_group)
+        if ucm_rate_card_part_type is not None:
+            pulumi.set(__self__, "ucm_rate_card_part_type", ucm_rate_card_part_type)
+        if unit_of_measure is not None:
+            pulumi.set(__self__, "unit_of_measure", unit_of_measure)
 
     @property
     @pulumi.getter(name="billingCategory")
-    def billing_category(self) -> str:
-        """
-        Metered service billing category
-        """
+    def billing_category(self) -> Optional[str]:
         return pulumi.get(self, "billing_category")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        Product name
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="partNumber")
-    def part_number(self) -> str:
-        """
-        Product part number
-        """
+    def part_number(self) -> Optional[str]:
         return pulumi.get(self, "part_number")
 
     @property
     @pulumi.getter(name="productCategory")
-    def product_category(self) -> str:
-        """
-        Product category
-        """
+    def product_category(self) -> Optional[str]:
         return pulumi.get(self, "product_category")
 
     @property
     @pulumi.getter(name="provisioningGroup")
-    def provisioning_group(self) -> str:
-        """
-        Product provisioning group
-        """
+    def provisioning_group(self) -> Optional[str]:
         return pulumi.get(self, "provisioning_group")
 
     @property
     @pulumi.getter(name="ucmRateCardPartType")
-    def ucm_rate_card_part_type(self) -> str:
-        """
-        Rate card part type of Product
-        """
+    def ucm_rate_card_part_type(self) -> Optional[str]:
         return pulumi.get(self, "ucm_rate_card_part_type")
 
     @property
     @pulumi.getter(name="unitOfMeasure")
-    def unit_of_measure(self) -> str:
-        """
-        Unit of Messure
-        """
+    def unit_of_measure(self) -> Optional[str]:
         return pulumi.get(self, "unit_of_measure")
 
 
 @pulumi.output_type
 class GetComputedUsagesComputedUsageResult(dict):
     def __init__(__self__, *,
-                 commitment_service_id: str,
-                 compute_source: str,
-                 computed_usage_id: str,
-                 cost: str,
-                 cost_rounded: str,
-                 currency_code: str,
-                 data_center: str,
-                 id: str,
-                 is_invoiced: bool,
-                 mqs_message_id: str,
-                 net_unit_price: str,
-                 original_usage_number: str,
-                 parent_products: Sequence['outputs.GetComputedUsagesComputedUsageParentProductResult'],
-                 parent_subscribed_service_id: str,
-                 plan_number: str,
-                 products: Sequence['outputs.GetComputedUsagesComputedUsageProductResult'],
-                 quantity: str,
-                 rate_card_id: str,
-                 rate_card_tierd_id: str,
-                 time_created: str,
-                 time_metered_on: str,
-                 time_of_arrival: str,
-                 time_updated: str,
-                 type: str,
-                 unit_of_measure: str,
-                 usage_number: str):
-        """
-        :param str commitment_service_id: Subscribed service commitmentId.
-        :param str compute_source: SPM Internal compute records source .
-        :param str cost: Computed Line Amount not rounded
-        :param str cost_rounded: Computed Line Amount rounded.
-        :param str currency_code: Currency code
-        :param str data_center: Data Center Attribute as sent by MQS to SPM.
-        :param str id: SPM Internal computed usage Id , 32 character string
-        :param bool is_invoiced: Invoicing status for the aggregated compute usage
-        :param str mqs_message_id: MQS Identfier send to SPM , SPM does not transform this attribute and is received as is.
-        :param str net_unit_price: Net Unit Price for the product in consideration, price actual.
-        :param str original_usage_number: SPM Internal Original usage Line number identifier in SPM coming from Metered Services entity.
-        :param Sequence['GetComputedUsagesComputedUsageParentProductArgs'] parent_products: Product part number for subscribed service line, called parent product.
-        :param str parent_subscribed_service_id: Subscribed service line parent id
-        :param str plan_number: Subscription plan number
-        :param Sequence['GetComputedUsagesComputedUsageProductArgs'] products: Product description
-        :param str quantity: Total Quantity that was used for computation
-        :param str rate_card_id: Ratecard Id at subscribed service level
-        :param str rate_card_tierd_id: References the tier in the ratecard for that usage (OCI will be using the same reference to cross-reference for correctness on the usage csv report), comes from Entity OBSCNTR_IPT_PRODUCTTIER.
-        :param str time_created: Computed Usage created time, expressed in RFC 3339 timestamp format.
-        :param str time_metered_on: Metered Service date, expressed in RFC 3339 timestamp format.
-        :param str time_of_arrival: Usae computation date, expressed in RFC 3339 timestamp format.
-        :param str time_updated: Computed Usage updated time, expressed in RFC 3339 timestamp format.
-        :param str type: Usage compute type in SPM.
-        :param str unit_of_measure: Unit of Messure
-        :param str usage_number: SPM Internal usage Line number identifier in SPM coming from Metered Services entity.
-        """
-        pulumi.set(__self__, "commitment_service_id", commitment_service_id)
-        pulumi.set(__self__, "compute_source", compute_source)
-        pulumi.set(__self__, "computed_usage_id", computed_usage_id)
-        pulumi.set(__self__, "cost", cost)
-        pulumi.set(__self__, "cost_rounded", cost_rounded)
-        pulumi.set(__self__, "currency_code", currency_code)
-        pulumi.set(__self__, "data_center", data_center)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "is_invoiced", is_invoiced)
-        pulumi.set(__self__, "mqs_message_id", mqs_message_id)
-        pulumi.set(__self__, "net_unit_price", net_unit_price)
-        pulumi.set(__self__, "original_usage_number", original_usage_number)
-        pulumi.set(__self__, "parent_products", parent_products)
-        pulumi.set(__self__, "parent_subscribed_service_id", parent_subscribed_service_id)
-        pulumi.set(__self__, "plan_number", plan_number)
-        pulumi.set(__self__, "products", products)
-        pulumi.set(__self__, "quantity", quantity)
-        pulumi.set(__self__, "rate_card_id", rate_card_id)
-        pulumi.set(__self__, "rate_card_tierd_id", rate_card_tierd_id)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_metered_on", time_metered_on)
-        pulumi.set(__self__, "time_of_arrival", time_of_arrival)
-        pulumi.set(__self__, "time_updated", time_updated)
-        pulumi.set(__self__, "type", type)
-        pulumi.set(__self__, "unit_of_measure", unit_of_measure)
-        pulumi.set(__self__, "usage_number", usage_number)
+                 commitment_service_id: Optional[str] = None,
+                 compute_source: Optional[str] = None,
+                 computed_usage_id: Optional[str] = None,
+                 cost: Optional[str] = None,
+                 cost_rounded: Optional[str] = None,
+                 currency_code: Optional[str] = None,
+                 data_center: Optional[str] = None,
+                 id: Optional[str] = None,
+                 is_invoiced: Optional[bool] = None,
+                 mqs_message_id: Optional[str] = None,
+                 net_unit_price: Optional[str] = None,
+                 original_usage_number: Optional[str] = None,
+                 parent_products: Optional[Sequence['outputs.GetComputedUsagesComputedUsageParentProductResult']] = None,
+                 parent_subscribed_service_id: Optional[str] = None,
+                 plan_number: Optional[str] = None,
+                 products: Optional[Sequence['outputs.GetComputedUsagesComputedUsageProductResult']] = None,
+                 quantity: Optional[str] = None,
+                 rate_card_id: Optional[str] = None,
+                 rate_card_tierd_id: Optional[str] = None,
+                 time_created: Optional[str] = None,
+                 time_metered_on: Optional[str] = None,
+                 time_of_arrival: Optional[str] = None,
+                 time_updated: Optional[str] = None,
+                 type: Optional[str] = None,
+                 unit_of_measure: Optional[str] = None,
+                 usage_number: Optional[str] = None):
+        if commitment_service_id is not None:
+            pulumi.set(__self__, "commitment_service_id", commitment_service_id)
+        if compute_source is not None:
+            pulumi.set(__self__, "compute_source", compute_source)
+        if computed_usage_id is not None:
+            pulumi.set(__self__, "computed_usage_id", computed_usage_id)
+        if cost is not None:
+            pulumi.set(__self__, "cost", cost)
+        if cost_rounded is not None:
+            pulumi.set(__self__, "cost_rounded", cost_rounded)
+        if currency_code is not None:
+            pulumi.set(__self__, "currency_code", currency_code)
+        if data_center is not None:
+            pulumi.set(__self__, "data_center", data_center)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if is_invoiced is not None:
+            pulumi.set(__self__, "is_invoiced", is_invoiced)
+        if mqs_message_id is not None:
+            pulumi.set(__self__, "mqs_message_id", mqs_message_id)
+        if net_unit_price is not None:
+            pulumi.set(__self__, "net_unit_price", net_unit_price)
+        if original_usage_number is not None:
+            pulumi.set(__self__, "original_usage_number", original_usage_number)
+        if parent_products is not None:
+            pulumi.set(__self__, "parent_products", parent_products)
+        if parent_subscribed_service_id is not None:
+            pulumi.set(__self__, "parent_subscribed_service_id", parent_subscribed_service_id)
+        if plan_number is not None:
+            pulumi.set(__self__, "plan_number", plan_number)
+        if products is not None:
+            pulumi.set(__self__, "products", products)
+        if quantity is not None:
+            pulumi.set(__self__, "quantity", quantity)
+        if rate_card_id is not None:
+            pulumi.set(__self__, "rate_card_id", rate_card_id)
+        if rate_card_tierd_id is not None:
+            pulumi.set(__self__, "rate_card_tierd_id", rate_card_tierd_id)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if time_metered_on is not None:
+            pulumi.set(__self__, "time_metered_on", time_metered_on)
+        if time_of_arrival is not None:
+            pulumi.set(__self__, "time_of_arrival", time_of_arrival)
+        if time_updated is not None:
+            pulumi.set(__self__, "time_updated", time_updated)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+        if unit_of_measure is not None:
+            pulumi.set(__self__, "unit_of_measure", unit_of_measure)
+        if usage_number is not None:
+            pulumi.set(__self__, "usage_number", usage_number)
 
     @property
     @pulumi.getter(name="commitmentServiceId")
-    def commitment_service_id(self) -> str:
-        """
-        Subscribed service commitmentId.
-        """
+    def commitment_service_id(self) -> Optional[str]:
         return pulumi.get(self, "commitment_service_id")
 
     @property
     @pulumi.getter(name="computeSource")
-    def compute_source(self) -> str:
-        """
-        SPM Internal compute records source .
-        """
+    def compute_source(self) -> Optional[str]:
         return pulumi.get(self, "compute_source")
 
     @property
     @pulumi.getter(name="computedUsageId")
-    def computed_usage_id(self) -> str:
+    def computed_usage_id(self) -> Optional[str]:
         return pulumi.get(self, "computed_usage_id")
 
     @property
     @pulumi.getter
-    def cost(self) -> str:
-        """
-        Computed Line Amount not rounded
-        """
+    def cost(self) -> Optional[str]:
         return pulumi.get(self, "cost")
 
     @property
     @pulumi.getter(name="costRounded")
-    def cost_rounded(self) -> str:
-        """
-        Computed Line Amount rounded.
-        """
+    def cost_rounded(self) -> Optional[str]:
         return pulumi.get(self, "cost_rounded")
 
     @property
     @pulumi.getter(name="currencyCode")
-    def currency_code(self) -> str:
-        """
-        Currency code
-        """
+    def currency_code(self) -> Optional[str]:
         return pulumi.get(self, "currency_code")
 
     @property
     @pulumi.getter(name="dataCenter")
-    def data_center(self) -> str:
-        """
-        Data Center Attribute as sent by MQS to SPM.
-        """
+    def data_center(self) -> Optional[str]:
         return pulumi.get(self, "data_center")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        SPM Internal computed usage Id , 32 character string
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="isInvoiced")
-    def is_invoiced(self) -> bool:
-        """
-        Invoicing status for the aggregated compute usage
-        """
+    def is_invoiced(self) -> Optional[bool]:
         return pulumi.get(self, "is_invoiced")
 
     @property
     @pulumi.getter(name="mqsMessageId")
-    def mqs_message_id(self) -> str:
-        """
-        MQS Identfier send to SPM , SPM does not transform this attribute and is received as is.
-        """
+    def mqs_message_id(self) -> Optional[str]:
         return pulumi.get(self, "mqs_message_id")
 
     @property
     @pulumi.getter(name="netUnitPrice")
-    def net_unit_price(self) -> str:
-        """
-        Net Unit Price for the product in consideration, price actual.
-        """
+    def net_unit_price(self) -> Optional[str]:
         return pulumi.get(self, "net_unit_price")
 
     @property
     @pulumi.getter(name="originalUsageNumber")
-    def original_usage_number(self) -> str:
-        """
-        SPM Internal Original usage Line number identifier in SPM coming from Metered Services entity.
-        """
+    def original_usage_number(self) -> Optional[str]:
         return pulumi.get(self, "original_usage_number")
 
     @property
     @pulumi.getter(name="parentProducts")
-    def parent_products(self) -> Sequence['outputs.GetComputedUsagesComputedUsageParentProductResult']:
-        """
-        Product part number for subscribed service line, called parent product.
-        """
+    def parent_products(self) -> Optional[Sequence['outputs.GetComputedUsagesComputedUsageParentProductResult']]:
         return pulumi.get(self, "parent_products")
 
     @property
     @pulumi.getter(name="parentSubscribedServiceId")
-    def parent_subscribed_service_id(self) -> str:
-        """
-        Subscribed service line parent id
-        """
+    def parent_subscribed_service_id(self) -> Optional[str]:
         return pulumi.get(self, "parent_subscribed_service_id")
 
     @property
     @pulumi.getter(name="planNumber")
-    def plan_number(self) -> str:
-        """
-        Subscription plan number
-        """
+    def plan_number(self) -> Optional[str]:
         return pulumi.get(self, "plan_number")
 
     @property
     @pulumi.getter
-    def products(self) -> Sequence['outputs.GetComputedUsagesComputedUsageProductResult']:
-        """
-        Product description
-        """
+    def products(self) -> Optional[Sequence['outputs.GetComputedUsagesComputedUsageProductResult']]:
         return pulumi.get(self, "products")
 
     @property
     @pulumi.getter
-    def quantity(self) -> str:
-        """
-        Total Quantity that was used for computation
-        """
+    def quantity(self) -> Optional[str]:
         return pulumi.get(self, "quantity")
 
     @property
     @pulumi.getter(name="rateCardId")
-    def rate_card_id(self) -> str:
-        """
-        Ratecard Id at subscribed service level
-        """
+    def rate_card_id(self) -> Optional[str]:
         return pulumi.get(self, "rate_card_id")
 
     @property
     @pulumi.getter(name="rateCardTierdId")
-    def rate_card_tierd_id(self) -> str:
-        """
-        References the tier in the ratecard for that usage (OCI will be using the same reference to cross-reference for correctness on the usage csv report), comes from Entity OBSCNTR_IPT_PRODUCTTIER.
-        """
+    def rate_card_tierd_id(self) -> Optional[str]:
         return pulumi.get(self, "rate_card_tierd_id")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        Computed Usage created time, expressed in RFC 3339 timestamp format.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeMeteredOn")
-    def time_metered_on(self) -> str:
-        """
-        Metered Service date, expressed in RFC 3339 timestamp format.
-        """
+    def time_metered_on(self) -> Optional[str]:
         return pulumi.get(self, "time_metered_on")
 
     @property
     @pulumi.getter(name="timeOfArrival")
-    def time_of_arrival(self) -> str:
-        """
-        Usae computation date, expressed in RFC 3339 timestamp format.
-        """
+    def time_of_arrival(self) -> Optional[str]:
         return pulumi.get(self, "time_of_arrival")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        Computed Usage updated time, expressed in RFC 3339 timestamp format.
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
     @property
     @pulumi.getter
-    def type(self) -> str:
-        """
-        Usage compute type in SPM.
-        """
+    def type(self) -> Optional[str]:
         return pulumi.get(self, "type")
 
     @property
     @pulumi.getter(name="unitOfMeasure")
-    def unit_of_measure(self) -> str:
-        """
-        Unit of Messure
-        """
+    def unit_of_measure(self) -> Optional[str]:
         return pulumi.get(self, "unit_of_measure")
 
     @property
     @pulumi.getter(name="usageNumber")
-    def usage_number(self) -> str:
-        """
-        SPM Internal usage Line number identifier in SPM coming from Metered Services entity.
-        """
+    def usage_number(self) -> Optional[str]:
         return pulumi.get(self, "usage_number")
 
 
 @pulumi.output_type
 class GetComputedUsagesComputedUsageParentProductResult(dict):
     def __init__(__self__, *,
-                 billing_category: str,
-                 name: str,
-                 part_number: str,
-                 product_category: str,
-                 provisioning_group: str,
-                 ucm_rate_card_part_type: str,
-                 unit_of_measure: str):
-        """
-        :param str billing_category: Metered service billing category
-        :param str name: Product name
-        :param str part_number: Product part number
-        :param str product_category: Product category
-        :param str provisioning_group: Product provisioning group
-        :param str ucm_rate_card_part_type: Rate card part type of Product
-        :param str unit_of_measure: Unit of Messure
-        """
-        pulumi.set(__self__, "billing_category", billing_category)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "part_number", part_number)
-        pulumi.set(__self__, "product_category", product_category)
-        pulumi.set(__self__, "provisioning_group", provisioning_group)
-        pulumi.set(__self__, "ucm_rate_card_part_type", ucm_rate_card_part_type)
-        pulumi.set(__self__, "unit_of_measure", unit_of_measure)
+                 billing_category: Optional[str] = None,
+                 name: Optional[str] = None,
+                 part_number: Optional[str] = None,
+                 product_category: Optional[str] = None,
+                 provisioning_group: Optional[str] = None,
+                 ucm_rate_card_part_type: Optional[str] = None,
+                 unit_of_measure: Optional[str] = None):
+        if billing_category is not None:
+            pulumi.set(__self__, "billing_category", billing_category)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if part_number is not None:
+            pulumi.set(__self__, "part_number", part_number)
+        if product_category is not None:
+            pulumi.set(__self__, "product_category", product_category)
+        if provisioning_group is not None:
+            pulumi.set(__self__, "provisioning_group", provisioning_group)
+        if ucm_rate_card_part_type is not None:
+            pulumi.set(__self__, "ucm_rate_card_part_type", ucm_rate_card_part_type)
+        if unit_of_measure is not None:
+            pulumi.set(__self__, "unit_of_measure", unit_of_measure)
 
     @property
     @pulumi.getter(name="billingCategory")
-    def billing_category(self) -> str:
-        """
-        Metered service billing category
-        """
+    def billing_category(self) -> Optional[str]:
         return pulumi.get(self, "billing_category")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        Product name
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="partNumber")
-    def part_number(self) -> str:
-        """
-        Product part number
-        """
+    def part_number(self) -> Optional[str]:
         return pulumi.get(self, "part_number")
 
     @property
     @pulumi.getter(name="productCategory")
-    def product_category(self) -> str:
-        """
-        Product category
-        """
+    def product_category(self) -> Optional[str]:
         return pulumi.get(self, "product_category")
 
     @property
     @pulumi.getter(name="provisioningGroup")
-    def provisioning_group(self) -> str:
-        """
-        Product provisioning group
-        """
+    def provisioning_group(self) -> Optional[str]:
         return pulumi.get(self, "provisioning_group")
 
     @property
     @pulumi.getter(name="ucmRateCardPartType")
-    def ucm_rate_card_part_type(self) -> str:
-        """
-        Rate card part type of Product
-        """
+    def ucm_rate_card_part_type(self) -> Optional[str]:
         return pulumi.get(self, "ucm_rate_card_part_type")
 
     @property
     @pulumi.getter(name="unitOfMeasure")
-    def unit_of_measure(self) -> str:
-        """
-        Unit of Messure
-        """
+    def unit_of_measure(self) -> Optional[str]:
         return pulumi.get(self, "unit_of_measure")
 
 
 @pulumi.output_type
 class GetComputedUsagesComputedUsageProductResult(dict):
     def __init__(__self__, *,
-                 billing_category: str,
-                 name: str,
-                 part_number: str,
-                 product_category: str,
-                 provisioning_group: str,
-                 ucm_rate_card_part_type: str,
-                 unit_of_measure: str):
-        """
-        :param str billing_category: Metered service billing category
-        :param str name: Product name
-        :param str part_number: Product part number
-        :param str product_category: Product category
-        :param str provisioning_group: Product provisioning group
-        :param str ucm_rate_card_part_type: Rate card part type of Product
-        :param str unit_of_measure: Unit of Messure
-        """
-        pulumi.set(__self__, "billing_category", billing_category)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "part_number", part_number)
-        pulumi.set(__self__, "product_category", product_category)
-        pulumi.set(__self__, "provisioning_group", provisioning_group)
-        pulumi.set(__self__, "ucm_rate_card_part_type", ucm_rate_card_part_type)
-        pulumi.set(__self__, "unit_of_measure", unit_of_measure)
+                 billing_category: Optional[str] = None,
+                 name: Optional[str] = None,
+                 part_number: Optional[str] = None,
+                 product_category: Optional[str] = None,
+                 provisioning_group: Optional[str] = None,
+                 ucm_rate_card_part_type: Optional[str] = None,
+                 unit_of_measure: Optional[str] = None):
+        if billing_category is not None:
+            pulumi.set(__self__, "billing_category", billing_category)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if part_number is not None:
+            pulumi.set(__self__, "part_number", part_number)
+        if product_category is not None:
+            pulumi.set(__self__, "product_category", product_category)
+        if provisioning_group is not None:
+            pulumi.set(__self__, "provisioning_group", provisioning_group)
+        if ucm_rate_card_part_type is not None:
+            pulumi.set(__self__, "ucm_rate_card_part_type", ucm_rate_card_part_type)
+        if unit_of_measure is not None:
+            pulumi.set(__self__, "unit_of_measure", unit_of_measure)
 
     @property
     @pulumi.getter(name="billingCategory")
-    def billing_category(self) -> str:
-        """
-        Metered service billing category
-        """
+    def billing_category(self) -> Optional[str]:
         return pulumi.get(self, "billing_category")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        Product name
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="partNumber")
-    def part_number(self) -> str:
-        """
-        Product part number
-        """
+    def part_number(self) -> Optional[str]:
         return pulumi.get(self, "part_number")
 
     @property
     @pulumi.getter(name="productCategory")
-    def product_category(self) -> str:
-        """
-        Product category
-        """
+    def product_category(self) -> Optional[str]:
         return pulumi.get(self, "product_category")
 
     @property
     @pulumi.getter(name="provisioningGroup")
-    def provisioning_group(self) -> str:
-        """
-        Product provisioning group
-        """
+    def provisioning_group(self) -> Optional[str]:
         return pulumi.get(self, "provisioning_group")
 
     @property
     @pulumi.getter(name="ucmRateCardPartType")
-    def ucm_rate_card_part_type(self) -> str:
-        """
-        Rate card part type of Product
-        """
+    def ucm_rate_card_part_type(self) -> Optional[str]:
         return pulumi.get(self, "ucm_rate_card_part_type")
 
     @property
     @pulumi.getter(name="unitOfMeasure")
-    def unit_of_measure(self) -> str:
-        """
-        Unit of Messure
-        """
+    def unit_of_measure(self) -> Optional[str]:
         return pulumi.get(self, "unit_of_measure")
 
 
@@ -1068,9 +790,6 @@ class GetComputedUsagesFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: Product name
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -1079,9 +798,6 @@ class GetComputedUsagesFilterResult(dict):
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        Product name
-        """
         return pulumi.get(self, "name")
 
     @property

@@ -20,241 +20,241 @@ namespace Pulumi.Oci.Opensearch.Outputs
         /// <summary>
         /// The ID of the compartment in which to list resources.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// The number of data nodes configured for the cluster.
         /// </summary>
-        public readonly int DataNodeCount;
+        public readonly int? DataNodeCount;
         /// <summary>
         /// The bare metal shape for the cluster's data nodes.
         /// </summary>
-        public readonly string DataNodeHostBareMetalShape;
+        public readonly string? DataNodeHostBareMetalShape;
         /// <summary>
         /// The amount of memory in GB, for the cluster's data nodes.
         /// </summary>
-        public readonly int DataNodeHostMemoryGb;
+        public readonly int? DataNodeHostMemoryGb;
         /// <summary>
         /// The number of OCPUs configured for the cluster's data nodes.
         /// </summary>
-        public readonly int DataNodeHostOcpuCount;
+        public readonly int? DataNodeHostOcpuCount;
         /// <summary>
         /// The instance type for the cluster's data nodes.
         /// </summary>
-        public readonly string DataNodeHostType;
+        public readonly string? DataNodeHostType;
         /// <summary>
         /// The amount of storage in GB, to configure per node for the cluster's data nodes.
         /// </summary>
-        public readonly int DataNodeStorageGb;
+        public readonly int? DataNodeStorageGb;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// A filter to return only resources that match the entire display name given.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// The fully qualified domain name (FQDN) for the cluster's API endpoint.
         /// </summary>
-        public readonly string Fqdn;
+        public readonly string? Fqdn;
         /// <summary>
         /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// unique OpensearchCluster identifier
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Additional information about the current lifecycle state of the cluster.
         /// </summary>
-        public readonly string LifecycleDetails;
+        public readonly string? LifecycleDetails;
         /// <summary>
         /// The number of master nodes configured for the cluster.
         /// </summary>
-        public readonly int MasterNodeCount;
+        public readonly int? MasterNodeCount;
         /// <summary>
         /// The bare metal shape for the cluster's master nodes.
         /// </summary>
-        public readonly string MasterNodeHostBareMetalShape;
+        public readonly string? MasterNodeHostBareMetalShape;
         /// <summary>
         /// The amount of memory in GB, for the cluster's master nodes.
         /// </summary>
-        public readonly int MasterNodeHostMemoryGb;
+        public readonly int? MasterNodeHostMemoryGb;
         /// <summary>
         /// The number of OCPUs configured for cluster's master nodes.
         /// </summary>
-        public readonly int MasterNodeHostOcpuCount;
+        public readonly int? MasterNodeHostOcpuCount;
         /// <summary>
         /// The instance type for the cluster's master nodes.
         /// </summary>
-        public readonly string MasterNodeHostType;
+        public readonly string? MasterNodeHostType;
         /// <summary>
         /// The fully qualified domain name (FQDN) for the cluster's OpenSearch Dashboard API endpoint.
         /// </summary>
-        public readonly string OpendashboardFqdn;
+        public readonly string? OpendashboardFqdn;
         /// <summary>
         /// The number of OpenSearch Dashboard nodes configured for the cluster.
         /// </summary>
-        public readonly int OpendashboardNodeCount;
+        public readonly int? OpendashboardNodeCount;
         /// <summary>
         /// The amount of memory in GB, for the cluster's OpenSearch Dashboard nodes.
         /// </summary>
-        public readonly int OpendashboardNodeHostMemoryGb;
+        public readonly int? OpendashboardNodeHostMemoryGb;
         /// <summary>
         /// The amount of memory in GB, for the cluster's OpenSearch Dashboard nodes.
         /// </summary>
-        public readonly int OpendashboardNodeHostOcpuCount;
+        public readonly int? OpendashboardNodeHostOcpuCount;
         /// <summary>
         /// The private IP address for the cluster's OpenSearch Dashboard.
         /// </summary>
-        public readonly string OpendashboardPrivateIp;
+        public readonly string? OpendashboardPrivateIp;
         /// <summary>
         /// The fully qualified domain name (FQDN) for the cluster's API endpoint.
         /// </summary>
-        public readonly string OpensearchFqdn;
+        public readonly string? OpensearchFqdn;
         /// <summary>
         /// The cluster's private IP address.
         /// </summary>
-        public readonly string OpensearchPrivateIp;
+        public readonly string? OpensearchPrivateIp;
         /// <summary>
         /// The name of the master user that are used to manage security config
         /// </summary>
-        public readonly string SecurityMasterUserName;
+        public readonly string? SecurityMasterUserName;
         /// <summary>
         /// The password hash of the master user that are used to manage security config
         /// </summary>
-        public readonly string SecurityMasterUserPasswordHash;
+        public readonly string? SecurityMasterUserPasswordHash;
         /// <summary>
         /// The security mode of the cluster.
         /// </summary>
-        public readonly string SecurityMode;
+        public readonly string? SecurityMode;
         /// <summary>
         /// The software version the cluster is running.
         /// </summary>
-        public readonly string SoftwareVersion;
+        public readonly string? SoftwareVersion;
         /// <summary>
         /// A filter to return only OpensearchClusters their lifecycleState matches the given lifecycleState.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// The OCID for the compartment where the cluster's subnet is located.
         /// </summary>
-        public readonly string SubnetCompartmentId;
+        public readonly string? SubnetCompartmentId;
         /// <summary>
         /// The OCID of the cluster's subnet.
         /// </summary>
-        public readonly string SubnetId;
+        public readonly string? SubnetId;
         /// <summary>
         /// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> SystemTags;
+        public readonly ImmutableDictionary<string, object>? SystemTags;
         /// <summary>
         /// The amount of time in milliseconds since the cluster was created.
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The amount of time in milliseconds since the cluster was updated.
         /// </summary>
-        public readonly string TimeDeleted;
+        public readonly string? TimeDeleted;
         /// <summary>
         /// The amount of time in milliseconds since the cluster was updated.
         /// </summary>
-        public readonly string TimeUpdated;
+        public readonly string? TimeUpdated;
         /// <summary>
         /// The size in GB of the cluster's total storage.
         /// </summary>
-        public readonly int TotalStorageGb;
+        public readonly int? TotalStorageGb;
         /// <summary>
         /// The OCID for the compartment where the cluster's VCN is located.
         /// </summary>
-        public readonly string VcnCompartmentId;
+        public readonly string? VcnCompartmentId;
         /// <summary>
         /// The OCID of the cluster's VCN.
         /// </summary>
-        public readonly string VcnId;
+        public readonly string? VcnId;
 
         [OutputConstructor]
         private GetOpensearchClustersOpensearchClusterCollectionItemResult(
             ImmutableArray<string> availabilityDomains,
 
-            string compartmentId,
+            string? compartmentId,
 
-            int dataNodeCount,
+            int? dataNodeCount,
 
-            string dataNodeHostBareMetalShape,
+            string? dataNodeHostBareMetalShape,
 
-            int dataNodeHostMemoryGb,
+            int? dataNodeHostMemoryGb,
 
-            int dataNodeHostOcpuCount,
+            int? dataNodeHostOcpuCount,
 
-            string dataNodeHostType,
+            string? dataNodeHostType,
 
-            int dataNodeStorageGb,
+            int? dataNodeStorageGb,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string displayName,
+            string? displayName,
 
-            string fqdn,
+            string? fqdn,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string id,
+            string? id,
 
-            string lifecycleDetails,
+            string? lifecycleDetails,
 
-            int masterNodeCount,
+            int? masterNodeCount,
 
-            string masterNodeHostBareMetalShape,
+            string? masterNodeHostBareMetalShape,
 
-            int masterNodeHostMemoryGb,
+            int? masterNodeHostMemoryGb,
 
-            int masterNodeHostOcpuCount,
+            int? masterNodeHostOcpuCount,
 
-            string masterNodeHostType,
+            string? masterNodeHostType,
 
-            string opendashboardFqdn,
+            string? opendashboardFqdn,
 
-            int opendashboardNodeCount,
+            int? opendashboardNodeCount,
 
-            int opendashboardNodeHostMemoryGb,
+            int? opendashboardNodeHostMemoryGb,
 
-            int opendashboardNodeHostOcpuCount,
+            int? opendashboardNodeHostOcpuCount,
 
-            string opendashboardPrivateIp,
+            string? opendashboardPrivateIp,
 
-            string opensearchFqdn,
+            string? opensearchFqdn,
 
-            string opensearchPrivateIp,
+            string? opensearchPrivateIp,
 
-            string securityMasterUserName,
+            string? securityMasterUserName,
 
-            string securityMasterUserPasswordHash,
+            string? securityMasterUserPasswordHash,
 
-            string securityMode,
+            string? securityMode,
 
-            string softwareVersion,
+            string? softwareVersion,
 
-            string state,
+            string? state,
 
-            string subnetCompartmentId,
+            string? subnetCompartmentId,
 
-            string subnetId,
+            string? subnetId,
 
-            ImmutableDictionary<string, object> systemTags,
+            ImmutableDictionary<string, object>? systemTags,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeDeleted,
+            string? timeDeleted,
 
-            string timeUpdated,
+            string? timeUpdated,
 
-            int totalStorageGb,
+            int? totalStorageGb,
 
-            string vcnCompartmentId,
+            string? vcnCompartmentId,
 
-            string vcnId)
+            string? vcnId)
         {
             AvailabilityDomains = availabilityDomains;
             CompartmentId = compartmentId;

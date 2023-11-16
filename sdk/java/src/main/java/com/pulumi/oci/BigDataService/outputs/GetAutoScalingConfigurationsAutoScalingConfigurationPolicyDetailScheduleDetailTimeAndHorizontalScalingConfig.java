@@ -7,18 +7,20 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfig {
-    private Integer targetNodeCount;
-    private String timeRecurrence;
+    private @Nullable Integer targetNodeCount;
+    private @Nullable String timeRecurrence;
 
     private GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfig() {}
-    public Integer targetNodeCount() {
-        return this.targetNodeCount;
+    public Optional<Integer> targetNodeCount() {
+        return Optional.ofNullable(this.targetNodeCount);
     }
-    public String timeRecurrence() {
-        return this.timeRecurrence;
+    public Optional<String> timeRecurrence() {
+        return Optional.ofNullable(this.timeRecurrence);
     }
 
     public static Builder builder() {
@@ -30,8 +32,8 @@ public final class GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDet
     }
     @CustomType.Builder
     public static final class Builder {
-        private Integer targetNodeCount;
-        private String timeRecurrence;
+        private @Nullable Integer targetNodeCount;
+        private @Nullable String timeRecurrence;
         public Builder() {}
         public Builder(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfig defaults) {
     	      Objects.requireNonNull(defaults);
@@ -40,13 +42,13 @@ public final class GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDet
         }
 
         @CustomType.Setter
-        public Builder targetNodeCount(Integer targetNodeCount) {
-            this.targetNodeCount = Objects.requireNonNull(targetNodeCount);
+        public Builder targetNodeCount(@Nullable Integer targetNodeCount) {
+            this.targetNodeCount = targetNodeCount;
             return this;
         }
         @CustomType.Setter
-        public Builder timeRecurrence(String timeRecurrence) {
-            this.timeRecurrence = Objects.requireNonNull(timeRecurrence);
+        public Builder timeRecurrence(@Nullable String timeRecurrence) {
+            this.timeRecurrence = timeRecurrence;
             return this;
         }
         public GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfig build() {

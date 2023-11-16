@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of External Asm Instances in Oracle Cloud Infrastructure Database Management service.
@@ -76,7 +75,7 @@ type GetExternalAsmInstancesResult struct {
 	ExternalAsmInstanceCollections []GetExternalAsmInstancesExternalAsmInstanceCollection `pulumi:"externalAsmInstanceCollections"`
 	Filters                        []GetExternalAsmInstancesFilter                        `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 }
 
 func GetExternalAsmInstancesOutput(ctx *pulumi.Context, args GetExternalAsmInstancesOutputArgs, opts ...pulumi.InvokeOption) GetExternalAsmInstancesResultOutput {
@@ -122,12 +121,6 @@ func (o GetExternalAsmInstancesResultOutput) ToGetExternalAsmInstancesResultOutp
 	return o
 }
 
-func (o GetExternalAsmInstancesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetExternalAsmInstancesResult] {
-	return pulumix.Output[GetExternalAsmInstancesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 func (o GetExternalAsmInstancesResultOutput) CompartmentId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetExternalAsmInstancesResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
@@ -155,8 +148,8 @@ func (o GetExternalAsmInstancesResultOutput) Filters() GetExternalAsmInstancesFi
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetExternalAsmInstancesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExternalAsmInstancesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetExternalAsmInstancesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExternalAsmInstancesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func init() {

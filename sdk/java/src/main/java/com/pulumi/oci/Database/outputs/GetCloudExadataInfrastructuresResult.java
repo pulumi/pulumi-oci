@@ -18,7 +18,7 @@ public final class GetCloudExadataInfrastructuresResult {
      * @return The list of cloud_exadata_infrastructures.
      * 
      */
-    private List<GetCloudExadataInfrastructuresCloudExadataInfrastructure> cloudExadataInfrastructures;
+    private @Nullable List<GetCloudExadataInfrastructuresCloudExadataInfrastructure> cloudExadataInfrastructures;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
@@ -34,7 +34,7 @@ public final class GetCloudExadataInfrastructuresResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The current lifecycle state of the cloud Exadata infrastructure resource.
      * 
@@ -47,7 +47,7 @@ public final class GetCloudExadataInfrastructuresResult {
      * 
      */
     public List<GetCloudExadataInfrastructuresCloudExadataInfrastructure> cloudExadataInfrastructures() {
-        return this.cloudExadataInfrastructures;
+        return this.cloudExadataInfrastructures == null ? List.of() : this.cloudExadataInfrastructures;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -70,8 +70,8 @@ public final class GetCloudExadataInfrastructuresResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The current lifecycle state of the cloud Exadata infrastructure resource.
@@ -90,11 +90,11 @@ public final class GetCloudExadataInfrastructuresResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetCloudExadataInfrastructuresCloudExadataInfrastructure> cloudExadataInfrastructures;
+        private @Nullable List<GetCloudExadataInfrastructuresCloudExadataInfrastructure> cloudExadataInfrastructures;
         private String compartmentId;
         private @Nullable String displayName;
         private @Nullable List<GetCloudExadataInfrastructuresFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String state;
         public Builder() {}
         public Builder(GetCloudExadataInfrastructuresResult defaults) {
@@ -108,8 +108,8 @@ public final class GetCloudExadataInfrastructuresResult {
         }
 
         @CustomType.Setter
-        public Builder cloudExadataInfrastructures(List<GetCloudExadataInfrastructuresCloudExadataInfrastructure> cloudExadataInfrastructures) {
-            this.cloudExadataInfrastructures = Objects.requireNonNull(cloudExadataInfrastructures);
+        public Builder cloudExadataInfrastructures(@Nullable List<GetCloudExadataInfrastructuresCloudExadataInfrastructure> cloudExadataInfrastructures) {
+            this.cloudExadataInfrastructures = cloudExadataInfrastructures;
             return this;
         }
         public Builder cloudExadataInfrastructures(GetCloudExadataInfrastructuresCloudExadataInfrastructure... cloudExadataInfrastructures) {
@@ -134,8 +134,8 @@ public final class GetCloudExadataInfrastructuresResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

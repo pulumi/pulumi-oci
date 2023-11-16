@@ -29,67 +29,67 @@ namespace Pulumi.Oci.DevOps
         /// (Updatable) Specifies the approval policy.
         /// </summary>
         [Output("approvalPolicy")]
-        public Output<Outputs.DeployStageApprovalPolicy> ApprovalPolicy { get; private set; } = null!;
+        public Output<Outputs.DeployStageApprovalPolicy?> ApprovalPolicy { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Disable pre/post upgrade hooks. Set to false by default.
         /// </summary>
         [Output("areHooksEnabled")]
-        public Output<bool> AreHooksEnabled { get; private set; } = null!;
+        public Output<bool?> AreHooksEnabled { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Collection of backend environment IP addresses.
         /// </summary>
         [Output("blueBackendIps")]
-        public Output<Outputs.DeployStageBlueBackendIps> BlueBackendIps { get; private set; } = null!;
+        public Output<Outputs.DeployStageBlueBackendIps?> BlueBackendIps { get; private set; } = null!;
 
         /// <summary>
         /// Specifies the required blue green release strategy for OKE deployment.
         /// </summary>
         [Output("blueGreenStrategy")]
-        public Output<Outputs.DeployStageBlueGreenStrategy> BlueGreenStrategy { get; private set; } = null!;
+        public Output<Outputs.DeployStageBlueGreenStrategy?> BlueGreenStrategy { get; private set; } = null!;
 
         /// <summary>
         /// Specifies the required canary release strategy for OKE deployment.
         /// </summary>
         [Output("canaryStrategy")]
-        public Output<Outputs.DeployStageCanaryStrategy> CanaryStrategy { get; private set; } = null!;
+        public Output<Outputs.DeployStageCanaryStrategy?> CanaryStrategy { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The OCID of the artifact that contains the command specification.
         /// </summary>
         [Output("commandSpecDeployArtifactId")]
-        public Output<string> CommandSpecDeployArtifactId { get; private set; } = null!;
+        public Output<string?> CommandSpecDeployArtifactId { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The OCID of the compartment where the ContainerInstance will be created.
         /// </summary>
         [Output("compartmentId")]
-        public Output<string> CompartmentId { get; private set; } = null!;
+        public Output<string?> CompartmentId { get; private set; } = null!;
 
         /// <summary>
         /// The OCID of the upstream compute instance group blue-green deployment stage in this pipeline.
         /// </summary>
         [Output("computeInstanceGroupBlueGreenDeploymentDeployStageId")]
-        public Output<string> ComputeInstanceGroupBlueGreenDeploymentDeployStageId { get; private set; } = null!;
+        public Output<string?> ComputeInstanceGroupBlueGreenDeploymentDeployStageId { get; private set; } = null!;
 
         /// <summary>
         /// A compute instance group canary stage OCID for load balancer.
         /// </summary>
         [Output("computeInstanceGroupCanaryDeployStageId")]
-        public Output<string> ComputeInstanceGroupCanaryDeployStageId { get; private set; } = null!;
+        public Output<string?> ComputeInstanceGroupCanaryDeployStageId { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) A compute instance group canary traffic shift stage OCID for load balancer.
         /// </summary>
         [Output("computeInstanceGroupCanaryTrafficShiftDeployStageId")]
-        public Output<string> ComputeInstanceGroupCanaryTrafficShiftDeployStageId { get; private set; } = null!;
+        public Output<string?> ComputeInstanceGroupCanaryTrafficShiftDeployStageId { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) A compute instance group environment OCID for rolling deployment.
         /// </summary>
         [Output("computeInstanceGroupDeployEnvironmentId")]
-        public Output<string> ComputeInstanceGroupDeployEnvironmentId { get; private set; } = null!;
+        public Output<string?> ComputeInstanceGroupDeployEnvironmentId { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) User provided key and value pair configuration, which is assigned through constants or parameter.
@@ -101,13 +101,13 @@ namespace Pulumi.Oci.DevOps
         /// (Updatable) Specifies the container configuration.
         /// </summary>
         [Output("containerConfig")]
-        public Output<Outputs.DeployStageContainerConfig> ContainerConfig { get; private set; } = null!;
+        public Output<Outputs.DeployStageContainerConfig?> ContainerConfig { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Optional artifact OCID. The artifact will be included in the body for the function invocation during the stage's execution. If the DeployArtifact.argumentSubstituitionMode is set to SUBSTITUTE_PLACEHOLDERS, then the pipeline parameter values will be used to replace the placeholders in the artifact content.
@@ -125,13 +125,13 @@ namespace Pulumi.Oci.DevOps
         /// First compute instance group environment OCID for deployment.
         /// </summary>
         [Output("deployEnvironmentIdA")]
-        public Output<string> DeployEnvironmentIdA { get; private set; } = null!;
+        public Output<string?> DeployEnvironmentIdA { get; private set; } = null!;
 
         /// <summary>
         /// Second compute instance group environment OCID for deployment.
         /// </summary>
         [Output("deployEnvironmentIdB")]
-        public Output<string> DeployEnvironmentIdB { get; private set; } = null!;
+        public Output<string?> DeployEnvironmentIdB { get; private set; } = null!;
 
         /// <summary>
         /// The OCID of a pipeline.
@@ -155,85 +155,85 @@ namespace Pulumi.Oci.DevOps
         /// (Updatable) The OCID of the artifact that contains the deployment specification.
         /// </summary>
         [Output("deploymentSpecDeployArtifactId")]
-        public Output<string> DeploymentSpecDeployArtifactId { get; private set; } = null!;
+        public Output<string?> DeploymentSpecDeployArtifactId { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Optional description about the deployment stage.
         /// </summary>
         [Output("description")]
-        public Output<string> Description { get; private set; } = null!;
+        public Output<string?> Description { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Deployment stage display name, which can be renamed and is not necessarily unique. Avoid entering confidential information.
         /// </summary>
         [Output("displayName")]
-        public Output<string> DisplayName { get; private set; } = null!;
+        public Output<string?> DisplayName { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) A Docker image artifact OCID.
         /// </summary>
         [Output("dockerImageDeployArtifactId")]
-        public Output<string> DockerImageDeployArtifactId { get; private set; } = null!;
+        public Output<string?> DockerImageDeployArtifactId { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Specifies a failure policy for a compute instance group rolling deployment stage.
         /// </summary>
         [Output("failurePolicy")]
-        public Output<Outputs.DeployStageFailurePolicy> FailurePolicy { get; private set; } = null!;
+        public Output<Outputs.DeployStageFailurePolicy?> FailurePolicy { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Function environment OCID.
         /// </summary>
         [Output("functionDeployEnvironmentId")]
-        public Output<string> FunctionDeployEnvironmentId { get; private set; } = null!;
+        public Output<string?> FunctionDeployEnvironmentId { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Timeout for execution of the Function. Value in seconds.
         /// </summary>
         [Output("functionTimeoutInSeconds")]
-        public Output<int> FunctionTimeoutInSeconds { get; private set; } = null!;
+        public Output<int?> FunctionTimeoutInSeconds { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Collection of backend environment IP addresses.
         /// </summary>
         [Output("greenBackendIps")]
-        public Output<Outputs.DeployStageGreenBackendIps> GreenBackendIps { get; private set; } = null!;
+        public Output<Outputs.DeployStageGreenBackendIps?> GreenBackendIps { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Helm chart artifact OCID.
         /// </summary>
         [Output("helmChartDeployArtifactId")]
-        public Output<string> HelmChartDeployArtifactId { get; private set; } = null!;
+        public Output<string?> HelmChartDeployArtifactId { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) A boolean flag specifies whether this stage executes asynchronously.
         /// </summary>
         [Output("isAsync")]
-        public Output<bool> IsAsync { get; private set; } = null!;
+        public Output<bool?> IsAsync { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Enables helm --debug option to stream output to tf stdout. Set to false by default.
         /// </summary>
         [Output("isDebugEnabled")]
-        public Output<bool> IsDebugEnabled { get; private set; } = null!;
+        public Output<bool?> IsDebugEnabled { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Force resource update through delete; or if required, recreate. Set to false by default.
         /// </summary>
         [Output("isForceEnabled")]
-        public Output<bool> IsForceEnabled { get; private set; } = null!;
+        public Output<bool?> IsForceEnabled { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) A boolean flag specifies whether the invoked function should be validated.
         /// </summary>
         [Output("isValidationEnabled")]
-        public Output<bool> IsValidationEnabled { get; private set; } = null!;
+        public Output<bool?> IsValidationEnabled { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) List of Kubernetes manifest artifact OCIDs.
@@ -245,175 +245,175 @@ namespace Pulumi.Oci.DevOps
         /// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         /// </summary>
         [Output("lifecycleDetails")]
-        public Output<string> LifecycleDetails { get; private set; } = null!;
+        public Output<string?> LifecycleDetails { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Specifies config for load balancer traffic shift stages. The Load Balancer specified here should be an Application Load Balancer type. Network Load Balancers are not supported.
         /// </summary>
         [Output("loadBalancerConfig")]
-        public Output<Outputs.DeployStageLoadBalancerConfig> LoadBalancerConfig { get; private set; } = null!;
+        public Output<Outputs.DeployStageLoadBalancerConfig?> LoadBalancerConfig { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Limit the maximum number of revisions saved per release. Use 0 for no limit. Set to 10 by default
         /// </summary>
         [Output("maxHistory")]
-        public Output<int> MaxHistory { get; private set; } = null!;
+        public Output<int?> MaxHistory { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Maximum usable memory for the Function (in MB).
         /// </summary>
         [Output("maxMemoryInMbs")]
-        public Output<string> MaxMemoryInMbs { get; private set; } = null!;
+        public Output<string?> MaxMemoryInMbs { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Default namespace to be used for Kubernetes deployment when not specified in the manifest.
         /// </summary>
         [Output("namespace")]
-        public Output<string> Namespace { get; private set; } = null!;
+        public Output<string?> Namespace { get; private set; } = null!;
 
         /// <summary>
         /// The OCID of the upstream OKE blue-green deployment stage in this pipeline.
         /// </summary>
         [Output("okeBlueGreenDeployStageId")]
-        public Output<string> OkeBlueGreenDeployStageId { get; private set; } = null!;
+        public Output<string?> OkeBlueGreenDeployStageId { get; private set; } = null!;
 
         /// <summary>
         /// The OCID of an upstream OKE canary deployment stage in this pipeline.
         /// </summary>
         [Output("okeCanaryDeployStageId")]
-        public Output<string> OkeCanaryDeployStageId { get; private set; } = null!;
+        public Output<string?> OkeCanaryDeployStageId { get; private set; } = null!;
 
         /// <summary>
         /// The OCID of an upstream OKE canary deployment traffic shift stage in this pipeline.
         /// </summary>
         [Output("okeCanaryTrafficShiftDeployStageId")]
-        public Output<string> OkeCanaryTrafficShiftDeployStageId { get; private set; } = null!;
+        public Output<string?> OkeCanaryTrafficShiftDeployStageId { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Kubernetes cluster environment OCID for deployment.
         /// </summary>
         [Output("okeClusterDeployEnvironmentId")]
-        public Output<string> OkeClusterDeployEnvironmentId { get; private set; } = null!;
+        public Output<string?> OkeClusterDeployEnvironmentId { get; private set; } = null!;
 
         /// <summary>
         /// Specifies configuration for load balancer traffic shift stages. The load balancer specified here should be an Application load balancer type. Network load balancers are not supported.
         /// </summary>
         [Output("productionLoadBalancerConfig")]
-        public Output<Outputs.DeployStageProductionLoadBalancerConfig> ProductionLoadBalancerConfig { get; private set; } = null!;
+        public Output<Outputs.DeployStageProductionLoadBalancerConfig?> ProductionLoadBalancerConfig { get; private set; } = null!;
 
         /// <summary>
         /// The OCID of a project.
         /// </summary>
         [Output("projectId")]
-        public Output<string> ProjectId { get; private set; } = null!;
+        public Output<string?> ProjectId { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Default name of the chart instance. Must be unique within a Kubernetes namespace.
         /// </summary>
         [Output("releaseName")]
-        public Output<string> ReleaseName { get; private set; } = null!;
+        public Output<string?> ReleaseName { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Specifies the rollback policy. This is initiated on the failure of certain stage types.
         /// </summary>
         [Output("rollbackPolicy")]
-        public Output<Outputs.DeployStageRollbackPolicy> RollbackPolicy { get; private set; } = null!;
+        public Output<Outputs.DeployStageRollbackPolicy?> RollbackPolicy { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Description of rollout policy for load balancer traffic shift stage.
         /// </summary>
         [Output("rolloutPolicy")]
-        public Output<Outputs.DeployStageRolloutPolicy> RolloutPolicy { get; private set; } = null!;
+        public Output<Outputs.DeployStageRolloutPolicy?> RolloutPolicy { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Specifies the name and value pairs to set helm values.
         /// </summary>
         [Output("setString")]
-        public Output<Outputs.DeployStageSetString> SetString { get; private set; } = null!;
+        public Output<Outputs.DeployStageSetString?> SetString { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Specifies the name and value pairs to set helm values.
         /// </summary>
         [Output("setValues")]
-        public Output<Outputs.DeployStageSetValues> SetValues { get; private set; } = null!;
+        public Output<Outputs.DeployStageSetValues?> SetValues { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Allow deletion of new resources created during when an upgrade fails. Set to false by default.
         /// </summary>
         [Output("shouldCleanupOnFail")]
-        public Output<bool> ShouldCleanupOnFail { get; private set; } = null!;
+        public Output<bool?> ShouldCleanupOnFail { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Does not wait until all the resources are in a ready state to mark the release as successful if set to true. Set to false by default.
         /// </summary>
         [Output("shouldNotWait")]
-        public Output<bool> ShouldNotWait { get; private set; } = null!;
+        public Output<bool?> ShouldNotWait { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) During upgrade, reset the values to the ones built into the chart. It overrides shouldReuseValues. Set to false by default.
         /// </summary>
         [Output("shouldResetValues")]
-        public Output<bool> ShouldResetValues { get; private set; } = null!;
+        public Output<bool?> ShouldResetValues { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) During upgrade, reuse the values of the last release and merge overrides from the command line. Set to false by default.
         /// </summary>
         [Output("shouldReuseValues")]
-        public Output<bool> ShouldReuseValues { get; private set; } = null!;
+        public Output<bool?> ShouldReuseValues { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) If set, no CRDs are installed. By default, CRDs are installed only if they are not present already. Set to false by default.
         /// </summary>
         [Output("shouldSkipCrds")]
-        public Output<bool> ShouldSkipCrds { get; private set; } = null!;
+        public Output<bool?> ShouldSkipCrds { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) If set, renders subchart notes along with the parent. Set to false by default.
         /// </summary>
         [Output("shouldSkipRenderSubchartNotes")]
-        public Output<bool> ShouldSkipRenderSubchartNotes { get; private set; } = null!;
+        public Output<bool?> ShouldSkipRenderSubchartNotes { get; private set; } = null!;
 
         /// <summary>
         /// The current state of the deployment stage.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
         [Output("systemTags")]
-        public Output<ImmutableDictionary<string, object>> SystemTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> SystemTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Specifies configuration for load balancer traffic shift stages. The load balancer specified here should be an Application load balancer type. Network load balancers are not supported.
         /// </summary>
         [Output("testLoadBalancerConfig")]
-        public Output<Outputs.DeployStageTestLoadBalancerConfig> TestLoadBalancerConfig { get; private set; } = null!;
+        public Output<Outputs.DeployStageTestLoadBalancerConfig?> TestLoadBalancerConfig { get; private set; } = null!;
 
         /// <summary>
         /// Time the deployment stage was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// Time the deployment stage was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
         /// </summary>
         [Output("timeUpdated")]
-        public Output<string> TimeUpdated { get; private set; } = null!;
+        public Output<string?> TimeUpdated { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Time to wait for execution of a Shell/Helm stage. Defaults to 36000 seconds for Shell and 300 seconds for Helm Stage
         /// </summary>
         [Output("timeoutInSeconds")]
-        public Output<int> TimeoutInSeconds { get; private set; } = null!;
+        public Output<int?> TimeoutInSeconds { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Specifies the target or destination backend set.
         /// </summary>
         [Output("trafficShiftTarget")]
-        public Output<string> TrafficShiftTarget { get; private set; } = null!;
+        public Output<string?> TrafficShiftTarget { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) List of values.yaml file artifact OCIDs.
@@ -425,7 +425,7 @@ namespace Pulumi.Oci.DevOps
         /// (Updatable) Specifies wait criteria for the Wait stage.
         /// </summary>
         [Output("waitCriteria")]
-        public Output<Outputs.DeployStageWaitCriteria> WaitCriteria { get; private set; } = null!;
+        public Output<Outputs.DeployStageWaitCriteria?> WaitCriteria { get; private set; } = null!;
 
 
         /// <summary>

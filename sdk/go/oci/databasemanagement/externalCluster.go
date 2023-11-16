@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the External Cluster resource in Oracle Cloud Infrastructure Database Management service.
@@ -32,40 +31,40 @@ type ExternalCluster struct {
 	// The additional details of the external cluster defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
 	AdditionalDetails pulumi.MapOutput `pulumi:"additionalDetails"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrOutput `pulumi:"compartmentId"`
 	// The name of the external cluster.
-	ComponentName pulumi.StringOutput `pulumi:"componentName"`
+	ComponentName pulumi.StringPtrOutput `pulumi:"componentName"`
 	// The user-friendly name for the external cluster. The name does not have to be unique.
-	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrOutput `pulumi:"displayName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external cluster.
 	ExternalClusterId pulumi.StringOutput `pulumi:"externalClusterId"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external connector.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	ExternalConnectorId pulumi.StringOutput `pulumi:"externalConnectorId"`
+	ExternalConnectorId pulumi.StringPtrOutput `pulumi:"externalConnectorId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that the cluster is a part of.
-	ExternalDbSystemId pulumi.StringOutput `pulumi:"externalDbSystemId"`
+	ExternalDbSystemId pulumi.StringPtrOutput `pulumi:"externalDbSystemId"`
 	// The directory in which Oracle Grid Infrastructure is installed.
-	GridHome pulumi.StringOutput `pulumi:"gridHome"`
+	GridHome pulumi.StringPtrOutput `pulumi:"gridHome"`
 	// Indicates whether the cluster is Oracle Flex Cluster or not.
-	IsFlexCluster pulumi.BoolOutput `pulumi:"isFlexCluster"`
+	IsFlexCluster pulumi.BoolPtrOutput `pulumi:"isFlexCluster"`
 	// Additional information about the current lifecycle state.
-	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrOutput `pulumi:"lifecycleDetails"`
 	// The list of network address configurations of the external cluster.
 	NetworkConfigurations ExternalClusterNetworkConfigurationArrayOutput `pulumi:"networkConfigurations"`
 	// The location of the Oracle Cluster Registry (OCR).
-	OcrFileLocation pulumi.StringOutput `pulumi:"ocrFileLocation"`
+	OcrFileLocation pulumi.StringPtrOutput `pulumi:"ocrFileLocation"`
 	// The list of Single Client Access Name (SCAN) configurations of the external cluster.
 	ScanConfigurations ExternalClusterScanConfigurationArrayOutput `pulumi:"scanConfigurations"`
 	// The current lifecycle state of the external cluster.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// The date and time the external cluster was created.
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The date and time the external cluster was last updated.
-	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 	// The cluster version.
-	Version pulumi.StringOutput `pulumi:"version"`
+	Version pulumi.StringPtrOutput `pulumi:"version"`
 	// The list of Virtual IP (VIP) configurations of the external cluster.
 	VipConfigurations ExternalClusterVipConfigurationArrayOutput `pulumi:"vipConfigurations"`
 }
@@ -234,12 +233,6 @@ func (i *ExternalCluster) ToExternalClusterOutputWithContext(ctx context.Context
 	return pulumi.ToOutputWithContext(ctx, i).(ExternalClusterOutput)
 }
 
-func (i *ExternalCluster) ToOutput(ctx context.Context) pulumix.Output[*ExternalCluster] {
-	return pulumix.Output[*ExternalCluster]{
-		OutputState: i.ToExternalClusterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ExternalClusterArrayInput is an input type that accepts ExternalClusterArray and ExternalClusterArrayOutput values.
 // You can construct a concrete instance of `ExternalClusterArrayInput` via:
 //
@@ -263,12 +256,6 @@ func (i ExternalClusterArray) ToExternalClusterArrayOutput() ExternalClusterArra
 
 func (i ExternalClusterArray) ToExternalClusterArrayOutputWithContext(ctx context.Context) ExternalClusterArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ExternalClusterArrayOutput)
-}
-
-func (i ExternalClusterArray) ToOutput(ctx context.Context) pulumix.Output[[]*ExternalCluster] {
-	return pulumix.Output[[]*ExternalCluster]{
-		OutputState: i.ToExternalClusterArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // ExternalClusterMapInput is an input type that accepts ExternalClusterMap and ExternalClusterMapOutput values.
@@ -296,12 +283,6 @@ func (i ExternalClusterMap) ToExternalClusterMapOutputWithContext(ctx context.Co
 	return pulumi.ToOutputWithContext(ctx, i).(ExternalClusterMapOutput)
 }
 
-func (i ExternalClusterMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*ExternalCluster] {
-	return pulumix.Output[map[string]*ExternalCluster]{
-		OutputState: i.ToExternalClusterMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ExternalClusterOutput struct{ *pulumi.OutputState }
 
 func (ExternalClusterOutput) ElementType() reflect.Type {
@@ -316,30 +297,24 @@ func (o ExternalClusterOutput) ToExternalClusterOutputWithContext(ctx context.Co
 	return o
 }
 
-func (o ExternalClusterOutput) ToOutput(ctx context.Context) pulumix.Output[*ExternalCluster] {
-	return pulumix.Output[*ExternalCluster]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The additional details of the external cluster defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
 func (o ExternalClusterOutput) AdditionalDetails() pulumi.MapOutput {
 	return o.ApplyT(func(v *ExternalCluster) pulumi.MapOutput { return v.AdditionalDetails }).(pulumi.MapOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-func (o ExternalClusterOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v *ExternalCluster) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
+func (o ExternalClusterOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExternalCluster) pulumi.StringPtrOutput { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // The name of the external cluster.
-func (o ExternalClusterOutput) ComponentName() pulumi.StringOutput {
-	return o.ApplyT(func(v *ExternalCluster) pulumi.StringOutput { return v.ComponentName }).(pulumi.StringOutput)
+func (o ExternalClusterOutput) ComponentName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExternalCluster) pulumi.StringPtrOutput { return v.ComponentName }).(pulumi.StringPtrOutput)
 }
 
 // The user-friendly name for the external cluster. The name does not have to be unique.
-func (o ExternalClusterOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v *ExternalCluster) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+func (o ExternalClusterOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExternalCluster) pulumi.StringPtrOutput { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external cluster.
@@ -351,28 +326,28 @@ func (o ExternalClusterOutput) ExternalClusterId() pulumi.StringOutput {
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-func (o ExternalClusterOutput) ExternalConnectorId() pulumi.StringOutput {
-	return o.ApplyT(func(v *ExternalCluster) pulumi.StringOutput { return v.ExternalConnectorId }).(pulumi.StringOutput)
+func (o ExternalClusterOutput) ExternalConnectorId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExternalCluster) pulumi.StringPtrOutput { return v.ExternalConnectorId }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that the cluster is a part of.
-func (o ExternalClusterOutput) ExternalDbSystemId() pulumi.StringOutput {
-	return o.ApplyT(func(v *ExternalCluster) pulumi.StringOutput { return v.ExternalDbSystemId }).(pulumi.StringOutput)
+func (o ExternalClusterOutput) ExternalDbSystemId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExternalCluster) pulumi.StringPtrOutput { return v.ExternalDbSystemId }).(pulumi.StringPtrOutput)
 }
 
 // The directory in which Oracle Grid Infrastructure is installed.
-func (o ExternalClusterOutput) GridHome() pulumi.StringOutput {
-	return o.ApplyT(func(v *ExternalCluster) pulumi.StringOutput { return v.GridHome }).(pulumi.StringOutput)
+func (o ExternalClusterOutput) GridHome() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExternalCluster) pulumi.StringPtrOutput { return v.GridHome }).(pulumi.StringPtrOutput)
 }
 
 // Indicates whether the cluster is Oracle Flex Cluster or not.
-func (o ExternalClusterOutput) IsFlexCluster() pulumi.BoolOutput {
-	return o.ApplyT(func(v *ExternalCluster) pulumi.BoolOutput { return v.IsFlexCluster }).(pulumi.BoolOutput)
+func (o ExternalClusterOutput) IsFlexCluster() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *ExternalCluster) pulumi.BoolPtrOutput { return v.IsFlexCluster }).(pulumi.BoolPtrOutput)
 }
 
 // Additional information about the current lifecycle state.
-func (o ExternalClusterOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v *ExternalCluster) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o ExternalClusterOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExternalCluster) pulumi.StringPtrOutput { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // The list of network address configurations of the external cluster.
@@ -383,8 +358,8 @@ func (o ExternalClusterOutput) NetworkConfigurations() ExternalClusterNetworkCon
 }
 
 // The location of the Oracle Cluster Registry (OCR).
-func (o ExternalClusterOutput) OcrFileLocation() pulumi.StringOutput {
-	return o.ApplyT(func(v *ExternalCluster) pulumi.StringOutput { return v.OcrFileLocation }).(pulumi.StringOutput)
+func (o ExternalClusterOutput) OcrFileLocation() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExternalCluster) pulumi.StringPtrOutput { return v.OcrFileLocation }).(pulumi.StringPtrOutput)
 }
 
 // The list of Single Client Access Name (SCAN) configurations of the external cluster.
@@ -393,23 +368,23 @@ func (o ExternalClusterOutput) ScanConfigurations() ExternalClusterScanConfigura
 }
 
 // The current lifecycle state of the external cluster.
-func (o ExternalClusterOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *ExternalCluster) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o ExternalClusterOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExternalCluster) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the external cluster was created.
-func (o ExternalClusterOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *ExternalCluster) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o ExternalClusterOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExternalCluster) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the external cluster was last updated.
-func (o ExternalClusterOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *ExternalCluster) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o ExternalClusterOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExternalCluster) pulumi.StringPtrOutput { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 // The cluster version.
-func (o ExternalClusterOutput) Version() pulumi.StringOutput {
-	return o.ApplyT(func(v *ExternalCluster) pulumi.StringOutput { return v.Version }).(pulumi.StringOutput)
+func (o ExternalClusterOutput) Version() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExternalCluster) pulumi.StringPtrOutput { return v.Version }).(pulumi.StringPtrOutput)
 }
 
 // The list of Virtual IP (VIP) configurations of the external cluster.
@@ -431,12 +406,6 @@ func (o ExternalClusterArrayOutput) ToExternalClusterArrayOutputWithContext(ctx 
 	return o
 }
 
-func (o ExternalClusterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*ExternalCluster] {
-	return pulumix.Output[[]*ExternalCluster]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o ExternalClusterArrayOutput) Index(i pulumi.IntInput) ExternalClusterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *ExternalCluster {
 		return vs[0].([]*ExternalCluster)[vs[1].(int)]
@@ -455,12 +424,6 @@ func (o ExternalClusterMapOutput) ToExternalClusterMapOutput() ExternalClusterMa
 
 func (o ExternalClusterMapOutput) ToExternalClusterMapOutputWithContext(ctx context.Context) ExternalClusterMapOutput {
 	return o
-}
-
-func (o ExternalClusterMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*ExternalCluster] {
-	return pulumix.Output[map[string]*ExternalCluster]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ExternalClusterMapOutput) MapIndex(k pulumi.StringInput) ExternalClusterOutput {

@@ -32,14 +32,6 @@ class MediaAssetMediaAssetTagArgs:
     def __init__(__self__, *,
                  value: pulumi.Input[str],
                  type: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] value: (Updatable) Tag of the MediaAsset.
-        :param pulumi.Input[str] type: (Updatable) The type of the media asset.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         pulumi.set(__self__, "value", value)
         if type is not None:
             pulumi.set(__self__, "type", type)
@@ -47,9 +39,6 @@ class MediaAssetMediaAssetTagArgs:
     @property
     @pulumi.getter
     def value(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Tag of the MediaAsset.
-        """
         return pulumi.get(self, "value")
 
     @value.setter
@@ -59,13 +48,6 @@ class MediaAssetMediaAssetTagArgs:
     @property
     @pulumi.getter
     def type(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The type of the media asset.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "type")
 
     @type.setter
@@ -77,17 +59,11 @@ class MediaAssetMediaAssetTagArgs:
 class MediaAssetMetadataArgs:
     def __init__(__self__, *,
                  metadata: pulumi.Input[str]):
-        """
-        :param pulumi.Input[str] metadata: (Updatable) JSON string containing the technial metadata for the media asset.
-        """
         pulumi.set(__self__, "metadata", metadata)
 
     @property
     @pulumi.getter
     def metadata(self) -> pulumi.Input[str]:
-        """
-        (Updatable) JSON string containing the technial metadata for the media asset.
-        """
         return pulumi.get(self, "metadata")
 
     @metadata.setter
@@ -103,13 +79,6 @@ class MediaWorkflowJobOutputArgs:
                  id: Optional[pulumi.Input[str]] = None,
                  namespace: Optional[pulumi.Input[str]] = None,
                  object: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] asset_type: Type of job output.
-        :param pulumi.Input[str] bucket: The bucket name of the job output.
-        :param pulumi.Input[str] id: The ID associated with the job output.
-        :param pulumi.Input[str] namespace: The namespace name of the job output.
-        :param pulumi.Input[str] object: The object name of the job output.
-        """
         if asset_type is not None:
             pulumi.set(__self__, "asset_type", asset_type)
         if bucket is not None:
@@ -124,9 +93,6 @@ class MediaWorkflowJobOutputArgs:
     @property
     @pulumi.getter(name="assetType")
     def asset_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        Type of job output.
-        """
         return pulumi.get(self, "asset_type")
 
     @asset_type.setter
@@ -136,9 +102,6 @@ class MediaWorkflowJobOutputArgs:
     @property
     @pulumi.getter
     def bucket(self) -> Optional[pulumi.Input[str]]:
-        """
-        The bucket name of the job output.
-        """
         return pulumi.get(self, "bucket")
 
     @bucket.setter
@@ -148,9 +111,6 @@ class MediaWorkflowJobOutputArgs:
     @property
     @pulumi.getter
     def id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The ID associated with the job output.
-        """
         return pulumi.get(self, "id")
 
     @id.setter
@@ -160,9 +120,6 @@ class MediaWorkflowJobOutputArgs:
     @property
     @pulumi.getter
     def namespace(self) -> Optional[pulumi.Input[str]]:
-        """
-        The namespace name of the job output.
-        """
         return pulumi.get(self, "namespace")
 
     @namespace.setter
@@ -172,9 +129,6 @@ class MediaWorkflowJobOutputArgs:
     @property
     @pulumi.getter
     def object(self) -> Optional[pulumi.Input[str]]:
-        """
-        The object name of the job output.
-        """
         return pulumi.get(self, "object")
 
     @object.setter
@@ -188,11 +142,6 @@ class MediaWorkflowJobTaskLifecycleStateArgs:
                  key: Optional[pulumi.Input[str]] = None,
                  lifecycle_details: Optional[pulumi.Input[str]] = None,
                  state: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] key: Unique key within a MediaWorkflowJob for the task.
-        :param pulumi.Input[str] lifecycle_details: The lifecycle details of MediaWorkflowJob task.
-        :param pulumi.Input[str] state: The current state of the MediaWorkflowJob task.
-        """
         if key is not None:
             pulumi.set(__self__, "key", key)
         if lifecycle_details is not None:
@@ -203,9 +152,6 @@ class MediaWorkflowJobTaskLifecycleStateArgs:
     @property
     @pulumi.getter
     def key(self) -> Optional[pulumi.Input[str]]:
-        """
-        Unique key within a MediaWorkflowJob for the task.
-        """
         return pulumi.get(self, "key")
 
     @key.setter
@@ -215,9 +161,6 @@ class MediaWorkflowJobTaskLifecycleStateArgs:
     @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> Optional[pulumi.Input[str]]:
-        """
-        The lifecycle details of MediaWorkflowJob task.
-        """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
@@ -227,9 +170,6 @@ class MediaWorkflowJobTaskLifecycleStateArgs:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The current state of the MediaWorkflowJob task.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -247,19 +187,6 @@ class MediaWorkflowTaskArgs:
                  enable_parameter_reference: Optional[pulumi.Input[str]] = None,
                  enable_when_referenced_parameter_equals: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  prerequisites: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
-        """
-        :param pulumi.Input[str] key: (Updatable) A unique identifier for this task within its workflow. Keys are used to reference a task within workflows and MediaWorkflowJobs. Tasks are referenced as prerequisites and to track output and state.
-        :param pulumi.Input[str] parameters: (Updatable) Data specifiying how this task is to be run. The data is a JSON object that must conform to the JSON Schema specified by the parameters of the MediaWorkflowTaskDeclaration this task references. The parameters may contain values or references to other parameters.
-        :param pulumi.Input[str] type: (Updatable) The type of process to run at this task. Refers to the name of a MediaWorkflowTaskDeclaration.
-        :param pulumi.Input[str] version: (Updatable) The version of the MediaWorkflowTaskDeclaration.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] enable_parameter_reference: (Updatable) Allows this task to be conditionally enabled.  If no value or a blank value is given, the task is unconditionally enbled.  Otherwise the given string specifies a parameter of the job created for this task's workflow using the JSON pointer syntax. The JSON pointer is validated when a job is created from the workflow of this task.
-        :param pulumi.Input[Mapping[str, Any]] enable_when_referenced_parameter_equals: (Updatable) Used in conjunction with enableParameterReference to conditionally enable a task.  When a job is created from the workflow of this task, the task will only be enabled if the value of the parameter specified by enableParameterReference is equal to the value of this property. This property must be prenset if and only if a enableParameterReference is given. The value is a JSON node.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] prerequisites: (Updatable) Keys to the other tasks in this workflow that must be completed before execution of this task can begin.
-        """
         pulumi.set(__self__, "key", key)
         pulumi.set(__self__, "parameters", parameters)
         pulumi.set(__self__, "type", type)
@@ -274,9 +201,6 @@ class MediaWorkflowTaskArgs:
     @property
     @pulumi.getter
     def key(self) -> pulumi.Input[str]:
-        """
-        (Updatable) A unique identifier for this task within its workflow. Keys are used to reference a task within workflows and MediaWorkflowJobs. Tasks are referenced as prerequisites and to track output and state.
-        """
         return pulumi.get(self, "key")
 
     @key.setter
@@ -286,9 +210,6 @@ class MediaWorkflowTaskArgs:
     @property
     @pulumi.getter
     def parameters(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Data specifiying how this task is to be run. The data is a JSON object that must conform to the JSON Schema specified by the parameters of the MediaWorkflowTaskDeclaration this task references. The parameters may contain values or references to other parameters.
-        """
         return pulumi.get(self, "parameters")
 
     @parameters.setter
@@ -298,9 +219,6 @@ class MediaWorkflowTaskArgs:
     @property
     @pulumi.getter
     def type(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The type of process to run at this task. Refers to the name of a MediaWorkflowTaskDeclaration.
-        """
         return pulumi.get(self, "type")
 
     @type.setter
@@ -310,13 +228,6 @@ class MediaWorkflowTaskArgs:
     @property
     @pulumi.getter
     def version(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The version of the MediaWorkflowTaskDeclaration.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "version")
 
     @version.setter
@@ -326,9 +237,6 @@ class MediaWorkflowTaskArgs:
     @property
     @pulumi.getter(name="enableParameterReference")
     def enable_parameter_reference(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Allows this task to be conditionally enabled.  If no value or a blank value is given, the task is unconditionally enbled.  Otherwise the given string specifies a parameter of the job created for this task's workflow using the JSON pointer syntax. The JSON pointer is validated when a job is created from the workflow of this task.
-        """
         return pulumi.get(self, "enable_parameter_reference")
 
     @enable_parameter_reference.setter
@@ -338,9 +246,6 @@ class MediaWorkflowTaskArgs:
     @property
     @pulumi.getter(name="enableWhenReferencedParameterEquals")
     def enable_when_referenced_parameter_equals(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Used in conjunction with enableParameterReference to conditionally enable a task.  When a job is created from the workflow of this task, the task will only be enabled if the value of the parameter specified by enableParameterReference is equal to the value of this property. This property must be prenset if and only if a enableParameterReference is given. The value is a JSON node.
-        """
         return pulumi.get(self, "enable_when_referenced_parameter_equals")
 
     @enable_when_referenced_parameter_equals.setter
@@ -350,9 +255,6 @@ class MediaWorkflowTaskArgs:
     @property
     @pulumi.getter
     def prerequisites(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) Keys to the other tasks in this workflow that must be completed before execution of this task can begin.
-        """
         return pulumi.get(self, "prerequisites")
 
     @prerequisites.setter
@@ -375,20 +277,6 @@ class StreamCdnConfigConfigArgs:
                  origin_auth_secret_key_nonce_b: Optional[pulumi.Input[str]] = None,
                  origin_auth_sign_encryption: Optional[pulumi.Input[str]] = None,
                  origin_auth_sign_type: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] type: (Updatable) The name of the CDN configuration type.
-        :param pulumi.Input[str] edge_hostname: (Updatable) The hostname of the CDN edge server to use when building CDN URLs.
-        :param pulumi.Input[str] edge_path_prefix: (Updatable) The path to prepend when building CDN URLs.
-        :param pulumi.Input[str] edge_token_key: (Updatable) The encryption key to use for edge token authentication.
-        :param pulumi.Input[str] edge_token_salt: (Updatable) Salt to use when encrypting authentication token.
-        :param pulumi.Input[bool] is_edge_token_auth: (Updatable) Whether token authentication should be used at the CDN edge.
-        :param pulumi.Input[str] origin_auth_secret_key_a: (Updatable) The shared secret key A, two for errorless key rotation.
-        :param pulumi.Input[str] origin_auth_secret_key_b: (Updatable) The shared secret key B, two for errorless key rotation.
-        :param pulumi.Input[str] origin_auth_secret_key_nonce_a: (Updatable) Nonce identifier for originAuthSecretKeyA (used to determine key used to sign).
-        :param pulumi.Input[str] origin_auth_secret_key_nonce_b: (Updatable) Nonce identifier for originAuthSecretKeyB (used to determine key used to sign).
-        :param pulumi.Input[str] origin_auth_sign_encryption: (Updatable) The type of encryption used to compute the signature.
-        :param pulumi.Input[str] origin_auth_sign_type: (Updatable) The type of data used to compute the signature.
-        """
         pulumi.set(__self__, "type", type)
         if edge_hostname is not None:
             pulumi.set(__self__, "edge_hostname", edge_hostname)
@@ -416,9 +304,6 @@ class StreamCdnConfigConfigArgs:
     @property
     @pulumi.getter
     def type(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The name of the CDN configuration type.
-        """
         return pulumi.get(self, "type")
 
     @type.setter
@@ -428,9 +313,6 @@ class StreamCdnConfigConfigArgs:
     @property
     @pulumi.getter(name="edgeHostname")
     def edge_hostname(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The hostname of the CDN edge server to use when building CDN URLs.
-        """
         return pulumi.get(self, "edge_hostname")
 
     @edge_hostname.setter
@@ -440,9 +322,6 @@ class StreamCdnConfigConfigArgs:
     @property
     @pulumi.getter(name="edgePathPrefix")
     def edge_path_prefix(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The path to prepend when building CDN URLs.
-        """
         return pulumi.get(self, "edge_path_prefix")
 
     @edge_path_prefix.setter
@@ -452,9 +331,6 @@ class StreamCdnConfigConfigArgs:
     @property
     @pulumi.getter(name="edgeTokenKey")
     def edge_token_key(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The encryption key to use for edge token authentication.
-        """
         return pulumi.get(self, "edge_token_key")
 
     @edge_token_key.setter
@@ -464,9 +340,6 @@ class StreamCdnConfigConfigArgs:
     @property
     @pulumi.getter(name="edgeTokenSalt")
     def edge_token_salt(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Salt to use when encrypting authentication token.
-        """
         return pulumi.get(self, "edge_token_salt")
 
     @edge_token_salt.setter
@@ -476,9 +349,6 @@ class StreamCdnConfigConfigArgs:
     @property
     @pulumi.getter(name="isEdgeTokenAuth")
     def is_edge_token_auth(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Whether token authentication should be used at the CDN edge.
-        """
         return pulumi.get(self, "is_edge_token_auth")
 
     @is_edge_token_auth.setter
@@ -488,9 +358,6 @@ class StreamCdnConfigConfigArgs:
     @property
     @pulumi.getter(name="originAuthSecretKeyA")
     def origin_auth_secret_key_a(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The shared secret key A, two for errorless key rotation.
-        """
         return pulumi.get(self, "origin_auth_secret_key_a")
 
     @origin_auth_secret_key_a.setter
@@ -500,9 +367,6 @@ class StreamCdnConfigConfigArgs:
     @property
     @pulumi.getter(name="originAuthSecretKeyB")
     def origin_auth_secret_key_b(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The shared secret key B, two for errorless key rotation.
-        """
         return pulumi.get(self, "origin_auth_secret_key_b")
 
     @origin_auth_secret_key_b.setter
@@ -512,9 +376,6 @@ class StreamCdnConfigConfigArgs:
     @property
     @pulumi.getter(name="originAuthSecretKeyNonceA")
     def origin_auth_secret_key_nonce_a(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Nonce identifier for originAuthSecretKeyA (used to determine key used to sign).
-        """
         return pulumi.get(self, "origin_auth_secret_key_nonce_a")
 
     @origin_auth_secret_key_nonce_a.setter
@@ -524,9 +385,6 @@ class StreamCdnConfigConfigArgs:
     @property
     @pulumi.getter(name="originAuthSecretKeyNonceB")
     def origin_auth_secret_key_nonce_b(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Nonce identifier for originAuthSecretKeyB (used to determine key used to sign).
-        """
         return pulumi.get(self, "origin_auth_secret_key_nonce_b")
 
     @origin_auth_secret_key_nonce_b.setter
@@ -536,9 +394,6 @@ class StreamCdnConfigConfigArgs:
     @property
     @pulumi.getter(name="originAuthSignEncryption")
     def origin_auth_sign_encryption(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The type of encryption used to compute the signature.
-        """
         return pulumi.get(self, "origin_auth_sign_encryption")
 
     @origin_auth_sign_encryption.setter
@@ -548,9 +403,6 @@ class StreamCdnConfigConfigArgs:
     @property
     @pulumi.getter(name="originAuthSignType")
     def origin_auth_sign_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The type of data used to compute the signature.
-        """
         return pulumi.get(self, "origin_auth_sign_type")
 
     @origin_auth_sign_type.setter
@@ -563,10 +415,6 @@ class StreamPackagingConfigEncryptionArgs:
     def __init__(__self__, *,
                  algorithm: pulumi.Input[str],
                  kms_key_id: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] algorithm: The encryption algorithm for the stream packaging configuration.
-        :param pulumi.Input[str] kms_key_id: The identifier of the customer managed Vault KMS symmetric encryption key (null if Oracle managed).
-        """
         pulumi.set(__self__, "algorithm", algorithm)
         if kms_key_id is not None:
             pulumi.set(__self__, "kms_key_id", kms_key_id)
@@ -574,9 +422,6 @@ class StreamPackagingConfigEncryptionArgs:
     @property
     @pulumi.getter
     def algorithm(self) -> pulumi.Input[str]:
-        """
-        The encryption algorithm for the stream packaging configuration.
-        """
         return pulumi.get(self, "algorithm")
 
     @algorithm.setter
@@ -586,9 +431,6 @@ class StreamPackagingConfigEncryptionArgs:
     @property
     @pulumi.getter(name="kmsKeyId")
     def kms_key_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The identifier of the customer managed Vault KMS symmetric encryption key (null if Oracle managed).
-        """
         return pulumi.get(self, "kms_key_id")
 
     @kms_key_id.setter
@@ -680,9 +522,6 @@ class GetMediaWorkflowJobFactsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: Unique name. It is read-only and generated for the fact.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -691,9 +530,6 @@ class GetMediaWorkflowJobFactsFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        Unique name. It is read-only and generated for the fact.
-        """
         return pulumi.get(self, "name")
 
     @name.setter

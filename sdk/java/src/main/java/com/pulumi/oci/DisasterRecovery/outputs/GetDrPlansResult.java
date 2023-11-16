@@ -23,7 +23,7 @@ public final class GetDrPlansResult {
      * @return The list of dr_plan_collection.
      * 
      */
-    private List<GetDrPlansDrPlanCollection> drPlanCollections;
+    private @Nullable List<GetDrPlansDrPlanCollection> drPlanCollections;
     private @Nullable String drPlanId;
     private @Nullable String drPlanType;
     /**
@@ -36,7 +36,7 @@ public final class GetDrPlansResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The current state of the DR plan.
      * 
@@ -56,7 +56,7 @@ public final class GetDrPlansResult {
      * 
      */
     public List<GetDrPlansDrPlanCollection> drPlanCollections() {
-        return this.drPlanCollections;
+        return this.drPlanCollections == null ? List.of() : this.drPlanCollections;
     }
     public Optional<String> drPlanId() {
         return Optional.ofNullable(this.drPlanId);
@@ -78,8 +78,8 @@ public final class GetDrPlansResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The current state of the DR plan.
@@ -99,12 +99,12 @@ public final class GetDrPlansResult {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable String displayName;
-        private List<GetDrPlansDrPlanCollection> drPlanCollections;
+        private @Nullable List<GetDrPlansDrPlanCollection> drPlanCollections;
         private @Nullable String drPlanId;
         private @Nullable String drPlanType;
         private String drProtectionGroupId;
         private @Nullable List<GetDrPlansFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String state;
         public Builder() {}
         public Builder(GetDrPlansResult defaults) {
@@ -125,8 +125,8 @@ public final class GetDrPlansResult {
             return this;
         }
         @CustomType.Setter
-        public Builder drPlanCollections(List<GetDrPlansDrPlanCollection> drPlanCollections) {
-            this.drPlanCollections = Objects.requireNonNull(drPlanCollections);
+        public Builder drPlanCollections(@Nullable List<GetDrPlansDrPlanCollection> drPlanCollections) {
+            this.drPlanCollections = drPlanCollections;
             return this;
         }
         public Builder drPlanCollections(GetDrPlansDrPlanCollection... drPlanCollections) {
@@ -156,8 +156,8 @@ public final class GetDrPlansResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

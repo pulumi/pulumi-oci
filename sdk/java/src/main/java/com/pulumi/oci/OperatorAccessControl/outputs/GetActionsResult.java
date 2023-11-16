@@ -20,7 +20,7 @@ public final class GetActionsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Name of the property
      * 
@@ -30,7 +30,7 @@ public final class GetActionsResult {
      * @return The list of operator_action_collection.
      * 
      */
-    private List<GetActionsOperatorActionCollection> operatorActionCollections;
+    private @Nullable List<GetActionsOperatorActionCollection> operatorActionCollections;
     /**
      * @return resourceType for which the OperatorAction is applicable
      * 
@@ -49,8 +49,8 @@ public final class GetActionsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Name of the property
@@ -64,7 +64,7 @@ public final class GetActionsResult {
      * 
      */
     public List<GetActionsOperatorActionCollection> operatorActionCollections() {
-        return this.operatorActionCollections;
+        return this.operatorActionCollections == null ? List.of() : this.operatorActionCollections;
     }
     /**
      * @return resourceType for which the OperatorAction is applicable
@@ -88,9 +88,9 @@ public final class GetActionsResult {
     public static final class Builder {
         private String compartmentId;
         private @Nullable List<GetActionsFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String name;
-        private List<GetActionsOperatorActionCollection> operatorActionCollections;
+        private @Nullable List<GetActionsOperatorActionCollection> operatorActionCollections;
         private @Nullable String resourceType;
         private @Nullable String state;
         public Builder() {}
@@ -119,8 +119,8 @@ public final class GetActionsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -129,8 +129,8 @@ public final class GetActionsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder operatorActionCollections(List<GetActionsOperatorActionCollection> operatorActionCollections) {
-            this.operatorActionCollections = Objects.requireNonNull(operatorActionCollections);
+        public Builder operatorActionCollections(@Nullable List<GetActionsOperatorActionCollection> operatorActionCollections) {
+            this.operatorActionCollections = operatorActionCollections;
             return this;
         }
         public Builder operatorActionCollections(GetActionsOperatorActionCollection... operatorActionCollections) {

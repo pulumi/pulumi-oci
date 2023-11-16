@@ -51,85 +51,85 @@ export interface GetLogAnalyticsEntityResult {
     /**
      * The Boolean flag to indicate if logs are collected for an entity for log analytics usage.
      */
-    readonly areLogsCollected: boolean;
+    readonly areLogsCollected?: boolean;
     /**
      * The OCID of the Cloud resource which this entity is a representation of. This may be blank when the entity represents a non-cloud resource that the customer may have on their premises.
      */
-    readonly cloudResourceId: string;
+    readonly cloudResourceId?: string;
     /**
      * Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * Internal name for the log analytics entity type.
      */
-    readonly entityTypeInternalName: string;
+    readonly entityTypeInternalName?: string;
     /**
      * Log analytics entity type name.
      */
-    readonly entityTypeName: string;
+    readonly entityTypeName?: string;
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * The hostname where the entity represented here is actually present. This would be the output one would get if they run `echo $HOSTNAME` on Linux or an equivalent OS command. This may be different from management agents host since logs may be collected remotely.
      */
-    readonly hostname: string;
+    readonly hostname?: string;
     /**
      * The log analytics entity OCID. This ID is a reference used by log analytics features and it represents a resource that is provisioned and managed by the customer on their premises or on the cloud.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * lifecycleDetails has additional information regarding substeps such as management agent plugin deployment.
      */
-    readonly lifecycleDetails: string;
+    readonly lifecycleDetails?: string;
     readonly logAnalyticsEntityId: string;
     /**
      * Management agent (management-agents resource kind) compartment OCID
      */
-    readonly managementAgentCompartmentId: string;
+    readonly managementAgentCompartmentId?: string;
     /**
      * Management agent (management-agents resource kind) display name
      */
-    readonly managementAgentDisplayName: string;
+    readonly managementAgentDisplayName?: string;
     /**
      * The OCID of the Management Agent.
      */
-    readonly managementAgentId: string;
+    readonly managementAgentId?: string;
     /**
      * Log analytics entity name.
      */
-    readonly name: string;
+    readonly name?: string;
     readonly namespace: string;
     /**
      * The name/value pairs for parameter values to be used in file patterns specified in log sources.
      */
-    readonly properties: {[key: string]: any};
+    readonly properties?: {[key: string]: any};
     /**
      * This indicates the type of source. It is primarily for Enterprise Manager Repository ID.
      */
-    readonly sourceId: string;
+    readonly sourceId?: string;
     /**
      * The current state of the log analytics entity.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * The date and time the resource was created, in the format defined by RFC3339.
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The date and time the resource was last updated, in the format defined by RFC3339.
      */
-    readonly timeUpdated: string;
+    readonly timeUpdated?: string;
     /**
      * The timezone region of the log analytics entity.
      */
-    readonly timezoneRegion: string;
+    readonly timezoneRegion?: string;
 }
 /**
  * This data source provides details about a specific Log Analytics Entity resource in Oracle Cloud Infrastructure Log Analytics service.

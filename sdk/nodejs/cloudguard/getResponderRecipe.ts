@@ -47,64 +47,64 @@ export interface GetResponderRecipeResult {
     /**
      * Compartment Identifier
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * ResponderRule description.
      */
-    readonly description: string;
+    readonly description?: string;
     /**
      * ResponderRule display name.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * List of responder rules associated with the recipe
      */
-    readonly effectiveResponderRules: outputs.CloudGuard.GetResponderRecipeEffectiveResponderRule[];
+    readonly effectiveResponderRules?: outputs.CloudGuard.GetResponderRecipeEffectiveResponderRule[];
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * Identifier for ResponderRecipe.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
-    readonly lifecycleDetails: string;
+    readonly lifecycleDetails?: string;
     /**
      * Owner of ResponderRecipe
      */
-    readonly owner: string;
+    readonly owner?: string;
     readonly responderRecipeId: string;
     /**
      * List of responder rules associated with the recipe
      */
-    readonly responderRules: outputs.CloudGuard.GetResponderRecipeResponderRule[];
+    readonly responderRules?: outputs.CloudGuard.GetResponderRecipeResponderRule[];
     /**
      * The id of the source responder recipe.
      */
-    readonly sourceResponderRecipeId: string;
+    readonly sourceResponderRecipeId?: string;
     /**
      * The current state of the Example.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    readonly systemTags: {[key: string]: any};
+    readonly systemTags?: {[key: string]: any};
     /**
      * The date and time the responder recipe was created. Format defined by RFC3339.
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The date and time the responder recipe was updated. Format defined by RFC3339.
      */
-    readonly timeUpdated: string;
+    readonly timeUpdated?: string;
 }
 /**
  * This data source provides details about a specific Responder Recipe resource in Oracle Cloud Infrastructure Cloud Guard service.

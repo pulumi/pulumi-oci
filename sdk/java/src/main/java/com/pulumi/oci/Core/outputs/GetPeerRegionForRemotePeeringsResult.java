@@ -9,6 +9,7 @@ import com.pulumi.oci.Core.outputs.GetPeerRegionForRemotePeeringsPeerRegionForRe
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 @CustomType
@@ -18,12 +19,12 @@ public final class GetPeerRegionForRemotePeeringsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The list of peer_region_for_remote_peerings.
      * 
      */
-    private List<GetPeerRegionForRemotePeeringsPeerRegionForRemotePeering> peerRegionForRemotePeerings;
+    private @Nullable List<GetPeerRegionForRemotePeeringsPeerRegionForRemotePeering> peerRegionForRemotePeerings;
 
     private GetPeerRegionForRemotePeeringsResult() {}
     public List<GetPeerRegionForRemotePeeringsFilter> filters() {
@@ -33,15 +34,15 @@ public final class GetPeerRegionForRemotePeeringsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The list of peer_region_for_remote_peerings.
      * 
      */
     public List<GetPeerRegionForRemotePeeringsPeerRegionForRemotePeering> peerRegionForRemotePeerings() {
-        return this.peerRegionForRemotePeerings;
+        return this.peerRegionForRemotePeerings == null ? List.of() : this.peerRegionForRemotePeerings;
     }
 
     public static Builder builder() {
@@ -54,8 +55,8 @@ public final class GetPeerRegionForRemotePeeringsResult {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable List<GetPeerRegionForRemotePeeringsFilter> filters;
-        private String id;
-        private List<GetPeerRegionForRemotePeeringsPeerRegionForRemotePeering> peerRegionForRemotePeerings;
+        private @Nullable String id;
+        private @Nullable List<GetPeerRegionForRemotePeeringsPeerRegionForRemotePeering> peerRegionForRemotePeerings;
         public Builder() {}
         public Builder(GetPeerRegionForRemotePeeringsResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -73,13 +74,13 @@ public final class GetPeerRegionForRemotePeeringsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder peerRegionForRemotePeerings(List<GetPeerRegionForRemotePeeringsPeerRegionForRemotePeering> peerRegionForRemotePeerings) {
-            this.peerRegionForRemotePeerings = Objects.requireNonNull(peerRegionForRemotePeerings);
+        public Builder peerRegionForRemotePeerings(@Nullable List<GetPeerRegionForRemotePeeringsPeerRegionForRemotePeering> peerRegionForRemotePeerings) {
+            this.peerRegionForRemotePeerings = peerRegionForRemotePeerings;
             return this;
         }
         public Builder peerRegionForRemotePeerings(GetPeerRegionForRemotePeeringsPeerRegionForRemotePeering... peerRegionForRemotePeerings) {

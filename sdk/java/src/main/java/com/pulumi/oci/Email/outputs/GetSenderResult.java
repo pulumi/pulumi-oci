@@ -9,6 +9,8 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetSenderResult {
@@ -16,98 +18,98 @@ public final class GetSenderResult {
      * @return The OCID for the compartment.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return The email address of the sender.
      * 
      */
-    private String emailAddress;
+    private @Nullable String emailAddress;
     /**
      * @return The email domain used to assert responsibility for emails sent from this sender.
      * 
      */
-    private String emailDomainId;
+    private @Nullable String emailDomainId;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return The unique OCID of the sender.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Value of the SPF field. For more information about SPF, please see [SPF Authentication](https://docs.cloud.oracle.com/iaas/Content/Email/Concepts/overview.htm#components).
      * 
      */
-    private Boolean isSpf;
+    private @Nullable Boolean isSpf;
     private String senderId;
     /**
      * @return The current status of the approved sender.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return The date and time the approved sender was added in &#34;YYYY-MM-ddThh:mmZ&#34; format with a Z offset, as defined by RFC 3339.
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
 
     private GetSenderResult() {}
     /**
      * @return The OCID for the compartment.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return The email address of the sender.
      * 
      */
-    public String emailAddress() {
-        return this.emailAddress;
+    public Optional<String> emailAddress() {
+        return Optional.ofNullable(this.emailAddress);
     }
     /**
      * @return The email domain used to assert responsibility for emails sent from this sender.
      * 
      */
-    public String emailDomainId() {
-        return this.emailDomainId;
+    public Optional<String> emailDomainId() {
+        return Optional.ofNullable(this.emailDomainId);
     }
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return The unique OCID of the sender.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Value of the SPF field. For more information about SPF, please see [SPF Authentication](https://docs.cloud.oracle.com/iaas/Content/Email/Concepts/overview.htm#components).
      * 
      */
-    public Boolean isSpf() {
-        return this.isSpf;
+    public Optional<Boolean> isSpf() {
+        return Optional.ofNullable(this.isSpf);
     }
     public String senderId() {
         return this.senderId;
@@ -116,15 +118,15 @@ public final class GetSenderResult {
      * @return The current status of the approved sender.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return The date and time the approved sender was added in &#34;YYYY-MM-ddThh:mmZ&#34; format with a Z offset, as defined by RFC 3339.
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
 
     public static Builder builder() {
@@ -136,16 +138,16 @@ public final class GetSenderResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String compartmentId;
-        private Map<String,Object> definedTags;
-        private String emailAddress;
-        private String emailDomainId;
-        private Map<String,Object> freeformTags;
-        private String id;
-        private Boolean isSpf;
+        private @Nullable String compartmentId;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String emailAddress;
+        private @Nullable String emailDomainId;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String id;
+        private @Nullable Boolean isSpf;
         private String senderId;
-        private String state;
-        private String timeCreated;
+        private @Nullable String state;
+        private @Nullable String timeCreated;
         public Builder() {}
         public Builder(GetSenderResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -162,38 +164,38 @@ public final class GetSenderResult {
         }
 
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder emailAddress(String emailAddress) {
-            this.emailAddress = Objects.requireNonNull(emailAddress);
+        public Builder emailAddress(@Nullable String emailAddress) {
+            this.emailAddress = emailAddress;
             return this;
         }
         @CustomType.Setter
-        public Builder emailDomainId(String emailDomainId) {
-            this.emailDomainId = Objects.requireNonNull(emailDomainId);
+        public Builder emailDomainId(@Nullable String emailDomainId) {
+            this.emailDomainId = emailDomainId;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder isSpf(Boolean isSpf) {
-            this.isSpf = Objects.requireNonNull(isSpf);
+        public Builder isSpf(@Nullable Boolean isSpf) {
+            this.isSpf = isSpf;
             return this;
         }
         @CustomType.Setter
@@ -202,13 +204,13 @@ public final class GetSenderResult {
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         public GetSenderResult build() {

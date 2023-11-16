@@ -6,6 +6,8 @@ package com.pulumi.oci.AiDocument.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.Double;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetModelsModelCollectionItemMetricLabelMetricsReportConfidenceEntry {
@@ -13,63 +15,63 @@ public final class GetModelsModelCollectionItemMetricLabelMetricsReportConfidenc
      * @return accuracy under the threshold
      * 
      */
-    private Double accuracy;
+    private @Nullable Double accuracy;
     /**
      * @return f1Score under the threshold
      * 
      */
-    private Double f1score;
+    private @Nullable Double f1score;
     /**
      * @return Precision under the threshold
      * 
      */
-    private Double precision;
+    private @Nullable Double precision;
     /**
      * @return Recall under the threshold
      * 
      */
-    private Double recall;
+    private @Nullable Double recall;
     /**
      * @return Threshold used to calculate precision and recall.
      * 
      */
-    private Double threshold;
+    private @Nullable Double threshold;
 
     private GetModelsModelCollectionItemMetricLabelMetricsReportConfidenceEntry() {}
     /**
      * @return accuracy under the threshold
      * 
      */
-    public Double accuracy() {
-        return this.accuracy;
+    public Optional<Double> accuracy() {
+        return Optional.ofNullable(this.accuracy);
     }
     /**
      * @return f1Score under the threshold
      * 
      */
-    public Double f1score() {
-        return this.f1score;
+    public Optional<Double> f1score() {
+        return Optional.ofNullable(this.f1score);
     }
     /**
      * @return Precision under the threshold
      * 
      */
-    public Double precision() {
-        return this.precision;
+    public Optional<Double> precision() {
+        return Optional.ofNullable(this.precision);
     }
     /**
      * @return Recall under the threshold
      * 
      */
-    public Double recall() {
-        return this.recall;
+    public Optional<Double> recall() {
+        return Optional.ofNullable(this.recall);
     }
     /**
      * @return Threshold used to calculate precision and recall.
      * 
      */
-    public Double threshold() {
-        return this.threshold;
+    public Optional<Double> threshold() {
+        return Optional.ofNullable(this.threshold);
     }
 
     public static Builder builder() {
@@ -81,11 +83,11 @@ public final class GetModelsModelCollectionItemMetricLabelMetricsReportConfidenc
     }
     @CustomType.Builder
     public static final class Builder {
-        private Double accuracy;
-        private Double f1score;
-        private Double precision;
-        private Double recall;
-        private Double threshold;
+        private @Nullable Double accuracy;
+        private @Nullable Double f1score;
+        private @Nullable Double precision;
+        private @Nullable Double recall;
+        private @Nullable Double threshold;
         public Builder() {}
         public Builder(GetModelsModelCollectionItemMetricLabelMetricsReportConfidenceEntry defaults) {
     	      Objects.requireNonNull(defaults);
@@ -97,28 +99,28 @@ public final class GetModelsModelCollectionItemMetricLabelMetricsReportConfidenc
         }
 
         @CustomType.Setter
-        public Builder accuracy(Double accuracy) {
-            this.accuracy = Objects.requireNonNull(accuracy);
+        public Builder accuracy(@Nullable Double accuracy) {
+            this.accuracy = accuracy;
             return this;
         }
         @CustomType.Setter
-        public Builder f1score(Double f1score) {
-            this.f1score = Objects.requireNonNull(f1score);
+        public Builder f1score(@Nullable Double f1score) {
+            this.f1score = f1score;
             return this;
         }
         @CustomType.Setter
-        public Builder precision(Double precision) {
-            this.precision = Objects.requireNonNull(precision);
+        public Builder precision(@Nullable Double precision) {
+            this.precision = precision;
             return this;
         }
         @CustomType.Setter
-        public Builder recall(Double recall) {
-            this.recall = Objects.requireNonNull(recall);
+        public Builder recall(@Nullable Double recall) {
+            this.recall = recall;
             return this;
         }
         @CustomType.Setter
-        public Builder threshold(Double threshold) {
-            this.threshold = Objects.requireNonNull(threshold);
+        public Builder threshold(@Nullable Double threshold) {
+            this.threshold = threshold;
             return this;
         }
         public GetModelsModelCollectionItemMetricLabelMetricsReportConfidenceEntry build() {

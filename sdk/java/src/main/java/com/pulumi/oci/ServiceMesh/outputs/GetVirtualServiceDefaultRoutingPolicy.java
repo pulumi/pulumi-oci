@@ -6,6 +6,8 @@ package com.pulumi.oci.ServiceMesh.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetVirtualServiceDefaultRoutingPolicy {
@@ -13,15 +15,15 @@ public final class GetVirtualServiceDefaultRoutingPolicy {
      * @return Type of the virtual service routing policy.
      * 
      */
-    private String type;
+    private @Nullable String type;
 
     private GetVirtualServiceDefaultRoutingPolicy() {}
     /**
      * @return Type of the virtual service routing policy.
      * 
      */
-    public String type() {
-        return this.type;
+    public Optional<String> type() {
+        return Optional.ofNullable(this.type);
     }
 
     public static Builder builder() {
@@ -33,7 +35,7 @@ public final class GetVirtualServiceDefaultRoutingPolicy {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String type;
+        private @Nullable String type;
         public Builder() {}
         public Builder(GetVirtualServiceDefaultRoutingPolicy defaults) {
     	      Objects.requireNonNull(defaults);
@@ -41,8 +43,8 @@ public final class GetVirtualServiceDefaultRoutingPolicy {
         }
 
         @CustomType.Setter
-        public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+        public Builder type(@Nullable String type) {
+            this.type = type;
             return this;
         }
         public GetVirtualServiceDefaultRoutingPolicy build() {

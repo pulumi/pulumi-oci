@@ -16,23 +16,23 @@ namespace Pulumi.Oci.Marketplace.Outputs
         /// <summary>
         /// The currency of the pricing model.
         /// </summary>
-        public readonly string CurrencyCode;
+        public readonly string? CurrencyCode;
         /// <summary>
         /// The symbol of the currency
         /// </summary>
-        public readonly string CurrencySymbol;
+        public readonly string? CurrencySymbol;
         /// <summary>
         /// The pricing rate.
         /// </summary>
-        public readonly double Rate;
+        public readonly double? Rate;
 
         [OutputConstructor]
         private GetListingPackagesListingPackagePricingInternationalMarketPriceResult(
-            string currencyCode,
+            string? currencyCode,
 
-            string currencySymbol,
+            string? currencySymbol,
 
-            double rate)
+            double? rate)
         {
             CurrencyCode = currencyCode;
             CurrencySymbol = currencySymbol;

@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.DataSafe.outputs.GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollection {
@@ -14,7 +15,7 @@ public final class GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollection {
      * @return Array of SQL firewall allowed SQL statements.
      * 
      */
-    private List<GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItem> items;
+    private @Nullable List<GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItem> items;
 
     private GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollection() {}
     /**
@@ -22,7 +23,7 @@ public final class GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollection {
      * 
      */
     public List<GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -34,7 +35,7 @@ public final class GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollection {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItem> items;
+        private @Nullable List<GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItem> items;
         public Builder() {}
         public Builder(GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -42,8 +43,8 @@ public final class GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollection {
         }
 
         @CustomType.Setter
-        public Builder items(List<GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollectionItem... items) {

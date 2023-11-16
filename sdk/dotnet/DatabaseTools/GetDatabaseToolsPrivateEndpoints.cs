@@ -199,7 +199,7 @@ namespace Pulumi.Oci.DatabaseTools
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The current state of the Database Tools private endpoint.
         /// </summary>
@@ -221,7 +221,7 @@ namespace Pulumi.Oci.DatabaseTools
 
             ImmutableArray<Outputs.GetDatabaseToolsPrivateEndpointsFilterResult> filters,
 
-            string id,
+            string? id,
 
             string? state,
 

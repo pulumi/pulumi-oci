@@ -67,12 +67,12 @@ export interface GetDeploymentVersionsResult {
     /**
      * The list of deployment_version_collection.
      */
-    readonly deploymentVersionCollections: outputs.GoldenGate.GetDeploymentVersionsDeploymentVersionCollection[];
+    readonly deploymentVersionCollections?: outputs.GoldenGate.GetDeploymentVersionsDeploymentVersionCollection[];
     readonly filters?: outputs.GoldenGate.GetDeploymentVersionsFilter[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
 }
 /**
  * This data source provides the list of Deployment Versions in Oracle Cloud Infrastructure Golden Gate service.

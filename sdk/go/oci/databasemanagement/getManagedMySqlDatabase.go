@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Managed My Sql Database resource in Oracle Cloud Infrastructure Database Management service.
@@ -60,18 +59,18 @@ type GetManagedMySqlDatabaseArgs struct {
 // A collection of values returned by getManagedMySqlDatabase.
 type GetManagedMySqlDatabaseResult struct {
 	// The OCID of the compartment.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// MySQL Database Name
-	DbName string `pulumi:"dbName"`
+	DbName *string `pulumi:"dbName"`
 	// MySQL Database Version
-	DbVersion string `pulumi:"dbVersion"`
+	DbVersion *string `pulumi:"dbVersion"`
 	// The provider-assigned unique ID for this managed resource.
-	Id                     string `pulumi:"id"`
-	ManagedMySqlDatabaseId string `pulumi:"managedMySqlDatabaseId"`
+	Id                     *string `pulumi:"id"`
+	ManagedMySqlDatabaseId string  `pulumi:"managedMySqlDatabaseId"`
 	// The name of the Managed MySQL Database.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// The date and time the Managed Database was created.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 }
 
 func GetManagedMySqlDatabaseOutput(ctx *pulumi.Context, args GetManagedMySqlDatabaseOutputArgs, opts ...pulumi.InvokeOption) GetManagedMySqlDatabaseResultOutput {
@@ -112,30 +111,24 @@ func (o GetManagedMySqlDatabaseResultOutput) ToGetManagedMySqlDatabaseResultOutp
 	return o
 }
 
-func (o GetManagedMySqlDatabaseResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagedMySqlDatabaseResult] {
-	return pulumix.Output[GetManagedMySqlDatabaseResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the compartment.
-func (o GetManagedMySqlDatabaseResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedMySqlDatabaseResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetManagedMySqlDatabaseResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedMySqlDatabaseResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // MySQL Database Name
-func (o GetManagedMySqlDatabaseResultOutput) DbName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedMySqlDatabaseResult) string { return v.DbName }).(pulumi.StringOutput)
+func (o GetManagedMySqlDatabaseResultOutput) DbName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedMySqlDatabaseResult) *string { return v.DbName }).(pulumi.StringPtrOutput)
 }
 
 // MySQL Database Version
-func (o GetManagedMySqlDatabaseResultOutput) DbVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedMySqlDatabaseResult) string { return v.DbVersion }).(pulumi.StringOutput)
+func (o GetManagedMySqlDatabaseResultOutput) DbVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedMySqlDatabaseResult) *string { return v.DbVersion }).(pulumi.StringPtrOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetManagedMySqlDatabaseResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedMySqlDatabaseResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetManagedMySqlDatabaseResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedMySqlDatabaseResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetManagedMySqlDatabaseResultOutput) ManagedMySqlDatabaseId() pulumi.StringOutput {
@@ -143,13 +136,13 @@ func (o GetManagedMySqlDatabaseResultOutput) ManagedMySqlDatabaseId() pulumi.Str
 }
 
 // The name of the Managed MySQL Database.
-func (o GetManagedMySqlDatabaseResultOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedMySqlDatabaseResult) string { return v.Name }).(pulumi.StringOutput)
+func (o GetManagedMySqlDatabaseResultOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedMySqlDatabaseResult) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the Managed Database was created.
-func (o GetManagedMySqlDatabaseResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedMySqlDatabaseResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetManagedMySqlDatabaseResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedMySqlDatabaseResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 func init() {

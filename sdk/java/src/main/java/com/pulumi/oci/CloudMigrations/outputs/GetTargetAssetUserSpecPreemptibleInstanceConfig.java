@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.CloudMigrations.outputs.GetTargetAssetUserSpecPreemptibleInstanceConfigPreemptionAction;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetTargetAssetUserSpecPreemptibleInstanceConfig {
@@ -14,7 +15,7 @@ public final class GetTargetAssetUserSpecPreemptibleInstanceConfig {
      * @return The action to run when the preemptible instance is interrupted for eviction.
      * 
      */
-    private List<GetTargetAssetUserSpecPreemptibleInstanceConfigPreemptionAction> preemptionActions;
+    private @Nullable List<GetTargetAssetUserSpecPreemptibleInstanceConfigPreemptionAction> preemptionActions;
 
     private GetTargetAssetUserSpecPreemptibleInstanceConfig() {}
     /**
@@ -22,7 +23,7 @@ public final class GetTargetAssetUserSpecPreemptibleInstanceConfig {
      * 
      */
     public List<GetTargetAssetUserSpecPreemptibleInstanceConfigPreemptionAction> preemptionActions() {
-        return this.preemptionActions;
+        return this.preemptionActions == null ? List.of() : this.preemptionActions;
     }
 
     public static Builder builder() {
@@ -34,7 +35,7 @@ public final class GetTargetAssetUserSpecPreemptibleInstanceConfig {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetTargetAssetUserSpecPreemptibleInstanceConfigPreemptionAction> preemptionActions;
+        private @Nullable List<GetTargetAssetUserSpecPreemptibleInstanceConfigPreemptionAction> preemptionActions;
         public Builder() {}
         public Builder(GetTargetAssetUserSpecPreemptibleInstanceConfig defaults) {
     	      Objects.requireNonNull(defaults);
@@ -42,8 +43,8 @@ public final class GetTargetAssetUserSpecPreemptibleInstanceConfig {
         }
 
         @CustomType.Setter
-        public Builder preemptionActions(List<GetTargetAssetUserSpecPreemptibleInstanceConfigPreemptionAction> preemptionActions) {
-            this.preemptionActions = Objects.requireNonNull(preemptionActions);
+        public Builder preemptionActions(@Nullable List<GetTargetAssetUserSpecPreemptibleInstanceConfigPreemptionAction> preemptionActions) {
+            this.preemptionActions = preemptionActions;
             return this;
         }
         public Builder preemptionActions(GetTargetAssetUserSpecPreemptibleInstanceConfigPreemptionAction... preemptionActions) {

@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetBuildPipelineStageBuildRunnerShapeConfig {
@@ -14,39 +16,39 @@ public final class GetBuildPipelineStageBuildRunnerShapeConfig {
      * @return Name of the build runner shape in which the execution occurs. If not specified, the default shape is chosen.
      * 
      */
-    private String buildRunnerType;
+    private @Nullable String buildRunnerType;
     /**
      * @return The total amount of memory set for the instance in gigabytes.
      * 
      */
-    private Integer memoryInGbs;
+    private @Nullable Integer memoryInGbs;
     /**
      * @return The total number of OCPUs set for the instance.
      * 
      */
-    private Integer ocpus;
+    private @Nullable Integer ocpus;
 
     private GetBuildPipelineStageBuildRunnerShapeConfig() {}
     /**
      * @return Name of the build runner shape in which the execution occurs. If not specified, the default shape is chosen.
      * 
      */
-    public String buildRunnerType() {
-        return this.buildRunnerType;
+    public Optional<String> buildRunnerType() {
+        return Optional.ofNullable(this.buildRunnerType);
     }
     /**
      * @return The total amount of memory set for the instance in gigabytes.
      * 
      */
-    public Integer memoryInGbs() {
-        return this.memoryInGbs;
+    public Optional<Integer> memoryInGbs() {
+        return Optional.ofNullable(this.memoryInGbs);
     }
     /**
      * @return The total number of OCPUs set for the instance.
      * 
      */
-    public Integer ocpus() {
-        return this.ocpus;
+    public Optional<Integer> ocpus() {
+        return Optional.ofNullable(this.ocpus);
     }
 
     public static Builder builder() {
@@ -58,9 +60,9 @@ public final class GetBuildPipelineStageBuildRunnerShapeConfig {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String buildRunnerType;
-        private Integer memoryInGbs;
-        private Integer ocpus;
+        private @Nullable String buildRunnerType;
+        private @Nullable Integer memoryInGbs;
+        private @Nullable Integer ocpus;
         public Builder() {}
         public Builder(GetBuildPipelineStageBuildRunnerShapeConfig defaults) {
     	      Objects.requireNonNull(defaults);
@@ -70,18 +72,18 @@ public final class GetBuildPipelineStageBuildRunnerShapeConfig {
         }
 
         @CustomType.Setter
-        public Builder buildRunnerType(String buildRunnerType) {
-            this.buildRunnerType = Objects.requireNonNull(buildRunnerType);
+        public Builder buildRunnerType(@Nullable String buildRunnerType) {
+            this.buildRunnerType = buildRunnerType;
             return this;
         }
         @CustomType.Setter
-        public Builder memoryInGbs(Integer memoryInGbs) {
-            this.memoryInGbs = Objects.requireNonNull(memoryInGbs);
+        public Builder memoryInGbs(@Nullable Integer memoryInGbs) {
+            this.memoryInGbs = memoryInGbs;
             return this;
         }
         @CustomType.Setter
-        public Builder ocpus(Integer ocpus) {
-            this.ocpus = Objects.requireNonNull(ocpus);
+        public Builder ocpus(@Nullable Integer ocpus) {
+            this.ocpus = ocpus;
             return this;
         }
         public GetBuildPipelineStageBuildRunnerShapeConfig build() {

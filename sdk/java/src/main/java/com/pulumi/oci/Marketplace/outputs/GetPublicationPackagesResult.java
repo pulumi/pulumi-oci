@@ -19,7 +19,7 @@ public final class GetPublicationPackagesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The specified package&#39;s type.
      * 
@@ -31,7 +31,7 @@ public final class GetPublicationPackagesResult {
      * @return The list of publication_packages.
      * 
      */
-    private List<GetPublicationPackagesPublicationPackage> publicationPackages;
+    private @Nullable List<GetPublicationPackagesPublicationPackage> publicationPackages;
 
     private GetPublicationPackagesResult() {}
     public List<GetPublicationPackagesFilter> filters() {
@@ -41,8 +41,8 @@ public final class GetPublicationPackagesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The specified package&#39;s type.
@@ -62,7 +62,7 @@ public final class GetPublicationPackagesResult {
      * 
      */
     public List<GetPublicationPackagesPublicationPackage> publicationPackages() {
-        return this.publicationPackages;
+        return this.publicationPackages == null ? List.of() : this.publicationPackages;
     }
 
     public static Builder builder() {
@@ -75,11 +75,11 @@ public final class GetPublicationPackagesResult {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable List<GetPublicationPackagesFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String packageType;
         private @Nullable String packageVersion;
         private String publicationId;
-        private List<GetPublicationPackagesPublicationPackage> publicationPackages;
+        private @Nullable List<GetPublicationPackagesPublicationPackage> publicationPackages;
         public Builder() {}
         public Builder(GetPublicationPackagesResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -100,8 +100,8 @@ public final class GetPublicationPackagesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -120,8 +120,8 @@ public final class GetPublicationPackagesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder publicationPackages(List<GetPublicationPackagesPublicationPackage> publicationPackages) {
-            this.publicationPackages = Objects.requireNonNull(publicationPackages);
+        public Builder publicationPackages(@Nullable List<GetPublicationPackagesPublicationPackage> publicationPackages) {
+            this.publicationPackages = publicationPackages;
             return this;
         }
         public Builder publicationPackages(GetPublicationPackagesPublicationPackage... publicationPackages) {

@@ -16,11 +16,11 @@ namespace Pulumi.Oci.ApiGateway.Outputs
         /// <summary>
         /// Description of the warning/error.
         /// </summary>
-        public readonly string Msg;
+        public readonly string? Msg;
         /// <summary>
         /// Severity of the issue.
         /// </summary>
-        public readonly string Severity;
+        public readonly string? Severity;
         /// <summary>
         /// Position of the issue in the specification file (line, column).
         /// </summary>
@@ -28,9 +28,9 @@ namespace Pulumi.Oci.ApiGateway.Outputs
 
         [OutputConstructor]
         private GetApiValidationValidationDetailResult(
-            string msg,
+            string? msg,
 
-            string severity,
+            string? severity,
 
             ImmutableArray<Outputs.GetApiValidationValidationDetailSrcResult> srcs)
         {

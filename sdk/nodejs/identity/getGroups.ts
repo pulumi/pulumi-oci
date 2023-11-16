@@ -68,11 +68,11 @@ export interface GetGroupsResult {
     /**
      * The list of groups.
      */
-    readonly groups: outputs.Identity.GetGroupsGroup[];
+    readonly groups?: outputs.Identity.GetGroupsGroup[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The name you assign to the group during creation. The name must be unique across all groups in the tenancy and cannot be changed.
      */

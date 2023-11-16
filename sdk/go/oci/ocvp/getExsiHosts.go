@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Esxi Hosts in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
@@ -96,9 +95,9 @@ type GetExsiHostsResult struct {
 	EsxiHostCollections []GetExsiHostsEsxiHostCollection `pulumi:"esxiHostCollections"`
 	Filters             []GetExsiHostsFilter             `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id                  string `pulumi:"id"`
-	IsBillingDonorsOnly *bool  `pulumi:"isBillingDonorsOnly"`
-	IsSwapBillingOnly   *bool  `pulumi:"isSwapBillingOnly"`
+	Id                  *string `pulumi:"id"`
+	IsBillingDonorsOnly *bool   `pulumi:"isBillingDonorsOnly"`
+	IsSwapBillingOnly   *bool   `pulumi:"isSwapBillingOnly"`
 	// (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC that the ESXi host belongs to.
 	SddcId *string `pulumi:"sddcId"`
 	// The current state of the ESXi host.
@@ -156,12 +155,6 @@ func (o GetExsiHostsResultOutput) ToGetExsiHostsResultOutputWithContext(ctx cont
 	return o
 }
 
-func (o GetExsiHostsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetExsiHostsResult] {
-	return pulumix.Output[GetExsiHostsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the SDDC.
 func (o GetExsiHostsResultOutput) CompartmentId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetExsiHostsResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
@@ -187,8 +180,8 @@ func (o GetExsiHostsResultOutput) Filters() GetExsiHostsFilterArrayOutput {
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetExsiHostsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExsiHostsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetExsiHostsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExsiHostsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetExsiHostsResultOutput) IsBillingDonorsOnly() pulumi.BoolPtrOutput {

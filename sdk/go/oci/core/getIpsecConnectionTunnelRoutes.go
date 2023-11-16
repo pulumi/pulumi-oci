@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Ipsec Connection Tunnel Routes in Oracle Cloud Infrastructure Core service.
@@ -70,9 +69,9 @@ type GetIpsecConnectionTunnelRoutesResult struct {
 	Advertiser *string                                `pulumi:"advertiser"`
 	Filters    []GetIpsecConnectionTunnelRoutesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id       string `pulumi:"id"`
-	IpsecId  string `pulumi:"ipsecId"`
-	TunnelId string `pulumi:"tunnelId"`
+	Id       *string `pulumi:"id"`
+	IpsecId  string  `pulumi:"ipsecId"`
+	TunnelId string  `pulumi:"tunnelId"`
 	// The list of tunnel_routes.
 	TunnelRoutes []GetIpsecConnectionTunnelRoutesTunnelRoute `pulumi:"tunnelRoutes"`
 }
@@ -120,12 +119,6 @@ func (o GetIpsecConnectionTunnelRoutesResultOutput) ToGetIpsecConnectionTunnelRo
 	return o
 }
 
-func (o GetIpsecConnectionTunnelRoutesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetIpsecConnectionTunnelRoutesResult] {
-	return pulumix.Output[GetIpsecConnectionTunnelRoutesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The source of the route advertisement.
 func (o GetIpsecConnectionTunnelRoutesResultOutput) Advertiser() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetIpsecConnectionTunnelRoutesResult) *string { return v.Advertiser }).(pulumi.StringPtrOutput)
@@ -136,8 +129,8 @@ func (o GetIpsecConnectionTunnelRoutesResultOutput) Filters() GetIpsecConnection
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetIpsecConnectionTunnelRoutesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIpsecConnectionTunnelRoutesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetIpsecConnectionTunnelRoutesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetIpsecConnectionTunnelRoutesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetIpsecConnectionTunnelRoutesResultOutput) IpsecId() pulumi.StringOutput {

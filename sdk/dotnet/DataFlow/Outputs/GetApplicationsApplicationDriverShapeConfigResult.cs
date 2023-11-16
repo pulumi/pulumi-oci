@@ -16,17 +16,17 @@ namespace Pulumi.Oci.DataFlow.Outputs
         /// <summary>
         /// The amount of memory used for the driver or executors.
         /// </summary>
-        public readonly double MemoryInGbs;
+        public readonly double? MemoryInGbs;
         /// <summary>
         /// The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
         /// </summary>
-        public readonly double Ocpus;
+        public readonly double? Ocpus;
 
         [OutputConstructor]
         private GetApplicationsApplicationDriverShapeConfigResult(
-            double memoryInGbs,
+            double? memoryInGbs,
 
-            double ocpus)
+            double? ocpus)
         {
             MemoryInGbs = memoryInGbs;
             Ocpus = ocpus;

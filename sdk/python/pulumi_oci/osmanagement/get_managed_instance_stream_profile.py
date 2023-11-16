@@ -64,7 +64,7 @@ class GetManagedInstanceStreamProfileResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -78,25 +78,16 @@ class GetManagedInstanceStreamProfileResult:
     @property
     @pulumi.getter(name="moduleName")
     def module_name(self) -> Optional[str]:
-        """
-        The name of the module that contains the stream profile
-        """
         return pulumi.get(self, "module_name")
 
     @property
     @pulumi.getter(name="moduleStreamProfileOnManagedInstances")
-    def module_stream_profile_on_managed_instances(self) -> Sequence['outputs.GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstanceResult']:
-        """
-        The list of module_stream_profile_on_managed_instances.
-        """
+    def module_stream_profile_on_managed_instances(self) -> Optional[Sequence['outputs.GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstanceResult']]:
         return pulumi.get(self, "module_stream_profile_on_managed_instances")
 
     @property
     @pulumi.getter(name="profileName")
     def profile_name(self) -> Optional[str]:
-        """
-        The name of the profile
-        """
         return pulumi.get(self, "profile_name")
 
     @property
@@ -107,9 +98,6 @@ class GetManagedInstanceStreamProfileResult:
     @property
     @pulumi.getter(name="streamName")
     def stream_name(self) -> Optional[str]:
-        """
-        The name of the stream that contains the profile
-        """
         return pulumi.get(self, "stream_name")
 
 
@@ -139,58 +127,7 @@ def get_managed_instance_stream_profile(compartment_id: Optional[str] = None,
                                         stream_name: Optional[str] = None,
                                         opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetManagedInstanceStreamProfileResult:
     """
-    This data source provides the list of Managed Instance Stream Profiles in Oracle Cloud Infrastructure OS Management service.
-
-    Retrieve a list of module stream profiles, along with a summary of their
-    of their status, from a managed instance.  Filters may be applied to
-    select a subset of profiles based on the filter criteria.
-
-    The "moduleName", "streamName", and "profileName" attributes combine
-    to form a set of filters on the list of module stream profiles.  If
-    a "modulName" is provided, only profiles that belong to that module
-    are returned.  If both a "moduleName" and "streamName" are given,
-    only profiles belonging to that module stream are returned.  Finally,
-    if all three are given then only the particular profile indicated
-    by the triple is returned.  It is not valid to supply a "streamName"
-    without a "moduleName".  It is also not valid to supply a "profileName"
-    without a "streamName".
-
-    The "status" attribute filters against the state of a module stream
-    profile.  Valid values are "INSTALLED" and "AVAILABLE".  If the
-    attribute is set to "INSTALLED", only module stream profiles that
-    are installed are included in the result set.  If the attribute is
-    set to "AVAILABLE", only module stream profiles that are not
-    installed are included in the result set.  If the attribute is not
-    defined, the request is not subject to this filter.
-
-    When sorting by display name, the result set is sorted first by
-    module name, then by stream name, and finally by profile name.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_managed_instance_stream_profiles = oci.OsManagement.get_managed_instance_stream_profile(managed_instance_id=var["managed_instance_id"],
-        compartment_id=var["compartment_id"],
-        module_name=var["managed_instance_module_name"],
-        profile_name=var["managed_instance_module_stream_profile_name"],
-        profile_status=var["managed_instance_profile_status"],
-        stream_name=var["managed_instance_module_stream_name"])
-    ```
-
-
-    :param str compartment_id: The ID of the compartment in which to list resources. This parameter is optional and in some cases may have no effect.
-    :param str managed_instance_id: OCID for the managed instance
-    :param str module_name: The name of a module.  This parameter is required if a streamName is specified.
-    :param str profile_name: The name of the profile of the containing module stream
-    :param str profile_status: The status of the profile.
-           
-           A profile with the "INSTALLED" status indicates that the profile has been installed.
-           
-           A profile with the "AVAILABLE" status indicates that the profile is not installed, but can be.
-    :param str stream_name: The name of the stream of the containing module.  This parameter is required if a profileName is specified.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -225,57 +162,6 @@ def get_managed_instance_stream_profile_output(compartment_id: Optional[pulumi.I
                                                stream_name: Optional[pulumi.Input[Optional[str]]] = None,
                                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetManagedInstanceStreamProfileResult]:
     """
-    This data source provides the list of Managed Instance Stream Profiles in Oracle Cloud Infrastructure OS Management service.
-
-    Retrieve a list of module stream profiles, along with a summary of their
-    of their status, from a managed instance.  Filters may be applied to
-    select a subset of profiles based on the filter criteria.
-
-    The "moduleName", "streamName", and "profileName" attributes combine
-    to form a set of filters on the list of module stream profiles.  If
-    a "modulName" is provided, only profiles that belong to that module
-    are returned.  If both a "moduleName" and "streamName" are given,
-    only profiles belonging to that module stream are returned.  Finally,
-    if all three are given then only the particular profile indicated
-    by the triple is returned.  It is not valid to supply a "streamName"
-    without a "moduleName".  It is also not valid to supply a "profileName"
-    without a "streamName".
-
-    The "status" attribute filters against the state of a module stream
-    profile.  Valid values are "INSTALLED" and "AVAILABLE".  If the
-    attribute is set to "INSTALLED", only module stream profiles that
-    are installed are included in the result set.  If the attribute is
-    set to "AVAILABLE", only module stream profiles that are not
-    installed are included in the result set.  If the attribute is not
-    defined, the request is not subject to this filter.
-
-    When sorting by display name, the result set is sorted first by
-    module name, then by stream name, and finally by profile name.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_managed_instance_stream_profiles = oci.OsManagement.get_managed_instance_stream_profile(managed_instance_id=var["managed_instance_id"],
-        compartment_id=var["compartment_id"],
-        module_name=var["managed_instance_module_name"],
-        profile_name=var["managed_instance_module_stream_profile_name"],
-        profile_status=var["managed_instance_profile_status"],
-        stream_name=var["managed_instance_module_stream_name"])
-    ```
-
-
-    :param str compartment_id: The ID of the compartment in which to list resources. This parameter is optional and in some cases may have no effect.
-    :param str managed_instance_id: OCID for the managed instance
-    :param str module_name: The name of a module.  This parameter is required if a streamName is specified.
-    :param str profile_name: The name of the profile of the containing module stream
-    :param str profile_status: The status of the profile.
-           
-           A profile with the "INSTALLED" status indicates that the profile has been installed.
-           
-           A profile with the "AVAILABLE" status indicates that the profile is not installed, but can be.
-    :param str stream_name: The name of the stream of the containing module.  This parameter is required if a profileName is specified.
+    Use this data source to access information about an existing resource.
     """
     ...

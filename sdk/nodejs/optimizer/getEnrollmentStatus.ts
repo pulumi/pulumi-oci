@@ -45,32 +45,32 @@ export interface GetEnrollmentStatusResult {
     /**
      * The OCID of the compartment.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     readonly enrollmentStatusId: string;
     /**
      * The OCID of the enrollment status.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The enrollment status' current state.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * The current Cloud Advisor enrollment status.
      */
-    readonly status: string;
+    readonly status?: string;
     /**
      * The reason for the enrollment status of the tenancy.
      */
-    readonly statusReason: string;
+    readonly statusReason?: string;
     /**
      * The date and time the enrollment status was created, in the format defined by RFC3339.
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The date and time the enrollment status was last updated, in the format defined by RFC3339.
      */
-    readonly timeUpdated: string;
+    readonly timeUpdated?: string;
 }
 /**
  * This data source provides details about a specific Enrollment Status resource in Oracle Cloud Infrastructure Optimizer service.

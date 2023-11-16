@@ -19,13 +19,13 @@ public final class GetDbSystemsUpgradeHistoryEntriesResult {
      * @return The list of db_system_upgrade_history_entries.
      * 
      */
-    private List<GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntry> dbSystemUpgradeHistoryEntries;
+    private @Nullable List<GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntry> dbSystemUpgradeHistoryEntries;
     private @Nullable List<GetDbSystemsUpgradeHistoryEntriesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The current state of the action.
      * 
@@ -42,7 +42,7 @@ public final class GetDbSystemsUpgradeHistoryEntriesResult {
      * 
      */
     public List<GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntry> dbSystemUpgradeHistoryEntries() {
-        return this.dbSystemUpgradeHistoryEntries;
+        return this.dbSystemUpgradeHistoryEntries == null ? List.of() : this.dbSystemUpgradeHistoryEntries;
     }
     public List<GetDbSystemsUpgradeHistoryEntriesFilter> filters() {
         return this.filters == null ? List.of() : this.filters;
@@ -51,8 +51,8 @@ public final class GetDbSystemsUpgradeHistoryEntriesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The current state of the action.
@@ -75,9 +75,9 @@ public final class GetDbSystemsUpgradeHistoryEntriesResult {
     @CustomType.Builder
     public static final class Builder {
         private String dbSystemId;
-        private List<GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntry> dbSystemUpgradeHistoryEntries;
+        private @Nullable List<GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntry> dbSystemUpgradeHistoryEntries;
         private @Nullable List<GetDbSystemsUpgradeHistoryEntriesFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String state;
         private @Nullable String upgradeAction;
         public Builder() {}
@@ -97,8 +97,8 @@ public final class GetDbSystemsUpgradeHistoryEntriesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder dbSystemUpgradeHistoryEntries(List<GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntry> dbSystemUpgradeHistoryEntries) {
-            this.dbSystemUpgradeHistoryEntries = Objects.requireNonNull(dbSystemUpgradeHistoryEntries);
+        public Builder dbSystemUpgradeHistoryEntries(@Nullable List<GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntry> dbSystemUpgradeHistoryEntries) {
+            this.dbSystemUpgradeHistoryEntries = dbSystemUpgradeHistoryEntries;
             return this;
         }
         public Builder dbSystemUpgradeHistoryEntries(GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntry... dbSystemUpgradeHistoryEntries) {
@@ -113,8 +113,8 @@ public final class GetDbSystemsUpgradeHistoryEntriesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

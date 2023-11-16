@@ -48,92 +48,92 @@ export interface GetAutonomousDatabaseBackupResult {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database.
      */
-    readonly autonomousDatabaseId: string;
+    readonly autonomousDatabaseId?: string;
     /**
      * Backup destination details
      */
-    readonly backupDestinationDetails: outputs.Database.GetAutonomousDatabaseBackupBackupDestinationDetail[];
+    readonly backupDestinationDetails?: outputs.Database.GetAutonomousDatabaseBackupBackupDestinationDetail[];
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * The size of the database in terabytes at the time the backup was taken.
      */
-    readonly databaseSizeInTbs: number;
+    readonly databaseSizeInTbs?: number;
     /**
      * A valid Oracle Database version for Autonomous Database.
      */
-    readonly dbVersion: string;
+    readonly dbVersion?: string;
     /**
      * The user-friendly name for the backup. The name does not have to be unique.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database backup.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Indicates whether the backup is user-initiated or automatic.
      */
-    readonly isAutomatic: boolean;
-    readonly isLongTermBackup: boolean;
+    readonly isAutomatic?: boolean;
+    readonly isLongTermBackup?: boolean;
     /**
      * Indicates whether the backup can be used to restore the associated Autonomous Database.
      */
-    readonly isRestorable: boolean;
+    readonly isRestorable?: boolean;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
      */
-    readonly keyStoreId: string;
+    readonly keyStoreId?: string;
     /**
      * The wallet name for Oracle Key Vault.
      */
-    readonly keyStoreWalletName: string;
+    readonly keyStoreWalletName?: string;
     /**
      * The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
      */
-    readonly kmsKeyId: string;
+    readonly kmsKeyId?: string;
     /**
      * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
      */
-    readonly kmsKeyVersionId: string;
+    readonly kmsKeyVersionId?: string;
     /**
      * Additional information about the current lifecycle state.
      */
-    readonly lifecycleDetails: string;
+    readonly lifecycleDetails?: string;
     /**
      * Retention period, in days, for long-term backups
      */
-    readonly retentionPeriodInDays: number;
+    readonly retentionPeriodInDays?: number;
     /**
      * The backup size in terrabytes (TB).
      */
-    readonly sizeInTbs: number;
+    readonly sizeInTbs?: number;
     /**
      * The current state of the backup.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * Timestamp until when the backup will be available
      */
-    readonly timeAvailableTill: string;
+    readonly timeAvailableTill?: string;
     /**
      * The date and time the backup completed.
      */
-    readonly timeEnded: string;
+    readonly timeEnded?: string;
     /**
      * The date and time the backup started.
      */
-    readonly timeStarted: string;
+    readonly timeStarted?: string;
     /**
      * The type of backup.
      */
-    readonly type: string;
+    readonly type?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
      */
-    readonly vaultId: string;
+    readonly vaultId?: string;
 }
 /**
  * This data source provides details about a specific Autonomous Database Backup resource in Oracle Cloud Infrastructure Database service.

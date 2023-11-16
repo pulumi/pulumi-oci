@@ -103,11 +103,11 @@ export interface GetSecurityPoliciesResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The list of security_policy_collection.
      */
-    readonly securityPolicyCollections: outputs.DataSafe.GetSecurityPoliciesSecurityPolicyCollection[];
+    readonly securityPolicyCollections?: outputs.DataSafe.GetSecurityPoliciesSecurityPolicyCollection[];
     readonly securityPolicyId?: string;
     /**
      * The current state of the security policy.

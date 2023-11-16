@@ -16,7 +16,7 @@ namespace Pulumi.Oci.AiDocument.Outputs
         /// <summary>
         /// The document type.
         /// </summary>
-        public readonly string DocumentType;
+        public readonly string? DocumentType;
         /// <summary>
         /// The types of document analysis requested.
         /// </summary>
@@ -24,27 +24,27 @@ namespace Pulumi.Oci.AiDocument.Outputs
         /// <summary>
         /// Whether or not to generate a ZIP file containing the results.
         /// </summary>
-        public readonly bool IsZipOutputEnabled;
+        public readonly bool? IsZipOutputEnabled;
         /// <summary>
         /// The document language, abbreviated according to the BCP 47 Language-Tag syntax.
         /// </summary>
-        public readonly string Language;
+        public readonly string? Language;
         /// <summary>
         /// The type of the processor.
         /// </summary>
-        public readonly string ProcessorType;
+        public readonly string? ProcessorType;
 
         [OutputConstructor]
         private GetProcessorJobProcessorConfigResult(
-            string documentType,
+            string? documentType,
 
             ImmutableArray<Outputs.GetProcessorJobProcessorConfigFeatureResult> features,
 
-            bool isZipOutputEnabled,
+            bool? isZipOutputEnabled,
 
-            string language,
+            string? language,
 
-            string processorType)
+            string? processorType)
         {
             DocumentType = documentType;
             Features = features;

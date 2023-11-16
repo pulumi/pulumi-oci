@@ -16,6 +16,7 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -90,28 +91,28 @@ public class ManagedInstanceGroup extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * (Updatable) Information specified by the user about the managed instance group
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
-    private Output<String> description;
+    private Output</* @Nullable */ String> description;
 
     /**
      * @return (Updatable) Information specified by the user about the managed instance group
      * 
      */
-    public Output<String> description() {
-        return this.description;
+    public Output<Optional<String>> description() {
+        return Codegen.optional(this.description);
     }
     /**
      * (Updatable) Managed Instance Group identifier
@@ -132,34 +133,34 @@ public class ManagedInstanceGroup extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     @Export(name="managedInstanceCount", refs={Integer.class}, tree="[0]")
-    private Output<Integer> managedInstanceCount;
+    private Output</* @Nullable */ Integer> managedInstanceCount;
 
-    public Output<Integer> managedInstanceCount() {
-        return this.managedInstanceCount;
+    public Output<Optional<Integer>> managedInstanceCount() {
+        return Codegen.optional(this.managedInstanceCount);
     }
     /**
      * list of Managed Instances in the group
      * 
      */
     @Export(name="managedInstances", refs={List.class,ManagedInstanceGroupManagedInstance.class}, tree="[0,1]")
-    private Output<List<ManagedInstanceGroupManagedInstance>> managedInstances;
+    private Output</* @Nullable */ List<ManagedInstanceGroupManagedInstance>> managedInstances;
 
     /**
      * @return list of Managed Instances in the group
      * 
      */
-    public Output<List<ManagedInstanceGroupManagedInstance>> managedInstances() {
-        return this.managedInstances;
+    public Output<Optional<List<ManagedInstanceGroupManagedInstance>>> managedInstances() {
+        return Codegen.optional(this.managedInstances);
     }
     /**
      * The Operating System type of the managed instance(s) on which this scheduled job will operate. If not specified, this defaults to Linux.
@@ -169,7 +170,7 @@ public class ManagedInstanceGroup extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="osFamily", refs={String.class}, tree="[0]")
-    private Output<String> osFamily;
+    private Output</* @Nullable */ String> osFamily;
 
     /**
      * @return The Operating System type of the managed instance(s) on which this scheduled job will operate. If not specified, this defaults to Linux.
@@ -178,22 +179,22 @@ public class ManagedInstanceGroup extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Output<String> osFamily() {
-        return this.osFamily;
+    public Output<Optional<String>> osFamily() {
+        return Codegen.optional(this.osFamily);
     }
     /**
      * The current state of the Software Source.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The current state of the Software Source.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
 
     /**

@@ -6,6 +6,8 @@ package com.pulumi.oci.DatabaseManagement.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.Integer;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticFindingBenefit {
@@ -13,51 +15,51 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatistic
      * @return The actual database time of the SQL statements for which SQL Tuning Advisor recommendations are implemented.
      * 
      */
-    private Integer dbTimeAfterImplemented;
+    private @Nullable Integer dbTimeAfterImplemented;
     /**
      * @return The estimated database time of the above SQL statements, if SQL Tuning Advisor recommendations are implemented.
      * 
      */
-    private Integer dbTimeAfterRecommended;
+    private @Nullable Integer dbTimeAfterRecommended;
     /**
      * @return The actual database time of the above SQL statements, before SQL Tuning Advisor recommendations are implemented.
      * 
      */
-    private Integer dbTimeBeforeImplemented;
+    private @Nullable Integer dbTimeBeforeImplemented;
     /**
      * @return The actual database time of the SQL statements for which SQL Tuning Advisor recommendations are not implemented.
      * 
      */
-    private Integer dbTimeBeforeRecommended;
+    private @Nullable Integer dbTimeBeforeRecommended;
 
     private GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticFindingBenefit() {}
     /**
      * @return The actual database time of the SQL statements for which SQL Tuning Advisor recommendations are implemented.
      * 
      */
-    public Integer dbTimeAfterImplemented() {
-        return this.dbTimeAfterImplemented;
+    public Optional<Integer> dbTimeAfterImplemented() {
+        return Optional.ofNullable(this.dbTimeAfterImplemented);
     }
     /**
      * @return The estimated database time of the above SQL statements, if SQL Tuning Advisor recommendations are implemented.
      * 
      */
-    public Integer dbTimeAfterRecommended() {
-        return this.dbTimeAfterRecommended;
+    public Optional<Integer> dbTimeAfterRecommended() {
+        return Optional.ofNullable(this.dbTimeAfterRecommended);
     }
     /**
      * @return The actual database time of the above SQL statements, before SQL Tuning Advisor recommendations are implemented.
      * 
      */
-    public Integer dbTimeBeforeImplemented() {
-        return this.dbTimeBeforeImplemented;
+    public Optional<Integer> dbTimeBeforeImplemented() {
+        return Optional.ofNullable(this.dbTimeBeforeImplemented);
     }
     /**
      * @return The actual database time of the SQL statements for which SQL Tuning Advisor recommendations are not implemented.
      * 
      */
-    public Integer dbTimeBeforeRecommended() {
-        return this.dbTimeBeforeRecommended;
+    public Optional<Integer> dbTimeBeforeRecommended() {
+        return Optional.ofNullable(this.dbTimeBeforeRecommended);
     }
 
     public static Builder builder() {
@@ -69,10 +71,10 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatistic
     }
     @CustomType.Builder
     public static final class Builder {
-        private Integer dbTimeAfterImplemented;
-        private Integer dbTimeAfterRecommended;
-        private Integer dbTimeBeforeImplemented;
-        private Integer dbTimeBeforeRecommended;
+        private @Nullable Integer dbTimeAfterImplemented;
+        private @Nullable Integer dbTimeAfterRecommended;
+        private @Nullable Integer dbTimeBeforeImplemented;
+        private @Nullable Integer dbTimeBeforeRecommended;
         public Builder() {}
         public Builder(GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticFindingBenefit defaults) {
     	      Objects.requireNonNull(defaults);
@@ -83,23 +85,23 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatistic
         }
 
         @CustomType.Setter
-        public Builder dbTimeAfterImplemented(Integer dbTimeAfterImplemented) {
-            this.dbTimeAfterImplemented = Objects.requireNonNull(dbTimeAfterImplemented);
+        public Builder dbTimeAfterImplemented(@Nullable Integer dbTimeAfterImplemented) {
+            this.dbTimeAfterImplemented = dbTimeAfterImplemented;
             return this;
         }
         @CustomType.Setter
-        public Builder dbTimeAfterRecommended(Integer dbTimeAfterRecommended) {
-            this.dbTimeAfterRecommended = Objects.requireNonNull(dbTimeAfterRecommended);
+        public Builder dbTimeAfterRecommended(@Nullable Integer dbTimeAfterRecommended) {
+            this.dbTimeAfterRecommended = dbTimeAfterRecommended;
             return this;
         }
         @CustomType.Setter
-        public Builder dbTimeBeforeImplemented(Integer dbTimeBeforeImplemented) {
-            this.dbTimeBeforeImplemented = Objects.requireNonNull(dbTimeBeforeImplemented);
+        public Builder dbTimeBeforeImplemented(@Nullable Integer dbTimeBeforeImplemented) {
+            this.dbTimeBeforeImplemented = dbTimeBeforeImplemented;
             return this;
         }
         @CustomType.Setter
-        public Builder dbTimeBeforeRecommended(Integer dbTimeBeforeRecommended) {
-            this.dbTimeBeforeRecommended = Objects.requireNonNull(dbTimeBeforeRecommended);
+        public Builder dbTimeBeforeRecommended(@Nullable Integer dbTimeBeforeRecommended) {
+            this.dbTimeBeforeRecommended = dbTimeBeforeRecommended;
             return this;
         }
         public GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticFindingBenefit build() {

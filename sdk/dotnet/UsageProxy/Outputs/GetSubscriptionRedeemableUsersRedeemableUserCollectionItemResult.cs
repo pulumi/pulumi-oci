@@ -25,7 +25,7 @@ namespace Pulumi.Oci.UsageProxy.Outputs
         /// The OCID of the tenancy.
         /// </summary>
         public readonly string TenancyId;
-        public readonly string UserId;
+        public readonly string? UserId;
 
         [OutputConstructor]
         private GetSubscriptionRedeemableUsersRedeemableUserCollectionItemResult(
@@ -35,7 +35,7 @@ namespace Pulumi.Oci.UsageProxy.Outputs
 
             string tenancyId,
 
-            string userId)
+            string? userId)
         {
             Items = items;
             SubscriptionId = subscriptionId;

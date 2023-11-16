@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.Optimizer.outputs.GetRecommendationSupportedLevelItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetRecommendationSupportedLevel {
@@ -14,7 +15,7 @@ public final class GetRecommendationSupportedLevel {
      * @return The list of supported levels.
      * 
      */
-    private List<GetRecommendationSupportedLevelItem> items;
+    private @Nullable List<GetRecommendationSupportedLevelItem> items;
 
     private GetRecommendationSupportedLevel() {}
     /**
@@ -22,7 +23,7 @@ public final class GetRecommendationSupportedLevel {
      * 
      */
     public List<GetRecommendationSupportedLevelItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -34,7 +35,7 @@ public final class GetRecommendationSupportedLevel {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetRecommendationSupportedLevelItem> items;
+        private @Nullable List<GetRecommendationSupportedLevelItem> items;
         public Builder() {}
         public Builder(GetRecommendationSupportedLevel defaults) {
     	      Objects.requireNonNull(defaults);
@@ -42,8 +43,8 @@ public final class GetRecommendationSupportedLevel {
         }
 
         @CustomType.Setter
-        public Builder items(List<GetRecommendationSupportedLevelItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetRecommendationSupportedLevelItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetRecommendationSupportedLevelItem... items) {

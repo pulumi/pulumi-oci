@@ -111,48 +111,48 @@ namespace Pulumi.Oci.Database
         /// <summary>
         /// The name of the availability domain that the Autonomous Exadata Infrastructure is located in.
         /// </summary>
-        public readonly string AvailabilityDomain;
+        public readonly string? AvailabilityDomain;
         /// <summary>
         /// The OCID of the compartment.
         /// </summary>
-        public readonly string CompartmentId;
-        public readonly bool CreateAsync;
+        public readonly string? CompartmentId;
+        public readonly bool? CreateAsync;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// The user-friendly name for the Autonomous Exadata Infrastructure.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// The domain name for the Autonomous Exadata Infrastructure.
         /// </summary>
-        public readonly string Domain;
+        public readonly string? Domain;
         /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// The host name for the Autonomous Exadata Infrastructure node.
         /// </summary>
-        public readonly string Hostname;
+        public readonly string? Hostname;
         /// <summary>
         /// The OCID of the Autonomous Exadata Infrastructure.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
         /// </summary>
-        public readonly string LastMaintenanceRunId;
+        public readonly string? LastMaintenanceRunId;
         /// <summary>
         /// The Oracle license model that applies to all databases in the Autonomous Exadata Infrastructure. The default is BRING_YOUR_OWN_LICENSE.
         /// </summary>
-        public readonly string LicenseModel;
+        public readonly string? LicenseModel;
         /// <summary>
         /// Additional information about the current lifecycle state of the Autonomous Exadata Infrastructure.
         /// </summary>
-        public readonly string LifecycleDetails;
+        public readonly string? LifecycleDetails;
         public readonly ImmutableArray<Outputs.GetAutonomousExadataInfrastructureMaintenanceWindowDetailResult> MaintenanceWindowDetails;
         /// <summary>
         /// The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
@@ -161,7 +161,7 @@ namespace Pulumi.Oci.Database
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
         /// </summary>
-        public readonly string NextMaintenanceRunId;
+        public readonly string? NextMaintenanceRunId;
         /// <summary>
         /// The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
         /// * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
@@ -170,75 +170,75 @@ namespace Pulumi.Oci.Database
         /// <summary>
         /// The FQDN of the DNS record for the SCAN IP addresses that are associated with the Autonomous Exadata Infrastructure.
         /// </summary>
-        public readonly string ScanDnsName;
+        public readonly string? ScanDnsName;
         /// <summary>
         /// The shape of the Autonomous Exadata Infrastructure. The shape determines resources to allocate to the Autonomous Exadata Infrastructure (CPU cores, memory and storage).
         /// </summary>
-        public readonly string Shape;
+        public readonly string? Shape;
         /// <summary>
         /// The current lifecycle state of the Autonomous Exadata Infrastructure.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// The OCID of the subnet the Autonomous Exadata Infrastructure is associated with.
         /// </summary>
-        public readonly string SubnetId;
+        public readonly string? SubnetId;
         /// <summary>
         /// The date and time the Autonomous Exadata Infrastructure was created.
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The OCID of the zone the Autonomous Exadata Infrastructure is associated with.
         /// </summary>
-        public readonly string ZoneId;
+        public readonly string? ZoneId;
 
         [OutputConstructor]
         private GetAutonomousExadataInfrastructureResult(
             string autonomousExadataInfrastructureId,
 
-            string availabilityDomain,
+            string? availabilityDomain,
 
-            string compartmentId,
+            string? compartmentId,
 
-            bool createAsync,
+            bool? createAsync,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string displayName,
+            string? displayName,
 
-            string domain,
+            string? domain,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string hostname,
+            string? hostname,
 
-            string id,
+            string? id,
 
-            string lastMaintenanceRunId,
+            string? lastMaintenanceRunId,
 
-            string licenseModel,
+            string? licenseModel,
 
-            string lifecycleDetails,
+            string? lifecycleDetails,
 
             ImmutableArray<Outputs.GetAutonomousExadataInfrastructureMaintenanceWindowDetailResult> maintenanceWindowDetails,
 
             ImmutableArray<Outputs.GetAutonomousExadataInfrastructureMaintenanceWindowResult> maintenanceWindows,
 
-            string nextMaintenanceRunId,
+            string? nextMaintenanceRunId,
 
             ImmutableArray<string> nsgIds,
 
-            string scanDnsName,
+            string? scanDnsName,
 
-            string shape,
+            string? shape,
 
-            string state,
+            string? state,
 
-            string subnetId,
+            string? subnetId,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string zoneId)
+            string? zoneId)
         {
             AutonomousExadataInfrastructureId = autonomousExadataInfrastructureId;
             AvailabilityDomain = availabilityDomain;

@@ -149,7 +149,7 @@ namespace Pulumi.Oci.Database
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Type of the backup destination.
         /// </summary>
@@ -163,7 +163,7 @@ namespace Pulumi.Oci.Database
 
             ImmutableArray<Outputs.GetBackupDestinationsFilterResult> filters,
 
-            string id,
+            string? id,
 
             string? type)
         {

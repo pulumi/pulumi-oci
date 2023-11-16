@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Filesystem Snapshot Policy resource in Oracle Cloud Infrastructure File Storage service.
@@ -60,26 +59,26 @@ type LookupFilesystemSnapshotPolicyArgs struct {
 // A collection of values returned by getFilesystemSnapshotPolicy.
 type LookupFilesystemSnapshotPolicyResult struct {
 	// The availability domain that the file system snapshot policy is in. May be unset using a blank or NULL value.  Example: `Uocm:PHX-AD-2`
-	AvailabilityDomain string `pulumi:"availabilityDomain"`
+	AvailabilityDomain *string `pulumi:"availabilityDomain"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the file system snapshot policy.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `My Filesystem Snapshot Policy`
-	DisplayName                string `pulumi:"displayName"`
-	FilesystemSnapshotPolicyId string `pulumi:"filesystemSnapshotPolicyId"`
+	DisplayName                *string `pulumi:"displayName"`
+	FilesystemSnapshotPolicyId string  `pulumi:"filesystemSnapshotPolicyId"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system snapshot policy.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The prefix to apply to all snapshots created by this policy.  Example: `acme`
-	PolicyPrefix string `pulumi:"policyPrefix"`
+	PolicyPrefix *string `pulumi:"policyPrefix"`
 	// The list of associated snapshot schedules. A maximum of 10 schedules can be associated with a policy.
 	Schedules []GetFilesystemSnapshotPolicySchedule `pulumi:"schedules"`
 	// The current state of this file system snapshot policy.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The date and time the file system snapshot policy was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 }
 
 func LookupFilesystemSnapshotPolicyOutput(ctx *pulumi.Context, args LookupFilesystemSnapshotPolicyOutputArgs, opts ...pulumi.InvokeOption) LookupFilesystemSnapshotPolicyResultOutput {
@@ -120,20 +119,14 @@ func (o LookupFilesystemSnapshotPolicyResultOutput) ToLookupFilesystemSnapshotPo
 	return o
 }
 
-func (o LookupFilesystemSnapshotPolicyResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupFilesystemSnapshotPolicyResult] {
-	return pulumix.Output[LookupFilesystemSnapshotPolicyResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The availability domain that the file system snapshot policy is in. May be unset using a blank or NULL value.  Example: `Uocm:PHX-AD-2`
-func (o LookupFilesystemSnapshotPolicyResultOutput) AvailabilityDomain() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupFilesystemSnapshotPolicyResult) string { return v.AvailabilityDomain }).(pulumi.StringOutput)
+func (o LookupFilesystemSnapshotPolicyResultOutput) AvailabilityDomain() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupFilesystemSnapshotPolicyResult) *string { return v.AvailabilityDomain }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the file system snapshot policy.
-func (o LookupFilesystemSnapshotPolicyResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupFilesystemSnapshotPolicyResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupFilesystemSnapshotPolicyResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupFilesystemSnapshotPolicyResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -142,8 +135,8 @@ func (o LookupFilesystemSnapshotPolicyResultOutput) DefinedTags() pulumi.MapOutp
 }
 
 // A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `My Filesystem Snapshot Policy`
-func (o LookupFilesystemSnapshotPolicyResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupFilesystemSnapshotPolicyResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupFilesystemSnapshotPolicyResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupFilesystemSnapshotPolicyResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupFilesystemSnapshotPolicyResultOutput) FilesystemSnapshotPolicyId() pulumi.StringOutput {
@@ -156,13 +149,13 @@ func (o LookupFilesystemSnapshotPolicyResultOutput) FreeformTags() pulumi.MapOut
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system snapshot policy.
-func (o LookupFilesystemSnapshotPolicyResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupFilesystemSnapshotPolicyResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupFilesystemSnapshotPolicyResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupFilesystemSnapshotPolicyResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The prefix to apply to all snapshots created by this policy.  Example: `acme`
-func (o LookupFilesystemSnapshotPolicyResultOutput) PolicyPrefix() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupFilesystemSnapshotPolicyResult) string { return v.PolicyPrefix }).(pulumi.StringOutput)
+func (o LookupFilesystemSnapshotPolicyResultOutput) PolicyPrefix() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupFilesystemSnapshotPolicyResult) *string { return v.PolicyPrefix }).(pulumi.StringPtrOutput)
 }
 
 // The list of associated snapshot schedules. A maximum of 10 schedules can be associated with a policy.
@@ -171,13 +164,13 @@ func (o LookupFilesystemSnapshotPolicyResultOutput) Schedules() GetFilesystemSna
 }
 
 // The current state of this file system snapshot policy.
-func (o LookupFilesystemSnapshotPolicyResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupFilesystemSnapshotPolicyResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupFilesystemSnapshotPolicyResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupFilesystemSnapshotPolicyResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the file system snapshot policy was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
-func (o LookupFilesystemSnapshotPolicyResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupFilesystemSnapshotPolicyResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupFilesystemSnapshotPolicyResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupFilesystemSnapshotPolicyResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 func init() {

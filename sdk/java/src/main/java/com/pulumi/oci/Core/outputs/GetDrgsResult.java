@@ -9,6 +9,7 @@ import com.pulumi.oci.Core.outputs.GetDrgsFilter;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 @CustomType
@@ -22,13 +23,13 @@ public final class GetDrgsResult {
      * @return The list of drgs.
      * 
      */
-    private List<GetDrgsDrg> drgs;
+    private @Nullable List<GetDrgsDrg> drgs;
     private @Nullable List<GetDrgsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
 
     private GetDrgsResult() {}
     /**
@@ -43,7 +44,7 @@ public final class GetDrgsResult {
      * 
      */
     public List<GetDrgsDrg> drgs() {
-        return this.drgs;
+        return this.drgs == null ? List.of() : this.drgs;
     }
     public List<GetDrgsFilter> filters() {
         return this.filters == null ? List.of() : this.filters;
@@ -52,8 +53,8 @@ public final class GetDrgsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
 
     public static Builder builder() {
@@ -66,9 +67,9 @@ public final class GetDrgsResult {
     @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
-        private List<GetDrgsDrg> drgs;
+        private @Nullable List<GetDrgsDrg> drgs;
         private @Nullable List<GetDrgsFilter> filters;
-        private String id;
+        private @Nullable String id;
         public Builder() {}
         public Builder(GetDrgsResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -84,8 +85,8 @@ public final class GetDrgsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder drgs(List<GetDrgsDrg> drgs) {
-            this.drgs = Objects.requireNonNull(drgs);
+        public Builder drgs(@Nullable List<GetDrgsDrg> drgs) {
+            this.drgs = drgs;
             return this;
         }
         public Builder drgs(GetDrgsDrg... drgs) {
@@ -100,8 +101,8 @@ public final class GetDrgsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         public GetDrgsResult build() {

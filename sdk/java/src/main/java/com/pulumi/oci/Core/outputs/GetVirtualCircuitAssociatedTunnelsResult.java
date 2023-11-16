@@ -9,6 +9,7 @@ import com.pulumi.oci.Core.outputs.GetVirtualCircuitAssociatedTunnelsVirtualCirc
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 @CustomType
@@ -18,12 +19,12 @@ public final class GetVirtualCircuitAssociatedTunnelsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The list of virtual_circuit_associated_tunnel_details.
      * 
      */
-    private List<GetVirtualCircuitAssociatedTunnelsVirtualCircuitAssociatedTunnelDetail> virtualCircuitAssociatedTunnelDetails;
+    private @Nullable List<GetVirtualCircuitAssociatedTunnelsVirtualCircuitAssociatedTunnelDetail> virtualCircuitAssociatedTunnelDetails;
     private String virtualCircuitId;
 
     private GetVirtualCircuitAssociatedTunnelsResult() {}
@@ -34,15 +35,15 @@ public final class GetVirtualCircuitAssociatedTunnelsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The list of virtual_circuit_associated_tunnel_details.
      * 
      */
     public List<GetVirtualCircuitAssociatedTunnelsVirtualCircuitAssociatedTunnelDetail> virtualCircuitAssociatedTunnelDetails() {
-        return this.virtualCircuitAssociatedTunnelDetails;
+        return this.virtualCircuitAssociatedTunnelDetails == null ? List.of() : this.virtualCircuitAssociatedTunnelDetails;
     }
     public String virtualCircuitId() {
         return this.virtualCircuitId;
@@ -58,8 +59,8 @@ public final class GetVirtualCircuitAssociatedTunnelsResult {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable List<GetVirtualCircuitAssociatedTunnelsFilter> filters;
-        private String id;
-        private List<GetVirtualCircuitAssociatedTunnelsVirtualCircuitAssociatedTunnelDetail> virtualCircuitAssociatedTunnelDetails;
+        private @Nullable String id;
+        private @Nullable List<GetVirtualCircuitAssociatedTunnelsVirtualCircuitAssociatedTunnelDetail> virtualCircuitAssociatedTunnelDetails;
         private String virtualCircuitId;
         public Builder() {}
         public Builder(GetVirtualCircuitAssociatedTunnelsResult defaults) {
@@ -79,13 +80,13 @@ public final class GetVirtualCircuitAssociatedTunnelsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder virtualCircuitAssociatedTunnelDetails(List<GetVirtualCircuitAssociatedTunnelsVirtualCircuitAssociatedTunnelDetail> virtualCircuitAssociatedTunnelDetails) {
-            this.virtualCircuitAssociatedTunnelDetails = Objects.requireNonNull(virtualCircuitAssociatedTunnelDetails);
+        public Builder virtualCircuitAssociatedTunnelDetails(@Nullable List<GetVirtualCircuitAssociatedTunnelsVirtualCircuitAssociatedTunnelDetail> virtualCircuitAssociatedTunnelDetails) {
+            this.virtualCircuitAssociatedTunnelDetails = virtualCircuitAssociatedTunnelDetails;
             return this;
         }
         public Builder virtualCircuitAssociatedTunnelDetails(GetVirtualCircuitAssociatedTunnelsVirtualCircuitAssociatedTunnelDetail... virtualCircuitAssociatedTunnelDetails) {

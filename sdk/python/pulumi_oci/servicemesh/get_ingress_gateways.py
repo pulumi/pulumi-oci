@@ -49,9 +49,6 @@ class GetIngressGatewaysResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
@@ -62,41 +59,26 @@ class GetIngressGatewaysResult:
     @property
     @pulumi.getter
     def id(self) -> Optional[str]:
-        """
-        Unique identifier that is immutable on creation.
-        """
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="ingressGatewayCollections")
-    def ingress_gateway_collections(self) -> Sequence['outputs.GetIngressGatewaysIngressGatewayCollectionResult']:
-        """
-        The list of ingress_gateway_collection.
-        """
+    def ingress_gateway_collections(self) -> Optional[Sequence['outputs.GetIngressGatewaysIngressGatewayCollectionResult']]:
         return pulumi.get(self, "ingress_gateway_collections")
 
     @property
     @pulumi.getter(name="meshId")
     def mesh_id(self) -> Optional[str]:
-        """
-        The OCID of the service mesh in which this ingress gateway is created.
-        """
         return pulumi.get(self, "mesh_id")
 
     @property
     @pulumi.getter
     def name(self) -> Optional[str]:
-        """
-        A user-friendly name. The name has to be unique within the same service mesh and cannot be changed after creation. Avoid entering confidential information.  Example: `My unique resource name`
-        """
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the Resource.
-        """
         return pulumi.get(self, "state")
 
 
@@ -123,29 +105,7 @@ def get_ingress_gateways(compartment_id: Optional[str] = None,
                          state: Optional[str] = None,
                          opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetIngressGatewaysResult:
     """
-    This data source provides the list of Ingress Gateways in Oracle Cloud Infrastructure Service Mesh service.
-
-    Returns a list of IngressGateway objects.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_ingress_gateways = oci.ServiceMesh.get_ingress_gateways(compartment_id=var["compartment_id"],
-        id=var["ingress_gateway_id"],
-        mesh_id=oci_service_mesh_mesh["test_mesh"]["id"],
-        name=var["ingress_gateway_name"],
-        state=var["ingress_gateway_state"])
-    ```
-
-
-    :param str compartment_id: The ID of the compartment in which to list resources.
-    :param str id: Unique IngressGateway identifier.
-    :param str mesh_id: Unique Mesh identifier.
-    :param str name: A filter to return only resources that match the entire name given.
-    :param str state: A filter to return only resources that match the life cycle state given.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -176,28 +136,6 @@ def get_ingress_gateways_output(compartment_id: Optional[pulumi.Input[str]] = No
                                 state: Optional[pulumi.Input[Optional[str]]] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetIngressGatewaysResult]:
     """
-    This data source provides the list of Ingress Gateways in Oracle Cloud Infrastructure Service Mesh service.
-
-    Returns a list of IngressGateway objects.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_ingress_gateways = oci.ServiceMesh.get_ingress_gateways(compartment_id=var["compartment_id"],
-        id=var["ingress_gateway_id"],
-        mesh_id=oci_service_mesh_mesh["test_mesh"]["id"],
-        name=var["ingress_gateway_name"],
-        state=var["ingress_gateway_state"])
-    ```
-
-
-    :param str compartment_id: The ID of the compartment in which to list resources.
-    :param str id: Unique IngressGateway identifier.
-    :param str mesh_id: Unique Mesh identifier.
-    :param str name: A filter to return only resources that match the entire name given.
-    :param str state: A filter to return only resources that match the life cycle state given.
+    Use this data source to access information about an existing resource.
     """
     ...

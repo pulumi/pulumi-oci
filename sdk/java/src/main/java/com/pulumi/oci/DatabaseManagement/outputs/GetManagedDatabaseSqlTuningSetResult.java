@@ -17,12 +17,12 @@ public final class GetManagedDatabaseSqlTuningSetResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The details in the SQL tuning set summary.
      * 
      */
-    private List<GetManagedDatabaseSqlTuningSetItem> items;
+    private @Nullable List<GetManagedDatabaseSqlTuningSetItem> items;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
      * 
@@ -40,15 +40,15 @@ public final class GetManagedDatabaseSqlTuningSetResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The details in the SQL tuning set summary.
      * 
      */
     public List<GetManagedDatabaseSqlTuningSetItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
@@ -77,8 +77,8 @@ public final class GetManagedDatabaseSqlTuningSetResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String id;
-        private List<GetManagedDatabaseSqlTuningSetItem> items;
+        private @Nullable String id;
+        private @Nullable List<GetManagedDatabaseSqlTuningSetItem> items;
         private String managedDatabaseId;
         private @Nullable String nameContains;
         private @Nullable String owner;
@@ -93,13 +93,13 @@ public final class GetManagedDatabaseSqlTuningSetResult {
         }
 
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder items(List<GetManagedDatabaseSqlTuningSetItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetManagedDatabaseSqlTuningSetItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetManagedDatabaseSqlTuningSetItem... items) {

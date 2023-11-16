@@ -41,13 +41,13 @@ namespace Pulumi.Oci.GoldenGate
         /// (Updatable) Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup being referenced.
         /// </summary>
         [Output("deploymentBackupId")]
-        public Output<string> DeploymentBackupId { get; private set; } = null!;
+        public Output<string?> DeploymentBackupId { get; private set; } = null!;
 
         /// <summary>
         /// Information regarding the deployment diagnostic collection
@@ -65,13 +65,13 @@ namespace Pulumi.Oci.GoldenGate
         /// The URL of a resource.
         /// </summary>
         [Output("deploymentUrl")]
-        public Output<string> DeploymentUrl { get; private set; } = null!;
+        public Output<string?> DeploymentUrl { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Metadata about this specific object.
         /// </summary>
         [Output("description")]
-        public Output<string> Description { get; private set; } = null!;
+        public Output<string?> Description { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) An object's Display Name.
@@ -83,13 +83,13 @@ namespace Pulumi.Oci.GoldenGate
         /// (Updatable) A three-label Fully Qualified Domain Name (FQDN) for a resource.
         /// </summary>
         [Output("fqdn")]
-        public Output<string> Fqdn { get; private set; } = null!;
+        public Output<string?> Fqdn { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Indicates if auto scaling is enabled for the Deployment's CPU core count.
@@ -101,25 +101,25 @@ namespace Pulumi.Oci.GoldenGate
         /// True if all of the aggregate resources are working correctly.
         /// </summary>
         [Output("isHealthy")]
-        public Output<bool> IsHealthy { get; private set; } = null!;
+        public Output<bool?> IsHealthy { get; private set; } = null!;
 
         /// <summary>
         /// Indicates if the resource is the the latest available version.
         /// </summary>
         [Output("isLatestVersion")]
-        public Output<bool> IsLatestVersion { get; private set; } = null!;
+        public Output<bool?> IsLatestVersion { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) True if this object is publicly available.
         /// </summary>
         [Output("isPublic")]
-        public Output<bool> IsPublic { get; private set; } = null!;
+        public Output<bool?> IsPublic { get; private set; } = null!;
 
         /// <summary>
         /// Indicator will be true if the amount of storage being utilized exceeds the allowable storage utilization limit.  Exceeding the limit may be an indication of a misconfiguration of the deployment's GoldenGate service.
         /// </summary>
         [Output("isStorageUtilizationLimitExceeded")]
-        public Output<bool> IsStorageUtilizationLimitExceeded { get; private set; } = null!;
+        public Output<bool?> IsStorageUtilizationLimitExceeded { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The Oracle license model that applies to a Deployment.
@@ -131,37 +131,37 @@ namespace Pulumi.Oci.GoldenGate
         /// Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
         /// </summary>
         [Output("lifecycleDetails")]
-        public Output<string> LifecycleDetails { get; private set; } = null!;
+        public Output<string?> LifecycleDetails { get; private set; } = null!;
 
         /// <summary>
         /// Possible GGS lifecycle sub-states.
         /// </summary>
         [Output("lifecycleSubState")]
-        public Output<string> LifecycleSubState { get; private set; } = null!;
+        public Output<string?> LifecycleSubState { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Defines the maintenance configuration for create operation.
         /// </summary>
         [Output("maintenanceConfiguration")]
-        public Output<Outputs.DeploymentMaintenanceConfiguration> MaintenanceConfiguration { get; private set; } = null!;
+        public Output<Outputs.DeploymentMaintenanceConfiguration?> MaintenanceConfiguration { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Defines the maintenance window for create operation, when automatic actions can be performed.
         /// </summary>
         [Output("maintenanceWindow")]
-        public Output<Outputs.DeploymentMaintenanceWindow> MaintenanceWindow { get; private set; } = null!;
+        public Output<Outputs.DeploymentMaintenanceWindow?> MaintenanceWindow { get; private set; } = null!;
 
         /// <summary>
         /// Type of the next maintenance.
         /// </summary>
         [Output("nextMaintenanceActionType")]
-        public Output<string> NextMaintenanceActionType { get; private set; } = null!;
+        public Output<string?> NextMaintenanceActionType { get; private set; } = null!;
 
         /// <summary>
         /// Description of the next maintenance.
         /// </summary>
         [Output("nextMaintenanceDescription")]
-        public Output<string> NextMaintenanceDescription { get; private set; } = null!;
+        public Output<string?> NextMaintenanceDescription { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
@@ -173,28 +173,28 @@ namespace Pulumi.Oci.GoldenGate
         /// (Updatable) Deployment Data for creating an OggDeployment
         /// </summary>
         [Output("oggData")]
-        public Output<Outputs.DeploymentOggData> OggData { get; private set; } = null!;
+        public Output<Outputs.DeploymentOggData?> OggData { get; private set; } = null!;
 
         /// <summary>
         /// The private IP address in the customer's VCN representing the access point for the associated endpoint service in the GoldenGate service VCN.
         /// </summary>
         [Output("privateIpAddress")]
-        public Output<string> PrivateIpAddress { get; private set; } = null!;
+        public Output<string?> PrivateIpAddress { get; private set; } = null!;
 
         /// <summary>
         /// The public IP address representing the access point for the Deployment.
         /// </summary>
         [Output("publicIpAddress")]
-        public Output<string> PublicIpAddress { get; private set; } = null!;
+        public Output<string?> PublicIpAddress { get; private set; } = null!;
 
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// The amount of storage being utilized (in bytes)
         /// </summary>
         [Output("storageUtilizationInBytes")]
-        public Output<string> StorageUtilizationInBytes { get; private set; } = null!;
+        public Output<string?> StorageUtilizationInBytes { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet being referenced.
@@ -206,37 +206,37 @@ namespace Pulumi.Oci.GoldenGate
         /// The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
         /// </summary>
         [Output("systemTags")]
-        public Output<ImmutableDictionary<string, object>> SystemTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> SystemTags { get; private set; } = null!;
 
         /// <summary>
         /// The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// The time of next maintenance schedule. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         /// </summary>
         [Output("timeOfNextMaintenance")]
-        public Output<string> TimeOfNextMaintenance { get; private set; } = null!;
+        public Output<string?> TimeOfNextMaintenance { get; private set; } = null!;
 
         /// <summary>
         /// The time until OGG version is supported. After this date has passed OGG version will not be available anymore. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         /// </summary>
         [Output("timeOggVersionSupportedUntil")]
-        public Output<string> TimeOggVersionSupportedUntil { get; private set; } = null!;
+        public Output<string?> TimeOggVersionSupportedUntil { get; private set; } = null!;
 
         /// <summary>
         /// The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         /// </summary>
         [Output("timeUpdated")]
-        public Output<string> TimeUpdated { get; private set; } = null!;
+        public Output<string?> TimeUpdated { get; private set; } = null!;
 
         /// <summary>
         /// Note: Deprecated: Use timeOfNextMaintenance instead, or related upgrade records  to check, when deployment will be forced to upgrade to a newer version. Old description: The date the existing version in use will no longer be considered as usable and an upgrade will be required.  This date is typically 6 months after the version was released for use by GGS.  The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         /// </summary>
         [Output("timeUpgradeRequired")]
-        public Output<string> TimeUpgradeRequired { get; private set; } = null!;
+        public Output<string?> TimeUpgradeRequired { get; private set; } = null!;
 
 
         /// <summary>

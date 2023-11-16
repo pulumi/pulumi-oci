@@ -53,7 +53,7 @@ namespace Pulumi.Oci.CertificatesManagement
         /// (Updatable) The origin of the CA.
         /// </summary>
         [Output("configType")]
-        public Output<string> ConfigType { get; private set; } = null!;
+        public Output<string?> ConfigType { get; private set; } = null!;
 
         /// <summary>
         /// The metadata details of the certificate authority (CA) version. This summary object does not contain the CA contents.
@@ -65,7 +65,7 @@ namespace Pulumi.Oci.CertificatesManagement
         /// (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) A brief description of the CA.
@@ -77,13 +77,13 @@ namespace Pulumi.Oci.CertificatesManagement
         /// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// The OCID of the private CA.
         /// </summary>
         [Output("issuerCertificateAuthorityId")]
-        public Output<string> IssuerCertificateAuthorityId { get; private set; } = null!;
+        public Output<string?> IssuerCertificateAuthorityId { get; private set; } = null!;
 
         /// <summary>
         /// The OCID of the Oracle Cloud Infrastructure Vault key used to encrypt the CA.
@@ -95,7 +95,7 @@ namespace Pulumi.Oci.CertificatesManagement
         /// Additional information about the current CA lifecycle state.
         /// </summary>
         [Output("lifecycleDetails")]
-        public Output<string> LifecycleDetails { get; private set; } = null!;
+        public Output<string?> LifecycleDetails { get; private set; } = null!;
 
         /// <summary>
         /// A user-friendly name for the CA. Names are unique within a compartment. Avoid entering confidential information. Valid characters include uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
@@ -111,13 +111,13 @@ namespace Pulumi.Oci.CertificatesManagement
         /// The algorithm used to sign public key certificates that the CA issues.
         /// </summary>
         [Output("signingAlgorithm")]
-        public Output<string> SigningAlgorithm { get; private set; } = null!;
+        public Output<string?> SigningAlgorithm { get; private set; } = null!;
 
         /// <summary>
         /// The current lifecycle state of the certificate authority.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// The subject of the certificate, which is a distinguished name that identifies the entity that owns the public key in the certificate.
@@ -129,13 +129,13 @@ namespace Pulumi.Oci.CertificatesManagement
         /// A property indicating when the CA was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// An optional property indicating when to delete the CA version, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
         /// </summary>
         [Output("timeOfDeletion")]
-        public Output<string> TimeOfDeletion { get; private set; } = null!;
+        public Output<string?> TimeOfDeletion { get; private set; } = null!;
 
 
         /// <summary>

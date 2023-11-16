@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDeployStagesDeployStageCollectionItemProductionLoadBalancerConfig {
@@ -14,51 +16,51 @@ public final class GetDeployStagesDeployStageCollectionItemProductionLoadBalance
      * @return Listen port for the backend server.
      * 
      */
-    private Integer backendPort;
+    private @Nullable Integer backendPort;
     /**
      * @return Name of the load balancer listener.
      * 
      */
-    private String listenerName;
+    private @Nullable String listenerName;
     /**
      * @return The OCID of the load balancer.
      * 
      */
-    private String loadBalancerId;
+    private @Nullable String loadBalancerId;
     /**
      * @return A filter to return only deployment stages that matches the given lifecycle state.
      * 
      */
-    private String state;
+    private @Nullable String state;
 
     private GetDeployStagesDeployStageCollectionItemProductionLoadBalancerConfig() {}
     /**
      * @return Listen port for the backend server.
      * 
      */
-    public Integer backendPort() {
-        return this.backendPort;
+    public Optional<Integer> backendPort() {
+        return Optional.ofNullable(this.backendPort);
     }
     /**
      * @return Name of the load balancer listener.
      * 
      */
-    public String listenerName() {
-        return this.listenerName;
+    public Optional<String> listenerName() {
+        return Optional.ofNullable(this.listenerName);
     }
     /**
      * @return The OCID of the load balancer.
      * 
      */
-    public String loadBalancerId() {
-        return this.loadBalancerId;
+    public Optional<String> loadBalancerId() {
+        return Optional.ofNullable(this.loadBalancerId);
     }
     /**
      * @return A filter to return only deployment stages that matches the given lifecycle state.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
 
     public static Builder builder() {
@@ -70,10 +72,10 @@ public final class GetDeployStagesDeployStageCollectionItemProductionLoadBalance
     }
     @CustomType.Builder
     public static final class Builder {
-        private Integer backendPort;
-        private String listenerName;
-        private String loadBalancerId;
-        private String state;
+        private @Nullable Integer backendPort;
+        private @Nullable String listenerName;
+        private @Nullable String loadBalancerId;
+        private @Nullable String state;
         public Builder() {}
         public Builder(GetDeployStagesDeployStageCollectionItemProductionLoadBalancerConfig defaults) {
     	      Objects.requireNonNull(defaults);
@@ -84,23 +86,23 @@ public final class GetDeployStagesDeployStageCollectionItemProductionLoadBalance
         }
 
         @CustomType.Setter
-        public Builder backendPort(Integer backendPort) {
-            this.backendPort = Objects.requireNonNull(backendPort);
+        public Builder backendPort(@Nullable Integer backendPort) {
+            this.backendPort = backendPort;
             return this;
         }
         @CustomType.Setter
-        public Builder listenerName(String listenerName) {
-            this.listenerName = Objects.requireNonNull(listenerName);
+        public Builder listenerName(@Nullable String listenerName) {
+            this.listenerName = listenerName;
             return this;
         }
         @CustomType.Setter
-        public Builder loadBalancerId(String loadBalancerId) {
-            this.loadBalancerId = Objects.requireNonNull(loadBalancerId);
+        public Builder loadBalancerId(@Nullable String loadBalancerId) {
+            this.loadBalancerId = loadBalancerId;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         public GetDeployStagesDeployStageCollectionItemProductionLoadBalancerConfig build() {

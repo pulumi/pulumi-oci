@@ -20,7 +20,7 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// <summary>
         /// The name of the application associated with the sensitive column. It's useful when the application name is different from the schema name. Otherwise, it can be ignored.
         /// </summary>
-        public readonly string AppName;
+        public readonly string? AppName;
         /// <summary>
         /// The composite key groups to which the sensitive column belongs. If the column is part of a composite key, it's assigned a column group. It helps identify and manage referential relationships that involve composite keys.
         /// </summary>
@@ -32,7 +32,7 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// <summary>
         /// A filter to return only the resources that match the specified data types.
         /// </summary>
-        public readonly string DataType;
+        public readonly string? DataType;
         /// <summary>
         /// Unique keys identifying the columns that are database-level (dictionary-defined) children of the sensitive column.
         /// </summary>
@@ -40,15 +40,15 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// <summary>
         /// The estimated number of data values the column has in the associated database.
         /// </summary>
-        public readonly string EstimatedDataValueCount;
+        public readonly string? EstimatedDataValueCount;
         /// <summary>
         /// The unique key that identifies the sensitive column. It's numeric and unique within a sensitive data model.
         /// </summary>
-        public readonly string Key;
+        public readonly string? Key;
         /// <summary>
         /// Details about the current state of the sensitive column.
         /// </summary>
-        public readonly string LifecycleDetails;
+        public readonly string? LifecycleDetails;
         /// <summary>
         /// A filter to return only items related to a specific object name.
         /// </summary>
@@ -56,7 +56,7 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// <summary>
         /// A filter to return only items related to a specific object type.
         /// </summary>
-        public readonly string ObjectType;
+        public readonly string? ObjectType;
         /// <summary>
         /// Unique keys identifying the columns that are parents of the sensitive column. At present, it tracks a single parent only.
         /// </summary>
@@ -64,7 +64,7 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// <summary>
         /// A filter to return sensitive columns based on their relationship with their parent columns. If set to NONE, it returns the sensitive columns that do not have any parent. The response includes the parent columns as well as the independent columns that are not in any relationship. If set to APP_DEFINED, it returns all the child columns that have application-level (non-dictionary) relationship with their parents. If set to DB_DEFINED, it returns all the child columns that have database-level (dictionary-defined) relationship with their parents.
         /// </summary>
-        public readonly string RelationType;
+        public readonly string? RelationType;
         /// <summary>
         /// Original data values collected for the sensitive column from the associated database. Sample data helps review the column and ensure that it actually contains sensitive data. Note that sample data is retrieved by a data discovery job only if the isSampleDataCollectionEnabled attribute is set to true. At present, only one data value is collected per sensitive column.
         /// </summary>
@@ -80,55 +80,55 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// <summary>
         /// A filter to return only the sensitive columns that are associated with one of the sensitive types identified by the specified OCIDs.
         /// </summary>
-        public readonly string SensitiveTypeId;
+        public readonly string? SensitiveTypeId;
         /// <summary>
         /// The source of the sensitive column. DISCOVERY indicates that the column was added to the sensitive data model using a data discovery job. MANUAL indicates that the column was added manually.
         /// </summary>
-        public readonly string Source;
+        public readonly string? Source;
         /// <summary>
         /// The current state of the sensitive column.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// A filter to return only the sensitive columns that match the specified status.
         /// </summary>
-        public readonly string Status;
+        public readonly string? Status;
         /// <summary>
         /// The date and time, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339), the sensitive column was created in the sensitive data model.
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The date and time, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339), the sensitive column was last updated in the sensitive data model.
         /// </summary>
-        public readonly string TimeUpdated;
+        public readonly string? TimeUpdated;
 
         [OutputConstructor]
         private GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionItemResult(
             ImmutableArray<string> appDefinedChildColumnKeys,
 
-            string appName,
+            string? appName,
 
             ImmutableArray<string> columnGroups,
 
             string columnName,
 
-            string dataType,
+            string? dataType,
 
             ImmutableArray<string> dbDefinedChildColumnKeys,
 
-            string estimatedDataValueCount,
+            string? estimatedDataValueCount,
 
-            string key,
+            string? key,
 
-            string lifecycleDetails,
+            string? lifecycleDetails,
 
             string @object,
 
-            string objectType,
+            string? objectType,
 
             ImmutableArray<string> parentColumnKeys,
 
-            string relationType,
+            string? relationType,
 
             ImmutableArray<string> sampleDataValues,
 
@@ -136,17 +136,17 @@ namespace Pulumi.Oci.DataSafe.Outputs
 
             string sensitiveDataModelId,
 
-            string sensitiveTypeId,
+            string? sensitiveTypeId,
 
-            string source,
+            string? source,
 
-            string state,
+            string? state,
 
-            string status,
+            string? status,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeUpdated)
+            string? timeUpdated)
         {
             AppDefinedChildColumnKeys = appDefinedChildColumnKeys;
             AppName = appName;

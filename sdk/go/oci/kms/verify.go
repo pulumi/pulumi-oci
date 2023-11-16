@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Verify resource in Oracle Cloud Infrastructure Kms service.
@@ -67,7 +66,7 @@ type Verify struct {
 	// The service endpoint to perform cryptographic operations against. Cryptographic operations include 'Encrypt,' 'Decrypt,', 'GenerateDataEncryptionKey', 'Sign' and 'Verify' operations. see Vault Crypto endpoint.
 	CryptoEndpoint pulumi.StringOutput `pulumi:"cryptoEndpoint"`
 	// A Boolean value that indicates whether the signature was verified.
-	IsSignatureValid pulumi.BoolOutput `pulumi:"isSignatureValid"`
+	IsSignatureValid pulumi.BoolPtrOutput `pulumi:"isSignatureValid"`
 	// The OCID of the key used to sign the message.
 	KeyId pulumi.StringOutput `pulumi:"keyId"`
 	// The OCID of the key version used to sign the message.
@@ -75,7 +74,7 @@ type Verify struct {
 	// The base64-encoded binary data object denoting the message or message digest to sign. You can have a message up to 4096 bytes in size. To sign a larger message, provide the message digest.
 	Message pulumi.StringOutput `pulumi:"message"`
 	// Denotes whether the value of the message parameter is a raw message or a message digest. The default value, `RAW`, indicates a message. To indicate a message digest, use `DIGEST`.
-	MessageType pulumi.StringOutput `pulumi:"messageType"`
+	MessageType pulumi.StringPtrOutput `pulumi:"messageType"`
 	// The base64-encoded binary data object denoting the cryptographic signature generated for the message.
 	Signature pulumi.StringOutput `pulumi:"signature"`
 	// The algorithm to use to sign the message or message digest. For RSA keys, supported signature schemes include PKCS #1 and RSASSA-PSS, along with different hashing algorithms. For ECDSA keys, ECDSA is the supported signature scheme with different hashing algorithms. When you pass a message digest for signing, ensure that you specify the same hashing algorithm as used when creating the message digest.
@@ -244,12 +243,6 @@ func (i *Verify) ToVerifyOutputWithContext(ctx context.Context) VerifyOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(VerifyOutput)
 }
 
-func (i *Verify) ToOutput(ctx context.Context) pulumix.Output[*Verify] {
-	return pulumix.Output[*Verify]{
-		OutputState: i.ToVerifyOutputWithContext(ctx).OutputState,
-	}
-}
-
 // VerifyArrayInput is an input type that accepts VerifyArray and VerifyArrayOutput values.
 // You can construct a concrete instance of `VerifyArrayInput` via:
 //
@@ -273,12 +266,6 @@ func (i VerifyArray) ToVerifyArrayOutput() VerifyArrayOutput {
 
 func (i VerifyArray) ToVerifyArrayOutputWithContext(ctx context.Context) VerifyArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(VerifyArrayOutput)
-}
-
-func (i VerifyArray) ToOutput(ctx context.Context) pulumix.Output[[]*Verify] {
-	return pulumix.Output[[]*Verify]{
-		OutputState: i.ToVerifyArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // VerifyMapInput is an input type that accepts VerifyMap and VerifyMapOutput values.
@@ -306,12 +293,6 @@ func (i VerifyMap) ToVerifyMapOutputWithContext(ctx context.Context) VerifyMapOu
 	return pulumi.ToOutputWithContext(ctx, i).(VerifyMapOutput)
 }
 
-func (i VerifyMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*Verify] {
-	return pulumix.Output[map[string]*Verify]{
-		OutputState: i.ToVerifyMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type VerifyOutput struct{ *pulumi.OutputState }
 
 func (VerifyOutput) ElementType() reflect.Type {
@@ -326,20 +307,14 @@ func (o VerifyOutput) ToVerifyOutputWithContext(ctx context.Context) VerifyOutpu
 	return o
 }
 
-func (o VerifyOutput) ToOutput(ctx context.Context) pulumix.Output[*Verify] {
-	return pulumix.Output[*Verify]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The service endpoint to perform cryptographic operations against. Cryptographic operations include 'Encrypt,' 'Decrypt,', 'GenerateDataEncryptionKey', 'Sign' and 'Verify' operations. see Vault Crypto endpoint.
 func (o VerifyOutput) CryptoEndpoint() pulumi.StringOutput {
 	return o.ApplyT(func(v *Verify) pulumi.StringOutput { return v.CryptoEndpoint }).(pulumi.StringOutput)
 }
 
 // A Boolean value that indicates whether the signature was verified.
-func (o VerifyOutput) IsSignatureValid() pulumi.BoolOutput {
-	return o.ApplyT(func(v *Verify) pulumi.BoolOutput { return v.IsSignatureValid }).(pulumi.BoolOutput)
+func (o VerifyOutput) IsSignatureValid() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *Verify) pulumi.BoolPtrOutput { return v.IsSignatureValid }).(pulumi.BoolPtrOutput)
 }
 
 // The OCID of the key used to sign the message.
@@ -358,8 +333,8 @@ func (o VerifyOutput) Message() pulumi.StringOutput {
 }
 
 // Denotes whether the value of the message parameter is a raw message or a message digest. The default value, `RAW`, indicates a message. To indicate a message digest, use `DIGEST`.
-func (o VerifyOutput) MessageType() pulumi.StringOutput {
-	return o.ApplyT(func(v *Verify) pulumi.StringOutput { return v.MessageType }).(pulumi.StringOutput)
+func (o VerifyOutput) MessageType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Verify) pulumi.StringPtrOutput { return v.MessageType }).(pulumi.StringPtrOutput)
 }
 
 // The base64-encoded binary data object denoting the cryptographic signature generated for the message.
@@ -389,12 +364,6 @@ func (o VerifyArrayOutput) ToVerifyArrayOutputWithContext(ctx context.Context) V
 	return o
 }
 
-func (o VerifyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*Verify] {
-	return pulumix.Output[[]*Verify]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o VerifyArrayOutput) Index(i pulumi.IntInput) VerifyOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *Verify {
 		return vs[0].([]*Verify)[vs[1].(int)]
@@ -413,12 +382,6 @@ func (o VerifyMapOutput) ToVerifyMapOutput() VerifyMapOutput {
 
 func (o VerifyMapOutput) ToVerifyMapOutputWithContext(ctx context.Context) VerifyMapOutput {
 	return o
-}
-
-func (o VerifyMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*Verify] {
-	return pulumix.Output[map[string]*Verify]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o VerifyMapOutput) MapIndex(k pulumi.StringInput) VerifyOutput {

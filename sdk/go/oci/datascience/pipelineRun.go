@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Pipeline Run resource in Oracle Cloud Infrastructure Data Science service.
@@ -92,20 +91,20 @@ type PipelineRun struct {
 	// The configuration details of a pipeline.
 	ConfigurationDetails PipelineRunConfigurationDetailArrayOutput `pulumi:"configurationDetails"`
 	// The configuration details of a pipeline.
-	ConfigurationOverrideDetails PipelineRunConfigurationOverrideDetailsOutput `pulumi:"configurationOverrideDetails"`
+	ConfigurationOverrideDetails PipelineRunConfigurationOverrideDetailsPtrOutput `pulumi:"configurationOverrideDetails"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the pipeline run.
-	CreatedBy pulumi.StringOutput `pulumi:"createdBy"`
+	CreatedBy pulumi.StringPtrOutput `pulumi:"createdBy"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags          pulumi.MapOutput     `pulumi:"definedTags"`
 	DeleteRelatedJobRuns pulumi.BoolPtrOutput `pulumi:"deleteRelatedJobRuns"`
 	// (Updatable) A user-friendly display name for the resource.
-	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrOutput `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// Details of the state of the step run.
-	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrOutput `pulumi:"lifecycleDetails"`
 	// The pipeline log configuration details.
-	LogConfigurationOverrideDetails PipelineRunLogConfigurationOverrideDetailsOutput `pulumi:"logConfigurationOverrideDetails"`
+	LogConfigurationOverrideDetails PipelineRunLogConfigurationOverrideDetailsPtrOutput `pulumi:"logConfigurationOverrideDetails"`
 	// Customer logging details for pipeline run.
 	LogDetails PipelineRunLogDetailArrayOutput `pulumi:"logDetails"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pipeline for which pipeline run is created.
@@ -113,7 +112,7 @@ type PipelineRun struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the pipeline run with.
 	ProjectId pulumi.StringOutput `pulumi:"projectId"`
 	// The state of the step run.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// Array of step override details. Only Step Configuration is allowed to be overridden.
 	StepOverrideDetails PipelineRunStepOverrideDetailArrayOutput `pulumi:"stepOverrideDetails"`
 	// Array of StepRun object for each step.
@@ -124,13 +123,13 @@ type PipelineRun struct {
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
 	// The date and time the pipeline run was accepted in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-	TimeAccepted pulumi.StringOutput `pulumi:"timeAccepted"`
+	TimeAccepted pulumi.StringPtrOutput `pulumi:"timeAccepted"`
 	// The date and time the pipeline run request was finished in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-	TimeFinished pulumi.StringOutput `pulumi:"timeFinished"`
+	TimeFinished pulumi.StringPtrOutput `pulumi:"timeFinished"`
 	// The date and time the pipeline run request was started in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-	TimeStarted pulumi.StringOutput `pulumi:"timeStarted"`
+	TimeStarted pulumi.StringPtrOutput `pulumi:"timeStarted"`
 	// The date and time the pipeline run was updated in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 }
 
 // NewPipelineRun registers a new resource with the given unique name, arguments, and options.
@@ -347,12 +346,6 @@ func (i *PipelineRun) ToPipelineRunOutputWithContext(ctx context.Context) Pipeli
 	return pulumi.ToOutputWithContext(ctx, i).(PipelineRunOutput)
 }
 
-func (i *PipelineRun) ToOutput(ctx context.Context) pulumix.Output[*PipelineRun] {
-	return pulumix.Output[*PipelineRun]{
-		OutputState: i.ToPipelineRunOutputWithContext(ctx).OutputState,
-	}
-}
-
 // PipelineRunArrayInput is an input type that accepts PipelineRunArray and PipelineRunArrayOutput values.
 // You can construct a concrete instance of `PipelineRunArrayInput` via:
 //
@@ -376,12 +369,6 @@ func (i PipelineRunArray) ToPipelineRunArrayOutput() PipelineRunArrayOutput {
 
 func (i PipelineRunArray) ToPipelineRunArrayOutputWithContext(ctx context.Context) PipelineRunArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(PipelineRunArrayOutput)
-}
-
-func (i PipelineRunArray) ToOutput(ctx context.Context) pulumix.Output[[]*PipelineRun] {
-	return pulumix.Output[[]*PipelineRun]{
-		OutputState: i.ToPipelineRunArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // PipelineRunMapInput is an input type that accepts PipelineRunMap and PipelineRunMapOutput values.
@@ -409,12 +396,6 @@ func (i PipelineRunMap) ToPipelineRunMapOutputWithContext(ctx context.Context) P
 	return pulumi.ToOutputWithContext(ctx, i).(PipelineRunMapOutput)
 }
 
-func (i PipelineRunMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*PipelineRun] {
-	return pulumix.Output[map[string]*PipelineRun]{
-		OutputState: i.ToPipelineRunMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type PipelineRunOutput struct{ *pulumi.OutputState }
 
 func (PipelineRunOutput) ElementType() reflect.Type {
@@ -429,12 +410,6 @@ func (o PipelineRunOutput) ToPipelineRunOutputWithContext(ctx context.Context) P
 	return o
 }
 
-func (o PipelineRunOutput) ToOutput(ctx context.Context) pulumix.Output[*PipelineRun] {
-	return pulumix.Output[*PipelineRun]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the pipeline run.
 func (o PipelineRunOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *PipelineRun) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
@@ -446,15 +421,15 @@ func (o PipelineRunOutput) ConfigurationDetails() PipelineRunConfigurationDetail
 }
 
 // The configuration details of a pipeline.
-func (o PipelineRunOutput) ConfigurationOverrideDetails() PipelineRunConfigurationOverrideDetailsOutput {
-	return o.ApplyT(func(v *PipelineRun) PipelineRunConfigurationOverrideDetailsOutput {
+func (o PipelineRunOutput) ConfigurationOverrideDetails() PipelineRunConfigurationOverrideDetailsPtrOutput {
+	return o.ApplyT(func(v *PipelineRun) PipelineRunConfigurationOverrideDetailsPtrOutput {
 		return v.ConfigurationOverrideDetails
-	}).(PipelineRunConfigurationOverrideDetailsOutput)
+	}).(PipelineRunConfigurationOverrideDetailsPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the pipeline run.
-func (o PipelineRunOutput) CreatedBy() pulumi.StringOutput {
-	return o.ApplyT(func(v *PipelineRun) pulumi.StringOutput { return v.CreatedBy }).(pulumi.StringOutput)
+func (o PipelineRunOutput) CreatedBy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *PipelineRun) pulumi.StringPtrOutput { return v.CreatedBy }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -467,8 +442,8 @@ func (o PipelineRunOutput) DeleteRelatedJobRuns() pulumi.BoolPtrOutput {
 }
 
 // (Updatable) A user-friendly display name for the resource.
-func (o PipelineRunOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v *PipelineRun) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+func (o PipelineRunOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *PipelineRun) pulumi.StringPtrOutput { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -477,15 +452,15 @@ func (o PipelineRunOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // Details of the state of the step run.
-func (o PipelineRunOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v *PipelineRun) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o PipelineRunOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *PipelineRun) pulumi.StringPtrOutput { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // The pipeline log configuration details.
-func (o PipelineRunOutput) LogConfigurationOverrideDetails() PipelineRunLogConfigurationOverrideDetailsOutput {
-	return o.ApplyT(func(v *PipelineRun) PipelineRunLogConfigurationOverrideDetailsOutput {
+func (o PipelineRunOutput) LogConfigurationOverrideDetails() PipelineRunLogConfigurationOverrideDetailsPtrOutput {
+	return o.ApplyT(func(v *PipelineRun) PipelineRunLogConfigurationOverrideDetailsPtrOutput {
 		return v.LogConfigurationOverrideDetails
-	}).(PipelineRunLogConfigurationOverrideDetailsOutput)
+	}).(PipelineRunLogConfigurationOverrideDetailsPtrOutput)
 }
 
 // Customer logging details for pipeline run.
@@ -504,8 +479,8 @@ func (o PipelineRunOutput) ProjectId() pulumi.StringOutput {
 }
 
 // The state of the step run.
-func (o PipelineRunOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *PipelineRun) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o PipelineRunOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *PipelineRun) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Array of step override details. Only Step Configuration is allowed to be overridden.
@@ -527,23 +502,23 @@ func (o PipelineRunOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The date and time the pipeline run was accepted in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-func (o PipelineRunOutput) TimeAccepted() pulumi.StringOutput {
-	return o.ApplyT(func(v *PipelineRun) pulumi.StringOutput { return v.TimeAccepted }).(pulumi.StringOutput)
+func (o PipelineRunOutput) TimeAccepted() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *PipelineRun) pulumi.StringPtrOutput { return v.TimeAccepted }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the pipeline run request was finished in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-func (o PipelineRunOutput) TimeFinished() pulumi.StringOutput {
-	return o.ApplyT(func(v *PipelineRun) pulumi.StringOutput { return v.TimeFinished }).(pulumi.StringOutput)
+func (o PipelineRunOutput) TimeFinished() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *PipelineRun) pulumi.StringPtrOutput { return v.TimeFinished }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the pipeline run request was started in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-func (o PipelineRunOutput) TimeStarted() pulumi.StringOutput {
-	return o.ApplyT(func(v *PipelineRun) pulumi.StringOutput { return v.TimeStarted }).(pulumi.StringOutput)
+func (o PipelineRunOutput) TimeStarted() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *PipelineRun) pulumi.StringPtrOutput { return v.TimeStarted }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the pipeline run was updated in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-func (o PipelineRunOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *PipelineRun) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o PipelineRunOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *PipelineRun) pulumi.StringPtrOutput { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type PipelineRunArrayOutput struct{ *pulumi.OutputState }
@@ -558,12 +533,6 @@ func (o PipelineRunArrayOutput) ToPipelineRunArrayOutput() PipelineRunArrayOutpu
 
 func (o PipelineRunArrayOutput) ToPipelineRunArrayOutputWithContext(ctx context.Context) PipelineRunArrayOutput {
 	return o
-}
-
-func (o PipelineRunArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*PipelineRun] {
-	return pulumix.Output[[]*PipelineRun]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o PipelineRunArrayOutput) Index(i pulumi.IntInput) PipelineRunOutput {
@@ -584,12 +553,6 @@ func (o PipelineRunMapOutput) ToPipelineRunMapOutput() PipelineRunMapOutput {
 
 func (o PipelineRunMapOutput) ToPipelineRunMapOutputWithContext(ctx context.Context) PipelineRunMapOutput {
 	return o
-}
-
-func (o PipelineRunMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*PipelineRun] {
-	return pulumix.Output[map[string]*PipelineRun]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o PipelineRunMapOutput) MapIndex(k pulumi.StringInput) PipelineRunOutput {

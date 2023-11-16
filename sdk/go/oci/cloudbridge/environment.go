@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Environment resource in Oracle Cloud Infrastructure Cloud Bridge service.
@@ -67,22 +66,22 @@ type Environment struct {
 	// (Updatable) The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) Environment identifier.
-	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrOutput `pulumi:"displayName"`
 	// (Updatable) The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
-	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrOutput `pulumi:"lifecycleDetails"`
 	// The current state of the source environment.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
 	// The time when the source environment was created. An RFC3339 formatted datetime string.
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The time when the source environment was updated. An RFC3339 formatted datetime string.
-	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 }
 
 // NewEnvironment registers a new resource with the given unique name, arguments, and options.
@@ -221,12 +220,6 @@ func (i *Environment) ToEnvironmentOutputWithContext(ctx context.Context) Enviro
 	return pulumi.ToOutputWithContext(ctx, i).(EnvironmentOutput)
 }
 
-func (i *Environment) ToOutput(ctx context.Context) pulumix.Output[*Environment] {
-	return pulumix.Output[*Environment]{
-		OutputState: i.ToEnvironmentOutputWithContext(ctx).OutputState,
-	}
-}
-
 // EnvironmentArrayInput is an input type that accepts EnvironmentArray and EnvironmentArrayOutput values.
 // You can construct a concrete instance of `EnvironmentArrayInput` via:
 //
@@ -250,12 +243,6 @@ func (i EnvironmentArray) ToEnvironmentArrayOutput() EnvironmentArrayOutput {
 
 func (i EnvironmentArray) ToEnvironmentArrayOutputWithContext(ctx context.Context) EnvironmentArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(EnvironmentArrayOutput)
-}
-
-func (i EnvironmentArray) ToOutput(ctx context.Context) pulumix.Output[[]*Environment] {
-	return pulumix.Output[[]*Environment]{
-		OutputState: i.ToEnvironmentArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // EnvironmentMapInput is an input type that accepts EnvironmentMap and EnvironmentMapOutput values.
@@ -283,12 +270,6 @@ func (i EnvironmentMap) ToEnvironmentMapOutputWithContext(ctx context.Context) E
 	return pulumi.ToOutputWithContext(ctx, i).(EnvironmentMapOutput)
 }
 
-func (i EnvironmentMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*Environment] {
-	return pulumix.Output[map[string]*Environment]{
-		OutputState: i.ToEnvironmentMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type EnvironmentOutput struct{ *pulumi.OutputState }
 
 func (EnvironmentOutput) ElementType() reflect.Type {
@@ -303,12 +284,6 @@ func (o EnvironmentOutput) ToEnvironmentOutputWithContext(ctx context.Context) E
 	return o
 }
 
-func (o EnvironmentOutput) ToOutput(ctx context.Context) pulumix.Output[*Environment] {
-	return pulumix.Output[*Environment]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) Compartment identifier.
 func (o EnvironmentOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Environment) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
@@ -320,8 +295,8 @@ func (o EnvironmentOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // (Updatable) Environment identifier.
-func (o EnvironmentOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v *Environment) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+func (o EnvironmentOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Environment) pulumi.StringPtrOutput { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -333,13 +308,13 @@ func (o EnvironmentOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
-func (o EnvironmentOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v *Environment) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o EnvironmentOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Environment) pulumi.StringPtrOutput { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the source environment.
-func (o EnvironmentOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *Environment) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o EnvironmentOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Environment) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
@@ -348,13 +323,13 @@ func (o EnvironmentOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The time when the source environment was created. An RFC3339 formatted datetime string.
-func (o EnvironmentOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *Environment) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o EnvironmentOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Environment) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time when the source environment was updated. An RFC3339 formatted datetime string.
-func (o EnvironmentOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *Environment) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o EnvironmentOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Environment) pulumi.StringPtrOutput { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type EnvironmentArrayOutput struct{ *pulumi.OutputState }
@@ -369,12 +344,6 @@ func (o EnvironmentArrayOutput) ToEnvironmentArrayOutput() EnvironmentArrayOutpu
 
 func (o EnvironmentArrayOutput) ToEnvironmentArrayOutputWithContext(ctx context.Context) EnvironmentArrayOutput {
 	return o
-}
-
-func (o EnvironmentArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*Environment] {
-	return pulumix.Output[[]*Environment]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o EnvironmentArrayOutput) Index(i pulumi.IntInput) EnvironmentOutput {
@@ -395,12 +364,6 @@ func (o EnvironmentMapOutput) ToEnvironmentMapOutput() EnvironmentMapOutput {
 
 func (o EnvironmentMapOutput) ToEnvironmentMapOutputWithContext(ctx context.Context) EnvironmentMapOutput {
 	return o
-}
-
-func (o EnvironmentMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*Environment] {
-	return pulumix.Output[map[string]*Environment]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o EnvironmentMapOutput) MapIndex(k pulumi.StringInput) EnvironmentOutput {

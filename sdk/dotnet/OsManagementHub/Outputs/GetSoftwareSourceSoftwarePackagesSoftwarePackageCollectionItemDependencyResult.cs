@@ -16,23 +16,23 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
         /// <summary>
         /// The software package's dependency.
         /// </summary>
-        public readonly string Dependency;
+        public readonly string? Dependency;
         /// <summary>
         /// The modifier for the dependency.
         /// </summary>
-        public readonly string DependencyModifier;
+        public readonly string? DependencyModifier;
         /// <summary>
         /// The type of the dependency.
         /// </summary>
-        public readonly string DependencyType;
+        public readonly string? DependencyType;
 
         [OutputConstructor]
         private GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemDependencyResult(
-            string dependency,
+            string? dependency,
 
-            string dependencyModifier,
+            string? dependencyModifier,
 
-            string dependencyType)
+            string? dependencyType)
         {
             Dependency = dependency;
             DependencyModifier = dependencyModifier;

@@ -16,17 +16,17 @@ namespace Pulumi.Oci.DevOps.Outputs
         /// <summary>
         /// The time the build run finished. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
         /// </summary>
-        public readonly string TimeFinished;
+        public readonly string? TimeFinished;
         /// <summary>
         /// The time the build run started. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
         /// </summary>
-        public readonly string TimeStarted;
+        public readonly string? TimeStarted;
 
         [OutputConstructor]
         private GetBuildRunsBuildRunSummaryCollectionItemBuildRunProgressSummaryResult(
-            string timeFinished,
+            string? timeFinished,
 
-            string timeStarted)
+            string? timeStarted)
         {
             TimeFinished = timeFinished;
             TimeStarted = timeStarted;

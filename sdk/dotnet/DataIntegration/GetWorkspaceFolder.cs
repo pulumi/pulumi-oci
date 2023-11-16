@@ -122,25 +122,25 @@ namespace Pulumi.Oci.DataIntegration
         /// <summary>
         /// The category name.
         /// </summary>
-        public readonly string CategoryName;
+        public readonly string? CategoryName;
         /// <summary>
         /// The description of the aggregator.
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         public readonly string FolderKey;
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The identifier of the aggregator.
         /// </summary>
-        public readonly string Identifier;
+        public readonly string? Identifier;
         /// <summary>
         /// The key of the aggregator object.
         /// </summary>
-        public readonly string Key;
+        public readonly string? Key;
         /// <summary>
         /// A key map. If provided, the key is replaced with generated key. This structure provides mapping between user provided key and generated key.
         /// </summary>
-        public readonly ImmutableDictionary<string, object> KeyMap;
+        public readonly ImmutableDictionary<string, object>? KeyMap;
         /// <summary>
         /// A summary type containing information about the object including its key, name and when/who created/updated it.
         /// </summary>
@@ -148,23 +148,23 @@ namespace Pulumi.Oci.DataIntegration
         /// <summary>
         /// The type of the object.
         /// </summary>
-        public readonly string ModelType;
+        public readonly string? ModelType;
         /// <summary>
         /// The model version of an object.
         /// </summary>
-        public readonly string ModelVersion;
+        public readonly string? ModelVersion;
         /// <summary>
         /// Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
         /// </summary>
-        public readonly int ObjectStatus;
+        public readonly int? ObjectStatus;
         /// <summary>
         /// The version of the object that is used to track changes in the object instance.
         /// </summary>
-        public readonly int ObjectVersion;
+        public readonly int? ObjectVersion;
         /// <summary>
         /// A reference to the object's parent.
         /// </summary>
@@ -174,31 +174,31 @@ namespace Pulumi.Oci.DataIntegration
 
         [OutputConstructor]
         private GetWorkspaceFolderResult(
-            string categoryName,
+            string? categoryName,
 
-            string description,
+            string? description,
 
             string folderKey,
 
-            string id,
+            string? id,
 
-            string identifier,
+            string? identifier,
 
-            string key,
+            string? key,
 
-            ImmutableDictionary<string, object> keyMap,
+            ImmutableDictionary<string, object>? keyMap,
 
             ImmutableArray<Outputs.GetWorkspaceFolderMetadataResult> metadatas,
 
-            string modelType,
+            string? modelType,
 
-            string modelVersion,
+            string? modelVersion,
 
-            string name,
+            string? name,
 
-            int objectStatus,
+            int? objectStatus,
 
-            int objectVersion,
+            int? objectVersion,
 
             ImmutableArray<Outputs.GetWorkspaceFolderParentRefResult> parentReves,
 

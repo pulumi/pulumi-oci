@@ -16,12 +16,12 @@ namespace Pulumi.Oci.DataIntegration.Outputs
         /// <summary>
         /// The category name.
         /// </summary>
-        public readonly string CategoryName;
+        public readonly string? CategoryName;
         /// <summary>
         /// The description of the aggregator.
         /// </summary>
-        public readonly string Description;
-        public readonly string FolderKey;
+        public readonly string? Description;
+        public readonly string? FolderKey;
         /// <summary>
         /// Used to filter by the identifier of the object.
         /// </summary>
@@ -29,11 +29,11 @@ namespace Pulumi.Oci.DataIntegration.Outputs
         /// <summary>
         /// The key of the aggregator object.
         /// </summary>
-        public readonly string Key;
+        public readonly string? Key;
         /// <summary>
         /// A key map. If provided, the key is replaced with generated key. This structure provides mapping between user provided key and generated key.
         /// </summary>
-        public readonly ImmutableDictionary<string, object> KeyMap;
+        public readonly ImmutableDictionary<string, object>? KeyMap;
         /// <summary>
         /// A summary type containing information about the object including its key, name and when/who created/updated it.
         /// </summary>
@@ -41,11 +41,11 @@ namespace Pulumi.Oci.DataIntegration.Outputs
         /// <summary>
         /// The type of the object.
         /// </summary>
-        public readonly string ModelType;
+        public readonly string? ModelType;
         /// <summary>
         /// The model version of an object.
         /// </summary>
-        public readonly string ModelVersion;
+        public readonly string? ModelVersion;
         /// <summary>
         /// Used to filter by the name of the object.
         /// </summary>
@@ -53,11 +53,11 @@ namespace Pulumi.Oci.DataIntegration.Outputs
         /// <summary>
         /// The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
         /// </summary>
-        public readonly int ObjectStatus;
+        public readonly int? ObjectStatus;
         /// <summary>
         /// The version of the object that is used to track changes in the object instance.
         /// </summary>
-        public readonly int ObjectVersion;
+        public readonly int? ObjectVersion;
         /// <summary>
         /// A reference to the object's parent.
         /// </summary>
@@ -70,29 +70,29 @@ namespace Pulumi.Oci.DataIntegration.Outputs
 
         [OutputConstructor]
         private GetWorkspaceFoldersFolderSummaryCollectionItemResult(
-            string categoryName,
+            string? categoryName,
 
-            string description,
+            string? description,
 
-            string folderKey,
+            string? folderKey,
 
             string identifier,
 
-            string key,
+            string? key,
 
-            ImmutableDictionary<string, object> keyMap,
+            ImmutableDictionary<string, object>? keyMap,
 
             ImmutableArray<Outputs.GetWorkspaceFoldersFolderSummaryCollectionItemMetadataResult> metadatas,
 
-            string modelType,
+            string? modelType,
 
-            string modelVersion,
+            string? modelVersion,
 
             string name,
 
-            int objectStatus,
+            int? objectStatus,
 
-            int objectVersion,
+            int? objectVersion,
 
             ImmutableArray<Outputs.GetWorkspaceFoldersFolderSummaryCollectionItemParentRefResult> parentReves,
 

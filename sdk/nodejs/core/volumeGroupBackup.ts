@@ -71,31 +71,31 @@ export class VolumeGroupBackup extends pulumi.CustomResource {
     /**
      * (Updatable) The OCID of the compartment that will contain the volume group backup. This parameter is optional, by default backup will be created in the same compartment and source volume group.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    public readonly compartmentId!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    public readonly displayName!: pulumi.Output<string | undefined>;
     /**
      * The date and time the volume group backup will expire and be automatically deleted. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). This parameter will always be present for volume group backups that were created automatically by a scheduled-backup policy. For manually created volume group backups, it will be absent, signifying that there is no expiration time and the backup will last forever until manually deleted.
      */
-    public /*out*/ readonly expirationTime!: pulumi.Output<string>;
+    public /*out*/ readonly expirationTime!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * The aggregate size of the volume group backup, in GBs.
      */
-    public /*out*/ readonly sizeInGbs!: pulumi.Output<string>;
+    public /*out*/ readonly sizeInGbs!: pulumi.Output<string | undefined>;
     /**
      * The aggregate size of the volume group backup, in MBs.
      */
-    public /*out*/ readonly sizeInMbs!: pulumi.Output<string>;
+    public /*out*/ readonly sizeInMbs!: pulumi.Output<string | undefined>;
     /**
      * Details of the volume group backup source in the cloud.
      */
@@ -103,46 +103,46 @@ export class VolumeGroupBackup extends pulumi.CustomResource {
     /**
      * Specifies whether the volume group backup was created manually, or via scheduled backup policy.
      */
-    public /*out*/ readonly sourceType!: pulumi.Output<string>;
+    public /*out*/ readonly sourceType!: pulumi.Output<string | undefined>;
     /**
      * The OCID of the source volume group backup.
      */
-    public /*out*/ readonly sourceVolumeGroupBackupId!: pulumi.Output<string>;
+    public /*out*/ readonly sourceVolumeGroupBackupId!: pulumi.Output<string | undefined>;
     /**
      * The current state of a volume group backup.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * The date and time the volume group backup was created. This is the time the actual point-in-time image of the volume group data was taken. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * The date and time the request to create the volume group backup was received. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
-    public /*out*/ readonly timeRequestReceived!: pulumi.Output<string>;
+    public /*out*/ readonly timeRequestReceived!: pulumi.Output<string | undefined>;
     /**
      * The type of backup to create. If omitted, defaults to incremental.
      * * Allowed values are :
      * * FULL
      * * INCREMENTAL
      */
-    public readonly type!: pulumi.Output<string>;
+    public readonly type!: pulumi.Output<string | undefined>;
     /**
      * The aggregate size used by the volume group backup, in GBs.  It is typically smaller than `sizeInGbs`, depending on the space consumed on the volume group and whether the volume backup is full or incremental.
      */
-    public /*out*/ readonly uniqueSizeInGbs!: pulumi.Output<string>;
+    public /*out*/ readonly uniqueSizeInGbs!: pulumi.Output<string | undefined>;
     /**
      * The aggregate size used by the volume group backup, in MBs.  It is typically smaller than `sizeInMbs`, depending on the space consumed on the volume group and whether the volume backup is full or incremental.
      */
-    public /*out*/ readonly uniqueSizeInMbs!: pulumi.Output<string>;
+    public /*out*/ readonly uniqueSizeInMbs!: pulumi.Output<string | undefined>;
     /**
      * OCIDs for the volume backups in this volume group backup.
      */
-    public /*out*/ readonly volumeBackupIds!: pulumi.Output<string[]>;
+    public /*out*/ readonly volumeBackupIds!: pulumi.Output<string[] | undefined>;
     /**
      * The OCID of the volume group that needs to be backed up.
      */
-    public readonly volumeGroupId!: pulumi.Output<string>;
+    public readonly volumeGroupId!: pulumi.Output<string | undefined>;
 
     /**
      * Create a VolumeGroupBackup resource with the given unique name, arguments, and options.

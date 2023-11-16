@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Notebook Session resource in Oracle Cloud Infrastructure Data Science service.
@@ -60,19 +59,19 @@ type LookupNotebookSessionArgs struct {
 // A collection of values returned by getNotebookSession.
 type LookupNotebookSessionResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the notebook session's compartment.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the notebook session.
-	CreatedBy string `pulumi:"createdBy"`
+	CreatedBy *string `pulumi:"createdBy"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A user-friendly display name for the resource. It does not have to be unique and can be modified. Avoid entering confidential information. Example: `My NotebookSession`
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the notebook session.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Details about the state of the notebook session.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// Details for the notebook session configuration.
 	NotebookSessionConfigDetails []GetNotebookSessionNotebookSessionConfigDetail `pulumi:"notebookSessionConfigDetails"`
 	// Details for the notebook session configuration.
@@ -83,13 +82,13 @@ type LookupNotebookSessionResult struct {
 	// Collection of NotebookSessionStorageMountConfigurationDetails.
 	NotebookSessionStorageMountConfigurationDetailsLists []GetNotebookSessionNotebookSessionStorageMountConfigurationDetailsList `pulumi:"notebookSessionStorageMountConfigurationDetailsLists"`
 	// The URL to interact with the notebook session.
-	NotebookSessionUrl string `pulumi:"notebookSessionUrl"`
+	NotebookSessionUrl *string `pulumi:"notebookSessionUrl"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project associated with the notebook session.
-	ProjectId string `pulumi:"projectId"`
+	ProjectId *string `pulumi:"projectId"`
 	// The state of the notebook session.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 }
 
 func LookupNotebookSessionOutput(ctx *pulumi.Context, args LookupNotebookSessionOutputArgs, opts ...pulumi.InvokeOption) LookupNotebookSessionResultOutput {
@@ -130,20 +129,14 @@ func (o LookupNotebookSessionResultOutput) ToLookupNotebookSessionResultOutputWi
 	return o
 }
 
-func (o LookupNotebookSessionResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupNotebookSessionResult] {
-	return pulumix.Output[LookupNotebookSessionResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the notebook session's compartment.
-func (o LookupNotebookSessionResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupNotebookSessionResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupNotebookSessionResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupNotebookSessionResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the notebook session.
-func (o LookupNotebookSessionResultOutput) CreatedBy() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupNotebookSessionResult) string { return v.CreatedBy }).(pulumi.StringOutput)
+func (o LookupNotebookSessionResultOutput) CreatedBy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupNotebookSessionResult) *string { return v.CreatedBy }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -152,8 +145,8 @@ func (o LookupNotebookSessionResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // A user-friendly display name for the resource. It does not have to be unique and can be modified. Avoid entering confidential information. Example: `My NotebookSession`
-func (o LookupNotebookSessionResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupNotebookSessionResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupNotebookSessionResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupNotebookSessionResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -162,13 +155,13 @@ func (o LookupNotebookSessionResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the notebook session.
-func (o LookupNotebookSessionResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupNotebookSessionResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupNotebookSessionResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupNotebookSessionResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Details about the state of the notebook session.
-func (o LookupNotebookSessionResultOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupNotebookSessionResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o LookupNotebookSessionResultOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupNotebookSessionResult) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // Details for the notebook session configuration.
@@ -204,23 +197,23 @@ func (o LookupNotebookSessionResultOutput) NotebookSessionStorageMountConfigurat
 }
 
 // The URL to interact with the notebook session.
-func (o LookupNotebookSessionResultOutput) NotebookSessionUrl() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupNotebookSessionResult) string { return v.NotebookSessionUrl }).(pulumi.StringOutput)
+func (o LookupNotebookSessionResultOutput) NotebookSessionUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupNotebookSessionResult) *string { return v.NotebookSessionUrl }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project associated with the notebook session.
-func (o LookupNotebookSessionResultOutput) ProjectId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupNotebookSessionResult) string { return v.ProjectId }).(pulumi.StringOutput)
+func (o LookupNotebookSessionResultOutput) ProjectId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupNotebookSessionResult) *string { return v.ProjectId }).(pulumi.StringPtrOutput)
 }
 
 // The state of the notebook session.
-func (o LookupNotebookSessionResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupNotebookSessionResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupNotebookSessionResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupNotebookSessionResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
-func (o LookupNotebookSessionResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupNotebookSessionResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupNotebookSessionResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupNotebookSessionResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 func init() {

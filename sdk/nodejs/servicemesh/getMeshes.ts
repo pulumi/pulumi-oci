@@ -80,7 +80,7 @@ export interface GetMeshesResult {
     /**
      * The list of mesh_collection.
      */
-    readonly meshCollections: outputs.ServiceMesh.GetMeshesMeshCollection[];
+    readonly meshCollections?: outputs.ServiceMesh.GetMeshesMeshCollection[];
     /**
      * The current state of the Resource.
      */

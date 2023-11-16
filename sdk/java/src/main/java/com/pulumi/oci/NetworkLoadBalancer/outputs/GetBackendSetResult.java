@@ -10,6 +10,8 @@ import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetBackendSetResult {
@@ -18,34 +20,34 @@ public final class GetBackendSetResult {
      * @return Array of backends.
      * 
      */
-    private List<GetBackendSetBackend> backends;
+    private @Nullable List<GetBackendSetBackend> backends;
     /**
      * @return The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/editinghealthcheck.htm).
      * 
      */
-    private List<GetBackendSetHealthChecker> healthCheckers;
-    private String id;
+    private @Nullable List<GetBackendSetHealthChecker> healthCheckers;
+    private @Nullable String id;
     /**
      * @return IP version associated with the backend set.
      * 
      */
-    private String ipVersion;
+    private @Nullable String ipVersion;
     /**
      * @return If this parameter is enabled, then the network load balancer preserves the source IP of the packet when it is forwarded to backends. Backends see the original source IP. If the isPreserveSourceDestination parameter is enabled for the network load balancer resource, then this parameter cannot be disabled. The value is true by default.
      * 
      */
-    private Boolean isPreserveSource;
+    private @Nullable Boolean isPreserveSource;
     /**
      * @return A user-friendly name for the backend set that must be unique and cannot be changed.
      * 
      */
-    private String name;
+    private @Nullable String name;
     private String networkLoadBalancerId;
     /**
      * @return The network load balancer policy for the backend set.  Example: `FIVE_TUPLE`
      * 
      */
-    private String policy;
+    private @Nullable String policy;
 
     private GetBackendSetResult() {}
     public String backendSetName() {
@@ -56,38 +58,38 @@ public final class GetBackendSetResult {
      * 
      */
     public List<GetBackendSetBackend> backends() {
-        return this.backends;
+        return this.backends == null ? List.of() : this.backends;
     }
     /**
      * @return The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/editinghealthcheck.htm).
      * 
      */
     public List<GetBackendSetHealthChecker> healthCheckers() {
-        return this.healthCheckers;
+        return this.healthCheckers == null ? List.of() : this.healthCheckers;
     }
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return IP version associated with the backend set.
      * 
      */
-    public String ipVersion() {
-        return this.ipVersion;
+    public Optional<String> ipVersion() {
+        return Optional.ofNullable(this.ipVersion);
     }
     /**
      * @return If this parameter is enabled, then the network load balancer preserves the source IP of the packet when it is forwarded to backends. Backends see the original source IP. If the isPreserveSourceDestination parameter is enabled for the network load balancer resource, then this parameter cannot be disabled. The value is true by default.
      * 
      */
-    public Boolean isPreserveSource() {
-        return this.isPreserveSource;
+    public Optional<Boolean> isPreserveSource() {
+        return Optional.ofNullable(this.isPreserveSource);
     }
     /**
      * @return A user-friendly name for the backend set that must be unique and cannot be changed.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     public String networkLoadBalancerId() {
         return this.networkLoadBalancerId;
@@ -96,8 +98,8 @@ public final class GetBackendSetResult {
      * @return The network load balancer policy for the backend set.  Example: `FIVE_TUPLE`
      * 
      */
-    public String policy() {
-        return this.policy;
+    public Optional<String> policy() {
+        return Optional.ofNullable(this.policy);
     }
 
     public static Builder builder() {
@@ -110,14 +112,14 @@ public final class GetBackendSetResult {
     @CustomType.Builder
     public static final class Builder {
         private String backendSetName;
-        private List<GetBackendSetBackend> backends;
-        private List<GetBackendSetHealthChecker> healthCheckers;
-        private String id;
-        private String ipVersion;
-        private Boolean isPreserveSource;
-        private String name;
+        private @Nullable List<GetBackendSetBackend> backends;
+        private @Nullable List<GetBackendSetHealthChecker> healthCheckers;
+        private @Nullable String id;
+        private @Nullable String ipVersion;
+        private @Nullable Boolean isPreserveSource;
+        private @Nullable String name;
         private String networkLoadBalancerId;
-        private String policy;
+        private @Nullable String policy;
         public Builder() {}
         public Builder(GetBackendSetResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -138,39 +140,39 @@ public final class GetBackendSetResult {
             return this;
         }
         @CustomType.Setter
-        public Builder backends(List<GetBackendSetBackend> backends) {
-            this.backends = Objects.requireNonNull(backends);
+        public Builder backends(@Nullable List<GetBackendSetBackend> backends) {
+            this.backends = backends;
             return this;
         }
         public Builder backends(GetBackendSetBackend... backends) {
             return backends(List.of(backends));
         }
         @CustomType.Setter
-        public Builder healthCheckers(List<GetBackendSetHealthChecker> healthCheckers) {
-            this.healthCheckers = Objects.requireNonNull(healthCheckers);
+        public Builder healthCheckers(@Nullable List<GetBackendSetHealthChecker> healthCheckers) {
+            this.healthCheckers = healthCheckers;
             return this;
         }
         public Builder healthCheckers(GetBackendSetHealthChecker... healthCheckers) {
             return healthCheckers(List.of(healthCheckers));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder ipVersion(String ipVersion) {
-            this.ipVersion = Objects.requireNonNull(ipVersion);
+        public Builder ipVersion(@Nullable String ipVersion) {
+            this.ipVersion = ipVersion;
             return this;
         }
         @CustomType.Setter
-        public Builder isPreserveSource(Boolean isPreserveSource) {
-            this.isPreserveSource = Objects.requireNonNull(isPreserveSource);
+        public Builder isPreserveSource(@Nullable Boolean isPreserveSource) {
+            this.isPreserveSource = isPreserveSource;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
@@ -179,8 +181,8 @@ public final class GetBackendSetResult {
             return this;
         }
         @CustomType.Setter
-        public Builder policy(String policy) {
-            this.policy = Objects.requireNonNull(policy);
+        public Builder policy(@Nullable String policy) {
+            this.policy = policy;
             return this;
         }
         public GetBackendSetResult build() {

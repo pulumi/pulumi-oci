@@ -16,107 +16,107 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// <summary>
         /// default value of variable
         /// </summary>
-        public readonly string DefaultValue;
+        public readonly string? DefaultValue;
         /// <summary>
         /// Description of the variable
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// Host from where this value was set. Empty for MySql Database System
         /// </summary>
-        public readonly string HostSet;
+        public readonly string? HostSet;
         /// <summary>
         /// Whether this variable is configurable
         /// </summary>
-        public readonly bool IsConfigurable;
+        public readonly bool? IsConfigurable;
         /// <summary>
         /// Whether variable can be set dynamically or not
         /// </summary>
-        public readonly bool IsDynamic;
+        public readonly bool? IsDynamic;
         /// <summary>
         /// whether variable is set at server startup
         /// </summary>
-        public readonly bool IsInit;
+        public readonly bool? IsInit;
         /// <summary>
         /// Maximum value of variable
         /// </summary>
-        public readonly double MaxValue;
+        public readonly double? MaxValue;
         /// <summary>
         /// Minimum value of variable
         /// </summary>
-        public readonly double MinValue;
+        public readonly double? MinValue;
         /// <summary>
         /// The name of variable
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// If the variable was set from an option file, VARIABLE_PATH is the path name of that file. Otherwise, the value is the empty string.
         /// </summary>
-        public readonly string Path;
+        public readonly string? Path;
         /// <summary>
         /// Comma separated list of possible values for the variable in value:valueDescription format
         /// </summary>
-        public readonly string PossibleValues;
+        public readonly string? PossibleValues;
         /// <summary>
         /// The source from which the variable was most recently set
         /// </summary>
-        public readonly string Source;
+        public readonly string? Source;
         /// <summary>
         /// Comma separated list of MySql versions where this variable is supported
         /// </summary>
-        public readonly string SupportedVersions;
+        public readonly string? SupportedVersions;
         /// <summary>
         /// Time when value was set
         /// </summary>
-        public readonly string TimeSet;
+        public readonly string? TimeSet;
         /// <summary>
         /// type of variable
         /// </summary>
-        public readonly string Type;
+        public readonly string? Type;
         /// <summary>
         /// User who set this value. Empty for MySql Database System
         /// </summary>
-        public readonly string UserSet;
+        public readonly string? UserSet;
         /// <summary>
         /// The value of variable
         /// </summary>
-        public readonly string Value;
+        public readonly string? Value;
 
         [OutputConstructor]
         private GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItemResult(
-            string defaultValue,
+            string? defaultValue,
 
-            string description,
+            string? description,
 
-            string hostSet,
+            string? hostSet,
 
-            bool isConfigurable,
+            bool? isConfigurable,
 
-            bool isDynamic,
+            bool? isDynamic,
 
-            bool isInit,
+            bool? isInit,
 
-            double maxValue,
+            double? maxValue,
 
-            double minValue,
+            double? minValue,
 
-            string name,
+            string? name,
 
-            string path,
+            string? path,
 
-            string possibleValues,
+            string? possibleValues,
 
-            string source,
+            string? source,
 
-            string supportedVersions,
+            string? supportedVersions,
 
-            string timeSet,
+            string? timeSet,
 
-            string type,
+            string? type,
 
-            string userSet,
+            string? userSet,
 
-            string value)
+            string? value)
         {
             DefaultValue = defaultValue;
             Description = description;

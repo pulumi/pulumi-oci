@@ -16,17 +16,17 @@ namespace Pulumi.Oci.CloudMigrations.Outputs
         /// <summary>
         /// Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. By default, it is false if not specified.
         /// </summary>
-        public readonly bool PreserveBootVolume;
+        public readonly bool? PreserveBootVolume;
         /// <summary>
         /// The type of action to run when the instance is interrupted for eviction.
         /// </summary>
-        public readonly string Type;
+        public readonly string? Type;
 
         [OutputConstructor]
         private GetTargetAssetsTargetAssetCollectionItemTestSpecPreemptibleInstanceConfigPreemptionActionResult(
-            bool preserveBootVolume,
+            bool? preserveBootVolume,
 
-            string type)
+            string? type)
         {
             PreserveBootVolume = preserveBootVolume;
             Type = type;

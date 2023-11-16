@@ -22,16 +22,6 @@ class ManagedDatabasesChangeDatabaseParameterArgs:
                  scope: pulumi.Input[str]):
         """
         The set of arguments for constructing a ManagedDatabasesChangeDatabaseParameter resource.
-        :param pulumi.Input['ManagedDatabasesChangeDatabaseParameterCredentialsArgs'] credentials: The database credentials used to perform management activity.
-        :param pulumi.Input[str] managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
-        :param pulumi.Input[Sequence[pulumi.Input['ManagedDatabasesChangeDatabaseParameterParameterArgs']]] parameters: A list of database parameters and their values.
-        :param pulumi.Input[str] scope: The clause used to specify when the parameter change takes effect.
-               
-               Use `MEMORY` to make the change in memory and affect it immediately. Use `SPFILE` to make the change in the server parameter file. The change takes effect when the database is next shut down and started up again. Use `BOTH` to make the change in memory and in the server parameter file. The change takes effect immediately and persists after the database is shut down and started up again.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "credentials", credentials)
         pulumi.set(__self__, "managed_database_id", managed_database_id)
@@ -41,9 +31,6 @@ class ManagedDatabasesChangeDatabaseParameterArgs:
     @property
     @pulumi.getter
     def credentials(self) -> pulumi.Input['ManagedDatabasesChangeDatabaseParameterCredentialsArgs']:
-        """
-        The database credentials used to perform management activity.
-        """
         return pulumi.get(self, "credentials")
 
     @credentials.setter
@@ -53,9 +40,6 @@ class ManagedDatabasesChangeDatabaseParameterArgs:
     @property
     @pulumi.getter(name="managedDatabaseId")
     def managed_database_id(self) -> pulumi.Input[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
-        """
         return pulumi.get(self, "managed_database_id")
 
     @managed_database_id.setter
@@ -65,9 +49,6 @@ class ManagedDatabasesChangeDatabaseParameterArgs:
     @property
     @pulumi.getter
     def parameters(self) -> pulumi.Input[Sequence[pulumi.Input['ManagedDatabasesChangeDatabaseParameterParameterArgs']]]:
-        """
-        A list of database parameters and their values.
-        """
         return pulumi.get(self, "parameters")
 
     @parameters.setter
@@ -77,15 +58,6 @@ class ManagedDatabasesChangeDatabaseParameterArgs:
     @property
     @pulumi.getter
     def scope(self) -> pulumi.Input[str]:
-        """
-        The clause used to specify when the parameter change takes effect.
-
-        Use `MEMORY` to make the change in memory and affect it immediately. Use `SPFILE` to make the change in the server parameter file. The change takes effect when the database is next shut down and started up again. Use `BOTH` to make the change in memory and in the server parameter file. The change takes effect immediately and persists after the database is shut down and started up again.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "scope")
 
     @scope.setter
@@ -102,16 +74,6 @@ class _ManagedDatabasesChangeDatabaseParameterState:
                  scope: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering ManagedDatabasesChangeDatabaseParameter resources.
-        :param pulumi.Input['ManagedDatabasesChangeDatabaseParameterCredentialsArgs'] credentials: The database credentials used to perform management activity.
-        :param pulumi.Input[str] managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
-        :param pulumi.Input[Sequence[pulumi.Input['ManagedDatabasesChangeDatabaseParameterParameterArgs']]] parameters: A list of database parameters and their values.
-        :param pulumi.Input[str] scope: The clause used to specify when the parameter change takes effect.
-               
-               Use `MEMORY` to make the change in memory and affect it immediately. Use `SPFILE` to make the change in the server parameter file. The change takes effect when the database is next shut down and started up again. Use `BOTH` to make the change in memory and in the server parameter file. The change takes effect immediately and persists after the database is shut down and started up again.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if credentials is not None:
             pulumi.set(__self__, "credentials", credentials)
@@ -125,9 +87,6 @@ class _ManagedDatabasesChangeDatabaseParameterState:
     @property
     @pulumi.getter
     def credentials(self) -> Optional[pulumi.Input['ManagedDatabasesChangeDatabaseParameterCredentialsArgs']]:
-        """
-        The database credentials used to perform management activity.
-        """
         return pulumi.get(self, "credentials")
 
     @credentials.setter
@@ -137,9 +96,6 @@ class _ManagedDatabasesChangeDatabaseParameterState:
     @property
     @pulumi.getter(name="managedDatabaseId")
     def managed_database_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
-        """
         return pulumi.get(self, "managed_database_id")
 
     @managed_database_id.setter
@@ -149,9 +105,6 @@ class _ManagedDatabasesChangeDatabaseParameterState:
     @property
     @pulumi.getter
     def parameters(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ManagedDatabasesChangeDatabaseParameterParameterArgs']]]]:
-        """
-        A list of database parameters and their values.
-        """
         return pulumi.get(self, "parameters")
 
     @parameters.setter
@@ -161,15 +114,6 @@ class _ManagedDatabasesChangeDatabaseParameterState:
     @property
     @pulumi.getter
     def scope(self) -> Optional[pulumi.Input[str]]:
-        """
-        The clause used to specify when the parameter change takes effect.
-
-        Use `MEMORY` to make the change in memory and affect it immediately. Use `SPFILE` to make the change in the server parameter file. The change takes effect when the database is next shut down and started up again. Use `BOTH` to make the change in memory and in the server parameter file. The change takes effect immediately and persists after the database is shut down and started up again.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "scope")
 
     @scope.setter
@@ -188,60 +132,9 @@ class ManagedDatabasesChangeDatabaseParameter(pulumi.CustomResource):
                  scope: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Managed Databases Change Database Parameter resource in Oracle Cloud Infrastructure Database Management service.
-
-        Changes database parameter values. There are two kinds of database
-        parameters:
-
-        - Dynamic parameters: They can be changed for the current Oracle
-          Database instance. The changes take effect immediately.
-        - Static parameters: They cannot be changed for the current instance.
-          You must change these parameters and then restart the database before
-          changes take effect.
-
-        **Note:** If the instance is started using a text initialization
-        parameter file, the parameter changes are applicable only for the
-        current instance. You must update them manually to be passed to
-        a future instance.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_managed_databases_change_database_parameter = oci.database_management.ManagedDatabasesChangeDatabaseParameter("testManagedDatabasesChangeDatabaseParameter",
-            credentials=oci.database_management.ManagedDatabasesChangeDatabaseParameterCredentialsArgs(
-                password=var["managed_databases_change_database_parameter_credentials_password"],
-                role=var["managed_databases_change_database_parameter_credentials_role"],
-                secret_id=oci_vault_secret["test_secret"]["id"],
-                user_name=oci_identity_user["test_user"]["name"],
-            ),
-            managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"],
-            parameters=[oci.database_management.ManagedDatabasesChangeDatabaseParameterParameterArgs(
-                name=var["managed_databases_change_database_parameter_parameters_name"],
-                value=var["managed_databases_change_database_parameter_parameters_value"],
-                update_comment=var["managed_databases_change_database_parameter_parameters_update_comment"],
-            )],
-            scope=var["managed_databases_change_database_parameter_scope"])
-        ```
-
-        ## Import
-
-        Import is not supported for this resource.
-
+        Create a ManagedDatabasesChangeDatabaseParameter resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[pulumi.InputType['ManagedDatabasesChangeDatabaseParameterCredentialsArgs']] credentials: The database credentials used to perform management activity.
-        :param pulumi.Input[str] managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ManagedDatabasesChangeDatabaseParameterParameterArgs']]]] parameters: A list of database parameters and their values.
-        :param pulumi.Input[str] scope: The clause used to specify when the parameter change takes effect.
-               
-               Use `MEMORY` to make the change in memory and affect it immediately. Use `SPFILE` to make the change in the server parameter file. The change takes effect when the database is next shut down and started up again. Use `BOTH` to make the change in memory and in the server parameter file. The change takes effect immediately and persists after the database is shut down and started up again.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -250,48 +143,7 @@ class ManagedDatabasesChangeDatabaseParameter(pulumi.CustomResource):
                  args: ManagedDatabasesChangeDatabaseParameterArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Managed Databases Change Database Parameter resource in Oracle Cloud Infrastructure Database Management service.
-
-        Changes database parameter values. There are two kinds of database
-        parameters:
-
-        - Dynamic parameters: They can be changed for the current Oracle
-          Database instance. The changes take effect immediately.
-        - Static parameters: They cannot be changed for the current instance.
-          You must change these parameters and then restart the database before
-          changes take effect.
-
-        **Note:** If the instance is started using a text initialization
-        parameter file, the parameter changes are applicable only for the
-        current instance. You must update them manually to be passed to
-        a future instance.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_managed_databases_change_database_parameter = oci.database_management.ManagedDatabasesChangeDatabaseParameter("testManagedDatabasesChangeDatabaseParameter",
-            credentials=oci.database_management.ManagedDatabasesChangeDatabaseParameterCredentialsArgs(
-                password=var["managed_databases_change_database_parameter_credentials_password"],
-                role=var["managed_databases_change_database_parameter_credentials_role"],
-                secret_id=oci_vault_secret["test_secret"]["id"],
-                user_name=oci_identity_user["test_user"]["name"],
-            ),
-            managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"],
-            parameters=[oci.database_management.ManagedDatabasesChangeDatabaseParameterParameterArgs(
-                name=var["managed_databases_change_database_parameter_parameters_name"],
-                value=var["managed_databases_change_database_parameter_parameters_value"],
-                update_comment=var["managed_databases_change_database_parameter_parameters_update_comment"],
-            )],
-            scope=var["managed_databases_change_database_parameter_scope"])
-        ```
-
-        ## Import
-
-        Import is not supported for this resource.
-
+        Create a ManagedDatabasesChangeDatabaseParameter resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param ManagedDatabasesChangeDatabaseParameterArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -353,16 +205,6 @@ class ManagedDatabasesChangeDatabaseParameter(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[pulumi.InputType['ManagedDatabasesChangeDatabaseParameterCredentialsArgs']] credentials: The database credentials used to perform management activity.
-        :param pulumi.Input[str] managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ManagedDatabasesChangeDatabaseParameterParameterArgs']]]] parameters: A list of database parameters and their values.
-        :param pulumi.Input[str] scope: The clause used to specify when the parameter change takes effect.
-               
-               Use `MEMORY` to make the change in memory and affect it immediately. Use `SPFILE` to make the change in the server parameter file. The change takes effect when the database is next shut down and started up again. Use `BOTH` to make the change in memory and in the server parameter file. The change takes effect immediately and persists after the database is shut down and started up again.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -377,38 +219,20 @@ class ManagedDatabasesChangeDatabaseParameter(pulumi.CustomResource):
     @property
     @pulumi.getter
     def credentials(self) -> pulumi.Output['outputs.ManagedDatabasesChangeDatabaseParameterCredentials']:
-        """
-        The database credentials used to perform management activity.
-        """
         return pulumi.get(self, "credentials")
 
     @property
     @pulumi.getter(name="managedDatabaseId")
     def managed_database_id(self) -> pulumi.Output[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
-        """
         return pulumi.get(self, "managed_database_id")
 
     @property
     @pulumi.getter
     def parameters(self) -> pulumi.Output[Sequence['outputs.ManagedDatabasesChangeDatabaseParameterParameter']]:
-        """
-        A list of database parameters and their values.
-        """
         return pulumi.get(self, "parameters")
 
     @property
     @pulumi.getter
     def scope(self) -> pulumi.Output[str]:
-        """
-        The clause used to specify when the parameter change takes effect.
-
-        Use `MEMORY` to make the change in memory and affect it immediately. Use `SPFILE` to make the change in the server parameter file. The change takes effect when the database is next shut down and started up again. Use `BOTH` to make the change in memory and in the server parameter file. The change takes effect immediately and persists after the database is shut down and started up again.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "scope")
 

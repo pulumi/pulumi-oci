@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Data Guard Association resource in Oracle Cloud Infrastructure Database service.
@@ -63,65 +62,65 @@ type LookupDataGuardAssociationArgs struct {
 // A collection of values returned by getDataGuardAssociation.
 type LookupDataGuardAssociationResult struct {
 	// The lag time between updates to the primary database and application of the redo data on the standby database, as computed by the reporting database.  Example: `9 seconds`
-	ApplyLag string `pulumi:"applyLag"`
+	ApplyLag *string `pulumi:"applyLag"`
 	// The rate at which redo logs are synced between the associated databases.  Example: `180 Mb per second`
-	ApplyRate              string                                        `pulumi:"applyRate"`
-	AvailabilityDomain     string                                        `pulumi:"availabilityDomain"`
+	ApplyRate              *string                                       `pulumi:"applyRate"`
+	AvailabilityDomain     *string                                       `pulumi:"availabilityDomain"`
 	BackupNetworkNsgIds    []string                                      `pulumi:"backupNetworkNsgIds"`
-	CpuCoreCount           int                                           `pulumi:"cpuCoreCount"`
-	CreateAsync            bool                                          `pulumi:"createAsync"`
-	CreationType           string                                        `pulumi:"creationType"`
+	CpuCoreCount           *int                                          `pulumi:"cpuCoreCount"`
+	CreateAsync            *bool                                         `pulumi:"createAsync"`
+	CreationType           *string                                       `pulumi:"creationType"`
 	DataCollectionOptions  []GetDataGuardAssociationDataCollectionOption `pulumi:"dataCollectionOptions"`
 	DataGuardAssociationId string                                        `pulumi:"dataGuardAssociationId"`
-	DatabaseAdminPassword  string                                        `pulumi:"databaseAdminPassword"`
+	DatabaseAdminPassword  *string                                       `pulumi:"databaseAdminPassword"`
 	DatabaseDefinedTags    map[string]interface{}                        `pulumi:"databaseDefinedTags"`
 	DatabaseFreeformTags   map[string]interface{}                        `pulumi:"databaseFreeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the reporting database.
 	DatabaseId                  string                 `pulumi:"databaseId"`
-	DatabaseSoftwareImageId     string                 `pulumi:"databaseSoftwareImageId"`
+	DatabaseSoftwareImageId     *string                `pulumi:"databaseSoftwareImageId"`
 	DbSystemDefinedTags         map[string]interface{} `pulumi:"dbSystemDefinedTags"`
 	DbSystemFreeformTags        map[string]interface{} `pulumi:"dbSystemFreeformTags"`
-	DeleteStandbyDbHomeOnDelete string                 `pulumi:"deleteStandbyDbHomeOnDelete"`
-	DisplayName                 string                 `pulumi:"displayName"`
+	DeleteStandbyDbHomeOnDelete *string                `pulumi:"deleteStandbyDbHomeOnDelete"`
+	DisplayName                 *string                `pulumi:"displayName"`
 	FaultDomains                []string               `pulumi:"faultDomains"`
-	Hostname                    string                 `pulumi:"hostname"`
+	Hostname                    *string                `pulumi:"hostname"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Data Guard association.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// True if active Data Guard is enabled.
-	IsActiveDataGuardEnabled bool   `pulumi:"isActiveDataGuardEnabled"`
-	LicenseModel             string `pulumi:"licenseModel"`
+	IsActiveDataGuardEnabled *bool   `pulumi:"isActiveDataGuardEnabled"`
+	LicenseModel             *string `pulumi:"licenseModel"`
 	// Additional information about the current lifecycleState, if available.
-	LifecycleDetails string   `pulumi:"lifecycleDetails"`
-	NodeCount        int      `pulumi:"nodeCount"`
+	LifecycleDetails *string  `pulumi:"lifecycleDetails"`
+	NodeCount        *int     `pulumi:"nodeCount"`
 	NsgIds           []string `pulumi:"nsgIds"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer database's Data Guard association.
-	PeerDataGuardAssociationId string `pulumi:"peerDataGuardAssociationId"`
+	PeerDataGuardAssociationId *string `pulumi:"peerDataGuardAssociationId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated peer database.
-	PeerDatabaseId string `pulumi:"peerDatabaseId"`
+	PeerDatabaseId *string `pulumi:"peerDatabaseId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home containing the associated peer database.
-	PeerDbHomeId string `pulumi:"peerDbHomeId"`
+	PeerDbHomeId *string `pulumi:"peerDbHomeId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system containing the associated peer database.
-	PeerDbSystemId   string `pulumi:"peerDbSystemId"`
-	PeerDbUniqueName string `pulumi:"peerDbUniqueName"`
+	PeerDbSystemId   *string `pulumi:"peerDbSystemId"`
+	PeerDbUniqueName *string `pulumi:"peerDbUniqueName"`
 	// The role of the peer database in this Data Guard association.
-	PeerRole        string `pulumi:"peerRole"`
-	PeerSidPrefix   string `pulumi:"peerSidPrefix"`
-	PeerVmClusterId string `pulumi:"peerVmClusterId"`
-	PrivateIp       string `pulumi:"privateIp"`
+	PeerRole        *string `pulumi:"peerRole"`
+	PeerSidPrefix   *string `pulumi:"peerSidPrefix"`
+	PeerVmClusterId *string `pulumi:"peerVmClusterId"`
+	PrivateIp       *string `pulumi:"privateIp"`
 	// The protection mode of this Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
-	ProtectionMode string `pulumi:"protectionMode"`
+	ProtectionMode *string `pulumi:"protectionMode"`
 	// The role of the reporting database in this Data Guard association.
-	Role  string `pulumi:"role"`
-	Shape string `pulumi:"shape"`
+	Role  *string `pulumi:"role"`
+	Shape *string `pulumi:"shape"`
 	// The current state of the Data Guard association.
-	State                        string `pulumi:"state"`
-	StorageVolumePerformanceMode string `pulumi:"storageVolumePerformanceMode"`
-	SubnetId                     string `pulumi:"subnetId"`
+	State                        *string `pulumi:"state"`
+	StorageVolumePerformanceMode *string `pulumi:"storageVolumePerformanceMode"`
+	SubnetId                     *string `pulumi:"subnetId"`
 	// The date and time the Data Guard association was created.
-	TimeCreated string `pulumi:"timeCreated"`
-	TimeZone    string `pulumi:"timeZone"`
+	TimeCreated *string `pulumi:"timeCreated"`
+	TimeZone    *string `pulumi:"timeZone"`
 	// The redo transport type used by this Data Guard association.  For more information, see [Redo Transport Services](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-redo-transport-services.htm#SBYDB00400) in the Oracle Data Guard documentation.
-	TransportType string `pulumi:"transportType"`
+	TransportType *string `pulumi:"transportType"`
 }
 
 func LookupDataGuardAssociationOutput(ctx *pulumi.Context, args LookupDataGuardAssociationOutputArgs, opts ...pulumi.InvokeOption) LookupDataGuardAssociationResultOutput {
@@ -164,40 +163,34 @@ func (o LookupDataGuardAssociationResultOutput) ToLookupDataGuardAssociationResu
 	return o
 }
 
-func (o LookupDataGuardAssociationResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupDataGuardAssociationResult] {
-	return pulumix.Output[LookupDataGuardAssociationResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The lag time between updates to the primary database and application of the redo data on the standby database, as computed by the reporting database.  Example: `9 seconds`
-func (o LookupDataGuardAssociationResultOutput) ApplyLag() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDataGuardAssociationResult) string { return v.ApplyLag }).(pulumi.StringOutput)
+func (o LookupDataGuardAssociationResultOutput) ApplyLag() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDataGuardAssociationResult) *string { return v.ApplyLag }).(pulumi.StringPtrOutput)
 }
 
 // The rate at which redo logs are synced between the associated databases.  Example: `180 Mb per second`
-func (o LookupDataGuardAssociationResultOutput) ApplyRate() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDataGuardAssociationResult) string { return v.ApplyRate }).(pulumi.StringOutput)
+func (o LookupDataGuardAssociationResultOutput) ApplyRate() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDataGuardAssociationResult) *string { return v.ApplyRate }).(pulumi.StringPtrOutput)
 }
 
-func (o LookupDataGuardAssociationResultOutput) AvailabilityDomain() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDataGuardAssociationResult) string { return v.AvailabilityDomain }).(pulumi.StringOutput)
+func (o LookupDataGuardAssociationResultOutput) AvailabilityDomain() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDataGuardAssociationResult) *string { return v.AvailabilityDomain }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupDataGuardAssociationResultOutput) BackupNetworkNsgIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v LookupDataGuardAssociationResult) []string { return v.BackupNetworkNsgIds }).(pulumi.StringArrayOutput)
 }
 
-func (o LookupDataGuardAssociationResultOutput) CpuCoreCount() pulumi.IntOutput {
-	return o.ApplyT(func(v LookupDataGuardAssociationResult) int { return v.CpuCoreCount }).(pulumi.IntOutput)
+func (o LookupDataGuardAssociationResultOutput) CpuCoreCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LookupDataGuardAssociationResult) *int { return v.CpuCoreCount }).(pulumi.IntPtrOutput)
 }
 
-func (o LookupDataGuardAssociationResultOutput) CreateAsync() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupDataGuardAssociationResult) bool { return v.CreateAsync }).(pulumi.BoolOutput)
+func (o LookupDataGuardAssociationResultOutput) CreateAsync() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupDataGuardAssociationResult) *bool { return v.CreateAsync }).(pulumi.BoolPtrOutput)
 }
 
-func (o LookupDataGuardAssociationResultOutput) CreationType() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDataGuardAssociationResult) string { return v.CreationType }).(pulumi.StringOutput)
+func (o LookupDataGuardAssociationResultOutput) CreationType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDataGuardAssociationResult) *string { return v.CreationType }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupDataGuardAssociationResultOutput) DataCollectionOptions() GetDataGuardAssociationDataCollectionOptionArrayOutput {
@@ -210,8 +203,8 @@ func (o LookupDataGuardAssociationResultOutput) DataGuardAssociationId() pulumi.
 	return o.ApplyT(func(v LookupDataGuardAssociationResult) string { return v.DataGuardAssociationId }).(pulumi.StringOutput)
 }
 
-func (o LookupDataGuardAssociationResultOutput) DatabaseAdminPassword() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDataGuardAssociationResult) string { return v.DatabaseAdminPassword }).(pulumi.StringOutput)
+func (o LookupDataGuardAssociationResultOutput) DatabaseAdminPassword() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDataGuardAssociationResult) *string { return v.DatabaseAdminPassword }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupDataGuardAssociationResultOutput) DatabaseDefinedTags() pulumi.MapOutput {
@@ -227,8 +220,8 @@ func (o LookupDataGuardAssociationResultOutput) DatabaseId() pulumi.StringOutput
 	return o.ApplyT(func(v LookupDataGuardAssociationResult) string { return v.DatabaseId }).(pulumi.StringOutput)
 }
 
-func (o LookupDataGuardAssociationResultOutput) DatabaseSoftwareImageId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDataGuardAssociationResult) string { return v.DatabaseSoftwareImageId }).(pulumi.StringOutput)
+func (o LookupDataGuardAssociationResultOutput) DatabaseSoftwareImageId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDataGuardAssociationResult) *string { return v.DatabaseSoftwareImageId }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupDataGuardAssociationResultOutput) DbSystemDefinedTags() pulumi.MapOutput {
@@ -239,43 +232,43 @@ func (o LookupDataGuardAssociationResultOutput) DbSystemFreeformTags() pulumi.Ma
 	return o.ApplyT(func(v LookupDataGuardAssociationResult) map[string]interface{} { return v.DbSystemFreeformTags }).(pulumi.MapOutput)
 }
 
-func (o LookupDataGuardAssociationResultOutput) DeleteStandbyDbHomeOnDelete() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDataGuardAssociationResult) string { return v.DeleteStandbyDbHomeOnDelete }).(pulumi.StringOutput)
+func (o LookupDataGuardAssociationResultOutput) DeleteStandbyDbHomeOnDelete() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDataGuardAssociationResult) *string { return v.DeleteStandbyDbHomeOnDelete }).(pulumi.StringPtrOutput)
 }
 
-func (o LookupDataGuardAssociationResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDataGuardAssociationResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupDataGuardAssociationResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDataGuardAssociationResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupDataGuardAssociationResultOutput) FaultDomains() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v LookupDataGuardAssociationResult) []string { return v.FaultDomains }).(pulumi.StringArrayOutput)
 }
 
-func (o LookupDataGuardAssociationResultOutput) Hostname() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDataGuardAssociationResult) string { return v.Hostname }).(pulumi.StringOutput)
+func (o LookupDataGuardAssociationResultOutput) Hostname() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDataGuardAssociationResult) *string { return v.Hostname }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Data Guard association.
-func (o LookupDataGuardAssociationResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDataGuardAssociationResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupDataGuardAssociationResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDataGuardAssociationResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // True if active Data Guard is enabled.
-func (o LookupDataGuardAssociationResultOutput) IsActiveDataGuardEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupDataGuardAssociationResult) bool { return v.IsActiveDataGuardEnabled }).(pulumi.BoolOutput)
+func (o LookupDataGuardAssociationResultOutput) IsActiveDataGuardEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupDataGuardAssociationResult) *bool { return v.IsActiveDataGuardEnabled }).(pulumi.BoolPtrOutput)
 }
 
-func (o LookupDataGuardAssociationResultOutput) LicenseModel() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDataGuardAssociationResult) string { return v.LicenseModel }).(pulumi.StringOutput)
+func (o LookupDataGuardAssociationResultOutput) LicenseModel() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDataGuardAssociationResult) *string { return v.LicenseModel }).(pulumi.StringPtrOutput)
 }
 
 // Additional information about the current lifecycleState, if available.
-func (o LookupDataGuardAssociationResultOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDataGuardAssociationResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o LookupDataGuardAssociationResultOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDataGuardAssociationResult) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
-func (o LookupDataGuardAssociationResultOutput) NodeCount() pulumi.IntOutput {
-	return o.ApplyT(func(v LookupDataGuardAssociationResult) int { return v.NodeCount }).(pulumi.IntOutput)
+func (o LookupDataGuardAssociationResultOutput) NodeCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LookupDataGuardAssociationResult) *int { return v.NodeCount }).(pulumi.IntPtrOutput)
 }
 
 func (o LookupDataGuardAssociationResultOutput) NsgIds() pulumi.StringArrayOutput {
@@ -283,85 +276,85 @@ func (o LookupDataGuardAssociationResultOutput) NsgIds() pulumi.StringArrayOutpu
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer database's Data Guard association.
-func (o LookupDataGuardAssociationResultOutput) PeerDataGuardAssociationId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDataGuardAssociationResult) string { return v.PeerDataGuardAssociationId }).(pulumi.StringOutput)
+func (o LookupDataGuardAssociationResultOutput) PeerDataGuardAssociationId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDataGuardAssociationResult) *string { return v.PeerDataGuardAssociationId }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated peer database.
-func (o LookupDataGuardAssociationResultOutput) PeerDatabaseId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDataGuardAssociationResult) string { return v.PeerDatabaseId }).(pulumi.StringOutput)
+func (o LookupDataGuardAssociationResultOutput) PeerDatabaseId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDataGuardAssociationResult) *string { return v.PeerDatabaseId }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home containing the associated peer database.
-func (o LookupDataGuardAssociationResultOutput) PeerDbHomeId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDataGuardAssociationResult) string { return v.PeerDbHomeId }).(pulumi.StringOutput)
+func (o LookupDataGuardAssociationResultOutput) PeerDbHomeId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDataGuardAssociationResult) *string { return v.PeerDbHomeId }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system containing the associated peer database.
-func (o LookupDataGuardAssociationResultOutput) PeerDbSystemId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDataGuardAssociationResult) string { return v.PeerDbSystemId }).(pulumi.StringOutput)
+func (o LookupDataGuardAssociationResultOutput) PeerDbSystemId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDataGuardAssociationResult) *string { return v.PeerDbSystemId }).(pulumi.StringPtrOutput)
 }
 
-func (o LookupDataGuardAssociationResultOutput) PeerDbUniqueName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDataGuardAssociationResult) string { return v.PeerDbUniqueName }).(pulumi.StringOutput)
+func (o LookupDataGuardAssociationResultOutput) PeerDbUniqueName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDataGuardAssociationResult) *string { return v.PeerDbUniqueName }).(pulumi.StringPtrOutput)
 }
 
 // The role of the peer database in this Data Guard association.
-func (o LookupDataGuardAssociationResultOutput) PeerRole() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDataGuardAssociationResult) string { return v.PeerRole }).(pulumi.StringOutput)
+func (o LookupDataGuardAssociationResultOutput) PeerRole() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDataGuardAssociationResult) *string { return v.PeerRole }).(pulumi.StringPtrOutput)
 }
 
-func (o LookupDataGuardAssociationResultOutput) PeerSidPrefix() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDataGuardAssociationResult) string { return v.PeerSidPrefix }).(pulumi.StringOutput)
+func (o LookupDataGuardAssociationResultOutput) PeerSidPrefix() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDataGuardAssociationResult) *string { return v.PeerSidPrefix }).(pulumi.StringPtrOutput)
 }
 
-func (o LookupDataGuardAssociationResultOutput) PeerVmClusterId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDataGuardAssociationResult) string { return v.PeerVmClusterId }).(pulumi.StringOutput)
+func (o LookupDataGuardAssociationResultOutput) PeerVmClusterId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDataGuardAssociationResult) *string { return v.PeerVmClusterId }).(pulumi.StringPtrOutput)
 }
 
-func (o LookupDataGuardAssociationResultOutput) PrivateIp() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDataGuardAssociationResult) string { return v.PrivateIp }).(pulumi.StringOutput)
+func (o LookupDataGuardAssociationResultOutput) PrivateIp() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDataGuardAssociationResult) *string { return v.PrivateIp }).(pulumi.StringPtrOutput)
 }
 
 // The protection mode of this Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
-func (o LookupDataGuardAssociationResultOutput) ProtectionMode() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDataGuardAssociationResult) string { return v.ProtectionMode }).(pulumi.StringOutput)
+func (o LookupDataGuardAssociationResultOutput) ProtectionMode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDataGuardAssociationResult) *string { return v.ProtectionMode }).(pulumi.StringPtrOutput)
 }
 
 // The role of the reporting database in this Data Guard association.
-func (o LookupDataGuardAssociationResultOutput) Role() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDataGuardAssociationResult) string { return v.Role }).(pulumi.StringOutput)
+func (o LookupDataGuardAssociationResultOutput) Role() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDataGuardAssociationResult) *string { return v.Role }).(pulumi.StringPtrOutput)
 }
 
-func (o LookupDataGuardAssociationResultOutput) Shape() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDataGuardAssociationResult) string { return v.Shape }).(pulumi.StringOutput)
+func (o LookupDataGuardAssociationResultOutput) Shape() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDataGuardAssociationResult) *string { return v.Shape }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the Data Guard association.
-func (o LookupDataGuardAssociationResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDataGuardAssociationResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupDataGuardAssociationResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDataGuardAssociationResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
-func (o LookupDataGuardAssociationResultOutput) StorageVolumePerformanceMode() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDataGuardAssociationResult) string { return v.StorageVolumePerformanceMode }).(pulumi.StringOutput)
+func (o LookupDataGuardAssociationResultOutput) StorageVolumePerformanceMode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDataGuardAssociationResult) *string { return v.StorageVolumePerformanceMode }).(pulumi.StringPtrOutput)
 }
 
-func (o LookupDataGuardAssociationResultOutput) SubnetId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDataGuardAssociationResult) string { return v.SubnetId }).(pulumi.StringOutput)
+func (o LookupDataGuardAssociationResultOutput) SubnetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDataGuardAssociationResult) *string { return v.SubnetId }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the Data Guard association was created.
-func (o LookupDataGuardAssociationResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDataGuardAssociationResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupDataGuardAssociationResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDataGuardAssociationResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
-func (o LookupDataGuardAssociationResultOutput) TimeZone() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDataGuardAssociationResult) string { return v.TimeZone }).(pulumi.StringOutput)
+func (o LookupDataGuardAssociationResultOutput) TimeZone() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDataGuardAssociationResult) *string { return v.TimeZone }).(pulumi.StringPtrOutput)
 }
 
 // The redo transport type used by this Data Guard association.  For more information, see [Redo Transport Services](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-redo-transport-services.htm#SBYDB00400) in the Oracle Data Guard documentation.
-func (o LookupDataGuardAssociationResultOutput) TransportType() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDataGuardAssociationResult) string { return v.TransportType }).(pulumi.StringOutput)
+func (o LookupDataGuardAssociationResultOutput) TransportType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDataGuardAssociationResult) *string { return v.TransportType }).(pulumi.StringPtrOutput)
 }
 
 func init() {

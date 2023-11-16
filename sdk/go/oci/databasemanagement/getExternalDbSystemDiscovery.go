@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific External Db System Discovery resource in Oracle Cloud Infrastructure Database Management service.
@@ -60,29 +59,29 @@ type LookupExternalDbSystemDiscoveryArgs struct {
 // A collection of values returned by getExternalDbSystemDiscovery.
 type LookupExternalDbSystemDiscoveryResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used for the external DB system connector.
-	AgentId string `pulumi:"agentId"`
+	AgentId *string `pulumi:"agentId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// The list of DB system components that were found in the DB system discovery.
 	DiscoveredComponents []GetExternalDbSystemDiscoveryDiscoveredComponent `pulumi:"discoveredComponents"`
 	// The user-friendly name for the DB system. The name does not have to be unique.
-	DisplayName                 string `pulumi:"displayName"`
-	ExternalDbSystemDiscoveryId string `pulumi:"externalDbSystemDiscoveryId"`
+	DisplayName                 *string `pulumi:"displayName"`
+	ExternalDbSystemDiscoveryId string  `pulumi:"externalDbSystemDiscoveryId"`
 	// The directory in which Oracle Grid Infrastructure is installed.
-	GridHome string `pulumi:"gridHome"`
+	GridHome *string `pulumi:"gridHome"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system discovery.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Additional information about the current lifecycle state.
-	LifecycleDetails string                                       `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string                                      `pulumi:"lifecycleDetails"`
 	PatchOperations  []GetExternalDbSystemDiscoveryPatchOperation `pulumi:"patchOperations"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing Oracle Cloud Infrastructure resource matching the discovered DB system.
-	ResourceId string `pulumi:"resourceId"`
+	ResourceId *string `pulumi:"resourceId"`
 	// The current lifecycle state of the external DB system discovery resource.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The date and time the external DB system discovery was created.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The date and time the external DB system discovery was last updated.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 func LookupExternalDbSystemDiscoveryOutput(ctx *pulumi.Context, args LookupExternalDbSystemDiscoveryOutputArgs, opts ...pulumi.InvokeOption) LookupExternalDbSystemDiscoveryResultOutput {
@@ -123,20 +122,14 @@ func (o LookupExternalDbSystemDiscoveryResultOutput) ToLookupExternalDbSystemDis
 	return o
 }
 
-func (o LookupExternalDbSystemDiscoveryResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupExternalDbSystemDiscoveryResult] {
-	return pulumix.Output[LookupExternalDbSystemDiscoveryResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used for the external DB system connector.
-func (o LookupExternalDbSystemDiscoveryResultOutput) AgentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupExternalDbSystemDiscoveryResult) string { return v.AgentId }).(pulumi.StringOutput)
+func (o LookupExternalDbSystemDiscoveryResultOutput) AgentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupExternalDbSystemDiscoveryResult) *string { return v.AgentId }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-func (o LookupExternalDbSystemDiscoveryResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupExternalDbSystemDiscoveryResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupExternalDbSystemDiscoveryResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupExternalDbSystemDiscoveryResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // The list of DB system components that were found in the DB system discovery.
@@ -147,8 +140,8 @@ func (o LookupExternalDbSystemDiscoveryResultOutput) DiscoveredComponents() GetE
 }
 
 // The user-friendly name for the DB system. The name does not have to be unique.
-func (o LookupExternalDbSystemDiscoveryResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupExternalDbSystemDiscoveryResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupExternalDbSystemDiscoveryResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupExternalDbSystemDiscoveryResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupExternalDbSystemDiscoveryResultOutput) ExternalDbSystemDiscoveryId() pulumi.StringOutput {
@@ -156,18 +149,18 @@ func (o LookupExternalDbSystemDiscoveryResultOutput) ExternalDbSystemDiscoveryId
 }
 
 // The directory in which Oracle Grid Infrastructure is installed.
-func (o LookupExternalDbSystemDiscoveryResultOutput) GridHome() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupExternalDbSystemDiscoveryResult) string { return v.GridHome }).(pulumi.StringOutput)
+func (o LookupExternalDbSystemDiscoveryResultOutput) GridHome() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupExternalDbSystemDiscoveryResult) *string { return v.GridHome }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system discovery.
-func (o LookupExternalDbSystemDiscoveryResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupExternalDbSystemDiscoveryResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupExternalDbSystemDiscoveryResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupExternalDbSystemDiscoveryResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Additional information about the current lifecycle state.
-func (o LookupExternalDbSystemDiscoveryResultOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupExternalDbSystemDiscoveryResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o LookupExternalDbSystemDiscoveryResultOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupExternalDbSystemDiscoveryResult) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupExternalDbSystemDiscoveryResultOutput) PatchOperations() GetExternalDbSystemDiscoveryPatchOperationArrayOutput {
@@ -177,23 +170,23 @@ func (o LookupExternalDbSystemDiscoveryResultOutput) PatchOperations() GetExtern
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing Oracle Cloud Infrastructure resource matching the discovered DB system.
-func (o LookupExternalDbSystemDiscoveryResultOutput) ResourceId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupExternalDbSystemDiscoveryResult) string { return v.ResourceId }).(pulumi.StringOutput)
+func (o LookupExternalDbSystemDiscoveryResultOutput) ResourceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupExternalDbSystemDiscoveryResult) *string { return v.ResourceId }).(pulumi.StringPtrOutput)
 }
 
 // The current lifecycle state of the external DB system discovery resource.
-func (o LookupExternalDbSystemDiscoveryResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupExternalDbSystemDiscoveryResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupExternalDbSystemDiscoveryResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupExternalDbSystemDiscoveryResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the external DB system discovery was created.
-func (o LookupExternalDbSystemDiscoveryResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupExternalDbSystemDiscoveryResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupExternalDbSystemDiscoveryResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupExternalDbSystemDiscoveryResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the external DB system discovery was last updated.
-func (o LookupExternalDbSystemDiscoveryResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupExternalDbSystemDiscoveryResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o LookupExternalDbSystemDiscoveryResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupExternalDbSystemDiscoveryResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 func init() {

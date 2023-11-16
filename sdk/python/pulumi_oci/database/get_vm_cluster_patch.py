@@ -55,23 +55,17 @@ class GetVmClusterPatchResult:
 
     @property
     @pulumi.getter(name="availableActions")
-    def available_actions(self) -> Sequence[str]:
-        """
-        Actions that can possibly be performed using this patch.
-        """
+    def available_actions(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "available_actions")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        The text describing this patch package.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -79,18 +73,12 @@ class GetVmClusterPatchResult:
 
     @property
     @pulumi.getter(name="lastAction")
-    def last_action(self) -> str:
-        """
-        Action that is currently being performed or was completed last.
-        """
+    def last_action(self) -> Optional[str]:
         return pulumi.get(self, "last_action")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        A descriptive text associated with the lifecycleState. Typically can contain additional displayable text.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
@@ -100,26 +88,17 @@ class GetVmClusterPatchResult:
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the patch as a result of lastAction.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeReleased")
-    def time_released(self) -> str:
-        """
-        The date and time that the patch was released.
-        """
+    def time_released(self) -> Optional[str]:
         return pulumi.get(self, "time_released")
 
     @property
     @pulumi.getter
-    def version(self) -> str:
-        """
-        The version of this patch package.
-        """
+    def version(self) -> Optional[str]:
         return pulumi.get(self, "version")
 
     @property
@@ -150,23 +129,7 @@ def get_vm_cluster_patch(patch_id: Optional[str] = None,
                          vm_cluster_id: Optional[str] = None,
                          opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetVmClusterPatchResult:
     """
-    This data source provides details about a specific Vm Cluster Patch resource in Oracle Cloud Infrastructure Database service.
-
-    Gets information about a specified patch package.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_vm_cluster_patch = oci.Database.get_vm_cluster_patch(patch_id=oci_database_patch["test_patch"]["id"],
-        vm_cluster_id=oci_database_vm_cluster["test_vm_cluster"]["id"])
-    ```
-
-
-    :param str patch_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the patch.
-    :param str vm_cluster_id: The VM cluster [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['patchId'] = patch_id
@@ -192,22 +155,6 @@ def get_vm_cluster_patch_output(patch_id: Optional[pulumi.Input[str]] = None,
                                 vm_cluster_id: Optional[pulumi.Input[str]] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetVmClusterPatchResult]:
     """
-    This data source provides details about a specific Vm Cluster Patch resource in Oracle Cloud Infrastructure Database service.
-
-    Gets information about a specified patch package.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_vm_cluster_patch = oci.Database.get_vm_cluster_patch(patch_id=oci_database_patch["test_patch"]["id"],
-        vm_cluster_id=oci_database_vm_cluster["test_vm_cluster"]["id"])
-    ```
-
-
-    :param str patch_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the patch.
-    :param str vm_cluster_id: The VM cluster [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+    Use this data source to access information about an existing resource.
     """
     ...

@@ -16,15 +16,15 @@ namespace Pulumi.Oci.OneSubsription.Outputs
         /// <summary>
         /// Sum of Usage/Service Billing Line net Amount
         /// </summary>
-        public readonly double Cost;
+        public readonly double? Cost;
         /// <summary>
         /// Computed Line Amount rounded.
         /// </summary>
-        public readonly double CostRounded;
+        public readonly double? CostRounded;
         /// <summary>
         /// Net Unit Price for the product in consideration, price actual.
         /// </summary>
-        public readonly double NetUnitPrice;
+        public readonly double? NetUnitPrice;
         /// <summary>
         /// Product description
         /// </summary>
@@ -36,33 +36,33 @@ namespace Pulumi.Oci.OneSubsription.Outputs
         /// <summary>
         /// Total Quantity that was used for computation
         /// </summary>
-        public readonly double Quantity;
+        public readonly double? Quantity;
         /// <summary>
         /// Metered Service date.
         /// </summary>
-        public readonly string TimeMeteredOn;
+        public readonly string? TimeMeteredOn;
         /// <summary>
         /// Usage compute type in SPM.
         /// </summary>
-        public readonly string Type;
+        public readonly string? Type;
 
         [OutputConstructor]
         private GetInvoiceLineComputedUsagesInvoicelineComputedUsageResult(
-            double cost,
+            double? cost,
 
-            double costRounded,
+            double? costRounded,
 
-            double netUnitPrice,
+            double? netUnitPrice,
 
             ImmutableArray<Outputs.GetInvoiceLineComputedUsagesInvoicelineComputedUsageParentProductResult> parentProducts,
 
             ImmutableArray<Outputs.GetInvoiceLineComputedUsagesInvoicelineComputedUsageProductResult> products,
 
-            double quantity,
+            double? quantity,
 
-            string timeMeteredOn,
+            string? timeMeteredOn,
 
-            string type)
+            string? type)
         {
             Cost = cost;
             CostRounded = costRounded;

@@ -51,17 +51,11 @@ class GetClusterNetworkInstancesResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The OCID of the compartment that contains the instance.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -71,7 +65,7 @@ class GetClusterNetworkInstancesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -79,10 +73,7 @@ class GetClusterNetworkInstancesResult:
 
     @property
     @pulumi.getter
-    def instances(self) -> Sequence['outputs.GetClusterNetworkInstancesInstanceResult']:
-        """
-        The list of instances.
-        """
+    def instances(self) -> Optional[Sequence['outputs.GetClusterNetworkInstancesInstanceResult']]:
         return pulumi.get(self, "instances")
 
 
@@ -106,25 +97,7 @@ def get_cluster_network_instances(cluster_network_id: Optional[str] = None,
                                   filters: Optional[Sequence[pulumi.InputType['GetClusterNetworkInstancesFilterArgs']]] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetClusterNetworkInstancesResult:
     """
-    This data source provides the list of Cluster Network Instances in Oracle Cloud Infrastructure Core service.
-
-    Lists the instances in a [cluster network with instance pools](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/managingclusternetworks.htm).
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_cluster_network_instances = oci.Core.get_cluster_network_instances(cluster_network_id=oci_core_cluster_network["test_cluster_network"]["id"],
-        compartment_id=var["compartment_id"],
-        display_name=var["cluster_network_instance_display_name"])
-    ```
-
-
-    :param str cluster_network_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster network.
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param str display_name: A filter to return only resources that match the given display name exactly.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['clusterNetworkId'] = cluster_network_id
@@ -150,24 +123,6 @@ def get_cluster_network_instances_output(cluster_network_id: Optional[pulumi.Inp
                                          filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetClusterNetworkInstancesFilterArgs']]]]] = None,
                                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetClusterNetworkInstancesResult]:
     """
-    This data source provides the list of Cluster Network Instances in Oracle Cloud Infrastructure Core service.
-
-    Lists the instances in a [cluster network with instance pools](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/managingclusternetworks.htm).
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_cluster_network_instances = oci.Core.get_cluster_network_instances(cluster_network_id=oci_core_cluster_network["test_cluster_network"]["id"],
-        compartment_id=var["compartment_id"],
-        display_name=var["cluster_network_instance_display_name"])
-    ```
-
-
-    :param str cluster_network_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster network.
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param str display_name: A filter to return only resources that match the given display name exactly.
+    Use this data source to access information about an existing resource.
     """
     ...

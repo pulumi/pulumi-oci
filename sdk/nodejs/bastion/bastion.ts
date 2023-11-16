@@ -76,7 +76,7 @@ export class Bastion extends pulumi.CustomResource {
     /**
      * (Updatable) A list of address ranges in CIDR notation that you want to allow to connect to sessions hosted by this bastion.
      */
-    public readonly clientCidrBlockAllowLists!: pulumi.Output<string[]>;
+    public readonly clientCidrBlockAllowLists!: pulumi.Output<string[] | undefined>;
     /**
      * (Updatable) The unique identifier (OCID) of the compartment where the bastion is located.
      */
@@ -84,27 +84,27 @@ export class Bastion extends pulumi.CustomResource {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * Flag to enable FQDN and SOCKS5 Proxy Support. Example: `ENABLED`, `DISABLED`
      */
-    public readonly dnsProxyStatus!: pulumi.Output<string>;
+    public readonly dnsProxyStatus!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * A message describing the current state in more detail.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The maximum amount of time that any session on the bastion can remain active.
      */
-    public readonly maxSessionTtlInSeconds!: pulumi.Output<number>;
+    public readonly maxSessionTtlInSeconds!: pulumi.Output<number | undefined>;
     /**
      * The maximum number of active sessions allowed on the bastion.
      */
-    public /*out*/ readonly maxSessionsAllowed!: pulumi.Output<number>;
+    public /*out*/ readonly maxSessionsAllowed!: pulumi.Output<number | undefined>;
     /**
      * The name of the bastion, which can't be changed after creation.
      */
@@ -112,23 +112,23 @@ export class Bastion extends pulumi.CustomResource {
     /**
      * The phonebook entry of the customer's team, which can't be changed after creation. Not applicable to `standard` bastions.
      */
-    public readonly phoneBookEntry!: pulumi.Output<string>;
+    public readonly phoneBookEntry!: pulumi.Output<string | undefined>;
     /**
      * The private IP address of the created private endpoint.
      */
-    public /*out*/ readonly privateEndpointIpAddress!: pulumi.Output<string>;
+    public /*out*/ readonly privateEndpointIpAddress!: pulumi.Output<string | undefined>;
     /**
      * The current state of the bastion.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) A list of IP addresses of the hosts that the bastion has access to. Not applicable to `standard` bastions.
      */
-    public readonly staticJumpHostIpAddresses!: pulumi.Output<string[]>;
+    public readonly staticJumpHostIpAddresses!: pulumi.Output<string[] | undefined>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any}>;
+    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * The unique identifier (OCID) of the subnet that the bastion connects to.
      *
@@ -140,15 +140,15 @@ export class Bastion extends pulumi.CustomResource {
     /**
      * The unique identifier (OCID) of the virtual cloud network (VCN) that the bastion connects to.
      */
-    public /*out*/ readonly targetVcnId!: pulumi.Output<string>;
+    public /*out*/ readonly targetVcnId!: pulumi.Output<string | undefined>;
     /**
      * The time the bastion was created. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * The time the bastion was updated. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    public /*out*/ readonly timeUpdated!: pulumi.Output<string | undefined>;
 
     /**
      * Create a Bastion resource with the given unique name, arguments, and options.

@@ -108,20 +108,20 @@ namespace Pulumi.Oci.ContainerInstances
         /// <summary>
         /// The availability domain to place the container instance.
         /// </summary>
-        public readonly string AvailabilityDomain;
+        public readonly string? AvailabilityDomain;
         /// <summary>
         /// The OCID of the compartment.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// The number of containers on the container instance.
         /// </summary>
-        public readonly int ContainerCount;
+        public readonly int? ContainerCount;
         public readonly string ContainerInstanceId;
         /// <summary>
         /// The container restart policy is applied for all containers in container instance.
         /// </summary>
-        public readonly string ContainerRestartPolicy;
+        public readonly string? ContainerRestartPolicy;
         /// <summary>
         /// The containers on the container instance.
         /// </summary>
@@ -129,11 +129,11 @@ namespace Pulumi.Oci.ContainerInstances
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// DNS settings for containers.
         /// </summary>
@@ -141,19 +141,19 @@ namespace Pulumi.Oci.ContainerInstances
         /// <summary>
         /// The fault domain to place the container instance.
         /// </summary>
-        public readonly string FaultDomain;
+        public readonly string? FaultDomain;
         /// <summary>
         /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// The amount of time that processes in a container have to gracefully end when the container must be stopped. For example, when you delete a container instance. After the timeout is reached, the processes are sent a signal to be deleted.
         /// </summary>
-        public readonly string GracefulShutdownTimeoutInSeconds;
+        public readonly string? GracefulShutdownTimeoutInSeconds;
         /// <summary>
         /// An OCID that cannot be changed.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The image pulls secrets so you can access private registry to pull container images.
         /// </summary>
@@ -161,11 +161,11 @@ namespace Pulumi.Oci.ContainerInstances
         /// <summary>
         /// A message that describes the current state of the container in more detail. Can be used to provide actionable information.
         /// </summary>
-        public readonly string LifecycleDetails;
+        public readonly string? LifecycleDetails;
         /// <summary>
         /// The shape of the container instance. The shape determines the number of OCPUs, amount of memory, and other resources that are allocated to a container instance.
         /// </summary>
-        public readonly string Shape;
+        public readonly string? Shape;
         /// <summary>
         /// The shape configuration for a container instance. The shape configuration determines the resources thats are available to the container instance and its containers.
         /// </summary>
@@ -173,19 +173,19 @@ namespace Pulumi.Oci.ContainerInstances
         /// <summary>
         /// The current state of the container instance.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`.
         /// </summary>
-        public readonly ImmutableDictionary<string, object> SystemTags;
+        public readonly ImmutableDictionary<string, object>? SystemTags;
         /// <summary>
         /// The time the container instance was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The time the container instance was updated, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         /// </summary>
-        public readonly string TimeUpdated;
+        public readonly string? TimeUpdated;
         /// <summary>
         /// The virtual networks available to the containers in the container instance.
         /// </summary>
@@ -193,7 +193,7 @@ namespace Pulumi.Oci.ContainerInstances
         /// <summary>
         /// The number of volumes that are attached to the container instance.
         /// </summary>
-        public readonly int VolumeCount;
+        public readonly int? VolumeCount;
         /// <summary>
         /// A volume is a directory with data that is accessible across multiple containers in a container instance.
         /// </summary>
@@ -201,51 +201,51 @@ namespace Pulumi.Oci.ContainerInstances
 
         [OutputConstructor]
         private GetContainerInstanceResult(
-            string availabilityDomain,
+            string? availabilityDomain,
 
-            string compartmentId,
+            string? compartmentId,
 
-            int containerCount,
+            int? containerCount,
 
             string containerInstanceId,
 
-            string containerRestartPolicy,
+            string? containerRestartPolicy,
 
             ImmutableArray<Outputs.GetContainerInstanceContainerResult> containers,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string displayName,
+            string? displayName,
 
             ImmutableArray<Outputs.GetContainerInstanceDnsConfigResult> dnsConfigs,
 
-            string faultDomain,
+            string? faultDomain,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string gracefulShutdownTimeoutInSeconds,
+            string? gracefulShutdownTimeoutInSeconds,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetContainerInstanceImagePullSecretResult> imagePullSecrets,
 
-            string lifecycleDetails,
+            string? lifecycleDetails,
 
-            string shape,
+            string? shape,
 
             ImmutableArray<Outputs.GetContainerInstanceShapeConfigResult> shapeConfigs,
 
-            string state,
+            string? state,
 
-            ImmutableDictionary<string, object> systemTags,
+            ImmutableDictionary<string, object>? systemTags,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeUpdated,
+            string? timeUpdated,
 
             ImmutableArray<Outputs.GetContainerInstanceVnicResult> vnics,
 
-            int volumeCount,
+            int? volumeCount,
 
             ImmutableArray<Outputs.GetContainerInstanceVolumeResult> volumes)
         {

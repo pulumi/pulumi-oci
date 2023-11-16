@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Network Firewall Policy Application Groups in Oracle Cloud Infrastructure Network Firewall service.
@@ -68,8 +67,8 @@ type GetNetworkFirewallPolicyApplicationGroupsResult struct {
 	DisplayName                        *string                                                                      `pulumi:"displayName"`
 	Filters                            []GetNetworkFirewallPolicyApplicationGroupsFilter                            `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id                      string `pulumi:"id"`
-	NetworkFirewallPolicyId string `pulumi:"networkFirewallPolicyId"`
+	Id                      *string `pulumi:"id"`
+	NetworkFirewallPolicyId string  `pulumi:"networkFirewallPolicyId"`
 }
 
 func GetNetworkFirewallPolicyApplicationGroupsOutput(ctx *pulumi.Context, args GetNetworkFirewallPolicyApplicationGroupsOutputArgs, opts ...pulumi.InvokeOption) GetNetworkFirewallPolicyApplicationGroupsResultOutput {
@@ -113,12 +112,6 @@ func (o GetNetworkFirewallPolicyApplicationGroupsResultOutput) ToGetNetworkFirew
 	return o
 }
 
-func (o GetNetworkFirewallPolicyApplicationGroupsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetNetworkFirewallPolicyApplicationGroupsResult] {
-	return pulumix.Output[GetNetworkFirewallPolicyApplicationGroupsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The list of application_group_summary_collection.
 func (o GetNetworkFirewallPolicyApplicationGroupsResultOutput) ApplicationGroupSummaryCollections() GetNetworkFirewallPolicyApplicationGroupsApplicationGroupSummaryCollectionArrayOutput {
 	return o.ApplyT(func(v GetNetworkFirewallPolicyApplicationGroupsResult) []GetNetworkFirewallPolicyApplicationGroupsApplicationGroupSummaryCollection {
@@ -137,8 +130,8 @@ func (o GetNetworkFirewallPolicyApplicationGroupsResultOutput) Filters() GetNetw
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetNetworkFirewallPolicyApplicationGroupsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNetworkFirewallPolicyApplicationGroupsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetNetworkFirewallPolicyApplicationGroupsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNetworkFirewallPolicyApplicationGroupsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetNetworkFirewallPolicyApplicationGroupsResultOutput) NetworkFirewallPolicyId() pulumi.StringOutput {

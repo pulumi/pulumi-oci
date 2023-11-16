@@ -14,13 +14,13 @@ namespace Pulumi.Oci.Core.Outputs
     public sealed class GetShapeShapePlatformConfigOptionSymmetricMultiThreadingOptionResult
     {
         public readonly ImmutableArray<bool> AllowedValues;
-        public readonly bool IsDefaultEnabled;
+        public readonly bool? IsDefaultEnabled;
 
         [OutputConstructor]
         private GetShapeShapePlatformConfigOptionSymmetricMultiThreadingOptionResult(
             ImmutableArray<bool> allowedValues,
 
-            bool isDefaultEnabled)
+            bool? isDefaultEnabled)
         {
             AllowedValues = allowedValues;
             IsDefaultEnabled = isDefaultEnabled;

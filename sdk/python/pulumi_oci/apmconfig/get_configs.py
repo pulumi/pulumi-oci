@@ -65,18 +65,12 @@ class GetConfigsResult:
 
     @property
     @pulumi.getter(name="configCollections")
-    def config_collections(self) -> Sequence['outputs.GetConfigsConfigCollectionResult']:
-        """
-        The list of config_collection.
-        """
+    def config_collections(self) -> Optional[Sequence['outputs.GetConfigsConfigCollectionResult']]:
         return pulumi.get(self, "config_collections")
 
     @property
     @pulumi.getter(name="configType")
     def config_type(self) -> Optional[str]:
-        """
-        The type of configuration item.
-        """
         return pulumi.get(self, "config_type")
 
     @property
@@ -92,9 +86,6 @@ class GetConfigsResult:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        The name by which a configuration entity is displayed to the end user.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -114,7 +105,7 @@ class GetConfigsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -123,9 +114,6 @@ class GetConfigsResult:
     @property
     @pulumi.getter(name="optionsGroup")
     def options_group(self) -> Optional[str]:
-        """
-        A string that specifies the group that an OPTIONS item belongs to.
-        """
         return pulumi.get(self, "options_group")
 
 
@@ -159,35 +147,7 @@ def get_configs(apm_domain_id: Optional[str] = None,
                 options_group: Optional[str] = None,
                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetConfigsResult:
     """
-    This data source provides the list of Configs in Oracle Cloud Infrastructure Apm Config service.
-
-    Returns all configuration items, which can optionally be filtered by configuration type.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_configs = oci.ApmConfig.get_configs(apm_domain_id=oci_apm_apm_domain["test_apm_domain"]["id"],
-        config_type=var["config_config_type"],
-        defined_tag_equals=var["config_defined_tag_equals"],
-        defined_tag_exists=var["config_defined_tag_exists"],
-        display_name=var["config_display_name"],
-        freeform_tag_equals=var["config_freeform_tag_equals"],
-        freeform_tag_exists=var["config_freeform_tag_exists"],
-        options_group=var["config_options_group"])
-    ```
-
-
-    :param str apm_domain_id: The APM Domain ID the request is intended for.
-    :param str config_type: A filter to match configuration items of a given type. Supported values are SPAN_FILTER, METRIC_GROUP, and APDEX.
-    :param Sequence[str] defined_tag_equals: A list of tag filters to apply.  Only resources with a defined tag matching the value will be returned. Each item in the list has the format "{namespace}.{tagName}.{value}".  All inputs are case-insensitive. Multiple values for the same key (i.e. same namespace and tag name) are interpreted as "OR". Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as "AND".
-    :param Sequence[str] defined_tag_exists: A list of tag existence filters to apply.  Only resources for which the specified defined tags exist will be returned. Each item in the list has the format "{namespace}.{tagName}.true" (for checking existence of a defined tag) or "{namespace}.true".  All inputs are case-insensitive. Currently, only existence ("true" at the end) is supported. Absence ("false" at the end) is not supported. Multiple values for the same key (i.e. same namespace and tag name) are interpreted as "OR". Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as "AND".
-    :param str display_name: A filter to return resources that match the given display name.
-    :param Sequence[str] freeform_tag_equals: A list of tag filters to apply.  Only resources with a freeform tag matching the value will be returned. The key for each tag is "{tagName}.{value}".  All inputs are case-insensitive. Multiple values for the same tag name are interpreted as "OR".  Values for different tag names are interpreted as "AND".
-    :param Sequence[str] freeform_tag_exists: A list of tag existence filters to apply.  Only resources for which the specified freeform tags exist the value will be returned. The key for each tag is "{tagName}.true".  All inputs are case-insensitive. Currently, only existence ("true" at the end) is supported. Absence ("false" at the end) is not supported. Multiple values for different tag names are interpreted as "AND".
-    :param str options_group: A filter to return OPTIONS resources that match the given group.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['apmDomainId'] = apm_domain_id
@@ -228,34 +188,6 @@ def get_configs_output(apm_domain_id: Optional[pulumi.Input[str]] = None,
                        options_group: Optional[pulumi.Input[Optional[str]]] = None,
                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetConfigsResult]:
     """
-    This data source provides the list of Configs in Oracle Cloud Infrastructure Apm Config service.
-
-    Returns all configuration items, which can optionally be filtered by configuration type.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_configs = oci.ApmConfig.get_configs(apm_domain_id=oci_apm_apm_domain["test_apm_domain"]["id"],
-        config_type=var["config_config_type"],
-        defined_tag_equals=var["config_defined_tag_equals"],
-        defined_tag_exists=var["config_defined_tag_exists"],
-        display_name=var["config_display_name"],
-        freeform_tag_equals=var["config_freeform_tag_equals"],
-        freeform_tag_exists=var["config_freeform_tag_exists"],
-        options_group=var["config_options_group"])
-    ```
-
-
-    :param str apm_domain_id: The APM Domain ID the request is intended for.
-    :param str config_type: A filter to match configuration items of a given type. Supported values are SPAN_FILTER, METRIC_GROUP, and APDEX.
-    :param Sequence[str] defined_tag_equals: A list of tag filters to apply.  Only resources with a defined tag matching the value will be returned. Each item in the list has the format "{namespace}.{tagName}.{value}".  All inputs are case-insensitive. Multiple values for the same key (i.e. same namespace and tag name) are interpreted as "OR". Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as "AND".
-    :param Sequence[str] defined_tag_exists: A list of tag existence filters to apply.  Only resources for which the specified defined tags exist will be returned. Each item in the list has the format "{namespace}.{tagName}.true" (for checking existence of a defined tag) or "{namespace}.true".  All inputs are case-insensitive. Currently, only existence ("true" at the end) is supported. Absence ("false" at the end) is not supported. Multiple values for the same key (i.e. same namespace and tag name) are interpreted as "OR". Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as "AND".
-    :param str display_name: A filter to return resources that match the given display name.
-    :param Sequence[str] freeform_tag_equals: A list of tag filters to apply.  Only resources with a freeform tag matching the value will be returned. The key for each tag is "{tagName}.{value}".  All inputs are case-insensitive. Multiple values for the same tag name are interpreted as "OR".  Values for different tag names are interpreted as "AND".
-    :param Sequence[str] freeform_tag_exists: A list of tag existence filters to apply.  Only resources for which the specified freeform tags exist the value will be returned. The key for each tag is "{tagName}.true".  All inputs are case-insensitive. Currently, only existence ("true" at the end) is supported. Absence ("false" at the end) is not supported. Multiple values for different tag names are interpreted as "AND".
-    :param str options_group: A filter to return OPTIONS resources that match the given group.
+    Use this data source to access information about an existing resource.
     """
     ...

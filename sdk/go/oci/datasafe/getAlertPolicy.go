@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Alert Policy resource in Oracle Cloud Infrastructure Data Safe service.
@@ -61,31 +60,31 @@ type GetAlertPolicyArgs struct {
 type GetAlertPolicyResult struct {
 	AlertPolicyId string `pulumi:"alertPolicyId"`
 	// Indicates the Data Safe feature to which the alert policy belongs.
-	AlertPolicyType string `pulumi:"alertPolicyType"`
+	AlertPolicyType *string `pulumi:"alertPolicyType"`
 	// The OCID of the compartment that contains the alert policy.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The description of the alert policy.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// The display name of the alert policy.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Indicates if the alert policy is user-defined (true) or pre-defined (false).
-	IsUserDefined bool `pulumi:"isUserDefined"`
+	IsUserDefined *bool `pulumi:"isUserDefined"`
 	// Severity level of the alert raised by this policy.
-	Severity string `pulumi:"severity"`
+	Severity *string `pulumi:"severity"`
 	// The current state of the alert.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// Creation date and time of the alert policy, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// Last date and time the alert policy was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 func GetAlertPolicyOutput(ctx *pulumi.Context, args GetAlertPolicyOutputArgs, opts ...pulumi.InvokeOption) GetAlertPolicyResultOutput {
@@ -126,24 +125,18 @@ func (o GetAlertPolicyResultOutput) ToGetAlertPolicyResultOutputWithContext(ctx 
 	return o
 }
 
-func (o GetAlertPolicyResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetAlertPolicyResult] {
-	return pulumix.Output[GetAlertPolicyResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetAlertPolicyResultOutput) AlertPolicyId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAlertPolicyResult) string { return v.AlertPolicyId }).(pulumi.StringOutput)
 }
 
 // Indicates the Data Safe feature to which the alert policy belongs.
-func (o GetAlertPolicyResultOutput) AlertPolicyType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAlertPolicyResult) string { return v.AlertPolicyType }).(pulumi.StringOutput)
+func (o GetAlertPolicyResultOutput) AlertPolicyType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAlertPolicyResult) *string { return v.AlertPolicyType }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the compartment that contains the alert policy.
-func (o GetAlertPolicyResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAlertPolicyResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetAlertPolicyResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAlertPolicyResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
@@ -152,13 +145,13 @@ func (o GetAlertPolicyResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // The description of the alert policy.
-func (o GetAlertPolicyResultOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAlertPolicyResult) string { return v.Description }).(pulumi.StringOutput)
+func (o GetAlertPolicyResultOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAlertPolicyResult) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // The display name of the alert policy.
-func (o GetAlertPolicyResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAlertPolicyResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetAlertPolicyResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAlertPolicyResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
@@ -167,23 +160,23 @@ func (o GetAlertPolicyResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetAlertPolicyResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAlertPolicyResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetAlertPolicyResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAlertPolicyResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Indicates if the alert policy is user-defined (true) or pre-defined (false).
-func (o GetAlertPolicyResultOutput) IsUserDefined() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetAlertPolicyResult) bool { return v.IsUserDefined }).(pulumi.BoolOutput)
+func (o GetAlertPolicyResultOutput) IsUserDefined() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetAlertPolicyResult) *bool { return v.IsUserDefined }).(pulumi.BoolPtrOutput)
 }
 
 // Severity level of the alert raised by this policy.
-func (o GetAlertPolicyResultOutput) Severity() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAlertPolicyResult) string { return v.Severity }).(pulumi.StringOutput)
+func (o GetAlertPolicyResultOutput) Severity() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAlertPolicyResult) *string { return v.Severity }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the alert.
-func (o GetAlertPolicyResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAlertPolicyResult) string { return v.State }).(pulumi.StringOutput)
+func (o GetAlertPolicyResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAlertPolicyResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -192,13 +185,13 @@ func (o GetAlertPolicyResultOutput) SystemTags() pulumi.MapOutput {
 }
 
 // Creation date and time of the alert policy, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-func (o GetAlertPolicyResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAlertPolicyResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetAlertPolicyResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAlertPolicyResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // Last date and time the alert policy was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-func (o GetAlertPolicyResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAlertPolicyResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o GetAlertPolicyResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAlertPolicyResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 func init() {

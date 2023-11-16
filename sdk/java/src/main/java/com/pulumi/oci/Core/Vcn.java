@@ -16,6 +16,7 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -122,42 +123,42 @@ public class Vcn extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="byoipv6cidrBlocks", refs={List.class,String.class}, tree="[0,1]")
-    private Output<List<String>> byoipv6cidrBlocks;
+    private Output</* @Nullable */ List<String>> byoipv6cidrBlocks;
 
     /**
      * @return The list of BYOIPv6 prefixes required to create a VCN that uses BYOIPv6 ranges.
      * 
      */
-    public Output<List<String>> byoipv6cidrBlocks() {
-        return this.byoipv6cidrBlocks;
+    public Output<Optional<List<String>>> byoipv6cidrBlocks() {
+        return Codegen.optional(this.byoipv6cidrBlocks);
     }
     /**
      * The list of BYOIPv6 OCIDs and BYOIPv6 prefixes required to create a VCN that uses BYOIPv6 address ranges.
      * 
      */
     @Export(name="byoipv6cidrDetails", refs={List.class,VcnByoipv6cidrDetail.class}, tree="[0,1]")
-    private Output<List<VcnByoipv6cidrDetail>> byoipv6cidrDetails;
+    private Output</* @Nullable */ List<VcnByoipv6cidrDetail>> byoipv6cidrDetails;
 
     /**
      * @return The list of BYOIPv6 OCIDs and BYOIPv6 prefixes required to create a VCN that uses BYOIPv6 address ranges.
      * 
      */
-    public Output<List<VcnByoipv6cidrDetail>> byoipv6cidrDetails() {
-        return this.byoipv6cidrDetails;
+    public Output<Optional<List<VcnByoipv6cidrDetail>>> byoipv6cidrDetails() {
+        return Codegen.optional(this.byoipv6cidrDetails);
     }
     /**
      * **Deprecated.** Do *not* set this value. Use `cidr_blocks` instead. Example: `10.0.0.0/16`
      * 
      */
     @Export(name="cidrBlock", refs={String.class}, tree="[0]")
-    private Output<String> cidrBlock;
+    private Output</* @Nullable */ String> cidrBlock;
 
     /**
      * @return **Deprecated.** Do *not* set this value. Use `cidr_blocks` instead. Example: `10.0.0.0/16`
      * 
      */
-    public Output<String> cidrBlock() {
-        return this.cidrBlock;
+    public Output<Optional<String>> cidrBlock() {
+        return Codegen.optional(this.cidrBlock);
     }
     /**
      * (Updatable) The list of one or more IPv4 CIDR blocks for the VCN that meet the following criteria:
@@ -168,7 +169,7 @@ public class Vcn extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="cidrBlocks", refs={List.class,String.class}, tree="[0,1]")
-    private Output<List<String>> cidrBlocks;
+    private Output</* @Nullable */ List<String>> cidrBlocks;
 
     /**
      * @return (Updatable) The list of one or more IPv4 CIDR blocks for the VCN that meet the following criteria:
@@ -178,8 +179,8 @@ public class Vcn extends com.pulumi.resources.CustomResource {
      *   **Important:** Do *not* specify a value for `cidr_block`. Use this parameter instead.
      * 
      */
-    public Output<List<String>> cidrBlocks() {
-        return this.cidrBlocks;
+    public Output<Optional<List<String>>> cidrBlocks() {
+        return Codegen.optional(this.cidrBlocks);
     }
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the VCN.
@@ -200,70 +201,70 @@ public class Vcn extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="defaultDhcpOptionsId", refs={String.class}, tree="[0]")
-    private Output<String> defaultDhcpOptionsId;
+    private Output</* @Nullable */ String> defaultDhcpOptionsId;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the VCN&#39;s default set of DHCP options.
      * 
      */
-    public Output<String> defaultDhcpOptionsId() {
-        return this.defaultDhcpOptionsId;
+    public Output<Optional<String>> defaultDhcpOptionsId() {
+        return Codegen.optional(this.defaultDhcpOptionsId);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the VCN&#39;s default route table.
      * 
      */
     @Export(name="defaultRouteTableId", refs={String.class}, tree="[0]")
-    private Output<String> defaultRouteTableId;
+    private Output</* @Nullable */ String> defaultRouteTableId;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the VCN&#39;s default route table.
      * 
      */
-    public Output<String> defaultRouteTableId() {
-        return this.defaultRouteTableId;
+    public Output<Optional<String>> defaultRouteTableId() {
+        return Codegen.optional(this.defaultRouteTableId);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the VCN&#39;s default security list.
      * 
      */
     @Export(name="defaultSecurityListId", refs={String.class}, tree="[0]")
-    private Output<String> defaultSecurityListId;
+    private Output</* @Nullable */ String> defaultSecurityListId;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the VCN&#39;s default security list.
      * 
      */
-    public Output<String> defaultSecurityListId() {
-        return this.defaultSecurityListId;
+    public Output<Optional<String>> defaultSecurityListId() {
+        return Codegen.optional(this.defaultSecurityListId);
     }
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
     @Export(name="displayName", refs={String.class}, tree="[0]")
-    private Output<String> displayName;
+    private Output</* @Nullable */ String> displayName;
 
     /**
      * @return (Updatable) A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    public Output<String> displayName() {
-        return this.displayName;
+    public Output<Optional<String>> displayName() {
+        return Codegen.optional(this.displayName);
     }
     /**
      * A DNS label for the VCN, used in conjunction with the VNIC&#39;s hostname and subnet&#39;s DNS label to form a fully qualified domain name (FQDN) for each VNIC within this subnet (for example, `bminstance1.subnet123.vcn1.oraclevcn.com`). Not required to be unique, but it&#39;s a best practice to set unique DNS labels for VCNs in your tenancy. Must be an alphanumeric string that begins with a letter. The value cannot be changed.
@@ -275,7 +276,7 @@ public class Vcn extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="dnsLabel", refs={String.class}, tree="[0]")
-    private Output<String> dnsLabel;
+    private Output</* @Nullable */ String> dnsLabel;
 
     /**
      * @return A DNS label for the VCN, used in conjunction with the VNIC&#39;s hostname and subnet&#39;s DNS label to form a fully qualified domain name (FQDN) for each VNIC within this subnet (for example, `bminstance1.subnet123.vcn1.oraclevcn.com`). Not required to be unique, but it&#39;s a best practice to set unique DNS labels for VCNs in your tenancy. Must be an alphanumeric string that begins with a letter. The value cannot be changed.
@@ -286,36 +287,36 @@ public class Vcn extends com.pulumi.resources.CustomResource {
      * Example: `vcn1`
      * 
      */
-    public Output<String> dnsLabel() {
-        return this.dnsLabel;
+    public Output<Optional<String>> dnsLabel() {
+        return Codegen.optional(this.dnsLabel);
     }
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * For an IPv6-enabled VCN, this is the list of IPv6 prefixes for the VCN&#39;s IP address space. The prefixes are provided by Oracle and the sizes are always /56.
      * 
      */
     @Export(name="ipv6cidrBlocks", refs={List.class,String.class}, tree="[0,1]")
-    private Output<List<String>> ipv6cidrBlocks;
+    private Output</* @Nullable */ List<String>> ipv6cidrBlocks;
 
     /**
      * @return For an IPv6-enabled VCN, this is the list of IPv6 prefixes for the VCN&#39;s IP address space. The prefixes are provided by Oracle and the sizes are always /56.
      * 
      */
-    public Output<List<String>> ipv6cidrBlocks() {
-        return this.ipv6cidrBlocks;
+    public Output<Optional<List<String>>> ipv6cidrBlocks() {
+        return Codegen.optional(this.ipv6cidrBlocks);
     }
     /**
      * The list of one or more ULA or Private IPv6 CIDR blocks for the vcn that meets the following criteria:
@@ -327,7 +328,7 @@ public class Vcn extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="ipv6privateCidrBlocks", refs={List.class,String.class}, tree="[0,1]")
-    private Output<List<String>> ipv6privateCidrBlocks;
+    private Output</* @Nullable */ List<String>> ipv6privateCidrBlocks;
 
     /**
      * @return The list of one or more ULA or Private IPv6 CIDR blocks for the vcn that meets the following criteria:
@@ -338,22 +339,22 @@ public class Vcn extends com.pulumi.resources.CustomResource {
      * **Important:** Do *not* specify a value for `ipv6cidr_block`. Use this parameter instead.
      * 
      */
-    public Output<List<String>> ipv6privateCidrBlocks() {
-        return this.ipv6privateCidrBlocks;
+    public Output<Optional<List<String>>> ipv6privateCidrBlocks() {
+        return Codegen.optional(this.ipv6privateCidrBlocks);
     }
     /**
      * Whether IPv6 is enabled for the VCN. Default is `false`. If enabled, Oracle will assign the VCN a IPv6 /56 CIDR block. You may skip having Oracle allocate the VCN a IPv6 /56 CIDR block by setting isOracleGuaAllocationEnabled to `false`. For important details about IPv6 addressing in a VCN, see [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).  Example: `true`
      * 
      */
     @Export(name="isIpv6enabled", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isIpv6enabled;
+    private Output</* @Nullable */ Boolean> isIpv6enabled;
 
     /**
      * @return Whether IPv6 is enabled for the VCN. Default is `false`. If enabled, Oracle will assign the VCN a IPv6 /56 CIDR block. You may skip having Oracle allocate the VCN a IPv6 /56 CIDR block by setting isOracleGuaAllocationEnabled to `false`. For important details about IPv6 addressing in a VCN, see [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).  Example: `true`
      * 
      */
-    public Output<Boolean> isIpv6enabled() {
-        return this.isIpv6enabled;
+    public Output<Optional<Boolean>> isIpv6enabled() {
+        return Codegen.optional(this.isIpv6enabled);
     }
     /**
      * Specifies whether to skip Oracle allocated IPv6 GUA. By default, Oracle will allocate one GUA of /56 size for an IPv6 enabled VCN.
@@ -363,7 +364,7 @@ public class Vcn extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="isOracleGuaAllocationEnabled", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isOracleGuaAllocationEnabled;
+    private Output</* @Nullable */ Boolean> isOracleGuaAllocationEnabled;
 
     /**
      * @return Specifies whether to skip Oracle allocated IPv6 GUA. By default, Oracle will allocate one GUA of /56 size for an IPv6 enabled VCN.
@@ -372,50 +373,50 @@ public class Vcn extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Output<Boolean> isOracleGuaAllocationEnabled() {
-        return this.isOracleGuaAllocationEnabled;
+    public Output<Optional<Boolean>> isOracleGuaAllocationEnabled() {
+        return Codegen.optional(this.isOracleGuaAllocationEnabled);
     }
     /**
      * The VCN&#39;s current state.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The VCN&#39;s current state.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * The date and time the VCN was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The date and time the VCN was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * The VCN&#39;s domain name, which consists of the VCN&#39;s DNS label, and the `oraclevcn.com` domain.
      * 
      */
     @Export(name="vcnDomainName", refs={String.class}, tree="[0]")
-    private Output<String> vcnDomainName;
+    private Output</* @Nullable */ String> vcnDomainName;
 
     /**
      * @return The VCN&#39;s domain name, which consists of the VCN&#39;s DNS label, and the `oraclevcn.com` domain.
      * 
      */
-    public Output<String> vcnDomainName() {
-        return this.vcnDomainName;
+    public Output<Optional<String>> vcnDomainName() {
+        return Codegen.optional(this.vcnDomainName);
     }
 
     /**

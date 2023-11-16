@@ -13,29 +13,29 @@ namespace Pulumi.Oci.DataSafe.Outputs
     [OutputType]
     public sealed class GetTargetDatabaseRoleRoleResult
     {
-        public readonly string AuthenticationType;
-        public readonly bool IsCommon;
-        public readonly bool IsImplicit;
-        public readonly bool IsInherited;
-        public readonly bool IsOracleMaintained;
-        public readonly bool IsPasswordRequired;
-        public readonly string RoleName;
+        public readonly string? AuthenticationType;
+        public readonly bool? IsCommon;
+        public readonly bool? IsImplicit;
+        public readonly bool? IsInherited;
+        public readonly bool? IsOracleMaintained;
+        public readonly bool? IsPasswordRequired;
+        public readonly string? RoleName;
 
         [OutputConstructor]
         private GetTargetDatabaseRoleRoleResult(
-            string authenticationType,
+            string? authenticationType,
 
-            bool isCommon,
+            bool? isCommon,
 
-            bool isImplicit,
+            bool? isImplicit,
 
-            bool isInherited,
+            bool? isInherited,
 
-            bool isOracleMaintained,
+            bool? isOracleMaintained,
 
-            bool isPasswordRequired,
+            bool? isPasswordRequired,
 
-            string roleName)
+            string? roleName)
         {
             AuthenticationType = authenticationType;
             IsCommon = isCommon;

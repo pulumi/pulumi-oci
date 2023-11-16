@@ -29,12 +29,12 @@ public final class GetInstancePoolsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The list of instance_pools.
      * 
      */
-    private List<GetInstancePoolsInstancePool> instancePools;
+    private @Nullable List<GetInstancePoolsInstancePool> instancePools;
     /**
      * @return The current state of the instance pool.
      * 
@@ -63,15 +63,15 @@ public final class GetInstancePoolsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The list of instance_pools.
      * 
      */
     public List<GetInstancePoolsInstancePool> instancePools() {
-        return this.instancePools;
+        return this.instancePools == null ? List.of() : this.instancePools;
     }
     /**
      * @return The current state of the instance pool.
@@ -93,8 +93,8 @@ public final class GetInstancePoolsResult {
         private String compartmentId;
         private @Nullable String displayName;
         private @Nullable List<GetInstancePoolsFilter> filters;
-        private String id;
-        private List<GetInstancePoolsInstancePool> instancePools;
+        private @Nullable String id;
+        private @Nullable List<GetInstancePoolsInstancePool> instancePools;
         private @Nullable String state;
         public Builder() {}
         public Builder(GetInstancePoolsResult defaults) {
@@ -126,13 +126,13 @@ public final class GetInstancePoolsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder instancePools(List<GetInstancePoolsInstancePool> instancePools) {
-            this.instancePools = Objects.requireNonNull(instancePools);
+        public Builder instancePools(@Nullable List<GetInstancePoolsInstancePool> instancePools) {
+            this.instancePools = instancePools;
             return this;
         }
         public Builder instancePools(GetInstancePoolsInstancePool... instancePools) {

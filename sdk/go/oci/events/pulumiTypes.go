@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 var _ = internal.GetEnvOrDefault
@@ -45,12 +44,6 @@ func (i RuleActionsArgs) ToRuleActionsOutput() RuleActionsOutput {
 
 func (i RuleActionsArgs) ToRuleActionsOutputWithContext(ctx context.Context) RuleActionsOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(RuleActionsOutput)
-}
-
-func (i RuleActionsArgs) ToOutput(ctx context.Context) pulumix.Output[RuleActions] {
-	return pulumix.Output[RuleActions]{
-		OutputState: i.ToRuleActionsOutputWithContext(ctx).OutputState,
-	}
 }
 
 func (i RuleActionsArgs) ToRuleActionsPtrOutput() RuleActionsPtrOutput {
@@ -94,12 +87,6 @@ func (i *ruleActionsPtrType) ToRuleActionsPtrOutputWithContext(ctx context.Conte
 	return pulumi.ToOutputWithContext(ctx, i).(RuleActionsPtrOutput)
 }
 
-func (i *ruleActionsPtrType) ToOutput(ctx context.Context) pulumix.Output[*RuleActions] {
-	return pulumix.Output[*RuleActions]{
-		OutputState: i.ToRuleActionsPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type RuleActionsOutput struct{ *pulumi.OutputState }
 
 func (RuleActionsOutput) ElementType() reflect.Type {
@@ -124,12 +111,6 @@ func (o RuleActionsOutput) ToRuleActionsPtrOutputWithContext(ctx context.Context
 	}).(RuleActionsPtrOutput)
 }
 
-func (o RuleActionsOutput) ToOutput(ctx context.Context) pulumix.Output[RuleActions] {
-	return pulumix.Output[RuleActions]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) A list of one or more ActionDetails objects.
 func (o RuleActionsOutput) Actions() RuleActionsActionArrayOutput {
 	return o.ApplyT(func(v RuleActions) []RuleActionsAction { return v.Actions }).(RuleActionsActionArrayOutput)
@@ -147,12 +128,6 @@ func (o RuleActionsPtrOutput) ToRuleActionsPtrOutput() RuleActionsPtrOutput {
 
 func (o RuleActionsPtrOutput) ToRuleActionsPtrOutputWithContext(ctx context.Context) RuleActionsPtrOutput {
 	return o
-}
-
-func (o RuleActionsPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*RuleActions] {
-	return pulumix.Output[*RuleActions]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o RuleActionsPtrOutput) Elem() RuleActionsOutput {
@@ -252,12 +227,6 @@ func (i RuleActionsActionArgs) ToRuleActionsActionOutputWithContext(ctx context.
 	return pulumi.ToOutputWithContext(ctx, i).(RuleActionsActionOutput)
 }
 
-func (i RuleActionsActionArgs) ToOutput(ctx context.Context) pulumix.Output[RuleActionsAction] {
-	return pulumix.Output[RuleActionsAction]{
-		OutputState: i.ToRuleActionsActionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // RuleActionsActionArrayInput is an input type that accepts RuleActionsActionArray and RuleActionsActionArrayOutput values.
 // You can construct a concrete instance of `RuleActionsActionArrayInput` via:
 //
@@ -283,12 +252,6 @@ func (i RuleActionsActionArray) ToRuleActionsActionArrayOutputWithContext(ctx co
 	return pulumi.ToOutputWithContext(ctx, i).(RuleActionsActionArrayOutput)
 }
 
-func (i RuleActionsActionArray) ToOutput(ctx context.Context) pulumix.Output[[]RuleActionsAction] {
-	return pulumix.Output[[]RuleActionsAction]{
-		OutputState: i.ToRuleActionsActionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type RuleActionsActionOutput struct{ *pulumi.OutputState }
 
 func (RuleActionsActionOutput) ElementType() reflect.Type {
@@ -301,12 +264,6 @@ func (o RuleActionsActionOutput) ToRuleActionsActionOutput() RuleActionsActionOu
 
 func (o RuleActionsActionOutput) ToRuleActionsActionOutputWithContext(ctx context.Context) RuleActionsActionOutput {
 	return o
-}
-
-func (o RuleActionsActionOutput) ToOutput(ctx context.Context) pulumix.Output[RuleActionsAction] {
-	return pulumix.Output[RuleActionsAction]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The action to perform if the condition in the rule matches an event.
@@ -374,12 +331,6 @@ func (o RuleActionsActionArrayOutput) ToRuleActionsActionArrayOutputWithContext(
 	return o
 }
 
-func (o RuleActionsActionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]RuleActionsAction] {
-	return pulumix.Output[[]RuleActionsAction]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o RuleActionsActionArrayOutput) Index(i pulumi.IntInput) RuleActionsActionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) RuleActionsAction {
 		return vs[0].([]RuleActionsAction)[vs[1].(int)]
@@ -419,12 +370,6 @@ func (i GetRuleActionArgs) ToGetRuleActionOutputWithContext(ctx context.Context)
 	return pulumi.ToOutputWithContext(ctx, i).(GetRuleActionOutput)
 }
 
-func (i GetRuleActionArgs) ToOutput(ctx context.Context) pulumix.Output[GetRuleAction] {
-	return pulumix.Output[GetRuleAction]{
-		OutputState: i.ToGetRuleActionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetRuleActionArrayInput is an input type that accepts GetRuleActionArray and GetRuleActionArrayOutput values.
 // You can construct a concrete instance of `GetRuleActionArrayInput` via:
 //
@@ -450,12 +395,6 @@ func (i GetRuleActionArray) ToGetRuleActionArrayOutputWithContext(ctx context.Co
 	return pulumi.ToOutputWithContext(ctx, i).(GetRuleActionArrayOutput)
 }
 
-func (i GetRuleActionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetRuleAction] {
-	return pulumix.Output[[]GetRuleAction]{
-		OutputState: i.ToGetRuleActionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetRuleActionOutput struct{ *pulumi.OutputState }
 
 func (GetRuleActionOutput) ElementType() reflect.Type {
@@ -468,12 +407,6 @@ func (o GetRuleActionOutput) ToGetRuleActionOutput() GetRuleActionOutput {
 
 func (o GetRuleActionOutput) ToGetRuleActionOutputWithContext(ctx context.Context) GetRuleActionOutput {
 	return o
-}
-
-func (o GetRuleActionOutput) ToOutput(ctx context.Context) pulumix.Output[GetRuleAction] {
-	return pulumix.Output[GetRuleAction]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A list of one or more Action objects.
@@ -495,12 +428,6 @@ func (o GetRuleActionArrayOutput) ToGetRuleActionArrayOutputWithContext(ctx cont
 	return o
 }
 
-func (o GetRuleActionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetRuleAction] {
-	return pulumix.Output[[]GetRuleAction]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetRuleActionArrayOutput) Index(i pulumi.IntInput) GetRuleActionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRuleAction {
 		return vs[0].([]GetRuleAction)[vs[1].(int)]
@@ -512,23 +439,23 @@ type GetRuleActionAction struct {
 	// * **ONS:** Send to an Oracle Notification Service topic.
 	// * **OSS:** Send to a stream from Oracle Streaming Service.
 	// * **FAAS:** Send to an Oracle Functions Service endpoint.
-	ActionType string `pulumi:"actionType"`
+	ActionType *string `pulumi:"actionType"`
 	// A string that describes the details of the rule. It does not have to be unique, and you can change it. Avoid entering confidential information.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Function hosted by Oracle Functions Service.
-	FunctionId string `pulumi:"functionId"`
+	FunctionId *string `pulumi:"functionId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this rule.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Whether or not this rule is currently enabled.  Example: `true`
-	IsEnabled bool `pulumi:"isEnabled"`
+	IsEnabled *bool `pulumi:"isEnabled"`
 	// A message generated by the Events service about the current state of this rule.
-	LifecycleMessage string `pulumi:"lifecycleMessage"`
+	LifecycleMessage *string `pulumi:"lifecycleMessage"`
 	// The current state of the rule.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream to which messages are delivered.
-	StreamId string `pulumi:"streamId"`
+	StreamId *string `pulumi:"streamId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic to which messages are delivered.
-	TopicId string `pulumi:"topicId"`
+	TopicId *string `pulumi:"topicId"`
 }
 
 // GetRuleActionActionInput is an input type that accepts GetRuleActionActionArgs and GetRuleActionActionOutput values.
@@ -547,23 +474,23 @@ type GetRuleActionActionArgs struct {
 	// * **ONS:** Send to an Oracle Notification Service topic.
 	// * **OSS:** Send to a stream from Oracle Streaming Service.
 	// * **FAAS:** Send to an Oracle Functions Service endpoint.
-	ActionType pulumi.StringInput `pulumi:"actionType"`
+	ActionType pulumi.StringPtrInput `pulumi:"actionType"`
 	// A string that describes the details of the rule. It does not have to be unique, and you can change it. Avoid entering confidential information.
-	Description pulumi.StringInput `pulumi:"description"`
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Function hosted by Oracle Functions Service.
-	FunctionId pulumi.StringInput `pulumi:"functionId"`
+	FunctionId pulumi.StringPtrInput `pulumi:"functionId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this rule.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// Whether or not this rule is currently enabled.  Example: `true`
-	IsEnabled pulumi.BoolInput `pulumi:"isEnabled"`
+	IsEnabled pulumi.BoolPtrInput `pulumi:"isEnabled"`
 	// A message generated by the Events service about the current state of this rule.
-	LifecycleMessage pulumi.StringInput `pulumi:"lifecycleMessage"`
+	LifecycleMessage pulumi.StringPtrInput `pulumi:"lifecycleMessage"`
 	// The current state of the rule.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream to which messages are delivered.
-	StreamId pulumi.StringInput `pulumi:"streamId"`
+	StreamId pulumi.StringPtrInput `pulumi:"streamId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic to which messages are delivered.
-	TopicId pulumi.StringInput `pulumi:"topicId"`
+	TopicId pulumi.StringPtrInput `pulumi:"topicId"`
 }
 
 func (GetRuleActionActionArgs) ElementType() reflect.Type {
@@ -576,12 +503,6 @@ func (i GetRuleActionActionArgs) ToGetRuleActionActionOutput() GetRuleActionActi
 
 func (i GetRuleActionActionArgs) ToGetRuleActionActionOutputWithContext(ctx context.Context) GetRuleActionActionOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetRuleActionActionOutput)
-}
-
-func (i GetRuleActionActionArgs) ToOutput(ctx context.Context) pulumix.Output[GetRuleActionAction] {
-	return pulumix.Output[GetRuleActionAction]{
-		OutputState: i.ToGetRuleActionActionOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetRuleActionActionArrayInput is an input type that accepts GetRuleActionActionArray and GetRuleActionActionArrayOutput values.
@@ -609,12 +530,6 @@ func (i GetRuleActionActionArray) ToGetRuleActionActionArrayOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(GetRuleActionActionArrayOutput)
 }
 
-func (i GetRuleActionActionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetRuleActionAction] {
-	return pulumix.Output[[]GetRuleActionAction]{
-		OutputState: i.ToGetRuleActionActionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetRuleActionActionOutput struct{ *pulumi.OutputState }
 
 func (GetRuleActionActionOutput) ElementType() reflect.Type {
@@ -629,58 +544,52 @@ func (o GetRuleActionActionOutput) ToGetRuleActionActionOutputWithContext(ctx co
 	return o
 }
 
-func (o GetRuleActionActionOutput) ToOutput(ctx context.Context) pulumix.Output[GetRuleActionAction] {
-	return pulumix.Output[GetRuleActionAction]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The action to perform if the condition in the rule matches an event.
 // * **ONS:** Send to an Oracle Notification Service topic.
 // * **OSS:** Send to a stream from Oracle Streaming Service.
 // * **FAAS:** Send to an Oracle Functions Service endpoint.
-func (o GetRuleActionActionOutput) ActionType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRuleActionAction) string { return v.ActionType }).(pulumi.StringOutput)
+func (o GetRuleActionActionOutput) ActionType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRuleActionAction) *string { return v.ActionType }).(pulumi.StringPtrOutput)
 }
 
 // A string that describes the details of the rule. It does not have to be unique, and you can change it. Avoid entering confidential information.
-func (o GetRuleActionActionOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRuleActionAction) string { return v.Description }).(pulumi.StringOutput)
+func (o GetRuleActionActionOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRuleActionAction) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Function hosted by Oracle Functions Service.
-func (o GetRuleActionActionOutput) FunctionId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRuleActionAction) string { return v.FunctionId }).(pulumi.StringOutput)
+func (o GetRuleActionActionOutput) FunctionId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRuleActionAction) *string { return v.FunctionId }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this rule.
-func (o GetRuleActionActionOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRuleActionAction) string { return v.Id }).(pulumi.StringOutput)
+func (o GetRuleActionActionOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRuleActionAction) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Whether or not this rule is currently enabled.  Example: `true`
-func (o GetRuleActionActionOutput) IsEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetRuleActionAction) bool { return v.IsEnabled }).(pulumi.BoolOutput)
+func (o GetRuleActionActionOutput) IsEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetRuleActionAction) *bool { return v.IsEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // A message generated by the Events service about the current state of this rule.
-func (o GetRuleActionActionOutput) LifecycleMessage() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRuleActionAction) string { return v.LifecycleMessage }).(pulumi.StringOutput)
+func (o GetRuleActionActionOutput) LifecycleMessage() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRuleActionAction) *string { return v.LifecycleMessage }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the rule.
-func (o GetRuleActionActionOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRuleActionAction) string { return v.State }).(pulumi.StringOutput)
+func (o GetRuleActionActionOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRuleActionAction) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream to which messages are delivered.
-func (o GetRuleActionActionOutput) StreamId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRuleActionAction) string { return v.StreamId }).(pulumi.StringOutput)
+func (o GetRuleActionActionOutput) StreamId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRuleActionAction) *string { return v.StreamId }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic to which messages are delivered.
-func (o GetRuleActionActionOutput) TopicId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRuleActionAction) string { return v.TopicId }).(pulumi.StringOutput)
+func (o GetRuleActionActionOutput) TopicId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRuleActionAction) *string { return v.TopicId }).(pulumi.StringPtrOutput)
 }
 
 type GetRuleActionActionArrayOutput struct{ *pulumi.OutputState }
@@ -695,12 +604,6 @@ func (o GetRuleActionActionArrayOutput) ToGetRuleActionActionArrayOutput() GetRu
 
 func (o GetRuleActionActionArrayOutput) ToGetRuleActionActionArrayOutputWithContext(ctx context.Context) GetRuleActionActionArrayOutput {
 	return o
-}
-
-func (o GetRuleActionActionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetRuleActionAction] {
-	return pulumix.Output[[]GetRuleActionAction]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetRuleActionActionArrayOutput) Index(i pulumi.IntInput) GetRuleActionActionOutput {
@@ -744,12 +647,6 @@ func (i GetRulesFilterArgs) ToGetRulesFilterOutputWithContext(ctx context.Contex
 	return pulumi.ToOutputWithContext(ctx, i).(GetRulesFilterOutput)
 }
 
-func (i GetRulesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetRulesFilter] {
-	return pulumix.Output[GetRulesFilter]{
-		OutputState: i.ToGetRulesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetRulesFilterArrayInput is an input type that accepts GetRulesFilterArray and GetRulesFilterArrayOutput values.
 // You can construct a concrete instance of `GetRulesFilterArrayInput` via:
 //
@@ -775,12 +672,6 @@ func (i GetRulesFilterArray) ToGetRulesFilterArrayOutputWithContext(ctx context.
 	return pulumi.ToOutputWithContext(ctx, i).(GetRulesFilterArrayOutput)
 }
 
-func (i GetRulesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetRulesFilter] {
-	return pulumix.Output[[]GetRulesFilter]{
-		OutputState: i.ToGetRulesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetRulesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetRulesFilterOutput) ElementType() reflect.Type {
@@ -793,12 +684,6 @@ func (o GetRulesFilterOutput) ToGetRulesFilterOutput() GetRulesFilterOutput {
 
 func (o GetRulesFilterOutput) ToGetRulesFilterOutputWithContext(ctx context.Context) GetRulesFilterOutput {
 	return o
-}
-
-func (o GetRulesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetRulesFilter] {
-	return pulumix.Output[GetRulesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetRulesFilterOutput) Name() pulumi.StringOutput {
@@ -827,12 +712,6 @@ func (o GetRulesFilterArrayOutput) ToGetRulesFilterArrayOutputWithContext(ctx co
 	return o
 }
 
-func (o GetRulesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetRulesFilter] {
-	return pulumix.Output[[]GetRulesFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetRulesFilterArrayOutput) Index(i pulumi.IntInput) GetRulesFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRulesFilter {
 		return vs[0].([]GetRulesFilter)[vs[1].(int)]
@@ -843,28 +722,28 @@ type GetRulesRule struct {
 	// A list of one or more Action objects.
 	Actions []GetRulesRuleAction `pulumi:"actions"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to which this rule belongs.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// A filter that specifies the event that will trigger actions associated with this rule. A few  important things to remember about filters:
 	// * Fields not mentioned in the condition are ignored. You can create a valid filter that matches all events with two curly brackets: `{}`
-	Condition string `pulumi:"condition"`
+	Condition *string `pulumi:"condition"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A string that describes the details of the rule. It does not have to be unique, and you can change it. Avoid entering confidential information.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// A filter to return only rules with descriptions that match the displayName string in this parameter.  Example: `"This rule sends a notification upon completion of DbaaS backup."`
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. Exists for cross-compatibility only. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this rule.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Whether or not this rule is currently enabled.  Example: `true`
-	IsEnabled bool `pulumi:"isEnabled"`
+	IsEnabled *bool `pulumi:"isEnabled"`
 	// A message generated by the Events service about the current state of this rule.
-	LifecycleMessage string `pulumi:"lifecycleMessage"`
+	LifecycleMessage *string `pulumi:"lifecycleMessage"`
 	// A filter to return only rules that match the lifecycle state in this parameter.  Example: `Creating`
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The time this rule was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-09-12T22:47:12.613Z`
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 }
 
 // GetRulesRuleInput is an input type that accepts GetRulesRuleArgs and GetRulesRuleOutput values.
@@ -882,28 +761,28 @@ type GetRulesRuleArgs struct {
 	// A list of one or more Action objects.
 	Actions GetRulesRuleActionArrayInput `pulumi:"actions"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to which this rule belongs.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// A filter that specifies the event that will trigger actions associated with this rule. A few  important things to remember about filters:
 	// * Fields not mentioned in the condition are ignored. You can create a valid filter that matches all events with two curly brackets: `{}`
-	Condition pulumi.StringInput `pulumi:"condition"`
+	Condition pulumi.StringPtrInput `pulumi:"condition"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// A string that describes the details of the rule. It does not have to be unique, and you can change it. Avoid entering confidential information.
-	Description pulumi.StringInput `pulumi:"description"`
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// A filter to return only rules with descriptions that match the displayName string in this parameter.  Example: `"This rule sends a notification upon completion of DbaaS backup."`
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. Exists for cross-compatibility only. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this rule.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// Whether or not this rule is currently enabled.  Example: `true`
-	IsEnabled pulumi.BoolInput `pulumi:"isEnabled"`
+	IsEnabled pulumi.BoolPtrInput `pulumi:"isEnabled"`
 	// A message generated by the Events service about the current state of this rule.
-	LifecycleMessage pulumi.StringInput `pulumi:"lifecycleMessage"`
+	LifecycleMessage pulumi.StringPtrInput `pulumi:"lifecycleMessage"`
 	// A filter to return only rules that match the lifecycle state in this parameter.  Example: `Creating`
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// The time this rule was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-09-12T22:47:12.613Z`
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 }
 
 func (GetRulesRuleArgs) ElementType() reflect.Type {
@@ -916,12 +795,6 @@ func (i GetRulesRuleArgs) ToGetRulesRuleOutput() GetRulesRuleOutput {
 
 func (i GetRulesRuleArgs) ToGetRulesRuleOutputWithContext(ctx context.Context) GetRulesRuleOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetRulesRuleOutput)
-}
-
-func (i GetRulesRuleArgs) ToOutput(ctx context.Context) pulumix.Output[GetRulesRule] {
-	return pulumix.Output[GetRulesRule]{
-		OutputState: i.ToGetRulesRuleOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetRulesRuleArrayInput is an input type that accepts GetRulesRuleArray and GetRulesRuleArrayOutput values.
@@ -949,12 +822,6 @@ func (i GetRulesRuleArray) ToGetRulesRuleArrayOutputWithContext(ctx context.Cont
 	return pulumi.ToOutputWithContext(ctx, i).(GetRulesRuleArrayOutput)
 }
 
-func (i GetRulesRuleArray) ToOutput(ctx context.Context) pulumix.Output[[]GetRulesRule] {
-	return pulumix.Output[[]GetRulesRule]{
-		OutputState: i.ToGetRulesRuleArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetRulesRuleOutput struct{ *pulumi.OutputState }
 
 func (GetRulesRuleOutput) ElementType() reflect.Type {
@@ -969,26 +836,20 @@ func (o GetRulesRuleOutput) ToGetRulesRuleOutputWithContext(ctx context.Context)
 	return o
 }
 
-func (o GetRulesRuleOutput) ToOutput(ctx context.Context) pulumix.Output[GetRulesRule] {
-	return pulumix.Output[GetRulesRule]{
-		OutputState: o.OutputState,
-	}
-}
-
 // A list of one or more Action objects.
 func (o GetRulesRuleOutput) Actions() GetRulesRuleActionArrayOutput {
 	return o.ApplyT(func(v GetRulesRule) []GetRulesRuleAction { return v.Actions }).(GetRulesRuleActionArrayOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to which this rule belongs.
-func (o GetRulesRuleOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRulesRule) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetRulesRuleOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRulesRule) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // A filter that specifies the event that will trigger actions associated with this rule. A few  important things to remember about filters:
 // * Fields not mentioned in the condition are ignored. You can create a valid filter that matches all events with two curly brackets: `{}`
-func (o GetRulesRuleOutput) Condition() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRulesRule) string { return v.Condition }).(pulumi.StringOutput)
+func (o GetRulesRuleOutput) Condition() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRulesRule) *string { return v.Condition }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -997,13 +858,13 @@ func (o GetRulesRuleOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // A string that describes the details of the rule. It does not have to be unique, and you can change it. Avoid entering confidential information.
-func (o GetRulesRuleOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRulesRule) string { return v.Description }).(pulumi.StringOutput)
+func (o GetRulesRuleOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRulesRule) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // A filter to return only rules with descriptions that match the displayName string in this parameter.  Example: `"This rule sends a notification upon completion of DbaaS backup."`
-func (o GetRulesRuleOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRulesRule) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetRulesRuleOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRulesRule) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. Exists for cross-compatibility only. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -1012,28 +873,28 @@ func (o GetRulesRuleOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this rule.
-func (o GetRulesRuleOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRulesRule) string { return v.Id }).(pulumi.StringOutput)
+func (o GetRulesRuleOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRulesRule) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Whether or not this rule is currently enabled.  Example: `true`
-func (o GetRulesRuleOutput) IsEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetRulesRule) bool { return v.IsEnabled }).(pulumi.BoolOutput)
+func (o GetRulesRuleOutput) IsEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetRulesRule) *bool { return v.IsEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // A message generated by the Events service about the current state of this rule.
-func (o GetRulesRuleOutput) LifecycleMessage() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRulesRule) string { return v.LifecycleMessage }).(pulumi.StringOutput)
+func (o GetRulesRuleOutput) LifecycleMessage() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRulesRule) *string { return v.LifecycleMessage }).(pulumi.StringPtrOutput)
 }
 
 // A filter to return only rules that match the lifecycle state in this parameter.  Example: `Creating`
-func (o GetRulesRuleOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRulesRule) string { return v.State }).(pulumi.StringOutput)
+func (o GetRulesRuleOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRulesRule) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The time this rule was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-09-12T22:47:12.613Z`
-func (o GetRulesRuleOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRulesRule) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetRulesRuleOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRulesRule) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 type GetRulesRuleArrayOutput struct{ *pulumi.OutputState }
@@ -1048,12 +909,6 @@ func (o GetRulesRuleArrayOutput) ToGetRulesRuleArrayOutput() GetRulesRuleArrayOu
 
 func (o GetRulesRuleArrayOutput) ToGetRulesRuleArrayOutputWithContext(ctx context.Context) GetRulesRuleArrayOutput {
 	return o
-}
-
-func (o GetRulesRuleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetRulesRule] {
-	return pulumix.Output[[]GetRulesRule]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetRulesRuleArrayOutput) Index(i pulumi.IntInput) GetRulesRuleOutput {
@@ -1095,12 +950,6 @@ func (i GetRulesRuleActionArgs) ToGetRulesRuleActionOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(GetRulesRuleActionOutput)
 }
 
-func (i GetRulesRuleActionArgs) ToOutput(ctx context.Context) pulumix.Output[GetRulesRuleAction] {
-	return pulumix.Output[GetRulesRuleAction]{
-		OutputState: i.ToGetRulesRuleActionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetRulesRuleActionArrayInput is an input type that accepts GetRulesRuleActionArray and GetRulesRuleActionArrayOutput values.
 // You can construct a concrete instance of `GetRulesRuleActionArrayInput` via:
 //
@@ -1126,12 +975,6 @@ func (i GetRulesRuleActionArray) ToGetRulesRuleActionArrayOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(GetRulesRuleActionArrayOutput)
 }
 
-func (i GetRulesRuleActionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetRulesRuleAction] {
-	return pulumix.Output[[]GetRulesRuleAction]{
-		OutputState: i.ToGetRulesRuleActionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetRulesRuleActionOutput struct{ *pulumi.OutputState }
 
 func (GetRulesRuleActionOutput) ElementType() reflect.Type {
@@ -1144,12 +987,6 @@ func (o GetRulesRuleActionOutput) ToGetRulesRuleActionOutput() GetRulesRuleActio
 
 func (o GetRulesRuleActionOutput) ToGetRulesRuleActionOutputWithContext(ctx context.Context) GetRulesRuleActionOutput {
 	return o
-}
-
-func (o GetRulesRuleActionOutput) ToOutput(ctx context.Context) pulumix.Output[GetRulesRuleAction] {
-	return pulumix.Output[GetRulesRuleAction]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A list of one or more Action objects.
@@ -1171,12 +1008,6 @@ func (o GetRulesRuleActionArrayOutput) ToGetRulesRuleActionArrayOutputWithContex
 	return o
 }
 
-func (o GetRulesRuleActionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetRulesRuleAction] {
-	return pulumix.Output[[]GetRulesRuleAction]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetRulesRuleActionArrayOutput) Index(i pulumi.IntInput) GetRulesRuleActionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRulesRuleAction {
 		return vs[0].([]GetRulesRuleAction)[vs[1].(int)]
@@ -1188,23 +1019,23 @@ type GetRulesRuleActionAction struct {
 	// * **ONS:** Send to an Oracle Notification Service topic.
 	// * **OSS:** Send to a stream from Oracle Streaming Service.
 	// * **FAAS:** Send to an Oracle Functions Service endpoint.
-	ActionType string `pulumi:"actionType"`
+	ActionType *string `pulumi:"actionType"`
 	// A string that describes the details of the rule. It does not have to be unique, and you can change it. Avoid entering confidential information.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Function hosted by Oracle Functions Service.
-	FunctionId string `pulumi:"functionId"`
+	FunctionId *string `pulumi:"functionId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this rule.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Whether or not this rule is currently enabled.  Example: `true`
-	IsEnabled bool `pulumi:"isEnabled"`
+	IsEnabled *bool `pulumi:"isEnabled"`
 	// A message generated by the Events service about the current state of this rule.
-	LifecycleMessage string `pulumi:"lifecycleMessage"`
+	LifecycleMessage *string `pulumi:"lifecycleMessage"`
 	// A filter to return only rules that match the lifecycle state in this parameter.  Example: `Creating`
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream to which messages are delivered.
-	StreamId string `pulumi:"streamId"`
+	StreamId *string `pulumi:"streamId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic to which messages are delivered.
-	TopicId string `pulumi:"topicId"`
+	TopicId *string `pulumi:"topicId"`
 }
 
 // GetRulesRuleActionActionInput is an input type that accepts GetRulesRuleActionActionArgs and GetRulesRuleActionActionOutput values.
@@ -1223,23 +1054,23 @@ type GetRulesRuleActionActionArgs struct {
 	// * **ONS:** Send to an Oracle Notification Service topic.
 	// * **OSS:** Send to a stream from Oracle Streaming Service.
 	// * **FAAS:** Send to an Oracle Functions Service endpoint.
-	ActionType pulumi.StringInput `pulumi:"actionType"`
+	ActionType pulumi.StringPtrInput `pulumi:"actionType"`
 	// A string that describes the details of the rule. It does not have to be unique, and you can change it. Avoid entering confidential information.
-	Description pulumi.StringInput `pulumi:"description"`
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Function hosted by Oracle Functions Service.
-	FunctionId pulumi.StringInput `pulumi:"functionId"`
+	FunctionId pulumi.StringPtrInput `pulumi:"functionId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this rule.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// Whether or not this rule is currently enabled.  Example: `true`
-	IsEnabled pulumi.BoolInput `pulumi:"isEnabled"`
+	IsEnabled pulumi.BoolPtrInput `pulumi:"isEnabled"`
 	// A message generated by the Events service about the current state of this rule.
-	LifecycleMessage pulumi.StringInput `pulumi:"lifecycleMessage"`
+	LifecycleMessage pulumi.StringPtrInput `pulumi:"lifecycleMessage"`
 	// A filter to return only rules that match the lifecycle state in this parameter.  Example: `Creating`
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream to which messages are delivered.
-	StreamId pulumi.StringInput `pulumi:"streamId"`
+	StreamId pulumi.StringPtrInput `pulumi:"streamId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic to which messages are delivered.
-	TopicId pulumi.StringInput `pulumi:"topicId"`
+	TopicId pulumi.StringPtrInput `pulumi:"topicId"`
 }
 
 func (GetRulesRuleActionActionArgs) ElementType() reflect.Type {
@@ -1252,12 +1083,6 @@ func (i GetRulesRuleActionActionArgs) ToGetRulesRuleActionActionOutput() GetRule
 
 func (i GetRulesRuleActionActionArgs) ToGetRulesRuleActionActionOutputWithContext(ctx context.Context) GetRulesRuleActionActionOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetRulesRuleActionActionOutput)
-}
-
-func (i GetRulesRuleActionActionArgs) ToOutput(ctx context.Context) pulumix.Output[GetRulesRuleActionAction] {
-	return pulumix.Output[GetRulesRuleActionAction]{
-		OutputState: i.ToGetRulesRuleActionActionOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetRulesRuleActionActionArrayInput is an input type that accepts GetRulesRuleActionActionArray and GetRulesRuleActionActionArrayOutput values.
@@ -1285,12 +1110,6 @@ func (i GetRulesRuleActionActionArray) ToGetRulesRuleActionActionArrayOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetRulesRuleActionActionArrayOutput)
 }
 
-func (i GetRulesRuleActionActionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetRulesRuleActionAction] {
-	return pulumix.Output[[]GetRulesRuleActionAction]{
-		OutputState: i.ToGetRulesRuleActionActionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetRulesRuleActionActionOutput struct{ *pulumi.OutputState }
 
 func (GetRulesRuleActionActionOutput) ElementType() reflect.Type {
@@ -1305,58 +1124,52 @@ func (o GetRulesRuleActionActionOutput) ToGetRulesRuleActionActionOutputWithCont
 	return o
 }
 
-func (o GetRulesRuleActionActionOutput) ToOutput(ctx context.Context) pulumix.Output[GetRulesRuleActionAction] {
-	return pulumix.Output[GetRulesRuleActionAction]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The action to perform if the condition in the rule matches an event.
 // * **ONS:** Send to an Oracle Notification Service topic.
 // * **OSS:** Send to a stream from Oracle Streaming Service.
 // * **FAAS:** Send to an Oracle Functions Service endpoint.
-func (o GetRulesRuleActionActionOutput) ActionType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRulesRuleActionAction) string { return v.ActionType }).(pulumi.StringOutput)
+func (o GetRulesRuleActionActionOutput) ActionType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRulesRuleActionAction) *string { return v.ActionType }).(pulumi.StringPtrOutput)
 }
 
 // A string that describes the details of the rule. It does not have to be unique, and you can change it. Avoid entering confidential information.
-func (o GetRulesRuleActionActionOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRulesRuleActionAction) string { return v.Description }).(pulumi.StringOutput)
+func (o GetRulesRuleActionActionOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRulesRuleActionAction) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Function hosted by Oracle Functions Service.
-func (o GetRulesRuleActionActionOutput) FunctionId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRulesRuleActionAction) string { return v.FunctionId }).(pulumi.StringOutput)
+func (o GetRulesRuleActionActionOutput) FunctionId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRulesRuleActionAction) *string { return v.FunctionId }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this rule.
-func (o GetRulesRuleActionActionOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRulesRuleActionAction) string { return v.Id }).(pulumi.StringOutput)
+func (o GetRulesRuleActionActionOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRulesRuleActionAction) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Whether or not this rule is currently enabled.  Example: `true`
-func (o GetRulesRuleActionActionOutput) IsEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetRulesRuleActionAction) bool { return v.IsEnabled }).(pulumi.BoolOutput)
+func (o GetRulesRuleActionActionOutput) IsEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetRulesRuleActionAction) *bool { return v.IsEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // A message generated by the Events service about the current state of this rule.
-func (o GetRulesRuleActionActionOutput) LifecycleMessage() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRulesRuleActionAction) string { return v.LifecycleMessage }).(pulumi.StringOutput)
+func (o GetRulesRuleActionActionOutput) LifecycleMessage() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRulesRuleActionAction) *string { return v.LifecycleMessage }).(pulumi.StringPtrOutput)
 }
 
 // A filter to return only rules that match the lifecycle state in this parameter.  Example: `Creating`
-func (o GetRulesRuleActionActionOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRulesRuleActionAction) string { return v.State }).(pulumi.StringOutput)
+func (o GetRulesRuleActionActionOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRulesRuleActionAction) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream to which messages are delivered.
-func (o GetRulesRuleActionActionOutput) StreamId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRulesRuleActionAction) string { return v.StreamId }).(pulumi.StringOutput)
+func (o GetRulesRuleActionActionOutput) StreamId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRulesRuleActionAction) *string { return v.StreamId }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic to which messages are delivered.
-func (o GetRulesRuleActionActionOutput) TopicId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRulesRuleActionAction) string { return v.TopicId }).(pulumi.StringOutput)
+func (o GetRulesRuleActionActionOutput) TopicId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRulesRuleActionAction) *string { return v.TopicId }).(pulumi.StringPtrOutput)
 }
 
 type GetRulesRuleActionActionArrayOutput struct{ *pulumi.OutputState }
@@ -1371,12 +1184,6 @@ func (o GetRulesRuleActionActionArrayOutput) ToGetRulesRuleActionActionArrayOutp
 
 func (o GetRulesRuleActionActionArrayOutput) ToGetRulesRuleActionActionArrayOutputWithContext(ctx context.Context) GetRulesRuleActionActionArrayOutput {
 	return o
-}
-
-func (o GetRulesRuleActionActionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetRulesRuleActionAction] {
-	return pulumix.Output[[]GetRulesRuleActionAction]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetRulesRuleActionActionArrayOutput) Index(i pulumi.IntInput) GetRulesRuleActionActionOutput {

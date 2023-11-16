@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabaseUserRolesRoleCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetManagedDatabaseUserRolesRoleCollection {
@@ -14,7 +15,7 @@ public final class GetManagedDatabaseUserRolesRoleCollection {
      * @return An array of roles.
      * 
      */
-    private List<GetManagedDatabaseUserRolesRoleCollectionItem> items;
+    private @Nullable List<GetManagedDatabaseUserRolesRoleCollectionItem> items;
 
     private GetManagedDatabaseUserRolesRoleCollection() {}
     /**
@@ -22,7 +23,7 @@ public final class GetManagedDatabaseUserRolesRoleCollection {
      * 
      */
     public List<GetManagedDatabaseUserRolesRoleCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -34,7 +35,7 @@ public final class GetManagedDatabaseUserRolesRoleCollection {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetManagedDatabaseUserRolesRoleCollectionItem> items;
+        private @Nullable List<GetManagedDatabaseUserRolesRoleCollectionItem> items;
         public Builder() {}
         public Builder(GetManagedDatabaseUserRolesRoleCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -42,8 +43,8 @@ public final class GetManagedDatabaseUserRolesRoleCollection {
         }
 
         @CustomType.Setter
-        public Builder items(List<GetManagedDatabaseUserRolesRoleCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetManagedDatabaseUserRolesRoleCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetManagedDatabaseUserRolesRoleCollectionItem... items) {

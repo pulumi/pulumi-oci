@@ -55,11 +55,11 @@ export interface GetIamWorkRequestLogsResult {
     /**
      * The list of iam_work_request_logs.
      */
-    readonly iamWorkRequestLogs: outputs.Identity.GetIamWorkRequestLogsIamWorkRequestLog[];
+    readonly iamWorkRequestLogs?: outputs.Identity.GetIamWorkRequestLogsIamWorkRequestLog[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
 }
 /**
  * This data source provides the list of Iam Work Request Logs in Oracle Cloud Infrastructure Identity service.

@@ -46,9 +46,6 @@ class GetDedicatedVmHostShapesResult:
     @property
     @pulumi.getter(name="availabilityDomain")
     def availability_domain(self) -> Optional[str]:
-        """
-        The shape's availability domain.
-        """
         return pulumi.get(self, "availability_domain")
 
     @property
@@ -58,10 +55,7 @@ class GetDedicatedVmHostShapesResult:
 
     @property
     @pulumi.getter(name="dedicatedVmHostShapes")
-    def dedicated_vm_host_shapes(self) -> Sequence['outputs.GetDedicatedVmHostShapesDedicatedVmHostShapeResult']:
-        """
-        The list of dedicated_vm_host_shapes.
-        """
+    def dedicated_vm_host_shapes(self) -> Optional[Sequence['outputs.GetDedicatedVmHostShapesDedicatedVmHostShapeResult']]:
         return pulumi.get(self, "dedicated_vm_host_shapes")
 
     @property
@@ -71,7 +65,7 @@ class GetDedicatedVmHostShapesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -103,25 +97,7 @@ def get_dedicated_vm_host_shapes(availability_domain: Optional[str] = None,
                                  instance_shape_name: Optional[str] = None,
                                  opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDedicatedVmHostShapesResult:
     """
-    This data source provides the list of Dedicated Vm Host Shapes in Oracle Cloud Infrastructure Core service.
-
-    Lists the shapes that can be used to launch a dedicated virtual machine host within the specified compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_dedicated_vm_host_shapes = oci.Core.get_dedicated_vm_host_shapes(compartment_id=var["compartment_id"],
-        availability_domain=var["dedicated_vm_host_shape_availability_domain"],
-        instance_shape_name=var["dedicated_vm_host_shape_instance_shape_name"])
-    ```
-
-
-    :param str availability_domain: The name of the availability domain.  Example: `Uocm:PHX-AD-1`
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param str instance_shape_name: The name for the instance's shape.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['availabilityDomain'] = availability_domain
@@ -147,24 +123,6 @@ def get_dedicated_vm_host_shapes_output(availability_domain: Optional[pulumi.Inp
                                         instance_shape_name: Optional[pulumi.Input[Optional[str]]] = None,
                                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDedicatedVmHostShapesResult]:
     """
-    This data source provides the list of Dedicated Vm Host Shapes in Oracle Cloud Infrastructure Core service.
-
-    Lists the shapes that can be used to launch a dedicated virtual machine host within the specified compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_dedicated_vm_host_shapes = oci.Core.get_dedicated_vm_host_shapes(compartment_id=var["compartment_id"],
-        availability_domain=var["dedicated_vm_host_shape_availability_domain"],
-        instance_shape_name=var["dedicated_vm_host_shape_instance_shape_name"])
-    ```
-
-
-    :param str availability_domain: The name of the availability domain.  Example: `Uocm:PHX-AD-1`
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param str instance_shape_name: The name for the instance's shape.
+    Use this data source to access information about an existing resource.
     """
     ...

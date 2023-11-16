@@ -9,6 +9,7 @@ import com.pulumi.oci.OspGateway.outputs.GetInvoicesInvoiceLinesInvoiceLineColle
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 @CustomType
@@ -19,13 +20,13 @@ public final class GetInvoicesInvoiceLinesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private String internalInvoiceId;
     /**
      * @return The list of invoice_line_collection.
      * 
      */
-    private List<GetInvoicesInvoiceLinesInvoiceLineCollection> invoiceLineCollections;
+    private @Nullable List<GetInvoicesInvoiceLinesInvoiceLineCollection> invoiceLineCollections;
     private String ospHomeRegion;
 
     private GetInvoicesInvoiceLinesResult() {}
@@ -39,8 +40,8 @@ public final class GetInvoicesInvoiceLinesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public String internalInvoiceId() {
         return this.internalInvoiceId;
@@ -50,7 +51,7 @@ public final class GetInvoicesInvoiceLinesResult {
      * 
      */
     public List<GetInvoicesInvoiceLinesInvoiceLineCollection> invoiceLineCollections() {
-        return this.invoiceLineCollections;
+        return this.invoiceLineCollections == null ? List.of() : this.invoiceLineCollections;
     }
     public String ospHomeRegion() {
         return this.ospHomeRegion;
@@ -67,9 +68,9 @@ public final class GetInvoicesInvoiceLinesResult {
     public static final class Builder {
         private String compartmentId;
         private @Nullable List<GetInvoicesInvoiceLinesFilter> filters;
-        private String id;
+        private @Nullable String id;
         private String internalInvoiceId;
-        private List<GetInvoicesInvoiceLinesInvoiceLineCollection> invoiceLineCollections;
+        private @Nullable List<GetInvoicesInvoiceLinesInvoiceLineCollection> invoiceLineCollections;
         private String ospHomeRegion;
         public Builder() {}
         public Builder(GetInvoicesInvoiceLinesResult defaults) {
@@ -96,8 +97,8 @@ public final class GetInvoicesInvoiceLinesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -106,8 +107,8 @@ public final class GetInvoicesInvoiceLinesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder invoiceLineCollections(List<GetInvoicesInvoiceLinesInvoiceLineCollection> invoiceLineCollections) {
-            this.invoiceLineCollections = Objects.requireNonNull(invoiceLineCollections);
+        public Builder invoiceLineCollections(@Nullable List<GetInvoicesInvoiceLinesInvoiceLineCollection> invoiceLineCollections) {
+            this.invoiceLineCollections = invoiceLineCollections;
             return this;
         }
         public Builder invoiceLineCollections(GetInvoicesInvoiceLinesInvoiceLineCollection... invoiceLineCollections) {

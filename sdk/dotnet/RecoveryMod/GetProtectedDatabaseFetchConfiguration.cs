@@ -132,11 +132,11 @@ namespace Pulumi.Oci.RecoveryMod
         /// <summary>
         /// content of the downloaded config file for recovery service. It is base64 encoded by default. To store the config in plaintext set `base_64_encode_content` to false.
         /// </summary>
-        public readonly string Content;
+        public readonly string? Content;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         public readonly string ProtectedDatabaseId;
 
         [OutputConstructor]
@@ -145,9 +145,9 @@ namespace Pulumi.Oci.RecoveryMod
 
             string? configurationType,
 
-            string content,
+            string? content,
 
-            string id,
+            string? id,
 
             string protectedDatabaseId)
         {

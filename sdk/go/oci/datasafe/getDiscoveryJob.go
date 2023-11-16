@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Discovery Job resource in Oracle Cloud Infrastructure Data Safe service.
@@ -60,54 +59,54 @@ type GetDiscoveryJobArgs struct {
 // A collection of values returned by getDiscoveryJob.
 type GetDiscoveryJobResult struct {
 	// The OCID of the compartment that contains the discovery job.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags    map[string]interface{} `pulumi:"definedTags"`
 	DiscoveryJobId string                 `pulumi:"discoveryJobId"`
 	// The type of the discovery job. It defines the job's scope. NEW identifies new sensitive columns in the target database that are not in the sensitive data model. DELETED identifies columns that are present in the sensitive data model but have been deleted from the target database. MODIFIED identifies columns that are present in the target database as well as the sensitive data model but some of their attributes have been modified. ALL covers all the above three scenarios and reports new, deleted and modified columns.
-	DiscoveryType string `pulumi:"discoveryType"`
+	DiscoveryType *string `pulumi:"discoveryType"`
 	// The display name of the discovery job.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The OCID of the discovery job.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Indicates if the discovery job should identify potential application-level (non-dictionary) referential relationships between columns. Note that data discovery automatically identifies and adds database-level (dictionary-defined) relationships. This option helps identify application-level relationships that are not defined in the database dictionary, which in turn, helps identify additional sensitive columns and preserve referential integrity during data masking. It's disabled by default and should be used only if there is a need to identify application-level relationships.
-	IsAppDefinedRelationDiscoveryEnabled bool `pulumi:"isAppDefinedRelationDiscoveryEnabled"`
+	IsAppDefinedRelationDiscoveryEnabled *bool `pulumi:"isAppDefinedRelationDiscoveryEnabled"`
 	// Indicates if all the schemas in the associated target database are used for data discovery. If it is set to true, sensitive data is discovered in all schemas (except for schemas maintained by Oracle).
-	IsIncludeAllSchemas bool `pulumi:"isIncludeAllSchemas"`
+	IsIncludeAllSchemas *bool `pulumi:"isIncludeAllSchemas"`
 	// Indicates if all the existing sensitive types are used for data discovery. If it's set to true, the sensitiveTypeIdsForDiscovery attribute is ignored and all sensitive types are used.
-	IsIncludeAllSensitiveTypes bool `pulumi:"isIncludeAllSensitiveTypes"`
+	IsIncludeAllSensitiveTypes *bool `pulumi:"isIncludeAllSensitiveTypes"`
 	// Indicates if the discovery job should collect and store sample data values for the discovered columns. Sample data helps review the discovered columns and ensure that they actually contain sensitive data. As it collects original data from the target database, it's disabled by default and should be used only if it's acceptable to store sample data in Data Safe's repository in Oracle Cloud. Note that sample data values are not collected for columns with the following data types: LONG, LOB, RAW, XMLTYPE and BFILE.
-	IsSampleDataCollectionEnabled bool `pulumi:"isSampleDataCollectionEnabled"`
+	IsSampleDataCollectionEnabled *bool `pulumi:"isSampleDataCollectionEnabled"`
 	// The schemas used for data discovery.
 	SchemasForDiscoveries []string `pulumi:"schemasForDiscoveries"`
 	// The OCID of the sensitive data model associated with the discovery job.
-	SensitiveDataModelId string `pulumi:"sensitiveDataModelId"`
+	SensitiveDataModelId *string `pulumi:"sensitiveDataModelId"`
 	// The OCIDs of the sensitive types used for data discovery.
 	SensitiveTypeIdsForDiscoveries []string `pulumi:"sensitiveTypeIdsForDiscoveries"`
 	// The current state of the discovery job.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The OCID of the target database associated with the discovery job.
-	TargetId string `pulumi:"targetId"`
+	TargetId *string `pulumi:"targetId"`
 	// The date and time the discovery job finished, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)..
-	TimeFinished string `pulumi:"timeFinished"`
+	TimeFinished *string `pulumi:"timeFinished"`
 	// The date and time the discovery job started, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-	TimeStarted string `pulumi:"timeStarted"`
+	TimeStarted *string `pulumi:"timeStarted"`
 	// The total number of columns scanned by the discovery job.
-	TotalColumnsScanned string `pulumi:"totalColumnsScanned"`
+	TotalColumnsScanned *string `pulumi:"totalColumnsScanned"`
 	// The total number of deleted sensitive columns identified by the discovery job.
-	TotalDeletedSensitiveColumns string `pulumi:"totalDeletedSensitiveColumns"`
+	TotalDeletedSensitiveColumns *string `pulumi:"totalDeletedSensitiveColumns"`
 	// The total number of modified sensitive columns identified by the discovery job.
-	TotalModifiedSensitiveColumns string `pulumi:"totalModifiedSensitiveColumns"`
+	TotalModifiedSensitiveColumns *string `pulumi:"totalModifiedSensitiveColumns"`
 	// The total number of new sensitive columns identified by the discovery job.
-	TotalNewSensitiveColumns string `pulumi:"totalNewSensitiveColumns"`
+	TotalNewSensitiveColumns *string `pulumi:"totalNewSensitiveColumns"`
 	// The total number of objects (tables and editioning views) scanned by the discovery job.
-	TotalObjectsScanned string `pulumi:"totalObjectsScanned"`
+	TotalObjectsScanned *string `pulumi:"totalObjectsScanned"`
 	// The total number of schemas scanned by the discovery job.
-	TotalSchemasScanned string `pulumi:"totalSchemasScanned"`
+	TotalSchemasScanned *string `pulumi:"totalSchemasScanned"`
 }
 
 func GetDiscoveryJobOutput(ctx *pulumi.Context, args GetDiscoveryJobOutputArgs, opts ...pulumi.InvokeOption) GetDiscoveryJobResultOutput {
@@ -148,15 +147,9 @@ func (o GetDiscoveryJobResultOutput) ToGetDiscoveryJobResultOutputWithContext(ct
 	return o
 }
 
-func (o GetDiscoveryJobResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDiscoveryJobResult] {
-	return pulumix.Output[GetDiscoveryJobResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the compartment that contains the discovery job.
-func (o GetDiscoveryJobResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDiscoveryJobResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetDiscoveryJobResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDiscoveryJobResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
@@ -169,13 +162,13 @@ func (o GetDiscoveryJobResultOutput) DiscoveryJobId() pulumi.StringOutput {
 }
 
 // The type of the discovery job. It defines the job's scope. NEW identifies new sensitive columns in the target database that are not in the sensitive data model. DELETED identifies columns that are present in the sensitive data model but have been deleted from the target database. MODIFIED identifies columns that are present in the target database as well as the sensitive data model but some of their attributes have been modified. ALL covers all the above three scenarios and reports new, deleted and modified columns.
-func (o GetDiscoveryJobResultOutput) DiscoveryType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDiscoveryJobResult) string { return v.DiscoveryType }).(pulumi.StringOutput)
+func (o GetDiscoveryJobResultOutput) DiscoveryType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDiscoveryJobResult) *string { return v.DiscoveryType }).(pulumi.StringPtrOutput)
 }
 
 // The display name of the discovery job.
-func (o GetDiscoveryJobResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDiscoveryJobResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetDiscoveryJobResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDiscoveryJobResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
@@ -184,28 +177,28 @@ func (o GetDiscoveryJobResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The OCID of the discovery job.
-func (o GetDiscoveryJobResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDiscoveryJobResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetDiscoveryJobResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDiscoveryJobResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Indicates if the discovery job should identify potential application-level (non-dictionary) referential relationships between columns. Note that data discovery automatically identifies and adds database-level (dictionary-defined) relationships. This option helps identify application-level relationships that are not defined in the database dictionary, which in turn, helps identify additional sensitive columns and preserve referential integrity during data masking. It's disabled by default and should be used only if there is a need to identify application-level relationships.
-func (o GetDiscoveryJobResultOutput) IsAppDefinedRelationDiscoveryEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetDiscoveryJobResult) bool { return v.IsAppDefinedRelationDiscoveryEnabled }).(pulumi.BoolOutput)
+func (o GetDiscoveryJobResultOutput) IsAppDefinedRelationDiscoveryEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetDiscoveryJobResult) *bool { return v.IsAppDefinedRelationDiscoveryEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // Indicates if all the schemas in the associated target database are used for data discovery. If it is set to true, sensitive data is discovered in all schemas (except for schemas maintained by Oracle).
-func (o GetDiscoveryJobResultOutput) IsIncludeAllSchemas() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetDiscoveryJobResult) bool { return v.IsIncludeAllSchemas }).(pulumi.BoolOutput)
+func (o GetDiscoveryJobResultOutput) IsIncludeAllSchemas() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetDiscoveryJobResult) *bool { return v.IsIncludeAllSchemas }).(pulumi.BoolPtrOutput)
 }
 
 // Indicates if all the existing sensitive types are used for data discovery. If it's set to true, the sensitiveTypeIdsForDiscovery attribute is ignored and all sensitive types are used.
-func (o GetDiscoveryJobResultOutput) IsIncludeAllSensitiveTypes() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetDiscoveryJobResult) bool { return v.IsIncludeAllSensitiveTypes }).(pulumi.BoolOutput)
+func (o GetDiscoveryJobResultOutput) IsIncludeAllSensitiveTypes() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetDiscoveryJobResult) *bool { return v.IsIncludeAllSensitiveTypes }).(pulumi.BoolPtrOutput)
 }
 
 // Indicates if the discovery job should collect and store sample data values for the discovered columns. Sample data helps review the discovered columns and ensure that they actually contain sensitive data. As it collects original data from the target database, it's disabled by default and should be used only if it's acceptable to store sample data in Data Safe's repository in Oracle Cloud. Note that sample data values are not collected for columns with the following data types: LONG, LOB, RAW, XMLTYPE and BFILE.
-func (o GetDiscoveryJobResultOutput) IsSampleDataCollectionEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetDiscoveryJobResult) bool { return v.IsSampleDataCollectionEnabled }).(pulumi.BoolOutput)
+func (o GetDiscoveryJobResultOutput) IsSampleDataCollectionEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetDiscoveryJobResult) *bool { return v.IsSampleDataCollectionEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // The schemas used for data discovery.
@@ -214,8 +207,8 @@ func (o GetDiscoveryJobResultOutput) SchemasForDiscoveries() pulumi.StringArrayO
 }
 
 // The OCID of the sensitive data model associated with the discovery job.
-func (o GetDiscoveryJobResultOutput) SensitiveDataModelId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDiscoveryJobResult) string { return v.SensitiveDataModelId }).(pulumi.StringOutput)
+func (o GetDiscoveryJobResultOutput) SensitiveDataModelId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDiscoveryJobResult) *string { return v.SensitiveDataModelId }).(pulumi.StringPtrOutput)
 }
 
 // The OCIDs of the sensitive types used for data discovery.
@@ -224,8 +217,8 @@ func (o GetDiscoveryJobResultOutput) SensitiveTypeIdsForDiscoveries() pulumi.Str
 }
 
 // The current state of the discovery job.
-func (o GetDiscoveryJobResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDiscoveryJobResult) string { return v.State }).(pulumi.StringOutput)
+func (o GetDiscoveryJobResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDiscoveryJobResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -234,48 +227,48 @@ func (o GetDiscoveryJobResultOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The OCID of the target database associated with the discovery job.
-func (o GetDiscoveryJobResultOutput) TargetId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDiscoveryJobResult) string { return v.TargetId }).(pulumi.StringOutput)
+func (o GetDiscoveryJobResultOutput) TargetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDiscoveryJobResult) *string { return v.TargetId }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the discovery job finished, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)..
-func (o GetDiscoveryJobResultOutput) TimeFinished() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDiscoveryJobResult) string { return v.TimeFinished }).(pulumi.StringOutput)
+func (o GetDiscoveryJobResultOutput) TimeFinished() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDiscoveryJobResult) *string { return v.TimeFinished }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the discovery job started, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-func (o GetDiscoveryJobResultOutput) TimeStarted() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDiscoveryJobResult) string { return v.TimeStarted }).(pulumi.StringOutput)
+func (o GetDiscoveryJobResultOutput) TimeStarted() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDiscoveryJobResult) *string { return v.TimeStarted }).(pulumi.StringPtrOutput)
 }
 
 // The total number of columns scanned by the discovery job.
-func (o GetDiscoveryJobResultOutput) TotalColumnsScanned() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDiscoveryJobResult) string { return v.TotalColumnsScanned }).(pulumi.StringOutput)
+func (o GetDiscoveryJobResultOutput) TotalColumnsScanned() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDiscoveryJobResult) *string { return v.TotalColumnsScanned }).(pulumi.StringPtrOutput)
 }
 
 // The total number of deleted sensitive columns identified by the discovery job.
-func (o GetDiscoveryJobResultOutput) TotalDeletedSensitiveColumns() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDiscoveryJobResult) string { return v.TotalDeletedSensitiveColumns }).(pulumi.StringOutput)
+func (o GetDiscoveryJobResultOutput) TotalDeletedSensitiveColumns() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDiscoveryJobResult) *string { return v.TotalDeletedSensitiveColumns }).(pulumi.StringPtrOutput)
 }
 
 // The total number of modified sensitive columns identified by the discovery job.
-func (o GetDiscoveryJobResultOutput) TotalModifiedSensitiveColumns() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDiscoveryJobResult) string { return v.TotalModifiedSensitiveColumns }).(pulumi.StringOutput)
+func (o GetDiscoveryJobResultOutput) TotalModifiedSensitiveColumns() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDiscoveryJobResult) *string { return v.TotalModifiedSensitiveColumns }).(pulumi.StringPtrOutput)
 }
 
 // The total number of new sensitive columns identified by the discovery job.
-func (o GetDiscoveryJobResultOutput) TotalNewSensitiveColumns() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDiscoveryJobResult) string { return v.TotalNewSensitiveColumns }).(pulumi.StringOutput)
+func (o GetDiscoveryJobResultOutput) TotalNewSensitiveColumns() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDiscoveryJobResult) *string { return v.TotalNewSensitiveColumns }).(pulumi.StringPtrOutput)
 }
 
 // The total number of objects (tables and editioning views) scanned by the discovery job.
-func (o GetDiscoveryJobResultOutput) TotalObjectsScanned() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDiscoveryJobResult) string { return v.TotalObjectsScanned }).(pulumi.StringOutput)
+func (o GetDiscoveryJobResultOutput) TotalObjectsScanned() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDiscoveryJobResult) *string { return v.TotalObjectsScanned }).(pulumi.StringPtrOutput)
 }
 
 // The total number of schemas scanned by the discovery job.
-func (o GetDiscoveryJobResultOutput) TotalSchemasScanned() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDiscoveryJobResult) string { return v.TotalSchemasScanned }).(pulumi.StringOutput)
+func (o GetDiscoveryJobResultOutput) TotalSchemasScanned() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDiscoveryJobResult) *string { return v.TotalSchemasScanned }).(pulumi.StringPtrOutput)
 }
 
 func init() {

@@ -16,6 +16,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDeploymentResult {
@@ -23,180 +25,180 @@ public final class GetDeploymentResult {
      * @return The OCID of a compartment.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return Specifies the list of artifact override arguments at the time of deployment.
      * 
      */
-    private List<GetDeploymentDeployArtifactOverrideArgument> deployArtifactOverrideArguments;
+    private @Nullable List<GetDeploymentDeployArtifactOverrideArgument> deployArtifactOverrideArguments;
     /**
      * @return List of all artifacts used in the pipeline.
      * 
      */
-    private List<GetDeploymentDeployPipelineArtifact> deployPipelineArtifacts;
+    private @Nullable List<GetDeploymentDeployPipelineArtifact> deployPipelineArtifacts;
     /**
      * @return List of all environments used in the pipeline.
      * 
      */
-    private List<GetDeploymentDeployPipelineEnvironment> deployPipelineEnvironments;
+    private @Nullable List<GetDeploymentDeployPipelineEnvironment> deployPipelineEnvironments;
     /**
      * @return The OCID of a pipeline.
      * 
      */
-    private String deployPipelineId;
+    private @Nullable String deployPipelineId;
     /**
      * @return The OCID of the stage.
      * 
      */
-    private String deployStageId;
+    private @Nullable String deployStageId;
     /**
      * @return Specifies the list of arguments to be overriden per Stage at the time of deployment.
      * 
      */
-    private List<GetDeploymentDeployStageOverrideArgument> deployStageOverrideArguments;
+    private @Nullable List<GetDeploymentDeployStageOverrideArgument> deployStageOverrideArguments;
     /**
      * @return Specifies list of arguments passed along with the deployment.
      * 
      */
-    private List<GetDeploymentDeploymentArgument> deploymentArguments;
+    private @Nullable List<GetDeploymentDeploymentArgument> deploymentArguments;
     /**
      * @return The execution progress details of a deployment.
      * 
      */
-    private List<GetDeploymentDeploymentExecutionProgress> deploymentExecutionProgresses;
+    private @Nullable List<GetDeploymentDeploymentExecutionProgress> deploymentExecutionProgresses;
     private String deploymentId;
     /**
      * @return Specifies type of Deployment
      * 
      */
-    private String deploymentType;
+    private @Nullable String deploymentType;
     /**
      * @return Deployment identifier which can be renamed and is not necessarily unique. Avoid entering confidential information.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return Unique identifier that is immutable on creation.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
-    private String lifecycleDetails;
+    private @Nullable String lifecycleDetails;
     /**
      * @return Specifies the OCID of the previous deployment to be redeployed.
      * 
      */
-    private String previousDeploymentId;
+    private @Nullable String previousDeploymentId;
     /**
      * @return The OCID of a project.
      * 
      */
-    private String projectId;
+    private @Nullable String projectId;
     /**
      * @return The current state of the deployment.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    private Map<String,Object> systemTags;
+    private @Nullable Map<String,Object> systemTags;
     /**
      * @return Time the deployment was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return Time the deployment was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      * 
      */
-    private String timeUpdated;
-    private Boolean triggerNewDevopsDeployment;
+    private @Nullable String timeUpdated;
+    private @Nullable Boolean triggerNewDevopsDeployment;
 
     private GetDeploymentResult() {}
     /**
      * @return The OCID of a compartment.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return Specifies the list of artifact override arguments at the time of deployment.
      * 
      */
     public List<GetDeploymentDeployArtifactOverrideArgument> deployArtifactOverrideArguments() {
-        return this.deployArtifactOverrideArguments;
+        return this.deployArtifactOverrideArguments == null ? List.of() : this.deployArtifactOverrideArguments;
     }
     /**
      * @return List of all artifacts used in the pipeline.
      * 
      */
     public List<GetDeploymentDeployPipelineArtifact> deployPipelineArtifacts() {
-        return this.deployPipelineArtifacts;
+        return this.deployPipelineArtifacts == null ? List.of() : this.deployPipelineArtifacts;
     }
     /**
      * @return List of all environments used in the pipeline.
      * 
      */
     public List<GetDeploymentDeployPipelineEnvironment> deployPipelineEnvironments() {
-        return this.deployPipelineEnvironments;
+        return this.deployPipelineEnvironments == null ? List.of() : this.deployPipelineEnvironments;
     }
     /**
      * @return The OCID of a pipeline.
      * 
      */
-    public String deployPipelineId() {
-        return this.deployPipelineId;
+    public Optional<String> deployPipelineId() {
+        return Optional.ofNullable(this.deployPipelineId);
     }
     /**
      * @return The OCID of the stage.
      * 
      */
-    public String deployStageId() {
-        return this.deployStageId;
+    public Optional<String> deployStageId() {
+        return Optional.ofNullable(this.deployStageId);
     }
     /**
      * @return Specifies the list of arguments to be overriden per Stage at the time of deployment.
      * 
      */
     public List<GetDeploymentDeployStageOverrideArgument> deployStageOverrideArguments() {
-        return this.deployStageOverrideArguments;
+        return this.deployStageOverrideArguments == null ? List.of() : this.deployStageOverrideArguments;
     }
     /**
      * @return Specifies list of arguments passed along with the deployment.
      * 
      */
     public List<GetDeploymentDeploymentArgument> deploymentArguments() {
-        return this.deploymentArguments;
+        return this.deploymentArguments == null ? List.of() : this.deploymentArguments;
     }
     /**
      * @return The execution progress details of a deployment.
      * 
      */
     public List<GetDeploymentDeploymentExecutionProgress> deploymentExecutionProgresses() {
-        return this.deploymentExecutionProgresses;
+        return this.deploymentExecutionProgresses == null ? List.of() : this.deploymentExecutionProgresses;
     }
     public String deploymentId() {
         return this.deploymentId;
@@ -205,81 +207,81 @@ public final class GetDeploymentResult {
      * @return Specifies type of Deployment
      * 
      */
-    public String deploymentType() {
-        return this.deploymentType;
+    public Optional<String> deploymentType() {
+        return Optional.ofNullable(this.deploymentType);
     }
     /**
      * @return Deployment identifier which can be renamed and is not necessarily unique. Avoid entering confidential information.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return Unique identifier that is immutable on creation.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
-    public String lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Optional<String> lifecycleDetails() {
+        return Optional.ofNullable(this.lifecycleDetails);
     }
     /**
      * @return Specifies the OCID of the previous deployment to be redeployed.
      * 
      */
-    public String previousDeploymentId() {
-        return this.previousDeploymentId;
+    public Optional<String> previousDeploymentId() {
+        return Optional.ofNullable(this.previousDeploymentId);
     }
     /**
      * @return The OCID of a project.
      * 
      */
-    public String projectId() {
-        return this.projectId;
+    public Optional<String> projectId() {
+        return Optional.ofNullable(this.projectId);
     }
     /**
      * @return The current state of the deployment.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
     public Map<String,Object> systemTags() {
-        return this.systemTags;
+        return this.systemTags == null ? Map.of() : this.systemTags;
     }
     /**
      * @return Time the deployment was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return Time the deployment was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      * 
      */
-    public String timeUpdated() {
-        return this.timeUpdated;
+    public Optional<String> timeUpdated() {
+        return Optional.ofNullable(this.timeUpdated);
     }
-    public Boolean triggerNewDevopsDeployment() {
-        return this.triggerNewDevopsDeployment;
+    public Optional<Boolean> triggerNewDevopsDeployment() {
+        return Optional.ofNullable(this.triggerNewDevopsDeployment);
     }
 
     public static Builder builder() {
@@ -291,29 +293,29 @@ public final class GetDeploymentResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String compartmentId;
-        private Map<String,Object> definedTags;
-        private List<GetDeploymentDeployArtifactOverrideArgument> deployArtifactOverrideArguments;
-        private List<GetDeploymentDeployPipelineArtifact> deployPipelineArtifacts;
-        private List<GetDeploymentDeployPipelineEnvironment> deployPipelineEnvironments;
-        private String deployPipelineId;
-        private String deployStageId;
-        private List<GetDeploymentDeployStageOverrideArgument> deployStageOverrideArguments;
-        private List<GetDeploymentDeploymentArgument> deploymentArguments;
-        private List<GetDeploymentDeploymentExecutionProgress> deploymentExecutionProgresses;
+        private @Nullable String compartmentId;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable List<GetDeploymentDeployArtifactOverrideArgument> deployArtifactOverrideArguments;
+        private @Nullable List<GetDeploymentDeployPipelineArtifact> deployPipelineArtifacts;
+        private @Nullable List<GetDeploymentDeployPipelineEnvironment> deployPipelineEnvironments;
+        private @Nullable String deployPipelineId;
+        private @Nullable String deployStageId;
+        private @Nullable List<GetDeploymentDeployStageOverrideArgument> deployStageOverrideArguments;
+        private @Nullable List<GetDeploymentDeploymentArgument> deploymentArguments;
+        private @Nullable List<GetDeploymentDeploymentExecutionProgress> deploymentExecutionProgresses;
         private String deploymentId;
-        private String deploymentType;
-        private String displayName;
-        private Map<String,Object> freeformTags;
-        private String id;
-        private String lifecycleDetails;
-        private String previousDeploymentId;
-        private String projectId;
-        private String state;
-        private Map<String,Object> systemTags;
-        private String timeCreated;
-        private String timeUpdated;
-        private Boolean triggerNewDevopsDeployment;
+        private @Nullable String deploymentType;
+        private @Nullable String displayName;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String id;
+        private @Nullable String lifecycleDetails;
+        private @Nullable String previousDeploymentId;
+        private @Nullable String projectId;
+        private @Nullable String state;
+        private @Nullable Map<String,Object> systemTags;
+        private @Nullable String timeCreated;
+        private @Nullable String timeUpdated;
+        private @Nullable Boolean triggerNewDevopsDeployment;
         public Builder() {}
         public Builder(GetDeploymentResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -343,68 +345,68 @@ public final class GetDeploymentResult {
         }
 
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder deployArtifactOverrideArguments(List<GetDeploymentDeployArtifactOverrideArgument> deployArtifactOverrideArguments) {
-            this.deployArtifactOverrideArguments = Objects.requireNonNull(deployArtifactOverrideArguments);
+        public Builder deployArtifactOverrideArguments(@Nullable List<GetDeploymentDeployArtifactOverrideArgument> deployArtifactOverrideArguments) {
+            this.deployArtifactOverrideArguments = deployArtifactOverrideArguments;
             return this;
         }
         public Builder deployArtifactOverrideArguments(GetDeploymentDeployArtifactOverrideArgument... deployArtifactOverrideArguments) {
             return deployArtifactOverrideArguments(List.of(deployArtifactOverrideArguments));
         }
         @CustomType.Setter
-        public Builder deployPipelineArtifacts(List<GetDeploymentDeployPipelineArtifact> deployPipelineArtifacts) {
-            this.deployPipelineArtifacts = Objects.requireNonNull(deployPipelineArtifacts);
+        public Builder deployPipelineArtifacts(@Nullable List<GetDeploymentDeployPipelineArtifact> deployPipelineArtifacts) {
+            this.deployPipelineArtifacts = deployPipelineArtifacts;
             return this;
         }
         public Builder deployPipelineArtifacts(GetDeploymentDeployPipelineArtifact... deployPipelineArtifacts) {
             return deployPipelineArtifacts(List.of(deployPipelineArtifacts));
         }
         @CustomType.Setter
-        public Builder deployPipelineEnvironments(List<GetDeploymentDeployPipelineEnvironment> deployPipelineEnvironments) {
-            this.deployPipelineEnvironments = Objects.requireNonNull(deployPipelineEnvironments);
+        public Builder deployPipelineEnvironments(@Nullable List<GetDeploymentDeployPipelineEnvironment> deployPipelineEnvironments) {
+            this.deployPipelineEnvironments = deployPipelineEnvironments;
             return this;
         }
         public Builder deployPipelineEnvironments(GetDeploymentDeployPipelineEnvironment... deployPipelineEnvironments) {
             return deployPipelineEnvironments(List.of(deployPipelineEnvironments));
         }
         @CustomType.Setter
-        public Builder deployPipelineId(String deployPipelineId) {
-            this.deployPipelineId = Objects.requireNonNull(deployPipelineId);
+        public Builder deployPipelineId(@Nullable String deployPipelineId) {
+            this.deployPipelineId = deployPipelineId;
             return this;
         }
         @CustomType.Setter
-        public Builder deployStageId(String deployStageId) {
-            this.deployStageId = Objects.requireNonNull(deployStageId);
+        public Builder deployStageId(@Nullable String deployStageId) {
+            this.deployStageId = deployStageId;
             return this;
         }
         @CustomType.Setter
-        public Builder deployStageOverrideArguments(List<GetDeploymentDeployStageOverrideArgument> deployStageOverrideArguments) {
-            this.deployStageOverrideArguments = Objects.requireNonNull(deployStageOverrideArguments);
+        public Builder deployStageOverrideArguments(@Nullable List<GetDeploymentDeployStageOverrideArgument> deployStageOverrideArguments) {
+            this.deployStageOverrideArguments = deployStageOverrideArguments;
             return this;
         }
         public Builder deployStageOverrideArguments(GetDeploymentDeployStageOverrideArgument... deployStageOverrideArguments) {
             return deployStageOverrideArguments(List.of(deployStageOverrideArguments));
         }
         @CustomType.Setter
-        public Builder deploymentArguments(List<GetDeploymentDeploymentArgument> deploymentArguments) {
-            this.deploymentArguments = Objects.requireNonNull(deploymentArguments);
+        public Builder deploymentArguments(@Nullable List<GetDeploymentDeploymentArgument> deploymentArguments) {
+            this.deploymentArguments = deploymentArguments;
             return this;
         }
         public Builder deploymentArguments(GetDeploymentDeploymentArgument... deploymentArguments) {
             return deploymentArguments(List.of(deploymentArguments));
         }
         @CustomType.Setter
-        public Builder deploymentExecutionProgresses(List<GetDeploymentDeploymentExecutionProgress> deploymentExecutionProgresses) {
-            this.deploymentExecutionProgresses = Objects.requireNonNull(deploymentExecutionProgresses);
+        public Builder deploymentExecutionProgresses(@Nullable List<GetDeploymentDeploymentExecutionProgress> deploymentExecutionProgresses) {
+            this.deploymentExecutionProgresses = deploymentExecutionProgresses;
             return this;
         }
         public Builder deploymentExecutionProgresses(GetDeploymentDeploymentExecutionProgress... deploymentExecutionProgresses) {
@@ -416,63 +418,63 @@ public final class GetDeploymentResult {
             return this;
         }
         @CustomType.Setter
-        public Builder deploymentType(String deploymentType) {
-            this.deploymentType = Objects.requireNonNull(deploymentType);
+        public Builder deploymentType(@Nullable String deploymentType) {
+            this.deploymentType = deploymentType;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+        public Builder lifecycleDetails(@Nullable String lifecycleDetails) {
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
-        public Builder previousDeploymentId(String previousDeploymentId) {
-            this.previousDeploymentId = Objects.requireNonNull(previousDeploymentId);
+        public Builder previousDeploymentId(@Nullable String previousDeploymentId) {
+            this.previousDeploymentId = previousDeploymentId;
             return this;
         }
         @CustomType.Setter
-        public Builder projectId(String projectId) {
-            this.projectId = Objects.requireNonNull(projectId);
+        public Builder projectId(@Nullable String projectId) {
+            this.projectId = projectId;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+        public Builder systemTags(@Nullable Map<String,Object> systemTags) {
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+        public Builder timeUpdated(@Nullable String timeUpdated) {
+            this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter
-        public Builder triggerNewDevopsDeployment(Boolean triggerNewDevopsDeployment) {
-            this.triggerNewDevopsDeployment = Objects.requireNonNull(triggerNewDevopsDeployment);
+        public Builder triggerNewDevopsDeployment(@Nullable Boolean triggerNewDevopsDeployment) {
+            this.triggerNewDevopsDeployment = triggerNewDevopsDeployment;
             return this;
         }
         public GetDeploymentResult build() {

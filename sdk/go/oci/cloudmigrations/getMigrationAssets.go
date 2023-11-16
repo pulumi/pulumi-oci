@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Migration Assets in Oracle Cloud Infrastructure Cloud Migrations service.
@@ -73,7 +72,7 @@ type GetMigrationAssetsResult struct {
 	DisplayName *string                    `pulumi:"displayName"`
 	Filters     []GetMigrationAssetsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The list of migration_asset_collection.
 	MigrationAssetCollections []GetMigrationAssetsMigrationAssetCollection `pulumi:"migrationAssetCollections"`
 	MigrationAssetId          *string                                      `pulumi:"migrationAssetId"`
@@ -128,12 +127,6 @@ func (o GetMigrationAssetsResultOutput) ToGetMigrationAssetsResultOutputWithCont
 	return o
 }
 
-func (o GetMigrationAssetsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetMigrationAssetsResult] {
-	return pulumix.Output[GetMigrationAssetsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 func (o GetMigrationAssetsResultOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetMigrationAssetsResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
@@ -144,8 +137,8 @@ func (o GetMigrationAssetsResultOutput) Filters() GetMigrationAssetsFilterArrayO
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetMigrationAssetsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMigrationAssetsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetMigrationAssetsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMigrationAssetsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The list of migration_asset_collection.

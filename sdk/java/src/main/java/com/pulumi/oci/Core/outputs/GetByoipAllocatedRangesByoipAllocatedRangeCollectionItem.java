@@ -6,6 +6,8 @@ package com.pulumi.oci.Core.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetByoipAllocatedRangesByoipAllocatedRangeCollectionItem {
@@ -13,27 +15,27 @@ public final class GetByoipAllocatedRangesByoipAllocatedRangeCollectionItem {
      * @return The BYOIP CIDR block range or subrange allocated to an IP pool. This could be all or part of a BYOIP CIDR block.
      * 
      */
-    private String cidrBlock;
+    private @Nullable String cidrBlock;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IP pool containing the CIDR block.
      * 
      */
-    private String publicIpPoolId;
+    private @Nullable String publicIpPoolId;
 
     private GetByoipAllocatedRangesByoipAllocatedRangeCollectionItem() {}
     /**
      * @return The BYOIP CIDR block range or subrange allocated to an IP pool. This could be all or part of a BYOIP CIDR block.
      * 
      */
-    public String cidrBlock() {
-        return this.cidrBlock;
+    public Optional<String> cidrBlock() {
+        return Optional.ofNullable(this.cidrBlock);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IP pool containing the CIDR block.
      * 
      */
-    public String publicIpPoolId() {
-        return this.publicIpPoolId;
+    public Optional<String> publicIpPoolId() {
+        return Optional.ofNullable(this.publicIpPoolId);
     }
 
     public static Builder builder() {
@@ -45,8 +47,8 @@ public final class GetByoipAllocatedRangesByoipAllocatedRangeCollectionItem {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String cidrBlock;
-        private String publicIpPoolId;
+        private @Nullable String cidrBlock;
+        private @Nullable String publicIpPoolId;
         public Builder() {}
         public Builder(GetByoipAllocatedRangesByoipAllocatedRangeCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -55,13 +57,13 @@ public final class GetByoipAllocatedRangesByoipAllocatedRangeCollectionItem {
         }
 
         @CustomType.Setter
-        public Builder cidrBlock(String cidrBlock) {
-            this.cidrBlock = Objects.requireNonNull(cidrBlock);
+        public Builder cidrBlock(@Nullable String cidrBlock) {
+            this.cidrBlock = cidrBlock;
             return this;
         }
         @CustomType.Setter
-        public Builder publicIpPoolId(String publicIpPoolId) {
-            this.publicIpPoolId = Objects.requireNonNull(publicIpPoolId);
+        public Builder publicIpPoolId(@Nullable String publicIpPoolId) {
+            this.publicIpPoolId = publicIpPoolId;
             return this;
         }
         public GetByoipAllocatedRangesByoipAllocatedRangeCollectionItem build() {

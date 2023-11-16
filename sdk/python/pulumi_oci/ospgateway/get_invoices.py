@@ -76,7 +76,7 @@ class GetInvoicesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -84,18 +84,12 @@ class GetInvoicesResult:
 
     @property
     @pulumi.getter(name="invoiceCollections")
-    def invoice_collections(self) -> Sequence['outputs.GetInvoicesInvoiceCollectionResult']:
-        """
-        The list of invoice_collection.
-        """
+    def invoice_collections(self) -> Optional[Sequence['outputs.GetInvoicesInvoiceCollectionResult']]:
         return pulumi.get(self, "invoice_collections")
 
     @property
     @pulumi.getter(name="invoiceId")
     def invoice_id(self) -> Optional[str]:
-        """
-        Invoice identifier which is generated on the on-premise sie. Pls note this is not an OCID
-        """
         return pulumi.get(self, "invoice_id")
 
     @property
@@ -173,39 +167,7 @@ def get_invoices(compartment_id: Optional[str] = None,
                  types: Optional[Sequence[str]] = None,
                  opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetInvoicesResult:
     """
-    This data source provides the list of Invoices in Oracle Cloud Infrastructure Osp Gateway service.
-
-    Returns a list of invoices
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_invoices = oci.OspGateway.get_invoices(compartment_id=var["compartment_id"],
-        osp_home_region=var["invoice_osp_home_region"],
-        invoice_id=oci_osp_gateway_invoice["test_invoice"]["id"],
-        search_text=var["invoice_search_text"],
-        statuses=var["invoice_status"],
-        time_invoice_end=var["invoice_time_invoice_end"],
-        time_invoice_start=var["invoice_time_invoice_start"],
-        time_payment_end=var["invoice_time_payment_end"],
-        time_payment_start=var["invoice_time_payment_start"],
-        types=var["invoice_type"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param str invoice_id: The invoice query param (not unique).
-    :param str osp_home_region: The home region's public name of the logged in user.
-    :param str search_text: A filter to only return resources that match the given value. Looking for partial matches in the following fileds: Invoice No., Reference No. (plan number), Payment Ref, Total Amount(plan number), Balance Due(plan number) and Party/Customer Name
-    :param Sequence[str] statuses: A filter to only return resources that match one of the status elements.
-    :param str time_invoice_end: description: End time (UTC) of the target invoice date range for which to fetch invoice data (exclusive).
-    :param str time_invoice_start: description: Start time (UTC) of the target invoice date range for which to fetch invoice data (inclusive).
-    :param str time_payment_end: description: End time (UTC) of the target payment date range for which to fetch invoice data (exclusive).
-    :param str time_payment_start: description: Start time (UTC) of the target payment date range for which to fetch invoice data (inclusive).
-    :param Sequence[str] types: A filter to only return resources that match the given type exactly.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -252,38 +214,6 @@ def get_invoices_output(compartment_id: Optional[pulumi.Input[str]] = None,
                         types: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetInvoicesResult]:
     """
-    This data source provides the list of Invoices in Oracle Cloud Infrastructure Osp Gateway service.
-
-    Returns a list of invoices
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_invoices = oci.OspGateway.get_invoices(compartment_id=var["compartment_id"],
-        osp_home_region=var["invoice_osp_home_region"],
-        invoice_id=oci_osp_gateway_invoice["test_invoice"]["id"],
-        search_text=var["invoice_search_text"],
-        statuses=var["invoice_status"],
-        time_invoice_end=var["invoice_time_invoice_end"],
-        time_invoice_start=var["invoice_time_invoice_start"],
-        time_payment_end=var["invoice_time_payment_end"],
-        time_payment_start=var["invoice_time_payment_start"],
-        types=var["invoice_type"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param str invoice_id: The invoice query param (not unique).
-    :param str osp_home_region: The home region's public name of the logged in user.
-    :param str search_text: A filter to only return resources that match the given value. Looking for partial matches in the following fileds: Invoice No., Reference No. (plan number), Payment Ref, Total Amount(plan number), Balance Due(plan number) and Party/Customer Name
-    :param Sequence[str] statuses: A filter to only return resources that match one of the status elements.
-    :param str time_invoice_end: description: End time (UTC) of the target invoice date range for which to fetch invoice data (exclusive).
-    :param str time_invoice_start: description: Start time (UTC) of the target invoice date range for which to fetch invoice data (inclusive).
-    :param str time_payment_end: description: End time (UTC) of the target payment date range for which to fetch invoice data (exclusive).
-    :param str time_payment_start: description: Start time (UTC) of the target payment date range for which to fetch invoice data (inclusive).
-    :param Sequence[str] types: A filter to only return resources that match the given type exactly.
+    Use this data source to access information about an existing resource.
     """
     ...

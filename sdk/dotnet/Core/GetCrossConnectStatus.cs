@@ -114,19 +114,19 @@ namespace Pulumi.Oci.Core
         /// <summary>
         /// Encryption status of the CrossConnect
         /// </summary>
-        public readonly string EncryptionStatus;
+        public readonly string? EncryptionStatus;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Whether Oracle's side of the interface is up or down.
         /// </summary>
-        public readonly string InterfaceState;
+        public readonly string? InterfaceState;
         /// <summary>
         /// The light level of the cross-connect (in dBm).  Example: `14.0`
         /// </summary>
-        public readonly double LightLevelIndBm;
+        public readonly double? LightLevelIndBm;
         /// <summary>
         /// Status indicator corresponding to the light level.
         /// * **NO_LIGHT:** No measurable light
@@ -135,21 +135,21 @@ namespace Pulumi.Oci.Core
         /// * **BAD:** There's measurable light but the signal-to-noise ratio is bad
         /// * **GOOD:** Good light level
         /// </summary>
-        public readonly string LightLevelIndicator;
+        public readonly string? LightLevelIndicator;
 
         [OutputConstructor]
         private GetCrossConnectStatusResult(
             string crossConnectId,
 
-            string encryptionStatus,
+            string? encryptionStatus,
 
-            string id,
+            string? id,
 
-            string interfaceState,
+            string? interfaceState,
 
-            double lightLevelIndBm,
+            double? lightLevelIndBm,
 
-            string lightLevelIndicator)
+            string? lightLevelIndicator)
         {
             CrossConnectId = crossConnectId;
             EncryptionStatus = encryptionStatus;

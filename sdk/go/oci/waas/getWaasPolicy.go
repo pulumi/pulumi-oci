@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Waas Policy resource in Oracle Cloud Infrastructure Web Application Acceleration and Security service.
@@ -62,19 +61,19 @@ type GetWaasPolicyResult struct {
 	// An array of additional domains for this web application.
 	AdditionalDomains []string `pulumi:"additionalDomains"`
 	// The CNAME record to add to your DNS configuration to route traffic for the domain, and all additional domains, through the WAF.
-	Cname string `pulumi:"cname"`
+	Cname *string `pulumi:"cname"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the WAAS policy's compartment.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The user-friendly name of the WAAS policy. The name can be changed and does not need to be unique.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// The domain for which the cookie is set, defaults to WAAS policy domain.
-	Domain string `pulumi:"domain"`
+	Domain *string `pulumi:"domain"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The map of origin groups and their keys used to associate origins to the `wafConfig`. Origin groups allow you to apply weights to groups of origins for load balancing purposes. Origins with higher weights will receive larger proportions of client requests. To add additional origins to your WAAS policy, update the `origins` field of a `UpdateWaasPolicy` request.
 	OriginGroups []GetWaasPolicyOriginGroup `pulumi:"originGroups"`
 	// A map of host servers (origins) and their keys for the web application. Origin keys are used to associate origins to specific protection rules. The key should be a user-friendly name for the host. **Examples:** `primary` or `secondary`.
@@ -82,10 +81,10 @@ type GetWaasPolicyResult struct {
 	// The configuration details for the WAAS policy.
 	PolicyConfigs []GetWaasPolicyPolicyConfig `pulumi:"policyConfigs"`
 	// The current lifecycle state of the WAAS policy.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The date and time the policy was created, expressed in RFC 3339 timestamp format.
-	TimeCreated  string `pulumi:"timeCreated"`
-	WaasPolicyId string `pulumi:"waasPolicyId"`
+	TimeCreated  *string `pulumi:"timeCreated"`
+	WaasPolicyId string  `pulumi:"waasPolicyId"`
 	// The Web Application Firewall configuration for the WAAS policy.
 	WafConfigs []GetWaasPolicyWafConfig `pulumi:"wafConfigs"`
 }
@@ -128,25 +127,19 @@ func (o GetWaasPolicyResultOutput) ToGetWaasPolicyResultOutputWithContext(ctx co
 	return o
 }
 
-func (o GetWaasPolicyResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetWaasPolicyResult] {
-	return pulumix.Output[GetWaasPolicyResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // An array of additional domains for this web application.
 func (o GetWaasPolicyResultOutput) AdditionalDomains() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetWaasPolicyResult) []string { return v.AdditionalDomains }).(pulumi.StringArrayOutput)
 }
 
 // The CNAME record to add to your DNS configuration to route traffic for the domain, and all additional domains, through the WAF.
-func (o GetWaasPolicyResultOutput) Cname() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWaasPolicyResult) string { return v.Cname }).(pulumi.StringOutput)
+func (o GetWaasPolicyResultOutput) Cname() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWaasPolicyResult) *string { return v.Cname }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the WAAS policy's compartment.
-func (o GetWaasPolicyResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWaasPolicyResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetWaasPolicyResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWaasPolicyResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -155,13 +148,13 @@ func (o GetWaasPolicyResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // The user-friendly name of the WAAS policy. The name can be changed and does not need to be unique.
-func (o GetWaasPolicyResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWaasPolicyResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetWaasPolicyResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWaasPolicyResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // The domain for which the cookie is set, defaults to WAAS policy domain.
-func (o GetWaasPolicyResultOutput) Domain() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWaasPolicyResult) string { return v.Domain }).(pulumi.StringOutput)
+func (o GetWaasPolicyResultOutput) Domain() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWaasPolicyResult) *string { return v.Domain }).(pulumi.StringPtrOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -170,8 +163,8 @@ func (o GetWaasPolicyResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetWaasPolicyResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWaasPolicyResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetWaasPolicyResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWaasPolicyResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The map of origin groups and their keys used to associate origins to the `wafConfig`. Origin groups allow you to apply weights to groups of origins for load balancing purposes. Origins with higher weights will receive larger proportions of client requests. To add additional origins to your WAAS policy, update the `origins` field of a `UpdateWaasPolicy` request.
@@ -190,13 +183,13 @@ func (o GetWaasPolicyResultOutput) PolicyConfigs() GetWaasPolicyPolicyConfigArra
 }
 
 // The current lifecycle state of the WAAS policy.
-func (o GetWaasPolicyResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWaasPolicyResult) string { return v.State }).(pulumi.StringOutput)
+func (o GetWaasPolicyResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWaasPolicyResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the policy was created, expressed in RFC 3339 timestamp format.
-func (o GetWaasPolicyResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWaasPolicyResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetWaasPolicyResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWaasPolicyResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 func (o GetWaasPolicyResultOutput) WaasPolicyId() pulumi.StringOutput {

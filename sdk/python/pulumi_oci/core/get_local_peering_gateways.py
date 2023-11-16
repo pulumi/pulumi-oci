@@ -43,9 +43,6 @@ class GetLocalPeeringGatewaysResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the LPG.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
@@ -55,7 +52,7 @@ class GetLocalPeeringGatewaysResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -63,18 +60,12 @@ class GetLocalPeeringGatewaysResult:
 
     @property
     @pulumi.getter(name="localPeeringGateways")
-    def local_peering_gateways(self) -> Sequence['outputs.GetLocalPeeringGatewaysLocalPeeringGatewayResult']:
-        """
-        The list of local_peering_gateways.
-        """
+    def local_peering_gateways(self) -> Optional[Sequence['outputs.GetLocalPeeringGatewaysLocalPeeringGatewayResult']]:
         return pulumi.get(self, "local_peering_gateways")
 
     @property
     @pulumi.getter(name="vcnId")
     def vcn_id(self) -> Optional[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN that uses the LPG.
-        """
         return pulumi.get(self, "vcn_id")
 
 
@@ -96,24 +87,7 @@ def get_local_peering_gateways(compartment_id: Optional[str] = None,
                                vcn_id: Optional[str] = None,
                                opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetLocalPeeringGatewaysResult:
     """
-    This data source provides the list of Local Peering Gateways in Oracle Cloud Infrastructure Core service.
-
-    Lists the local peering gateways (LPGs) for the specified VCN and specified compartment.
-    If the VCN ID is not provided, then the list includes the LPGs from all VCNs in the specified compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_local_peering_gateways = oci.Core.get_local_peering_gateways(compartment_id=var["compartment_id"],
-        vcn_id=oci_core_vcn["test_vcn"]["id"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param str vcn_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -136,23 +110,6 @@ def get_local_peering_gateways_output(compartment_id: Optional[pulumi.Input[str]
                                       vcn_id: Optional[pulumi.Input[Optional[str]]] = None,
                                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetLocalPeeringGatewaysResult]:
     """
-    This data source provides the list of Local Peering Gateways in Oracle Cloud Infrastructure Core service.
-
-    Lists the local peering gateways (LPGs) for the specified VCN and specified compartment.
-    If the VCN ID is not provided, then the list includes the LPGs from all VCNs in the specified compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_local_peering_gateways = oci.Core.get_local_peering_gateways(compartment_id=var["compartment_id"],
-        vcn_id=oci_core_vcn["test_vcn"]["id"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param str vcn_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
+    Use this data source to access information about an existing resource.
     """
     ...

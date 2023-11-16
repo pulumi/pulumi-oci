@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAuthenticationPolicyPasswordPolicy {
@@ -14,75 +16,75 @@ public final class GetAuthenticationPolicyPasswordPolicy {
      * @return At least one lower case character required.
      * 
      */
-    private Boolean isLowercaseCharactersRequired;
+    private @Nullable Boolean isLowercaseCharactersRequired;
     /**
      * @return At least one numeric character required.
      * 
      */
-    private Boolean isNumericCharactersRequired;
+    private @Nullable Boolean isNumericCharactersRequired;
     /**
      * @return At least one special character required.
      * 
      */
-    private Boolean isSpecialCharactersRequired;
+    private @Nullable Boolean isSpecialCharactersRequired;
     /**
      * @return At least one uppercase character required.
      * 
      */
-    private Boolean isUppercaseCharactersRequired;
+    private @Nullable Boolean isUppercaseCharactersRequired;
     /**
      * @return User name is allowed to be part of the password.
      * 
      */
-    private Boolean isUsernameContainmentAllowed;
+    private @Nullable Boolean isUsernameContainmentAllowed;
     /**
      * @return Minimum password length required.
      * 
      */
-    private Integer minimumPasswordLength;
+    private @Nullable Integer minimumPasswordLength;
 
     private GetAuthenticationPolicyPasswordPolicy() {}
     /**
      * @return At least one lower case character required.
      * 
      */
-    public Boolean isLowercaseCharactersRequired() {
-        return this.isLowercaseCharactersRequired;
+    public Optional<Boolean> isLowercaseCharactersRequired() {
+        return Optional.ofNullable(this.isLowercaseCharactersRequired);
     }
     /**
      * @return At least one numeric character required.
      * 
      */
-    public Boolean isNumericCharactersRequired() {
-        return this.isNumericCharactersRequired;
+    public Optional<Boolean> isNumericCharactersRequired() {
+        return Optional.ofNullable(this.isNumericCharactersRequired);
     }
     /**
      * @return At least one special character required.
      * 
      */
-    public Boolean isSpecialCharactersRequired() {
-        return this.isSpecialCharactersRequired;
+    public Optional<Boolean> isSpecialCharactersRequired() {
+        return Optional.ofNullable(this.isSpecialCharactersRequired);
     }
     /**
      * @return At least one uppercase character required.
      * 
      */
-    public Boolean isUppercaseCharactersRequired() {
-        return this.isUppercaseCharactersRequired;
+    public Optional<Boolean> isUppercaseCharactersRequired() {
+        return Optional.ofNullable(this.isUppercaseCharactersRequired);
     }
     /**
      * @return User name is allowed to be part of the password.
      * 
      */
-    public Boolean isUsernameContainmentAllowed() {
-        return this.isUsernameContainmentAllowed;
+    public Optional<Boolean> isUsernameContainmentAllowed() {
+        return Optional.ofNullable(this.isUsernameContainmentAllowed);
     }
     /**
      * @return Minimum password length required.
      * 
      */
-    public Integer minimumPasswordLength() {
-        return this.minimumPasswordLength;
+    public Optional<Integer> minimumPasswordLength() {
+        return Optional.ofNullable(this.minimumPasswordLength);
     }
 
     public static Builder builder() {
@@ -94,12 +96,12 @@ public final class GetAuthenticationPolicyPasswordPolicy {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Boolean isLowercaseCharactersRequired;
-        private Boolean isNumericCharactersRequired;
-        private Boolean isSpecialCharactersRequired;
-        private Boolean isUppercaseCharactersRequired;
-        private Boolean isUsernameContainmentAllowed;
-        private Integer minimumPasswordLength;
+        private @Nullable Boolean isLowercaseCharactersRequired;
+        private @Nullable Boolean isNumericCharactersRequired;
+        private @Nullable Boolean isSpecialCharactersRequired;
+        private @Nullable Boolean isUppercaseCharactersRequired;
+        private @Nullable Boolean isUsernameContainmentAllowed;
+        private @Nullable Integer minimumPasswordLength;
         public Builder() {}
         public Builder(GetAuthenticationPolicyPasswordPolicy defaults) {
     	      Objects.requireNonNull(defaults);
@@ -112,33 +114,33 @@ public final class GetAuthenticationPolicyPasswordPolicy {
         }
 
         @CustomType.Setter
-        public Builder isLowercaseCharactersRequired(Boolean isLowercaseCharactersRequired) {
-            this.isLowercaseCharactersRequired = Objects.requireNonNull(isLowercaseCharactersRequired);
+        public Builder isLowercaseCharactersRequired(@Nullable Boolean isLowercaseCharactersRequired) {
+            this.isLowercaseCharactersRequired = isLowercaseCharactersRequired;
             return this;
         }
         @CustomType.Setter
-        public Builder isNumericCharactersRequired(Boolean isNumericCharactersRequired) {
-            this.isNumericCharactersRequired = Objects.requireNonNull(isNumericCharactersRequired);
+        public Builder isNumericCharactersRequired(@Nullable Boolean isNumericCharactersRequired) {
+            this.isNumericCharactersRequired = isNumericCharactersRequired;
             return this;
         }
         @CustomType.Setter
-        public Builder isSpecialCharactersRequired(Boolean isSpecialCharactersRequired) {
-            this.isSpecialCharactersRequired = Objects.requireNonNull(isSpecialCharactersRequired);
+        public Builder isSpecialCharactersRequired(@Nullable Boolean isSpecialCharactersRequired) {
+            this.isSpecialCharactersRequired = isSpecialCharactersRequired;
             return this;
         }
         @CustomType.Setter
-        public Builder isUppercaseCharactersRequired(Boolean isUppercaseCharactersRequired) {
-            this.isUppercaseCharactersRequired = Objects.requireNonNull(isUppercaseCharactersRequired);
+        public Builder isUppercaseCharactersRequired(@Nullable Boolean isUppercaseCharactersRequired) {
+            this.isUppercaseCharactersRequired = isUppercaseCharactersRequired;
             return this;
         }
         @CustomType.Setter
-        public Builder isUsernameContainmentAllowed(Boolean isUsernameContainmentAllowed) {
-            this.isUsernameContainmentAllowed = Objects.requireNonNull(isUsernameContainmentAllowed);
+        public Builder isUsernameContainmentAllowed(@Nullable Boolean isUsernameContainmentAllowed) {
+            this.isUsernameContainmentAllowed = isUsernameContainmentAllowed;
             return this;
         }
         @CustomType.Setter
-        public Builder minimumPasswordLength(Integer minimumPasswordLength) {
-            this.minimumPasswordLength = Objects.requireNonNull(minimumPasswordLength);
+        public Builder minimumPasswordLength(@Nullable Integer minimumPasswordLength) {
+            this.minimumPasswordLength = minimumPasswordLength;
             return this;
         }
         public GetAuthenticationPolicyPasswordPolicy build() {

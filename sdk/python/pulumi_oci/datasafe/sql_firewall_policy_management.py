@@ -650,111 +650,111 @@ class SqlFirewallPolicyManagement(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="allowedClientIps")
-    def allowed_client_ips(self) -> pulumi.Output[Sequence[str]]:
+    def allowed_client_ips(self) -> pulumi.Output[Optional[Sequence[str]]]:
         return pulumi.get(self, "allowed_client_ips")
 
     @property
     @pulumi.getter(name="allowedClientOsUsernames")
-    def allowed_client_os_usernames(self) -> pulumi.Output[Sequence[str]]:
+    def allowed_client_os_usernames(self) -> pulumi.Output[Optional[Sequence[str]]]:
         return pulumi.get(self, "allowed_client_os_usernames")
 
     @property
     @pulumi.getter(name="allowedClientPrograms")
-    def allowed_client_programs(self) -> pulumi.Output[Sequence[str]]:
+    def allowed_client_programs(self) -> pulumi.Output[Optional[Sequence[str]]]:
         return pulumi.get(self, "allowed_client_programs")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> pulumi.Output[str]:
+    def compartment_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="dbUserName")
-    def db_user_name(self) -> pulumi.Output[str]:
+    def db_user_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "db_user_name")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
+    def defined_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def description(self) -> pulumi.Output[str]:
+    def description(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> pulumi.Output[str]:
+    def display_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="enforcementScope")
-    def enforcement_scope(self) -> pulumi.Output[str]:
+    def enforcement_scope(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "enforcement_scope")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
+    def freeform_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> pulumi.Output[str]:
+    def lifecycle_details(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="securityPolicyId")
-    def security_policy_id(self) -> pulumi.Output[str]:
+    def security_policy_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "security_policy_id")
 
     @property
     @pulumi.getter(name="sqlFirewallPolicyId")
-    def sql_firewall_policy_id(self) -> pulumi.Output[str]:
+    def sql_firewall_policy_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "sql_firewall_policy_id")
 
     @property
     @pulumi.getter(name="sqlLevel")
-    def sql_level(self) -> pulumi.Output[str]:
+    def sql_level(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "sql_level")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter
-    def status(self) -> pulumi.Output[str]:
+    def status(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "status")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> pulumi.Output[Mapping[str, Any]]:
+    def system_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="targetId")
-    def target_id(self) -> pulumi.Output[str]:
+    def target_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "target_id")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> pulumi.Output[str]:
+    def time_updated(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_updated")
 
     @property
     @pulumi.getter(name="violationAction")
-    def violation_action(self) -> pulumi.Output[str]:
+    def violation_action(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "violation_action")
 
     @property
     @pulumi.getter(name="violationAudit")
-    def violation_audit(self) -> pulumi.Output[str]:
+    def violation_audit(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "violation_audit")
 

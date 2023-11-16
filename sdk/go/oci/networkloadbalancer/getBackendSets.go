@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Backend Sets in Oracle Cloud Infrastructure Network Load Balancer service.
@@ -64,8 +63,8 @@ type GetBackendSetsResult struct {
 	BackendSetCollections []GetBackendSetsBackendSetCollection `pulumi:"backendSetCollections"`
 	Filters               []GetBackendSetsFilter               `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id                    string `pulumi:"id"`
-	NetworkLoadBalancerId string `pulumi:"networkLoadBalancerId"`
+	Id                    *string `pulumi:"id"`
+	NetworkLoadBalancerId string  `pulumi:"networkLoadBalancerId"`
 }
 
 func GetBackendSetsOutput(ctx *pulumi.Context, args GetBackendSetsOutputArgs, opts ...pulumi.InvokeOption) GetBackendSetsResultOutput {
@@ -107,12 +106,6 @@ func (o GetBackendSetsResultOutput) ToGetBackendSetsResultOutputWithContext(ctx 
 	return o
 }
 
-func (o GetBackendSetsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetBackendSetsResult] {
-	return pulumix.Output[GetBackendSetsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The list of backend_set_collection.
 func (o GetBackendSetsResultOutput) BackendSetCollections() GetBackendSetsBackendSetCollectionArrayOutput {
 	return o.ApplyT(func(v GetBackendSetsResult) []GetBackendSetsBackendSetCollection { return v.BackendSetCollections }).(GetBackendSetsBackendSetCollectionArrayOutput)
@@ -123,8 +116,8 @@ func (o GetBackendSetsResultOutput) Filters() GetBackendSetsFilterArrayOutput {
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetBackendSetsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBackendSetsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetBackendSetsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBackendSetsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetBackendSetsResultOutput) NetworkLoadBalancerId() pulumi.StringOutput {

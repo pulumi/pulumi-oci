@@ -155,7 +155,7 @@ namespace Pulumi.Oci.ContainerEngine
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The name of the identifying shape.
         /// </summary>
@@ -173,7 +173,7 @@ namespace Pulumi.Oci.ContainerEngine
 
             ImmutableArray<Outputs.GetPodShapesFilterResult> filters,
 
-            string id,
+            string? id,
 
             string? name,
 

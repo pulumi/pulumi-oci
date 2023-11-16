@@ -7,14 +7,15 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.LogAnalytics.outputs.GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollection {
-    private List<GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItem> items;
+    private @Nullable List<GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItem> items;
 
     private GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollection() {}
     public List<GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -26,7 +27,7 @@ public final class GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollection {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItem> items;
+        private @Nullable List<GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItem> items;
         public Builder() {}
         public Builder(GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -34,8 +35,8 @@ public final class GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollection {
         }
 
         @CustomType.Setter
-        public Builder items(List<GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItem... items) {

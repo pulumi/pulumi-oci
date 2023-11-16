@@ -83,106 +83,67 @@ class GetGuardTargetResult:
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        Compartment Identifier
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        ResponderRule description.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        ResponderRule display name.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        Unique identifier of TargetResponderRecipe that can't be changed after creation.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="inheritedByCompartments")
-    def inherited_by_compartments(self) -> Sequence[str]:
-        """
-        List of inherited compartments
-        """
+    def inherited_by_compartments(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "inherited_by_compartments")
 
     @property
     @pulumi.getter(name="lifecyleDetails")
-    def lifecyle_details(self) -> str:
-        """
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        """
+    def lifecyle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecyle_details")
 
     @property
     @pulumi.getter(name="recipeCount")
-    def recipe_count(self) -> int:
-        """
-        Total number of recipes attached to target
-        """
+    def recipe_count(self) -> Optional[int]:
         return pulumi.get(self, "recipe_count")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the ResponderRule.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="targetDetails")
-    def target_details(self) -> Sequence['outputs.GetGuardTargetTargetDetailResult']:
-        """
-        Details specific to the target type.
-        """
+    def target_details(self) -> Optional[Sequence['outputs.GetGuardTargetTargetDetailResult']]:
         return pulumi.get(self, "target_details")
 
     @property
     @pulumi.getter(name="targetDetectorRecipes")
-    def target_detector_recipes(self) -> Sequence['outputs.GetGuardTargetTargetDetectorRecipeResult']:
-        """
-        List of detector recipes associated with target
-        """
+    def target_detector_recipes(self) -> Optional[Sequence['outputs.GetGuardTargetTargetDetectorRecipeResult']]:
         return pulumi.get(self, "target_detector_recipes")
 
     @property
@@ -192,42 +153,27 @@ class GetGuardTargetResult:
 
     @property
     @pulumi.getter(name="targetResourceId")
-    def target_resource_id(self) -> str:
-        """
-        Resource ID which the target uses to monitor
-        """
+    def target_resource_id(self) -> Optional[str]:
         return pulumi.get(self, "target_resource_id")
 
     @property
     @pulumi.getter(name="targetResourceType")
-    def target_resource_type(self) -> str:
-        """
-        possible type of targets
-        """
+    def target_resource_type(self) -> Optional[str]:
         return pulumi.get(self, "target_resource_type")
 
     @property
     @pulumi.getter(name="targetResponderRecipes")
-    def target_responder_recipes(self) -> Sequence['outputs.GetGuardTargetTargetResponderRecipeResult']:
-        """
-        List of responder recipes associated with target
-        """
+    def target_responder_recipes(self) -> Optional[Sequence['outputs.GetGuardTargetTargetResponderRecipeResult']]:
         return pulumi.get(self, "target_responder_recipes")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the target was created. Format defined by RFC3339.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The date and time the target was updated. Format defined by RFC3339.
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
 
@@ -261,21 +207,7 @@ class AwaitableGetGuardTargetResult(GetGuardTargetResult):
 def get_guard_target(target_id: Optional[str] = None,
                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetGuardTargetResult:
     """
-    This data source provides details about a specific Target resource in Oracle Cloud Infrastructure Cloud Guard service.
-
-    Returns a Target identified by targetId
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_target = oci.CloudGuard.get_guard_target(target_id=oci_cloud_guard_target["test_target"]["id"])
-    ```
-
-
-    :param str target_id: OCID of target
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['targetId'] = target_id
@@ -308,20 +240,6 @@ def get_guard_target(target_id: Optional[str] = None,
 def get_guard_target_output(target_id: Optional[pulumi.Input[str]] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetGuardTargetResult]:
     """
-    This data source provides details about a specific Target resource in Oracle Cloud Infrastructure Cloud Guard service.
-
-    Returns a Target identified by targetId
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_target = oci.CloudGuard.get_guard_target(target_id=oci_cloud_guard_target["test_target"]["id"])
-    ```
-
-
-    :param str target_id: OCID of target
+    Use this data source to access information about an existing resource.
     """
     ...

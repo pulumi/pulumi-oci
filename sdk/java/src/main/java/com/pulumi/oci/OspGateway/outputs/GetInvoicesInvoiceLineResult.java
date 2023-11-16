@@ -8,6 +8,8 @@ import com.pulumi.oci.OspGateway.outputs.GetInvoicesInvoiceLineItem;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetInvoicesInvoiceLineResult {
@@ -16,13 +18,13 @@ public final class GetInvoicesInvoiceLineResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private String internalInvoiceId;
     /**
      * @return Invoice line list elements
      * 
      */
-    private List<GetInvoicesInvoiceLineItem> items;
+    private @Nullable List<GetInvoicesInvoiceLineItem> items;
     private String ospHomeRegion;
 
     private GetInvoicesInvoiceLineResult() {}
@@ -33,8 +35,8 @@ public final class GetInvoicesInvoiceLineResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public String internalInvoiceId() {
         return this.internalInvoiceId;
@@ -44,7 +46,7 @@ public final class GetInvoicesInvoiceLineResult {
      * 
      */
     public List<GetInvoicesInvoiceLineItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
     public String ospHomeRegion() {
         return this.ospHomeRegion;
@@ -60,9 +62,9 @@ public final class GetInvoicesInvoiceLineResult {
     @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
-        private String id;
+        private @Nullable String id;
         private String internalInvoiceId;
-        private List<GetInvoicesInvoiceLineItem> items;
+        private @Nullable List<GetInvoicesInvoiceLineItem> items;
         private String ospHomeRegion;
         public Builder() {}
         public Builder(GetInvoicesInvoiceLineResult defaults) {
@@ -80,8 +82,8 @@ public final class GetInvoicesInvoiceLineResult {
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -90,8 +92,8 @@ public final class GetInvoicesInvoiceLineResult {
             return this;
         }
         @CustomType.Setter
-        public Builder items(List<GetInvoicesInvoiceLineItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetInvoicesInvoiceLineItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetInvoicesInvoiceLineItem... items) {

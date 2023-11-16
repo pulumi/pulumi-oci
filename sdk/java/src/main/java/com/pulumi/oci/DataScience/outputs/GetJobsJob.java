@@ -14,218 +14,220 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetJobsJob {
-    private String artifactContentDisposition;
-    private String artifactContentLength;
-    private String artifactContentMd5;
-    private String artifactLastModified;
+    private @Nullable String artifactContentDisposition;
+    private @Nullable String artifactContentLength;
+    private @Nullable String artifactContentMd5;
+    private @Nullable String artifactLastModified;
     /**
      * @return &lt;b&gt;Filter&lt;/b&gt; results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return &lt;b&gt;Filter&lt;/b&gt; results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the resource.
      * 
      */
-    private String createdBy;
+    private @Nullable String createdBy;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
-    private Boolean deleteRelatedJobRuns;
+    private @Nullable Map<String,Object> definedTags;
+    private @Nullable Boolean deleteRelatedJobRuns;
     /**
      * @return A short description of the job.
      * 
      */
-    private String description;
+    private @Nullable String description;
     /**
      * @return &lt;b&gt;Filter&lt;/b&gt; results by its user-friendly name.
      * 
      */
-    private String displayName;
-    private Boolean emptyArtifact;
+    private @Nullable String displayName;
+    private @Nullable Boolean emptyArtifact;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return &lt;b&gt;Filter&lt;/b&gt; results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resource type.
      * 
      */
-    private String id;
-    private String jobArtifact;
+    private @Nullable String id;
+    private @Nullable String jobArtifact;
     /**
      * @return The job configuration details
      * 
      */
-    private List<GetJobsJobJobConfigurationDetail> jobConfigurationDetails;
+    private @Nullable List<GetJobsJobJobConfigurationDetail> jobConfigurationDetails;
     /**
      * @return The job infrastructure configuration details (shape, block storage, etc.)
      * 
      */
-    private List<GetJobsJobJobInfrastructureConfigurationDetail> jobInfrastructureConfigurationDetails;
+    private @Nullable List<GetJobsJobJobInfrastructureConfigurationDetail> jobInfrastructureConfigurationDetails;
     /**
      * @return Logging configuration for resource.
      * 
      */
-    private List<GetJobsJobJobLogConfigurationDetail> jobLogConfigurationDetails;
+    private @Nullable List<GetJobsJobJobLogConfigurationDetail> jobLogConfigurationDetails;
     /**
      * @return Collection of JobStorageMountConfigurationDetails.
      * 
      */
-    private List<GetJobsJobJobStorageMountConfigurationDetailsList> jobStorageMountConfigurationDetailsLists;
+    private @Nullable List<GetJobsJobJobStorageMountConfigurationDetailsList> jobStorageMountConfigurationDetailsLists;
     /**
      * @return The state of the job.
      * 
      */
-    private String lifecycleDetails;
+    private @Nullable String lifecycleDetails;
     /**
      * @return &lt;b&gt;Filter&lt;/b&gt; results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project.
      * 
      */
-    private String projectId;
+    private @Nullable String projectId;
     /**
      * @return &lt;b&gt;Filter&lt;/b&gt; results by the specified lifecycle state. Must be a valid state for the resource type.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2020-08-06T21:10:29.41Z
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
 
     private GetJobsJob() {}
-    public String artifactContentDisposition() {
-        return this.artifactContentDisposition;
+    public Optional<String> artifactContentDisposition() {
+        return Optional.ofNullable(this.artifactContentDisposition);
     }
-    public String artifactContentLength() {
-        return this.artifactContentLength;
+    public Optional<String> artifactContentLength() {
+        return Optional.ofNullable(this.artifactContentLength);
     }
-    public String artifactContentMd5() {
-        return this.artifactContentMd5;
+    public Optional<String> artifactContentMd5() {
+        return Optional.ofNullable(this.artifactContentMd5);
     }
-    public String artifactLastModified() {
-        return this.artifactLastModified;
+    public Optional<String> artifactLastModified() {
+        return Optional.ofNullable(this.artifactLastModified);
     }
     /**
      * @return &lt;b&gt;Filter&lt;/b&gt; results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return &lt;b&gt;Filter&lt;/b&gt; results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the resource.
      * 
      */
-    public String createdBy() {
-        return this.createdBy;
+    public Optional<String> createdBy() {
+        return Optional.ofNullable(this.createdBy);
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
-    public Boolean deleteRelatedJobRuns() {
-        return this.deleteRelatedJobRuns;
+    public Optional<Boolean> deleteRelatedJobRuns() {
+        return Optional.ofNullable(this.deleteRelatedJobRuns);
     }
     /**
      * @return A short description of the job.
      * 
      */
-    public String description() {
-        return this.description;
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
     /**
      * @return &lt;b&gt;Filter&lt;/b&gt; results by its user-friendly name.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
-    public Boolean emptyArtifact() {
-        return this.emptyArtifact;
+    public Optional<Boolean> emptyArtifact() {
+        return Optional.ofNullable(this.emptyArtifact);
     }
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return &lt;b&gt;Filter&lt;/b&gt; results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resource type.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
-    public String jobArtifact() {
-        return this.jobArtifact;
+    public Optional<String> jobArtifact() {
+        return Optional.ofNullable(this.jobArtifact);
     }
     /**
      * @return The job configuration details
      * 
      */
     public List<GetJobsJobJobConfigurationDetail> jobConfigurationDetails() {
-        return this.jobConfigurationDetails;
+        return this.jobConfigurationDetails == null ? List.of() : this.jobConfigurationDetails;
     }
     /**
      * @return The job infrastructure configuration details (shape, block storage, etc.)
      * 
      */
     public List<GetJobsJobJobInfrastructureConfigurationDetail> jobInfrastructureConfigurationDetails() {
-        return this.jobInfrastructureConfigurationDetails;
+        return this.jobInfrastructureConfigurationDetails == null ? List.of() : this.jobInfrastructureConfigurationDetails;
     }
     /**
      * @return Logging configuration for resource.
      * 
      */
     public List<GetJobsJobJobLogConfigurationDetail> jobLogConfigurationDetails() {
-        return this.jobLogConfigurationDetails;
+        return this.jobLogConfigurationDetails == null ? List.of() : this.jobLogConfigurationDetails;
     }
     /**
      * @return Collection of JobStorageMountConfigurationDetails.
      * 
      */
     public List<GetJobsJobJobStorageMountConfigurationDetailsList> jobStorageMountConfigurationDetailsLists() {
-        return this.jobStorageMountConfigurationDetailsLists;
+        return this.jobStorageMountConfigurationDetailsLists == null ? List.of() : this.jobStorageMountConfigurationDetailsLists;
     }
     /**
      * @return The state of the job.
      * 
      */
-    public String lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Optional<String> lifecycleDetails() {
+        return Optional.ofNullable(this.lifecycleDetails);
     }
     /**
      * @return &lt;b&gt;Filter&lt;/b&gt; results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project.
      * 
      */
-    public String projectId() {
-        return this.projectId;
+    public Optional<String> projectId() {
+        return Optional.ofNullable(this.projectId);
     }
     /**
      * @return &lt;b&gt;Filter&lt;/b&gt; results by the specified lifecycle state. Must be a valid state for the resource type.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2020-08-06T21:10:29.41Z
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
 
     public static Builder builder() {
@@ -237,28 +239,28 @@ public final class GetJobsJob {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String artifactContentDisposition;
-        private String artifactContentLength;
-        private String artifactContentMd5;
-        private String artifactLastModified;
-        private String compartmentId;
-        private String createdBy;
-        private Map<String,Object> definedTags;
-        private Boolean deleteRelatedJobRuns;
-        private String description;
-        private String displayName;
-        private Boolean emptyArtifact;
-        private Map<String,Object> freeformTags;
-        private String id;
-        private String jobArtifact;
-        private List<GetJobsJobJobConfigurationDetail> jobConfigurationDetails;
-        private List<GetJobsJobJobInfrastructureConfigurationDetail> jobInfrastructureConfigurationDetails;
-        private List<GetJobsJobJobLogConfigurationDetail> jobLogConfigurationDetails;
-        private List<GetJobsJobJobStorageMountConfigurationDetailsList> jobStorageMountConfigurationDetailsLists;
-        private String lifecycleDetails;
-        private String projectId;
-        private String state;
-        private String timeCreated;
+        private @Nullable String artifactContentDisposition;
+        private @Nullable String artifactContentLength;
+        private @Nullable String artifactContentMd5;
+        private @Nullable String artifactLastModified;
+        private @Nullable String compartmentId;
+        private @Nullable String createdBy;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable Boolean deleteRelatedJobRuns;
+        private @Nullable String description;
+        private @Nullable String displayName;
+        private @Nullable Boolean emptyArtifact;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String id;
+        private @Nullable String jobArtifact;
+        private @Nullable List<GetJobsJobJobConfigurationDetail> jobConfigurationDetails;
+        private @Nullable List<GetJobsJobJobInfrastructureConfigurationDetail> jobInfrastructureConfigurationDetails;
+        private @Nullable List<GetJobsJobJobLogConfigurationDetail> jobLogConfigurationDetails;
+        private @Nullable List<GetJobsJobJobStorageMountConfigurationDetailsList> jobStorageMountConfigurationDetailsLists;
+        private @Nullable String lifecycleDetails;
+        private @Nullable String projectId;
+        private @Nullable String state;
+        private @Nullable String timeCreated;
         public Builder() {}
         public Builder(GetJobsJob defaults) {
     	      Objects.requireNonNull(defaults);
@@ -287,125 +289,125 @@ public final class GetJobsJob {
         }
 
         @CustomType.Setter
-        public Builder artifactContentDisposition(String artifactContentDisposition) {
-            this.artifactContentDisposition = Objects.requireNonNull(artifactContentDisposition);
+        public Builder artifactContentDisposition(@Nullable String artifactContentDisposition) {
+            this.artifactContentDisposition = artifactContentDisposition;
             return this;
         }
         @CustomType.Setter
-        public Builder artifactContentLength(String artifactContentLength) {
-            this.artifactContentLength = Objects.requireNonNull(artifactContentLength);
+        public Builder artifactContentLength(@Nullable String artifactContentLength) {
+            this.artifactContentLength = artifactContentLength;
             return this;
         }
         @CustomType.Setter
-        public Builder artifactContentMd5(String artifactContentMd5) {
-            this.artifactContentMd5 = Objects.requireNonNull(artifactContentMd5);
+        public Builder artifactContentMd5(@Nullable String artifactContentMd5) {
+            this.artifactContentMd5 = artifactContentMd5;
             return this;
         }
         @CustomType.Setter
-        public Builder artifactLastModified(String artifactLastModified) {
-            this.artifactLastModified = Objects.requireNonNull(artifactLastModified);
+        public Builder artifactLastModified(@Nullable String artifactLastModified) {
+            this.artifactLastModified = artifactLastModified;
             return this;
         }
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder createdBy(String createdBy) {
-            this.createdBy = Objects.requireNonNull(createdBy);
+        public Builder createdBy(@Nullable String createdBy) {
+            this.createdBy = createdBy;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder deleteRelatedJobRuns(Boolean deleteRelatedJobRuns) {
-            this.deleteRelatedJobRuns = Objects.requireNonNull(deleteRelatedJobRuns);
+        public Builder deleteRelatedJobRuns(@Nullable Boolean deleteRelatedJobRuns) {
+            this.deleteRelatedJobRuns = deleteRelatedJobRuns;
             return this;
         }
         @CustomType.Setter
-        public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+        public Builder description(@Nullable String description) {
+            this.description = description;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder emptyArtifact(Boolean emptyArtifact) {
-            this.emptyArtifact = Objects.requireNonNull(emptyArtifact);
+        public Builder emptyArtifact(@Nullable Boolean emptyArtifact) {
+            this.emptyArtifact = emptyArtifact;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder jobArtifact(String jobArtifact) {
-            this.jobArtifact = Objects.requireNonNull(jobArtifact);
+        public Builder jobArtifact(@Nullable String jobArtifact) {
+            this.jobArtifact = jobArtifact;
             return this;
         }
         @CustomType.Setter
-        public Builder jobConfigurationDetails(List<GetJobsJobJobConfigurationDetail> jobConfigurationDetails) {
-            this.jobConfigurationDetails = Objects.requireNonNull(jobConfigurationDetails);
+        public Builder jobConfigurationDetails(@Nullable List<GetJobsJobJobConfigurationDetail> jobConfigurationDetails) {
+            this.jobConfigurationDetails = jobConfigurationDetails;
             return this;
         }
         public Builder jobConfigurationDetails(GetJobsJobJobConfigurationDetail... jobConfigurationDetails) {
             return jobConfigurationDetails(List.of(jobConfigurationDetails));
         }
         @CustomType.Setter
-        public Builder jobInfrastructureConfigurationDetails(List<GetJobsJobJobInfrastructureConfigurationDetail> jobInfrastructureConfigurationDetails) {
-            this.jobInfrastructureConfigurationDetails = Objects.requireNonNull(jobInfrastructureConfigurationDetails);
+        public Builder jobInfrastructureConfigurationDetails(@Nullable List<GetJobsJobJobInfrastructureConfigurationDetail> jobInfrastructureConfigurationDetails) {
+            this.jobInfrastructureConfigurationDetails = jobInfrastructureConfigurationDetails;
             return this;
         }
         public Builder jobInfrastructureConfigurationDetails(GetJobsJobJobInfrastructureConfigurationDetail... jobInfrastructureConfigurationDetails) {
             return jobInfrastructureConfigurationDetails(List.of(jobInfrastructureConfigurationDetails));
         }
         @CustomType.Setter
-        public Builder jobLogConfigurationDetails(List<GetJobsJobJobLogConfigurationDetail> jobLogConfigurationDetails) {
-            this.jobLogConfigurationDetails = Objects.requireNonNull(jobLogConfigurationDetails);
+        public Builder jobLogConfigurationDetails(@Nullable List<GetJobsJobJobLogConfigurationDetail> jobLogConfigurationDetails) {
+            this.jobLogConfigurationDetails = jobLogConfigurationDetails;
             return this;
         }
         public Builder jobLogConfigurationDetails(GetJobsJobJobLogConfigurationDetail... jobLogConfigurationDetails) {
             return jobLogConfigurationDetails(List.of(jobLogConfigurationDetails));
         }
         @CustomType.Setter
-        public Builder jobStorageMountConfigurationDetailsLists(List<GetJobsJobJobStorageMountConfigurationDetailsList> jobStorageMountConfigurationDetailsLists) {
-            this.jobStorageMountConfigurationDetailsLists = Objects.requireNonNull(jobStorageMountConfigurationDetailsLists);
+        public Builder jobStorageMountConfigurationDetailsLists(@Nullable List<GetJobsJobJobStorageMountConfigurationDetailsList> jobStorageMountConfigurationDetailsLists) {
+            this.jobStorageMountConfigurationDetailsLists = jobStorageMountConfigurationDetailsLists;
             return this;
         }
         public Builder jobStorageMountConfigurationDetailsLists(GetJobsJobJobStorageMountConfigurationDetailsList... jobStorageMountConfigurationDetailsLists) {
             return jobStorageMountConfigurationDetailsLists(List.of(jobStorageMountConfigurationDetailsLists));
         }
         @CustomType.Setter
-        public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+        public Builder lifecycleDetails(@Nullable String lifecycleDetails) {
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
-        public Builder projectId(String projectId) {
-            this.projectId = Objects.requireNonNull(projectId);
+        public Builder projectId(@Nullable String projectId) {
+            this.projectId = projectId;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         public GetJobsJob build() {

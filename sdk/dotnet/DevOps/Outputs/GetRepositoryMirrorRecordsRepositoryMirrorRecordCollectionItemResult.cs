@@ -13,38 +13,38 @@ namespace Pulumi.Oci.DevOps.Outputs
     [OutputType]
     public sealed class GetRepositoryMirrorRecordsRepositoryMirrorRecordCollectionItemResult
     {
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// Mirror status of current mirror entry. QUEUED - Mirroring Queued RUNNING - Mirroring is Running PASSED - Mirroring Passed FAILED - Mirroring Failed
         /// </summary>
-        public readonly string MirrorStatus;
-        public readonly string TimeCompleted;
+        public readonly string? MirrorStatus;
+        public readonly string? TimeCompleted;
         /// <summary>
         /// The time to enqueue a mirror operation.
         /// </summary>
-        public readonly string TimeEnqueued;
+        public readonly string? TimeEnqueued;
         /// <summary>
         /// The time to start a mirror operation.
         /// </summary>
-        public readonly string TimeStarted;
+        public readonly string? TimeStarted;
         /// <summary>
         /// Workrequest ID to track current mirror operation.
         /// </summary>
-        public readonly string WorkRequestId;
+        public readonly string? WorkRequestId;
 
         [OutputConstructor]
         private GetRepositoryMirrorRecordsRepositoryMirrorRecordCollectionItemResult(
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string mirrorStatus,
+            string? mirrorStatus,
 
-            string timeCompleted,
+            string? timeCompleted,
 
-            string timeEnqueued,
+            string? timeEnqueued,
 
-            string timeStarted,
+            string? timeStarted,
 
-            string workRequestId)
+            string? workRequestId)
         {
             FreeformTags = freeformTags;
             MirrorStatus = mirrorStatus;

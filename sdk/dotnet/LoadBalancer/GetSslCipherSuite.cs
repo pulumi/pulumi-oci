@@ -127,25 +127,25 @@ namespace Pulumi.Oci.LoadBalancer
         /// A list of SSL ciphers the load balancer must support for HTTPS or SSL connections.
         /// </summary>
         public readonly ImmutableArray<string> Ciphers;
-        public readonly string Id;
+        public readonly string? Id;
         public readonly string LoadBalancerId;
         /// <summary>
         /// A friendly name for the SSL cipher suite. It must be unique and it cannot be changed.
         /// </summary>
         public readonly string Name;
-        public readonly string State;
+        public readonly string? State;
 
         [OutputConstructor]
         private GetSslCipherSuiteResult(
             ImmutableArray<string> ciphers,
 
-            string id,
+            string? id,
 
             string loadBalancerId,
 
             string name,
 
-            string state)
+            string? state)
         {
             Ciphers = ciphers;
             Id = id;

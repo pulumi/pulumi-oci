@@ -6,6 +6,8 @@ package com.pulumi.oci.DataSafe.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetTargetDatabaseCredential {
@@ -13,27 +15,27 @@ public final class GetTargetDatabaseCredential {
      * @return The password of the database user.
      * 
      */
-    private String password;
+    private @Nullable String password;
     /**
      * @return The database user name.
      * 
      */
-    private String userName;
+    private @Nullable String userName;
 
     private GetTargetDatabaseCredential() {}
     /**
      * @return The password of the database user.
      * 
      */
-    public String password() {
-        return this.password;
+    public Optional<String> password() {
+        return Optional.ofNullable(this.password);
     }
     /**
      * @return The database user name.
      * 
      */
-    public String userName() {
-        return this.userName;
+    public Optional<String> userName() {
+        return Optional.ofNullable(this.userName);
     }
 
     public static Builder builder() {
@@ -45,8 +47,8 @@ public final class GetTargetDatabaseCredential {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String password;
-        private String userName;
+        private @Nullable String password;
+        private @Nullable String userName;
         public Builder() {}
         public Builder(GetTargetDatabaseCredential defaults) {
     	      Objects.requireNonNull(defaults);
@@ -55,13 +57,13 @@ public final class GetTargetDatabaseCredential {
         }
 
         @CustomType.Setter
-        public Builder password(String password) {
-            this.password = Objects.requireNonNull(password);
+        public Builder password(@Nullable String password) {
+            this.password = password;
             return this;
         }
         @CustomType.Setter
-        public Builder userName(String userName) {
-            this.userName = Objects.requireNonNull(userName);
+        public Builder userName(@Nullable String userName) {
+            this.userName = userName;
             return this;
         }
         public GetTargetDatabaseCredential build() {

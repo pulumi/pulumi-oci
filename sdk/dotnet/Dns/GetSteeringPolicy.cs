@@ -114,27 +114,27 @@ namespace Pulumi.Oci.Dns
         /// <summary>
         /// The OCID of the compartment containing the steering policy.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// A user-friendly name for the steering policy. Does not have to be unique and can be changed. Avoid entering confidential information.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// The OCID of the health check monitor providing health data about the answers of the steering policy. A steering policy answer with `rdata` matching a monitored endpoint will use the health data of that endpoint. A steering policy answer with `rdata` not matching any monitored endpoint will be assumed healthy.
         /// </summary>
-        public readonly string HealthCheckMonitorId;
+        public readonly string? HealthCheckMonitorId;
         /// <summary>
         /// The OCID of the resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The series of rules that will be processed in sequence to reduce the pool of answers to a response for any given request.
         /// </summary>
@@ -142,54 +142,54 @@ namespace Pulumi.Oci.Dns
         /// <summary>
         /// The canonical absolute URL of the resource.
         /// </summary>
-        public readonly string Self;
+        public readonly string? Self;
         /// <summary>
         /// The current state of the resource.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         public readonly string SteeringPolicyId;
         /// <summary>
         /// A set of predefined rules based on the desired purpose of the steering policy. Each template utilizes Traffic Management's rules in a different order to produce the desired results when answering DNS queries.
         /// </summary>
-        public readonly string Template;
+        public readonly string? Template;
         /// <summary>
         /// The date and time the resource was created, expressed in RFC 3339 timestamp format.
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The Time To Live (TTL) for responses from the steering policy, in seconds. If not specified during creation, a value of 30 seconds will be used.
         /// </summary>
-        public readonly int Ttl;
+        public readonly int? Ttl;
 
         [OutputConstructor]
         private GetSteeringPolicyResult(
             ImmutableArray<Outputs.GetSteeringPolicyAnswerResult> answers,
 
-            string compartmentId,
+            string? compartmentId,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string displayName,
+            string? displayName,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string healthCheckMonitorId,
+            string? healthCheckMonitorId,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetSteeringPolicyRuleResult> rules,
 
-            string self,
+            string? self,
 
-            string state,
+            string? state,
 
             string steeringPolicyId,
 
-            string template,
+            string? template,
 
-            string timeCreated,
+            string? timeCreated,
 
-            int ttl)
+            int? ttl)
         {
             Answers = answers;
             CompartmentId = compartmentId;

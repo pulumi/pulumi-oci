@@ -66,7 +66,7 @@ export interface GetVirtualNodePoolsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The state of the Virtual Node Pool.
      */
@@ -74,7 +74,7 @@ export interface GetVirtualNodePoolsResult {
     /**
      * The list of virtual_node_pools.
      */
-    readonly virtualNodePools: outputs.ContainerEngine.GetVirtualNodePoolsVirtualNodePool[];
+    readonly virtualNodePools?: outputs.ContainerEngine.GetVirtualNodePoolsVirtualNodePool[];
 }
 /**
  * This data source provides the list of Virtual Node Pools in Oracle Cloud Infrastructure Container Engine service.

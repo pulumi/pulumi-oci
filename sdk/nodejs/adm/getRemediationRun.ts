@@ -47,64 +47,64 @@ export interface GetRemediationRunResult {
     /**
      * The compartment Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the remediation run.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * The type of the current stage of the remediation run.
      */
-    readonly currentStageType: string;
+    readonly currentStageType?: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * The name of the remediation run.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the remediation run.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Remediation Recipe.
      */
-    readonly remediationRecipeId: string;
+    readonly remediationRecipeId?: string;
     readonly remediationRunId: string;
     /**
      * The source that triggered the Remediation Recipe.
      */
-    readonly remediationRunSource: string;
+    readonly remediationRunSource?: string;
     /**
      * The list of remediation run stage summaries.
      */
-    readonly stages: outputs.Adm.GetRemediationRunStage[];
+    readonly stages?: outputs.Adm.GetRemediationRunStage[];
     /**
      * The current lifecycle state of the remediation run.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    readonly systemTags: {[key: string]: any};
+    readonly systemTags?: {[key: string]: any};
     /**
      * The creation date and time of the remediation run (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The date and time of the finish of the remediation run (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      */
-    readonly timeFinished: string;
+    readonly timeFinished?: string;
     /**
      * The date and time of the start of the remediation run (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      */
-    readonly timeStarted: string;
+    readonly timeStarted?: string;
     /**
      * The date and time the remediation run was last updated (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      */
-    readonly timeUpdated: string;
+    readonly timeUpdated?: string;
 }
 /**
  * This data source provides details about a specific Remediation Run resource in Oracle Cloud Infrastructure Adm service.

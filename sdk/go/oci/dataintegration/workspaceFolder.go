@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Workspace Folder resource in Oracle Cloud Infrastructure Data Integration service.
@@ -70,28 +69,28 @@ type WorkspaceFolder struct {
 	pulumi.CustomResourceState
 
 	// (Updatable) The category name.
-	CategoryName pulumi.StringOutput `pulumi:"categoryName"`
+	CategoryName pulumi.StringPtrOutput `pulumi:"categoryName"`
 	// (Updatable) A user defined description for the folder.
-	Description pulumi.StringOutput `pulumi:"description"`
-	FolderKey   pulumi.StringOutput `pulumi:"folderKey"`
+	Description pulumi.StringPtrOutput `pulumi:"description"`
+	FolderKey   pulumi.StringPtrOutput `pulumi:"folderKey"`
 	// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
 	Identifier pulumi.StringOutput `pulumi:"identifier"`
 	// (Updatable) The identifying key for the object.
-	Key pulumi.StringOutput `pulumi:"key"`
+	Key pulumi.StringPtrOutput `pulumi:"key"`
 	// A key map. If provided, the key is replaced with generated key. This structure provides mapping between user provided key and generated key.
 	KeyMap pulumi.MapOutput `pulumi:"keyMap"`
 	// A summary type containing information about the object including its key, name and when/who created/updated it.
 	Metadatas WorkspaceFolderMetadataArrayOutput `pulumi:"metadatas"`
 	// The type of the object.
-	ModelType pulumi.StringOutput `pulumi:"modelType"`
+	ModelType pulumi.StringPtrOutput `pulumi:"modelType"`
 	// (Updatable) The model version of an object.
-	ModelVersion pulumi.StringOutput `pulumi:"modelVersion"`
+	ModelVersion pulumi.StringPtrOutput `pulumi:"modelVersion"`
 	// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 	Name pulumi.StringOutput `pulumi:"name"`
 	// (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
-	ObjectStatus pulumi.IntOutput `pulumi:"objectStatus"`
+	ObjectStatus pulumi.IntPtrOutput `pulumi:"objectStatus"`
 	// The version of the object that is used to track changes in the object instance.
-	ObjectVersion pulumi.IntOutput `pulumi:"objectVersion"`
+	ObjectVersion pulumi.IntPtrOutput `pulumi:"objectVersion"`
 	// A reference to the object's parent.
 	ParentReves WorkspaceFolderParentRefArrayOutput `pulumi:"parentReves"`
 	// (Updatable) Information about the object and its parent.
@@ -289,12 +288,6 @@ func (i *WorkspaceFolder) ToWorkspaceFolderOutputWithContext(ctx context.Context
 	return pulumi.ToOutputWithContext(ctx, i).(WorkspaceFolderOutput)
 }
 
-func (i *WorkspaceFolder) ToOutput(ctx context.Context) pulumix.Output[*WorkspaceFolder] {
-	return pulumix.Output[*WorkspaceFolder]{
-		OutputState: i.ToWorkspaceFolderOutputWithContext(ctx).OutputState,
-	}
-}
-
 // WorkspaceFolderArrayInput is an input type that accepts WorkspaceFolderArray and WorkspaceFolderArrayOutput values.
 // You can construct a concrete instance of `WorkspaceFolderArrayInput` via:
 //
@@ -318,12 +311,6 @@ func (i WorkspaceFolderArray) ToWorkspaceFolderArrayOutput() WorkspaceFolderArra
 
 func (i WorkspaceFolderArray) ToWorkspaceFolderArrayOutputWithContext(ctx context.Context) WorkspaceFolderArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(WorkspaceFolderArrayOutput)
-}
-
-func (i WorkspaceFolderArray) ToOutput(ctx context.Context) pulumix.Output[[]*WorkspaceFolder] {
-	return pulumix.Output[[]*WorkspaceFolder]{
-		OutputState: i.ToWorkspaceFolderArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // WorkspaceFolderMapInput is an input type that accepts WorkspaceFolderMap and WorkspaceFolderMapOutput values.
@@ -351,12 +338,6 @@ func (i WorkspaceFolderMap) ToWorkspaceFolderMapOutputWithContext(ctx context.Co
 	return pulumi.ToOutputWithContext(ctx, i).(WorkspaceFolderMapOutput)
 }
 
-func (i WorkspaceFolderMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*WorkspaceFolder] {
-	return pulumix.Output[map[string]*WorkspaceFolder]{
-		OutputState: i.ToWorkspaceFolderMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type WorkspaceFolderOutput struct{ *pulumi.OutputState }
 
 func (WorkspaceFolderOutput) ElementType() reflect.Type {
@@ -371,24 +352,18 @@ func (o WorkspaceFolderOutput) ToWorkspaceFolderOutputWithContext(ctx context.Co
 	return o
 }
 
-func (o WorkspaceFolderOutput) ToOutput(ctx context.Context) pulumix.Output[*WorkspaceFolder] {
-	return pulumix.Output[*WorkspaceFolder]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) The category name.
-func (o WorkspaceFolderOutput) CategoryName() pulumi.StringOutput {
-	return o.ApplyT(func(v *WorkspaceFolder) pulumi.StringOutput { return v.CategoryName }).(pulumi.StringOutput)
+func (o WorkspaceFolderOutput) CategoryName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *WorkspaceFolder) pulumi.StringPtrOutput { return v.CategoryName }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) A user defined description for the folder.
-func (o WorkspaceFolderOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v *WorkspaceFolder) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
+func (o WorkspaceFolderOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *WorkspaceFolder) pulumi.StringPtrOutput { return v.Description }).(pulumi.StringPtrOutput)
 }
 
-func (o WorkspaceFolderOutput) FolderKey() pulumi.StringOutput {
-	return o.ApplyT(func(v *WorkspaceFolder) pulumi.StringOutput { return v.FolderKey }).(pulumi.StringOutput)
+func (o WorkspaceFolderOutput) FolderKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *WorkspaceFolder) pulumi.StringPtrOutput { return v.FolderKey }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
@@ -397,8 +372,8 @@ func (o WorkspaceFolderOutput) Identifier() pulumi.StringOutput {
 }
 
 // (Updatable) The identifying key for the object.
-func (o WorkspaceFolderOutput) Key() pulumi.StringOutput {
-	return o.ApplyT(func(v *WorkspaceFolder) pulumi.StringOutput { return v.Key }).(pulumi.StringOutput)
+func (o WorkspaceFolderOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *WorkspaceFolder) pulumi.StringPtrOutput { return v.Key }).(pulumi.StringPtrOutput)
 }
 
 // A key map. If provided, the key is replaced with generated key. This structure provides mapping between user provided key and generated key.
@@ -412,13 +387,13 @@ func (o WorkspaceFolderOutput) Metadatas() WorkspaceFolderMetadataArrayOutput {
 }
 
 // The type of the object.
-func (o WorkspaceFolderOutput) ModelType() pulumi.StringOutput {
-	return o.ApplyT(func(v *WorkspaceFolder) pulumi.StringOutput { return v.ModelType }).(pulumi.StringOutput)
+func (o WorkspaceFolderOutput) ModelType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *WorkspaceFolder) pulumi.StringPtrOutput { return v.ModelType }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The model version of an object.
-func (o WorkspaceFolderOutput) ModelVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v *WorkspaceFolder) pulumi.StringOutput { return v.ModelVersion }).(pulumi.StringOutput)
+func (o WorkspaceFolderOutput) ModelVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *WorkspaceFolder) pulumi.StringPtrOutput { return v.ModelVersion }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
@@ -427,13 +402,13 @@ func (o WorkspaceFolderOutput) Name() pulumi.StringOutput {
 }
 
 // (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
-func (o WorkspaceFolderOutput) ObjectStatus() pulumi.IntOutput {
-	return o.ApplyT(func(v *WorkspaceFolder) pulumi.IntOutput { return v.ObjectStatus }).(pulumi.IntOutput)
+func (o WorkspaceFolderOutput) ObjectStatus() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *WorkspaceFolder) pulumi.IntPtrOutput { return v.ObjectStatus }).(pulumi.IntPtrOutput)
 }
 
 // The version of the object that is used to track changes in the object instance.
-func (o WorkspaceFolderOutput) ObjectVersion() pulumi.IntOutput {
-	return o.ApplyT(func(v *WorkspaceFolder) pulumi.IntOutput { return v.ObjectVersion }).(pulumi.IntOutput)
+func (o WorkspaceFolderOutput) ObjectVersion() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *WorkspaceFolder) pulumi.IntPtrOutput { return v.ObjectVersion }).(pulumi.IntPtrOutput)
 }
 
 // A reference to the object's parent.
@@ -468,12 +443,6 @@ func (o WorkspaceFolderArrayOutput) ToWorkspaceFolderArrayOutputWithContext(ctx 
 	return o
 }
 
-func (o WorkspaceFolderArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*WorkspaceFolder] {
-	return pulumix.Output[[]*WorkspaceFolder]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o WorkspaceFolderArrayOutput) Index(i pulumi.IntInput) WorkspaceFolderOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *WorkspaceFolder {
 		return vs[0].([]*WorkspaceFolder)[vs[1].(int)]
@@ -492,12 +461,6 @@ func (o WorkspaceFolderMapOutput) ToWorkspaceFolderMapOutput() WorkspaceFolderMa
 
 func (o WorkspaceFolderMapOutput) ToWorkspaceFolderMapOutputWithContext(ctx context.Context) WorkspaceFolderMapOutput {
 	return o
-}
-
-func (o WorkspaceFolderMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*WorkspaceFolder] {
-	return pulumix.Output[map[string]*WorkspaceFolder]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o WorkspaceFolderMapOutput) MapIndex(k pulumi.StringInput) WorkspaceFolderOutput {

@@ -6,6 +6,8 @@ package com.pulumi.oci.Core.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetClusterNetworksClusterNetworkPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetail {
@@ -13,15 +15,15 @@ public final class GetClusterNetworksClusterNetworkPlacementConfigurationPrimary
      * @return Optional. Used to disambiguate which subnet prefix should be used to create an IPv6 allocation.
      * 
      */
-    private String ipv6subnetCidr;
+    private @Nullable String ipv6subnetCidr;
 
     private GetClusterNetworksClusterNetworkPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetail() {}
     /**
      * @return Optional. Used to disambiguate which subnet prefix should be used to create an IPv6 allocation.
      * 
      */
-    public String ipv6subnetCidr() {
-        return this.ipv6subnetCidr;
+    public Optional<String> ipv6subnetCidr() {
+        return Optional.ofNullable(this.ipv6subnetCidr);
     }
 
     public static Builder builder() {
@@ -33,7 +35,7 @@ public final class GetClusterNetworksClusterNetworkPlacementConfigurationPrimary
     }
     @CustomType.Builder
     public static final class Builder {
-        private String ipv6subnetCidr;
+        private @Nullable String ipv6subnetCidr;
         public Builder() {}
         public Builder(GetClusterNetworksClusterNetworkPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetail defaults) {
     	      Objects.requireNonNull(defaults);
@@ -41,8 +43,8 @@ public final class GetClusterNetworksClusterNetworkPlacementConfigurationPrimary
         }
 
         @CustomType.Setter
-        public Builder ipv6subnetCidr(String ipv6subnetCidr) {
-            this.ipv6subnetCidr = Objects.requireNonNull(ipv6subnetCidr);
+        public Builder ipv6subnetCidr(@Nullable String ipv6subnetCidr) {
+            this.ipv6subnetCidr = ipv6subnetCidr;
             return this;
         }
         public GetClusterNetworksClusterNetworkPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetail build() {

@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Security List resource in Oracle Cloud Infrastructure Core service.
@@ -141,7 +140,7 @@ type SecurityList struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrOutput `pulumi:"displayName"`
 	// (Updatable) Rules for allowing egress IP packets.
 	EgressSecurityRules SecurityListEgressSecurityRuleArrayOutput `pulumi:"egressSecurityRules"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -149,9 +148,9 @@ type SecurityList struct {
 	// (Updatable) Rules for allowing ingress IP packets.
 	IngressSecurityRules SecurityListIngressSecurityRuleArrayOutput `pulumi:"ingressSecurityRules"`
 	// The security list's current state.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// The date and time the security list was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN the security list belongs to.
 	//
 	// ** IMPORTANT **
@@ -310,12 +309,6 @@ func (i *SecurityList) ToSecurityListOutputWithContext(ctx context.Context) Secu
 	return pulumi.ToOutputWithContext(ctx, i).(SecurityListOutput)
 }
 
-func (i *SecurityList) ToOutput(ctx context.Context) pulumix.Output[*SecurityList] {
-	return pulumix.Output[*SecurityList]{
-		OutputState: i.ToSecurityListOutputWithContext(ctx).OutputState,
-	}
-}
-
 // SecurityListArrayInput is an input type that accepts SecurityListArray and SecurityListArrayOutput values.
 // You can construct a concrete instance of `SecurityListArrayInput` via:
 //
@@ -339,12 +332,6 @@ func (i SecurityListArray) ToSecurityListArrayOutput() SecurityListArrayOutput {
 
 func (i SecurityListArray) ToSecurityListArrayOutputWithContext(ctx context.Context) SecurityListArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(SecurityListArrayOutput)
-}
-
-func (i SecurityListArray) ToOutput(ctx context.Context) pulumix.Output[[]*SecurityList] {
-	return pulumix.Output[[]*SecurityList]{
-		OutputState: i.ToSecurityListArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // SecurityListMapInput is an input type that accepts SecurityListMap and SecurityListMapOutput values.
@@ -372,12 +359,6 @@ func (i SecurityListMap) ToSecurityListMapOutputWithContext(ctx context.Context)
 	return pulumi.ToOutputWithContext(ctx, i).(SecurityListMapOutput)
 }
 
-func (i SecurityListMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*SecurityList] {
-	return pulumix.Output[map[string]*SecurityList]{
-		OutputState: i.ToSecurityListMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type SecurityListOutput struct{ *pulumi.OutputState }
 
 func (SecurityListOutput) ElementType() reflect.Type {
@@ -392,12 +373,6 @@ func (o SecurityListOutput) ToSecurityListOutputWithContext(ctx context.Context)
 	return o
 }
 
-func (o SecurityListOutput) ToOutput(ctx context.Context) pulumix.Output[*SecurityList] {
-	return pulumix.Output[*SecurityList]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the security list.
 func (o SecurityListOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *SecurityList) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
@@ -409,8 +384,8 @@ func (o SecurityListOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-func (o SecurityListOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v *SecurityList) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+func (o SecurityListOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SecurityList) pulumi.StringPtrOutput { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Rules for allowing egress IP packets.
@@ -429,13 +404,13 @@ func (o SecurityListOutput) IngressSecurityRules() SecurityListIngressSecurityRu
 }
 
 // The security list's current state.
-func (o SecurityListOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *SecurityList) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o SecurityListOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SecurityList) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the security list was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-func (o SecurityListOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *SecurityList) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o SecurityListOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SecurityList) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN the security list belongs to.
@@ -460,12 +435,6 @@ func (o SecurityListArrayOutput) ToSecurityListArrayOutputWithContext(ctx contex
 	return o
 }
 
-func (o SecurityListArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*SecurityList] {
-	return pulumix.Output[[]*SecurityList]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o SecurityListArrayOutput) Index(i pulumi.IntInput) SecurityListOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *SecurityList {
 		return vs[0].([]*SecurityList)[vs[1].(int)]
@@ -484,12 +453,6 @@ func (o SecurityListMapOutput) ToSecurityListMapOutput() SecurityListMapOutput {
 
 func (o SecurityListMapOutput) ToSecurityListMapOutputWithContext(ctx context.Context) SecurityListMapOutput {
 	return o
-}
-
-func (o SecurityListMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*SecurityList] {
-	return pulumix.Output[map[string]*SecurityList]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o SecurityListMapOutput) MapIndex(k pulumi.StringInput) SecurityListOutput {

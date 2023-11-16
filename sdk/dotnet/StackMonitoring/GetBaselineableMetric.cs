@@ -109,103 +109,103 @@ namespace Pulumi.Oci.StackMonitoring
         /// <summary>
         /// metric column name
         /// </summary>
-        public readonly string Column;
+        public readonly string? Column;
         /// <summary>
         /// OCID of the compartment
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// Created user id
         /// </summary>
-        public readonly string CreatedBy;
+        public readonly string? CreatedBy;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// OCID of the metric
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Is the metric created out of box, default false
         /// </summary>
-        public readonly bool IsOutOfBox;
+        public readonly bool? IsOutOfBox;
         /// <summary>
         /// last Updated user id
         /// </summary>
-        public readonly string LastUpdatedBy;
+        public readonly string? LastUpdatedBy;
         /// <summary>
         /// name of the metric
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// namespace of the metric
         /// </summary>
-        public readonly string Namespace;
+        public readonly string? Namespace;
         /// <summary>
         /// Resource group of the metric
         /// </summary>
-        public readonly string ResourceGroup;
+        public readonly string? ResourceGroup;
         /// <summary>
         /// The current lifecycle state of the metric extension
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> SystemTags;
+        public readonly ImmutableDictionary<string, object>? SystemTags;
         /// <summary>
         /// OCID of the tenancy
         /// </summary>
-        public readonly string TenancyId;
+        public readonly string? TenancyId;
         /// <summary>
         /// creation date
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// last updated time
         /// </summary>
-        public readonly string TimeLastUpdated;
+        public readonly string? TimeLastUpdated;
 
         [OutputConstructor]
         private GetBaselineableMetricResult(
             string baselineableMetricId,
 
-            string column,
+            string? column,
 
-            string compartmentId,
+            string? compartmentId,
 
-            string createdBy,
+            string? createdBy,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string id,
+            string? id,
 
-            bool isOutOfBox,
+            bool? isOutOfBox,
 
-            string lastUpdatedBy,
+            string? lastUpdatedBy,
 
-            string name,
+            string? name,
 
-            string @namespace,
+            string? @namespace,
 
-            string resourceGroup,
+            string? resourceGroup,
 
-            string state,
+            string? state,
 
-            ImmutableDictionary<string, object> systemTags,
+            ImmutableDictionary<string, object>? systemTags,
 
-            string tenancyId,
+            string? tenancyId,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeLastUpdated)
+            string? timeLastUpdated)
         {
             BaselineableMetricId = baselineableMetricId;
             Column = column;

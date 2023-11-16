@@ -55,12 +55,12 @@ export interface GetManagedDatabasesAsmPropertiesResult {
     /**
      * The list of asm_property_collection.
      */
-    readonly asmPropertyCollections: outputs.DatabaseManagement.GetManagedDatabasesAsmPropertiesAsmPropertyCollection[];
+    readonly asmPropertyCollections?: outputs.DatabaseManagement.GetManagedDatabasesAsmPropertiesAsmPropertyCollection[];
     readonly filters?: outputs.DatabaseManagement.GetManagedDatabasesAsmPropertiesFilter[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly managedDatabaseId: string;
     readonly name?: string;
 }

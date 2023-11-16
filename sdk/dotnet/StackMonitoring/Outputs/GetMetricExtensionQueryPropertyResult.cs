@@ -16,27 +16,27 @@ namespace Pulumi.Oci.StackMonitoring.Outputs
         /// <summary>
         /// Arguments required by either command or script
         /// </summary>
-        public readonly string Arguments;
+        public readonly string? Arguments;
         /// <summary>
         /// Prefix for an auto generated metric, in case multiple rows with non unique key values are returned
         /// </summary>
-        public readonly string AutoRowPrefix;
+        public readonly string? AutoRowPrefix;
         /// <summary>
         /// Type of possible collection methods.
         /// </summary>
-        public readonly string CollectionMethod;
+        public readonly string? CollectionMethod;
         /// <summary>
         /// OS command to execute without arguments
         /// </summary>
-        public readonly string Command;
+        public readonly string? Command;
         /// <summary>
         /// Character used to delimit multiple metric values in single line of output
         /// </summary>
-        public readonly string Delimiter;
+        public readonly string? Delimiter;
         /// <summary>
         /// Semi-colon separated list of key properties from Managed Bean ObjectName to be used as key metrics
         /// </summary>
-        public readonly string IdentityMetric;
+        public readonly string? IdentityMetric;
         /// <summary>
         /// List of values and position of PL/SQL procedure IN parameters
         /// </summary>
@@ -44,15 +44,15 @@ namespace Pulumi.Oci.StackMonitoring.Outputs
         /// <summary>
         /// Indicates if Metric Service is enabled on server domain
         /// </summary>
-        public readonly bool IsMetricServiceEnabled;
+        public readonly bool? IsMetricServiceEnabled;
         /// <summary>
         /// List of JMX attributes or Metric Service Table columns separated by semi-colon
         /// </summary>
-        public readonly string JmxAttributes;
+        public readonly string? JmxAttributes;
         /// <summary>
         /// JMX Managed Bean Query or Metric Service Table name
         /// </summary>
-        public readonly string ManagedBeanQuery;
+        public readonly string? ManagedBeanQuery;
         /// <summary>
         /// Position and SQL Type of PL/SQL OUT parameter
         /// </summary>
@@ -68,33 +68,33 @@ namespace Pulumi.Oci.StackMonitoring.Outputs
         /// <summary>
         /// Type of SQL data collection method i.e. either a Statement or SQL Script File
         /// </summary>
-        public readonly string SqlType;
+        public readonly string? SqlType;
         /// <summary>
         /// String prefix used to identify metric output of the OS Command
         /// </summary>
-        public readonly string StartsWith;
+        public readonly string? StartsWith;
 
         [OutputConstructor]
         private GetMetricExtensionQueryPropertyResult(
-            string arguments,
+            string? arguments,
 
-            string autoRowPrefix,
+            string? autoRowPrefix,
 
-            string collectionMethod,
+            string? collectionMethod,
 
-            string command,
+            string? command,
 
-            string delimiter,
+            string? delimiter,
 
-            string identityMetric,
+            string? identityMetric,
 
             ImmutableArray<Outputs.GetMetricExtensionQueryPropertyInParamDetailResult> inParamDetails,
 
-            bool isMetricServiceEnabled,
+            bool? isMetricServiceEnabled,
 
-            string jmxAttributes,
+            string? jmxAttributes,
 
-            string managedBeanQuery,
+            string? managedBeanQuery,
 
             ImmutableArray<Outputs.GetMetricExtensionQueryPropertyOutParamDetailResult> outParamDetails,
 
@@ -102,9 +102,9 @@ namespace Pulumi.Oci.StackMonitoring.Outputs
 
             ImmutableArray<Outputs.GetMetricExtensionQueryPropertySqlDetailResult> sqlDetails,
 
-            string sqlType,
+            string? sqlType,
 
-            string startsWith)
+            string? startsWith)
         {
             Arguments = arguments;
             AutoRowPrefix = autoRowPrefix;

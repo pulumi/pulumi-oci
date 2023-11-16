@@ -8,6 +8,8 @@ import com.pulumi.oci.DataSafe.outputs.GetAuditProfileAnalyticItemDimension;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAuditProfileAnalyticItem {
@@ -15,27 +17,27 @@ public final class GetAuditProfileAnalyticItem {
      * @return Total count of aggregated metric.
      * 
      */
-    private String count;
+    private @Nullable String count;
     /**
      * @return Details of aggregation dimensions used for summarizing audit profiles.
      * 
      */
-    private List<GetAuditProfileAnalyticItemDimension> dimensions;
+    private @Nullable List<GetAuditProfileAnalyticItemDimension> dimensions;
 
     private GetAuditProfileAnalyticItem() {}
     /**
      * @return Total count of aggregated metric.
      * 
      */
-    public String count() {
-        return this.count;
+    public Optional<String> count() {
+        return Optional.ofNullable(this.count);
     }
     /**
      * @return Details of aggregation dimensions used for summarizing audit profiles.
      * 
      */
     public List<GetAuditProfileAnalyticItemDimension> dimensions() {
-        return this.dimensions;
+        return this.dimensions == null ? List.of() : this.dimensions;
     }
 
     public static Builder builder() {
@@ -47,8 +49,8 @@ public final class GetAuditProfileAnalyticItem {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String count;
-        private List<GetAuditProfileAnalyticItemDimension> dimensions;
+        private @Nullable String count;
+        private @Nullable List<GetAuditProfileAnalyticItemDimension> dimensions;
         public Builder() {}
         public Builder(GetAuditProfileAnalyticItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -57,13 +59,13 @@ public final class GetAuditProfileAnalyticItem {
         }
 
         @CustomType.Setter
-        public Builder count(String count) {
-            this.count = Objects.requireNonNull(count);
+        public Builder count(@Nullable String count) {
+            this.count = count;
             return this;
         }
         @CustomType.Setter
-        public Builder dimensions(List<GetAuditProfileAnalyticItemDimension> dimensions) {
-            this.dimensions = Objects.requireNonNull(dimensions);
+        public Builder dimensions(@Nullable List<GetAuditProfileAnalyticItemDimension> dimensions) {
+            this.dimensions = dimensions;
             return this;
         }
         public Builder dimensions(GetAuditProfileAnalyticItemDimension... dimensions) {

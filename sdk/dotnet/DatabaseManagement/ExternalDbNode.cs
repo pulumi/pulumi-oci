@@ -29,43 +29,43 @@ namespace Pulumi.Oci.DatabaseManagement
         /// The additional details of the external DB node defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
         /// </summary>
         [Output("additionalDetails")]
-        public Output<ImmutableDictionary<string, object>> AdditionalDetails { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> AdditionalDetails { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         /// </summary>
         [Output("compartmentId")]
-        public Output<string> CompartmentId { get; private set; } = null!;
+        public Output<string?> CompartmentId { get; private set; } = null!;
 
         /// <summary>
         /// The name of the external DB node.
         /// </summary>
         [Output("componentName")]
-        public Output<string> ComponentName { get; private set; } = null!;
+        public Output<string?> ComponentName { get; private set; } = null!;
 
         /// <summary>
         /// The number of CPU cores available on the DB node.
         /// </summary>
         [Output("cpuCoreCount")]
-        public Output<double> CpuCoreCount { get; private set; } = null!;
+        public Output<double?> CpuCoreCount { get; private set; } = null!;
 
         /// <summary>
         /// The user-friendly name for the external DB node. The name does not have to be unique.
         /// </summary>
         [Output("displayName")]
-        public Output<string> DisplayName { get; private set; } = null!;
+        public Output<string?> DisplayName { get; private set; } = null!;
 
         /// <summary>
         /// Name of the domain.
         /// </summary>
         [Output("domainName")]
-        public Output<string> DomainName { get; private set; } = null!;
+        public Output<string?> DomainName { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external connector.
         /// </summary>
         [Output("externalConnectorId")]
-        public Output<string> ExternalConnectorId { get; private set; } = null!;
+        public Output<string?> ExternalConnectorId { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database node.
@@ -81,43 +81,43 @@ namespace Pulumi.Oci.DatabaseManagement
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that the DB node is a part of.
         /// </summary>
         [Output("externalDbSystemId")]
-        public Output<string> ExternalDbSystemId { get; private set; } = null!;
+        public Output<string?> ExternalDbSystemId { get; private set; } = null!;
 
         /// <summary>
         /// The host name for the DB node.
         /// </summary>
         [Output("hostName")]
-        public Output<string> HostName { get; private set; } = null!;
+        public Output<string?> HostName { get; private set; } = null!;
 
         /// <summary>
         /// Additional information about the current lifecycle state.
         /// </summary>
         [Output("lifecycleDetails")]
-        public Output<string> LifecycleDetails { get; private set; } = null!;
+        public Output<string?> LifecycleDetails { get; private set; } = null!;
 
         /// <summary>
         /// The total memory in gigabytes (GB) on the DB node.
         /// </summary>
         [Output("memorySizeInGbs")]
-        public Output<double> MemorySizeInGbs { get; private set; } = null!;
+        public Output<double?> MemorySizeInGbs { get; private set; } = null!;
 
         /// <summary>
         /// The current lifecycle state of the external DB node.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the external DB node was created.
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the external DB node was last updated.
         /// </summary>
         [Output("timeUpdated")]
-        public Output<string> TimeUpdated { get; private set; } = null!;
+        public Output<string?> TimeUpdated { get; private set; } = null!;
 
 
         /// <summary>

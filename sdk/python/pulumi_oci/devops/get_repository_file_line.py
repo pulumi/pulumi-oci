@@ -49,7 +49,7 @@ class GetRepositoryFileLineResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -57,10 +57,7 @@ class GetRepositoryFileLineResult:
 
     @property
     @pulumi.getter
-    def lines(self) -> Sequence['outputs.GetRepositoryFileLineLineResult']:
-        """
-        The list of lines in the file.
-        """
+    def lines(self) -> Optional[Sequence['outputs.GetRepositoryFileLineLineResult']]:
         return pulumi.get(self, "lines")
 
     @property
@@ -99,27 +96,7 @@ def get_repository_file_line(file_path: Optional[str] = None,
                              start_line_number: Optional[int] = None,
                              opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetRepositoryFileLineResult:
     """
-    This data source provides details about a specific Repository File Line resource in Oracle Cloud Infrastructure Devops service.
-
-    Retrieve lines of a specified file. Supports starting line number and limit. This API will be deprecated on Wed, 29 Mar 2023 01:00:00 GMT as it does not get recognized when filePath has '/'. This will be replaced by "/repositories/{repositoryId}/file/lines"
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_repository_file_line = oci.DevOps.get_repository_file_line(repository_id=oci_devops_repository["test_repository"]["id"],
-        revision=var["repository_file_line_revision"],
-        file_path=var["repository_file_line_file_path"],
-        start_line_number=var["repository_file_line_start_line_number"])
-    ```
-
-
-    :param str file_path: A filter to return file contents of the specified paths.
-    :param str repository_id: Unique repository identifier.
-    :param str revision: Retrieve file lines from specific revision.
-    :param int start_line_number: Line number from where to start returning file lines.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['filePath'] = file_path
@@ -145,26 +122,6 @@ def get_repository_file_line_output(file_path: Optional[pulumi.Input[str]] = Non
                                     start_line_number: Optional[pulumi.Input[Optional[int]]] = None,
                                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetRepositoryFileLineResult]:
     """
-    This data source provides details about a specific Repository File Line resource in Oracle Cloud Infrastructure Devops service.
-
-    Retrieve lines of a specified file. Supports starting line number and limit. This API will be deprecated on Wed, 29 Mar 2023 01:00:00 GMT as it does not get recognized when filePath has '/'. This will be replaced by "/repositories/{repositoryId}/file/lines"
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_repository_file_line = oci.DevOps.get_repository_file_line(repository_id=oci_devops_repository["test_repository"]["id"],
-        revision=var["repository_file_line_revision"],
-        file_path=var["repository_file_line_file_path"],
-        start_line_number=var["repository_file_line_start_line_number"])
-    ```
-
-
-    :param str file_path: A filter to return file contents of the specified paths.
-    :param str repository_id: Unique repository identifier.
-    :param str revision: Retrieve file lines from specific revision.
-    :param int start_line_number: Line number from where to start returning file lines.
+    Use this data source to access information about an existing resource.
     """
     ...

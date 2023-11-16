@@ -7,14 +7,15 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.CloudBridge.outputs.GetAgentDependenciesAgentDependencyCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAgentDependenciesAgentDependencyCollection {
-    private List<GetAgentDependenciesAgentDependencyCollectionItem> items;
+    private @Nullable List<GetAgentDependenciesAgentDependencyCollectionItem> items;
 
     private GetAgentDependenciesAgentDependencyCollection() {}
     public List<GetAgentDependenciesAgentDependencyCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -26,7 +27,7 @@ public final class GetAgentDependenciesAgentDependencyCollection {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetAgentDependenciesAgentDependencyCollectionItem> items;
+        private @Nullable List<GetAgentDependenciesAgentDependencyCollectionItem> items;
         public Builder() {}
         public Builder(GetAgentDependenciesAgentDependencyCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -34,8 +35,8 @@ public final class GetAgentDependenciesAgentDependencyCollection {
         }
 
         @CustomType.Setter
-        public Builder items(List<GetAgentDependenciesAgentDependencyCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetAgentDependenciesAgentDependencyCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetAgentDependenciesAgentDependencyCollectionItem... items) {

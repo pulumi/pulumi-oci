@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Configuration resource in Oracle Cloud Infrastructure License Manager service.
@@ -64,9 +63,9 @@ type Configuration struct {
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	EmailIds pulumi.StringArrayOutput `pulumi:"emailIds"`
 	// The time the configuration was created. An [RFC 3339](https://tools.ietf.org/html/rfc3339)-formatted datetime string.
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The time the configuration was updated. An [RFC 3339](https://tools.ietf.org/html/rfc3339)-formatted datetime string.
-	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 }
 
 // NewConfiguration registers a new resource with the given unique name, arguments, and options.
@@ -180,12 +179,6 @@ func (i *Configuration) ToConfigurationOutputWithContext(ctx context.Context) Co
 	return pulumi.ToOutputWithContext(ctx, i).(ConfigurationOutput)
 }
 
-func (i *Configuration) ToOutput(ctx context.Context) pulumix.Output[*Configuration] {
-	return pulumix.Output[*Configuration]{
-		OutputState: i.ToConfigurationOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ConfigurationArrayInput is an input type that accepts ConfigurationArray and ConfigurationArrayOutput values.
 // You can construct a concrete instance of `ConfigurationArrayInput` via:
 //
@@ -209,12 +202,6 @@ func (i ConfigurationArray) ToConfigurationArrayOutput() ConfigurationArrayOutpu
 
 func (i ConfigurationArray) ToConfigurationArrayOutputWithContext(ctx context.Context) ConfigurationArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ConfigurationArrayOutput)
-}
-
-func (i ConfigurationArray) ToOutput(ctx context.Context) pulumix.Output[[]*Configuration] {
-	return pulumix.Output[[]*Configuration]{
-		OutputState: i.ToConfigurationArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // ConfigurationMapInput is an input type that accepts ConfigurationMap and ConfigurationMapOutput values.
@@ -242,12 +229,6 @@ func (i ConfigurationMap) ToConfigurationMapOutputWithContext(ctx context.Contex
 	return pulumi.ToOutputWithContext(ctx, i).(ConfigurationMapOutput)
 }
 
-func (i ConfigurationMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*Configuration] {
-	return pulumix.Output[map[string]*Configuration]{
-		OutputState: i.ToConfigurationMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ConfigurationOutput struct{ *pulumi.OutputState }
 
 func (ConfigurationOutput) ElementType() reflect.Type {
@@ -260,12 +241,6 @@ func (o ConfigurationOutput) ToConfigurationOutput() ConfigurationOutput {
 
 func (o ConfigurationOutput) ToConfigurationOutputWithContext(ctx context.Context) ConfigurationOutput {
 	return o
-}
-
-func (o ConfigurationOutput) ToOutput(ctx context.Context) pulumix.Output[*Configuration] {
-	return pulumix.Output[*Configuration]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) used for the license record, product license, and configuration.
@@ -282,13 +257,13 @@ func (o ConfigurationOutput) EmailIds() pulumi.StringArrayOutput {
 }
 
 // The time the configuration was created. An [RFC 3339](https://tools.ietf.org/html/rfc3339)-formatted datetime string.
-func (o ConfigurationOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *Configuration) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o ConfigurationOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Configuration) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time the configuration was updated. An [RFC 3339](https://tools.ietf.org/html/rfc3339)-formatted datetime string.
-func (o ConfigurationOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *Configuration) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o ConfigurationOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Configuration) pulumi.StringPtrOutput { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type ConfigurationArrayOutput struct{ *pulumi.OutputState }
@@ -303,12 +278,6 @@ func (o ConfigurationArrayOutput) ToConfigurationArrayOutput() ConfigurationArra
 
 func (o ConfigurationArrayOutput) ToConfigurationArrayOutputWithContext(ctx context.Context) ConfigurationArrayOutput {
 	return o
-}
-
-func (o ConfigurationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*Configuration] {
-	return pulumix.Output[[]*Configuration]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ConfigurationArrayOutput) Index(i pulumi.IntInput) ConfigurationOutput {
@@ -329,12 +298,6 @@ func (o ConfigurationMapOutput) ToConfigurationMapOutput() ConfigurationMapOutpu
 
 func (o ConfigurationMapOutput) ToConfigurationMapOutputWithContext(ctx context.Context) ConfigurationMapOutput {
 	return o
-}
-
-func (o ConfigurationMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*Configuration] {
-	return pulumix.Output[map[string]*Configuration]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ConfigurationMapOutput) MapIndex(k pulumi.StringInput) ConfigurationOutput {

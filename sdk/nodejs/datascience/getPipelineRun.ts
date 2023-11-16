@@ -47,89 +47,89 @@ export interface GetPipelineRunResult {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the pipeline run.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * The configuration details of a pipeline.
      */
-    readonly configurationDetails: outputs.DataScience.GetPipelineRunConfigurationDetail[];
+    readonly configurationDetails?: outputs.DataScience.GetPipelineRunConfigurationDetail[];
     /**
      * The configuration details of a pipeline.
      */
-    readonly configurationOverrideDetails: outputs.DataScience.GetPipelineRunConfigurationOverrideDetail[];
+    readonly configurationOverrideDetails?: outputs.DataScience.GetPipelineRunConfigurationOverrideDetail[];
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the pipeline run.
      */
-    readonly createdBy: string;
+    readonly createdBy?: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    readonly definedTags: {[key: string]: any};
-    readonly deleteRelatedJobRuns: boolean;
+    readonly definedTags?: {[key: string]: any};
+    readonly deleteRelatedJobRuns?: boolean;
     /**
      * A user-friendly display name for the resource.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pipeline run.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Details of the state of the step run.
      */
-    readonly lifecycleDetails: string;
+    readonly lifecycleDetails?: string;
     /**
      * The pipeline log configuration details.
      */
-    readonly logConfigurationOverrideDetails: outputs.DataScience.GetPipelineRunLogConfigurationOverrideDetail[];
+    readonly logConfigurationOverrideDetails?: outputs.DataScience.GetPipelineRunLogConfigurationOverrideDetail[];
     /**
      * Customer logging details for pipeline run.
      */
-    readonly logDetails: outputs.DataScience.GetPipelineRunLogDetail[];
+    readonly logDetails?: outputs.DataScience.GetPipelineRunLogDetail[];
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pipeline for which pipeline run is created.
      */
-    readonly pipelineId: string;
+    readonly pipelineId?: string;
     readonly pipelineRunId: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the pipeline run with.
      */
-    readonly projectId: string;
+    readonly projectId?: string;
     /**
      * The state of the step run.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * Array of step override details. Only Step Configuration is allowed to be overridden.
      */
-    readonly stepOverrideDetails: outputs.DataScience.GetPipelineRunStepOverrideDetail[];
+    readonly stepOverrideDetails?: outputs.DataScience.GetPipelineRunStepOverrideDetail[];
     /**
      * Array of StepRun object for each step.
      */
-    readonly stepRuns: outputs.DataScience.GetPipelineRunStepRun[];
+    readonly stepRuns?: outputs.DataScience.GetPipelineRunStepRun[];
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    readonly systemTags: {[key: string]: any};
+    readonly systemTags?: {[key: string]: any};
     /**
      * The date and time the pipeline run was accepted in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
-    readonly timeAccepted: string;
+    readonly timeAccepted?: string;
     /**
      * The date and time the pipeline run request was finished in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
-    readonly timeFinished: string;
+    readonly timeFinished?: string;
     /**
      * The date and time the pipeline run request was started in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
-    readonly timeStarted: string;
+    readonly timeStarted?: string;
     /**
      * The date and time the pipeline run was updated in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
-    readonly timeUpdated: string;
+    readonly timeUpdated?: string;
 }
 /**
  * This data source provides details about a specific Pipeline Run resource in Oracle Cloud Infrastructure Data Science service.

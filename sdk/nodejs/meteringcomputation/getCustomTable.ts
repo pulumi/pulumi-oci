@@ -47,20 +47,20 @@ export interface GetCustomTableResult {
     /**
      * The custom table compartment OCID.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     readonly customTableId: string;
     /**
      * The custom table OCID.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The custom table for Cost Analysis UI rendering.
      */
-    readonly savedCustomTables: outputs.MeteringComputation.GetCustomTableSavedCustomTable[];
+    readonly savedCustomTables?: outputs.MeteringComputation.GetCustomTableSavedCustomTable[];
     /**
      * The custom table associated saved report OCID.
      */
-    readonly savedReportId: string;
+    readonly savedReportId?: string;
 }
 /**
  * This data source provides details about a specific Custom Table resource in Oracle Cloud Infrastructure Metering Computation service.

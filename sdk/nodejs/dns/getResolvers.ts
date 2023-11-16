@@ -91,7 +91,7 @@ export interface GetResolversResult {
     /**
      * The list of resolvers.
      */
-    readonly resolvers: outputs.Dns.GetResolversResolver[];
+    readonly resolvers?: outputs.Dns.GetResolversResolver[];
     readonly scope: string;
     /**
      * The current state of the resource.

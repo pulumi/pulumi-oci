@@ -65,11 +65,11 @@ export interface GetRemotePeeringConnectionsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The list of remote_peering_connections.
      */
-    readonly remotePeeringConnections: outputs.Core.GetRemotePeeringConnectionsRemotePeeringConnection[];
+    readonly remotePeeringConnections?: outputs.Core.GetRemotePeeringConnectionsRemotePeeringConnection[];
 }
 /**
  * This data source provides the list of Remote Peering Connections in Oracle Cloud Infrastructure Core service.

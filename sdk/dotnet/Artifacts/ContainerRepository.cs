@@ -63,7 +63,7 @@ namespace Pulumi.Oci.Artifacts
         /// Total storage size in GBs that will be charged.
         /// </summary>
         [Output("billableSizeInGbs")]
-        public Output<string> BillableSizeInGbs { get; private set; } = null!;
+        public Output<string?> BillableSizeInGbs { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to create the resource.
@@ -75,13 +75,13 @@ namespace Pulumi.Oci.Artifacts
         /// The id of the user or principal that created the resource.
         /// </summary>
         [Output("createdBy")]
-        public Output<string> CreatedBy { get; private set; } = null!;
+        public Output<string?> CreatedBy { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// The container repository name.
@@ -93,73 +93,73 @@ namespace Pulumi.Oci.Artifacts
         /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// Total number of images.
         /// </summary>
         [Output("imageCount")]
-        public Output<int> ImageCount { get; private set; } = null!;
+        public Output<int?> ImageCount { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Whether the repository is immutable. Images cannot be overwritten in an immutable repository.
         /// </summary>
         [Output("isImmutable")]
-        public Output<bool> IsImmutable { get; private set; } = null!;
+        public Output<bool?> IsImmutable { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Whether the repository is public. A public repository allows unauthenticated access.
         /// </summary>
         [Output("isPublic")]
-        public Output<bool> IsPublic { get; private set; } = null!;
+        public Output<bool?> IsPublic { get; private set; } = null!;
 
         /// <summary>
         /// Total number of layers.
         /// </summary>
         [Output("layerCount")]
-        public Output<int> LayerCount { get; private set; } = null!;
+        public Output<int?> LayerCount { get; private set; } = null!;
 
         /// <summary>
         /// Total storage in bytes consumed by layers.
         /// </summary>
         [Output("layersSizeInBytes")]
-        public Output<string> LayersSizeInBytes { get; private set; } = null!;
+        public Output<string?> LayersSizeInBytes { get; private set; } = null!;
 
         /// <summary>
         /// The tenancy namespace used in the container repository path.
         /// </summary>
         [Output("namespace")]
-        public Output<string> Namespace { get; private set; } = null!;
+        public Output<string?> Namespace { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Container repository readme.
         /// </summary>
         [Output("readme")]
-        public Output<Outputs.ContainerRepositoryReadme> Readme { get; private set; } = null!;
+        public Output<Outputs.ContainerRepositoryReadme?> Readme { get; private set; } = null!;
 
         /// <summary>
         /// The current state of the container repository.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// The system tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
         [Output("systemTags")]
-        public Output<ImmutableDictionary<string, object>> SystemTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> SystemTags { get; private set; } = null!;
 
         /// <summary>
         /// An RFC 3339 timestamp indicating when the repository was created.
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// An RFC 3339 timestamp indicating when an image was last pushed to the repository.
         /// </summary>
         [Output("timeLastPushed")]
-        public Output<string> TimeLastPushed { get; private set; } = null!;
+        public Output<string?> TimeLastPushed { get; private set; } = null!;
 
 
         /// <summary>

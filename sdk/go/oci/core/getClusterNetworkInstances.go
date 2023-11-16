@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Cluster Network Instances in Oracle Cloud Infrastructure Core service.
@@ -73,7 +72,7 @@ type GetClusterNetworkInstancesResult struct {
 	DisplayName *string                            `pulumi:"displayName"`
 	Filters     []GetClusterNetworkInstancesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The list of instances.
 	Instances []GetClusterNetworkInstancesInstance `pulumi:"instances"`
 }
@@ -121,12 +120,6 @@ func (o GetClusterNetworkInstancesResultOutput) ToGetClusterNetworkInstancesResu
 	return o
 }
 
-func (o GetClusterNetworkInstancesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetClusterNetworkInstancesResult] {
-	return pulumix.Output[GetClusterNetworkInstancesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetClusterNetworkInstancesResultOutput) ClusterNetworkId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetClusterNetworkInstancesResult) string { return v.ClusterNetworkId }).(pulumi.StringOutput)
 }
@@ -146,8 +139,8 @@ func (o GetClusterNetworkInstancesResultOutput) Filters() GetClusterNetworkInsta
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetClusterNetworkInstancesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetClusterNetworkInstancesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetClusterNetworkInstancesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetClusterNetworkInstancesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The list of instances.

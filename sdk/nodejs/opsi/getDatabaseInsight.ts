@@ -47,138 +47,138 @@ export interface GetDatabaseInsightResult {
     /**
      * Compartment identifier of the database
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * User credential details to connect to the database. This is supplied via the External Database Service.
      */
-    readonly connectionCredentialDetails: outputs.Opsi.GetDatabaseInsightConnectionCredentialDetail[];
+    readonly connectionCredentialDetails?: outputs.Opsi.GetDatabaseInsightConnectionCredentialDetail[];
     /**
      * Connection details to connect to the database. HostName, protocol, and port should be specified.
      */
-    readonly connectionDetails: outputs.Opsi.GetDatabaseInsightConnectionDetail[];
+    readonly connectionDetails?: outputs.Opsi.GetDatabaseInsightConnectionDetail[];
     /**
      * User credential details to connect to the database.
      */
-    readonly credentialDetails: outputs.Opsi.GetDatabaseInsightCredentialDetail[];
+    readonly credentialDetails?: outputs.Opsi.GetDatabaseInsightCredentialDetail[];
     /**
      * A message describing the status of the database connection of this resource. For example, it can be used to provide actionable information about the permission and content validity of the database connection.
      */
-    readonly databaseConnectionStatusDetails: string;
+    readonly databaseConnectionStatusDetails?: string;
     /**
      * Display name of database
      */
-    readonly databaseDisplayName: string;
+    readonly databaseDisplayName?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
      */
-    readonly databaseId: string;
+    readonly databaseId?: string;
     readonly databaseInsightId: string;
     /**
      * Name of database
      */
-    readonly databaseName: string;
+    readonly databaseName?: string;
     /**
      * Oracle Cloud Infrastructure database resource type
      */
-    readonly databaseResourceType: string;
+    readonly databaseResourceType?: string;
     /**
      * Operations Insights internal representation of the database type.
      */
-    readonly databaseType: string;
+    readonly databaseType?: string;
     /**
      * The version of the database.
      */
-    readonly databaseVersion: string;
-    readonly dbmPrivateEndpointId: string;
+    readonly databaseVersion?: string;
+    readonly dbmPrivateEndpointId?: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    readonly definedTags: {[key: string]: any};
-    readonly deploymentType: string;
+    readonly definedTags?: {[key: string]: any};
+    readonly deploymentType?: string;
     /**
      * OPSI Enterprise Manager Bridge OCID
      */
-    readonly enterpriseManagerBridgeId: string;
+    readonly enterpriseManagerBridgeId?: string;
     /**
      * Enterprise Manager Entity Display Name
      */
-    readonly enterpriseManagerEntityDisplayName: string;
+    readonly enterpriseManagerEntityDisplayName?: string;
     /**
      * Enterprise Manager Entity Unique Identifier
      */
-    readonly enterpriseManagerEntityIdentifier: string;
+    readonly enterpriseManagerEntityIdentifier?: string;
     /**
      * Enterprise Manager Entity Name
      */
-    readonly enterpriseManagerEntityName: string;
+    readonly enterpriseManagerEntityName?: string;
     /**
      * Enterprise Manager Entity Type
      */
-    readonly enterpriseManagerEntityType: string;
+    readonly enterpriseManagerEntityType?: string;
     /**
      * Enterprise Manager Unqiue Identifier
      */
-    readonly enterpriseManagerIdentifier: string;
+    readonly enterpriseManagerIdentifier?: string;
     /**
      * Source of the database entity.
      */
-    readonly entitySource: string;
+    readonly entitySource?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata insight.
      */
-    readonly exadataInsightId: string;
+    readonly exadataInsightId?: string;
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * Database insight identifier
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
-    readonly lifecycleDetails: string;
+    readonly lifecycleDetails?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OPSI private endpoint
      */
-    readonly opsiPrivateEndpointId: string;
+    readonly opsiPrivateEndpointId?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Cluster or DB System ID, depending on which configuration the resource belongs to.
      */
-    readonly parentId: string;
+    readonly parentId?: string;
     /**
      * Processor count. This is the OCPU count for Autonomous Database and CPU core count for other database types.
      */
-    readonly processorCount: number;
+    readonly processorCount?: number;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Infrastructure.
      */
-    readonly rootId: string;
+    readonly rootId?: string;
     /**
      * Database service name used for connection requests.
      */
-    readonly serviceName: string;
+    readonly serviceName?: string;
     /**
      * The current state of the database.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * Indicates the status of a database insight in Operations Insights
      */
-    readonly status: string;
+    readonly status?: string;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    readonly systemTags: {[key: string]: any};
+    readonly systemTags?: {[key: string]: any};
     /**
      * The time the the database insight was first enabled. An RFC3339 formatted datetime string
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The time the database insight was updated. An RFC3339 formatted datetime string
      */
-    readonly timeUpdated: string;
+    readonly timeUpdated?: string;
 }
 /**
  * This data source provides details about a specific Database Insight resource in Oracle Cloud Infrastructure Opsi service.

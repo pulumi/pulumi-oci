@@ -59,31 +59,31 @@ namespace Pulumi.Oci.Mysql
         /// The size of the backup in base-2 (IEC) gibibytes. (GiB).
         /// </summary>
         [Output("backupSizeInGbs")]
-        public Output<int> BackupSizeInGbs { get; private set; } = null!;
+        public Output<int?> BackupSizeInGbs { get; private set; } = null!;
 
         /// <summary>
         /// The type of backup.
         /// </summary>
         [Output("backupType")]
-        public Output<string> BackupType { get; private set; } = null!;
+        public Output<string?> BackupType { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The OCID of the compartment the backup exists in.
         /// </summary>
         [Output("compartmentId")]
-        public Output<string> CompartmentId { get; private set; } = null!;
+        public Output<string?> CompartmentId { get; private set; } = null!;
 
         /// <summary>
         /// Indicates how the backup was created: manually, automatic, or by an Operator.
         /// </summary>
         [Output("creationType")]
-        public Output<string> CreationType { get; private set; } = null!;
+        public Output<string?> CreationType { get; private set; } = null!;
 
         /// <summary>
         /// Initial size of the data volume in GiBs that will be created and attached.
         /// </summary>
         [Output("dataStorageSizeInGb")]
-        public Output<int> DataStorageSizeInGb { get; private set; } = null!;
+        public Output<int?> DataStorageSizeInGb { get; private set; } = null!;
 
         /// <summary>
         /// The OCID of the DB System the Backup is associated with.
@@ -101,37 +101,37 @@ namespace Pulumi.Oci.Mysql
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) A user-supplied description for the backup.
         /// </summary>
         [Output("description")]
-        public Output<string> Description { get; private set; } = null!;
+        public Output<string?> Description { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) A user-supplied display name for the backup.
         /// </summary>
         [Output("displayName")]
-        public Output<string> DisplayName { get; private set; } = null!;
+        public Output<string?> DisplayName { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// Additional information about the current lifecycleState.
         /// </summary>
         [Output("lifecycleDetails")]
-        public Output<string> LifecycleDetails { get; private set; } = null!;
+        public Output<string?> LifecycleDetails { get; private set; } = null!;
 
         /// <summary>
         /// The MySQL server version of the DB System used for backup.
         /// </summary>
         [Output("mysqlVersion")]
-        public Output<string> MysqlVersion { get; private set; } = null!;
+        public Output<string?> MysqlVersion { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Number of days to retain this backup.
@@ -141,31 +141,31 @@ namespace Pulumi.Oci.Mysql
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("retentionInDays")]
-        public Output<int> RetentionInDays { get; private set; } = null!;
+        public Output<int?> RetentionInDays { get; private set; } = null!;
 
         /// <summary>
         /// The shape of the DB System instance used for backup.
         /// </summary>
         [Output("shapeName")]
-        public Output<string> ShapeName { get; private set; } = null!;
+        public Output<string?> ShapeName { get; private set; } = null!;
 
         /// <summary>
         /// The state of the backup.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// The time the backup record was created.
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// The time at which the backup was updated.
         /// </summary>
         [Output("timeUpdated")]
-        public Output<string> TimeUpdated { get; private set; } = null!;
+        public Output<string?> TimeUpdated { get; private set; } = null!;
 
 
         /// <summary>

@@ -68,61 +68,61 @@ namespace Pulumi.Oci.DevOps
         /// The count of the branches present in the repository.
         /// </summary>
         [Output("branchCount")]
-        public Output<int> BranchCount { get; private set; } = null!;
+        public Output<int?> BranchCount { get; private set; } = null!;
 
         /// <summary>
         /// The count of the commits present in the repository.
         /// </summary>
         [Output("commitCount")]
-        public Output<int> CommitCount { get; private set; } = null!;
+        public Output<int?> CommitCount { get; private set; } = null!;
 
         /// <summary>
         /// The OCID of the repository's compartment.
         /// </summary>
         [Output("compartmentId")]
-        public Output<string> CompartmentId { get; private set; } = null!;
+        public Output<string?> CompartmentId { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The default branch of the repository.
         /// </summary>
         [Output("defaultBranch")]
-        public Output<string> DefaultBranch { get; private set; } = null!;
+        public Output<string?> DefaultBranch { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Details of the repository. Avoid entering confidential information.
         /// </summary>
         [Output("description")]
-        public Output<string> Description { get; private set; } = null!;
+        public Output<string?> Description { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// HTTP URL that you use to git clone, pull and push.
         /// </summary>
         [Output("httpUrl")]
-        public Output<string> HttpUrl { get; private set; } = null!;
+        public Output<string?> HttpUrl { get; private set; } = null!;
 
         /// <summary>
         /// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         /// </summary>
         [Output("lifecyleDetails")]
-        public Output<string> LifecyleDetails { get; private set; } = null!;
+        public Output<string?> LifecyleDetails { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Configuration information for mirroring the repository.
         /// </summary>
         [Output("mirrorRepositoryConfig")]
-        public Output<Outputs.RepositoryMirrorRepositoryConfig> MirrorRepositoryConfig { get; private set; } = null!;
+        public Output<Outputs.RepositoryMirrorRepositoryConfig?> MirrorRepositoryConfig { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Unique name of a repository.
@@ -134,7 +134,7 @@ namespace Pulumi.Oci.DevOps
         /// Tenancy unique namespace.
         /// </summary>
         [Output("namespace")]
-        public Output<string> Namespace { get; private set; } = null!;
+        public Output<string?> Namespace { get; private set; } = null!;
 
         /// <summary>
         /// The OCID of the DevOps project containing the repository.
@@ -146,7 +146,7 @@ namespace Pulumi.Oci.DevOps
         /// Unique project name in a namespace.
         /// </summary>
         [Output("projectName")]
-        public Output<string> ProjectName { get; private set; } = null!;
+        public Output<string?> ProjectName { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Type of repository. Allowed values:  `MIRRORED`  `HOSTED` 
@@ -162,37 +162,37 @@ namespace Pulumi.Oci.DevOps
         /// The size of the repository in bytes.
         /// </summary>
         [Output("sizeInBytes")]
-        public Output<string> SizeInBytes { get; private set; } = null!;
+        public Output<string?> SizeInBytes { get; private set; } = null!;
 
         /// <summary>
         /// SSH URL that you use to git clone, pull and push.
         /// </summary>
         [Output("sshUrl")]
-        public Output<string> SshUrl { get; private set; } = null!;
+        public Output<string?> SshUrl { get; private set; } = null!;
 
         /// <summary>
         /// The current state of the repository.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
         [Output("systemTags")]
-        public Output<ImmutableDictionary<string, object>> SystemTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> SystemTags { get; private set; } = null!;
 
         /// <summary>
         /// The time the repository was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// The time the repository was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
         /// </summary>
         [Output("timeUpdated")]
-        public Output<string> TimeUpdated { get; private set; } = null!;
+        public Output<string?> TimeUpdated { get; private set; } = null!;
 
         /// <summary>
         /// Trigger build events supported for this repository: PUSH - Build is triggered when a push event occurs. COMMIT_UPDATES - Build is triggered when new commits are mirrored into a repository.

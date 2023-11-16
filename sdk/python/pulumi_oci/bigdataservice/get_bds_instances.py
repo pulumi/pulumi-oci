@@ -45,26 +45,17 @@ class GetBdsInstancesResult:
 
     @property
     @pulumi.getter(name="bdsInstances")
-    def bds_instances(self) -> Sequence['outputs.GetBdsInstancesBdsInstanceResult']:
-        """
-        The list of bds_instances.
-        """
+    def bds_instances(self) -> Optional[Sequence['outputs.GetBdsInstancesBdsInstanceResult']]:
         return pulumi.get(self, "bds_instances")
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The OCID of the compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        The name of the node.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -74,7 +65,7 @@ class GetBdsInstancesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -83,9 +74,6 @@ class GetBdsInstancesResult:
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The state of the cluster.
-        """
         return pulumi.get(self, "state")
 
 
@@ -109,25 +97,7 @@ def get_bds_instances(compartment_id: Optional[str] = None,
                       state: Optional[str] = None,
                       opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetBdsInstancesResult:
     """
-    This data source provides the list of Bds Instances in Oracle Cloud Infrastructure Big Data Service service.
-
-    Returns a list of all Big Data Service clusters in a compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_bds_instances = oci.BigDataService.get_bds_instances(compartment_id=var["compartment_id"],
-        display_name=var["bds_instance_display_name"],
-        state=var["bds_instance_state"])
-    ```
-
-
-    :param str compartment_id: The OCID of the compartment.
-    :param str display_name: A filter to return only resources that match the entire display name given.
-    :param str state: The state of the cluster.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -153,24 +123,6 @@ def get_bds_instances_output(compartment_id: Optional[pulumi.Input[str]] = None,
                              state: Optional[pulumi.Input[Optional[str]]] = None,
                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetBdsInstancesResult]:
     """
-    This data source provides the list of Bds Instances in Oracle Cloud Infrastructure Big Data Service service.
-
-    Returns a list of all Big Data Service clusters in a compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_bds_instances = oci.BigDataService.get_bds_instances(compartment_id=var["compartment_id"],
-        display_name=var["bds_instance_display_name"],
-        state=var["bds_instance_state"])
-    ```
-
-
-    :param str compartment_id: The OCID of the compartment.
-    :param str display_name: A filter to return only resources that match the entire display name given.
-    :param str state: The state of the cluster.
+    Use this data source to access information about an existing resource.
     """
     ...

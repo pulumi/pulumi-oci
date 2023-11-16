@@ -53,7 +53,7 @@ class GetMaskingPolicyMaskingObjectsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -61,10 +61,7 @@ class GetMaskingPolicyMaskingObjectsResult:
 
     @property
     @pulumi.getter(name="maskingObjectCollections")
-    def masking_object_collections(self) -> Sequence['outputs.GetMaskingPolicyMaskingObjectsMaskingObjectCollectionResult']:
-        """
-        The list of masking_object_collection.
-        """
+    def masking_object_collections(self) -> Optional[Sequence['outputs.GetMaskingPolicyMaskingObjectsMaskingObjectCollectionResult']]:
         return pulumi.get(self, "masking_object_collections")
 
     @property
@@ -75,25 +72,16 @@ class GetMaskingPolicyMaskingObjectsResult:
     @property
     @pulumi.getter(name="objectTypes")
     def object_types(self) -> Optional[Sequence[str]]:
-        """
-        The type of the database object that contains the masking column.
-        """
         return pulumi.get(self, "object_types")
 
     @property
     @pulumi.getter
     def objects(self) -> Optional[Sequence[str]]:
-        """
-        The database object that contains the masking column.
-        """
         return pulumi.get(self, "objects")
 
     @property
     @pulumi.getter(name="schemaNames")
     def schema_names(self) -> Optional[Sequence[str]]:
-        """
-        The database schema that contains the masking column.
-        """
         return pulumi.get(self, "schema_names")
 
 
@@ -119,27 +107,7 @@ def get_masking_policy_masking_objects(filters: Optional[Sequence[pulumi.InputTy
                                        schema_names: Optional[Sequence[str]] = None,
                                        opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetMaskingPolicyMaskingObjectsResult:
     """
-    This data source provides the list of Masking Policy Masking Objects in Oracle Cloud Infrastructure Data Safe service.
-
-    Gets a list of masking objects present in the specified masking policy and based on the specified query parameters.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_masking_policy_masking_objects = oci.DataSafe.get_masking_policy_masking_objects(masking_policy_id=oci_data_safe_masking_policy["test_masking_policy"]["id"],
-        objects=var["masking_policy_masking_object_object"],
-        object_types=var["masking_policy_masking_object_object_type"],
-        schema_names=var["masking_policy_masking_object_schema_name"])
-    ```
-
-
-    :param str masking_policy_id: The OCID of the masking policy.
-    :param Sequence[str] object_types: A filter to return only items related to a specific object type.
-    :param Sequence[str] objects: A filter to return only items related to a specific object name.
-    :param Sequence[str] schema_names: A filter to return only items related to specific schema name.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['filters'] = filters
@@ -168,26 +136,6 @@ def get_masking_policy_masking_objects_output(filters: Optional[pulumi.Input[Opt
                                               schema_names: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetMaskingPolicyMaskingObjectsResult]:
     """
-    This data source provides the list of Masking Policy Masking Objects in Oracle Cloud Infrastructure Data Safe service.
-
-    Gets a list of masking objects present in the specified masking policy and based on the specified query parameters.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_masking_policy_masking_objects = oci.DataSafe.get_masking_policy_masking_objects(masking_policy_id=oci_data_safe_masking_policy["test_masking_policy"]["id"],
-        objects=var["masking_policy_masking_object_object"],
-        object_types=var["masking_policy_masking_object_object_type"],
-        schema_names=var["masking_policy_masking_object_schema_name"])
-    ```
-
-
-    :param str masking_policy_id: The OCID of the masking policy.
-    :param Sequence[str] object_types: A filter to return only items related to a specific object type.
-    :param Sequence[str] objects: A filter to return only items related to a specific object name.
-    :param Sequence[str] schema_names: A filter to return only items related to specific schema name.
+    Use this data source to access information about an existing resource.
     """
     ...

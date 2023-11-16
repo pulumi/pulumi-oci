@@ -6,6 +6,8 @@ package com.pulumi.oci.OsubSubscription.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetRatecardsRateCardRateCardTier {
@@ -13,39 +15,39 @@ public final class GetRatecardsRateCardRateCardTier {
      * @return Rate card tier net unit price
      * 
      */
-    private String netUnitPrice;
+    private @Nullable String netUnitPrice;
     /**
      * @return Rate card tier overage price
      * 
      */
-    private String overagePrice;
+    private @Nullable String overagePrice;
     /**
      * @return Rate card tier quantity range
      * 
      */
-    private String upToQuantity;
+    private @Nullable String upToQuantity;
 
     private GetRatecardsRateCardRateCardTier() {}
     /**
      * @return Rate card tier net unit price
      * 
      */
-    public String netUnitPrice() {
-        return this.netUnitPrice;
+    public Optional<String> netUnitPrice() {
+        return Optional.ofNullable(this.netUnitPrice);
     }
     /**
      * @return Rate card tier overage price
      * 
      */
-    public String overagePrice() {
-        return this.overagePrice;
+    public Optional<String> overagePrice() {
+        return Optional.ofNullable(this.overagePrice);
     }
     /**
      * @return Rate card tier quantity range
      * 
      */
-    public String upToQuantity() {
-        return this.upToQuantity;
+    public Optional<String> upToQuantity() {
+        return Optional.ofNullable(this.upToQuantity);
     }
 
     public static Builder builder() {
@@ -57,9 +59,9 @@ public final class GetRatecardsRateCardRateCardTier {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String netUnitPrice;
-        private String overagePrice;
-        private String upToQuantity;
+        private @Nullable String netUnitPrice;
+        private @Nullable String overagePrice;
+        private @Nullable String upToQuantity;
         public Builder() {}
         public Builder(GetRatecardsRateCardRateCardTier defaults) {
     	      Objects.requireNonNull(defaults);
@@ -69,18 +71,18 @@ public final class GetRatecardsRateCardRateCardTier {
         }
 
         @CustomType.Setter
-        public Builder netUnitPrice(String netUnitPrice) {
-            this.netUnitPrice = Objects.requireNonNull(netUnitPrice);
+        public Builder netUnitPrice(@Nullable String netUnitPrice) {
+            this.netUnitPrice = netUnitPrice;
             return this;
         }
         @CustomType.Setter
-        public Builder overagePrice(String overagePrice) {
-            this.overagePrice = Objects.requireNonNull(overagePrice);
+        public Builder overagePrice(@Nullable String overagePrice) {
+            this.overagePrice = overagePrice;
             return this;
         }
         @CustomType.Setter
-        public Builder upToQuantity(String upToQuantity) {
-            this.upToQuantity = Objects.requireNonNull(upToQuantity);
+        public Builder upToQuantity(@Nullable String upToQuantity) {
+            this.upToQuantity = upToQuantity;
             return this;
         }
         public GetRatecardsRateCardRateCardTier build() {

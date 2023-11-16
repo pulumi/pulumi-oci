@@ -42,7 +42,7 @@ public final class GetSensitiveTypesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The OCID of the parent sensitive category.
      * 
@@ -52,7 +52,7 @@ public final class GetSensitiveTypesResult {
      * @return The list of sensitive_type_collection.
      * 
      */
-    private List<GetSensitiveTypesSensitiveTypeCollection> sensitiveTypeCollections;
+    private @Nullable List<GetSensitiveTypesSensitiveTypeCollection> sensitiveTypeCollections;
     private @Nullable String sensitiveTypeId;
     private @Nullable String sensitiveTypeSource;
     /**
@@ -105,8 +105,8 @@ public final class GetSensitiveTypesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The OCID of the parent sensitive category.
@@ -120,7 +120,7 @@ public final class GetSensitiveTypesResult {
      * 
      */
     public List<GetSensitiveTypesSensitiveTypeCollection> sensitiveTypeCollections() {
-        return this.sensitiveTypeCollections;
+        return this.sensitiveTypeCollections == null ? List.of() : this.sensitiveTypeCollections;
     }
     public Optional<String> sensitiveTypeId() {
         return Optional.ofNullable(this.sensitiveTypeId);
@@ -158,9 +158,9 @@ public final class GetSensitiveTypesResult {
         private @Nullable String displayName;
         private @Nullable String entityType;
         private @Nullable List<GetSensitiveTypesFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String parentCategoryId;
-        private List<GetSensitiveTypesSensitiveTypeCollection> sensitiveTypeCollections;
+        private @Nullable List<GetSensitiveTypesSensitiveTypeCollection> sensitiveTypeCollections;
         private @Nullable String sensitiveTypeId;
         private @Nullable String sensitiveTypeSource;
         private @Nullable String state;
@@ -225,8 +225,8 @@ public final class GetSensitiveTypesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -235,8 +235,8 @@ public final class GetSensitiveTypesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder sensitiveTypeCollections(List<GetSensitiveTypesSensitiveTypeCollection> sensitiveTypeCollections) {
-            this.sensitiveTypeCollections = Objects.requireNonNull(sensitiveTypeCollections);
+        public Builder sensitiveTypeCollections(@Nullable List<GetSensitiveTypesSensitiveTypeCollection> sensitiveTypeCollections) {
+            this.sensitiveTypeCollections = sensitiveTypeCollections;
             return this;
         }
         public Builder sensitiveTypeCollections(GetSensitiveTypesSensitiveTypeCollection... sensitiveTypeCollections) {

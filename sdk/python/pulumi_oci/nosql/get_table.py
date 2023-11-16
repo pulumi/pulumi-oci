@@ -87,129 +87,81 @@ class GetTableResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        Compartment Identifier.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="ddlStatement")
-    def ddl_statement(self) -> str:
-        """
-        A DDL statement representing the schema.
-        """
+    def ddl_statement(self) -> Optional[str]:
         return pulumi.get(self, "ddl_statement")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace": {"bar-key": "value"}}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        Unique identifier that is immutable.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="isAutoReclaimable")
-    def is_auto_reclaimable(self) -> bool:
-        """
-        True if this table can be reclaimed after an idle period.
-        """
+    def is_auto_reclaimable(self) -> Optional[bool]:
         return pulumi.get(self, "is_auto_reclaimable")
 
     @property
     @pulumi.getter(name="isMultiRegion")
-    def is_multi_region(self) -> bool:
-        """
-        True if this table is currently a member of a replication set.
-        """
+    def is_multi_region(self) -> Optional[bool]:
         return pulumi.get(self, "is_multi_region")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        A message describing the current state in more detail.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="localReplicaInitializationInPercent")
-    def local_replica_initialization_in_percent(self) -> int:
-        """
-        If this table is in a replication set, this value represents the progress of the initialization of the replica's data.  A value of 100 indicates that initialization has completed.
-        """
+    def local_replica_initialization_in_percent(self) -> Optional[int]:
         return pulumi.get(self, "local_replica_initialization_in_percent")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        The column name.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
-    def replicas(self) -> Sequence['outputs.GetTableReplicaResult']:
-        """
-        An array of Replica listing this table's replicas, if any
-        """
+    def replicas(self) -> Optional[Sequence['outputs.GetTableReplicaResult']]:
         return pulumi.get(self, "replicas")
 
     @property
     @pulumi.getter(name="schemaState")
-    def schema_state(self) -> str:
-        """
-        The current state of this table's schema. Available states are MUTABLE - The schema can be changed. The table is not eligible for replication. FROZEN - The schema is immutable. The table is eligible for replication.
-        """
+    def schema_state(self) -> Optional[str]:
         return pulumi.get(self, "schema_state")
 
     @property
     @pulumi.getter
-    def schemas(self) -> Sequence['outputs.GetTableSchemaResult']:
-        """
-        The table schema information as a JSON object.
-        """
+    def schemas(self) -> Optional[Sequence['outputs.GetTableSchemaResult']]:
         return pulumi.get(self, "schemas")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The state of a table.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        Read-only system tag. These predefined keys are scoped to namespaces.  At present the only supported namespace is `"orcl-cloud"`; and the only key in that namespace is `"free-tier-retained"`. Example: `{"orcl-cloud"": {"free-tier-retained": "true"}}`
-        """
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="tableLimits")
-    def table_limits(self) -> Sequence['outputs.GetTableTableLimitResult']:
-        """
-        Throughput and storage limits configuration of a table.
-        """
+    def table_limits(self) -> Optional[Sequence['outputs.GetTableTableLimitResult']]:
         return pulumi.get(self, "table_limits")
 
     @property
@@ -219,26 +171,17 @@ class GetTableResult:
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The time the the table was created. An RFC3339 formatted datetime string.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeOfExpiration")
-    def time_of_expiration(self) -> str:
-        """
-        If lifecycleState is INACTIVE, indicates when this table will be automatically removed. An RFC3339 formatted datetime string.
-        """
+    def time_of_expiration(self) -> Optional[str]:
         return pulumi.get(self, "time_of_expiration")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The time the the table's metadata was last updated. An RFC3339 formatted datetime string.
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
 
@@ -274,23 +217,7 @@ def get_table(compartment_id: Optional[str] = None,
               table_name_or_id: Optional[str] = None,
               opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetTableResult:
     """
-    This data source provides details about a specific Table resource in Oracle Cloud Infrastructure NoSQL Database service.
-
-    Get table info by identifier.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_table = oci.Nosql.get_table(table_name_or_id=oci_nosql_table_name_or["test_table_name_or"]["id"],
-        compartment_id=var["compartment_id"])
-    ```
-
-
-    :param str compartment_id: The ID of a table's compartment. When a table is identified by name, the compartmentId is often needed to provide context for interpreting the name.
-    :param str table_name_or_id: A table name within the compartment, or a table OCID.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -326,22 +253,6 @@ def get_table_output(compartment_id: Optional[pulumi.Input[str]] = None,
                      table_name_or_id: Optional[pulumi.Input[str]] = None,
                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetTableResult]:
     """
-    This data source provides details about a specific Table resource in Oracle Cloud Infrastructure NoSQL Database service.
-
-    Get table info by identifier.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_table = oci.Nosql.get_table(table_name_or_id=oci_nosql_table_name_or["test_table_name_or"]["id"],
-        compartment_id=var["compartment_id"])
-    ```
-
-
-    :param str compartment_id: The ID of a table's compartment. When a table is identified by name, the compartmentId is often needed to provide context for interpreting the name.
-    :param str table_name_or_id: A table name within the compartment, or a table OCID.
+    Use this data source to access information about an existing resource.
     """
     ...

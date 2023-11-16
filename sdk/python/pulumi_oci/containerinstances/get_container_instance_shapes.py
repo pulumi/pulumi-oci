@@ -52,10 +52,7 @@ class GetContainerInstanceShapesResult:
 
     @property
     @pulumi.getter(name="containerInstanceShapeCollections")
-    def container_instance_shape_collections(self) -> Sequence['outputs.GetContainerInstanceShapesContainerInstanceShapeCollectionResult']:
-        """
-        The list of container_instance_shape_collection.
-        """
+    def container_instance_shape_collections(self) -> Optional[Sequence['outputs.GetContainerInstanceShapesContainerInstanceShapeCollectionResult']]:
         return pulumi.get(self, "container_instance_shape_collections")
 
     @property
@@ -65,7 +62,7 @@ class GetContainerInstanceShapesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -90,23 +87,7 @@ def get_container_instance_shapes(availability_domain: Optional[str] = None,
                                   filters: Optional[Sequence[pulumi.InputType['GetContainerInstanceShapesFilterArgs']]] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetContainerInstanceShapesResult:
     """
-    This data source provides the list of Container Instance Shapes in Oracle Cloud Infrastructure Container Instances service.
-
-    Lists the shapes that can be used to create container instances.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_container_instance_shapes = oci.ContainerInstances.get_container_instance_shapes(compartment_id=var["compartment_id"],
-        availability_domain=var["container_instance_shape_availability_domain"])
-    ```
-
-
-    :param str availability_domain: The name of the availability domain.  Example: `Uocm:PHX-AD-1`
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['availabilityDomain'] = availability_domain
@@ -129,22 +110,6 @@ def get_container_instance_shapes_output(availability_domain: Optional[pulumi.In
                                          filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetContainerInstanceShapesFilterArgs']]]]] = None,
                                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetContainerInstanceShapesResult]:
     """
-    This data source provides the list of Container Instance Shapes in Oracle Cloud Infrastructure Container Instances service.
-
-    Lists the shapes that can be used to create container instances.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_container_instance_shapes = oci.ContainerInstances.get_container_instance_shapes(compartment_id=var["compartment_id"],
-        availability_domain=var["container_instance_shape_availability_domain"])
-    ```
-
-
-    :param str availability_domain: The name of the availability domain.  Example: `Uocm:PHX-AD-1`
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+    Use this data source to access information about an existing resource.
     """
     ...

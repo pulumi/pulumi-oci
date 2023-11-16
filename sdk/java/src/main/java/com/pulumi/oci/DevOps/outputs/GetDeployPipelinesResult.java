@@ -23,7 +23,7 @@ public final class GetDeployPipelinesResult {
      * @return The list of deploy_pipeline_collection.
      * 
      */
-    private List<GetDeployPipelinesDeployPipelineCollection> deployPipelineCollections;
+    private @Nullable List<GetDeployPipelinesDeployPipelineCollection> deployPipelineCollections;
     /**
      * @return Deployment pipeline display name, which can be renamed and is not necessarily unique. Avoid entering confidential information.
      * 
@@ -59,7 +59,7 @@ public final class GetDeployPipelinesResult {
      * 
      */
     public List<GetDeployPipelinesDeployPipelineCollection> deployPipelineCollections() {
-        return this.deployPipelineCollections;
+        return this.deployPipelineCollections == null ? List.of() : this.deployPipelineCollections;
     }
     /**
      * @return Deployment pipeline display name, which can be renamed and is not necessarily unique. Avoid entering confidential information.
@@ -103,7 +103,7 @@ public final class GetDeployPipelinesResult {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable String compartmentId;
-        private List<GetDeployPipelinesDeployPipelineCollection> deployPipelineCollections;
+        private @Nullable List<GetDeployPipelinesDeployPipelineCollection> deployPipelineCollections;
         private @Nullable String displayName;
         private @Nullable List<GetDeployPipelinesFilter> filters;
         private @Nullable String id;
@@ -127,8 +127,8 @@ public final class GetDeployPipelinesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder deployPipelineCollections(List<GetDeployPipelinesDeployPipelineCollection> deployPipelineCollections) {
-            this.deployPipelineCollections = Objects.requireNonNull(deployPipelineCollections);
+        public Builder deployPipelineCollections(@Nullable List<GetDeployPipelinesDeployPipelineCollection> deployPipelineCollections) {
+            this.deployPipelineCollections = deployPipelineCollections;
             return this;
         }
         public Builder deployPipelineCollections(GetDeployPipelinesDeployPipelineCollection... deployPipelineCollections) {

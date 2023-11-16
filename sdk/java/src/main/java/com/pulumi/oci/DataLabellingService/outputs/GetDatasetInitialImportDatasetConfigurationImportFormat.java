@@ -6,6 +6,8 @@ package com.pulumi.oci.DataLabellingService.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDatasetInitialImportDatasetConfigurationImportFormat {
@@ -13,27 +15,27 @@ public final class GetDatasetInitialImportDatasetConfigurationImportFormat {
      * @return An unique name for a label within its dataset.
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return Version of import format
      * 
      */
-    private String version;
+    private @Nullable String version;
 
     private GetDatasetInitialImportDatasetConfigurationImportFormat() {}
     /**
      * @return An unique name for a label within its dataset.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return Version of import format
      * 
      */
-    public String version() {
-        return this.version;
+    public Optional<String> version() {
+        return Optional.ofNullable(this.version);
     }
 
     public static Builder builder() {
@@ -45,8 +47,8 @@ public final class GetDatasetInitialImportDatasetConfigurationImportFormat {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String name;
-        private String version;
+        private @Nullable String name;
+        private @Nullable String version;
         public Builder() {}
         public Builder(GetDatasetInitialImportDatasetConfigurationImportFormat defaults) {
     	      Objects.requireNonNull(defaults);
@@ -55,13 +57,13 @@ public final class GetDatasetInitialImportDatasetConfigurationImportFormat {
         }
 
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder version(String version) {
-            this.version = Objects.requireNonNull(version);
+        public Builder version(@Nullable String version) {
+            this.version = version;
             return this;
         }
         public GetDatasetInitialImportDatasetConfigurationImportFormat build() {

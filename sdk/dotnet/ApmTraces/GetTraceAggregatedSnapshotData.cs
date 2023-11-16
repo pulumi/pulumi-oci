@@ -129,7 +129,7 @@ namespace Pulumi.Oci.ApmTraces
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         public readonly string TraceKey;
 
         [OutputConstructor]
@@ -138,7 +138,7 @@ namespace Pulumi.Oci.ApmTraces
 
             ImmutableArray<Outputs.GetTraceAggregatedSnapshotDataDetailResult> details,
 
-            string id,
+            string? id,
 
             string traceKey)
         {

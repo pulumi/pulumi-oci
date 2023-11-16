@@ -15,6 +15,8 @@ import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDomainsMyAppsMyApp {
@@ -22,291 +24,291 @@ public final class GetDomainsMyAppsMyApp {
      * @return Type of the Acccount
      * 
      */
-    private String accountType;
+    private @Nullable String accountType;
     /**
      * @return If true, this App is able to participate in runtime services, such as automatic-login, OAuth, and SAML. If false, all runtime services are disabled for this App, and only administrative operations can be performed.
      * 
      */
-    private Boolean active;
+    private @Nullable Boolean active;
     /**
      * @return Application on which the account is based
      * 
      */
-    private List<GetDomainsMyAppsMyAppApp> apps;
+    private @Nullable List<GetDomainsMyAppsMyAppApp> apps;
     /**
      * @return Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
      * 
      */
-    private String compartmentOcid;
+    private @Nullable String compartmentOcid;
     /**
      * @return A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
      * 
      */
-    private Boolean deleteInProgress;
+    private @Nullable Boolean deleteInProgress;
     /**
      * @return Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
      * 
      */
-    private String domainOcid;
+    private @Nullable String domainOcid;
     /**
      * @return If true, this account has been marked as a favorite of the User who owns it.
      * 
      */
-    private Boolean favorite;
+    private @Nullable Boolean favorite;
     /**
      * @return Unique identifier for the SCIM Resource as defined by the Service Provider. Each representation of the Resource MUST include a non-empty id value. This identifier MUST be unique across the Service Provider&#39;s entire set of Resources. It MUST be a stable, non-reassignable identifier that does not change when the same Resource is returned in subsequent requests. The value of the id attribute is always issued by the Service Provider and MUST never be specified by the Service Consumer. bulkId: is a reserved keyword and MUST NOT be used in the unique identifier.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The User or App who created the Resource
      * 
      */
-    private List<GetDomainsMyAppsMyAppIdcsCreatedBy> idcsCreatedBies;
+    private @Nullable List<GetDomainsMyAppsMyAppIdcsCreatedBy> idcsCreatedBies;
     /**
      * @return The User or App who modified the Resource
      * 
      */
-    private List<GetDomainsMyAppsMyAppIdcsLastModifiedBy> idcsLastModifiedBies;
+    private @Nullable List<GetDomainsMyAppsMyAppIdcsLastModifiedBy> idcsLastModifiedBies;
     /**
      * @return The release number when the resource was upgraded.
      * 
      */
-    private String idcsLastUpgradedInRelease;
+    private @Nullable String idcsLastUpgradedInRelease;
     /**
      * @return Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
      * 
      */
-    private List<String> idcsPreventedOperations;
+    private @Nullable List<String> idcsPreventedOperations;
     /**
      * @return If true, indicates that this managed object is an account, which is an identity that represents a user in the context of a specific application.
      * 
      */
-    private Boolean isAccount;
+    private @Nullable Boolean isAccount;
     /**
      * @return Last accessed timestamp of an application
      * 
      */
-    private String lastAccessed;
+    private @Nullable String lastAccessed;
     /**
      * @return The URL that will be used to launch the application.
      * 
      */
-    private String launchUrl;
+    private @Nullable String launchUrl;
     /**
      * @return A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
      * 
      */
-    private List<GetDomainsMyAppsMyAppMeta> metas;
+    private @Nullable List<GetDomainsMyAppsMyAppMeta> metas;
     /**
      * @return Name of the Account
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
      * 
      */
-    private String ocid;
+    private @Nullable String ocid;
     /**
      * @return Owning user of the account
      * 
      */
-    private List<GetDomainsMyAppsMyAppOwner> owners;
+    private @Nullable List<GetDomainsMyAppsMyAppOwner> owners;
     /**
      * @return The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior. REQUIRED.
      * 
      */
-    private List<String> schemas;
+    private @Nullable List<String> schemas;
     /**
      * @return A list of tags on this resource.
      * 
      */
-    private List<GetDomainsMyAppsMyAppTag> tags;
+    private @Nullable List<GetDomainsMyAppsMyAppTag> tags;
     /**
      * @return Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
      * 
      */
-    private String tenancyOcid;
+    private @Nullable String tenancyOcid;
     /**
      * @return Unique identifier of the Account.
      * 
      */
-    private String uid;
+    private @Nullable String uid;
     /**
      * @return The UserWalletArtifact that contains the credentials that the system will use in performing Secure Form-Fill to log the User into this application.
      * 
      */
-    private List<GetDomainsMyAppsMyAppUserWalletArtifact> userWalletArtifacts;
+    private @Nullable List<GetDomainsMyAppsMyAppUserWalletArtifact> userWalletArtifacts;
 
     private GetDomainsMyAppsMyApp() {}
     /**
      * @return Type of the Acccount
      * 
      */
-    public String accountType() {
-        return this.accountType;
+    public Optional<String> accountType() {
+        return Optional.ofNullable(this.accountType);
     }
     /**
      * @return If true, this App is able to participate in runtime services, such as automatic-login, OAuth, and SAML. If false, all runtime services are disabled for this App, and only administrative operations can be performed.
      * 
      */
-    public Boolean active() {
-        return this.active;
+    public Optional<Boolean> active() {
+        return Optional.ofNullable(this.active);
     }
     /**
      * @return Application on which the account is based
      * 
      */
     public List<GetDomainsMyAppsMyAppApp> apps() {
-        return this.apps;
+        return this.apps == null ? List.of() : this.apps;
     }
     /**
      * @return Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
      * 
      */
-    public String compartmentOcid() {
-        return this.compartmentOcid;
+    public Optional<String> compartmentOcid() {
+        return Optional.ofNullable(this.compartmentOcid);
     }
     /**
      * @return A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
      * 
      */
-    public Boolean deleteInProgress() {
-        return this.deleteInProgress;
+    public Optional<Boolean> deleteInProgress() {
+        return Optional.ofNullable(this.deleteInProgress);
     }
     /**
      * @return Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
      * 
      */
-    public String domainOcid() {
-        return this.domainOcid;
+    public Optional<String> domainOcid() {
+        return Optional.ofNullable(this.domainOcid);
     }
     /**
      * @return If true, this account has been marked as a favorite of the User who owns it.
      * 
      */
-    public Boolean favorite() {
-        return this.favorite;
+    public Optional<Boolean> favorite() {
+        return Optional.ofNullable(this.favorite);
     }
     /**
      * @return Unique identifier for the SCIM Resource as defined by the Service Provider. Each representation of the Resource MUST include a non-empty id value. This identifier MUST be unique across the Service Provider&#39;s entire set of Resources. It MUST be a stable, non-reassignable identifier that does not change when the same Resource is returned in subsequent requests. The value of the id attribute is always issued by the Service Provider and MUST never be specified by the Service Consumer. bulkId: is a reserved keyword and MUST NOT be used in the unique identifier.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The User or App who created the Resource
      * 
      */
     public List<GetDomainsMyAppsMyAppIdcsCreatedBy> idcsCreatedBies() {
-        return this.idcsCreatedBies;
+        return this.idcsCreatedBies == null ? List.of() : this.idcsCreatedBies;
     }
     /**
      * @return The User or App who modified the Resource
      * 
      */
     public List<GetDomainsMyAppsMyAppIdcsLastModifiedBy> idcsLastModifiedBies() {
-        return this.idcsLastModifiedBies;
+        return this.idcsLastModifiedBies == null ? List.of() : this.idcsLastModifiedBies;
     }
     /**
      * @return The release number when the resource was upgraded.
      * 
      */
-    public String idcsLastUpgradedInRelease() {
-        return this.idcsLastUpgradedInRelease;
+    public Optional<String> idcsLastUpgradedInRelease() {
+        return Optional.ofNullable(this.idcsLastUpgradedInRelease);
     }
     /**
      * @return Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
      * 
      */
     public List<String> idcsPreventedOperations() {
-        return this.idcsPreventedOperations;
+        return this.idcsPreventedOperations == null ? List.of() : this.idcsPreventedOperations;
     }
     /**
      * @return If true, indicates that this managed object is an account, which is an identity that represents a user in the context of a specific application.
      * 
      */
-    public Boolean isAccount() {
-        return this.isAccount;
+    public Optional<Boolean> isAccount() {
+        return Optional.ofNullable(this.isAccount);
     }
     /**
      * @return Last accessed timestamp of an application
      * 
      */
-    public String lastAccessed() {
-        return this.lastAccessed;
+    public Optional<String> lastAccessed() {
+        return Optional.ofNullable(this.lastAccessed);
     }
     /**
      * @return The URL that will be used to launch the application.
      * 
      */
-    public String launchUrl() {
-        return this.launchUrl;
+    public Optional<String> launchUrl() {
+        return Optional.ofNullable(this.launchUrl);
     }
     /**
      * @return A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
      * 
      */
     public List<GetDomainsMyAppsMyAppMeta> metas() {
-        return this.metas;
+        return this.metas == null ? List.of() : this.metas;
     }
     /**
      * @return Name of the Account
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
      * 
      */
-    public String ocid() {
-        return this.ocid;
+    public Optional<String> ocid() {
+        return Optional.ofNullable(this.ocid);
     }
     /**
      * @return Owning user of the account
      * 
      */
     public List<GetDomainsMyAppsMyAppOwner> owners() {
-        return this.owners;
+        return this.owners == null ? List.of() : this.owners;
     }
     /**
      * @return The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior. REQUIRED.
      * 
      */
     public List<String> schemas() {
-        return this.schemas;
+        return this.schemas == null ? List.of() : this.schemas;
     }
     /**
      * @return A list of tags on this resource.
      * 
      */
     public List<GetDomainsMyAppsMyAppTag> tags() {
-        return this.tags;
+        return this.tags == null ? List.of() : this.tags;
     }
     /**
      * @return Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
      * 
      */
-    public String tenancyOcid() {
-        return this.tenancyOcid;
+    public Optional<String> tenancyOcid() {
+        return Optional.ofNullable(this.tenancyOcid);
     }
     /**
      * @return Unique identifier of the Account.
      * 
      */
-    public String uid() {
-        return this.uid;
+    public Optional<String> uid() {
+        return Optional.ofNullable(this.uid);
     }
     /**
      * @return The UserWalletArtifact that contains the credentials that the system will use in performing Secure Form-Fill to log the User into this application.
      * 
      */
     public List<GetDomainsMyAppsMyAppUserWalletArtifact> userWalletArtifacts() {
-        return this.userWalletArtifacts;
+        return this.userWalletArtifacts == null ? List.of() : this.userWalletArtifacts;
     }
 
     public static Builder builder() {
@@ -318,30 +320,30 @@ public final class GetDomainsMyAppsMyApp {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String accountType;
-        private Boolean active;
-        private List<GetDomainsMyAppsMyAppApp> apps;
-        private String compartmentOcid;
-        private Boolean deleteInProgress;
-        private String domainOcid;
-        private Boolean favorite;
-        private String id;
-        private List<GetDomainsMyAppsMyAppIdcsCreatedBy> idcsCreatedBies;
-        private List<GetDomainsMyAppsMyAppIdcsLastModifiedBy> idcsLastModifiedBies;
-        private String idcsLastUpgradedInRelease;
-        private List<String> idcsPreventedOperations;
-        private Boolean isAccount;
-        private String lastAccessed;
-        private String launchUrl;
-        private List<GetDomainsMyAppsMyAppMeta> metas;
-        private String name;
-        private String ocid;
-        private List<GetDomainsMyAppsMyAppOwner> owners;
-        private List<String> schemas;
-        private List<GetDomainsMyAppsMyAppTag> tags;
-        private String tenancyOcid;
-        private String uid;
-        private List<GetDomainsMyAppsMyAppUserWalletArtifact> userWalletArtifacts;
+        private @Nullable String accountType;
+        private @Nullable Boolean active;
+        private @Nullable List<GetDomainsMyAppsMyAppApp> apps;
+        private @Nullable String compartmentOcid;
+        private @Nullable Boolean deleteInProgress;
+        private @Nullable String domainOcid;
+        private @Nullable Boolean favorite;
+        private @Nullable String id;
+        private @Nullable List<GetDomainsMyAppsMyAppIdcsCreatedBy> idcsCreatedBies;
+        private @Nullable List<GetDomainsMyAppsMyAppIdcsLastModifiedBy> idcsLastModifiedBies;
+        private @Nullable String idcsLastUpgradedInRelease;
+        private @Nullable List<String> idcsPreventedOperations;
+        private @Nullable Boolean isAccount;
+        private @Nullable String lastAccessed;
+        private @Nullable String launchUrl;
+        private @Nullable List<GetDomainsMyAppsMyAppMeta> metas;
+        private @Nullable String name;
+        private @Nullable String ocid;
+        private @Nullable List<GetDomainsMyAppsMyAppOwner> owners;
+        private @Nullable List<String> schemas;
+        private @Nullable List<GetDomainsMyAppsMyAppTag> tags;
+        private @Nullable String tenancyOcid;
+        private @Nullable String uid;
+        private @Nullable List<GetDomainsMyAppsMyAppUserWalletArtifact> userWalletArtifacts;
         public Builder() {}
         public Builder(GetDomainsMyAppsMyApp defaults) {
     	      Objects.requireNonNull(defaults);
@@ -372,147 +374,147 @@ public final class GetDomainsMyAppsMyApp {
         }
 
         @CustomType.Setter
-        public Builder accountType(String accountType) {
-            this.accountType = Objects.requireNonNull(accountType);
+        public Builder accountType(@Nullable String accountType) {
+            this.accountType = accountType;
             return this;
         }
         @CustomType.Setter
-        public Builder active(Boolean active) {
-            this.active = Objects.requireNonNull(active);
+        public Builder active(@Nullable Boolean active) {
+            this.active = active;
             return this;
         }
         @CustomType.Setter
-        public Builder apps(List<GetDomainsMyAppsMyAppApp> apps) {
-            this.apps = Objects.requireNonNull(apps);
+        public Builder apps(@Nullable List<GetDomainsMyAppsMyAppApp> apps) {
+            this.apps = apps;
             return this;
         }
         public Builder apps(GetDomainsMyAppsMyAppApp... apps) {
             return apps(List.of(apps));
         }
         @CustomType.Setter
-        public Builder compartmentOcid(String compartmentOcid) {
-            this.compartmentOcid = Objects.requireNonNull(compartmentOcid);
+        public Builder compartmentOcid(@Nullable String compartmentOcid) {
+            this.compartmentOcid = compartmentOcid;
             return this;
         }
         @CustomType.Setter
-        public Builder deleteInProgress(Boolean deleteInProgress) {
-            this.deleteInProgress = Objects.requireNonNull(deleteInProgress);
+        public Builder deleteInProgress(@Nullable Boolean deleteInProgress) {
+            this.deleteInProgress = deleteInProgress;
             return this;
         }
         @CustomType.Setter
-        public Builder domainOcid(String domainOcid) {
-            this.domainOcid = Objects.requireNonNull(domainOcid);
+        public Builder domainOcid(@Nullable String domainOcid) {
+            this.domainOcid = domainOcid;
             return this;
         }
         @CustomType.Setter
-        public Builder favorite(Boolean favorite) {
-            this.favorite = Objects.requireNonNull(favorite);
+        public Builder favorite(@Nullable Boolean favorite) {
+            this.favorite = favorite;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder idcsCreatedBies(List<GetDomainsMyAppsMyAppIdcsCreatedBy> idcsCreatedBies) {
-            this.idcsCreatedBies = Objects.requireNonNull(idcsCreatedBies);
+        public Builder idcsCreatedBies(@Nullable List<GetDomainsMyAppsMyAppIdcsCreatedBy> idcsCreatedBies) {
+            this.idcsCreatedBies = idcsCreatedBies;
             return this;
         }
         public Builder idcsCreatedBies(GetDomainsMyAppsMyAppIdcsCreatedBy... idcsCreatedBies) {
             return idcsCreatedBies(List.of(idcsCreatedBies));
         }
         @CustomType.Setter
-        public Builder idcsLastModifiedBies(List<GetDomainsMyAppsMyAppIdcsLastModifiedBy> idcsLastModifiedBies) {
-            this.idcsLastModifiedBies = Objects.requireNonNull(idcsLastModifiedBies);
+        public Builder idcsLastModifiedBies(@Nullable List<GetDomainsMyAppsMyAppIdcsLastModifiedBy> idcsLastModifiedBies) {
+            this.idcsLastModifiedBies = idcsLastModifiedBies;
             return this;
         }
         public Builder idcsLastModifiedBies(GetDomainsMyAppsMyAppIdcsLastModifiedBy... idcsLastModifiedBies) {
             return idcsLastModifiedBies(List.of(idcsLastModifiedBies));
         }
         @CustomType.Setter
-        public Builder idcsLastUpgradedInRelease(String idcsLastUpgradedInRelease) {
-            this.idcsLastUpgradedInRelease = Objects.requireNonNull(idcsLastUpgradedInRelease);
+        public Builder idcsLastUpgradedInRelease(@Nullable String idcsLastUpgradedInRelease) {
+            this.idcsLastUpgradedInRelease = idcsLastUpgradedInRelease;
             return this;
         }
         @CustomType.Setter
-        public Builder idcsPreventedOperations(List<String> idcsPreventedOperations) {
-            this.idcsPreventedOperations = Objects.requireNonNull(idcsPreventedOperations);
+        public Builder idcsPreventedOperations(@Nullable List<String> idcsPreventedOperations) {
+            this.idcsPreventedOperations = idcsPreventedOperations;
             return this;
         }
         public Builder idcsPreventedOperations(String... idcsPreventedOperations) {
             return idcsPreventedOperations(List.of(idcsPreventedOperations));
         }
         @CustomType.Setter
-        public Builder isAccount(Boolean isAccount) {
-            this.isAccount = Objects.requireNonNull(isAccount);
+        public Builder isAccount(@Nullable Boolean isAccount) {
+            this.isAccount = isAccount;
             return this;
         }
         @CustomType.Setter
-        public Builder lastAccessed(String lastAccessed) {
-            this.lastAccessed = Objects.requireNonNull(lastAccessed);
+        public Builder lastAccessed(@Nullable String lastAccessed) {
+            this.lastAccessed = lastAccessed;
             return this;
         }
         @CustomType.Setter
-        public Builder launchUrl(String launchUrl) {
-            this.launchUrl = Objects.requireNonNull(launchUrl);
+        public Builder launchUrl(@Nullable String launchUrl) {
+            this.launchUrl = launchUrl;
             return this;
         }
         @CustomType.Setter
-        public Builder metas(List<GetDomainsMyAppsMyAppMeta> metas) {
-            this.metas = Objects.requireNonNull(metas);
+        public Builder metas(@Nullable List<GetDomainsMyAppsMyAppMeta> metas) {
+            this.metas = metas;
             return this;
         }
         public Builder metas(GetDomainsMyAppsMyAppMeta... metas) {
             return metas(List.of(metas));
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder ocid(String ocid) {
-            this.ocid = Objects.requireNonNull(ocid);
+        public Builder ocid(@Nullable String ocid) {
+            this.ocid = ocid;
             return this;
         }
         @CustomType.Setter
-        public Builder owners(List<GetDomainsMyAppsMyAppOwner> owners) {
-            this.owners = Objects.requireNonNull(owners);
+        public Builder owners(@Nullable List<GetDomainsMyAppsMyAppOwner> owners) {
+            this.owners = owners;
             return this;
         }
         public Builder owners(GetDomainsMyAppsMyAppOwner... owners) {
             return owners(List.of(owners));
         }
         @CustomType.Setter
-        public Builder schemas(List<String> schemas) {
-            this.schemas = Objects.requireNonNull(schemas);
+        public Builder schemas(@Nullable List<String> schemas) {
+            this.schemas = schemas;
             return this;
         }
         public Builder schemas(String... schemas) {
             return schemas(List.of(schemas));
         }
         @CustomType.Setter
-        public Builder tags(List<GetDomainsMyAppsMyAppTag> tags) {
-            this.tags = Objects.requireNonNull(tags);
+        public Builder tags(@Nullable List<GetDomainsMyAppsMyAppTag> tags) {
+            this.tags = tags;
             return this;
         }
         public Builder tags(GetDomainsMyAppsMyAppTag... tags) {
             return tags(List.of(tags));
         }
         @CustomType.Setter
-        public Builder tenancyOcid(String tenancyOcid) {
-            this.tenancyOcid = Objects.requireNonNull(tenancyOcid);
+        public Builder tenancyOcid(@Nullable String tenancyOcid) {
+            this.tenancyOcid = tenancyOcid;
             return this;
         }
         @CustomType.Setter
-        public Builder uid(String uid) {
-            this.uid = Objects.requireNonNull(uid);
+        public Builder uid(@Nullable String uid) {
+            this.uid = uid;
             return this;
         }
         @CustomType.Setter
-        public Builder userWalletArtifacts(List<GetDomainsMyAppsMyAppUserWalletArtifact> userWalletArtifacts) {
-            this.userWalletArtifacts = Objects.requireNonNull(userWalletArtifacts);
+        public Builder userWalletArtifacts(@Nullable List<GetDomainsMyAppsMyAppUserWalletArtifact> userWalletArtifacts) {
+            this.userWalletArtifacts = userWalletArtifacts;
             return this;
         }
         public Builder userWalletArtifacts(GetDomainsMyAppsMyAppUserWalletArtifact... userWalletArtifacts) {

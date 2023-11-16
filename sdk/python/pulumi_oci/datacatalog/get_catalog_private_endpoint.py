@@ -64,10 +64,7 @@ class GetCatalogPrivateEndpointResult:
 
     @property
     @pulumi.getter(name="attachedCatalogs")
-    def attached_catalogs(self) -> Sequence[str]:
-        """
-        The list of catalogs using the private reverse connection endpoint
-        """
+    def attached_catalogs(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "attached_catalogs")
 
     @property
@@ -77,90 +74,57 @@ class GetCatalogPrivateEndpointResult:
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        Identifier of the compartment this private endpoint belongs to
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        Mutable name of the Private Reverse Connection Endpoint
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="dnsZones")
-    def dns_zones(self) -> Sequence[str]:
-        """
-        List of DNS zones to be used by the data assets to be harvested. Example: custpvtsubnet.oraclevcn.com for data asset: db.custpvtsubnet.oraclevcn.com
-        """
+    def dns_zones(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "dns_zones")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        Unique identifier that is immutable
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'Failed' state.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the private endpoint resource.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="subnetId")
-    def subnet_id(self) -> str:
-        """
-        Subnet Identifier
-        """
+    def subnet_id(self) -> Optional[str]:
         return pulumi.get(self, "subnet_id")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The time the private endpoint was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The time the private endpoint was updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
 
@@ -188,21 +152,7 @@ class AwaitableGetCatalogPrivateEndpointResult(GetCatalogPrivateEndpointResult):
 def get_catalog_private_endpoint(catalog_private_endpoint_id: Optional[str] = None,
                                  opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetCatalogPrivateEndpointResult:
     """
-    This data source provides details about a specific Catalog Private Endpoint resource in Oracle Cloud Infrastructure Data Catalog service.
-
-    Gets a specific private reverse connection by identifier.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_catalog_private_endpoint = oci.DataCatalog.get_catalog_private_endpoint(catalog_private_endpoint_id=oci_datacatalog_catalog_private_endpoint["test_catalog_private_endpoint"]["id"])
-    ```
-
-
-    :param str catalog_private_endpoint_id: Unique private reverse connection identifier.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['catalogPrivateEndpointId'] = catalog_private_endpoint_id
@@ -229,20 +179,6 @@ def get_catalog_private_endpoint(catalog_private_endpoint_id: Optional[str] = No
 def get_catalog_private_endpoint_output(catalog_private_endpoint_id: Optional[pulumi.Input[str]] = None,
                                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCatalogPrivateEndpointResult]:
     """
-    This data source provides details about a specific Catalog Private Endpoint resource in Oracle Cloud Infrastructure Data Catalog service.
-
-    Gets a specific private reverse connection by identifier.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_catalog_private_endpoint = oci.DataCatalog.get_catalog_private_endpoint(catalog_private_endpoint_id=oci_datacatalog_catalog_private_endpoint["test_catalog_private_endpoint"]["id"])
-    ```
-
-
-    :param str catalog_private_endpoint_id: Unique private reverse connection identifier.
+    Use this data source to access information about an existing resource.
     """
     ...

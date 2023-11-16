@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.DevOps.outputs.GetBuildRunBuildRunArgumentItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetBuildRunBuildRunArgument {
@@ -14,7 +15,7 @@ public final class GetBuildRunBuildRunArgument {
      * @return List of exported variables.
      * 
      */
-    private List<GetBuildRunBuildRunArgumentItem> items;
+    private @Nullable List<GetBuildRunBuildRunArgumentItem> items;
 
     private GetBuildRunBuildRunArgument() {}
     /**
@@ -22,7 +23,7 @@ public final class GetBuildRunBuildRunArgument {
      * 
      */
     public List<GetBuildRunBuildRunArgumentItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -34,7 +35,7 @@ public final class GetBuildRunBuildRunArgument {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetBuildRunBuildRunArgumentItem> items;
+        private @Nullable List<GetBuildRunBuildRunArgumentItem> items;
         public Builder() {}
         public Builder(GetBuildRunBuildRunArgument defaults) {
     	      Objects.requireNonNull(defaults);
@@ -42,8 +43,8 @@ public final class GetBuildRunBuildRunArgument {
         }
 
         @CustomType.Setter
-        public Builder items(List<GetBuildRunBuildRunArgumentItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetBuildRunBuildRunArgumentItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetBuildRunBuildRunArgumentItem... items) {

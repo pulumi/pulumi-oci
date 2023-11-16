@@ -8,6 +8,8 @@ import com.pulumi.oci.ManagementAgent.outputs.GetManagementAgentPluginCountItemD
 import java.lang.Integer;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetManagementAgentPluginCountItem {
@@ -15,27 +17,27 @@ public final class GetManagementAgentPluginCountItem {
      * @return The number of Management Agent Plugins in this group
      * 
      */
-    private Integer count;
+    private @Nullable Integer count;
     /**
      * @return The Aggregation of Management Agent Plugin Dimensions
      * 
      */
-    private List<GetManagementAgentPluginCountItemDimension> dimensions;
+    private @Nullable List<GetManagementAgentPluginCountItemDimension> dimensions;
 
     private GetManagementAgentPluginCountItem() {}
     /**
      * @return The number of Management Agent Plugins in this group
      * 
      */
-    public Integer count() {
-        return this.count;
+    public Optional<Integer> count() {
+        return Optional.ofNullable(this.count);
     }
     /**
      * @return The Aggregation of Management Agent Plugin Dimensions
      * 
      */
     public List<GetManagementAgentPluginCountItemDimension> dimensions() {
-        return this.dimensions;
+        return this.dimensions == null ? List.of() : this.dimensions;
     }
 
     public static Builder builder() {
@@ -47,8 +49,8 @@ public final class GetManagementAgentPluginCountItem {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Integer count;
-        private List<GetManagementAgentPluginCountItemDimension> dimensions;
+        private @Nullable Integer count;
+        private @Nullable List<GetManagementAgentPluginCountItemDimension> dimensions;
         public Builder() {}
         public Builder(GetManagementAgentPluginCountItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -57,13 +59,13 @@ public final class GetManagementAgentPluginCountItem {
         }
 
         @CustomType.Setter
-        public Builder count(Integer count) {
-            this.count = Objects.requireNonNull(count);
+        public Builder count(@Nullable Integer count) {
+            this.count = count;
             return this;
         }
         @CustomType.Setter
-        public Builder dimensions(List<GetManagementAgentPluginCountItemDimension> dimensions) {
-            this.dimensions = Objects.requireNonNull(dimensions);
+        public Builder dimensions(@Nullable List<GetManagementAgentPluginCountItemDimension> dimensions) {
+            this.dimensions = dimensions;
             return this;
         }
         public Builder dimensions(GetManagementAgentPluginCountItemDimension... dimensions) {

@@ -16,17 +16,17 @@ namespace Pulumi.Oci.CloudGuard.Outputs
         /// <summary>
         /// The key entities count used for data source query
         /// </summary>
-        public readonly int KeyEntitiesCount;
+        public readonly int? KeyEntitiesCount;
         /// <summary>
         /// Logging query type for data source (Sighting/Insight)
         /// </summary>
-        public readonly string LoggingQueryType;
+        public readonly string? LoggingQueryType;
 
         [OutputConstructor]
         private GetDataSourceDataSourceDetailLoggingQueryDetailResult(
-            int keyEntitiesCount,
+            int? keyEntitiesCount,
 
-            string loggingQueryType)
+            string? loggingQueryType)
         {
             KeyEntitiesCount = keyEntitiesCount;
             LoggingQueryType = loggingQueryType;

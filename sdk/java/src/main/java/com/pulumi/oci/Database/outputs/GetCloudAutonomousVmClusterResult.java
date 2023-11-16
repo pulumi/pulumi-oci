@@ -14,6 +14,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetCloudAutonomousVmClusterResult {
@@ -21,310 +23,310 @@ public final class GetCloudAutonomousVmClusterResult {
      * @return The percentage of the data storage used for the Autonomous Databases in an Autonomous VM Cluster.
      * 
      */
-    private Double autonomousDataStoragePercentage;
+    private @Nullable Double autonomousDataStoragePercentage;
     /**
      * @return The data disk group size allocated for Autonomous Databases, in TBs.
      * 
      */
-    private Double autonomousDataStorageSizeInTbs;
+    private @Nullable Double autonomousDataStorageSizeInTbs;
     /**
      * @return The name of the availability domain that the cloud Autonomous VM cluster is located in.
      * 
      */
-    private String availabilityDomain;
+    private @Nullable String availabilityDomain;
     /**
      * @return The data disk group size available for Autonomous Databases, in TBs.
      * 
      */
-    private Double availableAutonomousDataStorageSizeInTbs;
+    private @Nullable Double availableAutonomousDataStorageSizeInTbs;
     /**
      * @return The number of Autonomous Container Databases that can be created with the currently available local storage.
      * 
      */
-    private Integer availableContainerDatabases;
+    private @Nullable Integer availableContainerDatabases;
     /**
      * @return CPU cores available for allocation to Autonomous Databases.
      * 
      */
-    private Double availableCpus;
+    private @Nullable Double availableCpus;
     private String cloudAutonomousVmClusterId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Exadata infrastructure.
      * 
      */
-    private String cloudExadataInfrastructureId;
+    private @Nullable String cloudExadataInfrastructureId;
     /**
      * @return The time zone of the Cloud Autonomous VM Cluster.
      * 
      */
-    private String clusterTimeZone;
+    private @Nullable String clusterTimeZone;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return The compute model of the Cloud Autonomous VM Cluster.
      * 
      */
-    private String computeModel;
+    private @Nullable String computeModel;
     /**
      * @return The number of CPU cores on the cloud Autonomous VM cluster.
      * 
      */
-    private Integer cpuCoreCount;
+    private @Nullable Integer cpuCoreCount;
     /**
      * @return The number of CPU cores enabled per VM cluster node.
      * 
      */
-    private Integer cpuCoreCountPerNode;
+    private @Nullable Integer cpuCoreCountPerNode;
     /**
      * @return The percentage of total number of CPUs used in an Autonomous VM Cluster.
      * 
      */
-    private Double cpuPercentage;
+    private @Nullable Double cpuPercentage;
     /**
      * @return The total data storage allocated, in gigabytes (GB).
      * 
      */
-    private Double dataStorageSizeInGb;
+    private @Nullable Double dataStorageSizeInGb;
     /**
      * @return The total data storage allocated, in terabytes (TB).
      * 
      */
-    private Double dataStorageSizeInTbs;
+    private @Nullable Double dataStorageSizeInTbs;
     /**
      * @return The local node storage allocated in GBs.
      * 
      */
-    private Integer dbNodeStorageSizeInGbs;
+    private @Nullable Integer dbNodeStorageSizeInGbs;
     /**
      * @return The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Db servers.
      * 
      */
-    private List<String> dbServers;
+    private @Nullable List<String> dbServers;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return User defined description of the cloud Autonomous VM cluster.
      * 
      */
-    private String description;
+    private @Nullable String description;
     /**
      * @return The user-friendly name for the cloud Autonomous VM cluster. The name does not need to be unique.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return The domain name for the cloud Autonomous VM cluster.
      * 
      */
-    private String domain;
+    private @Nullable String domain;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return The hostname for the cloud Autonomous VM cluster.
      * 
      */
-    private String hostname;
+    private @Nullable String hostname;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cloud Autonomous VM cluster.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Enable mutual TLS(mTLS) authentication for database at time of provisioning a VMCluster. This is applicable to database TLS Certificates only. Default is TLS
      * 
      */
-    private Boolean isMtlsEnabledVmCluster;
+    private @Nullable Boolean isMtlsEnabledVmCluster;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
      * 
      */
-    private String lastMaintenanceRunId;
+    private @Nullable String lastMaintenanceRunId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance update history. This value is updated when a maintenance update starts.
      * 
      */
-    private String lastUpdateHistoryEntryId;
+    private @Nullable String lastUpdateHistoryEntryId;
     /**
      * @return The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle PaaS and IaaS services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Database service. Note that when provisioning an Autonomous Database on [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null because the attribute is already set at the Autonomous Exadata Infrastructure level. When using [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), if a value is not specified, the system will supply the value of `BRING_YOUR_OWN_LICENSE`.
      * 
      */
-    private String licenseModel;
+    private @Nullable String licenseModel;
     /**
      * @return Additional information about the current lifecycle state.
      * 
      */
-    private String lifecycleDetails;
-    private List<GetCloudAutonomousVmClusterMaintenanceWindowDetail> maintenanceWindowDetails;
+    private @Nullable String lifecycleDetails;
+    private @Nullable List<GetCloudAutonomousVmClusterMaintenanceWindowDetail> maintenanceWindowDetails;
     /**
      * @return The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
      * 
      */
-    private List<GetCloudAutonomousVmClusterMaintenanceWindow> maintenanceWindows;
+    private @Nullable List<GetCloudAutonomousVmClusterMaintenanceWindow> maintenanceWindows;
     /**
      * @return The amount of memory (in GBs) enabled per OCPU or ECPU.
      * 
      */
-    private Integer memoryPerOracleComputeUnitInGbs;
+    private @Nullable Integer memoryPerOracleComputeUnitInGbs;
     /**
      * @return The memory allocated in GBs.
      * 
      */
-    private Integer memorySizeInGbs;
+    private @Nullable Integer memorySizeInGbs;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
      * 
      */
-    private String nextMaintenanceRunId;
+    private @Nullable String nextMaintenanceRunId;
     /**
      * @return The number of database servers in the cloud VM cluster.
      * 
      */
-    private Integer nodeCount;
+    private @Nullable Integer nodeCount;
     /**
      * @return The number of non-provisionable Autonomous Container Databases in an Autonomous VM Cluster.
      * 
      */
-    private Integer nonProvisionableAutonomousContainerDatabases;
+    private @Nullable Integer nonProvisionableAutonomousContainerDatabases;
     /**
      * @return The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
      * * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
      * 
      */
-    private List<String> nsgIds;
+    private @Nullable List<String> nsgIds;
     /**
      * @return The number of CPU cores on the cloud Autonomous VM cluster. Only 1 decimal place is allowed for the fractional part.
      * 
      */
-    private Double ocpuCount;
+    private @Nullable Double ocpuCount;
     /**
      * @return The number of provisionable Autonomous Container Databases in an Autonomous VM Cluster.
      * 
      */
-    private Integer provisionableAutonomousContainerDatabases;
+    private @Nullable Integer provisionableAutonomousContainerDatabases;
     /**
      * @return The number of provisioned Autonomous Container Databases in an Autonomous VM Cluster.
      * 
      */
-    private Integer provisionedAutonomousContainerDatabases;
+    private @Nullable Integer provisionedAutonomousContainerDatabases;
     /**
      * @return The number of CPUs provisioned in an Autonomous VM Cluster.
      * 
      */
-    private Double provisionedCpus;
+    private @Nullable Double provisionedCpus;
     /**
      * @return For Autonomous Databases on Dedicated Exadata Infrastructure:
      * * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
      * * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster&#39;s compute model.
      * 
      */
-    private Double reclaimableCpus;
+    private @Nullable Double reclaimableCpus;
     /**
      * @return The number of CPUs reserved in an Autonomous VM Cluster.
      * 
      */
-    private Double reservedCpus;
+    private @Nullable Double reservedCpus;
     /**
      * @return The SCAN Listener Non TLS port. Default is 1521.
      * 
      */
-    private Integer scanListenerPortNonTls;
+    private @Nullable Integer scanListenerPortNonTls;
     /**
      * @return The SCAN Listenenr TLS port. Default is 2484.
      * 
      */
-    private Integer scanListenerPortTls;
+    private @Nullable Integer scanListenerPortTls;
     /**
      * @return The model name of the Exadata hardware running the cloud Autonomous VM cluster.
      * 
      */
-    private String shape;
+    private @Nullable String shape;
     /**
      * @return The current state of the cloud Autonomous VM cluster.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the cloud Autonomous VM Cluster is associated with.
      * 
      */
-    private String subnetId;
+    private @Nullable String subnetId;
     /**
      * @return The date and time that the cloud Autonomous VM cluster was created.
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The last date and time that the cloud Autonomous VM cluster was updated.
      * 
      */
-    private String timeUpdated;
+    private @Nullable String timeUpdated;
     /**
      * @return The total data disk group size for Autonomous Databases, in TBs.
      * 
      */
-    private Double totalAutonomousDataStorageInTbs;
+    private @Nullable Double totalAutonomousDataStorageInTbs;
     /**
      * @return The total number of Autonomous Container Databases that can be created with the allocated local storage.
      * 
      */
-    private Integer totalContainerDatabases;
+    private @Nullable Integer totalContainerDatabases;
     /**
      * @return The total number of CPUs in an Autonomous VM Cluster.
      * 
      */
-    private Double totalCpus;
+    private @Nullable Double totalCpus;
 
     private GetCloudAutonomousVmClusterResult() {}
     /**
      * @return The percentage of the data storage used for the Autonomous Databases in an Autonomous VM Cluster.
      * 
      */
-    public Double autonomousDataStoragePercentage() {
-        return this.autonomousDataStoragePercentage;
+    public Optional<Double> autonomousDataStoragePercentage() {
+        return Optional.ofNullable(this.autonomousDataStoragePercentage);
     }
     /**
      * @return The data disk group size allocated for Autonomous Databases, in TBs.
      * 
      */
-    public Double autonomousDataStorageSizeInTbs() {
-        return this.autonomousDataStorageSizeInTbs;
+    public Optional<Double> autonomousDataStorageSizeInTbs() {
+        return Optional.ofNullable(this.autonomousDataStorageSizeInTbs);
     }
     /**
      * @return The name of the availability domain that the cloud Autonomous VM cluster is located in.
      * 
      */
-    public String availabilityDomain() {
-        return this.availabilityDomain;
+    public Optional<String> availabilityDomain() {
+        return Optional.ofNullable(this.availabilityDomain);
     }
     /**
      * @return The data disk group size available for Autonomous Databases, in TBs.
      * 
      */
-    public Double availableAutonomousDataStorageSizeInTbs() {
-        return this.availableAutonomousDataStorageSizeInTbs;
+    public Optional<Double> availableAutonomousDataStorageSizeInTbs() {
+        return Optional.ofNullable(this.availableAutonomousDataStorageSizeInTbs);
     }
     /**
      * @return The number of Autonomous Container Databases that can be created with the currently available local storage.
      * 
      */
-    public Integer availableContainerDatabases() {
-        return this.availableContainerDatabases;
+    public Optional<Integer> availableContainerDatabases() {
+        return Optional.ofNullable(this.availableContainerDatabases);
     }
     /**
      * @return CPU cores available for allocation to Autonomous Databases.
      * 
      */
-    public Double availableCpus() {
-        return this.availableCpus;
+    public Optional<Double> availableCpus() {
+        return Optional.ofNullable(this.availableCpus);
     }
     public String cloudAutonomousVmClusterId() {
         return this.cloudAutonomousVmClusterId;
@@ -333,207 +335,207 @@ public final class GetCloudAutonomousVmClusterResult {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Exadata infrastructure.
      * 
      */
-    public String cloudExadataInfrastructureId() {
-        return this.cloudExadataInfrastructureId;
+    public Optional<String> cloudExadataInfrastructureId() {
+        return Optional.ofNullable(this.cloudExadataInfrastructureId);
     }
     /**
      * @return The time zone of the Cloud Autonomous VM Cluster.
      * 
      */
-    public String clusterTimeZone() {
-        return this.clusterTimeZone;
+    public Optional<String> clusterTimeZone() {
+        return Optional.ofNullable(this.clusterTimeZone);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return The compute model of the Cloud Autonomous VM Cluster.
      * 
      */
-    public String computeModel() {
-        return this.computeModel;
+    public Optional<String> computeModel() {
+        return Optional.ofNullable(this.computeModel);
     }
     /**
      * @return The number of CPU cores on the cloud Autonomous VM cluster.
      * 
      */
-    public Integer cpuCoreCount() {
-        return this.cpuCoreCount;
+    public Optional<Integer> cpuCoreCount() {
+        return Optional.ofNullable(this.cpuCoreCount);
     }
     /**
      * @return The number of CPU cores enabled per VM cluster node.
      * 
      */
-    public Integer cpuCoreCountPerNode() {
-        return this.cpuCoreCountPerNode;
+    public Optional<Integer> cpuCoreCountPerNode() {
+        return Optional.ofNullable(this.cpuCoreCountPerNode);
     }
     /**
      * @return The percentage of total number of CPUs used in an Autonomous VM Cluster.
      * 
      */
-    public Double cpuPercentage() {
-        return this.cpuPercentage;
+    public Optional<Double> cpuPercentage() {
+        return Optional.ofNullable(this.cpuPercentage);
     }
     /**
      * @return The total data storage allocated, in gigabytes (GB).
      * 
      */
-    public Double dataStorageSizeInGb() {
-        return this.dataStorageSizeInGb;
+    public Optional<Double> dataStorageSizeInGb() {
+        return Optional.ofNullable(this.dataStorageSizeInGb);
     }
     /**
      * @return The total data storage allocated, in terabytes (TB).
      * 
      */
-    public Double dataStorageSizeInTbs() {
-        return this.dataStorageSizeInTbs;
+    public Optional<Double> dataStorageSizeInTbs() {
+        return Optional.ofNullable(this.dataStorageSizeInTbs);
     }
     /**
      * @return The local node storage allocated in GBs.
      * 
      */
-    public Integer dbNodeStorageSizeInGbs() {
-        return this.dbNodeStorageSizeInGbs;
+    public Optional<Integer> dbNodeStorageSizeInGbs() {
+        return Optional.ofNullable(this.dbNodeStorageSizeInGbs);
     }
     /**
      * @return The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Db servers.
      * 
      */
     public List<String> dbServers() {
-        return this.dbServers;
+        return this.dbServers == null ? List.of() : this.dbServers;
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return User defined description of the cloud Autonomous VM cluster.
      * 
      */
-    public String description() {
-        return this.description;
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
     /**
      * @return The user-friendly name for the cloud Autonomous VM cluster. The name does not need to be unique.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return The domain name for the cloud Autonomous VM cluster.
      * 
      */
-    public String domain() {
-        return this.domain;
+    public Optional<String> domain() {
+        return Optional.ofNullable(this.domain);
     }
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return The hostname for the cloud Autonomous VM cluster.
      * 
      */
-    public String hostname() {
-        return this.hostname;
+    public Optional<String> hostname() {
+        return Optional.ofNullable(this.hostname);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cloud Autonomous VM cluster.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Enable mutual TLS(mTLS) authentication for database at time of provisioning a VMCluster. This is applicable to database TLS Certificates only. Default is TLS
      * 
      */
-    public Boolean isMtlsEnabledVmCluster() {
-        return this.isMtlsEnabledVmCluster;
+    public Optional<Boolean> isMtlsEnabledVmCluster() {
+        return Optional.ofNullable(this.isMtlsEnabledVmCluster);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
      * 
      */
-    public String lastMaintenanceRunId() {
-        return this.lastMaintenanceRunId;
+    public Optional<String> lastMaintenanceRunId() {
+        return Optional.ofNullable(this.lastMaintenanceRunId);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance update history. This value is updated when a maintenance update starts.
      * 
      */
-    public String lastUpdateHistoryEntryId() {
-        return this.lastUpdateHistoryEntryId;
+    public Optional<String> lastUpdateHistoryEntryId() {
+        return Optional.ofNullable(this.lastUpdateHistoryEntryId);
     }
     /**
      * @return The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle PaaS and IaaS services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Database service. Note that when provisioning an Autonomous Database on [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null because the attribute is already set at the Autonomous Exadata Infrastructure level. When using [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), if a value is not specified, the system will supply the value of `BRING_YOUR_OWN_LICENSE`.
      * 
      */
-    public String licenseModel() {
-        return this.licenseModel;
+    public Optional<String> licenseModel() {
+        return Optional.ofNullable(this.licenseModel);
     }
     /**
      * @return Additional information about the current lifecycle state.
      * 
      */
-    public String lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Optional<String> lifecycleDetails() {
+        return Optional.ofNullable(this.lifecycleDetails);
     }
     public List<GetCloudAutonomousVmClusterMaintenanceWindowDetail> maintenanceWindowDetails() {
-        return this.maintenanceWindowDetails;
+        return this.maintenanceWindowDetails == null ? List.of() : this.maintenanceWindowDetails;
     }
     /**
      * @return The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
      * 
      */
     public List<GetCloudAutonomousVmClusterMaintenanceWindow> maintenanceWindows() {
-        return this.maintenanceWindows;
+        return this.maintenanceWindows == null ? List.of() : this.maintenanceWindows;
     }
     /**
      * @return The amount of memory (in GBs) enabled per OCPU or ECPU.
      * 
      */
-    public Integer memoryPerOracleComputeUnitInGbs() {
-        return this.memoryPerOracleComputeUnitInGbs;
+    public Optional<Integer> memoryPerOracleComputeUnitInGbs() {
+        return Optional.ofNullable(this.memoryPerOracleComputeUnitInGbs);
     }
     /**
      * @return The memory allocated in GBs.
      * 
      */
-    public Integer memorySizeInGbs() {
-        return this.memorySizeInGbs;
+    public Optional<Integer> memorySizeInGbs() {
+        return Optional.ofNullable(this.memorySizeInGbs);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
      * 
      */
-    public String nextMaintenanceRunId() {
-        return this.nextMaintenanceRunId;
+    public Optional<String> nextMaintenanceRunId() {
+        return Optional.ofNullable(this.nextMaintenanceRunId);
     }
     /**
      * @return The number of database servers in the cloud VM cluster.
      * 
      */
-    public Integer nodeCount() {
-        return this.nodeCount;
+    public Optional<Integer> nodeCount() {
+        return Optional.ofNullable(this.nodeCount);
     }
     /**
      * @return The number of non-provisionable Autonomous Container Databases in an Autonomous VM Cluster.
      * 
      */
-    public Integer nonProvisionableAutonomousContainerDatabases() {
-        return this.nonProvisionableAutonomousContainerDatabases;
+    public Optional<Integer> nonProvisionableAutonomousContainerDatabases() {
+        return Optional.ofNullable(this.nonProvisionableAutonomousContainerDatabases);
     }
     /**
      * @return The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
@@ -541,35 +543,35 @@ public final class GetCloudAutonomousVmClusterResult {
      * 
      */
     public List<String> nsgIds() {
-        return this.nsgIds;
+        return this.nsgIds == null ? List.of() : this.nsgIds;
     }
     /**
      * @return The number of CPU cores on the cloud Autonomous VM cluster. Only 1 decimal place is allowed for the fractional part.
      * 
      */
-    public Double ocpuCount() {
-        return this.ocpuCount;
+    public Optional<Double> ocpuCount() {
+        return Optional.ofNullable(this.ocpuCount);
     }
     /**
      * @return The number of provisionable Autonomous Container Databases in an Autonomous VM Cluster.
      * 
      */
-    public Integer provisionableAutonomousContainerDatabases() {
-        return this.provisionableAutonomousContainerDatabases;
+    public Optional<Integer> provisionableAutonomousContainerDatabases() {
+        return Optional.ofNullable(this.provisionableAutonomousContainerDatabases);
     }
     /**
      * @return The number of provisioned Autonomous Container Databases in an Autonomous VM Cluster.
      * 
      */
-    public Integer provisionedAutonomousContainerDatabases() {
-        return this.provisionedAutonomousContainerDatabases;
+    public Optional<Integer> provisionedAutonomousContainerDatabases() {
+        return Optional.ofNullable(this.provisionedAutonomousContainerDatabases);
     }
     /**
      * @return The number of CPUs provisioned in an Autonomous VM Cluster.
      * 
      */
-    public Double provisionedCpus() {
-        return this.provisionedCpus;
+    public Optional<Double> provisionedCpus() {
+        return Optional.ofNullable(this.provisionedCpus);
     }
     /**
      * @return For Autonomous Databases on Dedicated Exadata Infrastructure:
@@ -577,85 +579,85 @@ public final class GetCloudAutonomousVmClusterResult {
      * * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster&#39;s compute model.
      * 
      */
-    public Double reclaimableCpus() {
-        return this.reclaimableCpus;
+    public Optional<Double> reclaimableCpus() {
+        return Optional.ofNullable(this.reclaimableCpus);
     }
     /**
      * @return The number of CPUs reserved in an Autonomous VM Cluster.
      * 
      */
-    public Double reservedCpus() {
-        return this.reservedCpus;
+    public Optional<Double> reservedCpus() {
+        return Optional.ofNullable(this.reservedCpus);
     }
     /**
      * @return The SCAN Listener Non TLS port. Default is 1521.
      * 
      */
-    public Integer scanListenerPortNonTls() {
-        return this.scanListenerPortNonTls;
+    public Optional<Integer> scanListenerPortNonTls() {
+        return Optional.ofNullable(this.scanListenerPortNonTls);
     }
     /**
      * @return The SCAN Listenenr TLS port. Default is 2484.
      * 
      */
-    public Integer scanListenerPortTls() {
-        return this.scanListenerPortTls;
+    public Optional<Integer> scanListenerPortTls() {
+        return Optional.ofNullable(this.scanListenerPortTls);
     }
     /**
      * @return The model name of the Exadata hardware running the cloud Autonomous VM cluster.
      * 
      */
-    public String shape() {
-        return this.shape;
+    public Optional<String> shape() {
+        return Optional.ofNullable(this.shape);
     }
     /**
      * @return The current state of the cloud Autonomous VM cluster.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the cloud Autonomous VM Cluster is associated with.
      * 
      */
-    public String subnetId() {
-        return this.subnetId;
+    public Optional<String> subnetId() {
+        return Optional.ofNullable(this.subnetId);
     }
     /**
      * @return The date and time that the cloud Autonomous VM cluster was created.
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return The last date and time that the cloud Autonomous VM cluster was updated.
      * 
      */
-    public String timeUpdated() {
-        return this.timeUpdated;
+    public Optional<String> timeUpdated() {
+        return Optional.ofNullable(this.timeUpdated);
     }
     /**
      * @return The total data disk group size for Autonomous Databases, in TBs.
      * 
      */
-    public Double totalAutonomousDataStorageInTbs() {
-        return this.totalAutonomousDataStorageInTbs;
+    public Optional<Double> totalAutonomousDataStorageInTbs() {
+        return Optional.ofNullable(this.totalAutonomousDataStorageInTbs);
     }
     /**
      * @return The total number of Autonomous Container Databases that can be created with the allocated local storage.
      * 
      */
-    public Integer totalContainerDatabases() {
-        return this.totalContainerDatabases;
+    public Optional<Integer> totalContainerDatabases() {
+        return Optional.ofNullable(this.totalContainerDatabases);
     }
     /**
      * @return The total number of CPUs in an Autonomous VM Cluster.
      * 
      */
-    public Double totalCpus() {
-        return this.totalCpus;
+    public Optional<Double> totalCpus() {
+        return Optional.ofNullable(this.totalCpus);
     }
 
     public static Builder builder() {
@@ -667,60 +669,60 @@ public final class GetCloudAutonomousVmClusterResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Double autonomousDataStoragePercentage;
-        private Double autonomousDataStorageSizeInTbs;
-        private String availabilityDomain;
-        private Double availableAutonomousDataStorageSizeInTbs;
-        private Integer availableContainerDatabases;
-        private Double availableCpus;
+        private @Nullable Double autonomousDataStoragePercentage;
+        private @Nullable Double autonomousDataStorageSizeInTbs;
+        private @Nullable String availabilityDomain;
+        private @Nullable Double availableAutonomousDataStorageSizeInTbs;
+        private @Nullable Integer availableContainerDatabases;
+        private @Nullable Double availableCpus;
         private String cloudAutonomousVmClusterId;
-        private String cloudExadataInfrastructureId;
-        private String clusterTimeZone;
-        private String compartmentId;
-        private String computeModel;
-        private Integer cpuCoreCount;
-        private Integer cpuCoreCountPerNode;
-        private Double cpuPercentage;
-        private Double dataStorageSizeInGb;
-        private Double dataStorageSizeInTbs;
-        private Integer dbNodeStorageSizeInGbs;
-        private List<String> dbServers;
-        private Map<String,Object> definedTags;
-        private String description;
-        private String displayName;
-        private String domain;
-        private Map<String,Object> freeformTags;
-        private String hostname;
-        private String id;
-        private Boolean isMtlsEnabledVmCluster;
-        private String lastMaintenanceRunId;
-        private String lastUpdateHistoryEntryId;
-        private String licenseModel;
-        private String lifecycleDetails;
-        private List<GetCloudAutonomousVmClusterMaintenanceWindowDetail> maintenanceWindowDetails;
-        private List<GetCloudAutonomousVmClusterMaintenanceWindow> maintenanceWindows;
-        private Integer memoryPerOracleComputeUnitInGbs;
-        private Integer memorySizeInGbs;
-        private String nextMaintenanceRunId;
-        private Integer nodeCount;
-        private Integer nonProvisionableAutonomousContainerDatabases;
-        private List<String> nsgIds;
-        private Double ocpuCount;
-        private Integer provisionableAutonomousContainerDatabases;
-        private Integer provisionedAutonomousContainerDatabases;
-        private Double provisionedCpus;
-        private Double reclaimableCpus;
-        private Double reservedCpus;
-        private Integer scanListenerPortNonTls;
-        private Integer scanListenerPortTls;
-        private String shape;
-        private String state;
-        private String subnetId;
-        private String timeCreated;
-        private String timeUpdated;
-        private Double totalAutonomousDataStorageInTbs;
-        private Integer totalContainerDatabases;
-        private Double totalCpus;
+        private @Nullable String cloudExadataInfrastructureId;
+        private @Nullable String clusterTimeZone;
+        private @Nullable String compartmentId;
+        private @Nullable String computeModel;
+        private @Nullable Integer cpuCoreCount;
+        private @Nullable Integer cpuCoreCountPerNode;
+        private @Nullable Double cpuPercentage;
+        private @Nullable Double dataStorageSizeInGb;
+        private @Nullable Double dataStorageSizeInTbs;
+        private @Nullable Integer dbNodeStorageSizeInGbs;
+        private @Nullable List<String> dbServers;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String description;
+        private @Nullable String displayName;
+        private @Nullable String domain;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String hostname;
+        private @Nullable String id;
+        private @Nullable Boolean isMtlsEnabledVmCluster;
+        private @Nullable String lastMaintenanceRunId;
+        private @Nullable String lastUpdateHistoryEntryId;
+        private @Nullable String licenseModel;
+        private @Nullable String lifecycleDetails;
+        private @Nullable List<GetCloudAutonomousVmClusterMaintenanceWindowDetail> maintenanceWindowDetails;
+        private @Nullable List<GetCloudAutonomousVmClusterMaintenanceWindow> maintenanceWindows;
+        private @Nullable Integer memoryPerOracleComputeUnitInGbs;
+        private @Nullable Integer memorySizeInGbs;
+        private @Nullable String nextMaintenanceRunId;
+        private @Nullable Integer nodeCount;
+        private @Nullable Integer nonProvisionableAutonomousContainerDatabases;
+        private @Nullable List<String> nsgIds;
+        private @Nullable Double ocpuCount;
+        private @Nullable Integer provisionableAutonomousContainerDatabases;
+        private @Nullable Integer provisionedAutonomousContainerDatabases;
+        private @Nullable Double provisionedCpus;
+        private @Nullable Double reclaimableCpus;
+        private @Nullable Double reservedCpus;
+        private @Nullable Integer scanListenerPortNonTls;
+        private @Nullable Integer scanListenerPortTls;
+        private @Nullable String shape;
+        private @Nullable String state;
+        private @Nullable String subnetId;
+        private @Nullable String timeCreated;
+        private @Nullable String timeUpdated;
+        private @Nullable Double totalAutonomousDataStorageInTbs;
+        private @Nullable Integer totalContainerDatabases;
+        private @Nullable Double totalCpus;
         public Builder() {}
         public Builder(GetCloudAutonomousVmClusterResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -781,33 +783,33 @@ public final class GetCloudAutonomousVmClusterResult {
         }
 
         @CustomType.Setter
-        public Builder autonomousDataStoragePercentage(Double autonomousDataStoragePercentage) {
-            this.autonomousDataStoragePercentage = Objects.requireNonNull(autonomousDataStoragePercentage);
+        public Builder autonomousDataStoragePercentage(@Nullable Double autonomousDataStoragePercentage) {
+            this.autonomousDataStoragePercentage = autonomousDataStoragePercentage;
             return this;
         }
         @CustomType.Setter
-        public Builder autonomousDataStorageSizeInTbs(Double autonomousDataStorageSizeInTbs) {
-            this.autonomousDataStorageSizeInTbs = Objects.requireNonNull(autonomousDataStorageSizeInTbs);
+        public Builder autonomousDataStorageSizeInTbs(@Nullable Double autonomousDataStorageSizeInTbs) {
+            this.autonomousDataStorageSizeInTbs = autonomousDataStorageSizeInTbs;
             return this;
         }
         @CustomType.Setter
-        public Builder availabilityDomain(String availabilityDomain) {
-            this.availabilityDomain = Objects.requireNonNull(availabilityDomain);
+        public Builder availabilityDomain(@Nullable String availabilityDomain) {
+            this.availabilityDomain = availabilityDomain;
             return this;
         }
         @CustomType.Setter
-        public Builder availableAutonomousDataStorageSizeInTbs(Double availableAutonomousDataStorageSizeInTbs) {
-            this.availableAutonomousDataStorageSizeInTbs = Objects.requireNonNull(availableAutonomousDataStorageSizeInTbs);
+        public Builder availableAutonomousDataStorageSizeInTbs(@Nullable Double availableAutonomousDataStorageSizeInTbs) {
+            this.availableAutonomousDataStorageSizeInTbs = availableAutonomousDataStorageSizeInTbs;
             return this;
         }
         @CustomType.Setter
-        public Builder availableContainerDatabases(Integer availableContainerDatabases) {
-            this.availableContainerDatabases = Objects.requireNonNull(availableContainerDatabases);
+        public Builder availableContainerDatabases(@Nullable Integer availableContainerDatabases) {
+            this.availableContainerDatabases = availableContainerDatabases;
             return this;
         }
         @CustomType.Setter
-        public Builder availableCpus(Double availableCpus) {
-            this.availableCpus = Objects.requireNonNull(availableCpus);
+        public Builder availableCpus(@Nullable Double availableCpus) {
+            this.availableCpus = availableCpus;
             return this;
         }
         @CustomType.Setter
@@ -816,250 +818,250 @@ public final class GetCloudAutonomousVmClusterResult {
             return this;
         }
         @CustomType.Setter
-        public Builder cloudExadataInfrastructureId(String cloudExadataInfrastructureId) {
-            this.cloudExadataInfrastructureId = Objects.requireNonNull(cloudExadataInfrastructureId);
+        public Builder cloudExadataInfrastructureId(@Nullable String cloudExadataInfrastructureId) {
+            this.cloudExadataInfrastructureId = cloudExadataInfrastructureId;
             return this;
         }
         @CustomType.Setter
-        public Builder clusterTimeZone(String clusterTimeZone) {
-            this.clusterTimeZone = Objects.requireNonNull(clusterTimeZone);
+        public Builder clusterTimeZone(@Nullable String clusterTimeZone) {
+            this.clusterTimeZone = clusterTimeZone;
             return this;
         }
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder computeModel(String computeModel) {
-            this.computeModel = Objects.requireNonNull(computeModel);
+        public Builder computeModel(@Nullable String computeModel) {
+            this.computeModel = computeModel;
             return this;
         }
         @CustomType.Setter
-        public Builder cpuCoreCount(Integer cpuCoreCount) {
-            this.cpuCoreCount = Objects.requireNonNull(cpuCoreCount);
+        public Builder cpuCoreCount(@Nullable Integer cpuCoreCount) {
+            this.cpuCoreCount = cpuCoreCount;
             return this;
         }
         @CustomType.Setter
-        public Builder cpuCoreCountPerNode(Integer cpuCoreCountPerNode) {
-            this.cpuCoreCountPerNode = Objects.requireNonNull(cpuCoreCountPerNode);
+        public Builder cpuCoreCountPerNode(@Nullable Integer cpuCoreCountPerNode) {
+            this.cpuCoreCountPerNode = cpuCoreCountPerNode;
             return this;
         }
         @CustomType.Setter
-        public Builder cpuPercentage(Double cpuPercentage) {
-            this.cpuPercentage = Objects.requireNonNull(cpuPercentage);
+        public Builder cpuPercentage(@Nullable Double cpuPercentage) {
+            this.cpuPercentage = cpuPercentage;
             return this;
         }
         @CustomType.Setter
-        public Builder dataStorageSizeInGb(Double dataStorageSizeInGb) {
-            this.dataStorageSizeInGb = Objects.requireNonNull(dataStorageSizeInGb);
+        public Builder dataStorageSizeInGb(@Nullable Double dataStorageSizeInGb) {
+            this.dataStorageSizeInGb = dataStorageSizeInGb;
             return this;
         }
         @CustomType.Setter
-        public Builder dataStorageSizeInTbs(Double dataStorageSizeInTbs) {
-            this.dataStorageSizeInTbs = Objects.requireNonNull(dataStorageSizeInTbs);
+        public Builder dataStorageSizeInTbs(@Nullable Double dataStorageSizeInTbs) {
+            this.dataStorageSizeInTbs = dataStorageSizeInTbs;
             return this;
         }
         @CustomType.Setter
-        public Builder dbNodeStorageSizeInGbs(Integer dbNodeStorageSizeInGbs) {
-            this.dbNodeStorageSizeInGbs = Objects.requireNonNull(dbNodeStorageSizeInGbs);
+        public Builder dbNodeStorageSizeInGbs(@Nullable Integer dbNodeStorageSizeInGbs) {
+            this.dbNodeStorageSizeInGbs = dbNodeStorageSizeInGbs;
             return this;
         }
         @CustomType.Setter
-        public Builder dbServers(List<String> dbServers) {
-            this.dbServers = Objects.requireNonNull(dbServers);
+        public Builder dbServers(@Nullable List<String> dbServers) {
+            this.dbServers = dbServers;
             return this;
         }
         public Builder dbServers(String... dbServers) {
             return dbServers(List.of(dbServers));
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+        public Builder description(@Nullable String description) {
+            this.description = description;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder domain(String domain) {
-            this.domain = Objects.requireNonNull(domain);
+        public Builder domain(@Nullable String domain) {
+            this.domain = domain;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder hostname(String hostname) {
-            this.hostname = Objects.requireNonNull(hostname);
+        public Builder hostname(@Nullable String hostname) {
+            this.hostname = hostname;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder isMtlsEnabledVmCluster(Boolean isMtlsEnabledVmCluster) {
-            this.isMtlsEnabledVmCluster = Objects.requireNonNull(isMtlsEnabledVmCluster);
+        public Builder isMtlsEnabledVmCluster(@Nullable Boolean isMtlsEnabledVmCluster) {
+            this.isMtlsEnabledVmCluster = isMtlsEnabledVmCluster;
             return this;
         }
         @CustomType.Setter
-        public Builder lastMaintenanceRunId(String lastMaintenanceRunId) {
-            this.lastMaintenanceRunId = Objects.requireNonNull(lastMaintenanceRunId);
+        public Builder lastMaintenanceRunId(@Nullable String lastMaintenanceRunId) {
+            this.lastMaintenanceRunId = lastMaintenanceRunId;
             return this;
         }
         @CustomType.Setter
-        public Builder lastUpdateHistoryEntryId(String lastUpdateHistoryEntryId) {
-            this.lastUpdateHistoryEntryId = Objects.requireNonNull(lastUpdateHistoryEntryId);
+        public Builder lastUpdateHistoryEntryId(@Nullable String lastUpdateHistoryEntryId) {
+            this.lastUpdateHistoryEntryId = lastUpdateHistoryEntryId;
             return this;
         }
         @CustomType.Setter
-        public Builder licenseModel(String licenseModel) {
-            this.licenseModel = Objects.requireNonNull(licenseModel);
+        public Builder licenseModel(@Nullable String licenseModel) {
+            this.licenseModel = licenseModel;
             return this;
         }
         @CustomType.Setter
-        public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+        public Builder lifecycleDetails(@Nullable String lifecycleDetails) {
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
-        public Builder maintenanceWindowDetails(List<GetCloudAutonomousVmClusterMaintenanceWindowDetail> maintenanceWindowDetails) {
-            this.maintenanceWindowDetails = Objects.requireNonNull(maintenanceWindowDetails);
+        public Builder maintenanceWindowDetails(@Nullable List<GetCloudAutonomousVmClusterMaintenanceWindowDetail> maintenanceWindowDetails) {
+            this.maintenanceWindowDetails = maintenanceWindowDetails;
             return this;
         }
         public Builder maintenanceWindowDetails(GetCloudAutonomousVmClusterMaintenanceWindowDetail... maintenanceWindowDetails) {
             return maintenanceWindowDetails(List.of(maintenanceWindowDetails));
         }
         @CustomType.Setter
-        public Builder maintenanceWindows(List<GetCloudAutonomousVmClusterMaintenanceWindow> maintenanceWindows) {
-            this.maintenanceWindows = Objects.requireNonNull(maintenanceWindows);
+        public Builder maintenanceWindows(@Nullable List<GetCloudAutonomousVmClusterMaintenanceWindow> maintenanceWindows) {
+            this.maintenanceWindows = maintenanceWindows;
             return this;
         }
         public Builder maintenanceWindows(GetCloudAutonomousVmClusterMaintenanceWindow... maintenanceWindows) {
             return maintenanceWindows(List.of(maintenanceWindows));
         }
         @CustomType.Setter
-        public Builder memoryPerOracleComputeUnitInGbs(Integer memoryPerOracleComputeUnitInGbs) {
-            this.memoryPerOracleComputeUnitInGbs = Objects.requireNonNull(memoryPerOracleComputeUnitInGbs);
+        public Builder memoryPerOracleComputeUnitInGbs(@Nullable Integer memoryPerOracleComputeUnitInGbs) {
+            this.memoryPerOracleComputeUnitInGbs = memoryPerOracleComputeUnitInGbs;
             return this;
         }
         @CustomType.Setter
-        public Builder memorySizeInGbs(Integer memorySizeInGbs) {
-            this.memorySizeInGbs = Objects.requireNonNull(memorySizeInGbs);
+        public Builder memorySizeInGbs(@Nullable Integer memorySizeInGbs) {
+            this.memorySizeInGbs = memorySizeInGbs;
             return this;
         }
         @CustomType.Setter
-        public Builder nextMaintenanceRunId(String nextMaintenanceRunId) {
-            this.nextMaintenanceRunId = Objects.requireNonNull(nextMaintenanceRunId);
+        public Builder nextMaintenanceRunId(@Nullable String nextMaintenanceRunId) {
+            this.nextMaintenanceRunId = nextMaintenanceRunId;
             return this;
         }
         @CustomType.Setter
-        public Builder nodeCount(Integer nodeCount) {
-            this.nodeCount = Objects.requireNonNull(nodeCount);
+        public Builder nodeCount(@Nullable Integer nodeCount) {
+            this.nodeCount = nodeCount;
             return this;
         }
         @CustomType.Setter
-        public Builder nonProvisionableAutonomousContainerDatabases(Integer nonProvisionableAutonomousContainerDatabases) {
-            this.nonProvisionableAutonomousContainerDatabases = Objects.requireNonNull(nonProvisionableAutonomousContainerDatabases);
+        public Builder nonProvisionableAutonomousContainerDatabases(@Nullable Integer nonProvisionableAutonomousContainerDatabases) {
+            this.nonProvisionableAutonomousContainerDatabases = nonProvisionableAutonomousContainerDatabases;
             return this;
         }
         @CustomType.Setter
-        public Builder nsgIds(List<String> nsgIds) {
-            this.nsgIds = Objects.requireNonNull(nsgIds);
+        public Builder nsgIds(@Nullable List<String> nsgIds) {
+            this.nsgIds = nsgIds;
             return this;
         }
         public Builder nsgIds(String... nsgIds) {
             return nsgIds(List.of(nsgIds));
         }
         @CustomType.Setter
-        public Builder ocpuCount(Double ocpuCount) {
-            this.ocpuCount = Objects.requireNonNull(ocpuCount);
+        public Builder ocpuCount(@Nullable Double ocpuCount) {
+            this.ocpuCount = ocpuCount;
             return this;
         }
         @CustomType.Setter
-        public Builder provisionableAutonomousContainerDatabases(Integer provisionableAutonomousContainerDatabases) {
-            this.provisionableAutonomousContainerDatabases = Objects.requireNonNull(provisionableAutonomousContainerDatabases);
+        public Builder provisionableAutonomousContainerDatabases(@Nullable Integer provisionableAutonomousContainerDatabases) {
+            this.provisionableAutonomousContainerDatabases = provisionableAutonomousContainerDatabases;
             return this;
         }
         @CustomType.Setter
-        public Builder provisionedAutonomousContainerDatabases(Integer provisionedAutonomousContainerDatabases) {
-            this.provisionedAutonomousContainerDatabases = Objects.requireNonNull(provisionedAutonomousContainerDatabases);
+        public Builder provisionedAutonomousContainerDatabases(@Nullable Integer provisionedAutonomousContainerDatabases) {
+            this.provisionedAutonomousContainerDatabases = provisionedAutonomousContainerDatabases;
             return this;
         }
         @CustomType.Setter
-        public Builder provisionedCpus(Double provisionedCpus) {
-            this.provisionedCpus = Objects.requireNonNull(provisionedCpus);
+        public Builder provisionedCpus(@Nullable Double provisionedCpus) {
+            this.provisionedCpus = provisionedCpus;
             return this;
         }
         @CustomType.Setter
-        public Builder reclaimableCpus(Double reclaimableCpus) {
-            this.reclaimableCpus = Objects.requireNonNull(reclaimableCpus);
+        public Builder reclaimableCpus(@Nullable Double reclaimableCpus) {
+            this.reclaimableCpus = reclaimableCpus;
             return this;
         }
         @CustomType.Setter
-        public Builder reservedCpus(Double reservedCpus) {
-            this.reservedCpus = Objects.requireNonNull(reservedCpus);
+        public Builder reservedCpus(@Nullable Double reservedCpus) {
+            this.reservedCpus = reservedCpus;
             return this;
         }
         @CustomType.Setter
-        public Builder scanListenerPortNonTls(Integer scanListenerPortNonTls) {
-            this.scanListenerPortNonTls = Objects.requireNonNull(scanListenerPortNonTls);
+        public Builder scanListenerPortNonTls(@Nullable Integer scanListenerPortNonTls) {
+            this.scanListenerPortNonTls = scanListenerPortNonTls;
             return this;
         }
         @CustomType.Setter
-        public Builder scanListenerPortTls(Integer scanListenerPortTls) {
-            this.scanListenerPortTls = Objects.requireNonNull(scanListenerPortTls);
+        public Builder scanListenerPortTls(@Nullable Integer scanListenerPortTls) {
+            this.scanListenerPortTls = scanListenerPortTls;
             return this;
         }
         @CustomType.Setter
-        public Builder shape(String shape) {
-            this.shape = Objects.requireNonNull(shape);
+        public Builder shape(@Nullable String shape) {
+            this.shape = shape;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder subnetId(String subnetId) {
-            this.subnetId = Objects.requireNonNull(subnetId);
+        public Builder subnetId(@Nullable String subnetId) {
+            this.subnetId = subnetId;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+        public Builder timeUpdated(@Nullable String timeUpdated) {
+            this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter
-        public Builder totalAutonomousDataStorageInTbs(Double totalAutonomousDataStorageInTbs) {
-            this.totalAutonomousDataStorageInTbs = Objects.requireNonNull(totalAutonomousDataStorageInTbs);
+        public Builder totalAutonomousDataStorageInTbs(@Nullable Double totalAutonomousDataStorageInTbs) {
+            this.totalAutonomousDataStorageInTbs = totalAutonomousDataStorageInTbs;
             return this;
         }
         @CustomType.Setter
-        public Builder totalContainerDatabases(Integer totalContainerDatabases) {
-            this.totalContainerDatabases = Objects.requireNonNull(totalContainerDatabases);
+        public Builder totalContainerDatabases(@Nullable Integer totalContainerDatabases) {
+            this.totalContainerDatabases = totalContainerDatabases;
             return this;
         }
         @CustomType.Setter
-        public Builder totalCpus(Double totalCpus) {
-            this.totalCpus = Objects.requireNonNull(totalCpus);
+        public Builder totalCpus(@Nullable Double totalCpus) {
+            this.totalCpus = totalCpus;
             return this;
         }
         public GetCloudAutonomousVmClusterResult build() {

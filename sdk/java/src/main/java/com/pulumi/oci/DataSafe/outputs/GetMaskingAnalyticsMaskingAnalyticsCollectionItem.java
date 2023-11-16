@@ -8,6 +8,8 @@ import com.pulumi.oci.DataSafe.outputs.GetMaskingAnalyticsMaskingAnalyticsCollec
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetMaskingAnalyticsMaskingAnalyticsCollectionItem {
@@ -15,39 +17,39 @@ public final class GetMaskingAnalyticsMaskingAnalyticsCollectionItem {
      * @return The total count for the aggregation metric.
      * 
      */
-    private String count;
+    private @Nullable String count;
     /**
      * @return The scope of analytics data.
      * 
      */
-    private List<GetMaskingAnalyticsMaskingAnalyticsCollectionItemDimension> dimensions;
+    private @Nullable List<GetMaskingAnalyticsMaskingAnalyticsCollectionItemDimension> dimensions;
     /**
      * @return The name of the aggregation metric.
      * 
      */
-    private String metricName;
+    private @Nullable String metricName;
 
     private GetMaskingAnalyticsMaskingAnalyticsCollectionItem() {}
     /**
      * @return The total count for the aggregation metric.
      * 
      */
-    public String count() {
-        return this.count;
+    public Optional<String> count() {
+        return Optional.ofNullable(this.count);
     }
     /**
      * @return The scope of analytics data.
      * 
      */
     public List<GetMaskingAnalyticsMaskingAnalyticsCollectionItemDimension> dimensions() {
-        return this.dimensions;
+        return this.dimensions == null ? List.of() : this.dimensions;
     }
     /**
      * @return The name of the aggregation metric.
      * 
      */
-    public String metricName() {
-        return this.metricName;
+    public Optional<String> metricName() {
+        return Optional.ofNullable(this.metricName);
     }
 
     public static Builder builder() {
@@ -59,9 +61,9 @@ public final class GetMaskingAnalyticsMaskingAnalyticsCollectionItem {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String count;
-        private List<GetMaskingAnalyticsMaskingAnalyticsCollectionItemDimension> dimensions;
-        private String metricName;
+        private @Nullable String count;
+        private @Nullable List<GetMaskingAnalyticsMaskingAnalyticsCollectionItemDimension> dimensions;
+        private @Nullable String metricName;
         public Builder() {}
         public Builder(GetMaskingAnalyticsMaskingAnalyticsCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -71,21 +73,21 @@ public final class GetMaskingAnalyticsMaskingAnalyticsCollectionItem {
         }
 
         @CustomType.Setter
-        public Builder count(String count) {
-            this.count = Objects.requireNonNull(count);
+        public Builder count(@Nullable String count) {
+            this.count = count;
             return this;
         }
         @CustomType.Setter
-        public Builder dimensions(List<GetMaskingAnalyticsMaskingAnalyticsCollectionItemDimension> dimensions) {
-            this.dimensions = Objects.requireNonNull(dimensions);
+        public Builder dimensions(@Nullable List<GetMaskingAnalyticsMaskingAnalyticsCollectionItemDimension> dimensions) {
+            this.dimensions = dimensions;
             return this;
         }
         public Builder dimensions(GetMaskingAnalyticsMaskingAnalyticsCollectionItemDimension... dimensions) {
             return dimensions(List.of(dimensions));
         }
         @CustomType.Setter
-        public Builder metricName(String metricName) {
-            this.metricName = Objects.requireNonNull(metricName);
+        public Builder metricName(@Nullable String metricName) {
+            this.metricName = metricName;
             return this;
         }
         public GetMaskingAnalyticsMaskingAnalyticsCollectionItem build() {

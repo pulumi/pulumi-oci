@@ -8,6 +8,7 @@ import com.pulumi.oci.Blockchain.outputs.GetBlockchainPlatformsBlockchainPlatfor
 import com.pulumi.oci.Blockchain.outputs.GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailPeer;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetail {
@@ -15,12 +16,12 @@ public final class GetBlockchainPlatformsBlockchainPlatformCollectionItemCompone
      * @return List of OSNs
      * 
      */
-    private List<GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailOsn> osns;
+    private @Nullable List<GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailOsn> osns;
     /**
      * @return List of Peers
      * 
      */
-    private List<GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailPeer> peers;
+    private @Nullable List<GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailPeer> peers;
 
     private GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetail() {}
     /**
@@ -28,14 +29,14 @@ public final class GetBlockchainPlatformsBlockchainPlatformCollectionItemCompone
      * 
      */
     public List<GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailOsn> osns() {
-        return this.osns;
+        return this.osns == null ? List.of() : this.osns;
     }
     /**
      * @return List of Peers
      * 
      */
     public List<GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailPeer> peers() {
-        return this.peers;
+        return this.peers == null ? List.of() : this.peers;
     }
 
     public static Builder builder() {
@@ -47,8 +48,8 @@ public final class GetBlockchainPlatformsBlockchainPlatformCollectionItemCompone
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailOsn> osns;
-        private List<GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailPeer> peers;
+        private @Nullable List<GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailOsn> osns;
+        private @Nullable List<GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailPeer> peers;
         public Builder() {}
         public Builder(GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetail defaults) {
     	      Objects.requireNonNull(defaults);
@@ -57,16 +58,16 @@ public final class GetBlockchainPlatformsBlockchainPlatformCollectionItemCompone
         }
 
         @CustomType.Setter
-        public Builder osns(List<GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailOsn> osns) {
-            this.osns = Objects.requireNonNull(osns);
+        public Builder osns(@Nullable List<GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailOsn> osns) {
+            this.osns = osns;
             return this;
         }
         public Builder osns(GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailOsn... osns) {
             return osns(List.of(osns));
         }
         @CustomType.Setter
-        public Builder peers(List<GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailPeer> peers) {
-            this.peers = Objects.requireNonNull(peers);
+        public Builder peers(@Nullable List<GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailPeer> peers) {
+            this.peers = peers;
             return this;
         }
         public Builder peers(GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailPeer... peers) {

@@ -49,19 +49,19 @@ export interface GetCrossConnectStatusResult {
     /**
      * Encryption status of the CrossConnect
      */
-    readonly encryptionStatus: string;
+    readonly encryptionStatus?: string;
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Whether Oracle's side of the interface is up or down.
      */
-    readonly interfaceState: string;
+    readonly interfaceState?: string;
     /**
      * The light level of the cross-connect (in dBm).  Example: `14.0`
      */
-    readonly lightLevelIndBm: number;
+    readonly lightLevelIndBm?: number;
     /**
      * Status indicator corresponding to the light level.
      * * **NO_LIGHT:** No measurable light
@@ -70,7 +70,7 @@ export interface GetCrossConnectStatusResult {
      * * **BAD:** There's measurable light but the signal-to-noise ratio is bad
      * * **GOOD:** Good light level
      */
-    readonly lightLevelIndicator: string;
+    readonly lightLevelIndicator?: string;
 }
 /**
  * This data source provides details about a specific Cross Connect Status resource in Oracle Cloud Infrastructure Core service.

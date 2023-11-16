@@ -8,6 +8,7 @@ import com.pulumi.oci.DatabaseMigration.outputs.GetMigrationsMigrationCollection
 import com.pulumi.oci.DatabaseMigration.outputs.GetMigrationsMigrationCollectionItemDataTransferMediumDetailObjectStorageDetail;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetMigrationsMigrationCollectionItemDataTransferMediumDetail {
@@ -15,12 +16,12 @@ public final class GetMigrationsMigrationCollectionItemDataTransferMediumDetail 
      * @return Optional details for creating a network database link from Oracle Cloud Infrastructure database to on-premise database.
      * 
      */
-    private List<GetMigrationsMigrationCollectionItemDataTransferMediumDetailDatabaseLinkDetail> databaseLinkDetails;
+    private @Nullable List<GetMigrationsMigrationCollectionItemDataTransferMediumDetailDatabaseLinkDetail> databaseLinkDetails;
     /**
      * @return In lieu of a network database link, Oracle Cloud Infrastructure Object Storage bucket will be used to store Data Pump dump files for the migration. Additionally, it can be specified alongside a database link data transfer medium.
      * 
      */
-    private List<GetMigrationsMigrationCollectionItemDataTransferMediumDetailObjectStorageDetail> objectStorageDetails;
+    private @Nullable List<GetMigrationsMigrationCollectionItemDataTransferMediumDetailObjectStorageDetail> objectStorageDetails;
 
     private GetMigrationsMigrationCollectionItemDataTransferMediumDetail() {}
     /**
@@ -28,14 +29,14 @@ public final class GetMigrationsMigrationCollectionItemDataTransferMediumDetail 
      * 
      */
     public List<GetMigrationsMigrationCollectionItemDataTransferMediumDetailDatabaseLinkDetail> databaseLinkDetails() {
-        return this.databaseLinkDetails;
+        return this.databaseLinkDetails == null ? List.of() : this.databaseLinkDetails;
     }
     /**
      * @return In lieu of a network database link, Oracle Cloud Infrastructure Object Storage bucket will be used to store Data Pump dump files for the migration. Additionally, it can be specified alongside a database link data transfer medium.
      * 
      */
     public List<GetMigrationsMigrationCollectionItemDataTransferMediumDetailObjectStorageDetail> objectStorageDetails() {
-        return this.objectStorageDetails;
+        return this.objectStorageDetails == null ? List.of() : this.objectStorageDetails;
     }
 
     public static Builder builder() {
@@ -47,8 +48,8 @@ public final class GetMigrationsMigrationCollectionItemDataTransferMediumDetail 
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetMigrationsMigrationCollectionItemDataTransferMediumDetailDatabaseLinkDetail> databaseLinkDetails;
-        private List<GetMigrationsMigrationCollectionItemDataTransferMediumDetailObjectStorageDetail> objectStorageDetails;
+        private @Nullable List<GetMigrationsMigrationCollectionItemDataTransferMediumDetailDatabaseLinkDetail> databaseLinkDetails;
+        private @Nullable List<GetMigrationsMigrationCollectionItemDataTransferMediumDetailObjectStorageDetail> objectStorageDetails;
         public Builder() {}
         public Builder(GetMigrationsMigrationCollectionItemDataTransferMediumDetail defaults) {
     	      Objects.requireNonNull(defaults);
@@ -57,16 +58,16 @@ public final class GetMigrationsMigrationCollectionItemDataTransferMediumDetail 
         }
 
         @CustomType.Setter
-        public Builder databaseLinkDetails(List<GetMigrationsMigrationCollectionItemDataTransferMediumDetailDatabaseLinkDetail> databaseLinkDetails) {
-            this.databaseLinkDetails = Objects.requireNonNull(databaseLinkDetails);
+        public Builder databaseLinkDetails(@Nullable List<GetMigrationsMigrationCollectionItemDataTransferMediumDetailDatabaseLinkDetail> databaseLinkDetails) {
+            this.databaseLinkDetails = databaseLinkDetails;
             return this;
         }
         public Builder databaseLinkDetails(GetMigrationsMigrationCollectionItemDataTransferMediumDetailDatabaseLinkDetail... databaseLinkDetails) {
             return databaseLinkDetails(List.of(databaseLinkDetails));
         }
         @CustomType.Setter
-        public Builder objectStorageDetails(List<GetMigrationsMigrationCollectionItemDataTransferMediumDetailObjectStorageDetail> objectStorageDetails) {
-            this.objectStorageDetails = Objects.requireNonNull(objectStorageDetails);
+        public Builder objectStorageDetails(@Nullable List<GetMigrationsMigrationCollectionItemDataTransferMediumDetailObjectStorageDetail> objectStorageDetails) {
+            this.objectStorageDetails = objectStorageDetails;
             return this;
         }
         public Builder objectStorageDetails(GetMigrationsMigrationCollectionItemDataTransferMediumDetailObjectStorageDetail... objectStorageDetails) {

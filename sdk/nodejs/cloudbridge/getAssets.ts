@@ -91,7 +91,7 @@ export interface GetAssetsResult {
     /**
      * The list of asset_collection.
      */
-    readonly assetCollections: outputs.CloudBridge.GetAssetsAssetCollection[];
+    readonly assetCollections?: outputs.CloudBridge.GetAssetsAssetCollection[];
     readonly assetId?: string;
     /**
      * The type of asset.
@@ -113,7 +113,7 @@ export interface GetAssetsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Inventory ID to which an asset belongs to.
      */

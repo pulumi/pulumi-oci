@@ -6,6 +6,8 @@ package com.pulumi.oci.Database.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.Boolean;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetail {
@@ -13,15 +15,15 @@ public final class GetPluggableDatabasePdbCreationTypeDetailRefreshableCloneDeta
      * @return Indicates whether the Pluggable Database is a refreshable clone.
      * 
      */
-    private Boolean isRefreshableClone;
+    private @Nullable Boolean isRefreshableClone;
 
     private GetPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetail() {}
     /**
      * @return Indicates whether the Pluggable Database is a refreshable clone.
      * 
      */
-    public Boolean isRefreshableClone() {
-        return this.isRefreshableClone;
+    public Optional<Boolean> isRefreshableClone() {
+        return Optional.ofNullable(this.isRefreshableClone);
     }
 
     public static Builder builder() {
@@ -33,7 +35,7 @@ public final class GetPluggableDatabasePdbCreationTypeDetailRefreshableCloneDeta
     }
     @CustomType.Builder
     public static final class Builder {
-        private Boolean isRefreshableClone;
+        private @Nullable Boolean isRefreshableClone;
         public Builder() {}
         public Builder(GetPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetail defaults) {
     	      Objects.requireNonNull(defaults);
@@ -41,8 +43,8 @@ public final class GetPluggableDatabasePdbCreationTypeDetailRefreshableCloneDeta
         }
 
         @CustomType.Setter
-        public Builder isRefreshableClone(Boolean isRefreshableClone) {
-            this.isRefreshableClone = Objects.requireNonNull(isRefreshableClone);
+        public Builder isRefreshableClone(@Nullable Boolean isRefreshableClone) {
+            this.isRefreshableClone = isRefreshableClone;
             return this;
         }
         public GetPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetail build() {

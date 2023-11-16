@@ -12,6 +12,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetSoftwareSourceResult {
@@ -19,248 +21,248 @@ public final class GetSoftwareSourceResult {
      * @return The architecture type supported by the software source.
      * 
      */
-    private String archType;
+    private @Nullable String archType;
     /**
      * @return Possible availabilities of a software source.
      * 
      */
-    private String availability;
+    private @Nullable String availability;
     /**
      * @return The yum repository checksum type used by this software source.
      * 
      */
-    private String checksumType;
+    private @Nullable String checksumType;
     /**
      * @return The OCID of the tenancy containing the software source.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return Used to apply filters to a VendorSoftwareSource to create/update CustomSoftwareSources.
      * 
      */
-    private List<GetSoftwareSourceCustomSoftwareSourceFilter> customSoftwareSourceFilters;
+    private @Nullable List<GetSoftwareSourceCustomSoftwareSourceFilter> customSoftwareSourceFilters;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return Information specified by the user about the software source.
      * 
      */
-    private String description;
+    private @Nullable String description;
     /**
      * @return User friendly name.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return Fingerprint of the GPG key for this software source.
      * 
      */
-    private String gpgKeyFingerprint;
+    private @Nullable String gpgKeyFingerprint;
     /**
      * @return ID of the GPG key for this software source.
      * 
      */
-    private String gpgKeyId;
+    private @Nullable String gpgKeyId;
     /**
      * @return URL of the GPG key for this software source.
      * 
      */
-    private String gpgKeyUrl;
+    private @Nullable String gpgKeyUrl;
     /**
      * @return The OCID of the resource that is immutable on creation.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Indicates whether service should automatically update the custom software source for the user.
      * 
      */
-    private Boolean isAutomaticallyUpdated;
+    private @Nullable Boolean isAutomaticallyUpdated;
     /**
      * @return The OS family the software source belongs to.
      * 
      */
-    private String osFamily;
+    private @Nullable String osFamily;
     /**
      * @return Number of packages.
      * 
      */
-    private String packageCount;
+    private @Nullable String packageCount;
     /**
      * @return The Repo ID for the software source.
      * 
      */
-    private String repoId;
+    private @Nullable String repoId;
     private String softwareSourceId;
     /**
      * @return Type of the software source.
      * 
      */
-    private String softwareSourceType;
+    private @Nullable String softwareSourceType;
     /**
      * @return The version to assign to this custom software source.
      * 
      */
-    private String softwareSourceVersion;
+    private @Nullable String softwareSourceVersion;
     /**
      * @return The current state of the software source.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    private Map<String,Object> systemTags;
+    private @Nullable Map<String,Object> systemTags;
     /**
      * @return The date and time the software source was created, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return URL for the repository.
      * 
      */
-    private String url;
+    private @Nullable String url;
     /**
      * @return Name of the vendor providing the software source.
      * 
      */
-    private String vendorName;
+    private @Nullable String vendorName;
     /**
      * @return List of vendor software sources.
      * 
      */
-    private List<GetSoftwareSourceVendorSoftwareSource> vendorSoftwareSources;
+    private @Nullable List<GetSoftwareSourceVendorSoftwareSource> vendorSoftwareSources;
 
     private GetSoftwareSourceResult() {}
     /**
      * @return The architecture type supported by the software source.
      * 
      */
-    public String archType() {
-        return this.archType;
+    public Optional<String> archType() {
+        return Optional.ofNullable(this.archType);
     }
     /**
      * @return Possible availabilities of a software source.
      * 
      */
-    public String availability() {
-        return this.availability;
+    public Optional<String> availability() {
+        return Optional.ofNullable(this.availability);
     }
     /**
      * @return The yum repository checksum type used by this software source.
      * 
      */
-    public String checksumType() {
-        return this.checksumType;
+    public Optional<String> checksumType() {
+        return Optional.ofNullable(this.checksumType);
     }
     /**
      * @return The OCID of the tenancy containing the software source.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return Used to apply filters to a VendorSoftwareSource to create/update CustomSoftwareSources.
      * 
      */
     public List<GetSoftwareSourceCustomSoftwareSourceFilter> customSoftwareSourceFilters() {
-        return this.customSoftwareSourceFilters;
+        return this.customSoftwareSourceFilters == null ? List.of() : this.customSoftwareSourceFilters;
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return Information specified by the user about the software source.
      * 
      */
-    public String description() {
-        return this.description;
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
     /**
      * @return User friendly name.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return Fingerprint of the GPG key for this software source.
      * 
      */
-    public String gpgKeyFingerprint() {
-        return this.gpgKeyFingerprint;
+    public Optional<String> gpgKeyFingerprint() {
+        return Optional.ofNullable(this.gpgKeyFingerprint);
     }
     /**
      * @return ID of the GPG key for this software source.
      * 
      */
-    public String gpgKeyId() {
-        return this.gpgKeyId;
+    public Optional<String> gpgKeyId() {
+        return Optional.ofNullable(this.gpgKeyId);
     }
     /**
      * @return URL of the GPG key for this software source.
      * 
      */
-    public String gpgKeyUrl() {
-        return this.gpgKeyUrl;
+    public Optional<String> gpgKeyUrl() {
+        return Optional.ofNullable(this.gpgKeyUrl);
     }
     /**
      * @return The OCID of the resource that is immutable on creation.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Indicates whether service should automatically update the custom software source for the user.
      * 
      */
-    public Boolean isAutomaticallyUpdated() {
-        return this.isAutomaticallyUpdated;
+    public Optional<Boolean> isAutomaticallyUpdated() {
+        return Optional.ofNullable(this.isAutomaticallyUpdated);
     }
     /**
      * @return The OS family the software source belongs to.
      * 
      */
-    public String osFamily() {
-        return this.osFamily;
+    public Optional<String> osFamily() {
+        return Optional.ofNullable(this.osFamily);
     }
     /**
      * @return Number of packages.
      * 
      */
-    public String packageCount() {
-        return this.packageCount;
+    public Optional<String> packageCount() {
+        return Optional.ofNullable(this.packageCount);
     }
     /**
      * @return The Repo ID for the software source.
      * 
      */
-    public String repoId() {
-        return this.repoId;
+    public Optional<String> repoId() {
+        return Optional.ofNullable(this.repoId);
     }
     public String softwareSourceId() {
         return this.softwareSourceId;
@@ -269,57 +271,57 @@ public final class GetSoftwareSourceResult {
      * @return Type of the software source.
      * 
      */
-    public String softwareSourceType() {
-        return this.softwareSourceType;
+    public Optional<String> softwareSourceType() {
+        return Optional.ofNullable(this.softwareSourceType);
     }
     /**
      * @return The version to assign to this custom software source.
      * 
      */
-    public String softwareSourceVersion() {
-        return this.softwareSourceVersion;
+    public Optional<String> softwareSourceVersion() {
+        return Optional.ofNullable(this.softwareSourceVersion);
     }
     /**
      * @return The current state of the software source.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
     public Map<String,Object> systemTags() {
-        return this.systemTags;
+        return this.systemTags == null ? Map.of() : this.systemTags;
     }
     /**
      * @return The date and time the software source was created, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return URL for the repository.
      * 
      */
-    public String url() {
-        return this.url;
+    public Optional<String> url() {
+        return Optional.ofNullable(this.url);
     }
     /**
      * @return Name of the vendor providing the software source.
      * 
      */
-    public String vendorName() {
-        return this.vendorName;
+    public Optional<String> vendorName() {
+        return Optional.ofNullable(this.vendorName);
     }
     /**
      * @return List of vendor software sources.
      * 
      */
     public List<GetSoftwareSourceVendorSoftwareSource> vendorSoftwareSources() {
-        return this.vendorSoftwareSources;
+        return this.vendorSoftwareSources == null ? List.of() : this.vendorSoftwareSources;
     }
 
     public static Builder builder() {
@@ -331,32 +333,32 @@ public final class GetSoftwareSourceResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String archType;
-        private String availability;
-        private String checksumType;
-        private String compartmentId;
-        private List<GetSoftwareSourceCustomSoftwareSourceFilter> customSoftwareSourceFilters;
-        private Map<String,Object> definedTags;
-        private String description;
-        private String displayName;
-        private Map<String,Object> freeformTags;
-        private String gpgKeyFingerprint;
-        private String gpgKeyId;
-        private String gpgKeyUrl;
-        private String id;
-        private Boolean isAutomaticallyUpdated;
-        private String osFamily;
-        private String packageCount;
-        private String repoId;
+        private @Nullable String archType;
+        private @Nullable String availability;
+        private @Nullable String checksumType;
+        private @Nullable String compartmentId;
+        private @Nullable List<GetSoftwareSourceCustomSoftwareSourceFilter> customSoftwareSourceFilters;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String description;
+        private @Nullable String displayName;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String gpgKeyFingerprint;
+        private @Nullable String gpgKeyId;
+        private @Nullable String gpgKeyUrl;
+        private @Nullable String id;
+        private @Nullable Boolean isAutomaticallyUpdated;
+        private @Nullable String osFamily;
+        private @Nullable String packageCount;
+        private @Nullable String repoId;
         private String softwareSourceId;
-        private String softwareSourceType;
-        private String softwareSourceVersion;
-        private String state;
-        private Map<String,Object> systemTags;
-        private String timeCreated;
-        private String url;
-        private String vendorName;
-        private List<GetSoftwareSourceVendorSoftwareSource> vendorSoftwareSources;
+        private @Nullable String softwareSourceType;
+        private @Nullable String softwareSourceVersion;
+        private @Nullable String state;
+        private @Nullable Map<String,Object> systemTags;
+        private @Nullable String timeCreated;
+        private @Nullable String url;
+        private @Nullable String vendorName;
+        private @Nullable List<GetSoftwareSourceVendorSoftwareSource> vendorSoftwareSources;
         public Builder() {}
         public Builder(GetSoftwareSourceResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -389,91 +391,91 @@ public final class GetSoftwareSourceResult {
         }
 
         @CustomType.Setter
-        public Builder archType(String archType) {
-            this.archType = Objects.requireNonNull(archType);
+        public Builder archType(@Nullable String archType) {
+            this.archType = archType;
             return this;
         }
         @CustomType.Setter
-        public Builder availability(String availability) {
-            this.availability = Objects.requireNonNull(availability);
+        public Builder availability(@Nullable String availability) {
+            this.availability = availability;
             return this;
         }
         @CustomType.Setter
-        public Builder checksumType(String checksumType) {
-            this.checksumType = Objects.requireNonNull(checksumType);
+        public Builder checksumType(@Nullable String checksumType) {
+            this.checksumType = checksumType;
             return this;
         }
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder customSoftwareSourceFilters(List<GetSoftwareSourceCustomSoftwareSourceFilter> customSoftwareSourceFilters) {
-            this.customSoftwareSourceFilters = Objects.requireNonNull(customSoftwareSourceFilters);
+        public Builder customSoftwareSourceFilters(@Nullable List<GetSoftwareSourceCustomSoftwareSourceFilter> customSoftwareSourceFilters) {
+            this.customSoftwareSourceFilters = customSoftwareSourceFilters;
             return this;
         }
         public Builder customSoftwareSourceFilters(GetSoftwareSourceCustomSoftwareSourceFilter... customSoftwareSourceFilters) {
             return customSoftwareSourceFilters(List.of(customSoftwareSourceFilters));
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+        public Builder description(@Nullable String description) {
+            this.description = description;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder gpgKeyFingerprint(String gpgKeyFingerprint) {
-            this.gpgKeyFingerprint = Objects.requireNonNull(gpgKeyFingerprint);
+        public Builder gpgKeyFingerprint(@Nullable String gpgKeyFingerprint) {
+            this.gpgKeyFingerprint = gpgKeyFingerprint;
             return this;
         }
         @CustomType.Setter
-        public Builder gpgKeyId(String gpgKeyId) {
-            this.gpgKeyId = Objects.requireNonNull(gpgKeyId);
+        public Builder gpgKeyId(@Nullable String gpgKeyId) {
+            this.gpgKeyId = gpgKeyId;
             return this;
         }
         @CustomType.Setter
-        public Builder gpgKeyUrl(String gpgKeyUrl) {
-            this.gpgKeyUrl = Objects.requireNonNull(gpgKeyUrl);
+        public Builder gpgKeyUrl(@Nullable String gpgKeyUrl) {
+            this.gpgKeyUrl = gpgKeyUrl;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder isAutomaticallyUpdated(Boolean isAutomaticallyUpdated) {
-            this.isAutomaticallyUpdated = Objects.requireNonNull(isAutomaticallyUpdated);
+        public Builder isAutomaticallyUpdated(@Nullable Boolean isAutomaticallyUpdated) {
+            this.isAutomaticallyUpdated = isAutomaticallyUpdated;
             return this;
         }
         @CustomType.Setter
-        public Builder osFamily(String osFamily) {
-            this.osFamily = Objects.requireNonNull(osFamily);
+        public Builder osFamily(@Nullable String osFamily) {
+            this.osFamily = osFamily;
             return this;
         }
         @CustomType.Setter
-        public Builder packageCount(String packageCount) {
-            this.packageCount = Objects.requireNonNull(packageCount);
+        public Builder packageCount(@Nullable String packageCount) {
+            this.packageCount = packageCount;
             return this;
         }
         @CustomType.Setter
-        public Builder repoId(String repoId) {
-            this.repoId = Objects.requireNonNull(repoId);
+        public Builder repoId(@Nullable String repoId) {
+            this.repoId = repoId;
             return this;
         }
         @CustomType.Setter
@@ -482,43 +484,43 @@ public final class GetSoftwareSourceResult {
             return this;
         }
         @CustomType.Setter
-        public Builder softwareSourceType(String softwareSourceType) {
-            this.softwareSourceType = Objects.requireNonNull(softwareSourceType);
+        public Builder softwareSourceType(@Nullable String softwareSourceType) {
+            this.softwareSourceType = softwareSourceType;
             return this;
         }
         @CustomType.Setter
-        public Builder softwareSourceVersion(String softwareSourceVersion) {
-            this.softwareSourceVersion = Objects.requireNonNull(softwareSourceVersion);
+        public Builder softwareSourceVersion(@Nullable String softwareSourceVersion) {
+            this.softwareSourceVersion = softwareSourceVersion;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+        public Builder systemTags(@Nullable Map<String,Object> systemTags) {
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder url(String url) {
-            this.url = Objects.requireNonNull(url);
+        public Builder url(@Nullable String url) {
+            this.url = url;
             return this;
         }
         @CustomType.Setter
-        public Builder vendorName(String vendorName) {
-            this.vendorName = Objects.requireNonNull(vendorName);
+        public Builder vendorName(@Nullable String vendorName) {
+            this.vendorName = vendorName;
             return this;
         }
         @CustomType.Setter
-        public Builder vendorSoftwareSources(List<GetSoftwareSourceVendorSoftwareSource> vendorSoftwareSources) {
-            this.vendorSoftwareSources = Objects.requireNonNull(vendorSoftwareSources);
+        public Builder vendorSoftwareSources(@Nullable List<GetSoftwareSourceVendorSoftwareSource> vendorSoftwareSources) {
+            this.vendorSoftwareSources = vendorSoftwareSources;
             return this;
         }
         public Builder vendorSoftwareSources(GetSoftwareSourceVendorSoftwareSource... vendorSoftwareSources) {

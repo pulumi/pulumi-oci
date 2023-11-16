@@ -59,12 +59,12 @@ export interface GetAddressRuleResult {
     /**
      * Address type rule information
      */
-    readonly addresses: outputs.OspGateway.GetAddressRuleAddress[];
+    readonly addresses?: outputs.OspGateway.GetAddressRuleAddress[];
     readonly compartmentId: string;
     /**
      * Contact type rule information
      */
-    readonly contacts: outputs.OspGateway.GetAddressRuleContact[];
+    readonly contacts?: outputs.OspGateway.GetAddressRuleContact[];
     /**
      * Country code for the address rule in ISO-3166-1 2-letter format
      */
@@ -72,12 +72,12 @@ export interface GetAddressRuleResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly ospHomeRegion: string;
     /**
      * Tax type rule information
      */
-    readonly taxes: outputs.OspGateway.GetAddressRuleTax[];
+    readonly taxes?: outputs.OspGateway.GetAddressRuleTax[];
 }
 /**
  * This data source provides details about a specific Address Rule resource in Oracle Cloud Infrastructure Osp Gateway service.

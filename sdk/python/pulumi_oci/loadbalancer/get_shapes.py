@@ -49,7 +49,7 @@ class GetShapesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -57,10 +57,7 @@ class GetShapesResult:
 
     @property
     @pulumi.getter
-    def shapes(self) -> Sequence['outputs.GetShapesShapeResult']:
-        """
-        The list of shapes.
-        """
+    def shapes(self) -> Optional[Sequence['outputs.GetShapesShapeResult']]:
         return pulumi.get(self, "shapes")
 
 
@@ -80,21 +77,7 @@ def get_shapes(compartment_id: Optional[str] = None,
                filters: Optional[Sequence[pulumi.InputType['GetShapesFilterArgs']]] = None,
                opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetShapesResult:
     """
-    This data source provides the list of Load Balancer Shapes in Oracle Cloud Infrastructure Load Balancer service.
-
-    Lists the valid load balancer shapes.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_load_balancer_shapes = oci.LoadBalancer.get_shapes(compartment_id=var["compartment_id"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the load balancer shapes to list.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -114,20 +97,6 @@ def get_shapes_output(compartment_id: Optional[pulumi.Input[str]] = None,
                       filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetShapesFilterArgs']]]]] = None,
                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetShapesResult]:
     """
-    This data source provides the list of Load Balancer Shapes in Oracle Cloud Infrastructure Load Balancer service.
-
-    Lists the valid load balancer shapes.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_load_balancer_shapes = oci.LoadBalancer.get_shapes(compartment_id=var["compartment_id"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the load balancer shapes to list.
+    Use this data source to access information about an existing resource.
     """
     ...

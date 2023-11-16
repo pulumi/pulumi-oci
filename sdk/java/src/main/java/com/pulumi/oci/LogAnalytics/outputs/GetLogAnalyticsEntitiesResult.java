@@ -40,14 +40,14 @@ public final class GetLogAnalyticsEntitiesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private @Nullable String isManagementAgentIdNull;
     private @Nullable String lifecycleDetailsContains;
     /**
      * @return The list of log_analytics_entity_collection.
      * 
      */
-    private List<GetLogAnalyticsEntitiesLogAnalyticsEntityCollection> logAnalyticsEntityCollections;
+    private @Nullable List<GetLogAnalyticsEntitiesLogAnalyticsEntityCollection> logAnalyticsEntityCollections;
     /**
      * @return Log analytics entity name.
      * 
@@ -105,8 +105,8 @@ public final class GetLogAnalyticsEntitiesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public Optional<String> isManagementAgentIdNull() {
         return Optional.ofNullable(this.isManagementAgentIdNull);
@@ -119,7 +119,7 @@ public final class GetLogAnalyticsEntitiesResult {
      * 
      */
     public List<GetLogAnalyticsEntitiesLogAnalyticsEntityCollection> logAnalyticsEntityCollections() {
-        return this.logAnalyticsEntityCollections;
+        return this.logAnalyticsEntityCollections == null ? List.of() : this.logAnalyticsEntityCollections;
     }
     /**
      * @return Log analytics entity name.
@@ -164,10 +164,10 @@ public final class GetLogAnalyticsEntitiesResult {
         private @Nullable List<GetLogAnalyticsEntitiesFilter> filters;
         private @Nullable String hostname;
         private @Nullable String hostnameContains;
-        private String id;
+        private @Nullable String id;
         private @Nullable String isManagementAgentIdNull;
         private @Nullable String lifecycleDetailsContains;
-        private List<GetLogAnalyticsEntitiesLogAnalyticsEntityCollection> logAnalyticsEntityCollections;
+        private @Nullable List<GetLogAnalyticsEntitiesLogAnalyticsEntityCollection> logAnalyticsEntityCollections;
         private @Nullable String name;
         private @Nullable String nameContains;
         private String namespace;
@@ -230,8 +230,8 @@ public final class GetLogAnalyticsEntitiesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -245,8 +245,8 @@ public final class GetLogAnalyticsEntitiesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder logAnalyticsEntityCollections(List<GetLogAnalyticsEntitiesLogAnalyticsEntityCollection> logAnalyticsEntityCollections) {
-            this.logAnalyticsEntityCollections = Objects.requireNonNull(logAnalyticsEntityCollections);
+        public Builder logAnalyticsEntityCollections(@Nullable List<GetLogAnalyticsEntitiesLogAnalyticsEntityCollection> logAnalyticsEntityCollections) {
+            this.logAnalyticsEntityCollections = logAnalyticsEntityCollections;
             return this;
         }
         public Builder logAnalyticsEntityCollections(GetLogAnalyticsEntitiesLogAnalyticsEntityCollection... logAnalyticsEntityCollections) {

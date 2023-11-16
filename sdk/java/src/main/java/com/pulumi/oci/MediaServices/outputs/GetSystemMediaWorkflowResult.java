@@ -18,12 +18,12 @@ public final class GetSystemMediaWorkflowResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return List of SytemMediaWorkflow items.
      * 
      */
-    private List<GetSystemMediaWorkflowItem> items;
+    private @Nullable List<GetSystemMediaWorkflowItem> items;
     /**
      * @return System provided unique identifier for this static media workflow.
      * 
@@ -38,15 +38,15 @@ public final class GetSystemMediaWorkflowResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return List of SytemMediaWorkflow items.
      * 
      */
     public List<GetSystemMediaWorkflowItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
     /**
      * @return System provided unique identifier for this static media workflow.
@@ -66,8 +66,8 @@ public final class GetSystemMediaWorkflowResult {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable String compartmentId;
-        private String id;
-        private List<GetSystemMediaWorkflowItem> items;
+        private @Nullable String id;
+        private @Nullable List<GetSystemMediaWorkflowItem> items;
         private @Nullable String name;
         public Builder() {}
         public Builder(GetSystemMediaWorkflowResult defaults) {
@@ -84,13 +84,13 @@ public final class GetSystemMediaWorkflowResult {
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder items(List<GetSystemMediaWorkflowItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetSystemMediaWorkflowItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetSystemMediaWorkflowItem... items) {

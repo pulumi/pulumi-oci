@@ -60,10 +60,7 @@ class GetResourceAvailabilityResult:
 
     @property
     @pulumi.getter
-    def available(self) -> str:
-        """
-        The count of available resources. To support resources with fractional counts, the field rounds down to the nearest integer.
-        """
+    def available(self) -> Optional[str]:
         return pulumi.get(self, "available")
 
     @property
@@ -73,31 +70,22 @@ class GetResourceAvailabilityResult:
 
     @property
     @pulumi.getter(name="effectiveQuotaValue")
-    def effective_quota_value(self) -> float:
-        """
-        The effective quota value for the given compartment. This field is only present if there is a current quota policy affecting the current resource in the target region or availability domain.
-        """
+    def effective_quota_value(self) -> Optional[float]:
         return pulumi.get(self, "effective_quota_value")
 
     @property
     @pulumi.getter(name="fractionalAvailability")
-    def fractional_availability(self) -> float:
-        """
-        The most accurate count of available resources.
-        """
+    def fractional_availability(self) -> Optional[float]:
         return pulumi.get(self, "fractional_availability")
 
     @property
     @pulumi.getter(name="fractionalUsage")
-    def fractional_usage(self) -> float:
-        """
-        The current most accurate usage in the given compartment.
-        """
+    def fractional_usage(self) -> Optional[float]:
         return pulumi.get(self, "fractional_usage")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -115,10 +103,7 @@ class GetResourceAvailabilityResult:
 
     @property
     @pulumi.getter
-    def used(self) -> str:
-        """
-        The current usage in the given compartment. To support resources with fractional counts, the field rounds up to the nearest integer.
-        """
+    def used(self) -> Optional[str]:
         return pulumi.get(self, "used")
 
 
@@ -146,30 +131,7 @@ def get_resource_availability(availability_domain: Optional[str] = None,
                               service_name: Optional[str] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetResourceAvailabilityResult:
     """
-    This data source provides details about a specific Resource Availability resource in Oracle Cloud Infrastructure Limits service.
-
-    For a given compartmentId, resource limit name, and scope, returns the following:
-      * The number of available resources associated with the given limit.
-      * The usage in the selected compartment for the given limit.
-          Note that not all resource limits support this API. If the value is not available, the API returns a 404 response.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_resource_availability = oci.Limits.get_resource_availability(compartment_id=var["tenancy_ocid"],
-        limit_name=var["resource_availability_limit_name"],
-        service_name=oci_limits_service["test_service"]["name"],
-        availability_domain=var["resource_availability_availability_domain"])
-    ```
-
-
-    :param str availability_domain: This field is mandatory if the scopeType of the target resource limit is AD. Otherwise, this field should be omitted. If the above requirements are not met, the API returns a 400 - InvalidParameter response.
-    :param str compartment_id: The OCID of the compartment for which data is being fetched.
-    :param str limit_name: The limit name for which to fetch the data.
-    :param str service_name: The service name of the target quota.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['availabilityDomain'] = availability_domain
@@ -199,29 +161,6 @@ def get_resource_availability_output(availability_domain: Optional[pulumi.Input[
                                      service_name: Optional[pulumi.Input[str]] = None,
                                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetResourceAvailabilityResult]:
     """
-    This data source provides details about a specific Resource Availability resource in Oracle Cloud Infrastructure Limits service.
-
-    For a given compartmentId, resource limit name, and scope, returns the following:
-      * The number of available resources associated with the given limit.
-      * The usage in the selected compartment for the given limit.
-          Note that not all resource limits support this API. If the value is not available, the API returns a 404 response.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_resource_availability = oci.Limits.get_resource_availability(compartment_id=var["tenancy_ocid"],
-        limit_name=var["resource_availability_limit_name"],
-        service_name=oci_limits_service["test_service"]["name"],
-        availability_domain=var["resource_availability_availability_domain"])
-    ```
-
-
-    :param str availability_domain: This field is mandatory if the scopeType of the target resource limit is AD. Otherwise, this field should be omitted. If the above requirements are not met, the API returns a 400 - InvalidParameter response.
-    :param str compartment_id: The OCID of the compartment for which data is being fetched.
-    :param str limit_name: The limit name for which to fetch the data.
-    :param str service_name: The service name of the target quota.
+    Use this data source to access information about an existing resource.
     """
     ...

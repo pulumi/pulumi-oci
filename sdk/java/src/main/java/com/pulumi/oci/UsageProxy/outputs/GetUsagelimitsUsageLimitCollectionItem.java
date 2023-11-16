@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Double;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetUsagelimitsUsageLimitCollectionItem {
@@ -14,187 +16,187 @@ public final class GetUsagelimitsUsageLimitCollectionItem {
      * @return The action when usage limit is hit
      * 
      */
-    private String action;
+    private @Nullable String action;
     /**
      * @return The alert level of the usage limit
      * 
      */
-    private Double alertLevel;
+    private @Nullable Double alertLevel;
     /**
      * @return The user who created the limit
      * 
      */
-    private String createdBy;
+    private @Nullable String createdBy;
     /**
      * @return Entitlement ID of the usage limit
      * 
      */
-    private String entitlementId;
+    private @Nullable String entitlementId;
     /**
      * @return The usage limit ID
      * 
      */
-    private String id;
-    private String limit;
+    private @Nullable String id;
+    private @Nullable String limit;
     /**
      * @return Hard or soft limit. Hard limits lead to breaches, soft to alerts.
      * 
      */
-    private String limitType;
+    private @Nullable String limitType;
     /**
      * @return The maximum hard limit set for the usage limit
      * 
      */
-    private String maxHardLimit;
+    private @Nullable String maxHardLimit;
     /**
      * @return The user who modified the limit
      * 
      */
-    private String modifiedBy;
+    private @Nullable String modifiedBy;
     /**
      * @return The resource for which the limit is defined
      * 
      */
-    private String resourceName;
+    private @Nullable String resourceName;
     /**
      * @return The service for which the limit is defined
      * 
      */
-    private String serviceName;
+    private @Nullable String serviceName;
     /**
      * @return The SKU for which the usage limit is set
      * 
      */
-    private String skuPartId;
+    private @Nullable String skuPartId;
     /**
      * @return The usage limit lifecycle state.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return Time when the usage limit was created
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return Time when the usage limit was modified
      * 
      */
-    private String timeModified;
+    private @Nullable String timeModified;
     /**
      * @return The value type of the usage limit
      * 
      */
-    private String valueType;
+    private @Nullable String valueType;
 
     private GetUsagelimitsUsageLimitCollectionItem() {}
     /**
      * @return The action when usage limit is hit
      * 
      */
-    public String action() {
-        return this.action;
+    public Optional<String> action() {
+        return Optional.ofNullable(this.action);
     }
     /**
      * @return The alert level of the usage limit
      * 
      */
-    public Double alertLevel() {
-        return this.alertLevel;
+    public Optional<Double> alertLevel() {
+        return Optional.ofNullable(this.alertLevel);
     }
     /**
      * @return The user who created the limit
      * 
      */
-    public String createdBy() {
-        return this.createdBy;
+    public Optional<String> createdBy() {
+        return Optional.ofNullable(this.createdBy);
     }
     /**
      * @return Entitlement ID of the usage limit
      * 
      */
-    public String entitlementId() {
-        return this.entitlementId;
+    public Optional<String> entitlementId() {
+        return Optional.ofNullable(this.entitlementId);
     }
     /**
      * @return The usage limit ID
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
-    public String limit() {
-        return this.limit;
+    public Optional<String> limit() {
+        return Optional.ofNullable(this.limit);
     }
     /**
      * @return Hard or soft limit. Hard limits lead to breaches, soft to alerts.
      * 
      */
-    public String limitType() {
-        return this.limitType;
+    public Optional<String> limitType() {
+        return Optional.ofNullable(this.limitType);
     }
     /**
      * @return The maximum hard limit set for the usage limit
      * 
      */
-    public String maxHardLimit() {
-        return this.maxHardLimit;
+    public Optional<String> maxHardLimit() {
+        return Optional.ofNullable(this.maxHardLimit);
     }
     /**
      * @return The user who modified the limit
      * 
      */
-    public String modifiedBy() {
-        return this.modifiedBy;
+    public Optional<String> modifiedBy() {
+        return Optional.ofNullable(this.modifiedBy);
     }
     /**
      * @return The resource for which the limit is defined
      * 
      */
-    public String resourceName() {
-        return this.resourceName;
+    public Optional<String> resourceName() {
+        return Optional.ofNullable(this.resourceName);
     }
     /**
      * @return The service for which the limit is defined
      * 
      */
-    public String serviceName() {
-        return this.serviceName;
+    public Optional<String> serviceName() {
+        return Optional.ofNullable(this.serviceName);
     }
     /**
      * @return The SKU for which the usage limit is set
      * 
      */
-    public String skuPartId() {
-        return this.skuPartId;
+    public Optional<String> skuPartId() {
+        return Optional.ofNullable(this.skuPartId);
     }
     /**
      * @return The usage limit lifecycle state.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return Time when the usage limit was created
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return Time when the usage limit was modified
      * 
      */
-    public String timeModified() {
-        return this.timeModified;
+    public Optional<String> timeModified() {
+        return Optional.ofNullable(this.timeModified);
     }
     /**
      * @return The value type of the usage limit
      * 
      */
-    public String valueType() {
-        return this.valueType;
+    public Optional<String> valueType() {
+        return Optional.ofNullable(this.valueType);
     }
 
     public static Builder builder() {
@@ -206,22 +208,22 @@ public final class GetUsagelimitsUsageLimitCollectionItem {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String action;
-        private Double alertLevel;
-        private String createdBy;
-        private String entitlementId;
-        private String id;
-        private String limit;
-        private String limitType;
-        private String maxHardLimit;
-        private String modifiedBy;
-        private String resourceName;
-        private String serviceName;
-        private String skuPartId;
-        private String state;
-        private String timeCreated;
-        private String timeModified;
-        private String valueType;
+        private @Nullable String action;
+        private @Nullable Double alertLevel;
+        private @Nullable String createdBy;
+        private @Nullable String entitlementId;
+        private @Nullable String id;
+        private @Nullable String limit;
+        private @Nullable String limitType;
+        private @Nullable String maxHardLimit;
+        private @Nullable String modifiedBy;
+        private @Nullable String resourceName;
+        private @Nullable String serviceName;
+        private @Nullable String skuPartId;
+        private @Nullable String state;
+        private @Nullable String timeCreated;
+        private @Nullable String timeModified;
+        private @Nullable String valueType;
         public Builder() {}
         public Builder(GetUsagelimitsUsageLimitCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -244,83 +246,83 @@ public final class GetUsagelimitsUsageLimitCollectionItem {
         }
 
         @CustomType.Setter
-        public Builder action(String action) {
-            this.action = Objects.requireNonNull(action);
+        public Builder action(@Nullable String action) {
+            this.action = action;
             return this;
         }
         @CustomType.Setter
-        public Builder alertLevel(Double alertLevel) {
-            this.alertLevel = Objects.requireNonNull(alertLevel);
+        public Builder alertLevel(@Nullable Double alertLevel) {
+            this.alertLevel = alertLevel;
             return this;
         }
         @CustomType.Setter
-        public Builder createdBy(String createdBy) {
-            this.createdBy = Objects.requireNonNull(createdBy);
+        public Builder createdBy(@Nullable String createdBy) {
+            this.createdBy = createdBy;
             return this;
         }
         @CustomType.Setter
-        public Builder entitlementId(String entitlementId) {
-            this.entitlementId = Objects.requireNonNull(entitlementId);
+        public Builder entitlementId(@Nullable String entitlementId) {
+            this.entitlementId = entitlementId;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder limit(String limit) {
-            this.limit = Objects.requireNonNull(limit);
+        public Builder limit(@Nullable String limit) {
+            this.limit = limit;
             return this;
         }
         @CustomType.Setter
-        public Builder limitType(String limitType) {
-            this.limitType = Objects.requireNonNull(limitType);
+        public Builder limitType(@Nullable String limitType) {
+            this.limitType = limitType;
             return this;
         }
         @CustomType.Setter
-        public Builder maxHardLimit(String maxHardLimit) {
-            this.maxHardLimit = Objects.requireNonNull(maxHardLimit);
+        public Builder maxHardLimit(@Nullable String maxHardLimit) {
+            this.maxHardLimit = maxHardLimit;
             return this;
         }
         @CustomType.Setter
-        public Builder modifiedBy(String modifiedBy) {
-            this.modifiedBy = Objects.requireNonNull(modifiedBy);
+        public Builder modifiedBy(@Nullable String modifiedBy) {
+            this.modifiedBy = modifiedBy;
             return this;
         }
         @CustomType.Setter
-        public Builder resourceName(String resourceName) {
-            this.resourceName = Objects.requireNonNull(resourceName);
+        public Builder resourceName(@Nullable String resourceName) {
+            this.resourceName = resourceName;
             return this;
         }
         @CustomType.Setter
-        public Builder serviceName(String serviceName) {
-            this.serviceName = Objects.requireNonNull(serviceName);
+        public Builder serviceName(@Nullable String serviceName) {
+            this.serviceName = serviceName;
             return this;
         }
         @CustomType.Setter
-        public Builder skuPartId(String skuPartId) {
-            this.skuPartId = Objects.requireNonNull(skuPartId);
+        public Builder skuPartId(@Nullable String skuPartId) {
+            this.skuPartId = skuPartId;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeModified(String timeModified) {
-            this.timeModified = Objects.requireNonNull(timeModified);
+        public Builder timeModified(@Nullable String timeModified) {
+            this.timeModified = timeModified;
             return this;
         }
         @CustomType.Setter
-        public Builder valueType(String valueType) {
-            this.valueType = Objects.requireNonNull(valueType);
+        public Builder valueType(@Nullable String valueType) {
+            this.valueType = valueType;
             return this;
         }
         public GetUsagelimitsUsageLimitCollectionItem build() {

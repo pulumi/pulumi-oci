@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Listeners in Oracle Cloud Infrastructure Network Load Balancer service.
@@ -62,7 +61,7 @@ type GetListenersArgs struct {
 type GetListenersResult struct {
 	Filters []GetListenersFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The list of listener_collection.
 	ListenerCollections   []GetListenersListenerCollection `pulumi:"listenerCollections"`
 	NetworkLoadBalancerId string                           `pulumi:"networkLoadBalancerId"`
@@ -107,19 +106,13 @@ func (o GetListenersResultOutput) ToGetListenersResultOutputWithContext(ctx cont
 	return o
 }
 
-func (o GetListenersResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetListenersResult] {
-	return pulumix.Output[GetListenersResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetListenersResultOutput) Filters() GetListenersFilterArrayOutput {
 	return o.ApplyT(func(v GetListenersResult) []GetListenersFilter { return v.Filters }).(GetListenersFilterArrayOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetListenersResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetListenersResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetListenersResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetListenersResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The list of listener_collection.

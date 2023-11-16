@@ -16,17 +16,17 @@ namespace Pulumi.Oci.Core.Outputs
         /// <summary>
         /// The name of the availability domain.  Example: `Uocm:PHX-AD-1`
         /// </summary>
-        public readonly string AvailabilityDomain;
+        public readonly string? AvailabilityDomain;
         /// <summary>
         /// The name of the virtual machine instance shapes that can be launched on a dedicated VM host.
         /// </summary>
-        public readonly string InstanceShapeName;
+        public readonly string? InstanceShapeName;
 
         [OutputConstructor]
         private GetDedicatedVmHostInstanceShapesDedicatedVmHostInstanceShapeResult(
-            string availabilityDomain,
+            string? availabilityDomain,
 
-            string instanceShapeName)
+            string? instanceShapeName)
         {
             AvailabilityDomain = availabilityDomain;
             InstanceShapeName = instanceShapeName;

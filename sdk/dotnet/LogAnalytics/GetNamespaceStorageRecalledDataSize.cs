@@ -138,38 +138,38 @@ namespace Pulumi.Oci.LogAnalytics
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         public readonly string Namespace;
         /// <summary>
         /// This is the size of the archival data not recalled yet
         /// </summary>
-        public readonly string NotRecalledDataInBytes;
+        public readonly string? NotRecalledDataInBytes;
         /// <summary>
         /// This is the size of the recalled data
         /// </summary>
-        public readonly string RecalledDataInBytes;
+        public readonly string? RecalledDataInBytes;
         /// <summary>
         /// This is the end of the time range of the archival data
         /// </summary>
-        public readonly string TimeDataEnded;
+        public readonly string? TimeDataEnded;
         /// <summary>
         /// This is the start of the time range of the archival data
         /// </summary>
-        public readonly string TimeDataStarted;
+        public readonly string? TimeDataStarted;
 
         [OutputConstructor]
         private GetNamespaceStorageRecalledDataSizeResult(
-            string id,
+            string? id,
 
             string @namespace,
 
-            string notRecalledDataInBytes,
+            string? notRecalledDataInBytes,
 
-            string recalledDataInBytes,
+            string? recalledDataInBytes,
 
-            string timeDataEnded,
+            string? timeDataEnded,
 
-            string timeDataStarted)
+            string? timeDataStarted)
         {
             Id = id;
             Namespace = @namespace;

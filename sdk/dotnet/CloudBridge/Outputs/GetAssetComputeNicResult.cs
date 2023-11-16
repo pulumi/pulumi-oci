@@ -20,37 +20,37 @@ namespace Pulumi.Oci.CloudBridge.Outputs
         /// <summary>
         /// Provides a label and summary information for the device.
         /// </summary>
-        public readonly string Label;
+        public readonly string? Label;
         /// <summary>
         /// Mac address of the VM.
         /// </summary>
-        public readonly string MacAddress;
+        public readonly string? MacAddress;
         /// <summary>
         /// Mac address type.
         /// </summary>
-        public readonly string MacAddressType;
+        public readonly string? MacAddressType;
         /// <summary>
         /// Network name.
         /// </summary>
-        public readonly string NetworkName;
+        public readonly string? NetworkName;
         /// <summary>
         /// Switch name.
         /// </summary>
-        public readonly string SwitchName;
+        public readonly string? SwitchName;
 
         [OutputConstructor]
         private GetAssetComputeNicResult(
             ImmutableArray<string> ipAddresses,
 
-            string label,
+            string? label,
 
-            string macAddress,
+            string? macAddress,
 
-            string macAddressType,
+            string? macAddressType,
 
-            string networkName,
+            string? networkName,
 
-            string switchName)
+            string? switchName)
         {
             IpAddresses = ipAddresses;
             Label = label;

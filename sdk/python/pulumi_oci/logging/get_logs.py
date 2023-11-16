@@ -55,9 +55,6 @@ class GetLogsResult:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        The user-friendly display name. This must be unique within the enclosing resource, and it's changeable. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -67,7 +64,7 @@ class GetLogsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -76,25 +73,16 @@ class GetLogsResult:
     @property
     @pulumi.getter(name="logGroupId")
     def log_group_id(self) -> str:
-        """
-        Log group OCID.
-        """
         return pulumi.get(self, "log_group_id")
 
     @property
     @pulumi.getter(name="logType")
     def log_type(self) -> Optional[str]:
-        """
-        The logType that the log object is for, whether custom or service.
-        """
         return pulumi.get(self, "log_type")
 
     @property
     @pulumi.getter
-    def logs(self) -> Sequence['outputs.GetLogsLogResult']:
-        """
-        The list of logs.
-        """
+    def logs(self) -> Optional[Sequence['outputs.GetLogsLogResult']]:
         return pulumi.get(self, "logs")
 
     @property
@@ -110,9 +98,6 @@ class GetLogsResult:
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The pipeline state.
-        """
         return pulumi.get(self, "state")
 
 
@@ -142,31 +127,7 @@ def get_logs(display_name: Optional[str] = None,
              state: Optional[str] = None,
              opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetLogsResult:
     """
-    This data source provides the list of Logs in Oracle Cloud Infrastructure Logging service.
-
-    Lists the specified log group's log objects.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_logs = oci.Logging.get_logs(log_group_id=oci_logging_log_group["test_log_group"]["id"],
-        display_name=var["log_display_name"],
-        log_type=var["log_log_type"],
-        source_resource=var["log_source_resource"],
-        source_service=var["log_source_service"],
-        state=var["log_state"])
-    ```
-
-
-    :param str display_name: Resource name.
-    :param str log_group_id: OCID of a log group to work with.
-    :param str log_type: The logType that the log object is for, whether custom or service.
-    :param str source_resource: Log object resource, which is a field of LogSummary.Configuration.Source.
-    :param str source_service: Service that created the log object, which is a field of LogSummary.Configuration.Source.
-    :param str state: Lifecycle state of the log object
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['displayName'] = display_name
@@ -201,30 +162,6 @@ def get_logs_output(display_name: Optional[pulumi.Input[Optional[str]]] = None,
                     state: Optional[pulumi.Input[Optional[str]]] = None,
                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetLogsResult]:
     """
-    This data source provides the list of Logs in Oracle Cloud Infrastructure Logging service.
-
-    Lists the specified log group's log objects.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_logs = oci.Logging.get_logs(log_group_id=oci_logging_log_group["test_log_group"]["id"],
-        display_name=var["log_display_name"],
-        log_type=var["log_log_type"],
-        source_resource=var["log_source_resource"],
-        source_service=var["log_source_service"],
-        state=var["log_state"])
-    ```
-
-
-    :param str display_name: Resource name.
-    :param str log_group_id: OCID of a log group to work with.
-    :param str log_type: The logType that the log object is for, whether custom or service.
-    :param str source_resource: Log object resource, which is a field of LogSummary.Configuration.Source.
-    :param str source_service: Service that created the log object, which is a field of LogSummary.Configuration.Source.
-    :param str state: Lifecycle state of the log object
+    Use this data source to access information about an existing resource.
     """
     ...

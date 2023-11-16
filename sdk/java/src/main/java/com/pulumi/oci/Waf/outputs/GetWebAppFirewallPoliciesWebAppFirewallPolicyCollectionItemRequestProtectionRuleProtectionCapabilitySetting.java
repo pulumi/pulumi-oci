@@ -8,6 +8,8 @@ import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilitySetting {
@@ -15,32 +17,32 @@ public final class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRe
      * @return List of allowed HTTP methods. Each value as a RFC7230 formated token string. Used in protection capability 911100: Restrict HTTP Request Methods.
      * 
      */
-    private List<String> allowedHttpMethods;
+    private @Nullable List<String> allowedHttpMethods;
     /**
      * @return Maximum allowed length of headers in an HTTP request. Used in protection capability: 9200024: Limit length of request header size.
      * 
      */
-    private Integer maxHttpRequestHeaderLength;
+    private @Nullable Integer maxHttpRequestHeaderLength;
     /**
      * @return Maximum number of headers allowed in an HTTP request. Used in protection capability 9200014: Limit Number of Request Headers.
      * 
      */
-    private Integer maxHttpRequestHeaders;
+    private @Nullable Integer maxHttpRequestHeaders;
     /**
      * @return Maximum number of arguments allowed. Used in protection capability 920380: Number of Arguments Limits.
      * 
      */
-    private Integer maxNumberOfArguments;
+    private @Nullable Integer maxNumberOfArguments;
     /**
      * @return Maximum allowed length of a single argument. Used in protection capability 920370: Limit argument value length.
      * 
      */
-    private Integer maxSingleArgumentLength;
+    private @Nullable Integer maxSingleArgumentLength;
     /**
      * @return Maximum allowed total length of all arguments. Used in protection capability 920390: Limit arguments total length.
      * 
      */
-    private Integer maxTotalArgumentLength;
+    private @Nullable Integer maxTotalArgumentLength;
 
     private GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilitySetting() {}
     /**
@@ -48,42 +50,42 @@ public final class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRe
      * 
      */
     public List<String> allowedHttpMethods() {
-        return this.allowedHttpMethods;
+        return this.allowedHttpMethods == null ? List.of() : this.allowedHttpMethods;
     }
     /**
      * @return Maximum allowed length of headers in an HTTP request. Used in protection capability: 9200024: Limit length of request header size.
      * 
      */
-    public Integer maxHttpRequestHeaderLength() {
-        return this.maxHttpRequestHeaderLength;
+    public Optional<Integer> maxHttpRequestHeaderLength() {
+        return Optional.ofNullable(this.maxHttpRequestHeaderLength);
     }
     /**
      * @return Maximum number of headers allowed in an HTTP request. Used in protection capability 9200014: Limit Number of Request Headers.
      * 
      */
-    public Integer maxHttpRequestHeaders() {
-        return this.maxHttpRequestHeaders;
+    public Optional<Integer> maxHttpRequestHeaders() {
+        return Optional.ofNullable(this.maxHttpRequestHeaders);
     }
     /**
      * @return Maximum number of arguments allowed. Used in protection capability 920380: Number of Arguments Limits.
      * 
      */
-    public Integer maxNumberOfArguments() {
-        return this.maxNumberOfArguments;
+    public Optional<Integer> maxNumberOfArguments() {
+        return Optional.ofNullable(this.maxNumberOfArguments);
     }
     /**
      * @return Maximum allowed length of a single argument. Used in protection capability 920370: Limit argument value length.
      * 
      */
-    public Integer maxSingleArgumentLength() {
-        return this.maxSingleArgumentLength;
+    public Optional<Integer> maxSingleArgumentLength() {
+        return Optional.ofNullable(this.maxSingleArgumentLength);
     }
     /**
      * @return Maximum allowed total length of all arguments. Used in protection capability 920390: Limit arguments total length.
      * 
      */
-    public Integer maxTotalArgumentLength() {
-        return this.maxTotalArgumentLength;
+    public Optional<Integer> maxTotalArgumentLength() {
+        return Optional.ofNullable(this.maxTotalArgumentLength);
     }
 
     public static Builder builder() {
@@ -95,12 +97,12 @@ public final class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRe
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<String> allowedHttpMethods;
-        private Integer maxHttpRequestHeaderLength;
-        private Integer maxHttpRequestHeaders;
-        private Integer maxNumberOfArguments;
-        private Integer maxSingleArgumentLength;
-        private Integer maxTotalArgumentLength;
+        private @Nullable List<String> allowedHttpMethods;
+        private @Nullable Integer maxHttpRequestHeaderLength;
+        private @Nullable Integer maxHttpRequestHeaders;
+        private @Nullable Integer maxNumberOfArguments;
+        private @Nullable Integer maxSingleArgumentLength;
+        private @Nullable Integer maxTotalArgumentLength;
         public Builder() {}
         public Builder(GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilitySetting defaults) {
     	      Objects.requireNonNull(defaults);
@@ -113,36 +115,36 @@ public final class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRe
         }
 
         @CustomType.Setter
-        public Builder allowedHttpMethods(List<String> allowedHttpMethods) {
-            this.allowedHttpMethods = Objects.requireNonNull(allowedHttpMethods);
+        public Builder allowedHttpMethods(@Nullable List<String> allowedHttpMethods) {
+            this.allowedHttpMethods = allowedHttpMethods;
             return this;
         }
         public Builder allowedHttpMethods(String... allowedHttpMethods) {
             return allowedHttpMethods(List.of(allowedHttpMethods));
         }
         @CustomType.Setter
-        public Builder maxHttpRequestHeaderLength(Integer maxHttpRequestHeaderLength) {
-            this.maxHttpRequestHeaderLength = Objects.requireNonNull(maxHttpRequestHeaderLength);
+        public Builder maxHttpRequestHeaderLength(@Nullable Integer maxHttpRequestHeaderLength) {
+            this.maxHttpRequestHeaderLength = maxHttpRequestHeaderLength;
             return this;
         }
         @CustomType.Setter
-        public Builder maxHttpRequestHeaders(Integer maxHttpRequestHeaders) {
-            this.maxHttpRequestHeaders = Objects.requireNonNull(maxHttpRequestHeaders);
+        public Builder maxHttpRequestHeaders(@Nullable Integer maxHttpRequestHeaders) {
+            this.maxHttpRequestHeaders = maxHttpRequestHeaders;
             return this;
         }
         @CustomType.Setter
-        public Builder maxNumberOfArguments(Integer maxNumberOfArguments) {
-            this.maxNumberOfArguments = Objects.requireNonNull(maxNumberOfArguments);
+        public Builder maxNumberOfArguments(@Nullable Integer maxNumberOfArguments) {
+            this.maxNumberOfArguments = maxNumberOfArguments;
             return this;
         }
         @CustomType.Setter
-        public Builder maxSingleArgumentLength(Integer maxSingleArgumentLength) {
-            this.maxSingleArgumentLength = Objects.requireNonNull(maxSingleArgumentLength);
+        public Builder maxSingleArgumentLength(@Nullable Integer maxSingleArgumentLength) {
+            this.maxSingleArgumentLength = maxSingleArgumentLength;
             return this;
         }
         @CustomType.Setter
-        public Builder maxTotalArgumentLength(Integer maxTotalArgumentLength) {
-            this.maxTotalArgumentLength = Objects.requireNonNull(maxTotalArgumentLength);
+        public Builder maxTotalArgumentLength(@Nullable Integer maxTotalArgumentLength) {
+            this.maxTotalArgumentLength = maxTotalArgumentLength;
             return this;
         }
         public GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilitySetting build() {

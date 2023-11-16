@@ -9,6 +9,7 @@ import com.pulumi.oci.Database.outputs.GetDbHomePatchHistoryEntriesPatchHistoryE
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 @CustomType
@@ -19,12 +20,12 @@ public final class GetDbHomePatchHistoryEntriesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The list of patch_history_entries.
      * 
      */
-    private List<GetDbHomePatchHistoryEntriesPatchHistoryEntry> patchHistoryEntries;
+    private @Nullable List<GetDbHomePatchHistoryEntriesPatchHistoryEntry> patchHistoryEntries;
 
     private GetDbHomePatchHistoryEntriesResult() {}
     public String dbHomeId() {
@@ -37,15 +38,15 @@ public final class GetDbHomePatchHistoryEntriesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The list of patch_history_entries.
      * 
      */
     public List<GetDbHomePatchHistoryEntriesPatchHistoryEntry> patchHistoryEntries() {
-        return this.patchHistoryEntries;
+        return this.patchHistoryEntries == null ? List.of() : this.patchHistoryEntries;
     }
 
     public static Builder builder() {
@@ -59,8 +60,8 @@ public final class GetDbHomePatchHistoryEntriesResult {
     public static final class Builder {
         private String dbHomeId;
         private @Nullable List<GetDbHomePatchHistoryEntriesFilter> filters;
-        private String id;
-        private List<GetDbHomePatchHistoryEntriesPatchHistoryEntry> patchHistoryEntries;
+        private @Nullable String id;
+        private @Nullable List<GetDbHomePatchHistoryEntriesPatchHistoryEntry> patchHistoryEntries;
         public Builder() {}
         public Builder(GetDbHomePatchHistoryEntriesResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -84,13 +85,13 @@ public final class GetDbHomePatchHistoryEntriesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder patchHistoryEntries(List<GetDbHomePatchHistoryEntriesPatchHistoryEntry> patchHistoryEntries) {
-            this.patchHistoryEntries = Objects.requireNonNull(patchHistoryEntries);
+        public Builder patchHistoryEntries(@Nullable List<GetDbHomePatchHistoryEntriesPatchHistoryEntry> patchHistoryEntries) {
+            this.patchHistoryEntries = patchHistoryEntries;
             return this;
         }
         public Builder patchHistoryEntries(GetDbHomePatchHistoryEntriesPatchHistoryEntry... patchHistoryEntries) {

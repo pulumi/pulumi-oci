@@ -191,7 +191,7 @@ namespace Pulumi.Oci.OneSubsription
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         public readonly bool? IsCommitInfoRequired;
         public readonly string? PlanNumber;
         public readonly string? SubscriptionId;
@@ -208,7 +208,7 @@ namespace Pulumi.Oci.OneSubsription
 
             ImmutableArray<Outputs.GetSubscriptionsFilterResult> filters,
 
-            string id,
+            string? id,
 
             bool? isCommitInfoRequired,
 

@@ -6,6 +6,8 @@ package com.pulumi.oci.Core.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetBootVolumeAutotunePolicy {
@@ -13,27 +15,27 @@ public final class GetBootVolumeAutotunePolicy {
      * @return This specifies the type of autotunes supported by OCI.
      * 
      */
-    private String autotuneType;
+    private @Nullable String autotuneType;
     /**
      * @return This will be the maximum VPUs/GB performance level that the volume will be auto-tuned temporarily based on performance monitoring.
      * 
      */
-    private String maxVpusPerGb;
+    private @Nullable String maxVpusPerGb;
 
     private GetBootVolumeAutotunePolicy() {}
     /**
      * @return This specifies the type of autotunes supported by OCI.
      * 
      */
-    public String autotuneType() {
-        return this.autotuneType;
+    public Optional<String> autotuneType() {
+        return Optional.ofNullable(this.autotuneType);
     }
     /**
      * @return This will be the maximum VPUs/GB performance level that the volume will be auto-tuned temporarily based on performance monitoring.
      * 
      */
-    public String maxVpusPerGb() {
-        return this.maxVpusPerGb;
+    public Optional<String> maxVpusPerGb() {
+        return Optional.ofNullable(this.maxVpusPerGb);
     }
 
     public static Builder builder() {
@@ -45,8 +47,8 @@ public final class GetBootVolumeAutotunePolicy {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String autotuneType;
-        private String maxVpusPerGb;
+        private @Nullable String autotuneType;
+        private @Nullable String maxVpusPerGb;
         public Builder() {}
         public Builder(GetBootVolumeAutotunePolicy defaults) {
     	      Objects.requireNonNull(defaults);
@@ -55,13 +57,13 @@ public final class GetBootVolumeAutotunePolicy {
         }
 
         @CustomType.Setter
-        public Builder autotuneType(String autotuneType) {
-            this.autotuneType = Objects.requireNonNull(autotuneType);
+        public Builder autotuneType(@Nullable String autotuneType) {
+            this.autotuneType = autotuneType;
             return this;
         }
         @CustomType.Setter
-        public Builder maxVpusPerGb(String maxVpusPerGb) {
-            this.maxVpusPerGb = Objects.requireNonNull(maxVpusPerGb);
+        public Builder maxVpusPerGb(@Nullable String maxVpusPerGb) {
+            this.maxVpusPerGb = maxVpusPerGb;
             return this;
         }
         public GetBootVolumeAutotunePolicy build() {

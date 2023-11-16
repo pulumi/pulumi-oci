@@ -16,7 +16,7 @@ namespace Pulumi.Oci.CloudGuard.Outputs
         /// <summary>
         /// Base condition object
         /// </summary>
-        public readonly string Condition;
+        public readonly string? Condition;
         /// <summary>
         /// Configuration details
         /// </summary>
@@ -24,11 +24,11 @@ namespace Pulumi.Oci.CloudGuard.Outputs
         /// <summary>
         /// The id of the attached DataSource.
         /// </summary>
-        public readonly string DataSourceId;
+        public readonly string? DataSourceId;
         /// <summary>
         /// Description for DetectorRecipeDetectorRule.
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// Data Source entities mapping for a Detector Rule
         /// </summary>
@@ -36,11 +36,11 @@ namespace Pulumi.Oci.CloudGuard.Outputs
         /// <summary>
         /// configuration allowed or not
         /// </summary>
-        public readonly bool IsConfigurationAllowed;
+        public readonly bool? IsConfigurationAllowed;
         /// <summary>
         /// Enables the control
         /// </summary>
-        public readonly bool IsEnabled;
+        public readonly bool? IsEnabled;
         /// <summary>
         /// user defined labels for a detector rule
         /// </summary>
@@ -48,33 +48,33 @@ namespace Pulumi.Oci.CloudGuard.Outputs
         /// <summary>
         /// Recommendation for DetectorRecipeDetectorRule
         /// </summary>
-        public readonly string Recommendation;
+        public readonly string? Recommendation;
         /// <summary>
         /// The Risk Level
         /// </summary>
-        public readonly string RiskLevel;
+        public readonly string? RiskLevel;
 
         [OutputConstructor]
         private GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailResult(
-            string condition,
+            string? condition,
 
             ImmutableArray<Outputs.GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationResult> configurations,
 
-            string dataSourceId,
+            string? dataSourceId,
 
-            string description,
+            string? description,
 
             ImmutableArray<Outputs.GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailEntitiesMappingResult> entitiesMappings,
 
-            bool isConfigurationAllowed,
+            bool? isConfigurationAllowed,
 
-            bool isEnabled,
+            bool? isEnabled,
 
             ImmutableArray<string> labels,
 
-            string recommendation,
+            string? recommendation,
 
-            string riskLevel)
+            string? riskLevel)
         {
             Condition = condition;
             Configurations = configurations;

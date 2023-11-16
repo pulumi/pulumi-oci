@@ -70,11 +70,11 @@ export interface GetManagedInstanceGroupAvailableModulesResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The list of managed_instance_group_available_module_collection.
      */
-    readonly managedInstanceGroupAvailableModuleCollections: outputs.OsManagementHub.GetManagedInstanceGroupAvailableModulesManagedInstanceGroupAvailableModuleCollection[];
+    readonly managedInstanceGroupAvailableModuleCollections?: outputs.OsManagementHub.GetManagedInstanceGroupAvailableModulesManagedInstanceGroupAvailableModuleCollection[];
     readonly managedInstanceGroupId: string;
     /**
      * The name of the module that is available to be enabled on the managed instance group.

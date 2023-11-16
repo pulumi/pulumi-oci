@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Certificate resource in Oracle Cloud Infrastructure Web Application Acceleration and Security service.
@@ -72,14 +71,14 @@ type Certificate struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) A user-friendly name for the SSL certificate. The name can be changed and does not need to be unique.
-	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrOutput `pulumi:"displayName"`
 	// Additional attributes associated with users or public keys for managing relationships between Certificate Authorities.
 	Extensions CertificateExtensionArrayOutput `pulumi:"extensions"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// Set to `true` if the SSL certificate is self-signed.
-	IsTrustVerificationDisabled pulumi.BoolOutput   `pulumi:"isTrustVerificationDisabled"`
-	IssuedBy                    pulumi.StringOutput `pulumi:"issuedBy"`
+	IsTrustVerificationDisabled pulumi.BoolPtrOutput   `pulumi:"isTrustVerificationDisabled"`
+	IssuedBy                    pulumi.StringPtrOutput `pulumi:"issuedBy"`
 	// The issuer of the certificate.
 	IssuerNames CertificateIssuerNameArrayOutput `pulumi:"issuerNames"`
 	// The private key of the SSL certificate.
@@ -90,21 +89,21 @@ type Certificate struct {
 	// Information about the public key and the algorithm used by the public key.
 	PublicKeyInfos CertificatePublicKeyInfoArrayOutput `pulumi:"publicKeyInfos"`
 	// A unique, positive integer assigned by the Certificate Authority (CA). The issuer name and serial number identify a unique certificate.
-	SerialNumber pulumi.StringOutput `pulumi:"serialNumber"`
+	SerialNumber pulumi.StringPtrOutput `pulumi:"serialNumber"`
 	// The identifier for the cryptographic algorithm used by the Certificate Authority (CA) to sign this certificate.
-	SignatureAlgorithm pulumi.StringOutput `pulumi:"signatureAlgorithm"`
+	SignatureAlgorithm pulumi.StringPtrOutput `pulumi:"signatureAlgorithm"`
 	// The current lifecycle state of the SSL certificate.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// The entity to be secured by the certificate.
 	SubjectNames CertificateSubjectNameArrayOutput `pulumi:"subjectNames"`
 	// The date and time the certificate was created, expressed in RFC 3339 timestamp format.
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The date and time the certificate will expire, expressed in RFC 3339 timestamp format.
-	TimeNotValidAfter pulumi.StringOutput `pulumi:"timeNotValidAfter"`
+	TimeNotValidAfter pulumi.StringPtrOutput `pulumi:"timeNotValidAfter"`
 	// The date and time the certificate will become valid, expressed in RFC 3339 timestamp format.
-	TimeNotValidBefore pulumi.StringOutput `pulumi:"timeNotValidBefore"`
+	TimeNotValidBefore pulumi.StringPtrOutput `pulumi:"timeNotValidBefore"`
 	// The version of the encoded certificate.
-	Version pulumi.IntOutput `pulumi:"version"`
+	Version pulumi.IntPtrOutput `pulumi:"version"`
 }
 
 // NewCertificate registers a new resource with the given unique name, arguments, and options.
@@ -322,12 +321,6 @@ func (i *Certificate) ToCertificateOutputWithContext(ctx context.Context) Certif
 	return pulumi.ToOutputWithContext(ctx, i).(CertificateOutput)
 }
 
-func (i *Certificate) ToOutput(ctx context.Context) pulumix.Output[*Certificate] {
-	return pulumix.Output[*Certificate]{
-		OutputState: i.ToCertificateOutputWithContext(ctx).OutputState,
-	}
-}
-
 // CertificateArrayInput is an input type that accepts CertificateArray and CertificateArrayOutput values.
 // You can construct a concrete instance of `CertificateArrayInput` via:
 //
@@ -351,12 +344,6 @@ func (i CertificateArray) ToCertificateArrayOutput() CertificateArrayOutput {
 
 func (i CertificateArray) ToCertificateArrayOutputWithContext(ctx context.Context) CertificateArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(CertificateArrayOutput)
-}
-
-func (i CertificateArray) ToOutput(ctx context.Context) pulumix.Output[[]*Certificate] {
-	return pulumix.Output[[]*Certificate]{
-		OutputState: i.ToCertificateArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // CertificateMapInput is an input type that accepts CertificateMap and CertificateMapOutput values.
@@ -384,12 +371,6 @@ func (i CertificateMap) ToCertificateMapOutputWithContext(ctx context.Context) C
 	return pulumi.ToOutputWithContext(ctx, i).(CertificateMapOutput)
 }
 
-func (i CertificateMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*Certificate] {
-	return pulumix.Output[map[string]*Certificate]{
-		OutputState: i.ToCertificateMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type CertificateOutput struct{ *pulumi.OutputState }
 
 func (CertificateOutput) ElementType() reflect.Type {
@@ -402,12 +383,6 @@ func (o CertificateOutput) ToCertificateOutput() CertificateOutput {
 
 func (o CertificateOutput) ToCertificateOutputWithContext(ctx context.Context) CertificateOutput {
 	return o
-}
-
-func (o CertificateOutput) ToOutput(ctx context.Context) pulumix.Output[*Certificate] {
-	return pulumix.Output[*Certificate]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The data of the SSL certificate.
@@ -430,8 +405,8 @@ func (o CertificateOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // (Updatable) A user-friendly name for the SSL certificate. The name can be changed and does not need to be unique.
-func (o CertificateOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v *Certificate) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+func (o CertificateOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Certificate) pulumi.StringPtrOutput { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Additional attributes associated with users or public keys for managing relationships between Certificate Authorities.
@@ -445,12 +420,12 @@ func (o CertificateOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // Set to `true` if the SSL certificate is self-signed.
-func (o CertificateOutput) IsTrustVerificationDisabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v *Certificate) pulumi.BoolOutput { return v.IsTrustVerificationDisabled }).(pulumi.BoolOutput)
+func (o CertificateOutput) IsTrustVerificationDisabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *Certificate) pulumi.BoolPtrOutput { return v.IsTrustVerificationDisabled }).(pulumi.BoolPtrOutput)
 }
 
-func (o CertificateOutput) IssuedBy() pulumi.StringOutput {
-	return o.ApplyT(func(v *Certificate) pulumi.StringOutput { return v.IssuedBy }).(pulumi.StringOutput)
+func (o CertificateOutput) IssuedBy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Certificate) pulumi.StringPtrOutput { return v.IssuedBy }).(pulumi.StringPtrOutput)
 }
 
 // The issuer of the certificate.
@@ -472,18 +447,18 @@ func (o CertificateOutput) PublicKeyInfos() CertificatePublicKeyInfoArrayOutput 
 }
 
 // A unique, positive integer assigned by the Certificate Authority (CA). The issuer name and serial number identify a unique certificate.
-func (o CertificateOutput) SerialNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v *Certificate) pulumi.StringOutput { return v.SerialNumber }).(pulumi.StringOutput)
+func (o CertificateOutput) SerialNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Certificate) pulumi.StringPtrOutput { return v.SerialNumber }).(pulumi.StringPtrOutput)
 }
 
 // The identifier for the cryptographic algorithm used by the Certificate Authority (CA) to sign this certificate.
-func (o CertificateOutput) SignatureAlgorithm() pulumi.StringOutput {
-	return o.ApplyT(func(v *Certificate) pulumi.StringOutput { return v.SignatureAlgorithm }).(pulumi.StringOutput)
+func (o CertificateOutput) SignatureAlgorithm() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Certificate) pulumi.StringPtrOutput { return v.SignatureAlgorithm }).(pulumi.StringPtrOutput)
 }
 
 // The current lifecycle state of the SSL certificate.
-func (o CertificateOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *Certificate) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o CertificateOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Certificate) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The entity to be secured by the certificate.
@@ -492,23 +467,23 @@ func (o CertificateOutput) SubjectNames() CertificateSubjectNameArrayOutput {
 }
 
 // The date and time the certificate was created, expressed in RFC 3339 timestamp format.
-func (o CertificateOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *Certificate) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o CertificateOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Certificate) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the certificate will expire, expressed in RFC 3339 timestamp format.
-func (o CertificateOutput) TimeNotValidAfter() pulumi.StringOutput {
-	return o.ApplyT(func(v *Certificate) pulumi.StringOutput { return v.TimeNotValidAfter }).(pulumi.StringOutput)
+func (o CertificateOutput) TimeNotValidAfter() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Certificate) pulumi.StringPtrOutput { return v.TimeNotValidAfter }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the certificate will become valid, expressed in RFC 3339 timestamp format.
-func (o CertificateOutput) TimeNotValidBefore() pulumi.StringOutput {
-	return o.ApplyT(func(v *Certificate) pulumi.StringOutput { return v.TimeNotValidBefore }).(pulumi.StringOutput)
+func (o CertificateOutput) TimeNotValidBefore() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Certificate) pulumi.StringPtrOutput { return v.TimeNotValidBefore }).(pulumi.StringPtrOutput)
 }
 
 // The version of the encoded certificate.
-func (o CertificateOutput) Version() pulumi.IntOutput {
-	return o.ApplyT(func(v *Certificate) pulumi.IntOutput { return v.Version }).(pulumi.IntOutput)
+func (o CertificateOutput) Version() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *Certificate) pulumi.IntPtrOutput { return v.Version }).(pulumi.IntPtrOutput)
 }
 
 type CertificateArrayOutput struct{ *pulumi.OutputState }
@@ -523,12 +498,6 @@ func (o CertificateArrayOutput) ToCertificateArrayOutput() CertificateArrayOutpu
 
 func (o CertificateArrayOutput) ToCertificateArrayOutputWithContext(ctx context.Context) CertificateArrayOutput {
 	return o
-}
-
-func (o CertificateArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*Certificate] {
-	return pulumix.Output[[]*Certificate]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o CertificateArrayOutput) Index(i pulumi.IntInput) CertificateOutput {
@@ -549,12 +518,6 @@ func (o CertificateMapOutput) ToCertificateMapOutput() CertificateMapOutput {
 
 func (o CertificateMapOutput) ToCertificateMapOutputWithContext(ctx context.Context) CertificateMapOutput {
 	return o
-}
-
-func (o CertificateMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*Certificate] {
-	return pulumix.Output[map[string]*Certificate]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o CertificateMapOutput) MapIndex(k pulumi.StringInput) CertificateOutput {

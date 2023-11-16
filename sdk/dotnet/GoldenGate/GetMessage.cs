@@ -111,7 +111,7 @@ namespace Pulumi.Oci.GoldenGate
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// An array of DeploymentMessages.
         /// </summary>
@@ -121,7 +121,7 @@ namespace Pulumi.Oci.GoldenGate
         private GetMessageResult(
             string deploymentId,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetMessageItemResult> items)
         {

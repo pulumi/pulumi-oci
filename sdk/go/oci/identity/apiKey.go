@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Api Key resource in Oracle Cloud Infrastructure Identity service.
@@ -68,15 +67,15 @@ type ApiKey struct {
 	pulumi.CustomResourceState
 
 	// The key's fingerprint (e.g., 12:34:56:78:90:ab:cd:ef:12:34:56:78:90:ab:cd:ef).
-	Fingerprint pulumi.StringOutput `pulumi:"fingerprint"`
+	Fingerprint pulumi.StringPtrOutput `pulumi:"fingerprint"`
 	// The detailed status of INACTIVE lifecycleState.
-	InactiveStatus pulumi.StringOutput `pulumi:"inactiveStatus"`
+	InactiveStatus pulumi.StringPtrOutput `pulumi:"inactiveStatus"`
 	// The public key.  Must be an RSA key in PEM format.
 	KeyValue pulumi.StringOutput `pulumi:"keyValue"`
 	// The API key's current state.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// Date and time the `ApiKey` object was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The OCID of the user.
 	//
 	// ** IMPORTANT **
@@ -203,12 +202,6 @@ func (i *ApiKey) ToApiKeyOutputWithContext(ctx context.Context) ApiKeyOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ApiKeyOutput)
 }
 
-func (i *ApiKey) ToOutput(ctx context.Context) pulumix.Output[*ApiKey] {
-	return pulumix.Output[*ApiKey]{
-		OutputState: i.ToApiKeyOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ApiKeyArrayInput is an input type that accepts ApiKeyArray and ApiKeyArrayOutput values.
 // You can construct a concrete instance of `ApiKeyArrayInput` via:
 //
@@ -232,12 +225,6 @@ func (i ApiKeyArray) ToApiKeyArrayOutput() ApiKeyArrayOutput {
 
 func (i ApiKeyArray) ToApiKeyArrayOutputWithContext(ctx context.Context) ApiKeyArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ApiKeyArrayOutput)
-}
-
-func (i ApiKeyArray) ToOutput(ctx context.Context) pulumix.Output[[]*ApiKey] {
-	return pulumix.Output[[]*ApiKey]{
-		OutputState: i.ToApiKeyArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // ApiKeyMapInput is an input type that accepts ApiKeyMap and ApiKeyMapOutput values.
@@ -265,12 +252,6 @@ func (i ApiKeyMap) ToApiKeyMapOutputWithContext(ctx context.Context) ApiKeyMapOu
 	return pulumi.ToOutputWithContext(ctx, i).(ApiKeyMapOutput)
 }
 
-func (i ApiKeyMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*ApiKey] {
-	return pulumix.Output[map[string]*ApiKey]{
-		OutputState: i.ToApiKeyMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ApiKeyOutput struct{ *pulumi.OutputState }
 
 func (ApiKeyOutput) ElementType() reflect.Type {
@@ -285,20 +266,14 @@ func (o ApiKeyOutput) ToApiKeyOutputWithContext(ctx context.Context) ApiKeyOutpu
 	return o
 }
 
-func (o ApiKeyOutput) ToOutput(ctx context.Context) pulumix.Output[*ApiKey] {
-	return pulumix.Output[*ApiKey]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The key's fingerprint (e.g., 12:34:56:78:90:ab:cd:ef:12:34:56:78:90:ab:cd:ef).
-func (o ApiKeyOutput) Fingerprint() pulumi.StringOutput {
-	return o.ApplyT(func(v *ApiKey) pulumi.StringOutput { return v.Fingerprint }).(pulumi.StringOutput)
+func (o ApiKeyOutput) Fingerprint() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ApiKey) pulumi.StringPtrOutput { return v.Fingerprint }).(pulumi.StringPtrOutput)
 }
 
 // The detailed status of INACTIVE lifecycleState.
-func (o ApiKeyOutput) InactiveStatus() pulumi.StringOutput {
-	return o.ApplyT(func(v *ApiKey) pulumi.StringOutput { return v.InactiveStatus }).(pulumi.StringOutput)
+func (o ApiKeyOutput) InactiveStatus() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ApiKey) pulumi.StringPtrOutput { return v.InactiveStatus }).(pulumi.StringPtrOutput)
 }
 
 // The public key.  Must be an RSA key in PEM format.
@@ -307,13 +282,13 @@ func (o ApiKeyOutput) KeyValue() pulumi.StringOutput {
 }
 
 // The API key's current state.
-func (o ApiKeyOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *ApiKey) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o ApiKeyOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ApiKey) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Date and time the `ApiKey` object was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
-func (o ApiKeyOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *ApiKey) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o ApiKeyOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ApiKey) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the user.
@@ -338,12 +313,6 @@ func (o ApiKeyArrayOutput) ToApiKeyArrayOutputWithContext(ctx context.Context) A
 	return o
 }
 
-func (o ApiKeyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*ApiKey] {
-	return pulumix.Output[[]*ApiKey]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o ApiKeyArrayOutput) Index(i pulumi.IntInput) ApiKeyOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *ApiKey {
 		return vs[0].([]*ApiKey)[vs[1].(int)]
@@ -362,12 +331,6 @@ func (o ApiKeyMapOutput) ToApiKeyMapOutput() ApiKeyMapOutput {
 
 func (o ApiKeyMapOutput) ToApiKeyMapOutputWithContext(ctx context.Context) ApiKeyMapOutput {
 	return o
-}
-
-func (o ApiKeyMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*ApiKey] {
-	return pulumix.Output[map[string]*ApiKey]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ApiKeyMapOutput) MapIndex(k pulumi.StringInput) ApiKeyOutput {

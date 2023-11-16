@@ -161,7 +161,7 @@ namespace Pulumi.Oci.ServiceCatalog
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The list of service_catalog_collection.
         /// </summary>
@@ -176,7 +176,7 @@ namespace Pulumi.Oci.ServiceCatalog
 
             ImmutableArray<Outputs.GetServiceCatalogsFilterResult> filters,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetServiceCatalogsServiceCatalogCollectionResult> serviceCatalogCollections,
 

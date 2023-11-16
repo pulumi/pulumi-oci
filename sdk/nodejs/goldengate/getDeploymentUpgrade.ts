@@ -45,122 +45,122 @@ export interface GetDeploymentUpgradeResult {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
      */
-    readonly deploymentId: string;
+    readonly deploymentId?: string;
     readonly deploymentUpgradeId: string;
     /**
      * The type of the deployment upgrade: MANUAL or AUTOMATIC
      */
-    readonly deploymentUpgradeType: string;
+    readonly deploymentUpgradeType?: string;
     /**
      * Metadata about this specific object.
      */
-    readonly description: string;
+    readonly description?: string;
     /**
      * An object's Display Name.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Indicates if cancel is allowed. Scheduled upgrade can be cancelled only if target version is not forced by service,  otherwise only reschedule allowed.
      */
-    readonly isCancelAllowed: boolean;
+    readonly isCancelAllowed?: boolean;
     /**
      * Indicates if reschedule is allowed. Upgrade can be rescheduled postponed until the end of the service defined auto-upgrade period.
      */
-    readonly isRescheduleAllowed: boolean;
+    readonly isRescheduleAllowed?: boolean;
     /**
      * Indicates if rollback is allowed. In practice only the last upgrade can be rolled back.
      * * Manual upgrade is allowed to rollback only until the old version isn't deprecated yet.
      * * Automatic upgrade by default is not allowed, unless a serious issue does not justify.
      */
-    readonly isRollbackAllowed: boolean;
+    readonly isRollbackAllowed?: boolean;
     /**
      * Indicates if OGG release contains security fix.
      */
-    readonly isSecurityFix: boolean;
+    readonly isSecurityFix?: boolean;
     /**
      * Indicates if upgrade notifications are snoozed or not.
      */
-    readonly isSnoozed: boolean;
+    readonly isSnoozed?: boolean;
     /**
      * Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
      */
-    readonly lifecycleDetails: string;
+    readonly lifecycleDetails?: string;
     /**
      * Possible GGS lifecycle sub-states.
      */
-    readonly lifecycleSubState: string;
+    readonly lifecycleSubState?: string;
     /**
      * Version of OGG
      */
-    readonly oggVersion: string;
+    readonly oggVersion?: string;
     /**
      * Version of OGG
      */
-    readonly previousOggVersion: string;
+    readonly previousOggVersion?: string;
     /**
      * The type of release.
      */
-    readonly releaseType: string;
+    readonly releaseType?: string;
     /**
      * Possible lifecycle states.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
      */
-    readonly systemTags: {[key: string]: any};
+    readonly systemTags?: {[key: string]: any};
     /**
      * The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The date and time the request was finished. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      */
-    readonly timeFinished: string;
+    readonly timeFinished?: string;
     /**
      * The time until OGG version is supported. After this date has passed OGG version will not be available anymore. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      */
-    readonly timeOggVersionSupportedUntil: string;
+    readonly timeOggVersionSupportedUntil?: string;
     /**
      * The time the resource was released. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      */
-    readonly timeReleased: string;
+    readonly timeReleased?: string;
     /**
      * The time of upgrade schedule. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      */
-    readonly timeSchedule: string;
+    readonly timeSchedule?: string;
     /**
      * Indicates the latest time until the deployment upgrade could be rescheduled. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      */
-    readonly timeScheduleMax: string;
+    readonly timeScheduleMax?: string;
     /**
      * The time the upgrade notifications are snoozed until. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      */
-    readonly timeSnoozedUntil: string;
+    readonly timeSnoozedUntil?: string;
     /**
      * The date and time the request was started. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      */
-    readonly timeStarted: string;
+    readonly timeStarted?: string;
     /**
      * The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      */
-    readonly timeUpdated: string;
+    readonly timeUpdated?: string;
 }
 /**
  * This data source provides details about a specific Deployment Upgrade resource in Oracle Cloud Infrastructure Golden Gate service.

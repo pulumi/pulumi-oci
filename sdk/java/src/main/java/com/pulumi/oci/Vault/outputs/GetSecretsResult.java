@@ -24,13 +24,13 @@ public final class GetSecretsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private @Nullable String name;
     /**
      * @return The list of secrets.
      * 
      */
-    private List<GetSecretsSecret> secrets;
+    private @Nullable List<GetSecretsSecret> secrets;
     /**
      * @return The current lifecycle state of the secret.
      * 
@@ -57,8 +57,8 @@ public final class GetSecretsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public Optional<String> name() {
         return Optional.ofNullable(this.name);
@@ -68,7 +68,7 @@ public final class GetSecretsResult {
      * 
      */
     public List<GetSecretsSecret> secrets() {
-        return this.secrets;
+        return this.secrets == null ? List.of() : this.secrets;
     }
     /**
      * @return The current lifecycle state of the secret.
@@ -96,9 +96,9 @@ public final class GetSecretsResult {
     public static final class Builder {
         private String compartmentId;
         private @Nullable List<GetSecretsFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String name;
-        private List<GetSecretsSecret> secrets;
+        private @Nullable List<GetSecretsSecret> secrets;
         private @Nullable String state;
         private @Nullable String vaultId;
         public Builder() {}
@@ -127,8 +127,8 @@ public final class GetSecretsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -137,8 +137,8 @@ public final class GetSecretsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder secrets(List<GetSecretsSecret> secrets) {
-            this.secrets = Objects.requireNonNull(secrets);
+        public Builder secrets(@Nullable List<GetSecretsSecret> secrets) {
+            this.secrets = secrets;
             return this;
         }
         public Builder secrets(GetSecretsSecret... secrets) {

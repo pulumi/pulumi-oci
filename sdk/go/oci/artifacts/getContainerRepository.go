@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Container Repository resource in Oracle Cloud Infrastructure Artifacts service.
@@ -60,42 +59,42 @@ type LookupContainerRepositoryArgs struct {
 // A collection of values returned by getContainerRepository.
 type LookupContainerRepositoryResult struct {
 	// Total storage size in GBs that will be charged.
-	BillableSizeInGbs string `pulumi:"billableSizeInGbs"`
+	BillableSizeInGbs *string `pulumi:"billableSizeInGbs"`
 	// The OCID of the compartment in which the container repository exists.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// The id of the user or principal that created the resource.
-	CreatedBy string `pulumi:"createdBy"`
+	CreatedBy *string `pulumi:"createdBy"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The container repository name.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the container repository.  Example: `ocid1.containerrepo.oc1..exampleuniqueID`
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Total number of images.
-	ImageCount int `pulumi:"imageCount"`
+	ImageCount *int `pulumi:"imageCount"`
 	// Whether the repository is immutable. Images cannot be overwritten in an immutable repository.
-	IsImmutable bool `pulumi:"isImmutable"`
+	IsImmutable *bool `pulumi:"isImmutable"`
 	// Whether the repository is public. A public repository allows unauthenticated access.
-	IsPublic bool `pulumi:"isPublic"`
+	IsPublic *bool `pulumi:"isPublic"`
 	// Total number of layers.
-	LayerCount int `pulumi:"layerCount"`
+	LayerCount *int `pulumi:"layerCount"`
 	// Total storage in bytes consumed by layers.
-	LayersSizeInBytes string `pulumi:"layersSizeInBytes"`
+	LayersSizeInBytes *string `pulumi:"layersSizeInBytes"`
 	// The tenancy namespace used in the container repository path.
-	Namespace string `pulumi:"namespace"`
+	Namespace *string `pulumi:"namespace"`
 	// Container repository readme.
 	Readmes      []GetContainerRepositoryReadme `pulumi:"readmes"`
 	RepositoryId string                         `pulumi:"repositoryId"`
 	// The current state of the container repository.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The system tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// An RFC 3339 timestamp indicating when the repository was created.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// An RFC 3339 timestamp indicating when an image was last pushed to the repository.
-	TimeLastPushed string `pulumi:"timeLastPushed"`
+	TimeLastPushed *string `pulumi:"timeLastPushed"`
 }
 
 func LookupContainerRepositoryOutput(ctx *pulumi.Context, args LookupContainerRepositoryOutputArgs, opts ...pulumi.InvokeOption) LookupContainerRepositoryResultOutput {
@@ -136,25 +135,19 @@ func (o LookupContainerRepositoryResultOutput) ToLookupContainerRepositoryResult
 	return o
 }
 
-func (o LookupContainerRepositoryResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupContainerRepositoryResult] {
-	return pulumix.Output[LookupContainerRepositoryResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Total storage size in GBs that will be charged.
-func (o LookupContainerRepositoryResultOutput) BillableSizeInGbs() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupContainerRepositoryResult) string { return v.BillableSizeInGbs }).(pulumi.StringOutput)
+func (o LookupContainerRepositoryResultOutput) BillableSizeInGbs() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupContainerRepositoryResult) *string { return v.BillableSizeInGbs }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the compartment in which the container repository exists.
-func (o LookupContainerRepositoryResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupContainerRepositoryResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupContainerRepositoryResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupContainerRepositoryResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // The id of the user or principal that created the resource.
-func (o LookupContainerRepositoryResultOutput) CreatedBy() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupContainerRepositoryResult) string { return v.CreatedBy }).(pulumi.StringOutput)
+func (o LookupContainerRepositoryResultOutput) CreatedBy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupContainerRepositoryResult) *string { return v.CreatedBy }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -163,8 +156,8 @@ func (o LookupContainerRepositoryResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // The container repository name.
-func (o LookupContainerRepositoryResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupContainerRepositoryResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupContainerRepositoryResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupContainerRepositoryResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -173,38 +166,38 @@ func (o LookupContainerRepositoryResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the container repository.  Example: `ocid1.containerrepo.oc1..exampleuniqueID`
-func (o LookupContainerRepositoryResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupContainerRepositoryResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupContainerRepositoryResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupContainerRepositoryResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Total number of images.
-func (o LookupContainerRepositoryResultOutput) ImageCount() pulumi.IntOutput {
-	return o.ApplyT(func(v LookupContainerRepositoryResult) int { return v.ImageCount }).(pulumi.IntOutput)
+func (o LookupContainerRepositoryResultOutput) ImageCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LookupContainerRepositoryResult) *int { return v.ImageCount }).(pulumi.IntPtrOutput)
 }
 
 // Whether the repository is immutable. Images cannot be overwritten in an immutable repository.
-func (o LookupContainerRepositoryResultOutput) IsImmutable() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupContainerRepositoryResult) bool { return v.IsImmutable }).(pulumi.BoolOutput)
+func (o LookupContainerRepositoryResultOutput) IsImmutable() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupContainerRepositoryResult) *bool { return v.IsImmutable }).(pulumi.BoolPtrOutput)
 }
 
 // Whether the repository is public. A public repository allows unauthenticated access.
-func (o LookupContainerRepositoryResultOutput) IsPublic() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupContainerRepositoryResult) bool { return v.IsPublic }).(pulumi.BoolOutput)
+func (o LookupContainerRepositoryResultOutput) IsPublic() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupContainerRepositoryResult) *bool { return v.IsPublic }).(pulumi.BoolPtrOutput)
 }
 
 // Total number of layers.
-func (o LookupContainerRepositoryResultOutput) LayerCount() pulumi.IntOutput {
-	return o.ApplyT(func(v LookupContainerRepositoryResult) int { return v.LayerCount }).(pulumi.IntOutput)
+func (o LookupContainerRepositoryResultOutput) LayerCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LookupContainerRepositoryResult) *int { return v.LayerCount }).(pulumi.IntPtrOutput)
 }
 
 // Total storage in bytes consumed by layers.
-func (o LookupContainerRepositoryResultOutput) LayersSizeInBytes() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupContainerRepositoryResult) string { return v.LayersSizeInBytes }).(pulumi.StringOutput)
+func (o LookupContainerRepositoryResultOutput) LayersSizeInBytes() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupContainerRepositoryResult) *string { return v.LayersSizeInBytes }).(pulumi.StringPtrOutput)
 }
 
 // The tenancy namespace used in the container repository path.
-func (o LookupContainerRepositoryResultOutput) Namespace() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupContainerRepositoryResult) string { return v.Namespace }).(pulumi.StringOutput)
+func (o LookupContainerRepositoryResultOutput) Namespace() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupContainerRepositoryResult) *string { return v.Namespace }).(pulumi.StringPtrOutput)
 }
 
 // Container repository readme.
@@ -217,8 +210,8 @@ func (o LookupContainerRepositoryResultOutput) RepositoryId() pulumi.StringOutpu
 }
 
 // The current state of the container repository.
-func (o LookupContainerRepositoryResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupContainerRepositoryResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupContainerRepositoryResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupContainerRepositoryResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The system tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -227,13 +220,13 @@ func (o LookupContainerRepositoryResultOutput) SystemTags() pulumi.MapOutput {
 }
 
 // An RFC 3339 timestamp indicating when the repository was created.
-func (o LookupContainerRepositoryResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupContainerRepositoryResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupContainerRepositoryResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupContainerRepositoryResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // An RFC 3339 timestamp indicating when an image was last pushed to the repository.
-func (o LookupContainerRepositoryResultOutput) TimeLastPushed() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupContainerRepositoryResult) string { return v.TimeLastPushed }).(pulumi.StringOutput)
+func (o LookupContainerRepositoryResultOutput) TimeLastPushed() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupContainerRepositoryResult) *string { return v.TimeLastPushed }).(pulumi.StringPtrOutput)
 }
 
 func init() {

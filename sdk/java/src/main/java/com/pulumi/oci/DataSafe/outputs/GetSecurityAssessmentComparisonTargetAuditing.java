@@ -9,6 +9,8 @@ import com.pulumi.oci.DataSafe.outputs.GetSecurityAssessmentComparisonTargetAudi
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetSecurityAssessmentComparisonTargetAuditing {
@@ -16,32 +18,32 @@ public final class GetSecurityAssessmentComparisonTargetAuditing {
      * @return This array identifies the items that are present in the current assessment, but are missing from the baseline.
      * 
      */
-    private List<String> addedItems;
+    private @Nullable List<String> addedItems;
     /**
      * @return The particular finding reported by the security assessment.
      * 
      */
-    private List<GetSecurityAssessmentComparisonTargetAuditingBaseline> baselines;
+    private @Nullable List<GetSecurityAssessmentComparisonTargetAuditingBaseline> baselines;
     /**
      * @return The particular finding reported by the security assessment.
      * 
      */
-    private List<GetSecurityAssessmentComparisonTargetAuditingCurrent> currents;
+    private @Nullable List<GetSecurityAssessmentComparisonTargetAuditingCurrent> currents;
     /**
      * @return This array contains the items that are present in both the current assessment and the baseline, but are different in the two assessments.
      * 
      */
-    private List<String> modifiedItems;
+    private @Nullable List<String> modifiedItems;
     /**
      * @return This array identifies the items that are present in the baseline, but are missing from the current assessment.
      * 
      */
-    private List<String> removedItems;
+    private @Nullable List<String> removedItems;
     /**
      * @return The severity of this diff.
      * 
      */
-    private String severity;
+    private @Nullable String severity;
 
     private GetSecurityAssessmentComparisonTargetAuditing() {}
     /**
@@ -49,42 +51,42 @@ public final class GetSecurityAssessmentComparisonTargetAuditing {
      * 
      */
     public List<String> addedItems() {
-        return this.addedItems;
+        return this.addedItems == null ? List.of() : this.addedItems;
     }
     /**
      * @return The particular finding reported by the security assessment.
      * 
      */
     public List<GetSecurityAssessmentComparisonTargetAuditingBaseline> baselines() {
-        return this.baselines;
+        return this.baselines == null ? List.of() : this.baselines;
     }
     /**
      * @return The particular finding reported by the security assessment.
      * 
      */
     public List<GetSecurityAssessmentComparisonTargetAuditingCurrent> currents() {
-        return this.currents;
+        return this.currents == null ? List.of() : this.currents;
     }
     /**
      * @return This array contains the items that are present in both the current assessment and the baseline, but are different in the two assessments.
      * 
      */
     public List<String> modifiedItems() {
-        return this.modifiedItems;
+        return this.modifiedItems == null ? List.of() : this.modifiedItems;
     }
     /**
      * @return This array identifies the items that are present in the baseline, but are missing from the current assessment.
      * 
      */
     public List<String> removedItems() {
-        return this.removedItems;
+        return this.removedItems == null ? List.of() : this.removedItems;
     }
     /**
      * @return The severity of this diff.
      * 
      */
-    public String severity() {
-        return this.severity;
+    public Optional<String> severity() {
+        return Optional.ofNullable(this.severity);
     }
 
     public static Builder builder() {
@@ -96,12 +98,12 @@ public final class GetSecurityAssessmentComparisonTargetAuditing {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<String> addedItems;
-        private List<GetSecurityAssessmentComparisonTargetAuditingBaseline> baselines;
-        private List<GetSecurityAssessmentComparisonTargetAuditingCurrent> currents;
-        private List<String> modifiedItems;
-        private List<String> removedItems;
-        private String severity;
+        private @Nullable List<String> addedItems;
+        private @Nullable List<GetSecurityAssessmentComparisonTargetAuditingBaseline> baselines;
+        private @Nullable List<GetSecurityAssessmentComparisonTargetAuditingCurrent> currents;
+        private @Nullable List<String> modifiedItems;
+        private @Nullable List<String> removedItems;
+        private @Nullable String severity;
         public Builder() {}
         public Builder(GetSecurityAssessmentComparisonTargetAuditing defaults) {
     	      Objects.requireNonNull(defaults);
@@ -114,48 +116,48 @@ public final class GetSecurityAssessmentComparisonTargetAuditing {
         }
 
         @CustomType.Setter
-        public Builder addedItems(List<String> addedItems) {
-            this.addedItems = Objects.requireNonNull(addedItems);
+        public Builder addedItems(@Nullable List<String> addedItems) {
+            this.addedItems = addedItems;
             return this;
         }
         public Builder addedItems(String... addedItems) {
             return addedItems(List.of(addedItems));
         }
         @CustomType.Setter
-        public Builder baselines(List<GetSecurityAssessmentComparisonTargetAuditingBaseline> baselines) {
-            this.baselines = Objects.requireNonNull(baselines);
+        public Builder baselines(@Nullable List<GetSecurityAssessmentComparisonTargetAuditingBaseline> baselines) {
+            this.baselines = baselines;
             return this;
         }
         public Builder baselines(GetSecurityAssessmentComparisonTargetAuditingBaseline... baselines) {
             return baselines(List.of(baselines));
         }
         @CustomType.Setter
-        public Builder currents(List<GetSecurityAssessmentComparisonTargetAuditingCurrent> currents) {
-            this.currents = Objects.requireNonNull(currents);
+        public Builder currents(@Nullable List<GetSecurityAssessmentComparisonTargetAuditingCurrent> currents) {
+            this.currents = currents;
             return this;
         }
         public Builder currents(GetSecurityAssessmentComparisonTargetAuditingCurrent... currents) {
             return currents(List.of(currents));
         }
         @CustomType.Setter
-        public Builder modifiedItems(List<String> modifiedItems) {
-            this.modifiedItems = Objects.requireNonNull(modifiedItems);
+        public Builder modifiedItems(@Nullable List<String> modifiedItems) {
+            this.modifiedItems = modifiedItems;
             return this;
         }
         public Builder modifiedItems(String... modifiedItems) {
             return modifiedItems(List.of(modifiedItems));
         }
         @CustomType.Setter
-        public Builder removedItems(List<String> removedItems) {
-            this.removedItems = Objects.requireNonNull(removedItems);
+        public Builder removedItems(@Nullable List<String> removedItems) {
+            this.removedItems = removedItems;
             return this;
         }
         public Builder removedItems(String... removedItems) {
             return removedItems(List.of(removedItems));
         }
         @CustomType.Setter
-        public Builder severity(String severity) {
-            this.severity = Objects.requireNonNull(severity);
+        public Builder severity(@Nullable String severity) {
+            this.severity = severity;
             return this;
         }
         public GetSecurityAssessmentComparisonTargetAuditing build() {

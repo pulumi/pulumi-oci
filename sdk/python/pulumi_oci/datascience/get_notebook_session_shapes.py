@@ -49,7 +49,7 @@ class GetNotebookSessionShapesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -57,10 +57,7 @@ class GetNotebookSessionShapesResult:
 
     @property
     @pulumi.getter(name="notebookSessionShapes")
-    def notebook_session_shapes(self) -> Sequence['outputs.GetNotebookSessionShapesNotebookSessionShapeResult']:
-        """
-        The list of notebook_session_shapes.
-        """
+    def notebook_session_shapes(self) -> Optional[Sequence['outputs.GetNotebookSessionShapesNotebookSessionShapeResult']]:
         return pulumi.get(self, "notebook_session_shapes")
 
 
@@ -80,21 +77,7 @@ def get_notebook_session_shapes(compartment_id: Optional[str] = None,
                                 filters: Optional[Sequence[pulumi.InputType['GetNotebookSessionShapesFilterArgs']]] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetNotebookSessionShapesResult:
     """
-    This data source provides the list of Notebook Session Shapes in Oracle Cloud Infrastructure Data Science service.
-
-    Lists the valid notebook session shapes.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_notebook_session_shapes = oci.DataScience.get_notebook_session_shapes(compartment_id=var["compartment_id"])
-    ```
-
-
-    :param str compartment_id: <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -114,20 +97,6 @@ def get_notebook_session_shapes_output(compartment_id: Optional[pulumi.Input[str
                                        filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetNotebookSessionShapesFilterArgs']]]]] = None,
                                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNotebookSessionShapesResult]:
     """
-    This data source provides the list of Notebook Session Shapes in Oracle Cloud Infrastructure Data Science service.
-
-    Lists the valid notebook session shapes.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_notebook_session_shapes = oci.DataScience.get_notebook_session_shapes(compartment_id=var["compartment_id"])
-    ```
-
-
-    :param str compartment_id: <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+    Use this data source to access information about an existing resource.
     """
     ...

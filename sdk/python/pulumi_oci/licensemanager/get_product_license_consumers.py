@@ -46,7 +46,7 @@ class GetProductLicenseConsumersResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -59,10 +59,7 @@ class GetProductLicenseConsumersResult:
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetProductLicenseConsumersItemResult']:
-        """
-        Collection of product license consumers.
-        """
+    def items(self) -> Optional[Sequence['outputs.GetProductLicenseConsumersItemResult']]:
         return pulumi.get(self, "items")
 
     @property
@@ -89,25 +86,7 @@ def get_product_license_consumers(compartment_id: Optional[str] = None,
                                   product_license_id: Optional[str] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetProductLicenseConsumersResult:
     """
-    This data source provides the list of Product License Consumers in Oracle Cloud Infrastructure License Manager service.
-
-    Retrieves the product license consumers for a particular product license ID.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_product_license_consumers = oci.LicenseManager.get_product_license_consumers(compartment_id=var["compartment_id"],
-        product_license_id=oci_license_manager_product_license["test_product_license"]["id"],
-        is_compartment_id_in_subtree=var["product_license_consumer_is_compartment_id_in_subtree"])
-    ```
-
-
-    :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) used for the license record, product license, and configuration.
-    :param bool is_compartment_id_in_subtree: Indicates if the given compartment is the root compartment.
-    :param str product_license_id: Unique product license identifier.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -130,24 +109,6 @@ def get_product_license_consumers_output(compartment_id: Optional[pulumi.Input[s
                                          product_license_id: Optional[pulumi.Input[str]] = None,
                                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetProductLicenseConsumersResult]:
     """
-    This data source provides the list of Product License Consumers in Oracle Cloud Infrastructure License Manager service.
-
-    Retrieves the product license consumers for a particular product license ID.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_product_license_consumers = oci.LicenseManager.get_product_license_consumers(compartment_id=var["compartment_id"],
-        product_license_id=oci_license_manager_product_license["test_product_license"]["id"],
-        is_compartment_id_in_subtree=var["product_license_consumer_is_compartment_id_in_subtree"])
-    ```
-
-
-    :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) used for the license record, product license, and configuration.
-    :param bool is_compartment_id_in_subtree: Indicates if the given compartment is the root compartment.
-    :param str product_license_id: Unique product license identifier.
+    Use this data source to access information about an existing resource.
     """
     ...

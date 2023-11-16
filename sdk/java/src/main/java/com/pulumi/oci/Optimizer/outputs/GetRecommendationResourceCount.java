@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetRecommendationResourceCount {
@@ -14,27 +16,27 @@ public final class GetRecommendationResourceCount {
      * @return The count of resources.
      * 
      */
-    private Integer count;
+    private @Nullable Integer count;
     /**
      * @return The current status of the recommendation.
      * 
      */
-    private String status;
+    private @Nullable String status;
 
     private GetRecommendationResourceCount() {}
     /**
      * @return The count of resources.
      * 
      */
-    public Integer count() {
-        return this.count;
+    public Optional<Integer> count() {
+        return Optional.ofNullable(this.count);
     }
     /**
      * @return The current status of the recommendation.
      * 
      */
-    public String status() {
-        return this.status;
+    public Optional<String> status() {
+        return Optional.ofNullable(this.status);
     }
 
     public static Builder builder() {
@@ -46,8 +48,8 @@ public final class GetRecommendationResourceCount {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Integer count;
-        private String status;
+        private @Nullable Integer count;
+        private @Nullable String status;
         public Builder() {}
         public Builder(GetRecommendationResourceCount defaults) {
     	      Objects.requireNonNull(defaults);
@@ -56,13 +58,13 @@ public final class GetRecommendationResourceCount {
         }
 
         @CustomType.Setter
-        public Builder count(Integer count) {
-            this.count = Objects.requireNonNull(count);
+        public Builder count(@Nullable Integer count) {
+            this.count = count;
             return this;
         }
         @CustomType.Setter
-        public Builder status(String status) {
-            this.status = Objects.requireNonNull(status);
+        public Builder status(@Nullable String status) {
+            this.status = status;
             return this;
         }
         public GetRecommendationResourceCount build() {

@@ -20,13 +20,13 @@ public final class GetSqlCollectionLogInsightsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private String sqlCollectionId;
     /**
      * @return The list of sql_collection_log_insights_collection.
      * 
      */
-    private List<GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollection> sqlCollectionLogInsightsCollections;
+    private @Nullable List<GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollection> sqlCollectionLogInsightsCollections;
     /**
      * @return The time at which the aggregation ended.
      * 
@@ -49,8 +49,8 @@ public final class GetSqlCollectionLogInsightsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public String sqlCollectionId() {
         return this.sqlCollectionId;
@@ -60,7 +60,7 @@ public final class GetSqlCollectionLogInsightsResult {
      * 
      */
     public List<GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollection> sqlCollectionLogInsightsCollections() {
-        return this.sqlCollectionLogInsightsCollections;
+        return this.sqlCollectionLogInsightsCollections == null ? List.of() : this.sqlCollectionLogInsightsCollections;
     }
     /**
      * @return The time at which the aggregation ended.
@@ -88,9 +88,9 @@ public final class GetSqlCollectionLogInsightsResult {
     public static final class Builder {
         private @Nullable List<GetSqlCollectionLogInsightsFilter> filters;
         private @Nullable String groupBy;
-        private String id;
+        private @Nullable String id;
         private String sqlCollectionId;
-        private List<GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollection> sqlCollectionLogInsightsCollections;
+        private @Nullable List<GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollection> sqlCollectionLogInsightsCollections;
         private String timeEnded;
         private String timeStarted;
         public Builder() {}
@@ -119,8 +119,8 @@ public final class GetSqlCollectionLogInsightsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -129,8 +129,8 @@ public final class GetSqlCollectionLogInsightsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder sqlCollectionLogInsightsCollections(List<GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollection> sqlCollectionLogInsightsCollections) {
-            this.sqlCollectionLogInsightsCollections = Objects.requireNonNull(sqlCollectionLogInsightsCollections);
+        public Builder sqlCollectionLogInsightsCollections(@Nullable List<GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollection> sqlCollectionLogInsightsCollections) {
+            this.sqlCollectionLogInsightsCollections = sqlCollectionLogInsightsCollections;
             return this;
         }
         public Builder sqlCollectionLogInsightsCollections(GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollection... sqlCollectionLogInsightsCollections) {

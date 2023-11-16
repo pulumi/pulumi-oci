@@ -38,14 +38,6 @@ class ModelEvaluationResultArgs:
                  labels: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  metrics: Optional[pulumi.Input[Sequence[pulumi.Input['ModelEvaluationResultMetricArgs']]]] = None,
                  model_type: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[Sequence[pulumi.Input['ModelEvaluationResultClassMetricArgs']]] class_metrics: List of text classification metrics
-        :param pulumi.Input[str] confusion_matrix: class level confusion matrix
-        :param pulumi.Input[Sequence[pulumi.Input['ModelEvaluationResultEntityMetricArgs']]] entity_metrics: List of entity metrics
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] labels: labels
-        :param pulumi.Input[Sequence[pulumi.Input['ModelEvaluationResultMetricArgs']]] metrics: Model level named entity recognition metrics
-        :param pulumi.Input[str] model_type: Model type
-        """
         if class_metrics is not None:
             pulumi.set(__self__, "class_metrics", class_metrics)
         if confusion_matrix is not None:
@@ -62,9 +54,6 @@ class ModelEvaluationResultArgs:
     @property
     @pulumi.getter(name="classMetrics")
     def class_metrics(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ModelEvaluationResultClassMetricArgs']]]]:
-        """
-        List of text classification metrics
-        """
         return pulumi.get(self, "class_metrics")
 
     @class_metrics.setter
@@ -74,9 +63,6 @@ class ModelEvaluationResultArgs:
     @property
     @pulumi.getter(name="confusionMatrix")
     def confusion_matrix(self) -> Optional[pulumi.Input[str]]:
-        """
-        class level confusion matrix
-        """
         return pulumi.get(self, "confusion_matrix")
 
     @confusion_matrix.setter
@@ -86,9 +72,6 @@ class ModelEvaluationResultArgs:
     @property
     @pulumi.getter(name="entityMetrics")
     def entity_metrics(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ModelEvaluationResultEntityMetricArgs']]]]:
-        """
-        List of entity metrics
-        """
         return pulumi.get(self, "entity_metrics")
 
     @entity_metrics.setter
@@ -98,9 +81,6 @@ class ModelEvaluationResultArgs:
     @property
     @pulumi.getter
     def labels(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        labels
-        """
         return pulumi.get(self, "labels")
 
     @labels.setter
@@ -110,9 +90,6 @@ class ModelEvaluationResultArgs:
     @property
     @pulumi.getter
     def metrics(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ModelEvaluationResultMetricArgs']]]]:
-        """
-        Model level named entity recognition metrics
-        """
         return pulumi.get(self, "metrics")
 
     @metrics.setter
@@ -122,9 +99,6 @@ class ModelEvaluationResultArgs:
     @property
     @pulumi.getter(name="modelType")
     def model_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        Model type
-        """
         return pulumi.get(self, "model_type")
 
     @model_type.setter
@@ -140,13 +114,6 @@ class ModelEvaluationResultClassMetricArgs:
                  precision: Optional[pulumi.Input[float]] = None,
                  recall: Optional[pulumi.Input[float]] = None,
                  support: Optional[pulumi.Input[float]] = None):
-        """
-        :param pulumi.Input[float] f1: F1-score, is a measure of a model’s accuracy on a dataset
-        :param pulumi.Input[str] label: Entity label
-        :param pulumi.Input[float] precision: Precision refers to the number of true positives divided by the total number of positive predictions (i.e., the number of true positives plus the number of false positives)
-        :param pulumi.Input[float] recall: Measures the model's ability to predict actual positive classes. It is the ratio between the predicted true positives and what was actually tagged. The recall metric reveals how many of the predicted classes are correct.
-        :param pulumi.Input[float] support: number of samples in the test set
-        """
         if f1 is not None:
             pulumi.set(__self__, "f1", f1)
         if label is not None:
@@ -161,9 +128,6 @@ class ModelEvaluationResultClassMetricArgs:
     @property
     @pulumi.getter
     def f1(self) -> Optional[pulumi.Input[float]]:
-        """
-        F1-score, is a measure of a model’s accuracy on a dataset
-        """
         return pulumi.get(self, "f1")
 
     @f1.setter
@@ -173,9 +137,6 @@ class ModelEvaluationResultClassMetricArgs:
     @property
     @pulumi.getter
     def label(self) -> Optional[pulumi.Input[str]]:
-        """
-        Entity label
-        """
         return pulumi.get(self, "label")
 
     @label.setter
@@ -185,9 +146,6 @@ class ModelEvaluationResultClassMetricArgs:
     @property
     @pulumi.getter
     def precision(self) -> Optional[pulumi.Input[float]]:
-        """
-        Precision refers to the number of true positives divided by the total number of positive predictions (i.e., the number of true positives plus the number of false positives)
-        """
         return pulumi.get(self, "precision")
 
     @precision.setter
@@ -197,9 +155,6 @@ class ModelEvaluationResultClassMetricArgs:
     @property
     @pulumi.getter
     def recall(self) -> Optional[pulumi.Input[float]]:
-        """
-        Measures the model's ability to predict actual positive classes. It is the ratio between the predicted true positives and what was actually tagged. The recall metric reveals how many of the predicted classes are correct.
-        """
         return pulumi.get(self, "recall")
 
     @recall.setter
@@ -209,9 +164,6 @@ class ModelEvaluationResultClassMetricArgs:
     @property
     @pulumi.getter
     def support(self) -> Optional[pulumi.Input[float]]:
-        """
-        number of samples in the test set
-        """
         return pulumi.get(self, "support")
 
     @support.setter
@@ -226,12 +178,6 @@ class ModelEvaluationResultEntityMetricArgs:
                  label: Optional[pulumi.Input[str]] = None,
                  precision: Optional[pulumi.Input[float]] = None,
                  recall: Optional[pulumi.Input[float]] = None):
-        """
-        :param pulumi.Input[float] f1: F1-score, is a measure of a model’s accuracy on a dataset
-        :param pulumi.Input[str] label: Entity label
-        :param pulumi.Input[float] precision: Precision refers to the number of true positives divided by the total number of positive predictions (i.e., the number of true positives plus the number of false positives)
-        :param pulumi.Input[float] recall: Measures the model's ability to predict actual positive classes. It is the ratio between the predicted true positives and what was actually tagged. The recall metric reveals how many of the predicted classes are correct.
-        """
         if f1 is not None:
             pulumi.set(__self__, "f1", f1)
         if label is not None:
@@ -244,9 +190,6 @@ class ModelEvaluationResultEntityMetricArgs:
     @property
     @pulumi.getter
     def f1(self) -> Optional[pulumi.Input[float]]:
-        """
-        F1-score, is a measure of a model’s accuracy on a dataset
-        """
         return pulumi.get(self, "f1")
 
     @f1.setter
@@ -256,9 +199,6 @@ class ModelEvaluationResultEntityMetricArgs:
     @property
     @pulumi.getter
     def label(self) -> Optional[pulumi.Input[str]]:
-        """
-        Entity label
-        """
         return pulumi.get(self, "label")
 
     @label.setter
@@ -268,9 +208,6 @@ class ModelEvaluationResultEntityMetricArgs:
     @property
     @pulumi.getter
     def precision(self) -> Optional[pulumi.Input[float]]:
-        """
-        Precision refers to the number of true positives divided by the total number of positive predictions (i.e., the number of true positives plus the number of false positives)
-        """
         return pulumi.get(self, "precision")
 
     @precision.setter
@@ -280,9 +217,6 @@ class ModelEvaluationResultEntityMetricArgs:
     @property
     @pulumi.getter
     def recall(self) -> Optional[pulumi.Input[float]]:
-        """
-        Measures the model's ability to predict actual positive classes. It is the ratio between the predicted true positives and what was actually tagged. The recall metric reveals how many of the predicted classes are correct.
-        """
         return pulumi.get(self, "recall")
 
     @recall.setter
@@ -303,18 +237,6 @@ class ModelEvaluationResultMetricArgs:
                  weighted_f1: Optional[pulumi.Input[float]] = None,
                  weighted_precision: Optional[pulumi.Input[float]] = None,
                  weighted_recall: Optional[pulumi.Input[float]] = None):
-        """
-        :param pulumi.Input[float] accuracy: The fraction of the labels that were correctly recognised .
-        :param pulumi.Input[float] macro_f1: F1-score, is a measure of a model’s accuracy on a dataset
-        :param pulumi.Input[float] macro_precision: Precision refers to the number of true positives divided by the total number of positive predictions (i.e., the number of true positives plus the number of false positives)
-        :param pulumi.Input[float] macro_recall: Measures the model's ability to predict actual positive classes. It is the ratio between the predicted true positives and what was actually tagged. The recall metric reveals how many of the predicted classes are correct.
-        :param pulumi.Input[float] micro_f1: F1-score, is a measure of a model’s accuracy on a dataset
-        :param pulumi.Input[float] micro_precision: Precision refers to the number of true positives divided by the total number of positive predictions (i.e., the number of true positives plus the number of false positives)
-        :param pulumi.Input[float] micro_recall: Measures the model's ability to predict actual positive classes. It is the ratio between the predicted true positives and what was actually tagged. The recall metric reveals how many of the predicted classes are correct.
-        :param pulumi.Input[float] weighted_f1: F1-score, is a measure of a model’s accuracy on a dataset
-        :param pulumi.Input[float] weighted_precision: Precision refers to the number of true positives divided by the total number of positive predictions (i.e., the number of true positives plus the number of false positives)
-        :param pulumi.Input[float] weighted_recall: Measures the model's ability to predict actual positive classes. It is the ratio between the predicted true positives and what was actually tagged. The recall metric reveals how many of the predicted classes are correct.
-        """
         if accuracy is not None:
             pulumi.set(__self__, "accuracy", accuracy)
         if macro_f1 is not None:
@@ -339,9 +261,6 @@ class ModelEvaluationResultMetricArgs:
     @property
     @pulumi.getter
     def accuracy(self) -> Optional[pulumi.Input[float]]:
-        """
-        The fraction of the labels that were correctly recognised .
-        """
         return pulumi.get(self, "accuracy")
 
     @accuracy.setter
@@ -351,9 +270,6 @@ class ModelEvaluationResultMetricArgs:
     @property
     @pulumi.getter(name="macroF1")
     def macro_f1(self) -> Optional[pulumi.Input[float]]:
-        """
-        F1-score, is a measure of a model’s accuracy on a dataset
-        """
         return pulumi.get(self, "macro_f1")
 
     @macro_f1.setter
@@ -363,9 +279,6 @@ class ModelEvaluationResultMetricArgs:
     @property
     @pulumi.getter(name="macroPrecision")
     def macro_precision(self) -> Optional[pulumi.Input[float]]:
-        """
-        Precision refers to the number of true positives divided by the total number of positive predictions (i.e., the number of true positives plus the number of false positives)
-        """
         return pulumi.get(self, "macro_precision")
 
     @macro_precision.setter
@@ -375,9 +288,6 @@ class ModelEvaluationResultMetricArgs:
     @property
     @pulumi.getter(name="macroRecall")
     def macro_recall(self) -> Optional[pulumi.Input[float]]:
-        """
-        Measures the model's ability to predict actual positive classes. It is the ratio between the predicted true positives and what was actually tagged. The recall metric reveals how many of the predicted classes are correct.
-        """
         return pulumi.get(self, "macro_recall")
 
     @macro_recall.setter
@@ -387,9 +297,6 @@ class ModelEvaluationResultMetricArgs:
     @property
     @pulumi.getter(name="microF1")
     def micro_f1(self) -> Optional[pulumi.Input[float]]:
-        """
-        F1-score, is a measure of a model’s accuracy on a dataset
-        """
         return pulumi.get(self, "micro_f1")
 
     @micro_f1.setter
@@ -399,9 +306,6 @@ class ModelEvaluationResultMetricArgs:
     @property
     @pulumi.getter(name="microPrecision")
     def micro_precision(self) -> Optional[pulumi.Input[float]]:
-        """
-        Precision refers to the number of true positives divided by the total number of positive predictions (i.e., the number of true positives plus the number of false positives)
-        """
         return pulumi.get(self, "micro_precision")
 
     @micro_precision.setter
@@ -411,9 +315,6 @@ class ModelEvaluationResultMetricArgs:
     @property
     @pulumi.getter(name="microRecall")
     def micro_recall(self) -> Optional[pulumi.Input[float]]:
-        """
-        Measures the model's ability to predict actual positive classes. It is the ratio between the predicted true positives and what was actually tagged. The recall metric reveals how many of the predicted classes are correct.
-        """
         return pulumi.get(self, "micro_recall")
 
     @micro_recall.setter
@@ -423,9 +324,6 @@ class ModelEvaluationResultMetricArgs:
     @property
     @pulumi.getter(name="weightedF1")
     def weighted_f1(self) -> Optional[pulumi.Input[float]]:
-        """
-        F1-score, is a measure of a model’s accuracy on a dataset
-        """
         return pulumi.get(self, "weighted_f1")
 
     @weighted_f1.setter
@@ -435,9 +333,6 @@ class ModelEvaluationResultMetricArgs:
     @property
     @pulumi.getter(name="weightedPrecision")
     def weighted_precision(self) -> Optional[pulumi.Input[float]]:
-        """
-        Precision refers to the number of true positives divided by the total number of positive predictions (i.e., the number of true positives plus the number of false positives)
-        """
         return pulumi.get(self, "weighted_precision")
 
     @weighted_precision.setter
@@ -447,9 +342,6 @@ class ModelEvaluationResultMetricArgs:
     @property
     @pulumi.getter(name="weightedRecall")
     def weighted_recall(self) -> Optional[pulumi.Input[float]]:
-        """
-        Measures the model's ability to predict actual positive classes. It is the ratio between the predicted true positives and what was actually tagged. The recall metric reveals how many of the predicted classes are correct.
-        """
         return pulumi.get(self, "weighted_recall")
 
     @weighted_recall.setter
@@ -464,12 +356,6 @@ class ModelModelDetailsArgs:
                  classification_mode: Optional[pulumi.Input['ModelModelDetailsClassificationModeArgs']] = None,
                  language_code: Optional[pulumi.Input[str]] = None,
                  version: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] model_type: Model type
-        :param pulumi.Input['ModelModelDetailsClassificationModeArgs'] classification_mode: classification Modes
-        :param pulumi.Input[str] language_code: supported language default value is en
-        :param pulumi.Input[str] version: Optional pre trained model version. if nothing specified latest pre trained model will be used.  Supported versions can be found at /modelTypes/{modelType}
-        """
         pulumi.set(__self__, "model_type", model_type)
         if classification_mode is not None:
             pulumi.set(__self__, "classification_mode", classification_mode)
@@ -481,9 +367,6 @@ class ModelModelDetailsArgs:
     @property
     @pulumi.getter(name="modelType")
     def model_type(self) -> pulumi.Input[str]:
-        """
-        Model type
-        """
         return pulumi.get(self, "model_type")
 
     @model_type.setter
@@ -493,9 +376,6 @@ class ModelModelDetailsArgs:
     @property
     @pulumi.getter(name="classificationMode")
     def classification_mode(self) -> Optional[pulumi.Input['ModelModelDetailsClassificationModeArgs']]:
-        """
-        classification Modes
-        """
         return pulumi.get(self, "classification_mode")
 
     @classification_mode.setter
@@ -505,9 +385,6 @@ class ModelModelDetailsArgs:
     @property
     @pulumi.getter(name="languageCode")
     def language_code(self) -> Optional[pulumi.Input[str]]:
-        """
-        supported language default value is en
-        """
         return pulumi.get(self, "language_code")
 
     @language_code.setter
@@ -517,9 +394,6 @@ class ModelModelDetailsArgs:
     @property
     @pulumi.getter
     def version(self) -> Optional[pulumi.Input[str]]:
-        """
-        Optional pre trained model version. if nothing specified latest pre trained model will be used.  Supported versions can be found at /modelTypes/{modelType}
-        """
         return pulumi.get(self, "version")
 
     @version.setter
@@ -532,10 +406,6 @@ class ModelModelDetailsClassificationModeArgs:
     def __init__(__self__, *,
                  classification_mode: pulumi.Input[str],
                  version: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] classification_mode: classification Modes
-        :param pulumi.Input[str] version: Optional pre trained model version. if nothing specified latest pre trained model will be used.  Supported versions can be found at /modelTypes/{modelType}
-        """
         pulumi.set(__self__, "classification_mode", classification_mode)
         if version is not None:
             pulumi.set(__self__, "version", version)
@@ -543,9 +413,6 @@ class ModelModelDetailsClassificationModeArgs:
     @property
     @pulumi.getter(name="classificationMode")
     def classification_mode(self) -> pulumi.Input[str]:
-        """
-        classification Modes
-        """
         return pulumi.get(self, "classification_mode")
 
     @classification_mode.setter
@@ -555,9 +422,6 @@ class ModelModelDetailsClassificationModeArgs:
     @property
     @pulumi.getter
     def version(self) -> Optional[pulumi.Input[str]]:
-        """
-        Optional pre trained model version. if nothing specified latest pre trained model will be used.  Supported versions can be found at /modelTypes/{modelType}
-        """
         return pulumi.get(self, "version")
 
     @version.setter
@@ -571,11 +435,6 @@ class ModelTestStrategyArgs:
                  strategy_type: pulumi.Input[str],
                  testing_dataset: pulumi.Input['ModelTestStrategyTestingDatasetArgs'],
                  validation_dataset: Optional[pulumi.Input['ModelTestStrategyValidationDatasetArgs']] = None):
-        """
-        :param pulumi.Input[str] strategy_type: This information will define the test strategy different datasets for test and validation(optional) dataset.
-        :param pulumi.Input['ModelTestStrategyTestingDatasetArgs'] testing_dataset: Possible data set type
-        :param pulumi.Input['ModelTestStrategyValidationDatasetArgs'] validation_dataset: Possible data set type
-        """
         pulumi.set(__self__, "strategy_type", strategy_type)
         pulumi.set(__self__, "testing_dataset", testing_dataset)
         if validation_dataset is not None:
@@ -584,9 +443,6 @@ class ModelTestStrategyArgs:
     @property
     @pulumi.getter(name="strategyType")
     def strategy_type(self) -> pulumi.Input[str]:
-        """
-        This information will define the test strategy different datasets for test and validation(optional) dataset.
-        """
         return pulumi.get(self, "strategy_type")
 
     @strategy_type.setter
@@ -596,9 +452,6 @@ class ModelTestStrategyArgs:
     @property
     @pulumi.getter(name="testingDataset")
     def testing_dataset(self) -> pulumi.Input['ModelTestStrategyTestingDatasetArgs']:
-        """
-        Possible data set type
-        """
         return pulumi.get(self, "testing_dataset")
 
     @testing_dataset.setter
@@ -608,9 +461,6 @@ class ModelTestStrategyArgs:
     @property
     @pulumi.getter(name="validationDataset")
     def validation_dataset(self) -> Optional[pulumi.Input['ModelTestStrategyValidationDatasetArgs']]:
-        """
-        Possible data set type
-        """
         return pulumi.get(self, "validation_dataset")
 
     @validation_dataset.setter
@@ -624,11 +474,6 @@ class ModelTestStrategyTestingDatasetArgs:
                  dataset_type: pulumi.Input[str],
                  dataset_id: Optional[pulumi.Input[str]] = None,
                  location_details: Optional[pulumi.Input['ModelTestStrategyTestingDatasetLocationDetailsArgs']] = None):
-        """
-        :param pulumi.Input[str] dataset_type: Possible data sets
-        :param pulumi.Input[str] dataset_id: Data Science Labelling Service OCID
-        :param pulumi.Input['ModelTestStrategyTestingDatasetLocationDetailsArgs'] location_details: Possible object storage location types
-        """
         pulumi.set(__self__, "dataset_type", dataset_type)
         if dataset_id is not None:
             pulumi.set(__self__, "dataset_id", dataset_id)
@@ -638,9 +483,6 @@ class ModelTestStrategyTestingDatasetArgs:
     @property
     @pulumi.getter(name="datasetType")
     def dataset_type(self) -> pulumi.Input[str]:
-        """
-        Possible data sets
-        """
         return pulumi.get(self, "dataset_type")
 
     @dataset_type.setter
@@ -650,9 +492,6 @@ class ModelTestStrategyTestingDatasetArgs:
     @property
     @pulumi.getter(name="datasetId")
     def dataset_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        Data Science Labelling Service OCID
-        """
         return pulumi.get(self, "dataset_id")
 
     @dataset_id.setter
@@ -662,9 +501,6 @@ class ModelTestStrategyTestingDatasetArgs:
     @property
     @pulumi.getter(name="locationDetails")
     def location_details(self) -> Optional[pulumi.Input['ModelTestStrategyTestingDatasetLocationDetailsArgs']]:
-        """
-        Possible object storage location types
-        """
         return pulumi.get(self, "location_details")
 
     @location_details.setter
@@ -679,16 +515,6 @@ class ModelTestStrategyTestingDatasetLocationDetailsArgs:
                  location_type: pulumi.Input[str],
                  namespace: pulumi.Input[str],
                  object_names: pulumi.Input[Sequence[pulumi.Input[str]]]):
-        """
-        :param pulumi.Input[str] bucket: Object storage bucket name
-        :param pulumi.Input[str] location_type: Possible object storage location types
-        :param pulumi.Input[str] namespace: Object storage namespace
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] object_names: Array of files which need to be processed in the bucket
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         pulumi.set(__self__, "bucket", bucket)
         pulumi.set(__self__, "location_type", location_type)
         pulumi.set(__self__, "namespace", namespace)
@@ -697,9 +523,6 @@ class ModelTestStrategyTestingDatasetLocationDetailsArgs:
     @property
     @pulumi.getter
     def bucket(self) -> pulumi.Input[str]:
-        """
-        Object storage bucket name
-        """
         return pulumi.get(self, "bucket")
 
     @bucket.setter
@@ -709,9 +532,6 @@ class ModelTestStrategyTestingDatasetLocationDetailsArgs:
     @property
     @pulumi.getter(name="locationType")
     def location_type(self) -> pulumi.Input[str]:
-        """
-        Possible object storage location types
-        """
         return pulumi.get(self, "location_type")
 
     @location_type.setter
@@ -721,9 +541,6 @@ class ModelTestStrategyTestingDatasetLocationDetailsArgs:
     @property
     @pulumi.getter
     def namespace(self) -> pulumi.Input[str]:
-        """
-        Object storage namespace
-        """
         return pulumi.get(self, "namespace")
 
     @namespace.setter
@@ -733,13 +550,6 @@ class ModelTestStrategyTestingDatasetLocationDetailsArgs:
     @property
     @pulumi.getter(name="objectNames")
     def object_names(self) -> pulumi.Input[Sequence[pulumi.Input[str]]]:
-        """
-        Array of files which need to be processed in the bucket
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "object_names")
 
     @object_names.setter
@@ -753,11 +563,6 @@ class ModelTestStrategyValidationDatasetArgs:
                  dataset_type: pulumi.Input[str],
                  dataset_id: Optional[pulumi.Input[str]] = None,
                  location_details: Optional[pulumi.Input['ModelTestStrategyValidationDatasetLocationDetailsArgs']] = None):
-        """
-        :param pulumi.Input[str] dataset_type: Possible data sets
-        :param pulumi.Input[str] dataset_id: Data Science Labelling Service OCID
-        :param pulumi.Input['ModelTestStrategyValidationDatasetLocationDetailsArgs'] location_details: Possible object storage location types
-        """
         pulumi.set(__self__, "dataset_type", dataset_type)
         if dataset_id is not None:
             pulumi.set(__self__, "dataset_id", dataset_id)
@@ -767,9 +572,6 @@ class ModelTestStrategyValidationDatasetArgs:
     @property
     @pulumi.getter(name="datasetType")
     def dataset_type(self) -> pulumi.Input[str]:
-        """
-        Possible data sets
-        """
         return pulumi.get(self, "dataset_type")
 
     @dataset_type.setter
@@ -779,9 +581,6 @@ class ModelTestStrategyValidationDatasetArgs:
     @property
     @pulumi.getter(name="datasetId")
     def dataset_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        Data Science Labelling Service OCID
-        """
         return pulumi.get(self, "dataset_id")
 
     @dataset_id.setter
@@ -791,9 +590,6 @@ class ModelTestStrategyValidationDatasetArgs:
     @property
     @pulumi.getter(name="locationDetails")
     def location_details(self) -> Optional[pulumi.Input['ModelTestStrategyValidationDatasetLocationDetailsArgs']]:
-        """
-        Possible object storage location types
-        """
         return pulumi.get(self, "location_details")
 
     @location_details.setter
@@ -808,16 +604,6 @@ class ModelTestStrategyValidationDatasetLocationDetailsArgs:
                  location_type: pulumi.Input[str],
                  namespace: pulumi.Input[str],
                  object_names: pulumi.Input[Sequence[pulumi.Input[str]]]):
-        """
-        :param pulumi.Input[str] bucket: Object storage bucket name
-        :param pulumi.Input[str] location_type: Possible object storage location types
-        :param pulumi.Input[str] namespace: Object storage namespace
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] object_names: Array of files which need to be processed in the bucket
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         pulumi.set(__self__, "bucket", bucket)
         pulumi.set(__self__, "location_type", location_type)
         pulumi.set(__self__, "namespace", namespace)
@@ -826,9 +612,6 @@ class ModelTestStrategyValidationDatasetLocationDetailsArgs:
     @property
     @pulumi.getter
     def bucket(self) -> pulumi.Input[str]:
-        """
-        Object storage bucket name
-        """
         return pulumi.get(self, "bucket")
 
     @bucket.setter
@@ -838,9 +621,6 @@ class ModelTestStrategyValidationDatasetLocationDetailsArgs:
     @property
     @pulumi.getter(name="locationType")
     def location_type(self) -> pulumi.Input[str]:
-        """
-        Possible object storage location types
-        """
         return pulumi.get(self, "location_type")
 
     @location_type.setter
@@ -850,9 +630,6 @@ class ModelTestStrategyValidationDatasetLocationDetailsArgs:
     @property
     @pulumi.getter
     def namespace(self) -> pulumi.Input[str]:
-        """
-        Object storage namespace
-        """
         return pulumi.get(self, "namespace")
 
     @namespace.setter
@@ -862,13 +639,6 @@ class ModelTestStrategyValidationDatasetLocationDetailsArgs:
     @property
     @pulumi.getter(name="objectNames")
     def object_names(self) -> pulumi.Input[Sequence[pulumi.Input[str]]]:
-        """
-        Array of files which need to be processed in the bucket
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "object_names")
 
     @object_names.setter
@@ -882,11 +652,6 @@ class ModelTrainingDatasetArgs:
                  dataset_type: pulumi.Input[str],
                  dataset_id: Optional[pulumi.Input[str]] = None,
                  location_details: Optional[pulumi.Input['ModelTrainingDatasetLocationDetailsArgs']] = None):
-        """
-        :param pulumi.Input[str] dataset_type: Possible data sets
-        :param pulumi.Input[str] dataset_id: Data Science Labelling Service OCID
-        :param pulumi.Input['ModelTrainingDatasetLocationDetailsArgs'] location_details: Possible object storage location types
-        """
         pulumi.set(__self__, "dataset_type", dataset_type)
         if dataset_id is not None:
             pulumi.set(__self__, "dataset_id", dataset_id)
@@ -896,9 +661,6 @@ class ModelTrainingDatasetArgs:
     @property
     @pulumi.getter(name="datasetType")
     def dataset_type(self) -> pulumi.Input[str]:
-        """
-        Possible data sets
-        """
         return pulumi.get(self, "dataset_type")
 
     @dataset_type.setter
@@ -908,9 +670,6 @@ class ModelTrainingDatasetArgs:
     @property
     @pulumi.getter(name="datasetId")
     def dataset_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        Data Science Labelling Service OCID
-        """
         return pulumi.get(self, "dataset_id")
 
     @dataset_id.setter
@@ -920,9 +679,6 @@ class ModelTrainingDatasetArgs:
     @property
     @pulumi.getter(name="locationDetails")
     def location_details(self) -> Optional[pulumi.Input['ModelTrainingDatasetLocationDetailsArgs']]:
-        """
-        Possible object storage location types
-        """
         return pulumi.get(self, "location_details")
 
     @location_details.setter
@@ -937,16 +693,6 @@ class ModelTrainingDatasetLocationDetailsArgs:
                  location_type: pulumi.Input[str],
                  namespace: pulumi.Input[str],
                  object_names: pulumi.Input[Sequence[pulumi.Input[str]]]):
-        """
-        :param pulumi.Input[str] bucket: Object storage bucket name
-        :param pulumi.Input[str] location_type: Possible object storage location types
-        :param pulumi.Input[str] namespace: Object storage namespace
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] object_names: Array of files which need to be processed in the bucket
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         pulumi.set(__self__, "bucket", bucket)
         pulumi.set(__self__, "location_type", location_type)
         pulumi.set(__self__, "namespace", namespace)
@@ -955,9 +701,6 @@ class ModelTrainingDatasetLocationDetailsArgs:
     @property
     @pulumi.getter
     def bucket(self) -> pulumi.Input[str]:
-        """
-        Object storage bucket name
-        """
         return pulumi.get(self, "bucket")
 
     @bucket.setter
@@ -967,9 +710,6 @@ class ModelTrainingDatasetLocationDetailsArgs:
     @property
     @pulumi.getter(name="locationType")
     def location_type(self) -> pulumi.Input[str]:
-        """
-        Possible object storage location types
-        """
         return pulumi.get(self, "location_type")
 
     @location_type.setter
@@ -979,9 +719,6 @@ class ModelTrainingDatasetLocationDetailsArgs:
     @property
     @pulumi.getter
     def namespace(self) -> pulumi.Input[str]:
-        """
-        Object storage namespace
-        """
         return pulumi.get(self, "namespace")
 
     @namespace.setter
@@ -991,13 +728,6 @@ class ModelTrainingDatasetLocationDetailsArgs:
     @property
     @pulumi.getter(name="objectNames")
     def object_names(self) -> pulumi.Input[Sequence[pulumi.Input[str]]]:
-        """
-        Array of files which need to be processed in the bucket
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "object_names")
 
     @object_names.setter

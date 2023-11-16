@@ -16,71 +16,71 @@ namespace Pulumi.Oci.OspGateway.Outputs
         /// <summary>
         /// Credit card type.
         /// </summary>
-        public readonly string CreditCardType;
+        public readonly string? CreditCardType;
         /// <summary>
         /// The email address of the paypal user.
         /// </summary>
-        public readonly string EmailAddress;
+        public readonly string? EmailAddress;
         /// <summary>
         /// Agreement id for the paypal account.
         /// </summary>
-        public readonly string ExtBillingAgreementId;
+        public readonly string? ExtBillingAgreementId;
         /// <summary>
         /// First name of the paypal user.
         /// </summary>
-        public readonly string FirstName;
+        public readonly string? FirstName;
         /// <summary>
         /// Last four digits of the card.
         /// </summary>
-        public readonly string LastDigits;
+        public readonly string? LastDigits;
         /// <summary>
         /// Last name of the paypal user.
         /// </summary>
-        public readonly string LastName;
+        public readonly string? LastName;
         /// <summary>
         /// Name on the credit card.
         /// </summary>
-        public readonly string NameOnCard;
+        public readonly string? NameOnCard;
         /// <summary>
         /// Payment method
         /// </summary>
-        public readonly string PaymentMethod;
+        public readonly string? PaymentMethod;
         /// <summary>
         /// Expired date of the credit card.
         /// </summary>
-        public readonly string TimeExpiration;
+        public readonly string? TimeExpiration;
         /// <summary>
         /// Wallet instrument internal id.
         /// </summary>
-        public readonly string WalletInstrumentId;
+        public readonly string? WalletInstrumentId;
         /// <summary>
         /// Wallet transaction id.
         /// </summary>
-        public readonly string WalletTransactionId;
+        public readonly string? WalletTransactionId;
 
         [OutputConstructor]
         private GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentOptionResult(
-            string creditCardType,
+            string? creditCardType,
 
-            string emailAddress,
+            string? emailAddress,
 
-            string extBillingAgreementId,
+            string? extBillingAgreementId,
 
-            string firstName,
+            string? firstName,
 
-            string lastDigits,
+            string? lastDigits,
 
-            string lastName,
+            string? lastName,
 
-            string nameOnCard,
+            string? nameOnCard,
 
-            string paymentMethod,
+            string? paymentMethod,
 
-            string timeExpiration,
+            string? timeExpiration,
 
-            string walletInstrumentId,
+            string? walletInstrumentId,
 
-            string walletTransactionId)
+            string? walletTransactionId)
         {
             CreditCardType = creditCardType;
             EmailAddress = emailAddress;

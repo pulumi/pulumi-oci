@@ -6,6 +6,8 @@ package com.pulumi.oci.Database.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetPluggableDatabasePluggableDatabaseManagementConfig {
@@ -13,15 +15,15 @@ public final class GetPluggableDatabasePluggableDatabaseManagementConfig {
      * @return The status of the Pluggable Database Management service.
      * 
      */
-    private String managementStatus;
+    private @Nullable String managementStatus;
 
     private GetPluggableDatabasePluggableDatabaseManagementConfig() {}
     /**
      * @return The status of the Pluggable Database Management service.
      * 
      */
-    public String managementStatus() {
-        return this.managementStatus;
+    public Optional<String> managementStatus() {
+        return Optional.ofNullable(this.managementStatus);
     }
 
     public static Builder builder() {
@@ -33,7 +35,7 @@ public final class GetPluggableDatabasePluggableDatabaseManagementConfig {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String managementStatus;
+        private @Nullable String managementStatus;
         public Builder() {}
         public Builder(GetPluggableDatabasePluggableDatabaseManagementConfig defaults) {
     	      Objects.requireNonNull(defaults);
@@ -41,8 +43,8 @@ public final class GetPluggableDatabasePluggableDatabaseManagementConfig {
         }
 
         @CustomType.Setter
-        public Builder managementStatus(String managementStatus) {
-            this.managementStatus = Objects.requireNonNull(managementStatus);
+        public Builder managementStatus(@Nullable String managementStatus) {
+            this.managementStatus = managementStatus;
             return this;
         }
         public GetPluggableDatabasePluggableDatabaseManagementConfig build() {

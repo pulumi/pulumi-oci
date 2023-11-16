@@ -90,13 +90,13 @@ export interface GetOnpremConnectorsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly onPremConnectorId?: string;
     readonly onPremConnectorLifecycleState?: string;
     /**
      * The list of on_prem_connectors.
      */
-    readonly onPremConnectors: outputs.DataSafe.GetOnpremConnectorsOnPremConnector[];
+    readonly onPremConnectors?: outputs.DataSafe.GetOnpremConnectorsOnPremConnector[];
 }
 /**
  * This data source provides the list of On Prem Connectors in Oracle Cloud Infrastructure Data Safe service.

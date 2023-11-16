@@ -16,11 +16,11 @@ namespace Pulumi.Oci.HealthChecks.Outputs
         /// <summary>
         /// The time immediately after the vantage point finishes establishing the connection to the server to retrieve the resource.
         /// </summary>
-        public readonly double ConnectEnd;
+        public readonly double? ConnectEnd;
         /// <summary>
         /// The time immediately before the vantage point starts establishing the connection to the server to retrieve the resource.
         /// </summary>
-        public readonly double ConnectStart;
+        public readonly double? ConnectStart;
         /// <summary>
         /// TCP connection results.  All durations are in milliseconds.
         /// </summary>
@@ -32,19 +32,19 @@ namespace Pulumi.Oci.HealthChecks.Outputs
         /// <summary>
         /// The time immediately before the vantage point finishes the domain name lookup for the resource.
         /// </summary>
-        public readonly double DomainLookupEnd;
+        public readonly double? DomainLookupEnd;
         /// <summary>
         /// The time immediately before the vantage point starts the domain name lookup for the resource.
         /// </summary>
-        public readonly double DomainLookupStart;
+        public readonly double? DomainLookupStart;
         /// <summary>
         /// The total duration from start of request until response is fully consumed or the connection is closed.
         /// </summary>
-        public readonly double Duration;
+        public readonly double? Duration;
         /// <summary>
         /// The size, in octets, of the payload body prior to removing any applied content-codings.
         /// </summary>
-        public readonly int EncodedBodySize;
+        public readonly int? EncodedBodySize;
         /// <summary>
         /// The category of error if an error occurs executing the probe. The `errorMessage` field provides a message with the error details.
         /// * NONE - No error
@@ -53,117 +53,117 @@ namespace Pulumi.Oci.HealthChecks.Outputs
         /// * NETWORK - Network-related errors, for example a "network unreachable" error.
         /// * SYSTEM - Internal system errors.
         /// </summary>
-        public readonly string ErrorCategory;
+        public readonly string? ErrorCategory;
         /// <summary>
         /// The error information indicating why a probe execution failed.
         /// </summary>
-        public readonly string ErrorMessage;
+        public readonly string? ErrorMessage;
         /// <summary>
         /// The time immediately before the vantage point starts to fetch the resource.
         /// </summary>
-        public readonly double FetchStart;
+        public readonly double? FetchStart;
         /// <summary>
         /// True if the probe result is determined to be healthy based on probe type-specific criteria.  For HTTP probes, a probe result is considered healthy if the HTTP response code is greater than or equal to 200 and less than 300.
         /// </summary>
-        public readonly bool IsHealthy;
+        public readonly bool? IsHealthy;
         /// <summary>
         /// True if the probe did not complete before the configured `timeoutInSeconds` value.
         /// </summary>
-        public readonly bool IsTimedOut;
+        public readonly bool? IsTimedOut;
         /// <summary>
         /// A value identifying this specific probe result. The key is only unique within the results of its probe configuration. The key may be reused after 90 days.
         /// </summary>
-        public readonly string Key;
+        public readonly string? Key;
         /// <summary>
         /// The OCID of a monitor or on-demand probe.
         /// </summary>
-        public readonly string ProbeConfigurationId;
+        public readonly string? ProbeConfigurationId;
         /// <summary>
         /// The supported protocols available for HTTP probes.
         /// </summary>
-        public readonly string Protocol;
+        public readonly string? Protocol;
         /// <summary>
         /// The time immediately before the vantage point starts requesting the resource from the server.
         /// </summary>
-        public readonly double RequestStart;
+        public readonly double? RequestStart;
         /// <summary>
         /// The time immediately after the vantage point receives the last byte of the response or immediately before the transport connection is closed, whichever comes first.
         /// </summary>
-        public readonly double ResponseEnd;
+        public readonly double? ResponseEnd;
         /// <summary>
         /// The time immediately after the vantage point's HTTP parser receives the first byte of the response.
         /// </summary>
-        public readonly double ResponseStart;
+        public readonly double? ResponseStart;
         /// <summary>
         /// The time immediately before the vantage point starts the handshake process to secure the current connection.
         /// </summary>
-        public readonly double SecureConnectionStart;
+        public readonly double? SecureConnectionStart;
         /// <summary>
         /// The date and time the probe was executed, expressed in milliseconds since the POSIX epoch. This field is defined by the PerformanceResourceTiming interface of the W3C Resource Timing specification. For more information, see [Resource Timing](https://w3c.github.io/resource-timing/#sec-resource-timing).
         /// </summary>
-        public readonly double StartTime;
+        public readonly double? StartTime;
         /// <summary>
         /// The HTTP response status code.
         /// </summary>
-        public readonly int StatusCode;
+        public readonly int? StatusCode;
         /// <summary>
         /// Filters results that match the `target`.
         /// </summary>
-        public readonly string Target;
+        public readonly string? Target;
         /// <summary>
         /// The name of the vantage point that executed the probe.
         /// </summary>
-        public readonly string VantagePointName;
+        public readonly string? VantagePointName;
 
         [OutputConstructor]
         private GetHttpProbeResultsHttpProbeResultResult(
-            double connectEnd,
+            double? connectEnd,
 
-            double connectStart,
+            double? connectStart,
 
             ImmutableArray<Outputs.GetHttpProbeResultsHttpProbeResultConnectionResult> connections,
 
             ImmutableArray<Outputs.GetHttpProbeResultsHttpProbeResultDnResult> dns,
 
-            double domainLookupEnd,
+            double? domainLookupEnd,
 
-            double domainLookupStart,
+            double? domainLookupStart,
 
-            double duration,
+            double? duration,
 
-            int encodedBodySize,
+            int? encodedBodySize,
 
-            string errorCategory,
+            string? errorCategory,
 
-            string errorMessage,
+            string? errorMessage,
 
-            double fetchStart,
+            double? fetchStart,
 
-            bool isHealthy,
+            bool? isHealthy,
 
-            bool isTimedOut,
+            bool? isTimedOut,
 
-            string key,
+            string? key,
 
-            string probeConfigurationId,
+            string? probeConfigurationId,
 
-            string protocol,
+            string? protocol,
 
-            double requestStart,
+            double? requestStart,
 
-            double responseEnd,
+            double? responseEnd,
 
-            double responseStart,
+            double? responseStart,
 
-            double secureConnectionStart,
+            double? secureConnectionStart,
 
-            double startTime,
+            double? startTime,
 
-            int statusCode,
+            int? statusCode,
 
-            string target,
+            string? target,
 
-            string vantagePointName)
+            string? vantagePointName)
         {
             ConnectEnd = connectEnd;
             ConnectStart = connectStart;

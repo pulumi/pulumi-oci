@@ -193,27 +193,27 @@ namespace Pulumi.Oci.Identity
         /// <summary>
         /// Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
         /// </summary>
-        public readonly string CompartmentOcid;
+        public readonly string? CompartmentOcid;
         /// <summary>
         /// A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
         /// </summary>
-        public readonly bool DeleteInProgress;
+        public readonly bool? DeleteInProgress;
         /// <summary>
         /// Description
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
         /// </summary>
-        public readonly string DomainOcid;
+        public readonly string? DomainOcid;
         /// <summary>
         /// User credential expires on
         /// </summary>
-        public readonly string ExpiresOn;
+        public readonly string? ExpiresOn;
         /// <summary>
         /// Unique identifier for the SCIM Resource as defined by the Service Provider. Each representation of the Resource MUST include a non-empty id value. This identifier MUST be unique across the Service Provider's entire set of Resources. It MUST be a stable, non-reassignable identifier that does not change when the same Resource is returned in subsequent requests. The value of the id attribute is always issued by the Service Provider and MUST never be specified by the Service Consumer. bulkId: is a reserved keyword and MUST NOT be used in the unique identifier.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The User or App who created the Resource
         /// </summary>
@@ -226,7 +226,7 @@ namespace Pulumi.Oci.Identity
         /// <summary>
         /// The release number when the resource was upgraded.
         /// </summary>
-        public readonly string IdcsLastUpgradedInRelease;
+        public readonly string? IdcsLastUpgradedInRelease;
         /// <summary>
         /// Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
         /// </summary>
@@ -238,7 +238,7 @@ namespace Pulumi.Oci.Identity
         /// <summary>
         /// User's ocid
         /// </summary>
-        public readonly string Ocid;
+        public readonly string? Ocid;
         public readonly string? ResourceTypeSchemaVersion;
         /// <summary>
         /// REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
@@ -248,7 +248,7 @@ namespace Pulumi.Oci.Identity
         /// <summary>
         /// User credential status
         /// </summary>
-        public readonly string Status;
+        public readonly string? Status;
         /// <summary>
         /// A list of tags on this resource.
         /// </summary>
@@ -256,7 +256,7 @@ namespace Pulumi.Oci.Identity
         /// <summary>
         /// Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
         /// </summary>
-        public readonly string TenancyOcid;
+        public readonly string? TenancyOcid;
         /// <summary>
         /// Controls whether a user can update themselves or not via User related APIs
         /// </summary>
@@ -264,7 +264,7 @@ namespace Pulumi.Oci.Identity
         /// <summary>
         /// User name
         /// </summary>
-        public readonly string UserName;
+        public readonly string? UserName;
         /// <summary>
         /// User linked to smtp credential
         /// </summary>
@@ -278,17 +278,17 @@ namespace Pulumi.Oci.Identity
 
             string? authorization,
 
-            string compartmentOcid,
+            string? compartmentOcid,
 
-            bool deleteInProgress,
+            bool? deleteInProgress,
 
-            string description,
+            string? description,
 
-            string domainOcid,
+            string? domainOcid,
 
-            string expiresOn,
+            string? expiresOn,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetDomainsSmtpCredentialIdcsCreatedByResult> idcsCreatedBies,
 
@@ -296,13 +296,13 @@ namespace Pulumi.Oci.Identity
 
             ImmutableArray<Outputs.GetDomainsSmtpCredentialIdcsLastModifiedByResult> idcsLastModifiedBies,
 
-            string idcsLastUpgradedInRelease,
+            string? idcsLastUpgradedInRelease,
 
             ImmutableArray<string> idcsPreventedOperations,
 
             ImmutableArray<Outputs.GetDomainsSmtpCredentialMetaResult> metas,
 
-            string ocid,
+            string? ocid,
 
             string? resourceTypeSchemaVersion,
 
@@ -310,15 +310,15 @@ namespace Pulumi.Oci.Identity
 
             string smtpCredentialId,
 
-            string status,
+            string? status,
 
             ImmutableArray<Outputs.GetDomainsSmtpCredentialTagResult> tags,
 
-            string tenancyOcid,
+            string? tenancyOcid,
 
             ImmutableArray<Outputs.GetDomainsSmtpCredentialUrnietfparamsscimschemasoracleidcsextensionselfChangeUserResult> urnietfparamsscimschemasoracleidcsextensionselfChangeUsers,
 
-            string userName,
+            string? userName,
 
             ImmutableArray<Outputs.GetDomainsSmtpCredentialUserResult> users)
         {

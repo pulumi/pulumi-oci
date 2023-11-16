@@ -77,7 +77,7 @@ export interface GetFleetCryptoAnalysisResultsResult {
     /**
      * The list of crypto_analysis_result_collection.
      */
-    readonly cryptoAnalysisResultCollections: outputs.Jms.GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollection[];
+    readonly cryptoAnalysisResultCollections?: outputs.Jms.GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollection[];
     readonly filters?: outputs.Jms.GetFleetCryptoAnalysisResultsFilter[];
     /**
      * The fleet OCID.
@@ -86,7 +86,7 @@ export interface GetFleetCryptoAnalysisResultsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The managed instance OCID.
      */

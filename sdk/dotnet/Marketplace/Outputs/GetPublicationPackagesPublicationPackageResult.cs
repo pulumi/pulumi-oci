@@ -16,35 +16,35 @@ namespace Pulumi.Oci.Marketplace.Outputs
         /// <summary>
         /// The ID of the listing that the specified package belongs to.
         /// </summary>
-        public readonly string ListingId;
+        public readonly string? ListingId;
         /// <summary>
         /// A filter to return only packages that match the given package type exactly.
         /// </summary>
-        public readonly string PackageType;
+        public readonly string? PackageType;
         /// <summary>
         /// The version of the package. Package versions are unique within a listing.
         /// </summary>
-        public readonly string PackageVersion;
+        public readonly string? PackageVersion;
         /// <summary>
         /// The unique identifier for the package resource.
         /// </summary>
-        public readonly string ResourceId;
+        public readonly string? ResourceId;
         /// <summary>
         /// The date and time the publication package was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
 
         [OutputConstructor]
         private GetPublicationPackagesPublicationPackageResult(
-            string listingId,
+            string? listingId,
 
-            string packageType,
+            string? packageType,
 
-            string packageVersion,
+            string? packageVersion,
 
-            string resourceId,
+            string? resourceId,
 
-            string timeCreated)
+            string? timeCreated)
         {
             ListingId = listingId;
             PackageType = packageType;

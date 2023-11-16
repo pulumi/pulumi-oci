@@ -16,7 +16,7 @@ namespace Pulumi.Oci.AiLanguage.Outputs
         /// <summary>
         /// This information will define the test strategy different datasets for test and validation(optional) dataset.
         /// </summary>
-        public readonly string StrategyType;
+        public readonly string? StrategyType;
         /// <summary>
         /// Possible data set type
         /// </summary>
@@ -28,7 +28,7 @@ namespace Pulumi.Oci.AiLanguage.Outputs
 
         [OutputConstructor]
         private GetModelTestStrategyResult(
-            string strategyType,
+            string? strategyType,
 
             ImmutableArray<Outputs.GetModelTestStrategyTestingDatasetResult> testingDatasets,
 

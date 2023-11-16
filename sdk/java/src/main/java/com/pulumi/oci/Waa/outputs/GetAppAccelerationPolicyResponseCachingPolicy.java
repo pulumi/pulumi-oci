@@ -6,6 +6,8 @@ package com.pulumi.oci.Waa.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.Boolean;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAppAccelerationPolicyResponseCachingPolicy {
@@ -13,15 +15,15 @@ public final class GetAppAccelerationPolicyResponseCachingPolicy {
      * @return When false, responses will not be cached by the backend based on response headers.
      * 
      */
-    private Boolean isResponseHeaderBasedCachingEnabled;
+    private @Nullable Boolean isResponseHeaderBasedCachingEnabled;
 
     private GetAppAccelerationPolicyResponseCachingPolicy() {}
     /**
      * @return When false, responses will not be cached by the backend based on response headers.
      * 
      */
-    public Boolean isResponseHeaderBasedCachingEnabled() {
-        return this.isResponseHeaderBasedCachingEnabled;
+    public Optional<Boolean> isResponseHeaderBasedCachingEnabled() {
+        return Optional.ofNullable(this.isResponseHeaderBasedCachingEnabled);
     }
 
     public static Builder builder() {
@@ -33,7 +35,7 @@ public final class GetAppAccelerationPolicyResponseCachingPolicy {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Boolean isResponseHeaderBasedCachingEnabled;
+        private @Nullable Boolean isResponseHeaderBasedCachingEnabled;
         public Builder() {}
         public Builder(GetAppAccelerationPolicyResponseCachingPolicy defaults) {
     	      Objects.requireNonNull(defaults);
@@ -41,8 +43,8 @@ public final class GetAppAccelerationPolicyResponseCachingPolicy {
         }
 
         @CustomType.Setter
-        public Builder isResponseHeaderBasedCachingEnabled(Boolean isResponseHeaderBasedCachingEnabled) {
-            this.isResponseHeaderBasedCachingEnabled = Objects.requireNonNull(isResponseHeaderBasedCachingEnabled);
+        public Builder isResponseHeaderBasedCachingEnabled(@Nullable Boolean isResponseHeaderBasedCachingEnabled) {
+            this.isResponseHeaderBasedCachingEnabled = isResponseHeaderBasedCachingEnabled;
             return this;
         }
         public GetAppAccelerationPolicyResponseCachingPolicy build() {

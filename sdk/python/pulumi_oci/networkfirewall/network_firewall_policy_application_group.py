@@ -19,13 +19,6 @@ class NetworkFirewallPolicyApplicationGroupArgs:
                  name: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a NetworkFirewallPolicyApplicationGroup resource.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] apps: (Updatable) Collection of application names. The apps referenced in the application group must already be present in the policy before being used in the application group.
-        :param pulumi.Input[str] network_firewall_policy_id: Unique Network Firewall Policy identifier
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] name: Name of the application group.
         """
         pulumi.set(__self__, "apps", apps)
         pulumi.set(__self__, "network_firewall_policy_id", network_firewall_policy_id)
@@ -35,9 +28,6 @@ class NetworkFirewallPolicyApplicationGroupArgs:
     @property
     @pulumi.getter
     def apps(self) -> pulumi.Input[Sequence[pulumi.Input[str]]]:
-        """
-        (Updatable) Collection of application names. The apps referenced in the application group must already be present in the policy before being used in the application group.
-        """
         return pulumi.get(self, "apps")
 
     @apps.setter
@@ -47,13 +37,6 @@ class NetworkFirewallPolicyApplicationGroupArgs:
     @property
     @pulumi.getter(name="networkFirewallPolicyId")
     def network_firewall_policy_id(self) -> pulumi.Input[str]:
-        """
-        Unique Network Firewall Policy identifier
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "network_firewall_policy_id")
 
     @network_firewall_policy_id.setter
@@ -63,9 +46,6 @@ class NetworkFirewallPolicyApplicationGroupArgs:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        Name of the application group.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -83,15 +63,6 @@ class _NetworkFirewallPolicyApplicationGroupState:
                  total_apps: Optional[pulumi.Input[int]] = None):
         """
         Input properties used for looking up and filtering NetworkFirewallPolicyApplicationGroup resources.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] apps: (Updatable) Collection of application names. The apps referenced in the application group must already be present in the policy before being used in the application group.
-        :param pulumi.Input[str] name: Name of the application group.
-        :param pulumi.Input[str] network_firewall_policy_id: Unique Network Firewall Policy identifier
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] parent_resource_id: OCID of the Network Firewall Policy this application group belongs to.
-        :param pulumi.Input[int] total_apps: Count of total applications in the given application group.
         """
         if apps is not None:
             pulumi.set(__self__, "apps", apps)
@@ -107,9 +78,6 @@ class _NetworkFirewallPolicyApplicationGroupState:
     @property
     @pulumi.getter
     def apps(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) Collection of application names. The apps referenced in the application group must already be present in the policy before being used in the application group.
-        """
         return pulumi.get(self, "apps")
 
     @apps.setter
@@ -119,9 +87,6 @@ class _NetworkFirewallPolicyApplicationGroupState:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        Name of the application group.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -131,13 +96,6 @@ class _NetworkFirewallPolicyApplicationGroupState:
     @property
     @pulumi.getter(name="networkFirewallPolicyId")
     def network_firewall_policy_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        Unique Network Firewall Policy identifier
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "network_firewall_policy_id")
 
     @network_firewall_policy_id.setter
@@ -147,9 +105,6 @@ class _NetworkFirewallPolicyApplicationGroupState:
     @property
     @pulumi.getter(name="parentResourceId")
     def parent_resource_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        OCID of the Network Firewall Policy this application group belongs to.
-        """
         return pulumi.get(self, "parent_resource_id")
 
     @parent_resource_id.setter
@@ -159,9 +114,6 @@ class _NetworkFirewallPolicyApplicationGroupState:
     @property
     @pulumi.getter(name="totalApps")
     def total_apps(self) -> Optional[pulumi.Input[int]]:
-        """
-        Count of total applications in the given application group.
-        """
         return pulumi.get(self, "total_apps")
 
     @total_apps.setter
@@ -179,38 +131,9 @@ class NetworkFirewallPolicyApplicationGroup(pulumi.CustomResource):
                  network_firewall_policy_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Network Firewall Policy Application Group resource in Oracle Cloud Infrastructure Network Firewall service.
-
-        Creates a new ApplicationGroup inside the Network Firewall Policy.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_network_firewall_policy_application_group = oci.network_firewall.NetworkFirewallPolicyApplicationGroup("testNetworkFirewallPolicyApplicationGroup",
-            apps=var["network_firewall_policy_application_group_apps"],
-            network_firewall_policy_id=oci_network_firewall_network_firewall_policy["test_network_firewall_policy"]["id"])
-        ```
-
-        ## Import
-
-        NetworkFirewallPolicyApplicationGroups can be imported using the `name`, e.g.
-
-        ```sh
-         $ pulumi import oci:NetworkFirewall/networkFirewallPolicyApplicationGroup:NetworkFirewallPolicyApplicationGroup test_network_firewall_policy_application_group "networkFirewallPolicies/{networkFirewallPolicyId}/applicationGroups/{applicationGroupName}"
-        ```
-
+        Create a NetworkFirewallPolicyApplicationGroup resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] apps: (Updatable) Collection of application names. The apps referenced in the application group must already be present in the policy before being used in the application group.
-        :param pulumi.Input[str] name: Name of the application group.
-        :param pulumi.Input[str] network_firewall_policy_id: Unique Network Firewall Policy identifier
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -219,29 +142,7 @@ class NetworkFirewallPolicyApplicationGroup(pulumi.CustomResource):
                  args: NetworkFirewallPolicyApplicationGroupArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Network Firewall Policy Application Group resource in Oracle Cloud Infrastructure Network Firewall service.
-
-        Creates a new ApplicationGroup inside the Network Firewall Policy.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_network_firewall_policy_application_group = oci.network_firewall.NetworkFirewallPolicyApplicationGroup("testNetworkFirewallPolicyApplicationGroup",
-            apps=var["network_firewall_policy_application_group_apps"],
-            network_firewall_policy_id=oci_network_firewall_network_firewall_policy["test_network_firewall_policy"]["id"])
-        ```
-
-        ## Import
-
-        NetworkFirewallPolicyApplicationGroups can be imported using the `name`, e.g.
-
-        ```sh
-         $ pulumi import oci:NetworkFirewall/networkFirewallPolicyApplicationGroup:NetworkFirewallPolicyApplicationGroup test_network_firewall_policy_application_group "networkFirewallPolicies/{networkFirewallPolicyId}/applicationGroups/{applicationGroupName}"
-        ```
-
+        Create a NetworkFirewallPolicyApplicationGroup resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param NetworkFirewallPolicyApplicationGroupArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -300,15 +201,6 @@ class NetworkFirewallPolicyApplicationGroup(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] apps: (Updatable) Collection of application names. The apps referenced in the application group must already be present in the policy before being used in the application group.
-        :param pulumi.Input[str] name: Name of the application group.
-        :param pulumi.Input[str] network_firewall_policy_id: Unique Network Firewall Policy identifier
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] parent_resource_id: OCID of the Network Firewall Policy this application group belongs to.
-        :param pulumi.Input[int] total_apps: Count of total applications in the given application group.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -324,44 +216,25 @@ class NetworkFirewallPolicyApplicationGroup(pulumi.CustomResource):
     @property
     @pulumi.getter
     def apps(self) -> pulumi.Output[Sequence[str]]:
-        """
-        (Updatable) Collection of application names. The apps referenced in the application group must already be present in the policy before being used in the application group.
-        """
         return pulumi.get(self, "apps")
 
     @property
     @pulumi.getter
     def name(self) -> pulumi.Output[str]:
-        """
-        Name of the application group.
-        """
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="networkFirewallPolicyId")
     def network_firewall_policy_id(self) -> pulumi.Output[str]:
-        """
-        Unique Network Firewall Policy identifier
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "network_firewall_policy_id")
 
     @property
     @pulumi.getter(name="parentResourceId")
-    def parent_resource_id(self) -> pulumi.Output[str]:
-        """
-        OCID of the Network Firewall Policy this application group belongs to.
-        """
+    def parent_resource_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "parent_resource_id")
 
     @property
     @pulumi.getter(name="totalApps")
-    def total_apps(self) -> pulumi.Output[int]:
-        """
-        Count of total applications in the given application group.
-        """
+    def total_apps(self) -> pulumi.Output[Optional[int]]:
         return pulumi.get(self, "total_apps")
 

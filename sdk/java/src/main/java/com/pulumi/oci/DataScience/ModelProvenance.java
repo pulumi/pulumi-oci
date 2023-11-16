@@ -11,6 +11,7 @@ import com.pulumi.oci.DataScience.ModelProvenanceArgs;
 import com.pulumi.oci.DataScience.inputs.ModelProvenanceState;
 import com.pulumi.oci.Utilities;
 import java.lang.String;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -70,28 +71,28 @@ public class ModelProvenance extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="gitBranch", refs={String.class}, tree="[0]")
-    private Output<String> gitBranch;
+    private Output</* @Nullable */ String> gitBranch;
 
     /**
      * @return (Updatable) For model reproducibility purposes. Branch of the git repository associated with model training.
      * 
      */
-    public Output<String> gitBranch() {
-        return this.gitBranch;
+    public Output<Optional<String>> gitBranch() {
+        return Codegen.optional(this.gitBranch);
     }
     /**
      * (Updatable) For model reproducibility purposes. Commit ID of the git repository associated with model training.
      * 
      */
     @Export(name="gitCommit", refs={String.class}, tree="[0]")
-    private Output<String> gitCommit;
+    private Output</* @Nullable */ String> gitCommit;
 
     /**
      * @return (Updatable) For model reproducibility purposes. Commit ID of the git repository associated with model training.
      * 
      */
-    public Output<String> gitCommit() {
-        return this.gitCommit;
+    public Output<Optional<String>> gitCommit() {
+        return Codegen.optional(this.gitCommit);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model.
@@ -112,42 +113,42 @@ public class ModelProvenance extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="repositoryUrl", refs={String.class}, tree="[0]")
-    private Output<String> repositoryUrl;
+    private Output</* @Nullable */ String> repositoryUrl;
 
     /**
      * @return (Updatable) For model reproducibility purposes. URL of the git repository associated with model training.
      * 
      */
-    public Output<String> repositoryUrl() {
-        return this.repositoryUrl;
+    public Output<Optional<String>> repositoryUrl() {
+        return Codegen.optional(this.repositoryUrl);
     }
     /**
      * (Updatable) For model reproducibility purposes. Path to model artifacts.
      * 
      */
     @Export(name="scriptDir", refs={String.class}, tree="[0]")
-    private Output<String> scriptDir;
+    private Output</* @Nullable */ String> scriptDir;
 
     /**
      * @return (Updatable) For model reproducibility purposes. Path to model artifacts.
      * 
      */
-    public Output<String> scriptDir() {
-        return this.scriptDir;
+    public Output<Optional<String>> scriptDir() {
+        return Codegen.optional(this.scriptDir);
     }
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a training session(Job or NotebookSession) in which the model was trained. It is used for model reproducibility purposes.
      * 
      */
     @Export(name="trainingId", refs={String.class}, tree="[0]")
-    private Output<String> trainingId;
+    private Output</* @Nullable */ String> trainingId;
 
     /**
      * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a training session(Job or NotebookSession) in which the model was trained. It is used for model reproducibility purposes.
      * 
      */
-    public Output<String> trainingId() {
-        return this.trainingId;
+    public Output<Optional<String>> trainingId() {
+        return Codegen.optional(this.trainingId);
     }
     /**
      * (Updatable) For model reproducibility purposes. Path to the python script or notebook in which the model was trained.&#34;
@@ -157,7 +158,7 @@ public class ModelProvenance extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="trainingScript", refs={String.class}, tree="[0]")
-    private Output<String> trainingScript;
+    private Output</* @Nullable */ String> trainingScript;
 
     /**
      * @return (Updatable) For model reproducibility purposes. Path to the python script or notebook in which the model was trained.&#34;
@@ -166,8 +167,8 @@ public class ModelProvenance extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Output<String> trainingScript() {
-        return this.trainingScript;
+    public Output<Optional<String>> trainingScript() {
+        return Codegen.optional(this.trainingScript);
     }
 
     /**

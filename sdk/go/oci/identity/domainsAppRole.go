@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the App Role resource in Oracle Cloud Infrastructure Identity Domains service.
@@ -39,7 +38,7 @@ type DomainsAppRole struct {
 	// * returned: default
 	// * type: boolean
 	// * uniqueness: none
-	AdminRole pulumi.BoolOutput `pulumi:"adminRole"`
+	AdminRole pulumi.BoolPtrOutput `pulumi:"adminRole"`
 	// A unique identifier for the application that references this role.
 	//
 	// **SCIM++ Properties:**
@@ -68,7 +67,7 @@ type DomainsAppRole struct {
 	// * returned: default
 	// * type: boolean
 	// * uniqueness: none
-	AvailableToClients pulumi.BoolOutput `pulumi:"availableToClients"`
+	AvailableToClients pulumi.BoolPtrOutput `pulumi:"availableToClients"`
 	// If true, this AppRole can be granted to Groups.
 	//
 	// **SCIM++ Properties:**
@@ -79,7 +78,7 @@ type DomainsAppRole struct {
 	// * returned: default
 	// * type: boolean
 	// * uniqueness: none
-	AvailableToGroups pulumi.BoolOutput `pulumi:"availableToGroups"`
+	AvailableToGroups pulumi.BoolPtrOutput `pulumi:"availableToGroups"`
 	// If true, this AppRole can be granted to Users.
 	//
 	// **SCIM++ Properties:**
@@ -90,7 +89,7 @@ type DomainsAppRole struct {
 	// * returned: default
 	// * type: boolean
 	// * uniqueness: none
-	AvailableToUsers pulumi.BoolOutput `pulumi:"availableToUsers"`
+	AvailableToUsers pulumi.BoolPtrOutput `pulumi:"availableToUsers"`
 	// (Updatable) Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
 	//
 	// **SCIM++ Properties:**
@@ -102,7 +101,7 @@ type DomainsAppRole struct {
 	// * returned: default
 	// * type: string
 	// * uniqueness: none
-	CompartmentOcid pulumi.StringOutput `pulumi:"compartmentOcid"`
+	CompartmentOcid pulumi.StringPtrOutput `pulumi:"compartmentOcid"`
 	// (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
 	//
 	// **SCIM++ Properties:**
@@ -114,7 +113,7 @@ type DomainsAppRole struct {
 	// * returned: default
 	// * type: boolean
 	// * uniqueness: none
-	DeleteInProgress pulumi.BoolOutput `pulumi:"deleteInProgress"`
+	DeleteInProgress pulumi.BoolPtrOutput `pulumi:"deleteInProgress"`
 	// AppRole description
 	//
 	// **SCIM++ Properties:**
@@ -126,7 +125,7 @@ type DomainsAppRole struct {
 	// * returned: default
 	// * type: string
 	// * uniqueness: none
-	Description pulumi.StringOutput `pulumi:"description"`
+	Description pulumi.StringPtrOutput `pulumi:"description"`
 	// AppRole name
 	//
 	// **SCIM++ Properties:**
@@ -152,7 +151,7 @@ type DomainsAppRole struct {
 	// * returned: default
 	// * type: string
 	// * uniqueness: none
-	DomainOcid pulumi.StringOutput `pulumi:"domainOcid"`
+	DomainOcid pulumi.StringPtrOutput `pulumi:"domainOcid"`
 	// (Updatable) The User or App who created the Resource
 	//
 	// **SCIM++ Properties:**
@@ -186,7 +185,7 @@ type DomainsAppRole struct {
 	// * returned: request
 	// * type: string
 	// * uniqueness: none
-	IdcsLastUpgradedInRelease pulumi.StringOutput `pulumi:"idcsLastUpgradedInRelease"`
+	IdcsLastUpgradedInRelease pulumi.StringPtrOutput `pulumi:"idcsLastUpgradedInRelease"`
 	// (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
 	//
 	// **SCIM++ Properties:**
@@ -209,7 +208,7 @@ type DomainsAppRole struct {
 	// * returned: default
 	// * type: string
 	// * uniqueness: server
-	LegacyGroupName pulumi.StringOutput `pulumi:"legacyGroupName"`
+	LegacyGroupName pulumi.StringPtrOutput `pulumi:"legacyGroupName"`
 	// (Updatable) If true, indicates that this Oracle Identity Cloud Service AppRole can be granted to a delegated administrator whose scope is limited to users that are members of one or more groups.
 	//
 	// **Added In:** 19.2.1
@@ -222,7 +221,7 @@ type DomainsAppRole struct {
 	// * returned: default
 	// * type: boolean
 	// * uniqueness: none
-	LimitedToOneOrMoreGroups pulumi.BoolOutput `pulumi:"limitedToOneOrMoreGroups"`
+	LimitedToOneOrMoreGroups pulumi.BoolPtrOutput `pulumi:"limitedToOneOrMoreGroups"`
 	// (Updatable) AppRole localization name
 	//
 	// **Added In:** 2109090424
@@ -236,7 +235,7 @@ type DomainsAppRole struct {
 	// * returned: request
 	// * type: string
 	// * uniqueness: none
-	LocalizedDisplayName pulumi.StringOutput `pulumi:"localizedDisplayName"`
+	LocalizedDisplayName pulumi.StringPtrOutput `pulumi:"localizedDisplayName"`
 	// (Updatable) AppRole members - when requesting members attribute, it is recommended to use startIndex and count to return members in pages instead of in a single response, eg : #attributes=members[startIndex=1%26count=10]
 	//
 	// **SCIM++ Properties:**
@@ -274,7 +273,7 @@ type DomainsAppRole struct {
 	// * returned: default
 	// * type: string
 	// * uniqueness: global
-	Ocid pulumi.StringOutput `pulumi:"ocid"`
+	Ocid pulumi.StringPtrOutput `pulumi:"ocid"`
 	// If true, this AppRole is available automatically to every Oracle Identity Cloud Service User in this tenancy. There is no need to grant it to individual Users or Groups.
 	//
 	// **SCIM++ Properties:**
@@ -285,7 +284,7 @@ type DomainsAppRole struct {
 	// * returned: default
 	// * type: boolean
 	// * uniqueness: none
-	Public pulumi.BoolOutput `pulumi:"public"`
+	Public pulumi.BoolPtrOutput `pulumi:"public"`
 	// An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
 	ResourceTypeSchemaVersion pulumi.StringPtrOutput `pulumi:"resourceTypeSchemaVersion"`
 	// REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
@@ -323,7 +322,7 @@ type DomainsAppRole struct {
 	// * returned: default
 	// * type: string
 	// * uniqueness: none
-	TenancyOcid pulumi.StringOutput `pulumi:"tenancyOcid"`
+	TenancyOcid pulumi.StringPtrOutput `pulumi:"tenancyOcid"`
 	// (Updatable) AppRole unique name
 	//
 	// **SCIM++ Properties:**
@@ -337,7 +336,7 @@ type DomainsAppRole struct {
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	UniqueName pulumi.StringOutput `pulumi:"uniqueName"`
+	UniqueName pulumi.StringPtrOutput `pulumi:"uniqueName"`
 }
 
 // NewDomainsAppRole registers a new resource with the given unique name, arguments, and options.
@@ -1341,12 +1340,6 @@ func (i *DomainsAppRole) ToDomainsAppRoleOutputWithContext(ctx context.Context) 
 	return pulumi.ToOutputWithContext(ctx, i).(DomainsAppRoleOutput)
 }
 
-func (i *DomainsAppRole) ToOutput(ctx context.Context) pulumix.Output[*DomainsAppRole] {
-	return pulumix.Output[*DomainsAppRole]{
-		OutputState: i.ToDomainsAppRoleOutputWithContext(ctx).OutputState,
-	}
-}
-
 // DomainsAppRoleArrayInput is an input type that accepts DomainsAppRoleArray and DomainsAppRoleArrayOutput values.
 // You can construct a concrete instance of `DomainsAppRoleArrayInput` via:
 //
@@ -1370,12 +1363,6 @@ func (i DomainsAppRoleArray) ToDomainsAppRoleArrayOutput() DomainsAppRoleArrayOu
 
 func (i DomainsAppRoleArray) ToDomainsAppRoleArrayOutputWithContext(ctx context.Context) DomainsAppRoleArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(DomainsAppRoleArrayOutput)
-}
-
-func (i DomainsAppRoleArray) ToOutput(ctx context.Context) pulumix.Output[[]*DomainsAppRole] {
-	return pulumix.Output[[]*DomainsAppRole]{
-		OutputState: i.ToDomainsAppRoleArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // DomainsAppRoleMapInput is an input type that accepts DomainsAppRoleMap and DomainsAppRoleMapOutput values.
@@ -1403,12 +1390,6 @@ func (i DomainsAppRoleMap) ToDomainsAppRoleMapOutputWithContext(ctx context.Cont
 	return pulumi.ToOutputWithContext(ctx, i).(DomainsAppRoleMapOutput)
 }
 
-func (i DomainsAppRoleMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*DomainsAppRole] {
-	return pulumix.Output[map[string]*DomainsAppRole]{
-		OutputState: i.ToDomainsAppRoleMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DomainsAppRoleOutput struct{ *pulumi.OutputState }
 
 func (DomainsAppRoleOutput) ElementType() reflect.Type {
@@ -1423,12 +1404,6 @@ func (o DomainsAppRoleOutput) ToDomainsAppRoleOutputWithContext(ctx context.Cont
 	return o
 }
 
-func (o DomainsAppRoleOutput) ToOutput(ctx context.Context) pulumix.Output[*DomainsAppRole] {
-	return pulumix.Output[*DomainsAppRole]{
-		OutputState: o.OutputState,
-	}
-}
-
 // If true, the role provides administrative access privileges.
 //
 // **SCIM++ Properties:**
@@ -1439,8 +1414,8 @@ func (o DomainsAppRoleOutput) ToOutput(ctx context.Context) pulumix.Output[*Doma
 // * returned: default
 // * type: boolean
 // * uniqueness: none
-func (o DomainsAppRoleOutput) AdminRole() pulumi.BoolOutput {
-	return o.ApplyT(func(v *DomainsAppRole) pulumi.BoolOutput { return v.AdminRole }).(pulumi.BoolOutput)
+func (o DomainsAppRoleOutput) AdminRole() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DomainsAppRole) pulumi.BoolPtrOutput { return v.AdminRole }).(pulumi.BoolPtrOutput)
 }
 
 // A unique identifier for the application that references this role.
@@ -1483,8 +1458,8 @@ func (o DomainsAppRoleOutput) Authorization() pulumi.StringPtrOutput {
 // * returned: default
 // * type: boolean
 // * uniqueness: none
-func (o DomainsAppRoleOutput) AvailableToClients() pulumi.BoolOutput {
-	return o.ApplyT(func(v *DomainsAppRole) pulumi.BoolOutput { return v.AvailableToClients }).(pulumi.BoolOutput)
+func (o DomainsAppRoleOutput) AvailableToClients() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DomainsAppRole) pulumi.BoolPtrOutput { return v.AvailableToClients }).(pulumi.BoolPtrOutput)
 }
 
 // If true, this AppRole can be granted to Groups.
@@ -1497,8 +1472,8 @@ func (o DomainsAppRoleOutput) AvailableToClients() pulumi.BoolOutput {
 // * returned: default
 // * type: boolean
 // * uniqueness: none
-func (o DomainsAppRoleOutput) AvailableToGroups() pulumi.BoolOutput {
-	return o.ApplyT(func(v *DomainsAppRole) pulumi.BoolOutput { return v.AvailableToGroups }).(pulumi.BoolOutput)
+func (o DomainsAppRoleOutput) AvailableToGroups() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DomainsAppRole) pulumi.BoolPtrOutput { return v.AvailableToGroups }).(pulumi.BoolPtrOutput)
 }
 
 // If true, this AppRole can be granted to Users.
@@ -1511,8 +1486,8 @@ func (o DomainsAppRoleOutput) AvailableToGroups() pulumi.BoolOutput {
 // * returned: default
 // * type: boolean
 // * uniqueness: none
-func (o DomainsAppRoleOutput) AvailableToUsers() pulumi.BoolOutput {
-	return o.ApplyT(func(v *DomainsAppRole) pulumi.BoolOutput { return v.AvailableToUsers }).(pulumi.BoolOutput)
+func (o DomainsAppRoleOutput) AvailableToUsers() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DomainsAppRole) pulumi.BoolPtrOutput { return v.AvailableToUsers }).(pulumi.BoolPtrOutput)
 }
 
 // (Updatable) Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
@@ -1526,8 +1501,8 @@ func (o DomainsAppRoleOutput) AvailableToUsers() pulumi.BoolOutput {
 // * returned: default
 // * type: string
 // * uniqueness: none
-func (o DomainsAppRoleOutput) CompartmentOcid() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsAppRole) pulumi.StringOutput { return v.CompartmentOcid }).(pulumi.StringOutput)
+func (o DomainsAppRoleOutput) CompartmentOcid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsAppRole) pulumi.StringPtrOutput { return v.CompartmentOcid }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
@@ -1541,8 +1516,8 @@ func (o DomainsAppRoleOutput) CompartmentOcid() pulumi.StringOutput {
 // * returned: default
 // * type: boolean
 // * uniqueness: none
-func (o DomainsAppRoleOutput) DeleteInProgress() pulumi.BoolOutput {
-	return o.ApplyT(func(v *DomainsAppRole) pulumi.BoolOutput { return v.DeleteInProgress }).(pulumi.BoolOutput)
+func (o DomainsAppRoleOutput) DeleteInProgress() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DomainsAppRole) pulumi.BoolPtrOutput { return v.DeleteInProgress }).(pulumi.BoolPtrOutput)
 }
 
 // AppRole description
@@ -1556,8 +1531,8 @@ func (o DomainsAppRoleOutput) DeleteInProgress() pulumi.BoolOutput {
 // * returned: default
 // * type: string
 // * uniqueness: none
-func (o DomainsAppRoleOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsAppRole) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
+func (o DomainsAppRoleOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsAppRole) pulumi.StringPtrOutput { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // AppRole name
@@ -1588,8 +1563,8 @@ func (o DomainsAppRoleOutput) DisplayName() pulumi.StringOutput {
 // * returned: default
 // * type: string
 // * uniqueness: none
-func (o DomainsAppRoleOutput) DomainOcid() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsAppRole) pulumi.StringOutput { return v.DomainOcid }).(pulumi.StringOutput)
+func (o DomainsAppRoleOutput) DomainOcid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsAppRole) pulumi.StringPtrOutput { return v.DomainOcid }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The User or App who created the Resource
@@ -1634,8 +1609,8 @@ func (o DomainsAppRoleOutput) IdcsLastModifiedBies() DomainsAppRoleIdcsLastModif
 // * returned: request
 // * type: string
 // * uniqueness: none
-func (o DomainsAppRoleOutput) IdcsLastUpgradedInRelease() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsAppRole) pulumi.StringOutput { return v.IdcsLastUpgradedInRelease }).(pulumi.StringOutput)
+func (o DomainsAppRoleOutput) IdcsLastUpgradedInRelease() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsAppRole) pulumi.StringPtrOutput { return v.IdcsLastUpgradedInRelease }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
@@ -1663,8 +1638,8 @@ func (o DomainsAppRoleOutput) IdcsPreventedOperations() pulumi.StringArrayOutput
 // * returned: default
 // * type: string
 // * uniqueness: server
-func (o DomainsAppRoleOutput) LegacyGroupName() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsAppRole) pulumi.StringOutput { return v.LegacyGroupName }).(pulumi.StringOutput)
+func (o DomainsAppRoleOutput) LegacyGroupName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsAppRole) pulumi.StringPtrOutput { return v.LegacyGroupName }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) If true, indicates that this Oracle Identity Cloud Service AppRole can be granted to a delegated administrator whose scope is limited to users that are members of one or more groups.
@@ -1679,8 +1654,8 @@ func (o DomainsAppRoleOutput) LegacyGroupName() pulumi.StringOutput {
 // * returned: default
 // * type: boolean
 // * uniqueness: none
-func (o DomainsAppRoleOutput) LimitedToOneOrMoreGroups() pulumi.BoolOutput {
-	return o.ApplyT(func(v *DomainsAppRole) pulumi.BoolOutput { return v.LimitedToOneOrMoreGroups }).(pulumi.BoolOutput)
+func (o DomainsAppRoleOutput) LimitedToOneOrMoreGroups() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DomainsAppRole) pulumi.BoolPtrOutput { return v.LimitedToOneOrMoreGroups }).(pulumi.BoolPtrOutput)
 }
 
 // (Updatable) AppRole localization name
@@ -1696,8 +1671,8 @@ func (o DomainsAppRoleOutput) LimitedToOneOrMoreGroups() pulumi.BoolOutput {
 // * returned: request
 // * type: string
 // * uniqueness: none
-func (o DomainsAppRoleOutput) LocalizedDisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsAppRole) pulumi.StringOutput { return v.LocalizedDisplayName }).(pulumi.StringOutput)
+func (o DomainsAppRoleOutput) LocalizedDisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsAppRole) pulumi.StringPtrOutput { return v.LocalizedDisplayName }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) AppRole members - when requesting members attribute, it is recommended to use startIndex and count to return members in pages instead of in a single response, eg : #attributes=members[startIndex=1%26count=10]
@@ -1743,8 +1718,8 @@ func (o DomainsAppRoleOutput) Metas() DomainsAppRoleMetaArrayOutput {
 // * returned: default
 // * type: string
 // * uniqueness: global
-func (o DomainsAppRoleOutput) Ocid() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsAppRole) pulumi.StringOutput { return v.Ocid }).(pulumi.StringOutput)
+func (o DomainsAppRoleOutput) Ocid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsAppRole) pulumi.StringPtrOutput { return v.Ocid }).(pulumi.StringPtrOutput)
 }
 
 // If true, this AppRole is available automatically to every Oracle Identity Cloud Service User in this tenancy. There is no need to grant it to individual Users or Groups.
@@ -1757,8 +1732,8 @@ func (o DomainsAppRoleOutput) Ocid() pulumi.StringOutput {
 // * returned: default
 // * type: boolean
 // * uniqueness: none
-func (o DomainsAppRoleOutput) Public() pulumi.BoolOutput {
-	return o.ApplyT(func(v *DomainsAppRole) pulumi.BoolOutput { return v.Public }).(pulumi.BoolOutput)
+func (o DomainsAppRoleOutput) Public() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DomainsAppRole) pulumi.BoolPtrOutput { return v.Public }).(pulumi.BoolPtrOutput)
 }
 
 // An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
@@ -1807,8 +1782,8 @@ func (o DomainsAppRoleOutput) Tags() DomainsAppRoleTagArrayOutput {
 // * returned: default
 // * type: string
 // * uniqueness: none
-func (o DomainsAppRoleOutput) TenancyOcid() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsAppRole) pulumi.StringOutput { return v.TenancyOcid }).(pulumi.StringOutput)
+func (o DomainsAppRoleOutput) TenancyOcid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsAppRole) pulumi.StringPtrOutput { return v.TenancyOcid }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) AppRole unique name
@@ -1824,8 +1799,8 @@ func (o DomainsAppRoleOutput) TenancyOcid() pulumi.StringOutput {
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-func (o DomainsAppRoleOutput) UniqueName() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsAppRole) pulumi.StringOutput { return v.UniqueName }).(pulumi.StringOutput)
+func (o DomainsAppRoleOutput) UniqueName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsAppRole) pulumi.StringPtrOutput { return v.UniqueName }).(pulumi.StringPtrOutput)
 }
 
 type DomainsAppRoleArrayOutput struct{ *pulumi.OutputState }
@@ -1840,12 +1815,6 @@ func (o DomainsAppRoleArrayOutput) ToDomainsAppRoleArrayOutput() DomainsAppRoleA
 
 func (o DomainsAppRoleArrayOutput) ToDomainsAppRoleArrayOutputWithContext(ctx context.Context) DomainsAppRoleArrayOutput {
 	return o
-}
-
-func (o DomainsAppRoleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*DomainsAppRole] {
-	return pulumix.Output[[]*DomainsAppRole]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DomainsAppRoleArrayOutput) Index(i pulumi.IntInput) DomainsAppRoleOutput {
@@ -1866,12 +1835,6 @@ func (o DomainsAppRoleMapOutput) ToDomainsAppRoleMapOutput() DomainsAppRoleMapOu
 
 func (o DomainsAppRoleMapOutput) ToDomainsAppRoleMapOutputWithContext(ctx context.Context) DomainsAppRoleMapOutput {
 	return o
-}
-
-func (o DomainsAppRoleMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*DomainsAppRole] {
-	return pulumix.Output[map[string]*DomainsAppRole]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DomainsAppRoleMapOutput) MapIndex(k pulumi.StringInput) DomainsAppRoleOutput {

@@ -75,11 +75,11 @@ export interface GetOdaPrivateEndpointsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The list of oda_private_endpoint_collection.
      */
-    readonly odaPrivateEndpointCollections: outputs.Oda.GetOdaPrivateEndpointsOdaPrivateEndpointCollection[];
+    readonly odaPrivateEndpointCollections?: outputs.Oda.GetOdaPrivateEndpointsOdaPrivateEndpointCollection[];
     /**
      * The current state of the ODA private endpoint.
      */

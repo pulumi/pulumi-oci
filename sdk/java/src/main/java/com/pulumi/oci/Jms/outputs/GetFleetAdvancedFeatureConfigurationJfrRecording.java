@@ -6,6 +6,8 @@ package com.pulumi.oci.Jms.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.Boolean;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetFleetAdvancedFeatureConfigurationJfrRecording {
@@ -13,15 +15,15 @@ public final class GetFleetAdvancedFeatureConfigurationJfrRecording {
      * @return PerformanceTuningAnalysis flag to store enabled or disabled status.
      * 
      */
-    private Boolean isEnabled;
+    private @Nullable Boolean isEnabled;
 
     private GetFleetAdvancedFeatureConfigurationJfrRecording() {}
     /**
      * @return PerformanceTuningAnalysis flag to store enabled or disabled status.
      * 
      */
-    public Boolean isEnabled() {
-        return this.isEnabled;
+    public Optional<Boolean> isEnabled() {
+        return Optional.ofNullable(this.isEnabled);
     }
 
     public static Builder builder() {
@@ -33,7 +35,7 @@ public final class GetFleetAdvancedFeatureConfigurationJfrRecording {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Boolean isEnabled;
+        private @Nullable Boolean isEnabled;
         public Builder() {}
         public Builder(GetFleetAdvancedFeatureConfigurationJfrRecording defaults) {
     	      Objects.requireNonNull(defaults);
@@ -41,8 +43,8 @@ public final class GetFleetAdvancedFeatureConfigurationJfrRecording {
         }
 
         @CustomType.Setter
-        public Builder isEnabled(Boolean isEnabled) {
-            this.isEnabled = Objects.requireNonNull(isEnabled);
+        public Builder isEnabled(@Nullable Boolean isEnabled) {
+            this.isEnabled = isEnabled;
             return this;
         }
         public GetFleetAdvancedFeatureConfigurationJfrRecording build() {

@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetNotebookSessionShapesNotebookSessionShape {
@@ -14,51 +16,51 @@ public final class GetNotebookSessionShapesNotebookSessionShape {
      * @return The number of cores associated with this notebook session shape.
      * 
      */
-    private Integer coreCount;
+    private @Nullable Integer coreCount;
     /**
      * @return The amount of memory in GBs associated with this notebook session shape.
      * 
      */
-    private Integer memoryInGbs;
+    private @Nullable Integer memoryInGbs;
     /**
      * @return The name of the notebook session shape.
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return The family that the compute shape belongs to.
      * 
      */
-    private String shapeSeries;
+    private @Nullable String shapeSeries;
 
     private GetNotebookSessionShapesNotebookSessionShape() {}
     /**
      * @return The number of cores associated with this notebook session shape.
      * 
      */
-    public Integer coreCount() {
-        return this.coreCount;
+    public Optional<Integer> coreCount() {
+        return Optional.ofNullable(this.coreCount);
     }
     /**
      * @return The amount of memory in GBs associated with this notebook session shape.
      * 
      */
-    public Integer memoryInGbs() {
-        return this.memoryInGbs;
+    public Optional<Integer> memoryInGbs() {
+        return Optional.ofNullable(this.memoryInGbs);
     }
     /**
      * @return The name of the notebook session shape.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return The family that the compute shape belongs to.
      * 
      */
-    public String shapeSeries() {
-        return this.shapeSeries;
+    public Optional<String> shapeSeries() {
+        return Optional.ofNullable(this.shapeSeries);
     }
 
     public static Builder builder() {
@@ -70,10 +72,10 @@ public final class GetNotebookSessionShapesNotebookSessionShape {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Integer coreCount;
-        private Integer memoryInGbs;
-        private String name;
-        private String shapeSeries;
+        private @Nullable Integer coreCount;
+        private @Nullable Integer memoryInGbs;
+        private @Nullable String name;
+        private @Nullable String shapeSeries;
         public Builder() {}
         public Builder(GetNotebookSessionShapesNotebookSessionShape defaults) {
     	      Objects.requireNonNull(defaults);
@@ -84,23 +86,23 @@ public final class GetNotebookSessionShapesNotebookSessionShape {
         }
 
         @CustomType.Setter
-        public Builder coreCount(Integer coreCount) {
-            this.coreCount = Objects.requireNonNull(coreCount);
+        public Builder coreCount(@Nullable Integer coreCount) {
+            this.coreCount = coreCount;
             return this;
         }
         @CustomType.Setter
-        public Builder memoryInGbs(Integer memoryInGbs) {
-            this.memoryInGbs = Objects.requireNonNull(memoryInGbs);
+        public Builder memoryInGbs(@Nullable Integer memoryInGbs) {
+            this.memoryInGbs = memoryInGbs;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder shapeSeries(String shapeSeries) {
-            this.shapeSeries = Objects.requireNonNull(shapeSeries);
+        public Builder shapeSeries(@Nullable String shapeSeries) {
+            this.shapeSeries = shapeSeries;
             return this;
         }
         public GetNotebookSessionShapesNotebookSessionShape build() {

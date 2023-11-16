@@ -65,13 +65,13 @@ namespace Pulumi.Oci.Core
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         /// </summary>
         [Output("displayName")]
-        public Output<string> DisplayName { get; private set; } = null!;
+        public Output<string?> DisplayName { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG the RPC belongs to.
@@ -83,19 +83,19 @@ namespace Pulumi.Oci.Core
         /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// Whether the VCN at the other end of the peering is in a different tenancy.  Example: `false`
         /// </summary>
         [Output("isCrossTenancyPeering")]
-        public Output<bool> IsCrossTenancyPeering { get; private set; } = null!;
+        public Output<bool?> IsCrossTenancyPeering { get; private set; } = null!;
 
         /// <summary>
         /// The OCID of the RPC you want to peer with.
         /// </summary>
         [Output("peerId")]
-        public Output<string> PeerId { get; private set; } = null!;
+        public Output<string?> PeerId { get; private set; } = null!;
 
         /// <summary>
         /// The name of the region that contains the RPC you want to peer with.  Example: `us-ashburn-1`
@@ -105,31 +105,31 @@ namespace Pulumi.Oci.Core
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("peerRegionName")]
-        public Output<string> PeerRegionName { get; private set; } = null!;
+        public Output<string?> PeerRegionName { get; private set; } = null!;
 
         /// <summary>
         /// If this RPC is peered, this value is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the other RPC's tenancy.
         /// </summary>
         [Output("peerTenancyId")]
-        public Output<string> PeerTenancyId { get; private set; } = null!;
+        public Output<string?> PeerTenancyId { get; private set; } = null!;
 
         /// <summary>
         /// Whether the RPC is peered with another RPC. `NEW` means the RPC has not yet been peered. `PENDING` means the peering is being established. `REVOKED` means the RPC at the other end of the peering has been deleted.
         /// </summary>
         [Output("peeringStatus")]
-        public Output<string> PeeringStatus { get; private set; } = null!;
+        public Output<string?> PeeringStatus { get; private set; } = null!;
 
         /// <summary>
         /// The RPC's current lifecycle state.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the RPC was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
 
         /// <summary>

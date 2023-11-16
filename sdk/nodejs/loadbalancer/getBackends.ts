@@ -55,13 +55,13 @@ export interface GetBackendsResult {
     /**
      * The list of backends.
      */
-    readonly backends: outputs.LoadBalancer.GetBackendsBackend[];
+    readonly backends?: outputs.LoadBalancer.GetBackendsBackend[];
     readonly backendsetName: string;
     readonly filters?: outputs.LoadBalancer.GetBackendsFilter[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly loadBalancerId: string;
 }
 /**

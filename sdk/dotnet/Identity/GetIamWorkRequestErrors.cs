@@ -140,7 +140,7 @@ namespace Pulumi.Oci.Identity
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
 
         [OutputConstructor]
         private GetIamWorkRequestErrorsResult(
@@ -150,7 +150,7 @@ namespace Pulumi.Oci.Identity
 
             string iamWorkRequestId,
 
-            string id)
+            string? id)
         {
             Filters = filters;
             IamWorkRequestErrors = iamWorkRequestErrors;

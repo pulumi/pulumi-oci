@@ -8,6 +8,8 @@ import com.pulumi.oci.Mysql.outputs.GetMysqlVersionVersionVersion;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetMysqlVersionVersion {
@@ -15,27 +17,27 @@ public final class GetMysqlVersionVersion {
      * @return A descriptive summary of a group of versions.
      * 
      */
-    private String versionFamily;
+    private @Nullable String versionFamily;
     /**
      * @return The list of supported MySQL Versions.
      * 
      */
-    private List<GetMysqlVersionVersionVersion> versions;
+    private @Nullable List<GetMysqlVersionVersionVersion> versions;
 
     private GetMysqlVersionVersion() {}
     /**
      * @return A descriptive summary of a group of versions.
      * 
      */
-    public String versionFamily() {
-        return this.versionFamily;
+    public Optional<String> versionFamily() {
+        return Optional.ofNullable(this.versionFamily);
     }
     /**
      * @return The list of supported MySQL Versions.
      * 
      */
     public List<GetMysqlVersionVersionVersion> versions() {
-        return this.versions;
+        return this.versions == null ? List.of() : this.versions;
     }
 
     public static Builder builder() {
@@ -47,8 +49,8 @@ public final class GetMysqlVersionVersion {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String versionFamily;
-        private List<GetMysqlVersionVersionVersion> versions;
+        private @Nullable String versionFamily;
+        private @Nullable List<GetMysqlVersionVersionVersion> versions;
         public Builder() {}
         public Builder(GetMysqlVersionVersion defaults) {
     	      Objects.requireNonNull(defaults);
@@ -57,13 +59,13 @@ public final class GetMysqlVersionVersion {
         }
 
         @CustomType.Setter
-        public Builder versionFamily(String versionFamily) {
-            this.versionFamily = Objects.requireNonNull(versionFamily);
+        public Builder versionFamily(@Nullable String versionFamily) {
+            this.versionFamily = versionFamily;
             return this;
         }
         @CustomType.Setter
-        public Builder versions(List<GetMysqlVersionVersionVersion> versions) {
-            this.versions = Objects.requireNonNull(versions);
+        public Builder versions(@Nullable List<GetMysqlVersionVersionVersion> versions) {
+            this.versions = versions;
             return this;
         }
         public Builder versions(GetMysqlVersionVersionVersion... versions) {

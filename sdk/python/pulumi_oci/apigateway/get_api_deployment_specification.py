@@ -46,7 +46,7 @@ class GetApiDeploymentSpecificationResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -54,26 +54,17 @@ class GetApiDeploymentSpecificationResult:
 
     @property
     @pulumi.getter(name="loggingPolicies")
-    def logging_policies(self) -> Sequence['outputs.GetApiDeploymentSpecificationLoggingPolicyResult']:
-        """
-        Policies controlling the pushing of logs to Oracle Cloud Infrastructure Public Logging.
-        """
+    def logging_policies(self) -> Optional[Sequence['outputs.GetApiDeploymentSpecificationLoggingPolicyResult']]:
         return pulumi.get(self, "logging_policies")
 
     @property
     @pulumi.getter(name="requestPolicies")
-    def request_policies(self) -> Sequence['outputs.GetApiDeploymentSpecificationRequestPolicyResult']:
-        """
-        Behavior applied to any requests received by the API on this route.
-        """
+    def request_policies(self) -> Optional[Sequence['outputs.GetApiDeploymentSpecificationRequestPolicyResult']]:
         return pulumi.get(self, "request_policies")
 
     @property
     @pulumi.getter
-    def routes(self) -> Sequence['outputs.GetApiDeploymentSpecificationRouteResult']:
-        """
-        A list of routes that this API exposes.
-        """
+    def routes(self) -> Optional[Sequence['outputs.GetApiDeploymentSpecificationRouteResult']]:
         return pulumi.get(self, "routes")
 
 
@@ -93,21 +84,7 @@ class AwaitableGetApiDeploymentSpecificationResult(GetApiDeploymentSpecification
 def get_api_deployment_specification(api_id: Optional[str] = None,
                                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetApiDeploymentSpecificationResult:
     """
-    This data source provides details about a specific Api Deployment Specification resource in Oracle Cloud Infrastructure API Gateway service.
-
-    Gets an API Deployment specification by identifier.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_api_deployment_specification = oci.ApiGateway.get_api_deployment_specification(api_id=oci_apigateway_api["test_api"]["id"])
-    ```
-
-
-    :param str api_id: The ocid of the API.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['apiId'] = api_id
@@ -126,20 +103,6 @@ def get_api_deployment_specification(api_id: Optional[str] = None,
 def get_api_deployment_specification_output(api_id: Optional[pulumi.Input[str]] = None,
                                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetApiDeploymentSpecificationResult]:
     """
-    This data source provides details about a specific Api Deployment Specification resource in Oracle Cloud Infrastructure API Gateway service.
-
-    Gets an API Deployment specification by identifier.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_api_deployment_specification = oci.ApiGateway.get_api_deployment_specification(api_id=oci_apigateway_api["test_api"]["id"])
-    ```
-
-
-    :param str api_id: The ocid of the API.
+    Use this data source to access information about an existing resource.
     """
     ...

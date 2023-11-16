@@ -86,14 +86,14 @@ public class Rrset extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="compartmentId", refs={String.class}, tree="[0]")
-    private Output<String> compartmentId;
+    private Output</* @Nullable */ String> compartmentId;
 
     /**
      * @return (Updatable) The OCID of the compartment the resource belongs to.
      * 
      */
-    public Output<String> compartmentId() {
-        return this.compartmentId;
+    public Output<Optional<String>> compartmentId() {
+        return Codegen.optional(this.compartmentId);
     }
     /**
      * The fully qualified domain name where the record can be located.
@@ -115,15 +115,15 @@ public class Rrset extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="items", refs={List.class,RrsetItem.class}, tree="[0,1]")
-    private Output<List<RrsetItem>> items;
+    private Output</* @Nullable */ List<RrsetItem>> items;
 
     /**
      * @return (Updatable)
      * **NOTE** Omitting `items` at time of create, will delete any existing records in the RRSet
      * 
      */
-    public Output<List<RrsetItem>> items() {
-        return this.items;
+    public Output<Optional<List<RrsetItem>>> items() {
+        return Codegen.optional(this.items);
     }
     /**
      * The type of the target RRSet within the target zone.

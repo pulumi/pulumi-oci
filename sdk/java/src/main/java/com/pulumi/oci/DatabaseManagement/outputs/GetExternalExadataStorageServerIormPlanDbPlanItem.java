@@ -8,6 +8,8 @@ import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetExternalExadataStorageServerIormPlanDbPlanItem {
@@ -15,206 +17,206 @@ public final class GetExternalExadataStorageServerIormPlanDbPlanItem {
      * @return The resource allocation as a percentage (0-100) within the level.
      * 
      */
-    private Integer allocation;
+    private @Nullable Integer allocation;
     /**
      * @return Starting with Oracle Exadata System Software release 19.1.0, you can use the asmcluster attribute to distinguish between databases with the same name running in different Oracle ASM clusters.
      * 
      */
-    private String asmCluster;
+    private @Nullable String asmCluster;
     /**
      * @return Defines a soft limit for space usage in Exadata Smart Flash Cache. If the cache is not full, the limit can be exceeded. You specify the value for flashcachelimit in bytes. You can also use the suffixes M (megabytes), G (gigabytes), or T (terabytes) to specify larger values. For example, 300M, 150G, or 1T. The value for flashcachelimit must be at least 4 MB. The flashcachelimit and flashcachesize attributes cannot be specified in the same directive. The value for flashcachelimit cannot be smaller than flashcachemin, if it is specified.
      * 
      */
-    private String flashCacheLimit;
+    private @Nullable String flashCacheLimit;
     /**
      * @return Specifies a minimum guaranteed space allocation in Exadata Smart Flash Cache. You specify the value for flashcachemin in bytes. You can also use the suffixes M (megabytes), G (gigabytes), or T (terabytes) to specify larger values. For example, 300M, 150G, or 1T. The value for flashcachemin must be at least 4 MB. In any plan, the sum of all flashcachemin values cannot exceed the size of Exadata Smart Flash Cache. If flashcachelimit is specified, then the value for flashcachemin cannot exceed flashcachelimit. If flashcachesize is specified, then the value for flashcachemin cannot exceed flashcachesize.
      * 
      */
-    private String flashCacheMin;
+    private @Nullable String flashCacheMin;
     /**
      * @return Defines a hard limit for space usage in Exadata Smart Flash Cache. The limit cannot be exceeded, even if the cache is not full. In an IORM plan, if the size of Exadata Smart Flash Cache can accommodate all of the flashcachemin and flashcachesize allocations, then each flashcachesize definition represents a guaranteed space allocation. However, starting with Oracle Exadata System Software release 19.2.0 you can use the flashcachesize attribute to over-provision space in Exadata Smart Flash Cache. Consequently, if the size of Exadata Smart Flash Cache cannot accommodate all of the flashcachemin and flashcachesize allocations, then only flashcachemin is guaranteed.
      * 
      */
-    private String flashCacheSize;
+    private @Nullable String flashCacheSize;
     /**
      * @return Controls use of Exadata Smart Flash Cache by a database. This ensures that cache space is reserved for mission-critical databases. flashcache=off is invalid in a directive that contains the flashcachemin, flashcachelimit, or flashcachesize attributes.
      * 
      */
-    private Boolean isFlashCacheOn;
+    private @Nullable Boolean isFlashCacheOn;
     /**
      * @return Controls use of Exadata Smart Flash Log by a database. This ensures that Exadata Smart Flash Log is reserved for mission-critical databases.
      * 
      */
-    private Boolean isFlashLogOn;
+    private @Nullable Boolean isFlashLogOn;
     /**
      * @return Controls use of the persistent memory (PMEM) cache by a database. This ensures that cache space is reserved for mission-critical databases. pmemcache=off is invalid in a directive that contains the pmemcachemin, pmemcachelimit, or pmemcachesize attributes.
      * 
      */
-    private Boolean isPmemCacheOn;
+    private @Nullable Boolean isPmemCacheOn;
     /**
      * @return Controls use of persistent memory logging (PMEM log) by a database. This ensures that PMEM log is reserved for mission-critical databases.
      * 
      */
-    private Boolean isPmemLogOn;
+    private @Nullable Boolean isPmemLogOn;
     /**
      * @return The allocation level. Valid values are from 1 to 8. Resources are allocated to level 1 first, and then remaining resources are allocated to level 2, and so on.
      * 
      */
-    private Integer level;
-    private Integer limit;
+    private @Nullable Integer level;
+    private @Nullable Integer limit;
     /**
      * @return The name of a database or a profile.
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return Defines a soft limit for space usage in the persistent memory (PMEM) cache. If the cache is not full, the limit can be exceeded. You specify the value for pmemcachelimit in bytes. You can also use the suffixes M (megabytes), G (gigabytes), or T (terabytes) to specify larger values. For example, 300M, 150G, or 1T. The value for pmemcachelimit must be at least 4 MB. The pmemcachelimit and pmemcachesize attributes cannot be specified in the same directive. The value for pmemcachelimit cannot be smaller than pmemcachemin, if it is specified.
      * 
      */
-    private String pmemCacheLimit;
+    private @Nullable String pmemCacheLimit;
     /**
      * @return Specifies a minimum guaranteed space allocation in the persistent memory (PMEM) cache.
      * 
      */
-    private String pmemCacheMin;
+    private @Nullable String pmemCacheMin;
     /**
      * @return Defines a hard limit for space usage in the persistent memory (PMEM) cache. The limit cannot be exceeded, even if the cache is not full. In an IORM plan, if the size of the PMEM cache can accommodate all of the pmemcachemin and pmemcachesize allocations, then each pmemcachesize definition represents a guaranteed space allocation. However, you can use the pmemcachesize attribute to over-provision space in the PMEM cache. Consequently, if the PMEM cache size cannot accommodate all of the pmemcachemin and pmemcachesize allocations, then only pmemcachemin is guaranteed.
      * 
      */
-    private String pmemCacheSize;
+    private @Nullable String pmemCacheSize;
     /**
      * @return Enables you to specify different plan directives based on the Oracle Data Guard database role.
      * 
      */
-    private String role;
+    private @Nullable String role;
     /**
      * @return The relative priority of a database in the database plan. A higher share value implies higher priority and more access to the I/O resources. Use either share or (level, allocation). All plan directives in a database plan should use the same setting. Share-based resource allocation is the recommended method for a database plan.
      * 
      */
-    private Integer share;
+    private @Nullable Integer share;
     /**
      * @return Enables you to create a profile or template, to ease management and configuration of resource plans in environments with many databases.
      * * type=database: Specifies a directive that applies to a specific database. If type in not specified, then the directive defaults to the database type.
      * * type=profile: Specifies a directive that applies to a profile rather than a specific database.
      * 
      */
-    private String type;
+    private @Nullable String type;
 
     private GetExternalExadataStorageServerIormPlanDbPlanItem() {}
     /**
      * @return The resource allocation as a percentage (0-100) within the level.
      * 
      */
-    public Integer allocation() {
-        return this.allocation;
+    public Optional<Integer> allocation() {
+        return Optional.ofNullable(this.allocation);
     }
     /**
      * @return Starting with Oracle Exadata System Software release 19.1.0, you can use the asmcluster attribute to distinguish between databases with the same name running in different Oracle ASM clusters.
      * 
      */
-    public String asmCluster() {
-        return this.asmCluster;
+    public Optional<String> asmCluster() {
+        return Optional.ofNullable(this.asmCluster);
     }
     /**
      * @return Defines a soft limit for space usage in Exadata Smart Flash Cache. If the cache is not full, the limit can be exceeded. You specify the value for flashcachelimit in bytes. You can also use the suffixes M (megabytes), G (gigabytes), or T (terabytes) to specify larger values. For example, 300M, 150G, or 1T. The value for flashcachelimit must be at least 4 MB. The flashcachelimit and flashcachesize attributes cannot be specified in the same directive. The value for flashcachelimit cannot be smaller than flashcachemin, if it is specified.
      * 
      */
-    public String flashCacheLimit() {
-        return this.flashCacheLimit;
+    public Optional<String> flashCacheLimit() {
+        return Optional.ofNullable(this.flashCacheLimit);
     }
     /**
      * @return Specifies a minimum guaranteed space allocation in Exadata Smart Flash Cache. You specify the value for flashcachemin in bytes. You can also use the suffixes M (megabytes), G (gigabytes), or T (terabytes) to specify larger values. For example, 300M, 150G, or 1T. The value for flashcachemin must be at least 4 MB. In any plan, the sum of all flashcachemin values cannot exceed the size of Exadata Smart Flash Cache. If flashcachelimit is specified, then the value for flashcachemin cannot exceed flashcachelimit. If flashcachesize is specified, then the value for flashcachemin cannot exceed flashcachesize.
      * 
      */
-    public String flashCacheMin() {
-        return this.flashCacheMin;
+    public Optional<String> flashCacheMin() {
+        return Optional.ofNullable(this.flashCacheMin);
     }
     /**
      * @return Defines a hard limit for space usage in Exadata Smart Flash Cache. The limit cannot be exceeded, even if the cache is not full. In an IORM plan, if the size of Exadata Smart Flash Cache can accommodate all of the flashcachemin and flashcachesize allocations, then each flashcachesize definition represents a guaranteed space allocation. However, starting with Oracle Exadata System Software release 19.2.0 you can use the flashcachesize attribute to over-provision space in Exadata Smart Flash Cache. Consequently, if the size of Exadata Smart Flash Cache cannot accommodate all of the flashcachemin and flashcachesize allocations, then only flashcachemin is guaranteed.
      * 
      */
-    public String flashCacheSize() {
-        return this.flashCacheSize;
+    public Optional<String> flashCacheSize() {
+        return Optional.ofNullable(this.flashCacheSize);
     }
     /**
      * @return Controls use of Exadata Smart Flash Cache by a database. This ensures that cache space is reserved for mission-critical databases. flashcache=off is invalid in a directive that contains the flashcachemin, flashcachelimit, or flashcachesize attributes.
      * 
      */
-    public Boolean isFlashCacheOn() {
-        return this.isFlashCacheOn;
+    public Optional<Boolean> isFlashCacheOn() {
+        return Optional.ofNullable(this.isFlashCacheOn);
     }
     /**
      * @return Controls use of Exadata Smart Flash Log by a database. This ensures that Exadata Smart Flash Log is reserved for mission-critical databases.
      * 
      */
-    public Boolean isFlashLogOn() {
-        return this.isFlashLogOn;
+    public Optional<Boolean> isFlashLogOn() {
+        return Optional.ofNullable(this.isFlashLogOn);
     }
     /**
      * @return Controls use of the persistent memory (PMEM) cache by a database. This ensures that cache space is reserved for mission-critical databases. pmemcache=off is invalid in a directive that contains the pmemcachemin, pmemcachelimit, or pmemcachesize attributes.
      * 
      */
-    public Boolean isPmemCacheOn() {
-        return this.isPmemCacheOn;
+    public Optional<Boolean> isPmemCacheOn() {
+        return Optional.ofNullable(this.isPmemCacheOn);
     }
     /**
      * @return Controls use of persistent memory logging (PMEM log) by a database. This ensures that PMEM log is reserved for mission-critical databases.
      * 
      */
-    public Boolean isPmemLogOn() {
-        return this.isPmemLogOn;
+    public Optional<Boolean> isPmemLogOn() {
+        return Optional.ofNullable(this.isPmemLogOn);
     }
     /**
      * @return The allocation level. Valid values are from 1 to 8. Resources are allocated to level 1 first, and then remaining resources are allocated to level 2, and so on.
      * 
      */
-    public Integer level() {
-        return this.level;
+    public Optional<Integer> level() {
+        return Optional.ofNullable(this.level);
     }
-    public Integer limit() {
-        return this.limit;
+    public Optional<Integer> limit() {
+        return Optional.ofNullable(this.limit);
     }
     /**
      * @return The name of a database or a profile.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return Defines a soft limit for space usage in the persistent memory (PMEM) cache. If the cache is not full, the limit can be exceeded. You specify the value for pmemcachelimit in bytes. You can also use the suffixes M (megabytes), G (gigabytes), or T (terabytes) to specify larger values. For example, 300M, 150G, or 1T. The value for pmemcachelimit must be at least 4 MB. The pmemcachelimit and pmemcachesize attributes cannot be specified in the same directive. The value for pmemcachelimit cannot be smaller than pmemcachemin, if it is specified.
      * 
      */
-    public String pmemCacheLimit() {
-        return this.pmemCacheLimit;
+    public Optional<String> pmemCacheLimit() {
+        return Optional.ofNullable(this.pmemCacheLimit);
     }
     /**
      * @return Specifies a minimum guaranteed space allocation in the persistent memory (PMEM) cache.
      * 
      */
-    public String pmemCacheMin() {
-        return this.pmemCacheMin;
+    public Optional<String> pmemCacheMin() {
+        return Optional.ofNullable(this.pmemCacheMin);
     }
     /**
      * @return Defines a hard limit for space usage in the persistent memory (PMEM) cache. The limit cannot be exceeded, even if the cache is not full. In an IORM plan, if the size of the PMEM cache can accommodate all of the pmemcachemin and pmemcachesize allocations, then each pmemcachesize definition represents a guaranteed space allocation. However, you can use the pmemcachesize attribute to over-provision space in the PMEM cache. Consequently, if the PMEM cache size cannot accommodate all of the pmemcachemin and pmemcachesize allocations, then only pmemcachemin is guaranteed.
      * 
      */
-    public String pmemCacheSize() {
-        return this.pmemCacheSize;
+    public Optional<String> pmemCacheSize() {
+        return Optional.ofNullable(this.pmemCacheSize);
     }
     /**
      * @return Enables you to specify different plan directives based on the Oracle Data Guard database role.
      * 
      */
-    public String role() {
-        return this.role;
+    public Optional<String> role() {
+        return Optional.ofNullable(this.role);
     }
     /**
      * @return The relative priority of a database in the database plan. A higher share value implies higher priority and more access to the I/O resources. Use either share or (level, allocation). All plan directives in a database plan should use the same setting. Share-based resource allocation is the recommended method for a database plan.
      * 
      */
-    public Integer share() {
-        return this.share;
+    public Optional<Integer> share() {
+        return Optional.ofNullable(this.share);
     }
     /**
      * @return Enables you to create a profile or template, to ease management and configuration of resource plans in environments with many databases.
@@ -222,8 +224,8 @@ public final class GetExternalExadataStorageServerIormPlanDbPlanItem {
      * * type=profile: Specifies a directive that applies to a profile rather than a specific database.
      * 
      */
-    public String type() {
-        return this.type;
+    public Optional<String> type() {
+        return Optional.ofNullable(this.type);
     }
 
     public static Builder builder() {
@@ -235,24 +237,24 @@ public final class GetExternalExadataStorageServerIormPlanDbPlanItem {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Integer allocation;
-        private String asmCluster;
-        private String flashCacheLimit;
-        private String flashCacheMin;
-        private String flashCacheSize;
-        private Boolean isFlashCacheOn;
-        private Boolean isFlashLogOn;
-        private Boolean isPmemCacheOn;
-        private Boolean isPmemLogOn;
-        private Integer level;
-        private Integer limit;
-        private String name;
-        private String pmemCacheLimit;
-        private String pmemCacheMin;
-        private String pmemCacheSize;
-        private String role;
-        private Integer share;
-        private String type;
+        private @Nullable Integer allocation;
+        private @Nullable String asmCluster;
+        private @Nullable String flashCacheLimit;
+        private @Nullable String flashCacheMin;
+        private @Nullable String flashCacheSize;
+        private @Nullable Boolean isFlashCacheOn;
+        private @Nullable Boolean isFlashLogOn;
+        private @Nullable Boolean isPmemCacheOn;
+        private @Nullable Boolean isPmemLogOn;
+        private @Nullable Integer level;
+        private @Nullable Integer limit;
+        private @Nullable String name;
+        private @Nullable String pmemCacheLimit;
+        private @Nullable String pmemCacheMin;
+        private @Nullable String pmemCacheSize;
+        private @Nullable String role;
+        private @Nullable Integer share;
+        private @Nullable String type;
         public Builder() {}
         public Builder(GetExternalExadataStorageServerIormPlanDbPlanItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -277,93 +279,93 @@ public final class GetExternalExadataStorageServerIormPlanDbPlanItem {
         }
 
         @CustomType.Setter
-        public Builder allocation(Integer allocation) {
-            this.allocation = Objects.requireNonNull(allocation);
+        public Builder allocation(@Nullable Integer allocation) {
+            this.allocation = allocation;
             return this;
         }
         @CustomType.Setter
-        public Builder asmCluster(String asmCluster) {
-            this.asmCluster = Objects.requireNonNull(asmCluster);
+        public Builder asmCluster(@Nullable String asmCluster) {
+            this.asmCluster = asmCluster;
             return this;
         }
         @CustomType.Setter
-        public Builder flashCacheLimit(String flashCacheLimit) {
-            this.flashCacheLimit = Objects.requireNonNull(flashCacheLimit);
+        public Builder flashCacheLimit(@Nullable String flashCacheLimit) {
+            this.flashCacheLimit = flashCacheLimit;
             return this;
         }
         @CustomType.Setter
-        public Builder flashCacheMin(String flashCacheMin) {
-            this.flashCacheMin = Objects.requireNonNull(flashCacheMin);
+        public Builder flashCacheMin(@Nullable String flashCacheMin) {
+            this.flashCacheMin = flashCacheMin;
             return this;
         }
         @CustomType.Setter
-        public Builder flashCacheSize(String flashCacheSize) {
-            this.flashCacheSize = Objects.requireNonNull(flashCacheSize);
+        public Builder flashCacheSize(@Nullable String flashCacheSize) {
+            this.flashCacheSize = flashCacheSize;
             return this;
         }
         @CustomType.Setter
-        public Builder isFlashCacheOn(Boolean isFlashCacheOn) {
-            this.isFlashCacheOn = Objects.requireNonNull(isFlashCacheOn);
+        public Builder isFlashCacheOn(@Nullable Boolean isFlashCacheOn) {
+            this.isFlashCacheOn = isFlashCacheOn;
             return this;
         }
         @CustomType.Setter
-        public Builder isFlashLogOn(Boolean isFlashLogOn) {
-            this.isFlashLogOn = Objects.requireNonNull(isFlashLogOn);
+        public Builder isFlashLogOn(@Nullable Boolean isFlashLogOn) {
+            this.isFlashLogOn = isFlashLogOn;
             return this;
         }
         @CustomType.Setter
-        public Builder isPmemCacheOn(Boolean isPmemCacheOn) {
-            this.isPmemCacheOn = Objects.requireNonNull(isPmemCacheOn);
+        public Builder isPmemCacheOn(@Nullable Boolean isPmemCacheOn) {
+            this.isPmemCacheOn = isPmemCacheOn;
             return this;
         }
         @CustomType.Setter
-        public Builder isPmemLogOn(Boolean isPmemLogOn) {
-            this.isPmemLogOn = Objects.requireNonNull(isPmemLogOn);
+        public Builder isPmemLogOn(@Nullable Boolean isPmemLogOn) {
+            this.isPmemLogOn = isPmemLogOn;
             return this;
         }
         @CustomType.Setter
-        public Builder level(Integer level) {
-            this.level = Objects.requireNonNull(level);
+        public Builder level(@Nullable Integer level) {
+            this.level = level;
             return this;
         }
         @CustomType.Setter
-        public Builder limit(Integer limit) {
-            this.limit = Objects.requireNonNull(limit);
+        public Builder limit(@Nullable Integer limit) {
+            this.limit = limit;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder pmemCacheLimit(String pmemCacheLimit) {
-            this.pmemCacheLimit = Objects.requireNonNull(pmemCacheLimit);
+        public Builder pmemCacheLimit(@Nullable String pmemCacheLimit) {
+            this.pmemCacheLimit = pmemCacheLimit;
             return this;
         }
         @CustomType.Setter
-        public Builder pmemCacheMin(String pmemCacheMin) {
-            this.pmemCacheMin = Objects.requireNonNull(pmemCacheMin);
+        public Builder pmemCacheMin(@Nullable String pmemCacheMin) {
+            this.pmemCacheMin = pmemCacheMin;
             return this;
         }
         @CustomType.Setter
-        public Builder pmemCacheSize(String pmemCacheSize) {
-            this.pmemCacheSize = Objects.requireNonNull(pmemCacheSize);
+        public Builder pmemCacheSize(@Nullable String pmemCacheSize) {
+            this.pmemCacheSize = pmemCacheSize;
             return this;
         }
         @CustomType.Setter
-        public Builder role(String role) {
-            this.role = Objects.requireNonNull(role);
+        public Builder role(@Nullable String role) {
+            this.role = role;
             return this;
         }
         @CustomType.Setter
-        public Builder share(Integer share) {
-            this.share = Objects.requireNonNull(share);
+        public Builder share(@Nullable Integer share) {
+            this.share = share;
             return this;
         }
         @CustomType.Setter
-        public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+        public Builder type(@Nullable String type) {
+            this.type = type;
             return this;
         }
         public GetExternalExadataStorageServerIormPlanDbPlanItem build() {

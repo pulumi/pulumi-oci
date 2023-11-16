@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Invoice resource in Oracle Cloud Infrastructure Osp Gateway service.
@@ -71,54 +70,54 @@ type GetInvoiceResult struct {
 	// Currency details model
 	Currencies []GetInvoiceCurrency `pulumi:"currencies"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Transaction identifier
 	InternalInvoiceId string `pulumi:"internalInvoiceId"`
 	// Total amount of invoice
-	InvoiceAmount float64 `pulumi:"invoiceAmount"`
+	InvoiceAmount *float64 `pulumi:"invoiceAmount"`
 	// Invoice amount adjust
-	InvoiceAmountAdjusted float64 `pulumi:"invoiceAmountAdjusted"`
+	InvoiceAmountAdjusted *float64 `pulumi:"invoiceAmountAdjusted"`
 	// Invoice amount applied
-	InvoiceAmountApplied float64 `pulumi:"invoiceAmountApplied"`
+	InvoiceAmountApplied *float64 `pulumi:"invoiceAmountApplied"`
 	// Invoice amount credit
-	InvoiceAmountCredited float64 `pulumi:"invoiceAmountCredited"`
+	InvoiceAmountCredited *float64 `pulumi:"invoiceAmountCredited"`
 	// Balance of invoice
-	InvoiceAmountDue float64 `pulumi:"invoiceAmountDue"`
+	InvoiceAmountDue *float64 `pulumi:"invoiceAmountDue"`
 	// Invoice identifier which is generated on the on-premise sie. Pls note this is not an OCID
-	InvoiceId string `pulumi:"invoiceId"`
+	InvoiceId *string `pulumi:"invoiceId"`
 	// Invoice external reference
-	InvoiceNumber string `pulumi:"invoiceNumber"`
+	InvoiceNumber *string `pulumi:"invoiceNumber"`
 	// Invoice PO number
-	InvoicePoNumber string `pulumi:"invoicePoNumber"`
+	InvoicePoNumber *string `pulumi:"invoicePoNumber"`
 	// Invoice reference number
-	InvoiceRefNumber string `pulumi:"invoiceRefNumber"`
+	InvoiceRefNumber *string `pulumi:"invoiceRefNumber"`
 	// Invoice status
-	InvoiceStatus string `pulumi:"invoiceStatus"`
+	InvoiceStatus *string `pulumi:"invoiceStatus"`
 	// Type of invoice
-	InvoiceType string `pulumi:"invoiceType"`
+	InvoiceType *string `pulumi:"invoiceType"`
 	// Is credit card payment eligible
-	IsCreditCardPayable bool `pulumi:"isCreditCardPayable"`
+	IsCreditCardPayable *bool `pulumi:"isCreditCardPayable"`
 	// Is pdf download access allowed
-	IsDisplayDownloadPdf bool `pulumi:"isDisplayDownloadPdf"`
+	IsDisplayDownloadPdf *bool `pulumi:"isDisplayDownloadPdf"`
 	// Whether invoice can be payed
-	IsPayable bool `pulumi:"isPayable"`
+	IsPayable *bool `pulumi:"isPayable"`
 	// Is emailing pdf allowed
-	IsPdfEmailAvailable bool `pulumi:"isPdfEmailAvailable"`
+	IsPdfEmailAvailable *bool `pulumi:"isPdfEmailAvailable"`
 	// Payment related details
 	LastPaymentDetails []GetInvoiceLastPaymentDetail `pulumi:"lastPaymentDetails"`
 	OspHomeRegion      string                        `pulumi:"ospHomeRegion"`
 	// Payment terms
-	PaymentTerms string `pulumi:"paymentTerms"`
+	PaymentTerms *string `pulumi:"paymentTerms"`
 	// Preferred Email on the invoice
-	PreferredEmail string `pulumi:"preferredEmail"`
+	PreferredEmail *string `pulumi:"preferredEmail"`
 	// List of subscription identifiers
 	SubscriptionIds []string `pulumi:"subscriptionIds"`
 	// Tax of invoice amount
-	Tax float64 `pulumi:"tax"`
+	Tax *float64 `pulumi:"tax"`
 	// Date of invoice
-	TimeInvoice string `pulumi:"timeInvoice"`
+	TimeInvoice *string `pulumi:"timeInvoice"`
 	// Due date of invoice
-	TimeInvoiceDue string `pulumi:"timeInvoiceDue"`
+	TimeInvoiceDue *string `pulumi:"timeInvoiceDue"`
 }
 
 func GetInvoiceOutput(ctx *pulumi.Context, args GetInvoiceOutputArgs, opts ...pulumi.InvokeOption) GetInvoiceResultOutput {
@@ -163,12 +162,6 @@ func (o GetInvoiceResultOutput) ToGetInvoiceResultOutputWithContext(ctx context.
 	return o
 }
 
-func (o GetInvoiceResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetInvoiceResult] {
-	return pulumix.Output[GetInvoiceResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Address details model
 func (o GetInvoiceResultOutput) BillToAddresses() GetInvoiceBillToAddressArrayOutput {
 	return o.ApplyT(func(v GetInvoiceResult) []GetInvoiceBillToAddress { return v.BillToAddresses }).(GetInvoiceBillToAddressArrayOutput)
@@ -184,8 +177,8 @@ func (o GetInvoiceResultOutput) Currencies() GetInvoiceCurrencyArrayOutput {
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetInvoiceResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoiceResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetInvoiceResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoiceResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Transaction identifier
@@ -194,78 +187,78 @@ func (o GetInvoiceResultOutput) InternalInvoiceId() pulumi.StringOutput {
 }
 
 // Total amount of invoice
-func (o GetInvoiceResultOutput) InvoiceAmount() pulumi.Float64Output {
-	return o.ApplyT(func(v GetInvoiceResult) float64 { return v.InvoiceAmount }).(pulumi.Float64Output)
+func (o GetInvoiceResultOutput) InvoiceAmount() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetInvoiceResult) *float64 { return v.InvoiceAmount }).(pulumi.Float64PtrOutput)
 }
 
 // Invoice amount adjust
-func (o GetInvoiceResultOutput) InvoiceAmountAdjusted() pulumi.Float64Output {
-	return o.ApplyT(func(v GetInvoiceResult) float64 { return v.InvoiceAmountAdjusted }).(pulumi.Float64Output)
+func (o GetInvoiceResultOutput) InvoiceAmountAdjusted() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetInvoiceResult) *float64 { return v.InvoiceAmountAdjusted }).(pulumi.Float64PtrOutput)
 }
 
 // Invoice amount applied
-func (o GetInvoiceResultOutput) InvoiceAmountApplied() pulumi.Float64Output {
-	return o.ApplyT(func(v GetInvoiceResult) float64 { return v.InvoiceAmountApplied }).(pulumi.Float64Output)
+func (o GetInvoiceResultOutput) InvoiceAmountApplied() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetInvoiceResult) *float64 { return v.InvoiceAmountApplied }).(pulumi.Float64PtrOutput)
 }
 
 // Invoice amount credit
-func (o GetInvoiceResultOutput) InvoiceAmountCredited() pulumi.Float64Output {
-	return o.ApplyT(func(v GetInvoiceResult) float64 { return v.InvoiceAmountCredited }).(pulumi.Float64Output)
+func (o GetInvoiceResultOutput) InvoiceAmountCredited() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetInvoiceResult) *float64 { return v.InvoiceAmountCredited }).(pulumi.Float64PtrOutput)
 }
 
 // Balance of invoice
-func (o GetInvoiceResultOutput) InvoiceAmountDue() pulumi.Float64Output {
-	return o.ApplyT(func(v GetInvoiceResult) float64 { return v.InvoiceAmountDue }).(pulumi.Float64Output)
+func (o GetInvoiceResultOutput) InvoiceAmountDue() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetInvoiceResult) *float64 { return v.InvoiceAmountDue }).(pulumi.Float64PtrOutput)
 }
 
 // Invoice identifier which is generated on the on-premise sie. Pls note this is not an OCID
-func (o GetInvoiceResultOutput) InvoiceId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoiceResult) string { return v.InvoiceId }).(pulumi.StringOutput)
+func (o GetInvoiceResultOutput) InvoiceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoiceResult) *string { return v.InvoiceId }).(pulumi.StringPtrOutput)
 }
 
 // Invoice external reference
-func (o GetInvoiceResultOutput) InvoiceNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoiceResult) string { return v.InvoiceNumber }).(pulumi.StringOutput)
+func (o GetInvoiceResultOutput) InvoiceNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoiceResult) *string { return v.InvoiceNumber }).(pulumi.StringPtrOutput)
 }
 
 // Invoice PO number
-func (o GetInvoiceResultOutput) InvoicePoNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoiceResult) string { return v.InvoicePoNumber }).(pulumi.StringOutput)
+func (o GetInvoiceResultOutput) InvoicePoNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoiceResult) *string { return v.InvoicePoNumber }).(pulumi.StringPtrOutput)
 }
 
 // Invoice reference number
-func (o GetInvoiceResultOutput) InvoiceRefNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoiceResult) string { return v.InvoiceRefNumber }).(pulumi.StringOutput)
+func (o GetInvoiceResultOutput) InvoiceRefNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoiceResult) *string { return v.InvoiceRefNumber }).(pulumi.StringPtrOutput)
 }
 
 // Invoice status
-func (o GetInvoiceResultOutput) InvoiceStatus() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoiceResult) string { return v.InvoiceStatus }).(pulumi.StringOutput)
+func (o GetInvoiceResultOutput) InvoiceStatus() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoiceResult) *string { return v.InvoiceStatus }).(pulumi.StringPtrOutput)
 }
 
 // Type of invoice
-func (o GetInvoiceResultOutput) InvoiceType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoiceResult) string { return v.InvoiceType }).(pulumi.StringOutput)
+func (o GetInvoiceResultOutput) InvoiceType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoiceResult) *string { return v.InvoiceType }).(pulumi.StringPtrOutput)
 }
 
 // Is credit card payment eligible
-func (o GetInvoiceResultOutput) IsCreditCardPayable() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetInvoiceResult) bool { return v.IsCreditCardPayable }).(pulumi.BoolOutput)
+func (o GetInvoiceResultOutput) IsCreditCardPayable() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetInvoiceResult) *bool { return v.IsCreditCardPayable }).(pulumi.BoolPtrOutput)
 }
 
 // Is pdf download access allowed
-func (o GetInvoiceResultOutput) IsDisplayDownloadPdf() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetInvoiceResult) bool { return v.IsDisplayDownloadPdf }).(pulumi.BoolOutput)
+func (o GetInvoiceResultOutput) IsDisplayDownloadPdf() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetInvoiceResult) *bool { return v.IsDisplayDownloadPdf }).(pulumi.BoolPtrOutput)
 }
 
 // Whether invoice can be payed
-func (o GetInvoiceResultOutput) IsPayable() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetInvoiceResult) bool { return v.IsPayable }).(pulumi.BoolOutput)
+func (o GetInvoiceResultOutput) IsPayable() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetInvoiceResult) *bool { return v.IsPayable }).(pulumi.BoolPtrOutput)
 }
 
 // Is emailing pdf allowed
-func (o GetInvoiceResultOutput) IsPdfEmailAvailable() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetInvoiceResult) bool { return v.IsPdfEmailAvailable }).(pulumi.BoolOutput)
+func (o GetInvoiceResultOutput) IsPdfEmailAvailable() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetInvoiceResult) *bool { return v.IsPdfEmailAvailable }).(pulumi.BoolPtrOutput)
 }
 
 // Payment related details
@@ -278,13 +271,13 @@ func (o GetInvoiceResultOutput) OspHomeRegion() pulumi.StringOutput {
 }
 
 // Payment terms
-func (o GetInvoiceResultOutput) PaymentTerms() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoiceResult) string { return v.PaymentTerms }).(pulumi.StringOutput)
+func (o GetInvoiceResultOutput) PaymentTerms() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoiceResult) *string { return v.PaymentTerms }).(pulumi.StringPtrOutput)
 }
 
 // Preferred Email on the invoice
-func (o GetInvoiceResultOutput) PreferredEmail() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoiceResult) string { return v.PreferredEmail }).(pulumi.StringOutput)
+func (o GetInvoiceResultOutput) PreferredEmail() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoiceResult) *string { return v.PreferredEmail }).(pulumi.StringPtrOutput)
 }
 
 // List of subscription identifiers
@@ -293,18 +286,18 @@ func (o GetInvoiceResultOutput) SubscriptionIds() pulumi.StringArrayOutput {
 }
 
 // Tax of invoice amount
-func (o GetInvoiceResultOutput) Tax() pulumi.Float64Output {
-	return o.ApplyT(func(v GetInvoiceResult) float64 { return v.Tax }).(pulumi.Float64Output)
+func (o GetInvoiceResultOutput) Tax() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetInvoiceResult) *float64 { return v.Tax }).(pulumi.Float64PtrOutput)
 }
 
 // Date of invoice
-func (o GetInvoiceResultOutput) TimeInvoice() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoiceResult) string { return v.TimeInvoice }).(pulumi.StringOutput)
+func (o GetInvoiceResultOutput) TimeInvoice() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoiceResult) *string { return v.TimeInvoice }).(pulumi.StringPtrOutput)
 }
 
 // Due date of invoice
-func (o GetInvoiceResultOutput) TimeInvoiceDue() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoiceResult) string { return v.TimeInvoiceDue }).(pulumi.StringOutput)
+func (o GetInvoiceResultOutput) TimeInvoiceDue() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoiceResult) *string { return v.TimeInvoiceDue }).(pulumi.StringPtrOutput)
 }
 
 func init() {

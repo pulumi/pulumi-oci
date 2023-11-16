@@ -12,6 +12,7 @@ import com.pulumi.oci.NetworkFirewall.inputs.NetworkFirewallPolicyDecryptionProf
 import com.pulumi.oci.Utilities;
 import java.lang.Boolean;
 import java.lang.String;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -75,126 +76,126 @@ public class NetworkFirewallPolicyDecryptionProfile extends com.pulumi.resources
      * 
      */
     @Export(name="areCertificateExtensionsRestricted", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> areCertificateExtensionsRestricted;
+    private Output</* @Nullable */ Boolean> areCertificateExtensionsRestricted;
 
     /**
      * @return (Updatable) Whether to block sessions if the server&#39;s certificate uses extensions other than key usage and/or extended key usage.
      * 
      */
-    public Output<Boolean> areCertificateExtensionsRestricted() {
-        return this.areCertificateExtensionsRestricted;
+    public Output<Optional<Boolean>> areCertificateExtensionsRestricted() {
+        return Codegen.optional(this.areCertificateExtensionsRestricted);
     }
     /**
      * (Updatable) Whether to automatically append SAN to impersonating certificate if server certificate is missing SAN.
      * 
      */
     @Export(name="isAutoIncludeAltName", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isAutoIncludeAltName;
+    private Output</* @Nullable */ Boolean> isAutoIncludeAltName;
 
     /**
      * @return (Updatable) Whether to automatically append SAN to impersonating certificate if server certificate is missing SAN.
      * 
      */
-    public Output<Boolean> isAutoIncludeAltName() {
-        return this.isAutoIncludeAltName;
+    public Output<Optional<Boolean>> isAutoIncludeAltName() {
+        return Codegen.optional(this.isAutoIncludeAltName);
     }
     /**
      * (Updatable) Whether to block sessions if server&#39;s certificate is expired.
      * 
      */
     @Export(name="isExpiredCertificateBlocked", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isExpiredCertificateBlocked;
+    private Output</* @Nullable */ Boolean> isExpiredCertificateBlocked;
 
     /**
      * @return (Updatable) Whether to block sessions if server&#39;s certificate is expired.
      * 
      */
-    public Output<Boolean> isExpiredCertificateBlocked() {
-        return this.isExpiredCertificateBlocked;
+    public Output<Optional<Boolean>> isExpiredCertificateBlocked() {
+        return Codegen.optional(this.isExpiredCertificateBlocked);
     }
     /**
      * (Updatable) Whether to block sessions if the firewall is temporarily unable to decrypt their traffic.
      * 
      */
     @Export(name="isOutOfCapacityBlocked", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isOutOfCapacityBlocked;
+    private Output</* @Nullable */ Boolean> isOutOfCapacityBlocked;
 
     /**
      * @return (Updatable) Whether to block sessions if the firewall is temporarily unable to decrypt their traffic.
      * 
      */
-    public Output<Boolean> isOutOfCapacityBlocked() {
-        return this.isOutOfCapacityBlocked;
+    public Output<Optional<Boolean>> isOutOfCapacityBlocked() {
+        return Codegen.optional(this.isOutOfCapacityBlocked);
     }
     /**
      * (Updatable) Whether to block sessions if the revocation status check for server&#39;s certificate does not succeed within the maximum allowed time (defaulting to 5 seconds).
      * 
      */
     @Export(name="isRevocationStatusTimeoutBlocked", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isRevocationStatusTimeoutBlocked;
+    private Output</* @Nullable */ Boolean> isRevocationStatusTimeoutBlocked;
 
     /**
      * @return (Updatable) Whether to block sessions if the revocation status check for server&#39;s certificate does not succeed within the maximum allowed time (defaulting to 5 seconds).
      * 
      */
-    public Output<Boolean> isRevocationStatusTimeoutBlocked() {
-        return this.isRevocationStatusTimeoutBlocked;
+    public Output<Optional<Boolean>> isRevocationStatusTimeoutBlocked() {
+        return Codegen.optional(this.isRevocationStatusTimeoutBlocked);
     }
     /**
      * (Updatable) Whether to block sessions if the revocation status check for server&#39;s certificate results in &#34;unknown&#34;.
      * 
      */
     @Export(name="isUnknownRevocationStatusBlocked", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isUnknownRevocationStatusBlocked;
+    private Output</* @Nullable */ Boolean> isUnknownRevocationStatusBlocked;
 
     /**
      * @return (Updatable) Whether to block sessions if the revocation status check for server&#39;s certificate results in &#34;unknown&#34;.
      * 
      */
-    public Output<Boolean> isUnknownRevocationStatusBlocked() {
-        return this.isUnknownRevocationStatusBlocked;
+    public Output<Optional<Boolean>> isUnknownRevocationStatusBlocked() {
+        return Codegen.optional(this.isUnknownRevocationStatusBlocked);
     }
     /**
      * (Updatable) Whether to block sessions if SSL cipher suite is not supported.
      * 
      */
     @Export(name="isUnsupportedCipherBlocked", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isUnsupportedCipherBlocked;
+    private Output</* @Nullable */ Boolean> isUnsupportedCipherBlocked;
 
     /**
      * @return (Updatable) Whether to block sessions if SSL cipher suite is not supported.
      * 
      */
-    public Output<Boolean> isUnsupportedCipherBlocked() {
-        return this.isUnsupportedCipherBlocked;
+    public Output<Optional<Boolean>> isUnsupportedCipherBlocked() {
+        return Codegen.optional(this.isUnsupportedCipherBlocked);
     }
     /**
      * (Updatable) Whether to block sessions if SSL version is not supported.
      * 
      */
     @Export(name="isUnsupportedVersionBlocked", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isUnsupportedVersionBlocked;
+    private Output</* @Nullable */ Boolean> isUnsupportedVersionBlocked;
 
     /**
      * @return (Updatable) Whether to block sessions if SSL version is not supported.
      * 
      */
-    public Output<Boolean> isUnsupportedVersionBlocked() {
-        return this.isUnsupportedVersionBlocked;
+    public Output<Optional<Boolean>> isUnsupportedVersionBlocked() {
+        return Codegen.optional(this.isUnsupportedVersionBlocked);
     }
     /**
      * (Updatable) Whether to block sessions if server&#39;s certificate is issued by an untrusted certificate authority (CA).
      * 
      */
     @Export(name="isUntrustedIssuerBlocked", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isUntrustedIssuerBlocked;
+    private Output</* @Nullable */ Boolean> isUntrustedIssuerBlocked;
 
     /**
      * @return (Updatable) Whether to block sessions if server&#39;s certificate is issued by an untrusted certificate authority (CA).
      * 
      */
-    public Output<Boolean> isUntrustedIssuerBlocked() {
-        return this.isUntrustedIssuerBlocked;
+    public Output<Optional<Boolean>> isUntrustedIssuerBlocked() {
+        return Codegen.optional(this.isUntrustedIssuerBlocked);
     }
     /**
      * Name of the decryption profile.
@@ -235,14 +236,14 @@ public class NetworkFirewallPolicyDecryptionProfile extends com.pulumi.resources
      * 
      */
     @Export(name="parentResourceId", refs={String.class}, tree="[0]")
-    private Output<String> parentResourceId;
+    private Output</* @Nullable */ String> parentResourceId;
 
     /**
      * @return OCID of the Network Firewall Policy this decryption profile belongs to.
      * 
      */
-    public Output<String> parentResourceId() {
-        return this.parentResourceId;
+    public Output<Optional<String>> parentResourceId() {
+        return Codegen.optional(this.parentResourceId);
     }
     /**
      * Describes the type of decryption profile. The accepted values are - * SSL_FORWARD_PROXY * SSL_INBOUND_INSPECTION

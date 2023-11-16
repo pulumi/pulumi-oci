@@ -20,6 +20,7 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -71,42 +72,42 @@ public class Deployment extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup being referenced.
      * 
      */
     @Export(name="deploymentBackupId", refs={String.class}, tree="[0]")
-    private Output<String> deploymentBackupId;
+    private Output</* @Nullable */ String> deploymentBackupId;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup being referenced.
      * 
      */
-    public Output<String> deploymentBackupId() {
-        return this.deploymentBackupId;
+    public Output<Optional<String>> deploymentBackupId() {
+        return Codegen.optional(this.deploymentBackupId);
     }
     /**
      * Information regarding the deployment diagnostic collection
      * 
      */
     @Export(name="deploymentDiagnosticDatas", refs={List.class,DeploymentDeploymentDiagnosticData.class}, tree="[0,1]")
-    private Output<List<DeploymentDeploymentDiagnosticData>> deploymentDiagnosticDatas;
+    private Output</* @Nullable */ List<DeploymentDeploymentDiagnosticData>> deploymentDiagnosticDatas;
 
     /**
      * @return Information regarding the deployment diagnostic collection
      * 
      */
-    public Output<List<DeploymentDeploymentDiagnosticData>> deploymentDiagnosticDatas() {
-        return this.deploymentDiagnosticDatas;
+    public Output<Optional<List<DeploymentDeploymentDiagnosticData>>> deploymentDiagnosticDatas() {
+        return Codegen.optional(this.deploymentDiagnosticDatas);
     }
     /**
      * The type of deployment, which can be any one of the Allowed values.  NOTE: Use of the value &#39;OGG&#39; is maintained for backward compatibility purposes.  Its use is discouraged in favor of &#39;DATABASE_ORACLE&#39;.
@@ -127,28 +128,28 @@ public class Deployment extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="deploymentUrl", refs={String.class}, tree="[0]")
-    private Output<String> deploymentUrl;
+    private Output</* @Nullable */ String> deploymentUrl;
 
     /**
      * @return The URL of a resource.
      * 
      */
-    public Output<String> deploymentUrl() {
-        return this.deploymentUrl;
+    public Output<Optional<String>> deploymentUrl() {
+        return Codegen.optional(this.deploymentUrl);
     }
     /**
      * (Updatable) Metadata about this specific object.
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
-    private Output<String> description;
+    private Output</* @Nullable */ String> description;
 
     /**
      * @return (Updatable) Metadata about this specific object.
      * 
      */
-    public Output<String> description() {
-        return this.description;
+    public Output<Optional<String>> description() {
+        return Codegen.optional(this.description);
     }
     /**
      * (Updatable) An object&#39;s Display Name.
@@ -169,28 +170,28 @@ public class Deployment extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="fqdn", refs={String.class}, tree="[0]")
-    private Output<String> fqdn;
+    private Output</* @Nullable */ String> fqdn;
 
     /**
      * @return (Updatable) A three-label Fully Qualified Domain Name (FQDN) for a resource.
      * 
      */
-    public Output<String> fqdn() {
-        return this.fqdn;
+    public Output<Optional<String>> fqdn() {
+        return Codegen.optional(this.fqdn);
     }
     /**
      * (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * (Updatable) Indicates if auto scaling is enabled for the Deployment&#39;s CPU core count.
@@ -211,56 +212,56 @@ public class Deployment extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="isHealthy", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isHealthy;
+    private Output</* @Nullable */ Boolean> isHealthy;
 
     /**
      * @return True if all of the aggregate resources are working correctly.
      * 
      */
-    public Output<Boolean> isHealthy() {
-        return this.isHealthy;
+    public Output<Optional<Boolean>> isHealthy() {
+        return Codegen.optional(this.isHealthy);
     }
     /**
      * Indicates if the resource is the the latest available version.
      * 
      */
     @Export(name="isLatestVersion", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isLatestVersion;
+    private Output</* @Nullable */ Boolean> isLatestVersion;
 
     /**
      * @return Indicates if the resource is the the latest available version.
      * 
      */
-    public Output<Boolean> isLatestVersion() {
-        return this.isLatestVersion;
+    public Output<Optional<Boolean>> isLatestVersion() {
+        return Codegen.optional(this.isLatestVersion);
     }
     /**
      * (Updatable) True if this object is publicly available.
      * 
      */
     @Export(name="isPublic", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isPublic;
+    private Output</* @Nullable */ Boolean> isPublic;
 
     /**
      * @return (Updatable) True if this object is publicly available.
      * 
      */
-    public Output<Boolean> isPublic() {
-        return this.isPublic;
+    public Output<Optional<Boolean>> isPublic() {
+        return Codegen.optional(this.isPublic);
     }
     /**
      * Indicator will be true if the amount of storage being utilized exceeds the allowable storage utilization limit.  Exceeding the limit may be an indication of a misconfiguration of the deployment&#39;s GoldenGate service.
      * 
      */
     @Export(name="isStorageUtilizationLimitExceeded", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isStorageUtilizationLimitExceeded;
+    private Output</* @Nullable */ Boolean> isStorageUtilizationLimitExceeded;
 
     /**
      * @return Indicator will be true if the amount of storage being utilized exceeds the allowable storage utilization limit.  Exceeding the limit may be an indication of a misconfiguration of the deployment&#39;s GoldenGate service.
      * 
      */
-    public Output<Boolean> isStorageUtilizationLimitExceeded() {
-        return this.isStorageUtilizationLimitExceeded;
+    public Output<Optional<Boolean>> isStorageUtilizationLimitExceeded() {
+        return Codegen.optional(this.isStorageUtilizationLimitExceeded);
     }
     /**
      * (Updatable) The Oracle license model that applies to a Deployment.
@@ -281,160 +282,160 @@ public class Deployment extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
-    private Output<String> lifecycleDetails;
+    private Output</* @Nullable */ String> lifecycleDetails;
 
     /**
      * @return Describes the object&#39;s current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
      * 
      */
-    public Output<String> lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Output<Optional<String>> lifecycleDetails() {
+        return Codegen.optional(this.lifecycleDetails);
     }
     /**
      * Possible GGS lifecycle sub-states.
      * 
      */
     @Export(name="lifecycleSubState", refs={String.class}, tree="[0]")
-    private Output<String> lifecycleSubState;
+    private Output</* @Nullable */ String> lifecycleSubState;
 
     /**
      * @return Possible GGS lifecycle sub-states.
      * 
      */
-    public Output<String> lifecycleSubState() {
-        return this.lifecycleSubState;
+    public Output<Optional<String>> lifecycleSubState() {
+        return Codegen.optional(this.lifecycleSubState);
     }
     /**
      * (Updatable) Defines the maintenance configuration for create operation.
      * 
      */
     @Export(name="maintenanceConfiguration", refs={DeploymentMaintenanceConfiguration.class}, tree="[0]")
-    private Output<DeploymentMaintenanceConfiguration> maintenanceConfiguration;
+    private Output</* @Nullable */ DeploymentMaintenanceConfiguration> maintenanceConfiguration;
 
     /**
      * @return (Updatable) Defines the maintenance configuration for create operation.
      * 
      */
-    public Output<DeploymentMaintenanceConfiguration> maintenanceConfiguration() {
-        return this.maintenanceConfiguration;
+    public Output<Optional<DeploymentMaintenanceConfiguration>> maintenanceConfiguration() {
+        return Codegen.optional(this.maintenanceConfiguration);
     }
     /**
      * (Updatable) Defines the maintenance window for create operation, when automatic actions can be performed.
      * 
      */
     @Export(name="maintenanceWindow", refs={DeploymentMaintenanceWindow.class}, tree="[0]")
-    private Output<DeploymentMaintenanceWindow> maintenanceWindow;
+    private Output</* @Nullable */ DeploymentMaintenanceWindow> maintenanceWindow;
 
     /**
      * @return (Updatable) Defines the maintenance window for create operation, when automatic actions can be performed.
      * 
      */
-    public Output<DeploymentMaintenanceWindow> maintenanceWindow() {
-        return this.maintenanceWindow;
+    public Output<Optional<DeploymentMaintenanceWindow>> maintenanceWindow() {
+        return Codegen.optional(this.maintenanceWindow);
     }
     /**
      * Type of the next maintenance.
      * 
      */
     @Export(name="nextMaintenanceActionType", refs={String.class}, tree="[0]")
-    private Output<String> nextMaintenanceActionType;
+    private Output</* @Nullable */ String> nextMaintenanceActionType;
 
     /**
      * @return Type of the next maintenance.
      * 
      */
-    public Output<String> nextMaintenanceActionType() {
-        return this.nextMaintenanceActionType;
+    public Output<Optional<String>> nextMaintenanceActionType() {
+        return Codegen.optional(this.nextMaintenanceActionType);
     }
     /**
      * Description of the next maintenance.
      * 
      */
     @Export(name="nextMaintenanceDescription", refs={String.class}, tree="[0]")
-    private Output<String> nextMaintenanceDescription;
+    private Output</* @Nullable */ String> nextMaintenanceDescription;
 
     /**
      * @return Description of the next maintenance.
      * 
      */
-    public Output<String> nextMaintenanceDescription() {
-        return this.nextMaintenanceDescription;
+    public Output<Optional<String>> nextMaintenanceDescription() {
+        return Codegen.optional(this.nextMaintenanceDescription);
     }
     /**
      * (Updatable) An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
      * 
      */
     @Export(name="nsgIds", refs={List.class,String.class}, tree="[0,1]")
-    private Output<List<String>> nsgIds;
+    private Output</* @Nullable */ List<String>> nsgIds;
 
     /**
      * @return (Updatable) An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
      * 
      */
-    public Output<List<String>> nsgIds() {
-        return this.nsgIds;
+    public Output<Optional<List<String>>> nsgIds() {
+        return Codegen.optional(this.nsgIds);
     }
     /**
      * (Updatable) Deployment Data for creating an OggDeployment
      * 
      */
     @Export(name="oggData", refs={DeploymentOggData.class}, tree="[0]")
-    private Output<DeploymentOggData> oggData;
+    private Output</* @Nullable */ DeploymentOggData> oggData;
 
     /**
      * @return (Updatable) Deployment Data for creating an OggDeployment
      * 
      */
-    public Output<DeploymentOggData> oggData() {
-        return this.oggData;
+    public Output<Optional<DeploymentOggData>> oggData() {
+        return Codegen.optional(this.oggData);
     }
     /**
      * The private IP address in the customer&#39;s VCN representing the access point for the associated endpoint service in the GoldenGate service VCN.
      * 
      */
     @Export(name="privateIpAddress", refs={String.class}, tree="[0]")
-    private Output<String> privateIpAddress;
+    private Output</* @Nullable */ String> privateIpAddress;
 
     /**
      * @return The private IP address in the customer&#39;s VCN representing the access point for the associated endpoint service in the GoldenGate service VCN.
      * 
      */
-    public Output<String> privateIpAddress() {
-        return this.privateIpAddress;
+    public Output<Optional<String>> privateIpAddress() {
+        return Codegen.optional(this.privateIpAddress);
     }
     /**
      * The public IP address representing the access point for the Deployment.
      * 
      */
     @Export(name="publicIpAddress", refs={String.class}, tree="[0]")
-    private Output<String> publicIpAddress;
+    private Output</* @Nullable */ String> publicIpAddress;
 
     /**
      * @return The public IP address representing the access point for the Deployment.
      * 
      */
-    public Output<String> publicIpAddress() {
-        return this.publicIpAddress;
+    public Output<Optional<String>> publicIpAddress() {
+        return Codegen.optional(this.publicIpAddress);
     }
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * The amount of storage being utilized (in bytes)
      * 
      */
     @Export(name="storageUtilizationInBytes", refs={String.class}, tree="[0]")
-    private Output<String> storageUtilizationInBytes;
+    private Output</* @Nullable */ String> storageUtilizationInBytes;
 
     /**
      * @return The amount of storage being utilized (in bytes)
      * 
      */
-    public Output<String> storageUtilizationInBytes() {
-        return this.storageUtilizationInBytes;
+    public Output<Optional<String>> storageUtilizationInBytes() {
+        return Codegen.optional(this.storageUtilizationInBytes);
     }
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet being referenced.
@@ -455,84 +456,84 @@ public class Deployment extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> systemTags;
+    private Output</* @Nullable */ Map<String,Object>> systemTags;
 
     /**
      * @return The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
      * 
      */
-    public Output<Map<String,Object>> systemTags() {
-        return this.systemTags;
+    public Output<Optional<Map<String,Object>>> systemTags() {
+        return Codegen.optional(this.systemTags);
     }
     /**
      * The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * The time of next maintenance schedule. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      * 
      */
     @Export(name="timeOfNextMaintenance", refs={String.class}, tree="[0]")
-    private Output<String> timeOfNextMaintenance;
+    private Output</* @Nullable */ String> timeOfNextMaintenance;
 
     /**
      * @return The time of next maintenance schedule. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      * 
      */
-    public Output<String> timeOfNextMaintenance() {
-        return this.timeOfNextMaintenance;
+    public Output<Optional<String>> timeOfNextMaintenance() {
+        return Codegen.optional(this.timeOfNextMaintenance);
     }
     /**
      * The time until OGG version is supported. After this date has passed OGG version will not be available anymore. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      * 
      */
     @Export(name="timeOggVersionSupportedUntil", refs={String.class}, tree="[0]")
-    private Output<String> timeOggVersionSupportedUntil;
+    private Output</* @Nullable */ String> timeOggVersionSupportedUntil;
 
     /**
      * @return The time until OGG version is supported. After this date has passed OGG version will not be available anymore. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      * 
      */
-    public Output<String> timeOggVersionSupportedUntil() {
-        return this.timeOggVersionSupportedUntil;
+    public Output<Optional<String>> timeOggVersionSupportedUntil() {
+        return Codegen.optional(this.timeOggVersionSupportedUntil);
     }
     /**
      * The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      * 
      */
     @Export(name="timeUpdated", refs={String.class}, tree="[0]")
-    private Output<String> timeUpdated;
+    private Output</* @Nullable */ String> timeUpdated;
 
     /**
      * @return The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      * 
      */
-    public Output<String> timeUpdated() {
-        return this.timeUpdated;
+    public Output<Optional<String>> timeUpdated() {
+        return Codegen.optional(this.timeUpdated);
     }
     /**
      * Note: Deprecated: Use timeOfNextMaintenance instead, or related upgrade records  to check, when deployment will be forced to upgrade to a newer version. Old description: The date the existing version in use will no longer be considered as usable and an upgrade will be required.  This date is typically 6 months after the version was released for use by GGS.  The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      * 
      */
     @Export(name="timeUpgradeRequired", refs={String.class}, tree="[0]")
-    private Output<String> timeUpgradeRequired;
+    private Output</* @Nullable */ String> timeUpgradeRequired;
 
     /**
      * @return Note: Deprecated: Use timeOfNextMaintenance instead, or related upgrade records  to check, when deployment will be forced to upgrade to a newer version. Old description: The date the existing version in use will no longer be considered as usable and an upgrade will be required.  This date is typically 6 months after the version was released for use by GGS.  The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      * 
      */
-    public Output<String> timeUpgradeRequired() {
-        return this.timeUpgradeRequired;
+    public Output<Optional<String>> timeUpgradeRequired() {
+        return Codegen.optional(this.timeUpgradeRequired);
     }
 
     /**

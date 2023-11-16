@@ -181,7 +181,7 @@ namespace Pulumi.Oci.StackMonitoring
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The current state of the configuration.
         /// </summary>
@@ -198,7 +198,7 @@ namespace Pulumi.Oci.StackMonitoring
 
             ImmutableArray<Outputs.GetConfigsFilterResult> filters,
 
-            string id,
+            string? id,
 
             string? state,
 

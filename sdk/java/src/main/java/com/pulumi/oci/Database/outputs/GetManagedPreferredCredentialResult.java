@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetManagedPreferredCredentialResult {
@@ -19,38 +21,38 @@ public final class GetManagedPreferredCredentialResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Indicates whether the preferred credential is accessible.
      * 
      */
-    private Boolean isAccessible;
+    private @Nullable Boolean isAccessible;
     private String managedDatabaseId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Vault service secret that contains the database user password.
      * 
      */
-    private String passwordSecretId;
+    private @Nullable String passwordSecretId;
     /**
      * @return The role of the database user.
      * 
      */
-    private String role;
+    private @Nullable String role;
     /**
      * @return The status of the preferred credential.
      * 
      */
-    private String status;
+    private @Nullable String status;
     /**
      * @return The type of preferred credential. Only &#39;BASIC&#39; is supported currently.
      * 
      */
-    private String type;
+    private @Nullable String type;
     /**
      * @return The user name used to connect to the database.
      * 
      */
-    private String userName;
+    private @Nullable String userName;
 
     private GetManagedPreferredCredentialResult() {}
     /**
@@ -64,15 +66,15 @@ public final class GetManagedPreferredCredentialResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Indicates whether the preferred credential is accessible.
      * 
      */
-    public Boolean isAccessible() {
-        return this.isAccessible;
+    public Optional<Boolean> isAccessible() {
+        return Optional.ofNullable(this.isAccessible);
     }
     public String managedDatabaseId() {
         return this.managedDatabaseId;
@@ -81,36 +83,36 @@ public final class GetManagedPreferredCredentialResult {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Vault service secret that contains the database user password.
      * 
      */
-    public String passwordSecretId() {
-        return this.passwordSecretId;
+    public Optional<String> passwordSecretId() {
+        return Optional.ofNullable(this.passwordSecretId);
     }
     /**
      * @return The role of the database user.
      * 
      */
-    public String role() {
-        return this.role;
+    public Optional<String> role() {
+        return Optional.ofNullable(this.role);
     }
     /**
      * @return The status of the preferred credential.
      * 
      */
-    public String status() {
-        return this.status;
+    public Optional<String> status() {
+        return Optional.ofNullable(this.status);
     }
     /**
      * @return The type of preferred credential. Only &#39;BASIC&#39; is supported currently.
      * 
      */
-    public String type() {
-        return this.type;
+    public Optional<String> type() {
+        return Optional.ofNullable(this.type);
     }
     /**
      * @return The user name used to connect to the database.
      * 
      */
-    public String userName() {
-        return this.userName;
+    public Optional<String> userName() {
+        return Optional.ofNullable(this.userName);
     }
 
     public static Builder builder() {
@@ -123,14 +125,14 @@ public final class GetManagedPreferredCredentialResult {
     @CustomType.Builder
     public static final class Builder {
         private String credentialName;
-        private String id;
-        private Boolean isAccessible;
+        private @Nullable String id;
+        private @Nullable Boolean isAccessible;
         private String managedDatabaseId;
-        private String passwordSecretId;
-        private String role;
-        private String status;
-        private String type;
-        private String userName;
+        private @Nullable String passwordSecretId;
+        private @Nullable String role;
+        private @Nullable String status;
+        private @Nullable String type;
+        private @Nullable String userName;
         public Builder() {}
         public Builder(GetManagedPreferredCredentialResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -151,13 +153,13 @@ public final class GetManagedPreferredCredentialResult {
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder isAccessible(Boolean isAccessible) {
-            this.isAccessible = Objects.requireNonNull(isAccessible);
+        public Builder isAccessible(@Nullable Boolean isAccessible) {
+            this.isAccessible = isAccessible;
             return this;
         }
         @CustomType.Setter
@@ -166,28 +168,28 @@ public final class GetManagedPreferredCredentialResult {
             return this;
         }
         @CustomType.Setter
-        public Builder passwordSecretId(String passwordSecretId) {
-            this.passwordSecretId = Objects.requireNonNull(passwordSecretId);
+        public Builder passwordSecretId(@Nullable String passwordSecretId) {
+            this.passwordSecretId = passwordSecretId;
             return this;
         }
         @CustomType.Setter
-        public Builder role(String role) {
-            this.role = Objects.requireNonNull(role);
+        public Builder role(@Nullable String role) {
+            this.role = role;
             return this;
         }
         @CustomType.Setter
-        public Builder status(String status) {
-            this.status = Objects.requireNonNull(status);
+        public Builder status(@Nullable String status) {
+            this.status = status;
             return this;
         }
         @CustomType.Setter
-        public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+        public Builder type(@Nullable String type) {
+            this.type = type;
             return this;
         }
         @CustomType.Setter
-        public Builder userName(String userName) {
-            this.userName = Objects.requireNonNull(userName);
+        public Builder userName(@Nullable String userName) {
+            this.userName = userName;
             return this;
         }
         public GetManagedPreferredCredentialResult build() {

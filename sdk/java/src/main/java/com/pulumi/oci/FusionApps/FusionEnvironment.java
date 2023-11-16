@@ -20,6 +20,7 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -103,28 +104,28 @@ public class FusionEnvironment extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="additionalLanguagePacks", refs={List.class,String.class}, tree="[0,1]")
-    private Output<List<String>> additionalLanguagePacks;
+    private Output</* @Nullable */ List<String>> additionalLanguagePacks;
 
     /**
      * @return (Updatable) Language packs.
      * 
      */
-    public Output<List<String>> additionalLanguagePacks() {
-        return this.additionalLanguagePacks;
+    public Output<Optional<List<String>>> additionalLanguagePacks() {
+        return Codegen.optional(this.additionalLanguagePacks);
     }
     /**
      * Patch bundle names
      * 
      */
     @Export(name="appliedPatchBundles", refs={List.class,String.class}, tree="[0,1]")
-    private Output<List<String>> appliedPatchBundles;
+    private Output</* @Nullable */ List<String>> appliedPatchBundles;
 
     /**
      * @return Patch bundle names
      * 
      */
-    public Output<List<String>> appliedPatchBundles() {
-        return this.appliedPatchBundles;
+    public Output<Optional<List<String>>> appliedPatchBundles() {
+        return Codegen.optional(this.appliedPatchBundles);
     }
     /**
      * (Updatable) The unique identifier (OCID) of the compartment where the Fusion Environment is located.
@@ -159,14 +160,14 @@ public class FusionEnvironment extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * (Updatable) FusionEnvironment Identifier can be renamed.
@@ -187,42 +188,42 @@ public class FusionEnvironment extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="dnsPrefix", refs={String.class}, tree="[0]")
-    private Output<String> dnsPrefix;
+    private Output</* @Nullable */ String> dnsPrefix;
 
     /**
      * @return DNS prefix.
      * 
      */
-    public Output<String> dnsPrefix() {
-        return this.dnsPrefix;
+    public Output<Optional<String>> dnsPrefix() {
+        return Codegen.optional(this.dnsPrefix);
     }
     /**
      * The IDCS domain created for the fusion instance
      * 
      */
     @Export(name="domainId", refs={String.class}, tree="[0]")
-    private Output<String> domainId;
+    private Output</* @Nullable */ String> domainId;
 
     /**
      * @return The IDCS domain created for the fusion instance
      * 
      */
-    public Output<String> domainId() {
-        return this.domainId;
+    public Output<Optional<String>> domainId() {
+        return Codegen.optional(this.domainId);
     }
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * The unique identifier (OCID) of the Fusion Environment Family that the Fusion Environment belongs to.
@@ -257,238 +258,238 @@ public class FusionEnvironment extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="idcsDomainUrl", refs={String.class}, tree="[0]")
-    private Output<String> idcsDomainUrl;
+    private Output</* @Nullable */ String> idcsDomainUrl;
 
     /**
      * @return The IDCS Domain URL
      * 
      */
-    public Output<String> idcsDomainUrl() {
-        return this.idcsDomainUrl;
+    public Output<Optional<String>> idcsDomainUrl() {
+        return Codegen.optional(this.idcsDomainUrl);
     }
     /**
      * If it&#39;s true, then the Break Glass feature is enabled
      * 
      */
     @Export(name="isBreakGlassEnabled", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isBreakGlassEnabled;
+    private Output</* @Nullable */ Boolean> isBreakGlassEnabled;
 
     /**
      * @return If it&#39;s true, then the Break Glass feature is enabled
      * 
      */
-    public Output<Boolean> isBreakGlassEnabled() {
-        return this.isBreakGlassEnabled;
+    public Output<Optional<Boolean>> isBreakGlassEnabled() {
+        return Codegen.optional(this.isBreakGlassEnabled);
     }
     /**
      * (Updatable) byok kms keyId
      * 
      */
     @Export(name="kmsKeyId", refs={String.class}, tree="[0]")
-    private Output<String> kmsKeyId;
+    private Output</* @Nullable */ String> kmsKeyId;
 
     /**
      * @return (Updatable) byok kms keyId
      * 
      */
-    public Output<String> kmsKeyId() {
-        return this.kmsKeyId;
+    public Output<Optional<String>> kmsKeyId() {
+        return Codegen.optional(this.kmsKeyId);
     }
     /**
      * BYOK key info
      * 
      */
     @Export(name="kmsKeyInfos", refs={List.class,FusionEnvironmentKmsKeyInfo.class}, tree="[0,1]")
-    private Output<List<FusionEnvironmentKmsKeyInfo>> kmsKeyInfos;
+    private Output</* @Nullable */ List<FusionEnvironmentKmsKeyInfo>> kmsKeyInfos;
 
     /**
      * @return BYOK key info
      * 
      */
-    public Output<List<FusionEnvironmentKmsKeyInfo>> kmsKeyInfos() {
-        return this.kmsKeyInfos;
+    public Output<Optional<List<FusionEnvironmentKmsKeyInfo>>> kmsKeyInfos() {
+        return Codegen.optional(this.kmsKeyInfos);
     }
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
     @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
-    private Output<String> lifecycleDetails;
+    private Output</* @Nullable */ String> lifecycleDetails;
 
     /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
-    public Output<String> lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Output<Optional<String>> lifecycleDetails() {
+        return Codegen.optional(this.lifecycleDetails);
     }
     /**
      * The lockbox Id of this fusion environment. If there&#39;s no lockbox id, this field will be null
      * 
      */
     @Export(name="lockboxId", refs={String.class}, tree="[0]")
-    private Output<String> lockboxId;
+    private Output</* @Nullable */ String> lockboxId;
 
     /**
      * @return The lockbox Id of this fusion environment. If there&#39;s no lockbox id, this field will be null
      * 
      */
-    public Output<String> lockboxId() {
-        return this.lockboxId;
+    public Output<Optional<String>> lockboxId() {
+        return Codegen.optional(this.lockboxId);
     }
     /**
      * (Updatable) The policy that specifies the maintenance and upgrade preferences for an environment. For more information about the options, see [Understanding Environment Maintenance](https://docs.cloud.oracle.com/iaas/Content/fusion-applications/plan-environment-family.htm#about-env-maintenance).
      * 
      */
     @Export(name="maintenancePolicy", refs={FusionEnvironmentMaintenancePolicy.class}, tree="[0]")
-    private Output<FusionEnvironmentMaintenancePolicy> maintenancePolicy;
+    private Output</* @Nullable */ FusionEnvironmentMaintenancePolicy> maintenancePolicy;
 
     /**
      * @return (Updatable) The policy that specifies the maintenance and upgrade preferences for an environment. For more information about the options, see [Understanding Environment Maintenance](https://docs.cloud.oracle.com/iaas/Content/fusion-applications/plan-environment-family.htm#about-env-maintenance).
      * 
      */
-    public Output<FusionEnvironmentMaintenancePolicy> maintenancePolicy() {
-        return this.maintenancePolicy;
+    public Output<Optional<FusionEnvironmentMaintenancePolicy>> maintenancePolicy() {
+        return Codegen.optional(this.maintenancePolicy);
     }
     /**
      * Public URL
      * 
      */
     @Export(name="publicUrl", refs={String.class}, tree="[0]")
-    private Output<String> publicUrl;
+    private Output</* @Nullable */ String> publicUrl;
 
     /**
      * @return Public URL
      * 
      */
-    public Output<String> publicUrl() {
-        return this.publicUrl;
+    public Output<Optional<String>> publicUrl() {
+        return Codegen.optional(this.publicUrl);
     }
     /**
      * Describes a refresh of a fusion environment
      * 
      */
     @Export(name="refreshes", refs={List.class,FusionEnvironmentRefresh.class}, tree="[0,1]")
-    private Output<List<FusionEnvironmentRefresh>> refreshes;
+    private Output</* @Nullable */ List<FusionEnvironmentRefresh>> refreshes;
 
     /**
      * @return Describes a refresh of a fusion environment
      * 
      */
-    public Output<List<FusionEnvironmentRefresh>> refreshes() {
-        return this.refreshes;
+    public Output<Optional<List<FusionEnvironmentRefresh>>> refreshes() {
+        return Codegen.optional(this.refreshes);
     }
     /**
      * (Updatable) Rules.
      * 
      */
     @Export(name="rules", refs={List.class,FusionEnvironmentRule.class}, tree="[0,1]")
-    private Output<List<FusionEnvironmentRule>> rules;
+    private Output</* @Nullable */ List<FusionEnvironmentRule>> rules;
 
     /**
      * @return (Updatable) Rules.
      * 
      */
-    public Output<List<FusionEnvironmentRule>> rules() {
-        return this.rules;
+    public Output<Optional<List<FusionEnvironmentRule>>> rules() {
+        return Codegen.optional(this.rules);
     }
     /**
      * The current state of the ServiceInstance.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The current state of the ServiceInstance.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * List of subscription IDs.
      * 
      */
     @Export(name="subscriptionIds", refs={List.class,String.class}, tree="[0,1]")
-    private Output<List<String>> subscriptionIds;
+    private Output</* @Nullable */ List<String>> subscriptionIds;
 
     /**
      * @return List of subscription IDs.
      * 
      */
-    public Output<List<String>> subscriptionIds() {
-        return this.subscriptionIds;
+    public Output<Optional<List<String>>> subscriptionIds() {
+        return Codegen.optional(this.subscriptionIds);
     }
     /**
      * Environment Specific Guid/ System Name
      * 
      */
     @Export(name="systemName", refs={String.class}, tree="[0]")
-    private Output<String> systemName;
+    private Output</* @Nullable */ String> systemName;
 
     /**
      * @return Environment Specific Guid/ System Name
      * 
      */
-    public Output<String> systemName() {
-        return this.systemName;
+    public Output<Optional<String>> systemName() {
+        return Codegen.optional(this.systemName);
     }
     /**
      * The time the the FusionEnvironment was created. An RFC3339 formatted datetime string
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The time the the FusionEnvironment was created. An RFC3339 formatted datetime string
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * The next maintenance for this environment
      * 
      */
     @Export(name="timeUpcomingMaintenance", refs={String.class}, tree="[0]")
-    private Output<String> timeUpcomingMaintenance;
+    private Output</* @Nullable */ String> timeUpcomingMaintenance;
 
     /**
      * @return The next maintenance for this environment
      * 
      */
-    public Output<String> timeUpcomingMaintenance() {
-        return this.timeUpcomingMaintenance;
+    public Output<Optional<String>> timeUpcomingMaintenance() {
+        return Codegen.optional(this.timeUpcomingMaintenance);
     }
     /**
      * The time the FusionEnvironment was updated. An RFC3339 formatted datetime string
      * 
      */
     @Export(name="timeUpdated", refs={String.class}, tree="[0]")
-    private Output<String> timeUpdated;
+    private Output</* @Nullable */ String> timeUpdated;
 
     /**
      * @return The time the FusionEnvironment was updated. An RFC3339 formatted datetime string
      * 
      */
-    public Output<String> timeUpdated() {
-        return this.timeUpdated;
+    public Output<Optional<String>> timeUpdated() {
+        return Codegen.optional(this.timeUpdated);
     }
     /**
      * Version of Fusion Apps used by this environment
      * 
      */
     @Export(name="version", refs={String.class}, tree="[0]")
-    private Output<String> version;
+    private Output</* @Nullable */ String> version;
 
     /**
      * @return Version of Fusion Apps used by this environment
      * 
      */
-    public Output<String> version() {
-        return this.version;
+    public Output<Optional<String>> version() {
+        return Codegen.optional(this.version);
     }
 
     /**

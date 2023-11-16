@@ -9,6 +9,8 @@ import com.pulumi.oci.Identity.outputs.GetAuthenticationPolicyPasswordPolicy;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAuthenticationPolicyResult {
@@ -17,17 +19,17 @@ public final class GetAuthenticationPolicyResult {
      * 
      */
     private String compartmentId;
-    private String id;
+    private @Nullable String id;
     /**
      * @return Network policy, Consists of a list of Network Source ids.
      * 
      */
-    private List<GetAuthenticationPolicyNetworkPolicy> networkPolicies;
+    private @Nullable List<GetAuthenticationPolicyNetworkPolicy> networkPolicies;
     /**
      * @return Password policy, currently set for the given compartment.
      * 
      */
-    private List<GetAuthenticationPolicyPasswordPolicy> passwordPolicies;
+    private @Nullable List<GetAuthenticationPolicyPasswordPolicy> passwordPolicies;
 
     private GetAuthenticationPolicyResult() {}
     /**
@@ -37,22 +39,22 @@ public final class GetAuthenticationPolicyResult {
     public String compartmentId() {
         return this.compartmentId;
     }
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Network policy, Consists of a list of Network Source ids.
      * 
      */
     public List<GetAuthenticationPolicyNetworkPolicy> networkPolicies() {
-        return this.networkPolicies;
+        return this.networkPolicies == null ? List.of() : this.networkPolicies;
     }
     /**
      * @return Password policy, currently set for the given compartment.
      * 
      */
     public List<GetAuthenticationPolicyPasswordPolicy> passwordPolicies() {
-        return this.passwordPolicies;
+        return this.passwordPolicies == null ? List.of() : this.passwordPolicies;
     }
 
     public static Builder builder() {
@@ -65,9 +67,9 @@ public final class GetAuthenticationPolicyResult {
     @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
-        private String id;
-        private List<GetAuthenticationPolicyNetworkPolicy> networkPolicies;
-        private List<GetAuthenticationPolicyPasswordPolicy> passwordPolicies;
+        private @Nullable String id;
+        private @Nullable List<GetAuthenticationPolicyNetworkPolicy> networkPolicies;
+        private @Nullable List<GetAuthenticationPolicyPasswordPolicy> passwordPolicies;
         public Builder() {}
         public Builder(GetAuthenticationPolicyResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -83,21 +85,21 @@ public final class GetAuthenticationPolicyResult {
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder networkPolicies(List<GetAuthenticationPolicyNetworkPolicy> networkPolicies) {
-            this.networkPolicies = Objects.requireNonNull(networkPolicies);
+        public Builder networkPolicies(@Nullable List<GetAuthenticationPolicyNetworkPolicy> networkPolicies) {
+            this.networkPolicies = networkPolicies;
             return this;
         }
         public Builder networkPolicies(GetAuthenticationPolicyNetworkPolicy... networkPolicies) {
             return networkPolicies(List.of(networkPolicies));
         }
         @CustomType.Setter
-        public Builder passwordPolicies(List<GetAuthenticationPolicyPasswordPolicy> passwordPolicies) {
-            this.passwordPolicies = Objects.requireNonNull(passwordPolicies);
+        public Builder passwordPolicies(@Nullable List<GetAuthenticationPolicyPasswordPolicy> passwordPolicies) {
+            this.passwordPolicies = passwordPolicies;
             return this;
         }
         public Builder passwordPolicies(GetAuthenticationPolicyPasswordPolicy... passwordPolicies) {

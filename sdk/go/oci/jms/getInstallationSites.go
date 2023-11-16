@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Fleet Installation Sites in Oracle Cloud Infrastructure Jms service.
@@ -97,7 +96,7 @@ type GetInstallationSitesResult struct {
 	Filters       []GetInstallationSitesFilter `pulumi:"filters"`
 	FleetId       string                       `pulumi:"fleetId"`
 	// The provider-assigned unique ID for this managed resource.
-	Id               string  `pulumi:"id"`
+	Id               *string `pulumi:"id"`
 	InstallationPath *string `pulumi:"installationPath"`
 	// The list of installation_site_collection.
 	InstallationSiteCollections []GetInstallationSitesInstallationSiteCollection `pulumi:"installationSiteCollections"`
@@ -174,12 +173,6 @@ func (o GetInstallationSitesResultOutput) ToGetInstallationSitesResultOutputWith
 	return o
 }
 
-func (o GetInstallationSitesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetInstallationSitesResult] {
-	return pulumix.Output[GetInstallationSitesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetInstallationSitesResultOutput) ApplicationId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetInstallationSitesResult) *string { return v.ApplicationId }).(pulumi.StringPtrOutput)
 }
@@ -193,8 +186,8 @@ func (o GetInstallationSitesResultOutput) FleetId() pulumi.StringOutput {
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetInstallationSitesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstallationSitesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetInstallationSitesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInstallationSitesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetInstallationSitesResultOutput) InstallationPath() pulumi.StringPtrOutput {

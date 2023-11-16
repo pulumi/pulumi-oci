@@ -16,17 +16,17 @@ namespace Pulumi.Oci.Core.Outputs
         /// <summary>
         /// The OCID of the volume backup.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The type of action to run when the instance is interrupted for eviction.
         /// </summary>
-        public readonly string Type;
+        public readonly string? Type;
 
         [OutputConstructor]
         private GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetailResult(
-            string id,
+            string? id,
 
-            string type)
+            string? type)
         {
             Id = id;
             Type = type;

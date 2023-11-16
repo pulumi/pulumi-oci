@@ -46,48 +46,48 @@ export interface GetApplicationVipResult {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud VM cluster associated with the application virtual IP (VIP) address.
      */
-    readonly cloudVmClusterId: string;
+    readonly cloudVmClusterId?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
-    readonly compartmentId: string;
-    readonly dbNodeId: string;
+    readonly compartmentId?: string;
+    readonly dbNodeId?: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * The hostname of the application virtual IP (VIP) address.
      */
-    readonly hostnameLabel: string;
+    readonly hostnameLabel?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the application virtual IP (VIP) address.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The application virtual IP (VIP) address.
      */
-    readonly ipAddress: string;
+    readonly ipAddress?: string;
     /**
      * Additional information about the current lifecycle state of the application virtual IP (VIP) address.
      */
-    readonly lifecycleDetails: string;
+    readonly lifecycleDetails?: string;
     /**
      * The current lifecycle state of the application virtual IP (VIP) address.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the application virtual IP (VIP) address.
      */
-    readonly subnetId: string;
+    readonly subnetId?: string;
     /**
      * The date and time when the create operation for the application virtual IP (VIP) address completed.
      */
-    readonly timeAssigned: string;
+    readonly timeAssigned?: string;
 }
 /**
  * This data source provides details about a specific Application Vip resource in Oracle Cloud Infrastructure Database service.

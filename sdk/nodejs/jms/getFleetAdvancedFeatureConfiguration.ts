@@ -47,44 +47,44 @@ export interface GetFleetAdvancedFeatureConfigurationResult {
     /**
      * AdvancedUsageTracking configuration
      */
-    readonly advancedUsageTrackings: outputs.Jms.GetFleetAdvancedFeatureConfigurationAdvancedUsageTracking[];
+    readonly advancedUsageTrackings?: outputs.Jms.GetFleetAdvancedFeatureConfigurationAdvancedUsageTracking[];
     /**
      * Bucket name required to store JFR and related data.
      */
-    readonly analyticBucketName: string;
+    readonly analyticBucketName?: string;
     /**
      * Namespace for the Fleet advanced feature.
      */
-    readonly analyticNamespace: string;
+    readonly analyticNamespace?: string;
     /**
      * CryptoEventAnalysis configuration
      */
-    readonly cryptoEventAnalyses: outputs.Jms.GetFleetAdvancedFeatureConfigurationCryptoEventAnalysis[];
+    readonly cryptoEventAnalyses?: outputs.Jms.GetFleetAdvancedFeatureConfigurationCryptoEventAnalysis[];
     readonly fleetId: string;
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * JavaMigrationAnalysis configuration
      */
-    readonly javaMigrationAnalyses: outputs.Jms.GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysis[];
+    readonly javaMigrationAnalyses?: outputs.Jms.GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysis[];
     /**
      * JfrRecording configuration
      */
-    readonly jfrRecordings: outputs.Jms.GetFleetAdvancedFeatureConfigurationJfrRecording[];
+    readonly jfrRecordings?: outputs.Jms.GetFleetAdvancedFeatureConfigurationJfrRecording[];
     /**
      * Enable lifecycle management and set post action configurations.
      */
-    readonly lcms: outputs.Jms.GetFleetAdvancedFeatureConfigurationLcm[];
+    readonly lcms?: outputs.Jms.GetFleetAdvancedFeatureConfigurationLcm[];
     /**
      * Performance tuning analysis configuration
      */
-    readonly performanceTuningAnalyses: outputs.Jms.GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysis[];
+    readonly performanceTuningAnalyses?: outputs.Jms.GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysis[];
     /**
      * The date and time of the last modification to the Fleet Agent Configuration (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      */
-    readonly timeLastModified: string;
+    readonly timeLastModified?: string;
 }
 /**
  * This data source provides details about a specific Fleet Advanced Feature Configuration resource in Oracle Cloud Infrastructure Jms service.

@@ -10,6 +10,8 @@ import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetFleetAdvancedFeatureConfigurationLcmPostInstallationAction {
@@ -17,42 +19,42 @@ public final class GetFleetAdvancedFeatureConfigurationLcmPostInstallationAction
      * @return Sets FileHandler and ConsoleHandler as handlers in logging.properties file.
      * 
      */
-    private Boolean addLoggingHandler;
+    private @Nullable Boolean addLoggingHandler;
     /**
      * @return The following post JRE installation actions are supported by the field:
      * * Disable TLS 1.0 , TLS 1.1
      * 
      */
-    private List<String> disabledTlsVersions;
+    private @Nullable List<String> disabledTlsVersions;
     /**
      * @return Sets the logging level in logging.properties file.
      * 
      */
-    private String globalLoggingLevel;
+    private @Nullable String globalLoggingLevel;
     /**
      * @return test
      * 
      */
-    private List<GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSetting> minimumKeySizeSettings;
+    private @Nullable List<GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSetting> minimumKeySizeSettings;
     /**
      * @return List of proxy properties to be configured in net.properties file.
      * 
      */
-    private List<GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxy> proxies;
+    private @Nullable List<GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxy> proxies;
     /**
      * @return Restores JDK root certificates with the certificates that are available in the operating system. The following action is supported by the field:
      * * Replace JDK root certificates with a list provided by the operating system.
      * 
      */
-    private Boolean shouldReplaceCertificatesOperatingSystem;
+    private @Nullable Boolean shouldReplaceCertificatesOperatingSystem;
 
     private GetFleetAdvancedFeatureConfigurationLcmPostInstallationAction() {}
     /**
      * @return Sets FileHandler and ConsoleHandler as handlers in logging.properties file.
      * 
      */
-    public Boolean addLoggingHandler() {
-        return this.addLoggingHandler;
+    public Optional<Boolean> addLoggingHandler() {
+        return Optional.ofNullable(this.addLoggingHandler);
     }
     /**
      * @return The following post JRE installation actions are supported by the field:
@@ -60,36 +62,36 @@ public final class GetFleetAdvancedFeatureConfigurationLcmPostInstallationAction
      * 
      */
     public List<String> disabledTlsVersions() {
-        return this.disabledTlsVersions;
+        return this.disabledTlsVersions == null ? List.of() : this.disabledTlsVersions;
     }
     /**
      * @return Sets the logging level in logging.properties file.
      * 
      */
-    public String globalLoggingLevel() {
-        return this.globalLoggingLevel;
+    public Optional<String> globalLoggingLevel() {
+        return Optional.ofNullable(this.globalLoggingLevel);
     }
     /**
      * @return test
      * 
      */
     public List<GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSetting> minimumKeySizeSettings() {
-        return this.minimumKeySizeSettings;
+        return this.minimumKeySizeSettings == null ? List.of() : this.minimumKeySizeSettings;
     }
     /**
      * @return List of proxy properties to be configured in net.properties file.
      * 
      */
     public List<GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxy> proxies() {
-        return this.proxies;
+        return this.proxies == null ? List.of() : this.proxies;
     }
     /**
      * @return Restores JDK root certificates with the certificates that are available in the operating system. The following action is supported by the field:
      * * Replace JDK root certificates with a list provided by the operating system.
      * 
      */
-    public Boolean shouldReplaceCertificatesOperatingSystem() {
-        return this.shouldReplaceCertificatesOperatingSystem;
+    public Optional<Boolean> shouldReplaceCertificatesOperatingSystem() {
+        return Optional.ofNullable(this.shouldReplaceCertificatesOperatingSystem);
     }
 
     public static Builder builder() {
@@ -101,12 +103,12 @@ public final class GetFleetAdvancedFeatureConfigurationLcmPostInstallationAction
     }
     @CustomType.Builder
     public static final class Builder {
-        private Boolean addLoggingHandler;
-        private List<String> disabledTlsVersions;
-        private String globalLoggingLevel;
-        private List<GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSetting> minimumKeySizeSettings;
-        private List<GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxy> proxies;
-        private Boolean shouldReplaceCertificatesOperatingSystem;
+        private @Nullable Boolean addLoggingHandler;
+        private @Nullable List<String> disabledTlsVersions;
+        private @Nullable String globalLoggingLevel;
+        private @Nullable List<GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSetting> minimumKeySizeSettings;
+        private @Nullable List<GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxy> proxies;
+        private @Nullable Boolean shouldReplaceCertificatesOperatingSystem;
         public Builder() {}
         public Builder(GetFleetAdvancedFeatureConfigurationLcmPostInstallationAction defaults) {
     	      Objects.requireNonNull(defaults);
@@ -119,42 +121,42 @@ public final class GetFleetAdvancedFeatureConfigurationLcmPostInstallationAction
         }
 
         @CustomType.Setter
-        public Builder addLoggingHandler(Boolean addLoggingHandler) {
-            this.addLoggingHandler = Objects.requireNonNull(addLoggingHandler);
+        public Builder addLoggingHandler(@Nullable Boolean addLoggingHandler) {
+            this.addLoggingHandler = addLoggingHandler;
             return this;
         }
         @CustomType.Setter
-        public Builder disabledTlsVersions(List<String> disabledTlsVersions) {
-            this.disabledTlsVersions = Objects.requireNonNull(disabledTlsVersions);
+        public Builder disabledTlsVersions(@Nullable List<String> disabledTlsVersions) {
+            this.disabledTlsVersions = disabledTlsVersions;
             return this;
         }
         public Builder disabledTlsVersions(String... disabledTlsVersions) {
             return disabledTlsVersions(List.of(disabledTlsVersions));
         }
         @CustomType.Setter
-        public Builder globalLoggingLevel(String globalLoggingLevel) {
-            this.globalLoggingLevel = Objects.requireNonNull(globalLoggingLevel);
+        public Builder globalLoggingLevel(@Nullable String globalLoggingLevel) {
+            this.globalLoggingLevel = globalLoggingLevel;
             return this;
         }
         @CustomType.Setter
-        public Builder minimumKeySizeSettings(List<GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSetting> minimumKeySizeSettings) {
-            this.minimumKeySizeSettings = Objects.requireNonNull(minimumKeySizeSettings);
+        public Builder minimumKeySizeSettings(@Nullable List<GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSetting> minimumKeySizeSettings) {
+            this.minimumKeySizeSettings = minimumKeySizeSettings;
             return this;
         }
         public Builder minimumKeySizeSettings(GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSetting... minimumKeySizeSettings) {
             return minimumKeySizeSettings(List.of(minimumKeySizeSettings));
         }
         @CustomType.Setter
-        public Builder proxies(List<GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxy> proxies) {
-            this.proxies = Objects.requireNonNull(proxies);
+        public Builder proxies(@Nullable List<GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxy> proxies) {
+            this.proxies = proxies;
             return this;
         }
         public Builder proxies(GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxy... proxies) {
             return proxies(List.of(proxies));
         }
         @CustomType.Setter
-        public Builder shouldReplaceCertificatesOperatingSystem(Boolean shouldReplaceCertificatesOperatingSystem) {
-            this.shouldReplaceCertificatesOperatingSystem = Objects.requireNonNull(shouldReplaceCertificatesOperatingSystem);
+        public Builder shouldReplaceCertificatesOperatingSystem(@Nullable Boolean shouldReplaceCertificatesOperatingSystem) {
+            this.shouldReplaceCertificatesOperatingSystem = shouldReplaceCertificatesOperatingSystem;
             return this;
         }
         public GetFleetAdvancedFeatureConfigurationLcmPostInstallationAction build() {

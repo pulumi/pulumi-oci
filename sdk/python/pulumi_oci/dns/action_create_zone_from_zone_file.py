@@ -22,14 +22,6 @@ class ActionCreateZoneFromZoneFileArgs:
                  view_id: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a ActionCreateZoneFromZoneFile resource.
-        :param pulumi.Input[str] compartment_id: The OCID of the compartment the resource belongs to.
-        :param pulumi.Input[str] create_zone_from_zone_file_details: The zone file contents.
-        :param pulumi.Input[str] scope: Specifies to operate only on resources that have a matching DNS scope.
-        :param pulumi.Input[str] view_id: The OCID of the view the resource is associated with.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "create_zone_from_zone_file_details", create_zone_from_zone_file_details)
@@ -41,9 +33,6 @@ class ActionCreateZoneFromZoneFileArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
-        """
-        The OCID of the compartment the resource belongs to.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -53,9 +42,6 @@ class ActionCreateZoneFromZoneFileArgs:
     @property
     @pulumi.getter(name="createZoneFromZoneFileDetails")
     def create_zone_from_zone_file_details(self) -> pulumi.Input[str]:
-        """
-        The zone file contents.
-        """
         return pulumi.get(self, "create_zone_from_zone_file_details")
 
     @create_zone_from_zone_file_details.setter
@@ -65,9 +51,6 @@ class ActionCreateZoneFromZoneFileArgs:
     @property
     @pulumi.getter
     def scope(self) -> Optional[pulumi.Input[str]]:
-        """
-        Specifies to operate only on resources that have a matching DNS scope.
-        """
         return pulumi.get(self, "scope")
 
     @scope.setter
@@ -77,13 +60,6 @@ class ActionCreateZoneFromZoneFileArgs:
     @property
     @pulumi.getter(name="viewId")
     def view_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the view the resource is associated with.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "view_id")
 
     @view_id.setter
@@ -114,28 +90,6 @@ class _ActionCreateZoneFromZoneFileState:
                  zone_type: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering ActionCreateZoneFromZoneFile resources.
-        :param pulumi.Input[str] compartment_id: The OCID of the compartment the resource belongs to.
-        :param pulumi.Input[str] create_zone_from_zone_file_details: The zone file contents.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        :param pulumi.Input[Sequence[pulumi.Input['ActionCreateZoneFromZoneFileExternalDownstreamArgs']]] external_downstreams: External secondary servers for the zone. This field is currently not supported when `zoneType` is `SECONDARY` or `scope` is `PRIVATE`.
-        :param pulumi.Input[Sequence[pulumi.Input['ActionCreateZoneFromZoneFileExternalMasterArgs']]] external_masters: External master servers for the zone. `externalMasters` becomes a required parameter when the `zoneType` value is `SECONDARY`.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        :param pulumi.Input[bool] is_protected: A Boolean flag indicating whether or not parts of the resource are unable to be explicitly managed.
-        :param pulumi.Input[str] name: The name of the zone.
-        :param pulumi.Input[Sequence[pulumi.Input['ActionCreateZoneFromZoneFileNameserverArgs']]] nameservers: The authoritative nameservers for the zone.
-        :param pulumi.Input[str] scope: Specifies to operate only on resources that have a matching DNS scope.
-        :param pulumi.Input[str] self: The canonical absolute URL of the resource.
-        :param pulumi.Input[str] serial: The current serial of the zone. As seen in the zone's SOA record.
-        :param pulumi.Input[str] state: The current state of the zone resource.
-        :param pulumi.Input[str] time_created: The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
-        :param pulumi.Input[str] version: Version is the never-repeating, totally-orderable, version of the zone, from which the serial field of the zone's SOA record is derived.
-        :param pulumi.Input[str] view_id: The OCID of the view the resource is associated with.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Sequence[pulumi.Input['ActionCreateZoneFromZoneFileZoneTransferServerArgs']]] zone_transfer_servers: The Oracle Cloud Infrastructure nameservers that transfer the zone data with external nameservers.
-        :param pulumi.Input[str] zone_type: The type of the zone. Must be either `PRIMARY` or `SECONDARY`. `SECONDARY` is only supported for GLOBAL zones.
         """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
@@ -177,9 +131,6 @@ class _ActionCreateZoneFromZoneFileState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the compartment the resource belongs to.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -189,9 +140,6 @@ class _ActionCreateZoneFromZoneFileState:
     @property
     @pulumi.getter(name="createZoneFromZoneFileDetails")
     def create_zone_from_zone_file_details(self) -> Optional[pulumi.Input[str]]:
-        """
-        The zone file contents.
-        """
         return pulumi.get(self, "create_zone_from_zone_file_details")
 
     @create_zone_from_zone_file_details.setter
@@ -201,9 +149,6 @@ class _ActionCreateZoneFromZoneFileState:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -213,9 +158,6 @@ class _ActionCreateZoneFromZoneFileState:
     @property
     @pulumi.getter(name="externalDownstreams")
     def external_downstreams(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ActionCreateZoneFromZoneFileExternalDownstreamArgs']]]]:
-        """
-        External secondary servers for the zone. This field is currently not supported when `zoneType` is `SECONDARY` or `scope` is `PRIVATE`.
-        """
         return pulumi.get(self, "external_downstreams")
 
     @external_downstreams.setter
@@ -225,9 +167,6 @@ class _ActionCreateZoneFromZoneFileState:
     @property
     @pulumi.getter(name="externalMasters")
     def external_masters(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ActionCreateZoneFromZoneFileExternalMasterArgs']]]]:
-        """
-        External master servers for the zone. `externalMasters` becomes a required parameter when the `zoneType` value is `SECONDARY`.
-        """
         return pulumi.get(self, "external_masters")
 
     @external_masters.setter
@@ -237,9 +176,6 @@ class _ActionCreateZoneFromZoneFileState:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -249,9 +185,6 @@ class _ActionCreateZoneFromZoneFileState:
     @property
     @pulumi.getter(name="isProtected")
     def is_protected(self) -> Optional[pulumi.Input[bool]]:
-        """
-        A Boolean flag indicating whether or not parts of the resource are unable to be explicitly managed.
-        """
         return pulumi.get(self, "is_protected")
 
     @is_protected.setter
@@ -261,9 +194,6 @@ class _ActionCreateZoneFromZoneFileState:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The name of the zone.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -273,9 +203,6 @@ class _ActionCreateZoneFromZoneFileState:
     @property
     @pulumi.getter
     def nameservers(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ActionCreateZoneFromZoneFileNameserverArgs']]]]:
-        """
-        The authoritative nameservers for the zone.
-        """
         return pulumi.get(self, "nameservers")
 
     @nameservers.setter
@@ -285,9 +212,6 @@ class _ActionCreateZoneFromZoneFileState:
     @property
     @pulumi.getter
     def scope(self) -> Optional[pulumi.Input[str]]:
-        """
-        Specifies to operate only on resources that have a matching DNS scope.
-        """
         return pulumi.get(self, "scope")
 
     @scope.setter
@@ -297,9 +221,6 @@ class _ActionCreateZoneFromZoneFileState:
     @property
     @pulumi.getter
     def self(self) -> Optional[pulumi.Input[str]]:
-        """
-        The canonical absolute URL of the resource.
-        """
         return pulumi.get(self, "self")
 
     @self.setter
@@ -309,9 +230,6 @@ class _ActionCreateZoneFromZoneFileState:
     @property
     @pulumi.getter
     def serial(self) -> Optional[pulumi.Input[str]]:
-        """
-        The current serial of the zone. As seen in the zone's SOA record.
-        """
         return pulumi.get(self, "serial")
 
     @serial.setter
@@ -321,9 +239,6 @@ class _ActionCreateZoneFromZoneFileState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The current state of the zone resource.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -333,9 +248,6 @@ class _ActionCreateZoneFromZoneFileState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -345,9 +257,6 @@ class _ActionCreateZoneFromZoneFileState:
     @property
     @pulumi.getter
     def version(self) -> Optional[pulumi.Input[str]]:
-        """
-        Version is the never-repeating, totally-orderable, version of the zone, from which the serial field of the zone's SOA record is derived.
-        """
         return pulumi.get(self, "version")
 
     @version.setter
@@ -357,13 +266,6 @@ class _ActionCreateZoneFromZoneFileState:
     @property
     @pulumi.getter(name="viewId")
     def view_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the view the resource is associated with.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "view_id")
 
     @view_id.setter
@@ -373,9 +275,6 @@ class _ActionCreateZoneFromZoneFileState:
     @property
     @pulumi.getter(name="zoneTransferServers")
     def zone_transfer_servers(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ActionCreateZoneFromZoneFileZoneTransferServerArgs']]]]:
-        """
-        The Oracle Cloud Infrastructure nameservers that transfer the zone data with external nameservers.
-        """
         return pulumi.get(self, "zone_transfer_servers")
 
     @zone_transfer_servers.setter
@@ -385,9 +284,6 @@ class _ActionCreateZoneFromZoneFileState:
     @property
     @pulumi.getter(name="zoneType")
     def zone_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        The type of the zone. Must be either `PRIMARY` or `SECONDARY`. `SECONDARY` is only supported for GLOBAL zones.
-        """
         return pulumi.get(self, "zone_type")
 
     @zone_type.setter
@@ -406,43 +302,9 @@ class ActionCreateZoneFromZoneFile(pulumi.CustomResource):
                  view_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Action Create Zone From Zone File resource in Oracle Cloud Infrastructure DNS service.
-
-        Creates a new zone from a zone file in the specified compartment.
-
-        After the zone has been created, it should be further managed by importing it to an `Dns.Zone` resource.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_action_create_zone_from_zone_file = oci.dns.ActionCreateZoneFromZoneFile("testActionCreateZoneFromZoneFile",
-            create_zone_from_zone_file_details=var["action_create_zone_from_zone_file_create_zone_from_zone_file_details"],
-            compartment_id=var["compartment_id"],
-            scope=var["action_create_zone_from_zone_file_scope"],
-            view_id=oci_dns_view["test_view"]["id"])
-        ```
-
-        ## Import
-
-        ActionCreateZoneFromZoneFile can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Dns/actionCreateZoneFromZoneFile:ActionCreateZoneFromZoneFile test_action_create_zone_from_zone_file "id"
-        ```
-
+        Create a ActionCreateZoneFromZoneFile resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: The OCID of the compartment the resource belongs to.
-        :param pulumi.Input[str] create_zone_from_zone_file_details: The zone file contents.
-        :param pulumi.Input[str] scope: Specifies to operate only on resources that have a matching DNS scope.
-        :param pulumi.Input[str] view_id: The OCID of the view the resource is associated with.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -451,33 +313,7 @@ class ActionCreateZoneFromZoneFile(pulumi.CustomResource):
                  args: ActionCreateZoneFromZoneFileArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Action Create Zone From Zone File resource in Oracle Cloud Infrastructure DNS service.
-
-        Creates a new zone from a zone file in the specified compartment.
-
-        After the zone has been created, it should be further managed by importing it to an `Dns.Zone` resource.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_action_create_zone_from_zone_file = oci.dns.ActionCreateZoneFromZoneFile("testActionCreateZoneFromZoneFile",
-            create_zone_from_zone_file_details=var["action_create_zone_from_zone_file_create_zone_from_zone_file_details"],
-            compartment_id=var["compartment_id"],
-            scope=var["action_create_zone_from_zone_file_scope"],
-            view_id=oci_dns_view["test_view"]["id"])
-        ```
-
-        ## Import
-
-        ActionCreateZoneFromZoneFile can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Dns/actionCreateZoneFromZoneFile:ActionCreateZoneFromZoneFile test_action_create_zone_from_zone_file "id"
-        ```
-
+        Create a ActionCreateZoneFromZoneFile resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param ActionCreateZoneFromZoneFileArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -563,28 +399,6 @@ class ActionCreateZoneFromZoneFile(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: The OCID of the compartment the resource belongs to.
-        :param pulumi.Input[str] create_zone_from_zone_file_details: The zone file contents.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ActionCreateZoneFromZoneFileExternalDownstreamArgs']]]] external_downstreams: External secondary servers for the zone. This field is currently not supported when `zoneType` is `SECONDARY` or `scope` is `PRIVATE`.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ActionCreateZoneFromZoneFileExternalMasterArgs']]]] external_masters: External master servers for the zone. `externalMasters` becomes a required parameter when the `zoneType` value is `SECONDARY`.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        :param pulumi.Input[bool] is_protected: A Boolean flag indicating whether or not parts of the resource are unable to be explicitly managed.
-        :param pulumi.Input[str] name: The name of the zone.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ActionCreateZoneFromZoneFileNameserverArgs']]]] nameservers: The authoritative nameservers for the zone.
-        :param pulumi.Input[str] scope: Specifies to operate only on resources that have a matching DNS scope.
-        :param pulumi.Input[str] self: The canonical absolute URL of the resource.
-        :param pulumi.Input[str] serial: The current serial of the zone. As seen in the zone's SOA record.
-        :param pulumi.Input[str] state: The current state of the zone resource.
-        :param pulumi.Input[str] time_created: The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
-        :param pulumi.Input[str] version: Version is the never-repeating, totally-orderable, version of the zone, from which the serial field of the zone's SOA record is derived.
-        :param pulumi.Input[str] view_id: The OCID of the view the resource is associated with.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ActionCreateZoneFromZoneFileZoneTransferServerArgs']]]] zone_transfer_servers: The Oracle Cloud Infrastructure nameservers that transfer the zone data with external nameservers.
-        :param pulumi.Input[str] zone_type: The type of the zone. Must be either `PRIMARY` or `SECONDARY`. `SECONDARY` is only supported for GLOBAL zones.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -613,148 +427,90 @@ class ActionCreateZoneFromZoneFile(pulumi.CustomResource):
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
-        """
-        The OCID of the compartment the resource belongs to.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="createZoneFromZoneFileDetails")
     def create_zone_from_zone_file_details(self) -> pulumi.Output[str]:
-        """
-        The zone file contents.
-        """
         return pulumi.get(self, "create_zone_from_zone_file_details")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        """
+    def defined_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="externalDownstreams")
-    def external_downstreams(self) -> pulumi.Output[Sequence['outputs.ActionCreateZoneFromZoneFileExternalDownstream']]:
-        """
-        External secondary servers for the zone. This field is currently not supported when `zoneType` is `SECONDARY` or `scope` is `PRIVATE`.
-        """
+    def external_downstreams(self) -> pulumi.Output[Optional[Sequence['outputs.ActionCreateZoneFromZoneFileExternalDownstream']]]:
         return pulumi.get(self, "external_downstreams")
 
     @property
     @pulumi.getter(name="externalMasters")
-    def external_masters(self) -> pulumi.Output[Sequence['outputs.ActionCreateZoneFromZoneFileExternalMaster']]:
-        """
-        External master servers for the zone. `externalMasters` becomes a required parameter when the `zoneType` value is `SECONDARY`.
-        """
+    def external_masters(self) -> pulumi.Output[Optional[Sequence['outputs.ActionCreateZoneFromZoneFileExternalMaster']]]:
         return pulumi.get(self, "external_masters")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        """
+    def freeform_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="isProtected")
-    def is_protected(self) -> pulumi.Output[bool]:
-        """
-        A Boolean flag indicating whether or not parts of the resource are unable to be explicitly managed.
-        """
+    def is_protected(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "is_protected")
 
     @property
     @pulumi.getter
-    def name(self) -> pulumi.Output[str]:
-        """
-        The name of the zone.
-        """
+    def name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
-    def nameservers(self) -> pulumi.Output[Sequence['outputs.ActionCreateZoneFromZoneFileNameserver']]:
-        """
-        The authoritative nameservers for the zone.
-        """
+    def nameservers(self) -> pulumi.Output[Optional[Sequence['outputs.ActionCreateZoneFromZoneFileNameserver']]]:
         return pulumi.get(self, "nameservers")
 
     @property
     @pulumi.getter
-    def scope(self) -> pulumi.Output[str]:
-        """
-        Specifies to operate only on resources that have a matching DNS scope.
-        """
+    def scope(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "scope")
 
     @property
     @pulumi.getter
-    def self(self) -> pulumi.Output[str]:
-        """
-        The canonical absolute URL of the resource.
-        """
+    def self(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "self")
 
     @property
     @pulumi.getter
-    def serial(self) -> pulumi.Output[str]:
-        """
-        The current serial of the zone. As seen in the zone's SOA record.
-        """
+    def serial(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "serial")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        The current state of the zone resource.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter
-    def version(self) -> pulumi.Output[str]:
-        """
-        Version is the never-repeating, totally-orderable, version of the zone, from which the serial field of the zone's SOA record is derived.
-        """
+    def version(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "version")
 
     @property
     @pulumi.getter(name="viewId")
-    def view_id(self) -> pulumi.Output[str]:
-        """
-        The OCID of the view the resource is associated with.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
+    def view_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "view_id")
 
     @property
     @pulumi.getter(name="zoneTransferServers")
-    def zone_transfer_servers(self) -> pulumi.Output[Sequence['outputs.ActionCreateZoneFromZoneFileZoneTransferServer']]:
-        """
-        The Oracle Cloud Infrastructure nameservers that transfer the zone data with external nameservers.
-        """
+    def zone_transfer_servers(self) -> pulumi.Output[Optional[Sequence['outputs.ActionCreateZoneFromZoneFileZoneTransferServer']]]:
         return pulumi.get(self, "zone_transfer_servers")
 
     @property
     @pulumi.getter(name="zoneType")
-    def zone_type(self) -> pulumi.Output[str]:
-        """
-        The type of the zone. Must be either `PRIMARY` or `SECONDARY`. `SECONDARY` is only supported for GLOBAL zones.
-        """
+    def zone_type(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "zone_type")
 

@@ -47,64 +47,64 @@ export interface GetDataMaskRuleResult {
     /**
      * Compartment Identifier where the resource is created.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * Data Mask Categories
      */
-    readonly dataMaskCategories: string[];
+    readonly dataMaskCategories?: string[];
     readonly dataMaskRuleId: string;
     /**
      * The status of the dataMaskRule.
      */
-    readonly dataMaskRuleStatus: string;
+    readonly dataMaskRuleStatus?: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * The data mask rule description.
      */
-    readonly description: string;
+    readonly description?: string;
     /**
      * Data Mask Rule Identifier, can be renamed.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * IAM Group id associated with the data mask rule
      */
-    readonly iamGroupId: string;
+    readonly iamGroupId?: string;
     /**
      * Unique identifier that is immutable on creation
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
-    readonly lifecyleDetails: string;
+    readonly lifecyleDetails?: string;
     /**
      * The current state of the DataMaskRule.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    readonly systemTags: {[key: string]: any};
+    readonly systemTags?: {[key: string]: any};
     /**
      * Target Selection eg select ALL or select on basis of TargetResourceTypes or TargetIds.
      */
-    readonly targetSelecteds: outputs.CloudGuard.GetDataMaskRuleTargetSelected[];
+    readonly targetSelecteds?: outputs.CloudGuard.GetDataMaskRuleTargetSelected[];
     /**
      * The date and time the target was created. Format defined by RFC3339.
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The date and time the target was updated. Format defined by RFC3339.
      */
-    readonly timeUpdated: string;
+    readonly timeUpdated?: string;
 }
 /**
  * This data source provides details about a specific Data Mask Rule resource in Oracle Cloud Infrastructure Cloud Guard service.

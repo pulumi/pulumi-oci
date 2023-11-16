@@ -26,30 +26,6 @@ class RuleArgs:
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None):
         """
         The set of arguments for constructing a Rule resource.
-        :param pulumi.Input['RuleActionsArgs'] actions: (Updatable) A list of one or more ActionDetails objects.
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to which this rule belongs.
-        :param pulumi.Input[str] condition: (Updatable) A filter that specifies the event that will trigger actions associated with this rule. A few  important things to remember about filters:
-               * Fields not mentioned in the condition are ignored. You can create a valid filter that matches all events with two curly brackets: `{}`
-               
-               For more examples, see  [Matching Events with Filters](https://docs.cloud.oracle.com/iaas/Content/Events/Concepts/filterevents.htm).
-               * For a condition with fields to match an event, the event must contain all the field names  listed in the condition. Field names must appear in the condition with the same nesting  structure used in the event.
-               
-               For a list of reference events, see  [Services that Produce Events](https://docs.cloud.oracle.com/iaas/Content/Events/Reference/eventsproducers.htm).
-               * Rules apply to events in the compartment in which you create them and any child compartments.  This means that a condition specified by a rule only matches events emitted from resources in  the compartment or any of its child compartments.
-               * Wildcard matching is supported with the asterisk (*) character.
-               
-               For examples of wildcard matching, see  [Matching Events with Filters](https://docs.cloud.oracle.com/iaas/Content/Events/Concepts/filterevents.htm)
-               
-               Example: `\\"eventType\\": \\"com.oraclecloud.databaseservice.autonomous.database.backup.end\\"`
-        :param pulumi.Input[str] display_name: (Updatable) A string that describes the rule. It does not have to be unique, and you can change it. Avoid entering confidential information.
-        :param pulumi.Input[bool] is_enabled: (Updatable) Whether or not this rule is currently enabled.  Example: `true` 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] description: (Updatable) A string that describes the details of the rule. It does not have to be unique, and you can change it. Avoid entering confidential information.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. Exists for cross-compatibility only. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         pulumi.set(__self__, "actions", actions)
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -66,9 +42,6 @@ class RuleArgs:
     @property
     @pulumi.getter
     def actions(self) -> pulumi.Input['RuleActionsArgs']:
-        """
-        (Updatable) A list of one or more ActionDetails objects.
-        """
         return pulumi.get(self, "actions")
 
     @actions.setter
@@ -78,9 +51,6 @@ class RuleArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to which this rule belongs.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -90,21 +60,6 @@ class RuleArgs:
     @property
     @pulumi.getter
     def condition(self) -> pulumi.Input[str]:
-        """
-        (Updatable) A filter that specifies the event that will trigger actions associated with this rule. A few  important things to remember about filters:
-        * Fields not mentioned in the condition are ignored. You can create a valid filter that matches all events with two curly brackets: `{}`
-
-        For more examples, see  [Matching Events with Filters](https://docs.cloud.oracle.com/iaas/Content/Events/Concepts/filterevents.htm).
-        * For a condition with fields to match an event, the event must contain all the field names  listed in the condition. Field names must appear in the condition with the same nesting  structure used in the event.
-
-        For a list of reference events, see  [Services that Produce Events](https://docs.cloud.oracle.com/iaas/Content/Events/Reference/eventsproducers.htm).
-        * Rules apply to events in the compartment in which you create them and any child compartments.  This means that a condition specified by a rule only matches events emitted from resources in  the compartment or any of its child compartments.
-        * Wildcard matching is supported with the asterisk (*) character.
-
-        For examples of wildcard matching, see  [Matching Events with Filters](https://docs.cloud.oracle.com/iaas/Content/Events/Concepts/filterevents.htm)
-
-        Example: `\\"eventType\\": \\"com.oraclecloud.databaseservice.autonomous.database.backup.end\\"`
-        """
         return pulumi.get(self, "condition")
 
     @condition.setter
@@ -114,9 +69,6 @@ class RuleArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Input[str]:
-        """
-        (Updatable) A string that describes the rule. It does not have to be unique, and you can change it. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -126,13 +78,6 @@ class RuleArgs:
     @property
     @pulumi.getter(name="isEnabled")
     def is_enabled(self) -> pulumi.Input[bool]:
-        """
-        (Updatable) Whether or not this rule is currently enabled.  Example: `true` 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "is_enabled")
 
     @is_enabled.setter
@@ -142,9 +87,6 @@ class RuleArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -154,9 +96,6 @@ class RuleArgs:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A string that describes the details of the rule. It does not have to be unique, and you can change it. Avoid entering confidential information.
-        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -166,9 +105,6 @@ class RuleArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. Exists for cross-compatibility only. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -192,33 +128,6 @@ class _RuleState:
                  time_created: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering Rule resources.
-        :param pulumi.Input['RuleActionsArgs'] actions: (Updatable) A list of one or more ActionDetails objects.
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to which this rule belongs.
-        :param pulumi.Input[str] condition: (Updatable) A filter that specifies the event that will trigger actions associated with this rule. A few  important things to remember about filters:
-               * Fields not mentioned in the condition are ignored. You can create a valid filter that matches all events with two curly brackets: `{}`
-               
-               For more examples, see  [Matching Events with Filters](https://docs.cloud.oracle.com/iaas/Content/Events/Concepts/filterevents.htm).
-               * For a condition with fields to match an event, the event must contain all the field names  listed in the condition. Field names must appear in the condition with the same nesting  structure used in the event.
-               
-               For a list of reference events, see  [Services that Produce Events](https://docs.cloud.oracle.com/iaas/Content/Events/Reference/eventsproducers.htm).
-               * Rules apply to events in the compartment in which you create them and any child compartments.  This means that a condition specified by a rule only matches events emitted from resources in  the compartment or any of its child compartments.
-               * Wildcard matching is supported with the asterisk (*) character.
-               
-               For examples of wildcard matching, see  [Matching Events with Filters](https://docs.cloud.oracle.com/iaas/Content/Events/Concepts/filterevents.htm)
-               
-               Example: `\\"eventType\\": \\"com.oraclecloud.databaseservice.autonomous.database.backup.end\\"`
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] description: (Updatable) A string that describes the details of the rule. It does not have to be unique, and you can change it. Avoid entering confidential information.
-        :param pulumi.Input[str] display_name: (Updatable) A string that describes the rule. It does not have to be unique, and you can change it. Avoid entering confidential information.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. Exists for cross-compatibility only. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[bool] is_enabled: (Updatable) Whether or not this rule is currently enabled.  Example: `true` 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] lifecycle_message: A message generated by the Events service about the current state of this rule.
-        :param pulumi.Input[str] state: The current state of the rule.
-        :param pulumi.Input[str] time_created: The time this rule was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-09-12T22:47:12.613Z`
         """
         if actions is not None:
             pulumi.set(__self__, "actions", actions)
@@ -246,9 +155,6 @@ class _RuleState:
     @property
     @pulumi.getter
     def actions(self) -> Optional[pulumi.Input['RuleActionsArgs']]:
-        """
-        (Updatable) A list of one or more ActionDetails objects.
-        """
         return pulumi.get(self, "actions")
 
     @actions.setter
@@ -258,9 +164,6 @@ class _RuleState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to which this rule belongs.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -270,21 +173,6 @@ class _RuleState:
     @property
     @pulumi.getter
     def condition(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A filter that specifies the event that will trigger actions associated with this rule. A few  important things to remember about filters:
-        * Fields not mentioned in the condition are ignored. You can create a valid filter that matches all events with two curly brackets: `{}`
-
-        For more examples, see  [Matching Events with Filters](https://docs.cloud.oracle.com/iaas/Content/Events/Concepts/filterevents.htm).
-        * For a condition with fields to match an event, the event must contain all the field names  listed in the condition. Field names must appear in the condition with the same nesting  structure used in the event.
-
-        For a list of reference events, see  [Services that Produce Events](https://docs.cloud.oracle.com/iaas/Content/Events/Reference/eventsproducers.htm).
-        * Rules apply to events in the compartment in which you create them and any child compartments.  This means that a condition specified by a rule only matches events emitted from resources in  the compartment or any of its child compartments.
-        * Wildcard matching is supported with the asterisk (*) character.
-
-        For examples of wildcard matching, see  [Matching Events with Filters](https://docs.cloud.oracle.com/iaas/Content/Events/Concepts/filterevents.htm)
-
-        Example: `\\"eventType\\": \\"com.oraclecloud.databaseservice.autonomous.database.backup.end\\"`
-        """
         return pulumi.get(self, "condition")
 
     @condition.setter
@@ -294,9 +182,6 @@ class _RuleState:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -306,9 +191,6 @@ class _RuleState:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A string that describes the details of the rule. It does not have to be unique, and you can change it. Avoid entering confidential information.
-        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -318,9 +200,6 @@ class _RuleState:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A string that describes the rule. It does not have to be unique, and you can change it. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -330,9 +209,6 @@ class _RuleState:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. Exists for cross-compatibility only. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -342,13 +218,6 @@ class _RuleState:
     @property
     @pulumi.getter(name="isEnabled")
     def is_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Whether or not this rule is currently enabled.  Example: `true` 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "is_enabled")
 
     @is_enabled.setter
@@ -358,9 +227,6 @@ class _RuleState:
     @property
     @pulumi.getter(name="lifecycleMessage")
     def lifecycle_message(self) -> Optional[pulumi.Input[str]]:
-        """
-        A message generated by the Events service about the current state of this rule.
-        """
         return pulumi.get(self, "lifecycle_message")
 
     @lifecycle_message.setter
@@ -370,9 +236,6 @@ class _RuleState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The current state of the rule.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -382,9 +245,6 @@ class _RuleState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The time this rule was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-09-12T22:47:12.613Z`
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -407,74 +267,9 @@ class Rule(pulumi.CustomResource):
                  is_enabled: Optional[pulumi.Input[bool]] = None,
                  __props__=None):
         """
-        This resource provides the Rule resource in Oracle Cloud Infrastructure Events service.
-
-        Creates a new rule.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_rule = oci.events.Rule("testRule",
-            actions=oci.events.RuleActionsArgs(
-                actions=[oci.events.RuleActionsActionArgs(
-                    action_type=var["rule_actions_actions_action_type"],
-                    is_enabled=var["rule_actions_actions_is_enabled"],
-                    description=var["rule_actions_actions_description"],
-                    function_id=oci_functions_function["test_function"]["id"],
-                    stream_id=oci_streaming_stream["test_stream"]["id"],
-                    topic_id=oci_ons_notification_topic["test_topic"]["id"],
-                )],
-            ),
-            compartment_id=var["compartment_id"],
-            condition=var["rule_condition"],
-            display_name=var["rule_display_name"],
-            is_enabled=var["rule_is_enabled"],
-            defined_tags={
-                "Operations.CostCenter": "42",
-            },
-            description=var["rule_description"],
-            freeform_tags={
-                "Department": "Finance",
-            })
-        ```
-
-        ## Import
-
-        Rules can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Events/rule:Rule test_rule "id"
-        ```
-
+        Create a Rule resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[pulumi.InputType['RuleActionsArgs']] actions: (Updatable) A list of one or more ActionDetails objects.
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to which this rule belongs.
-        :param pulumi.Input[str] condition: (Updatable) A filter that specifies the event that will trigger actions associated with this rule. A few  important things to remember about filters:
-               * Fields not mentioned in the condition are ignored. You can create a valid filter that matches all events with two curly brackets: `{}`
-               
-               For more examples, see  [Matching Events with Filters](https://docs.cloud.oracle.com/iaas/Content/Events/Concepts/filterevents.htm).
-               * For a condition with fields to match an event, the event must contain all the field names  listed in the condition. Field names must appear in the condition with the same nesting  structure used in the event.
-               
-               For a list of reference events, see  [Services that Produce Events](https://docs.cloud.oracle.com/iaas/Content/Events/Reference/eventsproducers.htm).
-               * Rules apply to events in the compartment in which you create them and any child compartments.  This means that a condition specified by a rule only matches events emitted from resources in  the compartment or any of its child compartments.
-               * Wildcard matching is supported with the asterisk (*) character.
-               
-               For examples of wildcard matching, see  [Matching Events with Filters](https://docs.cloud.oracle.com/iaas/Content/Events/Concepts/filterevents.htm)
-               
-               Example: `\\"eventType\\": \\"com.oraclecloud.databaseservice.autonomous.database.backup.end\\"`
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] description: (Updatable) A string that describes the details of the rule. It does not have to be unique, and you can change it. Avoid entering confidential information.
-        :param pulumi.Input[str] display_name: (Updatable) A string that describes the rule. It does not have to be unique, and you can change it. Avoid entering confidential information.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. Exists for cross-compatibility only. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[bool] is_enabled: (Updatable) Whether or not this rule is currently enabled.  Example: `true` 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -483,48 +278,7 @@ class Rule(pulumi.CustomResource):
                  args: RuleArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Rule resource in Oracle Cloud Infrastructure Events service.
-
-        Creates a new rule.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_rule = oci.events.Rule("testRule",
-            actions=oci.events.RuleActionsArgs(
-                actions=[oci.events.RuleActionsActionArgs(
-                    action_type=var["rule_actions_actions_action_type"],
-                    is_enabled=var["rule_actions_actions_is_enabled"],
-                    description=var["rule_actions_actions_description"],
-                    function_id=oci_functions_function["test_function"]["id"],
-                    stream_id=oci_streaming_stream["test_stream"]["id"],
-                    topic_id=oci_ons_notification_topic["test_topic"]["id"],
-                )],
-            ),
-            compartment_id=var["compartment_id"],
-            condition=var["rule_condition"],
-            display_name=var["rule_display_name"],
-            is_enabled=var["rule_is_enabled"],
-            defined_tags={
-                "Operations.CostCenter": "42",
-            },
-            description=var["rule_description"],
-            freeform_tags={
-                "Department": "Finance",
-            })
-        ```
-
-        ## Import
-
-        Rules can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Events/rule:Rule test_rule "id"
-        ```
-
+        Create a Rule resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param RuleArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -606,33 +360,6 @@ class Rule(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[pulumi.InputType['RuleActionsArgs']] actions: (Updatable) A list of one or more ActionDetails objects.
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to which this rule belongs.
-        :param pulumi.Input[str] condition: (Updatable) A filter that specifies the event that will trigger actions associated with this rule. A few  important things to remember about filters:
-               * Fields not mentioned in the condition are ignored. You can create a valid filter that matches all events with two curly brackets: `{}`
-               
-               For more examples, see  [Matching Events with Filters](https://docs.cloud.oracle.com/iaas/Content/Events/Concepts/filterevents.htm).
-               * For a condition with fields to match an event, the event must contain all the field names  listed in the condition. Field names must appear in the condition with the same nesting  structure used in the event.
-               
-               For a list of reference events, see  [Services that Produce Events](https://docs.cloud.oracle.com/iaas/Content/Events/Reference/eventsproducers.htm).
-               * Rules apply to events in the compartment in which you create them and any child compartments.  This means that a condition specified by a rule only matches events emitted from resources in  the compartment or any of its child compartments.
-               * Wildcard matching is supported with the asterisk (*) character.
-               
-               For examples of wildcard matching, see  [Matching Events with Filters](https://docs.cloud.oracle.com/iaas/Content/Events/Concepts/filterevents.htm)
-               
-               Example: `\\"eventType\\": \\"com.oraclecloud.databaseservice.autonomous.database.backup.end\\"`
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] description: (Updatable) A string that describes the details of the rule. It does not have to be unique, and you can change it. Avoid entering confidential information.
-        :param pulumi.Input[str] display_name: (Updatable) A string that describes the rule. It does not have to be unique, and you can change it. Avoid entering confidential information.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. Exists for cross-compatibility only. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[bool] is_enabled: (Updatable) Whether or not this rule is currently enabled.  Example: `true` 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] lifecycle_message: A message generated by the Events service about the current state of this rule.
-        :param pulumi.Input[str] state: The current state of the rule.
-        :param pulumi.Input[str] time_created: The time this rule was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-09-12T22:47:12.613Z`
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -654,104 +381,55 @@ class Rule(pulumi.CustomResource):
     @property
     @pulumi.getter
     def actions(self) -> pulumi.Output['outputs.RuleActions']:
-        """
-        (Updatable) A list of one or more ActionDetails objects.
-        """
         return pulumi.get(self, "actions")
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to which this rule belongs.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter
     def condition(self) -> pulumi.Output[str]:
-        """
-        (Updatable) A filter that specifies the event that will trigger actions associated with this rule. A few  important things to remember about filters:
-        * Fields not mentioned in the condition are ignored. You can create a valid filter that matches all events with two curly brackets: `{}`
-
-        For more examples, see  [Matching Events with Filters](https://docs.cloud.oracle.com/iaas/Content/Events/Concepts/filterevents.htm).
-        * For a condition with fields to match an event, the event must contain all the field names  listed in the condition. Field names must appear in the condition with the same nesting  structure used in the event.
-
-        For a list of reference events, see  [Services that Produce Events](https://docs.cloud.oracle.com/iaas/Content/Events/Reference/eventsproducers.htm).
-        * Rules apply to events in the compartment in which you create them and any child compartments.  This means that a condition specified by a rule only matches events emitted from resources in  the compartment or any of its child compartments.
-        * Wildcard matching is supported with the asterisk (*) character.
-
-        For examples of wildcard matching, see  [Matching Events with Filters](https://docs.cloud.oracle.com/iaas/Content/Events/Concepts/filterevents.htm)
-
-        Example: `\\"eventType\\": \\"com.oraclecloud.databaseservice.autonomous.database.backup.end\\"`
-        """
         return pulumi.get(self, "condition")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def description(self) -> pulumi.Output[str]:
-        """
-        (Updatable) A string that describes the details of the rule. It does not have to be unique, and you can change it. Avoid entering confidential information.
-        """
+    def description(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Output[str]:
-        """
-        (Updatable) A string that describes the rule. It does not have to be unique, and you can change it. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. Exists for cross-compatibility only. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="isEnabled")
     def is_enabled(self) -> pulumi.Output[bool]:
-        """
-        (Updatable) Whether or not this rule is currently enabled.  Example: `true` 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "is_enabled")
 
     @property
     @pulumi.getter(name="lifecycleMessage")
-    def lifecycle_message(self) -> pulumi.Output[str]:
-        """
-        A message generated by the Events service about the current state of this rule.
-        """
+    def lifecycle_message(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "lifecycle_message")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        The current state of the rule.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        The time this rule was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-09-12T22:47:12.613Z`
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 

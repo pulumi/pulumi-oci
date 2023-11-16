@@ -56,19 +56,19 @@ namespace Pulumi.Oci.Database
         /// The name of the availability domain that the VM cluster is located in.
         /// </summary>
         [Output("availabilityDomain")]
-        public Output<string> AvailabilityDomain { get; private set; } = null!;
+        public Output<string?> AvailabilityDomain { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         /// </summary>
         [Output("compartmentId")]
-        public Output<string> CompartmentId { get; private set; } = null!;
+        public Output<string?> CompartmentId { get; private set; } = null!;
 
         /// <summary>
         /// The number of enabled CPU cores.
         /// </summary>
         [Output("cpusEnabled")]
-        public Output<int> CpusEnabled { get; private set; } = null!;
+        public Output<int?> CpusEnabled { get; private set; } = null!;
 
         /// <summary>
         /// Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
@@ -80,19 +80,19 @@ namespace Pulumi.Oci.Database
         /// Size of the DATA disk group in GBs.
         /// </summary>
         [Output("dataStorageSizeInGb")]
-        public Output<double> DataStorageSizeInGb { get; private set; } = null!;
+        public Output<double?> DataStorageSizeInGb { get; private set; } = null!;
 
         /// <summary>
         /// Size, in terabytes, of the DATA disk group.
         /// </summary>
         [Output("dataStorageSizeInTbs")]
-        public Output<double> DataStorageSizeInTbs { get; private set; } = null!;
+        public Output<double?> DataStorageSizeInTbs { get; private set; } = null!;
 
         /// <summary>
         /// The local node storage allocated in GBs.
         /// </summary>
         [Output("dbNodeStorageSizeInGbs")]
-        public Output<int> DbNodeStorageSizeInGbs { get; private set; } = null!;
+        public Output<int?> DbNodeStorageSizeInGbs { get; private set; } = null!;
 
         /// <summary>
         /// The list of Exacc DB servers for the cluster to be added.
@@ -104,76 +104,76 @@ namespace Pulumi.Oci.Database
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// The user-friendly name for the Exadata Cloud@Customer VM cluster. The name does not need to be unique.
         /// </summary>
         [Output("displayName")]
-        public Output<string> DisplayName { get; private set; } = null!;
+        public Output<string?> DisplayName { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
         /// </summary>
         [Output("exadataInfrastructureId")]
-        public Output<string> ExadataInfrastructureId { get; private set; } = null!;
+        public Output<string?> ExadataInfrastructureId { get; private set; } = null!;
 
         /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// The Oracle Grid Infrastructure software version for the VM cluster.
         /// </summary>
         [Output("giVersion")]
-        public Output<string> GiVersion { get; private set; } = null!;
+        public Output<string?> GiVersion { get; private set; } = null!;
 
         /// <summary>
         /// If true, database backup on local Exadata storage is configured for the VM cluster. If false, database backup on local Exadata storage is not available in the VM cluster.
         /// </summary>
         [Output("isLocalBackupEnabled")]
-        public Output<bool> IsLocalBackupEnabled { get; private set; } = null!;
+        public Output<bool?> IsLocalBackupEnabled { get; private set; } = null!;
 
         /// <summary>
         /// If true, sparse disk group is configured for the VM cluster. If false, sparse disk group is not created.
         /// </summary>
         [Output("isSparseDiskgroupEnabled")]
-        public Output<bool> IsSparseDiskgroupEnabled { get; private set; } = null!;
+        public Output<bool?> IsSparseDiskgroupEnabled { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last patch history. This value is updated as soon as a patch operation starts.
         /// </summary>
         [Output("lastPatchHistoryEntryId")]
-        public Output<string> LastPatchHistoryEntryId { get; private set; } = null!;
+        public Output<string?> LastPatchHistoryEntryId { get; private set; } = null!;
 
         /// <summary>
         /// The Oracle license model that applies to the VM cluster. The default is LICENSE_INCLUDED.
         /// </summary>
         [Output("licenseModel")]
-        public Output<string> LicenseModel { get; private set; } = null!;
+        public Output<string?> LicenseModel { get; private set; } = null!;
 
         /// <summary>
         /// Additional information about the current lifecycle state.
         /// </summary>
         [Output("lifecycleDetails")]
-        public Output<string> LifecycleDetails { get; private set; } = null!;
+        public Output<string?> LifecycleDetails { get; private set; } = null!;
 
         /// <summary>
         /// The memory allocated in GBs.
         /// </summary>
         [Output("memorySizeInGbs")]
-        public Output<int> MemorySizeInGbs { get; private set; } = null!;
+        public Output<int?> MemorySizeInGbs { get; private set; } = null!;
 
         [Output("ocpusEnabled")]
-        public Output<double> OcpusEnabled { get; private set; } = null!;
+        public Output<double?> OcpusEnabled { get; private set; } = null!;
 
         /// <summary>
         /// The shape of the Exadata infrastructure. The shape determines the amount of CPU, storage, and memory resources allocated to the instance.
         /// </summary>
         [Output("shape")]
-        public Output<string> Shape { get; private set; } = null!;
+        public Output<string?> Shape { get; private set; } = null!;
 
         /// <summary>
         /// The public key portion of one or more key pairs used for SSH access to the VM cluster.
@@ -185,25 +185,25 @@ namespace Pulumi.Oci.Database
         /// The current state of the VM cluster.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// Operating system version of the image.
         /// </summary>
         [Output("systemVersion")]
-        public Output<string> SystemVersion { get; private set; } = null!;
+        public Output<string?> SystemVersion { get; private set; } = null!;
 
         /// <summary>
         /// The date and time that the VM cluster was created.
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// The time zone of the Exadata infrastructure. For details, see [Exadata Infrastructure Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
         /// </summary>
         [Output("timeZone")]
-        public Output<string> TimeZone { get; private set; } = null!;
+        public Output<string?> TimeZone { get; private set; } = null!;
 
         /// <summary>
         /// The VM cluster [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -219,7 +219,7 @@ namespace Pulumi.Oci.Database
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster network.
         /// </summary>
         [Output("vmClusterNetworkId")]
-        public Output<string> VmClusterNetworkId { get; private set; } = null!;
+        public Output<string?> VmClusterNetworkId { get; private set; } = null!;
 
 
         /// <summary>

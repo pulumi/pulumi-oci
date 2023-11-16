@@ -6,6 +6,8 @@ package com.pulumi.oci.AiAnomalyDetection.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDetectAnomalyJobOutputDetail {
@@ -13,51 +15,51 @@ public final class GetDetectAnomalyJobOutputDetail {
      * @return Object Storage bucket name.
      * 
      */
-    private String bucket;
+    private @Nullable String bucket;
     /**
      * @return Object Storage namespace.
      * 
      */
-    private String namespace;
+    private @Nullable String namespace;
     /**
      * @return The type of output location Allowed values are:
      * 
      */
-    private String outputType;
+    private @Nullable String outputType;
     /**
      * @return Object Storage folder name.
      * 
      */
-    private String prefix;
+    private @Nullable String prefix;
 
     private GetDetectAnomalyJobOutputDetail() {}
     /**
      * @return Object Storage bucket name.
      * 
      */
-    public String bucket() {
-        return this.bucket;
+    public Optional<String> bucket() {
+        return Optional.ofNullable(this.bucket);
     }
     /**
      * @return Object Storage namespace.
      * 
      */
-    public String namespace() {
-        return this.namespace;
+    public Optional<String> namespace() {
+        return Optional.ofNullable(this.namespace);
     }
     /**
      * @return The type of output location Allowed values are:
      * 
      */
-    public String outputType() {
-        return this.outputType;
+    public Optional<String> outputType() {
+        return Optional.ofNullable(this.outputType);
     }
     /**
      * @return Object Storage folder name.
      * 
      */
-    public String prefix() {
-        return this.prefix;
+    public Optional<String> prefix() {
+        return Optional.ofNullable(this.prefix);
     }
 
     public static Builder builder() {
@@ -69,10 +71,10 @@ public final class GetDetectAnomalyJobOutputDetail {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String bucket;
-        private String namespace;
-        private String outputType;
-        private String prefix;
+        private @Nullable String bucket;
+        private @Nullable String namespace;
+        private @Nullable String outputType;
+        private @Nullable String prefix;
         public Builder() {}
         public Builder(GetDetectAnomalyJobOutputDetail defaults) {
     	      Objects.requireNonNull(defaults);
@@ -83,23 +85,23 @@ public final class GetDetectAnomalyJobOutputDetail {
         }
 
         @CustomType.Setter
-        public Builder bucket(String bucket) {
-            this.bucket = Objects.requireNonNull(bucket);
+        public Builder bucket(@Nullable String bucket) {
+            this.bucket = bucket;
             return this;
         }
         @CustomType.Setter
-        public Builder namespace(String namespace) {
-            this.namespace = Objects.requireNonNull(namespace);
+        public Builder namespace(@Nullable String namespace) {
+            this.namespace = namespace;
             return this;
         }
         @CustomType.Setter
-        public Builder outputType(String outputType) {
-            this.outputType = Objects.requireNonNull(outputType);
+        public Builder outputType(@Nullable String outputType) {
+            this.outputType = outputType;
             return this;
         }
         @CustomType.Setter
-        public Builder prefix(String prefix) {
-            this.prefix = Objects.requireNonNull(prefix);
+        public Builder prefix(@Nullable String prefix) {
+            this.prefix = prefix;
             return this;
         }
         public GetDetectAnomalyJobOutputDetail build() {

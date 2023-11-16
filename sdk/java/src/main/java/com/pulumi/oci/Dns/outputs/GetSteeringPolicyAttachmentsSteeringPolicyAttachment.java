@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetSteeringPolicyAttachmentsSteeringPolicyAttachment {
@@ -14,123 +16,123 @@ public final class GetSteeringPolicyAttachmentsSteeringPolicyAttachment {
      * @return The OCID of the compartment the resource belongs to.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return The displayName of a resource.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return The attached domain within the attached zone.
      * 
      */
-    private String domainName;
+    private @Nullable String domainName;
     /**
      * @return The OCID of a resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The record types covered by the attachment at the domain. The set of record types is determined by aggregating the record types from the answers defined in the steering policy.
      * 
      */
-    private List<String> rtypes;
+    private @Nullable List<String> rtypes;
     /**
      * @return The canonical absolute URL of the resource.
      * 
      */
-    private String self;
+    private @Nullable String self;
     /**
      * @return The state of a resource.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return Search by steering policy OCID. Will match any resource whose steering policy ID matches the provided value.
      * 
      */
-    private String steeringPolicyId;
+    private @Nullable String steeringPolicyId;
     /**
      * @return The date and time the resource was created, expressed in RFC 3339 timestamp format.
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return Search by zone OCID. Will match any resource whose zone ID matches the provided value.
      * 
      */
-    private String zoneId;
+    private @Nullable String zoneId;
 
     private GetSteeringPolicyAttachmentsSteeringPolicyAttachment() {}
     /**
      * @return The OCID of the compartment the resource belongs to.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return The displayName of a resource.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return The attached domain within the attached zone.
      * 
      */
-    public String domainName() {
-        return this.domainName;
+    public Optional<String> domainName() {
+        return Optional.ofNullable(this.domainName);
     }
     /**
      * @return The OCID of a resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The record types covered by the attachment at the domain. The set of record types is determined by aggregating the record types from the answers defined in the steering policy.
      * 
      */
     public List<String> rtypes() {
-        return this.rtypes;
+        return this.rtypes == null ? List.of() : this.rtypes;
     }
     /**
      * @return The canonical absolute URL of the resource.
      * 
      */
-    public String self() {
-        return this.self;
+    public Optional<String> self() {
+        return Optional.ofNullable(this.self);
     }
     /**
      * @return The state of a resource.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return Search by steering policy OCID. Will match any resource whose steering policy ID matches the provided value.
      * 
      */
-    public String steeringPolicyId() {
-        return this.steeringPolicyId;
+    public Optional<String> steeringPolicyId() {
+        return Optional.ofNullable(this.steeringPolicyId);
     }
     /**
      * @return The date and time the resource was created, expressed in RFC 3339 timestamp format.
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return Search by zone OCID. Will match any resource whose zone ID matches the provided value.
      * 
      */
-    public String zoneId() {
-        return this.zoneId;
+    public Optional<String> zoneId() {
+        return Optional.ofNullable(this.zoneId);
     }
 
     public static Builder builder() {
@@ -142,16 +144,16 @@ public final class GetSteeringPolicyAttachmentsSteeringPolicyAttachment {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String compartmentId;
-        private String displayName;
-        private String domainName;
-        private String id;
-        private List<String> rtypes;
-        private String self;
-        private String state;
-        private String steeringPolicyId;
-        private String timeCreated;
-        private String zoneId;
+        private @Nullable String compartmentId;
+        private @Nullable String displayName;
+        private @Nullable String domainName;
+        private @Nullable String id;
+        private @Nullable List<String> rtypes;
+        private @Nullable String self;
+        private @Nullable String state;
+        private @Nullable String steeringPolicyId;
+        private @Nullable String timeCreated;
+        private @Nullable String zoneId;
         public Builder() {}
         public Builder(GetSteeringPolicyAttachmentsSteeringPolicyAttachment defaults) {
     	      Objects.requireNonNull(defaults);
@@ -168,56 +170,56 @@ public final class GetSteeringPolicyAttachmentsSteeringPolicyAttachment {
         }
 
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder domainName(String domainName) {
-            this.domainName = Objects.requireNonNull(domainName);
+        public Builder domainName(@Nullable String domainName) {
+            this.domainName = domainName;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder rtypes(List<String> rtypes) {
-            this.rtypes = Objects.requireNonNull(rtypes);
+        public Builder rtypes(@Nullable List<String> rtypes) {
+            this.rtypes = rtypes;
             return this;
         }
         public Builder rtypes(String... rtypes) {
             return rtypes(List.of(rtypes));
         }
         @CustomType.Setter
-        public Builder self(String self) {
-            this.self = Objects.requireNonNull(self);
+        public Builder self(@Nullable String self) {
+            this.self = self;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder steeringPolicyId(String steeringPolicyId) {
-            this.steeringPolicyId = Objects.requireNonNull(steeringPolicyId);
+        public Builder steeringPolicyId(@Nullable String steeringPolicyId) {
+            this.steeringPolicyId = steeringPolicyId;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder zoneId(String zoneId) {
-            this.zoneId = Objects.requireNonNull(zoneId);
+        public Builder zoneId(@Nullable String zoneId) {
+            this.zoneId = zoneId;
             return this;
         }
         public GetSteeringPolicyAttachmentsSteeringPolicyAttachment build() {

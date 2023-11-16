@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.DataSafe.outputs.GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollection {
@@ -14,7 +15,7 @@ public final class GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollec
      * @return The aggregated data point items.
      * 
      */
-    private List<GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItem> items;
+    private @Nullable List<GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItem> items;
 
     private GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollection() {}
     /**
@@ -22,7 +23,7 @@ public final class GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollec
      * 
      */
     public List<GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -34,7 +35,7 @@ public final class GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollec
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItem> items;
+        private @Nullable List<GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItem> items;
         public Builder() {}
         public Builder(GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -42,8 +43,8 @@ public final class GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollec
         }
 
         @CustomType.Setter
-        public Builder items(List<GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItem... items) {

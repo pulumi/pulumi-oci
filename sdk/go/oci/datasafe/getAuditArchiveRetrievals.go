@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Audit Archive Retrievals in Oracle Cloud Infrastructure Data Safe service.
@@ -92,7 +91,7 @@ type GetAuditArchiveRetrievalsResult struct {
 	DisplayName *string                           `pulumi:"displayName"`
 	Filters     []GetAuditArchiveRetrievalsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The current state of the archive retrieval.
 	State *string `pulumi:"state"`
 	// The OCID of the target associated with the archive retrieval.
@@ -154,12 +153,6 @@ func (o GetAuditArchiveRetrievalsResultOutput) ToGetAuditArchiveRetrievalsResult
 	return o
 }
 
-func (o GetAuditArchiveRetrievalsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetAuditArchiveRetrievalsResult] {
-	return pulumix.Output[GetAuditArchiveRetrievalsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetAuditArchiveRetrievalsResultOutput) AccessLevel() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetAuditArchiveRetrievalsResult) *string { return v.AccessLevel }).(pulumi.StringPtrOutput)
 }
@@ -194,8 +187,8 @@ func (o GetAuditArchiveRetrievalsResultOutput) Filters() GetAuditArchiveRetrieva
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetAuditArchiveRetrievalsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAuditArchiveRetrievalsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetAuditArchiveRetrievalsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAuditArchiveRetrievalsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the archive retrieval.

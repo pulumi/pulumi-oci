@@ -16,6 +16,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetContainerInstancesContainerInstanceCollectionItem {
@@ -23,279 +25,279 @@ public final class GetContainerInstancesContainerInstanceCollectionItem {
      * @return The name of the availability domain.  Example: `Uocm:PHX-AD-1`
      * 
      */
-    private String availabilityDomain;
+    private @Nullable String availabilityDomain;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return The number of containers on the container instance.
      * 
      */
-    private Integer containerCount;
+    private @Nullable Integer containerCount;
     /**
      * @return The container restart policy is applied for all containers in container instance.
      * 
      */
-    private String containerRestartPolicy;
+    private @Nullable String containerRestartPolicy;
     /**
      * @return The containers on the container instance.
      * 
      */
-    private List<GetContainerInstancesContainerInstanceCollectionItemContainer> containers;
+    private @Nullable List<GetContainerInstancesContainerInstanceCollectionItemContainer> containers;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`.
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return A filter to return only resources that match the entire display name given.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return DNS settings for containers.
      * 
      */
-    private List<GetContainerInstancesContainerInstanceCollectionItemDnsConfig> dnsConfigs;
+    private @Nullable List<GetContainerInstancesContainerInstanceCollectionItemDnsConfig> dnsConfigs;
     /**
      * @return The fault domain to place the container instance.
      * 
      */
-    private String faultDomain;
+    private @Nullable String faultDomain;
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return The amount of time that processes in a container have to gracefully end when the container must be stopped. For example, when you delete a container instance. After the timeout is reached, the processes are sent a signal to be deleted.
      * 
      */
-    private String gracefulShutdownTimeoutInSeconds;
+    private @Nullable String gracefulShutdownTimeoutInSeconds;
     /**
      * @return An OCID that cannot be changed.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The image pulls secrets so you can access private registry to pull container images.
      * 
      */
-    private List<GetContainerInstancesContainerInstanceCollectionItemImagePullSecret> imagePullSecrets;
+    private @Nullable List<GetContainerInstancesContainerInstanceCollectionItemImagePullSecret> imagePullSecrets;
     /**
      * @return A message that describes the current state of the container in more detail. Can be used to provide actionable information.
      * 
      */
-    private String lifecycleDetails;
+    private @Nullable String lifecycleDetails;
     /**
      * @return The shape of the container instance. The shape determines the number of OCPUs, amount of memory, and other resources that are allocated to a container instance.
      * 
      */
-    private String shape;
+    private @Nullable String shape;
     /**
      * @return The shape configuration for a container instance. The shape configuration determines the resources thats are available to the container instance and its containers.
      * 
      */
-    private List<GetContainerInstancesContainerInstanceCollectionItemShapeConfig> shapeConfigs;
+    private @Nullable List<GetContainerInstancesContainerInstanceCollectionItemShapeConfig> shapeConfigs;
     /**
      * @return A filter to only return resources that match the given lifecycle state.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`.
      * 
      */
-    private Map<String,Object> systemTags;
+    private @Nullable Map<String,Object> systemTags;
     /**
      * @return The time the container instance was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The time the container instance was updated, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      * 
      */
-    private String timeUpdated;
+    private @Nullable String timeUpdated;
     /**
      * @return The virtual networks available to the containers in the container instance.
      * 
      */
-    private List<GetContainerInstancesContainerInstanceCollectionItemVnic> vnics;
+    private @Nullable List<GetContainerInstancesContainerInstanceCollectionItemVnic> vnics;
     /**
      * @return The number of volumes that are attached to the container instance.
      * 
      */
-    private Integer volumeCount;
+    private @Nullable Integer volumeCount;
     /**
      * @return A volume is a directory with data that is accessible across multiple containers in a container instance.
      * 
      */
-    private List<GetContainerInstancesContainerInstanceCollectionItemVolume> volumes;
+    private @Nullable List<GetContainerInstancesContainerInstanceCollectionItemVolume> volumes;
 
     private GetContainerInstancesContainerInstanceCollectionItem() {}
     /**
      * @return The name of the availability domain.  Example: `Uocm:PHX-AD-1`
      * 
      */
-    public String availabilityDomain() {
-        return this.availabilityDomain;
+    public Optional<String> availabilityDomain() {
+        return Optional.ofNullable(this.availabilityDomain);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return The number of containers on the container instance.
      * 
      */
-    public Integer containerCount() {
-        return this.containerCount;
+    public Optional<Integer> containerCount() {
+        return Optional.ofNullable(this.containerCount);
     }
     /**
      * @return The container restart policy is applied for all containers in container instance.
      * 
      */
-    public String containerRestartPolicy() {
-        return this.containerRestartPolicy;
+    public Optional<String> containerRestartPolicy() {
+        return Optional.ofNullable(this.containerRestartPolicy);
     }
     /**
      * @return The containers on the container instance.
      * 
      */
     public List<GetContainerInstancesContainerInstanceCollectionItemContainer> containers() {
-        return this.containers;
+        return this.containers == null ? List.of() : this.containers;
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`.
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return A filter to return only resources that match the entire display name given.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return DNS settings for containers.
      * 
      */
     public List<GetContainerInstancesContainerInstanceCollectionItemDnsConfig> dnsConfigs() {
-        return this.dnsConfigs;
+        return this.dnsConfigs == null ? List.of() : this.dnsConfigs;
     }
     /**
      * @return The fault domain to place the container instance.
      * 
      */
-    public String faultDomain() {
-        return this.faultDomain;
+    public Optional<String> faultDomain() {
+        return Optional.ofNullable(this.faultDomain);
     }
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return The amount of time that processes in a container have to gracefully end when the container must be stopped. For example, when you delete a container instance. After the timeout is reached, the processes are sent a signal to be deleted.
      * 
      */
-    public String gracefulShutdownTimeoutInSeconds() {
-        return this.gracefulShutdownTimeoutInSeconds;
+    public Optional<String> gracefulShutdownTimeoutInSeconds() {
+        return Optional.ofNullable(this.gracefulShutdownTimeoutInSeconds);
     }
     /**
      * @return An OCID that cannot be changed.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The image pulls secrets so you can access private registry to pull container images.
      * 
      */
     public List<GetContainerInstancesContainerInstanceCollectionItemImagePullSecret> imagePullSecrets() {
-        return this.imagePullSecrets;
+        return this.imagePullSecrets == null ? List.of() : this.imagePullSecrets;
     }
     /**
      * @return A message that describes the current state of the container in more detail. Can be used to provide actionable information.
      * 
      */
-    public String lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Optional<String> lifecycleDetails() {
+        return Optional.ofNullable(this.lifecycleDetails);
     }
     /**
      * @return The shape of the container instance. The shape determines the number of OCPUs, amount of memory, and other resources that are allocated to a container instance.
      * 
      */
-    public String shape() {
-        return this.shape;
+    public Optional<String> shape() {
+        return Optional.ofNullable(this.shape);
     }
     /**
      * @return The shape configuration for a container instance. The shape configuration determines the resources thats are available to the container instance and its containers.
      * 
      */
     public List<GetContainerInstancesContainerInstanceCollectionItemShapeConfig> shapeConfigs() {
-        return this.shapeConfigs;
+        return this.shapeConfigs == null ? List.of() : this.shapeConfigs;
     }
     /**
      * @return A filter to only return resources that match the given lifecycle state.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`.
      * 
      */
     public Map<String,Object> systemTags() {
-        return this.systemTags;
+        return this.systemTags == null ? Map.of() : this.systemTags;
     }
     /**
      * @return The time the container instance was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return The time the container instance was updated, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      * 
      */
-    public String timeUpdated() {
-        return this.timeUpdated;
+    public Optional<String> timeUpdated() {
+        return Optional.ofNullable(this.timeUpdated);
     }
     /**
      * @return The virtual networks available to the containers in the container instance.
      * 
      */
     public List<GetContainerInstancesContainerInstanceCollectionItemVnic> vnics() {
-        return this.vnics;
+        return this.vnics == null ? List.of() : this.vnics;
     }
     /**
      * @return The number of volumes that are attached to the container instance.
      * 
      */
-    public Integer volumeCount() {
-        return this.volumeCount;
+    public Optional<Integer> volumeCount() {
+        return Optional.ofNullable(this.volumeCount);
     }
     /**
      * @return A volume is a directory with data that is accessible across multiple containers in a container instance.
      * 
      */
     public List<GetContainerInstancesContainerInstanceCollectionItemVolume> volumes() {
-        return this.volumes;
+        return this.volumes == null ? List.of() : this.volumes;
     }
 
     public static Builder builder() {
@@ -307,29 +309,29 @@ public final class GetContainerInstancesContainerInstanceCollectionItem {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String availabilityDomain;
-        private String compartmentId;
-        private Integer containerCount;
-        private String containerRestartPolicy;
-        private List<GetContainerInstancesContainerInstanceCollectionItemContainer> containers;
-        private Map<String,Object> definedTags;
-        private String displayName;
-        private List<GetContainerInstancesContainerInstanceCollectionItemDnsConfig> dnsConfigs;
-        private String faultDomain;
-        private Map<String,Object> freeformTags;
-        private String gracefulShutdownTimeoutInSeconds;
-        private String id;
-        private List<GetContainerInstancesContainerInstanceCollectionItemImagePullSecret> imagePullSecrets;
-        private String lifecycleDetails;
-        private String shape;
-        private List<GetContainerInstancesContainerInstanceCollectionItemShapeConfig> shapeConfigs;
-        private String state;
-        private Map<String,Object> systemTags;
-        private String timeCreated;
-        private String timeUpdated;
-        private List<GetContainerInstancesContainerInstanceCollectionItemVnic> vnics;
-        private Integer volumeCount;
-        private List<GetContainerInstancesContainerInstanceCollectionItemVolume> volumes;
+        private @Nullable String availabilityDomain;
+        private @Nullable String compartmentId;
+        private @Nullable Integer containerCount;
+        private @Nullable String containerRestartPolicy;
+        private @Nullable List<GetContainerInstancesContainerInstanceCollectionItemContainer> containers;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String displayName;
+        private @Nullable List<GetContainerInstancesContainerInstanceCollectionItemDnsConfig> dnsConfigs;
+        private @Nullable String faultDomain;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String gracefulShutdownTimeoutInSeconds;
+        private @Nullable String id;
+        private @Nullable List<GetContainerInstancesContainerInstanceCollectionItemImagePullSecret> imagePullSecrets;
+        private @Nullable String lifecycleDetails;
+        private @Nullable String shape;
+        private @Nullable List<GetContainerInstancesContainerInstanceCollectionItemShapeConfig> shapeConfigs;
+        private @Nullable String state;
+        private @Nullable Map<String,Object> systemTags;
+        private @Nullable String timeCreated;
+        private @Nullable String timeUpdated;
+        private @Nullable List<GetContainerInstancesContainerInstanceCollectionItemVnic> vnics;
+        private @Nullable Integer volumeCount;
+        private @Nullable List<GetContainerInstancesContainerInstanceCollectionItemVolume> volumes;
         public Builder() {}
         public Builder(GetContainerInstancesContainerInstanceCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -359,133 +361,133 @@ public final class GetContainerInstancesContainerInstanceCollectionItem {
         }
 
         @CustomType.Setter
-        public Builder availabilityDomain(String availabilityDomain) {
-            this.availabilityDomain = Objects.requireNonNull(availabilityDomain);
+        public Builder availabilityDomain(@Nullable String availabilityDomain) {
+            this.availabilityDomain = availabilityDomain;
             return this;
         }
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder containerCount(Integer containerCount) {
-            this.containerCount = Objects.requireNonNull(containerCount);
+        public Builder containerCount(@Nullable Integer containerCount) {
+            this.containerCount = containerCount;
             return this;
         }
         @CustomType.Setter
-        public Builder containerRestartPolicy(String containerRestartPolicy) {
-            this.containerRestartPolicy = Objects.requireNonNull(containerRestartPolicy);
+        public Builder containerRestartPolicy(@Nullable String containerRestartPolicy) {
+            this.containerRestartPolicy = containerRestartPolicy;
             return this;
         }
         @CustomType.Setter
-        public Builder containers(List<GetContainerInstancesContainerInstanceCollectionItemContainer> containers) {
-            this.containers = Objects.requireNonNull(containers);
+        public Builder containers(@Nullable List<GetContainerInstancesContainerInstanceCollectionItemContainer> containers) {
+            this.containers = containers;
             return this;
         }
         public Builder containers(GetContainerInstancesContainerInstanceCollectionItemContainer... containers) {
             return containers(List.of(containers));
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder dnsConfigs(List<GetContainerInstancesContainerInstanceCollectionItemDnsConfig> dnsConfigs) {
-            this.dnsConfigs = Objects.requireNonNull(dnsConfigs);
+        public Builder dnsConfigs(@Nullable List<GetContainerInstancesContainerInstanceCollectionItemDnsConfig> dnsConfigs) {
+            this.dnsConfigs = dnsConfigs;
             return this;
         }
         public Builder dnsConfigs(GetContainerInstancesContainerInstanceCollectionItemDnsConfig... dnsConfigs) {
             return dnsConfigs(List.of(dnsConfigs));
         }
         @CustomType.Setter
-        public Builder faultDomain(String faultDomain) {
-            this.faultDomain = Objects.requireNonNull(faultDomain);
+        public Builder faultDomain(@Nullable String faultDomain) {
+            this.faultDomain = faultDomain;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder gracefulShutdownTimeoutInSeconds(String gracefulShutdownTimeoutInSeconds) {
-            this.gracefulShutdownTimeoutInSeconds = Objects.requireNonNull(gracefulShutdownTimeoutInSeconds);
+        public Builder gracefulShutdownTimeoutInSeconds(@Nullable String gracefulShutdownTimeoutInSeconds) {
+            this.gracefulShutdownTimeoutInSeconds = gracefulShutdownTimeoutInSeconds;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder imagePullSecrets(List<GetContainerInstancesContainerInstanceCollectionItemImagePullSecret> imagePullSecrets) {
-            this.imagePullSecrets = Objects.requireNonNull(imagePullSecrets);
+        public Builder imagePullSecrets(@Nullable List<GetContainerInstancesContainerInstanceCollectionItemImagePullSecret> imagePullSecrets) {
+            this.imagePullSecrets = imagePullSecrets;
             return this;
         }
         public Builder imagePullSecrets(GetContainerInstancesContainerInstanceCollectionItemImagePullSecret... imagePullSecrets) {
             return imagePullSecrets(List.of(imagePullSecrets));
         }
         @CustomType.Setter
-        public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+        public Builder lifecycleDetails(@Nullable String lifecycleDetails) {
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
-        public Builder shape(String shape) {
-            this.shape = Objects.requireNonNull(shape);
+        public Builder shape(@Nullable String shape) {
+            this.shape = shape;
             return this;
         }
         @CustomType.Setter
-        public Builder shapeConfigs(List<GetContainerInstancesContainerInstanceCollectionItemShapeConfig> shapeConfigs) {
-            this.shapeConfigs = Objects.requireNonNull(shapeConfigs);
+        public Builder shapeConfigs(@Nullable List<GetContainerInstancesContainerInstanceCollectionItemShapeConfig> shapeConfigs) {
+            this.shapeConfigs = shapeConfigs;
             return this;
         }
         public Builder shapeConfigs(GetContainerInstancesContainerInstanceCollectionItemShapeConfig... shapeConfigs) {
             return shapeConfigs(List.of(shapeConfigs));
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+        public Builder systemTags(@Nullable Map<String,Object> systemTags) {
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+        public Builder timeUpdated(@Nullable String timeUpdated) {
+            this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter
-        public Builder vnics(List<GetContainerInstancesContainerInstanceCollectionItemVnic> vnics) {
-            this.vnics = Objects.requireNonNull(vnics);
+        public Builder vnics(@Nullable List<GetContainerInstancesContainerInstanceCollectionItemVnic> vnics) {
+            this.vnics = vnics;
             return this;
         }
         public Builder vnics(GetContainerInstancesContainerInstanceCollectionItemVnic... vnics) {
             return vnics(List.of(vnics));
         }
         @CustomType.Setter
-        public Builder volumeCount(Integer volumeCount) {
-            this.volumeCount = Objects.requireNonNull(volumeCount);
+        public Builder volumeCount(@Nullable Integer volumeCount) {
+            this.volumeCount = volumeCount;
             return this;
         }
         @CustomType.Setter
-        public Builder volumes(List<GetContainerInstancesContainerInstanceCollectionItemVolume> volumes) {
-            this.volumes = Objects.requireNonNull(volumes);
+        public Builder volumes(@Nullable List<GetContainerInstancesContainerInstanceCollectionItemVolume> volumes) {
+            this.volumes = volumes;
             return this;
         }
         public Builder volumes(GetContainerInstancesContainerInstanceCollectionItemVolume... volumes) {

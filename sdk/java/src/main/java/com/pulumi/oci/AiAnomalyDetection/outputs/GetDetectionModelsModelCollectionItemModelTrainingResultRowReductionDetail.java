@@ -8,6 +8,8 @@ import java.lang.Boolean;
 import java.lang.Double;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDetectionModelsModelCollectionItemModelTrainingResultRowReductionDetail {
@@ -15,27 +17,27 @@ public final class GetDetectionModelsModelCollectionItemModelTrainingResultRowRe
      * @return A boolean value to indicate if row reduction is applied
      * 
      */
-    private Boolean isReductionEnabled;
+    private @Nullable Boolean isReductionEnabled;
     /**
      * @return Method for row reduction:
      * * DELETE_ROW - delete rows with equal intervals
      * * AVERAGE_ROW - average multiple rows to one row
      * 
      */
-    private String reductionMethod;
+    private @Nullable String reductionMethod;
     /**
      * @return A percentage to reduce data size down to on top of original data
      * 
      */
-    private Double reductionPercentage;
+    private @Nullable Double reductionPercentage;
 
     private GetDetectionModelsModelCollectionItemModelTrainingResultRowReductionDetail() {}
     /**
      * @return A boolean value to indicate if row reduction is applied
      * 
      */
-    public Boolean isReductionEnabled() {
-        return this.isReductionEnabled;
+    public Optional<Boolean> isReductionEnabled() {
+        return Optional.ofNullable(this.isReductionEnabled);
     }
     /**
      * @return Method for row reduction:
@@ -43,15 +45,15 @@ public final class GetDetectionModelsModelCollectionItemModelTrainingResultRowRe
      * * AVERAGE_ROW - average multiple rows to one row
      * 
      */
-    public String reductionMethod() {
-        return this.reductionMethod;
+    public Optional<String> reductionMethod() {
+        return Optional.ofNullable(this.reductionMethod);
     }
     /**
      * @return A percentage to reduce data size down to on top of original data
      * 
      */
-    public Double reductionPercentage() {
-        return this.reductionPercentage;
+    public Optional<Double> reductionPercentage() {
+        return Optional.ofNullable(this.reductionPercentage);
     }
 
     public static Builder builder() {
@@ -63,9 +65,9 @@ public final class GetDetectionModelsModelCollectionItemModelTrainingResultRowRe
     }
     @CustomType.Builder
     public static final class Builder {
-        private Boolean isReductionEnabled;
-        private String reductionMethod;
-        private Double reductionPercentage;
+        private @Nullable Boolean isReductionEnabled;
+        private @Nullable String reductionMethod;
+        private @Nullable Double reductionPercentage;
         public Builder() {}
         public Builder(GetDetectionModelsModelCollectionItemModelTrainingResultRowReductionDetail defaults) {
     	      Objects.requireNonNull(defaults);
@@ -75,18 +77,18 @@ public final class GetDetectionModelsModelCollectionItemModelTrainingResultRowRe
         }
 
         @CustomType.Setter
-        public Builder isReductionEnabled(Boolean isReductionEnabled) {
-            this.isReductionEnabled = Objects.requireNonNull(isReductionEnabled);
+        public Builder isReductionEnabled(@Nullable Boolean isReductionEnabled) {
+            this.isReductionEnabled = isReductionEnabled;
             return this;
         }
         @CustomType.Setter
-        public Builder reductionMethod(String reductionMethod) {
-            this.reductionMethod = Objects.requireNonNull(reductionMethod);
+        public Builder reductionMethod(@Nullable String reductionMethod) {
+            this.reductionMethod = reductionMethod;
             return this;
         }
         @CustomType.Setter
-        public Builder reductionPercentage(Double reductionPercentage) {
-            this.reductionPercentage = Objects.requireNonNull(reductionPercentage);
+        public Builder reductionPercentage(@Nullable Double reductionPercentage) {
+            this.reductionPercentage = reductionPercentage;
             return this;
         }
         public GetDetectionModelsModelCollectionItemModelTrainingResultRowReductionDetail build() {

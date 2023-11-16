@@ -22,16 +22,6 @@ class AlertArgs:
                  status: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a Alert resource.
-        :param pulumi.Input[str] alert_id: The OCID of alert.
-        :param pulumi.Input[str] comment: (Updatable) A comment can be entered to track the alert changes done by the user.
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment that contains the alert.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] status: (Updatable) The status of the alert.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "alert_id", alert_id)
         if comment is not None:
@@ -48,9 +38,6 @@ class AlertArgs:
     @property
     @pulumi.getter(name="alertId")
     def alert_id(self) -> pulumi.Input[str]:
-        """
-        The OCID of alert.
-        """
         return pulumi.get(self, "alert_id")
 
     @alert_id.setter
@@ -60,9 +47,6 @@ class AlertArgs:
     @property
     @pulumi.getter
     def comment(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A comment can be entered to track the alert changes done by the user.
-        """
         return pulumi.get(self, "comment")
 
     @comment.setter
@@ -72,9 +56,6 @@ class AlertArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The OCID of the compartment that contains the alert.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -84,9 +65,6 @@ class AlertArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -96,9 +74,6 @@ class AlertArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -108,13 +83,6 @@ class AlertArgs:
     @property
     @pulumi.getter
     def status(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The status of the alert.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "status")
 
     @status.setter
@@ -149,32 +117,6 @@ class _AlertState:
                  time_updated: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering Alert resources.
-        :param pulumi.Input[str] alert_id: The OCID of alert.
-        :param pulumi.Input[str] alert_type: Type of the alert. Indicates the Data Safe feature triggering the alert.
-        :param pulumi.Input[str] comment: (Updatable) A comment can be entered to track the alert changes done by the user.
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment that contains the alert.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] description: The description of the alert.
-        :param pulumi.Input[str] display_name: The display name of the alert.
-        :param pulumi.Input[Mapping[str, Any]] feature_details: Map that contains maps of values. Example: `{"Operations": {"CostCenter": "42"}}`
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] operation: The operation (event) that triggered alert.
-        :param pulumi.Input[str] operation_status: The result of the operation (event) that triggered alert.
-        :param pulumi.Input[str] operation_time: Creation date and time of the operation that triggered alert, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        :param pulumi.Input[str] policy_id: The OCID of the policy that triggered alert.
-        :param pulumi.Input[str] resource_name: The resource endpoint that triggered the alert.
-        :param pulumi.Input[str] severity: Severity level of the alert.
-        :param pulumi.Input[str] state: The current state of the alert.
-        :param pulumi.Input[str] status: (Updatable) The status of the alert.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] target_ids: Array of OCIDs of the target database which are associated with the alert.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] target_names: Array of names of the target database.
-        :param pulumi.Input[str] time_created: Creation date and time of the alert, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        :param pulumi.Input[str] time_updated: Last date and time the alert was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         """
         if alert_id is not None:
             pulumi.set(__self__, "alert_id", alert_id)
@@ -224,9 +166,6 @@ class _AlertState:
     @property
     @pulumi.getter(name="alertId")
     def alert_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of alert.
-        """
         return pulumi.get(self, "alert_id")
 
     @alert_id.setter
@@ -236,9 +175,6 @@ class _AlertState:
     @property
     @pulumi.getter(name="alertType")
     def alert_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        Type of the alert. Indicates the Data Safe feature triggering the alert.
-        """
         return pulumi.get(self, "alert_type")
 
     @alert_type.setter
@@ -248,9 +184,6 @@ class _AlertState:
     @property
     @pulumi.getter
     def comment(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A comment can be entered to track the alert changes done by the user.
-        """
         return pulumi.get(self, "comment")
 
     @comment.setter
@@ -260,9 +193,6 @@ class _AlertState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The OCID of the compartment that contains the alert.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -272,9 +202,6 @@ class _AlertState:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -284,9 +211,6 @@ class _AlertState:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
-        """
-        The description of the alert.
-        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -296,9 +220,6 @@ class _AlertState:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The display name of the alert.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -308,9 +229,6 @@ class _AlertState:
     @property
     @pulumi.getter(name="featureDetails")
     def feature_details(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        Map that contains maps of values. Example: `{"Operations": {"CostCenter": "42"}}`
-        """
         return pulumi.get(self, "feature_details")
 
     @feature_details.setter
@@ -320,9 +238,6 @@ class _AlertState:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -332,9 +247,6 @@ class _AlertState:
     @property
     @pulumi.getter
     def operation(self) -> Optional[pulumi.Input[str]]:
-        """
-        The operation (event) that triggered alert.
-        """
         return pulumi.get(self, "operation")
 
     @operation.setter
@@ -344,9 +256,6 @@ class _AlertState:
     @property
     @pulumi.getter(name="operationStatus")
     def operation_status(self) -> Optional[pulumi.Input[str]]:
-        """
-        The result of the operation (event) that triggered alert.
-        """
         return pulumi.get(self, "operation_status")
 
     @operation_status.setter
@@ -356,9 +265,6 @@ class _AlertState:
     @property
     @pulumi.getter(name="operationTime")
     def operation_time(self) -> Optional[pulumi.Input[str]]:
-        """
-        Creation date and time of the operation that triggered alert, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        """
         return pulumi.get(self, "operation_time")
 
     @operation_time.setter
@@ -368,9 +274,6 @@ class _AlertState:
     @property
     @pulumi.getter(name="policyId")
     def policy_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the policy that triggered alert.
-        """
         return pulumi.get(self, "policy_id")
 
     @policy_id.setter
@@ -380,9 +283,6 @@ class _AlertState:
     @property
     @pulumi.getter(name="resourceName")
     def resource_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The resource endpoint that triggered the alert.
-        """
         return pulumi.get(self, "resource_name")
 
     @resource_name.setter
@@ -392,9 +292,6 @@ class _AlertState:
     @property
     @pulumi.getter
     def severity(self) -> Optional[pulumi.Input[str]]:
-        """
-        Severity level of the alert.
-        """
         return pulumi.get(self, "severity")
 
     @severity.setter
@@ -404,9 +301,6 @@ class _AlertState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The current state of the alert.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -416,13 +310,6 @@ class _AlertState:
     @property
     @pulumi.getter
     def status(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The status of the alert.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "status")
 
     @status.setter
@@ -432,9 +319,6 @@ class _AlertState:
     @property
     @pulumi.getter(name="systemTags")
     def system_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
@@ -444,9 +328,6 @@ class _AlertState:
     @property
     @pulumi.getter(name="targetIds")
     def target_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        Array of OCIDs of the target database which are associated with the alert.
-        """
         return pulumi.get(self, "target_ids")
 
     @target_ids.setter
@@ -456,9 +337,6 @@ class _AlertState:
     @property
     @pulumi.getter(name="targetNames")
     def target_names(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        Array of names of the target database.
-        """
         return pulumi.get(self, "target_names")
 
     @target_names.setter
@@ -468,9 +346,6 @@ class _AlertState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        Creation date and time of the alert, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -480,9 +355,6 @@ class _AlertState:
     @property
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> Optional[pulumi.Input[str]]:
-        """
-        Last date and time the alert was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
@@ -503,30 +375,9 @@ class Alert(pulumi.CustomResource):
                  status: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Alert resource in Oracle Cloud Infrastructure Data Safe service.
-
-        Updates the status of the specified alert.
-
-        ## Import
-
-        Alerts can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:DataSafe/alert:Alert test_alert "id"
-        ```
-
+        Create a Alert resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] alert_id: The OCID of alert.
-        :param pulumi.Input[str] comment: (Updatable) A comment can be entered to track the alert changes done by the user.
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment that contains the alert.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] status: (Updatable) The status of the alert.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -535,18 +386,7 @@ class Alert(pulumi.CustomResource):
                  args: AlertArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Alert resource in Oracle Cloud Infrastructure Data Safe service.
-
-        Updates the status of the specified alert.
-
-        ## Import
-
-        Alerts can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:DataSafe/alert:Alert test_alert "id"
-        ```
-
+        Create a Alert resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param AlertArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -640,32 +480,6 @@ class Alert(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] alert_id: The OCID of alert.
-        :param pulumi.Input[str] alert_type: Type of the alert. Indicates the Data Safe feature triggering the alert.
-        :param pulumi.Input[str] comment: (Updatable) A comment can be entered to track the alert changes done by the user.
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment that contains the alert.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] description: The description of the alert.
-        :param pulumi.Input[str] display_name: The display name of the alert.
-        :param pulumi.Input[Mapping[str, Any]] feature_details: Map that contains maps of values. Example: `{"Operations": {"CostCenter": "42"}}`
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] operation: The operation (event) that triggered alert.
-        :param pulumi.Input[str] operation_status: The result of the operation (event) that triggered alert.
-        :param pulumi.Input[str] operation_time: Creation date and time of the operation that triggered alert, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        :param pulumi.Input[str] policy_id: The OCID of the policy that triggered alert.
-        :param pulumi.Input[str] resource_name_: The resource endpoint that triggered the alert.
-        :param pulumi.Input[str] severity: Severity level of the alert.
-        :param pulumi.Input[str] state: The current state of the alert.
-        :param pulumi.Input[str] status: (Updatable) The status of the alert.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] target_ids: Array of OCIDs of the target database which are associated with the alert.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] target_names: Array of names of the target database.
-        :param pulumi.Input[str] time_created: Creation date and time of the alert, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        :param pulumi.Input[str] time_updated: Last date and time the alert was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -698,180 +512,110 @@ class Alert(pulumi.CustomResource):
     @property
     @pulumi.getter(name="alertId")
     def alert_id(self) -> pulumi.Output[str]:
-        """
-        The OCID of alert.
-        """
         return pulumi.get(self, "alert_id")
 
     @property
     @pulumi.getter(name="alertType")
-    def alert_type(self) -> pulumi.Output[str]:
-        """
-        Type of the alert. Indicates the Data Safe feature triggering the alert.
-        """
+    def alert_type(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "alert_type")
 
     @property
     @pulumi.getter
-    def comment(self) -> pulumi.Output[str]:
-        """
-        (Updatable) A comment can be entered to track the alert changes done by the user.
-        """
+    def comment(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "comment")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The OCID of the compartment that contains the alert.
-        """
+    def compartment_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def description(self) -> pulumi.Output[str]:
-        """
-        The description of the alert.
-        """
+    def description(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> pulumi.Output[str]:
-        """
-        The display name of the alert.
-        """
+    def display_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="featureDetails")
-    def feature_details(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        Map that contains maps of values. Example: `{"Operations": {"CostCenter": "42"}}`
-        """
+    def feature_details(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "feature_details")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def operation(self) -> pulumi.Output[str]:
-        """
-        The operation (event) that triggered alert.
-        """
+    def operation(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "operation")
 
     @property
     @pulumi.getter(name="operationStatus")
-    def operation_status(self) -> pulumi.Output[str]:
-        """
-        The result of the operation (event) that triggered alert.
-        """
+    def operation_status(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "operation_status")
 
     @property
     @pulumi.getter(name="operationTime")
-    def operation_time(self) -> pulumi.Output[str]:
-        """
-        Creation date and time of the operation that triggered alert, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        """
+    def operation_time(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "operation_time")
 
     @property
     @pulumi.getter(name="policyId")
-    def policy_id(self) -> pulumi.Output[str]:
-        """
-        The OCID of the policy that triggered alert.
-        """
+    def policy_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "policy_id")
 
     @property
     @pulumi.getter(name="resourceName")
-    def resource_name(self) -> pulumi.Output[str]:
-        """
-        The resource endpoint that triggered the alert.
-        """
+    def resource_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "resource_name")
 
     @property
     @pulumi.getter
-    def severity(self) -> pulumi.Output[str]:
-        """
-        Severity level of the alert.
-        """
+    def severity(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "severity")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        The current state of the alert.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter
-    def status(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The status of the alert.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
+    def status(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "status")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="targetIds")
-    def target_ids(self) -> pulumi.Output[Sequence[str]]:
-        """
-        Array of OCIDs of the target database which are associated with the alert.
-        """
+    def target_ids(self) -> pulumi.Output[Optional[Sequence[str]]]:
         return pulumi.get(self, "target_ids")
 
     @property
     @pulumi.getter(name="targetNames")
-    def target_names(self) -> pulumi.Output[Sequence[str]]:
-        """
-        Array of names of the target database.
-        """
+    def target_names(self) -> pulumi.Output[Optional[Sequence[str]]]:
         return pulumi.get(self, "target_names")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        Creation date and time of the alert, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> pulumi.Output[str]:
-        """
-        Last date and time the alert was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        """
+    def time_updated(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_updated")
 

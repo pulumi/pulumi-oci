@@ -25,7 +25,7 @@ namespace Pulumi.Oci.LoadBalancer.Outputs
         /// A friendly name for the hostname resource. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `example_hostname_001`
         /// </summary>
         public readonly string Name;
-        public readonly string State;
+        public readonly string? State;
 
         [OutputConstructor]
         private GetHostnamesHostnameResult(
@@ -35,7 +35,7 @@ namespace Pulumi.Oci.LoadBalancer.Outputs
 
             string name,
 
-            string state)
+            string? state)
         {
             Hostname = hostname;
             LoadBalancerId = loadBalancerId;

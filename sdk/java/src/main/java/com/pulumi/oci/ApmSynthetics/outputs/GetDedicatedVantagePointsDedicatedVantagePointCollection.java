@@ -7,14 +7,15 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.ApmSynthetics.outputs.GetDedicatedVantagePointsDedicatedVantagePointCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDedicatedVantagePointsDedicatedVantagePointCollection {
-    private List<GetDedicatedVantagePointsDedicatedVantagePointCollectionItem> items;
+    private @Nullable List<GetDedicatedVantagePointsDedicatedVantagePointCollectionItem> items;
 
     private GetDedicatedVantagePointsDedicatedVantagePointCollection() {}
     public List<GetDedicatedVantagePointsDedicatedVantagePointCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -26,7 +27,7 @@ public final class GetDedicatedVantagePointsDedicatedVantagePointCollection {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetDedicatedVantagePointsDedicatedVantagePointCollectionItem> items;
+        private @Nullable List<GetDedicatedVantagePointsDedicatedVantagePointCollectionItem> items;
         public Builder() {}
         public Builder(GetDedicatedVantagePointsDedicatedVantagePointCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -34,8 +35,8 @@ public final class GetDedicatedVantagePointsDedicatedVantagePointCollection {
         }
 
         @CustomType.Setter
-        public Builder items(List<GetDedicatedVantagePointsDedicatedVantagePointCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetDedicatedVantagePointsDedicatedVantagePointCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetDedicatedVantagePointsDedicatedVantagePointCollectionItem... items) {

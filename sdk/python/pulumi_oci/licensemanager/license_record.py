@@ -26,20 +26,6 @@ class LicenseRecordArgs:
                  support_end_date: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a LicenseRecord resource.
-        :param pulumi.Input[str] display_name: (Updatable) License record name.
-        :param pulumi.Input[bool] is_perpetual: (Updatable) Specifies if the license record term is perpertual.
-        :param pulumi.Input[bool] is_unlimited: (Updatable) Specifies if the license count is unlimited.
-        :param pulumi.Input[str] product_license_id: Unique product license identifier.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] expiration_date: (Updatable) The license record end date in [RFC 3339](https://tools.ietf.org/html/rfc3339) date format. Example: `2018-09-12`
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[int] license_count: (Updatable) The number of license units added by a user in a license record. Default 1
-        :param pulumi.Input[str] product_id: (Updatable) The license record product ID.
-        :param pulumi.Input[str] support_end_date: (Updatable) The license record support end date in [RFC 3339](https://tools.ietf.org/html/rfc3339) date format. Example: `2018-09-12` 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "is_perpetual", is_perpetual)
@@ -61,9 +47,6 @@ class LicenseRecordArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Input[str]:
-        """
-        (Updatable) License record name.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -73,9 +56,6 @@ class LicenseRecordArgs:
     @property
     @pulumi.getter(name="isPerpetual")
     def is_perpetual(self) -> pulumi.Input[bool]:
-        """
-        (Updatable) Specifies if the license record term is perpertual.
-        """
         return pulumi.get(self, "is_perpetual")
 
     @is_perpetual.setter
@@ -85,9 +65,6 @@ class LicenseRecordArgs:
     @property
     @pulumi.getter(name="isUnlimited")
     def is_unlimited(self) -> pulumi.Input[bool]:
-        """
-        (Updatable) Specifies if the license count is unlimited.
-        """
         return pulumi.get(self, "is_unlimited")
 
     @is_unlimited.setter
@@ -97,9 +74,6 @@ class LicenseRecordArgs:
     @property
     @pulumi.getter(name="productLicenseId")
     def product_license_id(self) -> pulumi.Input[str]:
-        """
-        Unique product license identifier.
-        """
         return pulumi.get(self, "product_license_id")
 
     @product_license_id.setter
@@ -109,9 +83,6 @@ class LicenseRecordArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -121,9 +92,6 @@ class LicenseRecordArgs:
     @property
     @pulumi.getter(name="expirationDate")
     def expiration_date(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The license record end date in [RFC 3339](https://tools.ietf.org/html/rfc3339) date format. Example: `2018-09-12`
-        """
         return pulumi.get(self, "expiration_date")
 
     @expiration_date.setter
@@ -133,9 +101,6 @@ class LicenseRecordArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -145,9 +110,6 @@ class LicenseRecordArgs:
     @property
     @pulumi.getter(name="licenseCount")
     def license_count(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) The number of license units added by a user in a license record. Default 1
-        """
         return pulumi.get(self, "license_count")
 
     @license_count.setter
@@ -157,9 +119,6 @@ class LicenseRecordArgs:
     @property
     @pulumi.getter(name="productId")
     def product_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The license record product ID.
-        """
         return pulumi.get(self, "product_id")
 
     @product_id.setter
@@ -169,13 +128,6 @@ class LicenseRecordArgs:
     @property
     @pulumi.getter(name="supportEndDate")
     def support_end_date(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The license record support end date in [RFC 3339](https://tools.ietf.org/html/rfc3339) date format. Example: `2018-09-12` 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "support_end_date")
 
     @support_end_date.setter
@@ -205,27 +157,6 @@ class _LicenseRecordState:
                  time_updated: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering LicenseRecord resources.
-        :param pulumi.Input[str] compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) where the license record is created.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] display_name: (Updatable) License record name.
-        :param pulumi.Input[str] expiration_date: (Updatable) The license record end date in [RFC 3339](https://tools.ietf.org/html/rfc3339) date format. Example: `2018-09-12`
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[bool] is_perpetual: (Updatable) Specifies if the license record term is perpertual.
-        :param pulumi.Input[bool] is_unlimited: (Updatable) Specifies if the license count is unlimited.
-        :param pulumi.Input[int] license_count: (Updatable) The number of license units added by a user in a license record. Default 1
-        :param pulumi.Input[str] license_unit: The product license unit.
-        :param pulumi.Input[str] product_id: (Updatable) The license record product ID.
-        :param pulumi.Input[str] product_license: The product license name with which the license record is associated.
-        :param pulumi.Input[str] product_license_id: Unique product license identifier.
-        :param pulumi.Input[str] state: The current license record state.
-        :param pulumi.Input[str] support_end_date: (Updatable) The license record support end date in [RFC 3339](https://tools.ietf.org/html/rfc3339) date format. Example: `2018-09-12` 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[str] time_created: The time the license record was created. An [RFC 3339](https://tools.ietf.org/html/rfc3339)-formatted datetime string.
-        :param pulumi.Input[str] time_updated: The time the license record was updated. An [RFC 3339](https://tools.ietf.org/html/rfc3339)-formatted datetime string.
         """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
@@ -265,9 +196,6 @@ class _LicenseRecordState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) where the license record is created.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -277,9 +205,6 @@ class _LicenseRecordState:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -289,9 +214,6 @@ class _LicenseRecordState:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) License record name.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -301,9 +223,6 @@ class _LicenseRecordState:
     @property
     @pulumi.getter(name="expirationDate")
     def expiration_date(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The license record end date in [RFC 3339](https://tools.ietf.org/html/rfc3339) date format. Example: `2018-09-12`
-        """
         return pulumi.get(self, "expiration_date")
 
     @expiration_date.setter
@@ -313,9 +232,6 @@ class _LicenseRecordState:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -325,9 +241,6 @@ class _LicenseRecordState:
     @property
     @pulumi.getter(name="isPerpetual")
     def is_perpetual(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Specifies if the license record term is perpertual.
-        """
         return pulumi.get(self, "is_perpetual")
 
     @is_perpetual.setter
@@ -337,9 +250,6 @@ class _LicenseRecordState:
     @property
     @pulumi.getter(name="isUnlimited")
     def is_unlimited(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Specifies if the license count is unlimited.
-        """
         return pulumi.get(self, "is_unlimited")
 
     @is_unlimited.setter
@@ -349,9 +259,6 @@ class _LicenseRecordState:
     @property
     @pulumi.getter(name="licenseCount")
     def license_count(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) The number of license units added by a user in a license record. Default 1
-        """
         return pulumi.get(self, "license_count")
 
     @license_count.setter
@@ -361,9 +268,6 @@ class _LicenseRecordState:
     @property
     @pulumi.getter(name="licenseUnit")
     def license_unit(self) -> Optional[pulumi.Input[str]]:
-        """
-        The product license unit.
-        """
         return pulumi.get(self, "license_unit")
 
     @license_unit.setter
@@ -373,9 +277,6 @@ class _LicenseRecordState:
     @property
     @pulumi.getter(name="productId")
     def product_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The license record product ID.
-        """
         return pulumi.get(self, "product_id")
 
     @product_id.setter
@@ -385,9 +286,6 @@ class _LicenseRecordState:
     @property
     @pulumi.getter(name="productLicense")
     def product_license(self) -> Optional[pulumi.Input[str]]:
-        """
-        The product license name with which the license record is associated.
-        """
         return pulumi.get(self, "product_license")
 
     @product_license.setter
@@ -397,9 +295,6 @@ class _LicenseRecordState:
     @property
     @pulumi.getter(name="productLicenseId")
     def product_license_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        Unique product license identifier.
-        """
         return pulumi.get(self, "product_license_id")
 
     @product_license_id.setter
@@ -409,9 +304,6 @@ class _LicenseRecordState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The current license record state.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -421,13 +313,6 @@ class _LicenseRecordState:
     @property
     @pulumi.getter(name="supportEndDate")
     def support_end_date(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The license record support end date in [RFC 3339](https://tools.ietf.org/html/rfc3339) date format. Example: `2018-09-12` 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "support_end_date")
 
     @support_end_date.setter
@@ -437,9 +322,6 @@ class _LicenseRecordState:
     @property
     @pulumi.getter(name="systemTags")
     def system_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
@@ -449,9 +331,6 @@ class _LicenseRecordState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The time the license record was created. An [RFC 3339](https://tools.ietf.org/html/rfc3339)-formatted datetime string.
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -461,9 +340,6 @@ class _LicenseRecordState:
     @property
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> Optional[pulumi.Input[str]]:
-        """
-        The time the license record was updated. An [RFC 3339](https://tools.ietf.org/html/rfc3339)-formatted datetime string.
-        """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
@@ -488,57 +364,9 @@ class LicenseRecord(pulumi.CustomResource):
                  support_end_date: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the License Record resource in Oracle Cloud Infrastructure License Manager service.
-
-        Creates a new license record for the given product license ID.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_license_record = oci.license_manager.LicenseRecord("testLicenseRecord",
-            display_name=var["license_record_display_name"],
-            is_perpetual=var["license_record_is_perpetual"],
-            is_unlimited=var["license_record_is_unlimited"],
-            product_license_id=oci_license_manager_product_license["test_product_license"]["id"],
-            defined_tags={
-                "foo-namespace.bar-key": "value",
-            },
-            expiration_date=var["license_record_expiration_date"],
-            freeform_tags={
-                "bar-key": "value",
-            },
-            license_count=var["license_record_license_count"],
-            product_id=oci_license_manager_product["test_product"]["id"],
-            support_end_date=var["license_record_support_end_date"])
-        ```
-
-        ## Import
-
-        LicenseRecords can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:LicenseManager/licenseRecord:LicenseRecord test_license_record "id"
-        ```
-
+        Create a LicenseRecord resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] display_name: (Updatable) License record name.
-        :param pulumi.Input[str] expiration_date: (Updatable) The license record end date in [RFC 3339](https://tools.ietf.org/html/rfc3339) date format. Example: `2018-09-12`
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[bool] is_perpetual: (Updatable) Specifies if the license record term is perpertual.
-        :param pulumi.Input[bool] is_unlimited: (Updatable) Specifies if the license count is unlimited.
-        :param pulumi.Input[int] license_count: (Updatable) The number of license units added by a user in a license record. Default 1
-        :param pulumi.Input[str] product_id: (Updatable) The license record product ID.
-        :param pulumi.Input[str] product_license_id: Unique product license identifier.
-        :param pulumi.Input[str] support_end_date: (Updatable) The license record support end date in [RFC 3339](https://tools.ietf.org/html/rfc3339) date format. Example: `2018-09-12` 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -547,41 +375,7 @@ class LicenseRecord(pulumi.CustomResource):
                  args: LicenseRecordArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the License Record resource in Oracle Cloud Infrastructure License Manager service.
-
-        Creates a new license record for the given product license ID.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_license_record = oci.license_manager.LicenseRecord("testLicenseRecord",
-            display_name=var["license_record_display_name"],
-            is_perpetual=var["license_record_is_perpetual"],
-            is_unlimited=var["license_record_is_unlimited"],
-            product_license_id=oci_license_manager_product_license["test_product_license"]["id"],
-            defined_tags={
-                "foo-namespace.bar-key": "value",
-            },
-            expiration_date=var["license_record_expiration_date"],
-            freeform_tags={
-                "bar-key": "value",
-            },
-            license_count=var["license_record_license_count"],
-            product_id=oci_license_manager_product["test_product"]["id"],
-            support_end_date=var["license_record_support_end_date"])
-        ```
-
-        ## Import
-
-        LicenseRecords can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:LicenseManager/licenseRecord:LicenseRecord test_license_record "id"
-        ```
-
+        Create a LicenseRecord resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param LicenseRecordArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -675,27 +469,6 @@ class LicenseRecord(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) where the license record is created.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] display_name: (Updatable) License record name.
-        :param pulumi.Input[str] expiration_date: (Updatable) The license record end date in [RFC 3339](https://tools.ietf.org/html/rfc3339) date format. Example: `2018-09-12`
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[bool] is_perpetual: (Updatable) Specifies if the license record term is perpertual.
-        :param pulumi.Input[bool] is_unlimited: (Updatable) Specifies if the license count is unlimited.
-        :param pulumi.Input[int] license_count: (Updatable) The number of license units added by a user in a license record. Default 1
-        :param pulumi.Input[str] license_unit: The product license unit.
-        :param pulumi.Input[str] product_id: (Updatable) The license record product ID.
-        :param pulumi.Input[str] product_license: The product license name with which the license record is associated.
-        :param pulumi.Input[str] product_license_id: Unique product license identifier.
-        :param pulumi.Input[str] state: The current license record state.
-        :param pulumi.Input[str] support_end_date: (Updatable) The license record support end date in [RFC 3339](https://tools.ietf.org/html/rfc3339) date format. Example: `2018-09-12` 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[str] time_created: The time the license record was created. An [RFC 3339](https://tools.ietf.org/html/rfc3339)-formatted datetime string.
-        :param pulumi.Input[str] time_updated: The time the license record was updated. An [RFC 3339](https://tools.ietf.org/html/rfc3339)-formatted datetime string.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -722,141 +495,86 @@ class LicenseRecord(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> pulumi.Output[str]:
-        """
-        The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) where the license record is created.
-        """
+    def compartment_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Output[str]:
-        """
-        (Updatable) License record name.
-        """
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="expirationDate")
-    def expiration_date(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The license record end date in [RFC 3339](https://tools.ietf.org/html/rfc3339) date format. Example: `2018-09-12`
-        """
+    def expiration_date(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "expiration_date")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="isPerpetual")
     def is_perpetual(self) -> pulumi.Output[bool]:
-        """
-        (Updatable) Specifies if the license record term is perpertual.
-        """
         return pulumi.get(self, "is_perpetual")
 
     @property
     @pulumi.getter(name="isUnlimited")
     def is_unlimited(self) -> pulumi.Output[bool]:
-        """
-        (Updatable) Specifies if the license count is unlimited.
-        """
         return pulumi.get(self, "is_unlimited")
 
     @property
     @pulumi.getter(name="licenseCount")
-    def license_count(self) -> pulumi.Output[int]:
-        """
-        (Updatable) The number of license units added by a user in a license record. Default 1
-        """
+    def license_count(self) -> pulumi.Output[Optional[int]]:
         return pulumi.get(self, "license_count")
 
     @property
     @pulumi.getter(name="licenseUnit")
-    def license_unit(self) -> pulumi.Output[str]:
-        """
-        The product license unit.
-        """
+    def license_unit(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "license_unit")
 
     @property
     @pulumi.getter(name="productId")
-    def product_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The license record product ID.
-        """
+    def product_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "product_id")
 
     @property
     @pulumi.getter(name="productLicense")
-    def product_license(self) -> pulumi.Output[str]:
-        """
-        The product license name with which the license record is associated.
-        """
+    def product_license(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "product_license")
 
     @property
     @pulumi.getter(name="productLicenseId")
     def product_license_id(self) -> pulumi.Output[str]:
-        """
-        Unique product license identifier.
-        """
         return pulumi.get(self, "product_license_id")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        The current license record state.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="supportEndDate")
-    def support_end_date(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The license record support end date in [RFC 3339](https://tools.ietf.org/html/rfc3339) date format. Example: `2018-09-12` 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
+    def support_end_date(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "support_end_date")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        The time the license record was created. An [RFC 3339](https://tools.ietf.org/html/rfc3339)-formatted datetime string.
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> pulumi.Output[str]:
-        """
-        The time the license record was updated. An [RFC 3339](https://tools.ietf.org/html/rfc3339)-formatted datetime string.
-        """
+    def time_updated(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_updated")
 

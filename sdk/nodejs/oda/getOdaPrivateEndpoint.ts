@@ -45,48 +45,48 @@ export interface GetOdaPrivateEndpointResult {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that the ODA private endpoint belongs to.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * Description of the ODA private endpoint.
      */
-    readonly description: string;
+    readonly description?: string;
     /**
      * User-defined name for the ODA private endpoint. Avoid entering confidential information. You can change this value.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * Simple key-value pair that is applied without any predefined name, type, or scope. Example: `{"bar-key": "value"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that was assigned when the ODA private endpoint was created.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * List of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of [network security groups](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/networksecuritygroups.htm)
      */
-    readonly nsgIds: string[];
+    readonly nsgIds?: string[];
     readonly odaPrivateEndpointId: string;
     /**
      * The current state of the ODA private endpoint.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet that the private endpoint belongs to.
      */
-    readonly subnetId: string;
+    readonly subnetId?: string;
     /**
      * When the resource was created. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * When the resource was last updated. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
      */
-    readonly timeUpdated: string;
+    readonly timeUpdated?: string;
 }
 /**
  * This data source provides details about a specific Oda Private Endpoint resource in Oracle Cloud Infrastructure Digital Assistant service.

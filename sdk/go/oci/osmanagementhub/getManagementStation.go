@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Management Station resource in Oracle Cloud Infrastructure Os Management Hub service.
@@ -60,44 +59,44 @@ type LookupManagementStationArgs struct {
 // A collection of values returned by getManagementStation.
 type LookupManagementStationResult struct {
 	// The OCID of the tenancy containing the Management Station.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// Details describing the ManagementStation config.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// ManagementStation name
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// Name of the host
-	Hostname string `pulumi:"hostname"`
+	Hostname *string `pulumi:"hostname"`
 	// OCID for the ManagementStation config
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// OCID for the Instance associated with the Management Station.
-	ManagedInstanceId   string `pulumi:"managedInstanceId"`
-	ManagementStationId string `pulumi:"managementStationId"`
+	ManagedInstanceId   *string `pulumi:"managedInstanceId"`
+	ManagementStationId string  `pulumi:"managementStationId"`
 	// A decimal number representing the mirror capacity
-	MirrorCapacity int `pulumi:"mirrorCapacity"`
+	MirrorCapacity *int `pulumi:"mirrorCapacity"`
 	// Status summary of all repos
 	MirrorSyncStatuses []GetManagementStationMirrorSyncStatus `pulumi:"mirrorSyncStatuses"`
 	// Information for a mirror configuration
 	Mirrors []GetManagementStationMirror `pulumi:"mirrors"`
 	// A decimal number representing the completeness percentage
-	OverallPercentage int `pulumi:"overallPercentage"`
+	OverallPercentage *int `pulumi:"overallPercentage"`
 	// Current state of the mirroring
-	OverallState string `pulumi:"overallState"`
+	OverallState *string `pulumi:"overallState"`
 	// OCID of the Profile associated with the Station
-	ProfileId string `pulumi:"profileId"`
+	ProfileId *string `pulumi:"profileId"`
 	// Information for a proxy configuration
 	Proxies []GetManagementStationProxy `pulumi:"proxies"`
 	// OCID of the Scheduled Job for mirror sync
-	ScheduledJobId string `pulumi:"scheduledJobId"`
+	ScheduledJobId *string `pulumi:"scheduledJobId"`
 	// The current state of the Management Station config.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// A decimal number representing the total of repos
-	TotalMirrors int `pulumi:"totalMirrors"`
+	TotalMirrors *int `pulumi:"totalMirrors"`
 }
 
 func LookupManagementStationOutput(ctx *pulumi.Context, args LookupManagementStationOutputArgs, opts ...pulumi.InvokeOption) LookupManagementStationResultOutput {
@@ -138,15 +137,9 @@ func (o LookupManagementStationResultOutput) ToLookupManagementStationResultOutp
 	return o
 }
 
-func (o LookupManagementStationResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupManagementStationResult] {
-	return pulumix.Output[LookupManagementStationResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the tenancy containing the Management Station.
-func (o LookupManagementStationResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupManagementStationResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupManagementStationResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupManagementStationResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -155,13 +148,13 @@ func (o LookupManagementStationResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // Details describing the ManagementStation config.
-func (o LookupManagementStationResultOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupManagementStationResult) string { return v.Description }).(pulumi.StringOutput)
+func (o LookupManagementStationResultOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupManagementStationResult) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // ManagementStation name
-func (o LookupManagementStationResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupManagementStationResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupManagementStationResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupManagementStationResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -170,18 +163,18 @@ func (o LookupManagementStationResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // Name of the host
-func (o LookupManagementStationResultOutput) Hostname() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupManagementStationResult) string { return v.Hostname }).(pulumi.StringOutput)
+func (o LookupManagementStationResultOutput) Hostname() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupManagementStationResult) *string { return v.Hostname }).(pulumi.StringPtrOutput)
 }
 
 // OCID for the ManagementStation config
-func (o LookupManagementStationResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupManagementStationResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupManagementStationResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupManagementStationResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // OCID for the Instance associated with the Management Station.
-func (o LookupManagementStationResultOutput) ManagedInstanceId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupManagementStationResult) string { return v.ManagedInstanceId }).(pulumi.StringOutput)
+func (o LookupManagementStationResultOutput) ManagedInstanceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupManagementStationResult) *string { return v.ManagedInstanceId }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupManagementStationResultOutput) ManagementStationId() pulumi.StringOutput {
@@ -189,8 +182,8 @@ func (o LookupManagementStationResultOutput) ManagementStationId() pulumi.String
 }
 
 // A decimal number representing the mirror capacity
-func (o LookupManagementStationResultOutput) MirrorCapacity() pulumi.IntOutput {
-	return o.ApplyT(func(v LookupManagementStationResult) int { return v.MirrorCapacity }).(pulumi.IntOutput)
+func (o LookupManagementStationResultOutput) MirrorCapacity() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LookupManagementStationResult) *int { return v.MirrorCapacity }).(pulumi.IntPtrOutput)
 }
 
 // Status summary of all repos
@@ -206,18 +199,18 @@ func (o LookupManagementStationResultOutput) Mirrors() GetManagementStationMirro
 }
 
 // A decimal number representing the completeness percentage
-func (o LookupManagementStationResultOutput) OverallPercentage() pulumi.IntOutput {
-	return o.ApplyT(func(v LookupManagementStationResult) int { return v.OverallPercentage }).(pulumi.IntOutput)
+func (o LookupManagementStationResultOutput) OverallPercentage() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LookupManagementStationResult) *int { return v.OverallPercentage }).(pulumi.IntPtrOutput)
 }
 
 // Current state of the mirroring
-func (o LookupManagementStationResultOutput) OverallState() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupManagementStationResult) string { return v.OverallState }).(pulumi.StringOutput)
+func (o LookupManagementStationResultOutput) OverallState() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupManagementStationResult) *string { return v.OverallState }).(pulumi.StringPtrOutput)
 }
 
 // OCID of the Profile associated with the Station
-func (o LookupManagementStationResultOutput) ProfileId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupManagementStationResult) string { return v.ProfileId }).(pulumi.StringOutput)
+func (o LookupManagementStationResultOutput) ProfileId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupManagementStationResult) *string { return v.ProfileId }).(pulumi.StringPtrOutput)
 }
 
 // Information for a proxy configuration
@@ -226,13 +219,13 @@ func (o LookupManagementStationResultOutput) Proxies() GetManagementStationProxy
 }
 
 // OCID of the Scheduled Job for mirror sync
-func (o LookupManagementStationResultOutput) ScheduledJobId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupManagementStationResult) string { return v.ScheduledJobId }).(pulumi.StringOutput)
+func (o LookupManagementStationResultOutput) ScheduledJobId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupManagementStationResult) *string { return v.ScheduledJobId }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the Management Station config.
-func (o LookupManagementStationResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupManagementStationResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupManagementStationResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupManagementStationResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -241,8 +234,8 @@ func (o LookupManagementStationResultOutput) SystemTags() pulumi.MapOutput {
 }
 
 // A decimal number representing the total of repos
-func (o LookupManagementStationResultOutput) TotalMirrors() pulumi.IntOutput {
-	return o.ApplyT(func(v LookupManagementStationResult) int { return v.TotalMirrors }).(pulumi.IntOutput)
+func (o LookupManagementStationResultOutput) TotalMirrors() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LookupManagementStationResult) *int { return v.TotalMirrors }).(pulumi.IntPtrOutput)
 }
 
 func init() {

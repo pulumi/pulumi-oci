@@ -82,7 +82,7 @@ export interface GetIngressGatewaysResult {
     /**
      * The list of ingress_gateway_collection.
      */
-    readonly ingressGatewayCollections: outputs.ServiceMesh.GetIngressGatewaysIngressGatewayCollection[];
+    readonly ingressGatewayCollections?: outputs.ServiceMesh.GetIngressGatewaysIngressGatewayCollection[];
     /**
      * The OCID of the service mesh in which this ingress gateway is created.
      */

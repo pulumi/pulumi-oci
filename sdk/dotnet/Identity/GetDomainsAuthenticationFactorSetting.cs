@@ -194,11 +194,11 @@ namespace Pulumi.Oci.Identity
         /// <summary>
         /// If true, indicates that email will not be enrolled as a MFA factor automatically if it a account recovery factor
         /// </summary>
-        public readonly bool AutoEnrollEmailFactorDisabled;
+        public readonly bool? AutoEnrollEmailFactorDisabled;
         /// <summary>
         /// If true, indicates that Bypass Code is enabled for authentication
         /// </summary>
-        public readonly bool BypassCodeEnabled;
+        public readonly bool? BypassCodeEnabled;
         /// <summary>
         /// Settings related to the bypass code, such as bypass code length, bypass code expiry, max active bypass codes, and so on
         /// </summary>
@@ -210,7 +210,7 @@ namespace Pulumi.Oci.Identity
         /// <summary>
         /// Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
         /// </summary>
-        public readonly string CompartmentOcid;
+        public readonly string? CompartmentOcid;
         /// <summary>
         /// Compliance Policy that defines actions to be taken when a condition is violated
         /// </summary>
@@ -218,15 +218,15 @@ namespace Pulumi.Oci.Identity
         /// <summary>
         /// A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
         /// </summary>
-        public readonly bool DeleteInProgress;
+        public readonly bool? DeleteInProgress;
         /// <summary>
         /// Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
         /// </summary>
-        public readonly string DomainOcid;
+        public readonly string? DomainOcid;
         /// <summary>
         /// If true, indicates that the EMAIL channel is enabled for authentication
         /// </summary>
-        public readonly bool EmailEnabled;
+        public readonly bool? EmailEnabled;
         /// <summary>
         /// Settings related to Email Factor, such as enabled email magic link factor, custom url for Email Link
         /// </summary>
@@ -238,15 +238,15 @@ namespace Pulumi.Oci.Identity
         /// <summary>
         /// If true, indicates that the Fido Authenticator channels are enabled for authentication
         /// </summary>
-        public readonly bool FidoAuthenticatorEnabled;
+        public readonly bool? FidoAuthenticatorEnabled;
         /// <summary>
         /// If true, indicates that 'Show backup factor(s)' button will be hidden during authentication
         /// </summary>
-        public readonly bool HideBackupFactorEnabled;
+        public readonly bool? HideBackupFactorEnabled;
         /// <summary>
         /// Unique identifier for the SCIM Resource as defined by the Service Provider. Each representation of the Resource MUST include a non-empty id value. This identifier MUST be unique across the Service Provider's entire set of Resources. It MUST be a stable, non-reassignable identifier that does not change when the same Resource is returned in subsequent requests. The value of the id attribute is always issued by the Service Provider and MUST never be specified by the Service Consumer. bulkId: is a reserved keyword and MUST NOT be used in the unique identifier.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The User or App who created the Resource
         /// </summary>
@@ -259,7 +259,7 @@ namespace Pulumi.Oci.Identity
         /// <summary>
         /// The release number when the resource was upgraded.
         /// </summary>
-        public readonly string IdcsLastUpgradedInRelease;
+        public readonly string? IdcsLastUpgradedInRelease;
         /// <summary>
         /// Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
         /// </summary>
@@ -275,11 +275,11 @@ namespace Pulumi.Oci.Identity
         /// <summary>
         /// Specifies the category of people for whom Multi-Factor Authentication is enabled. This is a readOnly attribute which reflects the value of mfaEnabledCategory attribute in SsoSettings
         /// </summary>
-        public readonly string MfaEnabledCategory;
+        public readonly string? MfaEnabledCategory;
         /// <summary>
         /// Specifies if Multi-Factor Authentication enrollment is mandatory or optional for a user
         /// </summary>
-        public readonly string MfaEnrollmentType;
+        public readonly string? MfaEnrollmentType;
         /// <summary>
         /// Settings related to the Mobile App Notification channel, such as pull
         /// </summary>
@@ -287,15 +287,15 @@ namespace Pulumi.Oci.Identity
         /// <summary>
         /// Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
         /// </summary>
-        public readonly string Ocid;
+        public readonly string? Ocid;
         /// <summary>
         /// If true, indicates that the phone (PHONE_CALL) channel is enabled for authentication
         /// </summary>
-        public readonly bool PhoneCallEnabled;
+        public readonly bool? PhoneCallEnabled;
         /// <summary>
         /// If true, indicates that the Mobile App Push Notification channel is enabled for authentication
         /// </summary>
-        public readonly bool PushEnabled;
+        public readonly bool? PushEnabled;
         public readonly string? ResourceTypeSchemaVersion;
         /// <summary>
         /// REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
@@ -304,11 +304,11 @@ namespace Pulumi.Oci.Identity
         /// <summary>
         /// If true, indicates that Security Questions are enabled for authentication
         /// </summary>
-        public readonly bool SecurityQuestionsEnabled;
+        public readonly bool? SecurityQuestionsEnabled;
         /// <summary>
         /// If true, indicates that the Short Message Service (SMS) channel is enabled for authentication
         /// </summary>
-        public readonly bool SmsEnabled;
+        public readonly bool? SmsEnabled;
         /// <summary>
         /// A list of tags on this resource.
         /// </summary>
@@ -316,7 +316,7 @@ namespace Pulumi.Oci.Identity
         /// <summary>
         /// Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
         /// </summary>
-        public readonly string TenancyOcid;
+        public readonly string? TenancyOcid;
         /// <summary>
         /// Settings related to third-party factor
         /// </summary>
@@ -324,7 +324,7 @@ namespace Pulumi.Oci.Identity
         /// <summary>
         /// If true, indicates that the Mobile App One Time Passcode channel is enabled for authentication
         /// </summary>
-        public readonly bool TotpEnabled;
+        public readonly bool? TotpEnabled;
         /// <summary>
         /// Settings related to Time-Based One-Time Passcodes (TOTP), such as hashing algo, totp time step, passcode length, and so on
         /// </summary>
@@ -344,7 +344,7 @@ namespace Pulumi.Oci.Identity
         /// <summary>
         /// If true, indicates that the Yubico OTP is enabled for authentication
         /// </summary>
-        public readonly bool YubicoOtpEnabled;
+        public readonly bool? YubicoOtpEnabled;
 
         [OutputConstructor]
         private GetDomainsAuthenticationFactorSettingResult(
@@ -356,33 +356,33 @@ namespace Pulumi.Oci.Identity
 
             string? authorization,
 
-            bool autoEnrollEmailFactorDisabled,
+            bool? autoEnrollEmailFactorDisabled,
 
-            bool bypassCodeEnabled,
+            bool? bypassCodeEnabled,
 
             ImmutableArray<Outputs.GetDomainsAuthenticationFactorSettingBypassCodeSettingResult> bypassCodeSettings,
 
             ImmutableArray<Outputs.GetDomainsAuthenticationFactorSettingClientAppSettingResult> clientAppSettings,
 
-            string compartmentOcid,
+            string? compartmentOcid,
 
             ImmutableArray<Outputs.GetDomainsAuthenticationFactorSettingCompliancePolicyResult> compliancePolicies,
 
-            bool deleteInProgress,
+            bool? deleteInProgress,
 
-            string domainOcid,
+            string? domainOcid,
 
-            bool emailEnabled,
+            bool? emailEnabled,
 
             ImmutableArray<Outputs.GetDomainsAuthenticationFactorSettingEmailSettingResult> emailSettings,
 
             ImmutableArray<Outputs.GetDomainsAuthenticationFactorSettingEndpointRestrictionResult> endpointRestrictions,
 
-            bool fidoAuthenticatorEnabled,
+            bool? fidoAuthenticatorEnabled,
 
-            bool hideBackupFactorEnabled,
+            bool? hideBackupFactorEnabled,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetDomainsAuthenticationFactorSettingIdcsCreatedByResult> idcsCreatedBies,
 
@@ -390,7 +390,7 @@ namespace Pulumi.Oci.Identity
 
             ImmutableArray<Outputs.GetDomainsAuthenticationFactorSettingIdcsLastModifiedByResult> idcsLastModifiedBies,
 
-            string idcsLastUpgradedInRelease,
+            string? idcsLastUpgradedInRelease,
 
             ImmutableArray<string> idcsPreventedOperations,
 
@@ -398,33 +398,33 @@ namespace Pulumi.Oci.Identity
 
             ImmutableArray<Outputs.GetDomainsAuthenticationFactorSettingMetaResult> metas,
 
-            string mfaEnabledCategory,
+            string? mfaEnabledCategory,
 
-            string mfaEnrollmentType,
+            string? mfaEnrollmentType,
 
             ImmutableArray<Outputs.GetDomainsAuthenticationFactorSettingNotificationSettingResult> notificationSettings,
 
-            string ocid,
+            string? ocid,
 
-            bool phoneCallEnabled,
+            bool? phoneCallEnabled,
 
-            bool pushEnabled,
+            bool? pushEnabled,
 
             string? resourceTypeSchemaVersion,
 
             ImmutableArray<string> schemas,
 
-            bool securityQuestionsEnabled,
+            bool? securityQuestionsEnabled,
 
-            bool smsEnabled,
+            bool? smsEnabled,
 
             ImmutableArray<Outputs.GetDomainsAuthenticationFactorSettingTagResult> tags,
 
-            string tenancyOcid,
+            string? tenancyOcid,
 
             ImmutableArray<Outputs.GetDomainsAuthenticationFactorSettingThirdPartyFactorResult> thirdPartyFactors,
 
-            bool totpEnabled,
+            bool? totpEnabled,
 
             ImmutableArray<Outputs.GetDomainsAuthenticationFactorSettingTotpSettingResult> totpSettings,
 
@@ -434,7 +434,7 @@ namespace Pulumi.Oci.Identity
 
             ImmutableArray<string> userEnrollmentDisabledFactors,
 
-            bool yubicoOtpEnabled)
+            bool? yubicoOtpEnabled)
         {
             AttributeSets = attributeSets;
             Attributes = attributes;

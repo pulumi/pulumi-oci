@@ -9,6 +9,8 @@ import com.pulumi.oci.ServiceMesh.outputs.GetAccessPoliciesAccessPolicyCollectio
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAccessPoliciesAccessPolicyCollectionItemRule {
@@ -16,39 +18,39 @@ public final class GetAccessPoliciesAccessPolicyCollectionItemRule {
      * @return Action for the traffic between the source and the destination.
      * 
      */
-    private String action;
+    private @Nullable String action;
     /**
      * @return Target of the access policy. This can either be the source or the destination of the traffic.
      * 
      */
-    private List<GetAccessPoliciesAccessPolicyCollectionItemRuleDestination> destinations;
+    private @Nullable List<GetAccessPoliciesAccessPolicyCollectionItemRuleDestination> destinations;
     /**
      * @return Target of the access policy. This can either be the source or the destination of the traffic.
      * 
      */
-    private List<GetAccessPoliciesAccessPolicyCollectionItemRuleSource> sources;
+    private @Nullable List<GetAccessPoliciesAccessPolicyCollectionItemRuleSource> sources;
 
     private GetAccessPoliciesAccessPolicyCollectionItemRule() {}
     /**
      * @return Action for the traffic between the source and the destination.
      * 
      */
-    public String action() {
-        return this.action;
+    public Optional<String> action() {
+        return Optional.ofNullable(this.action);
     }
     /**
      * @return Target of the access policy. This can either be the source or the destination of the traffic.
      * 
      */
     public List<GetAccessPoliciesAccessPolicyCollectionItemRuleDestination> destinations() {
-        return this.destinations;
+        return this.destinations == null ? List.of() : this.destinations;
     }
     /**
      * @return Target of the access policy. This can either be the source or the destination of the traffic.
      * 
      */
     public List<GetAccessPoliciesAccessPolicyCollectionItemRuleSource> sources() {
-        return this.sources;
+        return this.sources == null ? List.of() : this.sources;
     }
 
     public static Builder builder() {
@@ -60,9 +62,9 @@ public final class GetAccessPoliciesAccessPolicyCollectionItemRule {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String action;
-        private List<GetAccessPoliciesAccessPolicyCollectionItemRuleDestination> destinations;
-        private List<GetAccessPoliciesAccessPolicyCollectionItemRuleSource> sources;
+        private @Nullable String action;
+        private @Nullable List<GetAccessPoliciesAccessPolicyCollectionItemRuleDestination> destinations;
+        private @Nullable List<GetAccessPoliciesAccessPolicyCollectionItemRuleSource> sources;
         public Builder() {}
         public Builder(GetAccessPoliciesAccessPolicyCollectionItemRule defaults) {
     	      Objects.requireNonNull(defaults);
@@ -72,21 +74,21 @@ public final class GetAccessPoliciesAccessPolicyCollectionItemRule {
         }
 
         @CustomType.Setter
-        public Builder action(String action) {
-            this.action = Objects.requireNonNull(action);
+        public Builder action(@Nullable String action) {
+            this.action = action;
             return this;
         }
         @CustomType.Setter
-        public Builder destinations(List<GetAccessPoliciesAccessPolicyCollectionItemRuleDestination> destinations) {
-            this.destinations = Objects.requireNonNull(destinations);
+        public Builder destinations(@Nullable List<GetAccessPoliciesAccessPolicyCollectionItemRuleDestination> destinations) {
+            this.destinations = destinations;
             return this;
         }
         public Builder destinations(GetAccessPoliciesAccessPolicyCollectionItemRuleDestination... destinations) {
             return destinations(List.of(destinations));
         }
         @CustomType.Setter
-        public Builder sources(List<GetAccessPoliciesAccessPolicyCollectionItemRuleSource> sources) {
-            this.sources = Objects.requireNonNull(sources);
+        public Builder sources(@Nullable List<GetAccessPoliciesAccessPolicyCollectionItemRuleSource> sources) {
+            this.sources = sources;
             return this;
         }
         public Builder sources(GetAccessPoliciesAccessPolicyCollectionItemRuleSource... sources) {

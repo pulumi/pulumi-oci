@@ -45,27 +45,27 @@ export interface GetRecoveryServiceSubnetResult {
     /**
      * The compartment OCID.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * A user-provided name for the recovery service subnet.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * The recovery service subnet OCID.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Detailed description about the current lifecycle state of the recovery service subnet. For example, it can be used to provide actionable information for a resource in a Failed state
      */
-    readonly lifecycleDetails: string;
+    readonly lifecycleDetails?: string;
     readonly recoveryServiceSubnetId: string;
     /**
      * The current state of the recovery service subnet. Allowed values are:
@@ -76,27 +76,27 @@ export interface GetRecoveryServiceSubnetResult {
      * * DELETED
      * * FAILED
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * The OCID of the subnet used as the recovery service subnet.
      */
-    readonly subnetId: string;
+    readonly subnetId?: string;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
      */
-    readonly systemTags: {[key: string]: any};
+    readonly systemTags?: {[key: string]: any};
     /**
      * An RFC3339 formatted datetime string that indicates the last created time for a recovery service subnet. For example: '2020-05-22T21:10:29.600Z'.
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * An RFC3339 formatted datetime string that indicates the last updated time for a recovery service subnet. For example: '2020-05-22T21:10:29.600Z'.
      */
-    readonly timeUpdated: string;
+    readonly timeUpdated?: string;
     /**
      * VCN Identifier.
      */
-    readonly vcnId: string;
+    readonly vcnId?: string;
 }
 /**
  * This data source provides details about a specific Recovery Service Subnet resource in Oracle Cloud Infrastructure Recovery service.

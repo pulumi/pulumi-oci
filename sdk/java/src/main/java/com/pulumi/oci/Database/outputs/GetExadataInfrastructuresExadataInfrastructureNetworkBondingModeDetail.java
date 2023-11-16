@@ -6,6 +6,8 @@ package com.pulumi.oci.Database.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetExadataInfrastructuresExadataInfrastructureNetworkBondingModeDetail {
@@ -13,39 +15,39 @@ public final class GetExadataInfrastructuresExadataInfrastructureNetworkBondingM
      * @return The network bonding mode for the Exadata infrastructure.
      * 
      */
-    private String backupNetworkBondingMode;
+    private @Nullable String backupNetworkBondingMode;
     /**
      * @return The network bonding mode for the Exadata infrastructure.
      * 
      */
-    private String clientNetworkBondingMode;
+    private @Nullable String clientNetworkBondingMode;
     /**
      * @return The network bonding mode for the Exadata infrastructure.
      * 
      */
-    private String drNetworkBondingMode;
+    private @Nullable String drNetworkBondingMode;
 
     private GetExadataInfrastructuresExadataInfrastructureNetworkBondingModeDetail() {}
     /**
      * @return The network bonding mode for the Exadata infrastructure.
      * 
      */
-    public String backupNetworkBondingMode() {
-        return this.backupNetworkBondingMode;
+    public Optional<String> backupNetworkBondingMode() {
+        return Optional.ofNullable(this.backupNetworkBondingMode);
     }
     /**
      * @return The network bonding mode for the Exadata infrastructure.
      * 
      */
-    public String clientNetworkBondingMode() {
-        return this.clientNetworkBondingMode;
+    public Optional<String> clientNetworkBondingMode() {
+        return Optional.ofNullable(this.clientNetworkBondingMode);
     }
     /**
      * @return The network bonding mode for the Exadata infrastructure.
      * 
      */
-    public String drNetworkBondingMode() {
-        return this.drNetworkBondingMode;
+    public Optional<String> drNetworkBondingMode() {
+        return Optional.ofNullable(this.drNetworkBondingMode);
     }
 
     public static Builder builder() {
@@ -57,9 +59,9 @@ public final class GetExadataInfrastructuresExadataInfrastructureNetworkBondingM
     }
     @CustomType.Builder
     public static final class Builder {
-        private String backupNetworkBondingMode;
-        private String clientNetworkBondingMode;
-        private String drNetworkBondingMode;
+        private @Nullable String backupNetworkBondingMode;
+        private @Nullable String clientNetworkBondingMode;
+        private @Nullable String drNetworkBondingMode;
         public Builder() {}
         public Builder(GetExadataInfrastructuresExadataInfrastructureNetworkBondingModeDetail defaults) {
     	      Objects.requireNonNull(defaults);
@@ -69,18 +71,18 @@ public final class GetExadataInfrastructuresExadataInfrastructureNetworkBondingM
         }
 
         @CustomType.Setter
-        public Builder backupNetworkBondingMode(String backupNetworkBondingMode) {
-            this.backupNetworkBondingMode = Objects.requireNonNull(backupNetworkBondingMode);
+        public Builder backupNetworkBondingMode(@Nullable String backupNetworkBondingMode) {
+            this.backupNetworkBondingMode = backupNetworkBondingMode;
             return this;
         }
         @CustomType.Setter
-        public Builder clientNetworkBondingMode(String clientNetworkBondingMode) {
-            this.clientNetworkBondingMode = Objects.requireNonNull(clientNetworkBondingMode);
+        public Builder clientNetworkBondingMode(@Nullable String clientNetworkBondingMode) {
+            this.clientNetworkBondingMode = clientNetworkBondingMode;
             return this;
         }
         @CustomType.Setter
-        public Builder drNetworkBondingMode(String drNetworkBondingMode) {
-            this.drNetworkBondingMode = Objects.requireNonNull(drNetworkBondingMode);
+        public Builder drNetworkBondingMode(@Nullable String drNetworkBondingMode) {
+            this.drNetworkBondingMode = drNetworkBondingMode;
             return this;
         }
         public GetExadataInfrastructuresExadataInfrastructureNetworkBondingModeDetail build() {

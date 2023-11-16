@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Network Firewall Policy Mapped Secret resource in Oracle Cloud Infrastructure Network Firewall service.
@@ -64,7 +63,7 @@ type NetworkFirewallPolicyMappedSecret struct {
 	// Unique Network Firewall Policy identifier
 	NetworkFirewallPolicyId pulumi.StringOutput `pulumi:"networkFirewallPolicyId"`
 	// OCID of the Network Firewall Policy this Mapped Secret belongs to.
-	ParentResourceId pulumi.StringOutput `pulumi:"parentResourceId"`
+	ParentResourceId pulumi.StringPtrOutput `pulumi:"parentResourceId"`
 	// Source of the secrets, where the secrets are stored. The only accepted value is `OCI_VAULT`
 	Source pulumi.StringOutput `pulumi:"source"`
 	// Type of the secrets mapped based on the policy.
@@ -226,12 +225,6 @@ func (i *NetworkFirewallPolicyMappedSecret) ToNetworkFirewallPolicyMappedSecretO
 	return pulumi.ToOutputWithContext(ctx, i).(NetworkFirewallPolicyMappedSecretOutput)
 }
 
-func (i *NetworkFirewallPolicyMappedSecret) ToOutput(ctx context.Context) pulumix.Output[*NetworkFirewallPolicyMappedSecret] {
-	return pulumix.Output[*NetworkFirewallPolicyMappedSecret]{
-		OutputState: i.ToNetworkFirewallPolicyMappedSecretOutputWithContext(ctx).OutputState,
-	}
-}
-
 // NetworkFirewallPolicyMappedSecretArrayInput is an input type that accepts NetworkFirewallPolicyMappedSecretArray and NetworkFirewallPolicyMappedSecretArrayOutput values.
 // You can construct a concrete instance of `NetworkFirewallPolicyMappedSecretArrayInput` via:
 //
@@ -255,12 +248,6 @@ func (i NetworkFirewallPolicyMappedSecretArray) ToNetworkFirewallPolicyMappedSec
 
 func (i NetworkFirewallPolicyMappedSecretArray) ToNetworkFirewallPolicyMappedSecretArrayOutputWithContext(ctx context.Context) NetworkFirewallPolicyMappedSecretArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(NetworkFirewallPolicyMappedSecretArrayOutput)
-}
-
-func (i NetworkFirewallPolicyMappedSecretArray) ToOutput(ctx context.Context) pulumix.Output[[]*NetworkFirewallPolicyMappedSecret] {
-	return pulumix.Output[[]*NetworkFirewallPolicyMappedSecret]{
-		OutputState: i.ToNetworkFirewallPolicyMappedSecretArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // NetworkFirewallPolicyMappedSecretMapInput is an input type that accepts NetworkFirewallPolicyMappedSecretMap and NetworkFirewallPolicyMappedSecretMapOutput values.
@@ -288,12 +275,6 @@ func (i NetworkFirewallPolicyMappedSecretMap) ToNetworkFirewallPolicyMappedSecre
 	return pulumi.ToOutputWithContext(ctx, i).(NetworkFirewallPolicyMappedSecretMapOutput)
 }
 
-func (i NetworkFirewallPolicyMappedSecretMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*NetworkFirewallPolicyMappedSecret] {
-	return pulumix.Output[map[string]*NetworkFirewallPolicyMappedSecret]{
-		OutputState: i.ToNetworkFirewallPolicyMappedSecretMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type NetworkFirewallPolicyMappedSecretOutput struct{ *pulumi.OutputState }
 
 func (NetworkFirewallPolicyMappedSecretOutput) ElementType() reflect.Type {
@@ -308,12 +289,6 @@ func (o NetworkFirewallPolicyMappedSecretOutput) ToNetworkFirewallPolicyMappedSe
 	return o
 }
 
-func (o NetworkFirewallPolicyMappedSecretOutput) ToOutput(ctx context.Context) pulumix.Output[*NetworkFirewallPolicyMappedSecret] {
-	return pulumix.Output[*NetworkFirewallPolicyMappedSecret]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Unique name to identify the group of urls to be used in the policy rules.
 func (o NetworkFirewallPolicyMappedSecretOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v *NetworkFirewallPolicyMappedSecret) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
@@ -325,8 +300,8 @@ func (o NetworkFirewallPolicyMappedSecretOutput) NetworkFirewallPolicyId() pulum
 }
 
 // OCID of the Network Firewall Policy this Mapped Secret belongs to.
-func (o NetworkFirewallPolicyMappedSecretOutput) ParentResourceId() pulumi.StringOutput {
-	return o.ApplyT(func(v *NetworkFirewallPolicyMappedSecret) pulumi.StringOutput { return v.ParentResourceId }).(pulumi.StringOutput)
+func (o NetworkFirewallPolicyMappedSecretOutput) ParentResourceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *NetworkFirewallPolicyMappedSecret) pulumi.StringPtrOutput { return v.ParentResourceId }).(pulumi.StringPtrOutput)
 }
 
 // Source of the secrets, where the secrets are stored. The only accepted value is `OCI_VAULT`
@@ -366,12 +341,6 @@ func (o NetworkFirewallPolicyMappedSecretArrayOutput) ToNetworkFirewallPolicyMap
 	return o
 }
 
-func (o NetworkFirewallPolicyMappedSecretArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*NetworkFirewallPolicyMappedSecret] {
-	return pulumix.Output[[]*NetworkFirewallPolicyMappedSecret]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o NetworkFirewallPolicyMappedSecretArrayOutput) Index(i pulumi.IntInput) NetworkFirewallPolicyMappedSecretOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *NetworkFirewallPolicyMappedSecret {
 		return vs[0].([]*NetworkFirewallPolicyMappedSecret)[vs[1].(int)]
@@ -390,12 +359,6 @@ func (o NetworkFirewallPolicyMappedSecretMapOutput) ToNetworkFirewallPolicyMappe
 
 func (o NetworkFirewallPolicyMappedSecretMapOutput) ToNetworkFirewallPolicyMappedSecretMapOutputWithContext(ctx context.Context) NetworkFirewallPolicyMappedSecretMapOutput {
 	return o
-}
-
-func (o NetworkFirewallPolicyMappedSecretMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*NetworkFirewallPolicyMappedSecret] {
-	return pulumix.Output[map[string]*NetworkFirewallPolicyMappedSecret]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o NetworkFirewallPolicyMappedSecretMapOutput) MapIndex(k pulumi.StringInput) NetworkFirewallPolicyMappedSecretOutput {

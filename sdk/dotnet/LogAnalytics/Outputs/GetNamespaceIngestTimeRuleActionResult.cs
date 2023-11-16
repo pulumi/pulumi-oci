@@ -16,7 +16,7 @@ namespace Pulumi.Oci.LogAnalytics.Outputs
         /// <summary>
         /// Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// Additional dimensions to publish for the extracted metric. A valid list contains the source field names whose values are to be published as dimensions. The source name itself is specified using a special macro SOURCE_NAME
         /// </summary>
@@ -24,33 +24,33 @@ namespace Pulumi.Oci.LogAnalytics.Outputs
         /// <summary>
         /// The metric name of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
         /// </summary>
-        public readonly string MetricName;
+        public readonly string? MetricName;
         /// <summary>
         /// The Logging Analytics namespace used for the request.
         /// </summary>
-        public readonly string Namespace;
+        public readonly string? Namespace;
         /// <summary>
         /// The resourceGroup of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
         /// </summary>
-        public readonly string ResourceGroup;
+        public readonly string? ResourceGroup;
         /// <summary>
         /// Discriminator.
         /// </summary>
-        public readonly string Type;
+        public readonly string? Type;
 
         [OutputConstructor]
         private GetNamespaceIngestTimeRuleActionResult(
-            string compartmentId,
+            string? compartmentId,
 
             ImmutableArray<string> dimensions,
 
-            string metricName,
+            string? metricName,
 
-            string @namespace,
+            string? @namespace,
 
-            string resourceGroup,
+            string? resourceGroup,
 
-            string type)
+            string? type)
         {
             CompartmentId = compartmentId;
             Dimensions = dimensions;

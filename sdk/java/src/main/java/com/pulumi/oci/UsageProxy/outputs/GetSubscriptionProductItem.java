@@ -8,6 +8,8 @@ import java.lang.Boolean;
 import java.lang.Double;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetSubscriptionProductItem {
@@ -15,63 +17,63 @@ public final class GetSubscriptionProductItem {
      * @return The earned rewards for the product.
      * 
      */
-    private Double earnedRewards;
+    private @Nullable Double earnedRewards;
     /**
      * @return The boolean parameter to indicate if the product is eligible to earn rewards.
      * 
      */
-    private Boolean isEligibleToEarnRewards;
+    private @Nullable Boolean isEligibleToEarnRewards;
     /**
      * @return The rate card product name.
      * 
      */
-    private String productName;
+    private @Nullable String productName;
     /**
      * @return The rate card product number.
      * 
      */
-    private String productNumber;
+    private @Nullable String productNumber;
     /**
      * @return The rate card product usage amount.
      * 
      */
-    private Double usageAmount;
+    private @Nullable Double usageAmount;
 
     private GetSubscriptionProductItem() {}
     /**
      * @return The earned rewards for the product.
      * 
      */
-    public Double earnedRewards() {
-        return this.earnedRewards;
+    public Optional<Double> earnedRewards() {
+        return Optional.ofNullable(this.earnedRewards);
     }
     /**
      * @return The boolean parameter to indicate if the product is eligible to earn rewards.
      * 
      */
-    public Boolean isEligibleToEarnRewards() {
-        return this.isEligibleToEarnRewards;
+    public Optional<Boolean> isEligibleToEarnRewards() {
+        return Optional.ofNullable(this.isEligibleToEarnRewards);
     }
     /**
      * @return The rate card product name.
      * 
      */
-    public String productName() {
-        return this.productName;
+    public Optional<String> productName() {
+        return Optional.ofNullable(this.productName);
     }
     /**
      * @return The rate card product number.
      * 
      */
-    public String productNumber() {
-        return this.productNumber;
+    public Optional<String> productNumber() {
+        return Optional.ofNullable(this.productNumber);
     }
     /**
      * @return The rate card product usage amount.
      * 
      */
-    public Double usageAmount() {
-        return this.usageAmount;
+    public Optional<Double> usageAmount() {
+        return Optional.ofNullable(this.usageAmount);
     }
 
     public static Builder builder() {
@@ -83,11 +85,11 @@ public final class GetSubscriptionProductItem {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Double earnedRewards;
-        private Boolean isEligibleToEarnRewards;
-        private String productName;
-        private String productNumber;
-        private Double usageAmount;
+        private @Nullable Double earnedRewards;
+        private @Nullable Boolean isEligibleToEarnRewards;
+        private @Nullable String productName;
+        private @Nullable String productNumber;
+        private @Nullable Double usageAmount;
         public Builder() {}
         public Builder(GetSubscriptionProductItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -99,28 +101,28 @@ public final class GetSubscriptionProductItem {
         }
 
         @CustomType.Setter
-        public Builder earnedRewards(Double earnedRewards) {
-            this.earnedRewards = Objects.requireNonNull(earnedRewards);
+        public Builder earnedRewards(@Nullable Double earnedRewards) {
+            this.earnedRewards = earnedRewards;
             return this;
         }
         @CustomType.Setter
-        public Builder isEligibleToEarnRewards(Boolean isEligibleToEarnRewards) {
-            this.isEligibleToEarnRewards = Objects.requireNonNull(isEligibleToEarnRewards);
+        public Builder isEligibleToEarnRewards(@Nullable Boolean isEligibleToEarnRewards) {
+            this.isEligibleToEarnRewards = isEligibleToEarnRewards;
             return this;
         }
         @CustomType.Setter
-        public Builder productName(String productName) {
-            this.productName = Objects.requireNonNull(productName);
+        public Builder productName(@Nullable String productName) {
+            this.productName = productName;
             return this;
         }
         @CustomType.Setter
-        public Builder productNumber(String productNumber) {
-            this.productNumber = Objects.requireNonNull(productNumber);
+        public Builder productNumber(@Nullable String productNumber) {
+            this.productNumber = productNumber;
             return this;
         }
         @CustomType.Setter
-        public Builder usageAmount(Double usageAmount) {
-            this.usageAmount = Objects.requireNonNull(usageAmount);
+        public Builder usageAmount(@Nullable Double usageAmount) {
+            this.usageAmount = usageAmount;
             return this;
         }
         public GetSubscriptionProductItem build() {

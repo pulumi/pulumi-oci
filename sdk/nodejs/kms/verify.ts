@@ -72,7 +72,7 @@ export class Verify extends pulumi.CustomResource {
     /**
      * A Boolean value that indicates whether the signature was verified.
      */
-    public /*out*/ readonly isSignatureValid!: pulumi.Output<boolean>;
+    public /*out*/ readonly isSignatureValid!: pulumi.Output<boolean | undefined>;
     /**
      * The OCID of the key used to sign the message.
      */
@@ -88,7 +88,7 @@ export class Verify extends pulumi.CustomResource {
     /**
      * Denotes whether the value of the message parameter is a raw message or a message digest. The default value, `RAW`, indicates a message. To indicate a message digest, use `DIGEST`.
      */
-    public readonly messageType!: pulumi.Output<string>;
+    public readonly messageType!: pulumi.Output<string | undefined>;
     /**
      * The base64-encoded binary data object denoting the cryptographic signature generated for the message.
      */

@@ -32,12 +32,12 @@ public final class GetLibraryMaskingFormatsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The list of library_masking_format_collection.
      * 
      */
-    private List<GetLibraryMaskingFormatsLibraryMaskingFormatCollection> libraryMaskingFormatCollections;
+    private @Nullable List<GetLibraryMaskingFormatsLibraryMaskingFormatCollection> libraryMaskingFormatCollections;
     /**
      * @return The OCID of the library masking format.
      * 
@@ -80,15 +80,15 @@ public final class GetLibraryMaskingFormatsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The list of library_masking_format_collection.
      * 
      */
     public List<GetLibraryMaskingFormatsLibraryMaskingFormatCollection> libraryMaskingFormatCollections() {
-        return this.libraryMaskingFormatCollections;
+        return this.libraryMaskingFormatCollections == null ? List.of() : this.libraryMaskingFormatCollections;
     }
     /**
      * @return The OCID of the library masking format.
@@ -128,8 +128,8 @@ public final class GetLibraryMaskingFormatsResult {
         private @Nullable Boolean compartmentIdInSubtree;
         private @Nullable String displayName;
         private @Nullable List<GetLibraryMaskingFormatsFilter> filters;
-        private String id;
-        private List<GetLibraryMaskingFormatsLibraryMaskingFormatCollection> libraryMaskingFormatCollections;
+        private @Nullable String id;
+        private @Nullable List<GetLibraryMaskingFormatsLibraryMaskingFormatCollection> libraryMaskingFormatCollections;
         private @Nullable String libraryMaskingFormatId;
         private @Nullable String libraryMaskingFormatSource;
         private @Nullable String state;
@@ -181,13 +181,13 @@ public final class GetLibraryMaskingFormatsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder libraryMaskingFormatCollections(List<GetLibraryMaskingFormatsLibraryMaskingFormatCollection> libraryMaskingFormatCollections) {
-            this.libraryMaskingFormatCollections = Objects.requireNonNull(libraryMaskingFormatCollections);
+        public Builder libraryMaskingFormatCollections(@Nullable List<GetLibraryMaskingFormatsLibraryMaskingFormatCollection> libraryMaskingFormatCollections) {
+            this.libraryMaskingFormatCollections = libraryMaskingFormatCollections;
             return this;
         }
         public Builder libraryMaskingFormatCollections(GetLibraryMaskingFormatsLibraryMaskingFormatCollection... libraryMaskingFormatCollections) {

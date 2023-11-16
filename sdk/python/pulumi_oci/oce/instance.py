@@ -33,27 +33,6 @@ class InstanceArgs:
                  waf_primary_domain: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a Instance resource.
-        :param pulumi.Input[str] admin_email: Admin Email for Notification
-        :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier
-        :param pulumi.Input[str] idcs_access_token: Identity Cloud Service access token identifying a stripe and service administrator user
-        :param pulumi.Input[str] object_storage_namespace: Object Storage Namespace of Tenancy
-        :param pulumi.Input[str] tenancy_id: Tenancy Identifier
-        :param pulumi.Input[str] tenancy_name: Tenancy Name
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] add_on_features: (Updatable) a list of add-on features for the ocm instance
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] description: (Updatable) OceInstance description
-        :param pulumi.Input[str] dr_region: (Updatable) disaster recovery paired ragion name
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] instance_access_type: Flag indicating whether the instance access is private or public
-        :param pulumi.Input[str] instance_license_type: (Updatable) Flag indicating whether the instance license is new cloud or bring your own license
-        :param pulumi.Input[str] instance_usage_type: (Updatable) Instance type based on its usage
-        :param pulumi.Input[str] name: OceInstance Name
-        :param pulumi.Input[str] upgrade_schedule: Upgrade schedule type representing service to be upgraded immediately whenever latest version is released or delay upgrade of the service to previous released version
-        :param pulumi.Input[str] waf_primary_domain: (Updatable) Web Application Firewall(WAF) primary domain
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "admin_email", admin_email)
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -87,9 +66,6 @@ class InstanceArgs:
     @property
     @pulumi.getter(name="adminEmail")
     def admin_email(self) -> pulumi.Input[str]:
-        """
-        Admin Email for Notification
-        """
         return pulumi.get(self, "admin_email")
 
     @admin_email.setter
@@ -99,9 +75,6 @@ class InstanceArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Compartment Identifier
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -111,9 +84,6 @@ class InstanceArgs:
     @property
     @pulumi.getter(name="idcsAccessToken")
     def idcs_access_token(self) -> pulumi.Input[str]:
-        """
-        Identity Cloud Service access token identifying a stripe and service administrator user
-        """
         return pulumi.get(self, "idcs_access_token")
 
     @idcs_access_token.setter
@@ -123,9 +93,6 @@ class InstanceArgs:
     @property
     @pulumi.getter(name="objectStorageNamespace")
     def object_storage_namespace(self) -> pulumi.Input[str]:
-        """
-        Object Storage Namespace of Tenancy
-        """
         return pulumi.get(self, "object_storage_namespace")
 
     @object_storage_namespace.setter
@@ -135,9 +102,6 @@ class InstanceArgs:
     @property
     @pulumi.getter(name="tenancyId")
     def tenancy_id(self) -> pulumi.Input[str]:
-        """
-        Tenancy Identifier
-        """
         return pulumi.get(self, "tenancy_id")
 
     @tenancy_id.setter
@@ -147,9 +111,6 @@ class InstanceArgs:
     @property
     @pulumi.getter(name="tenancyName")
     def tenancy_name(self) -> pulumi.Input[str]:
-        """
-        Tenancy Name
-        """
         return pulumi.get(self, "tenancy_name")
 
     @tenancy_name.setter
@@ -159,9 +120,6 @@ class InstanceArgs:
     @property
     @pulumi.getter(name="addOnFeatures")
     def add_on_features(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) a list of add-on features for the ocm instance
-        """
         return pulumi.get(self, "add_on_features")
 
     @add_on_features.setter
@@ -171,9 +129,6 @@ class InstanceArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -183,9 +138,6 @@ class InstanceArgs:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) OceInstance description
-        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -195,9 +147,6 @@ class InstanceArgs:
     @property
     @pulumi.getter(name="drRegion")
     def dr_region(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) disaster recovery paired ragion name
-        """
         return pulumi.get(self, "dr_region")
 
     @dr_region.setter
@@ -207,9 +156,6 @@ class InstanceArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -219,9 +165,6 @@ class InstanceArgs:
     @property
     @pulumi.getter(name="instanceAccessType")
     def instance_access_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        Flag indicating whether the instance access is private or public
-        """
         return pulumi.get(self, "instance_access_type")
 
     @instance_access_type.setter
@@ -231,9 +174,6 @@ class InstanceArgs:
     @property
     @pulumi.getter(name="instanceLicenseType")
     def instance_license_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Flag indicating whether the instance license is new cloud or bring your own license
-        """
         return pulumi.get(self, "instance_license_type")
 
     @instance_license_type.setter
@@ -243,9 +183,6 @@ class InstanceArgs:
     @property
     @pulumi.getter(name="instanceUsageType")
     def instance_usage_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Instance type based on its usage
-        """
         return pulumi.get(self, "instance_usage_type")
 
     @instance_usage_type.setter
@@ -255,9 +192,6 @@ class InstanceArgs:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        OceInstance Name
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -267,9 +201,6 @@ class InstanceArgs:
     @property
     @pulumi.getter(name="upgradeSchedule")
     def upgrade_schedule(self) -> Optional[pulumi.Input[str]]:
-        """
-        Upgrade schedule type representing service to be upgraded immediately whenever latest version is released or delay upgrade of the service to previous released version
-        """
         return pulumi.get(self, "upgrade_schedule")
 
     @upgrade_schedule.setter
@@ -279,13 +210,6 @@ class InstanceArgs:
     @property
     @pulumi.getter(name="wafPrimaryDomain")
     def waf_primary_domain(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Web Application Firewall(WAF) primary domain
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "waf_primary_domain")
 
     @waf_primary_domain.setter
@@ -324,36 +248,6 @@ class _InstanceState:
                  waf_primary_domain: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering Instance resources.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] add_on_features: (Updatable) a list of add-on features for the ocm instance
-        :param pulumi.Input[str] admin_email: Admin Email for Notification
-        :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] description: (Updatable) OceInstance description
-        :param pulumi.Input[str] dr_region: (Updatable) disaster recovery paired ragion name
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] guid: Unique GUID identifier that is immutable on creation
-        :param pulumi.Input[str] idcs_access_token: Identity Cloud Service access token identifying a stripe and service administrator user
-        :param pulumi.Input[str] idcs_tenancy: IDCS Tenancy Identifier
-        :param pulumi.Input[str] instance_access_type: Flag indicating whether the instance access is private or public
-        :param pulumi.Input[str] instance_license_type: (Updatable) Flag indicating whether the instance license is new cloud or bring your own license
-        :param pulumi.Input[str] instance_usage_type: (Updatable) Instance type based on its usage
-        :param pulumi.Input[str] lifecycle_details: Details of the current state of the instance lifecycle
-        :param pulumi.Input[str] name: OceInstance Name
-        :param pulumi.Input[str] object_storage_namespace: Object Storage Namespace of Tenancy
-        :param pulumi.Input[Mapping[str, Any]] service: SERVICE data. Example: `{"service": {"IDCS": "value"}}`
-        :param pulumi.Input[str] state: The current state of the instance lifecycle.
-        :param pulumi.Input[str] state_message: An message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[str] tenancy_id: Tenancy Identifier
-        :param pulumi.Input[str] tenancy_name: Tenancy Name
-        :param pulumi.Input[str] time_created: The time the the OceInstance was created. An RFC3339 formatted datetime string
-        :param pulumi.Input[str] time_updated: The time the OceInstance was updated. An RFC3339 formatted datetime string
-        :param pulumi.Input[str] upgrade_schedule: Upgrade schedule type representing service to be upgraded immediately whenever latest version is released or delay upgrade of the service to previous released version
-        :param pulumi.Input[str] waf_primary_domain: (Updatable) Web Application Firewall(WAF) primary domain
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if add_on_features is not None:
             pulumi.set(__self__, "add_on_features", add_on_features)
@@ -411,9 +305,6 @@ class _InstanceState:
     @property
     @pulumi.getter(name="addOnFeatures")
     def add_on_features(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) a list of add-on features for the ocm instance
-        """
         return pulumi.get(self, "add_on_features")
 
     @add_on_features.setter
@@ -423,9 +314,6 @@ class _InstanceState:
     @property
     @pulumi.getter(name="adminEmail")
     def admin_email(self) -> Optional[pulumi.Input[str]]:
-        """
-        Admin Email for Notification
-        """
         return pulumi.get(self, "admin_email")
 
     @admin_email.setter
@@ -435,9 +323,6 @@ class _InstanceState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Compartment Identifier
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -447,9 +332,6 @@ class _InstanceState:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -459,9 +341,6 @@ class _InstanceState:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) OceInstance description
-        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -471,9 +350,6 @@ class _InstanceState:
     @property
     @pulumi.getter(name="drRegion")
     def dr_region(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) disaster recovery paired ragion name
-        """
         return pulumi.get(self, "dr_region")
 
     @dr_region.setter
@@ -483,9 +359,6 @@ class _InstanceState:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -495,9 +368,6 @@ class _InstanceState:
     @property
     @pulumi.getter
     def guid(self) -> Optional[pulumi.Input[str]]:
-        """
-        Unique GUID identifier that is immutable on creation
-        """
         return pulumi.get(self, "guid")
 
     @guid.setter
@@ -507,9 +377,6 @@ class _InstanceState:
     @property
     @pulumi.getter(name="idcsAccessToken")
     def idcs_access_token(self) -> Optional[pulumi.Input[str]]:
-        """
-        Identity Cloud Service access token identifying a stripe and service administrator user
-        """
         return pulumi.get(self, "idcs_access_token")
 
     @idcs_access_token.setter
@@ -519,9 +386,6 @@ class _InstanceState:
     @property
     @pulumi.getter(name="idcsTenancy")
     def idcs_tenancy(self) -> Optional[pulumi.Input[str]]:
-        """
-        IDCS Tenancy Identifier
-        """
         return pulumi.get(self, "idcs_tenancy")
 
     @idcs_tenancy.setter
@@ -531,9 +395,6 @@ class _InstanceState:
     @property
     @pulumi.getter(name="instanceAccessType")
     def instance_access_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        Flag indicating whether the instance access is private or public
-        """
         return pulumi.get(self, "instance_access_type")
 
     @instance_access_type.setter
@@ -543,9 +404,6 @@ class _InstanceState:
     @property
     @pulumi.getter(name="instanceLicenseType")
     def instance_license_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Flag indicating whether the instance license is new cloud or bring your own license
-        """
         return pulumi.get(self, "instance_license_type")
 
     @instance_license_type.setter
@@ -555,9 +413,6 @@ class _InstanceState:
     @property
     @pulumi.getter(name="instanceUsageType")
     def instance_usage_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Instance type based on its usage
-        """
         return pulumi.get(self, "instance_usage_type")
 
     @instance_usage_type.setter
@@ -567,9 +422,6 @@ class _InstanceState:
     @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> Optional[pulumi.Input[str]]:
-        """
-        Details of the current state of the instance lifecycle
-        """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
@@ -579,9 +431,6 @@ class _InstanceState:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        OceInstance Name
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -591,9 +440,6 @@ class _InstanceState:
     @property
     @pulumi.getter(name="objectStorageNamespace")
     def object_storage_namespace(self) -> Optional[pulumi.Input[str]]:
-        """
-        Object Storage Namespace of Tenancy
-        """
         return pulumi.get(self, "object_storage_namespace")
 
     @object_storage_namespace.setter
@@ -603,9 +449,6 @@ class _InstanceState:
     @property
     @pulumi.getter
     def service(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        SERVICE data. Example: `{"service": {"IDCS": "value"}}`
-        """
         return pulumi.get(self, "service")
 
     @service.setter
@@ -615,9 +458,6 @@ class _InstanceState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The current state of the instance lifecycle.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -627,9 +467,6 @@ class _InstanceState:
     @property
     @pulumi.getter(name="stateMessage")
     def state_message(self) -> Optional[pulumi.Input[str]]:
-        """
-        An message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        """
         return pulumi.get(self, "state_message")
 
     @state_message.setter
@@ -639,9 +476,6 @@ class _InstanceState:
     @property
     @pulumi.getter(name="systemTags")
     def system_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
@@ -651,9 +485,6 @@ class _InstanceState:
     @property
     @pulumi.getter(name="tenancyId")
     def tenancy_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        Tenancy Identifier
-        """
         return pulumi.get(self, "tenancy_id")
 
     @tenancy_id.setter
@@ -663,9 +494,6 @@ class _InstanceState:
     @property
     @pulumi.getter(name="tenancyName")
     def tenancy_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        Tenancy Name
-        """
         return pulumi.get(self, "tenancy_name")
 
     @tenancy_name.setter
@@ -675,9 +503,6 @@ class _InstanceState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The time the the OceInstance was created. An RFC3339 formatted datetime string
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -687,9 +512,6 @@ class _InstanceState:
     @property
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> Optional[pulumi.Input[str]]:
-        """
-        The time the OceInstance was updated. An RFC3339 formatted datetime string
-        """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
@@ -699,9 +521,6 @@ class _InstanceState:
     @property
     @pulumi.getter(name="upgradeSchedule")
     def upgrade_schedule(self) -> Optional[pulumi.Input[str]]:
-        """
-        Upgrade schedule type representing service to be upgraded immediately whenever latest version is released or delay upgrade of the service to previous released version
-        """
         return pulumi.get(self, "upgrade_schedule")
 
     @upgrade_schedule.setter
@@ -711,13 +530,6 @@ class _InstanceState:
     @property
     @pulumi.getter(name="wafPrimaryDomain")
     def waf_primary_domain(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Web Application Firewall(WAF) primary domain
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "waf_primary_domain")
 
     @waf_primary_domain.setter
@@ -749,70 +561,9 @@ class Instance(pulumi.CustomResource):
                  waf_primary_domain: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Oce Instance resource in Oracle Cloud Infrastructure Content and Experience service.
-
-        Creates a new OceInstance.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_oce_instance = oci.oce.Instance("testOceInstance",
-            admin_email=var["oce_instance_admin_email"],
-            compartment_id=var["compartment_id"],
-            idcs_access_token=var["oce_instance_idcs_access_token"],
-            object_storage_namespace=var["oce_instance_object_storage_namespace"],
-            tenancy_id=oci_identity_tenancy["test_tenancy"]["id"],
-            tenancy_name=oci_identity_tenancy["test_tenancy"]["name"],
-            add_on_features=var["oce_instance_add_on_features"],
-            defined_tags={
-                "foo-namespace.bar-key": "value",
-            },
-            description=var["oce_instance_description"],
-            dr_region=var["oce_instance_dr_region"],
-            freeform_tags={
-                "bar-key": "value",
-            },
-            instance_access_type=var["oce_instance_instance_access_type"],
-            instance_license_type=var["oce_instance_instance_license_type"],
-            instance_usage_type=var["oce_instance_instance_usage_type"],
-            upgrade_schedule=var["oce_instance_upgrade_schedule"],
-            waf_primary_domain=var["oce_instance_waf_primary_domain"])
-        ```
-
-        ## Import
-
-        OceInstances can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Oce/instance:Instance test_oce_instance "id"
-        ```
-
+        Create a Instance resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] add_on_features: (Updatable) a list of add-on features for the ocm instance
-        :param pulumi.Input[str] admin_email: Admin Email for Notification
-        :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] description: (Updatable) OceInstance description
-        :param pulumi.Input[str] dr_region: (Updatable) disaster recovery paired ragion name
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] idcs_access_token: Identity Cloud Service access token identifying a stripe and service administrator user
-        :param pulumi.Input[str] instance_access_type: Flag indicating whether the instance access is private or public
-        :param pulumi.Input[str] instance_license_type: (Updatable) Flag indicating whether the instance license is new cloud or bring your own license
-        :param pulumi.Input[str] instance_usage_type: (Updatable) Instance type based on its usage
-        :param pulumi.Input[str] name: OceInstance Name
-        :param pulumi.Input[str] object_storage_namespace: Object Storage Namespace of Tenancy
-        :param pulumi.Input[str] tenancy_id: Tenancy Identifier
-        :param pulumi.Input[str] tenancy_name: Tenancy Name
-        :param pulumi.Input[str] upgrade_schedule: Upgrade schedule type representing service to be upgraded immediately whenever latest version is released or delay upgrade of the service to previous released version
-        :param pulumi.Input[str] waf_primary_domain: (Updatable) Web Application Firewall(WAF) primary domain
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -821,47 +572,7 @@ class Instance(pulumi.CustomResource):
                  args: InstanceArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Oce Instance resource in Oracle Cloud Infrastructure Content and Experience service.
-
-        Creates a new OceInstance.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_oce_instance = oci.oce.Instance("testOceInstance",
-            admin_email=var["oce_instance_admin_email"],
-            compartment_id=var["compartment_id"],
-            idcs_access_token=var["oce_instance_idcs_access_token"],
-            object_storage_namespace=var["oce_instance_object_storage_namespace"],
-            tenancy_id=oci_identity_tenancy["test_tenancy"]["id"],
-            tenancy_name=oci_identity_tenancy["test_tenancy"]["name"],
-            add_on_features=var["oce_instance_add_on_features"],
-            defined_tags={
-                "foo-namespace.bar-key": "value",
-            },
-            description=var["oce_instance_description"],
-            dr_region=var["oce_instance_dr_region"],
-            freeform_tags={
-                "bar-key": "value",
-            },
-            instance_access_type=var["oce_instance_instance_access_type"],
-            instance_license_type=var["oce_instance_instance_license_type"],
-            instance_usage_type=var["oce_instance_instance_usage_type"],
-            upgrade_schedule=var["oce_instance_upgrade_schedule"],
-            waf_primary_domain=var["oce_instance_waf_primary_domain"])
-        ```
-
-        ## Import
-
-        OceInstances can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Oce/instance:Instance test_oce_instance "id"
-        ```
-
+        Create a Instance resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param InstanceArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -986,36 +697,6 @@ class Instance(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] add_on_features: (Updatable) a list of add-on features for the ocm instance
-        :param pulumi.Input[str] admin_email: Admin Email for Notification
-        :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] description: (Updatable) OceInstance description
-        :param pulumi.Input[str] dr_region: (Updatable) disaster recovery paired ragion name
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] guid: Unique GUID identifier that is immutable on creation
-        :param pulumi.Input[str] idcs_access_token: Identity Cloud Service access token identifying a stripe and service administrator user
-        :param pulumi.Input[str] idcs_tenancy: IDCS Tenancy Identifier
-        :param pulumi.Input[str] instance_access_type: Flag indicating whether the instance access is private or public
-        :param pulumi.Input[str] instance_license_type: (Updatable) Flag indicating whether the instance license is new cloud or bring your own license
-        :param pulumi.Input[str] instance_usage_type: (Updatable) Instance type based on its usage
-        :param pulumi.Input[str] lifecycle_details: Details of the current state of the instance lifecycle
-        :param pulumi.Input[str] name: OceInstance Name
-        :param pulumi.Input[str] object_storage_namespace: Object Storage Namespace of Tenancy
-        :param pulumi.Input[Mapping[str, Any]] service: SERVICE data. Example: `{"service": {"IDCS": "value"}}`
-        :param pulumi.Input[str] state: The current state of the instance lifecycle.
-        :param pulumi.Input[str] state_message: An message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[str] tenancy_id: Tenancy Identifier
-        :param pulumi.Input[str] tenancy_name: Tenancy Name
-        :param pulumi.Input[str] time_created: The time the the OceInstance was created. An RFC3339 formatted datetime string
-        :param pulumi.Input[str] time_updated: The time the OceInstance was updated. An RFC3339 formatted datetime string
-        :param pulumi.Input[str] upgrade_schedule: Upgrade schedule type representing service to be upgraded immediately whenever latest version is released or delay upgrade of the service to previous released version
-        :param pulumi.Input[str] waf_primary_domain: (Updatable) Web Application Firewall(WAF) primary domain
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -1051,213 +732,131 @@ class Instance(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="addOnFeatures")
-    def add_on_features(self) -> pulumi.Output[Sequence[str]]:
-        """
-        (Updatable) a list of add-on features for the ocm instance
-        """
+    def add_on_features(self) -> pulumi.Output[Optional[Sequence[str]]]:
         return pulumi.get(self, "add_on_features")
 
     @property
     @pulumi.getter(name="adminEmail")
     def admin_email(self) -> pulumi.Output[str]:
-        """
-        Admin Email for Notification
-        """
         return pulumi.get(self, "admin_email")
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Compartment Identifier
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def description(self) -> pulumi.Output[str]:
-        """
-        (Updatable) OceInstance description
-        """
+    def description(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="drRegion")
-    def dr_region(self) -> pulumi.Output[str]:
-        """
-        (Updatable) disaster recovery paired ragion name
-        """
+    def dr_region(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "dr_region")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def guid(self) -> pulumi.Output[str]:
-        """
-        Unique GUID identifier that is immutable on creation
-        """
+    def guid(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "guid")
 
     @property
     @pulumi.getter(name="idcsAccessToken")
     def idcs_access_token(self) -> pulumi.Output[str]:
-        """
-        Identity Cloud Service access token identifying a stripe and service administrator user
-        """
         return pulumi.get(self, "idcs_access_token")
 
     @property
     @pulumi.getter(name="idcsTenancy")
-    def idcs_tenancy(self) -> pulumi.Output[str]:
-        """
-        IDCS Tenancy Identifier
-        """
+    def idcs_tenancy(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "idcs_tenancy")
 
     @property
     @pulumi.getter(name="instanceAccessType")
-    def instance_access_type(self) -> pulumi.Output[str]:
-        """
-        Flag indicating whether the instance access is private or public
-        """
+    def instance_access_type(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "instance_access_type")
 
     @property
     @pulumi.getter(name="instanceLicenseType")
-    def instance_license_type(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Flag indicating whether the instance license is new cloud or bring your own license
-        """
+    def instance_license_type(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "instance_license_type")
 
     @property
     @pulumi.getter(name="instanceUsageType")
-    def instance_usage_type(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Instance type based on its usage
-        """
+    def instance_usage_type(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "instance_usage_type")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> pulumi.Output[str]:
-        """
-        Details of the current state of the instance lifecycle
-        """
+    def lifecycle_details(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter
     def name(self) -> pulumi.Output[str]:
-        """
-        OceInstance Name
-        """
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="objectStorageNamespace")
     def object_storage_namespace(self) -> pulumi.Output[str]:
-        """
-        Object Storage Namespace of Tenancy
-        """
         return pulumi.get(self, "object_storage_namespace")
 
     @property
     @pulumi.getter
-    def service(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        SERVICE data. Example: `{"service": {"IDCS": "value"}}`
-        """
+    def service(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "service")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        The current state of the instance lifecycle.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="stateMessage")
-    def state_message(self) -> pulumi.Output[str]:
-        """
-        An message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        """
+    def state_message(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state_message")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="tenancyId")
     def tenancy_id(self) -> pulumi.Output[str]:
-        """
-        Tenancy Identifier
-        """
         return pulumi.get(self, "tenancy_id")
 
     @property
     @pulumi.getter(name="tenancyName")
     def tenancy_name(self) -> pulumi.Output[str]:
-        """
-        Tenancy Name
-        """
         return pulumi.get(self, "tenancy_name")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        The time the the OceInstance was created. An RFC3339 formatted datetime string
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> pulumi.Output[str]:
-        """
-        The time the OceInstance was updated. An RFC3339 formatted datetime string
-        """
+    def time_updated(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_updated")
 
     @property
     @pulumi.getter(name="upgradeSchedule")
-    def upgrade_schedule(self) -> pulumi.Output[str]:
-        """
-        Upgrade schedule type representing service to be upgraded immediately whenever latest version is released or delay upgrade of the service to previous released version
-        """
+    def upgrade_schedule(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "upgrade_schedule")
 
     @property
     @pulumi.getter(name="wafPrimaryDomain")
-    def waf_primary_domain(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Web Application Firewall(WAF) primary domain
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
+    def waf_primary_domain(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "waf_primary_domain")
 

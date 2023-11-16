@@ -47,16 +47,16 @@ export interface GetInstanceMeasuredBootReportResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly instanceId: string;
     /**
      * Whether the verification succeeded, and the new values match the expected values.
      */
-    readonly isPolicyVerificationSuccessful: boolean;
+    readonly isPolicyVerificationSuccessful?: boolean;
     /**
      * A list of Trusted Platform Module (TPM) Platform Configuration Register (PCR) entries.
      */
-    readonly measurements: outputs.Core.GetInstanceMeasuredBootReportMeasurement[];
+    readonly measurements?: outputs.Core.GetInstanceMeasuredBootReportMeasurement[];
 }
 /**
  * This data source provides details about a specific Instance Measured Boot Report resource in Oracle Cloud Infrastructure Core service.

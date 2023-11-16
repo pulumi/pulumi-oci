@@ -49,7 +49,7 @@ class GetModelDeploymentShapesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -57,10 +57,7 @@ class GetModelDeploymentShapesResult:
 
     @property
     @pulumi.getter(name="modelDeploymentShapes")
-    def model_deployment_shapes(self) -> Sequence['outputs.GetModelDeploymentShapesModelDeploymentShapeResult']:
-        """
-        The list of model_deployment_shapes.
-        """
+    def model_deployment_shapes(self) -> Optional[Sequence['outputs.GetModelDeploymentShapesModelDeploymentShapeResult']]:
         return pulumi.get(self, "model_deployment_shapes")
 
 
@@ -80,21 +77,7 @@ def get_model_deployment_shapes(compartment_id: Optional[str] = None,
                                 filters: Optional[Sequence[pulumi.InputType['GetModelDeploymentShapesFilterArgs']]] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetModelDeploymentShapesResult:
     """
-    This data source provides the list of Model Deployment Shapes in Oracle Cloud Infrastructure Datascience service.
-
-    Lists the valid model deployment shapes.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_model_deployment_shapes = oci.DataScience.get_model_deployment_shapes(compartment_id=var["compartment_id"])
-    ```
-
-
-    :param str compartment_id: <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -114,20 +97,6 @@ def get_model_deployment_shapes_output(compartment_id: Optional[pulumi.Input[str
                                        filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetModelDeploymentShapesFilterArgs']]]]] = None,
                                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetModelDeploymentShapesResult]:
     """
-    This data source provides the list of Model Deployment Shapes in Oracle Cloud Infrastructure Datascience service.
-
-    Lists the valid model deployment shapes.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_model_deployment_shapes = oci.DataScience.get_model_deployment_shapes(compartment_id=var["compartment_id"])
-    ```
-
-
-    :param str compartment_id: <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+    Use this data source to access information about an existing resource.
     """
     ...

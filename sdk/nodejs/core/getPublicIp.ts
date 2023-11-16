@@ -84,63 +84,63 @@ export interface GetPublicIpResult {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the entity the public IP is assigned to, or in the process of being assigned to.
      */
-    readonly assignedEntityId: string;
+    readonly assignedEntityId?: string;
     /**
      * The type of entity the public IP is assigned to, or in the process of being assigned to.
      */
-    readonly assignedEntityType: string;
+    readonly assignedEntityType?: string;
     /**
      * The public IP's availability domain. This property is set only for ephemeral public IPs that are assigned to a private IP (that is, when the `scope` of the public IP is set to AVAILABILITY_DOMAIN). The value is the availability domain of the assigned private IP.  Example: `Uocm:PHX-AD-1`
      */
-    readonly availabilityDomain: string;
+    readonly availabilityDomain?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the public IP. For an ephemeral public IP, this is the compartment of its assigned entity (which can be a private IP or a regional entity such as a NAT gateway). For a reserved public IP that is currently assigned, its compartment can be different from the assigned private IP's.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * The public IP's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The public IP address of the `publicIp` object.  Example: `203.0.113.2`
      */
-    readonly ipAddress: string;
+    readonly ipAddress?: string;
     /**
      * Defines when the public IP is deleted and released back to Oracle's public IP pool.
      */
-    readonly lifetime: string;
+    readonly lifetime?: string;
     /**
      * Deprecated. Use `assignedEntityId` instead.
      */
-    readonly privateIpId: string;
+    readonly privateIpId?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pool object created in the current tenancy.
      */
-    readonly publicIpPoolId: string;
+    readonly publicIpPoolId?: string;
     /**
      * Whether the public IP is regional or specific to a particular availability domain.
      */
-    readonly scope: string;
+    readonly scope?: string;
     /**
      * The public IP's current state.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * The date and time the public IP was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
 }
 /**
  * This data source provides details about a specific Public Ip resource in Oracle Cloud Infrastructure Core service.

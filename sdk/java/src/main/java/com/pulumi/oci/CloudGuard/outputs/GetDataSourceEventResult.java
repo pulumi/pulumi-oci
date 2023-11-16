@@ -22,12 +22,12 @@ public final class GetDataSourceEventResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return List of event related to a DataSource
      * 
      */
-    private List<GetDataSourceEventItem> items;
+    private @Nullable List<GetDataSourceEventItem> items;
     /**
      * @return Data source event region
      * 
@@ -46,15 +46,15 @@ public final class GetDataSourceEventResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return List of event related to a DataSource
      * 
      */
     public List<GetDataSourceEventItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
     /**
      * @return Data source event region
@@ -74,8 +74,8 @@ public final class GetDataSourceEventResult {
     @CustomType.Builder
     public static final class Builder {
         private String dataSourceId;
-        private String id;
-        private List<GetDataSourceEventItem> items;
+        private @Nullable String id;
+        private @Nullable List<GetDataSourceEventItem> items;
         private @Nullable String region;
         public Builder() {}
         public Builder(GetDataSourceEventResult defaults) {
@@ -92,13 +92,13 @@ public final class GetDataSourceEventResult {
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder items(List<GetDataSourceEventItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetDataSourceEventItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetDataSourceEventItem... items) {

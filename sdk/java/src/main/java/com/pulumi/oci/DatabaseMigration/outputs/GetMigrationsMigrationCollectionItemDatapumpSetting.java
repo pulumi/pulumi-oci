@@ -11,6 +11,8 @@ import com.pulumi.oci.DatabaseMigration.outputs.GetMigrationsMigrationCollection
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetMigrationsMigrationCollectionItemDatapumpSetting {
@@ -18,27 +20,27 @@ public final class GetMigrationsMigrationCollectionItemDatapumpSetting {
      * @return Optional parameters for Data Pump Export and Import. Refer to [Configuring Optional Initial Load Advanced Settings](https://docs.us.oracle.com/en/cloud/paas/database-migration/dmsus/working-migration-resources.html#GUID-24BD3054-FDF8-48FF-8492-636C1D4B71ED)
      * 
      */
-    private List<GetMigrationsMigrationCollectionItemDatapumpSettingDataPumpParameter> dataPumpParameters;
+    private @Nullable List<GetMigrationsMigrationCollectionItemDatapumpSettingDataPumpParameter> dataPumpParameters;
     /**
      * @return Directory object details, used to define either import or export directory objects in Data Pump Settings.
      * 
      */
-    private List<GetMigrationsMigrationCollectionItemDatapumpSettingExportDirectoryObject> exportDirectoryObjects;
+    private @Nullable List<GetMigrationsMigrationCollectionItemDatapumpSettingExportDirectoryObject> exportDirectoryObjects;
     /**
      * @return Directory object details, used to define either import or export directory objects in Data Pump Settings.
      * 
      */
-    private List<GetMigrationsMigrationCollectionItemDatapumpSettingImportDirectoryObject> importDirectoryObjects;
+    private @Nullable List<GetMigrationsMigrationCollectionItemDatapumpSettingImportDirectoryObject> importDirectoryObjects;
     /**
      * @return Data Pump job mode. Refer to [Data Pump Export Modes ](https://docs.oracle.com/en/database/oracle/oracle-database/19/sutil/oracle-data-pump-export-utility.html#GUID-8E497131-6B9B-4CC8-AA50-35F480CAC2C4)
      * 
      */
-    private String jobMode;
+    private @Nullable String jobMode;
     /**
      * @return Defines remapping to be applied to objects as they are processed. Refer to [METADATA_REMAP Procedure ](https://docs.oracle.com/en/database/oracle/oracle-database/19/arpls/DBMS_DATAPUMP.html#GUID-0FC32790-91E6-4781-87A3-229DE024CB3D)
      * 
      */
-    private List<GetMigrationsMigrationCollectionItemDatapumpSettingMetadataRemap> metadataRemaps;
+    private @Nullable List<GetMigrationsMigrationCollectionItemDatapumpSettingMetadataRemap> metadataRemaps;
 
     private GetMigrationsMigrationCollectionItemDatapumpSetting() {}
     /**
@@ -46,35 +48,35 @@ public final class GetMigrationsMigrationCollectionItemDatapumpSetting {
      * 
      */
     public List<GetMigrationsMigrationCollectionItemDatapumpSettingDataPumpParameter> dataPumpParameters() {
-        return this.dataPumpParameters;
+        return this.dataPumpParameters == null ? List.of() : this.dataPumpParameters;
     }
     /**
      * @return Directory object details, used to define either import or export directory objects in Data Pump Settings.
      * 
      */
     public List<GetMigrationsMigrationCollectionItemDatapumpSettingExportDirectoryObject> exportDirectoryObjects() {
-        return this.exportDirectoryObjects;
+        return this.exportDirectoryObjects == null ? List.of() : this.exportDirectoryObjects;
     }
     /**
      * @return Directory object details, used to define either import or export directory objects in Data Pump Settings.
      * 
      */
     public List<GetMigrationsMigrationCollectionItemDatapumpSettingImportDirectoryObject> importDirectoryObjects() {
-        return this.importDirectoryObjects;
+        return this.importDirectoryObjects == null ? List.of() : this.importDirectoryObjects;
     }
     /**
      * @return Data Pump job mode. Refer to [Data Pump Export Modes ](https://docs.oracle.com/en/database/oracle/oracle-database/19/sutil/oracle-data-pump-export-utility.html#GUID-8E497131-6B9B-4CC8-AA50-35F480CAC2C4)
      * 
      */
-    public String jobMode() {
-        return this.jobMode;
+    public Optional<String> jobMode() {
+        return Optional.ofNullable(this.jobMode);
     }
     /**
      * @return Defines remapping to be applied to objects as they are processed. Refer to [METADATA_REMAP Procedure ](https://docs.oracle.com/en/database/oracle/oracle-database/19/arpls/DBMS_DATAPUMP.html#GUID-0FC32790-91E6-4781-87A3-229DE024CB3D)
      * 
      */
     public List<GetMigrationsMigrationCollectionItemDatapumpSettingMetadataRemap> metadataRemaps() {
-        return this.metadataRemaps;
+        return this.metadataRemaps == null ? List.of() : this.metadataRemaps;
     }
 
     public static Builder builder() {
@@ -86,11 +88,11 @@ public final class GetMigrationsMigrationCollectionItemDatapumpSetting {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetMigrationsMigrationCollectionItemDatapumpSettingDataPumpParameter> dataPumpParameters;
-        private List<GetMigrationsMigrationCollectionItemDatapumpSettingExportDirectoryObject> exportDirectoryObjects;
-        private List<GetMigrationsMigrationCollectionItemDatapumpSettingImportDirectoryObject> importDirectoryObjects;
-        private String jobMode;
-        private List<GetMigrationsMigrationCollectionItemDatapumpSettingMetadataRemap> metadataRemaps;
+        private @Nullable List<GetMigrationsMigrationCollectionItemDatapumpSettingDataPumpParameter> dataPumpParameters;
+        private @Nullable List<GetMigrationsMigrationCollectionItemDatapumpSettingExportDirectoryObject> exportDirectoryObjects;
+        private @Nullable List<GetMigrationsMigrationCollectionItemDatapumpSettingImportDirectoryObject> importDirectoryObjects;
+        private @Nullable String jobMode;
+        private @Nullable List<GetMigrationsMigrationCollectionItemDatapumpSettingMetadataRemap> metadataRemaps;
         public Builder() {}
         public Builder(GetMigrationsMigrationCollectionItemDatapumpSetting defaults) {
     	      Objects.requireNonNull(defaults);
@@ -102,37 +104,37 @@ public final class GetMigrationsMigrationCollectionItemDatapumpSetting {
         }
 
         @CustomType.Setter
-        public Builder dataPumpParameters(List<GetMigrationsMigrationCollectionItemDatapumpSettingDataPumpParameter> dataPumpParameters) {
-            this.dataPumpParameters = Objects.requireNonNull(dataPumpParameters);
+        public Builder dataPumpParameters(@Nullable List<GetMigrationsMigrationCollectionItemDatapumpSettingDataPumpParameter> dataPumpParameters) {
+            this.dataPumpParameters = dataPumpParameters;
             return this;
         }
         public Builder dataPumpParameters(GetMigrationsMigrationCollectionItemDatapumpSettingDataPumpParameter... dataPumpParameters) {
             return dataPumpParameters(List.of(dataPumpParameters));
         }
         @CustomType.Setter
-        public Builder exportDirectoryObjects(List<GetMigrationsMigrationCollectionItemDatapumpSettingExportDirectoryObject> exportDirectoryObjects) {
-            this.exportDirectoryObjects = Objects.requireNonNull(exportDirectoryObjects);
+        public Builder exportDirectoryObjects(@Nullable List<GetMigrationsMigrationCollectionItemDatapumpSettingExportDirectoryObject> exportDirectoryObjects) {
+            this.exportDirectoryObjects = exportDirectoryObjects;
             return this;
         }
         public Builder exportDirectoryObjects(GetMigrationsMigrationCollectionItemDatapumpSettingExportDirectoryObject... exportDirectoryObjects) {
             return exportDirectoryObjects(List.of(exportDirectoryObjects));
         }
         @CustomType.Setter
-        public Builder importDirectoryObjects(List<GetMigrationsMigrationCollectionItemDatapumpSettingImportDirectoryObject> importDirectoryObjects) {
-            this.importDirectoryObjects = Objects.requireNonNull(importDirectoryObjects);
+        public Builder importDirectoryObjects(@Nullable List<GetMigrationsMigrationCollectionItemDatapumpSettingImportDirectoryObject> importDirectoryObjects) {
+            this.importDirectoryObjects = importDirectoryObjects;
             return this;
         }
         public Builder importDirectoryObjects(GetMigrationsMigrationCollectionItemDatapumpSettingImportDirectoryObject... importDirectoryObjects) {
             return importDirectoryObjects(List.of(importDirectoryObjects));
         }
         @CustomType.Setter
-        public Builder jobMode(String jobMode) {
-            this.jobMode = Objects.requireNonNull(jobMode);
+        public Builder jobMode(@Nullable String jobMode) {
+            this.jobMode = jobMode;
             return this;
         }
         @CustomType.Setter
-        public Builder metadataRemaps(List<GetMigrationsMigrationCollectionItemDatapumpSettingMetadataRemap> metadataRemaps) {
-            this.metadataRemaps = Objects.requireNonNull(metadataRemaps);
+        public Builder metadataRemaps(@Nullable List<GetMigrationsMigrationCollectionItemDatapumpSettingMetadataRemap> metadataRemaps) {
+            this.metadataRemaps = metadataRemaps;
             return this;
         }
         public Builder metadataRemaps(GetMigrationsMigrationCollectionItemDatapumpSettingMetadataRemap... metadataRemaps) {

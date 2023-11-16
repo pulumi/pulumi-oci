@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Fusion Environment Service Attachment resource in Oracle Cloud Infrastructure Fusion Apps service.
@@ -58,17 +57,17 @@ type FusionEnvironmentServiceAttachment struct {
 	pulumi.CustomResourceState
 
 	// Compartment Identifier
-	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrOutput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// Service Attachment Display name, can be renamed
-	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrOutput `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// unique FusionEnvironment identifier
 	FusionEnvironmentId pulumi.StringOutput `pulumi:"fusionEnvironmentId"`
 	// Whether this service is provisioned due to the customer being subscribed to a specific SKU
-	IsSkuBased pulumi.BoolOutput `pulumi:"isSkuBased"`
+	IsSkuBased pulumi.BoolPtrOutput `pulumi:"isSkuBased"`
 	// The service instance OCID of the instance being attached
 	ServiceInstanceId pulumi.StringOutput `pulumi:"serviceInstanceId"`
 	// Type of the ServiceInstance being attached.
@@ -77,13 +76,13 @@ type FusionEnvironmentServiceAttachment struct {
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ServiceInstanceType pulumi.StringOutput `pulumi:"serviceInstanceType"`
 	// Public URL
-	ServiceUrl pulumi.StringOutput `pulumi:"serviceUrl"`
+	ServiceUrl pulumi.StringPtrOutput `pulumi:"serviceUrl"`
 	// The current state of the ServiceInstance.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// The time the the ServiceInstance was created. An RFC3339 formatted datetime string
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The time the ServiceInstance was updated. An RFC3339 formatted datetime string
-	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 }
 
 // NewFusionEnvironmentServiceAttachment registers a new resource with the given unique name, arguments, and options.
@@ -240,12 +239,6 @@ func (i *FusionEnvironmentServiceAttachment) ToFusionEnvironmentServiceAttachmen
 	return pulumi.ToOutputWithContext(ctx, i).(FusionEnvironmentServiceAttachmentOutput)
 }
 
-func (i *FusionEnvironmentServiceAttachment) ToOutput(ctx context.Context) pulumix.Output[*FusionEnvironmentServiceAttachment] {
-	return pulumix.Output[*FusionEnvironmentServiceAttachment]{
-		OutputState: i.ToFusionEnvironmentServiceAttachmentOutputWithContext(ctx).OutputState,
-	}
-}
-
 // FusionEnvironmentServiceAttachmentArrayInput is an input type that accepts FusionEnvironmentServiceAttachmentArray and FusionEnvironmentServiceAttachmentArrayOutput values.
 // You can construct a concrete instance of `FusionEnvironmentServiceAttachmentArrayInput` via:
 //
@@ -269,12 +262,6 @@ func (i FusionEnvironmentServiceAttachmentArray) ToFusionEnvironmentServiceAttac
 
 func (i FusionEnvironmentServiceAttachmentArray) ToFusionEnvironmentServiceAttachmentArrayOutputWithContext(ctx context.Context) FusionEnvironmentServiceAttachmentArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(FusionEnvironmentServiceAttachmentArrayOutput)
-}
-
-func (i FusionEnvironmentServiceAttachmentArray) ToOutput(ctx context.Context) pulumix.Output[[]*FusionEnvironmentServiceAttachment] {
-	return pulumix.Output[[]*FusionEnvironmentServiceAttachment]{
-		OutputState: i.ToFusionEnvironmentServiceAttachmentArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // FusionEnvironmentServiceAttachmentMapInput is an input type that accepts FusionEnvironmentServiceAttachmentMap and FusionEnvironmentServiceAttachmentMapOutput values.
@@ -302,12 +289,6 @@ func (i FusionEnvironmentServiceAttachmentMap) ToFusionEnvironmentServiceAttachm
 	return pulumi.ToOutputWithContext(ctx, i).(FusionEnvironmentServiceAttachmentMapOutput)
 }
 
-func (i FusionEnvironmentServiceAttachmentMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*FusionEnvironmentServiceAttachment] {
-	return pulumix.Output[map[string]*FusionEnvironmentServiceAttachment]{
-		OutputState: i.ToFusionEnvironmentServiceAttachmentMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type FusionEnvironmentServiceAttachmentOutput struct{ *pulumi.OutputState }
 
 func (FusionEnvironmentServiceAttachmentOutput) ElementType() reflect.Type {
@@ -322,15 +303,9 @@ func (o FusionEnvironmentServiceAttachmentOutput) ToFusionEnvironmentServiceAtta
 	return o
 }
 
-func (o FusionEnvironmentServiceAttachmentOutput) ToOutput(ctx context.Context) pulumix.Output[*FusionEnvironmentServiceAttachment] {
-	return pulumix.Output[*FusionEnvironmentServiceAttachment]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Compartment Identifier
-func (o FusionEnvironmentServiceAttachmentOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v *FusionEnvironmentServiceAttachment) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
+func (o FusionEnvironmentServiceAttachmentOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *FusionEnvironmentServiceAttachment) pulumi.StringPtrOutput { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -339,8 +314,8 @@ func (o FusionEnvironmentServiceAttachmentOutput) DefinedTags() pulumi.MapOutput
 }
 
 // Service Attachment Display name, can be renamed
-func (o FusionEnvironmentServiceAttachmentOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v *FusionEnvironmentServiceAttachment) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+func (o FusionEnvironmentServiceAttachmentOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *FusionEnvironmentServiceAttachment) pulumi.StringPtrOutput { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -354,8 +329,8 @@ func (o FusionEnvironmentServiceAttachmentOutput) FusionEnvironmentId() pulumi.S
 }
 
 // Whether this service is provisioned due to the customer being subscribed to a specific SKU
-func (o FusionEnvironmentServiceAttachmentOutput) IsSkuBased() pulumi.BoolOutput {
-	return o.ApplyT(func(v *FusionEnvironmentServiceAttachment) pulumi.BoolOutput { return v.IsSkuBased }).(pulumi.BoolOutput)
+func (o FusionEnvironmentServiceAttachmentOutput) IsSkuBased() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *FusionEnvironmentServiceAttachment) pulumi.BoolPtrOutput { return v.IsSkuBased }).(pulumi.BoolPtrOutput)
 }
 
 // The service instance OCID of the instance being attached
@@ -372,23 +347,23 @@ func (o FusionEnvironmentServiceAttachmentOutput) ServiceInstanceType() pulumi.S
 }
 
 // Public URL
-func (o FusionEnvironmentServiceAttachmentOutput) ServiceUrl() pulumi.StringOutput {
-	return o.ApplyT(func(v *FusionEnvironmentServiceAttachment) pulumi.StringOutput { return v.ServiceUrl }).(pulumi.StringOutput)
+func (o FusionEnvironmentServiceAttachmentOutput) ServiceUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *FusionEnvironmentServiceAttachment) pulumi.StringPtrOutput { return v.ServiceUrl }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the ServiceInstance.
-func (o FusionEnvironmentServiceAttachmentOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *FusionEnvironmentServiceAttachment) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o FusionEnvironmentServiceAttachmentOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *FusionEnvironmentServiceAttachment) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The time the the ServiceInstance was created. An RFC3339 formatted datetime string
-func (o FusionEnvironmentServiceAttachmentOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *FusionEnvironmentServiceAttachment) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o FusionEnvironmentServiceAttachmentOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *FusionEnvironmentServiceAttachment) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time the ServiceInstance was updated. An RFC3339 formatted datetime string
-func (o FusionEnvironmentServiceAttachmentOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *FusionEnvironmentServiceAttachment) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o FusionEnvironmentServiceAttachmentOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *FusionEnvironmentServiceAttachment) pulumi.StringPtrOutput { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type FusionEnvironmentServiceAttachmentArrayOutput struct{ *pulumi.OutputState }
@@ -403,12 +378,6 @@ func (o FusionEnvironmentServiceAttachmentArrayOutput) ToFusionEnvironmentServic
 
 func (o FusionEnvironmentServiceAttachmentArrayOutput) ToFusionEnvironmentServiceAttachmentArrayOutputWithContext(ctx context.Context) FusionEnvironmentServiceAttachmentArrayOutput {
 	return o
-}
-
-func (o FusionEnvironmentServiceAttachmentArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*FusionEnvironmentServiceAttachment] {
-	return pulumix.Output[[]*FusionEnvironmentServiceAttachment]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o FusionEnvironmentServiceAttachmentArrayOutput) Index(i pulumi.IntInput) FusionEnvironmentServiceAttachmentOutput {
@@ -429,12 +398,6 @@ func (o FusionEnvironmentServiceAttachmentMapOutput) ToFusionEnvironmentServiceA
 
 func (o FusionEnvironmentServiceAttachmentMapOutput) ToFusionEnvironmentServiceAttachmentMapOutputWithContext(ctx context.Context) FusionEnvironmentServiceAttachmentMapOutput {
 	return o
-}
-
-func (o FusionEnvironmentServiceAttachmentMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*FusionEnvironmentServiceAttachment] {
-	return pulumix.Output[map[string]*FusionEnvironmentServiceAttachment]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o FusionEnvironmentServiceAttachmentMapOutput) MapIndex(k pulumi.StringInput) FusionEnvironmentServiceAttachmentOutput {

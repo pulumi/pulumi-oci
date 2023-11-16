@@ -10,6 +10,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetBastionResult {
@@ -18,102 +20,102 @@ public final class GetBastionResult {
      * @return The type of bastion.
      * 
      */
-    private String bastionType;
+    private @Nullable String bastionType;
     /**
      * @return A list of address ranges in CIDR notation that you want to allow to connect to sessions hosted by this bastion.
      * 
      */
-    private List<String> clientCidrBlockAllowLists;
+    private @Nullable List<String> clientCidrBlockAllowLists;
     /**
      * @return The unique identifier (OCID) of the compartment where the bastion is located.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return Flag to enable FQDN and SOCKS5 Proxy Support. Example: `ENABLED`, `DISABLED`
      * 
      */
-    private String dnsProxyStatus;
+    private @Nullable String dnsProxyStatus;
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return The unique identifier (OCID) of the bastion, which can&#39;t be changed after creation.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return A message describing the current state in more detail.
      * 
      */
-    private String lifecycleDetails;
+    private @Nullable String lifecycleDetails;
     /**
      * @return The maximum amount of time that any session on the bastion can remain active.
      * 
      */
-    private Integer maxSessionTtlInSeconds;
+    private @Nullable Integer maxSessionTtlInSeconds;
     /**
      * @return The maximum number of active sessions allowed on the bastion.
      * 
      */
-    private Integer maxSessionsAllowed;
+    private @Nullable Integer maxSessionsAllowed;
     /**
      * @return The name of the bastion, which can&#39;t be changed after creation.
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return The phonebook entry of the customer&#39;s team, which can&#39;t be changed after creation. Not applicable to `standard` bastions.
      * 
      */
-    private String phoneBookEntry;
+    private @Nullable String phoneBookEntry;
     /**
      * @return The private IP address of the created private endpoint.
      * 
      */
-    private String privateEndpointIpAddress;
+    private @Nullable String privateEndpointIpAddress;
     /**
      * @return The current state of the bastion.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return A list of IP addresses of the hosts that the bastion has access to. Not applicable to `standard` bastions.
      * 
      */
-    private List<String> staticJumpHostIpAddresses;
+    private @Nullable List<String> staticJumpHostIpAddresses;
     /**
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    private Map<String,Object> systemTags;
+    private @Nullable Map<String,Object> systemTags;
     /**
      * @return The unique identifier (OCID) of the subnet that the bastion connects to.
      * 
      */
-    private String targetSubnetId;
+    private @Nullable String targetSubnetId;
     /**
      * @return The unique identifier (OCID) of the virtual cloud network (VCN) that the bastion connects to.
      * 
      */
-    private String targetVcnId;
+    private @Nullable String targetVcnId;
     /**
      * @return The time the bastion was created. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The time the bastion was updated. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
      * 
      */
-    private String timeUpdated;
+    private @Nullable String timeUpdated;
 
     private GetBastionResult() {}
     public String bastionId() {
@@ -123,141 +125,141 @@ public final class GetBastionResult {
      * @return The type of bastion.
      * 
      */
-    public String bastionType() {
-        return this.bastionType;
+    public Optional<String> bastionType() {
+        return Optional.ofNullable(this.bastionType);
     }
     /**
      * @return A list of address ranges in CIDR notation that you want to allow to connect to sessions hosted by this bastion.
      * 
      */
     public List<String> clientCidrBlockAllowLists() {
-        return this.clientCidrBlockAllowLists;
+        return this.clientCidrBlockAllowLists == null ? List.of() : this.clientCidrBlockAllowLists;
     }
     /**
      * @return The unique identifier (OCID) of the compartment where the bastion is located.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return Flag to enable FQDN and SOCKS5 Proxy Support. Example: `ENABLED`, `DISABLED`
      * 
      */
-    public String dnsProxyStatus() {
-        return this.dnsProxyStatus;
+    public Optional<String> dnsProxyStatus() {
+        return Optional.ofNullable(this.dnsProxyStatus);
     }
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return The unique identifier (OCID) of the bastion, which can&#39;t be changed after creation.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return A message describing the current state in more detail.
      * 
      */
-    public String lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Optional<String> lifecycleDetails() {
+        return Optional.ofNullable(this.lifecycleDetails);
     }
     /**
      * @return The maximum amount of time that any session on the bastion can remain active.
      * 
      */
-    public Integer maxSessionTtlInSeconds() {
-        return this.maxSessionTtlInSeconds;
+    public Optional<Integer> maxSessionTtlInSeconds() {
+        return Optional.ofNullable(this.maxSessionTtlInSeconds);
     }
     /**
      * @return The maximum number of active sessions allowed on the bastion.
      * 
      */
-    public Integer maxSessionsAllowed() {
-        return this.maxSessionsAllowed;
+    public Optional<Integer> maxSessionsAllowed() {
+        return Optional.ofNullable(this.maxSessionsAllowed);
     }
     /**
      * @return The name of the bastion, which can&#39;t be changed after creation.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return The phonebook entry of the customer&#39;s team, which can&#39;t be changed after creation. Not applicable to `standard` bastions.
      * 
      */
-    public String phoneBookEntry() {
-        return this.phoneBookEntry;
+    public Optional<String> phoneBookEntry() {
+        return Optional.ofNullable(this.phoneBookEntry);
     }
     /**
      * @return The private IP address of the created private endpoint.
      * 
      */
-    public String privateEndpointIpAddress() {
-        return this.privateEndpointIpAddress;
+    public Optional<String> privateEndpointIpAddress() {
+        return Optional.ofNullable(this.privateEndpointIpAddress);
     }
     /**
      * @return The current state of the bastion.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return A list of IP addresses of the hosts that the bastion has access to. Not applicable to `standard` bastions.
      * 
      */
     public List<String> staticJumpHostIpAddresses() {
-        return this.staticJumpHostIpAddresses;
+        return this.staticJumpHostIpAddresses == null ? List.of() : this.staticJumpHostIpAddresses;
     }
     /**
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
     public Map<String,Object> systemTags() {
-        return this.systemTags;
+        return this.systemTags == null ? Map.of() : this.systemTags;
     }
     /**
      * @return The unique identifier (OCID) of the subnet that the bastion connects to.
      * 
      */
-    public String targetSubnetId() {
-        return this.targetSubnetId;
+    public Optional<String> targetSubnetId() {
+        return Optional.ofNullable(this.targetSubnetId);
     }
     /**
      * @return The unique identifier (OCID) of the virtual cloud network (VCN) that the bastion connects to.
      * 
      */
-    public String targetVcnId() {
-        return this.targetVcnId;
+    public Optional<String> targetVcnId() {
+        return Optional.ofNullable(this.targetVcnId);
     }
     /**
      * @return The time the bastion was created. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return The time the bastion was updated. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
      * 
      */
-    public String timeUpdated() {
-        return this.timeUpdated;
+    public Optional<String> timeUpdated() {
+        return Optional.ofNullable(this.timeUpdated);
     }
 
     public static Builder builder() {
@@ -270,26 +272,26 @@ public final class GetBastionResult {
     @CustomType.Builder
     public static final class Builder {
         private String bastionId;
-        private String bastionType;
-        private List<String> clientCidrBlockAllowLists;
-        private String compartmentId;
-        private Map<String,Object> definedTags;
-        private String dnsProxyStatus;
-        private Map<String,Object> freeformTags;
-        private String id;
-        private String lifecycleDetails;
-        private Integer maxSessionTtlInSeconds;
-        private Integer maxSessionsAllowed;
-        private String name;
-        private String phoneBookEntry;
-        private String privateEndpointIpAddress;
-        private String state;
-        private List<String> staticJumpHostIpAddresses;
-        private Map<String,Object> systemTags;
-        private String targetSubnetId;
-        private String targetVcnId;
-        private String timeCreated;
-        private String timeUpdated;
+        private @Nullable String bastionType;
+        private @Nullable List<String> clientCidrBlockAllowLists;
+        private @Nullable String compartmentId;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String dnsProxyStatus;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String id;
+        private @Nullable String lifecycleDetails;
+        private @Nullable Integer maxSessionTtlInSeconds;
+        private @Nullable Integer maxSessionsAllowed;
+        private @Nullable String name;
+        private @Nullable String phoneBookEntry;
+        private @Nullable String privateEndpointIpAddress;
+        private @Nullable String state;
+        private @Nullable List<String> staticJumpHostIpAddresses;
+        private @Nullable Map<String,Object> systemTags;
+        private @Nullable String targetSubnetId;
+        private @Nullable String targetVcnId;
+        private @Nullable String timeCreated;
+        private @Nullable String timeUpdated;
         public Builder() {}
         public Builder(GetBastionResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -322,109 +324,109 @@ public final class GetBastionResult {
             return this;
         }
         @CustomType.Setter
-        public Builder bastionType(String bastionType) {
-            this.bastionType = Objects.requireNonNull(bastionType);
+        public Builder bastionType(@Nullable String bastionType) {
+            this.bastionType = bastionType;
             return this;
         }
         @CustomType.Setter
-        public Builder clientCidrBlockAllowLists(List<String> clientCidrBlockAllowLists) {
-            this.clientCidrBlockAllowLists = Objects.requireNonNull(clientCidrBlockAllowLists);
+        public Builder clientCidrBlockAllowLists(@Nullable List<String> clientCidrBlockAllowLists) {
+            this.clientCidrBlockAllowLists = clientCidrBlockAllowLists;
             return this;
         }
         public Builder clientCidrBlockAllowLists(String... clientCidrBlockAllowLists) {
             return clientCidrBlockAllowLists(List.of(clientCidrBlockAllowLists));
         }
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder dnsProxyStatus(String dnsProxyStatus) {
-            this.dnsProxyStatus = Objects.requireNonNull(dnsProxyStatus);
+        public Builder dnsProxyStatus(@Nullable String dnsProxyStatus) {
+            this.dnsProxyStatus = dnsProxyStatus;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+        public Builder lifecycleDetails(@Nullable String lifecycleDetails) {
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
-        public Builder maxSessionTtlInSeconds(Integer maxSessionTtlInSeconds) {
-            this.maxSessionTtlInSeconds = Objects.requireNonNull(maxSessionTtlInSeconds);
+        public Builder maxSessionTtlInSeconds(@Nullable Integer maxSessionTtlInSeconds) {
+            this.maxSessionTtlInSeconds = maxSessionTtlInSeconds;
             return this;
         }
         @CustomType.Setter
-        public Builder maxSessionsAllowed(Integer maxSessionsAllowed) {
-            this.maxSessionsAllowed = Objects.requireNonNull(maxSessionsAllowed);
+        public Builder maxSessionsAllowed(@Nullable Integer maxSessionsAllowed) {
+            this.maxSessionsAllowed = maxSessionsAllowed;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder phoneBookEntry(String phoneBookEntry) {
-            this.phoneBookEntry = Objects.requireNonNull(phoneBookEntry);
+        public Builder phoneBookEntry(@Nullable String phoneBookEntry) {
+            this.phoneBookEntry = phoneBookEntry;
             return this;
         }
         @CustomType.Setter
-        public Builder privateEndpointIpAddress(String privateEndpointIpAddress) {
-            this.privateEndpointIpAddress = Objects.requireNonNull(privateEndpointIpAddress);
+        public Builder privateEndpointIpAddress(@Nullable String privateEndpointIpAddress) {
+            this.privateEndpointIpAddress = privateEndpointIpAddress;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder staticJumpHostIpAddresses(List<String> staticJumpHostIpAddresses) {
-            this.staticJumpHostIpAddresses = Objects.requireNonNull(staticJumpHostIpAddresses);
+        public Builder staticJumpHostIpAddresses(@Nullable List<String> staticJumpHostIpAddresses) {
+            this.staticJumpHostIpAddresses = staticJumpHostIpAddresses;
             return this;
         }
         public Builder staticJumpHostIpAddresses(String... staticJumpHostIpAddresses) {
             return staticJumpHostIpAddresses(List.of(staticJumpHostIpAddresses));
         }
         @CustomType.Setter
-        public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+        public Builder systemTags(@Nullable Map<String,Object> systemTags) {
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
-        public Builder targetSubnetId(String targetSubnetId) {
-            this.targetSubnetId = Objects.requireNonNull(targetSubnetId);
+        public Builder targetSubnetId(@Nullable String targetSubnetId) {
+            this.targetSubnetId = targetSubnetId;
             return this;
         }
         @CustomType.Setter
-        public Builder targetVcnId(String targetVcnId) {
-            this.targetVcnId = Objects.requireNonNull(targetVcnId);
+        public Builder targetVcnId(@Nullable String targetVcnId) {
+            this.targetVcnId = targetVcnId;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+        public Builder timeUpdated(@Nullable String timeUpdated) {
+            this.timeUpdated = timeUpdated;
             return this;
         }
         public GetBastionResult build() {

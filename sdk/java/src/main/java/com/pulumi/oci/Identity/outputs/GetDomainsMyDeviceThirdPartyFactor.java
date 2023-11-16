@@ -6,6 +6,8 @@ package com.pulumi.oci.Identity.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDomainsMyDeviceThirdPartyFactor {
@@ -13,51 +15,51 @@ public final class GetDomainsMyDeviceThirdPartyFactor {
      * @return The URI that corresponds to the member Resource of this device
      * 
      */
-    private String ref;
+    private @Nullable String ref;
     /**
      * @return Type of the third party authentication factor
      * 
      */
-    private String thirdPartyFactorType;
+    private @Nullable String thirdPartyFactorType;
     /**
      * @return The vendor name of the third party factor
      * 
      */
-    private String thirdPartyVendorName;
+    private @Nullable String thirdPartyVendorName;
     /**
      * @return The identifier of the user
      * 
      */
-    private String value;
+    private @Nullable String value;
 
     private GetDomainsMyDeviceThirdPartyFactor() {}
     /**
      * @return The URI that corresponds to the member Resource of this device
      * 
      */
-    public String ref() {
-        return this.ref;
+    public Optional<String> ref() {
+        return Optional.ofNullable(this.ref);
     }
     /**
      * @return Type of the third party authentication factor
      * 
      */
-    public String thirdPartyFactorType() {
-        return this.thirdPartyFactorType;
+    public Optional<String> thirdPartyFactorType() {
+        return Optional.ofNullable(this.thirdPartyFactorType);
     }
     /**
      * @return The vendor name of the third party factor
      * 
      */
-    public String thirdPartyVendorName() {
-        return this.thirdPartyVendorName;
+    public Optional<String> thirdPartyVendorName() {
+        return Optional.ofNullable(this.thirdPartyVendorName);
     }
     /**
      * @return The identifier of the user
      * 
      */
-    public String value() {
-        return this.value;
+    public Optional<String> value() {
+        return Optional.ofNullable(this.value);
     }
 
     public static Builder builder() {
@@ -69,10 +71,10 @@ public final class GetDomainsMyDeviceThirdPartyFactor {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String ref;
-        private String thirdPartyFactorType;
-        private String thirdPartyVendorName;
-        private String value;
+        private @Nullable String ref;
+        private @Nullable String thirdPartyFactorType;
+        private @Nullable String thirdPartyVendorName;
+        private @Nullable String value;
         public Builder() {}
         public Builder(GetDomainsMyDeviceThirdPartyFactor defaults) {
     	      Objects.requireNonNull(defaults);
@@ -83,23 +85,23 @@ public final class GetDomainsMyDeviceThirdPartyFactor {
         }
 
         @CustomType.Setter
-        public Builder ref(String ref) {
-            this.ref = Objects.requireNonNull(ref);
+        public Builder ref(@Nullable String ref) {
+            this.ref = ref;
             return this;
         }
         @CustomType.Setter
-        public Builder thirdPartyFactorType(String thirdPartyFactorType) {
-            this.thirdPartyFactorType = Objects.requireNonNull(thirdPartyFactorType);
+        public Builder thirdPartyFactorType(@Nullable String thirdPartyFactorType) {
+            this.thirdPartyFactorType = thirdPartyFactorType;
             return this;
         }
         @CustomType.Setter
-        public Builder thirdPartyVendorName(String thirdPartyVendorName) {
-            this.thirdPartyVendorName = Objects.requireNonNull(thirdPartyVendorName);
+        public Builder thirdPartyVendorName(@Nullable String thirdPartyVendorName) {
+            this.thirdPartyVendorName = thirdPartyVendorName;
             return this;
         }
         @CustomType.Setter
-        public Builder value(String value) {
-            this.value = Objects.requireNonNull(value);
+        public Builder value(@Nullable String value) {
+            this.value = value;
             return this;
         }
         public GetDomainsMyDeviceThirdPartyFactor build() {

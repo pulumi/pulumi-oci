@@ -188,50 +188,32 @@ class GetCloudAutonomousVmClusterResult:
 
     @property
     @pulumi.getter(name="autonomousDataStoragePercentage")
-    def autonomous_data_storage_percentage(self) -> float:
-        """
-        The percentage of the data storage used for the Autonomous Databases in an Autonomous VM Cluster.
-        """
+    def autonomous_data_storage_percentage(self) -> Optional[float]:
         return pulumi.get(self, "autonomous_data_storage_percentage")
 
     @property
     @pulumi.getter(name="autonomousDataStorageSizeInTbs")
-    def autonomous_data_storage_size_in_tbs(self) -> float:
-        """
-        The data disk group size allocated for Autonomous Databases, in TBs.
-        """
+    def autonomous_data_storage_size_in_tbs(self) -> Optional[float]:
         return pulumi.get(self, "autonomous_data_storage_size_in_tbs")
 
     @property
     @pulumi.getter(name="availabilityDomain")
-    def availability_domain(self) -> str:
-        """
-        The name of the availability domain that the cloud Autonomous VM cluster is located in.
-        """
+    def availability_domain(self) -> Optional[str]:
         return pulumi.get(self, "availability_domain")
 
     @property
     @pulumi.getter(name="availableAutonomousDataStorageSizeInTbs")
-    def available_autonomous_data_storage_size_in_tbs(self) -> float:
-        """
-        The data disk group size available for Autonomous Databases, in TBs.
-        """
+    def available_autonomous_data_storage_size_in_tbs(self) -> Optional[float]:
         return pulumi.get(self, "available_autonomous_data_storage_size_in_tbs")
 
     @property
     @pulumi.getter(name="availableContainerDatabases")
-    def available_container_databases(self) -> int:
-        """
-        The number of Autonomous Container Databases that can be created with the currently available local storage.
-        """
+    def available_container_databases(self) -> Optional[int]:
         return pulumi.get(self, "available_container_databases")
 
     @property
     @pulumi.getter(name="availableCpus")
-    def available_cpus(self) -> float:
-        """
-        CPU cores available for allocation to Autonomous Databases.
-        """
+    def available_cpus(self) -> Optional[float]:
         return pulumi.get(self, "available_cpus")
 
     @property
@@ -241,378 +223,237 @@ class GetCloudAutonomousVmClusterResult:
 
     @property
     @pulumi.getter(name="cloudExadataInfrastructureId")
-    def cloud_exadata_infrastructure_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Exadata infrastructure.
-        """
+    def cloud_exadata_infrastructure_id(self) -> Optional[str]:
         return pulumi.get(self, "cloud_exadata_infrastructure_id")
 
     @property
     @pulumi.getter(name="clusterTimeZone")
-    def cluster_time_zone(self) -> str:
-        """
-        The time zone of the Cloud Autonomous VM Cluster.
-        """
+    def cluster_time_zone(self) -> Optional[str]:
         return pulumi.get(self, "cluster_time_zone")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="computeModel")
-    def compute_model(self) -> str:
-        """
-        The compute model of the Cloud Autonomous VM Cluster.
-        """
+    def compute_model(self) -> Optional[str]:
         return pulumi.get(self, "compute_model")
 
     @property
     @pulumi.getter(name="cpuCoreCount")
-    def cpu_core_count(self) -> int:
-        """
-        The number of CPU cores on the cloud Autonomous VM cluster.
-        """
+    def cpu_core_count(self) -> Optional[int]:
         return pulumi.get(self, "cpu_core_count")
 
     @property
     @pulumi.getter(name="cpuCoreCountPerNode")
-    def cpu_core_count_per_node(self) -> int:
-        """
-        The number of CPU cores enabled per VM cluster node.
-        """
+    def cpu_core_count_per_node(self) -> Optional[int]:
         return pulumi.get(self, "cpu_core_count_per_node")
 
     @property
     @pulumi.getter(name="cpuPercentage")
-    def cpu_percentage(self) -> float:
-        """
-        The percentage of total number of CPUs used in an Autonomous VM Cluster.
-        """
+    def cpu_percentage(self) -> Optional[float]:
         return pulumi.get(self, "cpu_percentage")
 
     @property
     @pulumi.getter(name="dataStorageSizeInGb")
-    def data_storage_size_in_gb(self) -> float:
-        """
-        The total data storage allocated, in gigabytes (GB).
-        """
+    def data_storage_size_in_gb(self) -> Optional[float]:
         return pulumi.get(self, "data_storage_size_in_gb")
 
     @property
     @pulumi.getter(name="dataStorageSizeInTbs")
-    def data_storage_size_in_tbs(self) -> float:
-        """
-        The total data storage allocated, in terabytes (TB).
-        """
+    def data_storage_size_in_tbs(self) -> Optional[float]:
         return pulumi.get(self, "data_storage_size_in_tbs")
 
     @property
     @pulumi.getter(name="dbNodeStorageSizeInGbs")
-    def db_node_storage_size_in_gbs(self) -> int:
-        """
-        The local node storage allocated in GBs.
-        """
+    def db_node_storage_size_in_gbs(self) -> Optional[int]:
         return pulumi.get(self, "db_node_storage_size_in_gbs")
 
     @property
     @pulumi.getter(name="dbServers")
-    def db_servers(self) -> Sequence[str]:
-        """
-        The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Db servers.
-        """
+    def db_servers(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "db_servers")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        User defined description of the cloud Autonomous VM cluster.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        The user-friendly name for the cloud Autonomous VM cluster. The name does not need to be unique.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter
-    def domain(self) -> str:
-        """
-        The domain name for the cloud Autonomous VM cluster.
-        """
+    def domain(self) -> Optional[str]:
         return pulumi.get(self, "domain")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def hostname(self) -> str:
-        """
-        The hostname for the cloud Autonomous VM cluster.
-        """
+    def hostname(self) -> Optional[str]:
         return pulumi.get(self, "hostname")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cloud Autonomous VM cluster.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="isMtlsEnabledVmCluster")
-    def is_mtls_enabled_vm_cluster(self) -> bool:
-        """
-        Enable mutual TLS(mTLS) authentication for database at time of provisioning a VMCluster. This is applicable to database TLS Certificates only. Default is TLS
-        """
+    def is_mtls_enabled_vm_cluster(self) -> Optional[bool]:
         return pulumi.get(self, "is_mtls_enabled_vm_cluster")
 
     @property
     @pulumi.getter(name="lastMaintenanceRunId")
-    def last_maintenance_run_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
-        """
+    def last_maintenance_run_id(self) -> Optional[str]:
         return pulumi.get(self, "last_maintenance_run_id")
 
     @property
     @pulumi.getter(name="lastUpdateHistoryEntryId")
-    def last_update_history_entry_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance update history. This value is updated when a maintenance update starts.
-        """
+    def last_update_history_entry_id(self) -> Optional[str]:
         return pulumi.get(self, "last_update_history_entry_id")
 
     @property
     @pulumi.getter(name="licenseModel")
-    def license_model(self) -> str:
-        """
-        The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle PaaS and IaaS services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Database service. Note that when provisioning an Autonomous Database on [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null because the attribute is already set at the Autonomous Exadata Infrastructure level. When using [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), if a value is not specified, the system will supply the value of `BRING_YOUR_OWN_LICENSE`.
-        """
+    def license_model(self) -> Optional[str]:
         return pulumi.get(self, "license_model")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        Additional information about the current lifecycle state.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="maintenanceWindowDetails")
-    def maintenance_window_details(self) -> Sequence['outputs.GetCloudAutonomousVmClusterMaintenanceWindowDetailResult']:
+    def maintenance_window_details(self) -> Optional[Sequence['outputs.GetCloudAutonomousVmClusterMaintenanceWindowDetailResult']]:
         return pulumi.get(self, "maintenance_window_details")
 
     @property
     @pulumi.getter(name="maintenanceWindows")
-    def maintenance_windows(self) -> Sequence['outputs.GetCloudAutonomousVmClusterMaintenanceWindowResult']:
-        """
-        The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
-        """
+    def maintenance_windows(self) -> Optional[Sequence['outputs.GetCloudAutonomousVmClusterMaintenanceWindowResult']]:
         return pulumi.get(self, "maintenance_windows")
 
     @property
     @pulumi.getter(name="memoryPerOracleComputeUnitInGbs")
-    def memory_per_oracle_compute_unit_in_gbs(self) -> int:
-        """
-        The amount of memory (in GBs) enabled per OCPU or ECPU.
-        """
+    def memory_per_oracle_compute_unit_in_gbs(self) -> Optional[int]:
         return pulumi.get(self, "memory_per_oracle_compute_unit_in_gbs")
 
     @property
     @pulumi.getter(name="memorySizeInGbs")
-    def memory_size_in_gbs(self) -> int:
-        """
-        The memory allocated in GBs.
-        """
+    def memory_size_in_gbs(self) -> Optional[int]:
         return pulumi.get(self, "memory_size_in_gbs")
 
     @property
     @pulumi.getter(name="nextMaintenanceRunId")
-    def next_maintenance_run_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
-        """
+    def next_maintenance_run_id(self) -> Optional[str]:
         return pulumi.get(self, "next_maintenance_run_id")
 
     @property
     @pulumi.getter(name="nodeCount")
-    def node_count(self) -> int:
-        """
-        The number of database servers in the cloud VM cluster.
-        """
+    def node_count(self) -> Optional[int]:
         return pulumi.get(self, "node_count")
 
     @property
     @pulumi.getter(name="nonProvisionableAutonomousContainerDatabases")
-    def non_provisionable_autonomous_container_databases(self) -> int:
-        """
-        The number of non-provisionable Autonomous Container Databases in an Autonomous VM Cluster.
-        """
+    def non_provisionable_autonomous_container_databases(self) -> Optional[int]:
         return pulumi.get(self, "non_provisionable_autonomous_container_databases")
 
     @property
     @pulumi.getter(name="nsgIds")
-    def nsg_ids(self) -> Sequence[str]:
-        """
-        The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-        * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
-        """
+    def nsg_ids(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "nsg_ids")
 
     @property
     @pulumi.getter(name="ocpuCount")
-    def ocpu_count(self) -> float:
-        """
-        The number of CPU cores on the cloud Autonomous VM cluster. Only 1 decimal place is allowed for the fractional part.
-        """
+    def ocpu_count(self) -> Optional[float]:
         return pulumi.get(self, "ocpu_count")
 
     @property
     @pulumi.getter(name="provisionableAutonomousContainerDatabases")
-    def provisionable_autonomous_container_databases(self) -> int:
-        """
-        The number of provisionable Autonomous Container Databases in an Autonomous VM Cluster.
-        """
+    def provisionable_autonomous_container_databases(self) -> Optional[int]:
         return pulumi.get(self, "provisionable_autonomous_container_databases")
 
     @property
     @pulumi.getter(name="provisionedAutonomousContainerDatabases")
-    def provisioned_autonomous_container_databases(self) -> int:
-        """
-        The number of provisioned Autonomous Container Databases in an Autonomous VM Cluster.
-        """
+    def provisioned_autonomous_container_databases(self) -> Optional[int]:
         return pulumi.get(self, "provisioned_autonomous_container_databases")
 
     @property
     @pulumi.getter(name="provisionedCpus")
-    def provisioned_cpus(self) -> float:
-        """
-        The number of CPUs provisioned in an Autonomous VM Cluster.
-        """
+    def provisioned_cpus(self) -> Optional[float]:
         return pulumi.get(self, "provisioned_cpus")
 
     @property
     @pulumi.getter(name="reclaimableCpus")
-    def reclaimable_cpus(self) -> float:
-        """
-        For Autonomous Databases on Dedicated Exadata Infrastructure:
-        * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
-        * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
-        """
+    def reclaimable_cpus(self) -> Optional[float]:
         return pulumi.get(self, "reclaimable_cpus")
 
     @property
     @pulumi.getter(name="reservedCpus")
-    def reserved_cpus(self) -> float:
-        """
-        The number of CPUs reserved in an Autonomous VM Cluster.
-        """
+    def reserved_cpus(self) -> Optional[float]:
         return pulumi.get(self, "reserved_cpus")
 
     @property
     @pulumi.getter(name="scanListenerPortNonTls")
-    def scan_listener_port_non_tls(self) -> int:
-        """
-        The SCAN Listener Non TLS port. Default is 1521.
-        """
+    def scan_listener_port_non_tls(self) -> Optional[int]:
         return pulumi.get(self, "scan_listener_port_non_tls")
 
     @property
     @pulumi.getter(name="scanListenerPortTls")
-    def scan_listener_port_tls(self) -> int:
-        """
-        The SCAN Listenenr TLS port. Default is 2484.
-        """
+    def scan_listener_port_tls(self) -> Optional[int]:
         return pulumi.get(self, "scan_listener_port_tls")
 
     @property
     @pulumi.getter
-    def shape(self) -> str:
-        """
-        The model name of the Exadata hardware running the cloud Autonomous VM cluster.
-        """
+    def shape(self) -> Optional[str]:
         return pulumi.get(self, "shape")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the cloud Autonomous VM cluster.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="subnetId")
-    def subnet_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the cloud Autonomous VM Cluster is associated with.
-        """
+    def subnet_id(self) -> Optional[str]:
         return pulumi.get(self, "subnet_id")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time that the cloud Autonomous VM cluster was created.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The last date and time that the cloud Autonomous VM cluster was updated.
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
     @property
     @pulumi.getter(name="totalAutonomousDataStorageInTbs")
-    def total_autonomous_data_storage_in_tbs(self) -> float:
-        """
-        The total data disk group size for Autonomous Databases, in TBs.
-        """
+    def total_autonomous_data_storage_in_tbs(self) -> Optional[float]:
         return pulumi.get(self, "total_autonomous_data_storage_in_tbs")
 
     @property
     @pulumi.getter(name="totalContainerDatabases")
-    def total_container_databases(self) -> int:
-        """
-        The total number of Autonomous Container Databases that can be created with the allocated local storage.
-        """
+    def total_container_databases(self) -> Optional[int]:
         return pulumi.get(self, "total_container_databases")
 
     @property
     @pulumi.getter(name="totalCpus")
-    def total_cpus(self) -> float:
-        """
-        The total number of CPUs in an Autonomous VM Cluster.
-        """
+    def total_cpus(self) -> Optional[float]:
         return pulumi.get(self, "total_cpus")
 
 
@@ -681,21 +522,7 @@ class AwaitableGetCloudAutonomousVmClusterResult(GetCloudAutonomousVmClusterResu
 def get_cloud_autonomous_vm_cluster(cloud_autonomous_vm_cluster_id: Optional[str] = None,
                                     opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetCloudAutonomousVmClusterResult:
     """
-    This data source provides details about a specific Cloud Autonomous Vm Cluster resource in Oracle Cloud Infrastructure Database service.
-
-    Gets information about the specified Autonomous Exadata VM cluster in the Oracle cloud. For Exadata Cloud@Custustomer systems, see [GetAutonomousVmCluster ](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/AutonomousVmCluster/GetAutonomousVmCluster).
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_cloud_autonomous_vm_cluster = oci.Database.get_cloud_autonomous_vm_cluster(cloud_autonomous_vm_cluster_id=oci_database_cloud_autonomous_vm_cluster["test_cloud_autonomous_vm_cluster"]["id"])
-    ```
-
-
-    :param str cloud_autonomous_vm_cluster_id: The Cloud VM cluster [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['cloudAutonomousVmClusterId'] = cloud_autonomous_vm_cluster_id
@@ -763,20 +590,6 @@ def get_cloud_autonomous_vm_cluster(cloud_autonomous_vm_cluster_id: Optional[str
 def get_cloud_autonomous_vm_cluster_output(cloud_autonomous_vm_cluster_id: Optional[pulumi.Input[str]] = None,
                                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCloudAutonomousVmClusterResult]:
     """
-    This data source provides details about a specific Cloud Autonomous Vm Cluster resource in Oracle Cloud Infrastructure Database service.
-
-    Gets information about the specified Autonomous Exadata VM cluster in the Oracle cloud. For Exadata Cloud@Custustomer systems, see [GetAutonomousVmCluster ](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/AutonomousVmCluster/GetAutonomousVmCluster).
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_cloud_autonomous_vm_cluster = oci.Database.get_cloud_autonomous_vm_cluster(cloud_autonomous_vm_cluster_id=oci_database_cloud_autonomous_vm_cluster["test_cloud_autonomous_vm_cluster"]["id"])
-    ```
-
-
-    :param str cloud_autonomous_vm_cluster_id: The Cloud VM cluster [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+    Use this data source to access information about an existing resource.
     """
     ...

@@ -47,63 +47,63 @@ export interface GetVirtualServiceResult {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * Routing policy for the virtual service.
      */
-    readonly defaultRoutingPolicies: outputs.ServiceMesh.GetVirtualServiceDefaultRoutingPolicy[];
+    readonly defaultRoutingPolicies?: outputs.ServiceMesh.GetVirtualServiceDefaultRoutingPolicy[];
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * Description of the resource. It can be changed after creation. Avoid entering confidential information.  Example: `This is my new resource`
      */
-    readonly description: string;
+    readonly description?: string;
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * The DNS hostnames of the virtual service that is used by its callers. Wildcard hostnames are supported in the prefix form. Examples of valid hostnames are "www.example.com", "*.example.com", "*.com". Can be omitted if the virtual service will only have TCP virtual deployments.
      */
-    readonly hosts: string[];
+    readonly hosts?: string[];
     /**
      * Unique identifier that is immutable on creation.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
      */
-    readonly lifecycleDetails: string;
+    readonly lifecycleDetails?: string;
     /**
      * The OCID of the service mesh in which this virtual service is created.
      */
-    readonly meshId: string;
+    readonly meshId?: string;
     /**
      * Mutual TLS settings used when communicating with other virtual services or ingress gateways within the mesh.
      */
-    readonly mtls: outputs.ServiceMesh.GetVirtualServiceMtl[];
+    readonly mtls?: outputs.ServiceMesh.GetVirtualServiceMtl[];
     /**
      * A user-friendly name. The name has to be unique within the same service mesh and cannot be changed after creation. Avoid entering confidential information.  Example: `My unique resource name`
      */
-    readonly name: string;
+    readonly name?: string;
     /**
      * The current state of the Resource.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    readonly systemTags: {[key: string]: any};
+    readonly systemTags?: {[key: string]: any};
     /**
      * The time when this resource was created in an RFC3339 formatted datetime string.
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The time when this resource was updated in an RFC3339 formatted datetime string.
      */
-    readonly timeUpdated: string;
+    readonly timeUpdated?: string;
     readonly virtualServiceId: string;
 }
 /**

@@ -402,7 +402,7 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="active", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> active;
+    private Output</* @Nullable */ Boolean> active;
 
     /**
      * @return (Updatable) Status of the account
@@ -419,8 +419,8 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<Boolean> active() {
-        return this.active;
+    public Output<Optional<Boolean>> active() {
+        return Codegen.optional(this.active);
     }
     /**
      * (Updatable) A physical mailing address for this User, as described in (address Element). Canonical Type Values of work, home, and other. The value attribute is a complex type with the following sub-attributes.
@@ -438,7 +438,7 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="addresses", refs={List.class,DomainsUserAddress.class}, tree="[0,1]")
-    private Output<List<DomainsUserAddress>> addresses;
+    private Output</* @Nullable */ List<DomainsUserAddress>> addresses;
 
     /**
      * @return (Updatable) A physical mailing address for this User, as described in (address Element). Canonical Type Values of work, home, and other. The value attribute is a complex type with the following sub-attributes.
@@ -455,8 +455,8 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<List<DomainsUserAddress>> addresses() {
-        return this.addresses;
+    public Output<Optional<List<DomainsUserAddress>>> addresses() {
+        return Codegen.optional(this.addresses);
     }
     /**
      * (Updatable) A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If &#39;attributes&#39; query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
@@ -515,7 +515,7 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="compartmentOcid", refs={String.class}, tree="[0]")
-    private Output<String> compartmentOcid;
+    private Output</* @Nullable */ String> compartmentOcid;
 
     /**
      * @return (Updatable) Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
@@ -531,8 +531,8 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<String> compartmentOcid() {
-        return this.compartmentOcid;
+    public Output<Optional<String>> compartmentOcid() {
+        return Codegen.optional(this.compartmentOcid);
     }
     /**
      * (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
@@ -549,7 +549,7 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="deleteInProgress", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> deleteInProgress;
+    private Output</* @Nullable */ Boolean> deleteInProgress;
 
     /**
      * @return (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
@@ -565,8 +565,8 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<Boolean> deleteInProgress() {
-        return this.deleteInProgress;
+    public Output<Optional<Boolean>> deleteInProgress() {
+        return Codegen.optional(this.deleteInProgress);
     }
     /**
      * (Updatable) Description of the user
@@ -586,7 +586,7 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
-    private Output<String> description;
+    private Output</* @Nullable */ String> description;
 
     /**
      * @return (Updatable) Description of the user
@@ -605,8 +605,8 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<String> description() {
-        return this.description;
+    public Output<Optional<String>> description() {
+        return Codegen.optional(this.description);
     }
     /**
      * (Updatable) The displayName of the User&#39;s manager. OPTIONAL and READ-ONLY.
@@ -622,7 +622,7 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="displayName", refs={String.class}, tree="[0]")
-    private Output<String> displayName;
+    private Output</* @Nullable */ String> displayName;
 
     /**
      * @return (Updatable) The displayName of the User&#39;s manager. OPTIONAL and READ-ONLY.
@@ -637,8 +637,8 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<String> displayName() {
-        return this.displayName;
+    public Output<Optional<String>> displayName() {
+        return Codegen.optional(this.displayName);
     }
     /**
      * (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
@@ -655,7 +655,7 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="domainOcid", refs={String.class}, tree="[0]")
-    private Output<String> domainOcid;
+    private Output</* @Nullable */ String> domainOcid;
 
     /**
      * @return (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
@@ -671,8 +671,8 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<String> domainOcid() {
-        return this.domainOcid;
+    public Output<Optional<String>> domainOcid() {
+        return Codegen.optional(this.domainOcid);
     }
     /**
      * (Updatable) A complex attribute representing emails
@@ -690,7 +690,7 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="emails", refs={List.class,DomainsUserEmail.class}, tree="[0,1]")
-    private Output<List<DomainsUserEmail>> emails;
+    private Output</* @Nullable */ List<DomainsUserEmail>> emails;
 
     /**
      * @return (Updatable) A complex attribute representing emails
@@ -707,8 +707,8 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<List<DomainsUserEmail>> emails() {
-        return this.emails;
+    public Output<Optional<List<DomainsUserEmail>>> emails() {
+        return Codegen.optional(this.emails);
     }
     /**
      * (Updatable) A list of entitlements for the User that represent a thing the User has.
@@ -724,7 +724,7 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="entitlements", refs={List.class,DomainsUserEntitlement.class}, tree="[0,1]")
-    private Output<List<DomainsUserEntitlement>> entitlements;
+    private Output</* @Nullable */ List<DomainsUserEntitlement>> entitlements;
 
     /**
      * @return (Updatable) A list of entitlements for the User that represent a thing the User has.
@@ -739,8 +739,8 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<List<DomainsUserEntitlement>> entitlements() {
-        return this.entitlements;
+    public Output<Optional<List<DomainsUserEntitlement>>> entitlements() {
+        return Codegen.optional(this.entitlements);
     }
     /**
      * (Updatable) An identifier for the Resource as defined by the Service Consumer. READ-ONLY.
@@ -758,7 +758,7 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="externalId", refs={String.class}, tree="[0]")
-    private Output<String> externalId;
+    private Output</* @Nullable */ String> externalId;
 
     /**
      * @return (Updatable) An identifier for the Resource as defined by the Service Consumer. READ-ONLY.
@@ -775,8 +775,8 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<String> externalId() {
-        return this.externalId;
+    public Output<Optional<String>> externalId() {
+        return Codegen.optional(this.externalId);
     }
     /**
      * (Updatable) A list of groups that the user belongs to, either thorough direct membership, nested groups, or dynamically calculated
@@ -793,7 +793,7 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="groups", refs={List.class,DomainsUserGroup.class}, tree="[0,1]")
-    private Output<List<DomainsUserGroup>> groups;
+    private Output</* @Nullable */ List<DomainsUserGroup>> groups;
 
     /**
      * @return (Updatable) A list of groups that the user belongs to, either thorough direct membership, nested groups, or dynamically calculated
@@ -809,8 +809,8 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<List<DomainsUserGroup>> groups() {
-        return this.groups;
+    public Output<Optional<List<DomainsUserGroup>>> groups() {
+        return Codegen.optional(this.groups);
     }
     /**
      * (Updatable) The User or App who created the Resource
@@ -825,7 +825,7 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="idcsCreatedBies", refs={List.class,DomainsUserIdcsCreatedBy.class}, tree="[0,1]")
-    private Output<List<DomainsUserIdcsCreatedBy>> idcsCreatedBies;
+    private Output</* @Nullable */ List<DomainsUserIdcsCreatedBy>> idcsCreatedBies;
 
     /**
      * @return (Updatable) The User or App who created the Resource
@@ -839,8 +839,8 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
      * * type: complex
      * 
      */
-    public Output<List<DomainsUserIdcsCreatedBy>> idcsCreatedBies() {
-        return this.idcsCreatedBies;
+    public Output<Optional<List<DomainsUserIdcsCreatedBy>>> idcsCreatedBies() {
+        return Codegen.optional(this.idcsCreatedBies);
     }
     /**
      * The basic endpoint for the identity domain
@@ -869,7 +869,7 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="idcsLastModifiedBies", refs={List.class,DomainsUserIdcsLastModifiedBy.class}, tree="[0,1]")
-    private Output<List<DomainsUserIdcsLastModifiedBy>> idcsLastModifiedBies;
+    private Output</* @Nullable */ List<DomainsUserIdcsLastModifiedBy>> idcsLastModifiedBies;
 
     /**
      * @return (Updatable) The User or App who modified the Resource
@@ -883,8 +883,8 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
      * * type: complex
      * 
      */
-    public Output<List<DomainsUserIdcsLastModifiedBy>> idcsLastModifiedBies() {
-        return this.idcsLastModifiedBies;
+    public Output<Optional<List<DomainsUserIdcsLastModifiedBy>>> idcsLastModifiedBies() {
+        return Codegen.optional(this.idcsLastModifiedBies);
     }
     /**
      * (Updatable) The release number when the resource was upgraded.
@@ -901,7 +901,7 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="idcsLastUpgradedInRelease", refs={String.class}, tree="[0]")
-    private Output<String> idcsLastUpgradedInRelease;
+    private Output</* @Nullable */ String> idcsLastUpgradedInRelease;
 
     /**
      * @return (Updatable) The release number when the resource was upgraded.
@@ -917,8 +917,8 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<String> idcsLastUpgradedInRelease() {
-        return this.idcsLastUpgradedInRelease;
+    public Output<Optional<String>> idcsLastUpgradedInRelease() {
+        return Codegen.optional(this.idcsLastUpgradedInRelease);
     }
     /**
      * (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
@@ -934,7 +934,7 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="idcsPreventedOperations", refs={List.class,String.class}, tree="[0,1]")
-    private Output<List<String>> idcsPreventedOperations;
+    private Output</* @Nullable */ List<String>> idcsPreventedOperations;
 
     /**
      * @return (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
@@ -949,8 +949,8 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<List<String>> idcsPreventedOperations() {
-        return this.idcsPreventedOperations;
+    public Output<Optional<List<String>>> idcsPreventedOperations() {
+        return Codegen.optional(this.idcsPreventedOperations);
     }
     /**
      * (Updatable) User&#39;s instant messaging addresses
@@ -967,7 +967,7 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="ims", refs={List.class,DomainsUserIm.class}, tree="[0,1]")
-    private Output<List<DomainsUserIm>> ims;
+    private Output</* @Nullable */ List<DomainsUserIm>> ims;
 
     /**
      * @return (Updatable) User&#39;s instant messaging addresses
@@ -983,8 +983,8 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<List<DomainsUserIm>> ims() {
-        return this.ims;
+    public Output<Optional<List<DomainsUserIm>>> ims() {
+        return Codegen.optional(this.ims);
     }
     /**
      * (Updatable) Used to indicate the User&#39;s default location for purposes of localizing items such as currency, date and time format, numerical representations, and so on.
@@ -1003,7 +1003,7 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="locale", refs={String.class}, tree="[0]")
-    private Output<String> locale;
+    private Output</* @Nullable */ String> locale;
 
     /**
      * @return (Updatable) Used to indicate the User&#39;s default location for purposes of localizing items such as currency, date and time format, numerical representations, and so on.
@@ -1021,8 +1021,8 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<String> locale() {
-        return this.locale;
+    public Output<Optional<String>> locale() {
+        return Codegen.optional(this.locale);
     }
     /**
      * (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
@@ -1039,7 +1039,7 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="metas", refs={List.class,DomainsUserMeta.class}, tree="[0,1]")
-    private Output<List<DomainsUserMeta>> metas;
+    private Output</* @Nullable */ List<DomainsUserMeta>> metas;
 
     /**
      * @return (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
@@ -1055,8 +1055,8 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
      * * type: complex
      * 
      */
-    public Output<List<DomainsUserMeta>> metas() {
-        return this.metas;
+    public Output<Optional<List<DomainsUserMeta>>> metas() {
+        return Codegen.optional(this.metas);
     }
     /**
      * (Updatable) Name of the account assigned to the User.
@@ -1114,7 +1114,7 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="nickName", refs={String.class}, tree="[0]")
-    private Output<String> nickName;
+    private Output</* @Nullable */ String> nickName;
 
     /**
      * @return (Updatable) Nick name
@@ -1133,8 +1133,8 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<String> nickName() {
-        return this.nickName;
+    public Output<Optional<String>> nickName() {
+        return Codegen.optional(this.nickName);
     }
     /**
      * (Updatable) The OCID of the user&#39;s support account.
@@ -1153,7 +1153,7 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="ocid", refs={String.class}, tree="[0]")
-    private Output<String> ocid;
+    private Output</* @Nullable */ String> ocid;
 
     /**
      * @return (Updatable) The OCID of the user&#39;s support account.
@@ -1171,8 +1171,8 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<String> ocid() {
-        return this.ocid;
+    public Output<Optional<String>> ocid() {
+        return Codegen.optional(this.ocid);
     }
     /**
      * (Updatable) Password attribute. Max length for password is controlled via Password Policy.
@@ -1192,7 +1192,7 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="password", refs={String.class}, tree="[0]")
-    private Output<String> password;
+    private Output</* @Nullable */ String> password;
 
     /**
      * @return (Updatable) Password attribute. Max length for password is controlled via Password Policy.
@@ -1211,8 +1211,8 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<String> password() {
-        return this.password;
+    public Output<Optional<String>> password() {
+        return Codegen.optional(this.password);
     }
     /**
      * (Updatable) Phone numbers
@@ -1230,7 +1230,7 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="phoneNumbers", refs={List.class,DomainsUserPhoneNumber.class}, tree="[0,1]")
-    private Output<List<DomainsUserPhoneNumber>> phoneNumbers;
+    private Output</* @Nullable */ List<DomainsUserPhoneNumber>> phoneNumbers;
 
     /**
      * @return (Updatable) Phone numbers
@@ -1247,8 +1247,8 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<List<DomainsUserPhoneNumber>> phoneNumbers() {
-        return this.phoneNumbers;
+    public Output<Optional<List<DomainsUserPhoneNumber>>> phoneNumbers() {
+        return Codegen.optional(this.phoneNumbers);
     }
     /**
      * (Updatable) URLs of photos for the User
@@ -1265,7 +1265,7 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="photos", refs={List.class,DomainsUserPhoto.class}, tree="[0,1]")
-    private Output<List<DomainsUserPhoto>> photos;
+    private Output</* @Nullable */ List<DomainsUserPhoto>> photos;
 
     /**
      * @return (Updatable) URLs of photos for the User
@@ -1281,8 +1281,8 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<List<DomainsUserPhoto>> photos() {
-        return this.photos;
+    public Output<Optional<List<DomainsUserPhoto>>> photos() {
+        return Codegen.optional(this.photos);
     }
     /**
      * (Updatable) User&#39;s preferred written or spoken language used for localized user interfaces
@@ -1301,7 +1301,7 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="preferredLanguage", refs={String.class}, tree="[0]")
-    private Output<String> preferredLanguage;
+    private Output</* @Nullable */ String> preferredLanguage;
 
     /**
      * @return (Updatable) User&#39;s preferred written or spoken language used for localized user interfaces
@@ -1319,8 +1319,8 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<String> preferredLanguage() {
-        return this.preferredLanguage;
+    public Output<Optional<String>> preferredLanguage() {
+        return Codegen.optional(this.preferredLanguage);
     }
     /**
      * (Updatable) A fully-qualified URL to a page representing the User&#39;s online profile
@@ -1340,7 +1340,7 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="profileUrl", refs={String.class}, tree="[0]")
-    private Output<String> profileUrl;
+    private Output</* @Nullable */ String> profileUrl;
 
     /**
      * @return (Updatable) A fully-qualified URL to a page representing the User&#39;s online profile
@@ -1359,8 +1359,8 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<String> profileUrl() {
-        return this.profileUrl;
+    public Output<Optional<String>> profileUrl() {
+        return Codegen.optional(this.profileUrl);
     }
     /**
      * (Updatable) An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
@@ -1390,7 +1390,7 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="roles", refs={List.class,DomainsUserRole.class}, tree="[0,1]")
-    private Output<List<DomainsUserRole>> roles;
+    private Output</* @Nullable */ List<DomainsUserRole>> roles;
 
     /**
      * @return (Updatable) A list of roles for the User that collectively represent who the User is; e.g., &#39;Student&#39;, &#39;Faculty&#39;.
@@ -1405,8 +1405,8 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<List<DomainsUserRole>> roles() {
-        return this.roles;
+    public Output<Optional<List<DomainsUserRole>>> roles() {
+        return Codegen.optional(this.roles);
     }
     /**
      * (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \&#34;enterprise\&#34; extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
@@ -1457,7 +1457,7 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="tags", refs={List.class,DomainsUserTag.class}, tree="[0,1]")
-    private Output<List<DomainsUserTag>> tags;
+    private Output</* @Nullable */ List<DomainsUserTag>> tags;
 
     /**
      * @return (Updatable) A list of tags on this resource.
@@ -1473,8 +1473,8 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<List<DomainsUserTag>> tags() {
-        return this.tags;
+    public Output<Optional<List<DomainsUserTag>>> tags() {
+        return Codegen.optional(this.tags);
     }
     /**
      * (Updatable) Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
@@ -1491,7 +1491,7 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="tenancyOcid", refs={String.class}, tree="[0]")
-    private Output<String> tenancyOcid;
+    private Output</* @Nullable */ String> tenancyOcid;
 
     /**
      * @return (Updatable) Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
@@ -1507,8 +1507,8 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<String> tenancyOcid() {
-        return this.tenancyOcid;
+    public Output<Optional<String>> tenancyOcid() {
+        return Codegen.optional(this.tenancyOcid);
     }
     /**
      * (Updatable) User&#39;s timezone
@@ -1529,7 +1529,7 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="timezone", refs={String.class}, tree="[0]")
-    private Output<String> timezone;
+    private Output</* @Nullable */ String> timezone;
 
     /**
      * @return (Updatable) User&#39;s timezone
@@ -1549,8 +1549,8 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<String> timezone() {
-        return this.timezone;
+    public Output<Optional<String>> timezone() {
+        return Codegen.optional(this.timezone);
     }
     /**
      * (Updatable) Title
@@ -1570,7 +1570,7 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="title", refs={String.class}, tree="[0]")
-    private Output<String> title;
+    private Output</* @Nullable */ String> title;
 
     /**
      * @return (Updatable) Title
@@ -1589,288 +1589,288 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<String> title() {
-        return this.title;
+    public Output<Optional<String>> title() {
+        return Codegen.optional(this.title);
     }
     /**
      * (Updatable) Enterprise User
      * 
      */
     @Export(name="urnietfparamsscimschemasextensionenterprise20user", refs={DomainsUserUrnietfparamsscimschemasextensionenterprise20user.class}, tree="[0]")
-    private Output<DomainsUserUrnietfparamsscimschemasextensionenterprise20user> urnietfparamsscimschemasextensionenterprise20user;
+    private Output</* @Nullable */ DomainsUserUrnietfparamsscimschemasextensionenterprise20user> urnietfparamsscimschemasextensionenterprise20user;
 
     /**
      * @return (Updatable) Enterprise User
      * 
      */
-    public Output<DomainsUserUrnietfparamsscimschemasextensionenterprise20user> urnietfparamsscimschemasextensionenterprise20user() {
-        return this.urnietfparamsscimschemasextensionenterprise20user;
+    public Output<Optional<DomainsUserUrnietfparamsscimschemasextensionenterprise20user>> urnietfparamsscimschemasextensionenterprise20user() {
+        return Codegen.optional(this.urnietfparamsscimschemasextensionenterprise20user);
     }
     /**
      * (Updatable) Oracle Cloud Infrastructure Tags.
      * 
      */
     @Export(name="urnietfparamsscimschemasoracleidcsextensionOciTags", refs={DomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTags.class}, tree="[0]")
-    private Output<DomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTags> urnietfparamsscimschemasoracleidcsextensionOciTags;
+    private Output</* @Nullable */ DomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTags> urnietfparamsscimschemasoracleidcsextensionOciTags;
 
     /**
      * @return (Updatable) Oracle Cloud Infrastructure Tags.
      * 
      */
-    public Output<DomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTags> urnietfparamsscimschemasoracleidcsextensionOciTags() {
-        return this.urnietfparamsscimschemasoracleidcsextensionOciTags;
+    public Output<Optional<DomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTags>> urnietfparamsscimschemasoracleidcsextensionOciTags() {
+        return Codegen.optional(this.urnietfparamsscimschemasoracleidcsextensionOciTags);
     }
     /**
      * (Updatable) This extension defines attributes to manage user&#39;s risk score.
      * 
      */
     @Export(name="urnietfparamsscimschemasoracleidcsextensionadaptiveUser", refs={DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUser.class}, tree="[0]")
-    private Output<DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUser> urnietfparamsscimschemasoracleidcsextensionadaptiveUser;
+    private Output</* @Nullable */ DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUser> urnietfparamsscimschemasoracleidcsextensionadaptiveUser;
 
     /**
      * @return (Updatable) This extension defines attributes to manage user&#39;s risk score.
      * 
      */
-    public Output<DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUser> urnietfparamsscimschemasoracleidcsextensionadaptiveUser() {
-        return this.urnietfparamsscimschemasoracleidcsextensionadaptiveUser;
+    public Output<Optional<DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUser>> urnietfparamsscimschemasoracleidcsextensionadaptiveUser() {
+        return Codegen.optional(this.urnietfparamsscimschemasoracleidcsextensionadaptiveUser);
     }
     /**
      * (Updatable) User&#39;s Capabilities
      * 
      */
     @Export(name="urnietfparamsscimschemasoracleidcsextensioncapabilitiesUser", refs={DomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUser.class}, tree="[0]")
-    private Output<DomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUser> urnietfparamsscimschemasoracleidcsextensioncapabilitiesUser;
+    private Output</* @Nullable */ DomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUser> urnietfparamsscimschemasoracleidcsextensioncapabilitiesUser;
 
     /**
      * @return (Updatable) User&#39;s Capabilities
      * 
      */
-    public Output<DomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUser> urnietfparamsscimschemasoracleidcsextensioncapabilitiesUser() {
-        return this.urnietfparamsscimschemasoracleidcsextensioncapabilitiesUser;
+    public Output<Optional<DomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUser>> urnietfparamsscimschemasoracleidcsextensioncapabilitiesUser() {
+        return Codegen.optional(this.urnietfparamsscimschemasoracleidcsextensioncapabilitiesUser);
     }
     /**
      * (Updatable) The database credentials user extension.
      * 
      */
     @Export(name="urnietfparamsscimschemasoracleidcsextensiondbCredentialsUser", refs={DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUser.class}, tree="[0]")
-    private Output<DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUser> urnietfparamsscimschemasoracleidcsextensiondbCredentialsUser;
+    private Output</* @Nullable */ DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUser> urnietfparamsscimschemasoracleidcsextensiondbCredentialsUser;
 
     /**
      * @return (Updatable) The database credentials user extension.
      * 
      */
-    public Output<DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUser> urnietfparamsscimschemasoracleidcsextensiondbCredentialsUser() {
-        return this.urnietfparamsscimschemasoracleidcsextensiondbCredentialsUser;
+    public Output<Optional<DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUser>> urnietfparamsscimschemasoracleidcsextensiondbCredentialsUser() {
+        return Codegen.optional(this.urnietfparamsscimschemasoracleidcsextensiondbCredentialsUser);
     }
     /**
      * (Updatable) DB User extension
      * 
      */
     @Export(name="urnietfparamsscimschemasoracleidcsextensiondbUserUsers", refs={List.class,DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbUserUser.class}, tree="[0,1]")
-    private Output<List<DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbUserUser>> urnietfparamsscimschemasoracleidcsextensiondbUserUsers;
+    private Output</* @Nullable */ List<DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbUserUser>> urnietfparamsscimschemasoracleidcsextensiondbUserUsers;
 
     /**
      * @return (Updatable) DB User extension
      * 
      */
-    public Output<List<DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbUserUser>> urnietfparamsscimschemasoracleidcsextensiondbUserUsers() {
-        return this.urnietfparamsscimschemasoracleidcsextensiondbUserUsers;
+    public Output<Optional<List<DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbUserUser>>> urnietfparamsscimschemasoracleidcsextensiondbUserUsers() {
+        return Codegen.optional(this.urnietfparamsscimschemasoracleidcsextensiondbUserUsers);
     }
     /**
      * (Updatable) Kerberos User extension
      * 
      */
     @Export(name="urnietfparamsscimschemasoracleidcsextensionkerberosUserUser", refs={DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUser.class}, tree="[0]")
-    private Output<DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUser> urnietfparamsscimschemasoracleidcsextensionkerberosUserUser;
+    private Output</* @Nullable */ DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUser> urnietfparamsscimschemasoracleidcsextensionkerberosUserUser;
 
     /**
      * @return (Updatable) Kerberos User extension
      * 
      */
-    public Output<DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUser> urnietfparamsscimschemasoracleidcsextensionkerberosUserUser() {
-        return this.urnietfparamsscimschemasoracleidcsextensionkerberosUserUser;
+    public Output<Optional<DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUser>> urnietfparamsscimschemasoracleidcsextensionkerberosUserUser() {
+        return Codegen.optional(this.urnietfparamsscimschemasoracleidcsextensionkerberosUserUser);
     }
     /**
      * (Updatable) This extension defines attributes used to manage Multi-Factor Authentication within a service provider. The extension is typically applied to a User resource, but MAY be applied to other resources that use MFA.
      * 
      */
     @Export(name="urnietfparamsscimschemasoracleidcsextensionmfaUser", refs={DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser.class}, tree="[0]")
-    private Output<DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser> urnietfparamsscimschemasoracleidcsextensionmfaUser;
+    private Output</* @Nullable */ DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser> urnietfparamsscimschemasoracleidcsextensionmfaUser;
 
     /**
      * @return (Updatable) This extension defines attributes used to manage Multi-Factor Authentication within a service provider. The extension is typically applied to a User resource, but MAY be applied to other resources that use MFA.
      * 
      */
-    public Output<DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser> urnietfparamsscimschemasoracleidcsextensionmfaUser() {
-        return this.urnietfparamsscimschemasoracleidcsextensionmfaUser;
+    public Output<Optional<DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser>> urnietfparamsscimschemasoracleidcsextensionmfaUser() {
+        return Codegen.optional(this.urnietfparamsscimschemasoracleidcsextensionmfaUser);
     }
     /**
      * (Updatable) This extension defines attributes used to manage account passwords within a Service Provider. The extension is typically applied to a User resource, but MAY be applied to other resources that use passwords.
      * 
      */
     @Export(name="urnietfparamsscimschemasoracleidcsextensionpasswordStateUsers", refs={List.class,DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUser.class}, tree="[0,1]")
-    private Output<List<DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUser>> urnietfparamsscimschemasoracleidcsextensionpasswordStateUsers;
+    private Output</* @Nullable */ List<DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUser>> urnietfparamsscimschemasoracleidcsextensionpasswordStateUsers;
 
     /**
      * @return (Updatable) This extension defines attributes used to manage account passwords within a Service Provider. The extension is typically applied to a User resource, but MAY be applied to other resources that use passwords.
      * 
      */
-    public Output<List<DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUser>> urnietfparamsscimschemasoracleidcsextensionpasswordStateUsers() {
-        return this.urnietfparamsscimschemasoracleidcsextensionpasswordStateUsers;
+    public Output<Optional<List<DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUser>>> urnietfparamsscimschemasoracleidcsextensionpasswordStateUsers() {
+        return Codegen.optional(this.urnietfparamsscimschemasoracleidcsextensionpasswordStateUsers);
     }
     /**
      * (Updatable) This extension defines attributes used to manage Passwordless-Factor Authentication within a service provider. The extension is typically applied to a User resource, but MAY be applied to other resources that use MFA.
      * 
      */
     @Export(name="urnietfparamsscimschemasoracleidcsextensionpasswordlessUser", refs={DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUser.class}, tree="[0]")
-    private Output<DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUser> urnietfparamsscimschemasoracleidcsextensionpasswordlessUser;
+    private Output</* @Nullable */ DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUser> urnietfparamsscimschemasoracleidcsextensionpasswordlessUser;
 
     /**
      * @return (Updatable) This extension defines attributes used to manage Passwordless-Factor Authentication within a service provider. The extension is typically applied to a User resource, but MAY be applied to other resources that use MFA.
      * 
      */
-    public Output<DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUser> urnietfparamsscimschemasoracleidcsextensionpasswordlessUser() {
-        return this.urnietfparamsscimschemasoracleidcsextensionpasswordlessUser;
+    public Output<Optional<DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUser>> urnietfparamsscimschemasoracleidcsextensionpasswordlessUser() {
+        return Codegen.optional(this.urnietfparamsscimschemasoracleidcsextensionpasswordlessUser);
     }
     /**
      * (Updatable) POSIX User extension
      * 
      */
     @Export(name="urnietfparamsscimschemasoracleidcsextensionposixUser", refs={DomainsUserUrnietfparamsscimschemasoracleidcsextensionposixUser.class}, tree="[0]")
-    private Output<DomainsUserUrnietfparamsscimschemasoracleidcsextensionposixUser> urnietfparamsscimschemasoracleidcsextensionposixUser;
+    private Output</* @Nullable */ DomainsUserUrnietfparamsscimschemasoracleidcsextensionposixUser> urnietfparamsscimschemasoracleidcsextensionposixUser;
 
     /**
      * @return (Updatable) POSIX User extension
      * 
      */
-    public Output<DomainsUserUrnietfparamsscimschemasoracleidcsextensionposixUser> urnietfparamsscimschemasoracleidcsextensionposixUser() {
-        return this.urnietfparamsscimschemasoracleidcsextensionposixUser;
+    public Output<Optional<DomainsUserUrnietfparamsscimschemasoracleidcsextensionposixUser>> urnietfparamsscimschemasoracleidcsextensionposixUser() {
+        return Codegen.optional(this.urnietfparamsscimschemasoracleidcsextensionposixUser);
     }
     /**
      * (Updatable) This extension defines the attributes used to store the security questions of a user.
      * 
      */
     @Export(name="urnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUser", refs={DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUser.class}, tree="[0]")
-    private Output<DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUser> urnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUser;
+    private Output</* @Nullable */ DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUser> urnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUser;
 
     /**
      * @return (Updatable) This extension defines the attributes used to store the security questions of a user.
      * 
      */
-    public Output<DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUser> urnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUser() {
-        return this.urnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUser;
+    public Output<Optional<DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUser>> urnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUser() {
+        return Codegen.optional(this.urnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUser);
     }
     /**
      * (Updatable) Controls whether a user can update themselves or not via User related APIs
      * 
      */
     @Export(name="urnietfparamsscimschemasoracleidcsextensionselfChangeUser", refs={DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUser.class}, tree="[0]")
-    private Output<DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUser> urnietfparamsscimschemasoracleidcsextensionselfChangeUser;
+    private Output</* @Nullable */ DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUser> urnietfparamsscimschemasoracleidcsextensionselfChangeUser;
 
     /**
      * @return (Updatable) Controls whether a user can update themselves or not via User related APIs
      * 
      */
-    public Output<DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUser> urnietfparamsscimschemasoracleidcsextensionselfChangeUser() {
-        return this.urnietfparamsscimschemasoracleidcsextensionselfChangeUser;
+    public Output<Optional<DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUser>> urnietfparamsscimschemasoracleidcsextensionselfChangeUser() {
+        return Codegen.optional(this.urnietfparamsscimschemasoracleidcsextensionselfChangeUser);
     }
     /**
      * (Updatable) This extension defines attributes used to manage self registration profile linked to the user.
      * 
      */
     @Export(name="urnietfparamsscimschemasoracleidcsextensionselfRegistrationUser", refs={DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUser.class}, tree="[0]")
-    private Output<DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUser> urnietfparamsscimschemasoracleidcsextensionselfRegistrationUser;
+    private Output</* @Nullable */ DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUser> urnietfparamsscimschemasoracleidcsextensionselfRegistrationUser;
 
     /**
      * @return (Updatable) This extension defines attributes used to manage self registration profile linked to the user.
      * 
      */
-    public Output<DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUser> urnietfparamsscimschemasoracleidcsextensionselfRegistrationUser() {
-        return this.urnietfparamsscimschemasoracleidcsextensionselfRegistrationUser;
+    public Output<Optional<DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUser>> urnietfparamsscimschemasoracleidcsextensionselfRegistrationUser() {
+        return Codegen.optional(this.urnietfparamsscimschemasoracleidcsextensionselfRegistrationUser);
     }
     /**
      * (Updatable) SFF Auth Keys User extension
      * 
      */
     @Export(name="urnietfparamsscimschemasoracleidcsextensionsffUser", refs={DomainsUserUrnietfparamsscimschemasoracleidcsextensionsffUser.class}, tree="[0]")
-    private Output<DomainsUserUrnietfparamsscimschemasoracleidcsextensionsffUser> urnietfparamsscimschemasoracleidcsextensionsffUser;
+    private Output</* @Nullable */ DomainsUserUrnietfparamsscimschemasoracleidcsextensionsffUser> urnietfparamsscimschemasoracleidcsextensionsffUser;
 
     /**
      * @return (Updatable) SFF Auth Keys User extension
      * 
      */
-    public Output<DomainsUserUrnietfparamsscimschemasoracleidcsextensionsffUser> urnietfparamsscimschemasoracleidcsextensionsffUser() {
-        return this.urnietfparamsscimschemasoracleidcsextensionsffUser;
+    public Output<Optional<DomainsUserUrnietfparamsscimschemasoracleidcsextensionsffUser>> urnietfparamsscimschemasoracleidcsextensionsffUser() {
+        return Codegen.optional(this.urnietfparamsscimschemasoracleidcsextensionsffUser);
     }
     /**
      * (Updatable) Social User extension
      * 
      */
     @Export(name="urnietfparamsscimschemasoracleidcsextensionsocialAccountUser", refs={DomainsUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUser.class}, tree="[0]")
-    private Output<DomainsUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUser> urnietfparamsscimschemasoracleidcsextensionsocialAccountUser;
+    private Output</* @Nullable */ DomainsUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUser> urnietfparamsscimschemasoracleidcsextensionsocialAccountUser;
 
     /**
      * @return (Updatable) Social User extension
      * 
      */
-    public Output<DomainsUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUser> urnietfparamsscimschemasoracleidcsextensionsocialAccountUser() {
-        return this.urnietfparamsscimschemasoracleidcsextensionsocialAccountUser;
+    public Output<Optional<DomainsUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUser>> urnietfparamsscimschemasoracleidcsextensionsocialAccountUser() {
+        return Codegen.optional(this.urnietfparamsscimschemasoracleidcsextensionsocialAccountUser);
     }
     /**
      * (Updatable) Terms Of Use extension
      * 
      */
     @Export(name="urnietfparamsscimschemasoracleidcsextensiontermsOfUseUser", refs={DomainsUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUser.class}, tree="[0]")
-    private Output<DomainsUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUser> urnietfparamsscimschemasoracleidcsextensiontermsOfUseUser;
+    private Output</* @Nullable */ DomainsUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUser> urnietfparamsscimschemasoracleidcsextensiontermsOfUseUser;
 
     /**
      * @return (Updatable) Terms Of Use extension
      * 
      */
-    public Output<DomainsUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUser> urnietfparamsscimschemasoracleidcsextensiontermsOfUseUser() {
-        return this.urnietfparamsscimschemasoracleidcsextensiontermsOfUseUser;
+    public Output<Optional<DomainsUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUser>> urnietfparamsscimschemasoracleidcsextensiontermsOfUseUser() {
+        return Codegen.optional(this.urnietfparamsscimschemasoracleidcsextensiontermsOfUseUser);
     }
     /**
      * (Updatable) User&#39;s credentials
      * 
      */
     @Export(name="urnietfparamsscimschemasoracleidcsextensionuserCredentialsUsers", refs={List.class,DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUser.class}, tree="[0,1]")
-    private Output<List<DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUser>> urnietfparamsscimschemasoracleidcsextensionuserCredentialsUsers;
+    private Output</* @Nullable */ List<DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUser>> urnietfparamsscimschemasoracleidcsextensionuserCredentialsUsers;
 
     /**
      * @return (Updatable) User&#39;s credentials
      * 
      */
-    public Output<List<DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUser>> urnietfparamsscimschemasoracleidcsextensionuserCredentialsUsers() {
-        return this.urnietfparamsscimschemasoracleidcsextensionuserCredentialsUsers;
+    public Output<Optional<List<DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUser>>> urnietfparamsscimschemasoracleidcsextensionuserCredentialsUsers() {
+        return Codegen.optional(this.urnietfparamsscimschemasoracleidcsextensionuserCredentialsUsers);
     }
     /**
      * (Updatable) This extension defines the attributes used to manage account passwords within a service provider. The extension is typically applied to a User resource, but MAY be applied to other resources that use passwords.
      * 
      */
     @Export(name="urnietfparamsscimschemasoracleidcsextensionuserStateUser", refs={DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUser.class}, tree="[0]")
-    private Output<DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUser> urnietfparamsscimschemasoracleidcsextensionuserStateUser;
+    private Output</* @Nullable */ DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUser> urnietfparamsscimschemasoracleidcsextensionuserStateUser;
 
     /**
      * @return (Updatable) This extension defines the attributes used to manage account passwords within a service provider. The extension is typically applied to a User resource, but MAY be applied to other resources that use passwords.
      * 
      */
-    public Output<DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUser> urnietfparamsscimschemasoracleidcsextensionuserStateUser() {
-        return this.urnietfparamsscimschemasoracleidcsextensionuserStateUser;
+    public Output<Optional<DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUser>> urnietfparamsscimschemasoracleidcsextensionuserStateUser() {
+        return Codegen.optional(this.urnietfparamsscimschemasoracleidcsextensionuserStateUser);
     }
     /**
      * (Updatable) Oracle Identity Cloud Service User
      * 
      */
     @Export(name="urnietfparamsscimschemasoracleidcsextensionuserUser", refs={DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUser.class}, tree="[0]")
-    private Output<DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUser> urnietfparamsscimschemasoracleidcsextensionuserUser;
+    private Output</* @Nullable */ DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUser> urnietfparamsscimschemasoracleidcsextensionuserUser;
 
     /**
      * @return (Updatable) Oracle Identity Cloud Service User
      * 
      */
-    public Output<DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUser> urnietfparamsscimschemasoracleidcsextensionuserUser() {
-        return this.urnietfparamsscimschemasoracleidcsextensionuserUser;
+    public Output<Optional<DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUser>> urnietfparamsscimschemasoracleidcsextensionuserUser() {
+        return Codegen.optional(this.urnietfparamsscimschemasoracleidcsextensionuserUser);
     }
     /**
      * (Updatable) User name
@@ -1930,7 +1930,7 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="userType", refs={String.class}, tree="[0]")
-    private Output<String> userType;
+    private Output</* @Nullable */ String> userType;
 
     /**
      * @return (Updatable) Used to identify the organization-to-user relationship
@@ -1949,8 +1949,8 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<String> userType() {
-        return this.userType;
+    public Output<Optional<String>> userType() {
+        return Codegen.optional(this.userType);
     }
     /**
      * (Updatable) A list of certificates issued to the User.
@@ -1966,7 +1966,7 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="x509certificates", refs={List.class,DomainsUserX509certificate.class}, tree="[0,1]")
-    private Output<List<DomainsUserX509certificate>> x509certificates;
+    private Output</* @Nullable */ List<DomainsUserX509certificate>> x509certificates;
 
     /**
      * @return (Updatable) A list of certificates issued to the User.
@@ -1981,8 +1981,8 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<List<DomainsUserX509certificate>> x509certificates() {
-        return this.x509certificates;
+    public Output<Optional<List<DomainsUserX509certificate>>> x509certificates() {
+        return Codegen.optional(this.x509certificates);
     }
 
     /**

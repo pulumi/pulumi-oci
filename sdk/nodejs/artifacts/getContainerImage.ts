@@ -47,80 +47,80 @@ export interface GetContainerImageResult {
     /**
      * The compartment OCID to which the container image belongs. Inferred from the container repository.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * The OCID of the user or principal that pushed the version.
      */
-    readonly createdBy: string;
+    readonly createdBy?: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * The sha256 digest of the image layer.
      */
-    readonly digest: string;
+    readonly digest?: string;
     /**
      * The repository name and the most recent version associated with the image. If there are no versions associated with the image, then last known version and digest are used instead. If the last known version is unavailable, then 'unknown' is used instead of the version.  Example: `ubuntu:latest` or `ubuntu:latest@sha256:45b23dee08af5e43a7fea6c4cf9c25ccf269ee113168c19722f87876677c5cb2`
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly imageId: string;
     /**
      * Layers of which the image is composed, ordered by the layer digest.
      */
-    readonly layers: outputs.Artifacts.GetContainerImageLayer[];
+    readonly layers?: outputs.Artifacts.GetContainerImageLayer[];
     /**
      * The total size of the container image layers in bytes.
      */
-    readonly layersSizeInBytes: string;
+    readonly layersSizeInBytes?: string;
     /**
      * The size of the container image manifest in bytes.
      */
-    readonly manifestSizeInBytes: number;
+    readonly manifestSizeInBytes?: number;
     /**
      * Total number of pulls.
      */
-    readonly pullCount: string;
+    readonly pullCount?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the container repository.
      */
-    readonly repositoryId: string;
+    readonly repositoryId?: string;
     /**
      * The container repository name.
      */
-    readonly repositoryName: string;
+    readonly repositoryName?: string;
     /**
      * The current state of the container image.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * The system tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    readonly systemTags: {[key: string]: any};
+    readonly systemTags?: {[key: string]: any};
     /**
      * The creation time of the version.
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * An RFC 3339 timestamp indicating when the image was last pulled.
      */
-    readonly timeLastPulled: string;
+    readonly timeLastPulled?: string;
     /**
      * The version name.
      */
-    readonly version: string;
+    readonly version?: string;
     /**
      * The versions associated with this image.
      */
-    readonly versions: outputs.Artifacts.GetContainerImageVersion[];
+    readonly versions?: outputs.Artifacts.GetContainerImageVersion[];
 }
 /**
  * This data source provides details about a specific Container Image resource in Oracle Cloud Infrastructure Artifacts service.

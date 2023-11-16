@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 var _ = internal.GetEnvOrDefault
@@ -67,12 +66,6 @@ func (i CustomTableSavedCustomTableArgs) ToCustomTableSavedCustomTableOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(CustomTableSavedCustomTableOutput)
 }
 
-func (i CustomTableSavedCustomTableArgs) ToOutput(ctx context.Context) pulumix.Output[CustomTableSavedCustomTable] {
-	return pulumix.Output[CustomTableSavedCustomTable]{
-		OutputState: i.ToCustomTableSavedCustomTableOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i CustomTableSavedCustomTableArgs) ToCustomTableSavedCustomTablePtrOutput() CustomTableSavedCustomTablePtrOutput {
 	return i.ToCustomTableSavedCustomTablePtrOutputWithContext(context.Background())
 }
@@ -114,12 +107,6 @@ func (i *customTableSavedCustomTablePtrType) ToCustomTableSavedCustomTablePtrOut
 	return pulumi.ToOutputWithContext(ctx, i).(CustomTableSavedCustomTablePtrOutput)
 }
 
-func (i *customTableSavedCustomTablePtrType) ToOutput(ctx context.Context) pulumix.Output[*CustomTableSavedCustomTable] {
-	return pulumix.Output[*CustomTableSavedCustomTable]{
-		OutputState: i.ToCustomTableSavedCustomTablePtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type CustomTableSavedCustomTableOutput struct{ *pulumi.OutputState }
 
 func (CustomTableSavedCustomTableOutput) ElementType() reflect.Type {
@@ -142,12 +129,6 @@ func (o CustomTableSavedCustomTableOutput) ToCustomTableSavedCustomTablePtrOutpu
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v CustomTableSavedCustomTable) *CustomTableSavedCustomTable {
 		return &v
 	}).(CustomTableSavedCustomTablePtrOutput)
-}
-
-func (o CustomTableSavedCustomTableOutput) ToOutput(ctx context.Context) pulumix.Output[CustomTableSavedCustomTable] {
-	return pulumix.Output[CustomTableSavedCustomTable]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The column groupBy key list. example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
@@ -192,12 +173,6 @@ func (o CustomTableSavedCustomTablePtrOutput) ToCustomTableSavedCustomTablePtrOu
 
 func (o CustomTableSavedCustomTablePtrOutput) ToCustomTableSavedCustomTablePtrOutputWithContext(ctx context.Context) CustomTableSavedCustomTablePtrOutput {
 	return o
-}
-
-func (o CustomTableSavedCustomTablePtrOutput) ToOutput(ctx context.Context) pulumix.Output[*CustomTableSavedCustomTable] {
-	return pulumix.Output[*CustomTableSavedCustomTable]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o CustomTableSavedCustomTablePtrOutput) Elem() CustomTableSavedCustomTableOutput {
@@ -311,12 +286,6 @@ func (i CustomTableSavedCustomTableGroupByTagArgs) ToCustomTableSavedCustomTable
 	return pulumi.ToOutputWithContext(ctx, i).(CustomTableSavedCustomTableGroupByTagOutput)
 }
 
-func (i CustomTableSavedCustomTableGroupByTagArgs) ToOutput(ctx context.Context) pulumix.Output[CustomTableSavedCustomTableGroupByTag] {
-	return pulumix.Output[CustomTableSavedCustomTableGroupByTag]{
-		OutputState: i.ToCustomTableSavedCustomTableGroupByTagOutputWithContext(ctx).OutputState,
-	}
-}
-
 // CustomTableSavedCustomTableGroupByTagArrayInput is an input type that accepts CustomTableSavedCustomTableGroupByTagArray and CustomTableSavedCustomTableGroupByTagArrayOutput values.
 // You can construct a concrete instance of `CustomTableSavedCustomTableGroupByTagArrayInput` via:
 //
@@ -342,12 +311,6 @@ func (i CustomTableSavedCustomTableGroupByTagArray) ToCustomTableSavedCustomTabl
 	return pulumi.ToOutputWithContext(ctx, i).(CustomTableSavedCustomTableGroupByTagArrayOutput)
 }
 
-func (i CustomTableSavedCustomTableGroupByTagArray) ToOutput(ctx context.Context) pulumix.Output[[]CustomTableSavedCustomTableGroupByTag] {
-	return pulumix.Output[[]CustomTableSavedCustomTableGroupByTag]{
-		OutputState: i.ToCustomTableSavedCustomTableGroupByTagArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type CustomTableSavedCustomTableGroupByTagOutput struct{ *pulumi.OutputState }
 
 func (CustomTableSavedCustomTableGroupByTagOutput) ElementType() reflect.Type {
@@ -360,12 +323,6 @@ func (o CustomTableSavedCustomTableGroupByTagOutput) ToCustomTableSavedCustomTab
 
 func (o CustomTableSavedCustomTableGroupByTagOutput) ToCustomTableSavedCustomTableGroupByTagOutputWithContext(ctx context.Context) CustomTableSavedCustomTableGroupByTagOutput {
 	return o
-}
-
-func (o CustomTableSavedCustomTableGroupByTagOutput) ToOutput(ctx context.Context) pulumix.Output[CustomTableSavedCustomTableGroupByTag] {
-	return pulumix.Output[CustomTableSavedCustomTableGroupByTag]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The tag key.
@@ -395,12 +352,6 @@ func (o CustomTableSavedCustomTableGroupByTagArrayOutput) ToCustomTableSavedCust
 
 func (o CustomTableSavedCustomTableGroupByTagArrayOutput) ToCustomTableSavedCustomTableGroupByTagArrayOutputWithContext(ctx context.Context) CustomTableSavedCustomTableGroupByTagArrayOutput {
 	return o
-}
-
-func (o CustomTableSavedCustomTableGroupByTagArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]CustomTableSavedCustomTableGroupByTag] {
-	return pulumix.Output[[]CustomTableSavedCustomTableGroupByTag]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o CustomTableSavedCustomTableGroupByTagArrayOutput) Index(i pulumi.IntInput) CustomTableSavedCustomTableGroupByTagOutput {
@@ -460,12 +411,6 @@ func (i QueryQueryDefinitionArgs) ToQueryQueryDefinitionOutputWithContext(ctx co
 	return pulumi.ToOutputWithContext(ctx, i).(QueryQueryDefinitionOutput)
 }
 
-func (i QueryQueryDefinitionArgs) ToOutput(ctx context.Context) pulumix.Output[QueryQueryDefinition] {
-	return pulumix.Output[QueryQueryDefinition]{
-		OutputState: i.ToQueryQueryDefinitionOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i QueryQueryDefinitionArgs) ToQueryQueryDefinitionPtrOutput() QueryQueryDefinitionPtrOutput {
 	return i.ToQueryQueryDefinitionPtrOutputWithContext(context.Background())
 }
@@ -507,12 +452,6 @@ func (i *queryQueryDefinitionPtrType) ToQueryQueryDefinitionPtrOutputWithContext
 	return pulumi.ToOutputWithContext(ctx, i).(QueryQueryDefinitionPtrOutput)
 }
 
-func (i *queryQueryDefinitionPtrType) ToOutput(ctx context.Context) pulumix.Output[*QueryQueryDefinition] {
-	return pulumix.Output[*QueryQueryDefinition]{
-		OutputState: i.ToQueryQueryDefinitionPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type QueryQueryDefinitionOutput struct{ *pulumi.OutputState }
 
 func (QueryQueryDefinitionOutput) ElementType() reflect.Type {
@@ -535,12 +474,6 @@ func (o QueryQueryDefinitionOutput) ToQueryQueryDefinitionPtrOutputWithContext(c
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v QueryQueryDefinition) *QueryQueryDefinition {
 		return &v
 	}).(QueryQueryDefinitionPtrOutput)
-}
-
-func (o QueryQueryDefinitionOutput) ToOutput(ctx context.Context) pulumix.Output[QueryQueryDefinition] {
-	return pulumix.Output[QueryQueryDefinition]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The common fields for Cost Analysis UI rendering.
@@ -578,12 +511,6 @@ func (o QueryQueryDefinitionPtrOutput) ToQueryQueryDefinitionPtrOutput() QueryQu
 
 func (o QueryQueryDefinitionPtrOutput) ToQueryQueryDefinitionPtrOutputWithContext(ctx context.Context) QueryQueryDefinitionPtrOutput {
 	return o
-}
-
-func (o QueryQueryDefinitionPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*QueryQueryDefinition] {
-	return pulumix.Output[*QueryQueryDefinition]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o QueryQueryDefinitionPtrOutput) Elem() QueryQueryDefinitionOutput {
@@ -676,12 +603,6 @@ func (i QueryQueryDefinitionCostAnalysisUiArgs) ToQueryQueryDefinitionCostAnalys
 	return pulumi.ToOutputWithContext(ctx, i).(QueryQueryDefinitionCostAnalysisUiOutput)
 }
 
-func (i QueryQueryDefinitionCostAnalysisUiArgs) ToOutput(ctx context.Context) pulumix.Output[QueryQueryDefinitionCostAnalysisUi] {
-	return pulumix.Output[QueryQueryDefinitionCostAnalysisUi]{
-		OutputState: i.ToQueryQueryDefinitionCostAnalysisUiOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i QueryQueryDefinitionCostAnalysisUiArgs) ToQueryQueryDefinitionCostAnalysisUiPtrOutput() QueryQueryDefinitionCostAnalysisUiPtrOutput {
 	return i.ToQueryQueryDefinitionCostAnalysisUiPtrOutputWithContext(context.Background())
 }
@@ -723,12 +644,6 @@ func (i *queryQueryDefinitionCostAnalysisUiPtrType) ToQueryQueryDefinitionCostAn
 	return pulumi.ToOutputWithContext(ctx, i).(QueryQueryDefinitionCostAnalysisUiPtrOutput)
 }
 
-func (i *queryQueryDefinitionCostAnalysisUiPtrType) ToOutput(ctx context.Context) pulumix.Output[*QueryQueryDefinitionCostAnalysisUi] {
-	return pulumix.Output[*QueryQueryDefinitionCostAnalysisUi]{
-		OutputState: i.ToQueryQueryDefinitionCostAnalysisUiPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type QueryQueryDefinitionCostAnalysisUiOutput struct{ *pulumi.OutputState }
 
 func (QueryQueryDefinitionCostAnalysisUiOutput) ElementType() reflect.Type {
@@ -753,12 +668,6 @@ func (o QueryQueryDefinitionCostAnalysisUiOutput) ToQueryQueryDefinitionCostAnal
 	}).(QueryQueryDefinitionCostAnalysisUiPtrOutput)
 }
 
-func (o QueryQueryDefinitionCostAnalysisUiOutput) ToOutput(ctx context.Context) pulumix.Output[QueryQueryDefinitionCostAnalysisUi] {
-	return pulumix.Output[QueryQueryDefinitionCostAnalysisUi]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) The graph type.
 func (o QueryQueryDefinitionCostAnalysisUiOutput) Graph() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v QueryQueryDefinitionCostAnalysisUi) *string { return v.Graph }).(pulumi.StringPtrOutput)
@@ -781,12 +690,6 @@ func (o QueryQueryDefinitionCostAnalysisUiPtrOutput) ToQueryQueryDefinitionCostA
 
 func (o QueryQueryDefinitionCostAnalysisUiPtrOutput) ToQueryQueryDefinitionCostAnalysisUiPtrOutputWithContext(ctx context.Context) QueryQueryDefinitionCostAnalysisUiPtrOutput {
 	return o
-}
-
-func (o QueryQueryDefinitionCostAnalysisUiPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*QueryQueryDefinitionCostAnalysisUi] {
-	return pulumix.Output[*QueryQueryDefinitionCostAnalysisUi]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o QueryQueryDefinitionCostAnalysisUiPtrOutput) Elem() QueryQueryDefinitionCostAnalysisUiOutput {
@@ -896,12 +799,6 @@ func (i QueryQueryDefinitionReportQueryArgs) ToQueryQueryDefinitionReportQueryOu
 	return pulumi.ToOutputWithContext(ctx, i).(QueryQueryDefinitionReportQueryOutput)
 }
 
-func (i QueryQueryDefinitionReportQueryArgs) ToOutput(ctx context.Context) pulumix.Output[QueryQueryDefinitionReportQuery] {
-	return pulumix.Output[QueryQueryDefinitionReportQuery]{
-		OutputState: i.ToQueryQueryDefinitionReportQueryOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i QueryQueryDefinitionReportQueryArgs) ToQueryQueryDefinitionReportQueryPtrOutput() QueryQueryDefinitionReportQueryPtrOutput {
 	return i.ToQueryQueryDefinitionReportQueryPtrOutputWithContext(context.Background())
 }
@@ -943,12 +840,6 @@ func (i *queryQueryDefinitionReportQueryPtrType) ToQueryQueryDefinitionReportQue
 	return pulumi.ToOutputWithContext(ctx, i).(QueryQueryDefinitionReportQueryPtrOutput)
 }
 
-func (i *queryQueryDefinitionReportQueryPtrType) ToOutput(ctx context.Context) pulumix.Output[*QueryQueryDefinitionReportQuery] {
-	return pulumix.Output[*QueryQueryDefinitionReportQuery]{
-		OutputState: i.ToQueryQueryDefinitionReportQueryPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type QueryQueryDefinitionReportQueryOutput struct{ *pulumi.OutputState }
 
 func (QueryQueryDefinitionReportQueryOutput) ElementType() reflect.Type {
@@ -971,12 +862,6 @@ func (o QueryQueryDefinitionReportQueryOutput) ToQueryQueryDefinitionReportQuery
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v QueryQueryDefinitionReportQuery) *QueryQueryDefinitionReportQuery {
 		return &v
 	}).(QueryQueryDefinitionReportQueryPtrOutput)
-}
-
-func (o QueryQueryDefinitionReportQueryOutput) ToOutput(ctx context.Context) pulumix.Output[QueryQueryDefinitionReportQuery] {
-	return pulumix.Output[QueryQueryDefinitionReportQuery]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The compartment depth level.
@@ -1053,12 +938,6 @@ func (o QueryQueryDefinitionReportQueryPtrOutput) ToQueryQueryDefinitionReportQu
 
 func (o QueryQueryDefinitionReportQueryPtrOutput) ToQueryQueryDefinitionReportQueryPtrOutputWithContext(ctx context.Context) QueryQueryDefinitionReportQueryPtrOutput {
 	return o
-}
-
-func (o QueryQueryDefinitionReportQueryPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*QueryQueryDefinitionReportQuery] {
-	return pulumix.Output[*QueryQueryDefinitionReportQuery]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o QueryQueryDefinitionReportQueryPtrOutput) Elem() QueryQueryDefinitionReportQueryOutput {
@@ -1232,12 +1111,6 @@ func (i QueryQueryDefinitionReportQueryForecastArgs) ToQueryQueryDefinitionRepor
 	return pulumi.ToOutputWithContext(ctx, i).(QueryQueryDefinitionReportQueryForecastOutput)
 }
 
-func (i QueryQueryDefinitionReportQueryForecastArgs) ToOutput(ctx context.Context) pulumix.Output[QueryQueryDefinitionReportQueryForecast] {
-	return pulumix.Output[QueryQueryDefinitionReportQueryForecast]{
-		OutputState: i.ToQueryQueryDefinitionReportQueryForecastOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i QueryQueryDefinitionReportQueryForecastArgs) ToQueryQueryDefinitionReportQueryForecastPtrOutput() QueryQueryDefinitionReportQueryForecastPtrOutput {
 	return i.ToQueryQueryDefinitionReportQueryForecastPtrOutputWithContext(context.Background())
 }
@@ -1279,12 +1152,6 @@ func (i *queryQueryDefinitionReportQueryForecastPtrType) ToQueryQueryDefinitionR
 	return pulumi.ToOutputWithContext(ctx, i).(QueryQueryDefinitionReportQueryForecastPtrOutput)
 }
 
-func (i *queryQueryDefinitionReportQueryForecastPtrType) ToOutput(ctx context.Context) pulumix.Output[*QueryQueryDefinitionReportQueryForecast] {
-	return pulumix.Output[*QueryQueryDefinitionReportQueryForecast]{
-		OutputState: i.ToQueryQueryDefinitionReportQueryForecastPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type QueryQueryDefinitionReportQueryForecastOutput struct{ *pulumi.OutputState }
 
 func (QueryQueryDefinitionReportQueryForecastOutput) ElementType() reflect.Type {
@@ -1307,12 +1174,6 @@ func (o QueryQueryDefinitionReportQueryForecastOutput) ToQueryQueryDefinitionRep
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v QueryQueryDefinitionReportQueryForecast) *QueryQueryDefinitionReportQueryForecast {
 		return &v
 	}).(QueryQueryDefinitionReportQueryForecastPtrOutput)
-}
-
-func (o QueryQueryDefinitionReportQueryForecastOutput) ToOutput(ctx context.Context) pulumix.Output[QueryQueryDefinitionReportQueryForecast] {
-	return pulumix.Output[QueryQueryDefinitionReportQueryForecast]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) BASIC uses the exponential smoothing (ETS) model to project future usage/costs based on history data. The basis for projections is a periodic set of equivalent historical days for which the projection is being made.
@@ -1342,12 +1203,6 @@ func (o QueryQueryDefinitionReportQueryForecastPtrOutput) ToQueryQueryDefinition
 
 func (o QueryQueryDefinitionReportQueryForecastPtrOutput) ToQueryQueryDefinitionReportQueryForecastPtrOutputWithContext(ctx context.Context) QueryQueryDefinitionReportQueryForecastPtrOutput {
 	return o
-}
-
-func (o QueryQueryDefinitionReportQueryForecastPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*QueryQueryDefinitionReportQueryForecast] {
-	return pulumix.Output[*QueryQueryDefinitionReportQueryForecast]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o QueryQueryDefinitionReportQueryForecastPtrOutput) Elem() QueryQueryDefinitionReportQueryForecastOutput {
@@ -1431,12 +1286,6 @@ func (i QueryQueryDefinitionReportQueryGroupByTagArgs) ToQueryQueryDefinitionRep
 	return pulumi.ToOutputWithContext(ctx, i).(QueryQueryDefinitionReportQueryGroupByTagOutput)
 }
 
-func (i QueryQueryDefinitionReportQueryGroupByTagArgs) ToOutput(ctx context.Context) pulumix.Output[QueryQueryDefinitionReportQueryGroupByTag] {
-	return pulumix.Output[QueryQueryDefinitionReportQueryGroupByTag]{
-		OutputState: i.ToQueryQueryDefinitionReportQueryGroupByTagOutputWithContext(ctx).OutputState,
-	}
-}
-
 // QueryQueryDefinitionReportQueryGroupByTagArrayInput is an input type that accepts QueryQueryDefinitionReportQueryGroupByTagArray and QueryQueryDefinitionReportQueryGroupByTagArrayOutput values.
 // You can construct a concrete instance of `QueryQueryDefinitionReportQueryGroupByTagArrayInput` via:
 //
@@ -1462,12 +1311,6 @@ func (i QueryQueryDefinitionReportQueryGroupByTagArray) ToQueryQueryDefinitionRe
 	return pulumi.ToOutputWithContext(ctx, i).(QueryQueryDefinitionReportQueryGroupByTagArrayOutput)
 }
 
-func (i QueryQueryDefinitionReportQueryGroupByTagArray) ToOutput(ctx context.Context) pulumix.Output[[]QueryQueryDefinitionReportQueryGroupByTag] {
-	return pulumix.Output[[]QueryQueryDefinitionReportQueryGroupByTag]{
-		OutputState: i.ToQueryQueryDefinitionReportQueryGroupByTagArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type QueryQueryDefinitionReportQueryGroupByTagOutput struct{ *pulumi.OutputState }
 
 func (QueryQueryDefinitionReportQueryGroupByTagOutput) ElementType() reflect.Type {
@@ -1480,12 +1323,6 @@ func (o QueryQueryDefinitionReportQueryGroupByTagOutput) ToQueryQueryDefinitionR
 
 func (o QueryQueryDefinitionReportQueryGroupByTagOutput) ToQueryQueryDefinitionReportQueryGroupByTagOutputWithContext(ctx context.Context) QueryQueryDefinitionReportQueryGroupByTagOutput {
 	return o
-}
-
-func (o QueryQueryDefinitionReportQueryGroupByTagOutput) ToOutput(ctx context.Context) pulumix.Output[QueryQueryDefinitionReportQueryGroupByTag] {
-	return pulumix.Output[QueryQueryDefinitionReportQueryGroupByTag]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The tag key.
@@ -1515,12 +1352,6 @@ func (o QueryQueryDefinitionReportQueryGroupByTagArrayOutput) ToQueryQueryDefini
 
 func (o QueryQueryDefinitionReportQueryGroupByTagArrayOutput) ToQueryQueryDefinitionReportQueryGroupByTagArrayOutputWithContext(ctx context.Context) QueryQueryDefinitionReportQueryGroupByTagArrayOutput {
 	return o
-}
-
-func (o QueryQueryDefinitionReportQueryGroupByTagArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]QueryQueryDefinitionReportQueryGroupByTag] {
-	return pulumix.Output[[]QueryQueryDefinitionReportQueryGroupByTag]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o QueryQueryDefinitionReportQueryGroupByTagArrayOutput) Index(i pulumi.IntInput) QueryQueryDefinitionReportQueryGroupByTagOutput {
@@ -1590,12 +1421,6 @@ func (i ScheduleQueryPropertiesArgs) ToScheduleQueryPropertiesOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(ScheduleQueryPropertiesOutput)
 }
 
-func (i ScheduleQueryPropertiesArgs) ToOutput(ctx context.Context) pulumix.Output[ScheduleQueryProperties] {
-	return pulumix.Output[ScheduleQueryProperties]{
-		OutputState: i.ToScheduleQueryPropertiesOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i ScheduleQueryPropertiesArgs) ToScheduleQueryPropertiesPtrOutput() ScheduleQueryPropertiesPtrOutput {
 	return i.ToScheduleQueryPropertiesPtrOutputWithContext(context.Background())
 }
@@ -1637,12 +1462,6 @@ func (i *scheduleQueryPropertiesPtrType) ToScheduleQueryPropertiesPtrOutputWithC
 	return pulumi.ToOutputWithContext(ctx, i).(ScheduleQueryPropertiesPtrOutput)
 }
 
-func (i *scheduleQueryPropertiesPtrType) ToOutput(ctx context.Context) pulumix.Output[*ScheduleQueryProperties] {
-	return pulumix.Output[*ScheduleQueryProperties]{
-		OutputState: i.ToScheduleQueryPropertiesPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ScheduleQueryPropertiesOutput struct{ *pulumi.OutputState }
 
 func (ScheduleQueryPropertiesOutput) ElementType() reflect.Type {
@@ -1665,12 +1484,6 @@ func (o ScheduleQueryPropertiesOutput) ToScheduleQueryPropertiesPtrOutputWithCon
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v ScheduleQueryProperties) *ScheduleQueryProperties {
 		return &v
 	}).(ScheduleQueryPropertiesPtrOutput)
-}
-
-func (o ScheduleQueryPropertiesOutput) ToOutput(ctx context.Context) pulumix.Output[ScheduleQueryProperties] {
-	return pulumix.Output[ScheduleQueryProperties]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The depth level of the compartment.
@@ -1725,12 +1538,6 @@ func (o ScheduleQueryPropertiesPtrOutput) ToScheduleQueryPropertiesPtrOutput() S
 
 func (o ScheduleQueryPropertiesPtrOutput) ToScheduleQueryPropertiesPtrOutputWithContext(ctx context.Context) ScheduleQueryPropertiesPtrOutput {
 	return o
-}
-
-func (o ScheduleQueryPropertiesPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*ScheduleQueryProperties] {
-	return pulumix.Output[*ScheduleQueryProperties]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ScheduleQueryPropertiesPtrOutput) Elem() ScheduleQueryPropertiesOutput {
@@ -1866,12 +1673,6 @@ func (i ScheduleQueryPropertiesDateRangeArgs) ToScheduleQueryPropertiesDateRange
 	return pulumi.ToOutputWithContext(ctx, i).(ScheduleQueryPropertiesDateRangeOutput)
 }
 
-func (i ScheduleQueryPropertiesDateRangeArgs) ToOutput(ctx context.Context) pulumix.Output[ScheduleQueryPropertiesDateRange] {
-	return pulumix.Output[ScheduleQueryPropertiesDateRange]{
-		OutputState: i.ToScheduleQueryPropertiesDateRangeOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i ScheduleQueryPropertiesDateRangeArgs) ToScheduleQueryPropertiesDateRangePtrOutput() ScheduleQueryPropertiesDateRangePtrOutput {
 	return i.ToScheduleQueryPropertiesDateRangePtrOutputWithContext(context.Background())
 }
@@ -1913,12 +1714,6 @@ func (i *scheduleQueryPropertiesDateRangePtrType) ToScheduleQueryPropertiesDateR
 	return pulumi.ToOutputWithContext(ctx, i).(ScheduleQueryPropertiesDateRangePtrOutput)
 }
 
-func (i *scheduleQueryPropertiesDateRangePtrType) ToOutput(ctx context.Context) pulumix.Output[*ScheduleQueryPropertiesDateRange] {
-	return pulumix.Output[*ScheduleQueryPropertiesDateRange]{
-		OutputState: i.ToScheduleQueryPropertiesDateRangePtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ScheduleQueryPropertiesDateRangeOutput struct{ *pulumi.OutputState }
 
 func (ScheduleQueryPropertiesDateRangeOutput) ElementType() reflect.Type {
@@ -1941,12 +1736,6 @@ func (o ScheduleQueryPropertiesDateRangeOutput) ToScheduleQueryPropertiesDateRan
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v ScheduleQueryPropertiesDateRange) *ScheduleQueryPropertiesDateRange {
 		return &v
 	}).(ScheduleQueryPropertiesDateRangePtrOutput)
-}
-
-func (o ScheduleQueryPropertiesDateRangeOutput) ToOutput(ctx context.Context) pulumix.Output[ScheduleQueryPropertiesDateRange] {
-	return pulumix.Output[ScheduleQueryPropertiesDateRange]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Defines whether the schedule date range is STATIC or DYNAMIC.
@@ -1980,12 +1769,6 @@ func (o ScheduleQueryPropertiesDateRangePtrOutput) ToScheduleQueryPropertiesDate
 
 func (o ScheduleQueryPropertiesDateRangePtrOutput) ToScheduleQueryPropertiesDateRangePtrOutputWithContext(ctx context.Context) ScheduleQueryPropertiesDateRangePtrOutput {
 	return o
-}
-
-func (o ScheduleQueryPropertiesDateRangePtrOutput) ToOutput(ctx context.Context) pulumix.Output[*ScheduleQueryPropertiesDateRange] {
-	return pulumix.Output[*ScheduleQueryPropertiesDateRange]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ScheduleQueryPropertiesDateRangePtrOutput) Elem() ScheduleQueryPropertiesDateRangeOutput {
@@ -2078,12 +1861,6 @@ func (i ScheduleQueryPropertiesGroupByTagArgs) ToScheduleQueryPropertiesGroupByT
 	return pulumi.ToOutputWithContext(ctx, i).(ScheduleQueryPropertiesGroupByTagOutput)
 }
 
-func (i ScheduleQueryPropertiesGroupByTagArgs) ToOutput(ctx context.Context) pulumix.Output[ScheduleQueryPropertiesGroupByTag] {
-	return pulumix.Output[ScheduleQueryPropertiesGroupByTag]{
-		OutputState: i.ToScheduleQueryPropertiesGroupByTagOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ScheduleQueryPropertiesGroupByTagArrayInput is an input type that accepts ScheduleQueryPropertiesGroupByTagArray and ScheduleQueryPropertiesGroupByTagArrayOutput values.
 // You can construct a concrete instance of `ScheduleQueryPropertiesGroupByTagArrayInput` via:
 //
@@ -2109,12 +1886,6 @@ func (i ScheduleQueryPropertiesGroupByTagArray) ToScheduleQueryPropertiesGroupBy
 	return pulumi.ToOutputWithContext(ctx, i).(ScheduleQueryPropertiesGroupByTagArrayOutput)
 }
 
-func (i ScheduleQueryPropertiesGroupByTagArray) ToOutput(ctx context.Context) pulumix.Output[[]ScheduleQueryPropertiesGroupByTag] {
-	return pulumix.Output[[]ScheduleQueryPropertiesGroupByTag]{
-		OutputState: i.ToScheduleQueryPropertiesGroupByTagArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ScheduleQueryPropertiesGroupByTagOutput struct{ *pulumi.OutputState }
 
 func (ScheduleQueryPropertiesGroupByTagOutput) ElementType() reflect.Type {
@@ -2127,12 +1898,6 @@ func (o ScheduleQueryPropertiesGroupByTagOutput) ToScheduleQueryPropertiesGroupB
 
 func (o ScheduleQueryPropertiesGroupByTagOutput) ToScheduleQueryPropertiesGroupByTagOutputWithContext(ctx context.Context) ScheduleQueryPropertiesGroupByTagOutput {
 	return o
-}
-
-func (o ScheduleQueryPropertiesGroupByTagOutput) ToOutput(ctx context.Context) pulumix.Output[ScheduleQueryPropertiesGroupByTag] {
-	return pulumix.Output[ScheduleQueryPropertiesGroupByTag]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The tag key.
@@ -2162,12 +1927,6 @@ func (o ScheduleQueryPropertiesGroupByTagArrayOutput) ToScheduleQueryPropertiesG
 
 func (o ScheduleQueryPropertiesGroupByTagArrayOutput) ToScheduleQueryPropertiesGroupByTagArrayOutputWithContext(ctx context.Context) ScheduleQueryPropertiesGroupByTagArrayOutput {
 	return o
-}
-
-func (o ScheduleQueryPropertiesGroupByTagArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]ScheduleQueryPropertiesGroupByTag] {
-	return pulumix.Output[[]ScheduleQueryPropertiesGroupByTag]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ScheduleQueryPropertiesGroupByTagArrayOutput) Index(i pulumi.IntInput) ScheduleQueryPropertiesGroupByTagOutput {
@@ -2221,12 +1980,6 @@ func (i ScheduleResultLocationArgs) ToScheduleResultLocationOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(ScheduleResultLocationOutput)
 }
 
-func (i ScheduleResultLocationArgs) ToOutput(ctx context.Context) pulumix.Output[ScheduleResultLocation] {
-	return pulumix.Output[ScheduleResultLocation]{
-		OutputState: i.ToScheduleResultLocationOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i ScheduleResultLocationArgs) ToScheduleResultLocationPtrOutput() ScheduleResultLocationPtrOutput {
 	return i.ToScheduleResultLocationPtrOutputWithContext(context.Background())
 }
@@ -2268,12 +2021,6 @@ func (i *scheduleResultLocationPtrType) ToScheduleResultLocationPtrOutputWithCon
 	return pulumi.ToOutputWithContext(ctx, i).(ScheduleResultLocationPtrOutput)
 }
 
-func (i *scheduleResultLocationPtrType) ToOutput(ctx context.Context) pulumix.Output[*ScheduleResultLocation] {
-	return pulumix.Output[*ScheduleResultLocation]{
-		OutputState: i.ToScheduleResultLocationPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ScheduleResultLocationOutput struct{ *pulumi.OutputState }
 
 func (ScheduleResultLocationOutput) ElementType() reflect.Type {
@@ -2296,12 +2043,6 @@ func (o ScheduleResultLocationOutput) ToScheduleResultLocationPtrOutputWithConte
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v ScheduleResultLocation) *ScheduleResultLocation {
 		return &v
 	}).(ScheduleResultLocationPtrOutput)
-}
-
-func (o ScheduleResultLocationOutput) ToOutput(ctx context.Context) pulumix.Output[ScheduleResultLocation] {
-	return pulumix.Output[ScheduleResultLocation]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The bucket name where usage or cost CSVs will be uploaded.
@@ -2336,12 +2077,6 @@ func (o ScheduleResultLocationPtrOutput) ToScheduleResultLocationPtrOutput() Sch
 
 func (o ScheduleResultLocationPtrOutput) ToScheduleResultLocationPtrOutputWithContext(ctx context.Context) ScheduleResultLocationPtrOutput {
 	return o
-}
-
-func (o ScheduleResultLocationPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*ScheduleResultLocation] {
-	return pulumix.Output[*ScheduleResultLocation]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ScheduleResultLocationPtrOutput) Elem() ScheduleResultLocationOutput {
@@ -2435,12 +2170,6 @@ func (i UsageForecastArgs) ToUsageForecastOutputWithContext(ctx context.Context)
 	return pulumi.ToOutputWithContext(ctx, i).(UsageForecastOutput)
 }
 
-func (i UsageForecastArgs) ToOutput(ctx context.Context) pulumix.Output[UsageForecast] {
-	return pulumix.Output[UsageForecast]{
-		OutputState: i.ToUsageForecastOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i UsageForecastArgs) ToUsageForecastPtrOutput() UsageForecastPtrOutput {
 	return i.ToUsageForecastPtrOutputWithContext(context.Background())
 }
@@ -2482,12 +2211,6 @@ func (i *usageForecastPtrType) ToUsageForecastPtrOutputWithContext(ctx context.C
 	return pulumi.ToOutputWithContext(ctx, i).(UsageForecastPtrOutput)
 }
 
-func (i *usageForecastPtrType) ToOutput(ctx context.Context) pulumix.Output[*UsageForecast] {
-	return pulumix.Output[*UsageForecast]{
-		OutputState: i.ToUsageForecastPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type UsageForecastOutput struct{ *pulumi.OutputState }
 
 func (UsageForecastOutput) ElementType() reflect.Type {
@@ -2510,12 +2233,6 @@ func (o UsageForecastOutput) ToUsageForecastPtrOutputWithContext(ctx context.Con
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v UsageForecast) *UsageForecast {
 		return &v
 	}).(UsageForecastPtrOutput)
-}
-
-func (o UsageForecastOutput) ToOutput(ctx context.Context) pulumix.Output[UsageForecast] {
-	return pulumix.Output[UsageForecast]{
-		OutputState: o.OutputState,
-	}
 }
 
 // BASIC uses the exponential smoothing (ETS) model to project future usage/costs based on history data. The basis for projections is a periodic set of equivalent historical days for which the projection is being made.
@@ -2545,12 +2262,6 @@ func (o UsageForecastPtrOutput) ToUsageForecastPtrOutput() UsageForecastPtrOutpu
 
 func (o UsageForecastPtrOutput) ToUsageForecastPtrOutputWithContext(ctx context.Context) UsageForecastPtrOutput {
 	return o
-}
-
-func (o UsageForecastPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*UsageForecast] {
-	return pulumix.Output[*UsageForecast]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o UsageForecastPtrOutput) Elem() UsageForecastOutput {
@@ -2634,12 +2345,6 @@ func (i UsageGroupByTagArgs) ToUsageGroupByTagOutputWithContext(ctx context.Cont
 	return pulumi.ToOutputWithContext(ctx, i).(UsageGroupByTagOutput)
 }
 
-func (i UsageGroupByTagArgs) ToOutput(ctx context.Context) pulumix.Output[UsageGroupByTag] {
-	return pulumix.Output[UsageGroupByTag]{
-		OutputState: i.ToUsageGroupByTagOutputWithContext(ctx).OutputState,
-	}
-}
-
 // UsageGroupByTagArrayInput is an input type that accepts UsageGroupByTagArray and UsageGroupByTagArrayOutput values.
 // You can construct a concrete instance of `UsageGroupByTagArrayInput` via:
 //
@@ -2665,12 +2370,6 @@ func (i UsageGroupByTagArray) ToUsageGroupByTagArrayOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(UsageGroupByTagArrayOutput)
 }
 
-func (i UsageGroupByTagArray) ToOutput(ctx context.Context) pulumix.Output[[]UsageGroupByTag] {
-	return pulumix.Output[[]UsageGroupByTag]{
-		OutputState: i.ToUsageGroupByTagArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type UsageGroupByTagOutput struct{ *pulumi.OutputState }
 
 func (UsageGroupByTagOutput) ElementType() reflect.Type {
@@ -2683,12 +2382,6 @@ func (o UsageGroupByTagOutput) ToUsageGroupByTagOutput() UsageGroupByTagOutput {
 
 func (o UsageGroupByTagOutput) ToUsageGroupByTagOutputWithContext(ctx context.Context) UsageGroupByTagOutput {
 	return o
-}
-
-func (o UsageGroupByTagOutput) ToOutput(ctx context.Context) pulumix.Output[UsageGroupByTag] {
-	return pulumix.Output[UsageGroupByTag]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The tag key.
@@ -2718,12 +2411,6 @@ func (o UsageGroupByTagArrayOutput) ToUsageGroupByTagArrayOutput() UsageGroupByT
 
 func (o UsageGroupByTagArrayOutput) ToUsageGroupByTagArrayOutputWithContext(ctx context.Context) UsageGroupByTagArrayOutput {
 	return o
-}
-
-func (o UsageGroupByTagArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]UsageGroupByTag] {
-	return pulumix.Output[[]UsageGroupByTag]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o UsageGroupByTagArrayOutput) Index(i pulumi.IntInput) UsageGroupByTagOutput {
@@ -2883,12 +2570,6 @@ func (i UsageItemArgs) ToUsageItemOutputWithContext(ctx context.Context) UsageIt
 	return pulumi.ToOutputWithContext(ctx, i).(UsageItemOutput)
 }
 
-func (i UsageItemArgs) ToOutput(ctx context.Context) pulumix.Output[UsageItem] {
-	return pulumix.Output[UsageItem]{
-		OutputState: i.ToUsageItemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // UsageItemArrayInput is an input type that accepts UsageItemArray and UsageItemArrayOutput values.
 // You can construct a concrete instance of `UsageItemArrayInput` via:
 //
@@ -2914,12 +2595,6 @@ func (i UsageItemArray) ToUsageItemArrayOutputWithContext(ctx context.Context) U
 	return pulumi.ToOutputWithContext(ctx, i).(UsageItemArrayOutput)
 }
 
-func (i UsageItemArray) ToOutput(ctx context.Context) pulumix.Output[[]UsageItem] {
-	return pulumix.Output[[]UsageItem]{
-		OutputState: i.ToUsageItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type UsageItemOutput struct{ *pulumi.OutputState }
 
 func (UsageItemOutput) ElementType() reflect.Type {
@@ -2932,12 +2607,6 @@ func (o UsageItemOutput) ToUsageItemOutput() UsageItemOutput {
 
 func (o UsageItemOutput) ToUsageItemOutputWithContext(ctx context.Context) UsageItemOutput {
 	return o
-}
-
-func (o UsageItemOutput) ToOutput(ctx context.Context) pulumix.Output[UsageItem] {
-	return pulumix.Output[UsageItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The availability domain of the usage.
@@ -3102,12 +2771,6 @@ func (o UsageItemArrayOutput) ToUsageItemArrayOutputWithContext(ctx context.Cont
 	return o
 }
 
-func (o UsageItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]UsageItem] {
-	return pulumix.Output[[]UsageItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o UsageItemArrayOutput) Index(i pulumi.IntInput) UsageItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) UsageItem {
 		return vs[0].([]UsageItem)[vs[1].(int)]
@@ -3155,12 +2818,6 @@ func (i UsageItemTagArgs) ToUsageItemTagOutputWithContext(ctx context.Context) U
 	return pulumi.ToOutputWithContext(ctx, i).(UsageItemTagOutput)
 }
 
-func (i UsageItemTagArgs) ToOutput(ctx context.Context) pulumix.Output[UsageItemTag] {
-	return pulumix.Output[UsageItemTag]{
-		OutputState: i.ToUsageItemTagOutputWithContext(ctx).OutputState,
-	}
-}
-
 // UsageItemTagArrayInput is an input type that accepts UsageItemTagArray and UsageItemTagArrayOutput values.
 // You can construct a concrete instance of `UsageItemTagArrayInput` via:
 //
@@ -3186,12 +2843,6 @@ func (i UsageItemTagArray) ToUsageItemTagArrayOutputWithContext(ctx context.Cont
 	return pulumi.ToOutputWithContext(ctx, i).(UsageItemTagArrayOutput)
 }
 
-func (i UsageItemTagArray) ToOutput(ctx context.Context) pulumix.Output[[]UsageItemTag] {
-	return pulumix.Output[[]UsageItemTag]{
-		OutputState: i.ToUsageItemTagArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type UsageItemTagOutput struct{ *pulumi.OutputState }
 
 func (UsageItemTagOutput) ElementType() reflect.Type {
@@ -3204,12 +2855,6 @@ func (o UsageItemTagOutput) ToUsageItemTagOutput() UsageItemTagOutput {
 
 func (o UsageItemTagOutput) ToUsageItemTagOutputWithContext(ctx context.Context) UsageItemTagOutput {
 	return o
-}
-
-func (o UsageItemTagOutput) ToOutput(ctx context.Context) pulumix.Output[UsageItemTag] {
-	return pulumix.Output[UsageItemTag]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The tag key.
@@ -3241,12 +2886,6 @@ func (o UsageItemTagArrayOutput) ToUsageItemTagArrayOutputWithContext(ctx contex
 	return o
 }
 
-func (o UsageItemTagArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]UsageItemTag] {
-	return pulumix.Output[[]UsageItemTag]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o UsageItemTagArrayOutput) Index(i pulumi.IntInput) UsageItemTagOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) UsageItemTag {
 		return vs[0].([]UsageItemTag)[vs[1].(int)]
@@ -3255,7 +2894,7 @@ func (o UsageItemTagArrayOutput) Index(i pulumi.IntInput) UsageItemTagOutput {
 
 type GetConfigurationItem struct {
 	// The configuration key.
-	Key string `pulumi:"key"`
+	Key *string `pulumi:"key"`
 	// The configuration value.
 	Values []string `pulumi:"values"`
 }
@@ -3273,7 +2912,7 @@ type GetConfigurationItemInput interface {
 
 type GetConfigurationItemArgs struct {
 	// The configuration key.
-	Key pulumi.StringInput `pulumi:"key"`
+	Key pulumi.StringPtrInput `pulumi:"key"`
 	// The configuration value.
 	Values pulumi.StringArrayInput `pulumi:"values"`
 }
@@ -3288,12 +2927,6 @@ func (i GetConfigurationItemArgs) ToGetConfigurationItemOutput() GetConfiguratio
 
 func (i GetConfigurationItemArgs) ToGetConfigurationItemOutputWithContext(ctx context.Context) GetConfigurationItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetConfigurationItemOutput)
-}
-
-func (i GetConfigurationItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetConfigurationItem] {
-	return pulumix.Output[GetConfigurationItem]{
-		OutputState: i.ToGetConfigurationItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetConfigurationItemArrayInput is an input type that accepts GetConfigurationItemArray and GetConfigurationItemArrayOutput values.
@@ -3321,12 +2954,6 @@ func (i GetConfigurationItemArray) ToGetConfigurationItemArrayOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(GetConfigurationItemArrayOutput)
 }
 
-func (i GetConfigurationItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetConfigurationItem] {
-	return pulumix.Output[[]GetConfigurationItem]{
-		OutputState: i.ToGetConfigurationItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetConfigurationItemOutput struct{ *pulumi.OutputState }
 
 func (GetConfigurationItemOutput) ElementType() reflect.Type {
@@ -3341,15 +2968,9 @@ func (o GetConfigurationItemOutput) ToGetConfigurationItemOutputWithContext(ctx 
 	return o
 }
 
-func (o GetConfigurationItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetConfigurationItem] {
-	return pulumix.Output[GetConfigurationItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The configuration key.
-func (o GetConfigurationItemOutput) Key() pulumi.StringOutput {
-	return o.ApplyT(func(v GetConfigurationItem) string { return v.Key }).(pulumi.StringOutput)
+func (o GetConfigurationItemOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetConfigurationItem) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
 // The configuration value.
@@ -3371,12 +2992,6 @@ func (o GetConfigurationItemArrayOutput) ToGetConfigurationItemArrayOutputWithCo
 	return o
 }
 
-func (o GetConfigurationItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetConfigurationItem] {
-	return pulumix.Output[[]GetConfigurationItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetConfigurationItemArrayOutput) Index(i pulumi.IntInput) GetConfigurationItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetConfigurationItem {
 		return vs[0].([]GetConfigurationItem)[vs[1].(int)]
@@ -3387,15 +3002,15 @@ type GetCustomTableSavedCustomTable struct {
 	// The column groupBy key list. example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
 	ColumnGroupBies []string `pulumi:"columnGroupBies"`
 	// The compartment depth level.
-	CompartmentDepth float64 `pulumi:"compartmentDepth"`
+	CompartmentDepth *float64 `pulumi:"compartmentDepth"`
 	// The name of the custom table.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only one tag in the list is supported. For example: `[{"namespace":"oracle", "key":"createdBy"]`
 	GroupByTags []GetCustomTableSavedCustomTableGroupByTag `pulumi:"groupByTags"`
 	// The row groupBy key list. example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
 	RowGroupBies []string `pulumi:"rowGroupBies"`
 	// The version of the custom table.
-	Version float64 `pulumi:"version"`
+	Version *float64 `pulumi:"version"`
 }
 
 // GetCustomTableSavedCustomTableInput is an input type that accepts GetCustomTableSavedCustomTableArgs and GetCustomTableSavedCustomTableOutput values.
@@ -3413,15 +3028,15 @@ type GetCustomTableSavedCustomTableArgs struct {
 	// The column groupBy key list. example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
 	ColumnGroupBies pulumi.StringArrayInput `pulumi:"columnGroupBies"`
 	// The compartment depth level.
-	CompartmentDepth pulumi.Float64Input `pulumi:"compartmentDepth"`
+	CompartmentDepth pulumi.Float64PtrInput `pulumi:"compartmentDepth"`
 	// The name of the custom table.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only one tag in the list is supported. For example: `[{"namespace":"oracle", "key":"createdBy"]`
 	GroupByTags GetCustomTableSavedCustomTableGroupByTagArrayInput `pulumi:"groupByTags"`
 	// The row groupBy key list. example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
 	RowGroupBies pulumi.StringArrayInput `pulumi:"rowGroupBies"`
 	// The version of the custom table.
-	Version pulumi.Float64Input `pulumi:"version"`
+	Version pulumi.Float64PtrInput `pulumi:"version"`
 }
 
 func (GetCustomTableSavedCustomTableArgs) ElementType() reflect.Type {
@@ -3434,12 +3049,6 @@ func (i GetCustomTableSavedCustomTableArgs) ToGetCustomTableSavedCustomTableOutp
 
 func (i GetCustomTableSavedCustomTableArgs) ToGetCustomTableSavedCustomTableOutputWithContext(ctx context.Context) GetCustomTableSavedCustomTableOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetCustomTableSavedCustomTableOutput)
-}
-
-func (i GetCustomTableSavedCustomTableArgs) ToOutput(ctx context.Context) pulumix.Output[GetCustomTableSavedCustomTable] {
-	return pulumix.Output[GetCustomTableSavedCustomTable]{
-		OutputState: i.ToGetCustomTableSavedCustomTableOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetCustomTableSavedCustomTableArrayInput is an input type that accepts GetCustomTableSavedCustomTableArray and GetCustomTableSavedCustomTableArrayOutput values.
@@ -3467,12 +3076,6 @@ func (i GetCustomTableSavedCustomTableArray) ToGetCustomTableSavedCustomTableArr
 	return pulumi.ToOutputWithContext(ctx, i).(GetCustomTableSavedCustomTableArrayOutput)
 }
 
-func (i GetCustomTableSavedCustomTableArray) ToOutput(ctx context.Context) pulumix.Output[[]GetCustomTableSavedCustomTable] {
-	return pulumix.Output[[]GetCustomTableSavedCustomTable]{
-		OutputState: i.ToGetCustomTableSavedCustomTableArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetCustomTableSavedCustomTableOutput struct{ *pulumi.OutputState }
 
 func (GetCustomTableSavedCustomTableOutput) ElementType() reflect.Type {
@@ -3487,25 +3090,19 @@ func (o GetCustomTableSavedCustomTableOutput) ToGetCustomTableSavedCustomTableOu
 	return o
 }
 
-func (o GetCustomTableSavedCustomTableOutput) ToOutput(ctx context.Context) pulumix.Output[GetCustomTableSavedCustomTable] {
-	return pulumix.Output[GetCustomTableSavedCustomTable]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The column groupBy key list. example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
 func (o GetCustomTableSavedCustomTableOutput) ColumnGroupBies() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetCustomTableSavedCustomTable) []string { return v.ColumnGroupBies }).(pulumi.StringArrayOutput)
 }
 
 // The compartment depth level.
-func (o GetCustomTableSavedCustomTableOutput) CompartmentDepth() pulumi.Float64Output {
-	return o.ApplyT(func(v GetCustomTableSavedCustomTable) float64 { return v.CompartmentDepth }).(pulumi.Float64Output)
+func (o GetCustomTableSavedCustomTableOutput) CompartmentDepth() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetCustomTableSavedCustomTable) *float64 { return v.CompartmentDepth }).(pulumi.Float64PtrOutput)
 }
 
 // The name of the custom table.
-func (o GetCustomTableSavedCustomTableOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCustomTableSavedCustomTable) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetCustomTableSavedCustomTableOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCustomTableSavedCustomTable) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only one tag in the list is supported. For example: `[{"namespace":"oracle", "key":"createdBy"]`
@@ -3521,8 +3118,8 @@ func (o GetCustomTableSavedCustomTableOutput) RowGroupBies() pulumi.StringArrayO
 }
 
 // The version of the custom table.
-func (o GetCustomTableSavedCustomTableOutput) Version() pulumi.Float64Output {
-	return o.ApplyT(func(v GetCustomTableSavedCustomTable) float64 { return v.Version }).(pulumi.Float64Output)
+func (o GetCustomTableSavedCustomTableOutput) Version() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetCustomTableSavedCustomTable) *float64 { return v.Version }).(pulumi.Float64PtrOutput)
 }
 
 type GetCustomTableSavedCustomTableArrayOutput struct{ *pulumi.OutputState }
@@ -3539,12 +3136,6 @@ func (o GetCustomTableSavedCustomTableArrayOutput) ToGetCustomTableSavedCustomTa
 	return o
 }
 
-func (o GetCustomTableSavedCustomTableArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetCustomTableSavedCustomTable] {
-	return pulumix.Output[[]GetCustomTableSavedCustomTable]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetCustomTableSavedCustomTableArrayOutput) Index(i pulumi.IntInput) GetCustomTableSavedCustomTableOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCustomTableSavedCustomTable {
 		return vs[0].([]GetCustomTableSavedCustomTable)[vs[1].(int)]
@@ -3553,11 +3144,11 @@ func (o GetCustomTableSavedCustomTableArrayOutput) Index(i pulumi.IntInput) GetC
 
 type GetCustomTableSavedCustomTableGroupByTag struct {
 	// The tag key.
-	Key string `pulumi:"key"`
+	Key *string `pulumi:"key"`
 	// The tag namespace.
-	Namespace string `pulumi:"namespace"`
+	Namespace *string `pulumi:"namespace"`
 	// The tag value.
-	Value string `pulumi:"value"`
+	Value *string `pulumi:"value"`
 }
 
 // GetCustomTableSavedCustomTableGroupByTagInput is an input type that accepts GetCustomTableSavedCustomTableGroupByTagArgs and GetCustomTableSavedCustomTableGroupByTagOutput values.
@@ -3573,11 +3164,11 @@ type GetCustomTableSavedCustomTableGroupByTagInput interface {
 
 type GetCustomTableSavedCustomTableGroupByTagArgs struct {
 	// The tag key.
-	Key pulumi.StringInput `pulumi:"key"`
+	Key pulumi.StringPtrInput `pulumi:"key"`
 	// The tag namespace.
-	Namespace pulumi.StringInput `pulumi:"namespace"`
+	Namespace pulumi.StringPtrInput `pulumi:"namespace"`
 	// The tag value.
-	Value pulumi.StringInput `pulumi:"value"`
+	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
 func (GetCustomTableSavedCustomTableGroupByTagArgs) ElementType() reflect.Type {
@@ -3590,12 +3181,6 @@ func (i GetCustomTableSavedCustomTableGroupByTagArgs) ToGetCustomTableSavedCusto
 
 func (i GetCustomTableSavedCustomTableGroupByTagArgs) ToGetCustomTableSavedCustomTableGroupByTagOutputWithContext(ctx context.Context) GetCustomTableSavedCustomTableGroupByTagOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetCustomTableSavedCustomTableGroupByTagOutput)
-}
-
-func (i GetCustomTableSavedCustomTableGroupByTagArgs) ToOutput(ctx context.Context) pulumix.Output[GetCustomTableSavedCustomTableGroupByTag] {
-	return pulumix.Output[GetCustomTableSavedCustomTableGroupByTag]{
-		OutputState: i.ToGetCustomTableSavedCustomTableGroupByTagOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetCustomTableSavedCustomTableGroupByTagArrayInput is an input type that accepts GetCustomTableSavedCustomTableGroupByTagArray and GetCustomTableSavedCustomTableGroupByTagArrayOutput values.
@@ -3623,12 +3208,6 @@ func (i GetCustomTableSavedCustomTableGroupByTagArray) ToGetCustomTableSavedCust
 	return pulumi.ToOutputWithContext(ctx, i).(GetCustomTableSavedCustomTableGroupByTagArrayOutput)
 }
 
-func (i GetCustomTableSavedCustomTableGroupByTagArray) ToOutput(ctx context.Context) pulumix.Output[[]GetCustomTableSavedCustomTableGroupByTag] {
-	return pulumix.Output[[]GetCustomTableSavedCustomTableGroupByTag]{
-		OutputState: i.ToGetCustomTableSavedCustomTableGroupByTagArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetCustomTableSavedCustomTableGroupByTagOutput struct{ *pulumi.OutputState }
 
 func (GetCustomTableSavedCustomTableGroupByTagOutput) ElementType() reflect.Type {
@@ -3643,25 +3222,19 @@ func (o GetCustomTableSavedCustomTableGroupByTagOutput) ToGetCustomTableSavedCus
 	return o
 }
 
-func (o GetCustomTableSavedCustomTableGroupByTagOutput) ToOutput(ctx context.Context) pulumix.Output[GetCustomTableSavedCustomTableGroupByTag] {
-	return pulumix.Output[GetCustomTableSavedCustomTableGroupByTag]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The tag key.
-func (o GetCustomTableSavedCustomTableGroupByTagOutput) Key() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCustomTableSavedCustomTableGroupByTag) string { return v.Key }).(pulumi.StringOutput)
+func (o GetCustomTableSavedCustomTableGroupByTagOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCustomTableSavedCustomTableGroupByTag) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
 // The tag namespace.
-func (o GetCustomTableSavedCustomTableGroupByTagOutput) Namespace() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCustomTableSavedCustomTableGroupByTag) string { return v.Namespace }).(pulumi.StringOutput)
+func (o GetCustomTableSavedCustomTableGroupByTagOutput) Namespace() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCustomTableSavedCustomTableGroupByTag) *string { return v.Namespace }).(pulumi.StringPtrOutput)
 }
 
 // The tag value.
-func (o GetCustomTableSavedCustomTableGroupByTagOutput) Value() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCustomTableSavedCustomTableGroupByTag) string { return v.Value }).(pulumi.StringOutput)
+func (o GetCustomTableSavedCustomTableGroupByTagOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCustomTableSavedCustomTableGroupByTag) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
 
 type GetCustomTableSavedCustomTableGroupByTagArrayOutput struct{ *pulumi.OutputState }
@@ -3676,12 +3249,6 @@ func (o GetCustomTableSavedCustomTableGroupByTagArrayOutput) ToGetCustomTableSav
 
 func (o GetCustomTableSavedCustomTableGroupByTagArrayOutput) ToGetCustomTableSavedCustomTableGroupByTagArrayOutputWithContext(ctx context.Context) GetCustomTableSavedCustomTableGroupByTagArrayOutput {
 	return o
-}
-
-func (o GetCustomTableSavedCustomTableGroupByTagArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetCustomTableSavedCustomTableGroupByTag] {
-	return pulumix.Output[[]GetCustomTableSavedCustomTableGroupByTag]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetCustomTableSavedCustomTableGroupByTagArrayOutput) Index(i pulumi.IntInput) GetCustomTableSavedCustomTableGroupByTagOutput {
@@ -3721,12 +3288,6 @@ func (i GetCustomTablesCustomTableCollectionArgs) ToGetCustomTablesCustomTableCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetCustomTablesCustomTableCollectionOutput)
 }
 
-func (i GetCustomTablesCustomTableCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetCustomTablesCustomTableCollection] {
-	return pulumix.Output[GetCustomTablesCustomTableCollection]{
-		OutputState: i.ToGetCustomTablesCustomTableCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetCustomTablesCustomTableCollectionArrayInput is an input type that accepts GetCustomTablesCustomTableCollectionArray and GetCustomTablesCustomTableCollectionArrayOutput values.
 // You can construct a concrete instance of `GetCustomTablesCustomTableCollectionArrayInput` via:
 //
@@ -3752,12 +3313,6 @@ func (i GetCustomTablesCustomTableCollectionArray) ToGetCustomTablesCustomTableC
 	return pulumi.ToOutputWithContext(ctx, i).(GetCustomTablesCustomTableCollectionArrayOutput)
 }
 
-func (i GetCustomTablesCustomTableCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetCustomTablesCustomTableCollection] {
-	return pulumix.Output[[]GetCustomTablesCustomTableCollection]{
-		OutputState: i.ToGetCustomTablesCustomTableCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetCustomTablesCustomTableCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetCustomTablesCustomTableCollectionOutput) ElementType() reflect.Type {
@@ -3770,12 +3325,6 @@ func (o GetCustomTablesCustomTableCollectionOutput) ToGetCustomTablesCustomTable
 
 func (o GetCustomTablesCustomTableCollectionOutput) ToGetCustomTablesCustomTableCollectionOutputWithContext(ctx context.Context) GetCustomTablesCustomTableCollectionOutput {
 	return o
-}
-
-func (o GetCustomTablesCustomTableCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetCustomTablesCustomTableCollection] {
-	return pulumix.Output[GetCustomTablesCustomTableCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetCustomTablesCustomTableCollectionOutput) Items() GetCustomTablesCustomTableCollectionItemArrayOutput {
@@ -3798,12 +3347,6 @@ func (o GetCustomTablesCustomTableCollectionArrayOutput) ToGetCustomTablesCustom
 	return o
 }
 
-func (o GetCustomTablesCustomTableCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetCustomTablesCustomTableCollection] {
-	return pulumix.Output[[]GetCustomTablesCustomTableCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetCustomTablesCustomTableCollectionArrayOutput) Index(i pulumi.IntInput) GetCustomTablesCustomTableCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCustomTablesCustomTableCollection {
 		return vs[0].([]GetCustomTablesCustomTableCollection)[vs[1].(int)]
@@ -3812,13 +3355,13 @@ func (o GetCustomTablesCustomTableCollectionArrayOutput) Index(i pulumi.IntInput
 
 type GetCustomTablesCustomTableCollectionItem struct {
 	// The compartment ID in which to list resources.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// The custom table OCID.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The custom table for Cost Analysis UI rendering.
 	SavedCustomTables []GetCustomTablesCustomTableCollectionItemSavedCustomTable `pulumi:"savedCustomTables"`
 	// The saved report ID in which to list resources.
-	SavedReportId string `pulumi:"savedReportId"`
+	SavedReportId *string `pulumi:"savedReportId"`
 }
 
 // GetCustomTablesCustomTableCollectionItemInput is an input type that accepts GetCustomTablesCustomTableCollectionItemArgs and GetCustomTablesCustomTableCollectionItemOutput values.
@@ -3834,13 +3377,13 @@ type GetCustomTablesCustomTableCollectionItemInput interface {
 
 type GetCustomTablesCustomTableCollectionItemArgs struct {
 	// The compartment ID in which to list resources.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// The custom table OCID.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// The custom table for Cost Analysis UI rendering.
 	SavedCustomTables GetCustomTablesCustomTableCollectionItemSavedCustomTableArrayInput `pulumi:"savedCustomTables"`
 	// The saved report ID in which to list resources.
-	SavedReportId pulumi.StringInput `pulumi:"savedReportId"`
+	SavedReportId pulumi.StringPtrInput `pulumi:"savedReportId"`
 }
 
 func (GetCustomTablesCustomTableCollectionItemArgs) ElementType() reflect.Type {
@@ -3853,12 +3396,6 @@ func (i GetCustomTablesCustomTableCollectionItemArgs) ToGetCustomTablesCustomTab
 
 func (i GetCustomTablesCustomTableCollectionItemArgs) ToGetCustomTablesCustomTableCollectionItemOutputWithContext(ctx context.Context) GetCustomTablesCustomTableCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetCustomTablesCustomTableCollectionItemOutput)
-}
-
-func (i GetCustomTablesCustomTableCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetCustomTablesCustomTableCollectionItem] {
-	return pulumix.Output[GetCustomTablesCustomTableCollectionItem]{
-		OutputState: i.ToGetCustomTablesCustomTableCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetCustomTablesCustomTableCollectionItemArrayInput is an input type that accepts GetCustomTablesCustomTableCollectionItemArray and GetCustomTablesCustomTableCollectionItemArrayOutput values.
@@ -3886,12 +3423,6 @@ func (i GetCustomTablesCustomTableCollectionItemArray) ToGetCustomTablesCustomTa
 	return pulumi.ToOutputWithContext(ctx, i).(GetCustomTablesCustomTableCollectionItemArrayOutput)
 }
 
-func (i GetCustomTablesCustomTableCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetCustomTablesCustomTableCollectionItem] {
-	return pulumix.Output[[]GetCustomTablesCustomTableCollectionItem]{
-		OutputState: i.ToGetCustomTablesCustomTableCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetCustomTablesCustomTableCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetCustomTablesCustomTableCollectionItemOutput) ElementType() reflect.Type {
@@ -3906,20 +3437,14 @@ func (o GetCustomTablesCustomTableCollectionItemOutput) ToGetCustomTablesCustomT
 	return o
 }
 
-func (o GetCustomTablesCustomTableCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetCustomTablesCustomTableCollectionItem] {
-	return pulumix.Output[GetCustomTablesCustomTableCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The compartment ID in which to list resources.
-func (o GetCustomTablesCustomTableCollectionItemOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCustomTablesCustomTableCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetCustomTablesCustomTableCollectionItemOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCustomTablesCustomTableCollectionItem) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // The custom table OCID.
-func (o GetCustomTablesCustomTableCollectionItemOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCustomTablesCustomTableCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+func (o GetCustomTablesCustomTableCollectionItemOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCustomTablesCustomTableCollectionItem) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The custom table for Cost Analysis UI rendering.
@@ -3930,8 +3455,8 @@ func (o GetCustomTablesCustomTableCollectionItemOutput) SavedCustomTables() GetC
 }
 
 // The saved report ID in which to list resources.
-func (o GetCustomTablesCustomTableCollectionItemOutput) SavedReportId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCustomTablesCustomTableCollectionItem) string { return v.SavedReportId }).(pulumi.StringOutput)
+func (o GetCustomTablesCustomTableCollectionItemOutput) SavedReportId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCustomTablesCustomTableCollectionItem) *string { return v.SavedReportId }).(pulumi.StringPtrOutput)
 }
 
 type GetCustomTablesCustomTableCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -3948,12 +3473,6 @@ func (o GetCustomTablesCustomTableCollectionItemArrayOutput) ToGetCustomTablesCu
 	return o
 }
 
-func (o GetCustomTablesCustomTableCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetCustomTablesCustomTableCollectionItem] {
-	return pulumix.Output[[]GetCustomTablesCustomTableCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetCustomTablesCustomTableCollectionItemArrayOutput) Index(i pulumi.IntInput) GetCustomTablesCustomTableCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCustomTablesCustomTableCollectionItem {
 		return vs[0].([]GetCustomTablesCustomTableCollectionItem)[vs[1].(int)]
@@ -3964,15 +3483,15 @@ type GetCustomTablesCustomTableCollectionItemSavedCustomTable struct {
 	// The column groupBy key list. example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
 	ColumnGroupBies []string `pulumi:"columnGroupBies"`
 	// The compartment depth level.
-	CompartmentDepth float64 `pulumi:"compartmentDepth"`
+	CompartmentDepth *float64 `pulumi:"compartmentDepth"`
 	// The name of the custom table.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only one tag in the list is supported. For example: `[{"namespace":"oracle", "key":"createdBy"]`
 	GroupByTags []GetCustomTablesCustomTableCollectionItemSavedCustomTableGroupByTag `pulumi:"groupByTags"`
 	// The row groupBy key list. example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
 	RowGroupBies []string `pulumi:"rowGroupBies"`
 	// The version of the custom table.
-	Version float64 `pulumi:"version"`
+	Version *float64 `pulumi:"version"`
 }
 
 // GetCustomTablesCustomTableCollectionItemSavedCustomTableInput is an input type that accepts GetCustomTablesCustomTableCollectionItemSavedCustomTableArgs and GetCustomTablesCustomTableCollectionItemSavedCustomTableOutput values.
@@ -3990,15 +3509,15 @@ type GetCustomTablesCustomTableCollectionItemSavedCustomTableArgs struct {
 	// The column groupBy key list. example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
 	ColumnGroupBies pulumi.StringArrayInput `pulumi:"columnGroupBies"`
 	// The compartment depth level.
-	CompartmentDepth pulumi.Float64Input `pulumi:"compartmentDepth"`
+	CompartmentDepth pulumi.Float64PtrInput `pulumi:"compartmentDepth"`
 	// The name of the custom table.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only one tag in the list is supported. For example: `[{"namespace":"oracle", "key":"createdBy"]`
 	GroupByTags GetCustomTablesCustomTableCollectionItemSavedCustomTableGroupByTagArrayInput `pulumi:"groupByTags"`
 	// The row groupBy key list. example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
 	RowGroupBies pulumi.StringArrayInput `pulumi:"rowGroupBies"`
 	// The version of the custom table.
-	Version pulumi.Float64Input `pulumi:"version"`
+	Version pulumi.Float64PtrInput `pulumi:"version"`
 }
 
 func (GetCustomTablesCustomTableCollectionItemSavedCustomTableArgs) ElementType() reflect.Type {
@@ -4011,12 +3530,6 @@ func (i GetCustomTablesCustomTableCollectionItemSavedCustomTableArgs) ToGetCusto
 
 func (i GetCustomTablesCustomTableCollectionItemSavedCustomTableArgs) ToGetCustomTablesCustomTableCollectionItemSavedCustomTableOutputWithContext(ctx context.Context) GetCustomTablesCustomTableCollectionItemSavedCustomTableOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetCustomTablesCustomTableCollectionItemSavedCustomTableOutput)
-}
-
-func (i GetCustomTablesCustomTableCollectionItemSavedCustomTableArgs) ToOutput(ctx context.Context) pulumix.Output[GetCustomTablesCustomTableCollectionItemSavedCustomTable] {
-	return pulumix.Output[GetCustomTablesCustomTableCollectionItemSavedCustomTable]{
-		OutputState: i.ToGetCustomTablesCustomTableCollectionItemSavedCustomTableOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetCustomTablesCustomTableCollectionItemSavedCustomTableArrayInput is an input type that accepts GetCustomTablesCustomTableCollectionItemSavedCustomTableArray and GetCustomTablesCustomTableCollectionItemSavedCustomTableArrayOutput values.
@@ -4044,12 +3557,6 @@ func (i GetCustomTablesCustomTableCollectionItemSavedCustomTableArray) ToGetCust
 	return pulumi.ToOutputWithContext(ctx, i).(GetCustomTablesCustomTableCollectionItemSavedCustomTableArrayOutput)
 }
 
-func (i GetCustomTablesCustomTableCollectionItemSavedCustomTableArray) ToOutput(ctx context.Context) pulumix.Output[[]GetCustomTablesCustomTableCollectionItemSavedCustomTable] {
-	return pulumix.Output[[]GetCustomTablesCustomTableCollectionItemSavedCustomTable]{
-		OutputState: i.ToGetCustomTablesCustomTableCollectionItemSavedCustomTableArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetCustomTablesCustomTableCollectionItemSavedCustomTableOutput struct{ *pulumi.OutputState }
 
 func (GetCustomTablesCustomTableCollectionItemSavedCustomTableOutput) ElementType() reflect.Type {
@@ -4064,25 +3571,19 @@ func (o GetCustomTablesCustomTableCollectionItemSavedCustomTableOutput) ToGetCus
 	return o
 }
 
-func (o GetCustomTablesCustomTableCollectionItemSavedCustomTableOutput) ToOutput(ctx context.Context) pulumix.Output[GetCustomTablesCustomTableCollectionItemSavedCustomTable] {
-	return pulumix.Output[GetCustomTablesCustomTableCollectionItemSavedCustomTable]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The column groupBy key list. example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
 func (o GetCustomTablesCustomTableCollectionItemSavedCustomTableOutput) ColumnGroupBies() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetCustomTablesCustomTableCollectionItemSavedCustomTable) []string { return v.ColumnGroupBies }).(pulumi.StringArrayOutput)
 }
 
 // The compartment depth level.
-func (o GetCustomTablesCustomTableCollectionItemSavedCustomTableOutput) CompartmentDepth() pulumi.Float64Output {
-	return o.ApplyT(func(v GetCustomTablesCustomTableCollectionItemSavedCustomTable) float64 { return v.CompartmentDepth }).(pulumi.Float64Output)
+func (o GetCustomTablesCustomTableCollectionItemSavedCustomTableOutput) CompartmentDepth() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetCustomTablesCustomTableCollectionItemSavedCustomTable) *float64 { return v.CompartmentDepth }).(pulumi.Float64PtrOutput)
 }
 
 // The name of the custom table.
-func (o GetCustomTablesCustomTableCollectionItemSavedCustomTableOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCustomTablesCustomTableCollectionItemSavedCustomTable) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetCustomTablesCustomTableCollectionItemSavedCustomTableOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCustomTablesCustomTableCollectionItemSavedCustomTable) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only one tag in the list is supported. For example: `[{"namespace":"oracle", "key":"createdBy"]`
@@ -4098,8 +3599,8 @@ func (o GetCustomTablesCustomTableCollectionItemSavedCustomTableOutput) RowGroup
 }
 
 // The version of the custom table.
-func (o GetCustomTablesCustomTableCollectionItemSavedCustomTableOutput) Version() pulumi.Float64Output {
-	return o.ApplyT(func(v GetCustomTablesCustomTableCollectionItemSavedCustomTable) float64 { return v.Version }).(pulumi.Float64Output)
+func (o GetCustomTablesCustomTableCollectionItemSavedCustomTableOutput) Version() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetCustomTablesCustomTableCollectionItemSavedCustomTable) *float64 { return v.Version }).(pulumi.Float64PtrOutput)
 }
 
 type GetCustomTablesCustomTableCollectionItemSavedCustomTableArrayOutput struct{ *pulumi.OutputState }
@@ -4116,12 +3617,6 @@ func (o GetCustomTablesCustomTableCollectionItemSavedCustomTableArrayOutput) ToG
 	return o
 }
 
-func (o GetCustomTablesCustomTableCollectionItemSavedCustomTableArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetCustomTablesCustomTableCollectionItemSavedCustomTable] {
-	return pulumix.Output[[]GetCustomTablesCustomTableCollectionItemSavedCustomTable]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetCustomTablesCustomTableCollectionItemSavedCustomTableArrayOutput) Index(i pulumi.IntInput) GetCustomTablesCustomTableCollectionItemSavedCustomTableOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCustomTablesCustomTableCollectionItemSavedCustomTable {
 		return vs[0].([]GetCustomTablesCustomTableCollectionItemSavedCustomTable)[vs[1].(int)]
@@ -4130,11 +3625,11 @@ func (o GetCustomTablesCustomTableCollectionItemSavedCustomTableArrayOutput) Ind
 
 type GetCustomTablesCustomTableCollectionItemSavedCustomTableGroupByTag struct {
 	// The tag key.
-	Key string `pulumi:"key"`
+	Key *string `pulumi:"key"`
 	// The tag namespace.
-	Namespace string `pulumi:"namespace"`
+	Namespace *string `pulumi:"namespace"`
 	// The tag value.
-	Value string `pulumi:"value"`
+	Value *string `pulumi:"value"`
 }
 
 // GetCustomTablesCustomTableCollectionItemSavedCustomTableGroupByTagInput is an input type that accepts GetCustomTablesCustomTableCollectionItemSavedCustomTableGroupByTagArgs and GetCustomTablesCustomTableCollectionItemSavedCustomTableGroupByTagOutput values.
@@ -4150,11 +3645,11 @@ type GetCustomTablesCustomTableCollectionItemSavedCustomTableGroupByTagInput int
 
 type GetCustomTablesCustomTableCollectionItemSavedCustomTableGroupByTagArgs struct {
 	// The tag key.
-	Key pulumi.StringInput `pulumi:"key"`
+	Key pulumi.StringPtrInput `pulumi:"key"`
 	// The tag namespace.
-	Namespace pulumi.StringInput `pulumi:"namespace"`
+	Namespace pulumi.StringPtrInput `pulumi:"namespace"`
 	// The tag value.
-	Value pulumi.StringInput `pulumi:"value"`
+	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
 func (GetCustomTablesCustomTableCollectionItemSavedCustomTableGroupByTagArgs) ElementType() reflect.Type {
@@ -4167,12 +3662,6 @@ func (i GetCustomTablesCustomTableCollectionItemSavedCustomTableGroupByTagArgs) 
 
 func (i GetCustomTablesCustomTableCollectionItemSavedCustomTableGroupByTagArgs) ToGetCustomTablesCustomTableCollectionItemSavedCustomTableGroupByTagOutputWithContext(ctx context.Context) GetCustomTablesCustomTableCollectionItemSavedCustomTableGroupByTagOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetCustomTablesCustomTableCollectionItemSavedCustomTableGroupByTagOutput)
-}
-
-func (i GetCustomTablesCustomTableCollectionItemSavedCustomTableGroupByTagArgs) ToOutput(ctx context.Context) pulumix.Output[GetCustomTablesCustomTableCollectionItemSavedCustomTableGroupByTag] {
-	return pulumix.Output[GetCustomTablesCustomTableCollectionItemSavedCustomTableGroupByTag]{
-		OutputState: i.ToGetCustomTablesCustomTableCollectionItemSavedCustomTableGroupByTagOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetCustomTablesCustomTableCollectionItemSavedCustomTableGroupByTagArrayInput is an input type that accepts GetCustomTablesCustomTableCollectionItemSavedCustomTableGroupByTagArray and GetCustomTablesCustomTableCollectionItemSavedCustomTableGroupByTagArrayOutput values.
@@ -4200,12 +3689,6 @@ func (i GetCustomTablesCustomTableCollectionItemSavedCustomTableGroupByTagArray)
 	return pulumi.ToOutputWithContext(ctx, i).(GetCustomTablesCustomTableCollectionItemSavedCustomTableGroupByTagArrayOutput)
 }
 
-func (i GetCustomTablesCustomTableCollectionItemSavedCustomTableGroupByTagArray) ToOutput(ctx context.Context) pulumix.Output[[]GetCustomTablesCustomTableCollectionItemSavedCustomTableGroupByTag] {
-	return pulumix.Output[[]GetCustomTablesCustomTableCollectionItemSavedCustomTableGroupByTag]{
-		OutputState: i.ToGetCustomTablesCustomTableCollectionItemSavedCustomTableGroupByTagArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetCustomTablesCustomTableCollectionItemSavedCustomTableGroupByTagOutput struct{ *pulumi.OutputState }
 
 func (GetCustomTablesCustomTableCollectionItemSavedCustomTableGroupByTagOutput) ElementType() reflect.Type {
@@ -4220,25 +3703,19 @@ func (o GetCustomTablesCustomTableCollectionItemSavedCustomTableGroupByTagOutput
 	return o
 }
 
-func (o GetCustomTablesCustomTableCollectionItemSavedCustomTableGroupByTagOutput) ToOutput(ctx context.Context) pulumix.Output[GetCustomTablesCustomTableCollectionItemSavedCustomTableGroupByTag] {
-	return pulumix.Output[GetCustomTablesCustomTableCollectionItemSavedCustomTableGroupByTag]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The tag key.
-func (o GetCustomTablesCustomTableCollectionItemSavedCustomTableGroupByTagOutput) Key() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCustomTablesCustomTableCollectionItemSavedCustomTableGroupByTag) string { return v.Key }).(pulumi.StringOutput)
+func (o GetCustomTablesCustomTableCollectionItemSavedCustomTableGroupByTagOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCustomTablesCustomTableCollectionItemSavedCustomTableGroupByTag) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
 // The tag namespace.
-func (o GetCustomTablesCustomTableCollectionItemSavedCustomTableGroupByTagOutput) Namespace() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCustomTablesCustomTableCollectionItemSavedCustomTableGroupByTag) string { return v.Namespace }).(pulumi.StringOutput)
+func (o GetCustomTablesCustomTableCollectionItemSavedCustomTableGroupByTagOutput) Namespace() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCustomTablesCustomTableCollectionItemSavedCustomTableGroupByTag) *string { return v.Namespace }).(pulumi.StringPtrOutput)
 }
 
 // The tag value.
-func (o GetCustomTablesCustomTableCollectionItemSavedCustomTableGroupByTagOutput) Value() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCustomTablesCustomTableCollectionItemSavedCustomTableGroupByTag) string { return v.Value }).(pulumi.StringOutput)
+func (o GetCustomTablesCustomTableCollectionItemSavedCustomTableGroupByTagOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCustomTablesCustomTableCollectionItemSavedCustomTableGroupByTag) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
 
 type GetCustomTablesCustomTableCollectionItemSavedCustomTableGroupByTagArrayOutput struct{ *pulumi.OutputState }
@@ -4253,12 +3730,6 @@ func (o GetCustomTablesCustomTableCollectionItemSavedCustomTableGroupByTagArrayO
 
 func (o GetCustomTablesCustomTableCollectionItemSavedCustomTableGroupByTagArrayOutput) ToGetCustomTablesCustomTableCollectionItemSavedCustomTableGroupByTagArrayOutputWithContext(ctx context.Context) GetCustomTablesCustomTableCollectionItemSavedCustomTableGroupByTagArrayOutput {
 	return o
-}
-
-func (o GetCustomTablesCustomTableCollectionItemSavedCustomTableGroupByTagArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetCustomTablesCustomTableCollectionItemSavedCustomTableGroupByTag] {
-	return pulumix.Output[[]GetCustomTablesCustomTableCollectionItemSavedCustomTableGroupByTag]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetCustomTablesCustomTableCollectionItemSavedCustomTableGroupByTagArrayOutput) Index(i pulumi.IntInput) GetCustomTablesCustomTableCollectionItemSavedCustomTableGroupByTagOutput {
@@ -4302,12 +3773,6 @@ func (i GetCustomTablesFilterArgs) ToGetCustomTablesFilterOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(GetCustomTablesFilterOutput)
 }
 
-func (i GetCustomTablesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetCustomTablesFilter] {
-	return pulumix.Output[GetCustomTablesFilter]{
-		OutputState: i.ToGetCustomTablesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetCustomTablesFilterArrayInput is an input type that accepts GetCustomTablesFilterArray and GetCustomTablesFilterArrayOutput values.
 // You can construct a concrete instance of `GetCustomTablesFilterArrayInput` via:
 //
@@ -4333,12 +3798,6 @@ func (i GetCustomTablesFilterArray) ToGetCustomTablesFilterArrayOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetCustomTablesFilterArrayOutput)
 }
 
-func (i GetCustomTablesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetCustomTablesFilter] {
-	return pulumix.Output[[]GetCustomTablesFilter]{
-		OutputState: i.ToGetCustomTablesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetCustomTablesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetCustomTablesFilterOutput) ElementType() reflect.Type {
@@ -4351,12 +3810,6 @@ func (o GetCustomTablesFilterOutput) ToGetCustomTablesFilterOutput() GetCustomTa
 
 func (o GetCustomTablesFilterOutput) ToGetCustomTablesFilterOutputWithContext(ctx context.Context) GetCustomTablesFilterOutput {
 	return o
-}
-
-func (o GetCustomTablesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetCustomTablesFilter] {
-	return pulumix.Output[GetCustomTablesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetCustomTablesFilterOutput) Name() pulumi.StringOutput {
@@ -4383,12 +3836,6 @@ func (o GetCustomTablesFilterArrayOutput) ToGetCustomTablesFilterArrayOutput() G
 
 func (o GetCustomTablesFilterArrayOutput) ToGetCustomTablesFilterArrayOutputWithContext(ctx context.Context) GetCustomTablesFilterArrayOutput {
 	return o
-}
-
-func (o GetCustomTablesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetCustomTablesFilter] {
-	return pulumix.Output[[]GetCustomTablesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetCustomTablesFilterArrayOutput) Index(i pulumi.IntInput) GetCustomTablesFilterOutput {
@@ -4432,12 +3879,6 @@ func (i GetQueriesFilterArgs) ToGetQueriesFilterOutputWithContext(ctx context.Co
 	return pulumi.ToOutputWithContext(ctx, i).(GetQueriesFilterOutput)
 }
 
-func (i GetQueriesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetQueriesFilter] {
-	return pulumix.Output[GetQueriesFilter]{
-		OutputState: i.ToGetQueriesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetQueriesFilterArrayInput is an input type that accepts GetQueriesFilterArray and GetQueriesFilterArrayOutput values.
 // You can construct a concrete instance of `GetQueriesFilterArrayInput` via:
 //
@@ -4463,12 +3904,6 @@ func (i GetQueriesFilterArray) ToGetQueriesFilterArrayOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(GetQueriesFilterArrayOutput)
 }
 
-func (i GetQueriesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetQueriesFilter] {
-	return pulumix.Output[[]GetQueriesFilter]{
-		OutputState: i.ToGetQueriesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetQueriesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetQueriesFilterOutput) ElementType() reflect.Type {
@@ -4481,12 +3916,6 @@ func (o GetQueriesFilterOutput) ToGetQueriesFilterOutput() GetQueriesFilterOutpu
 
 func (o GetQueriesFilterOutput) ToGetQueriesFilterOutputWithContext(ctx context.Context) GetQueriesFilterOutput {
 	return o
-}
-
-func (o GetQueriesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetQueriesFilter] {
-	return pulumix.Output[GetQueriesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetQueriesFilterOutput) Name() pulumi.StringOutput {
@@ -4513,12 +3942,6 @@ func (o GetQueriesFilterArrayOutput) ToGetQueriesFilterArrayOutput() GetQueriesF
 
 func (o GetQueriesFilterArrayOutput) ToGetQueriesFilterArrayOutputWithContext(ctx context.Context) GetQueriesFilterArrayOutput {
 	return o
-}
-
-func (o GetQueriesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetQueriesFilter] {
-	return pulumix.Output[[]GetQueriesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetQueriesFilterArrayOutput) Index(i pulumi.IntInput) GetQueriesFilterOutput {
@@ -4558,12 +3981,6 @@ func (i GetQueriesQueryCollectionArgs) ToGetQueriesQueryCollectionOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetQueriesQueryCollectionOutput)
 }
 
-func (i GetQueriesQueryCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetQueriesQueryCollection] {
-	return pulumix.Output[GetQueriesQueryCollection]{
-		OutputState: i.ToGetQueriesQueryCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetQueriesQueryCollectionArrayInput is an input type that accepts GetQueriesQueryCollectionArray and GetQueriesQueryCollectionArrayOutput values.
 // You can construct a concrete instance of `GetQueriesQueryCollectionArrayInput` via:
 //
@@ -4589,12 +4006,6 @@ func (i GetQueriesQueryCollectionArray) ToGetQueriesQueryCollectionArrayOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetQueriesQueryCollectionArrayOutput)
 }
 
-func (i GetQueriesQueryCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetQueriesQueryCollection] {
-	return pulumix.Output[[]GetQueriesQueryCollection]{
-		OutputState: i.ToGetQueriesQueryCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetQueriesQueryCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetQueriesQueryCollectionOutput) ElementType() reflect.Type {
@@ -4607,12 +4018,6 @@ func (o GetQueriesQueryCollectionOutput) ToGetQueriesQueryCollectionOutput() Get
 
 func (o GetQueriesQueryCollectionOutput) ToGetQueriesQueryCollectionOutputWithContext(ctx context.Context) GetQueriesQueryCollectionOutput {
 	return o
-}
-
-func (o GetQueriesQueryCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetQueriesQueryCollection] {
-	return pulumix.Output[GetQueriesQueryCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetQueriesQueryCollectionOutput) Items() GetQueriesQueryCollectionItemArrayOutput {
@@ -4633,12 +4038,6 @@ func (o GetQueriesQueryCollectionArrayOutput) ToGetQueriesQueryCollectionArrayOu
 	return o
 }
 
-func (o GetQueriesQueryCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetQueriesQueryCollection] {
-	return pulumix.Output[[]GetQueriesQueryCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetQueriesQueryCollectionArrayOutput) Index(i pulumi.IntInput) GetQueriesQueryCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetQueriesQueryCollection {
 		return vs[0].([]GetQueriesQueryCollection)[vs[1].(int)]
@@ -4647,9 +4046,9 @@ func (o GetQueriesQueryCollectionArrayOutput) Index(i pulumi.IntInput) GetQuerie
 
 type GetQueriesQueryCollectionItem struct {
 	// The compartment ID in which to list resources.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// The query OCID.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The common fields for queries.
 	QueryDefinitions []GetQueriesQueryCollectionItemQueryDefinition `pulumi:"queryDefinitions"`
 }
@@ -4667,9 +4066,9 @@ type GetQueriesQueryCollectionItemInput interface {
 
 type GetQueriesQueryCollectionItemArgs struct {
 	// The compartment ID in which to list resources.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// The query OCID.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// The common fields for queries.
 	QueryDefinitions GetQueriesQueryCollectionItemQueryDefinitionArrayInput `pulumi:"queryDefinitions"`
 }
@@ -4684,12 +4083,6 @@ func (i GetQueriesQueryCollectionItemArgs) ToGetQueriesQueryCollectionItemOutput
 
 func (i GetQueriesQueryCollectionItemArgs) ToGetQueriesQueryCollectionItemOutputWithContext(ctx context.Context) GetQueriesQueryCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetQueriesQueryCollectionItemOutput)
-}
-
-func (i GetQueriesQueryCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetQueriesQueryCollectionItem] {
-	return pulumix.Output[GetQueriesQueryCollectionItem]{
-		OutputState: i.ToGetQueriesQueryCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetQueriesQueryCollectionItemArrayInput is an input type that accepts GetQueriesQueryCollectionItemArray and GetQueriesQueryCollectionItemArrayOutput values.
@@ -4717,12 +4110,6 @@ func (i GetQueriesQueryCollectionItemArray) ToGetQueriesQueryCollectionItemArray
 	return pulumi.ToOutputWithContext(ctx, i).(GetQueriesQueryCollectionItemArrayOutput)
 }
 
-func (i GetQueriesQueryCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetQueriesQueryCollectionItem] {
-	return pulumix.Output[[]GetQueriesQueryCollectionItem]{
-		OutputState: i.ToGetQueriesQueryCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetQueriesQueryCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetQueriesQueryCollectionItemOutput) ElementType() reflect.Type {
@@ -4737,20 +4124,14 @@ func (o GetQueriesQueryCollectionItemOutput) ToGetQueriesQueryCollectionItemOutp
 	return o
 }
 
-func (o GetQueriesQueryCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetQueriesQueryCollectionItem] {
-	return pulumix.Output[GetQueriesQueryCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The compartment ID in which to list resources.
-func (o GetQueriesQueryCollectionItemOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetQueriesQueryCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetQueriesQueryCollectionItemOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetQueriesQueryCollectionItem) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // The query OCID.
-func (o GetQueriesQueryCollectionItemOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetQueriesQueryCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+func (o GetQueriesQueryCollectionItemOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetQueriesQueryCollectionItem) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The common fields for queries.
@@ -4774,12 +4155,6 @@ func (o GetQueriesQueryCollectionItemArrayOutput) ToGetQueriesQueryCollectionIte
 	return o
 }
 
-func (o GetQueriesQueryCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetQueriesQueryCollectionItem] {
-	return pulumix.Output[[]GetQueriesQueryCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetQueriesQueryCollectionItemArrayOutput) Index(i pulumi.IntInput) GetQueriesQueryCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetQueriesQueryCollectionItem {
 		return vs[0].([]GetQueriesQueryCollectionItem)[vs[1].(int)]
@@ -4790,11 +4165,11 @@ type GetQueriesQueryCollectionItemQueryDefinition struct {
 	// The common fields for Cost Analysis UI rendering.
 	CostAnalysisUis []GetQueriesQueryCollectionItemQueryDefinitionCostAnalysisUi `pulumi:"costAnalysisUis"`
 	// The query display name. Avoid entering confidential information.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// The request of the generated Cost Analysis report.
 	ReportQueries []GetQueriesQueryCollectionItemQueryDefinitionReportQuery `pulumi:"reportQueries"`
 	// The saved query version.
-	Version float64 `pulumi:"version"`
+	Version *float64 `pulumi:"version"`
 }
 
 // GetQueriesQueryCollectionItemQueryDefinitionInput is an input type that accepts GetQueriesQueryCollectionItemQueryDefinitionArgs and GetQueriesQueryCollectionItemQueryDefinitionOutput values.
@@ -4812,11 +4187,11 @@ type GetQueriesQueryCollectionItemQueryDefinitionArgs struct {
 	// The common fields for Cost Analysis UI rendering.
 	CostAnalysisUis GetQueriesQueryCollectionItemQueryDefinitionCostAnalysisUiArrayInput `pulumi:"costAnalysisUis"`
 	// The query display name. Avoid entering confidential information.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// The request of the generated Cost Analysis report.
 	ReportQueries GetQueriesQueryCollectionItemQueryDefinitionReportQueryArrayInput `pulumi:"reportQueries"`
 	// The saved query version.
-	Version pulumi.Float64Input `pulumi:"version"`
+	Version pulumi.Float64PtrInput `pulumi:"version"`
 }
 
 func (GetQueriesQueryCollectionItemQueryDefinitionArgs) ElementType() reflect.Type {
@@ -4829,12 +4204,6 @@ func (i GetQueriesQueryCollectionItemQueryDefinitionArgs) ToGetQueriesQueryColle
 
 func (i GetQueriesQueryCollectionItemQueryDefinitionArgs) ToGetQueriesQueryCollectionItemQueryDefinitionOutputWithContext(ctx context.Context) GetQueriesQueryCollectionItemQueryDefinitionOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetQueriesQueryCollectionItemQueryDefinitionOutput)
-}
-
-func (i GetQueriesQueryCollectionItemQueryDefinitionArgs) ToOutput(ctx context.Context) pulumix.Output[GetQueriesQueryCollectionItemQueryDefinition] {
-	return pulumix.Output[GetQueriesQueryCollectionItemQueryDefinition]{
-		OutputState: i.ToGetQueriesQueryCollectionItemQueryDefinitionOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetQueriesQueryCollectionItemQueryDefinitionArrayInput is an input type that accepts GetQueriesQueryCollectionItemQueryDefinitionArray and GetQueriesQueryCollectionItemQueryDefinitionArrayOutput values.
@@ -4862,12 +4231,6 @@ func (i GetQueriesQueryCollectionItemQueryDefinitionArray) ToGetQueriesQueryColl
 	return pulumi.ToOutputWithContext(ctx, i).(GetQueriesQueryCollectionItemQueryDefinitionArrayOutput)
 }
 
-func (i GetQueriesQueryCollectionItemQueryDefinitionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetQueriesQueryCollectionItemQueryDefinition] {
-	return pulumix.Output[[]GetQueriesQueryCollectionItemQueryDefinition]{
-		OutputState: i.ToGetQueriesQueryCollectionItemQueryDefinitionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetQueriesQueryCollectionItemQueryDefinitionOutput struct{ *pulumi.OutputState }
 
 func (GetQueriesQueryCollectionItemQueryDefinitionOutput) ElementType() reflect.Type {
@@ -4882,12 +4245,6 @@ func (o GetQueriesQueryCollectionItemQueryDefinitionOutput) ToGetQueriesQueryCol
 	return o
 }
 
-func (o GetQueriesQueryCollectionItemQueryDefinitionOutput) ToOutput(ctx context.Context) pulumix.Output[GetQueriesQueryCollectionItemQueryDefinition] {
-	return pulumix.Output[GetQueriesQueryCollectionItemQueryDefinition]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The common fields for Cost Analysis UI rendering.
 func (o GetQueriesQueryCollectionItemQueryDefinitionOutput) CostAnalysisUis() GetQueriesQueryCollectionItemQueryDefinitionCostAnalysisUiArrayOutput {
 	return o.ApplyT(func(v GetQueriesQueryCollectionItemQueryDefinition) []GetQueriesQueryCollectionItemQueryDefinitionCostAnalysisUi {
@@ -4896,8 +4253,8 @@ func (o GetQueriesQueryCollectionItemQueryDefinitionOutput) CostAnalysisUis() Ge
 }
 
 // The query display name. Avoid entering confidential information.
-func (o GetQueriesQueryCollectionItemQueryDefinitionOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetQueriesQueryCollectionItemQueryDefinition) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetQueriesQueryCollectionItemQueryDefinitionOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetQueriesQueryCollectionItemQueryDefinition) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // The request of the generated Cost Analysis report.
@@ -4908,8 +4265,8 @@ func (o GetQueriesQueryCollectionItemQueryDefinitionOutput) ReportQueries() GetQ
 }
 
 // The saved query version.
-func (o GetQueriesQueryCollectionItemQueryDefinitionOutput) Version() pulumi.Float64Output {
-	return o.ApplyT(func(v GetQueriesQueryCollectionItemQueryDefinition) float64 { return v.Version }).(pulumi.Float64Output)
+func (o GetQueriesQueryCollectionItemQueryDefinitionOutput) Version() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetQueriesQueryCollectionItemQueryDefinition) *float64 { return v.Version }).(pulumi.Float64PtrOutput)
 }
 
 type GetQueriesQueryCollectionItemQueryDefinitionArrayOutput struct{ *pulumi.OutputState }
@@ -4926,12 +4283,6 @@ func (o GetQueriesQueryCollectionItemQueryDefinitionArrayOutput) ToGetQueriesQue
 	return o
 }
 
-func (o GetQueriesQueryCollectionItemQueryDefinitionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetQueriesQueryCollectionItemQueryDefinition] {
-	return pulumix.Output[[]GetQueriesQueryCollectionItemQueryDefinition]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetQueriesQueryCollectionItemQueryDefinitionArrayOutput) Index(i pulumi.IntInput) GetQueriesQueryCollectionItemQueryDefinitionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetQueriesQueryCollectionItemQueryDefinition {
 		return vs[0].([]GetQueriesQueryCollectionItemQueryDefinition)[vs[1].(int)]
@@ -4940,9 +4291,9 @@ func (o GetQueriesQueryCollectionItemQueryDefinitionArrayOutput) Index(i pulumi.
 
 type GetQueriesQueryCollectionItemQueryDefinitionCostAnalysisUi struct {
 	// The graph type.
-	Graph string `pulumi:"graph"`
+	Graph *string `pulumi:"graph"`
 	// A cumulative graph.
-	IsCumulativeGraph bool `pulumi:"isCumulativeGraph"`
+	IsCumulativeGraph *bool `pulumi:"isCumulativeGraph"`
 }
 
 // GetQueriesQueryCollectionItemQueryDefinitionCostAnalysisUiInput is an input type that accepts GetQueriesQueryCollectionItemQueryDefinitionCostAnalysisUiArgs and GetQueriesQueryCollectionItemQueryDefinitionCostAnalysisUiOutput values.
@@ -4958,9 +4309,9 @@ type GetQueriesQueryCollectionItemQueryDefinitionCostAnalysisUiInput interface {
 
 type GetQueriesQueryCollectionItemQueryDefinitionCostAnalysisUiArgs struct {
 	// The graph type.
-	Graph pulumi.StringInput `pulumi:"graph"`
+	Graph pulumi.StringPtrInput `pulumi:"graph"`
 	// A cumulative graph.
-	IsCumulativeGraph pulumi.BoolInput `pulumi:"isCumulativeGraph"`
+	IsCumulativeGraph pulumi.BoolPtrInput `pulumi:"isCumulativeGraph"`
 }
 
 func (GetQueriesQueryCollectionItemQueryDefinitionCostAnalysisUiArgs) ElementType() reflect.Type {
@@ -4973,12 +4324,6 @@ func (i GetQueriesQueryCollectionItemQueryDefinitionCostAnalysisUiArgs) ToGetQue
 
 func (i GetQueriesQueryCollectionItemQueryDefinitionCostAnalysisUiArgs) ToGetQueriesQueryCollectionItemQueryDefinitionCostAnalysisUiOutputWithContext(ctx context.Context) GetQueriesQueryCollectionItemQueryDefinitionCostAnalysisUiOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetQueriesQueryCollectionItemQueryDefinitionCostAnalysisUiOutput)
-}
-
-func (i GetQueriesQueryCollectionItemQueryDefinitionCostAnalysisUiArgs) ToOutput(ctx context.Context) pulumix.Output[GetQueriesQueryCollectionItemQueryDefinitionCostAnalysisUi] {
-	return pulumix.Output[GetQueriesQueryCollectionItemQueryDefinitionCostAnalysisUi]{
-		OutputState: i.ToGetQueriesQueryCollectionItemQueryDefinitionCostAnalysisUiOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetQueriesQueryCollectionItemQueryDefinitionCostAnalysisUiArrayInput is an input type that accepts GetQueriesQueryCollectionItemQueryDefinitionCostAnalysisUiArray and GetQueriesQueryCollectionItemQueryDefinitionCostAnalysisUiArrayOutput values.
@@ -5006,12 +4351,6 @@ func (i GetQueriesQueryCollectionItemQueryDefinitionCostAnalysisUiArray) ToGetQu
 	return pulumi.ToOutputWithContext(ctx, i).(GetQueriesQueryCollectionItemQueryDefinitionCostAnalysisUiArrayOutput)
 }
 
-func (i GetQueriesQueryCollectionItemQueryDefinitionCostAnalysisUiArray) ToOutput(ctx context.Context) pulumix.Output[[]GetQueriesQueryCollectionItemQueryDefinitionCostAnalysisUi] {
-	return pulumix.Output[[]GetQueriesQueryCollectionItemQueryDefinitionCostAnalysisUi]{
-		OutputState: i.ToGetQueriesQueryCollectionItemQueryDefinitionCostAnalysisUiArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetQueriesQueryCollectionItemQueryDefinitionCostAnalysisUiOutput struct{ *pulumi.OutputState }
 
 func (GetQueriesQueryCollectionItemQueryDefinitionCostAnalysisUiOutput) ElementType() reflect.Type {
@@ -5026,20 +4365,14 @@ func (o GetQueriesQueryCollectionItemQueryDefinitionCostAnalysisUiOutput) ToGetQ
 	return o
 }
 
-func (o GetQueriesQueryCollectionItemQueryDefinitionCostAnalysisUiOutput) ToOutput(ctx context.Context) pulumix.Output[GetQueriesQueryCollectionItemQueryDefinitionCostAnalysisUi] {
-	return pulumix.Output[GetQueriesQueryCollectionItemQueryDefinitionCostAnalysisUi]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The graph type.
-func (o GetQueriesQueryCollectionItemQueryDefinitionCostAnalysisUiOutput) Graph() pulumi.StringOutput {
-	return o.ApplyT(func(v GetQueriesQueryCollectionItemQueryDefinitionCostAnalysisUi) string { return v.Graph }).(pulumi.StringOutput)
+func (o GetQueriesQueryCollectionItemQueryDefinitionCostAnalysisUiOutput) Graph() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetQueriesQueryCollectionItemQueryDefinitionCostAnalysisUi) *string { return v.Graph }).(pulumi.StringPtrOutput)
 }
 
 // A cumulative graph.
-func (o GetQueriesQueryCollectionItemQueryDefinitionCostAnalysisUiOutput) IsCumulativeGraph() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetQueriesQueryCollectionItemQueryDefinitionCostAnalysisUi) bool { return v.IsCumulativeGraph }).(pulumi.BoolOutput)
+func (o GetQueriesQueryCollectionItemQueryDefinitionCostAnalysisUiOutput) IsCumulativeGraph() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetQueriesQueryCollectionItemQueryDefinitionCostAnalysisUi) *bool { return v.IsCumulativeGraph }).(pulumi.BoolPtrOutput)
 }
 
 type GetQueriesQueryCollectionItemQueryDefinitionCostAnalysisUiArrayOutput struct{ *pulumi.OutputState }
@@ -5056,12 +4389,6 @@ func (o GetQueriesQueryCollectionItemQueryDefinitionCostAnalysisUiArrayOutput) T
 	return o
 }
 
-func (o GetQueriesQueryCollectionItemQueryDefinitionCostAnalysisUiArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetQueriesQueryCollectionItemQueryDefinitionCostAnalysisUi] {
-	return pulumix.Output[[]GetQueriesQueryCollectionItemQueryDefinitionCostAnalysisUi]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetQueriesQueryCollectionItemQueryDefinitionCostAnalysisUiArrayOutput) Index(i pulumi.IntInput) GetQueriesQueryCollectionItemQueryDefinitionCostAnalysisUiOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetQueriesQueryCollectionItemQueryDefinitionCostAnalysisUi {
 		return vs[0].([]GetQueriesQueryCollectionItemQueryDefinitionCostAnalysisUi)[vs[1].(int)]
@@ -5070,29 +4397,29 @@ func (o GetQueriesQueryCollectionItemQueryDefinitionCostAnalysisUiArrayOutput) I
 
 type GetQueriesQueryCollectionItemQueryDefinitionReportQuery struct {
 	// The compartment depth level.
-	CompartmentDepth float64 `pulumi:"compartmentDepth"`
+	CompartmentDepth *float64 `pulumi:"compartmentDepth"`
 	// The UI date range, for example, LAST_THREE_MONTHS. Conflicts with timeUsageStarted and timeUsageEnded.
-	DateRangeName string `pulumi:"dateRangeName"`
+	DateRangeName *string `pulumi:"dateRangeName"`
 	// The filter object for query usage.
-	Filter string `pulumi:"filter"`
+	Filter *string `pulumi:"filter"`
 	// Forecast configuration of usage/cost.
 	Forecasts []GetQueriesQueryCollectionItemQueryDefinitionReportQueryForecast `pulumi:"forecasts"`
 	// The usage granularity. HOURLY - Hourly data aggregation. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation. TOTAL - Not yet supported.
-	Granularity string `pulumi:"granularity"`
+	Granularity *string `pulumi:"granularity"`
 	// Aggregate the result by. example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
 	GroupBies []string `pulumi:"groupBies"`
 	// GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only supports one tag in the list. For example: `[{"namespace":"oracle", "key":"createdBy"]`
 	GroupByTags []GetQueriesQueryCollectionItemQueryDefinitionReportQueryGroupByTag `pulumi:"groupByTags"`
 	// Whether aggregated by time. If isAggregateByTime is true, all usage/cost over the query time period will be added up.
-	IsAggregateByTime bool `pulumi:"isAggregateByTime"`
+	IsAggregateByTime *bool `pulumi:"isAggregateByTime"`
 	// The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data. Credit - Query the credit adjustments data. ExpiredCredit - Query the expired credits data AllCredit - Query the credit adjustments and expired credit
-	QueryType string `pulumi:"queryType"`
+	QueryType *string `pulumi:"queryType"`
 	// Tenant ID.
-	TenantId string `pulumi:"tenantId"`
+	TenantId *string `pulumi:"tenantId"`
 	// The usage end time.
-	TimeUsageEnded string `pulumi:"timeUsageEnded"`
+	TimeUsageEnded *string `pulumi:"timeUsageEnded"`
 	// The usage start time.
-	TimeUsageStarted string `pulumi:"timeUsageStarted"`
+	TimeUsageStarted *string `pulumi:"timeUsageStarted"`
 }
 
 // GetQueriesQueryCollectionItemQueryDefinitionReportQueryInput is an input type that accepts GetQueriesQueryCollectionItemQueryDefinitionReportQueryArgs and GetQueriesQueryCollectionItemQueryDefinitionReportQueryOutput values.
@@ -5108,29 +4435,29 @@ type GetQueriesQueryCollectionItemQueryDefinitionReportQueryInput interface {
 
 type GetQueriesQueryCollectionItemQueryDefinitionReportQueryArgs struct {
 	// The compartment depth level.
-	CompartmentDepth pulumi.Float64Input `pulumi:"compartmentDepth"`
+	CompartmentDepth pulumi.Float64PtrInput `pulumi:"compartmentDepth"`
 	// The UI date range, for example, LAST_THREE_MONTHS. Conflicts with timeUsageStarted and timeUsageEnded.
-	DateRangeName pulumi.StringInput `pulumi:"dateRangeName"`
+	DateRangeName pulumi.StringPtrInput `pulumi:"dateRangeName"`
 	// The filter object for query usage.
-	Filter pulumi.StringInput `pulumi:"filter"`
+	Filter pulumi.StringPtrInput `pulumi:"filter"`
 	// Forecast configuration of usage/cost.
 	Forecasts GetQueriesQueryCollectionItemQueryDefinitionReportQueryForecastArrayInput `pulumi:"forecasts"`
 	// The usage granularity. HOURLY - Hourly data aggregation. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation. TOTAL - Not yet supported.
-	Granularity pulumi.StringInput `pulumi:"granularity"`
+	Granularity pulumi.StringPtrInput `pulumi:"granularity"`
 	// Aggregate the result by. example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
 	GroupBies pulumi.StringArrayInput `pulumi:"groupBies"`
 	// GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only supports one tag in the list. For example: `[{"namespace":"oracle", "key":"createdBy"]`
 	GroupByTags GetQueriesQueryCollectionItemQueryDefinitionReportQueryGroupByTagArrayInput `pulumi:"groupByTags"`
 	// Whether aggregated by time. If isAggregateByTime is true, all usage/cost over the query time period will be added up.
-	IsAggregateByTime pulumi.BoolInput `pulumi:"isAggregateByTime"`
+	IsAggregateByTime pulumi.BoolPtrInput `pulumi:"isAggregateByTime"`
 	// The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data. Credit - Query the credit adjustments data. ExpiredCredit - Query the expired credits data AllCredit - Query the credit adjustments and expired credit
-	QueryType pulumi.StringInput `pulumi:"queryType"`
+	QueryType pulumi.StringPtrInput `pulumi:"queryType"`
 	// Tenant ID.
-	TenantId pulumi.StringInput `pulumi:"tenantId"`
+	TenantId pulumi.StringPtrInput `pulumi:"tenantId"`
 	// The usage end time.
-	TimeUsageEnded pulumi.StringInput `pulumi:"timeUsageEnded"`
+	TimeUsageEnded pulumi.StringPtrInput `pulumi:"timeUsageEnded"`
 	// The usage start time.
-	TimeUsageStarted pulumi.StringInput `pulumi:"timeUsageStarted"`
+	TimeUsageStarted pulumi.StringPtrInput `pulumi:"timeUsageStarted"`
 }
 
 func (GetQueriesQueryCollectionItemQueryDefinitionReportQueryArgs) ElementType() reflect.Type {
@@ -5143,12 +4470,6 @@ func (i GetQueriesQueryCollectionItemQueryDefinitionReportQueryArgs) ToGetQuerie
 
 func (i GetQueriesQueryCollectionItemQueryDefinitionReportQueryArgs) ToGetQueriesQueryCollectionItemQueryDefinitionReportQueryOutputWithContext(ctx context.Context) GetQueriesQueryCollectionItemQueryDefinitionReportQueryOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetQueriesQueryCollectionItemQueryDefinitionReportQueryOutput)
-}
-
-func (i GetQueriesQueryCollectionItemQueryDefinitionReportQueryArgs) ToOutput(ctx context.Context) pulumix.Output[GetQueriesQueryCollectionItemQueryDefinitionReportQuery] {
-	return pulumix.Output[GetQueriesQueryCollectionItemQueryDefinitionReportQuery]{
-		OutputState: i.ToGetQueriesQueryCollectionItemQueryDefinitionReportQueryOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetQueriesQueryCollectionItemQueryDefinitionReportQueryArrayInput is an input type that accepts GetQueriesQueryCollectionItemQueryDefinitionReportQueryArray and GetQueriesQueryCollectionItemQueryDefinitionReportQueryArrayOutput values.
@@ -5176,12 +4497,6 @@ func (i GetQueriesQueryCollectionItemQueryDefinitionReportQueryArray) ToGetQueri
 	return pulumi.ToOutputWithContext(ctx, i).(GetQueriesQueryCollectionItemQueryDefinitionReportQueryArrayOutput)
 }
 
-func (i GetQueriesQueryCollectionItemQueryDefinitionReportQueryArray) ToOutput(ctx context.Context) pulumix.Output[[]GetQueriesQueryCollectionItemQueryDefinitionReportQuery] {
-	return pulumix.Output[[]GetQueriesQueryCollectionItemQueryDefinitionReportQuery]{
-		OutputState: i.ToGetQueriesQueryCollectionItemQueryDefinitionReportQueryArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetQueriesQueryCollectionItemQueryDefinitionReportQueryOutput struct{ *pulumi.OutputState }
 
 func (GetQueriesQueryCollectionItemQueryDefinitionReportQueryOutput) ElementType() reflect.Type {
@@ -5196,25 +4511,19 @@ func (o GetQueriesQueryCollectionItemQueryDefinitionReportQueryOutput) ToGetQuer
 	return o
 }
 
-func (o GetQueriesQueryCollectionItemQueryDefinitionReportQueryOutput) ToOutput(ctx context.Context) pulumix.Output[GetQueriesQueryCollectionItemQueryDefinitionReportQuery] {
-	return pulumix.Output[GetQueriesQueryCollectionItemQueryDefinitionReportQuery]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The compartment depth level.
-func (o GetQueriesQueryCollectionItemQueryDefinitionReportQueryOutput) CompartmentDepth() pulumi.Float64Output {
-	return o.ApplyT(func(v GetQueriesQueryCollectionItemQueryDefinitionReportQuery) float64 { return v.CompartmentDepth }).(pulumi.Float64Output)
+func (o GetQueriesQueryCollectionItemQueryDefinitionReportQueryOutput) CompartmentDepth() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetQueriesQueryCollectionItemQueryDefinitionReportQuery) *float64 { return v.CompartmentDepth }).(pulumi.Float64PtrOutput)
 }
 
 // The UI date range, for example, LAST_THREE_MONTHS. Conflicts with timeUsageStarted and timeUsageEnded.
-func (o GetQueriesQueryCollectionItemQueryDefinitionReportQueryOutput) DateRangeName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetQueriesQueryCollectionItemQueryDefinitionReportQuery) string { return v.DateRangeName }).(pulumi.StringOutput)
+func (o GetQueriesQueryCollectionItemQueryDefinitionReportQueryOutput) DateRangeName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetQueriesQueryCollectionItemQueryDefinitionReportQuery) *string { return v.DateRangeName }).(pulumi.StringPtrOutput)
 }
 
 // The filter object for query usage.
-func (o GetQueriesQueryCollectionItemQueryDefinitionReportQueryOutput) Filter() pulumi.StringOutput {
-	return o.ApplyT(func(v GetQueriesQueryCollectionItemQueryDefinitionReportQuery) string { return v.Filter }).(pulumi.StringOutput)
+func (o GetQueriesQueryCollectionItemQueryDefinitionReportQueryOutput) Filter() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetQueriesQueryCollectionItemQueryDefinitionReportQuery) *string { return v.Filter }).(pulumi.StringPtrOutput)
 }
 
 // Forecast configuration of usage/cost.
@@ -5225,8 +4534,8 @@ func (o GetQueriesQueryCollectionItemQueryDefinitionReportQueryOutput) Forecasts
 }
 
 // The usage granularity. HOURLY - Hourly data aggregation. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation. TOTAL - Not yet supported.
-func (o GetQueriesQueryCollectionItemQueryDefinitionReportQueryOutput) Granularity() pulumi.StringOutput {
-	return o.ApplyT(func(v GetQueriesQueryCollectionItemQueryDefinitionReportQuery) string { return v.Granularity }).(pulumi.StringOutput)
+func (o GetQueriesQueryCollectionItemQueryDefinitionReportQueryOutput) Granularity() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetQueriesQueryCollectionItemQueryDefinitionReportQuery) *string { return v.Granularity }).(pulumi.StringPtrOutput)
 }
 
 // Aggregate the result by. example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
@@ -5242,28 +4551,28 @@ func (o GetQueriesQueryCollectionItemQueryDefinitionReportQueryOutput) GroupByTa
 }
 
 // Whether aggregated by time. If isAggregateByTime is true, all usage/cost over the query time period will be added up.
-func (o GetQueriesQueryCollectionItemQueryDefinitionReportQueryOutput) IsAggregateByTime() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetQueriesQueryCollectionItemQueryDefinitionReportQuery) bool { return v.IsAggregateByTime }).(pulumi.BoolOutput)
+func (o GetQueriesQueryCollectionItemQueryDefinitionReportQueryOutput) IsAggregateByTime() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetQueriesQueryCollectionItemQueryDefinitionReportQuery) *bool { return v.IsAggregateByTime }).(pulumi.BoolPtrOutput)
 }
 
 // The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data. Credit - Query the credit adjustments data. ExpiredCredit - Query the expired credits data AllCredit - Query the credit adjustments and expired credit
-func (o GetQueriesQueryCollectionItemQueryDefinitionReportQueryOutput) QueryType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetQueriesQueryCollectionItemQueryDefinitionReportQuery) string { return v.QueryType }).(pulumi.StringOutput)
+func (o GetQueriesQueryCollectionItemQueryDefinitionReportQueryOutput) QueryType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetQueriesQueryCollectionItemQueryDefinitionReportQuery) *string { return v.QueryType }).(pulumi.StringPtrOutput)
 }
 
 // Tenant ID.
-func (o GetQueriesQueryCollectionItemQueryDefinitionReportQueryOutput) TenantId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetQueriesQueryCollectionItemQueryDefinitionReportQuery) string { return v.TenantId }).(pulumi.StringOutput)
+func (o GetQueriesQueryCollectionItemQueryDefinitionReportQueryOutput) TenantId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetQueriesQueryCollectionItemQueryDefinitionReportQuery) *string { return v.TenantId }).(pulumi.StringPtrOutput)
 }
 
 // The usage end time.
-func (o GetQueriesQueryCollectionItemQueryDefinitionReportQueryOutput) TimeUsageEnded() pulumi.StringOutput {
-	return o.ApplyT(func(v GetQueriesQueryCollectionItemQueryDefinitionReportQuery) string { return v.TimeUsageEnded }).(pulumi.StringOutput)
+func (o GetQueriesQueryCollectionItemQueryDefinitionReportQueryOutput) TimeUsageEnded() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetQueriesQueryCollectionItemQueryDefinitionReportQuery) *string { return v.TimeUsageEnded }).(pulumi.StringPtrOutput)
 }
 
 // The usage start time.
-func (o GetQueriesQueryCollectionItemQueryDefinitionReportQueryOutput) TimeUsageStarted() pulumi.StringOutput {
-	return o.ApplyT(func(v GetQueriesQueryCollectionItemQueryDefinitionReportQuery) string { return v.TimeUsageStarted }).(pulumi.StringOutput)
+func (o GetQueriesQueryCollectionItemQueryDefinitionReportQueryOutput) TimeUsageStarted() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetQueriesQueryCollectionItemQueryDefinitionReportQuery) *string { return v.TimeUsageStarted }).(pulumi.StringPtrOutput)
 }
 
 type GetQueriesQueryCollectionItemQueryDefinitionReportQueryArrayOutput struct{ *pulumi.OutputState }
@@ -5280,12 +4589,6 @@ func (o GetQueriesQueryCollectionItemQueryDefinitionReportQueryArrayOutput) ToGe
 	return o
 }
 
-func (o GetQueriesQueryCollectionItemQueryDefinitionReportQueryArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetQueriesQueryCollectionItemQueryDefinitionReportQuery] {
-	return pulumix.Output[[]GetQueriesQueryCollectionItemQueryDefinitionReportQuery]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetQueriesQueryCollectionItemQueryDefinitionReportQueryArrayOutput) Index(i pulumi.IntInput) GetQueriesQueryCollectionItemQueryDefinitionReportQueryOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetQueriesQueryCollectionItemQueryDefinitionReportQuery {
 		return vs[0].([]GetQueriesQueryCollectionItemQueryDefinitionReportQuery)[vs[1].(int)]
@@ -5294,11 +4597,11 @@ func (o GetQueriesQueryCollectionItemQueryDefinitionReportQueryArrayOutput) Inde
 
 type GetQueriesQueryCollectionItemQueryDefinitionReportQueryForecast struct {
 	// BASIC uses the exponential smoothing (ETS) model to project future usage/costs based on history data. The basis for projections is a periodic set of equivalent historical days for which the projection is being made.
-	ForecastType string `pulumi:"forecastType"`
+	ForecastType *string `pulumi:"forecastType"`
 	// The forecast end time.
-	TimeForecastEnded string `pulumi:"timeForecastEnded"`
+	TimeForecastEnded *string `pulumi:"timeForecastEnded"`
 	// The forecast start time. Defaults to UTC-1 if not specified.
-	TimeForecastStarted string `pulumi:"timeForecastStarted"`
+	TimeForecastStarted *string `pulumi:"timeForecastStarted"`
 }
 
 // GetQueriesQueryCollectionItemQueryDefinitionReportQueryForecastInput is an input type that accepts GetQueriesQueryCollectionItemQueryDefinitionReportQueryForecastArgs and GetQueriesQueryCollectionItemQueryDefinitionReportQueryForecastOutput values.
@@ -5314,11 +4617,11 @@ type GetQueriesQueryCollectionItemQueryDefinitionReportQueryForecastInput interf
 
 type GetQueriesQueryCollectionItemQueryDefinitionReportQueryForecastArgs struct {
 	// BASIC uses the exponential smoothing (ETS) model to project future usage/costs based on history data. The basis for projections is a periodic set of equivalent historical days for which the projection is being made.
-	ForecastType pulumi.StringInput `pulumi:"forecastType"`
+	ForecastType pulumi.StringPtrInput `pulumi:"forecastType"`
 	// The forecast end time.
-	TimeForecastEnded pulumi.StringInput `pulumi:"timeForecastEnded"`
+	TimeForecastEnded pulumi.StringPtrInput `pulumi:"timeForecastEnded"`
 	// The forecast start time. Defaults to UTC-1 if not specified.
-	TimeForecastStarted pulumi.StringInput `pulumi:"timeForecastStarted"`
+	TimeForecastStarted pulumi.StringPtrInput `pulumi:"timeForecastStarted"`
 }
 
 func (GetQueriesQueryCollectionItemQueryDefinitionReportQueryForecastArgs) ElementType() reflect.Type {
@@ -5331,12 +4634,6 @@ func (i GetQueriesQueryCollectionItemQueryDefinitionReportQueryForecastArgs) ToG
 
 func (i GetQueriesQueryCollectionItemQueryDefinitionReportQueryForecastArgs) ToGetQueriesQueryCollectionItemQueryDefinitionReportQueryForecastOutputWithContext(ctx context.Context) GetQueriesQueryCollectionItemQueryDefinitionReportQueryForecastOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetQueriesQueryCollectionItemQueryDefinitionReportQueryForecastOutput)
-}
-
-func (i GetQueriesQueryCollectionItemQueryDefinitionReportQueryForecastArgs) ToOutput(ctx context.Context) pulumix.Output[GetQueriesQueryCollectionItemQueryDefinitionReportQueryForecast] {
-	return pulumix.Output[GetQueriesQueryCollectionItemQueryDefinitionReportQueryForecast]{
-		OutputState: i.ToGetQueriesQueryCollectionItemQueryDefinitionReportQueryForecastOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetQueriesQueryCollectionItemQueryDefinitionReportQueryForecastArrayInput is an input type that accepts GetQueriesQueryCollectionItemQueryDefinitionReportQueryForecastArray and GetQueriesQueryCollectionItemQueryDefinitionReportQueryForecastArrayOutput values.
@@ -5364,12 +4661,6 @@ func (i GetQueriesQueryCollectionItemQueryDefinitionReportQueryForecastArray) To
 	return pulumi.ToOutputWithContext(ctx, i).(GetQueriesQueryCollectionItemQueryDefinitionReportQueryForecastArrayOutput)
 }
 
-func (i GetQueriesQueryCollectionItemQueryDefinitionReportQueryForecastArray) ToOutput(ctx context.Context) pulumix.Output[[]GetQueriesQueryCollectionItemQueryDefinitionReportQueryForecast] {
-	return pulumix.Output[[]GetQueriesQueryCollectionItemQueryDefinitionReportQueryForecast]{
-		OutputState: i.ToGetQueriesQueryCollectionItemQueryDefinitionReportQueryForecastArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetQueriesQueryCollectionItemQueryDefinitionReportQueryForecastOutput struct{ *pulumi.OutputState }
 
 func (GetQueriesQueryCollectionItemQueryDefinitionReportQueryForecastOutput) ElementType() reflect.Type {
@@ -5384,29 +4675,23 @@ func (o GetQueriesQueryCollectionItemQueryDefinitionReportQueryForecastOutput) T
 	return o
 }
 
-func (o GetQueriesQueryCollectionItemQueryDefinitionReportQueryForecastOutput) ToOutput(ctx context.Context) pulumix.Output[GetQueriesQueryCollectionItemQueryDefinitionReportQueryForecast] {
-	return pulumix.Output[GetQueriesQueryCollectionItemQueryDefinitionReportQueryForecast]{
-		OutputState: o.OutputState,
-	}
-}
-
 // BASIC uses the exponential smoothing (ETS) model to project future usage/costs based on history data. The basis for projections is a periodic set of equivalent historical days for which the projection is being made.
-func (o GetQueriesQueryCollectionItemQueryDefinitionReportQueryForecastOutput) ForecastType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetQueriesQueryCollectionItemQueryDefinitionReportQueryForecast) string { return v.ForecastType }).(pulumi.StringOutput)
+func (o GetQueriesQueryCollectionItemQueryDefinitionReportQueryForecastOutput) ForecastType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetQueriesQueryCollectionItemQueryDefinitionReportQueryForecast) *string { return v.ForecastType }).(pulumi.StringPtrOutput)
 }
 
 // The forecast end time.
-func (o GetQueriesQueryCollectionItemQueryDefinitionReportQueryForecastOutput) TimeForecastEnded() pulumi.StringOutput {
-	return o.ApplyT(func(v GetQueriesQueryCollectionItemQueryDefinitionReportQueryForecast) string {
+func (o GetQueriesQueryCollectionItemQueryDefinitionReportQueryForecastOutput) TimeForecastEnded() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetQueriesQueryCollectionItemQueryDefinitionReportQueryForecast) *string {
 		return v.TimeForecastEnded
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The forecast start time. Defaults to UTC-1 if not specified.
-func (o GetQueriesQueryCollectionItemQueryDefinitionReportQueryForecastOutput) TimeForecastStarted() pulumi.StringOutput {
-	return o.ApplyT(func(v GetQueriesQueryCollectionItemQueryDefinitionReportQueryForecast) string {
+func (o GetQueriesQueryCollectionItemQueryDefinitionReportQueryForecastOutput) TimeForecastStarted() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetQueriesQueryCollectionItemQueryDefinitionReportQueryForecast) *string {
 		return v.TimeForecastStarted
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetQueriesQueryCollectionItemQueryDefinitionReportQueryForecastArrayOutput struct{ *pulumi.OutputState }
@@ -5423,12 +4708,6 @@ func (o GetQueriesQueryCollectionItemQueryDefinitionReportQueryForecastArrayOutp
 	return o
 }
 
-func (o GetQueriesQueryCollectionItemQueryDefinitionReportQueryForecastArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetQueriesQueryCollectionItemQueryDefinitionReportQueryForecast] {
-	return pulumix.Output[[]GetQueriesQueryCollectionItemQueryDefinitionReportQueryForecast]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetQueriesQueryCollectionItemQueryDefinitionReportQueryForecastArrayOutput) Index(i pulumi.IntInput) GetQueriesQueryCollectionItemQueryDefinitionReportQueryForecastOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetQueriesQueryCollectionItemQueryDefinitionReportQueryForecast {
 		return vs[0].([]GetQueriesQueryCollectionItemQueryDefinitionReportQueryForecast)[vs[1].(int)]
@@ -5437,11 +4716,11 @@ func (o GetQueriesQueryCollectionItemQueryDefinitionReportQueryForecastArrayOutp
 
 type GetQueriesQueryCollectionItemQueryDefinitionReportQueryGroupByTag struct {
 	// The tag key.
-	Key string `pulumi:"key"`
+	Key *string `pulumi:"key"`
 	// The tag namespace.
-	Namespace string `pulumi:"namespace"`
+	Namespace *string `pulumi:"namespace"`
 	// The tag value.
-	Value string `pulumi:"value"`
+	Value *string `pulumi:"value"`
 }
 
 // GetQueriesQueryCollectionItemQueryDefinitionReportQueryGroupByTagInput is an input type that accepts GetQueriesQueryCollectionItemQueryDefinitionReportQueryGroupByTagArgs and GetQueriesQueryCollectionItemQueryDefinitionReportQueryGroupByTagOutput values.
@@ -5457,11 +4736,11 @@ type GetQueriesQueryCollectionItemQueryDefinitionReportQueryGroupByTagInput inte
 
 type GetQueriesQueryCollectionItemQueryDefinitionReportQueryGroupByTagArgs struct {
 	// The tag key.
-	Key pulumi.StringInput `pulumi:"key"`
+	Key pulumi.StringPtrInput `pulumi:"key"`
 	// The tag namespace.
-	Namespace pulumi.StringInput `pulumi:"namespace"`
+	Namespace pulumi.StringPtrInput `pulumi:"namespace"`
 	// The tag value.
-	Value pulumi.StringInput `pulumi:"value"`
+	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
 func (GetQueriesQueryCollectionItemQueryDefinitionReportQueryGroupByTagArgs) ElementType() reflect.Type {
@@ -5474,12 +4753,6 @@ func (i GetQueriesQueryCollectionItemQueryDefinitionReportQueryGroupByTagArgs) T
 
 func (i GetQueriesQueryCollectionItemQueryDefinitionReportQueryGroupByTagArgs) ToGetQueriesQueryCollectionItemQueryDefinitionReportQueryGroupByTagOutputWithContext(ctx context.Context) GetQueriesQueryCollectionItemQueryDefinitionReportQueryGroupByTagOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetQueriesQueryCollectionItemQueryDefinitionReportQueryGroupByTagOutput)
-}
-
-func (i GetQueriesQueryCollectionItemQueryDefinitionReportQueryGroupByTagArgs) ToOutput(ctx context.Context) pulumix.Output[GetQueriesQueryCollectionItemQueryDefinitionReportQueryGroupByTag] {
-	return pulumix.Output[GetQueriesQueryCollectionItemQueryDefinitionReportQueryGroupByTag]{
-		OutputState: i.ToGetQueriesQueryCollectionItemQueryDefinitionReportQueryGroupByTagOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetQueriesQueryCollectionItemQueryDefinitionReportQueryGroupByTagArrayInput is an input type that accepts GetQueriesQueryCollectionItemQueryDefinitionReportQueryGroupByTagArray and GetQueriesQueryCollectionItemQueryDefinitionReportQueryGroupByTagArrayOutput values.
@@ -5507,12 +4780,6 @@ func (i GetQueriesQueryCollectionItemQueryDefinitionReportQueryGroupByTagArray) 
 	return pulumi.ToOutputWithContext(ctx, i).(GetQueriesQueryCollectionItemQueryDefinitionReportQueryGroupByTagArrayOutput)
 }
 
-func (i GetQueriesQueryCollectionItemQueryDefinitionReportQueryGroupByTagArray) ToOutput(ctx context.Context) pulumix.Output[[]GetQueriesQueryCollectionItemQueryDefinitionReportQueryGroupByTag] {
-	return pulumix.Output[[]GetQueriesQueryCollectionItemQueryDefinitionReportQueryGroupByTag]{
-		OutputState: i.ToGetQueriesQueryCollectionItemQueryDefinitionReportQueryGroupByTagArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetQueriesQueryCollectionItemQueryDefinitionReportQueryGroupByTagOutput struct{ *pulumi.OutputState }
 
 func (GetQueriesQueryCollectionItemQueryDefinitionReportQueryGroupByTagOutput) ElementType() reflect.Type {
@@ -5527,25 +4794,19 @@ func (o GetQueriesQueryCollectionItemQueryDefinitionReportQueryGroupByTagOutput)
 	return o
 }
 
-func (o GetQueriesQueryCollectionItemQueryDefinitionReportQueryGroupByTagOutput) ToOutput(ctx context.Context) pulumix.Output[GetQueriesQueryCollectionItemQueryDefinitionReportQueryGroupByTag] {
-	return pulumix.Output[GetQueriesQueryCollectionItemQueryDefinitionReportQueryGroupByTag]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The tag key.
-func (o GetQueriesQueryCollectionItemQueryDefinitionReportQueryGroupByTagOutput) Key() pulumi.StringOutput {
-	return o.ApplyT(func(v GetQueriesQueryCollectionItemQueryDefinitionReportQueryGroupByTag) string { return v.Key }).(pulumi.StringOutput)
+func (o GetQueriesQueryCollectionItemQueryDefinitionReportQueryGroupByTagOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetQueriesQueryCollectionItemQueryDefinitionReportQueryGroupByTag) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
 // The tag namespace.
-func (o GetQueriesQueryCollectionItemQueryDefinitionReportQueryGroupByTagOutput) Namespace() pulumi.StringOutput {
-	return o.ApplyT(func(v GetQueriesQueryCollectionItemQueryDefinitionReportQueryGroupByTag) string { return v.Namespace }).(pulumi.StringOutput)
+func (o GetQueriesQueryCollectionItemQueryDefinitionReportQueryGroupByTagOutput) Namespace() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetQueriesQueryCollectionItemQueryDefinitionReportQueryGroupByTag) *string { return v.Namespace }).(pulumi.StringPtrOutput)
 }
 
 // The tag value.
-func (o GetQueriesQueryCollectionItemQueryDefinitionReportQueryGroupByTagOutput) Value() pulumi.StringOutput {
-	return o.ApplyT(func(v GetQueriesQueryCollectionItemQueryDefinitionReportQueryGroupByTag) string { return v.Value }).(pulumi.StringOutput)
+func (o GetQueriesQueryCollectionItemQueryDefinitionReportQueryGroupByTagOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetQueriesQueryCollectionItemQueryDefinitionReportQueryGroupByTag) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
 
 type GetQueriesQueryCollectionItemQueryDefinitionReportQueryGroupByTagArrayOutput struct{ *pulumi.OutputState }
@@ -5562,12 +4823,6 @@ func (o GetQueriesQueryCollectionItemQueryDefinitionReportQueryGroupByTagArrayOu
 	return o
 }
 
-func (o GetQueriesQueryCollectionItemQueryDefinitionReportQueryGroupByTagArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetQueriesQueryCollectionItemQueryDefinitionReportQueryGroupByTag] {
-	return pulumix.Output[[]GetQueriesQueryCollectionItemQueryDefinitionReportQueryGroupByTag]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetQueriesQueryCollectionItemQueryDefinitionReportQueryGroupByTagArrayOutput) Index(i pulumi.IntInput) GetQueriesQueryCollectionItemQueryDefinitionReportQueryGroupByTagOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetQueriesQueryCollectionItemQueryDefinitionReportQueryGroupByTag {
 		return vs[0].([]GetQueriesQueryCollectionItemQueryDefinitionReportQueryGroupByTag)[vs[1].(int)]
@@ -5578,11 +4833,11 @@ type GetQueryQueryDefinition struct {
 	// The common fields for Cost Analysis UI rendering.
 	CostAnalysisUis []GetQueryQueryDefinitionCostAnalysisUi `pulumi:"costAnalysisUis"`
 	// The query display name. Avoid entering confidential information.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// The request of the generated Cost Analysis report.
 	ReportQueries []GetQueryQueryDefinitionReportQuery `pulumi:"reportQueries"`
 	// The saved query version.
-	Version float64 `pulumi:"version"`
+	Version *float64 `pulumi:"version"`
 }
 
 // GetQueryQueryDefinitionInput is an input type that accepts GetQueryQueryDefinitionArgs and GetQueryQueryDefinitionOutput values.
@@ -5600,11 +4855,11 @@ type GetQueryQueryDefinitionArgs struct {
 	// The common fields for Cost Analysis UI rendering.
 	CostAnalysisUis GetQueryQueryDefinitionCostAnalysisUiArrayInput `pulumi:"costAnalysisUis"`
 	// The query display name. Avoid entering confidential information.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// The request of the generated Cost Analysis report.
 	ReportQueries GetQueryQueryDefinitionReportQueryArrayInput `pulumi:"reportQueries"`
 	// The saved query version.
-	Version pulumi.Float64Input `pulumi:"version"`
+	Version pulumi.Float64PtrInput `pulumi:"version"`
 }
 
 func (GetQueryQueryDefinitionArgs) ElementType() reflect.Type {
@@ -5617,12 +4872,6 @@ func (i GetQueryQueryDefinitionArgs) ToGetQueryQueryDefinitionOutput() GetQueryQ
 
 func (i GetQueryQueryDefinitionArgs) ToGetQueryQueryDefinitionOutputWithContext(ctx context.Context) GetQueryQueryDefinitionOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetQueryQueryDefinitionOutput)
-}
-
-func (i GetQueryQueryDefinitionArgs) ToOutput(ctx context.Context) pulumix.Output[GetQueryQueryDefinition] {
-	return pulumix.Output[GetQueryQueryDefinition]{
-		OutputState: i.ToGetQueryQueryDefinitionOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetQueryQueryDefinitionArrayInput is an input type that accepts GetQueryQueryDefinitionArray and GetQueryQueryDefinitionArrayOutput values.
@@ -5650,12 +4899,6 @@ func (i GetQueryQueryDefinitionArray) ToGetQueryQueryDefinitionArrayOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetQueryQueryDefinitionArrayOutput)
 }
 
-func (i GetQueryQueryDefinitionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetQueryQueryDefinition] {
-	return pulumix.Output[[]GetQueryQueryDefinition]{
-		OutputState: i.ToGetQueryQueryDefinitionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetQueryQueryDefinitionOutput struct{ *pulumi.OutputState }
 
 func (GetQueryQueryDefinitionOutput) ElementType() reflect.Type {
@@ -5670,20 +4913,14 @@ func (o GetQueryQueryDefinitionOutput) ToGetQueryQueryDefinitionOutputWithContex
 	return o
 }
 
-func (o GetQueryQueryDefinitionOutput) ToOutput(ctx context.Context) pulumix.Output[GetQueryQueryDefinition] {
-	return pulumix.Output[GetQueryQueryDefinition]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The common fields for Cost Analysis UI rendering.
 func (o GetQueryQueryDefinitionOutput) CostAnalysisUis() GetQueryQueryDefinitionCostAnalysisUiArrayOutput {
 	return o.ApplyT(func(v GetQueryQueryDefinition) []GetQueryQueryDefinitionCostAnalysisUi { return v.CostAnalysisUis }).(GetQueryQueryDefinitionCostAnalysisUiArrayOutput)
 }
 
 // The query display name. Avoid entering confidential information.
-func (o GetQueryQueryDefinitionOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetQueryQueryDefinition) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetQueryQueryDefinitionOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetQueryQueryDefinition) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // The request of the generated Cost Analysis report.
@@ -5692,8 +4929,8 @@ func (o GetQueryQueryDefinitionOutput) ReportQueries() GetQueryQueryDefinitionRe
 }
 
 // The saved query version.
-func (o GetQueryQueryDefinitionOutput) Version() pulumi.Float64Output {
-	return o.ApplyT(func(v GetQueryQueryDefinition) float64 { return v.Version }).(pulumi.Float64Output)
+func (o GetQueryQueryDefinitionOutput) Version() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetQueryQueryDefinition) *float64 { return v.Version }).(pulumi.Float64PtrOutput)
 }
 
 type GetQueryQueryDefinitionArrayOutput struct{ *pulumi.OutputState }
@@ -5710,12 +4947,6 @@ func (o GetQueryQueryDefinitionArrayOutput) ToGetQueryQueryDefinitionArrayOutput
 	return o
 }
 
-func (o GetQueryQueryDefinitionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetQueryQueryDefinition] {
-	return pulumix.Output[[]GetQueryQueryDefinition]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetQueryQueryDefinitionArrayOutput) Index(i pulumi.IntInput) GetQueryQueryDefinitionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetQueryQueryDefinition {
 		return vs[0].([]GetQueryQueryDefinition)[vs[1].(int)]
@@ -5724,9 +4955,9 @@ func (o GetQueryQueryDefinitionArrayOutput) Index(i pulumi.IntInput) GetQueryQue
 
 type GetQueryQueryDefinitionCostAnalysisUi struct {
 	// The graph type.
-	Graph string `pulumi:"graph"`
+	Graph *string `pulumi:"graph"`
 	// A cumulative graph.
-	IsCumulativeGraph bool `pulumi:"isCumulativeGraph"`
+	IsCumulativeGraph *bool `pulumi:"isCumulativeGraph"`
 }
 
 // GetQueryQueryDefinitionCostAnalysisUiInput is an input type that accepts GetQueryQueryDefinitionCostAnalysisUiArgs and GetQueryQueryDefinitionCostAnalysisUiOutput values.
@@ -5742,9 +4973,9 @@ type GetQueryQueryDefinitionCostAnalysisUiInput interface {
 
 type GetQueryQueryDefinitionCostAnalysisUiArgs struct {
 	// The graph type.
-	Graph pulumi.StringInput `pulumi:"graph"`
+	Graph pulumi.StringPtrInput `pulumi:"graph"`
 	// A cumulative graph.
-	IsCumulativeGraph pulumi.BoolInput `pulumi:"isCumulativeGraph"`
+	IsCumulativeGraph pulumi.BoolPtrInput `pulumi:"isCumulativeGraph"`
 }
 
 func (GetQueryQueryDefinitionCostAnalysisUiArgs) ElementType() reflect.Type {
@@ -5757,12 +4988,6 @@ func (i GetQueryQueryDefinitionCostAnalysisUiArgs) ToGetQueryQueryDefinitionCost
 
 func (i GetQueryQueryDefinitionCostAnalysisUiArgs) ToGetQueryQueryDefinitionCostAnalysisUiOutputWithContext(ctx context.Context) GetQueryQueryDefinitionCostAnalysisUiOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetQueryQueryDefinitionCostAnalysisUiOutput)
-}
-
-func (i GetQueryQueryDefinitionCostAnalysisUiArgs) ToOutput(ctx context.Context) pulumix.Output[GetQueryQueryDefinitionCostAnalysisUi] {
-	return pulumix.Output[GetQueryQueryDefinitionCostAnalysisUi]{
-		OutputState: i.ToGetQueryQueryDefinitionCostAnalysisUiOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetQueryQueryDefinitionCostAnalysisUiArrayInput is an input type that accepts GetQueryQueryDefinitionCostAnalysisUiArray and GetQueryQueryDefinitionCostAnalysisUiArrayOutput values.
@@ -5790,12 +5015,6 @@ func (i GetQueryQueryDefinitionCostAnalysisUiArray) ToGetQueryQueryDefinitionCos
 	return pulumi.ToOutputWithContext(ctx, i).(GetQueryQueryDefinitionCostAnalysisUiArrayOutput)
 }
 
-func (i GetQueryQueryDefinitionCostAnalysisUiArray) ToOutput(ctx context.Context) pulumix.Output[[]GetQueryQueryDefinitionCostAnalysisUi] {
-	return pulumix.Output[[]GetQueryQueryDefinitionCostAnalysisUi]{
-		OutputState: i.ToGetQueryQueryDefinitionCostAnalysisUiArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetQueryQueryDefinitionCostAnalysisUiOutput struct{ *pulumi.OutputState }
 
 func (GetQueryQueryDefinitionCostAnalysisUiOutput) ElementType() reflect.Type {
@@ -5810,20 +5029,14 @@ func (o GetQueryQueryDefinitionCostAnalysisUiOutput) ToGetQueryQueryDefinitionCo
 	return o
 }
 
-func (o GetQueryQueryDefinitionCostAnalysisUiOutput) ToOutput(ctx context.Context) pulumix.Output[GetQueryQueryDefinitionCostAnalysisUi] {
-	return pulumix.Output[GetQueryQueryDefinitionCostAnalysisUi]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The graph type.
-func (o GetQueryQueryDefinitionCostAnalysisUiOutput) Graph() pulumi.StringOutput {
-	return o.ApplyT(func(v GetQueryQueryDefinitionCostAnalysisUi) string { return v.Graph }).(pulumi.StringOutput)
+func (o GetQueryQueryDefinitionCostAnalysisUiOutput) Graph() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetQueryQueryDefinitionCostAnalysisUi) *string { return v.Graph }).(pulumi.StringPtrOutput)
 }
 
 // A cumulative graph.
-func (o GetQueryQueryDefinitionCostAnalysisUiOutput) IsCumulativeGraph() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetQueryQueryDefinitionCostAnalysisUi) bool { return v.IsCumulativeGraph }).(pulumi.BoolOutput)
+func (o GetQueryQueryDefinitionCostAnalysisUiOutput) IsCumulativeGraph() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetQueryQueryDefinitionCostAnalysisUi) *bool { return v.IsCumulativeGraph }).(pulumi.BoolPtrOutput)
 }
 
 type GetQueryQueryDefinitionCostAnalysisUiArrayOutput struct{ *pulumi.OutputState }
@@ -5840,12 +5053,6 @@ func (o GetQueryQueryDefinitionCostAnalysisUiArrayOutput) ToGetQueryQueryDefinit
 	return o
 }
 
-func (o GetQueryQueryDefinitionCostAnalysisUiArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetQueryQueryDefinitionCostAnalysisUi] {
-	return pulumix.Output[[]GetQueryQueryDefinitionCostAnalysisUi]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetQueryQueryDefinitionCostAnalysisUiArrayOutput) Index(i pulumi.IntInput) GetQueryQueryDefinitionCostAnalysisUiOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetQueryQueryDefinitionCostAnalysisUi {
 		return vs[0].([]GetQueryQueryDefinitionCostAnalysisUi)[vs[1].(int)]
@@ -5854,29 +5061,29 @@ func (o GetQueryQueryDefinitionCostAnalysisUiArrayOutput) Index(i pulumi.IntInpu
 
 type GetQueryQueryDefinitionReportQuery struct {
 	// The compartment depth level.
-	CompartmentDepth float64 `pulumi:"compartmentDepth"`
+	CompartmentDepth *float64 `pulumi:"compartmentDepth"`
 	// The UI date range, for example, LAST_THREE_MONTHS. Conflicts with timeUsageStarted and timeUsageEnded.
-	DateRangeName string `pulumi:"dateRangeName"`
+	DateRangeName *string `pulumi:"dateRangeName"`
 	// The filter object for query usage.
-	Filter string `pulumi:"filter"`
+	Filter *string `pulumi:"filter"`
 	// Forecast configuration of usage/cost.
 	Forecasts []GetQueryQueryDefinitionReportQueryForecast `pulumi:"forecasts"`
 	// The usage granularity. HOURLY - Hourly data aggregation. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation. TOTAL - Not yet supported.
-	Granularity string `pulumi:"granularity"`
+	Granularity *string `pulumi:"granularity"`
 	// Aggregate the result by. example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
 	GroupBies []string `pulumi:"groupBies"`
 	// GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only supports one tag in the list. For example: `[{"namespace":"oracle", "key":"createdBy"]`
 	GroupByTags []GetQueryQueryDefinitionReportQueryGroupByTag `pulumi:"groupByTags"`
 	// Whether aggregated by time. If isAggregateByTime is true, all usage/cost over the query time period will be added up.
-	IsAggregateByTime bool `pulumi:"isAggregateByTime"`
+	IsAggregateByTime *bool `pulumi:"isAggregateByTime"`
 	// The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data. Credit - Query the credit adjustments data. ExpiredCredit - Query the expired credits data AllCredit - Query the credit adjustments and expired credit
-	QueryType string `pulumi:"queryType"`
+	QueryType *string `pulumi:"queryType"`
 	// Tenant ID.
-	TenantId string `pulumi:"tenantId"`
+	TenantId *string `pulumi:"tenantId"`
 	// The usage end time.
-	TimeUsageEnded string `pulumi:"timeUsageEnded"`
+	TimeUsageEnded *string `pulumi:"timeUsageEnded"`
 	// The usage start time.
-	TimeUsageStarted string `pulumi:"timeUsageStarted"`
+	TimeUsageStarted *string `pulumi:"timeUsageStarted"`
 }
 
 // GetQueryQueryDefinitionReportQueryInput is an input type that accepts GetQueryQueryDefinitionReportQueryArgs and GetQueryQueryDefinitionReportQueryOutput values.
@@ -5892,29 +5099,29 @@ type GetQueryQueryDefinitionReportQueryInput interface {
 
 type GetQueryQueryDefinitionReportQueryArgs struct {
 	// The compartment depth level.
-	CompartmentDepth pulumi.Float64Input `pulumi:"compartmentDepth"`
+	CompartmentDepth pulumi.Float64PtrInput `pulumi:"compartmentDepth"`
 	// The UI date range, for example, LAST_THREE_MONTHS. Conflicts with timeUsageStarted and timeUsageEnded.
-	DateRangeName pulumi.StringInput `pulumi:"dateRangeName"`
+	DateRangeName pulumi.StringPtrInput `pulumi:"dateRangeName"`
 	// The filter object for query usage.
-	Filter pulumi.StringInput `pulumi:"filter"`
+	Filter pulumi.StringPtrInput `pulumi:"filter"`
 	// Forecast configuration of usage/cost.
 	Forecasts GetQueryQueryDefinitionReportQueryForecastArrayInput `pulumi:"forecasts"`
 	// The usage granularity. HOURLY - Hourly data aggregation. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation. TOTAL - Not yet supported.
-	Granularity pulumi.StringInput `pulumi:"granularity"`
+	Granularity pulumi.StringPtrInput `pulumi:"granularity"`
 	// Aggregate the result by. example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
 	GroupBies pulumi.StringArrayInput `pulumi:"groupBies"`
 	// GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only supports one tag in the list. For example: `[{"namespace":"oracle", "key":"createdBy"]`
 	GroupByTags GetQueryQueryDefinitionReportQueryGroupByTagArrayInput `pulumi:"groupByTags"`
 	// Whether aggregated by time. If isAggregateByTime is true, all usage/cost over the query time period will be added up.
-	IsAggregateByTime pulumi.BoolInput `pulumi:"isAggregateByTime"`
+	IsAggregateByTime pulumi.BoolPtrInput `pulumi:"isAggregateByTime"`
 	// The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data. Credit - Query the credit adjustments data. ExpiredCredit - Query the expired credits data AllCredit - Query the credit adjustments and expired credit
-	QueryType pulumi.StringInput `pulumi:"queryType"`
+	QueryType pulumi.StringPtrInput `pulumi:"queryType"`
 	// Tenant ID.
-	TenantId pulumi.StringInput `pulumi:"tenantId"`
+	TenantId pulumi.StringPtrInput `pulumi:"tenantId"`
 	// The usage end time.
-	TimeUsageEnded pulumi.StringInput `pulumi:"timeUsageEnded"`
+	TimeUsageEnded pulumi.StringPtrInput `pulumi:"timeUsageEnded"`
 	// The usage start time.
-	TimeUsageStarted pulumi.StringInput `pulumi:"timeUsageStarted"`
+	TimeUsageStarted pulumi.StringPtrInput `pulumi:"timeUsageStarted"`
 }
 
 func (GetQueryQueryDefinitionReportQueryArgs) ElementType() reflect.Type {
@@ -5927,12 +5134,6 @@ func (i GetQueryQueryDefinitionReportQueryArgs) ToGetQueryQueryDefinitionReportQ
 
 func (i GetQueryQueryDefinitionReportQueryArgs) ToGetQueryQueryDefinitionReportQueryOutputWithContext(ctx context.Context) GetQueryQueryDefinitionReportQueryOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetQueryQueryDefinitionReportQueryOutput)
-}
-
-func (i GetQueryQueryDefinitionReportQueryArgs) ToOutput(ctx context.Context) pulumix.Output[GetQueryQueryDefinitionReportQuery] {
-	return pulumix.Output[GetQueryQueryDefinitionReportQuery]{
-		OutputState: i.ToGetQueryQueryDefinitionReportQueryOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetQueryQueryDefinitionReportQueryArrayInput is an input type that accepts GetQueryQueryDefinitionReportQueryArray and GetQueryQueryDefinitionReportQueryArrayOutput values.
@@ -5960,12 +5161,6 @@ func (i GetQueryQueryDefinitionReportQueryArray) ToGetQueryQueryDefinitionReport
 	return pulumi.ToOutputWithContext(ctx, i).(GetQueryQueryDefinitionReportQueryArrayOutput)
 }
 
-func (i GetQueryQueryDefinitionReportQueryArray) ToOutput(ctx context.Context) pulumix.Output[[]GetQueryQueryDefinitionReportQuery] {
-	return pulumix.Output[[]GetQueryQueryDefinitionReportQuery]{
-		OutputState: i.ToGetQueryQueryDefinitionReportQueryArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetQueryQueryDefinitionReportQueryOutput struct{ *pulumi.OutputState }
 
 func (GetQueryQueryDefinitionReportQueryOutput) ElementType() reflect.Type {
@@ -5980,25 +5175,19 @@ func (o GetQueryQueryDefinitionReportQueryOutput) ToGetQueryQueryDefinitionRepor
 	return o
 }
 
-func (o GetQueryQueryDefinitionReportQueryOutput) ToOutput(ctx context.Context) pulumix.Output[GetQueryQueryDefinitionReportQuery] {
-	return pulumix.Output[GetQueryQueryDefinitionReportQuery]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The compartment depth level.
-func (o GetQueryQueryDefinitionReportQueryOutput) CompartmentDepth() pulumi.Float64Output {
-	return o.ApplyT(func(v GetQueryQueryDefinitionReportQuery) float64 { return v.CompartmentDepth }).(pulumi.Float64Output)
+func (o GetQueryQueryDefinitionReportQueryOutput) CompartmentDepth() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetQueryQueryDefinitionReportQuery) *float64 { return v.CompartmentDepth }).(pulumi.Float64PtrOutput)
 }
 
 // The UI date range, for example, LAST_THREE_MONTHS. Conflicts with timeUsageStarted and timeUsageEnded.
-func (o GetQueryQueryDefinitionReportQueryOutput) DateRangeName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetQueryQueryDefinitionReportQuery) string { return v.DateRangeName }).(pulumi.StringOutput)
+func (o GetQueryQueryDefinitionReportQueryOutput) DateRangeName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetQueryQueryDefinitionReportQuery) *string { return v.DateRangeName }).(pulumi.StringPtrOutput)
 }
 
 // The filter object for query usage.
-func (o GetQueryQueryDefinitionReportQueryOutput) Filter() pulumi.StringOutput {
-	return o.ApplyT(func(v GetQueryQueryDefinitionReportQuery) string { return v.Filter }).(pulumi.StringOutput)
+func (o GetQueryQueryDefinitionReportQueryOutput) Filter() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetQueryQueryDefinitionReportQuery) *string { return v.Filter }).(pulumi.StringPtrOutput)
 }
 
 // Forecast configuration of usage/cost.
@@ -6009,8 +5198,8 @@ func (o GetQueryQueryDefinitionReportQueryOutput) Forecasts() GetQueryQueryDefin
 }
 
 // The usage granularity. HOURLY - Hourly data aggregation. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation. TOTAL - Not yet supported.
-func (o GetQueryQueryDefinitionReportQueryOutput) Granularity() pulumi.StringOutput {
-	return o.ApplyT(func(v GetQueryQueryDefinitionReportQuery) string { return v.Granularity }).(pulumi.StringOutput)
+func (o GetQueryQueryDefinitionReportQueryOutput) Granularity() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetQueryQueryDefinitionReportQuery) *string { return v.Granularity }).(pulumi.StringPtrOutput)
 }
 
 // Aggregate the result by. example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
@@ -6026,28 +5215,28 @@ func (o GetQueryQueryDefinitionReportQueryOutput) GroupByTags() GetQueryQueryDef
 }
 
 // Whether aggregated by time. If isAggregateByTime is true, all usage/cost over the query time period will be added up.
-func (o GetQueryQueryDefinitionReportQueryOutput) IsAggregateByTime() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetQueryQueryDefinitionReportQuery) bool { return v.IsAggregateByTime }).(pulumi.BoolOutput)
+func (o GetQueryQueryDefinitionReportQueryOutput) IsAggregateByTime() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetQueryQueryDefinitionReportQuery) *bool { return v.IsAggregateByTime }).(pulumi.BoolPtrOutput)
 }
 
 // The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data. Credit - Query the credit adjustments data. ExpiredCredit - Query the expired credits data AllCredit - Query the credit adjustments and expired credit
-func (o GetQueryQueryDefinitionReportQueryOutput) QueryType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetQueryQueryDefinitionReportQuery) string { return v.QueryType }).(pulumi.StringOutput)
+func (o GetQueryQueryDefinitionReportQueryOutput) QueryType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetQueryQueryDefinitionReportQuery) *string { return v.QueryType }).(pulumi.StringPtrOutput)
 }
 
 // Tenant ID.
-func (o GetQueryQueryDefinitionReportQueryOutput) TenantId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetQueryQueryDefinitionReportQuery) string { return v.TenantId }).(pulumi.StringOutput)
+func (o GetQueryQueryDefinitionReportQueryOutput) TenantId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetQueryQueryDefinitionReportQuery) *string { return v.TenantId }).(pulumi.StringPtrOutput)
 }
 
 // The usage end time.
-func (o GetQueryQueryDefinitionReportQueryOutput) TimeUsageEnded() pulumi.StringOutput {
-	return o.ApplyT(func(v GetQueryQueryDefinitionReportQuery) string { return v.TimeUsageEnded }).(pulumi.StringOutput)
+func (o GetQueryQueryDefinitionReportQueryOutput) TimeUsageEnded() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetQueryQueryDefinitionReportQuery) *string { return v.TimeUsageEnded }).(pulumi.StringPtrOutput)
 }
 
 // The usage start time.
-func (o GetQueryQueryDefinitionReportQueryOutput) TimeUsageStarted() pulumi.StringOutput {
-	return o.ApplyT(func(v GetQueryQueryDefinitionReportQuery) string { return v.TimeUsageStarted }).(pulumi.StringOutput)
+func (o GetQueryQueryDefinitionReportQueryOutput) TimeUsageStarted() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetQueryQueryDefinitionReportQuery) *string { return v.TimeUsageStarted }).(pulumi.StringPtrOutput)
 }
 
 type GetQueryQueryDefinitionReportQueryArrayOutput struct{ *pulumi.OutputState }
@@ -6064,12 +5253,6 @@ func (o GetQueryQueryDefinitionReportQueryArrayOutput) ToGetQueryQueryDefinition
 	return o
 }
 
-func (o GetQueryQueryDefinitionReportQueryArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetQueryQueryDefinitionReportQuery] {
-	return pulumix.Output[[]GetQueryQueryDefinitionReportQuery]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetQueryQueryDefinitionReportQueryArrayOutput) Index(i pulumi.IntInput) GetQueryQueryDefinitionReportQueryOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetQueryQueryDefinitionReportQuery {
 		return vs[0].([]GetQueryQueryDefinitionReportQuery)[vs[1].(int)]
@@ -6078,11 +5261,11 @@ func (o GetQueryQueryDefinitionReportQueryArrayOutput) Index(i pulumi.IntInput) 
 
 type GetQueryQueryDefinitionReportQueryForecast struct {
 	// BASIC uses the exponential smoothing (ETS) model to project future usage/costs based on history data. The basis for projections is a periodic set of equivalent historical days for which the projection is being made.
-	ForecastType string `pulumi:"forecastType"`
+	ForecastType *string `pulumi:"forecastType"`
 	// The forecast end time.
-	TimeForecastEnded string `pulumi:"timeForecastEnded"`
+	TimeForecastEnded *string `pulumi:"timeForecastEnded"`
 	// The forecast start time. Defaults to UTC-1 if not specified.
-	TimeForecastStarted string `pulumi:"timeForecastStarted"`
+	TimeForecastStarted *string `pulumi:"timeForecastStarted"`
 }
 
 // GetQueryQueryDefinitionReportQueryForecastInput is an input type that accepts GetQueryQueryDefinitionReportQueryForecastArgs and GetQueryQueryDefinitionReportQueryForecastOutput values.
@@ -6098,11 +5281,11 @@ type GetQueryQueryDefinitionReportQueryForecastInput interface {
 
 type GetQueryQueryDefinitionReportQueryForecastArgs struct {
 	// BASIC uses the exponential smoothing (ETS) model to project future usage/costs based on history data. The basis for projections is a periodic set of equivalent historical days for which the projection is being made.
-	ForecastType pulumi.StringInput `pulumi:"forecastType"`
+	ForecastType pulumi.StringPtrInput `pulumi:"forecastType"`
 	// The forecast end time.
-	TimeForecastEnded pulumi.StringInput `pulumi:"timeForecastEnded"`
+	TimeForecastEnded pulumi.StringPtrInput `pulumi:"timeForecastEnded"`
 	// The forecast start time. Defaults to UTC-1 if not specified.
-	TimeForecastStarted pulumi.StringInput `pulumi:"timeForecastStarted"`
+	TimeForecastStarted pulumi.StringPtrInput `pulumi:"timeForecastStarted"`
 }
 
 func (GetQueryQueryDefinitionReportQueryForecastArgs) ElementType() reflect.Type {
@@ -6115,12 +5298,6 @@ func (i GetQueryQueryDefinitionReportQueryForecastArgs) ToGetQueryQueryDefinitio
 
 func (i GetQueryQueryDefinitionReportQueryForecastArgs) ToGetQueryQueryDefinitionReportQueryForecastOutputWithContext(ctx context.Context) GetQueryQueryDefinitionReportQueryForecastOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetQueryQueryDefinitionReportQueryForecastOutput)
-}
-
-func (i GetQueryQueryDefinitionReportQueryForecastArgs) ToOutput(ctx context.Context) pulumix.Output[GetQueryQueryDefinitionReportQueryForecast] {
-	return pulumix.Output[GetQueryQueryDefinitionReportQueryForecast]{
-		OutputState: i.ToGetQueryQueryDefinitionReportQueryForecastOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetQueryQueryDefinitionReportQueryForecastArrayInput is an input type that accepts GetQueryQueryDefinitionReportQueryForecastArray and GetQueryQueryDefinitionReportQueryForecastArrayOutput values.
@@ -6148,12 +5325,6 @@ func (i GetQueryQueryDefinitionReportQueryForecastArray) ToGetQueryQueryDefiniti
 	return pulumi.ToOutputWithContext(ctx, i).(GetQueryQueryDefinitionReportQueryForecastArrayOutput)
 }
 
-func (i GetQueryQueryDefinitionReportQueryForecastArray) ToOutput(ctx context.Context) pulumix.Output[[]GetQueryQueryDefinitionReportQueryForecast] {
-	return pulumix.Output[[]GetQueryQueryDefinitionReportQueryForecast]{
-		OutputState: i.ToGetQueryQueryDefinitionReportQueryForecastArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetQueryQueryDefinitionReportQueryForecastOutput struct{ *pulumi.OutputState }
 
 func (GetQueryQueryDefinitionReportQueryForecastOutput) ElementType() reflect.Type {
@@ -6168,25 +5339,19 @@ func (o GetQueryQueryDefinitionReportQueryForecastOutput) ToGetQueryQueryDefinit
 	return o
 }
 
-func (o GetQueryQueryDefinitionReportQueryForecastOutput) ToOutput(ctx context.Context) pulumix.Output[GetQueryQueryDefinitionReportQueryForecast] {
-	return pulumix.Output[GetQueryQueryDefinitionReportQueryForecast]{
-		OutputState: o.OutputState,
-	}
-}
-
 // BASIC uses the exponential smoothing (ETS) model to project future usage/costs based on history data. The basis for projections is a periodic set of equivalent historical days for which the projection is being made.
-func (o GetQueryQueryDefinitionReportQueryForecastOutput) ForecastType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetQueryQueryDefinitionReportQueryForecast) string { return v.ForecastType }).(pulumi.StringOutput)
+func (o GetQueryQueryDefinitionReportQueryForecastOutput) ForecastType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetQueryQueryDefinitionReportQueryForecast) *string { return v.ForecastType }).(pulumi.StringPtrOutput)
 }
 
 // The forecast end time.
-func (o GetQueryQueryDefinitionReportQueryForecastOutput) TimeForecastEnded() pulumi.StringOutput {
-	return o.ApplyT(func(v GetQueryQueryDefinitionReportQueryForecast) string { return v.TimeForecastEnded }).(pulumi.StringOutput)
+func (o GetQueryQueryDefinitionReportQueryForecastOutput) TimeForecastEnded() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetQueryQueryDefinitionReportQueryForecast) *string { return v.TimeForecastEnded }).(pulumi.StringPtrOutput)
 }
 
 // The forecast start time. Defaults to UTC-1 if not specified.
-func (o GetQueryQueryDefinitionReportQueryForecastOutput) TimeForecastStarted() pulumi.StringOutput {
-	return o.ApplyT(func(v GetQueryQueryDefinitionReportQueryForecast) string { return v.TimeForecastStarted }).(pulumi.StringOutput)
+func (o GetQueryQueryDefinitionReportQueryForecastOutput) TimeForecastStarted() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetQueryQueryDefinitionReportQueryForecast) *string { return v.TimeForecastStarted }).(pulumi.StringPtrOutput)
 }
 
 type GetQueryQueryDefinitionReportQueryForecastArrayOutput struct{ *pulumi.OutputState }
@@ -6203,12 +5368,6 @@ func (o GetQueryQueryDefinitionReportQueryForecastArrayOutput) ToGetQueryQueryDe
 	return o
 }
 
-func (o GetQueryQueryDefinitionReportQueryForecastArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetQueryQueryDefinitionReportQueryForecast] {
-	return pulumix.Output[[]GetQueryQueryDefinitionReportQueryForecast]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetQueryQueryDefinitionReportQueryForecastArrayOutput) Index(i pulumi.IntInput) GetQueryQueryDefinitionReportQueryForecastOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetQueryQueryDefinitionReportQueryForecast {
 		return vs[0].([]GetQueryQueryDefinitionReportQueryForecast)[vs[1].(int)]
@@ -6217,11 +5376,11 @@ func (o GetQueryQueryDefinitionReportQueryForecastArrayOutput) Index(i pulumi.In
 
 type GetQueryQueryDefinitionReportQueryGroupByTag struct {
 	// The tag key.
-	Key string `pulumi:"key"`
+	Key *string `pulumi:"key"`
 	// The tag namespace.
-	Namespace string `pulumi:"namespace"`
+	Namespace *string `pulumi:"namespace"`
 	// The tag value.
-	Value string `pulumi:"value"`
+	Value *string `pulumi:"value"`
 }
 
 // GetQueryQueryDefinitionReportQueryGroupByTagInput is an input type that accepts GetQueryQueryDefinitionReportQueryGroupByTagArgs and GetQueryQueryDefinitionReportQueryGroupByTagOutput values.
@@ -6237,11 +5396,11 @@ type GetQueryQueryDefinitionReportQueryGroupByTagInput interface {
 
 type GetQueryQueryDefinitionReportQueryGroupByTagArgs struct {
 	// The tag key.
-	Key pulumi.StringInput `pulumi:"key"`
+	Key pulumi.StringPtrInput `pulumi:"key"`
 	// The tag namespace.
-	Namespace pulumi.StringInput `pulumi:"namespace"`
+	Namespace pulumi.StringPtrInput `pulumi:"namespace"`
 	// The tag value.
-	Value pulumi.StringInput `pulumi:"value"`
+	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
 func (GetQueryQueryDefinitionReportQueryGroupByTagArgs) ElementType() reflect.Type {
@@ -6254,12 +5413,6 @@ func (i GetQueryQueryDefinitionReportQueryGroupByTagArgs) ToGetQueryQueryDefinit
 
 func (i GetQueryQueryDefinitionReportQueryGroupByTagArgs) ToGetQueryQueryDefinitionReportQueryGroupByTagOutputWithContext(ctx context.Context) GetQueryQueryDefinitionReportQueryGroupByTagOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetQueryQueryDefinitionReportQueryGroupByTagOutput)
-}
-
-func (i GetQueryQueryDefinitionReportQueryGroupByTagArgs) ToOutput(ctx context.Context) pulumix.Output[GetQueryQueryDefinitionReportQueryGroupByTag] {
-	return pulumix.Output[GetQueryQueryDefinitionReportQueryGroupByTag]{
-		OutputState: i.ToGetQueryQueryDefinitionReportQueryGroupByTagOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetQueryQueryDefinitionReportQueryGroupByTagArrayInput is an input type that accepts GetQueryQueryDefinitionReportQueryGroupByTagArray and GetQueryQueryDefinitionReportQueryGroupByTagArrayOutput values.
@@ -6287,12 +5440,6 @@ func (i GetQueryQueryDefinitionReportQueryGroupByTagArray) ToGetQueryQueryDefini
 	return pulumi.ToOutputWithContext(ctx, i).(GetQueryQueryDefinitionReportQueryGroupByTagArrayOutput)
 }
 
-func (i GetQueryQueryDefinitionReportQueryGroupByTagArray) ToOutput(ctx context.Context) pulumix.Output[[]GetQueryQueryDefinitionReportQueryGroupByTag] {
-	return pulumix.Output[[]GetQueryQueryDefinitionReportQueryGroupByTag]{
-		OutputState: i.ToGetQueryQueryDefinitionReportQueryGroupByTagArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetQueryQueryDefinitionReportQueryGroupByTagOutput struct{ *pulumi.OutputState }
 
 func (GetQueryQueryDefinitionReportQueryGroupByTagOutput) ElementType() reflect.Type {
@@ -6307,25 +5454,19 @@ func (o GetQueryQueryDefinitionReportQueryGroupByTagOutput) ToGetQueryQueryDefin
 	return o
 }
 
-func (o GetQueryQueryDefinitionReportQueryGroupByTagOutput) ToOutput(ctx context.Context) pulumix.Output[GetQueryQueryDefinitionReportQueryGroupByTag] {
-	return pulumix.Output[GetQueryQueryDefinitionReportQueryGroupByTag]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The tag key.
-func (o GetQueryQueryDefinitionReportQueryGroupByTagOutput) Key() pulumi.StringOutput {
-	return o.ApplyT(func(v GetQueryQueryDefinitionReportQueryGroupByTag) string { return v.Key }).(pulumi.StringOutput)
+func (o GetQueryQueryDefinitionReportQueryGroupByTagOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetQueryQueryDefinitionReportQueryGroupByTag) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
 // The tag namespace.
-func (o GetQueryQueryDefinitionReportQueryGroupByTagOutput) Namespace() pulumi.StringOutput {
-	return o.ApplyT(func(v GetQueryQueryDefinitionReportQueryGroupByTag) string { return v.Namespace }).(pulumi.StringOutput)
+func (o GetQueryQueryDefinitionReportQueryGroupByTagOutput) Namespace() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetQueryQueryDefinitionReportQueryGroupByTag) *string { return v.Namespace }).(pulumi.StringPtrOutput)
 }
 
 // The tag value.
-func (o GetQueryQueryDefinitionReportQueryGroupByTagOutput) Value() pulumi.StringOutput {
-	return o.ApplyT(func(v GetQueryQueryDefinitionReportQueryGroupByTag) string { return v.Value }).(pulumi.StringOutput)
+func (o GetQueryQueryDefinitionReportQueryGroupByTagOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetQueryQueryDefinitionReportQueryGroupByTag) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
 
 type GetQueryQueryDefinitionReportQueryGroupByTagArrayOutput struct{ *pulumi.OutputState }
@@ -6342,12 +5483,6 @@ func (o GetQueryQueryDefinitionReportQueryGroupByTagArrayOutput) ToGetQueryQuery
 	return o
 }
 
-func (o GetQueryQueryDefinitionReportQueryGroupByTagArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetQueryQueryDefinitionReportQueryGroupByTag] {
-	return pulumix.Output[[]GetQueryQueryDefinitionReportQueryGroupByTag]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetQueryQueryDefinitionReportQueryGroupByTagArrayOutput) Index(i pulumi.IntInput) GetQueryQueryDefinitionReportQueryGroupByTagOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetQueryQueryDefinitionReportQueryGroupByTag {
 		return vs[0].([]GetQueryQueryDefinitionReportQueryGroupByTag)[vs[1].(int)]
@@ -6356,21 +5491,21 @@ func (o GetQueryQueryDefinitionReportQueryGroupByTagArrayOutput) Index(i pulumi.
 
 type GetScheduleQueryProperty struct {
 	// The depth level of the compartment.
-	CompartmentDepth float64 `pulumi:"compartmentDepth"`
+	CompartmentDepth *float64 `pulumi:"compartmentDepth"`
 	// Static or dynamic date range `dateRangeType`, which corresponds with type-specific characteristics.
 	DateRanges []GetScheduleQueryPropertyDateRange `pulumi:"dateRanges"`
 	// The filter object for query usage.
-	Filter string `pulumi:"filter"`
+	Filter *string `pulumi:"filter"`
 	// The usage granularity. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation. Allowed values are: DAILY MONTHLY
-	Granularity string `pulumi:"granularity"`
+	Granularity *string `pulumi:"granularity"`
 	// Aggregate the result by. For example: [ "tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName" ]
 	GroupBies []string `pulumi:"groupBies"`
 	// GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only supports one tag in the list. For example: [ { "namespace": "oracle", "key": "createdBy" ]
 	GroupByTags []GetScheduleQueryPropertyGroupByTag `pulumi:"groupByTags"`
 	// Specifies whether aggregated by time. If isAggregateByTime is true, all usage or cost over the query time period will be added up.
-	IsAggregateByTime bool `pulumi:"isAggregateByTime"`
+	IsAggregateByTime *bool `pulumi:"isAggregateByTime"`
 	// The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data. Allowed values are: USAGE COST USAGE_AND_COST
-	QueryType string `pulumi:"queryType"`
+	QueryType *string `pulumi:"queryType"`
 }
 
 // GetScheduleQueryPropertyInput is an input type that accepts GetScheduleQueryPropertyArgs and GetScheduleQueryPropertyOutput values.
@@ -6386,21 +5521,21 @@ type GetScheduleQueryPropertyInput interface {
 
 type GetScheduleQueryPropertyArgs struct {
 	// The depth level of the compartment.
-	CompartmentDepth pulumi.Float64Input `pulumi:"compartmentDepth"`
+	CompartmentDepth pulumi.Float64PtrInput `pulumi:"compartmentDepth"`
 	// Static or dynamic date range `dateRangeType`, which corresponds with type-specific characteristics.
 	DateRanges GetScheduleQueryPropertyDateRangeArrayInput `pulumi:"dateRanges"`
 	// The filter object for query usage.
-	Filter pulumi.StringInput `pulumi:"filter"`
+	Filter pulumi.StringPtrInput `pulumi:"filter"`
 	// The usage granularity. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation. Allowed values are: DAILY MONTHLY
-	Granularity pulumi.StringInput `pulumi:"granularity"`
+	Granularity pulumi.StringPtrInput `pulumi:"granularity"`
 	// Aggregate the result by. For example: [ "tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName" ]
 	GroupBies pulumi.StringArrayInput `pulumi:"groupBies"`
 	// GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only supports one tag in the list. For example: [ { "namespace": "oracle", "key": "createdBy" ]
 	GroupByTags GetScheduleQueryPropertyGroupByTagArrayInput `pulumi:"groupByTags"`
 	// Specifies whether aggregated by time. If isAggregateByTime is true, all usage or cost over the query time period will be added up.
-	IsAggregateByTime pulumi.BoolInput `pulumi:"isAggregateByTime"`
+	IsAggregateByTime pulumi.BoolPtrInput `pulumi:"isAggregateByTime"`
 	// The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data. Allowed values are: USAGE COST USAGE_AND_COST
-	QueryType pulumi.StringInput `pulumi:"queryType"`
+	QueryType pulumi.StringPtrInput `pulumi:"queryType"`
 }
 
 func (GetScheduleQueryPropertyArgs) ElementType() reflect.Type {
@@ -6413,12 +5548,6 @@ func (i GetScheduleQueryPropertyArgs) ToGetScheduleQueryPropertyOutput() GetSche
 
 func (i GetScheduleQueryPropertyArgs) ToGetScheduleQueryPropertyOutputWithContext(ctx context.Context) GetScheduleQueryPropertyOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetScheduleQueryPropertyOutput)
-}
-
-func (i GetScheduleQueryPropertyArgs) ToOutput(ctx context.Context) pulumix.Output[GetScheduleQueryProperty] {
-	return pulumix.Output[GetScheduleQueryProperty]{
-		OutputState: i.ToGetScheduleQueryPropertyOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetScheduleQueryPropertyArrayInput is an input type that accepts GetScheduleQueryPropertyArray and GetScheduleQueryPropertyArrayOutput values.
@@ -6446,12 +5575,6 @@ func (i GetScheduleQueryPropertyArray) ToGetScheduleQueryPropertyArrayOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetScheduleQueryPropertyArrayOutput)
 }
 
-func (i GetScheduleQueryPropertyArray) ToOutput(ctx context.Context) pulumix.Output[[]GetScheduleQueryProperty] {
-	return pulumix.Output[[]GetScheduleQueryProperty]{
-		OutputState: i.ToGetScheduleQueryPropertyArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetScheduleQueryPropertyOutput struct{ *pulumi.OutputState }
 
 func (GetScheduleQueryPropertyOutput) ElementType() reflect.Type {
@@ -6466,15 +5589,9 @@ func (o GetScheduleQueryPropertyOutput) ToGetScheduleQueryPropertyOutputWithCont
 	return o
 }
 
-func (o GetScheduleQueryPropertyOutput) ToOutput(ctx context.Context) pulumix.Output[GetScheduleQueryProperty] {
-	return pulumix.Output[GetScheduleQueryProperty]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The depth level of the compartment.
-func (o GetScheduleQueryPropertyOutput) CompartmentDepth() pulumi.Float64Output {
-	return o.ApplyT(func(v GetScheduleQueryProperty) float64 { return v.CompartmentDepth }).(pulumi.Float64Output)
+func (o GetScheduleQueryPropertyOutput) CompartmentDepth() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetScheduleQueryProperty) *float64 { return v.CompartmentDepth }).(pulumi.Float64PtrOutput)
 }
 
 // Static or dynamic date range `dateRangeType`, which corresponds with type-specific characteristics.
@@ -6483,13 +5600,13 @@ func (o GetScheduleQueryPropertyOutput) DateRanges() GetScheduleQueryPropertyDat
 }
 
 // The filter object for query usage.
-func (o GetScheduleQueryPropertyOutput) Filter() pulumi.StringOutput {
-	return o.ApplyT(func(v GetScheduleQueryProperty) string { return v.Filter }).(pulumi.StringOutput)
+func (o GetScheduleQueryPropertyOutput) Filter() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetScheduleQueryProperty) *string { return v.Filter }).(pulumi.StringPtrOutput)
 }
 
 // The usage granularity. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation. Allowed values are: DAILY MONTHLY
-func (o GetScheduleQueryPropertyOutput) Granularity() pulumi.StringOutput {
-	return o.ApplyT(func(v GetScheduleQueryProperty) string { return v.Granularity }).(pulumi.StringOutput)
+func (o GetScheduleQueryPropertyOutput) Granularity() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetScheduleQueryProperty) *string { return v.Granularity }).(pulumi.StringPtrOutput)
 }
 
 // Aggregate the result by. For example: [ "tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName" ]
@@ -6503,13 +5620,13 @@ func (o GetScheduleQueryPropertyOutput) GroupByTags() GetScheduleQueryPropertyGr
 }
 
 // Specifies whether aggregated by time. If isAggregateByTime is true, all usage or cost over the query time period will be added up.
-func (o GetScheduleQueryPropertyOutput) IsAggregateByTime() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetScheduleQueryProperty) bool { return v.IsAggregateByTime }).(pulumi.BoolOutput)
+func (o GetScheduleQueryPropertyOutput) IsAggregateByTime() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetScheduleQueryProperty) *bool { return v.IsAggregateByTime }).(pulumi.BoolPtrOutput)
 }
 
 // The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data. Allowed values are: USAGE COST USAGE_AND_COST
-func (o GetScheduleQueryPropertyOutput) QueryType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetScheduleQueryProperty) string { return v.QueryType }).(pulumi.StringOutput)
+func (o GetScheduleQueryPropertyOutput) QueryType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetScheduleQueryProperty) *string { return v.QueryType }).(pulumi.StringPtrOutput)
 }
 
 type GetScheduleQueryPropertyArrayOutput struct{ *pulumi.OutputState }
@@ -6526,12 +5643,6 @@ func (o GetScheduleQueryPropertyArrayOutput) ToGetScheduleQueryPropertyArrayOutp
 	return o
 }
 
-func (o GetScheduleQueryPropertyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetScheduleQueryProperty] {
-	return pulumix.Output[[]GetScheduleQueryProperty]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetScheduleQueryPropertyArrayOutput) Index(i pulumi.IntInput) GetScheduleQueryPropertyOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetScheduleQueryProperty {
 		return vs[0].([]GetScheduleQueryProperty)[vs[1].(int)]
@@ -6540,12 +5651,12 @@ func (o GetScheduleQueryPropertyArrayOutput) Index(i pulumi.IntInput) GetSchedul
 
 type GetScheduleQueryPropertyDateRange struct {
 	// Defines whether the schedule date range is STATIC or DYNAMIC.
-	DateRangeType        string `pulumi:"dateRangeType"`
-	DynamicDateRangeType string `pulumi:"dynamicDateRangeType"`
+	DateRangeType        *string `pulumi:"dateRangeType"`
+	DynamicDateRangeType *string `pulumi:"dynamicDateRangeType"`
 	// The usage end time.
-	TimeUsageEnded string `pulumi:"timeUsageEnded"`
+	TimeUsageEnded *string `pulumi:"timeUsageEnded"`
 	// The usage start time.
-	TimeUsageStarted string `pulumi:"timeUsageStarted"`
+	TimeUsageStarted *string `pulumi:"timeUsageStarted"`
 }
 
 // GetScheduleQueryPropertyDateRangeInput is an input type that accepts GetScheduleQueryPropertyDateRangeArgs and GetScheduleQueryPropertyDateRangeOutput values.
@@ -6561,12 +5672,12 @@ type GetScheduleQueryPropertyDateRangeInput interface {
 
 type GetScheduleQueryPropertyDateRangeArgs struct {
 	// Defines whether the schedule date range is STATIC or DYNAMIC.
-	DateRangeType        pulumi.StringInput `pulumi:"dateRangeType"`
-	DynamicDateRangeType pulumi.StringInput `pulumi:"dynamicDateRangeType"`
+	DateRangeType        pulumi.StringPtrInput `pulumi:"dateRangeType"`
+	DynamicDateRangeType pulumi.StringPtrInput `pulumi:"dynamicDateRangeType"`
 	// The usage end time.
-	TimeUsageEnded pulumi.StringInput `pulumi:"timeUsageEnded"`
+	TimeUsageEnded pulumi.StringPtrInput `pulumi:"timeUsageEnded"`
 	// The usage start time.
-	TimeUsageStarted pulumi.StringInput `pulumi:"timeUsageStarted"`
+	TimeUsageStarted pulumi.StringPtrInput `pulumi:"timeUsageStarted"`
 }
 
 func (GetScheduleQueryPropertyDateRangeArgs) ElementType() reflect.Type {
@@ -6579,12 +5690,6 @@ func (i GetScheduleQueryPropertyDateRangeArgs) ToGetScheduleQueryPropertyDateRan
 
 func (i GetScheduleQueryPropertyDateRangeArgs) ToGetScheduleQueryPropertyDateRangeOutputWithContext(ctx context.Context) GetScheduleQueryPropertyDateRangeOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetScheduleQueryPropertyDateRangeOutput)
-}
-
-func (i GetScheduleQueryPropertyDateRangeArgs) ToOutput(ctx context.Context) pulumix.Output[GetScheduleQueryPropertyDateRange] {
-	return pulumix.Output[GetScheduleQueryPropertyDateRange]{
-		OutputState: i.ToGetScheduleQueryPropertyDateRangeOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetScheduleQueryPropertyDateRangeArrayInput is an input type that accepts GetScheduleQueryPropertyDateRangeArray and GetScheduleQueryPropertyDateRangeArrayOutput values.
@@ -6612,12 +5717,6 @@ func (i GetScheduleQueryPropertyDateRangeArray) ToGetScheduleQueryPropertyDateRa
 	return pulumi.ToOutputWithContext(ctx, i).(GetScheduleQueryPropertyDateRangeArrayOutput)
 }
 
-func (i GetScheduleQueryPropertyDateRangeArray) ToOutput(ctx context.Context) pulumix.Output[[]GetScheduleQueryPropertyDateRange] {
-	return pulumix.Output[[]GetScheduleQueryPropertyDateRange]{
-		OutputState: i.ToGetScheduleQueryPropertyDateRangeArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetScheduleQueryPropertyDateRangeOutput struct{ *pulumi.OutputState }
 
 func (GetScheduleQueryPropertyDateRangeOutput) ElementType() reflect.Type {
@@ -6632,29 +5731,23 @@ func (o GetScheduleQueryPropertyDateRangeOutput) ToGetScheduleQueryPropertyDateR
 	return o
 }
 
-func (o GetScheduleQueryPropertyDateRangeOutput) ToOutput(ctx context.Context) pulumix.Output[GetScheduleQueryPropertyDateRange] {
-	return pulumix.Output[GetScheduleQueryPropertyDateRange]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Defines whether the schedule date range is STATIC or DYNAMIC.
-func (o GetScheduleQueryPropertyDateRangeOutput) DateRangeType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetScheduleQueryPropertyDateRange) string { return v.DateRangeType }).(pulumi.StringOutput)
+func (o GetScheduleQueryPropertyDateRangeOutput) DateRangeType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetScheduleQueryPropertyDateRange) *string { return v.DateRangeType }).(pulumi.StringPtrOutput)
 }
 
-func (o GetScheduleQueryPropertyDateRangeOutput) DynamicDateRangeType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetScheduleQueryPropertyDateRange) string { return v.DynamicDateRangeType }).(pulumi.StringOutput)
+func (o GetScheduleQueryPropertyDateRangeOutput) DynamicDateRangeType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetScheduleQueryPropertyDateRange) *string { return v.DynamicDateRangeType }).(pulumi.StringPtrOutput)
 }
 
 // The usage end time.
-func (o GetScheduleQueryPropertyDateRangeOutput) TimeUsageEnded() pulumi.StringOutput {
-	return o.ApplyT(func(v GetScheduleQueryPropertyDateRange) string { return v.TimeUsageEnded }).(pulumi.StringOutput)
+func (o GetScheduleQueryPropertyDateRangeOutput) TimeUsageEnded() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetScheduleQueryPropertyDateRange) *string { return v.TimeUsageEnded }).(pulumi.StringPtrOutput)
 }
 
 // The usage start time.
-func (o GetScheduleQueryPropertyDateRangeOutput) TimeUsageStarted() pulumi.StringOutput {
-	return o.ApplyT(func(v GetScheduleQueryPropertyDateRange) string { return v.TimeUsageStarted }).(pulumi.StringOutput)
+func (o GetScheduleQueryPropertyDateRangeOutput) TimeUsageStarted() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetScheduleQueryPropertyDateRange) *string { return v.TimeUsageStarted }).(pulumi.StringPtrOutput)
 }
 
 type GetScheduleQueryPropertyDateRangeArrayOutput struct{ *pulumi.OutputState }
@@ -6671,12 +5764,6 @@ func (o GetScheduleQueryPropertyDateRangeArrayOutput) ToGetScheduleQueryProperty
 	return o
 }
 
-func (o GetScheduleQueryPropertyDateRangeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetScheduleQueryPropertyDateRange] {
-	return pulumix.Output[[]GetScheduleQueryPropertyDateRange]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetScheduleQueryPropertyDateRangeArrayOutput) Index(i pulumi.IntInput) GetScheduleQueryPropertyDateRangeOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetScheduleQueryPropertyDateRange {
 		return vs[0].([]GetScheduleQueryPropertyDateRange)[vs[1].(int)]
@@ -6685,11 +5772,11 @@ func (o GetScheduleQueryPropertyDateRangeArrayOutput) Index(i pulumi.IntInput) G
 
 type GetScheduleQueryPropertyGroupByTag struct {
 	// The tag key.
-	Key string `pulumi:"key"`
+	Key *string `pulumi:"key"`
 	// The namespace needed to determine the object storage bucket.
-	Namespace string `pulumi:"namespace"`
+	Namespace *string `pulumi:"namespace"`
 	// The tag value.
-	Value string `pulumi:"value"`
+	Value *string `pulumi:"value"`
 }
 
 // GetScheduleQueryPropertyGroupByTagInput is an input type that accepts GetScheduleQueryPropertyGroupByTagArgs and GetScheduleQueryPropertyGroupByTagOutput values.
@@ -6705,11 +5792,11 @@ type GetScheduleQueryPropertyGroupByTagInput interface {
 
 type GetScheduleQueryPropertyGroupByTagArgs struct {
 	// The tag key.
-	Key pulumi.StringInput `pulumi:"key"`
+	Key pulumi.StringPtrInput `pulumi:"key"`
 	// The namespace needed to determine the object storage bucket.
-	Namespace pulumi.StringInput `pulumi:"namespace"`
+	Namespace pulumi.StringPtrInput `pulumi:"namespace"`
 	// The tag value.
-	Value pulumi.StringInput `pulumi:"value"`
+	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
 func (GetScheduleQueryPropertyGroupByTagArgs) ElementType() reflect.Type {
@@ -6722,12 +5809,6 @@ func (i GetScheduleQueryPropertyGroupByTagArgs) ToGetScheduleQueryPropertyGroupB
 
 func (i GetScheduleQueryPropertyGroupByTagArgs) ToGetScheduleQueryPropertyGroupByTagOutputWithContext(ctx context.Context) GetScheduleQueryPropertyGroupByTagOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetScheduleQueryPropertyGroupByTagOutput)
-}
-
-func (i GetScheduleQueryPropertyGroupByTagArgs) ToOutput(ctx context.Context) pulumix.Output[GetScheduleQueryPropertyGroupByTag] {
-	return pulumix.Output[GetScheduleQueryPropertyGroupByTag]{
-		OutputState: i.ToGetScheduleQueryPropertyGroupByTagOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetScheduleQueryPropertyGroupByTagArrayInput is an input type that accepts GetScheduleQueryPropertyGroupByTagArray and GetScheduleQueryPropertyGroupByTagArrayOutput values.
@@ -6755,12 +5836,6 @@ func (i GetScheduleQueryPropertyGroupByTagArray) ToGetScheduleQueryPropertyGroup
 	return pulumi.ToOutputWithContext(ctx, i).(GetScheduleQueryPropertyGroupByTagArrayOutput)
 }
 
-func (i GetScheduleQueryPropertyGroupByTagArray) ToOutput(ctx context.Context) pulumix.Output[[]GetScheduleQueryPropertyGroupByTag] {
-	return pulumix.Output[[]GetScheduleQueryPropertyGroupByTag]{
-		OutputState: i.ToGetScheduleQueryPropertyGroupByTagArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetScheduleQueryPropertyGroupByTagOutput struct{ *pulumi.OutputState }
 
 func (GetScheduleQueryPropertyGroupByTagOutput) ElementType() reflect.Type {
@@ -6775,25 +5850,19 @@ func (o GetScheduleQueryPropertyGroupByTagOutput) ToGetScheduleQueryPropertyGrou
 	return o
 }
 
-func (o GetScheduleQueryPropertyGroupByTagOutput) ToOutput(ctx context.Context) pulumix.Output[GetScheduleQueryPropertyGroupByTag] {
-	return pulumix.Output[GetScheduleQueryPropertyGroupByTag]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The tag key.
-func (o GetScheduleQueryPropertyGroupByTagOutput) Key() pulumi.StringOutput {
-	return o.ApplyT(func(v GetScheduleQueryPropertyGroupByTag) string { return v.Key }).(pulumi.StringOutput)
+func (o GetScheduleQueryPropertyGroupByTagOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetScheduleQueryPropertyGroupByTag) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
 // The namespace needed to determine the object storage bucket.
-func (o GetScheduleQueryPropertyGroupByTagOutput) Namespace() pulumi.StringOutput {
-	return o.ApplyT(func(v GetScheduleQueryPropertyGroupByTag) string { return v.Namespace }).(pulumi.StringOutput)
+func (o GetScheduleQueryPropertyGroupByTagOutput) Namespace() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetScheduleQueryPropertyGroupByTag) *string { return v.Namespace }).(pulumi.StringPtrOutput)
 }
 
 // The tag value.
-func (o GetScheduleQueryPropertyGroupByTagOutput) Value() pulumi.StringOutput {
-	return o.ApplyT(func(v GetScheduleQueryPropertyGroupByTag) string { return v.Value }).(pulumi.StringOutput)
+func (o GetScheduleQueryPropertyGroupByTagOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetScheduleQueryPropertyGroupByTag) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
 
 type GetScheduleQueryPropertyGroupByTagArrayOutput struct{ *pulumi.OutputState }
@@ -6810,12 +5879,6 @@ func (o GetScheduleQueryPropertyGroupByTagArrayOutput) ToGetScheduleQueryPropert
 	return o
 }
 
-func (o GetScheduleQueryPropertyGroupByTagArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetScheduleQueryPropertyGroupByTag] {
-	return pulumix.Output[[]GetScheduleQueryPropertyGroupByTag]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetScheduleQueryPropertyGroupByTagArrayOutput) Index(i pulumi.IntInput) GetScheduleQueryPropertyGroupByTagOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetScheduleQueryPropertyGroupByTag {
 		return vs[0].([]GetScheduleQueryPropertyGroupByTag)[vs[1].(int)]
@@ -6824,13 +5887,13 @@ func (o GetScheduleQueryPropertyGroupByTagArrayOutput) Index(i pulumi.IntInput) 
 
 type GetScheduleResultLocation struct {
 	// The bucket name where usage or cost CSVs will be uploaded.
-	Bucket string `pulumi:"bucket"`
+	Bucket *string `pulumi:"bucket"`
 	// Defines the type of location where the usage or cost CSVs will be stored.
-	LocationType string `pulumi:"locationType"`
+	LocationType *string `pulumi:"locationType"`
 	// The namespace needed to determine the object storage bucket.
-	Namespace string `pulumi:"namespace"`
+	Namespace *string `pulumi:"namespace"`
 	// The destination Object Store Region specified by the customer.
-	Region string `pulumi:"region"`
+	Region *string `pulumi:"region"`
 }
 
 // GetScheduleResultLocationInput is an input type that accepts GetScheduleResultLocationArgs and GetScheduleResultLocationOutput values.
@@ -6846,13 +5909,13 @@ type GetScheduleResultLocationInput interface {
 
 type GetScheduleResultLocationArgs struct {
 	// The bucket name where usage or cost CSVs will be uploaded.
-	Bucket pulumi.StringInput `pulumi:"bucket"`
+	Bucket pulumi.StringPtrInput `pulumi:"bucket"`
 	// Defines the type of location where the usage or cost CSVs will be stored.
-	LocationType pulumi.StringInput `pulumi:"locationType"`
+	LocationType pulumi.StringPtrInput `pulumi:"locationType"`
 	// The namespace needed to determine the object storage bucket.
-	Namespace pulumi.StringInput `pulumi:"namespace"`
+	Namespace pulumi.StringPtrInput `pulumi:"namespace"`
 	// The destination Object Store Region specified by the customer.
-	Region pulumi.StringInput `pulumi:"region"`
+	Region pulumi.StringPtrInput `pulumi:"region"`
 }
 
 func (GetScheduleResultLocationArgs) ElementType() reflect.Type {
@@ -6865,12 +5928,6 @@ func (i GetScheduleResultLocationArgs) ToGetScheduleResultLocationOutput() GetSc
 
 func (i GetScheduleResultLocationArgs) ToGetScheduleResultLocationOutputWithContext(ctx context.Context) GetScheduleResultLocationOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetScheduleResultLocationOutput)
-}
-
-func (i GetScheduleResultLocationArgs) ToOutput(ctx context.Context) pulumix.Output[GetScheduleResultLocation] {
-	return pulumix.Output[GetScheduleResultLocation]{
-		OutputState: i.ToGetScheduleResultLocationOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetScheduleResultLocationArrayInput is an input type that accepts GetScheduleResultLocationArray and GetScheduleResultLocationArrayOutput values.
@@ -6898,12 +5955,6 @@ func (i GetScheduleResultLocationArray) ToGetScheduleResultLocationArrayOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetScheduleResultLocationArrayOutput)
 }
 
-func (i GetScheduleResultLocationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetScheduleResultLocation] {
-	return pulumix.Output[[]GetScheduleResultLocation]{
-		OutputState: i.ToGetScheduleResultLocationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetScheduleResultLocationOutput struct{ *pulumi.OutputState }
 
 func (GetScheduleResultLocationOutput) ElementType() reflect.Type {
@@ -6918,30 +5969,24 @@ func (o GetScheduleResultLocationOutput) ToGetScheduleResultLocationOutputWithCo
 	return o
 }
 
-func (o GetScheduleResultLocationOutput) ToOutput(ctx context.Context) pulumix.Output[GetScheduleResultLocation] {
-	return pulumix.Output[GetScheduleResultLocation]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The bucket name where usage or cost CSVs will be uploaded.
-func (o GetScheduleResultLocationOutput) Bucket() pulumi.StringOutput {
-	return o.ApplyT(func(v GetScheduleResultLocation) string { return v.Bucket }).(pulumi.StringOutput)
+func (o GetScheduleResultLocationOutput) Bucket() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetScheduleResultLocation) *string { return v.Bucket }).(pulumi.StringPtrOutput)
 }
 
 // Defines the type of location where the usage or cost CSVs will be stored.
-func (o GetScheduleResultLocationOutput) LocationType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetScheduleResultLocation) string { return v.LocationType }).(pulumi.StringOutput)
+func (o GetScheduleResultLocationOutput) LocationType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetScheduleResultLocation) *string { return v.LocationType }).(pulumi.StringPtrOutput)
 }
 
 // The namespace needed to determine the object storage bucket.
-func (o GetScheduleResultLocationOutput) Namespace() pulumi.StringOutput {
-	return o.ApplyT(func(v GetScheduleResultLocation) string { return v.Namespace }).(pulumi.StringOutput)
+func (o GetScheduleResultLocationOutput) Namespace() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetScheduleResultLocation) *string { return v.Namespace }).(pulumi.StringPtrOutput)
 }
 
 // The destination Object Store Region specified by the customer.
-func (o GetScheduleResultLocationOutput) Region() pulumi.StringOutput {
-	return o.ApplyT(func(v GetScheduleResultLocation) string { return v.Region }).(pulumi.StringOutput)
+func (o GetScheduleResultLocationOutput) Region() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetScheduleResultLocation) *string { return v.Region }).(pulumi.StringPtrOutput)
 }
 
 type GetScheduleResultLocationArrayOutput struct{ *pulumi.OutputState }
@@ -6956,12 +6001,6 @@ func (o GetScheduleResultLocationArrayOutput) ToGetScheduleResultLocationArrayOu
 
 func (o GetScheduleResultLocationArrayOutput) ToGetScheduleResultLocationArrayOutputWithContext(ctx context.Context) GetScheduleResultLocationArrayOutput {
 	return o
-}
-
-func (o GetScheduleResultLocationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetScheduleResultLocation] {
-	return pulumix.Output[[]GetScheduleResultLocation]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetScheduleResultLocationArrayOutput) Index(i pulumi.IntInput) GetScheduleResultLocationOutput {
@@ -7005,12 +6044,6 @@ func (i GetScheduledRunsFilterArgs) ToGetScheduledRunsFilterOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(GetScheduledRunsFilterOutput)
 }
 
-func (i GetScheduledRunsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetScheduledRunsFilter] {
-	return pulumix.Output[GetScheduledRunsFilter]{
-		OutputState: i.ToGetScheduledRunsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetScheduledRunsFilterArrayInput is an input type that accepts GetScheduledRunsFilterArray and GetScheduledRunsFilterArrayOutput values.
 // You can construct a concrete instance of `GetScheduledRunsFilterArrayInput` via:
 //
@@ -7036,12 +6069,6 @@ func (i GetScheduledRunsFilterArray) ToGetScheduledRunsFilterArrayOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetScheduledRunsFilterArrayOutput)
 }
 
-func (i GetScheduledRunsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetScheduledRunsFilter] {
-	return pulumix.Output[[]GetScheduledRunsFilter]{
-		OutputState: i.ToGetScheduledRunsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetScheduledRunsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetScheduledRunsFilterOutput) ElementType() reflect.Type {
@@ -7054,12 +6081,6 @@ func (o GetScheduledRunsFilterOutput) ToGetScheduledRunsFilterOutput() GetSchedu
 
 func (o GetScheduledRunsFilterOutput) ToGetScheduledRunsFilterOutputWithContext(ctx context.Context) GetScheduledRunsFilterOutput {
 	return o
-}
-
-func (o GetScheduledRunsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetScheduledRunsFilter] {
-	return pulumix.Output[GetScheduledRunsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetScheduledRunsFilterOutput) Name() pulumi.StringOutput {
@@ -7086,12 +6107,6 @@ func (o GetScheduledRunsFilterArrayOutput) ToGetScheduledRunsFilterArrayOutput()
 
 func (o GetScheduledRunsFilterArrayOutput) ToGetScheduledRunsFilterArrayOutputWithContext(ctx context.Context) GetScheduledRunsFilterArrayOutput {
 	return o
-}
-
-func (o GetScheduledRunsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetScheduledRunsFilter] {
-	return pulumix.Output[[]GetScheduledRunsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetScheduledRunsFilterArrayOutput) Index(i pulumi.IntInput) GetScheduledRunsFilterOutput {
@@ -7131,12 +6146,6 @@ func (i GetScheduledRunsScheduledRunCollectionArgs) ToGetScheduledRunsScheduledR
 	return pulumi.ToOutputWithContext(ctx, i).(GetScheduledRunsScheduledRunCollectionOutput)
 }
 
-func (i GetScheduledRunsScheduledRunCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetScheduledRunsScheduledRunCollection] {
-	return pulumix.Output[GetScheduledRunsScheduledRunCollection]{
-		OutputState: i.ToGetScheduledRunsScheduledRunCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetScheduledRunsScheduledRunCollectionArrayInput is an input type that accepts GetScheduledRunsScheduledRunCollectionArray and GetScheduledRunsScheduledRunCollectionArrayOutput values.
 // You can construct a concrete instance of `GetScheduledRunsScheduledRunCollectionArrayInput` via:
 //
@@ -7162,12 +6171,6 @@ func (i GetScheduledRunsScheduledRunCollectionArray) ToGetScheduledRunsScheduled
 	return pulumi.ToOutputWithContext(ctx, i).(GetScheduledRunsScheduledRunCollectionArrayOutput)
 }
 
-func (i GetScheduledRunsScheduledRunCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetScheduledRunsScheduledRunCollection] {
-	return pulumix.Output[[]GetScheduledRunsScheduledRunCollection]{
-		OutputState: i.ToGetScheduledRunsScheduledRunCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetScheduledRunsScheduledRunCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetScheduledRunsScheduledRunCollectionOutput) ElementType() reflect.Type {
@@ -7180,12 +6183,6 @@ func (o GetScheduledRunsScheduledRunCollectionOutput) ToGetScheduledRunsSchedule
 
 func (o GetScheduledRunsScheduledRunCollectionOutput) ToGetScheduledRunsScheduledRunCollectionOutputWithContext(ctx context.Context) GetScheduledRunsScheduledRunCollectionOutput {
 	return o
-}
-
-func (o GetScheduledRunsScheduledRunCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetScheduledRunsScheduledRunCollection] {
-	return pulumix.Output[GetScheduledRunsScheduledRunCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetScheduledRunsScheduledRunCollectionOutput) Items() GetScheduledRunsScheduledRunCollectionItemArrayOutput {
@@ -7208,12 +6205,6 @@ func (o GetScheduledRunsScheduledRunCollectionArrayOutput) ToGetScheduledRunsSch
 	return o
 }
 
-func (o GetScheduledRunsScheduledRunCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetScheduledRunsScheduledRunCollection] {
-	return pulumix.Output[[]GetScheduledRunsScheduledRunCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetScheduledRunsScheduledRunCollectionArrayOutput) Index(i pulumi.IntInput) GetScheduledRunsScheduledRunCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetScheduledRunsScheduledRunCollection {
 		return vs[0].([]GetScheduledRunsScheduledRunCollection)[vs[1].(int)]
@@ -7222,17 +6213,17 @@ func (o GetScheduledRunsScheduledRunCollectionArrayOutput) Index(i pulumi.IntInp
 
 type GetScheduledRunsScheduledRunCollectionItem struct {
 	// The ocid representing unique shedule run
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Additional details about scheduled run failure
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// The unique ID of a schedule.
-	ScheduleId string `pulumi:"scheduleId"`
+	ScheduleId *string `pulumi:"scheduleId"`
 	// Specifies if the schedule job was run successfully or not.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The time when schedule started executing
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time when schedule finished executing
-	TimeFinished string `pulumi:"timeFinished"`
+	TimeFinished *string `pulumi:"timeFinished"`
 }
 
 // GetScheduledRunsScheduledRunCollectionItemInput is an input type that accepts GetScheduledRunsScheduledRunCollectionItemArgs and GetScheduledRunsScheduledRunCollectionItemOutput values.
@@ -7248,17 +6239,17 @@ type GetScheduledRunsScheduledRunCollectionItemInput interface {
 
 type GetScheduledRunsScheduledRunCollectionItemArgs struct {
 	// The ocid representing unique shedule run
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// Additional details about scheduled run failure
-	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrInput `pulumi:"lifecycleDetails"`
 	// The unique ID of a schedule.
-	ScheduleId pulumi.StringInput `pulumi:"scheduleId"`
+	ScheduleId pulumi.StringPtrInput `pulumi:"scheduleId"`
 	// Specifies if the schedule job was run successfully or not.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// The time when schedule started executing
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// The time when schedule finished executing
-	TimeFinished pulumi.StringInput `pulumi:"timeFinished"`
+	TimeFinished pulumi.StringPtrInput `pulumi:"timeFinished"`
 }
 
 func (GetScheduledRunsScheduledRunCollectionItemArgs) ElementType() reflect.Type {
@@ -7271,12 +6262,6 @@ func (i GetScheduledRunsScheduledRunCollectionItemArgs) ToGetScheduledRunsSchedu
 
 func (i GetScheduledRunsScheduledRunCollectionItemArgs) ToGetScheduledRunsScheduledRunCollectionItemOutputWithContext(ctx context.Context) GetScheduledRunsScheduledRunCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetScheduledRunsScheduledRunCollectionItemOutput)
-}
-
-func (i GetScheduledRunsScheduledRunCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetScheduledRunsScheduledRunCollectionItem] {
-	return pulumix.Output[GetScheduledRunsScheduledRunCollectionItem]{
-		OutputState: i.ToGetScheduledRunsScheduledRunCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetScheduledRunsScheduledRunCollectionItemArrayInput is an input type that accepts GetScheduledRunsScheduledRunCollectionItemArray and GetScheduledRunsScheduledRunCollectionItemArrayOutput values.
@@ -7304,12 +6289,6 @@ func (i GetScheduledRunsScheduledRunCollectionItemArray) ToGetScheduledRunsSched
 	return pulumi.ToOutputWithContext(ctx, i).(GetScheduledRunsScheduledRunCollectionItemArrayOutput)
 }
 
-func (i GetScheduledRunsScheduledRunCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetScheduledRunsScheduledRunCollectionItem] {
-	return pulumix.Output[[]GetScheduledRunsScheduledRunCollectionItem]{
-		OutputState: i.ToGetScheduledRunsScheduledRunCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetScheduledRunsScheduledRunCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetScheduledRunsScheduledRunCollectionItemOutput) ElementType() reflect.Type {
@@ -7324,40 +6303,34 @@ func (o GetScheduledRunsScheduledRunCollectionItemOutput) ToGetScheduledRunsSche
 	return o
 }
 
-func (o GetScheduledRunsScheduledRunCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetScheduledRunsScheduledRunCollectionItem] {
-	return pulumix.Output[GetScheduledRunsScheduledRunCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The ocid representing unique shedule run
-func (o GetScheduledRunsScheduledRunCollectionItemOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetScheduledRunsScheduledRunCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+func (o GetScheduledRunsScheduledRunCollectionItemOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetScheduledRunsScheduledRunCollectionItem) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Additional details about scheduled run failure
-func (o GetScheduledRunsScheduledRunCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetScheduledRunsScheduledRunCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o GetScheduledRunsScheduledRunCollectionItemOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetScheduledRunsScheduledRunCollectionItem) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // The unique ID of a schedule.
-func (o GetScheduledRunsScheduledRunCollectionItemOutput) ScheduleId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetScheduledRunsScheduledRunCollectionItem) string { return v.ScheduleId }).(pulumi.StringOutput)
+func (o GetScheduledRunsScheduledRunCollectionItemOutput) ScheduleId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetScheduledRunsScheduledRunCollectionItem) *string { return v.ScheduleId }).(pulumi.StringPtrOutput)
 }
 
 // Specifies if the schedule job was run successfully or not.
-func (o GetScheduledRunsScheduledRunCollectionItemOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetScheduledRunsScheduledRunCollectionItem) string { return v.State }).(pulumi.StringOutput)
+func (o GetScheduledRunsScheduledRunCollectionItemOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetScheduledRunsScheduledRunCollectionItem) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The time when schedule started executing
-func (o GetScheduledRunsScheduledRunCollectionItemOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetScheduledRunsScheduledRunCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetScheduledRunsScheduledRunCollectionItemOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetScheduledRunsScheduledRunCollectionItem) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time when schedule finished executing
-func (o GetScheduledRunsScheduledRunCollectionItemOutput) TimeFinished() pulumi.StringOutput {
-	return o.ApplyT(func(v GetScheduledRunsScheduledRunCollectionItem) string { return v.TimeFinished }).(pulumi.StringOutput)
+func (o GetScheduledRunsScheduledRunCollectionItemOutput) TimeFinished() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetScheduledRunsScheduledRunCollectionItem) *string { return v.TimeFinished }).(pulumi.StringPtrOutput)
 }
 
 type GetScheduledRunsScheduledRunCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -7372,12 +6345,6 @@ func (o GetScheduledRunsScheduledRunCollectionItemArrayOutput) ToGetScheduledRun
 
 func (o GetScheduledRunsScheduledRunCollectionItemArrayOutput) ToGetScheduledRunsScheduledRunCollectionItemArrayOutputWithContext(ctx context.Context) GetScheduledRunsScheduledRunCollectionItemArrayOutput {
 	return o
-}
-
-func (o GetScheduledRunsScheduledRunCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetScheduledRunsScheduledRunCollectionItem] {
-	return pulumix.Output[[]GetScheduledRunsScheduledRunCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetScheduledRunsScheduledRunCollectionItemArrayOutput) Index(i pulumi.IntInput) GetScheduledRunsScheduledRunCollectionItemOutput {
@@ -7423,12 +6390,6 @@ func (i GetSchedulesFilterArgs) ToGetSchedulesFilterOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(GetSchedulesFilterOutput)
 }
 
-func (i GetSchedulesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetSchedulesFilter] {
-	return pulumix.Output[GetSchedulesFilter]{
-		OutputState: i.ToGetSchedulesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetSchedulesFilterArrayInput is an input type that accepts GetSchedulesFilterArray and GetSchedulesFilterArrayOutput values.
 // You can construct a concrete instance of `GetSchedulesFilterArrayInput` via:
 //
@@ -7454,12 +6415,6 @@ func (i GetSchedulesFilterArray) ToGetSchedulesFilterArrayOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(GetSchedulesFilterArrayOutput)
 }
 
-func (i GetSchedulesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSchedulesFilter] {
-	return pulumix.Output[[]GetSchedulesFilter]{
-		OutputState: i.ToGetSchedulesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSchedulesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetSchedulesFilterOutput) ElementType() reflect.Type {
@@ -7472,12 +6427,6 @@ func (o GetSchedulesFilterOutput) ToGetSchedulesFilterOutput() GetSchedulesFilte
 
 func (o GetSchedulesFilterOutput) ToGetSchedulesFilterOutputWithContext(ctx context.Context) GetSchedulesFilterOutput {
 	return o
-}
-
-func (o GetSchedulesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetSchedulesFilter] {
-	return pulumix.Output[GetSchedulesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Query parameter for filtering by name
@@ -7505,12 +6454,6 @@ func (o GetSchedulesFilterArrayOutput) ToGetSchedulesFilterArrayOutput() GetSche
 
 func (o GetSchedulesFilterArrayOutput) ToGetSchedulesFilterArrayOutputWithContext(ctx context.Context) GetSchedulesFilterArrayOutput {
 	return o
-}
-
-func (o GetSchedulesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSchedulesFilter] {
-	return pulumix.Output[[]GetSchedulesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetSchedulesFilterArrayOutput) Index(i pulumi.IntInput) GetSchedulesFilterOutput {
@@ -7550,12 +6493,6 @@ func (i GetSchedulesScheduleCollectionArgs) ToGetSchedulesScheduleCollectionOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetSchedulesScheduleCollectionOutput)
 }
 
-func (i GetSchedulesScheduleCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetSchedulesScheduleCollection] {
-	return pulumix.Output[GetSchedulesScheduleCollection]{
-		OutputState: i.ToGetSchedulesScheduleCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetSchedulesScheduleCollectionArrayInput is an input type that accepts GetSchedulesScheduleCollectionArray and GetSchedulesScheduleCollectionArrayOutput values.
 // You can construct a concrete instance of `GetSchedulesScheduleCollectionArrayInput` via:
 //
@@ -7581,12 +6518,6 @@ func (i GetSchedulesScheduleCollectionArray) ToGetSchedulesScheduleCollectionArr
 	return pulumi.ToOutputWithContext(ctx, i).(GetSchedulesScheduleCollectionArrayOutput)
 }
 
-func (i GetSchedulesScheduleCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSchedulesScheduleCollection] {
-	return pulumix.Output[[]GetSchedulesScheduleCollection]{
-		OutputState: i.ToGetSchedulesScheduleCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSchedulesScheduleCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetSchedulesScheduleCollectionOutput) ElementType() reflect.Type {
@@ -7599,12 +6530,6 @@ func (o GetSchedulesScheduleCollectionOutput) ToGetSchedulesScheduleCollectionOu
 
 func (o GetSchedulesScheduleCollectionOutput) ToGetSchedulesScheduleCollectionOutputWithContext(ctx context.Context) GetSchedulesScheduleCollectionOutput {
 	return o
-}
-
-func (o GetSchedulesScheduleCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetSchedulesScheduleCollection] {
-	return pulumix.Output[GetSchedulesScheduleCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetSchedulesScheduleCollectionOutput) Items() GetSchedulesScheduleCollectionItemArrayOutput {
@@ -7625,12 +6550,6 @@ func (o GetSchedulesScheduleCollectionArrayOutput) ToGetSchedulesScheduleCollect
 	return o
 }
 
-func (o GetSchedulesScheduleCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSchedulesScheduleCollection] {
-	return pulumix.Output[[]GetSchedulesScheduleCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSchedulesScheduleCollectionArrayOutput) Index(i pulumi.IntInput) GetSchedulesScheduleCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSchedulesScheduleCollection {
 		return vs[0].([]GetSchedulesScheduleCollection)[vs[1].(int)]
@@ -7639,37 +6558,37 @@ func (o GetSchedulesScheduleCollectionArrayOutput) Index(i pulumi.IntInput) GetS
 
 type GetSchedulesScheduleCollectionItem struct {
 	// The compartment ID in which to list resources.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The description of the schedule.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The OCID representing a unique shedule.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Query parameter for filtering by name
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// Specifies supported output file format.
-	OutputFileFormat string `pulumi:"outputFileFormat"`
+	OutputFileFormat *string `pulumi:"outputFileFormat"`
 	// The query properties.
 	QueryProperties []GetSchedulesScheduleCollectionItemQueryProperty `pulumi:"queryProperties"`
 	// The location where usage or cost CSVs will be uploaded defined by `locationType`, which corresponds with type-specific characteristics.
 	ResultLocations []GetSchedulesScheduleCollectionItemResultLocation `pulumi:"resultLocations"`
 	// The saved report id which can also be used to generate query.
-	SavedReportId string `pulumi:"savedReportId"`
+	SavedReportId *string `pulumi:"savedReportId"`
 	// Specifies the frequency according to when the schedule will be run,  in the x-obmcs-recurring-time format described in [RFC 5545 section 3.3.10](https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10). Supported values are : ONE_TIME, DAILY, WEEKLY and MONTHLY.
-	ScheduleRecurrences string `pulumi:"scheduleRecurrences"`
+	ScheduleRecurrences *string `pulumi:"scheduleRecurrences"`
 	// The schedule lifecycle state.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The date and time the schedule was created.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The date and time of the next job execution.
-	TimeNextRun string `pulumi:"timeNextRun"`
+	TimeNextRun *string `pulumi:"timeNextRun"`
 	// The date and time of the first time job execution.
-	TimeScheduled string `pulumi:"timeScheduled"`
+	TimeScheduled *string `pulumi:"timeScheduled"`
 }
 
 // GetSchedulesScheduleCollectionItemInput is an input type that accepts GetSchedulesScheduleCollectionItemArgs and GetSchedulesScheduleCollectionItemOutput values.
@@ -7685,37 +6604,37 @@ type GetSchedulesScheduleCollectionItemInput interface {
 
 type GetSchedulesScheduleCollectionItemArgs struct {
 	// The compartment ID in which to list resources.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// The description of the schedule.
-	Description pulumi.StringInput `pulumi:"description"`
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// The OCID representing a unique shedule.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// Query parameter for filtering by name
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// Specifies supported output file format.
-	OutputFileFormat pulumi.StringInput `pulumi:"outputFileFormat"`
+	OutputFileFormat pulumi.StringPtrInput `pulumi:"outputFileFormat"`
 	// The query properties.
 	QueryProperties GetSchedulesScheduleCollectionItemQueryPropertyArrayInput `pulumi:"queryProperties"`
 	// The location where usage or cost CSVs will be uploaded defined by `locationType`, which corresponds with type-specific characteristics.
 	ResultLocations GetSchedulesScheduleCollectionItemResultLocationArrayInput `pulumi:"resultLocations"`
 	// The saved report id which can also be used to generate query.
-	SavedReportId pulumi.StringInput `pulumi:"savedReportId"`
+	SavedReportId pulumi.StringPtrInput `pulumi:"savedReportId"`
 	// Specifies the frequency according to when the schedule will be run,  in the x-obmcs-recurring-time format described in [RFC 5545 section 3.3.10](https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10). Supported values are : ONE_TIME, DAILY, WEEKLY and MONTHLY.
-	ScheduleRecurrences pulumi.StringInput `pulumi:"scheduleRecurrences"`
+	ScheduleRecurrences pulumi.StringPtrInput `pulumi:"scheduleRecurrences"`
 	// The schedule lifecycle state.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapInput `pulumi:"systemTags"`
 	// The date and time the schedule was created.
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// The date and time of the next job execution.
-	TimeNextRun pulumi.StringInput `pulumi:"timeNextRun"`
+	TimeNextRun pulumi.StringPtrInput `pulumi:"timeNextRun"`
 	// The date and time of the first time job execution.
-	TimeScheduled pulumi.StringInput `pulumi:"timeScheduled"`
+	TimeScheduled pulumi.StringPtrInput `pulumi:"timeScheduled"`
 }
 
 func (GetSchedulesScheduleCollectionItemArgs) ElementType() reflect.Type {
@@ -7728,12 +6647,6 @@ func (i GetSchedulesScheduleCollectionItemArgs) ToGetSchedulesScheduleCollection
 
 func (i GetSchedulesScheduleCollectionItemArgs) ToGetSchedulesScheduleCollectionItemOutputWithContext(ctx context.Context) GetSchedulesScheduleCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSchedulesScheduleCollectionItemOutput)
-}
-
-func (i GetSchedulesScheduleCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetSchedulesScheduleCollectionItem] {
-	return pulumix.Output[GetSchedulesScheduleCollectionItem]{
-		OutputState: i.ToGetSchedulesScheduleCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSchedulesScheduleCollectionItemArrayInput is an input type that accepts GetSchedulesScheduleCollectionItemArray and GetSchedulesScheduleCollectionItemArrayOutput values.
@@ -7761,12 +6674,6 @@ func (i GetSchedulesScheduleCollectionItemArray) ToGetSchedulesScheduleCollectio
 	return pulumi.ToOutputWithContext(ctx, i).(GetSchedulesScheduleCollectionItemArrayOutput)
 }
 
-func (i GetSchedulesScheduleCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSchedulesScheduleCollectionItem] {
-	return pulumix.Output[[]GetSchedulesScheduleCollectionItem]{
-		OutputState: i.ToGetSchedulesScheduleCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSchedulesScheduleCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetSchedulesScheduleCollectionItemOutput) ElementType() reflect.Type {
@@ -7781,15 +6688,9 @@ func (o GetSchedulesScheduleCollectionItemOutput) ToGetSchedulesScheduleCollecti
 	return o
 }
 
-func (o GetSchedulesScheduleCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetSchedulesScheduleCollectionItem] {
-	return pulumix.Output[GetSchedulesScheduleCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The compartment ID in which to list resources.
-func (o GetSchedulesScheduleCollectionItemOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSchedulesScheduleCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetSchedulesScheduleCollectionItemOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSchedulesScheduleCollectionItem) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
@@ -7798,8 +6699,8 @@ func (o GetSchedulesScheduleCollectionItemOutput) DefinedTags() pulumi.MapOutput
 }
 
 // The description of the schedule.
-func (o GetSchedulesScheduleCollectionItemOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSchedulesScheduleCollectionItem) string { return v.Description }).(pulumi.StringOutput)
+func (o GetSchedulesScheduleCollectionItemOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSchedulesScheduleCollectionItem) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
@@ -7808,18 +6709,18 @@ func (o GetSchedulesScheduleCollectionItemOutput) FreeformTags() pulumi.MapOutpu
 }
 
 // The OCID representing a unique shedule.
-func (o GetSchedulesScheduleCollectionItemOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSchedulesScheduleCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+func (o GetSchedulesScheduleCollectionItemOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSchedulesScheduleCollectionItem) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Query parameter for filtering by name
-func (o GetSchedulesScheduleCollectionItemOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSchedulesScheduleCollectionItem) string { return v.Name }).(pulumi.StringOutput)
+func (o GetSchedulesScheduleCollectionItemOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSchedulesScheduleCollectionItem) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // Specifies supported output file format.
-func (o GetSchedulesScheduleCollectionItemOutput) OutputFileFormat() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSchedulesScheduleCollectionItem) string { return v.OutputFileFormat }).(pulumi.StringOutput)
+func (o GetSchedulesScheduleCollectionItemOutput) OutputFileFormat() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSchedulesScheduleCollectionItem) *string { return v.OutputFileFormat }).(pulumi.StringPtrOutput)
 }
 
 // The query properties.
@@ -7837,18 +6738,18 @@ func (o GetSchedulesScheduleCollectionItemOutput) ResultLocations() GetSchedules
 }
 
 // The saved report id which can also be used to generate query.
-func (o GetSchedulesScheduleCollectionItemOutput) SavedReportId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSchedulesScheduleCollectionItem) string { return v.SavedReportId }).(pulumi.StringOutput)
+func (o GetSchedulesScheduleCollectionItemOutput) SavedReportId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSchedulesScheduleCollectionItem) *string { return v.SavedReportId }).(pulumi.StringPtrOutput)
 }
 
 // Specifies the frequency according to when the schedule will be run,  in the x-obmcs-recurring-time format described in [RFC 5545 section 3.3.10](https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10). Supported values are : ONE_TIME, DAILY, WEEKLY and MONTHLY.
-func (o GetSchedulesScheduleCollectionItemOutput) ScheduleRecurrences() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSchedulesScheduleCollectionItem) string { return v.ScheduleRecurrences }).(pulumi.StringOutput)
+func (o GetSchedulesScheduleCollectionItemOutput) ScheduleRecurrences() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSchedulesScheduleCollectionItem) *string { return v.ScheduleRecurrences }).(pulumi.StringPtrOutput)
 }
 
 // The schedule lifecycle state.
-func (o GetSchedulesScheduleCollectionItemOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSchedulesScheduleCollectionItem) string { return v.State }).(pulumi.StringOutput)
+func (o GetSchedulesScheduleCollectionItemOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSchedulesScheduleCollectionItem) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -7857,18 +6758,18 @@ func (o GetSchedulesScheduleCollectionItemOutput) SystemTags() pulumi.MapOutput 
 }
 
 // The date and time the schedule was created.
-func (o GetSchedulesScheduleCollectionItemOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSchedulesScheduleCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetSchedulesScheduleCollectionItemOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSchedulesScheduleCollectionItem) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time of the next job execution.
-func (o GetSchedulesScheduleCollectionItemOutput) TimeNextRun() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSchedulesScheduleCollectionItem) string { return v.TimeNextRun }).(pulumi.StringOutput)
+func (o GetSchedulesScheduleCollectionItemOutput) TimeNextRun() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSchedulesScheduleCollectionItem) *string { return v.TimeNextRun }).(pulumi.StringPtrOutput)
 }
 
 // The date and time of the first time job execution.
-func (o GetSchedulesScheduleCollectionItemOutput) TimeScheduled() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSchedulesScheduleCollectionItem) string { return v.TimeScheduled }).(pulumi.StringOutput)
+func (o GetSchedulesScheduleCollectionItemOutput) TimeScheduled() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSchedulesScheduleCollectionItem) *string { return v.TimeScheduled }).(pulumi.StringPtrOutput)
 }
 
 type GetSchedulesScheduleCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -7885,12 +6786,6 @@ func (o GetSchedulesScheduleCollectionItemArrayOutput) ToGetSchedulesScheduleCol
 	return o
 }
 
-func (o GetSchedulesScheduleCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSchedulesScheduleCollectionItem] {
-	return pulumix.Output[[]GetSchedulesScheduleCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSchedulesScheduleCollectionItemArrayOutput) Index(i pulumi.IntInput) GetSchedulesScheduleCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSchedulesScheduleCollectionItem {
 		return vs[0].([]GetSchedulesScheduleCollectionItem)[vs[1].(int)]
@@ -7899,21 +6794,21 @@ func (o GetSchedulesScheduleCollectionItemArrayOutput) Index(i pulumi.IntInput) 
 
 type GetSchedulesScheduleCollectionItemQueryProperty struct {
 	// The depth level of the compartment.
-	CompartmentDepth float64 `pulumi:"compartmentDepth"`
+	CompartmentDepth *float64 `pulumi:"compartmentDepth"`
 	// Static or dynamic date range `dateRangeType`, which corresponds with type-specific characteristics.
 	DateRanges []GetSchedulesScheduleCollectionItemQueryPropertyDateRange `pulumi:"dateRanges"`
 	// The filter object for query usage.
-	Filter string `pulumi:"filter"`
+	Filter *string `pulumi:"filter"`
 	// The usage granularity. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation. Allowed values are: DAILY MONTHLY
-	Granularity string `pulumi:"granularity"`
+	Granularity *string `pulumi:"granularity"`
 	// Aggregate the result by. For example: [ "tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName" ]
 	GroupBies []string `pulumi:"groupBies"`
 	// GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only supports one tag in the list. For example: [ { "namespace": "oracle", "key": "createdBy" ]
 	GroupByTags []GetSchedulesScheduleCollectionItemQueryPropertyGroupByTag `pulumi:"groupByTags"`
 	// Specifies whether aggregated by time. If isAggregateByTime is true, all usage or cost over the query time period will be added up.
-	IsAggregateByTime bool `pulumi:"isAggregateByTime"`
+	IsAggregateByTime *bool `pulumi:"isAggregateByTime"`
 	// The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data. Allowed values are: USAGE COST USAGE_AND_COST
-	QueryType string `pulumi:"queryType"`
+	QueryType *string `pulumi:"queryType"`
 }
 
 // GetSchedulesScheduleCollectionItemQueryPropertyInput is an input type that accepts GetSchedulesScheduleCollectionItemQueryPropertyArgs and GetSchedulesScheduleCollectionItemQueryPropertyOutput values.
@@ -7929,21 +6824,21 @@ type GetSchedulesScheduleCollectionItemQueryPropertyInput interface {
 
 type GetSchedulesScheduleCollectionItemQueryPropertyArgs struct {
 	// The depth level of the compartment.
-	CompartmentDepth pulumi.Float64Input `pulumi:"compartmentDepth"`
+	CompartmentDepth pulumi.Float64PtrInput `pulumi:"compartmentDepth"`
 	// Static or dynamic date range `dateRangeType`, which corresponds with type-specific characteristics.
 	DateRanges GetSchedulesScheduleCollectionItemQueryPropertyDateRangeArrayInput `pulumi:"dateRanges"`
 	// The filter object for query usage.
-	Filter pulumi.StringInput `pulumi:"filter"`
+	Filter pulumi.StringPtrInput `pulumi:"filter"`
 	// The usage granularity. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation. Allowed values are: DAILY MONTHLY
-	Granularity pulumi.StringInput `pulumi:"granularity"`
+	Granularity pulumi.StringPtrInput `pulumi:"granularity"`
 	// Aggregate the result by. For example: [ "tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName" ]
 	GroupBies pulumi.StringArrayInput `pulumi:"groupBies"`
 	// GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only supports one tag in the list. For example: [ { "namespace": "oracle", "key": "createdBy" ]
 	GroupByTags GetSchedulesScheduleCollectionItemQueryPropertyGroupByTagArrayInput `pulumi:"groupByTags"`
 	// Specifies whether aggregated by time. If isAggregateByTime is true, all usage or cost over the query time period will be added up.
-	IsAggregateByTime pulumi.BoolInput `pulumi:"isAggregateByTime"`
+	IsAggregateByTime pulumi.BoolPtrInput `pulumi:"isAggregateByTime"`
 	// The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data. Allowed values are: USAGE COST USAGE_AND_COST
-	QueryType pulumi.StringInput `pulumi:"queryType"`
+	QueryType pulumi.StringPtrInput `pulumi:"queryType"`
 }
 
 func (GetSchedulesScheduleCollectionItemQueryPropertyArgs) ElementType() reflect.Type {
@@ -7956,12 +6851,6 @@ func (i GetSchedulesScheduleCollectionItemQueryPropertyArgs) ToGetSchedulesSched
 
 func (i GetSchedulesScheduleCollectionItemQueryPropertyArgs) ToGetSchedulesScheduleCollectionItemQueryPropertyOutputWithContext(ctx context.Context) GetSchedulesScheduleCollectionItemQueryPropertyOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSchedulesScheduleCollectionItemQueryPropertyOutput)
-}
-
-func (i GetSchedulesScheduleCollectionItemQueryPropertyArgs) ToOutput(ctx context.Context) pulumix.Output[GetSchedulesScheduleCollectionItemQueryProperty] {
-	return pulumix.Output[GetSchedulesScheduleCollectionItemQueryProperty]{
-		OutputState: i.ToGetSchedulesScheduleCollectionItemQueryPropertyOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSchedulesScheduleCollectionItemQueryPropertyArrayInput is an input type that accepts GetSchedulesScheduleCollectionItemQueryPropertyArray and GetSchedulesScheduleCollectionItemQueryPropertyArrayOutput values.
@@ -7989,12 +6878,6 @@ func (i GetSchedulesScheduleCollectionItemQueryPropertyArray) ToGetSchedulesSche
 	return pulumi.ToOutputWithContext(ctx, i).(GetSchedulesScheduleCollectionItemQueryPropertyArrayOutput)
 }
 
-func (i GetSchedulesScheduleCollectionItemQueryPropertyArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSchedulesScheduleCollectionItemQueryProperty] {
-	return pulumix.Output[[]GetSchedulesScheduleCollectionItemQueryProperty]{
-		OutputState: i.ToGetSchedulesScheduleCollectionItemQueryPropertyArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSchedulesScheduleCollectionItemQueryPropertyOutput struct{ *pulumi.OutputState }
 
 func (GetSchedulesScheduleCollectionItemQueryPropertyOutput) ElementType() reflect.Type {
@@ -8009,15 +6892,9 @@ func (o GetSchedulesScheduleCollectionItemQueryPropertyOutput) ToGetSchedulesSch
 	return o
 }
 
-func (o GetSchedulesScheduleCollectionItemQueryPropertyOutput) ToOutput(ctx context.Context) pulumix.Output[GetSchedulesScheduleCollectionItemQueryProperty] {
-	return pulumix.Output[GetSchedulesScheduleCollectionItemQueryProperty]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The depth level of the compartment.
-func (o GetSchedulesScheduleCollectionItemQueryPropertyOutput) CompartmentDepth() pulumi.Float64Output {
-	return o.ApplyT(func(v GetSchedulesScheduleCollectionItemQueryProperty) float64 { return v.CompartmentDepth }).(pulumi.Float64Output)
+func (o GetSchedulesScheduleCollectionItemQueryPropertyOutput) CompartmentDepth() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetSchedulesScheduleCollectionItemQueryProperty) *float64 { return v.CompartmentDepth }).(pulumi.Float64PtrOutput)
 }
 
 // Static or dynamic date range `dateRangeType`, which corresponds with type-specific characteristics.
@@ -8028,13 +6905,13 @@ func (o GetSchedulesScheduleCollectionItemQueryPropertyOutput) DateRanges() GetS
 }
 
 // The filter object for query usage.
-func (o GetSchedulesScheduleCollectionItemQueryPropertyOutput) Filter() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSchedulesScheduleCollectionItemQueryProperty) string { return v.Filter }).(pulumi.StringOutput)
+func (o GetSchedulesScheduleCollectionItemQueryPropertyOutput) Filter() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSchedulesScheduleCollectionItemQueryProperty) *string { return v.Filter }).(pulumi.StringPtrOutput)
 }
 
 // The usage granularity. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation. Allowed values are: DAILY MONTHLY
-func (o GetSchedulesScheduleCollectionItemQueryPropertyOutput) Granularity() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSchedulesScheduleCollectionItemQueryProperty) string { return v.Granularity }).(pulumi.StringOutput)
+func (o GetSchedulesScheduleCollectionItemQueryPropertyOutput) Granularity() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSchedulesScheduleCollectionItemQueryProperty) *string { return v.Granularity }).(pulumi.StringPtrOutput)
 }
 
 // Aggregate the result by. For example: [ "tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName" ]
@@ -8050,13 +6927,13 @@ func (o GetSchedulesScheduleCollectionItemQueryPropertyOutput) GroupByTags() Get
 }
 
 // Specifies whether aggregated by time. If isAggregateByTime is true, all usage or cost over the query time period will be added up.
-func (o GetSchedulesScheduleCollectionItemQueryPropertyOutput) IsAggregateByTime() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetSchedulesScheduleCollectionItemQueryProperty) bool { return v.IsAggregateByTime }).(pulumi.BoolOutput)
+func (o GetSchedulesScheduleCollectionItemQueryPropertyOutput) IsAggregateByTime() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSchedulesScheduleCollectionItemQueryProperty) *bool { return v.IsAggregateByTime }).(pulumi.BoolPtrOutput)
 }
 
 // The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data. Allowed values are: USAGE COST USAGE_AND_COST
-func (o GetSchedulesScheduleCollectionItemQueryPropertyOutput) QueryType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSchedulesScheduleCollectionItemQueryProperty) string { return v.QueryType }).(pulumi.StringOutput)
+func (o GetSchedulesScheduleCollectionItemQueryPropertyOutput) QueryType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSchedulesScheduleCollectionItemQueryProperty) *string { return v.QueryType }).(pulumi.StringPtrOutput)
 }
 
 type GetSchedulesScheduleCollectionItemQueryPropertyArrayOutput struct{ *pulumi.OutputState }
@@ -8073,12 +6950,6 @@ func (o GetSchedulesScheduleCollectionItemQueryPropertyArrayOutput) ToGetSchedul
 	return o
 }
 
-func (o GetSchedulesScheduleCollectionItemQueryPropertyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSchedulesScheduleCollectionItemQueryProperty] {
-	return pulumix.Output[[]GetSchedulesScheduleCollectionItemQueryProperty]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSchedulesScheduleCollectionItemQueryPropertyArrayOutput) Index(i pulumi.IntInput) GetSchedulesScheduleCollectionItemQueryPropertyOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSchedulesScheduleCollectionItemQueryProperty {
 		return vs[0].([]GetSchedulesScheduleCollectionItemQueryProperty)[vs[1].(int)]
@@ -8087,12 +6958,12 @@ func (o GetSchedulesScheduleCollectionItemQueryPropertyArrayOutput) Index(i pulu
 
 type GetSchedulesScheduleCollectionItemQueryPropertyDateRange struct {
 	// Defines whether the schedule date range is STATIC or DYNAMIC.
-	DateRangeType        string `pulumi:"dateRangeType"`
-	DynamicDateRangeType string `pulumi:"dynamicDateRangeType"`
+	DateRangeType        *string `pulumi:"dateRangeType"`
+	DynamicDateRangeType *string `pulumi:"dynamicDateRangeType"`
 	// The usage end time.
-	TimeUsageEnded string `pulumi:"timeUsageEnded"`
+	TimeUsageEnded *string `pulumi:"timeUsageEnded"`
 	// The usage start time.
-	TimeUsageStarted string `pulumi:"timeUsageStarted"`
+	TimeUsageStarted *string `pulumi:"timeUsageStarted"`
 }
 
 // GetSchedulesScheduleCollectionItemQueryPropertyDateRangeInput is an input type that accepts GetSchedulesScheduleCollectionItemQueryPropertyDateRangeArgs and GetSchedulesScheduleCollectionItemQueryPropertyDateRangeOutput values.
@@ -8108,12 +6979,12 @@ type GetSchedulesScheduleCollectionItemQueryPropertyDateRangeInput interface {
 
 type GetSchedulesScheduleCollectionItemQueryPropertyDateRangeArgs struct {
 	// Defines whether the schedule date range is STATIC or DYNAMIC.
-	DateRangeType        pulumi.StringInput `pulumi:"dateRangeType"`
-	DynamicDateRangeType pulumi.StringInput `pulumi:"dynamicDateRangeType"`
+	DateRangeType        pulumi.StringPtrInput `pulumi:"dateRangeType"`
+	DynamicDateRangeType pulumi.StringPtrInput `pulumi:"dynamicDateRangeType"`
 	// The usage end time.
-	TimeUsageEnded pulumi.StringInput `pulumi:"timeUsageEnded"`
+	TimeUsageEnded pulumi.StringPtrInput `pulumi:"timeUsageEnded"`
 	// The usage start time.
-	TimeUsageStarted pulumi.StringInput `pulumi:"timeUsageStarted"`
+	TimeUsageStarted pulumi.StringPtrInput `pulumi:"timeUsageStarted"`
 }
 
 func (GetSchedulesScheduleCollectionItemQueryPropertyDateRangeArgs) ElementType() reflect.Type {
@@ -8126,12 +6997,6 @@ func (i GetSchedulesScheduleCollectionItemQueryPropertyDateRangeArgs) ToGetSched
 
 func (i GetSchedulesScheduleCollectionItemQueryPropertyDateRangeArgs) ToGetSchedulesScheduleCollectionItemQueryPropertyDateRangeOutputWithContext(ctx context.Context) GetSchedulesScheduleCollectionItemQueryPropertyDateRangeOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSchedulesScheduleCollectionItemQueryPropertyDateRangeOutput)
-}
-
-func (i GetSchedulesScheduleCollectionItemQueryPropertyDateRangeArgs) ToOutput(ctx context.Context) pulumix.Output[GetSchedulesScheduleCollectionItemQueryPropertyDateRange] {
-	return pulumix.Output[GetSchedulesScheduleCollectionItemQueryPropertyDateRange]{
-		OutputState: i.ToGetSchedulesScheduleCollectionItemQueryPropertyDateRangeOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSchedulesScheduleCollectionItemQueryPropertyDateRangeArrayInput is an input type that accepts GetSchedulesScheduleCollectionItemQueryPropertyDateRangeArray and GetSchedulesScheduleCollectionItemQueryPropertyDateRangeArrayOutput values.
@@ -8159,12 +7024,6 @@ func (i GetSchedulesScheduleCollectionItemQueryPropertyDateRangeArray) ToGetSche
 	return pulumi.ToOutputWithContext(ctx, i).(GetSchedulesScheduleCollectionItemQueryPropertyDateRangeArrayOutput)
 }
 
-func (i GetSchedulesScheduleCollectionItemQueryPropertyDateRangeArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSchedulesScheduleCollectionItemQueryPropertyDateRange] {
-	return pulumix.Output[[]GetSchedulesScheduleCollectionItemQueryPropertyDateRange]{
-		OutputState: i.ToGetSchedulesScheduleCollectionItemQueryPropertyDateRangeArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSchedulesScheduleCollectionItemQueryPropertyDateRangeOutput struct{ *pulumi.OutputState }
 
 func (GetSchedulesScheduleCollectionItemQueryPropertyDateRangeOutput) ElementType() reflect.Type {
@@ -8179,29 +7038,25 @@ func (o GetSchedulesScheduleCollectionItemQueryPropertyDateRangeOutput) ToGetSch
 	return o
 }
 
-func (o GetSchedulesScheduleCollectionItemQueryPropertyDateRangeOutput) ToOutput(ctx context.Context) pulumix.Output[GetSchedulesScheduleCollectionItemQueryPropertyDateRange] {
-	return pulumix.Output[GetSchedulesScheduleCollectionItemQueryPropertyDateRange]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Defines whether the schedule date range is STATIC or DYNAMIC.
-func (o GetSchedulesScheduleCollectionItemQueryPropertyDateRangeOutput) DateRangeType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSchedulesScheduleCollectionItemQueryPropertyDateRange) string { return v.DateRangeType }).(pulumi.StringOutput)
+func (o GetSchedulesScheduleCollectionItemQueryPropertyDateRangeOutput) DateRangeType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSchedulesScheduleCollectionItemQueryPropertyDateRange) *string { return v.DateRangeType }).(pulumi.StringPtrOutput)
 }
 
-func (o GetSchedulesScheduleCollectionItemQueryPropertyDateRangeOutput) DynamicDateRangeType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSchedulesScheduleCollectionItemQueryPropertyDateRange) string { return v.DynamicDateRangeType }).(pulumi.StringOutput)
+func (o GetSchedulesScheduleCollectionItemQueryPropertyDateRangeOutput) DynamicDateRangeType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSchedulesScheduleCollectionItemQueryPropertyDateRange) *string {
+		return v.DynamicDateRangeType
+	}).(pulumi.StringPtrOutput)
 }
 
 // The usage end time.
-func (o GetSchedulesScheduleCollectionItemQueryPropertyDateRangeOutput) TimeUsageEnded() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSchedulesScheduleCollectionItemQueryPropertyDateRange) string { return v.TimeUsageEnded }).(pulumi.StringOutput)
+func (o GetSchedulesScheduleCollectionItemQueryPropertyDateRangeOutput) TimeUsageEnded() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSchedulesScheduleCollectionItemQueryPropertyDateRange) *string { return v.TimeUsageEnded }).(pulumi.StringPtrOutput)
 }
 
 // The usage start time.
-func (o GetSchedulesScheduleCollectionItemQueryPropertyDateRangeOutput) TimeUsageStarted() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSchedulesScheduleCollectionItemQueryPropertyDateRange) string { return v.TimeUsageStarted }).(pulumi.StringOutput)
+func (o GetSchedulesScheduleCollectionItemQueryPropertyDateRangeOutput) TimeUsageStarted() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSchedulesScheduleCollectionItemQueryPropertyDateRange) *string { return v.TimeUsageStarted }).(pulumi.StringPtrOutput)
 }
 
 type GetSchedulesScheduleCollectionItemQueryPropertyDateRangeArrayOutput struct{ *pulumi.OutputState }
@@ -8218,12 +7073,6 @@ func (o GetSchedulesScheduleCollectionItemQueryPropertyDateRangeArrayOutput) ToG
 	return o
 }
 
-func (o GetSchedulesScheduleCollectionItemQueryPropertyDateRangeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSchedulesScheduleCollectionItemQueryPropertyDateRange] {
-	return pulumix.Output[[]GetSchedulesScheduleCollectionItemQueryPropertyDateRange]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSchedulesScheduleCollectionItemQueryPropertyDateRangeArrayOutput) Index(i pulumi.IntInput) GetSchedulesScheduleCollectionItemQueryPropertyDateRangeOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSchedulesScheduleCollectionItemQueryPropertyDateRange {
 		return vs[0].([]GetSchedulesScheduleCollectionItemQueryPropertyDateRange)[vs[1].(int)]
@@ -8232,11 +7081,11 @@ func (o GetSchedulesScheduleCollectionItemQueryPropertyDateRangeArrayOutput) Ind
 
 type GetSchedulesScheduleCollectionItemQueryPropertyGroupByTag struct {
 	// The tag key.
-	Key string `pulumi:"key"`
+	Key *string `pulumi:"key"`
 	// The namespace needed to determine the object storage bucket.
-	Namespace string `pulumi:"namespace"`
+	Namespace *string `pulumi:"namespace"`
 	// The tag value.
-	Value string `pulumi:"value"`
+	Value *string `pulumi:"value"`
 }
 
 // GetSchedulesScheduleCollectionItemQueryPropertyGroupByTagInput is an input type that accepts GetSchedulesScheduleCollectionItemQueryPropertyGroupByTagArgs and GetSchedulesScheduleCollectionItemQueryPropertyGroupByTagOutput values.
@@ -8252,11 +7101,11 @@ type GetSchedulesScheduleCollectionItemQueryPropertyGroupByTagInput interface {
 
 type GetSchedulesScheduleCollectionItemQueryPropertyGroupByTagArgs struct {
 	// The tag key.
-	Key pulumi.StringInput `pulumi:"key"`
+	Key pulumi.StringPtrInput `pulumi:"key"`
 	// The namespace needed to determine the object storage bucket.
-	Namespace pulumi.StringInput `pulumi:"namespace"`
+	Namespace pulumi.StringPtrInput `pulumi:"namespace"`
 	// The tag value.
-	Value pulumi.StringInput `pulumi:"value"`
+	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
 func (GetSchedulesScheduleCollectionItemQueryPropertyGroupByTagArgs) ElementType() reflect.Type {
@@ -8269,12 +7118,6 @@ func (i GetSchedulesScheduleCollectionItemQueryPropertyGroupByTagArgs) ToGetSche
 
 func (i GetSchedulesScheduleCollectionItemQueryPropertyGroupByTagArgs) ToGetSchedulesScheduleCollectionItemQueryPropertyGroupByTagOutputWithContext(ctx context.Context) GetSchedulesScheduleCollectionItemQueryPropertyGroupByTagOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSchedulesScheduleCollectionItemQueryPropertyGroupByTagOutput)
-}
-
-func (i GetSchedulesScheduleCollectionItemQueryPropertyGroupByTagArgs) ToOutput(ctx context.Context) pulumix.Output[GetSchedulesScheduleCollectionItemQueryPropertyGroupByTag] {
-	return pulumix.Output[GetSchedulesScheduleCollectionItemQueryPropertyGroupByTag]{
-		OutputState: i.ToGetSchedulesScheduleCollectionItemQueryPropertyGroupByTagOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSchedulesScheduleCollectionItemQueryPropertyGroupByTagArrayInput is an input type that accepts GetSchedulesScheduleCollectionItemQueryPropertyGroupByTagArray and GetSchedulesScheduleCollectionItemQueryPropertyGroupByTagArrayOutput values.
@@ -8302,12 +7145,6 @@ func (i GetSchedulesScheduleCollectionItemQueryPropertyGroupByTagArray) ToGetSch
 	return pulumi.ToOutputWithContext(ctx, i).(GetSchedulesScheduleCollectionItemQueryPropertyGroupByTagArrayOutput)
 }
 
-func (i GetSchedulesScheduleCollectionItemQueryPropertyGroupByTagArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSchedulesScheduleCollectionItemQueryPropertyGroupByTag] {
-	return pulumix.Output[[]GetSchedulesScheduleCollectionItemQueryPropertyGroupByTag]{
-		OutputState: i.ToGetSchedulesScheduleCollectionItemQueryPropertyGroupByTagArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSchedulesScheduleCollectionItemQueryPropertyGroupByTagOutput struct{ *pulumi.OutputState }
 
 func (GetSchedulesScheduleCollectionItemQueryPropertyGroupByTagOutput) ElementType() reflect.Type {
@@ -8322,25 +7159,19 @@ func (o GetSchedulesScheduleCollectionItemQueryPropertyGroupByTagOutput) ToGetSc
 	return o
 }
 
-func (o GetSchedulesScheduleCollectionItemQueryPropertyGroupByTagOutput) ToOutput(ctx context.Context) pulumix.Output[GetSchedulesScheduleCollectionItemQueryPropertyGroupByTag] {
-	return pulumix.Output[GetSchedulesScheduleCollectionItemQueryPropertyGroupByTag]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The tag key.
-func (o GetSchedulesScheduleCollectionItemQueryPropertyGroupByTagOutput) Key() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSchedulesScheduleCollectionItemQueryPropertyGroupByTag) string { return v.Key }).(pulumi.StringOutput)
+func (o GetSchedulesScheduleCollectionItemQueryPropertyGroupByTagOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSchedulesScheduleCollectionItemQueryPropertyGroupByTag) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
 // The namespace needed to determine the object storage bucket.
-func (o GetSchedulesScheduleCollectionItemQueryPropertyGroupByTagOutput) Namespace() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSchedulesScheduleCollectionItemQueryPropertyGroupByTag) string { return v.Namespace }).(pulumi.StringOutput)
+func (o GetSchedulesScheduleCollectionItemQueryPropertyGroupByTagOutput) Namespace() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSchedulesScheduleCollectionItemQueryPropertyGroupByTag) *string { return v.Namespace }).(pulumi.StringPtrOutput)
 }
 
 // The tag value.
-func (o GetSchedulesScheduleCollectionItemQueryPropertyGroupByTagOutput) Value() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSchedulesScheduleCollectionItemQueryPropertyGroupByTag) string { return v.Value }).(pulumi.StringOutput)
+func (o GetSchedulesScheduleCollectionItemQueryPropertyGroupByTagOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSchedulesScheduleCollectionItemQueryPropertyGroupByTag) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
 
 type GetSchedulesScheduleCollectionItemQueryPropertyGroupByTagArrayOutput struct{ *pulumi.OutputState }
@@ -8357,12 +7188,6 @@ func (o GetSchedulesScheduleCollectionItemQueryPropertyGroupByTagArrayOutput) To
 	return o
 }
 
-func (o GetSchedulesScheduleCollectionItemQueryPropertyGroupByTagArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSchedulesScheduleCollectionItemQueryPropertyGroupByTag] {
-	return pulumix.Output[[]GetSchedulesScheduleCollectionItemQueryPropertyGroupByTag]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSchedulesScheduleCollectionItemQueryPropertyGroupByTagArrayOutput) Index(i pulumi.IntInput) GetSchedulesScheduleCollectionItemQueryPropertyGroupByTagOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSchedulesScheduleCollectionItemQueryPropertyGroupByTag {
 		return vs[0].([]GetSchedulesScheduleCollectionItemQueryPropertyGroupByTag)[vs[1].(int)]
@@ -8371,13 +7196,13 @@ func (o GetSchedulesScheduleCollectionItemQueryPropertyGroupByTagArrayOutput) In
 
 type GetSchedulesScheduleCollectionItemResultLocation struct {
 	// The bucket name where usage or cost CSVs will be uploaded.
-	Bucket string `pulumi:"bucket"`
+	Bucket *string `pulumi:"bucket"`
 	// Defines the type of location where the usage or cost CSVs will be stored.
-	LocationType string `pulumi:"locationType"`
+	LocationType *string `pulumi:"locationType"`
 	// The namespace needed to determine the object storage bucket.
-	Namespace string `pulumi:"namespace"`
+	Namespace *string `pulumi:"namespace"`
 	// The destination Object Store Region specified by the customer.
-	Region string `pulumi:"region"`
+	Region *string `pulumi:"region"`
 }
 
 // GetSchedulesScheduleCollectionItemResultLocationInput is an input type that accepts GetSchedulesScheduleCollectionItemResultLocationArgs and GetSchedulesScheduleCollectionItemResultLocationOutput values.
@@ -8393,13 +7218,13 @@ type GetSchedulesScheduleCollectionItemResultLocationInput interface {
 
 type GetSchedulesScheduleCollectionItemResultLocationArgs struct {
 	// The bucket name where usage or cost CSVs will be uploaded.
-	Bucket pulumi.StringInput `pulumi:"bucket"`
+	Bucket pulumi.StringPtrInput `pulumi:"bucket"`
 	// Defines the type of location where the usage or cost CSVs will be stored.
-	LocationType pulumi.StringInput `pulumi:"locationType"`
+	LocationType pulumi.StringPtrInput `pulumi:"locationType"`
 	// The namespace needed to determine the object storage bucket.
-	Namespace pulumi.StringInput `pulumi:"namespace"`
+	Namespace pulumi.StringPtrInput `pulumi:"namespace"`
 	// The destination Object Store Region specified by the customer.
-	Region pulumi.StringInput `pulumi:"region"`
+	Region pulumi.StringPtrInput `pulumi:"region"`
 }
 
 func (GetSchedulesScheduleCollectionItemResultLocationArgs) ElementType() reflect.Type {
@@ -8412,12 +7237,6 @@ func (i GetSchedulesScheduleCollectionItemResultLocationArgs) ToGetSchedulesSche
 
 func (i GetSchedulesScheduleCollectionItemResultLocationArgs) ToGetSchedulesScheduleCollectionItemResultLocationOutputWithContext(ctx context.Context) GetSchedulesScheduleCollectionItemResultLocationOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSchedulesScheduleCollectionItemResultLocationOutput)
-}
-
-func (i GetSchedulesScheduleCollectionItemResultLocationArgs) ToOutput(ctx context.Context) pulumix.Output[GetSchedulesScheduleCollectionItemResultLocation] {
-	return pulumix.Output[GetSchedulesScheduleCollectionItemResultLocation]{
-		OutputState: i.ToGetSchedulesScheduleCollectionItemResultLocationOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSchedulesScheduleCollectionItemResultLocationArrayInput is an input type that accepts GetSchedulesScheduleCollectionItemResultLocationArray and GetSchedulesScheduleCollectionItemResultLocationArrayOutput values.
@@ -8445,12 +7264,6 @@ func (i GetSchedulesScheduleCollectionItemResultLocationArray) ToGetSchedulesSch
 	return pulumi.ToOutputWithContext(ctx, i).(GetSchedulesScheduleCollectionItemResultLocationArrayOutput)
 }
 
-func (i GetSchedulesScheduleCollectionItemResultLocationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSchedulesScheduleCollectionItemResultLocation] {
-	return pulumix.Output[[]GetSchedulesScheduleCollectionItemResultLocation]{
-		OutputState: i.ToGetSchedulesScheduleCollectionItemResultLocationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSchedulesScheduleCollectionItemResultLocationOutput struct{ *pulumi.OutputState }
 
 func (GetSchedulesScheduleCollectionItemResultLocationOutput) ElementType() reflect.Type {
@@ -8465,30 +7278,24 @@ func (o GetSchedulesScheduleCollectionItemResultLocationOutput) ToGetSchedulesSc
 	return o
 }
 
-func (o GetSchedulesScheduleCollectionItemResultLocationOutput) ToOutput(ctx context.Context) pulumix.Output[GetSchedulesScheduleCollectionItemResultLocation] {
-	return pulumix.Output[GetSchedulesScheduleCollectionItemResultLocation]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The bucket name where usage or cost CSVs will be uploaded.
-func (o GetSchedulesScheduleCollectionItemResultLocationOutput) Bucket() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSchedulesScheduleCollectionItemResultLocation) string { return v.Bucket }).(pulumi.StringOutput)
+func (o GetSchedulesScheduleCollectionItemResultLocationOutput) Bucket() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSchedulesScheduleCollectionItemResultLocation) *string { return v.Bucket }).(pulumi.StringPtrOutput)
 }
 
 // Defines the type of location where the usage or cost CSVs will be stored.
-func (o GetSchedulesScheduleCollectionItemResultLocationOutput) LocationType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSchedulesScheduleCollectionItemResultLocation) string { return v.LocationType }).(pulumi.StringOutput)
+func (o GetSchedulesScheduleCollectionItemResultLocationOutput) LocationType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSchedulesScheduleCollectionItemResultLocation) *string { return v.LocationType }).(pulumi.StringPtrOutput)
 }
 
 // The namespace needed to determine the object storage bucket.
-func (o GetSchedulesScheduleCollectionItemResultLocationOutput) Namespace() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSchedulesScheduleCollectionItemResultLocation) string { return v.Namespace }).(pulumi.StringOutput)
+func (o GetSchedulesScheduleCollectionItemResultLocationOutput) Namespace() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSchedulesScheduleCollectionItemResultLocation) *string { return v.Namespace }).(pulumi.StringPtrOutput)
 }
 
 // The destination Object Store Region specified by the customer.
-func (o GetSchedulesScheduleCollectionItemResultLocationOutput) Region() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSchedulesScheduleCollectionItemResultLocation) string { return v.Region }).(pulumi.StringOutput)
+func (o GetSchedulesScheduleCollectionItemResultLocationOutput) Region() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSchedulesScheduleCollectionItemResultLocation) *string { return v.Region }).(pulumi.StringPtrOutput)
 }
 
 type GetSchedulesScheduleCollectionItemResultLocationArrayOutput struct{ *pulumi.OutputState }
@@ -8503,12 +7310,6 @@ func (o GetSchedulesScheduleCollectionItemResultLocationArrayOutput) ToGetSchedu
 
 func (o GetSchedulesScheduleCollectionItemResultLocationArrayOutput) ToGetSchedulesScheduleCollectionItemResultLocationArrayOutputWithContext(ctx context.Context) GetSchedulesScheduleCollectionItemResultLocationArrayOutput {
 	return o
-}
-
-func (o GetSchedulesScheduleCollectionItemResultLocationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSchedulesScheduleCollectionItemResultLocation] {
-	return pulumix.Output[[]GetSchedulesScheduleCollectionItemResultLocation]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetSchedulesScheduleCollectionItemResultLocationArrayOutput) Index(i pulumi.IntInput) GetSchedulesScheduleCollectionItemResultLocationOutput {

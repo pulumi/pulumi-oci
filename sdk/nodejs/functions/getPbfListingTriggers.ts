@@ -51,7 +51,7 @@ export interface GetPbfListingTriggersResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * A brief descriptive name for the PBF trigger.
      */
@@ -59,7 +59,7 @@ export interface GetPbfListingTriggersResult {
     /**
      * The list of triggers_collection.
      */
-    readonly triggersCollections: outputs.Functions.GetPbfListingTriggersTriggersCollection[];
+    readonly triggersCollections?: outputs.Functions.GetPbfListingTriggersTriggersCollection[];
 }
 /**
  * This data source provides the list of Pbf Listing Triggers in Oracle Cloud Infrastructure Functions service.

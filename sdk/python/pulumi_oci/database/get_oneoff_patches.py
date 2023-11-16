@@ -46,17 +46,11 @@ class GetOneoffPatchesResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        One-off patch name.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -66,7 +60,7 @@ class GetOneoffPatchesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -74,18 +68,12 @@ class GetOneoffPatchesResult:
 
     @property
     @pulumi.getter(name="oneoffPatches")
-    def oneoff_patches(self) -> Sequence['outputs.GetOneoffPatchesOneoffPatchResult']:
-        """
-        The list of oneoff_patches.
-        """
+    def oneoff_patches(self) -> Optional[Sequence['outputs.GetOneoffPatchesOneoffPatchResult']]:
         return pulumi.get(self, "oneoff_patches")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the one-off patch.
-        """
         return pulumi.get(self, "state")
 
 
@@ -109,25 +97,7 @@ def get_oneoff_patches(compartment_id: Optional[str] = None,
                        state: Optional[str] = None,
                        opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetOneoffPatchesResult:
     """
-    This data source provides the list of Oneoff Patches in Oracle Cloud Infrastructure Database service.
-
-    Lists one-off patches in the specified compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_oneoff_patches = oci.Database.get_oneoff_patches(compartment_id=var["compartment_id"],
-        display_name=var["oneoff_patch_display_name"],
-        state=var["oneoff_patch_state"])
-    ```
-
-
-    :param str compartment_id: (Updatable) The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param str display_name: A filter to return only resources that match the entire display name given. The match is not case sensitive.
-    :param str state: A filter to return only resources that match the given lifecycle state exactly
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -153,24 +123,6 @@ def get_oneoff_patches_output(compartment_id: Optional[pulumi.Input[str]] = None
                               state: Optional[pulumi.Input[Optional[str]]] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetOneoffPatchesResult]:
     """
-    This data source provides the list of Oneoff Patches in Oracle Cloud Infrastructure Database service.
-
-    Lists one-off patches in the specified compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_oneoff_patches = oci.Database.get_oneoff_patches(compartment_id=var["compartment_id"],
-        display_name=var["oneoff_patch_display_name"],
-        state=var["oneoff_patch_state"])
-    ```
-
-
-    :param str compartment_id: (Updatable) The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param str display_name: A filter to return only resources that match the entire display name given. The match is not case sensitive.
-    :param str state: A filter to return only resources that match the given lifecycle state exactly
+    Use this data source to access information about an existing resource.
     """
     ...

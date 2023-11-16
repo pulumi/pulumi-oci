@@ -16,15 +16,15 @@ namespace Pulumi.Oci.Functions.Outputs
         /// <summary>
         /// Subscription id.
         /// </summary>
-        public readonly string ClassicSubscriptionId;
+        public readonly string? ClassicSubscriptionId;
         /// <summary>
         /// OCID of the subscription details for particular root compartment or tenancy.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The type of subscription, such as 'CLOUDCM'/'SAAS'/'CRM', etc.
         /// </summary>
-        public readonly string ServiceName;
+        public readonly string? ServiceName;
         /// <summary>
         /// Stock keeping unit.
         /// </summary>
@@ -32,11 +32,11 @@ namespace Pulumi.Oci.Functions.Outputs
 
         [OutputConstructor]
         private GetFusionEnvironmentFamilySubscriptionDetailSubscriptionResult(
-            string classicSubscriptionId,
+            string? classicSubscriptionId,
 
-            string id,
+            string? id,
 
-            string serviceName,
+            string? serviceName,
 
             ImmutableArray<Outputs.GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkusResult> skuses)
         {

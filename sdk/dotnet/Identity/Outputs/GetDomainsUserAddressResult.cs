@@ -16,53 +16,53 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// The country name component.
         /// </summary>
-        public readonly string Country;
+        public readonly string? Country;
         /// <summary>
         /// Full name
         /// </summary>
-        public readonly string Formatted;
+        public readonly string? Formatted;
         /// <summary>
         /// The city or locality component.
         /// </summary>
-        public readonly string Locality;
+        public readonly string? Locality;
         /// <summary>
         /// The zipcode or postal code component.
         /// </summary>
-        public readonly string PostalCode;
+        public readonly string? PostalCode;
         /// <summary>
         /// A Boolean value indicating the 'primary' or preferred attribute value for this attribute. The primary attribute value 'true' MUST appear no more than once.
         /// </summary>
-        public readonly bool Primary;
+        public readonly bool? Primary;
         /// <summary>
         /// The state or region component.
         /// </summary>
-        public readonly string Region;
+        public readonly string? Region;
         /// <summary>
         /// The full street address component, which may include house number, street name, PO BOX, and multi-line extended street address information. This attribute MAY contain newlines.
         /// </summary>
-        public readonly string StreetAddress;
+        public readonly string? StreetAddress;
         /// <summary>
         /// A label indicating the attribute's function.
         /// </summary>
-        public readonly string Type;
+        public readonly string? Type;
 
         [OutputConstructor]
         private GetDomainsUserAddressResult(
-            string country,
+            string? country,
 
-            string formatted,
+            string? formatted,
 
-            string locality,
+            string? locality,
 
-            string postalCode,
+            string? postalCode,
 
-            bool primary,
+            bool? primary,
 
-            string region,
+            string? region,
 
-            string streetAddress,
+            string? streetAddress,
 
-            string type)
+            string? type)
         {
             Country = country;
             Formatted = formatted;

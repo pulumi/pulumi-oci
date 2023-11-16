@@ -61,10 +61,10 @@ import javax.annotation.Nullable;
 @ResourceType(type="oci:GenericArtifactsContent/artifactByPath:ArtifactByPath")
 public class ArtifactByPath extends com.pulumi.resources.CustomResource {
     @Export(name="artifactId", refs={String.class}, tree="[0]")
-    private Output<String> artifactId;
+    private Output</* @Nullable */ String> artifactId;
 
-    public Output<String> artifactId() {
-        return this.artifactId;
+    public Output<Optional<String>> artifactId() {
+        return Codegen.optional(this.artifactId);
     }
     /**
      * A user-defined path to describe the location of an artifact. You can use slashes to organize the repository, but slashes do not create a directory structure. An artifact path does not include an artifact version.
@@ -85,14 +85,14 @@ public class ArtifactByPath extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="compartmentId", refs={String.class}, tree="[0]")
-    private Output<String> compartmentId;
+    private Output</* @Nullable */ String> compartmentId;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the repository&#39;s compartment.
      * 
      */
-    public Output<String> compartmentId() {
-        return this.compartmentId;
+    public Output<Optional<String>> compartmentId() {
+        return Codegen.optional(this.compartmentId);
     }
     /**
      * Content to be uploaded as the artifact. Cannot be defined if `source` is defined.
@@ -119,42 +119,42 @@ public class ArtifactByPath extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * The artifact name with the format of `&lt;artifact-path&gt;:&lt;artifact-version&gt;`. The artifact name is truncated to a maximum length of 255.  Example: `project01/my-web-app/artifact-abc:1.0.0`
      * 
      */
     @Export(name="displayName", refs={String.class}, tree="[0]")
-    private Output<String> displayName;
+    private Output</* @Nullable */ String> displayName;
 
     /**
      * @return The artifact name with the format of `&lt;artifact-path&gt;:&lt;artifact-version&gt;`. The artifact name is truncated to a maximum length of 255.  Example: `project01/my-web-app/artifact-abc:1.0.0`
      * 
      */
-    public Output<String> displayName() {
-        return this.displayName;
+    public Output<Optional<String>> displayName() {
+        return Codegen.optional(this.displayName);
     }
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * The [OCID](https://www.terraform.io/iaas/Content/General/Concepts/identifiers.htm) of the repository.
@@ -175,28 +175,28 @@ public class ArtifactByPath extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="sha256", refs={String.class}, tree="[0]")
-    private Output<String> sha256;
+    private Output</* @Nullable */ String> sha256;
 
     /**
      * @return The SHA256 digest for the artifact. When you upload an artifact to the repository, a SHA256 digest is calculated and added to the artifact properties.
      * 
      */
-    public Output<String> sha256() {
-        return this.sha256;
+    public Output<Optional<String>> sha256() {
+        return Codegen.optional(this.sha256);
     }
     /**
      * The size of the artifact in bytes.
      * 
      */
     @Export(name="sizeInBytes", refs={String.class}, tree="[0]")
-    private Output<String> sizeInBytes;
+    private Output</* @Nullable */ String> sizeInBytes;
 
     /**
      * @return The size of the artifact in bytes.
      * 
      */
-    public Output<String> sizeInBytes() {
-        return this.sizeInBytes;
+    public Output<Optional<String>> sizeInBytes() {
+        return Codegen.optional(this.sizeInBytes);
     }
     /**
      * A path to a file on the local system to be uploaded as the artifact. Cannot be defined if `content` is defined.
@@ -217,28 +217,28 @@ public class ArtifactByPath extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The current state of the artifact.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * An RFC 3339 timestamp indicating when the repository was created.
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return An RFC 3339 timestamp indicating when the repository was created.
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * A user-defined string to describe the artifact version. Example: `1.1.0` or `1.2-beta-2`

@@ -7,14 +7,15 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.DataSafe.outputs.GetAuditPoliciesAuditPolicyCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAuditPoliciesAuditPolicyCollection {
-    private List<GetAuditPoliciesAuditPolicyCollectionItem> items;
+    private @Nullable List<GetAuditPoliciesAuditPolicyCollectionItem> items;
 
     private GetAuditPoliciesAuditPolicyCollection() {}
     public List<GetAuditPoliciesAuditPolicyCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -26,7 +27,7 @@ public final class GetAuditPoliciesAuditPolicyCollection {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetAuditPoliciesAuditPolicyCollectionItem> items;
+        private @Nullable List<GetAuditPoliciesAuditPolicyCollectionItem> items;
         public Builder() {}
         public Builder(GetAuditPoliciesAuditPolicyCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -34,8 +35,8 @@ public final class GetAuditPoliciesAuditPolicyCollection {
         }
 
         @CustomType.Setter
-        public Builder items(List<GetAuditPoliciesAuditPolicyCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetAuditPoliciesAuditPolicyCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetAuditPoliciesAuditPolicyCollectionItem... items) {

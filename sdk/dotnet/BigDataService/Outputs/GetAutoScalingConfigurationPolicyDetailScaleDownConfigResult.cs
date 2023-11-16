@@ -16,7 +16,7 @@ namespace Pulumi.Oci.BigDataService.Outputs
         /// <summary>
         /// For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the size of memory in GBs to add to each node during a scale-up event. This value is not used for nodes with fixed compute shapes.
         /// </summary>
-        public readonly int MemoryStepSize;
+        public readonly int? MemoryStepSize;
         /// <summary>
         /// Metric and threshold details for triggering an autoscale action.
         /// </summary>
@@ -24,27 +24,27 @@ namespace Pulumi.Oci.BigDataService.Outputs
         /// <summary>
         /// For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the minimum memory in GBs each node can be scaled-down to. This value is not used for nodes with fixed compute shapes.
         /// </summary>
-        public readonly int MinMemoryPerNode;
+        public readonly int? MinMemoryPerNode;
         /// <summary>
         /// For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the minimum number of OCPUs each node can be scaled-down to. This value is not used for nodes with fixed compute shapes.
         /// </summary>
-        public readonly int MinOcpusPerNode;
+        public readonly int? MinOcpusPerNode;
         /// <summary>
         /// For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the number of OCPUs to add to each node during a scale-up event. This value is not used for nodes with fixed compute shapes.
         /// </summary>
-        public readonly int OcpuStepSize;
+        public readonly int? OcpuStepSize;
 
         [OutputConstructor]
         private GetAutoScalingConfigurationPolicyDetailScaleDownConfigResult(
-            int memoryStepSize,
+            int? memoryStepSize,
 
             ImmutableArray<Outputs.GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricResult> metrics,
 
-            int minMemoryPerNode,
+            int? minMemoryPerNode,
 
-            int minOcpusPerNode,
+            int? minOcpusPerNode,
 
-            int ocpuStepSize)
+            int? ocpuStepSize)
         {
             MemoryStepSize = memoryStepSize;
             Metrics = metrics;

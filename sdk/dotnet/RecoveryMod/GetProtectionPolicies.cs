@@ -191,7 +191,7 @@ namespace Pulumi.Oci.RecoveryMod
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         public readonly string? Owner;
         /// <summary>
         /// The list of protection_policy_collection.
@@ -217,7 +217,7 @@ namespace Pulumi.Oci.RecoveryMod
 
             ImmutableArray<Outputs.GetProtectionPoliciesFilterResult> filters,
 
-            string id,
+            string? id,
 
             string? owner,
 

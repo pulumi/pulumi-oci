@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Data Assets in Oracle Cloud Infrastructure Ai Anomaly Detection service.
@@ -77,7 +76,7 @@ type GetDetectionDataAssetsResult struct {
 	DisplayName *string                        `pulumi:"displayName"`
 	Filters     []GetDetectionDataAssetsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The Unique project id which is created at project creation that is immutable on creation.
 	ProjectId *string `pulumi:"projectId"`
 	// The lifecycle state of the Data Asset.
@@ -129,12 +128,6 @@ func (o GetDetectionDataAssetsResultOutput) ToGetDetectionDataAssetsResultOutput
 	return o
 }
 
-func (o GetDetectionDataAssetsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDetectionDataAssetsResult] {
-	return pulumix.Output[GetDetectionDataAssetsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the compartment containing the DataAsset.
 func (o GetDetectionDataAssetsResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDetectionDataAssetsResult) string { return v.CompartmentId }).(pulumi.StringOutput)
@@ -157,8 +150,8 @@ func (o GetDetectionDataAssetsResultOutput) Filters() GetDetectionDataAssetsFilt
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetDetectionDataAssetsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDetectionDataAssetsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetDetectionDataAssetsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDetectionDataAssetsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The Unique project id which is created at project creation that is immutable on creation.

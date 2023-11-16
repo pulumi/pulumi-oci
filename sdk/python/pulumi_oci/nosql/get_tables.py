@@ -46,9 +46,6 @@ class GetTablesResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        Compartment Identifier.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
@@ -58,7 +55,7 @@ class GetTablesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -67,25 +64,16 @@ class GetTablesResult:
     @property
     @pulumi.getter
     def name(self) -> Optional[str]:
-        """
-        Human-friendly table name, immutable.
-        """
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The state of a table.
-        """
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="tableCollections")
-    def table_collections(self) -> Sequence['outputs.GetTablesTableCollectionResult']:
-        """
-        The list of table_collection.
-        """
+    def table_collections(self) -> Optional[Sequence['outputs.GetTablesTableCollectionResult']]:
         return pulumi.get(self, "table_collections")
 
 
@@ -109,25 +97,7 @@ def get_tables(compartment_id: Optional[str] = None,
                state: Optional[str] = None,
                opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetTablesResult:
     """
-    This data source provides the list of Tables in Oracle Cloud Infrastructure NoSQL Database service.
-
-    Get a list of tables in a compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_tables = oci.Nosql.get_tables(compartment_id=var["compartment_id"],
-        name=var["table_name"],
-        state=var["table_state"])
-    ```
-
-
-    :param str compartment_id: The ID of a table's compartment.
-    :param str name: A shell-globbing-style (*?[]) filter for names.
-    :param str state: Filter list by the lifecycle state of the item.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -153,24 +123,6 @@ def get_tables_output(compartment_id: Optional[pulumi.Input[str]] = None,
                       state: Optional[pulumi.Input[Optional[str]]] = None,
                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetTablesResult]:
     """
-    This data source provides the list of Tables in Oracle Cloud Infrastructure NoSQL Database service.
-
-    Get a list of tables in a compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_tables = oci.Nosql.get_tables(compartment_id=var["compartment_id"],
-        name=var["table_name"],
-        state=var["table_state"])
-    ```
-
-
-    :param str compartment_id: The ID of a table's compartment.
-    :param str name: A shell-globbing-style (*?[]) filter for names.
-    :param str state: Filter list by the lifecycle state of the item.
+    Use this data source to access information about an existing resource.
     """
     ...

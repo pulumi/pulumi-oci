@@ -11,6 +11,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetModelEvaluationResultsEvaluationResultCollectionItem {
@@ -18,47 +20,47 @@ public final class GetModelEvaluationResultsEvaluationResultCollectionItem {
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return For CSV format location is rowId(1 is header) and for JSONL location is jsonL line sequence(1 is metadata)
      * 
      */
-    private String location;
+    private @Nullable String location;
     /**
      * @return Model type
      * 
      */
-    private String modelType;
+    private @Nullable String modelType;
     /**
      * @return List of true(actual) entities in test data for NER model
      * 
      */
-    private List<GetModelEvaluationResultsEvaluationResultCollectionItemPredictedEntity> predictedEntities;
+    private @Nullable List<GetModelEvaluationResultsEvaluationResultCollectionItemPredictedEntity> predictedEntities;
     /**
      * @return List of predicted labels by custom multi class or multi label TextClassification model
      * 
      */
-    private List<String> predictedLabels;
+    private @Nullable List<String> predictedLabels;
     /**
      * @return For CSV format location is rowId(1 is header) and for JSONL location is jsonL line sequence(1 is metadata)
      * 
      */
-    private String record;
+    private @Nullable String record;
     /**
      * @return List of true(actual) entities in test data for NER model
      * 
      */
-    private List<GetModelEvaluationResultsEvaluationResultCollectionItemTrueEntity> trueEntities;
+    private @Nullable List<GetModelEvaluationResultsEvaluationResultCollectionItemTrueEntity> trueEntities;
     /**
      * @return List of true(actual) labels in test data for multi class or multi label TextClassification
      * 
      */
-    private List<String> trueLabels;
+    private @Nullable List<String> trueLabels;
 
     private GetModelEvaluationResultsEvaluationResultCollectionItem() {}
     /**
@@ -66,63 +68,63 @@ public final class GetModelEvaluationResultsEvaluationResultCollectionItem {
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return For CSV format location is rowId(1 is header) and for JSONL location is jsonL line sequence(1 is metadata)
      * 
      */
-    public String location() {
-        return this.location;
+    public Optional<String> location() {
+        return Optional.ofNullable(this.location);
     }
     /**
      * @return Model type
      * 
      */
-    public String modelType() {
-        return this.modelType;
+    public Optional<String> modelType() {
+        return Optional.ofNullable(this.modelType);
     }
     /**
      * @return List of true(actual) entities in test data for NER model
      * 
      */
     public List<GetModelEvaluationResultsEvaluationResultCollectionItemPredictedEntity> predictedEntities() {
-        return this.predictedEntities;
+        return this.predictedEntities == null ? List.of() : this.predictedEntities;
     }
     /**
      * @return List of predicted labels by custom multi class or multi label TextClassification model
      * 
      */
     public List<String> predictedLabels() {
-        return this.predictedLabels;
+        return this.predictedLabels == null ? List.of() : this.predictedLabels;
     }
     /**
      * @return For CSV format location is rowId(1 is header) and for JSONL location is jsonL line sequence(1 is metadata)
      * 
      */
-    public String record() {
-        return this.record;
+    public Optional<String> record() {
+        return Optional.ofNullable(this.record);
     }
     /**
      * @return List of true(actual) entities in test data for NER model
      * 
      */
     public List<GetModelEvaluationResultsEvaluationResultCollectionItemTrueEntity> trueEntities() {
-        return this.trueEntities;
+        return this.trueEntities == null ? List.of() : this.trueEntities;
     }
     /**
      * @return List of true(actual) labels in test data for multi class or multi label TextClassification
      * 
      */
     public List<String> trueLabels() {
-        return this.trueLabels;
+        return this.trueLabels == null ? List.of() : this.trueLabels;
     }
 
     public static Builder builder() {
@@ -134,15 +136,15 @@ public final class GetModelEvaluationResultsEvaluationResultCollectionItem {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Map<String,Object> definedTags;
-        private Map<String,Object> freeformTags;
-        private String location;
-        private String modelType;
-        private List<GetModelEvaluationResultsEvaluationResultCollectionItemPredictedEntity> predictedEntities;
-        private List<String> predictedLabels;
-        private String record;
-        private List<GetModelEvaluationResultsEvaluationResultCollectionItemTrueEntity> trueEntities;
-        private List<String> trueLabels;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String location;
+        private @Nullable String modelType;
+        private @Nullable List<GetModelEvaluationResultsEvaluationResultCollectionItemPredictedEntity> predictedEntities;
+        private @Nullable List<String> predictedLabels;
+        private @Nullable String record;
+        private @Nullable List<GetModelEvaluationResultsEvaluationResultCollectionItemTrueEntity> trueEntities;
+        private @Nullable List<String> trueLabels;
         public Builder() {}
         public Builder(GetModelEvaluationResultsEvaluationResultCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -158,57 +160,57 @@ public final class GetModelEvaluationResultsEvaluationResultCollectionItem {
         }
 
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder location(String location) {
-            this.location = Objects.requireNonNull(location);
+        public Builder location(@Nullable String location) {
+            this.location = location;
             return this;
         }
         @CustomType.Setter
-        public Builder modelType(String modelType) {
-            this.modelType = Objects.requireNonNull(modelType);
+        public Builder modelType(@Nullable String modelType) {
+            this.modelType = modelType;
             return this;
         }
         @CustomType.Setter
-        public Builder predictedEntities(List<GetModelEvaluationResultsEvaluationResultCollectionItemPredictedEntity> predictedEntities) {
-            this.predictedEntities = Objects.requireNonNull(predictedEntities);
+        public Builder predictedEntities(@Nullable List<GetModelEvaluationResultsEvaluationResultCollectionItemPredictedEntity> predictedEntities) {
+            this.predictedEntities = predictedEntities;
             return this;
         }
         public Builder predictedEntities(GetModelEvaluationResultsEvaluationResultCollectionItemPredictedEntity... predictedEntities) {
             return predictedEntities(List.of(predictedEntities));
         }
         @CustomType.Setter
-        public Builder predictedLabels(List<String> predictedLabels) {
-            this.predictedLabels = Objects.requireNonNull(predictedLabels);
+        public Builder predictedLabels(@Nullable List<String> predictedLabels) {
+            this.predictedLabels = predictedLabels;
             return this;
         }
         public Builder predictedLabels(String... predictedLabels) {
             return predictedLabels(List.of(predictedLabels));
         }
         @CustomType.Setter
-        public Builder record(String record) {
-            this.record = Objects.requireNonNull(record);
+        public Builder record(@Nullable String record) {
+            this.record = record;
             return this;
         }
         @CustomType.Setter
-        public Builder trueEntities(List<GetModelEvaluationResultsEvaluationResultCollectionItemTrueEntity> trueEntities) {
-            this.trueEntities = Objects.requireNonNull(trueEntities);
+        public Builder trueEntities(@Nullable List<GetModelEvaluationResultsEvaluationResultCollectionItemTrueEntity> trueEntities) {
+            this.trueEntities = trueEntities;
             return this;
         }
         public Builder trueEntities(GetModelEvaluationResultsEvaluationResultCollectionItemTrueEntity... trueEntities) {
             return trueEntities(List.of(trueEntities));
         }
         @CustomType.Setter
-        public Builder trueLabels(List<String> trueLabels) {
-            this.trueLabels = Objects.requireNonNull(trueLabels);
+        public Builder trueLabels(@Nullable List<String> trueLabels) {
+            this.trueLabels = trueLabels;
             return this;
         }
         public Builder trueLabels(String... trueLabels) {

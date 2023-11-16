@@ -50,12 +50,12 @@ export interface GetRunLogsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly runId: string;
     /**
      * The list of run_logs.
      */
-    readonly runLogs: outputs.DataFlow.GetRunLogsRunLog[];
+    readonly runLogs?: outputs.DataFlow.GetRunLogsRunLog[];
 }
 /**
  * This data source provides the list of Run Logs in Oracle Cloud Infrastructure Data Flow service.

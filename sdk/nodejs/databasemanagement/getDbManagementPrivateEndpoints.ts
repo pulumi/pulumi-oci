@@ -77,12 +77,12 @@ export interface GetDbManagementPrivateEndpointsResult {
     /**
      * The list of db_management_private_endpoint_collection.
      */
-    readonly dbManagementPrivateEndpointCollections: outputs.DatabaseManagement.GetDbManagementPrivateEndpointsDbManagementPrivateEndpointCollection[];
+    readonly dbManagementPrivateEndpointCollections?: outputs.DatabaseManagement.GetDbManagementPrivateEndpointsDbManagementPrivateEndpointCollection[];
     readonly filters?: outputs.DatabaseManagement.GetDbManagementPrivateEndpointsFilter[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Specifies whether the Database Management private endpoint can be used for Oracle Databases in a cluster.
      */

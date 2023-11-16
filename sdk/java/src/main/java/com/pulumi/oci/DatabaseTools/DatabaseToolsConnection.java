@@ -17,6 +17,7 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -102,14 +103,14 @@ public class DatabaseToolsConnection extends com.pulumi.resources.CustomResource
      * 
      */
     @Export(name="advancedProperties", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> advancedProperties;
+    private Output</* @Nullable */ Map<String,Object>> advancedProperties;
 
     /**
      * @return (Updatable) The advanced connection properties key-value pair (e.g., `oracle.net.ssl_server_dn_match`).
      * 
      */
-    public Output<Map<String,Object>> advancedProperties() {
-        return this.advancedProperties;
+    public Output<Optional<Map<String,Object>>> advancedProperties() {
+        return Codegen.optional(this.advancedProperties);
     }
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Database Tools connection.
@@ -130,28 +131,28 @@ public class DatabaseToolsConnection extends com.pulumi.resources.CustomResource
      * 
      */
     @Export(name="connectionString", refs={String.class}, tree="[0]")
-    private Output<String> connectionString;
+    private Output</* @Nullable */ String> connectionString;
 
     /**
      * @return (Updatable) The connect descriptor or Easy Connect Naming method use to connect to the database.
      * 
      */
-    public Output<String> connectionString() {
-        return this.connectionString;
+    public Output<Optional<String>> connectionString() {
+        return Codegen.optional(this.connectionString);
     }
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
@@ -172,126 +173,126 @@ public class DatabaseToolsConnection extends com.pulumi.resources.CustomResource
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * (Updatable) Oracle wallet or Java Keystores containing trusted certificates for authenticating the server&#39;s public certificate and the client private key and associated certificates required for client authentication.
      * 
      */
     @Export(name="keyStores", refs={List.class,DatabaseToolsConnectionKeyStore.class}, tree="[0,1]")
-    private Output<List<DatabaseToolsConnectionKeyStore>> keyStores;
+    private Output</* @Nullable */ List<DatabaseToolsConnectionKeyStore>> keyStores;
 
     /**
      * @return (Updatable) Oracle wallet or Java Keystores containing trusted certificates for authenticating the server&#39;s public certificate and the client private key and associated certificates required for client authentication.
      * 
      */
-    public Output<List<DatabaseToolsConnectionKeyStore>> keyStores() {
-        return this.keyStores;
+    public Output<Optional<List<DatabaseToolsConnectionKeyStore>>> keyStores() {
+        return Codegen.optional(this.keyStores);
     }
     /**
      * A message describing the current state in more detail. For example, this message can be used to provide actionable information for a resource in the Failed state.
      * 
      */
     @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
-    private Output<String> lifecycleDetails;
+    private Output</* @Nullable */ String> lifecycleDetails;
 
     /**
      * @return A message describing the current state in more detail. For example, this message can be used to provide actionable information for a resource in the Failed state.
      * 
      */
-    public Output<String> lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Output<Optional<String>> lifecycleDetails() {
+        return Codegen.optional(this.lifecycleDetails);
     }
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools private endpoint used to access the database in the customer VCN.
      * 
      */
     @Export(name="privateEndpointId", refs={String.class}, tree="[0]")
-    private Output<String> privateEndpointId;
+    private Output</* @Nullable */ String> privateEndpointId;
 
     /**
      * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools private endpoint used to access the database in the customer VCN.
      * 
      */
-    public Output<String> privateEndpointId() {
-        return this.privateEndpointId;
+    public Output<Optional<String>> privateEndpointId() {
+        return Codegen.optional(this.privateEndpointId);
     }
     /**
      * (Updatable) The related resource
      * 
      */
     @Export(name="relatedResource", refs={DatabaseToolsConnectionRelatedResource.class}, tree="[0]")
-    private Output<DatabaseToolsConnectionRelatedResource> relatedResource;
+    private Output</* @Nullable */ DatabaseToolsConnectionRelatedResource> relatedResource;
 
     /**
      * @return (Updatable) The related resource
      * 
      */
-    public Output<DatabaseToolsConnectionRelatedResource> relatedResource() {
-        return this.relatedResource;
+    public Output<Optional<DatabaseToolsConnectionRelatedResource>> relatedResource() {
+        return Codegen.optional(this.relatedResource);
     }
     /**
      * The current state of the Database Tools connection.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The current state of the Database Tools connection.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
     @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> systemTags;
+    private Output</* @Nullable */ Map<String,Object>> systemTags;
 
     /**
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    public Output<Map<String,Object>> systemTags() {
-        return this.systemTags;
+    public Output<Optional<Map<String,Object>>> systemTags() {
+        return Codegen.optional(this.systemTags);
     }
     /**
      * The time the Database Tools connection was created. An RFC3339 formatted datetime string.
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The time the Database Tools connection was created. An RFC3339 formatted datetime string.
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * The time the DatabaseToolsConnection was updated. An RFC3339 formatted datetime string.
      * 
      */
     @Export(name="timeUpdated", refs={String.class}, tree="[0]")
-    private Output<String> timeUpdated;
+    private Output</* @Nullable */ String> timeUpdated;
 
     /**
      * @return The time the DatabaseToolsConnection was updated. An RFC3339 formatted datetime string.
      * 
      */
-    public Output<String> timeUpdated() {
-        return this.timeUpdated;
+    public Output<Optional<String>> timeUpdated() {
+        return Codegen.optional(this.timeUpdated);
     }
     /**
      * (Updatable) The DatabaseToolsConnection type.
@@ -312,28 +313,28 @@ public class DatabaseToolsConnection extends com.pulumi.resources.CustomResource
      * 
      */
     @Export(name="userName", refs={String.class}, tree="[0]")
-    private Output<String> userName;
+    private Output</* @Nullable */ String> userName;
 
     /**
      * @return (Updatable) The database user name.
      * 
      */
-    public Output<String> userName() {
-        return this.userName;
+    public Output<Optional<String>> userName() {
+        return Codegen.optional(this.userName);
     }
     /**
      * (Updatable) The user password.
      * 
      */
     @Export(name="userPassword", refs={DatabaseToolsConnectionUserPassword.class}, tree="[0]")
-    private Output<DatabaseToolsConnectionUserPassword> userPassword;
+    private Output</* @Nullable */ DatabaseToolsConnectionUserPassword> userPassword;
 
     /**
      * @return (Updatable) The user password.
      * 
      */
-    public Output<DatabaseToolsConnectionUserPassword> userPassword() {
-        return this.userPassword;
+    public Output<Optional<DatabaseToolsConnectionUserPassword>> userPassword() {
+        return Codegen.optional(this.userPassword);
     }
 
     /**

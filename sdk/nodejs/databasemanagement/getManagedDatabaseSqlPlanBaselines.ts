@@ -106,7 +106,7 @@ export interface GetManagedDatabaseSqlPlanBaselinesResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly isAccepted?: boolean;
     readonly isAdaptive?: boolean;
     readonly isEnabled?: boolean;
@@ -129,7 +129,7 @@ export interface GetManagedDatabaseSqlPlanBaselinesResult {
     /**
      * The list of sql_plan_baseline_collection.
      */
-    readonly sqlPlanBaselineCollections: outputs.DatabaseManagement.GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollection[];
+    readonly sqlPlanBaselineCollections?: outputs.DatabaseManagement.GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollection[];
     /**
      * The SQL text.
      */

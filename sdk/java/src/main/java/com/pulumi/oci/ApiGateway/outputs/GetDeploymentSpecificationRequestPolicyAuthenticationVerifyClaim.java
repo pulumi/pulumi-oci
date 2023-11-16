@@ -8,6 +8,8 @@ import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDeploymentSpecificationRequestPolicyAuthenticationVerifyClaim {
@@ -15,39 +17,39 @@ public final class GetDeploymentSpecificationRequestPolicyAuthenticationVerifyCl
      * @return Whether the claim is required to be present in the JWT or not. If set to &#34;false&#34;, the claim values will be matched only if the claim is present in the JWT.
      * 
      */
-    private Boolean isRequired;
+    private @Nullable Boolean isRequired;
     /**
      * @return Information around the values for selector of an authentication/ routing branch.
      * 
      */
-    private String key;
+    private @Nullable String key;
     /**
      * @return A list of new values.  Each value can be a constant or may include one or more expressions enclosed within ${} delimiters.
      * 
      */
-    private List<String> values;
+    private @Nullable List<String> values;
 
     private GetDeploymentSpecificationRequestPolicyAuthenticationVerifyClaim() {}
     /**
      * @return Whether the claim is required to be present in the JWT or not. If set to &#34;false&#34;, the claim values will be matched only if the claim is present in the JWT.
      * 
      */
-    public Boolean isRequired() {
-        return this.isRequired;
+    public Optional<Boolean> isRequired() {
+        return Optional.ofNullable(this.isRequired);
     }
     /**
      * @return Information around the values for selector of an authentication/ routing branch.
      * 
      */
-    public String key() {
-        return this.key;
+    public Optional<String> key() {
+        return Optional.ofNullable(this.key);
     }
     /**
      * @return A list of new values.  Each value can be a constant or may include one or more expressions enclosed within ${} delimiters.
      * 
      */
     public List<String> values() {
-        return this.values;
+        return this.values == null ? List.of() : this.values;
     }
 
     public static Builder builder() {
@@ -59,9 +61,9 @@ public final class GetDeploymentSpecificationRequestPolicyAuthenticationVerifyCl
     }
     @CustomType.Builder
     public static final class Builder {
-        private Boolean isRequired;
-        private String key;
-        private List<String> values;
+        private @Nullable Boolean isRequired;
+        private @Nullable String key;
+        private @Nullable List<String> values;
         public Builder() {}
         public Builder(GetDeploymentSpecificationRequestPolicyAuthenticationVerifyClaim defaults) {
     	      Objects.requireNonNull(defaults);
@@ -71,18 +73,18 @@ public final class GetDeploymentSpecificationRequestPolicyAuthenticationVerifyCl
         }
 
         @CustomType.Setter
-        public Builder isRequired(Boolean isRequired) {
-            this.isRequired = Objects.requireNonNull(isRequired);
+        public Builder isRequired(@Nullable Boolean isRequired) {
+            this.isRequired = isRequired;
             return this;
         }
         @CustomType.Setter
-        public Builder key(String key) {
-            this.key = Objects.requireNonNull(key);
+        public Builder key(@Nullable String key) {
+            this.key = key;
             return this;
         }
         @CustomType.Setter
-        public Builder values(List<String> values) {
-            this.values = Objects.requireNonNull(values);
+        public Builder values(@Nullable List<String> values) {
+            this.values = values;
             return this;
         }
         public Builder values(String... values) {

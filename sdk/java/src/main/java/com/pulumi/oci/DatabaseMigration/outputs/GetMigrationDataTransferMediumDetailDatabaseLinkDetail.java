@@ -8,6 +8,8 @@ import com.pulumi.oci.DatabaseMigration.outputs.GetMigrationDataTransferMediumDe
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetMigrationDataTransferMediumDetailDatabaseLinkDetail {
@@ -15,27 +17,27 @@ public final class GetMigrationDataTransferMediumDetailDatabaseLinkDetail {
      * @return Name of directory object in database
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return In lieu of a network database link, Oracle Cloud Infrastructure Object Storage bucket will be used to store Data Pump dump files for the migration. Additionally, it can be specified alongside a database link data transfer medium.
      * 
      */
-    private List<GetMigrationDataTransferMediumDetailDatabaseLinkDetailWalletBucket> walletBuckets;
+    private @Nullable List<GetMigrationDataTransferMediumDetailDatabaseLinkDetailWalletBucket> walletBuckets;
 
     private GetMigrationDataTransferMediumDetailDatabaseLinkDetail() {}
     /**
      * @return Name of directory object in database
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return In lieu of a network database link, Oracle Cloud Infrastructure Object Storage bucket will be used to store Data Pump dump files for the migration. Additionally, it can be specified alongside a database link data transfer medium.
      * 
      */
     public List<GetMigrationDataTransferMediumDetailDatabaseLinkDetailWalletBucket> walletBuckets() {
-        return this.walletBuckets;
+        return this.walletBuckets == null ? List.of() : this.walletBuckets;
     }
 
     public static Builder builder() {
@@ -47,8 +49,8 @@ public final class GetMigrationDataTransferMediumDetailDatabaseLinkDetail {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String name;
-        private List<GetMigrationDataTransferMediumDetailDatabaseLinkDetailWalletBucket> walletBuckets;
+        private @Nullable String name;
+        private @Nullable List<GetMigrationDataTransferMediumDetailDatabaseLinkDetailWalletBucket> walletBuckets;
         public Builder() {}
         public Builder(GetMigrationDataTransferMediumDetailDatabaseLinkDetail defaults) {
     	      Objects.requireNonNull(defaults);
@@ -57,13 +59,13 @@ public final class GetMigrationDataTransferMediumDetailDatabaseLinkDetail {
         }
 
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder walletBuckets(List<GetMigrationDataTransferMediumDetailDatabaseLinkDetailWalletBucket> walletBuckets) {
-            this.walletBuckets = Objects.requireNonNull(walletBuckets);
+        public Builder walletBuckets(@Nullable List<GetMigrationDataTransferMediumDetailDatabaseLinkDetailWalletBucket> walletBuckets) {
+            this.walletBuckets = walletBuckets;
             return this;
         }
         public Builder walletBuckets(GetMigrationDataTransferMediumDetailDatabaseLinkDetailWalletBucket... walletBuckets) {

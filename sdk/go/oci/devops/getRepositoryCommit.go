@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Repository Commit resource in Oracle Cloud Infrastructure Devops service.
@@ -63,26 +62,26 @@ type GetRepositoryCommitArgs struct {
 // A collection of values returned by getRepositoryCommit.
 type GetRepositoryCommitResult struct {
 	// Email of the author of the repository.
-	AuthorEmail string `pulumi:"authorEmail"`
+	AuthorEmail *string `pulumi:"authorEmail"`
 	// Name of the author of the repository.
-	AuthorName string `pulumi:"authorName"`
+	AuthorName *string `pulumi:"authorName"`
 	// Commit hash pointed to by reference name.
 	CommitId string `pulumi:"commitId"`
 	// The commit message.
-	CommitMessage string `pulumi:"commitMessage"`
+	CommitMessage *string `pulumi:"commitMessage"`
 	// Email of who creates the commit.
-	CommitterEmail string `pulumi:"committerEmail"`
+	CommitterEmail *string `pulumi:"committerEmail"`
 	// Name of who creates the commit.
-	CommitterName string `pulumi:"committerName"`
+	CommitterName *string `pulumi:"committerName"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// An array of parent commit IDs of created commit.
 	ParentCommitIds []string `pulumi:"parentCommitIds"`
 	RepositoryId    string   `pulumi:"repositoryId"`
 	// The time at which commit was created.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// Tree information for the specified commit.
-	TreeId string `pulumi:"treeId"`
+	TreeId *string `pulumi:"treeId"`
 }
 
 func GetRepositoryCommitOutput(ctx *pulumi.Context, args GetRepositoryCommitOutputArgs, opts ...pulumi.InvokeOption) GetRepositoryCommitResultOutput {
@@ -125,20 +124,14 @@ func (o GetRepositoryCommitResultOutput) ToGetRepositoryCommitResultOutputWithCo
 	return o
 }
 
-func (o GetRepositoryCommitResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetRepositoryCommitResult] {
-	return pulumix.Output[GetRepositoryCommitResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Email of the author of the repository.
-func (o GetRepositoryCommitResultOutput) AuthorEmail() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRepositoryCommitResult) string { return v.AuthorEmail }).(pulumi.StringOutput)
+func (o GetRepositoryCommitResultOutput) AuthorEmail() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRepositoryCommitResult) *string { return v.AuthorEmail }).(pulumi.StringPtrOutput)
 }
 
 // Name of the author of the repository.
-func (o GetRepositoryCommitResultOutput) AuthorName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRepositoryCommitResult) string { return v.AuthorName }).(pulumi.StringOutput)
+func (o GetRepositoryCommitResultOutput) AuthorName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRepositoryCommitResult) *string { return v.AuthorName }).(pulumi.StringPtrOutput)
 }
 
 // Commit hash pointed to by reference name.
@@ -147,23 +140,23 @@ func (o GetRepositoryCommitResultOutput) CommitId() pulumi.StringOutput {
 }
 
 // The commit message.
-func (o GetRepositoryCommitResultOutput) CommitMessage() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRepositoryCommitResult) string { return v.CommitMessage }).(pulumi.StringOutput)
+func (o GetRepositoryCommitResultOutput) CommitMessage() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRepositoryCommitResult) *string { return v.CommitMessage }).(pulumi.StringPtrOutput)
 }
 
 // Email of who creates the commit.
-func (o GetRepositoryCommitResultOutput) CommitterEmail() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRepositoryCommitResult) string { return v.CommitterEmail }).(pulumi.StringOutput)
+func (o GetRepositoryCommitResultOutput) CommitterEmail() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRepositoryCommitResult) *string { return v.CommitterEmail }).(pulumi.StringPtrOutput)
 }
 
 // Name of who creates the commit.
-func (o GetRepositoryCommitResultOutput) CommitterName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRepositoryCommitResult) string { return v.CommitterName }).(pulumi.StringOutput)
+func (o GetRepositoryCommitResultOutput) CommitterName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRepositoryCommitResult) *string { return v.CommitterName }).(pulumi.StringPtrOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetRepositoryCommitResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRepositoryCommitResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetRepositoryCommitResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRepositoryCommitResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // An array of parent commit IDs of created commit.
@@ -176,13 +169,13 @@ func (o GetRepositoryCommitResultOutput) RepositoryId() pulumi.StringOutput {
 }
 
 // The time at which commit was created.
-func (o GetRepositoryCommitResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRepositoryCommitResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetRepositoryCommitResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRepositoryCommitResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // Tree information for the specified commit.
-func (o GetRepositoryCommitResultOutput) TreeId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRepositoryCommitResult) string { return v.TreeId }).(pulumi.StringOutput)
+func (o GetRepositoryCommitResultOutput) TreeId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRepositoryCommitResult) *string { return v.TreeId }).(pulumi.StringPtrOutput)
 }
 
 func init() {

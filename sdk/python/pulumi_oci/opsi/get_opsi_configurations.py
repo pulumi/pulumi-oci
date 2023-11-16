@@ -49,17 +49,11 @@ class GetOpsiConfigurationsResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        User-friendly display name for the OPSI configuration. The name does not have to be unique.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -69,7 +63,7 @@ class GetOpsiConfigurationsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -78,25 +72,16 @@ class GetOpsiConfigurationsResult:
     @property
     @pulumi.getter(name="opsiConfigTypes")
     def opsi_config_types(self) -> Optional[Sequence[str]]:
-        """
-        OPSI configuration type.
-        """
         return pulumi.get(self, "opsi_config_types")
 
     @property
     @pulumi.getter(name="opsiConfigurationsCollections")
-    def opsi_configurations_collections(self) -> Sequence['outputs.GetOpsiConfigurationsOpsiConfigurationsCollectionResult']:
-        """
-        The list of opsi_configurations_collection.
-        """
+    def opsi_configurations_collections(self) -> Optional[Sequence['outputs.GetOpsiConfigurationsOpsiConfigurationsCollectionResult']]:
         return pulumi.get(self, "opsi_configurations_collections")
 
     @property
     @pulumi.getter
     def states(self) -> Optional[Sequence[str]]:
-        """
-        OPSI configuration resource lifecycle state.
-        """
         return pulumi.get(self, "states")
 
 
@@ -122,27 +107,7 @@ def get_opsi_configurations(compartment_id: Optional[str] = None,
                             states: Optional[Sequence[str]] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetOpsiConfigurationsResult:
     """
-    This data source provides the list of Opsi Configurations in Oracle Cloud Infrastructure Opsi service.
-
-    Gets a list of OPSI configuration resources based on the query parameters specified.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_opsi_configurations = oci.Opsi.get_opsi_configurations(compartment_id=var["compartment_id"],
-        display_name=var["opsi_configuration_display_name"],
-        opsi_config_types=var["opsi_configuration_opsi_config_type"],
-        states=var["opsi_configuration_state"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param str display_name: Filter to return based on resources that match the entire display name.
-    :param Sequence[str] opsi_config_types: Filter to return based on configuration type of OPSI configuration.
-    :param Sequence[str] states: Filter to return based on Lifecycle state of OPSI configuration.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -171,26 +136,6 @@ def get_opsi_configurations_output(compartment_id: Optional[pulumi.Input[str]] =
                                    states: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetOpsiConfigurationsResult]:
     """
-    This data source provides the list of Opsi Configurations in Oracle Cloud Infrastructure Opsi service.
-
-    Gets a list of OPSI configuration resources based on the query parameters specified.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_opsi_configurations = oci.Opsi.get_opsi_configurations(compartment_id=var["compartment_id"],
-        display_name=var["opsi_configuration_display_name"],
-        opsi_config_types=var["opsi_configuration_opsi_config_type"],
-        states=var["opsi_configuration_state"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param str display_name: Filter to return based on resources that match the entire display name.
-    :param Sequence[str] opsi_config_types: Filter to return based on configuration type of OPSI configuration.
-    :param Sequence[str] states: Filter to return based on Lifecycle state of OPSI configuration.
+    Use this data source to access information about an existing resource.
     """
     ...

@@ -76,7 +76,7 @@ namespace Pulumi.Oci.LoadBalancer
         /// (Updatable) Configuration details for the connection between the client and backend servers.
         /// </summary>
         [Output("connectionConfiguration")]
-        public Output<Outputs.ListenerConnectionConfiguration> ConnectionConfiguration { get; private set; } = null!;
+        public Output<Outputs.ListenerConnectionConfiguration?> ConnectionConfiguration { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The name of the associated backend set.  Example: `example_backend_set`
@@ -110,7 +110,7 @@ namespace Pulumi.Oci.LoadBalancer
         /// Example: `example_path_route_set`
         /// </summary>
         [Output("pathRouteSetName")]
-        public Output<string> PathRouteSetName { get; private set; } = null!;
+        public Output<string?> PathRouteSetName { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The communication port for the listener.  Example: `80`
@@ -128,7 +128,7 @@ namespace Pulumi.Oci.LoadBalancer
         /// (Updatable) The name of the routing policy applied to this listener's traffic.  Example: `example_routing_policy`
         /// </summary>
         [Output("routingPolicyName")]
-        public Output<string> RoutingPolicyName { get; private set; } = null!;
+        public Output<string?> RoutingPolicyName { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The names of the [rule sets](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/RuleSet/) to apply to the listener.  Example: ["example_rule_set"]
@@ -145,7 +145,7 @@ namespace Pulumi.Oci.LoadBalancer
         public Output<Outputs.ListenerSslConfiguration?> SslConfiguration { get; private set; } = null!;
 
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
 
         /// <summary>

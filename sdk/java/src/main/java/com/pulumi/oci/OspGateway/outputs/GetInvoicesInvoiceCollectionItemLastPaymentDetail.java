@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Double;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetInvoicesInvoiceCollectionItemLastPaymentDetail {
@@ -14,171 +16,171 @@ public final class GetInvoicesInvoiceCollectionItemLastPaymentDetail {
      * @return Account number of the card owner
      * 
      */
-    private String accountNumber;
+    private @Nullable String accountNumber;
     /**
      * @return Amount that paid
      * 
      */
-    private Double amountPaid;
+    private @Nullable Double amountPaid;
     /**
      * @return Echeck card type
      * 
      */
-    private String cardType;
+    private @Nullable String cardType;
     /**
      * @return Credit card type
      * 
      */
-    private String creditCardType;
+    private @Nullable String creditCardType;
     /**
      * @return Last four routing digits of the card
      * 
      */
-    private String echeckRouting;
+    private @Nullable String echeckRouting;
     /**
      * @return Last four digits of the card
      * 
      */
-    private String lastDigits;
+    private @Nullable String lastDigits;
     /**
      * @return Name on the credit card
      * 
      */
-    private String nameOnCard;
+    private @Nullable String nameOnCard;
     /**
      * @return example
      * 
      */
-    private String paidBy;
+    private @Nullable String paidBy;
     /**
      * @return Payment method
      * 
      */
-    private String paymentMethod;
+    private @Nullable String paymentMethod;
     /**
      * @return The id (email address) of the paypal payment
      * 
      */
-    private String paypalId;
+    private @Nullable String paypalId;
     /**
      * @return paypal payment reference
      * 
      */
-    private String paypalReference;
+    private @Nullable String paypalReference;
     /**
      * @return Routing number of the echeck card
      * 
      */
-    private String routingNumber;
+    private @Nullable String routingNumber;
     /**
      * @return Expired date of the credit card
      * 
      */
-    private String timeExpiration;
+    private @Nullable String timeExpiration;
     /**
      * @return Paid the invoice on this day
      * 
      */
-    private String timePaidOn;
+    private @Nullable String timePaidOn;
 
     private GetInvoicesInvoiceCollectionItemLastPaymentDetail() {}
     /**
      * @return Account number of the card owner
      * 
      */
-    public String accountNumber() {
-        return this.accountNumber;
+    public Optional<String> accountNumber() {
+        return Optional.ofNullable(this.accountNumber);
     }
     /**
      * @return Amount that paid
      * 
      */
-    public Double amountPaid() {
-        return this.amountPaid;
+    public Optional<Double> amountPaid() {
+        return Optional.ofNullable(this.amountPaid);
     }
     /**
      * @return Echeck card type
      * 
      */
-    public String cardType() {
-        return this.cardType;
+    public Optional<String> cardType() {
+        return Optional.ofNullable(this.cardType);
     }
     /**
      * @return Credit card type
      * 
      */
-    public String creditCardType() {
-        return this.creditCardType;
+    public Optional<String> creditCardType() {
+        return Optional.ofNullable(this.creditCardType);
     }
     /**
      * @return Last four routing digits of the card
      * 
      */
-    public String echeckRouting() {
-        return this.echeckRouting;
+    public Optional<String> echeckRouting() {
+        return Optional.ofNullable(this.echeckRouting);
     }
     /**
      * @return Last four digits of the card
      * 
      */
-    public String lastDigits() {
-        return this.lastDigits;
+    public Optional<String> lastDigits() {
+        return Optional.ofNullable(this.lastDigits);
     }
     /**
      * @return Name on the credit card
      * 
      */
-    public String nameOnCard() {
-        return this.nameOnCard;
+    public Optional<String> nameOnCard() {
+        return Optional.ofNullable(this.nameOnCard);
     }
     /**
      * @return example
      * 
      */
-    public String paidBy() {
-        return this.paidBy;
+    public Optional<String> paidBy() {
+        return Optional.ofNullable(this.paidBy);
     }
     /**
      * @return Payment method
      * 
      */
-    public String paymentMethod() {
-        return this.paymentMethod;
+    public Optional<String> paymentMethod() {
+        return Optional.ofNullable(this.paymentMethod);
     }
     /**
      * @return The id (email address) of the paypal payment
      * 
      */
-    public String paypalId() {
-        return this.paypalId;
+    public Optional<String> paypalId() {
+        return Optional.ofNullable(this.paypalId);
     }
     /**
      * @return paypal payment reference
      * 
      */
-    public String paypalReference() {
-        return this.paypalReference;
+    public Optional<String> paypalReference() {
+        return Optional.ofNullable(this.paypalReference);
     }
     /**
      * @return Routing number of the echeck card
      * 
      */
-    public String routingNumber() {
-        return this.routingNumber;
+    public Optional<String> routingNumber() {
+        return Optional.ofNullable(this.routingNumber);
     }
     /**
      * @return Expired date of the credit card
      * 
      */
-    public String timeExpiration() {
-        return this.timeExpiration;
+    public Optional<String> timeExpiration() {
+        return Optional.ofNullable(this.timeExpiration);
     }
     /**
      * @return Paid the invoice on this day
      * 
      */
-    public String timePaidOn() {
-        return this.timePaidOn;
+    public Optional<String> timePaidOn() {
+        return Optional.ofNullable(this.timePaidOn);
     }
 
     public static Builder builder() {
@@ -190,20 +192,20 @@ public final class GetInvoicesInvoiceCollectionItemLastPaymentDetail {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String accountNumber;
-        private Double amountPaid;
-        private String cardType;
-        private String creditCardType;
-        private String echeckRouting;
-        private String lastDigits;
-        private String nameOnCard;
-        private String paidBy;
-        private String paymentMethod;
-        private String paypalId;
-        private String paypalReference;
-        private String routingNumber;
-        private String timeExpiration;
-        private String timePaidOn;
+        private @Nullable String accountNumber;
+        private @Nullable Double amountPaid;
+        private @Nullable String cardType;
+        private @Nullable String creditCardType;
+        private @Nullable String echeckRouting;
+        private @Nullable String lastDigits;
+        private @Nullable String nameOnCard;
+        private @Nullable String paidBy;
+        private @Nullable String paymentMethod;
+        private @Nullable String paypalId;
+        private @Nullable String paypalReference;
+        private @Nullable String routingNumber;
+        private @Nullable String timeExpiration;
+        private @Nullable String timePaidOn;
         public Builder() {}
         public Builder(GetInvoicesInvoiceCollectionItemLastPaymentDetail defaults) {
     	      Objects.requireNonNull(defaults);
@@ -224,73 +226,73 @@ public final class GetInvoicesInvoiceCollectionItemLastPaymentDetail {
         }
 
         @CustomType.Setter
-        public Builder accountNumber(String accountNumber) {
-            this.accountNumber = Objects.requireNonNull(accountNumber);
+        public Builder accountNumber(@Nullable String accountNumber) {
+            this.accountNumber = accountNumber;
             return this;
         }
         @CustomType.Setter
-        public Builder amountPaid(Double amountPaid) {
-            this.amountPaid = Objects.requireNonNull(amountPaid);
+        public Builder amountPaid(@Nullable Double amountPaid) {
+            this.amountPaid = amountPaid;
             return this;
         }
         @CustomType.Setter
-        public Builder cardType(String cardType) {
-            this.cardType = Objects.requireNonNull(cardType);
+        public Builder cardType(@Nullable String cardType) {
+            this.cardType = cardType;
             return this;
         }
         @CustomType.Setter
-        public Builder creditCardType(String creditCardType) {
-            this.creditCardType = Objects.requireNonNull(creditCardType);
+        public Builder creditCardType(@Nullable String creditCardType) {
+            this.creditCardType = creditCardType;
             return this;
         }
         @CustomType.Setter
-        public Builder echeckRouting(String echeckRouting) {
-            this.echeckRouting = Objects.requireNonNull(echeckRouting);
+        public Builder echeckRouting(@Nullable String echeckRouting) {
+            this.echeckRouting = echeckRouting;
             return this;
         }
         @CustomType.Setter
-        public Builder lastDigits(String lastDigits) {
-            this.lastDigits = Objects.requireNonNull(lastDigits);
+        public Builder lastDigits(@Nullable String lastDigits) {
+            this.lastDigits = lastDigits;
             return this;
         }
         @CustomType.Setter
-        public Builder nameOnCard(String nameOnCard) {
-            this.nameOnCard = Objects.requireNonNull(nameOnCard);
+        public Builder nameOnCard(@Nullable String nameOnCard) {
+            this.nameOnCard = nameOnCard;
             return this;
         }
         @CustomType.Setter
-        public Builder paidBy(String paidBy) {
-            this.paidBy = Objects.requireNonNull(paidBy);
+        public Builder paidBy(@Nullable String paidBy) {
+            this.paidBy = paidBy;
             return this;
         }
         @CustomType.Setter
-        public Builder paymentMethod(String paymentMethod) {
-            this.paymentMethod = Objects.requireNonNull(paymentMethod);
+        public Builder paymentMethod(@Nullable String paymentMethod) {
+            this.paymentMethod = paymentMethod;
             return this;
         }
         @CustomType.Setter
-        public Builder paypalId(String paypalId) {
-            this.paypalId = Objects.requireNonNull(paypalId);
+        public Builder paypalId(@Nullable String paypalId) {
+            this.paypalId = paypalId;
             return this;
         }
         @CustomType.Setter
-        public Builder paypalReference(String paypalReference) {
-            this.paypalReference = Objects.requireNonNull(paypalReference);
+        public Builder paypalReference(@Nullable String paypalReference) {
+            this.paypalReference = paypalReference;
             return this;
         }
         @CustomType.Setter
-        public Builder routingNumber(String routingNumber) {
-            this.routingNumber = Objects.requireNonNull(routingNumber);
+        public Builder routingNumber(@Nullable String routingNumber) {
+            this.routingNumber = routingNumber;
             return this;
         }
         @CustomType.Setter
-        public Builder timeExpiration(String timeExpiration) {
-            this.timeExpiration = Objects.requireNonNull(timeExpiration);
+        public Builder timeExpiration(@Nullable String timeExpiration) {
+            this.timeExpiration = timeExpiration;
             return this;
         }
         @CustomType.Setter
-        public Builder timePaidOn(String timePaidOn) {
-            this.timePaidOn = Objects.requireNonNull(timePaidOn);
+        public Builder timePaidOn(@Nullable String timePaidOn) {
+            this.timePaidOn = timePaidOn;
             return this;
         }
         public GetInvoicesInvoiceCollectionItemLastPaymentDetail build() {

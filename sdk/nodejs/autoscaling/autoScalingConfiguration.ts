@@ -119,28 +119,28 @@ export class AutoScalingConfiguration extends pulumi.CustomResource {
      *
      * For schedule-based autoscaling policies, this value is not used.
      */
-    public readonly coolDownInSeconds!: pulumi.Output<number>;
+    public readonly coolDownInSeconds!: pulumi.Output<number | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
-    public readonly displayName!: pulumi.Output<string>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
+    public readonly displayName!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * Whether the autoscaling policy is enabled.
      */
-    public readonly isEnabled!: pulumi.Output<boolean>;
+    public readonly isEnabled!: pulumi.Output<boolean | undefined>;
     /**
      * The maximum number of resources to scale out to.
      */
-    public /*out*/ readonly maxResourceCount!: pulumi.Output<number>;
+    public /*out*/ readonly maxResourceCount!: pulumi.Output<number | undefined>;
     /**
      * The minimum number of resources to scale in to.
      */
-    public /*out*/ readonly minResourceCount!: pulumi.Output<number>;
+    public /*out*/ readonly minResourceCount!: pulumi.Output<number | undefined>;
     /**
      * Autoscaling policy definitions for the autoscaling configuration. An autoscaling policy defines the criteria that trigger autoscaling actions and the actions to take.
      */
@@ -148,7 +148,7 @@ export class AutoScalingConfiguration extends pulumi.CustomResource {
     /**
      * The date and time the autoscaling configuration was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
 
     /**
      * Create a AutoScalingConfiguration resource with the given unique name, arguments, and options.

@@ -16,29 +16,29 @@ namespace Pulumi.Oci.DataScience.Outputs
         /// <summary>
         /// The arguments to pass to the job.
         /// </summary>
-        public readonly string CommandLineArguments;
+        public readonly string? CommandLineArguments;
         /// <summary>
         /// Environment variables to set for the job.
         /// </summary>
-        public readonly ImmutableDictionary<string, object> EnvironmentVariables;
+        public readonly ImmutableDictionary<string, object>? EnvironmentVariables;
         /// <summary>
         /// The type of job.
         /// </summary>
-        public readonly string JobType;
+        public readonly string? JobType;
         /// <summary>
         /// A time bound for the execution of the job. Timer starts when the job becomes active.
         /// </summary>
-        public readonly string MaximumRuntimeInMinutes;
+        public readonly string? MaximumRuntimeInMinutes;
 
         [OutputConstructor]
         private GetJobRunJobConfigurationOverrideDetailResult(
-            string commandLineArguments,
+            string? commandLineArguments,
 
-            ImmutableDictionary<string, object> environmentVariables,
+            ImmutableDictionary<string, object>? environmentVariables,
 
-            string jobType,
+            string? jobType,
 
-            string maximumRuntimeInMinutes)
+            string? maximumRuntimeInMinutes)
         {
             CommandLineArguments = commandLineArguments;
             EnvironmentVariables = environmentVariables;

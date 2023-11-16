@@ -97,171 +97,117 @@ class GetWorkspaceResult:
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The OCID of the compartment that contains the workspace.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        A user defined description for the workspace.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A user-friendly display name for the workspace. Does not have to be unique, and can be modified. Avoid entering confidential information.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="dnsServerIp")
-    def dns_server_ip(self) -> str:
-        """
-        The IP of the custom DNS.
-        """
+    def dns_server_ip(self) -> Optional[str]:
         return pulumi.get(self, "dns_server_ip")
 
     @property
     @pulumi.getter(name="dnsServerZone")
-    def dns_server_zone(self) -> str:
-        """
-        The DNS zone of the custom DNS to use to resolve names.
-        """
+    def dns_server_zone(self) -> Optional[str]:
         return pulumi.get(self, "dns_server_zone")
 
     @property
     @pulumi.getter(name="endpointCompartmentId")
-    def endpoint_compartment_id(self) -> str:
+    def endpoint_compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "endpoint_compartment_id")
 
     @property
     @pulumi.getter(name="endpointId")
-    def endpoint_id(self) -> str:
-        """
-        DCMS endpoint associated with the container/workspace. Returns null if there is none.
-        """
+    def endpoint_id(self) -> Optional[str]:
         return pulumi.get(self, "endpoint_id")
 
     @property
     @pulumi.getter(name="endpointName")
-    def endpoint_name(self) -> str:
-        """
-        Name of the private endpoint associated with the container/workspace. Returns null if there is none.
-        """
+    def endpoint_name(self) -> Optional[str]:
         return pulumi.get(self, "endpoint_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        A system-generated and immutable identifier assigned to the workspace upon creation.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="isForceOperation")
-    def is_force_operation(self) -> bool:
+    def is_force_operation(self) -> Optional[bool]:
         return pulumi.get(self, "is_force_operation")
 
     @property
     @pulumi.getter(name="isPrivateNetworkEnabled")
-    def is_private_network_enabled(self) -> bool:
-        """
-        Specifies whether the private network connection is enabled or disabled.
-        """
+    def is_private_network_enabled(self) -> Optional[bool]:
         return pulumi.get(self, "is_private_network_enabled")
 
     @property
     @pulumi.getter(name="quiesceTimeout")
-    def quiesce_timeout(self) -> int:
+    def quiesce_timeout(self) -> Optional[int]:
         return pulumi.get(self, "quiesce_timeout")
 
     @property
     @pulumi.getter(name="registryCompartmentId")
-    def registry_compartment_id(self) -> str:
+    def registry_compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "registry_compartment_id")
 
     @property
     @pulumi.getter(name="registryId")
-    def registry_id(self) -> str:
-        """
-        DCMS registry associated with the container/workspace. Returns null if there is none.
-        """
+    def registry_id(self) -> Optional[str]:
         return pulumi.get(self, "registry_id")
 
     @property
     @pulumi.getter(name="registryName")
-    def registry_name(self) -> str:
+    def registry_name(self) -> Optional[str]:
         return pulumi.get(self, "registry_name")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        Lifecycle states for workspaces in Data Integration Service CREATING - The resource is being created and may not be usable until the entire metadata is defined UPDATING - The resource is being updated and may not be usable until all changes are commited DELETING - The resource is being deleted and might require deep cleanup of children. ACTIVE   - The resource is valid and available for access INACTIVE - The resource might be incomplete in its definition or might have been made unavailable for administrative reasons DELETED  - The resource has been deleted and isn't available FAILED   - The resource is in a failed state due to validation or other errors STARTING - The resource is being started and may not be usable until becomes ACTIVE again STOPPING - The resource is in the process of Stopping and may not be usable until it Stops or fails STOPPED  - The resource is in Stopped state due to stop operation.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="stateMessage")
-    def state_message(self) -> str:
-        """
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in failed state.
-        """
+    def state_message(self) -> Optional[str]:
         return pulumi.get(self, "state_message")
 
     @property
     @pulumi.getter(name="subnetId")
-    def subnet_id(self) -> str:
-        """
-        The OCID of the subnet for customer connected databases.
-        """
+    def subnet_id(self) -> Optional[str]:
         return pulumi.get(self, "subnet_id")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the workspace was created, in the timestamp format defined by RFC3339.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The date and time the workspace was updated, in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
     @property
     @pulumi.getter(name="vcnId")
-    def vcn_id(self) -> str:
-        """
-        The OCID of the VCN the subnet is in.
-        """
+    def vcn_id(self) -> Optional[str]:
         return pulumi.get(self, "vcn_id")
 
     @property
@@ -305,21 +251,7 @@ class AwaitableGetWorkspaceResult(GetWorkspaceResult):
 def get_workspace(workspace_id: Optional[str] = None,
                   opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetWorkspaceResult:
     """
-    This data source provides details about a specific Workspace resource in Oracle Cloud Infrastructure Data Integration service.
-
-    Retrieves a Data Integration workspace using the specified identifier.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_workspace = oci.DataIntegration.get_workspace(workspace_id=oci_dataintegration_workspace["test_workspace"]["id"])
-    ```
-
-
-    :param str workspace_id: The workspace ID.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['workspaceId'] = workspace_id
@@ -357,20 +289,6 @@ def get_workspace(workspace_id: Optional[str] = None,
 def get_workspace_output(workspace_id: Optional[pulumi.Input[str]] = None,
                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetWorkspaceResult]:
     """
-    This data source provides details about a specific Workspace resource in Oracle Cloud Infrastructure Data Integration service.
-
-    Retrieves a Data Integration workspace using the specified identifier.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_workspace = oci.DataIntegration.get_workspace(workspace_id=oci_dataintegration_workspace["test_workspace"]["id"])
-    ```
-
-
-    :param str workspace_id: The workspace ID.
+    Use this data source to access information about an existing resource.
     """
     ...

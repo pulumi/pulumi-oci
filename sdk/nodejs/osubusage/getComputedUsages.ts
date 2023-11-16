@@ -70,12 +70,12 @@ export interface GetComputedUsagesResult {
     /**
      * The list of computed_usages.
      */
-    readonly computedUsages: outputs.OsubUsage.GetComputedUsagesComputedUsage[];
+    readonly computedUsages?: outputs.OsubUsage.GetComputedUsagesComputedUsage[];
     readonly filters?: outputs.OsubUsage.GetComputedUsagesFilter[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Product description
      */

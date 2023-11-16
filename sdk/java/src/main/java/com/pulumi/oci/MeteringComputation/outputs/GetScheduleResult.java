@@ -11,6 +11,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetScheduleResult {
@@ -18,154 +20,154 @@ public final class GetScheduleResult {
      * @return The customer tenancy.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return The description of the schedule.
      * 
      */
-    private String description;
+    private @Nullable String description;
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return The OCID representing a unique shedule.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The unique name of the schedule created by the user.
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return Specifies supported output file format.
      * 
      */
-    private String outputFileFormat;
+    private @Nullable String outputFileFormat;
     /**
      * @return The query properties.
      * 
      */
-    private List<GetScheduleQueryProperty> queryProperties;
+    private @Nullable List<GetScheduleQueryProperty> queryProperties;
     /**
      * @return The location where usage or cost CSVs will be uploaded defined by `locationType`, which corresponds with type-specific characteristics.
      * 
      */
-    private List<GetScheduleResultLocation> resultLocations;
+    private @Nullable List<GetScheduleResultLocation> resultLocations;
     /**
      * @return The saved report id which can also be used to generate query.
      * 
      */
-    private String savedReportId;
+    private @Nullable String savedReportId;
     private String scheduleId;
     /**
      * @return Specifies the frequency according to when the schedule will be run,  in the x-obmcs-recurring-time format described in [RFC 5545 section 3.3.10](https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10). Supported values are : ONE_TIME, DAILY, WEEKLY and MONTHLY.
      * 
      */
-    private String scheduleRecurrences;
+    private @Nullable String scheduleRecurrences;
     /**
      * @return The schedule lifecycle state.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    private Map<String,Object> systemTags;
+    private @Nullable Map<String,Object> systemTags;
     /**
      * @return The date and time the schedule was created.
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The date and time of the next job execution.
      * 
      */
-    private String timeNextRun;
+    private @Nullable String timeNextRun;
     /**
      * @return The date and time of the first time job execution.
      * 
      */
-    private String timeScheduled;
+    private @Nullable String timeScheduled;
 
     private GetScheduleResult() {}
     /**
      * @return The customer tenancy.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return The description of the schedule.
      * 
      */
-    public String description() {
-        return this.description;
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return The OCID representing a unique shedule.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The unique name of the schedule created by the user.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return Specifies supported output file format.
      * 
      */
-    public String outputFileFormat() {
-        return this.outputFileFormat;
+    public Optional<String> outputFileFormat() {
+        return Optional.ofNullable(this.outputFileFormat);
     }
     /**
      * @return The query properties.
      * 
      */
     public List<GetScheduleQueryProperty> queryProperties() {
-        return this.queryProperties;
+        return this.queryProperties == null ? List.of() : this.queryProperties;
     }
     /**
      * @return The location where usage or cost CSVs will be uploaded defined by `locationType`, which corresponds with type-specific characteristics.
      * 
      */
     public List<GetScheduleResultLocation> resultLocations() {
-        return this.resultLocations;
+        return this.resultLocations == null ? List.of() : this.resultLocations;
     }
     /**
      * @return The saved report id which can also be used to generate query.
      * 
      */
-    public String savedReportId() {
-        return this.savedReportId;
+    public Optional<String> savedReportId() {
+        return Optional.ofNullable(this.savedReportId);
     }
     public String scheduleId() {
         return this.scheduleId;
@@ -174,43 +176,43 @@ public final class GetScheduleResult {
      * @return Specifies the frequency according to when the schedule will be run,  in the x-obmcs-recurring-time format described in [RFC 5545 section 3.3.10](https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10). Supported values are : ONE_TIME, DAILY, WEEKLY and MONTHLY.
      * 
      */
-    public String scheduleRecurrences() {
-        return this.scheduleRecurrences;
+    public Optional<String> scheduleRecurrences() {
+        return Optional.ofNullable(this.scheduleRecurrences);
     }
     /**
      * @return The schedule lifecycle state.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
     public Map<String,Object> systemTags() {
-        return this.systemTags;
+        return this.systemTags == null ? Map.of() : this.systemTags;
     }
     /**
      * @return The date and time the schedule was created.
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return The date and time of the next job execution.
      * 
      */
-    public String timeNextRun() {
-        return this.timeNextRun;
+    public Optional<String> timeNextRun() {
+        return Optional.ofNullable(this.timeNextRun);
     }
     /**
      * @return The date and time of the first time job execution.
      * 
      */
-    public String timeScheduled() {
-        return this.timeScheduled;
+    public Optional<String> timeScheduled() {
+        return Optional.ofNullable(this.timeScheduled);
     }
 
     public static Builder builder() {
@@ -222,23 +224,23 @@ public final class GetScheduleResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String compartmentId;
-        private Map<String,Object> definedTags;
-        private String description;
-        private Map<String,Object> freeformTags;
-        private String id;
-        private String name;
-        private String outputFileFormat;
-        private List<GetScheduleQueryProperty> queryProperties;
-        private List<GetScheduleResultLocation> resultLocations;
-        private String savedReportId;
+        private @Nullable String compartmentId;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String description;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String id;
+        private @Nullable String name;
+        private @Nullable String outputFileFormat;
+        private @Nullable List<GetScheduleQueryProperty> queryProperties;
+        private @Nullable List<GetScheduleResultLocation> resultLocations;
+        private @Nullable String savedReportId;
         private String scheduleId;
-        private String scheduleRecurrences;
-        private String state;
-        private Map<String,Object> systemTags;
-        private String timeCreated;
-        private String timeNextRun;
-        private String timeScheduled;
+        private @Nullable String scheduleRecurrences;
+        private @Nullable String state;
+        private @Nullable Map<String,Object> systemTags;
+        private @Nullable String timeCreated;
+        private @Nullable String timeNextRun;
+        private @Nullable String timeScheduled;
         public Builder() {}
         public Builder(GetScheduleResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -262,59 +264,59 @@ public final class GetScheduleResult {
         }
 
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+        public Builder description(@Nullable String description) {
+            this.description = description;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder outputFileFormat(String outputFileFormat) {
-            this.outputFileFormat = Objects.requireNonNull(outputFileFormat);
+        public Builder outputFileFormat(@Nullable String outputFileFormat) {
+            this.outputFileFormat = outputFileFormat;
             return this;
         }
         @CustomType.Setter
-        public Builder queryProperties(List<GetScheduleQueryProperty> queryProperties) {
-            this.queryProperties = Objects.requireNonNull(queryProperties);
+        public Builder queryProperties(@Nullable List<GetScheduleQueryProperty> queryProperties) {
+            this.queryProperties = queryProperties;
             return this;
         }
         public Builder queryProperties(GetScheduleQueryProperty... queryProperties) {
             return queryProperties(List.of(queryProperties));
         }
         @CustomType.Setter
-        public Builder resultLocations(List<GetScheduleResultLocation> resultLocations) {
-            this.resultLocations = Objects.requireNonNull(resultLocations);
+        public Builder resultLocations(@Nullable List<GetScheduleResultLocation> resultLocations) {
+            this.resultLocations = resultLocations;
             return this;
         }
         public Builder resultLocations(GetScheduleResultLocation... resultLocations) {
             return resultLocations(List.of(resultLocations));
         }
         @CustomType.Setter
-        public Builder savedReportId(String savedReportId) {
-            this.savedReportId = Objects.requireNonNull(savedReportId);
+        public Builder savedReportId(@Nullable String savedReportId) {
+            this.savedReportId = savedReportId;
             return this;
         }
         @CustomType.Setter
@@ -323,33 +325,33 @@ public final class GetScheduleResult {
             return this;
         }
         @CustomType.Setter
-        public Builder scheduleRecurrences(String scheduleRecurrences) {
-            this.scheduleRecurrences = Objects.requireNonNull(scheduleRecurrences);
+        public Builder scheduleRecurrences(@Nullable String scheduleRecurrences) {
+            this.scheduleRecurrences = scheduleRecurrences;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+        public Builder systemTags(@Nullable Map<String,Object> systemTags) {
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeNextRun(String timeNextRun) {
-            this.timeNextRun = Objects.requireNonNull(timeNextRun);
+        public Builder timeNextRun(@Nullable String timeNextRun) {
+            this.timeNextRun = timeNextRun;
             return this;
         }
         @CustomType.Setter
-        public Builder timeScheduled(String timeScheduled) {
-            this.timeScheduled = Objects.requireNonNull(timeScheduled);
+        public Builder timeScheduled(@Nullable String timeScheduled) {
+            this.timeScheduled = timeScheduled;
             return this;
         }
         public GetScheduleResult build() {

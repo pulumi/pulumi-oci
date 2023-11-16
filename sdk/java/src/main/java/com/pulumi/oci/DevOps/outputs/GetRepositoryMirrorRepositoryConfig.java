@@ -8,6 +8,8 @@ import com.pulumi.oci.DevOps.outputs.GetRepositoryMirrorRepositoryConfigTriggerS
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetRepositoryMirrorRepositoryConfig {
@@ -15,39 +17,39 @@ public final class GetRepositoryMirrorRepositoryConfig {
      * @return Upstream git repository connection identifer.
      * 
      */
-    private String connectorId;
+    private @Nullable String connectorId;
     /**
      * @return URL of external repository you want to mirror.
      * 
      */
-    private String repositoryUrl;
+    private @Nullable String repositoryUrl;
     /**
      * @return Specifies a trigger schedule. Timing information for when to initiate automated syncs.
      * 
      */
-    private List<GetRepositoryMirrorRepositoryConfigTriggerSchedule> triggerSchedules;
+    private @Nullable List<GetRepositoryMirrorRepositoryConfigTriggerSchedule> triggerSchedules;
 
     private GetRepositoryMirrorRepositoryConfig() {}
     /**
      * @return Upstream git repository connection identifer.
      * 
      */
-    public String connectorId() {
-        return this.connectorId;
+    public Optional<String> connectorId() {
+        return Optional.ofNullable(this.connectorId);
     }
     /**
      * @return URL of external repository you want to mirror.
      * 
      */
-    public String repositoryUrl() {
-        return this.repositoryUrl;
+    public Optional<String> repositoryUrl() {
+        return Optional.ofNullable(this.repositoryUrl);
     }
     /**
      * @return Specifies a trigger schedule. Timing information for when to initiate automated syncs.
      * 
      */
     public List<GetRepositoryMirrorRepositoryConfigTriggerSchedule> triggerSchedules() {
-        return this.triggerSchedules;
+        return this.triggerSchedules == null ? List.of() : this.triggerSchedules;
     }
 
     public static Builder builder() {
@@ -59,9 +61,9 @@ public final class GetRepositoryMirrorRepositoryConfig {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String connectorId;
-        private String repositoryUrl;
-        private List<GetRepositoryMirrorRepositoryConfigTriggerSchedule> triggerSchedules;
+        private @Nullable String connectorId;
+        private @Nullable String repositoryUrl;
+        private @Nullable List<GetRepositoryMirrorRepositoryConfigTriggerSchedule> triggerSchedules;
         public Builder() {}
         public Builder(GetRepositoryMirrorRepositoryConfig defaults) {
     	      Objects.requireNonNull(defaults);
@@ -71,18 +73,18 @@ public final class GetRepositoryMirrorRepositoryConfig {
         }
 
         @CustomType.Setter
-        public Builder connectorId(String connectorId) {
-            this.connectorId = Objects.requireNonNull(connectorId);
+        public Builder connectorId(@Nullable String connectorId) {
+            this.connectorId = connectorId;
             return this;
         }
         @CustomType.Setter
-        public Builder repositoryUrl(String repositoryUrl) {
-            this.repositoryUrl = Objects.requireNonNull(repositoryUrl);
+        public Builder repositoryUrl(@Nullable String repositoryUrl) {
+            this.repositoryUrl = repositoryUrl;
             return this;
         }
         @CustomType.Setter
-        public Builder triggerSchedules(List<GetRepositoryMirrorRepositoryConfigTriggerSchedule> triggerSchedules) {
-            this.triggerSchedules = Objects.requireNonNull(triggerSchedules);
+        public Builder triggerSchedules(@Nullable List<GetRepositoryMirrorRepositoryConfigTriggerSchedule> triggerSchedules) {
+            this.triggerSchedules = triggerSchedules;
             return this;
         }
         public Builder triggerSchedules(GetRepositoryMirrorRepositoryConfigTriggerSchedule... triggerSchedules) {

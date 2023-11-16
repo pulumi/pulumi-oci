@@ -16,107 +16,107 @@ namespace Pulumi.Oci.CertificatesManagement.Outputs
         /// <summary>
         /// Common name or fully-qualified domain name (RDN CN).
         /// </summary>
-        public readonly string CommonName;
+        public readonly string? CommonName;
         /// <summary>
         /// Country name (RDN C).
         /// </summary>
-        public readonly string Country;
+        public readonly string? Country;
         /// <summary>
         /// Distinguished name qualifier(RDN DNQ).
         /// </summary>
-        public readonly string DistinguishedNameQualifier;
+        public readonly string? DistinguishedNameQualifier;
         /// <summary>
         /// Domain component (RDN DC).
         /// </summary>
-        public readonly string DomainComponent;
+        public readonly string? DomainComponent;
         /// <summary>
         /// Personal generational qualifier (for example, Sr., Jr. 3rd, or IV).
         /// </summary>
-        public readonly string GenerationQualifier;
+        public readonly string? GenerationQualifier;
         /// <summary>
         /// Personal given name (RDN G or GN).
         /// </summary>
-        public readonly string GivenName;
+        public readonly string? GivenName;
         /// <summary>
         /// Personal initials.
         /// </summary>
-        public readonly string Initials;
+        public readonly string? Initials;
         /// <summary>
         /// Locality (RDN L).
         /// </summary>
-        public readonly string LocalityName;
+        public readonly string? LocalityName;
         /// <summary>
         /// Organization (RDN O).
         /// </summary>
-        public readonly string Organization;
+        public readonly string? Organization;
         /// <summary>
         /// Organizational unit (RDN OU).
         /// </summary>
-        public readonly string OrganizationalUnit;
+        public readonly string? OrganizationalUnit;
         /// <summary>
         /// Subject pseudonym.
         /// </summary>
-        public readonly string Pseudonym;
+        public readonly string? Pseudonym;
         /// <summary>
         /// Unique subject identifier, which is not the same as the certificate serial number (RDN SERIALNUMBER).
         /// </summary>
-        public readonly string SerialNumber;
+        public readonly string? SerialNumber;
         /// <summary>
         /// State or province name (RDN ST or S).
         /// </summary>
-        public readonly string StateOrProvinceName;
+        public readonly string? StateOrProvinceName;
         /// <summary>
         /// Street address (RDN STREET).
         /// </summary>
-        public readonly string Street;
+        public readonly string? Street;
         /// <summary>
         /// Personal surname (RDN SN).
         /// </summary>
-        public readonly string Surname;
+        public readonly string? Surname;
         /// <summary>
         /// Title (RDN T or TITLE).
         /// </summary>
-        public readonly string Title;
+        public readonly string? Title;
         /// <summary>
         /// User ID (RDN UID).
         /// </summary>
-        public readonly string UserId;
+        public readonly string? UserId;
 
         [OutputConstructor]
         private GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigSubjectResult(
-            string commonName,
+            string? commonName,
 
-            string country,
+            string? country,
 
-            string distinguishedNameQualifier,
+            string? distinguishedNameQualifier,
 
-            string domainComponent,
+            string? domainComponent,
 
-            string generationQualifier,
+            string? generationQualifier,
 
-            string givenName,
+            string? givenName,
 
-            string initials,
+            string? initials,
 
-            string localityName,
+            string? localityName,
 
-            string organization,
+            string? organization,
 
-            string organizationalUnit,
+            string? organizationalUnit,
 
-            string pseudonym,
+            string? pseudonym,
 
-            string serialNumber,
+            string? serialNumber,
 
-            string stateOrProvinceName,
+            string? stateOrProvinceName,
 
-            string street,
+            string? street,
 
-            string surname,
+            string? surname,
 
-            string title,
+            string? title,
 
-            string userId)
+            string? userId)
         {
             CommonName = commonName;
             Country = country;

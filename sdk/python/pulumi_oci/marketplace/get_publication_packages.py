@@ -50,7 +50,7 @@ class GetPublicationPackagesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -59,9 +59,6 @@ class GetPublicationPackagesResult:
     @property
     @pulumi.getter(name="packageType")
     def package_type(self) -> Optional[str]:
-        """
-        The specified package's type.
-        """
         return pulumi.get(self, "package_type")
 
     @property
@@ -76,10 +73,7 @@ class GetPublicationPackagesResult:
 
     @property
     @pulumi.getter(name="publicationPackages")
-    def publication_packages(self) -> Sequence['outputs.GetPublicationPackagesPublicationPackageResult']:
-        """
-        The list of publication_packages.
-        """
+    def publication_packages(self) -> Optional[Sequence['outputs.GetPublicationPackagesPublicationPackageResult']]:
         return pulumi.get(self, "publication_packages")
 
 
@@ -103,25 +97,7 @@ def get_publication_packages(filters: Optional[Sequence[pulumi.InputType['GetPub
                              publication_id: Optional[str] = None,
                              opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetPublicationPackagesResult:
     """
-    This data source provides the list of Publication Packages in Oracle Cloud Infrastructure Marketplace service.
-
-    Lists the packages in the specified publication.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_publication_packages = oci.Marketplace.get_publication_packages(publication_id=oci_marketplace_publication["test_publication"]["id"],
-        package_type=var["publication_package_package_type"],
-        package_version=var["publication_package_package_version"])
-    ```
-
-
-    :param str package_type: A filter to return only packages that match the given package type exactly.
-    :param str package_version: The version of the package. Package versions are unique within a listing.
-    :param str publication_id: The unique identifier for the publication.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['filters'] = filters
@@ -147,24 +123,6 @@ def get_publication_packages_output(filters: Optional[pulumi.Input[Optional[Sequ
                                     publication_id: Optional[pulumi.Input[str]] = None,
                                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetPublicationPackagesResult]:
     """
-    This data source provides the list of Publication Packages in Oracle Cloud Infrastructure Marketplace service.
-
-    Lists the packages in the specified publication.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_publication_packages = oci.Marketplace.get_publication_packages(publication_id=oci_marketplace_publication["test_publication"]["id"],
-        package_type=var["publication_package_package_type"],
-        package_version=var["publication_package_package_version"])
-    ```
-
-
-    :param str package_type: A filter to return only packages that match the given package type exactly.
-    :param str package_version: The version of the package. Package versions are unique within a listing.
-    :param str publication_id: The unique identifier for the publication.
+    Use this data source to access information about an existing resource.
     """
     ...

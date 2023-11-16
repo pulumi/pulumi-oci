@@ -207,19 +207,19 @@ namespace Pulumi.Oci.Identity
         /// <summary>
         /// Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
         /// </summary>
-        public readonly string CompartmentOcid;
+        public readonly string? CompartmentOcid;
         /// <summary>
         /// Unique key of grant, composed by combining a subset of app, entitlement, grantee, grantor and grantMechanism.  Used to prevent duplicate Grants.
         /// </summary>
-        public readonly string CompositeKey;
+        public readonly string? CompositeKey;
         /// <summary>
         /// A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
         /// </summary>
-        public readonly bool DeleteInProgress;
+        public readonly bool? DeleteInProgress;
         /// <summary>
         /// Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
         /// </summary>
-        public readonly string DomainOcid;
+        public readonly string? DomainOcid;
         /// <summary>
         /// The entitlement or privilege that is being granted
         /// </summary>
@@ -231,11 +231,11 @@ namespace Pulumi.Oci.Identity
         /// * 'ADMINISTRATOR_TO_GROUP' is for a grant to a specific Group, which results in indirect grants to Users who are members of that Group.
         /// * 'ADMINISTRATOR_TO_APP' is for a grant to a specific App.  The grantee (client) App gains access to the granted (server) App.
         /// </summary>
-        public readonly string GrantMechanism;
+        public readonly string? GrantMechanism;
         /// <summary>
         /// Store granted attribute-values as a string in Javascript Object Notation (JSON) format.
         /// </summary>
-        public readonly string GrantedAttributeValuesJson;
+        public readonly string? GrantedAttributeValuesJson;
         /// <summary>
         /// Grantee beneficiary. The grantee may be a User, Group, App or DynamicResourceGroup.
         /// </summary>
@@ -247,7 +247,7 @@ namespace Pulumi.Oci.Identity
         /// <summary>
         /// Unique identifier for the SCIM Resource as defined by the Service Provider. Each representation of the Resource MUST include a non-empty id value. This identifier MUST be unique across the Service Provider's entire set of Resources. It MUST be a stable, non-reassignable identifier that does not change when the same Resource is returned in subsequent requests. The value of the id attribute is always issued by the Service Provider and MUST never be specified by the Service Consumer. bulkId: is a reserved keyword and MUST NOT be used in the unique identifier.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The User or App who created the Resource
         /// </summary>
@@ -260,7 +260,7 @@ namespace Pulumi.Oci.Identity
         /// <summary>
         /// The release number when the resource was upgraded.
         /// </summary>
-        public readonly string IdcsLastUpgradedInRelease;
+        public readonly string? IdcsLastUpgradedInRelease;
         /// <summary>
         /// Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
         /// </summary>
@@ -268,7 +268,7 @@ namespace Pulumi.Oci.Identity
         /// <summary>
         /// If true, this Grant has been fulfilled successfully.
         /// </summary>
-        public readonly bool IsFulfilled;
+        public readonly bool? IsFulfilled;
         /// <summary>
         /// A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
         /// </summary>
@@ -276,7 +276,7 @@ namespace Pulumi.Oci.Identity
         /// <summary>
         /// Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
         /// </summary>
-        public readonly string Ocid;
+        public readonly string? Ocid;
         public readonly string? ResourceTypeSchemaVersion;
         /// <summary>
         /// REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
@@ -289,7 +289,7 @@ namespace Pulumi.Oci.Identity
         /// <summary>
         /// Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
         /// </summary>
-        public readonly string TenancyOcid;
+        public readonly string? TenancyOcid;
 
         [OutputConstructor]
         private GetDomainsGrantResult(
@@ -303,27 +303,27 @@ namespace Pulumi.Oci.Identity
 
             string? authorization,
 
-            string compartmentOcid,
+            string? compartmentOcid,
 
-            string compositeKey,
+            string? compositeKey,
 
-            bool deleteInProgress,
+            bool? deleteInProgress,
 
-            string domainOcid,
+            string? domainOcid,
 
             ImmutableArray<Outputs.GetDomainsGrantEntitlementResult> entitlements,
 
             string grantId,
 
-            string grantMechanism,
+            string? grantMechanism,
 
-            string grantedAttributeValuesJson,
+            string? grantedAttributeValuesJson,
 
             ImmutableArray<Outputs.GetDomainsGrantGranteeResult> grantees,
 
             ImmutableArray<Outputs.GetDomainsGrantGrantorResult> grantors,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetDomainsGrantIdcsCreatedByResult> idcsCreatedBies,
 
@@ -331,15 +331,15 @@ namespace Pulumi.Oci.Identity
 
             ImmutableArray<Outputs.GetDomainsGrantIdcsLastModifiedByResult> idcsLastModifiedBies,
 
-            string idcsLastUpgradedInRelease,
+            string? idcsLastUpgradedInRelease,
 
             ImmutableArray<string> idcsPreventedOperations,
 
-            bool isFulfilled,
+            bool? isFulfilled,
 
             ImmutableArray<Outputs.GetDomainsGrantMetaResult> metas,
 
-            string ocid,
+            string? ocid,
 
             string? resourceTypeSchemaVersion,
 
@@ -347,7 +347,7 @@ namespace Pulumi.Oci.Identity
 
             ImmutableArray<Outputs.GetDomainsGrantTagResult> tags,
 
-            string tenancyOcid)
+            string? tenancyOcid)
         {
             AppEntitlementCollections = appEntitlementCollections;
             Apps = apps;

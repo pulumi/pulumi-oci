@@ -17,10 +17,10 @@ namespace Pulumi.Oci.Core.Outputs
         public readonly ImmutableArray<string> AllowedActions;
         public readonly ImmutableArray<string> AvailableRegions;
         public readonly ImmutableArray<string> CompatibleShapes;
-        public readonly string ListingId;
-        public readonly string ListingResourceId;
-        public readonly string ListingResourceVersion;
-        public readonly string TimePublished;
+        public readonly string? ListingId;
+        public readonly string? ListingResourceId;
+        public readonly string? ListingResourceVersion;
+        public readonly string? TimePublished;
 
         [OutputConstructor]
         private GetListingResourceVersionsAppCatalogListingResourceVersionResult(
@@ -32,13 +32,13 @@ namespace Pulumi.Oci.Core.Outputs
 
             ImmutableArray<string> compatibleShapes,
 
-            string listingId,
+            string? listingId,
 
-            string listingResourceId,
+            string? listingResourceId,
 
-            string listingResourceVersion,
+            string? listingResourceVersion,
 
-            string timePublished)
+            string? timePublished)
         {
             AccessiblePorts = accessiblePorts;
             AllowedActions = allowedActions;

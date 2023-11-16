@@ -10,21 +10,20 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 type DefaultDhcpOptions struct {
 	pulumi.CustomResourceState
 
-	CompartmentId           pulumi.StringOutput                 `pulumi:"compartmentId"`
+	CompartmentId           pulumi.StringPtrOutput              `pulumi:"compartmentId"`
 	DefinedTags             pulumi.MapOutput                    `pulumi:"definedTags"`
-	DisplayName             pulumi.StringOutput                 `pulumi:"displayName"`
-	DomainNameType          pulumi.StringOutput                 `pulumi:"domainNameType"`
+	DisplayName             pulumi.StringPtrOutput              `pulumi:"displayName"`
+	DomainNameType          pulumi.StringPtrOutput              `pulumi:"domainNameType"`
 	FreeformTags            pulumi.MapOutput                    `pulumi:"freeformTags"`
 	ManageDefaultResourceId pulumi.StringOutput                 `pulumi:"manageDefaultResourceId"`
 	Options                 DefaultDhcpOptionsOptionArrayOutput `pulumi:"options"`
-	State                   pulumi.StringOutput                 `pulumi:"state"`
-	TimeCreated             pulumi.StringOutput                 `pulumi:"timeCreated"`
+	State                   pulumi.StringPtrOutput              `pulumi:"state"`
+	TimeCreated             pulumi.StringPtrOutput              `pulumi:"timeCreated"`
 }
 
 // NewDefaultDhcpOptions registers a new resource with the given unique name, arguments, and options.
@@ -134,12 +133,6 @@ func (i *DefaultDhcpOptions) ToDefaultDhcpOptionsOutputWithContext(ctx context.C
 	return pulumi.ToOutputWithContext(ctx, i).(DefaultDhcpOptionsOutput)
 }
 
-func (i *DefaultDhcpOptions) ToOutput(ctx context.Context) pulumix.Output[*DefaultDhcpOptions] {
-	return pulumix.Output[*DefaultDhcpOptions]{
-		OutputState: i.ToDefaultDhcpOptionsOutputWithContext(ctx).OutputState,
-	}
-}
-
 // DefaultDhcpOptionsArrayInput is an input type that accepts DefaultDhcpOptionsArray and DefaultDhcpOptionsArrayOutput values.
 // You can construct a concrete instance of `DefaultDhcpOptionsArrayInput` via:
 //
@@ -163,12 +156,6 @@ func (i DefaultDhcpOptionsArray) ToDefaultDhcpOptionsArrayOutput() DefaultDhcpOp
 
 func (i DefaultDhcpOptionsArray) ToDefaultDhcpOptionsArrayOutputWithContext(ctx context.Context) DefaultDhcpOptionsArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(DefaultDhcpOptionsArrayOutput)
-}
-
-func (i DefaultDhcpOptionsArray) ToOutput(ctx context.Context) pulumix.Output[[]*DefaultDhcpOptions] {
-	return pulumix.Output[[]*DefaultDhcpOptions]{
-		OutputState: i.ToDefaultDhcpOptionsArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // DefaultDhcpOptionsMapInput is an input type that accepts DefaultDhcpOptionsMap and DefaultDhcpOptionsMapOutput values.
@@ -196,12 +183,6 @@ func (i DefaultDhcpOptionsMap) ToDefaultDhcpOptionsMapOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(DefaultDhcpOptionsMapOutput)
 }
 
-func (i DefaultDhcpOptionsMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*DefaultDhcpOptions] {
-	return pulumix.Output[map[string]*DefaultDhcpOptions]{
-		OutputState: i.ToDefaultDhcpOptionsMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DefaultDhcpOptionsOutput struct{ *pulumi.OutputState }
 
 func (DefaultDhcpOptionsOutput) ElementType() reflect.Type {
@@ -216,26 +197,20 @@ func (o DefaultDhcpOptionsOutput) ToDefaultDhcpOptionsOutputWithContext(ctx cont
 	return o
 }
 
-func (o DefaultDhcpOptionsOutput) ToOutput(ctx context.Context) pulumix.Output[*DefaultDhcpOptions] {
-	return pulumix.Output[*DefaultDhcpOptions]{
-		OutputState: o.OutputState,
-	}
-}
-
-func (o DefaultDhcpOptionsOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v *DefaultDhcpOptions) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
+func (o DefaultDhcpOptionsOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DefaultDhcpOptions) pulumi.StringPtrOutput { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 func (o DefaultDhcpOptionsOutput) DefinedTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *DefaultDhcpOptions) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
 }
 
-func (o DefaultDhcpOptionsOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v *DefaultDhcpOptions) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+func (o DefaultDhcpOptionsOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DefaultDhcpOptions) pulumi.StringPtrOutput { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
-func (o DefaultDhcpOptionsOutput) DomainNameType() pulumi.StringOutput {
-	return o.ApplyT(func(v *DefaultDhcpOptions) pulumi.StringOutput { return v.DomainNameType }).(pulumi.StringOutput)
+func (o DefaultDhcpOptionsOutput) DomainNameType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DefaultDhcpOptions) pulumi.StringPtrOutput { return v.DomainNameType }).(pulumi.StringPtrOutput)
 }
 
 func (o DefaultDhcpOptionsOutput) FreeformTags() pulumi.MapOutput {
@@ -250,12 +225,12 @@ func (o DefaultDhcpOptionsOutput) Options() DefaultDhcpOptionsOptionArrayOutput 
 	return o.ApplyT(func(v *DefaultDhcpOptions) DefaultDhcpOptionsOptionArrayOutput { return v.Options }).(DefaultDhcpOptionsOptionArrayOutput)
 }
 
-func (o DefaultDhcpOptionsOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *DefaultDhcpOptions) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o DefaultDhcpOptionsOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DefaultDhcpOptions) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
-func (o DefaultDhcpOptionsOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *DefaultDhcpOptions) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o DefaultDhcpOptionsOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DefaultDhcpOptions) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 type DefaultDhcpOptionsArrayOutput struct{ *pulumi.OutputState }
@@ -270,12 +245,6 @@ func (o DefaultDhcpOptionsArrayOutput) ToDefaultDhcpOptionsArrayOutput() Default
 
 func (o DefaultDhcpOptionsArrayOutput) ToDefaultDhcpOptionsArrayOutputWithContext(ctx context.Context) DefaultDhcpOptionsArrayOutput {
 	return o
-}
-
-func (o DefaultDhcpOptionsArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*DefaultDhcpOptions] {
-	return pulumix.Output[[]*DefaultDhcpOptions]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DefaultDhcpOptionsArrayOutput) Index(i pulumi.IntInput) DefaultDhcpOptionsOutput {
@@ -296,12 +265,6 @@ func (o DefaultDhcpOptionsMapOutput) ToDefaultDhcpOptionsMapOutput() DefaultDhcp
 
 func (o DefaultDhcpOptionsMapOutput) ToDefaultDhcpOptionsMapOutputWithContext(ctx context.Context) DefaultDhcpOptionsMapOutput {
 	return o
-}
-
-func (o DefaultDhcpOptionsMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*DefaultDhcpOptions] {
-	return pulumix.Output[map[string]*DefaultDhcpOptions]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DefaultDhcpOptionsMapOutput) MapIndex(k pulumi.StringInput) DefaultDhcpOptionsOutput {

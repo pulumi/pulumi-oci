@@ -11,6 +11,7 @@ import com.pulumi.oci.Database.AutonomousVmClusterSslCertificateManagementArgs;
 import com.pulumi.oci.Database.inputs.AutonomousVmClusterSslCertificateManagementState;
 import com.pulumi.oci.Utilities;
 import java.lang.String;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -78,28 +79,28 @@ public class AutonomousVmClusterSslCertificateManagement extends com.pulumi.reso
      * 
      */
     @Export(name="caBundleId", refs={String.class}, tree="[0]")
-    private Output<String> caBundleId;
+    private Output</* @Nullable */ String> caBundleId;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the certificate bundle.
      * 
      */
-    public Output<String> caBundleId() {
-        return this.caBundleId;
+    public Output<Optional<String>> caBundleId() {
+        return Codegen.optional(this.caBundleId);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the certificate authority.
      * 
      */
     @Export(name="certificateAuthorityId", refs={String.class}, tree="[0]")
-    private Output<String> certificateAuthorityId;
+    private Output</* @Nullable */ String> certificateAuthorityId;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the certificate authority.
      * 
      */
-    public Output<String> certificateAuthorityId() {
-        return this.certificateAuthorityId;
+    public Output<Optional<String>> certificateAuthorityId() {
+        return Codegen.optional(this.certificateAuthorityId);
     }
     /**
      * Specify SYSTEM for using Oracle managed certificates. Specify BYOC when you want to bring your own certificate.
@@ -123,7 +124,7 @@ public class AutonomousVmClusterSslCertificateManagement extends com.pulumi.reso
      * 
      */
     @Export(name="certificateId", refs={String.class}, tree="[0]")
-    private Output<String> certificateId;
+    private Output</* @Nullable */ String> certificateId;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the certificate to use.
@@ -132,8 +133,8 @@ public class AutonomousVmClusterSslCertificateManagement extends com.pulumi.reso
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Output<String> certificateId() {
-        return this.certificateId;
+    public Output<Optional<String>> certificateId() {
+        return Codegen.optional(this.certificateId);
     }
 
     /**

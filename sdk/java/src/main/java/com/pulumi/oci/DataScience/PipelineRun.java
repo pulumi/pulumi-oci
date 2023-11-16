@@ -119,56 +119,56 @@ public class PipelineRun extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="configurationDetails", refs={List.class,PipelineRunConfigurationDetail.class}, tree="[0,1]")
-    private Output<List<PipelineRunConfigurationDetail>> configurationDetails;
+    private Output</* @Nullable */ List<PipelineRunConfigurationDetail>> configurationDetails;
 
     /**
      * @return The configuration details of a pipeline.
      * 
      */
-    public Output<List<PipelineRunConfigurationDetail>> configurationDetails() {
-        return this.configurationDetails;
+    public Output<Optional<List<PipelineRunConfigurationDetail>>> configurationDetails() {
+        return Codegen.optional(this.configurationDetails);
     }
     /**
      * The configuration details of a pipeline.
      * 
      */
     @Export(name="configurationOverrideDetails", refs={PipelineRunConfigurationOverrideDetails.class}, tree="[0]")
-    private Output<PipelineRunConfigurationOverrideDetails> configurationOverrideDetails;
+    private Output</* @Nullable */ PipelineRunConfigurationOverrideDetails> configurationOverrideDetails;
 
     /**
      * @return The configuration details of a pipeline.
      * 
      */
-    public Output<PipelineRunConfigurationOverrideDetails> configurationOverrideDetails() {
-        return this.configurationOverrideDetails;
+    public Output<Optional<PipelineRunConfigurationOverrideDetails>> configurationOverrideDetails() {
+        return Codegen.optional(this.configurationOverrideDetails);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the pipeline run.
      * 
      */
     @Export(name="createdBy", refs={String.class}, tree="[0]")
-    private Output<String> createdBy;
+    private Output</* @Nullable */ String> createdBy;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the pipeline run.
      * 
      */
-    public Output<String> createdBy() {
-        return this.createdBy;
+    public Output<Optional<String>> createdBy() {
+        return Codegen.optional(this.createdBy);
     }
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     @Export(name="deleteRelatedJobRuns", refs={Boolean.class}, tree="[0]")
     private Output</* @Nullable */ Boolean> deleteRelatedJobRuns;
@@ -181,70 +181,70 @@ public class PipelineRun extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="displayName", refs={String.class}, tree="[0]")
-    private Output<String> displayName;
+    private Output</* @Nullable */ String> displayName;
 
     /**
      * @return (Updatable) A user-friendly display name for the resource.
      * 
      */
-    public Output<String> displayName() {
-        return this.displayName;
+    public Output<Optional<String>> displayName() {
+        return Codegen.optional(this.displayName);
     }
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * Details of the state of the step run.
      * 
      */
     @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
-    private Output<String> lifecycleDetails;
+    private Output</* @Nullable */ String> lifecycleDetails;
 
     /**
      * @return Details of the state of the step run.
      * 
      */
-    public Output<String> lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Output<Optional<String>> lifecycleDetails() {
+        return Codegen.optional(this.lifecycleDetails);
     }
     /**
      * The pipeline log configuration details.
      * 
      */
     @Export(name="logConfigurationOverrideDetails", refs={PipelineRunLogConfigurationOverrideDetails.class}, tree="[0]")
-    private Output<PipelineRunLogConfigurationOverrideDetails> logConfigurationOverrideDetails;
+    private Output</* @Nullable */ PipelineRunLogConfigurationOverrideDetails> logConfigurationOverrideDetails;
 
     /**
      * @return The pipeline log configuration details.
      * 
      */
-    public Output<PipelineRunLogConfigurationOverrideDetails> logConfigurationOverrideDetails() {
-        return this.logConfigurationOverrideDetails;
+    public Output<Optional<PipelineRunLogConfigurationOverrideDetails>> logConfigurationOverrideDetails() {
+        return Codegen.optional(this.logConfigurationOverrideDetails);
     }
     /**
      * Customer logging details for pipeline run.
      * 
      */
     @Export(name="logDetails", refs={List.class,PipelineRunLogDetail.class}, tree="[0,1]")
-    private Output<List<PipelineRunLogDetail>> logDetails;
+    private Output</* @Nullable */ List<PipelineRunLogDetail>> logDetails;
 
     /**
      * @return Customer logging details for pipeline run.
      * 
      */
-    public Output<List<PipelineRunLogDetail>> logDetails() {
-        return this.logDetails;
+    public Output<Optional<List<PipelineRunLogDetail>>> logDetails() {
+        return Codegen.optional(this.logDetails);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pipeline for which pipeline run is created.
@@ -279,42 +279,42 @@ public class PipelineRun extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The state of the step run.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * Array of step override details. Only Step Configuration is allowed to be overridden.
      * 
      */
     @Export(name="stepOverrideDetails", refs={List.class,PipelineRunStepOverrideDetail.class}, tree="[0,1]")
-    private Output<List<PipelineRunStepOverrideDetail>> stepOverrideDetails;
+    private Output</* @Nullable */ List<PipelineRunStepOverrideDetail>> stepOverrideDetails;
 
     /**
      * @return Array of step override details. Only Step Configuration is allowed to be overridden.
      * 
      */
-    public Output<List<PipelineRunStepOverrideDetail>> stepOverrideDetails() {
-        return this.stepOverrideDetails;
+    public Output<Optional<List<PipelineRunStepOverrideDetail>>> stepOverrideDetails() {
+        return Codegen.optional(this.stepOverrideDetails);
     }
     /**
      * Array of StepRun object for each step.
      * 
      */
     @Export(name="stepRuns", refs={List.class,PipelineRunStepRun.class}, tree="[0,1]")
-    private Output<List<PipelineRunStepRun>> stepRuns;
+    private Output</* @Nullable */ List<PipelineRunStepRun>> stepRuns;
 
     /**
      * @return Array of StepRun object for each step.
      * 
      */
-    public Output<List<PipelineRunStepRun>> stepRuns() {
-        return this.stepRuns;
+    public Output<Optional<List<PipelineRunStepRun>>> stepRuns() {
+        return Codegen.optional(this.stepRuns);
     }
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
@@ -324,7 +324,7 @@ public class PipelineRun extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> systemTags;
+    private Output</* @Nullable */ Map<String,Object>> systemTags;
 
     /**
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
@@ -333,64 +333,64 @@ public class PipelineRun extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Output<Map<String,Object>> systemTags() {
-        return this.systemTags;
+    public Output<Optional<Map<String,Object>>> systemTags() {
+        return Codegen.optional(this.systemTags);
     }
     /**
      * The date and time the pipeline run was accepted in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
     @Export(name="timeAccepted", refs={String.class}, tree="[0]")
-    private Output<String> timeAccepted;
+    private Output</* @Nullable */ String> timeAccepted;
 
     /**
      * @return The date and time the pipeline run was accepted in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    public Output<String> timeAccepted() {
-        return this.timeAccepted;
+    public Output<Optional<String>> timeAccepted() {
+        return Codegen.optional(this.timeAccepted);
     }
     /**
      * The date and time the pipeline run request was finished in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
     @Export(name="timeFinished", refs={String.class}, tree="[0]")
-    private Output<String> timeFinished;
+    private Output</* @Nullable */ String> timeFinished;
 
     /**
      * @return The date and time the pipeline run request was finished in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    public Output<String> timeFinished() {
-        return this.timeFinished;
+    public Output<Optional<String>> timeFinished() {
+        return Codegen.optional(this.timeFinished);
     }
     /**
      * The date and time the pipeline run request was started in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
     @Export(name="timeStarted", refs={String.class}, tree="[0]")
-    private Output<String> timeStarted;
+    private Output</* @Nullable */ String> timeStarted;
 
     /**
      * @return The date and time the pipeline run request was started in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    public Output<String> timeStarted() {
-        return this.timeStarted;
+    public Output<Optional<String>> timeStarted() {
+        return Codegen.optional(this.timeStarted);
     }
     /**
      * The date and time the pipeline run was updated in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
     @Export(name="timeUpdated", refs={String.class}, tree="[0]")
-    private Output<String> timeUpdated;
+    private Output</* @Nullable */ String> timeUpdated;
 
     /**
      * @return The date and time the pipeline run was updated in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    public Output<String> timeUpdated() {
-        return this.timeUpdated;
+    public Output<Optional<String>> timeUpdated() {
+        return Codegen.optional(this.timeUpdated);
     }
 
     /**

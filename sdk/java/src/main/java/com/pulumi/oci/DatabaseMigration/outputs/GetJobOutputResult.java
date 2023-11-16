@@ -8,6 +8,8 @@ import com.pulumi.oci.DatabaseMigration.outputs.GetJobOutputItem;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetJobOutputResult {
@@ -15,12 +17,12 @@ public final class GetJobOutputResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Items in collection.
      * 
      */
-    private List<GetJobOutputItem> items;
+    private @Nullable List<GetJobOutputItem> items;
     private String jobId;
 
     private GetJobOutputResult() {}
@@ -28,15 +30,15 @@ public final class GetJobOutputResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Items in collection.
      * 
      */
     public List<GetJobOutputItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
     public String jobId() {
         return this.jobId;
@@ -51,8 +53,8 @@ public final class GetJobOutputResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String id;
-        private List<GetJobOutputItem> items;
+        private @Nullable String id;
+        private @Nullable List<GetJobOutputItem> items;
         private String jobId;
         public Builder() {}
         public Builder(GetJobOutputResult defaults) {
@@ -63,13 +65,13 @@ public final class GetJobOutputResult {
         }
 
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder items(List<GetJobOutputItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetJobOutputItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetJobOutputItem... items) {

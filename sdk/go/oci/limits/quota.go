@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Quota resource in Oracle Cloud Infrastructure Limits service.
@@ -79,20 +78,20 @@ type Quota struct {
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// this is a computed field which is set to true if any lock is present`
-	IsLockOverride pulumi.BoolOutput `pulumi:"isLockOverride"`
+	IsLockOverride pulumi.BoolPtrOutput `pulumi:"isLockOverride"`
 	// Locks associated with this resource.
 	Locks QuotaLockArrayOutput `pulumi:"locks"`
 	// The name you assign to the quota during creation. The name must be unique across all quotas in the tenancy and cannot be changed.
 	Name pulumi.StringOutput `pulumi:"name"`
 	// The quota's current state.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// (Updatable) An array of quota statements written in the declarative quota statement language.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Statements pulumi.StringArrayOutput `pulumi:"statements"`
 	// Date and time the quota was created, in the format defined by RFC 3339. Example: `2016-08-25T21:10:29.600Z`
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 }
 
 // NewQuota registers a new resource with the given unique name, arguments, and options.
@@ -253,12 +252,6 @@ func (i *Quota) ToQuotaOutputWithContext(ctx context.Context) QuotaOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(QuotaOutput)
 }
 
-func (i *Quota) ToOutput(ctx context.Context) pulumix.Output[*Quota] {
-	return pulumix.Output[*Quota]{
-		OutputState: i.ToQuotaOutputWithContext(ctx).OutputState,
-	}
-}
-
 // QuotaArrayInput is an input type that accepts QuotaArray and QuotaArrayOutput values.
 // You can construct a concrete instance of `QuotaArrayInput` via:
 //
@@ -282,12 +275,6 @@ func (i QuotaArray) ToQuotaArrayOutput() QuotaArrayOutput {
 
 func (i QuotaArray) ToQuotaArrayOutputWithContext(ctx context.Context) QuotaArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(QuotaArrayOutput)
-}
-
-func (i QuotaArray) ToOutput(ctx context.Context) pulumix.Output[[]*Quota] {
-	return pulumix.Output[[]*Quota]{
-		OutputState: i.ToQuotaArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // QuotaMapInput is an input type that accepts QuotaMap and QuotaMapOutput values.
@@ -315,12 +302,6 @@ func (i QuotaMap) ToQuotaMapOutputWithContext(ctx context.Context) QuotaMapOutpu
 	return pulumi.ToOutputWithContext(ctx, i).(QuotaMapOutput)
 }
 
-func (i QuotaMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*Quota] {
-	return pulumix.Output[map[string]*Quota]{
-		OutputState: i.ToQuotaMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type QuotaOutput struct{ *pulumi.OutputState }
 
 func (QuotaOutput) ElementType() reflect.Type {
@@ -333,12 +314,6 @@ func (o QuotaOutput) ToQuotaOutput() QuotaOutput {
 
 func (o QuotaOutput) ToQuotaOutputWithContext(ctx context.Context) QuotaOutput {
 	return o
-}
-
-func (o QuotaOutput) ToOutput(ctx context.Context) pulumix.Output[*Quota] {
-	return pulumix.Output[*Quota]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The OCID of the compartment containing the resource this quota applies to.
@@ -362,8 +337,8 @@ func (o QuotaOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // this is a computed field which is set to true if any lock is present`
-func (o QuotaOutput) IsLockOverride() pulumi.BoolOutput {
-	return o.ApplyT(func(v *Quota) pulumi.BoolOutput { return v.IsLockOverride }).(pulumi.BoolOutput)
+func (o QuotaOutput) IsLockOverride() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *Quota) pulumi.BoolPtrOutput { return v.IsLockOverride }).(pulumi.BoolPtrOutput)
 }
 
 // Locks associated with this resource.
@@ -377,8 +352,8 @@ func (o QuotaOutput) Name() pulumi.StringOutput {
 }
 
 // The quota's current state.
-func (o QuotaOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *Quota) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o QuotaOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Quota) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) An array of quota statements written in the declarative quota statement language.
@@ -390,8 +365,8 @@ func (o QuotaOutput) Statements() pulumi.StringArrayOutput {
 }
 
 // Date and time the quota was created, in the format defined by RFC 3339. Example: `2016-08-25T21:10:29.600Z`
-func (o QuotaOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *Quota) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o QuotaOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Quota) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 type QuotaArrayOutput struct{ *pulumi.OutputState }
@@ -406,12 +381,6 @@ func (o QuotaArrayOutput) ToQuotaArrayOutput() QuotaArrayOutput {
 
 func (o QuotaArrayOutput) ToQuotaArrayOutputWithContext(ctx context.Context) QuotaArrayOutput {
 	return o
-}
-
-func (o QuotaArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*Quota] {
-	return pulumix.Output[[]*Quota]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o QuotaArrayOutput) Index(i pulumi.IntInput) QuotaOutput {
@@ -432,12 +401,6 @@ func (o QuotaMapOutput) ToQuotaMapOutput() QuotaMapOutput {
 
 func (o QuotaMapOutput) ToQuotaMapOutputWithContext(ctx context.Context) QuotaMapOutput {
 	return o
-}
-
-func (o QuotaMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*Quota] {
-	return pulumix.Output[map[string]*Quota]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o QuotaMapOutput) MapIndex(k pulumi.StringInput) QuotaOutput {

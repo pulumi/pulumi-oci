@@ -91,7 +91,7 @@ export interface GetMediaWorkflowJobsResult {
     /**
      * The list of media_workflow_job_collection.
      */
-    readonly mediaWorkflowJobCollections: outputs.MediaServices.GetMediaWorkflowJobsMediaWorkflowJobCollection[];
+    readonly mediaWorkflowJobCollections?: outputs.MediaServices.GetMediaWorkflowJobsMediaWorkflowJobCollection[];
     /**
      * The current state of the MediaWorkflowJob task.
      */

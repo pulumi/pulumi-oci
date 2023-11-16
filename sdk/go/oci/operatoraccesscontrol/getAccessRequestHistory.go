@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Access Request History resource in Oracle Cloud Infrastructure Operator Access Control service.
@@ -61,7 +60,7 @@ type GetAccessRequestHistoryArgs struct {
 type GetAccessRequestHistoryResult struct {
 	AccessRequestId string `pulumi:"accessRequestId"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// contains AccessRequestHistorySummary
 	Items []GetAccessRequestHistoryItem `pulumi:"items"`
 }
@@ -104,19 +103,13 @@ func (o GetAccessRequestHistoryResultOutput) ToGetAccessRequestHistoryResultOutp
 	return o
 }
 
-func (o GetAccessRequestHistoryResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetAccessRequestHistoryResult] {
-	return pulumix.Output[GetAccessRequestHistoryResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetAccessRequestHistoryResultOutput) AccessRequestId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAccessRequestHistoryResult) string { return v.AccessRequestId }).(pulumi.StringOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetAccessRequestHistoryResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAccessRequestHistoryResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetAccessRequestHistoryResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAccessRequestHistoryResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // contains AccessRequestHistorySummary

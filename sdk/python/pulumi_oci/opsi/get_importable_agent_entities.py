@@ -40,7 +40,7 @@ class GetImportableAgentEntitiesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -48,10 +48,7 @@ class GetImportableAgentEntitiesResult:
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetImportableAgentEntitiesItemResult']:
-        """
-        Array of importable agent entity objects.
-        """
+    def items(self) -> Optional[Sequence['outputs.GetImportableAgentEntitiesItemResult']]:
         return pulumi.get(self, "items")
 
 
@@ -69,25 +66,7 @@ class AwaitableGetImportableAgentEntitiesResult(GetImportableAgentEntitiesResult
 def get_importable_agent_entities(compartment_id: Optional[str] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetImportableAgentEntitiesResult:
     """
-    This data source provides the list of Importable Agent Entities in Oracle Cloud Infrastructure Opsi service.
-
-    Gets a list of agent entities available to add a new hostInsight.  An agent entity is "available"
-    and will be shown if all the following conditions are true:
-       1.  The agent OCID is not already being used for an existing hostInsight.
-       2.  The agent availabilityStatus = 'ACTIVE'
-       3.  The agent lifecycleState = 'ACTIVE'
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_importable_agent_entities = oci.Opsi.get_importable_agent_entities(compartment_id=var["compartment_id"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -104,24 +83,6 @@ def get_importable_agent_entities(compartment_id: Optional[str] = None,
 def get_importable_agent_entities_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetImportableAgentEntitiesResult]:
     """
-    This data source provides the list of Importable Agent Entities in Oracle Cloud Infrastructure Opsi service.
-
-    Gets a list of agent entities available to add a new hostInsight.  An agent entity is "available"
-    and will be shown if all the following conditions are true:
-       1.  The agent OCID is not already being used for an existing hostInsight.
-       2.  The agent availabilityStatus = 'ACTIVE'
-       3.  The agent lifecycleState = 'ACTIVE'
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_importable_agent_entities = oci.Opsi.get_importable_agent_entities(compartment_id=var["compartment_id"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+    Use this data source to access information about an existing resource.
     """
     ...

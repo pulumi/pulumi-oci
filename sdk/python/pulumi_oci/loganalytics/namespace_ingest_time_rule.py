@@ -26,18 +26,6 @@ class NamespaceIngestTimeRuleArgs:
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None):
         """
         The set of arguments for constructing a NamespaceIngestTimeRule resource.
-        :param pulumi.Input[Sequence[pulumi.Input['NamespaceIngestTimeRuleActionArgs']]] actions: (Updatable) The action(s) to be performed if the ingest time rule condition(s) are satisfied.
-        :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param pulumi.Input['NamespaceIngestTimeRuleConditionsArgs'] conditions: (Updatable) The condition(s) to evaluate for an ingest time rule.
-        :param pulumi.Input[str] display_name: (Updatable) The ingest time rule display name.
-        :param pulumi.Input[str] namespace: The Logging Analytics namespace used for the request. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] description: (Updatable) Description for this resource.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         pulumi.set(__self__, "actions", actions)
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -54,9 +42,6 @@ class NamespaceIngestTimeRuleArgs:
     @property
     @pulumi.getter
     def actions(self) -> pulumi.Input[Sequence[pulumi.Input['NamespaceIngestTimeRuleActionArgs']]]:
-        """
-        (Updatable) The action(s) to be performed if the ingest time rule condition(s) are satisfied.
-        """
         return pulumi.get(self, "actions")
 
     @actions.setter
@@ -66,9 +51,6 @@ class NamespaceIngestTimeRuleArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -78,9 +60,6 @@ class NamespaceIngestTimeRuleArgs:
     @property
     @pulumi.getter
     def conditions(self) -> pulumi.Input['NamespaceIngestTimeRuleConditionsArgs']:
-        """
-        (Updatable) The condition(s) to evaluate for an ingest time rule.
-        """
         return pulumi.get(self, "conditions")
 
     @conditions.setter
@@ -90,9 +69,6 @@ class NamespaceIngestTimeRuleArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The ingest time rule display name.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -102,13 +78,6 @@ class NamespaceIngestTimeRuleArgs:
     @property
     @pulumi.getter
     def namespace(self) -> pulumi.Input[str]:
-        """
-        The Logging Analytics namespace used for the request. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "namespace")
 
     @namespace.setter
@@ -118,9 +87,6 @@ class NamespaceIngestTimeRuleArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -130,9 +96,6 @@ class NamespaceIngestTimeRuleArgs:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Description for this resource.
-        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -142,9 +105,6 @@ class NamespaceIngestTimeRuleArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -170,22 +130,6 @@ class _NamespaceIngestTimeRuleState:
                  time_updated: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering NamespaceIngestTimeRule resources.
-        :param pulumi.Input[Sequence[pulumi.Input['NamespaceIngestTimeRuleActionArgs']]] actions: (Updatable) The action(s) to be performed if the ingest time rule condition(s) are satisfied.
-        :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param pulumi.Input['NamespaceIngestTimeRuleConditionsArgs'] conditions: (Updatable) The condition(s) to evaluate for an ingest time rule.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] description: (Updatable) Description for this resource.
-        :param pulumi.Input[str] display_name: (Updatable) The ingest time rule display name.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[bool] is_enabled: A flag indicating whether or not the ingest time rule is enabled.
-        :param pulumi.Input[str] namespace: The Logging Analytics namespace used for the request. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] state: The current state of the ingest time rule.
-        :param pulumi.Input[str] time_created: The date and time the resource was created, in the format defined by RFC3339.
-        :param pulumi.Input[str] time_updated: The date and time the resource was last updated, in the format defined by RFC3339.
         """
         if actions is not None:
             pulumi.set(__self__, "actions", actions)
@@ -217,9 +161,6 @@ class _NamespaceIngestTimeRuleState:
     @property
     @pulumi.getter
     def actions(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NamespaceIngestTimeRuleActionArgs']]]]:
-        """
-        (Updatable) The action(s) to be performed if the ingest time rule condition(s) are satisfied.
-        """
         return pulumi.get(self, "actions")
 
     @actions.setter
@@ -229,9 +170,6 @@ class _NamespaceIngestTimeRuleState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -241,9 +179,6 @@ class _NamespaceIngestTimeRuleState:
     @property
     @pulumi.getter
     def conditions(self) -> Optional[pulumi.Input['NamespaceIngestTimeRuleConditionsArgs']]:
-        """
-        (Updatable) The condition(s) to evaluate for an ingest time rule.
-        """
         return pulumi.get(self, "conditions")
 
     @conditions.setter
@@ -253,9 +188,6 @@ class _NamespaceIngestTimeRuleState:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -265,9 +197,6 @@ class _NamespaceIngestTimeRuleState:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Description for this resource.
-        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -277,9 +206,6 @@ class _NamespaceIngestTimeRuleState:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The ingest time rule display name.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -289,9 +215,6 @@ class _NamespaceIngestTimeRuleState:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -310,9 +233,6 @@ class _NamespaceIngestTimeRuleState:
     @property
     @pulumi.getter(name="isEnabled")
     def is_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        A flag indicating whether or not the ingest time rule is enabled.
-        """
         return pulumi.get(self, "is_enabled")
 
     @is_enabled.setter
@@ -322,13 +242,6 @@ class _NamespaceIngestTimeRuleState:
     @property
     @pulumi.getter
     def namespace(self) -> Optional[pulumi.Input[str]]:
-        """
-        The Logging Analytics namespace used for the request. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "namespace")
 
     @namespace.setter
@@ -338,9 +251,6 @@ class _NamespaceIngestTimeRuleState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The current state of the ingest time rule.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -350,9 +260,6 @@ class _NamespaceIngestTimeRuleState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time the resource was created, in the format defined by RFC3339.
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -362,9 +269,6 @@ class _NamespaceIngestTimeRuleState:
     @property
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time the resource was last updated, in the format defined by RFC3339.
-        """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
@@ -387,70 +291,9 @@ class NamespaceIngestTimeRule(pulumi.CustomResource):
                  namespace: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Namespace Ingest Time Rule resource in Oracle Cloud Infrastructure Log Analytics service.
-
-        Creates a new ingest time rule in the specified compartment. You may also specify optional information such as description, defined tags, and free-form tags.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_namespace_ingest_time_rule = oci.log_analytics.NamespaceIngestTimeRule("testNamespaceIngestTimeRule",
-            actions=[oci.log_analytics.NamespaceIngestTimeRuleActionArgs(
-                compartment_id=var["compartment_id"],
-                metric_name=oci_monitoring_metric["test_metric"]["name"],
-                namespace=var["namespace_ingest_time_rule_actions_namespace"],
-                type=var["namespace_ingest_time_rule_actions_type"],
-                dimensions=var["namespace_ingest_time_rule_actions_dimensions"],
-                resource_group=var["namespace_ingest_time_rule_actions_resource_group"],
-            )],
-            compartment_id=var["compartment_id"],
-            conditions=oci.log_analytics.NamespaceIngestTimeRuleConditionsArgs(
-                field_name=var["namespace_ingest_time_rule_conditions_field_name"],
-                field_operator=var["namespace_ingest_time_rule_conditions_field_operator"],
-                field_value=var["namespace_ingest_time_rule_conditions_field_value"],
-                kind=var["namespace_ingest_time_rule_conditions_kind"],
-                additional_conditions=[oci.log_analytics.NamespaceIngestTimeRuleConditionsAdditionalConditionArgs(
-                    condition_field=var["namespace_ingest_time_rule_conditions_additional_conditions_condition_field"],
-                    condition_operator=var["namespace_ingest_time_rule_conditions_additional_conditions_condition_operator"],
-                    condition_value=var["namespace_ingest_time_rule_conditions_additional_conditions_condition_value"],
-                )],
-            ),
-            display_name=var["namespace_ingest_time_rule_display_name"],
-            namespace=var["namespace_ingest_time_rule_namespace"],
-            defined_tags={
-                "foo-namespace.bar-key": "value",
-            },
-            description=var["namespace_ingest_time_rule_description"],
-            freeform_tags={
-                "bar-key": "value",
-            })
-        ```
-
-        ## Import
-
-        NamespaceIngestTimeRules can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:LogAnalytics/namespaceIngestTimeRule:NamespaceIngestTimeRule test_namespace_ingest_time_rule "namespaces/{namespaceName}/ingestTimeRules/{ingestTimeRuleId}"
-        ```
-
+        Create a NamespaceIngestTimeRule resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NamespaceIngestTimeRuleActionArgs']]]] actions: (Updatable) The action(s) to be performed if the ingest time rule condition(s) are satisfied.
-        :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param pulumi.Input[pulumi.InputType['NamespaceIngestTimeRuleConditionsArgs']] conditions: (Updatable) The condition(s) to evaluate for an ingest time rule.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] description: (Updatable) Description for this resource.
-        :param pulumi.Input[str] display_name: (Updatable) The ingest time rule display name.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] namespace: The Logging Analytics namespace used for the request. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -459,56 +302,7 @@ class NamespaceIngestTimeRule(pulumi.CustomResource):
                  args: NamespaceIngestTimeRuleArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Namespace Ingest Time Rule resource in Oracle Cloud Infrastructure Log Analytics service.
-
-        Creates a new ingest time rule in the specified compartment. You may also specify optional information such as description, defined tags, and free-form tags.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_namespace_ingest_time_rule = oci.log_analytics.NamespaceIngestTimeRule("testNamespaceIngestTimeRule",
-            actions=[oci.log_analytics.NamespaceIngestTimeRuleActionArgs(
-                compartment_id=var["compartment_id"],
-                metric_name=oci_monitoring_metric["test_metric"]["name"],
-                namespace=var["namespace_ingest_time_rule_actions_namespace"],
-                type=var["namespace_ingest_time_rule_actions_type"],
-                dimensions=var["namespace_ingest_time_rule_actions_dimensions"],
-                resource_group=var["namespace_ingest_time_rule_actions_resource_group"],
-            )],
-            compartment_id=var["compartment_id"],
-            conditions=oci.log_analytics.NamespaceIngestTimeRuleConditionsArgs(
-                field_name=var["namespace_ingest_time_rule_conditions_field_name"],
-                field_operator=var["namespace_ingest_time_rule_conditions_field_operator"],
-                field_value=var["namespace_ingest_time_rule_conditions_field_value"],
-                kind=var["namespace_ingest_time_rule_conditions_kind"],
-                additional_conditions=[oci.log_analytics.NamespaceIngestTimeRuleConditionsAdditionalConditionArgs(
-                    condition_field=var["namespace_ingest_time_rule_conditions_additional_conditions_condition_field"],
-                    condition_operator=var["namespace_ingest_time_rule_conditions_additional_conditions_condition_operator"],
-                    condition_value=var["namespace_ingest_time_rule_conditions_additional_conditions_condition_value"],
-                )],
-            ),
-            display_name=var["namespace_ingest_time_rule_display_name"],
-            namespace=var["namespace_ingest_time_rule_namespace"],
-            defined_tags={
-                "foo-namespace.bar-key": "value",
-            },
-            description=var["namespace_ingest_time_rule_description"],
-            freeform_tags={
-                "bar-key": "value",
-            })
-        ```
-
-        ## Import
-
-        NamespaceIngestTimeRules can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:LogAnalytics/namespaceIngestTimeRule:NamespaceIngestTimeRule test_namespace_ingest_time_rule "namespaces/{namespaceName}/ingestTimeRules/{ingestTimeRuleId}"
-        ```
-
+        Create a NamespaceIngestTimeRule resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param NamespaceIngestTimeRuleArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -594,22 +388,6 @@ class NamespaceIngestTimeRule(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NamespaceIngestTimeRuleActionArgs']]]] actions: (Updatable) The action(s) to be performed if the ingest time rule condition(s) are satisfied.
-        :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param pulumi.Input[pulumi.InputType['NamespaceIngestTimeRuleConditionsArgs']] conditions: (Updatable) The condition(s) to evaluate for an ingest time rule.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] description: (Updatable) Description for this resource.
-        :param pulumi.Input[str] display_name: (Updatable) The ingest time rule display name.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[bool] is_enabled: A flag indicating whether or not the ingest time rule is enabled.
-        :param pulumi.Input[str] namespace: The Logging Analytics namespace used for the request. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] state: The current state of the ingest time rule.
-        :param pulumi.Input[str] time_created: The date and time the resource was created, in the format defined by RFC3339.
-        :param pulumi.Input[str] time_updated: The date and time the resource was last updated, in the format defined by RFC3339.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -633,105 +411,65 @@ class NamespaceIngestTimeRule(pulumi.CustomResource):
     @property
     @pulumi.getter
     def actions(self) -> pulumi.Output[Sequence['outputs.NamespaceIngestTimeRuleAction']]:
-        """
-        (Updatable) The action(s) to be performed if the ingest time rule condition(s) are satisfied.
-        """
         return pulumi.get(self, "actions")
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter
     def conditions(self) -> pulumi.Output['outputs.NamespaceIngestTimeRuleConditions']:
-        """
-        (Updatable) The condition(s) to evaluate for an ingest time rule.
-        """
         return pulumi.get(self, "conditions")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def description(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Description for this resource.
-        """
+    def description(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The ingest time rule display name.
-        """
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="ingestTimeRuleId")
-    def ingest_time_rule_id(self) -> pulumi.Output[str]:
+    def ingest_time_rule_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "ingest_time_rule_id")
 
     @property
     @pulumi.getter(name="isEnabled")
-    def is_enabled(self) -> pulumi.Output[bool]:
-        """
-        A flag indicating whether or not the ingest time rule is enabled.
-        """
+    def is_enabled(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "is_enabled")
 
     @property
     @pulumi.getter
     def namespace(self) -> pulumi.Output[str]:
-        """
-        The Logging Analytics namespace used for the request. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "namespace")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        The current state of the ingest time rule.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        The date and time the resource was created, in the format defined by RFC3339.
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> pulumi.Output[str]:
-        """
-        The date and time the resource was last updated, in the format defined by RFC3339.
-        """
+    def time_updated(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_updated")
 

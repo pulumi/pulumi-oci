@@ -90,12 +90,12 @@ export interface GetManagedDatabaseAttentionLogCountResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly isRegularExpression?: boolean;
     /**
      * An array of the counts of different urgency or type of attention logs.
      */
-    readonly items: outputs.DatabaseManagement.GetManagedDatabaseAttentionLogCountItem[];
+    readonly items?: outputs.DatabaseManagement.GetManagedDatabaseAttentionLogCountItem[];
     readonly logSearchText?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.

@@ -101,7 +101,7 @@ export interface GetManagedInstanceModuleStreamsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly managedInstanceId: string;
     /**
      * The name of the module that contains the stream profile
@@ -110,7 +110,7 @@ export interface GetManagedInstanceModuleStreamsResult {
     /**
      * The list of module_stream_on_managed_instances.
      */
-    readonly moduleStreamOnManagedInstances: outputs.OsManagement.GetManagedInstanceModuleStreamsModuleStreamOnManagedInstance[];
+    readonly moduleStreamOnManagedInstances?: outputs.OsManagement.GetManagedInstanceModuleStreamsModuleStreamOnManagedInstance[];
     /**
      * The name of the stream.
      */

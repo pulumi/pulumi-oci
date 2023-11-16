@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Autonomous Database Dataguard Associations in Oracle Cloud Infrastructure Database service.
@@ -66,7 +65,7 @@ type GetAutonomousDatabaseDataguardAssociationsResult struct {
 	AutonomousDatabaseId string                                             `pulumi:"autonomousDatabaseId"`
 	Filters              []GetAutonomousDatabaseDataguardAssociationsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 }
 
 func GetAutonomousDatabaseDataguardAssociationsOutput(ctx *pulumi.Context, args GetAutonomousDatabaseDataguardAssociationsOutputArgs, opts ...pulumi.InvokeOption) GetAutonomousDatabaseDataguardAssociationsResultOutput {
@@ -108,12 +107,6 @@ func (o GetAutonomousDatabaseDataguardAssociationsResultOutput) ToGetAutonomousD
 	return o
 }
 
-func (o GetAutonomousDatabaseDataguardAssociationsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetAutonomousDatabaseDataguardAssociationsResult] {
-	return pulumix.Output[GetAutonomousDatabaseDataguardAssociationsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The list of autonomous_database_dataguard_associations.
 func (o GetAutonomousDatabaseDataguardAssociationsResultOutput) AutonomousDatabaseDataguardAssociations() GetAutonomousDatabaseDataguardAssociationsAutonomousDatabaseDataguardAssociationArrayOutput {
 	return o.ApplyT(func(v GetAutonomousDatabaseDataguardAssociationsResult) []GetAutonomousDatabaseDataguardAssociationsAutonomousDatabaseDataguardAssociation {
@@ -133,8 +126,8 @@ func (o GetAutonomousDatabaseDataguardAssociationsResultOutput) Filters() GetAut
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetAutonomousDatabaseDataguardAssociationsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAutonomousDatabaseDataguardAssociationsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetAutonomousDatabaseDataguardAssociationsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAutonomousDatabaseDataguardAssociationsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func init() {

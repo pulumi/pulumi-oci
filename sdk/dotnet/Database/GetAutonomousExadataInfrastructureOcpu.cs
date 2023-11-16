@@ -115,15 +115,15 @@ namespace Pulumi.Oci.Database
         /// <summary>
         /// The total number of consumed OCPUs in the Autonomous Exadata Infrastructure instance.
         /// </summary>
-        public readonly double ConsumedCpu;
+        public readonly double? ConsumedCpu;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The total number of OCPUs in the Autonomous Exadata Infrastructure instance.
         /// </summary>
-        public readonly double TotalCpu;
+        public readonly double? TotalCpu;
 
         [OutputConstructor]
         private GetAutonomousExadataInfrastructureOcpuResult(
@@ -131,11 +131,11 @@ namespace Pulumi.Oci.Database
 
             ImmutableArray<Outputs.GetAutonomousExadataInfrastructureOcpuByWorkloadTypeResult> byWorkloadTypes,
 
-            double consumedCpu,
+            double? consumedCpu,
 
-            string id,
+            string? id,
 
-            double totalCpu)
+            double? totalCpu)
         {
             AutonomousExadataInfrastructureId = autonomousExadataInfrastructureId;
             ByWorkloadTypes = byWorkloadTypes;

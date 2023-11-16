@@ -206,7 +206,7 @@ namespace Pulumi.Oci.Database
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         public readonly bool? IsDatabaseSoftwareImageSupported;
         /// <summary>
         /// True if this version of the Oracle Database software is supported for Upgrade.
@@ -226,7 +226,7 @@ namespace Pulumi.Oci.Database
 
             ImmutableArray<Outputs.GetDbVersionsFilterResult> filters,
 
-            string id,
+            string? id,
 
             bool? isDatabaseSoftwareImageSupported,
 

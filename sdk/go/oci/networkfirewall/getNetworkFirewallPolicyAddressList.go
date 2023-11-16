@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Network Firewall Policy Address List resource in Oracle Cloud Infrastructure Network Firewall service.
@@ -37,16 +36,16 @@ type LookupNetworkFirewallPolicyAddressListArgs struct {
 type LookupNetworkFirewallPolicyAddressListResult struct {
 	// List of addresses.
 	Addresses []string `pulumi:"addresses"`
-	Id        string   `pulumi:"id"`
+	Id        *string  `pulumi:"id"`
 	// Unique name to identify the group of addresses to be used in the policy rules.
 	Name                    string `pulumi:"name"`
 	NetworkFirewallPolicyId string `pulumi:"networkFirewallPolicyId"`
 	// OCID of the Network Firewall Policy this Address List belongs to.
-	ParentResourceId string `pulumi:"parentResourceId"`
+	ParentResourceId *string `pulumi:"parentResourceId"`
 	// Count of total Addresses in the AddressList
-	TotalAddresses int `pulumi:"totalAddresses"`
+	TotalAddresses *int `pulumi:"totalAddresses"`
 	// Type of address List.
-	Type string `pulumi:"type"`
+	Type *string `pulumi:"type"`
 }
 
 func LookupNetworkFirewallPolicyAddressListOutput(ctx *pulumi.Context, args LookupNetworkFirewallPolicyAddressListOutputArgs, opts ...pulumi.InvokeOption) LookupNetworkFirewallPolicyAddressListResultOutput {
@@ -89,19 +88,13 @@ func (o LookupNetworkFirewallPolicyAddressListResultOutput) ToLookupNetworkFirew
 	return o
 }
 
-func (o LookupNetworkFirewallPolicyAddressListResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupNetworkFirewallPolicyAddressListResult] {
-	return pulumix.Output[LookupNetworkFirewallPolicyAddressListResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // List of addresses.
 func (o LookupNetworkFirewallPolicyAddressListResultOutput) Addresses() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v LookupNetworkFirewallPolicyAddressListResult) []string { return v.Addresses }).(pulumi.StringArrayOutput)
 }
 
-func (o LookupNetworkFirewallPolicyAddressListResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupNetworkFirewallPolicyAddressListResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupNetworkFirewallPolicyAddressListResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupNetworkFirewallPolicyAddressListResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Unique name to identify the group of addresses to be used in the policy rules.
@@ -114,18 +107,18 @@ func (o LookupNetworkFirewallPolicyAddressListResultOutput) NetworkFirewallPolic
 }
 
 // OCID of the Network Firewall Policy this Address List belongs to.
-func (o LookupNetworkFirewallPolicyAddressListResultOutput) ParentResourceId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupNetworkFirewallPolicyAddressListResult) string { return v.ParentResourceId }).(pulumi.StringOutput)
+func (o LookupNetworkFirewallPolicyAddressListResultOutput) ParentResourceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupNetworkFirewallPolicyAddressListResult) *string { return v.ParentResourceId }).(pulumi.StringPtrOutput)
 }
 
 // Count of total Addresses in the AddressList
-func (o LookupNetworkFirewallPolicyAddressListResultOutput) TotalAddresses() pulumi.IntOutput {
-	return o.ApplyT(func(v LookupNetworkFirewallPolicyAddressListResult) int { return v.TotalAddresses }).(pulumi.IntOutput)
+func (o LookupNetworkFirewallPolicyAddressListResultOutput) TotalAddresses() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LookupNetworkFirewallPolicyAddressListResult) *int { return v.TotalAddresses }).(pulumi.IntPtrOutput)
 }
 
 // Type of address List.
-func (o LookupNetworkFirewallPolicyAddressListResultOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupNetworkFirewallPolicyAddressListResult) string { return v.Type }).(pulumi.StringOutput)
+func (o LookupNetworkFirewallPolicyAddressListResultOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupNetworkFirewallPolicyAddressListResult) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
 
 func init() {

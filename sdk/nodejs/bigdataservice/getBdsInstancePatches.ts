@@ -51,11 +51,11 @@ export interface GetBdsInstancePatchesResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The list of patches.
      */
-    readonly patches: outputs.BigDataService.GetBdsInstancePatchesPatch[];
+    readonly patches?: outputs.BigDataService.GetBdsInstancePatchesPatch[];
 }
 /**
  * This data source provides the list of Bds Instance Patches in Oracle Cloud Infrastructure Big Data Service service.

@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetLimitDefinitionsLimitDefinition {
@@ -14,111 +16,111 @@ public final class GetLimitDefinitionsLimitDefinition {
      * @return If true, quota policies can be created on top of this resource limit.
      * 
      */
-    private Boolean areQuotasSupported;
+    private @Nullable Boolean areQuotasSupported;
     /**
      * @return The limit description.
      * 
      */
-    private String description;
+    private @Nullable String description;
     /**
      * @return Indicates if the limit has been deprecated.
      * 
      */
-    private Boolean isDeprecated;
+    private @Nullable Boolean isDeprecated;
     /**
      * @return The limit for this resource has a dynamic value that is based on consumption across all Oracle Cloud Infrastructure services.
      * 
      */
-    private Boolean isDynamic;
+    private @Nullable Boolean isDynamic;
     /**
      * @return Indicates if the customer can request a limit increase for this resource.
      * 
      */
-    private Boolean isEligibleForLimitIncrease;
+    private @Nullable Boolean isEligibleForLimitIncrease;
     /**
      * @return Reflects whether or not the GetResourceAvailability API is supported for this limit. If not, the API returns an empty JSON response.
      * 
      */
-    private Boolean isResourceAvailabilitySupported;
+    private @Nullable Boolean isResourceAvailabilitySupported;
     /**
      * @return Optional field, filter for a specific resource limit.
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return Reflects the scope of the resource limit, whether Global (across all regions), regional, or availability domain-specific.
      * 
      */
-    private String scopeType;
+    private @Nullable String scopeType;
     /**
      * @return The target service name.
      * 
      */
-    private String serviceName;
+    private @Nullable String serviceName;
 
     private GetLimitDefinitionsLimitDefinition() {}
     /**
      * @return If true, quota policies can be created on top of this resource limit.
      * 
      */
-    public Boolean areQuotasSupported() {
-        return this.areQuotasSupported;
+    public Optional<Boolean> areQuotasSupported() {
+        return Optional.ofNullable(this.areQuotasSupported);
     }
     /**
      * @return The limit description.
      * 
      */
-    public String description() {
-        return this.description;
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
     /**
      * @return Indicates if the limit has been deprecated.
      * 
      */
-    public Boolean isDeprecated() {
-        return this.isDeprecated;
+    public Optional<Boolean> isDeprecated() {
+        return Optional.ofNullable(this.isDeprecated);
     }
     /**
      * @return The limit for this resource has a dynamic value that is based on consumption across all Oracle Cloud Infrastructure services.
      * 
      */
-    public Boolean isDynamic() {
-        return this.isDynamic;
+    public Optional<Boolean> isDynamic() {
+        return Optional.ofNullable(this.isDynamic);
     }
     /**
      * @return Indicates if the customer can request a limit increase for this resource.
      * 
      */
-    public Boolean isEligibleForLimitIncrease() {
-        return this.isEligibleForLimitIncrease;
+    public Optional<Boolean> isEligibleForLimitIncrease() {
+        return Optional.ofNullable(this.isEligibleForLimitIncrease);
     }
     /**
      * @return Reflects whether or not the GetResourceAvailability API is supported for this limit. If not, the API returns an empty JSON response.
      * 
      */
-    public Boolean isResourceAvailabilitySupported() {
-        return this.isResourceAvailabilitySupported;
+    public Optional<Boolean> isResourceAvailabilitySupported() {
+        return Optional.ofNullable(this.isResourceAvailabilitySupported);
     }
     /**
      * @return Optional field, filter for a specific resource limit.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return Reflects the scope of the resource limit, whether Global (across all regions), regional, or availability domain-specific.
      * 
      */
-    public String scopeType() {
-        return this.scopeType;
+    public Optional<String> scopeType() {
+        return Optional.ofNullable(this.scopeType);
     }
     /**
      * @return The target service name.
      * 
      */
-    public String serviceName() {
-        return this.serviceName;
+    public Optional<String> serviceName() {
+        return Optional.ofNullable(this.serviceName);
     }
 
     public static Builder builder() {
@@ -130,15 +132,15 @@ public final class GetLimitDefinitionsLimitDefinition {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Boolean areQuotasSupported;
-        private String description;
-        private Boolean isDeprecated;
-        private Boolean isDynamic;
-        private Boolean isEligibleForLimitIncrease;
-        private Boolean isResourceAvailabilitySupported;
-        private String name;
-        private String scopeType;
-        private String serviceName;
+        private @Nullable Boolean areQuotasSupported;
+        private @Nullable String description;
+        private @Nullable Boolean isDeprecated;
+        private @Nullable Boolean isDynamic;
+        private @Nullable Boolean isEligibleForLimitIncrease;
+        private @Nullable Boolean isResourceAvailabilitySupported;
+        private @Nullable String name;
+        private @Nullable String scopeType;
+        private @Nullable String serviceName;
         public Builder() {}
         public Builder(GetLimitDefinitionsLimitDefinition defaults) {
     	      Objects.requireNonNull(defaults);
@@ -154,48 +156,48 @@ public final class GetLimitDefinitionsLimitDefinition {
         }
 
         @CustomType.Setter
-        public Builder areQuotasSupported(Boolean areQuotasSupported) {
-            this.areQuotasSupported = Objects.requireNonNull(areQuotasSupported);
+        public Builder areQuotasSupported(@Nullable Boolean areQuotasSupported) {
+            this.areQuotasSupported = areQuotasSupported;
             return this;
         }
         @CustomType.Setter
-        public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+        public Builder description(@Nullable String description) {
+            this.description = description;
             return this;
         }
         @CustomType.Setter
-        public Builder isDeprecated(Boolean isDeprecated) {
-            this.isDeprecated = Objects.requireNonNull(isDeprecated);
+        public Builder isDeprecated(@Nullable Boolean isDeprecated) {
+            this.isDeprecated = isDeprecated;
             return this;
         }
         @CustomType.Setter
-        public Builder isDynamic(Boolean isDynamic) {
-            this.isDynamic = Objects.requireNonNull(isDynamic);
+        public Builder isDynamic(@Nullable Boolean isDynamic) {
+            this.isDynamic = isDynamic;
             return this;
         }
         @CustomType.Setter
-        public Builder isEligibleForLimitIncrease(Boolean isEligibleForLimitIncrease) {
-            this.isEligibleForLimitIncrease = Objects.requireNonNull(isEligibleForLimitIncrease);
+        public Builder isEligibleForLimitIncrease(@Nullable Boolean isEligibleForLimitIncrease) {
+            this.isEligibleForLimitIncrease = isEligibleForLimitIncrease;
             return this;
         }
         @CustomType.Setter
-        public Builder isResourceAvailabilitySupported(Boolean isResourceAvailabilitySupported) {
-            this.isResourceAvailabilitySupported = Objects.requireNonNull(isResourceAvailabilitySupported);
+        public Builder isResourceAvailabilitySupported(@Nullable Boolean isResourceAvailabilitySupported) {
+            this.isResourceAvailabilitySupported = isResourceAvailabilitySupported;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder scopeType(String scopeType) {
-            this.scopeType = Objects.requireNonNull(scopeType);
+        public Builder scopeType(@Nullable String scopeType) {
+            this.scopeType = scopeType;
             return this;
         }
         @CustomType.Setter
-        public Builder serviceName(String serviceName) {
-            this.serviceName = Objects.requireNonNull(serviceName);
+        public Builder serviceName(@Nullable String serviceName) {
+            this.serviceName = serviceName;
             return this;
         }
         public GetLimitDefinitionsLimitDefinition build() {

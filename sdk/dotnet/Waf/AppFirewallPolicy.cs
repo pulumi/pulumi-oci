@@ -239,61 +239,61 @@ namespace Pulumi.Oci.Waf
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) WebAppFirewallPolicy display name, can be renamed.
         /// </summary>
         [Output("displayName")]
-        public Output<string> DisplayName { get; private set; } = null!;
+        public Output<string?> DisplayName { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in FAILED state.
         /// </summary>
         [Output("lifecycleDetails")]
-        public Output<string> LifecycleDetails { get; private set; } = null!;
+        public Output<string?> LifecycleDetails { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Module that allows inspection of HTTP request properties and to return a defined HTTP response. In this module, rules with the name 'Default Action' are not allowed, since this name is reserved for default action logs.
         /// </summary>
         [Output("requestAccessControl")]
-        public Output<Outputs.AppFirewallPolicyRequestAccessControl> RequestAccessControl { get; private set; } = null!;
+        public Output<Outputs.AppFirewallPolicyRequestAccessControl?> RequestAccessControl { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Module that allows to enable OCI-managed protection capabilities for incoming HTTP requests.
         /// </summary>
         [Output("requestProtection")]
-        public Output<Outputs.AppFirewallPolicyRequestProtection> RequestProtection { get; private set; } = null!;
+        public Output<Outputs.AppFirewallPolicyRequestProtection?> RequestProtection { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Module that allows inspection of HTTP connection properties and to limit requests frequency for a given key.
         /// </summary>
         [Output("requestRateLimiting")]
-        public Output<Outputs.AppFirewallPolicyRequestRateLimiting> RequestRateLimiting { get; private set; } = null!;
+        public Output<Outputs.AppFirewallPolicyRequestRateLimiting?> RequestRateLimiting { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Module that allows inspection of HTTP response properties and to return a defined HTTP response.
         /// </summary>
         [Output("responseAccessControl")]
-        public Output<Outputs.AppFirewallPolicyResponseAccessControl> ResponseAccessControl { get; private set; } = null!;
+        public Output<Outputs.AppFirewallPolicyResponseAccessControl?> ResponseAccessControl { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Module that allows to enable OCI-managed protection capabilities for HTTP responses.
         /// </summary>
         [Output("responseProtection")]
-        public Output<Outputs.AppFirewallPolicyResponseProtection> ResponseProtection { get; private set; } = null!;
+        public Output<Outputs.AppFirewallPolicyResponseProtection?> ResponseProtection { get; private set; } = null!;
 
         /// <summary>
         /// The current state of the WebAppFirewallPolicy.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}` 
@@ -303,19 +303,19 @@ namespace Pulumi.Oci.Waf
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("systemTags")]
-        public Output<ImmutableDictionary<string, object>> SystemTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> SystemTags { get; private set; } = null!;
 
         /// <summary>
         /// The time the WebAppFirewallPolicy was created. An RFC3339 formatted datetime string.
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// The time the WebAppFirewallPolicy was updated. An RFC3339 formatted datetime string.
         /// </summary>
         [Output("timeUpdated")]
-        public Output<string> TimeUpdated { get; private set; } = null!;
+        public Output<string?> TimeUpdated { get; private set; } = null!;
 
 
         /// <summary>

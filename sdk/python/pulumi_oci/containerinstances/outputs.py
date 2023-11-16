@@ -53,1020 +53,858 @@ __all__ = [
 @pulumi.output_type
 class GetContainerInstanceContainerResult(dict):
     def __init__(__self__, *,
-                 arguments: Sequence[str],
-                 availability_domain: str,
-                 commands: Sequence[str],
-                 compartment_id: str,
-                 container_id: str,
-                 container_instance_id: str,
-                 defined_tags: Mapping[str, Any],
-                 display_name: str,
-                 environment_variables: Mapping[str, Any],
-                 exit_code: int,
-                 fault_domain: str,
-                 freeform_tags: Mapping[str, Any],
-                 health_checks: Sequence['outputs.GetContainerInstanceContainerHealthCheckResult'],
-                 image_url: str,
-                 is_resource_principal_disabled: bool,
-                 lifecycle_details: str,
-                 resource_configs: Sequence['outputs.GetContainerInstanceContainerResourceConfigResult'],
-                 security_contexts: Sequence['outputs.GetContainerInstanceContainerSecurityContextResult'],
-                 state: str,
-                 system_tags: Mapping[str, Any],
-                 time_created: str,
-                 time_terminated: str,
-                 time_updated: str,
-                 volume_mounts: Sequence['outputs.GetContainerInstanceContainerVolumeMountResult'],
-                 working_directory: str):
-        """
-        :param str availability_domain: The availability domain to place the container instance.
-        :param str compartment_id: The OCID of the compartment.
-        :param str container_id: The OCID of the container.
-        :param str container_instance_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the container instance.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
-        :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param str fault_domain: The fault domain to place the container instance.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param str lifecycle_details: A message that describes the current state of the container in more detail. Can be used to provide actionable information.
-        :param str state: The current state of the container instance.
-        :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`.
-        :param str time_created: The time the container instance was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-        :param str time_updated: The time the container instance was updated, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-        """
-        pulumi.set(__self__, "arguments", arguments)
-        pulumi.set(__self__, "availability_domain", availability_domain)
-        pulumi.set(__self__, "commands", commands)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "container_id", container_id)
-        pulumi.set(__self__, "container_instance_id", container_instance_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "environment_variables", environment_variables)
-        pulumi.set(__self__, "exit_code", exit_code)
-        pulumi.set(__self__, "fault_domain", fault_domain)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "health_checks", health_checks)
-        pulumi.set(__self__, "image_url", image_url)
-        pulumi.set(__self__, "is_resource_principal_disabled", is_resource_principal_disabled)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "resource_configs", resource_configs)
-        pulumi.set(__self__, "security_contexts", security_contexts)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_terminated", time_terminated)
-        pulumi.set(__self__, "time_updated", time_updated)
-        pulumi.set(__self__, "volume_mounts", volume_mounts)
-        pulumi.set(__self__, "working_directory", working_directory)
+                 arguments: Optional[Sequence[str]] = None,
+                 availability_domain: Optional[str] = None,
+                 commands: Optional[Sequence[str]] = None,
+                 compartment_id: Optional[str] = None,
+                 container_id: Optional[str] = None,
+                 container_instance_id: Optional[str] = None,
+                 defined_tags: Optional[Mapping[str, Any]] = None,
+                 display_name: Optional[str] = None,
+                 environment_variables: Optional[Mapping[str, Any]] = None,
+                 exit_code: Optional[int] = None,
+                 fault_domain: Optional[str] = None,
+                 freeform_tags: Optional[Mapping[str, Any]] = None,
+                 health_checks: Optional[Sequence['outputs.GetContainerInstanceContainerHealthCheckResult']] = None,
+                 image_url: Optional[str] = None,
+                 is_resource_principal_disabled: Optional[bool] = None,
+                 lifecycle_details: Optional[str] = None,
+                 resource_configs: Optional[Sequence['outputs.GetContainerInstanceContainerResourceConfigResult']] = None,
+                 security_contexts: Optional[Sequence['outputs.GetContainerInstanceContainerSecurityContextResult']] = None,
+                 state: Optional[str] = None,
+                 system_tags: Optional[Mapping[str, Any]] = None,
+                 time_created: Optional[str] = None,
+                 time_terminated: Optional[str] = None,
+                 time_updated: Optional[str] = None,
+                 volume_mounts: Optional[Sequence['outputs.GetContainerInstanceContainerVolumeMountResult']] = None,
+                 working_directory: Optional[str] = None):
+        if arguments is not None:
+            pulumi.set(__self__, "arguments", arguments)
+        if availability_domain is not None:
+            pulumi.set(__self__, "availability_domain", availability_domain)
+        if commands is not None:
+            pulumi.set(__self__, "commands", commands)
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if container_id is not None:
+            pulumi.set(__self__, "container_id", container_id)
+        if container_instance_id is not None:
+            pulumi.set(__self__, "container_instance_id", container_instance_id)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if environment_variables is not None:
+            pulumi.set(__self__, "environment_variables", environment_variables)
+        if exit_code is not None:
+            pulumi.set(__self__, "exit_code", exit_code)
+        if fault_domain is not None:
+            pulumi.set(__self__, "fault_domain", fault_domain)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if health_checks is not None:
+            pulumi.set(__self__, "health_checks", health_checks)
+        if image_url is not None:
+            pulumi.set(__self__, "image_url", image_url)
+        if is_resource_principal_disabled is not None:
+            pulumi.set(__self__, "is_resource_principal_disabled", is_resource_principal_disabled)
+        if lifecycle_details is not None:
+            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if resource_configs is not None:
+            pulumi.set(__self__, "resource_configs", resource_configs)
+        if security_contexts is not None:
+            pulumi.set(__self__, "security_contexts", security_contexts)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if system_tags is not None:
+            pulumi.set(__self__, "system_tags", system_tags)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if time_terminated is not None:
+            pulumi.set(__self__, "time_terminated", time_terminated)
+        if time_updated is not None:
+            pulumi.set(__self__, "time_updated", time_updated)
+        if volume_mounts is not None:
+            pulumi.set(__self__, "volume_mounts", volume_mounts)
+        if working_directory is not None:
+            pulumi.set(__self__, "working_directory", working_directory)
 
     @property
     @pulumi.getter
-    def arguments(self) -> Sequence[str]:
+    def arguments(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "arguments")
 
     @property
     @pulumi.getter(name="availabilityDomain")
-    def availability_domain(self) -> str:
-        """
-        The availability domain to place the container instance.
-        """
+    def availability_domain(self) -> Optional[str]:
         return pulumi.get(self, "availability_domain")
 
     @property
     @pulumi.getter
-    def commands(self) -> Sequence[str]:
+    def commands(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "commands")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The OCID of the compartment.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="containerId")
-    def container_id(self) -> str:
-        """
-        The OCID of the container.
-        """
+    def container_id(self) -> Optional[str]:
         return pulumi.get(self, "container_id")
 
     @property
     @pulumi.getter(name="containerInstanceId")
-    def container_instance_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the container instance.
-        """
+    def container_instance_id(self) -> Optional[str]:
         return pulumi.get(self, "container_instance_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="environmentVariables")
-    def environment_variables(self) -> Mapping[str, Any]:
+    def environment_variables(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "environment_variables")
 
     @property
     @pulumi.getter(name="exitCode")
-    def exit_code(self) -> int:
+    def exit_code(self) -> Optional[int]:
         return pulumi.get(self, "exit_code")
 
     @property
     @pulumi.getter(name="faultDomain")
-    def fault_domain(self) -> str:
-        """
-        The fault domain to place the container instance.
-        """
+    def fault_domain(self) -> Optional[str]:
         return pulumi.get(self, "fault_domain")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="healthChecks")
-    def health_checks(self) -> Sequence['outputs.GetContainerInstanceContainerHealthCheckResult']:
+    def health_checks(self) -> Optional[Sequence['outputs.GetContainerInstanceContainerHealthCheckResult']]:
         return pulumi.get(self, "health_checks")
 
     @property
     @pulumi.getter(name="imageUrl")
-    def image_url(self) -> str:
+    def image_url(self) -> Optional[str]:
         return pulumi.get(self, "image_url")
 
     @property
     @pulumi.getter(name="isResourcePrincipalDisabled")
-    def is_resource_principal_disabled(self) -> bool:
+    def is_resource_principal_disabled(self) -> Optional[bool]:
         return pulumi.get(self, "is_resource_principal_disabled")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        A message that describes the current state of the container in more detail. Can be used to provide actionable information.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="resourceConfigs")
-    def resource_configs(self) -> Sequence['outputs.GetContainerInstanceContainerResourceConfigResult']:
+    def resource_configs(self) -> Optional[Sequence['outputs.GetContainerInstanceContainerResourceConfigResult']]:
         return pulumi.get(self, "resource_configs")
 
     @property
     @pulumi.getter(name="securityContexts")
-    def security_contexts(self) -> Sequence['outputs.GetContainerInstanceContainerSecurityContextResult']:
+    def security_contexts(self) -> Optional[Sequence['outputs.GetContainerInstanceContainerSecurityContextResult']]:
         return pulumi.get(self, "security_contexts")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the container instance.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`.
-        """
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The time the container instance was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeTerminated")
-    def time_terminated(self) -> str:
+    def time_terminated(self) -> Optional[str]:
         return pulumi.get(self, "time_terminated")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The time the container instance was updated, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
     @property
     @pulumi.getter(name="volumeMounts")
-    def volume_mounts(self) -> Sequence['outputs.GetContainerInstanceContainerVolumeMountResult']:
+    def volume_mounts(self) -> Optional[Sequence['outputs.GetContainerInstanceContainerVolumeMountResult']]:
         return pulumi.get(self, "volume_mounts")
 
     @property
     @pulumi.getter(name="workingDirectory")
-    def working_directory(self) -> str:
+    def working_directory(self) -> Optional[str]:
         return pulumi.get(self, "working_directory")
 
 
 @pulumi.output_type
 class GetContainerInstanceContainerHealthCheckResult(dict):
     def __init__(__self__, *,
-                 commands: Sequence[str],
-                 failure_action: str,
-                 failure_threshold: int,
-                 headers: Sequence['outputs.GetContainerInstanceContainerHealthCheckHeaderResult'],
-                 health_check_type: str,
-                 initial_delay_in_seconds: int,
-                 interval_in_seconds: int,
-                 name: str,
-                 path: str,
-                 port: int,
-                 status: str,
-                 status_details: str,
-                 success_threshold: int,
-                 timeout_in_seconds: int):
-        """
-        :param str name: The name of the volume. This must be unique within a single container instance.
-        :param str path: (Optional) Relative path for this file inside the volume mount directory. By default, the file is presented at the root of the volume mount path.
-        """
-        pulumi.set(__self__, "commands", commands)
-        pulumi.set(__self__, "failure_action", failure_action)
-        pulumi.set(__self__, "failure_threshold", failure_threshold)
-        pulumi.set(__self__, "headers", headers)
-        pulumi.set(__self__, "health_check_type", health_check_type)
-        pulumi.set(__self__, "initial_delay_in_seconds", initial_delay_in_seconds)
-        pulumi.set(__self__, "interval_in_seconds", interval_in_seconds)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "path", path)
-        pulumi.set(__self__, "port", port)
-        pulumi.set(__self__, "status", status)
-        pulumi.set(__self__, "status_details", status_details)
-        pulumi.set(__self__, "success_threshold", success_threshold)
-        pulumi.set(__self__, "timeout_in_seconds", timeout_in_seconds)
+                 commands: Optional[Sequence[str]] = None,
+                 failure_action: Optional[str] = None,
+                 failure_threshold: Optional[int] = None,
+                 headers: Optional[Sequence['outputs.GetContainerInstanceContainerHealthCheckHeaderResult']] = None,
+                 health_check_type: Optional[str] = None,
+                 initial_delay_in_seconds: Optional[int] = None,
+                 interval_in_seconds: Optional[int] = None,
+                 name: Optional[str] = None,
+                 path: Optional[str] = None,
+                 port: Optional[int] = None,
+                 status: Optional[str] = None,
+                 status_details: Optional[str] = None,
+                 success_threshold: Optional[int] = None,
+                 timeout_in_seconds: Optional[int] = None):
+        if commands is not None:
+            pulumi.set(__self__, "commands", commands)
+        if failure_action is not None:
+            pulumi.set(__self__, "failure_action", failure_action)
+        if failure_threshold is not None:
+            pulumi.set(__self__, "failure_threshold", failure_threshold)
+        if headers is not None:
+            pulumi.set(__self__, "headers", headers)
+        if health_check_type is not None:
+            pulumi.set(__self__, "health_check_type", health_check_type)
+        if initial_delay_in_seconds is not None:
+            pulumi.set(__self__, "initial_delay_in_seconds", initial_delay_in_seconds)
+        if interval_in_seconds is not None:
+            pulumi.set(__self__, "interval_in_seconds", interval_in_seconds)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if path is not None:
+            pulumi.set(__self__, "path", path)
+        if port is not None:
+            pulumi.set(__self__, "port", port)
+        if status is not None:
+            pulumi.set(__self__, "status", status)
+        if status_details is not None:
+            pulumi.set(__self__, "status_details", status_details)
+        if success_threshold is not None:
+            pulumi.set(__self__, "success_threshold", success_threshold)
+        if timeout_in_seconds is not None:
+            pulumi.set(__self__, "timeout_in_seconds", timeout_in_seconds)
 
     @property
     @pulumi.getter
-    def commands(self) -> Sequence[str]:
+    def commands(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "commands")
 
     @property
     @pulumi.getter(name="failureAction")
-    def failure_action(self) -> str:
+    def failure_action(self) -> Optional[str]:
         return pulumi.get(self, "failure_action")
 
     @property
     @pulumi.getter(name="failureThreshold")
-    def failure_threshold(self) -> int:
+    def failure_threshold(self) -> Optional[int]:
         return pulumi.get(self, "failure_threshold")
 
     @property
     @pulumi.getter
-    def headers(self) -> Sequence['outputs.GetContainerInstanceContainerHealthCheckHeaderResult']:
+    def headers(self) -> Optional[Sequence['outputs.GetContainerInstanceContainerHealthCheckHeaderResult']]:
         return pulumi.get(self, "headers")
 
     @property
     @pulumi.getter(name="healthCheckType")
-    def health_check_type(self) -> str:
+    def health_check_type(self) -> Optional[str]:
         return pulumi.get(self, "health_check_type")
 
     @property
     @pulumi.getter(name="initialDelayInSeconds")
-    def initial_delay_in_seconds(self) -> int:
+    def initial_delay_in_seconds(self) -> Optional[int]:
         return pulumi.get(self, "initial_delay_in_seconds")
 
     @property
     @pulumi.getter(name="intervalInSeconds")
-    def interval_in_seconds(self) -> int:
+    def interval_in_seconds(self) -> Optional[int]:
         return pulumi.get(self, "interval_in_seconds")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        The name of the volume. This must be unique within a single container instance.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
-    def path(self) -> str:
-        """
-        (Optional) Relative path for this file inside the volume mount directory. By default, the file is presented at the root of the volume mount path.
-        """
+    def path(self) -> Optional[str]:
         return pulumi.get(self, "path")
 
     @property
     @pulumi.getter
-    def port(self) -> int:
+    def port(self) -> Optional[int]:
         return pulumi.get(self, "port")
 
     @property
     @pulumi.getter
-    def status(self) -> str:
+    def status(self) -> Optional[str]:
         return pulumi.get(self, "status")
 
     @property
     @pulumi.getter(name="statusDetails")
-    def status_details(self) -> str:
+    def status_details(self) -> Optional[str]:
         return pulumi.get(self, "status_details")
 
     @property
     @pulumi.getter(name="successThreshold")
-    def success_threshold(self) -> int:
+    def success_threshold(self) -> Optional[int]:
         return pulumi.get(self, "success_threshold")
 
     @property
     @pulumi.getter(name="timeoutInSeconds")
-    def timeout_in_seconds(self) -> int:
+    def timeout_in_seconds(self) -> Optional[int]:
         return pulumi.get(self, "timeout_in_seconds")
 
 
 @pulumi.output_type
 class GetContainerInstanceContainerHealthCheckHeaderResult(dict):
     def __init__(__self__, *,
-                 name: str,
-                 value: str):
-        """
-        :param str name: The name of the volume. This must be unique within a single container instance.
-        """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "value", value)
+                 name: Optional[str] = None,
+                 value: Optional[str] = None):
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        The name of the volume. This must be unique within a single container instance.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
-    def value(self) -> str:
+    def value(self) -> Optional[str]:
         return pulumi.get(self, "value")
 
 
 @pulumi.output_type
 class GetContainerInstanceContainerResourceConfigResult(dict):
     def __init__(__self__, *,
-                 memory_limit_in_gbs: float,
-                 vcpus_limit: float):
-        pulumi.set(__self__, "memory_limit_in_gbs", memory_limit_in_gbs)
-        pulumi.set(__self__, "vcpus_limit", vcpus_limit)
+                 memory_limit_in_gbs: Optional[float] = None,
+                 vcpus_limit: Optional[float] = None):
+        if memory_limit_in_gbs is not None:
+            pulumi.set(__self__, "memory_limit_in_gbs", memory_limit_in_gbs)
+        if vcpus_limit is not None:
+            pulumi.set(__self__, "vcpus_limit", vcpus_limit)
 
     @property
     @pulumi.getter(name="memoryLimitInGbs")
-    def memory_limit_in_gbs(self) -> float:
+    def memory_limit_in_gbs(self) -> Optional[float]:
         return pulumi.get(self, "memory_limit_in_gbs")
 
     @property
     @pulumi.getter(name="vcpusLimit")
-    def vcpus_limit(self) -> float:
+    def vcpus_limit(self) -> Optional[float]:
         return pulumi.get(self, "vcpus_limit")
 
 
 @pulumi.output_type
 class GetContainerInstanceContainerSecurityContextResult(dict):
     def __init__(__self__, *,
-                 is_non_root_user_check_enabled: bool,
-                 is_root_file_system_readonly: bool,
-                 run_as_group: int,
-                 run_as_user: int,
-                 security_context_type: str):
-        pulumi.set(__self__, "is_non_root_user_check_enabled", is_non_root_user_check_enabled)
-        pulumi.set(__self__, "is_root_file_system_readonly", is_root_file_system_readonly)
-        pulumi.set(__self__, "run_as_group", run_as_group)
-        pulumi.set(__self__, "run_as_user", run_as_user)
-        pulumi.set(__self__, "security_context_type", security_context_type)
+                 is_non_root_user_check_enabled: Optional[bool] = None,
+                 is_root_file_system_readonly: Optional[bool] = None,
+                 run_as_group: Optional[int] = None,
+                 run_as_user: Optional[int] = None,
+                 security_context_type: Optional[str] = None):
+        if is_non_root_user_check_enabled is not None:
+            pulumi.set(__self__, "is_non_root_user_check_enabled", is_non_root_user_check_enabled)
+        if is_root_file_system_readonly is not None:
+            pulumi.set(__self__, "is_root_file_system_readonly", is_root_file_system_readonly)
+        if run_as_group is not None:
+            pulumi.set(__self__, "run_as_group", run_as_group)
+        if run_as_user is not None:
+            pulumi.set(__self__, "run_as_user", run_as_user)
+        if security_context_type is not None:
+            pulumi.set(__self__, "security_context_type", security_context_type)
 
     @property
     @pulumi.getter(name="isNonRootUserCheckEnabled")
-    def is_non_root_user_check_enabled(self) -> bool:
+    def is_non_root_user_check_enabled(self) -> Optional[bool]:
         return pulumi.get(self, "is_non_root_user_check_enabled")
 
     @property
     @pulumi.getter(name="isRootFileSystemReadonly")
-    def is_root_file_system_readonly(self) -> bool:
+    def is_root_file_system_readonly(self) -> Optional[bool]:
         return pulumi.get(self, "is_root_file_system_readonly")
 
     @property
     @pulumi.getter(name="runAsGroup")
-    def run_as_group(self) -> int:
+    def run_as_group(self) -> Optional[int]:
         return pulumi.get(self, "run_as_group")
 
     @property
     @pulumi.getter(name="runAsUser")
-    def run_as_user(self) -> int:
+    def run_as_user(self) -> Optional[int]:
         return pulumi.get(self, "run_as_user")
 
     @property
     @pulumi.getter(name="securityContextType")
-    def security_context_type(self) -> str:
+    def security_context_type(self) -> Optional[str]:
         return pulumi.get(self, "security_context_type")
 
 
 @pulumi.output_type
 class GetContainerInstanceContainerVolumeMountResult(dict):
     def __init__(__self__, *,
-                 is_read_only: bool,
-                 mount_path: str,
-                 partition: int,
-                 sub_path: str,
-                 volume_name: str):
-        pulumi.set(__self__, "is_read_only", is_read_only)
-        pulumi.set(__self__, "mount_path", mount_path)
-        pulumi.set(__self__, "partition", partition)
-        pulumi.set(__self__, "sub_path", sub_path)
-        pulumi.set(__self__, "volume_name", volume_name)
+                 is_read_only: Optional[bool] = None,
+                 mount_path: Optional[str] = None,
+                 partition: Optional[int] = None,
+                 sub_path: Optional[str] = None,
+                 volume_name: Optional[str] = None):
+        if is_read_only is not None:
+            pulumi.set(__self__, "is_read_only", is_read_only)
+        if mount_path is not None:
+            pulumi.set(__self__, "mount_path", mount_path)
+        if partition is not None:
+            pulumi.set(__self__, "partition", partition)
+        if sub_path is not None:
+            pulumi.set(__self__, "sub_path", sub_path)
+        if volume_name is not None:
+            pulumi.set(__self__, "volume_name", volume_name)
 
     @property
     @pulumi.getter(name="isReadOnly")
-    def is_read_only(self) -> bool:
+    def is_read_only(self) -> Optional[bool]:
         return pulumi.get(self, "is_read_only")
 
     @property
     @pulumi.getter(name="mountPath")
-    def mount_path(self) -> str:
+    def mount_path(self) -> Optional[str]:
         return pulumi.get(self, "mount_path")
 
     @property
     @pulumi.getter
-    def partition(self) -> int:
+    def partition(self) -> Optional[int]:
         return pulumi.get(self, "partition")
 
     @property
     @pulumi.getter(name="subPath")
-    def sub_path(self) -> str:
+    def sub_path(self) -> Optional[str]:
         return pulumi.get(self, "sub_path")
 
     @property
     @pulumi.getter(name="volumeName")
-    def volume_name(self) -> str:
+    def volume_name(self) -> Optional[str]:
         return pulumi.get(self, "volume_name")
 
 
 @pulumi.output_type
 class GetContainerInstanceDnsConfigResult(dict):
     def __init__(__self__, *,
-                 nameservers: Sequence[str],
-                 options: Sequence[str],
-                 searches: Sequence[str]):
-        """
-        :param Sequence[str] nameservers: IP address of the name server..
-        :param Sequence[str] options: Options allows certain internal resolver variables to be modified.
-        :param Sequence[str] searches: Search list for hostname lookup.
-        """
-        pulumi.set(__self__, "nameservers", nameservers)
-        pulumi.set(__self__, "options", options)
-        pulumi.set(__self__, "searches", searches)
+                 nameservers: Optional[Sequence[str]] = None,
+                 options: Optional[Sequence[str]] = None,
+                 searches: Optional[Sequence[str]] = None):
+        if nameservers is not None:
+            pulumi.set(__self__, "nameservers", nameservers)
+        if options is not None:
+            pulumi.set(__self__, "options", options)
+        if searches is not None:
+            pulumi.set(__self__, "searches", searches)
 
     @property
     @pulumi.getter
-    def nameservers(self) -> Sequence[str]:
-        """
-        IP address of the name server..
-        """
+    def nameservers(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "nameservers")
 
     @property
     @pulumi.getter
-    def options(self) -> Sequence[str]:
-        """
-        Options allows certain internal resolver variables to be modified.
-        """
+    def options(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "options")
 
     @property
     @pulumi.getter
-    def searches(self) -> Sequence[str]:
-        """
-        Search list for hostname lookup.
-        """
+    def searches(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "searches")
 
 
 @pulumi.output_type
 class GetContainerInstanceImagePullSecretResult(dict):
     def __init__(__self__, *,
-                 password: str,
-                 registry_endpoint: str,
-                 secret_id: str,
-                 secret_type: str,
-                 username: str):
-        """
-        :param str registry_endpoint: The registry endpoint of the container image.
-        :param str secret_id: The OCID of the secret for registry credentials.
-        :param str secret_type: The type of ImagePullSecret.
-        """
-        pulumi.set(__self__, "password", password)
-        pulumi.set(__self__, "registry_endpoint", registry_endpoint)
-        pulumi.set(__self__, "secret_id", secret_id)
-        pulumi.set(__self__, "secret_type", secret_type)
-        pulumi.set(__self__, "username", username)
+                 password: Optional[str] = None,
+                 registry_endpoint: Optional[str] = None,
+                 secret_id: Optional[str] = None,
+                 secret_type: Optional[str] = None,
+                 username: Optional[str] = None):
+        if password is not None:
+            pulumi.set(__self__, "password", password)
+        if registry_endpoint is not None:
+            pulumi.set(__self__, "registry_endpoint", registry_endpoint)
+        if secret_id is not None:
+            pulumi.set(__self__, "secret_id", secret_id)
+        if secret_type is not None:
+            pulumi.set(__self__, "secret_type", secret_type)
+        if username is not None:
+            pulumi.set(__self__, "username", username)
 
     @property
     @pulumi.getter
-    def password(self) -> str:
+    def password(self) -> Optional[str]:
         return pulumi.get(self, "password")
 
     @property
     @pulumi.getter(name="registryEndpoint")
-    def registry_endpoint(self) -> str:
-        """
-        The registry endpoint of the container image.
-        """
+    def registry_endpoint(self) -> Optional[str]:
         return pulumi.get(self, "registry_endpoint")
 
     @property
     @pulumi.getter(name="secretId")
-    def secret_id(self) -> str:
-        """
-        The OCID of the secret for registry credentials.
-        """
+    def secret_id(self) -> Optional[str]:
         return pulumi.get(self, "secret_id")
 
     @property
     @pulumi.getter(name="secretType")
-    def secret_type(self) -> str:
-        """
-        The type of ImagePullSecret.
-        """
+    def secret_type(self) -> Optional[str]:
         return pulumi.get(self, "secret_type")
 
     @property
     @pulumi.getter
-    def username(self) -> str:
+    def username(self) -> Optional[str]:
         return pulumi.get(self, "username")
 
 
 @pulumi.output_type
 class GetContainerInstanceShapeConfigResult(dict):
     def __init__(__self__, *,
-                 memory_in_gbs: float,
-                 networking_bandwidth_in_gbps: float,
-                 ocpus: float,
-                 processor_description: str):
-        """
-        :param float memory_in_gbs: The total amount of memory available to the container instance, in gigabytes.
-        :param float networking_bandwidth_in_gbps: The networking bandwidth available to the container instance, in gigabits per second.
-        :param float ocpus: The total number of OCPUs available to the container instance.
-        :param str processor_description: A short description of the container instance's processor (CPU).
-        """
-        pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
-        pulumi.set(__self__, "networking_bandwidth_in_gbps", networking_bandwidth_in_gbps)
-        pulumi.set(__self__, "ocpus", ocpus)
-        pulumi.set(__self__, "processor_description", processor_description)
+                 memory_in_gbs: Optional[float] = None,
+                 networking_bandwidth_in_gbps: Optional[float] = None,
+                 ocpus: Optional[float] = None,
+                 processor_description: Optional[str] = None):
+        if memory_in_gbs is not None:
+            pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+        if networking_bandwidth_in_gbps is not None:
+            pulumi.set(__self__, "networking_bandwidth_in_gbps", networking_bandwidth_in_gbps)
+        if ocpus is not None:
+            pulumi.set(__self__, "ocpus", ocpus)
+        if processor_description is not None:
+            pulumi.set(__self__, "processor_description", processor_description)
 
     @property
     @pulumi.getter(name="memoryInGbs")
-    def memory_in_gbs(self) -> float:
-        """
-        The total amount of memory available to the container instance, in gigabytes.
-        """
+    def memory_in_gbs(self) -> Optional[float]:
         return pulumi.get(self, "memory_in_gbs")
 
     @property
     @pulumi.getter(name="networkingBandwidthInGbps")
-    def networking_bandwidth_in_gbps(self) -> float:
-        """
-        The networking bandwidth available to the container instance, in gigabits per second.
-        """
+    def networking_bandwidth_in_gbps(self) -> Optional[float]:
         return pulumi.get(self, "networking_bandwidth_in_gbps")
 
     @property
     @pulumi.getter
-    def ocpus(self) -> float:
-        """
-        The total number of OCPUs available to the container instance.
-        """
+    def ocpus(self) -> Optional[float]:
         return pulumi.get(self, "ocpus")
 
     @property
     @pulumi.getter(name="processorDescription")
-    def processor_description(self) -> str:
-        """
-        A short description of the container instance's processor (CPU).
-        """
+    def processor_description(self) -> Optional[str]:
         return pulumi.get(self, "processor_description")
 
 
 @pulumi.output_type
 class GetContainerInstanceShapeItemResult(dict):
     def __init__(__self__, *,
-                 memory_options: Sequence['outputs.GetContainerInstanceShapeItemMemoryOptionResult'],
-                 name: str,
-                 networking_bandwidth_options: Sequence['outputs.GetContainerInstanceShapeItemNetworkingBandwidthOptionResult'],
-                 ocpu_options: Sequence['outputs.GetContainerInstanceShapeItemOcpuOptionResult'],
-                 processor_description: str):
-        """
-        :param Sequence['GetContainerInstanceShapeItemMemoryOptionArgs'] memory_options: For a flexible shape, the amount of memory available for instances that use this shape.
-        :param str name: The name identifying the shape.
-        :param Sequence['GetContainerInstanceShapeItemNetworkingBandwidthOptionArgs'] networking_bandwidth_options: For a flexible shape, the amount of networking bandwidth available for instances that use this shape.
-        :param Sequence['GetContainerInstanceShapeItemOcpuOptionArgs'] ocpu_options: For a flexible shape, the number of OCPUs available for instances that use this shape.
-        :param str processor_description: A short description of the Instance's processor (CPU).
-        """
-        pulumi.set(__self__, "memory_options", memory_options)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "networking_bandwidth_options", networking_bandwidth_options)
-        pulumi.set(__self__, "ocpu_options", ocpu_options)
-        pulumi.set(__self__, "processor_description", processor_description)
+                 memory_options: Optional[Sequence['outputs.GetContainerInstanceShapeItemMemoryOptionResult']] = None,
+                 name: Optional[str] = None,
+                 networking_bandwidth_options: Optional[Sequence['outputs.GetContainerInstanceShapeItemNetworkingBandwidthOptionResult']] = None,
+                 ocpu_options: Optional[Sequence['outputs.GetContainerInstanceShapeItemOcpuOptionResult']] = None,
+                 processor_description: Optional[str] = None):
+        if memory_options is not None:
+            pulumi.set(__self__, "memory_options", memory_options)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if networking_bandwidth_options is not None:
+            pulumi.set(__self__, "networking_bandwidth_options", networking_bandwidth_options)
+        if ocpu_options is not None:
+            pulumi.set(__self__, "ocpu_options", ocpu_options)
+        if processor_description is not None:
+            pulumi.set(__self__, "processor_description", processor_description)
 
     @property
     @pulumi.getter(name="memoryOptions")
-    def memory_options(self) -> Sequence['outputs.GetContainerInstanceShapeItemMemoryOptionResult']:
-        """
-        For a flexible shape, the amount of memory available for instances that use this shape.
-        """
+    def memory_options(self) -> Optional[Sequence['outputs.GetContainerInstanceShapeItemMemoryOptionResult']]:
         return pulumi.get(self, "memory_options")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        The name identifying the shape.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="networkingBandwidthOptions")
-    def networking_bandwidth_options(self) -> Sequence['outputs.GetContainerInstanceShapeItemNetworkingBandwidthOptionResult']:
-        """
-        For a flexible shape, the amount of networking bandwidth available for instances that use this shape.
-        """
+    def networking_bandwidth_options(self) -> Optional[Sequence['outputs.GetContainerInstanceShapeItemNetworkingBandwidthOptionResult']]:
         return pulumi.get(self, "networking_bandwidth_options")
 
     @property
     @pulumi.getter(name="ocpuOptions")
-    def ocpu_options(self) -> Sequence['outputs.GetContainerInstanceShapeItemOcpuOptionResult']:
-        """
-        For a flexible shape, the number of OCPUs available for instances that use this shape.
-        """
+    def ocpu_options(self) -> Optional[Sequence['outputs.GetContainerInstanceShapeItemOcpuOptionResult']]:
         return pulumi.get(self, "ocpu_options")
 
     @property
     @pulumi.getter(name="processorDescription")
-    def processor_description(self) -> str:
-        """
-        A short description of the Instance's processor (CPU).
-        """
+    def processor_description(self) -> Optional[str]:
         return pulumi.get(self, "processor_description")
 
 
 @pulumi.output_type
 class GetContainerInstanceShapeItemMemoryOptionResult(dict):
     def __init__(__self__, *,
-                 default_per_ocpu_in_gbs: float,
-                 max_in_gbs: float,
-                 max_per_ocpu_in_gbs: float,
-                 min_in_gbs: float,
-                 min_per_ocpu_in_gbs: float):
-        """
-        :param float default_per_ocpu_in_gbs: The default amount of memory per OCPU available for this shape, in gigabytes.
-        :param float max_in_gbs: The maximum amount of memory, in gigabytes.
-        :param float max_per_ocpu_in_gbs: The maximum amount of memory per OCPU available for this shape, in gigabytes.
-        :param float min_in_gbs: The minimum amount of memory, in gigabytes.
-        :param float min_per_ocpu_in_gbs: The minimum amount of memory per OCPU available for this shape, in gigabytes.
-        """
-        pulumi.set(__self__, "default_per_ocpu_in_gbs", default_per_ocpu_in_gbs)
-        pulumi.set(__self__, "max_in_gbs", max_in_gbs)
-        pulumi.set(__self__, "max_per_ocpu_in_gbs", max_per_ocpu_in_gbs)
-        pulumi.set(__self__, "min_in_gbs", min_in_gbs)
-        pulumi.set(__self__, "min_per_ocpu_in_gbs", min_per_ocpu_in_gbs)
+                 default_per_ocpu_in_gbs: Optional[float] = None,
+                 max_in_gbs: Optional[float] = None,
+                 max_per_ocpu_in_gbs: Optional[float] = None,
+                 min_in_gbs: Optional[float] = None,
+                 min_per_ocpu_in_gbs: Optional[float] = None):
+        if default_per_ocpu_in_gbs is not None:
+            pulumi.set(__self__, "default_per_ocpu_in_gbs", default_per_ocpu_in_gbs)
+        if max_in_gbs is not None:
+            pulumi.set(__self__, "max_in_gbs", max_in_gbs)
+        if max_per_ocpu_in_gbs is not None:
+            pulumi.set(__self__, "max_per_ocpu_in_gbs", max_per_ocpu_in_gbs)
+        if min_in_gbs is not None:
+            pulumi.set(__self__, "min_in_gbs", min_in_gbs)
+        if min_per_ocpu_in_gbs is not None:
+            pulumi.set(__self__, "min_per_ocpu_in_gbs", min_per_ocpu_in_gbs)
 
     @property
     @pulumi.getter(name="defaultPerOcpuInGbs")
-    def default_per_ocpu_in_gbs(self) -> float:
-        """
-        The default amount of memory per OCPU available for this shape, in gigabytes.
-        """
+    def default_per_ocpu_in_gbs(self) -> Optional[float]:
         return pulumi.get(self, "default_per_ocpu_in_gbs")
 
     @property
     @pulumi.getter(name="maxInGbs")
-    def max_in_gbs(self) -> float:
-        """
-        The maximum amount of memory, in gigabytes.
-        """
+    def max_in_gbs(self) -> Optional[float]:
         return pulumi.get(self, "max_in_gbs")
 
     @property
     @pulumi.getter(name="maxPerOcpuInGbs")
-    def max_per_ocpu_in_gbs(self) -> float:
-        """
-        The maximum amount of memory per OCPU available for this shape, in gigabytes.
-        """
+    def max_per_ocpu_in_gbs(self) -> Optional[float]:
         return pulumi.get(self, "max_per_ocpu_in_gbs")
 
     @property
     @pulumi.getter(name="minInGbs")
-    def min_in_gbs(self) -> float:
-        """
-        The minimum amount of memory, in gigabytes.
-        """
+    def min_in_gbs(self) -> Optional[float]:
         return pulumi.get(self, "min_in_gbs")
 
     @property
     @pulumi.getter(name="minPerOcpuInGbs")
-    def min_per_ocpu_in_gbs(self) -> float:
-        """
-        The minimum amount of memory per OCPU available for this shape, in gigabytes.
-        """
+    def min_per_ocpu_in_gbs(self) -> Optional[float]:
         return pulumi.get(self, "min_per_ocpu_in_gbs")
 
 
 @pulumi.output_type
 class GetContainerInstanceShapeItemNetworkingBandwidthOptionResult(dict):
     def __init__(__self__, *,
-                 default_per_ocpu_in_gbps: float,
-                 max_in_gbps: float,
-                 min_in_gbps: float):
-        """
-        :param float default_per_ocpu_in_gbps: The default amount of networking bandwidth per OCPU, in gigabits per second.
-        :param float max_in_gbps: The maximum amount of networking bandwidth, in gigabits per second.
-        :param float min_in_gbps: The minimum amount of networking bandwidth, in gigabits per second.
-        """
-        pulumi.set(__self__, "default_per_ocpu_in_gbps", default_per_ocpu_in_gbps)
-        pulumi.set(__self__, "max_in_gbps", max_in_gbps)
-        pulumi.set(__self__, "min_in_gbps", min_in_gbps)
+                 default_per_ocpu_in_gbps: Optional[float] = None,
+                 max_in_gbps: Optional[float] = None,
+                 min_in_gbps: Optional[float] = None):
+        if default_per_ocpu_in_gbps is not None:
+            pulumi.set(__self__, "default_per_ocpu_in_gbps", default_per_ocpu_in_gbps)
+        if max_in_gbps is not None:
+            pulumi.set(__self__, "max_in_gbps", max_in_gbps)
+        if min_in_gbps is not None:
+            pulumi.set(__self__, "min_in_gbps", min_in_gbps)
 
     @property
     @pulumi.getter(name="defaultPerOcpuInGbps")
-    def default_per_ocpu_in_gbps(self) -> float:
-        """
-        The default amount of networking bandwidth per OCPU, in gigabits per second.
-        """
+    def default_per_ocpu_in_gbps(self) -> Optional[float]:
         return pulumi.get(self, "default_per_ocpu_in_gbps")
 
     @property
     @pulumi.getter(name="maxInGbps")
-    def max_in_gbps(self) -> float:
-        """
-        The maximum amount of networking bandwidth, in gigabits per second.
-        """
+    def max_in_gbps(self) -> Optional[float]:
         return pulumi.get(self, "max_in_gbps")
 
     @property
     @pulumi.getter(name="minInGbps")
-    def min_in_gbps(self) -> float:
-        """
-        The minimum amount of networking bandwidth, in gigabits per second.
-        """
+    def min_in_gbps(self) -> Optional[float]:
         return pulumi.get(self, "min_in_gbps")
 
 
 @pulumi.output_type
 class GetContainerInstanceShapeItemOcpuOptionResult(dict):
     def __init__(__self__, *,
-                 max: float,
-                 min: float):
-        """
-        :param float max: The maximum number of OCPUs.
-        :param float min: The minimum number of OCPUs.
-        """
-        pulumi.set(__self__, "max", max)
-        pulumi.set(__self__, "min", min)
+                 max: Optional[float] = None,
+                 min: Optional[float] = None):
+        if max is not None:
+            pulumi.set(__self__, "max", max)
+        if min is not None:
+            pulumi.set(__self__, "min", min)
 
     @property
     @pulumi.getter
-    def max(self) -> float:
-        """
-        The maximum number of OCPUs.
-        """
+    def max(self) -> Optional[float]:
         return pulumi.get(self, "max")
 
     @property
     @pulumi.getter
-    def min(self) -> float:
-        """
-        The minimum number of OCPUs.
-        """
+    def min(self) -> Optional[float]:
         return pulumi.get(self, "min")
 
 
 @pulumi.output_type
 class GetContainerInstanceShapesContainerInstanceShapeCollectionResult(dict):
     def __init__(__self__, *,
-                 items: Sequence['outputs.GetContainerInstanceShapesContainerInstanceShapeCollectionItemResult']):
-        """
-        :param Sequence['GetContainerInstanceShapesContainerInstanceShapeCollectionItemArgs'] items: A list of shapes.
-        """
-        pulumi.set(__self__, "items", items)
+                 items: Optional[Sequence['outputs.GetContainerInstanceShapesContainerInstanceShapeCollectionItemResult']] = None):
+        if items is not None:
+            pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetContainerInstanceShapesContainerInstanceShapeCollectionItemResult']:
-        """
-        A list of shapes.
-        """
+    def items(self) -> Optional[Sequence['outputs.GetContainerInstanceShapesContainerInstanceShapeCollectionItemResult']]:
         return pulumi.get(self, "items")
 
 
 @pulumi.output_type
 class GetContainerInstanceShapesContainerInstanceShapeCollectionItemResult(dict):
     def __init__(__self__, *,
-                 memory_options: Sequence['outputs.GetContainerInstanceShapesContainerInstanceShapeCollectionItemMemoryOptionResult'],
-                 name: str,
-                 networking_bandwidth_options: Sequence['outputs.GetContainerInstanceShapesContainerInstanceShapeCollectionItemNetworkingBandwidthOptionResult'],
-                 ocpu_options: Sequence['outputs.GetContainerInstanceShapesContainerInstanceShapeCollectionItemOcpuOptionResult'],
-                 processor_description: str):
-        """
-        :param Sequence['GetContainerInstanceShapesContainerInstanceShapeCollectionItemMemoryOptionArgs'] memory_options: For a flexible shape, the amount of memory available for container instances that use this shape.
-        :param str name: The name identifying the shape.
-        :param Sequence['GetContainerInstanceShapesContainerInstanceShapeCollectionItemNetworkingBandwidthOptionArgs'] networking_bandwidth_options: For a flexible shape, the amount of networking bandwidth available for container instances that use this shape.
-        :param Sequence['GetContainerInstanceShapesContainerInstanceShapeCollectionItemOcpuOptionArgs'] ocpu_options: For a flexible shape, the number of OCPUs available for container instances that use this shape.
-        :param str processor_description: A short description of the container instance's processor (CPU).
-        """
-        pulumi.set(__self__, "memory_options", memory_options)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "networking_bandwidth_options", networking_bandwidth_options)
-        pulumi.set(__self__, "ocpu_options", ocpu_options)
-        pulumi.set(__self__, "processor_description", processor_description)
+                 memory_options: Optional[Sequence['outputs.GetContainerInstanceShapesContainerInstanceShapeCollectionItemMemoryOptionResult']] = None,
+                 name: Optional[str] = None,
+                 networking_bandwidth_options: Optional[Sequence['outputs.GetContainerInstanceShapesContainerInstanceShapeCollectionItemNetworkingBandwidthOptionResult']] = None,
+                 ocpu_options: Optional[Sequence['outputs.GetContainerInstanceShapesContainerInstanceShapeCollectionItemOcpuOptionResult']] = None,
+                 processor_description: Optional[str] = None):
+        if memory_options is not None:
+            pulumi.set(__self__, "memory_options", memory_options)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if networking_bandwidth_options is not None:
+            pulumi.set(__self__, "networking_bandwidth_options", networking_bandwidth_options)
+        if ocpu_options is not None:
+            pulumi.set(__self__, "ocpu_options", ocpu_options)
+        if processor_description is not None:
+            pulumi.set(__self__, "processor_description", processor_description)
 
     @property
     @pulumi.getter(name="memoryOptions")
-    def memory_options(self) -> Sequence['outputs.GetContainerInstanceShapesContainerInstanceShapeCollectionItemMemoryOptionResult']:
-        """
-        For a flexible shape, the amount of memory available for container instances that use this shape.
-        """
+    def memory_options(self) -> Optional[Sequence['outputs.GetContainerInstanceShapesContainerInstanceShapeCollectionItemMemoryOptionResult']]:
         return pulumi.get(self, "memory_options")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        The name identifying the shape.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="networkingBandwidthOptions")
-    def networking_bandwidth_options(self) -> Sequence['outputs.GetContainerInstanceShapesContainerInstanceShapeCollectionItemNetworkingBandwidthOptionResult']:
-        """
-        For a flexible shape, the amount of networking bandwidth available for container instances that use this shape.
-        """
+    def networking_bandwidth_options(self) -> Optional[Sequence['outputs.GetContainerInstanceShapesContainerInstanceShapeCollectionItemNetworkingBandwidthOptionResult']]:
         return pulumi.get(self, "networking_bandwidth_options")
 
     @property
     @pulumi.getter(name="ocpuOptions")
-    def ocpu_options(self) -> Sequence['outputs.GetContainerInstanceShapesContainerInstanceShapeCollectionItemOcpuOptionResult']:
-        """
-        For a flexible shape, the number of OCPUs available for container instances that use this shape.
-        """
+    def ocpu_options(self) -> Optional[Sequence['outputs.GetContainerInstanceShapesContainerInstanceShapeCollectionItemOcpuOptionResult']]:
         return pulumi.get(self, "ocpu_options")
 
     @property
     @pulumi.getter(name="processorDescription")
-    def processor_description(self) -> str:
-        """
-        A short description of the container instance's processor (CPU).
-        """
+    def processor_description(self) -> Optional[str]:
         return pulumi.get(self, "processor_description")
 
 
 @pulumi.output_type
 class GetContainerInstanceShapesContainerInstanceShapeCollectionItemMemoryOptionResult(dict):
     def __init__(__self__, *,
-                 default_per_ocpu_in_gbs: float,
-                 max_in_gbs: float,
-                 max_per_ocpu_in_gbs: float,
-                 min_in_gbs: float,
-                 min_per_ocpu_in_gbs: float):
-        """
-        :param float default_per_ocpu_in_gbs: The default amount of memory per OCPU available for this shape (GB).
-        :param float max_in_gbs: The maximum amount of memory (GB).
-        :param float max_per_ocpu_in_gbs: The maximum amount of memory per OCPU available for this shape (GB).
-        :param float min_in_gbs: The minimum amount of memory (GB).
-        :param float min_per_ocpu_in_gbs: The minimum amount of memory per OCPU available for this shape (GB).
-        """
-        pulumi.set(__self__, "default_per_ocpu_in_gbs", default_per_ocpu_in_gbs)
-        pulumi.set(__self__, "max_in_gbs", max_in_gbs)
-        pulumi.set(__self__, "max_per_ocpu_in_gbs", max_per_ocpu_in_gbs)
-        pulumi.set(__self__, "min_in_gbs", min_in_gbs)
-        pulumi.set(__self__, "min_per_ocpu_in_gbs", min_per_ocpu_in_gbs)
+                 default_per_ocpu_in_gbs: Optional[float] = None,
+                 max_in_gbs: Optional[float] = None,
+                 max_per_ocpu_in_gbs: Optional[float] = None,
+                 min_in_gbs: Optional[float] = None,
+                 min_per_ocpu_in_gbs: Optional[float] = None):
+        if default_per_ocpu_in_gbs is not None:
+            pulumi.set(__self__, "default_per_ocpu_in_gbs", default_per_ocpu_in_gbs)
+        if max_in_gbs is not None:
+            pulumi.set(__self__, "max_in_gbs", max_in_gbs)
+        if max_per_ocpu_in_gbs is not None:
+            pulumi.set(__self__, "max_per_ocpu_in_gbs", max_per_ocpu_in_gbs)
+        if min_in_gbs is not None:
+            pulumi.set(__self__, "min_in_gbs", min_in_gbs)
+        if min_per_ocpu_in_gbs is not None:
+            pulumi.set(__self__, "min_per_ocpu_in_gbs", min_per_ocpu_in_gbs)
 
     @property
     @pulumi.getter(name="defaultPerOcpuInGbs")
-    def default_per_ocpu_in_gbs(self) -> float:
-        """
-        The default amount of memory per OCPU available for this shape (GB).
-        """
+    def default_per_ocpu_in_gbs(self) -> Optional[float]:
         return pulumi.get(self, "default_per_ocpu_in_gbs")
 
     @property
     @pulumi.getter(name="maxInGbs")
-    def max_in_gbs(self) -> float:
-        """
-        The maximum amount of memory (GB).
-        """
+    def max_in_gbs(self) -> Optional[float]:
         return pulumi.get(self, "max_in_gbs")
 
     @property
     @pulumi.getter(name="maxPerOcpuInGbs")
-    def max_per_ocpu_in_gbs(self) -> float:
-        """
-        The maximum amount of memory per OCPU available for this shape (GB).
-        """
+    def max_per_ocpu_in_gbs(self) -> Optional[float]:
         return pulumi.get(self, "max_per_ocpu_in_gbs")
 
     @property
     @pulumi.getter(name="minInGbs")
-    def min_in_gbs(self) -> float:
-        """
-        The minimum amount of memory (GB).
-        """
+    def min_in_gbs(self) -> Optional[float]:
         return pulumi.get(self, "min_in_gbs")
 
     @property
     @pulumi.getter(name="minPerOcpuInGbs")
-    def min_per_ocpu_in_gbs(self) -> float:
-        """
-        The minimum amount of memory per OCPU available for this shape (GB).
-        """
+    def min_per_ocpu_in_gbs(self) -> Optional[float]:
         return pulumi.get(self, "min_per_ocpu_in_gbs")
 
 
 @pulumi.output_type
 class GetContainerInstanceShapesContainerInstanceShapeCollectionItemNetworkingBandwidthOptionResult(dict):
     def __init__(__self__, *,
-                 default_per_ocpu_in_gbps: float,
-                 max_in_gbps: float,
-                 min_in_gbps: float):
-        """
-        :param float default_per_ocpu_in_gbps: The default amount of networking bandwidth per OCPU, in gigabits per second.
-        :param float max_in_gbps: The maximum amount of networking bandwidth, in gigabits per second.
-        :param float min_in_gbps: The minimum amount of networking bandwidth, in gigabits per second.
-        """
-        pulumi.set(__self__, "default_per_ocpu_in_gbps", default_per_ocpu_in_gbps)
-        pulumi.set(__self__, "max_in_gbps", max_in_gbps)
-        pulumi.set(__self__, "min_in_gbps", min_in_gbps)
+                 default_per_ocpu_in_gbps: Optional[float] = None,
+                 max_in_gbps: Optional[float] = None,
+                 min_in_gbps: Optional[float] = None):
+        if default_per_ocpu_in_gbps is not None:
+            pulumi.set(__self__, "default_per_ocpu_in_gbps", default_per_ocpu_in_gbps)
+        if max_in_gbps is not None:
+            pulumi.set(__self__, "max_in_gbps", max_in_gbps)
+        if min_in_gbps is not None:
+            pulumi.set(__self__, "min_in_gbps", min_in_gbps)
 
     @property
     @pulumi.getter(name="defaultPerOcpuInGbps")
-    def default_per_ocpu_in_gbps(self) -> float:
-        """
-        The default amount of networking bandwidth per OCPU, in gigabits per second.
-        """
+    def default_per_ocpu_in_gbps(self) -> Optional[float]:
         return pulumi.get(self, "default_per_ocpu_in_gbps")
 
     @property
     @pulumi.getter(name="maxInGbps")
-    def max_in_gbps(self) -> float:
-        """
-        The maximum amount of networking bandwidth, in gigabits per second.
-        """
+    def max_in_gbps(self) -> Optional[float]:
         return pulumi.get(self, "max_in_gbps")
 
     @property
     @pulumi.getter(name="minInGbps")
-    def min_in_gbps(self) -> float:
-        """
-        The minimum amount of networking bandwidth, in gigabits per second.
-        """
+    def min_in_gbps(self) -> Optional[float]:
         return pulumi.get(self, "min_in_gbps")
 
 
 @pulumi.output_type
 class GetContainerInstanceShapesContainerInstanceShapeCollectionItemOcpuOptionResult(dict):
     def __init__(__self__, *,
-                 max: float,
-                 min: float):
-        """
-        :param float max: The maximum number of OCPUs.
-        :param float min: The minimum number of OCPUs.
-        """
-        pulumi.set(__self__, "max", max)
-        pulumi.set(__self__, "min", min)
+                 max: Optional[float] = None,
+                 min: Optional[float] = None):
+        if max is not None:
+            pulumi.set(__self__, "max", max)
+        if min is not None:
+            pulumi.set(__self__, "min", min)
 
     @property
     @pulumi.getter
-    def max(self) -> float:
-        """
-        The maximum number of OCPUs.
-        """
+    def max(self) -> Optional[float]:
         return pulumi.get(self, "max")
 
     @property
     @pulumi.getter
-    def min(self) -> float:
-        """
-        The minimum number of OCPUs.
-        """
+    def min(self) -> Optional[float]:
         return pulumi.get(self, "min")
 
 
@@ -1076,9 +914,6 @@ class GetContainerInstanceShapesFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: The name identifying the shape.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -1087,9 +922,6 @@ class GetContainerInstanceShapesFilterResult(dict):
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        The name identifying the shape.
-        """
         return pulumi.get(self, "name")
 
     @property
@@ -1106,1252 +938,1069 @@ class GetContainerInstanceShapesFilterResult(dict):
 @pulumi.output_type
 class GetContainerInstanceVnicResult(dict):
     def __init__(__self__, *,
-                 defined_tags: Mapping[str, Any],
-                 display_name: str,
-                 freeform_tags: Mapping[str, Any],
-                 hostname_label: str,
-                 is_public_ip_assigned: bool,
-                 nsg_ids: Sequence[str],
-                 private_ip: str,
-                 skip_source_dest_check: bool,
-                 subnet_id: str,
-                 vnic_id: str):
-        """
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
-        :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param str vnic_id: The identifier of the virtual network interface card (VNIC) over which the containers accessing this network can communicate with the larger virtual cloud network.
-        """
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "hostname_label", hostname_label)
-        pulumi.set(__self__, "is_public_ip_assigned", is_public_ip_assigned)
-        pulumi.set(__self__, "nsg_ids", nsg_ids)
-        pulumi.set(__self__, "private_ip", private_ip)
-        pulumi.set(__self__, "skip_source_dest_check", skip_source_dest_check)
-        pulumi.set(__self__, "subnet_id", subnet_id)
-        pulumi.set(__self__, "vnic_id", vnic_id)
+                 defined_tags: Optional[Mapping[str, Any]] = None,
+                 display_name: Optional[str] = None,
+                 freeform_tags: Optional[Mapping[str, Any]] = None,
+                 hostname_label: Optional[str] = None,
+                 is_public_ip_assigned: Optional[bool] = None,
+                 nsg_ids: Optional[Sequence[str]] = None,
+                 private_ip: Optional[str] = None,
+                 skip_source_dest_check: Optional[bool] = None,
+                 subnet_id: Optional[str] = None,
+                 vnic_id: Optional[str] = None):
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if hostname_label is not None:
+            pulumi.set(__self__, "hostname_label", hostname_label)
+        if is_public_ip_assigned is not None:
+            pulumi.set(__self__, "is_public_ip_assigned", is_public_ip_assigned)
+        if nsg_ids is not None:
+            pulumi.set(__self__, "nsg_ids", nsg_ids)
+        if private_ip is not None:
+            pulumi.set(__self__, "private_ip", private_ip)
+        if skip_source_dest_check is not None:
+            pulumi.set(__self__, "skip_source_dest_check", skip_source_dest_check)
+        if subnet_id is not None:
+            pulumi.set(__self__, "subnet_id", subnet_id)
+        if vnic_id is not None:
+            pulumi.set(__self__, "vnic_id", vnic_id)
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="hostnameLabel")
-    def hostname_label(self) -> str:
+    def hostname_label(self) -> Optional[str]:
         return pulumi.get(self, "hostname_label")
 
     @property
     @pulumi.getter(name="isPublicIpAssigned")
-    def is_public_ip_assigned(self) -> bool:
+    def is_public_ip_assigned(self) -> Optional[bool]:
         return pulumi.get(self, "is_public_ip_assigned")
 
     @property
     @pulumi.getter(name="nsgIds")
-    def nsg_ids(self) -> Sequence[str]:
+    def nsg_ids(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "nsg_ids")
 
     @property
     @pulumi.getter(name="privateIp")
-    def private_ip(self) -> str:
+    def private_ip(self) -> Optional[str]:
         return pulumi.get(self, "private_ip")
 
     @property
     @pulumi.getter(name="skipSourceDestCheck")
-    def skip_source_dest_check(self) -> bool:
+    def skip_source_dest_check(self) -> Optional[bool]:
         return pulumi.get(self, "skip_source_dest_check")
 
     @property
     @pulumi.getter(name="subnetId")
-    def subnet_id(self) -> str:
+    def subnet_id(self) -> Optional[str]:
         return pulumi.get(self, "subnet_id")
 
     @property
     @pulumi.getter(name="vnicId")
-    def vnic_id(self) -> str:
-        """
-        The identifier of the virtual network interface card (VNIC) over which the containers accessing this network can communicate with the larger virtual cloud network.
-        """
+    def vnic_id(self) -> Optional[str]:
         return pulumi.get(self, "vnic_id")
 
 
 @pulumi.output_type
 class GetContainerInstanceVolumeResult(dict):
     def __init__(__self__, *,
-                 backing_store: str,
-                 configs: Sequence['outputs.GetContainerInstanceVolumeConfigResult'],
-                 name: str,
-                 volume_type: str):
-        """
-        :param str backing_store: The volume type of the empty directory, can be either File Storage or Memory.
-        :param Sequence['GetContainerInstanceVolumeConfigArgs'] configs: Contains string key value pairs which can be mounted as individual files inside the container. The value needs to be base64 encoded. It is decoded to plain text before the mount.
-        :param str name: The name of the volume. This must be unique within a single container instance.
-        :param str volume_type: The type of volume.
-        """
-        pulumi.set(__self__, "backing_store", backing_store)
-        pulumi.set(__self__, "configs", configs)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "volume_type", volume_type)
+                 backing_store: Optional[str] = None,
+                 configs: Optional[Sequence['outputs.GetContainerInstanceVolumeConfigResult']] = None,
+                 name: Optional[str] = None,
+                 volume_type: Optional[str] = None):
+        if backing_store is not None:
+            pulumi.set(__self__, "backing_store", backing_store)
+        if configs is not None:
+            pulumi.set(__self__, "configs", configs)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if volume_type is not None:
+            pulumi.set(__self__, "volume_type", volume_type)
 
     @property
     @pulumi.getter(name="backingStore")
-    def backing_store(self) -> str:
-        """
-        The volume type of the empty directory, can be either File Storage or Memory.
-        """
+    def backing_store(self) -> Optional[str]:
         return pulumi.get(self, "backing_store")
 
     @property
     @pulumi.getter
-    def configs(self) -> Sequence['outputs.GetContainerInstanceVolumeConfigResult']:
-        """
-        Contains string key value pairs which can be mounted as individual files inside the container. The value needs to be base64 encoded. It is decoded to plain text before the mount.
-        """
+    def configs(self) -> Optional[Sequence['outputs.GetContainerInstanceVolumeConfigResult']]:
         return pulumi.get(self, "configs")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        The name of the volume. This must be unique within a single container instance.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="volumeType")
-    def volume_type(self) -> str:
-        """
-        The type of volume.
-        """
+    def volume_type(self) -> Optional[str]:
         return pulumi.get(self, "volume_type")
 
 
 @pulumi.output_type
 class GetContainerInstanceVolumeConfigResult(dict):
     def __init__(__self__, *,
-                 data: str,
-                 file_name: str,
-                 path: str):
-        """
-        :param str data: The base64 encoded contents of the file. The contents are decoded to plain text before mounted as a file to a container inside container instance.
-        :param str file_name: The name of the file. The fileName should be unique across the volume.
-        :param str path: (Optional) Relative path for this file inside the volume mount directory. By default, the file is presented at the root of the volume mount path.
-        """
-        pulumi.set(__self__, "data", data)
-        pulumi.set(__self__, "file_name", file_name)
-        pulumi.set(__self__, "path", path)
+                 data: Optional[str] = None,
+                 file_name: Optional[str] = None,
+                 path: Optional[str] = None):
+        if data is not None:
+            pulumi.set(__self__, "data", data)
+        if file_name is not None:
+            pulumi.set(__self__, "file_name", file_name)
+        if path is not None:
+            pulumi.set(__self__, "path", path)
 
     @property
     @pulumi.getter
-    def data(self) -> str:
-        """
-        The base64 encoded contents of the file. The contents are decoded to plain text before mounted as a file to a container inside container instance.
-        """
+    def data(self) -> Optional[str]:
         return pulumi.get(self, "data")
 
     @property
     @pulumi.getter(name="fileName")
-    def file_name(self) -> str:
-        """
-        The name of the file. The fileName should be unique across the volume.
-        """
+    def file_name(self) -> Optional[str]:
         return pulumi.get(self, "file_name")
 
     @property
     @pulumi.getter
-    def path(self) -> str:
-        """
-        (Optional) Relative path for this file inside the volume mount directory. By default, the file is presented at the root of the volume mount path.
-        """
+    def path(self) -> Optional[str]:
         return pulumi.get(self, "path")
 
 
 @pulumi.output_type
 class GetContainerInstancesContainerInstanceCollectionResult(dict):
     def __init__(__self__, *,
-                 items: Sequence['outputs.GetContainerInstancesContainerInstanceCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+                 items: Optional[Sequence['outputs.GetContainerInstancesContainerInstanceCollectionItemResult']] = None):
+        if items is not None:
+            pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetContainerInstancesContainerInstanceCollectionItemResult']:
+    def items(self) -> Optional[Sequence['outputs.GetContainerInstancesContainerInstanceCollectionItemResult']]:
         return pulumi.get(self, "items")
 
 
 @pulumi.output_type
 class GetContainerInstancesContainerInstanceCollectionItemResult(dict):
     def __init__(__self__, *,
-                 availability_domain: str,
-                 compartment_id: str,
-                 container_count: int,
-                 container_restart_policy: str,
-                 containers: Sequence['outputs.GetContainerInstancesContainerInstanceCollectionItemContainerResult'],
-                 defined_tags: Mapping[str, Any],
-                 display_name: str,
-                 dns_configs: Sequence['outputs.GetContainerInstancesContainerInstanceCollectionItemDnsConfigResult'],
-                 fault_domain: str,
-                 freeform_tags: Mapping[str, Any],
-                 graceful_shutdown_timeout_in_seconds: str,
-                 id: str,
-                 image_pull_secrets: Sequence['outputs.GetContainerInstancesContainerInstanceCollectionItemImagePullSecretResult'],
-                 lifecycle_details: str,
-                 shape: str,
-                 shape_configs: Sequence['outputs.GetContainerInstancesContainerInstanceCollectionItemShapeConfigResult'],
-                 state: str,
-                 system_tags: Mapping[str, Any],
-                 time_created: str,
-                 time_updated: str,
-                 vnics: Sequence['outputs.GetContainerInstancesContainerInstanceCollectionItemVnicResult'],
-                 volume_count: int,
-                 volumes: Sequence['outputs.GetContainerInstancesContainerInstanceCollectionItemVolumeResult']):
-        """
-        :param str availability_domain: The name of the availability domain.  Example: `Uocm:PHX-AD-1`
-        :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
-        :param int container_count: The number of containers on the container instance.
-        :param str container_restart_policy: The container restart policy is applied for all containers in container instance.
-        :param Sequence['GetContainerInstancesContainerInstanceCollectionItemContainerArgs'] containers: The containers on the container instance.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
-        :param str display_name: A filter to return only resources that match the entire display name given.
-        :param Sequence['GetContainerInstancesContainerInstanceCollectionItemDnsConfigArgs'] dns_configs: DNS settings for containers.
-        :param str fault_domain: The fault domain to place the container instance.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param str graceful_shutdown_timeout_in_seconds: The amount of time that processes in a container have to gracefully end when the container must be stopped. For example, when you delete a container instance. After the timeout is reached, the processes are sent a signal to be deleted.
-        :param str id: An OCID that cannot be changed.
-        :param Sequence['GetContainerInstancesContainerInstanceCollectionItemImagePullSecretArgs'] image_pull_secrets: The image pulls secrets so you can access private registry to pull container images.
-        :param str lifecycle_details: A message that describes the current state of the container in more detail. Can be used to provide actionable information.
-        :param str shape: The shape of the container instance. The shape determines the number of OCPUs, amount of memory, and other resources that are allocated to a container instance.
-        :param Sequence['GetContainerInstancesContainerInstanceCollectionItemShapeConfigArgs'] shape_configs: The shape configuration for a container instance. The shape configuration determines the resources thats are available to the container instance and its containers.
-        :param str state: A filter to only return resources that match the given lifecycle state.
-        :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`.
-        :param str time_created: The time the container instance was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-        :param str time_updated: The time the container instance was updated, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-        :param Sequence['GetContainerInstancesContainerInstanceCollectionItemVnicArgs'] vnics: The virtual networks available to the containers in the container instance.
-        :param int volume_count: The number of volumes that are attached to the container instance.
-        :param Sequence['GetContainerInstancesContainerInstanceCollectionItemVolumeArgs'] volumes: A volume is a directory with data that is accessible across multiple containers in a container instance.
-        """
-        pulumi.set(__self__, "availability_domain", availability_domain)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "container_count", container_count)
-        pulumi.set(__self__, "container_restart_policy", container_restart_policy)
-        pulumi.set(__self__, "containers", containers)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "dns_configs", dns_configs)
-        pulumi.set(__self__, "fault_domain", fault_domain)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "graceful_shutdown_timeout_in_seconds", graceful_shutdown_timeout_in_seconds)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "image_pull_secrets", image_pull_secrets)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "shape", shape)
-        pulumi.set(__self__, "shape_configs", shape_configs)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
-        pulumi.set(__self__, "vnics", vnics)
-        pulumi.set(__self__, "volume_count", volume_count)
-        pulumi.set(__self__, "volumes", volumes)
+                 availability_domain: Optional[str] = None,
+                 compartment_id: Optional[str] = None,
+                 container_count: Optional[int] = None,
+                 container_restart_policy: Optional[str] = None,
+                 containers: Optional[Sequence['outputs.GetContainerInstancesContainerInstanceCollectionItemContainerResult']] = None,
+                 defined_tags: Optional[Mapping[str, Any]] = None,
+                 display_name: Optional[str] = None,
+                 dns_configs: Optional[Sequence['outputs.GetContainerInstancesContainerInstanceCollectionItemDnsConfigResult']] = None,
+                 fault_domain: Optional[str] = None,
+                 freeform_tags: Optional[Mapping[str, Any]] = None,
+                 graceful_shutdown_timeout_in_seconds: Optional[str] = None,
+                 id: Optional[str] = None,
+                 image_pull_secrets: Optional[Sequence['outputs.GetContainerInstancesContainerInstanceCollectionItemImagePullSecretResult']] = None,
+                 lifecycle_details: Optional[str] = None,
+                 shape: Optional[str] = None,
+                 shape_configs: Optional[Sequence['outputs.GetContainerInstancesContainerInstanceCollectionItemShapeConfigResult']] = None,
+                 state: Optional[str] = None,
+                 system_tags: Optional[Mapping[str, Any]] = None,
+                 time_created: Optional[str] = None,
+                 time_updated: Optional[str] = None,
+                 vnics: Optional[Sequence['outputs.GetContainerInstancesContainerInstanceCollectionItemVnicResult']] = None,
+                 volume_count: Optional[int] = None,
+                 volumes: Optional[Sequence['outputs.GetContainerInstancesContainerInstanceCollectionItemVolumeResult']] = None):
+        if availability_domain is not None:
+            pulumi.set(__self__, "availability_domain", availability_domain)
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if container_count is not None:
+            pulumi.set(__self__, "container_count", container_count)
+        if container_restart_policy is not None:
+            pulumi.set(__self__, "container_restart_policy", container_restart_policy)
+        if containers is not None:
+            pulumi.set(__self__, "containers", containers)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if dns_configs is not None:
+            pulumi.set(__self__, "dns_configs", dns_configs)
+        if fault_domain is not None:
+            pulumi.set(__self__, "fault_domain", fault_domain)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if graceful_shutdown_timeout_in_seconds is not None:
+            pulumi.set(__self__, "graceful_shutdown_timeout_in_seconds", graceful_shutdown_timeout_in_seconds)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if image_pull_secrets is not None:
+            pulumi.set(__self__, "image_pull_secrets", image_pull_secrets)
+        if lifecycle_details is not None:
+            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if shape is not None:
+            pulumi.set(__self__, "shape", shape)
+        if shape_configs is not None:
+            pulumi.set(__self__, "shape_configs", shape_configs)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if system_tags is not None:
+            pulumi.set(__self__, "system_tags", system_tags)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if time_updated is not None:
+            pulumi.set(__self__, "time_updated", time_updated)
+        if vnics is not None:
+            pulumi.set(__self__, "vnics", vnics)
+        if volume_count is not None:
+            pulumi.set(__self__, "volume_count", volume_count)
+        if volumes is not None:
+            pulumi.set(__self__, "volumes", volumes)
 
     @property
     @pulumi.getter(name="availabilityDomain")
-    def availability_domain(self) -> str:
-        """
-        The name of the availability domain.  Example: `Uocm:PHX-AD-1`
-        """
+    def availability_domain(self) -> Optional[str]:
         return pulumi.get(self, "availability_domain")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="containerCount")
-    def container_count(self) -> int:
-        """
-        The number of containers on the container instance.
-        """
+    def container_count(self) -> Optional[int]:
         return pulumi.get(self, "container_count")
 
     @property
     @pulumi.getter(name="containerRestartPolicy")
-    def container_restart_policy(self) -> str:
-        """
-        The container restart policy is applied for all containers in container instance.
-        """
+    def container_restart_policy(self) -> Optional[str]:
         return pulumi.get(self, "container_restart_policy")
 
     @property
     @pulumi.getter
-    def containers(self) -> Sequence['outputs.GetContainerInstancesContainerInstanceCollectionItemContainerResult']:
-        """
-        The containers on the container instance.
-        """
+    def containers(self) -> Optional[Sequence['outputs.GetContainerInstancesContainerInstanceCollectionItemContainerResult']]:
         return pulumi.get(self, "containers")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A filter to return only resources that match the entire display name given.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="dnsConfigs")
-    def dns_configs(self) -> Sequence['outputs.GetContainerInstancesContainerInstanceCollectionItemDnsConfigResult']:
-        """
-        DNS settings for containers.
-        """
+    def dns_configs(self) -> Optional[Sequence['outputs.GetContainerInstancesContainerInstanceCollectionItemDnsConfigResult']]:
         return pulumi.get(self, "dns_configs")
 
     @property
     @pulumi.getter(name="faultDomain")
-    def fault_domain(self) -> str:
-        """
-        The fault domain to place the container instance.
-        """
+    def fault_domain(self) -> Optional[str]:
         return pulumi.get(self, "fault_domain")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="gracefulShutdownTimeoutInSeconds")
-    def graceful_shutdown_timeout_in_seconds(self) -> str:
-        """
-        The amount of time that processes in a container have to gracefully end when the container must be stopped. For example, when you delete a container instance. After the timeout is reached, the processes are sent a signal to be deleted.
-        """
+    def graceful_shutdown_timeout_in_seconds(self) -> Optional[str]:
         return pulumi.get(self, "graceful_shutdown_timeout_in_seconds")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        An OCID that cannot be changed.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="imagePullSecrets")
-    def image_pull_secrets(self) -> Sequence['outputs.GetContainerInstancesContainerInstanceCollectionItemImagePullSecretResult']:
-        """
-        The image pulls secrets so you can access private registry to pull container images.
-        """
+    def image_pull_secrets(self) -> Optional[Sequence['outputs.GetContainerInstancesContainerInstanceCollectionItemImagePullSecretResult']]:
         return pulumi.get(self, "image_pull_secrets")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        A message that describes the current state of the container in more detail. Can be used to provide actionable information.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter
-    def shape(self) -> str:
-        """
-        The shape of the container instance. The shape determines the number of OCPUs, amount of memory, and other resources that are allocated to a container instance.
-        """
+    def shape(self) -> Optional[str]:
         return pulumi.get(self, "shape")
 
     @property
     @pulumi.getter(name="shapeConfigs")
-    def shape_configs(self) -> Sequence['outputs.GetContainerInstancesContainerInstanceCollectionItemShapeConfigResult']:
-        """
-        The shape configuration for a container instance. The shape configuration determines the resources thats are available to the container instance and its containers.
-        """
+    def shape_configs(self) -> Optional[Sequence['outputs.GetContainerInstancesContainerInstanceCollectionItemShapeConfigResult']]:
         return pulumi.get(self, "shape_configs")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        A filter to only return resources that match the given lifecycle state.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`.
-        """
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The time the container instance was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The time the container instance was updated, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
     @property
     @pulumi.getter
-    def vnics(self) -> Sequence['outputs.GetContainerInstancesContainerInstanceCollectionItemVnicResult']:
-        """
-        The virtual networks available to the containers in the container instance.
-        """
+    def vnics(self) -> Optional[Sequence['outputs.GetContainerInstancesContainerInstanceCollectionItemVnicResult']]:
         return pulumi.get(self, "vnics")
 
     @property
     @pulumi.getter(name="volumeCount")
-    def volume_count(self) -> int:
-        """
-        The number of volumes that are attached to the container instance.
-        """
+    def volume_count(self) -> Optional[int]:
         return pulumi.get(self, "volume_count")
 
     @property
     @pulumi.getter
-    def volumes(self) -> Sequence['outputs.GetContainerInstancesContainerInstanceCollectionItemVolumeResult']:
-        """
-        A volume is a directory with data that is accessible across multiple containers in a container instance.
-        """
+    def volumes(self) -> Optional[Sequence['outputs.GetContainerInstancesContainerInstanceCollectionItemVolumeResult']]:
         return pulumi.get(self, "volumes")
 
 
 @pulumi.output_type
 class GetContainerInstancesContainerInstanceCollectionItemContainerResult(dict):
     def __init__(__self__, *,
-                 arguments: Sequence[str],
-                 availability_domain: str,
-                 commands: Sequence[str],
-                 compartment_id: str,
-                 container_id: str,
-                 container_instance_id: str,
-                 defined_tags: Mapping[str, Any],
-                 display_name: str,
-                 environment_variables: Mapping[str, Any],
-                 exit_code: int,
-                 fault_domain: str,
-                 freeform_tags: Mapping[str, Any],
-                 health_checks: Sequence['outputs.GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheckResult'],
-                 image_url: str,
-                 is_resource_principal_disabled: bool,
-                 lifecycle_details: str,
-                 resource_configs: Sequence['outputs.GetContainerInstancesContainerInstanceCollectionItemContainerResourceConfigResult'],
-                 security_contexts: Sequence['outputs.GetContainerInstancesContainerInstanceCollectionItemContainerSecurityContextResult'],
-                 state: str,
-                 system_tags: Mapping[str, Any],
-                 time_created: str,
-                 time_terminated: str,
-                 time_updated: str,
-                 volume_mounts: Sequence['outputs.GetContainerInstancesContainerInstanceCollectionItemContainerVolumeMountResult'],
-                 working_directory: str):
-        """
-        :param str availability_domain: The name of the availability domain.  Example: `Uocm:PHX-AD-1`
-        :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
-        :param str container_id: The OCID of the container.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
-        :param str display_name: A filter to return only resources that match the entire display name given.
-        :param str fault_domain: The fault domain to place the container instance.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param str lifecycle_details: A message that describes the current state of the container in more detail. Can be used to provide actionable information.
-        :param str state: A filter to only return resources that match the given lifecycle state.
-        :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`.
-        :param str time_created: The time the container instance was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-        :param str time_updated: The time the container instance was updated, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-        """
-        pulumi.set(__self__, "arguments", arguments)
-        pulumi.set(__self__, "availability_domain", availability_domain)
-        pulumi.set(__self__, "commands", commands)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "container_id", container_id)
-        pulumi.set(__self__, "container_instance_id", container_instance_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "environment_variables", environment_variables)
-        pulumi.set(__self__, "exit_code", exit_code)
-        pulumi.set(__self__, "fault_domain", fault_domain)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "health_checks", health_checks)
-        pulumi.set(__self__, "image_url", image_url)
-        pulumi.set(__self__, "is_resource_principal_disabled", is_resource_principal_disabled)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "resource_configs", resource_configs)
-        pulumi.set(__self__, "security_contexts", security_contexts)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_terminated", time_terminated)
-        pulumi.set(__self__, "time_updated", time_updated)
-        pulumi.set(__self__, "volume_mounts", volume_mounts)
-        pulumi.set(__self__, "working_directory", working_directory)
+                 arguments: Optional[Sequence[str]] = None,
+                 availability_domain: Optional[str] = None,
+                 commands: Optional[Sequence[str]] = None,
+                 compartment_id: Optional[str] = None,
+                 container_id: Optional[str] = None,
+                 container_instance_id: Optional[str] = None,
+                 defined_tags: Optional[Mapping[str, Any]] = None,
+                 display_name: Optional[str] = None,
+                 environment_variables: Optional[Mapping[str, Any]] = None,
+                 exit_code: Optional[int] = None,
+                 fault_domain: Optional[str] = None,
+                 freeform_tags: Optional[Mapping[str, Any]] = None,
+                 health_checks: Optional[Sequence['outputs.GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheckResult']] = None,
+                 image_url: Optional[str] = None,
+                 is_resource_principal_disabled: Optional[bool] = None,
+                 lifecycle_details: Optional[str] = None,
+                 resource_configs: Optional[Sequence['outputs.GetContainerInstancesContainerInstanceCollectionItemContainerResourceConfigResult']] = None,
+                 security_contexts: Optional[Sequence['outputs.GetContainerInstancesContainerInstanceCollectionItemContainerSecurityContextResult']] = None,
+                 state: Optional[str] = None,
+                 system_tags: Optional[Mapping[str, Any]] = None,
+                 time_created: Optional[str] = None,
+                 time_terminated: Optional[str] = None,
+                 time_updated: Optional[str] = None,
+                 volume_mounts: Optional[Sequence['outputs.GetContainerInstancesContainerInstanceCollectionItemContainerVolumeMountResult']] = None,
+                 working_directory: Optional[str] = None):
+        if arguments is not None:
+            pulumi.set(__self__, "arguments", arguments)
+        if availability_domain is not None:
+            pulumi.set(__self__, "availability_domain", availability_domain)
+        if commands is not None:
+            pulumi.set(__self__, "commands", commands)
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if container_id is not None:
+            pulumi.set(__self__, "container_id", container_id)
+        if container_instance_id is not None:
+            pulumi.set(__self__, "container_instance_id", container_instance_id)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if environment_variables is not None:
+            pulumi.set(__self__, "environment_variables", environment_variables)
+        if exit_code is not None:
+            pulumi.set(__self__, "exit_code", exit_code)
+        if fault_domain is not None:
+            pulumi.set(__self__, "fault_domain", fault_domain)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if health_checks is not None:
+            pulumi.set(__self__, "health_checks", health_checks)
+        if image_url is not None:
+            pulumi.set(__self__, "image_url", image_url)
+        if is_resource_principal_disabled is not None:
+            pulumi.set(__self__, "is_resource_principal_disabled", is_resource_principal_disabled)
+        if lifecycle_details is not None:
+            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if resource_configs is not None:
+            pulumi.set(__self__, "resource_configs", resource_configs)
+        if security_contexts is not None:
+            pulumi.set(__self__, "security_contexts", security_contexts)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if system_tags is not None:
+            pulumi.set(__self__, "system_tags", system_tags)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if time_terminated is not None:
+            pulumi.set(__self__, "time_terminated", time_terminated)
+        if time_updated is not None:
+            pulumi.set(__self__, "time_updated", time_updated)
+        if volume_mounts is not None:
+            pulumi.set(__self__, "volume_mounts", volume_mounts)
+        if working_directory is not None:
+            pulumi.set(__self__, "working_directory", working_directory)
 
     @property
     @pulumi.getter
-    def arguments(self) -> Sequence[str]:
+    def arguments(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "arguments")
 
     @property
     @pulumi.getter(name="availabilityDomain")
-    def availability_domain(self) -> str:
-        """
-        The name of the availability domain.  Example: `Uocm:PHX-AD-1`
-        """
+    def availability_domain(self) -> Optional[str]:
         return pulumi.get(self, "availability_domain")
 
     @property
     @pulumi.getter
-    def commands(self) -> Sequence[str]:
+    def commands(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "commands")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="containerId")
-    def container_id(self) -> str:
-        """
-        The OCID of the container.
-        """
+    def container_id(self) -> Optional[str]:
         return pulumi.get(self, "container_id")
 
     @property
     @pulumi.getter(name="containerInstanceId")
-    def container_instance_id(self) -> str:
+    def container_instance_id(self) -> Optional[str]:
         return pulumi.get(self, "container_instance_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A filter to return only resources that match the entire display name given.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="environmentVariables")
-    def environment_variables(self) -> Mapping[str, Any]:
+    def environment_variables(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "environment_variables")
 
     @property
     @pulumi.getter(name="exitCode")
-    def exit_code(self) -> int:
+    def exit_code(self) -> Optional[int]:
         return pulumi.get(self, "exit_code")
 
     @property
     @pulumi.getter(name="faultDomain")
-    def fault_domain(self) -> str:
-        """
-        The fault domain to place the container instance.
-        """
+    def fault_domain(self) -> Optional[str]:
         return pulumi.get(self, "fault_domain")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="healthChecks")
-    def health_checks(self) -> Sequence['outputs.GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheckResult']:
+    def health_checks(self) -> Optional[Sequence['outputs.GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheckResult']]:
         return pulumi.get(self, "health_checks")
 
     @property
     @pulumi.getter(name="imageUrl")
-    def image_url(self) -> str:
+    def image_url(self) -> Optional[str]:
         return pulumi.get(self, "image_url")
 
     @property
     @pulumi.getter(name="isResourcePrincipalDisabled")
-    def is_resource_principal_disabled(self) -> bool:
+    def is_resource_principal_disabled(self) -> Optional[bool]:
         return pulumi.get(self, "is_resource_principal_disabled")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        A message that describes the current state of the container in more detail. Can be used to provide actionable information.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="resourceConfigs")
-    def resource_configs(self) -> Sequence['outputs.GetContainerInstancesContainerInstanceCollectionItemContainerResourceConfigResult']:
+    def resource_configs(self) -> Optional[Sequence['outputs.GetContainerInstancesContainerInstanceCollectionItemContainerResourceConfigResult']]:
         return pulumi.get(self, "resource_configs")
 
     @property
     @pulumi.getter(name="securityContexts")
-    def security_contexts(self) -> Sequence['outputs.GetContainerInstancesContainerInstanceCollectionItemContainerSecurityContextResult']:
+    def security_contexts(self) -> Optional[Sequence['outputs.GetContainerInstancesContainerInstanceCollectionItemContainerSecurityContextResult']]:
         return pulumi.get(self, "security_contexts")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        A filter to only return resources that match the given lifecycle state.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`.
-        """
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The time the container instance was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeTerminated")
-    def time_terminated(self) -> str:
+    def time_terminated(self) -> Optional[str]:
         return pulumi.get(self, "time_terminated")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The time the container instance was updated, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
     @property
     @pulumi.getter(name="volumeMounts")
-    def volume_mounts(self) -> Sequence['outputs.GetContainerInstancesContainerInstanceCollectionItemContainerVolumeMountResult']:
+    def volume_mounts(self) -> Optional[Sequence['outputs.GetContainerInstancesContainerInstanceCollectionItemContainerVolumeMountResult']]:
         return pulumi.get(self, "volume_mounts")
 
     @property
     @pulumi.getter(name="workingDirectory")
-    def working_directory(self) -> str:
+    def working_directory(self) -> Optional[str]:
         return pulumi.get(self, "working_directory")
 
 
 @pulumi.output_type
 class GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheckResult(dict):
     def __init__(__self__, *,
-                 commands: Sequence[str],
-                 failure_action: str,
-                 failure_threshold: int,
-                 headers: Sequence['outputs.GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheckHeaderResult'],
-                 health_check_type: str,
-                 initial_delay_in_seconds: int,
-                 interval_in_seconds: int,
-                 name: str,
-                 path: str,
-                 port: int,
-                 status: str,
-                 status_details: str,
-                 success_threshold: int,
-                 timeout_in_seconds: int):
-        """
-        :param str name: The name of the volume. This must be unique within a single container instance.
-        :param str path: (Optional) Relative path for this file inside the volume mount directory. By default, the file is presented at the root of the volume mount path.
-        """
-        pulumi.set(__self__, "commands", commands)
-        pulumi.set(__self__, "failure_action", failure_action)
-        pulumi.set(__self__, "failure_threshold", failure_threshold)
-        pulumi.set(__self__, "headers", headers)
-        pulumi.set(__self__, "health_check_type", health_check_type)
-        pulumi.set(__self__, "initial_delay_in_seconds", initial_delay_in_seconds)
-        pulumi.set(__self__, "interval_in_seconds", interval_in_seconds)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "path", path)
-        pulumi.set(__self__, "port", port)
-        pulumi.set(__self__, "status", status)
-        pulumi.set(__self__, "status_details", status_details)
-        pulumi.set(__self__, "success_threshold", success_threshold)
-        pulumi.set(__self__, "timeout_in_seconds", timeout_in_seconds)
+                 commands: Optional[Sequence[str]] = None,
+                 failure_action: Optional[str] = None,
+                 failure_threshold: Optional[int] = None,
+                 headers: Optional[Sequence['outputs.GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheckHeaderResult']] = None,
+                 health_check_type: Optional[str] = None,
+                 initial_delay_in_seconds: Optional[int] = None,
+                 interval_in_seconds: Optional[int] = None,
+                 name: Optional[str] = None,
+                 path: Optional[str] = None,
+                 port: Optional[int] = None,
+                 status: Optional[str] = None,
+                 status_details: Optional[str] = None,
+                 success_threshold: Optional[int] = None,
+                 timeout_in_seconds: Optional[int] = None):
+        if commands is not None:
+            pulumi.set(__self__, "commands", commands)
+        if failure_action is not None:
+            pulumi.set(__self__, "failure_action", failure_action)
+        if failure_threshold is not None:
+            pulumi.set(__self__, "failure_threshold", failure_threshold)
+        if headers is not None:
+            pulumi.set(__self__, "headers", headers)
+        if health_check_type is not None:
+            pulumi.set(__self__, "health_check_type", health_check_type)
+        if initial_delay_in_seconds is not None:
+            pulumi.set(__self__, "initial_delay_in_seconds", initial_delay_in_seconds)
+        if interval_in_seconds is not None:
+            pulumi.set(__self__, "interval_in_seconds", interval_in_seconds)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if path is not None:
+            pulumi.set(__self__, "path", path)
+        if port is not None:
+            pulumi.set(__self__, "port", port)
+        if status is not None:
+            pulumi.set(__self__, "status", status)
+        if status_details is not None:
+            pulumi.set(__self__, "status_details", status_details)
+        if success_threshold is not None:
+            pulumi.set(__self__, "success_threshold", success_threshold)
+        if timeout_in_seconds is not None:
+            pulumi.set(__self__, "timeout_in_seconds", timeout_in_seconds)
 
     @property
     @pulumi.getter
-    def commands(self) -> Sequence[str]:
+    def commands(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "commands")
 
     @property
     @pulumi.getter(name="failureAction")
-    def failure_action(self) -> str:
+    def failure_action(self) -> Optional[str]:
         return pulumi.get(self, "failure_action")
 
     @property
     @pulumi.getter(name="failureThreshold")
-    def failure_threshold(self) -> int:
+    def failure_threshold(self) -> Optional[int]:
         return pulumi.get(self, "failure_threshold")
 
     @property
     @pulumi.getter
-    def headers(self) -> Sequence['outputs.GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheckHeaderResult']:
+    def headers(self) -> Optional[Sequence['outputs.GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheckHeaderResult']]:
         return pulumi.get(self, "headers")
 
     @property
     @pulumi.getter(name="healthCheckType")
-    def health_check_type(self) -> str:
+    def health_check_type(self) -> Optional[str]:
         return pulumi.get(self, "health_check_type")
 
     @property
     @pulumi.getter(name="initialDelayInSeconds")
-    def initial_delay_in_seconds(self) -> int:
+    def initial_delay_in_seconds(self) -> Optional[int]:
         return pulumi.get(self, "initial_delay_in_seconds")
 
     @property
     @pulumi.getter(name="intervalInSeconds")
-    def interval_in_seconds(self) -> int:
+    def interval_in_seconds(self) -> Optional[int]:
         return pulumi.get(self, "interval_in_seconds")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        The name of the volume. This must be unique within a single container instance.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
-    def path(self) -> str:
-        """
-        (Optional) Relative path for this file inside the volume mount directory. By default, the file is presented at the root of the volume mount path.
-        """
+    def path(self) -> Optional[str]:
         return pulumi.get(self, "path")
 
     @property
     @pulumi.getter
-    def port(self) -> int:
+    def port(self) -> Optional[int]:
         return pulumi.get(self, "port")
 
     @property
     @pulumi.getter
-    def status(self) -> str:
+    def status(self) -> Optional[str]:
         return pulumi.get(self, "status")
 
     @property
     @pulumi.getter(name="statusDetails")
-    def status_details(self) -> str:
+    def status_details(self) -> Optional[str]:
         return pulumi.get(self, "status_details")
 
     @property
     @pulumi.getter(name="successThreshold")
-    def success_threshold(self) -> int:
+    def success_threshold(self) -> Optional[int]:
         return pulumi.get(self, "success_threshold")
 
     @property
     @pulumi.getter(name="timeoutInSeconds")
-    def timeout_in_seconds(self) -> int:
+    def timeout_in_seconds(self) -> Optional[int]:
         return pulumi.get(self, "timeout_in_seconds")
 
 
 @pulumi.output_type
 class GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheckHeaderResult(dict):
     def __init__(__self__, *,
-                 name: str,
-                 value: str):
-        """
-        :param str name: The name of the volume. This must be unique within a single container instance.
-        """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "value", value)
+                 name: Optional[str] = None,
+                 value: Optional[str] = None):
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        The name of the volume. This must be unique within a single container instance.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
-    def value(self) -> str:
+    def value(self) -> Optional[str]:
         return pulumi.get(self, "value")
 
 
 @pulumi.output_type
 class GetContainerInstancesContainerInstanceCollectionItemContainerResourceConfigResult(dict):
     def __init__(__self__, *,
-                 memory_limit_in_gbs: float,
-                 vcpus_limit: float):
-        pulumi.set(__self__, "memory_limit_in_gbs", memory_limit_in_gbs)
-        pulumi.set(__self__, "vcpus_limit", vcpus_limit)
+                 memory_limit_in_gbs: Optional[float] = None,
+                 vcpus_limit: Optional[float] = None):
+        if memory_limit_in_gbs is not None:
+            pulumi.set(__self__, "memory_limit_in_gbs", memory_limit_in_gbs)
+        if vcpus_limit is not None:
+            pulumi.set(__self__, "vcpus_limit", vcpus_limit)
 
     @property
     @pulumi.getter(name="memoryLimitInGbs")
-    def memory_limit_in_gbs(self) -> float:
+    def memory_limit_in_gbs(self) -> Optional[float]:
         return pulumi.get(self, "memory_limit_in_gbs")
 
     @property
     @pulumi.getter(name="vcpusLimit")
-    def vcpus_limit(self) -> float:
+    def vcpus_limit(self) -> Optional[float]:
         return pulumi.get(self, "vcpus_limit")
 
 
 @pulumi.output_type
 class GetContainerInstancesContainerInstanceCollectionItemContainerSecurityContextResult(dict):
     def __init__(__self__, *,
-                 is_non_root_user_check_enabled: bool,
-                 is_root_file_system_readonly: bool,
-                 run_as_group: int,
-                 run_as_user: int,
-                 security_context_type: str):
-        pulumi.set(__self__, "is_non_root_user_check_enabled", is_non_root_user_check_enabled)
-        pulumi.set(__self__, "is_root_file_system_readonly", is_root_file_system_readonly)
-        pulumi.set(__self__, "run_as_group", run_as_group)
-        pulumi.set(__self__, "run_as_user", run_as_user)
-        pulumi.set(__self__, "security_context_type", security_context_type)
+                 is_non_root_user_check_enabled: Optional[bool] = None,
+                 is_root_file_system_readonly: Optional[bool] = None,
+                 run_as_group: Optional[int] = None,
+                 run_as_user: Optional[int] = None,
+                 security_context_type: Optional[str] = None):
+        if is_non_root_user_check_enabled is not None:
+            pulumi.set(__self__, "is_non_root_user_check_enabled", is_non_root_user_check_enabled)
+        if is_root_file_system_readonly is not None:
+            pulumi.set(__self__, "is_root_file_system_readonly", is_root_file_system_readonly)
+        if run_as_group is not None:
+            pulumi.set(__self__, "run_as_group", run_as_group)
+        if run_as_user is not None:
+            pulumi.set(__self__, "run_as_user", run_as_user)
+        if security_context_type is not None:
+            pulumi.set(__self__, "security_context_type", security_context_type)
 
     @property
     @pulumi.getter(name="isNonRootUserCheckEnabled")
-    def is_non_root_user_check_enabled(self) -> bool:
+    def is_non_root_user_check_enabled(self) -> Optional[bool]:
         return pulumi.get(self, "is_non_root_user_check_enabled")
 
     @property
     @pulumi.getter(name="isRootFileSystemReadonly")
-    def is_root_file_system_readonly(self) -> bool:
+    def is_root_file_system_readonly(self) -> Optional[bool]:
         return pulumi.get(self, "is_root_file_system_readonly")
 
     @property
     @pulumi.getter(name="runAsGroup")
-    def run_as_group(self) -> int:
+    def run_as_group(self) -> Optional[int]:
         return pulumi.get(self, "run_as_group")
 
     @property
     @pulumi.getter(name="runAsUser")
-    def run_as_user(self) -> int:
+    def run_as_user(self) -> Optional[int]:
         return pulumi.get(self, "run_as_user")
 
     @property
     @pulumi.getter(name="securityContextType")
-    def security_context_type(self) -> str:
+    def security_context_type(self) -> Optional[str]:
         return pulumi.get(self, "security_context_type")
 
 
 @pulumi.output_type
 class GetContainerInstancesContainerInstanceCollectionItemContainerVolumeMountResult(dict):
     def __init__(__self__, *,
-                 is_read_only: bool,
-                 mount_path: str,
-                 partition: int,
-                 sub_path: str,
-                 volume_name: str):
-        pulumi.set(__self__, "is_read_only", is_read_only)
-        pulumi.set(__self__, "mount_path", mount_path)
-        pulumi.set(__self__, "partition", partition)
-        pulumi.set(__self__, "sub_path", sub_path)
-        pulumi.set(__self__, "volume_name", volume_name)
+                 is_read_only: Optional[bool] = None,
+                 mount_path: Optional[str] = None,
+                 partition: Optional[int] = None,
+                 sub_path: Optional[str] = None,
+                 volume_name: Optional[str] = None):
+        if is_read_only is not None:
+            pulumi.set(__self__, "is_read_only", is_read_only)
+        if mount_path is not None:
+            pulumi.set(__self__, "mount_path", mount_path)
+        if partition is not None:
+            pulumi.set(__self__, "partition", partition)
+        if sub_path is not None:
+            pulumi.set(__self__, "sub_path", sub_path)
+        if volume_name is not None:
+            pulumi.set(__self__, "volume_name", volume_name)
 
     @property
     @pulumi.getter(name="isReadOnly")
-    def is_read_only(self) -> bool:
+    def is_read_only(self) -> Optional[bool]:
         return pulumi.get(self, "is_read_only")
 
     @property
     @pulumi.getter(name="mountPath")
-    def mount_path(self) -> str:
+    def mount_path(self) -> Optional[str]:
         return pulumi.get(self, "mount_path")
 
     @property
     @pulumi.getter
-    def partition(self) -> int:
+    def partition(self) -> Optional[int]:
         return pulumi.get(self, "partition")
 
     @property
     @pulumi.getter(name="subPath")
-    def sub_path(self) -> str:
+    def sub_path(self) -> Optional[str]:
         return pulumi.get(self, "sub_path")
 
     @property
     @pulumi.getter(name="volumeName")
-    def volume_name(self) -> str:
+    def volume_name(self) -> Optional[str]:
         return pulumi.get(self, "volume_name")
 
 
 @pulumi.output_type
 class GetContainerInstancesContainerInstanceCollectionItemDnsConfigResult(dict):
     def __init__(__self__, *,
-                 nameservers: Sequence[str],
-                 options: Sequence[str],
-                 searches: Sequence[str]):
-        """
-        :param Sequence[str] nameservers: IP address of the name server..
-        :param Sequence[str] options: Options allows certain internal resolver variables to be modified.
-        :param Sequence[str] searches: Search list for hostname lookup.
-        """
-        pulumi.set(__self__, "nameservers", nameservers)
-        pulumi.set(__self__, "options", options)
-        pulumi.set(__self__, "searches", searches)
+                 nameservers: Optional[Sequence[str]] = None,
+                 options: Optional[Sequence[str]] = None,
+                 searches: Optional[Sequence[str]] = None):
+        if nameservers is not None:
+            pulumi.set(__self__, "nameservers", nameservers)
+        if options is not None:
+            pulumi.set(__self__, "options", options)
+        if searches is not None:
+            pulumi.set(__self__, "searches", searches)
 
     @property
     @pulumi.getter
-    def nameservers(self) -> Sequence[str]:
-        """
-        IP address of the name server..
-        """
+    def nameservers(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "nameservers")
 
     @property
     @pulumi.getter
-    def options(self) -> Sequence[str]:
-        """
-        Options allows certain internal resolver variables to be modified.
-        """
+    def options(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "options")
 
     @property
     @pulumi.getter
-    def searches(self) -> Sequence[str]:
-        """
-        Search list for hostname lookup.
-        """
+    def searches(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "searches")
 
 
 @pulumi.output_type
 class GetContainerInstancesContainerInstanceCollectionItemImagePullSecretResult(dict):
     def __init__(__self__, *,
-                 password: str,
-                 registry_endpoint: str,
-                 secret_id: str,
-                 secret_type: str,
-                 username: str):
-        """
-        :param str registry_endpoint: The registry endpoint of the container image.
-        :param str secret_id: The OCID of the secret for registry credentials.
-        :param str secret_type: The type of ImagePullSecret.
-        """
-        pulumi.set(__self__, "password", password)
-        pulumi.set(__self__, "registry_endpoint", registry_endpoint)
-        pulumi.set(__self__, "secret_id", secret_id)
-        pulumi.set(__self__, "secret_type", secret_type)
-        pulumi.set(__self__, "username", username)
+                 password: Optional[str] = None,
+                 registry_endpoint: Optional[str] = None,
+                 secret_id: Optional[str] = None,
+                 secret_type: Optional[str] = None,
+                 username: Optional[str] = None):
+        if password is not None:
+            pulumi.set(__self__, "password", password)
+        if registry_endpoint is not None:
+            pulumi.set(__self__, "registry_endpoint", registry_endpoint)
+        if secret_id is not None:
+            pulumi.set(__self__, "secret_id", secret_id)
+        if secret_type is not None:
+            pulumi.set(__self__, "secret_type", secret_type)
+        if username is not None:
+            pulumi.set(__self__, "username", username)
 
     @property
     @pulumi.getter
-    def password(self) -> str:
+    def password(self) -> Optional[str]:
         return pulumi.get(self, "password")
 
     @property
     @pulumi.getter(name="registryEndpoint")
-    def registry_endpoint(self) -> str:
-        """
-        The registry endpoint of the container image.
-        """
+    def registry_endpoint(self) -> Optional[str]:
         return pulumi.get(self, "registry_endpoint")
 
     @property
     @pulumi.getter(name="secretId")
-    def secret_id(self) -> str:
-        """
-        The OCID of the secret for registry credentials.
-        """
+    def secret_id(self) -> Optional[str]:
         return pulumi.get(self, "secret_id")
 
     @property
     @pulumi.getter(name="secretType")
-    def secret_type(self) -> str:
-        """
-        The type of ImagePullSecret.
-        """
+    def secret_type(self) -> Optional[str]:
         return pulumi.get(self, "secret_type")
 
     @property
     @pulumi.getter
-    def username(self) -> str:
+    def username(self) -> Optional[str]:
         return pulumi.get(self, "username")
 
 
 @pulumi.output_type
 class GetContainerInstancesContainerInstanceCollectionItemShapeConfigResult(dict):
     def __init__(__self__, *,
-                 memory_in_gbs: float,
-                 networking_bandwidth_in_gbps: float,
-                 ocpus: float,
-                 processor_description: str):
-        """
-        :param float memory_in_gbs: The total amount of memory available to the container instance, in gigabytes.
-        :param float networking_bandwidth_in_gbps: The networking bandwidth available to the container instance, in gigabits per second.
-        :param float ocpus: The total number of OCPUs available to the container instance.
-        :param str processor_description: A short description of the container instance's processor (CPU).
-        """
-        pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
-        pulumi.set(__self__, "networking_bandwidth_in_gbps", networking_bandwidth_in_gbps)
-        pulumi.set(__self__, "ocpus", ocpus)
-        pulumi.set(__self__, "processor_description", processor_description)
+                 memory_in_gbs: Optional[float] = None,
+                 networking_bandwidth_in_gbps: Optional[float] = None,
+                 ocpus: Optional[float] = None,
+                 processor_description: Optional[str] = None):
+        if memory_in_gbs is not None:
+            pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+        if networking_bandwidth_in_gbps is not None:
+            pulumi.set(__self__, "networking_bandwidth_in_gbps", networking_bandwidth_in_gbps)
+        if ocpus is not None:
+            pulumi.set(__self__, "ocpus", ocpus)
+        if processor_description is not None:
+            pulumi.set(__self__, "processor_description", processor_description)
 
     @property
     @pulumi.getter(name="memoryInGbs")
-    def memory_in_gbs(self) -> float:
-        """
-        The total amount of memory available to the container instance, in gigabytes.
-        """
+    def memory_in_gbs(self) -> Optional[float]:
         return pulumi.get(self, "memory_in_gbs")
 
     @property
     @pulumi.getter(name="networkingBandwidthInGbps")
-    def networking_bandwidth_in_gbps(self) -> float:
-        """
-        The networking bandwidth available to the container instance, in gigabits per second.
-        """
+    def networking_bandwidth_in_gbps(self) -> Optional[float]:
         return pulumi.get(self, "networking_bandwidth_in_gbps")
 
     @property
     @pulumi.getter
-    def ocpus(self) -> float:
-        """
-        The total number of OCPUs available to the container instance.
-        """
+    def ocpus(self) -> Optional[float]:
         return pulumi.get(self, "ocpus")
 
     @property
     @pulumi.getter(name="processorDescription")
-    def processor_description(self) -> str:
-        """
-        A short description of the container instance's processor (CPU).
-        """
+    def processor_description(self) -> Optional[str]:
         return pulumi.get(self, "processor_description")
 
 
 @pulumi.output_type
 class GetContainerInstancesContainerInstanceCollectionItemVnicResult(dict):
     def __init__(__self__, *,
-                 defined_tags: Mapping[str, Any],
-                 display_name: str,
-                 freeform_tags: Mapping[str, Any],
-                 hostname_label: str,
-                 is_public_ip_assigned: bool,
-                 nsg_ids: Sequence[str],
-                 private_ip: str,
-                 skip_source_dest_check: bool,
-                 subnet_id: str,
-                 vnic_id: str):
-        """
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
-        :param str display_name: A filter to return only resources that match the entire display name given.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param str vnic_id: The identifier of the virtual network interface card (VNIC) over which the containers accessing this network can communicate with the larger virtual cloud network.
-        """
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "hostname_label", hostname_label)
-        pulumi.set(__self__, "is_public_ip_assigned", is_public_ip_assigned)
-        pulumi.set(__self__, "nsg_ids", nsg_ids)
-        pulumi.set(__self__, "private_ip", private_ip)
-        pulumi.set(__self__, "skip_source_dest_check", skip_source_dest_check)
-        pulumi.set(__self__, "subnet_id", subnet_id)
-        pulumi.set(__self__, "vnic_id", vnic_id)
+                 defined_tags: Optional[Mapping[str, Any]] = None,
+                 display_name: Optional[str] = None,
+                 freeform_tags: Optional[Mapping[str, Any]] = None,
+                 hostname_label: Optional[str] = None,
+                 is_public_ip_assigned: Optional[bool] = None,
+                 nsg_ids: Optional[Sequence[str]] = None,
+                 private_ip: Optional[str] = None,
+                 skip_source_dest_check: Optional[bool] = None,
+                 subnet_id: Optional[str] = None,
+                 vnic_id: Optional[str] = None):
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if hostname_label is not None:
+            pulumi.set(__self__, "hostname_label", hostname_label)
+        if is_public_ip_assigned is not None:
+            pulumi.set(__self__, "is_public_ip_assigned", is_public_ip_assigned)
+        if nsg_ids is not None:
+            pulumi.set(__self__, "nsg_ids", nsg_ids)
+        if private_ip is not None:
+            pulumi.set(__self__, "private_ip", private_ip)
+        if skip_source_dest_check is not None:
+            pulumi.set(__self__, "skip_source_dest_check", skip_source_dest_check)
+        if subnet_id is not None:
+            pulumi.set(__self__, "subnet_id", subnet_id)
+        if vnic_id is not None:
+            pulumi.set(__self__, "vnic_id", vnic_id)
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A filter to return only resources that match the entire display name given.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="hostnameLabel")
-    def hostname_label(self) -> str:
+    def hostname_label(self) -> Optional[str]:
         return pulumi.get(self, "hostname_label")
 
     @property
     @pulumi.getter(name="isPublicIpAssigned")
-    def is_public_ip_assigned(self) -> bool:
+    def is_public_ip_assigned(self) -> Optional[bool]:
         return pulumi.get(self, "is_public_ip_assigned")
 
     @property
     @pulumi.getter(name="nsgIds")
-    def nsg_ids(self) -> Sequence[str]:
+    def nsg_ids(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "nsg_ids")
 
     @property
     @pulumi.getter(name="privateIp")
-    def private_ip(self) -> str:
+    def private_ip(self) -> Optional[str]:
         return pulumi.get(self, "private_ip")
 
     @property
     @pulumi.getter(name="skipSourceDestCheck")
-    def skip_source_dest_check(self) -> bool:
+    def skip_source_dest_check(self) -> Optional[bool]:
         return pulumi.get(self, "skip_source_dest_check")
 
     @property
     @pulumi.getter(name="subnetId")
-    def subnet_id(self) -> str:
+    def subnet_id(self) -> Optional[str]:
         return pulumi.get(self, "subnet_id")
 
     @property
     @pulumi.getter(name="vnicId")
-    def vnic_id(self) -> str:
-        """
-        The identifier of the virtual network interface card (VNIC) over which the containers accessing this network can communicate with the larger virtual cloud network.
-        """
+    def vnic_id(self) -> Optional[str]:
         return pulumi.get(self, "vnic_id")
 
 
 @pulumi.output_type
 class GetContainerInstancesContainerInstanceCollectionItemVolumeResult(dict):
     def __init__(__self__, *,
-                 backing_store: str,
-                 configs: Sequence['outputs.GetContainerInstancesContainerInstanceCollectionItemVolumeConfigResult'],
-                 name: str,
-                 volume_type: str):
-        """
-        :param str backing_store: The volume type of the empty directory, can be either File Storage or Memory.
-        :param Sequence['GetContainerInstancesContainerInstanceCollectionItemVolumeConfigArgs'] configs: Contains string key value pairs which can be mounted as individual files inside the container. The value needs to be base64 encoded. It is decoded to plain text before the mount.
-        :param str name: The name of the volume. This must be unique within a single container instance.
-        :param str volume_type: The type of volume.
-        """
-        pulumi.set(__self__, "backing_store", backing_store)
-        pulumi.set(__self__, "configs", configs)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "volume_type", volume_type)
+                 backing_store: Optional[str] = None,
+                 configs: Optional[Sequence['outputs.GetContainerInstancesContainerInstanceCollectionItemVolumeConfigResult']] = None,
+                 name: Optional[str] = None,
+                 volume_type: Optional[str] = None):
+        if backing_store is not None:
+            pulumi.set(__self__, "backing_store", backing_store)
+        if configs is not None:
+            pulumi.set(__self__, "configs", configs)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if volume_type is not None:
+            pulumi.set(__self__, "volume_type", volume_type)
 
     @property
     @pulumi.getter(name="backingStore")
-    def backing_store(self) -> str:
-        """
-        The volume type of the empty directory, can be either File Storage or Memory.
-        """
+    def backing_store(self) -> Optional[str]:
         return pulumi.get(self, "backing_store")
 
     @property
     @pulumi.getter
-    def configs(self) -> Sequence['outputs.GetContainerInstancesContainerInstanceCollectionItemVolumeConfigResult']:
-        """
-        Contains string key value pairs which can be mounted as individual files inside the container. The value needs to be base64 encoded. It is decoded to plain text before the mount.
-        """
+    def configs(self) -> Optional[Sequence['outputs.GetContainerInstancesContainerInstanceCollectionItemVolumeConfigResult']]:
         return pulumi.get(self, "configs")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        The name of the volume. This must be unique within a single container instance.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="volumeType")
-    def volume_type(self) -> str:
-        """
-        The type of volume.
-        """
+    def volume_type(self) -> Optional[str]:
         return pulumi.get(self, "volume_type")
 
 
 @pulumi.output_type
 class GetContainerInstancesContainerInstanceCollectionItemVolumeConfigResult(dict):
     def __init__(__self__, *,
-                 data: str,
-                 file_name: str,
-                 path: str):
-        """
-        :param str data: The base64 encoded contents of the file. The contents are decoded to plain text before mounted as a file to a container inside container instance.
-        :param str file_name: The name of the file. The fileName should be unique across the volume.
-        :param str path: (Optional) Relative path for this file inside the volume mount directory. By default, the file is presented at the root of the volume mount path.
-        """
-        pulumi.set(__self__, "data", data)
-        pulumi.set(__self__, "file_name", file_name)
-        pulumi.set(__self__, "path", path)
+                 data: Optional[str] = None,
+                 file_name: Optional[str] = None,
+                 path: Optional[str] = None):
+        if data is not None:
+            pulumi.set(__self__, "data", data)
+        if file_name is not None:
+            pulumi.set(__self__, "file_name", file_name)
+        if path is not None:
+            pulumi.set(__self__, "path", path)
 
     @property
     @pulumi.getter
-    def data(self) -> str:
-        """
-        The base64 encoded contents of the file. The contents are decoded to plain text before mounted as a file to a container inside container instance.
-        """
+    def data(self) -> Optional[str]:
         return pulumi.get(self, "data")
 
     @property
     @pulumi.getter(name="fileName")
-    def file_name(self) -> str:
-        """
-        The name of the file. The fileName should be unique across the volume.
-        """
+    def file_name(self) -> Optional[str]:
         return pulumi.get(self, "file_name")
 
     @property
     @pulumi.getter
-    def path(self) -> str:
-        """
-        (Optional) Relative path for this file inside the volume mount directory. By default, the file is presented at the root of the volume mount path.
-        """
+    def path(self) -> Optional[str]:
         return pulumi.get(self, "path")
 
 
@@ -2361,9 +2010,6 @@ class GetContainerInstancesFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: The name of the volume. This must be unique within a single container instance.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -2372,9 +2018,6 @@ class GetContainerInstancesFilterResult(dict):
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        The name of the volume. This must be unique within a single container instance.
-        """
         return pulumi.get(self, "name")
 
     @property

@@ -16,7 +16,7 @@ namespace Pulumi.Oci.Marketplace.Outputs
         /// <summary>
         /// The unique identifier for the listing.
         /// </summary>
-        public readonly string ListingId;
+        public readonly string? ListingId;
         /// <summary>
         /// The operating system used by the listing.
         /// </summary>
@@ -24,11 +24,11 @@ namespace Pulumi.Oci.Marketplace.Outputs
         /// <summary>
         /// A filter to return only packages that match the given package type exactly.
         /// </summary>
-        public readonly string PackageType;
+        public readonly string? PackageType;
         /// <summary>
         /// The version of the package. Package versions are unique within a listing.
         /// </summary>
-        public readonly string PackageVersion;
+        public readonly string? PackageVersion;
         /// <summary>
         /// The model for pricing.
         /// </summary>
@@ -40,29 +40,29 @@ namespace Pulumi.Oci.Marketplace.Outputs
         /// <summary>
         /// The unique identifier for the package resource.
         /// </summary>
-        public readonly string ResourceId;
+        public readonly string? ResourceId;
         /// <summary>
         /// The date and time this listing package was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
 
         [OutputConstructor]
         private GetListingPackagesListingPackageResult(
-            string listingId,
+            string? listingId,
 
             ImmutableArray<Outputs.GetListingPackagesListingPackageOperatingSystemResult> operatingSystems,
 
-            string packageType,
+            string? packageType,
 
-            string packageVersion,
+            string? packageVersion,
 
             ImmutableArray<Outputs.GetListingPackagesListingPackagePricingResult> pricings,
 
             ImmutableArray<Outputs.GetListingPackagesListingPackageRegionResult> regions,
 
-            string resourceId,
+            string? resourceId,
 
-            string timeCreated)
+            string? timeCreated)
         {
             ListingId = listingId;
             OperatingSystems = operatingSystems;

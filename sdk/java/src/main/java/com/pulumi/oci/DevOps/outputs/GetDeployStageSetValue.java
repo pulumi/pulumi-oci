@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.DevOps.outputs.GetDeployStageSetValueItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDeployStageSetValue {
@@ -14,7 +15,7 @@ public final class GetDeployStageSetValue {
      * @return List of parameters defined to set helm value.
      * 
      */
-    private List<GetDeployStageSetValueItem> items;
+    private @Nullable List<GetDeployStageSetValueItem> items;
 
     private GetDeployStageSetValue() {}
     /**
@@ -22,7 +23,7 @@ public final class GetDeployStageSetValue {
      * 
      */
     public List<GetDeployStageSetValueItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -34,7 +35,7 @@ public final class GetDeployStageSetValue {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetDeployStageSetValueItem> items;
+        private @Nullable List<GetDeployStageSetValueItem> items;
         public Builder() {}
         public Builder(GetDeployStageSetValue defaults) {
     	      Objects.requireNonNull(defaults);
@@ -42,8 +43,8 @@ public final class GetDeployStageSetValue {
         }
 
         @CustomType.Setter
-        public Builder items(List<GetDeployStageSetValueItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetDeployStageSetValueItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetDeployStageSetValueItem... items) {

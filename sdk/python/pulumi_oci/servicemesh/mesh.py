@@ -25,13 +25,6 @@ class MeshArgs:
                  mtls: Optional[pulumi.Input['MeshMtlsArgs']] = None):
         """
         The set of arguments for constructing a Mesh resource.
-        :param pulumi.Input[Sequence[pulumi.Input['MeshCertificateAuthorityArgs']]] certificate_authorities: The OCID of the certificate authority resource OCID to use for creating leaf certificates.
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. The name does not have to be unique and can be changed after creation. Avoid entering confidential information.  Example: `My new resource`
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] description: (Updatable) Description of the resource. It can be changed after creation. Avoid entering confidential information.  Example: `This is my new resource`
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input['MeshMtlsArgs'] mtls: (Updatable) Sets a minimum level of mTLS authentication for all virtual services within the mesh.
         """
         pulumi.set(__self__, "certificate_authorities", certificate_authorities)
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -48,9 +41,6 @@ class MeshArgs:
     @property
     @pulumi.getter(name="certificateAuthorities")
     def certificate_authorities(self) -> pulumi.Input[Sequence[pulumi.Input['MeshCertificateAuthorityArgs']]]:
-        """
-        The OCID of the certificate authority resource OCID to use for creating leaf certificates.
-        """
         return pulumi.get(self, "certificate_authorities")
 
     @certificate_authorities.setter
@@ -60,9 +50,6 @@ class MeshArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -72,9 +59,6 @@ class MeshArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Input[str]:
-        """
-        (Updatable) A user-friendly name. The name does not have to be unique and can be changed after creation. Avoid entering confidential information.  Example: `My new resource`
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -84,9 +68,6 @@ class MeshArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -96,9 +77,6 @@ class MeshArgs:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Description of the resource. It can be changed after creation. Avoid entering confidential information.  Example: `This is my new resource`
-        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -108,9 +86,6 @@ class MeshArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -120,9 +95,6 @@ class MeshArgs:
     @property
     @pulumi.getter
     def mtls(self) -> Optional[pulumi.Input['MeshMtlsArgs']]:
-        """
-        (Updatable) Sets a minimum level of mTLS authentication for all virtual services within the mesh.
-        """
         return pulumi.get(self, "mtls")
 
     @mtls.setter
@@ -147,18 +119,6 @@ class _MeshState:
                  time_updated: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering Mesh resources.
-        :param pulumi.Input[Sequence[pulumi.Input['MeshCertificateAuthorityArgs']]] certificate_authorities: The OCID of the certificate authority resource OCID to use for creating leaf certificates.
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] description: (Updatable) Description of the resource. It can be changed after creation. Avoid entering confidential information.  Example: `This is my new resource`
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. The name does not have to be unique and can be changed after creation. Avoid entering confidential information.  Example: `My new resource`
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
-        :param pulumi.Input['MeshMtlsArgs'] mtls: (Updatable) Sets a minimum level of mTLS authentication for all virtual services within the mesh.
-        :param pulumi.Input[str] state: The current state of the Resource.
-        :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[str] time_created: The time when this resource was created in an RFC3339 formatted datetime string.
-        :param pulumi.Input[str] time_updated: The time when this resource was updated in an RFC3339 formatted datetime string.
         """
         if certificate_authorities is not None:
             pulumi.set(__self__, "certificate_authorities", certificate_authorities)
@@ -188,9 +148,6 @@ class _MeshState:
     @property
     @pulumi.getter(name="certificateAuthorities")
     def certificate_authorities(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['MeshCertificateAuthorityArgs']]]]:
-        """
-        The OCID of the certificate authority resource OCID to use for creating leaf certificates.
-        """
         return pulumi.get(self, "certificate_authorities")
 
     @certificate_authorities.setter
@@ -200,9 +157,6 @@ class _MeshState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -212,9 +166,6 @@ class _MeshState:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -224,9 +175,6 @@ class _MeshState:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Description of the resource. It can be changed after creation. Avoid entering confidential information.  Example: `This is my new resource`
-        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -236,9 +184,6 @@ class _MeshState:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A user-friendly name. The name does not have to be unique and can be changed after creation. Avoid entering confidential information.  Example: `My new resource`
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -248,9 +193,6 @@ class _MeshState:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -260,9 +202,6 @@ class _MeshState:
     @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> Optional[pulumi.Input[str]]:
-        """
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
-        """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
@@ -272,9 +211,6 @@ class _MeshState:
     @property
     @pulumi.getter
     def mtls(self) -> Optional[pulumi.Input['MeshMtlsArgs']]:
-        """
-        (Updatable) Sets a minimum level of mTLS authentication for all virtual services within the mesh.
-        """
         return pulumi.get(self, "mtls")
 
     @mtls.setter
@@ -284,9 +220,6 @@ class _MeshState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The current state of the Resource.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -296,9 +229,6 @@ class _MeshState:
     @property
     @pulumi.getter(name="systemTags")
     def system_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
@@ -308,9 +238,6 @@ class _MeshState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The time when this resource was created in an RFC3339 formatted datetime string.
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -320,9 +247,6 @@ class _MeshState:
     @property
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> Optional[pulumi.Input[str]]:
-        """
-        The time when this resource was updated in an RFC3339 formatted datetime string.
-        """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
@@ -344,51 +268,9 @@ class Mesh(pulumi.CustomResource):
                  mtls: Optional[pulumi.Input[pulumi.InputType['MeshMtlsArgs']]] = None,
                  __props__=None):
         """
-        This resource provides the Mesh resource in Oracle Cloud Infrastructure Service Mesh service.
-
-        Creates a new Mesh.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_mesh = oci.service_mesh.Mesh("testMesh",
-            certificate_authorities=[oci.service_mesh.MeshCertificateAuthorityArgs(
-                id=var["mesh_certificate_authorities_id"],
-            )],
-            compartment_id=var["compartment_id"],
-            display_name=var["mesh_display_name"],
-            defined_tags={
-                "foo-namespace.bar-key": "value",
-            },
-            description=var["mesh_description"],
-            freeform_tags={
-                "bar-key": "value",
-            },
-            mtls=oci.service_mesh.MeshMtlsArgs(
-                minimum=var["mesh_mtls_minimum"],
-            ))
-        ```
-
-        ## Import
-
-        Meshes can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:ServiceMesh/mesh:Mesh test_mesh "id"
-        ```
-
+        Create a Mesh resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MeshCertificateAuthorityArgs']]]] certificate_authorities: The OCID of the certificate authority resource OCID to use for creating leaf certificates.
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] description: (Updatable) Description of the resource. It can be changed after creation. Avoid entering confidential information.  Example: `This is my new resource`
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. The name does not have to be unique and can be changed after creation. Avoid entering confidential information.  Example: `My new resource`
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[pulumi.InputType['MeshMtlsArgs']] mtls: (Updatable) Sets a minimum level of mTLS authentication for all virtual services within the mesh.
         """
         ...
     @overload
@@ -397,42 +279,7 @@ class Mesh(pulumi.CustomResource):
                  args: MeshArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Mesh resource in Oracle Cloud Infrastructure Service Mesh service.
-
-        Creates a new Mesh.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_mesh = oci.service_mesh.Mesh("testMesh",
-            certificate_authorities=[oci.service_mesh.MeshCertificateAuthorityArgs(
-                id=var["mesh_certificate_authorities_id"],
-            )],
-            compartment_id=var["compartment_id"],
-            display_name=var["mesh_display_name"],
-            defined_tags={
-                "foo-namespace.bar-key": "value",
-            },
-            description=var["mesh_description"],
-            freeform_tags={
-                "bar-key": "value",
-            },
-            mtls=oci.service_mesh.MeshMtlsArgs(
-                minimum=var["mesh_mtls_minimum"],
-            ))
-        ```
-
-        ## Import
-
-        Meshes can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:ServiceMesh/mesh:Mesh test_mesh "id"
-        ```
-
+        Create a Mesh resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param MeshArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -511,18 +358,6 @@ class Mesh(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MeshCertificateAuthorityArgs']]]] certificate_authorities: The OCID of the certificate authority resource OCID to use for creating leaf certificates.
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] description: (Updatable) Description of the resource. It can be changed after creation. Avoid entering confidential information.  Example: `This is my new resource`
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. The name does not have to be unique and can be changed after creation. Avoid entering confidential information.  Example: `My new resource`
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
-        :param pulumi.Input[pulumi.InputType['MeshMtlsArgs']] mtls: (Updatable) Sets a minimum level of mTLS authentication for all virtual services within the mesh.
-        :param pulumi.Input[str] state: The current state of the Resource.
-        :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[str] time_created: The time when this resource was created in an RFC3339 formatted datetime string.
-        :param pulumi.Input[str] time_updated: The time when this resource was updated in an RFC3339 formatted datetime string.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -545,96 +380,60 @@ class Mesh(pulumi.CustomResource):
     @property
     @pulumi.getter(name="certificateAuthorities")
     def certificate_authorities(self) -> pulumi.Output[Sequence['outputs.MeshCertificateAuthority']]:
-        """
-        The OCID of the certificate authority resource OCID to use for creating leaf certificates.
-        """
         return pulumi.get(self, "certificate_authorities")
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def description(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Description of the resource. It can be changed after creation. Avoid entering confidential information.  Example: `This is my new resource`
-        """
+    def description(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Output[str]:
-        """
-        (Updatable) A user-friendly name. The name does not have to be unique and can be changed after creation. Avoid entering confidential information.  Example: `My new resource`
-        """
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> pulumi.Output[str]:
-        """
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
-        """
+    def lifecycle_details(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter
-    def mtls(self) -> pulumi.Output['outputs.MeshMtls']:
-        """
-        (Updatable) Sets a minimum level of mTLS authentication for all virtual services within the mesh.
-        """
+    def mtls(self) -> pulumi.Output[Optional['outputs.MeshMtls']]:
         return pulumi.get(self, "mtls")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        The current state of the Resource.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        The time when this resource was created in an RFC3339 formatted datetime string.
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> pulumi.Output[str]:
-        """
-        The time when this resource was updated in an RFC3339 formatted datetime string.
-        """
+    def time_updated(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_updated")
 

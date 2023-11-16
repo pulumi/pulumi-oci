@@ -16,23 +16,23 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external listener.
         /// </summary>
-        public readonly string ListenerId;
+        public readonly string? ListenerId;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
         /// </summary>
-        public readonly string ManagedDatabaseId;
+        public readonly string? ManagedDatabaseId;
         /// <summary>
         /// The name of the service.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
 
         [OutputConstructor]
         private GetExternalListenerServicesExternalListenerServiceCollectionItemResult(
-            string listenerId,
+            string? listenerId,
 
-            string managedDatabaseId,
+            string? managedDatabaseId,
 
-            string name)
+            string? name)
         {
             ListenerId = listenerId;
             ManagedDatabaseId = managedDatabaseId;

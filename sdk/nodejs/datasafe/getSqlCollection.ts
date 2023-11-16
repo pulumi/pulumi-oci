@@ -45,77 +45,77 @@ export interface GetSqlCollectionResult {
     /**
      * The OCID of the compartment containing the SQL collection.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * The database user name.
      */
-    readonly dbUserName: string;
+    readonly dbUserName?: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * The description of the SQL collection.
      */
-    readonly description: string;
+    readonly description?: string;
     /**
      * The display name of the SQL collection.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
      */
-    readonly freeformTags: {[key: string]: any};
-    readonly generateSqlFirewallPolicyTrigger: boolean;
+    readonly freeformTags?: {[key: string]: any};
+    readonly generateSqlFirewallPolicyTrigger?: boolean;
     /**
      * The OCID of the SQL collection.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Details about the current state of the SQL collection in Data Safe.
      */
-    readonly lifecycleDetails: string;
-    readonly purgeLogsTrigger: boolean;
-    readonly refreshLogInsightsTrigger: boolean;
+    readonly lifecycleDetails?: string;
+    readonly purgeLogsTrigger?: boolean;
+    readonly refreshLogInsightsTrigger?: boolean;
     readonly sqlCollectionId: string;
     /**
      * Specifies the level of SQL that will be collected. USER_ISSUED_SQL - User issued SQL statements only. ALL_SQL - Includes all SQL statements including SQL statement issued inside PL/SQL units.
      */
-    readonly sqlLevel: string;
-    readonly startTrigger: boolean;
+    readonly sqlLevel?: string;
+    readonly startTrigger?: boolean;
     /**
      * The current state of the SQL collection.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * Specifies if the status of the SqlCollection. Enabled indicates that the collecting is in progress.
      */
-    readonly status: string;
-    readonly stopTrigger: boolean;
+    readonly status?: string;
+    readonly stopTrigger?: boolean;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    readonly systemTags: {[key: string]: any};
+    readonly systemTags?: {[key: string]: any};
     /**
      * The OCID of the target corresponding to the security policy deployment.
      */
-    readonly targetId: string;
+    readonly targetId?: string;
     /**
      * The time that the SQL collection was created, in the format defined by RFC3339.
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The timestamp of the most recent SqlCollection start operation, in the format defined by RFC3339.
      */
-    readonly timeLastStarted: string;
+    readonly timeLastStarted?: string;
     /**
      * The timestamp of the most recent SqlCollection stop operation, in the format defined by RFC3339.
      */
-    readonly timeLastStopped: string;
+    readonly timeLastStopped?: string;
     /**
      * The last date and time the SQL collection was updated, in the format defined by RFC3339.
      */
-    readonly timeUpdated: string;
+    readonly timeUpdated?: string;
 }
 /**
  * This data source provides details about a specific Sql Collection resource in Oracle Cloud Infrastructure Data Safe service.

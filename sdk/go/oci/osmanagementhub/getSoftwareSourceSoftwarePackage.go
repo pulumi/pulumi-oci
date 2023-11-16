@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Software Source Software Package resource in Oracle Cloud Infrastructure Os Management Hub service.
@@ -63,37 +62,37 @@ type GetSoftwareSourceSoftwarePackageArgs struct {
 // A collection of values returned by getSoftwareSourceSoftwarePackage.
 type GetSoftwareSourceSoftwarePackageResult struct {
 	// The architecture for which this software was built
-	Architecture string `pulumi:"architecture"`
+	Architecture *string `pulumi:"architecture"`
 	// Checksum of the file.
-	Checksum string `pulumi:"checksum"`
+	Checksum *string `pulumi:"checksum"`
 	// Type of the checksum.
-	ChecksumType string `pulumi:"checksumType"`
+	ChecksumType *string `pulumi:"checksumType"`
 	// List of dependencies for the software package.
 	Dependencies []GetSoftwareSourceSoftwarePackageDependency `pulumi:"dependencies"`
 	// Software source description.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// Software source name.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// List of files for the software package.
 	Files []GetSoftwareSourceSoftwarePackageFile `pulumi:"files"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Indicates whether this package is the latest version.
-	IsLatest bool `pulumi:"isLatest"`
+	IsLatest *bool `pulumi:"isLatest"`
 	// Date of the last update to the package.
-	LastModifiedDate string `pulumi:"lastModifiedDate"`
+	LastModifiedDate *string `pulumi:"lastModifiedDate"`
 	// Unique identifier for the package. NOTE - This is not an OCID.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// Size of the package in bytes.
-	SizeInBytes         string `pulumi:"sizeInBytes"`
-	SoftwarePackageName string `pulumi:"softwarePackageName"`
-	SoftwareSourceId    string `pulumi:"softwareSourceId"`
+	SizeInBytes         *string `pulumi:"sizeInBytes"`
+	SoftwarePackageName string  `pulumi:"softwarePackageName"`
+	SoftwareSourceId    string  `pulumi:"softwareSourceId"`
 	// List of software sources that provide the software package.
 	SoftwareSources []GetSoftwareSourceSoftwarePackageSoftwareSource `pulumi:"softwareSources"`
 	// Type of the package.
-	Type string `pulumi:"type"`
+	Type *string `pulumi:"type"`
 	// Version of the package.
-	Version string `pulumi:"version"`
+	Version *string `pulumi:"version"`
 }
 
 func GetSoftwareSourceSoftwarePackageOutput(ctx *pulumi.Context, args GetSoftwareSourceSoftwarePackageOutputArgs, opts ...pulumi.InvokeOption) GetSoftwareSourceSoftwarePackageResultOutput {
@@ -136,25 +135,19 @@ func (o GetSoftwareSourceSoftwarePackageResultOutput) ToGetSoftwareSourceSoftwar
 	return o
 }
 
-func (o GetSoftwareSourceSoftwarePackageResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetSoftwareSourceSoftwarePackageResult] {
-	return pulumix.Output[GetSoftwareSourceSoftwarePackageResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The architecture for which this software was built
-func (o GetSoftwareSourceSoftwarePackageResultOutput) Architecture() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSoftwareSourceSoftwarePackageResult) string { return v.Architecture }).(pulumi.StringOutput)
+func (o GetSoftwareSourceSoftwarePackageResultOutput) Architecture() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSoftwareSourceSoftwarePackageResult) *string { return v.Architecture }).(pulumi.StringPtrOutput)
 }
 
 // Checksum of the file.
-func (o GetSoftwareSourceSoftwarePackageResultOutput) Checksum() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSoftwareSourceSoftwarePackageResult) string { return v.Checksum }).(pulumi.StringOutput)
+func (o GetSoftwareSourceSoftwarePackageResultOutput) Checksum() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSoftwareSourceSoftwarePackageResult) *string { return v.Checksum }).(pulumi.StringPtrOutput)
 }
 
 // Type of the checksum.
-func (o GetSoftwareSourceSoftwarePackageResultOutput) ChecksumType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSoftwareSourceSoftwarePackageResult) string { return v.ChecksumType }).(pulumi.StringOutput)
+func (o GetSoftwareSourceSoftwarePackageResultOutput) ChecksumType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSoftwareSourceSoftwarePackageResult) *string { return v.ChecksumType }).(pulumi.StringPtrOutput)
 }
 
 // List of dependencies for the software package.
@@ -165,13 +158,13 @@ func (o GetSoftwareSourceSoftwarePackageResultOutput) Dependencies() GetSoftware
 }
 
 // Software source description.
-func (o GetSoftwareSourceSoftwarePackageResultOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSoftwareSourceSoftwarePackageResult) string { return v.Description }).(pulumi.StringOutput)
+func (o GetSoftwareSourceSoftwarePackageResultOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSoftwareSourceSoftwarePackageResult) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // Software source name.
-func (o GetSoftwareSourceSoftwarePackageResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSoftwareSourceSoftwarePackageResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetSoftwareSourceSoftwarePackageResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSoftwareSourceSoftwarePackageResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // List of files for the software package.
@@ -180,28 +173,28 @@ func (o GetSoftwareSourceSoftwarePackageResultOutput) Files() GetSoftwareSourceS
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetSoftwareSourceSoftwarePackageResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSoftwareSourceSoftwarePackageResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetSoftwareSourceSoftwarePackageResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSoftwareSourceSoftwarePackageResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Indicates whether this package is the latest version.
-func (o GetSoftwareSourceSoftwarePackageResultOutput) IsLatest() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetSoftwareSourceSoftwarePackageResult) bool { return v.IsLatest }).(pulumi.BoolOutput)
+func (o GetSoftwareSourceSoftwarePackageResultOutput) IsLatest() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSoftwareSourceSoftwarePackageResult) *bool { return v.IsLatest }).(pulumi.BoolPtrOutput)
 }
 
 // Date of the last update to the package.
-func (o GetSoftwareSourceSoftwarePackageResultOutput) LastModifiedDate() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSoftwareSourceSoftwarePackageResult) string { return v.LastModifiedDate }).(pulumi.StringOutput)
+func (o GetSoftwareSourceSoftwarePackageResultOutput) LastModifiedDate() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSoftwareSourceSoftwarePackageResult) *string { return v.LastModifiedDate }).(pulumi.StringPtrOutput)
 }
 
 // Unique identifier for the package. NOTE - This is not an OCID.
-func (o GetSoftwareSourceSoftwarePackageResultOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSoftwareSourceSoftwarePackageResult) string { return v.Name }).(pulumi.StringOutput)
+func (o GetSoftwareSourceSoftwarePackageResultOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSoftwareSourceSoftwarePackageResult) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // Size of the package in bytes.
-func (o GetSoftwareSourceSoftwarePackageResultOutput) SizeInBytes() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSoftwareSourceSoftwarePackageResult) string { return v.SizeInBytes }).(pulumi.StringOutput)
+func (o GetSoftwareSourceSoftwarePackageResultOutput) SizeInBytes() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSoftwareSourceSoftwarePackageResult) *string { return v.SizeInBytes }).(pulumi.StringPtrOutput)
 }
 
 func (o GetSoftwareSourceSoftwarePackageResultOutput) SoftwarePackageName() pulumi.StringOutput {
@@ -220,13 +213,13 @@ func (o GetSoftwareSourceSoftwarePackageResultOutput) SoftwareSources() GetSoftw
 }
 
 // Type of the package.
-func (o GetSoftwareSourceSoftwarePackageResultOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSoftwareSourceSoftwarePackageResult) string { return v.Type }).(pulumi.StringOutput)
+func (o GetSoftwareSourceSoftwarePackageResultOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSoftwareSourceSoftwarePackageResult) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
 
 // Version of the package.
-func (o GetSoftwareSourceSoftwarePackageResultOutput) Version() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSoftwareSourceSoftwarePackageResult) string { return v.Version }).(pulumi.StringOutput)
+func (o GetSoftwareSourceSoftwarePackageResultOutput) Version() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSoftwareSourceSoftwarePackageResult) *string { return v.Version }).(pulumi.StringPtrOutput)
 }
 
 func init() {

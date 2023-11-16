@@ -8,6 +8,8 @@ import com.pulumi.oci.DevOps.outputs.GetDeploymentDeployPipelineEnvironmentItemD
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDeploymentDeployPipelineEnvironmentItem {
@@ -15,39 +17,39 @@ public final class GetDeploymentDeployPipelineEnvironmentItem {
      * @return The OCID of an Environment
      * 
      */
-    private String deployEnvironmentId;
+    private @Nullable String deployEnvironmentId;
     /**
      * @return List of stages.
      * 
      */
-    private List<GetDeploymentDeployPipelineEnvironmentItemDeployPipelineStage> deployPipelineStages;
+    private @Nullable List<GetDeploymentDeployPipelineEnvironmentItemDeployPipelineStage> deployPipelineStages;
     /**
      * @return Deployment identifier which can be renamed and is not necessarily unique. Avoid entering confidential information.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
 
     private GetDeploymentDeployPipelineEnvironmentItem() {}
     /**
      * @return The OCID of an Environment
      * 
      */
-    public String deployEnvironmentId() {
-        return this.deployEnvironmentId;
+    public Optional<String> deployEnvironmentId() {
+        return Optional.ofNullable(this.deployEnvironmentId);
     }
     /**
      * @return List of stages.
      * 
      */
     public List<GetDeploymentDeployPipelineEnvironmentItemDeployPipelineStage> deployPipelineStages() {
-        return this.deployPipelineStages;
+        return this.deployPipelineStages == null ? List.of() : this.deployPipelineStages;
     }
     /**
      * @return Deployment identifier which can be renamed and is not necessarily unique. Avoid entering confidential information.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
 
     public static Builder builder() {
@@ -59,9 +61,9 @@ public final class GetDeploymentDeployPipelineEnvironmentItem {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String deployEnvironmentId;
-        private List<GetDeploymentDeployPipelineEnvironmentItemDeployPipelineStage> deployPipelineStages;
-        private String displayName;
+        private @Nullable String deployEnvironmentId;
+        private @Nullable List<GetDeploymentDeployPipelineEnvironmentItemDeployPipelineStage> deployPipelineStages;
+        private @Nullable String displayName;
         public Builder() {}
         public Builder(GetDeploymentDeployPipelineEnvironmentItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -71,21 +73,21 @@ public final class GetDeploymentDeployPipelineEnvironmentItem {
         }
 
         @CustomType.Setter
-        public Builder deployEnvironmentId(String deployEnvironmentId) {
-            this.deployEnvironmentId = Objects.requireNonNull(deployEnvironmentId);
+        public Builder deployEnvironmentId(@Nullable String deployEnvironmentId) {
+            this.deployEnvironmentId = deployEnvironmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder deployPipelineStages(List<GetDeploymentDeployPipelineEnvironmentItemDeployPipelineStage> deployPipelineStages) {
-            this.deployPipelineStages = Objects.requireNonNull(deployPipelineStages);
+        public Builder deployPipelineStages(@Nullable List<GetDeploymentDeployPipelineEnvironmentItemDeployPipelineStage> deployPipelineStages) {
+            this.deployPipelineStages = deployPipelineStages;
             return this;
         }
         public Builder deployPipelineStages(GetDeploymentDeployPipelineEnvironmentItemDeployPipelineStage... deployPipelineStages) {
             return deployPipelineStages(List.of(deployPipelineStages));
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         public GetDeploymentDeployPipelineEnvironmentItem build() {

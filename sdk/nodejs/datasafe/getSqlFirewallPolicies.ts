@@ -141,7 +141,7 @@ export interface GetSqlFirewallPoliciesResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The OCID of the security policy corresponding to the SQL firewall policy.
      */
@@ -149,7 +149,7 @@ export interface GetSqlFirewallPoliciesResult {
     /**
      * The list of sql_firewall_policy_collection.
      */
-    readonly sqlFirewallPolicyCollections: outputs.DataSafe.GetSqlFirewallPoliciesSqlFirewallPolicyCollection[];
+    readonly sqlFirewallPolicyCollections?: outputs.DataSafe.GetSqlFirewallPoliciesSqlFirewallPolicyCollection[];
     readonly sqlFirewallPolicyId?: string;
     /**
      * The current state of the SQL firewall policy.

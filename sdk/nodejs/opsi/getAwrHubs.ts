@@ -73,7 +73,7 @@ export interface GetAwrHubsResult {
     /**
      * The list of awr_hub_summary_collection.
      */
-    readonly awrHubSummaryCollections: outputs.Opsi.GetAwrHubsAwrHubSummaryCollection[];
+    readonly awrHubSummaryCollections?: outputs.Opsi.GetAwrHubsAwrHubSummaryCollection[];
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */

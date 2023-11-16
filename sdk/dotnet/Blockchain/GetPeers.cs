@@ -141,7 +141,7 @@ namespace Pulumi.Oci.Blockchain
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The list of peer_collection.
         /// </summary>
@@ -155,7 +155,7 @@ namespace Pulumi.Oci.Blockchain
 
             ImmutableArray<Outputs.GetPeersFilterResult> filters,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetPeersPeerCollectionResult> peerCollections)
         {

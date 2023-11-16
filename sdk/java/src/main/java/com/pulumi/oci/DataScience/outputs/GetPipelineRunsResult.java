@@ -44,7 +44,7 @@ public final class GetPipelineRunsResult {
      * @return The list of pipeline_runs.
      * 
      */
-    private List<GetPipelineRunsPipelineRun> pipelineRuns;
+    private @Nullable List<GetPipelineRunsPipelineRun> pipelineRuns;
     /**
      * @return The state of the step run.
      * 
@@ -95,7 +95,7 @@ public final class GetPipelineRunsResult {
      * 
      */
     public List<GetPipelineRunsPipelineRun> pipelineRuns() {
-        return this.pipelineRuns;
+        return this.pipelineRuns == null ? List.of() : this.pipelineRuns;
     }
     /**
      * @return The state of the step run.
@@ -120,7 +120,7 @@ public final class GetPipelineRunsResult {
         private @Nullable List<GetPipelineRunsFilter> filters;
         private @Nullable String id;
         private @Nullable String pipelineId;
-        private List<GetPipelineRunsPipelineRun> pipelineRuns;
+        private @Nullable List<GetPipelineRunsPipelineRun> pipelineRuns;
         private @Nullable String state;
         public Builder() {}
         public Builder(GetPipelineRunsResult defaults) {
@@ -169,8 +169,8 @@ public final class GetPipelineRunsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder pipelineRuns(List<GetPipelineRunsPipelineRun> pipelineRuns) {
-            this.pipelineRuns = Objects.requireNonNull(pipelineRuns);
+        public Builder pipelineRuns(@Nullable List<GetPipelineRunsPipelineRun> pipelineRuns) {
+            this.pipelineRuns = pipelineRuns;
             return this;
         }
         public Builder pipelineRuns(GetPipelineRunsPipelineRun... pipelineRuns) {

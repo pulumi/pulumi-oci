@@ -16,65 +16,65 @@ namespace Pulumi.Oci.NetworkLoadBalancer.Outputs
         /// <summary>
         /// The interval between health checks, in milliseconds. The default value is 10000 (10 seconds).  Example: `10000`
         /// </summary>
-        public readonly int IntervalInMillis;
+        public readonly int? IntervalInMillis;
         /// <summary>
         /// The backend server port against which to run the health check. If the port is not specified, then the network load balancer uses the port information from the `Backend` object. The port must be specified if the backend port is 0.  Example: `8080`
         /// </summary>
-        public readonly int Port;
+        public readonly int? Port;
         /// <summary>
         /// The protocol the health check must use; either HTTP or HTTPS, or UDP or TCP.  Example: `HTTP`
         /// </summary>
-        public readonly string Protocol;
+        public readonly string? Protocol;
         /// <summary>
         /// Base64 encoded pattern to be sent as UDP or TCP health check probe.
         /// </summary>
-        public readonly string RequestData;
+        public readonly string? RequestData;
         /// <summary>
         /// A regular expression for parsing the response body from the backend server.  Example: `^((?!false).|\s)*$`
         /// </summary>
-        public readonly string ResponseBodyRegex;
+        public readonly string? ResponseBodyRegex;
         /// <summary>
         /// Base64 encoded pattern to be validated as UDP or TCP health check probe response.
         /// </summary>
-        public readonly string ResponseData;
+        public readonly string? ResponseData;
         /// <summary>
         /// The number of retries to attempt before a backend server is considered "unhealthy". This number also applies when recovering a server to the "healthy" state. The default value is 3.  Example: `3`
         /// </summary>
-        public readonly int Retries;
+        public readonly int? Retries;
         /// <summary>
         /// The status code a healthy backend server should return. If you configure the health check policy to use the HTTP protocol, then you can use common HTTP status codes such as "200".  Example: `200`
         /// </summary>
-        public readonly int ReturnCode;
+        public readonly int? ReturnCode;
         /// <summary>
         /// The maximum time, in milliseconds, to wait for a reply to a health check. A health check is successful only if a reply returns within this timeout period. The default value is 3000 (3 seconds).  Example: `3000`
         /// </summary>
-        public readonly int TimeoutInMillis;
+        public readonly int? TimeoutInMillis;
         /// <summary>
         /// The path against which to run the health check.  Example: `/healthcheck`
         /// </summary>
-        public readonly string UrlPath;
+        public readonly string? UrlPath;
 
         [OutputConstructor]
         private GetBackendSetsBackendSetCollectionItemHealthCheckerResult(
-            int intervalInMillis,
+            int? intervalInMillis,
 
-            int port,
+            int? port,
 
-            string protocol,
+            string? protocol,
 
-            string requestData,
+            string? requestData,
 
-            string responseBodyRegex,
+            string? responseBodyRegex,
 
-            string responseData,
+            string? responseData,
 
-            int retries,
+            int? retries,
 
-            int returnCode,
+            int? returnCode,
 
-            int timeoutInMillis,
+            int? timeoutInMillis,
 
-            string urlPath)
+            string? urlPath)
         {
             IntervalInMillis = intervalInMillis;
             Port = port;

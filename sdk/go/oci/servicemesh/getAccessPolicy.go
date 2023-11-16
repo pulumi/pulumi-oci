@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Access Policy resource in Oracle Cloud Infrastructure Service Mesh service.
@@ -61,31 +60,31 @@ type LookupAccessPolicyArgs struct {
 type LookupAccessPolicyResult struct {
 	AccessPolicyId string `pulumi:"accessPolicyId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// Description of the resource. It can be changed after creation. Avoid entering confidential information.  Example: `This is my new resource`
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// Unique identifier that is immutable on creation.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// The OCID of the service mesh in which this access policy is created.
-	MeshId string `pulumi:"meshId"`
+	MeshId *string `pulumi:"meshId"`
 	// A user-friendly name. The name has to be unique within the same service mesh and cannot be changed after creation. Avoid entering confidential information.  Example: `My unique resource name`
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// List of applicable rules.
 	Rules []GetAccessPolicyRule `pulumi:"rules"`
 	// The current state of the Resource.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The time when this resource was created in an RFC3339 formatted datetime string.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time when this resource was updated in an RFC3339 formatted datetime string.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 func LookupAccessPolicyOutput(ctx *pulumi.Context, args LookupAccessPolicyOutputArgs, opts ...pulumi.InvokeOption) LookupAccessPolicyResultOutput {
@@ -126,19 +125,13 @@ func (o LookupAccessPolicyResultOutput) ToLookupAccessPolicyResultOutputWithCont
 	return o
 }
 
-func (o LookupAccessPolicyResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupAccessPolicyResult] {
-	return pulumix.Output[LookupAccessPolicyResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o LookupAccessPolicyResultOutput) AccessPolicyId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAccessPolicyResult) string { return v.AccessPolicyId }).(pulumi.StringOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-func (o LookupAccessPolicyResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAccessPolicyResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupAccessPolicyResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAccessPolicyResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -147,8 +140,8 @@ func (o LookupAccessPolicyResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // Description of the resource. It can be changed after creation. Avoid entering confidential information.  Example: `This is my new resource`
-func (o LookupAccessPolicyResultOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAccessPolicyResult) string { return v.Description }).(pulumi.StringOutput)
+func (o LookupAccessPolicyResultOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAccessPolicyResult) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -157,23 +150,23 @@ func (o LookupAccessPolicyResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // Unique identifier that is immutable on creation.
-func (o LookupAccessPolicyResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAccessPolicyResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupAccessPolicyResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAccessPolicyResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
-func (o LookupAccessPolicyResultOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAccessPolicyResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o LookupAccessPolicyResultOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAccessPolicyResult) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the service mesh in which this access policy is created.
-func (o LookupAccessPolicyResultOutput) MeshId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAccessPolicyResult) string { return v.MeshId }).(pulumi.StringOutput)
+func (o LookupAccessPolicyResultOutput) MeshId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAccessPolicyResult) *string { return v.MeshId }).(pulumi.StringPtrOutput)
 }
 
 // A user-friendly name. The name has to be unique within the same service mesh and cannot be changed after creation. Avoid entering confidential information.  Example: `My unique resource name`
-func (o LookupAccessPolicyResultOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAccessPolicyResult) string { return v.Name }).(pulumi.StringOutput)
+func (o LookupAccessPolicyResultOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAccessPolicyResult) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // List of applicable rules.
@@ -182,8 +175,8 @@ func (o LookupAccessPolicyResultOutput) Rules() GetAccessPolicyRuleArrayOutput {
 }
 
 // The current state of the Resource.
-func (o LookupAccessPolicyResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAccessPolicyResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupAccessPolicyResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAccessPolicyResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -192,13 +185,13 @@ func (o LookupAccessPolicyResultOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The time when this resource was created in an RFC3339 formatted datetime string.
-func (o LookupAccessPolicyResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAccessPolicyResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupAccessPolicyResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAccessPolicyResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time when this resource was updated in an RFC3339 formatted datetime string.
-func (o LookupAccessPolicyResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAccessPolicyResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o LookupAccessPolicyResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAccessPolicyResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 func init() {

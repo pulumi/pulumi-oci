@@ -17,12 +17,12 @@ public final class GetLogAnalyticsEntityTopologyResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Array of log analytics entity summary.
      * 
      */
-    private List<GetLogAnalyticsEntityTopologyItem> items;
+    private @Nullable List<GetLogAnalyticsEntityTopologyItem> items;
     private String logAnalyticsEntityId;
     private String namespace;
     /**
@@ -36,15 +36,15 @@ public final class GetLogAnalyticsEntityTopologyResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Array of log analytics entity summary.
      * 
      */
     public List<GetLogAnalyticsEntityTopologyItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
     public String logAnalyticsEntityId() {
         return this.logAnalyticsEntityId;
@@ -69,8 +69,8 @@ public final class GetLogAnalyticsEntityTopologyResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String id;
-        private List<GetLogAnalyticsEntityTopologyItem> items;
+        private @Nullable String id;
+        private @Nullable List<GetLogAnalyticsEntityTopologyItem> items;
         private String logAnalyticsEntityId;
         private String namespace;
         private @Nullable String state;
@@ -85,13 +85,13 @@ public final class GetLogAnalyticsEntityTopologyResult {
         }
 
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder items(List<GetLogAnalyticsEntityTopologyItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetLogAnalyticsEntityTopologyItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetLogAnalyticsEntityTopologyItem... items) {

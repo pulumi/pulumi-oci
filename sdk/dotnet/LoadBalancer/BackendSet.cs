@@ -117,7 +117,7 @@ namespace Pulumi.Oci.LoadBalancer
         /// **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
         /// </summary>
         [Output("lbCookieSessionPersistenceConfiguration")]
-        public Output<Outputs.BackendSetLbCookieSessionPersistenceConfiguration> LbCookieSessionPersistenceConfiguration { get; private set; } = null!;
+        public Output<Outputs.BackendSetLbCookieSessionPersistenceConfiguration?> LbCookieSessionPersistenceConfiguration { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer on which to add a backend set.
@@ -157,7 +157,7 @@ namespace Pulumi.Oci.LoadBalancer
         /// **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
         /// </summary>
         [Output("sessionPersistenceConfiguration")]
-        public Output<Outputs.BackendSetSessionPersistenceConfiguration> SessionPersistenceConfiguration { get; private set; } = null!;
+        public Output<Outputs.BackendSetSessionPersistenceConfiguration?> SessionPersistenceConfiguration { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The load balancer's SSL handling configuration details.
@@ -168,7 +168,7 @@ namespace Pulumi.Oci.LoadBalancer
         public Output<Outputs.BackendSetSslConfiguration?> SslConfiguration { get; private set; } = null!;
 
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
 
         /// <summary>

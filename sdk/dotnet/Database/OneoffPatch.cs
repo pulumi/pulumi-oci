@@ -68,7 +68,7 @@ namespace Pulumi.Oci.Database
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// One-off patch name.
@@ -90,13 +90,13 @@ namespace Pulumi.Oci.Database
         /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// Detailed message for the lifecycle state.
         /// </summary>
         [Output("lifecycleDetails")]
-        public Output<string> LifecycleDetails { get; private set; } = null!;
+        public Output<string?> LifecycleDetails { get; private set; } = null!;
 
         /// <summary>
         /// List of one-off patches for Database Homes.
@@ -114,37 +114,37 @@ namespace Pulumi.Oci.Database
         /// SHA-256 checksum of the one-off patch.
         /// </summary>
         [Output("sha256sum")]
-        public Output<string> Sha256sum { get; private set; } = null!;
+        public Output<string?> Sha256sum { get; private set; } = null!;
 
         /// <summary>
         /// The size of one-off patch in kilobytes.
         /// </summary>
         [Output("sizeInKbs")]
-        public Output<double> SizeInKbs { get; private set; } = null!;
+        public Output<double?> SizeInKbs { get; private set; } = null!;
 
         /// <summary>
         /// The current state of the one-off patch.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// The date and time one-off patch was created.
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// The date and time until which the one-off patch will be available for download.
         /// </summary>
         [Output("timeOfExpiration")]
-        public Output<string> TimeOfExpiration { get; private set; } = null!;
+        public Output<string?> TimeOfExpiration { get; private set; } = null!;
 
         /// <summary>
         /// The date and time one-off patch was updated.
         /// </summary>
         [Output("timeUpdated")]
-        public Output<string> TimeUpdated { get; private set; } = null!;
+        public Output<string?> TimeUpdated { get; private set; } = null!;
 
 
         /// <summary>

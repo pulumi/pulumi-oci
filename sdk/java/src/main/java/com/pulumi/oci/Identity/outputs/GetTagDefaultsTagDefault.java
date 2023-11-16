@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetTagDefaultsTagDefault {
@@ -14,64 +16,64 @@ public final class GetTagDefaultsTagDefault {
      * @return The OCID of the compartment (remember that the tenancy is simply the root compartment).
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return A filter to only return resources that match the specified OCID exactly.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return If you specify that a value is required, a value is set during resource creation (either by the user creating the resource or another tag defualt). If no value is set, resource creation is blocked.
      * * If the `isRequired` flag is set to &#34;true&#34;, the value is set during resource creation.
      * * If the `isRequired` flag is set to &#34;false&#34;, the value you enter is set during resource creation.
      * 
      */
-    private Boolean isRequired;
+    private @Nullable Boolean isRequired;
     /**
      * @return A filter to only return resources that match the given lifecycle state.  The state value is case-insensitive.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return The OCID of the tag definition.
      * 
      */
-    private String tagDefinitionId;
+    private @Nullable String tagDefinitionId;
     /**
      * @return The name used in the tag definition. This field is informational in the context of the tag default.
      * 
      */
-    private String tagDefinitionName;
+    private @Nullable String tagDefinitionName;
     /**
      * @return The OCID of the tag namespace that contains the tag definition.
      * 
      */
-    private String tagNamespaceId;
+    private @Nullable String tagNamespaceId;
     /**
      * @return Date and time the `TagDefault` object was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The default value for the tag definition. This will be applied to all new resources created in the compartment.
      * 
      */
-    private String value;
+    private @Nullable String value;
 
     private GetTagDefaultsTagDefault() {}
     /**
      * @return The OCID of the compartment (remember that the tenancy is simply the root compartment).
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return A filter to only return resources that match the specified OCID exactly.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return If you specify that a value is required, a value is set during resource creation (either by the user creating the resource or another tag defualt). If no value is set, resource creation is blocked.
@@ -79,50 +81,50 @@ public final class GetTagDefaultsTagDefault {
      * * If the `isRequired` flag is set to &#34;false&#34;, the value you enter is set during resource creation.
      * 
      */
-    public Boolean isRequired() {
-        return this.isRequired;
+    public Optional<Boolean> isRequired() {
+        return Optional.ofNullable(this.isRequired);
     }
     /**
      * @return A filter to only return resources that match the given lifecycle state.  The state value is case-insensitive.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return The OCID of the tag definition.
      * 
      */
-    public String tagDefinitionId() {
-        return this.tagDefinitionId;
+    public Optional<String> tagDefinitionId() {
+        return Optional.ofNullable(this.tagDefinitionId);
     }
     /**
      * @return The name used in the tag definition. This field is informational in the context of the tag default.
      * 
      */
-    public String tagDefinitionName() {
-        return this.tagDefinitionName;
+    public Optional<String> tagDefinitionName() {
+        return Optional.ofNullable(this.tagDefinitionName);
     }
     /**
      * @return The OCID of the tag namespace that contains the tag definition.
      * 
      */
-    public String tagNamespaceId() {
-        return this.tagNamespaceId;
+    public Optional<String> tagNamespaceId() {
+        return Optional.ofNullable(this.tagNamespaceId);
     }
     /**
      * @return Date and time the `TagDefault` object was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return The default value for the tag definition. This will be applied to all new resources created in the compartment.
      * 
      */
-    public String value() {
-        return this.value;
+    public Optional<String> value() {
+        return Optional.ofNullable(this.value);
     }
 
     public static Builder builder() {
@@ -134,15 +136,15 @@ public final class GetTagDefaultsTagDefault {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String compartmentId;
-        private String id;
-        private Boolean isRequired;
-        private String state;
-        private String tagDefinitionId;
-        private String tagDefinitionName;
-        private String tagNamespaceId;
-        private String timeCreated;
-        private String value;
+        private @Nullable String compartmentId;
+        private @Nullable String id;
+        private @Nullable Boolean isRequired;
+        private @Nullable String state;
+        private @Nullable String tagDefinitionId;
+        private @Nullable String tagDefinitionName;
+        private @Nullable String tagNamespaceId;
+        private @Nullable String timeCreated;
+        private @Nullable String value;
         public Builder() {}
         public Builder(GetTagDefaultsTagDefault defaults) {
     	      Objects.requireNonNull(defaults);
@@ -158,48 +160,48 @@ public final class GetTagDefaultsTagDefault {
         }
 
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder isRequired(Boolean isRequired) {
-            this.isRequired = Objects.requireNonNull(isRequired);
+        public Builder isRequired(@Nullable Boolean isRequired) {
+            this.isRequired = isRequired;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder tagDefinitionId(String tagDefinitionId) {
-            this.tagDefinitionId = Objects.requireNonNull(tagDefinitionId);
+        public Builder tagDefinitionId(@Nullable String tagDefinitionId) {
+            this.tagDefinitionId = tagDefinitionId;
             return this;
         }
         @CustomType.Setter
-        public Builder tagDefinitionName(String tagDefinitionName) {
-            this.tagDefinitionName = Objects.requireNonNull(tagDefinitionName);
+        public Builder tagDefinitionName(@Nullable String tagDefinitionName) {
+            this.tagDefinitionName = tagDefinitionName;
             return this;
         }
         @CustomType.Setter
-        public Builder tagNamespaceId(String tagNamespaceId) {
-            this.tagNamespaceId = Objects.requireNonNull(tagNamespaceId);
+        public Builder tagNamespaceId(@Nullable String tagNamespaceId) {
+            this.tagNamespaceId = tagNamespaceId;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder value(String value) {
-            this.value = Objects.requireNonNull(value);
+        public Builder value(@Nullable String value) {
+            this.value = value;
             return this;
         }
         public GetTagDefaultsTagDefault build() {

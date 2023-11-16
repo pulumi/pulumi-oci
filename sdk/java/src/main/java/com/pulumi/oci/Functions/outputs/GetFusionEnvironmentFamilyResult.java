@@ -11,6 +11,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetFusionEnvironmentFamilyResult {
@@ -18,100 +20,100 @@ public final class GetFusionEnvironmentFamilyResult {
      * @return The OCID of the compartment where the environment family is located.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return A friendly name for the environment family. The name must contain only letters, numbers, dashes, and underscores. Can be changed later.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return The policy that specifies the maintenance and upgrade preferences for an environment. For more information about the options, see [Understanding Environment Maintenance](https://docs.cloud.oracle.com/iaas/Content/fusion-applications/plan-environment-family.htm#about-env-maintenance).
      * 
      */
-    private List<GetFusionEnvironmentFamilyFamilyMaintenancePolicy> familyMaintenancePolicies;
+    private @Nullable List<GetFusionEnvironmentFamilyFamilyMaintenancePolicy> familyMaintenancePolicies;
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     private String fusionEnvironmentFamilyId;
     /**
      * @return The unique identifier (OCID) of the environment family. Can&#39;t be changed after creation.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return When set to True, a subscription update is required for the environment family.
      * 
      */
-    private Boolean isSubscriptionUpdateNeeded;
+    private @Nullable Boolean isSubscriptionUpdateNeeded;
     /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
-    private String lifecycleDetails;
+    private @Nullable String lifecycleDetails;
     /**
      * @return The current state of the FusionEnvironmentFamily.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return The list of the IDs of the applications subscriptions that are associated with the environment family.
      * 
      */
-    private List<String> subscriptionIds;
+    private @Nullable List<String> subscriptionIds;
     /**
      * @return Environment Specific Guid/ System Name
      * 
      */
-    private String systemName;
+    private @Nullable String systemName;
     /**
      * @return The time the the FusionEnvironmentFamily was created. An RFC3339 formatted datetime string.
      * 
      */
-    private String timeCreated;
-    private String timeUpdated;
+    private @Nullable String timeCreated;
+    private @Nullable String timeUpdated;
 
     private GetFusionEnvironmentFamilyResult() {}
     /**
      * @return The OCID of the compartment where the environment family is located.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return A friendly name for the environment family. The name must contain only letters, numbers, dashes, and underscores. Can be changed later.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return The policy that specifies the maintenance and upgrade preferences for an environment. For more information about the options, see [Understanding Environment Maintenance](https://docs.cloud.oracle.com/iaas/Content/fusion-applications/plan-environment-family.htm#about-env-maintenance).
      * 
      */
     public List<GetFusionEnvironmentFamilyFamilyMaintenancePolicy> familyMaintenancePolicies() {
-        return this.familyMaintenancePolicies;
+        return this.familyMaintenancePolicies == null ? List.of() : this.familyMaintenancePolicies;
     }
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     public String fusionEnvironmentFamilyId() {
         return this.fusionEnvironmentFamilyId;
@@ -120,53 +122,53 @@ public final class GetFusionEnvironmentFamilyResult {
      * @return The unique identifier (OCID) of the environment family. Can&#39;t be changed after creation.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return When set to True, a subscription update is required for the environment family.
      * 
      */
-    public Boolean isSubscriptionUpdateNeeded() {
-        return this.isSubscriptionUpdateNeeded;
+    public Optional<Boolean> isSubscriptionUpdateNeeded() {
+        return Optional.ofNullable(this.isSubscriptionUpdateNeeded);
     }
     /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
-    public String lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Optional<String> lifecycleDetails() {
+        return Optional.ofNullable(this.lifecycleDetails);
     }
     /**
      * @return The current state of the FusionEnvironmentFamily.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return The list of the IDs of the applications subscriptions that are associated with the environment family.
      * 
      */
     public List<String> subscriptionIds() {
-        return this.subscriptionIds;
+        return this.subscriptionIds == null ? List.of() : this.subscriptionIds;
     }
     /**
      * @return Environment Specific Guid/ System Name
      * 
      */
-    public String systemName() {
-        return this.systemName;
+    public Optional<String> systemName() {
+        return Optional.ofNullable(this.systemName);
     }
     /**
      * @return The time the the FusionEnvironmentFamily was created. An RFC3339 formatted datetime string.
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
-    public String timeUpdated() {
-        return this.timeUpdated;
+    public Optional<String> timeUpdated() {
+        return Optional.ofNullable(this.timeUpdated);
     }
 
     public static Builder builder() {
@@ -178,20 +180,20 @@ public final class GetFusionEnvironmentFamilyResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String compartmentId;
-        private Map<String,Object> definedTags;
-        private String displayName;
-        private List<GetFusionEnvironmentFamilyFamilyMaintenancePolicy> familyMaintenancePolicies;
-        private Map<String,Object> freeformTags;
+        private @Nullable String compartmentId;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String displayName;
+        private @Nullable List<GetFusionEnvironmentFamilyFamilyMaintenancePolicy> familyMaintenancePolicies;
+        private @Nullable Map<String,Object> freeformTags;
         private String fusionEnvironmentFamilyId;
-        private String id;
-        private Boolean isSubscriptionUpdateNeeded;
-        private String lifecycleDetails;
-        private String state;
-        private List<String> subscriptionIds;
-        private String systemName;
-        private String timeCreated;
-        private String timeUpdated;
+        private @Nullable String id;
+        private @Nullable Boolean isSubscriptionUpdateNeeded;
+        private @Nullable String lifecycleDetails;
+        private @Nullable String state;
+        private @Nullable List<String> subscriptionIds;
+        private @Nullable String systemName;
+        private @Nullable String timeCreated;
+        private @Nullable String timeUpdated;
         public Builder() {}
         public Builder(GetFusionEnvironmentFamilyResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -212,31 +214,31 @@ public final class GetFusionEnvironmentFamilyResult {
         }
 
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder familyMaintenancePolicies(List<GetFusionEnvironmentFamilyFamilyMaintenancePolicy> familyMaintenancePolicies) {
-            this.familyMaintenancePolicies = Objects.requireNonNull(familyMaintenancePolicies);
+        public Builder familyMaintenancePolicies(@Nullable List<GetFusionEnvironmentFamilyFamilyMaintenancePolicy> familyMaintenancePolicies) {
+            this.familyMaintenancePolicies = familyMaintenancePolicies;
             return this;
         }
         public Builder familyMaintenancePolicies(GetFusionEnvironmentFamilyFamilyMaintenancePolicy... familyMaintenancePolicies) {
             return familyMaintenancePolicies(List.of(familyMaintenancePolicies));
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
@@ -245,46 +247,46 @@ public final class GetFusionEnvironmentFamilyResult {
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder isSubscriptionUpdateNeeded(Boolean isSubscriptionUpdateNeeded) {
-            this.isSubscriptionUpdateNeeded = Objects.requireNonNull(isSubscriptionUpdateNeeded);
+        public Builder isSubscriptionUpdateNeeded(@Nullable Boolean isSubscriptionUpdateNeeded) {
+            this.isSubscriptionUpdateNeeded = isSubscriptionUpdateNeeded;
             return this;
         }
         @CustomType.Setter
-        public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+        public Builder lifecycleDetails(@Nullable String lifecycleDetails) {
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder subscriptionIds(List<String> subscriptionIds) {
-            this.subscriptionIds = Objects.requireNonNull(subscriptionIds);
+        public Builder subscriptionIds(@Nullable List<String> subscriptionIds) {
+            this.subscriptionIds = subscriptionIds;
             return this;
         }
         public Builder subscriptionIds(String... subscriptionIds) {
             return subscriptionIds(List.of(subscriptionIds));
         }
         @CustomType.Setter
-        public Builder systemName(String systemName) {
-            this.systemName = Objects.requireNonNull(systemName);
+        public Builder systemName(@Nullable String systemName) {
+            this.systemName = systemName;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+        public Builder timeUpdated(@Nullable String timeUpdated) {
+            this.timeUpdated = timeUpdated;
             return this;
         }
         public GetFusionEnvironmentFamilyResult build() {

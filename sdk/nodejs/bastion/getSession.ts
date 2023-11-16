@@ -47,64 +47,64 @@ export interface GetSessionResult {
     /**
      * The unique identifier (OCID) of the bastion that is hosting this session.
      */
-    readonly bastionId: string;
+    readonly bastionId?: string;
     /**
      * The name of the bastion that is hosting this session.
      */
-    readonly bastionName: string;
+    readonly bastionName?: string;
     /**
      * The public key of the bastion host. You can use this to verify that you're connecting to the correct bastion.
      */
-    readonly bastionPublicHostKeyInfo: string;
+    readonly bastionPublicHostKeyInfo?: string;
     /**
      * The username that the session uses to connect to the target resource.
      */
-    readonly bastionUserName: string;
+    readonly bastionUserName?: string;
     /**
      * The name of the session.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * The unique identifier (OCID) of the session, which can't be changed after creation.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Public key details for a bastion session.
      */
-    readonly keyDetails: outputs.Bastion.GetSessionKeyDetail[];
+    readonly keyDetails?: outputs.Bastion.GetSessionKeyDetail[];
     /**
      * The type of the key used to connect to the session. PUB is a standard public key in OpenSSH format.
      */
-    readonly keyType: string;
+    readonly keyType?: string;
     /**
      * A message describing the current session state in more detail.
      */
-    readonly lifecycleDetails: string;
+    readonly lifecycleDetails?: string;
     readonly sessionId: string;
     /**
      * The amount of time the session can remain active.
      */
-    readonly sessionTtlInSeconds: number;
+    readonly sessionTtlInSeconds?: number;
     /**
      * The connection message for the session.
      */
-    readonly sshMetadata: {[key: string]: any};
+    readonly sshMetadata?: {[key: string]: any};
     /**
      * The current state of the session.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * Details about a bastion session's target resource.
      */
-    readonly targetResourceDetails: outputs.Bastion.GetSessionTargetResourceDetail[];
+    readonly targetResourceDetails?: outputs.Bastion.GetSessionTargetResourceDetail[];
     /**
      * The time the session was created. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The time the session was updated. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
      */
-    readonly timeUpdated: string;
+    readonly timeUpdated?: string;
 }
 /**
  * This data source provides details about a specific Session resource in Oracle Cloud Infrastructure Bastion service.

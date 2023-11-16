@@ -15,6 +15,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetModelResult {
@@ -22,223 +24,223 @@ public final class GetModelResult {
      * @return Average precision of the trained model
      * 
      */
-    private Double averagePrecision;
+    private @Nullable Double averagePrecision;
     /**
      * @return Compartment Identifier
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return Confidence ratio of the calculation
      * 
      */
-    private Double confidenceThreshold;
+    private @Nullable Double confidenceThreshold;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return A short description of the model.
      * 
      */
-    private String description;
+    private @Nullable String description;
     /**
      * @return Model Identifier, can be renamed
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return Unique identifier that is immutable on creation
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return If It&#39;s true, Training is set for recommended epochs needed for quick training.
      * 
      */
-    private Boolean isQuickMode;
+    private @Nullable Boolean isQuickMode;
     /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
-    private String lifecycleDetails;
+    private @Nullable String lifecycleDetails;
     /**
      * @return The maximum duration in hours for which the training will run.
      * 
      */
-    private Double maxTrainingDurationInHours;
+    private @Nullable Double maxTrainingDurationInHours;
     /**
      * @return Complete Training Metrics for successful trained model
      * 
      */
-    private String metrics;
+    private @Nullable String metrics;
     private String modelId;
     /**
      * @return Type of the Model.
      * 
      */
-    private String modelType;
+    private @Nullable String modelType;
     /**
      * @return The version of the model
      * 
      */
-    private String modelVersion;
+    private @Nullable String modelVersion;
     /**
      * @return Precision of the trained model
      * 
      */
-    private Double precision;
+    private @Nullable Double precision;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model.
      * 
      */
-    private String projectId;
+    private @Nullable String projectId;
     /**
      * @return Recall of the trained model
      * 
      */
-    private Double recall;
+    private @Nullable Double recall;
     /**
      * @return The current state of the Model.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    private Map<String,Object> systemTags;
+    private @Nullable Map<String,Object> systemTags;
     /**
      * @return Total number of testing Images
      * 
      */
-    private Integer testImageCount;
+    private @Nullable Integer testImageCount;
     /**
      * @return The base entity for a Dataset, which is the input for Model creation.
      * 
      */
-    private List<GetModelTestingDataset> testingDatasets;
+    private @Nullable List<GetModelTestingDataset> testingDatasets;
     /**
      * @return The time the Model was created. An RFC3339 formatted datetime string
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The time the Model was updated. An RFC3339 formatted datetime string
      * 
      */
-    private String timeUpdated;
+    private @Nullable String timeUpdated;
     /**
      * @return Total number of training Images
      * 
      */
-    private Integer totalImageCount;
+    private @Nullable Integer totalImageCount;
     /**
      * @return Total hours actually used for training
      * 
      */
-    private Double trainedDurationInHours;
+    private @Nullable Double trainedDurationInHours;
     /**
      * @return The base entity for a Dataset, which is the input for Model creation.
      * 
      */
-    private List<GetModelTrainingDataset> trainingDatasets;
+    private @Nullable List<GetModelTrainingDataset> trainingDatasets;
     /**
      * @return The base entity for a Dataset, which is the input for Model creation.
      * 
      */
-    private List<GetModelValidationDataset> validationDatasets;
+    private @Nullable List<GetModelValidationDataset> validationDatasets;
 
     private GetModelResult() {}
     /**
      * @return Average precision of the trained model
      * 
      */
-    public Double averagePrecision() {
-        return this.averagePrecision;
+    public Optional<Double> averagePrecision() {
+        return Optional.ofNullable(this.averagePrecision);
     }
     /**
      * @return Compartment Identifier
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return Confidence ratio of the calculation
      * 
      */
-    public Double confidenceThreshold() {
-        return this.confidenceThreshold;
+    public Optional<Double> confidenceThreshold() {
+        return Optional.ofNullable(this.confidenceThreshold);
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return A short description of the model.
      * 
      */
-    public String description() {
-        return this.description;
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
     /**
      * @return Model Identifier, can be renamed
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return Unique identifier that is immutable on creation
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return If It&#39;s true, Training is set for recommended epochs needed for quick training.
      * 
      */
-    public Boolean isQuickMode() {
-        return this.isQuickMode;
+    public Optional<Boolean> isQuickMode() {
+        return Optional.ofNullable(this.isQuickMode);
     }
     /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
-    public String lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Optional<String> lifecycleDetails() {
+        return Optional.ofNullable(this.lifecycleDetails);
     }
     /**
      * @return The maximum duration in hours for which the training will run.
      * 
      */
-    public Double maxTrainingDurationInHours() {
-        return this.maxTrainingDurationInHours;
+    public Optional<Double> maxTrainingDurationInHours() {
+        return Optional.ofNullable(this.maxTrainingDurationInHours);
     }
     /**
      * @return Complete Training Metrics for successful trained model
      * 
      */
-    public String metrics() {
-        return this.metrics;
+    public Optional<String> metrics() {
+        return Optional.ofNullable(this.metrics);
     }
     public String modelId() {
         return this.modelId;
@@ -247,106 +249,106 @@ public final class GetModelResult {
      * @return Type of the Model.
      * 
      */
-    public String modelType() {
-        return this.modelType;
+    public Optional<String> modelType() {
+        return Optional.ofNullable(this.modelType);
     }
     /**
      * @return The version of the model
      * 
      */
-    public String modelVersion() {
-        return this.modelVersion;
+    public Optional<String> modelVersion() {
+        return Optional.ofNullable(this.modelVersion);
     }
     /**
      * @return Precision of the trained model
      * 
      */
-    public Double precision() {
-        return this.precision;
+    public Optional<Double> precision() {
+        return Optional.ofNullable(this.precision);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model.
      * 
      */
-    public String projectId() {
-        return this.projectId;
+    public Optional<String> projectId() {
+        return Optional.ofNullable(this.projectId);
     }
     /**
      * @return Recall of the trained model
      * 
      */
-    public Double recall() {
-        return this.recall;
+    public Optional<Double> recall() {
+        return Optional.ofNullable(this.recall);
     }
     /**
      * @return The current state of the Model.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
     public Map<String,Object> systemTags() {
-        return this.systemTags;
+        return this.systemTags == null ? Map.of() : this.systemTags;
     }
     /**
      * @return Total number of testing Images
      * 
      */
-    public Integer testImageCount() {
-        return this.testImageCount;
+    public Optional<Integer> testImageCount() {
+        return Optional.ofNullable(this.testImageCount);
     }
     /**
      * @return The base entity for a Dataset, which is the input for Model creation.
      * 
      */
     public List<GetModelTestingDataset> testingDatasets() {
-        return this.testingDatasets;
+        return this.testingDatasets == null ? List.of() : this.testingDatasets;
     }
     /**
      * @return The time the Model was created. An RFC3339 formatted datetime string
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return The time the Model was updated. An RFC3339 formatted datetime string
      * 
      */
-    public String timeUpdated() {
-        return this.timeUpdated;
+    public Optional<String> timeUpdated() {
+        return Optional.ofNullable(this.timeUpdated);
     }
     /**
      * @return Total number of training Images
      * 
      */
-    public Integer totalImageCount() {
-        return this.totalImageCount;
+    public Optional<Integer> totalImageCount() {
+        return Optional.ofNullable(this.totalImageCount);
     }
     /**
      * @return Total hours actually used for training
      * 
      */
-    public Double trainedDurationInHours() {
-        return this.trainedDurationInHours;
+    public Optional<Double> trainedDurationInHours() {
+        return Optional.ofNullable(this.trainedDurationInHours);
     }
     /**
      * @return The base entity for a Dataset, which is the input for Model creation.
      * 
      */
     public List<GetModelTrainingDataset> trainingDatasets() {
-        return this.trainingDatasets;
+        return this.trainingDatasets == null ? List.of() : this.trainingDatasets;
     }
     /**
      * @return The base entity for a Dataset, which is the input for Model creation.
      * 
      */
     public List<GetModelValidationDataset> validationDatasets() {
-        return this.validationDatasets;
+        return this.validationDatasets == null ? List.of() : this.validationDatasets;
     }
 
     public static Builder builder() {
@@ -358,34 +360,34 @@ public final class GetModelResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Double averagePrecision;
-        private String compartmentId;
-        private Double confidenceThreshold;
-        private Map<String,Object> definedTags;
-        private String description;
-        private String displayName;
-        private Map<String,Object> freeformTags;
-        private String id;
-        private Boolean isQuickMode;
-        private String lifecycleDetails;
-        private Double maxTrainingDurationInHours;
-        private String metrics;
+        private @Nullable Double averagePrecision;
+        private @Nullable String compartmentId;
+        private @Nullable Double confidenceThreshold;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String description;
+        private @Nullable String displayName;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String id;
+        private @Nullable Boolean isQuickMode;
+        private @Nullable String lifecycleDetails;
+        private @Nullable Double maxTrainingDurationInHours;
+        private @Nullable String metrics;
         private String modelId;
-        private String modelType;
-        private String modelVersion;
-        private Double precision;
-        private String projectId;
-        private Double recall;
-        private String state;
-        private Map<String,Object> systemTags;
-        private Integer testImageCount;
-        private List<GetModelTestingDataset> testingDatasets;
-        private String timeCreated;
-        private String timeUpdated;
-        private Integer totalImageCount;
-        private Double trainedDurationInHours;
-        private List<GetModelTrainingDataset> trainingDatasets;
-        private List<GetModelValidationDataset> validationDatasets;
+        private @Nullable String modelType;
+        private @Nullable String modelVersion;
+        private @Nullable Double precision;
+        private @Nullable String projectId;
+        private @Nullable Double recall;
+        private @Nullable String state;
+        private @Nullable Map<String,Object> systemTags;
+        private @Nullable Integer testImageCount;
+        private @Nullable List<GetModelTestingDataset> testingDatasets;
+        private @Nullable String timeCreated;
+        private @Nullable String timeUpdated;
+        private @Nullable Integer totalImageCount;
+        private @Nullable Double trainedDurationInHours;
+        private @Nullable List<GetModelTrainingDataset> trainingDatasets;
+        private @Nullable List<GetModelValidationDataset> validationDatasets;
         public Builder() {}
         public Builder(GetModelResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -420,63 +422,63 @@ public final class GetModelResult {
         }
 
         @CustomType.Setter
-        public Builder averagePrecision(Double averagePrecision) {
-            this.averagePrecision = Objects.requireNonNull(averagePrecision);
+        public Builder averagePrecision(@Nullable Double averagePrecision) {
+            this.averagePrecision = averagePrecision;
             return this;
         }
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder confidenceThreshold(Double confidenceThreshold) {
-            this.confidenceThreshold = Objects.requireNonNull(confidenceThreshold);
+        public Builder confidenceThreshold(@Nullable Double confidenceThreshold) {
+            this.confidenceThreshold = confidenceThreshold;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+        public Builder description(@Nullable String description) {
+            this.description = description;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder isQuickMode(Boolean isQuickMode) {
-            this.isQuickMode = Objects.requireNonNull(isQuickMode);
+        public Builder isQuickMode(@Nullable Boolean isQuickMode) {
+            this.isQuickMode = isQuickMode;
             return this;
         }
         @CustomType.Setter
-        public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+        public Builder lifecycleDetails(@Nullable String lifecycleDetails) {
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
-        public Builder maxTrainingDurationInHours(Double maxTrainingDurationInHours) {
-            this.maxTrainingDurationInHours = Objects.requireNonNull(maxTrainingDurationInHours);
+        public Builder maxTrainingDurationInHours(@Nullable Double maxTrainingDurationInHours) {
+            this.maxTrainingDurationInHours = maxTrainingDurationInHours;
             return this;
         }
         @CustomType.Setter
-        public Builder metrics(String metrics) {
-            this.metrics = Objects.requireNonNull(metrics);
+        public Builder metrics(@Nullable String metrics) {
+            this.metrics = metrics;
             return this;
         }
         @CustomType.Setter
@@ -485,84 +487,84 @@ public final class GetModelResult {
             return this;
         }
         @CustomType.Setter
-        public Builder modelType(String modelType) {
-            this.modelType = Objects.requireNonNull(modelType);
+        public Builder modelType(@Nullable String modelType) {
+            this.modelType = modelType;
             return this;
         }
         @CustomType.Setter
-        public Builder modelVersion(String modelVersion) {
-            this.modelVersion = Objects.requireNonNull(modelVersion);
+        public Builder modelVersion(@Nullable String modelVersion) {
+            this.modelVersion = modelVersion;
             return this;
         }
         @CustomType.Setter
-        public Builder precision(Double precision) {
-            this.precision = Objects.requireNonNull(precision);
+        public Builder precision(@Nullable Double precision) {
+            this.precision = precision;
             return this;
         }
         @CustomType.Setter
-        public Builder projectId(String projectId) {
-            this.projectId = Objects.requireNonNull(projectId);
+        public Builder projectId(@Nullable String projectId) {
+            this.projectId = projectId;
             return this;
         }
         @CustomType.Setter
-        public Builder recall(Double recall) {
-            this.recall = Objects.requireNonNull(recall);
+        public Builder recall(@Nullable Double recall) {
+            this.recall = recall;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+        public Builder systemTags(@Nullable Map<String,Object> systemTags) {
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
-        public Builder testImageCount(Integer testImageCount) {
-            this.testImageCount = Objects.requireNonNull(testImageCount);
+        public Builder testImageCount(@Nullable Integer testImageCount) {
+            this.testImageCount = testImageCount;
             return this;
         }
         @CustomType.Setter
-        public Builder testingDatasets(List<GetModelTestingDataset> testingDatasets) {
-            this.testingDatasets = Objects.requireNonNull(testingDatasets);
+        public Builder testingDatasets(@Nullable List<GetModelTestingDataset> testingDatasets) {
+            this.testingDatasets = testingDatasets;
             return this;
         }
         public Builder testingDatasets(GetModelTestingDataset... testingDatasets) {
             return testingDatasets(List.of(testingDatasets));
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+        public Builder timeUpdated(@Nullable String timeUpdated) {
+            this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter
-        public Builder totalImageCount(Integer totalImageCount) {
-            this.totalImageCount = Objects.requireNonNull(totalImageCount);
+        public Builder totalImageCount(@Nullable Integer totalImageCount) {
+            this.totalImageCount = totalImageCount;
             return this;
         }
         @CustomType.Setter
-        public Builder trainedDurationInHours(Double trainedDurationInHours) {
-            this.trainedDurationInHours = Objects.requireNonNull(trainedDurationInHours);
+        public Builder trainedDurationInHours(@Nullable Double trainedDurationInHours) {
+            this.trainedDurationInHours = trainedDurationInHours;
             return this;
         }
         @CustomType.Setter
-        public Builder trainingDatasets(List<GetModelTrainingDataset> trainingDatasets) {
-            this.trainingDatasets = Objects.requireNonNull(trainingDatasets);
+        public Builder trainingDatasets(@Nullable List<GetModelTrainingDataset> trainingDatasets) {
+            this.trainingDatasets = trainingDatasets;
             return this;
         }
         public Builder trainingDatasets(GetModelTrainingDataset... trainingDatasets) {
             return trainingDatasets(List.of(trainingDatasets));
         }
         @CustomType.Setter
-        public Builder validationDatasets(List<GetModelValidationDataset> validationDatasets) {
-            this.validationDatasets = Objects.requireNonNull(validationDatasets);
+        public Builder validationDatasets(@Nullable List<GetModelValidationDataset> validationDatasets) {
+            this.validationDatasets = validationDatasets;
             return this;
         }
         public Builder validationDatasets(GetModelValidationDataset... validationDatasets) {

@@ -78,66 +78,6 @@ class DeployStageArgs:
                  wait_criteria: Optional[pulumi.Input['DeployStageWaitCriteriaArgs']] = None):
         """
         The set of arguments for constructing a DeployStage resource.
-        :param pulumi.Input[str] deploy_pipeline_id: The OCID of a pipeline.
-        :param pulumi.Input['DeployStageDeployStagePredecessorCollectionArgs'] deploy_stage_predecessor_collection: (Updatable) Collection containing the predecessors of a stage.
-        :param pulumi.Input[str] deploy_stage_type: (Updatable) Deployment stage type.
-        :param pulumi.Input['DeployStageApprovalPolicyArgs'] approval_policy: (Updatable) Specifies the approval policy.
-        :param pulumi.Input[bool] are_hooks_enabled: (Updatable) Disable pre/post upgrade hooks. Set to false by default.
-        :param pulumi.Input['DeployStageBlueBackendIpsArgs'] blue_backend_ips: (Updatable) Collection of backend environment IP addresses.
-        :param pulumi.Input['DeployStageBlueGreenStrategyArgs'] blue_green_strategy: Specifies the required blue green release strategy for OKE deployment.
-        :param pulumi.Input['DeployStageCanaryStrategyArgs'] canary_strategy: Specifies the required canary release strategy for OKE deployment.
-        :param pulumi.Input[str] command_spec_deploy_artifact_id: (Updatable) The OCID of the artifact that contains the command specification.
-        :param pulumi.Input[str] compute_instance_group_blue_green_deployment_deploy_stage_id: The OCID of the upstream compute instance group blue-green deployment stage in this pipeline.
-        :param pulumi.Input[str] compute_instance_group_canary_deploy_stage_id: A compute instance group canary stage OCID for load balancer.
-        :param pulumi.Input[str] compute_instance_group_canary_traffic_shift_deploy_stage_id: (Updatable) A compute instance group canary traffic shift stage OCID for load balancer.
-        :param pulumi.Input[str] compute_instance_group_deploy_environment_id: (Updatable) A compute instance group environment OCID for rolling deployment.
-        :param pulumi.Input[Mapping[str, Any]] config: (Updatable) User provided key and value pair configuration, which is assigned through constants or parameter.
-        :param pulumi.Input['DeployStageContainerConfigArgs'] container_config: (Updatable) Specifies the container configuration.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] deploy_artifact_id: (Updatable) Optional artifact OCID. The artifact will be included in the body for the function invocation during the stage's execution. If the DeployArtifact.argumentSubstituitionMode is set to SUBSTITUTE_PLACEHOLDERS, then the pipeline parameter values will be used to replace the placeholders in the artifact content.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] deploy_artifact_ids: (Updatable) The list of file artifact OCIDs to deploy.
-        :param pulumi.Input[str] deploy_environment_id_a: First compute instance group environment OCID for deployment.
-        :param pulumi.Input[str] deploy_environment_id_b: Second compute instance group environment OCID for deployment.
-        :param pulumi.Input[str] deployment_spec_deploy_artifact_id: (Updatable) The OCID of the artifact that contains the deployment specification.
-        :param pulumi.Input[str] description: (Updatable) Optional description about the deployment stage.
-        :param pulumi.Input[str] display_name: (Updatable) Deployment stage display name, which can be renamed and is not necessarily unique. Avoid entering confidential information.
-        :param pulumi.Input[str] docker_image_deploy_artifact_id: (Updatable) A Docker image artifact OCID.
-        :param pulumi.Input['DeployStageFailurePolicyArgs'] failure_policy: (Updatable) Specifies a failure policy for a compute instance group rolling deployment stage.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] function_deploy_environment_id: (Updatable) Function environment OCID.
-        :param pulumi.Input[int] function_timeout_in_seconds: (Updatable) Timeout for execution of the Function. Value in seconds.
-        :param pulumi.Input['DeployStageGreenBackendIpsArgs'] green_backend_ips: (Updatable) Collection of backend environment IP addresses.
-        :param pulumi.Input[str] helm_chart_deploy_artifact_id: (Updatable) Helm chart artifact OCID.
-        :param pulumi.Input[bool] is_async: (Updatable) A boolean flag specifies whether this stage executes asynchronously.
-        :param pulumi.Input[bool] is_debug_enabled: (Updatable) Enables helm --debug option to stream output to tf stdout. Set to false by default.
-        :param pulumi.Input[bool] is_force_enabled: (Updatable) Force resource update through delete; or if required, recreate. Set to false by default.
-        :param pulumi.Input[bool] is_validation_enabled: (Updatable) A boolean flag specifies whether the invoked function should be validated.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] kubernetes_manifest_deploy_artifact_ids: (Updatable) List of Kubernetes manifest artifact OCIDs.
-        :param pulumi.Input['DeployStageLoadBalancerConfigArgs'] load_balancer_config: (Updatable) Specifies config for load balancer traffic shift stages. The Load Balancer specified here should be an Application Load Balancer type. Network Load Balancers are not supported.
-        :param pulumi.Input[int] max_history: (Updatable) Limit the maximum number of revisions saved per release. Use 0 for no limit. Set to 10 by default
-        :param pulumi.Input[str] max_memory_in_mbs: (Updatable) Maximum usable memory for the Function (in MB).
-        :param pulumi.Input[str] namespace: (Updatable) Default namespace to be used for Kubernetes deployment when not specified in the manifest.
-        :param pulumi.Input[str] oke_blue_green_deploy_stage_id: The OCID of the upstream OKE blue-green deployment stage in this pipeline.
-        :param pulumi.Input[str] oke_canary_deploy_stage_id: The OCID of an upstream OKE canary deployment stage in this pipeline.
-        :param pulumi.Input[str] oke_canary_traffic_shift_deploy_stage_id: The OCID of an upstream OKE canary deployment traffic shift stage in this pipeline.
-        :param pulumi.Input[str] oke_cluster_deploy_environment_id: (Updatable) Kubernetes cluster environment OCID for deployment.
-        :param pulumi.Input['DeployStageProductionLoadBalancerConfigArgs'] production_load_balancer_config: Specifies configuration for load balancer traffic shift stages. The load balancer specified here should be an Application load balancer type. Network load balancers are not supported.
-        :param pulumi.Input[str] release_name: (Updatable) Default name of the chart instance. Must be unique within a Kubernetes namespace.
-        :param pulumi.Input['DeployStageRollbackPolicyArgs'] rollback_policy: (Updatable) Specifies the rollback policy. This is initiated on the failure of certain stage types.
-        :param pulumi.Input['DeployStageRolloutPolicyArgs'] rollout_policy: (Updatable) Description of rollout policy for load balancer traffic shift stage.
-        :param pulumi.Input['DeployStageSetStringArgs'] set_string: (Updatable) Specifies the name and value pairs to set helm values.
-        :param pulumi.Input['DeployStageSetValuesArgs'] set_values: (Updatable) Specifies the name and value pairs to set helm values.
-        :param pulumi.Input[bool] should_cleanup_on_fail: (Updatable) Allow deletion of new resources created during when an upgrade fails. Set to false by default.
-        :param pulumi.Input[bool] should_not_wait: (Updatable) Does not wait until all the resources are in a ready state to mark the release as successful if set to true. Set to false by default.
-        :param pulumi.Input[bool] should_reset_values: (Updatable) During upgrade, reset the values to the ones built into the chart. It overrides shouldReuseValues. Set to false by default.
-        :param pulumi.Input[bool] should_reuse_values: (Updatable) During upgrade, reuse the values of the last release and merge overrides from the command line. Set to false by default.
-        :param pulumi.Input[bool] should_skip_crds: (Updatable) If set, no CRDs are installed. By default, CRDs are installed only if they are not present already. Set to false by default.
-        :param pulumi.Input[bool] should_skip_render_subchart_notes: (Updatable) If set, renders subchart notes along with the parent. Set to false by default.
-        :param pulumi.Input['DeployStageTestLoadBalancerConfigArgs'] test_load_balancer_config: (Updatable) Specifies configuration for load balancer traffic shift stages. The load balancer specified here should be an Application load balancer type. Network load balancers are not supported.
-        :param pulumi.Input[int] timeout_in_seconds: (Updatable) Time to wait for execution of a Shell/Helm stage. Defaults to 36000 seconds for Shell and 300 seconds for Helm Stage
-        :param pulumi.Input[str] traffic_shift_target: (Updatable) Specifies the target or destination backend set.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] values_artifact_ids: (Updatable) List of values.yaml file artifact OCIDs.
-        :param pulumi.Input['DeployStageWaitCriteriaArgs'] wait_criteria: (Updatable) Specifies wait criteria for the Wait stage.
         """
         pulumi.set(__self__, "deploy_pipeline_id", deploy_pipeline_id)
         pulumi.set(__self__, "deploy_stage_predecessor_collection", deploy_stage_predecessor_collection)
@@ -260,9 +200,6 @@ class DeployStageArgs:
     @property
     @pulumi.getter(name="deployPipelineId")
     def deploy_pipeline_id(self) -> pulumi.Input[str]:
-        """
-        The OCID of a pipeline.
-        """
         return pulumi.get(self, "deploy_pipeline_id")
 
     @deploy_pipeline_id.setter
@@ -272,9 +209,6 @@ class DeployStageArgs:
     @property
     @pulumi.getter(name="deployStagePredecessorCollection")
     def deploy_stage_predecessor_collection(self) -> pulumi.Input['DeployStageDeployStagePredecessorCollectionArgs']:
-        """
-        (Updatable) Collection containing the predecessors of a stage.
-        """
         return pulumi.get(self, "deploy_stage_predecessor_collection")
 
     @deploy_stage_predecessor_collection.setter
@@ -284,9 +218,6 @@ class DeployStageArgs:
     @property
     @pulumi.getter(name="deployStageType")
     def deploy_stage_type(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Deployment stage type.
-        """
         return pulumi.get(self, "deploy_stage_type")
 
     @deploy_stage_type.setter
@@ -296,9 +227,6 @@ class DeployStageArgs:
     @property
     @pulumi.getter(name="approvalPolicy")
     def approval_policy(self) -> Optional[pulumi.Input['DeployStageApprovalPolicyArgs']]:
-        """
-        (Updatable) Specifies the approval policy.
-        """
         return pulumi.get(self, "approval_policy")
 
     @approval_policy.setter
@@ -308,9 +236,6 @@ class DeployStageArgs:
     @property
     @pulumi.getter(name="areHooksEnabled")
     def are_hooks_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Disable pre/post upgrade hooks. Set to false by default.
-        """
         return pulumi.get(self, "are_hooks_enabled")
 
     @are_hooks_enabled.setter
@@ -320,9 +245,6 @@ class DeployStageArgs:
     @property
     @pulumi.getter(name="blueBackendIps")
     def blue_backend_ips(self) -> Optional[pulumi.Input['DeployStageBlueBackendIpsArgs']]:
-        """
-        (Updatable) Collection of backend environment IP addresses.
-        """
         return pulumi.get(self, "blue_backend_ips")
 
     @blue_backend_ips.setter
@@ -332,9 +254,6 @@ class DeployStageArgs:
     @property
     @pulumi.getter(name="blueGreenStrategy")
     def blue_green_strategy(self) -> Optional[pulumi.Input['DeployStageBlueGreenStrategyArgs']]:
-        """
-        Specifies the required blue green release strategy for OKE deployment.
-        """
         return pulumi.get(self, "blue_green_strategy")
 
     @blue_green_strategy.setter
@@ -344,9 +263,6 @@ class DeployStageArgs:
     @property
     @pulumi.getter(name="canaryStrategy")
     def canary_strategy(self) -> Optional[pulumi.Input['DeployStageCanaryStrategyArgs']]:
-        """
-        Specifies the required canary release strategy for OKE deployment.
-        """
         return pulumi.get(self, "canary_strategy")
 
     @canary_strategy.setter
@@ -356,9 +272,6 @@ class DeployStageArgs:
     @property
     @pulumi.getter(name="commandSpecDeployArtifactId")
     def command_spec_deploy_artifact_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The OCID of the artifact that contains the command specification.
-        """
         return pulumi.get(self, "command_spec_deploy_artifact_id")
 
     @command_spec_deploy_artifact_id.setter
@@ -368,9 +281,6 @@ class DeployStageArgs:
     @property
     @pulumi.getter(name="computeInstanceGroupBlueGreenDeploymentDeployStageId")
     def compute_instance_group_blue_green_deployment_deploy_stage_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the upstream compute instance group blue-green deployment stage in this pipeline.
-        """
         return pulumi.get(self, "compute_instance_group_blue_green_deployment_deploy_stage_id")
 
     @compute_instance_group_blue_green_deployment_deploy_stage_id.setter
@@ -380,9 +290,6 @@ class DeployStageArgs:
     @property
     @pulumi.getter(name="computeInstanceGroupCanaryDeployStageId")
     def compute_instance_group_canary_deploy_stage_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        A compute instance group canary stage OCID for load balancer.
-        """
         return pulumi.get(self, "compute_instance_group_canary_deploy_stage_id")
 
     @compute_instance_group_canary_deploy_stage_id.setter
@@ -392,9 +299,6 @@ class DeployStageArgs:
     @property
     @pulumi.getter(name="computeInstanceGroupCanaryTrafficShiftDeployStageId")
     def compute_instance_group_canary_traffic_shift_deploy_stage_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A compute instance group canary traffic shift stage OCID for load balancer.
-        """
         return pulumi.get(self, "compute_instance_group_canary_traffic_shift_deploy_stage_id")
 
     @compute_instance_group_canary_traffic_shift_deploy_stage_id.setter
@@ -404,9 +308,6 @@ class DeployStageArgs:
     @property
     @pulumi.getter(name="computeInstanceGroupDeployEnvironmentId")
     def compute_instance_group_deploy_environment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A compute instance group environment OCID for rolling deployment.
-        """
         return pulumi.get(self, "compute_instance_group_deploy_environment_id")
 
     @compute_instance_group_deploy_environment_id.setter
@@ -416,9 +317,6 @@ class DeployStageArgs:
     @property
     @pulumi.getter
     def config(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) User provided key and value pair configuration, which is assigned through constants or parameter.
-        """
         return pulumi.get(self, "config")
 
     @config.setter
@@ -428,9 +326,6 @@ class DeployStageArgs:
     @property
     @pulumi.getter(name="containerConfig")
     def container_config(self) -> Optional[pulumi.Input['DeployStageContainerConfigArgs']]:
-        """
-        (Updatable) Specifies the container configuration.
-        """
         return pulumi.get(self, "container_config")
 
     @container_config.setter
@@ -440,9 +335,6 @@ class DeployStageArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -452,9 +344,6 @@ class DeployStageArgs:
     @property
     @pulumi.getter(name="deployArtifactId")
     def deploy_artifact_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Optional artifact OCID. The artifact will be included in the body for the function invocation during the stage's execution. If the DeployArtifact.argumentSubstituitionMode is set to SUBSTITUTE_PLACEHOLDERS, then the pipeline parameter values will be used to replace the placeholders in the artifact content.
-        """
         return pulumi.get(self, "deploy_artifact_id")
 
     @deploy_artifact_id.setter
@@ -464,9 +353,6 @@ class DeployStageArgs:
     @property
     @pulumi.getter(name="deployArtifactIds")
     def deploy_artifact_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) The list of file artifact OCIDs to deploy.
-        """
         return pulumi.get(self, "deploy_artifact_ids")
 
     @deploy_artifact_ids.setter
@@ -476,9 +362,6 @@ class DeployStageArgs:
     @property
     @pulumi.getter(name="deployEnvironmentIdA")
     def deploy_environment_id_a(self) -> Optional[pulumi.Input[str]]:
-        """
-        First compute instance group environment OCID for deployment.
-        """
         return pulumi.get(self, "deploy_environment_id_a")
 
     @deploy_environment_id_a.setter
@@ -488,9 +371,6 @@ class DeployStageArgs:
     @property
     @pulumi.getter(name="deployEnvironmentIdB")
     def deploy_environment_id_b(self) -> Optional[pulumi.Input[str]]:
-        """
-        Second compute instance group environment OCID for deployment.
-        """
         return pulumi.get(self, "deploy_environment_id_b")
 
     @deploy_environment_id_b.setter
@@ -500,9 +380,6 @@ class DeployStageArgs:
     @property
     @pulumi.getter(name="deploymentSpecDeployArtifactId")
     def deployment_spec_deploy_artifact_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The OCID of the artifact that contains the deployment specification.
-        """
         return pulumi.get(self, "deployment_spec_deploy_artifact_id")
 
     @deployment_spec_deploy_artifact_id.setter
@@ -512,9 +389,6 @@ class DeployStageArgs:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Optional description about the deployment stage.
-        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -524,9 +398,6 @@ class DeployStageArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Deployment stage display name, which can be renamed and is not necessarily unique. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -536,9 +407,6 @@ class DeployStageArgs:
     @property
     @pulumi.getter(name="dockerImageDeployArtifactId")
     def docker_image_deploy_artifact_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A Docker image artifact OCID.
-        """
         return pulumi.get(self, "docker_image_deploy_artifact_id")
 
     @docker_image_deploy_artifact_id.setter
@@ -548,9 +416,6 @@ class DeployStageArgs:
     @property
     @pulumi.getter(name="failurePolicy")
     def failure_policy(self) -> Optional[pulumi.Input['DeployStageFailurePolicyArgs']]:
-        """
-        (Updatable) Specifies a failure policy for a compute instance group rolling deployment stage.
-        """
         return pulumi.get(self, "failure_policy")
 
     @failure_policy.setter
@@ -560,9 +425,6 @@ class DeployStageArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -572,9 +434,6 @@ class DeployStageArgs:
     @property
     @pulumi.getter(name="functionDeployEnvironmentId")
     def function_deploy_environment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Function environment OCID.
-        """
         return pulumi.get(self, "function_deploy_environment_id")
 
     @function_deploy_environment_id.setter
@@ -584,9 +443,6 @@ class DeployStageArgs:
     @property
     @pulumi.getter(name="functionTimeoutInSeconds")
     def function_timeout_in_seconds(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) Timeout for execution of the Function. Value in seconds.
-        """
         return pulumi.get(self, "function_timeout_in_seconds")
 
     @function_timeout_in_seconds.setter
@@ -596,9 +452,6 @@ class DeployStageArgs:
     @property
     @pulumi.getter(name="greenBackendIps")
     def green_backend_ips(self) -> Optional[pulumi.Input['DeployStageGreenBackendIpsArgs']]:
-        """
-        (Updatable) Collection of backend environment IP addresses.
-        """
         return pulumi.get(self, "green_backend_ips")
 
     @green_backend_ips.setter
@@ -608,9 +461,6 @@ class DeployStageArgs:
     @property
     @pulumi.getter(name="helmChartDeployArtifactId")
     def helm_chart_deploy_artifact_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Helm chart artifact OCID.
-        """
         return pulumi.get(self, "helm_chart_deploy_artifact_id")
 
     @helm_chart_deploy_artifact_id.setter
@@ -620,9 +470,6 @@ class DeployStageArgs:
     @property
     @pulumi.getter(name="isAsync")
     def is_async(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) A boolean flag specifies whether this stage executes asynchronously.
-        """
         return pulumi.get(self, "is_async")
 
     @is_async.setter
@@ -632,9 +479,6 @@ class DeployStageArgs:
     @property
     @pulumi.getter(name="isDebugEnabled")
     def is_debug_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Enables helm --debug option to stream output to tf stdout. Set to false by default.
-        """
         return pulumi.get(self, "is_debug_enabled")
 
     @is_debug_enabled.setter
@@ -644,9 +488,6 @@ class DeployStageArgs:
     @property
     @pulumi.getter(name="isForceEnabled")
     def is_force_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Force resource update through delete; or if required, recreate. Set to false by default.
-        """
         return pulumi.get(self, "is_force_enabled")
 
     @is_force_enabled.setter
@@ -656,9 +497,6 @@ class DeployStageArgs:
     @property
     @pulumi.getter(name="isValidationEnabled")
     def is_validation_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) A boolean flag specifies whether the invoked function should be validated.
-        """
         return pulumi.get(self, "is_validation_enabled")
 
     @is_validation_enabled.setter
@@ -668,9 +506,6 @@ class DeployStageArgs:
     @property
     @pulumi.getter(name="kubernetesManifestDeployArtifactIds")
     def kubernetes_manifest_deploy_artifact_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) List of Kubernetes manifest artifact OCIDs.
-        """
         return pulumi.get(self, "kubernetes_manifest_deploy_artifact_ids")
 
     @kubernetes_manifest_deploy_artifact_ids.setter
@@ -680,9 +515,6 @@ class DeployStageArgs:
     @property
     @pulumi.getter(name="loadBalancerConfig")
     def load_balancer_config(self) -> Optional[pulumi.Input['DeployStageLoadBalancerConfigArgs']]:
-        """
-        (Updatable) Specifies config for load balancer traffic shift stages. The Load Balancer specified here should be an Application Load Balancer type. Network Load Balancers are not supported.
-        """
         return pulumi.get(self, "load_balancer_config")
 
     @load_balancer_config.setter
@@ -692,9 +524,6 @@ class DeployStageArgs:
     @property
     @pulumi.getter(name="maxHistory")
     def max_history(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) Limit the maximum number of revisions saved per release. Use 0 for no limit. Set to 10 by default
-        """
         return pulumi.get(self, "max_history")
 
     @max_history.setter
@@ -704,9 +533,6 @@ class DeployStageArgs:
     @property
     @pulumi.getter(name="maxMemoryInMbs")
     def max_memory_in_mbs(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Maximum usable memory for the Function (in MB).
-        """
         return pulumi.get(self, "max_memory_in_mbs")
 
     @max_memory_in_mbs.setter
@@ -716,9 +542,6 @@ class DeployStageArgs:
     @property
     @pulumi.getter
     def namespace(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Default namespace to be used for Kubernetes deployment when not specified in the manifest.
-        """
         return pulumi.get(self, "namespace")
 
     @namespace.setter
@@ -728,9 +551,6 @@ class DeployStageArgs:
     @property
     @pulumi.getter(name="okeBlueGreenDeployStageId")
     def oke_blue_green_deploy_stage_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the upstream OKE blue-green deployment stage in this pipeline.
-        """
         return pulumi.get(self, "oke_blue_green_deploy_stage_id")
 
     @oke_blue_green_deploy_stage_id.setter
@@ -740,9 +560,6 @@ class DeployStageArgs:
     @property
     @pulumi.getter(name="okeCanaryDeployStageId")
     def oke_canary_deploy_stage_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of an upstream OKE canary deployment stage in this pipeline.
-        """
         return pulumi.get(self, "oke_canary_deploy_stage_id")
 
     @oke_canary_deploy_stage_id.setter
@@ -752,9 +569,6 @@ class DeployStageArgs:
     @property
     @pulumi.getter(name="okeCanaryTrafficShiftDeployStageId")
     def oke_canary_traffic_shift_deploy_stage_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of an upstream OKE canary deployment traffic shift stage in this pipeline.
-        """
         return pulumi.get(self, "oke_canary_traffic_shift_deploy_stage_id")
 
     @oke_canary_traffic_shift_deploy_stage_id.setter
@@ -764,9 +578,6 @@ class DeployStageArgs:
     @property
     @pulumi.getter(name="okeClusterDeployEnvironmentId")
     def oke_cluster_deploy_environment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Kubernetes cluster environment OCID for deployment.
-        """
         return pulumi.get(self, "oke_cluster_deploy_environment_id")
 
     @oke_cluster_deploy_environment_id.setter
@@ -776,9 +587,6 @@ class DeployStageArgs:
     @property
     @pulumi.getter(name="productionLoadBalancerConfig")
     def production_load_balancer_config(self) -> Optional[pulumi.Input['DeployStageProductionLoadBalancerConfigArgs']]:
-        """
-        Specifies configuration for load balancer traffic shift stages. The load balancer specified here should be an Application load balancer type. Network load balancers are not supported.
-        """
         return pulumi.get(self, "production_load_balancer_config")
 
     @production_load_balancer_config.setter
@@ -788,9 +596,6 @@ class DeployStageArgs:
     @property
     @pulumi.getter(name="releaseName")
     def release_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Default name of the chart instance. Must be unique within a Kubernetes namespace.
-        """
         return pulumi.get(self, "release_name")
 
     @release_name.setter
@@ -800,9 +605,6 @@ class DeployStageArgs:
     @property
     @pulumi.getter(name="rollbackPolicy")
     def rollback_policy(self) -> Optional[pulumi.Input['DeployStageRollbackPolicyArgs']]:
-        """
-        (Updatable) Specifies the rollback policy. This is initiated on the failure of certain stage types.
-        """
         return pulumi.get(self, "rollback_policy")
 
     @rollback_policy.setter
@@ -812,9 +614,6 @@ class DeployStageArgs:
     @property
     @pulumi.getter(name="rolloutPolicy")
     def rollout_policy(self) -> Optional[pulumi.Input['DeployStageRolloutPolicyArgs']]:
-        """
-        (Updatable) Description of rollout policy for load balancer traffic shift stage.
-        """
         return pulumi.get(self, "rollout_policy")
 
     @rollout_policy.setter
@@ -824,9 +623,6 @@ class DeployStageArgs:
     @property
     @pulumi.getter(name="setString")
     def set_string(self) -> Optional[pulumi.Input['DeployStageSetStringArgs']]:
-        """
-        (Updatable) Specifies the name and value pairs to set helm values.
-        """
         return pulumi.get(self, "set_string")
 
     @set_string.setter
@@ -836,9 +632,6 @@ class DeployStageArgs:
     @property
     @pulumi.getter(name="setValues")
     def set_values(self) -> Optional[pulumi.Input['DeployStageSetValuesArgs']]:
-        """
-        (Updatable) Specifies the name and value pairs to set helm values.
-        """
         return pulumi.get(self, "set_values")
 
     @set_values.setter
@@ -848,9 +641,6 @@ class DeployStageArgs:
     @property
     @pulumi.getter(name="shouldCleanupOnFail")
     def should_cleanup_on_fail(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Allow deletion of new resources created during when an upgrade fails. Set to false by default.
-        """
         return pulumi.get(self, "should_cleanup_on_fail")
 
     @should_cleanup_on_fail.setter
@@ -860,9 +650,6 @@ class DeployStageArgs:
     @property
     @pulumi.getter(name="shouldNotWait")
     def should_not_wait(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Does not wait until all the resources are in a ready state to mark the release as successful if set to true. Set to false by default.
-        """
         return pulumi.get(self, "should_not_wait")
 
     @should_not_wait.setter
@@ -872,9 +659,6 @@ class DeployStageArgs:
     @property
     @pulumi.getter(name="shouldResetValues")
     def should_reset_values(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) During upgrade, reset the values to the ones built into the chart. It overrides shouldReuseValues. Set to false by default.
-        """
         return pulumi.get(self, "should_reset_values")
 
     @should_reset_values.setter
@@ -884,9 +668,6 @@ class DeployStageArgs:
     @property
     @pulumi.getter(name="shouldReuseValues")
     def should_reuse_values(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) During upgrade, reuse the values of the last release and merge overrides from the command line. Set to false by default.
-        """
         return pulumi.get(self, "should_reuse_values")
 
     @should_reuse_values.setter
@@ -896,9 +677,6 @@ class DeployStageArgs:
     @property
     @pulumi.getter(name="shouldSkipCrds")
     def should_skip_crds(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) If set, no CRDs are installed. By default, CRDs are installed only if they are not present already. Set to false by default.
-        """
         return pulumi.get(self, "should_skip_crds")
 
     @should_skip_crds.setter
@@ -908,9 +686,6 @@ class DeployStageArgs:
     @property
     @pulumi.getter(name="shouldSkipRenderSubchartNotes")
     def should_skip_render_subchart_notes(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) If set, renders subchart notes along with the parent. Set to false by default.
-        """
         return pulumi.get(self, "should_skip_render_subchart_notes")
 
     @should_skip_render_subchart_notes.setter
@@ -920,9 +695,6 @@ class DeployStageArgs:
     @property
     @pulumi.getter(name="testLoadBalancerConfig")
     def test_load_balancer_config(self) -> Optional[pulumi.Input['DeployStageTestLoadBalancerConfigArgs']]:
-        """
-        (Updatable) Specifies configuration for load balancer traffic shift stages. The load balancer specified here should be an Application load balancer type. Network load balancers are not supported.
-        """
         return pulumi.get(self, "test_load_balancer_config")
 
     @test_load_balancer_config.setter
@@ -932,9 +704,6 @@ class DeployStageArgs:
     @property
     @pulumi.getter(name="timeoutInSeconds")
     def timeout_in_seconds(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) Time to wait for execution of a Shell/Helm stage. Defaults to 36000 seconds for Shell and 300 seconds for Helm Stage
-        """
         return pulumi.get(self, "timeout_in_seconds")
 
     @timeout_in_seconds.setter
@@ -944,9 +713,6 @@ class DeployStageArgs:
     @property
     @pulumi.getter(name="trafficShiftTarget")
     def traffic_shift_target(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Specifies the target or destination backend set.
-        """
         return pulumi.get(self, "traffic_shift_target")
 
     @traffic_shift_target.setter
@@ -956,9 +722,6 @@ class DeployStageArgs:
     @property
     @pulumi.getter(name="valuesArtifactIds")
     def values_artifact_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) List of values.yaml file artifact OCIDs.
-        """
         return pulumi.get(self, "values_artifact_ids")
 
     @values_artifact_ids.setter
@@ -968,9 +731,6 @@ class DeployStageArgs:
     @property
     @pulumi.getter(name="waitCriteria")
     def wait_criteria(self) -> Optional[pulumi.Input['DeployStageWaitCriteriaArgs']]:
-        """
-        (Updatable) Specifies wait criteria for the Wait stage.
-        """
         return pulumi.get(self, "wait_criteria")
 
     @wait_criteria.setter
@@ -1050,73 +810,6 @@ class _DeployStageState:
                  wait_criteria: Optional[pulumi.Input['DeployStageWaitCriteriaArgs']] = None):
         """
         Input properties used for looking up and filtering DeployStage resources.
-        :param pulumi.Input['DeployStageApprovalPolicyArgs'] approval_policy: (Updatable) Specifies the approval policy.
-        :param pulumi.Input[bool] are_hooks_enabled: (Updatable) Disable pre/post upgrade hooks. Set to false by default.
-        :param pulumi.Input['DeployStageBlueBackendIpsArgs'] blue_backend_ips: (Updatable) Collection of backend environment IP addresses.
-        :param pulumi.Input['DeployStageBlueGreenStrategyArgs'] blue_green_strategy: Specifies the required blue green release strategy for OKE deployment.
-        :param pulumi.Input['DeployStageCanaryStrategyArgs'] canary_strategy: Specifies the required canary release strategy for OKE deployment.
-        :param pulumi.Input[str] command_spec_deploy_artifact_id: (Updatable) The OCID of the artifact that contains the command specification.
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment where the ContainerInstance will be created.
-        :param pulumi.Input[str] compute_instance_group_blue_green_deployment_deploy_stage_id: The OCID of the upstream compute instance group blue-green deployment stage in this pipeline.
-        :param pulumi.Input[str] compute_instance_group_canary_deploy_stage_id: A compute instance group canary stage OCID for load balancer.
-        :param pulumi.Input[str] compute_instance_group_canary_traffic_shift_deploy_stage_id: (Updatable) A compute instance group canary traffic shift stage OCID for load balancer.
-        :param pulumi.Input[str] compute_instance_group_deploy_environment_id: (Updatable) A compute instance group environment OCID for rolling deployment.
-        :param pulumi.Input[Mapping[str, Any]] config: (Updatable) User provided key and value pair configuration, which is assigned through constants or parameter.
-        :param pulumi.Input['DeployStageContainerConfigArgs'] container_config: (Updatable) Specifies the container configuration.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] deploy_artifact_id: (Updatable) Optional artifact OCID. The artifact will be included in the body for the function invocation during the stage's execution. If the DeployArtifact.argumentSubstituitionMode is set to SUBSTITUTE_PLACEHOLDERS, then the pipeline parameter values will be used to replace the placeholders in the artifact content.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] deploy_artifact_ids: (Updatable) The list of file artifact OCIDs to deploy.
-        :param pulumi.Input[str] deploy_environment_id_a: First compute instance group environment OCID for deployment.
-        :param pulumi.Input[str] deploy_environment_id_b: Second compute instance group environment OCID for deployment.
-        :param pulumi.Input[str] deploy_pipeline_id: The OCID of a pipeline.
-        :param pulumi.Input['DeployStageDeployStagePredecessorCollectionArgs'] deploy_stage_predecessor_collection: (Updatable) Collection containing the predecessors of a stage.
-        :param pulumi.Input[str] deploy_stage_type: (Updatable) Deployment stage type.
-        :param pulumi.Input[str] deployment_spec_deploy_artifact_id: (Updatable) The OCID of the artifact that contains the deployment specification.
-        :param pulumi.Input[str] description: (Updatable) Optional description about the deployment stage.
-        :param pulumi.Input[str] display_name: (Updatable) Deployment stage display name, which can be renamed and is not necessarily unique. Avoid entering confidential information.
-        :param pulumi.Input[str] docker_image_deploy_artifact_id: (Updatable) A Docker image artifact OCID.
-        :param pulumi.Input['DeployStageFailurePolicyArgs'] failure_policy: (Updatable) Specifies a failure policy for a compute instance group rolling deployment stage.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] function_deploy_environment_id: (Updatable) Function environment OCID.
-        :param pulumi.Input[int] function_timeout_in_seconds: (Updatable) Timeout for execution of the Function. Value in seconds.
-        :param pulumi.Input['DeployStageGreenBackendIpsArgs'] green_backend_ips: (Updatable) Collection of backend environment IP addresses.
-        :param pulumi.Input[str] helm_chart_deploy_artifact_id: (Updatable) Helm chart artifact OCID.
-        :param pulumi.Input[bool] is_async: (Updatable) A boolean flag specifies whether this stage executes asynchronously.
-        :param pulumi.Input[bool] is_debug_enabled: (Updatable) Enables helm --debug option to stream output to tf stdout. Set to false by default.
-        :param pulumi.Input[bool] is_force_enabled: (Updatable) Force resource update through delete; or if required, recreate. Set to false by default.
-        :param pulumi.Input[bool] is_validation_enabled: (Updatable) A boolean flag specifies whether the invoked function should be validated.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] kubernetes_manifest_deploy_artifact_ids: (Updatable) List of Kubernetes manifest artifact OCIDs.
-        :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        :param pulumi.Input['DeployStageLoadBalancerConfigArgs'] load_balancer_config: (Updatable) Specifies config for load balancer traffic shift stages. The Load Balancer specified here should be an Application Load Balancer type. Network Load Balancers are not supported.
-        :param pulumi.Input[int] max_history: (Updatable) Limit the maximum number of revisions saved per release. Use 0 for no limit. Set to 10 by default
-        :param pulumi.Input[str] max_memory_in_mbs: (Updatable) Maximum usable memory for the Function (in MB).
-        :param pulumi.Input[str] namespace: (Updatable) Default namespace to be used for Kubernetes deployment when not specified in the manifest.
-        :param pulumi.Input[str] oke_blue_green_deploy_stage_id: The OCID of the upstream OKE blue-green deployment stage in this pipeline.
-        :param pulumi.Input[str] oke_canary_deploy_stage_id: The OCID of an upstream OKE canary deployment stage in this pipeline.
-        :param pulumi.Input[str] oke_canary_traffic_shift_deploy_stage_id: The OCID of an upstream OKE canary deployment traffic shift stage in this pipeline.
-        :param pulumi.Input[str] oke_cluster_deploy_environment_id: (Updatable) Kubernetes cluster environment OCID for deployment.
-        :param pulumi.Input['DeployStageProductionLoadBalancerConfigArgs'] production_load_balancer_config: Specifies configuration for load balancer traffic shift stages. The load balancer specified here should be an Application load balancer type. Network load balancers are not supported.
-        :param pulumi.Input[str] project_id: The OCID of a project.
-        :param pulumi.Input[str] release_name: (Updatable) Default name of the chart instance. Must be unique within a Kubernetes namespace.
-        :param pulumi.Input['DeployStageRollbackPolicyArgs'] rollback_policy: (Updatable) Specifies the rollback policy. This is initiated on the failure of certain stage types.
-        :param pulumi.Input['DeployStageRolloutPolicyArgs'] rollout_policy: (Updatable) Description of rollout policy for load balancer traffic shift stage.
-        :param pulumi.Input['DeployStageSetStringArgs'] set_string: (Updatable) Specifies the name and value pairs to set helm values.
-        :param pulumi.Input['DeployStageSetValuesArgs'] set_values: (Updatable) Specifies the name and value pairs to set helm values.
-        :param pulumi.Input[bool] should_cleanup_on_fail: (Updatable) Allow deletion of new resources created during when an upgrade fails. Set to false by default.
-        :param pulumi.Input[bool] should_not_wait: (Updatable) Does not wait until all the resources are in a ready state to mark the release as successful if set to true. Set to false by default.
-        :param pulumi.Input[bool] should_reset_values: (Updatable) During upgrade, reset the values to the ones built into the chart. It overrides shouldReuseValues. Set to false by default.
-        :param pulumi.Input[bool] should_reuse_values: (Updatable) During upgrade, reuse the values of the last release and merge overrides from the command line. Set to false by default.
-        :param pulumi.Input[bool] should_skip_crds: (Updatable) If set, no CRDs are installed. By default, CRDs are installed only if they are not present already. Set to false by default.
-        :param pulumi.Input[bool] should_skip_render_subchart_notes: (Updatable) If set, renders subchart notes along with the parent. Set to false by default.
-        :param pulumi.Input[str] state: The current state of the deployment stage.
-        :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input['DeployStageTestLoadBalancerConfigArgs'] test_load_balancer_config: (Updatable) Specifies configuration for load balancer traffic shift stages. The load balancer specified here should be an Application load balancer type. Network load balancers are not supported.
-        :param pulumi.Input[str] time_created: Time the deployment stage was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
-        :param pulumi.Input[str] time_updated: Time the deployment stage was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
-        :param pulumi.Input[int] timeout_in_seconds: (Updatable) Time to wait for execution of a Shell/Helm stage. Defaults to 36000 seconds for Shell and 300 seconds for Helm Stage
-        :param pulumi.Input[str] traffic_shift_target: (Updatable) Specifies the target or destination backend set.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] values_artifact_ids: (Updatable) List of values.yaml file artifact OCIDs.
-        :param pulumi.Input['DeployStageWaitCriteriaArgs'] wait_criteria: (Updatable) Specifies wait criteria for the Wait stage.
         """
         if approval_policy is not None:
             pulumi.set(__self__, "approval_policy", approval_policy)
@@ -1256,9 +949,6 @@ class _DeployStageState:
     @property
     @pulumi.getter(name="approvalPolicy")
     def approval_policy(self) -> Optional[pulumi.Input['DeployStageApprovalPolicyArgs']]:
-        """
-        (Updatable) Specifies the approval policy.
-        """
         return pulumi.get(self, "approval_policy")
 
     @approval_policy.setter
@@ -1268,9 +958,6 @@ class _DeployStageState:
     @property
     @pulumi.getter(name="areHooksEnabled")
     def are_hooks_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Disable pre/post upgrade hooks. Set to false by default.
-        """
         return pulumi.get(self, "are_hooks_enabled")
 
     @are_hooks_enabled.setter
@@ -1280,9 +967,6 @@ class _DeployStageState:
     @property
     @pulumi.getter(name="blueBackendIps")
     def blue_backend_ips(self) -> Optional[pulumi.Input['DeployStageBlueBackendIpsArgs']]:
-        """
-        (Updatable) Collection of backend environment IP addresses.
-        """
         return pulumi.get(self, "blue_backend_ips")
 
     @blue_backend_ips.setter
@@ -1292,9 +976,6 @@ class _DeployStageState:
     @property
     @pulumi.getter(name="blueGreenStrategy")
     def blue_green_strategy(self) -> Optional[pulumi.Input['DeployStageBlueGreenStrategyArgs']]:
-        """
-        Specifies the required blue green release strategy for OKE deployment.
-        """
         return pulumi.get(self, "blue_green_strategy")
 
     @blue_green_strategy.setter
@@ -1304,9 +985,6 @@ class _DeployStageState:
     @property
     @pulumi.getter(name="canaryStrategy")
     def canary_strategy(self) -> Optional[pulumi.Input['DeployStageCanaryStrategyArgs']]:
-        """
-        Specifies the required canary release strategy for OKE deployment.
-        """
         return pulumi.get(self, "canary_strategy")
 
     @canary_strategy.setter
@@ -1316,9 +994,6 @@ class _DeployStageState:
     @property
     @pulumi.getter(name="commandSpecDeployArtifactId")
     def command_spec_deploy_artifact_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The OCID of the artifact that contains the command specification.
-        """
         return pulumi.get(self, "command_spec_deploy_artifact_id")
 
     @command_spec_deploy_artifact_id.setter
@@ -1328,9 +1003,6 @@ class _DeployStageState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The OCID of the compartment where the ContainerInstance will be created.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -1340,9 +1012,6 @@ class _DeployStageState:
     @property
     @pulumi.getter(name="computeInstanceGroupBlueGreenDeploymentDeployStageId")
     def compute_instance_group_blue_green_deployment_deploy_stage_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the upstream compute instance group blue-green deployment stage in this pipeline.
-        """
         return pulumi.get(self, "compute_instance_group_blue_green_deployment_deploy_stage_id")
 
     @compute_instance_group_blue_green_deployment_deploy_stage_id.setter
@@ -1352,9 +1021,6 @@ class _DeployStageState:
     @property
     @pulumi.getter(name="computeInstanceGroupCanaryDeployStageId")
     def compute_instance_group_canary_deploy_stage_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        A compute instance group canary stage OCID for load balancer.
-        """
         return pulumi.get(self, "compute_instance_group_canary_deploy_stage_id")
 
     @compute_instance_group_canary_deploy_stage_id.setter
@@ -1364,9 +1030,6 @@ class _DeployStageState:
     @property
     @pulumi.getter(name="computeInstanceGroupCanaryTrafficShiftDeployStageId")
     def compute_instance_group_canary_traffic_shift_deploy_stage_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A compute instance group canary traffic shift stage OCID for load balancer.
-        """
         return pulumi.get(self, "compute_instance_group_canary_traffic_shift_deploy_stage_id")
 
     @compute_instance_group_canary_traffic_shift_deploy_stage_id.setter
@@ -1376,9 +1039,6 @@ class _DeployStageState:
     @property
     @pulumi.getter(name="computeInstanceGroupDeployEnvironmentId")
     def compute_instance_group_deploy_environment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A compute instance group environment OCID for rolling deployment.
-        """
         return pulumi.get(self, "compute_instance_group_deploy_environment_id")
 
     @compute_instance_group_deploy_environment_id.setter
@@ -1388,9 +1048,6 @@ class _DeployStageState:
     @property
     @pulumi.getter
     def config(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) User provided key and value pair configuration, which is assigned through constants or parameter.
-        """
         return pulumi.get(self, "config")
 
     @config.setter
@@ -1400,9 +1057,6 @@ class _DeployStageState:
     @property
     @pulumi.getter(name="containerConfig")
     def container_config(self) -> Optional[pulumi.Input['DeployStageContainerConfigArgs']]:
-        """
-        (Updatable) Specifies the container configuration.
-        """
         return pulumi.get(self, "container_config")
 
     @container_config.setter
@@ -1412,9 +1066,6 @@ class _DeployStageState:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -1424,9 +1075,6 @@ class _DeployStageState:
     @property
     @pulumi.getter(name="deployArtifactId")
     def deploy_artifact_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Optional artifact OCID. The artifact will be included in the body for the function invocation during the stage's execution. If the DeployArtifact.argumentSubstituitionMode is set to SUBSTITUTE_PLACEHOLDERS, then the pipeline parameter values will be used to replace the placeholders in the artifact content.
-        """
         return pulumi.get(self, "deploy_artifact_id")
 
     @deploy_artifact_id.setter
@@ -1436,9 +1084,6 @@ class _DeployStageState:
     @property
     @pulumi.getter(name="deployArtifactIds")
     def deploy_artifact_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) The list of file artifact OCIDs to deploy.
-        """
         return pulumi.get(self, "deploy_artifact_ids")
 
     @deploy_artifact_ids.setter
@@ -1448,9 +1093,6 @@ class _DeployStageState:
     @property
     @pulumi.getter(name="deployEnvironmentIdA")
     def deploy_environment_id_a(self) -> Optional[pulumi.Input[str]]:
-        """
-        First compute instance group environment OCID for deployment.
-        """
         return pulumi.get(self, "deploy_environment_id_a")
 
     @deploy_environment_id_a.setter
@@ -1460,9 +1102,6 @@ class _DeployStageState:
     @property
     @pulumi.getter(name="deployEnvironmentIdB")
     def deploy_environment_id_b(self) -> Optional[pulumi.Input[str]]:
-        """
-        Second compute instance group environment OCID for deployment.
-        """
         return pulumi.get(self, "deploy_environment_id_b")
 
     @deploy_environment_id_b.setter
@@ -1472,9 +1111,6 @@ class _DeployStageState:
     @property
     @pulumi.getter(name="deployPipelineId")
     def deploy_pipeline_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of a pipeline.
-        """
         return pulumi.get(self, "deploy_pipeline_id")
 
     @deploy_pipeline_id.setter
@@ -1484,9 +1120,6 @@ class _DeployStageState:
     @property
     @pulumi.getter(name="deployStagePredecessorCollection")
     def deploy_stage_predecessor_collection(self) -> Optional[pulumi.Input['DeployStageDeployStagePredecessorCollectionArgs']]:
-        """
-        (Updatable) Collection containing the predecessors of a stage.
-        """
         return pulumi.get(self, "deploy_stage_predecessor_collection")
 
     @deploy_stage_predecessor_collection.setter
@@ -1496,9 +1129,6 @@ class _DeployStageState:
     @property
     @pulumi.getter(name="deployStageType")
     def deploy_stage_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Deployment stage type.
-        """
         return pulumi.get(self, "deploy_stage_type")
 
     @deploy_stage_type.setter
@@ -1508,9 +1138,6 @@ class _DeployStageState:
     @property
     @pulumi.getter(name="deploymentSpecDeployArtifactId")
     def deployment_spec_deploy_artifact_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The OCID of the artifact that contains the deployment specification.
-        """
         return pulumi.get(self, "deployment_spec_deploy_artifact_id")
 
     @deployment_spec_deploy_artifact_id.setter
@@ -1520,9 +1147,6 @@ class _DeployStageState:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Optional description about the deployment stage.
-        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -1532,9 +1156,6 @@ class _DeployStageState:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Deployment stage display name, which can be renamed and is not necessarily unique. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -1544,9 +1165,6 @@ class _DeployStageState:
     @property
     @pulumi.getter(name="dockerImageDeployArtifactId")
     def docker_image_deploy_artifact_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A Docker image artifact OCID.
-        """
         return pulumi.get(self, "docker_image_deploy_artifact_id")
 
     @docker_image_deploy_artifact_id.setter
@@ -1556,9 +1174,6 @@ class _DeployStageState:
     @property
     @pulumi.getter(name="failurePolicy")
     def failure_policy(self) -> Optional[pulumi.Input['DeployStageFailurePolicyArgs']]:
-        """
-        (Updatable) Specifies a failure policy for a compute instance group rolling deployment stage.
-        """
         return pulumi.get(self, "failure_policy")
 
     @failure_policy.setter
@@ -1568,9 +1183,6 @@ class _DeployStageState:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -1580,9 +1192,6 @@ class _DeployStageState:
     @property
     @pulumi.getter(name="functionDeployEnvironmentId")
     def function_deploy_environment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Function environment OCID.
-        """
         return pulumi.get(self, "function_deploy_environment_id")
 
     @function_deploy_environment_id.setter
@@ -1592,9 +1201,6 @@ class _DeployStageState:
     @property
     @pulumi.getter(name="functionTimeoutInSeconds")
     def function_timeout_in_seconds(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) Timeout for execution of the Function. Value in seconds.
-        """
         return pulumi.get(self, "function_timeout_in_seconds")
 
     @function_timeout_in_seconds.setter
@@ -1604,9 +1210,6 @@ class _DeployStageState:
     @property
     @pulumi.getter(name="greenBackendIps")
     def green_backend_ips(self) -> Optional[pulumi.Input['DeployStageGreenBackendIpsArgs']]:
-        """
-        (Updatable) Collection of backend environment IP addresses.
-        """
         return pulumi.get(self, "green_backend_ips")
 
     @green_backend_ips.setter
@@ -1616,9 +1219,6 @@ class _DeployStageState:
     @property
     @pulumi.getter(name="helmChartDeployArtifactId")
     def helm_chart_deploy_artifact_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Helm chart artifact OCID.
-        """
         return pulumi.get(self, "helm_chart_deploy_artifact_id")
 
     @helm_chart_deploy_artifact_id.setter
@@ -1628,9 +1228,6 @@ class _DeployStageState:
     @property
     @pulumi.getter(name="isAsync")
     def is_async(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) A boolean flag specifies whether this stage executes asynchronously.
-        """
         return pulumi.get(self, "is_async")
 
     @is_async.setter
@@ -1640,9 +1237,6 @@ class _DeployStageState:
     @property
     @pulumi.getter(name="isDebugEnabled")
     def is_debug_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Enables helm --debug option to stream output to tf stdout. Set to false by default.
-        """
         return pulumi.get(self, "is_debug_enabled")
 
     @is_debug_enabled.setter
@@ -1652,9 +1246,6 @@ class _DeployStageState:
     @property
     @pulumi.getter(name="isForceEnabled")
     def is_force_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Force resource update through delete; or if required, recreate. Set to false by default.
-        """
         return pulumi.get(self, "is_force_enabled")
 
     @is_force_enabled.setter
@@ -1664,9 +1255,6 @@ class _DeployStageState:
     @property
     @pulumi.getter(name="isValidationEnabled")
     def is_validation_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) A boolean flag specifies whether the invoked function should be validated.
-        """
         return pulumi.get(self, "is_validation_enabled")
 
     @is_validation_enabled.setter
@@ -1676,9 +1264,6 @@ class _DeployStageState:
     @property
     @pulumi.getter(name="kubernetesManifestDeployArtifactIds")
     def kubernetes_manifest_deploy_artifact_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) List of Kubernetes manifest artifact OCIDs.
-        """
         return pulumi.get(self, "kubernetes_manifest_deploy_artifact_ids")
 
     @kubernetes_manifest_deploy_artifact_ids.setter
@@ -1688,9 +1273,6 @@ class _DeployStageState:
     @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> Optional[pulumi.Input[str]]:
-        """
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
@@ -1700,9 +1282,6 @@ class _DeployStageState:
     @property
     @pulumi.getter(name="loadBalancerConfig")
     def load_balancer_config(self) -> Optional[pulumi.Input['DeployStageLoadBalancerConfigArgs']]:
-        """
-        (Updatable) Specifies config for load balancer traffic shift stages. The Load Balancer specified here should be an Application Load Balancer type. Network Load Balancers are not supported.
-        """
         return pulumi.get(self, "load_balancer_config")
 
     @load_balancer_config.setter
@@ -1712,9 +1291,6 @@ class _DeployStageState:
     @property
     @pulumi.getter(name="maxHistory")
     def max_history(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) Limit the maximum number of revisions saved per release. Use 0 for no limit. Set to 10 by default
-        """
         return pulumi.get(self, "max_history")
 
     @max_history.setter
@@ -1724,9 +1300,6 @@ class _DeployStageState:
     @property
     @pulumi.getter(name="maxMemoryInMbs")
     def max_memory_in_mbs(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Maximum usable memory for the Function (in MB).
-        """
         return pulumi.get(self, "max_memory_in_mbs")
 
     @max_memory_in_mbs.setter
@@ -1736,9 +1309,6 @@ class _DeployStageState:
     @property
     @pulumi.getter
     def namespace(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Default namespace to be used for Kubernetes deployment when not specified in the manifest.
-        """
         return pulumi.get(self, "namespace")
 
     @namespace.setter
@@ -1748,9 +1318,6 @@ class _DeployStageState:
     @property
     @pulumi.getter(name="okeBlueGreenDeployStageId")
     def oke_blue_green_deploy_stage_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the upstream OKE blue-green deployment stage in this pipeline.
-        """
         return pulumi.get(self, "oke_blue_green_deploy_stage_id")
 
     @oke_blue_green_deploy_stage_id.setter
@@ -1760,9 +1327,6 @@ class _DeployStageState:
     @property
     @pulumi.getter(name="okeCanaryDeployStageId")
     def oke_canary_deploy_stage_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of an upstream OKE canary deployment stage in this pipeline.
-        """
         return pulumi.get(self, "oke_canary_deploy_stage_id")
 
     @oke_canary_deploy_stage_id.setter
@@ -1772,9 +1336,6 @@ class _DeployStageState:
     @property
     @pulumi.getter(name="okeCanaryTrafficShiftDeployStageId")
     def oke_canary_traffic_shift_deploy_stage_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of an upstream OKE canary deployment traffic shift stage in this pipeline.
-        """
         return pulumi.get(self, "oke_canary_traffic_shift_deploy_stage_id")
 
     @oke_canary_traffic_shift_deploy_stage_id.setter
@@ -1784,9 +1345,6 @@ class _DeployStageState:
     @property
     @pulumi.getter(name="okeClusterDeployEnvironmentId")
     def oke_cluster_deploy_environment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Kubernetes cluster environment OCID for deployment.
-        """
         return pulumi.get(self, "oke_cluster_deploy_environment_id")
 
     @oke_cluster_deploy_environment_id.setter
@@ -1796,9 +1354,6 @@ class _DeployStageState:
     @property
     @pulumi.getter(name="productionLoadBalancerConfig")
     def production_load_balancer_config(self) -> Optional[pulumi.Input['DeployStageProductionLoadBalancerConfigArgs']]:
-        """
-        Specifies configuration for load balancer traffic shift stages. The load balancer specified here should be an Application load balancer type. Network load balancers are not supported.
-        """
         return pulumi.get(self, "production_load_balancer_config")
 
     @production_load_balancer_config.setter
@@ -1808,9 +1363,6 @@ class _DeployStageState:
     @property
     @pulumi.getter(name="projectId")
     def project_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of a project.
-        """
         return pulumi.get(self, "project_id")
 
     @project_id.setter
@@ -1820,9 +1372,6 @@ class _DeployStageState:
     @property
     @pulumi.getter(name="releaseName")
     def release_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Default name of the chart instance. Must be unique within a Kubernetes namespace.
-        """
         return pulumi.get(self, "release_name")
 
     @release_name.setter
@@ -1832,9 +1381,6 @@ class _DeployStageState:
     @property
     @pulumi.getter(name="rollbackPolicy")
     def rollback_policy(self) -> Optional[pulumi.Input['DeployStageRollbackPolicyArgs']]:
-        """
-        (Updatable) Specifies the rollback policy. This is initiated on the failure of certain stage types.
-        """
         return pulumi.get(self, "rollback_policy")
 
     @rollback_policy.setter
@@ -1844,9 +1390,6 @@ class _DeployStageState:
     @property
     @pulumi.getter(name="rolloutPolicy")
     def rollout_policy(self) -> Optional[pulumi.Input['DeployStageRolloutPolicyArgs']]:
-        """
-        (Updatable) Description of rollout policy for load balancer traffic shift stage.
-        """
         return pulumi.get(self, "rollout_policy")
 
     @rollout_policy.setter
@@ -1856,9 +1399,6 @@ class _DeployStageState:
     @property
     @pulumi.getter(name="setString")
     def set_string(self) -> Optional[pulumi.Input['DeployStageSetStringArgs']]:
-        """
-        (Updatable) Specifies the name and value pairs to set helm values.
-        """
         return pulumi.get(self, "set_string")
 
     @set_string.setter
@@ -1868,9 +1408,6 @@ class _DeployStageState:
     @property
     @pulumi.getter(name="setValues")
     def set_values(self) -> Optional[pulumi.Input['DeployStageSetValuesArgs']]:
-        """
-        (Updatable) Specifies the name and value pairs to set helm values.
-        """
         return pulumi.get(self, "set_values")
 
     @set_values.setter
@@ -1880,9 +1417,6 @@ class _DeployStageState:
     @property
     @pulumi.getter(name="shouldCleanupOnFail")
     def should_cleanup_on_fail(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Allow deletion of new resources created during when an upgrade fails. Set to false by default.
-        """
         return pulumi.get(self, "should_cleanup_on_fail")
 
     @should_cleanup_on_fail.setter
@@ -1892,9 +1426,6 @@ class _DeployStageState:
     @property
     @pulumi.getter(name="shouldNotWait")
     def should_not_wait(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Does not wait until all the resources are in a ready state to mark the release as successful if set to true. Set to false by default.
-        """
         return pulumi.get(self, "should_not_wait")
 
     @should_not_wait.setter
@@ -1904,9 +1435,6 @@ class _DeployStageState:
     @property
     @pulumi.getter(name="shouldResetValues")
     def should_reset_values(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) During upgrade, reset the values to the ones built into the chart. It overrides shouldReuseValues. Set to false by default.
-        """
         return pulumi.get(self, "should_reset_values")
 
     @should_reset_values.setter
@@ -1916,9 +1444,6 @@ class _DeployStageState:
     @property
     @pulumi.getter(name="shouldReuseValues")
     def should_reuse_values(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) During upgrade, reuse the values of the last release and merge overrides from the command line. Set to false by default.
-        """
         return pulumi.get(self, "should_reuse_values")
 
     @should_reuse_values.setter
@@ -1928,9 +1453,6 @@ class _DeployStageState:
     @property
     @pulumi.getter(name="shouldSkipCrds")
     def should_skip_crds(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) If set, no CRDs are installed. By default, CRDs are installed only if they are not present already. Set to false by default.
-        """
         return pulumi.get(self, "should_skip_crds")
 
     @should_skip_crds.setter
@@ -1940,9 +1462,6 @@ class _DeployStageState:
     @property
     @pulumi.getter(name="shouldSkipRenderSubchartNotes")
     def should_skip_render_subchart_notes(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) If set, renders subchart notes along with the parent. Set to false by default.
-        """
         return pulumi.get(self, "should_skip_render_subchart_notes")
 
     @should_skip_render_subchart_notes.setter
@@ -1952,9 +1471,6 @@ class _DeployStageState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The current state of the deployment stage.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -1964,9 +1480,6 @@ class _DeployStageState:
     @property
     @pulumi.getter(name="systemTags")
     def system_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
@@ -1976,9 +1489,6 @@ class _DeployStageState:
     @property
     @pulumi.getter(name="testLoadBalancerConfig")
     def test_load_balancer_config(self) -> Optional[pulumi.Input['DeployStageTestLoadBalancerConfigArgs']]:
-        """
-        (Updatable) Specifies configuration for load balancer traffic shift stages. The load balancer specified here should be an Application load balancer type. Network load balancers are not supported.
-        """
         return pulumi.get(self, "test_load_balancer_config")
 
     @test_load_balancer_config.setter
@@ -1988,9 +1498,6 @@ class _DeployStageState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        Time the deployment stage was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -2000,9 +1507,6 @@ class _DeployStageState:
     @property
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> Optional[pulumi.Input[str]]:
-        """
-        Time the deployment stage was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
-        """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
@@ -2012,9 +1516,6 @@ class _DeployStageState:
     @property
     @pulumi.getter(name="timeoutInSeconds")
     def timeout_in_seconds(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) Time to wait for execution of a Shell/Helm stage. Defaults to 36000 seconds for Shell and 300 seconds for Helm Stage
-        """
         return pulumi.get(self, "timeout_in_seconds")
 
     @timeout_in_seconds.setter
@@ -2024,9 +1525,6 @@ class _DeployStageState:
     @property
     @pulumi.getter(name="trafficShiftTarget")
     def traffic_shift_target(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Specifies the target or destination backend set.
-        """
         return pulumi.get(self, "traffic_shift_target")
 
     @traffic_shift_target.setter
@@ -2036,9 +1534,6 @@ class _DeployStageState:
     @property
     @pulumi.getter(name="valuesArtifactIds")
     def values_artifact_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) List of values.yaml file artifact OCIDs.
-        """
         return pulumi.get(self, "values_artifact_ids")
 
     @values_artifact_ids.setter
@@ -2048,9 +1543,6 @@ class _DeployStageState:
     @property
     @pulumi.getter(name="waitCriteria")
     def wait_criteria(self) -> Optional[pulumi.Input['DeployStageWaitCriteriaArgs']]:
-        """
-        (Updatable) Specifies wait criteria for the Wait stage.
-        """
         return pulumi.get(self, "wait_criteria")
 
     @wait_criteria.setter
@@ -2125,80 +1617,9 @@ class DeployStage(pulumi.CustomResource):
                  wait_criteria: Optional[pulumi.Input[pulumi.InputType['DeployStageWaitCriteriaArgs']]] = None,
                  __props__=None):
         """
-        This resource provides the Deploy Stage resource in Oracle Cloud Infrastructure Devops service.
-
-        Creates a new deployment stage.
-
-        ## Import
-
-        DeployStages can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:DevOps/deployStage:DeployStage test_deploy_stage "id"
-        ```
-
+        Create a DeployStage resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[pulumi.InputType['DeployStageApprovalPolicyArgs']] approval_policy: (Updatable) Specifies the approval policy.
-        :param pulumi.Input[bool] are_hooks_enabled: (Updatable) Disable pre/post upgrade hooks. Set to false by default.
-        :param pulumi.Input[pulumi.InputType['DeployStageBlueBackendIpsArgs']] blue_backend_ips: (Updatable) Collection of backend environment IP addresses.
-        :param pulumi.Input[pulumi.InputType['DeployStageBlueGreenStrategyArgs']] blue_green_strategy: Specifies the required blue green release strategy for OKE deployment.
-        :param pulumi.Input[pulumi.InputType['DeployStageCanaryStrategyArgs']] canary_strategy: Specifies the required canary release strategy for OKE deployment.
-        :param pulumi.Input[str] command_spec_deploy_artifact_id: (Updatable) The OCID of the artifact that contains the command specification.
-        :param pulumi.Input[str] compute_instance_group_blue_green_deployment_deploy_stage_id: The OCID of the upstream compute instance group blue-green deployment stage in this pipeline.
-        :param pulumi.Input[str] compute_instance_group_canary_deploy_stage_id: A compute instance group canary stage OCID for load balancer.
-        :param pulumi.Input[str] compute_instance_group_canary_traffic_shift_deploy_stage_id: (Updatable) A compute instance group canary traffic shift stage OCID for load balancer.
-        :param pulumi.Input[str] compute_instance_group_deploy_environment_id: (Updatable) A compute instance group environment OCID for rolling deployment.
-        :param pulumi.Input[Mapping[str, Any]] config: (Updatable) User provided key and value pair configuration, which is assigned through constants or parameter.
-        :param pulumi.Input[pulumi.InputType['DeployStageContainerConfigArgs']] container_config: (Updatable) Specifies the container configuration.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] deploy_artifact_id: (Updatable) Optional artifact OCID. The artifact will be included in the body for the function invocation during the stage's execution. If the DeployArtifact.argumentSubstituitionMode is set to SUBSTITUTE_PLACEHOLDERS, then the pipeline parameter values will be used to replace the placeholders in the artifact content.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] deploy_artifact_ids: (Updatable) The list of file artifact OCIDs to deploy.
-        :param pulumi.Input[str] deploy_environment_id_a: First compute instance group environment OCID for deployment.
-        :param pulumi.Input[str] deploy_environment_id_b: Second compute instance group environment OCID for deployment.
-        :param pulumi.Input[str] deploy_pipeline_id: The OCID of a pipeline.
-        :param pulumi.Input[pulumi.InputType['DeployStageDeployStagePredecessorCollectionArgs']] deploy_stage_predecessor_collection: (Updatable) Collection containing the predecessors of a stage.
-        :param pulumi.Input[str] deploy_stage_type: (Updatable) Deployment stage type.
-        :param pulumi.Input[str] deployment_spec_deploy_artifact_id: (Updatable) The OCID of the artifact that contains the deployment specification.
-        :param pulumi.Input[str] description: (Updatable) Optional description about the deployment stage.
-        :param pulumi.Input[str] display_name: (Updatable) Deployment stage display name, which can be renamed and is not necessarily unique. Avoid entering confidential information.
-        :param pulumi.Input[str] docker_image_deploy_artifact_id: (Updatable) A Docker image artifact OCID.
-        :param pulumi.Input[pulumi.InputType['DeployStageFailurePolicyArgs']] failure_policy: (Updatable) Specifies a failure policy for a compute instance group rolling deployment stage.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] function_deploy_environment_id: (Updatable) Function environment OCID.
-        :param pulumi.Input[int] function_timeout_in_seconds: (Updatable) Timeout for execution of the Function. Value in seconds.
-        :param pulumi.Input[pulumi.InputType['DeployStageGreenBackendIpsArgs']] green_backend_ips: (Updatable) Collection of backend environment IP addresses.
-        :param pulumi.Input[str] helm_chart_deploy_artifact_id: (Updatable) Helm chart artifact OCID.
-        :param pulumi.Input[bool] is_async: (Updatable) A boolean flag specifies whether this stage executes asynchronously.
-        :param pulumi.Input[bool] is_debug_enabled: (Updatable) Enables helm --debug option to stream output to tf stdout. Set to false by default.
-        :param pulumi.Input[bool] is_force_enabled: (Updatable) Force resource update through delete; or if required, recreate. Set to false by default.
-        :param pulumi.Input[bool] is_validation_enabled: (Updatable) A boolean flag specifies whether the invoked function should be validated.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] kubernetes_manifest_deploy_artifact_ids: (Updatable) List of Kubernetes manifest artifact OCIDs.
-        :param pulumi.Input[pulumi.InputType['DeployStageLoadBalancerConfigArgs']] load_balancer_config: (Updatable) Specifies config for load balancer traffic shift stages. The Load Balancer specified here should be an Application Load Balancer type. Network Load Balancers are not supported.
-        :param pulumi.Input[int] max_history: (Updatable) Limit the maximum number of revisions saved per release. Use 0 for no limit. Set to 10 by default
-        :param pulumi.Input[str] max_memory_in_mbs: (Updatable) Maximum usable memory for the Function (in MB).
-        :param pulumi.Input[str] namespace: (Updatable) Default namespace to be used for Kubernetes deployment when not specified in the manifest.
-        :param pulumi.Input[str] oke_blue_green_deploy_stage_id: The OCID of the upstream OKE blue-green deployment stage in this pipeline.
-        :param pulumi.Input[str] oke_canary_deploy_stage_id: The OCID of an upstream OKE canary deployment stage in this pipeline.
-        :param pulumi.Input[str] oke_canary_traffic_shift_deploy_stage_id: The OCID of an upstream OKE canary deployment traffic shift stage in this pipeline.
-        :param pulumi.Input[str] oke_cluster_deploy_environment_id: (Updatable) Kubernetes cluster environment OCID for deployment.
-        :param pulumi.Input[pulumi.InputType['DeployStageProductionLoadBalancerConfigArgs']] production_load_balancer_config: Specifies configuration for load balancer traffic shift stages. The load balancer specified here should be an Application load balancer type. Network load balancers are not supported.
-        :param pulumi.Input[str] release_name: (Updatable) Default name of the chart instance. Must be unique within a Kubernetes namespace.
-        :param pulumi.Input[pulumi.InputType['DeployStageRollbackPolicyArgs']] rollback_policy: (Updatable) Specifies the rollback policy. This is initiated on the failure of certain stage types.
-        :param pulumi.Input[pulumi.InputType['DeployStageRolloutPolicyArgs']] rollout_policy: (Updatable) Description of rollout policy for load balancer traffic shift stage.
-        :param pulumi.Input[pulumi.InputType['DeployStageSetStringArgs']] set_string: (Updatable) Specifies the name and value pairs to set helm values.
-        :param pulumi.Input[pulumi.InputType['DeployStageSetValuesArgs']] set_values: (Updatable) Specifies the name and value pairs to set helm values.
-        :param pulumi.Input[bool] should_cleanup_on_fail: (Updatable) Allow deletion of new resources created during when an upgrade fails. Set to false by default.
-        :param pulumi.Input[bool] should_not_wait: (Updatable) Does not wait until all the resources are in a ready state to mark the release as successful if set to true. Set to false by default.
-        :param pulumi.Input[bool] should_reset_values: (Updatable) During upgrade, reset the values to the ones built into the chart. It overrides shouldReuseValues. Set to false by default.
-        :param pulumi.Input[bool] should_reuse_values: (Updatable) During upgrade, reuse the values of the last release and merge overrides from the command line. Set to false by default.
-        :param pulumi.Input[bool] should_skip_crds: (Updatable) If set, no CRDs are installed. By default, CRDs are installed only if they are not present already. Set to false by default.
-        :param pulumi.Input[bool] should_skip_render_subchart_notes: (Updatable) If set, renders subchart notes along with the parent. Set to false by default.
-        :param pulumi.Input[pulumi.InputType['DeployStageTestLoadBalancerConfigArgs']] test_load_balancer_config: (Updatable) Specifies configuration for load balancer traffic shift stages. The load balancer specified here should be an Application load balancer type. Network load balancers are not supported.
-        :param pulumi.Input[int] timeout_in_seconds: (Updatable) Time to wait for execution of a Shell/Helm stage. Defaults to 36000 seconds for Shell and 300 seconds for Helm Stage
-        :param pulumi.Input[str] traffic_shift_target: (Updatable) Specifies the target or destination backend set.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] values_artifact_ids: (Updatable) List of values.yaml file artifact OCIDs.
-        :param pulumi.Input[pulumi.InputType['DeployStageWaitCriteriaArgs']] wait_criteria: (Updatable) Specifies wait criteria for the Wait stage.
         """
         ...
     @overload
@@ -2207,18 +1628,7 @@ class DeployStage(pulumi.CustomResource):
                  args: DeployStageArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Deploy Stage resource in Oracle Cloud Infrastructure Devops service.
-
-        Creates a new deployment stage.
-
-        ## Import
-
-        DeployStages can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:DevOps/deployStage:DeployStage test_deploy_stage "id"
-        ```
-
+        Create a DeployStage resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param DeployStageArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -2460,73 +1870,6 @@ class DeployStage(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[pulumi.InputType['DeployStageApprovalPolicyArgs']] approval_policy: (Updatable) Specifies the approval policy.
-        :param pulumi.Input[bool] are_hooks_enabled: (Updatable) Disable pre/post upgrade hooks. Set to false by default.
-        :param pulumi.Input[pulumi.InputType['DeployStageBlueBackendIpsArgs']] blue_backend_ips: (Updatable) Collection of backend environment IP addresses.
-        :param pulumi.Input[pulumi.InputType['DeployStageBlueGreenStrategyArgs']] blue_green_strategy: Specifies the required blue green release strategy for OKE deployment.
-        :param pulumi.Input[pulumi.InputType['DeployStageCanaryStrategyArgs']] canary_strategy: Specifies the required canary release strategy for OKE deployment.
-        :param pulumi.Input[str] command_spec_deploy_artifact_id: (Updatable) The OCID of the artifact that contains the command specification.
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment where the ContainerInstance will be created.
-        :param pulumi.Input[str] compute_instance_group_blue_green_deployment_deploy_stage_id: The OCID of the upstream compute instance group blue-green deployment stage in this pipeline.
-        :param pulumi.Input[str] compute_instance_group_canary_deploy_stage_id: A compute instance group canary stage OCID for load balancer.
-        :param pulumi.Input[str] compute_instance_group_canary_traffic_shift_deploy_stage_id: (Updatable) A compute instance group canary traffic shift stage OCID for load balancer.
-        :param pulumi.Input[str] compute_instance_group_deploy_environment_id: (Updatable) A compute instance group environment OCID for rolling deployment.
-        :param pulumi.Input[Mapping[str, Any]] config: (Updatable) User provided key and value pair configuration, which is assigned through constants or parameter.
-        :param pulumi.Input[pulumi.InputType['DeployStageContainerConfigArgs']] container_config: (Updatable) Specifies the container configuration.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] deploy_artifact_id: (Updatable) Optional artifact OCID. The artifact will be included in the body for the function invocation during the stage's execution. If the DeployArtifact.argumentSubstituitionMode is set to SUBSTITUTE_PLACEHOLDERS, then the pipeline parameter values will be used to replace the placeholders in the artifact content.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] deploy_artifact_ids: (Updatable) The list of file artifact OCIDs to deploy.
-        :param pulumi.Input[str] deploy_environment_id_a: First compute instance group environment OCID for deployment.
-        :param pulumi.Input[str] deploy_environment_id_b: Second compute instance group environment OCID for deployment.
-        :param pulumi.Input[str] deploy_pipeline_id: The OCID of a pipeline.
-        :param pulumi.Input[pulumi.InputType['DeployStageDeployStagePredecessorCollectionArgs']] deploy_stage_predecessor_collection: (Updatable) Collection containing the predecessors of a stage.
-        :param pulumi.Input[str] deploy_stage_type: (Updatable) Deployment stage type.
-        :param pulumi.Input[str] deployment_spec_deploy_artifact_id: (Updatable) The OCID of the artifact that contains the deployment specification.
-        :param pulumi.Input[str] description: (Updatable) Optional description about the deployment stage.
-        :param pulumi.Input[str] display_name: (Updatable) Deployment stage display name, which can be renamed and is not necessarily unique. Avoid entering confidential information.
-        :param pulumi.Input[str] docker_image_deploy_artifact_id: (Updatable) A Docker image artifact OCID.
-        :param pulumi.Input[pulumi.InputType['DeployStageFailurePolicyArgs']] failure_policy: (Updatable) Specifies a failure policy for a compute instance group rolling deployment stage.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] function_deploy_environment_id: (Updatable) Function environment OCID.
-        :param pulumi.Input[int] function_timeout_in_seconds: (Updatable) Timeout for execution of the Function. Value in seconds.
-        :param pulumi.Input[pulumi.InputType['DeployStageGreenBackendIpsArgs']] green_backend_ips: (Updatable) Collection of backend environment IP addresses.
-        :param pulumi.Input[str] helm_chart_deploy_artifact_id: (Updatable) Helm chart artifact OCID.
-        :param pulumi.Input[bool] is_async: (Updatable) A boolean flag specifies whether this stage executes asynchronously.
-        :param pulumi.Input[bool] is_debug_enabled: (Updatable) Enables helm --debug option to stream output to tf stdout. Set to false by default.
-        :param pulumi.Input[bool] is_force_enabled: (Updatable) Force resource update through delete; or if required, recreate. Set to false by default.
-        :param pulumi.Input[bool] is_validation_enabled: (Updatable) A boolean flag specifies whether the invoked function should be validated.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] kubernetes_manifest_deploy_artifact_ids: (Updatable) List of Kubernetes manifest artifact OCIDs.
-        :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        :param pulumi.Input[pulumi.InputType['DeployStageLoadBalancerConfigArgs']] load_balancer_config: (Updatable) Specifies config for load balancer traffic shift stages. The Load Balancer specified here should be an Application Load Balancer type. Network Load Balancers are not supported.
-        :param pulumi.Input[int] max_history: (Updatable) Limit the maximum number of revisions saved per release. Use 0 for no limit. Set to 10 by default
-        :param pulumi.Input[str] max_memory_in_mbs: (Updatable) Maximum usable memory for the Function (in MB).
-        :param pulumi.Input[str] namespace: (Updatable) Default namespace to be used for Kubernetes deployment when not specified in the manifest.
-        :param pulumi.Input[str] oke_blue_green_deploy_stage_id: The OCID of the upstream OKE blue-green deployment stage in this pipeline.
-        :param pulumi.Input[str] oke_canary_deploy_stage_id: The OCID of an upstream OKE canary deployment stage in this pipeline.
-        :param pulumi.Input[str] oke_canary_traffic_shift_deploy_stage_id: The OCID of an upstream OKE canary deployment traffic shift stage in this pipeline.
-        :param pulumi.Input[str] oke_cluster_deploy_environment_id: (Updatable) Kubernetes cluster environment OCID for deployment.
-        :param pulumi.Input[pulumi.InputType['DeployStageProductionLoadBalancerConfigArgs']] production_load_balancer_config: Specifies configuration for load balancer traffic shift stages. The load balancer specified here should be an Application load balancer type. Network load balancers are not supported.
-        :param pulumi.Input[str] project_id: The OCID of a project.
-        :param pulumi.Input[str] release_name: (Updatable) Default name of the chart instance. Must be unique within a Kubernetes namespace.
-        :param pulumi.Input[pulumi.InputType['DeployStageRollbackPolicyArgs']] rollback_policy: (Updatable) Specifies the rollback policy. This is initiated on the failure of certain stage types.
-        :param pulumi.Input[pulumi.InputType['DeployStageRolloutPolicyArgs']] rollout_policy: (Updatable) Description of rollout policy for load balancer traffic shift stage.
-        :param pulumi.Input[pulumi.InputType['DeployStageSetStringArgs']] set_string: (Updatable) Specifies the name and value pairs to set helm values.
-        :param pulumi.Input[pulumi.InputType['DeployStageSetValuesArgs']] set_values: (Updatable) Specifies the name and value pairs to set helm values.
-        :param pulumi.Input[bool] should_cleanup_on_fail: (Updatable) Allow deletion of new resources created during when an upgrade fails. Set to false by default.
-        :param pulumi.Input[bool] should_not_wait: (Updatable) Does not wait until all the resources are in a ready state to mark the release as successful if set to true. Set to false by default.
-        :param pulumi.Input[bool] should_reset_values: (Updatable) During upgrade, reset the values to the ones built into the chart. It overrides shouldReuseValues. Set to false by default.
-        :param pulumi.Input[bool] should_reuse_values: (Updatable) During upgrade, reuse the values of the last release and merge overrides from the command line. Set to false by default.
-        :param pulumi.Input[bool] should_skip_crds: (Updatable) If set, no CRDs are installed. By default, CRDs are installed only if they are not present already. Set to false by default.
-        :param pulumi.Input[bool] should_skip_render_subchart_notes: (Updatable) If set, renders subchart notes along with the parent. Set to false by default.
-        :param pulumi.Input[str] state: The current state of the deployment stage.
-        :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[pulumi.InputType['DeployStageTestLoadBalancerConfigArgs']] test_load_balancer_config: (Updatable) Specifies configuration for load balancer traffic shift stages. The load balancer specified here should be an Application load balancer type. Network load balancers are not supported.
-        :param pulumi.Input[str] time_created: Time the deployment stage was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
-        :param pulumi.Input[str] time_updated: Time the deployment stage was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
-        :param pulumi.Input[int] timeout_in_seconds: (Updatable) Time to wait for execution of a Shell/Helm stage. Defaults to 36000 seconds for Shell and 300 seconds for Helm Stage
-        :param pulumi.Input[str] traffic_shift_target: (Updatable) Specifies the target or destination backend set.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] values_artifact_ids: (Updatable) List of values.yaml file artifact OCIDs.
-        :param pulumi.Input[pulumi.InputType['DeployStageWaitCriteriaArgs']] wait_criteria: (Updatable) Specifies wait criteria for the Wait stage.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -2603,537 +1946,336 @@ class DeployStage(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="approvalPolicy")
-    def approval_policy(self) -> pulumi.Output['outputs.DeployStageApprovalPolicy']:
-        """
-        (Updatable) Specifies the approval policy.
-        """
+    def approval_policy(self) -> pulumi.Output[Optional['outputs.DeployStageApprovalPolicy']]:
         return pulumi.get(self, "approval_policy")
 
     @property
     @pulumi.getter(name="areHooksEnabled")
-    def are_hooks_enabled(self) -> pulumi.Output[bool]:
-        """
-        (Updatable) Disable pre/post upgrade hooks. Set to false by default.
-        """
+    def are_hooks_enabled(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "are_hooks_enabled")
 
     @property
     @pulumi.getter(name="blueBackendIps")
-    def blue_backend_ips(self) -> pulumi.Output['outputs.DeployStageBlueBackendIps']:
-        """
-        (Updatable) Collection of backend environment IP addresses.
-        """
+    def blue_backend_ips(self) -> pulumi.Output[Optional['outputs.DeployStageBlueBackendIps']]:
         return pulumi.get(self, "blue_backend_ips")
 
     @property
     @pulumi.getter(name="blueGreenStrategy")
-    def blue_green_strategy(self) -> pulumi.Output['outputs.DeployStageBlueGreenStrategy']:
-        """
-        Specifies the required blue green release strategy for OKE deployment.
-        """
+    def blue_green_strategy(self) -> pulumi.Output[Optional['outputs.DeployStageBlueGreenStrategy']]:
         return pulumi.get(self, "blue_green_strategy")
 
     @property
     @pulumi.getter(name="canaryStrategy")
-    def canary_strategy(self) -> pulumi.Output['outputs.DeployStageCanaryStrategy']:
-        """
-        Specifies the required canary release strategy for OKE deployment.
-        """
+    def canary_strategy(self) -> pulumi.Output[Optional['outputs.DeployStageCanaryStrategy']]:
         return pulumi.get(self, "canary_strategy")
 
     @property
     @pulumi.getter(name="commandSpecDeployArtifactId")
-    def command_spec_deploy_artifact_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The OCID of the artifact that contains the command specification.
-        """
+    def command_spec_deploy_artifact_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "command_spec_deploy_artifact_id")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The OCID of the compartment where the ContainerInstance will be created.
-        """
+    def compartment_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="computeInstanceGroupBlueGreenDeploymentDeployStageId")
-    def compute_instance_group_blue_green_deployment_deploy_stage_id(self) -> pulumi.Output[str]:
-        """
-        The OCID of the upstream compute instance group blue-green deployment stage in this pipeline.
-        """
+    def compute_instance_group_blue_green_deployment_deploy_stage_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "compute_instance_group_blue_green_deployment_deploy_stage_id")
 
     @property
     @pulumi.getter(name="computeInstanceGroupCanaryDeployStageId")
-    def compute_instance_group_canary_deploy_stage_id(self) -> pulumi.Output[str]:
-        """
-        A compute instance group canary stage OCID for load balancer.
-        """
+    def compute_instance_group_canary_deploy_stage_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "compute_instance_group_canary_deploy_stage_id")
 
     @property
     @pulumi.getter(name="computeInstanceGroupCanaryTrafficShiftDeployStageId")
-    def compute_instance_group_canary_traffic_shift_deploy_stage_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) A compute instance group canary traffic shift stage OCID for load balancer.
-        """
+    def compute_instance_group_canary_traffic_shift_deploy_stage_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "compute_instance_group_canary_traffic_shift_deploy_stage_id")
 
     @property
     @pulumi.getter(name="computeInstanceGroupDeployEnvironmentId")
-    def compute_instance_group_deploy_environment_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) A compute instance group environment OCID for rolling deployment.
-        """
+    def compute_instance_group_deploy_environment_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "compute_instance_group_deploy_environment_id")
 
     @property
     @pulumi.getter
     def config(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
-        """
-        (Updatable) User provided key and value pair configuration, which is assigned through constants or parameter.
-        """
         return pulumi.get(self, "config")
 
     @property
     @pulumi.getter(name="containerConfig")
-    def container_config(self) -> pulumi.Output['outputs.DeployStageContainerConfig']:
-        """
-        (Updatable) Specifies the container configuration.
-        """
+    def container_config(self) -> pulumi.Output[Optional['outputs.DeployStageContainerConfig']]:
         return pulumi.get(self, "container_config")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="deployArtifactId")
     def deploy_artifact_id(self) -> pulumi.Output[Optional[str]]:
-        """
-        (Updatable) Optional artifact OCID. The artifact will be included in the body for the function invocation during the stage's execution. If the DeployArtifact.argumentSubstituitionMode is set to SUBSTITUTE_PLACEHOLDERS, then the pipeline parameter values will be used to replace the placeholders in the artifact content.
-        """
         return pulumi.get(self, "deploy_artifact_id")
 
     @property
     @pulumi.getter(name="deployArtifactIds")
     def deploy_artifact_ids(self) -> pulumi.Output[Optional[Sequence[str]]]:
-        """
-        (Updatable) The list of file artifact OCIDs to deploy.
-        """
         return pulumi.get(self, "deploy_artifact_ids")
 
     @property
     @pulumi.getter(name="deployEnvironmentIdA")
-    def deploy_environment_id_a(self) -> pulumi.Output[str]:
-        """
-        First compute instance group environment OCID for deployment.
-        """
+    def deploy_environment_id_a(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "deploy_environment_id_a")
 
     @property
     @pulumi.getter(name="deployEnvironmentIdB")
-    def deploy_environment_id_b(self) -> pulumi.Output[str]:
-        """
-        Second compute instance group environment OCID for deployment.
-        """
+    def deploy_environment_id_b(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "deploy_environment_id_b")
 
     @property
     @pulumi.getter(name="deployPipelineId")
     def deploy_pipeline_id(self) -> pulumi.Output[str]:
-        """
-        The OCID of a pipeline.
-        """
         return pulumi.get(self, "deploy_pipeline_id")
 
     @property
     @pulumi.getter(name="deployStagePredecessorCollection")
     def deploy_stage_predecessor_collection(self) -> pulumi.Output['outputs.DeployStageDeployStagePredecessorCollection']:
-        """
-        (Updatable) Collection containing the predecessors of a stage.
-        """
         return pulumi.get(self, "deploy_stage_predecessor_collection")
 
     @property
     @pulumi.getter(name="deployStageType")
     def deploy_stage_type(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Deployment stage type.
-        """
         return pulumi.get(self, "deploy_stage_type")
 
     @property
     @pulumi.getter(name="deploymentSpecDeployArtifactId")
-    def deployment_spec_deploy_artifact_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The OCID of the artifact that contains the deployment specification.
-        """
+    def deployment_spec_deploy_artifact_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "deployment_spec_deploy_artifact_id")
 
     @property
     @pulumi.getter
-    def description(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Optional description about the deployment stage.
-        """
+    def description(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Deployment stage display name, which can be renamed and is not necessarily unique. Avoid entering confidential information.
-        """
+    def display_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="dockerImageDeployArtifactId")
-    def docker_image_deploy_artifact_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) A Docker image artifact OCID.
-        """
+    def docker_image_deploy_artifact_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "docker_image_deploy_artifact_id")
 
     @property
     @pulumi.getter(name="failurePolicy")
-    def failure_policy(self) -> pulumi.Output['outputs.DeployStageFailurePolicy']:
-        """
-        (Updatable) Specifies a failure policy for a compute instance group rolling deployment stage.
-        """
+    def failure_policy(self) -> pulumi.Output[Optional['outputs.DeployStageFailurePolicy']]:
         return pulumi.get(self, "failure_policy")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="functionDeployEnvironmentId")
-    def function_deploy_environment_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Function environment OCID.
-        """
+    def function_deploy_environment_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "function_deploy_environment_id")
 
     @property
     @pulumi.getter(name="functionTimeoutInSeconds")
-    def function_timeout_in_seconds(self) -> pulumi.Output[int]:
-        """
-        (Updatable) Timeout for execution of the Function. Value in seconds.
-        """
+    def function_timeout_in_seconds(self) -> pulumi.Output[Optional[int]]:
         return pulumi.get(self, "function_timeout_in_seconds")
 
     @property
     @pulumi.getter(name="greenBackendIps")
-    def green_backend_ips(self) -> pulumi.Output['outputs.DeployStageGreenBackendIps']:
-        """
-        (Updatable) Collection of backend environment IP addresses.
-        """
+    def green_backend_ips(self) -> pulumi.Output[Optional['outputs.DeployStageGreenBackendIps']]:
         return pulumi.get(self, "green_backend_ips")
 
     @property
     @pulumi.getter(name="helmChartDeployArtifactId")
-    def helm_chart_deploy_artifact_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Helm chart artifact OCID.
-        """
+    def helm_chart_deploy_artifact_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "helm_chart_deploy_artifact_id")
 
     @property
     @pulumi.getter(name="isAsync")
-    def is_async(self) -> pulumi.Output[bool]:
-        """
-        (Updatable) A boolean flag specifies whether this stage executes asynchronously.
-        """
+    def is_async(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "is_async")
 
     @property
     @pulumi.getter(name="isDebugEnabled")
-    def is_debug_enabled(self) -> pulumi.Output[bool]:
-        """
-        (Updatable) Enables helm --debug option to stream output to tf stdout. Set to false by default.
-        """
+    def is_debug_enabled(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "is_debug_enabled")
 
     @property
     @pulumi.getter(name="isForceEnabled")
-    def is_force_enabled(self) -> pulumi.Output[bool]:
-        """
-        (Updatable) Force resource update through delete; or if required, recreate. Set to false by default.
-        """
+    def is_force_enabled(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "is_force_enabled")
 
     @property
     @pulumi.getter(name="isValidationEnabled")
-    def is_validation_enabled(self) -> pulumi.Output[bool]:
-        """
-        (Updatable) A boolean flag specifies whether the invoked function should be validated.
-        """
+    def is_validation_enabled(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "is_validation_enabled")
 
     @property
     @pulumi.getter(name="kubernetesManifestDeployArtifactIds")
     def kubernetes_manifest_deploy_artifact_ids(self) -> pulumi.Output[Optional[Sequence[str]]]:
-        """
-        (Updatable) List of Kubernetes manifest artifact OCIDs.
-        """
         return pulumi.get(self, "kubernetes_manifest_deploy_artifact_ids")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> pulumi.Output[str]:
-        """
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        """
+    def lifecycle_details(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="loadBalancerConfig")
-    def load_balancer_config(self) -> pulumi.Output['outputs.DeployStageLoadBalancerConfig']:
-        """
-        (Updatable) Specifies config for load balancer traffic shift stages. The Load Balancer specified here should be an Application Load Balancer type. Network Load Balancers are not supported.
-        """
+    def load_balancer_config(self) -> pulumi.Output[Optional['outputs.DeployStageLoadBalancerConfig']]:
         return pulumi.get(self, "load_balancer_config")
 
     @property
     @pulumi.getter(name="maxHistory")
-    def max_history(self) -> pulumi.Output[int]:
-        """
-        (Updatable) Limit the maximum number of revisions saved per release. Use 0 for no limit. Set to 10 by default
-        """
+    def max_history(self) -> pulumi.Output[Optional[int]]:
         return pulumi.get(self, "max_history")
 
     @property
     @pulumi.getter(name="maxMemoryInMbs")
-    def max_memory_in_mbs(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Maximum usable memory for the Function (in MB).
-        """
+    def max_memory_in_mbs(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "max_memory_in_mbs")
 
     @property
     @pulumi.getter
-    def namespace(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Default namespace to be used for Kubernetes deployment when not specified in the manifest.
-        """
+    def namespace(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "namespace")
 
     @property
     @pulumi.getter(name="okeBlueGreenDeployStageId")
-    def oke_blue_green_deploy_stage_id(self) -> pulumi.Output[str]:
-        """
-        The OCID of the upstream OKE blue-green deployment stage in this pipeline.
-        """
+    def oke_blue_green_deploy_stage_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "oke_blue_green_deploy_stage_id")
 
     @property
     @pulumi.getter(name="okeCanaryDeployStageId")
-    def oke_canary_deploy_stage_id(self) -> pulumi.Output[str]:
-        """
-        The OCID of an upstream OKE canary deployment stage in this pipeline.
-        """
+    def oke_canary_deploy_stage_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "oke_canary_deploy_stage_id")
 
     @property
     @pulumi.getter(name="okeCanaryTrafficShiftDeployStageId")
-    def oke_canary_traffic_shift_deploy_stage_id(self) -> pulumi.Output[str]:
-        """
-        The OCID of an upstream OKE canary deployment traffic shift stage in this pipeline.
-        """
+    def oke_canary_traffic_shift_deploy_stage_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "oke_canary_traffic_shift_deploy_stage_id")
 
     @property
     @pulumi.getter(name="okeClusterDeployEnvironmentId")
-    def oke_cluster_deploy_environment_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Kubernetes cluster environment OCID for deployment.
-        """
+    def oke_cluster_deploy_environment_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "oke_cluster_deploy_environment_id")
 
     @property
     @pulumi.getter(name="productionLoadBalancerConfig")
-    def production_load_balancer_config(self) -> pulumi.Output['outputs.DeployStageProductionLoadBalancerConfig']:
-        """
-        Specifies configuration for load balancer traffic shift stages. The load balancer specified here should be an Application load balancer type. Network load balancers are not supported.
-        """
+    def production_load_balancer_config(self) -> pulumi.Output[Optional['outputs.DeployStageProductionLoadBalancerConfig']]:
         return pulumi.get(self, "production_load_balancer_config")
 
     @property
     @pulumi.getter(name="projectId")
-    def project_id(self) -> pulumi.Output[str]:
-        """
-        The OCID of a project.
-        """
+    def project_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "project_id")
 
     @property
     @pulumi.getter(name="releaseName")
-    def release_name(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Default name of the chart instance. Must be unique within a Kubernetes namespace.
-        """
+    def release_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "release_name")
 
     @property
     @pulumi.getter(name="rollbackPolicy")
-    def rollback_policy(self) -> pulumi.Output['outputs.DeployStageRollbackPolicy']:
-        """
-        (Updatable) Specifies the rollback policy. This is initiated on the failure of certain stage types.
-        """
+    def rollback_policy(self) -> pulumi.Output[Optional['outputs.DeployStageRollbackPolicy']]:
         return pulumi.get(self, "rollback_policy")
 
     @property
     @pulumi.getter(name="rolloutPolicy")
-    def rollout_policy(self) -> pulumi.Output['outputs.DeployStageRolloutPolicy']:
-        """
-        (Updatable) Description of rollout policy for load balancer traffic shift stage.
-        """
+    def rollout_policy(self) -> pulumi.Output[Optional['outputs.DeployStageRolloutPolicy']]:
         return pulumi.get(self, "rollout_policy")
 
     @property
     @pulumi.getter(name="setString")
-    def set_string(self) -> pulumi.Output['outputs.DeployStageSetString']:
-        """
-        (Updatable) Specifies the name and value pairs to set helm values.
-        """
+    def set_string(self) -> pulumi.Output[Optional['outputs.DeployStageSetString']]:
         return pulumi.get(self, "set_string")
 
     @property
     @pulumi.getter(name="setValues")
-    def set_values(self) -> pulumi.Output['outputs.DeployStageSetValues']:
-        """
-        (Updatable) Specifies the name and value pairs to set helm values.
-        """
+    def set_values(self) -> pulumi.Output[Optional['outputs.DeployStageSetValues']]:
         return pulumi.get(self, "set_values")
 
     @property
     @pulumi.getter(name="shouldCleanupOnFail")
-    def should_cleanup_on_fail(self) -> pulumi.Output[bool]:
-        """
-        (Updatable) Allow deletion of new resources created during when an upgrade fails. Set to false by default.
-        """
+    def should_cleanup_on_fail(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "should_cleanup_on_fail")
 
     @property
     @pulumi.getter(name="shouldNotWait")
-    def should_not_wait(self) -> pulumi.Output[bool]:
-        """
-        (Updatable) Does not wait until all the resources are in a ready state to mark the release as successful if set to true. Set to false by default.
-        """
+    def should_not_wait(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "should_not_wait")
 
     @property
     @pulumi.getter(name="shouldResetValues")
-    def should_reset_values(self) -> pulumi.Output[bool]:
-        """
-        (Updatable) During upgrade, reset the values to the ones built into the chart. It overrides shouldReuseValues. Set to false by default.
-        """
+    def should_reset_values(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "should_reset_values")
 
     @property
     @pulumi.getter(name="shouldReuseValues")
-    def should_reuse_values(self) -> pulumi.Output[bool]:
-        """
-        (Updatable) During upgrade, reuse the values of the last release and merge overrides from the command line. Set to false by default.
-        """
+    def should_reuse_values(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "should_reuse_values")
 
     @property
     @pulumi.getter(name="shouldSkipCrds")
-    def should_skip_crds(self) -> pulumi.Output[bool]:
-        """
-        (Updatable) If set, no CRDs are installed. By default, CRDs are installed only if they are not present already. Set to false by default.
-        """
+    def should_skip_crds(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "should_skip_crds")
 
     @property
     @pulumi.getter(name="shouldSkipRenderSubchartNotes")
-    def should_skip_render_subchart_notes(self) -> pulumi.Output[bool]:
-        """
-        (Updatable) If set, renders subchart notes along with the parent. Set to false by default.
-        """
+    def should_skip_render_subchart_notes(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "should_skip_render_subchart_notes")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        The current state of the deployment stage.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="testLoadBalancerConfig")
-    def test_load_balancer_config(self) -> pulumi.Output['outputs.DeployStageTestLoadBalancerConfig']:
-        """
-        (Updatable) Specifies configuration for load balancer traffic shift stages. The load balancer specified here should be an Application load balancer type. Network load balancers are not supported.
-        """
+    def test_load_balancer_config(self) -> pulumi.Output[Optional['outputs.DeployStageTestLoadBalancerConfig']]:
         return pulumi.get(self, "test_load_balancer_config")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        Time the deployment stage was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> pulumi.Output[str]:
-        """
-        Time the deployment stage was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
-        """
+    def time_updated(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_updated")
 
     @property
     @pulumi.getter(name="timeoutInSeconds")
-    def timeout_in_seconds(self) -> pulumi.Output[int]:
-        """
-        (Updatable) Time to wait for execution of a Shell/Helm stage. Defaults to 36000 seconds for Shell and 300 seconds for Helm Stage
-        """
+    def timeout_in_seconds(self) -> pulumi.Output[Optional[int]]:
         return pulumi.get(self, "timeout_in_seconds")
 
     @property
     @pulumi.getter(name="trafficShiftTarget")
-    def traffic_shift_target(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Specifies the target or destination backend set.
-        """
+    def traffic_shift_target(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "traffic_shift_target")
 
     @property
     @pulumi.getter(name="valuesArtifactIds")
     def values_artifact_ids(self) -> pulumi.Output[Optional[Sequence[str]]]:
-        """
-        (Updatable) List of values.yaml file artifact OCIDs.
-        """
         return pulumi.get(self, "values_artifact_ids")
 
     @property
     @pulumi.getter(name="waitCriteria")
-    def wait_criteria(self) -> pulumi.Output['outputs.DeployStageWaitCriteria']:
-        """
-        (Updatable) Specifies wait criteria for the Wait stage.
-        """
+    def wait_criteria(self) -> pulumi.Output[Optional['outputs.DeployStageWaitCriteria']]:
         return pulumi.get(self, "wait_criteria")
 

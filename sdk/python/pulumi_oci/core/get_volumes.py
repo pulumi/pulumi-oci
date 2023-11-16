@@ -52,25 +52,16 @@ class GetVolumesResult:
     @property
     @pulumi.getter(name="availabilityDomain")
     def availability_domain(self) -> Optional[str]:
-        """
-        The availability domain of the block volume replica.  Example: `Uocm:PHX-AD-1`
-        """
         return pulumi.get(self, "availability_domain")
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[str]:
-        """
-        The OCID of the compartment that contains the volume.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -80,7 +71,7 @@ class GetVolumesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -89,25 +80,16 @@ class GetVolumesResult:
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of a volume.
-        """
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="volumeGroupId")
     def volume_group_id(self) -> Optional[str]:
-        """
-        The OCID of the source volume group.
-        """
         return pulumi.get(self, "volume_group_id")
 
     @property
     @pulumi.getter
-    def volumes(self) -> Sequence['outputs.GetVolumesVolumeResult']:
-        """
-        The list of volumes.
-        """
+    def volumes(self) -> Optional[Sequence['outputs.GetVolumesVolumeResult']]:
         return pulumi.get(self, "volumes")
 
 
@@ -135,29 +117,7 @@ def get_volumes(availability_domain: Optional[str] = None,
                 volume_group_id: Optional[str] = None,
                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetVolumesResult:
     """
-    This data source provides the list of Volumes in Oracle Cloud Infrastructure Core service.
-
-    Lists the volumes in the specified compartment and availability domain.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_volumes = oci.Core.get_volumes(availability_domain=var["volume_availability_domain"],
-        compartment_id=var["compartment_id"],
-        display_name=var["volume_display_name"],
-        state=var["volume_state"],
-        volume_group_id=oci_core_volume_group["test_volume_group"]["id"])
-    ```
-
-
-    :param str availability_domain: The name of the availability domain.  Example: `Uocm:PHX-AD-1`
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param str display_name: A filter to return only resources that match the given display name exactly.
-    :param str state: A filter to only return resources that match the given lifecycle state. The state value is case-insensitive.
-    :param str volume_group_id: The OCID of the volume group.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['availabilityDomain'] = availability_domain
@@ -189,28 +149,6 @@ def get_volumes_output(availability_domain: Optional[pulumi.Input[Optional[str]]
                        volume_group_id: Optional[pulumi.Input[Optional[str]]] = None,
                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetVolumesResult]:
     """
-    This data source provides the list of Volumes in Oracle Cloud Infrastructure Core service.
-
-    Lists the volumes in the specified compartment and availability domain.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_volumes = oci.Core.get_volumes(availability_domain=var["volume_availability_domain"],
-        compartment_id=var["compartment_id"],
-        display_name=var["volume_display_name"],
-        state=var["volume_state"],
-        volume_group_id=oci_core_volume_group["test_volume_group"]["id"])
-    ```
-
-
-    :param str availability_domain: The name of the availability domain.  Example: `Uocm:PHX-AD-1`
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param str display_name: A filter to return only resources that match the given display name exactly.
-    :param str state: A filter to only return resources that match the given lifecycle state. The state value is case-insensitive.
-    :param str volume_group_id: The OCID of the volume group.
+    Use this data source to access information about an existing resource.
     """
     ...

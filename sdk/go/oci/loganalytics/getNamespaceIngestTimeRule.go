@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Namespace Ingest Time Rule resource in Oracle Cloud Infrastructure Log Analytics service.
@@ -65,30 +64,30 @@ type LookupNamespaceIngestTimeRuleResult struct {
 	// The action(s) to be performed if the ingest time rule condition(s) are satisfied.
 	Actions []GetNamespaceIngestTimeRuleAction `pulumi:"actions"`
 	// Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// The condition(s) to evaluate for an ingest time rule.
 	Conditions []GetNamespaceIngestTimeRuleCondition `pulumi:"conditions"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// Description for this resource.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// The ingest time rule display name.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The log analytics entity OCID. This ID is a reference used by log analytics features and it represents a resource that is provisioned and managed by the customer on their premises or on the cloud.
-	Id               string `pulumi:"id"`
-	IngestTimeRuleId string `pulumi:"ingestTimeRuleId"`
+	Id               *string `pulumi:"id"`
+	IngestTimeRuleId string  `pulumi:"ingestTimeRuleId"`
 	// A flag indicating whether or not the ingest time rule is enabled.
-	IsEnabled bool `pulumi:"isEnabled"`
+	IsEnabled *bool `pulumi:"isEnabled"`
 	// The namespace of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters and underscores (_).
 	Namespace string `pulumi:"namespace"`
 	// The current state of the ingest time rule.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The date and time the resource was created, in the format defined by RFC3339.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The date and time the resource was last updated, in the format defined by RFC3339.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 func LookupNamespaceIngestTimeRuleOutput(ctx *pulumi.Context, args LookupNamespaceIngestTimeRuleOutputArgs, opts ...pulumi.InvokeOption) LookupNamespaceIngestTimeRuleResultOutput {
@@ -131,20 +130,14 @@ func (o LookupNamespaceIngestTimeRuleResultOutput) ToLookupNamespaceIngestTimeRu
 	return o
 }
 
-func (o LookupNamespaceIngestTimeRuleResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupNamespaceIngestTimeRuleResult] {
-	return pulumix.Output[LookupNamespaceIngestTimeRuleResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The action(s) to be performed if the ingest time rule condition(s) are satisfied.
 func (o LookupNamespaceIngestTimeRuleResultOutput) Actions() GetNamespaceIngestTimeRuleActionArrayOutput {
 	return o.ApplyT(func(v LookupNamespaceIngestTimeRuleResult) []GetNamespaceIngestTimeRuleAction { return v.Actions }).(GetNamespaceIngestTimeRuleActionArrayOutput)
 }
 
 // Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-func (o LookupNamespaceIngestTimeRuleResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupNamespaceIngestTimeRuleResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupNamespaceIngestTimeRuleResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupNamespaceIngestTimeRuleResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // The condition(s) to evaluate for an ingest time rule.
@@ -158,13 +151,13 @@ func (o LookupNamespaceIngestTimeRuleResultOutput) DefinedTags() pulumi.MapOutpu
 }
 
 // Description for this resource.
-func (o LookupNamespaceIngestTimeRuleResultOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupNamespaceIngestTimeRuleResult) string { return v.Description }).(pulumi.StringOutput)
+func (o LookupNamespaceIngestTimeRuleResultOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupNamespaceIngestTimeRuleResult) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // The ingest time rule display name.
-func (o LookupNamespaceIngestTimeRuleResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupNamespaceIngestTimeRuleResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupNamespaceIngestTimeRuleResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupNamespaceIngestTimeRuleResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -173,8 +166,8 @@ func (o LookupNamespaceIngestTimeRuleResultOutput) FreeformTags() pulumi.MapOutp
 }
 
 // The log analytics entity OCID. This ID is a reference used by log analytics features and it represents a resource that is provisioned and managed by the customer on their premises or on the cloud.
-func (o LookupNamespaceIngestTimeRuleResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupNamespaceIngestTimeRuleResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupNamespaceIngestTimeRuleResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupNamespaceIngestTimeRuleResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupNamespaceIngestTimeRuleResultOutput) IngestTimeRuleId() pulumi.StringOutput {
@@ -182,8 +175,8 @@ func (o LookupNamespaceIngestTimeRuleResultOutput) IngestTimeRuleId() pulumi.Str
 }
 
 // A flag indicating whether or not the ingest time rule is enabled.
-func (o LookupNamespaceIngestTimeRuleResultOutput) IsEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupNamespaceIngestTimeRuleResult) bool { return v.IsEnabled }).(pulumi.BoolOutput)
+func (o LookupNamespaceIngestTimeRuleResultOutput) IsEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupNamespaceIngestTimeRuleResult) *bool { return v.IsEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // The namespace of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters and underscores (_).
@@ -192,18 +185,18 @@ func (o LookupNamespaceIngestTimeRuleResultOutput) Namespace() pulumi.StringOutp
 }
 
 // The current state of the ingest time rule.
-func (o LookupNamespaceIngestTimeRuleResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupNamespaceIngestTimeRuleResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupNamespaceIngestTimeRuleResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupNamespaceIngestTimeRuleResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the resource was created, in the format defined by RFC3339.
-func (o LookupNamespaceIngestTimeRuleResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupNamespaceIngestTimeRuleResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupNamespaceIngestTimeRuleResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupNamespaceIngestTimeRuleResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the resource was last updated, in the format defined by RFC3339.
-func (o LookupNamespaceIngestTimeRuleResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupNamespaceIngestTimeRuleResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o LookupNamespaceIngestTimeRuleResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupNamespaceIngestTimeRuleResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 func init() {

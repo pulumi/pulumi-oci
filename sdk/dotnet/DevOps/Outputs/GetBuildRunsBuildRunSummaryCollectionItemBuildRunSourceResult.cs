@@ -16,11 +16,11 @@ namespace Pulumi.Oci.DevOps.Outputs
         /// <summary>
         /// The DevOps code repository identifier that invoked the build run.
         /// </summary>
-        public readonly string RepositoryId;
+        public readonly string? RepositoryId;
         /// <summary>
         /// The source from which the build run is triggered.
         /// </summary>
-        public readonly string SourceType;
+        public readonly string? SourceType;
         /// <summary>
         /// Trigger details that need to be used for the BuildRun
         /// </summary>
@@ -28,9 +28,9 @@ namespace Pulumi.Oci.DevOps.Outputs
 
         [OutputConstructor]
         private GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceResult(
-            string repositoryId,
+            string? repositoryId,
 
-            string sourceType,
+            string? sourceType,
 
             ImmutableArray<Outputs.GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoResult> triggerInfos)
         {

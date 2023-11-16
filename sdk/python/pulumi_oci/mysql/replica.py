@@ -25,13 +25,6 @@ class ReplicaArgs:
                  replica_overrides: Optional[pulumi.Input['ReplicaReplicaOverridesArgs']] = None):
         """
         The set of arguments for constructing a Replica resource.
-        :param pulumi.Input[str] db_system_id: The OCID of the DB System the read replica is associated with.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] description: (Updatable) User provided description of the read replica.
-        :param pulumi.Input[str] display_name: (Updatable) The user-friendly name for the read replica. It does not have to be unique.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[bool] is_delete_protected: (Updatable) Specifies whether the read replica can be deleted. Set to true to prevent deletion, false (default) to allow. Note that if a read replica is delete protected it also prevents the entire DB System from being deleted. If the DB System is delete protected, read replicas can still be deleted individually if they are not delete  protected themselves.
-        :param pulumi.Input['ReplicaReplicaOverridesArgs'] replica_overrides: (Updatable) By default a read replica inherits the MySQL version, shape, and configuration of the source DB system.  If you want to override any of these, provide values in the properties, mysqlVersion, shapeName,  and configurationId. If you set a property value to "", then the value is inherited from its  source DB system.
         """
         pulumi.set(__self__, "db_system_id", db_system_id)
         if defined_tags is not None:
@@ -50,9 +43,6 @@ class ReplicaArgs:
     @property
     @pulumi.getter(name="dbSystemId")
     def db_system_id(self) -> pulumi.Input[str]:
-        """
-        The OCID of the DB System the read replica is associated with.
-        """
         return pulumi.get(self, "db_system_id")
 
     @db_system_id.setter
@@ -62,9 +52,6 @@ class ReplicaArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -74,9 +61,6 @@ class ReplicaArgs:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) User provided description of the read replica.
-        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -86,9 +70,6 @@ class ReplicaArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The user-friendly name for the read replica. It does not have to be unique.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -98,9 +79,6 @@ class ReplicaArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -110,9 +88,6 @@ class ReplicaArgs:
     @property
     @pulumi.getter(name="isDeleteProtected")
     def is_delete_protected(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Specifies whether the read replica can be deleted. Set to true to prevent deletion, false (default) to allow. Note that if a read replica is delete protected it also prevents the entire DB System from being deleted. If the DB System is delete protected, read replicas can still be deleted individually if they are not delete  protected themselves.
-        """
         return pulumi.get(self, "is_delete_protected")
 
     @is_delete_protected.setter
@@ -122,9 +97,6 @@ class ReplicaArgs:
     @property
     @pulumi.getter(name="replicaOverrides")
     def replica_overrides(self) -> Optional[pulumi.Input['ReplicaReplicaOverridesArgs']]:
-        """
-        (Updatable) By default a read replica inherits the MySQL version, shape, and configuration of the source DB system.  If you want to override any of these, provide values in the properties, mysqlVersion, shapeName,  and configurationId. If you set a property value to "", then the value is inherited from its  source DB system.
-        """
         return pulumi.get(self, "replica_overrides")
 
     @replica_overrides.setter
@@ -157,30 +129,6 @@ class _ReplicaState:
                  time_updated: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering Replica resources.
-        :param pulumi.Input[str] availability_domain: The name of the Availability Domain the read replica is located in.
-        :param pulumi.Input[str] compartment_id: The OCID of the compartment that contains the read replica.
-        :param pulumi.Input[str] configuration_id: (Updatable) The OCID of the Configuration to be used by the read replica.
-        :param pulumi.Input[str] db_system_id: The OCID of the DB System the read replica is associated with.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] description: (Updatable) User provided description of the read replica.
-        :param pulumi.Input[str] display_name: (Updatable) The user-friendly name for the read replica. It does not have to be unique.
-        :param pulumi.Input[str] fault_domain: The name of the Fault Domain the read replica is located in.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] ip_address: The IP address the read replica is configured to listen on.
-        :param pulumi.Input[bool] is_delete_protected: (Updatable) Specifies whether the read replica can be deleted. Set to true to prevent deletion, false (default) to allow. Note that if a read replica is delete protected it also prevents the entire DB System from being deleted. If the DB System is delete protected, read replicas can still be deleted individually if they are not delete  protected themselves.
-        :param pulumi.Input[str] lifecycle_details: A message describing the state of the read replica.
-        :param pulumi.Input[str] mysql_version: (Updatable) The MySQL version to be used by the read replica.
-        :param pulumi.Input[int] port: The port the read replica is configured to listen on.
-        :param pulumi.Input[int] port_x: The TCP network port on which X Plugin listens for connections. This is the X Plugin equivalent of port.
-        :param pulumi.Input['ReplicaReplicaOverridesArgs'] replica_overrides: (Updatable) By default a read replica inherits the MySQL version, shape, and configuration of the source DB system.  If you want to override any of these, provide values in the properties, mysqlVersion, shapeName,  and configurationId. If you set a property value to "", then the value is inherited from its  source DB system.
-        :param pulumi.Input[str] shape_name: (Updatable) The shape to be used by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] state: The state of the read replica.
-        :param pulumi.Input[str] time_created: The date and time the read replica was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-        :param pulumi.Input[str] time_updated: The time the read replica was last updated, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         """
         if availability_domain is not None:
             pulumi.set(__self__, "availability_domain", availability_domain)
@@ -226,9 +174,6 @@ class _ReplicaState:
     @property
     @pulumi.getter(name="availabilityDomain")
     def availability_domain(self) -> Optional[pulumi.Input[str]]:
-        """
-        The name of the Availability Domain the read replica is located in.
-        """
         return pulumi.get(self, "availability_domain")
 
     @availability_domain.setter
@@ -238,9 +183,6 @@ class _ReplicaState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the compartment that contains the read replica.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -250,9 +192,6 @@ class _ReplicaState:
     @property
     @pulumi.getter(name="configurationId")
     def configuration_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The OCID of the Configuration to be used by the read replica.
-        """
         return pulumi.get(self, "configuration_id")
 
     @configuration_id.setter
@@ -262,9 +201,6 @@ class _ReplicaState:
     @property
     @pulumi.getter(name="dbSystemId")
     def db_system_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the DB System the read replica is associated with.
-        """
         return pulumi.get(self, "db_system_id")
 
     @db_system_id.setter
@@ -274,9 +210,6 @@ class _ReplicaState:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -286,9 +219,6 @@ class _ReplicaState:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) User provided description of the read replica.
-        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -298,9 +228,6 @@ class _ReplicaState:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The user-friendly name for the read replica. It does not have to be unique.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -310,9 +237,6 @@ class _ReplicaState:
     @property
     @pulumi.getter(name="faultDomain")
     def fault_domain(self) -> Optional[pulumi.Input[str]]:
-        """
-        The name of the Fault Domain the read replica is located in.
-        """
         return pulumi.get(self, "fault_domain")
 
     @fault_domain.setter
@@ -322,9 +246,6 @@ class _ReplicaState:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -334,9 +255,6 @@ class _ReplicaState:
     @property
     @pulumi.getter(name="ipAddress")
     def ip_address(self) -> Optional[pulumi.Input[str]]:
-        """
-        The IP address the read replica is configured to listen on.
-        """
         return pulumi.get(self, "ip_address")
 
     @ip_address.setter
@@ -346,9 +264,6 @@ class _ReplicaState:
     @property
     @pulumi.getter(name="isDeleteProtected")
     def is_delete_protected(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Specifies whether the read replica can be deleted. Set to true to prevent deletion, false (default) to allow. Note that if a read replica is delete protected it also prevents the entire DB System from being deleted. If the DB System is delete protected, read replicas can still be deleted individually if they are not delete  protected themselves.
-        """
         return pulumi.get(self, "is_delete_protected")
 
     @is_delete_protected.setter
@@ -358,9 +273,6 @@ class _ReplicaState:
     @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> Optional[pulumi.Input[str]]:
-        """
-        A message describing the state of the read replica.
-        """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
@@ -370,9 +282,6 @@ class _ReplicaState:
     @property
     @pulumi.getter(name="mysqlVersion")
     def mysql_version(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The MySQL version to be used by the read replica.
-        """
         return pulumi.get(self, "mysql_version")
 
     @mysql_version.setter
@@ -382,9 +291,6 @@ class _ReplicaState:
     @property
     @pulumi.getter
     def port(self) -> Optional[pulumi.Input[int]]:
-        """
-        The port the read replica is configured to listen on.
-        """
         return pulumi.get(self, "port")
 
     @port.setter
@@ -394,9 +300,6 @@ class _ReplicaState:
     @property
     @pulumi.getter(name="portX")
     def port_x(self) -> Optional[pulumi.Input[int]]:
-        """
-        The TCP network port on which X Plugin listens for connections. This is the X Plugin equivalent of port.
-        """
         return pulumi.get(self, "port_x")
 
     @port_x.setter
@@ -406,9 +309,6 @@ class _ReplicaState:
     @property
     @pulumi.getter(name="replicaOverrides")
     def replica_overrides(self) -> Optional[pulumi.Input['ReplicaReplicaOverridesArgs']]:
-        """
-        (Updatable) By default a read replica inherits the MySQL version, shape, and configuration of the source DB system.  If you want to override any of these, provide values in the properties, mysqlVersion, shapeName,  and configurationId. If you set a property value to "", then the value is inherited from its  source DB system.
-        """
         return pulumi.get(self, "replica_overrides")
 
     @replica_overrides.setter
@@ -418,13 +318,6 @@ class _ReplicaState:
     @property
     @pulumi.getter(name="shapeName")
     def shape_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The shape to be used by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "shape_name")
 
     @shape_name.setter
@@ -434,9 +327,6 @@ class _ReplicaState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The state of the read replica.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -446,9 +336,6 @@ class _ReplicaState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time the read replica was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -458,9 +345,6 @@ class _ReplicaState:
     @property
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> Optional[pulumi.Input[str]]:
-        """
-        The time the read replica was last updated, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-        """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
@@ -482,51 +366,9 @@ class Replica(pulumi.CustomResource):
                  replica_overrides: Optional[pulumi.Input[pulumi.InputType['ReplicaReplicaOverridesArgs']]] = None,
                  __props__=None):
         """
-        This resource provides the Replica resource in Oracle Cloud Infrastructure MySQL Database service.
-
-        Creates a DB System read replica.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_replica = oci.mysql.Replica("testReplica",
-            db_system_id=oci_mysql_mysql_db_system["test_mysql_db_system"]["id"],
-            defined_tags={
-                "foo-namespace.bar-key": "value",
-            },
-            description=var["replica_description"],
-            display_name=var["replica_display_name"],
-            freeform_tags={
-                "bar-key": "value",
-            },
-            is_delete_protected=var["replica_is_delete_protected"],
-            replica_overrides=oci.mysql.ReplicaReplicaOverridesArgs(
-                configuration_id=oci_mysql_mysql_configuration["test_mysql_configuration"]["id"],
-                mysql_version=var["replica_replica_overrides_mysql_version"],
-                shape_name=oci_mysql_shape["test_shape"]["name"],
-            ))
-        ```
-
-        ## Import
-
-        Replicas can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Mysql/replica:Replica test_replica "id"
-        ```
-
+        Create a Replica resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] db_system_id: The OCID of the DB System the read replica is associated with.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] description: (Updatable) User provided description of the read replica.
-        :param pulumi.Input[str] display_name: (Updatable) The user-friendly name for the read replica. It does not have to be unique.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[bool] is_delete_protected: (Updatable) Specifies whether the read replica can be deleted. Set to true to prevent deletion, false (default) to allow. Note that if a read replica is delete protected it also prevents the entire DB System from being deleted. If the DB System is delete protected, read replicas can still be deleted individually if they are not delete  protected themselves.
-        :param pulumi.Input[pulumi.InputType['ReplicaReplicaOverridesArgs']] replica_overrides: (Updatable) By default a read replica inherits the MySQL version, shape, and configuration of the source DB system.  If you want to override any of these, provide values in the properties, mysqlVersion, shapeName,  and configurationId. If you set a property value to "", then the value is inherited from its  source DB system.
         """
         ...
     @overload
@@ -535,42 +377,7 @@ class Replica(pulumi.CustomResource):
                  args: ReplicaArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Replica resource in Oracle Cloud Infrastructure MySQL Database service.
-
-        Creates a DB System read replica.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_replica = oci.mysql.Replica("testReplica",
-            db_system_id=oci_mysql_mysql_db_system["test_mysql_db_system"]["id"],
-            defined_tags={
-                "foo-namespace.bar-key": "value",
-            },
-            description=var["replica_description"],
-            display_name=var["replica_display_name"],
-            freeform_tags={
-                "bar-key": "value",
-            },
-            is_delete_protected=var["replica_is_delete_protected"],
-            replica_overrides=oci.mysql.ReplicaReplicaOverridesArgs(
-                configuration_id=oci_mysql_mysql_configuration["test_mysql_configuration"]["id"],
-                mysql_version=var["replica_replica_overrides_mysql_version"],
-                shape_name=oci_mysql_shape["test_shape"]["name"],
-            ))
-        ```
-
-        ## Import
-
-        Replicas can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Mysql/replica:Replica test_replica "id"
-        ```
-
+        Create a Replica resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param ReplicaArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -661,30 +468,6 @@ class Replica(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] availability_domain: The name of the Availability Domain the read replica is located in.
-        :param pulumi.Input[str] compartment_id: The OCID of the compartment that contains the read replica.
-        :param pulumi.Input[str] configuration_id: (Updatable) The OCID of the Configuration to be used by the read replica.
-        :param pulumi.Input[str] db_system_id: The OCID of the DB System the read replica is associated with.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] description: (Updatable) User provided description of the read replica.
-        :param pulumi.Input[str] display_name: (Updatable) The user-friendly name for the read replica. It does not have to be unique.
-        :param pulumi.Input[str] fault_domain: The name of the Fault Domain the read replica is located in.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] ip_address: The IP address the read replica is configured to listen on.
-        :param pulumi.Input[bool] is_delete_protected: (Updatable) Specifies whether the read replica can be deleted. Set to true to prevent deletion, false (default) to allow. Note that if a read replica is delete protected it also prevents the entire DB System from being deleted. If the DB System is delete protected, read replicas can still be deleted individually if they are not delete  protected themselves.
-        :param pulumi.Input[str] lifecycle_details: A message describing the state of the read replica.
-        :param pulumi.Input[str] mysql_version: (Updatable) The MySQL version to be used by the read replica.
-        :param pulumi.Input[int] port: The port the read replica is configured to listen on.
-        :param pulumi.Input[int] port_x: The TCP network port on which X Plugin listens for connections. This is the X Plugin equivalent of port.
-        :param pulumi.Input[pulumi.InputType['ReplicaReplicaOverridesArgs']] replica_overrides: (Updatable) By default a read replica inherits the MySQL version, shape, and configuration of the source DB system.  If you want to override any of these, provide values in the properties, mysqlVersion, shapeName,  and configurationId. If you set a property value to "", then the value is inherited from its  source DB system.
-        :param pulumi.Input[str] shape_name: (Updatable) The shape to be used by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] state: The state of the read replica.
-        :param pulumi.Input[str] time_created: The date and time the read replica was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-        :param pulumi.Input[str] time_updated: The time the read replica was last updated, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -714,165 +497,101 @@ class Replica(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="availabilityDomain")
-    def availability_domain(self) -> pulumi.Output[str]:
-        """
-        The name of the Availability Domain the read replica is located in.
-        """
+    def availability_domain(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "availability_domain")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> pulumi.Output[str]:
-        """
-        The OCID of the compartment that contains the read replica.
-        """
+    def compartment_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="configurationId")
-    def configuration_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The OCID of the Configuration to be used by the read replica.
-        """
+    def configuration_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "configuration_id")
 
     @property
     @pulumi.getter(name="dbSystemId")
     def db_system_id(self) -> pulumi.Output[str]:
-        """
-        The OCID of the DB System the read replica is associated with.
-        """
         return pulumi.get(self, "db_system_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def description(self) -> pulumi.Output[str]:
-        """
-        (Updatable) User provided description of the read replica.
-        """
+    def description(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The user-friendly name for the read replica. It does not have to be unique.
-        """
+    def display_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="faultDomain")
-    def fault_domain(self) -> pulumi.Output[str]:
-        """
-        The name of the Fault Domain the read replica is located in.
-        """
+    def fault_domain(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "fault_domain")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="ipAddress")
-    def ip_address(self) -> pulumi.Output[str]:
-        """
-        The IP address the read replica is configured to listen on.
-        """
+    def ip_address(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "ip_address")
 
     @property
     @pulumi.getter(name="isDeleteProtected")
-    def is_delete_protected(self) -> pulumi.Output[bool]:
-        """
-        (Updatable) Specifies whether the read replica can be deleted. Set to true to prevent deletion, false (default) to allow. Note that if a read replica is delete protected it also prevents the entire DB System from being deleted. If the DB System is delete protected, read replicas can still be deleted individually if they are not delete  protected themselves.
-        """
+    def is_delete_protected(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "is_delete_protected")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> pulumi.Output[str]:
-        """
-        A message describing the state of the read replica.
-        """
+    def lifecycle_details(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="mysqlVersion")
-    def mysql_version(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The MySQL version to be used by the read replica.
-        """
+    def mysql_version(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "mysql_version")
 
     @property
     @pulumi.getter
-    def port(self) -> pulumi.Output[int]:
-        """
-        The port the read replica is configured to listen on.
-        """
+    def port(self) -> pulumi.Output[Optional[int]]:
         return pulumi.get(self, "port")
 
     @property
     @pulumi.getter(name="portX")
-    def port_x(self) -> pulumi.Output[int]:
-        """
-        The TCP network port on which X Plugin listens for connections. This is the X Plugin equivalent of port.
-        """
+    def port_x(self) -> pulumi.Output[Optional[int]]:
         return pulumi.get(self, "port_x")
 
     @property
     @pulumi.getter(name="replicaOverrides")
-    def replica_overrides(self) -> pulumi.Output['outputs.ReplicaReplicaOverrides']:
-        """
-        (Updatable) By default a read replica inherits the MySQL version, shape, and configuration of the source DB system.  If you want to override any of these, provide values in the properties, mysqlVersion, shapeName,  and configurationId. If you set a property value to "", then the value is inherited from its  source DB system.
-        """
+    def replica_overrides(self) -> pulumi.Output[Optional['outputs.ReplicaReplicaOverrides']]:
         return pulumi.get(self, "replica_overrides")
 
     @property
     @pulumi.getter(name="shapeName")
-    def shape_name(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The shape to be used by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
+    def shape_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "shape_name")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        The state of the read replica.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        The date and time the read replica was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> pulumi.Output[str]:
-        """
-        The time the read replica was last updated, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-        """
+    def time_updated(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_updated")
 

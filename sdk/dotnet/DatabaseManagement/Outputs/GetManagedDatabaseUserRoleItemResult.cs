@@ -16,41 +16,41 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// <summary>
         /// Indicates whether the role is granted with the ADMIN OPTION (YES) or not (NO).
         /// </summary>
-        public readonly string AdminOption;
+        public readonly string? AdminOption;
         /// <summary>
         /// Indicates how the role was granted. Possible values: YES if the role is granted commonly (CONTAINER=ALL is used) NO if the role is granted locally (CONTAINER=ALL is not used)
         /// </summary>
-        public readonly string Common;
+        public readonly string? Common;
         /// <summary>
         /// Indicates whether the role is designated as a DEFAULT ROLE for the user (YES) or not (NO).
         /// </summary>
-        public readonly string DefaultRole;
+        public readonly string? DefaultRole;
         /// <summary>
         /// Indicates whether the role is granted with the DELEGATE OPTION (YES) or not (NO).
         /// </summary>
-        public readonly string DelegateOption;
+        public readonly string? DelegateOption;
         /// <summary>
         /// Indicates whether the granted role is inherited from another container (YES) or not (NO).
         /// </summary>
-        public readonly string Inherited;
+        public readonly string? Inherited;
         /// <summary>
         /// A filter to return only resources that match the entire name.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
 
         [OutputConstructor]
         private GetManagedDatabaseUserRoleItemResult(
-            string adminOption,
+            string? adminOption,
 
-            string common,
+            string? common,
 
-            string defaultRole,
+            string? defaultRole,
 
-            string delegateOption,
+            string? delegateOption,
 
-            string inherited,
+            string? inherited,
 
-            string name)
+            string? name)
         {
             AdminOption = adminOption;
             Common = common;

@@ -16,29 +16,29 @@ namespace Pulumi.Oci.Core.Outputs
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the default DRG route table assigned to DRG attachments of type IPSEC_TUNNEL on creation.
         /// </summary>
-        public readonly string IpsecTunnel;
+        public readonly string? IpsecTunnel;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the default DRG route table to be assigned to DRG attachments of type REMOTE_PEERING_CONNECTION on creation.
         /// </summary>
-        public readonly string RemotePeeringConnection;
+        public readonly string? RemotePeeringConnection;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the default DRG route table to be assigned to DRG attachments of type VCN on creation.
         /// </summary>
-        public readonly string Vcn;
+        public readonly string? Vcn;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the default DRG route table to be assigned to DRG attachments of type VIRTUAL_CIRCUIT on creation.
         /// </summary>
-        public readonly string VirtualCircuit;
+        public readonly string? VirtualCircuit;
 
         [OutputConstructor]
         private GetDrgsDrgDefaultDrgRouteTableResult(
-            string ipsecTunnel,
+            string? ipsecTunnel,
 
-            string remotePeeringConnection,
+            string? remotePeeringConnection,
 
-            string vcn,
+            string? vcn,
 
-            string virtualCircuit)
+            string? virtualCircuit)
         {
             IpsecTunnel = ipsecTunnel;
             RemotePeeringConnection = remotePeeringConnection;

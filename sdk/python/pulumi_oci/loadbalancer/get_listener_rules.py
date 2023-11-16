@@ -47,7 +47,7 @@ class GetListenerRulesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -60,10 +60,7 @@ class GetListenerRulesResult:
 
     @property
     @pulumi.getter(name="listenerRules")
-    def listener_rules(self) -> Sequence['outputs.GetListenerRulesListenerRuleResult']:
-        """
-        The list of listener_rules.
-        """
+    def listener_rules(self) -> Optional[Sequence['outputs.GetListenerRulesListenerRuleResult']]:
         return pulumi.get(self, "listener_rules")
 
     @property
@@ -90,29 +87,7 @@ def get_listener_rules(filters: Optional[Sequence[pulumi.InputType['GetListenerR
                        load_balancer_id: Optional[str] = None,
                        opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetListenerRulesResult:
     """
-    This data source provides the list of Listener Rules in Oracle Cloud Infrastructure Load Balancer service.
-
-    Lists all of the rules from all of the rule sets associated with the specified listener. The response organizes
-    the rules in the following order:
-
-    *  Access control rules
-    *  Allow method rules
-    *  Request header rules
-    *  Response header rules
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_listener_rules = oci.LoadBalancer.get_listener_rules(listener_name=oci_load_balancer_listener["test_listener"]["name"],
-        load_balancer_id=oci_load_balancer_load_balancer["test_load_balancer"]["id"])
-    ```
-
-
-    :param str listener_name: The name of the listener the rules are associated with.
-    :param str load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer associated with the listener.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['filters'] = filters
@@ -135,28 +110,6 @@ def get_listener_rules_output(filters: Optional[pulumi.Input[Optional[Sequence[p
                               load_balancer_id: Optional[pulumi.Input[str]] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetListenerRulesResult]:
     """
-    This data source provides the list of Listener Rules in Oracle Cloud Infrastructure Load Balancer service.
-
-    Lists all of the rules from all of the rule sets associated with the specified listener. The response organizes
-    the rules in the following order:
-
-    *  Access control rules
-    *  Allow method rules
-    *  Request header rules
-    *  Response header rules
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_listener_rules = oci.LoadBalancer.get_listener_rules(listener_name=oci_load_balancer_listener["test_listener"]["name"],
-        load_balancer_id=oci_load_balancer_load_balancer["test_load_balancer"]["id"])
-    ```
-
-
-    :param str listener_name: The name of the listener the rules are associated with.
-    :param str load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer associated with the listener.
+    Use this data source to access information about an existing resource.
     """
     ...

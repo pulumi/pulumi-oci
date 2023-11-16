@@ -16,41 +16,41 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// Last name
         /// </summary>
-        public readonly string FamilyName;
+        public readonly string? FamilyName;
         /// <summary>
         /// Full name
         /// </summary>
-        public readonly string Formatted;
+        public readonly string? Formatted;
         /// <summary>
         /// First name
         /// </summary>
-        public readonly string GivenName;
+        public readonly string? GivenName;
         /// <summary>
         /// Prefix
         /// </summary>
-        public readonly string HonorificPrefix;
+        public readonly string? HonorificPrefix;
         /// <summary>
         /// Suffix
         /// </summary>
-        public readonly string HonorificSuffix;
+        public readonly string? HonorificSuffix;
         /// <summary>
         /// Middle name
         /// </summary>
-        public readonly string MiddleName;
+        public readonly string? MiddleName;
 
         [OutputConstructor]
         private GetDomainsUserNameResult(
-            string familyName,
+            string? familyName,
 
-            string formatted,
+            string? formatted,
 
-            string givenName,
+            string? givenName,
 
-            string honorificPrefix,
+            string? honorificPrefix,
 
-            string honorificSuffix,
+            string? honorificSuffix,
 
-            string middleName)
+            string? middleName)
         {
             FamilyName = familyName;
             Formatted = formatted;

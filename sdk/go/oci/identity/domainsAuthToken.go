@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Auth Token resource in Oracle Cloud Infrastructure Identity Domains service.
@@ -46,7 +45,7 @@ type DomainsAuthToken struct {
 	// * returned: default
 	// * type: string
 	// * uniqueness: none
-	CompartmentOcid pulumi.StringOutput `pulumi:"compartmentOcid"`
+	CompartmentOcid pulumi.StringPtrOutput `pulumi:"compartmentOcid"`
 	// (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
 	//
 	// **SCIM++ Properties:**
@@ -58,7 +57,7 @@ type DomainsAuthToken struct {
 	// * returned: default
 	// * type: boolean
 	// * uniqueness: none
-	DeleteInProgress pulumi.BoolOutput `pulumi:"deleteInProgress"`
+	DeleteInProgress pulumi.BoolPtrOutput `pulumi:"deleteInProgress"`
 	// Description
 	//
 	// **Added In:** 2010242156
@@ -69,7 +68,7 @@ type DomainsAuthToken struct {
 	// * mutability: readWrite
 	// * required: false
 	// * returned: default
-	Description pulumi.StringOutput `pulumi:"description"`
+	Description pulumi.StringPtrOutput `pulumi:"description"`
 	// (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
 	//
 	// **SCIM++ Properties:**
@@ -81,7 +80,7 @@ type DomainsAuthToken struct {
 	// * returned: default
 	// * type: string
 	// * uniqueness: none
-	DomainOcid pulumi.StringOutput `pulumi:"domainOcid"`
+	DomainOcid pulumi.StringPtrOutput `pulumi:"domainOcid"`
 	// When the user's credential expire.
 	//
 	// **Added In:** 2109090424
@@ -95,7 +94,7 @@ type DomainsAuthToken struct {
 	// * returned: default
 	// * type: dateTime
 	// * uniqueness: none
-	ExpiresOn pulumi.StringOutput `pulumi:"expiresOn"`
+	ExpiresOn pulumi.StringPtrOutput `pulumi:"expiresOn"`
 	// (Updatable) The User or App who created the Resource
 	//
 	// **SCIM++ Properties:**
@@ -129,7 +128,7 @@ type DomainsAuthToken struct {
 	// * returned: request
 	// * type: string
 	// * uniqueness: none
-	IdcsLastUpgradedInRelease pulumi.StringOutput `pulumi:"idcsLastUpgradedInRelease"`
+	IdcsLastUpgradedInRelease pulumi.StringPtrOutput `pulumi:"idcsLastUpgradedInRelease"`
 	// (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
 	//
 	// **SCIM++ Properties:**
@@ -164,7 +163,7 @@ type DomainsAuthToken struct {
 	// * returned: always
 	// * type: string
 	// * uniqueness: none
-	Ocid pulumi.StringOutput `pulumi:"ocid"`
+	Ocid pulumi.StringPtrOutput `pulumi:"ocid"`
 	// An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
 	ResourceTypeSchemaVersion pulumi.StringPtrOutput `pulumi:"resourceTypeSchemaVersion"`
 	// REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
@@ -192,7 +191,7 @@ type DomainsAuthToken struct {
 	// * returned: never
 	// * type: string
 	// * uniqueness: none
-	Status pulumi.StringOutput `pulumi:"status"`
+	Status pulumi.StringPtrOutput `pulumi:"status"`
 	// A list of tags on this resource.
 	//
 	// **SCIM++ Properties:**
@@ -216,9 +215,9 @@ type DomainsAuthToken struct {
 	// * returned: default
 	// * type: string
 	// * uniqueness: none
-	TenancyOcid pulumi.StringOutput `pulumi:"tenancyOcid"`
+	TenancyOcid pulumi.StringPtrOutput `pulumi:"tenancyOcid"`
 	// Controls whether a user can update themselves or not via User related APIs
-	UrnietfparamsscimschemasoracleidcsextensionselfChangeUser DomainsAuthTokenUrnietfparamsscimschemasoracleidcsextensionselfChangeUserOutput `pulumi:"urnietfparamsscimschemasoracleidcsextensionselfChangeUser"`
+	UrnietfparamsscimschemasoracleidcsextensionselfChangeUser DomainsAuthTokenUrnietfparamsscimschemasoracleidcsextensionselfChangeUserPtrOutput `pulumi:"urnietfparamsscimschemasoracleidcsextensionselfChangeUser"`
 	// The user linked to the Auth token.
 	//
 	// **SCIM++ Properties:**
@@ -230,7 +229,7 @@ type DomainsAuthToken struct {
 	// * returned: default
 	// * type: complex
 	// * uniqueness: none
-	User DomainsAuthTokenUserOutput `pulumi:"user"`
+	User DomainsAuthTokenUserPtrOutput `pulumi:"user"`
 }
 
 // NewDomainsAuthToken registers a new resource with the given unique name, arguments, and options.
@@ -910,12 +909,6 @@ func (i *DomainsAuthToken) ToDomainsAuthTokenOutputWithContext(ctx context.Conte
 	return pulumi.ToOutputWithContext(ctx, i).(DomainsAuthTokenOutput)
 }
 
-func (i *DomainsAuthToken) ToOutput(ctx context.Context) pulumix.Output[*DomainsAuthToken] {
-	return pulumix.Output[*DomainsAuthToken]{
-		OutputState: i.ToDomainsAuthTokenOutputWithContext(ctx).OutputState,
-	}
-}
-
 // DomainsAuthTokenArrayInput is an input type that accepts DomainsAuthTokenArray and DomainsAuthTokenArrayOutput values.
 // You can construct a concrete instance of `DomainsAuthTokenArrayInput` via:
 //
@@ -939,12 +932,6 @@ func (i DomainsAuthTokenArray) ToDomainsAuthTokenArrayOutput() DomainsAuthTokenA
 
 func (i DomainsAuthTokenArray) ToDomainsAuthTokenArrayOutputWithContext(ctx context.Context) DomainsAuthTokenArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(DomainsAuthTokenArrayOutput)
-}
-
-func (i DomainsAuthTokenArray) ToOutput(ctx context.Context) pulumix.Output[[]*DomainsAuthToken] {
-	return pulumix.Output[[]*DomainsAuthToken]{
-		OutputState: i.ToDomainsAuthTokenArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // DomainsAuthTokenMapInput is an input type that accepts DomainsAuthTokenMap and DomainsAuthTokenMapOutput values.
@@ -972,12 +959,6 @@ func (i DomainsAuthTokenMap) ToDomainsAuthTokenMapOutputWithContext(ctx context.
 	return pulumi.ToOutputWithContext(ctx, i).(DomainsAuthTokenMapOutput)
 }
 
-func (i DomainsAuthTokenMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*DomainsAuthToken] {
-	return pulumix.Output[map[string]*DomainsAuthToken]{
-		OutputState: i.ToDomainsAuthTokenMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DomainsAuthTokenOutput struct{ *pulumi.OutputState }
 
 func (DomainsAuthTokenOutput) ElementType() reflect.Type {
@@ -990,12 +971,6 @@ func (o DomainsAuthTokenOutput) ToDomainsAuthTokenOutput() DomainsAuthTokenOutpu
 
 func (o DomainsAuthTokenOutput) ToDomainsAuthTokenOutputWithContext(ctx context.Context) DomainsAuthTokenOutput {
 	return o
-}
-
-func (o DomainsAuthTokenOutput) ToOutput(ctx context.Context) pulumix.Output[*DomainsAuthToken] {
-	return pulumix.Output[*DomainsAuthToken]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
@@ -1024,8 +999,8 @@ func (o DomainsAuthTokenOutput) Authorization() pulumi.StringPtrOutput {
 // * returned: default
 // * type: string
 // * uniqueness: none
-func (o DomainsAuthTokenOutput) CompartmentOcid() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsAuthToken) pulumi.StringOutput { return v.CompartmentOcid }).(pulumi.StringOutput)
+func (o DomainsAuthTokenOutput) CompartmentOcid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsAuthToken) pulumi.StringPtrOutput { return v.CompartmentOcid }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
@@ -1039,8 +1014,8 @@ func (o DomainsAuthTokenOutput) CompartmentOcid() pulumi.StringOutput {
 // * returned: default
 // * type: boolean
 // * uniqueness: none
-func (o DomainsAuthTokenOutput) DeleteInProgress() pulumi.BoolOutput {
-	return o.ApplyT(func(v *DomainsAuthToken) pulumi.BoolOutput { return v.DeleteInProgress }).(pulumi.BoolOutput)
+func (o DomainsAuthTokenOutput) DeleteInProgress() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DomainsAuthToken) pulumi.BoolPtrOutput { return v.DeleteInProgress }).(pulumi.BoolPtrOutput)
 }
 
 // Description
@@ -1053,8 +1028,8 @@ func (o DomainsAuthTokenOutput) DeleteInProgress() pulumi.BoolOutput {
 // * mutability: readWrite
 // * required: false
 // * returned: default
-func (o DomainsAuthTokenOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsAuthToken) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
+func (o DomainsAuthTokenOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsAuthToken) pulumi.StringPtrOutput { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
@@ -1068,8 +1043,8 @@ func (o DomainsAuthTokenOutput) Description() pulumi.StringOutput {
 // * returned: default
 // * type: string
 // * uniqueness: none
-func (o DomainsAuthTokenOutput) DomainOcid() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsAuthToken) pulumi.StringOutput { return v.DomainOcid }).(pulumi.StringOutput)
+func (o DomainsAuthTokenOutput) DomainOcid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsAuthToken) pulumi.StringPtrOutput { return v.DomainOcid }).(pulumi.StringPtrOutput)
 }
 
 // When the user's credential expire.
@@ -1085,8 +1060,8 @@ func (o DomainsAuthTokenOutput) DomainOcid() pulumi.StringOutput {
 // * returned: default
 // * type: dateTime
 // * uniqueness: none
-func (o DomainsAuthTokenOutput) ExpiresOn() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsAuthToken) pulumi.StringOutput { return v.ExpiresOn }).(pulumi.StringOutput)
+func (o DomainsAuthTokenOutput) ExpiresOn() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsAuthToken) pulumi.StringPtrOutput { return v.ExpiresOn }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The User or App who created the Resource
@@ -1131,8 +1106,8 @@ func (o DomainsAuthTokenOutput) IdcsLastModifiedBies() DomainsAuthTokenIdcsLastM
 // * returned: request
 // * type: string
 // * uniqueness: none
-func (o DomainsAuthTokenOutput) IdcsLastUpgradedInRelease() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsAuthToken) pulumi.StringOutput { return v.IdcsLastUpgradedInRelease }).(pulumi.StringOutput)
+func (o DomainsAuthTokenOutput) IdcsLastUpgradedInRelease() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsAuthToken) pulumi.StringPtrOutput { return v.IdcsLastUpgradedInRelease }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
@@ -1175,8 +1150,8 @@ func (o DomainsAuthTokenOutput) Metas() DomainsAuthTokenMetaArrayOutput {
 // * returned: always
 // * type: string
 // * uniqueness: none
-func (o DomainsAuthTokenOutput) Ocid() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsAuthToken) pulumi.StringOutput { return v.Ocid }).(pulumi.StringOutput)
+func (o DomainsAuthTokenOutput) Ocid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsAuthToken) pulumi.StringPtrOutput { return v.Ocid }).(pulumi.StringPtrOutput)
 }
 
 // An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
@@ -1212,8 +1187,8 @@ func (o DomainsAuthTokenOutput) Schemas() pulumi.StringArrayOutput {
 // * returned: never
 // * type: string
 // * uniqueness: none
-func (o DomainsAuthTokenOutput) Status() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsAuthToken) pulumi.StringOutput { return v.Status }).(pulumi.StringOutput)
+func (o DomainsAuthTokenOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsAuthToken) pulumi.StringPtrOutput { return v.Status }).(pulumi.StringPtrOutput)
 }
 
 // A list of tags on this resource.
@@ -1242,15 +1217,15 @@ func (o DomainsAuthTokenOutput) Tags() DomainsAuthTokenTagArrayOutput {
 // * returned: default
 // * type: string
 // * uniqueness: none
-func (o DomainsAuthTokenOutput) TenancyOcid() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsAuthToken) pulumi.StringOutput { return v.TenancyOcid }).(pulumi.StringOutput)
+func (o DomainsAuthTokenOutput) TenancyOcid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsAuthToken) pulumi.StringPtrOutput { return v.TenancyOcid }).(pulumi.StringPtrOutput)
 }
 
 // Controls whether a user can update themselves or not via User related APIs
-func (o DomainsAuthTokenOutput) UrnietfparamsscimschemasoracleidcsextensionselfChangeUser() DomainsAuthTokenUrnietfparamsscimschemasoracleidcsextensionselfChangeUserOutput {
-	return o.ApplyT(func(v *DomainsAuthToken) DomainsAuthTokenUrnietfparamsscimschemasoracleidcsextensionselfChangeUserOutput {
+func (o DomainsAuthTokenOutput) UrnietfparamsscimschemasoracleidcsextensionselfChangeUser() DomainsAuthTokenUrnietfparamsscimschemasoracleidcsextensionselfChangeUserPtrOutput {
+	return o.ApplyT(func(v *DomainsAuthToken) DomainsAuthTokenUrnietfparamsscimschemasoracleidcsextensionselfChangeUserPtrOutput {
 		return v.UrnietfparamsscimschemasoracleidcsextensionselfChangeUser
-	}).(DomainsAuthTokenUrnietfparamsscimschemasoracleidcsextensionselfChangeUserOutput)
+	}).(DomainsAuthTokenUrnietfparamsscimschemasoracleidcsextensionselfChangeUserPtrOutput)
 }
 
 // The user linked to the Auth token.
@@ -1264,8 +1239,8 @@ func (o DomainsAuthTokenOutput) UrnietfparamsscimschemasoracleidcsextensionselfC
 // * returned: default
 // * type: complex
 // * uniqueness: none
-func (o DomainsAuthTokenOutput) User() DomainsAuthTokenUserOutput {
-	return o.ApplyT(func(v *DomainsAuthToken) DomainsAuthTokenUserOutput { return v.User }).(DomainsAuthTokenUserOutput)
+func (o DomainsAuthTokenOutput) User() DomainsAuthTokenUserPtrOutput {
+	return o.ApplyT(func(v *DomainsAuthToken) DomainsAuthTokenUserPtrOutput { return v.User }).(DomainsAuthTokenUserPtrOutput)
 }
 
 type DomainsAuthTokenArrayOutput struct{ *pulumi.OutputState }
@@ -1280,12 +1255,6 @@ func (o DomainsAuthTokenArrayOutput) ToDomainsAuthTokenArrayOutput() DomainsAuth
 
 func (o DomainsAuthTokenArrayOutput) ToDomainsAuthTokenArrayOutputWithContext(ctx context.Context) DomainsAuthTokenArrayOutput {
 	return o
-}
-
-func (o DomainsAuthTokenArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*DomainsAuthToken] {
-	return pulumix.Output[[]*DomainsAuthToken]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DomainsAuthTokenArrayOutput) Index(i pulumi.IntInput) DomainsAuthTokenOutput {
@@ -1306,12 +1275,6 @@ func (o DomainsAuthTokenMapOutput) ToDomainsAuthTokenMapOutput() DomainsAuthToke
 
 func (o DomainsAuthTokenMapOutput) ToDomainsAuthTokenMapOutputWithContext(ctx context.Context) DomainsAuthTokenMapOutput {
 	return o
-}
-
-func (o DomainsAuthTokenMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*DomainsAuthToken] {
-	return pulumix.Output[map[string]*DomainsAuthToken]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DomainsAuthTokenMapOutput) MapIndex(k pulumi.StringInput) DomainsAuthTokenOutput {

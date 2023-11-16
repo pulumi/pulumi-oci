@@ -18,7 +18,7 @@ public final class GetAgentDependenciesResult {
      * @return The list of agent_dependency_collection.
      * 
      */
-    private List<GetAgentDependenciesAgentDependencyCollection> agentDependencyCollections;
+    private @Nullable List<GetAgentDependenciesAgentDependencyCollection> agentDependencyCollections;
     private @Nullable String agentId;
     /**
      * @return Compartment identifier
@@ -36,7 +36,7 @@ public final class GetAgentDependenciesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The current state of AgentDependency.
      * 
@@ -49,7 +49,7 @@ public final class GetAgentDependenciesResult {
      * 
      */
     public List<GetAgentDependenciesAgentDependencyCollection> agentDependencyCollections() {
-        return this.agentDependencyCollections;
+        return this.agentDependencyCollections == null ? List.of() : this.agentDependencyCollections;
     }
     public Optional<String> agentId() {
         return Optional.ofNullable(this.agentId);
@@ -78,8 +78,8 @@ public final class GetAgentDependenciesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The current state of AgentDependency.
@@ -98,13 +98,13 @@ public final class GetAgentDependenciesResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetAgentDependenciesAgentDependencyCollection> agentDependencyCollections;
+        private @Nullable List<GetAgentDependenciesAgentDependencyCollection> agentDependencyCollections;
         private @Nullable String agentId;
         private String compartmentId;
         private @Nullable String displayName;
         private @Nullable String environmentId;
         private @Nullable List<GetAgentDependenciesFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String state;
         public Builder() {}
         public Builder(GetAgentDependenciesResult defaults) {
@@ -120,8 +120,8 @@ public final class GetAgentDependenciesResult {
         }
 
         @CustomType.Setter
-        public Builder agentDependencyCollections(List<GetAgentDependenciesAgentDependencyCollection> agentDependencyCollections) {
-            this.agentDependencyCollections = Objects.requireNonNull(agentDependencyCollections);
+        public Builder agentDependencyCollections(@Nullable List<GetAgentDependenciesAgentDependencyCollection> agentDependencyCollections) {
+            this.agentDependencyCollections = agentDependencyCollections;
             return this;
         }
         public Builder agentDependencyCollections(GetAgentDependenciesAgentDependencyCollection... agentDependencyCollections) {
@@ -156,8 +156,8 @@ public final class GetAgentDependenciesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

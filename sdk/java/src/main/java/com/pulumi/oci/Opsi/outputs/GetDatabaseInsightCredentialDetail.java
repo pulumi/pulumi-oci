@@ -6,6 +6,8 @@ package com.pulumi.oci.Opsi.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDatabaseInsightCredentialDetail {
@@ -13,75 +15,75 @@ public final class GetDatabaseInsightCredentialDetail {
      * @return Credential source name that had been added in Management Agent wallet. This is supplied in the External Database Service.
      * 
      */
-    private String credentialSourceName;
+    private @Nullable String credentialSourceName;
     /**
      * @return Credential type.
      * 
      */
-    private String credentialType;
+    private @Nullable String credentialType;
     /**
      * @return The secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) mapping to the database credentials.
      * 
      */
-    private String passwordSecretId;
+    private @Nullable String passwordSecretId;
     /**
      * @return database user role.
      * 
      */
-    private String role;
+    private @Nullable String role;
     /**
      * @return database user name.
      * 
      */
-    private String userName;
+    private @Nullable String userName;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored.
      * 
      */
-    private String walletSecretId;
+    private @Nullable String walletSecretId;
 
     private GetDatabaseInsightCredentialDetail() {}
     /**
      * @return Credential source name that had been added in Management Agent wallet. This is supplied in the External Database Service.
      * 
      */
-    public String credentialSourceName() {
-        return this.credentialSourceName;
+    public Optional<String> credentialSourceName() {
+        return Optional.ofNullable(this.credentialSourceName);
     }
     /**
      * @return Credential type.
      * 
      */
-    public String credentialType() {
-        return this.credentialType;
+    public Optional<String> credentialType() {
+        return Optional.ofNullable(this.credentialType);
     }
     /**
      * @return The secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) mapping to the database credentials.
      * 
      */
-    public String passwordSecretId() {
-        return this.passwordSecretId;
+    public Optional<String> passwordSecretId() {
+        return Optional.ofNullable(this.passwordSecretId);
     }
     /**
      * @return database user role.
      * 
      */
-    public String role() {
-        return this.role;
+    public Optional<String> role() {
+        return Optional.ofNullable(this.role);
     }
     /**
      * @return database user name.
      * 
      */
-    public String userName() {
-        return this.userName;
+    public Optional<String> userName() {
+        return Optional.ofNullable(this.userName);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored.
      * 
      */
-    public String walletSecretId() {
-        return this.walletSecretId;
+    public Optional<String> walletSecretId() {
+        return Optional.ofNullable(this.walletSecretId);
     }
 
     public static Builder builder() {
@@ -93,12 +95,12 @@ public final class GetDatabaseInsightCredentialDetail {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String credentialSourceName;
-        private String credentialType;
-        private String passwordSecretId;
-        private String role;
-        private String userName;
-        private String walletSecretId;
+        private @Nullable String credentialSourceName;
+        private @Nullable String credentialType;
+        private @Nullable String passwordSecretId;
+        private @Nullable String role;
+        private @Nullable String userName;
+        private @Nullable String walletSecretId;
         public Builder() {}
         public Builder(GetDatabaseInsightCredentialDetail defaults) {
     	      Objects.requireNonNull(defaults);
@@ -111,33 +113,33 @@ public final class GetDatabaseInsightCredentialDetail {
         }
 
         @CustomType.Setter
-        public Builder credentialSourceName(String credentialSourceName) {
-            this.credentialSourceName = Objects.requireNonNull(credentialSourceName);
+        public Builder credentialSourceName(@Nullable String credentialSourceName) {
+            this.credentialSourceName = credentialSourceName;
             return this;
         }
         @CustomType.Setter
-        public Builder credentialType(String credentialType) {
-            this.credentialType = Objects.requireNonNull(credentialType);
+        public Builder credentialType(@Nullable String credentialType) {
+            this.credentialType = credentialType;
             return this;
         }
         @CustomType.Setter
-        public Builder passwordSecretId(String passwordSecretId) {
-            this.passwordSecretId = Objects.requireNonNull(passwordSecretId);
+        public Builder passwordSecretId(@Nullable String passwordSecretId) {
+            this.passwordSecretId = passwordSecretId;
             return this;
         }
         @CustomType.Setter
-        public Builder role(String role) {
-            this.role = Objects.requireNonNull(role);
+        public Builder role(@Nullable String role) {
+            this.role = role;
             return this;
         }
         @CustomType.Setter
-        public Builder userName(String userName) {
-            this.userName = Objects.requireNonNull(userName);
+        public Builder userName(@Nullable String userName) {
+            this.userName = userName;
             return this;
         }
         @CustomType.Setter
-        public Builder walletSecretId(String walletSecretId) {
-            this.walletSecretId = Objects.requireNonNull(walletSecretId);
+        public Builder walletSecretId(@Nullable String walletSecretId) {
+            this.walletSecretId = walletSecretId;
             return this;
         }
         public GetDatabaseInsightCredentialDetail build() {

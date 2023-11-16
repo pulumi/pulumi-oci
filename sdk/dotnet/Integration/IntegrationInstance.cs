@@ -111,19 +111,19 @@ namespace Pulumi.Oci.Integration
         /// Optional parameter specifying which entitlement to use for billing purposes. Only required if the account possesses more than one entitlement.
         /// </summary>
         [Output("consumptionModel")]
-        public Output<string> ConsumptionModel { get; private set; } = null!;
+        public Output<string?> ConsumptionModel { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Details for a custom endpoint for the integration instance (update).
         /// </summary>
         [Output("customEndpoint")]
-        public Output<Outputs.IntegrationInstanceCustomEndpoint> CustomEndpoint { get; private set; } = null!;
+        public Output<Outputs.IntegrationInstanceCustomEndpoint?> CustomEndpoint { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Integration Instance Identifier.
@@ -147,7 +147,7 @@ namespace Pulumi.Oci.Integration
         /// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) IDCS Authentication token. This is required for all realms with IDCS. Its optional as its not required for non IDCS realms.
@@ -165,7 +165,7 @@ namespace Pulumi.Oci.Integration
         /// The Integration Instance URL.
         /// </summary>
         [Output("instanceUrl")]
-        public Output<string> InstanceUrl { get; private set; } = null!;
+        public Output<string?> InstanceUrl { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Standard or Enterprise type,  Oracle Integration Generation 2 uses ENTERPRISE and STANDARD,  Oracle Integration 3 uses ENTERPRISEX and STANDARDX
@@ -183,13 +183,13 @@ namespace Pulumi.Oci.Integration
         /// (Updatable) The file server is enabled or not.
         /// </summary>
         [Output("isFileServerEnabled")]
-        public Output<bool> IsFileServerEnabled { get; private set; } = null!;
+        public Output<bool?> IsFileServerEnabled { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Visual Builder is enabled or not.
         /// </summary>
         [Output("isVisualBuilderEnabled")]
-        public Output<bool> IsVisualBuilderEnabled { get; private set; } = null!;
+        public Output<bool?> IsVisualBuilderEnabled { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The number of configured message packs
@@ -201,13 +201,13 @@ namespace Pulumi.Oci.Integration
         /// Base representation of a network endpoint.
         /// </summary>
         [Output("networkEndpointDetails")]
-        public Output<Outputs.IntegrationInstanceNetworkEndpointDetails> NetworkEndpointDetails { get; private set; } = null!;
+        public Output<Outputs.IntegrationInstanceNetworkEndpointDetails?> NetworkEndpointDetails { get; private set; } = null!;
 
         /// <summary>
         /// Shape
         /// </summary>
         [Output("shape")]
-        public Output<string> Shape { get; private set; } = null!;
+        public Output<string?> Shape { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The target state for the instance. Could be set to ACTIVE or INACTIVE
@@ -217,25 +217,25 @@ namespace Pulumi.Oci.Integration
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// An message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         /// </summary>
         [Output("stateMessage")]
-        public Output<string> StateMessage { get; private set; } = null!;
+        public Output<string?> StateMessage { get; private set; } = null!;
 
         /// <summary>
         /// The time the the Integration Instance was created. An RFC3339 formatted datetime string.
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// The time the IntegrationInstance was updated. An RFC3339 formatted datetime string.
         /// </summary>
         [Output("timeUpdated")]
-        public Output<string> TimeUpdated { get; private set; } = null!;
+        public Output<string?> TimeUpdated { get; private set; } = null!;
 
 
         /// <summary>

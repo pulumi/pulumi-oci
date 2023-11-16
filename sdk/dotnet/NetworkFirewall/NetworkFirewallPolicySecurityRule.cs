@@ -101,7 +101,7 @@ namespace Pulumi.Oci.NetworkFirewall
         /// OCID of the Network Firewall Policy this security rule belongs to.
         /// </summary>
         [Output("parentResourceId")]
-        public Output<string> ParentResourceId { get; private set; } = null!;
+        public Output<string?> ParentResourceId { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) An object which defines the position of the rule. Only one of the following position references should be provided.

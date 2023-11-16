@@ -9,6 +9,7 @@ import com.pulumi.oci.Core.outputs.GetByoipAllocatedRangesFilter;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 @CustomType
@@ -17,14 +18,14 @@ public final class GetByoipAllocatedRangesResult {
      * @return The list of byoip_allocated_range_collection.
      * 
      */
-    private List<GetByoipAllocatedRangesByoipAllocatedRangeCollection> byoipAllocatedRangeCollections;
+    private @Nullable List<GetByoipAllocatedRangesByoipAllocatedRangeCollection> byoipAllocatedRangeCollections;
     private String byoipRangeId;
     private @Nullable List<GetByoipAllocatedRangesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
 
     private GetByoipAllocatedRangesResult() {}
     /**
@@ -32,7 +33,7 @@ public final class GetByoipAllocatedRangesResult {
      * 
      */
     public List<GetByoipAllocatedRangesByoipAllocatedRangeCollection> byoipAllocatedRangeCollections() {
-        return this.byoipAllocatedRangeCollections;
+        return this.byoipAllocatedRangeCollections == null ? List.of() : this.byoipAllocatedRangeCollections;
     }
     public String byoipRangeId() {
         return this.byoipRangeId;
@@ -44,8 +45,8 @@ public final class GetByoipAllocatedRangesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
 
     public static Builder builder() {
@@ -57,10 +58,10 @@ public final class GetByoipAllocatedRangesResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetByoipAllocatedRangesByoipAllocatedRangeCollection> byoipAllocatedRangeCollections;
+        private @Nullable List<GetByoipAllocatedRangesByoipAllocatedRangeCollection> byoipAllocatedRangeCollections;
         private String byoipRangeId;
         private @Nullable List<GetByoipAllocatedRangesFilter> filters;
-        private String id;
+        private @Nullable String id;
         public Builder() {}
         public Builder(GetByoipAllocatedRangesResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -71,8 +72,8 @@ public final class GetByoipAllocatedRangesResult {
         }
 
         @CustomType.Setter
-        public Builder byoipAllocatedRangeCollections(List<GetByoipAllocatedRangesByoipAllocatedRangeCollection> byoipAllocatedRangeCollections) {
-            this.byoipAllocatedRangeCollections = Objects.requireNonNull(byoipAllocatedRangeCollections);
+        public Builder byoipAllocatedRangeCollections(@Nullable List<GetByoipAllocatedRangesByoipAllocatedRangeCollection> byoipAllocatedRangeCollections) {
+            this.byoipAllocatedRangeCollections = byoipAllocatedRangeCollections;
             return this;
         }
         public Builder byoipAllocatedRangeCollections(GetByoipAllocatedRangesByoipAllocatedRangeCollection... byoipAllocatedRangeCollections) {
@@ -92,8 +93,8 @@ public final class GetByoipAllocatedRangesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         public GetByoipAllocatedRangesResult build() {

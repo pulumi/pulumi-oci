@@ -45,11 +45,11 @@ export interface GetLetterOfAuthorityResult {
     /**
      * The name of the entity authorized by this Letter of Authority.
      */
-    readonly authorizedEntityName: string;
+    readonly authorizedEntityName?: string;
     /**
      * The type of cross-connect fiber, termination, and optical specification.
      */
-    readonly circuitType: string;
+    readonly circuitType?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cross-connect.
      */
@@ -57,23 +57,23 @@ export interface GetLetterOfAuthorityResult {
     /**
      * The address of the FastConnect location.
      */
-    readonly facilityLocation: string;
+    readonly facilityLocation?: string;
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The meet-me room port for this cross-connect.
      */
-    readonly portName: string;
+    readonly portName?: string;
     /**
      * The date and time when the Letter of Authority expires, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
-    readonly timeExpires: string;
+    readonly timeExpires?: string;
     /**
      * The date and time the Letter of Authority was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      */
-    readonly timeIssued: string;
+    readonly timeIssued?: string;
 }
 /**
  * This data source provides details about a specific Letter Of Authority resource in Oracle Cloud Infrastructure Core service.

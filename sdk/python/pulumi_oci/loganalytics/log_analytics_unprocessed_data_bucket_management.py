@@ -19,13 +19,6 @@ class LogAnalyticsUnprocessedDataBucketManagementArgs:
                  is_enabled: Optional[pulumi.Input[bool]] = None):
         """
         The set of arguments for constructing a LogAnalyticsUnprocessedDataBucketManagement resource.
-        :param pulumi.Input[str] bucket: Name of the Object Storage bucket.
-        :param pulumi.Input[str] namespace: The Logging Analytics namespace used for the request. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[bool] is_enabled: Flag that specifies if this configuration is enabled or not.
         """
         pulumi.set(__self__, "bucket", bucket)
         pulumi.set(__self__, "namespace", namespace)
@@ -35,9 +28,6 @@ class LogAnalyticsUnprocessedDataBucketManagementArgs:
     @property
     @pulumi.getter
     def bucket(self) -> pulumi.Input[str]:
-        """
-        Name of the Object Storage bucket.
-        """
         return pulumi.get(self, "bucket")
 
     @bucket.setter
@@ -47,13 +37,6 @@ class LogAnalyticsUnprocessedDataBucketManagementArgs:
     @property
     @pulumi.getter
     def namespace(self) -> pulumi.Input[str]:
-        """
-        The Logging Analytics namespace used for the request. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "namespace")
 
     @namespace.setter
@@ -63,9 +46,6 @@ class LogAnalyticsUnprocessedDataBucketManagementArgs:
     @property
     @pulumi.getter(name="isEnabled")
     def is_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Flag that specifies if this configuration is enabled or not.
-        """
         return pulumi.get(self, "is_enabled")
 
     @is_enabled.setter
@@ -83,15 +63,6 @@ class _LogAnalyticsUnprocessedDataBucketManagementState:
                  time_updated: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering LogAnalyticsUnprocessedDataBucketManagement resources.
-        :param pulumi.Input[str] bucket: Name of the Object Storage bucket.
-        :param pulumi.Input[bool] is_enabled: Flag that specifies if this configuration is enabled or not.
-        :param pulumi.Input[str] namespace: The Logging Analytics namespace used for the request. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] time_created: The time when this record is created. An RFC3339 formatted datetime string.
-        :param pulumi.Input[str] time_updated: The latest time when this record is updated. An RFC3339 formatted datetime string.
         """
         if bucket is not None:
             pulumi.set(__self__, "bucket", bucket)
@@ -107,9 +78,6 @@ class _LogAnalyticsUnprocessedDataBucketManagementState:
     @property
     @pulumi.getter
     def bucket(self) -> Optional[pulumi.Input[str]]:
-        """
-        Name of the Object Storage bucket.
-        """
         return pulumi.get(self, "bucket")
 
     @bucket.setter
@@ -119,9 +87,6 @@ class _LogAnalyticsUnprocessedDataBucketManagementState:
     @property
     @pulumi.getter(name="isEnabled")
     def is_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Flag that specifies if this configuration is enabled or not.
-        """
         return pulumi.get(self, "is_enabled")
 
     @is_enabled.setter
@@ -131,13 +96,6 @@ class _LogAnalyticsUnprocessedDataBucketManagementState:
     @property
     @pulumi.getter
     def namespace(self) -> Optional[pulumi.Input[str]]:
-        """
-        The Logging Analytics namespace used for the request. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "namespace")
 
     @namespace.setter
@@ -147,9 +105,6 @@ class _LogAnalyticsUnprocessedDataBucketManagementState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The time when this record is created. An RFC3339 formatted datetime string.
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -159,9 +114,6 @@ class _LogAnalyticsUnprocessedDataBucketManagementState:
     @property
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> Optional[pulumi.Input[str]]:
-        """
-        The latest time when this record is updated. An RFC3339 formatted datetime string.
-        """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
@@ -179,36 +131,9 @@ class LogAnalyticsUnprocessedDataBucketManagement(pulumi.CustomResource):
                  namespace: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Log Analytics Unprocessed Data Bucket Management resource in Oracle Cloud Infrastructure Log Analytics service.
-
-        This API configures a bucket to store unprocessed payloads.
-        While processing there could be reasons a payload cannot be processed (mismatched structure, corrupted archive format, etc),
-        if configured the payload would be uploaded to the bucket for verification.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_log_analytics_unprocessed_data_bucket_management = oci.log_analytics.LogAnalyticsUnprocessedDataBucketManagement("testLogAnalyticsUnprocessedDataBucketManagement",
-            bucket=var["log_analytics_unprocessed_data_bucket_management_bucket"],
-            namespace=var["log_analytics_unprocessed_data_bucket_management_namespace"])
-        ```
-
-        ## Import
-
-        Import is not supported for LogAnalyticsUnprocessedDataBucketManagement
-
+        Create a LogAnalyticsUnprocessedDataBucketManagement resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] bucket: Name of the Object Storage bucket.
-        :param pulumi.Input[bool] is_enabled: Flag that specifies if this configuration is enabled or not.
-        :param pulumi.Input[str] namespace: The Logging Analytics namespace used for the request. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -217,27 +142,7 @@ class LogAnalyticsUnprocessedDataBucketManagement(pulumi.CustomResource):
                  args: LogAnalyticsUnprocessedDataBucketManagementArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Log Analytics Unprocessed Data Bucket Management resource in Oracle Cloud Infrastructure Log Analytics service.
-
-        This API configures a bucket to store unprocessed payloads.
-        While processing there could be reasons a payload cannot be processed (mismatched structure, corrupted archive format, etc),
-        if configured the payload would be uploaded to the bucket for verification.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_log_analytics_unprocessed_data_bucket_management = oci.log_analytics.LogAnalyticsUnprocessedDataBucketManagement("testLogAnalyticsUnprocessedDataBucketManagement",
-            bucket=var["log_analytics_unprocessed_data_bucket_management_bucket"],
-            namespace=var["log_analytics_unprocessed_data_bucket_management_namespace"])
-        ```
-
-        ## Import
-
-        Import is not supported for LogAnalyticsUnprocessedDataBucketManagement
-
+        Create a LogAnalyticsUnprocessedDataBucketManagement resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param LogAnalyticsUnprocessedDataBucketManagementArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -296,15 +201,6 @@ class LogAnalyticsUnprocessedDataBucketManagement(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] bucket: Name of the Object Storage bucket.
-        :param pulumi.Input[bool] is_enabled: Flag that specifies if this configuration is enabled or not.
-        :param pulumi.Input[str] namespace: The Logging Analytics namespace used for the request. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] time_created: The time when this record is created. An RFC3339 formatted datetime string.
-        :param pulumi.Input[str] time_updated: The latest time when this record is updated. An RFC3339 formatted datetime string.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -320,44 +216,25 @@ class LogAnalyticsUnprocessedDataBucketManagement(pulumi.CustomResource):
     @property
     @pulumi.getter
     def bucket(self) -> pulumi.Output[str]:
-        """
-        Name of the Object Storage bucket.
-        """
         return pulumi.get(self, "bucket")
 
     @property
     @pulumi.getter(name="isEnabled")
-    def is_enabled(self) -> pulumi.Output[bool]:
-        """
-        Flag that specifies if this configuration is enabled or not.
-        """
+    def is_enabled(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "is_enabled")
 
     @property
     @pulumi.getter
     def namespace(self) -> pulumi.Output[str]:
-        """
-        The Logging Analytics namespace used for the request. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "namespace")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        The time when this record is created. An RFC3339 formatted datetime string.
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> pulumi.Output[str]:
-        """
-        The latest time when this record is updated. An RFC3339 formatted datetime string.
-        """
+    def time_updated(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_updated")
 

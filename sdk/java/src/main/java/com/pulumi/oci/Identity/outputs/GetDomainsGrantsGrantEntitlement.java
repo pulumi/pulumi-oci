@@ -6,6 +6,8 @@ package com.pulumi.oci.Identity.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDomainsGrantsGrantEntitlement {
@@ -13,27 +15,27 @@ public final class GetDomainsGrantsGrantEntitlement {
      * @return The name of the attribute whose value (specified by attributeValue) confers privilege within the service-instance (specified by app).
      * 
      */
-    private String attributeName;
+    private @Nullable String attributeName;
     /**
      * @return The value of the attribute (specified by attributeName) that confers privilege within the service-instance (specified by app).  If attributeName is &#39;appRoles&#39;, then attributeValue is the ID of the AppRole.
      * 
      */
-    private String attributeValue;
+    private @Nullable String attributeValue;
 
     private GetDomainsGrantsGrantEntitlement() {}
     /**
      * @return The name of the attribute whose value (specified by attributeValue) confers privilege within the service-instance (specified by app).
      * 
      */
-    public String attributeName() {
-        return this.attributeName;
+    public Optional<String> attributeName() {
+        return Optional.ofNullable(this.attributeName);
     }
     /**
      * @return The value of the attribute (specified by attributeName) that confers privilege within the service-instance (specified by app).  If attributeName is &#39;appRoles&#39;, then attributeValue is the ID of the AppRole.
      * 
      */
-    public String attributeValue() {
-        return this.attributeValue;
+    public Optional<String> attributeValue() {
+        return Optional.ofNullable(this.attributeValue);
     }
 
     public static Builder builder() {
@@ -45,8 +47,8 @@ public final class GetDomainsGrantsGrantEntitlement {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String attributeName;
-        private String attributeValue;
+        private @Nullable String attributeName;
+        private @Nullable String attributeValue;
         public Builder() {}
         public Builder(GetDomainsGrantsGrantEntitlement defaults) {
     	      Objects.requireNonNull(defaults);
@@ -55,13 +57,13 @@ public final class GetDomainsGrantsGrantEntitlement {
         }
 
         @CustomType.Setter
-        public Builder attributeName(String attributeName) {
-            this.attributeName = Objects.requireNonNull(attributeName);
+        public Builder attributeName(@Nullable String attributeName) {
+            this.attributeName = attributeName;
             return this;
         }
         @CustomType.Setter
-        public Builder attributeValue(String attributeValue) {
-            this.attributeValue = Objects.requireNonNull(attributeValue);
+        public Builder attributeValue(@Nullable String attributeValue) {
+            this.attributeValue = attributeValue;
             return this;
         }
         public GetDomainsGrantsGrantEntitlement build() {

@@ -61,95 +61,62 @@ class GetNotificationTopicResult:
 
     @property
     @pulumi.getter(name="apiEndpoint")
-    def api_endpoint(self) -> str:
-        """
-        The endpoint for managing subscriptions or publishing messages to the topic.
-        """
+    def api_endpoint(self) -> Optional[str]:
         return pulumi.get(self, "api_endpoint")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for the topic.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        The description of the topic.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter
-    def etag(self) -> str:
-        """
-        For optimistic concurrency control. See `if-match`.
-        """
+    def etag(self) -> Optional[str]:
         return pulumi.get(self, "etag")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        The name of the topic.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="shortTopicId")
-    def short_topic_id(self) -> str:
-        """
-        A unique short topic Id. This is used only for SMS subscriptions.
-        """
+    def short_topic_id(self) -> Optional[str]:
         return pulumi.get(self, "short_topic_id")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The lifecycle state of the topic.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The time the topic was created.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="topicId")
     def topic_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic.
-        """
         return pulumi.get(self, "topic_id")
 
 
@@ -176,23 +143,7 @@ class AwaitableGetNotificationTopicResult(GetNotificationTopicResult):
 def get_notification_topic(topic_id: Optional[str] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetNotificationTopicResult:
     """
-    This data source provides details about a specific Notification Topic resource in Oracle Cloud Infrastructure Notifications service.
-
-    Gets the specified topic's configuration information.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_notification_topic = oci.Ons.get_notification_topic(topic_id=oci_ons_notification_topic["test_notification_topic"]["id"])
-    ```
-
-
-    :param str topic_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic to retrieve.
-           
-           Transactions Per Minute (TPM) per-tenancy limit for this operation: 120.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['topicId'] = topic_id
@@ -218,22 +169,6 @@ def get_notification_topic(topic_id: Optional[str] = None,
 def get_notification_topic_output(topic_id: Optional[pulumi.Input[str]] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNotificationTopicResult]:
     """
-    This data source provides details about a specific Notification Topic resource in Oracle Cloud Infrastructure Notifications service.
-
-    Gets the specified topic's configuration information.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_notification_topic = oci.Ons.get_notification_topic(topic_id=oci_ons_notification_topic["test_notification_topic"]["id"])
-    ```
-
-
-    :param str topic_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic to retrieve.
-           
-           Transactions Per Minute (TPM) per-tenancy limit for this operation: 120.
+    Use this data source to access information about an existing resource.
     """
     ...

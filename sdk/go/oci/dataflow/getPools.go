@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Pools in Oracle Cloud Infrastructure Data Flow service.
@@ -79,7 +78,7 @@ type GetPoolsResult struct {
 	DisplayNameStartsWith *string          `pulumi:"displayNameStartsWith"`
 	Filters               []GetPoolsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The OCID of the user who created the resource.
 	OwnerPrincipalId *string `pulumi:"ownerPrincipalId"`
 	// The list of pool_collection.
@@ -135,12 +134,6 @@ func (o GetPoolsResultOutput) ToGetPoolsResultOutputWithContext(ctx context.Cont
 	return o
 }
 
-func (o GetPoolsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetPoolsResult] {
-	return pulumix.Output[GetPoolsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of a compartment.
 func (o GetPoolsResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetPoolsResult) string { return v.CompartmentId }).(pulumi.StringOutput)
@@ -160,8 +153,8 @@ func (o GetPoolsResultOutput) Filters() GetPoolsFilterArrayOutput {
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetPoolsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPoolsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetPoolsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetPoolsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the user who created the resource.

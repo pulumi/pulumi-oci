@@ -20,103 +20,103 @@ namespace Pulumi.Oci.BigDataService.Outputs
         /// <summary>
         /// The name of the availability domain in which the node is running.
         /// </summary>
-        public readonly string AvailabilityDomain;
+        public readonly string? AvailabilityDomain;
         /// <summary>
         /// A filter to return only resources that match the entire display name given.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// The name of the fault domain in which the node is running.
         /// </summary>
-        public readonly string FaultDomain;
+        public readonly string? FaultDomain;
         /// <summary>
         /// The fully-qualified hostname (FQDN) of the node.
         /// </summary>
-        public readonly string Hostname;
+        public readonly string? Hostname;
         /// <summary>
         /// The OCID of the image from which the node was created.
         /// </summary>
-        public readonly string ImageId;
+        public readonly string? ImageId;
         /// <summary>
         /// The OCID of the underlying Oracle Cloud Infrastructure Compute instance.
         /// </summary>
-        public readonly string InstanceId;
+        public readonly string? InstanceId;
         /// <summary>
         /// IP address of the node.
         /// </summary>
-        public readonly string IpAddress;
+        public readonly string? IpAddress;
         /// <summary>
         /// The total amount of memory available to the node, in gigabytes.
         /// </summary>
-        public readonly int MemoryInGbs;
+        public readonly int? MemoryInGbs;
         /// <summary>
         /// Cluster node type.
         /// </summary>
-        public readonly string NodeType;
+        public readonly string? NodeType;
         /// <summary>
         /// The total number of OCPUs available to the node.
         /// </summary>
-        public readonly int Ocpus;
+        public readonly int? Ocpus;
         /// <summary>
         /// Shape of the node.
         /// </summary>
-        public readonly string Shape;
+        public readonly string? Shape;
         /// <summary>
         /// The fingerprint of the SSH key used for node access.
         /// </summary>
-        public readonly string SshFingerprint;
+        public readonly string? SshFingerprint;
         /// <summary>
         /// The state of the cluster.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// The OCID of the subnet in which the node is to be created.
         /// </summary>
-        public readonly string SubnetId;
+        public readonly string? SubnetId;
         /// <summary>
         /// The time the cluster was created, shown as an RFC 3339 formatted datetime string.
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The date and time the instance is expected to be stopped / started, in the format defined by RFC3339.
         /// </summary>
-        public readonly string TimeMaintenanceRebootDue;
+        public readonly string? TimeMaintenanceRebootDue;
 
         [OutputConstructor]
         private GetBdsInstancesBdsInstanceNodeResult(
             ImmutableArray<Outputs.GetBdsInstancesBdsInstanceNodeAttachedBlockVolumeResult> attachedBlockVolumes,
 
-            string availabilityDomain,
+            string? availabilityDomain,
 
-            string displayName,
+            string? displayName,
 
-            string faultDomain,
+            string? faultDomain,
 
-            string hostname,
+            string? hostname,
 
-            string imageId,
+            string? imageId,
 
-            string instanceId,
+            string? instanceId,
 
-            string ipAddress,
+            string? ipAddress,
 
-            int memoryInGbs,
+            int? memoryInGbs,
 
-            string nodeType,
+            string? nodeType,
 
-            int ocpus,
+            int? ocpus,
 
-            string shape,
+            string? shape,
 
-            string sshFingerprint,
+            string? sshFingerprint,
 
-            string state,
+            string? state,
 
-            string subnetId,
+            string? subnetId,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeMaintenanceRebootDue)
+            string? timeMaintenanceRebootDue)
         {
             AttachedBlockVolumes = attachedBlockVolumes;
             AvailabilityDomain = availabilityDomain;

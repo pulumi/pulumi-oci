@@ -19,13 +19,6 @@ class CatalogAssociationArgs:
                  entity_type: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a CatalogAssociation resource.
-        :param pulumi.Input[str] entity_id: Identifier of the entity being associated with service catalog.
-        :param pulumi.Input[str] service_catalog_id: Identifier of the service catalog.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] entity_type: The type of the entity that is associated with the service catalog.
         """
         pulumi.set(__self__, "entity_id", entity_id)
         pulumi.set(__self__, "service_catalog_id", service_catalog_id)
@@ -35,9 +28,6 @@ class CatalogAssociationArgs:
     @property
     @pulumi.getter(name="entityId")
     def entity_id(self) -> pulumi.Input[str]:
-        """
-        Identifier of the entity being associated with service catalog.
-        """
         return pulumi.get(self, "entity_id")
 
     @entity_id.setter
@@ -47,13 +37,6 @@ class CatalogAssociationArgs:
     @property
     @pulumi.getter(name="serviceCatalogId")
     def service_catalog_id(self) -> pulumi.Input[str]:
-        """
-        Identifier of the service catalog.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "service_catalog_id")
 
     @service_catalog_id.setter
@@ -63,9 +46,6 @@ class CatalogAssociationArgs:
     @property
     @pulumi.getter(name="entityType")
     def entity_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        The type of the entity that is associated with the service catalog.
-        """
         return pulumi.get(self, "entity_type")
 
     @entity_type.setter
@@ -82,14 +62,6 @@ class _CatalogAssociationState:
                  time_created: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering CatalogAssociation resources.
-        :param pulumi.Input[str] entity_id: Identifier of the entity being associated with service catalog.
-        :param pulumi.Input[str] entity_type: The type of the entity that is associated with the service catalog.
-        :param pulumi.Input[str] service_catalog_id: Identifier of the service catalog.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] time_created: Timestamp of when the resource was associated with service catalog.
         """
         if entity_id is not None:
             pulumi.set(__self__, "entity_id", entity_id)
@@ -103,9 +75,6 @@ class _CatalogAssociationState:
     @property
     @pulumi.getter(name="entityId")
     def entity_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        Identifier of the entity being associated with service catalog.
-        """
         return pulumi.get(self, "entity_id")
 
     @entity_id.setter
@@ -115,9 +84,6 @@ class _CatalogAssociationState:
     @property
     @pulumi.getter(name="entityType")
     def entity_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        The type of the entity that is associated with the service catalog.
-        """
         return pulumi.get(self, "entity_type")
 
     @entity_type.setter
@@ -127,13 +93,6 @@ class _CatalogAssociationState:
     @property
     @pulumi.getter(name="serviceCatalogId")
     def service_catalog_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        Identifier of the service catalog.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "service_catalog_id")
 
     @service_catalog_id.setter
@@ -143,9 +102,6 @@ class _CatalogAssociationState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        Timestamp of when the resource was associated with service catalog.
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -163,39 +119,9 @@ class CatalogAssociation(pulumi.CustomResource):
                  service_catalog_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Service Catalog Association resource in Oracle Cloud Infrastructure Service Catalog service.
-
-        Creates an association between service catalog and a resource.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_service_catalog_association = oci.service_catalog.CatalogAssociation("testServiceCatalogAssociation",
-            entity_id=oci_service_catalog_entity["test_entity"]["id"],
-            service_catalog_id=oci_service_catalog_service_catalog["test_service_catalog"]["id"],
-            entity_type=var["service_catalog_association_entity_type"])
-        ```
-
-        ## Import
-
-        ServiceCatalogAssociations can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:ServiceCatalog/catalogAssociation:CatalogAssociation test_service_catalog_association "id"
-        ```
-
+        Create a CatalogAssociation resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] entity_id: Identifier of the entity being associated with service catalog.
-        :param pulumi.Input[str] entity_type: The type of the entity that is associated with the service catalog.
-        :param pulumi.Input[str] service_catalog_id: Identifier of the service catalog.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -204,30 +130,7 @@ class CatalogAssociation(pulumi.CustomResource):
                  args: CatalogAssociationArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Service Catalog Association resource in Oracle Cloud Infrastructure Service Catalog service.
-
-        Creates an association between service catalog and a resource.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_service_catalog_association = oci.service_catalog.CatalogAssociation("testServiceCatalogAssociation",
-            entity_id=oci_service_catalog_entity["test_entity"]["id"],
-            service_catalog_id=oci_service_catalog_service_catalog["test_service_catalog"]["id"],
-            entity_type=var["service_catalog_association_entity_type"])
-        ```
-
-        ## Import
-
-        ServiceCatalogAssociations can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:ServiceCatalog/catalogAssociation:CatalogAssociation test_service_catalog_association "id"
-        ```
-
+        Create a CatalogAssociation resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param CatalogAssociationArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -284,14 +187,6 @@ class CatalogAssociation(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] entity_id: Identifier of the entity being associated with service catalog.
-        :param pulumi.Input[str] entity_type: The type of the entity that is associated with the service catalog.
-        :param pulumi.Input[str] service_catalog_id: Identifier of the service catalog.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] time_created: Timestamp of when the resource was associated with service catalog.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -306,36 +201,20 @@ class CatalogAssociation(pulumi.CustomResource):
     @property
     @pulumi.getter(name="entityId")
     def entity_id(self) -> pulumi.Output[str]:
-        """
-        Identifier of the entity being associated with service catalog.
-        """
         return pulumi.get(self, "entity_id")
 
     @property
     @pulumi.getter(name="entityType")
-    def entity_type(self) -> pulumi.Output[str]:
-        """
-        The type of the entity that is associated with the service catalog.
-        """
+    def entity_type(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "entity_type")
 
     @property
     @pulumi.getter(name="serviceCatalogId")
     def service_catalog_id(self) -> pulumi.Output[str]:
-        """
-        Identifier of the service catalog.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "service_catalog_id")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        Timestamp of when the resource was associated with service catalog.
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 

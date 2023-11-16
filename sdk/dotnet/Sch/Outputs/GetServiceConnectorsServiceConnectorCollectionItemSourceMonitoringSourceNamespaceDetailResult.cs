@@ -16,7 +16,7 @@ namespace Pulumi.Oci.Sch.Outputs
         /// <summary>
         /// The type descriminator.
         /// </summary>
-        public readonly string Kind;
+        public readonly string? Kind;
         /// <summary>
         /// The namespaces for the compartment-specific list.
         /// </summary>
@@ -24,7 +24,7 @@ namespace Pulumi.Oci.Sch.Outputs
 
         [OutputConstructor]
         private GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailResult(
-            string kind,
+            string? kind,
 
             ImmutableArray<Outputs.GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceResult> namespaces)
         {

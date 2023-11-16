@@ -45,40 +45,40 @@ export interface GetSenderResult {
     /**
      * The OCID for the compartment.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * The email address of the sender.
      */
-    readonly emailAddress: string;
+    readonly emailAddress?: string;
     /**
      * The email domain used to assert responsibility for emails sent from this sender.
      */
-    readonly emailDomainId: string;
+    readonly emailDomainId?: string;
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * The unique OCID of the sender.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Value of the SPF field. For more information about SPF, please see [SPF Authentication](https://docs.cloud.oracle.com/iaas/Content/Email/Concepts/overview.htm#components).
      */
-    readonly isSpf: boolean;
+    readonly isSpf?: boolean;
     readonly senderId: string;
     /**
      * The current status of the approved sender.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * The date and time the approved sender was added in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by RFC 3339.
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
 }
 /**
  * This data source provides details about a specific Sender resource in Oracle Cloud Infrastructure Email service.

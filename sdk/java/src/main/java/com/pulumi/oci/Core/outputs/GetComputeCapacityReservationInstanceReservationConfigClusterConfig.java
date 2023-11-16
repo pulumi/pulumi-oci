@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetComputeCapacityReservationInstanceReservationConfigClusterConfig {
@@ -14,27 +16,27 @@ public final class GetComputeCapacityReservationInstanceReservationConfigCluster
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HpcIsland.
      * 
      */
-    private String hpcIslandId;
+    private @Nullable String hpcIslandId;
     /**
      * @return The list of OCID of the network blocks.
      * 
      */
-    private List<String> networkBlockIds;
+    private @Nullable List<String> networkBlockIds;
 
     private GetComputeCapacityReservationInstanceReservationConfigClusterConfig() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HpcIsland.
      * 
      */
-    public String hpcIslandId() {
-        return this.hpcIslandId;
+    public Optional<String> hpcIslandId() {
+        return Optional.ofNullable(this.hpcIslandId);
     }
     /**
      * @return The list of OCID of the network blocks.
      * 
      */
     public List<String> networkBlockIds() {
-        return this.networkBlockIds;
+        return this.networkBlockIds == null ? List.of() : this.networkBlockIds;
     }
 
     public static Builder builder() {
@@ -46,8 +48,8 @@ public final class GetComputeCapacityReservationInstanceReservationConfigCluster
     }
     @CustomType.Builder
     public static final class Builder {
-        private String hpcIslandId;
-        private List<String> networkBlockIds;
+        private @Nullable String hpcIslandId;
+        private @Nullable List<String> networkBlockIds;
         public Builder() {}
         public Builder(GetComputeCapacityReservationInstanceReservationConfigClusterConfig defaults) {
     	      Objects.requireNonNull(defaults);
@@ -56,13 +58,13 @@ public final class GetComputeCapacityReservationInstanceReservationConfigCluster
         }
 
         @CustomType.Setter
-        public Builder hpcIslandId(String hpcIslandId) {
-            this.hpcIslandId = Objects.requireNonNull(hpcIslandId);
+        public Builder hpcIslandId(@Nullable String hpcIslandId) {
+            this.hpcIslandId = hpcIslandId;
             return this;
         }
         @CustomType.Setter
-        public Builder networkBlockIds(List<String> networkBlockIds) {
-            this.networkBlockIds = Objects.requireNonNull(networkBlockIds);
+        public Builder networkBlockIds(@Nullable List<String> networkBlockIds) {
+            this.networkBlockIds = networkBlockIds;
             return this;
         }
         public Builder networkBlockIds(String... networkBlockIds) {

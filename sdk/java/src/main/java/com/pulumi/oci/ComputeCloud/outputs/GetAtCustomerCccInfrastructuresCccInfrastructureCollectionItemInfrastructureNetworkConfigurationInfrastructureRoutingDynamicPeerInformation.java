@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformation {
@@ -14,27 +16,27 @@ public final class GetAtCustomerCccInfrastructuresCccInfrastructureCollectionIte
      * @return The Autonomous System Number (ASN) of the peer network.
      * 
      */
-    private Integer asn;
+    private @Nullable Integer asn;
     /**
      * @return Address of the management node.
      * 
      */
-    private String ip;
+    private @Nullable String ip;
 
     private GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformation() {}
     /**
      * @return The Autonomous System Number (ASN) of the peer network.
      * 
      */
-    public Integer asn() {
-        return this.asn;
+    public Optional<Integer> asn() {
+        return Optional.ofNullable(this.asn);
     }
     /**
      * @return Address of the management node.
      * 
      */
-    public String ip() {
-        return this.ip;
+    public Optional<String> ip() {
+        return Optional.ofNullable(this.ip);
     }
 
     public static Builder builder() {
@@ -46,8 +48,8 @@ public final class GetAtCustomerCccInfrastructuresCccInfrastructureCollectionIte
     }
     @CustomType.Builder
     public static final class Builder {
-        private Integer asn;
-        private String ip;
+        private @Nullable Integer asn;
+        private @Nullable String ip;
         public Builder() {}
         public Builder(GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformation defaults) {
     	      Objects.requireNonNull(defaults);
@@ -56,13 +58,13 @@ public final class GetAtCustomerCccInfrastructuresCccInfrastructureCollectionIte
         }
 
         @CustomType.Setter
-        public Builder asn(Integer asn) {
-            this.asn = Objects.requireNonNull(asn);
+        public Builder asn(@Nullable Integer asn) {
+            this.asn = asn;
             return this;
         }
         @CustomType.Setter
-        public Builder ip(String ip) {
-            this.ip = Objects.requireNonNull(ip);
+        public Builder ip(@Nullable String ip) {
+            this.ip = ip;
             return this;
         }
         public GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformation build() {

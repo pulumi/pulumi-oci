@@ -6,34 +6,36 @@ package com.pulumi.oci.Vault.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetSecretsSecretSecretContent {
-    private String content;
-    private String contentType;
+    private @Nullable String content;
+    private @Nullable String contentType;
     /**
      * @return The secret name.
      * 
      */
-    private String name;
-    private String stage;
+    private @Nullable String name;
+    private @Nullable String stage;
 
     private GetSecretsSecretSecretContent() {}
-    public String content() {
-        return this.content;
+    public Optional<String> content() {
+        return Optional.ofNullable(this.content);
     }
-    public String contentType() {
-        return this.contentType;
+    public Optional<String> contentType() {
+        return Optional.ofNullable(this.contentType);
     }
     /**
      * @return The secret name.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
-    public String stage() {
-        return this.stage;
+    public Optional<String> stage() {
+        return Optional.ofNullable(this.stage);
     }
 
     public static Builder builder() {
@@ -45,10 +47,10 @@ public final class GetSecretsSecretSecretContent {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String content;
-        private String contentType;
-        private String name;
-        private String stage;
+        private @Nullable String content;
+        private @Nullable String contentType;
+        private @Nullable String name;
+        private @Nullable String stage;
         public Builder() {}
         public Builder(GetSecretsSecretSecretContent defaults) {
     	      Objects.requireNonNull(defaults);
@@ -59,23 +61,23 @@ public final class GetSecretsSecretSecretContent {
         }
 
         @CustomType.Setter
-        public Builder content(String content) {
-            this.content = Objects.requireNonNull(content);
+        public Builder content(@Nullable String content) {
+            this.content = content;
             return this;
         }
         @CustomType.Setter
-        public Builder contentType(String contentType) {
-            this.contentType = Objects.requireNonNull(contentType);
+        public Builder contentType(@Nullable String contentType) {
+            this.contentType = contentType;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder stage(String stage) {
-            this.stage = Objects.requireNonNull(stage);
+        public Builder stage(@Nullable String stage) {
+            this.stage = stage;
             return this;
         }
         public GetSecretsSecretSecretContent build() {

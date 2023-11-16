@@ -13,6 +13,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetNotebookSessionsNotebookSession {
@@ -20,183 +22,183 @@ public final class GetNotebookSessionsNotebookSession {
      * @return &lt;b&gt;Filter&lt;/b&gt; results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return &lt;b&gt;Filter&lt;/b&gt; results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the resource.
      * 
      */
-    private String createdBy;
+    private @Nullable String createdBy;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return &lt;b&gt;Filter&lt;/b&gt; results by its user-friendly name.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return &lt;b&gt;Filter&lt;/b&gt; results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resource type.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Details about the state of the notebook session.
      * 
      */
-    private String lifecycleDetails;
+    private @Nullable String lifecycleDetails;
     /**
      * @return Details for the notebook session configuration.
      * 
      */
-    private List<GetNotebookSessionsNotebookSessionNotebookSessionConfigDetail> notebookSessionConfigDetails;
+    private @Nullable List<GetNotebookSessionsNotebookSessionNotebookSessionConfigDetail> notebookSessionConfigDetails;
     /**
      * @return Details for the notebook session configuration.
      * 
      */
-    private List<GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetail> notebookSessionConfigurationDetails;
+    private @Nullable List<GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetail> notebookSessionConfigurationDetails;
     /**
      * @return Notebook Session runtime configuration details.
      * 
      */
-    private List<GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetail> notebookSessionRuntimeConfigDetails;
+    private @Nullable List<GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetail> notebookSessionRuntimeConfigDetails;
     /**
      * @return Collection of NotebookSessionStorageMountConfigurationDetails.
      * 
      */
-    private List<GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsList> notebookSessionStorageMountConfigurationDetailsLists;
+    private @Nullable List<GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsList> notebookSessionStorageMountConfigurationDetailsLists;
     /**
      * @return The URL to interact with the notebook session.
      * 
      */
-    private String notebookSessionUrl;
+    private @Nullable String notebookSessionUrl;
     /**
      * @return &lt;b&gt;Filter&lt;/b&gt; results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project.
      * 
      */
-    private String projectId;
+    private @Nullable String projectId;
     /**
      * @return &lt;b&gt;Filter&lt;/b&gt; results by the specified lifecycle state. Must be a valid state for the resource type.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
 
     private GetNotebookSessionsNotebookSession() {}
     /**
      * @return &lt;b&gt;Filter&lt;/b&gt; results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return &lt;b&gt;Filter&lt;/b&gt; results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the resource.
      * 
      */
-    public String createdBy() {
-        return this.createdBy;
+    public Optional<String> createdBy() {
+        return Optional.ofNullable(this.createdBy);
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return &lt;b&gt;Filter&lt;/b&gt; results by its user-friendly name.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return &lt;b&gt;Filter&lt;/b&gt; results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resource type.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Details about the state of the notebook session.
      * 
      */
-    public String lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Optional<String> lifecycleDetails() {
+        return Optional.ofNullable(this.lifecycleDetails);
     }
     /**
      * @return Details for the notebook session configuration.
      * 
      */
     public List<GetNotebookSessionsNotebookSessionNotebookSessionConfigDetail> notebookSessionConfigDetails() {
-        return this.notebookSessionConfigDetails;
+        return this.notebookSessionConfigDetails == null ? List.of() : this.notebookSessionConfigDetails;
     }
     /**
      * @return Details for the notebook session configuration.
      * 
      */
     public List<GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetail> notebookSessionConfigurationDetails() {
-        return this.notebookSessionConfigurationDetails;
+        return this.notebookSessionConfigurationDetails == null ? List.of() : this.notebookSessionConfigurationDetails;
     }
     /**
      * @return Notebook Session runtime configuration details.
      * 
      */
     public List<GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetail> notebookSessionRuntimeConfigDetails() {
-        return this.notebookSessionRuntimeConfigDetails;
+        return this.notebookSessionRuntimeConfigDetails == null ? List.of() : this.notebookSessionRuntimeConfigDetails;
     }
     /**
      * @return Collection of NotebookSessionStorageMountConfigurationDetails.
      * 
      */
     public List<GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsList> notebookSessionStorageMountConfigurationDetailsLists() {
-        return this.notebookSessionStorageMountConfigurationDetailsLists;
+        return this.notebookSessionStorageMountConfigurationDetailsLists == null ? List.of() : this.notebookSessionStorageMountConfigurationDetailsLists;
     }
     /**
      * @return The URL to interact with the notebook session.
      * 
      */
-    public String notebookSessionUrl() {
-        return this.notebookSessionUrl;
+    public Optional<String> notebookSessionUrl() {
+        return Optional.ofNullable(this.notebookSessionUrl);
     }
     /**
      * @return &lt;b&gt;Filter&lt;/b&gt; results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project.
      * 
      */
-    public String projectId() {
-        return this.projectId;
+    public Optional<String> projectId() {
+        return Optional.ofNullable(this.projectId);
     }
     /**
      * @return &lt;b&gt;Filter&lt;/b&gt; results by the specified lifecycle state. Must be a valid state for the resource type.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
 
     public static Builder builder() {
@@ -208,21 +210,21 @@ public final class GetNotebookSessionsNotebookSession {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String compartmentId;
-        private String createdBy;
-        private Map<String,Object> definedTags;
-        private String displayName;
-        private Map<String,Object> freeformTags;
-        private String id;
-        private String lifecycleDetails;
-        private List<GetNotebookSessionsNotebookSessionNotebookSessionConfigDetail> notebookSessionConfigDetails;
-        private List<GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetail> notebookSessionConfigurationDetails;
-        private List<GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetail> notebookSessionRuntimeConfigDetails;
-        private List<GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsList> notebookSessionStorageMountConfigurationDetailsLists;
-        private String notebookSessionUrl;
-        private String projectId;
-        private String state;
-        private String timeCreated;
+        private @Nullable String compartmentId;
+        private @Nullable String createdBy;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String displayName;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String id;
+        private @Nullable String lifecycleDetails;
+        private @Nullable List<GetNotebookSessionsNotebookSessionNotebookSessionConfigDetail> notebookSessionConfigDetails;
+        private @Nullable List<GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetail> notebookSessionConfigurationDetails;
+        private @Nullable List<GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetail> notebookSessionRuntimeConfigDetails;
+        private @Nullable List<GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsList> notebookSessionStorageMountConfigurationDetailsLists;
+        private @Nullable String notebookSessionUrl;
+        private @Nullable String projectId;
+        private @Nullable String state;
+        private @Nullable String timeCreated;
         public Builder() {}
         public Builder(GetNotebookSessionsNotebookSession defaults) {
     	      Objects.requireNonNull(defaults);
@@ -244,90 +246,90 @@ public final class GetNotebookSessionsNotebookSession {
         }
 
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder createdBy(String createdBy) {
-            this.createdBy = Objects.requireNonNull(createdBy);
+        public Builder createdBy(@Nullable String createdBy) {
+            this.createdBy = createdBy;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+        public Builder lifecycleDetails(@Nullable String lifecycleDetails) {
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
-        public Builder notebookSessionConfigDetails(List<GetNotebookSessionsNotebookSessionNotebookSessionConfigDetail> notebookSessionConfigDetails) {
-            this.notebookSessionConfigDetails = Objects.requireNonNull(notebookSessionConfigDetails);
+        public Builder notebookSessionConfigDetails(@Nullable List<GetNotebookSessionsNotebookSessionNotebookSessionConfigDetail> notebookSessionConfigDetails) {
+            this.notebookSessionConfigDetails = notebookSessionConfigDetails;
             return this;
         }
         public Builder notebookSessionConfigDetails(GetNotebookSessionsNotebookSessionNotebookSessionConfigDetail... notebookSessionConfigDetails) {
             return notebookSessionConfigDetails(List.of(notebookSessionConfigDetails));
         }
         @CustomType.Setter
-        public Builder notebookSessionConfigurationDetails(List<GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetail> notebookSessionConfigurationDetails) {
-            this.notebookSessionConfigurationDetails = Objects.requireNonNull(notebookSessionConfigurationDetails);
+        public Builder notebookSessionConfigurationDetails(@Nullable List<GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetail> notebookSessionConfigurationDetails) {
+            this.notebookSessionConfigurationDetails = notebookSessionConfigurationDetails;
             return this;
         }
         public Builder notebookSessionConfigurationDetails(GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetail... notebookSessionConfigurationDetails) {
             return notebookSessionConfigurationDetails(List.of(notebookSessionConfigurationDetails));
         }
         @CustomType.Setter
-        public Builder notebookSessionRuntimeConfigDetails(List<GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetail> notebookSessionRuntimeConfigDetails) {
-            this.notebookSessionRuntimeConfigDetails = Objects.requireNonNull(notebookSessionRuntimeConfigDetails);
+        public Builder notebookSessionRuntimeConfigDetails(@Nullable List<GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetail> notebookSessionRuntimeConfigDetails) {
+            this.notebookSessionRuntimeConfigDetails = notebookSessionRuntimeConfigDetails;
             return this;
         }
         public Builder notebookSessionRuntimeConfigDetails(GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetail... notebookSessionRuntimeConfigDetails) {
             return notebookSessionRuntimeConfigDetails(List.of(notebookSessionRuntimeConfigDetails));
         }
         @CustomType.Setter
-        public Builder notebookSessionStorageMountConfigurationDetailsLists(List<GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsList> notebookSessionStorageMountConfigurationDetailsLists) {
-            this.notebookSessionStorageMountConfigurationDetailsLists = Objects.requireNonNull(notebookSessionStorageMountConfigurationDetailsLists);
+        public Builder notebookSessionStorageMountConfigurationDetailsLists(@Nullable List<GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsList> notebookSessionStorageMountConfigurationDetailsLists) {
+            this.notebookSessionStorageMountConfigurationDetailsLists = notebookSessionStorageMountConfigurationDetailsLists;
             return this;
         }
         public Builder notebookSessionStorageMountConfigurationDetailsLists(GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsList... notebookSessionStorageMountConfigurationDetailsLists) {
             return notebookSessionStorageMountConfigurationDetailsLists(List.of(notebookSessionStorageMountConfigurationDetailsLists));
         }
         @CustomType.Setter
-        public Builder notebookSessionUrl(String notebookSessionUrl) {
-            this.notebookSessionUrl = Objects.requireNonNull(notebookSessionUrl);
+        public Builder notebookSessionUrl(@Nullable String notebookSessionUrl) {
+            this.notebookSessionUrl = notebookSessionUrl;
             return this;
         }
         @CustomType.Setter
-        public Builder projectId(String projectId) {
-            this.projectId = Objects.requireNonNull(projectId);
+        public Builder projectId(@Nullable String projectId) {
+            this.projectId = projectId;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         public GetNotebookSessionsNotebookSession build() {

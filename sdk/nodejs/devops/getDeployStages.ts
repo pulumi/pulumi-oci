@@ -82,7 +82,7 @@ export interface GetDeployStagesResult {
     /**
      * The list of deploy_stage_collection.
      */
-    readonly deployStageCollections: outputs.DevOps.GetDeployStagesDeployStageCollection[];
+    readonly deployStageCollections?: outputs.DevOps.GetDeployStagesDeployStageCollection[];
     /**
      * Deployment stage display name, which can be renamed and is not necessarily unique. Avoid entering confidential information.
      */

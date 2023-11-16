@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Auto Scaling Configuration resource in Oracle Cloud Infrastructure Auto Scaling service.
@@ -114,22 +113,22 @@ type AutoScalingConfiguration struct {
 	// (Updatable) For threshold-based autoscaling policies, this value is the minimum period of time to wait between scaling actions. The cooldown period gives the system time to stabilize before rescaling. The minimum value is 300 seconds, which is also the default. The cooldown period starts when the instance pool reaches the running state.
 	//
 	// For schedule-based autoscaling policies, this value is not used.
-	CoolDownInSeconds pulumi.IntOutput `pulumi:"coolDownInSeconds"`
+	CoolDownInSeconds pulumi.IntPtrOutput `pulumi:"coolDownInSeconds"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapOutput    `pulumi:"definedTags"`
-	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	DefinedTags pulumi.MapOutput       `pulumi:"definedTags"`
+	DisplayName pulumi.StringPtrOutput `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// Whether the autoscaling policy is enabled.
-	IsEnabled pulumi.BoolOutput `pulumi:"isEnabled"`
+	IsEnabled pulumi.BoolPtrOutput `pulumi:"isEnabled"`
 	// The maximum number of resources to scale out to.
-	MaxResourceCount pulumi.IntOutput `pulumi:"maxResourceCount"`
+	MaxResourceCount pulumi.IntPtrOutput `pulumi:"maxResourceCount"`
 	// The minimum number of resources to scale in to.
-	MinResourceCount pulumi.IntOutput `pulumi:"minResourceCount"`
+	MinResourceCount pulumi.IntPtrOutput `pulumi:"minResourceCount"`
 	// Autoscaling policy definitions for the autoscaling configuration. An autoscaling policy defines the criteria that trigger autoscaling actions and the actions to take.
 	Policies AutoScalingConfigurationPolicyArrayOutput `pulumi:"policies"`
 	// The date and time the autoscaling configuration was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 }
 
 // NewAutoScalingConfiguration registers a new resource with the given unique name, arguments, and options.
@@ -298,12 +297,6 @@ func (i *AutoScalingConfiguration) ToAutoScalingConfigurationOutputWithContext(c
 	return pulumi.ToOutputWithContext(ctx, i).(AutoScalingConfigurationOutput)
 }
 
-func (i *AutoScalingConfiguration) ToOutput(ctx context.Context) pulumix.Output[*AutoScalingConfiguration] {
-	return pulumix.Output[*AutoScalingConfiguration]{
-		OutputState: i.ToAutoScalingConfigurationOutputWithContext(ctx).OutputState,
-	}
-}
-
 // AutoScalingConfigurationArrayInput is an input type that accepts AutoScalingConfigurationArray and AutoScalingConfigurationArrayOutput values.
 // You can construct a concrete instance of `AutoScalingConfigurationArrayInput` via:
 //
@@ -327,12 +320,6 @@ func (i AutoScalingConfigurationArray) ToAutoScalingConfigurationArrayOutput() A
 
 func (i AutoScalingConfigurationArray) ToAutoScalingConfigurationArrayOutputWithContext(ctx context.Context) AutoScalingConfigurationArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(AutoScalingConfigurationArrayOutput)
-}
-
-func (i AutoScalingConfigurationArray) ToOutput(ctx context.Context) pulumix.Output[[]*AutoScalingConfiguration] {
-	return pulumix.Output[[]*AutoScalingConfiguration]{
-		OutputState: i.ToAutoScalingConfigurationArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // AutoScalingConfigurationMapInput is an input type that accepts AutoScalingConfigurationMap and AutoScalingConfigurationMapOutput values.
@@ -360,12 +347,6 @@ func (i AutoScalingConfigurationMap) ToAutoScalingConfigurationMapOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(AutoScalingConfigurationMapOutput)
 }
 
-func (i AutoScalingConfigurationMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*AutoScalingConfiguration] {
-	return pulumix.Output[map[string]*AutoScalingConfiguration]{
-		OutputState: i.ToAutoScalingConfigurationMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type AutoScalingConfigurationOutput struct{ *pulumi.OutputState }
 
 func (AutoScalingConfigurationOutput) ElementType() reflect.Type {
@@ -378,12 +359,6 @@ func (o AutoScalingConfigurationOutput) ToAutoScalingConfigurationOutput() AutoS
 
 func (o AutoScalingConfigurationOutput) ToAutoScalingConfigurationOutputWithContext(ctx context.Context) AutoScalingConfigurationOutput {
 	return o
-}
-
-func (o AutoScalingConfigurationOutput) ToOutput(ctx context.Context) pulumix.Output[*AutoScalingConfiguration] {
-	return pulumix.Output[*AutoScalingConfiguration]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A resource that is managed by an autoscaling configuration. The only supported type is `instancePool`.
@@ -403,8 +378,8 @@ func (o AutoScalingConfigurationOutput) CompartmentId() pulumi.StringOutput {
 // (Updatable) For threshold-based autoscaling policies, this value is the minimum period of time to wait between scaling actions. The cooldown period gives the system time to stabilize before rescaling. The minimum value is 300 seconds, which is also the default. The cooldown period starts when the instance pool reaches the running state.
 //
 // For schedule-based autoscaling policies, this value is not used.
-func (o AutoScalingConfigurationOutput) CoolDownInSeconds() pulumi.IntOutput {
-	return o.ApplyT(func(v *AutoScalingConfiguration) pulumi.IntOutput { return v.CoolDownInSeconds }).(pulumi.IntOutput)
+func (o AutoScalingConfigurationOutput) CoolDownInSeconds() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *AutoScalingConfiguration) pulumi.IntPtrOutput { return v.CoolDownInSeconds }).(pulumi.IntPtrOutput)
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -412,8 +387,8 @@ func (o AutoScalingConfigurationOutput) DefinedTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *AutoScalingConfiguration) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
 }
 
-func (o AutoScalingConfigurationOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v *AutoScalingConfiguration) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+func (o AutoScalingConfigurationOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AutoScalingConfiguration) pulumi.StringPtrOutput { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -422,18 +397,18 @@ func (o AutoScalingConfigurationOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // Whether the autoscaling policy is enabled.
-func (o AutoScalingConfigurationOutput) IsEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v *AutoScalingConfiguration) pulumi.BoolOutput { return v.IsEnabled }).(pulumi.BoolOutput)
+func (o AutoScalingConfigurationOutput) IsEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *AutoScalingConfiguration) pulumi.BoolPtrOutput { return v.IsEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // The maximum number of resources to scale out to.
-func (o AutoScalingConfigurationOutput) MaxResourceCount() pulumi.IntOutput {
-	return o.ApplyT(func(v *AutoScalingConfiguration) pulumi.IntOutput { return v.MaxResourceCount }).(pulumi.IntOutput)
+func (o AutoScalingConfigurationOutput) MaxResourceCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *AutoScalingConfiguration) pulumi.IntPtrOutput { return v.MaxResourceCount }).(pulumi.IntPtrOutput)
 }
 
 // The minimum number of resources to scale in to.
-func (o AutoScalingConfigurationOutput) MinResourceCount() pulumi.IntOutput {
-	return o.ApplyT(func(v *AutoScalingConfiguration) pulumi.IntOutput { return v.MinResourceCount }).(pulumi.IntOutput)
+func (o AutoScalingConfigurationOutput) MinResourceCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *AutoScalingConfiguration) pulumi.IntPtrOutput { return v.MinResourceCount }).(pulumi.IntPtrOutput)
 }
 
 // Autoscaling policy definitions for the autoscaling configuration. An autoscaling policy defines the criteria that trigger autoscaling actions and the actions to take.
@@ -442,8 +417,8 @@ func (o AutoScalingConfigurationOutput) Policies() AutoScalingConfigurationPolic
 }
 
 // The date and time the autoscaling configuration was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
-func (o AutoScalingConfigurationOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *AutoScalingConfiguration) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o AutoScalingConfigurationOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AutoScalingConfiguration) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 type AutoScalingConfigurationArrayOutput struct{ *pulumi.OutputState }
@@ -458,12 +433,6 @@ func (o AutoScalingConfigurationArrayOutput) ToAutoScalingConfigurationArrayOutp
 
 func (o AutoScalingConfigurationArrayOutput) ToAutoScalingConfigurationArrayOutputWithContext(ctx context.Context) AutoScalingConfigurationArrayOutput {
 	return o
-}
-
-func (o AutoScalingConfigurationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*AutoScalingConfiguration] {
-	return pulumix.Output[[]*AutoScalingConfiguration]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o AutoScalingConfigurationArrayOutput) Index(i pulumi.IntInput) AutoScalingConfigurationOutput {
@@ -484,12 +453,6 @@ func (o AutoScalingConfigurationMapOutput) ToAutoScalingConfigurationMapOutput()
 
 func (o AutoScalingConfigurationMapOutput) ToAutoScalingConfigurationMapOutputWithContext(ctx context.Context) AutoScalingConfigurationMapOutput {
 	return o
-}
-
-func (o AutoScalingConfigurationMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*AutoScalingConfiguration] {
-	return pulumix.Output[map[string]*AutoScalingConfiguration]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o AutoScalingConfigurationMapOutput) MapIndex(k pulumi.StringInput) AutoScalingConfigurationOutput {

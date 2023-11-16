@@ -58,7 +58,7 @@ namespace Pulumi.Oci.CloudGuard
         /// (Updatable) Identifies if Oracle managed resources will be created by customers. If no value is specified false is the default.
         /// </summary>
         [Output("selfManageResources")]
-        public Output<bool> SelfManageResources { get; private set; } = null!;
+        public Output<bool?> SelfManageResources { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Status of Cloud Guard Tenant

@@ -23,13 +23,13 @@ public final class GetEnrollmentStatusesResult {
      * @return The list of enrollment_status_collection.
      * 
      */
-    private List<GetEnrollmentStatusesEnrollmentStatusCollection> enrollmentStatusCollections;
+    private @Nullable List<GetEnrollmentStatusesEnrollmentStatusCollection> enrollmentStatusCollections;
     private @Nullable List<GetEnrollmentStatusesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The enrollment status&#39; current state.
      * 
@@ -54,7 +54,7 @@ public final class GetEnrollmentStatusesResult {
      * 
      */
     public List<GetEnrollmentStatusesEnrollmentStatusCollection> enrollmentStatusCollections() {
-        return this.enrollmentStatusCollections;
+        return this.enrollmentStatusCollections == null ? List.of() : this.enrollmentStatusCollections;
     }
     public List<GetEnrollmentStatusesFilter> filters() {
         return this.filters == null ? List.of() : this.filters;
@@ -63,8 +63,8 @@ public final class GetEnrollmentStatusesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The enrollment status&#39; current state.
@@ -91,9 +91,9 @@ public final class GetEnrollmentStatusesResult {
     @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
-        private List<GetEnrollmentStatusesEnrollmentStatusCollection> enrollmentStatusCollections;
+        private @Nullable List<GetEnrollmentStatusesEnrollmentStatusCollection> enrollmentStatusCollections;
         private @Nullable List<GetEnrollmentStatusesFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String state;
         private @Nullable String status;
         public Builder() {}
@@ -113,8 +113,8 @@ public final class GetEnrollmentStatusesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder enrollmentStatusCollections(List<GetEnrollmentStatusesEnrollmentStatusCollection> enrollmentStatusCollections) {
-            this.enrollmentStatusCollections = Objects.requireNonNull(enrollmentStatusCollections);
+        public Builder enrollmentStatusCollections(@Nullable List<GetEnrollmentStatusesEnrollmentStatusCollection> enrollmentStatusCollections) {
+            this.enrollmentStatusCollections = enrollmentStatusCollections;
             return this;
         }
         public Builder enrollmentStatusCollections(GetEnrollmentStatusesEnrollmentStatusCollection... enrollmentStatusCollections) {
@@ -129,8 +129,8 @@ public final class GetEnrollmentStatusesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

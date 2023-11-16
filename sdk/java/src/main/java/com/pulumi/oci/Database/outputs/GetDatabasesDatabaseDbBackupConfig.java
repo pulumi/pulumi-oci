@@ -10,6 +10,8 @@ import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDatabasesDatabaseDbBackupConfig {
@@ -17,99 +19,99 @@ public final class GetDatabasesDatabaseDbBackupConfig {
      * @return If set to true, configures automatic backups. If you previously used RMAN or dbcli to configure backups and then you switch to using the Console or the API for backups, a new backup configuration is created and associated with your database. This means that you can no longer rely on your previously configured unmanaged backups to work.
      * 
      */
-    private Boolean autoBackupEnabled;
+    private @Nullable Boolean autoBackupEnabled;
     /**
      * @return Time window selected for initiating automatic backup for the database system. There are twelve available two-hour time windows. If no option is selected, a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
      * 
      */
-    private String autoBackupWindow;
+    private @Nullable String autoBackupWindow;
     /**
      * @return Day of the week the full backup should be applied on the database system. If no option is selected, the value is null and we will default to Sunday.
      * 
      */
-    private String autoFullBackupDay;
+    private @Nullable String autoFullBackupDay;
     /**
      * @return Time window selected for initiating full backup for the database system. There are twelve available two-hour time windows. If no option is selected, the value is null and a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
      * 
      */
-    private String autoFullBackupWindow;
+    private @Nullable String autoFullBackupWindow;
     /**
      * @return This defines when the backups will be deleted. - IMMEDIATE option keep the backup for predefined time i.e 72 hours and then delete permanently... - RETAIN will keep the backups as per the policy defined for database backups.
      * 
      */
-    private String backupDeletionPolicy;
+    private @Nullable String backupDeletionPolicy;
     /**
      * @return Backup destination details.
      * 
      */
-    private List<GetDatabasesDatabaseDbBackupConfigBackupDestinationDetail> backupDestinationDetails;
+    private @Nullable List<GetDatabasesDatabaseDbBackupConfigBackupDestinationDetail> backupDestinationDetails;
     /**
      * @return Number of days between the current and the earliest point of recoverability covered by automatic backups. This value applies to automatic backups only. After a new automatic backup has been created, Oracle removes old automatic backups that are created before the window. When the value is updated, it is applied to all existing automatic backups.
      * 
      */
-    private Integer recoveryWindowInDays;
+    private @Nullable Integer recoveryWindowInDays;
     /**
      * @return If set to true, configures automatic full backups in the local region (the region of the DB system) for the first backup run immediately.
      * 
      */
-    private Boolean runImmediateFullBackup;
+    private @Nullable Boolean runImmediateFullBackup;
 
     private GetDatabasesDatabaseDbBackupConfig() {}
     /**
      * @return If set to true, configures automatic backups. If you previously used RMAN or dbcli to configure backups and then you switch to using the Console or the API for backups, a new backup configuration is created and associated with your database. This means that you can no longer rely on your previously configured unmanaged backups to work.
      * 
      */
-    public Boolean autoBackupEnabled() {
-        return this.autoBackupEnabled;
+    public Optional<Boolean> autoBackupEnabled() {
+        return Optional.ofNullable(this.autoBackupEnabled);
     }
     /**
      * @return Time window selected for initiating automatic backup for the database system. There are twelve available two-hour time windows. If no option is selected, a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
      * 
      */
-    public String autoBackupWindow() {
-        return this.autoBackupWindow;
+    public Optional<String> autoBackupWindow() {
+        return Optional.ofNullable(this.autoBackupWindow);
     }
     /**
      * @return Day of the week the full backup should be applied on the database system. If no option is selected, the value is null and we will default to Sunday.
      * 
      */
-    public String autoFullBackupDay() {
-        return this.autoFullBackupDay;
+    public Optional<String> autoFullBackupDay() {
+        return Optional.ofNullable(this.autoFullBackupDay);
     }
     /**
      * @return Time window selected for initiating full backup for the database system. There are twelve available two-hour time windows. If no option is selected, the value is null and a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
      * 
      */
-    public String autoFullBackupWindow() {
-        return this.autoFullBackupWindow;
+    public Optional<String> autoFullBackupWindow() {
+        return Optional.ofNullable(this.autoFullBackupWindow);
     }
     /**
      * @return This defines when the backups will be deleted. - IMMEDIATE option keep the backup for predefined time i.e 72 hours and then delete permanently... - RETAIN will keep the backups as per the policy defined for database backups.
      * 
      */
-    public String backupDeletionPolicy() {
-        return this.backupDeletionPolicy;
+    public Optional<String> backupDeletionPolicy() {
+        return Optional.ofNullable(this.backupDeletionPolicy);
     }
     /**
      * @return Backup destination details.
      * 
      */
     public List<GetDatabasesDatabaseDbBackupConfigBackupDestinationDetail> backupDestinationDetails() {
-        return this.backupDestinationDetails;
+        return this.backupDestinationDetails == null ? List.of() : this.backupDestinationDetails;
     }
     /**
      * @return Number of days between the current and the earliest point of recoverability covered by automatic backups. This value applies to automatic backups only. After a new automatic backup has been created, Oracle removes old automatic backups that are created before the window. When the value is updated, it is applied to all existing automatic backups.
      * 
      */
-    public Integer recoveryWindowInDays() {
-        return this.recoveryWindowInDays;
+    public Optional<Integer> recoveryWindowInDays() {
+        return Optional.ofNullable(this.recoveryWindowInDays);
     }
     /**
      * @return If set to true, configures automatic full backups in the local region (the region of the DB system) for the first backup run immediately.
      * 
      */
-    public Boolean runImmediateFullBackup() {
-        return this.runImmediateFullBackup;
+    public Optional<Boolean> runImmediateFullBackup() {
+        return Optional.ofNullable(this.runImmediateFullBackup);
     }
 
     public static Builder builder() {
@@ -121,14 +123,14 @@ public final class GetDatabasesDatabaseDbBackupConfig {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Boolean autoBackupEnabled;
-        private String autoBackupWindow;
-        private String autoFullBackupDay;
-        private String autoFullBackupWindow;
-        private String backupDeletionPolicy;
-        private List<GetDatabasesDatabaseDbBackupConfigBackupDestinationDetail> backupDestinationDetails;
-        private Integer recoveryWindowInDays;
-        private Boolean runImmediateFullBackup;
+        private @Nullable Boolean autoBackupEnabled;
+        private @Nullable String autoBackupWindow;
+        private @Nullable String autoFullBackupDay;
+        private @Nullable String autoFullBackupWindow;
+        private @Nullable String backupDeletionPolicy;
+        private @Nullable List<GetDatabasesDatabaseDbBackupConfigBackupDestinationDetail> backupDestinationDetails;
+        private @Nullable Integer recoveryWindowInDays;
+        private @Nullable Boolean runImmediateFullBackup;
         public Builder() {}
         public Builder(GetDatabasesDatabaseDbBackupConfig defaults) {
     	      Objects.requireNonNull(defaults);
@@ -143,46 +145,46 @@ public final class GetDatabasesDatabaseDbBackupConfig {
         }
 
         @CustomType.Setter
-        public Builder autoBackupEnabled(Boolean autoBackupEnabled) {
-            this.autoBackupEnabled = Objects.requireNonNull(autoBackupEnabled);
+        public Builder autoBackupEnabled(@Nullable Boolean autoBackupEnabled) {
+            this.autoBackupEnabled = autoBackupEnabled;
             return this;
         }
         @CustomType.Setter
-        public Builder autoBackupWindow(String autoBackupWindow) {
-            this.autoBackupWindow = Objects.requireNonNull(autoBackupWindow);
+        public Builder autoBackupWindow(@Nullable String autoBackupWindow) {
+            this.autoBackupWindow = autoBackupWindow;
             return this;
         }
         @CustomType.Setter
-        public Builder autoFullBackupDay(String autoFullBackupDay) {
-            this.autoFullBackupDay = Objects.requireNonNull(autoFullBackupDay);
+        public Builder autoFullBackupDay(@Nullable String autoFullBackupDay) {
+            this.autoFullBackupDay = autoFullBackupDay;
             return this;
         }
         @CustomType.Setter
-        public Builder autoFullBackupWindow(String autoFullBackupWindow) {
-            this.autoFullBackupWindow = Objects.requireNonNull(autoFullBackupWindow);
+        public Builder autoFullBackupWindow(@Nullable String autoFullBackupWindow) {
+            this.autoFullBackupWindow = autoFullBackupWindow;
             return this;
         }
         @CustomType.Setter
-        public Builder backupDeletionPolicy(String backupDeletionPolicy) {
-            this.backupDeletionPolicy = Objects.requireNonNull(backupDeletionPolicy);
+        public Builder backupDeletionPolicy(@Nullable String backupDeletionPolicy) {
+            this.backupDeletionPolicy = backupDeletionPolicy;
             return this;
         }
         @CustomType.Setter
-        public Builder backupDestinationDetails(List<GetDatabasesDatabaseDbBackupConfigBackupDestinationDetail> backupDestinationDetails) {
-            this.backupDestinationDetails = Objects.requireNonNull(backupDestinationDetails);
+        public Builder backupDestinationDetails(@Nullable List<GetDatabasesDatabaseDbBackupConfigBackupDestinationDetail> backupDestinationDetails) {
+            this.backupDestinationDetails = backupDestinationDetails;
             return this;
         }
         public Builder backupDestinationDetails(GetDatabasesDatabaseDbBackupConfigBackupDestinationDetail... backupDestinationDetails) {
             return backupDestinationDetails(List.of(backupDestinationDetails));
         }
         @CustomType.Setter
-        public Builder recoveryWindowInDays(Integer recoveryWindowInDays) {
-            this.recoveryWindowInDays = Objects.requireNonNull(recoveryWindowInDays);
+        public Builder recoveryWindowInDays(@Nullable Integer recoveryWindowInDays) {
+            this.recoveryWindowInDays = recoveryWindowInDays;
             return this;
         }
         @CustomType.Setter
-        public Builder runImmediateFullBackup(Boolean runImmediateFullBackup) {
-            this.runImmediateFullBackup = Objects.requireNonNull(runImmediateFullBackup);
+        public Builder runImmediateFullBackup(@Nullable Boolean runImmediateFullBackup) {
+            this.runImmediateFullBackup = runImmediateFullBackup;
             return this;
         }
         public GetDatabasesDatabaseDbBackupConfig build() {

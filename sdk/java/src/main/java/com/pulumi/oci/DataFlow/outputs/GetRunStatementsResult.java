@@ -19,7 +19,7 @@ public final class GetRunStatementsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The ID of a run.
      * 
@@ -34,7 +34,7 @@ public final class GetRunStatementsResult {
      * @return The list of statement_collection.
      * 
      */
-    private List<GetRunStatementsStatementCollection> statementCollections;
+    private @Nullable List<GetRunStatementsStatementCollection> statementCollections;
 
     private GetRunStatementsResult() {}
     public List<GetRunStatementsFilter> filters() {
@@ -44,8 +44,8 @@ public final class GetRunStatementsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The ID of a run.
@@ -66,7 +66,7 @@ public final class GetRunStatementsResult {
      * 
      */
     public List<GetRunStatementsStatementCollection> statementCollections() {
-        return this.statementCollections;
+        return this.statementCollections == null ? List.of() : this.statementCollections;
     }
 
     public static Builder builder() {
@@ -79,10 +79,10 @@ public final class GetRunStatementsResult {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable List<GetRunStatementsFilter> filters;
-        private String id;
+        private @Nullable String id;
         private String runId;
         private @Nullable String state;
-        private List<GetRunStatementsStatementCollection> statementCollections;
+        private @Nullable List<GetRunStatementsStatementCollection> statementCollections;
         public Builder() {}
         public Builder(GetRunStatementsResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -102,8 +102,8 @@ public final class GetRunStatementsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -117,8 +117,8 @@ public final class GetRunStatementsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder statementCollections(List<GetRunStatementsStatementCollection> statementCollections) {
-            this.statementCollections = Objects.requireNonNull(statementCollections);
+        public Builder statementCollections(@Nullable List<GetRunStatementsStatementCollection> statementCollections) {
+            this.statementCollections = statementCollections;
             return this;
         }
         public Builder statementCollections(GetRunStatementsStatementCollection... statementCollections) {

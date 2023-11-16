@@ -16,23 +16,23 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// <summary>
         /// Relevant section from CIS.
         /// </summary>
-        public readonly string Cis;
+        public readonly string? Cis;
         /// <summary>
         /// Relevant section from GDPR.
         /// </summary>
-        public readonly string Gdpr;
+        public readonly string? Gdpr;
         /// <summary>
         /// Relevant section from STIG.
         /// </summary>
-        public readonly string Stig;
+        public readonly string? Stig;
 
         [OutputConstructor]
         private GetSecurityAssessmentComparisonTargetDbConfigurationBaselineReferenceResult(
-            string cis,
+            string? cis,
 
-            string gdpr,
+            string? gdpr,
 
-            string stig)
+            string? stig)
         {
             Cis = cis;
             Gdpr = gdpr;

@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetConnectionsConnectionCollectionItemConnectDescriptor {
@@ -14,51 +16,51 @@ public final class GetConnectionsConnectionCollectionItemConnectDescriptor {
      * @return Connect string.
      * 
      */
-    private String connectString;
+    private @Nullable String connectString;
     /**
      * @return Database service name.
      * 
      */
-    private String databaseServiceName;
+    private @Nullable String databaseServiceName;
     /**
      * @return Name of the host the SSH key is valid for.
      * 
      */
-    private String host;
+    private @Nullable String host;
     /**
      * @return Port of the connect descriptor.
      * 
      */
-    private Integer port;
+    private @Nullable Integer port;
 
     private GetConnectionsConnectionCollectionItemConnectDescriptor() {}
     /**
      * @return Connect string.
      * 
      */
-    public String connectString() {
-        return this.connectString;
+    public Optional<String> connectString() {
+        return Optional.ofNullable(this.connectString);
     }
     /**
      * @return Database service name.
      * 
      */
-    public String databaseServiceName() {
-        return this.databaseServiceName;
+    public Optional<String> databaseServiceName() {
+        return Optional.ofNullable(this.databaseServiceName);
     }
     /**
      * @return Name of the host the SSH key is valid for.
      * 
      */
-    public String host() {
-        return this.host;
+    public Optional<String> host() {
+        return Optional.ofNullable(this.host);
     }
     /**
      * @return Port of the connect descriptor.
      * 
      */
-    public Integer port() {
-        return this.port;
+    public Optional<Integer> port() {
+        return Optional.ofNullable(this.port);
     }
 
     public static Builder builder() {
@@ -70,10 +72,10 @@ public final class GetConnectionsConnectionCollectionItemConnectDescriptor {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String connectString;
-        private String databaseServiceName;
-        private String host;
-        private Integer port;
+        private @Nullable String connectString;
+        private @Nullable String databaseServiceName;
+        private @Nullable String host;
+        private @Nullable Integer port;
         public Builder() {}
         public Builder(GetConnectionsConnectionCollectionItemConnectDescriptor defaults) {
     	      Objects.requireNonNull(defaults);
@@ -84,23 +86,23 @@ public final class GetConnectionsConnectionCollectionItemConnectDescriptor {
         }
 
         @CustomType.Setter
-        public Builder connectString(String connectString) {
-            this.connectString = Objects.requireNonNull(connectString);
+        public Builder connectString(@Nullable String connectString) {
+            this.connectString = connectString;
             return this;
         }
         @CustomType.Setter
-        public Builder databaseServiceName(String databaseServiceName) {
-            this.databaseServiceName = Objects.requireNonNull(databaseServiceName);
+        public Builder databaseServiceName(@Nullable String databaseServiceName) {
+            this.databaseServiceName = databaseServiceName;
             return this;
         }
         @CustomType.Setter
-        public Builder host(String host) {
-            this.host = Objects.requireNonNull(host);
+        public Builder host(@Nullable String host) {
+            this.host = host;
             return this;
         }
         @CustomType.Setter
-        public Builder port(Integer port) {
-            this.port = Objects.requireNonNull(port);
+        public Builder port(@Nullable Integer port) {
+            this.port = port;
             return this;
         }
         public GetConnectionsConnectionCollectionItemConnectDescriptor build() {

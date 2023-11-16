@@ -62,14 +62,11 @@ class GetSoftwareSourcePackageGroupsResult:
     @property
     @pulumi.getter(name="groupTypes")
     def group_types(self) -> Optional[Sequence[str]]:
-        """
-        Indicates if this is a group, category or environment.
-        """
         return pulumi.get(self, "group_types")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -78,9 +75,6 @@ class GetSoftwareSourcePackageGroupsResult:
     @property
     @pulumi.getter
     def name(self) -> Optional[str]:
-        """
-        Package group name.
-        """
         return pulumi.get(self, "name")
 
     @property
@@ -90,10 +84,7 @@ class GetSoftwareSourcePackageGroupsResult:
 
     @property
     @pulumi.getter(name="packageGroupCollections")
-    def package_group_collections(self) -> Sequence['outputs.GetSoftwareSourcePackageGroupsPackageGroupCollectionResult']:
-        """
-        The list of package_group_collection.
-        """
+    def package_group_collections(self) -> Optional[Sequence['outputs.GetSoftwareSourcePackageGroupsPackageGroupCollectionResult']]:
         return pulumi.get(self, "package_group_collections")
 
     @property
@@ -126,30 +117,7 @@ def get_software_source_package_groups(compartment_id: Optional[str] = None,
                                        software_source_id: Optional[str] = None,
                                        opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetSoftwareSourcePackageGroupsResult:
     """
-    This data source provides the list of Software Source Package Groups in Oracle Cloud Infrastructure Os Management Hub service.
-
-    Lists package groups that associate with the specified software source OCID. Filter the list against a
-    variety of criteria including but not limited to its name, and package group type.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_software_source_package_groups = oci.OsManagementHub.get_software_source_package_groups(software_source_id=oci_os_management_hub_software_source["test_software_source"]["id"],
-        compartment_id=var["compartment_id"],
-        group_types=var["software_source_package_group_group_type"],
-        name=var["software_source_package_group_name"],
-        name_contains=var["software_source_package_group_name_contains"])
-    ```
-
-
-    :param str compartment_id: The OCID of the compartment that contains the resources to list.
-    :param Sequence[str] group_types: A filter to return only package groups of the specified type.
-    :param str name: The name of the entity to be queried.
-    :param str name_contains: A filter to return resources that may partially match the name given.
-    :param str software_source_id: The software source OCID.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -181,29 +149,6 @@ def get_software_source_package_groups_output(compartment_id: Optional[pulumi.In
                                               software_source_id: Optional[pulumi.Input[str]] = None,
                                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSoftwareSourcePackageGroupsResult]:
     """
-    This data source provides the list of Software Source Package Groups in Oracle Cloud Infrastructure Os Management Hub service.
-
-    Lists package groups that associate with the specified software source OCID. Filter the list against a
-    variety of criteria including but not limited to its name, and package group type.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_software_source_package_groups = oci.OsManagementHub.get_software_source_package_groups(software_source_id=oci_os_management_hub_software_source["test_software_source"]["id"],
-        compartment_id=var["compartment_id"],
-        group_types=var["software_source_package_group_group_type"],
-        name=var["software_source_package_group_name"],
-        name_contains=var["software_source_package_group_name_contains"])
-    ```
-
-
-    :param str compartment_id: The OCID of the compartment that contains the resources to list.
-    :param Sequence[str] group_types: A filter to return only package groups of the specified type.
-    :param str name: The name of the entity to be queried.
-    :param str name_contains: A filter to return resources that may partially match the name given.
-    :param str software_source_id: The software source OCID.
+    Use this data source to access information about an existing resource.
     """
     ...

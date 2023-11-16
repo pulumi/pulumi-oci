@@ -102,7 +102,7 @@ export interface GetVtapsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Used to start or stop a `Vtap` resource.
      */
@@ -127,7 +127,7 @@ export interface GetVtapsResult {
     /**
      * The list of vtaps.
      */
-    readonly vtaps: outputs.Core.GetVtapsVtap[];
+    readonly vtaps?: outputs.Core.GetVtapsVtap[];
 }
 /**
  * This data source provides the list of Vtaps in Oracle Cloud Infrastructure Core service.

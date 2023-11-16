@@ -10,6 +10,8 @@ import com.pulumi.oci.AiLanguage.outputs.GetModelEvaluationResultMetric;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetModelEvaluationResult {
@@ -17,32 +19,32 @@ public final class GetModelEvaluationResult {
      * @return List of text classification metrics
      * 
      */
-    private List<GetModelEvaluationResultClassMetric> classMetrics;
+    private @Nullable List<GetModelEvaluationResultClassMetric> classMetrics;
     /**
      * @return class level confusion matrix
      * 
      */
-    private String confusionMatrix;
+    private @Nullable String confusionMatrix;
     /**
      * @return List of entity metrics
      * 
      */
-    private List<GetModelEvaluationResultEntityMetric> entityMetrics;
+    private @Nullable List<GetModelEvaluationResultEntityMetric> entityMetrics;
     /**
      * @return labels
      * 
      */
-    private List<String> labels;
+    private @Nullable List<String> labels;
     /**
      * @return Model level named entity recognition metrics
      * 
      */
-    private List<GetModelEvaluationResultMetric> metrics;
+    private @Nullable List<GetModelEvaluationResultMetric> metrics;
     /**
      * @return Model type
      * 
      */
-    private String modelType;
+    private @Nullable String modelType;
 
     private GetModelEvaluationResult() {}
     /**
@@ -50,42 +52,42 @@ public final class GetModelEvaluationResult {
      * 
      */
     public List<GetModelEvaluationResultClassMetric> classMetrics() {
-        return this.classMetrics;
+        return this.classMetrics == null ? List.of() : this.classMetrics;
     }
     /**
      * @return class level confusion matrix
      * 
      */
-    public String confusionMatrix() {
-        return this.confusionMatrix;
+    public Optional<String> confusionMatrix() {
+        return Optional.ofNullable(this.confusionMatrix);
     }
     /**
      * @return List of entity metrics
      * 
      */
     public List<GetModelEvaluationResultEntityMetric> entityMetrics() {
-        return this.entityMetrics;
+        return this.entityMetrics == null ? List.of() : this.entityMetrics;
     }
     /**
      * @return labels
      * 
      */
     public List<String> labels() {
-        return this.labels;
+        return this.labels == null ? List.of() : this.labels;
     }
     /**
      * @return Model level named entity recognition metrics
      * 
      */
     public List<GetModelEvaluationResultMetric> metrics() {
-        return this.metrics;
+        return this.metrics == null ? List.of() : this.metrics;
     }
     /**
      * @return Model type
      * 
      */
-    public String modelType() {
-        return this.modelType;
+    public Optional<String> modelType() {
+        return Optional.ofNullable(this.modelType);
     }
 
     public static Builder builder() {
@@ -97,12 +99,12 @@ public final class GetModelEvaluationResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetModelEvaluationResultClassMetric> classMetrics;
-        private String confusionMatrix;
-        private List<GetModelEvaluationResultEntityMetric> entityMetrics;
-        private List<String> labels;
-        private List<GetModelEvaluationResultMetric> metrics;
-        private String modelType;
+        private @Nullable List<GetModelEvaluationResultClassMetric> classMetrics;
+        private @Nullable String confusionMatrix;
+        private @Nullable List<GetModelEvaluationResultEntityMetric> entityMetrics;
+        private @Nullable List<String> labels;
+        private @Nullable List<GetModelEvaluationResultMetric> metrics;
+        private @Nullable String modelType;
         public Builder() {}
         public Builder(GetModelEvaluationResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -115,45 +117,45 @@ public final class GetModelEvaluationResult {
         }
 
         @CustomType.Setter
-        public Builder classMetrics(List<GetModelEvaluationResultClassMetric> classMetrics) {
-            this.classMetrics = Objects.requireNonNull(classMetrics);
+        public Builder classMetrics(@Nullable List<GetModelEvaluationResultClassMetric> classMetrics) {
+            this.classMetrics = classMetrics;
             return this;
         }
         public Builder classMetrics(GetModelEvaluationResultClassMetric... classMetrics) {
             return classMetrics(List.of(classMetrics));
         }
         @CustomType.Setter
-        public Builder confusionMatrix(String confusionMatrix) {
-            this.confusionMatrix = Objects.requireNonNull(confusionMatrix);
+        public Builder confusionMatrix(@Nullable String confusionMatrix) {
+            this.confusionMatrix = confusionMatrix;
             return this;
         }
         @CustomType.Setter
-        public Builder entityMetrics(List<GetModelEvaluationResultEntityMetric> entityMetrics) {
-            this.entityMetrics = Objects.requireNonNull(entityMetrics);
+        public Builder entityMetrics(@Nullable List<GetModelEvaluationResultEntityMetric> entityMetrics) {
+            this.entityMetrics = entityMetrics;
             return this;
         }
         public Builder entityMetrics(GetModelEvaluationResultEntityMetric... entityMetrics) {
             return entityMetrics(List.of(entityMetrics));
         }
         @CustomType.Setter
-        public Builder labels(List<String> labels) {
-            this.labels = Objects.requireNonNull(labels);
+        public Builder labels(@Nullable List<String> labels) {
+            this.labels = labels;
             return this;
         }
         public Builder labels(String... labels) {
             return labels(List.of(labels));
         }
         @CustomType.Setter
-        public Builder metrics(List<GetModelEvaluationResultMetric> metrics) {
-            this.metrics = Objects.requireNonNull(metrics);
+        public Builder metrics(@Nullable List<GetModelEvaluationResultMetric> metrics) {
+            this.metrics = metrics;
             return this;
         }
         public Builder metrics(GetModelEvaluationResultMetric... metrics) {
             return metrics(List.of(metrics));
         }
         @CustomType.Setter
-        public Builder modelType(String modelType) {
-            this.modelType = Objects.requireNonNull(modelType);
+        public Builder modelType(@Nullable String modelType) {
+            this.modelType = modelType;
             return this;
         }
         public GetModelEvaluationResult build() {

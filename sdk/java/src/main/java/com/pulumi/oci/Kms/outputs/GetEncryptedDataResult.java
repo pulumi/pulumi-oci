@@ -8,6 +8,7 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 @CustomType
@@ -17,13 +18,13 @@ public final class GetEncryptedDataResult {
      * @return The encrypted data.
      * 
      */
-    private String ciphertext;
+    private @Nullable String ciphertext;
     private String cryptoEndpoint;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private String keyId;
     private String plaintext;
 
@@ -35,8 +36,8 @@ public final class GetEncryptedDataResult {
      * @return The encrypted data.
      * 
      */
-    public String ciphertext() {
-        return this.ciphertext;
+    public Optional<String> ciphertext() {
+        return Optional.ofNullable(this.ciphertext);
     }
     public String cryptoEndpoint() {
         return this.cryptoEndpoint;
@@ -45,8 +46,8 @@ public final class GetEncryptedDataResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public String keyId() {
         return this.keyId;
@@ -65,9 +66,9 @@ public final class GetEncryptedDataResult {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable Map<String,Object> associatedData;
-        private String ciphertext;
+        private @Nullable String ciphertext;
         private String cryptoEndpoint;
-        private String id;
+        private @Nullable String id;
         private String keyId;
         private String plaintext;
         public Builder() {}
@@ -87,8 +88,8 @@ public final class GetEncryptedDataResult {
             return this;
         }
         @CustomType.Setter
-        public Builder ciphertext(String ciphertext) {
-            this.ciphertext = Objects.requireNonNull(ciphertext);
+        public Builder ciphertext(@Nullable String ciphertext) {
+            this.ciphertext = ciphertext;
             return this;
         }
         @CustomType.Setter
@@ -97,8 +98,8 @@ public final class GetEncryptedDataResult {
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

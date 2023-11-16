@@ -9,6 +9,7 @@ import com.pulumi.oci.Core.outputs.GetCpeDeviceShapesFilter;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 @CustomType
@@ -17,13 +18,13 @@ public final class GetCpeDeviceShapesResult {
      * @return The list of cpe_device_shapes.
      * 
      */
-    private List<GetCpeDeviceShapesCpeDeviceShape> cpeDeviceShapes;
+    private @Nullable List<GetCpeDeviceShapesCpeDeviceShape> cpeDeviceShapes;
     private @Nullable List<GetCpeDeviceShapesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
 
     private GetCpeDeviceShapesResult() {}
     /**
@@ -31,7 +32,7 @@ public final class GetCpeDeviceShapesResult {
      * 
      */
     public List<GetCpeDeviceShapesCpeDeviceShape> cpeDeviceShapes() {
-        return this.cpeDeviceShapes;
+        return this.cpeDeviceShapes == null ? List.of() : this.cpeDeviceShapes;
     }
     public List<GetCpeDeviceShapesFilter> filters() {
         return this.filters == null ? List.of() : this.filters;
@@ -40,8 +41,8 @@ public final class GetCpeDeviceShapesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
 
     public static Builder builder() {
@@ -53,9 +54,9 @@ public final class GetCpeDeviceShapesResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetCpeDeviceShapesCpeDeviceShape> cpeDeviceShapes;
+        private @Nullable List<GetCpeDeviceShapesCpeDeviceShape> cpeDeviceShapes;
         private @Nullable List<GetCpeDeviceShapesFilter> filters;
-        private String id;
+        private @Nullable String id;
         public Builder() {}
         public Builder(GetCpeDeviceShapesResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -65,8 +66,8 @@ public final class GetCpeDeviceShapesResult {
         }
 
         @CustomType.Setter
-        public Builder cpeDeviceShapes(List<GetCpeDeviceShapesCpeDeviceShape> cpeDeviceShapes) {
-            this.cpeDeviceShapes = Objects.requireNonNull(cpeDeviceShapes);
+        public Builder cpeDeviceShapes(@Nullable List<GetCpeDeviceShapesCpeDeviceShape> cpeDeviceShapes) {
+            this.cpeDeviceShapes = cpeDeviceShapes;
             return this;
         }
         public Builder cpeDeviceShapes(GetCpeDeviceShapesCpeDeviceShape... cpeDeviceShapes) {
@@ -81,8 +82,8 @@ public final class GetCpeDeviceShapesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         public GetCpeDeviceShapesResult build() {

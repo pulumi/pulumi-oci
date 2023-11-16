@@ -91,13 +91,13 @@ export interface GetManagedDatabaseAlertLogCountsResult {
     /**
      * The list of alert_log_counts_collection.
      */
-    readonly alertLogCountsCollections: outputs.DatabaseManagement.GetManagedDatabaseAlertLogCountsAlertLogCountsCollection[];
+    readonly alertLogCountsCollections?: outputs.DatabaseManagement.GetManagedDatabaseAlertLogCountsAlertLogCountsCollection[];
     readonly filters?: outputs.DatabaseManagement.GetManagedDatabaseAlertLogCountsFilter[];
     readonly groupBy?: string;
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly isRegularExpression?: boolean;
     readonly levelFilter?: string;
     readonly logSearchText?: string;

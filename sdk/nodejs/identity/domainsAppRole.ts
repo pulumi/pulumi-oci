@@ -59,7 +59,7 @@ export class DomainsAppRole extends pulumi.CustomResource {
      * * type: boolean
      * * uniqueness: none
      */
-    public readonly adminRole!: pulumi.Output<boolean>;
+    public readonly adminRole!: pulumi.Output<boolean | undefined>;
     /**
      * A unique identifier for the application that references this role.
      *
@@ -98,7 +98,7 @@ export class DomainsAppRole extends pulumi.CustomResource {
      * * type: boolean
      * * uniqueness: none
      */
-    public readonly availableToClients!: pulumi.Output<boolean>;
+    public readonly availableToClients!: pulumi.Output<boolean | undefined>;
     /**
      * If true, this AppRole can be granted to Groups.
      *
@@ -111,7 +111,7 @@ export class DomainsAppRole extends pulumi.CustomResource {
      * * type: boolean
      * * uniqueness: none
      */
-    public readonly availableToGroups!: pulumi.Output<boolean>;
+    public readonly availableToGroups!: pulumi.Output<boolean | undefined>;
     /**
      * If true, this AppRole can be granted to Users.
      *
@@ -124,7 +124,7 @@ export class DomainsAppRole extends pulumi.CustomResource {
      * * type: boolean
      * * uniqueness: none
      */
-    public readonly availableToUsers!: pulumi.Output<boolean>;
+    public readonly availableToUsers!: pulumi.Output<boolean | undefined>;
     /**
      * (Updatable) Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
      *
@@ -138,7 +138,7 @@ export class DomainsAppRole extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public /*out*/ readonly compartmentOcid!: pulumi.Output<string>;
+    public /*out*/ readonly compartmentOcid!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
      *
@@ -152,7 +152,7 @@ export class DomainsAppRole extends pulumi.CustomResource {
      * * type: boolean
      * * uniqueness: none
      */
-    public /*out*/ readonly deleteInProgress!: pulumi.Output<boolean>;
+    public /*out*/ readonly deleteInProgress!: pulumi.Output<boolean | undefined>;
     /**
      * AppRole description
      *
@@ -166,7 +166,7 @@ export class DomainsAppRole extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly description!: pulumi.Output<string>;
+    public readonly description!: pulumi.Output<string | undefined>;
     /**
      * AppRole name
      *
@@ -196,7 +196,7 @@ export class DomainsAppRole extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public /*out*/ readonly domainOcid!: pulumi.Output<string>;
+    public /*out*/ readonly domainOcid!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The User or App who created the Resource
      *
@@ -208,7 +208,7 @@ export class DomainsAppRole extends pulumi.CustomResource {
      * * returned: default
      * * type: complex
      */
-    public /*out*/ readonly idcsCreatedBies!: pulumi.Output<outputs.Identity.DomainsAppRoleIdcsCreatedBy[]>;
+    public /*out*/ readonly idcsCreatedBies!: pulumi.Output<outputs.Identity.DomainsAppRoleIdcsCreatedBy[] | undefined>;
     /**
      * The basic endpoint for the identity domain
      */
@@ -224,7 +224,7 @@ export class DomainsAppRole extends pulumi.CustomResource {
      * * returned: default
      * * type: complex
      */
-    public /*out*/ readonly idcsLastModifiedBies!: pulumi.Output<outputs.Identity.DomainsAppRoleIdcsLastModifiedBy[]>;
+    public /*out*/ readonly idcsLastModifiedBies!: pulumi.Output<outputs.Identity.DomainsAppRoleIdcsLastModifiedBy[] | undefined>;
     /**
      * (Updatable) The release number when the resource was upgraded.
      *
@@ -238,7 +238,7 @@ export class DomainsAppRole extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public /*out*/ readonly idcsLastUpgradedInRelease!: pulumi.Output<string>;
+    public /*out*/ readonly idcsLastUpgradedInRelease!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
      *
@@ -251,7 +251,7 @@ export class DomainsAppRole extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public /*out*/ readonly idcsPreventedOperations!: pulumi.Output<string[]>;
+    public /*out*/ readonly idcsPreventedOperations!: pulumi.Output<string[] | undefined>;
     /**
      * The name of the legacy group associated with this AppRole.
      *
@@ -265,7 +265,7 @@ export class DomainsAppRole extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: server
      */
-    public readonly legacyGroupName!: pulumi.Output<string>;
+    public readonly legacyGroupName!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) If true, indicates that this Oracle Identity Cloud Service AppRole can be granted to a delegated administrator whose scope is limited to users that are members of one or more groups.
      *
@@ -280,7 +280,7 @@ export class DomainsAppRole extends pulumi.CustomResource {
      * * type: boolean
      * * uniqueness: none
      */
-    public /*out*/ readonly limitedToOneOrMoreGroups!: pulumi.Output<boolean>;
+    public /*out*/ readonly limitedToOneOrMoreGroups!: pulumi.Output<boolean | undefined>;
     /**
      * (Updatable) AppRole localization name
      *
@@ -296,7 +296,7 @@ export class DomainsAppRole extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public /*out*/ readonly localizedDisplayName!: pulumi.Output<string>;
+    public /*out*/ readonly localizedDisplayName!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) AppRole members - when requesting members attribute, it is recommended to use startIndex and count to return members in pages instead of in a single response, eg : #attributes=members[startIndex=1%26count=10]
      *
@@ -312,7 +312,7 @@ export class DomainsAppRole extends pulumi.CustomResource {
      * * type: complex
      * * uniqueness: none
      */
-    public /*out*/ readonly members!: pulumi.Output<outputs.Identity.DomainsAppRoleMember[]>;
+    public /*out*/ readonly members!: pulumi.Output<outputs.Identity.DomainsAppRoleMember[] | undefined>;
     /**
      * (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
      *
@@ -326,7 +326,7 @@ export class DomainsAppRole extends pulumi.CustomResource {
      * * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
      * * type: complex
      */
-    public /*out*/ readonly metas!: pulumi.Output<outputs.Identity.DomainsAppRoleMeta[]>;
+    public /*out*/ readonly metas!: pulumi.Output<outputs.Identity.DomainsAppRoleMeta[] | undefined>;
     /**
      * Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
      *
@@ -340,7 +340,7 @@ export class DomainsAppRole extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: global
      */
-    public readonly ocid!: pulumi.Output<string>;
+    public readonly ocid!: pulumi.Output<string | undefined>;
     /**
      * If true, this AppRole is available automatically to every Oracle Identity Cloud Service User in this tenancy. There is no need to grant it to individual Users or Groups.
      *
@@ -353,7 +353,7 @@ export class DomainsAppRole extends pulumi.CustomResource {
      * * type: boolean
      * * uniqueness: none
      */
-    public readonly public!: pulumi.Output<boolean>;
+    public readonly public!: pulumi.Output<boolean | undefined>;
     /**
      * An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
      */
@@ -385,7 +385,7 @@ export class DomainsAppRole extends pulumi.CustomResource {
      * * type: complex
      * * uniqueness: none
      */
-    public readonly tags!: pulumi.Output<outputs.Identity.DomainsAppRoleTag[]>;
+    public readonly tags!: pulumi.Output<outputs.Identity.DomainsAppRoleTag[] | undefined>;
     /**
      * (Updatable) Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
      *
@@ -399,7 +399,7 @@ export class DomainsAppRole extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public /*out*/ readonly tenancyOcid!: pulumi.Output<string>;
+    public /*out*/ readonly tenancyOcid!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) AppRole unique name
      *
@@ -416,7 +416,7 @@ export class DomainsAppRole extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public /*out*/ readonly uniqueName!: pulumi.Output<string>;
+    public /*out*/ readonly uniqueName!: pulumi.Output<string | undefined>;
 
     /**
      * Create a DomainsAppRole resource with the given unique name, arguments, and options.

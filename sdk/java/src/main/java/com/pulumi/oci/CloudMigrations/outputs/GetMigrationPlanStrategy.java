@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Double;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetMigrationPlanStrategy {
@@ -14,75 +16,75 @@ public final class GetMigrationPlanStrategy {
      * @return The real resource usage is multiplied to this number before making any recommendation.
      * 
      */
-    private Double adjustmentMultiplier;
+    private @Nullable Double adjustmentMultiplier;
     /**
      * @return The current state of the migration plan.
      * 
      */
-    private String metricTimeWindow;
+    private @Nullable String metricTimeWindow;
     /**
      * @return The current state of the migration plan.
      * 
      */
-    private String metricType;
+    private @Nullable String metricType;
     /**
      * @return Percentile value
      * 
      */
-    private String percentile;
+    private @Nullable String percentile;
     /**
      * @return The type of resource.
      * 
      */
-    private String resourceType;
+    private @Nullable String resourceType;
     /**
      * @return The type of strategy used for migration.
      * 
      */
-    private String strategyType;
+    private @Nullable String strategyType;
 
     private GetMigrationPlanStrategy() {}
     /**
      * @return The real resource usage is multiplied to this number before making any recommendation.
      * 
      */
-    public Double adjustmentMultiplier() {
-        return this.adjustmentMultiplier;
+    public Optional<Double> adjustmentMultiplier() {
+        return Optional.ofNullable(this.adjustmentMultiplier);
     }
     /**
      * @return The current state of the migration plan.
      * 
      */
-    public String metricTimeWindow() {
-        return this.metricTimeWindow;
+    public Optional<String> metricTimeWindow() {
+        return Optional.ofNullable(this.metricTimeWindow);
     }
     /**
      * @return The current state of the migration plan.
      * 
      */
-    public String metricType() {
-        return this.metricType;
+    public Optional<String> metricType() {
+        return Optional.ofNullable(this.metricType);
     }
     /**
      * @return Percentile value
      * 
      */
-    public String percentile() {
-        return this.percentile;
+    public Optional<String> percentile() {
+        return Optional.ofNullable(this.percentile);
     }
     /**
      * @return The type of resource.
      * 
      */
-    public String resourceType() {
-        return this.resourceType;
+    public Optional<String> resourceType() {
+        return Optional.ofNullable(this.resourceType);
     }
     /**
      * @return The type of strategy used for migration.
      * 
      */
-    public String strategyType() {
-        return this.strategyType;
+    public Optional<String> strategyType() {
+        return Optional.ofNullable(this.strategyType);
     }
 
     public static Builder builder() {
@@ -94,12 +96,12 @@ public final class GetMigrationPlanStrategy {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Double adjustmentMultiplier;
-        private String metricTimeWindow;
-        private String metricType;
-        private String percentile;
-        private String resourceType;
-        private String strategyType;
+        private @Nullable Double adjustmentMultiplier;
+        private @Nullable String metricTimeWindow;
+        private @Nullable String metricType;
+        private @Nullable String percentile;
+        private @Nullable String resourceType;
+        private @Nullable String strategyType;
         public Builder() {}
         public Builder(GetMigrationPlanStrategy defaults) {
     	      Objects.requireNonNull(defaults);
@@ -112,33 +114,33 @@ public final class GetMigrationPlanStrategy {
         }
 
         @CustomType.Setter
-        public Builder adjustmentMultiplier(Double adjustmentMultiplier) {
-            this.adjustmentMultiplier = Objects.requireNonNull(adjustmentMultiplier);
+        public Builder adjustmentMultiplier(@Nullable Double adjustmentMultiplier) {
+            this.adjustmentMultiplier = adjustmentMultiplier;
             return this;
         }
         @CustomType.Setter
-        public Builder metricTimeWindow(String metricTimeWindow) {
-            this.metricTimeWindow = Objects.requireNonNull(metricTimeWindow);
+        public Builder metricTimeWindow(@Nullable String metricTimeWindow) {
+            this.metricTimeWindow = metricTimeWindow;
             return this;
         }
         @CustomType.Setter
-        public Builder metricType(String metricType) {
-            this.metricType = Objects.requireNonNull(metricType);
+        public Builder metricType(@Nullable String metricType) {
+            this.metricType = metricType;
             return this;
         }
         @CustomType.Setter
-        public Builder percentile(String percentile) {
-            this.percentile = Objects.requireNonNull(percentile);
+        public Builder percentile(@Nullable String percentile) {
+            this.percentile = percentile;
             return this;
         }
         @CustomType.Setter
-        public Builder resourceType(String resourceType) {
-            this.resourceType = Objects.requireNonNull(resourceType);
+        public Builder resourceType(@Nullable String resourceType) {
+            this.resourceType = resourceType;
             return this;
         }
         @CustomType.Setter
-        public Builder strategyType(String strategyType) {
-            this.strategyType = Objects.requireNonNull(strategyType);
+        public Builder strategyType(@Nullable String strategyType) {
+            this.strategyType = strategyType;
             return this;
         }
         public GetMigrationPlanStrategy build() {

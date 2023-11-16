@@ -16,23 +16,23 @@ namespace Pulumi.Oci.Marketplace.Outputs
         /// <summary>
         /// A description of the publisher.
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// The unique identifier for the publisher.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The name of the publisher.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
 
         [OutputConstructor]
         private GetPublishersPublisherResult(
-            string description,
+            string? description,
 
-            string id,
+            string? id,
 
-            string name)
+            string? name)
         {
             Description = description;
             Id = id;

@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Ui Password resource in Oracle Cloud Infrastructure Identity service.
@@ -60,13 +59,13 @@ type UiPassword struct {
 	pulumi.CustomResourceState
 
 	// The detailed status of INACTIVE lifecycleState.
-	InactiveStatus pulumi.StringOutput `pulumi:"inactiveStatus"`
+	InactiveStatus pulumi.StringPtrOutput `pulumi:"inactiveStatus"`
 	// The user's password for the Console.
-	Password pulumi.StringOutput `pulumi:"password"`
+	Password pulumi.StringPtrOutput `pulumi:"password"`
 	// The password's current state.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// Date and time the password was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The OCID of the user.
 	//
 	// ** IMPORTANT **
@@ -182,12 +181,6 @@ func (i *UiPassword) ToUiPasswordOutputWithContext(ctx context.Context) UiPasswo
 	return pulumi.ToOutputWithContext(ctx, i).(UiPasswordOutput)
 }
 
-func (i *UiPassword) ToOutput(ctx context.Context) pulumix.Output[*UiPassword] {
-	return pulumix.Output[*UiPassword]{
-		OutputState: i.ToUiPasswordOutputWithContext(ctx).OutputState,
-	}
-}
-
 // UiPasswordArrayInput is an input type that accepts UiPasswordArray and UiPasswordArrayOutput values.
 // You can construct a concrete instance of `UiPasswordArrayInput` via:
 //
@@ -211,12 +204,6 @@ func (i UiPasswordArray) ToUiPasswordArrayOutput() UiPasswordArrayOutput {
 
 func (i UiPasswordArray) ToUiPasswordArrayOutputWithContext(ctx context.Context) UiPasswordArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(UiPasswordArrayOutput)
-}
-
-func (i UiPasswordArray) ToOutput(ctx context.Context) pulumix.Output[[]*UiPassword] {
-	return pulumix.Output[[]*UiPassword]{
-		OutputState: i.ToUiPasswordArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // UiPasswordMapInput is an input type that accepts UiPasswordMap and UiPasswordMapOutput values.
@@ -244,12 +231,6 @@ func (i UiPasswordMap) ToUiPasswordMapOutputWithContext(ctx context.Context) UiP
 	return pulumi.ToOutputWithContext(ctx, i).(UiPasswordMapOutput)
 }
 
-func (i UiPasswordMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*UiPassword] {
-	return pulumix.Output[map[string]*UiPassword]{
-		OutputState: i.ToUiPasswordMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type UiPasswordOutput struct{ *pulumi.OutputState }
 
 func (UiPasswordOutput) ElementType() reflect.Type {
@@ -264,30 +245,24 @@ func (o UiPasswordOutput) ToUiPasswordOutputWithContext(ctx context.Context) UiP
 	return o
 }
 
-func (o UiPasswordOutput) ToOutput(ctx context.Context) pulumix.Output[*UiPassword] {
-	return pulumix.Output[*UiPassword]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The detailed status of INACTIVE lifecycleState.
-func (o UiPasswordOutput) InactiveStatus() pulumi.StringOutput {
-	return o.ApplyT(func(v *UiPassword) pulumi.StringOutput { return v.InactiveStatus }).(pulumi.StringOutput)
+func (o UiPasswordOutput) InactiveStatus() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *UiPassword) pulumi.StringPtrOutput { return v.InactiveStatus }).(pulumi.StringPtrOutput)
 }
 
 // The user's password for the Console.
-func (o UiPasswordOutput) Password() pulumi.StringOutput {
-	return o.ApplyT(func(v *UiPassword) pulumi.StringOutput { return v.Password }).(pulumi.StringOutput)
+func (o UiPasswordOutput) Password() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *UiPassword) pulumi.StringPtrOutput { return v.Password }).(pulumi.StringPtrOutput)
 }
 
 // The password's current state.
-func (o UiPasswordOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *UiPassword) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o UiPasswordOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *UiPassword) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Date and time the password was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
-func (o UiPasswordOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *UiPassword) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o UiPasswordOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *UiPassword) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the user.
@@ -312,12 +287,6 @@ func (o UiPasswordArrayOutput) ToUiPasswordArrayOutputWithContext(ctx context.Co
 	return o
 }
 
-func (o UiPasswordArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*UiPassword] {
-	return pulumix.Output[[]*UiPassword]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o UiPasswordArrayOutput) Index(i pulumi.IntInput) UiPasswordOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *UiPassword {
 		return vs[0].([]*UiPassword)[vs[1].(int)]
@@ -336,12 +305,6 @@ func (o UiPasswordMapOutput) ToUiPasswordMapOutput() UiPasswordMapOutput {
 
 func (o UiPasswordMapOutput) ToUiPasswordMapOutputWithContext(ctx context.Context) UiPasswordMapOutput {
 	return o
-}
-
-func (o UiPasswordMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*UiPassword] {
-	return pulumix.Output[map[string]*UiPassword]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o UiPasswordMapOutput) MapIndex(k pulumi.StringInput) UiPasswordOutput {

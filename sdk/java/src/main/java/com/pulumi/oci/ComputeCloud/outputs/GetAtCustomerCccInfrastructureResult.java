@@ -12,6 +12,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAtCustomerCccInfrastructureResult {
@@ -20,107 +22,107 @@ public final class GetAtCustomerCccInfrastructureResult {
      * @return Schedule used for upgrades. If no schedule is associated with the infrastructure, it can be updated at any time.
      * 
      */
-    private String cccUpgradeScheduleId;
+    private @Nullable String cccUpgradeScheduleId;
     /**
      * @return The infrastructure compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return A message describing the current connection state in more detail.
      * 
      */
-    private String connectionDetails;
+    private @Nullable String connectionDetails;
     /**
      * @return The current connection state of the infrastructure. A user can only update it from REQUEST to READY or from any state back to REJECT. The system automatically handles the REJECT to REQUEST, READY to CONNECTED, or CONNECTED to DISCONNECTED transitions.
      * 
      */
-    private String connectionState;
+    private @Nullable String connectionState;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return A mutable client-meaningful text description of the Compute Cloud@Customer infrastructure. Avoid entering confidential information.
      * 
      */
-    private String description;
+    private @Nullable String description;
     /**
      * @return The name that will be used to display the Compute Cloud@Customer infrastructure in the Oracle Cloud Infrastructure console. Does not have to be unique and can be changed. Avoid entering confidential information.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return The Compute Cloud@Customer infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). This cannot be changed once created.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Inventory for a Compute Cloud@Customer infrastructure. This information cannot be updated and is from the infrastructure. The information will only be available after the connectionState is transitioned to CONNECTED.
      * 
      */
-    private List<GetAtCustomerCccInfrastructureInfrastructureInventory> infrastructureInventories;
+    private @Nullable List<GetAtCustomerCccInfrastructureInfrastructureInventory> infrastructureInventories;
     /**
      * @return Configuration information for the Compute Cloud@Customer infrastructure. This  network configuration information cannot be updated and is retrieved from the data center. The information will only be available after the connectionState is transitioned to CONNECTED.
      * 
      */
-    private List<GetAtCustomerCccInfrastructureInfrastructureNetworkConfiguration> infrastructureNetworkConfigurations;
+    private @Nullable List<GetAtCustomerCccInfrastructureInfrastructureNetworkConfiguration> infrastructureNetworkConfigurations;
     /**
      * @return A message describing the current lifecycle state in more detail. For example, this can be used to provide actionable information for a resource that is in a Failed state.
      * 
      */
-    private String lifecycleDetails;
+    private @Nullable String lifecycleDetails;
     /**
      * @return Fingerprint of a Compute Cloud@Customer infrastructure in a data center generated during the initial connection to this resource. The fingerprint should be verified by the administrator when changing the connectionState from REQUEST to READY.
      * 
      */
-    private String provisioningFingerprint;
+    private @Nullable String provisioningFingerprint;
     /**
      * @return Code that is required for service personnel to connect a Compute Cloud@Customer infrastructure in a data center to this resource. This code will only be available when the connectionState is REJECT (usually at create time of the Compute Cloud@Customer infrastructure).
      * 
      */
-    private String provisioningPin;
+    private @Nullable String provisioningPin;
     /**
      * @return The Compute Cloud@Customer infrastructure short name. This cannot be changed once created. The short name is used to refer to the infrastructure in several contexts and is unique.
      * 
      */
-    private String shortName;
+    private @Nullable String shortName;
     /**
      * @return The current state of the Compute Cloud@Customer infrastructure.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network subnet that is used to communicate with Compute Cloud@Customer infrastructure.
      * 
      */
-    private String subnetId;
+    private @Nullable String subnetId;
     /**
      * @return System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    private Map<String,Object> systemTags;
+    private @Nullable Map<String,Object> systemTags;
     /**
      * @return Compute Cloud@Customer infrastructure creation date and time, using an RFC3339 formatted datetime string.
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return Compute Cloud@Customer infrastructure updated date and time, using an RFC3339 formatted datetime string.
      * 
      */
-    private String timeUpdated;
+    private @Nullable String timeUpdated;
     /**
      * @return Upgrade information that relates to a Compute Cloud@Customer infrastructure. This information cannot be updated.
      * 
      */
-    private List<GetAtCustomerCccInfrastructureUpgradeInformation> upgradeInformations;
+    private @Nullable List<GetAtCustomerCccInfrastructureUpgradeInformation> upgradeInformations;
 
     private GetAtCustomerCccInfrastructureResult() {}
     public String cccInfrastructureId() {
@@ -130,148 +132,148 @@ public final class GetAtCustomerCccInfrastructureResult {
      * @return Schedule used for upgrades. If no schedule is associated with the infrastructure, it can be updated at any time.
      * 
      */
-    public String cccUpgradeScheduleId() {
-        return this.cccUpgradeScheduleId;
+    public Optional<String> cccUpgradeScheduleId() {
+        return Optional.ofNullable(this.cccUpgradeScheduleId);
     }
     /**
      * @return The infrastructure compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return A message describing the current connection state in more detail.
      * 
      */
-    public String connectionDetails() {
-        return this.connectionDetails;
+    public Optional<String> connectionDetails() {
+        return Optional.ofNullable(this.connectionDetails);
     }
     /**
      * @return The current connection state of the infrastructure. A user can only update it from REQUEST to READY or from any state back to REJECT. The system automatically handles the REJECT to REQUEST, READY to CONNECTED, or CONNECTED to DISCONNECTED transitions.
      * 
      */
-    public String connectionState() {
-        return this.connectionState;
+    public Optional<String> connectionState() {
+        return Optional.ofNullable(this.connectionState);
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return A mutable client-meaningful text description of the Compute Cloud@Customer infrastructure. Avoid entering confidential information.
      * 
      */
-    public String description() {
-        return this.description;
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
     /**
      * @return The name that will be used to display the Compute Cloud@Customer infrastructure in the Oracle Cloud Infrastructure console. Does not have to be unique and can be changed. Avoid entering confidential information.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return The Compute Cloud@Customer infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). This cannot be changed once created.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Inventory for a Compute Cloud@Customer infrastructure. This information cannot be updated and is from the infrastructure. The information will only be available after the connectionState is transitioned to CONNECTED.
      * 
      */
     public List<GetAtCustomerCccInfrastructureInfrastructureInventory> infrastructureInventories() {
-        return this.infrastructureInventories;
+        return this.infrastructureInventories == null ? List.of() : this.infrastructureInventories;
     }
     /**
      * @return Configuration information for the Compute Cloud@Customer infrastructure. This  network configuration information cannot be updated and is retrieved from the data center. The information will only be available after the connectionState is transitioned to CONNECTED.
      * 
      */
     public List<GetAtCustomerCccInfrastructureInfrastructureNetworkConfiguration> infrastructureNetworkConfigurations() {
-        return this.infrastructureNetworkConfigurations;
+        return this.infrastructureNetworkConfigurations == null ? List.of() : this.infrastructureNetworkConfigurations;
     }
     /**
      * @return A message describing the current lifecycle state in more detail. For example, this can be used to provide actionable information for a resource that is in a Failed state.
      * 
      */
-    public String lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Optional<String> lifecycleDetails() {
+        return Optional.ofNullable(this.lifecycleDetails);
     }
     /**
      * @return Fingerprint of a Compute Cloud@Customer infrastructure in a data center generated during the initial connection to this resource. The fingerprint should be verified by the administrator when changing the connectionState from REQUEST to READY.
      * 
      */
-    public String provisioningFingerprint() {
-        return this.provisioningFingerprint;
+    public Optional<String> provisioningFingerprint() {
+        return Optional.ofNullable(this.provisioningFingerprint);
     }
     /**
      * @return Code that is required for service personnel to connect a Compute Cloud@Customer infrastructure in a data center to this resource. This code will only be available when the connectionState is REJECT (usually at create time of the Compute Cloud@Customer infrastructure).
      * 
      */
-    public String provisioningPin() {
-        return this.provisioningPin;
+    public Optional<String> provisioningPin() {
+        return Optional.ofNullable(this.provisioningPin);
     }
     /**
      * @return The Compute Cloud@Customer infrastructure short name. This cannot be changed once created. The short name is used to refer to the infrastructure in several contexts and is unique.
      * 
      */
-    public String shortName() {
-        return this.shortName;
+    public Optional<String> shortName() {
+        return Optional.ofNullable(this.shortName);
     }
     /**
      * @return The current state of the Compute Cloud@Customer infrastructure.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network subnet that is used to communicate with Compute Cloud@Customer infrastructure.
      * 
      */
-    public String subnetId() {
-        return this.subnetId;
+    public Optional<String> subnetId() {
+        return Optional.ofNullable(this.subnetId);
     }
     /**
      * @return System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
     public Map<String,Object> systemTags() {
-        return this.systemTags;
+        return this.systemTags == null ? Map.of() : this.systemTags;
     }
     /**
      * @return Compute Cloud@Customer infrastructure creation date and time, using an RFC3339 formatted datetime string.
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return Compute Cloud@Customer infrastructure updated date and time, using an RFC3339 formatted datetime string.
      * 
      */
-    public String timeUpdated() {
-        return this.timeUpdated;
+    public Optional<String> timeUpdated() {
+        return Optional.ofNullable(this.timeUpdated);
     }
     /**
      * @return Upgrade information that relates to a Compute Cloud@Customer infrastructure. This information cannot be updated.
      * 
      */
     public List<GetAtCustomerCccInfrastructureUpgradeInformation> upgradeInformations() {
-        return this.upgradeInformations;
+        return this.upgradeInformations == null ? List.of() : this.upgradeInformations;
     }
 
     public static Builder builder() {
@@ -284,27 +286,27 @@ public final class GetAtCustomerCccInfrastructureResult {
     @CustomType.Builder
     public static final class Builder {
         private String cccInfrastructureId;
-        private String cccUpgradeScheduleId;
-        private String compartmentId;
-        private String connectionDetails;
-        private String connectionState;
-        private Map<String,Object> definedTags;
-        private String description;
-        private String displayName;
-        private Map<String,Object> freeformTags;
-        private String id;
-        private List<GetAtCustomerCccInfrastructureInfrastructureInventory> infrastructureInventories;
-        private List<GetAtCustomerCccInfrastructureInfrastructureNetworkConfiguration> infrastructureNetworkConfigurations;
-        private String lifecycleDetails;
-        private String provisioningFingerprint;
-        private String provisioningPin;
-        private String shortName;
-        private String state;
-        private String subnetId;
-        private Map<String,Object> systemTags;
-        private String timeCreated;
-        private String timeUpdated;
-        private List<GetAtCustomerCccInfrastructureUpgradeInformation> upgradeInformations;
+        private @Nullable String cccUpgradeScheduleId;
+        private @Nullable String compartmentId;
+        private @Nullable String connectionDetails;
+        private @Nullable String connectionState;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String description;
+        private @Nullable String displayName;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String id;
+        private @Nullable List<GetAtCustomerCccInfrastructureInfrastructureInventory> infrastructureInventories;
+        private @Nullable List<GetAtCustomerCccInfrastructureInfrastructureNetworkConfiguration> infrastructureNetworkConfigurations;
+        private @Nullable String lifecycleDetails;
+        private @Nullable String provisioningFingerprint;
+        private @Nullable String provisioningPin;
+        private @Nullable String shortName;
+        private @Nullable String state;
+        private @Nullable String subnetId;
+        private @Nullable Map<String,Object> systemTags;
+        private @Nullable String timeCreated;
+        private @Nullable String timeUpdated;
+        private @Nullable List<GetAtCustomerCccInfrastructureUpgradeInformation> upgradeInformations;
         public Builder() {}
         public Builder(GetAtCustomerCccInfrastructureResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -338,114 +340,114 @@ public final class GetAtCustomerCccInfrastructureResult {
             return this;
         }
         @CustomType.Setter
-        public Builder cccUpgradeScheduleId(String cccUpgradeScheduleId) {
-            this.cccUpgradeScheduleId = Objects.requireNonNull(cccUpgradeScheduleId);
+        public Builder cccUpgradeScheduleId(@Nullable String cccUpgradeScheduleId) {
+            this.cccUpgradeScheduleId = cccUpgradeScheduleId;
             return this;
         }
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder connectionDetails(String connectionDetails) {
-            this.connectionDetails = Objects.requireNonNull(connectionDetails);
+        public Builder connectionDetails(@Nullable String connectionDetails) {
+            this.connectionDetails = connectionDetails;
             return this;
         }
         @CustomType.Setter
-        public Builder connectionState(String connectionState) {
-            this.connectionState = Objects.requireNonNull(connectionState);
+        public Builder connectionState(@Nullable String connectionState) {
+            this.connectionState = connectionState;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+        public Builder description(@Nullable String description) {
+            this.description = description;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder infrastructureInventories(List<GetAtCustomerCccInfrastructureInfrastructureInventory> infrastructureInventories) {
-            this.infrastructureInventories = Objects.requireNonNull(infrastructureInventories);
+        public Builder infrastructureInventories(@Nullable List<GetAtCustomerCccInfrastructureInfrastructureInventory> infrastructureInventories) {
+            this.infrastructureInventories = infrastructureInventories;
             return this;
         }
         public Builder infrastructureInventories(GetAtCustomerCccInfrastructureInfrastructureInventory... infrastructureInventories) {
             return infrastructureInventories(List.of(infrastructureInventories));
         }
         @CustomType.Setter
-        public Builder infrastructureNetworkConfigurations(List<GetAtCustomerCccInfrastructureInfrastructureNetworkConfiguration> infrastructureNetworkConfigurations) {
-            this.infrastructureNetworkConfigurations = Objects.requireNonNull(infrastructureNetworkConfigurations);
+        public Builder infrastructureNetworkConfigurations(@Nullable List<GetAtCustomerCccInfrastructureInfrastructureNetworkConfiguration> infrastructureNetworkConfigurations) {
+            this.infrastructureNetworkConfigurations = infrastructureNetworkConfigurations;
             return this;
         }
         public Builder infrastructureNetworkConfigurations(GetAtCustomerCccInfrastructureInfrastructureNetworkConfiguration... infrastructureNetworkConfigurations) {
             return infrastructureNetworkConfigurations(List.of(infrastructureNetworkConfigurations));
         }
         @CustomType.Setter
-        public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+        public Builder lifecycleDetails(@Nullable String lifecycleDetails) {
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
-        public Builder provisioningFingerprint(String provisioningFingerprint) {
-            this.provisioningFingerprint = Objects.requireNonNull(provisioningFingerprint);
+        public Builder provisioningFingerprint(@Nullable String provisioningFingerprint) {
+            this.provisioningFingerprint = provisioningFingerprint;
             return this;
         }
         @CustomType.Setter
-        public Builder provisioningPin(String provisioningPin) {
-            this.provisioningPin = Objects.requireNonNull(provisioningPin);
+        public Builder provisioningPin(@Nullable String provisioningPin) {
+            this.provisioningPin = provisioningPin;
             return this;
         }
         @CustomType.Setter
-        public Builder shortName(String shortName) {
-            this.shortName = Objects.requireNonNull(shortName);
+        public Builder shortName(@Nullable String shortName) {
+            this.shortName = shortName;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder subnetId(String subnetId) {
-            this.subnetId = Objects.requireNonNull(subnetId);
+        public Builder subnetId(@Nullable String subnetId) {
+            this.subnetId = subnetId;
             return this;
         }
         @CustomType.Setter
-        public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+        public Builder systemTags(@Nullable Map<String,Object> systemTags) {
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+        public Builder timeUpdated(@Nullable String timeUpdated) {
+            this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter
-        public Builder upgradeInformations(List<GetAtCustomerCccInfrastructureUpgradeInformation> upgradeInformations) {
-            this.upgradeInformations = Objects.requireNonNull(upgradeInformations);
+        public Builder upgradeInformations(@Nullable List<GetAtCustomerCccInfrastructureUpgradeInformation> upgradeInformations) {
+            this.upgradeInformations = upgradeInformations;
             return this;
         }
         public Builder upgradeInformations(GetAtCustomerCccInfrastructureUpgradeInformation... upgradeInformations) {

@@ -62,39 +62,27 @@ class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionResult:
 
     @property
     @pulumi.getter
-    def databases(self) -> Sequence['outputs.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionDatabaseResult']:
-        """
-        The summary of the Managed Database resource.
-        """
+    def databases(self) -> Optional[Sequence['outputs.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionDatabaseResult']]:
         return pulumi.get(self, "databases")
 
     @property
     @pulumi.getter(name="errorMessage")
-    def error_message(self) -> str:
-        """
-        The errors in the Optimizer Statistics Advisor execution, if any.
-        """
+    def error_message(self) -> Optional[str]:
         return pulumi.get(self, "error_message")
 
     @property
     @pulumi.getter(name="executionName")
     def execution_name(self) -> str:
-        """
-        The name of the Optimizer Statistics Advisor execution.
-        """
         return pulumi.get(self, "execution_name")
 
     @property
     @pulumi.getter
-    def findings(self) -> int:
-        """
-        The list of findings for the rule.
-        """
+    def findings(self) -> Optional[int]:
         return pulumi.get(self, "findings")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -107,50 +95,32 @@ class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionResult:
 
     @property
     @pulumi.getter
-    def reports(self) -> Sequence['outputs.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportResult']:
-        """
-        A report that includes the rules, findings, recommendations, and actions discovered during the execution of the Optimizer Statistics Advisor.
-        """
+    def reports(self) -> Optional[Sequence['outputs.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportResult']]:
         return pulumi.get(self, "reports")
 
     @property
     @pulumi.getter
-    def status(self) -> str:
-        """
-        The status of the Optimizer Statistics Advisor execution.
-        """
+    def status(self) -> Optional[str]:
         return pulumi.get(self, "status")
 
     @property
     @pulumi.getter(name="statusMessage")
-    def status_message(self) -> str:
-        """
-        The Optimizer Statistics Advisor execution status message, if any.
-        """
+    def status_message(self) -> Optional[str]:
         return pulumi.get(self, "status_message")
 
     @property
     @pulumi.getter(name="taskName")
     def task_name(self) -> str:
-        """
-        The name of the Optimizer Statistics Advisor task.
-        """
         return pulumi.get(self, "task_name")
 
     @property
     @pulumi.getter(name="timeEnd")
-    def time_end(self) -> str:
-        """
-        The end time of the time range to retrieve the Optimizer Statistics Advisor execution of a Managed Database in UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
-        """
+    def time_end(self) -> Optional[str]:
         return pulumi.get(self, "time_end")
 
     @property
     @pulumi.getter(name="timeStart")
-    def time_start(self) -> str:
-        """
-        The start time of the time range to retrieve the Optimizer Statistics Advisor execution of a Managed Database in UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
-        """
+    def time_start(self) -> Optional[str]:
         return pulumi.get(self, "time_start")
 
 
@@ -179,26 +149,7 @@ def get_managed_database_optimizer_statistics_advisor_execution(execution_name: 
                                                                 task_name: Optional[str] = None,
                                                                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetManagedDatabaseOptimizerStatisticsAdvisorExecutionResult:
     """
-    This data source provides details about a specific Managed Database Optimizer Statistics Advisor Execution resource in Oracle Cloud Infrastructure Database Management service.
-
-    Gets a comprehensive report of the Optimizer Statistics Advisor execution, which includes details of the
-    Managed Database, findings, recommendations, rationale, and examples.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_managed_database_optimizer_statistics_advisor_execution = oci.DatabaseManagement.get_managed_database_optimizer_statistics_advisor_execution(execution_name=var["managed_database_optimizer_statistics_advisor_execution_execution_name"],
-        managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"],
-        task_name=var["managed_database_optimizer_statistics_advisor_execution_task_name"])
-    ```
-
-
-    :param str execution_name: The name of the Optimizer Statistics Advisor execution.
-    :param str managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
-    :param str task_name: The name of the optimizer statistics collection execution task.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['executionName'] = execution_name
@@ -228,25 +179,6 @@ def get_managed_database_optimizer_statistics_advisor_execution_output(execution
                                                                        task_name: Optional[pulumi.Input[str]] = None,
                                                                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetManagedDatabaseOptimizerStatisticsAdvisorExecutionResult]:
     """
-    This data source provides details about a specific Managed Database Optimizer Statistics Advisor Execution resource in Oracle Cloud Infrastructure Database Management service.
-
-    Gets a comprehensive report of the Optimizer Statistics Advisor execution, which includes details of the
-    Managed Database, findings, recommendations, rationale, and examples.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_managed_database_optimizer_statistics_advisor_execution = oci.DatabaseManagement.get_managed_database_optimizer_statistics_advisor_execution(execution_name=var["managed_database_optimizer_statistics_advisor_execution_execution_name"],
-        managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"],
-        task_name=var["managed_database_optimizer_statistics_advisor_execution_task_name"])
-    ```
-
-
-    :param str execution_name: The name of the Optimizer Statistics Advisor execution.
-    :param str managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
-    :param str task_name: The name of the optimizer statistics collection execution task.
+    Use this data source to access information about an existing resource.
     """
     ...

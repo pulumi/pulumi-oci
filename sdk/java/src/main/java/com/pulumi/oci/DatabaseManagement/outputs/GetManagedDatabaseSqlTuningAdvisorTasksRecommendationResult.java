@@ -8,6 +8,8 @@ import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabaseSqlTuningAdvi
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetManagedDatabaseSqlTuningAdvisorTasksRecommendationResult {
@@ -16,12 +18,12 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksRecommendationResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return A list of SQL Tuning Advisor recommendations.
      * 
      */
-    private List<GetManagedDatabaseSqlTuningAdvisorTasksRecommendationItem> items;
+    private @Nullable List<GetManagedDatabaseSqlTuningAdvisorTasksRecommendationItem> items;
     private String managedDatabaseId;
     private String sqlObjectId;
     /**
@@ -38,15 +40,15 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksRecommendationResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return A list of SQL Tuning Advisor recommendations.
      * 
      */
     public List<GetManagedDatabaseSqlTuningAdvisorTasksRecommendationItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
     public String managedDatabaseId() {
         return this.managedDatabaseId;
@@ -72,8 +74,8 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksRecommendationResult {
     @CustomType.Builder
     public static final class Builder {
         private String executionId;
-        private String id;
-        private List<GetManagedDatabaseSqlTuningAdvisorTasksRecommendationItem> items;
+        private @Nullable String id;
+        private @Nullable List<GetManagedDatabaseSqlTuningAdvisorTasksRecommendationItem> items;
         private String managedDatabaseId;
         private String sqlObjectId;
         private String sqlTuningAdvisorTaskId;
@@ -94,13 +96,13 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksRecommendationResult {
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder items(List<GetManagedDatabaseSqlTuningAdvisorTasksRecommendationItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetManagedDatabaseSqlTuningAdvisorTasksRecommendationItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetManagedDatabaseSqlTuningAdvisorTasksRecommendationItem... items) {

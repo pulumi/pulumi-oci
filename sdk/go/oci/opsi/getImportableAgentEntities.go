@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Importable Agent Entities in Oracle Cloud Infrastructure Opsi service.
@@ -65,7 +64,7 @@ type GetImportableAgentEntitiesArgs struct {
 type GetImportableAgentEntitiesResult struct {
 	CompartmentId string `pulumi:"compartmentId"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Array of importable agent entity objects.
 	Items []GetImportableAgentEntitiesItem `pulumi:"items"`
 }
@@ -108,19 +107,13 @@ func (o GetImportableAgentEntitiesResultOutput) ToGetImportableAgentEntitiesResu
 	return o
 }
 
-func (o GetImportableAgentEntitiesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetImportableAgentEntitiesResult] {
-	return pulumix.Output[GetImportableAgentEntitiesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetImportableAgentEntitiesResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetImportableAgentEntitiesResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetImportableAgentEntitiesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetImportableAgentEntitiesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetImportableAgentEntitiesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetImportableAgentEntitiesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Array of importable agent entity objects.

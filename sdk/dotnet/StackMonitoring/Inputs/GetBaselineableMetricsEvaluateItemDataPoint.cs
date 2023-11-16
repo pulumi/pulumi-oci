@@ -15,32 +15,32 @@ namespace Pulumi.Oci.StackMonitoring.Inputs
         /// <summary>
         /// if the value is anomaly or not 0 indicates not an anomaly -1 indicates value is below the threshold +1 indicates value is above the threshold
         /// </summary>
-        [Input("anomaly", required: true)]
-        public double Anomaly { get; set; }
+        [Input("anomaly")]
+        public double? Anomaly { get; set; }
 
         /// <summary>
         /// upper threshold for the metric value
         /// </summary>
-        [Input("high", required: true)]
-        public double High { get; set; }
+        [Input("high")]
+        public double? High { get; set; }
 
         /// <summary>
         /// lower threshold for the metric value
         /// </summary>
-        [Input("low", required: true)]
-        public double Low { get; set; }
+        [Input("low")]
+        public double? Low { get; set; }
 
         /// <summary>
         /// timestamp of when the metric was collected
         /// </summary>
-        [Input("timestamp", required: true)]
-        public string Timestamp { get; set; } = null!;
+        [Input("timestamp")]
+        public string? Timestamp { get; set; }
 
         /// <summary>
         /// value for the metric data point
         /// </summary>
-        [Input("value", required: true)]
-        public double Value { get; set; }
+        [Input("value")]
+        public double? Value { get; set; }
 
         public GetBaselineableMetricsEvaluateItemDataPointArgs()
         {

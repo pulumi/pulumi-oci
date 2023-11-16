@@ -24,22 +24,6 @@ class BackendArgs:
                  weight: Optional[pulumi.Input[int]] = None):
         """
         The set of arguments for constructing a Backend resource.
-        :param pulumi.Input[str] backendset_name: The name of the backend set to add the backend server to.  Example: `example_backend_set`
-        :param pulumi.Input[str] ip_address: The IP address of the backend server.  Example: `10.0.0.3`
-        :param pulumi.Input[str] load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer associated with the backend set and servers.
-        :param pulumi.Input[int] port: The communication port for the backend server.  Example: `8080`
-        :param pulumi.Input[bool] backup: (Updatable) Whether the load balancer should treat this server as a backup unit. If `true`, the load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as "backup" fail the health check policy.
-               
-               **Note:** You cannot add a backend server marked as `backup` to a backend set that uses the IP Hash policy.
-               
-               Example: `false`
-        :param pulumi.Input[bool] drain: (Updatable) Whether the load balancer should drain this server. Servers marked "drain" receive no new incoming traffic.  Example: `false`
-        :param pulumi.Input[bool] offline: (Updatable) Whether the load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
-        :param pulumi.Input[int] weight: (Updatable) The load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives 3 times the number of new connections as a server weighted '1'. For more information on load balancing policies, see [How Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm).  Example: `3` 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "backendset_name", backendset_name)
         pulumi.set(__self__, "ip_address", ip_address)
@@ -57,9 +41,6 @@ class BackendArgs:
     @property
     @pulumi.getter(name="backendsetName")
     def backendset_name(self) -> pulumi.Input[str]:
-        """
-        The name of the backend set to add the backend server to.  Example: `example_backend_set`
-        """
         return pulumi.get(self, "backendset_name")
 
     @backendset_name.setter
@@ -69,9 +50,6 @@ class BackendArgs:
     @property
     @pulumi.getter(name="ipAddress")
     def ip_address(self) -> pulumi.Input[str]:
-        """
-        The IP address of the backend server.  Example: `10.0.0.3`
-        """
         return pulumi.get(self, "ip_address")
 
     @ip_address.setter
@@ -81,9 +59,6 @@ class BackendArgs:
     @property
     @pulumi.getter(name="loadBalancerId")
     def load_balancer_id(self) -> pulumi.Input[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer associated with the backend set and servers.
-        """
         return pulumi.get(self, "load_balancer_id")
 
     @load_balancer_id.setter
@@ -93,9 +68,6 @@ class BackendArgs:
     @property
     @pulumi.getter
     def port(self) -> pulumi.Input[int]:
-        """
-        The communication port for the backend server.  Example: `8080`
-        """
         return pulumi.get(self, "port")
 
     @port.setter
@@ -105,13 +77,6 @@ class BackendArgs:
     @property
     @pulumi.getter
     def backup(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Whether the load balancer should treat this server as a backup unit. If `true`, the load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as "backup" fail the health check policy.
-
-        **Note:** You cannot add a backend server marked as `backup` to a backend set that uses the IP Hash policy.
-
-        Example: `false`
-        """
         return pulumi.get(self, "backup")
 
     @backup.setter
@@ -121,9 +86,6 @@ class BackendArgs:
     @property
     @pulumi.getter
     def drain(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Whether the load balancer should drain this server. Servers marked "drain" receive no new incoming traffic.  Example: `false`
-        """
         return pulumi.get(self, "drain")
 
     @drain.setter
@@ -133,9 +95,6 @@ class BackendArgs:
     @property
     @pulumi.getter
     def offline(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Whether the load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
-        """
         return pulumi.get(self, "offline")
 
     @offline.setter
@@ -145,13 +104,6 @@ class BackendArgs:
     @property
     @pulumi.getter
     def weight(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) The load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives 3 times the number of new connections as a server weighted '1'. For more information on load balancing policies, see [How Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm).  Example: `3` 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "weight")
 
     @weight.setter
@@ -174,23 +126,6 @@ class _BackendState:
                  weight: Optional[pulumi.Input[int]] = None):
         """
         Input properties used for looking up and filtering Backend resources.
-        :param pulumi.Input[str] backendset_name: The name of the backend set to add the backend server to.  Example: `example_backend_set`
-        :param pulumi.Input[bool] backup: (Updatable) Whether the load balancer should treat this server as a backup unit. If `true`, the load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as "backup" fail the health check policy.
-               
-               **Note:** You cannot add a backend server marked as `backup` to a backend set that uses the IP Hash policy.
-               
-               Example: `false`
-        :param pulumi.Input[bool] drain: (Updatable) Whether the load balancer should drain this server. Servers marked "drain" receive no new incoming traffic.  Example: `false`
-        :param pulumi.Input[str] ip_address: The IP address of the backend server.  Example: `10.0.0.3`
-        :param pulumi.Input[str] load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer associated with the backend set and servers.
-        :param pulumi.Input[str] name: A read-only field showing the IP address and port that uniquely identify this backend server in the backend set.  Example: `10.0.0.3:8080`
-        :param pulumi.Input[bool] offline: (Updatable) Whether the load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
-        :param pulumi.Input[int] port: The communication port for the backend server.  Example: `8080`
-        :param pulumi.Input[int] weight: (Updatable) The load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives 3 times the number of new connections as a server weighted '1'. For more information on load balancing policies, see [How Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm).  Example: `3` 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if backendset_name is not None:
             pulumi.set(__self__, "backendset_name", backendset_name)
@@ -216,9 +151,6 @@ class _BackendState:
     @property
     @pulumi.getter(name="backendsetName")
     def backendset_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The name of the backend set to add the backend server to.  Example: `example_backend_set`
-        """
         return pulumi.get(self, "backendset_name")
 
     @backendset_name.setter
@@ -228,13 +160,6 @@ class _BackendState:
     @property
     @pulumi.getter
     def backup(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Whether the load balancer should treat this server as a backup unit. If `true`, the load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as "backup" fail the health check policy.
-
-        **Note:** You cannot add a backend server marked as `backup` to a backend set that uses the IP Hash policy.
-
-        Example: `false`
-        """
         return pulumi.get(self, "backup")
 
     @backup.setter
@@ -244,9 +169,6 @@ class _BackendState:
     @property
     @pulumi.getter
     def drain(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Whether the load balancer should drain this server. Servers marked "drain" receive no new incoming traffic.  Example: `false`
-        """
         return pulumi.get(self, "drain")
 
     @drain.setter
@@ -256,9 +178,6 @@ class _BackendState:
     @property
     @pulumi.getter(name="ipAddress")
     def ip_address(self) -> Optional[pulumi.Input[str]]:
-        """
-        The IP address of the backend server.  Example: `10.0.0.3`
-        """
         return pulumi.get(self, "ip_address")
 
     @ip_address.setter
@@ -268,9 +187,6 @@ class _BackendState:
     @property
     @pulumi.getter(name="loadBalancerId")
     def load_balancer_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer associated with the backend set and servers.
-        """
         return pulumi.get(self, "load_balancer_id")
 
     @load_balancer_id.setter
@@ -280,9 +196,6 @@ class _BackendState:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        A read-only field showing the IP address and port that uniquely identify this backend server in the backend set.  Example: `10.0.0.3:8080`
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -292,9 +205,6 @@ class _BackendState:
     @property
     @pulumi.getter
     def offline(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Whether the load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
-        """
         return pulumi.get(self, "offline")
 
     @offline.setter
@@ -304,9 +214,6 @@ class _BackendState:
     @property
     @pulumi.getter
     def port(self) -> Optional[pulumi.Input[int]]:
-        """
-        The communication port for the backend server.  Example: `8080`
-        """
         return pulumi.get(self, "port")
 
     @port.setter
@@ -325,13 +232,6 @@ class _BackendState:
     @property
     @pulumi.getter
     def weight(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) The load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives 3 times the number of new connections as a server weighted '1'. For more information on load balancing policies, see [How Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm).  Example: `3` 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "weight")
 
     @weight.setter
@@ -354,53 +254,9 @@ class Backend(pulumi.CustomResource):
                  weight: Optional[pulumi.Input[int]] = None,
                  __props__=None):
         """
-        This resource provides the Backend resource in Oracle Cloud Infrastructure Load Balancer service.
-
-        Adds a backend server to a backend set.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_backend = oci.load_balancer.Backend("testBackend",
-            backendset_name=oci_load_balancer_backend_set["test_backend_set"]["name"],
-            ip_address=var["backend_ip_address"],
-            load_balancer_id=oci_load_balancer_load_balancer["test_load_balancer"]["id"],
-            port=var["backend_port"],
-            backup=var["backend_backup"],
-            drain=var["backend_drain"],
-            offline=var["backend_offline"],
-            weight=var["backend_weight"])
-        ```
-
-        ## Import
-
-        Backends can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:LoadBalancer/backend:Backend test_backend "loadBalancers/{loadBalancerId}/backendSets/{backendSetName}/backends/{backendName}"
-        ```
-
+        Create a Backend resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] backendset_name: The name of the backend set to add the backend server to.  Example: `example_backend_set`
-        :param pulumi.Input[bool] backup: (Updatable) Whether the load balancer should treat this server as a backup unit. If `true`, the load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as "backup" fail the health check policy.
-               
-               **Note:** You cannot add a backend server marked as `backup` to a backend set that uses the IP Hash policy.
-               
-               Example: `false`
-        :param pulumi.Input[bool] drain: (Updatable) Whether the load balancer should drain this server. Servers marked "drain" receive no new incoming traffic.  Example: `false`
-        :param pulumi.Input[str] ip_address: The IP address of the backend server.  Example: `10.0.0.3`
-        :param pulumi.Input[str] load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer associated with the backend set and servers.
-        :param pulumi.Input[bool] offline: (Updatable) Whether the load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
-        :param pulumi.Input[int] port: The communication port for the backend server.  Example: `8080`
-        :param pulumi.Input[int] weight: (Updatable) The load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives 3 times the number of new connections as a server weighted '1'. For more information on load balancing policies, see [How Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm).  Example: `3` 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -409,35 +265,7 @@ class Backend(pulumi.CustomResource):
                  args: BackendArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Backend resource in Oracle Cloud Infrastructure Load Balancer service.
-
-        Adds a backend server to a backend set.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_backend = oci.load_balancer.Backend("testBackend",
-            backendset_name=oci_load_balancer_backend_set["test_backend_set"]["name"],
-            ip_address=var["backend_ip_address"],
-            load_balancer_id=oci_load_balancer_load_balancer["test_load_balancer"]["id"],
-            port=var["backend_port"],
-            backup=var["backend_backup"],
-            drain=var["backend_drain"],
-            offline=var["backend_offline"],
-            weight=var["backend_weight"])
-        ```
-
-        ## Import
-
-        Backends can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:LoadBalancer/backend:Backend test_backend "loadBalancers/{loadBalancerId}/backendSets/{backendSetName}/backends/{backendName}"
-        ```
-
+        Create a Backend resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param BackendArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -515,23 +343,6 @@ class Backend(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] backendset_name: The name of the backend set to add the backend server to.  Example: `example_backend_set`
-        :param pulumi.Input[bool] backup: (Updatable) Whether the load balancer should treat this server as a backup unit. If `true`, the load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as "backup" fail the health check policy.
-               
-               **Note:** You cannot add a backend server marked as `backup` to a backend set that uses the IP Hash policy.
-               
-               Example: `false`
-        :param pulumi.Input[bool] drain: (Updatable) Whether the load balancer should drain this server. Servers marked "drain" receive no new incoming traffic.  Example: `false`
-        :param pulumi.Input[str] ip_address: The IP address of the backend server.  Example: `10.0.0.3`
-        :param pulumi.Input[str] load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer associated with the backend set and servers.
-        :param pulumi.Input[str] name: A read-only field showing the IP address and port that uniquely identify this backend server in the backend set.  Example: `10.0.0.3:8080`
-        :param pulumi.Input[bool] offline: (Updatable) Whether the load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
-        :param pulumi.Input[int] port: The communication port for the backend server.  Example: `8080`
-        :param pulumi.Input[int] weight: (Updatable) The load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives 3 times the number of new connections as a server weighted '1'. For more information on load balancing policies, see [How Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm).  Example: `3` 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -552,85 +363,50 @@ class Backend(pulumi.CustomResource):
     @property
     @pulumi.getter(name="backendsetName")
     def backendset_name(self) -> pulumi.Output[str]:
-        """
-        The name of the backend set to add the backend server to.  Example: `example_backend_set`
-        """
         return pulumi.get(self, "backendset_name")
 
     @property
     @pulumi.getter
     def backup(self) -> pulumi.Output[Optional[bool]]:
-        """
-        (Updatable) Whether the load balancer should treat this server as a backup unit. If `true`, the load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as "backup" fail the health check policy.
-
-        **Note:** You cannot add a backend server marked as `backup` to a backend set that uses the IP Hash policy.
-
-        Example: `false`
-        """
         return pulumi.get(self, "backup")
 
     @property
     @pulumi.getter
-    def drain(self) -> pulumi.Output[bool]:
-        """
-        (Updatable) Whether the load balancer should drain this server. Servers marked "drain" receive no new incoming traffic.  Example: `false`
-        """
+    def drain(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "drain")
 
     @property
     @pulumi.getter(name="ipAddress")
     def ip_address(self) -> pulumi.Output[str]:
-        """
-        The IP address of the backend server.  Example: `10.0.0.3`
-        """
         return pulumi.get(self, "ip_address")
 
     @property
     @pulumi.getter(name="loadBalancerId")
     def load_balancer_id(self) -> pulumi.Output[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer associated with the backend set and servers.
-        """
         return pulumi.get(self, "load_balancer_id")
 
     @property
     @pulumi.getter
-    def name(self) -> pulumi.Output[str]:
-        """
-        A read-only field showing the IP address and port that uniquely identify this backend server in the backend set.  Example: `10.0.0.3:8080`
-        """
+    def name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
-    def offline(self) -> pulumi.Output[bool]:
-        """
-        (Updatable) Whether the load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
-        """
+    def offline(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "offline")
 
     @property
     @pulumi.getter
     def port(self) -> pulumi.Output[int]:
-        """
-        The communication port for the backend server.  Example: `8080`
-        """
         return pulumi.get(self, "port")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter
-    def weight(self) -> pulumi.Output[int]:
-        """
-        (Updatable) The load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives 3 times the number of new connections as a server weighted '1'. For more information on load balancing policies, see [How Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm).  Example: `3` 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
+    def weight(self) -> pulumi.Output[Optional[int]]:
         return pulumi.get(self, "weight")
 

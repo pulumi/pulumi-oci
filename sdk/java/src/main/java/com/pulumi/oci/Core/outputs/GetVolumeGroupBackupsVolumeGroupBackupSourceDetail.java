@@ -6,22 +6,24 @@ package com.pulumi.oci.Core.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetVolumeGroupBackupsVolumeGroupBackupSourceDetail {
-    private String kmsKeyId;
-    private String region;
-    private String volumeGroupBackupId;
+    private @Nullable String kmsKeyId;
+    private @Nullable String region;
+    private @Nullable String volumeGroupBackupId;
 
     private GetVolumeGroupBackupsVolumeGroupBackupSourceDetail() {}
-    public String kmsKeyId() {
-        return this.kmsKeyId;
+    public Optional<String> kmsKeyId() {
+        return Optional.ofNullable(this.kmsKeyId);
     }
-    public String region() {
-        return this.region;
+    public Optional<String> region() {
+        return Optional.ofNullable(this.region);
     }
-    public String volumeGroupBackupId() {
-        return this.volumeGroupBackupId;
+    public Optional<String> volumeGroupBackupId() {
+        return Optional.ofNullable(this.volumeGroupBackupId);
     }
 
     public static Builder builder() {
@@ -33,9 +35,9 @@ public final class GetVolumeGroupBackupsVolumeGroupBackupSourceDetail {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String kmsKeyId;
-        private String region;
-        private String volumeGroupBackupId;
+        private @Nullable String kmsKeyId;
+        private @Nullable String region;
+        private @Nullable String volumeGroupBackupId;
         public Builder() {}
         public Builder(GetVolumeGroupBackupsVolumeGroupBackupSourceDetail defaults) {
     	      Objects.requireNonNull(defaults);
@@ -45,18 +47,18 @@ public final class GetVolumeGroupBackupsVolumeGroupBackupSourceDetail {
         }
 
         @CustomType.Setter
-        public Builder kmsKeyId(String kmsKeyId) {
-            this.kmsKeyId = Objects.requireNonNull(kmsKeyId);
+        public Builder kmsKeyId(@Nullable String kmsKeyId) {
+            this.kmsKeyId = kmsKeyId;
             return this;
         }
         @CustomType.Setter
-        public Builder region(String region) {
-            this.region = Objects.requireNonNull(region);
+        public Builder region(@Nullable String region) {
+            this.region = region;
             return this;
         }
         @CustomType.Setter
-        public Builder volumeGroupBackupId(String volumeGroupBackupId) {
-            this.volumeGroupBackupId = Objects.requireNonNull(volumeGroupBackupId);
+        public Builder volumeGroupBackupId(@Nullable String volumeGroupBackupId) {
+            this.volumeGroupBackupId = volumeGroupBackupId;
             return this;
         }
         public GetVolumeGroupBackupsVolumeGroupBackupSourceDetail build() {

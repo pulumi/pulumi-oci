@@ -6,6 +6,8 @@ package com.pulumi.oci.Core.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDrgRouteDistributionStatementsDrgRouteDistributionStatementMatchCriteria {
@@ -13,39 +15,39 @@ public final class GetDrgRouteDistributionStatementsDrgRouteDistributionStatemen
      * @return The type of the network resource to be included in this match. A match for a network type implies that all DRG attachments of that type insert routes into the table.
      * 
      */
-    private String attachmentType;
+    private @Nullable String attachmentType;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG attachment.
      * 
      */
-    private String drgAttachmentId;
+    private @Nullable String drgAttachmentId;
     /**
      * @return The type of the match criteria for a route distribution statement.
      * 
      */
-    private String matchType;
+    private @Nullable String matchType;
 
     private GetDrgRouteDistributionStatementsDrgRouteDistributionStatementMatchCriteria() {}
     /**
      * @return The type of the network resource to be included in this match. A match for a network type implies that all DRG attachments of that type insert routes into the table.
      * 
      */
-    public String attachmentType() {
-        return this.attachmentType;
+    public Optional<String> attachmentType() {
+        return Optional.ofNullable(this.attachmentType);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG attachment.
      * 
      */
-    public String drgAttachmentId() {
-        return this.drgAttachmentId;
+    public Optional<String> drgAttachmentId() {
+        return Optional.ofNullable(this.drgAttachmentId);
     }
     /**
      * @return The type of the match criteria for a route distribution statement.
      * 
      */
-    public String matchType() {
-        return this.matchType;
+    public Optional<String> matchType() {
+        return Optional.ofNullable(this.matchType);
     }
 
     public static Builder builder() {
@@ -57,9 +59,9 @@ public final class GetDrgRouteDistributionStatementsDrgRouteDistributionStatemen
     }
     @CustomType.Builder
     public static final class Builder {
-        private String attachmentType;
-        private String drgAttachmentId;
-        private String matchType;
+        private @Nullable String attachmentType;
+        private @Nullable String drgAttachmentId;
+        private @Nullable String matchType;
         public Builder() {}
         public Builder(GetDrgRouteDistributionStatementsDrgRouteDistributionStatementMatchCriteria defaults) {
     	      Objects.requireNonNull(defaults);
@@ -69,18 +71,18 @@ public final class GetDrgRouteDistributionStatementsDrgRouteDistributionStatemen
         }
 
         @CustomType.Setter
-        public Builder attachmentType(String attachmentType) {
-            this.attachmentType = Objects.requireNonNull(attachmentType);
+        public Builder attachmentType(@Nullable String attachmentType) {
+            this.attachmentType = attachmentType;
             return this;
         }
         @CustomType.Setter
-        public Builder drgAttachmentId(String drgAttachmentId) {
-            this.drgAttachmentId = Objects.requireNonNull(drgAttachmentId);
+        public Builder drgAttachmentId(@Nullable String drgAttachmentId) {
+            this.drgAttachmentId = drgAttachmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder matchType(String matchType) {
-            this.matchType = Objects.requireNonNull(matchType);
+        public Builder matchType(@Nullable String matchType) {
+            this.matchType = matchType;
             return this;
         }
         public GetDrgRouteDistributionStatementsDrgRouteDistributionStatementMatchCriteria build() {

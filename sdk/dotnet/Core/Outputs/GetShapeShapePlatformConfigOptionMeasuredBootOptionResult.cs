@@ -14,13 +14,13 @@ namespace Pulumi.Oci.Core.Outputs
     public sealed class GetShapeShapePlatformConfigOptionMeasuredBootOptionResult
     {
         public readonly ImmutableArray<bool> AllowedValues;
-        public readonly bool IsDefaultEnabled;
+        public readonly bool? IsDefaultEnabled;
 
         [OutputConstructor]
         private GetShapeShapePlatformConfigOptionMeasuredBootOptionResult(
             ImmutableArray<bool> allowedValues,
 
-            bool isDefaultEnabled)
+            bool? isDefaultEnabled)
         {
             AllowedValues = allowedValues;
             IsDefaultEnabled = isDefaultEnabled;

@@ -20,13 +20,13 @@ namespace Pulumi.Oci.AnnouncementsService.Outputs
         /// <summary>
         /// The name of the group. The name must be unique and it cannot be changed. Avoid entering confidential information.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
 
         [OutputConstructor]
         private GetAnnouncementSubscriptionFilterGroupResult(
             ImmutableArray<Outputs.GetAnnouncementSubscriptionFilterGroupFilterResult> filters,
 
-            string name)
+            string? name)
         {
             Filters = filters;
             Name = name;

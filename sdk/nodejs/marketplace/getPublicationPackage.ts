@@ -53,57 +53,57 @@ export interface GetPublicationPackageResult {
     /**
      * The ID of the listing resource associated with this publication package. For more information, see [AppCatalogListing](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogListing/) in the Core Services API.
      */
-    readonly appCatalogListingId: string;
+    readonly appCatalogListingId?: string;
     /**
      * The resource version of the listing resource associated with this publication package.
      */
-    readonly appCatalogListingResourceVersion: string;
+    readonly appCatalogListingResourceVersion?: string;
     /**
      * A description of the variable.
      */
-    readonly description: string;
+    readonly description?: string;
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The ID of the image that corresponds to the package.
      */
-    readonly imageId: string;
+    readonly imageId?: string;
     /**
      * The ID of the listing that the specified package belongs to.
      */
-    readonly listingId: string;
+    readonly listingId?: string;
     /**
      * The operating system used by the listing.
      */
-    readonly operatingSystems: outputs.Marketplace.GetPublicationPackageOperatingSystem[];
+    readonly operatingSystems?: outputs.Marketplace.GetPublicationPackageOperatingSystem[];
     /**
      * The specified package's type.
      */
-    readonly packageType: string;
+    readonly packageType?: string;
     readonly packageVersion: string;
     readonly publicationId: string;
     /**
      * The unique identifier for the package resource.
      */
-    readonly resourceId: string;
+    readonly resourceId?: string;
     /**
      * A link to the stack resource.
      */
-    readonly resourceLink: string;
+    readonly resourceLink?: string;
     /**
      * The date and time the publication package was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * A list of variables for the stack resource.
      */
-    readonly variables: outputs.Marketplace.GetPublicationPackageVariable[];
+    readonly variables?: outputs.Marketplace.GetPublicationPackageVariable[];
     /**
      * The package version.
      */
-    readonly version: string;
+    readonly version?: string;
 }
 /**
  * This data source provides details about a specific Publication Package resource in Oracle Cloud Infrastructure Marketplace service.

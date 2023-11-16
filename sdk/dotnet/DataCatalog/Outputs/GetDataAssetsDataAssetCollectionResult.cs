@@ -13,12 +13,12 @@ namespace Pulumi.Oci.DataCatalog.Outputs
     [OutputType]
     public sealed class GetDataAssetsDataAssetCollectionResult
     {
-        public readonly int Count;
+        public readonly int? Count;
         public readonly ImmutableArray<Outputs.GetDataAssetsDataAssetCollectionItemResult> Items;
 
         [OutputConstructor]
         private GetDataAssetsDataAssetCollectionResult(
-            int count,
+            int? count,
 
             ImmutableArray<Outputs.GetDataAssetsDataAssetCollectionItemResult> items)
         {

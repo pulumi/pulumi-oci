@@ -71,11 +71,11 @@ export interface GetScriptsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The list of script_collection.
      */
-    readonly scriptCollections: outputs.ApmSynthetics.GetScriptsScriptCollection[];
+    readonly scriptCollections?: outputs.ApmSynthetics.GetScriptsScriptCollection[];
 }
 /**
  * This data source provides the list of Scripts in Oracle Cloud Infrastructure Apm Synthetics service.

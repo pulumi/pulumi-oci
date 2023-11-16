@@ -11,6 +11,7 @@ import com.pulumi.oci.AppMgmtControl.MonitorPluginManagementArgs;
 import com.pulumi.oci.AppMgmtControl.inputs.MonitorPluginManagementState;
 import com.pulumi.oci.Utilities;
 import java.lang.String;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -58,22 +59,22 @@ import javax.annotation.Nullable;
 @ResourceType(type="oci:AppMgmtControl/monitorPluginManagement:MonitorPluginManagement")
 public class MonitorPluginManagement extends com.pulumi.resources.CustomResource {
     @Export(name="compartmentId", refs={String.class}, tree="[0]")
-    private Output<String> compartmentId;
+    private Output</* @Nullable */ String> compartmentId;
 
-    public Output<String> compartmentId() {
-        return this.compartmentId;
+    public Output<Optional<String>> compartmentId() {
+        return Codegen.optional(this.compartmentId);
     }
     @Export(name="monitoredInstanceDescription", refs={String.class}, tree="[0]")
-    private Output<String> monitoredInstanceDescription;
+    private Output</* @Nullable */ String> monitoredInstanceDescription;
 
-    public Output<String> monitoredInstanceDescription() {
-        return this.monitoredInstanceDescription;
+    public Output<Optional<String>> monitoredInstanceDescription() {
+        return Codegen.optional(this.monitoredInstanceDescription);
     }
     @Export(name="monitoredInstanceDisplayName", refs={String.class}, tree="[0]")
-    private Output<String> monitoredInstanceDisplayName;
+    private Output</* @Nullable */ String> monitoredInstanceDisplayName;
 
-    public Output<String> monitoredInstanceDisplayName() {
-        return this.monitoredInstanceDisplayName;
+    public Output<Optional<String>> monitoredInstanceDisplayName() {
+        return Codegen.optional(this.monitoredInstanceDisplayName);
     }
     /**
      * OCID of monitored instance.
@@ -96,16 +97,16 @@ public class MonitorPluginManagement extends com.pulumi.resources.CustomResource
         return this.monitoredInstanceId;
     }
     @Export(name="monitoredInstanceManagementAgentId", refs={String.class}, tree="[0]")
-    private Output<String> monitoredInstanceManagementAgentId;
+    private Output</* @Nullable */ String> monitoredInstanceManagementAgentId;
 
-    public Output<String> monitoredInstanceManagementAgentId() {
-        return this.monitoredInstanceManagementAgentId;
+    public Output<Optional<String>> monitoredInstanceManagementAgentId() {
+        return Codegen.optional(this.monitoredInstanceManagementAgentId);
     }
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
 
     /**

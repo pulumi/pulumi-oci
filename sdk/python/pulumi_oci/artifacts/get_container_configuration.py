@@ -42,23 +42,17 @@ class GetContainerConfigurationResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="isRepositoryCreatedOnFirstPush")
-    def is_repository_created_on_first_push(self) -> bool:
-        """
-        Whether to create a new container repository when a container is pushed to a new repository path. Repositories created in this way belong to the root compartment.
-        """
+    def is_repository_created_on_first_push(self) -> Optional[bool]:
         return pulumi.get(self, "is_repository_created_on_first_push")
 
     @property
     @pulumi.getter
-    def namespace(self) -> str:
-        """
-        The tenancy namespace used in the container repository path.
-        """
+    def namespace(self) -> Optional[str]:
         return pulumi.get(self, "namespace")
 
 
@@ -77,21 +71,7 @@ class AwaitableGetContainerConfigurationResult(GetContainerConfigurationResult):
 def get_container_configuration(compartment_id: Optional[str] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetContainerConfigurationResult:
     """
-    This data source provides details about a specific Container Configuration resource in Oracle Cloud Infrastructure Artifacts service.
-
-    Get container configuration.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_container_configuration = oci.Artifacts.get_container_configuration(compartment_id=var["compartment_id"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -109,20 +89,6 @@ def get_container_configuration(compartment_id: Optional[str] = None,
 def get_container_configuration_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetContainerConfigurationResult]:
     """
-    This data source provides details about a specific Container Configuration resource in Oracle Cloud Infrastructure Artifacts service.
-
-    Get container configuration.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_container_configuration = oci.Artifacts.get_container_configuration(compartment_id=var["compartment_id"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+    Use this data source to access information about an existing resource.
     """
     ...

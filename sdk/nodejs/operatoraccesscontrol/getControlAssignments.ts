@@ -78,11 +78,11 @@ export interface GetControlAssignmentsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The list of operator_control_assignment_collection.
      */
-    readonly operatorControlAssignmentCollections: outputs.OperatorAccessControl.GetControlAssignmentsOperatorControlAssignmentCollection[];
+    readonly operatorControlAssignmentCollections?: outputs.OperatorAccessControl.GetControlAssignmentsOperatorControlAssignmentCollection[];
     readonly operatorControlName?: string;
     /**
      * Name of the target resource.

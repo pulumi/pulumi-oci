@@ -9,6 +9,8 @@ import com.pulumi.oci.Database.outputs.GetDbSystemStoragePerformancesDbSystemSto
 import java.lang.Integer;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceList {
@@ -16,17 +18,17 @@ public final class GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoS
      * @return Representation of disk performance detail parameters.
      * 
      */
-    private List<GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformance> balancedDiskPerformances;
+    private @Nullable List<GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformance> balancedDiskPerformances;
     /**
      * @return Representation of disk performance detail parameters.
      * 
      */
-    private List<GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformance> highDiskPerformances;
+    private @Nullable List<GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformance> highDiskPerformances;
     /**
      * @return Size in GBs.
      * 
      */
-    private Integer sizeInGbs;
+    private @Nullable Integer sizeInGbs;
 
     private GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceList() {}
     /**
@@ -34,21 +36,21 @@ public final class GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoS
      * 
      */
     public List<GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformance> balancedDiskPerformances() {
-        return this.balancedDiskPerformances;
+        return this.balancedDiskPerformances == null ? List.of() : this.balancedDiskPerformances;
     }
     /**
      * @return Representation of disk performance detail parameters.
      * 
      */
     public List<GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformance> highDiskPerformances() {
-        return this.highDiskPerformances;
+        return this.highDiskPerformances == null ? List.of() : this.highDiskPerformances;
     }
     /**
      * @return Size in GBs.
      * 
      */
-    public Integer sizeInGbs() {
-        return this.sizeInGbs;
+    public Optional<Integer> sizeInGbs() {
+        return Optional.ofNullable(this.sizeInGbs);
     }
 
     public static Builder builder() {
@@ -60,9 +62,9 @@ public final class GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoS
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformance> balancedDiskPerformances;
-        private List<GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformance> highDiskPerformances;
-        private Integer sizeInGbs;
+        private @Nullable List<GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformance> balancedDiskPerformances;
+        private @Nullable List<GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformance> highDiskPerformances;
+        private @Nullable Integer sizeInGbs;
         public Builder() {}
         public Builder(GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceList defaults) {
     	      Objects.requireNonNull(defaults);
@@ -72,24 +74,24 @@ public final class GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoS
         }
 
         @CustomType.Setter
-        public Builder balancedDiskPerformances(List<GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformance> balancedDiskPerformances) {
-            this.balancedDiskPerformances = Objects.requireNonNull(balancedDiskPerformances);
+        public Builder balancedDiskPerformances(@Nullable List<GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformance> balancedDiskPerformances) {
+            this.balancedDiskPerformances = balancedDiskPerformances;
             return this;
         }
         public Builder balancedDiskPerformances(GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformance... balancedDiskPerformances) {
             return balancedDiskPerformances(List.of(balancedDiskPerformances));
         }
         @CustomType.Setter
-        public Builder highDiskPerformances(List<GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformance> highDiskPerformances) {
-            this.highDiskPerformances = Objects.requireNonNull(highDiskPerformances);
+        public Builder highDiskPerformances(@Nullable List<GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformance> highDiskPerformances) {
+            this.highDiskPerformances = highDiskPerformances;
             return this;
         }
         public Builder highDiskPerformances(GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformance... highDiskPerformances) {
             return highDiskPerformances(List.of(highDiskPerformances));
         }
         @CustomType.Setter
-        public Builder sizeInGbs(Integer sizeInGbs) {
-            this.sizeInGbs = Objects.requireNonNull(sizeInGbs);
+        public Builder sizeInGbs(@Nullable Integer sizeInGbs) {
+            this.sizeInGbs = sizeInGbs;
             return this;
         }
         public GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceList build() {

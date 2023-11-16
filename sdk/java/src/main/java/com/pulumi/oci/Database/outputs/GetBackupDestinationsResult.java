@@ -18,7 +18,7 @@ public final class GetBackupDestinationsResult {
      * @return The list of backup_destinations.
      * 
      */
-    private List<GetBackupDestinationsBackupDestination> backupDestinations;
+    private @Nullable List<GetBackupDestinationsBackupDestination> backupDestinations;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
@@ -29,7 +29,7 @@ public final class GetBackupDestinationsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Type of the backup destination.
      * 
@@ -42,7 +42,7 @@ public final class GetBackupDestinationsResult {
      * 
      */
     public List<GetBackupDestinationsBackupDestination> backupDestinations() {
-        return this.backupDestinations;
+        return this.backupDestinations == null ? List.of() : this.backupDestinations;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -58,8 +58,8 @@ public final class GetBackupDestinationsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Type of the backup destination.
@@ -78,10 +78,10 @@ public final class GetBackupDestinationsResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetBackupDestinationsBackupDestination> backupDestinations;
+        private @Nullable List<GetBackupDestinationsBackupDestination> backupDestinations;
         private String compartmentId;
         private @Nullable List<GetBackupDestinationsFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String type;
         public Builder() {}
         public Builder(GetBackupDestinationsResult defaults) {
@@ -94,8 +94,8 @@ public final class GetBackupDestinationsResult {
         }
 
         @CustomType.Setter
-        public Builder backupDestinations(List<GetBackupDestinationsBackupDestination> backupDestinations) {
-            this.backupDestinations = Objects.requireNonNull(backupDestinations);
+        public Builder backupDestinations(@Nullable List<GetBackupDestinationsBackupDestination> backupDestinations) {
+            this.backupDestinations = backupDestinations;
             return this;
         }
         public Builder backupDestinations(GetBackupDestinationsBackupDestination... backupDestinations) {
@@ -115,8 +115,8 @@ public final class GetBackupDestinationsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

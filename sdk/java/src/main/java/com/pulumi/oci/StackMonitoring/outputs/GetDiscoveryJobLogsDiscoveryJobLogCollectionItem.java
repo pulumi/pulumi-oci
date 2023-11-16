@@ -6,6 +6,8 @@ package com.pulumi.oci.StackMonitoring.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDiscoveryJobLogsDiscoveryJobLogCollectionItem {
@@ -13,51 +15,51 @@ public final class GetDiscoveryJobLogsDiscoveryJobLogCollectionItem {
      * @return The OCID of Discovery job
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Log message
      * 
      */
-    private String logMessage;
+    private @Nullable String logMessage;
     /**
      * @return The log type like INFO, WARNING, ERROR, SUCCESS
      * 
      */
-    private String logType;
+    private @Nullable String logType;
     /**
      * @return Time the Job log was created
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
 
     private GetDiscoveryJobLogsDiscoveryJobLogCollectionItem() {}
     /**
      * @return The OCID of Discovery job
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Log message
      * 
      */
-    public String logMessage() {
-        return this.logMessage;
+    public Optional<String> logMessage() {
+        return Optional.ofNullable(this.logMessage);
     }
     /**
      * @return The log type like INFO, WARNING, ERROR, SUCCESS
      * 
      */
-    public String logType() {
-        return this.logType;
+    public Optional<String> logType() {
+        return Optional.ofNullable(this.logType);
     }
     /**
      * @return Time the Job log was created
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
 
     public static Builder builder() {
@@ -69,10 +71,10 @@ public final class GetDiscoveryJobLogsDiscoveryJobLogCollectionItem {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String id;
-        private String logMessage;
-        private String logType;
-        private String timeCreated;
+        private @Nullable String id;
+        private @Nullable String logMessage;
+        private @Nullable String logType;
+        private @Nullable String timeCreated;
         public Builder() {}
         public Builder(GetDiscoveryJobLogsDiscoveryJobLogCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -83,23 +85,23 @@ public final class GetDiscoveryJobLogsDiscoveryJobLogCollectionItem {
         }
 
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder logMessage(String logMessage) {
-            this.logMessage = Objects.requireNonNull(logMessage);
+        public Builder logMessage(@Nullable String logMessage) {
+            this.logMessage = logMessage;
             return this;
         }
         @CustomType.Setter
-        public Builder logType(String logType) {
-            this.logType = Objects.requireNonNull(logType);
+        public Builder logType(@Nullable String logType) {
+            this.logType = logType;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         public GetDiscoveryJobLogsDiscoveryJobLogCollectionItem build() {

@@ -41,13 +41,13 @@ namespace Pulumi.Oci.Database
         /// The character set for the database.
         /// </summary>
         [Output("characterSet")]
-        public Output<string> CharacterSet { get; private set; } = null!;
+        public Output<string?> CharacterSet { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         /// </summary>
         [Output("compartmentId")]
-        public Output<string> CompartmentId { get; private set; } = null!;
+        public Output<string?> CompartmentId { get; private set; } = null!;
 
         /// <summary>
         /// The Connection strings used to connect to the Oracle Database.
@@ -65,13 +65,13 @@ namespace Pulumi.Oci.Database
         /// The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the image to be used to upgrade a database.
         /// </summary>
         [Output("databaseSoftwareImageId")]
-        public Output<string> DatabaseSoftwareImageId { get; private set; } = null!;
+        public Output<string?> DatabaseSoftwareImageId { get; private set; } = null!;
 
         /// <summary>
         /// Details for the database upgrade source.
         /// </summary>
         [Output("databaseUpgradeSourceDetails")]
-        public Output<Outputs.DatabaseUpgradeDatabaseUpgradeSourceDetails> DatabaseUpgradeSourceDetails { get; private set; } = null!;
+        public Output<Outputs.DatabaseUpgradeDatabaseUpgradeSourceDetails?> DatabaseUpgradeSourceDetails { get; private set; } = null!;
 
         /// <summary>
         /// Backup Options To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized, talk to an administrator. If you're an administrator who needs to write policies to give users access, see [Getting Started with Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
@@ -83,145 +83,145 @@ namespace Pulumi.Oci.Database
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
         /// </summary>
         [Output("dbHomeId")]
-        public Output<string> DbHomeId { get; private set; } = null!;
+        public Output<string?> DbHomeId { get; private set; } = null!;
 
         /// <summary>
         /// The database name.
         /// </summary>
         [Output("dbName")]
-        public Output<string> DbName { get; private set; } = null!;
+        public Output<string?> DbName { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
         /// </summary>
         [Output("dbSystemId")]
-        public Output<string> DbSystemId { get; private set; } = null!;
+        public Output<string?> DbSystemId { get; private set; } = null!;
 
         /// <summary>
         /// A system-generated name for the database to ensure uniqueness within an Oracle Data Guard group (a primary database and its standby databases). The unique name cannot be changed.
         /// </summary>
         [Output("dbUniqueName")]
-        public Output<string> DbUniqueName { get; private set; } = null!;
+        public Output<string?> DbUniqueName { get; private set; } = null!;
 
         /// <summary>
         /// **Deprecated.** The dbWorkload field has been deprecated for Exadata Database Service on Dedicated Infrastructure, Exadata Database Service on Cloud@Customer, and Base Database Service. Support for this attribute will end in November 2023. You may choose to update your custom scripts to exclude the dbWorkload attribute. After November 2023 if you pass a value to the dbWorkload attribute, it will be ignored.
         /// </summary>
         [Output("dbWorkload")]
-        public Output<string> DbWorkload { get; private set; } = null!;
+        public Output<string?> DbWorkload { get; private set; } = null!;
 
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// True if the database is a container database.
         /// </summary>
         [Output("isCdb")]
-        public Output<bool> IsCdb { get; private set; } = null!;
+        public Output<bool?> IsCdb { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
         /// </summary>
         [Output("keyStoreId")]
-        public Output<string> KeyStoreId { get; private set; } = null!;
+        public Output<string?> KeyStoreId { get; private set; } = null!;
 
         /// <summary>
         /// The wallet name for Oracle Key Vault.
         /// </summary>
         [Output("keyStoreWalletName")]
-        public Output<string> KeyStoreWalletName { get; private set; } = null!;
+        public Output<string?> KeyStoreWalletName { get; private set; } = null!;
 
         /// <summary>
         /// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
         /// </summary>
         [Output("kmsKeyId")]
-        public Output<string> KmsKeyId { get; private set; } = null!;
+        public Output<string?> KmsKeyId { get; private set; } = null!;
 
         /// <summary>
         /// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
         /// </summary>
         [Output("kmsKeyVersionId")]
-        public Output<string> KmsKeyVersionId { get; private set; } = null!;
+        public Output<string?> KmsKeyVersionId { get; private set; } = null!;
 
         /// <summary>
         /// The duration when the latest database backup created.
         /// </summary>
         [Output("lastBackupDurationInSeconds")]
-        public Output<int> LastBackupDurationInSeconds { get; private set; } = null!;
+        public Output<int?> LastBackupDurationInSeconds { get; private set; } = null!;
 
         /// <summary>
         /// The date and time when the latest database backup was created.
         /// </summary>
         [Output("lastBackupTimestamp")]
-        public Output<string> LastBackupTimestamp { get; private set; } = null!;
+        public Output<string?> LastBackupTimestamp { get; private set; } = null!;
 
         /// <summary>
         /// The date and time when the latest database backup failed.
         /// </summary>
         [Output("lastFailedBackupTimestamp")]
-        public Output<string> LastFailedBackupTimestamp { get; private set; } = null!;
+        public Output<string?> LastFailedBackupTimestamp { get; private set; } = null!;
 
         /// <summary>
         /// Additional information about the current lifecycle state.
         /// </summary>
         [Output("lifecycleDetails")]
-        public Output<string> LifecycleDetails { get; private set; } = null!;
+        public Output<string?> LifecycleDetails { get; private set; } = null!;
 
         /// <summary>
         /// The national character set for the database.
         /// </summary>
         [Output("ncharacterSet")]
-        public Output<string> NcharacterSet { get; private set; } = null!;
+        public Output<string?> NcharacterSet { get; private set; } = null!;
 
         /// <summary>
         /// The name of the pluggable database. The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. Pluggable database should not be same as database name.
         /// </summary>
         [Output("pdbName")]
-        public Output<string> PdbName { get; private set; } = null!;
+        public Output<string?> PdbName { get; private set; } = null!;
 
         /// <summary>
         /// Specifies a prefix for the `Oracle SID` of the database to be created.
         /// </summary>
         [Output("sidPrefix")]
-        public Output<string> SidPrefix { get; private set; } = null!;
+        public Output<string?> SidPrefix { get; private set; } = null!;
 
         /// <summary>
         /// Point in time recovery timeStamp of the source database at which cloned database system is cloned from the source database system, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339)
         /// </summary>
         [Output("sourceDatabasePointInTimeRecoveryTimestamp")]
-        public Output<string> SourceDatabasePointInTimeRecoveryTimestamp { get; private set; } = null!;
+        public Output<string?> SourceDatabasePointInTimeRecoveryTimestamp { get; private set; } = null!;
 
         /// <summary>
         /// The current state of the database.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the database was created.
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
         /// </summary>
         [Output("vaultId")]
-        public Output<string> VaultId { get; private set; } = null!;
+        public Output<string?> VaultId { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
         /// </summary>
         [Output("vmClusterId")]
-        public Output<string> VmClusterId { get; private set; } = null!;
+        public Output<string?> VmClusterId { get; private set; } = null!;
 
 
         /// <summary>

@@ -23,7 +23,7 @@ public final class GetDetectionDataAssetsResult {
      * @return The list of data_asset_collection.
      * 
      */
-    private List<GetDetectionDataAssetsDataAssetCollection> dataAssetCollections;
+    private @Nullable List<GetDetectionDataAssetsDataAssetCollection> dataAssetCollections;
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
@@ -34,7 +34,7 @@ public final class GetDetectionDataAssetsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The Unique project id which is created at project creation that is immutable on creation.
      * 
@@ -59,7 +59,7 @@ public final class GetDetectionDataAssetsResult {
      * 
      */
     public List<GetDetectionDataAssetsDataAssetCollection> dataAssetCollections() {
-        return this.dataAssetCollections;
+        return this.dataAssetCollections == null ? List.of() : this.dataAssetCollections;
     }
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
@@ -75,8 +75,8 @@ public final class GetDetectionDataAssetsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The Unique project id which is created at project creation that is immutable on creation.
@@ -103,10 +103,10 @@ public final class GetDetectionDataAssetsResult {
     @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
-        private List<GetDetectionDataAssetsDataAssetCollection> dataAssetCollections;
+        private @Nullable List<GetDetectionDataAssetsDataAssetCollection> dataAssetCollections;
         private @Nullable String displayName;
         private @Nullable List<GetDetectionDataAssetsFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String projectId;
         private @Nullable String state;
         public Builder() {}
@@ -127,8 +127,8 @@ public final class GetDetectionDataAssetsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder dataAssetCollections(List<GetDetectionDataAssetsDataAssetCollection> dataAssetCollections) {
-            this.dataAssetCollections = Objects.requireNonNull(dataAssetCollections);
+        public Builder dataAssetCollections(@Nullable List<GetDetectionDataAssetsDataAssetCollection> dataAssetCollections) {
+            this.dataAssetCollections = dataAssetCollections;
             return this;
         }
         public Builder dataAssetCollections(GetDetectionDataAssetsDataAssetCollection... dataAssetCollections) {
@@ -148,8 +148,8 @@ public final class GetDetectionDataAssetsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

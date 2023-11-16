@@ -48,186 +48,186 @@ export interface GetAutonomousContainerDatabaseResult {
     /**
      * **No longer used.** For Autonomous Database on dedicated Exadata infrastructure, the container database is created within a specified `cloudAutonomousVmCluster`.
      */
-    readonly autonomousExadataInfrastructureId: string;
+    readonly autonomousExadataInfrastructureId?: string;
     /**
      * The OCID of the Autonomous VM Cluster.
      */
-    readonly autonomousVmClusterId: string;
+    readonly autonomousVmClusterId?: string;
     /**
      * The availability domain of the Autonomous Container Database.
      */
-    readonly availabilityDomain: string;
+    readonly availabilityDomain?: string;
     /**
      * Sum of CPUs available on the Autonomous VM Cluster + Sum of reclaimable CPUs available in the Autonomous Container Database.<br> For Autonomous Databases on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
      */
-    readonly availableCpus: number;
+    readonly availableCpus?: number;
     /**
      * Backup options for the Autonomous Container Database.
      */
-    readonly backupConfigs: outputs.Database.GetAutonomousContainerDatabaseBackupConfig[];
+    readonly backupConfigs?: outputs.Database.GetAutonomousContainerDatabaseBackupConfig[];
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Autonomous Exadata VM Cluster.
      */
-    readonly cloudAutonomousVmClusterId: string;
+    readonly cloudAutonomousVmClusterId?: string;
     /**
      * The OCID of the compartment.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * The compute model of the Autonomous VM Cluster.
      */
-    readonly computeModel: string;
+    readonly computeModel?: string;
     /**
      * The Database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, starting with an alphabetic character, followed by 1 to 7 alphanumeric characters.
      */
-    readonly dbName: string;
-    readonly dbUniqueName: string;
+    readonly dbName?: string;
+    readonly dbUniqueName?: string;
     /**
      * Oracle Database version of the Autonomous Container Database.
      */
-    readonly dbVersion: string;
+    readonly dbVersion?: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * The user-provided name for the Autonomous Container Database.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * DST Time Zone File version of the Autonomous Container Database.
      */
-    readonly dstFileVersion: string;
-    readonly fastStartFailOverLagLimitInSeconds: number;
+    readonly dstFileVersion?: string;
+    readonly fastStartFailOverLagLimitInSeconds?: number;
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * The id of the Autonomous Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The infrastructure type this resource belongs to.
      */
-    readonly infrastructureType: string;
-    readonly isAutomaticFailoverEnabled: boolean;
+    readonly infrastructureType?: string;
+    readonly isAutomaticFailoverEnabled?: boolean;
     /**
      * Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
      */
-    readonly isDstFileUpdateEnabled: boolean;
+    readonly isDstFileUpdateEnabled?: boolean;
     /**
      * Key History Entry.
      */
-    readonly keyHistoryEntries: outputs.Database.GetAutonomousContainerDatabaseKeyHistoryEntry[];
+    readonly keyHistoryEntries?: outputs.Database.GetAutonomousContainerDatabaseKeyHistoryEntry[];
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
      */
-    readonly keyStoreId: string;
+    readonly keyStoreId?: string;
     /**
      * The wallet name for Oracle Key Vault.
      */
-    readonly keyStoreWalletName: string;
+    readonly keyStoreWalletName?: string;
     /**
      * The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
      */
-    readonly kmsKeyId: string;
+    readonly kmsKeyId?: string;
     /**
      * The largest Autonomous Database (CPU) that can be created in a new Autonomous Container Database.
      */
-    readonly largestProvisionableAutonomousDatabaseInCpus: number;
+    readonly largestProvisionableAutonomousDatabaseInCpus?: number;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
      */
-    readonly lastMaintenanceRunId: string;
+    readonly lastMaintenanceRunId?: string;
     /**
      * Additional information about the current lifecycle state.
      */
-    readonly lifecycleDetails: string;
-    readonly maintenanceWindowDetails: outputs.Database.GetAutonomousContainerDatabaseMaintenanceWindowDetail[];
+    readonly lifecycleDetails?: string;
+    readonly maintenanceWindowDetails?: outputs.Database.GetAutonomousContainerDatabaseMaintenanceWindowDetail[];
     /**
      * The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
      */
-    readonly maintenanceWindows: outputs.Database.GetAutonomousContainerDatabaseMaintenanceWindow[];
+    readonly maintenanceWindows?: outputs.Database.GetAutonomousContainerDatabaseMaintenanceWindow[];
     /**
      * The amount of memory (in GBs) enabled per OCPU or ECPU in the Autonomous VM Cluster.
      */
-    readonly memoryPerOracleComputeUnitInGbs: number;
+    readonly memoryPerOracleComputeUnitInGbs?: number;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
      */
-    readonly nextMaintenanceRunId: string;
+    readonly nextMaintenanceRunId?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last patch applied on the system.
      */
-    readonly patchId: string;
+    readonly patchId?: string;
     /**
      * Database patch model preference.
      */
-    readonly patchModel: string;
-    readonly peerAutonomousContainerDatabaseBackupConfigs: outputs.Database.GetAutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfig[];
-    readonly peerAutonomousContainerDatabaseCompartmentId: string;
-    readonly peerAutonomousContainerDatabaseDisplayName: string;
-    readonly peerAutonomousExadataInfrastructureId: string;
-    readonly peerAutonomousVmClusterId: string;
-    readonly peerCloudAutonomousVmClusterId: string;
-    readonly peerDbUniqueName: string;
-    readonly protectionMode: string;
+    readonly patchModel?: string;
+    readonly peerAutonomousContainerDatabaseBackupConfigs?: outputs.Database.GetAutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfig[];
+    readonly peerAutonomousContainerDatabaseCompartmentId?: string;
+    readonly peerAutonomousContainerDatabaseDisplayName?: string;
+    readonly peerAutonomousExadataInfrastructureId?: string;
+    readonly peerAutonomousVmClusterId?: string;
+    readonly peerCloudAutonomousVmClusterId?: string;
+    readonly peerDbUniqueName?: string;
+    readonly protectionMode?: string;
     /**
      * An array of CPU values that can be used to successfully provision a single Autonomous Database.\ For Autonomous Database on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
      */
-    readonly provisionableCpuses: number[];
+    readonly provisionableCpuses?: number[];
     /**
      * The number of CPUs provisioned in an Autonomous Container Database.
      */
-    readonly provisionedCpus: number;
+    readonly provisionedCpus?: number;
     /**
      * For Autonomous Databases on Dedicated Exadata Infrastructure:
      * * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
      * * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
      */
-    readonly reclaimableCpus: number;
+    readonly reclaimableCpus?: number;
     /**
      * The number of CPUs reserved in an Autonomous Container Database.
      */
-    readonly reservedCpus: number;
+    readonly reservedCpus?: number;
     /**
      * The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
      */
-    readonly role: string;
-    readonly rotateKeyTrigger: boolean;
+    readonly role?: string;
+    readonly rotateKeyTrigger?: boolean;
     /**
      * The service level agreement type of the container database. The default is STANDARD.
      */
-    readonly serviceLevelAgreementType: string;
+    readonly serviceLevelAgreementType?: string;
     /**
      * The scheduling detail for the quarterly maintenance window of the standby Autonomous Container Database. This value represents the number of days before scheduled maintenance of the primary database.
      */
-    readonly standbyMaintenanceBufferInDays: number;
+    readonly standbyMaintenanceBufferInDays?: number;
     /**
      * The current state of the Autonomous Container Database.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * The date and time the Autonomous Container Database was created.
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The date and time the Autonomous Container Database will be reverted to Standby from Snapshot Standby.
      */
-    readonly timeSnapshotStandbyRevert: string;
+    readonly timeSnapshotStandbyRevert?: string;
     /**
      * The number of CPUs allocated to the Autonomous VM cluster.<br> For Autonomous Databases on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
      */
-    readonly totalCpus: number;
+    readonly totalCpus?: number;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
      */
-    readonly vaultId: string;
+    readonly vaultId?: string;
     /**
      * The next maintenance version preference.
      */
-    readonly versionPreference: string;
+    readonly versionPreference?: string;
 }
 /**
  * This data source provides details about a specific Autonomous Container Database resource in Oracle Cloud Infrastructure Database service.

@@ -16,35 +16,35 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// Hostname to access the Duo security account
         /// </summary>
-        public readonly string ApiHostname;
+        public readonly string? ApiHostname;
         /// <summary>
         /// Attestation key to attest the request and response between Duo Security
         /// </summary>
-        public readonly string AttestationKey;
+        public readonly string? AttestationKey;
         /// <summary>
         /// Integration key from Duo Security authenticator
         /// </summary>
-        public readonly string IntegrationKey;
+        public readonly string? IntegrationKey;
         /// <summary>
         /// Secret key from Duo Security authenticator
         /// </summary>
-        public readonly string SecretKey;
+        public readonly string? SecretKey;
         /// <summary>
         /// User attribute mapping value
         /// </summary>
-        public readonly string UserMappingAttribute;
+        public readonly string? UserMappingAttribute;
 
         [OutputConstructor]
         private GetDomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettingDuoSecuritySettingResult(
-            string apiHostname,
+            string? apiHostname,
 
-            string attestationKey,
+            string? attestationKey,
 
-            string integrationKey,
+            string? integrationKey,
 
-            string secretKey,
+            string? secretKey,
 
-            string userMappingAttribute)
+            string? userMappingAttribute)
         {
             ApiHostname = apiHostname;
             AttestationKey = attestationKey;

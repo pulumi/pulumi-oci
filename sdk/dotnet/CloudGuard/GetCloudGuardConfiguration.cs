@@ -106,31 +106,31 @@ namespace Pulumi.Oci.CloudGuard
     public sealed class GetCloudGuardConfigurationResult
     {
         public readonly string CompartmentId;
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The reporting region value
         /// </summary>
-        public readonly string ReportingRegion;
+        public readonly string? ReportingRegion;
         /// <summary>
         /// Identifies if Oracle managed resources were created by customers
         /// </summary>
-        public readonly bool SelfManageResources;
+        public readonly bool? SelfManageResources;
         /// <summary>
         /// Status of Cloud Guard Tenant
         /// </summary>
-        public readonly string Status;
+        public readonly string? Status;
 
         [OutputConstructor]
         private GetCloudGuardConfigurationResult(
             string compartmentId,
 
-            string id,
+            string? id,
 
-            string reportingRegion,
+            string? reportingRegion,
 
-            bool selfManageResources,
+            bool? selfManageResources,
 
-            string status)
+            string? status)
         {
             CompartmentId = compartmentId;
             Id = id;

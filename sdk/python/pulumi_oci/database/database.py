@@ -28,24 +28,6 @@ class DatabaseArgs:
                  vault_id: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a Database resource.
-        :param pulumi.Input['DatabaseDatabaseArgs'] database: (Updatable) Details for creating a database.
-               
-               **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
-        :param pulumi.Input[str] db_home_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
-        :param pulumi.Input[str] source: The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. The default is `NONE`. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] db_version: A valid Oracle Database version. For a list of supported versions, use the ListDbVersions operation.
-               
-               This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
-        :param pulumi.Input[str] key_store_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
-        :param pulumi.Input[str] kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
-        :param pulumi.Input[bool] kms_key_migration: The value to migrate to the kms version from none. Can only use once by setting value to true. You can not switch back to non-kms once you created or migrated.(https://www.oracle.com/security/cloud-security/key-management/faq/)
-        :param pulumi.Input[int] kms_key_rotation: The value to rotate the key version of current kms_key. Just change this value will trigger the rotation.
-        :param pulumi.Input[str] kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
-        :param pulumi.Input[str] vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
         """
         pulumi.set(__self__, "database", database)
         pulumi.set(__self__, "db_home_id", db_home_id)
@@ -68,11 +50,6 @@ class DatabaseArgs:
     @property
     @pulumi.getter
     def database(self) -> pulumi.Input['DatabaseDatabaseArgs']:
-        """
-        (Updatable) Details for creating a database.
-
-        **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
-        """
         return pulumi.get(self, "database")
 
     @database.setter
@@ -82,9 +59,6 @@ class DatabaseArgs:
     @property
     @pulumi.getter(name="dbHomeId")
     def db_home_id(self) -> pulumi.Input[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
-        """
         return pulumi.get(self, "db_home_id")
 
     @db_home_id.setter
@@ -94,13 +68,6 @@ class DatabaseArgs:
     @property
     @pulumi.getter
     def source(self) -> pulumi.Input[str]:
-        """
-        The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. The default is `NONE`. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "source")
 
     @source.setter
@@ -110,11 +77,6 @@ class DatabaseArgs:
     @property
     @pulumi.getter(name="dbVersion")
     def db_version(self) -> Optional[pulumi.Input[str]]:
-        """
-        A valid Oracle Database version. For a list of supported versions, use the ListDbVersions operation.
-
-        This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
-        """
         return pulumi.get(self, "db_version")
 
     @db_version.setter
@@ -124,9 +86,6 @@ class DatabaseArgs:
     @property
     @pulumi.getter(name="keyStoreId")
     def key_store_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
-        """
         return pulumi.get(self, "key_store_id")
 
     @key_store_id.setter
@@ -136,9 +95,6 @@ class DatabaseArgs:
     @property
     @pulumi.getter(name="kmsKeyId")
     def kms_key_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
-        """
         return pulumi.get(self, "kms_key_id")
 
     @kms_key_id.setter
@@ -148,9 +104,6 @@ class DatabaseArgs:
     @property
     @pulumi.getter(name="kmsKeyMigration")
     def kms_key_migration(self) -> Optional[pulumi.Input[bool]]:
-        """
-        The value to migrate to the kms version from none. Can only use once by setting value to true. You can not switch back to non-kms once you created or migrated.(https://www.oracle.com/security/cloud-security/key-management/faq/)
-        """
         return pulumi.get(self, "kms_key_migration")
 
     @kms_key_migration.setter
@@ -160,9 +113,6 @@ class DatabaseArgs:
     @property
     @pulumi.getter(name="kmsKeyRotation")
     def kms_key_rotation(self) -> Optional[pulumi.Input[int]]:
-        """
-        The value to rotate the key version of current kms_key. Just change this value will trigger the rotation.
-        """
         return pulumi.get(self, "kms_key_rotation")
 
     @kms_key_rotation.setter
@@ -172,9 +122,6 @@ class DatabaseArgs:
     @property
     @pulumi.getter(name="kmsKeyVersionId")
     def kms_key_version_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
-        """
         return pulumi.get(self, "kms_key_version_id")
 
     @kms_key_version_id.setter
@@ -184,9 +131,6 @@ class DatabaseArgs:
     @property
     @pulumi.getter(name="vaultId")
     def vault_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
-        """
         return pulumi.get(self, "vault_id")
 
     @vault_id.setter
@@ -234,53 +178,6 @@ class _DatabaseState:
                  vm_cluster_id: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering Database resources.
-        :param pulumi.Input[str] character_set: The character set for the database.  The default is AL32UTF8. Allowed values are:
-               
-               AL32UTF8, AR8ADOS710, AR8ADOS720, AR8APTEC715, AR8ARABICMACS, AR8ASMO8X, AR8ISO8859P6, AR8MSWIN1256, AR8MUSSAD768, AR8NAFITHA711, AR8NAFITHA721, AR8SAKHR706, AR8SAKHR707, AZ8ISO8859P9E, BG8MSWIN, BG8PC437S, BLT8CP921, BLT8ISO8859P13, BLT8MSWIN1257, BLT8PC775, BN8BSCII, CDN8PC863, CEL8ISO8859P14, CL8ISO8859P5, CL8ISOIR111, CL8KOI8R, CL8KOI8U, CL8MACCYRILLICS, CL8MSWIN1251, EE8ISO8859P2, EE8MACCES, EE8MACCROATIANS, EE8MSWIN1250, EE8PC852, EL8DEC, EL8ISO8859P7, EL8MACGREEKS, EL8MSWIN1253, EL8PC437S, EL8PC851, EL8PC869, ET8MSWIN923, HU8ABMOD, HU8CWI2, IN8ISCII, IS8PC861, IW8ISO8859P8, IW8MACHEBREWS, IW8MSWIN1255, IW8PC1507, JA16EUC, JA16EUCTILDE, JA16SJIS, JA16SJISTILDE, JA16VMS, KO16KSC5601, KO16KSCCS, KO16MSWIN949, LA8ISO6937, LA8PASSPORT, LT8MSWIN921, LT8PC772, LT8PC774, LV8PC1117, LV8PC8LR, LV8RST104090, N8PC865, NE8ISO8859P10, NEE8ISO8859P4, RU8BESTA, RU8PC855, RU8PC866, SE8ISO8859P3, TH8MACTHAIS, TH8TISASCII, TR8DEC, TR8MACTURKISHS, TR8MSWIN1254, TR8PC857, US7ASCII, US8PC437, UTF8, VN8MSWIN1258, VN8VN3, WE8DEC, WE8DG, WE8ISO8859P1, WE8ISO8859P15, WE8ISO8859P9, WE8MACROMAN8S, WE8MSWIN1252, WE8NCR4970, WE8NEXTSTEP, WE8PC850, WE8PC858, WE8PC860, WE8ROMAN8, ZHS16CGB231280, ZHS16GBK, ZHT16BIG5, ZHT16CCDC, ZHT16DBT, ZHT16HKSCS, ZHT16MSWIN950, ZHT32EUC, ZHT32SOPS, ZHT32TRIS
-        :param pulumi.Input[str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param pulumi.Input[Sequence[pulumi.Input['DatabaseConnectionStringArgs']]] connection_strings: The Connection strings used to connect to the Oracle Database.
-        :param pulumi.Input['DatabaseDatabaseArgs'] database: (Updatable) Details for creating a database.
-               
-               **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
-        :param pulumi.Input[Sequence[pulumi.Input['DatabaseDatabaseManagementConfigArgs']]] database_management_configs: The configuration of the Database Management service.
-        :param pulumi.Input[str] database_software_image_id: The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-        :param pulumi.Input[Sequence[pulumi.Input['DatabaseDbBackupConfigArgs']]] db_backup_configs: (Updatable) Backup Options To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized, talk to an administrator. If you're an administrator who needs to write policies to give users access, see [Getting Started with Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
-        :param pulumi.Input[str] db_home_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
-        :param pulumi.Input[str] db_name: The display name of the database to be created from the backup. It must begin with an alphabetic character and can contain a maximum of eight alphanumeric characters. Special characters are not permitted.
-        :param pulumi.Input[str] db_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
-        :param pulumi.Input[str] db_unique_name: The `DB_UNIQUE_NAME` of the Oracle Database being backed up.
-        :param pulumi.Input[str] db_version: A valid Oracle Database version. For a list of supported versions, use the ListDbVersions operation.
-               
-               This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
-        :param pulumi.Input[str] db_workload: **Deprecated.** The dbWorkload field has been deprecated for Exadata Database Service on Dedicated Infrastructure, Exadata Database Service on Cloud@Customer, and Base Database Service. Support for this attribute will end in November 2023. You may choose to update your custom scripts to exclude the dbWorkload attribute. After November 2023 if you pass a value to the dbWorkload attribute, it will be ignored.
-               
-               The database workload type.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[bool] is_cdb: True if the database is a container database.
-        :param pulumi.Input[str] key_store_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
-        :param pulumi.Input[str] key_store_wallet_name: The wallet name for Oracle Key Vault.
-        :param pulumi.Input[str] kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
-        :param pulumi.Input[bool] kms_key_migration: The value to migrate to the kms version from none. Can only use once by setting value to true. You can not switch back to non-kms once you created or migrated.(https://www.oracle.com/security/cloud-security/key-management/faq/)
-        :param pulumi.Input[int] kms_key_rotation: The value to rotate the key version of current kms_key. Just change this value will trigger the rotation.
-        :param pulumi.Input[str] kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
-        :param pulumi.Input[int] last_backup_duration_in_seconds: The duration when the latest database backup created.
-        :param pulumi.Input[str] last_backup_timestamp: The date and time when the latest database backup was created.
-        :param pulumi.Input[str] last_failed_backup_timestamp: The date and time when the latest database backup failed.
-        :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycle state.
-        :param pulumi.Input[str] ncharacter_set: The national character set for the database.  The default is AL16UTF16. Allowed values are: AL16UTF16 or UTF8.
-        :param pulumi.Input[str] pdb_name: The name of the pluggable database. The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. Pluggable database should not be same as database name.
-        :param pulumi.Input[str] sid_prefix: Specifies a prefix for the `Oracle SID` of the database to be created.
-        :param pulumi.Input[str] source: The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. The default is `NONE`. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] source_database_point_in_time_recovery_timestamp: Point in time recovery timeStamp of the source database at which cloned database system is cloned from the source database system, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339)
-        :param pulumi.Input[str] state: The current state of the database.
-        :param pulumi.Input[str] time_created: The date and time the database was created.
-        :param pulumi.Input[str] vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
-        :param pulumi.Input[str] vm_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
         """
         if character_set is not None:
             pulumi.set(__self__, "character_set", character_set)
@@ -356,11 +253,6 @@ class _DatabaseState:
     @property
     @pulumi.getter(name="characterSet")
     def character_set(self) -> Optional[pulumi.Input[str]]:
-        """
-        The character set for the database.  The default is AL32UTF8. Allowed values are:
-
-        AL32UTF8, AR8ADOS710, AR8ADOS720, AR8APTEC715, AR8ARABICMACS, AR8ASMO8X, AR8ISO8859P6, AR8MSWIN1256, AR8MUSSAD768, AR8NAFITHA711, AR8NAFITHA721, AR8SAKHR706, AR8SAKHR707, AZ8ISO8859P9E, BG8MSWIN, BG8PC437S, BLT8CP921, BLT8ISO8859P13, BLT8MSWIN1257, BLT8PC775, BN8BSCII, CDN8PC863, CEL8ISO8859P14, CL8ISO8859P5, CL8ISOIR111, CL8KOI8R, CL8KOI8U, CL8MACCYRILLICS, CL8MSWIN1251, EE8ISO8859P2, EE8MACCES, EE8MACCROATIANS, EE8MSWIN1250, EE8PC852, EL8DEC, EL8ISO8859P7, EL8MACGREEKS, EL8MSWIN1253, EL8PC437S, EL8PC851, EL8PC869, ET8MSWIN923, HU8ABMOD, HU8CWI2, IN8ISCII, IS8PC861, IW8ISO8859P8, IW8MACHEBREWS, IW8MSWIN1255, IW8PC1507, JA16EUC, JA16EUCTILDE, JA16SJIS, JA16SJISTILDE, JA16VMS, KO16KSC5601, KO16KSCCS, KO16MSWIN949, LA8ISO6937, LA8PASSPORT, LT8MSWIN921, LT8PC772, LT8PC774, LV8PC1117, LV8PC8LR, LV8RST104090, N8PC865, NE8ISO8859P10, NEE8ISO8859P4, RU8BESTA, RU8PC855, RU8PC866, SE8ISO8859P3, TH8MACTHAIS, TH8TISASCII, TR8DEC, TR8MACTURKISHS, TR8MSWIN1254, TR8PC857, US7ASCII, US8PC437, UTF8, VN8MSWIN1258, VN8VN3, WE8DEC, WE8DG, WE8ISO8859P1, WE8ISO8859P15, WE8ISO8859P9, WE8MACROMAN8S, WE8MSWIN1252, WE8NCR4970, WE8NEXTSTEP, WE8PC850, WE8PC858, WE8PC860, WE8ROMAN8, ZHS16CGB231280, ZHS16GBK, ZHT16BIG5, ZHT16CCDC, ZHT16DBT, ZHT16HKSCS, ZHT16MSWIN950, ZHT32EUC, ZHT32SOPS, ZHT32TRIS
-        """
         return pulumi.get(self, "character_set")
 
     @character_set.setter
@@ -370,9 +262,6 @@ class _DatabaseState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -382,9 +271,6 @@ class _DatabaseState:
     @property
     @pulumi.getter(name="connectionStrings")
     def connection_strings(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DatabaseConnectionStringArgs']]]]:
-        """
-        The Connection strings used to connect to the Oracle Database.
-        """
         return pulumi.get(self, "connection_strings")
 
     @connection_strings.setter
@@ -394,11 +280,6 @@ class _DatabaseState:
     @property
     @pulumi.getter
     def database(self) -> Optional[pulumi.Input['DatabaseDatabaseArgs']]:
-        """
-        (Updatable) Details for creating a database.
-
-        **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
-        """
         return pulumi.get(self, "database")
 
     @database.setter
@@ -408,9 +289,6 @@ class _DatabaseState:
     @property
     @pulumi.getter(name="databaseManagementConfigs")
     def database_management_configs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DatabaseDatabaseManagementConfigArgs']]]]:
-        """
-        The configuration of the Database Management service.
-        """
         return pulumi.get(self, "database_management_configs")
 
     @database_management_configs.setter
@@ -420,9 +298,6 @@ class _DatabaseState:
     @property
     @pulumi.getter(name="databaseSoftwareImageId")
     def database_software_image_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-        """
         return pulumi.get(self, "database_software_image_id")
 
     @database_software_image_id.setter
@@ -432,9 +307,6 @@ class _DatabaseState:
     @property
     @pulumi.getter(name="dbBackupConfigs")
     def db_backup_configs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DatabaseDbBackupConfigArgs']]]]:
-        """
-        (Updatable) Backup Options To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized, talk to an administrator. If you're an administrator who needs to write policies to give users access, see [Getting Started with Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
-        """
         return pulumi.get(self, "db_backup_configs")
 
     @db_backup_configs.setter
@@ -444,9 +316,6 @@ class _DatabaseState:
     @property
     @pulumi.getter(name="dbHomeId")
     def db_home_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
-        """
         return pulumi.get(self, "db_home_id")
 
     @db_home_id.setter
@@ -456,9 +325,6 @@ class _DatabaseState:
     @property
     @pulumi.getter(name="dbName")
     def db_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The display name of the database to be created from the backup. It must begin with an alphabetic character and can contain a maximum of eight alphanumeric characters. Special characters are not permitted.
-        """
         return pulumi.get(self, "db_name")
 
     @db_name.setter
@@ -468,9 +334,6 @@ class _DatabaseState:
     @property
     @pulumi.getter(name="dbSystemId")
     def db_system_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
-        """
         return pulumi.get(self, "db_system_id")
 
     @db_system_id.setter
@@ -480,9 +343,6 @@ class _DatabaseState:
     @property
     @pulumi.getter(name="dbUniqueName")
     def db_unique_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The `DB_UNIQUE_NAME` of the Oracle Database being backed up.
-        """
         return pulumi.get(self, "db_unique_name")
 
     @db_unique_name.setter
@@ -492,11 +352,6 @@ class _DatabaseState:
     @property
     @pulumi.getter(name="dbVersion")
     def db_version(self) -> Optional[pulumi.Input[str]]:
-        """
-        A valid Oracle Database version. For a list of supported versions, use the ListDbVersions operation.
-
-        This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
-        """
         return pulumi.get(self, "db_version")
 
     @db_version.setter
@@ -506,11 +361,6 @@ class _DatabaseState:
     @property
     @pulumi.getter(name="dbWorkload")
     def db_workload(self) -> Optional[pulumi.Input[str]]:
-        """
-        **Deprecated.** The dbWorkload field has been deprecated for Exadata Database Service on Dedicated Infrastructure, Exadata Database Service on Cloud@Customer, and Base Database Service. Support for this attribute will end in November 2023. You may choose to update your custom scripts to exclude the dbWorkload attribute. After November 2023 if you pass a value to the dbWorkload attribute, it will be ignored.
-
-        The database workload type.
-        """
         return pulumi.get(self, "db_workload")
 
     @db_workload.setter
@@ -520,9 +370,6 @@ class _DatabaseState:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -532,9 +379,6 @@ class _DatabaseState:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -544,9 +388,6 @@ class _DatabaseState:
     @property
     @pulumi.getter(name="isCdb")
     def is_cdb(self) -> Optional[pulumi.Input[bool]]:
-        """
-        True if the database is a container database.
-        """
         return pulumi.get(self, "is_cdb")
 
     @is_cdb.setter
@@ -556,9 +397,6 @@ class _DatabaseState:
     @property
     @pulumi.getter(name="keyStoreId")
     def key_store_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
-        """
         return pulumi.get(self, "key_store_id")
 
     @key_store_id.setter
@@ -568,9 +406,6 @@ class _DatabaseState:
     @property
     @pulumi.getter(name="keyStoreWalletName")
     def key_store_wallet_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The wallet name for Oracle Key Vault.
-        """
         return pulumi.get(self, "key_store_wallet_name")
 
     @key_store_wallet_name.setter
@@ -580,9 +415,6 @@ class _DatabaseState:
     @property
     @pulumi.getter(name="kmsKeyId")
     def kms_key_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
-        """
         return pulumi.get(self, "kms_key_id")
 
     @kms_key_id.setter
@@ -592,9 +424,6 @@ class _DatabaseState:
     @property
     @pulumi.getter(name="kmsKeyMigration")
     def kms_key_migration(self) -> Optional[pulumi.Input[bool]]:
-        """
-        The value to migrate to the kms version from none. Can only use once by setting value to true. You can not switch back to non-kms once you created or migrated.(https://www.oracle.com/security/cloud-security/key-management/faq/)
-        """
         return pulumi.get(self, "kms_key_migration")
 
     @kms_key_migration.setter
@@ -604,9 +433,6 @@ class _DatabaseState:
     @property
     @pulumi.getter(name="kmsKeyRotation")
     def kms_key_rotation(self) -> Optional[pulumi.Input[int]]:
-        """
-        The value to rotate the key version of current kms_key. Just change this value will trigger the rotation.
-        """
         return pulumi.get(self, "kms_key_rotation")
 
     @kms_key_rotation.setter
@@ -616,9 +442,6 @@ class _DatabaseState:
     @property
     @pulumi.getter(name="kmsKeyVersionId")
     def kms_key_version_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
-        """
         return pulumi.get(self, "kms_key_version_id")
 
     @kms_key_version_id.setter
@@ -628,9 +451,6 @@ class _DatabaseState:
     @property
     @pulumi.getter(name="lastBackupDurationInSeconds")
     def last_backup_duration_in_seconds(self) -> Optional[pulumi.Input[int]]:
-        """
-        The duration when the latest database backup created.
-        """
         return pulumi.get(self, "last_backup_duration_in_seconds")
 
     @last_backup_duration_in_seconds.setter
@@ -640,9 +460,6 @@ class _DatabaseState:
     @property
     @pulumi.getter(name="lastBackupTimestamp")
     def last_backup_timestamp(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time when the latest database backup was created.
-        """
         return pulumi.get(self, "last_backup_timestamp")
 
     @last_backup_timestamp.setter
@@ -652,9 +469,6 @@ class _DatabaseState:
     @property
     @pulumi.getter(name="lastFailedBackupTimestamp")
     def last_failed_backup_timestamp(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time when the latest database backup failed.
-        """
         return pulumi.get(self, "last_failed_backup_timestamp")
 
     @last_failed_backup_timestamp.setter
@@ -664,9 +478,6 @@ class _DatabaseState:
     @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> Optional[pulumi.Input[str]]:
-        """
-        Additional information about the current lifecycle state.
-        """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
@@ -676,9 +487,6 @@ class _DatabaseState:
     @property
     @pulumi.getter(name="ncharacterSet")
     def ncharacter_set(self) -> Optional[pulumi.Input[str]]:
-        """
-        The national character set for the database.  The default is AL16UTF16. Allowed values are: AL16UTF16 or UTF8.
-        """
         return pulumi.get(self, "ncharacter_set")
 
     @ncharacter_set.setter
@@ -688,9 +496,6 @@ class _DatabaseState:
     @property
     @pulumi.getter(name="pdbName")
     def pdb_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The name of the pluggable database. The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. Pluggable database should not be same as database name.
-        """
         return pulumi.get(self, "pdb_name")
 
     @pdb_name.setter
@@ -700,9 +505,6 @@ class _DatabaseState:
     @property
     @pulumi.getter(name="sidPrefix")
     def sid_prefix(self) -> Optional[pulumi.Input[str]]:
-        """
-        Specifies a prefix for the `Oracle SID` of the database to be created.
-        """
         return pulumi.get(self, "sid_prefix")
 
     @sid_prefix.setter
@@ -712,13 +514,6 @@ class _DatabaseState:
     @property
     @pulumi.getter
     def source(self) -> Optional[pulumi.Input[str]]:
-        """
-        The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. The default is `NONE`. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "source")
 
     @source.setter
@@ -728,9 +523,6 @@ class _DatabaseState:
     @property
     @pulumi.getter(name="sourceDatabasePointInTimeRecoveryTimestamp")
     def source_database_point_in_time_recovery_timestamp(self) -> Optional[pulumi.Input[str]]:
-        """
-        Point in time recovery timeStamp of the source database at which cloned database system is cloned from the source database system, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339)
-        """
         return pulumi.get(self, "source_database_point_in_time_recovery_timestamp")
 
     @source_database_point_in_time_recovery_timestamp.setter
@@ -740,9 +532,6 @@ class _DatabaseState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The current state of the database.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -752,9 +541,6 @@ class _DatabaseState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time the database was created.
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -764,9 +550,6 @@ class _DatabaseState:
     @property
     @pulumi.getter(name="vaultId")
     def vault_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
-        """
         return pulumi.get(self, "vault_id")
 
     @vault_id.setter
@@ -776,9 +559,6 @@ class _DatabaseState:
     @property
     @pulumi.getter(name="vmClusterId")
     def vm_cluster_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
-        """
         return pulumi.get(self, "vm_cluster_id")
 
     @vm_cluster_id.setter
@@ -803,88 +583,9 @@ class Database(pulumi.CustomResource):
                  vault_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Database resource in Oracle Cloud Infrastructure Database service.
-
-        Creates a new database in the specified Database Home. If the database version is provided, it must match the version of the Database Home. Applies only to Exadata systems.
-
-        **Important:** When `auto_backup_enabled` is not present in the configuration or set to true, the `auto_backup_window` and `auto_full_backup_window` will be ignored
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_database = oci.database.Database("testDatabase",
-            database=oci.database.DatabaseDatabaseArgs(
-                admin_password=var["database_database_admin_password"],
-                db_name=var["database_database_db_name"],
-                backup_id=oci_database_backup["test_backup"]["id"],
-                backup_tde_password=var["database_database_backup_tde_password"],
-                character_set=var["database_database_character_set"],
-                database_software_image_id=oci_database_database_software_image["test_database_software_image"]["id"],
-                db_backup_config=oci.database.DatabaseDatabaseDbBackupConfigArgs(
-                    auto_backup_enabled=var["database_database_db_backup_config_auto_backup_enabled"],
-                    auto_backup_window=var["database_database_db_backup_config_auto_backup_window"],
-                    auto_full_backup_day=var["database_database_db_backup_config_auto_full_backup_day"],
-                    auto_full_backup_window=var["database_database_db_backup_config_auto_full_backup_window"],
-                    backup_deletion_policy=var["database_database_db_backup_config_backup_deletion_policy"],
-                    backup_destination_details=[oci.database.DatabaseDatabaseDbBackupConfigBackupDestinationDetailArgs(
-                        dbrs_policy_id=oci_identity_policy["test_policy"]["id"],
-                        id=var["database_database_db_backup_config_backup_destination_details_id"],
-                        type=var["database_database_db_backup_config_backup_destination_details_type"],
-                    )],
-                    recovery_window_in_days=var["database_database_db_backup_config_recovery_window_in_days"],
-                    run_immediate_full_backup=var["database_database_db_backup_config_run_immediate_full_backup"],
-                ),
-                db_unique_name=var["database_database_db_unique_name"],
-                db_workload=var["database_database_db_workload"],
-                defined_tags=var["database_database_defined_tags"],
-                freeform_tags=var["database_database_freeform_tags"],
-                kms_key_id=oci_kms_key["test_key"]["id"],
-                kms_key_version_id=oci_kms_key_version["test_key_version"]["id"],
-                ncharacter_set=var["database_database_ncharacter_set"],
-                pdb_name=var["database_database_pdb_name"],
-                pluggable_databases=var["database_database_pluggable_databases"],
-                sid_prefix=var["database_database_sid_prefix"],
-                tde_wallet_password=var["database_database_tde_wallet_password"],
-                vault_id=oci_kms_vault["test_vault"]["id"],
-            ),
-            db_home_id=oci_database_db_home["test_db_home"]["id"],
-            source=var["database_source"],
-            db_version=var["database_db_version"],
-            kms_key_id=oci_kms_key["test_key"]["id"],
-            kms_key_version_id=oci_kms_key_version["test_key_version"]["id"])
-        ```
-
-        ## Import
-
-        Databases can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Database/database:Database test_database "id"
-        ```
-
+        Create a Database resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[pulumi.InputType['DatabaseDatabaseArgs']] database: (Updatable) Details for creating a database.
-               
-               **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
-        :param pulumi.Input[str] db_home_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
-        :param pulumi.Input[str] db_version: A valid Oracle Database version. For a list of supported versions, use the ListDbVersions operation.
-               
-               This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
-        :param pulumi.Input[str] key_store_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
-        :param pulumi.Input[str] kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
-        :param pulumi.Input[bool] kms_key_migration: The value to migrate to the kms version from none. Can only use once by setting value to true. You can not switch back to non-kms once you created or migrated.(https://www.oracle.com/security/cloud-security/key-management/faq/)
-        :param pulumi.Input[int] kms_key_rotation: The value to rotate the key version of current kms_key. Just change this value will trigger the rotation.
-        :param pulumi.Input[str] kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
-        :param pulumi.Input[str] source: The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. The default is `NONE`. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
         """
         ...
     @overload
@@ -893,68 +594,7 @@ class Database(pulumi.CustomResource):
                  args: DatabaseArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Database resource in Oracle Cloud Infrastructure Database service.
-
-        Creates a new database in the specified Database Home. If the database version is provided, it must match the version of the Database Home. Applies only to Exadata systems.
-
-        **Important:** When `auto_backup_enabled` is not present in the configuration or set to true, the `auto_backup_window` and `auto_full_backup_window` will be ignored
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_database = oci.database.Database("testDatabase",
-            database=oci.database.DatabaseDatabaseArgs(
-                admin_password=var["database_database_admin_password"],
-                db_name=var["database_database_db_name"],
-                backup_id=oci_database_backup["test_backup"]["id"],
-                backup_tde_password=var["database_database_backup_tde_password"],
-                character_set=var["database_database_character_set"],
-                database_software_image_id=oci_database_database_software_image["test_database_software_image"]["id"],
-                db_backup_config=oci.database.DatabaseDatabaseDbBackupConfigArgs(
-                    auto_backup_enabled=var["database_database_db_backup_config_auto_backup_enabled"],
-                    auto_backup_window=var["database_database_db_backup_config_auto_backup_window"],
-                    auto_full_backup_day=var["database_database_db_backup_config_auto_full_backup_day"],
-                    auto_full_backup_window=var["database_database_db_backup_config_auto_full_backup_window"],
-                    backup_deletion_policy=var["database_database_db_backup_config_backup_deletion_policy"],
-                    backup_destination_details=[oci.database.DatabaseDatabaseDbBackupConfigBackupDestinationDetailArgs(
-                        dbrs_policy_id=oci_identity_policy["test_policy"]["id"],
-                        id=var["database_database_db_backup_config_backup_destination_details_id"],
-                        type=var["database_database_db_backup_config_backup_destination_details_type"],
-                    )],
-                    recovery_window_in_days=var["database_database_db_backup_config_recovery_window_in_days"],
-                    run_immediate_full_backup=var["database_database_db_backup_config_run_immediate_full_backup"],
-                ),
-                db_unique_name=var["database_database_db_unique_name"],
-                db_workload=var["database_database_db_workload"],
-                defined_tags=var["database_database_defined_tags"],
-                freeform_tags=var["database_database_freeform_tags"],
-                kms_key_id=oci_kms_key["test_key"]["id"],
-                kms_key_version_id=oci_kms_key_version["test_key_version"]["id"],
-                ncharacter_set=var["database_database_ncharacter_set"],
-                pdb_name=var["database_database_pdb_name"],
-                pluggable_databases=var["database_database_pluggable_databases"],
-                sid_prefix=var["database_database_sid_prefix"],
-                tde_wallet_password=var["database_database_tde_wallet_password"],
-                vault_id=oci_kms_vault["test_vault"]["id"],
-            ),
-            db_home_id=oci_database_db_home["test_db_home"]["id"],
-            source=var["database_source"],
-            db_version=var["database_db_version"],
-            kms_key_id=oci_kms_key["test_key"]["id"],
-            kms_key_version_id=oci_kms_key_version["test_key_version"]["id"])
-        ```
-
-        ## Import
-
-        Databases can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Database/database:Database test_database "id"
-        ```
-
+        Create a Database resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param DatabaseArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -1082,53 +722,6 @@ class Database(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] character_set: The character set for the database.  The default is AL32UTF8. Allowed values are:
-               
-               AL32UTF8, AR8ADOS710, AR8ADOS720, AR8APTEC715, AR8ARABICMACS, AR8ASMO8X, AR8ISO8859P6, AR8MSWIN1256, AR8MUSSAD768, AR8NAFITHA711, AR8NAFITHA721, AR8SAKHR706, AR8SAKHR707, AZ8ISO8859P9E, BG8MSWIN, BG8PC437S, BLT8CP921, BLT8ISO8859P13, BLT8MSWIN1257, BLT8PC775, BN8BSCII, CDN8PC863, CEL8ISO8859P14, CL8ISO8859P5, CL8ISOIR111, CL8KOI8R, CL8KOI8U, CL8MACCYRILLICS, CL8MSWIN1251, EE8ISO8859P2, EE8MACCES, EE8MACCROATIANS, EE8MSWIN1250, EE8PC852, EL8DEC, EL8ISO8859P7, EL8MACGREEKS, EL8MSWIN1253, EL8PC437S, EL8PC851, EL8PC869, ET8MSWIN923, HU8ABMOD, HU8CWI2, IN8ISCII, IS8PC861, IW8ISO8859P8, IW8MACHEBREWS, IW8MSWIN1255, IW8PC1507, JA16EUC, JA16EUCTILDE, JA16SJIS, JA16SJISTILDE, JA16VMS, KO16KSC5601, KO16KSCCS, KO16MSWIN949, LA8ISO6937, LA8PASSPORT, LT8MSWIN921, LT8PC772, LT8PC774, LV8PC1117, LV8PC8LR, LV8RST104090, N8PC865, NE8ISO8859P10, NEE8ISO8859P4, RU8BESTA, RU8PC855, RU8PC866, SE8ISO8859P3, TH8MACTHAIS, TH8TISASCII, TR8DEC, TR8MACTURKISHS, TR8MSWIN1254, TR8PC857, US7ASCII, US8PC437, UTF8, VN8MSWIN1258, VN8VN3, WE8DEC, WE8DG, WE8ISO8859P1, WE8ISO8859P15, WE8ISO8859P9, WE8MACROMAN8S, WE8MSWIN1252, WE8NCR4970, WE8NEXTSTEP, WE8PC850, WE8PC858, WE8PC860, WE8ROMAN8, ZHS16CGB231280, ZHS16GBK, ZHT16BIG5, ZHT16CCDC, ZHT16DBT, ZHT16HKSCS, ZHT16MSWIN950, ZHT32EUC, ZHT32SOPS, ZHT32TRIS
-        :param pulumi.Input[str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DatabaseConnectionStringArgs']]]] connection_strings: The Connection strings used to connect to the Oracle Database.
-        :param pulumi.Input[pulumi.InputType['DatabaseDatabaseArgs']] database: (Updatable) Details for creating a database.
-               
-               **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DatabaseDatabaseManagementConfigArgs']]]] database_management_configs: The configuration of the Database Management service.
-        :param pulumi.Input[str] database_software_image_id: The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DatabaseDbBackupConfigArgs']]]] db_backup_configs: (Updatable) Backup Options To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized, talk to an administrator. If you're an administrator who needs to write policies to give users access, see [Getting Started with Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
-        :param pulumi.Input[str] db_home_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
-        :param pulumi.Input[str] db_name: The display name of the database to be created from the backup. It must begin with an alphabetic character and can contain a maximum of eight alphanumeric characters. Special characters are not permitted.
-        :param pulumi.Input[str] db_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
-        :param pulumi.Input[str] db_unique_name: The `DB_UNIQUE_NAME` of the Oracle Database being backed up.
-        :param pulumi.Input[str] db_version: A valid Oracle Database version. For a list of supported versions, use the ListDbVersions operation.
-               
-               This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
-        :param pulumi.Input[str] db_workload: **Deprecated.** The dbWorkload field has been deprecated for Exadata Database Service on Dedicated Infrastructure, Exadata Database Service on Cloud@Customer, and Base Database Service. Support for this attribute will end in November 2023. You may choose to update your custom scripts to exclude the dbWorkload attribute. After November 2023 if you pass a value to the dbWorkload attribute, it will be ignored.
-               
-               The database workload type.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[bool] is_cdb: True if the database is a container database.
-        :param pulumi.Input[str] key_store_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
-        :param pulumi.Input[str] key_store_wallet_name: The wallet name for Oracle Key Vault.
-        :param pulumi.Input[str] kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
-        :param pulumi.Input[bool] kms_key_migration: The value to migrate to the kms version from none. Can only use once by setting value to true. You can not switch back to non-kms once you created or migrated.(https://www.oracle.com/security/cloud-security/key-management/faq/)
-        :param pulumi.Input[int] kms_key_rotation: The value to rotate the key version of current kms_key. Just change this value will trigger the rotation.
-        :param pulumi.Input[str] kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
-        :param pulumi.Input[int] last_backup_duration_in_seconds: The duration when the latest database backup created.
-        :param pulumi.Input[str] last_backup_timestamp: The date and time when the latest database backup was created.
-        :param pulumi.Input[str] last_failed_backup_timestamp: The date and time when the latest database backup failed.
-        :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycle state.
-        :param pulumi.Input[str] ncharacter_set: The national character set for the database.  The default is AL16UTF16. Allowed values are: AL16UTF16 or UTF8.
-        :param pulumi.Input[str] pdb_name: The name of the pluggable database. The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. Pluggable database should not be same as database name.
-        :param pulumi.Input[str] sid_prefix: Specifies a prefix for the `Oracle SID` of the database to be created.
-        :param pulumi.Input[str] source: The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. The default is `NONE`. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] source_database_point_in_time_recovery_timestamp: Point in time recovery timeStamp of the source database at which cloned database system is cloned from the source database system, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339)
-        :param pulumi.Input[str] state: The current state of the database.
-        :param pulumi.Input[str] time_created: The date and time the database was created.
-        :param pulumi.Input[str] vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
-        :param pulumi.Input[str] vm_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -1173,293 +766,176 @@ class Database(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="characterSet")
-    def character_set(self) -> pulumi.Output[str]:
-        """
-        The character set for the database.  The default is AL32UTF8. Allowed values are:
-
-        AL32UTF8, AR8ADOS710, AR8ADOS720, AR8APTEC715, AR8ARABICMACS, AR8ASMO8X, AR8ISO8859P6, AR8MSWIN1256, AR8MUSSAD768, AR8NAFITHA711, AR8NAFITHA721, AR8SAKHR706, AR8SAKHR707, AZ8ISO8859P9E, BG8MSWIN, BG8PC437S, BLT8CP921, BLT8ISO8859P13, BLT8MSWIN1257, BLT8PC775, BN8BSCII, CDN8PC863, CEL8ISO8859P14, CL8ISO8859P5, CL8ISOIR111, CL8KOI8R, CL8KOI8U, CL8MACCYRILLICS, CL8MSWIN1251, EE8ISO8859P2, EE8MACCES, EE8MACCROATIANS, EE8MSWIN1250, EE8PC852, EL8DEC, EL8ISO8859P7, EL8MACGREEKS, EL8MSWIN1253, EL8PC437S, EL8PC851, EL8PC869, ET8MSWIN923, HU8ABMOD, HU8CWI2, IN8ISCII, IS8PC861, IW8ISO8859P8, IW8MACHEBREWS, IW8MSWIN1255, IW8PC1507, JA16EUC, JA16EUCTILDE, JA16SJIS, JA16SJISTILDE, JA16VMS, KO16KSC5601, KO16KSCCS, KO16MSWIN949, LA8ISO6937, LA8PASSPORT, LT8MSWIN921, LT8PC772, LT8PC774, LV8PC1117, LV8PC8LR, LV8RST104090, N8PC865, NE8ISO8859P10, NEE8ISO8859P4, RU8BESTA, RU8PC855, RU8PC866, SE8ISO8859P3, TH8MACTHAIS, TH8TISASCII, TR8DEC, TR8MACTURKISHS, TR8MSWIN1254, TR8PC857, US7ASCII, US8PC437, UTF8, VN8MSWIN1258, VN8VN3, WE8DEC, WE8DG, WE8ISO8859P1, WE8ISO8859P15, WE8ISO8859P9, WE8MACROMAN8S, WE8MSWIN1252, WE8NCR4970, WE8NEXTSTEP, WE8PC850, WE8PC858, WE8PC860, WE8ROMAN8, ZHS16CGB231280, ZHS16GBK, ZHT16BIG5, ZHT16CCDC, ZHT16DBT, ZHT16HKSCS, ZHT16MSWIN950, ZHT32EUC, ZHT32SOPS, ZHT32TRIS
-        """
+    def character_set(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "character_set")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> pulumi.Output[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
+    def compartment_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="connectionStrings")
-    def connection_strings(self) -> pulumi.Output[Sequence['outputs.DatabaseConnectionString']]:
-        """
-        The Connection strings used to connect to the Oracle Database.
-        """
+    def connection_strings(self) -> pulumi.Output[Optional[Sequence['outputs.DatabaseConnectionString']]]:
         return pulumi.get(self, "connection_strings")
 
     @property
     @pulumi.getter
     def database(self) -> pulumi.Output['outputs.DatabaseDatabase']:
-        """
-        (Updatable) Details for creating a database.
-
-        **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
-        """
         return pulumi.get(self, "database")
 
     @property
     @pulumi.getter(name="databaseManagementConfigs")
-    def database_management_configs(self) -> pulumi.Output[Sequence['outputs.DatabaseDatabaseManagementConfig']]:
-        """
-        The configuration of the Database Management service.
-        """
+    def database_management_configs(self) -> pulumi.Output[Optional[Sequence['outputs.DatabaseDatabaseManagementConfig']]]:
         return pulumi.get(self, "database_management_configs")
 
     @property
     @pulumi.getter(name="databaseSoftwareImageId")
-    def database_software_image_id(self) -> pulumi.Output[str]:
-        """
-        The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-        """
+    def database_software_image_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "database_software_image_id")
 
     @property
     @pulumi.getter(name="dbBackupConfigs")
-    def db_backup_configs(self) -> pulumi.Output[Sequence['outputs.DatabaseDbBackupConfig']]:
-        """
-        (Updatable) Backup Options To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized, talk to an administrator. If you're an administrator who needs to write policies to give users access, see [Getting Started with Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
-        """
+    def db_backup_configs(self) -> pulumi.Output[Optional[Sequence['outputs.DatabaseDbBackupConfig']]]:
         return pulumi.get(self, "db_backup_configs")
 
     @property
     @pulumi.getter(name="dbHomeId")
     def db_home_id(self) -> pulumi.Output[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
-        """
         return pulumi.get(self, "db_home_id")
 
     @property
     @pulumi.getter(name="dbName")
-    def db_name(self) -> pulumi.Output[str]:
-        """
-        The display name of the database to be created from the backup. It must begin with an alphabetic character and can contain a maximum of eight alphanumeric characters. Special characters are not permitted.
-        """
+    def db_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "db_name")
 
     @property
     @pulumi.getter(name="dbSystemId")
-    def db_system_id(self) -> pulumi.Output[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
-        """
+    def db_system_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "db_system_id")
 
     @property
     @pulumi.getter(name="dbUniqueName")
-    def db_unique_name(self) -> pulumi.Output[str]:
-        """
-        The `DB_UNIQUE_NAME` of the Oracle Database being backed up.
-        """
+    def db_unique_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "db_unique_name")
 
     @property
     @pulumi.getter(name="dbVersion")
-    def db_version(self) -> pulumi.Output[str]:
-        """
-        A valid Oracle Database version. For a list of supported versions, use the ListDbVersions operation.
-
-        This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
-        """
+    def db_version(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "db_version")
 
     @property
     @pulumi.getter(name="dbWorkload")
-    def db_workload(self) -> pulumi.Output[str]:
-        """
-        **Deprecated.** The dbWorkload field has been deprecated for Exadata Database Service on Dedicated Infrastructure, Exadata Database Service on Cloud@Customer, and Base Database Service. Support for this attribute will end in November 2023. You may choose to update your custom scripts to exclude the dbWorkload attribute. After November 2023 if you pass a value to the dbWorkload attribute, it will be ignored.
-
-        The database workload type.
-        """
+    def db_workload(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "db_workload")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        """
+    def defined_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="isCdb")
-    def is_cdb(self) -> pulumi.Output[bool]:
-        """
-        True if the database is a container database.
-        """
+    def is_cdb(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "is_cdb")
 
     @property
     @pulumi.getter(name="keyStoreId")
-    def key_store_id(self) -> pulumi.Output[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
-        """
+    def key_store_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "key_store_id")
 
     @property
     @pulumi.getter(name="keyStoreWalletName")
-    def key_store_wallet_name(self) -> pulumi.Output[str]:
-        """
-        The wallet name for Oracle Key Vault.
-        """
+    def key_store_wallet_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "key_store_wallet_name")
 
     @property
     @pulumi.getter(name="kmsKeyId")
-    def kms_key_id(self) -> pulumi.Output[str]:
-        """
-        The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
-        """
+    def kms_key_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "kms_key_id")
 
     @property
     @pulumi.getter(name="kmsKeyMigration")
     def kms_key_migration(self) -> pulumi.Output[Optional[bool]]:
-        """
-        The value to migrate to the kms version from none. Can only use once by setting value to true. You can not switch back to non-kms once you created or migrated.(https://www.oracle.com/security/cloud-security/key-management/faq/)
-        """
         return pulumi.get(self, "kms_key_migration")
 
     @property
     @pulumi.getter(name="kmsKeyRotation")
     def kms_key_rotation(self) -> pulumi.Output[Optional[int]]:
-        """
-        The value to rotate the key version of current kms_key. Just change this value will trigger the rotation.
-        """
         return pulumi.get(self, "kms_key_rotation")
 
     @property
     @pulumi.getter(name="kmsKeyVersionId")
-    def kms_key_version_id(self) -> pulumi.Output[str]:
-        """
-        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
-        """
+    def kms_key_version_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "kms_key_version_id")
 
     @property
     @pulumi.getter(name="lastBackupDurationInSeconds")
-    def last_backup_duration_in_seconds(self) -> pulumi.Output[int]:
-        """
-        The duration when the latest database backup created.
-        """
+    def last_backup_duration_in_seconds(self) -> pulumi.Output[Optional[int]]:
         return pulumi.get(self, "last_backup_duration_in_seconds")
 
     @property
     @pulumi.getter(name="lastBackupTimestamp")
-    def last_backup_timestamp(self) -> pulumi.Output[str]:
-        """
-        The date and time when the latest database backup was created.
-        """
+    def last_backup_timestamp(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "last_backup_timestamp")
 
     @property
     @pulumi.getter(name="lastFailedBackupTimestamp")
-    def last_failed_backup_timestamp(self) -> pulumi.Output[str]:
-        """
-        The date and time when the latest database backup failed.
-        """
+    def last_failed_backup_timestamp(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "last_failed_backup_timestamp")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> pulumi.Output[str]:
-        """
-        Additional information about the current lifecycle state.
-        """
+    def lifecycle_details(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="ncharacterSet")
-    def ncharacter_set(self) -> pulumi.Output[str]:
-        """
-        The national character set for the database.  The default is AL16UTF16. Allowed values are: AL16UTF16 or UTF8.
-        """
+    def ncharacter_set(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "ncharacter_set")
 
     @property
     @pulumi.getter(name="pdbName")
-    def pdb_name(self) -> pulumi.Output[str]:
-        """
-        The name of the pluggable database. The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. Pluggable database should not be same as database name.
-        """
+    def pdb_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "pdb_name")
 
     @property
     @pulumi.getter(name="sidPrefix")
-    def sid_prefix(self) -> pulumi.Output[str]:
-        """
-        Specifies a prefix for the `Oracle SID` of the database to be created.
-        """
+    def sid_prefix(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "sid_prefix")
 
     @property
     @pulumi.getter
     def source(self) -> pulumi.Output[str]:
-        """
-        The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. The default is `NONE`. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "source")
 
     @property
     @pulumi.getter(name="sourceDatabasePointInTimeRecoveryTimestamp")
-    def source_database_point_in_time_recovery_timestamp(self) -> pulumi.Output[str]:
-        """
-        Point in time recovery timeStamp of the source database at which cloned database system is cloned from the source database system, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339)
-        """
+    def source_database_point_in_time_recovery_timestamp(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "source_database_point_in_time_recovery_timestamp")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        The current state of the database.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        The date and time the database was created.
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="vaultId")
-    def vault_id(self) -> pulumi.Output[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
-        """
+    def vault_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "vault_id")
 
     @property
     @pulumi.getter(name="vmClusterId")
-    def vm_cluster_id(self) -> pulumi.Output[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
-        """
+    def vm_cluster_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "vm_cluster_id")
 

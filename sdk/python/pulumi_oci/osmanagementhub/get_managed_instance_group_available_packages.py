@@ -62,9 +62,6 @@ class GetManagedInstanceGroupAvailablePackagesResult:
     @property
     @pulumi.getter(name="displayNames")
     def display_names(self) -> Optional[Sequence[str]]:
-        """
-        Software source name.
-        """
         return pulumi.get(self, "display_names")
 
     @property
@@ -74,7 +71,7 @@ class GetManagedInstanceGroupAvailablePackagesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -83,17 +80,11 @@ class GetManagedInstanceGroupAvailablePackagesResult:
     @property
     @pulumi.getter(name="isLatest")
     def is_latest(self) -> Optional[bool]:
-        """
-        Flag to return only latest package versions.
-        """
         return pulumi.get(self, "is_latest")
 
     @property
     @pulumi.getter(name="managedInstanceGroupAvailablePackageCollections")
-    def managed_instance_group_available_package_collections(self) -> Sequence['outputs.GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionResult']:
-        """
-        The list of managed_instance_group_available_package_collection.
-        """
+    def managed_instance_group_available_package_collections(self) -> Optional[Sequence['outputs.GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionResult']]:
         return pulumi.get(self, "managed_instance_group_available_package_collections")
 
     @property
@@ -126,30 +117,7 @@ def get_managed_instance_group_available_packages(compartment_id: Optional[str] 
                                                   managed_instance_group_id: Optional[str] = None,
                                                   opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetManagedInstanceGroupAvailablePackagesResult:
     """
-    This data source provides the list of Managed Instance Group Available Packages in Oracle Cloud Infrastructure Os Management Hub service.
-
-    Lists available packages on the specified managed instances group. Filter the list against a variety
-    of criteria including but not limited to the package name.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_managed_instance_group_available_packages = oci.OsManagementHub.get_managed_instance_group_available_packages(managed_instance_group_id=oci_os_management_hub_managed_instance_group["test_managed_instance_group"]["id"],
-        compartment_id=var["compartment_id"],
-        display_names=var["managed_instance_group_available_package_display_name"],
-        display_name_contains=var["managed_instance_group_available_package_display_name_contains"],
-        is_latest=var["managed_instance_group_available_package_is_latest"])
-    ```
-
-
-    :param str compartment_id: The OCID of the compartment that contains the resources to list.
-    :param str display_name_contains: A filter to return resources that may partially match the given display name.
-    :param Sequence[str] display_names: A filter to return resources that match the given display names.
-    :param bool is_latest: A boolean variable that is used to list only the latest versions of packages, module streams, and stream profiles when set to true. All packages, module streams, and stream profiles are returned when set to false.
-    :param str managed_instance_group_id: The managed instance group OCID.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -181,29 +149,6 @@ def get_managed_instance_group_available_packages_output(compartment_id: Optiona
                                                          managed_instance_group_id: Optional[pulumi.Input[str]] = None,
                                                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetManagedInstanceGroupAvailablePackagesResult]:
     """
-    This data source provides the list of Managed Instance Group Available Packages in Oracle Cloud Infrastructure Os Management Hub service.
-
-    Lists available packages on the specified managed instances group. Filter the list against a variety
-    of criteria including but not limited to the package name.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_managed_instance_group_available_packages = oci.OsManagementHub.get_managed_instance_group_available_packages(managed_instance_group_id=oci_os_management_hub_managed_instance_group["test_managed_instance_group"]["id"],
-        compartment_id=var["compartment_id"],
-        display_names=var["managed_instance_group_available_package_display_name"],
-        display_name_contains=var["managed_instance_group_available_package_display_name_contains"],
-        is_latest=var["managed_instance_group_available_package_is_latest"])
-    ```
-
-
-    :param str compartment_id: The OCID of the compartment that contains the resources to list.
-    :param str display_name_contains: A filter to return resources that may partially match the given display name.
-    :param Sequence[str] display_names: A filter to return resources that match the given display names.
-    :param bool is_latest: A boolean variable that is used to list only the latest versions of packages, module streams, and stream profiles when set to true. All packages, module streams, and stream profiles are returned when set to false.
-    :param str managed_instance_group_id: The managed instance group OCID.
+    Use this data source to access information about an existing resource.
     """
     ...

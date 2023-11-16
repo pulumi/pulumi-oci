@@ -26,14 +26,6 @@ class BootVolumeBackupArgs:
                  type: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a BootVolumeBackup resource.
-        :param pulumi.Input[str] boot_volume_id: The OCID of the boot volume that needs to be backed up. Cannot be defined if `source_details` is defined.
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment that contains the boot volume backup.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] kms_key_id: The OCID of the KMS key in the destination region which will be the master encryption key for the copied volume backup.
-        :param pulumi.Input['BootVolumeBackupSourceDetailsArgs'] source_details: Details of the volume backup source in the cloud. Cannot be defined if `boot_volume_id` is defined.
-        :param pulumi.Input[str] type: The type of backup to create. If omitted, defaults to incremental. Supported values are 'FULL' or 'INCREMENTAL'.
         """
         if boot_volume_id is not None:
             pulumi.set(__self__, "boot_volume_id", boot_volume_id)
@@ -55,9 +47,6 @@ class BootVolumeBackupArgs:
     @property
     @pulumi.getter(name="bootVolumeId")
     def boot_volume_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the boot volume that needs to be backed up. Cannot be defined if `source_details` is defined.
-        """
         return pulumi.get(self, "boot_volume_id")
 
     @boot_volume_id.setter
@@ -67,9 +56,6 @@ class BootVolumeBackupArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The OCID of the compartment that contains the boot volume backup.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -79,9 +65,6 @@ class BootVolumeBackupArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -91,9 +74,6 @@ class BootVolumeBackupArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -103,9 +83,6 @@ class BootVolumeBackupArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -115,9 +92,6 @@ class BootVolumeBackupArgs:
     @property
     @pulumi.getter(name="kmsKeyId")
     def kms_key_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the KMS key in the destination region which will be the master encryption key for the copied volume backup.
-        """
         return pulumi.get(self, "kms_key_id")
 
     @kms_key_id.setter
@@ -127,9 +101,6 @@ class BootVolumeBackupArgs:
     @property
     @pulumi.getter(name="sourceDetails")
     def source_details(self) -> Optional[pulumi.Input['BootVolumeBackupSourceDetailsArgs']]:
-        """
-        Details of the volume backup source in the cloud. Cannot be defined if `boot_volume_id` is defined.
-        """
         return pulumi.get(self, "source_details")
 
     @source_details.setter
@@ -139,9 +110,6 @@ class BootVolumeBackupArgs:
     @property
     @pulumi.getter
     def type(self) -> Optional[pulumi.Input[str]]:
-        """
-        The type of backup to create. If omitted, defaults to incremental. Supported values are 'FULL' or 'INCREMENTAL'.
-        """
         return pulumi.get(self, "type")
 
     @type.setter
@@ -172,24 +140,6 @@ class _BootVolumeBackupState:
                  unique_size_in_gbs: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering BootVolumeBackup resources.
-        :param pulumi.Input[str] boot_volume_id: The OCID of the boot volume that needs to be backed up. Cannot be defined if `source_details` is defined.
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment that contains the boot volume backup.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[str] expiration_time: The date and time the volume backup will expire and be automatically deleted. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). This parameter will always be present for backups that were created automatically by a scheduled-backup policy. For manually created backups, it will be absent, signifying that there is no expiration time and the backup will last forever until manually deleted.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] image_id: The image OCID used to create the boot volume the backup is taken from.
-        :param pulumi.Input[str] kms_key_id: The OCID of the KMS key in the destination region which will be the master encryption key for the copied volume backup.
-        :param pulumi.Input[str] size_in_gbs: The size of the boot volume, in GBs.
-        :param pulumi.Input[str] source_boot_volume_backup_id: The OCID of the source boot volume backup.
-        :param pulumi.Input['BootVolumeBackupSourceDetailsArgs'] source_details: Details of the volume backup source in the cloud. Cannot be defined if `boot_volume_id` is defined.
-        :param pulumi.Input[str] source_type: Specifies whether the backup was created manually, or via scheduled backup policy.
-        :param pulumi.Input[str] state: The current state of a boot volume backup.
-        :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] time_created: The date and time the boot volume backup was created. This is the time the actual point-in-time image of the volume data was taken. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        :param pulumi.Input[str] time_request_received: The date and time the request to create the boot volume backup was received. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        :param pulumi.Input[str] type: The type of backup to create. If omitted, defaults to incremental. Supported values are 'FULL' or 'INCREMENTAL'.
-        :param pulumi.Input[str] unique_size_in_gbs: The size used by the backup, in GBs. It is typically smaller than sizeInGBs, depending on the space consumed on the boot volume and whether the backup is full or incremental.
         """
         if boot_volume_id is not None:
             pulumi.set(__self__, "boot_volume_id", boot_volume_id)
@@ -231,9 +181,6 @@ class _BootVolumeBackupState:
     @property
     @pulumi.getter(name="bootVolumeId")
     def boot_volume_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the boot volume that needs to be backed up. Cannot be defined if `source_details` is defined.
-        """
         return pulumi.get(self, "boot_volume_id")
 
     @boot_volume_id.setter
@@ -243,9 +190,6 @@ class _BootVolumeBackupState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The OCID of the compartment that contains the boot volume backup.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -255,9 +199,6 @@ class _BootVolumeBackupState:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -267,9 +208,6 @@ class _BootVolumeBackupState:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -279,9 +217,6 @@ class _BootVolumeBackupState:
     @property
     @pulumi.getter(name="expirationTime")
     def expiration_time(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time the volume backup will expire and be automatically deleted. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). This parameter will always be present for backups that were created automatically by a scheduled-backup policy. For manually created backups, it will be absent, signifying that there is no expiration time and the backup will last forever until manually deleted.
-        """
         return pulumi.get(self, "expiration_time")
 
     @expiration_time.setter
@@ -291,9 +226,6 @@ class _BootVolumeBackupState:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -303,9 +235,6 @@ class _BootVolumeBackupState:
     @property
     @pulumi.getter(name="imageId")
     def image_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The image OCID used to create the boot volume the backup is taken from.
-        """
         return pulumi.get(self, "image_id")
 
     @image_id.setter
@@ -315,9 +244,6 @@ class _BootVolumeBackupState:
     @property
     @pulumi.getter(name="kmsKeyId")
     def kms_key_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the KMS key in the destination region which will be the master encryption key for the copied volume backup.
-        """
         return pulumi.get(self, "kms_key_id")
 
     @kms_key_id.setter
@@ -327,9 +253,6 @@ class _BootVolumeBackupState:
     @property
     @pulumi.getter(name="sizeInGbs")
     def size_in_gbs(self) -> Optional[pulumi.Input[str]]:
-        """
-        The size of the boot volume, in GBs.
-        """
         return pulumi.get(self, "size_in_gbs")
 
     @size_in_gbs.setter
@@ -339,9 +262,6 @@ class _BootVolumeBackupState:
     @property
     @pulumi.getter(name="sourceBootVolumeBackupId")
     def source_boot_volume_backup_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the source boot volume backup.
-        """
         return pulumi.get(self, "source_boot_volume_backup_id")
 
     @source_boot_volume_backup_id.setter
@@ -351,9 +271,6 @@ class _BootVolumeBackupState:
     @property
     @pulumi.getter(name="sourceDetails")
     def source_details(self) -> Optional[pulumi.Input['BootVolumeBackupSourceDetailsArgs']]:
-        """
-        Details of the volume backup source in the cloud. Cannot be defined if `boot_volume_id` is defined.
-        """
         return pulumi.get(self, "source_details")
 
     @source_details.setter
@@ -363,9 +280,6 @@ class _BootVolumeBackupState:
     @property
     @pulumi.getter(name="sourceType")
     def source_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        Specifies whether the backup was created manually, or via scheduled backup policy.
-        """
         return pulumi.get(self, "source_type")
 
     @source_type.setter
@@ -375,9 +289,6 @@ class _BootVolumeBackupState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The current state of a boot volume backup.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -387,9 +298,6 @@ class _BootVolumeBackupState:
     @property
     @pulumi.getter(name="systemTags")
     def system_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
@@ -399,9 +307,6 @@ class _BootVolumeBackupState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time the boot volume backup was created. This is the time the actual point-in-time image of the volume data was taken. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -411,9 +316,6 @@ class _BootVolumeBackupState:
     @property
     @pulumi.getter(name="timeRequestReceived")
     def time_request_received(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time the request to create the boot volume backup was received. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        """
         return pulumi.get(self, "time_request_received")
 
     @time_request_received.setter
@@ -423,9 +325,6 @@ class _BootVolumeBackupState:
     @property
     @pulumi.getter
     def type(self) -> Optional[pulumi.Input[str]]:
-        """
-        The type of backup to create. If omitted, defaults to incremental. Supported values are 'FULL' or 'INCREMENTAL'.
-        """
         return pulumi.get(self, "type")
 
     @type.setter
@@ -435,9 +334,6 @@ class _BootVolumeBackupState:
     @property
     @pulumi.getter(name="uniqueSizeInGbs")
     def unique_size_in_gbs(self) -> Optional[pulumi.Input[str]]:
-        """
-        The size used by the backup, in GBs. It is typically smaller than sizeInGBs, depending on the space consumed on the boot volume and whether the backup is full or incremental.
-        """
         return pulumi.get(self, "unique_size_in_gbs")
 
     @unique_size_in_gbs.setter
@@ -460,52 +356,9 @@ class BootVolumeBackup(pulumi.CustomResource):
                  type: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Boot Volume Backup resource in Oracle Cloud Infrastructure Core service.
-
-        Creates a new boot volume backup of the specified boot volume. For general information about boot volume backups,
-        see [Overview of Boot Volume Backups](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/bootvolumebackups.htm)
-
-        When the request is received, the backup object is in a REQUEST_RECEIVED state.
-        When the data is imaged, it goes into a CREATING state.
-        After the backup is fully uploaded to the cloud, it goes into an AVAILABLE state.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_boot_volume_backup = oci.core.BootVolumeBackup("testBootVolumeBackup",
-            boot_volume_id=oci_core_boot_volume["test_boot_volume"]["id"],
-            defined_tags={
-                "Operations.CostCenter": "42",
-            },
-            display_name=var["boot_volume_backup_display_name"],
-            freeform_tags={
-                "Department": "Finance",
-            },
-            kms_key_id=oci_kms_key["test_key"]["id"],
-            type=var["boot_volume_backup_type"])
-        ```
-
-        ## Import
-
-        BootVolumeBackups can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Core/bootVolumeBackup:BootVolumeBackup test_boot_volume_backup "id"
-        ```
-
+        Create a BootVolumeBackup resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] boot_volume_id: The OCID of the boot volume that needs to be backed up. Cannot be defined if `source_details` is defined.
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment that contains the boot volume backup.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] kms_key_id: The OCID of the KMS key in the destination region which will be the master encryption key for the copied volume backup.
-        :param pulumi.Input[pulumi.InputType['BootVolumeBackupSourceDetailsArgs']] source_details: Details of the volume backup source in the cloud. Cannot be defined if `boot_volume_id` is defined.
-        :param pulumi.Input[str] type: The type of backup to create. If omitted, defaults to incremental. Supported values are 'FULL' or 'INCREMENTAL'.
         """
         ...
     @overload
@@ -514,42 +367,7 @@ class BootVolumeBackup(pulumi.CustomResource):
                  args: Optional[BootVolumeBackupArgs] = None,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Boot Volume Backup resource in Oracle Cloud Infrastructure Core service.
-
-        Creates a new boot volume backup of the specified boot volume. For general information about boot volume backups,
-        see [Overview of Boot Volume Backups](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/bootvolumebackups.htm)
-
-        When the request is received, the backup object is in a REQUEST_RECEIVED state.
-        When the data is imaged, it goes into a CREATING state.
-        After the backup is fully uploaded to the cloud, it goes into an AVAILABLE state.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_boot_volume_backup = oci.core.BootVolumeBackup("testBootVolumeBackup",
-            boot_volume_id=oci_core_boot_volume["test_boot_volume"]["id"],
-            defined_tags={
-                "Operations.CostCenter": "42",
-            },
-            display_name=var["boot_volume_backup_display_name"],
-            freeform_tags={
-                "Department": "Finance",
-            },
-            kms_key_id=oci_kms_key["test_key"]["id"],
-            type=var["boot_volume_backup_type"])
-        ```
-
-        ## Import
-
-        BootVolumeBackups can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Core/bootVolumeBackup:BootVolumeBackup test_boot_volume_backup "id"
-        ```
-
+        Create a BootVolumeBackup resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param BootVolumeBackupArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -635,24 +453,6 @@ class BootVolumeBackup(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] boot_volume_id: The OCID of the boot volume that needs to be backed up. Cannot be defined if `source_details` is defined.
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment that contains the boot volume backup.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[str] expiration_time: The date and time the volume backup will expire and be automatically deleted. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). This parameter will always be present for backups that were created automatically by a scheduled-backup policy. For manually created backups, it will be absent, signifying that there is no expiration time and the backup will last forever until manually deleted.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] image_id: The image OCID used to create the boot volume the backup is taken from.
-        :param pulumi.Input[str] kms_key_id: The OCID of the KMS key in the destination region which will be the master encryption key for the copied volume backup.
-        :param pulumi.Input[str] size_in_gbs: The size of the boot volume, in GBs.
-        :param pulumi.Input[str] source_boot_volume_backup_id: The OCID of the source boot volume backup.
-        :param pulumi.Input[pulumi.InputType['BootVolumeBackupSourceDetailsArgs']] source_details: Details of the volume backup source in the cloud. Cannot be defined if `boot_volume_id` is defined.
-        :param pulumi.Input[str] source_type: Specifies whether the backup was created manually, or via scheduled backup policy.
-        :param pulumi.Input[str] state: The current state of a boot volume backup.
-        :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] time_created: The date and time the boot volume backup was created. This is the time the actual point-in-time image of the volume data was taken. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        :param pulumi.Input[str] time_request_received: The date and time the request to create the boot volume backup was received. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        :param pulumi.Input[str] type: The type of backup to create. If omitted, defaults to incremental. Supported values are 'FULL' or 'INCREMENTAL'.
-        :param pulumi.Input[str] unique_size_in_gbs: The size used by the backup, in GBs. It is typically smaller than sizeInGBs, depending on the space consumed on the boot volume and whether the backup is full or incremental.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -680,145 +480,91 @@ class BootVolumeBackup(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="bootVolumeId")
-    def boot_volume_id(self) -> pulumi.Output[str]:
-        """
-        The OCID of the boot volume that needs to be backed up. Cannot be defined if `source_details` is defined.
-        """
+    def boot_volume_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "boot_volume_id")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The OCID of the compartment that contains the boot volume backup.
-        """
+    def compartment_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> pulumi.Output[str]:
-        """
-        (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
+    def display_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="expirationTime")
-    def expiration_time(self) -> pulumi.Output[str]:
-        """
-        The date and time the volume backup will expire and be automatically deleted. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). This parameter will always be present for backups that were created automatically by a scheduled-backup policy. For manually created backups, it will be absent, signifying that there is no expiration time and the backup will last forever until manually deleted.
-        """
+    def expiration_time(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "expiration_time")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="imageId")
-    def image_id(self) -> pulumi.Output[str]:
-        """
-        The image OCID used to create the boot volume the backup is taken from.
-        """
+    def image_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "image_id")
 
     @property
     @pulumi.getter(name="kmsKeyId")
-    def kms_key_id(self) -> pulumi.Output[str]:
-        """
-        The OCID of the KMS key in the destination region which will be the master encryption key for the copied volume backup.
-        """
+    def kms_key_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "kms_key_id")
 
     @property
     @pulumi.getter(name="sizeInGbs")
-    def size_in_gbs(self) -> pulumi.Output[str]:
-        """
-        The size of the boot volume, in GBs.
-        """
+    def size_in_gbs(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "size_in_gbs")
 
     @property
     @pulumi.getter(name="sourceBootVolumeBackupId")
-    def source_boot_volume_backup_id(self) -> pulumi.Output[str]:
-        """
-        The OCID of the source boot volume backup.
-        """
+    def source_boot_volume_backup_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "source_boot_volume_backup_id")
 
     @property
     @pulumi.getter(name="sourceDetails")
     def source_details(self) -> pulumi.Output[Optional['outputs.BootVolumeBackupSourceDetails']]:
-        """
-        Details of the volume backup source in the cloud. Cannot be defined if `boot_volume_id` is defined.
-        """
         return pulumi.get(self, "source_details")
 
     @property
     @pulumi.getter(name="sourceType")
-    def source_type(self) -> pulumi.Output[str]:
-        """
-        Specifies whether the backup was created manually, or via scheduled backup policy.
-        """
+    def source_type(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "source_type")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        The current state of a boot volume backup.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def system_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        The date and time the boot volume backup was created. This is the time the actual point-in-time image of the volume data was taken. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeRequestReceived")
-    def time_request_received(self) -> pulumi.Output[str]:
-        """
-        The date and time the request to create the boot volume backup was received. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        """
+    def time_request_received(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_request_received")
 
     @property
     @pulumi.getter
-    def type(self) -> pulumi.Output[str]:
-        """
-        The type of backup to create. If omitted, defaults to incremental. Supported values are 'FULL' or 'INCREMENTAL'.
-        """
+    def type(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "type")
 
     @property
     @pulumi.getter(name="uniqueSizeInGbs")
-    def unique_size_in_gbs(self) -> pulumi.Output[str]:
-        """
-        The size used by the backup, in GBs. It is typically smaller than sizeInGBs, depending on the space consumed on the boot volume and whether the backup is full or incremental.
-        """
+    def unique_size_in_gbs(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "unique_size_in_gbs")
 

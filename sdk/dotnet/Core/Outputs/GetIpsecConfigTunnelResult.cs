@@ -16,23 +16,23 @@ namespace Pulumi.Oci.Core.Outputs
         /// <summary>
         /// The IP address of Oracle's VPN headend.  Example: `203.0.113.50 `
         /// </summary>
-        public readonly string IpAddress;
+        public readonly string? IpAddress;
         /// <summary>
         /// The shared secret of the IPSec tunnel.
         /// </summary>
-        public readonly string SharedSecret;
+        public readonly string? SharedSecret;
         /// <summary>
         /// The date and time the IPSec connection was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
 
         [OutputConstructor]
         private GetIpsecConfigTunnelResult(
-            string ipAddress,
+            string? ipAddress,
 
-            string sharedSecret,
+            string? sharedSecret,
 
-            string timeCreated)
+            string? timeCreated)
         {
             IpAddress = ipAddress;
             SharedSecret = sharedSecret;

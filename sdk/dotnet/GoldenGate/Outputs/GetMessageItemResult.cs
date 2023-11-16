@@ -16,23 +16,23 @@ namespace Pulumi.Oci.GoldenGate.Outputs
         /// <summary>
         /// The deployment Message in plain text with optional HTML anchor tags.
         /// </summary>
-        public readonly string DeploymentMessage;
+        public readonly string? DeploymentMessage;
         /// <summary>
         /// The deployment Message Status.
         /// </summary>
-        public readonly string DeploymentMessageStatus;
+        public readonly string? DeploymentMessageStatus;
         /// <summary>
         /// The deployment Message Id.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
 
         [OutputConstructor]
         private GetMessageItemResult(
-            string deploymentMessage,
+            string? deploymentMessage,
 
-            string deploymentMessageStatus,
+            string? deploymentMessageStatus,
 
-            string id)
+            string? id)
         {
             DeploymentMessage = deploymentMessage;
             DeploymentMessageStatus = deploymentMessageStatus;

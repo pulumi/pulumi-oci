@@ -43,37 +43,37 @@ namespace Pulumi.Oci.AiDocument
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) An optional description of the model.
         /// </summary>
         [Output("description")]
-        public Output<string> Description { get; private set; } = null!;
+        public Output<string?> Description { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) A human-friendly name for the model, which can be changed.
         /// </summary>
         [Output("displayName")]
-        public Output<string> DisplayName { get; private set; } = null!;
+        public Output<string?> DisplayName { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// Set to true when the model is created by using multiple key value extraction models.
         /// </summary>
         [Output("isComposedModel")]
-        public Output<bool> IsComposedModel { get; private set; } = null!;
+        public Output<bool?> IsComposedModel { get; private set; } = null!;
 
         /// <summary>
         /// Set to true when experimenting with a new model type or dataset, so the model training is quick, with a predefined low number of passes through the training data.
         /// </summary>
         [Output("isQuickMode")]
-        public Output<bool> IsQuickMode { get; private set; } = null!;
+        public Output<bool?> IsQuickMode { get; private set; } = null!;
 
         /// <summary>
         /// The collection of labels used to train the custom model.
@@ -85,13 +85,13 @@ namespace Pulumi.Oci.AiDocument
         /// A message describing the current state in more detail, that can provide actionable information if training failed.
         /// </summary>
         [Output("lifecycleDetails")]
-        public Output<string> LifecycleDetails { get; private set; } = null!;
+        public Output<string?> LifecycleDetails { get; private set; } = null!;
 
         /// <summary>
         /// The maximum model training time in hours, expressed as a decimal fraction.
         /// </summary>
         [Output("maxTrainingTimeInHours")]
-        public Output<double> MaxTrainingTimeInHours { get; private set; } = null!;
+        public Output<double?> MaxTrainingTimeInHours { get; private set; } = null!;
 
         /// <summary>
         /// Trained Model Metrics.
@@ -112,7 +112,7 @@ namespace Pulumi.Oci.AiDocument
         /// The model version
         /// </summary>
         [Output("modelVersion")]
-        public Output<string> ModelVersion { get; private set; } = null!;
+        public Output<string?> ModelVersion { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project that contains the model.
@@ -124,55 +124,55 @@ namespace Pulumi.Oci.AiDocument
         /// The current state of the model.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// Usage of system tag keys. These predefined keys are scoped to namespaces. For example: `{"orcl-cloud": {"free-tier-retained": "true"}}`
         /// </summary>
         [Output("systemTags")]
-        public Output<ImmutableDictionary<string, object>> SystemTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> SystemTags { get; private set; } = null!;
 
         /// <summary>
         /// The tenancy id of the model.
         /// </summary>
         [Output("tenancyId")]
-        public Output<string> TenancyId { get; private set; } = null!;
+        public Output<string?> TenancyId { get; private set; } = null!;
 
         /// <summary>
         /// The base entity which is the input for creating and training a model.
         /// </summary>
         [Output("testingDataset")]
-        public Output<Outputs.ModelTestingDataset> TestingDataset { get; private set; } = null!;
+        public Output<Outputs.ModelTestingDataset?> TestingDataset { get; private set; } = null!;
 
         /// <summary>
         /// When the model was created, as an RFC3339 datetime string.
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// When the model was updated, as an RFC3339 datetime string.
         /// </summary>
         [Output("timeUpdated")]
-        public Output<string> TimeUpdated { get; private set; } = null!;
+        public Output<string?> TimeUpdated { get; private set; } = null!;
 
         /// <summary>
         /// The total hours actually used for model training.
         /// </summary>
         [Output("trainedTimeInHours")]
-        public Output<double> TrainedTimeInHours { get; private set; } = null!;
+        public Output<double?> TrainedTimeInHours { get; private set; } = null!;
 
         /// <summary>
         /// The base entity which is the input for creating and training a model.
         /// </summary>
         [Output("trainingDataset")]
-        public Output<Outputs.ModelTrainingDataset> TrainingDataset { get; private set; } = null!;
+        public Output<Outputs.ModelTrainingDataset?> TrainingDataset { get; private set; } = null!;
 
         /// <summary>
         /// The base entity which is the input for creating and training a model.
         /// </summary>
         [Output("validationDataset")]
-        public Output<Outputs.ModelValidationDataset> ValidationDataset { get; private set; } = null!;
+        public Output<Outputs.ModelValidationDataset?> ValidationDataset { get; private set; } = null!;
 
 
         /// <summary>

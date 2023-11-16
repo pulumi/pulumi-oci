@@ -135,7 +135,7 @@ namespace Pulumi.Oci.Database
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
 
         [OutputConstructor]
         private GetAutonomousContainerDatabaseDataguardAssociationsResult(
@@ -145,7 +145,7 @@ namespace Pulumi.Oci.Database
 
             ImmutableArray<Outputs.GetAutonomousContainerDatabaseDataguardAssociationsFilterResult> filters,
 
-            string id)
+            string? id)
         {
             AutonomousContainerDatabaseDataguardAssociations = autonomousContainerDatabaseDataguardAssociations;
             AutonomousContainerDatabaseId = autonomousContainerDatabaseId;

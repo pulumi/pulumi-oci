@@ -44,12 +44,12 @@ public final class GetNetworkFirewallPolicyDecryptionRulesDecryptionRuleSummaryC
      * @return OCID of the Network Firewall Policy this decryption rule belongs to.
      * 
      */
-    private String parentResourceId;
+    private @Nullable String parentResourceId;
     /**
      * @return An object which defines the position of the rule.
      * 
      */
-    private GetNetworkFirewallPolicyDecryptionRulesDecryptionRuleSummaryCollectionItemPosition position;
+    private @Nullable GetNetworkFirewallPolicyDecryptionRulesDecryptionRuleSummaryCollectionItemPosition position;
     private @Nullable String priorityOrder;
     /**
      * @return The name of a mapped secret. Its `type` must match that of the specified decryption profile.
@@ -99,15 +99,15 @@ public final class GetNetworkFirewallPolicyDecryptionRulesDecryptionRuleSummaryC
      * @return OCID of the Network Firewall Policy this decryption rule belongs to.
      * 
      */
-    public String parentResourceId() {
-        return this.parentResourceId;
+    public Optional<String> parentResourceId() {
+        return Optional.ofNullable(this.parentResourceId);
     }
     /**
      * @return An object which defines the position of the rule.
      * 
      */
-    public GetNetworkFirewallPolicyDecryptionRulesDecryptionRuleSummaryCollectionItemPosition position() {
-        return this.position;
+    public Optional<GetNetworkFirewallPolicyDecryptionRulesDecryptionRuleSummaryCollectionItemPosition> position() {
+        return Optional.ofNullable(this.position);
     }
     public Optional<String> priorityOrder() {
         return Optional.ofNullable(this.priorityOrder);
@@ -134,8 +134,8 @@ public final class GetNetworkFirewallPolicyDecryptionRulesDecryptionRuleSummaryC
         private @Nullable String decryptionProfile;
         private String name;
         private String networkFirewallPolicyId;
-        private String parentResourceId;
-        private GetNetworkFirewallPolicyDecryptionRulesDecryptionRuleSummaryCollectionItemPosition position;
+        private @Nullable String parentResourceId;
+        private @Nullable GetNetworkFirewallPolicyDecryptionRulesDecryptionRuleSummaryCollectionItemPosition position;
         private @Nullable String priorityOrder;
         private @Nullable String secret;
         public Builder() {}
@@ -178,13 +178,13 @@ public final class GetNetworkFirewallPolicyDecryptionRulesDecryptionRuleSummaryC
             return this;
         }
         @CustomType.Setter
-        public Builder parentResourceId(String parentResourceId) {
-            this.parentResourceId = Objects.requireNonNull(parentResourceId);
+        public Builder parentResourceId(@Nullable String parentResourceId) {
+            this.parentResourceId = parentResourceId;
             return this;
         }
         @CustomType.Setter
-        public Builder position(GetNetworkFirewallPolicyDecryptionRulesDecryptionRuleSummaryCollectionItemPosition position) {
-            this.position = Objects.requireNonNull(position);
+        public Builder position(@Nullable GetNetworkFirewallPolicyDecryptionRulesDecryptionRuleSummaryCollectionItemPosition position) {
+            this.position = position;
             return this;
         }
         @CustomType.Setter

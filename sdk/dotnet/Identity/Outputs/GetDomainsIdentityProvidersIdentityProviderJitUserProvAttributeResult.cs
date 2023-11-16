@@ -16,17 +16,17 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// Group URI
         /// </summary>
-        public readonly string Ref;
+        public readonly string? Ref;
         /// <summary>
         /// Value of the tag.
         /// </summary>
-        public readonly string Value;
+        public readonly string? Value;
 
         [OutputConstructor]
         private GetDomainsIdentityProvidersIdentityProviderJitUserProvAttributeResult(
-            string @ref,
+            string? @ref,
 
-            string value)
+            string? value)
         {
             Ref = @ref;
             Value = value;

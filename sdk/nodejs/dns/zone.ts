@@ -86,25 +86,25 @@ export class Zone extends pulumi.CustomResource {
      *
      * **Example:** `{"Operations": {"CostCenter": "42"}}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) External secondary servers for the zone. This field is currently not supported when `zoneType` is `SECONDARY` or `scope` is `PRIVATE`.
      */
-    public readonly externalDownstreams!: pulumi.Output<outputs.Dns.ZoneExternalDownstream[]>;
+    public readonly externalDownstreams!: pulumi.Output<outputs.Dns.ZoneExternalDownstream[] | undefined>;
     /**
      * (Updatable) External master servers for the zone. `externalMasters` becomes a required parameter when the `zoneType` value is `SECONDARY`.
      */
-    public readonly externalMasters!: pulumi.Output<outputs.Dns.ZoneExternalMaster[]>;
+    public readonly externalMasters!: pulumi.Output<outputs.Dns.ZoneExternalMaster[] | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * **Example:** `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * A Boolean flag indicating whether or not parts of the resource are unable to be explicitly managed.
      */
-    public /*out*/ readonly isProtected!: pulumi.Output<boolean>;
+    public /*out*/ readonly isProtected!: pulumi.Output<boolean | undefined>;
     /**
      * The name of the zone.
      */
@@ -112,32 +112,32 @@ export class Zone extends pulumi.CustomResource {
     /**
      * The authoritative nameservers for the zone.
      */
-    public /*out*/ readonly nameservers!: pulumi.Output<outputs.Dns.ZoneNameserver[]>;
+    public /*out*/ readonly nameservers!: pulumi.Output<outputs.Dns.ZoneNameserver[] | undefined>;
     /**
      * Specifies to operate only on resources that have a matching DNS scope. 
      * This value will be null for zones in the global DNS and `PRIVATE` when creating a private zone.
      */
-    public readonly scope!: pulumi.Output<string>;
+    public readonly scope!: pulumi.Output<string | undefined>;
     /**
      * The canonical absolute URL of the resource.
      */
-    public /*out*/ readonly self!: pulumi.Output<string>;
+    public /*out*/ readonly self!: pulumi.Output<string | undefined>;
     /**
      * The current serial of the zone. As seen in the zone's SOA record.
      */
-    public /*out*/ readonly serial!: pulumi.Output<number>;
+    public /*out*/ readonly serial!: pulumi.Output<number | undefined>;
     /**
      * The current state of the zone resource.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * Version is the never-repeating, totally-orderable, version of the zone, from which the serial field of the zone's SOA record is derived.
      */
-    public /*out*/ readonly version!: pulumi.Output<string>;
+    public /*out*/ readonly version!: pulumi.Output<string | undefined>;
     /**
      * The OCID of the private view containing the zone. This value will be null for zones in the global DNS, which are publicly resolvable and not part of a private view.
      */
@@ -145,7 +145,7 @@ export class Zone extends pulumi.CustomResource {
     /**
      * The Oracle Cloud Infrastructure nameservers that transfer the zone data with external nameservers.
      */
-    public /*out*/ readonly zoneTransferServers!: pulumi.Output<outputs.Dns.ZoneZoneTransferServer[]>;
+    public /*out*/ readonly zoneTransferServers!: pulumi.Output<outputs.Dns.ZoneZoneTransferServer[] | undefined>;
     /**
      * The type of the zone. Must be either `PRIMARY` or `SECONDARY`. `SECONDARY` is only supported for GLOBAL zones. 
      *

@@ -16,35 +16,35 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
         /// <summary>
         /// Information about the addon version.
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// Display name of addon version.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// If the the configuration is required or not.
         /// </summary>
-        public readonly bool IsRequired;
+        public readonly bool? IsRequired;
         /// <summary>
         /// Addon configuration key
         /// </summary>
-        public readonly string Key;
+        public readonly string? Key;
         /// <summary>
         /// Addon configuration value
         /// </summary>
-        public readonly string Value;
+        public readonly string? Value;
 
         [OutputConstructor]
         private GetAddonOptionsAddonOptionVersionConfigurationResult(
-            string description,
+            string? description,
 
-            string displayName,
+            string? displayName,
 
-            bool isRequired,
+            bool? isRequired,
 
-            string key,
+            string? key,
 
-            string value)
+            string? value)
         {
             Description = description;
             DisplayName = displayName;

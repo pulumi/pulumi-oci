@@ -100,7 +100,7 @@ export interface GetPipelineRunsResult {
     /**
      * The list of pipeline_runs.
      */
-    readonly pipelineRuns: outputs.DataScience.GetPipelineRunsPipelineRun[];
+    readonly pipelineRuns?: outputs.DataScience.GetPipelineRunsPipelineRun[];
     /**
      * The state of the step run.
      */

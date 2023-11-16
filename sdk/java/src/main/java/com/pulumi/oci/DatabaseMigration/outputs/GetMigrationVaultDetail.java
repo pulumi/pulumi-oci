@@ -6,6 +6,8 @@ package com.pulumi.oci.DatabaseMigration.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetMigrationVaultDetail {
@@ -13,39 +15,39 @@ public final class GetMigrationVaultDetail {
      * @return OCID of the compartment where the secret containing the credentials will be created.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return OCID of the vault encryption key
      * 
      */
-    private String keyId;
+    private @Nullable String keyId;
     /**
      * @return OCID of the vault
      * 
      */
-    private String vaultId;
+    private @Nullable String vaultId;
 
     private GetMigrationVaultDetail() {}
     /**
      * @return OCID of the compartment where the secret containing the credentials will be created.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return OCID of the vault encryption key
      * 
      */
-    public String keyId() {
-        return this.keyId;
+    public Optional<String> keyId() {
+        return Optional.ofNullable(this.keyId);
     }
     /**
      * @return OCID of the vault
      * 
      */
-    public String vaultId() {
-        return this.vaultId;
+    public Optional<String> vaultId() {
+        return Optional.ofNullable(this.vaultId);
     }
 
     public static Builder builder() {
@@ -57,9 +59,9 @@ public final class GetMigrationVaultDetail {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String compartmentId;
-        private String keyId;
-        private String vaultId;
+        private @Nullable String compartmentId;
+        private @Nullable String keyId;
+        private @Nullable String vaultId;
         public Builder() {}
         public Builder(GetMigrationVaultDetail defaults) {
     	      Objects.requireNonNull(defaults);
@@ -69,18 +71,18 @@ public final class GetMigrationVaultDetail {
         }
 
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder keyId(String keyId) {
-            this.keyId = Objects.requireNonNull(keyId);
+        public Builder keyId(@Nullable String keyId) {
+            this.keyId = keyId;
             return this;
         }
         @CustomType.Setter
-        public Builder vaultId(String vaultId) {
-            this.vaultId = Objects.requireNonNull(vaultId);
+        public Builder vaultId(@Nullable String vaultId) {
+            this.vaultId = vaultId;
             return this;
         }
         public GetMigrationVaultDetail build() {

@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Sender resource in Oracle Cloud Infrastructure Email service.
@@ -69,18 +68,18 @@ type Sender struct {
 	// The email address of the sender.
 	EmailAddress pulumi.StringOutput `pulumi:"emailAddress"`
 	// The email domain used to assert responsibility for emails sent from this sender.
-	EmailDomainId pulumi.StringOutput `pulumi:"emailDomainId"`
+	EmailDomainId pulumi.StringPtrOutput `pulumi:"emailDomainId"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// Value of the SPF field. For more information about SPF, please see [SPF Authentication](https://docs.cloud.oracle.com/iaas/Content/Email/Concepts/overview.htm#components).
-	IsSpf pulumi.BoolOutput `pulumi:"isSpf"`
+	IsSpf pulumi.BoolPtrOutput `pulumi:"isSpf"`
 	// The current status of the approved sender.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// The date and time the approved sender was added in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by RFC 3339.
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 }
 
 // NewSender registers a new resource with the given unique name, arguments, and options.
@@ -218,12 +217,6 @@ func (i *Sender) ToSenderOutputWithContext(ctx context.Context) SenderOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(SenderOutput)
 }
 
-func (i *Sender) ToOutput(ctx context.Context) pulumix.Output[*Sender] {
-	return pulumix.Output[*Sender]{
-		OutputState: i.ToSenderOutputWithContext(ctx).OutputState,
-	}
-}
-
 // SenderArrayInput is an input type that accepts SenderArray and SenderArrayOutput values.
 // You can construct a concrete instance of `SenderArrayInput` via:
 //
@@ -247,12 +240,6 @@ func (i SenderArray) ToSenderArrayOutput() SenderArrayOutput {
 
 func (i SenderArray) ToSenderArrayOutputWithContext(ctx context.Context) SenderArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(SenderArrayOutput)
-}
-
-func (i SenderArray) ToOutput(ctx context.Context) pulumix.Output[[]*Sender] {
-	return pulumix.Output[[]*Sender]{
-		OutputState: i.ToSenderArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // SenderMapInput is an input type that accepts SenderMap and SenderMapOutput values.
@@ -280,12 +267,6 @@ func (i SenderMap) ToSenderMapOutputWithContext(ctx context.Context) SenderMapOu
 	return pulumi.ToOutputWithContext(ctx, i).(SenderMapOutput)
 }
 
-func (i SenderMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*Sender] {
-	return pulumix.Output[map[string]*Sender]{
-		OutputState: i.ToSenderMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type SenderOutput struct{ *pulumi.OutputState }
 
 func (SenderOutput) ElementType() reflect.Type {
@@ -298,12 +279,6 @@ func (o SenderOutput) ToSenderOutput() SenderOutput {
 
 func (o SenderOutput) ToSenderOutputWithContext(ctx context.Context) SenderOutput {
 	return o
-}
-
-func (o SenderOutput) ToOutput(ctx context.Context) pulumix.Output[*Sender] {
-	return pulumix.Output[*Sender]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The OCID of the compartment that contains the sender.
@@ -322,8 +297,8 @@ func (o SenderOutput) EmailAddress() pulumi.StringOutput {
 }
 
 // The email domain used to assert responsibility for emails sent from this sender.
-func (o SenderOutput) EmailDomainId() pulumi.StringOutput {
-	return o.ApplyT(func(v *Sender) pulumi.StringOutput { return v.EmailDomainId }).(pulumi.StringOutput)
+func (o SenderOutput) EmailDomainId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Sender) pulumi.StringPtrOutput { return v.EmailDomainId }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -335,18 +310,18 @@ func (o SenderOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // Value of the SPF field. For more information about SPF, please see [SPF Authentication](https://docs.cloud.oracle.com/iaas/Content/Email/Concepts/overview.htm#components).
-func (o SenderOutput) IsSpf() pulumi.BoolOutput {
-	return o.ApplyT(func(v *Sender) pulumi.BoolOutput { return v.IsSpf }).(pulumi.BoolOutput)
+func (o SenderOutput) IsSpf() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *Sender) pulumi.BoolPtrOutput { return v.IsSpf }).(pulumi.BoolPtrOutput)
 }
 
 // The current status of the approved sender.
-func (o SenderOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *Sender) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o SenderOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Sender) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the approved sender was added in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by RFC 3339.
-func (o SenderOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *Sender) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o SenderOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Sender) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 type SenderArrayOutput struct{ *pulumi.OutputState }
@@ -361,12 +336,6 @@ func (o SenderArrayOutput) ToSenderArrayOutput() SenderArrayOutput {
 
 func (o SenderArrayOutput) ToSenderArrayOutputWithContext(ctx context.Context) SenderArrayOutput {
 	return o
-}
-
-func (o SenderArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*Sender] {
-	return pulumix.Output[[]*Sender]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o SenderArrayOutput) Index(i pulumi.IntInput) SenderOutput {
@@ -387,12 +356,6 @@ func (o SenderMapOutput) ToSenderMapOutput() SenderMapOutput {
 
 func (o SenderMapOutput) ToSenderMapOutputWithContext(ctx context.Context) SenderMapOutput {
 	return o
-}
-
-func (o SenderMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*Sender] {
-	return pulumix.Output[map[string]*Sender]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o SenderMapOutput) MapIndex(k pulumi.StringInput) SenderOutput {

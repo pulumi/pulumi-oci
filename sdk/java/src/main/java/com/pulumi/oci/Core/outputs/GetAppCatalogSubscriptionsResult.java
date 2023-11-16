@@ -18,7 +18,7 @@ public final class GetAppCatalogSubscriptionsResult {
      * @return The list of app_catalog_subscriptions.
      * 
      */
-    private List<GetAppCatalogSubscriptionsAppCatalogSubscription> appCatalogSubscriptions;
+    private @Nullable List<GetAppCatalogSubscriptionsAppCatalogSubscription> appCatalogSubscriptions;
     /**
      * @return The compartmentID of the subscription.
      * 
@@ -29,7 +29,7 @@ public final class GetAppCatalogSubscriptionsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The ocid of the listing resource.
      * 
@@ -42,7 +42,7 @@ public final class GetAppCatalogSubscriptionsResult {
      * 
      */
     public List<GetAppCatalogSubscriptionsAppCatalogSubscription> appCatalogSubscriptions() {
-        return this.appCatalogSubscriptions;
+        return this.appCatalogSubscriptions == null ? List.of() : this.appCatalogSubscriptions;
     }
     /**
      * @return The compartmentID of the subscription.
@@ -58,8 +58,8 @@ public final class GetAppCatalogSubscriptionsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The ocid of the listing resource.
@@ -78,10 +78,10 @@ public final class GetAppCatalogSubscriptionsResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetAppCatalogSubscriptionsAppCatalogSubscription> appCatalogSubscriptions;
+        private @Nullable List<GetAppCatalogSubscriptionsAppCatalogSubscription> appCatalogSubscriptions;
         private String compartmentId;
         private @Nullable List<GetAppCatalogSubscriptionsFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String listingId;
         public Builder() {}
         public Builder(GetAppCatalogSubscriptionsResult defaults) {
@@ -94,8 +94,8 @@ public final class GetAppCatalogSubscriptionsResult {
         }
 
         @CustomType.Setter
-        public Builder appCatalogSubscriptions(List<GetAppCatalogSubscriptionsAppCatalogSubscription> appCatalogSubscriptions) {
-            this.appCatalogSubscriptions = Objects.requireNonNull(appCatalogSubscriptions);
+        public Builder appCatalogSubscriptions(@Nullable List<GetAppCatalogSubscriptionsAppCatalogSubscription> appCatalogSubscriptions) {
+            this.appCatalogSubscriptions = appCatalogSubscriptions;
             return this;
         }
         public Builder appCatalogSubscriptions(GetAppCatalogSubscriptionsAppCatalogSubscription... appCatalogSubscriptions) {
@@ -115,8 +115,8 @@ public final class GetAppCatalogSubscriptionsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

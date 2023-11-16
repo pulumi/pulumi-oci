@@ -13,10 +13,10 @@ namespace Pulumi.Oci.Core.Outputs
     [OutputType]
     public sealed class GetShapeShapeRecommendedAlternativeResult
     {
-        public readonly string ShapeName;
+        public readonly string? ShapeName;
 
         [OutputConstructor]
-        private GetShapeShapeRecommendedAlternativeResult(string shapeName)
+        private GetShapeShapeRecommendedAlternativeResult(string? shapeName)
         {
             ShapeName = shapeName;
         }

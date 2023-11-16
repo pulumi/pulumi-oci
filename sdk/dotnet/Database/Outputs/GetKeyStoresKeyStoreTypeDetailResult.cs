@@ -16,7 +16,7 @@ namespace Pulumi.Oci.Database.Outputs
         /// <summary>
         /// The administrator username to connect to Oracle Key Vault
         /// </summary>
-        public readonly string AdminUsername;
+        public readonly string? AdminUsername;
         /// <summary>
         /// The list of Oracle Key Vault connection IP addresses.
         /// </summary>
@@ -24,27 +24,27 @@ namespace Pulumi.Oci.Database.Outputs
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
         /// </summary>
-        public readonly string SecretId;
+        public readonly string? SecretId;
         /// <summary>
         /// The type of key store.
         /// </summary>
-        public readonly string Type;
+        public readonly string? Type;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
         /// </summary>
-        public readonly string VaultId;
+        public readonly string? VaultId;
 
         [OutputConstructor]
         private GetKeyStoresKeyStoreTypeDetailResult(
-            string adminUsername,
+            string? adminUsername,
 
             ImmutableArray<string> connectionIps,
 
-            string secretId,
+            string? secretId,
 
-            string type,
+            string? type,
 
-            string vaultId)
+            string? vaultId)
         {
             AdminUsername = adminUsername;
             ConnectionIps = connectionIps;

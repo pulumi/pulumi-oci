@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Instance Console Connections in Oracle Cloud Infrastructure Core service.
@@ -69,7 +68,7 @@ type GetInstanceConsoleConnectionsResult struct {
 	CompartmentId string                                `pulumi:"compartmentId"`
 	Filters       []GetInstanceConsoleConnectionsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The list of instance_console_connections.
 	InstanceConsoleConnections []GetInstanceConsoleConnectionsInstanceConsoleConnection `pulumi:"instanceConsoleConnections"`
 	// The OCID of the instance the console connection connects to.
@@ -117,12 +116,6 @@ func (o GetInstanceConsoleConnectionsResultOutput) ToGetInstanceConsoleConnectio
 	return o
 }
 
-func (o GetInstanceConsoleConnectionsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetInstanceConsoleConnectionsResult] {
-	return pulumix.Output[GetInstanceConsoleConnectionsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the compartment to contain the console connection.
 func (o GetInstanceConsoleConnectionsResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceConsoleConnectionsResult) string { return v.CompartmentId }).(pulumi.StringOutput)
@@ -133,8 +126,8 @@ func (o GetInstanceConsoleConnectionsResultOutput) Filters() GetInstanceConsoleC
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetInstanceConsoleConnectionsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstanceConsoleConnectionsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetInstanceConsoleConnectionsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInstanceConsoleConnectionsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The list of instance_console_connections.

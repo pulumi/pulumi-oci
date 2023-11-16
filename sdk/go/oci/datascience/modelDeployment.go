@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Model Deployment resource in Oracle Cloud Infrastructure Datascience service.
@@ -103,34 +102,34 @@ type ModelDeployment struct {
 	pulumi.CustomResourceState
 
 	// (Updatable) The log details for each category.
-	CategoryLogDetails ModelDeploymentCategoryLogDetailsOutput `pulumi:"categoryLogDetails"`
+	CategoryLogDetails ModelDeploymentCategoryLogDetailsPtrOutput `pulumi:"categoryLogDetails"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the model deployment.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the model deployment.
-	CreatedBy pulumi.StringOutput `pulumi:"createdBy"`
+	CreatedBy pulumi.StringPtrOutput `pulumi:"createdBy"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) A short description of the model deployment.
-	Description pulumi.StringOutput `pulumi:"description"`
+	Description pulumi.StringPtrOutput `pulumi:"description"`
 	// (Updatable) A user-friendly display name for the resource. Does not have to be unique, and can be modified. Avoid entering confidential information. Example: `My ModelDeployment`
-	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrOutput `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// Details about the state of the model deployment.
-	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrOutput `pulumi:"lifecycleDetails"`
 	// (Updatable) The model deployment configuration details.
 	ModelDeploymentConfigurationDetails ModelDeploymentModelDeploymentConfigurationDetailsOutput `pulumi:"modelDeploymentConfigurationDetails"`
 	// The URL to interact with the model deployment.
-	ModelDeploymentUrl pulumi.StringOutput `pulumi:"modelDeploymentUrl"`
+	ModelDeploymentUrl pulumi.StringPtrOutput `pulumi:"modelDeploymentUrl"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model deployment.
 	ProjectId pulumi.StringOutput `pulumi:"projectId"`
 	// (Updatable) The target state for the Model Deployment. Could be set to `ACTIVE` or `INACTIVE`.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// The date and time the resource was created, in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 }
 
 // NewModelDeployment registers a new resource with the given unique name, arguments, and options.
@@ -311,12 +310,6 @@ func (i *ModelDeployment) ToModelDeploymentOutputWithContext(ctx context.Context
 	return pulumi.ToOutputWithContext(ctx, i).(ModelDeploymentOutput)
 }
 
-func (i *ModelDeployment) ToOutput(ctx context.Context) pulumix.Output[*ModelDeployment] {
-	return pulumix.Output[*ModelDeployment]{
-		OutputState: i.ToModelDeploymentOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ModelDeploymentArrayInput is an input type that accepts ModelDeploymentArray and ModelDeploymentArrayOutput values.
 // You can construct a concrete instance of `ModelDeploymentArrayInput` via:
 //
@@ -340,12 +333,6 @@ func (i ModelDeploymentArray) ToModelDeploymentArrayOutput() ModelDeploymentArra
 
 func (i ModelDeploymentArray) ToModelDeploymentArrayOutputWithContext(ctx context.Context) ModelDeploymentArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ModelDeploymentArrayOutput)
-}
-
-func (i ModelDeploymentArray) ToOutput(ctx context.Context) pulumix.Output[[]*ModelDeployment] {
-	return pulumix.Output[[]*ModelDeployment]{
-		OutputState: i.ToModelDeploymentArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // ModelDeploymentMapInput is an input type that accepts ModelDeploymentMap and ModelDeploymentMapOutput values.
@@ -373,12 +360,6 @@ func (i ModelDeploymentMap) ToModelDeploymentMapOutputWithContext(ctx context.Co
 	return pulumi.ToOutputWithContext(ctx, i).(ModelDeploymentMapOutput)
 }
 
-func (i ModelDeploymentMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*ModelDeployment] {
-	return pulumix.Output[map[string]*ModelDeployment]{
-		OutputState: i.ToModelDeploymentMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ModelDeploymentOutput struct{ *pulumi.OutputState }
 
 func (ModelDeploymentOutput) ElementType() reflect.Type {
@@ -393,15 +374,9 @@ func (o ModelDeploymentOutput) ToModelDeploymentOutputWithContext(ctx context.Co
 	return o
 }
 
-func (o ModelDeploymentOutput) ToOutput(ctx context.Context) pulumix.Output[*ModelDeployment] {
-	return pulumix.Output[*ModelDeployment]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) The log details for each category.
-func (o ModelDeploymentOutput) CategoryLogDetails() ModelDeploymentCategoryLogDetailsOutput {
-	return o.ApplyT(func(v *ModelDeployment) ModelDeploymentCategoryLogDetailsOutput { return v.CategoryLogDetails }).(ModelDeploymentCategoryLogDetailsOutput)
+func (o ModelDeploymentOutput) CategoryLogDetails() ModelDeploymentCategoryLogDetailsPtrOutput {
+	return o.ApplyT(func(v *ModelDeployment) ModelDeploymentCategoryLogDetailsPtrOutput { return v.CategoryLogDetails }).(ModelDeploymentCategoryLogDetailsPtrOutput)
 }
 
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the model deployment.
@@ -410,8 +385,8 @@ func (o ModelDeploymentOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the model deployment.
-func (o ModelDeploymentOutput) CreatedBy() pulumi.StringOutput {
-	return o.ApplyT(func(v *ModelDeployment) pulumi.StringOutput { return v.CreatedBy }).(pulumi.StringOutput)
+func (o ModelDeploymentOutput) CreatedBy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ModelDeployment) pulumi.StringPtrOutput { return v.CreatedBy }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -420,13 +395,13 @@ func (o ModelDeploymentOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // (Updatable) A short description of the model deployment.
-func (o ModelDeploymentOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v *ModelDeployment) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
+func (o ModelDeploymentOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ModelDeployment) pulumi.StringPtrOutput { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) A user-friendly display name for the resource. Does not have to be unique, and can be modified. Avoid entering confidential information. Example: `My ModelDeployment`
-func (o ModelDeploymentOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v *ModelDeployment) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+func (o ModelDeploymentOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ModelDeployment) pulumi.StringPtrOutput { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -435,8 +410,8 @@ func (o ModelDeploymentOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // Details about the state of the model deployment.
-func (o ModelDeploymentOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v *ModelDeployment) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o ModelDeploymentOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ModelDeployment) pulumi.StringPtrOutput { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The model deployment configuration details.
@@ -447,8 +422,8 @@ func (o ModelDeploymentOutput) ModelDeploymentConfigurationDetails() ModelDeploy
 }
 
 // The URL to interact with the model deployment.
-func (o ModelDeploymentOutput) ModelDeploymentUrl() pulumi.StringOutput {
-	return o.ApplyT(func(v *ModelDeployment) pulumi.StringOutput { return v.ModelDeploymentUrl }).(pulumi.StringOutput)
+func (o ModelDeploymentOutput) ModelDeploymentUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ModelDeployment) pulumi.StringPtrOutput { return v.ModelDeploymentUrl }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model deployment.
@@ -460,13 +435,13 @@ func (o ModelDeploymentOutput) ProjectId() pulumi.StringOutput {
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-func (o ModelDeploymentOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *ModelDeployment) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o ModelDeploymentOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ModelDeployment) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the resource was created, in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
-func (o ModelDeploymentOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *ModelDeployment) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o ModelDeploymentOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ModelDeployment) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 type ModelDeploymentArrayOutput struct{ *pulumi.OutputState }
@@ -481,12 +456,6 @@ func (o ModelDeploymentArrayOutput) ToModelDeploymentArrayOutput() ModelDeployme
 
 func (o ModelDeploymentArrayOutput) ToModelDeploymentArrayOutputWithContext(ctx context.Context) ModelDeploymentArrayOutput {
 	return o
-}
-
-func (o ModelDeploymentArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*ModelDeployment] {
-	return pulumix.Output[[]*ModelDeployment]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ModelDeploymentArrayOutput) Index(i pulumi.IntInput) ModelDeploymentOutput {
@@ -507,12 +476,6 @@ func (o ModelDeploymentMapOutput) ToModelDeploymentMapOutput() ModelDeploymentMa
 
 func (o ModelDeploymentMapOutput) ToModelDeploymentMapOutputWithContext(ctx context.Context) ModelDeploymentMapOutput {
 	return o
-}
-
-func (o ModelDeploymentMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*ModelDeployment] {
-	return pulumix.Output[map[string]*ModelDeployment]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ModelDeploymentMapOutput) MapIndex(k pulumi.StringInput) ModelDeploymentOutput {

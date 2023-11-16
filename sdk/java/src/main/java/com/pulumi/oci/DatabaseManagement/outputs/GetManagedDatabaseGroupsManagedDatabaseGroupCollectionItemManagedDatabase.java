@@ -6,6 +6,8 @@ package com.pulumi.oci.DatabaseManagement.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetManagedDatabaseGroupsManagedDatabaseGroupCollectionItemManagedDatabase {
@@ -13,99 +15,99 @@ public final class GetManagedDatabaseGroupsManagedDatabaseGroupCollectionItemMan
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return The subtype of the Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, Non-container Database, Autonomous Database, or Autonomous Container Database.
      * 
      */
-    private String databaseSubType;
+    private @Nullable String databaseSubType;
     /**
      * @return The type of Oracle Database installation.
      * 
      */
-    private String databaseType;
+    private @Nullable String databaseType;
     /**
      * @return The infrastructure used to deploy the Oracle Database.
      * 
      */
-    private String deploymentType;
+    private @Nullable String deploymentType;
     /**
      * @return The identifier of the resource. Only one of the parameters, id or name should be provided.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return A filter to return only resources that match the entire name. Only one of the parameters, id or name should be provided
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return The date and time the Managed Database was added to the group.
      * 
      */
-    private String timeAdded;
+    private @Nullable String timeAdded;
     /**
      * @return The workload type of the Autonomous Database.
      * 
      */
-    private String workloadType;
+    private @Nullable String workloadType;
 
     private GetManagedDatabaseGroupsManagedDatabaseGroupCollectionItemManagedDatabase() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return The subtype of the Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, Non-container Database, Autonomous Database, or Autonomous Container Database.
      * 
      */
-    public String databaseSubType() {
-        return this.databaseSubType;
+    public Optional<String> databaseSubType() {
+        return Optional.ofNullable(this.databaseSubType);
     }
     /**
      * @return The type of Oracle Database installation.
      * 
      */
-    public String databaseType() {
-        return this.databaseType;
+    public Optional<String> databaseType() {
+        return Optional.ofNullable(this.databaseType);
     }
     /**
      * @return The infrastructure used to deploy the Oracle Database.
      * 
      */
-    public String deploymentType() {
-        return this.deploymentType;
+    public Optional<String> deploymentType() {
+        return Optional.ofNullable(this.deploymentType);
     }
     /**
      * @return The identifier of the resource. Only one of the parameters, id or name should be provided.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return A filter to return only resources that match the entire name. Only one of the parameters, id or name should be provided
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return The date and time the Managed Database was added to the group.
      * 
      */
-    public String timeAdded() {
-        return this.timeAdded;
+    public Optional<String> timeAdded() {
+        return Optional.ofNullable(this.timeAdded);
     }
     /**
      * @return The workload type of the Autonomous Database.
      * 
      */
-    public String workloadType() {
-        return this.workloadType;
+    public Optional<String> workloadType() {
+        return Optional.ofNullable(this.workloadType);
     }
 
     public static Builder builder() {
@@ -117,14 +119,14 @@ public final class GetManagedDatabaseGroupsManagedDatabaseGroupCollectionItemMan
     }
     @CustomType.Builder
     public static final class Builder {
-        private String compartmentId;
-        private String databaseSubType;
-        private String databaseType;
-        private String deploymentType;
-        private String id;
-        private String name;
-        private String timeAdded;
-        private String workloadType;
+        private @Nullable String compartmentId;
+        private @Nullable String databaseSubType;
+        private @Nullable String databaseType;
+        private @Nullable String deploymentType;
+        private @Nullable String id;
+        private @Nullable String name;
+        private @Nullable String timeAdded;
+        private @Nullable String workloadType;
         public Builder() {}
         public Builder(GetManagedDatabaseGroupsManagedDatabaseGroupCollectionItemManagedDatabase defaults) {
     	      Objects.requireNonNull(defaults);
@@ -139,43 +141,43 @@ public final class GetManagedDatabaseGroupsManagedDatabaseGroupCollectionItemMan
         }
 
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder databaseSubType(String databaseSubType) {
-            this.databaseSubType = Objects.requireNonNull(databaseSubType);
+        public Builder databaseSubType(@Nullable String databaseSubType) {
+            this.databaseSubType = databaseSubType;
             return this;
         }
         @CustomType.Setter
-        public Builder databaseType(String databaseType) {
-            this.databaseType = Objects.requireNonNull(databaseType);
+        public Builder databaseType(@Nullable String databaseType) {
+            this.databaseType = databaseType;
             return this;
         }
         @CustomType.Setter
-        public Builder deploymentType(String deploymentType) {
-            this.deploymentType = Objects.requireNonNull(deploymentType);
+        public Builder deploymentType(@Nullable String deploymentType) {
+            this.deploymentType = deploymentType;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder timeAdded(String timeAdded) {
-            this.timeAdded = Objects.requireNonNull(timeAdded);
+        public Builder timeAdded(@Nullable String timeAdded) {
+            this.timeAdded = timeAdded;
             return this;
         }
         @CustomType.Setter
-        public Builder workloadType(String workloadType) {
-            this.workloadType = Objects.requireNonNull(workloadType);
+        public Builder workloadType(@Nullable String workloadType) {
+            this.workloadType = workloadType;
             return this;
         }
         public GetManagedDatabaseGroupsManagedDatabaseGroupCollectionItemManagedDatabase build() {

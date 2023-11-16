@@ -108,25 +108,25 @@ namespace Pulumi.Oci.Core
         /// Example hostname: `cpe.example.com`
         /// </summary>
         [Output("cpeLocalIdentifier")]
-        public Output<string> CpeLocalIdentifier { get; private set; } = null!;
+        public Output<string?> CpeLocalIdentifier { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The type of identifier for your CPE device. The value you provide here must correspond to the value for `cpeLocalIdentifier`.
         /// </summary>
         [Output("cpeLocalIdentifierType")]
-        public Output<string> CpeLocalIdentifierType { get; private set; } = null!;
+        public Output<string?> CpeLocalIdentifierType { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         /// </summary>
         [Output("displayName")]
-        public Output<string> DisplayName { get; private set; } = null!;
+        public Output<string?> DisplayName { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
@@ -138,13 +138,13 @@ namespace Pulumi.Oci.Core
         /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// The IPSec connection's current state.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Static routes to the CPE. A static route's CIDR must not be a multicast address or class E address.
@@ -164,13 +164,13 @@ namespace Pulumi.Oci.Core
         /// The date and time the IPSec connection was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// The transport type used for the IPSec connection.
         /// </summary>
         [Output("transportType")]
-        public Output<string> TransportType { get; private set; } = null!;
+        public Output<string?> TransportType { get; private set; } = null!;
 
 
         /// <summary>

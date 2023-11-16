@@ -76,26 +76,17 @@ class GetAuditProfilesResult:
 
     @property
     @pulumi.getter(name="auditProfileCollections")
-    def audit_profile_collections(self) -> Sequence['outputs.GetAuditProfilesAuditProfileCollectionResult']:
-        """
-        The list of audit_profile_collection.
-        """
+    def audit_profile_collections(self) -> Optional[Sequence['outputs.GetAuditProfilesAuditProfileCollectionResult']]:
         return pulumi.get(self, "audit_profile_collections")
 
     @property
     @pulumi.getter(name="auditProfileId")
     def audit_profile_id(self) -> Optional[str]:
-        """
-        The OCID of the  parent audit.
-        """
         return pulumi.get(self, "audit_profile_id")
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The OCID of the compartment that contains the audit.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
@@ -106,9 +97,6 @@ class GetAuditProfilesResult:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        The display name of the audit profile.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -118,7 +106,7 @@ class GetAuditProfilesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -127,33 +115,21 @@ class GetAuditProfilesResult:
     @property
     @pulumi.getter(name="isOverrideGlobalRetentionSetting")
     def is_override_global_retention_setting(self) -> Optional[bool]:
-        """
-        Indicates whether audit retention settings like online and offline months is set at the target level overriding the global audit retention settings.
-        """
         return pulumi.get(self, "is_override_global_retention_setting")
 
     @property
     @pulumi.getter(name="isPaidUsageEnabled")
     def is_paid_usage_enabled(self) -> Optional[bool]:
-        """
-        Indicates if you want to continue collecting audit records beyond the free limit of one million audit records per month per target database, potentially incurring additional charges. The default value is inherited from the global settings.  You can change at the global level or at the target level.
-        """
         return pulumi.get(self, "is_paid_usage_enabled")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the audit profile.
-        """
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="targetId")
     def target_id(self) -> Optional[str]:
-        """
-        The OCID of the Data Safe target for which the audit profile is created.
-        """
         return pulumi.get(self, "target_id")
 
 
@@ -191,53 +167,7 @@ def get_audit_profiles(access_level: Optional[str] = None,
                        target_id: Optional[str] = None,
                        opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAuditProfilesResult:
     """
-    This data source provides the list of Audit Profiles in Oracle Cloud Infrastructure Data Safe service.
-
-    Gets a list of all audit profiles.
-
-    The ListAuditProfiles operation returns only the audit profiles in the specified `compartmentId`.
-    The list does not include any subcompartments of the compartmentId passed.
-
-    The parameter `accessLevel` specifies whether to return only those compartments for which the
-    requestor has INSPECT permissions on at least one resource directly
-    or indirectly (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
-    Principal doesn't have access to even one of the child compartments. This is valid only when
-    `compartmentIdInSubtree` is set to `true`.
-
-    The parameter `compartmentIdInSubtree` applies when you perform ListAuditProfiles on the
-    `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
-    To get a full list of all compartments and subcompartments in the tenancy (root compartment),
-    set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_audit_profiles = oci.DataSafe.get_audit_profiles(compartment_id=var["compartment_id"],
-        access_level=var["audit_profile_access_level"],
-        audit_collected_volume_greater_than_or_equal_to=var["audit_profile_audit_collected_volume_greater_than_or_equal_to"],
-        audit_profile_id=oci_data_safe_audit_profile["test_audit_profile"]["id"],
-        compartment_id_in_subtree=var["audit_profile_compartment_id_in_subtree"],
-        display_name=var["audit_profile_display_name"],
-        is_override_global_retention_setting=var["audit_profile_is_override_global_retention_setting"],
-        is_paid_usage_enabled=var["audit_profile_is_paid_usage_enabled"],
-        state=var["audit_profile_state"],
-        target_id=oci_cloud_guard_target["test_target"]["id"])
-    ```
-
-
-    :param str access_level: Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
-    :param str audit_collected_volume_greater_than_or_equal_to: A filter to return only items that have count of audit records collected greater than or equal to the specified value.
-    :param str audit_profile_id: A optional filter to return only resources that match the specified id.
-    :param str compartment_id: A filter to return only resources that match the specified compartment OCID.
-    :param bool compartment_id_in_subtree: Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
-    :param str display_name: A filter to return only resources that match the specified display name.
-    :param bool is_override_global_retention_setting: A optional filter to return only resources that match the specified retention configured value.
-    :param bool is_paid_usage_enabled: Indicates if you want to continue audit record collection beyond the free limit of one million audit records per month per target database, incurring additional charges. The default value is inherited from the global settings. You can change at the global level or at the target level.
-    :param str state: A optional filter to return only resources that match the specified lifecycle state.
-    :param str target_id: A filter to return only items related to a specific target OCID.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['accessLevel'] = access_level
@@ -284,52 +214,6 @@ def get_audit_profiles_output(access_level: Optional[pulumi.Input[Optional[str]]
                               target_id: Optional[pulumi.Input[Optional[str]]] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAuditProfilesResult]:
     """
-    This data source provides the list of Audit Profiles in Oracle Cloud Infrastructure Data Safe service.
-
-    Gets a list of all audit profiles.
-
-    The ListAuditProfiles operation returns only the audit profiles in the specified `compartmentId`.
-    The list does not include any subcompartments of the compartmentId passed.
-
-    The parameter `accessLevel` specifies whether to return only those compartments for which the
-    requestor has INSPECT permissions on at least one resource directly
-    or indirectly (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
-    Principal doesn't have access to even one of the child compartments. This is valid only when
-    `compartmentIdInSubtree` is set to `true`.
-
-    The parameter `compartmentIdInSubtree` applies when you perform ListAuditProfiles on the
-    `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
-    To get a full list of all compartments and subcompartments in the tenancy (root compartment),
-    set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_audit_profiles = oci.DataSafe.get_audit_profiles(compartment_id=var["compartment_id"],
-        access_level=var["audit_profile_access_level"],
-        audit_collected_volume_greater_than_or_equal_to=var["audit_profile_audit_collected_volume_greater_than_or_equal_to"],
-        audit_profile_id=oci_data_safe_audit_profile["test_audit_profile"]["id"],
-        compartment_id_in_subtree=var["audit_profile_compartment_id_in_subtree"],
-        display_name=var["audit_profile_display_name"],
-        is_override_global_retention_setting=var["audit_profile_is_override_global_retention_setting"],
-        is_paid_usage_enabled=var["audit_profile_is_paid_usage_enabled"],
-        state=var["audit_profile_state"],
-        target_id=oci_cloud_guard_target["test_target"]["id"])
-    ```
-
-
-    :param str access_level: Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
-    :param str audit_collected_volume_greater_than_or_equal_to: A filter to return only items that have count of audit records collected greater than or equal to the specified value.
-    :param str audit_profile_id: A optional filter to return only resources that match the specified id.
-    :param str compartment_id: A filter to return only resources that match the specified compartment OCID.
-    :param bool compartment_id_in_subtree: Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
-    :param str display_name: A filter to return only resources that match the specified display name.
-    :param bool is_override_global_retention_setting: A optional filter to return only resources that match the specified retention configured value.
-    :param bool is_paid_usage_enabled: Indicates if you want to continue audit record collection beyond the free limit of one million audit records per month per target database, incurring additional charges. The default value is inherited from the global settings. You can change at the global level or at the target level.
-    :param str state: A optional filter to return only resources that match the specified lifecycle state.
-    :param str target_id: A filter to return only items related to a specific target OCID.
+    Use this data source to access information about an existing resource.
     """
     ...

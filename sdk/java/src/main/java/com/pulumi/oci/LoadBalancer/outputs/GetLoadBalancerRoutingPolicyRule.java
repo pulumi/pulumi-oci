@@ -8,6 +8,8 @@ import com.pulumi.oci.LoadBalancer.outputs.GetLoadBalancerRoutingPolicyRuleActio
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetLoadBalancerRoutingPolicyRule {
@@ -15,17 +17,17 @@ public final class GetLoadBalancerRoutingPolicyRule {
      * @return A list of actions to be applied when conditions of the routing rule are met.
      * 
      */
-    private List<GetLoadBalancerRoutingPolicyRuleAction> actions;
+    private @Nullable List<GetLoadBalancerRoutingPolicyRuleAction> actions;
     /**
      * @return A routing rule to evaluate defined conditions against the incoming HTTP request and perform an action.
      * 
      */
-    private String condition;
+    private @Nullable String condition;
     /**
      * @return A unique name for the routing policy rule. Avoid entering confidential information.
      * 
      */
-    private String name;
+    private @Nullable String name;
 
     private GetLoadBalancerRoutingPolicyRule() {}
     /**
@@ -33,21 +35,21 @@ public final class GetLoadBalancerRoutingPolicyRule {
      * 
      */
     public List<GetLoadBalancerRoutingPolicyRuleAction> actions() {
-        return this.actions;
+        return this.actions == null ? List.of() : this.actions;
     }
     /**
      * @return A routing rule to evaluate defined conditions against the incoming HTTP request and perform an action.
      * 
      */
-    public String condition() {
-        return this.condition;
+    public Optional<String> condition() {
+        return Optional.ofNullable(this.condition);
     }
     /**
      * @return A unique name for the routing policy rule. Avoid entering confidential information.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
 
     public static Builder builder() {
@@ -59,9 +61,9 @@ public final class GetLoadBalancerRoutingPolicyRule {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetLoadBalancerRoutingPolicyRuleAction> actions;
-        private String condition;
-        private String name;
+        private @Nullable List<GetLoadBalancerRoutingPolicyRuleAction> actions;
+        private @Nullable String condition;
+        private @Nullable String name;
         public Builder() {}
         public Builder(GetLoadBalancerRoutingPolicyRule defaults) {
     	      Objects.requireNonNull(defaults);
@@ -71,21 +73,21 @@ public final class GetLoadBalancerRoutingPolicyRule {
         }
 
         @CustomType.Setter
-        public Builder actions(List<GetLoadBalancerRoutingPolicyRuleAction> actions) {
-            this.actions = Objects.requireNonNull(actions);
+        public Builder actions(@Nullable List<GetLoadBalancerRoutingPolicyRuleAction> actions) {
+            this.actions = actions;
             return this;
         }
         public Builder actions(GetLoadBalancerRoutingPolicyRuleAction... actions) {
             return actions(List.of(actions));
         }
         @CustomType.Setter
-        public Builder condition(String condition) {
-            this.condition = Objects.requireNonNull(condition);
+        public Builder condition(@Nullable String condition) {
+            this.condition = condition;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         public GetLoadBalancerRoutingPolicyRule build() {

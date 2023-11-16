@@ -16,32 +16,32 @@ namespace Pulumi.Oci.Mysql.Outputs
         /// <summary>
         /// The OCID of the backup to be used as the source for the new DB System.
         /// </summary>
-        public readonly string BackupId;
+        public readonly string? BackupId;
         /// <summary>
         /// The DB System [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
-        public readonly string DbSystemId;
+        public readonly string? DbSystemId;
         /// <summary>
         /// The date and time, as per RFC 3339, of the change up to which the new DB System shall be restored to, using a backup and logs from the original DB System. In case no point in time is specified, then this new DB System shall be restored up to the latest change recorded for the original DB System.
         /// </summary>
-        public readonly string RecoveryPoint;
+        public readonly string? RecoveryPoint;
         /// <summary>
         /// The specific source identifier.
         /// </summary>
-        public readonly string SourceType;
-        public readonly string SourceUrl;
+        public readonly string? SourceType;
+        public readonly string? SourceUrl;
 
         [OutputConstructor]
         private GetMysqlDbSystemSourceResult(
-            string backupId,
+            string? backupId,
 
-            string dbSystemId,
+            string? dbSystemId,
 
-            string recoveryPoint,
+            string? recoveryPoint,
 
-            string sourceType,
+            string? sourceType,
 
-            string sourceUrl)
+            string? sourceUrl)
         {
             BackupId = backupId;
             DbSystemId = dbSystemId;

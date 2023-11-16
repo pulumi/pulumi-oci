@@ -157,7 +157,7 @@ namespace Pulumi.Oci.Identity
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
 
         [OutputConstructor]
         private GetFaultDomainsResult(
@@ -169,7 +169,7 @@ namespace Pulumi.Oci.Identity
 
             ImmutableArray<Outputs.GetFaultDomainsFilterResult> filters,
 
-            string id)
+            string? id)
         {
             AvailabilityDomain = availabilityDomain;
             CompartmentId = compartmentId;

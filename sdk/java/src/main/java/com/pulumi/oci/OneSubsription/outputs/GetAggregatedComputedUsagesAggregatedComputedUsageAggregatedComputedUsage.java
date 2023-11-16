@@ -8,6 +8,8 @@ import com.pulumi.oci.OneSubsription.outputs.GetAggregatedComputedUsagesAggregat
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsage {
@@ -15,99 +17,99 @@ public final class GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedC
      * @return Sum of Computed Line Amount rounded
      * 
      */
-    private String cost;
+    private @Nullable String cost;
     /**
      * @return Sum of Computed Line Amount unrounded
      * 
      */
-    private String costUnrounded;
+    private @Nullable String costUnrounded;
     /**
      * @return Data Center Attribute as sent by MQS to SPM.
      * 
      */
-    private String dataCenter;
+    private @Nullable String dataCenter;
     /**
      * @return Net Unit Price for the product in consideration.
      * 
      */
-    private String netUnitPrice;
+    private @Nullable String netUnitPrice;
     /**
      * @return Product description
      * 
      */
-    private List<GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsageProduct> products;
+    private @Nullable List<GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsageProduct> products;
     /**
      * @return Total Quantity that was used for computation
      * 
      */
-    private String quantity;
+    private @Nullable String quantity;
     /**
      * @return Metered Service date , expressed in RFC 3339 timestamp format.
      * 
      */
-    private String timeMeteredOn;
+    private @Nullable String timeMeteredOn;
     /**
      * @return Usage compute type in SPM.
      * 
      */
-    private String type;
+    private @Nullable String type;
 
     private GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsage() {}
     /**
      * @return Sum of Computed Line Amount rounded
      * 
      */
-    public String cost() {
-        return this.cost;
+    public Optional<String> cost() {
+        return Optional.ofNullable(this.cost);
     }
     /**
      * @return Sum of Computed Line Amount unrounded
      * 
      */
-    public String costUnrounded() {
-        return this.costUnrounded;
+    public Optional<String> costUnrounded() {
+        return Optional.ofNullable(this.costUnrounded);
     }
     /**
      * @return Data Center Attribute as sent by MQS to SPM.
      * 
      */
-    public String dataCenter() {
-        return this.dataCenter;
+    public Optional<String> dataCenter() {
+        return Optional.ofNullable(this.dataCenter);
     }
     /**
      * @return Net Unit Price for the product in consideration.
      * 
      */
-    public String netUnitPrice() {
-        return this.netUnitPrice;
+    public Optional<String> netUnitPrice() {
+        return Optional.ofNullable(this.netUnitPrice);
     }
     /**
      * @return Product description
      * 
      */
     public List<GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsageProduct> products() {
-        return this.products;
+        return this.products == null ? List.of() : this.products;
     }
     /**
      * @return Total Quantity that was used for computation
      * 
      */
-    public String quantity() {
-        return this.quantity;
+    public Optional<String> quantity() {
+        return Optional.ofNullable(this.quantity);
     }
     /**
      * @return Metered Service date , expressed in RFC 3339 timestamp format.
      * 
      */
-    public String timeMeteredOn() {
-        return this.timeMeteredOn;
+    public Optional<String> timeMeteredOn() {
+        return Optional.ofNullable(this.timeMeteredOn);
     }
     /**
      * @return Usage compute type in SPM.
      * 
      */
-    public String type() {
-        return this.type;
+    public Optional<String> type() {
+        return Optional.ofNullable(this.type);
     }
 
     public static Builder builder() {
@@ -119,14 +121,14 @@ public final class GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedC
     }
     @CustomType.Builder
     public static final class Builder {
-        private String cost;
-        private String costUnrounded;
-        private String dataCenter;
-        private String netUnitPrice;
-        private List<GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsageProduct> products;
-        private String quantity;
-        private String timeMeteredOn;
-        private String type;
+        private @Nullable String cost;
+        private @Nullable String costUnrounded;
+        private @Nullable String dataCenter;
+        private @Nullable String netUnitPrice;
+        private @Nullable List<GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsageProduct> products;
+        private @Nullable String quantity;
+        private @Nullable String timeMeteredOn;
+        private @Nullable String type;
         public Builder() {}
         public Builder(GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsage defaults) {
     	      Objects.requireNonNull(defaults);
@@ -141,46 +143,46 @@ public final class GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedC
         }
 
         @CustomType.Setter
-        public Builder cost(String cost) {
-            this.cost = Objects.requireNonNull(cost);
+        public Builder cost(@Nullable String cost) {
+            this.cost = cost;
             return this;
         }
         @CustomType.Setter
-        public Builder costUnrounded(String costUnrounded) {
-            this.costUnrounded = Objects.requireNonNull(costUnrounded);
+        public Builder costUnrounded(@Nullable String costUnrounded) {
+            this.costUnrounded = costUnrounded;
             return this;
         }
         @CustomType.Setter
-        public Builder dataCenter(String dataCenter) {
-            this.dataCenter = Objects.requireNonNull(dataCenter);
+        public Builder dataCenter(@Nullable String dataCenter) {
+            this.dataCenter = dataCenter;
             return this;
         }
         @CustomType.Setter
-        public Builder netUnitPrice(String netUnitPrice) {
-            this.netUnitPrice = Objects.requireNonNull(netUnitPrice);
+        public Builder netUnitPrice(@Nullable String netUnitPrice) {
+            this.netUnitPrice = netUnitPrice;
             return this;
         }
         @CustomType.Setter
-        public Builder products(List<GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsageProduct> products) {
-            this.products = Objects.requireNonNull(products);
+        public Builder products(@Nullable List<GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsageProduct> products) {
+            this.products = products;
             return this;
         }
         public Builder products(GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsageProduct... products) {
             return products(List.of(products));
         }
         @CustomType.Setter
-        public Builder quantity(String quantity) {
-            this.quantity = Objects.requireNonNull(quantity);
+        public Builder quantity(@Nullable String quantity) {
+            this.quantity = quantity;
             return this;
         }
         @CustomType.Setter
-        public Builder timeMeteredOn(String timeMeteredOn) {
-            this.timeMeteredOn = Objects.requireNonNull(timeMeteredOn);
+        public Builder timeMeteredOn(@Nullable String timeMeteredOn) {
+            this.timeMeteredOn = timeMeteredOn;
             return this;
         }
         @CustomType.Setter
-        public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+        public Builder type(@Nullable String type) {
+            this.type = type;
             return this;
         }
         public GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsage build() {

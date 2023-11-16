@@ -12,6 +12,8 @@ import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetManagedDatabaseSqlPlanBaselineConfigurationResult {
@@ -19,58 +21,58 @@ public final class GetManagedDatabaseSqlPlanBaselineConfigurationResult {
      * @return The capture filters used in automatic initial plan capture.
      * 
      */
-    private List<GetManagedDatabaseSqlPlanBaselineConfigurationAutoCaptureFilter> autoCaptureFilters;
+    private @Nullable List<GetManagedDatabaseSqlPlanBaselineConfigurationAutoCaptureFilter> autoCaptureFilters;
     /**
      * @return The set of parameters used in an SPM evolve task.
      * 
      */
-    private List<GetManagedDatabaseSqlPlanBaselineConfigurationAutoSpmEvolveTaskParameter> autoSpmEvolveTaskParameters;
+    private @Nullable List<GetManagedDatabaseSqlPlanBaselineConfigurationAutoSpmEvolveTaskParameter> autoSpmEvolveTaskParameters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Indicates whether the Automatic SPM Evolve Advisor task is enabled (`true`) or not (`false`).
      * 
      */
-    private Boolean isAutoSpmEvolveTaskEnabled;
+    private @Nullable Boolean isAutoSpmEvolveTaskEnabled;
     /**
      * @return Indicates whether the automatic capture of SQL plan baselines is enabled (`true`) or not (`false`).
      * 
      */
-    private Boolean isAutomaticInitialPlanCaptureEnabled;
+    private @Nullable Boolean isAutomaticInitialPlanCaptureEnabled;
     /**
      * @return Indicates whether the high frequency Automatic SPM Evolve Advisor task is enabled (`true`) or not (`false`).
      * 
      */
-    private Boolean isHighFrequencyAutoSpmEvolveTaskEnabled;
+    private @Nullable Boolean isHighFrequencyAutoSpmEvolveTaskEnabled;
     /**
      * @return Indicates whether the database uses SQL plan baselines (`true`) or not (`false`).
      * 
      */
-    private Boolean isSqlPlanBaselinesUsageEnabled;
+    private @Nullable Boolean isSqlPlanBaselinesUsageEnabled;
     private String managedDatabaseId;
     /**
      * @return The number of weeks to retain unused plans before they are purged.
      * 
      */
-    private Integer planRetentionWeeks;
+    private @Nullable Integer planRetentionWeeks;
     /**
      * @return The maximum `SYSAUX` space that can be used for SQL Management Base in MB.
      * 
      */
-    private Double spaceBudgetMb;
+    private @Nullable Double spaceBudgetMb;
     /**
      * @return The maximum percent of `SYSAUX` space that can be used for SQL Management Base.
      * 
      */
-    private Double spaceBudgetPercent;
+    private @Nullable Double spaceBudgetPercent;
     /**
      * @return The space used by SQL Management Base in MB.
      * 
      */
-    private Double spaceUsedMb;
+    private @Nullable Double spaceUsedMb;
 
     private GetManagedDatabaseSqlPlanBaselineConfigurationResult() {}
     /**
@@ -78,49 +80,49 @@ public final class GetManagedDatabaseSqlPlanBaselineConfigurationResult {
      * 
      */
     public List<GetManagedDatabaseSqlPlanBaselineConfigurationAutoCaptureFilter> autoCaptureFilters() {
-        return this.autoCaptureFilters;
+        return this.autoCaptureFilters == null ? List.of() : this.autoCaptureFilters;
     }
     /**
      * @return The set of parameters used in an SPM evolve task.
      * 
      */
     public List<GetManagedDatabaseSqlPlanBaselineConfigurationAutoSpmEvolveTaskParameter> autoSpmEvolveTaskParameters() {
-        return this.autoSpmEvolveTaskParameters;
+        return this.autoSpmEvolveTaskParameters == null ? List.of() : this.autoSpmEvolveTaskParameters;
     }
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Indicates whether the Automatic SPM Evolve Advisor task is enabled (`true`) or not (`false`).
      * 
      */
-    public Boolean isAutoSpmEvolveTaskEnabled() {
-        return this.isAutoSpmEvolveTaskEnabled;
+    public Optional<Boolean> isAutoSpmEvolveTaskEnabled() {
+        return Optional.ofNullable(this.isAutoSpmEvolveTaskEnabled);
     }
     /**
      * @return Indicates whether the automatic capture of SQL plan baselines is enabled (`true`) or not (`false`).
      * 
      */
-    public Boolean isAutomaticInitialPlanCaptureEnabled() {
-        return this.isAutomaticInitialPlanCaptureEnabled;
+    public Optional<Boolean> isAutomaticInitialPlanCaptureEnabled() {
+        return Optional.ofNullable(this.isAutomaticInitialPlanCaptureEnabled);
     }
     /**
      * @return Indicates whether the high frequency Automatic SPM Evolve Advisor task is enabled (`true`) or not (`false`).
      * 
      */
-    public Boolean isHighFrequencyAutoSpmEvolveTaskEnabled() {
-        return this.isHighFrequencyAutoSpmEvolveTaskEnabled;
+    public Optional<Boolean> isHighFrequencyAutoSpmEvolveTaskEnabled() {
+        return Optional.ofNullable(this.isHighFrequencyAutoSpmEvolveTaskEnabled);
     }
     /**
      * @return Indicates whether the database uses SQL plan baselines (`true`) or not (`false`).
      * 
      */
-    public Boolean isSqlPlanBaselinesUsageEnabled() {
-        return this.isSqlPlanBaselinesUsageEnabled;
+    public Optional<Boolean> isSqlPlanBaselinesUsageEnabled() {
+        return Optional.ofNullable(this.isSqlPlanBaselinesUsageEnabled);
     }
     public String managedDatabaseId() {
         return this.managedDatabaseId;
@@ -129,29 +131,29 @@ public final class GetManagedDatabaseSqlPlanBaselineConfigurationResult {
      * @return The number of weeks to retain unused plans before they are purged.
      * 
      */
-    public Integer planRetentionWeeks() {
-        return this.planRetentionWeeks;
+    public Optional<Integer> planRetentionWeeks() {
+        return Optional.ofNullable(this.planRetentionWeeks);
     }
     /**
      * @return The maximum `SYSAUX` space that can be used for SQL Management Base in MB.
      * 
      */
-    public Double spaceBudgetMb() {
-        return this.spaceBudgetMb;
+    public Optional<Double> spaceBudgetMb() {
+        return Optional.ofNullable(this.spaceBudgetMb);
     }
     /**
      * @return The maximum percent of `SYSAUX` space that can be used for SQL Management Base.
      * 
      */
-    public Double spaceBudgetPercent() {
-        return this.spaceBudgetPercent;
+    public Optional<Double> spaceBudgetPercent() {
+        return Optional.ofNullable(this.spaceBudgetPercent);
     }
     /**
      * @return The space used by SQL Management Base in MB.
      * 
      */
-    public Double spaceUsedMb() {
-        return this.spaceUsedMb;
+    public Optional<Double> spaceUsedMb() {
+        return Optional.ofNullable(this.spaceUsedMb);
     }
 
     public static Builder builder() {
@@ -163,18 +165,18 @@ public final class GetManagedDatabaseSqlPlanBaselineConfigurationResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetManagedDatabaseSqlPlanBaselineConfigurationAutoCaptureFilter> autoCaptureFilters;
-        private List<GetManagedDatabaseSqlPlanBaselineConfigurationAutoSpmEvolveTaskParameter> autoSpmEvolveTaskParameters;
-        private String id;
-        private Boolean isAutoSpmEvolveTaskEnabled;
-        private Boolean isAutomaticInitialPlanCaptureEnabled;
-        private Boolean isHighFrequencyAutoSpmEvolveTaskEnabled;
-        private Boolean isSqlPlanBaselinesUsageEnabled;
+        private @Nullable List<GetManagedDatabaseSqlPlanBaselineConfigurationAutoCaptureFilter> autoCaptureFilters;
+        private @Nullable List<GetManagedDatabaseSqlPlanBaselineConfigurationAutoSpmEvolveTaskParameter> autoSpmEvolveTaskParameters;
+        private @Nullable String id;
+        private @Nullable Boolean isAutoSpmEvolveTaskEnabled;
+        private @Nullable Boolean isAutomaticInitialPlanCaptureEnabled;
+        private @Nullable Boolean isHighFrequencyAutoSpmEvolveTaskEnabled;
+        private @Nullable Boolean isSqlPlanBaselinesUsageEnabled;
         private String managedDatabaseId;
-        private Integer planRetentionWeeks;
-        private Double spaceBudgetMb;
-        private Double spaceBudgetPercent;
-        private Double spaceUsedMb;
+        private @Nullable Integer planRetentionWeeks;
+        private @Nullable Double spaceBudgetMb;
+        private @Nullable Double spaceBudgetPercent;
+        private @Nullable Double spaceUsedMb;
         public Builder() {}
         public Builder(GetManagedDatabaseSqlPlanBaselineConfigurationResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -193,44 +195,44 @@ public final class GetManagedDatabaseSqlPlanBaselineConfigurationResult {
         }
 
         @CustomType.Setter
-        public Builder autoCaptureFilters(List<GetManagedDatabaseSqlPlanBaselineConfigurationAutoCaptureFilter> autoCaptureFilters) {
-            this.autoCaptureFilters = Objects.requireNonNull(autoCaptureFilters);
+        public Builder autoCaptureFilters(@Nullable List<GetManagedDatabaseSqlPlanBaselineConfigurationAutoCaptureFilter> autoCaptureFilters) {
+            this.autoCaptureFilters = autoCaptureFilters;
             return this;
         }
         public Builder autoCaptureFilters(GetManagedDatabaseSqlPlanBaselineConfigurationAutoCaptureFilter... autoCaptureFilters) {
             return autoCaptureFilters(List.of(autoCaptureFilters));
         }
         @CustomType.Setter
-        public Builder autoSpmEvolveTaskParameters(List<GetManagedDatabaseSqlPlanBaselineConfigurationAutoSpmEvolveTaskParameter> autoSpmEvolveTaskParameters) {
-            this.autoSpmEvolveTaskParameters = Objects.requireNonNull(autoSpmEvolveTaskParameters);
+        public Builder autoSpmEvolveTaskParameters(@Nullable List<GetManagedDatabaseSqlPlanBaselineConfigurationAutoSpmEvolveTaskParameter> autoSpmEvolveTaskParameters) {
+            this.autoSpmEvolveTaskParameters = autoSpmEvolveTaskParameters;
             return this;
         }
         public Builder autoSpmEvolveTaskParameters(GetManagedDatabaseSqlPlanBaselineConfigurationAutoSpmEvolveTaskParameter... autoSpmEvolveTaskParameters) {
             return autoSpmEvolveTaskParameters(List.of(autoSpmEvolveTaskParameters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder isAutoSpmEvolveTaskEnabled(Boolean isAutoSpmEvolveTaskEnabled) {
-            this.isAutoSpmEvolveTaskEnabled = Objects.requireNonNull(isAutoSpmEvolveTaskEnabled);
+        public Builder isAutoSpmEvolveTaskEnabled(@Nullable Boolean isAutoSpmEvolveTaskEnabled) {
+            this.isAutoSpmEvolveTaskEnabled = isAutoSpmEvolveTaskEnabled;
             return this;
         }
         @CustomType.Setter
-        public Builder isAutomaticInitialPlanCaptureEnabled(Boolean isAutomaticInitialPlanCaptureEnabled) {
-            this.isAutomaticInitialPlanCaptureEnabled = Objects.requireNonNull(isAutomaticInitialPlanCaptureEnabled);
+        public Builder isAutomaticInitialPlanCaptureEnabled(@Nullable Boolean isAutomaticInitialPlanCaptureEnabled) {
+            this.isAutomaticInitialPlanCaptureEnabled = isAutomaticInitialPlanCaptureEnabled;
             return this;
         }
         @CustomType.Setter
-        public Builder isHighFrequencyAutoSpmEvolveTaskEnabled(Boolean isHighFrequencyAutoSpmEvolveTaskEnabled) {
-            this.isHighFrequencyAutoSpmEvolveTaskEnabled = Objects.requireNonNull(isHighFrequencyAutoSpmEvolveTaskEnabled);
+        public Builder isHighFrequencyAutoSpmEvolveTaskEnabled(@Nullable Boolean isHighFrequencyAutoSpmEvolveTaskEnabled) {
+            this.isHighFrequencyAutoSpmEvolveTaskEnabled = isHighFrequencyAutoSpmEvolveTaskEnabled;
             return this;
         }
         @CustomType.Setter
-        public Builder isSqlPlanBaselinesUsageEnabled(Boolean isSqlPlanBaselinesUsageEnabled) {
-            this.isSqlPlanBaselinesUsageEnabled = Objects.requireNonNull(isSqlPlanBaselinesUsageEnabled);
+        public Builder isSqlPlanBaselinesUsageEnabled(@Nullable Boolean isSqlPlanBaselinesUsageEnabled) {
+            this.isSqlPlanBaselinesUsageEnabled = isSqlPlanBaselinesUsageEnabled;
             return this;
         }
         @CustomType.Setter
@@ -239,23 +241,23 @@ public final class GetManagedDatabaseSqlPlanBaselineConfigurationResult {
             return this;
         }
         @CustomType.Setter
-        public Builder planRetentionWeeks(Integer planRetentionWeeks) {
-            this.planRetentionWeeks = Objects.requireNonNull(planRetentionWeeks);
+        public Builder planRetentionWeeks(@Nullable Integer planRetentionWeeks) {
+            this.planRetentionWeeks = planRetentionWeeks;
             return this;
         }
         @CustomType.Setter
-        public Builder spaceBudgetMb(Double spaceBudgetMb) {
-            this.spaceBudgetMb = Objects.requireNonNull(spaceBudgetMb);
+        public Builder spaceBudgetMb(@Nullable Double spaceBudgetMb) {
+            this.spaceBudgetMb = spaceBudgetMb;
             return this;
         }
         @CustomType.Setter
-        public Builder spaceBudgetPercent(Double spaceBudgetPercent) {
-            this.spaceBudgetPercent = Objects.requireNonNull(spaceBudgetPercent);
+        public Builder spaceBudgetPercent(@Nullable Double spaceBudgetPercent) {
+            this.spaceBudgetPercent = spaceBudgetPercent;
             return this;
         }
         @CustomType.Setter
-        public Builder spaceUsedMb(Double spaceUsedMb) {
-            this.spaceUsedMb = Objects.requireNonNull(spaceUsedMb);
+        public Builder spaceUsedMb(@Nullable Double spaceUsedMb) {
+            this.spaceUsedMb = spaceUsedMb;
             return this;
         }
         public GetManagedDatabaseSqlPlanBaselineConfigurationResult build() {

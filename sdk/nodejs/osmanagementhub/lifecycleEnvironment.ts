@@ -90,11 +90,11 @@ export class LifecycleEnvironment extends pulumi.CustomResource {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) User specified information about the lifecycle environment.
      */
-    public readonly description!: pulumi.Output<string>;
+    public readonly description!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
@@ -102,11 +102,11 @@ export class LifecycleEnvironment extends pulumi.CustomResource {
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * The list of managed instances specified lifecycle stage.
      */
-    public /*out*/ readonly managedInstanceIds!: pulumi.Output<outputs.OsManagementHub.LifecycleEnvironmentManagedInstanceId[]>;
+    public /*out*/ readonly managedInstanceIds!: pulumi.Output<outputs.OsManagementHub.LifecycleEnvironmentManagedInstanceId[] | undefined>;
     /**
      * The operating system type of the managed instance(s) in the lifecycle environment.
      */
@@ -118,19 +118,19 @@ export class LifecycleEnvironment extends pulumi.CustomResource {
     /**
      * The current state of the lifecycle environment.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any}>;
+    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * The time the lifecycle environment was created. An RFC3339 formatted datetime string.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * The time the lifecycle environment was last modified. An RFC3339 formatted datetime string.
      */
-    public /*out*/ readonly timeModified!: pulumi.Output<string>;
+    public /*out*/ readonly timeModified!: pulumi.Output<string | undefined>;
     /**
      * The software source vendor name.
      *

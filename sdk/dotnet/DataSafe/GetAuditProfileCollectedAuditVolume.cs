@@ -162,7 +162,7 @@ namespace Pulumi.Oci.DataSafe
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Array of collected audit volume summary.
         /// </summary>
@@ -175,7 +175,7 @@ namespace Pulumi.Oci.DataSafe
         private GetAuditProfileCollectedAuditVolumeResult(
             string auditProfileId,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetAuditProfileCollectedAuditVolumeItemResult> items,
 

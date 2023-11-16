@@ -16,53 +16,53 @@ namespace Pulumi.Oci.DevOps.Outputs
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// Name of file or directory.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// Path to file or directory in a repository.
         /// </summary>
-        public readonly string Path;
+        public readonly string? Path;
         /// <summary>
         /// SHA-1 checksum of blob or tree.
         /// </summary>
-        public readonly string Sha;
+        public readonly string? Sha;
         /// <summary>
         /// Size of file or directory.
         /// </summary>
-        public readonly string SizeInBytes;
+        public readonly string? SizeInBytes;
         /// <summary>
         /// The git URL of the submodule.
         /// </summary>
-        public readonly string SubmoduleGitUrl;
+        public readonly string? SubmoduleGitUrl;
         /// <summary>
         /// File or directory.
         /// </summary>
-        public readonly string Type;
+        public readonly string? Type;
 
         [OutputConstructor]
         private GetRepositoryPathsRepositoryPathCollectionItemResult(
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string name,
+            string? name,
 
-            string path,
+            string? path,
 
-            string sha,
+            string? sha,
 
-            string sizeInBytes,
+            string? sizeInBytes,
 
-            string submoduleGitUrl,
+            string? submoduleGitUrl,
 
-            string type)
+            string? type)
         {
             DefinedTags = definedTags;
             FreeformTags = freeformTags;

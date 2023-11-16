@@ -6,26 +6,28 @@ package com.pulumi.oci.DatabaseMigration.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetMigrationsMigrationCollectionItemGoldenGateDetailHubSourceDbAdminCredential {
-    private String password;
+    private @Nullable String password;
     /**
      * @return Administrator username
      * 
      */
-    private String username;
+    private @Nullable String username;
 
     private GetMigrationsMigrationCollectionItemGoldenGateDetailHubSourceDbAdminCredential() {}
-    public String password() {
-        return this.password;
+    public Optional<String> password() {
+        return Optional.ofNullable(this.password);
     }
     /**
      * @return Administrator username
      * 
      */
-    public String username() {
-        return this.username;
+    public Optional<String> username() {
+        return Optional.ofNullable(this.username);
     }
 
     public static Builder builder() {
@@ -37,8 +39,8 @@ public final class GetMigrationsMigrationCollectionItemGoldenGateDetailHubSource
     }
     @CustomType.Builder
     public static final class Builder {
-        private String password;
-        private String username;
+        private @Nullable String password;
+        private @Nullable String username;
         public Builder() {}
         public Builder(GetMigrationsMigrationCollectionItemGoldenGateDetailHubSourceDbAdminCredential defaults) {
     	      Objects.requireNonNull(defaults);
@@ -47,13 +49,13 @@ public final class GetMigrationsMigrationCollectionItemGoldenGateDetailHubSource
         }
 
         @CustomType.Setter
-        public Builder password(String password) {
-            this.password = Objects.requireNonNull(password);
+        public Builder password(@Nullable String password) {
+            this.password = password;
             return this;
         }
         @CustomType.Setter
-        public Builder username(String username) {
-            this.username = Objects.requireNonNull(username);
+        public Builder username(@Nullable String username) {
+            this.username = username;
             return this;
         }
         public GetMigrationsMigrationCollectionItemGoldenGateDetailHubSourceDbAdminCredential build() {

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Run Log resource in Oracle Cloud Infrastructure Data Flow service.
@@ -65,13 +64,13 @@ type GetRunLogArgs struct {
 type GetRunLogResult struct {
 	Base64EncodeContent *bool `pulumi:"base64EncodeContent"`
 	// The content of the run log.
-	Content string `pulumi:"content"`
+	Content *string `pulumi:"content"`
 	// The content type of the run log.
-	ContentType string `pulumi:"contentType"`
+	ContentType *string `pulumi:"contentType"`
 	// The provider-assigned unique ID for this managed resource.
-	Id    string `pulumi:"id"`
-	Name  string `pulumi:"name"`
-	RunId string `pulumi:"runId"`
+	Id    *string `pulumi:"id"`
+	Name  string  `pulumi:"name"`
+	RunId string  `pulumi:"runId"`
 }
 
 func GetRunLogOutput(ctx *pulumi.Context, args GetRunLogOutputArgs, opts ...pulumi.InvokeOption) GetRunLogResultOutput {
@@ -115,29 +114,23 @@ func (o GetRunLogResultOutput) ToGetRunLogResultOutputWithContext(ctx context.Co
 	return o
 }
 
-func (o GetRunLogResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetRunLogResult] {
-	return pulumix.Output[GetRunLogResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetRunLogResultOutput) Base64EncodeContent() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v GetRunLogResult) *bool { return v.Base64EncodeContent }).(pulumi.BoolPtrOutput)
 }
 
 // The content of the run log.
-func (o GetRunLogResultOutput) Content() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRunLogResult) string { return v.Content }).(pulumi.StringOutput)
+func (o GetRunLogResultOutput) Content() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRunLogResult) *string { return v.Content }).(pulumi.StringPtrOutput)
 }
 
 // The content type of the run log.
-func (o GetRunLogResultOutput) ContentType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRunLogResult) string { return v.ContentType }).(pulumi.StringOutput)
+func (o GetRunLogResultOutput) ContentType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRunLogResult) *string { return v.ContentType }).(pulumi.StringPtrOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetRunLogResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRunLogResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetRunLogResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRunLogResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetRunLogResultOutput) Name() pulumi.StringOutput {

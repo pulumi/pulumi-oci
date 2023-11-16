@@ -130,7 +130,7 @@ namespace Pulumi.Oci.ContainerEngine
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
 
         [OutputConstructor]
         private GetAddonsResult(
@@ -140,7 +140,7 @@ namespace Pulumi.Oci.ContainerEngine
 
             ImmutableArray<Outputs.GetAddonsFilterResult> filters,
 
-            string id)
+            string? id)
         {
             Addons = addons;
             ClusterId = clusterId;

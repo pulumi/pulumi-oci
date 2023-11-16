@@ -40,22 +40,16 @@ class GetQueriesResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The compartment OCID.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter
     def filters(self) -> Optional[Sequence['outputs.GetQueriesFilterResult']]:
-        """
-        The filter object for query usage.
-        """
         return pulumi.get(self, "filters")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -63,10 +57,7 @@ class GetQueriesResult:
 
     @property
     @pulumi.getter(name="queryCollections")
-    def query_collections(self) -> Sequence['outputs.GetQueriesQueryCollectionResult']:
-        """
-        The list of query_collection.
-        """
+    def query_collections(self) -> Optional[Sequence['outputs.GetQueriesQueryCollectionResult']]:
         return pulumi.get(self, "query_collections")
 
 
@@ -86,22 +77,7 @@ def get_queries(compartment_id: Optional[str] = None,
                 filters: Optional[Sequence[pulumi.InputType['GetQueriesFilterArgs']]] = None,
                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetQueriesResult:
     """
-    This data source provides the list of Queries in Oracle Cloud Infrastructure Metering Computation service.
-
-    Returns the saved query list.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_queries = oci.MeteringComputation.get_queries(compartment_id=var["compartment_id"])
-    ```
-
-
-    :param str compartment_id: The compartment ID in which to list resources.
-    :param Sequence[pulumi.InputType['GetQueriesFilterArgs']] filters: The filter object for query usage.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -121,21 +97,6 @@ def get_queries_output(compartment_id: Optional[pulumi.Input[str]] = None,
                        filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetQueriesFilterArgs']]]]] = None,
                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetQueriesResult]:
     """
-    This data source provides the list of Queries in Oracle Cloud Infrastructure Metering Computation service.
-
-    Returns the saved query list.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_queries = oci.MeteringComputation.get_queries(compartment_id=var["compartment_id"])
-    ```
-
-
-    :param str compartment_id: The compartment ID in which to list resources.
-    :param Sequence[pulumi.InputType['GetQueriesFilterArgs']] filters: The filter object for query usage.
+    Use this data source to access information about an existing resource.
     """
     ...

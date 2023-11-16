@@ -16,29 +16,29 @@ namespace Pulumi.Oci.Database.Outputs
         /// <summary>
         /// The id of the Autonomous Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
         /// </summary>
-        public readonly string KmsKeyVersionId;
+        public readonly string? KmsKeyVersionId;
         /// <summary>
         /// The date and time the kms key activated.
         /// </summary>
-        public readonly string TimeActivated;
+        public readonly string? TimeActivated;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
         /// </summary>
-        public readonly string VaultId;
+        public readonly string? VaultId;
 
         [OutputConstructor]
         private GetAutonomousContainerDatabasesAutonomousContainerDatabaseKeyHistoryEntryResult(
-            string id,
+            string? id,
 
-            string kmsKeyVersionId,
+            string? kmsKeyVersionId,
 
-            string timeActivated,
+            string? timeActivated,
 
-            string vaultId)
+            string? vaultId)
         {
             Id = id;
             KmsKeyVersionId = kmsKeyVersionId;

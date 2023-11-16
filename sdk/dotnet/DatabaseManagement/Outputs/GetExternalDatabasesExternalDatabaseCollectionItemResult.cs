@@ -16,15 +16,15 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// The subtype of Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, or Non-container Database.
         /// </summary>
-        public readonly string DatabaseSubType;
+        public readonly string? DatabaseSubType;
         /// <summary>
         /// The type of Oracle Database installation.
         /// </summary>
-        public readonly string DatabaseType;
+        public readonly string? DatabaseType;
         /// <summary>
         /// The configuration of the Database Management service.
         /// </summary>
@@ -36,23 +36,23 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// <summary>
         /// The `DB_UNIQUE_NAME` of the external database.
         /// </summary>
-        public readonly string DbUniqueName;
+        public readonly string? DbUniqueName;
         /// <summary>
         /// A filter to only return the resources that match the entire display name.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent Container Database (CDB) if this is a Pluggable Database (PDB).
         /// </summary>
-        public readonly string ExternalContainerDatabaseId;
+        public readonly string? ExternalContainerDatabaseId;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB home.
         /// </summary>
-        public readonly string ExternalDbHomeId;
+        public readonly string? ExternalDbHomeId;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The list of database instances if the database is a RAC database.
         /// </summary>
@@ -60,39 +60,39 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// <summary>
         /// The current lifecycle state of the external database resource.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// The date and time the external DB system was created.
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
 
         [OutputConstructor]
         private GetExternalDatabasesExternalDatabaseCollectionItemResult(
-            string compartmentId,
+            string? compartmentId,
 
-            string databaseSubType,
+            string? databaseSubType,
 
-            string databaseType,
+            string? databaseType,
 
             ImmutableArray<Outputs.GetExternalDatabasesExternalDatabaseCollectionItemDbManagementConfigResult> dbManagementConfigs,
 
             ImmutableArray<Outputs.GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfoResult> dbSystemInfos,
 
-            string dbUniqueName,
+            string? dbUniqueName,
 
-            string displayName,
+            string? displayName,
 
-            string externalContainerDatabaseId,
+            string? externalContainerDatabaseId,
 
-            string externalDbHomeId,
+            string? externalDbHomeId,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetExternalDatabasesExternalDatabaseCollectionItemInstanceDetailResult> instanceDetails,
 
-            string state,
+            string? state,
 
-            string timeCreated)
+            string? timeCreated)
         {
             CompartmentId = compartmentId;
             DatabaseSubType = databaseSubType;

@@ -67,98 +67,62 @@ class GetWebAppFirewallResult:
 
     @property
     @pulumi.getter(name="backendType")
-    def backend_type(self) -> str:
-        """
-        Type of the WebAppFirewall, as example LOAD_BALANCER.
-        """
+    def backend_type(self) -> Optional[str]:
         return pulumi.get(self, "backend_type")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        WebAppFirewall display name, can be renamed.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the WebAppFirewall.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in FAILED state.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="loadBalancerId")
-    def load_balancer_id(self) -> str:
-        """
-        LoadBalancer [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to which the WebAppFirewallPolicy is attached to.
-        """
+    def load_balancer_id(self) -> Optional[str]:
         return pulumi.get(self, "load_balancer_id")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the WebAppFirewall.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The time the WebAppFirewall was created. An RFC3339 formatted datetime string.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The time the WebAppFirewall was updated. An RFC3339 formatted datetime string.
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
     @property
@@ -168,10 +132,7 @@ class GetWebAppFirewallResult:
 
     @property
     @pulumi.getter(name="webAppFirewallPolicyId")
-    def web_app_firewall_policy_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of WebAppFirewallPolicy, which is attached to the resource.
-        """
+    def web_app_firewall_policy_id(self) -> Optional[str]:
         return pulumi.get(self, "web_app_firewall_policy_id")
 
 
@@ -200,21 +161,7 @@ class AwaitableGetWebAppFirewallResult(GetWebAppFirewallResult):
 def get_web_app_firewall(web_app_firewall_id: Optional[str] = None,
                          opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetWebAppFirewallResult:
     """
-    This data source provides details about a specific Web App Firewall resource in Oracle Cloud Infrastructure Waf service.
-
-    Gets a WebAppFirewall by OCID.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_web_app_firewall = oci.Waf.get_web_app_firewall(web_app_firewall_id=oci_waf_web_app_firewall["test_web_app_firewall"]["id"])
-    ```
-
-
-    :param str web_app_firewall_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the WebAppFirewall.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['webAppFirewallId'] = web_app_firewall_id
@@ -242,20 +189,6 @@ def get_web_app_firewall(web_app_firewall_id: Optional[str] = None,
 def get_web_app_firewall_output(web_app_firewall_id: Optional[pulumi.Input[str]] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetWebAppFirewallResult]:
     """
-    This data source provides details about a specific Web App Firewall resource in Oracle Cloud Infrastructure Waf service.
-
-    Gets a WebAppFirewall by OCID.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_web_app_firewall = oci.Waf.get_web_app_firewall(web_app_firewall_id=oci_waf_web_app_firewall["test_web_app_firewall"]["id"])
-    ```
-
-
-    :param str web_app_firewall_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the WebAppFirewall.
+    Use this data source to access information about an existing resource.
     """
     ...

@@ -110,56 +110,56 @@ namespace Pulumi.Oci.GoldenGate
         /// <summary>
         /// Credential store alias.
         /// </summary>
-        public readonly string AliasName;
+        public readonly string? AliasName;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         public readonly string ConnectionAssignmentId;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection being referenced.
         /// </summary>
-        public readonly string ConnectionId;
+        public readonly string? ConnectionId;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
         /// </summary>
-        public readonly string DeploymentId;
+        public readonly string? DeploymentId;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection assignment being referenced.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Possible lifecycle states for connection assignments.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         /// </summary>
-        public readonly string TimeUpdated;
+        public readonly string? TimeUpdated;
 
         [OutputConstructor]
         private GetConnectionAssignmentResult(
-            string aliasName,
+            string? aliasName,
 
-            string compartmentId,
+            string? compartmentId,
 
             string connectionAssignmentId,
 
-            string connectionId,
+            string? connectionId,
 
-            string deploymentId,
+            string? deploymentId,
 
-            string id,
+            string? id,
 
-            string state,
+            string? state,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeUpdated)
+            string? timeUpdated)
         {
             AliasName = aliasName;
             CompartmentId = compartmentId;

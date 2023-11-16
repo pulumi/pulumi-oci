@@ -16,19 +16,19 @@ namespace Pulumi.Oci.Kms.Outputs
         /// <summary>
         /// The OCID of the compartment.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// The service endpoint to perform cryptographic operations against. Cryptographic operations include [Encrypt](https://docs.cloud.oracle.com/iaas/api/#/en/key/latest/EncryptedData/Encrypt), [Decrypt](https://docs.cloud.oracle.com/iaas/api/#/en/key/latest/DecryptedData/Decrypt), and [GenerateDataEncryptionKey](https://docs.cloud.oracle.com/iaas/api/#/en/key/latest/GeneratedKey/GenerateDataEncryptionKey) operations.
         /// </summary>
-        public readonly string CryptoEndpoint;
+        public readonly string? CryptoEndpoint;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// A user-friendly name for the vault. It does not have to be unique, and it is changeable. Avoid entering confidential information.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// Summary about metadata of external key manager to be returned to the customer as a response.
         /// </summary>
@@ -37,68 +37,68 @@ namespace Pulumi.Oci.Kms.Outputs
         /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// The OCID of the vault.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// A Boolean value that indicates whether the Vault is primary Vault or replica Vault.
         /// </summary>
-        public readonly bool IsPrimary;
+        public readonly bool? IsPrimary;
         /// <summary>
         /// The service endpoint to perform management operations against. Management operations include "Create," "Update," "List," "Get," and "Delete" operations.
         /// </summary>
-        public readonly string ManagementEndpoint;
+        public readonly string? ManagementEndpoint;
         /// <summary>
         /// Vault replica details
         /// </summary>
         public readonly ImmutableArray<Outputs.GetVaultsVaultReplicaDetailResult> ReplicaDetails;
         public readonly ImmutableArray<Outputs.GetVaultsVaultRestoreFromFileResult> RestoreFromFiles;
         public readonly ImmutableArray<Outputs.GetVaultsVaultRestoreFromObjectStoreResult> RestoreFromObjectStores;
-        public readonly bool RestoreTrigger;
+        public readonly bool? RestoreTrigger;
         /// <summary>
         /// The OCID of the vault from which this vault was restored, if it was restored from a backup file. If you restore a vault to the same region, the vault retains the same OCID that it had when you backed up the vault.
         /// </summary>
-        public readonly string RestoredFromVaultId;
+        public readonly string? RestoredFromVaultId;
         /// <summary>
         /// The vault's current lifecycle state.  Example: `DELETED`
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// The date and time this vault was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-04-03T21:10:29.600Z`
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// An optional property to indicate when to delete the vault, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
         /// </summary>
-        public readonly string TimeOfDeletion;
+        public readonly string? TimeOfDeletion;
         /// <summary>
         /// The type of vault. Each type of vault stores the key with different degrees of isolation and has different options and pricing.
         /// </summary>
-        public readonly string VaultType;
+        public readonly string? VaultType;
 
         [OutputConstructor]
         private GetVaultsVaultResult(
-            string compartmentId,
+            string? compartmentId,
 
-            string cryptoEndpoint,
+            string? cryptoEndpoint,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string displayName,
+            string? displayName,
 
             ImmutableArray<Outputs.GetVaultsVaultExternalKeyManagerMetadataSummaryResult> externalKeyManagerMetadataSummaries,
 
             ImmutableArray<Outputs.GetVaultsVaultExternalKeyManagerMetadataResult> externalKeyManagerMetadatas,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string id,
+            string? id,
 
-            bool isPrimary,
+            bool? isPrimary,
 
-            string managementEndpoint,
+            string? managementEndpoint,
 
             ImmutableArray<Outputs.GetVaultsVaultReplicaDetailResult> replicaDetails,
 
@@ -106,17 +106,17 @@ namespace Pulumi.Oci.Kms.Outputs
 
             ImmutableArray<Outputs.GetVaultsVaultRestoreFromObjectStoreResult> restoreFromObjectStores,
 
-            bool restoreTrigger,
+            bool? restoreTrigger,
 
-            string restoredFromVaultId,
+            string? restoredFromVaultId,
 
-            string state,
+            string? state,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeOfDeletion,
+            string? timeOfDeletion,
 
-            string vaultType)
+            string? vaultType)
         {
             CompartmentId = compartmentId;
             CryptoEndpoint = cryptoEndpoint;

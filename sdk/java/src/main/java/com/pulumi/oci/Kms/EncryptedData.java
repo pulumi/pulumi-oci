@@ -84,14 +84,14 @@ public class EncryptedData extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="ciphertext", refs={String.class}, tree="[0]")
-    private Output<String> ciphertext;
+    private Output</* @Nullable */ String> ciphertext;
 
     /**
      * @return The encrypted data.
      * 
      */
-    public Output<String> ciphertext() {
-        return this.ciphertext;
+    public Output<Optional<String>> ciphertext() {
+        return Codegen.optional(this.ciphertext);
     }
     /**
      * The service endpoint to perform cryptographic operations against. Cryptographic operations include &#39;Encrypt,&#39; &#39;Decrypt,&#39; and &#39;GenerateDataEncryptionKey&#39; operations. see Vault Crypto endpoint.
@@ -112,14 +112,14 @@ public class EncryptedData extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="encryptionAlgorithm", refs={String.class}, tree="[0]")
-    private Output<String> encryptionAlgorithm;
+    private Output</* @Nullable */ String> encryptionAlgorithm;
 
     /**
      * @return The encryption algorithm to use to encrypt and decrypt data with a customer-managed key. `AES_256_GCM` indicates that the key is a symmetric key that uses the Advanced Encryption Standard (AES) algorithm and that the mode of encryption is the Galois/Counter Mode (GCM). `RSA_OAEP_SHA_1` indicates that the key is an asymmetric key that uses the RSA encryption algorithm and uses Optimal Asymmetric Encryption Padding (OAEP). `RSA_OAEP_SHA_256` indicates that the key is an asymmetric key that uses the RSA encryption algorithm with a SHA-256 hash and uses OAEP.
      * 
      */
-    public Output<String> encryptionAlgorithm() {
-        return this.encryptionAlgorithm;
+    public Output<Optional<String>> encryptionAlgorithm() {
+        return Codegen.optional(this.encryptionAlgorithm);
     }
     /**
      * The OCID of the key to encrypt with.
@@ -140,14 +140,14 @@ public class EncryptedData extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="keyVersionId", refs={String.class}, tree="[0]")
-    private Output<String> keyVersionId;
+    private Output</* @Nullable */ String> keyVersionId;
 
     /**
      * @return The OCID of the key version used to encrypt the ciphertext.
      * 
      */
-    public Output<String> keyVersionId() {
-        return this.keyVersionId;
+    public Output<Optional<String>> keyVersionId() {
+        return Codegen.optional(this.keyVersionId);
     }
     /**
      * Information that provides context for audit logging. You can provide this additional data as key-value pairs to include in the audit logs when audit logging is enabled.

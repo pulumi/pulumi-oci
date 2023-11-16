@@ -6,6 +6,8 @@ package com.pulumi.oci.ApiGateway.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDeploymentsDeploymentCollectionSpecificationRouteBackendSelectionSource {
@@ -13,27 +15,27 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRouteBackendSe
      * @return String describing the context variable used as selector.
      * 
      */
-    private String selector;
+    private @Nullable String selector;
     /**
      * @return Type of the Response Cache Store Policy.
      * 
      */
-    private String type;
+    private @Nullable String type;
 
     private GetDeploymentsDeploymentCollectionSpecificationRouteBackendSelectionSource() {}
     /**
      * @return String describing the context variable used as selector.
      * 
      */
-    public String selector() {
-        return this.selector;
+    public Optional<String> selector() {
+        return Optional.ofNullable(this.selector);
     }
     /**
      * @return Type of the Response Cache Store Policy.
      * 
      */
-    public String type() {
-        return this.type;
+    public Optional<String> type() {
+        return Optional.ofNullable(this.type);
     }
 
     public static Builder builder() {
@@ -45,8 +47,8 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRouteBackendSe
     }
     @CustomType.Builder
     public static final class Builder {
-        private String selector;
-        private String type;
+        private @Nullable String selector;
+        private @Nullable String type;
         public Builder() {}
         public Builder(GetDeploymentsDeploymentCollectionSpecificationRouteBackendSelectionSource defaults) {
     	      Objects.requireNonNull(defaults);
@@ -55,13 +57,13 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRouteBackendSe
         }
 
         @CustomType.Setter
-        public Builder selector(String selector) {
-            this.selector = Objects.requireNonNull(selector);
+        public Builder selector(@Nullable String selector) {
+            this.selector = selector;
             return this;
         }
         @CustomType.Setter
-        public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+        public Builder type(@Nullable String type) {
+            this.type = type;
             return this;
         }
         public GetDeploymentsDeploymentCollectionSpecificationRouteBackendSelectionSource build() {

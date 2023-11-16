@@ -86,159 +86,102 @@ class GetCertificateAuthorityResult:
 
     @property
     @pulumi.getter(name="certificateAuthorityConfigs")
-    def certificate_authority_configs(self) -> Sequence['outputs.GetCertificateAuthorityCertificateAuthorityConfigResult']:
+    def certificate_authority_configs(self) -> Optional[Sequence['outputs.GetCertificateAuthorityCertificateAuthorityConfigResult']]:
         return pulumi.get(self, "certificate_authority_configs")
 
     @property
     @pulumi.getter(name="certificateAuthorityId")
     def certificate_authority_id(self) -> str:
-        """
-        The OCID of the CA.
-        """
         return pulumi.get(self, "certificate_authority_id")
 
     @property
     @pulumi.getter(name="certificateAuthorityRules")
-    def certificate_authority_rules(self) -> Sequence['outputs.GetCertificateAuthorityCertificateAuthorityRuleResult']:
-        """
-        An optional list of rules that control how the CA is used and managed.
-        """
+    def certificate_authority_rules(self) -> Optional[Sequence['outputs.GetCertificateAuthorityCertificateAuthorityRuleResult']]:
         return pulumi.get(self, "certificate_authority_rules")
 
     @property
     @pulumi.getter(name="certificateRevocationListDetails")
-    def certificate_revocation_list_details(self) -> Sequence['outputs.GetCertificateAuthorityCertificateRevocationListDetailResult']:
-        """
-        The details of the certificate revocation list (CRL).
-        """
+    def certificate_revocation_list_details(self) -> Optional[Sequence['outputs.GetCertificateAuthorityCertificateRevocationListDetailResult']]:
         return pulumi.get(self, "certificate_revocation_list_details")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The OCID of the compartment under which the CA is created.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="configType")
-    def config_type(self) -> str:
-        """
-        The origin of the CA.
-        """
+    def config_type(self) -> Optional[str]:
         return pulumi.get(self, "config_type")
 
     @property
     @pulumi.getter(name="currentVersions")
-    def current_versions(self) -> Sequence['outputs.GetCertificateAuthorityCurrentVersionResult']:
-        """
-        The metadata details of the certificate authority (CA) version. This summary object does not contain the CA contents.
-        """
+    def current_versions(self) -> Optional[Sequence['outputs.GetCertificateAuthorityCurrentVersionResult']]:
         return pulumi.get(self, "current_versions")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        A brief description of the CA.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The OCID of the CA.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="issuerCertificateAuthorityId")
-    def issuer_certificate_authority_id(self) -> str:
-        """
-        The OCID of the parent CA that issued this CA. If this is the root CA, then this value is null.
-        """
+    def issuer_certificate_authority_id(self) -> Optional[str]:
         return pulumi.get(self, "issuer_certificate_authority_id")
 
     @property
     @pulumi.getter(name="kmsKeyId")
-    def kms_key_id(self) -> str:
-        """
-        The OCID of the Oracle Cloud Infrastructure Vault key used to encrypt the CA.
-        """
+    def kms_key_id(self) -> Optional[str]:
         return pulumi.get(self, "kms_key_id")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        Additional information about the current CA lifecycle state.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        A user-friendly name for the CA. Names are unique within a compartment. Avoid entering confidential information. Valid characters include uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="signingAlgorithm")
-    def signing_algorithm(self) -> str:
-        """
-        The algorithm used to sign public key certificates that the CA issues.
-        """
+    def signing_algorithm(self) -> Optional[str]:
         return pulumi.get(self, "signing_algorithm")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current lifecycle state of the certificate authority.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter
-    def subjects(self) -> Sequence['outputs.GetCertificateAuthoritySubjectResult']:
-        """
-        The subject of the certificate, which is a distinguished name that identifies the entity that owns the public key in the certificate.
-        """
+    def subjects(self) -> Optional[Sequence['outputs.GetCertificateAuthoritySubjectResult']]:
         return pulumi.get(self, "subjects")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        A property indicating when the CA was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeOfDeletion")
-    def time_of_deletion(self) -> str:
-        """
-        An optional property indicating when to delete the CA version, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-        """
+    def time_of_deletion(self) -> Optional[str]:
         return pulumi.get(self, "time_of_deletion")
 
 
@@ -273,21 +216,7 @@ class AwaitableGetCertificateAuthorityResult(GetCertificateAuthorityResult):
 def get_certificate_authority(certificate_authority_id: Optional[str] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetCertificateAuthorityResult:
     """
-    This data source provides details about a specific Certificate Authority resource in Oracle Cloud Infrastructure Certificates Management service.
-
-    Gets details about the specified certificate authority (CA).
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_certificate_authority = oci.CertificatesManagement.get_certificate_authority(certificate_authority_id=oci_certificates_management_certificate_authority["test_certificate_authority"]["id"])
-    ```
-
-
-    :param str certificate_authority_id: The OCID of the certificate authority (CA).
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['certificateAuthorityId'] = certificate_authority_id
@@ -321,20 +250,6 @@ def get_certificate_authority(certificate_authority_id: Optional[str] = None,
 def get_certificate_authority_output(certificate_authority_id: Optional[pulumi.Input[str]] = None,
                                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCertificateAuthorityResult]:
     """
-    This data source provides details about a specific Certificate Authority resource in Oracle Cloud Infrastructure Certificates Management service.
-
-    Gets details about the specified certificate authority (CA).
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_certificate_authority = oci.CertificatesManagement.get_certificate_authority(certificate_authority_id=oci_certificates_management_certificate_authority["test_certificate_authority"]["id"])
-    ```
-
-
-    :param str certificate_authority_id: The OCID of the certificate authority (CA).
+    Use this data source to access information about an existing resource.
     """
     ...

@@ -18,6 +18,7 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -85,14 +86,14 @@ public class Profile extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="archType", refs={String.class}, tree="[0]")
-    private Output<String> archType;
+    private Output</* @Nullable */ String> archType;
 
     /**
      * @return The architecture type.
      * 
      */
-    public Output<String> archType() {
-        return this.archType;
+    public Output<Optional<String>> archType() {
+        return Codegen.optional(this.archType);
     }
     /**
      * The OCID of the tenancy containing the registration profile.
@@ -113,28 +114,28 @@ public class Profile extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * (Updatable) The description of the registration profile.
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
-    private Output<String> description;
+    private Output</* @Nullable */ String> description;
 
     /**
      * @return (Updatable) The description of the registration profile.
      * 
      */
-    public Output<String> description() {
-        return this.description;
+    public Output<Optional<String>> description() {
+        return Codegen.optional(this.description);
     }
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
@@ -155,112 +156,112 @@ public class Profile extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * Identifying information for the specified lifecycle environment.
      * 
      */
     @Export(name="lifecycleEnvironments", refs={List.class,ProfileLifecycleEnvironment.class}, tree="[0,1]")
-    private Output<List<ProfileLifecycleEnvironment>> lifecycleEnvironments;
+    private Output</* @Nullable */ List<ProfileLifecycleEnvironment>> lifecycleEnvironments;
 
     /**
      * @return Identifying information for the specified lifecycle environment.
      * 
      */
-    public Output<List<ProfileLifecycleEnvironment>> lifecycleEnvironments() {
-        return this.lifecycleEnvironments;
+    public Output<Optional<List<ProfileLifecycleEnvironment>>> lifecycleEnvironments() {
+        return Codegen.optional(this.lifecycleEnvironments);
     }
     /**
      * The OCID of the lifecycle stage from which the registration profile will inherit its software source.
      * 
      */
     @Export(name="lifecycleStageId", refs={String.class}, tree="[0]")
-    private Output<String> lifecycleStageId;
+    private Output</* @Nullable */ String> lifecycleStageId;
 
     /**
      * @return The OCID of the lifecycle stage from which the registration profile will inherit its software source.
      * 
      */
-    public Output<String> lifecycleStageId() {
-        return this.lifecycleStageId;
+    public Output<Optional<String>> lifecycleStageId() {
+        return Codegen.optional(this.lifecycleStageId);
     }
     /**
      * Identifying information for the specified lifecycle stage.
      * 
      */
     @Export(name="lifecycleStages", refs={List.class,ProfileLifecycleStage.class}, tree="[0,1]")
-    private Output<List<ProfileLifecycleStage>> lifecycleStages;
+    private Output</* @Nullable */ List<ProfileLifecycleStage>> lifecycleStages;
 
     /**
      * @return Identifying information for the specified lifecycle stage.
      * 
      */
-    public Output<List<ProfileLifecycleStage>> lifecycleStages() {
-        return this.lifecycleStages;
+    public Output<Optional<List<ProfileLifecycleStage>>> lifecycleStages() {
+        return Codegen.optional(this.lifecycleStages);
     }
     /**
      * The OCID of the managed instance group from which the registration profile will inherit its software sources.
      * 
      */
     @Export(name="managedInstanceGroupId", refs={String.class}, tree="[0]")
-    private Output<String> managedInstanceGroupId;
+    private Output</* @Nullable */ String> managedInstanceGroupId;
 
     /**
      * @return The OCID of the managed instance group from which the registration profile will inherit its software sources.
      * 
      */
-    public Output<String> managedInstanceGroupId() {
-        return this.managedInstanceGroupId;
+    public Output<Optional<String>> managedInstanceGroupId() {
+        return Codegen.optional(this.managedInstanceGroupId);
     }
     /**
      * Identifying information for the specified managed instance group.
      * 
      */
     @Export(name="managedInstanceGroups", refs={List.class,ProfileManagedInstanceGroup.class}, tree="[0,1]")
-    private Output<List<ProfileManagedInstanceGroup>> managedInstanceGroups;
+    private Output</* @Nullable */ List<ProfileManagedInstanceGroup>> managedInstanceGroups;
 
     /**
      * @return Identifying information for the specified managed instance group.
      * 
      */
-    public Output<List<ProfileManagedInstanceGroup>> managedInstanceGroups() {
-        return this.managedInstanceGroups;
+    public Output<Optional<List<ProfileManagedInstanceGroup>>> managedInstanceGroups() {
+        return Codegen.optional(this.managedInstanceGroups);
     }
     /**
      * The OCID of the management station.
      * 
      */
     @Export(name="managementStationId", refs={String.class}, tree="[0]")
-    private Output<String> managementStationId;
+    private Output</* @Nullable */ String> managementStationId;
 
     /**
      * @return The OCID of the management station.
      * 
      */
-    public Output<String> managementStationId() {
-        return this.managementStationId;
+    public Output<Optional<String>> managementStationId() {
+        return Codegen.optional(this.managementStationId);
     }
     /**
      * The operating system family.
      * 
      */
     @Export(name="osFamily", refs={String.class}, tree="[0]")
-    private Output<String> osFamily;
+    private Output</* @Nullable */ String> osFamily;
 
     /**
      * @return The operating system family.
      * 
      */
-    public Output<String> osFamily() {
-        return this.osFamily;
+    public Output<Optional<String>> osFamily() {
+        return Codegen.optional(this.osFamily);
     }
     /**
      * The type of registration profile. Either SOFTWARESOURCE, GROUP or LIFECYCLE.
@@ -281,70 +282,70 @@ public class Profile extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="softwareSourceIds", refs={List.class,String.class}, tree="[0,1]")
-    private Output<List<String>> softwareSourceIds;
+    private Output</* @Nullable */ List<String>> softwareSourceIds;
 
     /**
      * @return The list of software source OCIDs that the registration profile will use.
      * 
      */
-    public Output<List<String>> softwareSourceIds() {
-        return this.softwareSourceIds;
+    public Output<Optional<List<String>>> softwareSourceIds() {
+        return Codegen.optional(this.softwareSourceIds);
     }
     /**
      * The list of software sources that the registration profile will use.
      * 
      */
     @Export(name="softwareSources", refs={List.class,ProfileSoftwareSource.class}, tree="[0,1]")
-    private Output<List<ProfileSoftwareSource>> softwareSources;
+    private Output</* @Nullable */ List<ProfileSoftwareSource>> softwareSources;
 
     /**
      * @return The list of software sources that the registration profile will use.
      * 
      */
-    public Output<List<ProfileSoftwareSource>> softwareSources() {
-        return this.softwareSources;
+    public Output<Optional<List<ProfileSoftwareSource>>> softwareSources() {
+        return Codegen.optional(this.softwareSources);
     }
     /**
      * The current state of the registration profile.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The current state of the registration profile.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
     @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> systemTags;
+    private Output</* @Nullable */ Map<String,Object>> systemTags;
 
     /**
      * @return System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    public Output<Map<String,Object>> systemTags() {
-        return this.systemTags;
+    public Output<Optional<Map<String,Object>>> systemTags() {
+        return Codegen.optional(this.systemTags);
     }
     /**
      * The time the the registration profile was created. An RFC3339 formatted datetime string.
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The time the the registration profile was created. An RFC3339 formatted datetime string.
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * The software source vendor name.
@@ -354,7 +355,7 @@ public class Profile extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="vendorName", refs={String.class}, tree="[0]")
-    private Output<String> vendorName;
+    private Output</* @Nullable */ String> vendorName;
 
     /**
      * @return The software source vendor name.
@@ -363,8 +364,8 @@ public class Profile extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Output<String> vendorName() {
-        return this.vendorName;
+    public Output<Optional<String>> vendorName() {
+        return Codegen.optional(this.vendorName);
     }
 
     /**

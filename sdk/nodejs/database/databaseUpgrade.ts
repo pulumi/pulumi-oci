@@ -60,15 +60,15 @@ export class DatabaseUpgrade extends pulumi.CustomResource {
     /**
      * The character set for the database.
      */
-    public /*out*/ readonly characterSet!: pulumi.Output<string>;
+    public /*out*/ readonly characterSet!: pulumi.Output<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
-    public /*out*/ readonly compartmentId!: pulumi.Output<string>;
+    public /*out*/ readonly compartmentId!: pulumi.Output<string | undefined>;
     /**
      * The Connection strings used to connect to the Oracle Database.
      */
-    public /*out*/ readonly connectionStrings!: pulumi.Output<outputs.Database.DatabaseUpgradeConnectionString[]>;
+    public /*out*/ readonly connectionStrings!: pulumi.Output<outputs.Database.DatabaseUpgradeConnectionString[] | undefined>;
     /**
      * The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
@@ -76,111 +76,111 @@ export class DatabaseUpgrade extends pulumi.CustomResource {
     /**
      * The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the image to be used to upgrade a database.
      */
-    public /*out*/ readonly databaseSoftwareImageId!: pulumi.Output<string>;
+    public /*out*/ readonly databaseSoftwareImageId!: pulumi.Output<string | undefined>;
     /**
      * Details for the database upgrade source.
      */
-    public readonly databaseUpgradeSourceDetails!: pulumi.Output<outputs.Database.DatabaseUpgradeDatabaseUpgradeSourceDetails>;
+    public readonly databaseUpgradeSourceDetails!: pulumi.Output<outputs.Database.DatabaseUpgradeDatabaseUpgradeSourceDetails | undefined>;
     /**
      * Backup Options To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized, talk to an administrator. If you're an administrator who needs to write policies to give users access, see [Getting Started with Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
      */
-    public /*out*/ readonly dbBackupConfigs!: pulumi.Output<outputs.Database.DatabaseUpgradeDbBackupConfig[]>;
+    public /*out*/ readonly dbBackupConfigs!: pulumi.Output<outputs.Database.DatabaseUpgradeDbBackupConfig[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
      */
-    public /*out*/ readonly dbHomeId!: pulumi.Output<string>;
+    public /*out*/ readonly dbHomeId!: pulumi.Output<string | undefined>;
     /**
      * The database name.
      */
-    public /*out*/ readonly dbName!: pulumi.Output<string>;
+    public /*out*/ readonly dbName!: pulumi.Output<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
      */
-    public /*out*/ readonly dbSystemId!: pulumi.Output<string>;
+    public /*out*/ readonly dbSystemId!: pulumi.Output<string | undefined>;
     /**
      * A system-generated name for the database to ensure uniqueness within an Oracle Data Guard group (a primary database and its standby databases). The unique name cannot be changed.
      */
-    public /*out*/ readonly dbUniqueName!: pulumi.Output<string>;
+    public /*out*/ readonly dbUniqueName!: pulumi.Output<string | undefined>;
     /**
      * **Deprecated.** The dbWorkload field has been deprecated for Exadata Database Service on Dedicated Infrastructure, Exadata Database Service on Cloud@Customer, and Base Database Service. Support for this attribute will end in November 2023. You may choose to update your custom scripts to exclude the dbWorkload attribute. After November 2023 if you pass a value to the dbWorkload attribute, it will be ignored.
      */
-    public /*out*/ readonly dbWorkload!: pulumi.Output<string>;
+    public /*out*/ readonly dbWorkload!: pulumi.Output<string | undefined>;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    public /*out*/ readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public /*out*/ readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    public /*out*/ readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public /*out*/ readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * True if the database is a container database.
      */
-    public /*out*/ readonly isCdb!: pulumi.Output<boolean>;
+    public /*out*/ readonly isCdb!: pulumi.Output<boolean | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
      */
-    public /*out*/ readonly keyStoreId!: pulumi.Output<string>;
+    public /*out*/ readonly keyStoreId!: pulumi.Output<string | undefined>;
     /**
      * The wallet name for Oracle Key Vault.
      */
-    public /*out*/ readonly keyStoreWalletName!: pulumi.Output<string>;
+    public /*out*/ readonly keyStoreWalletName!: pulumi.Output<string | undefined>;
     /**
      * The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
      */
-    public /*out*/ readonly kmsKeyId!: pulumi.Output<string>;
+    public /*out*/ readonly kmsKeyId!: pulumi.Output<string | undefined>;
     /**
      * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
      */
-    public /*out*/ readonly kmsKeyVersionId!: pulumi.Output<string>;
+    public /*out*/ readonly kmsKeyVersionId!: pulumi.Output<string | undefined>;
     /**
      * The duration when the latest database backup created.
      */
-    public /*out*/ readonly lastBackupDurationInSeconds!: pulumi.Output<number>;
+    public /*out*/ readonly lastBackupDurationInSeconds!: pulumi.Output<number | undefined>;
     /**
      * The date and time when the latest database backup was created.
      */
-    public /*out*/ readonly lastBackupTimestamp!: pulumi.Output<string>;
+    public /*out*/ readonly lastBackupTimestamp!: pulumi.Output<string | undefined>;
     /**
      * The date and time when the latest database backup failed.
      */
-    public /*out*/ readonly lastFailedBackupTimestamp!: pulumi.Output<string>;
+    public /*out*/ readonly lastFailedBackupTimestamp!: pulumi.Output<string | undefined>;
     /**
      * Additional information about the current lifecycle state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string | undefined>;
     /**
      * The national character set for the database.
      */
-    public /*out*/ readonly ncharacterSet!: pulumi.Output<string>;
+    public /*out*/ readonly ncharacterSet!: pulumi.Output<string | undefined>;
     /**
      * The name of the pluggable database. The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. Pluggable database should not be same as database name.
      */
-    public /*out*/ readonly pdbName!: pulumi.Output<string>;
+    public /*out*/ readonly pdbName!: pulumi.Output<string | undefined>;
     /**
      * Specifies a prefix for the `Oracle SID` of the database to be created.
      */
-    public /*out*/ readonly sidPrefix!: pulumi.Output<string>;
+    public /*out*/ readonly sidPrefix!: pulumi.Output<string | undefined>;
     /**
      * Point in time recovery timeStamp of the source database at which cloned database system is cloned from the source database system, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339)
      */
-    public /*out*/ readonly sourceDatabasePointInTimeRecoveryTimestamp!: pulumi.Output<string>;
+    public /*out*/ readonly sourceDatabasePointInTimeRecoveryTimestamp!: pulumi.Output<string | undefined>;
     /**
      * The current state of the database.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * The date and time the database was created.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
      */
-    public /*out*/ readonly vaultId!: pulumi.Output<string>;
+    public /*out*/ readonly vaultId!: pulumi.Output<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
      */
-    public /*out*/ readonly vmClusterId!: pulumi.Output<string>;
+    public /*out*/ readonly vmClusterId!: pulumi.Output<string | undefined>;
 
     /**
      * Create a DatabaseUpgrade resource with the given unique name, arguments, and options.

@@ -16,10 +16,10 @@ namespace Pulumi.Oci.NetworkLoadBalancer.Outputs
         /// <summary>
         /// OCID of the reserved public IP address created with the virtual cloud network.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
 
         [OutputConstructor]
-        private GetNetworkLoadBalancerReservedIpResult(string id)
+        private GetNetworkLoadBalancerReservedIpResult(string? id)
         {
             Id = id;
         }

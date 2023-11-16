@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Namespace Scheduled Tasks in Oracle Cloud Infrastructure Log Analytics service.
@@ -75,8 +74,8 @@ type GetNamespaceScheduledTasksResult struct {
 	DisplayName *string                            `pulumi:"displayName"`
 	Filters     []GetNamespaceScheduledTasksFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id        string `pulumi:"id"`
-	Namespace string `pulumi:"namespace"`
+	Id        *string `pulumi:"id"`
+	Namespace string  `pulumi:"namespace"`
 	// The list of scheduled_task_collection.
 	ScheduledTaskCollections []GetNamespaceScheduledTasksScheduledTaskCollection `pulumi:"scheduledTaskCollections"`
 	// Task type.
@@ -128,12 +127,6 @@ func (o GetNamespaceScheduledTasksResultOutput) ToGetNamespaceScheduledTasksResu
 	return o
 }
 
-func (o GetNamespaceScheduledTasksResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetNamespaceScheduledTasksResult] {
-	return pulumix.Output[GetNamespaceScheduledTasksResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 func (o GetNamespaceScheduledTasksResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNamespaceScheduledTasksResult) string { return v.CompartmentId }).(pulumi.StringOutput)
@@ -149,8 +142,8 @@ func (o GetNamespaceScheduledTasksResultOutput) Filters() GetNamespaceScheduledT
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetNamespaceScheduledTasksResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNamespaceScheduledTasksResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetNamespaceScheduledTasksResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNamespaceScheduledTasksResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetNamespaceScheduledTasksResultOutput) Namespace() pulumi.StringOutput {

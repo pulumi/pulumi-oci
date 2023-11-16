@@ -9,6 +9,8 @@ import java.lang.Double;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetManagedDatabaseSqlTuningAdvisorTasksFindingsSqlTuningAdvisorTaskFindingCollectionItem {
@@ -16,207 +18,207 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksFindingsSqlTuningAdvis
      * @return The time benefit (in seconds) for the highest-rated finding for this object.
      * 
      */
-    private Double dbTimeBenefit;
+    private @Nullable Double dbTimeBenefit;
     /**
      * @return Indicates whether an alternative execution plan was reported for this SQL statement.
      * 
      */
-    private Boolean isAlternativePlanFindingPresent;
+    private @Nullable Boolean isAlternativePlanFindingPresent;
     /**
      * @return Indicates whether there is an error in this SQL statement.
      * 
      */
-    private Boolean isErrorFindingPresent;
+    private @Nullable Boolean isErrorFindingPresent;
     /**
      * @return Indicates whether an index recommendation was reported for this SQL statement.
      * 
      */
-    private Boolean isIndexFindingPresent;
+    private @Nullable Boolean isIndexFindingPresent;
     /**
      * @return Indicates whether a miscellaneous finding was reported for this SQL statement.
      * 
      */
-    private Boolean isMiscellaneousFindingPresent;
+    private @Nullable Boolean isMiscellaneousFindingPresent;
     /**
      * @return Indicates whether a restructure SQL recommendation was reported for this SQL statement.
      * 
      */
-    private Boolean isRestructureSqlFindingPresent;
+    private @Nullable Boolean isRestructureSqlFindingPresent;
     /**
      * @return Indicates whether a SQL Profile recommendation has been implemented for this SQL statement.
      * 
      */
-    private Boolean isSqlProfileFindingImplemented;
+    private @Nullable Boolean isSqlProfileFindingImplemented;
     /**
      * @return Indicates whether a SQL Profile recommendation was reported for this SQL statement.
      * 
      */
-    private Boolean isSqlProfileFindingPresent;
+    private @Nullable Boolean isSqlProfileFindingPresent;
     /**
      * @return Indicates whether a statistics recommendation was reported for this SQL statement.
      * 
      */
-    private Boolean isStatsFindingPresent;
+    private @Nullable Boolean isStatsFindingPresent;
     /**
      * @return Indicates whether the task timed out.
      * 
      */
-    private Boolean isTimeoutFindingPresent;
+    private @Nullable Boolean isTimeoutFindingPresent;
     /**
      * @return The parsing schema of the object.
      * 
      */
-    private String parsingSchema;
+    private @Nullable String parsingSchema;
     /**
      * @return The per-execution percentage benefit.
      * 
      */
-    private Integer perExecutionPercentage;
+    private @Nullable Integer perExecutionPercentage;
     /**
      * @return The unique key of this SQL statement.
      * 
      */
-    private String sqlKey;
+    private @Nullable String sqlKey;
     /**
      * @return The text of the SQL statement.
      * 
      */
-    private String sqlText;
+    private @Nullable String sqlText;
     /**
      * @return The SQL tuning task identifier. This is not the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
-    private String sqlTuningAdvisorTaskId;
+    private @Nullable String sqlTuningAdvisorTaskId;
     /**
      * @return The execution id of the analyzed SQL object. This is not the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
-    private String sqlTuningAdvisorTaskObjectExecutionId;
+    private @Nullable String sqlTuningAdvisorTaskObjectExecutionId;
     /**
      * @return The key of the object to which these recommendations apply. This is not the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
-    private String sqlTuningAdvisorTaskObjectId;
+    private @Nullable String sqlTuningAdvisorTaskObjectId;
 
     private GetManagedDatabaseSqlTuningAdvisorTasksFindingsSqlTuningAdvisorTaskFindingCollectionItem() {}
     /**
      * @return The time benefit (in seconds) for the highest-rated finding for this object.
      * 
      */
-    public Double dbTimeBenefit() {
-        return this.dbTimeBenefit;
+    public Optional<Double> dbTimeBenefit() {
+        return Optional.ofNullable(this.dbTimeBenefit);
     }
     /**
      * @return Indicates whether an alternative execution plan was reported for this SQL statement.
      * 
      */
-    public Boolean isAlternativePlanFindingPresent() {
-        return this.isAlternativePlanFindingPresent;
+    public Optional<Boolean> isAlternativePlanFindingPresent() {
+        return Optional.ofNullable(this.isAlternativePlanFindingPresent);
     }
     /**
      * @return Indicates whether there is an error in this SQL statement.
      * 
      */
-    public Boolean isErrorFindingPresent() {
-        return this.isErrorFindingPresent;
+    public Optional<Boolean> isErrorFindingPresent() {
+        return Optional.ofNullable(this.isErrorFindingPresent);
     }
     /**
      * @return Indicates whether an index recommendation was reported for this SQL statement.
      * 
      */
-    public Boolean isIndexFindingPresent() {
-        return this.isIndexFindingPresent;
+    public Optional<Boolean> isIndexFindingPresent() {
+        return Optional.ofNullable(this.isIndexFindingPresent);
     }
     /**
      * @return Indicates whether a miscellaneous finding was reported for this SQL statement.
      * 
      */
-    public Boolean isMiscellaneousFindingPresent() {
-        return this.isMiscellaneousFindingPresent;
+    public Optional<Boolean> isMiscellaneousFindingPresent() {
+        return Optional.ofNullable(this.isMiscellaneousFindingPresent);
     }
     /**
      * @return Indicates whether a restructure SQL recommendation was reported for this SQL statement.
      * 
      */
-    public Boolean isRestructureSqlFindingPresent() {
-        return this.isRestructureSqlFindingPresent;
+    public Optional<Boolean> isRestructureSqlFindingPresent() {
+        return Optional.ofNullable(this.isRestructureSqlFindingPresent);
     }
     /**
      * @return Indicates whether a SQL Profile recommendation has been implemented for this SQL statement.
      * 
      */
-    public Boolean isSqlProfileFindingImplemented() {
-        return this.isSqlProfileFindingImplemented;
+    public Optional<Boolean> isSqlProfileFindingImplemented() {
+        return Optional.ofNullable(this.isSqlProfileFindingImplemented);
     }
     /**
      * @return Indicates whether a SQL Profile recommendation was reported for this SQL statement.
      * 
      */
-    public Boolean isSqlProfileFindingPresent() {
-        return this.isSqlProfileFindingPresent;
+    public Optional<Boolean> isSqlProfileFindingPresent() {
+        return Optional.ofNullable(this.isSqlProfileFindingPresent);
     }
     /**
      * @return Indicates whether a statistics recommendation was reported for this SQL statement.
      * 
      */
-    public Boolean isStatsFindingPresent() {
-        return this.isStatsFindingPresent;
+    public Optional<Boolean> isStatsFindingPresent() {
+        return Optional.ofNullable(this.isStatsFindingPresent);
     }
     /**
      * @return Indicates whether the task timed out.
      * 
      */
-    public Boolean isTimeoutFindingPresent() {
-        return this.isTimeoutFindingPresent;
+    public Optional<Boolean> isTimeoutFindingPresent() {
+        return Optional.ofNullable(this.isTimeoutFindingPresent);
     }
     /**
      * @return The parsing schema of the object.
      * 
      */
-    public String parsingSchema() {
-        return this.parsingSchema;
+    public Optional<String> parsingSchema() {
+        return Optional.ofNullable(this.parsingSchema);
     }
     /**
      * @return The per-execution percentage benefit.
      * 
      */
-    public Integer perExecutionPercentage() {
-        return this.perExecutionPercentage;
+    public Optional<Integer> perExecutionPercentage() {
+        return Optional.ofNullable(this.perExecutionPercentage);
     }
     /**
      * @return The unique key of this SQL statement.
      * 
      */
-    public String sqlKey() {
-        return this.sqlKey;
+    public Optional<String> sqlKey() {
+        return Optional.ofNullable(this.sqlKey);
     }
     /**
      * @return The text of the SQL statement.
      * 
      */
-    public String sqlText() {
-        return this.sqlText;
+    public Optional<String> sqlText() {
+        return Optional.ofNullable(this.sqlText);
     }
     /**
      * @return The SQL tuning task identifier. This is not the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
-    public String sqlTuningAdvisorTaskId() {
-        return this.sqlTuningAdvisorTaskId;
+    public Optional<String> sqlTuningAdvisorTaskId() {
+        return Optional.ofNullable(this.sqlTuningAdvisorTaskId);
     }
     /**
      * @return The execution id of the analyzed SQL object. This is not the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
-    public String sqlTuningAdvisorTaskObjectExecutionId() {
-        return this.sqlTuningAdvisorTaskObjectExecutionId;
+    public Optional<String> sqlTuningAdvisorTaskObjectExecutionId() {
+        return Optional.ofNullable(this.sqlTuningAdvisorTaskObjectExecutionId);
     }
     /**
      * @return The key of the object to which these recommendations apply. This is not the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
-    public String sqlTuningAdvisorTaskObjectId() {
-        return this.sqlTuningAdvisorTaskObjectId;
+    public Optional<String> sqlTuningAdvisorTaskObjectId() {
+        return Optional.ofNullable(this.sqlTuningAdvisorTaskObjectId);
     }
 
     public static Builder builder() {
@@ -228,23 +230,23 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksFindingsSqlTuningAdvis
     }
     @CustomType.Builder
     public static final class Builder {
-        private Double dbTimeBenefit;
-        private Boolean isAlternativePlanFindingPresent;
-        private Boolean isErrorFindingPresent;
-        private Boolean isIndexFindingPresent;
-        private Boolean isMiscellaneousFindingPresent;
-        private Boolean isRestructureSqlFindingPresent;
-        private Boolean isSqlProfileFindingImplemented;
-        private Boolean isSqlProfileFindingPresent;
-        private Boolean isStatsFindingPresent;
-        private Boolean isTimeoutFindingPresent;
-        private String parsingSchema;
-        private Integer perExecutionPercentage;
-        private String sqlKey;
-        private String sqlText;
-        private String sqlTuningAdvisorTaskId;
-        private String sqlTuningAdvisorTaskObjectExecutionId;
-        private String sqlTuningAdvisorTaskObjectId;
+        private @Nullable Double dbTimeBenefit;
+        private @Nullable Boolean isAlternativePlanFindingPresent;
+        private @Nullable Boolean isErrorFindingPresent;
+        private @Nullable Boolean isIndexFindingPresent;
+        private @Nullable Boolean isMiscellaneousFindingPresent;
+        private @Nullable Boolean isRestructureSqlFindingPresent;
+        private @Nullable Boolean isSqlProfileFindingImplemented;
+        private @Nullable Boolean isSqlProfileFindingPresent;
+        private @Nullable Boolean isStatsFindingPresent;
+        private @Nullable Boolean isTimeoutFindingPresent;
+        private @Nullable String parsingSchema;
+        private @Nullable Integer perExecutionPercentage;
+        private @Nullable String sqlKey;
+        private @Nullable String sqlText;
+        private @Nullable String sqlTuningAdvisorTaskId;
+        private @Nullable String sqlTuningAdvisorTaskObjectExecutionId;
+        private @Nullable String sqlTuningAdvisorTaskObjectId;
         public Builder() {}
         public Builder(GetManagedDatabaseSqlTuningAdvisorTasksFindingsSqlTuningAdvisorTaskFindingCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -268,88 +270,88 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksFindingsSqlTuningAdvis
         }
 
         @CustomType.Setter
-        public Builder dbTimeBenefit(Double dbTimeBenefit) {
-            this.dbTimeBenefit = Objects.requireNonNull(dbTimeBenefit);
+        public Builder dbTimeBenefit(@Nullable Double dbTimeBenefit) {
+            this.dbTimeBenefit = dbTimeBenefit;
             return this;
         }
         @CustomType.Setter
-        public Builder isAlternativePlanFindingPresent(Boolean isAlternativePlanFindingPresent) {
-            this.isAlternativePlanFindingPresent = Objects.requireNonNull(isAlternativePlanFindingPresent);
+        public Builder isAlternativePlanFindingPresent(@Nullable Boolean isAlternativePlanFindingPresent) {
+            this.isAlternativePlanFindingPresent = isAlternativePlanFindingPresent;
             return this;
         }
         @CustomType.Setter
-        public Builder isErrorFindingPresent(Boolean isErrorFindingPresent) {
-            this.isErrorFindingPresent = Objects.requireNonNull(isErrorFindingPresent);
+        public Builder isErrorFindingPresent(@Nullable Boolean isErrorFindingPresent) {
+            this.isErrorFindingPresent = isErrorFindingPresent;
             return this;
         }
         @CustomType.Setter
-        public Builder isIndexFindingPresent(Boolean isIndexFindingPresent) {
-            this.isIndexFindingPresent = Objects.requireNonNull(isIndexFindingPresent);
+        public Builder isIndexFindingPresent(@Nullable Boolean isIndexFindingPresent) {
+            this.isIndexFindingPresent = isIndexFindingPresent;
             return this;
         }
         @CustomType.Setter
-        public Builder isMiscellaneousFindingPresent(Boolean isMiscellaneousFindingPresent) {
-            this.isMiscellaneousFindingPresent = Objects.requireNonNull(isMiscellaneousFindingPresent);
+        public Builder isMiscellaneousFindingPresent(@Nullable Boolean isMiscellaneousFindingPresent) {
+            this.isMiscellaneousFindingPresent = isMiscellaneousFindingPresent;
             return this;
         }
         @CustomType.Setter
-        public Builder isRestructureSqlFindingPresent(Boolean isRestructureSqlFindingPresent) {
-            this.isRestructureSqlFindingPresent = Objects.requireNonNull(isRestructureSqlFindingPresent);
+        public Builder isRestructureSqlFindingPresent(@Nullable Boolean isRestructureSqlFindingPresent) {
+            this.isRestructureSqlFindingPresent = isRestructureSqlFindingPresent;
             return this;
         }
         @CustomType.Setter
-        public Builder isSqlProfileFindingImplemented(Boolean isSqlProfileFindingImplemented) {
-            this.isSqlProfileFindingImplemented = Objects.requireNonNull(isSqlProfileFindingImplemented);
+        public Builder isSqlProfileFindingImplemented(@Nullable Boolean isSqlProfileFindingImplemented) {
+            this.isSqlProfileFindingImplemented = isSqlProfileFindingImplemented;
             return this;
         }
         @CustomType.Setter
-        public Builder isSqlProfileFindingPresent(Boolean isSqlProfileFindingPresent) {
-            this.isSqlProfileFindingPresent = Objects.requireNonNull(isSqlProfileFindingPresent);
+        public Builder isSqlProfileFindingPresent(@Nullable Boolean isSqlProfileFindingPresent) {
+            this.isSqlProfileFindingPresent = isSqlProfileFindingPresent;
             return this;
         }
         @CustomType.Setter
-        public Builder isStatsFindingPresent(Boolean isStatsFindingPresent) {
-            this.isStatsFindingPresent = Objects.requireNonNull(isStatsFindingPresent);
+        public Builder isStatsFindingPresent(@Nullable Boolean isStatsFindingPresent) {
+            this.isStatsFindingPresent = isStatsFindingPresent;
             return this;
         }
         @CustomType.Setter
-        public Builder isTimeoutFindingPresent(Boolean isTimeoutFindingPresent) {
-            this.isTimeoutFindingPresent = Objects.requireNonNull(isTimeoutFindingPresent);
+        public Builder isTimeoutFindingPresent(@Nullable Boolean isTimeoutFindingPresent) {
+            this.isTimeoutFindingPresent = isTimeoutFindingPresent;
             return this;
         }
         @CustomType.Setter
-        public Builder parsingSchema(String parsingSchema) {
-            this.parsingSchema = Objects.requireNonNull(parsingSchema);
+        public Builder parsingSchema(@Nullable String parsingSchema) {
+            this.parsingSchema = parsingSchema;
             return this;
         }
         @CustomType.Setter
-        public Builder perExecutionPercentage(Integer perExecutionPercentage) {
-            this.perExecutionPercentage = Objects.requireNonNull(perExecutionPercentage);
+        public Builder perExecutionPercentage(@Nullable Integer perExecutionPercentage) {
+            this.perExecutionPercentage = perExecutionPercentage;
             return this;
         }
         @CustomType.Setter
-        public Builder sqlKey(String sqlKey) {
-            this.sqlKey = Objects.requireNonNull(sqlKey);
+        public Builder sqlKey(@Nullable String sqlKey) {
+            this.sqlKey = sqlKey;
             return this;
         }
         @CustomType.Setter
-        public Builder sqlText(String sqlText) {
-            this.sqlText = Objects.requireNonNull(sqlText);
+        public Builder sqlText(@Nullable String sqlText) {
+            this.sqlText = sqlText;
             return this;
         }
         @CustomType.Setter
-        public Builder sqlTuningAdvisorTaskId(String sqlTuningAdvisorTaskId) {
-            this.sqlTuningAdvisorTaskId = Objects.requireNonNull(sqlTuningAdvisorTaskId);
+        public Builder sqlTuningAdvisorTaskId(@Nullable String sqlTuningAdvisorTaskId) {
+            this.sqlTuningAdvisorTaskId = sqlTuningAdvisorTaskId;
             return this;
         }
         @CustomType.Setter
-        public Builder sqlTuningAdvisorTaskObjectExecutionId(String sqlTuningAdvisorTaskObjectExecutionId) {
-            this.sqlTuningAdvisorTaskObjectExecutionId = Objects.requireNonNull(sqlTuningAdvisorTaskObjectExecutionId);
+        public Builder sqlTuningAdvisorTaskObjectExecutionId(@Nullable String sqlTuningAdvisorTaskObjectExecutionId) {
+            this.sqlTuningAdvisorTaskObjectExecutionId = sqlTuningAdvisorTaskObjectExecutionId;
             return this;
         }
         @CustomType.Setter
-        public Builder sqlTuningAdvisorTaskObjectId(String sqlTuningAdvisorTaskObjectId) {
-            this.sqlTuningAdvisorTaskObjectId = Objects.requireNonNull(sqlTuningAdvisorTaskObjectId);
+        public Builder sqlTuningAdvisorTaskObjectId(@Nullable String sqlTuningAdvisorTaskObjectId) {
+            this.sqlTuningAdvisorTaskObjectId = sqlTuningAdvisorTaskObjectId;
             return this;
         }
         public GetManagedDatabaseSqlTuningAdvisorTasksFindingsSqlTuningAdvisorTaskFindingCollectionItem build() {

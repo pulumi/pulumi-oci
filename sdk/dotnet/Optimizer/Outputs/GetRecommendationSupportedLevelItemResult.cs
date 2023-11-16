@@ -16,10 +16,10 @@ namespace Pulumi.Oci.Optimizer.Outputs
         /// <summary>
         /// The name of the profile level.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
 
         [OutputConstructor]
-        private GetRecommendationSupportedLevelItemResult(string name)
+        private GetRecommendationSupportedLevelItemResult(string? name)
         {
             Name = name;
         }

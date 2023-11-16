@@ -6,6 +6,8 @@ package com.pulumi.oci.Blockchain.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItemItem {
@@ -13,51 +15,51 @@ public final class GetBlockchainPlatformPatchesBlockchainPlatformPatchCollection
      * @return patch id
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return A URL for the patch specific documentation
      * 
      */
-    private String patchInfoUrl;
+    private @Nullable String patchInfoUrl;
     /**
      * @return patch service version
      * 
      */
-    private String serviceVersion;
+    private @Nullable String serviceVersion;
     /**
      * @return patch due date for customer initiated patching
      * 
      */
-    private String timePatchDue;
+    private @Nullable String timePatchDue;
 
     private GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItemItem() {}
     /**
      * @return patch id
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return A URL for the patch specific documentation
      * 
      */
-    public String patchInfoUrl() {
-        return this.patchInfoUrl;
+    public Optional<String> patchInfoUrl() {
+        return Optional.ofNullable(this.patchInfoUrl);
     }
     /**
      * @return patch service version
      * 
      */
-    public String serviceVersion() {
-        return this.serviceVersion;
+    public Optional<String> serviceVersion() {
+        return Optional.ofNullable(this.serviceVersion);
     }
     /**
      * @return patch due date for customer initiated patching
      * 
      */
-    public String timePatchDue() {
-        return this.timePatchDue;
+    public Optional<String> timePatchDue() {
+        return Optional.ofNullable(this.timePatchDue);
     }
 
     public static Builder builder() {
@@ -69,10 +71,10 @@ public final class GetBlockchainPlatformPatchesBlockchainPlatformPatchCollection
     }
     @CustomType.Builder
     public static final class Builder {
-        private String id;
-        private String patchInfoUrl;
-        private String serviceVersion;
-        private String timePatchDue;
+        private @Nullable String id;
+        private @Nullable String patchInfoUrl;
+        private @Nullable String serviceVersion;
+        private @Nullable String timePatchDue;
         public Builder() {}
         public Builder(GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItemItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -83,23 +85,23 @@ public final class GetBlockchainPlatformPatchesBlockchainPlatformPatchCollection
         }
 
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder patchInfoUrl(String patchInfoUrl) {
-            this.patchInfoUrl = Objects.requireNonNull(patchInfoUrl);
+        public Builder patchInfoUrl(@Nullable String patchInfoUrl) {
+            this.patchInfoUrl = patchInfoUrl;
             return this;
         }
         @CustomType.Setter
-        public Builder serviceVersion(String serviceVersion) {
-            this.serviceVersion = Objects.requireNonNull(serviceVersion);
+        public Builder serviceVersion(@Nullable String serviceVersion) {
+            this.serviceVersion = serviceVersion;
             return this;
         }
         @CustomType.Setter
-        public Builder timePatchDue(String timePatchDue) {
-            this.timePatchDue = Objects.requireNonNull(timePatchDue);
+        public Builder timePatchDue(@Nullable String timePatchDue) {
+            this.timePatchDue = timePatchDue;
             return this;
         }
         public GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItemItem build() {

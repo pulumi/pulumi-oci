@@ -84,12 +84,12 @@ export interface GetDbVersionsResult {
     /**
      * The list of db_versions.
      */
-    readonly dbVersions: outputs.Database.GetDbVersionsDbVersion[];
+    readonly dbVersions?: outputs.Database.GetDbVersionsDbVersion[];
     readonly filters?: outputs.Database.GetDbVersionsFilter[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly isDatabaseSoftwareImageSupported?: boolean;
     /**
      * True if this version of the Oracle Database software is supported for Upgrade.

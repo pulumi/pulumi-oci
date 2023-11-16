@@ -6,6 +6,8 @@ package com.pulumi.oci.BigDataService.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetBdsInstanceCloudSqlDetailKerberosDetail {
@@ -13,27 +15,27 @@ public final class GetBdsInstanceCloudSqlDetailKerberosDetail {
      * @return Location of the keytab file
      * 
      */
-    private String keytabFile;
+    private @Nullable String keytabFile;
     /**
      * @return Name of the Kerberos principal.
      * 
      */
-    private String principalName;
+    private @Nullable String principalName;
 
     private GetBdsInstanceCloudSqlDetailKerberosDetail() {}
     /**
      * @return Location of the keytab file
      * 
      */
-    public String keytabFile() {
-        return this.keytabFile;
+    public Optional<String> keytabFile() {
+        return Optional.ofNullable(this.keytabFile);
     }
     /**
      * @return Name of the Kerberos principal.
      * 
      */
-    public String principalName() {
-        return this.principalName;
+    public Optional<String> principalName() {
+        return Optional.ofNullable(this.principalName);
     }
 
     public static Builder builder() {
@@ -45,8 +47,8 @@ public final class GetBdsInstanceCloudSqlDetailKerberosDetail {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String keytabFile;
-        private String principalName;
+        private @Nullable String keytabFile;
+        private @Nullable String principalName;
         public Builder() {}
         public Builder(GetBdsInstanceCloudSqlDetailKerberosDetail defaults) {
     	      Objects.requireNonNull(defaults);
@@ -55,13 +57,13 @@ public final class GetBdsInstanceCloudSqlDetailKerberosDetail {
         }
 
         @CustomType.Setter
-        public Builder keytabFile(String keytabFile) {
-            this.keytabFile = Objects.requireNonNull(keytabFile);
+        public Builder keytabFile(@Nullable String keytabFile) {
+            this.keytabFile = keytabFile;
             return this;
         }
         @CustomType.Setter
-        public Builder principalName(String principalName) {
-            this.principalName = Objects.requireNonNull(principalName);
+        public Builder principalName(@Nullable String principalName) {
+            this.principalName = principalName;
             return this;
         }
         public GetBdsInstanceCloudSqlDetailKerberosDetail build() {

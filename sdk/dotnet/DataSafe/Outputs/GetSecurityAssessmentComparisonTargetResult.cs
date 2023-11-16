@@ -24,11 +24,11 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// <summary>
         /// The OCID of the target that is used as a baseline in this comparison.
         /// </summary>
-        public readonly string BaselineTargetId;
+        public readonly string? BaselineTargetId;
         /// <summary>
         /// The OCID of the target to be compared against the baseline target.
         /// </summary>
-        public readonly string CurrentTargetId;
+        public readonly string? CurrentTargetId;
         /// <summary>
         /// Comparison between findings belonging to Data Encryption category.
         /// </summary>
@@ -56,9 +56,9 @@ namespace Pulumi.Oci.DataSafe.Outputs
 
             ImmutableArray<Outputs.GetSecurityAssessmentComparisonTargetAuthorizationControlResult> authorizationControls,
 
-            string baselineTargetId,
+            string? baselineTargetId,
 
-            string currentTargetId,
+            string? currentTargetId,
 
             ImmutableArray<Outputs.GetSecurityAssessmentComparisonTargetDataEncryptionResult> dataEncryptions,
 

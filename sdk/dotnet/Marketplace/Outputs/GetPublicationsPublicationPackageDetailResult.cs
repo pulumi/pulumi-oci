@@ -14,25 +14,25 @@ namespace Pulumi.Oci.Marketplace.Outputs
     public sealed class GetPublicationsPublicationPackageDetailResult
     {
         public readonly ImmutableArray<Outputs.GetPublicationsPublicationPackageDetailEulaResult> Eulas;
-        public readonly string ImageId;
+        public readonly string? ImageId;
         public readonly ImmutableArray<Outputs.GetPublicationsPublicationPackageDetailOperatingSystemResult> OperatingSystems;
         /// <summary>
         /// The listing's package type.
         /// </summary>
-        public readonly string PackageType;
-        public readonly string PackageVersion;
+        public readonly string? PackageType;
+        public readonly string? PackageVersion;
 
         [OutputConstructor]
         private GetPublicationsPublicationPackageDetailResult(
             ImmutableArray<Outputs.GetPublicationsPublicationPackageDetailEulaResult> eulas,
 
-            string imageId,
+            string? imageId,
 
             ImmutableArray<Outputs.GetPublicationsPublicationPackageDetailOperatingSystemResult> operatingSystems,
 
-            string packageType,
+            string? packageType,
 
-            string packageVersion)
+            string? packageVersion)
         {
             Eulas = eulas;
             ImageId = imageId;

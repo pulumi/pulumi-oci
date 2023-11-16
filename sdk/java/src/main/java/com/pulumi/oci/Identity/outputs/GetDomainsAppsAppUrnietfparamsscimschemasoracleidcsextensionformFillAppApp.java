@@ -9,6 +9,8 @@ import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDomainsAppsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppApp {
@@ -16,111 +18,111 @@ public final class GetDomainsAppsAppUrnietfparamsscimschemasoracleidcsextensionf
      * @return FormFill Application Configuration CLOB which has to be maintained in Form-Fill APP for legacy code to do Form-Fill injection
      * 
      */
-    private String configuration;
+    private @Nullable String configuration;
     /**
      * @return Indicates how FormFill obtains the username and password of the account that FormFill will use to sign into the target App.
      * 
      */
-    private String formCredMethod;
+    private @Nullable String formCredMethod;
     /**
      * @return Credential Sharing Group to which this form-fill application belongs.
      * 
      */
-    private String formCredentialSharingGroupId;
+    private @Nullable String formCredentialSharingGroupId;
     /**
      * @return A list of application-formURLs that FormFill should match against any formUrl that the user-specifies when signing in to the target service.  Each item in the list also indicates how FormFill should interpret that formUrl.
      * 
      */
-    private List<GetDomainsAppsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppAppFormFillUrlMatch> formFillUrlMatches;
+    private @Nullable List<GetDomainsAppsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppAppFormFillUrlMatch> formFillUrlMatches;
     /**
      * @return Type of the FormFill application like WebApplication, MainFrameApplication, WindowsApplication. Initially, we will support only WebApplication.
      * 
      */
-    private String formType;
+    private @Nullable String formType;
     /**
      * @return If true, indicates that system is allowed to show the password in plain-text for this account after re-authentication.
      * 
      */
-    private Boolean revealPasswordOnForm;
+    private @Nullable Boolean revealPasswordOnForm;
     /**
      * @return If true, indicates that each of the Form-Fill-related attributes that can be inherited from the template actually will be inherited from the template. If false, indicates that the AppTemplate disabled inheritance for these Form-Fill-related attributes.
      * 
      */
-    private Boolean syncFromTemplate;
+    private @Nullable Boolean syncFromTemplate;
     /**
      * @return Indicates the custom expression, which can combine concat and substring operations with literals and with any attribute of the Oracle Identity Cloud Service User
      * 
      */
-    private String userNameFormExpression;
+    private @Nullable String userNameFormExpression;
     /**
      * @return Format for generating a username.  This value can be Username or Email Address; any other value will be treated as a custom expression.  A custom expression may combine &#39;concat&#39; and &#39;substring&#39; operations with literals and with any attribute of the Oracle Identity Cloud Service user.
      * 
      */
-    private String userNameFormTemplate;
+    private @Nullable String userNameFormTemplate;
 
     private GetDomainsAppsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppApp() {}
     /**
      * @return FormFill Application Configuration CLOB which has to be maintained in Form-Fill APP for legacy code to do Form-Fill injection
      * 
      */
-    public String configuration() {
-        return this.configuration;
+    public Optional<String> configuration() {
+        return Optional.ofNullable(this.configuration);
     }
     /**
      * @return Indicates how FormFill obtains the username and password of the account that FormFill will use to sign into the target App.
      * 
      */
-    public String formCredMethod() {
-        return this.formCredMethod;
+    public Optional<String> formCredMethod() {
+        return Optional.ofNullable(this.formCredMethod);
     }
     /**
      * @return Credential Sharing Group to which this form-fill application belongs.
      * 
      */
-    public String formCredentialSharingGroupId() {
-        return this.formCredentialSharingGroupId;
+    public Optional<String> formCredentialSharingGroupId() {
+        return Optional.ofNullable(this.formCredentialSharingGroupId);
     }
     /**
      * @return A list of application-formURLs that FormFill should match against any formUrl that the user-specifies when signing in to the target service.  Each item in the list also indicates how FormFill should interpret that formUrl.
      * 
      */
     public List<GetDomainsAppsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppAppFormFillUrlMatch> formFillUrlMatches() {
-        return this.formFillUrlMatches;
+        return this.formFillUrlMatches == null ? List.of() : this.formFillUrlMatches;
     }
     /**
      * @return Type of the FormFill application like WebApplication, MainFrameApplication, WindowsApplication. Initially, we will support only WebApplication.
      * 
      */
-    public String formType() {
-        return this.formType;
+    public Optional<String> formType() {
+        return Optional.ofNullable(this.formType);
     }
     /**
      * @return If true, indicates that system is allowed to show the password in plain-text for this account after re-authentication.
      * 
      */
-    public Boolean revealPasswordOnForm() {
-        return this.revealPasswordOnForm;
+    public Optional<Boolean> revealPasswordOnForm() {
+        return Optional.ofNullable(this.revealPasswordOnForm);
     }
     /**
      * @return If true, indicates that each of the Form-Fill-related attributes that can be inherited from the template actually will be inherited from the template. If false, indicates that the AppTemplate disabled inheritance for these Form-Fill-related attributes.
      * 
      */
-    public Boolean syncFromTemplate() {
-        return this.syncFromTemplate;
+    public Optional<Boolean> syncFromTemplate() {
+        return Optional.ofNullable(this.syncFromTemplate);
     }
     /**
      * @return Indicates the custom expression, which can combine concat and substring operations with literals and with any attribute of the Oracle Identity Cloud Service User
      * 
      */
-    public String userNameFormExpression() {
-        return this.userNameFormExpression;
+    public Optional<String> userNameFormExpression() {
+        return Optional.ofNullable(this.userNameFormExpression);
     }
     /**
      * @return Format for generating a username.  This value can be Username or Email Address; any other value will be treated as a custom expression.  A custom expression may combine &#39;concat&#39; and &#39;substring&#39; operations with literals and with any attribute of the Oracle Identity Cloud Service user.
      * 
      */
-    public String userNameFormTemplate() {
-        return this.userNameFormTemplate;
+    public Optional<String> userNameFormTemplate() {
+        return Optional.ofNullable(this.userNameFormTemplate);
     }
 
     public static Builder builder() {
@@ -132,15 +134,15 @@ public final class GetDomainsAppsAppUrnietfparamsscimschemasoracleidcsextensionf
     }
     @CustomType.Builder
     public static final class Builder {
-        private String configuration;
-        private String formCredMethod;
-        private String formCredentialSharingGroupId;
-        private List<GetDomainsAppsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppAppFormFillUrlMatch> formFillUrlMatches;
-        private String formType;
-        private Boolean revealPasswordOnForm;
-        private Boolean syncFromTemplate;
-        private String userNameFormExpression;
-        private String userNameFormTemplate;
+        private @Nullable String configuration;
+        private @Nullable String formCredMethod;
+        private @Nullable String formCredentialSharingGroupId;
+        private @Nullable List<GetDomainsAppsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppAppFormFillUrlMatch> formFillUrlMatches;
+        private @Nullable String formType;
+        private @Nullable Boolean revealPasswordOnForm;
+        private @Nullable Boolean syncFromTemplate;
+        private @Nullable String userNameFormExpression;
+        private @Nullable String userNameFormTemplate;
         public Builder() {}
         public Builder(GetDomainsAppsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppApp defaults) {
     	      Objects.requireNonNull(defaults);
@@ -156,51 +158,51 @@ public final class GetDomainsAppsAppUrnietfparamsscimschemasoracleidcsextensionf
         }
 
         @CustomType.Setter
-        public Builder configuration(String configuration) {
-            this.configuration = Objects.requireNonNull(configuration);
+        public Builder configuration(@Nullable String configuration) {
+            this.configuration = configuration;
             return this;
         }
         @CustomType.Setter
-        public Builder formCredMethod(String formCredMethod) {
-            this.formCredMethod = Objects.requireNonNull(formCredMethod);
+        public Builder formCredMethod(@Nullable String formCredMethod) {
+            this.formCredMethod = formCredMethod;
             return this;
         }
         @CustomType.Setter
-        public Builder formCredentialSharingGroupId(String formCredentialSharingGroupId) {
-            this.formCredentialSharingGroupId = Objects.requireNonNull(formCredentialSharingGroupId);
+        public Builder formCredentialSharingGroupId(@Nullable String formCredentialSharingGroupId) {
+            this.formCredentialSharingGroupId = formCredentialSharingGroupId;
             return this;
         }
         @CustomType.Setter
-        public Builder formFillUrlMatches(List<GetDomainsAppsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppAppFormFillUrlMatch> formFillUrlMatches) {
-            this.formFillUrlMatches = Objects.requireNonNull(formFillUrlMatches);
+        public Builder formFillUrlMatches(@Nullable List<GetDomainsAppsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppAppFormFillUrlMatch> formFillUrlMatches) {
+            this.formFillUrlMatches = formFillUrlMatches;
             return this;
         }
         public Builder formFillUrlMatches(GetDomainsAppsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppAppFormFillUrlMatch... formFillUrlMatches) {
             return formFillUrlMatches(List.of(formFillUrlMatches));
         }
         @CustomType.Setter
-        public Builder formType(String formType) {
-            this.formType = Objects.requireNonNull(formType);
+        public Builder formType(@Nullable String formType) {
+            this.formType = formType;
             return this;
         }
         @CustomType.Setter
-        public Builder revealPasswordOnForm(Boolean revealPasswordOnForm) {
-            this.revealPasswordOnForm = Objects.requireNonNull(revealPasswordOnForm);
+        public Builder revealPasswordOnForm(@Nullable Boolean revealPasswordOnForm) {
+            this.revealPasswordOnForm = revealPasswordOnForm;
             return this;
         }
         @CustomType.Setter
-        public Builder syncFromTemplate(Boolean syncFromTemplate) {
-            this.syncFromTemplate = Objects.requireNonNull(syncFromTemplate);
+        public Builder syncFromTemplate(@Nullable Boolean syncFromTemplate) {
+            this.syncFromTemplate = syncFromTemplate;
             return this;
         }
         @CustomType.Setter
-        public Builder userNameFormExpression(String userNameFormExpression) {
-            this.userNameFormExpression = Objects.requireNonNull(userNameFormExpression);
+        public Builder userNameFormExpression(@Nullable String userNameFormExpression) {
+            this.userNameFormExpression = userNameFormExpression;
             return this;
         }
         @CustomType.Setter
-        public Builder userNameFormTemplate(String userNameFormTemplate) {
-            this.userNameFormTemplate = Objects.requireNonNull(userNameFormTemplate);
+        public Builder userNameFormTemplate(@Nullable String userNameFormTemplate) {
+            this.userNameFormTemplate = userNameFormTemplate;
             return this;
         }
         public GetDomainsAppsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppApp build() {

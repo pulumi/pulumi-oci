@@ -54,16 +54,16 @@ export interface GetClusterOptionResult {
     /**
      * Available CNIs and network options for existing and new node pools of the cluster
      */
-    readonly clusterPodNetworkOptions: outputs.ContainerEngine.GetClusterOptionClusterPodNetworkOption[];
+    readonly clusterPodNetworkOptions?: outputs.ContainerEngine.GetClusterOptionClusterPodNetworkOption[];
     readonly compartmentId?: string;
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Available Kubernetes versions.
      */
-    readonly kubernetesVersions: string[];
+    readonly kubernetesVersions?: string[];
 }
 /**
  * This data source provides details about a specific Cluster Option resource in Oracle Cloud Infrastructure Container Engine service.

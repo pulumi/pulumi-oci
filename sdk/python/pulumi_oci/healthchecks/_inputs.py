@@ -179,9 +179,6 @@ class GetVantagePointsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: Filters results that exactly match the `name` field.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -190,9 +187,6 @@ class GetVantagePointsFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        Filters results that exactly match the `name` field.
-        """
         return pulumi.get(self, "name")
 
     @name.setter

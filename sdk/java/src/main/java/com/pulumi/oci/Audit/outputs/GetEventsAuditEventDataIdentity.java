@@ -6,6 +6,8 @@ package com.pulumi.oci.Audit.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetEventsAuditEventDataIdentity {
@@ -13,123 +15,123 @@ public final class GetEventsAuditEventDataIdentity {
      * @return The type of authentication used.  Example: `natv`
      * 
      */
-    private String authType;
+    private @Nullable String authType;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the caller. The caller that made a  request on behalf of the prinicpal.
      * 
      */
-    private String callerId;
+    private @Nullable String callerId;
     /**
      * @return The name of the user or service. This value is the friendly name associated with `callerId`.
      * 
      */
-    private String callerName;
+    private @Nullable String callerName;
     /**
      * @return This value identifies any Console session associated with this request.
      * 
      */
-    private String consoleSessionId;
+    private @Nullable String consoleSessionId;
     /**
      * @return The credential ID of the user. This value is extracted from the HTTP &#39;Authorization&#39; request header. It consists of the tenantId, userId, and user fingerprint, all delimited by a slash (/).
      * 
      */
-    private String credentials;
+    private @Nullable String credentials;
     /**
      * @return The IP address of the source of the request.  Example: `172.24.80.88`
      * 
      */
-    private String ipAddress;
+    private @Nullable String ipAddress;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the principal.
      * 
      */
-    private String principalId;
+    private @Nullable String principalId;
     /**
      * @return The name of the user or service. This value is the friendly name associated with `principalId`.  Example: `ExampleName`
      * 
      */
-    private String principalName;
+    private @Nullable String principalName;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenant.
      * 
      */
-    private String tenantId;
+    private @Nullable String tenantId;
     /**
      * @return The user agent of the client that made the request.  Example: `Jersey/2.23 (HttpUrlConnection 1.8.0_212)`
      * 
      */
-    private String userAgent;
+    private @Nullable String userAgent;
 
     private GetEventsAuditEventDataIdentity() {}
     /**
      * @return The type of authentication used.  Example: `natv`
      * 
      */
-    public String authType() {
-        return this.authType;
+    public Optional<String> authType() {
+        return Optional.ofNullable(this.authType);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the caller. The caller that made a  request on behalf of the prinicpal.
      * 
      */
-    public String callerId() {
-        return this.callerId;
+    public Optional<String> callerId() {
+        return Optional.ofNullable(this.callerId);
     }
     /**
      * @return The name of the user or service. This value is the friendly name associated with `callerId`.
      * 
      */
-    public String callerName() {
-        return this.callerName;
+    public Optional<String> callerName() {
+        return Optional.ofNullable(this.callerName);
     }
     /**
      * @return This value identifies any Console session associated with this request.
      * 
      */
-    public String consoleSessionId() {
-        return this.consoleSessionId;
+    public Optional<String> consoleSessionId() {
+        return Optional.ofNullable(this.consoleSessionId);
     }
     /**
      * @return The credential ID of the user. This value is extracted from the HTTP &#39;Authorization&#39; request header. It consists of the tenantId, userId, and user fingerprint, all delimited by a slash (/).
      * 
      */
-    public String credentials() {
-        return this.credentials;
+    public Optional<String> credentials() {
+        return Optional.ofNullable(this.credentials);
     }
     /**
      * @return The IP address of the source of the request.  Example: `172.24.80.88`
      * 
      */
-    public String ipAddress() {
-        return this.ipAddress;
+    public Optional<String> ipAddress() {
+        return Optional.ofNullable(this.ipAddress);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the principal.
      * 
      */
-    public String principalId() {
-        return this.principalId;
+    public Optional<String> principalId() {
+        return Optional.ofNullable(this.principalId);
     }
     /**
      * @return The name of the user or service. This value is the friendly name associated with `principalId`.  Example: `ExampleName`
      * 
      */
-    public String principalName() {
-        return this.principalName;
+    public Optional<String> principalName() {
+        return Optional.ofNullable(this.principalName);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenant.
      * 
      */
-    public String tenantId() {
-        return this.tenantId;
+    public Optional<String> tenantId() {
+        return Optional.ofNullable(this.tenantId);
     }
     /**
      * @return The user agent of the client that made the request.  Example: `Jersey/2.23 (HttpUrlConnection 1.8.0_212)`
      * 
      */
-    public String userAgent() {
-        return this.userAgent;
+    public Optional<String> userAgent() {
+        return Optional.ofNullable(this.userAgent);
     }
 
     public static Builder builder() {
@@ -141,16 +143,16 @@ public final class GetEventsAuditEventDataIdentity {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String authType;
-        private String callerId;
-        private String callerName;
-        private String consoleSessionId;
-        private String credentials;
-        private String ipAddress;
-        private String principalId;
-        private String principalName;
-        private String tenantId;
-        private String userAgent;
+        private @Nullable String authType;
+        private @Nullable String callerId;
+        private @Nullable String callerName;
+        private @Nullable String consoleSessionId;
+        private @Nullable String credentials;
+        private @Nullable String ipAddress;
+        private @Nullable String principalId;
+        private @Nullable String principalName;
+        private @Nullable String tenantId;
+        private @Nullable String userAgent;
         public Builder() {}
         public Builder(GetEventsAuditEventDataIdentity defaults) {
     	      Objects.requireNonNull(defaults);
@@ -167,53 +169,53 @@ public final class GetEventsAuditEventDataIdentity {
         }
 
         @CustomType.Setter
-        public Builder authType(String authType) {
-            this.authType = Objects.requireNonNull(authType);
+        public Builder authType(@Nullable String authType) {
+            this.authType = authType;
             return this;
         }
         @CustomType.Setter
-        public Builder callerId(String callerId) {
-            this.callerId = Objects.requireNonNull(callerId);
+        public Builder callerId(@Nullable String callerId) {
+            this.callerId = callerId;
             return this;
         }
         @CustomType.Setter
-        public Builder callerName(String callerName) {
-            this.callerName = Objects.requireNonNull(callerName);
+        public Builder callerName(@Nullable String callerName) {
+            this.callerName = callerName;
             return this;
         }
         @CustomType.Setter
-        public Builder consoleSessionId(String consoleSessionId) {
-            this.consoleSessionId = Objects.requireNonNull(consoleSessionId);
+        public Builder consoleSessionId(@Nullable String consoleSessionId) {
+            this.consoleSessionId = consoleSessionId;
             return this;
         }
         @CustomType.Setter
-        public Builder credentials(String credentials) {
-            this.credentials = Objects.requireNonNull(credentials);
+        public Builder credentials(@Nullable String credentials) {
+            this.credentials = credentials;
             return this;
         }
         @CustomType.Setter
-        public Builder ipAddress(String ipAddress) {
-            this.ipAddress = Objects.requireNonNull(ipAddress);
+        public Builder ipAddress(@Nullable String ipAddress) {
+            this.ipAddress = ipAddress;
             return this;
         }
         @CustomType.Setter
-        public Builder principalId(String principalId) {
-            this.principalId = Objects.requireNonNull(principalId);
+        public Builder principalId(@Nullable String principalId) {
+            this.principalId = principalId;
             return this;
         }
         @CustomType.Setter
-        public Builder principalName(String principalName) {
-            this.principalName = Objects.requireNonNull(principalName);
+        public Builder principalName(@Nullable String principalName) {
+            this.principalName = principalName;
             return this;
         }
         @CustomType.Setter
-        public Builder tenantId(String tenantId) {
-            this.tenantId = Objects.requireNonNull(tenantId);
+        public Builder tenantId(@Nullable String tenantId) {
+            this.tenantId = tenantId;
             return this;
         }
         @CustomType.Setter
-        public Builder userAgent(String userAgent) {
-            this.userAgent = Objects.requireNonNull(userAgent);
+        public Builder userAgent(@Nullable String userAgent) {
+            this.userAgent = userAgent;
             return this;
         }
         public GetEventsAuditEventDataIdentity build() {

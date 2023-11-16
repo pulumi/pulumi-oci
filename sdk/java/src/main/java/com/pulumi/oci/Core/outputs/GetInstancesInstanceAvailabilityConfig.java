@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetInstancesInstanceAvailabilityConfig {
@@ -14,27 +16,27 @@ public final class GetInstancesInstanceAvailabilityConfig {
      * @return Whether to live migrate supported VM instances to a healthy physical VM host without disrupting running instances during infrastructure maintenance events. If null, Oracle chooses the best option for migrating the VM during infrastructure maintenance events.
      * 
      */
-    private Boolean isLiveMigrationPreferred;
+    private @Nullable Boolean isLiveMigrationPreferred;
     /**
      * @return The lifecycle state for an instance when it is recovered after infrastructure maintenance.
      * 
      */
-    private String recoveryAction;
+    private @Nullable String recoveryAction;
 
     private GetInstancesInstanceAvailabilityConfig() {}
     /**
      * @return Whether to live migrate supported VM instances to a healthy physical VM host without disrupting running instances during infrastructure maintenance events. If null, Oracle chooses the best option for migrating the VM during infrastructure maintenance events.
      * 
      */
-    public Boolean isLiveMigrationPreferred() {
-        return this.isLiveMigrationPreferred;
+    public Optional<Boolean> isLiveMigrationPreferred() {
+        return Optional.ofNullable(this.isLiveMigrationPreferred);
     }
     /**
      * @return The lifecycle state for an instance when it is recovered after infrastructure maintenance.
      * 
      */
-    public String recoveryAction() {
-        return this.recoveryAction;
+    public Optional<String> recoveryAction() {
+        return Optional.ofNullable(this.recoveryAction);
     }
 
     public static Builder builder() {
@@ -46,8 +48,8 @@ public final class GetInstancesInstanceAvailabilityConfig {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Boolean isLiveMigrationPreferred;
-        private String recoveryAction;
+        private @Nullable Boolean isLiveMigrationPreferred;
+        private @Nullable String recoveryAction;
         public Builder() {}
         public Builder(GetInstancesInstanceAvailabilityConfig defaults) {
     	      Objects.requireNonNull(defaults);
@@ -56,13 +58,13 @@ public final class GetInstancesInstanceAvailabilityConfig {
         }
 
         @CustomType.Setter
-        public Builder isLiveMigrationPreferred(Boolean isLiveMigrationPreferred) {
-            this.isLiveMigrationPreferred = Objects.requireNonNull(isLiveMigrationPreferred);
+        public Builder isLiveMigrationPreferred(@Nullable Boolean isLiveMigrationPreferred) {
+            this.isLiveMigrationPreferred = isLiveMigrationPreferred;
             return this;
         }
         @CustomType.Setter
-        public Builder recoveryAction(String recoveryAction) {
-            this.recoveryAction = Objects.requireNonNull(recoveryAction);
+        public Builder recoveryAction(@Nullable String recoveryAction) {
+            this.recoveryAction = recoveryAction;
             return this;
         }
         public GetInstancesInstanceAvailabilityConfig build() {

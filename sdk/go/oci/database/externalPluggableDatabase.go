@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the External Pluggable Database resource in Oracle Cloud Infrastructure Database service.
@@ -64,23 +63,23 @@ type ExternalPluggableDatabase struct {
 	pulumi.CustomResourceState
 
 	// The character set of the external database.
-	CharacterSet pulumi.StringOutput `pulumi:"characterSet"`
+	CharacterSet pulumi.StringPtrOutput `pulumi:"characterSet"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// The Oracle Database configuration
-	DatabaseConfiguration pulumi.StringOutput `pulumi:"databaseConfiguration"`
+	DatabaseConfiguration pulumi.StringPtrOutput `pulumi:"databaseConfiguration"`
 	// The Oracle Database edition.
-	DatabaseEdition pulumi.StringOutput `pulumi:"databaseEdition"`
+	DatabaseEdition pulumi.StringPtrOutput `pulumi:"databaseEdition"`
 	// The configuration of the Database Management service.
 	DatabaseManagementConfigs ExternalPluggableDatabaseDatabaseManagementConfigArrayOutput `pulumi:"databaseManagementConfigs"`
 	// The Oracle Database version.
-	DatabaseVersion pulumi.StringOutput `pulumi:"databaseVersion"`
+	DatabaseVersion pulumi.StringPtrOutput `pulumi:"databaseVersion"`
 	// The Oracle Database ID, which identifies an Oracle Database located outside of Oracle Cloud.
-	DbId pulumi.StringOutput `pulumi:"dbId"`
+	DbId pulumi.StringPtrOutput `pulumi:"dbId"`
 	// The database packs licensed for the external Oracle Database.
-	DbPacks pulumi.StringOutput `pulumi:"dbPacks"`
+	DbPacks pulumi.StringPtrOutput `pulumi:"dbPacks"`
 	// The `DB_UNIQUE_NAME` of the external database.
-	DbUniqueName pulumi.StringOutput `pulumi:"dbUniqueName"`
+	DbUniqueName pulumi.StringPtrOutput `pulumi:"dbUniqueName"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) The user-friendly name for the external database. The name does not have to be unique.
@@ -90,24 +89,24 @@ type ExternalPluggableDatabase struct {
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// Additional information about the current lifecycle state.
-	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrOutput `pulumi:"lifecycleDetails"`
 	// The national character of the external database.
-	NcharacterSet pulumi.StringOutput `pulumi:"ncharacterSet"`
+	NcharacterSet pulumi.StringPtrOutput `pulumi:"ncharacterSet"`
 	// The configuration of Operations Insights for the external database
 	OperationsInsightsConfigs ExternalPluggableDatabaseOperationsInsightsConfigArrayOutput `pulumi:"operationsInsightsConfigs"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the the non-container database that was converted to a pluggable database to create this resource.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	SourceId pulumi.StringOutput `pulumi:"sourceId"`
+	SourceId pulumi.StringPtrOutput `pulumi:"sourceId"`
 	// The configuration of Stack Monitoring for the external database.
 	StackMonitoringConfigs ExternalPluggableDatabaseStackMonitoringConfigArrayOutput `pulumi:"stackMonitoringConfigs"`
 	// The current state of the Oracle Cloud Infrastructure external database resource.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// The date and time the database was created.
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The time zone of the external database. It is a time zone offset (a character type in the format '[+|-]TZH:TZM') or a time zone region name, depending on how the time zone value was specified when the database was created / last altered.
-	TimeZone pulumi.StringOutput `pulumi:"timeZone"`
+	TimeZone pulumi.StringPtrOutput `pulumi:"timeZone"`
 }
 
 // NewExternalPluggableDatabase registers a new resource with the given unique name, arguments, and options.
@@ -308,12 +307,6 @@ func (i *ExternalPluggableDatabase) ToExternalPluggableDatabaseOutputWithContext
 	return pulumi.ToOutputWithContext(ctx, i).(ExternalPluggableDatabaseOutput)
 }
 
-func (i *ExternalPluggableDatabase) ToOutput(ctx context.Context) pulumix.Output[*ExternalPluggableDatabase] {
-	return pulumix.Output[*ExternalPluggableDatabase]{
-		OutputState: i.ToExternalPluggableDatabaseOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ExternalPluggableDatabaseArrayInput is an input type that accepts ExternalPluggableDatabaseArray and ExternalPluggableDatabaseArrayOutput values.
 // You can construct a concrete instance of `ExternalPluggableDatabaseArrayInput` via:
 //
@@ -337,12 +330,6 @@ func (i ExternalPluggableDatabaseArray) ToExternalPluggableDatabaseArrayOutput()
 
 func (i ExternalPluggableDatabaseArray) ToExternalPluggableDatabaseArrayOutputWithContext(ctx context.Context) ExternalPluggableDatabaseArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ExternalPluggableDatabaseArrayOutput)
-}
-
-func (i ExternalPluggableDatabaseArray) ToOutput(ctx context.Context) pulumix.Output[[]*ExternalPluggableDatabase] {
-	return pulumix.Output[[]*ExternalPluggableDatabase]{
-		OutputState: i.ToExternalPluggableDatabaseArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // ExternalPluggableDatabaseMapInput is an input type that accepts ExternalPluggableDatabaseMap and ExternalPluggableDatabaseMapOutput values.
@@ -370,12 +357,6 @@ func (i ExternalPluggableDatabaseMap) ToExternalPluggableDatabaseMapOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(ExternalPluggableDatabaseMapOutput)
 }
 
-func (i ExternalPluggableDatabaseMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*ExternalPluggableDatabase] {
-	return pulumix.Output[map[string]*ExternalPluggableDatabase]{
-		OutputState: i.ToExternalPluggableDatabaseMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ExternalPluggableDatabaseOutput struct{ *pulumi.OutputState }
 
 func (ExternalPluggableDatabaseOutput) ElementType() reflect.Type {
@@ -390,15 +371,9 @@ func (o ExternalPluggableDatabaseOutput) ToExternalPluggableDatabaseOutputWithCo
 	return o
 }
 
-func (o ExternalPluggableDatabaseOutput) ToOutput(ctx context.Context) pulumix.Output[*ExternalPluggableDatabase] {
-	return pulumix.Output[*ExternalPluggableDatabase]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The character set of the external database.
-func (o ExternalPluggableDatabaseOutput) CharacterSet() pulumi.StringOutput {
-	return o.ApplyT(func(v *ExternalPluggableDatabase) pulumi.StringOutput { return v.CharacterSet }).(pulumi.StringOutput)
+func (o ExternalPluggableDatabaseOutput) CharacterSet() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExternalPluggableDatabase) pulumi.StringPtrOutput { return v.CharacterSet }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -407,13 +382,13 @@ func (o ExternalPluggableDatabaseOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // The Oracle Database configuration
-func (o ExternalPluggableDatabaseOutput) DatabaseConfiguration() pulumi.StringOutput {
-	return o.ApplyT(func(v *ExternalPluggableDatabase) pulumi.StringOutput { return v.DatabaseConfiguration }).(pulumi.StringOutput)
+func (o ExternalPluggableDatabaseOutput) DatabaseConfiguration() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExternalPluggableDatabase) pulumi.StringPtrOutput { return v.DatabaseConfiguration }).(pulumi.StringPtrOutput)
 }
 
 // The Oracle Database edition.
-func (o ExternalPluggableDatabaseOutput) DatabaseEdition() pulumi.StringOutput {
-	return o.ApplyT(func(v *ExternalPluggableDatabase) pulumi.StringOutput { return v.DatabaseEdition }).(pulumi.StringOutput)
+func (o ExternalPluggableDatabaseOutput) DatabaseEdition() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExternalPluggableDatabase) pulumi.StringPtrOutput { return v.DatabaseEdition }).(pulumi.StringPtrOutput)
 }
 
 // The configuration of the Database Management service.
@@ -424,23 +399,23 @@ func (o ExternalPluggableDatabaseOutput) DatabaseManagementConfigs() ExternalPlu
 }
 
 // The Oracle Database version.
-func (o ExternalPluggableDatabaseOutput) DatabaseVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v *ExternalPluggableDatabase) pulumi.StringOutput { return v.DatabaseVersion }).(pulumi.StringOutput)
+func (o ExternalPluggableDatabaseOutput) DatabaseVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExternalPluggableDatabase) pulumi.StringPtrOutput { return v.DatabaseVersion }).(pulumi.StringPtrOutput)
 }
 
 // The Oracle Database ID, which identifies an Oracle Database located outside of Oracle Cloud.
-func (o ExternalPluggableDatabaseOutput) DbId() pulumi.StringOutput {
-	return o.ApplyT(func(v *ExternalPluggableDatabase) pulumi.StringOutput { return v.DbId }).(pulumi.StringOutput)
+func (o ExternalPluggableDatabaseOutput) DbId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExternalPluggableDatabase) pulumi.StringPtrOutput { return v.DbId }).(pulumi.StringPtrOutput)
 }
 
 // The database packs licensed for the external Oracle Database.
-func (o ExternalPluggableDatabaseOutput) DbPacks() pulumi.StringOutput {
-	return o.ApplyT(func(v *ExternalPluggableDatabase) pulumi.StringOutput { return v.DbPacks }).(pulumi.StringOutput)
+func (o ExternalPluggableDatabaseOutput) DbPacks() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExternalPluggableDatabase) pulumi.StringPtrOutput { return v.DbPacks }).(pulumi.StringPtrOutput)
 }
 
 // The `DB_UNIQUE_NAME` of the external database.
-func (o ExternalPluggableDatabaseOutput) DbUniqueName() pulumi.StringOutput {
-	return o.ApplyT(func(v *ExternalPluggableDatabase) pulumi.StringOutput { return v.DbUniqueName }).(pulumi.StringOutput)
+func (o ExternalPluggableDatabaseOutput) DbUniqueName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExternalPluggableDatabase) pulumi.StringPtrOutput { return v.DbUniqueName }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -464,13 +439,13 @@ func (o ExternalPluggableDatabaseOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // Additional information about the current lifecycle state.
-func (o ExternalPluggableDatabaseOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v *ExternalPluggableDatabase) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o ExternalPluggableDatabaseOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExternalPluggableDatabase) pulumi.StringPtrOutput { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // The national character of the external database.
-func (o ExternalPluggableDatabaseOutput) NcharacterSet() pulumi.StringOutput {
-	return o.ApplyT(func(v *ExternalPluggableDatabase) pulumi.StringOutput { return v.NcharacterSet }).(pulumi.StringOutput)
+func (o ExternalPluggableDatabaseOutput) NcharacterSet() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExternalPluggableDatabase) pulumi.StringPtrOutput { return v.NcharacterSet }).(pulumi.StringPtrOutput)
 }
 
 // The configuration of Operations Insights for the external database
@@ -484,8 +459,8 @@ func (o ExternalPluggableDatabaseOutput) OperationsInsightsConfigs() ExternalPlu
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-func (o ExternalPluggableDatabaseOutput) SourceId() pulumi.StringOutput {
-	return o.ApplyT(func(v *ExternalPluggableDatabase) pulumi.StringOutput { return v.SourceId }).(pulumi.StringOutput)
+func (o ExternalPluggableDatabaseOutput) SourceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExternalPluggableDatabase) pulumi.StringPtrOutput { return v.SourceId }).(pulumi.StringPtrOutput)
 }
 
 // The configuration of Stack Monitoring for the external database.
@@ -496,18 +471,18 @@ func (o ExternalPluggableDatabaseOutput) StackMonitoringConfigs() ExternalPlugga
 }
 
 // The current state of the Oracle Cloud Infrastructure external database resource.
-func (o ExternalPluggableDatabaseOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *ExternalPluggableDatabase) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o ExternalPluggableDatabaseOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExternalPluggableDatabase) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the database was created.
-func (o ExternalPluggableDatabaseOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *ExternalPluggableDatabase) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o ExternalPluggableDatabaseOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExternalPluggableDatabase) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time zone of the external database. It is a time zone offset (a character type in the format '[+|-]TZH:TZM') or a time zone region name, depending on how the time zone value was specified when the database was created / last altered.
-func (o ExternalPluggableDatabaseOutput) TimeZone() pulumi.StringOutput {
-	return o.ApplyT(func(v *ExternalPluggableDatabase) pulumi.StringOutput { return v.TimeZone }).(pulumi.StringOutput)
+func (o ExternalPluggableDatabaseOutput) TimeZone() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExternalPluggableDatabase) pulumi.StringPtrOutput { return v.TimeZone }).(pulumi.StringPtrOutput)
 }
 
 type ExternalPluggableDatabaseArrayOutput struct{ *pulumi.OutputState }
@@ -522,12 +497,6 @@ func (o ExternalPluggableDatabaseArrayOutput) ToExternalPluggableDatabaseArrayOu
 
 func (o ExternalPluggableDatabaseArrayOutput) ToExternalPluggableDatabaseArrayOutputWithContext(ctx context.Context) ExternalPluggableDatabaseArrayOutput {
 	return o
-}
-
-func (o ExternalPluggableDatabaseArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*ExternalPluggableDatabase] {
-	return pulumix.Output[[]*ExternalPluggableDatabase]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ExternalPluggableDatabaseArrayOutput) Index(i pulumi.IntInput) ExternalPluggableDatabaseOutput {
@@ -548,12 +517,6 @@ func (o ExternalPluggableDatabaseMapOutput) ToExternalPluggableDatabaseMapOutput
 
 func (o ExternalPluggableDatabaseMapOutput) ToExternalPluggableDatabaseMapOutputWithContext(ctx context.Context) ExternalPluggableDatabaseMapOutput {
 	return o
-}
-
-func (o ExternalPluggableDatabaseMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*ExternalPluggableDatabase] {
-	return pulumix.Output[map[string]*ExternalPluggableDatabase]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ExternalPluggableDatabaseMapOutput) MapIndex(k pulumi.StringInput) ExternalPluggableDatabaseOutput {

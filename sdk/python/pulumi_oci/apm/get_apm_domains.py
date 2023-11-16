@@ -45,26 +45,17 @@ class GetApmDomainsResult:
 
     @property
     @pulumi.getter(name="apmDomains")
-    def apm_domains(self) -> Sequence['outputs.GetApmDomainsApmDomainResult']:
-        """
-        The list of apm_domains.
-        """
+    def apm_domains(self) -> Optional[Sequence['outputs.GetApmDomainsApmDomainResult']]:
         return pulumi.get(self, "apm_domains")
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The OCID of the compartment corresponding to the APM domain.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        Display name of the APM domain, which can be updated.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -74,7 +65,7 @@ class GetApmDomainsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -83,9 +74,6 @@ class GetApmDomainsResult:
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current lifecycle state of the APM domain.
-        """
         return pulumi.get(self, "state")
 
 
@@ -109,25 +97,7 @@ def get_apm_domains(compartment_id: Optional[str] = None,
                     state: Optional[str] = None,
                     opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetApmDomainsResult:
     """
-    This data source provides the list of Apm Domains in Oracle Cloud Infrastructure Apm service.
-
-    Lists all APM domains for the specified tenant compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_apm_domains = oci.Apm.get_apm_domains(compartment_id=var["compartment_id"],
-        display_name=var["apm_domain_display_name"],
-        state=var["apm_domain_state"])
-    ```
-
-
-    :param str compartment_id: The ID of the compartment in which to list resources.
-    :param str display_name: A filter to return only resources that match the entire display name given.
-    :param str state: A filter to return only resources that match the given life-cycle state.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -153,24 +123,6 @@ def get_apm_domains_output(compartment_id: Optional[pulumi.Input[str]] = None,
                            state: Optional[pulumi.Input[Optional[str]]] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetApmDomainsResult]:
     """
-    This data source provides the list of Apm Domains in Oracle Cloud Infrastructure Apm service.
-
-    Lists all APM domains for the specified tenant compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_apm_domains = oci.Apm.get_apm_domains(compartment_id=var["compartment_id"],
-        display_name=var["apm_domain_display_name"],
-        state=var["apm_domain_state"])
-    ```
-
-
-    :param str compartment_id: The ID of the compartment in which to list resources.
-    :param str display_name: A filter to return only resources that match the entire display name given.
-    :param str state: A filter to return only resources that match the given life-cycle state.
+    Use this data source to access information about an existing resource.
     """
     ...

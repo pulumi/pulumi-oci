@@ -21,7 +21,7 @@ public final class GetPodShapesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The name of the identifying shape.
      * 
@@ -31,7 +31,7 @@ public final class GetPodShapesResult {
      * @return The list of pod_shapes.
      * 
      */
-    private List<GetPodShapesPodShape> podShapes;
+    private @Nullable List<GetPodShapesPodShape> podShapes;
 
     private GetPodShapesResult() {}
     public Optional<String> availabilityDomain() {
@@ -47,8 +47,8 @@ public final class GetPodShapesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The name of the identifying shape.
@@ -62,7 +62,7 @@ public final class GetPodShapesResult {
      * 
      */
     public List<GetPodShapesPodShape> podShapes() {
-        return this.podShapes;
+        return this.podShapes == null ? List.of() : this.podShapes;
     }
 
     public static Builder builder() {
@@ -77,9 +77,9 @@ public final class GetPodShapesResult {
         private @Nullable String availabilityDomain;
         private String compartmentId;
         private @Nullable List<GetPodShapesFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String name;
-        private List<GetPodShapesPodShape> podShapes;
+        private @Nullable List<GetPodShapesPodShape> podShapes;
         public Builder() {}
         public Builder(GetPodShapesResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -110,8 +110,8 @@ public final class GetPodShapesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -120,8 +120,8 @@ public final class GetPodShapesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder podShapes(List<GetPodShapesPodShape> podShapes) {
-            this.podShapes = Objects.requireNonNull(podShapes);
+        public Builder podShapes(@Nullable List<GetPodShapesPodShape> podShapes) {
+            this.podShapes = podShapes;
             return this;
         }
         public Builder podShapes(GetPodShapesPodShape... podShapes) {

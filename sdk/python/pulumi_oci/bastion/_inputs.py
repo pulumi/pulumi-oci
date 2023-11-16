@@ -20,17 +20,11 @@ __all__ = [
 class SessionKeyDetailsArgs:
     def __init__(__self__, *,
                  public_key_content: pulumi.Input[str]):
-        """
-        :param pulumi.Input[str] public_key_content: The public key in OpenSSH format of the SSH key pair for the session. When you connect to the session, you must provide the private key of the same SSH key pair.
-        """
         pulumi.set(__self__, "public_key_content", public_key_content)
 
     @property
     @pulumi.getter(name="publicKeyContent")
     def public_key_content(self) -> pulumi.Input[str]:
-        """
-        The public key in OpenSSH format of the SSH key pair for the session. When you connect to the session, you must provide the private key of the same SSH key pair.
-        """
         return pulumi.get(self, "public_key_content")
 
     @public_key_content.setter
@@ -48,19 +42,6 @@ class SessionTargetResourceDetailsArgs:
                  target_resource_operating_system_user_name: Optional[pulumi.Input[str]] = None,
                  target_resource_port: Optional[pulumi.Input[int]] = None,
                  target_resource_private_ip_address: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] session_type: The session type.
-        :param pulumi.Input[str] target_resource_display_name: The display name of the target Compute instance that the session connects to.
-        :param pulumi.Input[str] target_resource_fqdn: The Fully Qualified Domain Name of the target resource that the session connects to.
-        :param pulumi.Input[str] target_resource_id: The unique identifier (OCID) of the target resource (a Compute instance, for example) that the session connects to.
-        :param pulumi.Input[str] target_resource_operating_system_user_name: The name of the user on the target resource operating system that the session uses for the connection.
-        :param pulumi.Input[int] target_resource_port: The port number to connect to on the target resource.
-        :param pulumi.Input[str] target_resource_private_ip_address: The private IP address of the target resource that the session connects to.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         pulumi.set(__self__, "session_type", session_type)
         if target_resource_display_name is not None:
             pulumi.set(__self__, "target_resource_display_name", target_resource_display_name)
@@ -78,9 +59,6 @@ class SessionTargetResourceDetailsArgs:
     @property
     @pulumi.getter(name="sessionType")
     def session_type(self) -> pulumi.Input[str]:
-        """
-        The session type.
-        """
         return pulumi.get(self, "session_type")
 
     @session_type.setter
@@ -90,9 +68,6 @@ class SessionTargetResourceDetailsArgs:
     @property
     @pulumi.getter(name="targetResourceDisplayName")
     def target_resource_display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The display name of the target Compute instance that the session connects to.
-        """
         return pulumi.get(self, "target_resource_display_name")
 
     @target_resource_display_name.setter
@@ -102,9 +77,6 @@ class SessionTargetResourceDetailsArgs:
     @property
     @pulumi.getter(name="targetResourceFqdn")
     def target_resource_fqdn(self) -> Optional[pulumi.Input[str]]:
-        """
-        The Fully Qualified Domain Name of the target resource that the session connects to.
-        """
         return pulumi.get(self, "target_resource_fqdn")
 
     @target_resource_fqdn.setter
@@ -114,9 +86,6 @@ class SessionTargetResourceDetailsArgs:
     @property
     @pulumi.getter(name="targetResourceId")
     def target_resource_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The unique identifier (OCID) of the target resource (a Compute instance, for example) that the session connects to.
-        """
         return pulumi.get(self, "target_resource_id")
 
     @target_resource_id.setter
@@ -126,9 +95,6 @@ class SessionTargetResourceDetailsArgs:
     @property
     @pulumi.getter(name="targetResourceOperatingSystemUserName")
     def target_resource_operating_system_user_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The name of the user on the target resource operating system that the session uses for the connection.
-        """
         return pulumi.get(self, "target_resource_operating_system_user_name")
 
     @target_resource_operating_system_user_name.setter
@@ -138,9 +104,6 @@ class SessionTargetResourceDetailsArgs:
     @property
     @pulumi.getter(name="targetResourcePort")
     def target_resource_port(self) -> Optional[pulumi.Input[int]]:
-        """
-        The port number to connect to on the target resource.
-        """
         return pulumi.get(self, "target_resource_port")
 
     @target_resource_port.setter
@@ -150,13 +113,6 @@ class SessionTargetResourceDetailsArgs:
     @property
     @pulumi.getter(name="targetResourcePrivateIpAddress")
     def target_resource_private_ip_address(self) -> Optional[pulumi.Input[str]]:
-        """
-        The private IP address of the target resource that the session connects to.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "target_resource_private_ip_address")
 
     @target_resource_private_ip_address.setter
@@ -170,9 +126,6 @@ class GetBastionsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: A filter to return only resources that match the entire name given.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -181,9 +134,6 @@ class GetBastionsFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        A filter to return only resources that match the entire name given.
-        """
         return pulumi.get(self, "name")
 
     @name.setter

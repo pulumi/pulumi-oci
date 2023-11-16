@@ -130,7 +130,7 @@ namespace Pulumi.Oci.DataScience
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
 
         [OutputConstructor]
         private GetFastLaunchJobConfigsResult(
@@ -140,7 +140,7 @@ namespace Pulumi.Oci.DataScience
 
             ImmutableArray<Outputs.GetFastLaunchJobConfigsFilterResult> filters,
 
-            string id)
+            string? id)
         {
             CompartmentId = compartmentId;
             FastLaunchJobConfigs = fastLaunchJobConfigs;

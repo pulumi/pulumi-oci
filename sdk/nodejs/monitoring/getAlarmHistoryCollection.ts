@@ -78,15 +78,15 @@ export interface GetAlarmHistoryCollectionResult {
     /**
      * The set of history entries retrieved for the alarm.
      */
-    readonly entries: outputs.Monitoring.GetAlarmHistoryCollectionEntry[];
+    readonly entries?: outputs.Monitoring.GetAlarmHistoryCollectionEntry[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Whether the alarm is enabled.  Example: `true`
      */
-    readonly isEnabled: boolean;
+    readonly isEnabled?: boolean;
     readonly timestampGreaterThanOrEqualTo?: string;
     readonly timestampLessThan?: string;
 }

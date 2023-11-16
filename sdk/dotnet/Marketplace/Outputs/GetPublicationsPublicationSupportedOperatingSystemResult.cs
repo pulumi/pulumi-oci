@@ -16,10 +16,10 @@ namespace Pulumi.Oci.Marketplace.Outputs
         /// <summary>
         /// The name of the publication.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
 
         [OutputConstructor]
-        private GetPublicationsPublicationSupportedOperatingSystemResult(string name)
+        private GetPublicationsPublicationSupportedOperatingSystemResult(string? name)
         {
             Name = name;
         }

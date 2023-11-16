@@ -16,32 +16,32 @@ namespace Pulumi.Oci.BigDataService.Outputs
         /// <summary>
         /// The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
         /// </summary>
-        public readonly string BlockVolumeSizeInGbs;
+        public readonly string? BlockVolumeSizeInGbs;
         /// <summary>
         /// The number of nodes that form the cluster.
         /// </summary>
-        public readonly int NumberOfNodes;
+        public readonly int? NumberOfNodes;
         /// <summary>
         /// Shape of the node.
         /// </summary>
-        public readonly string Shape;
+        public readonly string? Shape;
         public readonly ImmutableArray<Outputs.GetBdsInstanceMasterNodeShapeConfigResult> ShapeConfigs;
         /// <summary>
         /// The OCID of the subnet in which the node is to be created.
         /// </summary>
-        public readonly string SubnetId;
+        public readonly string? SubnetId;
 
         [OutputConstructor]
         private GetBdsInstanceMasterNodeResult(
-            string blockVolumeSizeInGbs,
+            string? blockVolumeSizeInGbs,
 
-            int numberOfNodes,
+            int? numberOfNodes,
 
-            string shape,
+            string? shape,
 
             ImmutableArray<Outputs.GetBdsInstanceMasterNodeShapeConfigResult> shapeConfigs,
 
-            string subnetId)
+            string? subnetId)
         {
             BlockVolumeSizeInGbs = blockVolumeSizeInGbs;
             NumberOfNodes = numberOfNodes;

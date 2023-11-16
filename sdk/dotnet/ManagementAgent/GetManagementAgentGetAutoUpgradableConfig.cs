@@ -113,19 +113,19 @@ namespace Pulumi.Oci.ManagementAgent
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// true if the agents can be upgraded automatically; false if they must be upgraded manually.
         /// </summary>
-        public readonly bool IsAgentAutoUpgradable;
+        public readonly bool? IsAgentAutoUpgradable;
 
         [OutputConstructor]
         private GetManagementAgentGetAutoUpgradableConfigResult(
             string compartmentId,
 
-            string id,
+            string? id,
 
-            bool isAgentAutoUpgradable)
+            bool? isAgentAutoUpgradable)
         {
             CompartmentId = compartmentId;
             Id = id;

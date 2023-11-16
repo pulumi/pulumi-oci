@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.GoldenGate.outputs.GetDeploymentVersionsDeploymentVersionCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDeploymentVersionsDeploymentVersionCollection {
@@ -14,7 +15,7 @@ public final class GetDeploymentVersionsDeploymentVersionCollection {
      * @return Array of DeploymentVersionSummary.
      * 
      */
-    private List<GetDeploymentVersionsDeploymentVersionCollectionItem> items;
+    private @Nullable List<GetDeploymentVersionsDeploymentVersionCollectionItem> items;
 
     private GetDeploymentVersionsDeploymentVersionCollection() {}
     /**
@@ -22,7 +23,7 @@ public final class GetDeploymentVersionsDeploymentVersionCollection {
      * 
      */
     public List<GetDeploymentVersionsDeploymentVersionCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -34,7 +35,7 @@ public final class GetDeploymentVersionsDeploymentVersionCollection {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetDeploymentVersionsDeploymentVersionCollectionItem> items;
+        private @Nullable List<GetDeploymentVersionsDeploymentVersionCollectionItem> items;
         public Builder() {}
         public Builder(GetDeploymentVersionsDeploymentVersionCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -42,8 +43,8 @@ public final class GetDeploymentVersionsDeploymentVersionCollection {
         }
 
         @CustomType.Setter
-        public Builder items(List<GetDeploymentVersionsDeploymentVersionCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetDeploymentVersionsDeploymentVersionCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetDeploymentVersionsDeploymentVersionCollectionItem... items) {

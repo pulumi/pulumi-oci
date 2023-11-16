@@ -87,31 +87,31 @@ export class WorkspaceApplication extends pulumi.CustomResource {
     /**
      * The source application version of the application.
      */
-    public /*out*/ readonly applicationVersion!: pulumi.Output<number>;
+    public /*out*/ readonly applicationVersion!: pulumi.Output<number | undefined>;
     /**
      * OCID of the compartment that this resource belongs to. Defaults to compartment of the Workspace.
      */
-    public /*out*/ readonly compartmentId!: pulumi.Output<string>;
+    public /*out*/ readonly compartmentId!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * A list of dependent objects in this patch.
      */
-    public /*out*/ readonly dependentObjectMetadatas!: pulumi.Output<outputs.DataIntegration.WorkspaceApplicationDependentObjectMetadata[]>;
+    public /*out*/ readonly dependentObjectMetadatas!: pulumi.Output<outputs.DataIntegration.WorkspaceApplicationDependentObjectMetadata[] | undefined>;
     /**
      * (Updatable) Detailed description for the object.
      */
-    public readonly description!: pulumi.Output<string>;
+    public readonly description!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    public readonly displayName!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
      */
@@ -119,15 +119,15 @@ export class WorkspaceApplication extends pulumi.CustomResource {
     /**
      * The identifying key for the object.
      */
-    public readonly key!: pulumi.Output<string>;
+    public readonly key!: pulumi.Output<string | undefined>;
     /**
      * A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
      */
-    public /*out*/ readonly keyMap!: pulumi.Output<{[key: string]: any}>;
+    public /*out*/ readonly keyMap!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * A summary type containing information about the object including its key, name and when/who created/updated it.
      */
-    public /*out*/ readonly metadatas!: pulumi.Output<outputs.DataIntegration.WorkspaceApplicationMetadata[]>;
+    public /*out*/ readonly metadatas!: pulumi.Output<outputs.DataIntegration.WorkspaceApplicationMetadata[] | undefined>;
     /**
      * (Updatable) The type of the application.
      */
@@ -135,7 +135,7 @@ export class WorkspaceApplication extends pulumi.CustomResource {
     /**
      * (Updatable) The object's model version.
      */
-    public readonly modelVersion!: pulumi.Output<string>;
+    public readonly modelVersion!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      */
@@ -143,43 +143,43 @@ export class WorkspaceApplication extends pulumi.CustomResource {
     /**
      * (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
      */
-    public readonly objectStatus!: pulumi.Output<number>;
+    public readonly objectStatus!: pulumi.Output<number | undefined>;
     /**
      * The object version.
      */
-    public /*out*/ readonly objectVersion!: pulumi.Output<number>;
+    public /*out*/ readonly objectVersion!: pulumi.Output<number | undefined>;
     /**
      * A reference to the object's parent.
      */
-    public /*out*/ readonly parentReves!: pulumi.Output<outputs.DataIntegration.WorkspaceApplicationParentRef[]>;
+    public /*out*/ readonly parentReves!: pulumi.Output<outputs.DataIntegration.WorkspaceApplicationParentRef[] | undefined>;
     /**
      * A list of objects that are published or unpublished in this patch.
      */
-    public /*out*/ readonly publishedObjectMetadatas!: pulumi.Output<outputs.DataIntegration.WorkspaceApplicationPublishedObjectMetadata[]>;
+    public /*out*/ readonly publishedObjectMetadatas!: pulumi.Output<outputs.DataIntegration.WorkspaceApplicationPublishedObjectMetadata[] | undefined>;
     /**
      * Information about the object and its parent.
      */
-    public readonly registryMetadata!: pulumi.Output<outputs.DataIntegration.WorkspaceApplicationRegistryMetadata>;
+    public readonly registryMetadata!: pulumi.Output<outputs.DataIntegration.WorkspaceApplicationRegistryMetadata | undefined>;
     /**
      * The information about the application.
      */
-    public readonly sourceApplicationInfo!: pulumi.Output<outputs.DataIntegration.WorkspaceApplicationSourceApplicationInfo>;
+    public readonly sourceApplicationInfo!: pulumi.Output<outputs.DataIntegration.WorkspaceApplicationSourceApplicationInfo | undefined>;
     /**
      * (Updatable) The current state of the workspace.
      */
-    public readonly state!: pulumi.Output<string>;
+    public readonly state!: pulumi.Output<string | undefined>;
     /**
      * The date and time the application was created, in the timestamp format defined by RFC3339.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * The date and time the application was patched, in the timestamp format defined by RFC3339.
      */
-    public /*out*/ readonly timePatched!: pulumi.Output<string>;
+    public /*out*/ readonly timePatched!: pulumi.Output<string | undefined>;
     /**
      * The date and time the application was updated, in the timestamp format defined by RFC3339. example: 2019-08-25T21:10:29.41Z
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    public /*out*/ readonly timeUpdated!: pulumi.Output<string | undefined>;
     /**
      * The workspace ID.
      *

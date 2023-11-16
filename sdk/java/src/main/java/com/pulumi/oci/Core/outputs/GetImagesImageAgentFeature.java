@@ -6,6 +6,8 @@ package com.pulumi.oci.Core.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.Boolean;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetImagesImageAgentFeature {
@@ -13,27 +15,27 @@ public final class GetImagesImageAgentFeature {
      * @return This attribute is not used.
      * 
      */
-    private Boolean isManagementSupported;
+    private @Nullable Boolean isManagementSupported;
     /**
      * @return This attribute is not used.
      * 
      */
-    private Boolean isMonitoringSupported;
+    private @Nullable Boolean isMonitoringSupported;
 
     private GetImagesImageAgentFeature() {}
     /**
      * @return This attribute is not used.
      * 
      */
-    public Boolean isManagementSupported() {
-        return this.isManagementSupported;
+    public Optional<Boolean> isManagementSupported() {
+        return Optional.ofNullable(this.isManagementSupported);
     }
     /**
      * @return This attribute is not used.
      * 
      */
-    public Boolean isMonitoringSupported() {
-        return this.isMonitoringSupported;
+    public Optional<Boolean> isMonitoringSupported() {
+        return Optional.ofNullable(this.isMonitoringSupported);
     }
 
     public static Builder builder() {
@@ -45,8 +47,8 @@ public final class GetImagesImageAgentFeature {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Boolean isManagementSupported;
-        private Boolean isMonitoringSupported;
+        private @Nullable Boolean isManagementSupported;
+        private @Nullable Boolean isMonitoringSupported;
         public Builder() {}
         public Builder(GetImagesImageAgentFeature defaults) {
     	      Objects.requireNonNull(defaults);
@@ -55,13 +57,13 @@ public final class GetImagesImageAgentFeature {
         }
 
         @CustomType.Setter
-        public Builder isManagementSupported(Boolean isManagementSupported) {
-            this.isManagementSupported = Objects.requireNonNull(isManagementSupported);
+        public Builder isManagementSupported(@Nullable Boolean isManagementSupported) {
+            this.isManagementSupported = isManagementSupported;
             return this;
         }
         @CustomType.Setter
-        public Builder isMonitoringSupported(Boolean isMonitoringSupported) {
-            this.isMonitoringSupported = Objects.requireNonNull(isMonitoringSupported);
+        public Builder isMonitoringSupported(@Nullable Boolean isMonitoringSupported) {
+            this.isMonitoringSupported = isMonitoringSupported;
             return this;
         }
         public GetImagesImageAgentFeature build() {

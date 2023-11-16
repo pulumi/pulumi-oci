@@ -46,47 +46,47 @@ export interface GetApmDomainResult {
     /**
      * The OCID of the compartment corresponding to the APM domain.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * The endpoint where the APM agents upload their observations and metrics.
      */
-    readonly dataUploadEndpoint: string;
+    readonly dataUploadEndpoint?: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * Description of the APM domain.
      */
-    readonly description: string;
+    readonly description?: string;
     /**
      * Display name of the APM domain, which can be updated.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * Unique identifier that is immutable on creation.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Indicates if this is an Always Free resource.
      */
-    readonly isFreeTier: boolean;
+    readonly isFreeTier?: boolean;
     /**
      * The current lifecycle state of the APM domain.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * The time the APM domain was created, expressed in RFC 3339 timestamp format.
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The time the APM domain was updated, expressed in RFC 3339 timestamp format.
      */
-    readonly timeUpdated: string;
+    readonly timeUpdated?: string;
 }
 /**
  * This data source provides details about a specific Apm Domain resource in Oracle Cloud Infrastructure Apm service.

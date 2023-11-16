@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Managed Database Addm Tasks in Oracle Cloud Infrastructure Database Management service.
@@ -71,7 +70,7 @@ type GetManagedDatabaseAddmTasksResult struct {
 	AddmTasksCollections []GetManagedDatabaseAddmTasksAddmTasksCollection `pulumi:"addmTasksCollections"`
 	Filters              []GetManagedDatabaseAddmTasksFilter              `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
 	ManagedDatabaseId string `pulumi:"managedDatabaseId"`
 	TimeEnd           string `pulumi:"timeEnd"`
@@ -121,12 +120,6 @@ func (o GetManagedDatabaseAddmTasksResultOutput) ToGetManagedDatabaseAddmTasksRe
 	return o
 }
 
-func (o GetManagedDatabaseAddmTasksResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagedDatabaseAddmTasksResult] {
-	return pulumix.Output[GetManagedDatabaseAddmTasksResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The list of addm_tasks_collection.
 func (o GetManagedDatabaseAddmTasksResultOutput) AddmTasksCollections() GetManagedDatabaseAddmTasksAddmTasksCollectionArrayOutput {
 	return o.ApplyT(func(v GetManagedDatabaseAddmTasksResult) []GetManagedDatabaseAddmTasksAddmTasksCollection {
@@ -139,8 +132,8 @@ func (o GetManagedDatabaseAddmTasksResultOutput) Filters() GetManagedDatabaseAdd
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetManagedDatabaseAddmTasksResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedDatabaseAddmTasksResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetManagedDatabaseAddmTasksResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedDatabaseAddmTasksResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.

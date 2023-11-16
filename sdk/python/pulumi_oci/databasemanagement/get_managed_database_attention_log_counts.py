@@ -60,10 +60,7 @@ class GetManagedDatabaseAttentionLogCountsResult:
 
     @property
     @pulumi.getter(name="attentionLogCountsCollections")
-    def attention_log_counts_collections(self) -> Sequence['outputs.GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionResult']:
-        """
-        The list of attention_log_counts_collection.
-        """
+    def attention_log_counts_collections(self) -> Optional[Sequence['outputs.GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionResult']]:
         return pulumi.get(self, "attention_log_counts_collections")
 
     @property
@@ -78,7 +75,7 @@ class GetManagedDatabaseAttentionLogCountsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -97,9 +94,6 @@ class GetManagedDatabaseAttentionLogCountsResult:
     @property
     @pulumi.getter(name="managedDatabaseId")
     def managed_database_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
-        """
         return pulumi.get(self, "managed_database_id")
 
     @property
@@ -153,35 +147,7 @@ def get_managed_database_attention_log_counts(filters: Optional[Sequence[pulumi.
                                               urgency_filter: Optional[str] = None,
                                               opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetManagedDatabaseAttentionLogCountsResult:
     """
-    This data source provides the list of Managed Database Attention Log Counts in Oracle Cloud Infrastructure Database Management service.
-
-    Get the counts of attention logs for the specified Managed Database.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_managed_database_attention_log_counts = oci.DatabaseManagement.get_managed_database_attention_log_counts(managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"],
-        group_by=var["managed_database_attention_log_count_group_by"],
-        is_regular_expression=var["managed_database_attention_log_count_is_regular_expression"],
-        log_search_text=var["managed_database_attention_log_count_log_search_text"],
-        time_greater_than_or_equal_to=var["managed_database_attention_log_count_time_greater_than_or_equal_to"],
-        time_less_than_or_equal_to=var["managed_database_attention_log_count_time_less_than_or_equal_to"],
-        type_filter=var["managed_database_attention_log_count_type_filter"],
-        urgency_filter=var["managed_database_attention_log_count_urgency_filter"])
-    ```
-
-
-    :param str group_by: The optional parameter used to group different attention logs.
-    :param bool is_regular_expression: The flag to indicate whether the search text is regular expression or not.
-    :param str log_search_text: The optional query parameter to filter the attention or alert logs by search text.
-    :param str managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
-    :param str time_greater_than_or_equal_to: The optional greater than or equal to timestamp to filter the logs.
-    :param str time_less_than_or_equal_to: The optional less than or equal to timestamp to filter the logs.
-    :param str type_filter: The optional parameter to filter the attention or alert logs by type.
-    :param str urgency_filter: The optional parameter to filter the attention logs by urgency.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['filters'] = filters
@@ -222,34 +188,6 @@ def get_managed_database_attention_log_counts_output(filters: Optional[pulumi.In
                                                      urgency_filter: Optional[pulumi.Input[Optional[str]]] = None,
                                                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetManagedDatabaseAttentionLogCountsResult]:
     """
-    This data source provides the list of Managed Database Attention Log Counts in Oracle Cloud Infrastructure Database Management service.
-
-    Get the counts of attention logs for the specified Managed Database.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_managed_database_attention_log_counts = oci.DatabaseManagement.get_managed_database_attention_log_counts(managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"],
-        group_by=var["managed_database_attention_log_count_group_by"],
-        is_regular_expression=var["managed_database_attention_log_count_is_regular_expression"],
-        log_search_text=var["managed_database_attention_log_count_log_search_text"],
-        time_greater_than_or_equal_to=var["managed_database_attention_log_count_time_greater_than_or_equal_to"],
-        time_less_than_or_equal_to=var["managed_database_attention_log_count_time_less_than_or_equal_to"],
-        type_filter=var["managed_database_attention_log_count_type_filter"],
-        urgency_filter=var["managed_database_attention_log_count_urgency_filter"])
-    ```
-
-
-    :param str group_by: The optional parameter used to group different attention logs.
-    :param bool is_regular_expression: The flag to indicate whether the search text is regular expression or not.
-    :param str log_search_text: The optional query parameter to filter the attention or alert logs by search text.
-    :param str managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
-    :param str time_greater_than_or_equal_to: The optional greater than or equal to timestamp to filter the logs.
-    :param str time_less_than_or_equal_to: The optional less than or equal to timestamp to filter the logs.
-    :param str type_filter: The optional parameter to filter the attention or alert logs by type.
-    :param str urgency_filter: The optional parameter to filter the attention logs by urgency.
+    Use this data source to access information about an existing resource.
     """
     ...

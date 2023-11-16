@@ -72,7 +72,7 @@ export interface GetManagementAgentCountResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The install type, either AGENT or GATEWAY
      */
@@ -80,7 +80,7 @@ export interface GetManagementAgentCountResult {
     /**
      * List in which each item describes an aggregation of Managment Agents
      */
-    readonly items: outputs.ManagementAgent.GetManagementAgentCountItem[];
+    readonly items?: outputs.ManagementAgent.GetManagementAgentCountItem[];
 }
 /**
  * This data source provides details about a specific Management Agent Count resource in Oracle Cloud Infrastructure Management Agent service.

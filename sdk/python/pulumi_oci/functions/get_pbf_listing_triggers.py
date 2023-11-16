@@ -44,7 +44,7 @@ class GetPbfListingTriggersResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -53,17 +53,11 @@ class GetPbfListingTriggersResult:
     @property
     @pulumi.getter
     def name(self) -> Optional[str]:
-        """
-        A brief descriptive name for the PBF trigger.
-        """
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="triggersCollections")
-    def triggers_collections(self) -> Sequence['outputs.GetPbfListingTriggersTriggersCollectionResult']:
-        """
-        The list of triggers_collection.
-        """
+    def triggers_collections(self) -> Optional[Sequence['outputs.GetPbfListingTriggersTriggersCollectionResult']]:
         return pulumi.get(self, "triggers_collections")
 
 
@@ -83,21 +77,7 @@ def get_pbf_listing_triggers(filters: Optional[Sequence[pulumi.InputType['GetPbf
                              name: Optional[str] = None,
                              opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetPbfListingTriggersResult:
     """
-    This data source provides the list of Pbf Listing Triggers in Oracle Cloud Infrastructure Functions service.
-
-    Returns a list of Triggers.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_pbf_listing_triggers = oci.Functions.get_pbf_listing_triggers(name=var["pbf_listing_trigger_name"])
-    ```
-
-
-    :param str name: A filter to return only resources that match the service trigger source of a PBF.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['filters'] = filters
@@ -117,20 +97,6 @@ def get_pbf_listing_triggers_output(filters: Optional[pulumi.Input[Optional[Sequ
                                     name: Optional[pulumi.Input[Optional[str]]] = None,
                                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetPbfListingTriggersResult]:
     """
-    This data source provides the list of Pbf Listing Triggers in Oracle Cloud Infrastructure Functions service.
-
-    Returns a list of Triggers.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_pbf_listing_triggers = oci.Functions.get_pbf_listing_triggers(name=var["pbf_listing_trigger_name"])
-    ```
-
-
-    :param str name: A filter to return only resources that match the service trigger source of a PBF.
+    Use this data source to access information about an existing resource.
     """
     ...

@@ -16,29 +16,29 @@ namespace Pulumi.Oci.Core.Outputs
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `ByoipRange` resource to which the CIDR block belongs.
         /// </summary>
-        public readonly string ByoipRangeId;
+        public readonly string? ByoipRangeId;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// The IPv6 prefix being imported to the Oracle cloud. This prefix must be /48 or larger, and can be subdivided into sub-ranges used across multiple VCNs. A BYOIPv6 prefix can be also assigned across multiple VCNs, and each VCN must be /64 or larger. You may specify a ULA or private IPv6 prefix of /64 or larger to use in the VCN. IPv6-enabled subnets will remain a fixed /64 in size.
         /// </summary>
-        public readonly string Ipv6cidrBlock;
+        public readonly string? Ipv6cidrBlock;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `Vcn` resource to which the ByoipRange belongs.
         /// </summary>
-        public readonly string VcnId;
+        public readonly string? VcnId;
 
         [OutputConstructor]
         private GetByoipRangesByoipRangeCollectionItemByoipRangeVcnIpv6allocationResult(
-            string byoipRangeId,
+            string? byoipRangeId,
 
-            string compartmentId,
+            string? compartmentId,
 
-            string ipv6cidrBlock,
+            string? ipv6cidrBlock,
 
-            string vcnId)
+            string? vcnId)
         {
             ByoipRangeId = byoipRangeId;
             CompartmentId = compartmentId;

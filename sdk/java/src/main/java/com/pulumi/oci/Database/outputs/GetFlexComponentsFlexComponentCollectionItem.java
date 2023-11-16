@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetFlexComponentsFlexComponentCollectionItem {
@@ -14,51 +16,51 @@ public final class GetFlexComponentsFlexComponentCollectionItem {
      * @return The maximum number of CPU cores that can ben enabled on the DB Server for this Flex Component.
      * 
      */
-    private Integer availableCoreCount;
+    private @Nullable Integer availableCoreCount;
     /**
      * @return The maximum  storage that can be enabled on the Storage Server for this Flex Component.
      * 
      */
-    private Integer availableDbStorageInGbs;
+    private @Nullable Integer availableDbStorageInGbs;
     /**
      * @return The minimum number of CPU cores that can be enabled on the DB Server for this Flex Component.
      * 
      */
-    private Integer minimumCoreCount;
+    private @Nullable Integer minimumCoreCount;
     /**
      * @return A filter to return only resources that match the entire name given. The match is not case sensitive.
      * 
      */
-    private String name;
+    private @Nullable String name;
 
     private GetFlexComponentsFlexComponentCollectionItem() {}
     /**
      * @return The maximum number of CPU cores that can ben enabled on the DB Server for this Flex Component.
      * 
      */
-    public Integer availableCoreCount() {
-        return this.availableCoreCount;
+    public Optional<Integer> availableCoreCount() {
+        return Optional.ofNullable(this.availableCoreCount);
     }
     /**
      * @return The maximum  storage that can be enabled on the Storage Server for this Flex Component.
      * 
      */
-    public Integer availableDbStorageInGbs() {
-        return this.availableDbStorageInGbs;
+    public Optional<Integer> availableDbStorageInGbs() {
+        return Optional.ofNullable(this.availableDbStorageInGbs);
     }
     /**
      * @return The minimum number of CPU cores that can be enabled on the DB Server for this Flex Component.
      * 
      */
-    public Integer minimumCoreCount() {
-        return this.minimumCoreCount;
+    public Optional<Integer> minimumCoreCount() {
+        return Optional.ofNullable(this.minimumCoreCount);
     }
     /**
      * @return A filter to return only resources that match the entire name given. The match is not case sensitive.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
 
     public static Builder builder() {
@@ -70,10 +72,10 @@ public final class GetFlexComponentsFlexComponentCollectionItem {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Integer availableCoreCount;
-        private Integer availableDbStorageInGbs;
-        private Integer minimumCoreCount;
-        private String name;
+        private @Nullable Integer availableCoreCount;
+        private @Nullable Integer availableDbStorageInGbs;
+        private @Nullable Integer minimumCoreCount;
+        private @Nullable String name;
         public Builder() {}
         public Builder(GetFlexComponentsFlexComponentCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -84,23 +86,23 @@ public final class GetFlexComponentsFlexComponentCollectionItem {
         }
 
         @CustomType.Setter
-        public Builder availableCoreCount(Integer availableCoreCount) {
-            this.availableCoreCount = Objects.requireNonNull(availableCoreCount);
+        public Builder availableCoreCount(@Nullable Integer availableCoreCount) {
+            this.availableCoreCount = availableCoreCount;
             return this;
         }
         @CustomType.Setter
-        public Builder availableDbStorageInGbs(Integer availableDbStorageInGbs) {
-            this.availableDbStorageInGbs = Objects.requireNonNull(availableDbStorageInGbs);
+        public Builder availableDbStorageInGbs(@Nullable Integer availableDbStorageInGbs) {
+            this.availableDbStorageInGbs = availableDbStorageInGbs;
             return this;
         }
         @CustomType.Setter
-        public Builder minimumCoreCount(Integer minimumCoreCount) {
-            this.minimumCoreCount = Objects.requireNonNull(minimumCoreCount);
+        public Builder minimumCoreCount(@Nullable Integer minimumCoreCount) {
+            this.minimumCoreCount = minimumCoreCount;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         public GetFlexComponentsFlexComponentCollectionItem build() {

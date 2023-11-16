@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific External Exadata Storage Connector resource in Oracle Cloud Infrastructure Database Management service.
@@ -62,34 +61,34 @@ type LookupExternalExadataStorageConnectorResult struct {
 	// The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
 	AdditionalDetails map[string]interface{} `pulumi:"additionalDetails"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the agent for the Exadata storage server.
-	AgentId string `pulumi:"agentId"`
+	AgentId *string `pulumi:"agentId"`
 	// The unique string of the connection. For example, "https://<storage-server-name>/MS/RESTService/".
-	ConnectionUri   string                                             `pulumi:"connectionUri"`
-	ConnectorName   string                                             `pulumi:"connectorName"`
+	ConnectionUri   *string                                            `pulumi:"connectionUri"`
+	ConnectorName   *string                                            `pulumi:"connectorName"`
 	CredentialInfos []GetExternalExadataStorageConnectorCredentialInfo `pulumi:"credentialInfos"`
 	// The name of the Exadata resource. English letters, numbers, "-", "_" and "." only.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
-	ExadataInfrastructureId           string `pulumi:"exadataInfrastructureId"`
-	ExternalExadataStorageConnectorId string `pulumi:"externalExadataStorageConnectorId"`
+	ExadataInfrastructureId           *string `pulumi:"exadataInfrastructureId"`
+	ExternalExadataStorageConnectorId string  `pulumi:"externalExadataStorageConnectorId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The internal ID of the Exadata resource.
-	InternalId string `pulumi:"internalId"`
+	InternalId *string `pulumi:"internalId"`
 	// The details of the lifecycle state of the Exadata resource.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// The current lifecycle state of the database resource.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The status of the Exadata resource.
-	Status string `pulumi:"status"`
+	Status *string `pulumi:"status"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata storage server.
-	StorageServerId string `pulumi:"storageServerId"`
+	StorageServerId *string `pulumi:"storageServerId"`
 	// The timestamp of the creation of the Exadata resource.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The timestamp of the last update of the Exadata resource.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 	// The version of the Exadata resource.
-	Version string `pulumi:"version"`
+	Version *string `pulumi:"version"`
 }
 
 func LookupExternalExadataStorageConnectorOutput(ctx *pulumi.Context, args LookupExternalExadataStorageConnectorOutputArgs, opts ...pulumi.InvokeOption) LookupExternalExadataStorageConnectorResultOutput {
@@ -130,29 +129,23 @@ func (o LookupExternalExadataStorageConnectorResultOutput) ToLookupExternalExada
 	return o
 }
 
-func (o LookupExternalExadataStorageConnectorResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupExternalExadataStorageConnectorResult] {
-	return pulumix.Output[LookupExternalExadataStorageConnectorResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
 func (o LookupExternalExadataStorageConnectorResultOutput) AdditionalDetails() pulumi.MapOutput {
 	return o.ApplyT(func(v LookupExternalExadataStorageConnectorResult) map[string]interface{} { return v.AdditionalDetails }).(pulumi.MapOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the agent for the Exadata storage server.
-func (o LookupExternalExadataStorageConnectorResultOutput) AgentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupExternalExadataStorageConnectorResult) string { return v.AgentId }).(pulumi.StringOutput)
+func (o LookupExternalExadataStorageConnectorResultOutput) AgentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupExternalExadataStorageConnectorResult) *string { return v.AgentId }).(pulumi.StringPtrOutput)
 }
 
 // The unique string of the connection. For example, "https://<storage-server-name>/MS/RESTService/".
-func (o LookupExternalExadataStorageConnectorResultOutput) ConnectionUri() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupExternalExadataStorageConnectorResult) string { return v.ConnectionUri }).(pulumi.StringOutput)
+func (o LookupExternalExadataStorageConnectorResultOutput) ConnectionUri() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupExternalExadataStorageConnectorResult) *string { return v.ConnectionUri }).(pulumi.StringPtrOutput)
 }
 
-func (o LookupExternalExadataStorageConnectorResultOutput) ConnectorName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupExternalExadataStorageConnectorResult) string { return v.ConnectorName }).(pulumi.StringOutput)
+func (o LookupExternalExadataStorageConnectorResultOutput) ConnectorName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupExternalExadataStorageConnectorResult) *string { return v.ConnectorName }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupExternalExadataStorageConnectorResultOutput) CredentialInfos() GetExternalExadataStorageConnectorCredentialInfoArrayOutput {
@@ -162,13 +155,13 @@ func (o LookupExternalExadataStorageConnectorResultOutput) CredentialInfos() Get
 }
 
 // The name of the Exadata resource. English letters, numbers, "-", "_" and "." only.
-func (o LookupExternalExadataStorageConnectorResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupExternalExadataStorageConnectorResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupExternalExadataStorageConnectorResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupExternalExadataStorageConnectorResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
-func (o LookupExternalExadataStorageConnectorResultOutput) ExadataInfrastructureId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupExternalExadataStorageConnectorResult) string { return v.ExadataInfrastructureId }).(pulumi.StringOutput)
+func (o LookupExternalExadataStorageConnectorResultOutput) ExadataInfrastructureId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupExternalExadataStorageConnectorResult) *string { return v.ExadataInfrastructureId }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupExternalExadataStorageConnectorResultOutput) ExternalExadataStorageConnectorId() pulumi.StringOutput {
@@ -176,48 +169,48 @@ func (o LookupExternalExadataStorageConnectorResultOutput) ExternalExadataStorag
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.
-func (o LookupExternalExadataStorageConnectorResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupExternalExadataStorageConnectorResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupExternalExadataStorageConnectorResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupExternalExadataStorageConnectorResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The internal ID of the Exadata resource.
-func (o LookupExternalExadataStorageConnectorResultOutput) InternalId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupExternalExadataStorageConnectorResult) string { return v.InternalId }).(pulumi.StringOutput)
+func (o LookupExternalExadataStorageConnectorResultOutput) InternalId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupExternalExadataStorageConnectorResult) *string { return v.InternalId }).(pulumi.StringPtrOutput)
 }
 
 // The details of the lifecycle state of the Exadata resource.
-func (o LookupExternalExadataStorageConnectorResultOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupExternalExadataStorageConnectorResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o LookupExternalExadataStorageConnectorResultOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupExternalExadataStorageConnectorResult) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // The current lifecycle state of the database resource.
-func (o LookupExternalExadataStorageConnectorResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupExternalExadataStorageConnectorResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupExternalExadataStorageConnectorResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupExternalExadataStorageConnectorResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The status of the Exadata resource.
-func (o LookupExternalExadataStorageConnectorResultOutput) Status() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupExternalExadataStorageConnectorResult) string { return v.Status }).(pulumi.StringOutput)
+func (o LookupExternalExadataStorageConnectorResultOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupExternalExadataStorageConnectorResult) *string { return v.Status }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata storage server.
-func (o LookupExternalExadataStorageConnectorResultOutput) StorageServerId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupExternalExadataStorageConnectorResult) string { return v.StorageServerId }).(pulumi.StringOutput)
+func (o LookupExternalExadataStorageConnectorResultOutput) StorageServerId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupExternalExadataStorageConnectorResult) *string { return v.StorageServerId }).(pulumi.StringPtrOutput)
 }
 
 // The timestamp of the creation of the Exadata resource.
-func (o LookupExternalExadataStorageConnectorResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupExternalExadataStorageConnectorResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupExternalExadataStorageConnectorResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupExternalExadataStorageConnectorResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The timestamp of the last update of the Exadata resource.
-func (o LookupExternalExadataStorageConnectorResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupExternalExadataStorageConnectorResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o LookupExternalExadataStorageConnectorResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupExternalExadataStorageConnectorResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 // The version of the Exadata resource.
-func (o LookupExternalExadataStorageConnectorResultOutput) Version() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupExternalExadataStorageConnectorResult) string { return v.Version }).(pulumi.StringOutput)
+func (o LookupExternalExadataStorageConnectorResultOutput) Version() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupExternalExadataStorageConnectorResult) *string { return v.Version }).(pulumi.StringPtrOutput)
 }
 
 func init() {

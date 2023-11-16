@@ -79,11 +79,11 @@ export interface GetMaskingAnalyticsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The list of masking_analytics_collection.
      */
-    readonly maskingAnalyticsCollections: outputs.DataSafe.GetMaskingAnalyticsMaskingAnalyticsCollection[];
+    readonly maskingAnalyticsCollections?: outputs.DataSafe.GetMaskingAnalyticsMaskingAnalyticsCollection[];
     readonly maskingPolicyId?: string;
     /**
      * The OCID of the target database.

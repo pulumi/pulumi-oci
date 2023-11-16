@@ -20,7 +20,7 @@ namespace Pulumi.Oci.Database.Outputs
         /// <summary>
         /// The OCID of the maintenance run.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Details of a maintenance run.
         /// </summary>
@@ -30,7 +30,7 @@ namespace Pulumi.Oci.Database.Outputs
         private GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryResult(
             ImmutableArray<Outputs.GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailResult> dbServersHistoryDetails,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailResult> maintenanceRunDetails)
         {

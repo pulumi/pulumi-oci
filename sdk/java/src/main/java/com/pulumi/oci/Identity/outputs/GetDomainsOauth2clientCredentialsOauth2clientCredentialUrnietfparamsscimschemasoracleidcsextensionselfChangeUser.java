@@ -6,6 +6,8 @@ package com.pulumi.oci.Identity.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.Boolean;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDomainsOauth2clientCredentialsOauth2clientCredentialUrnietfparamsscimschemasoracleidcsextensionselfChangeUser {
@@ -13,15 +15,15 @@ public final class GetDomainsOauth2clientCredentialsOauth2clientCredentialUrniet
      * @return If true, allows requesting user to update themselves. If false, requesting user can&#39;t update themself (default).
      * 
      */
-    private Boolean allowSelfChange;
+    private @Nullable Boolean allowSelfChange;
 
     private GetDomainsOauth2clientCredentialsOauth2clientCredentialUrnietfparamsscimschemasoracleidcsextensionselfChangeUser() {}
     /**
      * @return If true, allows requesting user to update themselves. If false, requesting user can&#39;t update themself (default).
      * 
      */
-    public Boolean allowSelfChange() {
-        return this.allowSelfChange;
+    public Optional<Boolean> allowSelfChange() {
+        return Optional.ofNullable(this.allowSelfChange);
     }
 
     public static Builder builder() {
@@ -33,7 +35,7 @@ public final class GetDomainsOauth2clientCredentialsOauth2clientCredentialUrniet
     }
     @CustomType.Builder
     public static final class Builder {
-        private Boolean allowSelfChange;
+        private @Nullable Boolean allowSelfChange;
         public Builder() {}
         public Builder(GetDomainsOauth2clientCredentialsOauth2clientCredentialUrnietfparamsscimschemasoracleidcsextensionselfChangeUser defaults) {
     	      Objects.requireNonNull(defaults);
@@ -41,8 +43,8 @@ public final class GetDomainsOauth2clientCredentialsOauth2clientCredentialUrniet
         }
 
         @CustomType.Setter
-        public Builder allowSelfChange(Boolean allowSelfChange) {
-            this.allowSelfChange = Objects.requireNonNull(allowSelfChange);
+        public Builder allowSelfChange(@Nullable Boolean allowSelfChange) {
+            this.allowSelfChange = allowSelfChange;
             return this;
         }
         public GetDomainsOauth2clientCredentialsOauth2clientCredentialUrnietfparamsscimschemasoracleidcsextensionselfChangeUser build() {

@@ -50,7 +50,7 @@ class GetRemediationRunStagesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -59,33 +59,21 @@ class GetRemediationRunStagesResult:
     @property
     @pulumi.getter(name="remediationRunId")
     def remediation_run_id(self) -> str:
-        """
-        The Oracle Cloud identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the remediation run.
-        """
         return pulumi.get(self, "remediation_run_id")
 
     @property
     @pulumi.getter(name="remediationRunStageCollections")
-    def remediation_run_stage_collections(self) -> Sequence['outputs.GetRemediationRunStagesRemediationRunStageCollectionResult']:
-        """
-        The list of remediation_run_stage_collection.
-        """
+    def remediation_run_stage_collections(self) -> Optional[Sequence['outputs.GetRemediationRunStagesRemediationRunStageCollectionResult']]:
         return pulumi.get(self, "remediation_run_stage_collections")
 
     @property
     @pulumi.getter
     def status(self) -> Optional[str]:
-        """
-        The current status of a remediation run stage.
-        """
         return pulumi.get(self, "status")
 
     @property
     @pulumi.getter
     def type(self) -> Optional[str]:
-        """
-        The type of the remediation run stage.
-        """
         return pulumi.get(self, "type")
 
 
@@ -109,25 +97,7 @@ def get_remediation_run_stages(filters: Optional[Sequence[pulumi.InputType['GetR
                                type: Optional[str] = None,
                                opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetRemediationRunStagesResult:
     """
-    This data source provides the list of Remediation Run Stages in Oracle Cloud Infrastructure Adm service.
-
-    Returns a list of Remediation Run Stages based on the specified query parameters and Remediation Run identifier.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_remediation_run_stages = oci.Adm.get_remediation_run_stages(remediation_run_id=oci_adm_remediation_run["test_remediation_run"]["id"],
-        status=var["remediation_run_stage_status"],
-        type=var["remediation_run_stage_type"])
-    ```
-
-
-    :param str remediation_run_id: Unique Remediation Run identifier path parameter.
-    :param str status: A filter to return only Stages that match the specified status.
-    :param str type: A filter to return only Stages that match the specified type.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['filters'] = filters
@@ -153,24 +123,6 @@ def get_remediation_run_stages_output(filters: Optional[pulumi.Input[Optional[Se
                                       type: Optional[pulumi.Input[Optional[str]]] = None,
                                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetRemediationRunStagesResult]:
     """
-    This data source provides the list of Remediation Run Stages in Oracle Cloud Infrastructure Adm service.
-
-    Returns a list of Remediation Run Stages based on the specified query parameters and Remediation Run identifier.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_remediation_run_stages = oci.Adm.get_remediation_run_stages(remediation_run_id=oci_adm_remediation_run["test_remediation_run"]["id"],
-        status=var["remediation_run_stage_status"],
-        type=var["remediation_run_stage_type"])
-    ```
-
-
-    :param str remediation_run_id: Unique Remediation Run identifier path parameter.
-    :param str status: A filter to return only Stages that match the specified status.
-    :param str type: A filter to return only Stages that match the specified type.
+    Use this data source to access information about an existing resource.
     """
     ...

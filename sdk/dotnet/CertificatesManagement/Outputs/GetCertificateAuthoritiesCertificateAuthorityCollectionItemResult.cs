@@ -25,11 +25,11 @@ namespace Pulumi.Oci.CertificatesManagement.Outputs
         /// <summary>
         /// A filter that returns only resources that match the given compartment OCID.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// The origin of the CA.
         /// </summary>
-        public readonly string ConfigType;
+        public readonly string? ConfigType;
         /// <summary>
         /// The metadata details of the certificate authority (CA) version. This summary object does not contain the CA contents.
         /// </summary>
@@ -37,43 +37,43 @@ namespace Pulumi.Oci.CertificatesManagement.Outputs
         /// <summary>
         /// Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// A brief description of the CA.
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// The OCID of the CA.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The OCID of the certificate authority (CA). If the parameter is set to null, the service lists all CAs.
         /// </summary>
-        public readonly string IssuerCertificateAuthorityId;
+        public readonly string? IssuerCertificateAuthorityId;
         /// <summary>
         /// The OCID of the Oracle Cloud Infrastructure Vault key used to encrypt the CA.
         /// </summary>
-        public readonly string KmsKeyId;
+        public readonly string? KmsKeyId;
         /// <summary>
         /// Additional information about the current CA lifecycle state.
         /// </summary>
-        public readonly string LifecycleDetails;
+        public readonly string? LifecycleDetails;
         /// <summary>
         /// A filter that returns only resources that match the specified name.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// The algorithm used to sign public key certificates that the CA issues.
         /// </summary>
-        public readonly string SigningAlgorithm;
+        public readonly string? SigningAlgorithm;
         /// <summary>
         /// A filter that returns only resources that match the given lifecycle state. The state value is case-insensitive.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// The subject of the certificate, which is a distinguished name that identifies the entity that owns the public key in the certificate.
         /// </summary>
@@ -81,11 +81,11 @@ namespace Pulumi.Oci.CertificatesManagement.Outputs
         /// <summary>
         /// A property indicating when the CA was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// An optional property indicating when to delete the CA version, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
         /// </summary>
-        public readonly string TimeOfDeletion;
+        public readonly string? TimeOfDeletion;
 
         [OutputConstructor]
         private GetCertificateAuthoritiesCertificateAuthorityCollectionItemResult(
@@ -95,37 +95,37 @@ namespace Pulumi.Oci.CertificatesManagement.Outputs
 
             ImmutableArray<Outputs.GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateRevocationListDetailResult> certificateRevocationListDetails,
 
-            string compartmentId,
+            string? compartmentId,
 
-            string configType,
+            string? configType,
 
             ImmutableArray<Outputs.GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionResult> currentVersions,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string description,
+            string? description,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string id,
+            string? id,
 
-            string issuerCertificateAuthorityId,
+            string? issuerCertificateAuthorityId,
 
-            string kmsKeyId,
+            string? kmsKeyId,
 
-            string lifecycleDetails,
+            string? lifecycleDetails,
 
-            string name,
+            string? name,
 
-            string signingAlgorithm,
+            string? signingAlgorithm,
 
-            string state,
+            string? state,
 
             ImmutableArray<Outputs.GetCertificateAuthoritiesCertificateAuthorityCollectionItemSubjectResult> subjects,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeOfDeletion)
+            string? timeOfDeletion)
         {
             CertificateAuthorityConfigs = certificateAuthorityConfigs;
             CertificateAuthorityRules = certificateAuthorityRules;

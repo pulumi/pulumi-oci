@@ -6,6 +6,8 @@ package com.pulumi.oci.Database.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetVmClusterPatchHistoryEntryResult {
@@ -13,38 +15,38 @@ public final class GetVmClusterPatchHistoryEntryResult {
      * @return The action being performed or was completed.
      * 
      */
-    private String action;
+    private @Nullable String action;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return A descriptive text associated with the lifecycleState. Typically contains additional displayable text.
      * 
      */
-    private String lifecycleDetails;
+    private @Nullable String lifecycleDetails;
     private String patchHistoryEntryId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the patch.
      * 
      */
-    private String patchId;
+    private @Nullable String patchId;
     /**
      * @return The current state of the action.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return The date and time when the patch action completed
      * 
      */
-    private String timeEnded;
+    private @Nullable String timeEnded;
     /**
      * @return The date and time when the patch action started.
      * 
      */
-    private String timeStarted;
+    private @Nullable String timeStarted;
     private String vmClusterId;
 
     private GetVmClusterPatchHistoryEntryResult() {}
@@ -52,22 +54,22 @@ public final class GetVmClusterPatchHistoryEntryResult {
      * @return The action being performed or was completed.
      * 
      */
-    public String action() {
-        return this.action;
+    public Optional<String> action() {
+        return Optional.ofNullable(this.action);
     }
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return A descriptive text associated with the lifecycleState. Typically contains additional displayable text.
      * 
      */
-    public String lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Optional<String> lifecycleDetails() {
+        return Optional.ofNullable(this.lifecycleDetails);
     }
     public String patchHistoryEntryId() {
         return this.patchHistoryEntryId;
@@ -76,29 +78,29 @@ public final class GetVmClusterPatchHistoryEntryResult {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the patch.
      * 
      */
-    public String patchId() {
-        return this.patchId;
+    public Optional<String> patchId() {
+        return Optional.ofNullable(this.patchId);
     }
     /**
      * @return The current state of the action.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return The date and time when the patch action completed
      * 
      */
-    public String timeEnded() {
-        return this.timeEnded;
+    public Optional<String> timeEnded() {
+        return Optional.ofNullable(this.timeEnded);
     }
     /**
      * @return The date and time when the patch action started.
      * 
      */
-    public String timeStarted() {
-        return this.timeStarted;
+    public Optional<String> timeStarted() {
+        return Optional.ofNullable(this.timeStarted);
     }
     public String vmClusterId() {
         return this.vmClusterId;
@@ -113,14 +115,14 @@ public final class GetVmClusterPatchHistoryEntryResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String action;
-        private String id;
-        private String lifecycleDetails;
+        private @Nullable String action;
+        private @Nullable String id;
+        private @Nullable String lifecycleDetails;
         private String patchHistoryEntryId;
-        private String patchId;
-        private String state;
-        private String timeEnded;
-        private String timeStarted;
+        private @Nullable String patchId;
+        private @Nullable String state;
+        private @Nullable String timeEnded;
+        private @Nullable String timeStarted;
         private String vmClusterId;
         public Builder() {}
         public Builder(GetVmClusterPatchHistoryEntryResult defaults) {
@@ -137,18 +139,18 @@ public final class GetVmClusterPatchHistoryEntryResult {
         }
 
         @CustomType.Setter
-        public Builder action(String action) {
-            this.action = Objects.requireNonNull(action);
+        public Builder action(@Nullable String action) {
+            this.action = action;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+        public Builder lifecycleDetails(@Nullable String lifecycleDetails) {
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
@@ -157,23 +159,23 @@ public final class GetVmClusterPatchHistoryEntryResult {
             return this;
         }
         @CustomType.Setter
-        public Builder patchId(String patchId) {
-            this.patchId = Objects.requireNonNull(patchId);
+        public Builder patchId(@Nullable String patchId) {
+            this.patchId = patchId;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder timeEnded(String timeEnded) {
-            this.timeEnded = Objects.requireNonNull(timeEnded);
+        public Builder timeEnded(@Nullable String timeEnded) {
+            this.timeEnded = timeEnded;
             return this;
         }
         @CustomType.Setter
-        public Builder timeStarted(String timeStarted) {
-            this.timeStarted = Objects.requireNonNull(timeStarted);
+        public Builder timeStarted(@Nullable String timeStarted) {
+            this.timeStarted = timeStarted;
             return this;
         }
         @CustomType.Setter

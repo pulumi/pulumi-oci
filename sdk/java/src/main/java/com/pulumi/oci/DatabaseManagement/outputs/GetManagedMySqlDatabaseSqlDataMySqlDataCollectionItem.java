@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Double;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItem {
@@ -14,387 +16,387 @@ public final class GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItem {
      * @return The Average Execution Time.
      * 
      */
-    private Double avgTimerWait;
+    private @Nullable Double avgTimerWait;
     /**
      * @return The Number Of Times The Query Has Been Executed.
      * 
      */
-    private Double countStar;
+    private @Nullable Double countStar;
     /**
      * @return The Digest Of The Normalized Query.
      * 
      */
-    private String digest;
+    private @Nullable String digest;
     /**
      * @return The Normalized Query.
      * 
      */
-    private String digestText;
+    private @Nullable String digestText;
     /**
      * @return When The Query Was First Seen. When The Table Is Truncated, The First Seen Value Is Also Reset.
      * 
      */
-    private String firstSeen;
+    private @Nullable String firstSeen;
     /**
      * @return When The Query Was Seen The Last Time.
      * 
      */
-    private String lastSeen;
+    private @Nullable String lastSeen;
     /**
      * @return The Slowest The Query Has Been Executed.
      * 
      */
-    private Double maxTimerWait;
+    private @Nullable Double maxTimerWait;
     /**
      * @return The Fastest The Query Has Been Executed.
      * 
      */
-    private Double minTimerWait;
+    private @Nullable Double minTimerWait;
     /**
      * @return The 95th Percentile Of The Query Latency. That Is, 95% Of The Queries Complete In The Time Given Or In Less Time.
      * 
      */
-    private Double quantile95;
+    private @Nullable Double quantile95;
     /**
      * @return The 99th Percentile Of The Query Latency.
      * 
      */
-    private Double quantile99;
+    private @Nullable Double quantile99;
     /**
      * @return The 99.9th Percentile Of The Query Latency.
      * 
      */
-    private Double quantile999;
+    private @Nullable Double quantile999;
     /**
      * @return The Schema That Was The Default Schema When Executing The Query. If No Schema Was The Default, The Value Is NULL.
      * 
      */
-    private String schemaName;
+    private @Nullable String schemaName;
     /**
      * @return The Total Number Of On-Disk Internal Temporary Tables That Have Been Created By The Query.
      * 
      */
-    private Double sumCreatedTempDiskTables;
+    private @Nullable Double sumCreatedTempDiskTables;
     /**
      * @return The Total Number Of Internal Temporary Tables – Whether Created In Memory Or On Disk – That Have Been Created By The Query.
      * 
      */
-    private Double sumCreatedTempTables;
+    private @Nullable Double sumCreatedTempTables;
     /**
      * @return The Total Number Of Errors That Have Been Encountered Executing The Query.
      * 
      */
-    private Double sumErrors;
+    private @Nullable Double sumErrors;
     /**
      * @return The Total Amount Of Time That Has Been Spent Waiting For Table Locks.
      * 
      */
-    private Double sumLockTime;
+    private @Nullable Double sumLockTime;
     /**
      * @return The Total Number Of Times No Good Index Was Used. This Means That The ExtraColumn In The EXPLAIN Output Includes “Range Checked For Each Record.”
      * 
      */
-    private Double sumNoGoodIndexUsed;
+    private @Nullable Double sumNoGoodIndexUsed;
     /**
      * @return The Total Number Of Times No Index Was Used To Execute The Query.
      * 
      */
-    private Double sumNoIndexUsed;
+    private @Nullable Double sumNoIndexUsed;
     /**
      * @return The Total Number Of Rows That Have Been Modified By The Query.
      * 
      */
-    private Double sumRowsAffected;
+    private @Nullable Double sumRowsAffected;
     /**
      * @return The Total Number Of Rows That Have Been Examined By The Query.
      * 
      */
-    private Double sumRowsExamined;
+    private @Nullable Double sumRowsExamined;
     /**
      * @return The Total Number Of Rows That Have Been Returned (Sent) To The Client.
      * 
      */
-    private Double sumRowsSent;
+    private @Nullable Double sumRowsSent;
     /**
      * @return The Total Number Of Joins That Have Performed Full Table Scans As There Is No Index For The Join Condition Or There Is No Join Condition. This Is The Same That Increments The Select_full_join Status Variable.
      * 
      */
-    private Double sumSelectFullJoin;
+    private @Nullable Double sumSelectFullJoin;
     /**
      * @return The Total Number Of Joins That Use A Full Range Search. This Is The Same That Increments The Select_full_range_join Status Variable.
      * 
      */
-    private Double sumSelectFullRangeJoin;
+    private @Nullable Double sumSelectFullRangeJoin;
     /**
      * @return The Total Number Of Times The Query Has Used A Range Search. This Is The Same That Increments The Select_range Status Variable.
      * 
      */
-    private Double sumSelectRange;
+    private @Nullable Double sumSelectRange;
     /**
      * @return The Total Number Of Joins By The Query Where The Join Does Not Have An Index That Checks For The Index Usage After Each Row. This Is The Same That Increments The Select_range_check Status Variable.
      * 
      */
-    private Double sumSelectRangeCheck;
+    private @Nullable Double sumSelectRangeCheck;
     /**
      * @return The Total Number Of Times The Query Has Performed A Full Table Scan On The First Table In The Join. This Is The Same That Increments The Select_scan Status Variable.
      * 
      */
-    private Double sumSelectScan;
+    private @Nullable Double sumSelectScan;
     /**
      * @return The Total Number Of Sort Merge Passes That Have Been Done To Sort The Result Of The Query. This Is The Same That Increments The Sort_merge_passes Status Variable.
      * 
      */
-    private Double sumSortMergePasses;
+    private @Nullable Double sumSortMergePasses;
     /**
      * @return The Total Number Of Times A Sort Was Done Using Ranges. This Is The Same That Increments The Sort_range Status Variable.
      * 
      */
-    private Double sumSortRange;
+    private @Nullable Double sumSortRange;
     /**
      * @return The Total Number Of Rows Sorted. This Is The Same That Increments The Sort_rowsStatus Variable.
      * 
      */
-    private Double sumSortRows;
+    private @Nullable Double sumSortRows;
     /**
      * @return The Total Number Of Times A Sort Was Done By Scanning The Table. This Is The Same That Increments The Sort_scan Status Variable.
      * 
      */
-    private Double sumSortScan;
+    private @Nullable Double sumSortScan;
     /**
      * @return The Total Amount Of Time That Has Been Spent Executing The Query.
      * 
      */
-    private Double sumTimerWait;
+    private @Nullable Double sumTimerWait;
     /**
      * @return The Total Number Of Warnings That Have Been Encountered Executing The Query.
      * 
      */
-    private Double sumWarnings;
+    private @Nullable Double sumWarnings;
 
     private GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItem() {}
     /**
      * @return The Average Execution Time.
      * 
      */
-    public Double avgTimerWait() {
-        return this.avgTimerWait;
+    public Optional<Double> avgTimerWait() {
+        return Optional.ofNullable(this.avgTimerWait);
     }
     /**
      * @return The Number Of Times The Query Has Been Executed.
      * 
      */
-    public Double countStar() {
-        return this.countStar;
+    public Optional<Double> countStar() {
+        return Optional.ofNullable(this.countStar);
     }
     /**
      * @return The Digest Of The Normalized Query.
      * 
      */
-    public String digest() {
-        return this.digest;
+    public Optional<String> digest() {
+        return Optional.ofNullable(this.digest);
     }
     /**
      * @return The Normalized Query.
      * 
      */
-    public String digestText() {
-        return this.digestText;
+    public Optional<String> digestText() {
+        return Optional.ofNullable(this.digestText);
     }
     /**
      * @return When The Query Was First Seen. When The Table Is Truncated, The First Seen Value Is Also Reset.
      * 
      */
-    public String firstSeen() {
-        return this.firstSeen;
+    public Optional<String> firstSeen() {
+        return Optional.ofNullable(this.firstSeen);
     }
     /**
      * @return When The Query Was Seen The Last Time.
      * 
      */
-    public String lastSeen() {
-        return this.lastSeen;
+    public Optional<String> lastSeen() {
+        return Optional.ofNullable(this.lastSeen);
     }
     /**
      * @return The Slowest The Query Has Been Executed.
      * 
      */
-    public Double maxTimerWait() {
-        return this.maxTimerWait;
+    public Optional<Double> maxTimerWait() {
+        return Optional.ofNullable(this.maxTimerWait);
     }
     /**
      * @return The Fastest The Query Has Been Executed.
      * 
      */
-    public Double minTimerWait() {
-        return this.minTimerWait;
+    public Optional<Double> minTimerWait() {
+        return Optional.ofNullable(this.minTimerWait);
     }
     /**
      * @return The 95th Percentile Of The Query Latency. That Is, 95% Of The Queries Complete In The Time Given Or In Less Time.
      * 
      */
-    public Double quantile95() {
-        return this.quantile95;
+    public Optional<Double> quantile95() {
+        return Optional.ofNullable(this.quantile95);
     }
     /**
      * @return The 99th Percentile Of The Query Latency.
      * 
      */
-    public Double quantile99() {
-        return this.quantile99;
+    public Optional<Double> quantile99() {
+        return Optional.ofNullable(this.quantile99);
     }
     /**
      * @return The 99.9th Percentile Of The Query Latency.
      * 
      */
-    public Double quantile999() {
-        return this.quantile999;
+    public Optional<Double> quantile999() {
+        return Optional.ofNullable(this.quantile999);
     }
     /**
      * @return The Schema That Was The Default Schema When Executing The Query. If No Schema Was The Default, The Value Is NULL.
      * 
      */
-    public String schemaName() {
-        return this.schemaName;
+    public Optional<String> schemaName() {
+        return Optional.ofNullable(this.schemaName);
     }
     /**
      * @return The Total Number Of On-Disk Internal Temporary Tables That Have Been Created By The Query.
      * 
      */
-    public Double sumCreatedTempDiskTables() {
-        return this.sumCreatedTempDiskTables;
+    public Optional<Double> sumCreatedTempDiskTables() {
+        return Optional.ofNullable(this.sumCreatedTempDiskTables);
     }
     /**
      * @return The Total Number Of Internal Temporary Tables – Whether Created In Memory Or On Disk – That Have Been Created By The Query.
      * 
      */
-    public Double sumCreatedTempTables() {
-        return this.sumCreatedTempTables;
+    public Optional<Double> sumCreatedTempTables() {
+        return Optional.ofNullable(this.sumCreatedTempTables);
     }
     /**
      * @return The Total Number Of Errors That Have Been Encountered Executing The Query.
      * 
      */
-    public Double sumErrors() {
-        return this.sumErrors;
+    public Optional<Double> sumErrors() {
+        return Optional.ofNullable(this.sumErrors);
     }
     /**
      * @return The Total Amount Of Time That Has Been Spent Waiting For Table Locks.
      * 
      */
-    public Double sumLockTime() {
-        return this.sumLockTime;
+    public Optional<Double> sumLockTime() {
+        return Optional.ofNullable(this.sumLockTime);
     }
     /**
      * @return The Total Number Of Times No Good Index Was Used. This Means That The ExtraColumn In The EXPLAIN Output Includes “Range Checked For Each Record.”
      * 
      */
-    public Double sumNoGoodIndexUsed() {
-        return this.sumNoGoodIndexUsed;
+    public Optional<Double> sumNoGoodIndexUsed() {
+        return Optional.ofNullable(this.sumNoGoodIndexUsed);
     }
     /**
      * @return The Total Number Of Times No Index Was Used To Execute The Query.
      * 
      */
-    public Double sumNoIndexUsed() {
-        return this.sumNoIndexUsed;
+    public Optional<Double> sumNoIndexUsed() {
+        return Optional.ofNullable(this.sumNoIndexUsed);
     }
     /**
      * @return The Total Number Of Rows That Have Been Modified By The Query.
      * 
      */
-    public Double sumRowsAffected() {
-        return this.sumRowsAffected;
+    public Optional<Double> sumRowsAffected() {
+        return Optional.ofNullable(this.sumRowsAffected);
     }
     /**
      * @return The Total Number Of Rows That Have Been Examined By The Query.
      * 
      */
-    public Double sumRowsExamined() {
-        return this.sumRowsExamined;
+    public Optional<Double> sumRowsExamined() {
+        return Optional.ofNullable(this.sumRowsExamined);
     }
     /**
      * @return The Total Number Of Rows That Have Been Returned (Sent) To The Client.
      * 
      */
-    public Double sumRowsSent() {
-        return this.sumRowsSent;
+    public Optional<Double> sumRowsSent() {
+        return Optional.ofNullable(this.sumRowsSent);
     }
     /**
      * @return The Total Number Of Joins That Have Performed Full Table Scans As There Is No Index For The Join Condition Or There Is No Join Condition. This Is The Same That Increments The Select_full_join Status Variable.
      * 
      */
-    public Double sumSelectFullJoin() {
-        return this.sumSelectFullJoin;
+    public Optional<Double> sumSelectFullJoin() {
+        return Optional.ofNullable(this.sumSelectFullJoin);
     }
     /**
      * @return The Total Number Of Joins That Use A Full Range Search. This Is The Same That Increments The Select_full_range_join Status Variable.
      * 
      */
-    public Double sumSelectFullRangeJoin() {
-        return this.sumSelectFullRangeJoin;
+    public Optional<Double> sumSelectFullRangeJoin() {
+        return Optional.ofNullable(this.sumSelectFullRangeJoin);
     }
     /**
      * @return The Total Number Of Times The Query Has Used A Range Search. This Is The Same That Increments The Select_range Status Variable.
      * 
      */
-    public Double sumSelectRange() {
-        return this.sumSelectRange;
+    public Optional<Double> sumSelectRange() {
+        return Optional.ofNullable(this.sumSelectRange);
     }
     /**
      * @return The Total Number Of Joins By The Query Where The Join Does Not Have An Index That Checks For The Index Usage After Each Row. This Is The Same That Increments The Select_range_check Status Variable.
      * 
      */
-    public Double sumSelectRangeCheck() {
-        return this.sumSelectRangeCheck;
+    public Optional<Double> sumSelectRangeCheck() {
+        return Optional.ofNullable(this.sumSelectRangeCheck);
     }
     /**
      * @return The Total Number Of Times The Query Has Performed A Full Table Scan On The First Table In The Join. This Is The Same That Increments The Select_scan Status Variable.
      * 
      */
-    public Double sumSelectScan() {
-        return this.sumSelectScan;
+    public Optional<Double> sumSelectScan() {
+        return Optional.ofNullable(this.sumSelectScan);
     }
     /**
      * @return The Total Number Of Sort Merge Passes That Have Been Done To Sort The Result Of The Query. This Is The Same That Increments The Sort_merge_passes Status Variable.
      * 
      */
-    public Double sumSortMergePasses() {
-        return this.sumSortMergePasses;
+    public Optional<Double> sumSortMergePasses() {
+        return Optional.ofNullable(this.sumSortMergePasses);
     }
     /**
      * @return The Total Number Of Times A Sort Was Done Using Ranges. This Is The Same That Increments The Sort_range Status Variable.
      * 
      */
-    public Double sumSortRange() {
-        return this.sumSortRange;
+    public Optional<Double> sumSortRange() {
+        return Optional.ofNullable(this.sumSortRange);
     }
     /**
      * @return The Total Number Of Rows Sorted. This Is The Same That Increments The Sort_rowsStatus Variable.
      * 
      */
-    public Double sumSortRows() {
-        return this.sumSortRows;
+    public Optional<Double> sumSortRows() {
+        return Optional.ofNullable(this.sumSortRows);
     }
     /**
      * @return The Total Number Of Times A Sort Was Done By Scanning The Table. This Is The Same That Increments The Sort_scan Status Variable.
      * 
      */
-    public Double sumSortScan() {
-        return this.sumSortScan;
+    public Optional<Double> sumSortScan() {
+        return Optional.ofNullable(this.sumSortScan);
     }
     /**
      * @return The Total Amount Of Time That Has Been Spent Executing The Query.
      * 
      */
-    public Double sumTimerWait() {
-        return this.sumTimerWait;
+    public Optional<Double> sumTimerWait() {
+        return Optional.ofNullable(this.sumTimerWait);
     }
     /**
      * @return The Total Number Of Warnings That Have Been Encountered Executing The Query.
      * 
      */
-    public Double sumWarnings() {
-        return this.sumWarnings;
+    public Optional<Double> sumWarnings() {
+        return Optional.ofNullable(this.sumWarnings);
     }
 
     public static Builder builder() {
@@ -406,38 +408,38 @@ public final class GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItem {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Double avgTimerWait;
-        private Double countStar;
-        private String digest;
-        private String digestText;
-        private String firstSeen;
-        private String lastSeen;
-        private Double maxTimerWait;
-        private Double minTimerWait;
-        private Double quantile95;
-        private Double quantile99;
-        private Double quantile999;
-        private String schemaName;
-        private Double sumCreatedTempDiskTables;
-        private Double sumCreatedTempTables;
-        private Double sumErrors;
-        private Double sumLockTime;
-        private Double sumNoGoodIndexUsed;
-        private Double sumNoIndexUsed;
-        private Double sumRowsAffected;
-        private Double sumRowsExamined;
-        private Double sumRowsSent;
-        private Double sumSelectFullJoin;
-        private Double sumSelectFullRangeJoin;
-        private Double sumSelectRange;
-        private Double sumSelectRangeCheck;
-        private Double sumSelectScan;
-        private Double sumSortMergePasses;
-        private Double sumSortRange;
-        private Double sumSortRows;
-        private Double sumSortScan;
-        private Double sumTimerWait;
-        private Double sumWarnings;
+        private @Nullable Double avgTimerWait;
+        private @Nullable Double countStar;
+        private @Nullable String digest;
+        private @Nullable String digestText;
+        private @Nullable String firstSeen;
+        private @Nullable String lastSeen;
+        private @Nullable Double maxTimerWait;
+        private @Nullable Double minTimerWait;
+        private @Nullable Double quantile95;
+        private @Nullable Double quantile99;
+        private @Nullable Double quantile999;
+        private @Nullable String schemaName;
+        private @Nullable Double sumCreatedTempDiskTables;
+        private @Nullable Double sumCreatedTempTables;
+        private @Nullable Double sumErrors;
+        private @Nullable Double sumLockTime;
+        private @Nullable Double sumNoGoodIndexUsed;
+        private @Nullable Double sumNoIndexUsed;
+        private @Nullable Double sumRowsAffected;
+        private @Nullable Double sumRowsExamined;
+        private @Nullable Double sumRowsSent;
+        private @Nullable Double sumSelectFullJoin;
+        private @Nullable Double sumSelectFullRangeJoin;
+        private @Nullable Double sumSelectRange;
+        private @Nullable Double sumSelectRangeCheck;
+        private @Nullable Double sumSelectScan;
+        private @Nullable Double sumSortMergePasses;
+        private @Nullable Double sumSortRange;
+        private @Nullable Double sumSortRows;
+        private @Nullable Double sumSortScan;
+        private @Nullable Double sumTimerWait;
+        private @Nullable Double sumWarnings;
         public Builder() {}
         public Builder(GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -476,163 +478,163 @@ public final class GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItem {
         }
 
         @CustomType.Setter
-        public Builder avgTimerWait(Double avgTimerWait) {
-            this.avgTimerWait = Objects.requireNonNull(avgTimerWait);
+        public Builder avgTimerWait(@Nullable Double avgTimerWait) {
+            this.avgTimerWait = avgTimerWait;
             return this;
         }
         @CustomType.Setter
-        public Builder countStar(Double countStar) {
-            this.countStar = Objects.requireNonNull(countStar);
+        public Builder countStar(@Nullable Double countStar) {
+            this.countStar = countStar;
             return this;
         }
         @CustomType.Setter
-        public Builder digest(String digest) {
-            this.digest = Objects.requireNonNull(digest);
+        public Builder digest(@Nullable String digest) {
+            this.digest = digest;
             return this;
         }
         @CustomType.Setter
-        public Builder digestText(String digestText) {
-            this.digestText = Objects.requireNonNull(digestText);
+        public Builder digestText(@Nullable String digestText) {
+            this.digestText = digestText;
             return this;
         }
         @CustomType.Setter
-        public Builder firstSeen(String firstSeen) {
-            this.firstSeen = Objects.requireNonNull(firstSeen);
+        public Builder firstSeen(@Nullable String firstSeen) {
+            this.firstSeen = firstSeen;
             return this;
         }
         @CustomType.Setter
-        public Builder lastSeen(String lastSeen) {
-            this.lastSeen = Objects.requireNonNull(lastSeen);
+        public Builder lastSeen(@Nullable String lastSeen) {
+            this.lastSeen = lastSeen;
             return this;
         }
         @CustomType.Setter
-        public Builder maxTimerWait(Double maxTimerWait) {
-            this.maxTimerWait = Objects.requireNonNull(maxTimerWait);
+        public Builder maxTimerWait(@Nullable Double maxTimerWait) {
+            this.maxTimerWait = maxTimerWait;
             return this;
         }
         @CustomType.Setter
-        public Builder minTimerWait(Double minTimerWait) {
-            this.minTimerWait = Objects.requireNonNull(minTimerWait);
+        public Builder minTimerWait(@Nullable Double minTimerWait) {
+            this.minTimerWait = minTimerWait;
             return this;
         }
         @CustomType.Setter
-        public Builder quantile95(Double quantile95) {
-            this.quantile95 = Objects.requireNonNull(quantile95);
+        public Builder quantile95(@Nullable Double quantile95) {
+            this.quantile95 = quantile95;
             return this;
         }
         @CustomType.Setter
-        public Builder quantile99(Double quantile99) {
-            this.quantile99 = Objects.requireNonNull(quantile99);
+        public Builder quantile99(@Nullable Double quantile99) {
+            this.quantile99 = quantile99;
             return this;
         }
         @CustomType.Setter
-        public Builder quantile999(Double quantile999) {
-            this.quantile999 = Objects.requireNonNull(quantile999);
+        public Builder quantile999(@Nullable Double quantile999) {
+            this.quantile999 = quantile999;
             return this;
         }
         @CustomType.Setter
-        public Builder schemaName(String schemaName) {
-            this.schemaName = Objects.requireNonNull(schemaName);
+        public Builder schemaName(@Nullable String schemaName) {
+            this.schemaName = schemaName;
             return this;
         }
         @CustomType.Setter
-        public Builder sumCreatedTempDiskTables(Double sumCreatedTempDiskTables) {
-            this.sumCreatedTempDiskTables = Objects.requireNonNull(sumCreatedTempDiskTables);
+        public Builder sumCreatedTempDiskTables(@Nullable Double sumCreatedTempDiskTables) {
+            this.sumCreatedTempDiskTables = sumCreatedTempDiskTables;
             return this;
         }
         @CustomType.Setter
-        public Builder sumCreatedTempTables(Double sumCreatedTempTables) {
-            this.sumCreatedTempTables = Objects.requireNonNull(sumCreatedTempTables);
+        public Builder sumCreatedTempTables(@Nullable Double sumCreatedTempTables) {
+            this.sumCreatedTempTables = sumCreatedTempTables;
             return this;
         }
         @CustomType.Setter
-        public Builder sumErrors(Double sumErrors) {
-            this.sumErrors = Objects.requireNonNull(sumErrors);
+        public Builder sumErrors(@Nullable Double sumErrors) {
+            this.sumErrors = sumErrors;
             return this;
         }
         @CustomType.Setter
-        public Builder sumLockTime(Double sumLockTime) {
-            this.sumLockTime = Objects.requireNonNull(sumLockTime);
+        public Builder sumLockTime(@Nullable Double sumLockTime) {
+            this.sumLockTime = sumLockTime;
             return this;
         }
         @CustomType.Setter
-        public Builder sumNoGoodIndexUsed(Double sumNoGoodIndexUsed) {
-            this.sumNoGoodIndexUsed = Objects.requireNonNull(sumNoGoodIndexUsed);
+        public Builder sumNoGoodIndexUsed(@Nullable Double sumNoGoodIndexUsed) {
+            this.sumNoGoodIndexUsed = sumNoGoodIndexUsed;
             return this;
         }
         @CustomType.Setter
-        public Builder sumNoIndexUsed(Double sumNoIndexUsed) {
-            this.sumNoIndexUsed = Objects.requireNonNull(sumNoIndexUsed);
+        public Builder sumNoIndexUsed(@Nullable Double sumNoIndexUsed) {
+            this.sumNoIndexUsed = sumNoIndexUsed;
             return this;
         }
         @CustomType.Setter
-        public Builder sumRowsAffected(Double sumRowsAffected) {
-            this.sumRowsAffected = Objects.requireNonNull(sumRowsAffected);
+        public Builder sumRowsAffected(@Nullable Double sumRowsAffected) {
+            this.sumRowsAffected = sumRowsAffected;
             return this;
         }
         @CustomType.Setter
-        public Builder sumRowsExamined(Double sumRowsExamined) {
-            this.sumRowsExamined = Objects.requireNonNull(sumRowsExamined);
+        public Builder sumRowsExamined(@Nullable Double sumRowsExamined) {
+            this.sumRowsExamined = sumRowsExamined;
             return this;
         }
         @CustomType.Setter
-        public Builder sumRowsSent(Double sumRowsSent) {
-            this.sumRowsSent = Objects.requireNonNull(sumRowsSent);
+        public Builder sumRowsSent(@Nullable Double sumRowsSent) {
+            this.sumRowsSent = sumRowsSent;
             return this;
         }
         @CustomType.Setter
-        public Builder sumSelectFullJoin(Double sumSelectFullJoin) {
-            this.sumSelectFullJoin = Objects.requireNonNull(sumSelectFullJoin);
+        public Builder sumSelectFullJoin(@Nullable Double sumSelectFullJoin) {
+            this.sumSelectFullJoin = sumSelectFullJoin;
             return this;
         }
         @CustomType.Setter
-        public Builder sumSelectFullRangeJoin(Double sumSelectFullRangeJoin) {
-            this.sumSelectFullRangeJoin = Objects.requireNonNull(sumSelectFullRangeJoin);
+        public Builder sumSelectFullRangeJoin(@Nullable Double sumSelectFullRangeJoin) {
+            this.sumSelectFullRangeJoin = sumSelectFullRangeJoin;
             return this;
         }
         @CustomType.Setter
-        public Builder sumSelectRange(Double sumSelectRange) {
-            this.sumSelectRange = Objects.requireNonNull(sumSelectRange);
+        public Builder sumSelectRange(@Nullable Double sumSelectRange) {
+            this.sumSelectRange = sumSelectRange;
             return this;
         }
         @CustomType.Setter
-        public Builder sumSelectRangeCheck(Double sumSelectRangeCheck) {
-            this.sumSelectRangeCheck = Objects.requireNonNull(sumSelectRangeCheck);
+        public Builder sumSelectRangeCheck(@Nullable Double sumSelectRangeCheck) {
+            this.sumSelectRangeCheck = sumSelectRangeCheck;
             return this;
         }
         @CustomType.Setter
-        public Builder sumSelectScan(Double sumSelectScan) {
-            this.sumSelectScan = Objects.requireNonNull(sumSelectScan);
+        public Builder sumSelectScan(@Nullable Double sumSelectScan) {
+            this.sumSelectScan = sumSelectScan;
             return this;
         }
         @CustomType.Setter
-        public Builder sumSortMergePasses(Double sumSortMergePasses) {
-            this.sumSortMergePasses = Objects.requireNonNull(sumSortMergePasses);
+        public Builder sumSortMergePasses(@Nullable Double sumSortMergePasses) {
+            this.sumSortMergePasses = sumSortMergePasses;
             return this;
         }
         @CustomType.Setter
-        public Builder sumSortRange(Double sumSortRange) {
-            this.sumSortRange = Objects.requireNonNull(sumSortRange);
+        public Builder sumSortRange(@Nullable Double sumSortRange) {
+            this.sumSortRange = sumSortRange;
             return this;
         }
         @CustomType.Setter
-        public Builder sumSortRows(Double sumSortRows) {
-            this.sumSortRows = Objects.requireNonNull(sumSortRows);
+        public Builder sumSortRows(@Nullable Double sumSortRows) {
+            this.sumSortRows = sumSortRows;
             return this;
         }
         @CustomType.Setter
-        public Builder sumSortScan(Double sumSortScan) {
-            this.sumSortScan = Objects.requireNonNull(sumSortScan);
+        public Builder sumSortScan(@Nullable Double sumSortScan) {
+            this.sumSortScan = sumSortScan;
             return this;
         }
         @CustomType.Setter
-        public Builder sumTimerWait(Double sumTimerWait) {
-            this.sumTimerWait = Objects.requireNonNull(sumTimerWait);
+        public Builder sumTimerWait(@Nullable Double sumTimerWait) {
+            this.sumTimerWait = sumTimerWait;
             return this;
         }
         @CustomType.Setter
-        public Builder sumWarnings(Double sumWarnings) {
-            this.sumWarnings = Objects.requireNonNull(sumWarnings);
+        public Builder sumWarnings(@Nullable Double sumWarnings) {
+            this.sumWarnings = sumWarnings;
             return this;
         }
         public GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItem build() {

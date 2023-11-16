@@ -16,28 +16,28 @@ namespace Pulumi.Oci.OsManagement.Outputs
         /// <summary>
         /// The ID of the compartment in which to list resources.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// Information specified by the user about the managed instance group
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// unique identifier that is immutable on creation
         /// </summary>
-        public readonly string Id;
-        public readonly int ManagedInstanceCount;
+        public readonly string? Id;
+        public readonly int? ManagedInstanceCount;
         /// <summary>
         /// list of Managed Instances in the group
         /// </summary>
@@ -45,33 +45,33 @@ namespace Pulumi.Oci.OsManagement.Outputs
         /// <summary>
         /// The OS family for which to list resources.
         /// </summary>
-        public readonly string OsFamily;
+        public readonly string? OsFamily;
         /// <summary>
         /// The current lifecycle state for the object.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
 
         [OutputConstructor]
         private GetManagedInstanceGroupsManagedInstanceGroupResult(
-            string compartmentId,
+            string? compartmentId,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string description,
+            string? description,
 
-            string displayName,
+            string? displayName,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string id,
+            string? id,
 
-            int managedInstanceCount,
+            int? managedInstanceCount,
 
             ImmutableArray<Outputs.GetManagedInstanceGroupsManagedInstanceGroupManagedInstanceResult> managedInstances,
 
-            string osFamily,
+            string? osFamily,
 
-            string state)
+            string? state)
         {
             CompartmentId = compartmentId;
             DefinedTags = definedTags;

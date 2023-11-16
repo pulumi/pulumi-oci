@@ -27,19 +27,6 @@ class PathAnalysiArgs:
                  source_endpoint: Optional[pulumi.Input['PathAnalysiSourceEndpointArgs']] = None):
         """
         The set of arguments for constructing a PathAnalysi resource.
-        :param pulumi.Input[str] type: The type of the `PathAnalysis` query.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] cache_control: The Cache-Control HTTP header holds directives (instructions) for caching in both requests and responses.
-        :param pulumi.Input[str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the compartment.
-        :param pulumi.Input['PathAnalysiDestinationEndpointArgs'] destination_endpoint: Information describing a source or destination in a `PathAnalyzerTest` resource.
-        :param pulumi.Input[str] path_analyzer_test_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `PathAnalyzerTest` resource.
-        :param pulumi.Input[int] protocol: The IP protocol to used for the path analysis.
-        :param pulumi.Input['PathAnalysiProtocolParametersArgs'] protocol_parameters: Defines the IP protocol parameters for a `PathAnalyzerTest` resource.
-        :param pulumi.Input['PathAnalysiQueryOptionsArgs'] query_options: Defines the query options required for a `PathAnalyzerTest` resource.
-        :param pulumi.Input['PathAnalysiSourceEndpointArgs'] source_endpoint: Information describing a source or destination in a `PathAnalyzerTest` resource.
         """
         pulumi.set(__self__, "type", type)
         if cache_control is not None:
@@ -62,13 +49,6 @@ class PathAnalysiArgs:
     @property
     @pulumi.getter
     def type(self) -> pulumi.Input[str]:
-        """
-        The type of the `PathAnalysis` query.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "type")
 
     @type.setter
@@ -78,9 +58,6 @@ class PathAnalysiArgs:
     @property
     @pulumi.getter(name="cacheControl")
     def cache_control(self) -> Optional[pulumi.Input[str]]:
-        """
-        The Cache-Control HTTP header holds directives (instructions) for caching in both requests and responses.
-        """
         return pulumi.get(self, "cache_control")
 
     @cache_control.setter
@@ -90,9 +67,6 @@ class PathAnalysiArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -102,9 +76,6 @@ class PathAnalysiArgs:
     @property
     @pulumi.getter(name="destinationEndpoint")
     def destination_endpoint(self) -> Optional[pulumi.Input['PathAnalysiDestinationEndpointArgs']]:
-        """
-        Information describing a source or destination in a `PathAnalyzerTest` resource.
-        """
         return pulumi.get(self, "destination_endpoint")
 
     @destination_endpoint.setter
@@ -114,9 +85,6 @@ class PathAnalysiArgs:
     @property
     @pulumi.getter(name="pathAnalyzerTestId")
     def path_analyzer_test_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `PathAnalyzerTest` resource.
-        """
         return pulumi.get(self, "path_analyzer_test_id")
 
     @path_analyzer_test_id.setter
@@ -126,9 +94,6 @@ class PathAnalysiArgs:
     @property
     @pulumi.getter
     def protocol(self) -> Optional[pulumi.Input[int]]:
-        """
-        The IP protocol to used for the path analysis.
-        """
         return pulumi.get(self, "protocol")
 
     @protocol.setter
@@ -138,9 +103,6 @@ class PathAnalysiArgs:
     @property
     @pulumi.getter(name="protocolParameters")
     def protocol_parameters(self) -> Optional[pulumi.Input['PathAnalysiProtocolParametersArgs']]:
-        """
-        Defines the IP protocol parameters for a `PathAnalyzerTest` resource.
-        """
         return pulumi.get(self, "protocol_parameters")
 
     @protocol_parameters.setter
@@ -150,9 +112,6 @@ class PathAnalysiArgs:
     @property
     @pulumi.getter(name="queryOptions")
     def query_options(self) -> Optional[pulumi.Input['PathAnalysiQueryOptionsArgs']]:
-        """
-        Defines the query options required for a `PathAnalyzerTest` resource.
-        """
         return pulumi.get(self, "query_options")
 
     @query_options.setter
@@ -162,9 +121,6 @@ class PathAnalysiArgs:
     @property
     @pulumi.getter(name="sourceEndpoint")
     def source_endpoint(self) -> Optional[pulumi.Input['PathAnalysiSourceEndpointArgs']]:
-        """
-        Information describing a source or destination in a `PathAnalyzerTest` resource.
-        """
         return pulumi.get(self, "source_endpoint")
 
     @source_endpoint.setter
@@ -186,19 +142,6 @@ class _PathAnalysiState:
                  type: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering PathAnalysi resources.
-        :param pulumi.Input[str] cache_control: The Cache-Control HTTP header holds directives (instructions) for caching in both requests and responses.
-        :param pulumi.Input[str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the compartment.
-        :param pulumi.Input['PathAnalysiDestinationEndpointArgs'] destination_endpoint: Information describing a source or destination in a `PathAnalyzerTest` resource.
-        :param pulumi.Input[str] path_analyzer_test_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `PathAnalyzerTest` resource.
-        :param pulumi.Input[int] protocol: The IP protocol to used for the path analysis.
-        :param pulumi.Input['PathAnalysiProtocolParametersArgs'] protocol_parameters: Defines the IP protocol parameters for a `PathAnalyzerTest` resource.
-        :param pulumi.Input['PathAnalysiQueryOptionsArgs'] query_options: Defines the query options required for a `PathAnalyzerTest` resource.
-        :param pulumi.Input['PathAnalysiSourceEndpointArgs'] source_endpoint: Information describing a source or destination in a `PathAnalyzerTest` resource.
-        :param pulumi.Input[str] type: The type of the `PathAnalysis` query.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if cache_control is not None:
             pulumi.set(__self__, "cache_control", cache_control)
@@ -222,9 +165,6 @@ class _PathAnalysiState:
     @property
     @pulumi.getter(name="cacheControl")
     def cache_control(self) -> Optional[pulumi.Input[str]]:
-        """
-        The Cache-Control HTTP header holds directives (instructions) for caching in both requests and responses.
-        """
         return pulumi.get(self, "cache_control")
 
     @cache_control.setter
@@ -234,9 +174,6 @@ class _PathAnalysiState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -246,9 +183,6 @@ class _PathAnalysiState:
     @property
     @pulumi.getter(name="destinationEndpoint")
     def destination_endpoint(self) -> Optional[pulumi.Input['PathAnalysiDestinationEndpointArgs']]:
-        """
-        Information describing a source or destination in a `PathAnalyzerTest` resource.
-        """
         return pulumi.get(self, "destination_endpoint")
 
     @destination_endpoint.setter
@@ -258,9 +192,6 @@ class _PathAnalysiState:
     @property
     @pulumi.getter(name="pathAnalyzerTestId")
     def path_analyzer_test_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `PathAnalyzerTest` resource.
-        """
         return pulumi.get(self, "path_analyzer_test_id")
 
     @path_analyzer_test_id.setter
@@ -270,9 +201,6 @@ class _PathAnalysiState:
     @property
     @pulumi.getter
     def protocol(self) -> Optional[pulumi.Input[int]]:
-        """
-        The IP protocol to used for the path analysis.
-        """
         return pulumi.get(self, "protocol")
 
     @protocol.setter
@@ -282,9 +210,6 @@ class _PathAnalysiState:
     @property
     @pulumi.getter(name="protocolParameters")
     def protocol_parameters(self) -> Optional[pulumi.Input['PathAnalysiProtocolParametersArgs']]:
-        """
-        Defines the IP protocol parameters for a `PathAnalyzerTest` resource.
-        """
         return pulumi.get(self, "protocol_parameters")
 
     @protocol_parameters.setter
@@ -294,9 +219,6 @@ class _PathAnalysiState:
     @property
     @pulumi.getter(name="queryOptions")
     def query_options(self) -> Optional[pulumi.Input['PathAnalysiQueryOptionsArgs']]:
-        """
-        Defines the query options required for a `PathAnalyzerTest` resource.
-        """
         return pulumi.get(self, "query_options")
 
     @query_options.setter
@@ -306,9 +228,6 @@ class _PathAnalysiState:
     @property
     @pulumi.getter(name="sourceEndpoint")
     def source_endpoint(self) -> Optional[pulumi.Input['PathAnalysiSourceEndpointArgs']]:
-        """
-        Information describing a source or destination in a `PathAnalyzerTest` resource.
-        """
         return pulumi.get(self, "source_endpoint")
 
     @source_endpoint.setter
@@ -318,13 +237,6 @@ class _PathAnalysiState:
     @property
     @pulumi.getter
     def type(self) -> Optional[pulumi.Input[str]]:
-        """
-        The type of the `PathAnalysis` query.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "type")
 
     @type.setter
@@ -348,86 +260,9 @@ class PathAnalysi(pulumi.CustomResource):
                  type: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Path Analysi resource in Oracle Cloud Infrastructure Vn Monitoring service.
-
-        Use this method to initiate a [Network Path Analyzer](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/path_analyzer.htm) analysis. This method returns
-        an opc-work-request-id, and you can poll the status of the work request until it either fails or succeeds.
-
-        If the work request status is successful, use [ListWorkRequestResults](https://docs.cloud.oracle.com/iaas/api/#/en/VnConfigAdvisor/latest/WorkRequestResult/ListWorkRequestResults)
-        with the work request ID to ask for the successful analysis results. If the work request status is failed, use
-        [ListWorkRequestErrors](https://docs.cloud.oracle.com/iaas/api/#/en/VnConfigAdvisor/latest/WorkRequestError/ListWorkRequestErrors)
-        with the work request ID to ask for the analysis failure information. The information
-        returned from either of these methods can be used to build a final report.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_path_analysi = oci.vn_monitoring.PathAnalysi("testPathAnalysi",
-            type=var["path_analysi_type"],
-            cache_control=var["path_analysi_cache_control"],
-            compartment_id=var["compartment_id"],
-            destination_endpoint=oci.vn_monitoring.PathAnalysiDestinationEndpointArgs(
-                type=var["path_analysi_destination_endpoint_type"],
-                address=var["path_analysi_destination_endpoint_address"],
-                instance_id=oci_core_instance["test_instance"]["id"],
-                listener_id=oci_load_balancer_listener["test_listener"]["id"],
-                load_balancer_id=oci_load_balancer_load_balancer["test_load_balancer"]["id"],
-                network_load_balancer_id=oci_network_load_balancer_network_load_balancer["test_network_load_balancer"]["id"],
-                subnet_id=oci_core_subnet["test_subnet"]["id"],
-                vlan_id=oci_core_vlan["test_vlan"]["id"],
-                vnic_id=oci_core_vnic_attachment["test_vnic_attachment"]["id"],
-            ),
-            path_analyzer_test_id=oci_vn_monitoring_path_analyzer_test["test_path_analyzer_test"]["id"],
-            protocol=var["path_analysi_protocol"],
-            protocol_parameters=oci.vn_monitoring.PathAnalysiProtocolParametersArgs(
-                type=var["path_analysi_protocol_parameters_type"],
-                destination_port=var["path_analysi_protocol_parameters_destination_port"],
-                icmp_code=var["path_analysi_protocol_parameters_icmp_code"],
-                icmp_type=var["path_analysi_protocol_parameters_icmp_type"],
-                source_port=var["path_analysi_protocol_parameters_source_port"],
-            ),
-            query_options=oci.vn_monitoring.PathAnalysiQueryOptionsArgs(
-                is_bi_directional_analysis=var["path_analysi_query_options_is_bi_directional_analysis"],
-            ),
-            source_endpoint=oci.vn_monitoring.PathAnalysiSourceEndpointArgs(
-                type=var["path_analysi_source_endpoint_type"],
-                address=var["path_analysi_source_endpoint_address"],
-                instance_id=oci_core_instance["test_instance"]["id"],
-                listener_id=oci_load_balancer_listener["test_listener"]["id"],
-                load_balancer_id=oci_load_balancer_load_balancer["test_load_balancer"]["id"],
-                network_load_balancer_id=oci_network_load_balancer_network_load_balancer["test_network_load_balancer"]["id"],
-                subnet_id=oci_core_subnet["test_subnet"]["id"],
-                vlan_id=oci_core_vlan["test_vlan"]["id"],
-                vnic_id=oci_core_vnic_attachment["test_vnic_attachment"]["id"],
-            ))
-        ```
-
-        ## Import
-
-        PathAnalysis can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:VnMonitoring/pathAnalysi:PathAnalysi test_path_analysi "id"
-        ```
-
+        Create a PathAnalysi resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] cache_control: The Cache-Control HTTP header holds directives (instructions) for caching in both requests and responses.
-        :param pulumi.Input[str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the compartment.
-        :param pulumi.Input[pulumi.InputType['PathAnalysiDestinationEndpointArgs']] destination_endpoint: Information describing a source or destination in a `PathAnalyzerTest` resource.
-        :param pulumi.Input[str] path_analyzer_test_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `PathAnalyzerTest` resource.
-        :param pulumi.Input[int] protocol: The IP protocol to used for the path analysis.
-        :param pulumi.Input[pulumi.InputType['PathAnalysiProtocolParametersArgs']] protocol_parameters: Defines the IP protocol parameters for a `PathAnalyzerTest` resource.
-        :param pulumi.Input[pulumi.InputType['PathAnalysiQueryOptionsArgs']] query_options: Defines the query options required for a `PathAnalyzerTest` resource.
-        :param pulumi.Input[pulumi.InputType['PathAnalysiSourceEndpointArgs']] source_endpoint: Information describing a source or destination in a `PathAnalyzerTest` resource.
-        :param pulumi.Input[str] type: The type of the `PathAnalysis` query.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -436,71 +271,7 @@ class PathAnalysi(pulumi.CustomResource):
                  args: PathAnalysiArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Path Analysi resource in Oracle Cloud Infrastructure Vn Monitoring service.
-
-        Use this method to initiate a [Network Path Analyzer](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/path_analyzer.htm) analysis. This method returns
-        an opc-work-request-id, and you can poll the status of the work request until it either fails or succeeds.
-
-        If the work request status is successful, use [ListWorkRequestResults](https://docs.cloud.oracle.com/iaas/api/#/en/VnConfigAdvisor/latest/WorkRequestResult/ListWorkRequestResults)
-        with the work request ID to ask for the successful analysis results. If the work request status is failed, use
-        [ListWorkRequestErrors](https://docs.cloud.oracle.com/iaas/api/#/en/VnConfigAdvisor/latest/WorkRequestError/ListWorkRequestErrors)
-        with the work request ID to ask for the analysis failure information. The information
-        returned from either of these methods can be used to build a final report.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_path_analysi = oci.vn_monitoring.PathAnalysi("testPathAnalysi",
-            type=var["path_analysi_type"],
-            cache_control=var["path_analysi_cache_control"],
-            compartment_id=var["compartment_id"],
-            destination_endpoint=oci.vn_monitoring.PathAnalysiDestinationEndpointArgs(
-                type=var["path_analysi_destination_endpoint_type"],
-                address=var["path_analysi_destination_endpoint_address"],
-                instance_id=oci_core_instance["test_instance"]["id"],
-                listener_id=oci_load_balancer_listener["test_listener"]["id"],
-                load_balancer_id=oci_load_balancer_load_balancer["test_load_balancer"]["id"],
-                network_load_balancer_id=oci_network_load_balancer_network_load_balancer["test_network_load_balancer"]["id"],
-                subnet_id=oci_core_subnet["test_subnet"]["id"],
-                vlan_id=oci_core_vlan["test_vlan"]["id"],
-                vnic_id=oci_core_vnic_attachment["test_vnic_attachment"]["id"],
-            ),
-            path_analyzer_test_id=oci_vn_monitoring_path_analyzer_test["test_path_analyzer_test"]["id"],
-            protocol=var["path_analysi_protocol"],
-            protocol_parameters=oci.vn_monitoring.PathAnalysiProtocolParametersArgs(
-                type=var["path_analysi_protocol_parameters_type"],
-                destination_port=var["path_analysi_protocol_parameters_destination_port"],
-                icmp_code=var["path_analysi_protocol_parameters_icmp_code"],
-                icmp_type=var["path_analysi_protocol_parameters_icmp_type"],
-                source_port=var["path_analysi_protocol_parameters_source_port"],
-            ),
-            query_options=oci.vn_monitoring.PathAnalysiQueryOptionsArgs(
-                is_bi_directional_analysis=var["path_analysi_query_options_is_bi_directional_analysis"],
-            ),
-            source_endpoint=oci.vn_monitoring.PathAnalysiSourceEndpointArgs(
-                type=var["path_analysi_source_endpoint_type"],
-                address=var["path_analysi_source_endpoint_address"],
-                instance_id=oci_core_instance["test_instance"]["id"],
-                listener_id=oci_load_balancer_listener["test_listener"]["id"],
-                load_balancer_id=oci_load_balancer_load_balancer["test_load_balancer"]["id"],
-                network_load_balancer_id=oci_network_load_balancer_network_load_balancer["test_network_load_balancer"]["id"],
-                subnet_id=oci_core_subnet["test_subnet"]["id"],
-                vlan_id=oci_core_vlan["test_vlan"]["id"],
-                vnic_id=oci_core_vnic_attachment["test_vnic_attachment"]["id"],
-            ))
-        ```
-
-        ## Import
-
-        PathAnalysis can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:VnMonitoring/pathAnalysi:PathAnalysi test_path_analysi "id"
-        ```
-
+        Create a PathAnalysi resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param PathAnalysiArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -571,19 +342,6 @@ class PathAnalysi(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] cache_control: The Cache-Control HTTP header holds directives (instructions) for caching in both requests and responses.
-        :param pulumi.Input[str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the compartment.
-        :param pulumi.Input[pulumi.InputType['PathAnalysiDestinationEndpointArgs']] destination_endpoint: Information describing a source or destination in a `PathAnalyzerTest` resource.
-        :param pulumi.Input[str] path_analyzer_test_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `PathAnalyzerTest` resource.
-        :param pulumi.Input[int] protocol: The IP protocol to used for the path analysis.
-        :param pulumi.Input[pulumi.InputType['PathAnalysiProtocolParametersArgs']] protocol_parameters: Defines the IP protocol parameters for a `PathAnalyzerTest` resource.
-        :param pulumi.Input[pulumi.InputType['PathAnalysiQueryOptionsArgs']] query_options: Defines the query options required for a `PathAnalyzerTest` resource.
-        :param pulumi.Input[pulumi.InputType['PathAnalysiSourceEndpointArgs']] source_endpoint: Information describing a source or destination in a `PathAnalyzerTest` resource.
-        :param pulumi.Input[str] type: The type of the `PathAnalysis` query.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -602,77 +360,46 @@ class PathAnalysi(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="cacheControl")
-    def cache_control(self) -> pulumi.Output[str]:
-        """
-        The Cache-Control HTTP header holds directives (instructions) for caching in both requests and responses.
-        """
+    def cache_control(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "cache_control")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> pulumi.Output[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the compartment.
-        """
+    def compartment_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="destinationEndpoint")
-    def destination_endpoint(self) -> pulumi.Output['outputs.PathAnalysiDestinationEndpoint']:
-        """
-        Information describing a source or destination in a `PathAnalyzerTest` resource.
-        """
+    def destination_endpoint(self) -> pulumi.Output[Optional['outputs.PathAnalysiDestinationEndpoint']]:
         return pulumi.get(self, "destination_endpoint")
 
     @property
     @pulumi.getter(name="pathAnalyzerTestId")
-    def path_analyzer_test_id(self) -> pulumi.Output[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `PathAnalyzerTest` resource.
-        """
+    def path_analyzer_test_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "path_analyzer_test_id")
 
     @property
     @pulumi.getter
-    def protocol(self) -> pulumi.Output[int]:
-        """
-        The IP protocol to used for the path analysis.
-        """
+    def protocol(self) -> pulumi.Output[Optional[int]]:
         return pulumi.get(self, "protocol")
 
     @property
     @pulumi.getter(name="protocolParameters")
-    def protocol_parameters(self) -> pulumi.Output['outputs.PathAnalysiProtocolParameters']:
-        """
-        Defines the IP protocol parameters for a `PathAnalyzerTest` resource.
-        """
+    def protocol_parameters(self) -> pulumi.Output[Optional['outputs.PathAnalysiProtocolParameters']]:
         return pulumi.get(self, "protocol_parameters")
 
     @property
     @pulumi.getter(name="queryOptions")
-    def query_options(self) -> pulumi.Output['outputs.PathAnalysiQueryOptions']:
-        """
-        Defines the query options required for a `PathAnalyzerTest` resource.
-        """
+    def query_options(self) -> pulumi.Output[Optional['outputs.PathAnalysiQueryOptions']]:
         return pulumi.get(self, "query_options")
 
     @property
     @pulumi.getter(name="sourceEndpoint")
-    def source_endpoint(self) -> pulumi.Output['outputs.PathAnalysiSourceEndpoint']:
-        """
-        Information describing a source or destination in a `PathAnalyzerTest` resource.
-        """
+    def source_endpoint(self) -> pulumi.Output[Optional['outputs.PathAnalysiSourceEndpoint']]:
         return pulumi.get(self, "source_endpoint")
 
     @property
     @pulumi.getter
     def type(self) -> pulumi.Output[str]:
-        """
-        The type of the `PathAnalysis` query.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "type")
 

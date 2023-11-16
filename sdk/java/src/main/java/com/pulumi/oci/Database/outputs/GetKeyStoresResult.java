@@ -9,6 +9,7 @@ import com.pulumi.oci.Database.outputs.GetKeyStoresKeyStore;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 @CustomType
@@ -23,12 +24,12 @@ public final class GetKeyStoresResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The list of key_stores.
      * 
      */
-    private List<GetKeyStoresKeyStore> keyStores;
+    private @Nullable List<GetKeyStoresKeyStore> keyStores;
 
     private GetKeyStoresResult() {}
     /**
@@ -45,15 +46,15 @@ public final class GetKeyStoresResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The list of key_stores.
      * 
      */
     public List<GetKeyStoresKeyStore> keyStores() {
-        return this.keyStores;
+        return this.keyStores == null ? List.of() : this.keyStores;
     }
 
     public static Builder builder() {
@@ -67,8 +68,8 @@ public final class GetKeyStoresResult {
     public static final class Builder {
         private String compartmentId;
         private @Nullable List<GetKeyStoresFilter> filters;
-        private String id;
-        private List<GetKeyStoresKeyStore> keyStores;
+        private @Nullable String id;
+        private @Nullable List<GetKeyStoresKeyStore> keyStores;
         public Builder() {}
         public Builder(GetKeyStoresResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -92,13 +93,13 @@ public final class GetKeyStoresResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder keyStores(List<GetKeyStoresKeyStore> keyStores) {
-            this.keyStores = Objects.requireNonNull(keyStores);
+        public Builder keyStores(@Nullable List<GetKeyStoresKeyStore> keyStores) {
+            this.keyStores = keyStores;
             return this;
         }
         public Builder keyStores(GetKeyStoresKeyStore... keyStores) {

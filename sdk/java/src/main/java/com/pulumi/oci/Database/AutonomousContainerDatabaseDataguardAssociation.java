@@ -13,6 +13,7 @@ import com.pulumi.oci.Utilities;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -36,28 +37,28 @@ public class AutonomousContainerDatabaseDataguardAssociation extends com.pulumi.
      * 
      */
     @Export(name="applyLag", refs={String.class}, tree="[0]")
-    private Output<String> applyLag;
+    private Output</* @Nullable */ String> applyLag;
 
     /**
      * @return The lag time between updates to the primary Autonomous Container Database and application of the redo data on the standby Autonomous Container Database, as computed by the reporting database.  Example: `9 seconds`
      * 
      */
-    public Output<String> applyLag() {
-        return this.applyLag;
+    public Output<Optional<String>> applyLag() {
+        return Codegen.optional(this.applyLag);
     }
     /**
      * The rate at which redo logs are synchronized between the associated Autonomous Container Databases.  Example: `180 Mb per second`
      * 
      */
     @Export(name="applyRate", refs={String.class}, tree="[0]")
-    private Output<String> applyRate;
+    private Output</* @Nullable */ String> applyRate;
 
     /**
      * @return The rate at which redo logs are synchronized between the associated Autonomous Container Databases.  Example: `180 Mb per second`
      * 
      */
-    public Output<String> applyRate() {
-        return this.applyRate;
+    public Output<Optional<String>> applyRate() {
+        return Codegen.optional(this.applyRate);
     }
     /**
      * The Autonomous Container Database-Autonomous Data Guard association [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -92,98 +93,98 @@ public class AutonomousContainerDatabaseDataguardAssociation extends com.pulumi.
      * 
      */
     @Export(name="fastStartFailOverLagLimitInSeconds", refs={Integer.class}, tree="[0]")
-    private Output<Integer> fastStartFailOverLagLimitInSeconds;
+    private Output</* @Nullable */ Integer> fastStartFailOverLagLimitInSeconds;
 
     /**
      * @return (Updatable) The lag time for my preference based on data loss tolerance in seconds.
      * 
      */
-    public Output<Integer> fastStartFailOverLagLimitInSeconds() {
-        return this.fastStartFailOverLagLimitInSeconds;
+    public Output<Optional<Integer>> fastStartFailOverLagLimitInSeconds() {
+        return Codegen.optional(this.fastStartFailOverLagLimitInSeconds);
     }
     /**
      * (Updatable) Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : `is_automatic_failover_enabled = true`.
      * 
      */
     @Export(name="isAutomaticFailoverEnabled", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isAutomaticFailoverEnabled;
+    private Output</* @Nullable */ Boolean> isAutomaticFailoverEnabled;
 
     /**
      * @return (Updatable) Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : `is_automatic_failover_enabled = true`.
      * 
      */
-    public Output<Boolean> isAutomaticFailoverEnabled() {
-        return this.isAutomaticFailoverEnabled;
+    public Output<Optional<Boolean>> isAutomaticFailoverEnabled() {
+        return Codegen.optional(this.isAutomaticFailoverEnabled);
     }
     /**
      * Additional information about the current lifecycleState, if available.
      * 
      */
     @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
-    private Output<String> lifecycleDetails;
+    private Output</* @Nullable */ String> lifecycleDetails;
 
     /**
      * @return Additional information about the current lifecycleState, if available.
      * 
      */
-    public Output<String> lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Output<Optional<String>> lifecycleDetails() {
+        return Codegen.optional(this.lifecycleDetails);
     }
     /**
      * The OCID of the peer Autonomous Container Database-Autonomous Data Guard association.
      * 
      */
     @Export(name="peerAutonomousContainerDatabaseDataguardAssociationId", refs={String.class}, tree="[0]")
-    private Output<String> peerAutonomousContainerDatabaseDataguardAssociationId;
+    private Output</* @Nullable */ String> peerAutonomousContainerDatabaseDataguardAssociationId;
 
     /**
      * @return The OCID of the peer Autonomous Container Database-Autonomous Data Guard association.
      * 
      */
-    public Output<String> peerAutonomousContainerDatabaseDataguardAssociationId() {
-        return this.peerAutonomousContainerDatabaseDataguardAssociationId;
+    public Output<Optional<String>> peerAutonomousContainerDatabaseDataguardAssociationId() {
+        return Codegen.optional(this.peerAutonomousContainerDatabaseDataguardAssociationId);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer Autonomous Container Database.
      * 
      */
     @Export(name="peerAutonomousContainerDatabaseId", refs={String.class}, tree="[0]")
-    private Output<String> peerAutonomousContainerDatabaseId;
+    private Output</* @Nullable */ String> peerAutonomousContainerDatabaseId;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer Autonomous Container Database.
      * 
      */
-    public Output<String> peerAutonomousContainerDatabaseId() {
-        return this.peerAutonomousContainerDatabaseId;
+    public Output<Optional<String>> peerAutonomousContainerDatabaseId() {
+        return Codegen.optional(this.peerAutonomousContainerDatabaseId);
     }
     /**
      * The current state of Autonomous Data Guard.
      * 
      */
     @Export(name="peerLifecycleState", refs={String.class}, tree="[0]")
-    private Output<String> peerLifecycleState;
+    private Output</* @Nullable */ String> peerLifecycleState;
 
     /**
      * @return The current state of Autonomous Data Guard.
      * 
      */
-    public Output<String> peerLifecycleState() {
-        return this.peerLifecycleState;
+    public Output<Optional<String>> peerLifecycleState() {
+        return Codegen.optional(this.peerLifecycleState);
     }
     /**
      * The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
      * 
      */
     @Export(name="peerRole", refs={String.class}, tree="[0]")
-    private Output<String> peerRole;
+    private Output</* @Nullable */ String> peerRole;
 
     /**
      * @return The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
      * 
      */
-    public Output<String> peerRole() {
-        return this.peerRole;
+    public Output<Optional<String>> peerRole() {
+        return Codegen.optional(this.peerRole);
     }
     /**
      * (Updatable) The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
@@ -193,7 +194,7 @@ public class AutonomousContainerDatabaseDataguardAssociation extends com.pulumi.
      * 
      */
     @Export(name="protectionMode", refs={String.class}, tree="[0]")
-    private Output<String> protectionMode;
+    private Output</* @Nullable */ String> protectionMode;
 
     /**
      * @return (Updatable) The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
@@ -202,92 +203,92 @@ public class AutonomousContainerDatabaseDataguardAssociation extends com.pulumi.
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Output<String> protectionMode() {
-        return this.protectionMode;
+    public Output<Optional<String>> protectionMode() {
+        return Codegen.optional(this.protectionMode);
     }
     /**
      * The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
      * 
      */
     @Export(name="role", refs={String.class}, tree="[0]")
-    private Output<String> role;
+    private Output</* @Nullable */ String> role;
 
     /**
      * @return The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
      * 
      */
-    public Output<String> role() {
-        return this.role;
+    public Output<Optional<String>> role() {
+        return Codegen.optional(this.role);
     }
     /**
      * The current state of Autonomous Data Guard.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The current state of Autonomous Data Guard.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * The date and time the Autonomous DataGuard association was created.
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The date and time the Autonomous DataGuard association was created.
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * The date and time when the last role change action happened.
      * 
      */
     @Export(name="timeLastRoleChanged", refs={String.class}, tree="[0]")
-    private Output<String> timeLastRoleChanged;
+    private Output</* @Nullable */ String> timeLastRoleChanged;
 
     /**
      * @return The date and time when the last role change action happened.
      * 
      */
-    public Output<String> timeLastRoleChanged() {
-        return this.timeLastRoleChanged;
+    public Output<Optional<String>> timeLastRoleChanged() {
+        return Codegen.optional(this.timeLastRoleChanged);
     }
     /**
      * The date and time of the last update to the apply lag, apply rate, and transport lag values.
      * 
      */
     @Export(name="timeLastSynced", refs={String.class}, tree="[0]")
-    private Output<String> timeLastSynced;
+    private Output</* @Nullable */ String> timeLastSynced;
 
     /**
      * @return The date and time of the last update to the apply lag, apply rate, and transport lag values.
      * 
      */
-    public Output<String> timeLastSynced() {
-        return this.timeLastSynced;
+    public Output<Optional<String>> timeLastSynced() {
+        return Codegen.optional(this.timeLastSynced);
     }
     /**
      * The approximate number of seconds of redo data not yet available on the standby Autonomous Container Database, as computed by the reporting database.  Example: `7 seconds`
      * 
      */
     @Export(name="transportLag", refs={String.class}, tree="[0]")
-    private Output<String> transportLag;
+    private Output</* @Nullable */ String> transportLag;
 
     /**
      * @return The approximate number of seconds of redo data not yet available on the standby Autonomous Container Database, as computed by the reporting database.  Example: `7 seconds`
      * 
      */
-    public Output<String> transportLag() {
-        return this.transportLag;
+    public Output<Optional<String>> transportLag() {
+        return Codegen.optional(this.transportLag);
     }
 
     /**

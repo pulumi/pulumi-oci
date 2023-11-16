@@ -31,13 +31,13 @@ public final class GetRepositoryCommitsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private @Nullable String refName;
     /**
      * @return The list of repository_commit_collection.
      * 
      */
-    private List<GetRepositoryCommitsRepositoryCommitCollection> repositoryCommitCollections;
+    private @Nullable List<GetRepositoryCommitsRepositoryCommitCollection> repositoryCommitCollections;
     private String repositoryId;
     private @Nullable String timestampGreaterThanOrEqualTo;
     private @Nullable String timestampLessThanOrEqualTo;
@@ -70,8 +70,8 @@ public final class GetRepositoryCommitsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public Optional<String> refName() {
         return Optional.ofNullable(this.refName);
@@ -81,7 +81,7 @@ public final class GetRepositoryCommitsResult {
      * 
      */
     public List<GetRepositoryCommitsRepositoryCommitCollection> repositoryCommitCollections() {
-        return this.repositoryCommitCollections;
+        return this.repositoryCommitCollections == null ? List.of() : this.repositoryCommitCollections;
     }
     public String repositoryId() {
         return this.repositoryId;
@@ -107,9 +107,9 @@ public final class GetRepositoryCommitsResult {
         private @Nullable String excludeRefName;
         private @Nullable String filePath;
         private @Nullable List<GetRepositoryCommitsFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String refName;
-        private List<GetRepositoryCommitsRepositoryCommitCollection> repositoryCommitCollections;
+        private @Nullable List<GetRepositoryCommitsRepositoryCommitCollection> repositoryCommitCollections;
         private String repositoryId;
         private @Nullable String timestampGreaterThanOrEqualTo;
         private @Nullable String timestampLessThanOrEqualTo;
@@ -158,8 +158,8 @@ public final class GetRepositoryCommitsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -168,8 +168,8 @@ public final class GetRepositoryCommitsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder repositoryCommitCollections(List<GetRepositoryCommitsRepositoryCommitCollection> repositoryCommitCollections) {
-            this.repositoryCommitCollections = Objects.requireNonNull(repositoryCommitCollections);
+        public Builder repositoryCommitCollections(@Nullable List<GetRepositoryCommitsRepositoryCommitCollection> repositoryCommitCollections) {
+            this.repositoryCommitCollections = repositoryCommitCollections;
             return this;
         }
         public Builder repositoryCommitCollections(GetRepositoryCommitsRepositoryCommitCollection... repositoryCommitCollections) {

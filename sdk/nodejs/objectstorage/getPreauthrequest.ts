@@ -57,11 +57,11 @@ export interface GetPreauthrequestResult {
     /**
      * The operation that can be performed on this resource.
      */
-    readonly accessType: string;
+    readonly accessType?: string;
     /**
      * The URI to embed in the URL when using the pre-authenticated request.
      */
-    readonly accessUri: string;
+    readonly accessUri?: string;
     /**
      * The name of the bucket.  Example: `my-new-bucket1`
      */
@@ -69,16 +69,16 @@ export interface GetPreauthrequestResult {
     /**
      * Specifies whether a list operation is allowed on a PAR with accessType "AnyObjectRead" or "AnyObjectReadWrite". Deny: Prevents the user from performing a list operation. ListObjects: Authorizes the user to perform a list operation.
      */
-    readonly bucketListingAction: string;
-    readonly fullPath: string;
+    readonly bucketListingAction?: string;
+    readonly fullPath?: string;
     /**
      * The unique identifier to use when directly addressing the pre-authenticated request.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The user-provided name of the pre-authenticated request.
      */
-    readonly name: string;
+    readonly name?: string;
     /**
      * The Object Storage namespace used for the request.
      */
@@ -88,20 +88,20 @@ export interface GetPreauthrequestResult {
      *
      * @deprecated The 'object' field has been deprecated. Please use 'object_name' instead.
      */
-    readonly object: string;
+    readonly object?: string;
     /**
      * The name of the object that is being granted access to by the pre-authenticated request. Avoid entering confidential information. The object name can be null and if so, the pre-authenticated request grants access to the entire bucket. Example: test/object1.log
      */
-    readonly objectName: string;
+    readonly objectName?: string;
     readonly parId: string;
     /**
      * The date when the pre-authenticated request was created as per specification [RFC 3339](https://tools.ietf.org/html/rfc3339).
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The expiration date for the pre-authenticated request as per [RFC 3339](https://tools.ietf.org/html/rfc3339). After this date the pre-authenticated request will no longer be valid.
      */
-    readonly timeExpires: string;
+    readonly timeExpires?: string;
 }
 /**
  * This data source provides details about a specific Preauthenticated Request resource in Oracle Cloud Infrastructure Object Storage service.

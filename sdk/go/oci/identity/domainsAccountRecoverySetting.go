@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Account Recovery Setting resource in Oracle Cloud Infrastructure Identity Domains service.
@@ -48,7 +47,7 @@ type DomainsAccountRecoverySetting struct {
 	// * returned: default
 	// * type: string
 	// * uniqueness: none
-	CompartmentOcid pulumi.StringOutput `pulumi:"compartmentOcid"`
+	CompartmentOcid pulumi.StringPtrOutput `pulumi:"compartmentOcid"`
 	// (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
 	//
 	// **SCIM++ Properties:**
@@ -60,7 +59,7 @@ type DomainsAccountRecoverySetting struct {
 	// * returned: default
 	// * type: boolean
 	// * uniqueness: none
-	DeleteInProgress pulumi.BoolOutput `pulumi:"deleteInProgress"`
+	DeleteInProgress pulumi.BoolPtrOutput `pulumi:"deleteInProgress"`
 	// (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
 	//
 	// **SCIM++ Properties:**
@@ -72,7 +71,7 @@ type DomainsAccountRecoverySetting struct {
 	// * returned: default
 	// * type: string
 	// * uniqueness: none
-	DomainOcid pulumi.StringOutput `pulumi:"domainOcid"`
+	DomainOcid pulumi.StringPtrOutput `pulumi:"domainOcid"`
 	// (Updatable) An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer's tenant.
 	//
 	// **SCIM++ Properties:**
@@ -83,7 +82,7 @@ type DomainsAccountRecoverySetting struct {
 	// * returned: default
 	// * type: string
 	// * uniqueness: none
-	ExternalId pulumi.StringOutput `pulumi:"externalId"`
+	ExternalId pulumi.StringPtrOutput `pulumi:"externalId"`
 	// (Updatable) The account recovery factor used (for example, email, mobile number (SMS), security questions, mobile application push or TOTP) to verify the identity of the user and reset the user's password.
 	//
 	// **SCIM++ Properties:**
@@ -129,7 +128,7 @@ type DomainsAccountRecoverySetting struct {
 	// * returned: request
 	// * type: string
 	// * uniqueness: none
-	IdcsLastUpgradedInRelease pulumi.StringOutput `pulumi:"idcsLastUpgradedInRelease"`
+	IdcsLastUpgradedInRelease pulumi.StringPtrOutput `pulumi:"idcsLastUpgradedInRelease"`
 	// (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
 	//
 	// **SCIM++ Properties:**
@@ -190,7 +189,7 @@ type DomainsAccountRecoverySetting struct {
 	// * returned: default
 	// * type: string
 	// * uniqueness: global
-	Ocid pulumi.StringOutput `pulumi:"ocid"`
+	Ocid pulumi.StringPtrOutput `pulumi:"ocid"`
 	// (Updatable) An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
 	ResourceTypeSchemaVersion pulumi.StringPtrOutput `pulumi:"resourceTypeSchemaVersion"`
 	// (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
@@ -231,7 +230,7 @@ type DomainsAccountRecoverySetting struct {
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	TenancyOcid pulumi.StringOutput `pulumi:"tenancyOcid"`
+	TenancyOcid pulumi.StringPtrOutput `pulumi:"tenancyOcid"`
 }
 
 // NewDomainsAccountRecoverySetting registers a new resource with the given unique name, arguments, and options.
@@ -921,12 +920,6 @@ func (i *DomainsAccountRecoverySetting) ToDomainsAccountRecoverySettingOutputWit
 	return pulumi.ToOutputWithContext(ctx, i).(DomainsAccountRecoverySettingOutput)
 }
 
-func (i *DomainsAccountRecoverySetting) ToOutput(ctx context.Context) pulumix.Output[*DomainsAccountRecoverySetting] {
-	return pulumix.Output[*DomainsAccountRecoverySetting]{
-		OutputState: i.ToDomainsAccountRecoverySettingOutputWithContext(ctx).OutputState,
-	}
-}
-
 // DomainsAccountRecoverySettingArrayInput is an input type that accepts DomainsAccountRecoverySettingArray and DomainsAccountRecoverySettingArrayOutput values.
 // You can construct a concrete instance of `DomainsAccountRecoverySettingArrayInput` via:
 //
@@ -950,12 +943,6 @@ func (i DomainsAccountRecoverySettingArray) ToDomainsAccountRecoverySettingArray
 
 func (i DomainsAccountRecoverySettingArray) ToDomainsAccountRecoverySettingArrayOutputWithContext(ctx context.Context) DomainsAccountRecoverySettingArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(DomainsAccountRecoverySettingArrayOutput)
-}
-
-func (i DomainsAccountRecoverySettingArray) ToOutput(ctx context.Context) pulumix.Output[[]*DomainsAccountRecoverySetting] {
-	return pulumix.Output[[]*DomainsAccountRecoverySetting]{
-		OutputState: i.ToDomainsAccountRecoverySettingArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // DomainsAccountRecoverySettingMapInput is an input type that accepts DomainsAccountRecoverySettingMap and DomainsAccountRecoverySettingMapOutput values.
@@ -983,12 +970,6 @@ func (i DomainsAccountRecoverySettingMap) ToDomainsAccountRecoverySettingMapOutp
 	return pulumi.ToOutputWithContext(ctx, i).(DomainsAccountRecoverySettingMapOutput)
 }
 
-func (i DomainsAccountRecoverySettingMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*DomainsAccountRecoverySetting] {
-	return pulumix.Output[map[string]*DomainsAccountRecoverySetting]{
-		OutputState: i.ToDomainsAccountRecoverySettingMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DomainsAccountRecoverySettingOutput struct{ *pulumi.OutputState }
 
 func (DomainsAccountRecoverySettingOutput) ElementType() reflect.Type {
@@ -1001,12 +982,6 @@ func (o DomainsAccountRecoverySettingOutput) ToDomainsAccountRecoverySettingOutp
 
 func (o DomainsAccountRecoverySettingOutput) ToDomainsAccountRecoverySettingOutputWithContext(ctx context.Context) DomainsAccountRecoverySettingOutput {
 	return o
-}
-
-func (o DomainsAccountRecoverySettingOutput) ToOutput(ctx context.Context) pulumix.Output[*DomainsAccountRecoverySetting] {
-	return pulumix.Output[*DomainsAccountRecoverySetting]{
-		OutputState: o.OutputState,
-	}
 }
 
 // ID of the resource
@@ -1040,8 +1015,8 @@ func (o DomainsAccountRecoverySettingOutput) Authorization() pulumi.StringPtrOut
 // * returned: default
 // * type: string
 // * uniqueness: none
-func (o DomainsAccountRecoverySettingOutput) CompartmentOcid() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsAccountRecoverySetting) pulumi.StringOutput { return v.CompartmentOcid }).(pulumi.StringOutput)
+func (o DomainsAccountRecoverySettingOutput) CompartmentOcid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsAccountRecoverySetting) pulumi.StringPtrOutput { return v.CompartmentOcid }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
@@ -1055,8 +1030,8 @@ func (o DomainsAccountRecoverySettingOutput) CompartmentOcid() pulumi.StringOutp
 // * returned: default
 // * type: boolean
 // * uniqueness: none
-func (o DomainsAccountRecoverySettingOutput) DeleteInProgress() pulumi.BoolOutput {
-	return o.ApplyT(func(v *DomainsAccountRecoverySetting) pulumi.BoolOutput { return v.DeleteInProgress }).(pulumi.BoolOutput)
+func (o DomainsAccountRecoverySettingOutput) DeleteInProgress() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DomainsAccountRecoverySetting) pulumi.BoolPtrOutput { return v.DeleteInProgress }).(pulumi.BoolPtrOutput)
 }
 
 // (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
@@ -1070,8 +1045,8 @@ func (o DomainsAccountRecoverySettingOutput) DeleteInProgress() pulumi.BoolOutpu
 // * returned: default
 // * type: string
 // * uniqueness: none
-func (o DomainsAccountRecoverySettingOutput) DomainOcid() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsAccountRecoverySetting) pulumi.StringOutput { return v.DomainOcid }).(pulumi.StringOutput)
+func (o DomainsAccountRecoverySettingOutput) DomainOcid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsAccountRecoverySetting) pulumi.StringPtrOutput { return v.DomainOcid }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer's tenant.
@@ -1084,8 +1059,8 @@ func (o DomainsAccountRecoverySettingOutput) DomainOcid() pulumi.StringOutput {
 // * returned: default
 // * type: string
 // * uniqueness: none
-func (o DomainsAccountRecoverySettingOutput) ExternalId() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsAccountRecoverySetting) pulumi.StringOutput { return v.ExternalId }).(pulumi.StringOutput)
+func (o DomainsAccountRecoverySettingOutput) ExternalId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsAccountRecoverySetting) pulumi.StringPtrOutput { return v.ExternalId }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The account recovery factor used (for example, email, mobile number (SMS), security questions, mobile application push or TOTP) to verify the identity of the user and reset the user's password.
@@ -1149,8 +1124,8 @@ func (o DomainsAccountRecoverySettingOutput) IdcsLastModifiedBies() DomainsAccou
 // * returned: request
 // * type: string
 // * uniqueness: none
-func (o DomainsAccountRecoverySettingOutput) IdcsLastUpgradedInRelease() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsAccountRecoverySetting) pulumi.StringOutput { return v.IdcsLastUpgradedInRelease }).(pulumi.StringOutput)
+func (o DomainsAccountRecoverySettingOutput) IdcsLastUpgradedInRelease() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsAccountRecoverySetting) pulumi.StringPtrOutput { return v.IdcsLastUpgradedInRelease }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
@@ -1225,8 +1200,8 @@ func (o DomainsAccountRecoverySettingOutput) Metas() DomainsAccountRecoverySetti
 // * returned: default
 // * type: string
 // * uniqueness: global
-func (o DomainsAccountRecoverySettingOutput) Ocid() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsAccountRecoverySetting) pulumi.StringOutput { return v.Ocid }).(pulumi.StringOutput)
+func (o DomainsAccountRecoverySettingOutput) Ocid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsAccountRecoverySetting) pulumi.StringPtrOutput { return v.Ocid }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
@@ -1278,8 +1253,8 @@ func (o DomainsAccountRecoverySettingOutput) Tags() DomainsAccountRecoverySettin
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-func (o DomainsAccountRecoverySettingOutput) TenancyOcid() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsAccountRecoverySetting) pulumi.StringOutput { return v.TenancyOcid }).(pulumi.StringOutput)
+func (o DomainsAccountRecoverySettingOutput) TenancyOcid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsAccountRecoverySetting) pulumi.StringPtrOutput { return v.TenancyOcid }).(pulumi.StringPtrOutput)
 }
 
 type DomainsAccountRecoverySettingArrayOutput struct{ *pulumi.OutputState }
@@ -1294,12 +1269,6 @@ func (o DomainsAccountRecoverySettingArrayOutput) ToDomainsAccountRecoverySettin
 
 func (o DomainsAccountRecoverySettingArrayOutput) ToDomainsAccountRecoverySettingArrayOutputWithContext(ctx context.Context) DomainsAccountRecoverySettingArrayOutput {
 	return o
-}
-
-func (o DomainsAccountRecoverySettingArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*DomainsAccountRecoverySetting] {
-	return pulumix.Output[[]*DomainsAccountRecoverySetting]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DomainsAccountRecoverySettingArrayOutput) Index(i pulumi.IntInput) DomainsAccountRecoverySettingOutput {
@@ -1320,12 +1289,6 @@ func (o DomainsAccountRecoverySettingMapOutput) ToDomainsAccountRecoverySettingM
 
 func (o DomainsAccountRecoverySettingMapOutput) ToDomainsAccountRecoverySettingMapOutputWithContext(ctx context.Context) DomainsAccountRecoverySettingMapOutput {
 	return o
-}
-
-func (o DomainsAccountRecoverySettingMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*DomainsAccountRecoverySetting] {
-	return pulumix.Output[map[string]*DomainsAccountRecoverySetting]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DomainsAccountRecoverySettingMapOutput) MapIndex(k pulumi.StringInput) DomainsAccountRecoverySettingOutput {

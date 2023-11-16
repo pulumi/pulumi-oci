@@ -63,7 +63,7 @@ namespace Pulumi.Oci.NetworkFirewall
         /// OCID of the Network Firewall Policy this Mapped Secret belongs to.
         /// </summary>
         [Output("parentResourceId")]
-        public Output<string> ParentResourceId { get; private set; } = null!;
+        public Output<string?> ParentResourceId { get; private set; } = null!;
 
         /// <summary>
         /// Source of the secrets, where the secrets are stored. The only accepted value is `OCI_VAULT`

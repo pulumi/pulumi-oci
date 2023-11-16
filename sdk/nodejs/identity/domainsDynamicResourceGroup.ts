@@ -72,7 +72,7 @@ export class DomainsDynamicResourceGroup extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public /*out*/ readonly compartmentOcid!: pulumi.Output<string>;
+    public /*out*/ readonly compartmentOcid!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
      *
@@ -86,7 +86,7 @@ export class DomainsDynamicResourceGroup extends pulumi.CustomResource {
      * * type: boolean
      * * uniqueness: none
      */
-    public /*out*/ readonly deleteInProgress!: pulumi.Output<boolean>;
+    public /*out*/ readonly deleteInProgress!: pulumi.Output<boolean | undefined>;
     /**
      * (Updatable) text that explains the purpose of this Dynamic Resource Group
      *
@@ -102,7 +102,7 @@ export class DomainsDynamicResourceGroup extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly description!: pulumi.Output<string>;
+    public readonly description!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) User-friendly, mutable identifier
      *
@@ -131,7 +131,7 @@ export class DomainsDynamicResourceGroup extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public /*out*/ readonly domainOcid!: pulumi.Output<string>;
+    public /*out*/ readonly domainOcid!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) A list of appRoles that are currently granted to this Dynamic Resource Group.  The Identity service will assert these AppRoles for any resource that satisfies the matching-rule of this DynamicResourceGroup.
      *
@@ -146,7 +146,7 @@ export class DomainsDynamicResourceGroup extends pulumi.CustomResource {
      * * type: complex
      * * uniqueness: none
      */
-    public /*out*/ readonly dynamicGroupAppRoles!: pulumi.Output<outputs.Identity.DomainsDynamicResourceGroupDynamicGroupAppRole[]>;
+    public /*out*/ readonly dynamicGroupAppRoles!: pulumi.Output<outputs.Identity.DomainsDynamicResourceGroupDynamicGroupAppRole[] | undefined>;
     /**
      * (Updatable) Grants assigned to group
      *
@@ -160,7 +160,7 @@ export class DomainsDynamicResourceGroup extends pulumi.CustomResource {
      * * type: complex
      * * uniqueness: none
      */
-    public /*out*/ readonly grants!: pulumi.Output<outputs.Identity.DomainsDynamicResourceGroupGrant[]>;
+    public /*out*/ readonly grants!: pulumi.Output<outputs.Identity.DomainsDynamicResourceGroupGrant[] | undefined>;
     /**
      * (Updatable) The User or App who created the Resource
      *
@@ -172,7 +172,7 @@ export class DomainsDynamicResourceGroup extends pulumi.CustomResource {
      * * returned: default
      * * type: complex
      */
-    public /*out*/ readonly idcsCreatedBies!: pulumi.Output<outputs.Identity.DomainsDynamicResourceGroupIdcsCreatedBy[]>;
+    public /*out*/ readonly idcsCreatedBies!: pulumi.Output<outputs.Identity.DomainsDynamicResourceGroupIdcsCreatedBy[] | undefined>;
     /**
      * The basic endpoint for the identity domain
      */
@@ -188,7 +188,7 @@ export class DomainsDynamicResourceGroup extends pulumi.CustomResource {
      * * returned: default
      * * type: complex
      */
-    public /*out*/ readonly idcsLastModifiedBies!: pulumi.Output<outputs.Identity.DomainsDynamicResourceGroupIdcsLastModifiedBy[]>;
+    public /*out*/ readonly idcsLastModifiedBies!: pulumi.Output<outputs.Identity.DomainsDynamicResourceGroupIdcsLastModifiedBy[] | undefined>;
     /**
      * (Updatable) The release number when the resource was upgraded.
      *
@@ -202,7 +202,7 @@ export class DomainsDynamicResourceGroup extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public /*out*/ readonly idcsLastUpgradedInRelease!: pulumi.Output<string>;
+    public /*out*/ readonly idcsLastUpgradedInRelease!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
      *
@@ -215,7 +215,7 @@ export class DomainsDynamicResourceGroup extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public /*out*/ readonly idcsPreventedOperations!: pulumi.Output<string[]>;
+    public /*out*/ readonly idcsPreventedOperations!: pulumi.Output<string[] | undefined>;
     /**
      * (Updatable) Store as a string the matching-rule for this Dynamic Resource Group. This may match any number of Apps in this Domain, as well as matching any number of Oracle Cloud Infrastructure resources that are not in any Domain but that are in the Oracle Cloud Infrastructure Compartment that contains this Domain.
      *
@@ -242,7 +242,7 @@ export class DomainsDynamicResourceGroup extends pulumi.CustomResource {
      * * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
      * * type: complex
      */
-    public /*out*/ readonly metas!: pulumi.Output<outputs.Identity.DomainsDynamicResourceGroupMeta[]>;
+    public /*out*/ readonly metas!: pulumi.Output<outputs.Identity.DomainsDynamicResourceGroupMeta[] | undefined>;
     /**
      * (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
      *
@@ -256,7 +256,7 @@ export class DomainsDynamicResourceGroup extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: global
      */
-    public readonly ocid!: pulumi.Output<string>;
+    public readonly ocid!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
      */
@@ -288,7 +288,7 @@ export class DomainsDynamicResourceGroup extends pulumi.CustomResource {
      * * type: complex
      * * uniqueness: none
      */
-    public readonly tags!: pulumi.Output<outputs.Identity.DomainsDynamicResourceGroupTag[]>;
+    public readonly tags!: pulumi.Output<outputs.Identity.DomainsDynamicResourceGroupTag[] | undefined>;
     /**
      * (Updatable) Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
      *
@@ -302,11 +302,11 @@ export class DomainsDynamicResourceGroup extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public /*out*/ readonly tenancyOcid!: pulumi.Output<string>;
+    public /*out*/ readonly tenancyOcid!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Oracle Cloud Infrastructure Tags.
      */
-    public readonly urnietfparamsscimschemasoracleidcsextensionOciTags!: pulumi.Output<outputs.Identity.DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTags>;
+    public readonly urnietfparamsscimschemasoracleidcsextensionOciTags!: pulumi.Output<outputs.Identity.DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTags | undefined>;
 
     /**
      * Create a DomainsDynamicResourceGroup resource with the given unique name, arguments, and options.

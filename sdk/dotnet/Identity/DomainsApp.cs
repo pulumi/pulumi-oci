@@ -39,7 +39,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("accessTokenExpiry")]
-        public Output<int> AccessTokenExpiry { get; private set; } = null!;
+        public Output<int?> AccessTokenExpiry { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Accounts of App
@@ -70,7 +70,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("active")]
-        public Output<bool> Active { get; private set; } = null!;
+        public Output<bool?> Active { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) A list of AppRoles defined by this UnmanagedApp. Membership in each of these AppRoles confers administrative privilege within this App.
@@ -117,7 +117,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("allUrlSchemesAllowed")]
-        public Output<bool> AllUrlSchemesAllowed { get; private set; } = null!;
+        public Output<bool?> AllUrlSchemesAllowed { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) If true, any managed App that is based on this template is checked for access control that is, access to this app is subject to successful authorization at SSO service, viz. app grants to start with.
@@ -132,7 +132,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("allowAccessControl")]
-        public Output<bool> AllowAccessControl { get; private set; } = null!;
+        public Output<bool?> AllowAccessControl { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) If true, indicates that the Refresh Token is allowed when this App acts as an OAuth Resource.
@@ -147,7 +147,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("allowOffline")]
-        public Output<bool> AllowOffline { get; private set; } = null!;
+        public Output<bool?> AllowOffline { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) List of grant-types that this App is allowed to use when it acts as an OAuthClient.
@@ -229,7 +229,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("appIcon")]
-        public Output<string> AppIcon { get; private set; } = null!;
+        public Output<string?> AppIcon { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) App Sign-on Policy.
@@ -243,7 +243,7 @@ namespace Pulumi.Oci.Identity
         /// * type: complex
         /// </summary>
         [Output("appSignonPolicy")]
-        public Output<Outputs.DomainsAppAppSignonPolicy> AppSignonPolicy { get; private set; } = null!;
+        public Output<Outputs.DomainsAppAppSignonPolicy?> AppSignonPolicy { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Application thumbnail.
@@ -258,7 +258,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("appThumbnail")]
-        public Output<string> AppThumbnail { get; private set; } = null!;
+        public Output<string?> AppThumbnail { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Network Perimeter
@@ -290,7 +290,7 @@ namespace Pulumi.Oci.Identity
         /// * type: complex
         /// </summary>
         [Output("asOpcService")]
-        public Output<Outputs.DomainsAppAsOpcService> AsOpcService { get; private set; } = null!;
+        public Output<Outputs.DomainsAppAsOpcService?> AsOpcService { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Label for the attribute to be shown in the UI.
@@ -334,7 +334,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("audience")]
-        public Output<string> Audience { get; private set; } = null!;
+        public Output<string?> Audience { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
@@ -372,7 +372,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("bypassConsent")]
-        public Output<bool> BypassConsent { get; private set; } = null!;
+        public Output<bool?> BypassConsent { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Callback Service URL
@@ -388,7 +388,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("callbackServiceUrl")]
-        public Output<string> CallbackServiceUrl { get; private set; } = null!;
+        public Output<string?> CallbackServiceUrl { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Each value of this attribute represent a certificate that this App uses when it acts as an OAuthClient.
@@ -423,7 +423,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("clientIpChecking")]
-        public Output<string> ClientIpChecking { get; private set; } = null!;
+        public Output<string?> ClientIpChecking { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) This value is the credential of this App, which this App supplies as a password when this App authenticates to the Oracle Public Cloud infrastructure. This value is also the client secret of this App when it acts as an OAuthClient.
@@ -440,7 +440,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("clientSecret")]
-        public Output<string> ClientSecret { get; private set; } = null!;
+        public Output<string?> ClientSecret { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Specifies the type of access that this App has when it acts as an OAuthClient.
@@ -456,7 +456,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("clientType")]
-        public Output<string> ClientType { get; private set; } = null!;
+        public Output<string?> ClientType { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) A collection of arbitrary properties that scope the privileges of a cloud-control App.
@@ -490,7 +490,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("compartmentOcid")]
-        public Output<string> CompartmentOcid { get; private set; } = null!;
+        public Output<string?> CompartmentOcid { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Contact Email Address
@@ -507,7 +507,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("contactEmailAddress")]
-        public Output<string> ContactEmailAddress { get; private set; } = null!;
+        public Output<string?> ContactEmailAddress { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Service Names allow to use Oracle Cloud Infrastructure signature for client authentication instead of client credentials
@@ -541,7 +541,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("deleteInProgress")]
-        public Output<bool> DeleteInProgress { get; private set; } = null!;
+        public Output<bool?> DeleteInProgress { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The description of the AppRole.
@@ -556,7 +556,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("description")]
-        public Output<string> Description { get; private set; } = null!;
+        public Output<string?> Description { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Indicates whether the application is allowed to be access using kmsi token.
@@ -573,7 +573,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("disableKmsiTokenAuthentication")]
-        public Output<bool> DisableKmsiTokenAuthentication { get; private set; } = null!;
+        public Output<bool?> DisableKmsiTokenAuthentication { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Display name of the flatfile bundle configuration property. This attribute maps to \"displayName\" attribute in \"ConfigurationProperty\" in ICF.
@@ -605,7 +605,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("domainOcid")]
-        public Output<string> DomainOcid { get; private set; } = null!;
+        public Output<string?> DomainOcid { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) App attributes editable by subject
@@ -640,7 +640,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("errorPageUrl")]
-        public Output<string> ErrorPageUrl { get; private set; } = null!;
+        public Output<string?> ErrorPageUrl { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) A list of AppRoles that are granted to this App (and that are defined by other Apps). Within the Oracle Public Cloud infrastructure, this allows AppID-based association. Such an association allows this App to act as a consumer and thus to access resources of another App that acts as a producer.
@@ -691,7 +691,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("hashedClientSecret")]
-        public Output<string> HashedClientSecret { get; private set; } = null!;
+        public Output<string?> HashedClientSecret { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Home Page URL
@@ -708,7 +708,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("homePageUrl")]
-        public Output<string> HomePageUrl { get; private set; } = null!;
+        public Output<string?> HomePageUrl { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) URL of application icon.
@@ -723,7 +723,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("icon")]
-        public Output<string> Icon { get; private set; } = null!;
+        public Output<string?> Icon { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Encryption Alogrithm to use for encrypting ID token.
@@ -741,7 +741,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("idTokenEncAlgo")]
-        public Output<string> IdTokenEncAlgo { get; private set; } = null!;
+        public Output<string?> IdTokenEncAlgo { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The User or App who created the Resource
@@ -791,7 +791,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("idcsLastUpgradedInRelease")]
-        public Output<string> IdcsLastUpgradedInRelease { get; private set; } = null!;
+        public Output<string?> IdcsLastUpgradedInRelease { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
@@ -837,7 +837,7 @@ namespace Pulumi.Oci.Identity
         /// * type: complex
         /// </summary>
         [Output("idpPolicy")]
-        public Output<Outputs.DomainsAppIdpPolicy> IdpPolicy { get; private set; } = null!;
+        public Output<Outputs.DomainsAppIdpPolicy?> IdpPolicy { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) If true, this App is an internal infrastructure App.
@@ -852,7 +852,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("infrastructure")]
-        public Output<bool> Infrastructure { get; private set; } = null!;
+        public Output<bool?> Infrastructure { get; private set; } = null!;
 
         /// <summary>
         /// If true, this App is an AliasApp and it cannot be granted to an end-user directly.
@@ -867,7 +867,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("isAliasApp")]
-        public Output<bool> IsAliasApp { get; private set; } = null!;
+        public Output<bool?> IsAliasApp { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) If true, this application acts as database service Application
@@ -882,7 +882,7 @@ namespace Pulumi.Oci.Identity
         /// * type: boolean
         /// </summary>
         [Output("isDatabaseService")]
-        public Output<bool> IsDatabaseService { get; private set; } = null!;
+        public Output<bool?> IsDatabaseService { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) If true, this app acts as Enterprise app with Authentication and URL Authz policy.
@@ -899,7 +899,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("isEnterpriseApp")]
-        public Output<bool> IsEnterpriseApp { get; private set; } = null!;
+        public Output<bool?> IsEnterpriseApp { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) If true, this application acts as FormFill Application
@@ -914,7 +914,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("isFormFill")]
-        public Output<bool> IsFormFill { get; private set; } = null!;
+        public Output<bool?> IsFormFill { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) If true, indicates that this App supports Kerberos Authentication
@@ -929,7 +929,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("isKerberosRealm")]
-        public Output<bool> IsKerberosRealm { get; private set; } = null!;
+        public Output<bool?> IsKerberosRealm { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) If true, this App allows runtime services to log end users into this App automatically.
@@ -944,7 +944,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("isLoginTarget")]
-        public Output<bool> IsLoginTarget { get; private set; } = null!;
+        public Output<bool?> IsLoginTarget { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) If true, indicates that access to this App requires an account. That is, in order to log in to the App, a User must use an application-specific identity that is maintained in the remote identity-repository of that App.
@@ -959,7 +959,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("isManagedApp")]
-        public Output<bool> IsManagedApp { get; private set; } = null!;
+        public Output<bool?> IsManagedApp { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) If true, indicates that the App should be visible in each end-user's mobile application.
@@ -974,7 +974,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("isMobileTarget")]
-        public Output<bool> IsMobileTarget { get; private set; } = null!;
+        public Output<bool?> IsMobileTarget { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) If true, indicates the app is used for multicloud service integration.
@@ -991,7 +991,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("isMulticloudServiceApp")]
-        public Output<bool> IsMulticloudServiceApp { get; private set; } = null!;
+        public Output<bool?> IsMulticloudServiceApp { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) If true, this application acts as an OAuth Client
@@ -1006,7 +1006,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("isOauthClient")]
-        public Output<bool> IsOauthClient { get; private set; } = null!;
+        public Output<bool?> IsOauthClient { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) If true, indicates that this application acts as an OAuth Resource.
@@ -1021,7 +1021,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("isOauthResource")]
-        public Output<bool> IsOauthResource { get; private set; } = null!;
+        public Output<bool?> IsOauthResource { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) This flag indicates if the App is capable of validating obligations with the token for allowing access to the App.
@@ -1037,7 +1037,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("isObligationCapable")]
-        public Output<bool> IsObligationCapable { get; private set; } = null!;
+        public Output<bool?> IsObligationCapable { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) If true, this application is an Oracle Public Cloud service-instance.
@@ -1052,7 +1052,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("isOpcService")]
-        public Output<bool> IsOpcService { get; private set; } = null!;
+        public Output<bool?> IsOpcService { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) If true, this application acts as an Radius App
@@ -1069,7 +1069,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("isRadiusApp")]
-        public Output<bool> IsRadiusApp { get; private set; } = null!;
+        public Output<bool?> IsRadiusApp { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) If true, then this App acts as a SAML Service Provider.
@@ -1084,7 +1084,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("isSamlServiceProvider")]
-        public Output<bool> IsSamlServiceProvider { get; private set; } = null!;
+        public Output<bool?> IsSamlServiceProvider { get; private set; } = null!;
 
         /// <summary>
         /// If true, indicates that this application accepts an Oracle Cloud Identity Service User as a login-identity (does not require an account) and relies for authorization on the User's memberships in AppRoles.
@@ -1099,7 +1099,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("isUnmanagedApp")]
-        public Output<bool> IsUnmanagedApp { get; private set; } = null!;
+        public Output<bool?> IsUnmanagedApp { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) If true, the webtier policy is active
@@ -1114,7 +1114,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("isWebTierPolicy")]
-        public Output<bool> IsWebTierPolicy { get; private set; } = null!;
+        public Output<bool?> IsWebTierPolicy { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The URL of the landing page for this App, which is the first page that an end user should see if runtime services log that end user in to this App automatically.
@@ -1129,7 +1129,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("landingPageUrl")]
-        public Output<string> LandingPageUrl { get; private set; } = null!;
+        public Output<string?> LandingPageUrl { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) This attribute specifies the callback URL for the social linking operation.
@@ -1147,7 +1147,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("linkingCallbackUrl")]
-        public Output<string> LinkingCallbackUrl { get; private set; } = null!;
+        public Output<string?> LinkingCallbackUrl { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The protocol that runtime services will use to log end users in to this App automatically. If 'OIDC', then runtime services use the OpenID Connect protocol. If 'SAML', then runtime services use Security Assertion Markup Language protocol.
@@ -1163,7 +1163,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("loginMechanism")]
-        public Output<string> LoginMechanism { get; private set; } = null!;
+        public Output<string?> LoginMechanism { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) This attribute specifies the URL of the page that the App uses when an end-user signs in to that App.
@@ -1179,7 +1179,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("loginPageUrl")]
-        public Output<string> LoginPageUrl { get; private set; } = null!;
+        public Output<string?> LoginPageUrl { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) This attribute specifies the URL of the page that the App uses when an end-user signs out.
@@ -1197,7 +1197,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("logoutPageUrl")]
-        public Output<string> LogoutPageUrl { get; private set; } = null!;
+        public Output<string?> LogoutPageUrl { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) OAuth will use this URI to logout if this App wants to participate in SSO, and if this App's session gets cleared as part of global logout. Note: This attribute is used only if this App acts as an OAuthClient.
@@ -1213,7 +1213,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("logoutUri")]
-        public Output<string> LogoutUri { get; private set; } = null!;
+        public Output<string?> LogoutUri { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
@@ -1246,7 +1246,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("meterAsOpcService")]
-        public Output<bool> MeterAsOpcService { get; private set; } = null!;
+        public Output<bool?> MeterAsOpcService { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) If true, this App was migrated from an earlier version of Oracle Public Cloud infrastructure (and may therefore require special handling from runtime services such as OAuth or SAML). If false, this App requires no special handling from runtime services.
@@ -1261,7 +1261,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("migrated")]
-        public Output<bool> Migrated { get; private set; } = null!;
+        public Output<bool?> Migrated { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The attribute represents the name of the attribute that will be used in the Security Assertion Markup Language (SAML) assertion
@@ -1296,7 +1296,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: global
         /// </summary>
         [Output("ocid")]
-        public Output<string> Ocid { get; private set; } = null!;
+        public Output<string?> Ocid { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Each value of this attribute is the URI of a landing page within this App. It is used only when this App, acting as an OAuthClient, initiates the logout flow and wants to be redirected back to one of its landing pages.
@@ -1329,7 +1329,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("privacyPolicyUrl")]
-        public Output<string> PrivacyPolicyUrl { get; private set; } = null!;
+        public Output<string?> PrivacyPolicyUrl { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Application Logo URL
@@ -1346,7 +1346,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("productLogoUrl")]
-        public Output<string> ProductLogoUrl { get; private set; } = null!;
+        public Output<string?> ProductLogoUrl { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Product Name
@@ -1363,7 +1363,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("productName")]
-        public Output<string> ProductName { get; private set; } = null!;
+        public Output<string?> ProductName { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) A list of secondary audiences--additional URIs to be added automatically to any OAuth token that allows access to this App. Note: This attribute is used mainly for backward compatibility in certain Oracle Public Cloud Apps.
@@ -1398,7 +1398,7 @@ namespace Pulumi.Oci.Identity
         /// * type: complex
         /// </summary>
         [Output("radiusPolicy")]
-        public Output<Outputs.DomainsAppRadiusPolicy> RadiusPolicy { get; private set; } = null!;
+        public Output<Outputs.DomainsAppRadiusPolicy?> RadiusPolicy { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) If true, this App requires an upgrade and mandates attention from application administrator. The flag is used by UI to indicate this app is ready to upgrade.
@@ -1413,7 +1413,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("readyToUpgrade")]
-        public Output<bool> ReadyToUpgrade { get; private set; } = null!;
+        public Output<bool?> ReadyToUpgrade { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) OPTIONAL. Each value is a URI within this App. This attribute is required when this App acts as an OAuthClient and is involved in three-legged flows (authorization-code flows).
@@ -1444,7 +1444,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("refreshTokenExpiry")]
-        public Output<int> RefreshTokenExpiry { get; private set; } = null!;
+        public Output<int?> RefreshTokenExpiry { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
@@ -1465,7 +1465,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("samlServiceProvider")]
-        public Output<Outputs.DomainsAppSamlServiceProvider> SamlServiceProvider { get; private set; } = null!;
+        public Output<Outputs.DomainsAppSamlServiceProvider?> SamlServiceProvider { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
@@ -1548,7 +1548,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("serviceTypeUrn")]
-        public Output<string> ServiceTypeUrn { get; private set; } = null!;
+        public Output<string?> ServiceTypeUrn { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) This value specifies the version of the Oracle Public Cloud service of which this App is an instance
@@ -1564,7 +1564,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("serviceTypeVersion")]
-        public Output<string> ServiceTypeVersion { get; private set; } = null!;
+        public Output<string?> ServiceTypeVersion { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) If true, this app will be displayed in the MyApps page of each end-user who has access to the App.
@@ -1581,7 +1581,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("showInMyApps")]
-        public Output<bool> ShowInMyApps { get; private set; } = null!;
+        public Output<bool?> ShowInMyApps { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Sign-on Policy.
@@ -1597,7 +1597,7 @@ namespace Pulumi.Oci.Identity
         /// * type: complex
         /// </summary>
         [Output("signonPolicy")]
-        public Output<Outputs.DomainsAppSignonPolicy> SignonPolicy { get; private set; } = null!;
+        public Output<Outputs.DomainsAppSignonPolicy?> SignonPolicy { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) A list of tags on this resource.
@@ -1629,7 +1629,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("tenancyOcid")]
-        public Output<string> TenancyOcid { get; private set; } = null!;
+        public Output<string?> TenancyOcid { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Terms of Service URL
@@ -1646,7 +1646,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("termsOfServiceUrl")]
-        public Output<string> TermsOfServiceUrl { get; private set; } = null!;
+        public Output<string?> TermsOfServiceUrl { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Terms Of Use.
@@ -1662,7 +1662,7 @@ namespace Pulumi.Oci.Identity
         /// * type: complex
         /// </summary>
         [Output("termsOfUse")]
-        public Output<Outputs.DomainsAppTermsOfUse> TermsOfUse { get; private set; } = null!;
+        public Output<Outputs.DomainsAppTermsOfUse?> TermsOfUse { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Trust Policies.
@@ -1695,85 +1695,85 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("trustScope")]
-        public Output<string> TrustScope { get; private set; } = null!;
+        public Output<string?> TrustScope { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Oracle Cloud Infrastructure Tags.
         /// </summary>
         [Output("urnietfparamsscimschemasoracleidcsextensionOciTags")]
-        public Output<Outputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTags> UrnietfparamsscimschemasoracleidcsextensionOciTags { get; private set; } = null!;
+        public Output<Outputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTags?> UrnietfparamsscimschemasoracleidcsextensionOciTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) This extension provides attributes for database service facet of an App
         /// </summary>
         [Output("urnietfparamsscimschemasoracleidcsextensiondbcsApp")]
-        public Output<Outputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensiondbcsApp> UrnietfparamsscimschemasoracleidcsextensiondbcsApp { get; private set; } = null!;
+        public Output<Outputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensiondbcsApp?> UrnietfparamsscimschemasoracleidcsextensiondbcsApp { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) This extension defines the Enterprise App related attributes.
         /// </summary>
         [Output("urnietfparamsscimschemasoracleidcsextensionenterpriseAppApp")]
-        public Output<Outputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppApp> UrnietfparamsscimschemasoracleidcsextensionenterpriseAppApp { get; private set; } = null!;
+        public Output<Outputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppApp?> UrnietfparamsscimschemasoracleidcsextensionenterpriseAppApp { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) This extension provides attributes for Form-Fill facet of App
         /// </summary>
         [Output("urnietfparamsscimschemasoracleidcsextensionformFillAppApp")]
-        public Output<Outputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppApp> UrnietfparamsscimschemasoracleidcsextensionformFillAppApp { get; private set; } = null!;
+        public Output<Outputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppApp?> UrnietfparamsscimschemasoracleidcsextensionformFillAppApp { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) This extension provides attributes for Form-Fill facet of AppTemplate
         /// </summary>
         [Output("urnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplate")]
-        public Output<Outputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplate> UrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplate { get; private set; } = null!;
+        public Output<Outputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplate?> UrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplate { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Kerberos Realm
         /// </summary>
         [Output("urnietfparamsscimschemasoracleidcsextensionkerberosRealmApp")]
-        public Output<Outputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensionkerberosRealmApp> UrnietfparamsscimschemasoracleidcsextensionkerberosRealmApp { get; private set; } = null!;
+        public Output<Outputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensionkerberosRealmApp?> UrnietfparamsscimschemasoracleidcsextensionkerberosRealmApp { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Managed App
         /// </summary>
         [Output("urnietfparamsscimschemasoracleidcsextensionmanagedappApp")]
-        public Output<Outputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappApp> UrnietfparamsscimschemasoracleidcsextensionmanagedappApp { get; private set; } = null!;
+        public Output<Outputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappApp?> UrnietfparamsscimschemasoracleidcsextensionmanagedappApp { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) This extension defines attributes specific to Apps that represent instances of Multicloud Service App
         /// </summary>
         [Output("urnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppApp")]
-        public Output<Outputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppApp> UrnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppApp { get; private set; } = null!;
+        public Output<Outputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppApp?> UrnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppApp { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) This extension defines attributes specific to Apps that represent instances of an Oracle Public Cloud (OPC) service.
         /// </summary>
         [Output("urnietfparamsscimschemasoracleidcsextensionopcServiceApp")]
-        public Output<Outputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensionopcServiceApp> UrnietfparamsscimschemasoracleidcsextensionopcServiceApp { get; private set; } = null!;
+        public Output<Outputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensionopcServiceApp?> UrnietfparamsscimschemasoracleidcsextensionopcServiceApp { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) This extension defines attributes specific to Apps that represent instances of Radius App.
         /// </summary>
         [Output("urnietfparamsscimschemasoracleidcsextensionradiusAppApp")]
-        public Output<Outputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppApp> UrnietfparamsscimschemasoracleidcsextensionradiusAppApp { get; private set; } = null!;
+        public Output<Outputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppApp?> UrnietfparamsscimschemasoracleidcsextensionradiusAppApp { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Requestable App
         /// </summary>
         [Output("urnietfparamsscimschemasoracleidcsextensionrequestableApp")]
-        public Output<Outputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensionrequestableApp> UrnietfparamsscimschemasoracleidcsextensionrequestableApp { get; private set; } = null!;
+        public Output<Outputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensionrequestableApp?> UrnietfparamsscimschemasoracleidcsextensionrequestableApp { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) This extension defines attributes related to the Service Providers configuration.
         /// </summary>
         [Output("urnietfparamsscimschemasoracleidcsextensionsamlServiceProviderApp")]
-        public Output<Outputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderApp> UrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderApp { get; private set; } = null!;
+        public Output<Outputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderApp?> UrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderApp { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) WebTier Policy
         /// </summary>
         [Output("urnietfparamsscimschemasoracleidcsextensionwebTierPolicyApp")]
-        public Output<Outputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensionwebTierPolicyApp> UrnietfparamsscimschemasoracleidcsextensionwebTierPolicyApp { get; private set; } = null!;
+        public Output<Outputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensionwebTierPolicyApp?> UrnietfparamsscimschemasoracleidcsextensionwebTierPolicyApp { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) A list of AppRoles defined by this UnmanagedApp. Membership in each of these AppRoles confers end-user privilege within this App.

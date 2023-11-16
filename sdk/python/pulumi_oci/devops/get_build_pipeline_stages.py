@@ -49,33 +49,21 @@ class GetBuildPipelineStagesResult:
     @property
     @pulumi.getter(name="buildPipelineId")
     def build_pipeline_id(self) -> Optional[str]:
-        """
-        The OCID of the build pipeline.
-        """
         return pulumi.get(self, "build_pipeline_id")
 
     @property
     @pulumi.getter(name="buildPipelineStageCollections")
-    def build_pipeline_stage_collections(self) -> Sequence['outputs.GetBuildPipelineStagesBuildPipelineStageCollectionResult']:
-        """
-        The list of build_pipeline_stage_collection.
-        """
+    def build_pipeline_stage_collections(self) -> Optional[Sequence['outputs.GetBuildPipelineStagesBuildPipelineStageCollectionResult']]:
         return pulumi.get(self, "build_pipeline_stage_collections")
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[str]:
-        """
-        The OCID of the compartment where the pipeline is created.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        Stage display name, which can be renamed and is not necessarily unique. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -86,17 +74,11 @@ class GetBuildPipelineStagesResult:
     @property
     @pulumi.getter
     def id(self) -> Optional[str]:
-        """
-        Unique identifier that is immutable on creation.
-        """
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the stage.
-        """
         return pulumi.get(self, "state")
 
 
@@ -123,29 +105,7 @@ def get_build_pipeline_stages(build_pipeline_id: Optional[str] = None,
                               state: Optional[str] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetBuildPipelineStagesResult:
     """
-    This data source provides the list of Build Pipeline Stages in Oracle Cloud Infrastructure Devops service.
-
-    Returns a list of all stages in a compartment or build pipeline.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_build_pipeline_stages = oci.DevOps.get_build_pipeline_stages(build_pipeline_id=oci_devops_build_pipeline["test_build_pipeline"]["id"],
-        compartment_id=var["compartment_id"],
-        display_name=var["build_pipeline_stage_display_name"],
-        id=var["build_pipeline_stage_id"],
-        state=var["build_pipeline_stage_state"])
-    ```
-
-
-    :param str build_pipeline_id: The OCID of the parent build pipeline.
-    :param str compartment_id: The OCID of the compartment in which to list resources.
-    :param str display_name: A filter to return only resources that match the entire display name given.
-    :param str id: Unique identifier or OCID for listing a single resource by ID.
-    :param str state: A filter to return the stages that matches the given lifecycle state.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['buildPipelineId'] = build_pipeline_id
@@ -176,28 +136,6 @@ def get_build_pipeline_stages_output(build_pipeline_id: Optional[pulumi.Input[Op
                                      state: Optional[pulumi.Input[Optional[str]]] = None,
                                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetBuildPipelineStagesResult]:
     """
-    This data source provides the list of Build Pipeline Stages in Oracle Cloud Infrastructure Devops service.
-
-    Returns a list of all stages in a compartment or build pipeline.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_build_pipeline_stages = oci.DevOps.get_build_pipeline_stages(build_pipeline_id=oci_devops_build_pipeline["test_build_pipeline"]["id"],
-        compartment_id=var["compartment_id"],
-        display_name=var["build_pipeline_stage_display_name"],
-        id=var["build_pipeline_stage_id"],
-        state=var["build_pipeline_stage_state"])
-    ```
-
-
-    :param str build_pipeline_id: The OCID of the parent build pipeline.
-    :param str compartment_id: The OCID of the compartment in which to list resources.
-    :param str display_name: A filter to return only resources that match the entire display name given.
-    :param str id: Unique identifier or OCID for listing a single resource by ID.
-    :param str state: A filter to return the stages that matches the given lifecycle state.
+    Use this data source to access information about an existing resource.
     """
     ...

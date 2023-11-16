@@ -18,7 +18,7 @@ public final class GetAutonomousDatabaseBackupsResult {
      * @return The list of autonomous_database_backups.
      * 
      */
-    private List<GetAutonomousDatabaseBackupsAutonomousDatabaseBackup> autonomousDatabaseBackups;
+    private @Nullable List<GetAutonomousDatabaseBackupsAutonomousDatabaseBackup> autonomousDatabaseBackups;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database.
      * 
@@ -39,7 +39,7 @@ public final class GetAutonomousDatabaseBackupsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The current state of the backup.
      * 
@@ -57,7 +57,7 @@ public final class GetAutonomousDatabaseBackupsResult {
      * 
      */
     public List<GetAutonomousDatabaseBackupsAutonomousDatabaseBackup> autonomousDatabaseBackups() {
-        return this.autonomousDatabaseBackups;
+        return this.autonomousDatabaseBackups == null ? List.of() : this.autonomousDatabaseBackups;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database.
@@ -87,8 +87,8 @@ public final class GetAutonomousDatabaseBackupsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The current state of the backup.
@@ -114,12 +114,12 @@ public final class GetAutonomousDatabaseBackupsResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetAutonomousDatabaseBackupsAutonomousDatabaseBackup> autonomousDatabaseBackups;
+        private @Nullable List<GetAutonomousDatabaseBackupsAutonomousDatabaseBackup> autonomousDatabaseBackups;
         private @Nullable String autonomousDatabaseId;
         private @Nullable String compartmentId;
         private @Nullable String displayName;
         private @Nullable List<GetAutonomousDatabaseBackupsFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String state;
         private @Nullable String type;
         public Builder() {}
@@ -136,8 +136,8 @@ public final class GetAutonomousDatabaseBackupsResult {
         }
 
         @CustomType.Setter
-        public Builder autonomousDatabaseBackups(List<GetAutonomousDatabaseBackupsAutonomousDatabaseBackup> autonomousDatabaseBackups) {
-            this.autonomousDatabaseBackups = Objects.requireNonNull(autonomousDatabaseBackups);
+        public Builder autonomousDatabaseBackups(@Nullable List<GetAutonomousDatabaseBackupsAutonomousDatabaseBackup> autonomousDatabaseBackups) {
+            this.autonomousDatabaseBackups = autonomousDatabaseBackups;
             return this;
         }
         public Builder autonomousDatabaseBackups(GetAutonomousDatabaseBackupsAutonomousDatabaseBackup... autonomousDatabaseBackups) {
@@ -167,8 +167,8 @@ public final class GetAutonomousDatabaseBackupsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

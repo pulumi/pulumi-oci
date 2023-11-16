@@ -20,7 +20,7 @@ public final class GetBastionsResult {
      * @return The list of bastions.
      * 
      */
-    private List<GetBastionsBastion> bastions;
+    private @Nullable List<GetBastionsBastion> bastions;
     /**
      * @return The unique identifier (OCID) of the compartment where the bastion is located.
      * 
@@ -31,7 +31,7 @@ public final class GetBastionsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The name of the bastion, which can&#39;t be changed after creation.
      * 
@@ -50,7 +50,7 @@ public final class GetBastionsResult {
      * 
      */
     public List<GetBastionsBastion> bastions() {
-        return this.bastions;
+        return this.bastions == null ? List.of() : this.bastions;
     }
     /**
      * @return The unique identifier (OCID) of the compartment where the bastion is located.
@@ -66,8 +66,8 @@ public final class GetBastionsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The name of the bastion, which can&#39;t be changed after creation.
@@ -88,10 +88,10 @@ public final class GetBastionsResult {
     public static final class Builder {
         private @Nullable String bastionId;
         private @Nullable String bastionLifecycleState;
-        private List<GetBastionsBastion> bastions;
+        private @Nullable List<GetBastionsBastion> bastions;
         private String compartmentId;
         private @Nullable List<GetBastionsFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String name;
         public Builder() {}
         public Builder(GetBastionsResult defaults) {
@@ -116,8 +116,8 @@ public final class GetBastionsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder bastions(List<GetBastionsBastion> bastions) {
-            this.bastions = Objects.requireNonNull(bastions);
+        public Builder bastions(@Nullable List<GetBastionsBastion> bastions) {
+            this.bastions = bastions;
             return this;
         }
         public Builder bastions(GetBastionsBastion... bastions) {
@@ -137,8 +137,8 @@ public final class GetBastionsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

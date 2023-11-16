@@ -6,6 +6,8 @@ package com.pulumi.oci.DevOps.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDeploymentDeployStageOverrideArgumentItem {
@@ -13,39 +15,39 @@ public final class GetDeploymentDeployStageOverrideArgumentItem {
      * @return The OCID of the stage.
      * 
      */
-    private String deployStageId;
+    private @Nullable String deployStageId;
     /**
      * @return Name of the step.
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return value of the argument.
      * 
      */
-    private String value;
+    private @Nullable String value;
 
     private GetDeploymentDeployStageOverrideArgumentItem() {}
     /**
      * @return The OCID of the stage.
      * 
      */
-    public String deployStageId() {
-        return this.deployStageId;
+    public Optional<String> deployStageId() {
+        return Optional.ofNullable(this.deployStageId);
     }
     /**
      * @return Name of the step.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return value of the argument.
      * 
      */
-    public String value() {
-        return this.value;
+    public Optional<String> value() {
+        return Optional.ofNullable(this.value);
     }
 
     public static Builder builder() {
@@ -57,9 +59,9 @@ public final class GetDeploymentDeployStageOverrideArgumentItem {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String deployStageId;
-        private String name;
-        private String value;
+        private @Nullable String deployStageId;
+        private @Nullable String name;
+        private @Nullable String value;
         public Builder() {}
         public Builder(GetDeploymentDeployStageOverrideArgumentItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -69,18 +71,18 @@ public final class GetDeploymentDeployStageOverrideArgumentItem {
         }
 
         @CustomType.Setter
-        public Builder deployStageId(String deployStageId) {
-            this.deployStageId = Objects.requireNonNull(deployStageId);
+        public Builder deployStageId(@Nullable String deployStageId) {
+            this.deployStageId = deployStageId;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder value(String value) {
-            this.value = Objects.requireNonNull(value);
+        public Builder value(@Nullable String value) {
+            this.value = value;
             return this;
         }
         public GetDeploymentDeployStageOverrideArgumentItem build() {

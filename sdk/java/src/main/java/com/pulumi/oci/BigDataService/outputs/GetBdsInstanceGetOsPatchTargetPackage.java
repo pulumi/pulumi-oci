@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetBdsInstanceGetOsPatchTargetPackage {
@@ -14,51 +16,51 @@ public final class GetBdsInstanceGetOsPatchTargetPackage {
      * @return The package&#39;s name.
      * 
      */
-    private String packageName;
+    private @Nullable String packageName;
     /**
      * @return Related CVEs of the package update.
      * 
      */
-    private List<String> relatedCvEs;
+    private @Nullable List<String> relatedCvEs;
     /**
      * @return The target version of the package.
      * 
      */
-    private String targetVersion;
+    private @Nullable String targetVersion;
     /**
      * @return The action that current package will be executed on the cluster.
      * 
      */
-    private String updateType;
+    private @Nullable String updateType;
 
     private GetBdsInstanceGetOsPatchTargetPackage() {}
     /**
      * @return The package&#39;s name.
      * 
      */
-    public String packageName() {
-        return this.packageName;
+    public Optional<String> packageName() {
+        return Optional.ofNullable(this.packageName);
     }
     /**
      * @return Related CVEs of the package update.
      * 
      */
     public List<String> relatedCvEs() {
-        return this.relatedCvEs;
+        return this.relatedCvEs == null ? List.of() : this.relatedCvEs;
     }
     /**
      * @return The target version of the package.
      * 
      */
-    public String targetVersion() {
-        return this.targetVersion;
+    public Optional<String> targetVersion() {
+        return Optional.ofNullable(this.targetVersion);
     }
     /**
      * @return The action that current package will be executed on the cluster.
      * 
      */
-    public String updateType() {
-        return this.updateType;
+    public Optional<String> updateType() {
+        return Optional.ofNullable(this.updateType);
     }
 
     public static Builder builder() {
@@ -70,10 +72,10 @@ public final class GetBdsInstanceGetOsPatchTargetPackage {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String packageName;
-        private List<String> relatedCvEs;
-        private String targetVersion;
-        private String updateType;
+        private @Nullable String packageName;
+        private @Nullable List<String> relatedCvEs;
+        private @Nullable String targetVersion;
+        private @Nullable String updateType;
         public Builder() {}
         public Builder(GetBdsInstanceGetOsPatchTargetPackage defaults) {
     	      Objects.requireNonNull(defaults);
@@ -84,26 +86,26 @@ public final class GetBdsInstanceGetOsPatchTargetPackage {
         }
 
         @CustomType.Setter
-        public Builder packageName(String packageName) {
-            this.packageName = Objects.requireNonNull(packageName);
+        public Builder packageName(@Nullable String packageName) {
+            this.packageName = packageName;
             return this;
         }
         @CustomType.Setter
-        public Builder relatedCvEs(List<String> relatedCvEs) {
-            this.relatedCvEs = Objects.requireNonNull(relatedCvEs);
+        public Builder relatedCvEs(@Nullable List<String> relatedCvEs) {
+            this.relatedCvEs = relatedCvEs;
             return this;
         }
         public Builder relatedCvEs(String... relatedCvEs) {
             return relatedCvEs(List.of(relatedCvEs));
         }
         @CustomType.Setter
-        public Builder targetVersion(String targetVersion) {
-            this.targetVersion = Objects.requireNonNull(targetVersion);
+        public Builder targetVersion(@Nullable String targetVersion) {
+            this.targetVersion = targetVersion;
             return this;
         }
         @CustomType.Setter
-        public Builder updateType(String updateType) {
-            this.updateType = Objects.requireNonNull(updateType);
+        public Builder updateType(@Nullable String updateType) {
+            this.updateType = updateType;
             return this;
         }
         public GetBdsInstanceGetOsPatchTargetPackage build() {

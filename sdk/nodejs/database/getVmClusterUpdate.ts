@@ -51,40 +51,40 @@ export interface GetVmClusterUpdateResult {
     /**
      * The possible actions that can be performed using this maintenance update.
      */
-    readonly availableActions: string[];
+    readonly availableActions?: string[];
     /**
      * Details of the maintenance update package.
      */
-    readonly description: string;
+    readonly description?: string;
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The update action performed most recently using this maintenance update.
      */
-    readonly lastAction: string;
+    readonly lastAction?: string;
     /**
      * Descriptive text providing additional details about the lifecycle state.
      */
-    readonly lifecycleDetails: string;
+    readonly lifecycleDetails?: string;
     /**
      * The current state of the maintenance update. Dependent on value of `lastAction`.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * The date and time the maintenance update was released.
      */
-    readonly timeReleased: string;
+    readonly timeReleased?: string;
     readonly updateId: string;
     /**
      * The type of VM cluster maintenance update.
      */
-    readonly updateType: string;
+    readonly updateType?: string;
     /**
      * The version of the maintenance update package.
      */
-    readonly version: string;
+    readonly version?: string;
     readonly vmClusterId: string;
 }
 /**

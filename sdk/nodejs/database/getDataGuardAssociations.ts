@@ -49,7 +49,7 @@ export interface GetDataGuardAssociationsResult {
     /**
      * The list of data_guard_associations.
      */
-    readonly dataGuardAssociations: outputs.Database.GetDataGuardAssociationsDataGuardAssociation[];
+    readonly dataGuardAssociations?: outputs.Database.GetDataGuardAssociationsDataGuardAssociation[];
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the reporting database.
      */
@@ -58,7 +58,7 @@ export interface GetDataGuardAssociationsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
 }
 /**
  * This data source provides the list of Data Guard Associations in Oracle Cloud Infrastructure Database service.

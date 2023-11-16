@@ -14,6 +14,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetTableResult {
@@ -26,93 +28,93 @@ public final class GetTableResult {
      * @return A DDL statement representing the schema.
      * 
      */
-    private String ddlStatement;
+    private @Nullable String ddlStatement;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{&#34;foo-namespace&#34;: {&#34;bar-key&#34;: &#34;value&#34;}}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return Unique identifier that is immutable.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return True if this table can be reclaimed after an idle period.
      * 
      */
-    private Boolean isAutoReclaimable;
+    private @Nullable Boolean isAutoReclaimable;
     /**
      * @return True if this table is currently a member of a replication set.
      * 
      */
-    private Boolean isMultiRegion;
+    private @Nullable Boolean isMultiRegion;
     /**
      * @return A message describing the current state in more detail.
      * 
      */
-    private String lifecycleDetails;
+    private @Nullable String lifecycleDetails;
     /**
      * @return If this table is in a replication set, this value represents the progress of the initialization of the replica&#39;s data.  A value of 100 indicates that initialization has completed.
      * 
      */
-    private Integer localReplicaInitializationInPercent;
+    private @Nullable Integer localReplicaInitializationInPercent;
     /**
      * @return The column name.
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return An array of Replica listing this table&#39;s replicas, if any
      * 
      */
-    private List<GetTableReplica> replicas;
+    private @Nullable List<GetTableReplica> replicas;
     /**
      * @return The current state of this table&#39;s schema. Available states are MUTABLE - The schema can be changed. The table is not eligible for replication. FROZEN - The schema is immutable. The table is eligible for replication.
      * 
      */
-    private String schemaState;
+    private @Nullable String schemaState;
     /**
      * @return The table schema information as a JSON object.
      * 
      */
-    private List<GetTableSchema> schemas;
+    private @Nullable List<GetTableSchema> schemas;
     /**
      * @return The state of a table.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return Read-only system tag. These predefined keys are scoped to namespaces.  At present the only supported namespace is `&#34;orcl-cloud&#34;`; and the only key in that namespace is `&#34;free-tier-retained&#34;`. Example: `{&#34;orcl-cloud&#34;&#34;: {&#34;free-tier-retained&#34;: &#34;true&#34;}}`
      * 
      */
-    private Map<String,Object> systemTags;
+    private @Nullable Map<String,Object> systemTags;
     /**
      * @return Throughput and storage limits configuration of a table.
      * 
      */
-    private List<GetTableTableLimit> tableLimits;
+    private @Nullable List<GetTableTableLimit> tableLimits;
     private String tableNameOrId;
     /**
      * @return The time the the table was created. An RFC3339 formatted datetime string.
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return If lifecycleState is INACTIVE, indicates when this table will be automatically removed. An RFC3339 formatted datetime string.
      * 
      */
-    private String timeOfExpiration;
+    private @Nullable String timeOfExpiration;
     /**
      * @return The time the the table&#39;s metadata was last updated. An RFC3339 formatted datetime string.
      * 
      */
-    private String timeUpdated;
+    private @Nullable String timeUpdated;
 
     private GetTableResult() {}
     /**
@@ -126,106 +128,106 @@ public final class GetTableResult {
      * @return A DDL statement representing the schema.
      * 
      */
-    public String ddlStatement() {
-        return this.ddlStatement;
+    public Optional<String> ddlStatement() {
+        return Optional.ofNullable(this.ddlStatement);
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{&#34;foo-namespace&#34;: {&#34;bar-key&#34;: &#34;value&#34;}}`
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return Unique identifier that is immutable.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return True if this table can be reclaimed after an idle period.
      * 
      */
-    public Boolean isAutoReclaimable() {
-        return this.isAutoReclaimable;
+    public Optional<Boolean> isAutoReclaimable() {
+        return Optional.ofNullable(this.isAutoReclaimable);
     }
     /**
      * @return True if this table is currently a member of a replication set.
      * 
      */
-    public Boolean isMultiRegion() {
-        return this.isMultiRegion;
+    public Optional<Boolean> isMultiRegion() {
+        return Optional.ofNullable(this.isMultiRegion);
     }
     /**
      * @return A message describing the current state in more detail.
      * 
      */
-    public String lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Optional<String> lifecycleDetails() {
+        return Optional.ofNullable(this.lifecycleDetails);
     }
     /**
      * @return If this table is in a replication set, this value represents the progress of the initialization of the replica&#39;s data.  A value of 100 indicates that initialization has completed.
      * 
      */
-    public Integer localReplicaInitializationInPercent() {
-        return this.localReplicaInitializationInPercent;
+    public Optional<Integer> localReplicaInitializationInPercent() {
+        return Optional.ofNullable(this.localReplicaInitializationInPercent);
     }
     /**
      * @return The column name.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return An array of Replica listing this table&#39;s replicas, if any
      * 
      */
     public List<GetTableReplica> replicas() {
-        return this.replicas;
+        return this.replicas == null ? List.of() : this.replicas;
     }
     /**
      * @return The current state of this table&#39;s schema. Available states are MUTABLE - The schema can be changed. The table is not eligible for replication. FROZEN - The schema is immutable. The table is eligible for replication.
      * 
      */
-    public String schemaState() {
-        return this.schemaState;
+    public Optional<String> schemaState() {
+        return Optional.ofNullable(this.schemaState);
     }
     /**
      * @return The table schema information as a JSON object.
      * 
      */
     public List<GetTableSchema> schemas() {
-        return this.schemas;
+        return this.schemas == null ? List.of() : this.schemas;
     }
     /**
      * @return The state of a table.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return Read-only system tag. These predefined keys are scoped to namespaces.  At present the only supported namespace is `&#34;orcl-cloud&#34;`; and the only key in that namespace is `&#34;free-tier-retained&#34;`. Example: `{&#34;orcl-cloud&#34;&#34;: {&#34;free-tier-retained&#34;: &#34;true&#34;}}`
      * 
      */
     public Map<String,Object> systemTags() {
-        return this.systemTags;
+        return this.systemTags == null ? Map.of() : this.systemTags;
     }
     /**
      * @return Throughput and storage limits configuration of a table.
      * 
      */
     public List<GetTableTableLimit> tableLimits() {
-        return this.tableLimits;
+        return this.tableLimits == null ? List.of() : this.tableLimits;
     }
     public String tableNameOrId() {
         return this.tableNameOrId;
@@ -234,22 +236,22 @@ public final class GetTableResult {
      * @return The time the the table was created. An RFC3339 formatted datetime string.
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return If lifecycleState is INACTIVE, indicates when this table will be automatically removed. An RFC3339 formatted datetime string.
      * 
      */
-    public String timeOfExpiration() {
-        return this.timeOfExpiration;
+    public Optional<String> timeOfExpiration() {
+        return Optional.ofNullable(this.timeOfExpiration);
     }
     /**
      * @return The time the the table&#39;s metadata was last updated. An RFC3339 formatted datetime string.
      * 
      */
-    public String timeUpdated() {
-        return this.timeUpdated;
+    public Optional<String> timeUpdated() {
+        return Optional.ofNullable(this.timeUpdated);
     }
 
     public static Builder builder() {
@@ -262,25 +264,25 @@ public final class GetTableResult {
     @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
-        private String ddlStatement;
-        private Map<String,Object> definedTags;
-        private Map<String,Object> freeformTags;
-        private String id;
-        private Boolean isAutoReclaimable;
-        private Boolean isMultiRegion;
-        private String lifecycleDetails;
-        private Integer localReplicaInitializationInPercent;
-        private String name;
-        private List<GetTableReplica> replicas;
-        private String schemaState;
-        private List<GetTableSchema> schemas;
-        private String state;
-        private Map<String,Object> systemTags;
-        private List<GetTableTableLimit> tableLimits;
+        private @Nullable String ddlStatement;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String id;
+        private @Nullable Boolean isAutoReclaimable;
+        private @Nullable Boolean isMultiRegion;
+        private @Nullable String lifecycleDetails;
+        private @Nullable Integer localReplicaInitializationInPercent;
+        private @Nullable String name;
+        private @Nullable List<GetTableReplica> replicas;
+        private @Nullable String schemaState;
+        private @Nullable List<GetTableSchema> schemas;
+        private @Nullable String state;
+        private @Nullable Map<String,Object> systemTags;
+        private @Nullable List<GetTableTableLimit> tableLimits;
         private String tableNameOrId;
-        private String timeCreated;
-        private String timeOfExpiration;
-        private String timeUpdated;
+        private @Nullable String timeCreated;
+        private @Nullable String timeOfExpiration;
+        private @Nullable String timeUpdated;
         public Builder() {}
         public Builder(GetTableResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -312,84 +314,84 @@ public final class GetTableResult {
             return this;
         }
         @CustomType.Setter
-        public Builder ddlStatement(String ddlStatement) {
-            this.ddlStatement = Objects.requireNonNull(ddlStatement);
+        public Builder ddlStatement(@Nullable String ddlStatement) {
+            this.ddlStatement = ddlStatement;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder isAutoReclaimable(Boolean isAutoReclaimable) {
-            this.isAutoReclaimable = Objects.requireNonNull(isAutoReclaimable);
+        public Builder isAutoReclaimable(@Nullable Boolean isAutoReclaimable) {
+            this.isAutoReclaimable = isAutoReclaimable;
             return this;
         }
         @CustomType.Setter
-        public Builder isMultiRegion(Boolean isMultiRegion) {
-            this.isMultiRegion = Objects.requireNonNull(isMultiRegion);
+        public Builder isMultiRegion(@Nullable Boolean isMultiRegion) {
+            this.isMultiRegion = isMultiRegion;
             return this;
         }
         @CustomType.Setter
-        public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+        public Builder lifecycleDetails(@Nullable String lifecycleDetails) {
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
-        public Builder localReplicaInitializationInPercent(Integer localReplicaInitializationInPercent) {
-            this.localReplicaInitializationInPercent = Objects.requireNonNull(localReplicaInitializationInPercent);
+        public Builder localReplicaInitializationInPercent(@Nullable Integer localReplicaInitializationInPercent) {
+            this.localReplicaInitializationInPercent = localReplicaInitializationInPercent;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder replicas(List<GetTableReplica> replicas) {
-            this.replicas = Objects.requireNonNull(replicas);
+        public Builder replicas(@Nullable List<GetTableReplica> replicas) {
+            this.replicas = replicas;
             return this;
         }
         public Builder replicas(GetTableReplica... replicas) {
             return replicas(List.of(replicas));
         }
         @CustomType.Setter
-        public Builder schemaState(String schemaState) {
-            this.schemaState = Objects.requireNonNull(schemaState);
+        public Builder schemaState(@Nullable String schemaState) {
+            this.schemaState = schemaState;
             return this;
         }
         @CustomType.Setter
-        public Builder schemas(List<GetTableSchema> schemas) {
-            this.schemas = Objects.requireNonNull(schemas);
+        public Builder schemas(@Nullable List<GetTableSchema> schemas) {
+            this.schemas = schemas;
             return this;
         }
         public Builder schemas(GetTableSchema... schemas) {
             return schemas(List.of(schemas));
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+        public Builder systemTags(@Nullable Map<String,Object> systemTags) {
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
-        public Builder tableLimits(List<GetTableTableLimit> tableLimits) {
-            this.tableLimits = Objects.requireNonNull(tableLimits);
+        public Builder tableLimits(@Nullable List<GetTableTableLimit> tableLimits) {
+            this.tableLimits = tableLimits;
             return this;
         }
         public Builder tableLimits(GetTableTableLimit... tableLimits) {
@@ -401,18 +403,18 @@ public final class GetTableResult {
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeOfExpiration(String timeOfExpiration) {
-            this.timeOfExpiration = Objects.requireNonNull(timeOfExpiration);
+        public Builder timeOfExpiration(@Nullable String timeOfExpiration) {
+            this.timeOfExpiration = timeOfExpiration;
             return this;
         }
         @CustomType.Setter
-        public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+        public Builder timeUpdated(@Nullable String timeUpdated) {
+            this.timeUpdated = timeUpdated;
             return this;
         }
         public GetTableResult build() {

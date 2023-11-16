@@ -16,35 +16,35 @@ namespace Pulumi.Oci.Core.Outputs
         /// <summary>
         /// The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
         /// </summary>
-        public readonly string BaselineOcpuUtilization;
+        public readonly string? BaselineOcpuUtilization;
         /// <summary>
         /// The total amount of memory available to the instance, in gigabytes.
         /// </summary>
-        public readonly double MemoryInGbs;
+        public readonly double? MemoryInGbs;
         /// <summary>
         /// The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
         /// </summary>
-        public readonly int Nvmes;
+        public readonly int? Nvmes;
         /// <summary>
         /// The total number of OCPUs available to the instance.
         /// </summary>
-        public readonly double Ocpus;
+        public readonly double? Ocpus;
         /// <summary>
         /// The total number of VCPUs available to the instance. This can be used instead of OCPUs, in which case the actual number of OCPUs will be calculated based on this value and the actual hardware. This must be a multiple of 2.
         /// </summary>
-        public readonly int Vcpus;
+        public readonly int? Vcpus;
 
         [OutputConstructor]
         private GetInstanceConfigurationInstanceDetailLaunchDetailShapeConfigResult(
-            string baselineOcpuUtilization,
+            string? baselineOcpuUtilization,
 
-            double memoryInGbs,
+            double? memoryInGbs,
 
-            int nvmes,
+            int? nvmes,
 
-            double ocpus,
+            double? ocpus,
 
-            int vcpus)
+            int? vcpus)
         {
             BaselineOcpuUtilization = baselineOcpuUtilization;
             MemoryInGbs = memoryInGbs;

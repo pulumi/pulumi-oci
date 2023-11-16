@@ -79,19 +79,19 @@ export class SqlCollection extends pulumi.CustomResource {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) The description of the SQL collection.
      */
-    public readonly description!: pulumi.Output<string>;
+    public readonly description!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The display name of the SQL collection. The name does not have to be unique, and it is changeable.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    public readonly displayName!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) An optional property when incremented triggers Generate Sql Firewall Policy. Could be set to any integer value.
      */
@@ -99,7 +99,7 @@ export class SqlCollection extends pulumi.CustomResource {
     /**
      * Details about the current state of the SQL collection in Data Safe.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) An optional property when incremented triggers Purge Logs. Could be set to any integer value.
      */
@@ -111,7 +111,7 @@ export class SqlCollection extends pulumi.CustomResource {
     /**
      * Specifies the level of SQL that will be collected. USER_ISSUED_SQL - User issued SQL statements only. ALL_SQL - Includes all SQL statements including SQL statement issued inside PL/SQL units.
      */
-    public readonly sqlLevel!: pulumi.Output<string>;
+    public readonly sqlLevel!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) An optional property when incremented triggers Start. Could be set to any integer value.
      */
@@ -119,11 +119,11 @@ export class SqlCollection extends pulumi.CustomResource {
     /**
      * The current state of the SQL collection.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * Specifies if the SqlCollection has to be started after creation. Enabled indicates that the SqlCollection will be started after creation.
      */
-    public readonly status!: pulumi.Output<string>;
+    public readonly status!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) An optional property when incremented triggers Stop. Could be set to any integer value.
      *
@@ -135,7 +135,7 @@ export class SqlCollection extends pulumi.CustomResource {
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any}>;
+    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * The OCID of the target corresponding to the security policy deployment.
      */
@@ -143,19 +143,19 @@ export class SqlCollection extends pulumi.CustomResource {
     /**
      * The time that the SQL collection was created, in the format defined by RFC3339.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * The timestamp of the most recent SqlCollection start operation, in the format defined by RFC3339.
      */
-    public /*out*/ readonly timeLastStarted!: pulumi.Output<string>;
+    public /*out*/ readonly timeLastStarted!: pulumi.Output<string | undefined>;
     /**
      * The timestamp of the most recent SqlCollection stop operation, in the format defined by RFC3339.
      */
-    public /*out*/ readonly timeLastStopped!: pulumi.Output<string>;
+    public /*out*/ readonly timeLastStopped!: pulumi.Output<string | undefined>;
     /**
      * The last date and time the SQL collection was updated, in the format defined by RFC3339.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    public /*out*/ readonly timeUpdated!: pulumi.Output<string | undefined>;
 
     /**
      * Create a SqlCollection resource with the given unique name, arguments, and options.

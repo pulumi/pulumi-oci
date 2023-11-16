@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Db Node Console Connection resource in Oracle Cloud Infrastructure Database service.
@@ -63,26 +62,26 @@ type LookupDbNodeConsoleConnectionArgs struct {
 // A collection of values returned by getDbNodeConsoleConnection.
 type LookupDbNodeConsoleConnectionResult struct {
 	// The OCID of the compartment to contain the console connection.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// The SSH connection string for the console connection.
-	ConnectionString string `pulumi:"connectionString"`
+	ConnectionString *string `pulumi:"connectionString"`
 	// The OCID of the database node.
 	DbNodeId string `pulumi:"dbNodeId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The SSH public key fingerprint for the console connection.
-	Fingerprint string `pulumi:"fingerprint"`
+	Fingerprint *string `pulumi:"fingerprint"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The OCID of the console connection.
 	Id string `pulumi:"id"`
 	// Information about the current lifecycle state.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
-	PublicKey        string `pulumi:"publicKey"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
+	PublicKey        *string `pulumi:"publicKey"`
 	// The SSH public key's fingerprint for the console connection service host.
-	ServiceHostKeyFingerprint string `pulumi:"serviceHostKeyFingerprint"`
+	ServiceHostKeyFingerprint *string `pulumi:"serviceHostKeyFingerprint"`
 	// The current state of the console connection.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 }
 
 func LookupDbNodeConsoleConnectionOutput(ctx *pulumi.Context, args LookupDbNodeConsoleConnectionOutputArgs, opts ...pulumi.InvokeOption) LookupDbNodeConsoleConnectionResultOutput {
@@ -125,20 +124,14 @@ func (o LookupDbNodeConsoleConnectionResultOutput) ToLookupDbNodeConsoleConnecti
 	return o
 }
 
-func (o LookupDbNodeConsoleConnectionResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupDbNodeConsoleConnectionResult] {
-	return pulumix.Output[LookupDbNodeConsoleConnectionResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the compartment to contain the console connection.
-func (o LookupDbNodeConsoleConnectionResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDbNodeConsoleConnectionResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupDbNodeConsoleConnectionResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDbNodeConsoleConnectionResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // The SSH connection string for the console connection.
-func (o LookupDbNodeConsoleConnectionResultOutput) ConnectionString() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDbNodeConsoleConnectionResult) string { return v.ConnectionString }).(pulumi.StringOutput)
+func (o LookupDbNodeConsoleConnectionResultOutput) ConnectionString() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDbNodeConsoleConnectionResult) *string { return v.ConnectionString }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the database node.
@@ -152,8 +145,8 @@ func (o LookupDbNodeConsoleConnectionResultOutput) DefinedTags() pulumi.MapOutpu
 }
 
 // The SSH public key fingerprint for the console connection.
-func (o LookupDbNodeConsoleConnectionResultOutput) Fingerprint() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDbNodeConsoleConnectionResult) string { return v.Fingerprint }).(pulumi.StringOutput)
+func (o LookupDbNodeConsoleConnectionResultOutput) Fingerprint() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDbNodeConsoleConnectionResult) *string { return v.Fingerprint }).(pulumi.StringPtrOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -167,22 +160,22 @@ func (o LookupDbNodeConsoleConnectionResultOutput) Id() pulumi.StringOutput {
 }
 
 // Information about the current lifecycle state.
-func (o LookupDbNodeConsoleConnectionResultOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDbNodeConsoleConnectionResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o LookupDbNodeConsoleConnectionResultOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDbNodeConsoleConnectionResult) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
-func (o LookupDbNodeConsoleConnectionResultOutput) PublicKey() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDbNodeConsoleConnectionResult) string { return v.PublicKey }).(pulumi.StringOutput)
+func (o LookupDbNodeConsoleConnectionResultOutput) PublicKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDbNodeConsoleConnectionResult) *string { return v.PublicKey }).(pulumi.StringPtrOutput)
 }
 
 // The SSH public key's fingerprint for the console connection service host.
-func (o LookupDbNodeConsoleConnectionResultOutput) ServiceHostKeyFingerprint() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDbNodeConsoleConnectionResult) string { return v.ServiceHostKeyFingerprint }).(pulumi.StringOutput)
+func (o LookupDbNodeConsoleConnectionResultOutput) ServiceHostKeyFingerprint() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDbNodeConsoleConnectionResult) *string { return v.ServiceHostKeyFingerprint }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the console connection.
-func (o LookupDbNodeConsoleConnectionResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDbNodeConsoleConnectionResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupDbNodeConsoleConnectionResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDbNodeConsoleConnectionResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 func init() {

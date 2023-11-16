@@ -74,55 +74,55 @@ export class ActionCreateZoneFromZoneFile extends pulumi.CustomResource {
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    public /*out*/ readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public /*out*/ readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * External secondary servers for the zone. This field is currently not supported when `zoneType` is `SECONDARY` or `scope` is `PRIVATE`.
      */
-    public /*out*/ readonly externalDownstreams!: pulumi.Output<outputs.Dns.ActionCreateZoneFromZoneFileExternalDownstream[]>;
+    public /*out*/ readonly externalDownstreams!: pulumi.Output<outputs.Dns.ActionCreateZoneFromZoneFileExternalDownstream[] | undefined>;
     /**
      * External master servers for the zone. `externalMasters` becomes a required parameter when the `zoneType` value is `SECONDARY`.
      */
-    public /*out*/ readonly externalMasters!: pulumi.Output<outputs.Dns.ActionCreateZoneFromZoneFileExternalMaster[]>;
+    public /*out*/ readonly externalMasters!: pulumi.Output<outputs.Dns.ActionCreateZoneFromZoneFileExternalMaster[] | undefined>;
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    public /*out*/ readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public /*out*/ readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * A Boolean flag indicating whether or not parts of the resource are unable to be explicitly managed.
      */
-    public /*out*/ readonly isProtected!: pulumi.Output<boolean>;
+    public /*out*/ readonly isProtected!: pulumi.Output<boolean | undefined>;
     /**
      * The name of the zone.
      */
-    public /*out*/ readonly name!: pulumi.Output<string>;
+    public /*out*/ readonly name!: pulumi.Output<string | undefined>;
     /**
      * The authoritative nameservers for the zone.
      */
-    public /*out*/ readonly nameservers!: pulumi.Output<outputs.Dns.ActionCreateZoneFromZoneFileNameserver[]>;
+    public /*out*/ readonly nameservers!: pulumi.Output<outputs.Dns.ActionCreateZoneFromZoneFileNameserver[] | undefined>;
     /**
      * Specifies to operate only on resources that have a matching DNS scope.
      */
-    public readonly scope!: pulumi.Output<string>;
+    public readonly scope!: pulumi.Output<string | undefined>;
     /**
      * The canonical absolute URL of the resource.
      */
-    public /*out*/ readonly self!: pulumi.Output<string>;
+    public /*out*/ readonly self!: pulumi.Output<string | undefined>;
     /**
      * The current serial of the zone. As seen in the zone's SOA record.
      */
-    public /*out*/ readonly serial!: pulumi.Output<string>;
+    public /*out*/ readonly serial!: pulumi.Output<string | undefined>;
     /**
      * The current state of the zone resource.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * Version is the never-repeating, totally-orderable, version of the zone, from which the serial field of the zone's SOA record is derived.
      */
-    public /*out*/ readonly version!: pulumi.Output<string>;
+    public /*out*/ readonly version!: pulumi.Output<string | undefined>;
     /**
      * The OCID of the view the resource is associated with.
      *
@@ -130,15 +130,15 @@ export class ActionCreateZoneFromZoneFile extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly viewId!: pulumi.Output<string>;
+    public readonly viewId!: pulumi.Output<string | undefined>;
     /**
      * The Oracle Cloud Infrastructure nameservers that transfer the zone data with external nameservers.
      */
-    public /*out*/ readonly zoneTransferServers!: pulumi.Output<outputs.Dns.ActionCreateZoneFromZoneFileZoneTransferServer[]>;
+    public /*out*/ readonly zoneTransferServers!: pulumi.Output<outputs.Dns.ActionCreateZoneFromZoneFileZoneTransferServer[] | undefined>;
     /**
      * The type of the zone. Must be either `PRIMARY` or `SECONDARY`. `SECONDARY` is only supported for GLOBAL zones.
      */
-    public /*out*/ readonly zoneType!: pulumi.Output<string>;
+    public /*out*/ readonly zoneType!: pulumi.Output<string | undefined>;
 
     /**
      * Create a ActionCreateZoneFromZoneFile resource with the given unique name, arguments, and options.

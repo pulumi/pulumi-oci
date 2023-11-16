@@ -20,11 +20,11 @@ namespace Pulumi.Oci.Autoscaling.Outputs
         /// <summary>
         /// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// ID of the condition that is assigned after creation.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Metric and threshold details for triggering an autoscaling action.
         /// </summary>
@@ -34,9 +34,9 @@ namespace Pulumi.Oci.Autoscaling.Outputs
         private GetAutoScalingConfigurationPolicyRuleResult(
             ImmutableArray<Outputs.GetAutoScalingConfigurationPolicyRuleActionResult> actions,
 
-            string displayName,
+            string? displayName,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetAutoScalingConfigurationPolicyRuleMetricResult> metrics)
         {

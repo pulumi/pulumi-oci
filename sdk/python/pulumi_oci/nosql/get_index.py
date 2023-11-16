@@ -60,14 +60,11 @@ class GetIndexResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        Compartment Identifier.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
@@ -77,55 +74,37 @@ class GetIndexResult:
 
     @property
     @pulumi.getter(name="isIfNotExists")
-    def is_if_not_exists(self) -> bool:
+    def is_if_not_exists(self) -> Optional[bool]:
         return pulumi.get(self, "is_if_not_exists")
 
     @property
     @pulumi.getter
-    def keys(self) -> Sequence['outputs.GetIndexKeyResult']:
-        """
-        A set of keys for a secondary index.
-        """
+    def keys(self) -> Optional[Sequence['outputs.GetIndexKeyResult']]:
         return pulumi.get(self, "keys")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        A message describing the current state in more detail.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        Index name.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The state of an index.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="tableId")
-    def table_id(self) -> str:
-        """
-        the OCID of the table to which this index belongs.
-        """
+    def table_id(self) -> Optional[str]:
         return pulumi.get(self, "table_id")
 
     @property
     @pulumi.getter(name="tableName")
-    def table_name(self) -> str:
-        """
-        The name of the table to which this index belongs.
-        """
+    def table_name(self) -> Optional[str]:
         return pulumi.get(self, "table_name")
 
     @property
@@ -158,25 +137,7 @@ def get_index(compartment_id: Optional[str] = None,
               table_name_or_id: Optional[str] = None,
               opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetIndexResult:
     """
-    This data source provides details about a specific Index resource in Oracle Cloud Infrastructure NoSQL Database service.
-
-    Get information about a single index.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_index = oci.Nosql.get_index(index_name=oci_nosql_index["test_index"]["name"],
-        table_name_or_id=oci_nosql_table_name_or["test_table_name_or"]["id"],
-        compartment_id=var["compartment_id"])
-    ```
-
-
-    :param str compartment_id: The ID of a table's compartment. When a table is identified by name, the compartmentId is often needed to provide context for interpreting the name.
-    :param str index_name: The name of a table's index.
-    :param str table_name_or_id: A table name within the compartment, or a table OCID.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -205,24 +166,6 @@ def get_index_output(compartment_id: Optional[pulumi.Input[str]] = None,
                      table_name_or_id: Optional[pulumi.Input[str]] = None,
                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetIndexResult]:
     """
-    This data source provides details about a specific Index resource in Oracle Cloud Infrastructure NoSQL Database service.
-
-    Get information about a single index.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_index = oci.Nosql.get_index(index_name=oci_nosql_index["test_index"]["name"],
-        table_name_or_id=oci_nosql_table_name_or["test_table_name_or"]["id"],
-        compartment_id=var["compartment_id"])
-    ```
-
-
-    :param str compartment_id: The ID of a table's compartment. When a table is identified by name, the compartmentId is often needed to provide context for interpreting the name.
-    :param str index_name: The name of a table's index.
-    :param str table_name_or_id: A table name within the compartment, or a table OCID.
+    Use this data source to access information about an existing resource.
     """
     ...

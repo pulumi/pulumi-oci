@@ -29,7 +29,7 @@ public final class GetVolumeAttachmentsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The OCID of the instance the volume is attached to.
      * 
@@ -39,7 +39,7 @@ public final class GetVolumeAttachmentsResult {
      * @return The list of volume_attachments.
      * 
      */
-    private List<GetVolumeAttachmentsVolumeAttachment> volumeAttachments;
+    private @Nullable List<GetVolumeAttachmentsVolumeAttachment> volumeAttachments;
     /**
      * @return The OCID of the volume.
      * 
@@ -68,8 +68,8 @@ public final class GetVolumeAttachmentsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The OCID of the instance the volume is attached to.
@@ -83,7 +83,7 @@ public final class GetVolumeAttachmentsResult {
      * 
      */
     public List<GetVolumeAttachmentsVolumeAttachment> volumeAttachments() {
-        return this.volumeAttachments;
+        return this.volumeAttachments == null ? List.of() : this.volumeAttachments;
     }
     /**
      * @return The OCID of the volume.
@@ -105,9 +105,9 @@ public final class GetVolumeAttachmentsResult {
         private @Nullable String availabilityDomain;
         private String compartmentId;
         private @Nullable List<GetVolumeAttachmentsFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String instanceId;
-        private List<GetVolumeAttachmentsVolumeAttachment> volumeAttachments;
+        private @Nullable List<GetVolumeAttachmentsVolumeAttachment> volumeAttachments;
         private @Nullable String volumeId;
         public Builder() {}
         public Builder(GetVolumeAttachmentsResult defaults) {
@@ -140,8 +140,8 @@ public final class GetVolumeAttachmentsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -150,8 +150,8 @@ public final class GetVolumeAttachmentsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder volumeAttachments(List<GetVolumeAttachmentsVolumeAttachment> volumeAttachments) {
-            this.volumeAttachments = Objects.requireNonNull(volumeAttachments);
+        public Builder volumeAttachments(@Nullable List<GetVolumeAttachmentsVolumeAttachment> volumeAttachments) {
+            this.volumeAttachments = volumeAttachments;
             return this;
         }
         public Builder volumeAttachments(GetVolumeAttachmentsVolumeAttachment... volumeAttachments) {

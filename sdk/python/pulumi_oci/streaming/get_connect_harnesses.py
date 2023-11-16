@@ -46,17 +46,11 @@ class GetConnectHarnessesResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The OCID of the compartment that contains the connect harness.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="connectHarnesses")
-    def connect_harnesses(self) -> Sequence['outputs.GetConnectHarnessesConnectHarnessResult']:
-        """
-        The list of connect_harness.
-        """
+    def connect_harnesses(self) -> Optional[Sequence['outputs.GetConnectHarnessesConnectHarnessResult']]:
         return pulumi.get(self, "connect_harnesses")
 
     @property
@@ -67,25 +61,16 @@ class GetConnectHarnessesResult:
     @property
     @pulumi.getter
     def id(self) -> Optional[str]:
-        """
-        The OCID of the connect harness.
-        """
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter
     def name(self) -> Optional[str]:
-        """
-        The name of the connect harness. Avoid entering confidential information.  Example: `JDBCConnector`
-        """
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the connect harness.
-        """
         return pulumi.get(self, "state")
 
 
@@ -110,27 +95,7 @@ def get_connect_harnesses(compartment_id: Optional[str] = None,
                           state: Optional[str] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetConnectHarnessesResult:
     """
-    This data source provides the list of Connect Harnesses in Oracle Cloud Infrastructure Streaming service.
-
-    Lists the connectharness.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_connect_harnesses = oci.Streaming.get_connect_harnesses(compartment_id=var["compartment_id"],
-        id=var["connect_harness_id"],
-        name=var["connect_harness_name"],
-        state=var["connect_harness_state"])
-    ```
-
-
-    :param str compartment_id: The OCID of the compartment.
-    :param str id: A filter to return only resources that match the given ID exactly.
-    :param str name: A filter to return only resources that match the given name exactly.
-    :param str state: A filter to only return resources that match the given lifecycle state. The state value is case-insensitive.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -158,26 +123,6 @@ def get_connect_harnesses_output(compartment_id: Optional[pulumi.Input[str]] = N
                                  state: Optional[pulumi.Input[Optional[str]]] = None,
                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetConnectHarnessesResult]:
     """
-    This data source provides the list of Connect Harnesses in Oracle Cloud Infrastructure Streaming service.
-
-    Lists the connectharness.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_connect_harnesses = oci.Streaming.get_connect_harnesses(compartment_id=var["compartment_id"],
-        id=var["connect_harness_id"],
-        name=var["connect_harness_name"],
-        state=var["connect_harness_state"])
-    ```
-
-
-    :param str compartment_id: The OCID of the compartment.
-    :param str id: A filter to return only resources that match the given ID exactly.
-    :param str name: A filter to return only resources that match the given name exactly.
-    :param str state: A filter to only return resources that match the given lifecycle state. The state value is case-insensitive.
+    Use this data source to access information about an existing resource.
     """
     ...

@@ -23,21 +23,6 @@ class DedicatedVmHostArgs:
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None):
         """
         The set of arguments for constructing a DedicatedVmHost resource.
-        :param pulumi.Input[str] availability_domain: The availability domain of the dedicated virtual machine host.  Example: `Uocm:PHX-AD-1`
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment.
-        :param pulumi.Input[str] dedicated_vm_host_shape: The dedicated virtual machine host shape. The shape determines the number of CPUs and other resources available for VM instances launched on the dedicated virtual machine host.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[str] fault_domain: The fault domain for the dedicated virtual machine host's assigned instances. For more information, see [Fault Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm#fault). If you do not specify the fault domain, the system selects one for you. To change the fault domain for a dedicated virtual machine host, delete it and create a new dedicated virtual machine host in the preferred fault domain.
-               
-               To get a list of fault domains, use the `ListFaultDomains` operation in the [Identity and Access Management Service API](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/).
-               
-               Example: `FAULT-DOMAIN-1`
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}` 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "availability_domain", availability_domain)
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -54,9 +39,6 @@ class DedicatedVmHostArgs:
     @property
     @pulumi.getter(name="availabilityDomain")
     def availability_domain(self) -> pulumi.Input[str]:
-        """
-        The availability domain of the dedicated virtual machine host.  Example: `Uocm:PHX-AD-1`
-        """
         return pulumi.get(self, "availability_domain")
 
     @availability_domain.setter
@@ -66,9 +48,6 @@ class DedicatedVmHostArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The OCID of the compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -78,9 +57,6 @@ class DedicatedVmHostArgs:
     @property
     @pulumi.getter(name="dedicatedVmHostShape")
     def dedicated_vm_host_shape(self) -> pulumi.Input[str]:
-        """
-        The dedicated virtual machine host shape. The shape determines the number of CPUs and other resources available for VM instances launched on the dedicated virtual machine host.
-        """
         return pulumi.get(self, "dedicated_vm_host_shape")
 
     @dedicated_vm_host_shape.setter
@@ -90,9 +66,6 @@ class DedicatedVmHostArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -102,9 +75,6 @@ class DedicatedVmHostArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -114,13 +84,6 @@ class DedicatedVmHostArgs:
     @property
     @pulumi.getter(name="faultDomain")
     def fault_domain(self) -> Optional[pulumi.Input[str]]:
-        """
-        The fault domain for the dedicated virtual machine host's assigned instances. For more information, see [Fault Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm#fault). If you do not specify the fault domain, the system selects one for you. To change the fault domain for a dedicated virtual machine host, delete it and create a new dedicated virtual machine host in the preferred fault domain.
-
-        To get a list of fault domains, use the `ListFaultDomains` operation in the [Identity and Access Management Service API](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/).
-
-        Example: `FAULT-DOMAIN-1`
-        """
         return pulumi.get(self, "fault_domain")
 
     @fault_domain.setter
@@ -130,13 +93,6 @@ class DedicatedVmHostArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}` 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -162,27 +118,6 @@ class _DedicatedVmHostState:
                  total_ocpus: Optional[pulumi.Input[float]] = None):
         """
         Input properties used for looking up and filtering DedicatedVmHost resources.
-        :param pulumi.Input[str] availability_domain: The availability domain of the dedicated virtual machine host.  Example: `Uocm:PHX-AD-1`
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment.
-        :param pulumi.Input[str] dedicated_vm_host_shape: The dedicated virtual machine host shape. The shape determines the number of CPUs and other resources available for VM instances launched on the dedicated virtual machine host.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[str] fault_domain: The fault domain for the dedicated virtual machine host's assigned instances. For more information, see [Fault Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm#fault). If you do not specify the fault domain, the system selects one for you. To change the fault domain for a dedicated virtual machine host, delete it and create a new dedicated virtual machine host in the preferred fault domain.
-               
-               To get a list of fault domains, use the `ListFaultDomains` operation in the [Identity and Access Management Service API](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/).
-               
-               Example: `FAULT-DOMAIN-1`
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}` 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[float] remaining_memory_in_gbs: The current available memory of the dedicated VM host, in GBs.
-        :param pulumi.Input[float] remaining_ocpus: The current available OCPUs of the dedicated VM host.
-        :param pulumi.Input[str] state: The current state of the dedicated VM host.
-        :param pulumi.Input[str] time_created: The date and time the dedicated VM host was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-        :param pulumi.Input[float] total_memory_in_gbs: The current total memory of the dedicated VM host, in GBs.
-        :param pulumi.Input[float] total_ocpus: The current total OCPUs of the dedicated VM host.
         """
         if availability_domain is not None:
             pulumi.set(__self__, "availability_domain", availability_domain)
@@ -214,9 +149,6 @@ class _DedicatedVmHostState:
     @property
     @pulumi.getter(name="availabilityDomain")
     def availability_domain(self) -> Optional[pulumi.Input[str]]:
-        """
-        The availability domain of the dedicated virtual machine host.  Example: `Uocm:PHX-AD-1`
-        """
         return pulumi.get(self, "availability_domain")
 
     @availability_domain.setter
@@ -226,9 +158,6 @@ class _DedicatedVmHostState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The OCID of the compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -238,9 +167,6 @@ class _DedicatedVmHostState:
     @property
     @pulumi.getter(name="dedicatedVmHostShape")
     def dedicated_vm_host_shape(self) -> Optional[pulumi.Input[str]]:
-        """
-        The dedicated virtual machine host shape. The shape determines the number of CPUs and other resources available for VM instances launched on the dedicated virtual machine host.
-        """
         return pulumi.get(self, "dedicated_vm_host_shape")
 
     @dedicated_vm_host_shape.setter
@@ -250,9 +176,6 @@ class _DedicatedVmHostState:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -262,9 +185,6 @@ class _DedicatedVmHostState:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -274,13 +194,6 @@ class _DedicatedVmHostState:
     @property
     @pulumi.getter(name="faultDomain")
     def fault_domain(self) -> Optional[pulumi.Input[str]]:
-        """
-        The fault domain for the dedicated virtual machine host's assigned instances. For more information, see [Fault Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm#fault). If you do not specify the fault domain, the system selects one for you. To change the fault domain for a dedicated virtual machine host, delete it and create a new dedicated virtual machine host in the preferred fault domain.
-
-        To get a list of fault domains, use the `ListFaultDomains` operation in the [Identity and Access Management Service API](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/).
-
-        Example: `FAULT-DOMAIN-1`
-        """
         return pulumi.get(self, "fault_domain")
 
     @fault_domain.setter
@@ -290,13 +203,6 @@ class _DedicatedVmHostState:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}` 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -306,9 +212,6 @@ class _DedicatedVmHostState:
     @property
     @pulumi.getter(name="remainingMemoryInGbs")
     def remaining_memory_in_gbs(self) -> Optional[pulumi.Input[float]]:
-        """
-        The current available memory of the dedicated VM host, in GBs.
-        """
         return pulumi.get(self, "remaining_memory_in_gbs")
 
     @remaining_memory_in_gbs.setter
@@ -318,9 +221,6 @@ class _DedicatedVmHostState:
     @property
     @pulumi.getter(name="remainingOcpus")
     def remaining_ocpus(self) -> Optional[pulumi.Input[float]]:
-        """
-        The current available OCPUs of the dedicated VM host.
-        """
         return pulumi.get(self, "remaining_ocpus")
 
     @remaining_ocpus.setter
@@ -330,9 +230,6 @@ class _DedicatedVmHostState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The current state of the dedicated VM host.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -342,9 +239,6 @@ class _DedicatedVmHostState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time the dedicated VM host was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -354,9 +248,6 @@ class _DedicatedVmHostState:
     @property
     @pulumi.getter(name="totalMemoryInGbs")
     def total_memory_in_gbs(self) -> Optional[pulumi.Input[float]]:
-        """
-        The current total memory of the dedicated VM host, in GBs.
-        """
         return pulumi.get(self, "total_memory_in_gbs")
 
     @total_memory_in_gbs.setter
@@ -366,9 +257,6 @@ class _DedicatedVmHostState:
     @property
     @pulumi.getter(name="totalOcpus")
     def total_ocpus(self) -> Optional[pulumi.Input[float]]:
-        """
-        The current total OCPUs of the dedicated VM host.
-        """
         return pulumi.get(self, "total_ocpus")
 
     @total_ocpus.setter
@@ -390,58 +278,9 @@ class DedicatedVmHost(pulumi.CustomResource):
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  __props__=None):
         """
-        This resource provides the Dedicated Vm Host resource in Oracle Cloud Infrastructure Core service.
-
-        Creates a new dedicated virtual machine host in the specified compartment and the specified availability domain.
-        Dedicated virtual machine hosts enable you to run your Compute virtual machine (VM) instances on dedicated servers
-        that are a single tenant and not shared with other customers.
-        For more information, see [Dedicated Virtual Machine Hosts](https://docs.cloud.oracle.com/iaas/Content/Compute/Concepts/dedicatedvmhosts.htm).
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_dedicated_vm_host = oci.core.DedicatedVmHost("testDedicatedVmHost",
-            availability_domain=var["dedicated_vm_host_availability_domain"],
-            compartment_id=var["compartment_id"],
-            dedicated_vm_host_shape=var["dedicated_vm_host_dedicated_vm_host_shape"],
-            defined_tags={
-                "Operations.CostCenter": "42",
-            },
-            display_name=var["dedicated_vm_host_display_name"],
-            fault_domain=var["dedicated_vm_host_fault_domain"],
-            freeform_tags={
-                "Department": "Finance",
-            })
-        ```
-
-        ## Import
-
-        DedicatedVmHosts can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Core/dedicatedVmHost:DedicatedVmHost test_dedicated_vm_host "id"
-        ```
-
+        Create a DedicatedVmHost resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] availability_domain: The availability domain of the dedicated virtual machine host.  Example: `Uocm:PHX-AD-1`
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment.
-        :param pulumi.Input[str] dedicated_vm_host_shape: The dedicated virtual machine host shape. The shape determines the number of CPUs and other resources available for VM instances launched on the dedicated virtual machine host.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[str] fault_domain: The fault domain for the dedicated virtual machine host's assigned instances. For more information, see [Fault Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm#fault). If you do not specify the fault domain, the system selects one for you. To change the fault domain for a dedicated virtual machine host, delete it and create a new dedicated virtual machine host in the preferred fault domain.
-               
-               To get a list of fault domains, use the `ListFaultDomains` operation in the [Identity and Access Management Service API](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/).
-               
-               Example: `FAULT-DOMAIN-1`
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}` 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -450,41 +289,7 @@ class DedicatedVmHost(pulumi.CustomResource):
                  args: DedicatedVmHostArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Dedicated Vm Host resource in Oracle Cloud Infrastructure Core service.
-
-        Creates a new dedicated virtual machine host in the specified compartment and the specified availability domain.
-        Dedicated virtual machine hosts enable you to run your Compute virtual machine (VM) instances on dedicated servers
-        that are a single tenant and not shared with other customers.
-        For more information, see [Dedicated Virtual Machine Hosts](https://docs.cloud.oracle.com/iaas/Content/Compute/Concepts/dedicatedvmhosts.htm).
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_dedicated_vm_host = oci.core.DedicatedVmHost("testDedicatedVmHost",
-            availability_domain=var["dedicated_vm_host_availability_domain"],
-            compartment_id=var["compartment_id"],
-            dedicated_vm_host_shape=var["dedicated_vm_host_dedicated_vm_host_shape"],
-            defined_tags={
-                "Operations.CostCenter": "42",
-            },
-            display_name=var["dedicated_vm_host_display_name"],
-            fault_domain=var["dedicated_vm_host_fault_domain"],
-            freeform_tags={
-                "Department": "Finance",
-            })
-        ```
-
-        ## Import
-
-        DedicatedVmHosts can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Core/dedicatedVmHost:DedicatedVmHost test_dedicated_vm_host "id"
-        ```
-
+        Create a DedicatedVmHost resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param DedicatedVmHostArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -565,27 +370,6 @@ class DedicatedVmHost(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] availability_domain: The availability domain of the dedicated virtual machine host.  Example: `Uocm:PHX-AD-1`
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment.
-        :param pulumi.Input[str] dedicated_vm_host_shape: The dedicated virtual machine host shape. The shape determines the number of CPUs and other resources available for VM instances launched on the dedicated virtual machine host.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[str] fault_domain: The fault domain for the dedicated virtual machine host's assigned instances. For more information, see [Fault Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm#fault). If you do not specify the fault domain, the system selects one for you. To change the fault domain for a dedicated virtual machine host, delete it and create a new dedicated virtual machine host in the preferred fault domain.
-               
-               To get a list of fault domains, use the `ListFaultDomains` operation in the [Identity and Access Management Service API](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/).
-               
-               Example: `FAULT-DOMAIN-1`
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}` 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[float] remaining_memory_in_gbs: The current available memory of the dedicated VM host, in GBs.
-        :param pulumi.Input[float] remaining_ocpus: The current available OCPUs of the dedicated VM host.
-        :param pulumi.Input[str] state: The current state of the dedicated VM host.
-        :param pulumi.Input[str] time_created: The date and time the dedicated VM host was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-        :param pulumi.Input[float] total_memory_in_gbs: The current total memory of the dedicated VM host, in GBs.
-        :param pulumi.Input[float] total_ocpus: The current total OCPUs of the dedicated VM host.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -609,112 +393,65 @@ class DedicatedVmHost(pulumi.CustomResource):
     @property
     @pulumi.getter(name="availabilityDomain")
     def availability_domain(self) -> pulumi.Output[str]:
-        """
-        The availability domain of the dedicated virtual machine host.  Example: `Uocm:PHX-AD-1`
-        """
         return pulumi.get(self, "availability_domain")
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The OCID of the compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="dedicatedVmHostShape")
     def dedicated_vm_host_shape(self) -> pulumi.Output[str]:
-        """
-        The dedicated virtual machine host shape. The shape determines the number of CPUs and other resources available for VM instances launched on the dedicated virtual machine host.
-        """
         return pulumi.get(self, "dedicated_vm_host_shape")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> pulumi.Output[str]:
-        """
-        (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
+    def display_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="faultDomain")
-    def fault_domain(self) -> pulumi.Output[str]:
-        """
-        The fault domain for the dedicated virtual machine host's assigned instances. For more information, see [Fault Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm#fault). If you do not specify the fault domain, the system selects one for you. To change the fault domain for a dedicated virtual machine host, delete it and create a new dedicated virtual machine host in the preferred fault domain.
-
-        To get a list of fault domains, use the `ListFaultDomains` operation in the [Identity and Access Management Service API](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/).
-
-        Example: `FAULT-DOMAIN-1`
-        """
+    def fault_domain(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "fault_domain")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}` 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
+    def freeform_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="remainingMemoryInGbs")
-    def remaining_memory_in_gbs(self) -> pulumi.Output[float]:
-        """
-        The current available memory of the dedicated VM host, in GBs.
-        """
+    def remaining_memory_in_gbs(self) -> pulumi.Output[Optional[float]]:
         return pulumi.get(self, "remaining_memory_in_gbs")
 
     @property
     @pulumi.getter(name="remainingOcpus")
-    def remaining_ocpus(self) -> pulumi.Output[float]:
-        """
-        The current available OCPUs of the dedicated VM host.
-        """
+    def remaining_ocpus(self) -> pulumi.Output[Optional[float]]:
         return pulumi.get(self, "remaining_ocpus")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        The current state of the dedicated VM host.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        The date and time the dedicated VM host was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="totalMemoryInGbs")
-    def total_memory_in_gbs(self) -> pulumi.Output[float]:
-        """
-        The current total memory of the dedicated VM host, in GBs.
-        """
+    def total_memory_in_gbs(self) -> pulumi.Output[Optional[float]]:
         return pulumi.get(self, "total_memory_in_gbs")
 
     @property
     @pulumi.getter(name="totalOcpus")
-    def total_ocpus(self) -> pulumi.Output[float]:
-        """
-        The current total OCPUs of the dedicated VM host.
-        """
+    def total_ocpus(self) -> pulumi.Output[Optional[float]]:
         return pulumi.get(self, "total_ocpus")
 

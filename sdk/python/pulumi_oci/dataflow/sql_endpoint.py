@@ -33,21 +33,6 @@ class SqlEndpointArgs:
                  spark_advanced_configurations: Optional[pulumi.Input[Mapping[str, Any]]] = None):
         """
         The set of arguments for constructing a SqlEndpoint resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The identifier of the compartment used with the SQL Endpoint.
-        :param pulumi.Input[str] display_name: The SQL Endpoint name, which can be changed.
-        :param pulumi.Input[str] driver_shape: The shape of the SQL Endpoint driver instance.
-        :param pulumi.Input[str] executor_shape: The shape of the SQL Endpoint worker instance.
-        :param pulumi.Input[int] max_executor_count: The maximum number of executors.
-        :param pulumi.Input[str] metastore_id: Metastore OCID
-        :param pulumi.Input[int] min_executor_count: The minimum number of executors.
-        :param pulumi.Input['SqlEndpointNetworkConfigurationArgs'] network_configuration: The network configuration of a SQL Endpoint.
-        :param pulumi.Input[str] sql_endpoint_version: The version of the SQL Endpoint.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] description: The description of CreateSQLEndpointDetails.
-        :param pulumi.Input['SqlEndpointDriverShapeConfigArgs'] driver_shape_config: This is used to configure the shape of the driver or executor if a flexible shape is used.
-        :param pulumi.Input['SqlEndpointExecutorShapeConfigArgs'] executor_shape_config: This is used to configure the shape of the driver or executor if a flexible shape is used.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[Mapping[str, Any]] spark_advanced_configurations: The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "display_name", display_name)
@@ -74,9 +59,6 @@ class SqlEndpointArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The identifier of the compartment used with the SQL Endpoint.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -86,9 +68,6 @@ class SqlEndpointArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Input[str]:
-        """
-        The SQL Endpoint name, which can be changed.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -98,9 +77,6 @@ class SqlEndpointArgs:
     @property
     @pulumi.getter(name="driverShape")
     def driver_shape(self) -> pulumi.Input[str]:
-        """
-        The shape of the SQL Endpoint driver instance.
-        """
         return pulumi.get(self, "driver_shape")
 
     @driver_shape.setter
@@ -110,9 +86,6 @@ class SqlEndpointArgs:
     @property
     @pulumi.getter(name="executorShape")
     def executor_shape(self) -> pulumi.Input[str]:
-        """
-        The shape of the SQL Endpoint worker instance.
-        """
         return pulumi.get(self, "executor_shape")
 
     @executor_shape.setter
@@ -122,9 +95,6 @@ class SqlEndpointArgs:
     @property
     @pulumi.getter(name="maxExecutorCount")
     def max_executor_count(self) -> pulumi.Input[int]:
-        """
-        The maximum number of executors.
-        """
         return pulumi.get(self, "max_executor_count")
 
     @max_executor_count.setter
@@ -134,9 +104,6 @@ class SqlEndpointArgs:
     @property
     @pulumi.getter(name="metastoreId")
     def metastore_id(self) -> pulumi.Input[str]:
-        """
-        Metastore OCID
-        """
         return pulumi.get(self, "metastore_id")
 
     @metastore_id.setter
@@ -146,9 +113,6 @@ class SqlEndpointArgs:
     @property
     @pulumi.getter(name="minExecutorCount")
     def min_executor_count(self) -> pulumi.Input[int]:
-        """
-        The minimum number of executors.
-        """
         return pulumi.get(self, "min_executor_count")
 
     @min_executor_count.setter
@@ -158,9 +122,6 @@ class SqlEndpointArgs:
     @property
     @pulumi.getter(name="networkConfiguration")
     def network_configuration(self) -> pulumi.Input['SqlEndpointNetworkConfigurationArgs']:
-        """
-        The network configuration of a SQL Endpoint.
-        """
         return pulumi.get(self, "network_configuration")
 
     @network_configuration.setter
@@ -170,9 +131,6 @@ class SqlEndpointArgs:
     @property
     @pulumi.getter(name="sqlEndpointVersion")
     def sql_endpoint_version(self) -> pulumi.Input[str]:
-        """
-        The version of the SQL Endpoint.
-        """
         return pulumi.get(self, "sql_endpoint_version")
 
     @sql_endpoint_version.setter
@@ -182,9 +140,6 @@ class SqlEndpointArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -194,9 +149,6 @@ class SqlEndpointArgs:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
-        """
-        The description of CreateSQLEndpointDetails.
-        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -206,9 +158,6 @@ class SqlEndpointArgs:
     @property
     @pulumi.getter(name="driverShapeConfig")
     def driver_shape_config(self) -> Optional[pulumi.Input['SqlEndpointDriverShapeConfigArgs']]:
-        """
-        This is used to configure the shape of the driver or executor if a flexible shape is used.
-        """
         return pulumi.get(self, "driver_shape_config")
 
     @driver_shape_config.setter
@@ -218,9 +167,6 @@ class SqlEndpointArgs:
     @property
     @pulumi.getter(name="executorShapeConfig")
     def executor_shape_config(self) -> Optional[pulumi.Input['SqlEndpointExecutorShapeConfigArgs']]:
-        """
-        This is used to configure the shape of the driver or executor if a flexible shape is used.
-        """
         return pulumi.get(self, "executor_shape_config")
 
     @executor_shape_config.setter
@@ -230,9 +176,6 @@ class SqlEndpointArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -242,9 +185,6 @@ class SqlEndpointArgs:
     @property
     @pulumi.getter(name="sparkAdvancedConfigurations")
     def spark_advanced_configurations(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
-        """
         return pulumi.get(self, "spark_advanced_configurations")
 
     @spark_advanced_configurations.setter
@@ -281,34 +221,6 @@ class _SqlEndpointState:
                  warehouse_bucket_uri: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering SqlEndpoint resources.
-        :param pulumi.Input[str] compartment_id: (Updatable) The identifier of the compartment used with the SQL Endpoint.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] description: The description of CreateSQLEndpointDetails.
-        :param pulumi.Input[str] display_name: The SQL Endpoint name, which can be changed.
-        :param pulumi.Input[str] driver_shape: The shape of the SQL Endpoint driver instance.
-        :param pulumi.Input['SqlEndpointDriverShapeConfigArgs'] driver_shape_config: This is used to configure the shape of the driver or executor if a flexible shape is used.
-        :param pulumi.Input[str] executor_shape: The shape of the SQL Endpoint worker instance.
-        :param pulumi.Input['SqlEndpointExecutorShapeConfigArgs'] executor_shape_config: This is used to configure the shape of the driver or executor if a flexible shape is used.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] jdbc_endpoint_url: The JDBC URL field. For example, jdbc:spark://{serviceFQDN}:443/default;SparkServerType=DFI
-        :param pulumi.Input[str] lake_id: Oracle Cloud Infrastructure lake OCID
-        :param pulumi.Input[str] last_accepted_request_token: This token is used by Splat, and indicates that the service accepts the request, and that the request is currently being processed.
-        :param pulumi.Input[int] max_executor_count: The maximum number of executors.
-        :param pulumi.Input[str] metastore_id: Metastore OCID
-        :param pulumi.Input[int] min_executor_count: The minimum number of executors.
-        :param pulumi.Input['SqlEndpointNetworkConfigurationArgs'] network_configuration: The network configuration of a SQL Endpoint.
-        :param pulumi.Input[Mapping[str, Any]] spark_advanced_configurations: The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
-        :param pulumi.Input[str] sql_endpoint_version: The version of the SQL Endpoint.
-        :param pulumi.Input[str] state: The current state of the Sql Endpoint.
-        :param pulumi.Input[str] state_message: A message describing the reason why the resource is in it's current state. Helps bubble up errors in state changes. For example, it can be used to provide actionable information for a resource in the Failed state.
-        :param pulumi.Input[Mapping[str, Any]] system_tags: The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
-        :param pulumi.Input[str] time_created: The time the Sql Endpoint was created. An RFC3339 formatted datetime string.
-        :param pulumi.Input[str] time_updated: The time the Sql Endpoint was updated. An RFC3339 formatted datetime string.
-        :param pulumi.Input[str] warehouse_bucket_uri: The warehouse bucket URI. It is a Oracle Cloud Infrastructure Object Storage bucket URI as defined here https://docs.oracle.com/en/cloud/paas/atp-cloud/atpud/object-storage-uris.html
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
@@ -362,9 +274,6 @@ class _SqlEndpointState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The identifier of the compartment used with the SQL Endpoint.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -374,9 +283,6 @@ class _SqlEndpointState:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -386,9 +292,6 @@ class _SqlEndpointState:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
-        """
-        The description of CreateSQLEndpointDetails.
-        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -398,9 +301,6 @@ class _SqlEndpointState:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The SQL Endpoint name, which can be changed.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -410,9 +310,6 @@ class _SqlEndpointState:
     @property
     @pulumi.getter(name="driverShape")
     def driver_shape(self) -> Optional[pulumi.Input[str]]:
-        """
-        The shape of the SQL Endpoint driver instance.
-        """
         return pulumi.get(self, "driver_shape")
 
     @driver_shape.setter
@@ -422,9 +319,6 @@ class _SqlEndpointState:
     @property
     @pulumi.getter(name="driverShapeConfig")
     def driver_shape_config(self) -> Optional[pulumi.Input['SqlEndpointDriverShapeConfigArgs']]:
-        """
-        This is used to configure the shape of the driver or executor if a flexible shape is used.
-        """
         return pulumi.get(self, "driver_shape_config")
 
     @driver_shape_config.setter
@@ -434,9 +328,6 @@ class _SqlEndpointState:
     @property
     @pulumi.getter(name="executorShape")
     def executor_shape(self) -> Optional[pulumi.Input[str]]:
-        """
-        The shape of the SQL Endpoint worker instance.
-        """
         return pulumi.get(self, "executor_shape")
 
     @executor_shape.setter
@@ -446,9 +337,6 @@ class _SqlEndpointState:
     @property
     @pulumi.getter(name="executorShapeConfig")
     def executor_shape_config(self) -> Optional[pulumi.Input['SqlEndpointExecutorShapeConfigArgs']]:
-        """
-        This is used to configure the shape of the driver or executor if a flexible shape is used.
-        """
         return pulumi.get(self, "executor_shape_config")
 
     @executor_shape_config.setter
@@ -458,9 +346,6 @@ class _SqlEndpointState:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -470,9 +355,6 @@ class _SqlEndpointState:
     @property
     @pulumi.getter(name="jdbcEndpointUrl")
     def jdbc_endpoint_url(self) -> Optional[pulumi.Input[str]]:
-        """
-        The JDBC URL field. For example, jdbc:spark://{serviceFQDN}:443/default;SparkServerType=DFI
-        """
         return pulumi.get(self, "jdbc_endpoint_url")
 
     @jdbc_endpoint_url.setter
@@ -482,9 +364,6 @@ class _SqlEndpointState:
     @property
     @pulumi.getter(name="lakeId")
     def lake_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        Oracle Cloud Infrastructure lake OCID
-        """
         return pulumi.get(self, "lake_id")
 
     @lake_id.setter
@@ -494,9 +373,6 @@ class _SqlEndpointState:
     @property
     @pulumi.getter(name="lastAcceptedRequestToken")
     def last_accepted_request_token(self) -> Optional[pulumi.Input[str]]:
-        """
-        This token is used by Splat, and indicates that the service accepts the request, and that the request is currently being processed.
-        """
         return pulumi.get(self, "last_accepted_request_token")
 
     @last_accepted_request_token.setter
@@ -506,9 +382,6 @@ class _SqlEndpointState:
     @property
     @pulumi.getter(name="maxExecutorCount")
     def max_executor_count(self) -> Optional[pulumi.Input[int]]:
-        """
-        The maximum number of executors.
-        """
         return pulumi.get(self, "max_executor_count")
 
     @max_executor_count.setter
@@ -518,9 +391,6 @@ class _SqlEndpointState:
     @property
     @pulumi.getter(name="metastoreId")
     def metastore_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        Metastore OCID
-        """
         return pulumi.get(self, "metastore_id")
 
     @metastore_id.setter
@@ -530,9 +400,6 @@ class _SqlEndpointState:
     @property
     @pulumi.getter(name="minExecutorCount")
     def min_executor_count(self) -> Optional[pulumi.Input[int]]:
-        """
-        The minimum number of executors.
-        """
         return pulumi.get(self, "min_executor_count")
 
     @min_executor_count.setter
@@ -542,9 +409,6 @@ class _SqlEndpointState:
     @property
     @pulumi.getter(name="networkConfiguration")
     def network_configuration(self) -> Optional[pulumi.Input['SqlEndpointNetworkConfigurationArgs']]:
-        """
-        The network configuration of a SQL Endpoint.
-        """
         return pulumi.get(self, "network_configuration")
 
     @network_configuration.setter
@@ -554,9 +418,6 @@ class _SqlEndpointState:
     @property
     @pulumi.getter(name="sparkAdvancedConfigurations")
     def spark_advanced_configurations(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
-        """
         return pulumi.get(self, "spark_advanced_configurations")
 
     @spark_advanced_configurations.setter
@@ -566,9 +427,6 @@ class _SqlEndpointState:
     @property
     @pulumi.getter(name="sqlEndpointVersion")
     def sql_endpoint_version(self) -> Optional[pulumi.Input[str]]:
-        """
-        The version of the SQL Endpoint.
-        """
         return pulumi.get(self, "sql_endpoint_version")
 
     @sql_endpoint_version.setter
@@ -578,9 +436,6 @@ class _SqlEndpointState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The current state of the Sql Endpoint.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -590,9 +445,6 @@ class _SqlEndpointState:
     @property
     @pulumi.getter(name="stateMessage")
     def state_message(self) -> Optional[pulumi.Input[str]]:
-        """
-        A message describing the reason why the resource is in it's current state. Helps bubble up errors in state changes. For example, it can be used to provide actionable information for a resource in the Failed state.
-        """
         return pulumi.get(self, "state_message")
 
     @state_message.setter
@@ -602,9 +454,6 @@ class _SqlEndpointState:
     @property
     @pulumi.getter(name="systemTags")
     def system_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
-        """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
@@ -614,9 +463,6 @@ class _SqlEndpointState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The time the Sql Endpoint was created. An RFC3339 formatted datetime string.
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -626,9 +472,6 @@ class _SqlEndpointState:
     @property
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> Optional[pulumi.Input[str]]:
-        """
-        The time the Sql Endpoint was updated. An RFC3339 formatted datetime string.
-        """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
@@ -638,13 +481,6 @@ class _SqlEndpointState:
     @property
     @pulumi.getter(name="warehouseBucketUri")
     def warehouse_bucket_uri(self) -> Optional[pulumi.Input[str]]:
-        """
-        The warehouse bucket URI. It is a Oracle Cloud Infrastructure Object Storage bucket URI as defined here https://docs.oracle.com/en/cloud/paas/atp-cloud/atpud/object-storage-uris.html
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "warehouse_bucket_uri")
 
     @warehouse_bucket_uri.setter
@@ -674,38 +510,9 @@ class SqlEndpoint(pulumi.CustomResource):
                  sql_endpoint_version: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Sql Endpoint resource in Oracle Cloud Infrastructure Data Flow service.
-        ## Note
-
-        Resource Discovery is not supported for this resource.
-
-        Create a new Sql Endpoint.
-
-        ## Import
-
-        SqlEndpoints can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:DataFlow/sqlEndpoint:SqlEndpoint test_sql_endpoint "id"
-        ```
-
+        Create a SqlEndpoint resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The identifier of the compartment used with the SQL Endpoint.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] description: The description of CreateSQLEndpointDetails.
-        :param pulumi.Input[str] display_name: The SQL Endpoint name, which can be changed.
-        :param pulumi.Input[str] driver_shape: The shape of the SQL Endpoint driver instance.
-        :param pulumi.Input[pulumi.InputType['SqlEndpointDriverShapeConfigArgs']] driver_shape_config: This is used to configure the shape of the driver or executor if a flexible shape is used.
-        :param pulumi.Input[str] executor_shape: The shape of the SQL Endpoint worker instance.
-        :param pulumi.Input[pulumi.InputType['SqlEndpointExecutorShapeConfigArgs']] executor_shape_config: This is used to configure the shape of the driver or executor if a flexible shape is used.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[int] max_executor_count: The maximum number of executors.
-        :param pulumi.Input[str] metastore_id: Metastore OCID
-        :param pulumi.Input[int] min_executor_count: The minimum number of executors.
-        :param pulumi.Input[pulumi.InputType['SqlEndpointNetworkConfigurationArgs']] network_configuration: The network configuration of a SQL Endpoint.
-        :param pulumi.Input[Mapping[str, Any]] spark_advanced_configurations: The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
-        :param pulumi.Input[str] sql_endpoint_version: The version of the SQL Endpoint.
         """
         ...
     @overload
@@ -714,21 +521,7 @@ class SqlEndpoint(pulumi.CustomResource):
                  args: SqlEndpointArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Sql Endpoint resource in Oracle Cloud Infrastructure Data Flow service.
-        ## Note
-
-        Resource Discovery is not supported for this resource.
-
-        Create a new Sql Endpoint.
-
-        ## Import
-
-        SqlEndpoints can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:DataFlow/sqlEndpoint:SqlEndpoint test_sql_endpoint "id"
-        ```
-
+        Create a SqlEndpoint resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param SqlEndpointArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -851,34 +644,6 @@ class SqlEndpoint(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The identifier of the compartment used with the SQL Endpoint.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] description: The description of CreateSQLEndpointDetails.
-        :param pulumi.Input[str] display_name: The SQL Endpoint name, which can be changed.
-        :param pulumi.Input[str] driver_shape: The shape of the SQL Endpoint driver instance.
-        :param pulumi.Input[pulumi.InputType['SqlEndpointDriverShapeConfigArgs']] driver_shape_config: This is used to configure the shape of the driver or executor if a flexible shape is used.
-        :param pulumi.Input[str] executor_shape: The shape of the SQL Endpoint worker instance.
-        :param pulumi.Input[pulumi.InputType['SqlEndpointExecutorShapeConfigArgs']] executor_shape_config: This is used to configure the shape of the driver or executor if a flexible shape is used.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] jdbc_endpoint_url: The JDBC URL field. For example, jdbc:spark://{serviceFQDN}:443/default;SparkServerType=DFI
-        :param pulumi.Input[str] lake_id: Oracle Cloud Infrastructure lake OCID
-        :param pulumi.Input[str] last_accepted_request_token: This token is used by Splat, and indicates that the service accepts the request, and that the request is currently being processed.
-        :param pulumi.Input[int] max_executor_count: The maximum number of executors.
-        :param pulumi.Input[str] metastore_id: Metastore OCID
-        :param pulumi.Input[int] min_executor_count: The minimum number of executors.
-        :param pulumi.Input[pulumi.InputType['SqlEndpointNetworkConfigurationArgs']] network_configuration: The network configuration of a SQL Endpoint.
-        :param pulumi.Input[Mapping[str, Any]] spark_advanced_configurations: The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
-        :param pulumi.Input[str] sql_endpoint_version: The version of the SQL Endpoint.
-        :param pulumi.Input[str] state: The current state of the Sql Endpoint.
-        :param pulumi.Input[str] state_message: A message describing the reason why the resource is in it's current state. Helps bubble up errors in state changes. For example, it can be used to provide actionable information for a resource in the Failed state.
-        :param pulumi.Input[Mapping[str, Any]] system_tags: The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
-        :param pulumi.Input[str] time_created: The time the Sql Endpoint was created. An RFC3339 formatted datetime string.
-        :param pulumi.Input[str] time_updated: The time the Sql Endpoint was updated. An RFC3339 formatted datetime string.
-        :param pulumi.Input[str] warehouse_bucket_uri: The warehouse bucket URI. It is a Oracle Cloud Infrastructure Object Storage bucket URI as defined here https://docs.oracle.com/en/cloud/paas/atp-cloud/atpud/object-storage-uris.html
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -913,196 +678,120 @@ class SqlEndpoint(pulumi.CustomResource):
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The identifier of the compartment used with the SQL Endpoint.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def description(self) -> pulumi.Output[str]:
-        """
-        The description of CreateSQLEndpointDetails.
-        """
+    def description(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Output[str]:
-        """
-        The SQL Endpoint name, which can be changed.
-        """
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="driverShape")
     def driver_shape(self) -> pulumi.Output[str]:
-        """
-        The shape of the SQL Endpoint driver instance.
-        """
         return pulumi.get(self, "driver_shape")
 
     @property
     @pulumi.getter(name="driverShapeConfig")
-    def driver_shape_config(self) -> pulumi.Output['outputs.SqlEndpointDriverShapeConfig']:
-        """
-        This is used to configure the shape of the driver or executor if a flexible shape is used.
-        """
+    def driver_shape_config(self) -> pulumi.Output[Optional['outputs.SqlEndpointDriverShapeConfig']]:
         return pulumi.get(self, "driver_shape_config")
 
     @property
     @pulumi.getter(name="executorShape")
     def executor_shape(self) -> pulumi.Output[str]:
-        """
-        The shape of the SQL Endpoint worker instance.
-        """
         return pulumi.get(self, "executor_shape")
 
     @property
     @pulumi.getter(name="executorShapeConfig")
-    def executor_shape_config(self) -> pulumi.Output['outputs.SqlEndpointExecutorShapeConfig']:
-        """
-        This is used to configure the shape of the driver or executor if a flexible shape is used.
-        """
+    def executor_shape_config(self) -> pulumi.Output[Optional['outputs.SqlEndpointExecutorShapeConfig']]:
         return pulumi.get(self, "executor_shape_config")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="jdbcEndpointUrl")
-    def jdbc_endpoint_url(self) -> pulumi.Output[str]:
-        """
-        The JDBC URL field. For example, jdbc:spark://{serviceFQDN}:443/default;SparkServerType=DFI
-        """
+    def jdbc_endpoint_url(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "jdbc_endpoint_url")
 
     @property
     @pulumi.getter(name="lakeId")
-    def lake_id(self) -> pulumi.Output[str]:
-        """
-        Oracle Cloud Infrastructure lake OCID
-        """
+    def lake_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "lake_id")
 
     @property
     @pulumi.getter(name="lastAcceptedRequestToken")
-    def last_accepted_request_token(self) -> pulumi.Output[str]:
-        """
-        This token is used by Splat, and indicates that the service accepts the request, and that the request is currently being processed.
-        """
+    def last_accepted_request_token(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "last_accepted_request_token")
 
     @property
     @pulumi.getter(name="maxExecutorCount")
     def max_executor_count(self) -> pulumi.Output[int]:
-        """
-        The maximum number of executors.
-        """
         return pulumi.get(self, "max_executor_count")
 
     @property
     @pulumi.getter(name="metastoreId")
     def metastore_id(self) -> pulumi.Output[str]:
-        """
-        Metastore OCID
-        """
         return pulumi.get(self, "metastore_id")
 
     @property
     @pulumi.getter(name="minExecutorCount")
     def min_executor_count(self) -> pulumi.Output[int]:
-        """
-        The minimum number of executors.
-        """
         return pulumi.get(self, "min_executor_count")
 
     @property
     @pulumi.getter(name="networkConfiguration")
     def network_configuration(self) -> pulumi.Output['outputs.SqlEndpointNetworkConfiguration']:
-        """
-        The network configuration of a SQL Endpoint.
-        """
         return pulumi.get(self, "network_configuration")
 
     @property
     @pulumi.getter(name="sparkAdvancedConfigurations")
-    def spark_advanced_configurations(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
-        """
+    def spark_advanced_configurations(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "spark_advanced_configurations")
 
     @property
     @pulumi.getter(name="sqlEndpointVersion")
     def sql_endpoint_version(self) -> pulumi.Output[str]:
-        """
-        The version of the SQL Endpoint.
-        """
         return pulumi.get(self, "sql_endpoint_version")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        The current state of the Sql Endpoint.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="stateMessage")
-    def state_message(self) -> pulumi.Output[str]:
-        """
-        A message describing the reason why the resource is in it's current state. Helps bubble up errors in state changes. For example, it can be used to provide actionable information for a resource in the Failed state.
-        """
+    def state_message(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state_message")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
-        """
+    def system_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        The time the Sql Endpoint was created. An RFC3339 formatted datetime string.
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> pulumi.Output[str]:
-        """
-        The time the Sql Endpoint was updated. An RFC3339 formatted datetime string.
-        """
+    def time_updated(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_updated")
 
     @property
     @pulumi.getter(name="warehouseBucketUri")
-    def warehouse_bucket_uri(self) -> pulumi.Output[str]:
-        """
-        The warehouse bucket URI. It is a Oracle Cloud Infrastructure Object Storage bucket URI as defined here https://docs.oracle.com/en/cloud/paas/atp-cloud/atpud/object-storage-uris.html
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
+    def warehouse_bucket_uri(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "warehouse_bucket_uri")
 

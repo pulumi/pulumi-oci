@@ -112,32 +112,32 @@ namespace Pulumi.Oci.Opsi
         /// <summary>
         /// Number of OCPUs used by OPSI Warehouse ADW. Can be fractional.
         /// </summary>
-        public readonly double CpuUsed;
+        public readonly double? CpuUsed;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         public readonly string OperationsInsightsWarehouseId;
         /// <summary>
         /// Possible lifecycle states
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// Storage by OPSI Warehouse ADW in GB.
         /// </summary>
-        public readonly double StorageUsedInGbs;
+        public readonly double? StorageUsedInGbs;
 
         [OutputConstructor]
         private GetOperationsInsightsWarehouseResourceUsageSummaryResult(
-            double cpuUsed,
+            double? cpuUsed,
 
-            string id,
+            string? id,
 
             string operationsInsightsWarehouseId,
 
-            string state,
+            string? state,
 
-            double storageUsedInGbs)
+            double? storageUsedInGbs)
         {
             CpuUsed = cpuUsed;
             Id = id;

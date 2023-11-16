@@ -69,9 +69,6 @@ class GetLibraryMaskingFormatsResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The OCID of the compartment that contains the library masking format.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
@@ -82,9 +79,6 @@ class GetLibraryMaskingFormatsResult:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        The display name of the library masking format.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -94,7 +88,7 @@ class GetLibraryMaskingFormatsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -102,18 +96,12 @@ class GetLibraryMaskingFormatsResult:
 
     @property
     @pulumi.getter(name="libraryMaskingFormatCollections")
-    def library_masking_format_collections(self) -> Sequence['outputs.GetLibraryMaskingFormatsLibraryMaskingFormatCollectionResult']:
-        """
-        The list of library_masking_format_collection.
-        """
+    def library_masking_format_collections(self) -> Optional[Sequence['outputs.GetLibraryMaskingFormatsLibraryMaskingFormatCollectionResult']]:
         return pulumi.get(self, "library_masking_format_collections")
 
     @property
     @pulumi.getter(name="libraryMaskingFormatId")
     def library_masking_format_id(self) -> Optional[str]:
-        """
-        The OCID of the library masking format.
-        """
         return pulumi.get(self, "library_masking_format_id")
 
     @property
@@ -124,9 +112,6 @@ class GetLibraryMaskingFormatsResult:
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the library masking format.
-        """
         return pulumi.get(self, "state")
 
     @property
@@ -172,41 +157,7 @@ def get_library_masking_formats(access_level: Optional[str] = None,
                                 time_created_less_than: Optional[str] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetLibraryMaskingFormatsResult:
     """
-    This data source provides the list of Library Masking Formats in Oracle Cloud Infrastructure Data Safe service.
-
-    Gets a list of library masking formats based on the specified query parameters.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_library_masking_formats = oci.DataSafe.get_library_masking_formats(compartment_id=var["compartment_id"],
-        access_level=var["library_masking_format_access_level"],
-        compartment_id_in_subtree=var["library_masking_format_compartment_id_in_subtree"],
-        display_name=var["library_masking_format_display_name"],
-        library_masking_format_id=oci_data_safe_library_masking_format["test_library_masking_format"]["id"],
-        library_masking_format_source=var["library_masking_format_library_masking_format_source"],
-        state=var["library_masking_format_state"],
-        time_created_greater_than_or_equal_to=var["library_masking_format_time_created_greater_than_or_equal_to"],
-        time_created_less_than=var["library_masking_format_time_created_less_than"])
-    ```
-
-
-    :param str access_level: Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
-    :param str compartment_id: A filter to return only resources that match the specified compartment OCID.
-    :param bool compartment_id_in_subtree: Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
-    :param str display_name: A filter to return only resources that match the specified display name.
-    :param str library_masking_format_id: A filter to return only the resources that match the specified library masking format OCID.
-    :param str library_masking_format_source: A filter to return the library masking format resources based on the value of their source attribute.
-    :param str state: A filter to return only the resources that match the specified lifecycle states.
-    :param str time_created_greater_than_or_equal_to: A filter to return only the resources that were created after the specified date and time, as defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Using TimeCreatedGreaterThanOrEqualToQueryParam parameter retrieves all resources created after that date.
-           
-           **Example:** 2016-12-19T16:39:57.600Z
-    :param str time_created_less_than: Search for resources that were created before a specific date. Specifying this parameter corresponding `timeCreatedLessThan` parameter will retrieve all resources created before the specified created date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by RFC 3339.
-           
-           **Example:** 2016-12-19T16:39:57.600Z
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['accessLevel'] = access_level
@@ -250,40 +201,6 @@ def get_library_masking_formats_output(access_level: Optional[pulumi.Input[Optio
                                        time_created_less_than: Optional[pulumi.Input[Optional[str]]] = None,
                                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetLibraryMaskingFormatsResult]:
     """
-    This data source provides the list of Library Masking Formats in Oracle Cloud Infrastructure Data Safe service.
-
-    Gets a list of library masking formats based on the specified query parameters.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_library_masking_formats = oci.DataSafe.get_library_masking_formats(compartment_id=var["compartment_id"],
-        access_level=var["library_masking_format_access_level"],
-        compartment_id_in_subtree=var["library_masking_format_compartment_id_in_subtree"],
-        display_name=var["library_masking_format_display_name"],
-        library_masking_format_id=oci_data_safe_library_masking_format["test_library_masking_format"]["id"],
-        library_masking_format_source=var["library_masking_format_library_masking_format_source"],
-        state=var["library_masking_format_state"],
-        time_created_greater_than_or_equal_to=var["library_masking_format_time_created_greater_than_or_equal_to"],
-        time_created_less_than=var["library_masking_format_time_created_less_than"])
-    ```
-
-
-    :param str access_level: Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
-    :param str compartment_id: A filter to return only resources that match the specified compartment OCID.
-    :param bool compartment_id_in_subtree: Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
-    :param str display_name: A filter to return only resources that match the specified display name.
-    :param str library_masking_format_id: A filter to return only the resources that match the specified library masking format OCID.
-    :param str library_masking_format_source: A filter to return the library masking format resources based on the value of their source attribute.
-    :param str state: A filter to return only the resources that match the specified lifecycle states.
-    :param str time_created_greater_than_or_equal_to: A filter to return only the resources that were created after the specified date and time, as defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Using TimeCreatedGreaterThanOrEqualToQueryParam parameter retrieves all resources created after that date.
-           
-           **Example:** 2016-12-19T16:39:57.600Z
-    :param str time_created_less_than: Search for resources that were created before a specific date. Specifying this parameter corresponding `timeCreatedLessThan` parameter will retrieve all resources created before the specified created date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by RFC 3339.
-           
-           **Example:** 2016-12-19T16:39:57.600Z
+    Use this data source to access information about an existing resource.
     """
     ...

@@ -60,9 +60,6 @@ class GetDatabaseMaintenanceRunHistoriesResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The OCID of the compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
@@ -72,7 +69,7 @@ class GetDatabaseMaintenanceRunHistoriesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -80,42 +77,27 @@ class GetDatabaseMaintenanceRunHistoriesResult:
 
     @property
     @pulumi.getter(name="maintenanceRunHistories")
-    def maintenance_run_histories(self) -> Sequence['outputs.GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryResult']:
-        """
-        The list of maintenance_run_histories.
-        """
+    def maintenance_run_histories(self) -> Optional[Sequence['outputs.GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryResult']]:
         return pulumi.get(self, "maintenance_run_histories")
 
     @property
     @pulumi.getter(name="maintenanceType")
     def maintenance_type(self) -> Optional[str]:
-        """
-        Maintenance type.
-        """
         return pulumi.get(self, "maintenance_type")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the maintenance run. For Autonomous Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
-        """
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="targetResourceId")
     def target_resource_id(self) -> Optional[str]:
-        """
-        The ID of the target resource on which the maintenance run occurs.
-        """
         return pulumi.get(self, "target_resource_id")
 
     @property
     @pulumi.getter(name="targetResourceType")
     def target_resource_type(self) -> Optional[str]:
-        """
-        The type of the target resource on which the maintenance run occurs.
-        """
         return pulumi.get(self, "target_resource_type")
 
 
@@ -145,31 +127,7 @@ def get_database_maintenance_run_histories(availability_domain: Optional[str] = 
                                            target_resource_type: Optional[str] = None,
                                            opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDatabaseMaintenanceRunHistoriesResult:
     """
-    This data source provides the list of Maintenance Run Histories in Oracle Cloud Infrastructure Database service.
-
-    Gets a list of the maintenance run histories in the specified compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_maintenance_run_histories = oci.Database.get_database_maintenance_run_histories(compartment_id=var["compartment_id"],
-        availability_domain=var["maintenance_run_history_availability_domain"],
-        maintenance_type=var["maintenance_run_history_maintenance_type"],
-        state=var["maintenance_run_history_state"],
-        target_resource_id=oci_database_target_resource["test_target_resource"]["id"],
-        target_resource_type=var["maintenance_run_history_target_resource_type"])
-    ```
-
-
-    :param str availability_domain: A filter to return only resources that match the given availability domain exactly.
-    :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param str maintenance_type: The maintenance type.
-    :param str state: The state of the maintenance run history.
-    :param str target_resource_id: The target resource ID.
-    :param str target_resource_type: The type of the target resource.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['availabilityDomain'] = availability_domain
@@ -204,30 +162,6 @@ def get_database_maintenance_run_histories_output(availability_domain: Optional[
                                                   target_resource_type: Optional[pulumi.Input[Optional[str]]] = None,
                                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDatabaseMaintenanceRunHistoriesResult]:
     """
-    This data source provides the list of Maintenance Run Histories in Oracle Cloud Infrastructure Database service.
-
-    Gets a list of the maintenance run histories in the specified compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_maintenance_run_histories = oci.Database.get_database_maintenance_run_histories(compartment_id=var["compartment_id"],
-        availability_domain=var["maintenance_run_history_availability_domain"],
-        maintenance_type=var["maintenance_run_history_maintenance_type"],
-        state=var["maintenance_run_history_state"],
-        target_resource_id=oci_database_target_resource["test_target_resource"]["id"],
-        target_resource_type=var["maintenance_run_history_target_resource_type"])
-    ```
-
-
-    :param str availability_domain: A filter to return only resources that match the given availability domain exactly.
-    :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param str maintenance_type: The maintenance type.
-    :param str state: The state of the maintenance run history.
-    :param str target_resource_id: The target resource ID.
-    :param str target_resource_type: The type of the target resource.
+    Use this data source to access information about an existing resource.
     """
     ...

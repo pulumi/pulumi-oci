@@ -157,7 +157,7 @@ namespace Pulumi.Oci.Limits
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The name you assign to the quota during creation. The name must be unique across all quotas in the tenancy and cannot be changed.
         /// </summary>
@@ -177,7 +177,7 @@ namespace Pulumi.Oci.Limits
 
             ImmutableArray<Outputs.GetQuotasFilterResult> filters,
 
-            string id,
+            string? id,
 
             string? name,
 

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Fleet resource in Oracle Cloud Infrastructure Jms service.
@@ -60,40 +59,40 @@ type LookupFleetArgs struct {
 // A collection of values returned by getFleet.
 type LookupFleetResult struct {
 	// The approximate count of all unique applications in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
-	ApproximateApplicationCount int `pulumi:"approximateApplicationCount"`
+	ApproximateApplicationCount *int `pulumi:"approximateApplicationCount"`
 	// The approximate count of all unique Java installations in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
-	ApproximateInstallationCount int `pulumi:"approximateInstallationCount"`
+	ApproximateInstallationCount *int `pulumi:"approximateInstallationCount"`
 	// The approximate count of all unique Java servers in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
-	ApproximateJavaServerCount int `pulumi:"approximateJavaServerCount"`
+	ApproximateJavaServerCount *int `pulumi:"approximateJavaServerCount"`
 	// The approximate count of all unique Java Runtimes in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
-	ApproximateJreCount int `pulumi:"approximateJreCount"`
+	ApproximateJreCount *int `pulumi:"approximateJreCount"`
 	// The approximate count of all unique managed instances in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
-	ApproximateManagedInstanceCount int `pulumi:"approximateManagedInstanceCount"`
+	ApproximateManagedInstanceCount *int `pulumi:"approximateManagedInstanceCount"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment of the Fleet.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. (See [Understanding Free-form Tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The Fleet's description.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// The name of the Fleet.
-	DisplayName string `pulumi:"displayName"`
-	FleetId     string `pulumi:"fleetId"`
+	DisplayName *string `pulumi:"displayName"`
+	FleetId     string  `pulumi:"fleetId"`
 	// Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`. (See [Managing Tags and Tag Namespaces](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Custom Log for inventory or operation log.
 	InventoryLogs []GetFleetInventoryLog `pulumi:"inventoryLogs"`
 	// Whether or not advanced features are enabled in this Fleet. Deprecated, use `/fleets/{fleetId}/advanceFeatureConfiguration` API instead.
-	IsAdvancedFeaturesEnabled bool `pulumi:"isAdvancedFeaturesEnabled"`
+	IsAdvancedFeaturesEnabled *bool `pulumi:"isAdvancedFeaturesEnabled"`
 	// Custom Log for inventory or operation log.
 	OperationLogs []GetFleetOperationLog `pulumi:"operationLogs"`
 	// The lifecycle state of the Fleet.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The creation date and time of the Fleet (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 }
 
 func LookupFleetOutput(ctx *pulumi.Context, args LookupFleetOutputArgs, opts ...pulumi.InvokeOption) LookupFleetResultOutput {
@@ -134,40 +133,34 @@ func (o LookupFleetResultOutput) ToLookupFleetResultOutputWithContext(ctx contex
 	return o
 }
 
-func (o LookupFleetResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupFleetResult] {
-	return pulumix.Output[LookupFleetResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The approximate count of all unique applications in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
-func (o LookupFleetResultOutput) ApproximateApplicationCount() pulumi.IntOutput {
-	return o.ApplyT(func(v LookupFleetResult) int { return v.ApproximateApplicationCount }).(pulumi.IntOutput)
+func (o LookupFleetResultOutput) ApproximateApplicationCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LookupFleetResult) *int { return v.ApproximateApplicationCount }).(pulumi.IntPtrOutput)
 }
 
 // The approximate count of all unique Java installations in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
-func (o LookupFleetResultOutput) ApproximateInstallationCount() pulumi.IntOutput {
-	return o.ApplyT(func(v LookupFleetResult) int { return v.ApproximateInstallationCount }).(pulumi.IntOutput)
+func (o LookupFleetResultOutput) ApproximateInstallationCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LookupFleetResult) *int { return v.ApproximateInstallationCount }).(pulumi.IntPtrOutput)
 }
 
 // The approximate count of all unique Java servers in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
-func (o LookupFleetResultOutput) ApproximateJavaServerCount() pulumi.IntOutput {
-	return o.ApplyT(func(v LookupFleetResult) int { return v.ApproximateJavaServerCount }).(pulumi.IntOutput)
+func (o LookupFleetResultOutput) ApproximateJavaServerCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LookupFleetResult) *int { return v.ApproximateJavaServerCount }).(pulumi.IntPtrOutput)
 }
 
 // The approximate count of all unique Java Runtimes in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
-func (o LookupFleetResultOutput) ApproximateJreCount() pulumi.IntOutput {
-	return o.ApplyT(func(v LookupFleetResult) int { return v.ApproximateJreCount }).(pulumi.IntOutput)
+func (o LookupFleetResultOutput) ApproximateJreCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LookupFleetResult) *int { return v.ApproximateJreCount }).(pulumi.IntPtrOutput)
 }
 
 // The approximate count of all unique managed instances in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
-func (o LookupFleetResultOutput) ApproximateManagedInstanceCount() pulumi.IntOutput {
-	return o.ApplyT(func(v LookupFleetResult) int { return v.ApproximateManagedInstanceCount }).(pulumi.IntOutput)
+func (o LookupFleetResultOutput) ApproximateManagedInstanceCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LookupFleetResult) *int { return v.ApproximateManagedInstanceCount }).(pulumi.IntPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment of the Fleet.
-func (o LookupFleetResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupFleetResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupFleetResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupFleetResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. (See [Understanding Free-form Tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
@@ -176,13 +169,13 @@ func (o LookupFleetResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // The Fleet's description.
-func (o LookupFleetResultOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupFleetResult) string { return v.Description }).(pulumi.StringOutput)
+func (o LookupFleetResultOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupFleetResult) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // The name of the Fleet.
-func (o LookupFleetResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupFleetResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupFleetResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupFleetResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupFleetResultOutput) FleetId() pulumi.StringOutput {
@@ -195,8 +188,8 @@ func (o LookupFleetResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
-func (o LookupFleetResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupFleetResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupFleetResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupFleetResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Custom Log for inventory or operation log.
@@ -205,8 +198,8 @@ func (o LookupFleetResultOutput) InventoryLogs() GetFleetInventoryLogArrayOutput
 }
 
 // Whether or not advanced features are enabled in this Fleet. Deprecated, use `/fleets/{fleetId}/advanceFeatureConfiguration` API instead.
-func (o LookupFleetResultOutput) IsAdvancedFeaturesEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupFleetResult) bool { return v.IsAdvancedFeaturesEnabled }).(pulumi.BoolOutput)
+func (o LookupFleetResultOutput) IsAdvancedFeaturesEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupFleetResult) *bool { return v.IsAdvancedFeaturesEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // Custom Log for inventory or operation log.
@@ -215,8 +208,8 @@ func (o LookupFleetResultOutput) OperationLogs() GetFleetOperationLogArrayOutput
 }
 
 // The lifecycle state of the Fleet.
-func (o LookupFleetResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupFleetResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupFleetResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupFleetResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -225,8 +218,8 @@ func (o LookupFleetResultOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The creation date and time of the Fleet (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-func (o LookupFleetResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupFleetResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupFleetResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupFleetResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 func init() {

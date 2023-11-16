@@ -53,40 +53,40 @@ export interface GetNamespaceIngestTimeRuleResult {
     /**
      * The action(s) to be performed if the ingest time rule condition(s) are satisfied.
      */
-    readonly actions: outputs.LogAnalytics.GetNamespaceIngestTimeRuleAction[];
+    readonly actions?: outputs.LogAnalytics.GetNamespaceIngestTimeRuleAction[];
     /**
      * Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * The condition(s) to evaluate for an ingest time rule.
      */
-    readonly conditions: outputs.LogAnalytics.GetNamespaceIngestTimeRuleCondition[];
+    readonly conditions?: outputs.LogAnalytics.GetNamespaceIngestTimeRuleCondition[];
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * Description for this resource.
      */
-    readonly description: string;
+    readonly description?: string;
     /**
      * The ingest time rule display name.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * The log analytics entity OCID. This ID is a reference used by log analytics features and it represents a resource that is provisioned and managed by the customer on their premises or on the cloud.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly ingestTimeRuleId: string;
     /**
      * A flag indicating whether or not the ingest time rule is enabled.
      */
-    readonly isEnabled: boolean;
+    readonly isEnabled?: boolean;
     /**
      * The namespace of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters and underscores (_).
      */
@@ -94,15 +94,15 @@ export interface GetNamespaceIngestTimeRuleResult {
     /**
      * The current state of the ingest time rule.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * The date and time the resource was created, in the format defined by RFC3339.
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The date and time the resource was last updated, in the format defined by RFC3339.
      */
-    readonly timeUpdated: string;
+    readonly timeUpdated?: string;
 }
 /**
  * This data source provides details about a specific Namespace Ingest Time Rule resource in Oracle Cloud Infrastructure Log Analytics service.

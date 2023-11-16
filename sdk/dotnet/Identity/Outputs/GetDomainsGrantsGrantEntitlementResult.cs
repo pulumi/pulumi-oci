@@ -16,17 +16,17 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// The name of the attribute whose value (specified by attributeValue) confers privilege within the service-instance (specified by app).
         /// </summary>
-        public readonly string AttributeName;
+        public readonly string? AttributeName;
         /// <summary>
         /// The value of the attribute (specified by attributeName) that confers privilege within the service-instance (specified by app).  If attributeName is 'appRoles', then attributeValue is the ID of the AppRole.
         /// </summary>
-        public readonly string AttributeValue;
+        public readonly string? AttributeValue;
 
         [OutputConstructor]
         private GetDomainsGrantsGrantEntitlementResult(
-            string attributeName,
+            string? attributeName,
 
-            string attributeValue)
+            string? attributeValue)
         {
             AttributeName = attributeName;
             AttributeValue = attributeValue;

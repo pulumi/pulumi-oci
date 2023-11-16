@@ -6,6 +6,8 @@ package com.pulumi.oci.ServiceMesh.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetProxyDetailResult {
@@ -13,27 +15,27 @@ public final class GetProxyDetailResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Proxy container image version to be deployed.
      * 
      */
-    private String proxyImage;
+    private @Nullable String proxyImage;
 
     private GetProxyDetailResult() {}
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Proxy container image version to be deployed.
      * 
      */
-    public String proxyImage() {
-        return this.proxyImage;
+    public Optional<String> proxyImage() {
+        return Optional.ofNullable(this.proxyImage);
     }
 
     public static Builder builder() {
@@ -45,8 +47,8 @@ public final class GetProxyDetailResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String id;
-        private String proxyImage;
+        private @Nullable String id;
+        private @Nullable String proxyImage;
         public Builder() {}
         public Builder(GetProxyDetailResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -55,13 +57,13 @@ public final class GetProxyDetailResult {
         }
 
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder proxyImage(String proxyImage) {
-            this.proxyImage = Objects.requireNonNull(proxyImage);
+        public Builder proxyImage(@Nullable String proxyImage) {
+            this.proxyImage = proxyImage;
             return this;
         }
         public GetProxyDetailResult build() {

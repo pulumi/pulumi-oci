@@ -10,6 +10,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetail {
@@ -17,42 +19,42 @@ public final class GetModelDeploymentsModelDeploymentModelDeploymentConfiguratio
      * @return The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
      * 
      */
-    private List<String> cmds;
+    private @Nullable List<String> cmds;
     /**
      * @return The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
      * 
      */
-    private List<String> entrypoints;
+    private @Nullable List<String> entrypoints;
     /**
      * @return The environment configuration type
      * 
      */
-    private String environmentConfigurationType;
+    private @Nullable String environmentConfigurationType;
     /**
      * @return Environment variables to set for the web server container. The size of envVars must be less than 2048 bytes. Key should be under 32 characters. Key should contain only letters, digits and underscore (_) Key should start with a letter. Key should have at least 2 characters. Key should not end with underscore eg. `TEST_` Key if added cannot be empty. Value can be empty. No specific size limits on individual Values. But overall environment variables is limited to 2048 bytes. Key can&#39;t be reserved Model Deployment environment variables.
      * 
      */
-    private Map<String,Object> environmentVariables;
+    private @Nullable Map<String,Object> environmentVariables;
     /**
      * @return The port on which the container [HEALTHCHECK](https://docs.docker.com/engine/reference/builder/#healthcheck) would listen. The port can be anything between `1024` and `65535`. The following ports cannot be used `24224`, `8446`, `8447`.
      * 
      */
-    private Integer healthCheckPort;
+    private @Nullable Integer healthCheckPort;
     /**
      * @return The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format. Acceptable format: `&lt;region&gt;.ocir.io/&lt;registry&gt;/&lt;image&gt;:&lt;tag&gt;` `&lt;region&gt;.ocir.io/&lt;registry&gt;/&lt;image&gt;:&lt;tag&gt;@digest`
      * 
      */
-    private String image;
+    private @Nullable String image;
     /**
      * @return The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
      * 
      */
-    private String imageDigest;
+    private @Nullable String imageDigest;
     /**
      * @return The port on which the web server serving the inference is running. The port can be anything between `1024` and `65535`. The following ports cannot be used `24224`, `8446`, `8447`.
      * 
      */
-    private Integer serverPort;
+    private @Nullable Integer serverPort;
 
     private GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetail() {}
     /**
@@ -60,56 +62,56 @@ public final class GetModelDeploymentsModelDeploymentModelDeploymentConfiguratio
      * 
      */
     public List<String> cmds() {
-        return this.cmds;
+        return this.cmds == null ? List.of() : this.cmds;
     }
     /**
      * @return The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
      * 
      */
     public List<String> entrypoints() {
-        return this.entrypoints;
+        return this.entrypoints == null ? List.of() : this.entrypoints;
     }
     /**
      * @return The environment configuration type
      * 
      */
-    public String environmentConfigurationType() {
-        return this.environmentConfigurationType;
+    public Optional<String> environmentConfigurationType() {
+        return Optional.ofNullable(this.environmentConfigurationType);
     }
     /**
      * @return Environment variables to set for the web server container. The size of envVars must be less than 2048 bytes. Key should be under 32 characters. Key should contain only letters, digits and underscore (_) Key should start with a letter. Key should have at least 2 characters. Key should not end with underscore eg. `TEST_` Key if added cannot be empty. Value can be empty. No specific size limits on individual Values. But overall environment variables is limited to 2048 bytes. Key can&#39;t be reserved Model Deployment environment variables.
      * 
      */
     public Map<String,Object> environmentVariables() {
-        return this.environmentVariables;
+        return this.environmentVariables == null ? Map.of() : this.environmentVariables;
     }
     /**
      * @return The port on which the container [HEALTHCHECK](https://docs.docker.com/engine/reference/builder/#healthcheck) would listen. The port can be anything between `1024` and `65535`. The following ports cannot be used `24224`, `8446`, `8447`.
      * 
      */
-    public Integer healthCheckPort() {
-        return this.healthCheckPort;
+    public Optional<Integer> healthCheckPort() {
+        return Optional.ofNullable(this.healthCheckPort);
     }
     /**
      * @return The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format. Acceptable format: `&lt;region&gt;.ocir.io/&lt;registry&gt;/&lt;image&gt;:&lt;tag&gt;` `&lt;region&gt;.ocir.io/&lt;registry&gt;/&lt;image&gt;:&lt;tag&gt;@digest`
      * 
      */
-    public String image() {
-        return this.image;
+    public Optional<String> image() {
+        return Optional.ofNullable(this.image);
     }
     /**
      * @return The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
      * 
      */
-    public String imageDigest() {
-        return this.imageDigest;
+    public Optional<String> imageDigest() {
+        return Optional.ofNullable(this.imageDigest);
     }
     /**
      * @return The port on which the web server serving the inference is running. The port can be anything between `1024` and `65535`. The following ports cannot be used `24224`, `8446`, `8447`.
      * 
      */
-    public Integer serverPort() {
-        return this.serverPort;
+    public Optional<Integer> serverPort() {
+        return Optional.ofNullable(this.serverPort);
     }
 
     public static Builder builder() {
@@ -121,14 +123,14 @@ public final class GetModelDeploymentsModelDeploymentModelDeploymentConfiguratio
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<String> cmds;
-        private List<String> entrypoints;
-        private String environmentConfigurationType;
-        private Map<String,Object> environmentVariables;
-        private Integer healthCheckPort;
-        private String image;
-        private String imageDigest;
-        private Integer serverPort;
+        private @Nullable List<String> cmds;
+        private @Nullable List<String> entrypoints;
+        private @Nullable String environmentConfigurationType;
+        private @Nullable Map<String,Object> environmentVariables;
+        private @Nullable Integer healthCheckPort;
+        private @Nullable String image;
+        private @Nullable String imageDigest;
+        private @Nullable Integer serverPort;
         public Builder() {}
         public Builder(GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetail defaults) {
     	      Objects.requireNonNull(defaults);
@@ -143,49 +145,49 @@ public final class GetModelDeploymentsModelDeploymentModelDeploymentConfiguratio
         }
 
         @CustomType.Setter
-        public Builder cmds(List<String> cmds) {
-            this.cmds = Objects.requireNonNull(cmds);
+        public Builder cmds(@Nullable List<String> cmds) {
+            this.cmds = cmds;
             return this;
         }
         public Builder cmds(String... cmds) {
             return cmds(List.of(cmds));
         }
         @CustomType.Setter
-        public Builder entrypoints(List<String> entrypoints) {
-            this.entrypoints = Objects.requireNonNull(entrypoints);
+        public Builder entrypoints(@Nullable List<String> entrypoints) {
+            this.entrypoints = entrypoints;
             return this;
         }
         public Builder entrypoints(String... entrypoints) {
             return entrypoints(List.of(entrypoints));
         }
         @CustomType.Setter
-        public Builder environmentConfigurationType(String environmentConfigurationType) {
-            this.environmentConfigurationType = Objects.requireNonNull(environmentConfigurationType);
+        public Builder environmentConfigurationType(@Nullable String environmentConfigurationType) {
+            this.environmentConfigurationType = environmentConfigurationType;
             return this;
         }
         @CustomType.Setter
-        public Builder environmentVariables(Map<String,Object> environmentVariables) {
-            this.environmentVariables = Objects.requireNonNull(environmentVariables);
+        public Builder environmentVariables(@Nullable Map<String,Object> environmentVariables) {
+            this.environmentVariables = environmentVariables;
             return this;
         }
         @CustomType.Setter
-        public Builder healthCheckPort(Integer healthCheckPort) {
-            this.healthCheckPort = Objects.requireNonNull(healthCheckPort);
+        public Builder healthCheckPort(@Nullable Integer healthCheckPort) {
+            this.healthCheckPort = healthCheckPort;
             return this;
         }
         @CustomType.Setter
-        public Builder image(String image) {
-            this.image = Objects.requireNonNull(image);
+        public Builder image(@Nullable String image) {
+            this.image = image;
             return this;
         }
         @CustomType.Setter
-        public Builder imageDigest(String imageDigest) {
-            this.imageDigest = Objects.requireNonNull(imageDigest);
+        public Builder imageDigest(@Nullable String imageDigest) {
+            this.imageDigest = imageDigest;
             return this;
         }
         @CustomType.Setter
-        public Builder serverPort(Integer serverPort) {
-            this.serverPort = Objects.requireNonNull(serverPort);
+        public Builder serverPort(@Nullable Integer serverPort) {
+            this.serverPort = serverPort;
             return this;
         }
         public GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetail build() {

@@ -161,7 +161,7 @@ namespace Pulumi.Oci.ServiceCatalog
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The list of private_application_collection.
         /// </summary>
@@ -176,7 +176,7 @@ namespace Pulumi.Oci.ServiceCatalog
 
             ImmutableArray<Outputs.GetPrivateApplicationsFilterResult> filters,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetPrivateApplicationsPrivateApplicationCollectionResult> privateApplicationCollections,
 

@@ -8,6 +8,8 @@ import com.pulumi.oci.Database.outputs.GetAutonomousContainerDatabaseBackupConfi
 import java.lang.Integer;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAutonomousContainerDatabaseBackupConfig {
@@ -15,12 +17,12 @@ public final class GetAutonomousContainerDatabaseBackupConfig {
      * @return Backup destination details.
      * 
      */
-    private List<GetAutonomousContainerDatabaseBackupConfigBackupDestinationDetail> backupDestinationDetails;
+    private @Nullable List<GetAutonomousContainerDatabaseBackupConfigBackupDestinationDetail> backupDestinationDetails;
     /**
      * @return Number of days between the current and the earliest point of recoverability covered by automatic backups. This value applies to automatic backups. After a new automatic backup has been created, Oracle removes old automatic backups that are created before the window. When the value is updated, it is applied to all existing automatic backups.
      * 
      */
-    private Integer recoveryWindowInDays;
+    private @Nullable Integer recoveryWindowInDays;
 
     private GetAutonomousContainerDatabaseBackupConfig() {}
     /**
@@ -28,14 +30,14 @@ public final class GetAutonomousContainerDatabaseBackupConfig {
      * 
      */
     public List<GetAutonomousContainerDatabaseBackupConfigBackupDestinationDetail> backupDestinationDetails() {
-        return this.backupDestinationDetails;
+        return this.backupDestinationDetails == null ? List.of() : this.backupDestinationDetails;
     }
     /**
      * @return Number of days between the current and the earliest point of recoverability covered by automatic backups. This value applies to automatic backups. After a new automatic backup has been created, Oracle removes old automatic backups that are created before the window. When the value is updated, it is applied to all existing automatic backups.
      * 
      */
-    public Integer recoveryWindowInDays() {
-        return this.recoveryWindowInDays;
+    public Optional<Integer> recoveryWindowInDays() {
+        return Optional.ofNullable(this.recoveryWindowInDays);
     }
 
     public static Builder builder() {
@@ -47,8 +49,8 @@ public final class GetAutonomousContainerDatabaseBackupConfig {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetAutonomousContainerDatabaseBackupConfigBackupDestinationDetail> backupDestinationDetails;
-        private Integer recoveryWindowInDays;
+        private @Nullable List<GetAutonomousContainerDatabaseBackupConfigBackupDestinationDetail> backupDestinationDetails;
+        private @Nullable Integer recoveryWindowInDays;
         public Builder() {}
         public Builder(GetAutonomousContainerDatabaseBackupConfig defaults) {
     	      Objects.requireNonNull(defaults);
@@ -57,16 +59,16 @@ public final class GetAutonomousContainerDatabaseBackupConfig {
         }
 
         @CustomType.Setter
-        public Builder backupDestinationDetails(List<GetAutonomousContainerDatabaseBackupConfigBackupDestinationDetail> backupDestinationDetails) {
-            this.backupDestinationDetails = Objects.requireNonNull(backupDestinationDetails);
+        public Builder backupDestinationDetails(@Nullable List<GetAutonomousContainerDatabaseBackupConfigBackupDestinationDetail> backupDestinationDetails) {
+            this.backupDestinationDetails = backupDestinationDetails;
             return this;
         }
         public Builder backupDestinationDetails(GetAutonomousContainerDatabaseBackupConfigBackupDestinationDetail... backupDestinationDetails) {
             return backupDestinationDetails(List.of(backupDestinationDetails));
         }
         @CustomType.Setter
-        public Builder recoveryWindowInDays(Integer recoveryWindowInDays) {
-            this.recoveryWindowInDays = Objects.requireNonNull(recoveryWindowInDays);
+        public Builder recoveryWindowInDays(@Nullable Integer recoveryWindowInDays) {
+            this.recoveryWindowInDays = recoveryWindowInDays;
             return this;
         }
         public GetAutonomousContainerDatabaseBackupConfig build() {

@@ -58,15 +58,15 @@ export class NamespaceScheduledTask extends pulumi.CustomResource {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) A user-friendly name that is changeable and that does not have to be unique. Format: a leading alphanumeric, followed by zero or more alphanumerics, underscores, spaces, backslashes, or hyphens in any order). No trailing spaces allowed.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    public readonly displayName!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) Discriminator.
      */
@@ -78,12 +78,12 @@ export class NamespaceScheduledTask extends pulumi.CustomResource {
     /**
      * Number of execution occurrences.
      */
-    public /*out*/ readonly numOccurrences!: pulumi.Output<string>;
+    public /*out*/ readonly numOccurrences!: pulumi.Output<string | undefined>;
     /**
      * The ManagementSavedSearch id [OCID] to be accelerated.
      */
-    public readonly savedSearchId!: pulumi.Output<string>;
-    public /*out*/ readonly scheduledTaskId!: pulumi.Output<string>;
+    public readonly savedSearchId!: pulumi.Output<string | undefined>;
+    public /*out*/ readonly scheduledTaskId!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Schedules, typically a single schedule. Note there may only be a single schedule for SAVED_SEARCH and PURGE scheduled tasks.
      */
@@ -91,11 +91,11 @@ export class NamespaceScheduledTask extends pulumi.CustomResource {
     /**
      * The current state of the scheduled task.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * Status of the scheduled task. - PURGE_RESOURCE_NOT_FOUND
      */
-    public /*out*/ readonly taskStatus!: pulumi.Output<string>;
+    public /*out*/ readonly taskStatus!: pulumi.Output<string | undefined>;
     /**
      * Task type.
      *
@@ -107,15 +107,15 @@ export class NamespaceScheduledTask extends pulumi.CustomResource {
     /**
      * The date and time the scheduled task was created, in the format defined by RFC3339.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * The date and time the scheduled task was last updated, in the format defined by RFC3339.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    public /*out*/ readonly timeUpdated!: pulumi.Output<string | undefined>;
     /**
      * most recent Work Request Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the asynchronous request.
      */
-    public /*out*/ readonly workRequestId!: pulumi.Output<string>;
+    public /*out*/ readonly workRequestId!: pulumi.Output<string | undefined>;
 
     /**
      * Create a NamespaceScheduledTask resource with the given unique name, arguments, and options.

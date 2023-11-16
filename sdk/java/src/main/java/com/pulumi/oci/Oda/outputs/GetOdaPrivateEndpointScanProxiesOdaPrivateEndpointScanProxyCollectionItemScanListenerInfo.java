@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemScanListenerInfo {
@@ -14,39 +16,39 @@ public final class GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCo
      * @return FQDN of the customer&#39;s Real Application Cluster (RAC)&#39;s SCAN listeners.
      * 
      */
-    private String scanListenerFqdn;
+    private @Nullable String scanListenerFqdn;
     /**
      * @return A SCAN listener&#39;s IP of the customer&#39;s Real Application Cluster (RAC).
      * 
      */
-    private String scanListenerIp;
+    private @Nullable String scanListenerIp;
     /**
      * @return The port that customer&#39;s Real Application Cluster (RAC)&#39;s SCAN listeners are listening on.
      * 
      */
-    private Integer scanListenerPort;
+    private @Nullable Integer scanListenerPort;
 
     private GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemScanListenerInfo() {}
     /**
      * @return FQDN of the customer&#39;s Real Application Cluster (RAC)&#39;s SCAN listeners.
      * 
      */
-    public String scanListenerFqdn() {
-        return this.scanListenerFqdn;
+    public Optional<String> scanListenerFqdn() {
+        return Optional.ofNullable(this.scanListenerFqdn);
     }
     /**
      * @return A SCAN listener&#39;s IP of the customer&#39;s Real Application Cluster (RAC).
      * 
      */
-    public String scanListenerIp() {
-        return this.scanListenerIp;
+    public Optional<String> scanListenerIp() {
+        return Optional.ofNullable(this.scanListenerIp);
     }
     /**
      * @return The port that customer&#39;s Real Application Cluster (RAC)&#39;s SCAN listeners are listening on.
      * 
      */
-    public Integer scanListenerPort() {
-        return this.scanListenerPort;
+    public Optional<Integer> scanListenerPort() {
+        return Optional.ofNullable(this.scanListenerPort);
     }
 
     public static Builder builder() {
@@ -58,9 +60,9 @@ public final class GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCo
     }
     @CustomType.Builder
     public static final class Builder {
-        private String scanListenerFqdn;
-        private String scanListenerIp;
-        private Integer scanListenerPort;
+        private @Nullable String scanListenerFqdn;
+        private @Nullable String scanListenerIp;
+        private @Nullable Integer scanListenerPort;
         public Builder() {}
         public Builder(GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemScanListenerInfo defaults) {
     	      Objects.requireNonNull(defaults);
@@ -70,18 +72,18 @@ public final class GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCo
         }
 
         @CustomType.Setter
-        public Builder scanListenerFqdn(String scanListenerFqdn) {
-            this.scanListenerFqdn = Objects.requireNonNull(scanListenerFqdn);
+        public Builder scanListenerFqdn(@Nullable String scanListenerFqdn) {
+            this.scanListenerFqdn = scanListenerFqdn;
             return this;
         }
         @CustomType.Setter
-        public Builder scanListenerIp(String scanListenerIp) {
-            this.scanListenerIp = Objects.requireNonNull(scanListenerIp);
+        public Builder scanListenerIp(@Nullable String scanListenerIp) {
+            this.scanListenerIp = scanListenerIp;
             return this;
         }
         @CustomType.Setter
-        public Builder scanListenerPort(Integer scanListenerPort) {
-            this.scanListenerPort = Objects.requireNonNull(scanListenerPort);
+        public Builder scanListenerPort(@Nullable Integer scanListenerPort) {
+            this.scanListenerPort = scanListenerPort;
             return this;
         }
         public GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemScanListenerInfo build() {

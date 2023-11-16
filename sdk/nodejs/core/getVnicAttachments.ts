@@ -78,7 +78,7 @@ export interface GetVnicAttachmentsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The OCID of the instance.
      */
@@ -86,7 +86,7 @@ export interface GetVnicAttachmentsResult {
     /**
      * The list of vnic_attachments.
      */
-    readonly vnicAttachments: outputs.Core.GetVnicAttachmentsVnicAttachment[];
+    readonly vnicAttachments?: outputs.Core.GetVnicAttachmentsVnicAttachment[];
     /**
      * The OCID of the VNIC. Available after the attachment process is complete.
      */

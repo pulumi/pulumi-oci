@@ -237,7 +237,7 @@ namespace Pulumi.Oci.Core
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Used to start or stop a `Vtap` resource.
         /// </summary>
@@ -272,7 +272,7 @@ namespace Pulumi.Oci.Core
 
             ImmutableArray<Outputs.GetVtapsFilterResult> filters,
 
-            string id,
+            string? id,
 
             bool? isVtapEnabled,
 

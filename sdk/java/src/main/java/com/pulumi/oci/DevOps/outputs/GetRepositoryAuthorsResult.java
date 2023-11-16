@@ -19,13 +19,13 @@ public final class GetRepositoryAuthorsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private @Nullable String refName;
     /**
      * @return The list of repository_author_collection.
      * 
      */
-    private List<GetRepositoryAuthorsRepositoryAuthorCollection> repositoryAuthorCollections;
+    private @Nullable List<GetRepositoryAuthorsRepositoryAuthorCollection> repositoryAuthorCollections;
     private String repositoryId;
 
     private GetRepositoryAuthorsResult() {}
@@ -36,8 +36,8 @@ public final class GetRepositoryAuthorsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public Optional<String> refName() {
         return Optional.ofNullable(this.refName);
@@ -47,7 +47,7 @@ public final class GetRepositoryAuthorsResult {
      * 
      */
     public List<GetRepositoryAuthorsRepositoryAuthorCollection> repositoryAuthorCollections() {
-        return this.repositoryAuthorCollections;
+        return this.repositoryAuthorCollections == null ? List.of() : this.repositoryAuthorCollections;
     }
     public String repositoryId() {
         return this.repositoryId;
@@ -63,9 +63,9 @@ public final class GetRepositoryAuthorsResult {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable List<GetRepositoryAuthorsFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String refName;
-        private List<GetRepositoryAuthorsRepositoryAuthorCollection> repositoryAuthorCollections;
+        private @Nullable List<GetRepositoryAuthorsRepositoryAuthorCollection> repositoryAuthorCollections;
         private String repositoryId;
         public Builder() {}
         public Builder(GetRepositoryAuthorsResult defaults) {
@@ -86,8 +86,8 @@ public final class GetRepositoryAuthorsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -96,8 +96,8 @@ public final class GetRepositoryAuthorsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder repositoryAuthorCollections(List<GetRepositoryAuthorsRepositoryAuthorCollection> repositoryAuthorCollections) {
-            this.repositoryAuthorCollections = Objects.requireNonNull(repositoryAuthorCollections);
+        public Builder repositoryAuthorCollections(@Nullable List<GetRepositoryAuthorsRepositoryAuthorCollection> repositoryAuthorCollections) {
+            this.repositoryAuthorCollections = repositoryAuthorCollections;
             return this;
         }
         public Builder repositoryAuthorCollections(GetRepositoryAuthorsRepositoryAuthorCollection... repositoryAuthorCollections) {

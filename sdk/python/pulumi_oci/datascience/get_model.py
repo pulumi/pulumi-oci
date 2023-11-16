@@ -89,112 +89,82 @@ class GetModelResult:
 
     @property
     @pulumi.getter(name="artifactContentDisposition")
-    def artifact_content_disposition(self) -> str:
+    def artifact_content_disposition(self) -> Optional[str]:
         return pulumi.get(self, "artifact_content_disposition")
 
     @property
     @pulumi.getter(name="artifactContentLength")
-    def artifact_content_length(self) -> str:
+    def artifact_content_length(self) -> Optional[str]:
         return pulumi.get(self, "artifact_content_length")
 
     @property
     @pulumi.getter(name="artifactContentMd5")
-    def artifact_content_md5(self) -> str:
+    def artifact_content_md5(self) -> Optional[str]:
         return pulumi.get(self, "artifact_content_md5")
 
     @property
     @pulumi.getter(name="artifactLastModified")
-    def artifact_last_modified(self) -> str:
+    def artifact_last_modified(self) -> Optional[str]:
         return pulumi.get(self, "artifact_last_modified")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model's compartment.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="createdBy")
-    def created_by(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the model.
-        """
+    def created_by(self) -> Optional[str]:
         return pulumi.get(self, "created_by")
 
     @property
     @pulumi.getter(name="customMetadataLists")
-    def custom_metadata_lists(self) -> Sequence['outputs.GetModelCustomMetadataListResult']:
-        """
-        An array of custom metadata details for the model.
-        """
+    def custom_metadata_lists(self) -> Optional[Sequence['outputs.GetModelCustomMetadataListResult']]:
         return pulumi.get(self, "custom_metadata_lists")
 
     @property
     @pulumi.getter(name="definedMetadataLists")
-    def defined_metadata_lists(self) -> Sequence['outputs.GetModelDefinedMetadataListResult']:
-        """
-        An array of defined metadata details for the model.
-        """
+    def defined_metadata_lists(self) -> Optional[Sequence['outputs.GetModelDefinedMetadataListResult']]:
         return pulumi.get(self, "defined_metadata_lists")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        A short description of the model.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A user-friendly display name for the resource. It does not have to be unique and can be modified. Avoid entering confidential information.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="emptyModel")
-    def empty_model(self) -> bool:
+    def empty_model(self) -> Optional[bool]:
         return pulumi.get(self, "empty_model")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="inputSchema")
-    def input_schema(self) -> str:
-        """
-        Input schema file content in String format
-        """
+    def input_schema(self) -> Optional[str]:
         return pulumi.get(self, "input_schema")
 
     @property
     @pulumi.getter(name="modelArtifact")
-    def model_artifact(self) -> str:
+    def model_artifact(self) -> Optional[str]:
         return pulumi.get(self, "model_artifact")
 
     @property
@@ -204,34 +174,22 @@ class GetModelResult:
 
     @property
     @pulumi.getter(name="outputSchema")
-    def output_schema(self) -> str:
-        """
-        Output schema file content in String format
-        """
+    def output_schema(self) -> Optional[str]:
         return pulumi.get(self, "output_schema")
 
     @property
     @pulumi.getter(name="projectId")
-    def project_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project associated with the model.
-        """
+    def project_id(self) -> Optional[str]:
         return pulumi.get(self, "project_id")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The state of the model.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
 
@@ -267,21 +225,7 @@ class AwaitableGetModelResult(GetModelResult):
 def get_model(model_id: Optional[str] = None,
               opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetModelResult:
     """
-    This data source provides details about a specific Model resource in Oracle Cloud Infrastructure Data Science service.
-
-    Gets the specified model's information.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_model = oci.DataScience.get_model(model_id=oci_datascience_model["test_model"]["id"])
-    ```
-
-
-    :param str model_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['modelId'] = model_id
@@ -316,20 +260,6 @@ def get_model(model_id: Optional[str] = None,
 def get_model_output(model_id: Optional[pulumi.Input[str]] = None,
                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetModelResult]:
     """
-    This data source provides details about a specific Model resource in Oracle Cloud Infrastructure Data Science service.
-
-    Gets the specified model's information.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_model = oci.DataScience.get_model(model_id=oci_datascience_model["test_model"]["id"])
-    ```
-
-
-    :param str model_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model.
+    Use this data source to access information about an existing resource.
     """
     ...

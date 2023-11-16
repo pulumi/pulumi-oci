@@ -68,11 +68,11 @@ export interface GetSubscriptionProductsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The list of product_collection.
      */
-    readonly productCollections: outputs.UsageProxy.GetSubscriptionProductsProductCollection[];
+    readonly productCollections?: outputs.UsageProxy.GetSubscriptionProductsProductCollection[];
     readonly producttype?: string;
     readonly subscriptionId: string;
     readonly tenancyId: string;

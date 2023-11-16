@@ -110,48 +110,48 @@ namespace Pulumi.Oci.DatabaseManagement
         /// <summary>
         /// The additional details of the external ASM defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> AdditionalDetails;
+        public readonly ImmutableDictionary<string, object>? AdditionalDetails;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the external database resides.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// The name of the external ASM.
         /// </summary>
-        public readonly string ComponentName;
+        public readonly string? ComponentName;
         /// <summary>
         /// The user-friendly name for the database. The name does not have to be unique.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         public readonly string ExternalAsmId;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external connector.
         /// </summary>
-        public readonly string ExternalConnectorId;
+        public readonly string? ExternalConnectorId;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that the ASM is a part of.
         /// </summary>
-        public readonly string ExternalDbSystemId;
+        public readonly string? ExternalDbSystemId;
         /// <summary>
         /// The directory in which ASM is installed. This is the same directory in which Oracle Grid Infrastructure is installed.
         /// </summary>
-        public readonly string GridHome;
+        public readonly string? GridHome;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Indicates whether the ASM is a cluster ASM or not.
         /// </summary>
-        public readonly bool IsCluster;
+        public readonly bool? IsCluster;
         /// <summary>
         /// Indicates whether Oracle Flex ASM is enabled or not.
         /// </summary>
-        public readonly bool IsFlexEnabled;
+        public readonly bool? IsFlexEnabled;
         /// <summary>
         /// Additional information about the current lifecycle state.
         /// </summary>
-        public readonly string LifecycleDetails;
+        public readonly string? LifecycleDetails;
         /// <summary>
         /// The list of databases that are serviced by the ASM.
         /// </summary>
@@ -159,55 +159,55 @@ namespace Pulumi.Oci.DatabaseManagement
         /// <summary>
         /// The current lifecycle state of the external ASM.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// The date and time the external ASM was created.
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The date and time the external ASM was last updated.
         /// </summary>
-        public readonly string TimeUpdated;
+        public readonly string? TimeUpdated;
         /// <summary>
         /// The ASM version.
         /// </summary>
-        public readonly string Version;
+        public readonly string? Version;
 
         [OutputConstructor]
         private GetExternalAsmResult(
-            ImmutableDictionary<string, object> additionalDetails,
+            ImmutableDictionary<string, object>? additionalDetails,
 
-            string compartmentId,
+            string? compartmentId,
 
-            string componentName,
+            string? componentName,
 
-            string displayName,
+            string? displayName,
 
             string externalAsmId,
 
-            string externalConnectorId,
+            string? externalConnectorId,
 
-            string externalDbSystemId,
+            string? externalDbSystemId,
 
-            string gridHome,
+            string? gridHome,
 
-            string id,
+            string? id,
 
-            bool isCluster,
+            bool? isCluster,
 
-            bool isFlexEnabled,
+            bool? isFlexEnabled,
 
-            string lifecycleDetails,
+            string? lifecycleDetails,
 
             ImmutableArray<Outputs.GetExternalAsmServicedDatabaseResult> servicedDatabases,
 
-            string state,
+            string? state,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeUpdated,
+            string? timeUpdated,
 
-            string version)
+            string? version)
         {
             AdditionalDetails = additionalDetails;
             CompartmentId = compartmentId;

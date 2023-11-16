@@ -11,6 +11,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetOdaInstancesOdaInstance {
@@ -18,117 +20,117 @@ public final class GetOdaInstancesOdaInstance {
      * @return A list of attachment identifiers for this instance (if any). Use GetOdaInstanceAttachment to get the details of the attachments.
      * 
      */
-    private List<String> attachmentIds;
+    private @Nullable List<String> attachmentIds;
     /**
      * @return A list of attachment types for this instance (if any). Use attachmentIds to get the details of the attachments.
      * 
      */
-    private List<String> attachmentTypes;
+    private @Nullable List<String> attachmentTypes;
     /**
      * @return List the Digital Assistant instances that belong to this compartment.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return URL for the connector&#39;s endpoint.
      * 
      */
-    private String connectorUrl;
+    private @Nullable String connectorUrl;
     /**
      * @return Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return Description of the Digital Assistant instance.
      * 
      */
-    private String description;
+    private @Nullable String description;
     /**
      * @return List only the information for the Digital Assistant instance with this user-friendly name. These names don&#39;t have to be unique and may change.  Example: `My new resource`
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return Simple key-value pair that is applied without any predefined name, type, or scope. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return Unique immutable identifier that was assigned when the instance was created.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return If isRoleBasedAccess is set to true, this property specifies the URL for the administration console used to manage the Identity Application instance Digital Assistant has created inside the user-specified identity domain.
      * 
      */
-    private String identityAppConsoleUrl;
+    private @Nullable String identityAppConsoleUrl;
     /**
      * @return If isRoleBasedAccess is set to true, this property specifies the GUID of the Identity Application instance Digital Assistant has created inside the user-specified identity domain. This identity application instance may be used to host user roll mappings to grant access to this Digital Assistant instance for users within the identity domain.
      * 
      */
-    private String identityAppGuid;
+    private @Nullable String identityAppGuid;
     /**
      * @return If isRoleBasedAccess is set to true, this property specifies the identity domain that is to be used to implement this type of authorzation. Digital Assistant will create an Identity Application instance and Application Roles within this identity domain. The caller may then perform and user roll mappings they like to grant access to users within the identity domain.
      * 
      */
-    private String identityDomain;
+    private @Nullable String identityDomain;
     /**
      * @return A list of package ids imported into this instance (if any). Use GetImportedPackage to get the details of the imported packages.
      * 
      */
-    private List<String> importedPackageIds;
+    private @Nullable List<String> importedPackageIds;
     /**
      * @return A list of package names imported into this instance (if any). Use importedPackageIds field to get the details of the imported packages.
      * 
      */
-    private List<String> importedPackageNames;
+    private @Nullable List<String> importedPackageNames;
     /**
      * @return Should this Digital Assistant instance use role-based authorization via an identity domain (true) or use the default policy-based authorization via IAM policies (false)
      * 
      */
-    private Boolean isRoleBasedAccess;
+    private @Nullable Boolean isRoleBasedAccess;
     /**
      * @return The current sub-state of the Digital Assistant instance.
      * 
      */
-    private String lifecycleSubState;
+    private @Nullable String lifecycleSubState;
     /**
      * @return A list of restricted operations (across all attachments) for this instance (if any). Use GetOdaInstanceAttachment to get the details of the attachments.
      * 
      */
-    private List<GetOdaInstancesOdaInstanceRestrictedOperation> restrictedOperations;
+    private @Nullable List<GetOdaInstancesOdaInstanceRestrictedOperation> restrictedOperations;
     /**
      * @return Shape or size of the instance.
      * 
      */
-    private String shapeName;
+    private @Nullable String shapeName;
     /**
      * @return List only the Digital Assistant instances that are in this lifecycle state.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return A message that describes the current state in more detail. For example, actionable information about an instance that&#39;s in the `FAILED` state.
      * 
      */
-    private String stateMessage;
+    private @Nullable String stateMessage;
     /**
      * @return When the Digital Assistant instance was created. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return When the Digital Assistance instance was last updated. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
      * 
      */
-    private String timeUpdated;
+    private @Nullable String timeUpdated;
     /**
      * @return URL for the Digital Assistant web application that&#39;s associated with the instance.
      * 
      */
-    private String webAppUrl;
+    private @Nullable String webAppUrl;
 
     private GetOdaInstancesOdaInstance() {}
     /**
@@ -136,161 +138,161 @@ public final class GetOdaInstancesOdaInstance {
      * 
      */
     public List<String> attachmentIds() {
-        return this.attachmentIds;
+        return this.attachmentIds == null ? List.of() : this.attachmentIds;
     }
     /**
      * @return A list of attachment types for this instance (if any). Use attachmentIds to get the details of the attachments.
      * 
      */
     public List<String> attachmentTypes() {
-        return this.attachmentTypes;
+        return this.attachmentTypes == null ? List.of() : this.attachmentTypes;
     }
     /**
      * @return List the Digital Assistant instances that belong to this compartment.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return URL for the connector&#39;s endpoint.
      * 
      */
-    public String connectorUrl() {
-        return this.connectorUrl;
+    public Optional<String> connectorUrl() {
+        return Optional.ofNullable(this.connectorUrl);
     }
     /**
      * @return Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return Description of the Digital Assistant instance.
      * 
      */
-    public String description() {
-        return this.description;
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
     /**
      * @return List only the information for the Digital Assistant instance with this user-friendly name. These names don&#39;t have to be unique and may change.  Example: `My new resource`
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return Simple key-value pair that is applied without any predefined name, type, or scope. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return Unique immutable identifier that was assigned when the instance was created.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return If isRoleBasedAccess is set to true, this property specifies the URL for the administration console used to manage the Identity Application instance Digital Assistant has created inside the user-specified identity domain.
      * 
      */
-    public String identityAppConsoleUrl() {
-        return this.identityAppConsoleUrl;
+    public Optional<String> identityAppConsoleUrl() {
+        return Optional.ofNullable(this.identityAppConsoleUrl);
     }
     /**
      * @return If isRoleBasedAccess is set to true, this property specifies the GUID of the Identity Application instance Digital Assistant has created inside the user-specified identity domain. This identity application instance may be used to host user roll mappings to grant access to this Digital Assistant instance for users within the identity domain.
      * 
      */
-    public String identityAppGuid() {
-        return this.identityAppGuid;
+    public Optional<String> identityAppGuid() {
+        return Optional.ofNullable(this.identityAppGuid);
     }
     /**
      * @return If isRoleBasedAccess is set to true, this property specifies the identity domain that is to be used to implement this type of authorzation. Digital Assistant will create an Identity Application instance and Application Roles within this identity domain. The caller may then perform and user roll mappings they like to grant access to users within the identity domain.
      * 
      */
-    public String identityDomain() {
-        return this.identityDomain;
+    public Optional<String> identityDomain() {
+        return Optional.ofNullable(this.identityDomain);
     }
     /**
      * @return A list of package ids imported into this instance (if any). Use GetImportedPackage to get the details of the imported packages.
      * 
      */
     public List<String> importedPackageIds() {
-        return this.importedPackageIds;
+        return this.importedPackageIds == null ? List.of() : this.importedPackageIds;
     }
     /**
      * @return A list of package names imported into this instance (if any). Use importedPackageIds field to get the details of the imported packages.
      * 
      */
     public List<String> importedPackageNames() {
-        return this.importedPackageNames;
+        return this.importedPackageNames == null ? List.of() : this.importedPackageNames;
     }
     /**
      * @return Should this Digital Assistant instance use role-based authorization via an identity domain (true) or use the default policy-based authorization via IAM policies (false)
      * 
      */
-    public Boolean isRoleBasedAccess() {
-        return this.isRoleBasedAccess;
+    public Optional<Boolean> isRoleBasedAccess() {
+        return Optional.ofNullable(this.isRoleBasedAccess);
     }
     /**
      * @return The current sub-state of the Digital Assistant instance.
      * 
      */
-    public String lifecycleSubState() {
-        return this.lifecycleSubState;
+    public Optional<String> lifecycleSubState() {
+        return Optional.ofNullable(this.lifecycleSubState);
     }
     /**
      * @return A list of restricted operations (across all attachments) for this instance (if any). Use GetOdaInstanceAttachment to get the details of the attachments.
      * 
      */
     public List<GetOdaInstancesOdaInstanceRestrictedOperation> restrictedOperations() {
-        return this.restrictedOperations;
+        return this.restrictedOperations == null ? List.of() : this.restrictedOperations;
     }
     /**
      * @return Shape or size of the instance.
      * 
      */
-    public String shapeName() {
-        return this.shapeName;
+    public Optional<String> shapeName() {
+        return Optional.ofNullable(this.shapeName);
     }
     /**
      * @return List only the Digital Assistant instances that are in this lifecycle state.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return A message that describes the current state in more detail. For example, actionable information about an instance that&#39;s in the `FAILED` state.
      * 
      */
-    public String stateMessage() {
-        return this.stateMessage;
+    public Optional<String> stateMessage() {
+        return Optional.ofNullable(this.stateMessage);
     }
     /**
      * @return When the Digital Assistant instance was created. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return When the Digital Assistance instance was last updated. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
      * 
      */
-    public String timeUpdated() {
-        return this.timeUpdated;
+    public Optional<String> timeUpdated() {
+        return Optional.ofNullable(this.timeUpdated);
     }
     /**
      * @return URL for the Digital Assistant web application that&#39;s associated with the instance.
      * 
      */
-    public String webAppUrl() {
-        return this.webAppUrl;
+    public Optional<String> webAppUrl() {
+        return Optional.ofNullable(this.webAppUrl);
     }
 
     public static Builder builder() {
@@ -302,29 +304,29 @@ public final class GetOdaInstancesOdaInstance {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<String> attachmentIds;
-        private List<String> attachmentTypes;
-        private String compartmentId;
-        private String connectorUrl;
-        private Map<String,Object> definedTags;
-        private String description;
-        private String displayName;
-        private Map<String,Object> freeformTags;
-        private String id;
-        private String identityAppConsoleUrl;
-        private String identityAppGuid;
-        private String identityDomain;
-        private List<String> importedPackageIds;
-        private List<String> importedPackageNames;
-        private Boolean isRoleBasedAccess;
-        private String lifecycleSubState;
-        private List<GetOdaInstancesOdaInstanceRestrictedOperation> restrictedOperations;
-        private String shapeName;
-        private String state;
-        private String stateMessage;
-        private String timeCreated;
-        private String timeUpdated;
-        private String webAppUrl;
+        private @Nullable List<String> attachmentIds;
+        private @Nullable List<String> attachmentTypes;
+        private @Nullable String compartmentId;
+        private @Nullable String connectorUrl;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String description;
+        private @Nullable String displayName;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String id;
+        private @Nullable String identityAppConsoleUrl;
+        private @Nullable String identityAppGuid;
+        private @Nullable String identityDomain;
+        private @Nullable List<String> importedPackageIds;
+        private @Nullable List<String> importedPackageNames;
+        private @Nullable Boolean isRoleBasedAccess;
+        private @Nullable String lifecycleSubState;
+        private @Nullable List<GetOdaInstancesOdaInstanceRestrictedOperation> restrictedOperations;
+        private @Nullable String shapeName;
+        private @Nullable String state;
+        private @Nullable String stateMessage;
+        private @Nullable String timeCreated;
+        private @Nullable String timeUpdated;
+        private @Nullable String webAppUrl;
         public Builder() {}
         public Builder(GetOdaInstancesOdaInstance defaults) {
     	      Objects.requireNonNull(defaults);
@@ -354,133 +356,133 @@ public final class GetOdaInstancesOdaInstance {
         }
 
         @CustomType.Setter
-        public Builder attachmentIds(List<String> attachmentIds) {
-            this.attachmentIds = Objects.requireNonNull(attachmentIds);
+        public Builder attachmentIds(@Nullable List<String> attachmentIds) {
+            this.attachmentIds = attachmentIds;
             return this;
         }
         public Builder attachmentIds(String... attachmentIds) {
             return attachmentIds(List.of(attachmentIds));
         }
         @CustomType.Setter
-        public Builder attachmentTypes(List<String> attachmentTypes) {
-            this.attachmentTypes = Objects.requireNonNull(attachmentTypes);
+        public Builder attachmentTypes(@Nullable List<String> attachmentTypes) {
+            this.attachmentTypes = attachmentTypes;
             return this;
         }
         public Builder attachmentTypes(String... attachmentTypes) {
             return attachmentTypes(List.of(attachmentTypes));
         }
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder connectorUrl(String connectorUrl) {
-            this.connectorUrl = Objects.requireNonNull(connectorUrl);
+        public Builder connectorUrl(@Nullable String connectorUrl) {
+            this.connectorUrl = connectorUrl;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+        public Builder description(@Nullable String description) {
+            this.description = description;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder identityAppConsoleUrl(String identityAppConsoleUrl) {
-            this.identityAppConsoleUrl = Objects.requireNonNull(identityAppConsoleUrl);
+        public Builder identityAppConsoleUrl(@Nullable String identityAppConsoleUrl) {
+            this.identityAppConsoleUrl = identityAppConsoleUrl;
             return this;
         }
         @CustomType.Setter
-        public Builder identityAppGuid(String identityAppGuid) {
-            this.identityAppGuid = Objects.requireNonNull(identityAppGuid);
+        public Builder identityAppGuid(@Nullable String identityAppGuid) {
+            this.identityAppGuid = identityAppGuid;
             return this;
         }
         @CustomType.Setter
-        public Builder identityDomain(String identityDomain) {
-            this.identityDomain = Objects.requireNonNull(identityDomain);
+        public Builder identityDomain(@Nullable String identityDomain) {
+            this.identityDomain = identityDomain;
             return this;
         }
         @CustomType.Setter
-        public Builder importedPackageIds(List<String> importedPackageIds) {
-            this.importedPackageIds = Objects.requireNonNull(importedPackageIds);
+        public Builder importedPackageIds(@Nullable List<String> importedPackageIds) {
+            this.importedPackageIds = importedPackageIds;
             return this;
         }
         public Builder importedPackageIds(String... importedPackageIds) {
             return importedPackageIds(List.of(importedPackageIds));
         }
         @CustomType.Setter
-        public Builder importedPackageNames(List<String> importedPackageNames) {
-            this.importedPackageNames = Objects.requireNonNull(importedPackageNames);
+        public Builder importedPackageNames(@Nullable List<String> importedPackageNames) {
+            this.importedPackageNames = importedPackageNames;
             return this;
         }
         public Builder importedPackageNames(String... importedPackageNames) {
             return importedPackageNames(List.of(importedPackageNames));
         }
         @CustomType.Setter
-        public Builder isRoleBasedAccess(Boolean isRoleBasedAccess) {
-            this.isRoleBasedAccess = Objects.requireNonNull(isRoleBasedAccess);
+        public Builder isRoleBasedAccess(@Nullable Boolean isRoleBasedAccess) {
+            this.isRoleBasedAccess = isRoleBasedAccess;
             return this;
         }
         @CustomType.Setter
-        public Builder lifecycleSubState(String lifecycleSubState) {
-            this.lifecycleSubState = Objects.requireNonNull(lifecycleSubState);
+        public Builder lifecycleSubState(@Nullable String lifecycleSubState) {
+            this.lifecycleSubState = lifecycleSubState;
             return this;
         }
         @CustomType.Setter
-        public Builder restrictedOperations(List<GetOdaInstancesOdaInstanceRestrictedOperation> restrictedOperations) {
-            this.restrictedOperations = Objects.requireNonNull(restrictedOperations);
+        public Builder restrictedOperations(@Nullable List<GetOdaInstancesOdaInstanceRestrictedOperation> restrictedOperations) {
+            this.restrictedOperations = restrictedOperations;
             return this;
         }
         public Builder restrictedOperations(GetOdaInstancesOdaInstanceRestrictedOperation... restrictedOperations) {
             return restrictedOperations(List.of(restrictedOperations));
         }
         @CustomType.Setter
-        public Builder shapeName(String shapeName) {
-            this.shapeName = Objects.requireNonNull(shapeName);
+        public Builder shapeName(@Nullable String shapeName) {
+            this.shapeName = shapeName;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder stateMessage(String stateMessage) {
-            this.stateMessage = Objects.requireNonNull(stateMessage);
+        public Builder stateMessage(@Nullable String stateMessage) {
+            this.stateMessage = stateMessage;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+        public Builder timeUpdated(@Nullable String timeUpdated) {
+            this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter
-        public Builder webAppUrl(String webAppUrl) {
-            this.webAppUrl = Objects.requireNonNull(webAppUrl);
+        public Builder webAppUrl(@Nullable String webAppUrl) {
+            this.webAppUrl = webAppUrl;
             return this;
         }
         public GetOdaInstancesOdaInstance build() {

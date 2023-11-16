@@ -6,6 +6,8 @@ package com.pulumi.oci.DataSafe.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimension {
@@ -13,51 +15,51 @@ public final class GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollec
      * @return Specifies the SQL firewall policy enforcement option.
      * 
      */
-    private String enforcementScope;
+    private @Nullable String enforcementScope;
     /**
      * @return An optional filter to return only resources that match the specified OCID of the security policy resource.
      * 
      */
-    private String securityPolicyId;
+    private @Nullable String securityPolicyId;
     /**
      * @return The current state of the SQL firewall policy.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return Specifies the mode in which the SQL firewall policy is enabled.
      * 
      */
-    private String violationAction;
+    private @Nullable String violationAction;
 
     private GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimension() {}
     /**
      * @return Specifies the SQL firewall policy enforcement option.
      * 
      */
-    public String enforcementScope() {
-        return this.enforcementScope;
+    public Optional<String> enforcementScope() {
+        return Optional.ofNullable(this.enforcementScope);
     }
     /**
      * @return An optional filter to return only resources that match the specified OCID of the security policy resource.
      * 
      */
-    public String securityPolicyId() {
-        return this.securityPolicyId;
+    public Optional<String> securityPolicyId() {
+        return Optional.ofNullable(this.securityPolicyId);
     }
     /**
      * @return The current state of the SQL firewall policy.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return Specifies the mode in which the SQL firewall policy is enabled.
      * 
      */
-    public String violationAction() {
-        return this.violationAction;
+    public Optional<String> violationAction() {
+        return Optional.ofNullable(this.violationAction);
     }
 
     public static Builder builder() {
@@ -69,10 +71,10 @@ public final class GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollec
     }
     @CustomType.Builder
     public static final class Builder {
-        private String enforcementScope;
-        private String securityPolicyId;
-        private String state;
-        private String violationAction;
+        private @Nullable String enforcementScope;
+        private @Nullable String securityPolicyId;
+        private @Nullable String state;
+        private @Nullable String violationAction;
         public Builder() {}
         public Builder(GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimension defaults) {
     	      Objects.requireNonNull(defaults);
@@ -83,23 +85,23 @@ public final class GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollec
         }
 
         @CustomType.Setter
-        public Builder enforcementScope(String enforcementScope) {
-            this.enforcementScope = Objects.requireNonNull(enforcementScope);
+        public Builder enforcementScope(@Nullable String enforcementScope) {
+            this.enforcementScope = enforcementScope;
             return this;
         }
         @CustomType.Setter
-        public Builder securityPolicyId(String securityPolicyId) {
-            this.securityPolicyId = Objects.requireNonNull(securityPolicyId);
+        public Builder securityPolicyId(@Nullable String securityPolicyId) {
+            this.securityPolicyId = securityPolicyId;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder violationAction(String violationAction) {
-            this.violationAction = Objects.requireNonNull(violationAction);
+        public Builder violationAction(@Nullable String violationAction) {
+            this.violationAction = violationAction;
             return this;
         }
         public GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimension build() {

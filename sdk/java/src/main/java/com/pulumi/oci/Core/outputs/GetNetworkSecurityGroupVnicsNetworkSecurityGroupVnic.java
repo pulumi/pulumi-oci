@@ -6,6 +6,8 @@ package com.pulumi.oci.Core.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetNetworkSecurityGroupVnicsNetworkSecurityGroupVnic {
@@ -13,39 +15,39 @@ public final class GetNetworkSecurityGroupVnicsNetworkSecurityGroupVnic {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent resource that the VNIC is attached to (for example, a Compute instance).
      * 
      */
-    private String resourceId;
+    private @Nullable String resourceId;
     /**
      * @return The date and time the VNIC was added to the network security group, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    private String timeAssociated;
+    private @Nullable String timeAssociated;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC.
      * 
      */
-    private String vnicId;
+    private @Nullable String vnicId;
 
     private GetNetworkSecurityGroupVnicsNetworkSecurityGroupVnic() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent resource that the VNIC is attached to (for example, a Compute instance).
      * 
      */
-    public String resourceId() {
-        return this.resourceId;
+    public Optional<String> resourceId() {
+        return Optional.ofNullable(this.resourceId);
     }
     /**
      * @return The date and time the VNIC was added to the network security group, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    public String timeAssociated() {
-        return this.timeAssociated;
+    public Optional<String> timeAssociated() {
+        return Optional.ofNullable(this.timeAssociated);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC.
      * 
      */
-    public String vnicId() {
-        return this.vnicId;
+    public Optional<String> vnicId() {
+        return Optional.ofNullable(this.vnicId);
     }
 
     public static Builder builder() {
@@ -57,9 +59,9 @@ public final class GetNetworkSecurityGroupVnicsNetworkSecurityGroupVnic {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String resourceId;
-        private String timeAssociated;
-        private String vnicId;
+        private @Nullable String resourceId;
+        private @Nullable String timeAssociated;
+        private @Nullable String vnicId;
         public Builder() {}
         public Builder(GetNetworkSecurityGroupVnicsNetworkSecurityGroupVnic defaults) {
     	      Objects.requireNonNull(defaults);
@@ -69,18 +71,18 @@ public final class GetNetworkSecurityGroupVnicsNetworkSecurityGroupVnic {
         }
 
         @CustomType.Setter
-        public Builder resourceId(String resourceId) {
-            this.resourceId = Objects.requireNonNull(resourceId);
+        public Builder resourceId(@Nullable String resourceId) {
+            this.resourceId = resourceId;
             return this;
         }
         @CustomType.Setter
-        public Builder timeAssociated(String timeAssociated) {
-            this.timeAssociated = Objects.requireNonNull(timeAssociated);
+        public Builder timeAssociated(@Nullable String timeAssociated) {
+            this.timeAssociated = timeAssociated;
             return this;
         }
         @CustomType.Setter
-        public Builder vnicId(String vnicId) {
-            this.vnicId = Objects.requireNonNull(vnicId);
+        public Builder vnicId(@Nullable String vnicId) {
+            this.vnicId = vnicId;
             return this;
         }
         public GetNetworkSecurityGroupVnicsNetworkSecurityGroupVnic build() {

@@ -47,89 +47,89 @@ export interface GetDeploymentResult {
     /**
      * The OCID of a compartment.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * Specifies the list of artifact override arguments at the time of deployment.
      */
-    readonly deployArtifactOverrideArguments: outputs.DevOps.GetDeploymentDeployArtifactOverrideArgument[];
+    readonly deployArtifactOverrideArguments?: outputs.DevOps.GetDeploymentDeployArtifactOverrideArgument[];
     /**
      * List of all artifacts used in the pipeline.
      */
-    readonly deployPipelineArtifacts: outputs.DevOps.GetDeploymentDeployPipelineArtifact[];
+    readonly deployPipelineArtifacts?: outputs.DevOps.GetDeploymentDeployPipelineArtifact[];
     /**
      * List of all environments used in the pipeline.
      */
-    readonly deployPipelineEnvironments: outputs.DevOps.GetDeploymentDeployPipelineEnvironment[];
+    readonly deployPipelineEnvironments?: outputs.DevOps.GetDeploymentDeployPipelineEnvironment[];
     /**
      * The OCID of a pipeline.
      */
-    readonly deployPipelineId: string;
+    readonly deployPipelineId?: string;
     /**
      * The OCID of the stage.
      */
-    readonly deployStageId: string;
+    readonly deployStageId?: string;
     /**
      * Specifies the list of arguments to be overriden per Stage at the time of deployment.
      */
-    readonly deployStageOverrideArguments: outputs.DevOps.GetDeploymentDeployStageOverrideArgument[];
+    readonly deployStageOverrideArguments?: outputs.DevOps.GetDeploymentDeployStageOverrideArgument[];
     /**
      * Specifies list of arguments passed along with the deployment.
      */
-    readonly deploymentArguments: outputs.DevOps.GetDeploymentDeploymentArgument[];
+    readonly deploymentArguments?: outputs.DevOps.GetDeploymentDeploymentArgument[];
     /**
      * The execution progress details of a deployment.
      */
-    readonly deploymentExecutionProgresses: outputs.DevOps.GetDeploymentDeploymentExecutionProgress[];
+    readonly deploymentExecutionProgresses?: outputs.DevOps.GetDeploymentDeploymentExecutionProgress[];
     readonly deploymentId: string;
     /**
      * Specifies type of Deployment
      */
-    readonly deploymentType: string;
+    readonly deploymentType?: string;
     /**
      * Deployment identifier which can be renamed and is not necessarily unique. Avoid entering confidential information.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * Unique identifier that is immutable on creation.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
-    readonly lifecycleDetails: string;
+    readonly lifecycleDetails?: string;
     /**
      * Specifies the OCID of the previous deployment to be redeployed.
      */
-    readonly previousDeploymentId: string;
+    readonly previousDeploymentId?: string;
     /**
      * The OCID of a project.
      */
-    readonly projectId: string;
+    readonly projectId?: string;
     /**
      * The current state of the deployment.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    readonly systemTags: {[key: string]: any};
+    readonly systemTags?: {[key: string]: any};
     /**
      * Time the deployment was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * Time the deployment was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      */
-    readonly timeUpdated: string;
-    readonly triggerNewDevopsDeployment: boolean;
+    readonly timeUpdated?: string;
+    readonly triggerNewDevopsDeployment?: boolean;
 }
 /**
  * This data source provides details about a specific Deployment resource in Oracle Cloud Infrastructure Devops service.

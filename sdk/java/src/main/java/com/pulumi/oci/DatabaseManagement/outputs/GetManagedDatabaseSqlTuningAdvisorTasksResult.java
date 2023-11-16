@@ -19,7 +19,7 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private String managedDatabaseId;
     /**
      * @return The name of the SQL Tuning Advisor task.
@@ -30,7 +30,7 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksResult {
      * @return The list of sql_tuning_advisor_task_collection.
      * 
      */
-    private List<GetManagedDatabaseSqlTuningAdvisorTasksSqlTuningAdvisorTaskCollection> sqlTuningAdvisorTaskCollections;
+    private @Nullable List<GetManagedDatabaseSqlTuningAdvisorTasksSqlTuningAdvisorTaskCollection> sqlTuningAdvisorTaskCollections;
     private @Nullable String status;
     private @Nullable String timeGreaterThanOrEqualTo;
     private @Nullable String timeLessThanOrEqualTo;
@@ -43,8 +43,8 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public String managedDatabaseId() {
         return this.managedDatabaseId;
@@ -61,7 +61,7 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksResult {
      * 
      */
     public List<GetManagedDatabaseSqlTuningAdvisorTasksSqlTuningAdvisorTaskCollection> sqlTuningAdvisorTaskCollections() {
-        return this.sqlTuningAdvisorTaskCollections;
+        return this.sqlTuningAdvisorTaskCollections == null ? List.of() : this.sqlTuningAdvisorTaskCollections;
     }
     public Optional<String> status() {
         return Optional.ofNullable(this.status);
@@ -83,10 +83,10 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksResult {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable List<GetManagedDatabaseSqlTuningAdvisorTasksFilter> filters;
-        private String id;
+        private @Nullable String id;
         private String managedDatabaseId;
         private @Nullable String name;
-        private List<GetManagedDatabaseSqlTuningAdvisorTasksSqlTuningAdvisorTaskCollection> sqlTuningAdvisorTaskCollections;
+        private @Nullable List<GetManagedDatabaseSqlTuningAdvisorTasksSqlTuningAdvisorTaskCollection> sqlTuningAdvisorTaskCollections;
         private @Nullable String status;
         private @Nullable String timeGreaterThanOrEqualTo;
         private @Nullable String timeLessThanOrEqualTo;
@@ -112,8 +112,8 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -127,8 +127,8 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksResult {
             return this;
         }
         @CustomType.Setter
-        public Builder sqlTuningAdvisorTaskCollections(List<GetManagedDatabaseSqlTuningAdvisorTasksSqlTuningAdvisorTaskCollection> sqlTuningAdvisorTaskCollections) {
-            this.sqlTuningAdvisorTaskCollections = Objects.requireNonNull(sqlTuningAdvisorTaskCollections);
+        public Builder sqlTuningAdvisorTaskCollections(@Nullable List<GetManagedDatabaseSqlTuningAdvisorTasksSqlTuningAdvisorTaskCollection> sqlTuningAdvisorTaskCollections) {
+            this.sqlTuningAdvisorTaskCollections = sqlTuningAdvisorTaskCollections;
             return this;
         }
         public Builder sqlTuningAdvisorTaskCollections(GetManagedDatabaseSqlTuningAdvisorTasksSqlTuningAdvisorTaskCollection... sqlTuningAdvisorTaskCollections) {

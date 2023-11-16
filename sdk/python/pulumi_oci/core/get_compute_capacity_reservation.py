@@ -68,10 +68,7 @@ class GetComputeCapacityReservationResult:
 
     @property
     @pulumi.getter(name="availabilityDomain")
-    def availability_domain(self) -> str:
-        """
-        The availability domain of the compute capacity reservation.  Example: `Uocm:PHX-AD-1`
-        """
+    def availability_domain(self) -> Optional[str]:
         return pulumi.get(self, "availability_domain")
 
     @property
@@ -81,98 +78,62 @@ class GetComputeCapacityReservationResult:
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the compute capacity reservation.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute capacity reservation.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="instanceReservationConfigs")
-    def instance_reservation_configs(self) -> Sequence['outputs.GetComputeCapacityReservationInstanceReservationConfigResult']:
-        """
-        The capacity configurations for the capacity reservation.
-        """
+    def instance_reservation_configs(self) -> Optional[Sequence['outputs.GetComputeCapacityReservationInstanceReservationConfigResult']]:
         return pulumi.get(self, "instance_reservation_configs")
 
     @property
     @pulumi.getter(name="isDefaultReservation")
-    def is_default_reservation(self) -> bool:
-        """
-        Whether this capacity reservation is the default. For more information, see [Capacity Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default).
-        """
+    def is_default_reservation(self) -> Optional[bool]:
         return pulumi.get(self, "is_default_reservation")
 
     @property
     @pulumi.getter(name="reservedInstanceCount")
-    def reserved_instance_count(self) -> str:
-        """
-        The number of instances for which capacity will be held with this compute capacity reservation. This number is the sum of the values of the `reservedCount` fields for all of the instance capacity configurations under this reservation. The purpose of this field is to calculate the percentage usage of the reservation.
-        """
+    def reserved_instance_count(self) -> Optional[str]:
         return pulumi.get(self, "reserved_instance_count")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the compute capacity reservation.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the compute capacity reservation was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The date and time the compute capacity reservation was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
     @property
     @pulumi.getter(name="usedInstanceCount")
-    def used_instance_count(self) -> str:
-        """
-        The total number of instances currently consuming space in this compute capacity reservation. This number is the sum of the values of the `usedCount` fields for all of the instance capacity configurations under this reservation. The purpose of this field is to calculate the percentage usage of the reservation.
-        """
+    def used_instance_count(self) -> Optional[str]:
         return pulumi.get(self, "used_instance_count")
 
 
@@ -201,21 +162,7 @@ class AwaitableGetComputeCapacityReservationResult(GetComputeCapacityReservation
 def get_compute_capacity_reservation(capacity_reservation_id: Optional[str] = None,
                                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetComputeCapacityReservationResult:
     """
-    This data source provides details about a specific Compute Capacity Reservation resource in Oracle Cloud Infrastructure Core service.
-
-    Gets information about the specified compute capacity reservation.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_compute_capacity_reservation = oci.Core.get_compute_capacity_reservation(capacity_reservation_id=oci_core_capacity_reservation["test_capacity_reservation"]["id"])
-    ```
-
-
-    :param str capacity_reservation_id: The OCID of the compute capacity reservation.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['capacityReservationId'] = capacity_reservation_id
@@ -243,20 +190,6 @@ def get_compute_capacity_reservation(capacity_reservation_id: Optional[str] = No
 def get_compute_capacity_reservation_output(capacity_reservation_id: Optional[pulumi.Input[str]] = None,
                                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetComputeCapacityReservationResult]:
     """
-    This data source provides details about a specific Compute Capacity Reservation resource in Oracle Cloud Infrastructure Core service.
-
-    Gets information about the specified compute capacity reservation.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_compute_capacity_reservation = oci.Core.get_compute_capacity_reservation(capacity_reservation_id=oci_core_capacity_reservation["test_capacity_reservation"]["id"])
-    ```
-
-
-    :param str capacity_reservation_id: The OCID of the compute capacity reservation.
+    Use this data source to access information about an existing resource.
     """
     ...

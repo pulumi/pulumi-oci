@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Fusion Environments in Oracle Cloud Infrastructure Fusion Apps service.
@@ -79,7 +78,7 @@ type GetFusionEnvironmentsResult struct {
 	// FusionEnvironmentFamily Identifier
 	FusionEnvironmentFamilyId *string `pulumi:"fusionEnvironmentFamilyId"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The current state of the ServiceInstance.
 	State *string `pulumi:"state"`
 }
@@ -129,12 +128,6 @@ func (o GetFusionEnvironmentsResultOutput) ToGetFusionEnvironmentsResultOutputWi
 	return o
 }
 
-func (o GetFusionEnvironmentsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetFusionEnvironmentsResult] {
-	return pulumix.Output[GetFusionEnvironmentsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Compartment Identifier
 func (o GetFusionEnvironmentsResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFusionEnvironmentsResult) string { return v.CompartmentId }).(pulumi.StringOutput)
@@ -162,8 +155,8 @@ func (o GetFusionEnvironmentsResultOutput) FusionEnvironmentFamilyId() pulumi.St
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetFusionEnvironmentsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetFusionEnvironmentsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the ServiceInstance.

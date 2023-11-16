@@ -16,23 +16,23 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// <summary>
         /// The Automatic Diagnostic Repository (ADR) home directory for the cluster instance.
         /// </summary>
-        public readonly string AdrHomeDirectory;
+        public readonly string? AdrHomeDirectory;
         /// <summary>
         /// The host name of the database or the SCAN name in case of a RAC database.
         /// </summary>
-        public readonly string HostName;
+        public readonly string? HostName;
         /// <summary>
         /// The name of the ASM instance.
         /// </summary>
-        public readonly string InstanceName;
+        public readonly string? InstanceName;
 
         [OutputConstructor]
         private GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentAsmInstanceResult(
-            string adrHomeDirectory,
+            string? adrHomeDirectory,
 
-            string hostName,
+            string? hostName,
 
-            string instanceName)
+            string? instanceName)
         {
             AdrHomeDirectory = adrHomeDirectory;
             HostName = hostName;

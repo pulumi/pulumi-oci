@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Vm Cluster Updates in Oracle Cloud Infrastructure Database service.
@@ -68,7 +67,7 @@ type GetVmClusterUpdatesArgs struct {
 type GetVmClusterUpdatesResult struct {
 	Filters []GetVmClusterUpdatesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The current state of the maintenance update. Dependent on value of `lastAction`.
 	State *string `pulumi:"state"`
 	// The type of VM cluster maintenance update.
@@ -121,19 +120,13 @@ func (o GetVmClusterUpdatesResultOutput) ToGetVmClusterUpdatesResultOutputWithCo
 	return o
 }
 
-func (o GetVmClusterUpdatesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetVmClusterUpdatesResult] {
-	return pulumix.Output[GetVmClusterUpdatesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetVmClusterUpdatesResultOutput) Filters() GetVmClusterUpdatesFilterArrayOutput {
 	return o.ApplyT(func(v GetVmClusterUpdatesResult) []GetVmClusterUpdatesFilter { return v.Filters }).(GetVmClusterUpdatesFilterArrayOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetVmClusterUpdatesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVmClusterUpdatesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetVmClusterUpdatesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVmClusterUpdatesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the maintenance update. Dependent on value of `lastAction`.

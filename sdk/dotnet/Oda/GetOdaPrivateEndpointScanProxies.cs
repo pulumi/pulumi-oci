@@ -151,7 +151,7 @@ namespace Pulumi.Oci.Oda
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         public readonly string OdaPrivateEndpointId;
         /// <summary>
         /// The list of oda_private_endpoint_scan_proxy_collection.
@@ -166,7 +166,7 @@ namespace Pulumi.Oci.Oda
         private GetOdaPrivateEndpointScanProxiesResult(
             ImmutableArray<Outputs.GetOdaPrivateEndpointScanProxiesFilterResult> filters,
 
-            string id,
+            string? id,
 
             string odaPrivateEndpointId,
 

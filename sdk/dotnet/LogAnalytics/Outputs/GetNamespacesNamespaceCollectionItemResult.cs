@@ -16,23 +16,23 @@ namespace Pulumi.Oci.LogAnalytics.Outputs
         /// <summary>
         /// The ID of the compartment in which to list resources.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// This indicates if the tenancy is onboarded to Logging Analytics
         /// </summary>
-        public readonly bool IsOnboarded;
+        public readonly bool? IsOnboarded;
         /// <summary>
         /// This is the namespace name of a tenancy
         /// </summary>
-        public readonly string Namespace;
+        public readonly string? Namespace;
 
         [OutputConstructor]
         private GetNamespacesNamespaceCollectionItemResult(
-            string compartmentId,
+            string? compartmentId,
 
-            bool isOnboarded,
+            bool? isOnboarded,
 
-            string @namespace)
+            string? @namespace)
         {
             CompartmentId = compartmentId;
             IsOnboarded = isOnboarded;

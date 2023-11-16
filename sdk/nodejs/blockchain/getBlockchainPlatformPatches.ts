@@ -50,12 +50,12 @@ export interface GetBlockchainPlatformPatchesResult {
     /**
      * The list of blockchain_platform_patch_collection.
      */
-    readonly blockchainPlatformPatchCollections: outputs.Blockchain.GetBlockchainPlatformPatchesBlockchainPlatformPatchCollection[];
+    readonly blockchainPlatformPatchCollections?: outputs.Blockchain.GetBlockchainPlatformPatchesBlockchainPlatformPatchCollection[];
     readonly filters?: outputs.Blockchain.GetBlockchainPlatformPatchesFilter[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
 }
 /**
  * This data source provides the list of Blockchain Platform Patches in Oracle Cloud Infrastructure Blockchain service.

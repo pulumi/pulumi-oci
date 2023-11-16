@@ -42,6 +42,8 @@ import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDomainsUsersUser {
@@ -49,735 +51,735 @@ public final class GetDomainsUsersUser {
      * @return Status of the account
      * 
      */
-    private Boolean active;
+    private @Nullable Boolean active;
     /**
      * @return A physical mailing address for this User, as described in (address Element). Canonical Type Values of work, home, and other. The value attribute is a complex type with the following sub-attributes.
      * 
      */
-    private List<GetDomainsUsersUserAddress> addresses;
+    private @Nullable List<GetDomainsUsersUserAddress> addresses;
     /**
      * @return A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If &#39;attributes&#39; query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
      * 
      */
-    private List<String> attributeSets;
+    private @Nullable List<String> attributeSets;
     /**
      * @return A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
      * 
      */
-    private String attributes;
+    private @Nullable String attributes;
     /**
      * @return The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
      * 
      */
-    private String authorization;
+    private @Nullable String authorization;
     /**
      * @return Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
      * 
      */
-    private String compartmentOcid;
+    private @Nullable String compartmentOcid;
     /**
      * @return A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
      * 
      */
-    private Boolean deleteInProgress;
+    private @Nullable Boolean deleteInProgress;
     /**
      * @return Description of the user
      * 
      */
-    private String description;
+    private @Nullable String description;
     /**
      * @return The displayName of the User&#39;s manager. OPTIONAL and READ-ONLY.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
      * 
      */
-    private String domainOcid;
+    private @Nullable String domainOcid;
     /**
      * @return A complex attribute representing emails
      * 
      */
-    private List<GetDomainsUsersUserEmail> emails;
+    private @Nullable List<GetDomainsUsersUserEmail> emails;
     /**
      * @return A list of entitlements for the User that represent a thing the User has.
      * 
      */
-    private List<GetDomainsUsersUserEntitlement> entitlements;
+    private @Nullable List<GetDomainsUsersUserEntitlement> entitlements;
     /**
      * @return An identifier for the Resource as defined by the Service Consumer. READ-ONLY.
      * 
      */
-    private String externalId;
+    private @Nullable String externalId;
     /**
      * @return A list of groups that the user belongs to, either thorough direct membership, nested groups, or dynamically calculated
      * 
      */
-    private List<GetDomainsUsersUserGroup> groups;
+    private @Nullable List<GetDomainsUsersUserGroup> groups;
     /**
      * @return Unique identifier for the SCIM Resource as defined by the Service Provider. Each representation of the Resource MUST include a non-empty id value. This identifier MUST be unique across the Service Provider&#39;s entire set of Resources. It MUST be a stable, non-reassignable identifier that does not change when the same Resource is returned in subsequent requests. The value of the id attribute is always issued by the Service Provider and MUST never be specified by the Service Consumer. bulkId: is a reserved keyword and MUST NOT be used in the unique identifier.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The User or App who created the Resource
      * 
      */
-    private List<GetDomainsUsersUserIdcsCreatedBy> idcsCreatedBies;
+    private @Nullable List<GetDomainsUsersUserIdcsCreatedBy> idcsCreatedBies;
     /**
      * @return The basic endpoint for the identity domain
      * 
      */
-    private String idcsEndpoint;
+    private @Nullable String idcsEndpoint;
     /**
      * @return The User or App who modified the Resource
      * 
      */
-    private List<GetDomainsUsersUserIdcsLastModifiedBy> idcsLastModifiedBies;
+    private @Nullable List<GetDomainsUsersUserIdcsLastModifiedBy> idcsLastModifiedBies;
     /**
      * @return The release number when the resource was upgraded.
      * 
      */
-    private String idcsLastUpgradedInRelease;
+    private @Nullable String idcsLastUpgradedInRelease;
     /**
      * @return Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
      * 
      */
-    private List<String> idcsPreventedOperations;
+    private @Nullable List<String> idcsPreventedOperations;
     /**
      * @return User&#39;s instant messaging addresses
      * 
      */
-    private List<GetDomainsUsersUserIm> ims;
+    private @Nullable List<GetDomainsUsersUserIm> ims;
     /**
      * @return Used to indicate the User&#39;s default location for purposes of localizing items such as currency, date and time format, numerical representations, and so on.
      * 
      */
-    private String locale;
+    private @Nullable String locale;
     /**
      * @return A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
      * 
      */
-    private List<GetDomainsUsersUserMeta> metas;
+    private @Nullable List<GetDomainsUsersUserMeta> metas;
     /**
      * @return Name of the account assigned to the User.
      * 
      */
-    private List<GetDomainsUsersUserName> names;
+    private @Nullable List<GetDomainsUsersUserName> names;
     /**
      * @return Nick name
      * 
      */
-    private String nickName;
+    private @Nullable String nickName;
     /**
      * @return The OCID of the user&#39;s support account.
      * 
      */
-    private String ocid;
+    private @Nullable String ocid;
     /**
      * @return Password attribute. Max length for password is controlled via Password Policy.
      * 
      */
-    private String password;
+    private @Nullable String password;
     /**
      * @return Phone numbers
      * 
      */
-    private List<GetDomainsUsersUserPhoneNumber> phoneNumbers;
+    private @Nullable List<GetDomainsUsersUserPhoneNumber> phoneNumbers;
     /**
      * @return URLs of photos for the User
      * 
      */
-    private List<GetDomainsUsersUserPhoto> photos;
+    private @Nullable List<GetDomainsUsersUserPhoto> photos;
     /**
      * @return User&#39;s preferred written or spoken language used for localized user interfaces
      * 
      */
-    private String preferredLanguage;
+    private @Nullable String preferredLanguage;
     /**
      * @return A fully-qualified URL to a page representing the User&#39;s online profile
      * 
      */
-    private String profileUrl;
+    private @Nullable String profileUrl;
     /**
      * @return An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
      * 
      */
-    private String resourceTypeSchemaVersion;
+    private @Nullable String resourceTypeSchemaVersion;
     /**
      * @return A list of roles for the User that collectively represent who the User is; e.g., &#39;Student&#39;, &#39;Faculty&#39;.
      * 
      */
-    private List<GetDomainsUsersUserRole> roles;
+    private @Nullable List<GetDomainsUsersUserRole> roles;
     /**
      * @return REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \&#34;enterprise\&#34; extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
      * 
      */
-    private List<String> schemas;
+    private @Nullable List<String> schemas;
     /**
      * @return A list of tags on this resource.
      * 
      */
-    private List<GetDomainsUsersUserTag> tags;
+    private @Nullable List<GetDomainsUsersUserTag> tags;
     /**
      * @return Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
      * 
      */
-    private String tenancyOcid;
+    private @Nullable String tenancyOcid;
     /**
      * @return User&#39;s timezone
      * 
      */
-    private String timezone;
+    private @Nullable String timezone;
     /**
      * @return Title
      * 
      */
-    private String title;
+    private @Nullable String title;
     /**
      * @return Enterprise User
      * 
      */
-    private List<GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20user> urnietfparamsscimschemasextensionenterprise20users;
+    private @Nullable List<GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20user> urnietfparamsscimschemasextensionenterprise20users;
     /**
      * @return Oracle Cloud Infrastructure Tags.
      * 
      */
-    private List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTag> urnietfparamsscimschemasoracleidcsextensionOciTags;
+    private @Nullable List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTag> urnietfparamsscimschemasoracleidcsextensionOciTags;
     /**
      * @return This extension defines attributes to manage user&#39;s risk score.
      * 
      */
-    private List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUser> urnietfparamsscimschemasoracleidcsextensionadaptiveUsers;
+    private @Nullable List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUser> urnietfparamsscimschemasoracleidcsextensionadaptiveUsers;
     /**
      * @return User&#39;s Capabilities
      * 
      */
-    private List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUser> urnietfparamsscimschemasoracleidcsextensioncapabilitiesUsers;
+    private @Nullable List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUser> urnietfparamsscimschemasoracleidcsextensioncapabilitiesUsers;
     /**
      * @return The database credentials user extension.
      * 
      */
-    private List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUser> urnietfparamsscimschemasoracleidcsextensiondbCredentialsUsers;
+    private @Nullable List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUser> urnietfparamsscimschemasoracleidcsextensiondbCredentialsUsers;
     /**
      * @return DB User extension
      * 
      */
-    private List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUser> urnietfparamsscimschemasoracleidcsextensiondbUserUsers;
+    private @Nullable List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUser> urnietfparamsscimschemasoracleidcsextensiondbUserUsers;
     /**
      * @return Kerberos User extension
      * 
      */
-    private List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUser> urnietfparamsscimschemasoracleidcsextensionkerberosUserUsers;
+    private @Nullable List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUser> urnietfparamsscimschemasoracleidcsextensionkerberosUserUsers;
     /**
      * @return This extension defines attributes used to manage Multi-Factor Authentication within a service provider. The extension is typically applied to a User resource, but MAY be applied to other resources that use MFA.
      * 
      */
-    private List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUser> urnietfparamsscimschemasoracleidcsextensionmfaUsers;
+    private @Nullable List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUser> urnietfparamsscimschemasoracleidcsextensionmfaUsers;
     /**
      * @return This extension defines attributes used to manage account passwords within a Service Provider. The extension is typically applied to a User resource, but MAY be applied to other resources that use passwords.
      * 
      */
-    private List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUser> urnietfparamsscimschemasoracleidcsextensionpasswordStateUsers;
+    private @Nullable List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUser> urnietfparamsscimschemasoracleidcsextensionpasswordStateUsers;
     /**
      * @return This extension defines attributes used to manage Passwordless-Factor Authentication within a service provider. The extension is typically applied to a User resource, but MAY be applied to other resources that use MFA.
      * 
      */
-    private List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUser> urnietfparamsscimschemasoracleidcsextensionpasswordlessUsers;
+    private @Nullable List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUser> urnietfparamsscimschemasoracleidcsextensionpasswordlessUsers;
     /**
      * @return POSIX User extension
      * 
      */
-    private List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionposixUser> urnietfparamsscimschemasoracleidcsextensionposixUsers;
+    private @Nullable List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionposixUser> urnietfparamsscimschemasoracleidcsextensionposixUsers;
     /**
      * @return This extension defines the attributes used to store the security questions of a user.
      * 
      */
-    private List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUser> urnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUsers;
+    private @Nullable List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUser> urnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUsers;
     /**
      * @return Controls whether a user can update themselves or not via User related APIs
      * 
      */
-    private List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUser> urnietfparamsscimschemasoracleidcsextensionselfChangeUsers;
+    private @Nullable List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUser> urnietfparamsscimschemasoracleidcsextensionselfChangeUsers;
     /**
      * @return This extension defines attributes used to manage self registration profile linked to the user.
      * 
      */
-    private List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUser> urnietfparamsscimschemasoracleidcsextensionselfRegistrationUsers;
+    private @Nullable List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUser> urnietfparamsscimschemasoracleidcsextensionselfRegistrationUsers;
     /**
      * @return SFF Auth Keys User extension
      * 
      */
-    private List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsffUser> urnietfparamsscimschemasoracleidcsextensionsffUsers;
+    private @Nullable List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsffUser> urnietfparamsscimschemasoracleidcsextensionsffUsers;
     /**
      * @return Social User extension
      * 
      */
-    private List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUser> urnietfparamsscimschemasoracleidcsextensionsocialAccountUsers;
+    private @Nullable List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUser> urnietfparamsscimschemasoracleidcsextensionsocialAccountUsers;
     /**
      * @return Terms Of Use extension
      * 
      */
-    private List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUser> urnietfparamsscimschemasoracleidcsextensiontermsOfUseUsers;
+    private @Nullable List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUser> urnietfparamsscimschemasoracleidcsextensiontermsOfUseUsers;
     /**
      * @return User&#39;s credentials
      * 
      */
-    private List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUser> urnietfparamsscimschemasoracleidcsextensionuserCredentialsUsers;
+    private @Nullable List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUser> urnietfparamsscimschemasoracleidcsextensionuserCredentialsUsers;
     /**
      * @return This extension defines the attributes used to manage account passwords within a service provider. The extension is typically applied to a User resource, but MAY be applied to other resources that use passwords.
      * 
      */
-    private List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserStateUser> urnietfparamsscimschemasoracleidcsextensionuserStateUsers;
+    private @Nullable List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserStateUser> urnietfparamsscimschemasoracleidcsextensionuserStateUsers;
     /**
      * @return Oracle Identity Cloud Service User
      * 
      */
-    private List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUser> urnietfparamsscimschemasoracleidcsextensionuserUsers;
+    private @Nullable List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUser> urnietfparamsscimschemasoracleidcsextensionuserUsers;
     /**
      * @return User name
      * 
      */
-    private String userName;
+    private @Nullable String userName;
     /**
      * @return Used to identify the organization-to-user relationship
      * 
      */
-    private String userType;
+    private @Nullable String userType;
     /**
      * @return A list of certificates issued to the User.
      * 
      */
-    private List<GetDomainsUsersUserX509certificate> x509certificates;
+    private @Nullable List<GetDomainsUsersUserX509certificate> x509certificates;
 
     private GetDomainsUsersUser() {}
     /**
      * @return Status of the account
      * 
      */
-    public Boolean active() {
-        return this.active;
+    public Optional<Boolean> active() {
+        return Optional.ofNullable(this.active);
     }
     /**
      * @return A physical mailing address for this User, as described in (address Element). Canonical Type Values of work, home, and other. The value attribute is a complex type with the following sub-attributes.
      * 
      */
     public List<GetDomainsUsersUserAddress> addresses() {
-        return this.addresses;
+        return this.addresses == null ? List.of() : this.addresses;
     }
     /**
      * @return A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If &#39;attributes&#39; query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
      * 
      */
     public List<String> attributeSets() {
-        return this.attributeSets;
+        return this.attributeSets == null ? List.of() : this.attributeSets;
     }
     /**
      * @return A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
      * 
      */
-    public String attributes() {
-        return this.attributes;
+    public Optional<String> attributes() {
+        return Optional.ofNullable(this.attributes);
     }
     /**
      * @return The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
      * 
      */
-    public String authorization() {
-        return this.authorization;
+    public Optional<String> authorization() {
+        return Optional.ofNullable(this.authorization);
     }
     /**
      * @return Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
      * 
      */
-    public String compartmentOcid() {
-        return this.compartmentOcid;
+    public Optional<String> compartmentOcid() {
+        return Optional.ofNullable(this.compartmentOcid);
     }
     /**
      * @return A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
      * 
      */
-    public Boolean deleteInProgress() {
-        return this.deleteInProgress;
+    public Optional<Boolean> deleteInProgress() {
+        return Optional.ofNullable(this.deleteInProgress);
     }
     /**
      * @return Description of the user
      * 
      */
-    public String description() {
-        return this.description;
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
     /**
      * @return The displayName of the User&#39;s manager. OPTIONAL and READ-ONLY.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
      * 
      */
-    public String domainOcid() {
-        return this.domainOcid;
+    public Optional<String> domainOcid() {
+        return Optional.ofNullable(this.domainOcid);
     }
     /**
      * @return A complex attribute representing emails
      * 
      */
     public List<GetDomainsUsersUserEmail> emails() {
-        return this.emails;
+        return this.emails == null ? List.of() : this.emails;
     }
     /**
      * @return A list of entitlements for the User that represent a thing the User has.
      * 
      */
     public List<GetDomainsUsersUserEntitlement> entitlements() {
-        return this.entitlements;
+        return this.entitlements == null ? List.of() : this.entitlements;
     }
     /**
      * @return An identifier for the Resource as defined by the Service Consumer. READ-ONLY.
      * 
      */
-    public String externalId() {
-        return this.externalId;
+    public Optional<String> externalId() {
+        return Optional.ofNullable(this.externalId);
     }
     /**
      * @return A list of groups that the user belongs to, either thorough direct membership, nested groups, or dynamically calculated
      * 
      */
     public List<GetDomainsUsersUserGroup> groups() {
-        return this.groups;
+        return this.groups == null ? List.of() : this.groups;
     }
     /**
      * @return Unique identifier for the SCIM Resource as defined by the Service Provider. Each representation of the Resource MUST include a non-empty id value. This identifier MUST be unique across the Service Provider&#39;s entire set of Resources. It MUST be a stable, non-reassignable identifier that does not change when the same Resource is returned in subsequent requests. The value of the id attribute is always issued by the Service Provider and MUST never be specified by the Service Consumer. bulkId: is a reserved keyword and MUST NOT be used in the unique identifier.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The User or App who created the Resource
      * 
      */
     public List<GetDomainsUsersUserIdcsCreatedBy> idcsCreatedBies() {
-        return this.idcsCreatedBies;
+        return this.idcsCreatedBies == null ? List.of() : this.idcsCreatedBies;
     }
     /**
      * @return The basic endpoint for the identity domain
      * 
      */
-    public String idcsEndpoint() {
-        return this.idcsEndpoint;
+    public Optional<String> idcsEndpoint() {
+        return Optional.ofNullable(this.idcsEndpoint);
     }
     /**
      * @return The User or App who modified the Resource
      * 
      */
     public List<GetDomainsUsersUserIdcsLastModifiedBy> idcsLastModifiedBies() {
-        return this.idcsLastModifiedBies;
+        return this.idcsLastModifiedBies == null ? List.of() : this.idcsLastModifiedBies;
     }
     /**
      * @return The release number when the resource was upgraded.
      * 
      */
-    public String idcsLastUpgradedInRelease() {
-        return this.idcsLastUpgradedInRelease;
+    public Optional<String> idcsLastUpgradedInRelease() {
+        return Optional.ofNullable(this.idcsLastUpgradedInRelease);
     }
     /**
      * @return Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
      * 
      */
     public List<String> idcsPreventedOperations() {
-        return this.idcsPreventedOperations;
+        return this.idcsPreventedOperations == null ? List.of() : this.idcsPreventedOperations;
     }
     /**
      * @return User&#39;s instant messaging addresses
      * 
      */
     public List<GetDomainsUsersUserIm> ims() {
-        return this.ims;
+        return this.ims == null ? List.of() : this.ims;
     }
     /**
      * @return Used to indicate the User&#39;s default location for purposes of localizing items such as currency, date and time format, numerical representations, and so on.
      * 
      */
-    public String locale() {
-        return this.locale;
+    public Optional<String> locale() {
+        return Optional.ofNullable(this.locale);
     }
     /**
      * @return A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
      * 
      */
     public List<GetDomainsUsersUserMeta> metas() {
-        return this.metas;
+        return this.metas == null ? List.of() : this.metas;
     }
     /**
      * @return Name of the account assigned to the User.
      * 
      */
     public List<GetDomainsUsersUserName> names() {
-        return this.names;
+        return this.names == null ? List.of() : this.names;
     }
     /**
      * @return Nick name
      * 
      */
-    public String nickName() {
-        return this.nickName;
+    public Optional<String> nickName() {
+        return Optional.ofNullable(this.nickName);
     }
     /**
      * @return The OCID of the user&#39;s support account.
      * 
      */
-    public String ocid() {
-        return this.ocid;
+    public Optional<String> ocid() {
+        return Optional.ofNullable(this.ocid);
     }
     /**
      * @return Password attribute. Max length for password is controlled via Password Policy.
      * 
      */
-    public String password() {
-        return this.password;
+    public Optional<String> password() {
+        return Optional.ofNullable(this.password);
     }
     /**
      * @return Phone numbers
      * 
      */
     public List<GetDomainsUsersUserPhoneNumber> phoneNumbers() {
-        return this.phoneNumbers;
+        return this.phoneNumbers == null ? List.of() : this.phoneNumbers;
     }
     /**
      * @return URLs of photos for the User
      * 
      */
     public List<GetDomainsUsersUserPhoto> photos() {
-        return this.photos;
+        return this.photos == null ? List.of() : this.photos;
     }
     /**
      * @return User&#39;s preferred written or spoken language used for localized user interfaces
      * 
      */
-    public String preferredLanguage() {
-        return this.preferredLanguage;
+    public Optional<String> preferredLanguage() {
+        return Optional.ofNullable(this.preferredLanguage);
     }
     /**
      * @return A fully-qualified URL to a page representing the User&#39;s online profile
      * 
      */
-    public String profileUrl() {
-        return this.profileUrl;
+    public Optional<String> profileUrl() {
+        return Optional.ofNullable(this.profileUrl);
     }
     /**
      * @return An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
      * 
      */
-    public String resourceTypeSchemaVersion() {
-        return this.resourceTypeSchemaVersion;
+    public Optional<String> resourceTypeSchemaVersion() {
+        return Optional.ofNullable(this.resourceTypeSchemaVersion);
     }
     /**
      * @return A list of roles for the User that collectively represent who the User is; e.g., &#39;Student&#39;, &#39;Faculty&#39;.
      * 
      */
     public List<GetDomainsUsersUserRole> roles() {
-        return this.roles;
+        return this.roles == null ? List.of() : this.roles;
     }
     /**
      * @return REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \&#34;enterprise\&#34; extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
      * 
      */
     public List<String> schemas() {
-        return this.schemas;
+        return this.schemas == null ? List.of() : this.schemas;
     }
     /**
      * @return A list of tags on this resource.
      * 
      */
     public List<GetDomainsUsersUserTag> tags() {
-        return this.tags;
+        return this.tags == null ? List.of() : this.tags;
     }
     /**
      * @return Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
      * 
      */
-    public String tenancyOcid() {
-        return this.tenancyOcid;
+    public Optional<String> tenancyOcid() {
+        return Optional.ofNullable(this.tenancyOcid);
     }
     /**
      * @return User&#39;s timezone
      * 
      */
-    public String timezone() {
-        return this.timezone;
+    public Optional<String> timezone() {
+        return Optional.ofNullable(this.timezone);
     }
     /**
      * @return Title
      * 
      */
-    public String title() {
-        return this.title;
+    public Optional<String> title() {
+        return Optional.ofNullable(this.title);
     }
     /**
      * @return Enterprise User
      * 
      */
     public List<GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20user> urnietfparamsscimschemasextensionenterprise20users() {
-        return this.urnietfparamsscimschemasextensionenterprise20users;
+        return this.urnietfparamsscimschemasextensionenterprise20users == null ? List.of() : this.urnietfparamsscimschemasextensionenterprise20users;
     }
     /**
      * @return Oracle Cloud Infrastructure Tags.
      * 
      */
     public List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTag> urnietfparamsscimschemasoracleidcsextensionOciTags() {
-        return this.urnietfparamsscimschemasoracleidcsextensionOciTags;
+        return this.urnietfparamsscimschemasoracleidcsextensionOciTags == null ? List.of() : this.urnietfparamsscimschemasoracleidcsextensionOciTags;
     }
     /**
      * @return This extension defines attributes to manage user&#39;s risk score.
      * 
      */
     public List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUser> urnietfparamsscimschemasoracleidcsextensionadaptiveUsers() {
-        return this.urnietfparamsscimschemasoracleidcsextensionadaptiveUsers;
+        return this.urnietfparamsscimschemasoracleidcsextensionadaptiveUsers == null ? List.of() : this.urnietfparamsscimschemasoracleidcsextensionadaptiveUsers;
     }
     /**
      * @return User&#39;s Capabilities
      * 
      */
     public List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUser> urnietfparamsscimschemasoracleidcsextensioncapabilitiesUsers() {
-        return this.urnietfparamsscimschemasoracleidcsextensioncapabilitiesUsers;
+        return this.urnietfparamsscimschemasoracleidcsextensioncapabilitiesUsers == null ? List.of() : this.urnietfparamsscimschemasoracleidcsextensioncapabilitiesUsers;
     }
     /**
      * @return The database credentials user extension.
      * 
      */
     public List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUser> urnietfparamsscimschemasoracleidcsextensiondbCredentialsUsers() {
-        return this.urnietfparamsscimschemasoracleidcsextensiondbCredentialsUsers;
+        return this.urnietfparamsscimschemasoracleidcsextensiondbCredentialsUsers == null ? List.of() : this.urnietfparamsscimschemasoracleidcsextensiondbCredentialsUsers;
     }
     /**
      * @return DB User extension
      * 
      */
     public List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUser> urnietfparamsscimschemasoracleidcsextensiondbUserUsers() {
-        return this.urnietfparamsscimschemasoracleidcsextensiondbUserUsers;
+        return this.urnietfparamsscimschemasoracleidcsextensiondbUserUsers == null ? List.of() : this.urnietfparamsscimschemasoracleidcsextensiondbUserUsers;
     }
     /**
      * @return Kerberos User extension
      * 
      */
     public List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUser> urnietfparamsscimschemasoracleidcsextensionkerberosUserUsers() {
-        return this.urnietfparamsscimschemasoracleidcsextensionkerberosUserUsers;
+        return this.urnietfparamsscimschemasoracleidcsextensionkerberosUserUsers == null ? List.of() : this.urnietfparamsscimschemasoracleidcsextensionkerberosUserUsers;
     }
     /**
      * @return This extension defines attributes used to manage Multi-Factor Authentication within a service provider. The extension is typically applied to a User resource, but MAY be applied to other resources that use MFA.
      * 
      */
     public List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUser> urnietfparamsscimschemasoracleidcsextensionmfaUsers() {
-        return this.urnietfparamsscimschemasoracleidcsextensionmfaUsers;
+        return this.urnietfparamsscimschemasoracleidcsextensionmfaUsers == null ? List.of() : this.urnietfparamsscimschemasoracleidcsextensionmfaUsers;
     }
     /**
      * @return This extension defines attributes used to manage account passwords within a Service Provider. The extension is typically applied to a User resource, but MAY be applied to other resources that use passwords.
      * 
      */
     public List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUser> urnietfparamsscimschemasoracleidcsextensionpasswordStateUsers() {
-        return this.urnietfparamsscimschemasoracleidcsextensionpasswordStateUsers;
+        return this.urnietfparamsscimschemasoracleidcsextensionpasswordStateUsers == null ? List.of() : this.urnietfparamsscimschemasoracleidcsextensionpasswordStateUsers;
     }
     /**
      * @return This extension defines attributes used to manage Passwordless-Factor Authentication within a service provider. The extension is typically applied to a User resource, but MAY be applied to other resources that use MFA.
      * 
      */
     public List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUser> urnietfparamsscimschemasoracleidcsextensionpasswordlessUsers() {
-        return this.urnietfparamsscimschemasoracleidcsextensionpasswordlessUsers;
+        return this.urnietfparamsscimschemasoracleidcsextensionpasswordlessUsers == null ? List.of() : this.urnietfparamsscimschemasoracleidcsextensionpasswordlessUsers;
     }
     /**
      * @return POSIX User extension
      * 
      */
     public List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionposixUser> urnietfparamsscimschemasoracleidcsextensionposixUsers() {
-        return this.urnietfparamsscimschemasoracleidcsextensionposixUsers;
+        return this.urnietfparamsscimschemasoracleidcsextensionposixUsers == null ? List.of() : this.urnietfparamsscimschemasoracleidcsextensionposixUsers;
     }
     /**
      * @return This extension defines the attributes used to store the security questions of a user.
      * 
      */
     public List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUser> urnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUsers() {
-        return this.urnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUsers;
+        return this.urnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUsers == null ? List.of() : this.urnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUsers;
     }
     /**
      * @return Controls whether a user can update themselves or not via User related APIs
      * 
      */
     public List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUser> urnietfparamsscimschemasoracleidcsextensionselfChangeUsers() {
-        return this.urnietfparamsscimschemasoracleidcsextensionselfChangeUsers;
+        return this.urnietfparamsscimschemasoracleidcsextensionselfChangeUsers == null ? List.of() : this.urnietfparamsscimschemasoracleidcsextensionselfChangeUsers;
     }
     /**
      * @return This extension defines attributes used to manage self registration profile linked to the user.
      * 
      */
     public List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUser> urnietfparamsscimschemasoracleidcsextensionselfRegistrationUsers() {
-        return this.urnietfparamsscimschemasoracleidcsextensionselfRegistrationUsers;
+        return this.urnietfparamsscimschemasoracleidcsextensionselfRegistrationUsers == null ? List.of() : this.urnietfparamsscimschemasoracleidcsextensionselfRegistrationUsers;
     }
     /**
      * @return SFF Auth Keys User extension
      * 
      */
     public List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsffUser> urnietfparamsscimschemasoracleidcsextensionsffUsers() {
-        return this.urnietfparamsscimschemasoracleidcsextensionsffUsers;
+        return this.urnietfparamsscimschemasoracleidcsextensionsffUsers == null ? List.of() : this.urnietfparamsscimschemasoracleidcsextensionsffUsers;
     }
     /**
      * @return Social User extension
      * 
      */
     public List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUser> urnietfparamsscimschemasoracleidcsextensionsocialAccountUsers() {
-        return this.urnietfparamsscimschemasoracleidcsextensionsocialAccountUsers;
+        return this.urnietfparamsscimschemasoracleidcsextensionsocialAccountUsers == null ? List.of() : this.urnietfparamsscimschemasoracleidcsextensionsocialAccountUsers;
     }
     /**
      * @return Terms Of Use extension
      * 
      */
     public List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUser> urnietfparamsscimschemasoracleidcsextensiontermsOfUseUsers() {
-        return this.urnietfparamsscimschemasoracleidcsextensiontermsOfUseUsers;
+        return this.urnietfparamsscimschemasoracleidcsextensiontermsOfUseUsers == null ? List.of() : this.urnietfparamsscimschemasoracleidcsextensiontermsOfUseUsers;
     }
     /**
      * @return User&#39;s credentials
      * 
      */
     public List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUser> urnietfparamsscimschemasoracleidcsextensionuserCredentialsUsers() {
-        return this.urnietfparamsscimschemasoracleidcsextensionuserCredentialsUsers;
+        return this.urnietfparamsscimschemasoracleidcsextensionuserCredentialsUsers == null ? List.of() : this.urnietfparamsscimschemasoracleidcsextensionuserCredentialsUsers;
     }
     /**
      * @return This extension defines the attributes used to manage account passwords within a service provider. The extension is typically applied to a User resource, but MAY be applied to other resources that use passwords.
      * 
      */
     public List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserStateUser> urnietfparamsscimschemasoracleidcsextensionuserStateUsers() {
-        return this.urnietfparamsscimschemasoracleidcsextensionuserStateUsers;
+        return this.urnietfparamsscimschemasoracleidcsextensionuserStateUsers == null ? List.of() : this.urnietfparamsscimschemasoracleidcsextensionuserStateUsers;
     }
     /**
      * @return Oracle Identity Cloud Service User
      * 
      */
     public List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUser> urnietfparamsscimschemasoracleidcsextensionuserUsers() {
-        return this.urnietfparamsscimschemasoracleidcsextensionuserUsers;
+        return this.urnietfparamsscimschemasoracleidcsextensionuserUsers == null ? List.of() : this.urnietfparamsscimschemasoracleidcsextensionuserUsers;
     }
     /**
      * @return User name
      * 
      */
-    public String userName() {
-        return this.userName;
+    public Optional<String> userName() {
+        return Optional.ofNullable(this.userName);
     }
     /**
      * @return Used to identify the organization-to-user relationship
      * 
      */
-    public String userType() {
-        return this.userType;
+    public Optional<String> userType() {
+        return Optional.ofNullable(this.userType);
     }
     /**
      * @return A list of certificates issued to the User.
      * 
      */
     public List<GetDomainsUsersUserX509certificate> x509certificates() {
-        return this.x509certificates;
+        return this.x509certificates == null ? List.of() : this.x509certificates;
     }
 
     public static Builder builder() {
@@ -789,67 +791,67 @@ public final class GetDomainsUsersUser {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Boolean active;
-        private List<GetDomainsUsersUserAddress> addresses;
-        private List<String> attributeSets;
-        private String attributes;
-        private String authorization;
-        private String compartmentOcid;
-        private Boolean deleteInProgress;
-        private String description;
-        private String displayName;
-        private String domainOcid;
-        private List<GetDomainsUsersUserEmail> emails;
-        private List<GetDomainsUsersUserEntitlement> entitlements;
-        private String externalId;
-        private List<GetDomainsUsersUserGroup> groups;
-        private String id;
-        private List<GetDomainsUsersUserIdcsCreatedBy> idcsCreatedBies;
-        private String idcsEndpoint;
-        private List<GetDomainsUsersUserIdcsLastModifiedBy> idcsLastModifiedBies;
-        private String idcsLastUpgradedInRelease;
-        private List<String> idcsPreventedOperations;
-        private List<GetDomainsUsersUserIm> ims;
-        private String locale;
-        private List<GetDomainsUsersUserMeta> metas;
-        private List<GetDomainsUsersUserName> names;
-        private String nickName;
-        private String ocid;
-        private String password;
-        private List<GetDomainsUsersUserPhoneNumber> phoneNumbers;
-        private List<GetDomainsUsersUserPhoto> photos;
-        private String preferredLanguage;
-        private String profileUrl;
-        private String resourceTypeSchemaVersion;
-        private List<GetDomainsUsersUserRole> roles;
-        private List<String> schemas;
-        private List<GetDomainsUsersUserTag> tags;
-        private String tenancyOcid;
-        private String timezone;
-        private String title;
-        private List<GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20user> urnietfparamsscimschemasextensionenterprise20users;
-        private List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTag> urnietfparamsscimschemasoracleidcsextensionOciTags;
-        private List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUser> urnietfparamsscimschemasoracleidcsextensionadaptiveUsers;
-        private List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUser> urnietfparamsscimschemasoracleidcsextensioncapabilitiesUsers;
-        private List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUser> urnietfparamsscimschemasoracleidcsextensiondbCredentialsUsers;
-        private List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUser> urnietfparamsscimschemasoracleidcsextensiondbUserUsers;
-        private List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUser> urnietfparamsscimschemasoracleidcsextensionkerberosUserUsers;
-        private List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUser> urnietfparamsscimschemasoracleidcsextensionmfaUsers;
-        private List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUser> urnietfparamsscimschemasoracleidcsextensionpasswordStateUsers;
-        private List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUser> urnietfparamsscimschemasoracleidcsextensionpasswordlessUsers;
-        private List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionposixUser> urnietfparamsscimschemasoracleidcsextensionposixUsers;
-        private List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUser> urnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUsers;
-        private List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUser> urnietfparamsscimschemasoracleidcsextensionselfChangeUsers;
-        private List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUser> urnietfparamsscimschemasoracleidcsextensionselfRegistrationUsers;
-        private List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsffUser> urnietfparamsscimschemasoracleidcsextensionsffUsers;
-        private List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUser> urnietfparamsscimschemasoracleidcsextensionsocialAccountUsers;
-        private List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUser> urnietfparamsscimschemasoracleidcsextensiontermsOfUseUsers;
-        private List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUser> urnietfparamsscimschemasoracleidcsextensionuserCredentialsUsers;
-        private List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserStateUser> urnietfparamsscimschemasoracleidcsextensionuserStateUsers;
-        private List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUser> urnietfparamsscimschemasoracleidcsextensionuserUsers;
-        private String userName;
-        private String userType;
-        private List<GetDomainsUsersUserX509certificate> x509certificates;
+        private @Nullable Boolean active;
+        private @Nullable List<GetDomainsUsersUserAddress> addresses;
+        private @Nullable List<String> attributeSets;
+        private @Nullable String attributes;
+        private @Nullable String authorization;
+        private @Nullable String compartmentOcid;
+        private @Nullable Boolean deleteInProgress;
+        private @Nullable String description;
+        private @Nullable String displayName;
+        private @Nullable String domainOcid;
+        private @Nullable List<GetDomainsUsersUserEmail> emails;
+        private @Nullable List<GetDomainsUsersUserEntitlement> entitlements;
+        private @Nullable String externalId;
+        private @Nullable List<GetDomainsUsersUserGroup> groups;
+        private @Nullable String id;
+        private @Nullable List<GetDomainsUsersUserIdcsCreatedBy> idcsCreatedBies;
+        private @Nullable String idcsEndpoint;
+        private @Nullable List<GetDomainsUsersUserIdcsLastModifiedBy> idcsLastModifiedBies;
+        private @Nullable String idcsLastUpgradedInRelease;
+        private @Nullable List<String> idcsPreventedOperations;
+        private @Nullable List<GetDomainsUsersUserIm> ims;
+        private @Nullable String locale;
+        private @Nullable List<GetDomainsUsersUserMeta> metas;
+        private @Nullable List<GetDomainsUsersUserName> names;
+        private @Nullable String nickName;
+        private @Nullable String ocid;
+        private @Nullable String password;
+        private @Nullable List<GetDomainsUsersUserPhoneNumber> phoneNumbers;
+        private @Nullable List<GetDomainsUsersUserPhoto> photos;
+        private @Nullable String preferredLanguage;
+        private @Nullable String profileUrl;
+        private @Nullable String resourceTypeSchemaVersion;
+        private @Nullable List<GetDomainsUsersUserRole> roles;
+        private @Nullable List<String> schemas;
+        private @Nullable List<GetDomainsUsersUserTag> tags;
+        private @Nullable String tenancyOcid;
+        private @Nullable String timezone;
+        private @Nullable String title;
+        private @Nullable List<GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20user> urnietfparamsscimschemasextensionenterprise20users;
+        private @Nullable List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTag> urnietfparamsscimschemasoracleidcsextensionOciTags;
+        private @Nullable List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUser> urnietfparamsscimschemasoracleidcsextensionadaptiveUsers;
+        private @Nullable List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUser> urnietfparamsscimschemasoracleidcsextensioncapabilitiesUsers;
+        private @Nullable List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUser> urnietfparamsscimschemasoracleidcsextensiondbCredentialsUsers;
+        private @Nullable List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUser> urnietfparamsscimschemasoracleidcsextensiondbUserUsers;
+        private @Nullable List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUser> urnietfparamsscimschemasoracleidcsextensionkerberosUserUsers;
+        private @Nullable List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUser> urnietfparamsscimschemasoracleidcsextensionmfaUsers;
+        private @Nullable List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUser> urnietfparamsscimschemasoracleidcsextensionpasswordStateUsers;
+        private @Nullable List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUser> urnietfparamsscimschemasoracleidcsextensionpasswordlessUsers;
+        private @Nullable List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionposixUser> urnietfparamsscimschemasoracleidcsextensionposixUsers;
+        private @Nullable List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUser> urnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUsers;
+        private @Nullable List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUser> urnietfparamsscimschemasoracleidcsextensionselfChangeUsers;
+        private @Nullable List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUser> urnietfparamsscimschemasoracleidcsextensionselfRegistrationUsers;
+        private @Nullable List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsffUser> urnietfparamsscimschemasoracleidcsextensionsffUsers;
+        private @Nullable List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUser> urnietfparamsscimschemasoracleidcsextensionsocialAccountUsers;
+        private @Nullable List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUser> urnietfparamsscimschemasoracleidcsextensiontermsOfUseUsers;
+        private @Nullable List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUser> urnietfparamsscimschemasoracleidcsextensionuserCredentialsUsers;
+        private @Nullable List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserStateUser> urnietfparamsscimschemasoracleidcsextensionuserStateUsers;
+        private @Nullable List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUser> urnietfparamsscimschemasoracleidcsextensionuserUsers;
+        private @Nullable String userName;
+        private @Nullable String userType;
+        private @Nullable List<GetDomainsUsersUserX509certificate> x509certificates;
         public Builder() {}
         public Builder(GetDomainsUsersUser defaults) {
     	      Objects.requireNonNull(defaults);
@@ -917,416 +919,416 @@ public final class GetDomainsUsersUser {
         }
 
         @CustomType.Setter
-        public Builder active(Boolean active) {
-            this.active = Objects.requireNonNull(active);
+        public Builder active(@Nullable Boolean active) {
+            this.active = active;
             return this;
         }
         @CustomType.Setter
-        public Builder addresses(List<GetDomainsUsersUserAddress> addresses) {
-            this.addresses = Objects.requireNonNull(addresses);
+        public Builder addresses(@Nullable List<GetDomainsUsersUserAddress> addresses) {
+            this.addresses = addresses;
             return this;
         }
         public Builder addresses(GetDomainsUsersUserAddress... addresses) {
             return addresses(List.of(addresses));
         }
         @CustomType.Setter
-        public Builder attributeSets(List<String> attributeSets) {
-            this.attributeSets = Objects.requireNonNull(attributeSets);
+        public Builder attributeSets(@Nullable List<String> attributeSets) {
+            this.attributeSets = attributeSets;
             return this;
         }
         public Builder attributeSets(String... attributeSets) {
             return attributeSets(List.of(attributeSets));
         }
         @CustomType.Setter
-        public Builder attributes(String attributes) {
-            this.attributes = Objects.requireNonNull(attributes);
+        public Builder attributes(@Nullable String attributes) {
+            this.attributes = attributes;
             return this;
         }
         @CustomType.Setter
-        public Builder authorization(String authorization) {
-            this.authorization = Objects.requireNonNull(authorization);
+        public Builder authorization(@Nullable String authorization) {
+            this.authorization = authorization;
             return this;
         }
         @CustomType.Setter
-        public Builder compartmentOcid(String compartmentOcid) {
-            this.compartmentOcid = Objects.requireNonNull(compartmentOcid);
+        public Builder compartmentOcid(@Nullable String compartmentOcid) {
+            this.compartmentOcid = compartmentOcid;
             return this;
         }
         @CustomType.Setter
-        public Builder deleteInProgress(Boolean deleteInProgress) {
-            this.deleteInProgress = Objects.requireNonNull(deleteInProgress);
+        public Builder deleteInProgress(@Nullable Boolean deleteInProgress) {
+            this.deleteInProgress = deleteInProgress;
             return this;
         }
         @CustomType.Setter
-        public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+        public Builder description(@Nullable String description) {
+            this.description = description;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder domainOcid(String domainOcid) {
-            this.domainOcid = Objects.requireNonNull(domainOcid);
+        public Builder domainOcid(@Nullable String domainOcid) {
+            this.domainOcid = domainOcid;
             return this;
         }
         @CustomType.Setter
-        public Builder emails(List<GetDomainsUsersUserEmail> emails) {
-            this.emails = Objects.requireNonNull(emails);
+        public Builder emails(@Nullable List<GetDomainsUsersUserEmail> emails) {
+            this.emails = emails;
             return this;
         }
         public Builder emails(GetDomainsUsersUserEmail... emails) {
             return emails(List.of(emails));
         }
         @CustomType.Setter
-        public Builder entitlements(List<GetDomainsUsersUserEntitlement> entitlements) {
-            this.entitlements = Objects.requireNonNull(entitlements);
+        public Builder entitlements(@Nullable List<GetDomainsUsersUserEntitlement> entitlements) {
+            this.entitlements = entitlements;
             return this;
         }
         public Builder entitlements(GetDomainsUsersUserEntitlement... entitlements) {
             return entitlements(List.of(entitlements));
         }
         @CustomType.Setter
-        public Builder externalId(String externalId) {
-            this.externalId = Objects.requireNonNull(externalId);
+        public Builder externalId(@Nullable String externalId) {
+            this.externalId = externalId;
             return this;
         }
         @CustomType.Setter
-        public Builder groups(List<GetDomainsUsersUserGroup> groups) {
-            this.groups = Objects.requireNonNull(groups);
+        public Builder groups(@Nullable List<GetDomainsUsersUserGroup> groups) {
+            this.groups = groups;
             return this;
         }
         public Builder groups(GetDomainsUsersUserGroup... groups) {
             return groups(List.of(groups));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder idcsCreatedBies(List<GetDomainsUsersUserIdcsCreatedBy> idcsCreatedBies) {
-            this.idcsCreatedBies = Objects.requireNonNull(idcsCreatedBies);
+        public Builder idcsCreatedBies(@Nullable List<GetDomainsUsersUserIdcsCreatedBy> idcsCreatedBies) {
+            this.idcsCreatedBies = idcsCreatedBies;
             return this;
         }
         public Builder idcsCreatedBies(GetDomainsUsersUserIdcsCreatedBy... idcsCreatedBies) {
             return idcsCreatedBies(List.of(idcsCreatedBies));
         }
         @CustomType.Setter
-        public Builder idcsEndpoint(String idcsEndpoint) {
-            this.idcsEndpoint = Objects.requireNonNull(idcsEndpoint);
+        public Builder idcsEndpoint(@Nullable String idcsEndpoint) {
+            this.idcsEndpoint = idcsEndpoint;
             return this;
         }
         @CustomType.Setter
-        public Builder idcsLastModifiedBies(List<GetDomainsUsersUserIdcsLastModifiedBy> idcsLastModifiedBies) {
-            this.idcsLastModifiedBies = Objects.requireNonNull(idcsLastModifiedBies);
+        public Builder idcsLastModifiedBies(@Nullable List<GetDomainsUsersUserIdcsLastModifiedBy> idcsLastModifiedBies) {
+            this.idcsLastModifiedBies = idcsLastModifiedBies;
             return this;
         }
         public Builder idcsLastModifiedBies(GetDomainsUsersUserIdcsLastModifiedBy... idcsLastModifiedBies) {
             return idcsLastModifiedBies(List.of(idcsLastModifiedBies));
         }
         @CustomType.Setter
-        public Builder idcsLastUpgradedInRelease(String idcsLastUpgradedInRelease) {
-            this.idcsLastUpgradedInRelease = Objects.requireNonNull(idcsLastUpgradedInRelease);
+        public Builder idcsLastUpgradedInRelease(@Nullable String idcsLastUpgradedInRelease) {
+            this.idcsLastUpgradedInRelease = idcsLastUpgradedInRelease;
             return this;
         }
         @CustomType.Setter
-        public Builder idcsPreventedOperations(List<String> idcsPreventedOperations) {
-            this.idcsPreventedOperations = Objects.requireNonNull(idcsPreventedOperations);
+        public Builder idcsPreventedOperations(@Nullable List<String> idcsPreventedOperations) {
+            this.idcsPreventedOperations = idcsPreventedOperations;
             return this;
         }
         public Builder idcsPreventedOperations(String... idcsPreventedOperations) {
             return idcsPreventedOperations(List.of(idcsPreventedOperations));
         }
         @CustomType.Setter
-        public Builder ims(List<GetDomainsUsersUserIm> ims) {
-            this.ims = Objects.requireNonNull(ims);
+        public Builder ims(@Nullable List<GetDomainsUsersUserIm> ims) {
+            this.ims = ims;
             return this;
         }
         public Builder ims(GetDomainsUsersUserIm... ims) {
             return ims(List.of(ims));
         }
         @CustomType.Setter
-        public Builder locale(String locale) {
-            this.locale = Objects.requireNonNull(locale);
+        public Builder locale(@Nullable String locale) {
+            this.locale = locale;
             return this;
         }
         @CustomType.Setter
-        public Builder metas(List<GetDomainsUsersUserMeta> metas) {
-            this.metas = Objects.requireNonNull(metas);
+        public Builder metas(@Nullable List<GetDomainsUsersUserMeta> metas) {
+            this.metas = metas;
             return this;
         }
         public Builder metas(GetDomainsUsersUserMeta... metas) {
             return metas(List.of(metas));
         }
         @CustomType.Setter
-        public Builder names(List<GetDomainsUsersUserName> names) {
-            this.names = Objects.requireNonNull(names);
+        public Builder names(@Nullable List<GetDomainsUsersUserName> names) {
+            this.names = names;
             return this;
         }
         public Builder names(GetDomainsUsersUserName... names) {
             return names(List.of(names));
         }
         @CustomType.Setter
-        public Builder nickName(String nickName) {
-            this.nickName = Objects.requireNonNull(nickName);
+        public Builder nickName(@Nullable String nickName) {
+            this.nickName = nickName;
             return this;
         }
         @CustomType.Setter
-        public Builder ocid(String ocid) {
-            this.ocid = Objects.requireNonNull(ocid);
+        public Builder ocid(@Nullable String ocid) {
+            this.ocid = ocid;
             return this;
         }
         @CustomType.Setter
-        public Builder password(String password) {
-            this.password = Objects.requireNonNull(password);
+        public Builder password(@Nullable String password) {
+            this.password = password;
             return this;
         }
         @CustomType.Setter
-        public Builder phoneNumbers(List<GetDomainsUsersUserPhoneNumber> phoneNumbers) {
-            this.phoneNumbers = Objects.requireNonNull(phoneNumbers);
+        public Builder phoneNumbers(@Nullable List<GetDomainsUsersUserPhoneNumber> phoneNumbers) {
+            this.phoneNumbers = phoneNumbers;
             return this;
         }
         public Builder phoneNumbers(GetDomainsUsersUserPhoneNumber... phoneNumbers) {
             return phoneNumbers(List.of(phoneNumbers));
         }
         @CustomType.Setter
-        public Builder photos(List<GetDomainsUsersUserPhoto> photos) {
-            this.photos = Objects.requireNonNull(photos);
+        public Builder photos(@Nullable List<GetDomainsUsersUserPhoto> photos) {
+            this.photos = photos;
             return this;
         }
         public Builder photos(GetDomainsUsersUserPhoto... photos) {
             return photos(List.of(photos));
         }
         @CustomType.Setter
-        public Builder preferredLanguage(String preferredLanguage) {
-            this.preferredLanguage = Objects.requireNonNull(preferredLanguage);
+        public Builder preferredLanguage(@Nullable String preferredLanguage) {
+            this.preferredLanguage = preferredLanguage;
             return this;
         }
         @CustomType.Setter
-        public Builder profileUrl(String profileUrl) {
-            this.profileUrl = Objects.requireNonNull(profileUrl);
+        public Builder profileUrl(@Nullable String profileUrl) {
+            this.profileUrl = profileUrl;
             return this;
         }
         @CustomType.Setter
-        public Builder resourceTypeSchemaVersion(String resourceTypeSchemaVersion) {
-            this.resourceTypeSchemaVersion = Objects.requireNonNull(resourceTypeSchemaVersion);
+        public Builder resourceTypeSchemaVersion(@Nullable String resourceTypeSchemaVersion) {
+            this.resourceTypeSchemaVersion = resourceTypeSchemaVersion;
             return this;
         }
         @CustomType.Setter
-        public Builder roles(List<GetDomainsUsersUserRole> roles) {
-            this.roles = Objects.requireNonNull(roles);
+        public Builder roles(@Nullable List<GetDomainsUsersUserRole> roles) {
+            this.roles = roles;
             return this;
         }
         public Builder roles(GetDomainsUsersUserRole... roles) {
             return roles(List.of(roles));
         }
         @CustomType.Setter
-        public Builder schemas(List<String> schemas) {
-            this.schemas = Objects.requireNonNull(schemas);
+        public Builder schemas(@Nullable List<String> schemas) {
+            this.schemas = schemas;
             return this;
         }
         public Builder schemas(String... schemas) {
             return schemas(List.of(schemas));
         }
         @CustomType.Setter
-        public Builder tags(List<GetDomainsUsersUserTag> tags) {
-            this.tags = Objects.requireNonNull(tags);
+        public Builder tags(@Nullable List<GetDomainsUsersUserTag> tags) {
+            this.tags = tags;
             return this;
         }
         public Builder tags(GetDomainsUsersUserTag... tags) {
             return tags(List.of(tags));
         }
         @CustomType.Setter
-        public Builder tenancyOcid(String tenancyOcid) {
-            this.tenancyOcid = Objects.requireNonNull(tenancyOcid);
+        public Builder tenancyOcid(@Nullable String tenancyOcid) {
+            this.tenancyOcid = tenancyOcid;
             return this;
         }
         @CustomType.Setter
-        public Builder timezone(String timezone) {
-            this.timezone = Objects.requireNonNull(timezone);
+        public Builder timezone(@Nullable String timezone) {
+            this.timezone = timezone;
             return this;
         }
         @CustomType.Setter
-        public Builder title(String title) {
-            this.title = Objects.requireNonNull(title);
+        public Builder title(@Nullable String title) {
+            this.title = title;
             return this;
         }
         @CustomType.Setter
-        public Builder urnietfparamsscimschemasextensionenterprise20users(List<GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20user> urnietfparamsscimschemasextensionenterprise20users) {
-            this.urnietfparamsscimschemasextensionenterprise20users = Objects.requireNonNull(urnietfparamsscimschemasextensionenterprise20users);
+        public Builder urnietfparamsscimschemasextensionenterprise20users(@Nullable List<GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20user> urnietfparamsscimschemasextensionenterprise20users) {
+            this.urnietfparamsscimschemasextensionenterprise20users = urnietfparamsscimschemasextensionenterprise20users;
             return this;
         }
         public Builder urnietfparamsscimschemasextensionenterprise20users(GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20user... urnietfparamsscimschemasextensionenterprise20users) {
             return urnietfparamsscimschemasextensionenterprise20users(List.of(urnietfparamsscimschemasextensionenterprise20users));
         }
         @CustomType.Setter
-        public Builder urnietfparamsscimschemasoracleidcsextensionOciTags(List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTag> urnietfparamsscimschemasoracleidcsextensionOciTags) {
-            this.urnietfparamsscimschemasoracleidcsextensionOciTags = Objects.requireNonNull(urnietfparamsscimschemasoracleidcsextensionOciTags);
+        public Builder urnietfparamsscimschemasoracleidcsextensionOciTags(@Nullable List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTag> urnietfparamsscimschemasoracleidcsextensionOciTags) {
+            this.urnietfparamsscimschemasoracleidcsextensionOciTags = urnietfparamsscimschemasoracleidcsextensionOciTags;
             return this;
         }
         public Builder urnietfparamsscimschemasoracleidcsextensionOciTags(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTag... urnietfparamsscimschemasoracleidcsextensionOciTags) {
             return urnietfparamsscimschemasoracleidcsextensionOciTags(List.of(urnietfparamsscimschemasoracleidcsextensionOciTags));
         }
         @CustomType.Setter
-        public Builder urnietfparamsscimschemasoracleidcsextensionadaptiveUsers(List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUser> urnietfparamsscimschemasoracleidcsextensionadaptiveUsers) {
-            this.urnietfparamsscimschemasoracleidcsextensionadaptiveUsers = Objects.requireNonNull(urnietfparamsscimschemasoracleidcsextensionadaptiveUsers);
+        public Builder urnietfparamsscimschemasoracleidcsextensionadaptiveUsers(@Nullable List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUser> urnietfparamsscimschemasoracleidcsextensionadaptiveUsers) {
+            this.urnietfparamsscimschemasoracleidcsextensionadaptiveUsers = urnietfparamsscimschemasoracleidcsextensionadaptiveUsers;
             return this;
         }
         public Builder urnietfparamsscimschemasoracleidcsextensionadaptiveUsers(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUser... urnietfparamsscimschemasoracleidcsextensionadaptiveUsers) {
             return urnietfparamsscimschemasoracleidcsextensionadaptiveUsers(List.of(urnietfparamsscimschemasoracleidcsextensionadaptiveUsers));
         }
         @CustomType.Setter
-        public Builder urnietfparamsscimschemasoracleidcsextensioncapabilitiesUsers(List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUser> urnietfparamsscimschemasoracleidcsextensioncapabilitiesUsers) {
-            this.urnietfparamsscimschemasoracleidcsextensioncapabilitiesUsers = Objects.requireNonNull(urnietfparamsscimschemasoracleidcsextensioncapabilitiesUsers);
+        public Builder urnietfparamsscimschemasoracleidcsextensioncapabilitiesUsers(@Nullable List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUser> urnietfparamsscimschemasoracleidcsextensioncapabilitiesUsers) {
+            this.urnietfparamsscimschemasoracleidcsextensioncapabilitiesUsers = urnietfparamsscimschemasoracleidcsextensioncapabilitiesUsers;
             return this;
         }
         public Builder urnietfparamsscimschemasoracleidcsextensioncapabilitiesUsers(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUser... urnietfparamsscimschemasoracleidcsextensioncapabilitiesUsers) {
             return urnietfparamsscimschemasoracleidcsextensioncapabilitiesUsers(List.of(urnietfparamsscimschemasoracleidcsextensioncapabilitiesUsers));
         }
         @CustomType.Setter
-        public Builder urnietfparamsscimschemasoracleidcsextensiondbCredentialsUsers(List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUser> urnietfparamsscimschemasoracleidcsextensiondbCredentialsUsers) {
-            this.urnietfparamsscimschemasoracleidcsextensiondbCredentialsUsers = Objects.requireNonNull(urnietfparamsscimschemasoracleidcsextensiondbCredentialsUsers);
+        public Builder urnietfparamsscimschemasoracleidcsextensiondbCredentialsUsers(@Nullable List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUser> urnietfparamsscimschemasoracleidcsextensiondbCredentialsUsers) {
+            this.urnietfparamsscimschemasoracleidcsextensiondbCredentialsUsers = urnietfparamsscimschemasoracleidcsextensiondbCredentialsUsers;
             return this;
         }
         public Builder urnietfparamsscimschemasoracleidcsextensiondbCredentialsUsers(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUser... urnietfparamsscimschemasoracleidcsextensiondbCredentialsUsers) {
             return urnietfparamsscimschemasoracleidcsextensiondbCredentialsUsers(List.of(urnietfparamsscimschemasoracleidcsextensiondbCredentialsUsers));
         }
         @CustomType.Setter
-        public Builder urnietfparamsscimschemasoracleidcsextensiondbUserUsers(List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUser> urnietfparamsscimschemasoracleidcsextensiondbUserUsers) {
-            this.urnietfparamsscimschemasoracleidcsextensiondbUserUsers = Objects.requireNonNull(urnietfparamsscimschemasoracleidcsextensiondbUserUsers);
+        public Builder urnietfparamsscimschemasoracleidcsextensiondbUserUsers(@Nullable List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUser> urnietfparamsscimschemasoracleidcsextensiondbUserUsers) {
+            this.urnietfparamsscimschemasoracleidcsextensiondbUserUsers = urnietfparamsscimschemasoracleidcsextensiondbUserUsers;
             return this;
         }
         public Builder urnietfparamsscimschemasoracleidcsextensiondbUserUsers(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUser... urnietfparamsscimschemasoracleidcsextensiondbUserUsers) {
             return urnietfparamsscimschemasoracleidcsextensiondbUserUsers(List.of(urnietfparamsscimschemasoracleidcsextensiondbUserUsers));
         }
         @CustomType.Setter
-        public Builder urnietfparamsscimschemasoracleidcsextensionkerberosUserUsers(List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUser> urnietfparamsscimschemasoracleidcsextensionkerberosUserUsers) {
-            this.urnietfparamsscimschemasoracleidcsextensionkerberosUserUsers = Objects.requireNonNull(urnietfparamsscimschemasoracleidcsextensionkerberosUserUsers);
+        public Builder urnietfparamsscimschemasoracleidcsextensionkerberosUserUsers(@Nullable List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUser> urnietfparamsscimschemasoracleidcsextensionkerberosUserUsers) {
+            this.urnietfparamsscimschemasoracleidcsextensionkerberosUserUsers = urnietfparamsscimschemasoracleidcsextensionkerberosUserUsers;
             return this;
         }
         public Builder urnietfparamsscimschemasoracleidcsextensionkerberosUserUsers(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUser... urnietfparamsscimschemasoracleidcsextensionkerberosUserUsers) {
             return urnietfparamsscimschemasoracleidcsextensionkerberosUserUsers(List.of(urnietfparamsscimschemasoracleidcsextensionkerberosUserUsers));
         }
         @CustomType.Setter
-        public Builder urnietfparamsscimschemasoracleidcsextensionmfaUsers(List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUser> urnietfparamsscimschemasoracleidcsextensionmfaUsers) {
-            this.urnietfparamsscimschemasoracleidcsextensionmfaUsers = Objects.requireNonNull(urnietfparamsscimschemasoracleidcsextensionmfaUsers);
+        public Builder urnietfparamsscimschemasoracleidcsextensionmfaUsers(@Nullable List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUser> urnietfparamsscimschemasoracleidcsextensionmfaUsers) {
+            this.urnietfparamsscimschemasoracleidcsextensionmfaUsers = urnietfparamsscimschemasoracleidcsextensionmfaUsers;
             return this;
         }
         public Builder urnietfparamsscimschemasoracleidcsextensionmfaUsers(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUser... urnietfparamsscimschemasoracleidcsextensionmfaUsers) {
             return urnietfparamsscimschemasoracleidcsextensionmfaUsers(List.of(urnietfparamsscimschemasoracleidcsextensionmfaUsers));
         }
         @CustomType.Setter
-        public Builder urnietfparamsscimschemasoracleidcsextensionpasswordStateUsers(List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUser> urnietfparamsscimschemasoracleidcsextensionpasswordStateUsers) {
-            this.urnietfparamsscimschemasoracleidcsextensionpasswordStateUsers = Objects.requireNonNull(urnietfparamsscimschemasoracleidcsextensionpasswordStateUsers);
+        public Builder urnietfparamsscimschemasoracleidcsextensionpasswordStateUsers(@Nullable List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUser> urnietfparamsscimschemasoracleidcsextensionpasswordStateUsers) {
+            this.urnietfparamsscimschemasoracleidcsextensionpasswordStateUsers = urnietfparamsscimschemasoracleidcsextensionpasswordStateUsers;
             return this;
         }
         public Builder urnietfparamsscimschemasoracleidcsextensionpasswordStateUsers(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUser... urnietfparamsscimschemasoracleidcsextensionpasswordStateUsers) {
             return urnietfparamsscimschemasoracleidcsextensionpasswordStateUsers(List.of(urnietfparamsscimschemasoracleidcsextensionpasswordStateUsers));
         }
         @CustomType.Setter
-        public Builder urnietfparamsscimschemasoracleidcsextensionpasswordlessUsers(List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUser> urnietfparamsscimschemasoracleidcsextensionpasswordlessUsers) {
-            this.urnietfparamsscimschemasoracleidcsextensionpasswordlessUsers = Objects.requireNonNull(urnietfparamsscimschemasoracleidcsextensionpasswordlessUsers);
+        public Builder urnietfparamsscimschemasoracleidcsextensionpasswordlessUsers(@Nullable List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUser> urnietfparamsscimschemasoracleidcsextensionpasswordlessUsers) {
+            this.urnietfparamsscimschemasoracleidcsextensionpasswordlessUsers = urnietfparamsscimschemasoracleidcsextensionpasswordlessUsers;
             return this;
         }
         public Builder urnietfparamsscimschemasoracleidcsextensionpasswordlessUsers(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUser... urnietfparamsscimschemasoracleidcsextensionpasswordlessUsers) {
             return urnietfparamsscimschemasoracleidcsextensionpasswordlessUsers(List.of(urnietfparamsscimschemasoracleidcsextensionpasswordlessUsers));
         }
         @CustomType.Setter
-        public Builder urnietfparamsscimschemasoracleidcsextensionposixUsers(List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionposixUser> urnietfparamsscimschemasoracleidcsextensionposixUsers) {
-            this.urnietfparamsscimschemasoracleidcsextensionposixUsers = Objects.requireNonNull(urnietfparamsscimschemasoracleidcsextensionposixUsers);
+        public Builder urnietfparamsscimschemasoracleidcsextensionposixUsers(@Nullable List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionposixUser> urnietfparamsscimschemasoracleidcsextensionposixUsers) {
+            this.urnietfparamsscimschemasoracleidcsextensionposixUsers = urnietfparamsscimschemasoracleidcsextensionposixUsers;
             return this;
         }
         public Builder urnietfparamsscimschemasoracleidcsextensionposixUsers(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionposixUser... urnietfparamsscimschemasoracleidcsextensionposixUsers) {
             return urnietfparamsscimschemasoracleidcsextensionposixUsers(List.of(urnietfparamsscimschemasoracleidcsextensionposixUsers));
         }
         @CustomType.Setter
-        public Builder urnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUsers(List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUser> urnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUsers) {
-            this.urnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUsers = Objects.requireNonNull(urnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUsers);
+        public Builder urnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUsers(@Nullable List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUser> urnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUsers) {
+            this.urnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUsers = urnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUsers;
             return this;
         }
         public Builder urnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUsers(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUser... urnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUsers) {
             return urnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUsers(List.of(urnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUsers));
         }
         @CustomType.Setter
-        public Builder urnietfparamsscimschemasoracleidcsextensionselfChangeUsers(List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUser> urnietfparamsscimschemasoracleidcsextensionselfChangeUsers) {
-            this.urnietfparamsscimschemasoracleidcsextensionselfChangeUsers = Objects.requireNonNull(urnietfparamsscimschemasoracleidcsextensionselfChangeUsers);
+        public Builder urnietfparamsscimschemasoracleidcsextensionselfChangeUsers(@Nullable List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUser> urnietfparamsscimschemasoracleidcsextensionselfChangeUsers) {
+            this.urnietfparamsscimschemasoracleidcsextensionselfChangeUsers = urnietfparamsscimschemasoracleidcsextensionselfChangeUsers;
             return this;
         }
         public Builder urnietfparamsscimschemasoracleidcsextensionselfChangeUsers(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUser... urnietfparamsscimschemasoracleidcsextensionselfChangeUsers) {
             return urnietfparamsscimschemasoracleidcsextensionselfChangeUsers(List.of(urnietfparamsscimschemasoracleidcsextensionselfChangeUsers));
         }
         @CustomType.Setter
-        public Builder urnietfparamsscimschemasoracleidcsextensionselfRegistrationUsers(List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUser> urnietfparamsscimschemasoracleidcsextensionselfRegistrationUsers) {
-            this.urnietfparamsscimschemasoracleidcsextensionselfRegistrationUsers = Objects.requireNonNull(urnietfparamsscimschemasoracleidcsextensionselfRegistrationUsers);
+        public Builder urnietfparamsscimschemasoracleidcsextensionselfRegistrationUsers(@Nullable List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUser> urnietfparamsscimschemasoracleidcsextensionselfRegistrationUsers) {
+            this.urnietfparamsscimschemasoracleidcsextensionselfRegistrationUsers = urnietfparamsscimschemasoracleidcsextensionselfRegistrationUsers;
             return this;
         }
         public Builder urnietfparamsscimschemasoracleidcsextensionselfRegistrationUsers(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUser... urnietfparamsscimschemasoracleidcsextensionselfRegistrationUsers) {
             return urnietfparamsscimschemasoracleidcsextensionselfRegistrationUsers(List.of(urnietfparamsscimschemasoracleidcsextensionselfRegistrationUsers));
         }
         @CustomType.Setter
-        public Builder urnietfparamsscimschemasoracleidcsextensionsffUsers(List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsffUser> urnietfparamsscimschemasoracleidcsextensionsffUsers) {
-            this.urnietfparamsscimschemasoracleidcsextensionsffUsers = Objects.requireNonNull(urnietfparamsscimschemasoracleidcsextensionsffUsers);
+        public Builder urnietfparamsscimschemasoracleidcsextensionsffUsers(@Nullable List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsffUser> urnietfparamsscimschemasoracleidcsextensionsffUsers) {
+            this.urnietfparamsscimschemasoracleidcsextensionsffUsers = urnietfparamsscimschemasoracleidcsextensionsffUsers;
             return this;
         }
         public Builder urnietfparamsscimschemasoracleidcsextensionsffUsers(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsffUser... urnietfparamsscimschemasoracleidcsextensionsffUsers) {
             return urnietfparamsscimschemasoracleidcsextensionsffUsers(List.of(urnietfparamsscimschemasoracleidcsextensionsffUsers));
         }
         @CustomType.Setter
-        public Builder urnietfparamsscimschemasoracleidcsextensionsocialAccountUsers(List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUser> urnietfparamsscimschemasoracleidcsextensionsocialAccountUsers) {
-            this.urnietfparamsscimschemasoracleidcsextensionsocialAccountUsers = Objects.requireNonNull(urnietfparamsscimschemasoracleidcsextensionsocialAccountUsers);
+        public Builder urnietfparamsscimschemasoracleidcsextensionsocialAccountUsers(@Nullable List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUser> urnietfparamsscimschemasoracleidcsextensionsocialAccountUsers) {
+            this.urnietfparamsscimschemasoracleidcsextensionsocialAccountUsers = urnietfparamsscimschemasoracleidcsextensionsocialAccountUsers;
             return this;
         }
         public Builder urnietfparamsscimschemasoracleidcsextensionsocialAccountUsers(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUser... urnietfparamsscimschemasoracleidcsextensionsocialAccountUsers) {
             return urnietfparamsscimschemasoracleidcsextensionsocialAccountUsers(List.of(urnietfparamsscimschemasoracleidcsextensionsocialAccountUsers));
         }
         @CustomType.Setter
-        public Builder urnietfparamsscimschemasoracleidcsextensiontermsOfUseUsers(List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUser> urnietfparamsscimschemasoracleidcsextensiontermsOfUseUsers) {
-            this.urnietfparamsscimschemasoracleidcsextensiontermsOfUseUsers = Objects.requireNonNull(urnietfparamsscimschemasoracleidcsextensiontermsOfUseUsers);
+        public Builder urnietfparamsscimschemasoracleidcsextensiontermsOfUseUsers(@Nullable List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUser> urnietfparamsscimschemasoracleidcsextensiontermsOfUseUsers) {
+            this.urnietfparamsscimschemasoracleidcsextensiontermsOfUseUsers = urnietfparamsscimschemasoracleidcsextensiontermsOfUseUsers;
             return this;
         }
         public Builder urnietfparamsscimschemasoracleidcsextensiontermsOfUseUsers(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUser... urnietfparamsscimschemasoracleidcsextensiontermsOfUseUsers) {
             return urnietfparamsscimschemasoracleidcsextensiontermsOfUseUsers(List.of(urnietfparamsscimschemasoracleidcsextensiontermsOfUseUsers));
         }
         @CustomType.Setter
-        public Builder urnietfparamsscimschemasoracleidcsextensionuserCredentialsUsers(List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUser> urnietfparamsscimschemasoracleidcsextensionuserCredentialsUsers) {
-            this.urnietfparamsscimschemasoracleidcsextensionuserCredentialsUsers = Objects.requireNonNull(urnietfparamsscimschemasoracleidcsextensionuserCredentialsUsers);
+        public Builder urnietfparamsscimschemasoracleidcsextensionuserCredentialsUsers(@Nullable List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUser> urnietfparamsscimschemasoracleidcsextensionuserCredentialsUsers) {
+            this.urnietfparamsscimschemasoracleidcsextensionuserCredentialsUsers = urnietfparamsscimschemasoracleidcsextensionuserCredentialsUsers;
             return this;
         }
         public Builder urnietfparamsscimschemasoracleidcsextensionuserCredentialsUsers(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUser... urnietfparamsscimschemasoracleidcsextensionuserCredentialsUsers) {
             return urnietfparamsscimschemasoracleidcsextensionuserCredentialsUsers(List.of(urnietfparamsscimschemasoracleidcsextensionuserCredentialsUsers));
         }
         @CustomType.Setter
-        public Builder urnietfparamsscimschemasoracleidcsextensionuserStateUsers(List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserStateUser> urnietfparamsscimschemasoracleidcsextensionuserStateUsers) {
-            this.urnietfparamsscimschemasoracleidcsextensionuserStateUsers = Objects.requireNonNull(urnietfparamsscimschemasoracleidcsextensionuserStateUsers);
+        public Builder urnietfparamsscimschemasoracleidcsextensionuserStateUsers(@Nullable List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserStateUser> urnietfparamsscimschemasoracleidcsextensionuserStateUsers) {
+            this.urnietfparamsscimschemasoracleidcsextensionuserStateUsers = urnietfparamsscimschemasoracleidcsextensionuserStateUsers;
             return this;
         }
         public Builder urnietfparamsscimschemasoracleidcsextensionuserStateUsers(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserStateUser... urnietfparamsscimschemasoracleidcsextensionuserStateUsers) {
             return urnietfparamsscimschemasoracleidcsextensionuserStateUsers(List.of(urnietfparamsscimschemasoracleidcsextensionuserStateUsers));
         }
         @CustomType.Setter
-        public Builder urnietfparamsscimschemasoracleidcsextensionuserUsers(List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUser> urnietfparamsscimschemasoracleidcsextensionuserUsers) {
-            this.urnietfparamsscimschemasoracleidcsextensionuserUsers = Objects.requireNonNull(urnietfparamsscimschemasoracleidcsextensionuserUsers);
+        public Builder urnietfparamsscimschemasoracleidcsextensionuserUsers(@Nullable List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUser> urnietfparamsscimschemasoracleidcsextensionuserUsers) {
+            this.urnietfparamsscimschemasoracleidcsextensionuserUsers = urnietfparamsscimschemasoracleidcsextensionuserUsers;
             return this;
         }
         public Builder urnietfparamsscimschemasoracleidcsextensionuserUsers(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUser... urnietfparamsscimschemasoracleidcsextensionuserUsers) {
             return urnietfparamsscimschemasoracleidcsextensionuserUsers(List.of(urnietfparamsscimschemasoracleidcsextensionuserUsers));
         }
         @CustomType.Setter
-        public Builder userName(String userName) {
-            this.userName = Objects.requireNonNull(userName);
+        public Builder userName(@Nullable String userName) {
+            this.userName = userName;
             return this;
         }
         @CustomType.Setter
-        public Builder userType(String userType) {
-            this.userType = Objects.requireNonNull(userType);
+        public Builder userType(@Nullable String userType) {
+            this.userType = userType;
             return this;
         }
         @CustomType.Setter
-        public Builder x509certificates(List<GetDomainsUsersUserX509certificate> x509certificates) {
-            this.x509certificates = Objects.requireNonNull(x509certificates);
+        public Builder x509certificates(@Nullable List<GetDomainsUsersUserX509certificate> x509certificates) {
+            this.x509certificates = x509certificates;
             return this;
         }
         public Builder x509certificates(GetDomainsUsersUserX509certificate... x509certificates) {

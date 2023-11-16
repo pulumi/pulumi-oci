@@ -13,6 +13,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetFleetsFleetCollectionItem {
@@ -20,207 +22,207 @@ public final class GetFleetsFleetCollectionItem {
      * @return The approximate count of all unique applications in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn&#39;t taken into account when computing the resource ETag.
      * 
      */
-    private Integer approximateApplicationCount;
+    private @Nullable Integer approximateApplicationCount;
     /**
      * @return The approximate count of all unique Java installations in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn&#39;t taken into account when computing the resource ETag.
      * 
      */
-    private Integer approximateInstallationCount;
+    private @Nullable Integer approximateInstallationCount;
     /**
      * @return The approximate count of all unique Java servers in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn&#39;t taken into account when computing the resource ETag.
      * 
      */
-    private Integer approximateJavaServerCount;
+    private @Nullable Integer approximateJavaServerCount;
     /**
      * @return The approximate count of all unique Java Runtimes in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn&#39;t taken into account when computing the resource ETag.
      * 
      */
-    private Integer approximateJreCount;
+    private @Nullable Integer approximateJreCount;
     /**
      * @return The approximate count of all unique managed instances in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn&#39;t taken into account when computing the resource ETag.
      * 
      */
-    private Integer approximateManagedInstanceCount;
+    private @Nullable Integer approximateManagedInstanceCount;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`. (See [Understanding Free-form Tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return The Fleet&#39;s description.
      * 
      */
-    private String description;
+    private @Nullable String description;
     /**
      * @return The display name.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`. (See [Managing Tags and Tag Namespaces](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return The ID of the Fleet.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Custom Log for inventory or operation log.
      * 
      */
-    private List<GetFleetsFleetCollectionItemInventoryLog> inventoryLogs;
+    private @Nullable List<GetFleetsFleetCollectionItemInventoryLog> inventoryLogs;
     /**
      * @return Whether or not advanced features are enabled in this Fleet. Deprecated, use `/fleets/{fleetId}/advanceFeatureConfiguration` API instead.
      * 
      */
-    private Boolean isAdvancedFeaturesEnabled;
+    private @Nullable Boolean isAdvancedFeaturesEnabled;
     /**
      * @return Custom Log for inventory or operation log.
      * 
      */
-    private List<GetFleetsFleetCollectionItemOperationLog> operationLogs;
+    private @Nullable List<GetFleetsFleetCollectionItemOperationLog> operationLogs;
     /**
      * @return The state of the lifecycle.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    private Map<String,Object> systemTags;
+    private @Nullable Map<String,Object> systemTags;
     /**
      * @return The creation date and time of the Fleet (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
 
     private GetFleetsFleetCollectionItem() {}
     /**
      * @return The approximate count of all unique applications in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn&#39;t taken into account when computing the resource ETag.
      * 
      */
-    public Integer approximateApplicationCount() {
-        return this.approximateApplicationCount;
+    public Optional<Integer> approximateApplicationCount() {
+        return Optional.ofNullable(this.approximateApplicationCount);
     }
     /**
      * @return The approximate count of all unique Java installations in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn&#39;t taken into account when computing the resource ETag.
      * 
      */
-    public Integer approximateInstallationCount() {
-        return this.approximateInstallationCount;
+    public Optional<Integer> approximateInstallationCount() {
+        return Optional.ofNullable(this.approximateInstallationCount);
     }
     /**
      * @return The approximate count of all unique Java servers in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn&#39;t taken into account when computing the resource ETag.
      * 
      */
-    public Integer approximateJavaServerCount() {
-        return this.approximateJavaServerCount;
+    public Optional<Integer> approximateJavaServerCount() {
+        return Optional.ofNullable(this.approximateJavaServerCount);
     }
     /**
      * @return The approximate count of all unique Java Runtimes in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn&#39;t taken into account when computing the resource ETag.
      * 
      */
-    public Integer approximateJreCount() {
-        return this.approximateJreCount;
+    public Optional<Integer> approximateJreCount() {
+        return Optional.ofNullable(this.approximateJreCount);
     }
     /**
      * @return The approximate count of all unique managed instances in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn&#39;t taken into account when computing the resource ETag.
      * 
      */
-    public Integer approximateManagedInstanceCount() {
-        return this.approximateManagedInstanceCount;
+    public Optional<Integer> approximateManagedInstanceCount() {
+        return Optional.ofNullable(this.approximateManagedInstanceCount);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`. (See [Understanding Free-form Tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return The Fleet&#39;s description.
      * 
      */
-    public String description() {
-        return this.description;
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
     /**
      * @return The display name.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`. (See [Managing Tags and Tag Namespaces](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return The ID of the Fleet.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Custom Log for inventory or operation log.
      * 
      */
     public List<GetFleetsFleetCollectionItemInventoryLog> inventoryLogs() {
-        return this.inventoryLogs;
+        return this.inventoryLogs == null ? List.of() : this.inventoryLogs;
     }
     /**
      * @return Whether or not advanced features are enabled in this Fleet. Deprecated, use `/fleets/{fleetId}/advanceFeatureConfiguration` API instead.
      * 
      */
-    public Boolean isAdvancedFeaturesEnabled() {
-        return this.isAdvancedFeaturesEnabled;
+    public Optional<Boolean> isAdvancedFeaturesEnabled() {
+        return Optional.ofNullable(this.isAdvancedFeaturesEnabled);
     }
     /**
      * @return Custom Log for inventory or operation log.
      * 
      */
     public List<GetFleetsFleetCollectionItemOperationLog> operationLogs() {
-        return this.operationLogs;
+        return this.operationLogs == null ? List.of() : this.operationLogs;
     }
     /**
      * @return The state of the lifecycle.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
     public Map<String,Object> systemTags() {
-        return this.systemTags;
+        return this.systemTags == null ? Map.of() : this.systemTags;
     }
     /**
      * @return The creation date and time of the Fleet (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
 
     public static Builder builder() {
@@ -232,23 +234,23 @@ public final class GetFleetsFleetCollectionItem {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Integer approximateApplicationCount;
-        private Integer approximateInstallationCount;
-        private Integer approximateJavaServerCount;
-        private Integer approximateJreCount;
-        private Integer approximateManagedInstanceCount;
-        private String compartmentId;
-        private Map<String,Object> definedTags;
-        private String description;
-        private String displayName;
-        private Map<String,Object> freeformTags;
-        private String id;
-        private List<GetFleetsFleetCollectionItemInventoryLog> inventoryLogs;
-        private Boolean isAdvancedFeaturesEnabled;
-        private List<GetFleetsFleetCollectionItemOperationLog> operationLogs;
-        private String state;
-        private Map<String,Object> systemTags;
-        private String timeCreated;
+        private @Nullable Integer approximateApplicationCount;
+        private @Nullable Integer approximateInstallationCount;
+        private @Nullable Integer approximateJavaServerCount;
+        private @Nullable Integer approximateJreCount;
+        private @Nullable Integer approximateManagedInstanceCount;
+        private @Nullable String compartmentId;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String description;
+        private @Nullable String displayName;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String id;
+        private @Nullable List<GetFleetsFleetCollectionItemInventoryLog> inventoryLogs;
+        private @Nullable Boolean isAdvancedFeaturesEnabled;
+        private @Nullable List<GetFleetsFleetCollectionItemOperationLog> operationLogs;
+        private @Nullable String state;
+        private @Nullable Map<String,Object> systemTags;
+        private @Nullable String timeCreated;
         public Builder() {}
         public Builder(GetFleetsFleetCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -272,94 +274,94 @@ public final class GetFleetsFleetCollectionItem {
         }
 
         @CustomType.Setter
-        public Builder approximateApplicationCount(Integer approximateApplicationCount) {
-            this.approximateApplicationCount = Objects.requireNonNull(approximateApplicationCount);
+        public Builder approximateApplicationCount(@Nullable Integer approximateApplicationCount) {
+            this.approximateApplicationCount = approximateApplicationCount;
             return this;
         }
         @CustomType.Setter
-        public Builder approximateInstallationCount(Integer approximateInstallationCount) {
-            this.approximateInstallationCount = Objects.requireNonNull(approximateInstallationCount);
+        public Builder approximateInstallationCount(@Nullable Integer approximateInstallationCount) {
+            this.approximateInstallationCount = approximateInstallationCount;
             return this;
         }
         @CustomType.Setter
-        public Builder approximateJavaServerCount(Integer approximateJavaServerCount) {
-            this.approximateJavaServerCount = Objects.requireNonNull(approximateJavaServerCount);
+        public Builder approximateJavaServerCount(@Nullable Integer approximateJavaServerCount) {
+            this.approximateJavaServerCount = approximateJavaServerCount;
             return this;
         }
         @CustomType.Setter
-        public Builder approximateJreCount(Integer approximateJreCount) {
-            this.approximateJreCount = Objects.requireNonNull(approximateJreCount);
+        public Builder approximateJreCount(@Nullable Integer approximateJreCount) {
+            this.approximateJreCount = approximateJreCount;
             return this;
         }
         @CustomType.Setter
-        public Builder approximateManagedInstanceCount(Integer approximateManagedInstanceCount) {
-            this.approximateManagedInstanceCount = Objects.requireNonNull(approximateManagedInstanceCount);
+        public Builder approximateManagedInstanceCount(@Nullable Integer approximateManagedInstanceCount) {
+            this.approximateManagedInstanceCount = approximateManagedInstanceCount;
             return this;
         }
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+        public Builder description(@Nullable String description) {
+            this.description = description;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder inventoryLogs(List<GetFleetsFleetCollectionItemInventoryLog> inventoryLogs) {
-            this.inventoryLogs = Objects.requireNonNull(inventoryLogs);
+        public Builder inventoryLogs(@Nullable List<GetFleetsFleetCollectionItemInventoryLog> inventoryLogs) {
+            this.inventoryLogs = inventoryLogs;
             return this;
         }
         public Builder inventoryLogs(GetFleetsFleetCollectionItemInventoryLog... inventoryLogs) {
             return inventoryLogs(List.of(inventoryLogs));
         }
         @CustomType.Setter
-        public Builder isAdvancedFeaturesEnabled(Boolean isAdvancedFeaturesEnabled) {
-            this.isAdvancedFeaturesEnabled = Objects.requireNonNull(isAdvancedFeaturesEnabled);
+        public Builder isAdvancedFeaturesEnabled(@Nullable Boolean isAdvancedFeaturesEnabled) {
+            this.isAdvancedFeaturesEnabled = isAdvancedFeaturesEnabled;
             return this;
         }
         @CustomType.Setter
-        public Builder operationLogs(List<GetFleetsFleetCollectionItemOperationLog> operationLogs) {
-            this.operationLogs = Objects.requireNonNull(operationLogs);
+        public Builder operationLogs(@Nullable List<GetFleetsFleetCollectionItemOperationLog> operationLogs) {
+            this.operationLogs = operationLogs;
             return this;
         }
         public Builder operationLogs(GetFleetsFleetCollectionItemOperationLog... operationLogs) {
             return operationLogs(List.of(operationLogs));
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+        public Builder systemTags(@Nullable Map<String,Object> systemTags) {
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         public GetFleetsFleetCollectionItem build() {

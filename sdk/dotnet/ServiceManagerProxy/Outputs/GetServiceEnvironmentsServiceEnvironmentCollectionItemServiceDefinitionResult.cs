@@ -16,23 +16,23 @@ namespace Pulumi.Oci.ServiceManagerProxy.Outputs
         /// <summary>
         /// The display name of the resource.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// Short display name of the service. For example, "Retail Order Management".
         /// </summary>
-        public readonly string ShortDisplayName;
+        public readonly string? ShortDisplayName;
         /// <summary>
         /// The service definition type. For example, a service definition type "RGBUOROMS"  would be for the service "Oracle Retail Order Management Cloud Service".
         /// </summary>
-        public readonly string Type;
+        public readonly string? Type;
 
         [OutputConstructor]
         private GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceDefinitionResult(
-            string displayName,
+            string? displayName,
 
-            string shortDisplayName,
+            string? shortDisplayName,
 
-            string type)
+            string? type)
         {
             DisplayName = displayName;
             ShortDisplayName = shortDisplayName;

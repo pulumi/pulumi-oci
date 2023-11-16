@@ -131,7 +131,7 @@ export interface GetAutonomousDatabasesResult {
     /**
      * The list of autonomous_databases.
      */
-    readonly autonomousDatabases: outputs.Database.GetAutonomousDatabasesAutonomousDatabase[];
+    readonly autonomousDatabases?: outputs.Database.GetAutonomousDatabasesAutonomousDatabase[];
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
@@ -156,7 +156,7 @@ export interface GetAutonomousDatabasesResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The infrastructure type this resource belongs to.
      */

@@ -22,16 +22,6 @@ class TagNamespaceArgs:
                  name: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a TagNamespace resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the tenancy containing the tag namespace.
-        :param pulumi.Input[str] description: (Updatable) The description you assign to the tag namespace during creation.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[bool] is_retired: (Updatable) Whether the tag namespace is retired. For more information, see [Retiring Key Definitions and Namespace Definitions](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/taggingoverview.htm#Retiring). 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] name: The name you assign to the tag namespace during creation. It must be unique across all tag namespaces in the tenancy and cannot be changed.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "description", description)
@@ -47,9 +37,6 @@ class TagNamespaceArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The OCID of the tenancy containing the tag namespace.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -59,9 +46,6 @@ class TagNamespaceArgs:
     @property
     @pulumi.getter
     def description(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The description you assign to the tag namespace during creation.
-        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -71,9 +55,6 @@ class TagNamespaceArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -83,9 +64,6 @@ class TagNamespaceArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -95,13 +73,6 @@ class TagNamespaceArgs:
     @property
     @pulumi.getter(name="isRetired")
     def is_retired(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Whether the tag namespace is retired. For more information, see [Retiring Key Definitions and Namespace Definitions](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/taggingoverview.htm#Retiring). 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "is_retired")
 
     @is_retired.setter
@@ -111,9 +82,6 @@ class TagNamespaceArgs:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The name you assign to the tag namespace during creation. It must be unique across all tag namespaces in the tenancy and cannot be changed.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -134,18 +102,6 @@ class _TagNamespaceState:
                  time_created: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering TagNamespace resources.
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the tenancy containing the tag namespace.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] description: (Updatable) The description you assign to the tag namespace during creation.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[bool] is_retired: (Updatable) Whether the tag namespace is retired. For more information, see [Retiring Key Definitions and Namespace Definitions](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/taggingoverview.htm#Retiring). 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] name: The name you assign to the tag namespace during creation. It must be unique across all tag namespaces in the tenancy and cannot be changed.
-        :param pulumi.Input[str] state: The tagnamespace's current state. After creating a tagnamespace, make sure its `lifecycleState` is ACTIVE before using it. After retiring a tagnamespace, make sure its `lifecycleState` is INACTIVE before using it.
-        :param pulumi.Input[str] time_created: Date and time the tag namespace was created, in the format defined by RFC3339. Example: `2016-08-25T21:10:29.600Z`
         """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
@@ -167,9 +123,6 @@ class _TagNamespaceState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The OCID of the tenancy containing the tag namespace.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -179,9 +132,6 @@ class _TagNamespaceState:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -191,9 +141,6 @@ class _TagNamespaceState:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The description you assign to the tag namespace during creation.
-        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -203,9 +150,6 @@ class _TagNamespaceState:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -215,13 +159,6 @@ class _TagNamespaceState:
     @property
     @pulumi.getter(name="isRetired")
     def is_retired(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Whether the tag namespace is retired. For more information, see [Retiring Key Definitions and Namespace Definitions](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/taggingoverview.htm#Retiring). 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "is_retired")
 
     @is_retired.setter
@@ -231,9 +168,6 @@ class _TagNamespaceState:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The name you assign to the tag namespace during creation. It must be unique across all tag namespaces in the tenancy and cannot be changed.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -243,9 +177,6 @@ class _TagNamespaceState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The tagnamespace's current state. After creating a tagnamespace, make sure its `lifecycleState` is ACTIVE before using it. After retiring a tagnamespace, make sure its `lifecycleState` is INACTIVE before using it.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -255,9 +186,6 @@ class _TagNamespaceState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        Date and time the tag namespace was created, in the format defined by RFC3339. Example: `2016-08-25T21:10:29.600Z`
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -278,61 +206,9 @@ class TagNamespace(pulumi.CustomResource):
                  name: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Tag Namespace resource in Oracle Cloud Infrastructure Identity service.
-
-        Creates a new tag namespace in the specified compartment.
-
-        You must specify the compartment ID in the request object (remember that the tenancy is simply the root
-        compartment).
-
-        You must also specify a *name* for the namespace, which must be unique across all namespaces in your tenancy
-        and cannot be changed. The name can contain any ASCII character except the space (_) or period (.).
-        Names are case insensitive. That means, for example, "myNamespace" and "mynamespace" are not allowed
-        in the same tenancy. Once you created a namespace, you cannot change the name.
-        If you specify a name that's already in use in the tenancy, a 409 error is returned.
-
-        You must also specify a *description* for the namespace.
-        It does not have to be unique, and you can change it with
-        [UpdateTagNamespace](https://docs.cloud.oracle.com/iaas/api/#/en/identity/latest/TagNamespace/UpdateTagNamespace).
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_tag_namespace = oci.identity.TagNamespace("testTagNamespace",
-            compartment_id=var["compartment_id"],
-            description=var["tag_namespace_description"],
-            defined_tags={
-                "Operations.CostCenter": "42",
-            },
-            freeform_tags={
-                "Department": "Finance",
-            },
-            is_retired=False)
-        ```
-
-        ## Import
-
-        TagNamespaces can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Identity/tagNamespace:TagNamespace test_tag_namespace "id"
-        ```
-
+        Create a TagNamespace resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the tenancy containing the tag namespace.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] description: (Updatable) The description you assign to the tag namespace during creation.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[bool] is_retired: (Updatable) Whether the tag namespace is retired. For more information, see [Retiring Key Definitions and Namespace Definitions](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/taggingoverview.htm#Retiring). 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] name: The name you assign to the tag namespace during creation. It must be unique across all tag namespaces in the tenancy and cannot be changed.
         """
         ...
     @overload
@@ -341,49 +217,7 @@ class TagNamespace(pulumi.CustomResource):
                  args: TagNamespaceArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Tag Namespace resource in Oracle Cloud Infrastructure Identity service.
-
-        Creates a new tag namespace in the specified compartment.
-
-        You must specify the compartment ID in the request object (remember that the tenancy is simply the root
-        compartment).
-
-        You must also specify a *name* for the namespace, which must be unique across all namespaces in your tenancy
-        and cannot be changed. The name can contain any ASCII character except the space (_) or period (.).
-        Names are case insensitive. That means, for example, "myNamespace" and "mynamespace" are not allowed
-        in the same tenancy. Once you created a namespace, you cannot change the name.
-        If you specify a name that's already in use in the tenancy, a 409 error is returned.
-
-        You must also specify a *description* for the namespace.
-        It does not have to be unique, and you can change it with
-        [UpdateTagNamespace](https://docs.cloud.oracle.com/iaas/api/#/en/identity/latest/TagNamespace/UpdateTagNamespace).
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_tag_namespace = oci.identity.TagNamespace("testTagNamespace",
-            compartment_id=var["compartment_id"],
-            description=var["tag_namespace_description"],
-            defined_tags={
-                "Operations.CostCenter": "42",
-            },
-            freeform_tags={
-                "Department": "Finance",
-            },
-            is_retired=False)
-        ```
-
-        ## Import
-
-        TagNamespaces can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Identity/tagNamespace:TagNamespace test_tag_namespace "id"
-        ```
-
+        Create a TagNamespace resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param TagNamespaceArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -451,18 +285,6 @@ class TagNamespace(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the tenancy containing the tag namespace.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] description: (Updatable) The description you assign to the tag namespace during creation.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[bool] is_retired: (Updatable) Whether the tag namespace is retired. For more information, see [Retiring Key Definitions and Namespace Definitions](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/taggingoverview.htm#Retiring). 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] name: The name you assign to the tag namespace during creation. It must be unique across all tag namespaces in the tenancy and cannot be changed.
-        :param pulumi.Input[str] state: The tagnamespace's current state. After creating a tagnamespace, make sure its `lifecycleState` is ACTIVE before using it. After retiring a tagnamespace, make sure its `lifecycleState` is INACTIVE before using it.
-        :param pulumi.Input[str] time_created: Date and time the tag namespace was created, in the format defined by RFC3339. Example: `2016-08-25T21:10:29.600Z`
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -481,68 +303,40 @@ class TagNamespace(pulumi.CustomResource):
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The OCID of the tenancy containing the tag namespace.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
     def description(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The description you assign to the tag namespace during creation.
-        """
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="isRetired")
-    def is_retired(self) -> pulumi.Output[bool]:
-        """
-        (Updatable) Whether the tag namespace is retired. For more information, see [Retiring Key Definitions and Namespace Definitions](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/taggingoverview.htm#Retiring). 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
+    def is_retired(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "is_retired")
 
     @property
     @pulumi.getter
     def name(self) -> pulumi.Output[str]:
-        """
-        The name you assign to the tag namespace during creation. It must be unique across all tag namespaces in the tenancy and cannot be changed.
-        """
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        The tagnamespace's current state. After creating a tagnamespace, make sure its `lifecycleState` is ACTIVE before using it. After retiring a tagnamespace, make sure its `lifecycleState` is INACTIVE before using it.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        Date and time the tag namespace was created, in the format defined by RFC3339. Example: `2016-08-25T21:10:29.600Z`
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 

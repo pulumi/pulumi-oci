@@ -411,24 +411,24 @@ export class InstanceConfiguration extends pulumi.CustomResource {
     /**
      * Parameters that were not specified when the instance configuration was created, but that are required to launch an instance from the instance configuration. See the [LaunchInstanceConfiguration](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Instance/LaunchInstanceConfiguration) operation.
      */
-    public /*out*/ readonly deferredFields!: pulumi.Output<string[]>;
+    public /*out*/ readonly deferredFields!: pulumi.Output<string[] | undefined>;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    public readonly displayName!: pulumi.Output<string | undefined>;
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
-    public readonly instanceDetails!: pulumi.Output<outputs.Core.InstanceConfigurationInstanceDetails>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
+    public readonly instanceDetails!: pulumi.Output<outputs.Core.InstanceConfigurationInstanceDetails | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance to use to create the instance configuration.
      */
-    public readonly instanceId!: pulumi.Output<string>;
+    public readonly instanceId!: pulumi.Output<string | undefined>;
     /**
      * The source of the instance configuration. An instance configuration defines the settings to use when creating Compute instances, including details such as the base image, shape, and metadata. You can also specify the associated resources for the instance, such as block volume attachments and network configuration.
      *
@@ -440,11 +440,11 @@ export class InstanceConfiguration extends pulumi.CustomResource {
      *
      * The following values are supported:
      */
-    public readonly source!: pulumi.Output<string>;
+    public readonly source!: pulumi.Output<string | undefined>;
     /**
      * The date and time the instance configuration was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
 
     /**
      * Create a InstanceConfiguration resource with the given unique name, arguments, and options.

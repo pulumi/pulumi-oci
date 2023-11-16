@@ -9,6 +9,8 @@ import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetJobAdvisorReportResult {
@@ -16,46 +18,46 @@ public final class GetJobAdvisorReportResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private String jobId;
     /**
      * @return Number of Fatal results in the advisor report.
      * 
      */
-    private Integer numberOfFatal;
+    private @Nullable Integer numberOfFatal;
     /**
      * @return Number of Fatal Blocker results in the advisor report.
      * 
      */
-    private Integer numberOfFatalBlockers;
+    private @Nullable Integer numberOfFatalBlockers;
     /**
      * @return Number of Informational results in the advisor report.
      * 
      */
-    private Integer numberOfInformationalResults;
+    private @Nullable Integer numberOfInformationalResults;
     /**
      * @return Number of Warning results in the advisor report.
      * 
      */
-    private Integer numberOfWarnings;
+    private @Nullable Integer numberOfWarnings;
     /**
      * @return Details to access Pre-Migration Advisor report.
      * 
      */
-    private List<GetJobAdvisorReportReportLocationDetail> reportLocationDetails;
+    private @Nullable List<GetJobAdvisorReportReportLocationDetail> reportLocationDetails;
     /**
      * @return Pre-Migration advisor result.
      * 
      */
-    private String result;
+    private @Nullable String result;
 
     private GetJobAdvisorReportResult() {}
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public String jobId() {
         return this.jobId;
@@ -64,43 +66,43 @@ public final class GetJobAdvisorReportResult {
      * @return Number of Fatal results in the advisor report.
      * 
      */
-    public Integer numberOfFatal() {
-        return this.numberOfFatal;
+    public Optional<Integer> numberOfFatal() {
+        return Optional.ofNullable(this.numberOfFatal);
     }
     /**
      * @return Number of Fatal Blocker results in the advisor report.
      * 
      */
-    public Integer numberOfFatalBlockers() {
-        return this.numberOfFatalBlockers;
+    public Optional<Integer> numberOfFatalBlockers() {
+        return Optional.ofNullable(this.numberOfFatalBlockers);
     }
     /**
      * @return Number of Informational results in the advisor report.
      * 
      */
-    public Integer numberOfInformationalResults() {
-        return this.numberOfInformationalResults;
+    public Optional<Integer> numberOfInformationalResults() {
+        return Optional.ofNullable(this.numberOfInformationalResults);
     }
     /**
      * @return Number of Warning results in the advisor report.
      * 
      */
-    public Integer numberOfWarnings() {
-        return this.numberOfWarnings;
+    public Optional<Integer> numberOfWarnings() {
+        return Optional.ofNullable(this.numberOfWarnings);
     }
     /**
      * @return Details to access Pre-Migration Advisor report.
      * 
      */
     public List<GetJobAdvisorReportReportLocationDetail> reportLocationDetails() {
-        return this.reportLocationDetails;
+        return this.reportLocationDetails == null ? List.of() : this.reportLocationDetails;
     }
     /**
      * @return Pre-Migration advisor result.
      * 
      */
-    public String result() {
-        return this.result;
+    public Optional<String> result() {
+        return Optional.ofNullable(this.result);
     }
 
     public static Builder builder() {
@@ -112,14 +114,14 @@ public final class GetJobAdvisorReportResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String id;
+        private @Nullable String id;
         private String jobId;
-        private Integer numberOfFatal;
-        private Integer numberOfFatalBlockers;
-        private Integer numberOfInformationalResults;
-        private Integer numberOfWarnings;
-        private List<GetJobAdvisorReportReportLocationDetail> reportLocationDetails;
-        private String result;
+        private @Nullable Integer numberOfFatal;
+        private @Nullable Integer numberOfFatalBlockers;
+        private @Nullable Integer numberOfInformationalResults;
+        private @Nullable Integer numberOfWarnings;
+        private @Nullable List<GetJobAdvisorReportReportLocationDetail> reportLocationDetails;
+        private @Nullable String result;
         public Builder() {}
         public Builder(GetJobAdvisorReportResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -134,8 +136,8 @@ public final class GetJobAdvisorReportResult {
         }
 
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -144,36 +146,36 @@ public final class GetJobAdvisorReportResult {
             return this;
         }
         @CustomType.Setter
-        public Builder numberOfFatal(Integer numberOfFatal) {
-            this.numberOfFatal = Objects.requireNonNull(numberOfFatal);
+        public Builder numberOfFatal(@Nullable Integer numberOfFatal) {
+            this.numberOfFatal = numberOfFatal;
             return this;
         }
         @CustomType.Setter
-        public Builder numberOfFatalBlockers(Integer numberOfFatalBlockers) {
-            this.numberOfFatalBlockers = Objects.requireNonNull(numberOfFatalBlockers);
+        public Builder numberOfFatalBlockers(@Nullable Integer numberOfFatalBlockers) {
+            this.numberOfFatalBlockers = numberOfFatalBlockers;
             return this;
         }
         @CustomType.Setter
-        public Builder numberOfInformationalResults(Integer numberOfInformationalResults) {
-            this.numberOfInformationalResults = Objects.requireNonNull(numberOfInformationalResults);
+        public Builder numberOfInformationalResults(@Nullable Integer numberOfInformationalResults) {
+            this.numberOfInformationalResults = numberOfInformationalResults;
             return this;
         }
         @CustomType.Setter
-        public Builder numberOfWarnings(Integer numberOfWarnings) {
-            this.numberOfWarnings = Objects.requireNonNull(numberOfWarnings);
+        public Builder numberOfWarnings(@Nullable Integer numberOfWarnings) {
+            this.numberOfWarnings = numberOfWarnings;
             return this;
         }
         @CustomType.Setter
-        public Builder reportLocationDetails(List<GetJobAdvisorReportReportLocationDetail> reportLocationDetails) {
-            this.reportLocationDetails = Objects.requireNonNull(reportLocationDetails);
+        public Builder reportLocationDetails(@Nullable List<GetJobAdvisorReportReportLocationDetail> reportLocationDetails) {
+            this.reportLocationDetails = reportLocationDetails;
             return this;
         }
         public Builder reportLocationDetails(GetJobAdvisorReportReportLocationDetail... reportLocationDetails) {
             return reportLocationDetails(List.of(reportLocationDetails));
         }
         @CustomType.Setter
-        public Builder result(String result) {
-            this.result = Objects.requireNonNull(result);
+        public Builder result(@Nullable String result) {
+            this.result = result;
             return this;
         }
         public GetJobAdvisorReportResult build() {

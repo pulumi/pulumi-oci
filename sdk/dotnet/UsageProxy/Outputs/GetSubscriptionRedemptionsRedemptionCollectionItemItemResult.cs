@@ -16,65 +16,65 @@ namespace Pulumi.Oci.UsageProxy.Outputs
         /// <summary>
         /// It provides the redeemed rewards in base/subscription currency.
         /// </summary>
-        public readonly double BaseRewards;
+        public readonly double? BaseRewards;
         /// <summary>
         /// It provides the fxRate between invoice currency and subscription currency.
         /// </summary>
-        public readonly double FxRate;
+        public readonly double? FxRate;
         /// <summary>
         /// The currency associated with invoice.
         /// </summary>
-        public readonly string InvoiceCurrency;
+        public readonly string? InvoiceCurrency;
         /// <summary>
         /// It provides the invoice number against the redemption.
         /// </summary>
-        public readonly string InvoiceNumber;
+        public readonly string? InvoiceNumber;
         /// <summary>
         /// It provides the invoice total amount of given redemption.
         /// </summary>
-        public readonly double InvoiceTotalAmount;
+        public readonly double? InvoiceTotalAmount;
         /// <summary>
         /// It provides the redeemed rewards in invoice currency.
         /// </summary>
-        public readonly double RedeemedRewards;
+        public readonly double? RedeemedRewards;
         /// <summary>
         /// The redemption code used in the Billing Center during the reward redemption process.
         /// </summary>
-        public readonly string RedemptionCode;
+        public readonly string? RedemptionCode;
         /// <summary>
         /// It provides the redemption email id.
         /// </summary>
-        public readonly string RedemptionEmail;
+        public readonly string? RedemptionEmail;
         /// <summary>
         /// It provides the invoice date.
         /// </summary>
-        public readonly string TimeInvoiced;
+        public readonly string? TimeInvoiced;
         /// <summary>
         /// It provides redeem date.
         /// </summary>
-        public readonly string TimeRedeemed;
+        public readonly string? TimeRedeemed;
 
         [OutputConstructor]
         private GetSubscriptionRedemptionsRedemptionCollectionItemItemResult(
-            double baseRewards,
+            double? baseRewards,
 
-            double fxRate,
+            double? fxRate,
 
-            string invoiceCurrency,
+            string? invoiceCurrency,
 
-            string invoiceNumber,
+            string? invoiceNumber,
 
-            double invoiceTotalAmount,
+            double? invoiceTotalAmount,
 
-            double redeemedRewards,
+            double? redeemedRewards,
 
-            string redemptionCode,
+            string? redemptionCode,
 
-            string redemptionEmail,
+            string? redemptionEmail,
 
-            string timeInvoiced,
+            string? timeInvoiced,
 
-            string timeRedeemed)
+            string? timeRedeemed)
         {
             BaseRewards = baseRewards;
             FxRate = fxRate;

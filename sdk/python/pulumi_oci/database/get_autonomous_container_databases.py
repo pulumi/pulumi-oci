@@ -63,58 +63,37 @@ class GetAutonomousContainerDatabasesResult:
 
     @property
     @pulumi.getter(name="autonomousContainerDatabases")
-    def autonomous_container_databases(self) -> Sequence['outputs.GetAutonomousContainerDatabasesAutonomousContainerDatabaseResult']:
-        """
-        The list of autonomous_container_databases.
-        """
+    def autonomous_container_databases(self) -> Optional[Sequence['outputs.GetAutonomousContainerDatabasesAutonomousContainerDatabaseResult']]:
         return pulumi.get(self, "autonomous_container_databases")
 
     @property
     @pulumi.getter(name="autonomousExadataInfrastructureId")
     def autonomous_exadata_infrastructure_id(self) -> Optional[str]:
-        """
-        **No longer used.** For Autonomous Database on dedicated Exadata infrastructure, the container database is created within a specified `cloudAutonomousVmCluster`.
-        """
         return pulumi.get(self, "autonomous_exadata_infrastructure_id")
 
     @property
     @pulumi.getter(name="autonomousVmClusterId")
     def autonomous_vm_cluster_id(self) -> Optional[str]:
-        """
-        The OCID of the Autonomous VM Cluster.
-        """
         return pulumi.get(self, "autonomous_vm_cluster_id")
 
     @property
     @pulumi.getter(name="availabilityDomain")
     def availability_domain(self) -> Optional[str]:
-        """
-        The availability domain of the Autonomous Container Database.
-        """
         return pulumi.get(self, "availability_domain")
 
     @property
     @pulumi.getter(name="cloudAutonomousVmClusterId")
     def cloud_autonomous_vm_cluster_id(self) -> Optional[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Autonomous Exadata VM Cluster.
-        """
         return pulumi.get(self, "cloud_autonomous_vm_cluster_id")
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The OCID of the compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        The user-provided name for the Autonomous Container Database.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -124,7 +103,7 @@ class GetAutonomousContainerDatabasesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -133,25 +112,16 @@ class GetAutonomousContainerDatabasesResult:
     @property
     @pulumi.getter(name="infrastructureType")
     def infrastructure_type(self) -> Optional[str]:
-        """
-        The infrastructure type this resource belongs to.
-        """
         return pulumi.get(self, "infrastructure_type")
 
     @property
     @pulumi.getter(name="serviceLevelAgreementType")
     def service_level_agreement_type(self) -> Optional[str]:
-        """
-        The service level agreement type of the container database. The default is STANDARD.
-        """
         return pulumi.get(self, "service_level_agreement_type")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the Autonomous Container Database.
-        """
         return pulumi.get(self, "state")
 
 
@@ -187,37 +157,7 @@ def get_autonomous_container_databases(autonomous_exadata_infrastructure_id: Opt
                                        state: Optional[str] = None,
                                        opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAutonomousContainerDatabasesResult:
     """
-    This data source provides the list of Autonomous Container Databases in Oracle Cloud Infrastructure Database service.
-
-    Gets a list of the Autonomous Container Databases in the specified compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_autonomous_container_databases = oci.Database.get_autonomous_container_databases(compartment_id=var["compartment_id"],
-        autonomous_exadata_infrastructure_id=oci_database_autonomous_exadata_infrastructure["test_autonomous_exadata_infrastructure"]["id"],
-        autonomous_vm_cluster_id=oci_database_autonomous_vm_cluster["test_autonomous_vm_cluster"]["id"],
-        availability_domain=var["autonomous_container_database_availability_domain"],
-        cloud_autonomous_vm_cluster_id=oci_database_cloud_autonomous_vm_cluster["test_cloud_autonomous_vm_cluster"]["id"],
-        display_name=var["autonomous_container_database_display_name"],
-        infrastructure_type=var["autonomous_container_database_infrastructure_type"],
-        service_level_agreement_type=var["autonomous_container_database_service_level_agreement_type"],
-        state=var["autonomous_container_database_state"])
-    ```
-
-
-    :param str autonomous_exadata_infrastructure_id: The Autonomous Exadata Infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param str autonomous_vm_cluster_id: The Autonomous VM Cluster [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param str availability_domain: A filter to return only resources that match the given availability domain exactly.
-    :param str cloud_autonomous_vm_cluster_id: The cloud Autonomous VM Cluster [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param str display_name: A filter to return only resources that match the entire display name given. The match is not case sensitive.
-    :param str infrastructure_type: A filter to return only resources that match the given Infrastructure Type.
-    :param str service_level_agreement_type: A filter to return only resources that match the given service level agreement type exactly.
-    :param str state: A filter to return only resources that match the given lifecycle state exactly.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['autonomousExadataInfrastructureId'] = autonomous_exadata_infrastructure_id
@@ -261,36 +201,6 @@ def get_autonomous_container_databases_output(autonomous_exadata_infrastructure_
                                               state: Optional[pulumi.Input[Optional[str]]] = None,
                                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAutonomousContainerDatabasesResult]:
     """
-    This data source provides the list of Autonomous Container Databases in Oracle Cloud Infrastructure Database service.
-
-    Gets a list of the Autonomous Container Databases in the specified compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_autonomous_container_databases = oci.Database.get_autonomous_container_databases(compartment_id=var["compartment_id"],
-        autonomous_exadata_infrastructure_id=oci_database_autonomous_exadata_infrastructure["test_autonomous_exadata_infrastructure"]["id"],
-        autonomous_vm_cluster_id=oci_database_autonomous_vm_cluster["test_autonomous_vm_cluster"]["id"],
-        availability_domain=var["autonomous_container_database_availability_domain"],
-        cloud_autonomous_vm_cluster_id=oci_database_cloud_autonomous_vm_cluster["test_cloud_autonomous_vm_cluster"]["id"],
-        display_name=var["autonomous_container_database_display_name"],
-        infrastructure_type=var["autonomous_container_database_infrastructure_type"],
-        service_level_agreement_type=var["autonomous_container_database_service_level_agreement_type"],
-        state=var["autonomous_container_database_state"])
-    ```
-
-
-    :param str autonomous_exadata_infrastructure_id: The Autonomous Exadata Infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param str autonomous_vm_cluster_id: The Autonomous VM Cluster [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param str availability_domain: A filter to return only resources that match the given availability domain exactly.
-    :param str cloud_autonomous_vm_cluster_id: The cloud Autonomous VM Cluster [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param str display_name: A filter to return only resources that match the entire display name given. The match is not case sensitive.
-    :param str infrastructure_type: A filter to return only resources that match the given Infrastructure Type.
-    :param str service_level_agreement_type: A filter to return only resources that match the given service level agreement type exactly.
-    :param str state: A filter to return only resources that match the given lifecycle state exactly.
+    Use this data source to access information about an existing resource.
     """
     ...

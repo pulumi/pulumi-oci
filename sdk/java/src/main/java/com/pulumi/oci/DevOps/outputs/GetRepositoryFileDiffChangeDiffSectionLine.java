@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetRepositoryFileDiffChangeDiffSectionLine {
@@ -14,51 +16,51 @@ public final class GetRepositoryFileDiffChangeDiffSectionLine {
      * @return The number of a line in the base version.
      * 
      */
-    private Integer baseLine;
+    private @Nullable Integer baseLine;
     /**
      * @return Indicates whether a line in a conflicted section of the difference is from the base version, the target version, or if its just a marker indicating the beginning, middle, or end of a conflicted section.
      * 
      */
-    private String conflictMarker;
+    private @Nullable String conflictMarker;
     /**
      * @return The contents of a line.
      * 
      */
-    private String lineContent;
+    private @Nullable String lineContent;
     /**
      * @return Line number in target version where changes begin.
      * 
      */
-    private Integer targetLine;
+    private @Nullable Integer targetLine;
 
     private GetRepositoryFileDiffChangeDiffSectionLine() {}
     /**
      * @return The number of a line in the base version.
      * 
      */
-    public Integer baseLine() {
-        return this.baseLine;
+    public Optional<Integer> baseLine() {
+        return Optional.ofNullable(this.baseLine);
     }
     /**
      * @return Indicates whether a line in a conflicted section of the difference is from the base version, the target version, or if its just a marker indicating the beginning, middle, or end of a conflicted section.
      * 
      */
-    public String conflictMarker() {
-        return this.conflictMarker;
+    public Optional<String> conflictMarker() {
+        return Optional.ofNullable(this.conflictMarker);
     }
     /**
      * @return The contents of a line.
      * 
      */
-    public String lineContent() {
-        return this.lineContent;
+    public Optional<String> lineContent() {
+        return Optional.ofNullable(this.lineContent);
     }
     /**
      * @return Line number in target version where changes begin.
      * 
      */
-    public Integer targetLine() {
-        return this.targetLine;
+    public Optional<Integer> targetLine() {
+        return Optional.ofNullable(this.targetLine);
     }
 
     public static Builder builder() {
@@ -70,10 +72,10 @@ public final class GetRepositoryFileDiffChangeDiffSectionLine {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Integer baseLine;
-        private String conflictMarker;
-        private String lineContent;
-        private Integer targetLine;
+        private @Nullable Integer baseLine;
+        private @Nullable String conflictMarker;
+        private @Nullable String lineContent;
+        private @Nullable Integer targetLine;
         public Builder() {}
         public Builder(GetRepositoryFileDiffChangeDiffSectionLine defaults) {
     	      Objects.requireNonNull(defaults);
@@ -84,23 +86,23 @@ public final class GetRepositoryFileDiffChangeDiffSectionLine {
         }
 
         @CustomType.Setter
-        public Builder baseLine(Integer baseLine) {
-            this.baseLine = Objects.requireNonNull(baseLine);
+        public Builder baseLine(@Nullable Integer baseLine) {
+            this.baseLine = baseLine;
             return this;
         }
         @CustomType.Setter
-        public Builder conflictMarker(String conflictMarker) {
-            this.conflictMarker = Objects.requireNonNull(conflictMarker);
+        public Builder conflictMarker(@Nullable String conflictMarker) {
+            this.conflictMarker = conflictMarker;
             return this;
         }
         @CustomType.Setter
-        public Builder lineContent(String lineContent) {
-            this.lineContent = Objects.requireNonNull(lineContent);
+        public Builder lineContent(@Nullable String lineContent) {
+            this.lineContent = lineContent;
             return this;
         }
         @CustomType.Setter
-        public Builder targetLine(Integer targetLine) {
-            this.targetLine = Objects.requireNonNull(targetLine);
+        public Builder targetLine(@Nullable Integer targetLine) {
+            this.targetLine = targetLine;
             return this;
         }
         public GetRepositoryFileDiffChangeDiffSectionLine build() {

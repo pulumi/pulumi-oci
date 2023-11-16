@@ -19,7 +19,7 @@ public final class GetAlarmsResult {
      * @return The list of alarms.
      * 
      */
-    private List<GetAlarmsAlarm> alarms;
+    private @Nullable List<GetAlarmsAlarm> alarms;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the alarm.
      * 
@@ -36,7 +36,7 @@ public final class GetAlarmsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The current lifecycle state of the alarm.  Example: `DELETED`
      * 
@@ -49,7 +49,7 @@ public final class GetAlarmsResult {
      * 
      */
     public List<GetAlarmsAlarm> alarms() {
-        return this.alarms;
+        return this.alarms == null ? List.of() : this.alarms;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the alarm.
@@ -75,8 +75,8 @@ public final class GetAlarmsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The current lifecycle state of the alarm.  Example: `DELETED`
@@ -95,12 +95,12 @@ public final class GetAlarmsResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetAlarmsAlarm> alarms;
+        private @Nullable List<GetAlarmsAlarm> alarms;
         private String compartmentId;
         private @Nullable Boolean compartmentIdInSubtree;
         private @Nullable String displayName;
         private @Nullable List<GetAlarmsFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String state;
         public Builder() {}
         public Builder(GetAlarmsResult defaults) {
@@ -115,8 +115,8 @@ public final class GetAlarmsResult {
         }
 
         @CustomType.Setter
-        public Builder alarms(List<GetAlarmsAlarm> alarms) {
-            this.alarms = Objects.requireNonNull(alarms);
+        public Builder alarms(@Nullable List<GetAlarmsAlarm> alarms) {
+            this.alarms = alarms;
             return this;
         }
         public Builder alarms(GetAlarmsAlarm... alarms) {
@@ -146,8 +146,8 @@ public final class GetAlarmsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

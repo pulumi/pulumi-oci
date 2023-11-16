@@ -81,7 +81,7 @@ export interface GetVmClustersResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The current state of the VM cluster.
      */
@@ -89,7 +89,7 @@ export interface GetVmClustersResult {
     /**
      * The list of vm_clusters.
      */
-    readonly vmClusters: outputs.Database.GetVmClustersVmCluster[];
+    readonly vmClusters?: outputs.Database.GetVmClustersVmCluster[];
 }
 /**
  * This data source provides the list of Vm Clusters in Oracle Cloud Infrastructure Database service.

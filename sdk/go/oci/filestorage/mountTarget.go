@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Mount Target resource in Oracle Cloud Infrastructure File Storage service.
@@ -123,9 +122,9 @@ type MountTarget struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `My mount target`
-	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrOutput `pulumi:"displayName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated export set. Controls what file systems will be exported through Network File System (NFS) protocol on this mount target.
-	ExportSetId pulumi.StringOutput `pulumi:"exportSetId"`
+	ExportSetId pulumi.StringPtrOutput `pulumi:"exportSetId"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// The hostname for the mount target's IP address, used for DNS resolution. The value is the hostname portion of the private IP address's fully qualified domain name (FQDN). For example, `files-1` in the FQDN `files-1.subnet123.vcn1.oraclevcn.com`. Must be unique across all VNICs in the subnet and comply with [RFC 952](https://tools.ietf.org/html/rfc952) and [RFC 1123](https://tools.ietf.org/html/rfc1123).
@@ -135,34 +134,34 @@ type MountTarget struct {
 	// For more information, see [DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
 	//
 	// Example: `files-1`
-	HostnameLabel pulumi.StringOutput `pulumi:"hostnameLabel"`
+	HostnameLabel pulumi.StringPtrOutput `pulumi:"hostnameLabel"`
 	// (Updatable) The method used to map a Unix UID to secondary groups, if any.
-	IdmapType pulumi.StringOutput `pulumi:"idmapType"`
+	IdmapType pulumi.StringPtrOutput `pulumi:"idmapType"`
 	// A private IP address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet.
 	//
 	// Note: This attribute value is stored in the [PrivateIp](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/PrivateIp/) resource, not in the `mountTarget` resource. To update the `ipAddress`, use `GetMountTarget` to obtain the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the mount target's private IPs (`privateIpIds`). Then, you can use [UpdatePrivateIp](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/PrivateIp/UpdatePrivateIp) to update the `ipAddress` value.
 	//
 	// Example: `10.0.3.3`
-	IpAddress pulumi.StringOutput `pulumi:"ipAddress"`
+	IpAddress pulumi.StringPtrOutput `pulumi:"ipAddress"`
 	// (Updatable) Kerberos details needed to create configuration.
 	Kerberos MountTargetKerberosPtrOutput `pulumi:"kerberos"`
 	// (Updatable) Mount target details about the LDAP ID mapping configuration.
 	LdapIdmap MountTargetLdapIdmapPtrOutput `pulumi:"ldapIdmap"`
 	// Additional information about the current 'lifecycleState'.
-	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrOutput `pulumi:"lifecycleDetails"`
 	// (Updatable) A list of Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this mount target. A maximum of 5 is allowed. Setting this to an empty array after the list is created removes the mount target from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
 	NsgIds pulumi.StringArrayOutput `pulumi:"nsgIds"`
 	// The OCIDs of the private IP addresses associated with this mount target.
 	PrivateIpIds pulumi.StringArrayOutput `pulumi:"privateIpIds"`
 	// The current state of the mount target.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in which to create the mount target.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SubnetId pulumi.StringOutput `pulumi:"subnetId"`
 	// The date and time the mount target was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 }
 
 // NewMountTarget registers a new resource with the given unique name, arguments, and options.
@@ -411,12 +410,6 @@ func (i *MountTarget) ToMountTargetOutputWithContext(ctx context.Context) MountT
 	return pulumi.ToOutputWithContext(ctx, i).(MountTargetOutput)
 }
 
-func (i *MountTarget) ToOutput(ctx context.Context) pulumix.Output[*MountTarget] {
-	return pulumix.Output[*MountTarget]{
-		OutputState: i.ToMountTargetOutputWithContext(ctx).OutputState,
-	}
-}
-
 // MountTargetArrayInput is an input type that accepts MountTargetArray and MountTargetArrayOutput values.
 // You can construct a concrete instance of `MountTargetArrayInput` via:
 //
@@ -440,12 +433,6 @@ func (i MountTargetArray) ToMountTargetArrayOutput() MountTargetArrayOutput {
 
 func (i MountTargetArray) ToMountTargetArrayOutputWithContext(ctx context.Context) MountTargetArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(MountTargetArrayOutput)
-}
-
-func (i MountTargetArray) ToOutput(ctx context.Context) pulumix.Output[[]*MountTarget] {
-	return pulumix.Output[[]*MountTarget]{
-		OutputState: i.ToMountTargetArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // MountTargetMapInput is an input type that accepts MountTargetMap and MountTargetMapOutput values.
@@ -473,12 +460,6 @@ func (i MountTargetMap) ToMountTargetMapOutputWithContext(ctx context.Context) M
 	return pulumi.ToOutputWithContext(ctx, i).(MountTargetMapOutput)
 }
 
-func (i MountTargetMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*MountTarget] {
-	return pulumix.Output[map[string]*MountTarget]{
-		OutputState: i.ToMountTargetMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type MountTargetOutput struct{ *pulumi.OutputState }
 
 func (MountTargetOutput) ElementType() reflect.Type {
@@ -491,12 +472,6 @@ func (o MountTargetOutput) ToMountTargetOutput() MountTargetOutput {
 
 func (o MountTargetOutput) ToMountTargetOutputWithContext(ctx context.Context) MountTargetOutput {
 	return o
-}
-
-func (o MountTargetOutput) ToOutput(ctx context.Context) pulumix.Output[*MountTarget] {
-	return pulumix.Output[*MountTarget]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The availability domain in which to create the mount target.  Example: `Uocm:PHX-AD-1`
@@ -515,13 +490,13 @@ func (o MountTargetOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `My mount target`
-func (o MountTargetOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v *MountTarget) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+func (o MountTargetOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MountTarget) pulumi.StringPtrOutput { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated export set. Controls what file systems will be exported through Network File System (NFS) protocol on this mount target.
-func (o MountTargetOutput) ExportSetId() pulumi.StringOutput {
-	return o.ApplyT(func(v *MountTarget) pulumi.StringOutput { return v.ExportSetId }).(pulumi.StringOutput)
+func (o MountTargetOutput) ExportSetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MountTarget) pulumi.StringPtrOutput { return v.ExportSetId }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -536,13 +511,13 @@ func (o MountTargetOutput) FreeformTags() pulumi.MapOutput {
 // For more information, see [DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
 //
 // Example: `files-1`
-func (o MountTargetOutput) HostnameLabel() pulumi.StringOutput {
-	return o.ApplyT(func(v *MountTarget) pulumi.StringOutput { return v.HostnameLabel }).(pulumi.StringOutput)
+func (o MountTargetOutput) HostnameLabel() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MountTarget) pulumi.StringPtrOutput { return v.HostnameLabel }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The method used to map a Unix UID to secondary groups, if any.
-func (o MountTargetOutput) IdmapType() pulumi.StringOutput {
-	return o.ApplyT(func(v *MountTarget) pulumi.StringOutput { return v.IdmapType }).(pulumi.StringOutput)
+func (o MountTargetOutput) IdmapType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MountTarget) pulumi.StringPtrOutput { return v.IdmapType }).(pulumi.StringPtrOutput)
 }
 
 // A private IP address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet.
@@ -550,8 +525,8 @@ func (o MountTargetOutput) IdmapType() pulumi.StringOutput {
 // Note: This attribute value is stored in the [PrivateIp](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/PrivateIp/) resource, not in the `mountTarget` resource. To update the `ipAddress`, use `GetMountTarget` to obtain the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the mount target's private IPs (`privateIpIds`). Then, you can use [UpdatePrivateIp](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/PrivateIp/UpdatePrivateIp) to update the `ipAddress` value.
 //
 // Example: `10.0.3.3`
-func (o MountTargetOutput) IpAddress() pulumi.StringOutput {
-	return o.ApplyT(func(v *MountTarget) pulumi.StringOutput { return v.IpAddress }).(pulumi.StringOutput)
+func (o MountTargetOutput) IpAddress() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MountTarget) pulumi.StringPtrOutput { return v.IpAddress }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Kerberos details needed to create configuration.
@@ -565,8 +540,8 @@ func (o MountTargetOutput) LdapIdmap() MountTargetLdapIdmapPtrOutput {
 }
 
 // Additional information about the current 'lifecycleState'.
-func (o MountTargetOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v *MountTarget) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o MountTargetOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MountTarget) pulumi.StringPtrOutput { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) A list of Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this mount target. A maximum of 5 is allowed. Setting this to an empty array after the list is created removes the mount target from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
@@ -580,8 +555,8 @@ func (o MountTargetOutput) PrivateIpIds() pulumi.StringArrayOutput {
 }
 
 // The current state of the mount target.
-func (o MountTargetOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *MountTarget) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o MountTargetOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MountTarget) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in which to create the mount target.
@@ -593,8 +568,8 @@ func (o MountTargetOutput) SubnetId() pulumi.StringOutput {
 }
 
 // The date and time the mount target was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
-func (o MountTargetOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *MountTarget) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o MountTargetOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MountTarget) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 type MountTargetArrayOutput struct{ *pulumi.OutputState }
@@ -609,12 +584,6 @@ func (o MountTargetArrayOutput) ToMountTargetArrayOutput() MountTargetArrayOutpu
 
 func (o MountTargetArrayOutput) ToMountTargetArrayOutputWithContext(ctx context.Context) MountTargetArrayOutput {
 	return o
-}
-
-func (o MountTargetArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*MountTarget] {
-	return pulumix.Output[[]*MountTarget]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o MountTargetArrayOutput) Index(i pulumi.IntInput) MountTargetOutput {
@@ -635,12 +604,6 @@ func (o MountTargetMapOutput) ToMountTargetMapOutput() MountTargetMapOutput {
 
 func (o MountTargetMapOutput) ToMountTargetMapOutputWithContext(ctx context.Context) MountTargetMapOutput {
 	return o
-}
-
-func (o MountTargetMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*MountTarget] {
-	return pulumix.Output[map[string]*MountTarget]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o MountTargetMapOutput) MapIndex(k pulumi.StringInput) MountTargetOutput {

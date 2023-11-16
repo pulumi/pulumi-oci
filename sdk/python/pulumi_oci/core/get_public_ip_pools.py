@@ -51,17 +51,11 @@ class GetPublicIpPoolsResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing this pool.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -71,7 +65,7 @@ class GetPublicIpPoolsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -79,10 +73,7 @@ class GetPublicIpPoolsResult:
 
     @property
     @pulumi.getter(name="publicIpPoolCollections")
-    def public_ip_pool_collections(self) -> Sequence['outputs.GetPublicIpPoolsPublicIpPoolCollectionResult']:
-        """
-        The list of public_ip_pool_collection.
-        """
+    def public_ip_pool_collections(self) -> Optional[Sequence['outputs.GetPublicIpPoolsPublicIpPoolCollectionResult']]:
         return pulumi.get(self, "public_ip_pool_collections")
 
 
@@ -106,26 +97,7 @@ def get_public_ip_pools(byoip_range_id: Optional[str] = None,
                         filters: Optional[Sequence[pulumi.InputType['GetPublicIpPoolsFilterArgs']]] = None,
                         opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetPublicIpPoolsResult:
     """
-    This data source provides the list of Public Ip Pools in Oracle Cloud Infrastructure Core service.
-
-    Lists the public IP pools in the specified compartment.
-    You can filter the list using query parameters.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_public_ip_pools = oci.Core.get_public_ip_pools(compartment_id=var["compartment_id"],
-        byoip_range_id=oci_core_byoip_range["test_byoip_range"]["id"],
-        display_name=var["public_ip_pool_display_name"])
-    ```
-
-
-    :param str byoip_range_id: A filter to return only resources that match the given BYOIP CIDR block.
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param str display_name: A filter to return only resources that match the given display name exactly.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['byoipRangeId'] = byoip_range_id
@@ -151,25 +123,6 @@ def get_public_ip_pools_output(byoip_range_id: Optional[pulumi.Input[Optional[st
                                filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetPublicIpPoolsFilterArgs']]]]] = None,
                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetPublicIpPoolsResult]:
     """
-    This data source provides the list of Public Ip Pools in Oracle Cloud Infrastructure Core service.
-
-    Lists the public IP pools in the specified compartment.
-    You can filter the list using query parameters.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_public_ip_pools = oci.Core.get_public_ip_pools(compartment_id=var["compartment_id"],
-        byoip_range_id=oci_core_byoip_range["test_byoip_range"]["id"],
-        display_name=var["public_ip_pool_display_name"])
-    ```
-
-
-    :param str byoip_range_id: A filter to return only resources that match the given BYOIP CIDR block.
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param str display_name: A filter to return only resources that match the given display name exactly.
+    Use this data source to access information about an existing resource.
     """
     ...

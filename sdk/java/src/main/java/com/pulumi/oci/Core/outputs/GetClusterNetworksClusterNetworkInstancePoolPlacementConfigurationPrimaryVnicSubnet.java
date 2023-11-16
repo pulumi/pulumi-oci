@@ -9,6 +9,8 @@ import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetClusterNetworksClusterNetworkInstancePoolPlacementConfigurationPrimaryVnicSubnet {
@@ -16,17 +18,17 @@ public final class GetClusterNetworksClusterNetworkInstancePoolPlacementConfigur
      * @return A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You can provide only the prefix ranges and Oracle Cloud Infrastructure will select an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
      * 
      */
-    private List<GetClusterNetworksClusterNetworkInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetail> ipv6addressIpv6subnetCidrPairDetails;
+    private @Nullable List<GetClusterNetworksClusterNetworkInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetail> ipv6addressIpv6subnetCidrPairDetails;
     /**
      * @return Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet. Default: False. When provided you may optionally provide an IPv6 prefix (`ipv6SubnetCidr`) of your choice to assign the IPv6 address from. If `ipv6SubnetCidr` is not provided then an IPv6 prefix is chosen for you.
      * 
      */
-    private Boolean isAssignIpv6ip;
+    private @Nullable Boolean isAssignIpv6ip;
     /**
      * @return The subnet [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the secondary VNIC.
      * 
      */
-    private String subnetId;
+    private @Nullable String subnetId;
 
     private GetClusterNetworksClusterNetworkInstancePoolPlacementConfigurationPrimaryVnicSubnet() {}
     /**
@@ -34,21 +36,21 @@ public final class GetClusterNetworksClusterNetworkInstancePoolPlacementConfigur
      * 
      */
     public List<GetClusterNetworksClusterNetworkInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetail> ipv6addressIpv6subnetCidrPairDetails() {
-        return this.ipv6addressIpv6subnetCidrPairDetails;
+        return this.ipv6addressIpv6subnetCidrPairDetails == null ? List.of() : this.ipv6addressIpv6subnetCidrPairDetails;
     }
     /**
      * @return Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet. Default: False. When provided you may optionally provide an IPv6 prefix (`ipv6SubnetCidr`) of your choice to assign the IPv6 address from. If `ipv6SubnetCidr` is not provided then an IPv6 prefix is chosen for you.
      * 
      */
-    public Boolean isAssignIpv6ip() {
-        return this.isAssignIpv6ip;
+    public Optional<Boolean> isAssignIpv6ip() {
+        return Optional.ofNullable(this.isAssignIpv6ip);
     }
     /**
      * @return The subnet [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the secondary VNIC.
      * 
      */
-    public String subnetId() {
-        return this.subnetId;
+    public Optional<String> subnetId() {
+        return Optional.ofNullable(this.subnetId);
     }
 
     public static Builder builder() {
@@ -60,9 +62,9 @@ public final class GetClusterNetworksClusterNetworkInstancePoolPlacementConfigur
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetClusterNetworksClusterNetworkInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetail> ipv6addressIpv6subnetCidrPairDetails;
-        private Boolean isAssignIpv6ip;
-        private String subnetId;
+        private @Nullable List<GetClusterNetworksClusterNetworkInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetail> ipv6addressIpv6subnetCidrPairDetails;
+        private @Nullable Boolean isAssignIpv6ip;
+        private @Nullable String subnetId;
         public Builder() {}
         public Builder(GetClusterNetworksClusterNetworkInstancePoolPlacementConfigurationPrimaryVnicSubnet defaults) {
     	      Objects.requireNonNull(defaults);
@@ -72,21 +74,21 @@ public final class GetClusterNetworksClusterNetworkInstancePoolPlacementConfigur
         }
 
         @CustomType.Setter
-        public Builder ipv6addressIpv6subnetCidrPairDetails(List<GetClusterNetworksClusterNetworkInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetail> ipv6addressIpv6subnetCidrPairDetails) {
-            this.ipv6addressIpv6subnetCidrPairDetails = Objects.requireNonNull(ipv6addressIpv6subnetCidrPairDetails);
+        public Builder ipv6addressIpv6subnetCidrPairDetails(@Nullable List<GetClusterNetworksClusterNetworkInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetail> ipv6addressIpv6subnetCidrPairDetails) {
+            this.ipv6addressIpv6subnetCidrPairDetails = ipv6addressIpv6subnetCidrPairDetails;
             return this;
         }
         public Builder ipv6addressIpv6subnetCidrPairDetails(GetClusterNetworksClusterNetworkInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetail... ipv6addressIpv6subnetCidrPairDetails) {
             return ipv6addressIpv6subnetCidrPairDetails(List.of(ipv6addressIpv6subnetCidrPairDetails));
         }
         @CustomType.Setter
-        public Builder isAssignIpv6ip(Boolean isAssignIpv6ip) {
-            this.isAssignIpv6ip = Objects.requireNonNull(isAssignIpv6ip);
+        public Builder isAssignIpv6ip(@Nullable Boolean isAssignIpv6ip) {
+            this.isAssignIpv6ip = isAssignIpv6ip;
             return this;
         }
         @CustomType.Setter
-        public Builder subnetId(String subnetId) {
-            this.subnetId = Objects.requireNonNull(subnetId);
+        public Builder subnetId(@Nullable String subnetId) {
+            this.subnetId = subnetId;
             return this;
         }
         public GetClusterNetworksClusterNetworkInstancePoolPlacementConfigurationPrimaryVnicSubnet build() {

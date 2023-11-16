@@ -73,7 +73,7 @@ namespace Pulumi.Oci.NetworkFirewall
     [OutputType]
     public sealed class GetNetworkFirewallPolicyUrlListResult
     {
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Unique name identifier for the URL list.
         /// </summary>
@@ -82,11 +82,11 @@ namespace Pulumi.Oci.NetworkFirewall
         /// <summary>
         /// OCID of the Network Firewall Policy this URL List belongs to.
         /// </summary>
-        public readonly string ParentResourceId;
+        public readonly string? ParentResourceId;
         /// <summary>
         /// Total count of URLs in the URL List
         /// </summary>
-        public readonly int TotalUrls;
+        public readonly int? TotalUrls;
         /// <summary>
         /// List of urls.
         /// </summary>
@@ -94,15 +94,15 @@ namespace Pulumi.Oci.NetworkFirewall
 
         [OutputConstructor]
         private GetNetworkFirewallPolicyUrlListResult(
-            string id,
+            string? id,
 
             string name,
 
             string networkFirewallPolicyId,
 
-            string parentResourceId,
+            string? parentResourceId,
 
-            int totalUrls,
+            int? totalUrls,
 
             ImmutableArray<Outputs.GetNetworkFirewallPolicyUrlListUrlResult> urls)
         {

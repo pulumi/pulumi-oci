@@ -44,7 +44,7 @@ public final class GetVirtualServicesResult {
      * @return The list of virtual_service_collection.
      * 
      */
-    private List<GetVirtualServicesVirtualServiceCollection> virtualServiceCollections;
+    private @Nullable List<GetVirtualServicesVirtualServiceCollection> virtualServiceCollections;
 
     private GetVirtualServicesResult() {}
     /**
@@ -90,7 +90,7 @@ public final class GetVirtualServicesResult {
      * 
      */
     public List<GetVirtualServicesVirtualServiceCollection> virtualServiceCollections() {
-        return this.virtualServiceCollections;
+        return this.virtualServiceCollections == null ? List.of() : this.virtualServiceCollections;
     }
 
     public static Builder builder() {
@@ -108,7 +108,7 @@ public final class GetVirtualServicesResult {
         private @Nullable String meshId;
         private @Nullable String name;
         private @Nullable String state;
-        private List<GetVirtualServicesVirtualServiceCollection> virtualServiceCollections;
+        private @Nullable List<GetVirtualServicesVirtualServiceCollection> virtualServiceCollections;
         public Builder() {}
         public Builder(GetVirtualServicesResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -155,8 +155,8 @@ public final class GetVirtualServicesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder virtualServiceCollections(List<GetVirtualServicesVirtualServiceCollection> virtualServiceCollections) {
-            this.virtualServiceCollections = Objects.requireNonNull(virtualServiceCollections);
+        public Builder virtualServiceCollections(@Nullable List<GetVirtualServicesVirtualServiceCollection> virtualServiceCollections) {
+            this.virtualServiceCollections = virtualServiceCollections;
             return this;
         }
         public Builder virtualServiceCollections(GetVirtualServicesVirtualServiceCollection... virtualServiceCollections) {

@@ -159,7 +159,7 @@ namespace Pulumi.Oci.Identity
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         public readonly bool? IncludeSubcompartments;
         /// <summary>
         /// The tagnamespace's current state. After creating a tagnamespace, make sure its `lifecycleState` is ACTIVE before using it. After retiring a tagnamespace, make sure its `lifecycleState` is INACTIVE before using it.
@@ -176,7 +176,7 @@ namespace Pulumi.Oci.Identity
 
             ImmutableArray<Outputs.GetTagNamespacesFilterResult> filters,
 
-            string id,
+            string? id,
 
             bool? includeSubcompartments,
 

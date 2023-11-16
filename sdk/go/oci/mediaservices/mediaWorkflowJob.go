@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Media Workflow Job resource in Oracle Cloud Infrastructure Media Services service.
@@ -72,37 +71,37 @@ type MediaWorkflowJob struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) Name of the Media Workflow Job. Does not have to be unique. Avoid entering confidential information.
-	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrOutput `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// The lifecycle details of MediaWorkflowJob task.
-	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrOutput `pulumi:"lifecycleDetails"`
 	// Configurations to be applied to this run of the workflow.
 	MediaWorkflowConfigurationIds pulumi.StringArrayOutput `pulumi:"mediaWorkflowConfigurationIds"`
 	// OCID of the MediaWorkflow that should be run.
-	MediaWorkflowId pulumi.StringOutput `pulumi:"mediaWorkflowId"`
+	MediaWorkflowId pulumi.StringPtrOutput `pulumi:"mediaWorkflowId"`
 	// Name of the system MediaWorkflow that should be run.
-	MediaWorkflowName pulumi.StringOutput `pulumi:"mediaWorkflowName"`
+	MediaWorkflowName pulumi.StringPtrOutput `pulumi:"mediaWorkflowName"`
 	// A list of JobOutput for the workflowJob.
 	Outputs MediaWorkflowJobOutputTypeArrayOutput `pulumi:"outputs"`
 	// Parameters that override parameters specified in MediaWorkflowTaskDeclarations, the MediaWorkflow, the MediaWorkflow's MediaWorkflowConfigurations and the MediaWorkflowConfigurations of this MediaWorkflowJob. The parameters are given as JSON. The top level and 2nd level elements must be JSON objects (vs arrays, scalars, etc). The top level keys refer to a task's key and the 2nd level keys refer to a parameter's name.
-	Parameters pulumi.StringOutput `pulumi:"parameters"`
+	Parameters pulumi.StringPtrOutput `pulumi:"parameters"`
 	// A JSON representation of the job as it will be run by the system. All the task declarations, configurations and parameters are merged. Parameter values are all fully resolved.
-	Runnable pulumi.StringOutput `pulumi:"runnable"`
+	Runnable pulumi.StringPtrOutput `pulumi:"runnable"`
 	// The current state of the MediaWorkflowJob task.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
 	// Status of each task.
 	TaskLifecycleStates MediaWorkflowJobTaskLifecycleStateArrayOutput `pulumi:"taskLifecycleStates"`
 	// Creation time of the job. An RFC3339 formatted datetime string.
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// Time when the job finished. An RFC3339 formatted datetime string.
-	TimeEnded pulumi.StringOutput `pulumi:"timeEnded"`
+	TimeEnded pulumi.StringPtrOutput `pulumi:"timeEnded"`
 	// Time when the job started to execute. An RFC3339 formatted datetime string.
-	TimeStarted pulumi.StringOutput `pulumi:"timeStarted"`
+	TimeStarted pulumi.StringPtrOutput `pulumi:"timeStarted"`
 	// Updated time of the job. An RFC3339 formatted datetime string.
-	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 	// Discriminate identification of a workflow by name versus a workflow by ID.
 	//
 	// ** IMPORTANT **
@@ -309,12 +308,6 @@ func (i *MediaWorkflowJob) ToMediaWorkflowJobOutputWithContext(ctx context.Conte
 	return pulumi.ToOutputWithContext(ctx, i).(MediaWorkflowJobOutput)
 }
 
-func (i *MediaWorkflowJob) ToOutput(ctx context.Context) pulumix.Output[*MediaWorkflowJob] {
-	return pulumix.Output[*MediaWorkflowJob]{
-		OutputState: i.ToMediaWorkflowJobOutputWithContext(ctx).OutputState,
-	}
-}
-
 // MediaWorkflowJobArrayInput is an input type that accepts MediaWorkflowJobArray and MediaWorkflowJobArrayOutput values.
 // You can construct a concrete instance of `MediaWorkflowJobArrayInput` via:
 //
@@ -338,12 +331,6 @@ func (i MediaWorkflowJobArray) ToMediaWorkflowJobArrayOutput() MediaWorkflowJobA
 
 func (i MediaWorkflowJobArray) ToMediaWorkflowJobArrayOutputWithContext(ctx context.Context) MediaWorkflowJobArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(MediaWorkflowJobArrayOutput)
-}
-
-func (i MediaWorkflowJobArray) ToOutput(ctx context.Context) pulumix.Output[[]*MediaWorkflowJob] {
-	return pulumix.Output[[]*MediaWorkflowJob]{
-		OutputState: i.ToMediaWorkflowJobArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // MediaWorkflowJobMapInput is an input type that accepts MediaWorkflowJobMap and MediaWorkflowJobMapOutput values.
@@ -371,12 +358,6 @@ func (i MediaWorkflowJobMap) ToMediaWorkflowJobMapOutputWithContext(ctx context.
 	return pulumi.ToOutputWithContext(ctx, i).(MediaWorkflowJobMapOutput)
 }
 
-func (i MediaWorkflowJobMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*MediaWorkflowJob] {
-	return pulumix.Output[map[string]*MediaWorkflowJob]{
-		OutputState: i.ToMediaWorkflowJobMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type MediaWorkflowJobOutput struct{ *pulumi.OutputState }
 
 func (MediaWorkflowJobOutput) ElementType() reflect.Type {
@@ -391,12 +372,6 @@ func (o MediaWorkflowJobOutput) ToMediaWorkflowJobOutputWithContext(ctx context.
 	return o
 }
 
-func (o MediaWorkflowJobOutput) ToOutput(ctx context.Context) pulumix.Output[*MediaWorkflowJob] {
-	return pulumix.Output[*MediaWorkflowJob]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) ID of the compartment in which the job should be created.
 func (o MediaWorkflowJobOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *MediaWorkflowJob) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
@@ -408,8 +383,8 @@ func (o MediaWorkflowJobOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // (Updatable) Name of the Media Workflow Job. Does not have to be unique. Avoid entering confidential information.
-func (o MediaWorkflowJobOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v *MediaWorkflowJob) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+func (o MediaWorkflowJobOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MediaWorkflowJob) pulumi.StringPtrOutput { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -418,8 +393,8 @@ func (o MediaWorkflowJobOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The lifecycle details of MediaWorkflowJob task.
-func (o MediaWorkflowJobOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v *MediaWorkflowJob) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o MediaWorkflowJobOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MediaWorkflowJob) pulumi.StringPtrOutput { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // Configurations to be applied to this run of the workflow.
@@ -428,13 +403,13 @@ func (o MediaWorkflowJobOutput) MediaWorkflowConfigurationIds() pulumi.StringArr
 }
 
 // OCID of the MediaWorkflow that should be run.
-func (o MediaWorkflowJobOutput) MediaWorkflowId() pulumi.StringOutput {
-	return o.ApplyT(func(v *MediaWorkflowJob) pulumi.StringOutput { return v.MediaWorkflowId }).(pulumi.StringOutput)
+func (o MediaWorkflowJobOutput) MediaWorkflowId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MediaWorkflowJob) pulumi.StringPtrOutput { return v.MediaWorkflowId }).(pulumi.StringPtrOutput)
 }
 
 // Name of the system MediaWorkflow that should be run.
-func (o MediaWorkflowJobOutput) MediaWorkflowName() pulumi.StringOutput {
-	return o.ApplyT(func(v *MediaWorkflowJob) pulumi.StringOutput { return v.MediaWorkflowName }).(pulumi.StringOutput)
+func (o MediaWorkflowJobOutput) MediaWorkflowName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MediaWorkflowJob) pulumi.StringPtrOutput { return v.MediaWorkflowName }).(pulumi.StringPtrOutput)
 }
 
 // A list of JobOutput for the workflowJob.
@@ -443,18 +418,18 @@ func (o MediaWorkflowJobOutput) Outputs() MediaWorkflowJobOutputTypeArrayOutput 
 }
 
 // Parameters that override parameters specified in MediaWorkflowTaskDeclarations, the MediaWorkflow, the MediaWorkflow's MediaWorkflowConfigurations and the MediaWorkflowConfigurations of this MediaWorkflowJob. The parameters are given as JSON. The top level and 2nd level elements must be JSON objects (vs arrays, scalars, etc). The top level keys refer to a task's key and the 2nd level keys refer to a parameter's name.
-func (o MediaWorkflowJobOutput) Parameters() pulumi.StringOutput {
-	return o.ApplyT(func(v *MediaWorkflowJob) pulumi.StringOutput { return v.Parameters }).(pulumi.StringOutput)
+func (o MediaWorkflowJobOutput) Parameters() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MediaWorkflowJob) pulumi.StringPtrOutput { return v.Parameters }).(pulumi.StringPtrOutput)
 }
 
 // A JSON representation of the job as it will be run by the system. All the task declarations, configurations and parameters are merged. Parameter values are all fully resolved.
-func (o MediaWorkflowJobOutput) Runnable() pulumi.StringOutput {
-	return o.ApplyT(func(v *MediaWorkflowJob) pulumi.StringOutput { return v.Runnable }).(pulumi.StringOutput)
+func (o MediaWorkflowJobOutput) Runnable() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MediaWorkflowJob) pulumi.StringPtrOutput { return v.Runnable }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the MediaWorkflowJob task.
-func (o MediaWorkflowJobOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *MediaWorkflowJob) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o MediaWorkflowJobOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MediaWorkflowJob) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -468,23 +443,23 @@ func (o MediaWorkflowJobOutput) TaskLifecycleStates() MediaWorkflowJobTaskLifecy
 }
 
 // Creation time of the job. An RFC3339 formatted datetime string.
-func (o MediaWorkflowJobOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *MediaWorkflowJob) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o MediaWorkflowJobOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MediaWorkflowJob) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // Time when the job finished. An RFC3339 formatted datetime string.
-func (o MediaWorkflowJobOutput) TimeEnded() pulumi.StringOutput {
-	return o.ApplyT(func(v *MediaWorkflowJob) pulumi.StringOutput { return v.TimeEnded }).(pulumi.StringOutput)
+func (o MediaWorkflowJobOutput) TimeEnded() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MediaWorkflowJob) pulumi.StringPtrOutput { return v.TimeEnded }).(pulumi.StringPtrOutput)
 }
 
 // Time when the job started to execute. An RFC3339 formatted datetime string.
-func (o MediaWorkflowJobOutput) TimeStarted() pulumi.StringOutput {
-	return o.ApplyT(func(v *MediaWorkflowJob) pulumi.StringOutput { return v.TimeStarted }).(pulumi.StringOutput)
+func (o MediaWorkflowJobOutput) TimeStarted() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MediaWorkflowJob) pulumi.StringPtrOutput { return v.TimeStarted }).(pulumi.StringPtrOutput)
 }
 
 // Updated time of the job. An RFC3339 formatted datetime string.
-func (o MediaWorkflowJobOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *MediaWorkflowJob) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o MediaWorkflowJobOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MediaWorkflowJob) pulumi.StringPtrOutput { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 // Discriminate identification of a workflow by name versus a workflow by ID.
@@ -509,12 +484,6 @@ func (o MediaWorkflowJobArrayOutput) ToMediaWorkflowJobArrayOutputWithContext(ct
 	return o
 }
 
-func (o MediaWorkflowJobArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*MediaWorkflowJob] {
-	return pulumix.Output[[]*MediaWorkflowJob]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o MediaWorkflowJobArrayOutput) Index(i pulumi.IntInput) MediaWorkflowJobOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *MediaWorkflowJob {
 		return vs[0].([]*MediaWorkflowJob)[vs[1].(int)]
@@ -533,12 +502,6 @@ func (o MediaWorkflowJobMapOutput) ToMediaWorkflowJobMapOutput() MediaWorkflowJo
 
 func (o MediaWorkflowJobMapOutput) ToMediaWorkflowJobMapOutputWithContext(ctx context.Context) MediaWorkflowJobMapOutput {
 	return o
-}
-
-func (o MediaWorkflowJobMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*MediaWorkflowJob] {
-	return pulumix.Output[map[string]*MediaWorkflowJob]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o MediaWorkflowJobMapOutput) MapIndex(k pulumi.StringInput) MediaWorkflowJobOutput {

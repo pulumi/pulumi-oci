@@ -84,7 +84,7 @@ export interface GetLogsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Log group OCID.
      */
@@ -96,7 +96,7 @@ export interface GetLogsResult {
     /**
      * The list of logs.
      */
-    readonly logs: outputs.Logging.GetLogsLog[];
+    readonly logs?: outputs.Logging.GetLogsLog[];
     readonly sourceResource?: string;
     readonly sourceService?: string;
     /**

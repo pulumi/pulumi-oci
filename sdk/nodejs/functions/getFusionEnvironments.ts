@@ -76,7 +76,7 @@ export interface GetFusionEnvironmentsResult {
     /**
      * The list of fusion_environment_collection.
      */
-    readonly fusionEnvironmentCollections: outputs.Functions.GetFusionEnvironmentsFusionEnvironmentCollection[];
+    readonly fusionEnvironmentCollections?: outputs.Functions.GetFusionEnvironmentsFusionEnvironmentCollection[];
     /**
      * FusionEnvironmentFamily Identifier
      */
@@ -84,7 +84,7 @@ export interface GetFusionEnvironmentsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The current state of the ServiceInstance.
      */

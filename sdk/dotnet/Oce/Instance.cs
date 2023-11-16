@@ -86,31 +86,31 @@ namespace Pulumi.Oci.Oce
         /// (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) OceInstance description
         /// </summary>
         [Output("description")]
-        public Output<string> Description { get; private set; } = null!;
+        public Output<string?> Description { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) disaster recovery paired ragion name
         /// </summary>
         [Output("drRegion")]
-        public Output<string> DrRegion { get; private set; } = null!;
+        public Output<string?> DrRegion { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// Unique GUID identifier that is immutable on creation
         /// </summary>
         [Output("guid")]
-        public Output<string> Guid { get; private set; } = null!;
+        public Output<string?> Guid { get; private set; } = null!;
 
         /// <summary>
         /// Identity Cloud Service access token identifying a stripe and service administrator user
@@ -122,31 +122,31 @@ namespace Pulumi.Oci.Oce
         /// IDCS Tenancy Identifier
         /// </summary>
         [Output("idcsTenancy")]
-        public Output<string> IdcsTenancy { get; private set; } = null!;
+        public Output<string?> IdcsTenancy { get; private set; } = null!;
 
         /// <summary>
         /// Flag indicating whether the instance access is private or public
         /// </summary>
         [Output("instanceAccessType")]
-        public Output<string> InstanceAccessType { get; private set; } = null!;
+        public Output<string?> InstanceAccessType { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Flag indicating whether the instance license is new cloud or bring your own license
         /// </summary>
         [Output("instanceLicenseType")]
-        public Output<string> InstanceLicenseType { get; private set; } = null!;
+        public Output<string?> InstanceLicenseType { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Instance type based on its usage
         /// </summary>
         [Output("instanceUsageType")]
-        public Output<string> InstanceUsageType { get; private set; } = null!;
+        public Output<string?> InstanceUsageType { get; private set; } = null!;
 
         /// <summary>
         /// Details of the current state of the instance lifecycle
         /// </summary>
         [Output("lifecycleDetails")]
-        public Output<string> LifecycleDetails { get; private set; } = null!;
+        public Output<string?> LifecycleDetails { get; private set; } = null!;
 
         /// <summary>
         /// OceInstance Name
@@ -164,25 +164,25 @@ namespace Pulumi.Oci.Oce
         /// SERVICE data. Example: `{"service": {"IDCS": "value"}}`
         /// </summary>
         [Output("service")]
-        public Output<ImmutableDictionary<string, object>> Service { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> Service { get; private set; } = null!;
 
         /// <summary>
         /// The current state of the instance lifecycle.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// An message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         /// </summary>
         [Output("stateMessage")]
-        public Output<string> StateMessage { get; private set; } = null!;
+        public Output<string?> StateMessage { get; private set; } = null!;
 
         /// <summary>
         /// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
         [Output("systemTags")]
-        public Output<ImmutableDictionary<string, object>> SystemTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> SystemTags { get; private set; } = null!;
 
         /// <summary>
         /// Tenancy Identifier
@@ -200,19 +200,19 @@ namespace Pulumi.Oci.Oce
         /// The time the the OceInstance was created. An RFC3339 formatted datetime string
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// The time the OceInstance was updated. An RFC3339 formatted datetime string
         /// </summary>
         [Output("timeUpdated")]
-        public Output<string> TimeUpdated { get; private set; } = null!;
+        public Output<string?> TimeUpdated { get; private set; } = null!;
 
         /// <summary>
         /// Upgrade schedule type representing service to be upgraded immediately whenever latest version is released or delay upgrade of the service to previous released version
         /// </summary>
         [Output("upgradeSchedule")]
-        public Output<string> UpgradeSchedule { get; private set; } = null!;
+        public Output<string?> UpgradeSchedule { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Web Application Firewall(WAF) primary domain
@@ -222,7 +222,7 @@ namespace Pulumi.Oci.Oce
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("wafPrimaryDomain")]
-        public Output<string> WafPrimaryDomain { get; private set; } = null!;
+        public Output<string?> WafPrimaryDomain { get; private set; } = null!;
 
 
         /// <summary>

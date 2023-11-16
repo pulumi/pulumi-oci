@@ -7,14 +7,15 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.Optimizer.outputs.GetCategoriesCategoryCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetCategoriesCategoryCollection {
-    private List<GetCategoriesCategoryCollectionItem> items;
+    private @Nullable List<GetCategoriesCategoryCollectionItem> items;
 
     private GetCategoriesCategoryCollection() {}
     public List<GetCategoriesCategoryCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -26,7 +27,7 @@ public final class GetCategoriesCategoryCollection {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetCategoriesCategoryCollectionItem> items;
+        private @Nullable List<GetCategoriesCategoryCollectionItem> items;
         public Builder() {}
         public Builder(GetCategoriesCategoryCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -34,8 +35,8 @@ public final class GetCategoriesCategoryCollection {
         }
 
         @CustomType.Setter
-        public Builder items(List<GetCategoriesCategoryCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetCategoriesCategoryCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetCategoriesCategoryCollectionItem... items) {

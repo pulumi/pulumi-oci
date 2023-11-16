@@ -70,18 +70,12 @@ class GetDedicatedVmHostResult:
 
     @property
     @pulumi.getter(name="availabilityDomain")
-    def availability_domain(self) -> str:
-        """
-        The availability domain the dedicated virtual machine host is running in.  Example: `Uocm:PHX-AD-1`
-        """
+    def availability_domain(self) -> Optional[str]:
         return pulumi.get(self, "availability_domain")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The OCID of the compartment that contains the dedicated virtual machine host.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
@@ -91,98 +85,62 @@ class GetDedicatedVmHostResult:
 
     @property
     @pulumi.getter(name="dedicatedVmHostShape")
-    def dedicated_vm_host_shape(self) -> str:
-        """
-        The dedicated virtual machine host shape. The shape determines the number of CPUs and other resources available for VMs.
-        """
+    def dedicated_vm_host_shape(self) -> Optional[str]:
         return pulumi.get(self, "dedicated_vm_host_shape")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="faultDomain")
-    def fault_domain(self) -> str:
-        """
-        The fault domain for the dedicated virtual machine host's assigned instances. For more information, see [Fault Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm#fault).
-        """
+    def fault_domain(self) -> Optional[str]:
         return pulumi.get(self, "fault_domain")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dedicated VM host.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="remainingMemoryInGbs")
-    def remaining_memory_in_gbs(self) -> float:
-        """
-        The current available memory of the dedicated VM host, in GBs.
-        """
+    def remaining_memory_in_gbs(self) -> Optional[float]:
         return pulumi.get(self, "remaining_memory_in_gbs")
 
     @property
     @pulumi.getter(name="remainingOcpus")
-    def remaining_ocpus(self) -> float:
-        """
-        The current available OCPUs of the dedicated VM host.
-        """
+    def remaining_ocpus(self) -> Optional[float]:
         return pulumi.get(self, "remaining_ocpus")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the dedicated VM host.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the dedicated VM host was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="totalMemoryInGbs")
-    def total_memory_in_gbs(self) -> float:
-        """
-        The current total memory of the dedicated VM host, in GBs.
-        """
+    def total_memory_in_gbs(self) -> Optional[float]:
         return pulumi.get(self, "total_memory_in_gbs")
 
     @property
     @pulumi.getter(name="totalOcpus")
-    def total_ocpus(self) -> float:
-        """
-        The current total OCPUs of the dedicated VM host.
-        """
+    def total_ocpus(self) -> Optional[float]:
         return pulumi.get(self, "total_ocpus")
 
 
@@ -212,21 +170,7 @@ class AwaitableGetDedicatedVmHostResult(GetDedicatedVmHostResult):
 def get_dedicated_vm_host(dedicated_vm_host_id: Optional[str] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDedicatedVmHostResult:
     """
-    This data source provides details about a specific Dedicated Vm Host resource in Oracle Cloud Infrastructure Core service.
-
-    Gets information about the specified dedicated virtual machine host.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_dedicated_vm_host = oci.Core.get_dedicated_vm_host(dedicated_vm_host_id=oci_core_dedicated_vm_host["test_dedicated_vm_host"]["id"])
-    ```
-
-
-    :param str dedicated_vm_host_id: The OCID of the dedicated VM host.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['dedicatedVmHostId'] = dedicated_vm_host_id
@@ -255,20 +199,6 @@ def get_dedicated_vm_host(dedicated_vm_host_id: Optional[str] = None,
 def get_dedicated_vm_host_output(dedicated_vm_host_id: Optional[pulumi.Input[str]] = None,
                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDedicatedVmHostResult]:
     """
-    This data source provides details about a specific Dedicated Vm Host resource in Oracle Cloud Infrastructure Core service.
-
-    Gets information about the specified dedicated virtual machine host.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_dedicated_vm_host = oci.Core.get_dedicated_vm_host(dedicated_vm_host_id=oci_core_dedicated_vm_host["test_dedicated_vm_host"]["id"])
-    ```
-
-
-    :param str dedicated_vm_host_id: The OCID of the dedicated VM host.
+    Use this data source to access information about an existing resource.
     """
     ...

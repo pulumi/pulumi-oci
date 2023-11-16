@@ -16,53 +16,53 @@ namespace Pulumi.Oci.Database.Outputs
         /// <summary>
         /// A filter to return only autonomous database resources that match the specified workload type.
         /// </summary>
-        public readonly string DbWorkload;
+        public readonly string? DbWorkload;
         /// <summary>
         /// A URL that points to a detailed description of the Autonomous Database version.
         /// </summary>
-        public readonly string Details;
+        public readonly string? Details;
         /// <summary>
         /// True if the database uses [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html).
         /// </summary>
-        public readonly bool IsDedicated;
+        public readonly bool? IsDedicated;
         /// <summary>
         /// True if this version of the Oracle Database software's default is free.
         /// </summary>
-        public readonly bool IsDefaultForFree;
+        public readonly bool? IsDefaultForFree;
         /// <summary>
         /// True if this version of the Oracle Database software's default is paid.
         /// </summary>
-        public readonly bool IsDefaultForPaid;
+        public readonly bool? IsDefaultForPaid;
         /// <summary>
         /// True if this version of the Oracle Database software can be used for Always-Free Autonomous Databases.
         /// </summary>
-        public readonly bool IsFreeTierEnabled;
+        public readonly bool? IsFreeTierEnabled;
         /// <summary>
         /// True if this version of the Oracle Database software has payments enabled.
         /// </summary>
-        public readonly bool IsPaidEnabled;
+        public readonly bool? IsPaidEnabled;
         /// <summary>
         /// A valid Oracle Database version for Autonomous Database.
         /// </summary>
-        public readonly string Version;
+        public readonly string? Version;
 
         [OutputConstructor]
         private GetAutonomousDbVersionsAutonomousDbVersionResult(
-            string dbWorkload,
+            string? dbWorkload,
 
-            string details,
+            string? details,
 
-            bool isDedicated,
+            bool? isDedicated,
 
-            bool isDefaultForFree,
+            bool? isDefaultForFree,
 
-            bool isDefaultForPaid,
+            bool? isDefaultForPaid,
 
-            bool isFreeTierEnabled,
+            bool? isFreeTierEnabled,
 
-            bool isPaidEnabled,
+            bool? isPaidEnabled,
 
-            string version)
+            string? version)
         {
             DbWorkload = dbWorkload;
             Details = details;

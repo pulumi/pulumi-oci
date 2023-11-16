@@ -45,60 +45,60 @@ export interface GetSecurityPolicyResult {
     /**
      * The category of security policy
      */
-    readonly category: string;
+    readonly category?: string;
     /**
      * The id of the security policy's compartment
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * The security policy's description
      */
-    readonly description: string;
+    readonly description?: string;
     /**
      * The security policy's full name
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * A shorter version of the security policy's name
      */
-    readonly friendlyName: string;
+    readonly friendlyName?: string;
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * A message describing the current state in more detail. For example, this can be used to provide actionable information for a resource in a `Failed` state.
      */
-    readonly lifecycleDetails: string;
+    readonly lifecycleDetails?: string;
     /**
      * The owner of the security policy
      */
-    readonly owner: string;
+    readonly owner?: string;
     readonly securityPolicyId: string;
     /**
      * The list of services that the security policy protects
      */
-    readonly services: string[];
+    readonly services?: string[];
     /**
      * The current state of the security policy
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * The time the security policy was created. An RFC3339 formatted datetime string.
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The time the security policy was last updated. An RFC3339 formatted datetime string.
      */
-    readonly timeUpdated: string;
+    readonly timeUpdated?: string;
 }
 /**
  * This data source provides details about a specific Security Policy resource in Oracle Cloud Infrastructure Cloud Guard service.

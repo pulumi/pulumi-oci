@@ -69,42 +69,42 @@ public class ManagementAgent extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="availabilityStatus", refs={String.class}, tree="[0]")
-    private Output<String> availabilityStatus;
+    private Output</* @Nullable */ String> availabilityStatus;
 
     /**
      * @return The current availability status of managementAgent
      * 
      */
-    public Output<String> availabilityStatus() {
-        return this.availabilityStatus;
+    public Output<Optional<String>> availabilityStatus() {
+        return Codegen.optional(this.availabilityStatus);
     }
     /**
      * Compartment Identifier
      * 
      */
     @Export(name="compartmentId", refs={String.class}, tree="[0]")
-    private Output<String> compartmentId;
+    private Output</* @Nullable */ String> compartmentId;
 
     /**
      * @return Compartment Identifier
      * 
      */
-    public Output<String> compartmentId() {
-        return this.compartmentId;
+    public Output<Optional<String>> compartmentId() {
+        return Codegen.optional(this.compartmentId);
     }
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * (Updatable) Plugin Id list
@@ -131,140 +131,140 @@ public class ManagementAgent extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="displayName", refs={String.class}, tree="[0]")
-    private Output<String> displayName;
+    private Output</* @Nullable */ String> displayName;
 
     /**
      * @return (Updatable) New displayName of Agent.
      * 
      */
-    public Output<String> displayName() {
-        return this.displayName;
+    public Output<Optional<String>> displayName() {
+        return Codegen.optional(this.displayName);
     }
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * Management Agent host machine name
      * 
      */
     @Export(name="host", refs={String.class}, tree="[0]")
-    private Output<String> host;
+    private Output</* @Nullable */ String> host;
 
     /**
      * @return Management Agent host machine name
      * 
      */
-    public Output<String> host() {
-        return this.host;
+    public Output<Optional<String>> host() {
+        return Codegen.optional(this.host);
     }
     /**
      * Host resource ocid
      * 
      */
     @Export(name="hostId", refs={String.class}, tree="[0]")
-    private Output<String> hostId;
+    private Output</* @Nullable */ String> hostId;
 
     /**
      * @return Host resource ocid
      * 
      */
-    public Output<String> hostId() {
-        return this.hostId;
+    public Output<Optional<String>> hostId() {
+        return Codegen.optional(this.hostId);
     }
     /**
      * agent install key identifier
      * 
      */
     @Export(name="installKeyId", refs={String.class}, tree="[0]")
-    private Output<String> installKeyId;
+    private Output</* @Nullable */ String> installKeyId;
 
     /**
      * @return agent install key identifier
      * 
      */
-    public Output<String> installKeyId() {
-        return this.installKeyId;
+    public Output<Optional<String>> installKeyId() {
+        return Codegen.optional(this.installKeyId);
     }
     /**
      * Path where Management Agent is installed
      * 
      */
     @Export(name="installPath", refs={String.class}, tree="[0]")
-    private Output<String> installPath;
+    private Output</* @Nullable */ String> installPath;
 
     /**
      * @return Path where Management Agent is installed
      * 
      */
-    public Output<String> installPath() {
-        return this.installPath;
+    public Output<Optional<String>> installPath() {
+        return Codegen.optional(this.installPath);
     }
     /**
      * The install type, either AGENT or GATEWAY
      * 
      */
     @Export(name="installType", refs={String.class}, tree="[0]")
-    private Output<String> installType;
+    private Output</* @Nullable */ String> installType;
 
     /**
      * @return The install type, either AGENT or GATEWAY
      * 
      */
-    public Output<String> installType() {
-        return this.installType;
+    public Output<Optional<String>> installType() {
+        return Codegen.optional(this.installType);
     }
     /**
      * true if the agent can be upgraded automatically; false if it must be upgraded manually. This flag is derived from the tenancy level auto upgrade preference.
      * 
      */
     @Export(name="isAgentAutoUpgradable", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isAgentAutoUpgradable;
+    private Output</* @Nullable */ Boolean> isAgentAutoUpgradable;
 
     /**
      * @return true if the agent can be upgraded automatically; false if it must be upgraded manually. This flag is derived from the tenancy level auto upgrade preference.
      * 
      */
-    public Output<Boolean> isAgentAutoUpgradable() {
-        return this.isAgentAutoUpgradable;
+    public Output<Optional<Boolean>> isAgentAutoUpgradable() {
+        return Codegen.optional(this.isAgentAutoUpgradable);
     }
     /**
      * true, if the agent image is manually downloaded and installed. false, if the agent is deployed as a plugin in Oracle Cloud Agent.
      * 
      */
     @Export(name="isCustomerDeployed", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isCustomerDeployed;
+    private Output</* @Nullable */ Boolean> isCustomerDeployed;
 
     /**
      * @return true, if the agent image is manually downloaded and installed. false, if the agent is deployed as a plugin in Oracle Cloud Agent.
      * 
      */
-    public Output<Boolean> isCustomerDeployed() {
-        return this.isCustomerDeployed;
+    public Output<Optional<Boolean>> isCustomerDeployed() {
+        return Codegen.optional(this.isCustomerDeployed);
     }
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
     @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
-    private Output<String> lifecycleDetails;
+    private Output</* @Nullable */ String> lifecycleDetails;
 
     /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
-    public Output<String> lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Output<Optional<String>> lifecycleDetails() {
+        return Codegen.optional(this.lifecycleDetails);
     }
     /**
      * Unique Management Agent identifier
@@ -285,154 +285,154 @@ public class ManagementAgent extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="managementAgentProperties", refs={List.class,ManagementAgentManagementAgentProperty.class}, tree="[0,1]")
-    private Output<List<ManagementAgentManagementAgentProperty>> managementAgentProperties;
+    private Output</* @Nullable */ List<ManagementAgentManagementAgentProperty>> managementAgentProperties;
 
     /**
      * @return Additional properties for this Management Agent
      * 
      */
-    public Output<List<ManagementAgentManagementAgentProperty>> managementAgentProperties() {
-        return this.managementAgentProperties;
+    public Output<Optional<List<ManagementAgentManagementAgentProperty>>> managementAgentProperties() {
+        return Codegen.optional(this.managementAgentProperties);
     }
     /**
      * Platform Name
      * 
      */
     @Export(name="platformName", refs={String.class}, tree="[0]")
-    private Output<String> platformName;
+    private Output</* @Nullable */ String> platformName;
 
     /**
      * @return Platform Name
      * 
      */
-    public Output<String> platformName() {
-        return this.platformName;
+    public Output<Optional<String>> platformName() {
+        return Codegen.optional(this.platformName);
     }
     /**
      * Platform Type
      * 
      */
     @Export(name="platformType", refs={String.class}, tree="[0]")
-    private Output<String> platformType;
+    private Output</* @Nullable */ String> platformType;
 
     /**
      * @return Platform Type
      * 
      */
-    public Output<String> platformType() {
-        return this.platformType;
+    public Output<Optional<String>> platformType() {
+        return Codegen.optional(this.platformType);
     }
     /**
      * Platform Version
      * 
      */
     @Export(name="platformVersion", refs={String.class}, tree="[0]")
-    private Output<String> platformVersion;
+    private Output</* @Nullable */ String> platformVersion;
 
     /**
      * @return Platform Version
      * 
      */
-    public Output<String> platformVersion() {
-        return this.platformVersion;
+    public Output<Optional<String>> platformVersion() {
+        return Codegen.optional(this.platformVersion);
     }
     /**
      * list of managementAgentPlugins associated with the agent
      * 
      */
     @Export(name="pluginLists", refs={List.class,ManagementAgentPluginList.class}, tree="[0,1]")
-    private Output<List<ManagementAgentPluginList>> pluginLists;
+    private Output</* @Nullable */ List<ManagementAgentPluginList>> pluginLists;
 
     /**
      * @return list of managementAgentPlugins associated with the agent
      * 
      */
-    public Output<List<ManagementAgentPluginList>> pluginLists() {
-        return this.pluginLists;
+    public Output<Optional<List<ManagementAgentPluginList>>> pluginLists() {
+        return Codegen.optional(this.pluginLists);
     }
     /**
      * Version of the deployment artifact instantiated by this Management Agent. The format for Standalone resourceMode is YYMMDD.HHMM, and the format for other modes (whose artifacts are based upon Standalone but can advance independently) is YYMMDD.HHMM.VVVVVVVVVVVV. VVVVVVVVVVVV is always a numeric value between 000000000000 and 999999999999
      * 
      */
     @Export(name="resourceArtifactVersion", refs={String.class}, tree="[0]")
-    private Output<String> resourceArtifactVersion;
+    private Output</* @Nullable */ String> resourceArtifactVersion;
 
     /**
      * @return Version of the deployment artifact instantiated by this Management Agent. The format for Standalone resourceMode is YYMMDD.HHMM, and the format for other modes (whose artifacts are based upon Standalone but can advance independently) is YYMMDD.HHMM.VVVVVVVVVVVV. VVVVVVVVVVVV is always a numeric value between 000000000000 and 999999999999
      * 
      */
-    public Output<String> resourceArtifactVersion() {
-        return this.resourceArtifactVersion;
+    public Output<Optional<String>> resourceArtifactVersion() {
+        return Codegen.optional(this.resourceArtifactVersion);
     }
     /**
      * The current state of managementAgent
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The current state of managementAgent
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * The time the Management Agent was created. An RFC3339 formatted datetime string
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The time the Management Agent was created. An RFC3339 formatted datetime string
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * The time the Management Agent has last recorded its health status in telemetry. This value will be null if the agent has not recorded its health status in last 7 days. An RFC3339 formatted datetime string
      * 
      */
     @Export(name="timeLastHeartbeat", refs={String.class}, tree="[0]")
-    private Output<String> timeLastHeartbeat;
+    private Output</* @Nullable */ String> timeLastHeartbeat;
 
     /**
      * @return The time the Management Agent has last recorded its health status in telemetry. This value will be null if the agent has not recorded its health status in last 7 days. An RFC3339 formatted datetime string
      * 
      */
-    public Output<String> timeLastHeartbeat() {
-        return this.timeLastHeartbeat;
+    public Output<Optional<String>> timeLastHeartbeat() {
+        return Codegen.optional(this.timeLastHeartbeat);
     }
     /**
      * The time the Management Agent was last updated. An RFC3339 formatted datetime string
      * 
      */
     @Export(name="timeUpdated", refs={String.class}, tree="[0]")
-    private Output<String> timeUpdated;
+    private Output</* @Nullable */ String> timeUpdated;
 
     /**
      * @return The time the Management Agent was last updated. An RFC3339 formatted datetime string
      * 
      */
-    public Output<String> timeUpdated() {
-        return this.timeUpdated;
+    public Output<Optional<String>> timeUpdated() {
+        return Codegen.optional(this.timeUpdated);
     }
     /**
      * Management Agent Version
      * 
      */
     @Export(name="version", refs={String.class}, tree="[0]")
-    private Output<String> version;
+    private Output</* @Nullable */ String> version;
 
     /**
      * @return Management Agent Version
      * 
      */
-    public Output<String> version() {
-        return this.version;
+    public Output<Optional<String>> version() {
+        return Codegen.optional(this.version);
     }
 
     /**

@@ -12,6 +12,8 @@ import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetMetricExtensionsMetricExtensionCollectionItemQueryProperty {
@@ -19,183 +21,183 @@ public final class GetMetricExtensionsMetricExtensionCollectionItemQueryProperty
      * @return Arguments required by either command or script
      * 
      */
-    private String arguments;
+    private @Nullable String arguments;
     /**
      * @return Prefix for an auto generated metric, in case multiple rows with non unique key values are returned
      * 
      */
-    private String autoRowPrefix;
+    private @Nullable String autoRowPrefix;
     /**
      * @return Type of possible collection methods.
      * 
      */
-    private String collectionMethod;
+    private @Nullable String collectionMethod;
     /**
      * @return OS command to execute without arguments
      * 
      */
-    private String command;
+    private @Nullable String command;
     /**
      * @return Character used to delimit multiple metric values in single line of output
      * 
      */
-    private String delimiter;
+    private @Nullable String delimiter;
     /**
      * @return Semi-colon separated list of key properties from Managed Bean ObjectName to be used as key metrics
      * 
      */
-    private String identityMetric;
+    private @Nullable String identityMetric;
     /**
      * @return List of values and position of PL/SQL procedure IN parameters
      * 
      */
-    private List<GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyInParamDetail> inParamDetails;
+    private @Nullable List<GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyInParamDetail> inParamDetails;
     /**
      * @return Indicates if Metric Service is enabled on server domain
      * 
      */
-    private Boolean isMetricServiceEnabled;
+    private @Nullable Boolean isMetricServiceEnabled;
     /**
      * @return List of JMX attributes or Metric Service Table columns separated by semi-colon
      * 
      */
-    private String jmxAttributes;
+    private @Nullable String jmxAttributes;
     /**
      * @return JMX Managed Bean Query or Metric Service Table name
      * 
      */
-    private String managedBeanQuery;
+    private @Nullable String managedBeanQuery;
     /**
      * @return Position and SQL Type of PL/SQL OUT parameter
      * 
      */
-    private List<GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutParamDetail> outParamDetails;
+    private @Nullable List<GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutParamDetail> outParamDetails;
     /**
      * @return Script details applicable to any OS Command based Metric Extension which needs to run a script to collect data
      * 
      */
-    private List<GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyScriptDetail> scriptDetails;
+    private @Nullable List<GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyScriptDetail> scriptDetails;
     /**
      * @return Details of Sql content which needs to execute to collect Metric Extension data
      * 
      */
-    private List<GetMetricExtensionsMetricExtensionCollectionItemQueryPropertySqlDetail> sqlDetails;
+    private @Nullable List<GetMetricExtensionsMetricExtensionCollectionItemQueryPropertySqlDetail> sqlDetails;
     /**
      * @return Type of SQL data collection method i.e. either a Statement or SQL Script File
      * 
      */
-    private String sqlType;
+    private @Nullable String sqlType;
     /**
      * @return String prefix used to identify metric output of the OS Command
      * 
      */
-    private String startsWith;
+    private @Nullable String startsWith;
 
     private GetMetricExtensionsMetricExtensionCollectionItemQueryProperty() {}
     /**
      * @return Arguments required by either command or script
      * 
      */
-    public String arguments() {
-        return this.arguments;
+    public Optional<String> arguments() {
+        return Optional.ofNullable(this.arguments);
     }
     /**
      * @return Prefix for an auto generated metric, in case multiple rows with non unique key values are returned
      * 
      */
-    public String autoRowPrefix() {
-        return this.autoRowPrefix;
+    public Optional<String> autoRowPrefix() {
+        return Optional.ofNullable(this.autoRowPrefix);
     }
     /**
      * @return Type of possible collection methods.
      * 
      */
-    public String collectionMethod() {
-        return this.collectionMethod;
+    public Optional<String> collectionMethod() {
+        return Optional.ofNullable(this.collectionMethod);
     }
     /**
      * @return OS command to execute without arguments
      * 
      */
-    public String command() {
-        return this.command;
+    public Optional<String> command() {
+        return Optional.ofNullable(this.command);
     }
     /**
      * @return Character used to delimit multiple metric values in single line of output
      * 
      */
-    public String delimiter() {
-        return this.delimiter;
+    public Optional<String> delimiter() {
+        return Optional.ofNullable(this.delimiter);
     }
     /**
      * @return Semi-colon separated list of key properties from Managed Bean ObjectName to be used as key metrics
      * 
      */
-    public String identityMetric() {
-        return this.identityMetric;
+    public Optional<String> identityMetric() {
+        return Optional.ofNullable(this.identityMetric);
     }
     /**
      * @return List of values and position of PL/SQL procedure IN parameters
      * 
      */
     public List<GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyInParamDetail> inParamDetails() {
-        return this.inParamDetails;
+        return this.inParamDetails == null ? List.of() : this.inParamDetails;
     }
     /**
      * @return Indicates if Metric Service is enabled on server domain
      * 
      */
-    public Boolean isMetricServiceEnabled() {
-        return this.isMetricServiceEnabled;
+    public Optional<Boolean> isMetricServiceEnabled() {
+        return Optional.ofNullable(this.isMetricServiceEnabled);
     }
     /**
      * @return List of JMX attributes or Metric Service Table columns separated by semi-colon
      * 
      */
-    public String jmxAttributes() {
-        return this.jmxAttributes;
+    public Optional<String> jmxAttributes() {
+        return Optional.ofNullable(this.jmxAttributes);
     }
     /**
      * @return JMX Managed Bean Query or Metric Service Table name
      * 
      */
-    public String managedBeanQuery() {
-        return this.managedBeanQuery;
+    public Optional<String> managedBeanQuery() {
+        return Optional.ofNullable(this.managedBeanQuery);
     }
     /**
      * @return Position and SQL Type of PL/SQL OUT parameter
      * 
      */
     public List<GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutParamDetail> outParamDetails() {
-        return this.outParamDetails;
+        return this.outParamDetails == null ? List.of() : this.outParamDetails;
     }
     /**
      * @return Script details applicable to any OS Command based Metric Extension which needs to run a script to collect data
      * 
      */
     public List<GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyScriptDetail> scriptDetails() {
-        return this.scriptDetails;
+        return this.scriptDetails == null ? List.of() : this.scriptDetails;
     }
     /**
      * @return Details of Sql content which needs to execute to collect Metric Extension data
      * 
      */
     public List<GetMetricExtensionsMetricExtensionCollectionItemQueryPropertySqlDetail> sqlDetails() {
-        return this.sqlDetails;
+        return this.sqlDetails == null ? List.of() : this.sqlDetails;
     }
     /**
      * @return Type of SQL data collection method i.e. either a Statement or SQL Script File
      * 
      */
-    public String sqlType() {
-        return this.sqlType;
+    public Optional<String> sqlType() {
+        return Optional.ofNullable(this.sqlType);
     }
     /**
      * @return String prefix used to identify metric output of the OS Command
      * 
      */
-    public String startsWith() {
-        return this.startsWith;
+    public Optional<String> startsWith() {
+        return Optional.ofNullable(this.startsWith);
     }
 
     public static Builder builder() {
@@ -207,21 +209,21 @@ public final class GetMetricExtensionsMetricExtensionCollectionItemQueryProperty
     }
     @CustomType.Builder
     public static final class Builder {
-        private String arguments;
-        private String autoRowPrefix;
-        private String collectionMethod;
-        private String command;
-        private String delimiter;
-        private String identityMetric;
-        private List<GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyInParamDetail> inParamDetails;
-        private Boolean isMetricServiceEnabled;
-        private String jmxAttributes;
-        private String managedBeanQuery;
-        private List<GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutParamDetail> outParamDetails;
-        private List<GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyScriptDetail> scriptDetails;
-        private List<GetMetricExtensionsMetricExtensionCollectionItemQueryPropertySqlDetail> sqlDetails;
-        private String sqlType;
-        private String startsWith;
+        private @Nullable String arguments;
+        private @Nullable String autoRowPrefix;
+        private @Nullable String collectionMethod;
+        private @Nullable String command;
+        private @Nullable String delimiter;
+        private @Nullable String identityMetric;
+        private @Nullable List<GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyInParamDetail> inParamDetails;
+        private @Nullable Boolean isMetricServiceEnabled;
+        private @Nullable String jmxAttributes;
+        private @Nullable String managedBeanQuery;
+        private @Nullable List<GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutParamDetail> outParamDetails;
+        private @Nullable List<GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyScriptDetail> scriptDetails;
+        private @Nullable List<GetMetricExtensionsMetricExtensionCollectionItemQueryPropertySqlDetail> sqlDetails;
+        private @Nullable String sqlType;
+        private @Nullable String startsWith;
         public Builder() {}
         public Builder(GetMetricExtensionsMetricExtensionCollectionItemQueryProperty defaults) {
     	      Objects.requireNonNull(defaults);
@@ -243,90 +245,90 @@ public final class GetMetricExtensionsMetricExtensionCollectionItemQueryProperty
         }
 
         @CustomType.Setter
-        public Builder arguments(String arguments) {
-            this.arguments = Objects.requireNonNull(arguments);
+        public Builder arguments(@Nullable String arguments) {
+            this.arguments = arguments;
             return this;
         }
         @CustomType.Setter
-        public Builder autoRowPrefix(String autoRowPrefix) {
-            this.autoRowPrefix = Objects.requireNonNull(autoRowPrefix);
+        public Builder autoRowPrefix(@Nullable String autoRowPrefix) {
+            this.autoRowPrefix = autoRowPrefix;
             return this;
         }
         @CustomType.Setter
-        public Builder collectionMethod(String collectionMethod) {
-            this.collectionMethod = Objects.requireNonNull(collectionMethod);
+        public Builder collectionMethod(@Nullable String collectionMethod) {
+            this.collectionMethod = collectionMethod;
             return this;
         }
         @CustomType.Setter
-        public Builder command(String command) {
-            this.command = Objects.requireNonNull(command);
+        public Builder command(@Nullable String command) {
+            this.command = command;
             return this;
         }
         @CustomType.Setter
-        public Builder delimiter(String delimiter) {
-            this.delimiter = Objects.requireNonNull(delimiter);
+        public Builder delimiter(@Nullable String delimiter) {
+            this.delimiter = delimiter;
             return this;
         }
         @CustomType.Setter
-        public Builder identityMetric(String identityMetric) {
-            this.identityMetric = Objects.requireNonNull(identityMetric);
+        public Builder identityMetric(@Nullable String identityMetric) {
+            this.identityMetric = identityMetric;
             return this;
         }
         @CustomType.Setter
-        public Builder inParamDetails(List<GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyInParamDetail> inParamDetails) {
-            this.inParamDetails = Objects.requireNonNull(inParamDetails);
+        public Builder inParamDetails(@Nullable List<GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyInParamDetail> inParamDetails) {
+            this.inParamDetails = inParamDetails;
             return this;
         }
         public Builder inParamDetails(GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyInParamDetail... inParamDetails) {
             return inParamDetails(List.of(inParamDetails));
         }
         @CustomType.Setter
-        public Builder isMetricServiceEnabled(Boolean isMetricServiceEnabled) {
-            this.isMetricServiceEnabled = Objects.requireNonNull(isMetricServiceEnabled);
+        public Builder isMetricServiceEnabled(@Nullable Boolean isMetricServiceEnabled) {
+            this.isMetricServiceEnabled = isMetricServiceEnabled;
             return this;
         }
         @CustomType.Setter
-        public Builder jmxAttributes(String jmxAttributes) {
-            this.jmxAttributes = Objects.requireNonNull(jmxAttributes);
+        public Builder jmxAttributes(@Nullable String jmxAttributes) {
+            this.jmxAttributes = jmxAttributes;
             return this;
         }
         @CustomType.Setter
-        public Builder managedBeanQuery(String managedBeanQuery) {
-            this.managedBeanQuery = Objects.requireNonNull(managedBeanQuery);
+        public Builder managedBeanQuery(@Nullable String managedBeanQuery) {
+            this.managedBeanQuery = managedBeanQuery;
             return this;
         }
         @CustomType.Setter
-        public Builder outParamDetails(List<GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutParamDetail> outParamDetails) {
-            this.outParamDetails = Objects.requireNonNull(outParamDetails);
+        public Builder outParamDetails(@Nullable List<GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutParamDetail> outParamDetails) {
+            this.outParamDetails = outParamDetails;
             return this;
         }
         public Builder outParamDetails(GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutParamDetail... outParamDetails) {
             return outParamDetails(List.of(outParamDetails));
         }
         @CustomType.Setter
-        public Builder scriptDetails(List<GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyScriptDetail> scriptDetails) {
-            this.scriptDetails = Objects.requireNonNull(scriptDetails);
+        public Builder scriptDetails(@Nullable List<GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyScriptDetail> scriptDetails) {
+            this.scriptDetails = scriptDetails;
             return this;
         }
         public Builder scriptDetails(GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyScriptDetail... scriptDetails) {
             return scriptDetails(List.of(scriptDetails));
         }
         @CustomType.Setter
-        public Builder sqlDetails(List<GetMetricExtensionsMetricExtensionCollectionItemQueryPropertySqlDetail> sqlDetails) {
-            this.sqlDetails = Objects.requireNonNull(sqlDetails);
+        public Builder sqlDetails(@Nullable List<GetMetricExtensionsMetricExtensionCollectionItemQueryPropertySqlDetail> sqlDetails) {
+            this.sqlDetails = sqlDetails;
             return this;
         }
         public Builder sqlDetails(GetMetricExtensionsMetricExtensionCollectionItemQueryPropertySqlDetail... sqlDetails) {
             return sqlDetails(List.of(sqlDetails));
         }
         @CustomType.Setter
-        public Builder sqlType(String sqlType) {
-            this.sqlType = Objects.requireNonNull(sqlType);
+        public Builder sqlType(@Nullable String sqlType) {
+            this.sqlType = sqlType;
             return this;
         }
         @CustomType.Setter
-        public Builder startsWith(String startsWith) {
-            this.startsWith = Objects.requireNonNull(startsWith);
+        public Builder startsWith(@Nullable String startsWith) {
+            this.startsWith = startsWith;
             return this;
         }
         public GetMetricExtensionsMetricExtensionCollectionItemQueryProperty build() {

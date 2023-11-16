@@ -132,11 +132,11 @@ namespace Pulumi.Oci.Database
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// The number of CPU cores enabled on the Db server.
         /// </summary>
-        public readonly int CpuCoreCount;
+        public readonly int? CpuCoreCount;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Db nodes associated with the Db server.
         /// </summary>
@@ -144,7 +144,7 @@ namespace Pulumi.Oci.Database
         /// <summary>
         /// The allocated local node storage in GBs on the Db server.
         /// </summary>
-        public readonly int DbNodeStorageSizeInGbs;
+        public readonly int? DbNodeStorageSizeInGbs;
         public readonly string DbServerId;
         /// <summary>
         /// The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
@@ -153,11 +153,11 @@ namespace Pulumi.Oci.Database
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// The user-friendly name for the Db server. The name does not need to be unique.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
         /// </summary>
@@ -165,43 +165,43 @@ namespace Pulumi.Oci.Database
         /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Additional information about the current lifecycle state.
         /// </summary>
-        public readonly string LifecycleDetails;
+        public readonly string? LifecycleDetails;
         /// <summary>
         /// The total number of CPU cores available.
         /// </summary>
-        public readonly int MaxCpuCount;
+        public readonly int? MaxCpuCount;
         /// <summary>
         /// The total local node storage available in GBs.
         /// </summary>
-        public readonly int MaxDbNodeStorageInGbs;
+        public readonly int? MaxDbNodeStorageInGbs;
         /// <summary>
         /// The total memory available in GBs.
         /// </summary>
-        public readonly int MaxMemoryInGbs;
+        public readonly int? MaxMemoryInGbs;
         /// <summary>
         /// The allocated memory in GBs on the Db server.
         /// </summary>
-        public readonly int MemorySizeInGbs;
+        public readonly int? MemorySizeInGbs;
         /// <summary>
         /// The shape of the Db server. The shape determines the amount of CPU, storage, and memory resources available.
         /// </summary>
-        public readonly string Shape;
+        public readonly string? Shape;
         /// <summary>
         /// The current state of the Db server.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// The date and time that the Db Server was created.
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Clusters associated with the Db server.
         /// </summary>
@@ -213,43 +213,43 @@ namespace Pulumi.Oci.Database
 
             ImmutableArray<string> autonomousVmClusterIds,
 
-            string compartmentId,
+            string? compartmentId,
 
-            int cpuCoreCount,
+            int? cpuCoreCount,
 
             ImmutableArray<string> dbNodeIds,
 
-            int dbNodeStorageSizeInGbs,
+            int? dbNodeStorageSizeInGbs,
 
             string dbServerId,
 
             ImmutableArray<Outputs.GetDbServerDbServerPatchingDetailResult> dbServerPatchingDetails,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string displayName,
+            string? displayName,
 
             string exadataInfrastructureId,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string id,
+            string? id,
 
-            string lifecycleDetails,
+            string? lifecycleDetails,
 
-            int maxCpuCount,
+            int? maxCpuCount,
 
-            int maxDbNodeStorageInGbs,
+            int? maxDbNodeStorageInGbs,
 
-            int maxMemoryInGbs,
+            int? maxMemoryInGbs,
 
-            int memorySizeInGbs,
+            int? memorySizeInGbs,
 
-            string shape,
+            string? shape,
 
-            string state,
+            string? state,
 
-            string timeCreated,
+            string? timeCreated,
 
             ImmutableArray<string> vmClusterIds)
         {

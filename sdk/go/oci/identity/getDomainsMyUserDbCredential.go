@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific My User Db Credential resource in Oracle Cloud Infrastructure Identity Domains service.
@@ -70,54 +69,54 @@ type LookupDomainsMyUserDbCredentialArgs struct {
 type LookupDomainsMyUserDbCredentialResult struct {
 	Authorization *string `pulumi:"authorization"`
 	// Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
-	CompartmentOcid string `pulumi:"compartmentOcid"`
+	CompartmentOcid *string `pulumi:"compartmentOcid"`
 	// The user's database password.
-	DbPassword string `pulumi:"dbPassword"`
+	DbPassword *string `pulumi:"dbPassword"`
 	// A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
-	DeleteInProgress bool `pulumi:"deleteInProgress"`
+	DeleteInProgress *bool `pulumi:"deleteInProgress"`
 	// Description
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
-	DomainOcid string `pulumi:"domainOcid"`
+	DomainOcid *string `pulumi:"domainOcid"`
 	// Indicates that the database password has expired.
-	Expired bool `pulumi:"expired"`
+	Expired *bool `pulumi:"expired"`
 	// When the user credential expires.
-	ExpiresOn string `pulumi:"expiresOn"`
+	ExpiresOn *string `pulumi:"expiresOn"`
 	// Unique identifier for the SCIM Resource as defined by the Service Provider. Each representation of the Resource MUST include a non-empty id value. This identifier MUST be unique across the Service Provider's entire set of Resources. It MUST be a stable, non-reassignable identifier that does not change when the same Resource is returned in subsequent requests. The value of the id attribute is always issued by the Service Provider and MUST never be specified by the Service Consumer. bulkId: is a reserved keyword and MUST NOT be used in the unique identifier.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The User or App who created the Resource
 	IdcsCreatedBies []GetDomainsMyUserDbCredentialIdcsCreatedBy `pulumi:"idcsCreatedBies"`
 	IdcsEndpoint    string                                      `pulumi:"idcsEndpoint"`
 	// The User or App who modified the Resource
 	IdcsLastModifiedBies []GetDomainsMyUserDbCredentialIdcsLastModifiedBy `pulumi:"idcsLastModifiedBies"`
 	// The release number when the resource was upgraded.
-	IdcsLastUpgradedInRelease string `pulumi:"idcsLastUpgradedInRelease"`
+	IdcsLastUpgradedInRelease *string `pulumi:"idcsLastUpgradedInRelease"`
 	// Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
 	IdcsPreventedOperations []string `pulumi:"idcsPreventedOperations"`
 	// A DateTime that specifies the date and time when the current database password was set.
-	LastSetDate string `pulumi:"lastSetDate"`
+	LastSetDate *string `pulumi:"lastSetDate"`
 	// A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
 	Metas []GetDomainsMyUserDbCredentialMeta `pulumi:"metas"`
 	// The user's database password with mixed salt.
-	MixedDbPassword string `pulumi:"mixedDbPassword"`
+	MixedDbPassword *string `pulumi:"mixedDbPassword"`
 	// The mixed salt of the password.
-	MixedSalt            string `pulumi:"mixedSalt"`
-	MyUserDbCredentialId string `pulumi:"myUserDbCredentialId"`
+	MixedSalt            *string `pulumi:"mixedSalt"`
+	MyUserDbCredentialId string  `pulumi:"myUserDbCredentialId"`
 	// The username.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// The user's OCID.
-	Ocid                      string  `pulumi:"ocid"`
+	Ocid                      *string `pulumi:"ocid"`
 	ResourceTypeSchemaVersion *string `pulumi:"resourceTypeSchemaVersion"`
 	// The salt of the password.
-	Salt string `pulumi:"salt"`
+	Salt *string `pulumi:"salt"`
 	// REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
 	Schemas []string `pulumi:"schemas"`
 	// User credential status
-	Status string `pulumi:"status"`
+	Status *string `pulumi:"status"`
 	// A list of tags on this resource.
 	Tags []GetDomainsMyUserDbCredentialTag `pulumi:"tags"`
 	// Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
-	TenancyOcid string `pulumi:"tenancyOcid"`
+	TenancyOcid *string `pulumi:"tenancyOcid"`
 	// The user linked to the database credential.
 	Users []GetDomainsMyUserDbCredentialUser `pulumi:"users"`
 }
@@ -166,54 +165,48 @@ func (o LookupDomainsMyUserDbCredentialResultOutput) ToLookupDomainsMyUserDbCred
 	return o
 }
 
-func (o LookupDomainsMyUserDbCredentialResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupDomainsMyUserDbCredentialResult] {
-	return pulumix.Output[LookupDomainsMyUserDbCredentialResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o LookupDomainsMyUserDbCredentialResultOutput) Authorization() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v LookupDomainsMyUserDbCredentialResult) *string { return v.Authorization }).(pulumi.StringPtrOutput)
 }
 
 // Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
-func (o LookupDomainsMyUserDbCredentialResultOutput) CompartmentOcid() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsMyUserDbCredentialResult) string { return v.CompartmentOcid }).(pulumi.StringOutput)
+func (o LookupDomainsMyUserDbCredentialResultOutput) CompartmentOcid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsMyUserDbCredentialResult) *string { return v.CompartmentOcid }).(pulumi.StringPtrOutput)
 }
 
 // The user's database password.
-func (o LookupDomainsMyUserDbCredentialResultOutput) DbPassword() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsMyUserDbCredentialResult) string { return v.DbPassword }).(pulumi.StringOutput)
+func (o LookupDomainsMyUserDbCredentialResultOutput) DbPassword() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsMyUserDbCredentialResult) *string { return v.DbPassword }).(pulumi.StringPtrOutput)
 }
 
 // A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
-func (o LookupDomainsMyUserDbCredentialResultOutput) DeleteInProgress() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupDomainsMyUserDbCredentialResult) bool { return v.DeleteInProgress }).(pulumi.BoolOutput)
+func (o LookupDomainsMyUserDbCredentialResultOutput) DeleteInProgress() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupDomainsMyUserDbCredentialResult) *bool { return v.DeleteInProgress }).(pulumi.BoolPtrOutput)
 }
 
 // Description
-func (o LookupDomainsMyUserDbCredentialResultOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsMyUserDbCredentialResult) string { return v.Description }).(pulumi.StringOutput)
+func (o LookupDomainsMyUserDbCredentialResultOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsMyUserDbCredentialResult) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
-func (o LookupDomainsMyUserDbCredentialResultOutput) DomainOcid() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsMyUserDbCredentialResult) string { return v.DomainOcid }).(pulumi.StringOutput)
+func (o LookupDomainsMyUserDbCredentialResultOutput) DomainOcid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsMyUserDbCredentialResult) *string { return v.DomainOcid }).(pulumi.StringPtrOutput)
 }
 
 // Indicates that the database password has expired.
-func (o LookupDomainsMyUserDbCredentialResultOutput) Expired() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupDomainsMyUserDbCredentialResult) bool { return v.Expired }).(pulumi.BoolOutput)
+func (o LookupDomainsMyUserDbCredentialResultOutput) Expired() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupDomainsMyUserDbCredentialResult) *bool { return v.Expired }).(pulumi.BoolPtrOutput)
 }
 
 // When the user credential expires.
-func (o LookupDomainsMyUserDbCredentialResultOutput) ExpiresOn() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsMyUserDbCredentialResult) string { return v.ExpiresOn }).(pulumi.StringOutput)
+func (o LookupDomainsMyUserDbCredentialResultOutput) ExpiresOn() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsMyUserDbCredentialResult) *string { return v.ExpiresOn }).(pulumi.StringPtrOutput)
 }
 
 // Unique identifier for the SCIM Resource as defined by the Service Provider. Each representation of the Resource MUST include a non-empty id value. This identifier MUST be unique across the Service Provider's entire set of Resources. It MUST be a stable, non-reassignable identifier that does not change when the same Resource is returned in subsequent requests. The value of the id attribute is always issued by the Service Provider and MUST never be specified by the Service Consumer. bulkId: is a reserved keyword and MUST NOT be used in the unique identifier.
-func (o LookupDomainsMyUserDbCredentialResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsMyUserDbCredentialResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupDomainsMyUserDbCredentialResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsMyUserDbCredentialResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The User or App who created the Resource
@@ -235,8 +228,8 @@ func (o LookupDomainsMyUserDbCredentialResultOutput) IdcsLastModifiedBies() GetD
 }
 
 // The release number when the resource was upgraded.
-func (o LookupDomainsMyUserDbCredentialResultOutput) IdcsLastUpgradedInRelease() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsMyUserDbCredentialResult) string { return v.IdcsLastUpgradedInRelease }).(pulumi.StringOutput)
+func (o LookupDomainsMyUserDbCredentialResultOutput) IdcsLastUpgradedInRelease() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsMyUserDbCredentialResult) *string { return v.IdcsLastUpgradedInRelease }).(pulumi.StringPtrOutput)
 }
 
 // Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
@@ -245,8 +238,8 @@ func (o LookupDomainsMyUserDbCredentialResultOutput) IdcsPreventedOperations() p
 }
 
 // A DateTime that specifies the date and time when the current database password was set.
-func (o LookupDomainsMyUserDbCredentialResultOutput) LastSetDate() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsMyUserDbCredentialResult) string { return v.LastSetDate }).(pulumi.StringOutput)
+func (o LookupDomainsMyUserDbCredentialResultOutput) LastSetDate() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsMyUserDbCredentialResult) *string { return v.LastSetDate }).(pulumi.StringPtrOutput)
 }
 
 // A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
@@ -255,13 +248,13 @@ func (o LookupDomainsMyUserDbCredentialResultOutput) Metas() GetDomainsMyUserDbC
 }
 
 // The user's database password with mixed salt.
-func (o LookupDomainsMyUserDbCredentialResultOutput) MixedDbPassword() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsMyUserDbCredentialResult) string { return v.MixedDbPassword }).(pulumi.StringOutput)
+func (o LookupDomainsMyUserDbCredentialResultOutput) MixedDbPassword() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsMyUserDbCredentialResult) *string { return v.MixedDbPassword }).(pulumi.StringPtrOutput)
 }
 
 // The mixed salt of the password.
-func (o LookupDomainsMyUserDbCredentialResultOutput) MixedSalt() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsMyUserDbCredentialResult) string { return v.MixedSalt }).(pulumi.StringOutput)
+func (o LookupDomainsMyUserDbCredentialResultOutput) MixedSalt() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsMyUserDbCredentialResult) *string { return v.MixedSalt }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupDomainsMyUserDbCredentialResultOutput) MyUserDbCredentialId() pulumi.StringOutput {
@@ -269,13 +262,13 @@ func (o LookupDomainsMyUserDbCredentialResultOutput) MyUserDbCredentialId() pulu
 }
 
 // The username.
-func (o LookupDomainsMyUserDbCredentialResultOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsMyUserDbCredentialResult) string { return v.Name }).(pulumi.StringOutput)
+func (o LookupDomainsMyUserDbCredentialResultOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsMyUserDbCredentialResult) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // The user's OCID.
-func (o LookupDomainsMyUserDbCredentialResultOutput) Ocid() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsMyUserDbCredentialResult) string { return v.Ocid }).(pulumi.StringOutput)
+func (o LookupDomainsMyUserDbCredentialResultOutput) Ocid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsMyUserDbCredentialResult) *string { return v.Ocid }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupDomainsMyUserDbCredentialResultOutput) ResourceTypeSchemaVersion() pulumi.StringPtrOutput {
@@ -283,8 +276,8 @@ func (o LookupDomainsMyUserDbCredentialResultOutput) ResourceTypeSchemaVersion()
 }
 
 // The salt of the password.
-func (o LookupDomainsMyUserDbCredentialResultOutput) Salt() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsMyUserDbCredentialResult) string { return v.Salt }).(pulumi.StringOutput)
+func (o LookupDomainsMyUserDbCredentialResultOutput) Salt() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsMyUserDbCredentialResult) *string { return v.Salt }).(pulumi.StringPtrOutput)
 }
 
 // REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
@@ -293,8 +286,8 @@ func (o LookupDomainsMyUserDbCredentialResultOutput) Schemas() pulumi.StringArra
 }
 
 // User credential status
-func (o LookupDomainsMyUserDbCredentialResultOutput) Status() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsMyUserDbCredentialResult) string { return v.Status }).(pulumi.StringOutput)
+func (o LookupDomainsMyUserDbCredentialResultOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsMyUserDbCredentialResult) *string { return v.Status }).(pulumi.StringPtrOutput)
 }
 
 // A list of tags on this resource.
@@ -303,8 +296,8 @@ func (o LookupDomainsMyUserDbCredentialResultOutput) Tags() GetDomainsMyUserDbCr
 }
 
 // Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
-func (o LookupDomainsMyUserDbCredentialResultOutput) TenancyOcid() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsMyUserDbCredentialResult) string { return v.TenancyOcid }).(pulumi.StringOutput)
+func (o LookupDomainsMyUserDbCredentialResultOutput) TenancyOcid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsMyUserDbCredentialResult) *string { return v.TenancyOcid }).(pulumi.StringPtrOutput)
 }
 
 // The user linked to the database credential.

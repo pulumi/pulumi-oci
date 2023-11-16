@@ -16,6 +16,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetModelsModelCollectionItem {
@@ -23,315 +25,315 @@ public final class GetModelsModelCollectionItem {
      * @return The ID of the compartment in which to list resources.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) collection of active custom Key Value models that need to be composed.
      * 
      */
-    private List<GetModelsModelCollectionItemComponentModel> componentModels;
+    private @Nullable List<GetModelsModelCollectionItemComponentModel> componentModels;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{&#34;foo-namespace&#34;: {&#34;bar-key&#34;: &#34;value&#34;}}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return An optional description of the model.
      * 
      */
-    private String description;
+    private @Nullable String description;
     /**
      * @return A filter to return only resources that match the entire display name given.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return The filter to find the model with the given identifier.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Set to true when the model is created by using multiple key value extraction models.
      * 
      */
-    private Boolean isComposedModel;
+    private @Nullable Boolean isComposedModel;
     /**
      * @return Set to true when experimenting with a new model type or dataset, so model training is quick, with a predefined low number of passes through the training data.
      * 
      */
-    private Boolean isQuickMode;
+    private @Nullable Boolean isQuickMode;
     /**
      * @return The collection of labels used to train the custom model.
      * 
      */
-    private List<String> labels;
+    private @Nullable List<String> labels;
     /**
      * @return A message describing the current state in more detail, that can provide actionable information if training failed.
      * 
      */
-    private String lifecycleDetails;
+    private @Nullable String lifecycleDetails;
     /**
      * @return The maximum model training time in hours, expressed as a decimal fraction.
      * 
      */
-    private Double maxTrainingTimeInHours;
+    private @Nullable Double maxTrainingTimeInHours;
     /**
      * @return Trained Model Metrics.
      * 
      */
-    private List<GetModelsModelCollectionItemMetric> metrics;
+    private @Nullable List<GetModelsModelCollectionItemMetric> metrics;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of active custom Key Value model that need to be composed.
      * 
      */
-    private String modelId;
+    private @Nullable String modelId;
     /**
      * @return The type of the Document model.
      * 
      */
-    private String modelType;
+    private @Nullable String modelType;
     /**
      * @return The version of the model.
      * 
      */
-    private String modelVersion;
+    private @Nullable String modelVersion;
     /**
      * @return The ID of the project for which to list the objects.
      * 
      */
-    private String projectId;
+    private @Nullable String projectId;
     /**
      * @return The filter to match models with the given lifecycleState.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. For example: `{&#34;orcl-cloud&#34;: {&#34;free-tier-retained&#34;: &#34;true&#34;}}`
      * 
      */
-    private Map<String,Object> systemTags;
+    private @Nullable Map<String,Object> systemTags;
     /**
      * @return The tenancy id of the model.
      * 
      */
-    private String tenancyId;
+    private @Nullable String tenancyId;
     /**
      * @return The base entity which is the input for creating and training a model.
      * 
      */
-    private List<GetModelsModelCollectionItemTestingDataset> testingDatasets;
+    private @Nullable List<GetModelsModelCollectionItemTestingDataset> testingDatasets;
     /**
      * @return When the model was created, as an RFC3339 datetime string.
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return When the model was updated, as an RFC3339 datetime string.
      * 
      */
-    private String timeUpdated;
+    private @Nullable String timeUpdated;
     /**
      * @return The total hours actually used for model training.
      * 
      */
-    private Double trainedTimeInHours;
+    private @Nullable Double trainedTimeInHours;
     /**
      * @return The base entity which is the input for creating and training a model.
      * 
      */
-    private List<GetModelsModelCollectionItemTrainingDataset> trainingDatasets;
+    private @Nullable List<GetModelsModelCollectionItemTrainingDataset> trainingDatasets;
     /**
      * @return The base entity which is the input for creating and training a model.
      * 
      */
-    private List<GetModelsModelCollectionItemValidationDataset> validationDatasets;
+    private @Nullable List<GetModelsModelCollectionItemValidationDataset> validationDatasets;
 
     private GetModelsModelCollectionItem() {}
     /**
      * @return The ID of the compartment in which to list resources.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) collection of active custom Key Value models that need to be composed.
      * 
      */
     public List<GetModelsModelCollectionItemComponentModel> componentModels() {
-        return this.componentModels;
+        return this.componentModels == null ? List.of() : this.componentModels;
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{&#34;foo-namespace&#34;: {&#34;bar-key&#34;: &#34;value&#34;}}`
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return An optional description of the model.
      * 
      */
-    public String description() {
-        return this.description;
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
     /**
      * @return A filter to return only resources that match the entire display name given.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return The filter to find the model with the given identifier.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Set to true when the model is created by using multiple key value extraction models.
      * 
      */
-    public Boolean isComposedModel() {
-        return this.isComposedModel;
+    public Optional<Boolean> isComposedModel() {
+        return Optional.ofNullable(this.isComposedModel);
     }
     /**
      * @return Set to true when experimenting with a new model type or dataset, so model training is quick, with a predefined low number of passes through the training data.
      * 
      */
-    public Boolean isQuickMode() {
-        return this.isQuickMode;
+    public Optional<Boolean> isQuickMode() {
+        return Optional.ofNullable(this.isQuickMode);
     }
     /**
      * @return The collection of labels used to train the custom model.
      * 
      */
     public List<String> labels() {
-        return this.labels;
+        return this.labels == null ? List.of() : this.labels;
     }
     /**
      * @return A message describing the current state in more detail, that can provide actionable information if training failed.
      * 
      */
-    public String lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Optional<String> lifecycleDetails() {
+        return Optional.ofNullable(this.lifecycleDetails);
     }
     /**
      * @return The maximum model training time in hours, expressed as a decimal fraction.
      * 
      */
-    public Double maxTrainingTimeInHours() {
-        return this.maxTrainingTimeInHours;
+    public Optional<Double> maxTrainingTimeInHours() {
+        return Optional.ofNullable(this.maxTrainingTimeInHours);
     }
     /**
      * @return Trained Model Metrics.
      * 
      */
     public List<GetModelsModelCollectionItemMetric> metrics() {
-        return this.metrics;
+        return this.metrics == null ? List.of() : this.metrics;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of active custom Key Value model that need to be composed.
      * 
      */
-    public String modelId() {
-        return this.modelId;
+    public Optional<String> modelId() {
+        return Optional.ofNullable(this.modelId);
     }
     /**
      * @return The type of the Document model.
      * 
      */
-    public String modelType() {
-        return this.modelType;
+    public Optional<String> modelType() {
+        return Optional.ofNullable(this.modelType);
     }
     /**
      * @return The version of the model.
      * 
      */
-    public String modelVersion() {
-        return this.modelVersion;
+    public Optional<String> modelVersion() {
+        return Optional.ofNullable(this.modelVersion);
     }
     /**
      * @return The ID of the project for which to list the objects.
      * 
      */
-    public String projectId() {
-        return this.projectId;
+    public Optional<String> projectId() {
+        return Optional.ofNullable(this.projectId);
     }
     /**
      * @return The filter to match models with the given lifecycleState.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. For example: `{&#34;orcl-cloud&#34;: {&#34;free-tier-retained&#34;: &#34;true&#34;}}`
      * 
      */
     public Map<String,Object> systemTags() {
-        return this.systemTags;
+        return this.systemTags == null ? Map.of() : this.systemTags;
     }
     /**
      * @return The tenancy id of the model.
      * 
      */
-    public String tenancyId() {
-        return this.tenancyId;
+    public Optional<String> tenancyId() {
+        return Optional.ofNullable(this.tenancyId);
     }
     /**
      * @return The base entity which is the input for creating and training a model.
      * 
      */
     public List<GetModelsModelCollectionItemTestingDataset> testingDatasets() {
-        return this.testingDatasets;
+        return this.testingDatasets == null ? List.of() : this.testingDatasets;
     }
     /**
      * @return When the model was created, as an RFC3339 datetime string.
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return When the model was updated, as an RFC3339 datetime string.
      * 
      */
-    public String timeUpdated() {
-        return this.timeUpdated;
+    public Optional<String> timeUpdated() {
+        return Optional.ofNullable(this.timeUpdated);
     }
     /**
      * @return The total hours actually used for model training.
      * 
      */
-    public Double trainedTimeInHours() {
-        return this.trainedTimeInHours;
+    public Optional<Double> trainedTimeInHours() {
+        return Optional.ofNullable(this.trainedTimeInHours);
     }
     /**
      * @return The base entity which is the input for creating and training a model.
      * 
      */
     public List<GetModelsModelCollectionItemTrainingDataset> trainingDatasets() {
-        return this.trainingDatasets;
+        return this.trainingDatasets == null ? List.of() : this.trainingDatasets;
     }
     /**
      * @return The base entity which is the input for creating and training a model.
      * 
      */
     public List<GetModelsModelCollectionItemValidationDataset> validationDatasets() {
-        return this.validationDatasets;
+        return this.validationDatasets == null ? List.of() : this.validationDatasets;
     }
 
     public static Builder builder() {
@@ -343,32 +345,32 @@ public final class GetModelsModelCollectionItem {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String compartmentId;
-        private List<GetModelsModelCollectionItemComponentModel> componentModels;
-        private Map<String,Object> definedTags;
-        private String description;
-        private String displayName;
-        private Map<String,Object> freeformTags;
-        private String id;
-        private Boolean isComposedModel;
-        private Boolean isQuickMode;
-        private List<String> labels;
-        private String lifecycleDetails;
-        private Double maxTrainingTimeInHours;
-        private List<GetModelsModelCollectionItemMetric> metrics;
-        private String modelId;
-        private String modelType;
-        private String modelVersion;
-        private String projectId;
-        private String state;
-        private Map<String,Object> systemTags;
-        private String tenancyId;
-        private List<GetModelsModelCollectionItemTestingDataset> testingDatasets;
-        private String timeCreated;
-        private String timeUpdated;
-        private Double trainedTimeInHours;
-        private List<GetModelsModelCollectionItemTrainingDataset> trainingDatasets;
-        private List<GetModelsModelCollectionItemValidationDataset> validationDatasets;
+        private @Nullable String compartmentId;
+        private @Nullable List<GetModelsModelCollectionItemComponentModel> componentModels;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String description;
+        private @Nullable String displayName;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String id;
+        private @Nullable Boolean isComposedModel;
+        private @Nullable Boolean isQuickMode;
+        private @Nullable List<String> labels;
+        private @Nullable String lifecycleDetails;
+        private @Nullable Double maxTrainingTimeInHours;
+        private @Nullable List<GetModelsModelCollectionItemMetric> metrics;
+        private @Nullable String modelId;
+        private @Nullable String modelType;
+        private @Nullable String modelVersion;
+        private @Nullable String projectId;
+        private @Nullable String state;
+        private @Nullable Map<String,Object> systemTags;
+        private @Nullable String tenancyId;
+        private @Nullable List<GetModelsModelCollectionItemTestingDataset> testingDatasets;
+        private @Nullable String timeCreated;
+        private @Nullable String timeUpdated;
+        private @Nullable Double trainedTimeInHours;
+        private @Nullable List<GetModelsModelCollectionItemTrainingDataset> trainingDatasets;
+        private @Nullable List<GetModelsModelCollectionItemValidationDataset> validationDatasets;
         public Builder() {}
         public Builder(GetModelsModelCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -401,148 +403,148 @@ public final class GetModelsModelCollectionItem {
         }
 
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder componentModels(List<GetModelsModelCollectionItemComponentModel> componentModels) {
-            this.componentModels = Objects.requireNonNull(componentModels);
+        public Builder componentModels(@Nullable List<GetModelsModelCollectionItemComponentModel> componentModels) {
+            this.componentModels = componentModels;
             return this;
         }
         public Builder componentModels(GetModelsModelCollectionItemComponentModel... componentModels) {
             return componentModels(List.of(componentModels));
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+        public Builder description(@Nullable String description) {
+            this.description = description;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder isComposedModel(Boolean isComposedModel) {
-            this.isComposedModel = Objects.requireNonNull(isComposedModel);
+        public Builder isComposedModel(@Nullable Boolean isComposedModel) {
+            this.isComposedModel = isComposedModel;
             return this;
         }
         @CustomType.Setter
-        public Builder isQuickMode(Boolean isQuickMode) {
-            this.isQuickMode = Objects.requireNonNull(isQuickMode);
+        public Builder isQuickMode(@Nullable Boolean isQuickMode) {
+            this.isQuickMode = isQuickMode;
             return this;
         }
         @CustomType.Setter
-        public Builder labels(List<String> labels) {
-            this.labels = Objects.requireNonNull(labels);
+        public Builder labels(@Nullable List<String> labels) {
+            this.labels = labels;
             return this;
         }
         public Builder labels(String... labels) {
             return labels(List.of(labels));
         }
         @CustomType.Setter
-        public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+        public Builder lifecycleDetails(@Nullable String lifecycleDetails) {
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
-        public Builder maxTrainingTimeInHours(Double maxTrainingTimeInHours) {
-            this.maxTrainingTimeInHours = Objects.requireNonNull(maxTrainingTimeInHours);
+        public Builder maxTrainingTimeInHours(@Nullable Double maxTrainingTimeInHours) {
+            this.maxTrainingTimeInHours = maxTrainingTimeInHours;
             return this;
         }
         @CustomType.Setter
-        public Builder metrics(List<GetModelsModelCollectionItemMetric> metrics) {
-            this.metrics = Objects.requireNonNull(metrics);
+        public Builder metrics(@Nullable List<GetModelsModelCollectionItemMetric> metrics) {
+            this.metrics = metrics;
             return this;
         }
         public Builder metrics(GetModelsModelCollectionItemMetric... metrics) {
             return metrics(List.of(metrics));
         }
         @CustomType.Setter
-        public Builder modelId(String modelId) {
-            this.modelId = Objects.requireNonNull(modelId);
+        public Builder modelId(@Nullable String modelId) {
+            this.modelId = modelId;
             return this;
         }
         @CustomType.Setter
-        public Builder modelType(String modelType) {
-            this.modelType = Objects.requireNonNull(modelType);
+        public Builder modelType(@Nullable String modelType) {
+            this.modelType = modelType;
             return this;
         }
         @CustomType.Setter
-        public Builder modelVersion(String modelVersion) {
-            this.modelVersion = Objects.requireNonNull(modelVersion);
+        public Builder modelVersion(@Nullable String modelVersion) {
+            this.modelVersion = modelVersion;
             return this;
         }
         @CustomType.Setter
-        public Builder projectId(String projectId) {
-            this.projectId = Objects.requireNonNull(projectId);
+        public Builder projectId(@Nullable String projectId) {
+            this.projectId = projectId;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+        public Builder systemTags(@Nullable Map<String,Object> systemTags) {
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
-        public Builder tenancyId(String tenancyId) {
-            this.tenancyId = Objects.requireNonNull(tenancyId);
+        public Builder tenancyId(@Nullable String tenancyId) {
+            this.tenancyId = tenancyId;
             return this;
         }
         @CustomType.Setter
-        public Builder testingDatasets(List<GetModelsModelCollectionItemTestingDataset> testingDatasets) {
-            this.testingDatasets = Objects.requireNonNull(testingDatasets);
+        public Builder testingDatasets(@Nullable List<GetModelsModelCollectionItemTestingDataset> testingDatasets) {
+            this.testingDatasets = testingDatasets;
             return this;
         }
         public Builder testingDatasets(GetModelsModelCollectionItemTestingDataset... testingDatasets) {
             return testingDatasets(List.of(testingDatasets));
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+        public Builder timeUpdated(@Nullable String timeUpdated) {
+            this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter
-        public Builder trainedTimeInHours(Double trainedTimeInHours) {
-            this.trainedTimeInHours = Objects.requireNonNull(trainedTimeInHours);
+        public Builder trainedTimeInHours(@Nullable Double trainedTimeInHours) {
+            this.trainedTimeInHours = trainedTimeInHours;
             return this;
         }
         @CustomType.Setter
-        public Builder trainingDatasets(List<GetModelsModelCollectionItemTrainingDataset> trainingDatasets) {
-            this.trainingDatasets = Objects.requireNonNull(trainingDatasets);
+        public Builder trainingDatasets(@Nullable List<GetModelsModelCollectionItemTrainingDataset> trainingDatasets) {
+            this.trainingDatasets = trainingDatasets;
             return this;
         }
         public Builder trainingDatasets(GetModelsModelCollectionItemTrainingDataset... trainingDatasets) {
             return trainingDatasets(List.of(trainingDatasets));
         }
         @CustomType.Setter
-        public Builder validationDatasets(List<GetModelsModelCollectionItemValidationDataset> validationDatasets) {
-            this.validationDatasets = Objects.requireNonNull(validationDatasets);
+        public Builder validationDatasets(@Nullable List<GetModelsModelCollectionItemValidationDataset> validationDatasets) {
+            this.validationDatasets = validationDatasets;
             return this;
         }
         public Builder validationDatasets(GetModelsModelCollectionItemValidationDataset... validationDatasets) {

@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Operations Insights Private Endpoint resource in Oracle Cloud Infrastructure Opsi service.
@@ -73,7 +72,7 @@ type OperationsInsightsPrivateEndpoint struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) The description of the private endpoint.
-	Description pulumi.StringOutput `pulumi:"description"`
+	Description pulumi.StringPtrOutput `pulumi:"description"`
 	// (Updatable) The display name for the private endpoint. It is changeable.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -81,21 +80,21 @@ type OperationsInsightsPrivateEndpoint struct {
 	// The flag to identify if private endpoint is used for rac database or not
 	IsUsedForRacDbs pulumi.BoolOutput `pulumi:"isUsedForRacDbs"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrOutput `pulumi:"lifecycleDetails"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups that the private endpoint belongs to.
 	NsgIds pulumi.StringArrayOutput `pulumi:"nsgIds"`
 	// A message describing the status of the private endpoint connection of this resource. For example, it can be used to provide actionable information about the validity of the private endpoint connection.
-	PrivateEndpointStatusDetails pulumi.StringOutput `pulumi:"privateEndpointStatusDetails"`
+	PrivateEndpointStatusDetails pulumi.StringPtrOutput `pulumi:"privateEndpointStatusDetails"`
 	// The private IP addresses assigned to the private endpoint. All IP addresses will be concatenated if it is RAC DBs.
-	PrivateIp pulumi.StringOutput `pulumi:"privateIp"`
+	PrivateIp pulumi.StringPtrOutput `pulumi:"privateIp"`
 	// The current state of the private endpoint.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// The Subnet [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Private service accessed database.
 	SubnetId pulumi.StringOutput `pulumi:"subnetId"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
 	// The date and time the private endpoint was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The VCN [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Private service accessed database.
 	//
 	// ** IMPORTANT **
@@ -299,12 +298,6 @@ func (i *OperationsInsightsPrivateEndpoint) ToOperationsInsightsPrivateEndpointO
 	return pulumi.ToOutputWithContext(ctx, i).(OperationsInsightsPrivateEndpointOutput)
 }
 
-func (i *OperationsInsightsPrivateEndpoint) ToOutput(ctx context.Context) pulumix.Output[*OperationsInsightsPrivateEndpoint] {
-	return pulumix.Output[*OperationsInsightsPrivateEndpoint]{
-		OutputState: i.ToOperationsInsightsPrivateEndpointOutputWithContext(ctx).OutputState,
-	}
-}
-
 // OperationsInsightsPrivateEndpointArrayInput is an input type that accepts OperationsInsightsPrivateEndpointArray and OperationsInsightsPrivateEndpointArrayOutput values.
 // You can construct a concrete instance of `OperationsInsightsPrivateEndpointArrayInput` via:
 //
@@ -328,12 +321,6 @@ func (i OperationsInsightsPrivateEndpointArray) ToOperationsInsightsPrivateEndpo
 
 func (i OperationsInsightsPrivateEndpointArray) ToOperationsInsightsPrivateEndpointArrayOutputWithContext(ctx context.Context) OperationsInsightsPrivateEndpointArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(OperationsInsightsPrivateEndpointArrayOutput)
-}
-
-func (i OperationsInsightsPrivateEndpointArray) ToOutput(ctx context.Context) pulumix.Output[[]*OperationsInsightsPrivateEndpoint] {
-	return pulumix.Output[[]*OperationsInsightsPrivateEndpoint]{
-		OutputState: i.ToOperationsInsightsPrivateEndpointArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // OperationsInsightsPrivateEndpointMapInput is an input type that accepts OperationsInsightsPrivateEndpointMap and OperationsInsightsPrivateEndpointMapOutput values.
@@ -361,12 +348,6 @@ func (i OperationsInsightsPrivateEndpointMap) ToOperationsInsightsPrivateEndpoin
 	return pulumi.ToOutputWithContext(ctx, i).(OperationsInsightsPrivateEndpointMapOutput)
 }
 
-func (i OperationsInsightsPrivateEndpointMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*OperationsInsightsPrivateEndpoint] {
-	return pulumix.Output[map[string]*OperationsInsightsPrivateEndpoint]{
-		OutputState: i.ToOperationsInsightsPrivateEndpointMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type OperationsInsightsPrivateEndpointOutput struct{ *pulumi.OutputState }
 
 func (OperationsInsightsPrivateEndpointOutput) ElementType() reflect.Type {
@@ -381,12 +362,6 @@ func (o OperationsInsightsPrivateEndpointOutput) ToOperationsInsightsPrivateEndp
 	return o
 }
 
-func (o OperationsInsightsPrivateEndpointOutput) ToOutput(ctx context.Context) pulumix.Output[*OperationsInsightsPrivateEndpoint] {
-	return pulumix.Output[*OperationsInsightsPrivateEndpoint]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Private service accessed database.
 func (o OperationsInsightsPrivateEndpointOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *OperationsInsightsPrivateEndpoint) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
@@ -398,8 +373,8 @@ func (o OperationsInsightsPrivateEndpointOutput) DefinedTags() pulumi.MapOutput 
 }
 
 // (Updatable) The description of the private endpoint.
-func (o OperationsInsightsPrivateEndpointOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v *OperationsInsightsPrivateEndpoint) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
+func (o OperationsInsightsPrivateEndpointOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *OperationsInsightsPrivateEndpoint) pulumi.StringPtrOutput { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The display name for the private endpoint. It is changeable.
@@ -418,8 +393,8 @@ func (o OperationsInsightsPrivateEndpointOutput) IsUsedForRacDbs() pulumi.BoolOu
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-func (o OperationsInsightsPrivateEndpointOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v *OperationsInsightsPrivateEndpoint) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o OperationsInsightsPrivateEndpointOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *OperationsInsightsPrivateEndpoint) pulumi.StringPtrOutput { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups that the private endpoint belongs to.
@@ -428,18 +403,20 @@ func (o OperationsInsightsPrivateEndpointOutput) NsgIds() pulumi.StringArrayOutp
 }
 
 // A message describing the status of the private endpoint connection of this resource. For example, it can be used to provide actionable information about the validity of the private endpoint connection.
-func (o OperationsInsightsPrivateEndpointOutput) PrivateEndpointStatusDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v *OperationsInsightsPrivateEndpoint) pulumi.StringOutput { return v.PrivateEndpointStatusDetails }).(pulumi.StringOutput)
+func (o OperationsInsightsPrivateEndpointOutput) PrivateEndpointStatusDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *OperationsInsightsPrivateEndpoint) pulumi.StringPtrOutput {
+		return v.PrivateEndpointStatusDetails
+	}).(pulumi.StringPtrOutput)
 }
 
 // The private IP addresses assigned to the private endpoint. All IP addresses will be concatenated if it is RAC DBs.
-func (o OperationsInsightsPrivateEndpointOutput) PrivateIp() pulumi.StringOutput {
-	return o.ApplyT(func(v *OperationsInsightsPrivateEndpoint) pulumi.StringOutput { return v.PrivateIp }).(pulumi.StringOutput)
+func (o OperationsInsightsPrivateEndpointOutput) PrivateIp() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *OperationsInsightsPrivateEndpoint) pulumi.StringPtrOutput { return v.PrivateIp }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the private endpoint.
-func (o OperationsInsightsPrivateEndpointOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *OperationsInsightsPrivateEndpoint) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o OperationsInsightsPrivateEndpointOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *OperationsInsightsPrivateEndpoint) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The Subnet [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Private service accessed database.
@@ -453,8 +430,8 @@ func (o OperationsInsightsPrivateEndpointOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The date and time the private endpoint was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-func (o OperationsInsightsPrivateEndpointOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *OperationsInsightsPrivateEndpoint) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o OperationsInsightsPrivateEndpointOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *OperationsInsightsPrivateEndpoint) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The VCN [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Private service accessed database.
@@ -479,12 +456,6 @@ func (o OperationsInsightsPrivateEndpointArrayOutput) ToOperationsInsightsPrivat
 	return o
 }
 
-func (o OperationsInsightsPrivateEndpointArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*OperationsInsightsPrivateEndpoint] {
-	return pulumix.Output[[]*OperationsInsightsPrivateEndpoint]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o OperationsInsightsPrivateEndpointArrayOutput) Index(i pulumi.IntInput) OperationsInsightsPrivateEndpointOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *OperationsInsightsPrivateEndpoint {
 		return vs[0].([]*OperationsInsightsPrivateEndpoint)[vs[1].(int)]
@@ -503,12 +474,6 @@ func (o OperationsInsightsPrivateEndpointMapOutput) ToOperationsInsightsPrivateE
 
 func (o OperationsInsightsPrivateEndpointMapOutput) ToOperationsInsightsPrivateEndpointMapOutputWithContext(ctx context.Context) OperationsInsightsPrivateEndpointMapOutput {
 	return o
-}
-
-func (o OperationsInsightsPrivateEndpointMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*OperationsInsightsPrivateEndpoint] {
-	return pulumix.Output[map[string]*OperationsInsightsPrivateEndpoint]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o OperationsInsightsPrivateEndpointMapOutput) MapIndex(k pulumi.StringInput) OperationsInsightsPrivateEndpointOutput {

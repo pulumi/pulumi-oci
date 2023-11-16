@@ -75,13 +75,13 @@ namespace Pulumi.Oci.NetworkLoadBalancer
         /// (Updatable) IP version associated with the backend set.
         /// </summary>
         [Output("ipVersion")]
-        public Output<string> IpVersion { get; private set; } = null!;
+        public Output<string?> IpVersion { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) If this parameter is enabled, then the network load balancer preserves the source IP of the packet when it is forwarded to backends. Backends see the original source IP. If the isPreserveSourceDestination parameter is enabled for the network load balancer resource, then this parameter cannot be disabled. The value is true by default.
         /// </summary>
         [Output("isPreserveSource")]
-        public Output<bool> IsPreserveSource { get; private set; } = null!;
+        public Output<bool?> IsPreserveSource { get; private set; } = null!;
 
         /// <summary>
         /// A user-friendly name for the backend set that must be unique and cannot be changed.

@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Sign resource in Oracle Cloud Infrastructure Kms service.
@@ -68,13 +67,13 @@ type Sign struct {
 	// The OCID of the key used to sign the message.
 	KeyId pulumi.StringOutput `pulumi:"keyId"`
 	// The OCID of the key version used to sign the message.
-	KeyVersionId pulumi.StringOutput `pulumi:"keyVersionId"`
+	KeyVersionId pulumi.StringPtrOutput `pulumi:"keyVersionId"`
 	// The base64-encoded binary data object denoting the message or message digest to sign. You can have a message up to 4096 bytes in size. To sign a larger message, provide the message digest.
 	Message pulumi.StringOutput `pulumi:"message"`
 	// Denotes whether the value of the message parameter is a raw message or a message digest. The default value, `RAW`, indicates a message. To indicate a message digest, use `DIGEST`.
-	MessageType pulumi.StringOutput `pulumi:"messageType"`
+	MessageType pulumi.StringPtrOutput `pulumi:"messageType"`
 	// The base64-encoded binary data object denoting the cryptographic signature generated for the message or message digest.
-	Signature pulumi.StringOutput `pulumi:"signature"`
+	Signature pulumi.StringPtrOutput `pulumi:"signature"`
 	// The algorithm to use to sign the message or message digest. For RSA keys, supported signature schemes include PKCS #1 and RSASSA-PSS, along with different hashing algorithms. For ECDSA keys, ECDSA is the supported signature scheme with different hashing algorithms. When you pass a message digest for signing, ensure that you specify the same hashing algorithm as used when creating the message digest.
 	//
 	// ** IMPORTANT **
@@ -227,12 +226,6 @@ func (i *Sign) ToSignOutputWithContext(ctx context.Context) SignOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(SignOutput)
 }
 
-func (i *Sign) ToOutput(ctx context.Context) pulumix.Output[*Sign] {
-	return pulumix.Output[*Sign]{
-		OutputState: i.ToSignOutputWithContext(ctx).OutputState,
-	}
-}
-
 // SignArrayInput is an input type that accepts SignArray and SignArrayOutput values.
 // You can construct a concrete instance of `SignArrayInput` via:
 //
@@ -256,12 +249,6 @@ func (i SignArray) ToSignArrayOutput() SignArrayOutput {
 
 func (i SignArray) ToSignArrayOutputWithContext(ctx context.Context) SignArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(SignArrayOutput)
-}
-
-func (i SignArray) ToOutput(ctx context.Context) pulumix.Output[[]*Sign] {
-	return pulumix.Output[[]*Sign]{
-		OutputState: i.ToSignArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // SignMapInput is an input type that accepts SignMap and SignMapOutput values.
@@ -289,12 +276,6 @@ func (i SignMap) ToSignMapOutputWithContext(ctx context.Context) SignMapOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(SignMapOutput)
 }
 
-func (i SignMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*Sign] {
-	return pulumix.Output[map[string]*Sign]{
-		OutputState: i.ToSignMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type SignOutput struct{ *pulumi.OutputState }
 
 func (SignOutput) ElementType() reflect.Type {
@@ -309,12 +290,6 @@ func (o SignOutput) ToSignOutputWithContext(ctx context.Context) SignOutput {
 	return o
 }
 
-func (o SignOutput) ToOutput(ctx context.Context) pulumix.Output[*Sign] {
-	return pulumix.Output[*Sign]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The service endpoint to perform cryptographic operations against. Cryptographic operations include 'Encrypt,' 'Decrypt,', 'GenerateDataEncryptionKey', 'Sign' and 'Verify' operations. see Vault Crypto endpoint.
 func (o SignOutput) CryptoEndpoint() pulumi.StringOutput {
 	return o.ApplyT(func(v *Sign) pulumi.StringOutput { return v.CryptoEndpoint }).(pulumi.StringOutput)
@@ -326,8 +301,8 @@ func (o SignOutput) KeyId() pulumi.StringOutput {
 }
 
 // The OCID of the key version used to sign the message.
-func (o SignOutput) KeyVersionId() pulumi.StringOutput {
-	return o.ApplyT(func(v *Sign) pulumi.StringOutput { return v.KeyVersionId }).(pulumi.StringOutput)
+func (o SignOutput) KeyVersionId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Sign) pulumi.StringPtrOutput { return v.KeyVersionId }).(pulumi.StringPtrOutput)
 }
 
 // The base64-encoded binary data object denoting the message or message digest to sign. You can have a message up to 4096 bytes in size. To sign a larger message, provide the message digest.
@@ -336,13 +311,13 @@ func (o SignOutput) Message() pulumi.StringOutput {
 }
 
 // Denotes whether the value of the message parameter is a raw message or a message digest. The default value, `RAW`, indicates a message. To indicate a message digest, use `DIGEST`.
-func (o SignOutput) MessageType() pulumi.StringOutput {
-	return o.ApplyT(func(v *Sign) pulumi.StringOutput { return v.MessageType }).(pulumi.StringOutput)
+func (o SignOutput) MessageType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Sign) pulumi.StringPtrOutput { return v.MessageType }).(pulumi.StringPtrOutput)
 }
 
 // The base64-encoded binary data object denoting the cryptographic signature generated for the message or message digest.
-func (o SignOutput) Signature() pulumi.StringOutput {
-	return o.ApplyT(func(v *Sign) pulumi.StringOutput { return v.Signature }).(pulumi.StringOutput)
+func (o SignOutput) Signature() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Sign) pulumi.StringPtrOutput { return v.Signature }).(pulumi.StringPtrOutput)
 }
 
 // The algorithm to use to sign the message or message digest. For RSA keys, supported signature schemes include PKCS #1 and RSASSA-PSS, along with different hashing algorithms. For ECDSA keys, ECDSA is the supported signature scheme with different hashing algorithms. When you pass a message digest for signing, ensure that you specify the same hashing algorithm as used when creating the message digest.
@@ -367,12 +342,6 @@ func (o SignArrayOutput) ToSignArrayOutputWithContext(ctx context.Context) SignA
 	return o
 }
 
-func (o SignArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*Sign] {
-	return pulumix.Output[[]*Sign]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o SignArrayOutput) Index(i pulumi.IntInput) SignOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *Sign {
 		return vs[0].([]*Sign)[vs[1].(int)]
@@ -391,12 +360,6 @@ func (o SignMapOutput) ToSignMapOutput() SignMapOutput {
 
 func (o SignMapOutput) ToSignMapOutputWithContext(ctx context.Context) SignMapOutput {
 	return o
-}
-
-func (o SignMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*Sign] {
-	return pulumix.Output[map[string]*Sign]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o SignMapOutput) MapIndex(k pulumi.StringInput) SignOutput {

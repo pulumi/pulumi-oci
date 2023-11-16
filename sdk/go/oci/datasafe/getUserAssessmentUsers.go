@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of User Assessment Users in Oracle Cloud Infrastructure Data Safe service.
@@ -133,7 +132,7 @@ type GetUserAssessmentUsersResult struct {
 	CompartmentIdInSubtree *bool                          `pulumi:"compartmentIdInSubtree"`
 	Filters                []GetUserAssessmentUsersFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The OCID of the target database.
 	TargetId                                    *string `pulumi:"targetId"`
 	TimeLastLoginGreaterThanOrEqualTo           *string `pulumi:"timeLastLoginGreaterThanOrEqualTo"`
@@ -240,12 +239,6 @@ func (o GetUserAssessmentUsersResultOutput) ToGetUserAssessmentUsersResultOutput
 	return o
 }
 
-func (o GetUserAssessmentUsersResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetUserAssessmentUsersResult] {
-	return pulumix.Output[GetUserAssessmentUsersResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetUserAssessmentUsersResultOutput) AccessLevel() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetUserAssessmentUsersResult) *string { return v.AccessLevel }).(pulumi.StringPtrOutput)
 }
@@ -269,8 +262,8 @@ func (o GetUserAssessmentUsersResultOutput) Filters() GetUserAssessmentUsersFilt
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetUserAssessmentUsersResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetUserAssessmentUsersResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetUserAssessmentUsersResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetUserAssessmentUsersResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the target database.

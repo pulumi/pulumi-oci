@@ -52,15 +52,12 @@ class GetFlexComponentsResult:
 
     @property
     @pulumi.getter(name="flexComponentCollections")
-    def flex_component_collections(self) -> Sequence['outputs.GetFlexComponentsFlexComponentCollectionResult']:
-        """
-        The list of flex_component_collection.
-        """
+    def flex_component_collections(self) -> Optional[Sequence['outputs.GetFlexComponentsFlexComponentCollectionResult']]:
         return pulumi.get(self, "flex_component_collections")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -69,9 +66,6 @@ class GetFlexComponentsResult:
     @property
     @pulumi.getter
     def name(self) -> Optional[str]:
-        """
-        The name of the Flex Component used for the DB system.
-        """
         return pulumi.get(self, "name")
 
 
@@ -93,23 +87,7 @@ def get_flex_components(compartment_id: Optional[str] = None,
                         name: Optional[str] = None,
                         opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetFlexComponentsResult:
     """
-    This data source provides the list of Flex Components in Oracle Cloud Infrastructure Database service.
-
-    Gets a list of the flex components that can be used to launch a new DB system. The flex component determines resources to allocate to the DB system - Database Servers and Storage Servers.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_flex_components = oci.Database.get_flex_components(compartment_id=var["compartment_id"],
-        name=var["flex_component_name"])
-    ```
-
-
-    :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param str name: A filter to return only resources that match the entire name given. The match is not case sensitive.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -132,22 +110,6 @@ def get_flex_components_output(compartment_id: Optional[pulumi.Input[str]] = Non
                                name: Optional[pulumi.Input[Optional[str]]] = None,
                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetFlexComponentsResult]:
     """
-    This data source provides the list of Flex Components in Oracle Cloud Infrastructure Database service.
-
-    Gets a list of the flex components that can be used to launch a new DB system. The flex component determines resources to allocate to the DB system - Database Servers and Storage Servers.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_flex_components = oci.Database.get_flex_components(compartment_id=var["compartment_id"],
-        name=var["flex_component_name"])
-    ```
-
-
-    :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param str name: A filter to return only resources that match the entire name given. The match is not case sensitive.
+    Use this data source to access information about an existing resource.
     """
     ...

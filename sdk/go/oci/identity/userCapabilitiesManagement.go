@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the User Capabilities Management resource in Oracle Cloud Infrastructure Identity service.
@@ -63,18 +62,18 @@ type UserCapabilitiesManagement struct {
 	pulumi.CustomResourceState
 
 	// (Updatable) Indicates if the user can use API keys.
-	CanUseApiKeys pulumi.BoolOutput `pulumi:"canUseApiKeys"`
+	CanUseApiKeys pulumi.BoolPtrOutput `pulumi:"canUseApiKeys"`
 	// (Updatable) Indicates if the user can use SWIFT passwords / auth tokens.
-	CanUseAuthTokens pulumi.BoolOutput `pulumi:"canUseAuthTokens"`
+	CanUseAuthTokens pulumi.BoolPtrOutput `pulumi:"canUseAuthTokens"`
 	// (Updatable) Indicates if the user can log in to the console.
-	CanUseConsolePassword pulumi.BoolOutput `pulumi:"canUseConsolePassword"`
+	CanUseConsolePassword pulumi.BoolPtrOutput `pulumi:"canUseConsolePassword"`
 	// (Updatable) Indicates if the user can use SigV4 symmetric keys.
-	CanUseCustomerSecretKeys pulumi.BoolOutput `pulumi:"canUseCustomerSecretKeys"`
+	CanUseCustomerSecretKeys pulumi.BoolPtrOutput `pulumi:"canUseCustomerSecretKeys"`
 	// (Updatable) Indicates if the user can use SMTP passwords.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	CanUseSmtpCredentials pulumi.BoolOutput `pulumi:"canUseSmtpCredentials"`
+	CanUseSmtpCredentials pulumi.BoolPtrOutput `pulumi:"canUseSmtpCredentials"`
 	// The OCID of the user.
 	UserId pulumi.StringOutput `pulumi:"userId"`
 }
@@ -211,12 +210,6 @@ func (i *UserCapabilitiesManagement) ToUserCapabilitiesManagementOutputWithConte
 	return pulumi.ToOutputWithContext(ctx, i).(UserCapabilitiesManagementOutput)
 }
 
-func (i *UserCapabilitiesManagement) ToOutput(ctx context.Context) pulumix.Output[*UserCapabilitiesManagement] {
-	return pulumix.Output[*UserCapabilitiesManagement]{
-		OutputState: i.ToUserCapabilitiesManagementOutputWithContext(ctx).OutputState,
-	}
-}
-
 // UserCapabilitiesManagementArrayInput is an input type that accepts UserCapabilitiesManagementArray and UserCapabilitiesManagementArrayOutput values.
 // You can construct a concrete instance of `UserCapabilitiesManagementArrayInput` via:
 //
@@ -240,12 +233,6 @@ func (i UserCapabilitiesManagementArray) ToUserCapabilitiesManagementArrayOutput
 
 func (i UserCapabilitiesManagementArray) ToUserCapabilitiesManagementArrayOutputWithContext(ctx context.Context) UserCapabilitiesManagementArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(UserCapabilitiesManagementArrayOutput)
-}
-
-func (i UserCapabilitiesManagementArray) ToOutput(ctx context.Context) pulumix.Output[[]*UserCapabilitiesManagement] {
-	return pulumix.Output[[]*UserCapabilitiesManagement]{
-		OutputState: i.ToUserCapabilitiesManagementArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // UserCapabilitiesManagementMapInput is an input type that accepts UserCapabilitiesManagementMap and UserCapabilitiesManagementMapOutput values.
@@ -273,12 +260,6 @@ func (i UserCapabilitiesManagementMap) ToUserCapabilitiesManagementMapOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(UserCapabilitiesManagementMapOutput)
 }
 
-func (i UserCapabilitiesManagementMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*UserCapabilitiesManagement] {
-	return pulumix.Output[map[string]*UserCapabilitiesManagement]{
-		OutputState: i.ToUserCapabilitiesManagementMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type UserCapabilitiesManagementOutput struct{ *pulumi.OutputState }
 
 func (UserCapabilitiesManagementOutput) ElementType() reflect.Type {
@@ -293,38 +274,32 @@ func (o UserCapabilitiesManagementOutput) ToUserCapabilitiesManagementOutputWith
 	return o
 }
 
-func (o UserCapabilitiesManagementOutput) ToOutput(ctx context.Context) pulumix.Output[*UserCapabilitiesManagement] {
-	return pulumix.Output[*UserCapabilitiesManagement]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) Indicates if the user can use API keys.
-func (o UserCapabilitiesManagementOutput) CanUseApiKeys() pulumi.BoolOutput {
-	return o.ApplyT(func(v *UserCapabilitiesManagement) pulumi.BoolOutput { return v.CanUseApiKeys }).(pulumi.BoolOutput)
+func (o UserCapabilitiesManagementOutput) CanUseApiKeys() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *UserCapabilitiesManagement) pulumi.BoolPtrOutput { return v.CanUseApiKeys }).(pulumi.BoolPtrOutput)
 }
 
 // (Updatable) Indicates if the user can use SWIFT passwords / auth tokens.
-func (o UserCapabilitiesManagementOutput) CanUseAuthTokens() pulumi.BoolOutput {
-	return o.ApplyT(func(v *UserCapabilitiesManagement) pulumi.BoolOutput { return v.CanUseAuthTokens }).(pulumi.BoolOutput)
+func (o UserCapabilitiesManagementOutput) CanUseAuthTokens() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *UserCapabilitiesManagement) pulumi.BoolPtrOutput { return v.CanUseAuthTokens }).(pulumi.BoolPtrOutput)
 }
 
 // (Updatable) Indicates if the user can log in to the console.
-func (o UserCapabilitiesManagementOutput) CanUseConsolePassword() pulumi.BoolOutput {
-	return o.ApplyT(func(v *UserCapabilitiesManagement) pulumi.BoolOutput { return v.CanUseConsolePassword }).(pulumi.BoolOutput)
+func (o UserCapabilitiesManagementOutput) CanUseConsolePassword() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *UserCapabilitiesManagement) pulumi.BoolPtrOutput { return v.CanUseConsolePassword }).(pulumi.BoolPtrOutput)
 }
 
 // (Updatable) Indicates if the user can use SigV4 symmetric keys.
-func (o UserCapabilitiesManagementOutput) CanUseCustomerSecretKeys() pulumi.BoolOutput {
-	return o.ApplyT(func(v *UserCapabilitiesManagement) pulumi.BoolOutput { return v.CanUseCustomerSecretKeys }).(pulumi.BoolOutput)
+func (o UserCapabilitiesManagementOutput) CanUseCustomerSecretKeys() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *UserCapabilitiesManagement) pulumi.BoolPtrOutput { return v.CanUseCustomerSecretKeys }).(pulumi.BoolPtrOutput)
 }
 
 // (Updatable) Indicates if the user can use SMTP passwords.
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-func (o UserCapabilitiesManagementOutput) CanUseSmtpCredentials() pulumi.BoolOutput {
-	return o.ApplyT(func(v *UserCapabilitiesManagement) pulumi.BoolOutput { return v.CanUseSmtpCredentials }).(pulumi.BoolOutput)
+func (o UserCapabilitiesManagementOutput) CanUseSmtpCredentials() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *UserCapabilitiesManagement) pulumi.BoolPtrOutput { return v.CanUseSmtpCredentials }).(pulumi.BoolPtrOutput)
 }
 
 // The OCID of the user.
@@ -346,12 +321,6 @@ func (o UserCapabilitiesManagementArrayOutput) ToUserCapabilitiesManagementArray
 	return o
 }
 
-func (o UserCapabilitiesManagementArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*UserCapabilitiesManagement] {
-	return pulumix.Output[[]*UserCapabilitiesManagement]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o UserCapabilitiesManagementArrayOutput) Index(i pulumi.IntInput) UserCapabilitiesManagementOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *UserCapabilitiesManagement {
 		return vs[0].([]*UserCapabilitiesManagement)[vs[1].(int)]
@@ -370,12 +339,6 @@ func (o UserCapabilitiesManagementMapOutput) ToUserCapabilitiesManagementMapOutp
 
 func (o UserCapabilitiesManagementMapOutput) ToUserCapabilitiesManagementMapOutputWithContext(ctx context.Context) UserCapabilitiesManagementMapOutput {
 	return o
-}
-
-func (o UserCapabilitiesManagementMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*UserCapabilitiesManagement] {
-	return pulumix.Output[map[string]*UserCapabilitiesManagement]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o UserCapabilitiesManagementMapOutput) MapIndex(k pulumi.StringInput) UserCapabilitiesManagementOutput {

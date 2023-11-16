@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetApplicationTraceConfig {
@@ -14,27 +16,27 @@ public final class GetApplicationTraceConfig {
      * @return The OCID of the collector (e.g. an APM Domain) trace events will be sent to.
      * 
      */
-    private String domainId;
+    private @Nullable String domainId;
     /**
      * @return Define if tracing is enabled for the resource.
      * 
      */
-    private Boolean isEnabled;
+    private @Nullable Boolean isEnabled;
 
     private GetApplicationTraceConfig() {}
     /**
      * @return The OCID of the collector (e.g. an APM Domain) trace events will be sent to.
      * 
      */
-    public String domainId() {
-        return this.domainId;
+    public Optional<String> domainId() {
+        return Optional.ofNullable(this.domainId);
     }
     /**
      * @return Define if tracing is enabled for the resource.
      * 
      */
-    public Boolean isEnabled() {
-        return this.isEnabled;
+    public Optional<Boolean> isEnabled() {
+        return Optional.ofNullable(this.isEnabled);
     }
 
     public static Builder builder() {
@@ -46,8 +48,8 @@ public final class GetApplicationTraceConfig {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String domainId;
-        private Boolean isEnabled;
+        private @Nullable String domainId;
+        private @Nullable Boolean isEnabled;
         public Builder() {}
         public Builder(GetApplicationTraceConfig defaults) {
     	      Objects.requireNonNull(defaults);
@@ -56,13 +58,13 @@ public final class GetApplicationTraceConfig {
         }
 
         @CustomType.Setter
-        public Builder domainId(String domainId) {
-            this.domainId = Objects.requireNonNull(domainId);
+        public Builder domainId(@Nullable String domainId) {
+            this.domainId = domainId;
             return this;
         }
         @CustomType.Setter
-        public Builder isEnabled(Boolean isEnabled) {
-            this.isEnabled = Objects.requireNonNull(isEnabled);
+        public Builder isEnabled(@Nullable Boolean isEnabled) {
+            this.isEnabled = isEnabled;
             return this;
         }
         public GetApplicationTraceConfig build() {

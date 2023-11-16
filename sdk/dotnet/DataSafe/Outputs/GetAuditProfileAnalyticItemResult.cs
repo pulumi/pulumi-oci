@@ -16,7 +16,7 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// <summary>
         /// Total count of aggregated metric.
         /// </summary>
-        public readonly string Count;
+        public readonly string? Count;
         /// <summary>
         /// Details of aggregation dimensions used for summarizing audit profiles.
         /// </summary>
@@ -24,7 +24,7 @@ namespace Pulumi.Oci.DataSafe.Outputs
 
         [OutputConstructor]
         private GetAuditProfileAnalyticItemResult(
-            string count,
+            string? count,
 
             ImmutableArray<Outputs.GetAuditProfileAnalyticItemDimensionResult> dimensions)
         {

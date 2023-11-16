@@ -47,88 +47,88 @@ export interface GetProductLicenseResult {
     /**
      * The number of active license records associated with the product license.
      */
-    readonly activeLicenseRecordCount: number;
+    readonly activeLicenseRecordCount?: number;
     /**
      * The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) where the product license is created.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * License record name
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * The image ID associated with the product license.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The images associated with the product license.
      */
-    readonly images: outputs.LicenseManager.GetProductLicenseImage[];
+    readonly images?: outputs.LicenseManager.GetProductLicenseImage[];
     /**
      * Specifies whether or not the product license is oversubscribed.
      */
-    readonly isOverSubscribed: boolean;
+    readonly isOverSubscribed?: boolean;
     /**
      * Specifies if the license unit count is unlimited.
      */
-    readonly isUnlimited: boolean;
+    readonly isUnlimited?: boolean;
     /**
      * Specifies whether the vendor is Oracle or a third party.
      */
-    readonly isVendorOracle: boolean;
+    readonly isVendorOracle?: boolean;
     /**
      * The product license unit.
      */
-    readonly licenseUnit: string;
+    readonly licenseUnit?: string;
     readonly productLicenseId: string;
     /**
      * The current product license state.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * The current product license status.
      */
-    readonly status: string;
+    readonly status?: string;
     /**
      * Status description for the current product license status.
      */
-    readonly statusDescription: string;
+    readonly statusDescription?: string;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    readonly systemTags: {[key: string]: any};
+    readonly systemTags?: {[key: string]: any};
     /**
      * The time the product license was created. An [RFC 3339](https://tools.ietf.org/html/rfc3339)-formatted datetime string.
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The time the product license was updated. An [RFC 3339](https://tools.ietf.org/html/rfc3339)-formatted datetime string.
      */
-    readonly timeUpdated: string;
+    readonly timeUpdated?: string;
     /**
      * The total number of licenses available for the product license, calculated by adding up all the license counts for active license records associated with the product license.
      */
-    readonly totalActiveLicenseUnitCount: number;
+    readonly totalActiveLicenseUnitCount?: number;
     /**
      * The number of license records associated with the product license.
      */
-    readonly totalLicenseRecordCount: number;
+    readonly totalLicenseRecordCount?: number;
     /**
      * The number of license units consumed. Updated after each allocation run.
      */
-    readonly totalLicenseUnitsConsumed: number;
+    readonly totalLicenseUnitsConsumed?: number;
     /**
      * The vendor of the ProductLicense
      */
-    readonly vendorName: string;
+    readonly vendorName?: string;
 }
 /**
  * This data source provides details about a specific Product License resource in Oracle Cloud Infrastructure License Manager service.

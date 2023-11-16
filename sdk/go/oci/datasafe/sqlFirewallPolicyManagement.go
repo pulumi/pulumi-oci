@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 type SqlFirewallPolicyManagement struct {
@@ -18,25 +17,25 @@ type SqlFirewallPolicyManagement struct {
 	AllowedClientIps         pulumi.StringArrayOutput `pulumi:"allowedClientIps"`
 	AllowedClientOsUsernames pulumi.StringArrayOutput `pulumi:"allowedClientOsUsernames"`
 	AllowedClientPrograms    pulumi.StringArrayOutput `pulumi:"allowedClientPrograms"`
-	CompartmentId            pulumi.StringOutput      `pulumi:"compartmentId"`
-	DbUserName               pulumi.StringOutput      `pulumi:"dbUserName"`
+	CompartmentId            pulumi.StringPtrOutput   `pulumi:"compartmentId"`
+	DbUserName               pulumi.StringPtrOutput   `pulumi:"dbUserName"`
 	DefinedTags              pulumi.MapOutput         `pulumi:"definedTags"`
-	Description              pulumi.StringOutput      `pulumi:"description"`
-	DisplayName              pulumi.StringOutput      `pulumi:"displayName"`
-	EnforcementScope         pulumi.StringOutput      `pulumi:"enforcementScope"`
+	Description              pulumi.StringPtrOutput   `pulumi:"description"`
+	DisplayName              pulumi.StringPtrOutput   `pulumi:"displayName"`
+	EnforcementScope         pulumi.StringPtrOutput   `pulumi:"enforcementScope"`
 	FreeformTags             pulumi.MapOutput         `pulumi:"freeformTags"`
-	LifecycleDetails         pulumi.StringOutput      `pulumi:"lifecycleDetails"`
-	SecurityPolicyId         pulumi.StringOutput      `pulumi:"securityPolicyId"`
-	SqlFirewallPolicyId      pulumi.StringOutput      `pulumi:"sqlFirewallPolicyId"`
-	SqlLevel                 pulumi.StringOutput      `pulumi:"sqlLevel"`
-	State                    pulumi.StringOutput      `pulumi:"state"`
-	Status                   pulumi.StringOutput      `pulumi:"status"`
+	LifecycleDetails         pulumi.StringPtrOutput   `pulumi:"lifecycleDetails"`
+	SecurityPolicyId         pulumi.StringPtrOutput   `pulumi:"securityPolicyId"`
+	SqlFirewallPolicyId      pulumi.StringPtrOutput   `pulumi:"sqlFirewallPolicyId"`
+	SqlLevel                 pulumi.StringPtrOutput   `pulumi:"sqlLevel"`
+	State                    pulumi.StringPtrOutput   `pulumi:"state"`
+	Status                   pulumi.StringPtrOutput   `pulumi:"status"`
 	SystemTags               pulumi.MapOutput         `pulumi:"systemTags"`
-	TargetId                 pulumi.StringOutput      `pulumi:"targetId"`
-	TimeCreated              pulumi.StringOutput      `pulumi:"timeCreated"`
-	TimeUpdated              pulumi.StringOutput      `pulumi:"timeUpdated"`
-	ViolationAction          pulumi.StringOutput      `pulumi:"violationAction"`
-	ViolationAudit           pulumi.StringOutput      `pulumi:"violationAudit"`
+	TargetId                 pulumi.StringPtrOutput   `pulumi:"targetId"`
+	TimeCreated              pulumi.StringPtrOutput   `pulumi:"timeCreated"`
+	TimeUpdated              pulumi.StringPtrOutput   `pulumi:"timeUpdated"`
+	ViolationAction          pulumi.StringPtrOutput   `pulumi:"violationAction"`
+	ViolationAudit           pulumi.StringPtrOutput   `pulumi:"violationAudit"`
 }
 
 // NewSqlFirewallPolicyManagement registers a new resource with the given unique name, arguments, and options.
@@ -184,12 +183,6 @@ func (i *SqlFirewallPolicyManagement) ToSqlFirewallPolicyManagementOutputWithCon
 	return pulumi.ToOutputWithContext(ctx, i).(SqlFirewallPolicyManagementOutput)
 }
 
-func (i *SqlFirewallPolicyManagement) ToOutput(ctx context.Context) pulumix.Output[*SqlFirewallPolicyManagement] {
-	return pulumix.Output[*SqlFirewallPolicyManagement]{
-		OutputState: i.ToSqlFirewallPolicyManagementOutputWithContext(ctx).OutputState,
-	}
-}
-
 // SqlFirewallPolicyManagementArrayInput is an input type that accepts SqlFirewallPolicyManagementArray and SqlFirewallPolicyManagementArrayOutput values.
 // You can construct a concrete instance of `SqlFirewallPolicyManagementArrayInput` via:
 //
@@ -213,12 +206,6 @@ func (i SqlFirewallPolicyManagementArray) ToSqlFirewallPolicyManagementArrayOutp
 
 func (i SqlFirewallPolicyManagementArray) ToSqlFirewallPolicyManagementArrayOutputWithContext(ctx context.Context) SqlFirewallPolicyManagementArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(SqlFirewallPolicyManagementArrayOutput)
-}
-
-func (i SqlFirewallPolicyManagementArray) ToOutput(ctx context.Context) pulumix.Output[[]*SqlFirewallPolicyManagement] {
-	return pulumix.Output[[]*SqlFirewallPolicyManagement]{
-		OutputState: i.ToSqlFirewallPolicyManagementArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // SqlFirewallPolicyManagementMapInput is an input type that accepts SqlFirewallPolicyManagementMap and SqlFirewallPolicyManagementMapOutput values.
@@ -246,12 +233,6 @@ func (i SqlFirewallPolicyManagementMap) ToSqlFirewallPolicyManagementMapOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(SqlFirewallPolicyManagementMapOutput)
 }
 
-func (i SqlFirewallPolicyManagementMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*SqlFirewallPolicyManagement] {
-	return pulumix.Output[map[string]*SqlFirewallPolicyManagement]{
-		OutputState: i.ToSqlFirewallPolicyManagementMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type SqlFirewallPolicyManagementOutput struct{ *pulumi.OutputState }
 
 func (SqlFirewallPolicyManagementOutput) ElementType() reflect.Type {
@@ -266,12 +247,6 @@ func (o SqlFirewallPolicyManagementOutput) ToSqlFirewallPolicyManagementOutputWi
 	return o
 }
 
-func (o SqlFirewallPolicyManagementOutput) ToOutput(ctx context.Context) pulumix.Output[*SqlFirewallPolicyManagement] {
-	return pulumix.Output[*SqlFirewallPolicyManagement]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o SqlFirewallPolicyManagementOutput) AllowedClientIps() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *SqlFirewallPolicyManagement) pulumi.StringArrayOutput { return v.AllowedClientIps }).(pulumi.StringArrayOutput)
 }
@@ -284,80 +259,80 @@ func (o SqlFirewallPolicyManagementOutput) AllowedClientPrograms() pulumi.String
 	return o.ApplyT(func(v *SqlFirewallPolicyManagement) pulumi.StringArrayOutput { return v.AllowedClientPrograms }).(pulumi.StringArrayOutput)
 }
 
-func (o SqlFirewallPolicyManagementOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v *SqlFirewallPolicyManagement) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
+func (o SqlFirewallPolicyManagementOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SqlFirewallPolicyManagement) pulumi.StringPtrOutput { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
-func (o SqlFirewallPolicyManagementOutput) DbUserName() pulumi.StringOutput {
-	return o.ApplyT(func(v *SqlFirewallPolicyManagement) pulumi.StringOutput { return v.DbUserName }).(pulumi.StringOutput)
+func (o SqlFirewallPolicyManagementOutput) DbUserName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SqlFirewallPolicyManagement) pulumi.StringPtrOutput { return v.DbUserName }).(pulumi.StringPtrOutput)
 }
 
 func (o SqlFirewallPolicyManagementOutput) DefinedTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *SqlFirewallPolicyManagement) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
 }
 
-func (o SqlFirewallPolicyManagementOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v *SqlFirewallPolicyManagement) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
+func (o SqlFirewallPolicyManagementOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SqlFirewallPolicyManagement) pulumi.StringPtrOutput { return v.Description }).(pulumi.StringPtrOutput)
 }
 
-func (o SqlFirewallPolicyManagementOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v *SqlFirewallPolicyManagement) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+func (o SqlFirewallPolicyManagementOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SqlFirewallPolicyManagement) pulumi.StringPtrOutput { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
-func (o SqlFirewallPolicyManagementOutput) EnforcementScope() pulumi.StringOutput {
-	return o.ApplyT(func(v *SqlFirewallPolicyManagement) pulumi.StringOutput { return v.EnforcementScope }).(pulumi.StringOutput)
+func (o SqlFirewallPolicyManagementOutput) EnforcementScope() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SqlFirewallPolicyManagement) pulumi.StringPtrOutput { return v.EnforcementScope }).(pulumi.StringPtrOutput)
 }
 
 func (o SqlFirewallPolicyManagementOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *SqlFirewallPolicyManagement) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
 }
 
-func (o SqlFirewallPolicyManagementOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v *SqlFirewallPolicyManagement) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o SqlFirewallPolicyManagementOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SqlFirewallPolicyManagement) pulumi.StringPtrOutput { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
-func (o SqlFirewallPolicyManagementOutput) SecurityPolicyId() pulumi.StringOutput {
-	return o.ApplyT(func(v *SqlFirewallPolicyManagement) pulumi.StringOutput { return v.SecurityPolicyId }).(pulumi.StringOutput)
+func (o SqlFirewallPolicyManagementOutput) SecurityPolicyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SqlFirewallPolicyManagement) pulumi.StringPtrOutput { return v.SecurityPolicyId }).(pulumi.StringPtrOutput)
 }
 
-func (o SqlFirewallPolicyManagementOutput) SqlFirewallPolicyId() pulumi.StringOutput {
-	return o.ApplyT(func(v *SqlFirewallPolicyManagement) pulumi.StringOutput { return v.SqlFirewallPolicyId }).(pulumi.StringOutput)
+func (o SqlFirewallPolicyManagementOutput) SqlFirewallPolicyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SqlFirewallPolicyManagement) pulumi.StringPtrOutput { return v.SqlFirewallPolicyId }).(pulumi.StringPtrOutput)
 }
 
-func (o SqlFirewallPolicyManagementOutput) SqlLevel() pulumi.StringOutput {
-	return o.ApplyT(func(v *SqlFirewallPolicyManagement) pulumi.StringOutput { return v.SqlLevel }).(pulumi.StringOutput)
+func (o SqlFirewallPolicyManagementOutput) SqlLevel() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SqlFirewallPolicyManagement) pulumi.StringPtrOutput { return v.SqlLevel }).(pulumi.StringPtrOutput)
 }
 
-func (o SqlFirewallPolicyManagementOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *SqlFirewallPolicyManagement) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o SqlFirewallPolicyManagementOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SqlFirewallPolicyManagement) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
-func (o SqlFirewallPolicyManagementOutput) Status() pulumi.StringOutput {
-	return o.ApplyT(func(v *SqlFirewallPolicyManagement) pulumi.StringOutput { return v.Status }).(pulumi.StringOutput)
+func (o SqlFirewallPolicyManagementOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SqlFirewallPolicyManagement) pulumi.StringPtrOutput { return v.Status }).(pulumi.StringPtrOutput)
 }
 
 func (o SqlFirewallPolicyManagementOutput) SystemTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *SqlFirewallPolicyManagement) pulumi.MapOutput { return v.SystemTags }).(pulumi.MapOutput)
 }
 
-func (o SqlFirewallPolicyManagementOutput) TargetId() pulumi.StringOutput {
-	return o.ApplyT(func(v *SqlFirewallPolicyManagement) pulumi.StringOutput { return v.TargetId }).(pulumi.StringOutput)
+func (o SqlFirewallPolicyManagementOutput) TargetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SqlFirewallPolicyManagement) pulumi.StringPtrOutput { return v.TargetId }).(pulumi.StringPtrOutput)
 }
 
-func (o SqlFirewallPolicyManagementOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *SqlFirewallPolicyManagement) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o SqlFirewallPolicyManagementOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SqlFirewallPolicyManagement) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
-func (o SqlFirewallPolicyManagementOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *SqlFirewallPolicyManagement) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o SqlFirewallPolicyManagementOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SqlFirewallPolicyManagement) pulumi.StringPtrOutput { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
-func (o SqlFirewallPolicyManagementOutput) ViolationAction() pulumi.StringOutput {
-	return o.ApplyT(func(v *SqlFirewallPolicyManagement) pulumi.StringOutput { return v.ViolationAction }).(pulumi.StringOutput)
+func (o SqlFirewallPolicyManagementOutput) ViolationAction() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SqlFirewallPolicyManagement) pulumi.StringPtrOutput { return v.ViolationAction }).(pulumi.StringPtrOutput)
 }
 
-func (o SqlFirewallPolicyManagementOutput) ViolationAudit() pulumi.StringOutput {
-	return o.ApplyT(func(v *SqlFirewallPolicyManagement) pulumi.StringOutput { return v.ViolationAudit }).(pulumi.StringOutput)
+func (o SqlFirewallPolicyManagementOutput) ViolationAudit() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SqlFirewallPolicyManagement) pulumi.StringPtrOutput { return v.ViolationAudit }).(pulumi.StringPtrOutput)
 }
 
 type SqlFirewallPolicyManagementArrayOutput struct{ *pulumi.OutputState }
@@ -372,12 +347,6 @@ func (o SqlFirewallPolicyManagementArrayOutput) ToSqlFirewallPolicyManagementArr
 
 func (o SqlFirewallPolicyManagementArrayOutput) ToSqlFirewallPolicyManagementArrayOutputWithContext(ctx context.Context) SqlFirewallPolicyManagementArrayOutput {
 	return o
-}
-
-func (o SqlFirewallPolicyManagementArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*SqlFirewallPolicyManagement] {
-	return pulumix.Output[[]*SqlFirewallPolicyManagement]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o SqlFirewallPolicyManagementArrayOutput) Index(i pulumi.IntInput) SqlFirewallPolicyManagementOutput {
@@ -398,12 +367,6 @@ func (o SqlFirewallPolicyManagementMapOutput) ToSqlFirewallPolicyManagementMapOu
 
 func (o SqlFirewallPolicyManagementMapOutput) ToSqlFirewallPolicyManagementMapOutputWithContext(ctx context.Context) SqlFirewallPolicyManagementMapOutput {
 	return o
-}
-
-func (o SqlFirewallPolicyManagementMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*SqlFirewallPolicyManagement] {
-	return pulumix.Output[map[string]*SqlFirewallPolicyManagement]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o SqlFirewallPolicyManagementMapOutput) MapIndex(k pulumi.StringInput) SqlFirewallPolicyManagementOutput {

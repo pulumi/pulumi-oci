@@ -16,41 +16,41 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// At least one lower case character required.
         /// </summary>
-        public readonly bool IsLowercaseCharactersRequired;
+        public readonly bool? IsLowercaseCharactersRequired;
         /// <summary>
         /// At least one numeric character required.
         /// </summary>
-        public readonly bool IsNumericCharactersRequired;
+        public readonly bool? IsNumericCharactersRequired;
         /// <summary>
         /// At least one special character required.
         /// </summary>
-        public readonly bool IsSpecialCharactersRequired;
+        public readonly bool? IsSpecialCharactersRequired;
         /// <summary>
         /// At least one uppercase character required.
         /// </summary>
-        public readonly bool IsUppercaseCharactersRequired;
+        public readonly bool? IsUppercaseCharactersRequired;
         /// <summary>
         /// User name is allowed to be part of the password.
         /// </summary>
-        public readonly bool IsUsernameContainmentAllowed;
+        public readonly bool? IsUsernameContainmentAllowed;
         /// <summary>
         /// Minimum password length required.
         /// </summary>
-        public readonly int MinimumPasswordLength;
+        public readonly int? MinimumPasswordLength;
 
         [OutputConstructor]
         private GetAuthenticationPolicyPasswordPolicyResult(
-            bool isLowercaseCharactersRequired,
+            bool? isLowercaseCharactersRequired,
 
-            bool isNumericCharactersRequired,
+            bool? isNumericCharactersRequired,
 
-            bool isSpecialCharactersRequired,
+            bool? isSpecialCharactersRequired,
 
-            bool isUppercaseCharactersRequired,
+            bool? isUppercaseCharactersRequired,
 
-            bool isUsernameContainmentAllowed,
+            bool? isUsernameContainmentAllowed,
 
-            int minimumPasswordLength)
+            int? minimumPasswordLength)
         {
             IsLowercaseCharactersRequired = isLowercaseCharactersRequired;
             IsNumericCharactersRequired = isNumericCharactersRequired;

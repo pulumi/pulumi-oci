@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Replication Policy resource in Oracle Cloud Infrastructure Object Storage service.
@@ -74,13 +73,13 @@ type ReplicationPolicy struct {
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Namespace pulumi.StringOutput `pulumi:"namespace"`
 	// The replication status of the policy. If the status is CLIENT_ERROR, once the user fixes the issue described in the status message, the status will become ACTIVE.
-	Status pulumi.StringOutput `pulumi:"status"`
+	Status pulumi.StringPtrOutput `pulumi:"status"`
 	// A human-readable description of the status.
-	StatusMessage pulumi.StringOutput `pulumi:"statusMessage"`
+	StatusMessage pulumi.StringPtrOutput `pulumi:"statusMessage"`
 	// The date when the replication policy was created as per [RFC 3339](https://tools.ietf.org/html/rfc3339).
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// Changes made to the source bucket before this time has been replicated.
-	TimeLastSync pulumi.StringOutput `pulumi:"timeLastSync"`
+	TimeLastSync pulumi.StringPtrOutput `pulumi:"timeLastSync"`
 }
 
 // NewReplicationPolicy registers a new resource with the given unique name, arguments, and options.
@@ -240,12 +239,6 @@ func (i *ReplicationPolicy) ToReplicationPolicyOutputWithContext(ctx context.Con
 	return pulumi.ToOutputWithContext(ctx, i).(ReplicationPolicyOutput)
 }
 
-func (i *ReplicationPolicy) ToOutput(ctx context.Context) pulumix.Output[*ReplicationPolicy] {
-	return pulumix.Output[*ReplicationPolicy]{
-		OutputState: i.ToReplicationPolicyOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ReplicationPolicyArrayInput is an input type that accepts ReplicationPolicyArray and ReplicationPolicyArrayOutput values.
 // You can construct a concrete instance of `ReplicationPolicyArrayInput` via:
 //
@@ -269,12 +262,6 @@ func (i ReplicationPolicyArray) ToReplicationPolicyArrayOutput() ReplicationPoli
 
 func (i ReplicationPolicyArray) ToReplicationPolicyArrayOutputWithContext(ctx context.Context) ReplicationPolicyArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ReplicationPolicyArrayOutput)
-}
-
-func (i ReplicationPolicyArray) ToOutput(ctx context.Context) pulumix.Output[[]*ReplicationPolicy] {
-	return pulumix.Output[[]*ReplicationPolicy]{
-		OutputState: i.ToReplicationPolicyArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // ReplicationPolicyMapInput is an input type that accepts ReplicationPolicyMap and ReplicationPolicyMapOutput values.
@@ -302,12 +289,6 @@ func (i ReplicationPolicyMap) ToReplicationPolicyMapOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(ReplicationPolicyMapOutput)
 }
 
-func (i ReplicationPolicyMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*ReplicationPolicy] {
-	return pulumix.Output[map[string]*ReplicationPolicy]{
-		OutputState: i.ToReplicationPolicyMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ReplicationPolicyOutput struct{ *pulumi.OutputState }
 
 func (ReplicationPolicyOutput) ElementType() reflect.Type {
@@ -320,12 +301,6 @@ func (o ReplicationPolicyOutput) ToReplicationPolicyOutput() ReplicationPolicyOu
 
 func (o ReplicationPolicyOutput) ToReplicationPolicyOutputWithContext(ctx context.Context) ReplicationPolicyOutput {
 	return o
-}
-
-func (o ReplicationPolicyOutput) ToOutput(ctx context.Context) pulumix.Output[*ReplicationPolicy] {
-	return pulumix.Output[*ReplicationPolicy]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
@@ -362,23 +337,23 @@ func (o ReplicationPolicyOutput) Namespace() pulumi.StringOutput {
 }
 
 // The replication status of the policy. If the status is CLIENT_ERROR, once the user fixes the issue described in the status message, the status will become ACTIVE.
-func (o ReplicationPolicyOutput) Status() pulumi.StringOutput {
-	return o.ApplyT(func(v *ReplicationPolicy) pulumi.StringOutput { return v.Status }).(pulumi.StringOutput)
+func (o ReplicationPolicyOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ReplicationPolicy) pulumi.StringPtrOutput { return v.Status }).(pulumi.StringPtrOutput)
 }
 
 // A human-readable description of the status.
-func (o ReplicationPolicyOutput) StatusMessage() pulumi.StringOutput {
-	return o.ApplyT(func(v *ReplicationPolicy) pulumi.StringOutput { return v.StatusMessage }).(pulumi.StringOutput)
+func (o ReplicationPolicyOutput) StatusMessage() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ReplicationPolicy) pulumi.StringPtrOutput { return v.StatusMessage }).(pulumi.StringPtrOutput)
 }
 
 // The date when the replication policy was created as per [RFC 3339](https://tools.ietf.org/html/rfc3339).
-func (o ReplicationPolicyOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *ReplicationPolicy) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o ReplicationPolicyOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ReplicationPolicy) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // Changes made to the source bucket before this time has been replicated.
-func (o ReplicationPolicyOutput) TimeLastSync() pulumi.StringOutput {
-	return o.ApplyT(func(v *ReplicationPolicy) pulumi.StringOutput { return v.TimeLastSync }).(pulumi.StringOutput)
+func (o ReplicationPolicyOutput) TimeLastSync() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ReplicationPolicy) pulumi.StringPtrOutput { return v.TimeLastSync }).(pulumi.StringPtrOutput)
 }
 
 type ReplicationPolicyArrayOutput struct{ *pulumi.OutputState }
@@ -393,12 +368,6 @@ func (o ReplicationPolicyArrayOutput) ToReplicationPolicyArrayOutput() Replicati
 
 func (o ReplicationPolicyArrayOutput) ToReplicationPolicyArrayOutputWithContext(ctx context.Context) ReplicationPolicyArrayOutput {
 	return o
-}
-
-func (o ReplicationPolicyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*ReplicationPolicy] {
-	return pulumix.Output[[]*ReplicationPolicy]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ReplicationPolicyArrayOutput) Index(i pulumi.IntInput) ReplicationPolicyOutput {
@@ -419,12 +388,6 @@ func (o ReplicationPolicyMapOutput) ToReplicationPolicyMapOutput() ReplicationPo
 
 func (o ReplicationPolicyMapOutput) ToReplicationPolicyMapOutputWithContext(ctx context.Context) ReplicationPolicyMapOutput {
 	return o
-}
-
-func (o ReplicationPolicyMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*ReplicationPolicy] {
-	return pulumix.Output[map[string]*ReplicationPolicy]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ReplicationPolicyMapOutput) MapIndex(k pulumi.StringInput) ReplicationPolicyOutput {

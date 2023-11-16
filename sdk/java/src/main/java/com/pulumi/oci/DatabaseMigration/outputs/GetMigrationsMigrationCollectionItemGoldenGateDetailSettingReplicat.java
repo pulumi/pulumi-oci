@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetMigrationsMigrationCollectionItemGoldenGateDetailSettingReplicat {
@@ -14,51 +16,51 @@ public final class GetMigrationsMigrationCollectionItemGoldenGateDetailSettingRe
      * @return Number of threads used to read trail files (valid for Parallel Replicat)
      * 
      */
-    private Integer mapParallelism;
+    private @Nullable Integer mapParallelism;
     /**
      * @return Defines the range in which Replicat automatically adjusts its apply parallelism (valid for Parallel Replicat)
      * 
      */
-    private Integer maxApplyParallelism;
+    private @Nullable Integer maxApplyParallelism;
     /**
      * @return Defines the range in which Replicat automatically adjusts its apply parallelism (valid for Parallel Replicat)
      * 
      */
-    private Integer minApplyParallelism;
+    private @Nullable Integer minApplyParallelism;
     /**
      * @return Extract performance.
      * 
      */
-    private String performanceProfile;
+    private @Nullable String performanceProfile;
 
     private GetMigrationsMigrationCollectionItemGoldenGateDetailSettingReplicat() {}
     /**
      * @return Number of threads used to read trail files (valid for Parallel Replicat)
      * 
      */
-    public Integer mapParallelism() {
-        return this.mapParallelism;
+    public Optional<Integer> mapParallelism() {
+        return Optional.ofNullable(this.mapParallelism);
     }
     /**
      * @return Defines the range in which Replicat automatically adjusts its apply parallelism (valid for Parallel Replicat)
      * 
      */
-    public Integer maxApplyParallelism() {
-        return this.maxApplyParallelism;
+    public Optional<Integer> maxApplyParallelism() {
+        return Optional.ofNullable(this.maxApplyParallelism);
     }
     /**
      * @return Defines the range in which Replicat automatically adjusts its apply parallelism (valid for Parallel Replicat)
      * 
      */
-    public Integer minApplyParallelism() {
-        return this.minApplyParallelism;
+    public Optional<Integer> minApplyParallelism() {
+        return Optional.ofNullable(this.minApplyParallelism);
     }
     /**
      * @return Extract performance.
      * 
      */
-    public String performanceProfile() {
-        return this.performanceProfile;
+    public Optional<String> performanceProfile() {
+        return Optional.ofNullable(this.performanceProfile);
     }
 
     public static Builder builder() {
@@ -70,10 +72,10 @@ public final class GetMigrationsMigrationCollectionItemGoldenGateDetailSettingRe
     }
     @CustomType.Builder
     public static final class Builder {
-        private Integer mapParallelism;
-        private Integer maxApplyParallelism;
-        private Integer minApplyParallelism;
-        private String performanceProfile;
+        private @Nullable Integer mapParallelism;
+        private @Nullable Integer maxApplyParallelism;
+        private @Nullable Integer minApplyParallelism;
+        private @Nullable String performanceProfile;
         public Builder() {}
         public Builder(GetMigrationsMigrationCollectionItemGoldenGateDetailSettingReplicat defaults) {
     	      Objects.requireNonNull(defaults);
@@ -84,23 +86,23 @@ public final class GetMigrationsMigrationCollectionItemGoldenGateDetailSettingRe
         }
 
         @CustomType.Setter
-        public Builder mapParallelism(Integer mapParallelism) {
-            this.mapParallelism = Objects.requireNonNull(mapParallelism);
+        public Builder mapParallelism(@Nullable Integer mapParallelism) {
+            this.mapParallelism = mapParallelism;
             return this;
         }
         @CustomType.Setter
-        public Builder maxApplyParallelism(Integer maxApplyParallelism) {
-            this.maxApplyParallelism = Objects.requireNonNull(maxApplyParallelism);
+        public Builder maxApplyParallelism(@Nullable Integer maxApplyParallelism) {
+            this.maxApplyParallelism = maxApplyParallelism;
             return this;
         }
         @CustomType.Setter
-        public Builder minApplyParallelism(Integer minApplyParallelism) {
-            this.minApplyParallelism = Objects.requireNonNull(minApplyParallelism);
+        public Builder minApplyParallelism(@Nullable Integer minApplyParallelism) {
+            this.minApplyParallelism = minApplyParallelism;
             return this;
         }
         @CustomType.Setter
-        public Builder performanceProfile(String performanceProfile) {
-            this.performanceProfile = Objects.requireNonNull(performanceProfile);
+        public Builder performanceProfile(@Nullable String performanceProfile) {
+            this.performanceProfile = performanceProfile;
             return this;
         }
         public GetMigrationsMigrationCollectionItemGoldenGateDetailSettingReplicat build() {

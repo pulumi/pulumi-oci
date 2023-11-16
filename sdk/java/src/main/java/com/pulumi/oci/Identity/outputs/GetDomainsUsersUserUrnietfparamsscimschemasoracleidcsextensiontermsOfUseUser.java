@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.Identity.outputs.GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserTermsOfUseConsent;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUser {
@@ -14,7 +15,7 @@ public final class GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensio
      * @return Description:
      * 
      */
-    private List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserTermsOfUseConsent> termsOfUseConsents;
+    private @Nullable List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserTermsOfUseConsent> termsOfUseConsents;
 
     private GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUser() {}
     /**
@@ -22,7 +23,7 @@ public final class GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensio
      * 
      */
     public List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserTermsOfUseConsent> termsOfUseConsents() {
-        return this.termsOfUseConsents;
+        return this.termsOfUseConsents == null ? List.of() : this.termsOfUseConsents;
     }
 
     public static Builder builder() {
@@ -34,7 +35,7 @@ public final class GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensio
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserTermsOfUseConsent> termsOfUseConsents;
+        private @Nullable List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserTermsOfUseConsent> termsOfUseConsents;
         public Builder() {}
         public Builder(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUser defaults) {
     	      Objects.requireNonNull(defaults);
@@ -42,8 +43,8 @@ public final class GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensio
         }
 
         @CustomType.Setter
-        public Builder termsOfUseConsents(List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserTermsOfUseConsent> termsOfUseConsents) {
-            this.termsOfUseConsents = Objects.requireNonNull(termsOfUseConsents);
+        public Builder termsOfUseConsents(@Nullable List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserTermsOfUseConsent> termsOfUseConsents) {
+            this.termsOfUseConsents = termsOfUseConsents;
             return this;
         }
         public Builder termsOfUseConsents(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserTermsOfUseConsent... termsOfUseConsents) {

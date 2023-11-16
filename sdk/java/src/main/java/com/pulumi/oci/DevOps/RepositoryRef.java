@@ -13,6 +13,7 @@ import com.pulumi.oci.Utilities;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -70,70 +71,70 @@ public class RepositoryRef extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="commitId", refs={String.class}, tree="[0]")
-    private Output<String> commitId;
+    private Output</* @Nullable */ String> commitId;
 
     /**
      * @return (Updatable) Commit ID pointed to by the new branch.
      * 
      */
-    public Output<String> commitId() {
-        return this.commitId;
+    public Output<Optional<String>> commitId() {
+        return Codegen.optional(this.commitId);
     }
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * Unique full reference name inside a repository.
      * 
      */
     @Export(name="fullRefName", refs={String.class}, tree="[0]")
-    private Output<String> fullRefName;
+    private Output</* @Nullable */ String> fullRefName;
 
     /**
      * @return Unique full reference name inside a repository.
      * 
      */
-    public Output<String> fullRefName() {
-        return this.fullRefName;
+    public Output<Optional<String>> fullRefName() {
+        return Codegen.optional(this.fullRefName);
     }
     /**
      * (Updatable) SHA-1 hash value of the object pointed to by the tag.
      * 
      */
     @Export(name="objectId", refs={String.class}, tree="[0]")
-    private Output<String> objectId;
+    private Output</* @Nullable */ String> objectId;
 
     /**
      * @return (Updatable) SHA-1 hash value of the object pointed to by the tag.
      * 
      */
-    public Output<String> objectId() {
-        return this.objectId;
+    public Output<Optional<String>> objectId() {
+        return Codegen.optional(this.objectId);
     }
     /**
      * A filter to return only resources that match the given reference name.

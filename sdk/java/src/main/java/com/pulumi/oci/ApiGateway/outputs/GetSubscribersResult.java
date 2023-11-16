@@ -29,7 +29,7 @@ public final class GetSubscribersResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The current state of the subscriber.
      * 
@@ -39,7 +39,7 @@ public final class GetSubscribersResult {
      * @return The list of subscriber_collection.
      * 
      */
-    private List<GetSubscribersSubscriberCollection> subscriberCollections;
+    private @Nullable List<GetSubscribersSubscriberCollection> subscriberCollections;
 
     private GetSubscribersResult() {}
     /**
@@ -63,8 +63,8 @@ public final class GetSubscribersResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The current state of the subscriber.
@@ -78,7 +78,7 @@ public final class GetSubscribersResult {
      * 
      */
     public List<GetSubscribersSubscriberCollection> subscriberCollections() {
-        return this.subscriberCollections;
+        return this.subscriberCollections == null ? List.of() : this.subscriberCollections;
     }
 
     public static Builder builder() {
@@ -93,9 +93,9 @@ public final class GetSubscribersResult {
         private String compartmentId;
         private @Nullable String displayName;
         private @Nullable List<GetSubscribersFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String state;
-        private List<GetSubscribersSubscriberCollection> subscriberCollections;
+        private @Nullable List<GetSubscribersSubscriberCollection> subscriberCollections;
         public Builder() {}
         public Builder(GetSubscribersResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -126,8 +126,8 @@ public final class GetSubscribersResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -136,8 +136,8 @@ public final class GetSubscribersResult {
             return this;
         }
         @CustomType.Setter
-        public Builder subscriberCollections(List<GetSubscribersSubscriberCollection> subscriberCollections) {
-            this.subscriberCollections = Objects.requireNonNull(subscriberCollections);
+        public Builder subscriberCollections(@Nullable List<GetSubscribersSubscriberCollection> subscriberCollections) {
+            this.subscriberCollections = subscriberCollections;
             return this;
         }
         public Builder subscriberCollections(GetSubscribersSubscriberCollection... subscriberCollections) {

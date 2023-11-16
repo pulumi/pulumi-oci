@@ -14,6 +14,7 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -82,14 +83,14 @@ public class Instance extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="addOnFeatures", refs={List.class,String.class}, tree="[0,1]")
-    private Output<List<String>> addOnFeatures;
+    private Output</* @Nullable */ List<String>> addOnFeatures;
 
     /**
      * @return (Updatable) a list of add-on features for the ocm instance
      * 
      */
-    public Output<List<String>> addOnFeatures() {
-        return this.addOnFeatures;
+    public Output<Optional<List<String>>> addOnFeatures() {
+        return Codegen.optional(this.addOnFeatures);
     }
     /**
      * Admin Email for Notification
@@ -124,70 +125,70 @@ public class Instance extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * (Updatable) OceInstance description
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
-    private Output<String> description;
+    private Output</* @Nullable */ String> description;
 
     /**
      * @return (Updatable) OceInstance description
      * 
      */
-    public Output<String> description() {
-        return this.description;
+    public Output<Optional<String>> description() {
+        return Codegen.optional(this.description);
     }
     /**
      * (Updatable) disaster recovery paired ragion name
      * 
      */
     @Export(name="drRegion", refs={String.class}, tree="[0]")
-    private Output<String> drRegion;
+    private Output</* @Nullable */ String> drRegion;
 
     /**
      * @return (Updatable) disaster recovery paired ragion name
      * 
      */
-    public Output<String> drRegion() {
-        return this.drRegion;
+    public Output<Optional<String>> drRegion() {
+        return Codegen.optional(this.drRegion);
     }
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * Unique GUID identifier that is immutable on creation
      * 
      */
     @Export(name="guid", refs={String.class}, tree="[0]")
-    private Output<String> guid;
+    private Output</* @Nullable */ String> guid;
 
     /**
      * @return Unique GUID identifier that is immutable on creation
      * 
      */
-    public Output<String> guid() {
-        return this.guid;
+    public Output<Optional<String>> guid() {
+        return Codegen.optional(this.guid);
     }
     /**
      * Identity Cloud Service access token identifying a stripe and service administrator user
@@ -208,70 +209,70 @@ public class Instance extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="idcsTenancy", refs={String.class}, tree="[0]")
-    private Output<String> idcsTenancy;
+    private Output</* @Nullable */ String> idcsTenancy;
 
     /**
      * @return IDCS Tenancy Identifier
      * 
      */
-    public Output<String> idcsTenancy() {
-        return this.idcsTenancy;
+    public Output<Optional<String>> idcsTenancy() {
+        return Codegen.optional(this.idcsTenancy);
     }
     /**
      * Flag indicating whether the instance access is private or public
      * 
      */
     @Export(name="instanceAccessType", refs={String.class}, tree="[0]")
-    private Output<String> instanceAccessType;
+    private Output</* @Nullable */ String> instanceAccessType;
 
     /**
      * @return Flag indicating whether the instance access is private or public
      * 
      */
-    public Output<String> instanceAccessType() {
-        return this.instanceAccessType;
+    public Output<Optional<String>> instanceAccessType() {
+        return Codegen.optional(this.instanceAccessType);
     }
     /**
      * (Updatable) Flag indicating whether the instance license is new cloud or bring your own license
      * 
      */
     @Export(name="instanceLicenseType", refs={String.class}, tree="[0]")
-    private Output<String> instanceLicenseType;
+    private Output</* @Nullable */ String> instanceLicenseType;
 
     /**
      * @return (Updatable) Flag indicating whether the instance license is new cloud or bring your own license
      * 
      */
-    public Output<String> instanceLicenseType() {
-        return this.instanceLicenseType;
+    public Output<Optional<String>> instanceLicenseType() {
+        return Codegen.optional(this.instanceLicenseType);
     }
     /**
      * (Updatable) Instance type based on its usage
      * 
      */
     @Export(name="instanceUsageType", refs={String.class}, tree="[0]")
-    private Output<String> instanceUsageType;
+    private Output</* @Nullable */ String> instanceUsageType;
 
     /**
      * @return (Updatable) Instance type based on its usage
      * 
      */
-    public Output<String> instanceUsageType() {
-        return this.instanceUsageType;
+    public Output<Optional<String>> instanceUsageType() {
+        return Codegen.optional(this.instanceUsageType);
     }
     /**
      * Details of the current state of the instance lifecycle
      * 
      */
     @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
-    private Output<String> lifecycleDetails;
+    private Output</* @Nullable */ String> lifecycleDetails;
 
     /**
      * @return Details of the current state of the instance lifecycle
      * 
      */
-    public Output<String> lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Output<Optional<String>> lifecycleDetails() {
+        return Codegen.optional(this.lifecycleDetails);
     }
     /**
      * OceInstance Name
@@ -306,56 +307,56 @@ public class Instance extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="service", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> service;
+    private Output</* @Nullable */ Map<String,Object>> service;
 
     /**
      * @return SERVICE data. Example: `{&#34;service&#34;: {&#34;IDCS&#34;: &#34;value&#34;}}`
      * 
      */
-    public Output<Map<String,Object>> service() {
-        return this.service;
+    public Output<Optional<Map<String,Object>>> service() {
+        return Codegen.optional(this.service);
     }
     /**
      * The current state of the instance lifecycle.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The current state of the instance lifecycle.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * An message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
     @Export(name="stateMessage", refs={String.class}, tree="[0]")
-    private Output<String> stateMessage;
+    private Output</* @Nullable */ String> stateMessage;
 
     /**
      * @return An message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
-    public Output<String> stateMessage() {
-        return this.stateMessage;
+    public Output<Optional<String>> stateMessage() {
+        return Codegen.optional(this.stateMessage);
     }
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
     @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> systemTags;
+    private Output</* @Nullable */ Map<String,Object>> systemTags;
 
     /**
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    public Output<Map<String,Object>> systemTags() {
-        return this.systemTags;
+    public Output<Optional<Map<String,Object>>> systemTags() {
+        return Codegen.optional(this.systemTags);
     }
     /**
      * Tenancy Identifier
@@ -390,42 +391,42 @@ public class Instance extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The time the the OceInstance was created. An RFC3339 formatted datetime string
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * The time the OceInstance was updated. An RFC3339 formatted datetime string
      * 
      */
     @Export(name="timeUpdated", refs={String.class}, tree="[0]")
-    private Output<String> timeUpdated;
+    private Output</* @Nullable */ String> timeUpdated;
 
     /**
      * @return The time the OceInstance was updated. An RFC3339 formatted datetime string
      * 
      */
-    public Output<String> timeUpdated() {
-        return this.timeUpdated;
+    public Output<Optional<String>> timeUpdated() {
+        return Codegen.optional(this.timeUpdated);
     }
     /**
      * Upgrade schedule type representing service to be upgraded immediately whenever latest version is released or delay upgrade of the service to previous released version
      * 
      */
     @Export(name="upgradeSchedule", refs={String.class}, tree="[0]")
-    private Output<String> upgradeSchedule;
+    private Output</* @Nullable */ String> upgradeSchedule;
 
     /**
      * @return Upgrade schedule type representing service to be upgraded immediately whenever latest version is released or delay upgrade of the service to previous released version
      * 
      */
-    public Output<String> upgradeSchedule() {
-        return this.upgradeSchedule;
+    public Output<Optional<String>> upgradeSchedule() {
+        return Codegen.optional(this.upgradeSchedule);
     }
     /**
      * (Updatable) Web Application Firewall(WAF) primary domain
@@ -435,7 +436,7 @@ public class Instance extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="wafPrimaryDomain", refs={String.class}, tree="[0]")
-    private Output<String> wafPrimaryDomain;
+    private Output</* @Nullable */ String> wafPrimaryDomain;
 
     /**
      * @return (Updatable) Web Application Firewall(WAF) primary domain
@@ -444,8 +445,8 @@ public class Instance extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Output<String> wafPrimaryDomain() {
-        return this.wafPrimaryDomain;
+    public Output<Optional<String>> wafPrimaryDomain() {
+        return Codegen.optional(this.wafPrimaryDomain);
     }
 
     /**

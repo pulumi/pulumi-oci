@@ -28,13 +28,13 @@ public final class GetExadataInfrastructuresResult {
      * @return The list of exadata_infrastructures.
      * 
      */
-    private List<GetExadataInfrastructuresExadataInfrastructure> exadataInfrastructures;
+    private @Nullable List<GetExadataInfrastructuresExadataInfrastructure> exadataInfrastructures;
     private @Nullable List<GetExadataInfrastructuresFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The current lifecycle state of the Exadata infrastructure.
      * 
@@ -61,7 +61,7 @@ public final class GetExadataInfrastructuresResult {
      * 
      */
     public List<GetExadataInfrastructuresExadataInfrastructure> exadataInfrastructures() {
-        return this.exadataInfrastructures;
+        return this.exadataInfrastructures == null ? List.of() : this.exadataInfrastructures;
     }
     public List<GetExadataInfrastructuresFilter> filters() {
         return this.filters == null ? List.of() : this.filters;
@@ -70,8 +70,8 @@ public final class GetExadataInfrastructuresResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The current lifecycle state of the Exadata infrastructure.
@@ -92,9 +92,9 @@ public final class GetExadataInfrastructuresResult {
     public static final class Builder {
         private String compartmentId;
         private @Nullable String displayName;
-        private List<GetExadataInfrastructuresExadataInfrastructure> exadataInfrastructures;
+        private @Nullable List<GetExadataInfrastructuresExadataInfrastructure> exadataInfrastructures;
         private @Nullable List<GetExadataInfrastructuresFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String state;
         public Builder() {}
         public Builder(GetExadataInfrastructuresResult defaults) {
@@ -118,8 +118,8 @@ public final class GetExadataInfrastructuresResult {
             return this;
         }
         @CustomType.Setter
-        public Builder exadataInfrastructures(List<GetExadataInfrastructuresExadataInfrastructure> exadataInfrastructures) {
-            this.exadataInfrastructures = Objects.requireNonNull(exadataInfrastructures);
+        public Builder exadataInfrastructures(@Nullable List<GetExadataInfrastructuresExadataInfrastructure> exadataInfrastructures) {
+            this.exadataInfrastructures = exadataInfrastructures;
             return this;
         }
         public Builder exadataInfrastructures(GetExadataInfrastructuresExadataInfrastructure... exadataInfrastructures) {
@@ -134,8 +134,8 @@ public final class GetExadataInfrastructuresResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

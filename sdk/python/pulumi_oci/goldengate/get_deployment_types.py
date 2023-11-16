@@ -54,25 +54,16 @@ class GetDeploymentTypesResult:
     @property
     @pulumi.getter(name="deploymentType")
     def deployment_type(self) -> Optional[str]:
-        """
-        The type of deployment, which can be any one of the Allowed values.  NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of 'DATABASE_ORACLE'.
-        """
         return pulumi.get(self, "deployment_type")
 
     @property
     @pulumi.getter(name="deploymentTypeCollections")
-    def deployment_type_collections(self) -> Sequence['outputs.GetDeploymentTypesDeploymentTypeCollectionResult']:
-        """
-        The list of deployment_type_collection.
-        """
+    def deployment_type_collections(self) -> Optional[Sequence['outputs.GetDeploymentTypesDeploymentTypeCollectionResult']]:
         return pulumi.get(self, "deployment_type_collections")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        An object's Display Name.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -82,7 +73,7 @@ class GetDeploymentTypesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -91,9 +82,6 @@ class GetDeploymentTypesResult:
     @property
     @pulumi.getter(name="oggVersion")
     def ogg_version(self) -> Optional[str]:
-        """
-        Version of OGG
-        """
         return pulumi.get(self, "ogg_version")
 
 
@@ -119,27 +107,7 @@ def get_deployment_types(compartment_id: Optional[str] = None,
                          ogg_version: Optional[str] = None,
                          opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDeploymentTypesResult:
     """
-    This data source provides the list of Deployment Types in Oracle Cloud Infrastructure Golden Gate service.
-
-    Returns an array of DeploymentTypeDescriptor
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_deployment_types = oci.GoldenGate.get_deployment_types(compartment_id=var["compartment_id"],
-        deployment_type=var["deployment_type_deployment_type"],
-        display_name=var["deployment_type_display_name"],
-        ogg_version=var["deployment_type_ogg_version"])
-    ```
-
-
-    :param str compartment_id: The OCID of the compartment that contains the work request. Work requests should be scoped  to the same compartment as the resource the work request affects. If the work request concerns  multiple resources, and those resources are not in the same compartment, it is up to the service team  to pick the primary resource whose compartment should be used.
-    :param str deployment_type: The type of deployment, the value determines the exact 'type' of the service executed in the deployment. Default value is DATABASE_ORACLE.
-    :param str display_name: A filter to return only the resources that match the entire 'displayName' given.
-    :param str ogg_version: Allows to query by a specific GoldenGate version.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -168,26 +136,6 @@ def get_deployment_types_output(compartment_id: Optional[pulumi.Input[str]] = No
                                 ogg_version: Optional[pulumi.Input[Optional[str]]] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDeploymentTypesResult]:
     """
-    This data source provides the list of Deployment Types in Oracle Cloud Infrastructure Golden Gate service.
-
-    Returns an array of DeploymentTypeDescriptor
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_deployment_types = oci.GoldenGate.get_deployment_types(compartment_id=var["compartment_id"],
-        deployment_type=var["deployment_type_deployment_type"],
-        display_name=var["deployment_type_display_name"],
-        ogg_version=var["deployment_type_ogg_version"])
-    ```
-
-
-    :param str compartment_id: The OCID of the compartment that contains the work request. Work requests should be scoped  to the same compartment as the resource the work request affects. If the work request concerns  multiple resources, and those resources are not in the same compartment, it is up to the service team  to pick the primary resource whose compartment should be used.
-    :param str deployment_type: The type of deployment, the value determines the exact 'type' of the service executed in the deployment. Default value is DATABASE_ORACLE.
-    :param str display_name: A filter to return only the resources that match the entire 'displayName' given.
-    :param str ogg_version: Allows to query by a specific GoldenGate version.
+    Use this data source to access information about an existing resource.
     """
     ...

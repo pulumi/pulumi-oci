@@ -47,10 +47,7 @@ class GetSecurityAssessmentComparisonResult:
 
     @property
     @pulumi.getter(name="baselineId")
-    def baseline_id(self) -> str:
-        """
-        The OCID of the security assessment that is set as a baseline.
-        """
+    def baseline_id(self) -> Optional[str]:
         return pulumi.get(self, "baseline_id")
 
     @property
@@ -60,7 +57,7 @@ class GetSecurityAssessmentComparisonResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -73,26 +70,17 @@ class GetSecurityAssessmentComparisonResult:
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the security assessment comparison.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter
-    def targets(self) -> Sequence['outputs.GetSecurityAssessmentComparisonTargetResult']:
-        """
-        A target-based comparison between two security assessments.
-        """
+    def targets(self) -> Optional[Sequence['outputs.GetSecurityAssessmentComparisonTargetResult']]:
         return pulumi.get(self, "targets")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time when the security assessment comparison was created. Conforms to the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
 
@@ -115,23 +103,7 @@ def get_security_assessment_comparison(comparison_security_assessment_id: Option
                                        security_assessment_id: Optional[str] = None,
                                        opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetSecurityAssessmentComparisonResult:
     """
-    This data source provides details about a specific Security Assessment Comparison resource in Oracle Cloud Infrastructure Data Safe service.
-
-    Gets the details of the comparison report for the security assessments submitted for comparison.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_security_assessment_comparison = oci.DataSafe.get_security_assessment_comparison(comparison_security_assessment_id=oci_data_safe_security_assessment["test_security_assessment"]["id"],
-        security_assessment_id=oci_data_safe_security_assessment["test_security_assessment"]["id"])
-    ```
-
-
-    :param str comparison_security_assessment_id: The OCID of the security assessment baseline.
-    :param str security_assessment_id: The OCID of the security assessment.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['comparisonSecurityAssessmentId'] = comparison_security_assessment_id
@@ -154,22 +126,6 @@ def get_security_assessment_comparison_output(comparison_security_assessment_id:
                                               security_assessment_id: Optional[pulumi.Input[str]] = None,
                                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSecurityAssessmentComparisonResult]:
     """
-    This data source provides details about a specific Security Assessment Comparison resource in Oracle Cloud Infrastructure Data Safe service.
-
-    Gets the details of the comparison report for the security assessments submitted for comparison.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_security_assessment_comparison = oci.DataSafe.get_security_assessment_comparison(comparison_security_assessment_id=oci_data_safe_security_assessment["test_security_assessment"]["id"],
-        security_assessment_id=oci_data_safe_security_assessment["test_security_assessment"]["id"])
-    ```
-
-
-    :param str comparison_security_assessment_id: The OCID of the security assessment baseline.
-    :param str security_assessment_id: The OCID of the security assessment.
+    Use this data source to access information about an existing resource.
     """
     ...

@@ -198,7 +198,7 @@ namespace Pulumi.Oci.Monitoring
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The current lifecycle state of the alarm.  Example: `DELETED`
         /// </summary>
@@ -216,7 +216,7 @@ namespace Pulumi.Oci.Monitoring
 
             ImmutableArray<Outputs.GetAlarmsFilterResult> filters,
 
-            string id,
+            string? id,
 
             string? state)
         {

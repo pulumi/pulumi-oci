@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Managed Instance Group resource in Oracle Cloud Infrastructure Os Management Hub service.
@@ -60,42 +59,42 @@ type LookupManagedInstanceGroupArgs struct {
 // A collection of values returned by getManagedInstanceGroup.
 type LookupManagedInstanceGroupResult struct {
 	// The CPU architecture of the instances in the managed instance group.
-	ArchType string `pulumi:"archType"`
+	ArchType *string `pulumi:"archType"`
 	// The OCID of the tenancy containing the managed instance group.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// Software source description.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// Software source name.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The OCID of the software source.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The number of Managed Instances in the managed instance group.
-	ManagedInstanceCount   int    `pulumi:"managedInstanceCount"`
+	ManagedInstanceCount   *int   `pulumi:"managedInstanceCount"`
 	ManagedInstanceGroupId string `pulumi:"managedInstanceGroupId"`
 	// The list of managed instances OCIDs attached to the managed instance group.
 	ManagedInstanceIds []string `pulumi:"managedInstanceIds"`
 	// The operating system type of the instances in the managed instance group.
-	OsFamily string `pulumi:"osFamily"`
+	OsFamily *string `pulumi:"osFamily"`
 	// The number of scheduled jobs pending against the managed instance group.
-	PendingJobCount int `pulumi:"pendingJobCount"`
+	PendingJobCount *int `pulumi:"pendingJobCount"`
 	// The list of software source OCIDs that the managed instance group will use.
 	SoftwareSourceIds []string `pulumi:"softwareSourceIds"`
 	// The list of software sources that the managed instance group will use.
 	SoftwareSources []GetManagedInstanceGroupSoftwareSource `pulumi:"softwareSources"`
 	// The current state of the managed instance group.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The time the managed instance group was created. An RFC3339 formatted datetime string.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time the managed instance group was last modified. An RFC3339 formatted datetime string.
-	TimeModified string `pulumi:"timeModified"`
+	TimeModified *string `pulumi:"timeModified"`
 	// The software source vendor name.
-	VendorName string `pulumi:"vendorName"`
+	VendorName *string `pulumi:"vendorName"`
 }
 
 func LookupManagedInstanceGroupOutput(ctx *pulumi.Context, args LookupManagedInstanceGroupOutputArgs, opts ...pulumi.InvokeOption) LookupManagedInstanceGroupResultOutput {
@@ -136,20 +135,14 @@ func (o LookupManagedInstanceGroupResultOutput) ToLookupManagedInstanceGroupResu
 	return o
 }
 
-func (o LookupManagedInstanceGroupResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupManagedInstanceGroupResult] {
-	return pulumix.Output[LookupManagedInstanceGroupResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The CPU architecture of the instances in the managed instance group.
-func (o LookupManagedInstanceGroupResultOutput) ArchType() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupManagedInstanceGroupResult) string { return v.ArchType }).(pulumi.StringOutput)
+func (o LookupManagedInstanceGroupResultOutput) ArchType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupManagedInstanceGroupResult) *string { return v.ArchType }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the tenancy containing the managed instance group.
-func (o LookupManagedInstanceGroupResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupManagedInstanceGroupResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupManagedInstanceGroupResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupManagedInstanceGroupResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -158,13 +151,13 @@ func (o LookupManagedInstanceGroupResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // Software source description.
-func (o LookupManagedInstanceGroupResultOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupManagedInstanceGroupResult) string { return v.Description }).(pulumi.StringOutput)
+func (o LookupManagedInstanceGroupResultOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupManagedInstanceGroupResult) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // Software source name.
-func (o LookupManagedInstanceGroupResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupManagedInstanceGroupResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupManagedInstanceGroupResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupManagedInstanceGroupResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -173,13 +166,13 @@ func (o LookupManagedInstanceGroupResultOutput) FreeformTags() pulumi.MapOutput 
 }
 
 // The OCID of the software source.
-func (o LookupManagedInstanceGroupResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupManagedInstanceGroupResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupManagedInstanceGroupResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupManagedInstanceGroupResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The number of Managed Instances in the managed instance group.
-func (o LookupManagedInstanceGroupResultOutput) ManagedInstanceCount() pulumi.IntOutput {
-	return o.ApplyT(func(v LookupManagedInstanceGroupResult) int { return v.ManagedInstanceCount }).(pulumi.IntOutput)
+func (o LookupManagedInstanceGroupResultOutput) ManagedInstanceCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LookupManagedInstanceGroupResult) *int { return v.ManagedInstanceCount }).(pulumi.IntPtrOutput)
 }
 
 func (o LookupManagedInstanceGroupResultOutput) ManagedInstanceGroupId() pulumi.StringOutput {
@@ -192,13 +185,13 @@ func (o LookupManagedInstanceGroupResultOutput) ManagedInstanceIds() pulumi.Stri
 }
 
 // The operating system type of the instances in the managed instance group.
-func (o LookupManagedInstanceGroupResultOutput) OsFamily() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupManagedInstanceGroupResult) string { return v.OsFamily }).(pulumi.StringOutput)
+func (o LookupManagedInstanceGroupResultOutput) OsFamily() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupManagedInstanceGroupResult) *string { return v.OsFamily }).(pulumi.StringPtrOutput)
 }
 
 // The number of scheduled jobs pending against the managed instance group.
-func (o LookupManagedInstanceGroupResultOutput) PendingJobCount() pulumi.IntOutput {
-	return o.ApplyT(func(v LookupManagedInstanceGroupResult) int { return v.PendingJobCount }).(pulumi.IntOutput)
+func (o LookupManagedInstanceGroupResultOutput) PendingJobCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LookupManagedInstanceGroupResult) *int { return v.PendingJobCount }).(pulumi.IntPtrOutput)
 }
 
 // The list of software source OCIDs that the managed instance group will use.
@@ -214,8 +207,8 @@ func (o LookupManagedInstanceGroupResultOutput) SoftwareSources() GetManagedInst
 }
 
 // The current state of the managed instance group.
-func (o LookupManagedInstanceGroupResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupManagedInstanceGroupResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupManagedInstanceGroupResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupManagedInstanceGroupResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -224,18 +217,18 @@ func (o LookupManagedInstanceGroupResultOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The time the managed instance group was created. An RFC3339 formatted datetime string.
-func (o LookupManagedInstanceGroupResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupManagedInstanceGroupResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupManagedInstanceGroupResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupManagedInstanceGroupResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time the managed instance group was last modified. An RFC3339 formatted datetime string.
-func (o LookupManagedInstanceGroupResultOutput) TimeModified() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupManagedInstanceGroupResult) string { return v.TimeModified }).(pulumi.StringOutput)
+func (o LookupManagedInstanceGroupResultOutput) TimeModified() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupManagedInstanceGroupResult) *string { return v.TimeModified }).(pulumi.StringPtrOutput)
 }
 
 // The software source vendor name.
-func (o LookupManagedInstanceGroupResultOutput) VendorName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupManagedInstanceGroupResult) string { return v.VendorName }).(pulumi.StringOutput)
+func (o LookupManagedInstanceGroupResultOutput) VendorName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupManagedInstanceGroupResult) *string { return v.VendorName }).(pulumi.StringPtrOutput)
 }
 
 func init() {

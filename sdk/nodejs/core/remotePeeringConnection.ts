@@ -73,11 +73,11 @@ export class RemotePeeringConnection extends pulumi.CustomResource {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    public readonly displayName!: pulumi.Output<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG the RPC belongs to.
      */
@@ -85,15 +85,15 @@ export class RemotePeeringConnection extends pulumi.CustomResource {
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * Whether the VCN at the other end of the peering is in a different tenancy.  Example: `false`
      */
-    public /*out*/ readonly isCrossTenancyPeering!: pulumi.Output<boolean>;
+    public /*out*/ readonly isCrossTenancyPeering!: pulumi.Output<boolean | undefined>;
     /**
      * The OCID of the RPC you want to peer with.
      */
-    public readonly peerId!: pulumi.Output<string>;
+    public readonly peerId!: pulumi.Output<string | undefined>;
     /**
      * The name of the region that contains the RPC you want to peer with.  Example: `us-ashburn-1`
      *
@@ -101,23 +101,23 @@ export class RemotePeeringConnection extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly peerRegionName!: pulumi.Output<string>;
+    public readonly peerRegionName!: pulumi.Output<string | undefined>;
     /**
      * If this RPC is peered, this value is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the other RPC's tenancy.
      */
-    public /*out*/ readonly peerTenancyId!: pulumi.Output<string>;
+    public /*out*/ readonly peerTenancyId!: pulumi.Output<string | undefined>;
     /**
      * Whether the RPC is peered with another RPC. `NEW` means the RPC has not yet been peered. `PENDING` means the peering is being established. `REVOKED` means the RPC at the other end of the peering has been deleted.
      */
-    public /*out*/ readonly peeringStatus!: pulumi.Output<string>;
+    public /*out*/ readonly peeringStatus!: pulumi.Output<string | undefined>;
     /**
      * The RPC's current lifecycle state.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * The date and time the RPC was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
 
     /**
      * Create a RemotePeeringConnection resource with the given unique name, arguments, and options.

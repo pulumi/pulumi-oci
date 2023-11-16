@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.OsManagementHub.outputs.GetManagedInstanceGroupAvailableModulesManagedInstanceGroupAvailableModuleCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetManagedInstanceGroupAvailableModulesManagedInstanceGroupAvailableModuleCollection {
@@ -14,7 +15,7 @@ public final class GetManagedInstanceGroupAvailableModulesManagedInstanceGroupAv
      * @return List of module stream profile.
      * 
      */
-    private List<GetManagedInstanceGroupAvailableModulesManagedInstanceGroupAvailableModuleCollectionItem> items;
+    private @Nullable List<GetManagedInstanceGroupAvailableModulesManagedInstanceGroupAvailableModuleCollectionItem> items;
 
     private GetManagedInstanceGroupAvailableModulesManagedInstanceGroupAvailableModuleCollection() {}
     /**
@@ -22,7 +23,7 @@ public final class GetManagedInstanceGroupAvailableModulesManagedInstanceGroupAv
      * 
      */
     public List<GetManagedInstanceGroupAvailableModulesManagedInstanceGroupAvailableModuleCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -34,7 +35,7 @@ public final class GetManagedInstanceGroupAvailableModulesManagedInstanceGroupAv
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetManagedInstanceGroupAvailableModulesManagedInstanceGroupAvailableModuleCollectionItem> items;
+        private @Nullable List<GetManagedInstanceGroupAvailableModulesManagedInstanceGroupAvailableModuleCollectionItem> items;
         public Builder() {}
         public Builder(GetManagedInstanceGroupAvailableModulesManagedInstanceGroupAvailableModuleCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -42,8 +43,8 @@ public final class GetManagedInstanceGroupAvailableModulesManagedInstanceGroupAv
         }
 
         @CustomType.Setter
-        public Builder items(List<GetManagedInstanceGroupAvailableModulesManagedInstanceGroupAvailableModuleCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetManagedInstanceGroupAvailableModulesManagedInstanceGroupAvailableModuleCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetManagedInstanceGroupAvailableModulesManagedInstanceGroupAvailableModuleCollectionItem... items) {

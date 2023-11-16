@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Database Security Configs in Oracle Cloud Infrastructure Data Safe service.
@@ -112,7 +111,7 @@ type GetDatabaseSecurityConfigsResult struct {
 	DisplayName *string                            `pulumi:"displayName"`
 	Filters     []GetDatabaseSecurityConfigsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The current state of the database security config.
 	State *string `pulumi:"state"`
 	// The target OCID corresponding to the database security config.
@@ -180,12 +179,6 @@ func (o GetDatabaseSecurityConfigsResultOutput) ToGetDatabaseSecurityConfigsResu
 	return o
 }
 
-func (o GetDatabaseSecurityConfigsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDatabaseSecurityConfigsResult] {
-	return pulumix.Output[GetDatabaseSecurityConfigsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDatabaseSecurityConfigsResultOutput) AccessLevel() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetDatabaseSecurityConfigsResult) *string { return v.AccessLevel }).(pulumi.StringPtrOutput)
 }
@@ -220,8 +213,8 @@ func (o GetDatabaseSecurityConfigsResultOutput) Filters() GetDatabaseSecurityCon
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetDatabaseSecurityConfigsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDatabaseSecurityConfigsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetDatabaseSecurityConfigsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDatabaseSecurityConfigsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the database security config.

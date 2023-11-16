@@ -6,6 +6,8 @@ package com.pulumi.oci.Mysql.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetMysqlDbSystemsDbSystemSource {
@@ -13,55 +15,55 @@ public final class GetMysqlDbSystemsDbSystemSource {
      * @return The OCID of the backup to be used as the source for the new DB System.
      * 
      */
-    private String backupId;
+    private @Nullable String backupId;
     /**
      * @return The DB System [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
-    private String dbSystemId;
+    private @Nullable String dbSystemId;
     /**
      * @return The date and time, as per RFC 3339, of the change up to which the new DB System shall be restored to, using a backup and logs from the original DB System. In case no point in time is specified, then this new DB System shall be restored up to the latest change recorded for the original DB System.
      * 
      */
-    private String recoveryPoint;
+    private @Nullable String recoveryPoint;
     /**
      * @return The specific source identifier.
      * 
      */
-    private String sourceType;
-    private String sourceUrl;
+    private @Nullable String sourceType;
+    private @Nullable String sourceUrl;
 
     private GetMysqlDbSystemsDbSystemSource() {}
     /**
      * @return The OCID of the backup to be used as the source for the new DB System.
      * 
      */
-    public String backupId() {
-        return this.backupId;
+    public Optional<String> backupId() {
+        return Optional.ofNullable(this.backupId);
     }
     /**
      * @return The DB System [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
-    public String dbSystemId() {
-        return this.dbSystemId;
+    public Optional<String> dbSystemId() {
+        return Optional.ofNullable(this.dbSystemId);
     }
     /**
      * @return The date and time, as per RFC 3339, of the change up to which the new DB System shall be restored to, using a backup and logs from the original DB System. In case no point in time is specified, then this new DB System shall be restored up to the latest change recorded for the original DB System.
      * 
      */
-    public String recoveryPoint() {
-        return this.recoveryPoint;
+    public Optional<String> recoveryPoint() {
+        return Optional.ofNullable(this.recoveryPoint);
     }
     /**
      * @return The specific source identifier.
      * 
      */
-    public String sourceType() {
-        return this.sourceType;
+    public Optional<String> sourceType() {
+        return Optional.ofNullable(this.sourceType);
     }
-    public String sourceUrl() {
-        return this.sourceUrl;
+    public Optional<String> sourceUrl() {
+        return Optional.ofNullable(this.sourceUrl);
     }
 
     public static Builder builder() {
@@ -73,11 +75,11 @@ public final class GetMysqlDbSystemsDbSystemSource {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String backupId;
-        private String dbSystemId;
-        private String recoveryPoint;
-        private String sourceType;
-        private String sourceUrl;
+        private @Nullable String backupId;
+        private @Nullable String dbSystemId;
+        private @Nullable String recoveryPoint;
+        private @Nullable String sourceType;
+        private @Nullable String sourceUrl;
         public Builder() {}
         public Builder(GetMysqlDbSystemsDbSystemSource defaults) {
     	      Objects.requireNonNull(defaults);
@@ -89,28 +91,28 @@ public final class GetMysqlDbSystemsDbSystemSource {
         }
 
         @CustomType.Setter
-        public Builder backupId(String backupId) {
-            this.backupId = Objects.requireNonNull(backupId);
+        public Builder backupId(@Nullable String backupId) {
+            this.backupId = backupId;
             return this;
         }
         @CustomType.Setter
-        public Builder dbSystemId(String dbSystemId) {
-            this.dbSystemId = Objects.requireNonNull(dbSystemId);
+        public Builder dbSystemId(@Nullable String dbSystemId) {
+            this.dbSystemId = dbSystemId;
             return this;
         }
         @CustomType.Setter
-        public Builder recoveryPoint(String recoveryPoint) {
-            this.recoveryPoint = Objects.requireNonNull(recoveryPoint);
+        public Builder recoveryPoint(@Nullable String recoveryPoint) {
+            this.recoveryPoint = recoveryPoint;
             return this;
         }
         @CustomType.Setter
-        public Builder sourceType(String sourceType) {
-            this.sourceType = Objects.requireNonNull(sourceType);
+        public Builder sourceType(@Nullable String sourceType) {
+            this.sourceType = sourceType;
             return this;
         }
         @CustomType.Setter
-        public Builder sourceUrl(String sourceUrl) {
-            this.sourceUrl = Objects.requireNonNull(sourceUrl);
+        public Builder sourceUrl(@Nullable String sourceUrl) {
+            this.sourceUrl = sourceUrl;
             return this;
         }
         public GetMysqlDbSystemsDbSystemSource build() {

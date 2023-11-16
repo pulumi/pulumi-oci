@@ -51,63 +51,63 @@ export interface GetByoipRangeResult {
     /**
      * A list of `ByoipRangeVcnIpv6AllocationSummary` objects.
      */
-    readonly byoipRangeVcnIpv6allocations: outputs.Core.GetByoipRangeByoipRangeVcnIpv6allocation[];
+    readonly byoipRangeVcnIpv6allocations?: outputs.Core.GetByoipRangeByoipRangeVcnIpv6allocation[];
     /**
      * The public IPv4 CIDR block being imported from on-premises to the Oracle cloud.
      */
-    readonly cidrBlock: string;
+    readonly cidrBlock?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the BYOIP CIDR block.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The IPv6 prefix being imported to the Oracle cloud. This prefix must be /48 or larger, and can be subdivided into sub-ranges used across multiple VCNs. A BYOIPv6 prefix can be also assigned across multiple VCNs, and each VCN must be /64 or larger. You may specify a ULA or private IPv6 prefix of /64 or larger to use in the VCN. IPv6-enabled subnets will remain a fixed /64 in size.
      */
-    readonly ipv6cidrBlock: string;
+    readonly ipv6cidrBlock?: string;
     /**
      * The `ByoipRange` resource's current status.
      */
-    readonly lifecycleDetails: string;
+    readonly lifecycleDetails?: string;
     /**
      * The `ByoipRange` resource's current state.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * The date and time the `ByoipRange` resource was advertised to the internet by BGP, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      */
-    readonly timeAdvertised: string;
+    readonly timeAdvertised?: string;
     /**
      * The date and time the `ByoipRange` resource was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The date and time the `ByoipRange` resource was validated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      */
-    readonly timeValidated: string;
+    readonly timeValidated?: string;
     /**
      * The date and time the `ByoipRange` resource was withdrawn from advertisement by BGP to the internet, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      */
-    readonly timeWithdrawn: string;
+    readonly timeWithdrawn?: string;
     /**
      * The validation token is an internally-generated ASCII string used in the validation process. See [Importing a CIDR block](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/BYOIP.htm#import_cidr) for details.
      */
-    readonly validationToken: string;
+    readonly validationToken?: string;
 }
 /**
  * This data source provides details about a specific Byoip Range resource in Oracle Cloud Infrastructure Core service.

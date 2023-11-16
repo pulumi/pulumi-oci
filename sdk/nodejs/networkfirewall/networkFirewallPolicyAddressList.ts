@@ -73,11 +73,11 @@ export class NetworkFirewallPolicyAddressList extends pulumi.CustomResource {
     /**
      * OCID of the Network Firewall Policy this Address List belongs to.
      */
-    public /*out*/ readonly parentResourceId!: pulumi.Output<string>;
+    public /*out*/ readonly parentResourceId!: pulumi.Output<string | undefined>;
     /**
      * Count of total addresses in the AddressList
      */
-    public /*out*/ readonly totalAddresses!: pulumi.Output<number>;
+    public /*out*/ readonly totalAddresses!: pulumi.Output<number | undefined>;
     /**
      * Type of address List. The accepted values are - * FQDN * IP
      *

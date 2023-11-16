@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Managed Instance Group Available Packages in Oracle Cloud Infrastructure Os Management Hub service.
@@ -79,7 +78,7 @@ type GetManagedInstanceGroupAvailablePackagesResult struct {
 	DisplayNames []string                                         `pulumi:"displayNames"`
 	Filters      []GetManagedInstanceGroupAvailablePackagesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Flag to return only latest package versions.
 	IsLatest *bool `pulumi:"isLatest"`
 	// The list of managed_instance_group_available_package_collection.
@@ -134,12 +133,6 @@ func (o GetManagedInstanceGroupAvailablePackagesResultOutput) ToGetManagedInstan
 	return o
 }
 
-func (o GetManagedInstanceGroupAvailablePackagesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagedInstanceGroupAvailablePackagesResult] {
-	return pulumix.Output[GetManagedInstanceGroupAvailablePackagesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetManagedInstanceGroupAvailablePackagesResultOutput) CompartmentId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetManagedInstanceGroupAvailablePackagesResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
@@ -160,8 +153,8 @@ func (o GetManagedInstanceGroupAvailablePackagesResultOutput) Filters() GetManag
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetManagedInstanceGroupAvailablePackagesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedInstanceGroupAvailablePackagesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetManagedInstanceGroupAvailablePackagesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedInstanceGroupAvailablePackagesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Flag to return only latest package versions.

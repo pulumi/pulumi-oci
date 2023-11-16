@@ -74,7 +74,7 @@ class GetUserAssessmentProfileAnalyticsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -82,10 +82,7 @@ class GetUserAssessmentProfileAnalyticsResult:
 
     @property
     @pulumi.getter(name="profileAggregations")
-    def profile_aggregations(self) -> Sequence['outputs.GetUserAssessmentProfileAnalyticsProfileAggregationResult']:
-        """
-        The list of profile_aggregations.
-        """
+    def profile_aggregations(self) -> Optional[Sequence['outputs.GetUserAssessmentProfileAnalyticsProfileAggregationResult']]:
         return pulumi.get(self, "profile_aggregations")
 
     @property
@@ -130,45 +127,7 @@ def get_user_assessment_profile_analytics(access_level: Optional[str] = None,
                                           user_assessment_id: Optional[str] = None,
                                           opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetUserAssessmentProfileAnalyticsResult:
     """
-    This data source provides the list of User Assessment Profile Analytics in Oracle Cloud Infrastructure Data Safe service.
-
-    Gets a list of aggregated user profile details in the specified compartment. This provides information about the
-    overall profiles available. For example, the user profile details include how many users have the profile assigned
-    and do how many use password verification function. This data is especially useful content for dashboards or to support analytics.
-
-    When you perform the ListProfileAnalytics operation, if the parameter compartmentIdInSubtree is set to "true," and if the
-    parameter accessLevel is set to ACCESSIBLE, then the operation returns compartments in which the requestor has INSPECT
-    permissions on at least one resource, directly or indirectly (in subcompartments). If the operation is performed at the
-    root compartment. If the requestor does not have access to at least one subcompartment of the compartment specified by
-    compartmentId, then "Not Authorized" is returned.
-
-    The parameter compartmentIdInSubtree applies when you perform ListProfileAnalytics on the compartmentId passed and when it is
-    set to true, the entire hierarchy of compartments can be returned.
-
-    To use ListProfileAnalytics to get a full list of all compartments and subcompartments in the tenancy from the root compartment,
-    set the parameter compartmentIdInSubtree to true and accessLevel to ACCESSIBLE.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_user_assessment_profile_analytics = oci.DataSafe.get_user_assessment_profile_analytics(compartment_id=var["compartment_id"],
-        user_assessment_id=oci_data_safe_user_assessment["test_user_assessment"]["id"],
-        access_level=var["user_assessment_profile_analytic_access_level"],
-        compartment_id_in_subtree=var["user_assessment_profile_analytic_compartment_id_in_subtree"],
-        profile_name=oci_optimizer_profile["test_profile"]["name"],
-        target_id=oci_cloud_guard_target["test_target"]["id"])
-    ```
-
-
-    :param str access_level: Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
-    :param str compartment_id: A filter to return only resources that match the specified compartment OCID.
-    :param bool compartment_id_in_subtree: Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
-    :param str profile_name: A filter to return only items that match the specified profile name.
-    :param str target_id: A filter to return only items related to a specific target OCID.
-    :param str user_assessment_id: The OCID of the user assessment.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['accessLevel'] = access_level
@@ -203,44 +162,6 @@ def get_user_assessment_profile_analytics_output(access_level: Optional[pulumi.I
                                                  user_assessment_id: Optional[pulumi.Input[str]] = None,
                                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetUserAssessmentProfileAnalyticsResult]:
     """
-    This data source provides the list of User Assessment Profile Analytics in Oracle Cloud Infrastructure Data Safe service.
-
-    Gets a list of aggregated user profile details in the specified compartment. This provides information about the
-    overall profiles available. For example, the user profile details include how many users have the profile assigned
-    and do how many use password verification function. This data is especially useful content for dashboards or to support analytics.
-
-    When you perform the ListProfileAnalytics operation, if the parameter compartmentIdInSubtree is set to "true," and if the
-    parameter accessLevel is set to ACCESSIBLE, then the operation returns compartments in which the requestor has INSPECT
-    permissions on at least one resource, directly or indirectly (in subcompartments). If the operation is performed at the
-    root compartment. If the requestor does not have access to at least one subcompartment of the compartment specified by
-    compartmentId, then "Not Authorized" is returned.
-
-    The parameter compartmentIdInSubtree applies when you perform ListProfileAnalytics on the compartmentId passed and when it is
-    set to true, the entire hierarchy of compartments can be returned.
-
-    To use ListProfileAnalytics to get a full list of all compartments and subcompartments in the tenancy from the root compartment,
-    set the parameter compartmentIdInSubtree to true and accessLevel to ACCESSIBLE.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_user_assessment_profile_analytics = oci.DataSafe.get_user_assessment_profile_analytics(compartment_id=var["compartment_id"],
-        user_assessment_id=oci_data_safe_user_assessment["test_user_assessment"]["id"],
-        access_level=var["user_assessment_profile_analytic_access_level"],
-        compartment_id_in_subtree=var["user_assessment_profile_analytic_compartment_id_in_subtree"],
-        profile_name=oci_optimizer_profile["test_profile"]["name"],
-        target_id=oci_cloud_guard_target["test_target"]["id"])
-    ```
-
-
-    :param str access_level: Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
-    :param str compartment_id: A filter to return only resources that match the specified compartment OCID.
-    :param bool compartment_id_in_subtree: Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
-    :param str profile_name: A filter to return only items that match the specified profile name.
-    :param str target_id: A filter to return only items related to a specific target OCID.
-    :param str user_assessment_id: The OCID of the user assessment.
+    Use this data source to access information about an existing resource.
     """
     ...

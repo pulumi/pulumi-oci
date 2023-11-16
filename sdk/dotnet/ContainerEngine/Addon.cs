@@ -53,7 +53,7 @@ namespace Pulumi.Oci.ContainerEngine
         /// current installed version of the addon
         /// </summary>
         [Output("currentInstalledVersion")]
-        public Output<string> CurrentInstalledVersion { get; private set; } = null!;
+        public Output<string?> CurrentInstalledVersion { get; private set; } = null!;
 
         /// <summary>
         /// Whether to remove addon resource in deletion.
@@ -65,13 +65,13 @@ namespace Pulumi.Oci.ContainerEngine
         /// The state of the addon.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// The time the cluster was created.
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The version of addon to be installed.
@@ -81,7 +81,7 @@ namespace Pulumi.Oci.ContainerEngine
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("version")]
-        public Output<string> Version { get; private set; } = null!;
+        public Output<string?> Version { get; private set; } = null!;
 
 
         /// <summary>

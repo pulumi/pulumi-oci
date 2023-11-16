@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Double;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAutonomousVmClusterResourceUsageAutonomousVmResourceUsageAutonomousContainerDatabaseUsage {
@@ -14,87 +16,87 @@ public final class GetAutonomousVmClusterResourceUsageAutonomousVmResourceUsageA
      * @return The number of CPU cores available.
      * 
      */
-    private Double availableCpus;
+    private @Nullable Double availableCpus;
     /**
      * @return The user-friendly name for the Autonomous VM cluster. The name does not need to be unique.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous VM cluster.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The number of CPUs provisioned in an Autonomous VM Cluster.
      * 
      */
-    private Double provisionedCpus;
+    private @Nullable Double provisionedCpus;
     /**
      * @return CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
      * 
      */
-    private Double reclaimableCpus;
+    private @Nullable Double reclaimableCpus;
     /**
      * @return The number of CPUs reserved in an Autonomous VM Cluster.
      * 
      */
-    private Double reservedCpus;
+    private @Nullable Double reservedCpus;
     /**
      * @return The number of CPU cores alloted to the Autonomous Container Databases in an Autonomous VM cluster.
      * 
      */
-    private Double usedCpus;
+    private @Nullable Double usedCpus;
 
     private GetAutonomousVmClusterResourceUsageAutonomousVmResourceUsageAutonomousContainerDatabaseUsage() {}
     /**
      * @return The number of CPU cores available.
      * 
      */
-    public Double availableCpus() {
-        return this.availableCpus;
+    public Optional<Double> availableCpus() {
+        return Optional.ofNullable(this.availableCpus);
     }
     /**
      * @return The user-friendly name for the Autonomous VM cluster. The name does not need to be unique.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous VM cluster.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The number of CPUs provisioned in an Autonomous VM Cluster.
      * 
      */
-    public Double provisionedCpus() {
-        return this.provisionedCpus;
+    public Optional<Double> provisionedCpus() {
+        return Optional.ofNullable(this.provisionedCpus);
     }
     /**
      * @return CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
      * 
      */
-    public Double reclaimableCpus() {
-        return this.reclaimableCpus;
+    public Optional<Double> reclaimableCpus() {
+        return Optional.ofNullable(this.reclaimableCpus);
     }
     /**
      * @return The number of CPUs reserved in an Autonomous VM Cluster.
      * 
      */
-    public Double reservedCpus() {
-        return this.reservedCpus;
+    public Optional<Double> reservedCpus() {
+        return Optional.ofNullable(this.reservedCpus);
     }
     /**
      * @return The number of CPU cores alloted to the Autonomous Container Databases in an Autonomous VM cluster.
      * 
      */
-    public Double usedCpus() {
-        return this.usedCpus;
+    public Optional<Double> usedCpus() {
+        return Optional.ofNullable(this.usedCpus);
     }
 
     public static Builder builder() {
@@ -106,13 +108,13 @@ public final class GetAutonomousVmClusterResourceUsageAutonomousVmResourceUsageA
     }
     @CustomType.Builder
     public static final class Builder {
-        private Double availableCpus;
-        private String displayName;
-        private String id;
-        private Double provisionedCpus;
-        private Double reclaimableCpus;
-        private Double reservedCpus;
-        private Double usedCpus;
+        private @Nullable Double availableCpus;
+        private @Nullable String displayName;
+        private @Nullable String id;
+        private @Nullable Double provisionedCpus;
+        private @Nullable Double reclaimableCpus;
+        private @Nullable Double reservedCpus;
+        private @Nullable Double usedCpus;
         public Builder() {}
         public Builder(GetAutonomousVmClusterResourceUsageAutonomousVmResourceUsageAutonomousContainerDatabaseUsage defaults) {
     	      Objects.requireNonNull(defaults);
@@ -126,38 +128,38 @@ public final class GetAutonomousVmClusterResourceUsageAutonomousVmResourceUsageA
         }
 
         @CustomType.Setter
-        public Builder availableCpus(Double availableCpus) {
-            this.availableCpus = Objects.requireNonNull(availableCpus);
+        public Builder availableCpus(@Nullable Double availableCpus) {
+            this.availableCpus = availableCpus;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder provisionedCpus(Double provisionedCpus) {
-            this.provisionedCpus = Objects.requireNonNull(provisionedCpus);
+        public Builder provisionedCpus(@Nullable Double provisionedCpus) {
+            this.provisionedCpus = provisionedCpus;
             return this;
         }
         @CustomType.Setter
-        public Builder reclaimableCpus(Double reclaimableCpus) {
-            this.reclaimableCpus = Objects.requireNonNull(reclaimableCpus);
+        public Builder reclaimableCpus(@Nullable Double reclaimableCpus) {
+            this.reclaimableCpus = reclaimableCpus;
             return this;
         }
         @CustomType.Setter
-        public Builder reservedCpus(Double reservedCpus) {
-            this.reservedCpus = Objects.requireNonNull(reservedCpus);
+        public Builder reservedCpus(@Nullable Double reservedCpus) {
+            this.reservedCpus = reservedCpus;
             return this;
         }
         @CustomType.Setter
-        public Builder usedCpus(Double usedCpus) {
-            this.usedCpus = Objects.requireNonNull(usedCpus);
+        public Builder usedCpus(@Nullable Double usedCpus) {
+            this.usedCpus = usedCpus;
             return this;
         }
         public GetAutonomousVmClusterResourceUsageAutonomousVmResourceUsageAutonomousContainerDatabaseUsage build() {

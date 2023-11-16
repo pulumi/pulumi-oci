@@ -42,7 +42,7 @@ class GetLogAnalyticsLogGroupsSummaryResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -50,7 +50,7 @@ class GetLogAnalyticsLogGroupsSummaryResult:
 
     @property
     @pulumi.getter(name="logGroupCount")
-    def log_group_count(self) -> int:
+    def log_group_count(self) -> Optional[int]:
         return pulumi.get(self, "log_group_count")
 
     @property
@@ -75,23 +75,7 @@ def get_log_analytics_log_groups_summary(compartment_id: Optional[str] = None,
                                          namespace: Optional[str] = None,
                                          opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetLogAnalyticsLogGroupsSummaryResult:
     """
-    This data source provides details about a specific Log Analytics Log Groups Summary resource in Oracle Cloud Infrastructure Log Analytics service.
-
-    Returns the count of log groups in a compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_log_analytics_log_groups_summary = oci.LogAnalytics.get_log_analytics_log_groups_summary(compartment_id=var["compartment_id"],
-        namespace=var["log_analytics_log_groups_summary_namespace"])
-    ```
-
-
-    :param str compartment_id: The ID of the compartment in which to list resources.
-    :param str namespace: The Logging Analytics namespace used for the request.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -111,22 +95,6 @@ def get_log_analytics_log_groups_summary_output(compartment_id: Optional[pulumi.
                                                 namespace: Optional[pulumi.Input[str]] = None,
                                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetLogAnalyticsLogGroupsSummaryResult]:
     """
-    This data source provides details about a specific Log Analytics Log Groups Summary resource in Oracle Cloud Infrastructure Log Analytics service.
-
-    Returns the count of log groups in a compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_log_analytics_log_groups_summary = oci.LogAnalytics.get_log_analytics_log_groups_summary(compartment_id=var["compartment_id"],
-        namespace=var["log_analytics_log_groups_summary_namespace"])
-    ```
-
-
-    :param str compartment_id: The ID of the compartment in which to list resources.
-    :param str namespace: The Logging Analytics namespace used for the request.
+    Use this data source to access information about an existing resource.
     """
     ...

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Category resource in Oracle Cloud Infrastructure Optimizer service.
@@ -61,29 +60,29 @@ type GetCategoryArgs struct {
 type GetCategoryResult struct {
 	CategoryId string `pulumi:"categoryId"`
 	// The OCID of the tenancy. The tenancy is the root compartment.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// The name associated with the compartment.
-	CompartmentName string `pulumi:"compartmentName"`
+	CompartmentName *string `pulumi:"compartmentName"`
 	// Text describing the category.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// The estimated cost savings, in dollars, for the category.
-	EstimatedCostSaving float64 `pulumi:"estimatedCostSaving"`
+	EstimatedCostSaving *float64 `pulumi:"estimatedCostSaving"`
 	// Additional metadata key/value pairs for the category.
 	ExtendedMetadata map[string]interface{} `pulumi:"extendedMetadata"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The name assigned to the category.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// An array of `RecommendationCount` objects grouped by the level of importance assigned to the recommendation.
 	RecommendationCounts []GetCategoryRecommendationCount `pulumi:"recommendationCounts"`
 	// An array of `ResourceCount` objects grouped by the status of the recommendation.
 	ResourceCounts []GetCategoryResourceCount `pulumi:"resourceCounts"`
 	// The category's current state.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The date and time the category details were created, in the format defined by RFC3339.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The date and time the category details were last updated, in the format defined by RFC3339.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 func GetCategoryOutput(ctx *pulumi.Context, args GetCategoryOutputArgs, opts ...pulumi.InvokeOption) GetCategoryResultOutput {
@@ -124,34 +123,28 @@ func (o GetCategoryResultOutput) ToGetCategoryResultOutputWithContext(ctx contex
 	return o
 }
 
-func (o GetCategoryResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetCategoryResult] {
-	return pulumix.Output[GetCategoryResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetCategoryResultOutput) CategoryId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetCategoryResult) string { return v.CategoryId }).(pulumi.StringOutput)
 }
 
 // The OCID of the tenancy. The tenancy is the root compartment.
-func (o GetCategoryResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCategoryResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetCategoryResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCategoryResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // The name associated with the compartment.
-func (o GetCategoryResultOutput) CompartmentName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCategoryResult) string { return v.CompartmentName }).(pulumi.StringOutput)
+func (o GetCategoryResultOutput) CompartmentName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCategoryResult) *string { return v.CompartmentName }).(pulumi.StringPtrOutput)
 }
 
 // Text describing the category.
-func (o GetCategoryResultOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCategoryResult) string { return v.Description }).(pulumi.StringOutput)
+func (o GetCategoryResultOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCategoryResult) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // The estimated cost savings, in dollars, for the category.
-func (o GetCategoryResultOutput) EstimatedCostSaving() pulumi.Float64Output {
-	return o.ApplyT(func(v GetCategoryResult) float64 { return v.EstimatedCostSaving }).(pulumi.Float64Output)
+func (o GetCategoryResultOutput) EstimatedCostSaving() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetCategoryResult) *float64 { return v.EstimatedCostSaving }).(pulumi.Float64PtrOutput)
 }
 
 // Additional metadata key/value pairs for the category.
@@ -160,13 +153,13 @@ func (o GetCategoryResultOutput) ExtendedMetadata() pulumi.MapOutput {
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetCategoryResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCategoryResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetCategoryResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCategoryResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The name assigned to the category.
-func (o GetCategoryResultOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCategoryResult) string { return v.Name }).(pulumi.StringOutput)
+func (o GetCategoryResultOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCategoryResult) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // An array of `RecommendationCount` objects grouped by the level of importance assigned to the recommendation.
@@ -180,18 +173,18 @@ func (o GetCategoryResultOutput) ResourceCounts() GetCategoryResourceCountArrayO
 }
 
 // The category's current state.
-func (o GetCategoryResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCategoryResult) string { return v.State }).(pulumi.StringOutput)
+func (o GetCategoryResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCategoryResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the category details were created, in the format defined by RFC3339.
-func (o GetCategoryResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCategoryResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetCategoryResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCategoryResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the category details were last updated, in the format defined by RFC3339.
-func (o GetCategoryResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCategoryResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o GetCategoryResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCategoryResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 func init() {

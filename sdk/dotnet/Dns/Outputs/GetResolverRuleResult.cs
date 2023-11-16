@@ -16,7 +16,7 @@ namespace Pulumi.Oci.Dns.Outputs
         /// <summary>
         /// The action determines the behavior of the rule. If a query matches a supplied condition, the action will apply. If there are no conditions on the rule, all queries are subject to the specified action.
         /// </summary>
-        public readonly string Action;
+        public readonly string? Action;
         /// <summary>
         /// A list of CIDR blocks. The query must come from a client within one of the blocks in order for the rule action to apply.
         /// </summary>
@@ -32,11 +32,11 @@ namespace Pulumi.Oci.Dns.Outputs
         /// <summary>
         /// Case-insensitive name of an endpoint, that is a sub-resource of the resolver, to use as the forwarding interface. The endpoint must have isForwarding set to true.
         /// </summary>
-        public readonly string SourceEndpointName;
+        public readonly string? SourceEndpointName;
 
         [OutputConstructor]
         private GetResolverRuleResult(
-            string action,
+            string? action,
 
             ImmutableArray<string> clientAddressConditions,
 
@@ -44,7 +44,7 @@ namespace Pulumi.Oci.Dns.Outputs
 
             ImmutableArray<string> qnameCoverConditions,
 
-            string sourceEndpointName)
+            string? sourceEndpointName)
         {
             Action = action;
             ClientAddressConditions = clientAddressConditions;

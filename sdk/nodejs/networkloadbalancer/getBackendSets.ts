@@ -49,12 +49,12 @@ export interface GetBackendSetsResult {
     /**
      * The list of backend_set_collection.
      */
-    readonly backendSetCollections: outputs.NetworkLoadBalancer.GetBackendSetsBackendSetCollection[];
+    readonly backendSetCollections?: outputs.NetworkLoadBalancer.GetBackendSetsBackendSetCollection[];
     readonly filters?: outputs.NetworkLoadBalancer.GetBackendSetsFilter[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly networkLoadBalancerId: string;
 }
 /**

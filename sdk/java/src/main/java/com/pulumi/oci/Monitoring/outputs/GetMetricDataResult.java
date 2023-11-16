@@ -27,12 +27,12 @@ public final class GetMetricDataResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The list of metric_data.
      * 
      */
-    private List<GetMetricDataMetricData> metricDatas;
+    private @Nullable List<GetMetricDataMetricData> metricDatas;
     /**
      * @return The reference provided in a metric definition to indicate the source service or application that emitted the metric.  Example: `oci_computeagent`
      * 
@@ -72,15 +72,15 @@ public final class GetMetricDataResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The list of metric_data.
      * 
      */
     public List<GetMetricDataMetricData> metricDatas() {
-        return this.metricDatas;
+        return this.metricDatas == null ? List.of() : this.metricDatas;
     }
     /**
      * @return The reference provided in a metric definition to indicate the source service or application that emitted the metric.  Example: `oci_computeagent`
@@ -123,8 +123,8 @@ public final class GetMetricDataResult {
         private @Nullable Boolean compartmentIdInSubtree;
         private @Nullable String endTime;
         private @Nullable List<GetMetricDataFilter> filters;
-        private String id;
-        private List<GetMetricDataMetricData> metricDatas;
+        private @Nullable String id;
+        private @Nullable List<GetMetricDataMetricData> metricDatas;
         private String namespace;
         private String query;
         private @Nullable String resolution;
@@ -170,13 +170,13 @@ public final class GetMetricDataResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder metricDatas(List<GetMetricDataMetricData> metricDatas) {
-            this.metricDatas = Objects.requireNonNull(metricDatas);
+        public Builder metricDatas(@Nullable List<GetMetricDataMetricData> metricDatas) {
+            this.metricDatas = metricDatas;
             return this;
         }
         public Builder metricDatas(GetMetricDataMetricData... metricDatas) {

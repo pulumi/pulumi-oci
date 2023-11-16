@@ -16,71 +16,71 @@ namespace Pulumi.Oci.EmWarehouse.Outputs
         /// <summary>
         /// The ID of the compartment in which to list resources.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// Data read by the dataflow run
         /// </summary>
-        public readonly string DataReadInBytes;
+        public readonly string? DataReadInBytes;
         /// <summary>
         /// Data written by the dataflow run
         /// </summary>
-        public readonly string DataWritten;
+        public readonly string? DataWritten;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// A filter to return only resources that match the entire display name given.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// Details of the lifecycle state
         /// </summary>
-        public readonly string LifecycleDetails;
+        public readonly string? LifecycleDetails;
         /// <summary>
         /// Dataflow run duration
         /// </summary>
-        public readonly string RunDurationInMilliseconds;
+        public readonly string? RunDurationInMilliseconds;
         /// <summary>
         /// The current state of the etlRun.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// Time when the dataflow run was created
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// Time when the dataflow run was updated
         /// </summary>
-        public readonly string TimeUpdated;
+        public readonly string? TimeUpdated;
 
         [OutputConstructor]
         private GetEtlRunsEtlRunCollectionItemItemResult(
-            string compartmentId,
+            string? compartmentId,
 
-            string dataReadInBytes,
+            string? dataReadInBytes,
 
-            string dataWritten,
+            string? dataWritten,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string displayName,
+            string? displayName,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string lifecycleDetails,
+            string? lifecycleDetails,
 
-            string runDurationInMilliseconds,
+            string? runDurationInMilliseconds,
 
-            string state,
+            string? state,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeUpdated)
+            string? timeUpdated)
         {
             CompartmentId = compartmentId;
             DataReadInBytes = dataReadInBytes;

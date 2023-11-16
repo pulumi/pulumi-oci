@@ -47,7 +47,7 @@ class GetTagsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -56,25 +56,16 @@ class GetTagsResult:
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The tag's current state. After creating a tag, make sure its `lifecycleState` is ACTIVE before using it. After retiring a tag, make sure its `lifecycleState` is INACTIVE before using it. If you delete a tag, you cannot delete another tag until the deleted tag's `lifecycleState` changes from DELETING to DELETED.
-        """
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="tagNamespaceId")
     def tag_namespace_id(self) -> str:
-        """
-        The OCID of the namespace that contains the tag definition.
-        """
         return pulumi.get(self, "tag_namespace_id")
 
     @property
     @pulumi.getter
-    def tags(self) -> Sequence['outputs.GetTagsTagResult']:
-        """
-        The list of tags.
-        """
+    def tags(self) -> Optional[Sequence['outputs.GetTagsTagResult']]:
         return pulumi.get(self, "tags")
 
 
@@ -96,23 +87,7 @@ def get_tags(filters: Optional[Sequence[pulumi.InputType['GetTagsFilterArgs']]] 
              tag_namespace_id: Optional[str] = None,
              opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetTagsResult:
     """
-    This data source provides the list of Tags in Oracle Cloud Infrastructure Identity service.
-
-    Lists the tag definitions in the specified tag namespace.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_tags = oci.Identity.get_tags(tag_namespace_id=oci_identity_tag_namespace["test_tag_namespace"]["id"],
-        state=var["tag_state"])
-    ```
-
-
-    :param str state: A filter to only return resources that match the given lifecycle state.  The state value is case-insensitive.
-    :param str tag_namespace_id: The OCID of the tag namespace.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['filters'] = filters
@@ -135,22 +110,6 @@ def get_tags_output(filters: Optional[pulumi.Input[Optional[Sequence[pulumi.Inpu
                     tag_namespace_id: Optional[pulumi.Input[str]] = None,
                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetTagsResult]:
     """
-    This data source provides the list of Tags in Oracle Cloud Infrastructure Identity service.
-
-    Lists the tag definitions in the specified tag namespace.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_tags = oci.Identity.get_tags(tag_namespace_id=oci_identity_tag_namespace["test_tag_namespace"]["id"],
-        state=var["tag_state"])
-    ```
-
-
-    :param str state: A filter to only return resources that match the given lifecycle state.  The state value is case-insensitive.
-    :param str tag_namespace_id: The OCID of the tag namespace.
+    Use this data source to access information about an existing resource.
     """
     ...

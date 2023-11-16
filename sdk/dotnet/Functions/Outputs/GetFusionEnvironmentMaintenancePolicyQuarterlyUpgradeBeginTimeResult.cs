@@ -16,17 +16,17 @@ namespace Pulumi.Oci.Functions.Outputs
         /// <summary>
         /// The frequency and month when maintenance occurs for the Fusion environment.
         /// </summary>
-        public readonly string BeginTimesValue;
+        public readonly string? BeginTimesValue;
         /// <summary>
         /// Determines if the maintenance schedule of the Fusion environment is inherited from the Fusion environment family.
         /// </summary>
-        public readonly string OverrideType;
+        public readonly string? OverrideType;
 
         [OutputConstructor]
         private GetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeResult(
-            string beginTimesValue,
+            string? beginTimesValue,
 
-            string overrideType)
+            string? overrideType)
         {
             BeginTimesValue = beginTimesValue;
             OverrideType = overrideType;
